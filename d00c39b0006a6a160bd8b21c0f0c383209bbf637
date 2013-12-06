@@ -138,6 +138,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_f396b341",
+        "filename": "tests/browser/features/step_definitions/manage_translator_sandbox_steps.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-06T21:41:39Z",
+      "side": 1,
+      "message": "Me too :)",
+      "parentUuid": "0ee75395_d3d28f5c",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_534d5f3e",
         "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
         "patchSetId": 5
@@ -149,6 +167,24 @@
       "writtenOn": "2013-12-06T21:29:50Z",
       "side": 1,
       "message": "This seems unnecessary complicated to me. I would just define each button separately and selecting it by class.",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_33d9bb5c",
+        "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-06T21:41:39Z",
+      "side": 1,
+      "message": "There are four of them - Accept, Reject, Accept all, Reject all. And the test would be the same otherwise.",
+      "parentUuid": "0ee75395_534d5f3e",
       "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -172,6 +208,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_f3b0f3f2",
+        "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-06T21:41:39Z",
+      "side": 1,
+      "message": "I wouldn\u0027t like it. If we change the way we create the users, we\u0027ll have change this test, too.",
+      "parentUuid": "0ee75395_73698387",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_53643fae",
         "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
         "patchSetId": 5
@@ -183,6 +237,24 @@
       "writtenOn": "2013-12-06T21:29:50Z",
       "side": 1,
       "message": "Line over 100 chars",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_737bc323",
+        "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-06T21:41:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_53643fae",
       "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
