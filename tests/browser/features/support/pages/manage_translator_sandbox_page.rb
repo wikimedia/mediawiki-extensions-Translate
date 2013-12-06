@@ -19,9 +19,16 @@ class ManageTranslatorSandboxPage
 	text_field(:search, class: "request-filter-box")
 
 	checkbox(:select_all_checkbox, class: "request-selector-all")
-
 	div(:username) do |page|
 		page.requests_list_element.element.divs(class: "username")
+	end
+
+	def details_button_is_visible?(label)
+		@browser.elements(css: ".details button", text: label)
+	end
+
+	def visible_request_selectors_element
+		@browser.elements(css: ".row.request:not(.hide) .request-selector")
 	end
 
 	def visible_users_element
@@ -53,5 +60,18 @@ class ManageTranslatorSandboxPage
 
 	def username_in_request(index)
 		visible_users_element[index].text
+	end
+
+	def requests_are_sorted_by_translation_count_and_date?
+		expected_usernames = []
+		Array(0..4).each do |num|
+			%w{Pupu Orava}.each do |name|
+				expected_usernames.unshift("#{name}#{num}")
+			end
+		end
+
+		usernames = visible_users_element.collect { |element| element.text }
+
+		expected_usernames == usernames
 	end
 end
