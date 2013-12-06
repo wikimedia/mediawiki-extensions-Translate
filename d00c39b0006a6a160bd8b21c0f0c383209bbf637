@@ -191,6 +191,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_337f7bdf",
+        "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T21:53:21Z",
+      "side": 1,
+      "message": "Four doesn\u0027t sound too bad for me, but I wont push it.",
+      "parentUuid": "0ee75395_33d9bb5c",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_73698387",
         "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
         "patchSetId": 5
@@ -220,6 +238,24 @@
       "side": 1,
       "message": "I wouldn\u0027t like it. If we change the way we create the users, we\u0027ll have change this test, too.",
       "parentUuid": "0ee75395_73698387",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_f35fd375",
+        "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T21:53:21Z",
+      "side": 1,
+      "message": "Re-implementing the logic in the test feels wrong to me. Even in unit tests we provide known input and check it against expected output.",
+      "parentUuid": "0ee75395_f3b0f3f2",
       "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
