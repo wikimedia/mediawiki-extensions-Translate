@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_13a47703",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T21:29:50Z",
+      "side": 1,
+      "message": "No space here: http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html#memberdoc",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_d3fbafdc",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T21:29:50Z",
+      "side": 1,
+      "message": "You could still have this in separate method makeRequestItem and rename the current method with that name to formatRequestItem",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_5390bf97",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T21:29:50Z",
+      "side": 1,
+      "message": "Was there some particular reason to change this from $requests to $users? There should be no functional difference so not really an issue.",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_93dd2776",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T21:29:50Z",
+      "side": 1,
+      "message": "Not related to this patchset but this seems to be missing formatNum ;)",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_93af67de",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T21:29:50Z",
+      "side": 1,
+      "message": "You could have used anonymous function for this, but I guess this is okay. You should document the variables and return value though and add @since since it is a public function.",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_f3811350",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T21:29:50Z",
+      "side": 1,
+      "message": "Maybe not the best name for this variable. What would you think of $translationCountDiff",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_73be2315",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T21:29:50Z",
+      "side": 1,
+      "message": "extra space",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_d3d28f5c",
+        "filename": "tests/browser/features/step_definitions/manage_translator_sandbox_steps.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T21:29:50Z",
+      "side": 1,
+      "message": "Hmm I wonder if these have shorter direct methods available",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_534d5f3e",
+        "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T21:29:50Z",
+      "side": 1,
+      "message": "This seems unnecessary complicated to me. I would just define each button separately and selecting it by class.",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_73698387",
+        "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T21:29:50Z",
+      "side": 1,
+      "message": "So we discarded the idea of just saying in which order we except the users to be?",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_53643fae",
+        "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-06T21:29:50Z",
+      "side": 1,
+      "message": "Line over 100 chars",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
