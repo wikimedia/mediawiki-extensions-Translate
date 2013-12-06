@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_70ef3c1c",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-06T10:31:55Z",
+      "side": 1,
+      "message": "Probably a mistake. I am currently working on a function that prepares test accounds with proper translations.",
+      "revId": "9e9ac9cfcd691e45aed6dd8ea3607ce033286e01",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_90908099",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-06T10:31:55Z",
+      "side": 1,
+      "message": "Space instead of tab.",
+      "revId": "9e9ac9cfcd691e45aed6dd8ea3607ce033286e01",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
