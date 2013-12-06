@@ -324,7 +324,7 @@ Acceda ao sistema en $2 e faga algunhas traducións máis.',
 	'translate-translationstash-skip-button-label' => 'Probar outra',
 	'tsb-limit-reached-title' => 'Grazas polas súas traducións',
 	'tsb-limit-reached-body' => 'Alcanzou o límite de traducións dos tradutores novos.
-O noso equipo ha comprobar e actualizar a súa conta axiña. 
+O noso equipo ha comprobar e actualizar a súa conta axiña.
 Logo diso, poderá traducir sen límites.',
 );
 
