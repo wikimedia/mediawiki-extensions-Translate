@@ -262,6 +262,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_8d397bcd",
+        "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-07T21:57:22Z",
+      "side": 1,
+      "message": "OK, you convinced me here.",
+      "parentUuid": "0ee75395_f35fd375",
+      "revId": "d00c39b0006a6a160bd8b21c0f0c383209bbf637",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_53643fae",
         "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
         "patchSetId": 5
