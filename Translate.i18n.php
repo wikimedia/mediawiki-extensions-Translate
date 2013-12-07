@@ -697,7 +697,7 @@ Parameters:
 	'translate-checks-balance' => 'This translation warning is displayed if the number of opening brackets ("[", "{", and "(") is different from the number of closing brackets ("]", "}", and ")").
 
 Parameters:
-* $1 - a list of the unbalanced brackets, for example "\'\'\'[]: 1\'\'\'" which means that there is one missing closing square brackets
+* $1 - a list of the unbalanced brackets, for example "<strong>[]: 1</strong>" which means that there is one missing closing square brackets
 * $2 - the number of types of parentheses that are unbalanced
 {{Related|Translate-checks}}',
 	'translate-checks-links' => 'Warning message from automated syntax check for translators. Parameters:
@@ -1796,7 +1796,7 @@ $messages['am'] = array(
 	'translate-edit-definition' => 'የመልዕክቱ ትርጉም',
 	'translate-edit-contribute' => 'ለመሣተፍ',
 	'translate-edit-no-information' => "''ይኸው መልእክት ምንም መረጃ የለውም።
-መልዕክቱ በየት ወይም እንዴት እንደሚጠቀም ዕውቀት ካለዎ፣ መረጃ በመጨምር ሌሎች አስተርጓሚዎች ሊረዱ ይችላሉ።''",
+መልዕክቱ በየት ወይም እንዴት እንደሚጠቀም ዕውቀት ካለዎ፣ መረጃ በመጨምር ሌሎች አስተርጓሚዎች ሊረዱ ይችላሉ።''", # Fuzzy
 	'translate-edit-information' => 'መረጃ ስለዚሁ መልእክት ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'መልዕክቱ በሌሎች ልሳናት', # Fuzzy
 	'translate-magic-cm-current' => 'ያሁኑኑ',
@@ -2169,7 +2169,6 @@ $messages['arc'] = array(
 	'translate-page-description-legend' => 'ܝܕ̈ܥܬܐ ܥܠ ܟܢܘܫܬܐ',
 	'translate-page-edit' => 'ܫܚܠܦ',
 	'translate-optional' => '(ܨܒܝܢܝܐ)',
-	'translate-edit-jsopen' => 'ܫܚܠܦ',
 	'translate-edit-title' => 'ܫܚܠܦ "$1"',
 	'translate-edit-definition' => 'ܬܘܚܡܐ ܕܐܓܪܬܐ',
 	'translate-edit-translation' => 'ܬܘܪܓܡܐ',
@@ -2179,7 +2178,6 @@ $messages['arc'] = array(
 	'translate-edit-warnings' => 'ܙܘܗܪ̈ܐ ܥܠ ܬܘܪ̈ܓܡܐ ܠܐ ܓܡܝܪ̈ܐ',
 	'translate-edit-tmsugs' => 'ܡܚܫܚܬ̈ܐ ܡܢ ܥܘܗܕܢܐ ܕܬܘܪܓܡܐ',
 	'translate-edit-tmmatch' => '$1% ܠܚܡܐ',
-	'translate-edit-tab-list' => 'ܡܟܬܒܘܬܐ ܕܐܓܪ̈ܬܐ',
 	'translate-edit-askpermission' => 'ܨܒܝ ܦܣܣܐ',
 	'translate-magic-pagename' => 'ܬܘܪܓܡܐ ܕܡܝܕܝܐܘܝܩܝ ܡܬܝܚܬܐ',
 	'translate-magic-submit' => 'ܒܨܝܐ',
@@ -2501,7 +2499,6 @@ $messages['as'] = array(
 	'translate-ext-url' => '<hr />ৱেবছাইট: $1',
 	'translate-optional' => '(বিকল্পিত)',
 	'translate-ignored' => '(উপেক্ষিত)',
-	'translate-edit-jsopen' => 'সম্পাদনা কৰক',
 	'translate-edit-title' => '"$1" সম্পাদন কৰক',
 	'translate-edit-definition' => 'বাৰ্তাৰ সংজ্ঞা',
 	'translate-edit-translation' => 'ভাঙনি',
@@ -2513,7 +2510,6 @@ $messages['as'] = array(
 	'translate-edit-tmmatch-source' => 'অনুবাদৰ উত্স পাঠ্য: $1',
 	'translate-edit-tmmatch' => '$1% ৰজিতা খাইছে',
 	'translate-use-suggestion' => 'বৰ্তমানৰ ভাঙনিটো এই পৰামৰ্শৰ সৈতে প্ৰতিষ্ঠাপন কৰক',
-	'translate-edit-tab-list' => 'বাৰ্তা তালিকা',
 	'translate-edit-nopermission' => 'ভাঙনি কৰিবৰ বাবে আপুনি অনুমতি লোৱা বাঞ্চনীয়',
 	'translate-edit-askpermission' => 'অনুমতিৰ বাবে অনুৰোধ',
 	'translate-magic-pagename' => 'বিস্তাৰিত মিডিয়াৱিকি ভাঙনি',
@@ -2535,7 +2531,6 @@ $messages['as'] = array(
 	'translate-magic-saved' => 'আপুনি কৰা সালসলনি সফলতাৰে সম্পন্ন হ’ল',
 	'translate-pref-editassistlang' => 'সহযোগী ভাষাসমূহ:',
 	'prefs-translate' => 'ভাঙনি বিকল্পসমূহ',
-	'translate-pref-jsedit' => 'উচ্চকৃত ভাঙনি সম্পাদন-সঁজুলি (জাভাস্ক্ৰিপ্ট)',
 	'right-translate-manage' => 'বাৰ্তা গোট ব্যৱস্থাপনা',
 	'action-translate-manage' => 'বাৰ্তা গোট ব্যৱস্থাপনা',
 	'right-translate-messagereview' => 'ভাঙনিসমূহ পুনৰীক্ষণ কৰক',
@@ -3934,7 +3929,6 @@ $messages['bar'] = array(
 	'translate-submit' => 'Hoin',
 	'translate-edit-information' => 'Informazión zur da Systémnoochricht ($1)',
 	'translate-edit-in-other-languages' => 'Systémnoochricht auf åndre Sproochen',
-	'translate-edit-tab-list' => 'Noochrichtenlisten',
 	'translate-magic-cm-updatedusing' => 'Aktualisird durch [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
 	'translationstats' => "Staatistiken zua d' Ywersétzungen",
 	'translate-sidebar-alltrans' => 'Auf åndre Sproochen',
@@ -4731,7 +4725,7 @@ $messages['bho'] = array(
 	'translate-taction-disabled' => 'ई विकि पर ई कार्य के असमर्थ करल बा',
 	'translate-page-no-such-language' => 'विस्तृत भाषा अमान्य बा',
 	'translate-page-no-such-group' => 'विस्तृत समूह अमान्य बा',
-	'translate-page-disabled' => 'ई भाषा के ई समूह में अनुवाद बंद करल बा। कारण: "$1"',
+	'translate-page-disabled' => 'ई भाषा के ई समूह में अनुवाद बंद करल बा। कारण: "$1"', # Fuzzy
 	'translate-language-disabled' => 'ई भाषा में अनुवाद बंद करल बा।',
 	'translate-page-settings-legend' => 'सेटिंग्स',
 	'translate-page-group' => 'समूह',
@@ -4746,14 +4740,12 @@ $messages['bho'] = array(
 	'translate-prev' => 'पिछलका पन्ना',
 	'translate-page-description-legend' => 'ई समूह के बारे मे जानकारी',
 	'translate-page-edit' => 'सम्पादन करीं',
-	'translate-edit-jsopen' => 'सम्पादन करीं',
 	'translate-edit-definition' => 'संदेश परिभाषा',
 	'translate-edit-translation' => 'अनुवाद',
 	'translate-edit-contribute' => 'योगदान करीं',
 	'translate-edit-in-other-languages' => 'अन्य भाषा मे संदेश',
 	'translate-edit-tmmatch' => '$1% मिलान',
 	'translate-use-suggestion' => 'ई सुझाव के संग ई अनुवाद के बदलीं',
-	'translate-edit-tab-list' => 'संदेश सूची',
 	'translate-edit-askpermission' => 'अनुमती खातिर अनुरोध करीं',
 	'translate-magic-module' => 'माड्यूल:',
 	'translate-magic-submit' => 'निकालीं',
@@ -4889,6 +4881,7 @@ $messages['bn'] = array(
 	'translate-manage-import-deleted' => 'অপসারিত বার্তা $1',
 	'translate-manage-action-import' => 'আমদানি',
 	'translate-manage-action-ignore' => 'উপেক্ষা',
+	'translate-manage-import-done' => 'সমস্ত সম্পন্ন!', # Fuzzy
 	'translate-js-summary' => 'সারাংশ:',
 	'translate-js-save' => 'সংরক্ষণ',
 	'translate-js-next' => 'সংরক্ষণ এবং পরবর্তী',
@@ -5000,7 +4993,7 @@ $messages['bn'] = array(
  */
 $messages['bo'] = array(
 	'translate' => 'ཡིག་སྒྱུར།',
-	'translate-page-disabled' => 'སྡེ་ཁག་འདིའི་ནང་དུ་སྐད་རིགས་འདིའི་ཡིག་སྒྱུར་ནུས་མེད་ཆགས་འདུག རྒྱུ་མཚན་ནི། $1',
+	'translate-page-disabled' => 'སྡེ་ཁག་འདིའི་ནང་དུ་སྐད་རིགས་འདིའི་ཡིག་སྒྱུར་ནུས་མེད་ཆགས་འདུག རྒྱུ་མཚན་ནི། $1', # Fuzzy
 	'translate-page-settings-legend' => 'སྒྲིག་བཀོད།',
 	'translate-page-group' => 'སྡེ་ཁག',
 	'translate-page-language' => 'སྐད་རིགས།',
@@ -5019,7 +5012,6 @@ $messages['bo'] = array(
 	'translate-optional' => '(འདེམས་ཚན་ཅན།)',
 	'translate-ignored' => '(སྣང་མེད་བྱས་པ།)',
 	'translate-edit-title' => '"$1"ལ་རྩོམ་སྒྲིག་བྱེད་པ།',
-	'translate-edit-tab-list' => 'ཚིག་གཞུང་།',
 	'translate-magic-cm-current' => 'ད་ཡོད།',
 	'translate-magic-cm-original' => 'མ་ཕྱི།',
 	'translate-magic-cm-save' => 'ཉར་ཚགས།',
@@ -5725,7 +5717,7 @@ $messages['bug'] = array(
 	'translate' => "Tare'juma",
 	'translate-submit' => 'Ala',
 	'translate-page-edit' => 'padeccéŋ',
-	'translate-edit-no-information' => "''Iyyedé méséjeë degaga dokuméntasina. Rékko idi isseŋi kotégaï na pakogaï ripaké, weddiŋi idi maŋinriŋ patare'juma laiŋë menambahkan dokumentasina.''",
+	'translate-edit-no-information' => "''Iyyedé méséjeë degaga dokuméntasina. Rékko idi isseŋi kotégaï na pakogaï ripaké, weddiŋi idi maŋinriŋ patare'juma laiŋë menambahkan dokumentasina.''", # Fuzzy
 	'translate-edit-information' => 'Informasina iyyéde leppa ($1)', # Fuzzy
 	'translate-magic-cm-save' => 'Taro',
 	'translate-statsf-submit' => 'Pribiu',
@@ -6071,7 +6063,7 @@ El més útil per a les tasques de revisió.',
 	'translate-dynagroup-lastc' => 'Últim canvi per {{GENDER:$1|$1}} ($2)',
 	'translate-gethelp' => 'Ajuda',
 	'translate-msggroupselector-projects' => 'Grup de missatges',
-	'translate-msggroupselector-search-placeholder' => 'Busca grups',
+	'translate-msggroupselector-search-placeholder' => 'Cerca als grups',
 	'translate-msggroupselector-search-all' => 'Tots',
 	'translate-msggroupselector-search-recent' => 'Recents',
 	'translate-msggroupselector-view-subprojects' => '$1 {{PLURAL:$1|subgrup|subgrups}}',
@@ -6344,7 +6336,6 @@ $messages['ckb'] = array(
 	'translate-page-edit' => 'دەستکاریی بکە',
 	'translate-ext-url' => '<hr />ماڵپەڕ: $1',
 	'translate-optional' => '(دڵخوازانه‌)',
-	'translate-edit-jsopen' => 'دەستکاریی بکە',
 	'translate-edit-title' => '«$1» دەستکاری بکە',
 	'translate-edit-definition' => 'پێناسەی پەیام',
 	'translate-edit-translation' => 'وەرگێڕان',
@@ -6353,7 +6344,6 @@ $messages['ckb'] = array(
 	'translate-edit-in-other-languages' => 'پەیام لە زمانەکانی تردا',
 	'translate-edit-warnings' => 'ئاگادارییەکان سەبارەت بە وەرگێڕانی ناتەواو',
 	'translate-edit-tmmatch' => '$1% یەکسانی',
-	'translate-edit-tab-list' => 'لیستی پەیام',
 	'translate-magic-module' => 'مۆدیوول:',
 	'translate-magic-submit' => 'بەدەستی بهێنە',
 	'translate-magic-cm-export' => 'هەناردن',
@@ -6913,13 +6903,12 @@ $messages['csb'] = array(
 	'translate-sidebar-alltrans' => 'W jinych jãzëkach',
 );
 
-/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+/** Church Slavic (словѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
  * @author ОйЛ
  */
 $messages['cu'] = array(
 	'translate-page-language' => 'ѩꙁꙑкъ',
 	'translate-page-edit' => 'исправи',
-	'translate-edit-jsopen' => 'исправи',
 	'translate-edit-title' => 'исправлѥниѥ ⁖ $1 ⁖',
 	'translate-stats-edits' => 'мѣнꙑ',
 	'translate-translations-messagename' => 'имѧ :',
@@ -8092,7 +8081,7 @@ $messages['de-ch'] = array(
 	'translate-page-description-hasoptional' => 'Diese Nachrichtengruppe enthält optionale Nachrichten.
 Optionale Nachrichten sollten nur dann übersetzt werden, sofern es in deiner Sprache Bedarf für sie gibt,
 wie beispielsweise die Nichtverwendung von Leerschlägen oder die Transkription von Eigennamen. $1',
-	'translate-edit-no-information' => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weisst, wo und in welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentation hinzufügst.''",
+	'translate-edit-no-information' => "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weisst, wo und in welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentation hinzufügst.''", # Fuzzy
 	'translate-messagereview-reviewswithyou' => 'Akzeptiert von {{PLURAL:$1|dir selbst|$1 Benutzern, einschliesslich dir selbst}}', # Fuzzy
 );
 
@@ -8108,7 +8097,7 @@ $messages['de-formal'] = array(
 Optionale Nachrichten sollten nur dann übersetzt werden, sofern es in Ihrer Sprache Bedarf für sie gibt,
 wie beispielsweise die Nichtverwendung von Leerzeichen oder die Transkription von Eigennamen. $1',
 	'translate-edit-no-information' => "''Zu dieser Nachricht ist keine Dokumentation vorhanden.''
-Sofern Sie wissen, wo und in welchem Zusammenhang sie genutzt wird, können Sie anderen Übersetzern bei ihrer Arbeit helfen, indem Sie eine Dokumentation hinzufügen.",
+Sofern Sie wissen, wo und in welchem Zusammenhang sie genutzt wird, können Sie anderen Übersetzern bei ihrer Arbeit helfen, indem Sie eine Dokumentation hinzufügen.", # Fuzzy
 	'translate-use-suggestion' => 'Ersetzen Sie die aktuelle Übersetzung mit diesem Vorschlag.',
 	'translate-edit-nopermission' => 'Sie benötigen die Berechtigung, Systemnachrichten übersetzen zu können.',
 	'translate-magic-help' => 'Sie können hier Aliase für Spezialseiten, magische Wörter und Namensraumnamen übersetzen.
@@ -8127,7 +8116,6 @@ Sie müssen in der Übersetzer-Gruppe sein, um Änderungen zu speichern.
 	'translations-summary' => 'Geben Sie einen Nachrichtennamen ein, um alle verfügbaren Übersetzungen anzuzeigen.',
 	'translate-translations-including-no-param' => 'Bitte geben Sie einen gültigen Nachrichtennamen als Unterseitenparameter an',
 	'translate-langstats-incomplete' => 'Einige der Statistiken auf dieser Seite sind unvollständig. Laden Sie sie erneut, um weitere Statistiken zu erhalten.',
-	'translate-smg-postponed' => 'Einige Änderungen konnten nicht verarbeitet werden. [[{{FULLPAGENAME}}|Versuchen Sie es bitte erneut]].',
 	'translate-manage-nochanges-other' => 'Es gibt keine Änderungen für diese Sprache.
 Verwenden Sie den Verweis unten, um zur Gruppendetailübersicht zurück zu gehen.',
 	'translate-manage-inconsistent' => 'Es wurden Inkonsistenzen in der Anfrage festgestellt.
@@ -8303,12 +8291,12 @@ $messages['dsb'] = array(
 	'translate-taskui-view' => 'Wšykne powěźeńki pokazaś',
 	'translate-taskui-untranslated' => 'Njepśełožone powěźeńki pokazaś',
 	'translate-taskui-optional' => 'Opcionalne powěźeńki pokazaś',
-	'translate-taskui-acceptqueue' => 'Jano powěźeńki, kótarež akceptěrujom', # Fuzzy
+	'translate-taskui-acceptqueue' => 'Jano powěźeńki, kótarež mógu ako pśeglědane markěrowaś',
 	'translate-taskui-reviewall' => 'Wšykne pśełožki pśeglědaś',
 	'translate-taskui-export-to-file' => 'Do systemowego formata eksportěrowaś',
 	'translate-taskui-export-as-po' => 'Za pśełožowanje offline eksportěrowaś',
 	'translate-taction-translate' => 'Pśełožyś',
-	'translate-taction-proofread' => 'Tekst kontrolěrowaś', # Fuzzy
+	'translate-taction-proofread' => 'Pśeglědaś',
 	'translate-taction-lstats' => 'Rěcna statistika',
 	'translate-taction-mstats' => 'Statistika zdźěleńskich kupkow',
 	'translate-taction-export' => 'Eksportěrowaś',
@@ -8344,7 +8332,7 @@ kaž na pśikład njewužywanje proznych znamuškow abo transliteraciju swójski
 	'translate-edit-definition' => 'Definicija powěsći',
 	'translate-edit-translation' => 'Pśełožk',
 	'translate-edit-contribute' => 'pśinosowaś',
-	'translate-edit-no-information' => "''Toś ta powěsć njama dokumentaciju. Jolic wěš, źož abo kak toś ta powěsć se wužywa, móžoš drugim pśełožowarjam pomagaś, z tym až dokumentaciju k toś tej powěsći pśidawaš.''", # Fuzzy
+	'translate-edit-no-information' => '<em>Toś ta powěsć njama dokumentaciju. Jolic wěš, źož abo kak toś ta powěsć se wužywa, móžoš drugim pśełožowarjam pomagaś, z tym až dokumentaciju k toś tej powěsći pśidawaš.</em>',
 	'translate-edit-information' => 'Informacije wó powěsći ($1)',
 	'translate-edit-in-other-languages' => 'Powěsć w drugich rěcach',
 	'translate-edit-committed' => 'Aktualny pśełožk w software',
@@ -8526,9 +8514,9 @@ Pšosym pśeglědaś.',
 	'translate-manage-submit' => 'Wuwjasć',
 	'translate-manage-intro-other' => 'Dołojce jo lisćina pśełožkowych změnow w rěcy $1.
 Pšosym pśeglědaj změny a wubjeŕ akciju, kótaruž coš za kuždy pśełožk cyniś.
-Jolic ignorěrujoš změny, pśepišu se pśi pśiducem eksporśe.', # Fuzzy
-	'translate-manage-import-ok' => 'Nowa wersija boka $1 importěrowany.', # Fuzzy
-	'translate-manage-import-done' => 'Wšykno cynjone!', # Fuzzy
+Jolic ignorěrujoš změny, jo toś ta akcija jano nachylna.',
+	'translate-manage-import-ok' => 'Importěrowany: $1',
+	'translate-manage-import-done' => 'Import dokóńcony!',
 	'importtranslations' => 'Pśełožki importěrowaś',
 	'translate-import-from-local' => 'Nagraśe lokalneje dataje:',
 	'translate-import-load' => 'Dataju zacytaś',
@@ -8567,25 +8555,25 @@ Drobnostki: $1',
 	'translate-searchprofile-tooltip' => 'We wšych pśełožkach pytaś',
 	'translate-search-languagefilter' => 'Pó rěcy filtrowaś:',
 	'translate-search-nofilter' => 'Žedne filtrowanje',
-	'translate-messagereview-submit' => 'Akceptěrowaś', # Fuzzy
-	'translate-messagereview-progress' => 'Akceptěrujo se...', # Fuzzy
-	'translate-messagereview-failure' => 'Akceptěrowanje... jo se njeraźiło: $1', # Fuzzy
-	'translate-messagereview-done' => 'Akceptěrowany', # Fuzzy
-	'translate-messagereview-reviews' => 'Wót {{PLURAL:$1|jadnogo wužywarja|$1 wužywarjowu|$1 wužywarjow|$1 wužywarjow}} akceptěrowany', # Fuzzy
-	'translate-messagereview-reviewswithyou' => 'Wót {{PLURAL:$1|tebje|$1 wužywarjowu inkluziwnje tebje|$1 wužywarjow inkluziwnje tebje|$1 wužywarjow inkluziwnje tebje}} akceptěrowany', # Fuzzy
+	'translate-messagereview-submit' => 'Ako pśeglědany markěrowaś',
+	'translate-messagereview-progress' => 'Markěrujo se ako pśeglědany...',
+	'translate-messagereview-failure' => 'Markěrowanje ako pśeglědany jo se njeraźiło: $1',
+	'translate-messagereview-done' => 'Pśeglědany',
+	'translate-messagereview-reviews' => 'Wót {{PLURAL:$1|jadnogo wužywarja|$1 wužywarjowu|$1 wužywarjow}} pśeglědany',
+	'translate-messagereview-reviewswithyou' => 'Wót {{PLURAL:$1|tebje|$1 wužywarjowu inkluziwnje tebje|$1 wužywarjow inkluziwnje tebje}} pśeglědany',
 	'api-error-invalidrevision' => 'Pśełožk njejo se namakał',
 	'api-error-unknownmessage' => 'Powěźeńka njejo se namakała',
 	'api-error-fuzzymessage' => 'Pśełožk jo ako zestarjony markěrowany',
-	'api-error-owntranslation' => 'Njamóžoš swójske pśełožki akceptěrowaś', # Fuzzy
-	'translate-messagereview-no-fuzzy' => 'Zestarjone pśełožki njedaju se akceptěrowaś.', # Fuzzy
-	'translate-messagereview-no-own' => 'Njamóžoš swójske pśełožki akceptěrowaś.', # Fuzzy
-	'translate-messagereview-doit' => 'Toś ten pśełožk ako korektny akceptěrowaś.', # Fuzzy
+	'api-error-owntranslation' => 'Njamóžoš swójske pśełožki ako pśeglědane markěrowaś',
+	'translate-messagereview-no-fuzzy' => 'Zestarjone pśełožki njedaju se ako pśeglědane markěrowaś.',
+	'translate-messagereview-no-own' => 'Njamóžoš swójske pśełožki ako pśeglědane markěrowaś.',
+	'translate-messagereview-doit' => 'Toś ten pśełožk ako pśeglědany markěrowaś',
 	'group-translate-proofr' => 'Kontrolery pśełožkow',
 	'group-translate-proofr-member' => '{{GENDER:$1|kontroler pśełožkow|kontrolerka pśełožkow}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Kontrolery pśełožkow',
 	'log-name-translationreview' => 'Protokol pśełožkowych kontrolow',
 	'log-description-translationreview' => 'Protokol wšych kontrolow k pśełožkam a zdźěleńskim kupkam.',
-	'logentry-translationreview-message' => '$1 jo pśełožk $3 {{GENDER:$2|akceptěrował|akceptěrowała}}', # Fuzzy
+	'logentry-translationreview-message' => '$1 jo pśełožk $3 ako pśeglědany {{GENDER:$2|markěrował|markěrowała}}',
 	'logentry-translationreview-group' => '$1 jo  status pśełožkow w rěcy $4 boka $3 wót $6 do $7 {{GENDER:$2|změnił|změniła}}',
 	'translate-workflow-state-' => '(njenastajony)',
 	'translate-workflowstatus' => 'Status: $1',
@@ -8600,7 +8588,7 @@ Drobnostki: $1',
 Statuse definěruju se w konfiguraciskej wariabli $wgTranslateWorkflowStates.',
 	'translate-dynagroup-recent-label' => 'Nejnowše pśełožki',
 	'translate-dynagroup-recent-desc' => 'Toś ta zdźěleńska kupka pokazujo wšykne aktualne pśełožki do toś teje rěcy.
-Jo nejwužytnjej za korigěrowańske nadawki.', # Fuzzy
+Jo nejwužytnjej za pśeglědowańske nadawki.',
 	'translate-dynagroup-additions-label' => 'Aktualne dodanki',
 	'translate-dynagroup-additions-desc' => 'Toś ta powěsćowa kupka pokazujo nowe a změnjone pówěźeńki.',
 	'translate-dynagroup-by' => 'Pśełožk wót {{GENDER:$1|$1}}',
@@ -8618,11 +8606,11 @@ Jo nejwužytnjej za korigěrowańske nadawki.', # Fuzzy
 	'tux-tab-untranslated' => 'Njepśełožony',
 	'tux-tab-outdated' => 'Zestarjony',
 	'tux-tab-translated' => 'Přełožony',
-	'tux-tab-unproofread' => 'Njekorigěrowany', # Fuzzy
+	'tux-tab-unproofread' => 'Njepśeglědany',
 	'tux-edit' => 'Wobźěłaś',
 	'tux-status-optional' => 'Opcionalny',
 	'tux-status-fuzzy' => 'Zestarjony',
-	'tux-status-proofread' => 'Tekst kontrolěrowaś', # Fuzzy
+	'tux-status-proofread' => 'Pśeglědany',
 	'tux-status-translated' => 'Přełožony',
 	'tux-status-saving' => 'Składujo se...',
 	'tux-status-unsaved' => 'Njeskładowany',
@@ -8633,8 +8621,8 @@ Jo nejwužytnjej za korigěrowańske nadawki.', # Fuzzy
 	'tux-editor-skip-button-label' => 'K pśiducemu',
 	'tux-editor-confirm-button-label' => 'Pśełožk wobkšuśiś',
 	'tux-editor-shortcut-info' => 'Tłoc "$1", aby składował abo "$2", aby k pśiducemu powěźeńce  dostał',
-	'tux-editor-edit-desc' => 'Wopisanje wobźěłaś', # Fuzzy
-	'tux-editor-add-desc' => 'Wopisanje pśidaś', # Fuzzy
+	'tux-editor-edit-desc' => 'Dokumentaciju wobźěłaś',
+	'tux-editor-add-desc' => 'Dokumentaciju pśidaś',
 	'tux-editor-suggestions-title' => 'Naraźenja',
 	'tux-editor-in-other-languages' => 'W drugich rěcach',
 	'tux-editor-need-more-help' => 'Trjebaš wěcej pomocy?',
@@ -8647,11 +8635,11 @@ Jo nejwužytnjej za korigěrowańske nadawki.', # Fuzzy
 	'tux-editor-message-desc-more' => 'Wěcej se woglědaś',
 	'tux-editor-message-desc-less' => 'Mjenjej se woglědaś',
 	'tux-editor-clear-translated' => 'Pśełožki schowaś',
-	'tux-editor-proofreading-mode' => 'Korigěrowaś', # Fuzzy
+	'tux-editor-proofreading-mode' => 'Pśeglědaś',
 	'tux-editor-translate-mode' => 'Lisćina',
 	'tux-editor-proofreading-hide-own-translations' => 'Twóje pśełožki schowaś',
 	'tux-editor-proofreading-show-own-translations' => 'Twóje pśełožki pokazaś',
-	'tux-proofread-action-tooltip' => 'Pśełožk akceptěrowaś', # Fuzzy
+	'tux-proofread-action-tooltip' => 'Ako pśeglědany markěrowaś',
 	'tux-proofread-edit-label' => 'Wobźěłaś',
 	'tux-editor-page-mode' => 'Bok',
 	'tux-editor-outdated-warning' => 'Toś ten pśełožk musy se snaź aktualizěrowaś.',
@@ -8668,21 +8656,21 @@ Jo nejwužytnjej za korigěrowańske nadawki.', # Fuzzy
 	'tux-proofread-translated-by-self' => 'Wót tebje pśełožony',
 	'tux-empty-list-all' => 'Toś ta zdźěleńska kupka jo prozna',
 	'tux-empty-list-all-guide' => 'Wubjeŕ drugu zdźěleńsku kupku za pśełožowanje',
-	'tux-translate-page-no-such-group' => "'''Pódana skupina njeeksistěrujo.''' Wubjeŕ drugu zdźěleńsku kupku.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>Pódana skupina njeeksistěrujo.</strong> Wubjeŕ drugu zdźěleńsku kupku.',
 	'tux-empty-list-translated' => 'Žedne pśełožone powěźeńki',
 	'tux-empty-list-translated-guide' => 'Móžoš pomagaś pśełožowaś',
 	'tux-empty-list-translated-action' => 'Pśełožyś',
 	'tux-empty-list-other' => 'Njejo nic za pśełožowanje',
-	'tux-empty-list-other-guide' => 'Móžoš pomagaś, eksistěrujuce pśełožki pśekontrolěrowaś', # Fuzzy
-	'tux-empty-list-other-action' => 'Pśełožki kontrolěrowaś', # Fuzzy
+	'tux-empty-list-other-guide' => 'Móžoš pomagaś, eksistěrujuce pśełožki pśeglědaś',
+	'tux-empty-list-other-action' => 'Pśełožki pśeglědaś',
 	'tux-empty-list-other-link' => 'Wšykne powěźeńki pokazaś',
 	'tux-editor-close-tooltip' => 'Zacyniś',
 	'tux-editor-expand-tooltip' => 'Pokazaś',
 	'tux-editor-collapse-tooltip' => 'Schowaś',
 	'tux-editor-loading' => 'Zacytujo se ...',
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|dalšna rěc|dalšnej rěcy|dalšne rěcy|dalšnych rěcow}}',
-	'translate-statsbar-tooltip' => '$1 % pśełožony, $2 % skorigěrowany', # Fuzzy
-	'translate-statsbar-tooltip-with-fuzzy' => '$1 % pśełožony, $2 % skorigěrowany, $ 3 zestarjony', # Fuzzy
+	'translate-statsbar-tooltip' => '$1 % pśełožone, $2 % pśeglědane',
+	'translate-statsbar-tooltip-with-fuzzy' => '$1 % pśełožone, $2 % pśeglědane, $ 3 zestarjone', # Fuzzy
 );
 
 /** Central Dusun (Dusun Bundu-liwan)
@@ -8743,6 +8731,7 @@ $messages['ee'] = array(
 	'translate-manage-import-new' => 'Du yeye $1',
 	'translate-manage-fuzzy-summary' => 'Gɔmeɖeɖea trɔ',
 	'translate-manage-submit' => 'Wɔe',
+	'translate-manage-import-done' => 'Wo wɔ wokatã vɔ!', # Fuzzy
 );
 
 /** Greek (Ελληνικά)
@@ -12622,19 +12611,17 @@ $messages['fur'] = array(
 	'translate-ext-url' => '<hr />Sît web: $1',
 	'translate-optional' => '(opzionâl)',
 	'translate-ignored' => '(ignorât)',
-	'translate-edit-jsopen' => 'cambie',
 	'translate-edit-title' => 'Cambie "$1"',
 	'translate-edit-definition' => 'Definizion dal messaç',
 	'translate-edit-translation' => 'Traduzion',
 	'translate-edit-contribute' => 'contribuìs',
 	'translate-edit-no-information' => "''Chest messaç nol à documentazion.''
-''Se tu sâs dulà o cemût chest messaç al è doprât, tu puedis judâ altris tradutôrs zontant alc come documentazion a chest messaç.''",
+''Se tu sâs dulà o cemût chest messaç al è doprât, tu puedis judâ altris tradutôrs zontant alc come documentazion a chest messaç.''", # Fuzzy
 	'translate-edit-information' => 'Informazions sul messaç ($1)',
 	'translate-edit-in-other-languages' => 'Il messaç in altris lenghis',
 	'translate-edit-warnings' => 'Avîs su lis traduzions no completis',
 	'translate-edit-tmsugs' => 'Sugjeriments de memorie di traduzion',
 	'translate-edit-tmmatch' => 'corispuint al $1%',
-	'translate-edit-tab-list' => 'Liste dai messaçs',
 	'translate-edit-askpermission' => 'Domande il permès',
 	'translate-magic-module' => 'Modul:',
 	'translate-magic-submit' => 'Recupere',
@@ -12865,7 +12852,6 @@ $messages['ga'] = array(
 	'translate-page-language' => 'Teanga',
 	'translate-submit' => 'Faigh',
 	'translate-page-navigation-legend' => 'Nascleanúint',
-	'translate-edit-jsopen' => 'cur in eagar',
 	'translate-edit-in-other-languages' => 'Teachtaireacht "$1" i dteangacha eile', # Fuzzy
 	'translate-magic-cm-export' => 'Easportáil',
 	'translate-magic-cm-current' => 'reatha',
@@ -14694,7 +14680,7 @@ kaž na přikład njewužiwanje mjezerow abo transliteraciju swójskich mjenow. 
 	'translate-edit-definition' => 'Definicija zdźělenki',
 	'translate-edit-translation' => 'Přełožk',
 	'translate-edit-contribute' => 'přinošować',
-	'translate-edit-no-information' => "''Tuta zdźělenka dokumentaciju nima, Jeli wěš, hdźež tuta zdźělenka so wužiwa, móžeš druhim přełožowarjam pomhać přidawajo dokumentaciju k tutej zdźělence.''", # Fuzzy
+	'translate-edit-no-information' => "<em>Tuta zdźělenka dokumentaciju nima, Jeli wěš, hdźež abo kak so tuta zdźělenka wužiwa, móžeš druhim přełožowarjam pomhać přidawajo dokumentaciju k tutej zdźělence.</em>'",
 	'translate-edit-information' => 'Informacije wo zdźělence ($1)',
 	'translate-edit-in-other-languages' => 'Zdźělenka w druhich rěčach',
 	'translate-edit-committed' => 'Aktualny přełožk w softwarje',
@@ -14879,8 +14865,8 @@ Prošu přepruwować.',
 	'translate-manage-intro-other' => 'Slěduje lisćina přełožowanskich změnow w rěči $1.
 Prošu přepruwuj změny a wubjer akciju, kotruž chceš za kóždy přełožk wuwjesć.
 Jeli změny ignoruješ, je tuta akcija jenož nachwilna.',
-	'translate-manage-import-ok' => 'Importowana nowa wersija strony $1.', # Fuzzy
-	'translate-manage-import-done' => 'Wšo sčinjene!', # Fuzzy
+	'translate-manage-import-ok' => 'Importowany: $1',
+	'translate-manage-import-done' => 'Import dokónčeny!',
 	'importtranslations' => 'Přełožki importować',
 	'translate-import-from-local' => 'Lokalne nahraće dataje:',
 	'translate-import-load' => 'Dataju začitać',
@@ -15025,7 +15011,7 @@ Je najwužitniša za přepruwowanske nadawki.',
 	'tux-proofread-translated-by-self' => 'Wot tebje přełoženy',
 	'tux-empty-list-all' => 'Tuta zdźělenska skupina je prózdna',
 	'tux-empty-list-all-guide' => 'Wubjer druhu zdźělenku za přełožowanje',
-	'tux-translate-page-no-such-group' => "'''Podata skupina njeeksistuje.''' Wubjer druhu zdźělensku skupinu.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>Podata skupina njeeksistuje.</strong> Wubjer druhu zdźělensku skupinu.',
 	'tux-empty-list-translated' => 'Žane přełožene zdźělenki',
 	'tux-empty-list-translated-guide' => 'Móžeš pomhać přełožować',
 	'tux-empty-list-translated-action' => 'Přełožić',
@@ -16515,6 +16501,7 @@ $messages['ig'] = array(
 	'translate-jssti-add' => 'Tinyé na ndetu',
 	'translate-manage-import-new' => 'Ozi ohúrù $1',
 	'translate-manage-import-deleted' => 'Ozi bakashịrị $1',
+	'translate-manage-import-done' => 'Omechá!', # Fuzzy
 	'translate-gs-code' => 'Edemede i zonari',
 	'translate-gs-continent' => 'Obodo ukwu',
 	'translate-gs-speakers' => 'Ndi na su',
@@ -16536,7 +16523,7 @@ $messages['ilo'] = array(
 	'translate-page-disabled' => 'Dagiti panagipatarus ti daytoy a pagsasao iti daytoy a grupo ket nabaldado.
 Rason:
 
-\'\'$1"',
+\'\'$1"', # Fuzzy
 	'translate-language-disabled' => 'Nabaldado ti panagipatarus ti daytoy a pagsasao.',
 	'translate-page-settings-legend' => 'Dagiti pakayasentaran',
 	'translate-page-group' => 'Grupo',
@@ -16553,7 +16540,6 @@ Rason:
 	'translate-page-description-legend' => 'Pakaammo a maipanggep ti grupo',
 	'translate-page-edit' => 'urnosen',
 	'translate-ignored' => '(binay-an)',
-	'translate-edit-jsopen' => 'urnosen',
 	'translate-edit-title' => 'Urnosen ti "$1"',
 	'translate-edit-translation' => 'Panagitarus',
 	'translate-edit-information' => 'Pakaammo a maipanggep ti mensahe ($1)',
@@ -16563,7 +16549,6 @@ Rason:
 	'translate-edit-tmmatch-source' => 'Testo a taudan ti panagitarus: $1',
 	'translate-edit-tmmatch' => '$1% a kapada',
 	'translate-use-suggestion' => 'Sukatan ti agdama panakaipatarus iti daytoy  a singasing.',
-	'translate-edit-tab-list' => 'Listaan ti mensahe',
 	'translate-edit-nopermission' => 'Masapolmo ti pammalubos tapno makapatarus kadagiti mensahe.',
 	'translate-edit-askpermission' => 'Agkiddaw ti pammalubos',
 	'translate-magic-submit' => 'Alaen',
@@ -18089,7 +18074,7 @@ $messages['ka'] = array(
 	'translate-edit-definition' => 'შეტყობინების განმარტება',
 	'translate-edit-translation' => 'თარგმანი',
 	'translate-edit-no-information' => "''ამ შეტყობინებას არ აქვს დოკუმენტაცია.''
-''თუ იცით სად და როგორ გამოიყენება ეს შეტყობინება, გთხოვთ დაეხმაროთ სხვა მთარგმნელებს და დაურთოთ დოკუმენტაცია ამ შეტყობინებას.''",
+''თუ იცით სად და როგორ გამოიყენება ეს შეტყობინება, გთხოვთ დაეხმაროთ სხვა მთარგმნელებს და დაურთოთ დოკუმენტაცია ამ შეტყობინებას.''", # Fuzzy
 	'translate-edit-in-other-languages' => 'ეს შეტყობინება სხვა ენებზე',
 	'translate-edit-tmmatch' => '$1% შესაბამისობა',
 	'translate-magic-module' => 'მოდული:',
@@ -18386,7 +18371,7 @@ $messages['kk-arab'] = array(
 	'translate-ignored' => '(ەلەمەيتىن)',
 	'translate-edit-definition' => 'حاباردىڭ انىقتالىمى',
 	'translate-edit-contribute' => 'ۇلەس بەر',
-	'translate-edit-no-information' => "''بۇل حابار قۇجاتتاماسىز. ەگەر وسى حاباردىڭ قايدا نەمەسە قالاي قولدانعانىن بىلسەڭىز, بۇل حابارعا قۇجاتتاما كەلتىرىپ, باسقا اۋدارۋشىلارعا كومەكتەسە الاسىز.''",
+	'translate-edit-no-information' => "''بۇل حابار قۇجاتتاماسىز. ەگەر وسى حاباردىڭ قايدا نەمەسە قالاي قولدانعانىن بىلسەڭىز, بۇل حابارعا قۇجاتتاما كەلتىرىپ, باسقا اۋدارۋشىلارعا كومەكتەسە الاسىز.''", # Fuzzy
 	'translate-edit-information' => 'بۇل حابار تۋرالى مالىمەت ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'حابار باسقا تىلدەردە', # Fuzzy
 	'translate-edit-committed' => 'باعدارلاماداعى اعىمدىق اۋدارما',
@@ -18552,7 +18537,7 @@ $messages['kk-latn'] = array(
 	'translate-ignored' => '(elemeýtin)',
 	'translate-edit-definition' => 'Xabardıñ anıqtalımı',
 	'translate-edit-contribute' => 'üles ber',
-	'translate-edit-no-information' => "''Bul xabar qujattamasız. Eger osı xabardıñ qaýda nemese qalaý qoldanğanın bilseñiz, bul xabarğa qujattama keltirip, basqa awdarwşılarğa kömektese alasız.''",
+	'translate-edit-no-information' => "''Bul xabar qujattamasız. Eger osı xabardıñ qaýda nemese qalaý qoldanğanın bilseñiz, bul xabarğa qujattama keltirip, basqa awdarwşılarğa kömektese alasız.''", # Fuzzy
 	'translate-edit-information' => 'Bul xabar twralı mälimet ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'Xabar basqa tilderde', # Fuzzy
 	'translate-edit-committed' => 'Bağdarlamadağı ağımdıq awdarma',
@@ -18967,7 +18952,7 @@ $messages['ko'] = array(
 	'translate-page-disabled' => '이 그룹에서 이 언어로의 번역이 비활성화되어 있습니다.
 이유:
 
-$1',
+$1', # Fuzzy
 	'translate-language-disabled' => '이 언어로의 번역이 비활성화되어 있습니다.',
 	'translate-page-settings-legend' => '설정',
 	'translate-page-group' => '그룹',
@@ -18995,7 +18980,7 @@ $1',
 	'translate-edit-translation' => '번역',
 	'translate-edit-contribute' => '편집하기',
 	'translate-edit-no-information' => '이 메시지에 대한 설명문이 없습니다.
-만약 이 메시지가 어디에 어떻게 사용되는지 알고 있다면 설명문을 작성해 다른 번역자를 도와줄 수 있습니다.',
+만약 이 메시지가 어디에 어떻게 사용되는지 알고 있다면 설명문을 작성해 다른 번역자를 도와줄 수 있습니다.', # Fuzzy
 	'translate-edit-information' => '이 메시지에 대한 정보 ($1)',
 	'translate-edit-in-other-languages' => '이 메시지의 다른 언어판',
 	'translate-edit-committed' => '소프트웨어의 현재 번역',
@@ -19190,6 +19175,8 @@ $1',
 	'translate-manage-intro-other' => '다음은 $1로 된 번역 바뀜 목록입니다.
 바뀜을 검토하고 각 업데이트에 대해 수행할 작업을 선택하세요.
 바뀜을 무시하기로 선택했다면 이 작업만 일시적입니다.',
+	'translate-manage-import-ok' => '$1 문서의 새 버전을 가져왔습니다.', # Fuzzy
+	'translate-manage-import-done' => '모두 완료!', # Fuzzy
 	'importtranslations' => '번역 가져오기',
 	'translate-import-from-local' => '컴퓨터에 있는 파일 올리기:',
 	'translate-import-load' => '파일 불러오기',
@@ -19338,7 +19325,7 @@ $1',
 	'tux-proofread-translated-by-self' => '내가 번역함',
 	'tux-empty-list-all' => '이 메시지 그룹은 비어 있습니다',
 	'tux-empty-list-all-guide' => '번역할 다른 메시지 그룹을 선택하세요',
-	'tux-translate-page-no-such-group' => "'''지정한 그룹이 존재하지 않습니다.''' 다른 메시지 그룹을 선택하세요.",
+	'tux-translate-page-no-such-group' => "'''지정한 그룹이 존재하지 않습니다.''' 다른 메시지 그룹을 선택하세요.", # Fuzzy
 	'tux-empty-list-translated' => '번역된 메시지가 없습니다',
 	'tux-empty-list-translated-guide' => '번역을 도울 수 있습니다',
 	'tux-empty-list-translated-action' => '번역',
@@ -19824,12 +19811,10 @@ $messages['ku-latn'] = array(
 	'translate-page-description-legend' => 'Agahiyên di derbarê komê de',
 	'translate-page-edit' => 'biguherîne',
 	'translate-ext-url' => '<hr />Malper: $1',
-	'translate-edit-jsopen' => 'biguherîne',
 	'translate-edit-title' => 'Biguherîne "$1"',
 	'translate-edit-translation' => 'Werger',
 	'translate-edit-contribute' => 'beşdar bibe',
 	'translate-edit-in-other-languages' => 'Peyam bi zimanên din',
-	'translate-edit-tab-list' => 'Lîsteya peyaman',
 	'translate-magic-submit' => 'Here',
 	'translate-magic-cm-export' => 'Bişîne',
 	'translate-magic-cm-current' => 'Niha',
@@ -20067,7 +20052,8 @@ Optional Message sollen nëmmen iwwersat gi wann Är Sprooch speziell Ufuerderun
 	'translate-edit-definition' => 'Definitioun vum Message',
 	'translate-edit-translation' => 'Iwwersetzung',
 	'translate-edit-contribute' => 'matschaffen',
-	'translate-edit-no-information' => 'Dëse Message huet keng Dokumentatioun. Wann Dir wësst wou oder wéi dëse Message gebraucht gëtt, da kënnt Dir aner Iwwersetzer hëllefen an deem Dir Informatiounen iwwer dëse Message gitt.', # Fuzzy
+	'translate-edit-no-information' => '<em>Dëse Message huet keng Dokumentatioun.
+Wann Dir wësst wou oder wéi dëse Message gebraucht gëtt, da kënnt Dir aner Iwwersetzer hëllefen an deem Dir Informatiounen iwwer dëse Message gitt.</em>',
 	'translate-edit-information' => 'Informatioun iwwer de Message ($1)',
 	'translate-edit-in-other-languages' => 'Message an anere Sproochen',
 	'translate-edit-committed' => 'Aktuell Iwwersetzung an der Software',
@@ -20405,7 +20391,7 @@ Dëst ass ganz nëtzlech fir d'Aufgabe vum Nokucken.",
 	'tux-proofread-translated-by-self' => 'Vun Iech iwwersat',
 	'tux-empty-list-all' => 'Dëse Grupp vu Messagen ass eidel',
 	'tux-empty-list-all-guide' => "Sicht en anere Gruppe vu Messagen eraus fir z'iwwersetzen",
-	'tux-translate-page-no-such-group' => "'''De Grupp deen ugi war gëtt et net.''' Sicht een anere Grupp vu Messagen eraus.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>De Grupp deen ugi war gëtt et net.</strong> Sicht een anere Grupp vu Messagen eraus.',
 	'tux-empty-list-translated' => 'Keng iwwersate Messagen',
 	'tux-empty-list-translated-guide' => 'Dir kënnt beim Iwwersetzen hëllefen',
 	'tux-empty-list-translated-action' => 'Iwwersetzen',
@@ -20517,7 +20503,6 @@ $messages['ln'] = array(
 	'translate-page-navigation-legend' => 'Botamboli',
 	'translate-next' => 'Lonkásá na nsima',
 	'translate-page-edit' => 'kobɔngisa',
-	'translate-edit-jsopen' => 'kobɔngisa',
 );
 
 /** Lao (ລາວ)
@@ -20631,7 +20616,7 @@ $messages['lt'] = array(
 	'translate-page-disabled' => 'Vertimai į šią kalbą šioje grupėje buvo išjungtos.
 Priežastis:
 
-$1',
+$1', # Fuzzy
 	'translate-language-disabled' => 'Vertimai į šią kalbą yra išjungtas.',
 	'translate-page-settings-legend' => 'Nustatymai',
 	'translate-page-group' => 'Grupė',
@@ -20654,12 +20639,11 @@ kaip nenaudojant vietas arba tranliteruodami tikrinius vardus. $1',
 	'translate-ext-url' => '<hr />Interneto svetainė: $1',
 	'translate-optional' => '(nebūtinas)',
 	'translate-ignored' => '(ignoruojamas)',
-	'translate-edit-jsopen' => 'redaguoti',
 	'translate-edit-title' => 'Redaguoti "$1"',
 	'translate-edit-definition' => 'Pranešimo aprašymas',
 	'translate-edit-translation' => 'Vertimas',
 	'translate-edit-contribute' => 'papildyti',
-	'translate-edit-no-information' => "''Šis pranešimas dar neturi dokumentacijos. Jei žinote kur ar kaip šis pranešimas naudojamas, jūs galite padėti kitiems vertėjams pridėdami dokumentacijos į šį pranešimą.''",
+	'translate-edit-no-information' => "''Šis pranešimas dar neturi dokumentacijos. Jei žinote kur ar kaip šis pranešimas naudojamas, jūs galite padėti kitiems vertėjams pridėdami dokumentacijos į šį pranešimą.''", # Fuzzy
 	'translate-edit-information' => 'Informacija apie pranešimą ($1)',
 	'translate-edit-in-other-languages' => 'Pranešimas kitomis kalbomis',
 	'translate-edit-committed' => 'Dabartinis vertimo programinė įranga',
@@ -20668,7 +20652,6 @@ kaip nenaudojant vietas arba tranliteruodami tikrinius vardus. $1',
 	'translate-edit-tmmatch-source' => 'Vertimo šaltinio tekstas: $1',
 	'translate-edit-tmmatch' => '$1% atitinka',
 	'translate-use-suggestion' => 'Pakeisti dabartinį vertimą su šiuo pasiūlymu.',
-	'translate-edit-tab-list' => 'Pranešimų sąrašas',
 	'translate-edit-nopermission' => 'Jums reikia leidimo išversti pranešimus',
 	'translate-edit-askpermission' => 'Prašyti leidimo',
 	'translate-magic-pagename' => 'MediaWiki išplėtimų vertimas',
@@ -20795,7 +20778,6 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
 	'translate-smg-notallowed' => 'Jums neleidžiama atlikti šio veiksmo.',
 	'translate-smg-nochanges' => 'Čia nėra keitimų apdorojimui',
 	'translate-smg-submit' => 'Pateikti pakeitimus apdorojimui',
-	'translate-smg-postponed' => 'Kai kuriuos keitimus apdoroti nepavyko. [[{{FULLPAGENAME}}|Bandykite dar kartą]].',
 	'translate-smg-left' => 'Pranešimo turinys wiki',
 	'translate-smg-right' => 'Priimamus pakeitimai',
 	'translate-manage-import-diff' => 'Pranešimas $1 | Veiksmai: $2',
@@ -20807,6 +20789,7 @@ Pakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.'
 	'translate-manage-action-fuzzy' => 'Importuoti ir naujinti vertimus',
 	'translate-manage-fuzzy-summary' => 'Pranešimo apibrėžimas pasikeitė',
 	'translate-manage-submit' => 'Vykdyti',
+	'translate-manage-import-done' => 'Viskas baigta!', # Fuzzy
 	'importtranslations' => 'Importuoti vertimus',
 	'translate-import-from-local' => 'Vietinio failo įkėlimas:',
 	'translate-import-load' => 'Įkrauti failą',
@@ -21250,7 +21233,6 @@ $messages['lv'] = array(
 	'translate-prev' => 'Iepriekšējā lapa',
 	'translate-page-description-legend' => 'Informācija par grupu',
 	'translate-page-edit' => 'labot',
-	'translate-edit-jsopen' => 'labot',
 	'translate-edit-title' => 'Labot "$1"',
 	'translate-edit-translation' => 'Tulkojums',
 	'translate-edit-information' => 'Informācija par ziņojumu ($1)',
@@ -21258,7 +21240,6 @@ $messages['lv'] = array(
 	'translate-edit-warnings' => 'Brīdinājumi par nepilnīgiem tulkojumiem',
 	'translate-edit-tmmatch-source' => 'Tulkojuma izejas teksts: $1',
 	'translate-edit-tmmatch' => '$1% atbilstība',
-	'translate-edit-tab-list' => 'Ziņojumu saraksts',
 	'translate-edit-nopermission' => 'Jums ir nepieciešama atļauja, lai tulkotu ziņojumus.',
 	'translate-edit-askpermission' => 'Pieprasīt atļauju',
 	'translate-magic-pagename' => 'Paplašinātā MediaWiki tulkošana',
@@ -21610,7 +21591,7 @@ $messages['map-bms'] = array(
 Alesan:
 
 
-"$1"',
+"$1"', # Fuzzy
 	'translate-language-disabled' => 'Terjemahan ming basa kiye wis dinonaktifna.',
 	'translate-page-group' => 'Klompok',
 	'translate-page-limit' => 'Bates',
@@ -21625,13 +21606,12 @@ Alesan:
 	'translate-page-edit' => 'nyunting',
 	'translate-optional' => '(pilihan/ora kudu)',
 	'translate-ignored' => '(dilirwakna)',
-	'translate-edit-jsopen' => 'nyunting',
 	'translate-edit-title' => 'Nyunting "$1"',
 	'translate-edit-definition' => 'Definisi pesen',
 	'translate-edit-translation' => 'Terjemahan',
 	'translate-edit-contribute' => 'aweh kontribusi',
 	'translate-edit-no-information' => '"Pesen kiye ora duwe dokumentasi."
-"Angger Rika weruh nang endi utawa kepriwe pesen kiye digunakna, Rika teyeng nulungi penerjemah liyane mawa nambahna dokumentasi ming pesen kiye."',
+"Angger Rika weruh nang endi utawa kepriwe pesen kiye digunakna, Rika teyeng nulungi penerjemah liyane mawa nambahna dokumentasi ming pesen kiye."', # Fuzzy
 	'translate-edit-information' => 'Informasi bab pesen ($1)',
 	'translate-edit-in-other-languages' => 'Pesen nang basa-basa liyane',
 	'translate-edit-committed' => 'Pertalan sekiya nang piranti alus',
@@ -21639,7 +21619,6 @@ Alesan:
 	'translate-edit-tmmatch-source' => 'Tèks sumber pertalan: $1',
 	'translate-edit-tmmatch' => '$1% cocog',
 	'translate-use-suggestion' => 'Ganti terjemahan sekiye nganggo saran kiye.',
-	'translate-edit-tab-list' => 'Daftar pesen',
 	'translate-edit-nopermission' => 'Rika perlu idin kanggo nerjemahna pesen.',
 	'translate-magic-submit' => 'Jikot',
 	'translate-magic-cm-export' => 'Ekspor',
@@ -21671,7 +21650,6 @@ Alesan:
  * @author Jagwar
  */
 $messages['mg'] = array(
-	'translate-edit-tab-list' => 'Lisitry ny hafatra',
 	'right-translate' => 'Manova ny interface fandikana',
 	'right-translate-manage' => 'Mitantana ny gropy fandikana', # Fuzzy
 	'right-translate-import' => 'Mampiditra ny fandikana na offline aza',
@@ -21694,7 +21672,6 @@ $messages['mhr'] = array(
  */
 $messages['min'] = array(
 	'translate-edit-tmsugs' => 'Saran dari memori tajamahan',
-	'translate-edit-tab-list' => 'Daftar pasan',
 	'translate-statsf-start' => 'Tanggal mulai:',
 	'translate-statsf-scale' => 'Granularitas:',
 	'translate-statsf-scale-months' => 'Bulan',
@@ -23303,7 +23280,7 @@ $messages['myv'] = array(
 	'translate-ignored' => '(менстязь)',
 	'translate-edit-definition' => 'Пачтямнэнть чарькодевтемазо',
 	'translate-edit-contribute' => 'эсеть путовкс путомс',
-	'translate-edit-no-information' => "''Те пачтямнэсь апак чарькодевте. Тевс нолдамодонзо содат, косо эли кода, лездак лия ютавтыцятненень. Поладт те пачтямнэнтень превть-арсемат.''",
+	'translate-edit-no-information' => "''Те пачтямнэсь апак чарькодевте. Тевс нолдамодонзо содат, косо эли кода, лездак лия ютавтыцятненень. Поладт те пачтямнэнтень превть-арсемат.''", # Fuzzy
 	'translate-edit-information' => 'Мезе содамс "$1" пачтямнэденть',
 	'translate-edit-in-other-languages' => 'Пачтямнесь лия кельсэ',
 	'translate-magic-pagename' => 'МедиаВикинь келейгавтонь ютавтома',
@@ -23809,13 +23786,11 @@ $messages['nds'] = array(
 	'translate-page-edit' => 'ännern',
 	'translate-ext-url' => '<hr />Websied: $1',
 	'translate-optional' => '(optschoonal)',
-	'translate-edit-jsopen' => 'ännern',
 	'translate-edit-title' => 'Ännern "$1"',
 	'translate-edit-translation' => 'Översetten',
 	'translate-edit-information' => 'Informatschoon to Nochricht ($1)',
 	'translate-edit-in-other-languages' => 'Nochricht in annere Spraken',
 	'translate-edit-tmmatch-source' => 'Översettenborntext: $1',
-	'translate-edit-tab-list' => 'Nochrichtenlist',
 	'translate-magic-cm-original' => 'Original',
 	'translate-magic-cm-comment' => 'Kommentar:',
 	'translate-magic-cm-save' => 'Spiekern',
@@ -24015,8 +23990,8 @@ Optionele berichten hoeven alleen vertaald te worden als uw taal bijzondere eige
 	'translate-edit-definition' => 'Berichtdefinitie',
 	'translate-edit-translation' => 'Vertaling',
 	'translate-edit-contribute' => 'bijdragen',
-	'translate-edit-no-information' => "''Dit bericht heeft geen documentatie.''
-''Als u weet waar dit bericht wordt gebruikt, dan kunt u andere gebruikers helpen door documentatie voor dit bericht toe te voegen.''", # Fuzzy
+	'translate-edit-no-information' => '<em>Dit bericht heeft geen documentatie.
+Als u weet waar dit bericht wordt gebruikt, dan kunt u andere gebruikers helpen door documentatie voor dit bericht toe te voegen.</em>',
 	'translate-edit-information' => 'Informatie over bericht ($1)',
 	'translate-edit-in-other-languages' => 'Bericht in andere talen',
 	'translate-edit-committed' => 'Huidig bericht in software',
@@ -24065,7 +24040,7 @@ Wijzigingen worden niet bewaard totdat u op "Pagina opslaan" hebt geklikt.',
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-links' => 'De volgende {{PLURAL:$2|koppeling is|koppelingen zijn}} problematisch:
 <strong><nowiki>$1</nowiki></strong>',
-	'translate-checks-links-missing' => 'De volgende {{PLURAL:$2|koppeling mist|$2 koppelingen missen}}:
+	'translate-checks-links-missing' => 'De volgende {{PLURAL:$2|koppeling ontbreekt|$2 koppelingen ontbreken}}:
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-xhtml' => 'Vervang de volgende {{PLURAL:$2|tag|tags}} door de juiste:
 <strong><nowiki>$1</nowiki></strong>',
@@ -24211,8 +24186,8 @@ Controleer de wijziging.',
 	'translate-manage-intro-other' => 'Hieronder wordt een lijst weergegeven van wijzigingen in de vertalingen voor de taal $1.
 Controleer de wijzigingen en kies een uit te voeren handeling voor iedere vertaling.
 Als u wijzigingen negeert, worden deze bij de volgende export overschreven.',
-	'translate-manage-import-ok' => 'Nieuwe versie van de pagina $1 geïmporteerd.', # Fuzzy
-	'translate-manage-import-done' => 'Klaar!', # Fuzzy
+	'translate-manage-import-ok' => 'Geïmporteerd: $1',
+	'translate-manage-import-done' => 'Import afgerond!',
 	'importtranslations' => 'Vertalingen importeren',
 	'translate-import-from-local' => 'Lokaal bestand uploaden:',
 	'translate-import-load' => 'Bestand laden',
@@ -24358,7 +24333,7 @@ Dit is vooral nuttig voor de controletaken.',
 	'tux-proofread-translated-by-self' => 'Vertaald door u',
 	'tux-empty-list-all' => 'Deze berichtengroep is leeg',
 	'tux-empty-list-all-guide' => 'Selecteer een andere berichtengroep om te vertalen',
-	'tux-translate-page-no-such-group' => "'''De opgegeven groep bestaat niet.''' Selecteer een andere berichtengroep.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>De opgegeven groep bestaat niet.<strong> Selecteer een andere berichtengroep.',
 	'tux-empty-list-translated' => 'Geen vertaalde berichten',
 	'tux-empty-list-translated-guide' => 'U kunt helpen met vertalen',
 	'tux-empty-list-translated-action' => 'Vertalen',
@@ -25584,6 +25559,7 @@ $messages['pdc'] = array(
 	'supportedlanguages-recenttranslations' => 'Letscht Iwwersetzinge',
 	'translate-save' => 'Beilege ($1)',
 	'translate-jssti-add' => 'Zu de Lischt dezu duh',
+	'translate-manage-import-done' => 'Alles geduh!', # Fuzzy
 	'translate-import-load' => 'Feil ufflaade',
 	'translate-js-save' => 'Beilege',
 	'translate-gs-speakers' => 'Schwetzer',
@@ -27973,7 +27949,7 @@ $messages['rm'] = array(
 	'translate-edit-definition' => 'Definiziun dal messadi',
 	'translate-edit-contribute' => 'contribuir',
 	'translate-edit-no-information' => "''Tar quai messadi na datti nagina documentaziun.
-Sche vus savais nua e co che quai messadi vegn duvrà, pudais vus gidar auters translaturs cun agiuntar ina documentaziun tar quai messadi.''",
+Sche vus savais nua e co che quai messadi vegn duvrà, pudais vus gidar auters translaturs cun agiuntar ina documentaziun tar quai messadi.''", # Fuzzy
 	'translate-edit-information' => 'Infurmaziuns davart il messadi "$2" ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'Messadis "$1" en autras linguas', # Fuzzy
 	'translate-edit-committed' => 'Translaziun actuala da la software',
@@ -29160,7 +29136,7 @@ $1',
 	'tux-proofread-translated-by-self' => 'Переведено вами',
 	'tux-empty-list-all' => 'Эта группа сообщений пуста',
 	'tux-empty-list-all-guide' => 'Выберите для перевода другую группу сообщений',
-	'tux-translate-page-no-such-group' => "'''Указанная группа не существует.''' Выберите другую группу сообщений.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>Указанная группа не существует.</strong> Выберите другую группу сообщений.',
 	'tux-empty-list-translated' => 'Нет переведённых сообщений',
 	'tux-empty-list-translated-guide' => 'Вы можете помочь перевести',
 	'tux-empty-list-translated-action' => 'Перевести',
@@ -29430,7 +29406,6 @@ $messages['sa'] = array(
 	'translate-page-group' => 'वर्ग',
 	'translate-page-language' => 'भाषा',
 	'translate-page-edit' => 'सम्पाद्यताम्',
-	'translate-edit-jsopen' => 'सम्पाद्यताम्',
 	'translate-edit-title' => 'सम्पाद्यताम् "$1"',
 	'translate-edit-translation' => 'अनुवादम्',
 	'translate-magic-cm-original' => 'मूल',
@@ -29687,7 +29662,6 @@ $messages['scn'] = array(
 	'translate-edit-contribute' => 'cuntribbuisci',
 	'translate-edit-information' => 'Nfurmazzioni supra lu missaggiu ($1)',
 	'translate-edit-in-other-languages' => "Missaggiu 'n àutri lingui",
-	'translate-edit-tab-list' => 'Elencu dî missaggi',
 	'translate-magic-cm-save' => 'Sarva',
 	'translate-statsf-scale-months' => 'Misi',
 	'translate-statsf-scale-weeks' => 'Simani',
@@ -30730,7 +30704,6 @@ $messages['so'] = array(
 	'translate-page-showing' => 'Soo bandhigista ka bilaabata $1 ilaa $2 of $3.',
 	'translate-page-showing-none' => 'Wax qoraal ah lama soo bandhigin.',
 	'translate-page-description-legend' => 'Macluumaad kusaabsan qaybta',
-	'translate-edit-tab-list' => 'Liiska fariimaha',
 	'translate-edit-nopermission' => 'Waxaad ubaahantahay ruqsad si aad u turjunto fariimaha.',
 	'translate-magic-submit' => 'Qaado',
 	'translate-tag-page-desc' => 'Turjumidda ee bogga wiki [[$2|$1]].',
@@ -32252,11 +32225,9 @@ $messages['sw'] = array(
 	'translate-ext-url' => '<hr />Tovuti: $1',
 	'translate-optional' => '(ya hiari)',
 	'translate-ignored' => '(imepuuzwa)',
-	'translate-edit-jsopen' => 'hariri',
 	'translate-edit-title' => 'Hariri "$1"',
 	'translate-edit-translation' => 'Tafsiri',
 	'translate-edit-contribute' => 'changia',
-	'translate-pref-jsedit' => 'Mhariri tafsiri uliozidishwa (JavaScript)', # Fuzzy
 	'right-translate-messagereview' => 'Pitia hariri',
 	'translate-rc-translation-filter-no' => 'Usifanye kitu',
 	'translate-rc-translation-filter-only' => 'Onyesha hariri pekee yake',
@@ -32917,7 +32888,7 @@ $messages['tg-cyrl'] = array(
 	'translate-edit-definition' => 'Таърифи пайғом',
 	'translate-edit-contribute' => 'ҳиссагузорӣ',
 	'translate-edit-no-information' => "''Ин пайғом дорои тавзеҳот нест.
-Агар шумо медонед ин пағом чигуна ё дар куҷо истифода мешавад, шумо метавонед бо изофа кардани тавзеҳот ба ин пайғом ба дигар тарҷумакунандагон кӯмак кунед.''",
+Агар шумо медонед ин пағом чигуна ё дар куҷо истифода мешавад, шумо метавонед бо изофа кардани тавзеҳот ба ин пайғом ба дигар тарҷумакунандагон кӯмак кунед.''", # Fuzzy
 	'translate-edit-information' => 'Иттилоот дар мавриди ин пайғом ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'Ҳамин пайғом дар дигар забонҳо', # Fuzzy
 	'translate-edit-committed' => 'Тарҷумаи феълӣ дар нармафзор',
@@ -32963,7 +32934,7 @@ $messages['tg-latn'] = array(
 	'translate-edit-definition' => "Ta'rifi pajƣom",
 	'translate-edit-contribute' => 'hissaguzorī',
 	'translate-edit-no-information' => "''In pajƣom doroi tavzehot nest.
-Agar şumo medoned in paƣom ciguna jo dar kuço istifoda meşavad, şumo metavoned bo izofa kardani tavzehot ba in pajƣom ba digar tarçumakunandagon kūmak kuned.''",
+Agar şumo medoned in paƣom ciguna jo dar kuço istifoda meşavad, şumo metavoned bo izofa kardani tavzehot ba in pajƣom ba digar tarçumakunandagon kūmak kuned.''", # Fuzzy
 	'translate-edit-committed' => "Tarçumai fe'lī dar narmafzor",
 	'translate-edit-warnings' => 'Huşdor dar mavridi tarçumahoi nokomil',
 	'translate-magic-pagename' => 'Tarçumai gustarişjoftai MediaViki',
@@ -33170,7 +33141,7 @@ $messages['tk'] = array(
 	'translate-edit-definition' => 'Habarlaşygyň kesgitlemesi',
 	'translate-edit-contribute' => 'goşant goş',
 	'translate-edit-no-information' => "''Bu habarlaşygyň düşündirişi ýok.
-Eger-de bu habarlaşygyň nirede we nähili ulanylýandygyny bilýän bolsaňyz, onda bu habarlaşyga düşündiriş ýazmak arkaly beýleki terjimeçilere kömek edip bilersiňiz.''",
+Eger-de bu habarlaşygyň nirede we nähili ulanylýandygyny bilýän bolsaňyz, onda bu habarlaşyga düşündiriş ýazmak arkaly beýleki terjimeçilere kömek edip bilersiňiz.''", # Fuzzy
 	'translate-edit-information' => '"$2" habarlaşygy hakda maglumat ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'Beýleki dillerde "$1" habarlaşygy', # Fuzzy
 	'translate-magic-cm-save' => 'Ýazdyr',
@@ -34799,11 +34770,9 @@ $messages['ur'] = array(
 	'translate-prev' => 'سابق صفحہ',
 	'translate-page-description-hasoptional-open' => 'کچھ اختیاری پیغامات دکھائیں ۔',
 	'translate-page-edit' => 'ترمیم کریں',
-	'translate-edit-jsopen' => 'ترمیم کریں',
 	'translate-edit-translation' => 'ترجمہ',
 	'translate-edit-contribute' => 'میں شراکت',
 	'translate-edit-in-other-languages' => 'دیگر زبانوں میں پیغام',
-	'translate-edit-tab-list' => 'پیغام کی فہرست',
 	'translate-magic-cm-current' => 'موجودہ',
 	'translate-magic-cm-comment' => 'تبصرہ:',
 	'translate-magic-cm-save' => 'محفوظ کریں',
@@ -35157,7 +35126,7 @@ $messages['vec'] = array(
 	'translate-edit-definition' => 'Definission del messagio',
 	'translate-edit-contribute' => 'contribuìssi',
 	'translate-edit-no-information' => "''Sto messagio no'l gà documentassion.
-Se te sè dove o come sto messagio el vien doparà, te podi jutar altri tradutori zontando documentassion a sto messagio.''",
+Se te sè dove o come sto messagio el vien doparà, te podi jutar altri tradutori zontando documentassion a sto messagio.''", # Fuzzy
 	'translate-edit-information' => 'Informassion sul messagio "$2" ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => 'El messagio "$1" in altre lengue', # Fuzzy
 	'translate-edit-committed' => 'Tradussion atuale del software',
@@ -35252,7 +35221,6 @@ $messages['vep'] = array(
 	'translate-page-edit' => 'redaktiruida',
 	'translate-optional' => '(opcionaline)',
 	'translate-ignored' => '(ignoriruidud)',
-	'translate-edit-jsopen' => 'redaktiruida',
 	'translate-edit-title' => 'Redaktiruida "$1"',
 	'translate-edit-definition' => 'Tedotusen formuliruind',
 	'translate-edit-translation' => 'Kändmine',
@@ -35260,7 +35228,6 @@ $messages['vep'] = array(
 	'translate-edit-committed' => 'Nügüdläine känduz programmas',
 	'translate-edit-warnings' => 'Varutused täutmatomiš kändusiš',
 	'translate-edit-tmmatch' => 'Sättund om $1%',
-	'translate-edit-tab-list' => 'Tedotusiden nimikirjutez',
 	'translate-edit-askpermission' => 'Pakita laskendas',
 	'translate-magic-module' => "Modul':",
 	'translate-magic-submit' => 'Ozutada',
@@ -35334,6 +35301,7 @@ $messages['vep'] = array(
 	'translate-manage-action-import' => 'Import',
 	'translate-manage-action-ignore' => 'Ignoriruida',
 	'translate-manage-submit' => 'Tehta',
+	'translate-manage-import-done' => 'Kaik om tehtud!', # Fuzzy
 	'translate-import-from-local' => 'Jügutoitta lokaline fail:',
 	'translate-import-load' => 'Jügutoitta fail',
 	'translate-js-history' => 'Kändmižen istorii',
@@ -36597,7 +36565,7 @@ $messages['yue'] = array(
 	'translate-edit-definition' => '信息定義',
 	'translate-edit-contribute' => '貢獻',
 	'translate-edit-no-information' => "''呢句信息無註解。
-如果你知道呢句信息響邊同埋點用，你可以加註解去呢個信息去幫其他嘅翻譯者。''",
+如果你知道呢句信息響邊同埋點用，你可以加註解去呢個信息去幫其他嘅翻譯者。''", # Fuzzy
 	'translate-edit-information' => '呢句信息嘅資料 ($1)', # Fuzzy
 	'translate-edit-in-other-languages' => '其它語言嘅信息', # Fuzzy
 	'translate-edit-committed' => '而家響軟件嘅翻譯',

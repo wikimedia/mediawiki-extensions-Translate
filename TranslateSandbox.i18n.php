@@ -120,7 +120,7 @@ $messages['af'] = array(
 	'tsb-reminder-title-generic' => "Voltooi u bekendstelling om 'n geverifieerde vertaler te word",
 	'tsb-reminder-content-generic' => "Hallo $1,
 
-Dankie dat u op {{SITENAME}} geregistreer het. As u u toesvertalings voltooi, sal die administrateurs spoedig volle regte aan u toeken.
+Dankie dat u op {{SITENAME}} geregistreer het. As u u toesvertalings voltooi, sal die administrateurs spoedig volle regte aan u toeken. 
 
 Gaan asseblief na $2 om 'n paar vertalings te maak.",
 );
@@ -343,6 +343,29 @@ $messages['he'] = array(
 
 נשאר רק לבוא אל $2 ולעשות עוד כמה
 תרגומים.',
+	'tsb-request-count' => '{{PLURAL:$1|בקשה אחת|$1 בקשות}}',
+	'tsb-all-languages-button-label' => 'כל השפות',
+	'tsb-search-requests' => 'חיפוש בקשות',
+	'tsb-accept-button-label' => 'לקבל',
+	'tsb-reject-button-label' => 'לדחות',
+	'tsb-selected-count' => '{{PLURAL:$1|נבחר משתמש אחד|נבחרו $1 משתמשים}}',
+	'tsb-accept-all-button-label' => 'לקבל את כולם',
+	'tsb-reject-all-button-label' => 'לדחות את כולם',
+	'tsb-reminder-link-text' => 'לשלוח תזכורת בדוא"ל',
+	'tsb-translations-source' => 'מחרוזת מקור',
+	'tsb-translations-user' => 'תרגומי המשתמש',
+	'tsb-translations-current' => 'תרגומים קיימים',
+	'translationstash' => 'ברוך בואך',
+	'translate-translationstash-welcome' => '{{GENDER:$1|ברוך הבא $1, אתה מתרגם חדש|ברוכה הבאה $1, את מתרגמת חדשה}}',
+	'translate-translationstash-welcome-note' => 'עכשיו נכיר לך את כלי התרגום. אנו מבקשים ממך לתרגם מספר מחרוזות כדי לקבל הרשאות תרגום מלאות ולהשתתף במיזמים שמעניינים אותך.',
+	'translate-translationstash-initialtranslation' => 'התרגום ההתחלתי שלך',
+	'translate-translationstash-translations' => '{{PLURAL:$1|תרגום אחד הושלם|$1 תרגומים הושלמו}}',
+	'translate-translationstash-skip-button-label' => 'לנסות משהו אחר',
+	'tsb-limit-reached-title' => 'תודה על התרגומים שלך',
+	'tsb-limit-reached-body' => 'הגעת למגבלת התרגומים למתרגמים חדשים.
+הסגל שלנו יבדוק וישדרג את החשבון שלך בקרוב.
+אחרי־כן תהיה לך אפשרות לתרגם בלי הגבלה.',
+	'tsb-no-requests-from-new-users' => 'אין בקשות ממשתמשים חדשים',
 );
 
 /** Italian (italiano)
@@ -362,6 +385,7 @@ Vieni su $2 e fai alcune altre traduzioni.",
 	'tsb-search-requests' => 'Cerca richiesta',
 	'tsb-accept-button-label' => 'Accetta',
 	'tsb-reject-button-label' => 'Rifiuta',
+	'tsb-selected-count' => '{{PLURAL:$1|$1 utente selezionato|$1 utenti selezionati}}',
 	'tsb-accept-all-button-label' => 'Accetta tutto',
 	'tsb-reject-all-button-label' => 'Rifiuta tutto',
 	'tsb-reminder-link-text' => 'Invia email di promemoria',
@@ -378,6 +402,7 @@ Vieni su $2 e fai alcune altre traduzioni.",
 	'tsb-limit-reached-body' => 'Hai raggiunto il limite di traduzioni per i nuovi traduttori.
 Il nostro team verificherà ed aggiornerà presto la tua utenza.
 Successivamente sarai in grado di tradurre senza limiti.',
+	'tsb-no-requests-from-new-users' => 'Nessuna richiesta da nuovi utenti',
 );
 
 /** Japanese (日本語)

@@ -208,7 +208,7 @@ $messages['ce'] = array(
 	'tux-sst-prev' => 'Хьалхо хиларг',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Littledogboy
  * @author Mormegil
  */
@@ -229,7 +229,7 @@ $messages['cs'] = array(
 	'tux-sst-prev' => 'Předchozí výsledky',
 );
 
-/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+/** Church Slavic (словѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
  * @author ОйЛ
  */
 $messages['cu'] = array(

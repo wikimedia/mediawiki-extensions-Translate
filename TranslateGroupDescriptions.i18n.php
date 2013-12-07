@@ -439,7 +439,7 @@ $messages['ce'] = array(
 	'translate-group-desc-translatablepages' => 'Гочян массо агӀонаш',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Mormegil
  * @author Reaperman
  */

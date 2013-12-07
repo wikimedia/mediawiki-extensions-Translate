@@ -163,9 +163,12 @@ The data collected via the pair of selectors will later be used in the <code>{<!
 	'translate-fs-permissions-planguage' => '{{Identical|Primary language}}',
 	'translate-fs-permissions-pending' => 'Parameters:
 * $1 - page title of the thread',
-	'translate-fs-target-text' => 'Parameters:
+	'translate-fs-target-text' => 'The title for this message is: "{{int:Translate-fs-pagetitle|{{int:Translate-fs-target-title}}}}"
+
+"Translate this project" should be consistent with {{msg-mw|Bw-portal-desc}}.
+
+Parameters:
 * $1 - language code (e.g. Fr)
-The title for this message is: "{{int:Translate-fs-pagetitle|{{int:Translate-fs-target-title}}}}"
 
 See also:
 * {{msg-mw|Translate-fs-pagetitle}}
@@ -242,7 +245,7 @@ $messages['ast'] = array(
 	'translate-fs-email-title' => 'Confirma la to direición de corréu',
 	'translate-fs-intro' => "Bienveníu al asistente pa dar los primeros pasos en {{SITENAME}}.
 Vamos guiate, pasu ente pasu, pel procesu de convertite nun traductor.
-Cuando acabes, podrás traducir los ''mensaxes de la interfaz'' de tolos proyeutos sofitaos en {{SITENAME}}.",
+Cuando acabes, podrás traducir los ''mensaxes de la interfaz'' de tolos proyeutos sofitaos en {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Escueyi una llingua',
 	'translate-fs-settings-planguage' => 'Llingua principal:',
 	'translate-fs-settings-planguage-desc' => 'A llingua principal ye tanto la llingua de la interfaz de la wiki
@@ -328,7 +331,7 @@ $messages['azb'] = array(
 	'translate-fs-email-title' => 'ایمیل آدرسینی دوغرولا',
 	'translate-fs-intro' => "{{SITENAME}} ایلک آددیملار سحربازینا خوش گلمیسینیز.
 بوردا آددیم آددیم  بیر ترجومه‌چی اولماغا یاردیم اولاجاقسینیز.
-سونوندا سیز {{SITENAME}}-ده دستک‌لنن بوتون پروژه‌لرین ''آرا-اوز مئساژلارینی'' چئویره بیله‌جکسینیز.",
+سونوندا سیز {{SITENAME}}-ده دستک‌لنن بوتون پروژه‌لرین ''آرا-اوز مئساژلارینی'' چئویره بیله‌جکسینیز.", # Fuzzy
 	'translate-fs-selectlanguage' => 'بیر دیل سئچین',
 	'translate-fs-settings-planguage' => 'اصلی دیل:',
 	'translate-fs-settings-planguage-desc' => 'اصلی دیل بو ویکی‌ده سیزین آرا-اوز دیلینیز
@@ -391,7 +394,7 @@ $messages['ba'] = array(
 	'translate-fs-email-title' => 'Электрон почта адресығыҙҙы раҫлағыҙ',
 	'translate-fs-intro' => '{{SITENAME}} башланғыс өйрәнеү программаһына рәхим итегеҙ.
 Һеҙ тәржемәселәр өйрәнеү программаһы буйынса аҙымлап үтерһегеҙ.
-Әҙерлек үтеү менән, һеҙ {{SITENAME}} проектында мөмкин булған бөтә интерфейс яҙмаларын тәржемә итә аласаҡһығыҙ.',
+Әҙерлек үтеү менән, һеҙ {{SITENAME}} проектында мөмкин булған бөтә интерфейс яҙмаларын тәржемә итә аласаҡһығыҙ.', # Fuzzy
 	'translate-fs-userpage-submit' => 'Минең ҡатнашыусы битен булдырырға', # Fuzzy
 	'translate-fs-userpage-done' => 'Бик яҡшы! Хәҙер һеҙҙең ҡатнашыусы битегеҙ бар.',
 	'translate-fs-target-text' => "Ҡотлайбыҙ!
@@ -443,7 +446,7 @@ $messages['be-tarask'] = array(
 	'translate-fs-email-title' => 'Пацьвердзіць Ваш адрас электроннай пошты',
 	'translate-fs-intro' => "Запрашаем у майстар пачатковага навучаньня {{GRAMMAR:родны|{{SITENAME}}}}.
 Вас правядуць праз працэс станаўленьня перакладчыкам крок за крокам.
-Пасьля гэтага Вы зможаце перакладаць ''паведамленьні інтэрфэйсу'' ўсіх праектаў, якія падтрымліваюцца ў {{GRAMMAR:месны|{{SITENAME}}}}.",
+Пасьля гэтага Вы зможаце перакладаць ''паведамленьні інтэрфэйсу'' ўсіх праектаў, якія падтрымліваюцца ў {{GRAMMAR:месны|{{SITENAME}}}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Выберыце мову',
 	'translate-fs-settings-planguage' => 'Асноўная мова:',
 	'translate-fs-settings-planguage-desc' => 'Асноўная мова выступае ў ролі як мовы інтэрфэйсу, гэтак і перадвызначанай мовы перакладу.',
@@ -556,7 +559,7 @@ $messages['br'] = array(
 	'translate-fs-email-title' => "Kadarnait ho chomlec'h postel",
 	'translate-fs-intro' => 'Degemer mat deoc\'h er skoazeller a ambrougo ho pazennoù kentañ war {{SITENAME}}.
 Heñchet e viot kammed-ha-kammed evit dont da vezañ un troer.
-En dibennn e c\'hallot treiñ "kemennadennoù etrefas" an holl raktresoù meret gant {{SITENAME}}.',
+En dibennn e c\'hallot treiñ "kemennadennoù etrefas" an holl raktresoù meret gant {{SITENAME}}.', # Fuzzy
 	'translate-fs-selectlanguage' => 'Dibab ur yezh',
 	'translate-fs-settings-planguage' => 'Yezh pennañ :',
 	'translate-fs-settings-planguage-desc' => 'Talvezout a ra ar yezh pennañ da yezh an etrefas evit ar wiki-mañ ha da yezh labour evit an troidigezhioù.',
@@ -619,7 +622,7 @@ $messages['bs'] = array(
 	'translate-fs-email-title' => 'Potvrdi svoju e-mail adresu',
 	'translate-fs-intro' => "Dobro došli u čarobnjak za prve korake na {{SITENAME}}.
 Ovaj čarobnjak će vas postepeno voditi kroz proces dobijanja prava prevodioca.
-Na kraju ćete moći prevoditi ''poruke interfejsa'' svih podržanih projekata na {{SITENAME}}.",
+Na kraju ćete moći prevoditi ''poruke interfejsa'' svih podržanih projekata na {{SITENAME}}.", # Fuzzy
 	'translate-fs-userpage-submit' => 'Napravi moju korisničku stranicu', # Fuzzy
 	'translate-fs-userpage-done' => 'Odlično urađeno! Sada imate korisničku stranicu.',
 	'translate-fs-target-text' => 'Čestitamo!
@@ -693,7 +696,7 @@ $messages['ckb'] = array(
 	'translate-fs-permissions-submit' => 'ناردنی داواکاری',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Mormegil
  */
 $messages['cs'] = array(
@@ -710,7 +713,7 @@ $messages['cs'] = array(
 	'translate-fs-email-title' => 'Ověření e-mailové adresy',
 	'translate-fs-intro' => "Vítejte v průvodci prvními kroky po {{grammar:7sg|{{SITENAME}}}}.
 Provedeme vás všemi kroky, které jsou třeba, abyste se {{gender:|mohl stát překladatelem|mohla stát překladatelkou|mohli stát překladateli}}.
-Na konci budete moci překládat ''zprávy uživatelského rozhraní'' všech projektů podporovaných na {{grammar:6sg|{{SITENAME}}}}.",
+Na konci budete moci překládat ''zprávy uživatelského rozhraní'' všech projektů podporovaných na {{grammar:6sg|{{SITENAME}}}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Vyberte jazyk',
 	'translate-fs-settings-planguage' => 'Primární jazyk:',
 	'translate-fs-settings-planguage-desc' => 'Primární jazyk slouží na této wiki i jako jazyk pro vaše rozhraní
@@ -796,7 +799,7 @@ $messages['da'] = array(
 	'translate-fs-email-title' => 'Bekræft din e-mailadresse',
 	'translate-fs-intro' => "Velkommen til {{SITENAME}} kom godt i gang guide.
 Du vil blive guidet igennem processen med til at blive en oversætter trin for trin.
-I sidste ende vil du være i stand til at oversætte ''brugerflade beskeder'' hos alle støttede projekter på {{SITENAME}}.",
+I sidste ende vil du være i stand til at oversætte ''brugerflade beskeder'' hos alle støttede projekter på {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Vælg et sprog',
 	'translate-fs-settings-planguage' => 'Primært sprog:',
 	'translate-fs-settings-planguage-desc' => 'Det primære sprog er både sproget for din brugerflade på denne wiki og standardsproget for dine oversættelser.',
@@ -950,7 +953,7 @@ $messages['de-formal'] = array(
 	'translate-fs-email-title' => 'Ihre E-Mail-Adresse bestätigen',
 	'translate-fs-intro' => "Willkommen beim translatewiki.net-Startassistenten.
 Ihnen wird hier gezeigt, wie Sie Schritt für Schritt ein Übersetzer bei translatewiki.net werden.
-Am Ende werden Sie alle ''Nachrichten der Benutzeroberfläche'' der von translatewiki.net unterstützten Projekte übersetzen können.",
+Am Ende werden Sie alle ''Nachrichten der Benutzeroberfläche'' der von translatewiki.net unterstützten Projekte übersetzen können.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Wählen Sie eine Sprache',
 	'translate-fs-settings-planguage-desc' => 'Die Hauptsprache ist zum einen Ihre Sprache für die Benutzeroberfläche auf diesem Wiki
 und zum anderen die Zielsprache für Ihre Übersetzungen.',
@@ -988,11 +991,13 @@ Wenn Sie keinen Newsletter erhalten möchten, können Sie sich im Tab „{{int:p
 
 /** Zazaki (Zazaki)
  * @author Erdemaslancan
+ * @author Marmase
  * @author Mirzali
  */
 $messages['diq'] = array(
 	'firststeps' => 'Gamê sıfteyêni',
 	'translate-fs-pagetitle-done' => '- tamam!',
+	'translate-fs-pagetitle-pending' => '-paweno',
 	'translate-fs-signup-title' => 'Qeyd be',
 	'translate-fs-settings-title' => 'Tercihanê cı saz ke',
 	'translate-fs-userpage-title' => 'Pela karberiya cı vıraze',
@@ -1001,8 +1006,10 @@ $messages['diq'] = array(
 	'translate-fs-settings-planguage' => 'Zıwanê dıyın:',
 	'translate-fs-settings-slanguage' => 'Asistan zıwan $1:',
 	'translate-fs-settings-submit' => 'Terciha qeyd ke',
-	'translate-fs-userpage-submit' => 'Pela karberi vırazê', # Fuzzy
+	'translate-fs-userpage-submit' => 'Pera karberi vıraze',
+	'translate-fs-userpage-done' => 'Zaf weşo, newka pera şımaya karberi esta.',
 	'translate-fs-permissions-planguage' => 'Zıwana sıfteyên:',
+	'translate-fs-permissions-submit' => 'Wastış bırşe',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -1112,7 +1119,7 @@ $messages['eo'] = array(
 	'translate-fs-email-title' => 'Konfirmu vian retpoŝtan adreson',
 	'translate-fs-intro' => "Bonvenon en la ekuz-asistilo de {{SITENAME}}.
 Vi estos gvidata tra la proceso por fariĝi tradukisto pason post paŝo.
-Fine vi kapablos traduki ''interfacajn mesaĝojn'' de ĉiuj eltenitaj projektoj je {{SITENAME}}.",
+Fine vi kapablos traduki ''interfacajn mesaĝojn'' de ĉiuj eltenitaj projektoj je {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Elektu lingvon',
 	'translate-fs-settings-planguage' => 'Ĉefa lingvo:',
 	'translate-fs-settings-planguage-desc' => 'Tiu ĉi ĉefa lingvo samtempe uziĝas kiel la lingvo de via uzantointerfaco en tiu ĉi vikio kaj kiel defaŭlta cellingvo de viaj tradukoj.',
@@ -1181,7 +1188,7 @@ $messages['es'] = array(
 	'translate-fs-email-title' => 'Confirmar tu dirección de correo electrónico',
 	'translate-fs-intro' => "Bienvenido al asistente de los primeros pasos en {{SITENAME}}.
 Serás guíado a través del proceso de convertirte en un traductor pasa a paso.
-Al final serás capaz de traducir los ''mensajes de interfaz'' de todos los proyectos soportados en {{SITENAME}}",
+Al final serás capaz de traducir los ''mensajes de interfaz'' de todos los proyectos soportados en {{SITENAME}}", # Fuzzy
 	'translate-fs-selectlanguage' => 'Elija un idioma',
 	'translate-fs-settings-planguage' => 'Idioma principal:',
 	'translate-fs-settings-planguage-desc' => 'El idioma principal es tanto el idioma de la interfaz en este wiki
@@ -1246,7 +1253,7 @@ $messages['et'] = array(
 	'translate-fs-email-title' => 'E-posti aadressi kinnitamine',
 	'translate-fs-intro' => "Tere tulemast {{GRAMMAR:genitive|{{SITENAME}}}} alustusviisardisse.
 Sul aidatakse sammhaaval tõlkijaks saada.
-Lõpuks saad tõlkida kõikide {{GRAMMAR:genitive|{{SITENAME}}}} toetatud projektide ''liidese sõnumeid''.",
+Lõpuks saad tõlkida kõikide {{GRAMMAR:genitive|{{SITENAME}}}} toetatud projektide ''liidese sõnumeid''.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Vali keel',
 	'translate-fs-settings-planguage' => 'Põhikeel:',
 	'translate-fs-settings-planguage-desc' => 'Põhikeel kattub sinu siin vikis kasutatava liidesekeelega
@@ -1311,7 +1318,7 @@ $messages['fa'] = array(
 	'translate-fs-email-title' => 'نشانی پست الکترونیکی خود را تأیید کنید',
 	'translate-fs-intro' => "به جادوگر گام‌های نخست {{SITENAME}} خوش آمدید.
 شما گام به گام در راه مترجم شدن راهنمایی خواهید شد.
-در انتها شما قادر خواهید بود ''پیغام‌های رابط کاربری'' تمام پروژه‌های پشتیبانی شده در {{SITENAME}} را ترجمه کنید.",
+در انتها شما قادر خواهید بود ''پیغام‌های رابط کاربری'' تمام پروژه‌های پشتیبانی شده در {{SITENAME}} را ترجمه کنید.", # Fuzzy
 	'translate-fs-selectlanguage' => 'یک زبان انتخاب کنید',
 	'translate-fs-settings-planguage' => 'زبان اصلی:',
 	'translate-fs-settings-planguage-desc' => 'زبان اصلی به عنوان زبان رابط کاربری این ویکی
@@ -1379,7 +1386,7 @@ $messages['fi'] = array(
 	'translate-fs-email-title' => 'Sähköpostiosoitteen vahvistus',
 	'translate-fs-intro' => "Tervetuloa {{GRAMMAR:genitive|{{SITENAME}}}} ohjattuihin ensiaskeleisiin.
 Seuraamalla sivun ohjeita pääset kääntäjäksi alta aikayksikön.
-Suoritettuasi kaikki askeleet, voit kääntää kaikkien {{GRAMMAR:inessive|{{SITENAME}}}} olevien projektien ''käyttöliittymäviestejä''.",
+Suoritettuasi kaikki askeleet, voit kääntää kaikkien {{GRAMMAR:inessive|{{SITENAME}}}} olevien projektien ''käyttöliittymäviestejä''.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Valitse kieli',
 	'translate-fs-settings-planguage' => 'Ensisijainen kieli',
 	'translate-fs-settings-planguage-desc' => 'Ensisijainen kieli on sekä tämän wikin käyttöliittymäkieli että oletuskielesi käännöksille.',
@@ -1442,7 +1449,7 @@ $messages['fo'] = array(
 	'translate-fs-email-title' => 'Vátta tína t-post adressu',
 	'translate-fs-intro' => "Vælkomin til leiðbeiningina Fyrstu stigini hjá {{SITENAME}}.
 Tú fært eina stig fyri stig vegleiðing gjøgnum alla mannagongdina at gerast ein týðari.
-At enda verður tú før/ur fyri at týða ''markamót boð'' frá øllum stuðlaðum verkætlanum á {{SITENAME}}.",
+At enda verður tú før/ur fyri at týða ''markamót boð'' frá øllum stuðlaðum verkætlanum á {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Vel eitt mál',
 	'translate-fs-settings-planguage' => 'Høvuðmál:',
 	'translate-fs-settings-submit' => 'Goym innstillingar',
@@ -1539,7 +1546,7 @@ $messages['frp'] = array(
 	'translate-fs-email-title' => 'Confirmâd voutron adrèce èlèctronica',
 	'translate-fs-intro' => "Benvegnua sur l’assistent des premiérs pâs de {{SITENAME}}.
 Nos vos volens guidar a châ ètapa por sè fâre traductor.
-A la fin vos porréd traduire los ''mèssâjos de l’entèrface'' de tôs los projèts recognus per {{SITENAME}}.",
+A la fin vos porréd traduire los ''mèssâjos de l’entèrface'' de tôs los projèts recognus per {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Chouèsésséd na lengoua',
 	'translate-fs-settings-planguage' => 'Lengoua principâla :',
 	'translate-fs-settings-planguage-desc' => 'La lengoua principâla sèrvét avouéc coment la lengoua de voutron entèrface sur ceti vouiqui
@@ -1611,7 +1618,7 @@ $messages['gl'] = array(
 	'translate-fs-email-title' => 'Confirme o seu enderezo de correo electrónico',
 	'translate-fs-intro' => "Benvido ao asistente para dar os primeiros pasos en {{SITENAME}}.
 Esta guía axudaralle, paso a paso, a través do proceso para se converter nun tradutor.
-Cando remate, poderá traducir as ''mensaxes da interface'' de todos os proxectos soportados por {{SITENAME}}.",
+Cando remate, poderá traducir as ''mensaxes da interface'' de todos os proxectos soportados por {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Escolla unha lingua',
 	'translate-fs-settings-planguage' => 'Lingua principal:',
 	'translate-fs-settings-planguage-desc' => 'A lingua principal é tanto a lingua da interface neste wiki
@@ -1675,7 +1682,7 @@ $messages['gsw'] = array(
 	'translate-fs-email-title' => 'Dyy E-Mail-Adräss bstetige',
 	'translate-fs-intro' => "Willchuu bi dr {{SITENAME}}-Hilf zue dr erschte Schritt.
 Dir wird zeigt, wie Du Schritt fir Schritt e Ibersetzer wirsch.
-Am Änd wirsch alli ''Oberfleche-Nochrichte'' vu dr Projäkt, wu vu {{SITENAME}} unterstitzt wäre, chenne ibersetze.",
+Am Änd wirsch alli ''Oberfleche-Nochrichte'' vu dr Projäkt, wu vu {{SITENAME}} unterstitzt wäre, chenne ibersetze.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Wehl e Sproch',
 	'translate-fs-settings-planguage' => 'Hauptsproch:',
 	'translate-fs-settings-planguage-desc' => 'D Hauptsproch isch zum eine Dyy Sproch fir d Benutzeroberflechi uf däm Wiki
@@ -1741,7 +1748,7 @@ $messages['hak'] = array(
 	'translate-fs-email-title' => '確認汝嘅電郵地址',
 	'translate-fs-intro' => "歡迎來到 {{SITENAME}} 入門指導。
 汝將會分指導如何成為一名翻譯者。
-最後你將可以翻譯 {{SITENAME}} 裏肚所有計畫个''界面訊息''.",
+最後你將可以翻譯 {{SITENAME}} 裏肚所有計畫个''界面訊息''.", # Fuzzy
 	'translate-fs-selectlanguage' => '選一種語言',
 	'translate-fs-settings-planguage' => '首選語言：',
 	'translate-fs-settings-planguage-desc' => '該首選語言作為邇隻維基項目嘅用戶界面，
@@ -1803,7 +1810,7 @@ $messages['haw'] = array(
 	'translate-fs-email-title' => 'Hōʻoia i Kau Wahi leka uila',
 	'translate-fs-intro' => 'Welina mai i ke Polokalamu hana kōkua no nā mea hana mua loa o {{SITENAME}}.
 E  alakaʻi ana ʻoe i kēia hana o ka lilo ʻana i mea unuhi.
-Ma ka hopena, hiki iā ʻoe ke uhuhi i nā "leka aloloko" o nā papa hana a pau i kākoʻo ʻia ma {{SITENAME}}.',
+Ma ka hopena, hiki iā ʻoe ke uhuhi i nā "leka aloloko" o nā papa hana a pau i kākoʻo ʻia ma {{SITENAME}}.', # Fuzzy
 	'translate-fs-userpage-submit' => 'Hana i kaʻu ʻaoʻao mea hoʻohana', # Fuzzy
 	'translate-fs-userpage-done' => 'Maikaʻi! Loaʻa ka ʻaoʻao mea hoʻohana i kēia manawa.',
 	'translate-fs-target-text' => 'Hoʻomaikaʻi ʻana!
@@ -1843,9 +1850,9 @@ $messages['he'] = array(
 	'translate-fs-permissions-title' => 'לבקש הרשאות מתרגם',
 	'translate-fs-target-title' => 'להתחיל לתרגם!',
 	'translate-fs-email-title' => 'לאשר את כתובת הדוא״ל',
-	'translate-fs-intro' => "ברוכים הבאים לאשף הצעדים הראשונים של אתר {{SITENAME}}.
+	'translate-fs-intro' => 'ברוכים הבאים לאשף הצעדים הראשונים של אתר {{SITENAME}}.
 האשף ידריך אתכם בתהליך שיהפוך אתכם לחלק מצוות המתרגמים.
-בסופו תוכלו לתרגם '''הודעות ממשק''' של כל הפרויקטים הנתמכים באתר {{SITENAME}}.",
+בסופו תוכלו לתרגם <strong>הודעות ממשק</strong> של כל הפרויקטים הנתמכים באתר {{SITENAME}}.',
 	'translate-fs-selectlanguage' => 'בחירת שפה',
 	'translate-fs-settings-planguage' => 'שפה עיקרית:',
 	'translate-fs-settings-planguage-desc' => 'השפה העיקרית היא גם שפת הממשק בוויקי הזה
@@ -1871,20 +1878,20 @@ $messages['he'] = array(
 	'translate-fs-permissions-pending' => 'בקשתך נשלחה אל [[$1]] ומישהו מסגל האתר יבדוק אותה מהר ככל האפשר.
 אם תאמתו את הכתובת הדואר האקטרוני שלכם, תקבלו הודעה כשזה יקרה.',
 	'translate-fs-permissions-submit' => 'שליחת בקשה',
-	'translate-fs-target-text' => "מזל טוב!
+	'translate-fs-target-text' => 'מזל טוב!
 כעת, תוכלו להתחיל לתרגם.
 
 אל תפחדו אם האתר הזה עדיין נראה לכם מבלבל וחדש.
 ב[[Project list|רשימת הפרויקטים]] יש סקירה של פרויקטים שתוכלו לתרום להם תרגומים.
-לרוב הפרויקטים יש דף תיאור קצר עם קישור \"'''לתרגם פרוייקט זה'''\", שיוביל אותך אל דף המפרט את כל ההודעות שאינן מתורגמות.
+לרוב הפרויקטים יש דף תיאור קצר עם קישור "<strong>לתרגם פרוייקט זה</strong>", שיוביל אותך אל דף המפרט את כל ההודעות שאינן מתורגמות.
 יש גם רשימה של כל קבוצות ההודעות עם [[Special:LanguageStats|המצב הנוכחי של תרגום אל השפה]].
 
 אם אתם מרגישים שאתם צריכים להבין עוד לפני שתתחילו לתרגם, תוכלו לקרוא את [[FAQ|דף שאלות נפוצות]].
 למרבה הצער התיעוד יכול להיות לעתים לא עדכני.
 אם יש משהו שנראה לכם שאמורה להיות לכם אפשרות לעשות, ואתם לא מוצאים איך, אל תהססו לשאול אותו בדף [[Support]].
 
-ניתן גם לפנות אל המתרגמים העמיתים באותה השפה ב[[Portal_talk:\$1|דף השיחה]] של [[Portal:\$1|פורטל השפה שלכם]].
-אם טרם עשיתם זאת, [[Special:Preferences|שנו את שפת הממשק את השפה שאליה אתם רוצים לתרגם]], כדי שהוויקי הזה יציג את הקישורים המתאימים ביותר עבורכם.",
+ניתן גם לפנות אל המתרגמים העמיתים באותה השפה ב[[Portal_talk:$1|דף השיחה]] של [[Portal:$1|פורטל השפה שלכם]].
+אם טרם עשיתם זאת, [[Special:Preferences|שנו את שפת הממשק את השפה שאליה אתם רוצים לתרגם]], כדי שהוויקי הזה יציג את הקישורים המתאימים ביותר עבורכם.',
 	'translate-fs-email-text' => 'נא להקליד את כתובת הדואר האלקטרוני שלכם ב[[Special:Preferences|דף ההעדפות]] ואשרו אותו באמצעות המכתב שיישלח אליכם.
 
 פעולה זו מאפשרת למשתמשים אחרים ליצור אִתכם קשר באמצעות דואר אלקטרוני.
@@ -1924,7 +1931,7 @@ $messages['hsb'] = array(
 	'translate-fs-email-title' => 'Wobkruć swoju e-mejlowu adresu',
 	'translate-fs-intro' => "Witaj do startoweho asistenta projekta {{SITENAME}}.
 Dóstanješ nawod krok po kroku, kak so z přełožowarjom stanješ.
-Na kóncu móžeš ''zdźělenki programoweho powjercha'' wšěch podpěrowanych projektow na {{SITENAME}} přełožić.",
+Na kóncu móžeš ''zdźělenki programoweho powjercha'' wšěch podpěrowanych projektow na {{SITENAME}} přełožić.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Wubjer rěč',
 	'translate-fs-settings-planguage' => 'Hłowna rěč:',
 	'translate-fs-settings-planguage-desc' => 'Hłowna rěč ma dwě funkciji: słuži jako rěč wužiwarskeho powjercha w tutym wikiju a jako standardna cilowa rěč za přełožki.',
@@ -1985,7 +1992,7 @@ $messages['ht'] = array(
 	'translate-fs-email-title' => 'Konfime adrès imèl ou an',
 	'translate-fs-intro' => "Byenveni nan asistan premye etap {{SITENAME}}.
 N ap gide ou atravè tout etap pwosesis pou ou vin yon tradiktè.
-Lè ou rive nan bout pwosesis sa, w ap kapab tradui tou ''mesaj entèfas'' pou tout pwojè ki sipòte nan {{SITENAME}}.",
+Lè ou rive nan bout pwosesis sa, w ap kapab tradui tou ''mesaj entèfas'' pou tout pwojè ki sipòte nan {{SITENAME}}.", # Fuzzy
 	'translate-fs-userpage-submit' => 'Kreye paj itilizatè mwen', # Fuzzy
 	'translate-fs-userpage-done' => 'Byen fè!  Kounye a ou gen yon paj itilizatè.',
 	'translate-fs-target-text' => 'Konpliman!
@@ -2028,7 +2035,7 @@ $messages['hu'] = array(
 	'translate-fs-email-title' => 'Erősítsd meg az e-mail címedet!',
 	'translate-fs-intro' => "Üdvözlünk a {{SITENAME}} használatának első lépéseiben segítő varázslóban!
 Lépésről lépésre segítünk a fordítóvá válás folyamatában.
-A végén hozzákezdhetsz bármelyik, {{SITENAME}} által támogatott projekt ''felületének üzeneteinek'' fordításához.",
+A végén hozzákezdhetsz bármelyik, {{SITENAME}} által támogatott projekt ''felületének üzeneteinek'' fordításához.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Válassz egy nyelvet!',
 	'translate-fs-settings-planguage' => 'Elsődleges nyelv:',
 	'translate-fs-settings-slanguage' => 'Segédnyelv $1:',
@@ -2077,7 +2084,7 @@ $messages['ia'] = array(
 	'translate-fs-email-title' => 'Confirmar tu adresse de e-mail',
 	'translate-fs-intro' => "Benvenite al assistente de initiation de {{SITENAME}}.
 Tu essera guidate passo a passo trans le processo de devenir traductor.
-Al fin tu potera traducer le ''messages de interfacie'' de tote le projectos supportate in {{SITENAME}}.",
+Al fin tu potera traducer le ''messages de interfacie'' de tote le projectos supportate in {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Selige un lingua',
 	'translate-fs-settings-planguage' => 'Lingua primari:',
 	'translate-fs-settings-planguage-desc' => 'Le lingua primari es le lingua de interfacie in iste wiki,
@@ -2142,7 +2149,7 @@ $messages['id'] = array(
 	'translate-fs-email-title' => 'Konfirmasikan alamat surel Anda',
 	'translate-fs-intro' => "Selamat datang di wisaya tahapan pertama {{SITENAME}}.
 Anda akan dipandu melalui proses untuk menjadi seorang penerjemah tahap demi tahap.
-Hasilnya Anda akan mampu menerjemahkan ''pesan antarmuka'' semua proyek yang didukung di {{SITENAME}}.",
+Hasilnya Anda akan mampu menerjemahkan ''pesan antarmuka'' semua proyek yang didukung di {{SITENAME}}.", # Fuzzy
 	'translate-fs-userpage-submit' => 'Buat halaman pengguna saya', # Fuzzy
 	'translate-fs-userpage-done' => 'Bagus! Sekarang Anda memiliki halaman pengguna.',
 	'translate-fs-target-text' => 'Selamat!
@@ -2235,7 +2242,7 @@ $messages['it'] = array(
 	'translate-fs-email-title' => 'Conferma il tuo indirizzo email',
 	'translate-fs-intro' => "Benvenuto/a nel percorso guidato per i primi passi in {{SITENAME}}.
 Sarai guidato passo passo nel processo di diventare un traduttore.
-Alla fine sarai in grado di tradurre i ''messaggi di sistema'' di tutti i progetti supportati da {{SITENAME}}.",
+Alla fine sarai in grado di tradurre i ''messaggi di sistema'' di tutti i progetti supportati da {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Scegli una lingua',
 	'translate-fs-settings-planguage' => 'Lingua principale:',
 	'translate-fs-settings-planguage-desc' => "La tua lingua principale funge per te sia da lingua dell'interfaccia del wiki sia da lingua predefinita in cui tradurre.",
@@ -2327,20 +2334,20 @@ $messages['ja'] = array(
 	'translate-fs-permissions-pending' => '申請は[[$1]]に送信され、サイトのスタッフの誰かが早急に確認します。
 もしメールアドレスを設定していれば、メール通知によって結果をすぐに知ることができます。',
 	'translate-fs-permissions-submit' => '申請を送信',
-	'translate-fs-target-text' => "お疲れ様でした!
+	'translate-fs-target-text' => 'お疲れ様でした!
 あなたが翻訳を開始する準備が整いました。
 
 まだ慣れないことや分かりにくいことがあっても、心配することはありません。
 [[Project list|プロジェクト一覧]]にあなたが翻訳できる各プロジェクトの概要があります。
-ほとんどのプロジェクトには短い解説ページがあり、「'''Translate this project'''」というリンクからそのプロジェクトのすべての未翻訳メッセージの一覧ページに移動できます。
+ほとんどのプロジェクトには短い解説ページがあり、「<strong>このプロジェクトを翻訳</strong>」というリンクからそのプロジェクトのすべての未翻訳メッセージの一覧ページに移動できます。
 [[Special:LanguageStats|各言語内での現在の翻訳状況]]には、すべてのメッセージ群の一覧もあります。
 
-翻訳を始める前にもっと知らなければならないことがあると感じた場合は、[[FAQ]] のページを読むのもよいでしょう。
+翻訳を始める前にもっと知らなければならないことがあると感じた場合は、[[FAQ]] のページを読むのもいいでしょう。
 残念なことに説明文の中には更新が途絶えてしまっているものもあります。
 もし、何かやりたいことがあって、その方法が分からない場合には、遠慮なく[[Support|サポートページ]]で質問してください。
 
 また、同じ言語で作業している仲間の翻訳者とは[[Portal:$1|言語別のポータル]]の[[Portal_talk:$1|トークページ]]で連絡を取れます。
-まだ設定していない場合は、[[Special:Preferences|インターフェイス言語を、翻訳先としたい言語に変更]]すれば、ウィキ上では最も関連性のあるリンクが表示されます。",
+まだ設定していない場合は、[[Special:Preferences|インターフェイス言語を、翻訳先としたい言語に変更]]すれば、ウィキ上では最も関連性のあるリンクが表示されます。',
 	'translate-fs-email-text' => 'あなたのメールアドレスを[[Special:Preferences|個人設定]]に入力して、お送りするメールでメールアドレスの確認を行ってください。
 
 これにより他の利用者があなたに連絡できるようになります。
@@ -2362,9 +2369,9 @@ $messages['jam'] = array(
 	'translate-fs-permissions-title' => 'Rikwes chranslieta pomishan',
 	'translate-fs-target-title' => 'Taat fi chransliet!',
 	'translate-fs-email-title' => 'Kanfoerm yu e-miel ajres.',
-	'translate-fs-intro' => "Welkom tu di {{SITENAME}} fos tep wizad.
+	'translate-fs-intro' => 'Welkom tu di {{SITENAME}} fos tep wizad.
 Yu wi gaid chruu di pruoses fi ton chranslieta tep bi tep.
-Wen yu don yu wi iebl fi chransliet '''intafies mechiz''' a aal prajek wa supuot a {{SITENAME}}.",
+Wen yu don yu wi iebl fi chransliet <strong>intafies mechiz</strong> a aal prajek wa supuot a {{SITENAME}}.',
 	'translate-fs-userpage-submit' => 'Kriet mi yuuza piej', # Fuzzy
 	'translate-fs-userpage-done' => 'Yaa gwaan! Yu nou ab a yuuza piej.',
 );
@@ -2454,7 +2461,7 @@ $messages['ko'] = array(
 	'translate-fs-email-title' => '이메일 주소 확인하기',
 	'translate-fs-intro' => "{{SITENAME}} 첫걸음 마법사에 오신 것을 환영합니다.
 번역자가 되는 과정을 차례로 거칠 것입니다.
-결국에는 {{SITENAME}}에서 지원하는 모든 프로젝트의 ''인터페이스 메시지''를 번역할 수 있을 것입니다.",
+결국에는 {{SITENAME}}에서 지원하는 모든 프로젝트의 ''인터페이스 메시지''를 번역할 수 있을 것입니다.", # Fuzzy
 	'translate-fs-selectlanguage' => '언어 선택',
 	'translate-fs-settings-planguage' => '모어:',
 	'translate-fs-settings-planguage-desc' => '모어는 여기 웹사이트에서 인터페이스 언어이자
@@ -2518,7 +2525,7 @@ $messages['ksh'] = array(
 	'translate-fs-email-title' => 'De <i lang="en">e-mail</i> Adräß beschtääteje',
 	'translate-fs-intro' => 'Wellkumme bei {{GRAMMAR:Genitiv ier|{{SITENAME}}}} Hölp bei de eetsde Schredde för neu Metmaacher.
 Heh kreß De Schrett för Schrett jesaat, wi De ene Övversäzer weeß.
-Aam Engk kanns De de Täxte un Nohreeschte uß alle Projäkte övversäze, di {{GRAMMAR:em Dativ|{{SITENAME}}}} ongerstöz wääde.',
+Aam Engk kanns De de Täxte un Nohreeschte uß alle Projäkte övversäze, di {{GRAMMAR:em Dativ|{{SITENAME}}}} ongerstöz wääde.', # Fuzzy
 	'translate-fs-selectlanguage' => 'Söhg en Shprooch uß',
 	'translate-fs-settings-planguage' => 'Houpshprooch:',
 	'translate-fs-settings-planguage-desc' => 'De Houpshprooch is och di Schprooch, die heh dat Wiki met Der kallt, un des es och Ding shtandattmääßeje Shprooch för dren ze övversäze.',
@@ -2593,9 +2600,9 @@ $messages['lb'] = array(
 	'translate-fs-permissions-title' => 'Iwwersetzerrechter ufroen',
 	'translate-fs-target-title' => 'Ufänke mat iwwersetzen!',
 	'translate-fs-email-title' => 'Confirméiert Är E-Mail-Adress',
-	'translate-fs-intro' => "Wëllkomm beim {{SITENAME}}-Startassistent.
+	'translate-fs-intro' => 'Wëllkomm beim {{SITENAME}}-Startassistent.
 Iech gëtt gewisen, Déi Dir Schrëtt fir Schrëtt zum Iwwersetzer gitt.
-Um Schluss kënnt Dir all ''Interface-Messagen'' vun de vun {{SITENAME}} ënnerstetzte Projeten iwwersetzen.",
+Um Schluss kënnt Dir all <em>Interface-Messagen</em> vun de vun {{SITENAME}} ënnerstetzte Projeten iwwersetzen.',
 	'translate-fs-selectlanguage' => 'Eng Sprooch eraussichen',
 	'translate-fs-settings-planguage' => 'Haaptsprooch:',
 	'translate-fs-settings-planguage-desc' => "Déi éischt Sprooch ass gläichzäiteg d'Sprooch vun Ärem Interface op dëser Wiki
@@ -2685,7 +2692,7 @@ $messages['lt'] = array(
 	'translate-fs-email-title' => 'Patvirtinkite savo elektroninio pašto adresą',
 	'translate-fs-intro' => 'Sveiki atvykę į {{SITENAME}} pirmų žingsnių vedlį.
 Jums bus vadovaujamasi taikant tapti vertėju žingsnį po žingsnio.
-Galų gale jūs galėsite versti sąsajos pranešimus visų remiamų projektų {{SITENAME}} svetainėje.',
+Galų gale jūs galėsite versti sąsajos pranešimus visų remiamų projektų {{SITENAME}} svetainėje.', # Fuzzy
 	'translate-fs-selectlanguage' => 'Pasirinkite kalbą',
 	'translate-fs-settings-planguage' => 'Pagrindinė kalba:',
 	'translate-fs-settings-slanguage' => 'Asistentės kalba $1:',
@@ -2747,7 +2754,7 @@ $messages['mg'] = array(
 	'translate-fs-email-title' => 'Hamarino ny adiresy imailakao',
 	'translate-fs-intro' => "Tonga soa eto amin'ny mpanampin'i {{SITENAME}} manao ny dingana voalohany.
 Ho ampian'ity mpanampy ity ianao mba hahazoanao ny satan'ny mpandika teny.
-Amin'ny farany ianao dia hafaka mandika ny \"hafatra asehon'ny tranonkala\" eo amin'ny tetikasa rehetra izay zakan'i {{SITENAME}}.",
+Amin'ny farany ianao dia hafaka mandika ny \"hafatra asehon'ny tranonkala\" eo amin'ny tetikasa rehetra izay zakan'i {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Misafidia fiteny iray',
 	'translate-fs-settings-planguage' => 'Fiteny voalohany:',
 	'translate-fs-settings-planguage-desc' => "Ny fiteny voalohany no fitenin'ny ahehoana ny hafatra eto amin'ity wiki ity
@@ -2875,7 +2882,7 @@ $messages['ml'] = array(
 	'translate-fs-email-title' => 'ഇമെയിൽ വിലാസം സ്ഥിരീകരിക്കുക',
 	'translate-fs-intro' => "{{SITENAME}} ആദ്യചുവടുകൾ സഹായത്തിലേയ്ക്ക് സ്വാഗതം.
 പരിഭാഷക(ൻ) പദവിയിലേക്ക് ഘട്ടം ഘട്ടമായി എത്താനുള്ള വഴികാട്ടിയാണിത്.
-അവസാനം {{SITENAME}} സംരംഭത്തിൽ പിന്തുണയുള്ള എല്ലാ പദ്ധതികളുടെയും ''സമ്പർക്കമുഖ സന്ദേശങ്ങൾ'' പരിഭാഷപ്പെടുത്താൻ താങ്കൾക്ക് സാധിച്ചിരിക്കും.",
+അവസാനം {{SITENAME}} സംരംഭത്തിൽ പിന്തുണയുള്ള എല്ലാ പദ്ധതികളുടെയും ''സമ്പർക്കമുഖ സന്ദേശങ്ങൾ'' പരിഭാഷപ്പെടുത്താൻ താങ്കൾക്ക് സാധിച്ചിരിക്കും.", # Fuzzy
 	'translate-fs-selectlanguage' => 'ഭാഷ തിരഞ്ഞെടുക്കുക',
 	'translate-fs-settings-planguage' => 'പ്രാഥമികഭാഷ:',
 	'translate-fs-settings-planguage-desc' => 'പ്രാഥമിക ഭാഷ നിങ്ങളുടെ സമ്പർക്കമുഖ ഭാഷയായും പരിഭാഷയ്ക്കുള്ള ഭാഷയായും മാറുന്നു.',
@@ -2946,7 +2953,7 @@ $messages['ms'] = array(
 	'translate-fs-email-title' => 'Sahkan alamat e-mel anda',
 	'translate-fs-intro' => 'Selamat datang ke pendeta langkah pertama {{SITENAME}}.
 Anda akan dibimbing sepanjang proses langkah demi langkah untuk menjadi penterjemah.
-Pada akhirnya, anda akan dapat menterjemahkan "pesanan antara muka" bagi semua projek yang disokong di {{SITENAME}}.',
+Pada akhirnya, anda akan dapat menterjemahkan "pesanan antara muka" bagi semua projek yang disokong di {{SITENAME}}.', # Fuzzy
 	'translate-fs-selectlanguage' => 'Pilih bahasa',
 	'translate-fs-settings-planguage' => 'Bahasa utama:',
 	'translate-fs-settings-planguage-desc' => 'Bahasa utama ini juga merupakan bahasa antara muka anda di wiki ini
@@ -3003,7 +3010,7 @@ $messages['nb'] = array(
 	'translate-fs-email-title' => 'Bekreft e-postadressen din',
 	'translate-fs-intro' => "Velkommen til veiviseren for å komme igang med {{SITENAME}}.
 Du vil bli veiledet gjennom prosessen med å bli en oversetter steg for steg.
-Til slutt vil du kunne oversette ''grensesnittsmeldinger'' for alle støttede prosjekt på {{SITENAME}}.",
+Til slutt vil du kunne oversette ''grensesnittsmeldinger'' for alle støttede prosjekt på {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Velg et språk',
 	'translate-fs-settings-planguage' => 'Hovedspråk:',
 	'translate-fs-settings-planguage-desc' => 'Hovedspråket fungerer også som grensesnittspråket ditt på denne wikien og som standardspråk for oversettelser.',
@@ -3196,7 +3203,7 @@ $messages['pfl'] = array(
 	'translate-fs-email-title' => 'E-Mail-Adress bschdedische',
 	'translate-fs-intro' => "Willkumme baide {{SITENAME}} Hilf, zum Oafonge.
 Do weaschd Schridd fa Schridd ins Iwasedze oifgiad.
-Oam Schluß weaschd alli ''Nochrischde vunde Benudzaowaflesch'' vun alli Brojegd bai {{SITENAME}} iwasedze kenne.",
+Oam Schluß weaschd alli ''Nochrischde vunde Benudzaowaflesch'' vun alli Brojegd bai {{SITENAME}} iwasedze kenne.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Wählda ä Schbrooch',
 	'translate-fs-settings-planguage' => 'Haubdschbrooch:',
 	'translate-fs-settings-planguage-desc' => 'Die Haubdschbrooch isch fa doi Owaflesch uffm Wiki 
@@ -3264,7 +3271,7 @@ $messages['pl'] = array(
 	'translate-fs-email-title' => 'Potwierdź swój adres e‐mail',
 	'translate-fs-intro' => "Witaj w kreatorze pierwszych kroków na {{GRAMMAR:MS,pl|{{SITENAME}}}}.
 Pomożemy Ci krok po kroku przejść przez proces zostania tłumaczem.
-Po jego zakończeniu będziesz mógł tłumaczyć ''komunikatu interfejsu'' wszystkich wspieranych przez {{GRAMMAR:B.lp|{{SITENAME}}}} projektów.",
+Po jego zakończeniu będziesz mógł tłumaczyć ''komunikatu interfejsu'' wszystkich wspieranych przez {{GRAMMAR:B.lp|{{SITENAME}}}} projektów.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Wybierz język',
 	'translate-fs-settings-planguage' => 'Język podstawowy:',
 	'translate-fs-settings-planguage-desc' => 'Język podstawowy służy jako język interfejsu tej wiki
@@ -3329,7 +3336,7 @@ $messages['pms'] = array(
 	'translate-fs-email-title' => 'Che an conferma soa adrëssa ëd pòsta eletrònica',
 	'translate-fs-intro' => "Bin ëvnù an sl'assistent dij prim pass ëd {{SITENAME}}.
 A sarà guidà pass për pass ant ël process dë vnì un tradutor.
-A la fin a sarà bon a volté ij ''mëssagi dj'antërfasse'' ëd tùit ij proget gestì da {{SITENAME}}.",
+A la fin a sarà bon a volté ij ''mëssagi dj'antërfasse'' ëd tùit ij proget gestì da {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Sern na lenga',
 	'translate-fs-settings-planguage' => 'Lenga primaria:',
 	'translate-fs-settings-planguage-desc' => "La lenga primaria a funsion-a com toa lenga d'antërfacia dzora a sta wiki
@@ -3419,7 +3426,7 @@ $messages['pt'] = array(
 	'translate-fs-email-title' => 'Confirme o seu endereço de correio electrónico',
 	'translate-fs-intro' => "Bem-vindo ao assistente de iniciação da {{SITENAME}}.
 Será conduzido passo a passo através do processo necessário para se tornar um tradutor.
-No fim, será capaz de traduzir as ''mensagens da interface'' de todos os projetos suportados na {{SITENAME}}.",
+No fim, será capaz de traduzir as ''mensagens da interface'' de todos os projetos suportados na {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Escolha uma língua',
 	'translate-fs-settings-planguage' => 'Idioma principal:',
 	'translate-fs-settings-slanguage' => 'Idioma de ajuda $1:',
@@ -3477,7 +3484,7 @@ $messages['pt-br'] = array(
 	'translate-fs-email-title' => 'Confirmar endereço de e-mail',
 	'translate-fs-intro' => "Bem-vindo ao assistente de iniciação ao {{SITENAME}}.
 Você será conduzido passo-a-passo através do processo necessário para se tornar um tradutor.
-Ao terminar, você terá como traduzir as ''mensagens da interface'' de todos os projetos suportados no {{SITENAME}}.",
+Ao terminar, você terá como traduzir as ''mensagens da interface'' de todos os projetos suportados no {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Escolha uma língua',
 	'translate-fs-settings-planguage' => 'Idioma principal:',
 	'translate-fs-settings-planguage-desc' => 'O idioma principal será tanto a língua da interface deste wiki
@@ -3541,7 +3548,7 @@ $messages['ro'] = array(
 	'translate-fs-email-title' => 'Confirmați-vă adresa de e-mail',
 	'translate-fs-intro' => "Bine ați venit: acesta este un ghid al începătorului oferit de {{SITENAME}}.
 Veți fi îndrumat pas cu pas pentru a deveni un traducător.
-În finalul procesului, veți putea traduce ''mesaje din interfața'' tuturor proiectelor care dispun de serviciile {{SITENAME}}.",
+În finalul procesului, veți putea traduce ''mesaje din interfața'' tuturor proiectelor care dispun de serviciile {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Alegeți o limbă',
 	'translate-fs-settings-planguage' => 'Limbă principală:',
 	'translate-fs-settings-planguage-desc' => 'Limba primară va deveni limba interfeței pe acest wiki și limba implicită pentru traducerile dumneavoastră.',
@@ -3604,7 +3611,7 @@ $messages['roa-tara'] = array(
 	'translate-fs-email-title' => "Conferme l'indirizze e-mail tune",
 	'translate-fs-intro' => "Bovègne jndr'à 'a guide de le prime passe de {{SITENAME}}.
 Tu avìne guidate 'mbrà le processe pe devendò traduttore passe pe passe.
-Quanne amme spicciate, tu sì capace de traducete le \"messàgge de inderfacce\" de tutte le pruggette supportate sus a {{SITENAME}}.",
+Quanne amme spicciate, tu sì capace de traducete le \"messàgge de inderfacce\" de tutte le pruggette supportate sus a {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => "Pigghie 'na lènghe",
 	'translate-fs-settings-planguage' => 'Lènga prengepàle:',
 	'translate-fs-settings-planguage-desc' => "'A lènghe prengepàle raddoppie cumme 'a lènghe de inderfacce sus a sta uicchi e cumme lènghe de destinazione de base pe le tradutture.",
@@ -3835,7 +3842,7 @@ $messages['sl'] = array(
 	'translate-fs-email-title' => 'Potrdite svoj e-poštni naslov',
 	'translate-fs-intro' => "Dobrodošli v čarovniku prvih korakov na {{GRAMMAR:dajalnik|{{SITENAME}}}}.
 Vodili vas bomo skozi postopek, da postanete prevajalec, korak za korakom.
-Na koncu boste lahko prevajali ''sporočila vmesnika'' vseh podprtih projektov na {{GRAMMAR:dajalnik|{{SITENAME}}}}.",
+Na koncu boste lahko prevajali ''sporočila vmesnika'' vseh podprtih projektov na {{GRAMMAR:dajalnik|{{SITENAME}}}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Izberite jezik',
 	'translate-fs-settings-planguage' => 'Prvotni jezik:',
 	'translate-fs-settings-planguage-desc' => 'Prvotni jezik se kaže kot vaš jezik vmesnika na tem wikiju
@@ -3913,7 +3920,7 @@ $messages['sr-ec'] = array(
 	'translate-fs-email-title' => 'Потврдите е-адресу',
 	'translate-fs-intro' => "Добродошли на {{SITENAME}} помоћник за почетнике.
 Бићете спроведени кроз поступак упознавања преводиоца корак по корак.
-На крају ћете бити у могућности да преводите ''поруке интерфејса'' свих подржаних пројеката на {{SITENAME}}.",
+На крају ћете бити у могућности да преводите ''поруке интерфејса'' свих подржаних пројеката на {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Изаберите језик',
 	'translate-fs-settings-planguage' => 'Примарни језик:',
 	'translate-fs-settings-planguage-desc' => 'Примарни језик се удвостручује као језику интерфејса на овом викију и као подразумевани језик за циљне преводе.',
@@ -3988,7 +3995,7 @@ $messages['sv'] = array(
 	'translate-fs-permissions-title' => 'Ansök om översättarbehörigheter',
 	'translate-fs-target-title' => 'Börja översätta!',
 	'translate-fs-email-title' => 'Bekräfta din e-postadress',
-	'translate-fs-intro' => "Välkommen till guiden för att komma igång med {{SITENAME}}. Du kommer att vägledas stegvis i hur man blir översättare. När du är färdig kommer du att kunna översätta ''gränssnittsmeddelanden'' av alla projekt som stöds av {{SITENAME}}.",
+	'translate-fs-intro' => "Välkommen till guiden för att komma igång med {{SITENAME}}. Du kommer att vägledas stegvis i hur man blir översättare. När du är färdig kommer du att kunna översätta ''gränssnittsmeddelanden'' av alla projekt som stöds av {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Välj ett språk',
 	'translate-fs-settings-planguage' => 'Huvudspråk:',
 	'translate-fs-settings-planguage-desc' => 'Huvudspråket fungerar som ditt gränssnittsspråk på denna wiki
@@ -4105,7 +4112,7 @@ $messages['te'] = array(
 	'translate-fs-email-title' => 'మీ ఈమెయిలు చిరునామాని నిర్ధారించండి',
 	'translate-fs-intro' => '{{SITENAME}} యొక్క తొలి అడుగుల విజార్డుకు స్వాగతం.
 అంచెలంచెలుగా అనువాదకుడిగా తయారయే విధానం గురించి మీకిక్కడ మార్గదర్శకత్వం లభిస్తుంది.
-చివరికి, {{SITENAME}} లో మద్దతు ఉన్న అన్ని ప్రాజెక్టుల్లోను "ఇంటరుఫేసు సందేశాల"ను అనువదించే సామర్ధ్యం మీకు లభిస్తుంది.',
+చివరికి, {{SITENAME}} లో మద్దతు ఉన్న అన్ని ప్రాజెక్టుల్లోను "ఇంటరుఫేసు సందేశాల"ను అనువదించే సామర్ధ్యం మీకు లభిస్తుంది.', # Fuzzy
 	'translate-fs-selectlanguage' => 'ఒక భాషను ఎంచుకోండి',
 	'translate-fs-settings-planguage' => 'ప్రధాన  భాష:',
 	'translate-fs-settings-slanguage' => 'సహాయిక భాష $1:',
@@ -4147,7 +4154,7 @@ $messages['tl'] = array(
 	'translate-fs-email-title' => 'Tiyakin ang tirahan mo ng e-liham',
 	'translate-fs-intro' => "Maligayang pagdating sa masalamangkang unang mga hakbang ng {{SITENAME}}. 
 Hakbang-hakbang na gagabayan ka sa proseso ng pagiging isang tagapagsalinwika.
-Sa huli, makakapagsalinwika ka ng ''mga mensahe ng ugnayang-mukha'' ng lahat ng tinatangkilik na mga proyekto sa {{SITENAME}}.",
+Sa huli, makakapagsalinwika ka ng ''mga mensahe ng ugnayang-mukha'' ng lahat ng tinatangkilik na mga proyekto sa {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Pumili ng isang wika',
 	'translate-fs-settings-planguage' => 'Pangunahing wika:',
 	'translate-fs-settings-planguage-desc' => 'Ang pangunahing wika ay gumaganap din bilang wikang pang-ugnayang mukha mo sa wiking ito
@@ -4220,7 +4227,7 @@ $messages['ug-arab'] = array(
 	'translate-fs-email-title' => 'ئېلخەت مەنزىلىڭىزنى جەزملەڭ',
 	'translate-fs-intro' => "{{SITENAME}} باشلانغۇچ يېتەكچىسىگە مەرھابا.
 سىزنى قانداق قىلىپ تەرجىمان بولۇشقا يېتەكلەيدۇ.
-ئاخىرىدا {{SITENAME}}دىكى ھەممە قۇرۇلۇشلارنىڭ ''ئارايۈز ئۇچۇرى''نى تەرجىمە قىلالايسىز.",
+ئاخىرىدا {{SITENAME}}دىكى ھەممە قۇرۇلۇشلارنىڭ ''ئارايۈز ئۇچۇرى''نى تەرجىمە قىلالايسىز.", # Fuzzy
 	'translate-fs-selectlanguage' => 'تىلدىن بىرنى تاللاڭ',
 	'translate-fs-settings-planguage' => 'ئاساسىي تىل:',
 	'translate-fs-settings-planguage-desc' => 'ئاساسىي تىل بۇ ۋىكى قۇرۇلۇشىدىكى ئىشلەتكۈچى ئارايۈزى قىلىدۇ،
@@ -4382,7 +4389,7 @@ $messages['vi'] = array(
 	'translate-fs-email-title' => 'Xác nhận địa chỉ thư điện tử',
 	'translate-fs-intro' => "Hoan nghênh bạn đến với trình hướng dẫn sử dụng {{SITENAME}}.
 Bạn sẽ được hướng dẫn từng bước quá trình trở thành biên dịch viên.
-Cuối cùng bạn sẽ có thể dịch được ''thông điệp giao diện'' của tất cả các dự án được hỗ trợ tại {{SITENAME}}.",
+Cuối cùng bạn sẽ có thể dịch được ''thông điệp giao diện'' của tất cả các dự án được hỗ trợ tại {{SITENAME}}.", # Fuzzy
 	'translate-fs-selectlanguage' => 'Chọn một ngôn ngữ',
 	'translate-fs-settings-planguage' => 'Ngôn ngữ chính:',
 	'translate-fs-settings-planguage-desc' => 'Ngôn ngữ chính cũng là ngôn ngữ giao diện khi bạn sử dụng wiki này
@@ -4470,7 +4477,7 @@ $messages['zh-hans'] = array(
 	'translate-fs-email-title' => '确认您的邮箱地址',
 	'translate-fs-intro' => "欢迎来到 {{SITENAME}}入门向导。
 你会被指导如何成为一名翻译者。
-最后你将可以翻译{{SITENAME}}里所有项目的''界面消息''.",
+最后你将可以翻译{{SITENAME}}里所有项目的''界面消息''.", # Fuzzy
 	'translate-fs-selectlanguage' => '选择一种语言',
 	'translate-fs-settings-planguage' => '首选语言：',
 	'translate-fs-settings-planguage-desc' => '该首选语言作为此维基项目的用户界面，
@@ -4536,7 +4543,7 @@ $messages['zh-hant'] = array(
 	'translate-fs-email-title' => '確認您的電郵地址',
 	'translate-fs-intro' => "歡迎來到 {{SITENAME}} 入門指導。
 你會被指導如何成為一名翻譯者。
-最後你將可以翻譯 {{SITENAME}} 裡所有計畫的''介面訊息''.",
+最後你將可以翻譯 {{SITENAME}} 裡所有計畫的''介面訊息''.", # Fuzzy
 	'translate-fs-selectlanguage' => '選擇一種語言',
 	'translate-fs-settings-planguage' => '主要語言：',
 	'translate-fs-settings-planguage-desc' => '該首選語言作為此維基項目的用戶界面，

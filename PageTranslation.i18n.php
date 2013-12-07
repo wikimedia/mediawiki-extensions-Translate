@@ -970,10 +970,10 @@ La páxina que tas intentando editar paez que nun correspuende con denguna páxi
 Motivu: $1",
 	'tpt-discouraged-language-force' => 'Un alministrador de traducciones llendó les llingües a les que se pue traducir esta páxina. Esta llingua nun ta ente elles.
 
-Motivu: $1',
+Motivu: $1', # Fuzzy
 	'tpt-discouraged-language' => 'Esta llingua nun ta ente les llingües prioritaries que definió pa la páxina un alministrador.
 
-Motivu: $1',
+Motivu: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Motivu: $1',
 	'tpt-priority-languages' => "Un alministrador de traducciones definió les llingües prioritaries d'esti grupu como $1.",
 	'tpt-render-summary' => 'Anovando pa casar cola nueva versión de la páxina orixinal',
@@ -1187,12 +1187,12 @@ $messages['azb'] = array(
 	'tpt-translation-restricted' => 'بو صحیفه‌نین بو دیله چئویرمه‌سی بیر چئویرمک ایداره‌چیسی ایله قاباغی آلینیب‌دیر.
 
 ندن: $1',
-	'tpt-discouraged-language-force' => "'''بو صحیفه $2-ه چئویریله بیلمز.'''
+	'tpt-discouraged-language-force' => '<strong>بو صحیفه $2-ه چئویریله بیلمز.</strong>
 
-بیر چئویرمک ایداره‌چیسی بئله قرار آلیب کی بو صحیفه یالنیز $3-ه چئویریله بیلر.",
-	'tpt-discouraged-language' => "'''بو صحیفه‌نی $2-ه چئویرمک بیر اؤنجه‌لیک دئییل.'''
+بیر چئویرمک ایداره‌چیسی بئله قرار آلیب کی بو صحیفه یالنیز $3-ه چئویریله بیلر.',
+	'tpt-discouraged-language' => '<strong>بو صحیفه‌نی $2-ه چئویرمک بیر اؤنجه‌لیک دئییل.</strong>
 
-بیر چئویرمک ایداره‌چیسی بئله قرار آلیب کی چئویرمک تمرکزی $3-ه اولسون.",
+بیر چئویرمک ایداره‌چیسی بئله قرار آلیب کی چئویرمک تمرکزی $3-ه اولسون.',
 	'tpt-discouraged-language-reason' => 'ندن: $1',
 	'tpt-priority-languages' => 'بیر چئویرمک ایداره‌چیسی، بو قروپون اؤنجه‌لیک دیلینی $1 سئچیب‌دیر.',
 	'tpt-render-summary' => 'قایناق صحیفه‌نین یئنی نوسخه‌سی ایله تطبیق اوچون گونجل‌لنیر',
@@ -1407,12 +1407,12 @@ An pahina na saimong boot na pagliliwaton garo habong magtutugot sa arinman na p
 	'tpt-translation-restricted' => 'An pagdakit-taramon kaining pahina sa lengguwaheng ini pinagpupugulan kan administrador nin pagdakit-taramon.
 
 Rason: $1',
-	'tpt-discouraged-language-force' => "'''Ining pahina dae puwedeng ipagdakit-taramon sa $2.'''
+	'tpt-discouraged-language-force' => '<strong>Ining pahina dae puwedeng ipagdakit-taramon sa $2.</strong>
 
-An administrador kan pagdakit-taramon nagdesisyon na ining pahina mapuwedeng sanang ipagdakit-taramon sa $3.",
-	'tpt-discouraged-language' => "'''An pagdadakit-taramon sa $2 bakong prayoridad para sa pahinang ini.'''
+An administrador kan pagdakit-taramon nagdesisyon na ining pahina mapuwedeng sanang ipagdakit-taramon sa $3.',
+	'tpt-discouraged-language' => '<strong>An pagdadakit-taramon sa $2 bakong prayoridad para sa pahinang ini.</strong>
 
-An administrador kan pagdakit-taramon nagdesisyon na itutok an gibong pagdakit-taramon sa $3.",
+An administrador kan pagdakit-taramon nagdesisyon na itutok an gibong pagdakit-taramon sa $3.',
 	'tpt-discouraged-language-reason' => 'Rason: $1',
 	'tpt-priority-languages' => 'An administrador kan pagdakit-taramon ikinaag an prayoridad na mga lengguwahe para kaining grupo sa $1.',
 	'tpt-render-summary' => 'Panunumpayan tanganing ipagtugma sa baguhong bersyon kan ginikanang pahina',
@@ -1523,12 +1523,12 @@ $messages['be-tarask'] = array(
 	'tpt-translation-restricted' => 'Пераклад гэтай старонкі на дадзеную мову быў папярэджаны адміністратарам паракладаў.
 
 Прычына: $1',
-	'tpt-discouraged-language-force' => "'''Гэтая старонка ня можа быць перакладзеная на мову $2.'''
+	'tpt-discouraged-language-force' => '<strong>Гэтая старонка ня можа быць перакладзеная на мову $2.</strong>
 
-Адміністратар перакладу вырашыў, што гэтая старонка можа быць перакладзеная толькі на мовы: $3.",
-	'tpt-discouraged-language' => "'''Пераклад на мову $2 не зьяўляецца прыярытэтным.'''
+Адміністратар перакладу вырашыў, што гэтая старонка можа быць перакладзеная толькі на мовы: $3.',
+	'tpt-discouraged-language' => '<strong>Пераклад на мову $2 не зьяўляецца прыярытэтным.</strong>
 
-Адміністратар перакладу вырашыў сканцэнтраваць перакладніцкія высілкі на мовах $3.",
+Адміністратар перакладу вырашыў сканцэнтраваць перакладніцкія высілкі на мовах $3.',
 	'tpt-discouraged-language-reason' => 'Прычына: $1',
 	'tpt-priority-languages' => 'Адміністратар перакладаў вызначыў прыярытэтныя мовы для гэтай групы: $1.',
 	'tpt-render-summary' => 'Абнаўленьне для адпаведнасьці новай вэрсіі крынічнай старонкі',
@@ -2079,7 +2079,7 @@ $messages['ckb'] = array(
 	'pt-deletepage-reason' => 'هۆکار:',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Chmee2
  * @author Janet11
  * @author Littledogboy
@@ -2158,12 +2158,12 @@ Zdá se, že stránka, kterou se pokoušíte upravovat, neodpovídá žádné st
 	'tpt-translation-restricted' => 'Správce překladů zabránil překladu této stránky do tohoto jazyka.
 
 Zdůvodnění: $1',
-	'tpt-discouraged-language-force' => "'''Tuto stránku nelze překládat do jazyka $2.'''
+	'tpt-discouraged-language-force' => '<strong>Tuto stránku nelze překládat do jazyka $2.</strong>
 
-Správce překladů se rozhodl, že tuto stránku lze překládat pouze do $3.",
-	'tpt-discouraged-language' => "'''Překlad do jazyka $2 není pro tuto stránku prioritní.'''
+Správce překladů se rozhodl, že tuto stránku lze překládat pouze do $3.',
+	'tpt-discouraged-language' => '<strong>Překlad do jazyka $2 není pro tuto stránku prioritní.</strong>
 
-Správce překladů se rozhodl zaměřit překladatelské úsilí na $3.",
+Správce překladů se rozhodl zaměřit překladatelské úsilí na $3.',
 	'tpt-discouraged-language-reason' => 'Zdůvodnění: $1',
 	'tpt-priority-languages' => 'Správce překladů nastavil prioritní jazyky pro tuto skupinu na $1.',
 	'tpt-render-summary' => 'Stránka aktualizována, aby odpovídala nové verzi zdrojové stránky',
@@ -2193,7 +2193,7 @@ Správce překladů se rozhodl zaměřit překladatelské úsilí na $3.",
 	'pt-deletepage-list-pages' => 'Seznam stránek ke smazání',
 );
 
-/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+/** Church Slavic (словѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
  * @author ОйЛ
  */
 $messages['cu'] = array(
@@ -2330,12 +2330,12 @@ Siden som du prøver at redigere, ser ikke ud til at svare til nogen side marker
 	'tpt-translation-restricted' => 'Oversættelse af denne side til dette sprog blev forhindret af en oversættelsesadministrator.
 
 Årsag: $1',
-	'tpt-discouraged-language-force' => "'''Denne side kan ikke oversættes til $2.'''
+	'tpt-discouraged-language-force' => '<strong>Denne side kan ikke oversættes til $2.</strong>
 
-En oversættelsesadministrator besluttede at denne side kun kan oversættes til $3.",
-	'tpt-discouraged-language' => "'''Oversættelse til $2 er ikke en prioritet for denne side.'''
+En oversættelsesadministrator besluttede at denne side kun kan oversættes til $3.',
+	'tpt-discouraged-language' => '<strong>Oversættelse til $2 er ikke en prioritet for denne side.</strong>
 
-En oversættelsesadministrator besluttede at fokusere oversættelsesarbejdet på $3.",
+En oversættelsesadministrator besluttede at fokusere oversættelsesarbejdet på $3.',
 	'tpt-discouraged-language-reason' => 'Begrundelse: $1',
 	'tpt-priority-languages' => 'En oversættelsesadministrator har sat prioritetssprogene for denne gruppe til $1.',
 	'tpt-render-summary' => 'Opdaterer for at passe til en ny version af kildesiden',
@@ -2940,10 +2940,10 @@ $messages['el'] = array(
 Αιτιολογία: $1',
 	'tpt-discouraged-language-force' => '«Αυτή η σελίδα δεν μπορεί να μεταφραστεί σε $2».
 
-Ένας διαχειριστής μετάφρασης έχει επιλέξει για αυτήν τη σελίδα να μπορεί να μεταφραστεί μόνο σε $3.',
+Ένας διαχειριστής μετάφρασης έχει επιλέξει για αυτήν τη σελίδα να μπορεί να μεταφραστεί μόνο σε $3.', # Fuzzy
 	'tpt-discouraged-language' => '«Η μετάφραση σε $2 δεν αποτελεί προτεραιότητα για αυτήν τη σελίδα».
 
-Ένας διαχειριστής μετάφρασης έχει επιλέξει να επικεντρωθούν όλες οι μεταφραστικές προσπάθειες στα $3.',
+Ένας διαχειριστής μετάφρασης έχει επιλέξει να επικεντρωθούν όλες οι μεταφραστικές προσπάθειες στα $3.', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Αιτία: $1',
 	'tpt-priority-languages' => 'Ένας διαχειριστής μετάφρασης έχει ορίσει ως γλώσσες που έχουν προτεραιότητα τα $1 για αυτήν την ομάδα.',
 	'tpt-render-summary' => 'Γίνεται ενημέρωση για να αντιστοιχεί στη νέα έκδοση της πηγαίας σελίδας',
@@ -3253,10 +3253,10 @@ La página que estás tratando de editar no parece corresponder con alguna pági
 Motivo de la restricción: $1',
 	'tpt-discouraged-language-force' => 'Un administrador de traducción ha limitado los idiomas a los que esta página puede ser traducida. Este idioma no está entre ellos.
 
-Razón: $1',
+Razón: $1', # Fuzzy
 	'tpt-discouraged-language' => 'Este idioma no está entre los idiomas prioritarios establecidos por un administrador de traducción para esta página.
 
-Razón: $1',
+Razón: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Motivo: $1',
 	'tpt-priority-languages' => 'Un administrador de traducciones ha definido los idiomas prioritarios de este grupo: $1.',
 	'tpt-render-summary' => 'Actualizando para hallar una nueva versión de la página fuente',
@@ -3411,12 +3411,12 @@ Lehekülg, mida redigeerida üritad, ei paista olevat seotud ühegi tõlkimiseks
 	'tpt-translation-restricted' => 'Tõlkeadministraator on tõkestanud selle lehekülje tõlkimise sellesse keelde.
 
 Põhjus: $1',
-	'tpt-discouraged-language-force' => "'''Seda lehekülge ei saa tõlkida $2 keelde.'''
+	'tpt-discouraged-language-force' => '<strong>Seda lehekülge ei saa tõlkida $2 keelde.</strong>
 
-Tõlkeadministraator otsustas, et seda lehekülge saab tõlkida vaid järgmistesse keeltesse: $3.",
-	'tpt-discouraged-language' => "'''Selle lehekülje tõlkimine $2 keelde pole oluline.'''
+Tõlkeadministraator otsustas, et seda lehekülge saab tõlkida vaid järgmistesse keeltesse: $3.',
+	'tpt-discouraged-language' => '<strong>Selle lehekülje tõlkimine $2 keelde pole oluline.</strong>
 
-Tõlkeadministraator otsustas, et keskendutakse järgmistesse keeltesse tõlkimisele: $3.",
+Tõlkeadministraator otsustas, et keskendutakse järgmistesse keeltesse tõlkimisele: $3.',
 	'tpt-discouraged-language-reason' => 'Põhjus: $1',
 	'tpt-priority-languages' => 'Tõlkeadministraator määras, et on oluline tõlkida see rühm järgmistesse keeltesse: $1.',
 	'tpt-render-summary' => 'Uuendatud, et vastata lähtelehekülje uuele versioonile',
@@ -3697,9 +3697,9 @@ Sivu, jota yrität muokata, ei näytä vastaavan mitään sivua, joka on merkitt
 	'tpt-translation-restricted' => 'Käännösylläpitäjä on estänyt tämän sivun kääntämisen tälle kielelle.
 
 Syy: $1',
-	'tpt-discouraged-language-force' => "'''Tätä sivua ei voi kääntää kielelle $2.'''
+	'tpt-discouraged-language-force' => '<strong>Tätä sivua ei voi kääntää kielelle $2.</strong>
 
-Käännösylläpitäjä on päättänyt, että tämän sivun voi kääntää vain kielille $3.",
+Käännösylläpitäjä on päättänyt, että tämän sivun voi kääntää vain kielille $3.',
 	'tpt-discouraged-language-reason' => 'Syy: $1',
 	'tpt-render-summary' => 'Päivittäminen vastaamaan uutta versiota lähdesivusta',
 	'tpt-download-page' => 'Sivun vienti käännösten kera',
@@ -4209,10 +4209,10 @@ A páxina que está intentando editar parece non corresponder a algunha páxina 
 Motivo: $1',
 	'tpt-discouraged-language-force' => 'Un administrador de traducións limitou as linguas nas que se pode traducir a páxina. Esta lingua non está entre elas.
 
-Motivo: $1',
+Motivo: $1', # Fuzzy
 	'tpt-discouraged-language' => 'Esta lingua non está entre as linguas prioritarias que un administrador definiu para a páxina.
 
-Motivo: $1',
+Motivo: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Motivo: $1',
 	'tpt-priority-languages' => 'Un administrador de traducións definiu as linguas prioritarias deste grupo a $1.',
 	'tpt-render-summary' => 'Actualizando para coincidir coa nova versión da páxina de orixe',
@@ -4384,12 +4384,12 @@ D Syte, wu Du witt bearbeite, ghert schyns zue keire Syte, wu zum Ibersetze mark
 	'tpt-translation-restricted' => 'S Ibersetze vu däre Syte in die Sproch isch vun eme Ibersetzigsadministrator deaktiviert wore.
 
 Grund: $1',
-	'tpt-discouraged-language-force' => "'''Die Syte cha nit in $2 ibersetzt wäre.'''
+	'tpt-discouraged-language-force' => '<strong>Die Syte cha nit in $2 ibersetzt wäre.</strong>
 
-En Ibersetzigsadministrator het entschide, dass die Syte nume in $3 cha ibersetzt wäre.",
-	'tpt-discouraged-language' => "'''En Ibersetzig in $2 isch kei Prioritet vu däre Syte.'''
+En Ibersetzigsadministrator het entschide, dass die Syte nume in $3 cha ibersetzt wäre.',
+	'tpt-discouraged-language' => '<strong>En Ibersetzig in $2 isch kei Prioritet vu däre Syte.</strong>
 
-En Ibersetzigsadministrator het entschide, dass die Syte vor allem in $3 sott ibersetzt wäre.",
+En Ibersetzigsadministrator het entschide, dass die Syte vor allem in $3 sott ibersetzt wäre.',
 	'tpt-discouraged-language-reason' => 'Grund: $1',
 	'tpt-priority-languages' => 'En Ibersetzigsadministrator het di priorisierte Sproche fir die Nochrichtegruppe uf $1 feschtgleit.',
 	'tpt-render-summary' => 'Aktualisiere zum e neji Version vu dr Quällsyte z finde',
@@ -4604,10 +4604,10 @@ $messages['he'] = array(
 סיבה להגבלה: $1',
 	'tpt-discouraged-language-force' => 'מנהל תרגומים הגביל את השפות שאפשר לתרגם אליהן את הדף הזה. השפה הזאת לא נכללת בהן.
 
-סיבה: $1',
+סיבה: $1', # Fuzzy
 	'tpt-discouraged-language' => 'השפה הזאת היא לא אחת השפות המועדפות לתרגום כפי שהגדיר מנהל תרגומים עבור הדף הזה.
 
-סיבה: $1',
+סיבה: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'סיבה: $1',
 	'tpt-priority-languages' => 'מנהל תרגום הגדיר שהשפות המועדפות לקבוצה הזאת הן $1.',
 	'tpt-render-summary' => 'עדכון להתאמת הגרסה החדשה של דף המקור',
@@ -4848,10 +4848,10 @@ Strona, kotruž pospytuješ wobdźěłać, po wšěm zdaću stronje markěrowane
 Přičina: $1',
 	'tpt-discouraged-language-force' => 'Přełožowanski administrator je rěče wobmjezował, do kotrychž tuta strona da so přełožić. Tuta rěč mjez tutymi rěčemi njeje:
 
-Přičina: $1',
+Přičina: $1', # Fuzzy
 	'tpt-discouraged-language' => 'Tuta rěč njeje mjez primarnymi rěčemi, kotrež přełožowanski administrator je za tutu stronu postajił.
 
-Přičina: $1',
+Přičina: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Přičina: $1',
 	'tpt-priority-languages' => 'Přełožowanski administrator je primarne rěče za tutu skupinu jako $1 nastajił.',
 	'tpt-render-summary' => 'Aktualizacija po nowej wersiji žórłoweje strony',
@@ -5086,11 +5086,11 @@ Mielőtt fordításra jelölöd ezt a változatot, ellenőrizd hogy a szakaszok 
 A(z) [[$1]] lap fordítása, és a fordítását [$2 a fordítás segédeszköz] segítségével lehet frissíteni.',
 	'tpt-unknown-page' => 'Ez a névtér a tartalmi lapok fordításainak van fenntartva.
 A lap, amit szerkeszteni próbálsz, úgy tűnik hogy nem egyezik egy fordításra jelölt lappal sem.',
-	'tpt-discouraged-language' => "'''$2 — a fordítás erre a nyelvre nem a legfontosabb feladat.'''
+	'tpt-discouraged-language' => '<strong>$2 — a fordítás erre a nyelvre nem a legfontosabb feladat.</strong>
 
 Az adminisztrátori javaslat szerint a legfontosabb nyelvek a következők: $3.
 
-Kérjük, ha beszéled ezek közül valamelyiket, fontold meg, hogy inkább arra a nyelvre fordítasz előbb: munkádnak így többek láthatják hasznát.",
+Kérjük, ha beszéled ezek közül valamelyiket, fontold meg, hogy inkább arra a nyelvre fordítasz előbb: munkádnak így többek láthatják hasznát.',
 	'tpt-render-summary' => 'Frissítés, hogy megegyezzen a forráslap új változatával',
 	'tpt-download-page' => 'Lap exportálása fordításokkal együtt',
 	'aggregategroups' => 'Összesített csoportok',
@@ -5211,10 +5211,10 @@ Le pagina que tu vole modificar non pare corresponder con alcun pagina marcate p
 Motivo: $1',
 	'tpt-discouraged-language-force' => 'Un administrator de traductiones ha limitate le linguas in le quales iste pagina pote esser traducite. Iste lingua non es inter le linguas permittite.
 
-Motivo: $1',
+Motivo: $1', # Fuzzy
 	'tpt-discouraged-language' => 'Iste lingua non es inter le linguas prioritari definite per le administrator de traductiones pro iste pagina.
 
-Motivo: $1',
+Motivo: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Motivo: $1',
 	'tpt-priority-languages' => 'Un administrator de traduction ha definite le linguas prioritari pro iste gruppo como $1.',
 	'tpt-render-summary' => 'Actualisation a un nove version del pagina de origine',
@@ -5534,10 +5534,10 @@ La pagina che stai cercando di modificare non sembra corrispondere ad alcuna pag
 Motivo: $1",
 	'tpt-discouraged-language-force' => "L'amministratore ha limitato le lingue in cui questa pagina può essere tradotta. Questa lingua non è compresa tra esse.
 
-Motivo: $1",
+Motivo: $1", # Fuzzy
 	'tpt-discouraged-language' => "Questa lingua non è impostata come prioritaria dall'amministratore delle traduzioni per questa pagina.
 
-Motivo: $1",
+Motivo: $1", # Fuzzy
 	'tpt-discouraged-language-reason' => 'Motivo: $1',
 	'tpt-priority-languages' => "L'amministratore ha impostato le lingue prioritarie per questo gruppo in $1.",
 	'tpt-render-summary' => 'Aggiornamento come da nuova versione della pagina di origine',
@@ -5921,12 +5921,12 @@ Kaca sing arep Sampéyan sunting kayané ora ana kaitané karo kaca sing ditandh
 	'tpt-translation-restricted' => 'Terjemahan kaca iki nèng basa iki ditolak déning pangurus terjemahan.
 
 Alesan: $1',
-	'tpt-discouraged-language-force' => "'''Kaca iki ora bisa diterjemahaké nèng $2.'''
+	'tpt-discouraged-language-force' => '<strong>Kaca iki ora bisa diterjemahaké nèng $2.</strong>
 
-Pangurus terjemahan milih supaya kaca iki namung bisa diterjemahaké nèng $3.",
-	'tpt-discouraged-language' => "'''Nerjemahaké nèng $2 dudu prioritas kanggo kaca iki.'''
+Pangurus terjemahan milih supaya kaca iki namung bisa diterjemahaké nèng $3.',
+	'tpt-discouraged-language' => '<strong>Nerjemahaké nèng $2 dudu prioritas kanggo kaca iki.</strong>
 
-Pangurus terjemahan milih fokus nèng upaya terjemahan nèng $3.",
+Pangurus terjemahan milih fokus nèng upaya terjemahan nèng $3.',
 	'tpt-discouraged-language-reason' => 'Alesan: $1',
 	'tpt-priority-languages' => 'Pangurus terjemahan nyetèl basa prioritas kanggo klompok iki dadi $1.',
 	'tpt-render-summary' => 'Nganyari kanggo nyocokaké vèrsi anyar kaca sumber',
@@ -6170,12 +6170,12 @@ $messages['ko'] = array(
 	'tpt-translation-restricted' => '이 언어로의 이 문서의 번역은 번역 관리자에 의해 차단되었습니다.
 
 이유: $1',
-	'tpt-discouraged-language-force' => "'''이 문서는 $2(으)로 번역할 수 없습니다.'''
+	'tpt-discouraged-language-force' => '<strong>이 문서는 $2(으)로 번역할 수 없습니다.</strong>
 
-번역 관리자는 이 문서가 $3(으)로 번역할 수 있도록 결정했습니다.", # Fuzzy
-	'tpt-discouraged-language' => "'''$2로 번역하는 것은 이 문서에 대해 우선 순위가 아닙니다.'''
+번역 관리자는 이 문서가 $3(으)로 번역할 수 있도록 결정했습니다.',
+	'tpt-discouraged-language' => '<strong>$2로 번역하는 것은 이 문서에 대해 우선 순위가 아닙니다.</strong>
 
-번역 관리자는 $3에 번역 노력을 집중하기로 결정합니다.", # Fuzzy
+번역 관리자는 $3에 번역 노력을 집중하기로 결정합니다.',
 	'tpt-discouraged-language-reason' => '이유: $1',
 	'tpt-priority-languages' => '번역 관리자는 $1(으)로 이 그룹에 대해 우선 언어를 설정합니다.',
 	'tpt-render-summary' => '원본 문서의 새 버전에 맞게 업데이트',
@@ -6338,12 +6338,12 @@ $messages['ksh'] = array(
 	'tpt-translation-restricted' => 'Et en di Schprooch hät ene Verwallder vum Övversäzze för heh di Sigg verbodde.
 
 Jrond: $1',
-	'tpt-discouraged-language-force' => "'''Heh di Sigg kam_mer nit op $2 övversäze.'''
+	'tpt-discouraged-language-force' => '<strong>Heh di Sigg kam_mer nit op $2 övversäze.</strong>
 
-Ene Verwallder vum Övversäzze hät faßjelaat, dat di Sigg bloß op $3 övversaz wääde sull.",
-	'tpt-discouraged-language' => "'''Heh di Sigg op $2 övversäze hät keine Vörrang.'''
+Ene Verwallder vum Övversäzze hät faßjelaat, dat di Sigg bloß op $3 övversaz wääde sull.',
+	'tpt-discouraged-language' => '<strong>Heh di Sigg op $2 övversäze hät keine Vörrang.</strong>
 
-Ene Verwallder vum Övversäzze hät faßjelaat, dat di Sigg en de Houpsaach op $3 övversaz wääde sull.",
+Ene Verwallder vum Övversäzze hät faßjelaat, dat di Sigg en de Houpsaach op $3 övversaz wääde sull.',
 	'tpt-discouraged-language-reason' => 'Jrond: $1',
 	'tpt-priority-languages' => 'Ene Verwallder vum Övversäzze hät de Houpschprooche för heh di Jropp op $1 jesaz.',
 	'tpt-render-summary' => 'Ändere, öm op de neue Version fun de Ojinaal_Sigg ze kumme',
@@ -6574,10 +6574,10 @@ D'Säit, déi Dir versicht z'änneren, schéngt net mat enger Säit déi fir d'I
 	'tpt-translation-restricted' => "D'Iwwersetze vun dëser Säit an dës Sprooch gouf vun engem Iwwersetzungs-Administrateur gespaart.
 
 Grond: $1",
-	'tpt-discouraged-language-force' => "'''Dës Säit kann net op $2 iwwersat ginn.'''
+	'tpt-discouraged-language-force' => '<strong>Dës Säit kann net op $2 iwwersat ginn.</strong>
 
-En Iwwersetzungs-Administrateur huet decidéiert datt dës Säit nëmmen op $3 iwwersat ka ginn.",
-	'tpt-discouraged-language' => "'''D'Iwwersetzung op $2 ass keng Prioritéit fir dës Säit.'''
+En Iwwersetzungs-Administrateur huet decidéiert datt dës Säit nëmmen op $3 iwwersat ka ginn.',
+	'tpt-discouraged-language' => "<strong>D'Iwwersetzung op $2 ass keng Prioritéit fir dës Säit.</strong>
 
 En Iwwersetzungs-Administrateur huet decidéiert fir d'Iwwersetzungs-Efforten op $3 ze konzentréieren.",
 	'tpt-discouraged-language-reason' => 'Grond: $1',
@@ -7181,10 +7181,10 @@ Laman yang anda cuba sunting itu nampaknya tidak berpadan dengan sebarang laman 
 Sebab: $1',
 	'tpt-discouraged-language-force' => 'Pentadbir penterjemahan telah mengehadkan bahasa-bahasa yang mana halaman ini boleh diterjemahkan. Bahasa ini bukan salah satu bahasa yang dibenarkan.
 
-Sebab: $1',
+Sebab: $1', # Fuzzy
 	'tpt-discouraged-language' => 'Bahasa ini bukan bahasa keutamaan yang ditetapkan oleh pentadbir penterjemahan untuk halaman ini.
 
-Sebab: $1',
+Sebab: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Sebab: $1',
 	'tpt-priority-languages' => 'Seorang pentadbir penterjemahan telah menetapkan $1 sebagai bahasa keutamaan kumpulan ini.',
 	'tpt-render-summary' => 'Mengemas kini agar sepadan dengan versi baru laman sumber',
@@ -7388,10 +7388,10 @@ Denne siden som du prøver å redigere ser ikke ut til å samsvare med noen av s
 Årsak: $1',
 	'tpt-discouraged-language-force' => 'En oversettelsesadministrator har begrenset språkene denne siden kan oversettes til. Dette språket er ikke blant disse språkene.
 
-Årsak: $1',
+Årsak: $1', # Fuzzy
 	'tpt-discouraged-language' => 'Dette språket er ikke blant prioritetsspråkene som er satt av en oversettelsesadministrator for denne siden.
 
-Årsak: $1',
+Årsak: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Årsak: $1',
 	'tpt-priority-languages' => 'En oversettelsesadministrator har satt prioritetsspråkene for denne gruppen til $1.',
 	'tpt-render-summary' => 'Oppdaterer for å svare til ny versjon av kildesiden',
@@ -7554,12 +7554,12 @@ De pagina die u probeert te bewerken lijkt niet overeen te komen met een te vert
 	'tpt-translation-restricted' => 'De vertaling van deze pagina naar deze taal is onmogelijk gemaakt door de vertalingenbeheerder.
 
 Reden: $1',
-	'tpt-discouraged-language-force' => 'Een vertalingenbeheerder heeft de talen waarin deze pagina vertaald kan worden beperkt. Deze taal maakt geen deel uit van die talen.
+	'tpt-discouraged-language-force' => '<strong>Deze pagina kan niet vertaald worden in de taal $2.</strong>
 
-Reden: $1',
-	'tpt-discouraged-language' => 'De vertalingenbeheerder heeft deze taal niet als prioriteitstaal ingesteld voor deze pagina.
+Een vertalingenbeheerder heeft de talen waarin deze pagina vertaald kan worden beperkt tot de volgende talen: $3',
+	'tpt-discouraged-language' => '<strong>Het vertalen van deze pagina in de taal $2 heeft geen prioriteit.</strong>
 
-Reden: $1',
+Een vertalingenbeheerder heeft besloten prioriteit te leggen bij de volgende talen: $3.',
 	'tpt-discouraged-language-reason' => 'Reden: $1',
 	'tpt-priority-languages' => 'Een vertalingenbeheerder heeft de prioriteitstalen voor deze groep ingesteld op $1.',
 	'tpt-render-summary' => 'Bijgewerkt vanwege een nieuwe basisversie van de bronpagina',
@@ -7716,9 +7716,9 @@ Sjekk at sida er merkt med <nowiki><translate></nowiki>-merke og har ein gyldig 
 	'tpt-translation-restricted' => 'Omsetjing av sida til dette språket er stogga av ein omsetjingsadministrator.
 
 Årsak: $1',
-	'tpt-discouraged-language-force' => "'''Sida kan ikkje setjast om til $2.'''
+	'tpt-discouraged-language-force' => '<strong>Sida kan ikkje setjast om til $2.</strong>
 
-Ein omsetjingsadministrator har avgjort at sida berre kan setjast om til $3.",
+Ein omsetjingsadministrator har avgjort at sida berre kan setjast om til $3.',
 	'tpt-discouraged-language-reason' => 'Årsak: $1',
 	'tpt-render-summary' => 'Oppdatering for å svara til ny versjon av kjeldesida',
 	'tpt-download-page' => 'Eksporter side med omsetjingar',
@@ -7931,10 +7931,10 @@ Die Said, wu grad schaffe duschd, enschbrischd käna iwasedbari Said.",
 Grund: $1",
 	'tpt-discouraged-language-force' => "S'Iwasedze vunde Said in Schbrooche isch duaschn Administrator oigschrängd worre. Die Schbrooch isch laida ned unade ealaubde Schbrooche.
 
-Grund: $1",
+Grund: $1", # Fuzzy
 	'tpt-discouraged-language' => 'Die Schbrooch isch käni vunde voaroangischi Schbrooche, wuen Administrator va die Said gsedzd kabd hod.
 
-Grund: $1',
+Grund: $1', # Fuzzy
 	'tpt-priority-languages' => 'Än Administrator hoddie voaroangischi Schbrooche fa die Grubb uff $1 gsedzd.',
 	'tpt-render-summary' => 'Iwanemm die naijschd Ausgab vunde Qwellsaid',
 	'tpt-download-page' => 'Said mide Iwasedzung ausgewe',
@@ -8102,10 +8102,10 @@ Strona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stron
 Powód: $1',
 	'tpt-discouraged-language-force' => 'Administrator tłumaczenia ograniczył języki, na które ta strona może być tłumaczona. Ten język do nich nie należy.
 
-Powód: $1',
+Powód: $1', # Fuzzy
 	'tpt-discouraged-language' => 'Ten język nie należy do języków priorytetowych ustawionych przez administratora tłumaczenia dla tej strony.
 
-Powód: $1',
+Powód: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Powód: $1',
 	'tpt-priority-languages' => 'Administrator tłumaczenia ustawił języki priorytetowe dla tej grupy jako $1 .',
 	'tpt-render-summary' => 'Aktualizowanie w celu dopasowania nowej wersji strony źródłowej',
@@ -8271,10 +8271,10 @@ La pàgina ch'it preuve a modifiché a smija pa ch'a corisponda a na pàgina mar
 	'tpt-translation-restricted' => "La tradussion dë sta pàgina an costa lenga a l'é stàita ampedìa da n'aministrator dle tradussion.
 
 Rason: $1",
-	'tpt-discouraged-language-force' => "'''Costa pàgina a peul pa esse voltà an $2.'''
+	'tpt-discouraged-language-force' => "<strong>Costa pàgina a peul pa esse voltà an $2.</strong>
 
 N'aministrator dle tradussion a l'ha decidù che costa pàgina a peul mach esse voltà an $3.",
-	'tpt-discouraged-language' => "'''La tradussion an $2 a l'é pa na priorità për costa pàgina.'''
+	'tpt-discouraged-language' => "<strong>La tradussion an $2 a l'é pa na priorità për costa pàgina.</strong>
 
 N'aministrator dle tradussion a l'ha decidù d'adressé jë sfòrs ëd tradussion su $3.",
 	'tpt-discouraged-language-reason' => 'Rason: $1',
@@ -8627,10 +8627,10 @@ A página que você está tentando editar não aparenta corresponder a nenhuma p
 Motivo: $1',
 	'tpt-discouraged-language-force' => 'Um coordenador de traduções limitou os idiomas que poderão receber tradução desta página e este não é um dos que foram definidos.
 
-Motivo: $1',
+Motivo: $1', # Fuzzy
 	'tpt-discouraged-language' => 'Este idioma não é um dos definidos como prioritários por um coordenador de traduções.
 
-Motivo: $1',
+Motivo: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Motivo: $1',
 	'tpt-priority-languages' => 'Um coordenador de traduções definiu como idiomas prioritários para este grupo $1.',
 	'tpt-render-summary' => 'Atualizando para corresponder à nova versão da página de origem',
@@ -8992,10 +8992,10 @@ $messages['ru'] = array(
 	'tpt-discouraged-language-force' => 'Администратор перевода ограничил список языков, на которые может быть переведена данная страница. Данный язык не входит в этот список.
 
 
-Причина: $1',
+Причина: $1', # Fuzzy
 	'tpt-discouraged-language' => 'Данный язык не входит в список приоритетных для данной страницы, установленных администратором перевода
 
-Причина: $1',
+Причина: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Причина: $1',
 	'tpt-priority-languages' => 'Администратор перевода установил $1 в качестве приоритетного языка для этой группы.',
 	'tpt-render-summary' => 'Обновление для соответствия новой версии исходной страницы.',
@@ -9510,9 +9510,9 @@ Neuspehi bodo zabeleženi v [[Special:Log/pagetranslation|dnevniku prevajanja st
  * @author Abshirdheere
  */
 $messages['so'] = array(
-	'tpt-discouraged-language' => "'''Turjumidda $2 Maaha muhiimadda koowaad ee Boggaan.'''
+	'tpt-discouraged-language' => '<strong>Turjumidda $2 Maaha muhiimadda koowaad ee Boggaan.</strong>
 
-Maamulka waxa uu muhiimad uu siiyey turjumidda $3.",
+Maamulka waxa uu muhiimad uu siiyey turjumidda $3.',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
@@ -9746,10 +9746,10 @@ men {{PLURAL:$1|den senaste versionen|de senaste versionerna}} kan inte markeras
 Anledningar: $1',
 	'tpt-discouraged-language-force' => 'En översättningsadministratör har begränsat språken denna sida kan översättas till. Detta språk är inte en av dessa språk.
 
-Anledning: $1',
+Anledning: $1', # Fuzzy
 	'tpt-discouraged-language' => 'Detta språk är inte bland de prioritetsspråk som är inställda av en översättningsadminstratör för denna sida.
 
-Anledning: $1',
+Anledning: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Anledning: $1',
 	'tpt-priority-languages' => 'En översättningsadministratör har ställt in prioritetsspråken för denna grupp till $1.',
 	'tpt-render-summary' => 'Uppdaterar för att matcha den nya versionen av källpaketet',
@@ -10115,12 +10115,12 @@ Tila hindi tumutugma ang pahinang sinusubukan mong baguhin sa anumang pahinang n
 	'tpt-translation-restricted' => 'Ang pagsasalinwika ng pahinang ito na papunta sa wikang ito ay pinigilan ng isang tagapangasiwa ng salinwika.
 
 Dahilan: $1',
-	'tpt-discouraged-language-force' => "'''Ang pahinang ito ay hindi maisasalinwika upang maging $2.'''
+	'tpt-discouraged-language-force' => '<strong>Ang pahinang ito ay hindi maisasalinwika upang maging $2.</strong>
 
-Isang tagapangasiwa ng pagsasalinwika ang nagpasya na ang pahinang ito ay maisasalinwika lamang papunta sa $3.",
-	'tpt-discouraged-language' => "'''Ang pagsasalinwika papunta sa $2 ay hindi isang nararapat na unahin para sa pahinang ito.'''
+Isang tagapangasiwa ng pagsasalinwika ang nagpasya na ang pahinang ito ay maisasalinwika lamang papunta sa $3.',
+	'tpt-discouraged-language' => '<strong>Ang pagsasalinwika papunta sa $2 ay hindi isang nararapat na unahin para sa pahinang ito.</strong>
 
-Isang tagapangasiwa ng salinwika ang nagpasyang ituon ang mga pagsisikap ng pagsasalinwika sa $3.",
+Isang tagapangasiwa ng salinwika ang nagpasyang ituon ang mga pagsisikap ng pagsasalinwika sa $3.',
 	'tpt-discouraged-language-reason' => 'Dahilan: $1',
 	'tpt-priority-languages' => 'Isang tagapangasiwa ng salinwika ang nagtakda ng mga wikang nararapat na unahin para sa pangkat na ito upang maging $1.',
 	'tpt-render-summary' => 'Isinasapanahon upang tumugma sa bagong bersyon ng pinagmulang pahina',
@@ -10740,10 +10740,10 @@ Trang bạn muốn sửa đổi dường như không tương ứng với trang n
 Lý do: $1',
 	'tpt-discouraged-language-force' => 'Một người quản lý biên dịch chỉ cho phép biên dịch trang ra một số ngôn ngữ, không bao gồm ngôn ngữ này.
 
-Lý do: $1',
+Lý do: $1', # Fuzzy
 	'tpt-discouraged-language' => 'Ngôn ngữ này không phải là một trong những ngôn ngữ quan trọng theo người quản lý biên dịch của trang này.
 
-Lý do: $1',
+Lý do: $1', # Fuzzy
 	'tpt-discouraged-language-reason' => 'Lý do: $1',
 	'tpt-priority-languages' => 'Một người quản lý biên dịch đã đặt các ngôn ngữ quan trọng của nhóm này là $1.',
 	'tpt-render-summary' => 'Cập nhật đến phiên bản mới của trang nguồn',
@@ -11246,10 +11246,10 @@ $messages['zh-hant'] = array(
 	'tpt-translation-restricted' => '此頁面到這種語言的翻譯，已被翻譯管理員禁止。
 
 原因：$1',
-	'tpt-discouraged-language-force' => "''''此頁面不能翻譯為 $2 。'''
+	'tpt-discouraged-language-force' => "<strong>'此頁面不能翻譯為 $2 。</strong>
 
 翻譯管理員限制只能把此頁為$3",
-	'tpt-discouraged-language' => "''''翻譯成$2不在本頁的優先之例。'''
+	'tpt-discouraged-language' => "<strong>'翻譯成$2不在本頁的優先之例。</strong>
 
 翻譯管理員已設置本頁優先翻譯成$3。",
 	'tpt-discouraged-language-reason' => '原因：$1',
