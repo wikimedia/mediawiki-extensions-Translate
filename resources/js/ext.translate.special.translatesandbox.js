@@ -231,7 +231,7 @@
 									$( '<div>' )
 										.addClass( 'info' )
 										.text(
-											$.uls.data.getAutonym( translation.title.split(/[\\/ ]+/).pop() )
+											$.uls.data.getAutonym( translation.title.split( /[\\/ ]+/ ).pop() )
 										)
 								),
 							$( '<div>' )
@@ -324,6 +324,7 @@
 
 	$( document ).ready( function () {
 		var $requestCheckboxes = $( '.request-selector' ),
+			$languageSelector = $( '.language-selector' ),
 			$selectAll = $( '.request-selector-all' ),
 			$requestRows = $( '.requests .request' ),
 			$detailsPane = $( '.pane.details' );
@@ -336,17 +337,21 @@
 
 		// Handle clicks for the 'Select all' checkbox
 		$selectAll.on( 'click', function () {
-			var selectedCount;
+			var selectedCount,
+				selectAllChecked = this.checked,
+				$visibleRows = $requestRows.not( '.hide' );
 
-			$requestCheckboxes.prop( {
-				checked: this.checked,
-				disabled: false
+			$visibleRows.each( function ( index, row ) {
+				$( row ).find( '.request-selector' ).prop( {
+					checked: selectAllChecked,
+					disabled: false
+				} );
 			} );
 
-			if ( this.checked ) {
+			if ( selectAllChecked ) {
 				displayOnMultipleSelection();
-				$requestRows.addClass( 'selected' );
-				selectedCount = $requestCheckboxes.length;
+				$visibleRows.addClass( 'selected' );
+				selectedCount = $requestCheckboxes.filter( ':checked' ).length;
 			} else {
 				$detailsPane.empty();
 				$requestRows.removeClass( 'selected' );
@@ -450,9 +455,57 @@
 		}
 
 		// Activate language selector
-		// TODO: Make it functional
-		$( '.language-selector' ).uls();
+		$languageSelector.uls( {
+			onSelect: function ( language ) {
+				$languageSelector
+					.removeClass( 'unselected' )
+					.addClass( 'selected' )
+					.text( $.uls.data.getAutonym( language ) )
+					.append( $( '<span>' ) // A '×' icon to clear the selector
+						.addClass( 'clear' )
+						.text( '×' )
+						.click( function() {
+							$languageSelector
+								.removeClass( 'selected' )
+								.addClass( 'unselected' )
+								.text( mw.msg( 'tsb-all-languages-button-label' ) );
+
+							filterRequestsByLanguage();
+
+							return false;
+						} )
+					);
+
+				filterRequestsByLanguage( language );
+			}
+		} );
 	} );
+
+	/**
+	 * Filter the requests by language.
+	 * @param {string} [language] Language code
+	 */
+	function filterRequestsByLanguage ( language ) {
+		var $requests = $( '.request' );
+
+		$requests.each( function ( index, request ) {
+			var $request = $( request ),
+				requestData = $request.data( 'data' );
+
+			if ( !language ||
+				( requestData.languagepreferences &&
+					requestData.languagepreferences.languages &&
+					requestData.languagepreferences.languages.indexOf( language ) > -1 )
+			) {
+				// Found language
+				$request.removeClass( 'hide' );
+			} else {
+				$request.addClass( 'hide' );
+			}
+		} );
+
+		updateAfterFiltering();
+	}
 
 	function TranslatorSearch( element ) {
 		this.$search = $( element );
@@ -475,8 +528,7 @@
 	};
 
 	TranslatorSearch.prototype.filter = function( query ) {
-		var $firstVisibleUser, $selectedRequests,
-			$requests = $( '.request' );
+		var $requests = $( '.request' );
 
 		$requests.each( function ( index, request ) {
 			var $request = $( request ),
@@ -492,7 +544,13 @@
 			}
 		} );
 
-		$firstVisibleUser = $requests.not( '.hide' ).first();
+		updateAfterFiltering();
+	};
+
+	function updateAfterFiltering() {
+		var $selectedRequests,
+			$firstVisibleUser = $( '.request:not(.hide)' ).first();
+
 		if ( $firstVisibleUser.length ) {
 			$firstVisibleUser.click();
 		} else {
@@ -503,11 +561,12 @@
 				checked: false,
 				disabled: false
 			} );
+
 			updateSelectedIndicator( 0 );
 		}
 
 		updateRequestCount();
-	};
+	}
 
 	$.fn.translatorSearch = function () {
 		return this.each( function () {

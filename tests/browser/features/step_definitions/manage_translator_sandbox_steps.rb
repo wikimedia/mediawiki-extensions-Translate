@@ -32,10 +32,43 @@ Then(/^no users are displayed in the first column$/) do
 	on(ManageTranslatorSandboxPage).visible_users_element.length.should == 0
 end
 
-Then(/^'(.+)' is displayed at the top of the first column$/) do |requests_number|
+Then(/^I should see '(.+)' at the top of the first column$/) do |requests_number|
 	on(ManageTranslatorSandboxPage).request_count.should match(/^#{requests_number}/i)
 end
 
 Then(/^I should see '(.*)' in the second column$/) do |text|
 	on(ManageTranslatorSandboxPage).details.should == text
+end
+
+When(/^I click the sandboxed users language filter button$/) do
+	on(ManageTranslatorSandboxPage).language_selector_button
+end
+
+When(/^I type '(.+)' in the language filter$/) do |text|
+	on(ManageTranslatorSandboxPage) do |page|
+		page.language_filter = text
+		page.language_filter_element.send_keys [:enter, "\n"]
+	end
+end
+
+Then(/^only users who translate to language '(.+)' are displayed in the first column$/) do |language|
+	on(ManageTranslatorSandboxPage).all_visible_requests_translate_to?(language).should be_true
+end
+
+Then(/^I should see '(.+)' at the bottom of the first column$/) do |text|
+	on(ManageTranslatorSandboxPage).request_footer.should == text
+end
+
+Then(/^I should see the name of the first user in the first column in the header of the second column$/) do
+	on(ManageTranslatorSandboxPage) do |page|
+		page.details_header.should == page.username_in_request(0)
+	end
+end
+
+Then(/^I should see '(.+)' in the header of the second column$/) do |text|
+	on(ManageTranslatorSandboxPage).details_header.should == text
+end
+
+When(/^I click the checkbox to select all users$/) do
+	on(ManageTranslatorSandboxPage).select_all_checkbox_element.click
 end
