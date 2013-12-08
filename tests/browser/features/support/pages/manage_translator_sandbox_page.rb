@@ -12,6 +12,8 @@ class ManageTranslatorSandboxPage
 	text_field(:language_filter, id: "languagefilter")
 	button(:language_selector_button, class: "language-selector")
 
+	div(:no_translations_name, text: "This user didn't make any translations.")
+
 	div(:requests_list, class: "requests-list")
 	div(:request_count, class: "request-count")
 	div(:request_footer, class: "request-footer")
@@ -41,6 +43,22 @@ class ManageTranslatorSandboxPage
 
 	def hidden_users_element
 		@browser.elements(css: ".requests .request.hide")
+	end
+
+	def request_with_username(username)
+		@browser.div(id: "tsb-request-#{username}")
+	end
+
+	def requests_without_username(username)
+		@browser.elements(css: ".row.request:not(#tsb-request-#{username})")
+	end
+
+	def translation_elements
+		@browser.elements(css: ".details .translation")
+	end
+
+	def checkbox_for_request_with_username(username)
+		@browser.element(css: "#tsb-request-#{username} .request-selector")
 	end
 
 	def visible_users_start_with?(prefix)
