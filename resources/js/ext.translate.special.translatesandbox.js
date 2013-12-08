@@ -344,6 +344,7 @@
 	$( document ).ready( function () {
 		var $requestCheckboxes = $( '.request-selector' ),
 			$languageSelector = $( '.language-selector' ),
+			$clearLanguageSelector = $( '.clear-language-selector' ),
 			$selectAll = $( '.request-selector-all' ),
 			$requestRows = $( '.requests .request' ),
 			$detailsPane = $( '.pane.details' );
@@ -493,24 +494,22 @@
 				$languageSelector
 					.removeClass( 'unselected' )
 					.addClass( 'selected' )
-					.text( $.uls.data.getAutonym( language ) )
-					.append( $( '<span>' ) // A '×' icon to clear the selector
-						.addClass( 'clear' )
-						.text( '×' )
-						.click( function() {
-							$languageSelector
-								.removeClass( 'selected' )
-								.addClass( 'unselected' )
-								.text( mw.msg( 'tsb-all-languages-button-label' ) );
-
-							filterRequestsByLanguage();
-
-							return false;
-						} )
-					);
+					.text( $.uls.data.getAutonym( language ) );
 
 				filterRequestsByLanguage( language );
+
+				$clearLanguageSelector.removeClass( 'hide' );
 			}
+		} );
+
+		$clearLanguageSelector.on( 'click', function() {
+			$languageSelector
+				.removeClass( 'selected' )
+				.addClass( 'unselected' )
+				.text( mw.msg( 'tsb-all-languages-button-label' ) );
+
+			filterRequestsByLanguage();
+			$clearLanguageSelector.addClass( 'hide' );
 		} );
 	} );
 
@@ -518,7 +517,7 @@
 	 * Filter the requests by language.
 	 * @param {string} [language] Language code
 	 */
-	function filterRequestsByLanguage ( language ) {
+	function filterRequestsByLanguage( language ) {
 		var $requests = $( '.request' );
 
 		$requests.each( function ( index, request ) {

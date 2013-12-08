@@ -182,6 +182,7 @@
 	background-color: #F8F8F8;
 }
 
+.clear-language-selector,
 .language-selector {
 	margin-left: 10px;
 	border-radius: 3px;
@@ -207,11 +208,6 @@
 	display: inline-block;
 	vertical-align: middle;
 	margin-left: 0.5em;
-}
-
-.language-selector .clear {
-	padding-left: 10px;
-	cursor: pointer;
 }
 
 textarea.body {
