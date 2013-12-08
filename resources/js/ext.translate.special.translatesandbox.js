@@ -304,10 +304,17 @@
 	function updateSelectedIndicator( count ) {
 		var text = mw.msg( 'tsb-selected-count', mw.language.convertNumber( count ) );
 
-		$( '.pane.requests .request-footer' ).text( text );
+		$( '.pane.requests .request-footer .selected-counter' ).text( text );
 		if ( count > 1 ) {
 			$( '.pane.details .tsb-header' ).text( text );
 		}
+	}
+
+	function indicateOlderRequests() {
+		var $olderRequests = $( '.row.request.selected' ).last().nextAll( ':not(.hide)' );
+
+		$( '.older-requests-indicator' )
+			.text( mw.msg( 'tsb-older-requests', $olderRequests.length ) );
 	}
 
 	/**
@@ -425,6 +432,7 @@
 			}
 
 			updateSelectedIndicator( checkedCount );
+			indicateOlderRequests();
 
 			e.stopPropagation();
 		} );
@@ -457,6 +465,22 @@
 			$selectAll.prop( 'indeterminate', true );
 
 			updateSelectedIndicator( 1 );
+			indicateOlderRequests();
+		} );
+
+		$( '.older-requests-indicator' ).on( 'click', function () {
+			var $olderRequests = $requestRows.filter( '.selected' ).last().nextAll( ':not(.hide)' );
+
+			$olderRequests.each( function( index, request ) {
+				$( request ).find( '.request-selector' )
+					// TODO
+					// Just click() should be enough,
+					// without making it checked in this weird way.
+					.prop( 'checked', true )
+					.click()
+					.prop( 'checked', true );
+
+			} )
 		} );
 
 		if ( $requestRows.length ) {
