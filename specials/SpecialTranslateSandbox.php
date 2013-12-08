@@ -56,7 +56,12 @@ class SpecialTranslateSandbox extends SpecialPage {
 
 			foreach ( $textUsernamePrefixes as $prefix ) {
 				for ( $i = 0; $i < $userCount; $i++ ) {
-					$user = TranslateSandbox::addUser( "$prefix$i", "$prefix$i@pupun.kolo", 'porkkana' );
+					$name = "$prefix$i";
+
+					// For the case that the user with this name was accepted and is not sandboxed
+					$this->forceDeleteUser( $name );
+
+					$user = TranslateSandbox::addUser( $name, "$prefix$i@pupun.kolo", 'porkkana' );
 					$user->setOption(
 						'translate-sandbox',
 						FormatJson::encode( array(
@@ -89,6 +94,28 @@ class SpecialTranslateSandbox extends SpecialPage {
 		foreach ( $users as $user ) {
 			TranslateSandbox::deleteUser( $user );
 		}
+	}
+
+	/**
+	 * Deletes a user without doing much validation,
+	 * even if it's not sandboxed.
+	 * Should only be used for particular users for testing.
+	 * @param string $name
+	 * @throws MWException
+	 */
+	public function forceDeleteUser( $name ) {
+		$user = User::newFromName( $name, false );
+		$uid = $user->getId();
+
+		$dbw = wfGetDB( DB_MASTER );
+		$dbw->delete( 'user', array( 'user_id' => $uid ), __METHOD__ );
+		$dbw->delete( 'user_groups', array( 'ug_user' => $uid ), __METHOD__ );
+
+		$user->clearInstanceCache( 'defaults' );
+		// @todo why the bunny is this private?!
+		// $user->clearSharedCache();
+		global $wgMemc;
+		$wgMemc->delete( wfMemcKey( 'user', 'id', $uid ) );
 	}
 
 	/**
