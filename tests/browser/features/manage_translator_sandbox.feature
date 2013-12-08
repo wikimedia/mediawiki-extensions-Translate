@@ -116,26 +116,51 @@ Feature: Manage translator sandbox
 
   Scenario: Accepting one user
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
-    When I click on the username of a user who made some translations in the first column
+    When I click on 'Pupu2' in the first column
       And I click the 'Accept' button
-    Then the user should be accepted XXX
+    Then I should not see user 'Pupu2' in the first column
+      And I should see 'Orava2' in the header of the second column
+      And I should see the checkbox next to the request from 'Orava2' checked and disabled
+      And I should see '1 user selected' at the bottom of the first column
+      And I should see '9 requests' at the top of the first column
 
   Scenario: Rejecting one user
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
-    When I click on the username of a user who made some translations in the first column
-      And I click the 'reject' button
-    Then the user should be rejected XXX
+    When I click on 'Pupu2' in the first column
+      And I click the 'Reject' button
+    Then I should not see user 'Pupu2' in the first column
+      And I should see 'Orava2' in the header of the second column
+      And I should see the checkbox next to the request from 'Orava2' checked and disabled
+      And I should see '1 user selected' at the bottom of the first column
+      And I should see '9 requests' at the top of the first column
 
   Scenario: Accepting multiple users
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
-    When I click on the username of a user who made some translations in the first column
-      And I click on the username of a user who made some translations in the first column
-      And I click the 'Accept all' button
-    Then both users should be accepted XXX
+    When I click on 'Pupu2' in the first column
+      And I click on 'Orava3' in the first column
+      And I click the 'Accept' button
+    Then I should not see user 'Pupu2' in the first column
+      And I should not see user 'Orava3' in the first column
+      And I should see 'Orava2' in the header of the second column
+      And I should see the checkbox next to the request from 'Orava2' checked and disabled
+      And I should see '1 user selected' at the bottom of the first column
+      And I should see '8 requests' at the top of the first column
 
   Scenario: Rejecting multiple users
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
-    When I click on the username of a user who made some translations in the first column
-      And I click on the username of a user who made some translations in the first column
-      And I click the 'Reject all' button
-    Then both users should be accepted XXX
+    When I click on 'Pupu2' in the first column
+      And I click on 'Orava3' in the first column
+      And I click the 'Reject' button
+    Then I should not see user 'Pupu2' in the first column
+      And I should not see user 'Orava3' in the first column
+      And I should see 'Orava2' in the header of the second column
+      And I should see the checkbox next to the request from 'Orava2' checked and disabled
+      And I should see '1 user selected' at the bottom of the first column
+      And I should see '8 requests' at the top of the first column
+
+  Scenario: Accepting all users
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
+    When I click the checkbox to select all users
+      And I click the 'Accept' button
+    Then no users are displayed in the first column
+      And I should see '0 requests' at the top of the first column

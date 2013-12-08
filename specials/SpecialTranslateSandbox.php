@@ -48,15 +48,20 @@ class SpecialTranslateSandbox extends SpecialPage {
 		}
 
 		if ( $request->getVal( 'integrationtesting' ) === 'populate' ) {
-			$this->emptySandbox();
-
 			$textUsernamePrefixes = array( 'Orava', 'Pupu' );
 			$testLanguages = array( 'fi', 'uk', 'nl', 'ml', 'bn' );
 			$userCount = count( $testLanguages );
 
 			foreach ( $textUsernamePrefixes as $prefix ) {
 				for ( $i = 0; $i < $userCount; $i++ ) {
-					$user = TranslateSandbox::addUser( "$prefix$i", "$prefix$i@pupun.kolo", 'porkkana' );
+					$name = "$prefix$i";
+
+					// Get rid of users, even if promoted during tests
+					$userToDelete = User::newFromName( $name, false );
+					TranslateSandbox::deleteUser( $userToDelete, 'force' );
+
+
+					$user = TranslateSandbox::addUser( $name, "$prefix$i@pupun.kolo", 'porkkana' );
 					$user->setOption(
 						'translate-sandbox',
 						FormatJson::encode( array(
@@ -84,7 +89,7 @@ class SpecialTranslateSandbox extends SpecialPage {
 	 * Use with caution!
 	 * To facilitate browsers tests.
 	 */
-	public function emptySandbox() {
+	protected function emptySandbox() {
 		$users = TranslateSandbox::getUsers();
 		foreach ( $users as $user ) {
 			TranslateSandbox::deleteUser( $user );
