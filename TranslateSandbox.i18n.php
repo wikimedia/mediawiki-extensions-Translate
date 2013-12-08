@@ -34,6 +34,7 @@ Please come to $2 and make some more translations.',
 	'tsb-accept-button-label' => 'Accept',
 	'tsb-reject-button-label' => 'Reject',
 	'tsb-selected-count' => '{{PLURAL:$1|$1 user selected|$1 users selected}}',
+	'tsb-older-requests' => '$1 older {{PLURAL:$1|request|requests}}',
 	'tsb-accept-all-button-label' => 'Accept all',
 	'tsb-reject-all-button-label' => 'Reject all',
 	'tsb-reminder-link-text' => 'Send email reminder',
@@ -81,6 +82,7 @@ Followed by a list of the pending requests.',
 {{Identical|Reject}}',
 	'tsb-selected-count' => 'Shows how many users are selected for accepting or rejecting. Parameters:
 * $1 - the number of users',
+	'tsb-older-requests' => 'A link shown at the footer of the requests list. Clicking the link selects all the requests that are older than the oldest currently-selected request. $1 is the number of older requests. It can be 0.',
 	'tsb-accept-all-button-label' => 'Button label for accept-all button in [[Special:TranslateSandbox]].
 
 See also:

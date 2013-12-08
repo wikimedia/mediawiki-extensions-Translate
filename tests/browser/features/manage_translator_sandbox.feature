@@ -37,6 +37,17 @@ Feature: Manage translator sandbox
     Then a user whose name begins with 'pupu' is displayed in the first column
       And a user whose name begins with 'orava' is displayed in the first column
 
+  Scenario: Selecting older requests
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
+    When I click on 'Orava1' in the first column
+      And I click on the link that says '3 older requests' at the bottom of the first column
+    Then I should see the checkbox next to the request from 'Orava1' checked and enabled
+      And I should see the checkbox next to the request from 'Pupu1' checked and enabled
+      And I should see the checkbox next to the request from 'Orava0' checked and enabled
+      And I should see the checkbox next to the request from 'Pupu0' checked and enabled
+      And I should see '4 users selected' at the bottom of the first column
+      And I should see '4 users selected' in the header of the second column
+
   Scenario: Searching for a user by language
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I click the sandboxed users language filter button
