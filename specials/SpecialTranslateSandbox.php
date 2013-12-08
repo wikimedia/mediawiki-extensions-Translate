@@ -110,7 +110,11 @@ class SpecialTranslateSandbox extends SpecialPage {
 		<div class="four columns pane requests">
 			{$this->makeList()}
 			<div class="request-footer">
-				{$this->msg( 'tsb-selected-count' )->numParams( 0 )->escaped()}
+				<span class="selected-counter">
+					{$this->msg( 'tsb-selected-count' )->numParams( 0 )->escaped()}
+				</span>
+				&nbsp;
+				<a href="#" class="older-requests-indicator"></a>
 			</div>
 		</div>
 		<div class="eight columns pane details"></div>
