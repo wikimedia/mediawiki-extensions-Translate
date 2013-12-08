@@ -25,11 +25,10 @@ Then(/^a user whose name begins with '(.*)' is displayed in the first column$/) 
 end
 
 Then(/^no users are displayed in the first column$/) do
-	# Testing search doesn't work without waiting a bit,
-	# because the filtering doesn't happen immediately.
-	# TODO: Find a better way to wait until the filtering is complete.
-	sleep 1
-	on(ManageTranslatorSandboxPage).visible_users_element.length.should == 0
+	on(ManageTranslatorSandboxPage) do |page|
+		Watir::Wait.until { page.visible_requests_element.size < 10 }
+		page.visible_users_element.length.should == 0
+	end
 end
 
 Then(/^I should see '(.+)' at the top of the first column$/) do |requests_number|
@@ -88,6 +87,11 @@ Then(/^I should see the '(.+)' button displayed in the second column$/) do |labe
 	on(ManageTranslatorSandboxPage).details_button(label).should be_visible
 end
 
+When(/^I click the '(.+)' button$/) do |label|
+	on(ManageTranslatorSandboxPage).details_button(label).click
+end
+
+
 When(/^I click on '(.+)' in the first column$/) do |username|
 	on(ManageTranslatorSandboxPage).request_with_username(username).click
 end
@@ -117,4 +121,11 @@ end
 
 Then(/^I should see the details of (\d+) sandboxed translations done by the user in the second column$/) do |translations|
 	on(ManageTranslatorSandboxPage).translation_elements.length.should == translations.to_i
+end
+
+Then(/^I should not see user '(.+)' in the first column$/) do |username|
+	on(ManageTranslatorSandboxPage) do |page|
+		Watir::Wait.until { page.visible_requests_element.size < 10 }
+		page.request_with_username(username).should_not exist
+	end
 end
