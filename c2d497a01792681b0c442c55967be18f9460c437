@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_9ec9a3b0",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-08T21:46:41Z",
+      "side": 1,
+      "message": "Could just unstage this file.",
+      "revId": "c2d497a01792681b0c442c55967be18f9460c437",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_989bfbc0",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-08T21:46:41Z",
+      "side": 1,
+      "message": "the space..",
+      "revId": "c2d497a01792681b0c442c55967be18f9460c437",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_7ec49f94",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-08T21:46:41Z",
+      "side": 1,
+      "message": "I left comment about this in earlier patchset",
+      "revId": "c2d497a01792681b0c442c55967be18f9460c437",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
