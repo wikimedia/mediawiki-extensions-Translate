@@ -55,7 +55,7 @@ Then(/^only users who translate to language '(.+)' are displayed in the first co
 end
 
 Then(/^I should see '(.+)' at the bottom of the first column$/) do |text|
-	on(ManageTranslatorSandboxPage).request_footer.should == text
+	on(ManageTranslatorSandboxPage).selected_counter.should == text
 end
 
 Then(/^I should see the name of the first user in the first column in the header of the second column$/) do
@@ -98,6 +98,10 @@ end
 
 When(/^I click on the checkbox near '(.+)' in the first column$/) do |username|
 	on(ManageTranslatorSandboxPage).checkbox_for_request_with_username(username).click
+end
+
+When(/^I click on the link that says '(.*)' at the bottom of the first column$/) do |older_requests|
+	on(ManageTranslatorSandboxPage).footer_link(older_requests).click
 end
 
 Then(/^I should not see any users except '(.+)' selected$/) do |username|
