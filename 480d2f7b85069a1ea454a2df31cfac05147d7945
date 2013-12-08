@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "0ee75395_b88a3f1a",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-08T19:56:22Z",
+      "side": 1,
+      "message": "What is the space for, btw?",
+      "revId": "480d2f7b85069a1ea454a2df31cfac05147d7945",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_389f4f64",
         "filename": "resources/js/ext.translate.special.translatesandbox.js",
         "patchSetId": 9
