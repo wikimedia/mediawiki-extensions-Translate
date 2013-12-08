@@ -56,6 +56,7 @@ Feature: Manage translator sandbox
       And I should see '2 requests' at the top of the first column
       And I should see '1 user selected' at the bottom of the first column
       And I should see the name of the first user in the first column in the header of the second column
+      And I should see the button that clears language selection
 
   Scenario: Searching for a user by language and selecting all users
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
@@ -66,6 +67,16 @@ Feature: Manage translator sandbox
       And I should see '2 requests' at the top of the first column
       And I should see '2 users selected' at the bottom of the first column
       And I should see '2 users selected' in the header of the second column
+
+  Scenario: Showing user who translate to all languages
+    Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
+    When I click the sandboxed users language filter button
+      And I type 'nl' in the language filter
+      And I click the button that clears language selection
+    Then I should see the checkbox next to the request from 'Orava4' checked and disabled
+      And I should see '10 requests' at the top of the first column
+      And I should see '1 user selected' at the bottom of the first column
+      And I should not see the button that clears language selection
 
   Scenario: Translation Administrator should be able to see a list of pending requests with usernames in the first column, sorted by the number of translations and the most recent within them, and the first user should be selected
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
