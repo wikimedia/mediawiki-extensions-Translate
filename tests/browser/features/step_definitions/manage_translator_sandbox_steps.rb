@@ -77,12 +77,30 @@ Then(/^I should see the userlist in the first column sorted by the number of tra
 	on(ManageTranslatorSandboxPage).requests_are_sorted_by_translation_count_and_date?.should be_true
 end
 
-Then(/^I should see the checkbox next to the name of the first user in the first column (.+) and (.+)$/) do |checked, disabled|
-	first_request_checkbox = on(ManageTranslatorSandboxPage).visible_request_selectors_element[0]
-	first_request_checkbox.attribute_value("checked").should == (checked == "checked").to_s
-	first_request_checkbox.attribute_value("disabled").should == (disabled == "disabled").to_s
+Then(/^I should see the checkbox next to the request from '(.+)' (.+) and (.+)$/) do |user, checked, disabled|
+	checkbox = on(ManageTranslatorSandboxPage).checkbox_for_request_with_username(user)
+
+	checkbox.attribute_value("checked").should == (checked == "checked").to_s
+	checkbox.attribute_value("disabled").should == (disabled == "disabled").to_s
 end
 
 Then(/^I should see the '(.+)' button displayed in the second column$/) do |label|
 	on(ManageTranslatorSandboxPage).details_button_is_visible?(label).should be_true
+end
+
+When(/^I click on '(.+)' in the first column$/) do |username|
+	on(ManageTranslatorSandboxPage).request_with_username(username).click
+end
+
+Then(/^I should not see any users except '(.+)' selected$/) do |username|
+	on(ManageTranslatorSandboxPage).requests_without_username(username).all? do |element|
+		not element.attribute_value("class").split(" ").include?("selected")
+	end
+end
+
+Then(/^I should not see any translations done by the user in the second column$/) do
+	on(ManageTranslatorSandboxPage) do |page|
+		page.translation_elements.length.should == 0
+		page.no_translations_name_element.should be_visible
+	end
 end

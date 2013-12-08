@@ -59,7 +59,7 @@ Feature: Manage translator sandbox
   Scenario: Translation Administrator should be able to see a list of pending requests with usernames in the first column, sorted by the number of translations and the most recent within them, and the first user should be selected
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     Then I should see the userlist in the first column sorted by the number of translations and the most recent within them
-      And I should see the checkbox next to the name of the first user in the first column checked and disabled
+      And I should see the checkbox next to the request from 'Orava4' checked and disabled
       And I should see the name of the first user in the first column in the header of the second column
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
@@ -67,11 +67,11 @@ Feature: Manage translator sandbox
 
   Scenario: Clicking on a name of a user who didn't make any translations shows the user information and the action buttons and doesn't show translations
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
-    When I click on the username of a user who didn't make any translations in the first column
-    Then I should see the checkbox next to the name of the user who didn't make any translations checked and disabled
-      And I should not see any other users selected
-      And I should see the name of the user who didn't make any translations in the header of the second column
-      And I should not see the details of sandboxed translations done by the user in the second column
+    When I click on 'Orava0' in the first column
+    Then I should see the checkbox next to the request from 'Orava0' checked and disabled
+      And I should not see any users except 'Orava0' selected
+      And I should see 'Orava0' in the header of the second column
+      And I should not see any translations done by the user in the second column
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
       And I should see '1 user selected' at the bottom of the first column
