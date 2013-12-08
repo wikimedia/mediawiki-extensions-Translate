@@ -51,6 +51,18 @@ When(/^I type '(.+)' in the language filter$/) do |text|
 	end
 end
 
+Then(/^I should see the button that clears language selection$/) do
+	on(ManageTranslatorSandboxPage).clear_language_selector_element.should be_visible
+end
+
+Then(/^I should not see the button that clears language selection$/) do
+	on(ManageTranslatorSandboxPage).clear_language_selector_element.should_not be_visible
+end
+
+When(/^I click the button that clears language selection$/) do
+	on(ManageTranslatorSandboxPage).clear_language_selector_element.click
+end
+
 Then(/^only users who translate to language '(.+)' are displayed in the first column$/) do |language|
 	on(ManageTranslatorSandboxPage).all_visible_requests_translate_to?(language).should be_true
 end

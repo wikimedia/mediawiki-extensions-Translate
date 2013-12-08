@@ -6,6 +6,8 @@ class ManageTranslatorSandboxPage
 	include URL
 	page_url URL.url("Special:ManageTranslatorSandbox?<%=params[:extra]%>")
 
+	button(:clear_language_selector, class: "clear-language-selector")
+
 	div(:details, class: "details")
 	div(:details_header, class: "tsb-header")
 
