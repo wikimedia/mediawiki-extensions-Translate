@@ -37,6 +37,7 @@ Please come to $2 and make some more translations.',
 	'tsb-accept-all-button-label' => 'Accept all',
 	'tsb-reject-all-button-label' => 'Reject all',
 	'tsb-reminder-link-text' => 'Send email reminder',
+	'tsb-didnt-make-any-translations' => 'This user didn\'t make any translations.',
 	'tsb-translations-source' => 'Source',
 	'tsb-translations-user' => 'User translations',
 	'tsb-translations-current' => 'Existing translations',
@@ -89,6 +90,7 @@ See also:
 See also:
 * {{msg-mw|Tsb-accept-all-button-label}}',
 	'tsb-reminder-link-text' => 'Link text for sending reminder emails about translator signup requests.',
+	'tsb-didnt-make-any-translations' => 'Displayed instead of the translations if the selected user didn\'t make any translations.',
 	'tsb-translations-source' => 'Table header label for source messages of user translations in [[Special:TranslateSandbox]].
 {{Identical|Source}}',
 	'tsb-translations-user' => 'Table header label for user translations in [[Special:TranslateSandbox]].',

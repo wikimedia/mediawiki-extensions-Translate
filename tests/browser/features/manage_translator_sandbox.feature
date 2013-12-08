@@ -59,7 +59,7 @@ Feature: Manage translator sandbox
   Scenario: Translation Administrator should be able to see a list of pending requests with usernames in the first column, sorted by the number of translations and the most recent within them, and the first user should be selected
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     Then I should see the userlist in the first column sorted by the number of translations and the most recent within them
-      And I should see the checkbox next to the name of the first user in the first column checked and disabled
+      And I should see the checkbox next to the request from 'Orava4' checked and disabled
       And I should see the name of the first user in the first column in the header of the second column
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
@@ -67,49 +67,50 @@ Feature: Manage translator sandbox
 
   Scenario: Clicking on a name of a user who didn't make any translations shows the user information and the action buttons and doesn't show translations
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
-    When I click on the username of a user who didn't make any translations in the first column
-    Then I should see the checkbox next to the name of the user who didn't make any translations checked and disabled
-      And I should not see any other users selected
-      And I should see the name of the user who didn't make any translations in the header of the second column
-      And I should not see the details of sandboxed translations done by the user in the second column
+    When I click on 'Orava0' in the first column
+    Then I should see the checkbox next to the request from 'Orava0' checked and disabled
+      And I should not see any users except 'Orava0' selected
+      And I should see 'Orava0' in the header of the second column
+      And I should not see any translations done by the user in the second column
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
       And I should see '1 user selected' at the bottom of the first column
 
   Scenario: Clicking a username when another user is selected selects only the new user; Clicking on a name of a user who made some translations shows the user information and the action buttons and some translations
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
-    When I click on the username of a user who didn't make any translations in the first column
-      And I click on the username of a user who made some translations in the first column
-    Then I should see the checkbox next to the name of the user who made some translations checked and disabled
-      And I should not see any other users selected
-      And I should see the name of the user who made some translations in the header of the second column
-      And I should see the details of sandboxed translations done by the user in the second column
+    When I click on 'Orava0' in the first column
+      And I click on 'Orava3' in the first column
+    Then I should see the checkbox next to the request from 'Orava3' checked and disabled
+      And I should not see any users except 'Orava3' selected
+      And I should see 'Orava3' in the header of the second column
+      And I should see the details of 3 sandboxed translations done by the user in the second column
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
       And I should see '1 user selected' at the bottom of the first column
 
   Scenario: Selecting multiple users
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
-    When I click on the username of the first user who made some translations in the first column
-      And I click on the checkbox next to the name of the second user who made some translations in the first column
-    Then I should see the checkbox next to the name of two users who made some translations checked and enabled
+    When I click on 'Orava4' in the first column
+      And I click on the checkbox near 'Pupu3' in the first column
+    Then I should see the checkbox next to the request from 'Orava4' checked and enabled
+      And I should see the checkbox next to the request from 'Pupu3' checked and enabled
       And I should see '2 users selected' in the header of the second column
       And I should see '2 users selected' at the bottom of the first column
-      And I should not see the details of sandboxed translations done by the user in the second column
+      And I should not see any translations done by the users in the second column
       And I should see the 'Accept all' button displayed in the second column
       And I should see the 'Reject all' button displayed in the second column
 
   Scenario: Selecting multiple users and then one user again
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
-    When I click on the username of the first user who made some translations in the first column
-      And I click on the checkbox next to the name of the second user who made some translations in the first column
-      And I click on the checkbox next to the name of the first user who made some translations in the first column
-    Then I should see the checkbox next to the name of the first user who made some translations unchecked
-      And I should see the checkbox next to the name of the second user who made some translations checked
-      And I should see the checkbox next to the name of two users who made some translations disabled
-      And I should see '1 user selected' in the header of the second column
+    When I click on 'Pupu3' in the first column
+      And I click on the checkbox near 'Pupu2' in the first column
+      And I click on 'Orava2' in the first column
+    Then I should see the checkbox next to the request from 'Pupu3' unchecked and enabled
+      And I should see the checkbox next to the request from 'Pupu2' unchecked and enabled
+      And I should see the checkbox next to the request from 'Orava2' checked and disabled
+      And I should see 'Orava2' in the header of the second column
       And I should see '1 user selected' at the bottom of the first column
-      And I should see the details of sandboxed translations done by the user in the second column
+      And I should see the details of 2 sandboxed translations done by the user in the second column
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
 
