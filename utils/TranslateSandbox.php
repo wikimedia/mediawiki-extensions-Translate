@@ -42,25 +42,43 @@ class TranslateSandbox {
 
 	/**
 	 * Deletes a sandboxed user without doing much validation.
+	 *
 	 * @param User $user
+	 * @param string $force If set to 'force' will skip the little validation we have.
 	 * @throws MWException
 	 */
-	public static function deleteUser( User $user ) {
+	public static function deleteUser( User $user, $force = '' ) {
 		$uid = $user->getId();
 
-		if ( !self::isSandboxed( $user ) ) {
+		if ( $force !== 'force' && !self::isSandboxed( $user ) ) {
 			throw new MWException( "Not a sandboxed user" );
 		}
 
+		// Delete from database
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete( 'user', array( 'user_id' => $uid ), __METHOD__ );
 		$dbw->delete( 'user_groups', array( 'ug_user' => $uid ), __METHOD__ );
 
+		// If someone tries to access still object still, they will get anon user
+		// data.
 		$user->clearInstanceCache( 'defaults' );
+
+		// Nobody should access the user by id anymore, but in case they do, purge
+		// the cache so they wont get stale data
 		// @todo why the bunny is this private?!
 		// $user->clearSharedCache();
 		global $wgMemc;
 		$wgMemc->delete( wfMemcKey( 'user', 'id', $uid ) );
+
+		// In case we create an user with same name as was deleted during the same
+		// request, we must also reset this cache or the User class will try to load
+		// stuff for the old id, which is no longer present since we just deleted
+		// the cache above. But it would have the side effect or overwriting all
+		// member variables with null data. This used to manifest as a bug where
+		// inserting a new user fails because the mName properpty is set to null,
+		// which is then converted as the ip of the current user, and trying to
+		// add that twice results in a name conflict. It was fun to debug.
+		User::resetIdByNameCache();
 	}
 
 	/**
