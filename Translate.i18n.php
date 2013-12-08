@@ -1864,6 +1864,7 @@ Ha de fer parte d'a colla de traductors ta poder alzar os cambeos. Ístos no que
  * @author ترجمان05
  * @author روخو
  * @author زكريا
+ * @author لطرش احمد الهاشمي
  */
 $messages['ar'] = array(
 	'translate' => 'ترجمة',
@@ -1910,7 +1911,7 @@ $messages['ar'] = array(
 	'translate-edit-translation' => 'الترجمة',
 	'translate-edit-contribute' => 'ساهم',
 	'translate-edit-no-information' => "''ليس لهذه الرسالة توثيق.
-إذا كنت تعرف أين أو كيف يتم استخدام هذه الرسالة، فيمكنك مساعدة المترجمين الآخرين بإضافة توثيق إلى هذه الرسالة.''", # Fuzzy
+إذا كنت تعرف أين أو كيف يتم استخدام هذه الرسالة، فيمكنك مساعدة المترجمين الآخرين بإضافة توثيق إلى هذه الرسالة.''",
 	'translate-edit-information' => 'معلومات عن الرسالة ($1)',
 	'translate-edit-in-other-languages' => 'الرسالة بلغات أخرى',
 	'translate-edit-committed' => 'الترجمة الحالية في البرنامج',
@@ -2074,7 +2075,7 @@ $messages['ar'] = array(
 من فضلك راجع التغييرات واختر فعلا تريد فعله لكل ترجمة.
 لو اخترت تجاهل التغييرات، ستتم الكتابة عليها عند التصدير التالي.', # Fuzzy
 	'translate-manage-import-ok' => 'استوردت نسخة جديدة من الصفحة $1.', # Fuzzy
-	'translate-manage-import-done' => 'انتهى الكل!', # Fuzzy
+	'translate-manage-import-done' => 'استيراد كامل!',
 	'importtranslations' => 'استورد ترجمات',
 	'translate-import-from-local' => 'رفع ملف محلي:',
 	'translate-import-load' => 'حمّل الملف',
@@ -6173,9 +6174,13 @@ $messages['ce'] = array(
 	'translate-page-showing-all' => 'Ара баьккхина $1 {{PLURAL:$1|хаам|хаам|хаамаш}}.',
 	'translate-page-description-legend' => 'Тобанах хаам',
 	'translate-page-edit' => 'Нисйé',
+	'translate-edit-definition' => 'Хаам кепе балор',
 	'translate-edit-translation' => 'Гоч',
 	'translate-edit-contribute' => 'нисйé',
+	'translate-edit-information' => 'Хаамах лаьцна ($1)',
 	'translate-edit-in-other-languages' => 'Хаам кхечу меттанашкахь',
+	'translate-edit-tmsugs' => 'ДогӀуш хила там болу гочдар кховдор',
+	'translate-edit-tmmatch' => '$1% цхьаьнадогӀуш',
 	'translate-magic-pagename' => 'Къоргера MediaWiki гочяр',
 	'translate-magic-submit' => 'Арайаккха',
 	'translate-magic-cm-export' => 'Вахьайахка',
@@ -6202,7 +6207,11 @@ $messages['ce'] = array(
 	'translate-statsf-submit' => 'Хьалха муха ю хьажа',
 	'translate-sidebar-alltrans' => 'Кхечу меттанашкахь',
 	'translations' => 'Массо а гочдарш',
+	'translations-summary' => 'Лело луш долу гочдарш гучудаха язъе хааман цӀе.',
+	'translate-translations-no-message' => '«$1» гочбан луш хаам бац',
+	'translate-translations-count' => '{{PLURAL:$1|Карина $1 гочдар|Карина $1 гочдарш}}.',
 	'translate-translations-fieldset-title' => 'Хаам',
+	'translate-translations-messagename' => 'ЦӀе:',
 	'translate-translations-project' => 'Проект:',
 	'languagestats-summary' => 'ХӀокху агӀонехь ю гочдаран статистика хӀокху меттан массо групашан чура хаамашан.',
 	'languagestats-stats-for' => 'Нохчийн меттан гочдаран статистика ($2).', # Fuzzy
@@ -6238,9 +6247,11 @@ $messages['ce'] = array(
 	'translate-import-load' => 'Файл чуяккхар',
 	'translate-import-err-no-such-file' => 'Файл <nowiki>$1</nowiki> яц я локальни чуяккхина яц.',
 	'translate-js-summary' => 'Цунах лаьцна:',
+	'translate-js-support' => 'Хаттар далар',
 	'translate-gs-code' => 'Код',
 	'translate-gs-multiple' => 'Маситта',
 	'translate-gs-total' => 'Ерриг',
+	'translate-searchprofile' => 'Гочдинарш',
 	'api-error-invalidrevision' => 'Гочйинарг карлаяьккхина  яц',
 	'group-translate-sandboxed' => 'ЧӀагӀбина гочдархой',
 	'translate-dynagroup-recent-label' => 'Дукха хан йоццуш гоч динарш',
@@ -6267,7 +6278,9 @@ $messages['ce'] = array(
 	'tux-editor-discard-changes-button-label' => 'Цаоьшу хийцамаш',
 	'tux-editor-save-button-label' => 'Ӏалаш де гоч динарг',
 	'tux-editor-skip-button-label' => 'ТӀехьа догӀург',
+	'tux-editor-cancel-button-label' => 'Цаоьшу',
 	'tux-editor-confirm-button-label' => 'Бакъде гочдар',
+	'tux-editor-shortcut-info' => 'ТӀетаӀе «$1» Ӏалашъян я «$2» таӀа яй дехьагӀо.',
 	'tux-editor-edit-desc' => 'Хийца документаци',
 	'tux-editor-add-desc' => 'ТӀетоха документаци',
 	'tux-editor-suggestions-title' => 'ДӀаалар',
@@ -6291,6 +6304,7 @@ $messages['ce'] = array(
 	'tux-editor-close-tooltip' => 'ДӀачӀагӀа',
 	'tux-editor-collapse-tooltip' => 'Къайлаяккха',
 	'translate-search-more-languages-info' => 'кхин $1 {{PLURAL:$1|мотт|меттанаш|меттанаш}}', # Fuzzy
+	'translate-search-more-groups-info' => 'кхин $1 {{PLURAL:$1|тоба}}',
 );
 
 /** Chamorro (Chamoru)
@@ -6662,8 +6676,8 @@ Implicitní seznam (''default'') závisí na vašem jazyce.",
 	'translate-langstats-collapseall' => 'sbalit vše',
 	'translate-language-code' => 'Kód jazyka',
 	'translate-language-code-field-name' => 'Kód jazyka:',
-	'translate-suppress-complete' => 'Nevypisovat úplně přeložené skupiny zpráv',
-	'translate-ls-noempty' => 'Skrýt zcela nepřeložené skupiny zpráv',
+	'translate-suppress-complete' => 'Skrýt úplně přeložené skupiny zpráv',
+	'translate-ls-noempty' => 'Skrýt úplně nepřeložené skupiny zpráv',
 	'translate-language' => 'Jazyk',
 	'translate-total' => 'Zprávy',
 	'translate-untranslated' => 'Nepřeložené',
@@ -9580,8 +9594,8 @@ $messages['es'] = array(
 	'translate-taction-disabled' => 'Esta acción está deshabilitada en este wiki.',
 	'translate-page-no-such-language' => 'No se especificó un idioma válido.',
 	'translate-page-no-such-group' => 'El grupo especificado no es válido.',
-	'translate-page-disabled' => 'Se han deshabilitado las traducciones a este idioma en este grupo de mensajes.
-Razón:
+	'translate-page-disabled' => 'Se han desactivado las traducciones a este idioma en este grupo.
+Motivo:
 
 <em>$1</em>',
 	'translate-language-disabled' => 'La traducción a este idioma está deshabilitada.',
@@ -9950,7 +9964,7 @@ Utilizado sobre todo para tareas de corrección.', # Fuzzy
 	'tux-empty-no-outdated-messages' => 'No hay mensajes anticuados',
 	'tux-empty-nothing-to-proofread' => 'Nada para revisar',
 	'tux-empty-nothing-new-to-proofread' => 'Nada nuevo para revisar',
-	'tux-empty-list-other' => 'Nada para traducir',
+	'tux-empty-list-other' => 'No hay nada que traducir',
 	'tux-empty-list-other-guide' => 'Puedes ayudar en la revisión de la traducciones existentes',
 	'tux-empty-list-other-action' => 'Revisar traducciones',
 	'tux-empty-list-other-link' => 'Mostrar todos los mensajes',
@@ -13923,8 +13937,8 @@ $messages['he'] = array(
 	'translate-edit-definition' => 'הגדרת ההודעה',
 	'translate-edit-translation' => 'תרגום',
 	'translate-edit-contribute' => 'לתרום תיעוד',
-	'translate-edit-no-information' => "'''להודעה זו אין תיעוד.
-אם אתם יודעים היכן או כיצד משתמשים בהודעה זו, באפשרותכם לעזור למתרגמים אחרים באמצעות הוספת תיעוד להודעה זו.'''", # Fuzzy
+	'translate-edit-no-information' => '<em>להודעה זו אין תיעוד.
+אם ידוע לך היכן או כיצד משתמשים בהודעה הזאת, באפשרותך לעזור למתרגמים אחרים באמצעות הוספת תיעוד להודעה זו.</em>',
 	'translate-edit-information' => 'מידע על ההודעה ($1)',
 	'translate-edit-in-other-languages' => 'ההודעה בשפות אחרות',
 	'translate-edit-committed' => 'התרגום הנוכחי בתוכנה',
@@ -14180,7 +14194,7 @@ $1',
 	'log-name-translationreview' => 'יומן סקירת תרגומים',
 	'log-description-translationreview' => 'יומן של כל הסקירות של תרגומים ושל קבוצות תרגומים.',
 	'logentry-translationreview-message' => '$1 {{GENDER:$2|סקר|סקרה}} את התרגום $3',
-	'logentry-translationreview-group' => '$1 {{GENDER:$2|שינה|שינתה}} את המצב של התרגומים של $3 ל{{GRAMMAR|תחילית|$4}} מ$6 ל$7',
+	'logentry-translationreview-group' => '$1 {{GENDER:$2|שינה|שינתה}} את המצב של התרגומים של $3 ל{{GRAMMAR:תחילית|$4}} מ$6 ל$7',
 	'group-translate-sandboxed' => 'מתרגמים לא מאושרים',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|מתרגם לא מאושר|מתרגמת לא מאושרת}}',
 	'right-translate-sandboxmanage' => 'ניהול מתשמשים בארגז חול',
@@ -14269,7 +14283,7 @@ $1',
 	'tux-proofread-translated-by-self' => 'זה תרגום שלך',
 	'tux-empty-list-all' => 'קבוצת ההודעות הזאת ריקה',
 	'tux-empty-list-all-guide' => 'נא לבחור קבוצת הודעות אחרת לתרגום',
-	'tux-translate-page-no-such-group' => "'''הקבוצה המבוקשת אינה קיימת.''' נא לבחור קבוצת הודעות אחרת.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>הקבוצה המבוקשת אינה קיימת.</strong> נא לבחור קבוצת הודעות אחרת.',
 	'tux-empty-list-translated' => 'אין הודעות מתורגמות',
 	'tux-empty-list-translated-guide' => 'ביכולתך לעזור לתרגם',
 	'tux-empty-list-translated-action' => 'תרגום',
@@ -33672,8 +33686,8 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-langstats-collapseall' => 'tümünü daralt',
 	'translate-language-code' => 'Dil kodu',
 	'translate-language-code-field-name' => 'Dil kodu:',
-	'translate-suppress-complete' => 'Çevirilmiş sayfaları getir',
-	'translate-ls-noempty' => 'Çevirilmemiş sayfaları getir',
+	'translate-suppress-complete' => 'Tamamen çevrilmiş ileti gruplarını gizle',
+	'translate-ls-noempty' => 'Hiç çevrilmemiş ileti gruplarını gizle',
 	'translate-language' => 'Dil',
 	'translate-total' => 'İletiler',
 	'translate-untranslated' => 'Çevrilmemiş',
@@ -36670,7 +36684,7 @@ $messages['zh-hans'] = array(
 	'translate-page-description-hasoptional-open' => '显示可选信息。',
 	'translate-page-edit' => '编辑',
 	'translate-ext-url' => '<hr />网站：$1',
-	'translate-optional' => '（可选择）',
+	'translate-optional' => '（可选）',
 	'translate-ignored' => '（已忽略）',
 	'translate-edit-title' => '编辑“$1”',
 	'translate-edit-definition' => '信息定义',
@@ -36942,7 +36956,7 @@ $messages['zh-hans'] = array(
 	'tux-tab-translated' => '已翻译',
 	'tux-tab-unproofread' => '未复查',
 	'tux-edit' => '编辑',
-	'tux-status-optional' => '可选择',
+	'tux-status-optional' => '可选',
 	'tux-status-fuzzy' => '已过时',
 	'tux-status-proofread' => '已复查',
 	'tux-status-translated' => '已翻译',
@@ -36987,7 +37001,7 @@ $messages['zh-hans'] = array(
 	'tux-message-filter-placeholder' => '过滤列表',
 	'tux-message-filter-result' => '找到“$2”的$1个结果',
 	'tux-message-filter-advanced-button' => '高级搜索',
-	'tux-message-filter-optional-messages-label' => '可选择信息',
+	'tux-message-filter-optional-messages-label' => '可选信息',
 	'tux-proofread-translated-by-self' => '你的翻译',
 	'tux-empty-list-all' => '本信息组为空',
 	'tux-empty-list-all-guide' => '请选择其他信息组翻译',
@@ -36997,7 +37011,7 @@ $messages['zh-hans'] = array(
 	'tux-empty-list-translated-action' => '翻译',
 	'tux-empty-no-messages-to-display' => '没有要显示的信息。',
 	'tux-empty-there-are-optional' => '有可选择信息未显示在列表中',
-	'tux-empty-show-optional-messages' => '显示可选择信息',
+	'tux-empty-show-optional-messages' => '显示可选信息',
 	'tux-empty-no-outdated-messages' => '没有已过时信息',
 	'tux-empty-nothing-to-proofread' => '没有要校对的内容',
 	'tux-empty-you-can-help-providing' => '您可以帮助提供新翻译',

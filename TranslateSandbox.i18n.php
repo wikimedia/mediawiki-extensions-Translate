@@ -292,6 +292,7 @@ Veuillez venir sur $2 et faire quelques traductions de plus.',
 );
 
 /** Galician (galego)
+ * @author Amire80
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -324,7 +325,7 @@ Acceda ao sistema en $2 e faga algunhas traducións máis.',
 	'translate-translationstash-skip-button-label' => 'Probar outra',
 	'tsb-limit-reached-title' => 'Grazas polas súas traducións',
 	'tsb-limit-reached-body' => 'Alcanzou o límite de traducións dos tradutores novos.
-O noso equipo ha comprobar e actualizar a súa conta axiña. 
+O noso equipo ha comprobar e actualizar a súa conta axiña.
 Logo diso, poderá traducir sen límites.',
 );
 
@@ -611,6 +612,7 @@ Kon alstublieft naar $2 en maak nog wat meer vertalingen.',
 	'tsb-search-requests' => 'Verzoeken zoeken',
 	'tsb-accept-button-label' => 'Accepteren',
 	'tsb-reject-button-label' => 'Afwijzen',
+	'tsb-selected-count' => '{{PLURAL:$1|Eén gebruiker|$1 gebruikers}} geselecteerd',
 	'tsb-accept-all-button-label' => 'Alles accepteren',
 	'tsb-reject-all-button-label' => 'Alles afwijzen',
 	'tsb-reminder-link-text' => 'Herinnering per e-mail verzenden',
@@ -628,6 +630,7 @@ Kon alstublieft naar $2 en maak nog wat meer vertalingen.',
 vertalers bereikt. Ons team gaat ze snel controleren en
 promoveert uw gebruiker snel, zodat u zonder beperkingen
 kunt gaan vertalen.',
+	'tsb-no-requests-from-new-users' => 'Geen verzoeken van nieuwe gebruikers',
 );
 
 /** Occitan (occitan)

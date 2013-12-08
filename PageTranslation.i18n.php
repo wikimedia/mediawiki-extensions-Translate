@@ -4602,12 +4602,12 @@ $messages['he'] = array(
 	'tpt-translation-restricted' => 'מנהל תרגומים נעל את תרגום קבוצת ההודעות הזאת לשפה הזאת.
 
 סיבה להגבלה: $1',
-	'tpt-discouraged-language-force' => 'מנהל תרגומים הגביל את השפות שאפשר לתרגם אליהן את הדף הזה. השפה הזאת לא נכללת בהן.
+	'tpt-discouraged-language-force' => '<strong>לא ניתן לתרגם את הדף הזה ל$2</strong>
 
-סיבה: $1', # Fuzzy
-	'tpt-discouraged-language' => 'השפה הזאת היא לא אחת השפות המועדפות לתרגום כפי שהגדיר מנהל תרגומים עבור הדף הזה.
+מנהל התרגום החליט שאפשר לתרגם את הדף הזה רק לשפות הבאות: $3.',
+	'tpt-discouraged-language' => '<strong>תרגום ל$2 לא מוגדר בתור עדיפות גבוהה עבור הדף הזה.</strong>
 
-סיבה: $1', # Fuzzy
+מנהל התרגום החליט שצריך לרכז את מאמצי בתרגום בשפות הבאות: $3.',
 	'tpt-discouraged-language-reason' => 'סיבה: $1',
 	'tpt-priority-languages' => 'מנהל תרגום הגדיר שהשפות המועדפות לקבוצה הזאת הן $1.',
 	'tpt-render-summary' => 'עדכון להתאמת הגרסה החדשה של דף המקור',
@@ -8914,6 +8914,7 @@ Sulamende le urteme versiune ponne essere signate pa traduzione.",
  * @author KPu3uC B Poccuu
  * @author Kaganer
  * @author Lockal
+ * @author Okras
  * @author Purodha
  * @author Александр Сигачёв
  */
@@ -8989,13 +8990,12 @@ $messages['ru'] = array(
 
 
 Причина: $1',
-	'tpt-discouraged-language-force' => 'Администратор перевода ограничил список языков, на которые может быть переведена данная страница. Данный язык не входит в этот список.
+	'tpt-discouraged-language-force' => '<strong>Эта страница не может быть переведена на $2.</strong>
 
+Администратор перевода решил, что эта страница может быть переведена только на $3.',
+	'tpt-discouraged-language' => '<strong>Перевод на $2 не приоритетен для этой страницы.</strong>
 
-Причина: $1', # Fuzzy
-	'tpt-discouraged-language' => 'Данный язык не входит в список приоритетных для данной страницы, установленных администратором перевода
-
-Причина: $1', # Fuzzy
+Администратор перевода решил сфокусировать усилия по переводу на $3.',
 	'tpt-discouraged-language-reason' => 'Причина: $1',
 	'tpt-priority-languages' => 'Администратор перевода установил $1 в качестве приоритетного языка для этой группы.',
 	'tpt-render-summary' => 'Обновление для соответствия новой версии исходной страницы.',
