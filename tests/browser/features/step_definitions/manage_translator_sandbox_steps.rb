@@ -88,6 +88,11 @@ Then(/^I should see the '(.+)' button displayed in the second column$/) do |labe
 	on(ManageTranslatorSandboxPage).details_button(label).should be_visible
 end
 
+When(/^I click the '(.+)' button$/) do |label|
+	on(ManageTranslatorSandboxPage).details_button(label).click
+end
+
+
 When(/^I click on '(.+)' in the first column$/) do |username|
 	on(ManageTranslatorSandboxPage).request_with_username(username).click
 end
@@ -117,4 +122,11 @@ end
 
 Then(/^I should see the details of (\d+) sandboxed translations done by the user in the second column$/) do |translations|
 	on(ManageTranslatorSandboxPage).translation_elements.length.should == translations.to_i
+end
+
+Then(/^I should not see user '(.+)' in the first column$/) do |username|
+	on(ManageTranslatorSandboxPage) do |page|
+		Watir::Wait.until { page.visible_requests_element.size > 10 }
+		page.request_with_username(username).should_not exist
+	end
 end
