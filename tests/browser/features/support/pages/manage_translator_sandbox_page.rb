@@ -16,7 +16,7 @@ class ManageTranslatorSandboxPage
 
 	div(:requests_list, class: "requests-list")
 	div(:request_count, class: "request-count")
-	div(:request_footer, class: "request-footer")
+	span(:selected_counter, class: "selected-counter")
 
 	text_field(:search, class: "request-filter-box")
 
@@ -43,6 +43,10 @@ class ManageTranslatorSandboxPage
 
 	def hidden_users_element
 		@browser.elements(css: ".requests .request.hide")
+	end
+
+	def footer_link(older_requests)
+		@browser.a(text: older_requests)
 	end
 
 	def request_with_username(username)
