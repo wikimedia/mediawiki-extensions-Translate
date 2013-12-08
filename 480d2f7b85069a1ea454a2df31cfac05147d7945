@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_389f4f64",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-08T19:29:11Z",
+      "side": 1,
+      "message": "This button doesn\u0027t really work here. I fixed it in I918c6f534ffc424b2df554c2fabe0694dccd2494 .",
+      "revId": "480d2f7b85069a1ea454a2df31cfac05147d7945",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
