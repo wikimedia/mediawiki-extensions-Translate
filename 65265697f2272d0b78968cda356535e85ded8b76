@@ -34,6 +34,24 @@
       "revId": "65265697f2272d0b78968cda356535e85ded8b76",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_ae579204",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-09T15:32:45Z",
+      "side": 1,
+      "message": "k. Thanks.",
+      "parentUuid": "0ee75395_0e4b1e64",
+      "revId": "65265697f2272d0b78968cda356535e85ded8b76",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
