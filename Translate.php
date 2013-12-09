@@ -215,7 +215,7 @@ $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
 $wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
 $wgJobClasses['MessageGroupStatesUpdaterJob'] = 'MessageGroupStatesUpdaterJob';
 $wgJobClasses['TTMServerMessageUpdateJob'] = 'TTMServerMessageUpdateJob';
-$wgJobClasses['TranslateSandboxReminderJob'] = 'TranslateSandboxReminderJob';
+$wgJobClasses['TranslateSandboxEmailJob'] = 'TranslateSandboxEmailJob';
 
 require "$dir/Resources.php";
 /** @endcond */
