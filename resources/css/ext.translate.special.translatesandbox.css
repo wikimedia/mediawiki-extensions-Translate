@@ -127,10 +127,15 @@
 	font-weight: lighter;
 }
 
-.details.pane .email {
+.details.pane .reminder-email {
 	color: #6c6d70;
 	font-size: 14px;
 	padding-top: 15px;
+}
+
+.details.pane .reminder-email .send-reminder {
+	padding-left: 1em;
+	padding-right: 1em;
 }
 
 .details.pane .languages {

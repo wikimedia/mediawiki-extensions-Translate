@@ -68,6 +68,7 @@ class SpecialTranslateSandbox extends SpecialPage {
 							'comment' => ''
 						) )
 					);
+					$user->setOption( 'translate-sandbox-reminders', $i );
 					$user->saveSettings();
 
 					for ( $j = 0; $j < $i; $j++ ) {
@@ -149,6 +150,7 @@ HTML;
 				'translations' => count( $this->stash->getTranslations( $user ) ),
 				'languagepreferences' => FormatJson::decode( $user->getOption( 'translate-sandbox' ) ),
 				'userid' => $user->getId(),
+				'reminders' => (int) $user->getOption( 'translate-sandbox-reminders' ),
 			);
 		}
 
