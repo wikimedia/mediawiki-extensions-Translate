@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_abe8a477",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T14:44:57Z",
+      "side": 1,
+      "message": "Good, but this should be in Translate.php as it is not related to page translation.",
+      "revId": "ff78ec8d109792f055f759d30edd0358b153a246",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_2bf4944f",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T14:44:57Z",
+      "side": 1,
+      "message": "No need for this if you use $user-\u003eaddNewUserLogEntry( \u0027create\u0027, $this-\u003emsg( \u0027promoted-from-sandbox\u0027 ) );",
+      "revId": "ff78ec8d109792f055f759d30edd0358b153a246",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_0b931005",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T14:44:57Z",
+      "side": 1,
+      "message": "You can user gender on $3 I think",
+      "revId": "ff78ec8d109792f055f759d30edd0358b153a246",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_cb9c0815",
+        "filename": "utils/TranslateSandbox.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T14:44:57Z",
+      "side": 1,
+      "message": "Noooo this is the old way.\n\nYou should use something like:\n\n\t\t$logEntry \u003d new ManualLogEntry( \u0027translatorsandbox\u0027, \u0027promote\u0027 );\n\t\t$logEntry-\u003esetPerformer( $performer );\n\t\t$logEntry-\u003esetTarget( $user-\u003egetUserPage() );\n\t\t$logEntry-\u003esetComment( ... );\n\t\t$logEntry-\u003esetParameters( array(\n\t\t\t\u00274::userid\u0027 \u003d\u003e $user-\u003egetId(),\n\t\t) );\n\t\t$logid \u003d $logEntry-\u003einsert();\n\t\t$logEntry-\u003epublish( $logid );\n\n\nNote that you don\u0027t have access to $performer here, so this logging should be moved to the API module.",
+      "revId": "ff78ec8d109792f055f759d30edd0358b153a246",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
