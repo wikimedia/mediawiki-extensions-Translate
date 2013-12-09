@@ -33,6 +33,24 @@
       "revId": "f8b8b6c31fe15d7f4ae857d882a794895cd3fc90",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_f92689b4",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T08:54:28Z",
+      "side": 1,
+      "message": "Depends what it is used for. The data thingie is not accessible by CSS selectors. Using this kind of user input in ids is icky though and should use Sanitizer::escapeId.",
+      "parentUuid": "0ee75395_d9062520",
+      "revId": "f8b8b6c31fe15d7f4ae857d882a794895cd3fc90",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
