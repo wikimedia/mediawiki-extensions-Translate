@@ -64,7 +64,7 @@ class ManageTranslatorSandboxPage
 	end
 
 	def checkbox_for_request_with_username(username)
-		@browser.element(css: "#tsb-request-#{username} .request-selector")
+		@browser.div(id: "tsb-request-#{username}").checkbox(class: "request-selector")
 	end
 
 	def visible_users_start_with?(prefix)

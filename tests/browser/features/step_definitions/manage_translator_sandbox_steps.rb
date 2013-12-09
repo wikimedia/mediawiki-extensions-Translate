@@ -88,11 +88,20 @@ Then(/^I should see the userlist in the first column sorted by the number of tra
 	on(ManageTranslatorSandboxPage).requests_are_sorted_by_translation_count_and_date?.should be_true
 end
 
-Then(/^I should see the checkbox next to the request from '(.+)' (.+) and (.+)$/) do |user, checked, disabled|
-	checkbox = on(ManageTranslatorSandboxPage).checkbox_for_request_with_username(user)
+Then(/^I should see the checkbox next to the request from '(.+)' checked$/) do |user|
+	on(ManageTranslatorSandboxPage).checkbox_for_request_with_username(user).should be_checked
+end
 
-	checkbox.attribute_value("checked").should == (checked == "checked" ? "true" : nil)
-	checkbox.attribute_value("disabled").should == (disabled == "disabled" ? "true" : nil)
+Then(/^I should see the checkbox next to the request from '(.+)' unchecked$/) do |user|
+	on(ManageTranslatorSandboxPage).checkbox_for_request_with_username(user).should_not be_checked
+end
+
+Then(/^I should see the checkbox next to the request from '(.+)' disabled$/) do |user|
+	on(ManageTranslatorSandboxPage).checkbox_for_request_with_username(user).should be_disabled
+end
+
+Then(/^I should see the checkbox next to the request from '(.+)' enabled$/) do |user|
+	on(ManageTranslatorSandboxPage).checkbox_for_request_with_username(user).should_not be_disabled
 end
 
 Then(/^I should see the '(.+)' button displayed in the second column$/) do |label|
