@@ -52,6 +52,12 @@ Please come to $2 and make some more translations.',
 Our team will verify and upgrade your account soon.
 Then you will be able to translate without limits.',
 	'tsb-no-requests-from-new-users' => 'No requests from new users',
+
+	'log-name-translationsandbox' => 'Translation Sandbox',
+	'log-description-translationsandbox' => 'A log of actions on translation sandbox users',
+	'logentry-translationsandbox-created' => 'user account {{GENDER:$3|$3}} created',
+	'logentry-translationsandbox-promoted' => '$1 {{GENDER:$2|promoted}} {{GENDER:$3|$3}} to translator',
+	'logentry-translationsandbox-rejected' => '$1 {{GENDER:$2|rejected}} the request from {{GENTEDER:$3|$3}} to become translator',
 );
 
 /** Message documentation (Message documentation)

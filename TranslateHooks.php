@@ -71,6 +71,7 @@ class TranslateHooks {
 				'PageTranslationLogFormatter';
 			$wgLogActionsHandlers['pagetranslation/associate'] = 'PageTranslationLogFormatter';
 			$wgLogActionsHandlers['pagetranslation/dissociate'] = 'PageTranslationLogFormatter';
+			$wgLogTypes[] = 'translatorsandbox';
 
 			global $wgJobClasses;
 			$wgJobClasses['TranslateRenderJob'] = 'TranslateRenderJob';
