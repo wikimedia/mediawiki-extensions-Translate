@@ -90,6 +90,15 @@ class ApiTranslateSandbox extends ApiBase {
 			} catch ( MWException $e ) {
 				$this->dieUsage( $e->getMessage(), 'invalidparam' );
 			}
+
+			$logEntry = new ManualLogEntry( 'translatorsandbox', 'rejected' );
+			$logEntry->setPerformer( $this->getUser() );
+			$logEntry->setTarget( $user->getUserPage() );
+			$logEntry->setParameters( array(
+				'4::userid' => $user->getId(),
+			) );
+			$logid = $logEntry->insert();
+			$logEntry->publish( $logid );
 		}
 	}
 
@@ -108,6 +117,17 @@ class ApiTranslateSandbox extends ApiBase {
 			} catch ( MWException $e ) {
 				$this->dieUsage( $e->getMessage(), 'invalidparam' );
 			}
+
+			$user->addNewUserLogEntry( 'create', $this->msg( 'tsb-promoted-from-sandbox' )->text() );
+
+			$logEntry = new ManualLogEntry( 'translatorsandbox', 'promote' );
+			$logEntry->setPerformer( $this->getUser() );
+			$logEntry->setTarget( $user->getUserPage() );
+			$logEntry->setParameters( array(
+				'4::userid' => $user->getId(),
+			) );
+			$logid = $logEntry->insert();
+			$logEntry->publish( $logid );
 		}
 	}
 
