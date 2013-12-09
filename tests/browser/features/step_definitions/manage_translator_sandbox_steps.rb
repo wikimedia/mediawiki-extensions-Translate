@@ -153,6 +153,17 @@ Then(/^I should not see user '(.+)' in the first column$/) do |username|
 	end
 end
 
+Then(/^I should see that (\d+) reminders were sent to the user$/) do |count|
+	on(ManageTranslatorSandboxPage) do |page|
+		page.reminder_status_element.should be_visible
+		page.reminder_status.should match(/^Sent #{count} reminders/i)
+	end
+end
+
+Then(/^I should see that no reminders have been sent to the user$/) do
+	on(ManageTranslatorSandboxPage).reminder_status.should == ""
+end
+
 Then(/^the direction of the users language filter button is '(.+)'$/) do |dir_value|
 	on(ManageTranslatorSandboxPage).language_selector_button_element.attribute_value("dir").should == dir_value
 end

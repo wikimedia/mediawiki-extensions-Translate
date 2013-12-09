@@ -68,6 +68,16 @@ class SpecialTranslateSandbox extends SpecialPage {
 							'comment' => ''
 						) )
 					);
+
+					$reminders = array();
+					for ( $reminderIndex = 0; $reminderIndex < $i; $reminderIndex++ ) {
+						$reminders[] = wfTimestamp() - $reminderIndex * $i * 10000;
+					}
+
+					$user->setOption(
+						'translate-sandbox-reminders',
+						implode( '|', $reminders )
+					);
 					$user->saveSettings();
 
 					for ( $j = 0; $j < $i; $j++ ) {
@@ -142,6 +152,18 @@ HTML;
 		$users = TranslateSandbox::getUsers();
 
 		foreach ( $users as $user ) {
+			$reminders = $user->getOption( 'translate-sandbox-reminders' );
+			$reminders = $reminders ? explode( '|', $reminders ) : array();
+			$remindersCount = count( $reminders );
+			if ( $remindersCount ) {
+				$lastReminderTimestamp = new MWTimestamp( end( $reminders ) );
+				$lastReminderAgo = htmlspecialchars(
+					$lastReminderTimestamp->getHumanTimestamp()
+				);
+			} else {
+				$lastReminderAgo = '';
+			}
+
 			$requests[] = array(
 				'username' => $user->getName(),
 				'email' => $user->getEmail(),
@@ -149,6 +171,8 @@ HTML;
 				'translations' => count( $this->stash->getTranslations( $user ) ),
 				'languagepreferences' => FormatJson::decode( $user->getOption( 'translate-sandbox' ) ),
 				'userid' => $user->getId(),
+				'reminderscount' => $remindersCount,
+				'lastreminder' => $lastReminderAgo,
 			);
 		}
 

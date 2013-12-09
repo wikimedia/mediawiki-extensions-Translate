@@ -108,6 +108,7 @@ Feature: Manage translator sandbox
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
       And I should see '1 user selected' at the bottom of the first column
+      And I should see that 4 reminders were sent to the user
 
   Scenario: Clicking on a name of a user who didn't make any translations shows the user information and the action buttons and doesn't show translations
     Given I am on the Translator sandbox management page with users in the sandbox
@@ -120,6 +121,7 @@ Feature: Manage translator sandbox
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
       And I should see '1 user selected' at the bottom of the first column
+      And I should see that no reminders have been sent to the user
 
   Scenario: Clicking a username when another user is selected selects only the new user; Clicking on a name of a user who made some translations shows the user information and the action buttons and some translations
     Given I am on the Translator sandbox management page with users in the sandbox
