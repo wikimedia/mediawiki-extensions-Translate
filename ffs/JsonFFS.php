@@ -74,7 +74,7 @@ class JsonFFS extends SimpleFFS {
 		$authors = $this->filterAuthors( $authors, $collection->code );
 
 		if ( $authors !== array() ) {
-			$messages['@metadata']['authors'] = $authors;
+			$messages['@metadata']['authors'] = array_values( $authors );
 		}
 
 		$mangler = $this->group->getMangler();
