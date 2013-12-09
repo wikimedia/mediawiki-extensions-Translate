@@ -121,16 +121,41 @@ class TranslateSandbox {
 	 * Sends a reminder to the user.
 	 * @param User $sender
 	 * @param User $target
-	 * @param string $subject Subject of the email.
-	 * @param string $body Body of the email.
+	 * @param string $type 'reminder' or 'promotion'
 	 * @throws MWException
+	 * @since 2013.12
 	 */
-	public static function sendReminder( User $sender, User $target, $subject, $body ) {
+	public static function sendEmail( User $sender, User $target, $type ) {
 		global $wgNoReplyAddress;
 
-		if ( !self::isSandboxed( $user ) ) {
-			throw new MWException( "Not a sandboxed user" );
+		switch ( $type ) {
+			case 'reminder':
+				if ( !self::isSandboxed( $target ) ) {
+					throw new MWException( 'Not a sandboxed user' );
+				}
+
+				$subjectMsg = 'tsb-reminder-title-generic';
+				$bodyMsg = 'tsb-reminder-content-generic';
+				$targetSpecialPage = 'TranslationStash';
+
+				break;
+			case 'promotion':
+				$subjectMsg = 'tsb-email-promoted-subject';
+				$bodyMsg = 'tsb-email-promoted-body';
+				$targetSpecialPage = 'Translate';
+
+				break;
+			default:
+				throw new MWException( "'$type' is an invalid type of translate sandbox email" );
 		}
+
+		$subject = wfMessage( $subjectMsg )->text();
+		$body = wfMessage(
+			$bodyMsg,
+			$target->getName(),
+			SpecialPage::getTitleFor( $targetSpecialPage )->getCanonicalUrl(),
+			$sender->getName()
+		)->inLanguage( $target->getOption( 'language' ) )->text();
 
 		$params = array(
 			'user' => $target->getId(),
@@ -139,9 +164,10 @@ class TranslateSandbox {
 			'replyto' => $wgNoReplyAddress,
 			'subj' => $subject,
 			'body' => $body,
+			'emailType' => $type,
 		);
 
-		TranslateSandboxReminderJob::newJob( $params )->insert();
+		TranslateSandboxEmailJob::newJob( $params )->insert();
 	}
 
 	/**
