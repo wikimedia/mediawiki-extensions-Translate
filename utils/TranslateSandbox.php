@@ -61,6 +61,15 @@ class TranslateSandbox {
 		// $user->clearSharedCache();
 		global $wgMemc;
 		$wgMemc->delete( wfMemcKey( 'user', 'id', $uid ) );
+
+		$logger = new LogPage( 'translatorsandbox' );
+		$logger->addEntry(
+			'rejected',
+			$user,
+			'', // No comments
+			array()
+		);
+
 	}
 
 	/**
@@ -97,6 +106,14 @@ class TranslateSandbox {
 		if ( $wgTranslateSandboxPromotedGroup ) {
 			$user->addGroup( $wgTranslateSandboxPromotedGroup );
 		}
+
+		$logger = new LogPage( 'translatorsandbox' );
+		$logger->addEntry(
+			'promoted',
+			$user,
+			'', // No comments
+			array()
+		);
 	}
 
 	/**
