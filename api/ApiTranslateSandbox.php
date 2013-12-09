@@ -73,6 +73,9 @@ class ApiTranslateSandbox extends ApiBase {
 		) );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
+
+		$user->addNewUserLogEntry( 'create', $this->msg( 'promoted-from-sandbox' ) );
+
 	}
 
 	protected function doDelete() {
@@ -87,6 +90,16 @@ class ApiTranslateSandbox extends ApiBase {
 
 			try {
 				TranslateSandbox::deleteUser( $user );
+
+			$logEntry = new ManualLogEntry( 'translatorsandbox', 'rejected' );
+			$logEntry->setPerformer( $performer );
+			$logEntry->setTarget( $user->getUserPage() );
+			$logEntry->setParameters( array(
+				'4::userid' => $user->getId(),
+			) );
+			$logid = $logEntry->insert();
+			$logEntry->publish( $logid );
+
 			} catch ( MWException $e ) {
 				$this->dieUsage( $e->getMessage(), 'invalidparam' );
 			}
@@ -105,6 +118,16 @@ class ApiTranslateSandbox extends ApiBase {
 
 			try {
 				TranslateSandbox::promoteUser( $user );
+
+			$logEntry = new ManualLogEntry( 'translatorsandbox', 'promote' );
+			$logEntry->setPerformer( $performer );
+			$logEntry->setTarget( $user->getUserPage() );
+			$logEntry->setParameters( array(
+				'4::userid' => $user->getId(),
+			) );
+			$logid = $logEntry->insert();
+			$logEntry->publish( $logid );
+
 			} catch ( MWException $e ) {
 				$this->dieUsage( $e->getMessage(), 'invalidparam' );
 			}

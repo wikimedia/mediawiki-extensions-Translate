@@ -209,6 +209,7 @@ $wgAddGroups['translate-proofr'] = array( 'translate-proofr' );
 $wgLogTypes[] = 'translationreview';
 $wgLogActionsHandlers['translationreview/message'] = 'TranslateLogFormatter';
 $wgLogActionsHandlers['translationreview/group'] = 'TranslateLogFormatter';
+$wgLogTypes[] = 'translatorsandbox';
 
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
