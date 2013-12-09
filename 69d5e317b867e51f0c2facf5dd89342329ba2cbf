@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_81e25f2c",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-09T18:22:39Z",
+      "side": 1,
+      "message": "Unneeded empty line.",
+      "revId": "69d5e317b867e51f0c2facf5dd89342329ba2cbf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_a1fb23dd",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-09T18:22:39Z",
+      "side": 1,
+      "message": "Message \u0027promoted-from-sandbox\u0027 is not defined, and it probably needs a tsb prefix.",
+      "revId": "69d5e317b867e51f0c2facf5dd89342329ba2cbf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_e1f12bff",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-09T18:22:39Z",
+      "side": 1,
+      "message": "Indentation.",
+      "revId": "69d5e317b867e51f0c2facf5dd89342329ba2cbf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
