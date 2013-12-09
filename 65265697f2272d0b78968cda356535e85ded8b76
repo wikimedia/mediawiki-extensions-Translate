@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_4e1a4674",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-09T15:27:55Z",
+      "side": 1,
+      "message": "Shouldn\u0027t test code be in Translate/tests/? Can this be called in regular production? What would be the impact, given the comment \"Use with caution\"?",
+      "revId": "65265697f2272d0b78968cda356535e85ded8b76",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
