@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_ceb096f3",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T16:57:30Z",
+      "side": 1,
+      "message": "sandbox with lower case",
+      "revId": "e17a8731f6027d978f66df1063bc77cfc0094113",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_aeb312fc",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T16:57:30Z",
+      "side": 1,
+      "message": "Is this missing an article?",
+      "revId": "e17a8731f6027d978f66df1063bc77cfc0094113",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_8e9a8e73",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T16:57:30Z",
+      "side": 1,
+      "message": "My idea was that this is actually in the promote action together with the other log entry.\n\nThis is to avoid logging all the potential spammers which will get rejected.",
+      "revId": "e17a8731f6027d978f66df1063bc77cfc0094113",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_6e950a42",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T16:57:30Z",
+      "side": 1,
+      "message": "Needs a bit more indentation. Or rather move this after the try catch block.",
+      "revId": "e17a8731f6027d978f66df1063bc77cfc0094113",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_4ea486af",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T16:57:30Z",
+      "side": 1,
+      "message": "$performer is undefined, you need to replace it with $this-\u003egetUser()",
+      "revId": "e17a8731f6027d978f66df1063bc77cfc0094113",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_0e8e7e33",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T16:57:30Z",
+      "side": 1,
+      "message": "Some notes as above.",
+      "revId": "e17a8731f6027d978f66df1063bc77cfc0094113",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
