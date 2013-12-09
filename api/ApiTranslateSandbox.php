@@ -73,6 +73,7 @@ class ApiTranslateSandbox extends ApiBase {
 		) );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
+
 	}
 
 	protected function doDelete() {
@@ -90,6 +91,15 @@ class ApiTranslateSandbox extends ApiBase {
 			} catch ( MWException $e ) {
 				$this->dieUsage( $e->getMessage(), 'invalidparam' );
 			}
+
+			$logEntry = new ManualLogEntry( 'translatorsandbox', 'rejected' );
+			$logEntry->setPerformer( $this->getUser() );
+			$logEntry->setTarget( $user->getUserPage() );
+			$logEntry->setParameters( array(
+				'4::userid' => $user->getId(),
+			) );
+			$logid = $logEntry->insert();
+			$logEntry->publish( $logid );
 		}
 	}
 
@@ -108,6 +118,17 @@ class ApiTranslateSandbox extends ApiBase {
 			} catch ( MWException $e ) {
 				$this->dieUsage( $e->getMessage(), 'invalidparam' );
 			}
+
+			$user->addNewUserLogEntry( 'create', $this->msg( 'promoted-from-sandbox' ) );
+
+			$logEntry = new ManualLogEntry( 'translatorsandbox', 'promote' );
+			$logEntry->setPerformer( $this->getUser() );
+			$logEntry->setTarget( $user->getUserPage() );
+			$logEntry->setParameters( array(
+			'4::userid' => $user->getId(),
+			) );
+			$logid = $logEntry->insert();
+			$logEntry->publish( $logid );
 		}
 	}
 
