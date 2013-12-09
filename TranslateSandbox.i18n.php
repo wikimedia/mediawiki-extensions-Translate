@@ -28,6 +28,19 @@ access.
 
 Please come to $2 and make some more translations.',
 
+	'tsb-email-promoted-subject' => 'You are now a translator at {{SITENAME}}',
+	'tsb-email-promoted-body' => 'Hi $1,
+
+Congratulations! I checked the test translations that you made at {{SITENAME}} and gave you full translator rights.
+
+Come to {{SITENAME}} to continue translate now, and every day:
+$2
+
+Welcome, and thank you for you contributions!
+
+$3,
+{{SITENAME}} staff',
+
 	'tsb-request-count' => '{{PLURAL:$1|One request|$1 requests}}',
 	'tsb-all-languages-button-label' => 'All languages',
 	'tsb-search-requests' => 'Search requests',
@@ -75,7 +88,12 @@ Followed by a list of the pending requests.',
 	'tsb-reminder-title-generic' => 'Subject of an email',
 	'tsb-reminder-content-generic' => 'Body of an email. Parameters:
 * $1 - user name of the recipient
-* $2 - URL to the website',
+* $3 - URL to the website',
+	'tsb-email-promoted-subject' => 'The subject for an email that announces that a user received full translation rights ("promoted").',
+	'tsb-email-promoted-body' => 'The body text for an email that announces that a user received full translation rights ("promoted"). Parameters:
+* $1 - the username of the new user who was promoted
+* $2 - the URL to Special:Translate at the website
+* $3 - the username of the administrator who promoted the user',
 	'tsb-request-count' => 'Label showing number of requests. Parameters:
 * $1 - number of requests
 {{Identical|Request}}',
