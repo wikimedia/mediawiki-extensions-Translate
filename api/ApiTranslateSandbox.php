@@ -116,6 +116,8 @@ class ApiTranslateSandbox extends ApiBase {
 				$this->dieUsage( $e->getMessage(), 'invalidparam' );
 			}
 
+			TranslateSandbox::sendPromotionEmail( $this->getUser(), $user );
+
 			$logEntry = new ManualLogEntry( 'translatorsandbox', 'promoted' );
 			$logEntry->setPerformer( $this->getUser() );
 			$logEntry->setTarget( $user->getUserPage() );

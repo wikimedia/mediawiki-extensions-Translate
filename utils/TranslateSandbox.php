@@ -124,12 +124,13 @@ class TranslateSandbox {
 	 * @param string $subject Subject of the email.
 	 * @param string $body Body of the email.
 	 * @throws MWException
+	 * @since 2013.12
 	 */
 	public static function sendReminder( User $sender, User $target, $subject, $body ) {
 		global $wgNoReplyAddress;
 
-		if ( !self::isSandboxed( $user ) ) {
-			throw new MWException( "Not a sandboxed user" );
+		if ( !self::isSandboxed( $target ) ) {
+			throw new MWException( 'Not a sandboxed user' );
 		}
 
 		$params = array(
@@ -139,9 +140,40 @@ class TranslateSandbox {
 			'replyto' => $wgNoReplyAddress,
 			'subj' => $subject,
 			'body' => $body,
+			'emailType' => 'reminder',
 		);
 
-		TranslateSandboxReminderJob::newJob( $params )->insert();
+		TranslateSandboxEmailJob::newJob( $params )->insert();
+	}
+
+	/**
+	 * Sends an email to the user about promotion.
+	 * @param User $sender
+	 * @param User $target
+	 * @throws MWException
+	 * @since 2013.12
+	 */
+	public static function sendPromotionEmail( User $sender, User $target ) {
+		global $wgNoReplyAddress, $wgUser;
+
+		$subject = wfMessage( 'tsb-email-promoted-subject' )->text();
+		$body = wfMessage(
+			'tsb-email-promoted-body',
+			$target->getName(),
+			$wgUser->getName()
+		)->inLanguage( $target->getOption( 'language' ) )->text();
+
+		$params = array(
+			'user' => $target->getId(),
+			'to' => $target->getEmail(),
+			'from' => $sender->getEmail(),
+			'replyto' => $wgNoReplyAddress,
+			'subj' => $subject,
+			'body' => $body,
+			'emailType' => 'promotion',
+		);
+
+		TranslateSandboxEmailJob::newJob( $params )->insert();
 	}
 
 	/**
