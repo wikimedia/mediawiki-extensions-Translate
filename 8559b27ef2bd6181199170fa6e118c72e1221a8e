@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_abbc24d6",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T13:48:20Z",
+      "side": 1,
+      "message": "Bummer. I didn\u0027t notice we have three patterns.",
+      "parentUuid": "0ee75395_99109d54",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_3e585758",
         "filename": "scripts/charactereditstats.php",
         "patchSetId": 3
