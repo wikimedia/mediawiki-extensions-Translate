@@ -112,6 +112,7 @@ class ApiTranslateSandbox extends ApiBase {
 
 			try {
 				TranslateSandbox::promoteUser( $user );
+				TranslateSandbox::sendPromotionEmail( $this->getUser(), $user );
 			} catch ( MWException $e ) {
 				$this->dieUsage( $e->getMessage(), 'invalidparam' );
 			}

@@ -28,6 +28,15 @@ access.
 
 Please come to $2 and make some more translations.',
 
+	'tsb-email-promoted-subject' => 'You are now a translator at {{SITENAME}}',
+	'tsb-email-promoted-body' => 'Hi $1,
+
+Your contributions to {{SITENAME}} were checked and you have been given full translator rights!
+
+Thanks,
+
+{{SITENAME}} staff',
+
 	'tsb-request-count' => '{{PLURAL:$1|One request|$1 requests}}',
 	'tsb-all-languages-button-label' => 'All languages',
 	'tsb-search-requests' => 'Search requests',

@@ -1,7 +1,6 @@
 <?php
 
-
-class TranslateSandboxReminderJob extends Job {
+class TranslateSandboxEmailJob extends Job {
 	public static function newJob( array $params ) {
 		return new self( Title::newMainPage(), $params );
 	}
@@ -19,7 +18,9 @@ class TranslateSandboxReminderJob extends Job {
 			$this->params['replyto']
 		);
 
-		if ( $status->isOK() ) {
+		$isOK = $status->isOK();
+
+		if ( $isOK && $this->params['emailType'] === 'reminder' ) {
 			$user = User::newFromId( 'user' );
 			$reminders = $user->getOption( 'translate-sandbox-reminders' );
 			if ( $reminders ) {
@@ -32,6 +33,6 @@ class TranslateSandboxReminderJob extends Job {
 			$user->saveSettings();
 		}
 
-		return $status->isOk();
+		return $isOK;
 	}
 }
