@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_0eb43ece",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-12-09T17:21:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_ceb096f3",
+      "revId": "e17a8731f6027d978f66df1063bc77cfc0094113",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_aeb312fc",
         "filename": "TranslateSandbox.i18n.php",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-09T16:57:30Z",
       "side": 1,
       "message": "Is this missing an article?",
+      "revId": "e17a8731f6027d978f66df1063bc77cfc0094113",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_cead3682",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-12-09T17:21:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_aeb312fc",
       "revId": "e17a8731f6027d978f66df1063bc77cfc0094113",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_0e18bed6",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-12-09T17:21:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_8e9a8e73",
+      "revId": "e17a8731f6027d978f66df1063bc77cfc0094113",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_6e950a42",
         "filename": "api/ApiTranslateSandbox.php",
         "patchSetId": 3
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_2e4942d3",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-12-09T17:21:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_6e950a42",
+      "revId": "e17a8731f6027d978f66df1063bc77cfc0094113",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_4ea486af",
         "filename": "api/ApiTranslateSandbox.php",
         "patchSetId": 3
@@ -81,6 +153,24 @@
       "writtenOn": "2013-12-09T16:57:30Z",
       "side": 1,
       "message": "$performer is undefined, you need to replace it with $this-\u003egetUser()",
+      "revId": "e17a8731f6027d978f66df1063bc77cfc0094113",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_4e4ec6de",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2013-12-09T17:21:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_4ea486af",
       "revId": "e17a8731f6027d978f66df1063bc77cfc0094113",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
