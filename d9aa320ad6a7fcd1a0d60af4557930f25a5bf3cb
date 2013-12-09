@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_b95801fe",
+        "filename": "tests/browser/features/step_definitions/manage_translator_sandbox_steps.rb",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2013-12-09T10:20:31Z",
+      "side": 1,
+      "message": "Amir said this should be \u003c 10, not \u003e 10",
+      "revId": "d9aa320ad6a7fcd1a0d60af4557930f25a5bf3cb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
