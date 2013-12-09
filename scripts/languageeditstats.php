@@ -24,24 +24,24 @@ class LanguageEditStats extends Maintenance {
 		parent::__construct();
 		$this->mDescription = 'Script to show number of edits per language for all message groups.';
 		$this->addOption(
-			'(optional) Show given number of language codes (default: 10)',
 			'top',
+			'(optional) Show given number of language codes (default: 10)',
 			false, /*required*/
 			true /*has arg*/
 		);
 		$this->addOption(
-			'(optional) Calculate for given number of days (default: 7)',
 			'days',
+			'(optional) Calculate for given number of days (default: 7)',
 			false, /*required*/
 			true /*has arg*/
 		);
 		$this->addOption(
-			'(optional) Include bot edits',
-			'bots'
+			'bots',
+			'(optional) Include bot edits'
 		);
 		$this->addOption(
-			'(optional) Comma separated list of namespace IDs',
 			'ns',
+			'(optional) Comma separated list of namespace IDs',
 			false, /*required*/
 			true /*has arg*/
 		);
