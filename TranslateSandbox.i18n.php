@@ -92,7 +92,7 @@ See also:
 See also:
 * {{msg-mw|Tsb-accept-all-button-label}}',
 	'tsb-reminder-link-text' => 'Link text for sending reminder emails about translator signup requests.',
-	'tsb-didnt-make-any-translations' => 'Displayed instead of the translations if the selected user didn\'t make any translations.',
+	'tsb-didnt-make-any-translations' => "Displayed instead of the translations if the selected user didn't make any translations.",
 	'tsb-translations-source' => 'Table header label for source messages of user translations in [[Special:TranslateSandbox]].
 {{Identical|Source}}',
 	'tsb-translations-user' => 'Table header label for user translations in [[Special:TranslateSandbox]].',
@@ -116,6 +116,7 @@ See also:
 );
 
 /** Afrikaans (Afrikaans)
+ * @author Amire80
  * @author Naudefj
  */
 $messages['af'] = array(
@@ -124,7 +125,7 @@ $messages['af'] = array(
 	'tsb-reminder-title-generic' => "Voltooi u bekendstelling om 'n geverifieerde vertaler te word",
 	'tsb-reminder-content-generic' => "Hallo $1,
 
-Dankie dat u op {{SITENAME}} geregistreer het. As u u toesvertalings voltooi, sal die administrateurs spoedig volle regte aan u toeken. 
+Dankie dat u op {{SITENAME}} geregistreer het. As u u toesvertalings voltooi, sal die administrateurs spoedig volle regte aan u toeken.
 
 Gaan asseblief na $2 om 'n paar vertalings te maak.",
 );
@@ -221,9 +222,11 @@ Bitte besuche $2 und erstelle einige weitere Übersetzungen.',
 	'tsb-accept-button-label' => 'Akzeptieren',
 	'tsb-reject-button-label' => 'Ablehnen',
 	'tsb-selected-count' => '{{PLURAL:$1|Ein|$1}} Benutzer ausgewählt',
+	'tsb-older-requests' => '{{PLURAL:$1|Eine ältere Anfrage|$1 ältere Anfragen}}',
 	'tsb-accept-all-button-label' => 'Alle akzeptieren',
 	'tsb-reject-all-button-label' => 'Alle ablehnen',
 	'tsb-reminder-link-text' => 'E-Mail-Erinnerung senden',
+	'tsb-didnt-make-any-translations' => 'Dieser Benutzer hat noch keine Übersetzungen durchgeführt.',
 	'tsb-translations-source' => 'Quelle',
 	'tsb-translations-user' => 'Benutzerübersetzungen',
 	'tsb-translations-current' => 'Vorhandene Übersetzungen',
@@ -510,6 +513,7 @@ $messages['lb'] = array(
 	'tsb-limit-reached-body' => "Dir hutt d'Iwwersetzungslimit fir nei Iwwersetzer erreecht.
 Eis Equipe kuckt Äre Benotzerkont geschwënn no a setzt en erop.
 Da kënnt Dir ouni Limitatiounen iwwersetzen.",
+	'tsb-no-requests-from-new-users' => 'Keng Ufroe vun neie Benotzer',
 );
 
 /** لوری (لوری)

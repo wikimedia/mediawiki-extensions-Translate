@@ -7270,8 +7270,8 @@ Valgfrie beskeder bør kun oversættes, hvis dit sprog har særlige krav som for
 	'translate-edit-definition' => 'Beskeden som skal oversættes',
 	'translate-edit-translation' => 'Oversættelse',
 	'translate-edit-contribute' => 'bidrag',
-	'translate-edit-no-information' => "''Denne besked har ingen dokumentation.
-Hvis du ved hvor eller hvordan denne besked bruges, kan du hjælpe andre oversættere ved at tilføje dokumentation til beskeden.''", # Fuzzy
+	'translate-edit-no-information' => '<em>Denne besked har ingen dokumentation.
+Hvis du ved hvor eller hvordan denne besked bruges, kan du hjælpe andre oversættere ved at tilføje dokumentation til beskeden.</em>',
 	'translate-edit-information' => 'Information om beskeden ($1)',
 	'translate-edit-in-other-languages' => 'Beskeden på andre sprog',
 	'translate-edit-committed' => 'Nuværende oversættelse i programmet',
@@ -7442,6 +7442,7 @@ Understregningsfarven angiver, hvor nyligt en oversætter har været aktiv.',
 	'translate-smg-nochanges' => 'Der er ingen ændringer at behandle.',
 	'translate-smg-submit' => 'Indsend ændringer til behandling',
 	'translate-smg-submitted' => 'Meddelelsesdefinitioner er opdateret. Ændringer bliver behandlet i baggrunden.',
+	'translate-smg-more' => 'Der vil være flere ændringer at behandle efter indsendelse af disse ændringer.',
 	'translate-smg-left' => 'Meddelelsesindhold i wiki',
 	'translate-smg-right' => 'Indkommende ændringer',
 	'translate-manage-import-diff' => 'Besked $1 | Handlinger: $2',
@@ -7467,8 +7468,8 @@ Tjek venligst.',
 	'translate-manage-intro-other' => 'Nedenfor er listen over ændringer af oversættelser for sproget $1.
 Gennemgå venligst ændringerne og vælg en handling du ønsker at foretage for hver ændring.
 Hvis du vælger at ignorere ændringer, er denne handling kun midlertidig.',
-	'translate-manage-import-ok' => 'Importerede ny version af siden $1.', # Fuzzy
-	'translate-manage-import-done' => 'Alt færdigt!', # Fuzzy
+	'translate-manage-import-ok' => 'Importeret: $1',
+	'translate-manage-import-done' => 'Import færdig!',
 	'importtranslations' => 'Importér oversættelser',
 	'translate-import-from-local' => 'Upload af lokal fil:',
 	'translate-import-load' => 'Indlæs fil',
@@ -7615,7 +7616,7 @@ Det er mest nyttigt til korrekturlæsningsopgaver.',
 	'tux-proofread-translated-by-self' => 'Oversat af dig',
 	'tux-empty-list-all' => 'Denne beskedgruppe er tom',
 	'tux-empty-list-all-guide' => 'Vælg en anden beskedgruppe at oversætte',
-	'tux-translate-page-no-such-group' => "'''Den angivne gruppe findes ikke.''' Vælg en anden beskedgruppe.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>Den angivne gruppe findes ikke.</strong> Vælg en anden beskedgruppe.',
 	'tux-empty-list-translated' => 'Ingen oversatte beskeder',
 	'tux-empty-list-translated-guide' => 'Du kan hjælpe med at oversætte',
 	'tux-empty-list-translated-action' => 'Oversæt',

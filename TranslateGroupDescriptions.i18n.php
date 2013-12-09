@@ -499,21 +499,22 @@ Vysvětlení klíčů u funkce PLURAL najdete na [http://unicode.org/repos/cldr-
 
 /** Danish (dansk)
  * @author Byrial
+ * @author Christian List
  * @author Emilkris33
  * @author Hylle
  * @author Kaare
  * @author Peter Alberti
  */
 $messages['da'] = array(
-	'translategroupdescriptions-desc' => 'Besked gruppe beskrivelser for produkter der understøttes af [http://mediawiki.org/wiki/Extension:Translate Translate] udvidelsen',
-	'translate-group-desc-nodesc' => 'Der er ikke nogen tilgængelig beskrivelse for denne gruppe af beskeder',
-	'translate-group-desc-mediawikicore' => 'Denne beskedgruppe indeholder beskederne som bruges i den nuværende alfaversion af MediaWiki ({{CURRENTVERSION}})',
-	'translate-group-desc-mediawikimostused' => 'Denne beskedgruppe indeholder de [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 oftest brugte beskeder] i MediaWiki',
-	'translate-group-desc-mediawikiextensions' => 'Meta besked gruppe der indeholder alle beskeder til understøttede udvidelser til [[Translating:MediaWiki|MediaWiki]]',
-	'translate-group-desc-collection' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
-	'translate-group-desc-flaggedrevs' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
-	'translate-group-desc-readerfeedback' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
-	'translate-group-desc-semantic' => 'Metabeskedgruppe, der indeholder alle beskeder for alle udvidelser til [http://semantic-mediawiki.org/ Semantisk MediaWiki]',
+	'translategroupdescriptions-desc' => 'Beskrivelser af beskedgrupper for produkter der understøttes af [http://mediawiki.org/wiki/Extension:Translate Translate] udvidelsen',
+	'translate-group-desc-nodesc' => 'Der er ikke nogen beskrivelse tilgængelig for denne gruppe af beskeder',
+	'translate-group-desc-mediawikicore' => 'Denne beskedgruppe indeholder beskederne som bruges i den nuværende alfaversion af [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})',
+	'translate-group-desc-mediawikimostused' => 'Denne beskedgruppe indeholder de [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mest brugte beskeder] i [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-mediawikiextensions' => 'Meta beskedgruppe der indeholder alle beskeder til understøttede udvidelser til [[Translating:MediaWiki|MediaWiki]]',
+	'translate-group-desc-collection' => 'Meta beskedgruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:Collection Collection]',
+	'translate-group-desc-flaggedrevs' => 'Meta beskedgruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]',
+	'translate-group-desc-readerfeedback' => 'Meta beskedgruppe der indeholder alle beskeder til MediaWiki udvidelsen [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]',
+	'translate-group-desc-semantic' => 'Meta beskedgruppe, der indeholder alle beskeder for alle udvidelser til [http://semantic-mediawiki.org/ Semantisk MediaWiki]',
 	'translate-group-desc-translate' => 'Metabeskedgruppe, der indeholder alle beskeder til MediaWiki-udvidelsen [http://www.mediawiki.org/wiki/Extension:Translate Translate]; vær venlig at gøre dig bekendt med dens [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossar ordfortegnelse]',
 	'translate-group-desc-wikiaextensions' => 'Meta besked gruppe der indeholder alle beskeder til understøttede MediaWiki udvidelser brugt af [http://www.wikia.com Wikia]',
 	'translate-group-desc-wikimediaextensions' => 'Meta besked gruppe der indeholder alle beskeder til understøttede MediaWiki udvidelser brugt af [http://wikimedia.org/ Wikimedia Foundation]',
@@ -521,10 +522,12 @@ $messages['da'] = array(
 	'translate-group-desc-ui' => 'Meta besked gruppe der indeholder alle beskeder til MediaWiki udvidelser relateret til [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]',
 	'translate-group-desc-translatablepages' => 'Alle sider som kan oversættes',
 	'bw-desc-freecol' => '[[Translating:FreeCol|FreeCol]] er et turbaseret strategispil',
-	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] er en webbaseret  diskussion forum software',
-	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] er en webbaseret problemsporing software',
-	'translate-group-desc-eol' => 'En besked gruppe for [[Translating:EOL|Encyclopedia of Life]]',
-	'translate-group-desc-ihris' => 'En besked gruppe for [[Translating:iHRIS|iHRIS]]',
+	'bw-desc-fudforum' => '[[Translating:FUDforum|FUDforum]] er et webbaseret diskussionsforum',
+	'bw-desc-mantisbt' => '[[Translating:MantisBT|MantisBT]] er et webbaseret problemsporingsprogram',
+	'translate-group-desc-blockly' => 'En beskedgruppe for [[Translating:Blockly|Blockly]]',
+	'translate-group-desc-eol' => 'En beskedgruppe for [[Translating:EOL|Encyclopedia of Life]]',
+	'translate-group-desc-fuel' => '[[Translating:FUEL|FUEL]] giver mere konsistens ved oversættelse af software',
+	'translate-group-desc-ihris' => 'En beskedgruppe for [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-kiwix' => 'En beskedgruppe for [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Et centralt plugin til [[Translating:MantisBT|MantisBT]]',
 	'translate-group-desc-mediawiki-core-branch' => 'Beskeder til en stabil version af [[Translating:MediaWiki|MediaWiki]]',
@@ -537,10 +540,15 @@ $messages['da'] = array(
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] er et Flash-baseret redigeringsprogram til OpenStreetMap',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] er en samling af værktøjer til at redigere Wikipedia',
 	'bw-desc-shapado' => '[[Translating:Shapado|Shapado]] er web-baseret Spørgsmål og Svar software',
-	'translate-group-desc-tsint' => 'En besked gruppe for [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n systemet til [http://toolserver.org Toolserver] værktøjer (<span class="plainlinks">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)', # Fuzzy
+	'translate-group-desc-tsint' => 'En beskedgruppe for [[Translating:Intuition|Intuition]], i18n systemet til [//toolserver.org Toolserver] værktøjer (<span class="plainlinks">[[Translating talk:Toolserver|support]]</span>)', # Fuzzy
+	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] er et værktøj til at uploade filer til Wikimedia Commons og andre Wikimediaprojekter',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] er en tjeneste, der viser vandre-, cykel-, mountainbike- og rulleskøjteruter for hele verden. Den bruger GNU GPL-licensen.',
 	'bw-desc-wikiblame' => '[[Translating:WikiBlame|WikiBlame]] er i stand til hurtigt at finde forfatterne til en del af en side i en Wikimedia wiki',
-	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] giver en frakoblet tekstudgave af Wikipedia på en mobil enhed.',
+	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] giver en offline tekstudgave af Wikipedia på en mobil enhed.',
+	'translate-group-desc-wikimedia-mobile' => 'Aggregeret beskedgruppe, der indeholder mobile applikationer til Wikimediaprojekter',
+	'translate-group-desc-waymarked-trails-help' => 'Hjælpesider for Waymarked Trails webstedet: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] er en virkelig-realtids kollaborativ editor',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]] er et cross-browser JavaScript bibliotek, der viser matematisk notation i web-browsere',
 );
 
 /** German (Deutsch)
