@@ -41,10 +41,14 @@ Feature: Manage translator sandbox
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I click on 'Orava1' in the first column
       And I click on the link that says '3 older requests' at the bottom of the first column
-    Then I should see the checkbox next to the request from 'Orava1' checked and enabled
-      And I should see the checkbox next to the request from 'Pupu1' checked and enabled
-      And I should see the checkbox next to the request from 'Orava0' checked and enabled
-      And I should see the checkbox next to the request from 'Pupu0' checked and enabled
+    Then I should see the checkbox next to the request from 'Orava1' checked
+      And I should see the checkbox next to the request from 'Orava1' enabled
+      And I should see the checkbox next to the request from 'Orava0' enabled
+      And I should see the checkbox next to the request from 'Orava0' checked
+      And I should see the checkbox next to the request from 'Pupu0' checked
+      And I should see the checkbox next to the request from 'Pupu0' enabled
+      And I should see the checkbox next to the request from 'Pupu1' checked
+      And I should see the checkbox next to the request from 'Pupu1' enabled
       And I should see '4 users selected' at the bottom of the first column
       And I should see '4 users selected' in the header of the second column
 
@@ -73,7 +77,8 @@ Feature: Manage translator sandbox
     When I click the sandboxed users language filter button
       And I type 'nl' in the language filter
       And I click the button that clears language selection
-    Then I should see the checkbox next to the request from 'Orava4' checked and disabled
+    Then I should see the checkbox next to the request from 'Orava4' checked
+      And I should see the checkbox next to the request from 'Orava4' disabled
       And I should see '10 requests' at the top of the first column
       And I should see '1 user selected' at the bottom of the first column
       And I should not see the button that clears language selection
@@ -81,7 +86,8 @@ Feature: Manage translator sandbox
   Scenario: Translation Administrator should be able to see a list of pending requests with usernames in the first column, sorted by the number of translations and the most recent within them, and the first user should be selected
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     Then I should see the userlist in the first column sorted by the number of translations and the most recent within them
-      And I should see the checkbox next to the request from 'Orava4' checked and disabled
+      And I should see the checkbox next to the request from 'Orava4' checked
+      And I should see the checkbox next to the request from 'Orava4' disabled
       And I should see the name of the first user in the first column in the header of the second column
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
@@ -90,7 +96,8 @@ Feature: Manage translator sandbox
   Scenario: Clicking on a name of a user who didn't make any translations shows the user information and the action buttons and doesn't show translations
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I click on 'Orava0' in the first column
-    Then I should see the checkbox next to the request from 'Orava0' checked and disabled
+    Then I should see the checkbox next to the request from 'Orava0' checked
+      And I should see the checkbox next to the request from 'Orava0' disabled
       And I should not see any users except 'Orava0' selected
       And I should see 'Orava0' in the header of the second column
       And I should not see any translations done by the user in the second column
@@ -102,7 +109,8 @@ Feature: Manage translator sandbox
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I click on 'Orava0' in the first column
       And I click on 'Orava3' in the first column
-    Then I should see the checkbox next to the request from 'Orava3' checked and disabled
+    Then I should see the checkbox next to the request from 'Orava3' checked
+      And I should see the checkbox next to the request from 'Orava3' disabled
       And I should not see any users except 'Orava3' selected
       And I should see 'Orava3' in the header of the second column
       And I should see the details of 3 sandboxed translations done by the user in the second column
@@ -114,8 +122,10 @@ Feature: Manage translator sandbox
     Given I am on the Special:ManageTranslatorSandbox page with users in the sandbox
     When I click on 'Orava4' in the first column
       And I click on the checkbox near 'Pupu3' in the first column
-    Then I should see the checkbox next to the request from 'Orava4' checked and enabled
-      And I should see the checkbox next to the request from 'Pupu3' checked and enabled
+    Then I should see the checkbox next to the request from 'Orava4' checked
+      And I should see the checkbox next to the request from 'Orava4' enabled
+      And I should see the checkbox next to the request from 'Pupu3' checked
+      And I should see the checkbox next to the request from 'Pupu3' enabled
       And I should see '2 users selected' in the header of the second column
       And I should see '2 users selected' at the bottom of the first column
       And I should not see any translations done by the users in the second column
@@ -127,9 +137,12 @@ Feature: Manage translator sandbox
     When I click on 'Pupu3' in the first column
       And I click on the checkbox near 'Pupu2' in the first column
       And I click on 'Orava2' in the first column
-    Then I should see the checkbox next to the request from 'Pupu3' unchecked and enabled
-      And I should see the checkbox next to the request from 'Pupu2' unchecked and enabled
-      And I should see the checkbox next to the request from 'Orava2' checked and disabled
+    Then I should see the checkbox next to the request from 'Pupu3' unchecked
+      And I should see the checkbox next to the request from 'Pupu3' enabled
+      And I should see the checkbox next to the request from 'Pupu2' unchecked
+      And I should see the checkbox next to the request from 'Pupu2' enabled
+      And I should see the checkbox next to the request from 'Orava2' checked
+      And I should see the checkbox next to the request from 'Orava2' disabled
       And I should see 'Orava2' in the header of the second column
       And I should see '1 user selected' at the bottom of the first column
       And I should see the details of 2 sandboxed translations done by the user in the second column
@@ -142,7 +155,8 @@ Feature: Manage translator sandbox
       And I click the 'Accept' button
     Then I should not see user 'Pupu2' in the first column
       And I should see 'Orava2' in the header of the second column
-      And I should see the checkbox next to the request from 'Orava2' checked and disabled
+      And I should see the checkbox next to the request from 'Orava2' checked
+      And I should see the checkbox next to the request from 'Orava2' disabled
       And I should see '1 user selected' at the bottom of the first column
       And I should see '9 requests' at the top of the first column
 
@@ -152,7 +166,8 @@ Feature: Manage translator sandbox
       And I click the 'Reject' button
     Then I should not see user 'Pupu2' in the first column
       And I should see 'Orava2' in the header of the second column
-      And I should see the checkbox next to the request from 'Orava2' checked and disabled
+      And I should see the checkbox next to the request from 'Orava2' checked
+      And I should see the checkbox next to the request from 'Orava2' disabled
       And I should see '1 user selected' at the bottom of the first column
       And I should see '9 requests' at the top of the first column
 
@@ -164,7 +179,8 @@ Feature: Manage translator sandbox
     Then I should not see user 'Pupu2' in the first column
       And I should not see user 'Orava3' in the first column
       And I should see 'Orava2' in the header of the second column
-      And I should see the checkbox next to the request from 'Orava2' checked and disabled
+      And I should see the checkbox next to the request from 'Orava2' checked
+      And I should see the checkbox next to the request from 'Orava2' disabled
       And I should see '1 user selected' at the bottom of the first column
       And I should see '8 requests' at the top of the first column
 
@@ -176,7 +192,8 @@ Feature: Manage translator sandbox
     Then I should not see user 'Pupu2' in the first column
       And I should not see user 'Orava3' in the first column
       And I should see 'Orava2' in the header of the second column
-      And I should see the checkbox next to the request from 'Orava2' checked and disabled
+      And I should see the checkbox next to the request from 'Orava2' checked
+      And I should see the checkbox next to the request from 'Orava2' disabled
       And I should see '1 user selected' at the bottom of the first column
       And I should see '8 requests' at the top of the first column
 
