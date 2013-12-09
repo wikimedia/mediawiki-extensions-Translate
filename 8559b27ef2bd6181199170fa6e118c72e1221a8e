@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_99109d54",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-12-09T09:12:09Z",
+      "side": 1,
+      "message": "ok, I followed languageeditstats.php pattern",
+      "parentUuid": "0ee75395_9e11a361",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_3e585758",
         "filename": "scripts/charactereditstats.php",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_392cf18e",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-12-09T09:12:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_3e585758",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_fe39cfef",
         "filename": "scripts/charactereditstats.php",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2013-12-09T07:53:22Z",
       "side": 1,
       "message": "Any particular reason to use array_push instead of $namespaces[] ?",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_5931f5e7",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-12-09T09:12:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_fe39cfef",
       "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2013-12-09T07:53:22Z",
       "side": 1,
       "message": "MessageHandle is preferred over figureMessage",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_793279f0",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-12-09T09:12:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_9e2ac38d",
       "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -132,6 +204,24 @@
       "writtenOn": "2013-12-09T07:53:22Z",
       "side": 1,
       "message": "\"Reporting should include start and end timestamps\"",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_99377de0",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-12-09T09:12:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_1e1eb375",
       "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
