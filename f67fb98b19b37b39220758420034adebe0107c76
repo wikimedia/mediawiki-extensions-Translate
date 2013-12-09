@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_19d92d5c",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T10:36:50Z",
+      "side": 1,
+      "message": "the issues happens when deleting and creating in the same request, needs more debugging what cache is not getting cleared.",
+      "revId": "f67fb98b19b37b39220758420034adebe0107c76",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_3912b101",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T10:36:50Z",
+      "side": 1,
+      "message": "no throw",
+      "revId": "f67fb98b19b37b39220758420034adebe0107c76",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
