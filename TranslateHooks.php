@@ -388,6 +388,7 @@ class TranslateHooks {
 		$code = $context->getLanguage()->getCode();
 		$selected = $context->getRequest()->getVal( 'languagefilter' );
 
+		// Use CLDR extension if available.
 		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
 			$languages = LanguageNames::getNames( $code,
 				LanguageNames::FALLBACK_NORMAL,
