@@ -21,93 +21,6 @@
 			.promise();
 	}
 
-	/**
-	 * Gets arbitrary messages in chosen language via the API.
-	 * @param {Array} names Message keys.
-	 * @param {String} [language] Language to use. Defaults to English.
-	 * @return {jQuery.Deferred}
-	 */
-	function getMessages( names, language ) {
-		var req,
-			api = new mw.Api(),
-			deferred = new $.Deferred();
-
-		req = api.post( {
-			action: 'query',
-			meta: 'allmessages',
-			ammessages: names.join( '|' ),
-			amlang: language || 'en'
-		} );
-
-		req.done( function ( data ) {
-			var i,
-				output = {};
-
-			for ( i = 0; i < data.query.allmessages.length; i++ ) {
-				output[data.query.allmessages[i].name] = data.query.allmessages[i]['*'];
-			}
-
-			deferred.resolve( output );
-		} );
-
-		req.fail( deferred.reject );
-
-		return deferred;
-	}
-
-	/**
-	 * Dialog where the user can tweak reminder email if wanted.
-	 * @param {Object} request
-	 */
-	function reminderDialog( request ) {
-		var $dialog,
-			keys = [ 'tsb-reminder-title-generic', 'tsb-reminder-content-generic' ];
-
-		getMessages( keys ).done( function ( data ) {
-			// FIXME i18n
-			$dialog = $( '<div class="grid">' ).append(
-				$( '<form>' ).append(
-					$( '<div class="row">' ).append(
-						$( '<div class="three columns text-left">' ).text( 'From:' ),
-						$( '<div class="nine columns">' ).text( mw.config.get( 'wgUserName' ) + ' <your email>' )
-					),
-					$( '<div class="row">' ).append(
-						$( '<div class="three columns">' ).text( 'To:' ),
-						$( '<div class="nine columns">' ).text( request.email )
-					),
-					$( '<div class="row">' ).append(
-						$( '<div class="three columns">' ).text( 'Subject:' ),
-						$( '<input class="nine columns subject">' ).val( data['tsb-reminder-title-generic'] )
-					),
-					$( '<div class="row">' ).append(
-						$( '<div class="three columns">' ).text( 'Body:' ),
-						$( '<textarea class="nine columns body">' ).val( data['tsb-reminder-content-generic'] )
-					)
-				)
-			);
-
-			$dialog.dialog( {
-				autoOpen: true,
-				modal: true,
-				width: '650px',
-				buttons: {
-					'Send': function () {
-						doApiAction( {
-							userid: request.userid,
-							'do': 'remind',
-							subject: $dialog.find( '.subject' ).val(),
-							body: $dialog.find( '.body' ).val()
-						} );
-						$( this ).dialog( 'destroy' );
-					},
-					'Cancel': function () {
-						$( this ).dialog( 'destroy' );
-					}
-				}
-			} );
-		} );
-	}
-
 	function removeSelectedRequests() {
 		var $nextRequest,
 			$selectedRequests = $( '.request-selector:checked' );
@@ -138,16 +51,49 @@
 	 * @param {Object} request The request data set from backend on request items
 	 */
 	function displayRequestDetails( request ) {
-		var storage,
+		var storage, reminders,
+			$reminderStatus = $( '<span>' ).addClass( 'reminder-status' ),
 			$detailsPane = $( '.details.pane' );
+
+		reminders = request.reminders ? request.reminders.split( '|' ) : [];
+
+		if ( request.reminderscount ) {
+			$reminderStatus.text( mw.msg(
+				'tsb-reminder-sent',
+				request.reminderscount,
+				request.lastreminder
+			) );
+		}
 
 		$detailsPane.empty().append(
 			$( '<div>' )
 				.addClass( 'tsb-header row' )
 				.text( request.username ),
 			$( '<div>' )
-				.addClass( 'email row' )
-				.text( request.email ),
+				.addClass( 'reminder-email row' )
+				.append(
+					$( '<span>' ).text( request.email ),
+					$( '<a>' )
+						.prop( 'href', '#' )
+						.addClass( 'send-reminder link' )
+						.text( mw.msg( 'tsb-reminder-link-text' ) )
+						.on( 'click', function ( e ) {
+							e.preventDefault();
+
+							$reminderStatus
+								.text( mw.msg( 'tsb-reminder-sending' ) );
+
+							doApiAction( {
+								'do': 'remind',
+								userid: request.userid
+							} ).done( function () {
+								$reminderStatus.text( mw.msg( 'tsb-reminder-sent-new' ) );
+							} ).fail( function () {
+								$reminderStatus.text( mw.msg( 'tsb-reminder-failed' ) );
+							} );
+						} ),
+					$reminderStatus
+				),
 			$( '<div>' )
 				.addClass( 'languages row autonym' ),
 			$( '<div>' )
@@ -170,17 +116,6 @@
 								userid: request.userid,
 								'do': 'delete'
 							} ).done( removeSelectedRequests );
-						} )
-				),
-			$( '<div>' )
-				.addClass( 'reminder row' )
-				.append(
-					$( '<a href="#"></a>' )
-						.addClass( 'remind link' )
-						.text( mw.msg( 'tsb-reminder-link-text' ) )
-						.on( 'click', function ( e ) {
-							e.preventDefault();
-							reminderDialog( request );
 						} )
 				),
 			$( '<div>' )

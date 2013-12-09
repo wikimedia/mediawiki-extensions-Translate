@@ -116,6 +116,8 @@ class ApiTranslateSandbox extends ApiBase {
 				$this->dieUsage( $e->getMessage(), 'invalidparam' );
 			}
 
+			TranslateSandbox::sendEmail( $this->getUser(), $user, 'promotion' );
+
 			$logEntry = new ManualLogEntry( 'translatorsandbox', 'promoted' );
 			$logEntry->setPerformer( $this->getUser() );
 			$logEntry->setTarget( $user->getUserPage() );
@@ -132,18 +134,11 @@ class ApiTranslateSandbox extends ApiBase {
 	protected function doRemind() {
 		$params = $this->extractRequestParams();
 
-		// Do validations
-		foreach ( explode( '|', 'subject|body' ) as $field ) {
-			if ( !isset( $params[$field] ) ) {
-				$this->dieUsage( "Missing parameter $field", 'missingparam' );
-			}
-		}
-
 		foreach ( $params['userid'] as $user ) {
 			$user = User::newFromId( $user );
 
 			try {
-				TranslateSandbox::sendReminder( $this->getUser(), $user, $params['subject'], $params['body'] );
+				TranslateSandbox::sendEmail( $this->getUser(), $user, 'reminder' );
 			} catch ( MWException $e ) {
 				$this->dieUsage( $e->getMessage(), 'invalidparam' );
 			}
@@ -190,8 +185,6 @@ class ApiTranslateSandbox extends ApiBase {
 			'username' => array( ApiBase::PARAM_TYPE => 'string' ),
 			'password' => array( ApiBase::PARAM_TYPE => 'string' ),
 			'email' => array( ApiBase::PARAM_TYPE => 'string' ),
-			'subject' => array( ApiBase::PARAM_TYPE => 'string' ),
-			'body' => array( ApiBase::PARAM_TYPE => 'string' ),
 		);
 	}
 
@@ -205,8 +198,6 @@ class ApiTranslateSandbox extends ApiBase {
 			'username' => 'Username when creating user',
 			'password' => 'Password when creating user',
 			'email' => 'Email when creating user',
-			'subject' => 'Subject of the reminder email when reminding',
-			'body' => 'Body of the reminder email when reminding',
 		);
 	}
 
