@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_1e6913f6",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-12-09T06:48:03Z",
+      "side": 1,
+      "message": "Stylize.php puts a space here btw.",
+      "parentUuid": "0ee75395_989bfbc0",
+      "revId": "c2d497a01792681b0c442c55967be18f9460c437",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_7ec49f94",
         "filename": "specials/SpecialTranslateSandbox.php",
         "patchSetId": 10
@@ -47,6 +65,24 @@
       "writtenOn": "2013-12-08T21:46:41Z",
       "side": 1,
       "message": "I left comment about this in earlier patchset",
+      "revId": "c2d497a01792681b0c442c55967be18f9460c437",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_fe6b0fec",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-12-09T06:48:03Z",
+      "side": 1,
+      "message": "Yes, but I thought keeping a single block of code in for loop is ok than moving to another method",
+      "parentUuid": "0ee75395_7ec49f94",
       "revId": "c2d497a01792681b0c442c55967be18f9460c437",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
