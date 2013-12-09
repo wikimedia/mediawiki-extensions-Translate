@@ -50,7 +50,7 @@ class SpecialTranslateSandbox extends SpecialPage {
 		if ( $request->getVal( 'integrationtesting' ) === 'populate' ) {
 			$this->emptySandbox();
 
-			$textUsernamePrefixes = array( 'Pupu', 'Orava' );
+			$textUsernamePrefixes = array( 'Orava', 'Pupu' );
 			$testLanguages = array( 'fi', 'uk', 'nl', 'ml', 'bn' );
 			$userCount = count( $testLanguages );
 
@@ -66,7 +66,7 @@ class SpecialTranslateSandbox extends SpecialPage {
 					);
 					$user->saveSettings();
 
-					for( $j = 0; $j < $i; $j++ ) {
+					for ( $j = 0; $j < $i; $j++ ) {
 						$title = Title::makeTitle( NS_MEDIAWIKI, wfRandomString( 24 ) . '/' . $testLanguages[$i] );
 						$translation = 'plop';
 						$stashedTranslation = new StashedTranslation( $user, $title, $translation );
@@ -130,14 +130,28 @@ HTML;
 
 	protected function makeList() {
 		$items = array();
-
+		$requests = array();
 		$users = TranslateSandbox::getUsers();
 
 		foreach ( $users as $user ) {
-			$items[] = $this->makeRequestItem( $user );
+			$requests[] = array(
+				'username' => $user->getName(),
+				'email' => $user->getEmail(),
+				'registrationdate' => $user->getRegistration(),
+				'translations' => count( $this->stash->getTranslations( $user ) ),
+				'languagepreferences' => FormatJson::decode( $user->getOption( 'translate-sandbox' ) ),
+				'userid' => $user->getId(),
+			);
 		}
 
-		$count = count( $items );
+		// Sort the requests based on translations and registration date
+		usort( $requests, array( __CLASS__, 'translatorRequestSort' ) );
+
+		$count = count( $users );
+		foreach ( $requests as $request ) {
+			$items[] = $this->makeRequestItem( $request );
+		}
+
 		$requestsList = implode( "\n", $items );
 
 		return <<<HTML
@@ -160,18 +174,8 @@ HTML;
 HTML;
 	}
 
-	protected function makeRequestItem( User $user ) {
-		$request = array(
-			'username' => $user->getName(),
-			'email' => $user->getEmail(),
-			'registrationdate' => $user->getRegistration(),
-			'translations' => count( $this->stash->getTranslations( $user ) ),
-			'languagepreferences' => FormatJson::decode( $user->getOption( 'translate-sandbox' ) ),
-			'userid' => $user->getId(),
-		);
-
+	protected function makeRequestItem( $request ) {
 		$requestdataEnc = htmlspecialchars( FormatJson::encode( $request ) );
-
 		$nameEnc = htmlspecialchars( $request['username'] );
 		$emailEnc = htmlspecialchars( $request['email'] );
 		$countEnc = htmlspecialchars( $request['translations'] );
@@ -194,5 +198,28 @@ HTML;
 	</div>
 </div>
 HTML;
+	}
+
+	/**
+	 * Sorts groups by descending order of number of translations,
+	 * registration date and username
+	 *
+	 * @since 1.23
+	 * @param array $a Translation request
+	 * @param array $b Translation request
+	 * @return int comparison result
+	 */
+	public static function translatorRequestSort( $a, $b ) {
+		$translationCountDiff = $b['translations'] - $a['translations'];
+		if ( $translationCountDiff !== 0 ) {
+			return $translationCountDiff;
+		}
+
+		$registrationDateDiff = $a['registrationdate'] - $b['registrationdate'];
+		if ( $registrationDateDiff !== 0 ) {
+			return $registrationDateDiff;
+		}
+
+		return strcmp( $a['username'], $b['username'] );
 	}
 }
