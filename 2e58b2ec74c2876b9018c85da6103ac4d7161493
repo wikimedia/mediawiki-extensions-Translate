@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_6e962a99",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T16:01:35Z",
+      "side": 1,
+      "message": "number should be formatted",
+      "revId": "2e58b2ec74c2876b9018c85da6103ac4d7161493",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_cef896e4",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T16:01:35Z",
+      "side": 1,
+      "message": "still missing function ( e ) { ... e.preventDefault() ... } as far as I can see",
+      "revId": "2e58b2ec74c2876b9018c85da6103ac4d7161493",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
