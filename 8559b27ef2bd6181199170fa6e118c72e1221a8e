@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_9e11a361",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T07:53:22Z",
+      "side": 1,
+      "message": "Name of the script doesn\u0027t follow either of the already present patterns.\n\n* lowerThenCamelCase.php\n* lower-separated-by-dashes.php",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_3e585758",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T07:53:22Z",
+      "side": 1,
+      "message": "You can give default value with getOption( \u0027days\u0027, 1 );",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_fe39cfef",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T07:53:22Z",
+      "side": 1,
+      "message": "Any particular reason to use array_push instead of $namespaces[] ?",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_be434766",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T07:53:22Z",
+      "side": 1,
+      "message": "Mmm I\u0027m not sure about the performance characteristics of this query.\nIt does scan the recent changes table, which is limited to 30 days on WMF wikis.\n\nMariaDB [translatewiki_net]\u003e explain SELECT rc_title, rc_timestamp, rc_user_text, rc_namespace, substring_index(rc_title, \u0027/\u0027, -1) as lang FROM `bw_recentchanges` WHERE rc_timestamp \u003e\u003d \u002720131109074432\u0027 AND rc_bot \u003d 0 AND rc_namespace in (\u00278\u0027,\u00271200\u0027,\u00271202\u0027,\u00271204\u0027,\u00271206\u0027,\u00271208\u0027,\u00271210\u0027,\u00271212\u0027,\u00271214\u0027,\u00271216\u0027,\u00271218\u0027,\u00271220\u0027,\u00271222\u0027,\u00271224\u0027,\u00271226\u0027,\u00271228\u0027,\u00271230\u0027,\u00271232\u0027,\u00271234\u0027,\u00271236\u0027,\u00271238\u0027,\u00271240\u0027,\u00271242\u0027,\u00271244\u0027,\u00271246\u0027,\u00271250\u0027,\u00271252\u0027,\u00271254\u0027,\u00271256\u0027,\u00271258\u0027,\u00271198\u0027) ORDER BY lang ASC, rc_timestamp DESC;\n+------+-------------+------------------+-------+-------------------------------------------------------------+--------------+---------+------+--------+---------------------------------------+\n| id   | select_type | table            | type  | possible_keys                                               | key          | key_len | ref  | rows   | Extra                                 |\n+------+-------------+------------------+-------+-------------------------------------------------------------+--------------+---------+------+--------+---------------------------------------+\n|    1 | SIMPLE      | bw_recentchanges | range | rc_timestamp,rc_namespace_title,rc_ns_usertext,rc_ns_bot_ts | rc_ns_bot_ts | 21      | NULL | 122058 | Using index condition; Using filesort |\n+------+-------------+------------------+-------+-------------------------------------------------------------+--------------+---------+------+--------+---------------------------------------+\n\n70471 rows in set (0.80 sec)\n\n\nThis seems reasonable to me even on wmf is explain looks same.\n\nThe loading of revisions below is likely to be the performance bottleneck.",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_9e2ac38d",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T07:53:22Z",
+      "side": 1,
+      "message": "MessageHandle is preferred over figureMessage",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_7e25bfbb",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T07:53:22Z",
+      "side": 1,
+      "message": "We are going to load lots of revisions...",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_5e343bf1",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T07:53:22Z",
+      "side": 1,
+      "message": "The changes in byte values are stored in the recent changes table. This seems like that thing reimplemented in a slow way.\n\nThe fields are \"rc_old_len int, rc_new_len int\", which are not selected by translationChanges() as of know. Then we can just use rc_new_len or abs(rc_new_len - rc_old_len) whatever is wanted...",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_1e1eb375",
+        "filename": "scripts/charactereditstats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-09T07:53:22Z",
+      "side": 1,
+      "message": "\"Reporting should include start and end timestamps\"",
+      "revId": "8559b27ef2bd6181199170fa6e118c72e1221a8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
