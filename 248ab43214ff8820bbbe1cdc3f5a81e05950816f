@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_2b125401",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-09T13:35:11Z",
+      "side": 1,
+      "message": "$3 should also support GENDER. I don\u0027t know if we have a gender at registration (probably not), but if we have it later on, we should use it.",
+      "revId": "248ab43214ff8820bbbe1cdc3f5a81e05950816f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_0bd9d05b",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-09T13:35:11Z",
+      "side": 1,
+      "message": "$3 should also support GENDER. I don\u0027t know if we have a gender at registration (probably not), but if we have it later on, we should use it.",
+      "revId": "248ab43214ff8820bbbe1cdc3f5a81e05950816f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
