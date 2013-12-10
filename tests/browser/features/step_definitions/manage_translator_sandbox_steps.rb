@@ -152,3 +152,15 @@ Then(/^I should not see user '(.+)' in the first column$/) do |username|
 		page.request_with_username(username).should_not exist
 	end
 end
+
+Then(/^the direction of the users language filter button is '(.+)'$/) do |dir_value|
+	on(ManageTranslatorSandboxPage).language_selector_button_element.attribute_value("dir").should == dir_value
+end
+
+Then(/^the language code of the users language filter button is '(.+)'$/) do |lang_value|
+	on(ManageTranslatorSandboxPage).language_selector_button_element.attribute_value("lang").should == lang_value
+end
+
+Then(/^usernames are visible in the first column$/) do
+	on(ManageTranslatorSandboxPage).visible_users_element.size.should_not == 0
+end

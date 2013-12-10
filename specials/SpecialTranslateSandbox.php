@@ -49,7 +49,7 @@ class SpecialTranslateSandbox extends SpecialPage {
 
 		if ( $request->getVal( 'integrationtesting' ) === 'populate' ) {
 			$textUsernamePrefixes = array( 'Orava', 'Pupu' );
-			$testLanguages = array( 'fi', 'uk', 'nl', 'ml', 'bn' );
+			$testLanguages = array( 'fi', 'uk', 'nl', 'he', 'bn' );
 			$userCount = count( $testLanguages );
 
 			foreach ( $textUsernamePrefixes as $prefix ) {
@@ -197,7 +197,7 @@ HTML;
 	<div class="two columns amount">
 		<div class="translation-count">$countEnc</div>
 	</div>
-	<div class="seven columns details">
+	<div class="seven columns request-info">
 		<div class="row username">$nameEnc</div>
 		<div class="row email">$emailEnc</div>
 	</div>
