@@ -248,7 +248,7 @@
 							$( '<div>' )
 								.addClass( 'four columns comparison' )
 								.append(
-									$( '<div>' ).text( translation.comparison ),
+									$( '<div>' ).text( translation.comparison || '' ),
 									$( '<div>' )
 										.addClass( 'info' )
 										.text( translation.title )
