@@ -116,19 +116,6 @@
 	overflow: hidden;
 }
 
-.request .proofread-marker {
-	background-color: #3e8dc5;
-	width: 10px;
-	height: 10px;
-	position: absolute;
-	top: 50%;
-	left: 5%;
-	margin-top: -5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-}
-
 /* Details pane */
 
 .details.pane > .row {

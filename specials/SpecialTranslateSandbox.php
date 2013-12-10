@@ -195,7 +195,6 @@ HTML;
 		return <<<HTML
 <div class="row request" data-data="$requestdataEnc" id="tsb-request-$nameEncForId">
 	<div class="two columns amount">
-		<div class="proofread-marker"></div>
 		<div class="translation-count">$countEnc</div>
 	</div>
 	<div class="seven columns details">
