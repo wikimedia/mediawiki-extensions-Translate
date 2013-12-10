@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_d0526f3e",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 386
+      },
+      "writtenOn": "2013-12-10T14:39:00Z",
+      "side": 1,
+      "message": "It would be great if we could provide a more direct call to action including a link:\n\nYou can always translate new messages at http://translatewiki.net/wiki/Special:Translate",
+      "revId": "b086d92e0fe2c8e6ebcf0870fa2913666bac0680",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
