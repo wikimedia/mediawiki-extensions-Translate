@@ -398,6 +398,7 @@ $wgResourceModules['ext.translate.special.translationstash'] = array(
 		'ext.translate.messagetable',
 		'ext.translate.translationstashstorage',
 		'mediawiki.language',
+		'ext.uls.mediawiki',
 	),
 	'messages' => array(
 		'translate-translationstash-translations',
