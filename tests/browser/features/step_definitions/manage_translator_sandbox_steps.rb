@@ -2,11 +2,11 @@ Given(/^I am logged in as a translation administrator$/) do
 	step "I am logged in"
 end
 
-Given(/^I am on the Special:ManageTranslatorSandbox page with no users in the sandbox$/) do
+Given(/^I am on the Translator Sandbox management page with no users in the sandbox$/) do
 	visit(ManageTranslatorSandboxPage, :using_params => {:extra => "integrationtesting=empty"})
 end
 
-Given(/^I am on the Special:ManageTranslatorSandbox page with users in the sandbox$/) do
+Given(/^I am on the Translator Sandbox management page with users in the sandbox$/) do
 	visit(ManageTranslatorSandboxPage, :using_params => {:extra => "integrationtesting=populate"})
 end
 
@@ -126,22 +126,18 @@ When(/^I click on the link that says '(.*)' at the bottom of the first column$/)
 end
 
 Then(/^I should not see any users except '(.+)' selected$/) do |username|
-	on(ManageTranslatorSandboxPage).requests_without_username(username).all? do |element|
-		not element.attribute_value("class").split(" ").include?("selected")
-	end
+	on(ManageTranslatorSandboxPage).only_request_with_username_is_selected?(username).should be_true
 end
 
 Then(/^I should not see any translations done by the user in the second column$/) do
 	on(ManageTranslatorSandboxPage) do |page|
 		page.translation_elements.length.should == 0
-		page.no_translations_name_element.should be_visible
+		page.details_no_translations_element.should be_visible
 	end
 end
 
 Then(/^I should not see any translations done by the users in the second column$/) do
-	on(ManageTranslatorSandboxPage) do |page|
-		page.translation_elements.length.should == 0
-	end
+	on(ManageTranslatorSandboxPage).translation_elements.length.should == 0
 end
 
 Then(/^I should see the details of (\d+) sandboxed translations done by the user in the second column$/) do |translations|
