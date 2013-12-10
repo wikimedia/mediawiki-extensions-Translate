@@ -14,7 +14,7 @@ class ManageTranslatorSandboxPage
 	text_field(:language_filter, id: "languagefilter")
 	button(:language_selector_button, class: "language-selector")
 
-	div(:no_translations_name, text: "This user didn't make any translations.")
+	div(:no_translations_name, text: "This user did not make any translations.")
 
 	div(:requests_list, class: "requests-list")
 	div(:request_count, class: "request-count")
