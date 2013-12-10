@@ -16,6 +16,24 @@
       "revId": "b086d92e0fe2c8e6ebcf0870fa2913666bac0680",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_95e4d60b",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-10T18:05:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ee75395_d0526f3e",
+      "revId": "b086d92e0fe2c8e6ebcf0870fa2913666bac0680",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
