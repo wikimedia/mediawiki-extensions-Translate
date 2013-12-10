@@ -119,6 +119,12 @@ See also:
 	'tsb-limit-reached-title' => 'Heading shown below translations when the user has reached the limit for number of translations.',
 	'tsb-limit-reached-body' => 'Text shown below translations when the user has reached the limit for number of translations.',
 	'tsb-no-requests-from-new-users' => 'Shown on [[Special:TranslateSandbox]] when there are no requests for approval from new users.',
+
+	'log-name-translatorsandbox' => '{{doc-logpage}}',
+	'log-description-translatorsandbox' => 'Log page description',
+	'logentry-translatorsandbox-promoted' => '{{logentry}}
+* $4 - The name of the user that was promoted, can be used for GENDER.',
+	'logentry-translatorsandbox-rejected' => '{{logentry}}',
 );
 
 /** Afrikaans (Afrikaans)
