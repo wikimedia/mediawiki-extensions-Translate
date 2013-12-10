@@ -191,6 +191,10 @@
 			$.each( request.languagepreferences.languages, function ( index, language ) {
 				$detailsPane.find( '.languages' ).append(
 					$( '<span>' )
+						.prop( {
+							dir: $.uls.data.getDir( language ),
+							lang: language
+						} )
 						.text( $.uls.data.getAutonym( language ) )
 				);
 			} );
@@ -230,6 +234,8 @@
 					)
 				);
 			$.each( translations.translationstash.translations, function( index, translation ) {
+				var translationLang = translation.title.split( /[\\/ ]+/ ).pop();
+
 				$target.append(
 					$( '<div>' )
 						.addClass( 'row' )
@@ -242,9 +248,13 @@
 								.append(
 									$( '<div>' ).text( translation.translation ),
 									$( '<div>' )
-										.addClass( 'info' )
+										.addClass( 'info autonym' )
+										.prop( {
+											dir: $.uls.data.getDir( translationLang ),
+											lang: translationLang
+										} )
 										.text(
-											$.uls.data.getAutonym( translation.title.split( /[\\/ ]+/ ).pop() )
+											$.uls.data.getAutonym( translationLang )
 										)
 								),
 							$( '<div>' )
@@ -498,7 +508,11 @@
 			onSelect: function ( language ) {
 				$languageSelector
 					.removeClass( 'unselected' )
-					.addClass( 'selected' )
+					.addClass( 'selected autonym' )
+					.prop( {
+						dir: $.uls.data.getDir( language ),
+						lang: language
+					} )
 					.text( $.uls.data.getAutonym( language ) );
 
 				filterRequestsByLanguage( language );
@@ -508,8 +522,14 @@
 		} );
 
 		$clearLanguageSelector.on( 'click', function() {
+			var userLang = mw.config.get( 'wgUserLanguage' );
+
 			$languageSelector
-				.removeClass( 'selected' )
+				.removeClass( 'selected autonym' )
+				.prop( {
+					dir: $.uls.data.getDir( userLang ),
+					lang: userLang
+				} )
 				.addClass( 'unselected' )
 				.text( mw.msg( 'tsb-all-languages-button-label' ) );
 
