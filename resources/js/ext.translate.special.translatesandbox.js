@@ -203,7 +203,7 @@
 
 			// Display a message if the user didn't make any translations
 			if ( !translations.translationstash.translations.length ) {
-				$target.append(
+				$target.empty().append(
 					$( '<div>' )
 						.addClass( 'tsb-details-no-translations' )
 						.text( mw.msg( 'tsb-didnt-make-any-translations' ) )
