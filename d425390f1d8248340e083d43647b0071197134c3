@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_1a58f857",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-12-10T04:37:19Z",
+      "side": 1,
+      "message": "(Translation sandbox); 04:31 . . Admin (Talk | contribs | block) rejected the request from User:0:0:0:0:0:0:0:1 to become a translator ‎\n\nThat is the log when I rejected a user name \u0027Test User 3\u0027",
+      "revId": "d425390f1d8248340e083d43647b0071197134c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
