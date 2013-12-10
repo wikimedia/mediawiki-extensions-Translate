@@ -14,8 +14,6 @@ class ManageTranslatorSandboxPage
 	text_field(:language_filter, id: "languagefilter")
 	button(:language_selector_button, class: "language-selector")
 
-	div(:details_no_translations, class: "tsb-details-no-translations")
-
 	div(:requests_list, class: "requests-list")
 	div(:request_count, class: "request-count")
 	span(:selected_counter, class: "selected-counter")
@@ -29,6 +27,10 @@ class ManageTranslatorSandboxPage
 
 	def details_button(label)
 		@browser.button(text: label)
+	end
+
+	def details_no_translations
+		@browser.divs(class: "tsb-details-no-translations")
 	end
 
 	def visible_request_selectors_element

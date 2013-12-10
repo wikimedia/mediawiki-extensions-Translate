@@ -201,9 +201,11 @@
 		storage.getUserTranslations( request.username ).done( function ( translations ) {
 			var $target = $( '.translations' );
 
+			$target.empty();
+
 			// Display a message if the user didn't make any translations
 			if ( !translations.translationstash.translations.length ) {
-				$target.empty().append(
+				$target.append(
 					$( '<div>' )
 						.addClass( 'tsb-details-no-translations' )
 						.text( mw.msg( 'tsb-didnt-make-any-translations' ) )
