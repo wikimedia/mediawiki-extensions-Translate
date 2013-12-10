@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_357bcd24",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-10T09:08:10Z",
+      "side": 1,
+      "message": "qqq",
+      "revId": "91f1206fe5041c6b196ef16812fdd39007029fd2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_15768939",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-10T09:08:10Z",
+      "side": 1,
+      "message": "Maybe question to Pau, but wouldn\u0027t it be nice to mention the user who made the promotion to make it more personal.",
+      "revId": "91f1206fe5041c6b196ef16812fdd39007029fd2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_f58c4534",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-10T09:08:10Z",
+      "side": 1,
+      "message": "I see no reason to have this inside the try-catch block",
+      "revId": "91f1206fe5041c6b196ef16812fdd39007029fd2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_d58f0125",
+        "filename": "utils/TranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-10T09:08:10Z",
+      "side": 1,
+      "message": "Yep, good catch",
+      "revId": "91f1206fe5041c6b196ef16812fdd39007029fd2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_95997973",
+        "filename": "utils/TranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-10T09:08:10Z",
+      "side": 1,
+      "message": "@since would be nice",
+      "revId": "91f1206fe5041c6b196ef16812fdd39007029fd2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_b596bd40",
+        "filename": "utils/TranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-10T09:08:10Z",
+      "side": 1,
+      "message": "We are not doing html emails are we?",
+      "revId": "91f1206fe5041c6b196ef16812fdd39007029fd2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
