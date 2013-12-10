@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_b5ad9d82",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-10T09:15:10Z",
+      "side": 1,
+      "message": "Per coding convention, is the parameter list wraps, the ending should be moved to separate line. Example:\n\npublic function bar (\n    .....\n) {\n   body goes here...\n}",
+      "revId": "7b3719f9560023561e46cecec8bf48e6b499b244",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_55c2d139",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-10T09:15:10Z",
+      "side": 1,
+      "message": "I would make this something like:\n$fields \u003d array_merge(\n    array( \u0027rc_title\u0027, \u0027rc_timestamp\u0027, \u0027rc_user_text\u0027, \u0027rc_namespace\u0027 ),\n    $extraFields\n);",
+      "revId": "7b3719f9560023561e46cecec8bf48e6b499b244",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_35c18d33",
+        "filename": "scripts/characterEditStats.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-10T09:15:10Z",
+      "side": 1,
+      "message": "Yeah you can use the default value here as well: $top \u003d (int)$this-\u003egetOption( \u0027top\u0027, 10 );",
+      "revId": "7b3719f9560023561e46cecec8bf48e6b499b244",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
