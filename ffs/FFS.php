@@ -169,11 +169,7 @@ class SimpleFFS implements FFS {
 			return false;
 		}
 
-		if ( !file_exists( $filename ) ) {
-			return false;
-		}
-
-		return true;
+		return file_exists( $filename );
 	}
 
 	/**
