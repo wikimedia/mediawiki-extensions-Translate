@@ -210,6 +210,9 @@ $wgLogTypes[] = 'translationreview';
 $wgLogActionsHandlers['translationreview/message'] = 'TranslateLogFormatter';
 $wgLogActionsHandlers['translationreview/group'] = 'TranslateLogFormatter';
 
+$wgLogTypes[] = 'translatorsandbox';
+$wgLogActionsHandlers['translatorsandbox/*'] = 'LogFormatter';
+
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
 $wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
