@@ -211,7 +211,8 @@ $wgLogActionsHandlers['translationreview/message'] = 'TranslateLogFormatter';
 $wgLogActionsHandlers['translationreview/group'] = 'TranslateLogFormatter';
 
 $wgLogTypes[] = 'translatorsandbox';
-$wgLogActionsHandlers['translatorsandbox/*'] = 'LogFormatter';
+$wgLogActionsHandlers['translatorsandbox/promoted'] = 'TranslateLogFormatter';
+$wgLogActionsHandlers['translatorsandbox/rejected'] = 'TranslateLogFormatter';
 
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';

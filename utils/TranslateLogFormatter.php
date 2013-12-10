@@ -46,6 +46,12 @@ class TranslateLogFormatter extends LogFormatter {
 			$params[3] = TranslateUtils::getLanguageName( $language, $uiLanguage->getCode() );
 			$params[5] = $this->formatStateMessage( $params[5] );
 			$params[6] = $this->formatStateMessage( $params[6] );
+		} elseif ( $type === 'translatorsandbox/rejected' ) {
+			// No point linking to the user page which cannot have existed
+			$params[2] = $this->entry->getTarget()->getText();
+		} elseif ( $type === 'translatorsandbox/promoted' ) {
+			// Gender for the target
+			$params[3] = User::newFromId( $params[3] )->getName();
 		}
 
 		return $params;
