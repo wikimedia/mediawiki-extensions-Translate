@@ -14,7 +14,7 @@ class ManageTranslatorSandboxPage
 	text_field(:language_filter, id: "languagefilter")
 	button(:language_selector_button, class: "language-selector")
 
-	div(:no_translations_name, text: "This user did not make any translations.")
+	div(:details_no_translations, class: "tsb-details-no-translations")
 
 	div(:requests_list, class: "requests-list")
 	div(:request_count, class: "request-count")
@@ -97,5 +97,11 @@ class ManageTranslatorSandboxPage
 		usernames = visible_users_element.collect { |element| element.text }
 
 		expected_usernames == usernames
+	end
+
+	def only_request_with_username_is_selected?(username)
+		requests_without_username(username).all? do |element|
+			not element.attribute_value("class").split(" ").include?("selected")
+		end
 	end
 end
