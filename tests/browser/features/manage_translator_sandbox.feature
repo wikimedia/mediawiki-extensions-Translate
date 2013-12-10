@@ -149,6 +149,27 @@ Feature: Manage translator sandbox
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
 
+  Scenario: Selecting a second user with translations and deselecting it
+    Given I am on the Translator sandbox management page with users in the sandbox
+    When I click on the checkbox near 'Pupu4' in the first column
+      And I click on the checkbox near 'Pupu4' in the first column
+    Then I should see the checkbox next to the request from 'Pupu4' unchecked
+      And I should see the checkbox next to the request from 'Pupu4' enabled
+      And I should see the checkbox next to the request from 'Orava4' checked
+      And I should see the checkbox next to the request from 'Orava4' disabled
+      And I should see the details of 4 sandboxed translations done by the user in the second column
+
+  Scenario: Selecting a second user without translations and deselecting it
+    Given I am on the Translator sandbox management page with users in the sandbox
+    When I click on 'Pupu0' in the first column
+      And I click on the checkbox near 'Orava0' in the first column
+      And I click on the checkbox near 'Orava0' in the first column
+    Then I should see the checkbox next to the request from 'Orava0' unchecked
+      And I should see the checkbox next to the request from 'Orava0' enabled
+      And I should see the checkbox next to the request from 'Pupu0' checked
+      And I should see the checkbox next to the request from 'Pupu0' disabled
+      And I should not see any translations done by the user in the second column
+
   Scenario: Accepting one user
     Given I am on the Translator sandbox management page with users in the sandbox
     When I click on 'Pupu2' in the first column

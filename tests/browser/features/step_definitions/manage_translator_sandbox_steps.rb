@@ -131,8 +131,9 @@ end
 
 Then(/^I should not see any translations done by the user in the second column$/) do
 	on(ManageTranslatorSandboxPage) do |page|
-		page.translation_elements.length.should == 0
-		page.details_no_translations_element.should be_visible
+		page.translation_elements.size.should == 0
+		page.details_no_translations.size.should == 1
+		page.details_no_translations[0].should be_visible
 	end
 end
 
@@ -141,7 +142,10 @@ Then(/^I should not see any translations done by the users in the second column$
 end
 
 Then(/^I should see the details of (\d+) sandboxed translations done by the user in the second column$/) do |translations|
-	on(ManageTranslatorSandboxPage).translation_elements.length.should == translations.to_i
+	on(ManageTranslatorSandboxPage) do |page|
+		page.translation_elements.size.should == translations.to_i
+		page.details_no_translations.size.should == 0
+	end
 end
 
 Then(/^I should not see user '(.+)' in the first column$/) do |username|
