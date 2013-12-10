@@ -88,7 +88,10 @@ Followed by a list of the pending requests.',
 {{Identical|Reject}}',
 	'tsb-selected-count' => 'Shows how many users are selected for accepting or rejecting. Parameters:
 * $1 - the number of users',
-	'tsb-older-requests' => 'A link shown at the footer of the requests list. Clicking the link selects all the requests that are older than the oldest currently-selected request. $1 is the number of older requests. It can be 0.',
+	'tsb-older-requests' => 'A link shown at the footer of the requests list. Clicking the link selects all the requests that are older than the oldest currently-selected request.
+
+Parameters:
+* $1 - the number of older requests. It can be 0.',
 	'tsb-accept-all-button-label' => 'Button label for accept-all button in [[Special:TranslateSandbox]].
 
 See also:
@@ -119,7 +122,6 @@ See also:
 	'tsb-limit-reached-title' => 'Heading shown below translations when the user has reached the limit for number of translations.',
 	'tsb-limit-reached-body' => 'Text shown below translations when the user has reached the limit for number of translations.',
 	'tsb-no-requests-from-new-users' => 'Shown on [[Special:TranslateSandbox]] when there are no requests for approval from new users.',
-
 	'log-name-translatorsandbox' => '{{doc-logpage}}',
 	'log-description-translatorsandbox' => 'Log page description',
 	'logentry-translatorsandbox-promoted' => '{{logentry}}
@@ -253,6 +255,11 @@ Bitte besuche $2 und erstelle einige weitere Übersetzungen.',
 Unser Team wird dein Benutzerkonto bald verifizieren und hochstufen.
 Du wirst dann in der Lage sein, ohne Limits zu übersetzen.',
 	'tsb-no-requests-from-new-users' => 'Keine Anträge von neuen Benutzern',
+	'tsb-promoted-from-sandbox' => 'Der Benutzer wurde zum Übersetzer befördert',
+	'log-name-translatorsandbox' => 'Übersetzungsspielwiese',
+	'log-description-translatorsandbox' => 'Es folgt ein Logbuch von Aktionen auf Übersetzungsspielwiesenbenutzer.',
+	'logentry-translatorsandbox-promoted' => '$1 hat $3 {{GENDER:$4|zum Übersetzer|zur Übersetzerin|zum Übersetzer}} {{GENDER:$2|befördert}}',
+	'logentry-translatorsandbox-rejected' => '$1 hat die Anfrage von $3 zur Beförderung {{GENDER:$2|zum Übersetzer|zur Übersetzerin|zum Übersetzer}} abgelehnt',
 );
 
 /** Spanish (español)
@@ -293,9 +300,11 @@ Veuillez venir sur $2 et faire quelques traductions de plus.',
 	'tsb-accept-button-label' => 'Accepter',
 	'tsb-reject-button-label' => 'Rejeter',
 	'tsb-selected-count' => '{{PLURAL:$1|$1 utilisateur sélectionné|$1 utilisateurs sélectionnés}}',
+	'tsb-older-requests' => '$1 {{PLURAL:$1|requête plus ancienne|requêtes plus anciennes}}',
 	'tsb-accept-all-button-label' => 'Tout accepter',
 	'tsb-reject-all-button-label' => 'Tout rejeter',
 	'tsb-reminder-link-text' => 'Envoyer un courriel de rappel',
+	'tsb-didnt-make-any-translations' => 'Cet utilisateur n’a fait aucune traduction.',
 	'tsb-translations-source' => 'Source',
 	'tsb-translations-user' => 'Traductions utilisateur',
 	'tsb-translations-current' => 'Traductions existantes',
@@ -308,6 +317,11 @@ Veuillez venir sur $2 et faire quelques traductions de plus.',
 	'tsb-limit-reached-title' => 'Merci pour vos traductions',
 	'tsb-limit-reached-body' => 'Vous atteint le nombre limite de traductions pour les nouveaux traducteurs. !N !Notre équipe va vérifier et mettre à niveau votre compte bientôt. !N !Ensuite, vous serez en mesure de traduire sans limites.',
 	'tsb-no-requests-from-new-users' => 'Aucune requête de nouveaux utilisateurs',
+	'tsb-promoted-from-sandbox' => 'L’utilisateur a été promu traducteur',
+	'log-name-translatorsandbox' => 'Bac à sable de traduction',
+	'log-description-translatorsandbox' => 'Un journal des actions sur les utilisateurs du bac à sable de traduction',
+	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|a promu}} $3 comme traducteur', # Fuzzy
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|a rejeté}} la demande de $3 de devenir traducteur',
 );
 
 /** Galician (galego)
@@ -369,9 +383,11 @@ $messages['he'] = array(
 	'tsb-accept-button-label' => 'לקבל',
 	'tsb-reject-button-label' => 'לדחות',
 	'tsb-selected-count' => '{{PLURAL:$1|נבחר משתמש אחד|נבחרו $1 משתמשים}}',
+	'tsb-older-requests' => '{{PLURAL:$1|בקשה אחת ישנה|$1 בקשות ישנות|0=אין בקשות ישנות}} יותר',
 	'tsb-accept-all-button-label' => 'לקבל את כולם',
 	'tsb-reject-all-button-label' => 'לדחות את כולם',
 	'tsb-reminder-link-text' => 'לשלוח תזכורת בדוא"ל',
+	'tsb-didnt-make-any-translations' => 'המשתמש הזה לא עשה שום תרגום.',
 	'tsb-translations-source' => 'מחרוזת מקור',
 	'tsb-translations-user' => 'תרגומי המשתמש',
 	'tsb-translations-current' => 'תרגומים קיימים',
@@ -386,6 +402,11 @@ $messages['he'] = array(
 הסגל שלנו יבדוק וישדרג את החשבון שלך בקרוב.
 אחרי־כן תהיה לך אפשרות לתרגם בלי הגבלה.',
 	'tsb-no-requests-from-new-users' => 'אין בקשות ממשתמשים חדשים',
+	'tsb-promoted-from-sandbox' => 'המשתמש קודם לתפקיד מתרגם',
+	'log-name-translatorsandbox' => 'ארגז חול של תרגומים',
+	'log-description-translatorsandbox' => 'יומן פעולות על משתמשים בארגז חול של תרגומים',
+	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|קידם|קידמה}} את $3 לתפקיד {{GENDER:$3|מתרגם|מתרגמת}}', # Fuzzy
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|דחה|דחתה}} את הבקשה של $3 לקבל הרשאת מתרגם',
 );
 
 /** Italian (italiano)
@@ -437,11 +458,13 @@ $messages['ja'] = array(
 	'tsb-accept-button-label' => '承認',
 	'tsb-reject-button-label' => '却下',
 	'tsb-selected-count' => '{{PLURAL:$1|$1 人の利用者を選択しています}}',
+	'tsb-older-requests' => '以前の $1 {{PLURAL:$1|件の申請}}',
+	'tsb-didnt-make-any-translations' => 'この利用者は何も翻訳していません。',
 	'tsb-translations-source' => '原文',
 	'tsb-translations-user' => '利用者による翻訳',
 	'tsb-translations-current' => '既存の翻訳',
 	'translationstash' => 'ようこそ',
-	'translate-translationstash-welcome' => '$1 さん、ありがとうございます。あなたは翻訳者になりました', # Fuzzy
+	'translate-translationstash-welcome' => 'ようこそ、$1 さん。あなたは翻訳者になりました',
 	'translate-translationstash-initialtranslation' => 'あなたの最初の翻訳',
 	'translate-translationstash-translations' => '{{PLURAL:$1|翻訳}}済 $1 件',
 	'translate-translationstash-skip-button-label' => 'スキップ',
@@ -450,6 +473,9 @@ $messages['ja'] = array(
 私たちのチームがまもなく、アカウントを検証してアップグレードします。
 その後、上限なしで翻訳できるようになります。',
 	'tsb-no-requests-from-new-users' => '新規利用者からの申請はありません',
+	'log-name-translatorsandbox' => '翻訳サンドボックス',
+	'log-description-translatorsandbox' => '翻訳サンドボックス利用者への操作の記録',
+	'logentry-translatorsandbox-promoted' => '$1 が $3 を翻訳者に{{GENDER:$2|昇格させました}}', # Fuzzy
 );
 
 /** Korean (한국어)
@@ -513,8 +539,10 @@ $messages['lb'] = array(
 	'tsb-all-languages-button-label' => 'All Sproochen',
 	'tsb-accept-button-label' => 'Akzeptéieren',
 	'tsb-reject-button-label' => 'Refuséieren',
+	'tsb-older-requests' => '$1 méi al {{PLURAL:$1|Ufro|Ufroen}}',
 	'tsb-accept-all-button-label' => 'All akzeptéieren',
 	'tsb-reject-all-button-label' => 'Alles refuséieren',
+	'tsb-didnt-make-any-translations' => 'Dëse Benotzer huet nach keng Iwwersetzunge gemaach.',
 	'tsb-translations-source' => 'Quell',
 	'tsb-translations-user' => 'Benotzer Iwwersetzungen',
 	'tsb-translations-current' => 'Iwwersetzungen déi et gëtt',
@@ -572,9 +600,11 @@ $messages['mk'] = array(
 	'tsb-accept-button-label' => 'Прифати',
 	'tsb-reject-button-label' => 'Одбиј',
 	'tsb-selected-count' => '{{PLURAL:$1|Избран е еден корисник|Избрани се $1 корисници}}',
+	'tsb-older-requests' => '{{PLURAL:$1|Едно постаро барање|$1 постари барања}}',
 	'tsb-accept-all-button-label' => 'Прифати ги сите',
 	'tsb-reject-all-button-label' => 'Одбиј ги сите',
 	'tsb-reminder-link-text' => 'Испрати потсетник по е-пошта',
+	'tsb-didnt-make-any-translations' => 'Корисников нема направено ниеден превод.',
 	'tsb-translations-source' => 'Извор',
 	'tsb-translations-user' => 'Кориснички преводи',
 	'tsb-translations-current' => 'Постоечки преводи',
@@ -613,6 +643,16 @@ Terima kasih kerana mendaftar untuk {{SITENAME}}. Sekiranya anda melengkapkan uj
 Sila ke $2 untuk membuat lebih banyak kerja terjemahan.',
 );
 
+/** Nepali (नेपाली)
+ * @author सरोज कुमार ढकाल
+ */
+$messages['ne'] = array(
+	'tsb-older-requests' => '$1 पुराना {{PLURAL:$1|अनुरोध|अनुरोधहरू}}',
+	'tsb-didnt-make-any-translations' => 'यस प्रयोगकर्ताले कुनै अनुवाद गरेको छैन ।',
+	'tsb-promoted-from-sandbox' => 'प्रयोगकर्तालाई अनुवादकको रुपमा बढावा गरिएको छ',
+	'log-name-translatorsandbox' => 'अनुवाद प्रयोगस्थल',
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
@@ -633,9 +673,11 @@ Kon alstublieft naar $2 en maak nog wat meer vertalingen.',
 	'tsb-accept-button-label' => 'Accepteren',
 	'tsb-reject-button-label' => 'Afwijzen',
 	'tsb-selected-count' => '{{PLURAL:$1|Eén gebruiker|$1 gebruikers}} geselecteerd',
+	'tsb-older-requests' => '$1 {{PLURAL:$1|ouder verzoek|oudere verzoeken}}',
 	'tsb-accept-all-button-label' => 'Alles accepteren',
 	'tsb-reject-all-button-label' => 'Alles afwijzen',
 	'tsb-reminder-link-text' => 'Herinnering per e-mail verzenden',
+	'tsb-didnt-make-any-translations' => 'Deze gebruiker heeft nog niets vertaald.',
 	'tsb-translations-source' => 'Bron',
 	'tsb-translations-user' => 'Gebruikersvertalingen',
 	'tsb-translations-current' => 'Bestaande vertalingen',
@@ -651,6 +693,11 @@ vertalers bereikt. Ons team gaat ze snel controleren en
 promoveert uw gebruiker snel, zodat u zonder beperkingen
 kunt gaan vertalen.',
 	'tsb-no-requests-from-new-users' => 'Geen verzoeken van nieuwe gebruikers',
+	'tsb-promoted-from-sandbox' => 'Gebruiker is gepromoveerd tot vertaler',
+	'log-name-translatorsandbox' => 'Vertalingenzandbak',
+	'log-description-translatorsandbox' => 'Een logboek van de handelingen van gebruikers in de vertalingenzandbak.',
+	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|heeft}} $3 gepromoveerd tot {{GENDER:$4|vertaler}}',
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|heeft}} het verzoek van $3 om vertaler te worden geweigerd',
 );
 
 /** Occitan (occitan)
@@ -716,9 +763,11 @@ $messages['ru'] = array(
 	'tsb-accept-button-label' => 'Принять',
 	'tsb-reject-button-label' => 'Отклонить',
 	'tsb-selected-count' => '{{PLURAL:$1|$1 участник выбран|$1 участника выбрано|$1 участников выбрано}}',
+	'tsb-older-requests' => '$1 более {{PLURAL:$1|старый запос|старых запоса|старых запосов}}',
 	'tsb-accept-all-button-label' => 'Принять все',
 	'tsb-reject-all-button-label' => 'Отклонить все',
 	'tsb-reminder-link-text' => 'Отправить напоминание по электронной почте',
+	'tsb-didnt-make-any-translations' => 'Этот участник не сделал ни одного перевода.',
 	'tsb-translations-source' => 'Источник',
 	'tsb-translations-user' => 'Переводы пользователя',
 	'tsb-translations-current' => 'Существующие переводы',
@@ -733,6 +782,11 @@ $messages['ru'] = array(
 Наша команда проверит и обновит вашу учётную запись в ближайшее время.
 После этого вы сможете переводить без ограничений.',
 	'tsb-no-requests-from-new-users' => 'Нет запросов от новых участников',
+	'tsb-promoted-from-sandbox' => 'Участник получил статус переводчика',
+	'log-name-translatorsandbox' => 'Песочница для переводов',
+	'log-description-translatorsandbox' => 'Журнал действий с участниками песочницы переводов',
+	'logentry-translatorsandbox-promoted' => '$1 сделал{{GENDER:$2||а}}$3 {{GENDER:$4|переводчиком}}.',
+	'logentry-translatorsandbox-rejected' => '$1 отклонил{{GENDER:$2||а}} запрос от $3 статуса переводчика.',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
@@ -808,9 +862,11 @@ $messages['uk'] = array(
 	'tsb-accept-button-label' => 'Прийняти',
 	'tsb-reject-button-label' => 'Відмовитися',
 	'tsb-selected-count' => '{{PLURAL:$1|$1 користувач вибраний|$1 користувачі вибрані|$1 користувачів вибрано}}',
+	'tsb-older-requests' => '$1 {{PLURAL:$1|старший запит|старші запити|старших запитів}}',
 	'tsb-accept-all-button-label' => 'Прийняти всі',
 	'tsb-reject-all-button-label' => 'Відхилити всі',
 	'tsb-reminder-link-text' => 'Надсилати нагадування по електронній пошті',
+	'tsb-didnt-make-any-translations' => 'Цей користувач не здійснив жодного перекладу.',
 	'tsb-translations-source' => 'Джерело',
 	'tsb-translations-user' => 'Користувацькі переклади',
 	'tsb-translations-current' => 'Існуючі переклади',
@@ -825,6 +881,11 @@ $messages['uk'] = array(
 Наша команда невдовзі перевірить і оновить ваш обліковий запис.
 Потім зможете перекладати без обмежень.',
 	'tsb-no-requests-from-new-users' => 'Немає запитів від нових користувачів',
+	'tsb-promoted-from-sandbox' => 'Користувач вже підвищений до перекладача',
+	'log-name-translatorsandbox' => 'Пісочниця перекладу',
+	'log-description-translatorsandbox' => 'Журнал дій користувачів у пісочниці перекладу',
+	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|підвищив|підвищила}} $3 до {{GENDER:$4|перекладача|перекладачки}}',
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|відхилив|відхилила}} запит від $3 стати перекладачем',
 );
 
 /** Vietnamese (Tiếng Việt)

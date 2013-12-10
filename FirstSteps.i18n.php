@@ -3981,6 +3981,7 @@ $messages['su'] = array(
 /** Swedish (svenska)
  * @author Fredrik
  * @author Jopparn
+ * @author Tobulos1
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
@@ -3995,7 +3996,7 @@ $messages['sv'] = array(
 	'translate-fs-permissions-title' => 'Ansök om översättarbehörigheter',
 	'translate-fs-target-title' => 'Börja översätta!',
 	'translate-fs-email-title' => 'Bekräfta din e-postadress',
-	'translate-fs-intro' => "Välkommen till guiden för att komma igång med {{SITENAME}}. Du kommer att vägledas stegvis i hur man blir översättare. När du är färdig kommer du att kunna översätta ''gränssnittsmeddelanden'' av alla projekt som stöds av {{SITENAME}}.", # Fuzzy
+	'translate-fs-intro' => 'Välkommen till guiden för att komma igång med {{SITENAME}}. Du kommer att vägledas stegvis i hur man blir översättare. När du är färdig kommer du att kunna översätta <em>gränssnittsmeddelanden</em> av alla projekt som stöds av {{SITENAME}}.',
 	'translate-fs-selectlanguage' => 'Välj ett språk',
 	'translate-fs-settings-planguage' => 'Huvudspråk:',
 	'translate-fs-settings-planguage-desc' => 'Huvudspråket fungerar som ditt gränssnittsspråk på denna wiki

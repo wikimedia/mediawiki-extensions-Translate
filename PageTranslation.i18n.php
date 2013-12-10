@@ -9674,6 +9674,7 @@ $messages['su'] = array(
  * @author M.M.S.
  * @author Najami
  * @author Rotsee
+ * @author Tobulos1
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
@@ -9744,12 +9745,12 @@ men {{PLURAL:$1|den senaste versionen|de senaste versionerna}} kan inte markeras
 	'tpt-translation-restricted' => 'Översättningar av denna sida har förhindrats av en översättningsadministratör.
 
 Anledningar: $1',
-	'tpt-discouraged-language-force' => 'En översättningsadministratör har begränsat språken denna sida kan översättas till. Detta språk är inte en av dessa språk.
+	'tpt-discouraged-language-force' => '<strong>Denna sida kan inte översättas till $2.</strong>
 
-Anledning: $1', # Fuzzy
-	'tpt-discouraged-language' => 'Detta språk är inte bland de prioritetsspråk som är inställda av en översättningsadminstratör för denna sida.
+En översättningsadministratör har beslutat att denna sida endast kan översättas till $3.',
+	'tpt-discouraged-language' => '<strong>Översättning till $2 är inte en prioritering på denna sida.</strong>
 
-Anledning: $1', # Fuzzy
+En översättningsadministratör har beslutat att fokusera översättning på $3.',
 	'tpt-discouraged-language-reason' => 'Anledning: $1',
 	'tpt-priority-languages' => 'En översättningsadministratör har ställt in prioritetsspråken för denna grupp till $1.',
 	'tpt-render-summary' => 'Uppdaterar för att matcha den nya versionen av källpaketet',

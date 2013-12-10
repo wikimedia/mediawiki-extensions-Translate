@@ -1333,6 +1333,52 @@ See also:
 * {{msg-mw|Translate-search-more-languages-info}}',
 );
 
+/** Achinese (Acèh)
+ * @author Rachmat.Wahidi
+ */
+$messages['ace'] = array(
+	'translate' => 'Teujeumah',
+	'translate-desc' => "[[Special:Translate|Laman kusuih]] keu neuteujeumah MediaWiki ngön nyang la'én",
+	'translate-taskui-view' => 'Peudeuh ban dum peusan',
+	'translate-taskui-untranslated' => 'Peudeuh peusan nyang gohlom meuteujeumah',
+	'translate-taskui-reviewall' => 'Kalön ban dum teujeumah',
+	'translate-taction-translate' => 'Teujeumah',
+	'translate-taction-proofread' => 'Kalön',
+	'translate-taction-lstats' => 'Keunira bahsa',
+	'translate-taction-mstats' => 'Keunira kawan peusan',
+	'translate-taction-disabled' => 'Buet nyoe geupeumaté ban wiki nyoe.',
+	'translate-page-no-such-language' => 'Bahsa nyang neupiléh hana sah.',
+	'translate-page-no-such-group' => 'Kawan nyang neupiléh hana sah.',
+	'translate-page-disabled' => 'Teujeumah kawan peusan nyoe u bahsa nyoe ka geupeumaté. Dalèh:
+
+<em>$1</em>',
+	'translate-language-disabled' => 'Teujeumah u bahsa nyoe ka geupeumaté.',
+	'translate-page-settings-legend' => 'Atô',
+	'translate-page-group' => 'Kawan',
+	'translate-page-language' => 'Bahsa',
+	'translate-page-limit' => 'Bataih',
+	'translate-page-limit-option' => '$1 {{PLURAL:$1|peusan|peusan}} lam saboh laman', # Fuzzy
+	'translate-submit' => 'Cok',
+	'translate-page-navigation-legend' => 'Keumudoë',
+	'translate-page-showing' => 'Peudeuh peusan-peusan nibak $1 u $2 nibak $3.',
+	'translate-page-showing-all' => 'Peudeuh $1 {{PLURAL:$1|peusan|peusan}}.', # Fuzzy
+	'translate-page-showing-none' => 'Hana peusan nyang jeuet tapeudeuh.',
+	'translate-next' => 'Laman u keue',
+	'translate-prev' => 'Laman u likôt',
+	'translate-page-description-legend' => 'Hareutoe bhah kawan nyoe',
+	'translate-page-edit' => 'andam',
+	'translate-ext-url' => '<hr />Alamat wèb: $1',
+	'translate-optional' => '(teunamah)',
+	'translate-ignored' => '(hana peuhiröe)',
+	'translate-edit-title' => 'Andam "$1"',
+	'translate-edit-definition' => 'Hareutoe peusan',
+	'translate-edit-translation' => 'Teujeumah',
+	'translate-edit-contribute' => 'beuneuri',
+	'translate-edit-information' => 'Hareutoe bhah peusan ($1)',
+	'translate-edit-in-other-languages' => "Peusan bak bahsa la'én",
+	'translate-edit-committed' => 'Teujeumah lam peukakah leumiek jinoe',
+);
+
 /** Afrikaans (Afrikaans)
  * @author Ansumang
  * @author Arnobarnard
@@ -31794,6 +31840,7 @@ Anjeun perlu jadi anggota grup panarjamah pikeun nyimpen parobahan. Parobahan mo
  * @author Rotsee
  * @author Sannab
  * @author Skalman
+ * @author Tobulos1
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
@@ -32041,7 +32088,7 @@ Vänligen kontrollera.',
 Var god granska ändringarna och välj en åtgärd du vill utföra för varje uppdatering.
 Om du väljer att ignorera ändringar är denna handling endast tillfällig.',
 	'translate-manage-import-ok' => 'Importerat ny version av sidan $1', # Fuzzy
-	'translate-manage-import-done' => 'Allt klart!', # Fuzzy
+	'translate-manage-import-done' => 'Import klar!',
 	'importtranslations' => 'Importera översättningar',
 	'translate-import-from-local' => 'Lokal filuppladdning:',
 	'translate-import-load' => 'Ladda fil',
@@ -32188,7 +32235,7 @@ Främst användbar för granskningsuppgifter.',
 	'tux-proofread-translated-by-self' => 'Översatt av dig',
 	'tux-empty-list-all' => 'Denna meddelandegrupp är tom',
 	'tux-empty-list-all-guide' => 'Välj en annan meddelandegrupp att översätta',
-	'tux-translate-page-no-such-group' => "'''Den angivna gruppen finns inte.''' Välj en annan meddelandegrupp.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>Den angivna gruppen finns inte.</strong> Välj en annan meddelandegrupp.',
 	'tux-empty-list-translated' => 'Inga översatta meddelanden',
 	'tux-empty-list-translated-guide' => 'Du kan hjälpa till att översätta',
 	'tux-empty-list-translated-action' => 'Översätt',

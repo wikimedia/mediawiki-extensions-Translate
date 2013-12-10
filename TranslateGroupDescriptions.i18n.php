@@ -1172,7 +1172,8 @@ Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/m
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] je editor za OpenStreetMap, kotryž na Flash bazěruje',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] je zběrka nastrojow za wobdźěłowanju Wikipedije',
 	'bw-desc-shapado' => 'Skupina zdźělenkow za zjawnje k dispoziciji stejacu softwaru Q&A [[Translating:Shapado|Shapado]]',
-	'translate-group-desc-tsint' => 'Zdźělenska skupina za [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-system za nastroje [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|podpěra]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition techniske podrobnosće]</span>)', # Fuzzy
+	'translate-group-desc-tsint' => 'Zdźělenska skupina za [[Translating:Intuition|Intuition]], i18n-system za nastroje [//toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Intuition|podpěra]] </span>)',
+	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] je nastroj za nahrawanje datajow do Wikimedia Commons a druhich wikimedijowych projektow',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] je słužba, kotraž ruty za pućowanje, kolesowanje, mountainbikowanje a skating na cyłym swěće pokazuje. Wužiwa licencu GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] móže awtorow nastawka we wikiju Wikimedije spěšnje namakać.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] je projekt, kotryž skići tekstowu wersiju Wikipedije offline na mobilnym graće.',
@@ -1184,6 +1185,7 @@ Prošu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/m
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] je mobilna aplikacija za sobudźěło na projekće  [[:meta:Wiki Loves Monuments|Wiki Loves Monuments]]',
 	'translate-group-desc-waymarked-trails-help' => 'Strony pomocy websydłow za Waymarked Trails: http://waymarkedtrails.org/help/about',
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] je editor we woprawdźitym času za zhromadne dźěło',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]] je JavaScriptowa biblioteka za wšelake wobhladowaki, kotraž matematiske notacije we webwobhladowakach zwobraznja.',
 );
 
 /** Hungarian (magyar)
