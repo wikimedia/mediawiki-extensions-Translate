@@ -316,9 +316,9 @@
 	function updateSelectedIndicator( count ) {
 		var text = mw.msg( 'tsb-selected-count', mw.language.convertNumber( count ) );
 
-		$( '.pane.requests .request-footer .selected-counter' ).text( text );
+		$( '.requests.pane .request-footer .selected-counter' ).text( text );
 		if ( count > 1 ) {
-			$( '.pane.details .tsb-header' ).text( text );
+			$( '.details.pane .tsb-header' ).text( text );
 		}
 	}
 
@@ -343,8 +343,8 @@
 	 * Sets the height of the panes to the window height.
 	 */
 	function setPanesHeight() {
-		var $detailsPane = $( '.pane.details' ),
-			$requestsPane = $( '.pane.requests' ),
+		var $detailsPane = $( '.details.pane' ),
+			$requestsPane = $( '.requests.pane' ),
 			detailsHeight = $( window ).height() - $detailsPane.offset().top,
 			requestsHeight = detailsHeight -
 				$requestsPane.find( '.request-footer' ).height() -
@@ -360,7 +360,7 @@
 			$clearLanguageSelector = $( '.clear-language-selector' ),
 			$selectAll = $( '.request-selector-all' ),
 			$requestRows = $( '.requests .request' ),
-			$detailsPane = $( '.pane.details' );
+			$detailsPane = $( '.details.pane' );
 
 		// Delay so we get the correct height on page load
 		window.setTimeout( setPanesHeight, 0 );
@@ -611,7 +611,7 @@
 		if ( $firstVisibleUser.length ) {
 			$firstVisibleUser.click();
 		} else {
-			$( '.details' ).empty();
+			$( '.details.pane' ).empty();
 			$selectedRequests = $( '.request-selector:checked' );
 			$selectedRequests.closest( '.request' ).removeClass( 'selected' );
 			$selectedRequests.prop( {

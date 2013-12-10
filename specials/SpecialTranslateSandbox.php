@@ -49,7 +49,7 @@ class SpecialTranslateSandbox extends SpecialPage {
 
 		if ( $request->getVal( 'integrationtesting' ) === 'populate' ) {
 			$textUsernamePrefixes = array( 'Orava', 'Pupu' );
-			$testLanguages = array( 'fi', 'uk', 'nl', 'ml', 'bn' );
+			$testLanguages = array( 'fi', 'uk', 'nl', 'he', 'bn' );
 			$userCount = count( $testLanguages );
 
 			foreach ( $textUsernamePrefixes as $prefix ) {
