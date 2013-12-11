@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_791b8820",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-11T18:30:54Z",
+      "side": 1,
+      "message": "I would have added mention that this is about the sandbox management page.\n\nImagine yourself making the next MLEB release notes and as you read through the log of new commits, would you understand whether this important and not and would you be able to explain it with precision and simplicity as needed in MLEB release notes.",
+      "revId": "71d760d905a2af0f082297b7cd83b9f43afe5b4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_d9205449",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-11T18:30:54Z",
+      "side": 1,
+      "message": "I still don\u0027t understand what the space is for.",
+      "revId": "71d760d905a2af0f082297b7cd83b9f43afe5b4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
