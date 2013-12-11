@@ -14,16 +14,12 @@ class ManageTranslatorSandboxPage
 	text_field(:language_filter, id: "languagefilter")
 	button(:language_selector_button, class: "language-selector")
 
-	div(:requests_list, class: "requests-list")
 	div(:request_count, class: "request-count")
 	span(:selected_counter, class: "selected-counter")
 
 	text_field(:search, class: "request-filter-box")
 
 	checkbox(:select_all_checkbox, class: "request-selector-all")
-	div(:username) do |page|
-		page.requests_list_element.element.divs(class: "username")
-	end
 
 	def details_button(label)
 		@browser.button(text: label)
@@ -72,6 +68,12 @@ class ManageTranslatorSandboxPage
 	def visible_users_start_with?(prefix)
 		Watir::Wait.until { hidden_users_element.size > 0 }
 		visible_users_element.all? do |element|
+			element.text.match(/^#{prefix}/i)
+		end
+	end
+
+	def the_first_column_has_username_starting_with?(prefix)
+		visible_users_element.any? do |element|
 			element.text.match(/^#{prefix}/i)
 		end
 	end
