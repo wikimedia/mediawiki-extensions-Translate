@@ -12953,7 +12953,7 @@ $messages['gl'] = array(
 	'translate-taction-disabled' => 'A acción está desactivada neste wiki.',
 	'translate-page-no-such-language' => 'O código de lingua especificado non é válido.',
 	'translate-page-no-such-group' => 'O grupo especificado non é válido.',
-	'translate-page-disabled' => 'As traducións desta lingua neste grupo están desactivadas.
+	'translate-page-disabled' => 'As traducións a esta lingua neste grupo están desactivadas.
 Motivo:
 
 <em>$1</em>',
@@ -35443,7 +35443,7 @@ thí dụ như không sử dụng khoảng cách hoặc có hệ thống phiên 
 	'translate-edit-definition' => 'Định nghĩa thông điệp',
 	'translate-edit-translation' => 'Bản dịch',
 	'translate-edit-contribute' => 'đóng góp',
-	'translate-edit-no-information' => "''Thông điệp này hiện chưa có tài liệu hướng dẫn. Nếu bạn biết thông điệp này dùng ở đâu và dùng như thế nào, bạn có thể giúp những biên dịch viên khác bằng cách thêm tài liệu hướng dẫn cho nó.''", # Fuzzy
+	'translate-edit-no-information' => '<em>Thông điệp này hiện chưa có tài liệu hướng dẫn. Nếu bạn biết thông điệp này dùng ở đâu và dùng như thế nào, bạn có thể giúp những biên dịch viên khác bằng cách thêm tài liệu hướng dẫn cho nó.</em>',
 	'translate-edit-information' => 'Thông tin về thông điệp ($1)',
 	'translate-edit-in-other-languages' => 'Thông điệp bằng thứ tiếng khác',
 	'translate-edit-committed' => 'Bản dịch hiện tại trong phần mềm',
@@ -35638,8 +35638,8 @@ Xin kiểm lại.',
 	'translate-manage-intro-other' => 'Dưới đây là danh sách các thay đổi bản dịch trong ngôn ngữ $1.
 Xin hãy xem lại các thay đổi và chọn tác vụ bạn muốn làm đối với từng bản cập nhật.
 Việc bỏ qua thay đổi chỉ tạm thời.',
-	'translate-manage-import-ok' => 'Đã nhập phiên bản mới của trang $1.', # Fuzzy
-	'translate-manage-import-done' => 'Đã xong!', # Fuzzy
+	'translate-manage-import-ok' => 'Đã nhập: $1',
+	'translate-manage-import-done' => 'Đã nhập xong!',
 	'importtranslations' => 'Nhập bản dịch',
 	'translate-import-from-local' => 'Tải tập tin từ máy tính:',
 	'translate-import-load' => 'Tải tập tin',
@@ -35788,7 +35788,7 @@ Nó có ích đối với các tác vụ duyệt.',
 	'tux-proofread-translated-by-self' => 'Bản dịch của bạn',
 	'tux-empty-list-all' => 'Nhóm thông điệp này đang trống',
 	'tux-empty-list-all-guide' => 'Hãy chọn một nhóm thông điệp khác để dịch',
-	'tux-translate-page-no-such-group' => "'''Nhóm được chỉ định không tồn tại.''' Hãy chọn một nhóm thông điệp khác.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>Nhóm được chỉ định không tồn tại.</strong> Hãy chọn một nhóm thông điệp khác.',
 	'tux-empty-list-translated' => 'Chưa dịch thông điệp nào',
 	'tux-empty-list-translated-guide' => 'Mời bạn cùng biên dịch',
 	'tux-empty-list-translated-action' => 'Biên dịch',

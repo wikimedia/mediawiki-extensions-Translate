@@ -10739,12 +10739,12 @@ Trang bạn muốn sửa đổi dường như không tương ứng với trang n
 	'tpt-translation-restricted' => 'Một người quản lý biên dịch không cho phép dịch trang ra ngôn ngữ này.
 
 Lý do: $1',
-	'tpt-discouraged-language-force' => 'Một người quản lý biên dịch chỉ cho phép biên dịch trang ra một số ngôn ngữ, không bao gồm ngôn ngữ này.
+	'tpt-discouraged-language-force' => '<strong>Không thể biên dịch trang này ra $2.</strong>
 
-Lý do: $1', # Fuzzy
-	'tpt-discouraged-language' => 'Ngôn ngữ này không phải là một trong những ngôn ngữ quan trọng theo người quản lý biên dịch của trang này.
+Một người quản lý biên dịch chỉ cho phép dịch trang ra $3.',
+	'tpt-discouraged-language' => '<strong>Việc biên dịch ra $2 không phải là một ưu tiên cho trang này.</strong>
 
-Lý do: $1', # Fuzzy
+Một người quản lý biên dịch đã quyết định chú trọng vào việc biên dịch ra $3.',
 	'tpt-discouraged-language-reason' => 'Lý do: $1',
 	'tpt-priority-languages' => 'Một người quản lý biên dịch đã đặt các ngôn ngữ quan trọng của nhóm này là $1.',
 	'tpt-render-summary' => 'Cập nhật đến phiên bản mới của trang nguồn',

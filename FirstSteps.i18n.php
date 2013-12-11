@@ -4388,9 +4388,9 @@ $messages['vi'] = array(
 	'translate-fs-permissions-title' => 'Yêu cầu quyền biên dịch viên',
 	'translate-fs-target-title' => 'Tiến hành dịch!',
 	'translate-fs-email-title' => 'Xác nhận địa chỉ thư điện tử',
-	'translate-fs-intro' => "Hoan nghênh bạn đến với trình hướng dẫn sử dụng {{SITENAME}}.
+	'translate-fs-intro' => 'Hoan nghênh bạn đến với trình hướng dẫn sử dụng {{SITENAME}}.
 Bạn sẽ được hướng dẫn từng bước quá trình trở thành biên dịch viên.
-Cuối cùng bạn sẽ có thể dịch được ''thông điệp giao diện'' của tất cả các dự án được hỗ trợ tại {{SITENAME}}.", # Fuzzy
+Cuối cùng bạn sẽ có thể dịch được <em>thông điệp giao diện</em> của tất cả các dự án được hỗ trợ tại {{SITENAME}}.',
 	'translate-fs-selectlanguage' => 'Chọn một ngôn ngữ',
 	'translate-fs-settings-planguage' => 'Ngôn ngữ chính:',
 	'translate-fs-settings-planguage-desc' => 'Ngôn ngữ chính cũng là ngôn ngữ giao diện khi bạn sử dụng wiki này

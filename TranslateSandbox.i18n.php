@@ -283,6 +283,7 @@ $messages['fi'] = array(
 /** French (français)
  * @author Gomoko
  * @author NemesisIII
+ * @author Nobody
  * @author Wyz
  */
 $messages['fr'] = array(
@@ -320,7 +321,7 @@ Veuillez venir sur $2 et faire quelques traductions de plus.',
 	'tsb-promoted-from-sandbox' => 'L’utilisateur a été promu traducteur',
 	'log-name-translatorsandbox' => 'Bac à sable de traduction',
 	'log-description-translatorsandbox' => 'Un journal des actions sur les utilisateurs du bac à sable de traduction',
-	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|a promu}} $3 comme traducteur', # Fuzzy
+	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|a promu}} $3 comme {{{{GENDER:$4|traducteur}}.', # Fuzzy
 	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|a rejeté}} la demande de $3 de devenir traducteur',
 );
 
@@ -475,7 +476,7 @@ $messages['ja'] = array(
 	'tsb-no-requests-from-new-users' => '新規利用者からの申請はありません',
 	'log-name-translatorsandbox' => '翻訳サンドボックス',
 	'log-description-translatorsandbox' => '翻訳サンドボックス利用者への操作の記録',
-	'logentry-translatorsandbox-promoted' => '$1 が $3 を翻訳者に{{GENDER:$2|昇格させました}}', # Fuzzy
+	'logentry-translatorsandbox-promoted' => '$1 が $3 を{{GENDER:$4|翻訳者}}に{{GENDER:$2|昇格させました}}',
 );
 
 /** Korean (한국어)
@@ -526,6 +527,7 @@ $messages['ksh'] = array(
 mer bedangke ons dat De Desch köözlesch {{ucfirst:{{GRAMMAR:em|{{ucfirst:{{SITENAME}}}}}}}} aanjemälldt häs. Wann Do jraad noch e paa Övversäzonge för et Prööve fäädesch määß, künne de Wikki_Kööbeße desch freischallde för et Övversäzze.
 
 Bes esu jood un donn Desch op {{GRAMMAR:Dativ|$2}} enlogge un maach e paa Övversäzonge.',
+	'logentry-translatorsandbox-promoted' => '{{GENDER:$2|Dä Metmaacher|De Metmaacherėn|Dä Metmaacher|De Metmaacherėn|Dä Metmaacher}} $1 hät {{GENDER:$4|Dä Metmaacher|De Metmaacherėn|Dä Metmaacher|De Metmaacherėn|Dä Metmaacher}} $3 en di Jrop „Övversäzer“ jedonn.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
