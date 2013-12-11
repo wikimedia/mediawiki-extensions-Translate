@@ -49,7 +49,7 @@ Welcome, and thank you for you contributions!
 $3,
 {{SITENAME}} staff',
 
-	'tsb-request-count' => '{{PLURAL:$1|One request|$1 requests}}',
+	'tsb-request-count' => '$1 {{PLURAL:$1|request|requests}}',
 	'tsb-all-languages-button-label' => 'All languages',
 	'tsb-search-requests' => 'Search requests',
 	'tsb-accept-button-label' => 'Accept',
