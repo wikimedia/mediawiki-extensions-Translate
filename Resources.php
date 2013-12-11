@@ -370,6 +370,7 @@ $wgResourceModules['ext.translate.special.translatesandbox'] = array(
 		'jquery.ui.dialog',
 		'mediawiki.language',
 		'mediawiki.jqueryMsg',
+		'ext.uls.buttons',
 	),
 	'messages' => array(
 		'tsb-all-languages-button-label',
