@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_ecdeb743",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-11T08:40:42Z",
+      "side": 1,
+      "message": "I\u0027m flexible.",
+      "parentUuid": "0ee75395_8c1e0b10",
+      "revId": "df3c72c3004cbce094b0b87b92b2a41832f00488",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_ac254f58",
         "filename": "utils/TranslateSandbox.php",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-11T08:36:48Z",
       "side": 1,
       "message": "Introducing new uses of $wgUser is not acceptable. Why do you need it? Isn\u0027t $sender enough?",
+      "revId": "df3c72c3004cbce094b0b87b92b2a41832f00488",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_0cdafb50",
+        "filename": "utils/TranslateSandbox.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-11T08:40:42Z",
+      "side": 1,
+      "message": "It\u0027s a mistake. I already fixed in the subsequent patch.",
+      "parentUuid": "0ee75395_ac254f58",
       "revId": "df3c72c3004cbce094b0b87b92b2a41832f00488",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
