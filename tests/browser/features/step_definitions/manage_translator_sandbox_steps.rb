@@ -29,8 +29,8 @@ Then(/^no users are displayed in the first column$/) do
 	end
 end
 
-Then(/^I should see '(.+)' at the top of the first column$/) do |requests_number|
-	on(ManageTranslatorSandboxPage).request_count.should match(/^#{requests_number}/i)
+Then(/^I should see '(.+)' at the top of the first column$/) do |text|
+	on(ManageTranslatorSandboxPage).request_count.should == text
 end
 
 Then(/^I should see '(.*)' in the second column$/) do |text|

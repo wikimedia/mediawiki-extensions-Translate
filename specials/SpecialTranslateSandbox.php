@@ -155,7 +155,7 @@ HTML;
 		// Sort the requests based on translations and registration date
 		usort( $requests, array( __CLASS__, 'translatorRequestSort' ) );
 
-		$count = count( $users );
+		$count = count( $requests );
 		foreach ( $requests as $request ) {
 			$items[] = $this->makeRequestItem( $request );
 		}

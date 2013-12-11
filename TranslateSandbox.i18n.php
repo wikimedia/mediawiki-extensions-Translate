@@ -28,7 +28,7 @@ access.
 
 Please come to $2 and make some more translations.',
 
-	'tsb-request-count' => '{{PLURAL:$1|One request|$1 requests}}',
+	'tsb-request-count' => '$1 {{PLURAL:$1|request|requests}}',
 	'tsb-all-languages-button-label' => 'All languages',
 	'tsb-search-requests' => 'Search requests',
 	'tsb-accept-button-label' => 'Accept',
