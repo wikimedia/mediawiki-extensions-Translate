@@ -33,6 +33,24 @@
       "revId": "71d760d905a2af0f082297b7cd83b9f43afe5b4d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_f9e0b8c9",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-11T18:57:23Z",
+      "side": 1,
+      "message": "Addressed in Idfed0feb2d7436b4307f7c9e87119c2d495b5ed2 .",
+      "parentUuid": "0ee75395_d9205449",
+      "revId": "71d760d905a2af0f082297b7cd83b9f43afe5b4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
