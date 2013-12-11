@@ -234,7 +234,7 @@
 					)
 				);
 			$.each( translations.translationstash.translations, function( index, translation ) {
-				var translationLang = translation.title.split( /[\\/ ]+/ ).pop();
+				var translationLang = translation.title.split( '/' ).pop();
 
 				$target.append(
 					$( '<div>' )

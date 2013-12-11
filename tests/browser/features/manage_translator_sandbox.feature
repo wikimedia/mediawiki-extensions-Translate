@@ -164,6 +164,8 @@ Feature: Manage translator sandbox
       And I should see the details of 2 sandboxed translations done by the user in the second column
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
+      And I should see the name of language 'Nederlands' in the second column
+      And I should see that the language of the first translation is 'Nederlands'
 
   Scenario: Selecting a second user with translations and deselecting it
     Given I am on the Translator sandbox management page with users in the sandbox
