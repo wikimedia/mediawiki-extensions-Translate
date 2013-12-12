@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_48a4689e",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-12T09:43:35Z",
+      "side": 1,
+      "message": "Done, removed",
+      "parentUuid": "0ee75395_489ea867",
+      "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_288fe430",
         "filename": "TranslateSandbox.i18n.php",
         "patchSetId": 7
