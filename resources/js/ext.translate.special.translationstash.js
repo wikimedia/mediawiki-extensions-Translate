@@ -156,6 +156,10 @@
 		var $messageTable = $( '.tux-messagelist' ),
 			messagegroup = '!sandbox';
 
+		$( '<div>' )
+			.addClass( 'tux-loading-indicator' )
+			.appendTo( $messageTable );
+
 		getMessages( messagegroup, $messageTable.data( 'targetlangcode' ) )
 			.done( function ( result ) {
 				var untranslated, messages = result.query.messagecollection;
@@ -169,6 +173,7 @@
 						message.properties.status = 'translated';
 					}
 
+					$messageTable.empty();
 					addMessage( message );
 				} );
 
