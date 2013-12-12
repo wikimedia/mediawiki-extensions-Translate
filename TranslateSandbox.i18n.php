@@ -26,7 +26,7 @@ Thanks for registering with {{SITENAME}}.
 
 If you complete your test translations, the administrators will grant you full translation access soon afterwards.
 
-Please come to and make some more translations here:
+Please come over and make some more translations here:
 $2
 
 $3,
