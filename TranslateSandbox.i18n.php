@@ -32,12 +32,12 @@ $2
 $3,
 {{SITENAME}} staff',
 	'tsb-reminder-sending' => 'Sending the reminder...',
-	'tsb-reminder-sent' => '{{PLURAL:$1|Sent $1 reminder $2|Sent $1 reminders, the last one $2|1=Sent $1 reminder $2}}',
+	'tsb-reminder-sent' => '{{PLURAL:$1|Sent $1 reminder $2|Sent $1 reminders, the last one $2}}',
 	'tsb-reminder-sent-new' => 'Sent a reminder',
 	'tsb-reminder-failed' => 'Sending the reminder failed',
 
 	'tsb-email-promoted-subject' => 'You are now a translator at {{SITENAME}}',
-	'tsb-email-promoted-body' => 'Hi $1,
+	'tsb-email-promoted-body' => 'Hi {{GENDER:$1|$1}},
 
 Congratulations! I checked the test translations that you made at {{SITENAME}} and gave you full translator rights.
 
@@ -46,7 +46,7 @@ $2
 
 Welcome, and thank you for you contributions!
 
-$3,
+{{GENDER:$3|$3}},
 {{SITENAME}} staff',
 
 	'tsb-request-count' => '$1 {{PLURAL:$1|request|requests}}',
@@ -100,7 +100,7 @@ Followed by a list of the pending requests.',
 	'tsb-reminder-sending' => 'Shown near {{ms-msg|tsb-reminder-link-text}} while the reminder email is being sent.',
 	'tsb-reminder-sent' => 'Shown near {{ms-msg|tsb-reminder-link-text}} after the reminder email was successfully sent. Parameters:
 * $1 - the number of reminders that were already sent
-* $2 - the human timestamp of the last time a reminder was sent',
+* $2 - the human timestamp of the last time a reminder was sent. It is either a date or one of the ago formats in https://github.com/wikimedia/mediawiki-extensions-cldr/blob/master/CldrNames/CldrNamesEn.php#L1151',
 	'tsb-reminder-sent-new' => 'Shown near {{ms-msg|tsb-reminder-link-text}} after sending a new reminder.',
 	'tsb-reminder-failed' => 'Shown near {{ms-msg|tsb-reminder-link-text}} if sending the reminder email failed.',
 	'tsb-email-promoted-subject' => 'The subject for an email that announces that a user received full translation rights ("promoted").',
