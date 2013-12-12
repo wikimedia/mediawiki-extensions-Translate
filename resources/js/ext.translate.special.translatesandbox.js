@@ -260,10 +260,18 @@
 	function indicateOlderRequests() {
 		var $lastSelectedRequest = $( '.row.request.selected' ).last(),
 			$olderRequests = $lastSelectedRequest.nextAll( ':not(.hide)' ),
-			oldRequestsCount = mw.language.convertNumber( $olderRequests.length );
+			oldRequestsCount = $olderRequests.length,
+			oldRequestsCountString = mw.language.convertNumber( oldRequestsCount ),
+			$olderRequestsIndicator = $( '.older-requests-indicator' );
 
-		$( '.older-requests-indicator' )
-			.text( mw.msg( 'tsb-older-requests', oldRequestsCount ) );
+		if ( oldRequestsCount ) {
+			$olderRequestsIndicator
+				.text( mw.msg( 'tsb-older-requests', oldRequestsCountString ) )
+				.removeClass( 'hide' );
+		} else {
+			$olderRequestsIndicator
+				.addClass( 'hide' );
+		}
 	}
 
 	/**
@@ -327,6 +335,7 @@
 			}
 
 			updateSelectedIndicator( selectedCount );
+			indicateOlderRequests();
 		} );
 
 		$requestCheckboxes.on( 'click change', function ( e ) {

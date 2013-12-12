@@ -14,6 +14,8 @@ class ManageTranslatorSandboxPage
 	text_field(:language_filter, id: "languagefilter")
 	button(:language_selector_button, class: "language-selector")
 
+	a(:older_requests_indicator, class: "older-requests-indicator")
+
 	div(:request_count, class: "request-count")
 	span(:reminder_status, class: "reminder-status")
 
@@ -45,10 +47,6 @@ class ManageTranslatorSandboxPage
 
 	def hidden_users_element
 		@browser.elements(css: ".requests .request.hide")
-	end
-
-	def footer_link(older_requests)
-		@browser.a(text: older_requests)
 	end
 
 	def request_with_username(username)

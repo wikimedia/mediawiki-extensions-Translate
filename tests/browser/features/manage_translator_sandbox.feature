@@ -37,9 +37,15 @@ Feature: Manage translator sandbox
     Then a user whose name begins with 'pupu' is displayed in the first column
       And a user whose name begins with 'orava' is displayed in the first column
 
+  Scenario: Selecting the last request should make the older requests counter disappear
+    Given I am on the Translator sandbox management page with users in the sandbox
+    When I click on 'Pupu0' in the first column
+    Then I should not see the older requests link at the bottom of the first column
+
   Scenario: Selecting older requests
     Given I am on the Translator sandbox management page with users in the sandbox
-    When I click on 'Orava1' in the first column
+    When I click on 'Pupu0' in the first column
+      And I click on 'Orava1' in the first column
       And I click on the link that says '3 older requests' at the bottom of the first column
     Then I should see the checkbox next to the request from 'Orava1' checked
       And I should see the checkbox next to the request from 'Orava1' enabled
@@ -51,6 +57,13 @@ Feature: Manage translator sandbox
       And I should see the checkbox next to the request from 'Pupu1' enabled
       And I should see '4 users selected' at the bottom of the first column
       And I should see '4 users selected' in the header of the second column
+
+  Scenario: Selecting all users
+    Given I am on the Translator sandbox management page with users in the sandbox
+      And I click the checkbox to select all users
+    Then I should not see the older requests link at the bottom of the first column
+      And I should see '10 users selected' at the bottom of the first column
+      And I should see '10 users selected' in the header of the second column
 
   Scenario: Searching for a user by language
     Given I am on the Translator sandbox management page with users in the sandbox
@@ -109,6 +122,7 @@ Feature: Manage translator sandbox
       And I should see the 'Reject' button displayed in the second column
       And I should see '1 user selected' at the bottom of the first column
       And I should see that 4 reminders were sent to the user
+      And I should see '9 older requests' in the older requests link at the bottom of the first column
 
   Scenario: Clicking on a name of a user who didn't make any translations shows the user information and the action buttons and doesn't show translations
     Given I am on the Translator sandbox management page with users in the sandbox
