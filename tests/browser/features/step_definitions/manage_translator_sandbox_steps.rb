@@ -110,7 +110,6 @@ When(/^I click the '(.+)' button$/) do |label|
 	on(ManageTranslatorSandboxPage).details_button(label).click
 end
 
-
 When(/^I click on '(.+)' in the first column$/) do |username|
 	on(ManageTranslatorSandboxPage).request_with_username(username).click
 end
@@ -119,8 +118,19 @@ When(/^I click on the checkbox near '(.+)' in the first column$/) do |username|
 	on(ManageTranslatorSandboxPage).checkbox_for_request_with_username(username).click
 end
 
-When(/^I click on the link that says '(.*)' at the bottom of the first column$/) do |older_requests|
-	on(ManageTranslatorSandboxPage).footer_link(older_requests).click
+Then(/^I should see '(.+)' in the older requests link at the bottom of the first column$/) do |text|
+	on(ManageTranslatorSandboxPage) do |page|
+		page.older_requests_indicator_element.should be_visible
+		page.older_requests_indicator_element.text.should == text
+	end
+end
+
+When(/^I click on the link that says '\d+ older requests?' at the bottom of the first column$/) do
+	on(ManageTranslatorSandboxPage).older_requests_indicator_element.click
+end
+
+Then(/^I should not see the older requests link at the bottom of the first column$/) do
+	on(ManageTranslatorSandboxPage).older_requests_indicator_element.should_not be_visible
 end
 
 Then(/^I should not see any users except '(.+)' selected$/) do |username|
