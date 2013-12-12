@@ -175,3 +175,11 @@ end
 Then(/^usernames are visible in the first column$/) do
 	on(ManageTranslatorSandboxPage).visible_users_element.size.should_not == 0
 end
+
+Then(/^I should see the name of language '(.+)' in the second column$/) do |language|
+	on(ManageTranslatorSandboxPage).details_autonym.text.should == language
+end
+
+Then(/^I should see that the language of the first translation is '(.+)'$/) do |language|
+	on(ManageTranslatorSandboxPage).translations_autonym.text.should == language
+end

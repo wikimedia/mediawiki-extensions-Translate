@@ -105,6 +105,14 @@ class ManageTranslatorSandboxPage
 		expected_usernames == usernames
 	end
 
+	def details_autonym
+		@browser.elements(css: ".details.pane .languages span")[0]
+	end
+
+	def translations_autonym
+		@browser.elements(css: ".details.pane .translations .info.autonym")[0]
+	end
+
 	def only_request_with_username_is_selected?(username)
 		requests_without_username(username).all? do |element|
 			not element.attribute_value("class").split(" ").include?("selected")
