@@ -16,6 +16,24 @@
       "revId": "b8bdedaad491df42b1b2f93b79240f8777d6c39e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_88ea70d4",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-12T09:21:35Z",
+      "side": 1,
+      "message": "Done in https://gerrit.wikimedia.org/r/#/c/100963/",
+      "parentUuid": "0ee75395_c80e38e8",
+      "revId": "b8bdedaad491df42b1b2f93b79240f8777d6c39e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
