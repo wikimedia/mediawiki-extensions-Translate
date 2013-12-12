@@ -1910,6 +1910,7 @@ Ha de fer parte d'a colla de traductors ta poder alzar os cambeos. Ístos no que
  * @author ترجمان05
  * @author روخو
  * @author زكريا
+ * @author لطرش أحمد الهاشمي
  * @author لطرش احمد الهاشمي
  */
 $messages['ar'] = array(
