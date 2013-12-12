@@ -19,14 +19,35 @@ $messages['en'] = array(
 	'tsb-filter-pending' => 'Pending requests',
 
 	// Reminders
-	'tsb-reminder-title-generic' => 'Complete your introduction to become a verified translator',
+	'tsb-reminder-title-generic' => 'Complete your introduction to become a translator',
 	'tsb-reminder-content-generic' => 'Hi $1,
 
-Thanks for registering with {{SITENAME}}. If you complete your test
-translations, the administrators can soon grant you full translation
-access.
+Thanks for registering with {{SITENAME}}.
 
-Please come to $2 and make some more translations.',
+If you complete your test translations, the administrators will grant you full translation access soon afterwards.
+
+Please come to and make some more translations here:
+$2
+
+$3,
+{{SITENAME}} staff',
+	'tsb-reminder-sending' => 'Sending the reminder...',
+	'tsb-reminder-sent' => '{{PLURAL:$1|Sent $1 reminder $2|Sent $1 reminders, the last one $2|1=Sent $1 reminder $2}}',
+	'tsb-reminder-sent-new' => 'Sent a reminder',
+	'tsb-reminder-failed' => 'Sending the reminder failed',
+
+	'tsb-email-promoted-subject' => 'You are now a translator at {{SITENAME}}',
+	'tsb-email-promoted-body' => 'Hi $1,
+
+Congratulations! I checked the test translations that you made at {{SITENAME}} and gave you full translator rights.
+
+Come to {{SITENAME}} to continue translating now, and every day:
+$2
+
+Welcome, and thank you for you contributions!
+
+$3,
+{{SITENAME}} staff',
 
 	'tsb-request-count' => '{{PLURAL:$1|One request|$1 requests}}',
 	'tsb-all-languages-button-label' => 'All languages',
@@ -75,7 +96,18 @@ Followed by a list of the pending requests.',
 	'tsb-reminder-title-generic' => 'Subject of an email',
 	'tsb-reminder-content-generic' => 'Body of an email. Parameters:
 * $1 - user name of the recipient
-* $2 - URL to the website',
+* $3 - URL to the website',
+	'tsb-reminder-sending' => 'Shown near {{ms-msg|tsb-reminder-link-text}} while the reminder email is being sent.',
+	'tsb-reminder-sent' => 'Shown near {{ms-msg|tsb-reminder-link-text}} after the reminder email was successfully sent. Parameters:
+* $1 - the number of reminders that were already sent
+* $2 - the human timestamp of the last time a reminder was sent',
+	'tsb-reminder-sent-new' => 'Shown near {{ms-msg|tsb-reminder-link-text}} after sending a new reminder.',
+	'tsb-reminder-failed' => 'Shown near {{ms-msg|tsb-reminder-link-text}} if sending the reminder email failed.',
+	'tsb-email-promoted-subject' => 'The subject for an email that announces that a user received full translation rights ("promoted").',
+	'tsb-email-promoted-body' => 'The body text for an email that announces that a user received full translation rights ("promoted"). Parameters:
+* $1 - the username of the new user who was promoted
+* $2 - the URL to Special:Translate at the website
+* $3 - the username of the administrator who promoted the user',
 	'tsb-request-count' => 'Label showing number of requests. Parameters:
 * $1 - number of requests
 {{Identical|Request}}',

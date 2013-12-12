@@ -15,6 +15,8 @@ class ManageTranslatorSandboxPage
 	button(:language_selector_button, class: "language-selector")
 
 	div(:request_count, class: "request-count")
+	span(:reminder_status, class: "reminder-status")
+
 	span(:selected_counter, class: "selected-counter")
 
 	text_field(:search, class: "request-filter-box")
