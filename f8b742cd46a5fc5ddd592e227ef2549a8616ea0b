@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_8898307c",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-12T09:33:12Z",
+      "side": 1,
+      "message": "\"grant you full translation access so on afterwards\". I think there\u0027s something wrong with \"so on\", what is this supposed to convey?",
+      "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_489ea867",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-12T09:33:12Z",
+      "side": 1,
+      "message": "Why the special case for 1? It\u0027s the same as the regular case for 1.",
+      "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_288fe430",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-12T09:33:12Z",
+      "side": 1,
+      "message": "Should this support explicit GENDER?",
+      "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_08942041",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-12T09:33:12Z",
+      "side": 1,
+      "message": "Should this support explicit GENDER?",
+      "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_e8845c11",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-12T09:33:12Z",
+      "side": 1,
+      "message": "I think the concept of \"human timestamp\" may not be well known with translators. Can we add a reference to a page that documents this, or at least add examples of what this may look like?",
+      "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
