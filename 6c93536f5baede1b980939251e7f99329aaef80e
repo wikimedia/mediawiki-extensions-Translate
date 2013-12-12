@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_48bd88fc",
+        "filename": "tests/browser/features/manage_translator_sandbox.feature",
+        "patchSetId": 6
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-12T07:35:47Z",
+      "side": 1,
+      "message": "This sounds like that reminders were sent, but we are not showing them. Suggested rewording:\n\nI should see that no reminders have been sent to the user",
+      "revId": "6c93536f5baede1b980939251e7f99329aaef80e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
