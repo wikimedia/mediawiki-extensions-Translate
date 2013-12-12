@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_c80e38e8",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-12T08:56:17Z",
+      "side": 1,
+      "message": "So this fixes the issue right? Could you report a bug into core that count( UserArray ) returns wrong result?",
+      "revId": "b8bdedaad491df42b1b2f93b79240f8777d6c39e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
