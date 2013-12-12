@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_88c5d042",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-12T09:45:50Z",
+      "side": 1,
+      "message": "To show that 1 *is* a special case. It should be different from 21 in languages in which it is different, because 21 is actually plural, but singular grammatically.",
+      "parentUuid": "0ee75395_489ea867",
+      "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_288fe430",
         "filename": "TranslateSandbox.i18n.php",
         "patchSetId": 7
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "It\u0027s unlikely to be set but we can.",
       "parentUuid": "0ee75395_288fe430",
+      "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_48bb48ba",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-12T09:45:50Z",
+      "side": 1,
+      "message": "The \"you\" will need it in Russian, for example, and it will work. Should we add it here or just in qqq?",
+      "parentUuid": "0ee75395_08930054",
       "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
