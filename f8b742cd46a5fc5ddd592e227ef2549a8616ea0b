@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_288ec42b",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-12T09:42:08Z",
+      "side": 1,
+      "message": "there is no space in middle of \"soon\"",
+      "parentUuid": "0ee75395_8898307c",
+      "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_489ea867",
         "filename": "TranslateSandbox.i18n.php",
         "patchSetId": 7
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_08930054",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-12T09:42:08Z",
+      "side": 1,
+      "message": "It\u0027s unlikely to be set but we can.",
+      "parentUuid": "0ee75395_288fe430",
+      "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_08942041",
         "filename": "TranslateSandbox.i18n.php",
         "patchSetId": 7
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_e8933c50",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-12T09:42:08Z",
+      "side": 1,
+      "message": "yes, done",
+      "parentUuid": "0ee75395_08942041",
+      "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_e8845c11",
         "filename": "TranslateSandbox.i18n.php",
         "patchSetId": 7
@@ -81,6 +135,24 @@
       "writtenOn": "2013-12-12T09:33:12Z",
       "side": 1,
       "message": "I think the concept of \"human timestamp\" may not be well known with translators. Can we add a reference to a page that documents this, or at least add examples of what this may look like?",
+      "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_889ef056",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-12T09:42:08Z",
+      "side": 1,
+      "message": "expanded",
+      "parentUuid": "0ee75395_e8845c11",
       "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
