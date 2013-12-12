@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "0ee75395_a8f6548a",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-12T09:53:27Z",
+      "side": 1,
+      "message": "Meh. You are obviously correct and this should not have been removed.",
+      "parentUuid": "0ee75395_88c5d042",
+      "revId": "f8b742cd46a5fc5ddd592e227ef2549a8616ea0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_288fe430",
         "filename": "TranslateSandbox.i18n.php",
         "patchSetId": 7
