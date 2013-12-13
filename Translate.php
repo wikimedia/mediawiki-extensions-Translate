@@ -193,6 +193,18 @@ $wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStats::clear';
 $wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupStatesUpdaterJob::onChange';
 $wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStatesUpdaterJob::onChange';
 
+$wgHooks['AdminLinks'][] = function( &$tree ) {
+	global $wgTranslateUseSandbox;
+
+	if ( $wgTranslateUseSandbox ) {
+		$sectionLabel = wfMessage( 'adminlinks_users' )->text();
+		$row = $tree->getSection( $sectionLabel )->getRow( 'main' );
+		$row->addItem( ALItem::newFromSpecialPage( 'TranslateSandbox' ) );
+	}
+
+	return true;
+};
+
 // New rights
 $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
