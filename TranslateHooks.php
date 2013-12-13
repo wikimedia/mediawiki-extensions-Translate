@@ -496,4 +496,19 @@ class TranslateHooks {
 
 		return true;
 	}
+
+	/**
+	 * Hooks: AdminLinks
+	 */
+	public static function onAdminLinks( &$tree ) {
+		global $wgTranslateUseSandbox;
+
+		if ( $wgTranslateUseSandbox ) {
+			$sectionLabel = wfMessage( 'adminlinks_users' )->text();
+			$row = $tree->getSection( $sectionLabel )->getRow( 'main' );
+			$row->addItem( ALItem::newFromSpecialPage( 'TranslateSandbox' ) );
+		}
+
+		return true;
+	}
 }

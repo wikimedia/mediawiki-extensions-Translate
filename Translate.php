@@ -193,6 +193,8 @@ $wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStats::clear';
 $wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupStatesUpdaterJob::onChange';
 $wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStatesUpdaterJob::onChange';
 
+$wgHooks['AdminLinks'][] = 'TranslateHooks::onAdminLinks';
+
 // New rights
 $wgAvailableRights[] = 'translate';
 $wgAvailableRights[] = 'translate-import';
