@@ -191,6 +191,13 @@
 		var $messageTable = $( '.tux-messagelist' ),
 			$ulsTrigger = $( '.ext-translate-language-selector > .uls' );
 
+		// Some links in helpers will navigate away by default. But since the messages
+		// will change on this page on every load, we want to avoid that. Force the
+		// links to open on new window/tab.
+		mw.translateHooks.add( 'showTranslationHelpers', function ( helpers, $editor ) {
+			$editor.find( 'a' ).prop( 'target', '_blank' );
+		} );
+
 		$ulsTrigger.uls( {
 			onSelect: function ( language ) {
 				var direction = $.uls.data.getDir( language ),
