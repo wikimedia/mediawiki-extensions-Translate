@@ -133,7 +133,10 @@ See also:
 
 See also:
 * {{msg-mw|Tsb-accept-all-button-label}}',
-	'tsb-reminder-link-text' => 'Link text for sending reminder emails about translator signup requests.',
+	'tsb-reminder-link-text' => 'Link text for sending reminder emails about translator signup requests.
+
+See also:
+* {{msg-mw|Tsb-reminder-sent-new}}',
 	'tsb-didnt-make-any-translations' => "Displayed instead of the translations if the selected user didn't make any translations.",
 	'tsb-translations-source' => 'Table header label for source messages of user translations in [[Special:TranslateSandbox]].
 {{Identical|Source}}',
@@ -155,6 +158,9 @@ See also:
 	'tsb-limit-reached-title' => 'Heading shown below translations when the user has reached the limit for number of translations.',
 	'tsb-limit-reached-body' => 'Text shown below translations when the user has reached the limit for number of translations.',
 	'tsb-no-requests-from-new-users' => 'Shown on [[Special:TranslateSandbox]] when there are no requests for approval from new users.',
+	'tsb-promoted-from-sandbox' => '{{logentry}}
+Additional parameters:
+* $4 - (Unused) user ID',
 	'log-name-translatorsandbox' => '{{doc-logpage}}',
 	'log-description-translatorsandbox' => 'Log page description',
 	'logentry-translatorsandbox-promoted' => '{{logentry}}
@@ -183,22 +189,45 @@ Gaan asseblief na $2 om 'n paar vertalings te maak.", # Fuzzy
 $messages['ast'] = array(
 	'translatesandbox' => 'Alministrar la zona de pruebas de los traductores',
 	'tsb-filter-pending' => 'Solicitúes pendientes',
-	'tsb-reminder-title-generic' => 'Complete la so presentación pa convertise nun traductor comprobao',
-	'tsb-reminder-content-generic' => 'Bones, $1:
+	'tsb-reminder-title-generic' => "Complete la so presentación pa convertise'n traductor",
+	'tsb-reminder-content-generic' => "Bones, $1:
 
-Gracies por rexistrase en {{SITENAME}}. Si completa les traducciones
+Gracies por rexistrase'n {{SITENAME}}.
+
+Si completa les traducciones
 de prueba, Los alministradores pronto darán-y permisu de traducción
 completu.
 
-Por favor, vuelva a $2 y faiga delles traducciones más.',
+Por favor, vuelva a $2 y faiga delles traducciones más equí: $2
+
+$3, equipu de {{SITENAME}}",
+	'tsb-reminder-sending' => "Unviando'l recordatoriu...",
+	'tsb-reminder-sent' => "{{PLURAL:$1|Unviáu $1 recordatoriu $2|Unviaos $1 recordatorios, l'últimu $2}}",
+	'tsb-reminder-sent-new' => 'Unviar un recordatoriu',
+	'tsb-reminder-failed' => 'Falló unviar un recordatoriu',
+	'tsb-email-promoted-subject' => 'Agora yá ye traductor en {{SITENAME}}',
+	'tsb-email-promoted-body' => 'Hola {{GENDER:$1|$1}},
+
+¡Norabona! Vengo de revisar les traducciones que ficisti en {{SITENAME}} y dite permisu completu de traductor.
+
+Ven a {{SITENAME}} pa siguir traduciendo, agora y cada día:
+$2
+
+¡{{GENDER:$1|Bienveníu|Bienvenida}, y gracies poles tos collaboraciones!
+
+{{GENDER:$3|$3}},
+equipu de {{SITENAME}}', # Fuzzy
 	'tsb-request-count' => '{{PLURAL:$1|Una solicitú|$1 solicitúes}}',
 	'tsb-all-languages-button-label' => 'Toles llingües',
 	'tsb-search-requests' => 'Resultaos de la gueta',
 	'tsb-accept-button-label' => 'Aceutar',
 	'tsb-reject-button-label' => 'Refugar',
+	'tsb-selected-count' => '{{PLURAL:$1|$1 usuariu seleicionáu|$1 usuarios seleicionaos}}',
+	'tsb-older-requests' => '$1 {{PLURAL:$1|solicitú anterior|solicitúes anteriores}}',
 	'tsb-accept-all-button-label' => 'Aceutar too',
 	'tsb-reject-all-button-label' => 'Refugar too',
 	'tsb-reminder-link-text' => 'Unviar un recordatoriu per corréu electrónicu',
+	'tsb-didnt-make-any-translations' => 'Esti usuariu nun fizo denguna traducción.',
 	'tsb-translations-source' => 'Fonte',
 	'tsb-translations-user' => 'Traducciones del usuariu',
 	'tsb-translations-current' => 'Traducciones esistentes',
@@ -212,6 +241,12 @@ Por favor, vuelva a $2 y faiga delles traducciones más.',
 	'tsb-limit-reached-body' => 'Llegó a la llende de traducciones pa traductores nuevos.
 El nuesu equipu pronto comprobará y promocionará la so cuenta.
 Darréu podrá traducir ensin llendes.',
+	'tsb-no-requests-from-new-users' => "Nun hai solicitúes d'usuarios nuevos",
+	'tsb-promoted-from-sandbox' => 'Esti usuariu promovióse a traductor',
+	'log-name-translatorsandbox' => 'Entornu aislláu de traducción',
+	'log-description-translatorsandbox' => "Rexistru d'aiciones de los usuarios del entornu aislláu de traducción",
+	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|promovió}} a $3 a {{GENDER:$4|traductor}}',
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|refugó}} la solicitú de $3 de facese traductor',
 );
 
 /** Bulgarian (български)
@@ -335,6 +370,7 @@ $messages['fi'] = array(
 );
 
 /** French (français)
+ * @author Crochet.david
  * @author Gomoko
  * @author NemesisIII
  * @author Nobody
@@ -343,12 +379,13 @@ $messages['fi'] = array(
 $messages['fr'] = array(
 	'translatesandbox' => 'Gérer le bac à sable de tradution',
 	'tsb-filter-pending' => 'Requêtes en attente',
-	'tsb-reminder-title-generic' => 'Complétez votre présentation pour devenir un traducteur vérifié', # Fuzzy
+	'tsb-reminder-title-generic' => 'Complétez votre présentation pour devenir un traducteur',
 	'tsb-reminder-content-generic' => 'Bonjour $1,
 
 Merci de vous être inscrit sur {{SITENAME}}. Si vous achevez vos traductions de test, les administrateurs pourront bientôt vous accorder un plein accès aux traductions.
 
 Veuillez venir sur $2 et faire quelques traductions de plus.', # Fuzzy
+	'tsb-email-promoted-subject' => 'Vous êtes maintenant un traducteur à {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|Une demande|$1 demandes}}',
 	'tsb-all-languages-button-label' => 'Toutes les langues',
 	'tsb-search-requests' => 'Demandes de recherche',
@@ -473,18 +510,42 @@ $messages['it'] = array(
 	'tsb-reminder-title-generic' => "Completa l'introduzione per diventare un traduttore",
 	'tsb-reminder-content-generic' => "Ciao $1,
 
-Grazie per esserti registrato su {{SITENAME}}. Una volta che avrai completato i test di traduzione, gli amministratori potranno concederti in breve tempo l'accesso completo da traduttore.
+Grazie per esserti registrato su {{SITENAME}}.
 
-Vieni su $2 e fai alcune altre traduzioni.", # Fuzzy
+Se completati i test di traduzione, gli amministratori ti concederanno l'accesso completo da traduttore in un breve periodo.
+
+Vieni e fai alcune altre traduzioni su:
+$2
+
+$3,
+Lo staff di {{SITENAME}}",
+	'tsb-reminder-sending' => 'Invio i promemoria...',
+	'tsb-reminder-sent' => "{{PLURAL:$1|Inviato $1 promemoria $2|Inviati $1 promemoria, l'ultimo $2}}",
+	'tsb-reminder-sent-new' => 'Inviato un promemoria',
+	'tsb-reminder-failed' => 'Invio del promemoria non riuscito',
+	'tsb-email-promoted-subject' => 'Ora sei un traduttore su {{SITENAME}}',
+	'tsb-email-promoted-body' => 'Ciao $1,
+
+Congratulazioni! Ho controllato le traduzioni di prova che hai effettuato su {{SITENAME}} e ti ho concesso i diritti completi di {{GENDER:$1|traduttore|traduttrice|traduttore/trice}}.
+
+Vieni su {{SITENAME}} per continuare a tradurre ora e ogni giorno:
+$2
+
+{{GENDER:$1|Benvenuto|Benvenuta|Benvenuto/a}} e grazie per i tuoi contributi!
+
+{{GENDER:$3|$3}},
+Lo staff di {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|Una richiesta|$1 richieste}}',
 	'tsb-all-languages-button-label' => 'Tutte le lingue',
 	'tsb-search-requests' => 'Cerca richiesta',
 	'tsb-accept-button-label' => 'Accetta',
 	'tsb-reject-button-label' => 'Rifiuta',
 	'tsb-selected-count' => '{{PLURAL:$1|$1 utente selezionato|$1 utenti selezionati}}',
+	'tsb-older-requests' => '$1 {{PLURAL:$1|richiesta|richieste}} più vecchia',
 	'tsb-accept-all-button-label' => 'Accetta tutto',
 	'tsb-reject-all-button-label' => 'Rifiuta tutto',
 	'tsb-reminder-link-text' => 'Invia email di promemoria',
+	'tsb-didnt-make-any-translations' => 'Questo utente non ha fatto alcuna traduzione.',
 	'tsb-translations-source' => 'Sorgente',
 	'tsb-translations-user' => 'Traduzione utente',
 	'tsb-translations-current' => 'Traduzioni esistenti',
@@ -499,6 +560,9 @@ Vieni su $2 e fai alcune altre traduzioni.", # Fuzzy
 Il nostro team verificherà ed aggiornerà presto la tua utenza.
 Successivamente sarai in grado di tradurre senza limiti.',
 	'tsb-no-requests-from-new-users' => 'Nessuna richiesta da nuovi utenti',
+	'tsb-promoted-from-sandbox' => "L'utente è stato promosso a traduttore",
+	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|ha promosso}} $3 a {{GENDER:$4|traduttore|traduttrice|traduttore/trice}}',
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|ha rifiutato}} la richiesta di $3 di diventare un traduttore',
 );
 
 /** Japanese (日本語)
@@ -508,6 +572,11 @@ $messages['ja'] = array(
 	'translatesandbox' => '翻訳者サンドボックスの管理',
 	'tsb-filter-pending' => '保留中の申請',
 	'tsb-reminder-title-generic' => '翻訳者になるには、自己紹介を記入してください',
+	'tsb-reminder-sending' => '通知を送信しています...',
+	'tsb-reminder-sent' => '{{PLURAL:$1|$2に $1 件の通知を送信しました|$1 件の通知を送信しました。最終送信は $2です}}',
+	'tsb-reminder-sent-new' => '通知を送信しました',
+	'tsb-reminder-failed' => '通知を送信できませんでした',
+	'tsb-email-promoted-subject' => 'あなたは{{SITENAME}}の翻訳者になりました',
 	'tsb-request-count' => '$1 {{PLURAL:$1|件の申請}}',
 	'tsb-all-languages-button-label' => 'すべての言語',
 	'tsb-search-requests' => '申請の検索',
@@ -515,6 +584,9 @@ $messages['ja'] = array(
 	'tsb-reject-button-label' => '却下',
 	'tsb-selected-count' => '{{PLURAL:$1|$1 人の利用者を選択しています}}',
 	'tsb-older-requests' => '以前の $1 {{PLURAL:$1|件の申請}}',
+	'tsb-accept-all-button-label' => 'すべて受理',
+	'tsb-reject-all-button-label' => 'すべて却下',
+	'tsb-reminder-link-text' => '通知を送信',
 	'tsb-didnt-make-any-translations' => 'この利用者は何も翻訳していません。',
 	'tsb-translations-source' => '原文',
 	'tsb-translations-user' => '利用者による翻訳',
@@ -529,9 +601,11 @@ $messages['ja'] = array(
 私たちのチームがまもなく、アカウントを検証してアップグレードします。
 その後、上限なしで翻訳できるようになります。',
 	'tsb-no-requests-from-new-users' => '新規利用者からの申請はありません',
+	'tsb-promoted-from-sandbox' => '利用者は翻訳者に昇格しました',
 	'log-name-translatorsandbox' => '翻訳サンドボックス',
 	'log-description-translatorsandbox' => '翻訳サンドボックス利用者への操作の記録',
 	'logentry-translatorsandbox-promoted' => '$1 が $3 を{{GENDER:$4|翻訳者}}に{{GENDER:$2|昇格させました}}',
+	'logentry-translatorsandbox-rejected' => '$1 が $3 の翻訳者権限の付与申請を{{GENDER:$2|却下しました}}',
 );
 
 /** Korean (한국어)
@@ -697,12 +771,26 @@ $messages['mr'] = array(
 $messages['ms'] = array(
 	'translatesandbox' => 'Uruskan kotak pasir penterjemah',
 	'tsb-filter-pending' => 'Permohonan yang menunggu',
-	'tsb-reminder-title-generic' => 'Lengkapkan pengenalan anda untuk menjadi seorang penterjemah yang sah',
+	'tsb-reminder-title-generic' => 'Lengkapkan pengenalan anda untuk menjadi seorang penterjemah yang sah', # Fuzzy
 	'tsb-reminder-content-generic' => '$1,
 
 Terima kasih kerana mendaftar untuk {{SITENAME}}. Sekiranya anda melengkapkan ujian penterjemahan ini, anda akan menerima akses penterjemah sepenuhnya dari pihak penyelia.
 
-Sila ke $2 untuk membuat lebih banyak kerja terjemahan.',
+Sila ke $2 untuk membuat lebih banyak kerja terjemahan.', # Fuzzy
+	'tsb-reminder-sent-new' => 'Peringatan dihantar',
+	'tsb-reminder-failed' => 'Peringatan gagal dihantar',
+	'tsb-email-promoted-subject' => 'Anda kini seorang penterjemah di {{SITENAME}}',
+	'tsb-email-promoted-body' => '{{GENDER:$1|$1}},
+
+Tahniah! Saya telah memeriksa terjemahan ujian yang telah anda lakukan di {{SITENAME}}, dan ole itu memberi anda hak penterjemah sepenuhnya.
+
+Datanglah ke {{SITENAME}} untuk terus menterjemah sekarang dan setiap hari:
+$2
+
+Selamat datang dan terima kasih atas sumbangan anda!
+
+{{GENDER:$3|$3}},
+Kakitangan {{SITENAME}}',
 );
 
 /** Nepali (नेपाली)
@@ -1030,11 +1118,14 @@ Sau đó bạn sẽ có thể biên dịch thoải mái không có giới hạn.
  * @author Hzy980512
  * @author Liuxinyu970226
  * @author Qiyue2001
+ * @author Shizhao
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'translatesandbox' => '管理译者沙盒',
 	'tsb-filter-pending' => '待解决请求',
+	'tsb-reminder-sent-new' => '发送提醒',
+	'tsb-reminder-failed' => '发送提醒失败',
 	'tsb-request-count' => '$1个申请',
 	'tsb-all-languages-button-label' => '所有语言',
 	'tsb-reject-button-label' => '拒绝',

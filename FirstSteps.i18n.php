@@ -1303,6 +1303,7 @@ $messages['eu'] = array(
 /** Persian (فارسی)
  * @author Ebraminio
  * @author Huji
+ * @author Omidh
  */
 $messages['fa'] = array(
 	'firststeps' => 'گام‌های نخست',
@@ -1316,9 +1317,9 @@ $messages['fa'] = array(
 	'translate-fs-permissions-title' => 'درخواست مجوز مترجم بدهید',
 	'translate-fs-target-title' => 'شروع به ترجمه کنید!',
 	'translate-fs-email-title' => 'نشانی پست الکترونیکی خود را تأیید کنید',
-	'translate-fs-intro' => "به جادوگر گام‌های نخست {{SITENAME}} خوش آمدید.
+	'translate-fs-intro' => 'به جادوگر گام‌های نخست {{SITENAME}} خوش آمدید.
 شما گام به گام در راه مترجم شدن راهنمایی خواهید شد.
-در انتها شما قادر خواهید بود ''پیغام‌های رابط کاربری'' تمام پروژه‌های پشتیبانی شده در {{SITENAME}} را ترجمه کنید.", # Fuzzy
+در انتها شما قادر خواهید بود <em>پیغام‌های رابط کاربری</em> تمام پروژه‌های پشتیبانی شده در {{SITENAME}} را ترجمه کنید.',
 	'translate-fs-selectlanguage' => 'یک زبان انتخاب کنید',
 	'translate-fs-settings-planguage' => 'زبان اصلی:',
 	'translate-fs-settings-planguage-desc' => 'زبان اصلی به عنوان زبان رابط کاربری این ویکی

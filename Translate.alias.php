@@ -388,6 +388,7 @@ $specialPageAliases['gl'] = array(
 	'Translations' => array( 'Traducións' ),
 	'LanguageStats' => array( 'Estatísticas_da_lingua' ),
 	'PageTranslation' => array( 'Tradución_de_páxinas' ),
+	'ImportTranslations' => array( 'Importar_traducións' ),
 );
 
 /** Swiss German (Alemannisch) */

@@ -2750,7 +2750,7 @@ como nun usar espacios o pa treslliterar nomes propios. $1',
 	'translate-edit-definition' => 'Definición del mensaxe',
 	'translate-edit-translation' => 'Traducción',
 	'translate-edit-contribute' => 'contribuyir',
-	'translate-edit-no-information' => "''Esti mensaxe nun tien documentación. Si sabe ú o cómo s'usa esti mensaxe, pue ayudar a otros traductores amestando documentación a esti mensaxe.''", # Fuzzy
+	'translate-edit-no-information' => "<em>Esti mensaxe nun tien documentación. Si sabe ú o cómo s'usa esti mensaxe, pue ayudar a otros traductores amestando documentación a esti mensaxe.</em>",
 	'translate-edit-information' => 'Información tocante a esti mensaxe ($1)',
 	'translate-edit-in-other-languages' => "Mensaxe n'otres llingües",
 	'translate-edit-committed' => 'Traducción actual nel software',
@@ -2943,8 +2943,8 @@ Por favor, compruebala.",
 	'translate-manage-intro-other' => "Debaxo ta la llista de cambios nes traducciones de la llingua $1.
 Por favor, revise los cambios y escueya l'aición que quier facer pa cada anovamientu.
 Si escueye inorar los cambios, esta aición ye sólo temporal.",
-	'translate-manage-import-ok' => 'Importada la versión nueva de la páxina $1.', # Fuzzy
-	'translate-manage-import-done' => '¡Too fecho!', # Fuzzy
+	'translate-manage-import-ok' => 'Importada: $1',
+	'translate-manage-import-done' => '¡Importación completada!',
 	'importtranslations' => 'Importar traducciones',
 	'translate-import-from-local' => 'Xubir un ficheru llocal:',
 	'translate-import-load' => 'Xubir ficheru',
@@ -3091,7 +3091,7 @@ Ye enforma afayadizo pa les xeres de revisión.',
 	'tux-proofread-translated-by-self' => 'Traducío por ti',
 	'tux-empty-list-all' => 'Esti grupu de mensaxes ta baleru',
 	'tux-empty-list-all-guide' => 'Seleicione un grupu de mensaxes diferente pa traducir',
-	'tux-translate-page-no-such-group' => "'''El grupu indicáu nun esiste.''' Seleicione un grupu de mensaxes distintu.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>El grupu indicáu nun esiste.</strong> Seleicione un grupu de mensaxes distintu.',
 	'tux-empty-list-translated' => 'Nun hai mensaxes traducíos',
 	'tux-empty-list-translated-guide' => 'Pue ayudar cola traducción',
 	'tux-empty-list-translated-action' => 'Traducir',
@@ -10531,7 +10531,7 @@ Hautazko mezuak zure hizkuntzaren berezitasunak direla-eta, espazioak ez daudene
 	'translate-translations-project' => 'Proiektua:',
 	'translate-translations-history-short' => 'h',
 	'languagestats' => 'Hizkuntza estatistikak',
-	'languagestats-summary' => 'Orrialde honetan hizkuntza baten mezu-taldeen estatistikak ikus daitezke.',
+	'languagestats-summary' => 'Orri honetan hizkuntza bateko mezu-talde guztien itzulpen estatistikak ageri dira.',
 	'languagestats-stats-for' => '$1-entzako itzulpen estatistikak($2).',
 	'languagestats-recenttranslations' => 'azken itzulpenak',
 	'translate-langstats-expand' => 'zabaldu',
@@ -10622,6 +10622,7 @@ $messages['ext'] = array(
  * @author Ebraminio
  * @author Huji
  * @author Mjbmr
+ * @author Omidh
  * @author Reza1615
  * @author Rtemis
  * @author Tofighi
@@ -10871,7 +10872,7 @@ $messages['fa'] = array(
 	'translate-manage-intro-other' => 'پایین فهرستی تغییرات ترجمه در زبان $1 است.
 لطفاً این تغییرات را بازبینی کرده و عملی که می‌خواهد برای هر به‌روزرسانی انجام دهید را انتخاب کنید.
 اگر شما می‌خواهید تغییرات را نادیده بگیرید، این عمل موقت خواهد بود.',
-	'translate-manage-import-done' => 'همه‌اش انجام شد!', # Fuzzy
+	'translate-manage-import-done' => 'وارد کردن تکمیل شد!',
 	'importtranslations' => 'درون‌ریزی ترجمه‌ها',
 	'translate-import-from-local' => 'بارگذاری پرونده محلی:',
 	'translate-import-load' => 'دریافت پرونده',
@@ -11018,7 +11019,7 @@ $1',
 	'tux-proofread-translated-by-self' => 'ترجمه‌شده توسط شما',
 	'tux-empty-list-all' => 'این گروه پیام خالی است',
 	'tux-empty-list-all-guide' => 'یک گروه پیام متفاوت برای ترجمه انتخاب کنید',
-	'tux-translate-page-no-such-group' => "''' گروه نشان داده‌شده وجود ندارد.''' گروه پیامی دیگری را انتخاب کنید.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>گروه نشان داده‌شده وجود ندارد.</strong> گروه پیامی دیگری را انتخاب کنید.',
 	'tux-empty-list-translated' => 'بدون پیام ترجمه‌شده',
 	'tux-empty-list-translated-guide' => 'شما می‌توانید در ترجمه کمک کنید',
 	'tux-empty-list-translated-action' => 'ترجمه',
@@ -22664,6 +22665,7 @@ $messages['mr'] = array(
 <strong><nowiki>$1</nowiki></strong>', # Fuzzy
 	'translate-manage-import-ok' => 'आयात केले:$1',
 	'translate-manage-import-done' => 'आयात पूर्ण!',
+	'tux-editor-in-other-languages' => 'इतर भाषांत',
 	'tux-translate-page-no-such-group' => '<strong>नमूद केलेला गट अस्तित्वात नाही.</strong> वेगळा संदेशगट निवडा.',
 );
 
@@ -36281,8 +36283,8 @@ $messages['yi'] = array(
 	'translate-edit-definition' => 'מעלדונג דעפֿיניציע',
 	'translate-edit-translation' => 'איבערזעצונג',
 	'translate-edit-contribute' => 'בײַשטײַערן',
-	'translate-edit-no-information' => "'''די מעלדונג פעלט דאקומענטאציע.
-אויב איר ווייסט וואו אדער ווי די מעלדונג ווערט געניצט, קענט איר העלפֿן אנדערע פארטייטשערס דורך צולייגן דאקומענטאציע צו דער מעלדונג.'''", # Fuzzy
+	'translate-edit-no-information' => '<em>די מעלדונג פעלט דאקומענטאציע.
+אויב איר ווייסט וואו אדער ווי די מעלדונג ווערט געניצט, קענט איר העלפֿן אנדערע פארטייטשערס דורך צולייגן דאקומענטאציע צו דער מעלדונג.</em>',
 	'translate-edit-information' => 'אינפֿארמאציע וועגן מעלדונג ($1)',
 	'translate-edit-in-other-languages' => ' מעלדונג אין אַנדערע שפּראַכן',
 	'translate-edit-committed' => 'לויפֿיגע איבערזעצונג אין ווייכוואַרג',
@@ -36452,7 +36454,7 @@ $messages['yi'] = array(
 	'translate-manage-nochanges' => 'נישטא קיין ענדערונגען אין דעפֿיניציעס פֿאַר דער דאָזיגער גרופע.',
 	'translate-manage-fuzzy-summary' => 'די מעלדונג דעפיניציע איז געענדערט געווארן',
 	'translate-manage-submit' => 'אויספֿירן',
-	'translate-manage-import-done' => 'אַלץ ערליידיקט!', # Fuzzy
+	'translate-manage-import-done' => 'אימפארט אדורכגעפירט!',
 	'importtranslations' => 'אימפארטירן איבערזעצונגען',
 	'translate-import-from-local' => 'לאקאלע טעקע ארויפֿלאדן:',
 	'translate-import-load' => 'לאָדן טעקע',
@@ -36575,7 +36577,7 @@ $1",
 	'tux-proofread-translated-by-self' => 'איבערגעזעצט דורך אייך',
 	'tux-empty-list-all' => 'די דאזיקע מעלדונג גרופע איז ליידיק',
 	'tux-empty-list-all-guide' => 'קלויבט אן אנדער מעלדונג גרופע איבערצוזעצן',
-	'tux-translate-page-no-such-group' => "'''די געזוכטע גרופע עקזיסטירט נישט.''' קלויבט אן אנדער מעלדונג גרופע.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>די געזוכטע גרופע עקזיסטירט נישט.</strong>  קלויבט אן אנדער מעלדונג גרופע.',
 	'tux-empty-list-translated' => 'קיין איבערגעזעצטע מעלדונגען',
 	'tux-empty-list-translated-guide' => 'איר קענט העלפן איבערזעצן',
 	'tux-empty-list-translated-action' => 'פֿאַרטײַטשן',
