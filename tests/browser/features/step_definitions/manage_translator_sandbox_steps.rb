@@ -95,11 +95,11 @@ Then(/^I should see that no reminders have been sent to the user$/) do
 end
 
 Then(/^the direction of the users language filter button is '(.+)'$/) do |dir_value|
-	on(ManageTranslatorSandboxPage).language_selector_button_element.attribute_value("dir").should == dir_value
+	on(ManageTranslatorSandboxPage).language_selector_button_element.attribute("dir").should == dir_value
 end
 
 Then(/^the language code of the users language filter button is '(.+)'$/) do |lang_value|
-	on(ManageTranslatorSandboxPage).language_selector_button_element.attribute_value("lang").should == lang_value
+	on(ManageTranslatorSandboxPage).language_selector_button_element.attribute("lang").should == lang_value
 end
 
 Then(/^usernames are visible in the first column$/) do
