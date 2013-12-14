@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_e0a10592",
+        "filename": "Translate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-14T16:17:50Z",
+      "side": 1,
+      "message": "While implement this hook using a closure instead of the pattern used for the other 20 or so hooks?",
+      "revId": "c0e6f4b28ded3f975b561afd67951b0d8a3efd1b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
