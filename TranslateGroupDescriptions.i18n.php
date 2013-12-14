@@ -649,7 +649,9 @@ $messages['dsb'] = array(
 	'bw-desc-freecol' => 'Nježli až pśełožujoš FreeCol do swójeje rěcy, pśecytaj pšosym [[Translating:FreeCol]]. FreeCol wužywa licencu GPL.',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum], webforum napisany w PHP.',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT] jo swobodny system za slědowanje programowych zmólkow na zakłaźe weba. Pšosym daj problemy na boku [[Support|Pódpěra]] k wěsći.',
+	'translate-group-desc-blockly' => 'Kupka powěźeńkow za [[Translating:Blockly|Blockly]]',
 	'translate-group-desc-eol' => 'Kupka powěźeńkow za [[Translating:EOL|Encyclopedia of Life]]',
+	'translate-group-desc-fuel' => '[[Translating:FUEL|FUEL]] pśinjaso wěcej konsistence do softwarowego pśełožowanja',
 	'translate-group-desc-ihris' => 'Kupka powěźeńkow za [[Translating:iHRIS|iHRIS]]',
 	'translate-group-desc-kiwix' => 'Kupka powěźeńkow za [[Translating:Kiwix|Kiwix]]',
 	'translate-group-desc-mantisbt-plugin-core' => 'Głowny tykac za [[Translating:MantisBT|MantisBT]]',
@@ -665,10 +667,20 @@ Pšosym glědaj [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wi
 	'translate-group-desc-potlatch2' => '[[Translating:OpenStreetMap|Potlatch2]] jo editor za OpenStreetMap, kótaryž na Flash bazěrujo',
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]] jo zběrka rědow za wobźěłowanjoju Wikipedije',
 	'bw-desc-shapado' => 'Kupka powěźeńkow za zjawnje k dispoziciji stojecu softwaru Q&A [[Translating:Shapado|Shapado]]',
-	'translate-group-desc-tsint' => 'Zdźěleńska kupka za [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n-system za rědy [http://toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Toolserver|pódpěra]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition techniske drobnostki]</span>)', # Fuzzy
+	'translate-group-desc-tsint' => 'Zdźěleńska kupka za [[Translating:Intuition|Intuition]], i18n-system za rědy [//toolserver.org Toolserver] (<span class="plainlinks">[[Translating talk:Intuition|pódpěra]] </span>)',
+	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] jo rěd za nagrawanje datajow do Wikimedia Commons a drugich wikimedijowych projektow',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] jo słužba, kótaraž ruty za drogowanje, kólasowanje, mountainbikowanje a skating na cełem swěśe pokazujo. Wužywa licencu GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] móžo awtorow boka we wikiju Wikimedije malsnje namakaś.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] jo projekt, kótaryž stoj tekstowu wersiju Wikipedije offline na mobilnem rěźe k dispoziciji.',
+	'translate-group-desc-wikimedia-mobile' => 'Metakupka powěźeńkow, kótaraž wopśimujo mobilne nałoženja za Wikimedijowe projekty',
+	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]] jo nałoženje za Android abo iOS za nagrawanje datajow na Wikimedia Commons a pśepytowanje projekta  Wikimedia Commons',
+	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] jo nałoženje za mobilne rědy a tablety za cytanje a sobuźěło we Wikipediji',
+	'translate-group-desc-wikimedia-mobile-wikisource' => '[[Translating:WikisourceMobile|WikisourceMobile]] jo nałoženje za mobilne rědy a tablety za cytanje a sobuźěło we Wikižrědle',
+	'translate-group-desc-wikimedia-mobile-wiktionary' => '[[Translating:WiktionaryMobile|WiktionaryMobile]] jo nałoženje za mobilne rědy a tablety za cytanje a sobuźěło we Wikisłowniku',
+	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] jo mobilne nałoženje za sobuźěło na projekśe  [[:meta:Wiki Loves Monuments|Wiki Loves Monuments]]',
+	'translate-group-desc-waymarked-trails-help' => 'Boki pomocy websedłow za Waymarked Trails: http://waymarkedtrails.org/help/about',
+	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] jo editor we napšawdnem casu za zgromadne źěło',
+	'translate-group-desc-mathjax' => '[[Translating:MathJax|MathJax]] jo JavaScriptowa biblioteka za wšake wobglědowaki, kótaraž zwobraznjujo matematiske notacije we webwobglědowakach.',
 );
 
 /** Greek (Ελληνικά)
@@ -1621,6 +1633,7 @@ $messages['lb'] = array(
 	'translate-group-desc-wikimedia-mobile' => 'Zesummegesate Grupp vu Message fir déi mobil Applikatioune fir Wikimedia Projeten',
 	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]] ass eng App fir Android an iOS fir op Wikimedia Commons ze navigéieren a Fichieren eropzelueden',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] ass eng Mobil Applikatioun fir beim [[:meta:Wiki Loves Monuments|Projet "Wiki Loves Monuments"]] matzemaachen',
+	'translate-group-desc-waymarked-trails-help' => "D'Hëllefsäite vun de 'Waymarked Trails' Internetsiten: http://waymarkedtrails.org/help/about",
 	'translate-group-desc-etherpad-lite' => '[[Translating:Etherpad lite|Etherpad lite]] ass e richtege kollaborativen Editeur an Echtzäit',
 );
 

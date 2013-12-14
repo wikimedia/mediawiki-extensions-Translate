@@ -7030,8 +7030,8 @@ Does dim ond angen eu cyfieithu pan fod orgraff eich iaith yn gofyn am eu cyfiei
 	'translate-edit-definition' => 'Y neges wreiddiol',
 	'translate-edit-translation' => 'Cyfieithiad',
 	'translate-edit-contribute' => 'cofnodi eglurhad',
-	'translate-edit-no-information' => "''Nid oes unrhyw wybodaeth wedi ei chofnodi am y neges hon eto.''
-''Os ydych yn gwybod ymhle neu ym mha fodd y defnyddir y neges hon, gallwch hwyluso gwaith y cyfieithwyr drwy gofnodi eglurhad arni.''", # Fuzzy
+	'translate-edit-no-information' => '<em>Nid oes unrhyw wybodaeth wedi ei chofnodi am y neges hon eto.
+Os ydych yn gwybod ymhle neu ym mha fodd y defnyddir y neges hon, gallwch hwyluso gwaith y cyfieithwyr drwy gofnodi eglurhad arni.</em>',
 	'translate-edit-information' => 'Gwybodaeth am y neges ($1)',
 	'translate-edit-in-other-languages' => 'Y neges mewn ieithoedd eraill',
 	'translate-edit-committed' => 'Y cyfieithiad cyfredol yn y meddalwedd',
@@ -10079,8 +10079,8 @@ nagu tühikute mittekasutamine või pärisnimede translitereerimine. $1',
 	'translate-edit-definition' => 'Sõnumi kuju',
 	'translate-edit-translation' => 'Tõlge',
 	'translate-edit-contribute' => 'täienda',
-	'translate-edit-no-information' => "''Sellel sõnumil pole dokumentatsiooni.''
-''Kui tead, kus seda sõnumit kasutatakse, saad dokumentatsiooni lisamisega teisi tõlkijaid aidata.''", # Fuzzy
+	'translate-edit-no-information' => '<em>Sellel sõnumil pole dokumentatsiooni.
+Kui tead, kus seda sõnumit kasutatakse, saad dokumentatsiooni lisamisega teisi tõlkijaid aidata.</em>',
 	'translate-edit-information' => 'Selle sõnumi teave ($1)',
 	'translate-edit-in-other-languages' => 'Sõnum teistes keeltes',
 	'translate-edit-committed' => 'Kehtiv tõlge tarkvaras',
@@ -10259,8 +10259,8 @@ Palun kontrolli.',
 	'translate-manage-intro-other' => 'Allpool on $1 keele tõlkemuudatuste loetelu.
 Palun vaata muudatused üle ja vali iga sõnumi jaoks sobiv toiming.
 Kui eirad muudatusi, on see toiming vaid ajutine.',
-	'translate-manage-import-ok' => 'Imporditud on lehekülje $1 uus versioon.', # Fuzzy
-	'translate-manage-import-done' => 'Kõik valmis!', # Fuzzy
+	'translate-manage-import-ok' => 'Imporditud: $1',
+	'translate-manage-import-done' => 'Imporditud!',
 	'importtranslations' => 'Tõlgete importimine',
 	'translate-import-from-local' => 'Kohaliku faili üleslaadimine:',
 	'translate-import-load' => 'Laadi fail',
@@ -10388,7 +10388,7 @@ Sobib ennekõike tõlgete ülevaatuseks.',
 	'tux-proofread-translated-by-self' => 'Sinu tõlgitud',
 	'tux-empty-list-all' => 'See sõnumirühm on tühi',
 	'tux-empty-list-all-guide' => 'Vali tõlkimiseks muu sõnumirühm.',
-	'tux-translate-page-no-such-group' => "'''Sellist sõnumirühma pole.''' Vali erinev sõnumirühm.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>Sellist sõnumirühma pole.</strong> Vali erinev sõnumirühm.',
 	'tux-empty-list-translated' => 'Tõlgitud sõnumid puuduvad',
 	'tux-empty-list-translated-guide' => 'Saad tõlkimisel aidata',
 	'tux-empty-list-translated-action' => 'Tõlgi',
@@ -18868,6 +18868,7 @@ $messages['km'] = array(
 );
 
 /** Kannada (ಕನ್ನಡ)
+ * @author Dimension10
  * @author Dipin
  * @author Munirathnam
  * @author Nayvik
@@ -18921,7 +18922,7 @@ $messages['kn'] = array(
 	'translate-magic-nothing-to-export' => 'ರಫ್ತು ಮಾಡಲು ಏನೂ ಇಲ್ಲ',
 	'translate-magic-cm-current' => 'ಪ್ರಸಕ್ತ',
 	'translate-magic-cm-original' => 'ಅಸಲು',
-	'translate-magic-cm-comment' => 'ಟಿಪ್ಪಣಿ',
+	'translate-magic-cm-comment' => 'ಟಿಪ್ಪಣಿ :',
 	'translate-magic-cm-save' => 'ಉಳಿಸಿ',
 	'translate-magic-cm-savefailed' => 'ಉಳಿಸುವಿಕೆ ವಿಫಲ',
 	'translate-magic-special' => 'ವಿಷೇಶ ಪುಟ ಉಪನಾಮಗಳು',
@@ -26875,6 +26876,7 @@ $messages['ps'] = array(
 	'supportedlanguages-translators' => '{{PLURAL:$2|ژباړن|ژباړونکي}}: $1',
 	'supportedlanguages-recenttranslations' => 'تازه ژباړې',
 	'supportedlanguages-count' => 'ټولټال $1 {{PLURAL:$1|ژبه|ژبې}}.',
+	'supportedlanguages-activity' => '$1: $2 {{PLURAL:$2|سمون|سمونونه}} - وروستی سمون $3 {{PLURAL:$3|ورځ|ورځې}} دمخه',
 	'translate-save' => 'خوندي کول ($1)',
 	'translate-jssti-add' => 'لړليک کې گډول',
 	'translate-manage-import-new' => 'نوی پيغام $1',

@@ -351,6 +351,46 @@ Du wirst dann in der Lage sein, ohne Limits zu übersetzen.',
 	'logentry-translatorsandbox-rejected' => '$1 hat die Anfrage von $3 zur Beförderung {{GENDER:$2|zum Übersetzer|zur Übersetzerin|zum Übersetzer}} abgelehnt',
 );
 
+/** Lower Sorbian (dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'translatesandbox' => 'Pśełožowarske grajkanišćo zastojaś',
+	'tsb-filter-pending' => 'Njedocynjone napšašowanja',
+	'tsb-reminder-title-generic' => 'Wudopołni swójo zapokazanje, aby pśełožowaŕ był',
+	'tsb-reminder-sending' => 'Dopomnjeśe se sćelo...',
+	'tsb-reminder-sent' => '{{PLURAL:$1|$1 dopomnjeśe jo se pósłało $2|$1 dopomnjeśi stej se pósłałej, slědne $2|$1 dopomnjeśa su se pósłali, slědne $2|$1 dopomnjeśow jo se pósłało, slědne $2}}',
+	'tsb-reminder-sent-new' => 'Dopomnjeśe jo se pósłało',
+	'tsb-reminder-failed' => 'Słanje dopomnjeśa jo se njeraźiło',
+	'tsb-email-promoted-subject' => 'Sy něnto pśełožowaŕ na {{GRAMMAR:lokatiw|{{SITENAME}}}}',
+	'tsb-request-count' => '$1 {{PLURAL:$1|napšašowanje|napšašowani|napšašowanja|napšašowanjow}}',
+	'tsb-all-languages-button-label' => 'Wšykne rěcy',
+	'tsb-search-requests' => 'Napšašowanja pśepytaś',
+	'tsb-accept-button-label' => 'Akceptěrowaś',
+	'tsb-reject-button-label' => 'Wótpokazaś',
+	'tsb-selected-count' => '{{PLURAL:$1|$1 wužywaŕ jo se wubrał|$1 wužywarja stej se wubrałej|$1 wužywarje su se wubrali|$1 wužywarjow jo se wubrało}}',
+	'tsb-older-requests' => '$1 {{PLURAL:$1|starše napšašowanje|staršej napšašowani|starše napšašowanja|staršych napšašowanjow}}',
+	'tsb-accept-all-button-label' => 'Wšykne akceptěrowaś',
+	'tsb-reject-all-button-label' => 'Wšykne wótpokazaś',
+	'tsb-reminder-link-text' => 'E-mailowe dopomnjeśe pósłaś',
+	'tsb-didnt-make-any-translations' => 'Toś ten wužywaŕ njejo pśełožki pśewjadł.',
+	'tsb-translations-source' => 'Žrědło',
+	'tsb-translations-user' => 'Wužywarske pśełožki',
+	'tsb-translations-current' => 'Eksistěrujuce pśełožki',
+	'translationstash' => 'Witaj',
+	'translate-translationstash-welcome' => 'Witaj $1, sy {{GENDER:$1|nowy pśełožowaŕ|nowa pśełožowarka}}',
+	'translate-translationstash-initialtranslation' => 'Twój prědny pśełožk',
+	'translate-translationstash-translations' => '$1 {{PLURAL:$1|wudopołnjony pśełožk|wudopołnjonej pśełožka|wudopołnjone pśełožki|wudopołnjonych pśełožkow}}',
+	'translate-translationstash-skip-button-label' => 'Drugi wopytaś',
+	'tsb-limit-reached-title' => 'Źěkujomy se za twóje pśełožki',
+	'tsb-no-requests-from-new-users' => 'Žedne napšašowanja wót nowych wužywarjow',
+	'tsb-promoted-from-sandbox' => 'Wužywaŕ jo něnto pśełožowaŕ',
+	'log-name-translatorsandbox' => 'Pśełožowańske grajkanišćo',
+	'log-description-translatorsandbox' => 'Protokol akcijow na wužywarjach pśełožowańskego grajkanišća',
+	'logentry-translatorsandbox-promoted' => '$1 jo $3 za {{GENDER:$4|pśełožowarja|pśełožwarku}} {{GENDER:$2|pówušył|pówušyła}}',
+	'logentry-translatorsandbox-rejected' => '$1 jo póžedanje wót $3 na pówušenje za {{GENDER:$2|pśełožowarja|pśełožowarku}} {{GENDER:$2|wótpokazał|wótpokazała}}',
+);
+
 /** Spanish (español)
  * @author Fitoschido
  */
@@ -665,7 +705,9 @@ Bes esu jood un donn Desch op {{GRAMMAR:Dativ|$2}} enlogge un maach e paa Övver
 $messages['lb'] = array(
 	'translatesandbox' => 'Iwwersetzer-Sandkëscht geréieren',
 	'tsb-filter-pending' => 'Ufroen am Suspens',
-	'tsb-reminder-title-generic' => 'Kompletéiert Är Virstellung fir e verifizéierten Iwwersetzer ze ginn', # Fuzzy
+	'tsb-reminder-title-generic' => 'Kompletéiert Är Virstellung fir Iwwersetzer ze ginn',
+	'tsb-reminder-sent-new' => 'Eng Erënnerung schécken',
+	'tsb-email-promoted-subject' => 'Dir sidd elo Iwwersetzer op {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|Eng Ufro|$1 Ufroen}}',
 	'tsb-all-languages-button-label' => 'All Sproochen',
 	'tsb-accept-button-label' => 'Akzeptéieren',
@@ -685,6 +727,7 @@ $messages['lb'] = array(
 Eis Equipe kuckt Äre Benotzerkont geschwënn no a setzt en erop.
 Da kënnt Dir ouni Limitatiounen iwwersetzen.",
 	'tsb-no-requests-from-new-users' => 'Keng Ufroe vun neie Benotzer',
+	'log-name-translatorsandbox' => 'Iwwersetzungs-Sandkëscht',
 );
 
 /** لوری (لوری)
@@ -771,12 +814,19 @@ $messages['mr'] = array(
 $messages['ms'] = array(
 	'translatesandbox' => 'Uruskan kotak pasir penterjemah',
 	'tsb-filter-pending' => 'Permohonan yang menunggu',
-	'tsb-reminder-title-generic' => 'Lengkapkan pengenalan anda untuk menjadi seorang penterjemah yang sah', # Fuzzy
+	'tsb-reminder-title-generic' => 'Lengkapkan pengenalan anda untuk menjadi seorang penterjemah',
 	'tsb-reminder-content-generic' => '$1,
 
-Terima kasih kerana mendaftar untuk {{SITENAME}}. Sekiranya anda melengkapkan ujian penterjemahan ini, anda akan menerima akses penterjemah sepenuhnya dari pihak penyelia.
+Terima kasih kerana mendaftar untuk {{SITENAME}}.
 
-Sila ke $2 untuk membuat lebih banyak kerja terjemahan.', # Fuzzy
+Sekiranya anda melengkapkan ujian penterjemahan ini, anda akan menerima akses penterjemah sepenuhnya dari pihak penyelia.
+
+Sila ke $2 untuk membuat lebih banyak kerja terjemahan.
+
+$3,
+Kakitangan {{SITENAME}}',
+	'tsb-reminder-sending' => 'Peringatan sedang dihantar...',
+	'tsb-reminder-sent' => '{{PLURAL:$1|Telah menghantar $1 peringatan pada $2|Telah menghantar $1 peringatan, yang terbaru pada $2}}',
 	'tsb-reminder-sent-new' => 'Peringatan dihantar',
 	'tsb-reminder-failed' => 'Peringatan gagal dihantar',
 	'tsb-email-promoted-subject' => 'Anda kini seorang penterjemah di {{SITENAME}}',
@@ -791,6 +841,8 @@ Selamat datang dan terima kasih atas sumbangan anda!
 
 {{GENDER:$3|$3}},
 Kakitangan {{SITENAME}}',
+	'tsb-request-count' => '$1 {{PLURAL:$1|permintaan}}',
+	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|menaikkan pangkat}} $3 kepada {{GENDER:$4|penterjemah}}',
 );
 
 /** Nepali (नेपाली)

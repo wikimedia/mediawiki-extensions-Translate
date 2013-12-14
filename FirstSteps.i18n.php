@@ -1251,9 +1251,9 @@ $messages['et'] = array(
 	'translate-fs-permissions-title' => 'Tõlkijaõiguste taotlemine',
 	'translate-fs-target-title' => 'Alusta tõlkimist!',
 	'translate-fs-email-title' => 'E-posti aadressi kinnitamine',
-	'translate-fs-intro' => "Tere tulemast {{GRAMMAR:genitive|{{SITENAME}}}} alustusviisardisse.
+	'translate-fs-intro' => 'Tere tulemast {{GRAMMAR:genitive|{{SITENAME}}}} alustusviisardisse.
 Sul aidatakse sammhaaval tõlkijaks saada.
-Lõpuks saad tõlkida kõikide {{GRAMMAR:genitive|{{SITENAME}}}} toetatud projektide ''liidese sõnumeid''.", # Fuzzy
+Lõpuks saad tõlkida kõikide {{GRAMMAR:genitive|{{SITENAME}}}} toetatud projektide <em>liidese sõnumeid</em>.',
 	'translate-fs-selectlanguage' => 'Vali keel',
 	'translate-fs-settings-planguage' => 'Põhikeel:',
 	'translate-fs-settings-planguage-desc' => 'Põhikeel kattub sinu siin vikis kasutatava liidesekeelega
