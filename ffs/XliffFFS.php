@@ -22,9 +22,11 @@ class XliffFFS extends SimpleFFS {
 			return false;
 		}
 
-		$schema = __DIR__ . '/../data/xliff-core-1.2-transitional.xsd';
-		if ( !$doc->schemaValidate( $schema ) ) {
-			return false;
+		if ( strpos( $data, 'version="1.2">' ) !== false ) {
+			$schema = __DIR__ . '/../data/xliff-core-1.2-transitional.xsd';
+			if ( !$doc->schemaValidate( $schema ) ) {
+				return false;
+			}
 		}
 
 		return true;
@@ -45,7 +47,12 @@ class XliffFFS extends SimpleFFS {
 			'urn:oasis:names:tc:xliff:document:1.2'
 		);
 
-		foreach ( $reader->xpath( '//xliff:trans-unit' ) as $item ) {
+		$items = array_merge(
+			$reader->xpath( '//trans-unit' ),
+			$reader->xpath( '//xliff:trans-unit' )
+		);
+
+		foreach ( $items as $item ) {
 
 			$source = $item->$element;
 
