@@ -11,9 +11,9 @@
 	 * but it is independent of messagetable.
 	 * Example usage:
 	 *
-	 * $( 'div.messageRow' ).translateeditor( {
-	 *	message: messageObject // Mandatory message object
-	 * } );
+	 *     $( 'div.messageRow' ).translateeditor( {
+	 *         message: messageObject // Mandatory message object
+	 *     } );
 	 *
 	 * Assumptions: The jquery element to which translateeditor is applied will
 	 * internally contain the editor's generated UI. So it is going to have the same width
@@ -22,6 +22,14 @@
 	 * mandatory, but if found, when editor is opened the message item will be hidden
 	 * and the editor will appear as if the message is replaced by the editor.
 	 * See the UI of Translate messagetable for demo.
+	 * @param {HTMLElement} element
+	 * @param {Object} options
+	 * @param {Function} [options.beforeSave] Callback to call when translation is going to be saved.
+	 * @param {Function} [options.onReady] Callback to call when the editor is ready.
+	 * @param {Function} [options.onSave] Callback to call when translation has been saved.
+	 * @param {Function} [options.onSkip] Callback to call when a message is skipped.
+	 * @param {Object} options.message Object as returned by messagecollection api.
+	 * @param {TranslationApiStorage} [options.storage]
 	 */
 	function TranslateEditor( element, options ) {
 		this.$editTrigger = $( element );
