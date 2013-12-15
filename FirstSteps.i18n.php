@@ -2460,9 +2460,9 @@ $messages['ko'] = array(
 	'translate-fs-permissions-title' => '번역자 권한 신청',
 	'translate-fs-target-title' => '번역 시작하기!',
 	'translate-fs-email-title' => '이메일 주소 확인하기',
-	'translate-fs-intro' => "{{SITENAME}} 첫걸음 마법사에 오신 것을 환영합니다.
+	'translate-fs-intro' => '{{SITENAME}} 첫걸음 마법사에 오신 것을 환영합니다.
 번역자가 되는 과정을 차례로 거칠 것입니다.
-결국에는 {{SITENAME}}에서 지원하는 모든 프로젝트의 ''인터페이스 메시지''를 번역할 수 있을 것입니다.", # Fuzzy
+결국에는 {{SITENAME}}에서 지원하는 모든 프로젝트의 <em>인터페이스 메시지</em>를 번역할 수 있을 것입니다.',
 	'translate-fs-selectlanguage' => '언어 선택',
 	'translate-fs-settings-planguage' => '모어:',
 	'translate-fs-settings-planguage-desc' => '모어는 여기 웹사이트에서 인터페이스 언어이자

@@ -358,11 +358,33 @@ $messages['dsb'] = array(
 	'translatesandbox' => 'Pśełožowarske grajkanišćo zastojaś',
 	'tsb-filter-pending' => 'Njedocynjone napšašowanja',
 	'tsb-reminder-title-generic' => 'Wudopołni swójo zapokazanje, aby pśełožowaŕ był',
+	'tsb-reminder-content-generic' => 'Witaj $1,
+
+źěkujomy se za registrěrowanje na {{GRAMMAR:lokatiw|{{SITENAME}}}}.
+
+Jolic wudpołnjujoš swóje testowe pśełožki, administratory daju tebi pón połny pśełožowański pśistup.
+
+Pśiź pšosym sem a pśewjeź dalšne pśełožki:
+$2
+
+$3,
+sobuźěłaśerje {{GRAMMAR:genitiw|{{SITENAME}}}}',
 	'tsb-reminder-sending' => 'Dopomnjeśe se sćelo...',
 	'tsb-reminder-sent' => '{{PLURAL:$1|$1 dopomnjeśe jo se pósłało $2|$1 dopomnjeśi stej se pósłałej, slědne $2|$1 dopomnjeśa su se pósłali, slědne $2|$1 dopomnjeśow jo se pósłało, slědne $2}}',
 	'tsb-reminder-sent-new' => 'Dopomnjeśe jo se pósłało',
 	'tsb-reminder-failed' => 'Słanje dopomnjeśa jo se njeraźiło',
 	'tsb-email-promoted-subject' => 'Sy něnto pśełožowaŕ na {{GRAMMAR:lokatiw|{{SITENAME}}}}',
+	'tsb-email-promoted-body' => 'Witaj {{GENDER:$1|$1}},
+
+wutšobne glukužycenje! Som testowe pśełožki pśeglědał, kótarež sy na {{GRAMMAR:lokatiw|{{SITENAME}}}} pśewjadł a som tebi połne pśełožowarske pšawa dał.
+
+Pśiź pšosym k {{GRAMMAR:datiw|{{SITENAME}}}}, aby něnto a kuždy źeń dalej pśełožował:
+$2
+
+Witaj a wjeliki źěk za twóje pśinoski!
+
+{{GENDER:$3|$3}},
+sobuźěłaśerje {{GRAMMAR:genitiw|{{SITENAME}}}}',
 	'tsb-request-count' => '$1 {{PLURAL:$1|napšašowanje|napšašowani|napšašowanja|napšašowanjow}}',
 	'tsb-all-languages-button-label' => 'Wšykne rěcy',
 	'tsb-search-requests' => 'Napšašowanja pśepytaś',
@@ -379,10 +401,12 @@ $messages['dsb'] = array(
 	'tsb-translations-current' => 'Eksistěrujuce pśełožki',
 	'translationstash' => 'Witaj',
 	'translate-translationstash-welcome' => 'Witaj $1, sy {{GENDER:$1|nowy pśełožowaŕ|nowa pśełožowarka}}',
+	'translate-translationstash-welcome-note' => 'Wopóznaj se z pśełožowańskimi rědami. Pśełož někotare powěźeńki a dobydni se połne pśełožowarske pšawa, aby se na wašych projektach wobźělił.',
 	'translate-translationstash-initialtranslation' => 'Twój prědny pśełožk',
 	'translate-translationstash-translations' => '$1 {{PLURAL:$1|wudopołnjony pśełožk|wudopołnjonej pśełožka|wudopołnjone pśełožki|wudopołnjonych pśełožkow}}',
 	'translate-translationstash-skip-button-label' => 'Drugi wopytaś',
 	'tsb-limit-reached-title' => 'Źěkujomy se za twóje pśełožki',
+	'tsb-limit-reached-body' => 'Sy pśełožowański limit za nowe pśełožowarje dojśpił. Naš team buźo twójo konto skóro pśeglědowaś a aktualizěrować. Pótom móžoš bźez limitow pśełožowaś.',
 	'tsb-no-requests-from-new-users' => 'Žedne napšašowanja wót nowych wužywarjow',
 	'tsb-promoted-from-sandbox' => 'Wužywaŕ jo něnto pśełožowaŕ',
 	'log-name-translatorsandbox' => 'Pśełožowańske grajkanišćo',
@@ -539,6 +563,70 @@ $messages['he'] = array(
 	'log-description-translatorsandbox' => 'יומן פעולות על משתמשים בארגז חול של תרגומים',
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|קידם|קידמה}} את $3 לתפקיד {{GENDER:$3|מתרגם|מתרגמת}}', # Fuzzy
 	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|דחה|דחתה}} את הבקשה של $3 לקבל הרשאת מתרגם',
+);
+
+/** Upper Sorbian (hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'translatesandbox' => 'Přełožowarske hrajkanišćo zrjadować',
+	'tsb-filter-pending' => 'Njesčinjene naprašowanja',
+	'tsb-reminder-title-generic' => 'Wudospołń swoje zawjedźenje, zo by so z přełožowarjom stał',
+	'tsb-reminder-content-generic' => 'Witaj $1,
+
+dźakujemy so za registrowanje na {{GRAMMAR:lokatiw|{{SITENAME}}}}.
+
+Jeli swoje testowe přełožki wudospołnješ, administratorojo dadźa tebi potom połny přełožowanski přistup.
+
+Přińdź prošu sem a přewjedź dalše přełožki:
+$2
+
+$3,
+sobudźěłaćerjo {{GRAMMAR:genitiw|{{SITENAME}}}}',
+	'tsb-reminder-sending' => 'Dopomnjeće so sćele...',
+	'tsb-reminder-sent' => '{{PLURAL:$1|$1 dopomnjeće je so pósłało $2|$1 dopomnjeći stej so pósłałoj, poslednje $2|$1 dopomnjeća su so pósłali, poslednje $2|$1 dopomnjećow je so pósłało, poslednje $2}}',
+	'tsb-reminder-sent-new' => 'Dopomnjeće je so pósłało',
+	'tsb-reminder-failed' => 'Słanje dopomnjeća je so njeporadźiło',
+	'tsb-email-promoted-subject' => 'Sy nětko přełožowar na {{GRAMMAR:lokatiw|{{SITENAME}}}}',
+	'tsb-email-promoted-body' => 'Witaj {{GENDER:$1|$1}},
+
+wutrobne zbožopřeće! Sym testowe přełožki přepruwował, kotrež sy na {{GRAMMAR:lokatiw|{{SITENAME}}}} přewjedł a sym tebi połne přełožowarske prawa dał.
+
+Přińdź prošu k {{GRAMMAR:datiw|{{SITENAME}}}}, zo by nětko a kóždy dźeń dale přełožował:
+$2
+
+Witaj a wulki dźak za twoje přinoški!
+
+{{GENDER:$3|$3}},
+sobudźěłaćerjo {{GRAMMAR:genitiw|{{SITENAME}}}}',
+	'tsb-request-count' => '$1 {{PLURAL:$1|naprašowanje|naprašowani|naprašowanja|naprašowanjow}}',
+	'tsb-all-languages-button-label' => 'Wšě rěče',
+	'tsb-search-requests' => 'Naprašowanja přepytać',
+	'tsb-accept-button-label' => 'Akceptować',
+	'tsb-reject-button-label' => 'Wotpokazać',
+	'tsb-selected-count' => '{{PLURAL:$1|$1 wužiwar je so wubrał|$1 wužiwarjej staj so wubrałoj|$1 wužiwarjo su so wubrali|$1 wužiwarjow je so wubrało}}',
+	'tsb-older-requests' => '$1 {{PLURAL:$1|starše naprašowanje|staršej naprašowani|starše naprašowanja|staršich naprašowanjow}}',
+	'tsb-accept-all-button-label' => 'Wšě akceptować',
+	'tsb-reject-all-button-label' => 'Wšě wotpokazać',
+	'tsb-reminder-link-text' => 'E-mejlowe dopomnjeće pósłać',
+	'tsb-didnt-make-any-translations' => 'Tutón wužiwar njeje přełožki přewjedł.',
+	'tsb-translations-source' => 'Žórło',
+	'tsb-translations-user' => 'Wužiwarske přełožki',
+	'tsb-translations-current' => 'Eksistowace přełožki',
+	'translationstash' => 'Witaj',
+	'translate-translationstash-welcome' => 'Witaj $1, sy {{GENDER:$1|nowy přełožowar|nowa přełožowarka}}',
+	'translate-translationstash-welcome-note' => 'Zeznaj so z přełožowanskimi nastrojemi. Přełož někotre zdźělenki a dobudź połne přełožowarske prawa, zo by so na wašich projektach wobdźělił.',
+	'translate-translationstash-initialtranslation' => 'Twój prěni přełožk',
+	'translate-translationstash-translations' => '$1 {{PLURAL:$1|wudospołnjeny přełožk|wudospołnjenej přełožkaj|wudospołnjene přełožki|wudospołnjenych přełožkow}}',
+	'translate-translationstash-skip-button-label' => 'Druhi spytać',
+	'tsb-limit-reached-title' => 'Dźakujemy so za twoje přełožki',
+	'tsb-limit-reached-body' => 'Sy přełožowanski limit za nowych přełožowarjow docpěł. Naš team budźe twoje konto bórze přepruwować a aktualizować. Potom móžeš bjez limitow přełožować.',
+	'tsb-no-requests-from-new-users' => 'Žane naprašowanja wot nowych wužiwarjow',
+	'tsb-promoted-from-sandbox' => 'Wužiwar je nětko přełožowar',
+	'log-name-translatorsandbox' => 'Přełožowanske hrajkanišćo',
+	'log-description-translatorsandbox' => 'Protokol akcijow na wužiwarjach přełožowanskeho hrajkanišća',
+	'logentry-translatorsandbox-promoted' => '$1 je $3 za {{GENDER:$4|přełožowarja|přełožwarku}} {{GENDER:$2|powyšił|powyšiła}}',
+	'logentry-translatorsandbox-rejected' => '$1 je naprašowanje wot $3 na powyšenje za {{GENDER:$2|přełožowarja|přełožowarku}} {{GENDER:$2|wotpokazał|wotpokazała}}',
 );
 
 /** Italian (italiano)

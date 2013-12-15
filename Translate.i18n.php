@@ -8732,7 +8732,7 @@ Jo nejwužytnjej za pśeglědowańske nadawki.',
 	'tux-editor-loading' => 'Zacytujo se ...',
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|dalšna rěc|dalšnej rěcy|dalšne rěcy|dalšnych rěcow}}',
 	'translate-statsbar-tooltip' => '$1 % pśełožone, $2 % pśeglědane',
-	'translate-statsbar-tooltip-with-fuzzy' => '$1 % pśełožone, $2 % pśeglědane, $ 3 zestarjone', # Fuzzy
+	'translate-statsbar-tooltip-with-fuzzy' => '$1 % pśełožone, $2 % pśeglědane, $3 % zestarjone',
 );
 
 /** Central Dusun (Dusun Bundu-liwan)
@@ -14903,6 +14903,7 @@ Barba podšmórnjenja přełožowarskeho mjena pokazuje, kak aktiwny přełožow
 	'translate-smg-nochanges' => 'Njejsu žane změny za předźěłanje.',
 	'translate-smg-submit' => 'Změny na předźěłowanje pósłać',
 	'translate-smg-submitted' => 'Definicije zdźělenkow su so zaktualizowali. Změny so w pozadku předźěłuja.',
+	'translate-smg-more' => 'Po składowanju tutych změnow dyrbja so dalše změny předźěłać.',
 	'translate-smg-left' => 'Powěsćowy wobsah we wikiju',
 	'translate-smg-right' => 'Dochadźace změny',
 	'translate-manage-import-diff' => 'Zdźělenka $1 | akcije: $2',
@@ -14992,6 +14993,8 @@ Podrobnosće: $1',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|njewobkrućeny přełožowar|njewobkrućena přełožowarka}}',
 	'right-translate-sandboxmanage' => 'Wužiwarjow hrajkanišća zrjadować',
 	'action-translate-sandboxmanage' => 'wužiwarjow hrajkanišća zrjadować',
+	'right-translate-sandboxaction' => 'Akcije wuwjesć, kotrež su na "běłej lisćinje" wužiwarjow hrajkanišća',
+	'action-translate-sandboxaction' => 'Akcije wuwjesć, kotrež su na "běłej lisćinje" wužiwarjow hrajkanišća',
 	'translate-workflow-state-' => '(njenastajeny)',
 	'translate-workflowstatus' => 'Status: $1',
 	'translate-workflow-set-do' => 'Nastajić',
@@ -19016,7 +19019,7 @@ $messages['ko'] = array(
 	'translate-page-disabled' => '이 그룹에서 이 언어로의 번역이 비활성화되어 있습니다.
 이유:
 
-$1', # Fuzzy
+<em>$1</em>',
 	'translate-language-disabled' => '이 언어로의 번역이 비활성화되어 있습니다.',
 	'translate-page-settings-legend' => '설정',
 	'translate-page-group' => '그룹',
@@ -19043,8 +19046,8 @@ $1', # Fuzzy
 	'translate-edit-definition' => '메시지 정의',
 	'translate-edit-translation' => '번역',
 	'translate-edit-contribute' => '편집하기',
-	'translate-edit-no-information' => '이 메시지에 대한 설명문이 없습니다.
-만약 이 메시지가 어디에 어떻게 사용되는지 알고 있다면 설명문을 작성해 다른 번역자를 도와줄 수 있습니다.', # Fuzzy
+	'translate-edit-no-information' => '<em>이 메시지에 대한 설명문이 없습니다.
+만약 이 메시지가 어디에 어떻게 사용되는지 알고 있다면 설명문을 작성해 다른 번역자를 도와줄 수 있습니다.</em>',
 	'translate-edit-information' => '이 메시지에 대한 정보 ($1)',
 	'translate-edit-in-other-languages' => '이 메시지의 다른 언어판',
 	'translate-edit-committed' => '소프트웨어의 현재 번역',
@@ -19239,8 +19242,8 @@ $1', # Fuzzy
 	'translate-manage-intro-other' => '다음은 $1로 된 번역 바뀜 목록입니다.
 바뀜을 검토하고 각 업데이트에 대해 수행할 작업을 선택하세요.
 바뀜을 무시하기로 선택했다면 이 작업만 일시적입니다.',
-	'translate-manage-import-ok' => '$1 문서의 새 버전을 가져왔습니다.', # Fuzzy
-	'translate-manage-import-done' => '모두 완료!', # Fuzzy
+	'translate-manage-import-ok' => '가져옴: $1',
+	'translate-manage-import-done' => '가져오기 완료!',
 	'importtranslations' => '번역 가져오기',
 	'translate-import-from-local' => '컴퓨터에 있는 파일 올리기:',
 	'translate-import-load' => '파일 불러오기',
@@ -19389,7 +19392,7 @@ $1',
 	'tux-proofread-translated-by-self' => '내가 번역함',
 	'tux-empty-list-all' => '이 메시지 그룹은 비어 있습니다',
 	'tux-empty-list-all-guide' => '번역할 다른 메시지 그룹을 선택하세요',
-	'tux-translate-page-no-such-group' => "'''지정한 그룹이 존재하지 않습니다.''' 다른 메시지 그룹을 선택하세요.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>지정한 그룹이 존재하지 않습니다.</strong> 다른 메시지 그룹을 선택하세요.',
 	'tux-empty-list-translated' => '번역된 메시지가 없습니다',
 	'tux-empty-list-translated-guide' => '번역을 도울 수 있습니다',
 	'tux-empty-list-translated-action' => '번역',
@@ -26791,7 +26794,7 @@ $messages['ps'] = array(
 	'translate-page-limit' => 'بريد',
 	'translate-page-limit-option' => '$1 {{PLURAL:$1|پيغام|پيغامونه}} په يوه مخ کې',
 	'translate-submit' => 'راغونډول',
-	'translate-page-navigation-legend' => 'ګرځښت',
+	'translate-page-navigation-legend' => 'گرځښت',
 	'translate-page-showing-all' => '$1 {{PLURAL:$1|پيغام|پيغامونه}} ښکاره کول.',
 	'translate-next' => 'راتلونکی مخ',
 	'translate-prev' => 'پخوانی مخ',
