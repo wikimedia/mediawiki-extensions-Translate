@@ -107,8 +107,15 @@ class ManageTranslatorSandboxPage
 		@browser.elements(css: ".details.pane .languages span")[0]
 	end
 
-	def translations_autonym
-		@browser.elements(css: ".details.pane .translations .info.autonym")[0]
+	def translations_languages_are_sorted?
+		expected_langs = ["bn", "fi", "he", "nl", "uk"]
+		langs = translations_autonyms.collect { |element| element.attribute_value("lang") }
+
+		expected_langs == langs
+	end
+
+	def translations_autonyms
+		@browser.elements(css: ".details.pane .translations .info.autonym")
 	end
 
 	def only_request_with_username_is_selected?(username)

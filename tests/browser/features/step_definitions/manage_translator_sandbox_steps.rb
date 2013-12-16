@@ -111,7 +111,7 @@ Then(/^I should see the name of language '(.+)' in the second column$/) do |lang
 end
 
 Then(/^I should see that the language of the first translation is '(.+)'$/) do |language|
-	on(ManageTranslatorSandboxPage).translations_autonym.text.should == language
+	on(ManageTranslatorSandboxPage).translations_autonyms[0].text.should == language
 end
 
 Then(/^only users whose name begins with '(.*)' are displayed in the first column$/) do |prefix|
@@ -192,4 +192,8 @@ Then(/^I should see '(.+)' in the older requests link at the bottom of the first
 		page.older_requests_indicator_element.should be_visible
 		page.older_requests_indicator_element.text.should == text
 	end
+end
+
+Then(/^I should see that the user's translations are sorted by the language code$/) do
+	on(ManageTranslatorSandboxPage).translations_languages_are_sorted?.should be_true
 end
