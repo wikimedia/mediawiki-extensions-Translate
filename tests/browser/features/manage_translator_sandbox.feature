@@ -62,15 +62,15 @@ Feature: Manage translator sandbox
     Given I am on the Translator sandbox management page with users in the sandbox
       And I click the checkbox to select all users
     Then I should not see the older requests link at the bottom of the first column
-      And I should see '10 users selected' at the bottom of the first column
-      And I should see '10 users selected' in the header of the second column
+      And I should see '11 users selected' at the bottom of the first column
+      And I should see '11 users selected' in the header of the second column
 
   Scenario: Searching for a user by language
     Given I am on the Translator sandbox management page with users in the sandbox
     When I click the sandboxed users language filter button
       And I type 'he' in the language filter
     Then only users who translate to language 'he' are displayed in the first column
-      And I should see '2 requests' at the top of the first column
+      And I should see '3 requests' at the top of the first column
       And I should see '1 user selected' at the bottom of the first column
       And I should see the name of the first user in the first column in the header of the second column
       And I should see the button that clears language selection
@@ -83,18 +83,18 @@ Feature: Manage translator sandbox
       And I type 'uk' in the language filter
       And I click the checkbox to select all users
     Then only users who translate to language 'uk' are displayed in the first column
-      And I should see '2 requests' at the top of the first column
-      And I should see '2 users selected' at the bottom of the first column
-      And I should see '2 users selected' in the header of the second column
+      And I should see '3 requests' at the top of the first column
+      And I should see '3 users selected' at the bottom of the first column
+      And I should see '3 users selected' in the header of the second column
 
   Scenario: Showing users who translate to all languages
     Given I am on the Translator sandbox management page with users in the sandbox
     When I click the sandboxed users language filter button
       And I type 'nl' in the language filter
       And I click the button that clears language selection
-    Then I should see the checkbox next to the request from 'Orava4' checked
-      And I should see the checkbox next to the request from 'Orava4' disabled
-      And I should see '10 requests' at the top of the first column
+    Then I should see the checkbox next to the request from 'Kissa' checked
+      And I should see the checkbox next to the request from 'Kissa' disabled
+      And I should see '11 requests' at the top of the first column
       And I should see '1 user selected' at the bottom of the first column
       And I should not see the button that clears language selection
       And the direction of the users language filter button is 'ltr'
@@ -105,9 +105,9 @@ Feature: Manage translator sandbox
     When I click the sandboxed users language filter button
       And I type 'be' in the language filter
       And I click the button that clears language selection
-    Then I should see the checkbox next to the request from 'Orava4' checked
-      And I should see the checkbox next to the request from 'Orava4' disabled
-      And I should see '10 requests' at the top of the first column
+    Then I should see the checkbox next to the request from 'Kissa' checked
+      And I should see the checkbox next to the request from 'Kissa' disabled
+      And I should see '11 requests' at the top of the first column
       And I should see '1 user selected' at the bottom of the first column
       And I should not see the button that clears language selection
       And usernames are visible in the first column
@@ -115,14 +115,13 @@ Feature: Manage translator sandbox
   Scenario: Translation Administrator should be able to see a list of pending requests with usernames in the first column, sorted by the number of translations and the most recent within them, and the first user should be selected
     Given I am on the Translator sandbox management page with users in the sandbox
     Then I should see the userlist in the first column sorted by the number of translations and the most recent within them
-      And I should see the checkbox next to the request from 'Orava4' checked
-      And I should see the checkbox next to the request from 'Orava4' disabled
+      And I should see the checkbox next to the request from 'Kissa' checked
+      And I should see the checkbox next to the request from 'Kissa' disabled
       And I should see the name of the first user in the first column in the header of the second column
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
       And I should see '1 user selected' at the bottom of the first column
-      And I should see that 4 reminders were sent to the user
-      And I should see '9 older requests' in the older requests link at the bottom of the first column
+      And I should see '10 older requests' in the older requests link at the bottom of the first column
 
   Scenario: Clicking on a name of a user who didn't make any translations shows the user information and the action buttons and doesn't show translations
     Given I am on the Translator sandbox management page with users in the sandbox
@@ -135,7 +134,7 @@ Feature: Manage translator sandbox
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
       And I should see '1 user selected' at the bottom of the first column
-      And I should see '10 requests' at the top of the first column
+      And I should see '11 requests' at the top of the first column
       And I should see that no reminders have been sent to the user
 
   Scenario: Clicking a username when another user is selected selects only the new user; Clicking on a name of a user who made some translations shows the user information and the action buttons and some translations
@@ -150,6 +149,7 @@ Feature: Manage translator sandbox
       And I should see the 'Accept' button displayed in the second column
       And I should see the 'Reject' button displayed in the second column
       And I should see '1 user selected' at the bottom of the first column
+      And I should see that 3 reminders were sent to the user
 
   Scenario: Selecting multiple users
     Given I am on the Translator sandbox management page with users in the sandbox
@@ -190,9 +190,9 @@ Feature: Manage translator sandbox
       And I click on the checkbox near 'Pupu4' in the first column
     Then I should see the checkbox next to the request from 'Pupu4' unchecked
       And I should see the checkbox next to the request from 'Pupu4' enabled
-      And I should see the checkbox next to the request from 'Orava4' checked
-      And I should see the checkbox next to the request from 'Orava4' disabled
-      And I should see the details of 4 sandboxed translations done by the user in the second column
+      And I should see the checkbox next to the request from 'Kissa' checked
+      And I should see the checkbox next to the request from 'Kissa' disabled
+      And I should see the details of 5 sandboxed translations done by the user in the second column
 
   Scenario: Selecting a second user without translations and deselecting it
     Given I am on the Translator sandbox management page with users in the sandbox
@@ -214,7 +214,7 @@ Feature: Manage translator sandbox
       And I should see the checkbox next to the request from 'Orava2' checked
       And I should see the checkbox next to the request from 'Orava2' disabled
       And I should see '1 user selected' at the bottom of the first column
-      And I should see '9 requests' at the top of the first column
+      And I should see '10 requests' at the top of the first column
 
   Scenario: Rejecting one user
     Given I am on the Translator sandbox management page with users in the sandbox
@@ -225,7 +225,7 @@ Feature: Manage translator sandbox
       And I should see the checkbox next to the request from 'Orava2' checked
       And I should see the checkbox next to the request from 'Orava2' disabled
       And I should see '1 user selected' at the bottom of the first column
-      And I should see '9 requests' at the top of the first column
+      And I should see '10 requests' at the top of the first column
 
   Scenario: Accepting multiple users
     Given I am on the Translator sandbox management page with users in the sandbox
@@ -238,7 +238,7 @@ Feature: Manage translator sandbox
       And I should see the checkbox next to the request from 'Pupu4' checked
       And I should see the checkbox next to the request from 'Pupu4' disabled
       And I should see '1 user selected' at the bottom of the first column
-      And I should see '8 requests' at the top of the first column
+      And I should see '9 requests' at the top of the first column
 
   Scenario: Rejecting multiple users
     Given I am on the Translator sandbox management page with users in the sandbox
@@ -251,7 +251,7 @@ Feature: Manage translator sandbox
       And I should see the checkbox next to the request from 'Pupu4' checked
       And I should see the checkbox next to the request from 'Pupu4' disabled
       And I should see '1 user selected' at the bottom of the first column
-      And I should see '8 requests' at the top of the first column
+      And I should see '9 requests' at the top of the first column
 
   Scenario: Accepting all users
     Given I am on the Translator sandbox management page with users in the sandbox
