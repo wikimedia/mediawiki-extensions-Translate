@@ -6981,6 +6981,7 @@ $messages['cu'] = array(
 );
 
 /** Welsh (Cymraeg)
+ * @author Cymrodor
  * @author Lloffiwr
  */
 $messages['cy'] = array(
@@ -7062,7 +7063,7 @@ Ni fydd y newidiadau yn cael eu rhoi ar gadw nes i chi bwyso'r botwm 'Cadwer' is
 	'translate-magic-cm-current' => 'Cyfredol',
 	'translate-magic-cm-original' => 'Gwreiddiol',
 	'translate-magic-cm-comment' => 'Sylw:',
-	'translate-magic-cm-save' => 'Cadwer',
+	'translate-magic-cm-save' => 'Cadw',
 	'translate-magic-cm-updatedusing' => 'Wedi ei ddiweddaru gan ddefnyddio [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]',
 	'translate-magic-cm-savefailed' => 'Methodd yr ymgais i gadw',
 	'translate-magic-special' => 'Arallenwau ar dudalennau arbennig',
@@ -7179,7 +7180,7 @@ Mae lliw y llinell o dan yr enw yn dangos pa mor ddiweddar y bu'n gweithio yma."
 	'supportedlanguages-translators' => '{{PLURAL:$2|Cyfieithydd|Cyfieithwyr}}: $1',
 	'supportedlanguages-recenttranslations' => 'chyfieithiadau diweddar',
 	'supportedlanguages-count' => 'Cynhelir $1 {{PLURAL:$1|iaith}} i gyd.',
-	'translate-save' => 'Cadwer ($1)',
+	'translate-save' => 'Cadw ($1)',
 	'translate-jssti-add' => 'Ychwanegu at y rhestr',
 	'translate-manage-action-import' => 'Mewnforio',
 	'translate-manage-action-ignore' => 'Anwybyddu',
@@ -7191,7 +7192,7 @@ Mae lliw y llinell o dan yr enw yn dangos pa mor ddiweddar y bu'n gweithio yma."
 $1',
 	'translate-import-err-ul-failed' => "Ni lwyddodd llwytho'r ffeil",
 	'translate-js-summary' => 'Crynodeb:',
-	'translate-js-save' => 'Cadwer',
+	'translate-js-save' => 'Cadw',
 	'translate-js-next' => 'Cadwer ac agorer y nesaf',
 	'translate-js-nonext' => "Dyma'r neges olaf ar y dudalen hon.",
 	'translate-js-skip' => "Neidio i'r nesaf",
@@ -7249,7 +7250,7 @@ $1',
 	'tux-editor-paste-original-button-label' => 'Gluder y testun gwreiddiol',
 	'tux-editor-discard-changes-button-label' => "Rhoi'r newidiadau heibio",
 	'tux-editor-save-button-label' => 'Cadwer y cyfieithiad',
-	'tux-editor-skip-button-label' => "Neidier i'r nesaf",
+	'tux-editor-skip-button-label' => "Neidio i'r nesaf",
 	'tux-editor-cancel-button-label' => 'Canslo',
 	'tux-editor-confirm-button-label' => 'Cadarnheuer y cyfieithiad',
 	'tux-editor-edit-desc' => "Golygu'r nodiadau",

@@ -794,6 +794,7 @@ $messages['lb'] = array(
 	'translatesandbox' => 'Iwwersetzer-Sandkëscht geréieren',
 	'tsb-filter-pending' => 'Ufroen am Suspens',
 	'tsb-reminder-title-generic' => 'Kompletéiert Är Virstellung fir Iwwersetzer ze ginn',
+	'tsb-reminder-sending' => 'Erënnerung gëtt geschéckt...',
 	'tsb-reminder-sent-new' => 'Eng Erënnerung schécken',
 	'tsb-email-promoted-subject' => 'Dir sidd elo Iwwersetzer op {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|Eng Ufro|$1 Ufroen}}',

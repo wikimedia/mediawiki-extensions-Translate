@@ -2201,6 +2201,7 @@ $messages['cu'] = array(
 );
 
 /** Welsh (Cymraeg)
+ * @author Cymrodor
  * @author Lloffiwr
  */
 $messages['cy'] = array(
@@ -2221,7 +2222,7 @@ $messages['cy'] = array(
 	'tpt-languages-legend' => 'Ieithoedd eraill:',
 	'tpt-discouraged-language-reason' => 'Rheswm: $1',
 	'tpt-aggregategroup-add' => 'Ychwaneger',
-	'tpt-aggregategroup-save' => 'Cadwer',
+	'tpt-aggregategroup-save' => 'Cadw',
 	'tpt-aggregategroup-new-name' => 'Enw:',
 	'tpt-aggregategroup-new-description' => 'Disgrifiad (dewisol):',
 	'log-name-pagetranslation' => 'Lòg cyfieithu tudalennau',

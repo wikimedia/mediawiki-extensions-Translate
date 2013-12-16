@@ -56,6 +56,9 @@ $specialPageAliases['ar'] = array(
 	'MyLanguage' => array( 'لغتي' ),
 	'PageTranslationDeletePage' => array( 'صفحة_حذف_ترجمة_الصفحة' ),
 	'AggregateGroups' => array( 'مجموعات_مجمعة' ),
+	'SearchTranslations' => array( 'بحث_الترجمات' ),
+	'TranslateSandbox' => array( 'التحكم_بملعب_المترجم', 'ملعب_الترجمة' ),
+	'TranslationStash' => array( 'ستاش_الترجمة' ),
 );
 
 /** Aramaic (ܐܪܡܝܐ) */
