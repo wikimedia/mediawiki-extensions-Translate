@@ -462,7 +462,8 @@
 				filterRequestsByLanguage( language );
 
 				$clearLanguageSelector.removeClass( 'hide' );
-			}
+			},
+			quickList: mw.uls.getFrequentLanguageList
 		} );
 
 		$clearLanguageSelector.on( 'click', function() {
