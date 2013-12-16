@@ -12,6 +12,24 @@
 
 	var delay;
 
+	/**
+	 * Returns the language code of a translation from its page title.
+	 * @param {string} title
+	 */
+	function getLangFromTitle( title ) {
+		return title.split( '/' ).pop();
+	}
+
+	/**
+	 * A callback for sorting translations
+	 * @param {object} translationA Object loaded from translation stash
+	 * @param {object} translationB Object loaded from translation stash
+	 * @return {number} String comparison of language codes
+	 */
+	function sortTranslationsByLanguage( translationA, translationB ) {
+		return getLangFromTitle( translationA.title ) > getLangFromTitle( translationB.title );
+	}
+
 	function doApiAction( options ) {
 		var api = new mw.Api();
 
@@ -168,8 +186,11 @@
 							.addClass( 'four columns' )
 					)
 				);
+
+			translations.translationstash.translations.sort( sortTranslationsByLanguage );
+
 			$.each( translations.translationstash.translations, function( index, translation ) {
-				var translationLang = translation.title.split( '/' ).pop();
+				var translationLang = getLangFromTitle( translation.title );
 
 				$target.append(
 					$( '<div>' )
