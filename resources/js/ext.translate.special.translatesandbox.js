@@ -473,6 +473,7 @@
 					.text( $.uls.data.getAutonym( language ) );
 
 				filterRequestsByLanguage( language );
+				indicateOlderRequests();
 
 				$clearLanguageSelector.removeClass( 'hide' );
 			},
