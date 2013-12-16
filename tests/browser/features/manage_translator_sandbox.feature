@@ -16,7 +16,10 @@ Feature: Manage translator sandbox
   Scenario: There are no users in the sandbox
     Given I am on the Translator sandbox management page with no users in the sandbox
     Then no users are displayed in the first column
+      And I should see '0 requests' at the top of the first column
+      And I should see '0 users selected' at the bottom of the first column
       And I should see 'No requests from new users' in the second column
+      And I should not see the older requests link at the bottom of the first column
 
   Scenario: Existing users can be searched on the list
     Given I am on the Translator sandbox management page with users in the sandbox
@@ -104,13 +107,10 @@ Feature: Manage translator sandbox
     Given I am on the Translator sandbox management page with users in the sandbox
     When I click the sandboxed users language filter button
       And I type 'be' in the language filter
-      And I click the button that clears language selection
-    Then I should see the checkbox next to the request from 'Kissa' checked
-      And I should see the checkbox next to the request from 'Kissa' disabled
-      And I should see '11 requests' at the top of the first column
-      And I should see '1 user selected' at the bottom of the first column
-      And I should not see the button that clears language selection
-      And usernames are visible in the first column
+    Then no users are displayed in the first column
+      And I should see '0 requests' at the top of the first column
+      And I should see '0 users selected' at the bottom of the first column
+      And I should not see the older requests link at the bottom of the first column
 
   Scenario: Translation Administrator should be able to see a list of pending requests with usernames in the first column, sorted by the number of translations and the most recent within them, and the first user should be selected
     Given I am on the Translator sandbox management page with users in the sandbox
