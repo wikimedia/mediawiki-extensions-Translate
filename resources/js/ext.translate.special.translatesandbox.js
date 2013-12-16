@@ -12,6 +12,19 @@
 
 	var delay;
 
+	/**
+	 * A callback for sorting translations
+	 * @param {object} translationA Object loaded from translation stash
+	 * @param {object} translationB Object loaded from translation stash
+	 * @return {number} String comparison of language codes
+	 */
+	function sortTranslationsByLanguage( translationA, translationB ) {
+		var a = translationA.title.split( '/' ).pop(),
+			b = translationB.title.split( '/' ).pop();
+
+		return a.localeCompare( b );
+	}
+
 	function doApiAction( options ) {
 		var api = new mw.Api();
 
@@ -168,6 +181,9 @@
 							.addClass( 'four columns' )
 					)
 				);
+
+			translations.translationstash.translations.sort( sortTranslationsByLanguage );
+
 			$.each( translations.translationstash.translations, function( index, translation ) {
 				var translationLang = translation.title.split( '/' ).pop();
 
