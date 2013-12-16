@@ -52,6 +52,8 @@ class SpecialTranslateSandbox extends SpecialPage {
 			$testLanguages = array( 'fi', 'uk', 'nl', 'he', 'bn' );
 			$userCount = count( $testLanguages );
 
+			$this->emptySandbox();
+
 			foreach ( $textUsernamePrefixes as $prefix ) {
 				for ( $i = 0; $i < $userCount; $i++ ) {
 					$name = "$prefix$i";
@@ -81,12 +83,36 @@ class SpecialTranslateSandbox extends SpecialPage {
 					$user->saveSettings();
 
 					for ( $j = 0; $j < $i; $j++ ) {
-						$title = Title::makeTitle( NS_MEDIAWIKI, wfRandomString( 24 ) . '/' . $testLanguages[$i] );
+						$title = Title::makeTitle(
+							NS_MEDIAWIKI,
+							wfRandomString( 24 ) . '/' . $testLanguages[$i]
+						);
 						$translation = 'plop';
 						$stashedTranslation = new StashedTranslation( $user, $title, $translation );
 						$this->stash->addTranslation( $stashedTranslation );
 					}
 				}
+			}
+
+			// Another account for testing a translator to multiple languages
+			TranslateSandbox::deleteUser( User::newFromName( 'Kissa', false ), 'force' );
+			$polyglotUser = TranslateSandbox::addUser( 'Kissa', 'kissa@pupun.kolo', 'porkkana' );
+			$polyglotUser->setOption(
+				'translate-sandbox',
+				FormatJson::encode( array(
+					'languages' => $testLanguages,
+					'comment' => ''
+				) )
+			);
+			$polyglotUser->saveSettings();
+			for ( $polyglotLang = 0; $polyglotLang < count( $testLanguages ); $polyglotLang++ ) {
+				$title = Title::makeTitle(
+					NS_MEDIAWIKI,
+					wfRandomString( 24 ) . '/' . $testLanguages[$polyglotLang]
+				);
+				$translation = "plop in $testLanguages[$polyglotLang]";
+				$stashedTranslation = new StashedTranslation( $polyglotUser, $title, $translation );
+				$this->stash->addTranslation( $stashedTranslation );
 			}
 		} elseif ( $request->getVal( 'integrationtesting' ) === 'empty' ) {
 			$this->emptySandbox();

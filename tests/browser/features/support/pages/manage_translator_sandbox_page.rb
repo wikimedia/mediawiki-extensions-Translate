@@ -97,7 +97,7 @@ class ManageTranslatorSandboxPage
 				expected_usernames.unshift("#{name}#{num}")
 			end
 		end
-
+		expected_usernames.unshift("Kissa")
 		usernames = visible_users_element.collect { |element| element.text }
 
 		expected_usernames == usernames
