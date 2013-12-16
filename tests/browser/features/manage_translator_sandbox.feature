@@ -122,6 +122,7 @@ Feature: Manage translator sandbox
       And I should see the 'Reject' button displayed in the second column
       And I should see '1 user selected' at the bottom of the first column
       And I should see '10 older requests' in the older requests link at the bottom of the first column
+      And I should see that the user's translations are sorted by the language code
 
   Scenario: Clicking on a name of a user who didn't make any translations shows the user information and the action buttons and doesn't show translations
     Given I am on the Translator sandbox management page with users in the sandbox
