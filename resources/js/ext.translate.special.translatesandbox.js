@@ -499,6 +499,7 @@
 
 				languageFilter.filter( language );
 				$clearButton.removeClass( 'hide' );
+				indicateOlderRequests();
 			},
 			quickList: mw.uls.getFrequentLanguageList
 		} );
