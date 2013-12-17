@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_8b4b6e2b",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-17T09:10:25Z",
+      "side": 1,
+      "message": "Should this be function LanguageFilter( element ) {?",
+      "revId": "a66b3c2bae297a681a6b78a96cffe42e947c7a5d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_6b5caaf4",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-17T09:10:25Z",
+      "side": 1,
+      "message": "It\u0027s even more obvious now in the plugin that the code should not be accessing random dom elements here, but should get a reference or create it itself.\n\nNot a -1 for this patch.",
+      "revId": "a66b3c2bae297a681a6b78a96cffe42e947c7a5d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
