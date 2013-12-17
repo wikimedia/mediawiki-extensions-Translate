@@ -48,12 +48,16 @@ class SpecialTranslateSandbox extends SpecialPage {
 		}
 
 		if ( $request->getVal( 'integrationtesting' ) === 'populate' ) {
+			// Empty all the users, even if they were created manually
+			// to ensure the number of users is what the tests expect
+			$this->emptySandbox();
+
 			$textUsernamePrefixes = array( 'Orava', 'Pupu' );
 			$testLanguages = array( 'fi', 'uk', 'nl', 'he', 'bn' );
-			$userCount = count( $testLanguages );
+			$testLanguagesCount = count( $testLanguages );
 
 			foreach ( $textUsernamePrefixes as $prefix ) {
-				for ( $i = 0; $i < $userCount; $i++ ) {
+				for ( $i = 0; $i < $testLanguagesCount; $i++ ) {
 					$name = "$prefix$i";
 
 					// Get rid of users, even if promoted during tests
@@ -81,12 +85,36 @@ class SpecialTranslateSandbox extends SpecialPage {
 					$user->saveSettings();
 
 					for ( $j = 0; $j < $i; $j++ ) {
-						$title = Title::makeTitle( NS_MEDIAWIKI, wfRandomString( 24 ) . '/' . $testLanguages[$i] );
+						$title = Title::makeTitle(
+							NS_MEDIAWIKI,
+							wfRandomString( 24 ) . '/' . $testLanguages[$i]
+						);
 						$translation = 'plop';
 						$stashedTranslation = new StashedTranslation( $user, $title, $translation );
 						$this->stash->addTranslation( $stashedTranslation );
 					}
 				}
+			}
+
+			// Another account for testing a translator to multiple languages
+			TranslateSandbox::deleteUser( User::newFromName( 'Kissa', false ), 'force' );
+			$polyglotUser = TranslateSandbox::addUser( 'Kissa', 'kissa@pupun.kolo', 'porkkana' );
+			$polyglotUser->setOption(
+				'translate-sandbox',
+				FormatJson::encode( array(
+					'languages' => $testLanguages,
+					'comment' => ''
+				) )
+			);
+			$polyglotUser->saveSettings();
+			for ( $polyglotLang = 0; $polyglotLang < $testLanguagesCount; $polyglotLang++ ) {
+				$title = Title::makeTitle(
+					NS_MEDIAWIKI,
+					wfRandomString( 24 ) . '/' . $testLanguages[$polyglotLang]
+				);
+				$translation = "plop in $testLanguages[$polyglotLang]";
+				$stashedTranslation = new StashedTranslation( $polyglotUser, $title, $translation );
+				$this->stash->addTranslation( $stashedTranslation );
 			}
 		} elseif ( $request->getVal( 'integrationtesting' ) === 'empty' ) {
 			$this->emptySandbox();

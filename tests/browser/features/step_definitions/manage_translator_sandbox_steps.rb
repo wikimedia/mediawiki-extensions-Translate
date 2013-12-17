@@ -78,7 +78,7 @@ end
 
 Then(/^I should not see user '(.+)' in the first column$/) do |username|
 	on(ManageTranslatorSandboxPage) do |page|
-		Watir::Wait.until { page.visible_requests_element.size < 10 }
+		Watir::Wait.until { page.visible_requests_element.size < 11 }
 		page.request_with_username(username).should_not exist
 	end
 end
@@ -124,7 +124,7 @@ end
 
 Then(/^no users are displayed in the first column$/) do
 	on(ManageTranslatorSandboxPage) do |page|
-		Watir::Wait.until { page.visible_requests_element.size < 10 }
+		Watir::Wait.until { page.visible_requests_element.size < 11 }
 		page.visible_users_element.length.should == 0
 	end
 end
