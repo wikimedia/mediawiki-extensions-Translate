@@ -605,7 +605,11 @@
 						.text( mw.msg( 'translate-edit-askpermission' ) )
 						.addClass( 'tux-editor-ask-permission' )
 						.attr( {
-							href: getUrl( mw.config.get( 'wgTranslatePermissionUrl' ) )
+							href: getUrl(
+								mw.config.get( 'wgTranslateUseSandbox' )
+								? 'Special:TranslationStash'
+								: mw.config.get( 'wgTranslatePermissionUrl' )
+							)
 						} )
 					);
 

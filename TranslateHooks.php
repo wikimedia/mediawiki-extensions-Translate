@@ -486,12 +486,14 @@ class TranslateHooks {
 				|| $alias === 'TranslationStash'
 				|| $alias === 'SearchTranslations' )
 		) {
-			global $wgTranslateDocumentationLanguageCode, $wgTranslatePermissionUrl;
+			global $wgTranslateDocumentationLanguageCode, $wgTranslatePermissionUrl,
+				$wgTranslateUseSandbox;
 			$vars['TranslateRight'] = $out->getUser()->isAllowed( 'translate' );
 			$vars['TranslateMessageReviewRight'] =
 				$out->getUser()->isAllowed( 'translate-messagereview' );
 			$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
 			$vars['wgTranslatePermissionUrl'] = $wgTranslatePermissionUrl;
+			$vars['wgTranslateUseSandbox'] = $wgTranslateUseSandbox;
 		}
 
 		return true;

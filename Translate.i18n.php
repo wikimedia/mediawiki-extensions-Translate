@@ -82,8 +82,8 @@ If you know where or how this message is used, you can help other translators by
 	'translate-edit-tmmatch' => '$1% match',
 	'translate-use-suggestion' => 'Replace current translation with this suggestion.',
 
-	'translate-edit-nopermission' => 'You need permission to translate messages.',
-	'translate-edit-askpermission' => 'Request permission',
+	'translate-edit-nopermission' => 'You need translation rights to translate messages.',
+	'translate-edit-askpermission' => 'Get permission',
 
 	'translate-edit-tag-warning' => '',
 
