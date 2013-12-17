@@ -103,11 +103,23 @@ class PremadeMediawikiExtensionGroups {
 			$conf['BASIC']['extensionurl'] = $info['url'];
 		}
 
-		$conf['FILES']['class'] = 'MediaWikiExtensionFFS';
-		$conf['FILES']['sourcePattern'] = $this->path . '/' . $info['file'];
-		// Kind of hacky, export path will be wrong if %GROUPROOT% not used.
-		$target = str_replace( '%GROUPROOT%/', '', $conf['FILES']['sourcePattern'] );
-		$conf['FILES']['targetPattern'] = $target;
+		// JsonFFS support
+		if ( isset( $info['format'] ) ) {
+			$conf['FILES']['class'] = 'JsonFFS';
+			if ( !isset( $this->path ) ) {
+				$conf['FILES']['sourcePattern'] = 'i18n/%CODE%.json';
+			} else {
+				$conf['FILES']['sourcePattern'] = $this->path . 'i18n/%CODE%.json';
+			}
+			$target = str_replace( '%GROUPROOT%/', '', $conf['FILES']['sourcePattern'] );
+			$conf['FILES']['targetPattern'] = $target;
+		} else {
+			$conf['FILES']['class'] = 'MediaWikiExtensionFFS';
+			$conf['FILES']['sourcePattern'] = $this->path . '/' . $info['file'];
+			// Kind of hacky, export path will be wrong if %GROUPROOT% not used.
+			$target = str_replace( '%GROUPROOT%/', '', $conf['FILES']['sourcePattern'] );
+			$conf['FILES']['targetPattern'] = $target;
+		}
 
 		// @todo Find a better way
 		if ( isset( $info['aliasfile'] ) ) {
