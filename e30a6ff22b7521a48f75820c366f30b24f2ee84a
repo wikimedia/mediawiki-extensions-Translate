@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "0ee75395_cbe976e2",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-12-17T09:31:36Z",
+      "side": 1,
+      "message": "I dont like that function for one line.  it is more readable to write that split by / inline\nI would even argue that the api ApiTranslationStash should return language as an explicit field, so that this split to find language can be avoided at client side",
+      "revId": "e30a6ff22b7521a48f75820c366f30b24f2ee84a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ee75395_8bf92ec3",
         "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
         "patchSetId": 4
