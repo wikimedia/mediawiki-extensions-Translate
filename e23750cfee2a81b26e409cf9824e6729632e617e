@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_18bb36df",
+        "filename": "resources/js/ext.translate.special.translatesandbox.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-12-17T04:41:56Z",
+      "side": 1,
+      "message": "Instead of moving langFromTitle to another method, I would move the anonymous function here to a method  like:\nfunction sortTranslationByLanguage ( translationA, translationB) {\n    return translationA.title.split( \u0027/\u0027 ).pop() \u003e  translationB.title.split( \u0027/\u0027 ).pop();\n}\n\nand then  at line 180,\ntranslations.translationstash.translations.sort(sortTranslationByLanguage);\n\nlangFromTitle has a wrong naming because function name are normally a verb by convention.",
+      "revId": "e23750cfee2a81b26e409cf9824e6729632e617e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
