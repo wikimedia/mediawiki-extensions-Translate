@@ -150,76 +150,80 @@
 
 		// @todo: move higher in the tree
 		storage = new mw.translate.TranslationStashStorage();
-		storage.getUserTranslations( request.username ).done( function ( translations ) {
-			var $target = $( '.translations' );
+		storage.getUserTranslations( request.username ).done( showTranslations );
+	}
 
-			$target.empty();
+	function showTranslations( translations ) {
+		var $target = $( '.translations' );
 
-			// Display a message if the user didn't make any translations
-			if ( !translations.translationstash.translations.length ) {
-				$target.append(
-					$( '<div>' )
-						.addClass( 'tsb-details-no-translations' )
-						.text( mw.msg( 'tsb-didnt-make-any-translations' ) )
-				);
+		$target.empty();
 
-				return;
-			}
-
+		// Display a message if the user didn't make any translations
+		if ( !translations.translationstash.translations.length ) {
 			$target.append(
 				$( '<div>' )
-					.addClass( 'row title' )
-					.append(
-						$( '<div>' )
-							.text( mw.msg( 'tsb-translations-source' ) )
-							.addClass( 'four columns' ),
-						$( '<div>' )
-							.text( mw.msg( 'tsb-translations-user' ) )
-							.addClass( 'four columns' ),
-						$( '<div>' )
-							.text( mw.msg( 'tsb-translations-current' ) )
-							.addClass( 'four columns' )
-					)
-				);
+					.addClass( 'tsb-details-no-translations' )
+					.text( mw.msg( 'tsb-didnt-make-any-translations' ) )
+			);
 
-			translations.translationstash.translations.sort( sortTranslationsByLanguage );
+			return;
+		}
 
-			$.each( translations.translationstash.translations, function( index, translation ) {
-				var translationLang = translation.title.split( '/' ).pop();
-
-				$target.append(
+		$target.append(
+			$( '<div>' )
+				.addClass( 'row title' )
+				.append(
 					$( '<div>' )
-						.addClass( 'row' )
-						.append(
-							$( '<div>' )
-								.addClass( 'four columns source' )
-								.text( translation.definition ),
-							$( '<div>' )
-								.addClass( 'four columns translation' )
-								.append(
-									$( '<div>' ).text( translation.translation ),
-									$( '<div>' )
-										.addClass( 'info autonym' )
-										.prop( {
-											dir: $.uls.data.getDir( translationLang ),
-											lang: translationLang
-										} )
-										.text(
-											$.uls.data.getAutonym( translationLang )
-										)
-								),
-							$( '<div>' )
-								.addClass( 'four columns comparison' )
-								.append(
-									$( '<div>' ).text( translation.comparison || '' ),
-									$( '<div>' )
-										.addClass( 'info' )
-										.text( translation.title )
-								)
-						)
-				);
-			} );
+						.text( mw.msg( 'tsb-translations-source' ) )
+						.addClass( 'four columns' ),
+					$( '<div>' )
+						.text( mw.msg( 'tsb-translations-user' ) )
+						.addClass( 'four columns' ),
+					$( '<div>' )
+						.text( mw.msg( 'tsb-translations-current' ) )
+						.addClass( 'four columns' )
+				)
+			);
+		translations.translationstash.translations.sort( sortTranslationsByLanguage );
+		$.each( translations.translationstash.translations, function( index, translation ) {
+			showTranslation( translation );
 		} );
+	}
+
+	function showTranslation( translation ) {
+		var $target = $( '.translations' ),
+			translationLang = translation.title.split( '/' ).pop();
+
+		$target.append( $( '<div>' )
+			.addClass( 'row' )
+			.append(
+				$( '<div>' )
+					.addClass( 'four columns source' )
+					.text( translation.definition ),
+				$( '<div>' )
+					.addClass( 'four columns translation' )
+					.append(
+						$( '<div>' ).text( translation.translation ),
+						$( '<div>' )
+							.addClass( 'info autonym' )
+							.prop( {
+								dir: $.uls.data.getDir( translationLang ),
+								lang: translationLang
+							} )
+							.text(
+								$.uls.data.getAutonym( translationLang )
+							)
+					),
+				$( '<div>' )
+					.addClass( 'four columns comparison' )
+					.append(
+						$( '<div>' ).text( translation.comparison || '' ),
+						$( '<div>' )
+							.addClass( 'info' )
+							.text( translation.title )
+					)
+			)
+		);
 	}
 
 	/**
