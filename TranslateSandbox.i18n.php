@@ -266,7 +266,7 @@ $messages['bg'] = array(
 $messages['bn'] = array(
 	'translatesandbox' => 'অনুবাদক খেলাঘর পরিচালনা',
 	'tsb-filter-pending' => 'অপেক্ষমান অনুরোধ',
-	'tsb-reminder-title-generic' => 'একজন যাচাইকৃত অনুবাদক হতে আপনার পরিচিতি সমাপ্ত করুন',
+	'tsb-reminder-title-generic' => 'একজন যাচাইকৃত অনুবাদক হতে আপনার পরিচিতি সমাপ্ত করুন', # Fuzzy
 	'tsb-reminder-content-generic' => 'প্রিয় $1,
 
 আপনি সম্প্রতি {{SITENAME}}-এ সাইন আপ করেছেন। বিনামূল্যে অনুবাদ এবং অতিরিক্ত অনুবাদ সাহায্যকারী খুলতে আপনি মাত্র কয়েক ধাপ দূরে।
@@ -421,7 +421,7 @@ sobuźěłaśerje {{GRAMMAR:genitiw|{{SITENAME}}}}',
 $messages['es'] = array(
 	'translatesandbox' => 'Gestionar la zona de pruebas del traductor',
 	'tsb-filter-pending' => 'Solicitudes pendientes',
-	'tsb-reminder-title-generic' => 'Completa tu introducción para volverte un traductor verificado',
+	'tsb-reminder-title-generic' => 'Completa tu introducción para volverte un traductor verificado', # Fuzzy
 );
 
 /** Finnish (suomi)
@@ -524,15 +524,34 @@ Logo diso, poderá traducir sen límites.',
 $messages['he'] = array(
 	'translatesandbox' => 'ניהול ארגז חול של מתרגמים',
 	'tsb-filter-pending' => 'בקשות ממתינות',
-	'tsb-reminder-title-generic' => 'נא להשלים את ההיכרות שלך כדי לקבל אישור מלא לתרגם', # Fuzzy
+	'tsb-reminder-title-generic' => 'נא להשלים את ההיכרות שלך כדי לקבל אישור לתרגם',
 	'tsb-reminder-content-generic' => 'שלום $1,
 
-תודה שנרשמת לאתר {{SITENAME}}. עם השלמת תרגומי הבדיקה שלך
-המנהלים ייתנו לך גישה מלאה
-לתרגום.
+תודה שנרשמת לאתר {{SITENAME}}.
 
-נשאר רק לבוא אל $2 ולעשות עוד כמה
-תרגומים.', # Fuzzy
+אם {{GENDER:$1|תסיים|תסיימי}} לעשות את תרגומי הבדיקה, המנהלים ייתנו לך גישה מלאה לתרגם קצת אחרי־כן.
+
+נשאר רק לבוא לעשות עוד כמה תרגומים כאן:
+$2
+
+$3
+צוות {{SITENAME}}',
+	'tsb-reminder-sending' => 'שליחת התזכורת...',
+	'tsb-reminder-sent' => '{{PLURAL:$1|נשלחה תזכורת אחת|נשלחו $1 תזכורות, האחרונה $2}}',
+	'tsb-reminder-sent-new' => 'נשלחה תזכורת',
+	'tsb-reminder-failed' => 'שליחת התזכורת נכשלה',
+	'tsb-email-promoted-subject' => 'קיבלת הרשאה לתרגם באתר {{SITENAME}}',
+	'tsb-email-promoted-body' => 'שלום $1,
+
+ברכות! בדקתי את תרגומי הבדיקה שעשית באתר {{SITENAME}} ונתתי לך הרשאות מלאות לתרגם.
+
+{{GENDER:$1|בוא|בואי}} אל {{SITENAME}} כדי להמשיך לתרגם, עכשיו וכל יום:
+$2
+
+{{GENDER:$1|ברוך הבא|ברוכה הבאה}} ותודה על {{GENDER:$1|תרומותיך|תרומותייך}}!
+
+$3,
+צוות {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|בקשה אחת|$1 בקשות}}',
 	'tsb-all-languages-button-label' => 'כל השפות',
 	'tsb-search-requests' => 'חיפוש בקשות',
@@ -561,7 +580,7 @@ $messages['he'] = array(
 	'tsb-promoted-from-sandbox' => 'המשתמש קודם לתפקיד מתרגם',
 	'log-name-translatorsandbox' => 'ארגז חול של תרגומים',
 	'log-description-translatorsandbox' => 'יומן פעולות על משתמשים בארגז חול של תרגומים',
-	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|קידם|קידמה}} את $3 לתפקיד {{GENDER:$3|מתרגם|מתרגמת}}', # Fuzzy
+	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|קידם|קידמה}} את $3 לתפקיד {{GENDER:$4|מתרגם|מתרגמת}}',
 	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|דחה|דחתה}} את הבקשה של $3 לקבל הרשאת מתרגם',
 );
 
@@ -689,6 +708,8 @@ Il nostro team verificherà ed aggiornerà presto la tua utenza.
 Successivamente sarai in grado di tradurre senza limiti.',
 	'tsb-no-requests-from-new-users' => 'Nessuna richiesta da nuovi utenti',
 	'tsb-promoted-from-sandbox' => "L'utente è stato promosso a traduttore",
+	'log-name-translatorsandbox' => 'Sandbox di traduzione',
+	'log-description-translatorsandbox' => 'Un registro delle azioni sugli utenti della sandbox di traduzione',
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|ha promosso}} $3 a {{GENDER:$4|traduttore|traduttrice|traduttore/trice}}',
 	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|ha rifiutato}} la richiesta di $3 di diventare un traduttore',
 );
@@ -744,14 +765,14 @@ $messages['ja'] = array(
 $messages['ko'] = array(
 	'translatesandbox' => '번역자 연습장 관리',
 	'tsb-filter-pending' => '보류 중인 요청',
-	'tsb-reminder-title-generic' => '검증된 번역자가 되려면 소개를 완료하세요',
+	'tsb-reminder-title-generic' => '검증된 번역자가 되려면 소개를 완료하세요', # Fuzzy
 	'tsb-reminder-content-generic' => '$1님 안녕하세요,
 
 {{SITENAME}}에 등록해주셔서 감사합니다. 테스트 번역을
 완료하면, 관리자는 곧 전체 번역 접근 권한을 부여할 수
 있습니다.
 
-$2에 와서 조금 더 번역을 해주세요.',
+$2에 와서 조금 더 번역을 해주세요.', # Fuzzy
 	'tsb-request-count' => '{{PLURAL:$1|요청 한 개|요청 $1개}}',
 	'tsb-all-languages-button-label' => '모든 언어',
 	'tsb-search-requests' => '검색 요청',
@@ -952,12 +973,34 @@ $messages['ne'] = array(
 $messages['nl'] = array(
 	'translatesandbox' => 'Vertalersszandbak beheren',
 	'tsb-filter-pending' => 'Aanvragen in behandeling',
-	'tsb-reminder-title-generic' => 'Voltooi uw introductie om vertaler te worden', # Fuzzy
+	'tsb-reminder-title-generic' => 'Voltooi uw introductie om vertaler te worden',
 	'tsb-reminder-content-generic' => 'Hallo $1,
 
-Bedankt voor het registreren bij {{SITENAME}}. Als u uw testvertalingen afrondt, kunnen de beheerders u snel volledige vertaaltoegang geven.
+Bedankt voor het registreren bij {{SITENAME}}.
 
-Kon alstublieft naar $2 en maak nog wat meer vertalingen.', # Fuzzy
+Als u uw testvertalingen afrondt, kunnen de beheerders u snel volledige vertaaltoegang geven.
+
+Maak alstublieft nog wat meer vertalingen:
+$2
+
+$3,
+Medewerker van {{SITENAME}}',
+	'tsb-reminder-sending' => 'Herinnering verzenden...',
+	'tsb-reminder-sent' => '{{PLURAL:$1|Herinnering $2 verzonden|$1 herinneringen verzonden, de laatste $2}}',
+	'tsb-reminder-sent-new' => 'Herinnering verzonden',
+	'tsb-reminder-failed' => 'Herinnering verzenden mislukt',
+	'tsb-email-promoted-subject' => 'U bent nu vertaler bij {{SITENAME}}',
+	'tsb-email-promoted-body' => 'Hallo {{GENDER:$1|$1}},
+
+Gefeliciteerd! Ik heb de testvertalingen gecontroleerd die u op {{SITENAME}} hebt gemaakt en heb uw permanente vertaalrechten gegeven.
+
+Kom nu (en bij voorkeur iedere dag) naar {{SITENAME}} om door te gaan met vertalen:
+$2
+
+Welkom en dank u wel voor uw bijdragen!
+
+{{GENDER:$3|$3}},
+Medewerker van {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|Eén verzoek|$1 verzoeken}}',
 	'tsb-all-languages-button-label' => 'Alle talen',
 	'tsb-search-requests' => 'Verzoeken zoeken',
@@ -979,10 +1022,8 @@ Kon alstublieft naar $2 en maak nog wat meer vertalingen.', # Fuzzy
 	'translate-translationstash-translations' => '$1 voltooide {{PLURAL:$1|vertaling|vertalingen}}',
 	'translate-translationstash-skip-button-label' => 'Nog één proberen',
 	'tsb-limit-reached-title' => 'Bedankt voor uw vertalingen',
-	'tsb-limit-reached-body' => 'U het de limiet voor het aantal vertalingen voor nieuwe
-vertalers bereikt. Ons team gaat ze snel controleren en
-promoveert uw gebruiker snel, zodat u zonder beperkingen
-kunt gaan vertalen.',
+	'tsb-limit-reached-body' => 'U hebt de limiet voor het aantal vertalingen voor nieuwe vertalers bereikt.
+Ons team gaat ze snel controleren en promoveert uw gebruiker snel, zodat u zonder beperkingen kunt gaan vertalen.',
 	'tsb-no-requests-from-new-users' => 'Geen verzoeken van nieuwe gebruikers',
 	'tsb-promoted-from-sandbox' => 'Gebruiker is gepromoveerd tot vertaler',
 	'log-name-translatorsandbox' => 'Vertalingenzandbak',
@@ -997,12 +1038,12 @@ kunt gaan vertalen.',
 $messages['oc'] = array(
 	'translatesandbox' => 'Gerir lo nauc de sabla de traduccion',
 	'tsb-filter-pending' => 'Requèstas en espèra',
-	'tsb-reminder-title-generic' => 'Completatz vòstra presentacion per venir un traductor verificat',
+	'tsb-reminder-title-generic' => 'Completatz vòstra presentacion per venir un traductor verificat', # Fuzzy
 	'tsb-reminder-content-generic' => 'Bonjorn $1,
 
 Mercé de vos èsser inscrich sus {{SITENAME}}. Se acabatz vòstras traduccions de tèst, los administrators poiràn lèu vos acordar un plen accès a las traduccions.
 
-Venètz sus $2 e fasètz qualques traduccions mai.',
+Venètz sus $2 e fasètz qualques traduccions mai.', # Fuzzy
 );
 
 /** Polish (polski)
@@ -1018,7 +1059,7 @@ $messages['pl'] = array(
 $messages['ro'] = array(
 	'translatesandbox' => 'Administrare cutie cu nisip traducător',
 	'tsb-filter-pending' => 'Cereri în așteptare',
-	'tsb-reminder-title-generic' => 'Finalizați-vă introducerea pentru a deveni un translator verificat',
+	'tsb-reminder-title-generic' => 'Finalizați-vă introducerea pentru a deveni un translator verificat', # Fuzzy
 );
 
 /** tarandíne (tarandíne)
@@ -1027,12 +1068,12 @@ $messages['ro'] = array(
 $messages['roa-tara'] = array(
 	'translatesandbox' => "Gestisce 'a sandbox de traduzione",
 	'tsb-filter-pending' => 'Richieste appese',
-	'tsb-reminder-title-generic' => "Comblete 'a 'ndroduziona toje pe devendà 'nu traduttore verificate",
+	'tsb-reminder-title-generic' => "Comblete 'a 'ndroduziona toje pe devendà 'nu traduttore verificate", # Fuzzy
 	'tsb-reminder-content-generic' => "Cià $1,
 
 Grazie ca tè reggistrate sus a {{SITENAME}}. Ce tu comblete 'u test de traduziune, l'amministrsature ponne darte le privilegge pe l'accesse 'a traduzione comblete.
 
-Pe piacere avìne jndr'à $2 e fà angore quacche otre traduzione.",
+Pe piacere avìne jndr'à $2 e fà angore quacche otre traduzione.", # Fuzzy
 );
 
 /** Russian (русский)
@@ -1116,12 +1157,12 @@ $messages['sr-ec'] = array(
 $messages['sv'] = array(
 	'translatesandbox' => 'Hantera översättarsandlåda',
 	'tsb-filter-pending' => 'Väntande förfrågningar',
-	'tsb-reminder-title-generic' => 'Slutför din introduktion för att bli en verifierad översättare',
+	'tsb-reminder-title-generic' => 'Slutför din introduktion för att bli en verifierad översättare', # Fuzzy
 	'tsb-reminder-content-generic' => 'Hej $1,
 
 Tack för din registrering på {{SITENAME}}. Om du slutför dina testöversättningar kan administratörerna snart ge dig full behörighet till att översätta.
 
-Var god kom till $2 och gör några fler översättningar.',
+Var god kom till $2 och gör några fler översättningar.', # Fuzzy
 	'tsb-request-count' => '{{PLURAL:$1|En begäran|$1 begäran}}',
 	'tsb-all-languages-button-label' => 'Alla språk',
 	'tsb-search-requests' => 'Sökbegäran',
@@ -1150,7 +1191,7 @@ Sedan kommer du kunna översätta utan begränsningar.',
  */
 $messages['te'] = array(
 	'tsb-filter-pending' => 'వేచివున్న అభ్యర్థనలు',
-	'tsb-reminder-title-generic' => 'తనిఖీ అయిన అనువాదకుడిగా మారడానికి మీ పరిచయాన్ని పూర్తిచేయండి',
+	'tsb-reminder-title-generic' => 'తనిఖీ అయిన అనువాదకుడిగా మారడానికి మీ పరిచయాన్ని పూర్తిచేయండి', # Fuzzy
 );
 
 /** Ukrainian (українська)
@@ -1226,12 +1267,12 @@ $2
 $messages['vi'] = array(
 	'translatesandbox' => 'Quản lý chỗ thử biên dịch',
 	'tsb-filter-pending' => 'Yêu cầu đang chờ',
-	'tsb-reminder-title-generic' => 'Hoàn thành lời giới thiệu của bạn để trở thành một biên dịch viên xác minh',
+	'tsb-reminder-title-generic' => 'Hoàn thành lời giới thiệu của bạn để trở thành một biên dịch viên xác minh', # Fuzzy
 	'tsb-reminder-content-generic' => 'Xin chào $1,
 
 Cảm ơn bạn đã tham gia {{SITENAME}}. Sau khi bạn dịch các bản dịch kiểm tra, các bảo quản viên sẽ sớm cấp quyền biên dịch đầy đủ cho bạn.
 
-Xin vui lòng trở lại $2 để dịch tiếp.',
+Xin vui lòng trở lại $2 để dịch tiếp.', # Fuzzy
 	'tsb-request-count' => '{{PLURAL:$1|Một yêu cầu|$1 yêu cầu}}',
 	'tsb-all-languages-button-label' => 'Tất cả các ngôn ngữ',
 	'tsb-search-requests' => 'Yêu cầu tìm kiếm',
@@ -1265,22 +1306,41 @@ Sau đó bạn sẽ có thể biên dịch thoải mái không có giới hạn.
 $messages['zh-hans'] = array(
 	'translatesandbox' => '管理译者沙盒',
 	'tsb-filter-pending' => '待解决请求',
+	'tsb-reminder-title-generic' => '填写你的自我介绍，成为一名译者',
+	'tsb-reminder-content-generic' => '你好 $1，
+
+感谢你注册{{SITENAME}}。
+
+如果您完成你的测试翻译，我们的管理员将尽快授予您完整的翻译访问权。
+
+来这里做些翻译吧：
+$2
+
+$3，
+{{SITENAME}}员工',
+	'tsb-reminder-sending' => '正在发送提醒...',
 	'tsb-reminder-sent-new' => '发送提醒',
 	'tsb-reminder-failed' => '发送提醒失败',
+	'tsb-email-promoted-subject' => '你现在是一名{{SITENAME}}的译者了',
 	'tsb-request-count' => '$1个申请',
 	'tsb-all-languages-button-label' => '所有语言',
+	'tsb-accept-button-label' => '接受',
 	'tsb-reject-button-label' => '拒绝',
 	'tsb-accept-all-button-label' => '接受所有',
 	'tsb-reject-all-button-label' => '拒绝所有',
 	'tsb-reminder-link-text' => '发送电子邮件提醒',
 	'tsb-translations-source' => '来源',
 	'tsb-translations-user' => '用户翻译',
+	'tsb-translations-current' => '现有翻译',
 	'translationstash' => '欢迎',
 	'translate-translationstash-welcome' => '欢迎您{{GENDER:$1|$1}}，您已成为新的译者',
+	'translate-translationstash-initialtranslation' => '你的初始翻译',
 	'translate-translationstash-translations' => '$1完成了翻译',
 	'translate-translationstash-skip-button-label' => '尝试其他',
 	'tsb-limit-reached-title' => '感谢您的翻译',
 	'tsb-no-requests-from-new-users' => '没有新用户请求',
+	'tsb-promoted-from-sandbox' => '用户已晋升为译者',
+	'log-name-translatorsandbox' => '翻译沙盒',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
@@ -1289,10 +1349,10 @@ $messages['zh-hans'] = array(
 $messages['zh-hant'] = array(
 	'translatesandbox' => '管理翻譯沙盒',
 	'tsb-filter-pending' => '未解決的請求',
-	'tsb-reminder-title-generic' => '完成介紹後成為核實的翻譯者',
+	'tsb-reminder-title-generic' => '完成介紹後成為核實的翻譯者', # Fuzzy
 	'tsb-reminder-content-generic' => '$1：
 
 感謝您註冊 {{SITENAME}}。完成翻譯測試後，管理員會授予您完整翻譯權限。
 
-請來 $2 做更多的翻譯。',
+請來 $2 做更多的翻譯。', # Fuzzy
 );
