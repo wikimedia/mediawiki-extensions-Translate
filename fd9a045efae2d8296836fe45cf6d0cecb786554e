@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_44aaf369",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-17T18:11:57Z",
+      "side": 1,
+      "message": "path is not necessarily fixed, but it should indeed be i18n/ if no path has been specified.",
+      "revId": "fd9a045efae2d8296836fe45cf6d0cecb786554e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
