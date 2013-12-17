@@ -105,9 +105,6 @@ class PremadeMediawikiExtensionGroups {
 
 		$conf['FILES']['class'] = 'MediaWikiExtensionFFS';
 		$conf['FILES']['sourcePattern'] = $this->path . '/' . $info['file'];
-		// Kind of hacky, export path will be wrong if %GROUPROOT% not used.
-		$target = str_replace( '%GROUPROOT%/', '', $conf['FILES']['sourcePattern'] );
-		$conf['FILES']['targetPattern'] = $target;
 
 		// @todo Find a better way
 		if ( isset( $info['aliasfile'] ) ) {
