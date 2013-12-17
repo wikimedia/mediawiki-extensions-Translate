@@ -59,14 +59,12 @@ class FileBasedMessageGroup extends MessageGroupBase {
 	public function getSourceFilePath( $code ) {
 		if ( $this->isSourceLanguage( $code ) ) {
 			$pattern = $this->getFromConf( 'FILES', 'definitionFile' );
-
 			if ( $pattern !== null ) {
 				return $this->replaceVariables( $pattern, $code );
 			}
 		}
 
 		$pattern = $this->getFromConf( 'FILES', 'sourcePattern' );
-
 		if ( $pattern === null ) {
 			throw new MWException( 'No source file pattern defined.' );
 		}
@@ -75,12 +73,30 @@ class FileBasedMessageGroup extends MessageGroupBase {
 	}
 
 	public function getTargetFilename( $code ) {
+		// Check if targetPattern explicitly defined
 		$pattern = $this->getFromConf( 'FILES', 'targetPattern' );
-
-		if ( $pattern === null ) {
-			throw new MWException( 'No target file pattern defined.' );
+		if ( $pattern !== null ) {
+			return $this->replaceVariables( $pattern, $code );
 		}
 
+		// Check if definitionFile is explicitly defined
+		if ( $this->isSourceLanguage( $code ) ) {
+			$pattern = $this->getFromConf( 'FILES', 'definitionFile' );
+		}
+
+		// Fallback to sourcePattern which must be defined
+		if ( $patern === null ) {
+			$pattern = $this->getFromConf( 'FILES', 'sourcePattern' );
+		}
+
+		if ( $pattern === null ) {
+			throw new MWException( 'No source file pattern defined.' );
+		}
+
+		// For exports, the scripts take output directory. We want to
+		// return a path where the prefix is current directory instead
+		// of full path of the source location.
+		$pattern = str_replace( '%GROUPROOT%', '.', $pattern );
 		return $this->replaceVariables( $pattern, $code );
 	}
 

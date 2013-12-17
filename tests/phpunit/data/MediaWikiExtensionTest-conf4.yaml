@@ -9,7 +9,6 @@ BASIC:
 FILES:
   class: MediaWikiExtensionFFS
   sourcePattern: %GROUPROOT%/mediawiki-extensions/extensions/foo
-  targetPattern: mediawiki-extensions/extensions/foo
 
 CHECKER:
   class: MediaWikiMessageChecker

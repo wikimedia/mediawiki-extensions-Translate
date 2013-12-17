@@ -8,7 +8,6 @@ BASIC:
 FILES:
   class: MediaWikiExtensionFFS
   sourcePattern: %GROUPROOT%/mediawiki-extensions/extensions/WikimediaMessages/WikimediaMessages.i18n.php
-  targetPattern: mediawiki-extensions/extensions/WikimediaMessages/WikimediaMessages.i18n.php
   aliasFile: FooBar.alias.php
   magicFile: FooBar.magic.php
 

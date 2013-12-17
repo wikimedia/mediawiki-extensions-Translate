@@ -110,8 +110,6 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		$conf['FILES']['sourcePattern'] = $this->path . '/' . $info['file'];
-		$target = str_replace( '%GROUPROOT%/', '', $conf['FILES']['sourcePattern'] );
-		$conf['FILES']['targetPattern'] = $target;
 
 		// @todo Find a better way
 		if ( isset( $info['aliasfile'] ) ) {
