@@ -163,6 +163,8 @@
 		getMessages( messagegroup, $messageTable.data( 'targetlangcode' ) )
 			.done( function ( result ) {
 				var untranslated, messages = result.query.messagecollection;
+
+				$messageTable.empty();
 				$.each( messages, function ( index, message ) {
 					message.properties = {};
 					message.properties.status = 'untranslated';
@@ -173,7 +175,6 @@
 						message.properties.status = 'translated';
 					}
 
-					$messageTable.empty();
 					addMessage( message );
 				} );
 
