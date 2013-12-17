@@ -103,9 +103,14 @@ class PremadeMediawikiExtensionGroups {
 			$conf['BASIC']['extensionurl'] = $info['url'];
 		}
 
-		$conf['FILES']['class'] = 'MediaWikiExtensionFFS';
+		// JsonFFS support
+		if ( isset( $info['format'] ) ) {
+			$conf['FILES']['class'] = 'JsonFFS';
+		} else {
+			$conf['FILES']['class'] = 'MediaWikiExtensionFFS';
+		}
+
 		$conf['FILES']['sourcePattern'] = $this->path . '/' . $info['file'];
-		// Kind of hacky, export path will be wrong if %GROUPROOT% not used.
 		$target = str_replace( '%GROUPROOT%/', '', $conf['FILES']['sourcePattern'] );
 		$conf['FILES']['targetPattern'] = $target;
 
@@ -183,6 +188,7 @@ class PremadeMediawikiExtensionGroups {
 					list( $key, $value ) = array_map( 'trim', explode( '=', $line, 2 ) );
 					switch ( $key ) {
 						case 'file':
+						case 'format':
 						case 'var':
 						case 'id':
 						case 'descmsg':
@@ -251,10 +257,12 @@ class PremadeMediawikiExtensionGroups {
 				$id = $this->idPrefix . preg_replace( '/\s+/', '', strtolower( $name ) );
 			}
 
-			if ( isset( $g['file'] ) ) {
-				$file = $g['file'];
-			} else {
-				$file = preg_replace( '/\s+/', '', "$name/$name.i18n.php" );
+			if ( !isset( $g['file'] ) ) {
+				if ( isset( $info['format'] ) && $info['format'] === 'json' ) {
+					$file = preg_replace( '/\s+/', '', "$name/i18n/%CODE%.json" );
+				} else {
+					$file = preg_replace( '/\s+/', '', "$name/$name.i18n.php" );
+				}
 			}
 
 			if ( isset( $g['descmsg'] ) ) {
