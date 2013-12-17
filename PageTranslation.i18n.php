@@ -4526,6 +4526,7 @@ $messages['ha'] = array(
 /** Hebrew (עברית)
  * @author Amire80
  * @author Deror avi
+ * @author Guycn2
  * @author Inkbug
  * @author Rotemliss
  * @author YaronSh
@@ -4659,12 +4660,12 @@ $messages['he'] = array(
 	'pt-movepage-block-section-invalid' => 'כותרת הדף המיועדת עבור "[[:$1]]" ליחידת התרגום תהיה בלתי־תקינה (אולי ארוכה מדי?).',
 	'pt-movepage-block-subpage-exists' => 'דף המשנה המיועד [[:$2]] קיים.',
 	'pt-movepage-block-subpage-invalid' => 'כותרת דף המשנה המיועד עבור [[:$1]] אינה תקינה (אולי ארוכה מדי).',
-	'pt-movepage-list-pages' => 'רשימת הדפים להעביר',
+	'pt-movepage-list-pages' => 'רשימת הדפים להעברה',
 	'pt-movepage-list-translation' => '{{PLURAL:$1|דף|דפי}} תרגום',
 	'pt-movepage-list-section' => '{{PLURAL:$1|דף|דפי}} יחידת תרגום',
 	'pt-movepage-list-other' => '{{PLURAL:$1|דף משנה אחר|דפי משנה אחרים}}',
 	'pt-movepage-list-count' => 'בסך הכול יש {{PLURAL:$1|דף אחד|$1 דפים}} להעברה.',
-	'pt-movepage-legend' => 'העברת דף שאפשר לתרגום',
+	'pt-movepage-legend' => 'העברת דף שניתן לתרגום',
 	'pt-movepage-current' => 'השם הנוכחי:',
 	'pt-movepage-new' => 'השם החדש:',
 	'pt-movepage-reason' => 'סיבה:',
@@ -4674,8 +4675,8 @@ $messages['he'] = array(
 	'pt-movepage-action-other' => 'שינוי יעד',
 	'pt-movepage-intro' => 'דף מיוחד זה מאפשר לך להעביר דפים מסומנים לתרגום.
 פעולת ההעברה אינה מידית, מכיוון שצריך להעביר דפים רבים.
-בזמן שהדפים מועברים, לא ניתן לקיים שום קשר אִתם.
-כשלים יירשמו ב[[Special:Log/pagetranslation|יומן תרגום דפים]], ויהיה צריך לתקן אותם באופן ידני.',
+בזמן שהדפים מועברים, לא ניתן לקיים שום קשר איתם.
+פעולות שייכשלו יירשמו ב[[Special:Log/pagetranslation|יומן תרגום הדפים]], ויהיה צורך לתקן אותן באופן ידני.',
 	'pt-movepage-logreason' => 'חלק מהדף הניתן לתרגום $1.',
 	'pt-movepage-started' => 'עכשיו דף הבסיס הועבר.
 נא לבדוק את השגיאות ואת הודעת ההשלמה ב[[Special:Log/pagetranslation|יומן תרגום הדפים]].',
@@ -4702,8 +4703,8 @@ $messages['he'] = array(
 	'pt-deletepage-lang-logreason' => 'חלק מדך התרגום $1.',
 	'pt-deletepage-started' => 'נא לבדוק את השגיאות ואת הודעת ההשלמה ב[[Special:Log/pagetranslation|יומן תרגום הדפים]]',
 	'pt-deletepage-intro' => 'הדך המיוחד הזה מאפשר לך למחוק בשלמותם דפים ניתנים לתרגום או תרגומים שלהם לשפה כלשהי.
-פעולת המחיקה לא תהיה מידית, כי יש למחוק את כל הדפים התלויים בהם.
-הכישלונות יירשמו ב[[Special:Log/pagetranslation|יומן תרגום דפים]] ויהיה צריך לתקן אותם ידנית.',
+פעולת המחיקה לא תהיה מיידית, כי יש למחוק את כל הדפים התלויים בהם.
+פעולות שייכשלו יירשמו ב[[Special:Log/pagetranslation|יומן תרגום הדפים]] ויהיה צורך לתקן אותן ידנית.',
 );
 
 /** Hindi (हिन्दी)
@@ -11062,12 +11063,12 @@ $messages['zh-hans'] = array(
 	'tpt-translation-restricted' => '此页面到这种语言的翻译，已被翻译管理员禁止。
 
 原因：$1',
-	'tpt-discouraged-language-force' => '翻译管理员限制了翻译此页时所能采用的语言。这种语言不在这些语言之列。
+	'tpt-discouraged-language-force' => '<strong>此页面不能翻译到$2。</strong>
 
-原因：$1', # Fuzzy
-	'tpt-discouraged-language' => '这种语言不在此页的翻译管理员所设置的优先语言之列。
+一名翻译管理员已决定，此页面仅可以翻译为$3。',
+	'tpt-discouraged-language' => '<strong>翻译此页面为$2并非首要任务。</strong>
 
-原因：$1', # Fuzzy
+一名翻译管理员已在$3决定翻译工作的重点。',
 	'tpt-discouraged-language-reason' => '原因：$1',
 	'tpt-priority-languages' => '翻译管理员已将该组需优先翻译的语言设为$1。',
 	'tpt-render-summary' => '更新以匹配源页面内容的新版本',

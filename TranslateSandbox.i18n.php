@@ -1157,12 +1157,18 @@ $messages['sr-ec'] = array(
 $messages['sv'] = array(
 	'translatesandbox' => 'Hantera översättarsandlåda',
 	'tsb-filter-pending' => 'Väntande förfrågningar',
-	'tsb-reminder-title-generic' => 'Slutför din introduktion för att bli en verifierad översättare', # Fuzzy
+	'tsb-reminder-title-generic' => 'Slutför din introduktion för att bli en översättare',
 	'tsb-reminder-content-generic' => 'Hej $1,
 
-Tack för din registrering på {{SITENAME}}. Om du slutför dina testöversättningar kan administratörerna snart ge dig full behörighet till att översätta.
+Tack för din registrering på {{SITENAME}}.
 
-Var god kom till $2 och gör några fler översättningar.', # Fuzzy
+Om du slutför dina testöversättningar kan administratörerna snart ge dig full behörighet till att översätta.
+
+Var god kom och gör några fler översättningar här:
+$2
+
+$3
+Personalen på {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|En begäran|$1 begäran}}',
 	'tsb-all-languages-button-label' => 'Alla språk',
 	'tsb-search-requests' => 'Sökbegäran',

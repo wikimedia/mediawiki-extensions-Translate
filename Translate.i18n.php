@@ -651,6 +651,10 @@ Parameters:
 * $1 - number between 1 and 100
 {{Identical|Match}}',
 	'translate-use-suggestion' => 'Used as a tooltip for the "down arrow" to insert translation suggestions in the translation edit page.',
+	'translate-edit-nopermission' => 'Followed by link text {{msg-mw|Translate-edit-askpermission}}.',
+	'translate-edit-askpermission' => 'Used as link text.
+
+Preceded by {{msg-mw|Translate-edit-nopermission}}.',
 	'translate-edit-tag-warning' => '{{notranslate}}
 Shown when editing translatable pages. Default is empty.',
 	'translate-magic-pagename' => '"Extended" can as well be understood as "Extra" or "Special" or "Advanced". It refers to the translations of pieces of text such as names of namespaces or special pages, which are not part of normal message or wiki page translation.
@@ -2759,8 +2763,8 @@ como nun usar espacios o pa treslliterar nomes propios. $1',
 	'translate-edit-tmmatch-source' => 'Testu orixinal de la traducción: $1',
 	'translate-edit-tmmatch' => '$1% de coincidencia',
 	'translate-use-suggestion' => 'Sustituir la traducción actual por esta suxerencia.',
-	'translate-edit-nopermission' => 'Necesita permisu pa traducir mensaxes.',
-	'translate-edit-askpermission' => 'Solicitar permisu',
+	'translate-edit-nopermission' => 'Necesita permisu pa traducir mensaxes.', # Fuzzy
+	'translate-edit-askpermission' => 'Solicitar permisu', # Fuzzy
 	'translate-magic-pagename' => 'Traducción estendida de MediaWiki',
 	'translate-magic-help' => "Pues traducir los nomatos de les páxines especiales, les pallabres máxiques y los nomes de los espacios de nome.
 
@@ -7041,8 +7045,8 @@ Os ydych yn gwybod ymhle neu ym mha fodd y defnyddir y neges hon, gallwch hwylus
 	'translate-edit-tmmatch-source' => "Y testun gwreiddiol i'w gyfieithu: $1",
 	'translate-edit-tmmatch' => 'yn cyd-fynd $1%',
 	'translate-use-suggestion' => "Bydd y cynnig hwn yn disodli'r cyfieithiad cyfredol.",
-	'translate-edit-nopermission' => 'Mae angen caniatâd arnoch i gyfieithu negeseuon.',
-	'translate-edit-askpermission' => 'Gofyn caniatâd',
+	'translate-edit-nopermission' => 'Mae angen caniatâd arnoch i gyfieithu negeseuon.', # Fuzzy
+	'translate-edit-askpermission' => 'Gofyn caniatâd', # Fuzzy
 	'translate-magic-pagename' => 'Cyfieithu MediaWiki Estynedig',
 	'translate-magic-help' => "Mae modd cyfieithu arallenwau ar dudalennau arbennig, geiriau hud ac enwau parthau.
 
@@ -7772,8 +7776,8 @@ Sofern du weißt, wo und in welchem Zusammenhang sie genutzt wird, kannst du and
 	'translate-edit-tmmatch-source' => 'Übersetzungsquelltext: $1',
 	'translate-edit-tmmatch' => '$1 % Übereinstimmung',
 	'translate-use-suggestion' => 'Ersetze die aktuelle Übersetzung mit diesem Vorschlag.',
-	'translate-edit-nopermission' => 'Du benötigst die Berechtigung, Nachrichten übersetzen zu können.',
-	'translate-edit-askpermission' => 'Berechtigung beantragen',
+	'translate-edit-nopermission' => 'Du benötigst Übersetzerrechte, um Nachrichten übersetzen zu können.',
+	'translate-edit-askpermission' => 'Berechtigung erhalten',
 	'translate-magic-pagename' => 'Übersetzen (extra)',
 	'translate-magic-help' => 'Du kannst hier Aliase für Spezialseiten, magische Wörter und Namensraumnamen übersetzen.
 
@@ -8404,8 +8408,8 @@ kaž na pśikład njewužywanje proznych znamuškow abo transliteraciju swójski
 	'translate-edit-tmmatch-source' => 'Žrědłowy tekst pśełožka: $1',
 	'translate-edit-tmmatch' => '$1 % makanja',
 	'translate-use-suggestion' => 'Aktualny pśełožk pśez toś to naraźenje wuměniś',
-	'translate-edit-nopermission' => 'Trjebaš pšawo, aby mógał powěźeńki pśełožowaś.',
-	'translate-edit-askpermission' => 'Pšawo pominaś',
+	'translate-edit-nopermission' => 'Trjebaš pšawo, aby mógał powěźeńki pśełožowaś.', # Fuzzy
+	'translate-edit-askpermission' => 'Pšawo pominaś', # Fuzzy
 	'translate-magic-pagename' => 'Rozšyrjony pśełožk MediaWiki',
 	'translate-magic-help' => 'Móžoš aliasy specialnych bokow, magiske słowa a mjenja mjenjowych rumow pśełožyś.
 
@@ -9310,8 +9314,8 @@ kiel ne uzi spacojn aŭ transliterado de personaj nomoj. $1',
 	'translate-edit-tmmatch-source' => 'Tradukfontateksto: $1',
 	'translate-edit-tmmatch' => '$1% kongrueco',
 	'translate-use-suggestion' => 'Anstataŭigi nunan tradukon per ĉi tiu sugesto.',
-	'translate-edit-nopermission' => 'Vi devas havi permeson por traduki mesaĝojn.',
-	'translate-edit-askpermission' => 'Peti permeson',
+	'translate-edit-nopermission' => 'Vi devas havi permeson por traduki mesaĝojn.', # Fuzzy
+	'translate-edit-askpermission' => 'Peti permeson', # Fuzzy
 	'translate-magic-pagename' => 'Etendita traduko de MediaWiki',
 	'translate-magic-help' => 'Vi povas traduki specialajn kromnomojn de paĝoj, magiajn vortojn, kaj nomojn de nomspacoj.
 
@@ -9436,7 +9440,7 @@ La defaŭlta lingvolisto dependas de via lingvo.',
 	'translate-total' => 'Mesaĝoj',
 	'translate-untranslated' => 'Netradukita',
 	'translate-percentage-complete' => 'Kompletigo',
-	'translate-percentage-fuzzy' => 'Malfreŝdata',
+	'translate-percentage-fuzzy' => 'Malfreŝaj',
 	'translate-languagestats-overall' => 'Ĉiuj mesaĝgrupoj kune',
 	'translate-ls-submit' => 'Montri statistikojn',
 	'translate-ls-column-group' => 'Mesaĝgrupo',
@@ -9580,11 +9584,11 @@ Plej utila por provlegaj taskoj.', # Fuzzy
 	'tux-languageselector' => 'Traduki al',
 	'tux-tab-all' => 'Ĉiuj',
 	'tux-tab-untranslated' => 'Netradukitaj',
-	'tux-tab-outdated' => 'Eksdataj',
+	'tux-tab-outdated' => 'Malfreŝaj',
 	'tux-tab-translated' => 'Tradukitaj',
 	'tux-edit' => 'Redakti',
 	'tux-status-optional' => 'Nedeviga',
-	'tux-status-fuzzy' => 'Eksdata',
+	'tux-status-fuzzy' => 'Malfreŝaj',
 	'tux-status-proofread' => 'Provlegita', # Fuzzy
 	'tux-status-translated' => 'Tradukita',
 	'tux-status-unsaved' => 'Nekonservita',
@@ -10090,8 +10094,8 @@ Kui tead, kus seda sõnumit kasutatakse, saad dokumentatsiooni lisamisega teisi 
 	'translate-edit-tmmatch-source' => 'Tõlke alliktekst: $1',
 	'translate-edit-tmmatch' => 'Vastavus: $1%',
 	'translate-use-suggestion' => 'Asenda praegune tõlge selle pakkumusega.',
-	'translate-edit-nopermission' => 'Sõnumite tõlkimiseks on luba vaja.',
-	'translate-edit-askpermission' => 'Palu luba',
+	'translate-edit-nopermission' => 'Sõnumite tõlkimiseks on luba vaja.', # Fuzzy
+	'translate-edit-askpermission' => 'Palu luba', # Fuzzy
 	'translate-magic-pagename' => 'Laiendatud MediaWiki tõlkimine',
 	'translate-magic-module' => 'Moodul:',
 	'translate-magic-submit' => 'Hangi',
@@ -10471,7 +10475,7 @@ Hautazko mezuak zure hizkuntzaren berezitasunak direla-eta, espazioak ez daudene
 	'translate-edit-in-other-languages' => 'Mezua beste hizkuntzetan',
 	'translate-edit-warnings' => 'Bukatu gabeko itzulpenei buruzko oharrak',
 	'translate-edit-tmmatch' => '$1% bilaketa',
-	'translate-edit-askpermission' => 'Baimena eskatu',
+	'translate-edit-askpermission' => 'Baimena eskatu', # Fuzzy
 	'translate-magic-pagename' => 'MediaWiki itzulpen zabaldua',
 	'translate-magic-module' => 'Modulu:',
 	'translate-magic-submit' => 'Bilatu',
@@ -10689,8 +10693,8 @@ $messages['fa'] = array(
 	'translate-edit-tmmatch-source' => 'متن منبع ترجمه: $1',
 	'translate-edit-tmmatch' => '$1٪ مطابقت',
 	'translate-use-suggestion' => 'ترجمه فعلی را با این پیشنهاد جایگزین کن.',
-	'translate-edit-nopermission' => 'برای ترجمه پیغام‌ها نیازمند دسترسی هستید.',
-	'translate-edit-askpermission' => 'درخواست دسترسی',
+	'translate-edit-nopermission' => 'برای ترجمه پیغام‌ها نیازمند دسترسی هستید.', # Fuzzy
+	'translate-edit-askpermission' => 'درخواست دسترسی', # Fuzzy
 	'translate-magic-pagename' => 'ترجمهٔ گسترش‌یافتهٔ مدیاویکی',
 	'translate-magic-help' => 'شما می‌توانید نام مستعار صفحه‌های ویژه، واژه‌های جادویی، و نام فضاهای نام را ترجمه کنید.
 
@@ -12996,8 +13000,8 @@ como non empregar espazos ou para a transliteración de nomes propios. $1',
 	'translate-edit-tmmatch-source' => 'Texto fonte da tradución: $1',
 	'translate-edit-tmmatch' => '$1% de coincidencia',
 	'translate-use-suggestion' => 'Substituír a tradución actual por esta suxestión.',
-	'translate-edit-nopermission' => 'Non ten os permisos necesarios para traducir mensaxes.',
-	'translate-edit-askpermission' => 'Solicitar os permisos',
+	'translate-edit-nopermission' => 'Non ten os permisos necesarios para traducir mensaxes.', # Fuzzy
+	'translate-edit-askpermission' => 'Solicitar os permisos', # Fuzzy
 	'translate-magic-pagename' => 'Tradución estendida de MediaWiki',
 	'translate-magic-help' => 'Pode traducir os pseudónimos das páxinas especiais, as palabras máxicas e mais os nomes dos espazos de nomes.
 
@@ -14753,8 +14757,8 @@ kaž na přikład njewužiwanje mjezerow abo transliteraciju swójskich mjenow. 
 	'translate-edit-tmmatch-source' => 'Žórłowy tekst přełožka: $1',
 	'translate-edit-tmmatch' => '$1 % wotpowědowanja',
 	'translate-use-suggestion' => 'Aktualny přełožk přez tutón namjet wuměnić',
-	'translate-edit-nopermission' => 'Trjebaš prawo, zo by móhł zdźělenki přełožować.',
-	'translate-edit-askpermission' => 'Prawo požadać',
+	'translate-edit-nopermission' => 'Trjebaš prawo, zo by móhł zdźělenki přełožować.', # Fuzzy
+	'translate-edit-askpermission' => 'Prawo požadać', # Fuzzy
 	'translate-magic-pagename' => 'Rozšěrjeny přełožk MediaWiki',
 	'translate-magic-help' => "Móžěs aliasy specialnych stronow, magiske słowa a mjena mjenowych rumow přełožić.
 
@@ -17380,7 +17384,7 @@ $messages['ja'] = array(
 	'translate-edit-tmmatch' => '$1%の一致',
 	'translate-use-suggestion' => 'この現在の翻訳を、この翻訳提案に置き換えます。',
 	'translate-edit-nopermission' => 'メッセージを翻訳する権限が必要です。',
-	'translate-edit-askpermission' => '権限を申請',
+	'translate-edit-askpermission' => '権限を取得',
 	'translate-magic-pagename' => '拡張MediaWiki翻訳',
 	'translate-magic-help' => '特別ページへのエイリアス、マジックワード、名前空間名を翻訳できます。
 
@@ -18917,8 +18921,8 @@ $messages['kn'] = array(
 	'translate-edit-tmsugs' => 'ಭಾಷಾಂತರ ನೆನಪು ಹಾಗೂ ಭಾಷಾಂತರ ಯಂತ್ರಗಳ ಸಲಹೆ',
 	'translate-edit-tmmatch' => '$1% ಹೊ೦ದಿಸಿ',
 	'translate-use-suggestion' => 'ಈಗಿನ ಭಾಷಾಂತರವನ್ನು ಈ ಸಲಹೆಯೊಂದಿಗೆ ಬದಲಾಯಿಸಿ',
-	'translate-edit-nopermission' => 'ಭಾಷಾಂತರಿಸಲು ನಿಮಗೆ ಅನುಮತಿ ಬೇಕು',
-	'translate-edit-askpermission' => 'ಅನುಮತಿಗಾಗಿ ಕೋರಿಕೆ',
+	'translate-edit-nopermission' => 'ಭಾಷಾಂತರಿಸಲು ನಿಮಗೆ ಅನುಮತಿ ಬೇಕು', # Fuzzy
+	'translate-edit-askpermission' => 'ಅನುಮತಿಗಾಗಿ ಕೋರಿಕೆ', # Fuzzy
 	'translate-magic-pagename' => 'ವಿಸ್ತರಿಸಲ್ಪಟ್ಟ ಮಿಡಿಯಾವಿಕಿ ಭಾಷಾಂತರ',
 	'translate-magic-module' => 'ಘಟಕ',
 	'translate-magic-submit' => 'ಕರೆತರು',
@@ -19057,8 +19061,8 @@ $messages['ko'] = array(
 	'translate-edit-tmmatch-source' => '번역 원본 텍스트: $1',
 	'translate-edit-tmmatch' => '$1% 일치',
 	'translate-use-suggestion' => '이 제안에 현재 번역을 바꿉니다.',
-	'translate-edit-nopermission' => '메시지를 번역하려면 권한이 필요합니다.',
-	'translate-edit-askpermission' => '권한 요청하기',
+	'translate-edit-nopermission' => '메시지를 번역하려면 권한이 필요합니다.', # Fuzzy
+	'translate-edit-askpermission' => '권한 요청하기', # Fuzzy
 	'translate-magic-pagename' => '확장된 미디어위키 번역',
 	'translate-magic-help' => '여기서 특수 문서 이름, 특수 명령, 이름공간 이름을 번역할 수 있습니다.
 
@@ -22643,8 +22647,8 @@ $messages['mr'] = array(
 	'translate-edit-tmmatch-source' => 'स्रोत मजकूराचे भाषांतर: $1',
 	'translate-edit-tmmatch' => '$1% जुळते',
 	'translate-use-suggestion' => 'सध्याचे भाषांतराएवजी ही सुचवणी टाका.',
-	'translate-edit-nopermission' => 'आपणास संदेश भाषांतराची परवानगी हवी.',
-	'translate-edit-askpermission' => 'परवानगीसाठी विनंती करा',
+	'translate-edit-nopermission' => 'आपणास संदेश भाषांतराची परवानगी हवी.', # Fuzzy
+	'translate-edit-askpermission' => 'परवानगीसाठी विनंती करा', # Fuzzy
 	'translate-magic-pagename' => 'वाढीव मीडियाविकि भाषांतर',
 	'translate-magic-submit' => 'ओढा',
 	'translate-magic-cm-export' => 'निर्यात',
@@ -28874,8 +28878,8 @@ $messages['ru'] = array(
 	'translate-edit-tmmatch-source' => 'Текст исходного сообщения для перевода: $1',
 	'translate-edit-tmmatch' => '$1% соответствие',
 	'translate-use-suggestion' => 'Заменить текущий текст перевода на эту подсказку.',
-	'translate-edit-nopermission' => 'Для перевода сообщений вам требуется получить разрешение.',
-	'translate-edit-askpermission' => 'Запросить разрешение',
+	'translate-edit-nopermission' => 'Для перевода сообщений вам требуется получить права переводчика.',
+	'translate-edit-askpermission' => 'Получить разрешение',
 	'translate-magic-pagename' => 'Углублённый перевод MediaWiki',
 	'translate-magic-help' => 'Вы можете переводить псевдонимы служебных страниц, «волшебные слова» и названия пространств имён.
 
@@ -31900,8 +31904,8 @@ exempelvis att inte använda blanksteg eller transkribera egennamn. $1',
 	'translate-edit-definition' => 'Definition av meddelandet',
 	'translate-edit-translation' => 'Översättning',
 	'translate-edit-contribute' => 'bidra',
-	'translate-edit-no-information' => "''Det här meddelandet har ingen dokumentation.''
-''Om du vet var eller hur detta meddelande används, så kan du hjälpa andra översättare genom att skriva dokumentation för meddelandet.''", # Fuzzy
+	'translate-edit-no-information' => '<em>Det här meddelandet har ingen dokumentation.
+Om du vet var eller hur detta meddelande används, så kan du hjälpa andra översättare genom att skriva dokumentation för meddelandet.<em>',
 	'translate-edit-information' => 'Information om meddelandet ($1)',
 	'translate-edit-in-other-languages' => 'Meddelandet på andra språk',
 	'translate-edit-committed' => 'Nuvarande översättning i mjukvaran',
@@ -31910,8 +31914,8 @@ exempelvis att inte använda blanksteg eller transkribera egennamn. $1',
 	'translate-edit-tmmatch-source' => 'Källtext för översättning: $1',
 	'translate-edit-tmmatch' => '$1% överensstämmelse',
 	'translate-use-suggestion' => 'Ersätt aktuell översättning med detta förslag.',
-	'translate-edit-nopermission' => 'Du behöver behörighet för att översätta meddelanden.',
-	'translate-edit-askpermission' => 'Begär behörighet',
+	'translate-edit-nopermission' => 'Du behöver översättningsbehörighet för att översätta meddelanden.',
+	'translate-edit-askpermission' => 'Få behörighet',
 	'translate-magic-pagename' => 'Utökad MediaWiki-översättning',
 	'translate-magic-help' => 'Du kan översätta alias för specialsidor, magiska ord och namnrymdsnamn.
 
@@ -32096,7 +32100,7 @@ Vänligen kontrollera.',
 	'translate-manage-intro-other' => 'Nedan följer en lista över översättningsändringar på $1 språket.
 Var god granska ändringarna och välj en åtgärd du vill utföra för varje uppdatering.
 Om du väljer att ignorera ändringar är denna handling endast tillfällig.',
-	'translate-manage-import-ok' => 'Importerat ny version av sidan $1', # Fuzzy
+	'translate-manage-import-ok' => 'Importerad: $1',
 	'translate-manage-import-done' => 'Import klar!',
 	'importtranslations' => 'Importera översättningar',
 	'translate-import-from-local' => 'Lokal filuppladdning:',
@@ -34464,8 +34468,8 @@ $messages['uk'] = array(
 	'translate-edit-tmmatch-source' => 'Текст для перекладу: $1',
 	'translate-edit-tmmatch' => '$1% відповідність',
 	'translate-use-suggestion' => 'Замінити поточний переклад цією пропозицією.',
-	'translate-edit-nopermission' => 'Вам потрібні права для перекладу повідомлень.',
-	'translate-edit-askpermission' => 'Подати запит на отримання прав',
+	'translate-edit-nopermission' => 'Вам потрібні права перекладача для перекладу повідомлень.',
+	'translate-edit-askpermission' => 'Отримати дозвіл',
 	'translate-magic-pagename' => 'Поглиблений переклад MediaWiki',
 	'translate-magic-help' => 'Ви можете перекладати псевдоніми спеціальних сторінок, магічні слова та назви простори.
 
@@ -35461,8 +35465,8 @@ thí dụ như không sử dụng khoảng cách hoặc có hệ thống phiên 
 	'translate-edit-tmmatch-source' => 'Văn bản gốc để dịch: $1',
 	'translate-edit-tmmatch' => 'trùng $1%',
 	'translate-use-suggestion' => 'Thay thế bản dịch hiện hành với đề nghị này.',
-	'translate-edit-nopermission' => 'Bạn cần xin phép biên dịch thông điệp.',
-	'translate-edit-askpermission' => 'Xin phép',
+	'translate-edit-nopermission' => 'Bạn cần xin phép biên dịch thông điệp.', # Fuzzy
+	'translate-edit-askpermission' => 'Xin phép', # Fuzzy
 	'translate-magic-pagename' => 'Bản dịch MediaWiki mở rộng',
 	'translate-magic-help' => 'Bạn có thể dịch bí danh của các trang đặc biệt, câu thần chú và tên của không gian tên.
 
@@ -36299,8 +36303,8 @@ $messages['yi'] = array(
 	'translate-edit-tmmatch-source' => 'איבערזעצונג מקור טעקסט: $1',
 	'translate-edit-tmmatch' => '$1% צופאַסונג',
 	'translate-use-suggestion' => 'פֿארבייטן לויפֿיקע איבערזעצונג מיט דעם פֿארשלאג.',
-	'translate-edit-nopermission' => 'איר דארפֿט רשות איבערצוזעצן מעלדונגען.',
-	'translate-edit-askpermission' => 'בעטן רשות',
+	'translate-edit-nopermission' => 'איר דארפֿט רשות איבערצוזעצן מעלדונגען.', # Fuzzy
+	'translate-edit-askpermission' => 'בעטן רשות', # Fuzzy
 	'translate-magic-pagename' => 'פֿאַרברײטערטע מעדיעוויקי איבערזעצונג',
 	'translate-magic-help' => 'איר קענט איבערזעצן אליאסן פאר באזונדערע בלעטער, מאגישע ווערטער און נאמענטייל נעמען.
 
@@ -36747,7 +36751,7 @@ $messages['zh-hans'] = array(
 	'translate-edit-definition' => '信息定义',
 	'translate-edit-translation' => '翻译',
 	'translate-edit-contribute' => '贡献',
-	'translate-edit-no-information' => "''该信息没有说明文件。如果你知道该信息用于何处或如何使用，你可以通过添加该信息的说明文件以帮助其他译者。''", # Fuzzy
+	'translate-edit-no-information' => '<em>该信息没有说明文档。如果你知道该信息用于何处或如何使用，你可以添加该信息的说明文档以帮助其他译者。</em>',
 	'translate-edit-information' => '关于信息的资料（$1）',
 	'translate-edit-in-other-languages' => '其他语言的信息',
 	'translate-edit-committed' => '当前软件中的翻译',
@@ -36756,8 +36760,8 @@ $messages['zh-hans'] = array(
 	'translate-edit-tmmatch-source' => '翻译原文：$1',
 	'translate-edit-tmmatch' => '$1%匹配',
 	'translate-use-suggestion' => '用该建议替代当前的翻译。',
-	'translate-edit-nopermission' => '你需要权限以翻译信息。',
-	'translate-edit-askpermission' => '请求权限',
+	'translate-edit-nopermission' => '你需要有翻译权限才能翻译信息。',
+	'translate-edit-askpermission' => '获取权限',
 	'translate-magic-pagename' => '扩展的MediaWiki翻译',
 	'translate-magic-help' => '您可以翻译特殊页面别名、魔术字和名字空间名称。
 
@@ -37062,7 +37066,7 @@ $messages['zh-hans'] = array(
 	'tux-proofread-translated-by-self' => '你的翻译',
 	'tux-empty-list-all' => '本信息组为空',
 	'tux-empty-list-all-guide' => '请选择其他信息组翻译',
-	'tux-translate-page-no-such-group' => "'''指定的信息组不存在。'''请选择其他信息组。", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>指定的信息组不存在。</strong>请选择其他信息组。',
 	'tux-empty-list-translated' => '没有已翻译信息',
 	'tux-empty-list-translated-guide' => '你可以帮助翻译',
 	'tux-empty-list-translated-action' => '翻译',

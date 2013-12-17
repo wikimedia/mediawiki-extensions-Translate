@@ -4477,9 +4477,9 @@ $messages['zh-hans'] = array(
 	'translate-fs-permissions-title' => '请求翻译者权限',
 	'translate-fs-target-title' => '开始翻译！',
 	'translate-fs-email-title' => '确认您的邮箱地址',
-	'translate-fs-intro' => "欢迎来到 {{SITENAME}}入门向导。
-你会被指导如何成为一名翻译者。
-最后你将可以翻译{{SITENAME}}里所有项目的''界面消息''.", # Fuzzy
+	'translate-fs-intro' => '欢迎来到{{SITENAME}}入门向导。
+我们会引导你如何成为一名翻译者。
+最终你将可以翻译{{SITENAME}}上所有项目的<em>界面信息</em>。',
 	'translate-fs-selectlanguage' => '选择一种语言',
 	'translate-fs-settings-planguage' => '首选语言：',
 	'translate-fs-settings-planguage-desc' => '该首选语言作为此维基项目的用户界面，
