@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_9f1048f9",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-17T18:50:40Z",
+      "side": 1,
+      "message": "The test is failing because you don\u0027t have isset here.\n\nAs a side note I would move the block of code above into else block after this.",
+      "revId": "9ed2401507ca3710e31522180e7514e1e225a286",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
