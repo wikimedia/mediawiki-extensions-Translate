@@ -103,9 +103,13 @@ class PremadeMediawikiExtensionGroups {
 			$conf['BASIC']['extensionurl'] = $info['url'];
 		}
 
-		$conf['FILES']['class'] = 'MediaWikiExtensionFFS';
+		if ( $info['format'] === 'json' ) {
+			$conf['FILES']['class'] = 'JsonFFS';
+		} else {
+			$conf['FILES']['class'] = 'MediaWikiExtensionFFS';
+		}
+
 		$conf['FILES']['sourcePattern'] = $this->path . '/' . $info['file'];
-		// Kind of hacky, export path will be wrong if %GROUPROOT% not used.
 		$target = str_replace( '%GROUPROOT%/', '', $conf['FILES']['sourcePattern'] );
 		$conf['FILES']['targetPattern'] = $target;
 
@@ -182,13 +186,14 @@ class PremadeMediawikiExtensionGroups {
 				} else {
 					list( $key, $value ) = array_map( 'trim', explode( '=', $line, 2 ) );
 					switch ( $key ) {
-						case 'file':
-						case 'var':
-						case 'id':
-						case 'descmsg':
-						case 'desc':
-						case 'magicfile':
 						case 'aliasfile':
+						case 'desc':
+						case 'descmsg':
+						case 'file':
+						case 'format':
+						case 'id':
+						case 'magicfile':
+						case 'var':
 							$newgroup[$key] = $value;
 							break;
 						case 'optional':
@@ -251,10 +256,17 @@ class PremadeMediawikiExtensionGroups {
 				$id = $this->idPrefix . preg_replace( '/\s+/', '', strtolower( $name ) );
 			}
 
-			if ( isset( $g['file'] ) ) {
-				$file = $g['file'];
-			} else {
-				$file = preg_replace( '/\s+/', '', "$name/$name.i18n.php" );
+			// Default message file format is currently php
+			if ( !isset( $g['format'] ) ) {
+				$g['format'] = 'php';
+			}
+
+			if ( !isset( $g['file'] ) ) {
+				if ( $g['format'] === 'json' ) {
+					$file = preg_replace( '/\s+/', '', "$name/i18n/%CODE%.json" );
+				} else {
+					$file = preg_replace( '/\s+/', '', "$name/$name.i18n.php" );
+				}
 			}
 
 			if ( isset( $g['descmsg'] ) ) {
@@ -278,14 +290,15 @@ class PremadeMediawikiExtensionGroups {
 			);
 
 			$copyvars = array(
-				'ignored',
-				'optional',
-				'var',
+				'aliasfile',
 				'desc',
-				'prefix',
-				'mangle',
+				'format',
+				'ignored',
 				'magicfile',
-				'aliasfile'
+				'mangle',
+				'optional',
+				'prefix',
+				'var',
 			);
 
 			foreach ( $copyvars as $var ) {
