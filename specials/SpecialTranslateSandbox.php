@@ -52,7 +52,7 @@ class SpecialTranslateSandbox extends SpecialPage {
 			// to ensure the number of users is what the tests expect
 			$this->emptySandbox();
 
-			$textUsernamePrefixes = array( 'Orava', 'Pupu' );
+			$textUsernamePrefixes = array( 'Pupu', 'Orava' );
 			$testLanguages = array( 'fi', 'uk', 'nl', 'he', 'bn' );
 			$testLanguagesCount = count( $testLanguages );
 
@@ -276,7 +276,7 @@ HTML;
 			return $translationCountDiff;
 		}
 
-		$registrationDateDiff = $a['registrationdate'] - $b['registrationdate'];
+		$registrationDateDiff = $b['registrationdate'] - $a['registrationdate'];
 		if ( $registrationDateDiff !== 0 ) {
 			return $registrationDateDiff;
 		}
