@@ -19,7 +19,7 @@ class MediaWikiExtensionTest extends MediaWikiTestCase {
 		$foo->register( $list, $deps, $autoload );
 
 		$this->assertEquals( 1, count( $deps ), 'A dependency to definition file was added' );
-		$this->assertEquals( 2, count( $list ), 'Two group were creates' );
+		$this->assertEquals( 4, count( $list ), 'Four groups were created' );
 
 		$this->assertArrayHasKey( 'ext-exampleextension', $list );
 		$expected = TranslateYaml::load( __DIR__ . '/data/MediaWikiExtensionTest-conf1.yaml' );
@@ -28,5 +28,13 @@ class MediaWikiExtensionTest extends MediaWikiTestCase {
 		$this->assertArrayHasKey( 'ext-wikimediamessages', $list );
 		$expected = TranslateYaml::load( __DIR__ . '/data/MediaWikiExtensionTest-conf2.yaml' );
 		$this->assertEquals( $expected, $list['ext-wikimediamessages']->getConfiguration() );
+
+		$this->assertArrayHasKey( 'ext-examplejsonextension', $list );
+		$expected = TranslateYaml::load( __DIR__ . '/data/MediaWikiExtensionTest-conf3.yaml' );
+		$this->assertEquals( $expected, $list['ext-examplejsonextension']->getConfiguration() );
+
+		$this->assertArrayHasKey( 'ext-exampleextension2', $list );
+		$expected = TranslateYaml::load( __DIR__ . '/data/MediaWikiExtensionTest-conf4.yaml' );
+		$this->assertEquals( $expected, $list['ext-exampleextension2']->getConfiguration() );
 	}
 }

@@ -7,3 +7,9 @@ aliasfile = FooBar.alias.php
 magicfile = FooBar.magic.php
 
 Example Extension
+
+Example JsonExtension
+format = json
+
+Example Extension 2
+file = foo
