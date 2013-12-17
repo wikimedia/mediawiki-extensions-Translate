@@ -109,6 +109,18 @@ class PremadeMediawikiExtensionGroups {
 		$target = str_replace( '%GROUPROOT%/', '', $conf['FILES']['sourcePattern'] );
 		$conf['FILES']['targetPattern'] = $target;
 
+		// JsonFFS support
+		if ( $info['format'] === 'json' ) {
+			$conf['FILES']['class'] = 'JsonFFS';
+			if ( !isset( $this->path ) ) {
+				$conf['FILES']['sourcePattern'] = 'i18n/%CODE%.json';
+			} else {
+				$conf['FILES']['sourcePattern'] = $this->path . 'i18n/%CODE%.json';
+			}
+			$target = str_replace( '%GROUPROOT%/', '', $conf['FILES']['sourcePattern'] );
+			$conf['FILES']['targetPattern'] = $target;
+		}
+
 		// @todo Find a better way
 		if ( isset( $info['aliasfile'] ) ) {
 			$conf['FILES']['aliasFile'] = $info['aliasfile'];
