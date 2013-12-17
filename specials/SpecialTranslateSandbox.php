@@ -192,7 +192,6 @@ HTML;
 		<button class="language-selector unselected">
 			{$this->msg( "tsb-all-languages-button-label" )->escaped()}
 		</button>
-		<button class="clear-language-selector hide">×</button>
 	</div>
 	<div class="five columns request-count">
 		{$this->msg( "tsb-request-count" )->numParams( $count )->parse()}

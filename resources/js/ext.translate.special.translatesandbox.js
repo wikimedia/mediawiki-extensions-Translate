@@ -299,8 +299,6 @@
 
 	$( document ).ready( function () {
 		var $requestCheckboxes = $( '.request-selector' ),
-			$languageSelector = $( '.language-selector' ),
-			$clearLanguageSelector = $( '.clear-language-selector' ),
 			$selectAll = $( '.request-selector-all' ),
 			$requestRows = $( '.requests .request' ),
 			$detailsPane = $( '.details.pane' );
@@ -310,6 +308,7 @@
 		$( window ).on( 'resize', setPanesHeight );
 
 		$( '.request-filter-box' ).translatorSearch();
+		$( '.language-selector' ).languageFilter();
 
 		// Handle clicks for the 'Select all' checkbox
 		$selectAll.on( 'click', function () {
@@ -447,10 +446,29 @@
 			$detailsPane.text( mw.msg( 'tsb-no-requests-from-new-users' ) );
 		}
 
+	} );
+
+	// ======================================
+	// LanguageFilter plugin
+	// ======================================
+	function LanguageFilter( element ) {
+		this.$selector = $( element );
+		this.init();
+	}
+
+	LanguageFilter.prototype.init = function () {
+		var languageFilter = this,
+			$clearButton;
+
+		$clearButton = $( '<button>' )
+			.addClass( 'clear-language-selector hide' )
+			.text( '×' );
+
+		languageFilter.$selector.after( $clearButton );
 		// Activate language selector
-		$languageSelector.uls( {
+		languageFilter.$selector.uls( {
 			onSelect: function ( language ) {
-				$languageSelector
+				languageFilter.$selector
 					.removeClass( 'unselected' )
 					.addClass( 'selected autonym' )
 					.prop( {
@@ -459,17 +477,17 @@
 					} )
 					.text( $.uls.data.getAutonym( language ) );
 
-				filterRequestsByLanguage( language );
-
-				$clearLanguageSelector.removeClass( 'hide' );
+				languageFilter.filter( language );
+				$clearButton.removeClass( 'hide' );
 			},
 			quickList: mw.uls.getFrequentLanguageList
 		} );
 
-		$clearLanguageSelector.on( 'click', function() {
+
+		$clearButton.on( 'click', function() {
 			var userLang = mw.config.get( 'wgUserLanguage' );
 
-			$languageSelector
+			languageFilter.$selector
 				.removeClass( 'selected autonym' )
 				.prop( {
 					dir: $.uls.data.getDir( userLang ),
@@ -478,16 +496,17 @@
 				.addClass( 'unselected' )
 				.text( mw.msg( 'tsb-all-languages-button-label' ) );
 
-			filterRequestsByLanguage();
-			$clearLanguageSelector.addClass( 'hide' );
+			languageFilter.filter();
+			$clearButton.addClass( 'hide' );
 		} );
-	} );
+
+	};
 
 	/**
 	 * Filter the requests by language.
 	 * @param {string} [language] Language code
 	 */
-	function filterRequestsByLanguage( language ) {
+	LanguageFilter.prototype.filter = function ( language ) {
 		var $requests = $( '.request' );
 
 		$requests.each( function ( index, request ) {
@@ -507,8 +526,19 @@
 		} );
 
 		updateAfterFiltering();
-	}
+	};
 
+	$.fn.languageFilter = function () {
+		return this.each( function () {
+			if ( !$.data( this, 'LanguageFilter' ) )  {
+				$.data( this, 'LanguageFilter', new LanguageFilter( this ) );
+			}
+		} );
+	};
+
+	// ======================================
+	// TranslatorSearch plugin
+	// ======================================
 	function TranslatorSearch( element ) {
 		this.$search = $( element );
 		this.init();
