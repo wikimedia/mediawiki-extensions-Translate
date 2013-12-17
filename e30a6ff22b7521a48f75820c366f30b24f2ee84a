@@ -16,6 +16,24 @@
       "revId": "e30a6ff22b7521a48f75820c366f30b24f2ee84a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_2b20e245",
+        "filename": "tests/browser/features/support/pages/manage_translator_sandbox_page.rb",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-17T09:21:12Z",
+      "side": 1,
+      "message": "I see you fixed it... nevermind",
+      "parentUuid": "0ee75395_8bf92ec3",
+      "revId": "e30a6ff22b7521a48f75820c366f30b24f2ee84a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
