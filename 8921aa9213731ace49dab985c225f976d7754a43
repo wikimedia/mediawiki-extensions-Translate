@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_5823feb4",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-17T08:00:17Z",
+      "side": 1,
+      "message": "Why did you add this back? It\u0027s not needed as far as I know.",
+      "revId": "8921aa9213731ace49dab985c225f976d7754a43",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
