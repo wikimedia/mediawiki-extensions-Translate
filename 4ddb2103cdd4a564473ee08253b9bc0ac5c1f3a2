@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_8b0ec38f",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-18T11:15:54Z",
+      "side": 1,
+      "message": "$this-\u003epath should be always set. What Siebrand meand here is that \u0027file\u0027 key not always be defined in the txt file. This if can be removed, if the other place (see my other comment is fixed).\n\nActually the only thing what would differ here after that is the $conf[\u0027FILES\u0027][\u0027class\u0027] .",
+      "revId": "4ddb2103cdd4a564473ee08253b9bc0ac5c1f3a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_ab1d07c9",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-18T11:15:54Z",
+      "side": 1,
+      "message": "Here, if \u0027file\u0027 is not set, we should make it default to \"$name/i18n/%CODE%.json\".",
+      "revId": "4ddb2103cdd4a564473ee08253b9bc0ac5c1f3a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
