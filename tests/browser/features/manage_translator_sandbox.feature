@@ -260,3 +260,14 @@ Feature: Manage translator sandbox
       And I click the "Accept all" button
     Then no users are displayed in the first column
       And I should see "0 requests" at the top of the first column
+
+  Scenario: Search for a user and accepting
+    Given I am on the Translator sandbox management page with users in the sandbox
+    When I search for "pupu" in the sandboxed users search field
+      And I click on "Pupu1" in the first column
+      And I click the "Accept" button
+    Then I should see "Pupu2" in the header of the second column
+      And I should see the checkbox next to the request from "Pupu2" checked
+      And I should see the checkbox next to the request from "Pupu2" disabled
+      And I should see "1 user selected" at the bottom of the first column
+      And I should see "4 requests" at the top of the first column
