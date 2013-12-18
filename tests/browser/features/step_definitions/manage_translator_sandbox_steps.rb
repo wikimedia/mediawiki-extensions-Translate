@@ -37,7 +37,7 @@ When(/^I click the checkbox to select all users$/) do
 end
 
 When(/^I click the "(.+)" button$/) do |label|
-	on(ManageTranslatorSandboxPage).details_button(label).click
+	on(ManageTranslatorSandboxPage).click_button(label)
 end
 
 When(/^I click on "(.+)" in the first column$/) do |username|
@@ -162,12 +162,12 @@ end
 
 Then(/^I should see the name of the first user in the first column in the header of the second column$/) do
 	on(ManageTranslatorSandboxPage) do |page|
-		page.details_header.should == page.username_in_request(0)
+		page.details_header.text.should == page.username_in_request(0)
 	end
 end
 
 Then(/^I should see "(.+)" in the header of the second column$/) do |text|
-	on(ManageTranslatorSandboxPage).details_header.should == text
+	on(ManageTranslatorSandboxPage).details_header.text.should == text
 end
 
 Then(/^I should see the userlist in the first column sorted by the number of translations and the most recent within them$/) do
