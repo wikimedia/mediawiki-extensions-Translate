@@ -25,6 +25,8 @@ class ManageTranslatorSandboxPage
 
 	checkbox(:select_all_checkbox, class: "request-selector-all")
 
+	div(:signup_comment_text, class: "signup-comment-text")
+
 	def details_button(label)
 		@browser.button(text: label)
 	end
