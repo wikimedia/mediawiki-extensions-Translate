@@ -58,6 +58,7 @@ Welcome, and thank you for you contributions!
 	'tsb-older-requests' => '$1 older {{PLURAL:$1|request|requests}}',
 	'tsb-accept-all-button-label' => 'Accept all',
 	'tsb-reject-all-button-label' => 'Reject all',
+	'tsb-user-posted-a-comment' => 'The user posted the following comment when signing up:',
 	'tsb-reminder-link-text' => 'Send email reminder',
 	'tsb-didnt-make-any-translations' => 'This user did not make any translations.',
 	'tsb-translations-source' => 'Source',
@@ -133,6 +134,7 @@ See also:
 
 See also:
 * {{msg-mw|Tsb-accept-all-button-label}}',
+	'tsb-user-posted-a-comment' => 'A label that appears near some text posted by the user.',
 	'tsb-reminder-link-text' => 'Link text for sending reminder emails about translator signup requests.
 
 See also:

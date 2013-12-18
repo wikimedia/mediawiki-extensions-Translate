@@ -69,7 +69,7 @@ class SpecialTranslateSandbox extends SpecialPage {
 						'translate-sandbox',
 						FormatJson::encode( array(
 							'languages' => array( $testLanguages[$i] ),
-							'comment' => ''
+							'comment' => '',
 						) )
 					);
 
@@ -103,7 +103,7 @@ class SpecialTranslateSandbox extends SpecialPage {
 				'translate-sandbox',
 				FormatJson::encode( array(
 					'languages' => $testLanguages,
-					'comment' => ''
+					'comment' => "I know some languages, and I'm a developer.",
 				) )
 			);
 			$polyglotUser->saveSettings();
