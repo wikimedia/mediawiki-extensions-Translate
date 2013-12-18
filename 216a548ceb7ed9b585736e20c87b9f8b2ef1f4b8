@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_6a27abb2",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-18T20:29:47Z",
+      "side": 1,
+      "message": "This hard codes the location on the json files. Is this patch set not meant to add flexibility for the path (something else but \"i18n/\"?\n\nThere are live examples of these. See https://git.wikimedia.org/blob/translatewiki.git/6f6f1bce7b81611c0585143c26a3d238497604cb/groups%2FMediaWiki%2Fjquery.i18n.yaml\n\n VisualEditor/modules/ve/i18n/%CODE%.json\n\nThis is a requirement for supporting multiple message groups per extensions. Current cases are FlaggedRevs, Translate, WikimediaMessages, Wikidata.",
+      "revId": "216a548ceb7ed9b585736e20c87b9f8b2ef1f4b8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
