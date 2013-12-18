@@ -9,7 +9,6 @@ class ManageTranslatorSandboxPage
 	button(:clear_language_selector, class: "clear-language-selector")
 
 	div(:details, class: "details")
-	div(:details_header, class: "tsb-header")
 
 	text_field(:language_filter, id: "languagefilter")
 	button(:language_selector_button, class: "language-selector")
@@ -26,6 +25,11 @@ class ManageTranslatorSandboxPage
 	checkbox(:select_all_checkbox, class: "request-selector-all")
 
 	div(:signup_comment_text, class: "signup-comment-text")
+
+	# This must be reloaded every time, because it may change during the test
+	def details_header
+		@browser.element(class: "tsb-header")
+	end
 
 	def details_button(label)
 		@browser.button(text: label)
@@ -118,6 +122,17 @@ class ManageTranslatorSandboxPage
 
 	def translations_autonyms
 		@browser.elements(css: ".details.pane .translations .info.autonym")
+	end
+
+	def click_button(label)
+		initial_header_text = details_header.text
+
+		details_button(label).click
+
+		# It takes a few moments until Accept and Reject buttons
+		# finish performing the action, and this action always
+		# removes the currently displayed users and changes the header
+		Watir::Wait.until { details_header.text !=  initial_header_text }
 	end
 
 	def only_request_with_username_is_selected?(username)
