@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ee75395_0b319300",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-18T12:34:46Z",
+      "side": 1,
+      "message": "perhaps \u0027given\u0027 instead of \u0027posted\u0027. Or just make it active \"The user gave the following comment\"",
+      "revId": "281527ade1877cdeb84ab90dacab26fe554ca91a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
