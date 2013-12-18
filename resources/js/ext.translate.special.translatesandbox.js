@@ -110,6 +110,8 @@
 			$( '<div>' )
 				.addClass( 'languages row autonym' ),
 			$( '<div>' )
+				.addClass( 'signup-comment row' ),
+			$( '<div>' )
 				.addClass( 'actions row' )
 				.append(
 					$( '<button>' )
@@ -135,17 +137,30 @@
 				.addClass( 'translations row' )
 		);
 
-		if ( request.languagepreferences && request.languagepreferences.languages ) {
-			$.each( request.languagepreferences.languages, function ( index, language ) {
-				$detailsPane.find( '.languages' ).append(
-					$( '<span>' )
-						.prop( {
-							dir: $.uls.data.getDir( language ),
-							lang: language
-						} )
-						.text( $.uls.data.getAutonym( language ) )
+		if ( request.languagepreferences ) {
+			if ( request.languagepreferences.languages ) {
+				$.each( request.languagepreferences.languages, function ( index, language ) {
+					$detailsPane.find( '.languages' ).append(
+						$( '<span>' )
+							.prop( {
+								dir: $.uls.data.getDir( language ),
+								lang: language
+							} )
+							.text( $.uls.data.getAutonym( language ) )
+					);
+				} );
+			}
+
+			if ( request.languagepreferences.comment ) {
+				$detailsPane.find( '.signup-comment' ).append(
+					$( '<div>' )
+						.addClass( 'signup-comment-label' )
+						.text( mw.msg( 'tsb-user-posted-a-comment' ) ),
+					$( '<div>' )
+						.addClass( 'signup-comment-text' )
+						.text( request.languagepreferences.comment )
 				);
-			} );
+			}
 		}
 
 		// @todo: move higher in the tree

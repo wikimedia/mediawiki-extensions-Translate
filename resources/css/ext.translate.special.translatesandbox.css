@@ -125,6 +125,21 @@
 
 /* Details pane */
 
+.tsb-details-no-translations {
+	color: #999999;
+}
+.signup-comment-label {
+	color: #E85355;
+	font-size: 14px;
+}
+
+.signup-comment-text {
+	color: #333333;
+	font-size: 16px;
+	line-height: 1.5em;
+	padding: 5px 0;
+}
+
 .details.pane > .row {
 	padding-top: 15px;
 }

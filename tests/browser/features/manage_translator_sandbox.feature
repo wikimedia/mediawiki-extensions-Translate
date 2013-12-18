@@ -206,6 +206,16 @@ Feature: Manage translator sandbox
       And I should see the checkbox next to the request from "Pupu0" disabled
       And I should not see any translations done by the user in the second column
 
+  Scenario: Selecting a user who wrote a comment when signing up
+    Given I am on the Translator sandbox management page with users in the sandbox
+    When I click on "Kissa" in the first column
+    Then I should see that the user wrote a comment that says "I know some languages, and I'm a developer."
+
+  Scenario: Selecting a user who didn't write a comment when signing up
+    Given I am on the Translator sandbox management page with users in the sandbox
+    When I click on "Pupu2" in the first column
+    Then I should not see that the user wrote a comment
+
   Scenario: Accepting one user
     Given I am on the Translator sandbox management page with users in the sandbox
     When I click on "Pupu2" in the first column
