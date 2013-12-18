@@ -47,19 +47,15 @@ Feature: Manage translator sandbox
 
   Scenario: Selecting older requests
     Given I am on the Translator sandbox management page with users in the sandbox
-    When I click on "Pupu0" in the first column
-      And I click on "Orava1" in the first column
-      And I click on the link that says "3 older requests" at the bottom of the first column
-    Then I should see the checkbox next to the request from "Orava1" checked
-      And I should see the checkbox next to the request from "Orava1" enabled
-      And I should see the checkbox next to the request from "Orava0" enabled
-      And I should see the checkbox next to the request from "Orava0" checked
-      And I should see the checkbox next to the request from "Pupu0" checked
-      And I should see the checkbox next to the request from "Pupu0" enabled
-      And I should see the checkbox next to the request from "Pupu1" checked
-      And I should see the checkbox next to the request from "Pupu1" enabled
-      And I should see "4 users selected" at the bottom of the first column
-      And I should see "4 users selected" in the header of the second column
+    When I click on "Orava3" in the first column
+      And I click on the link that says "1 older requests" at the bottom of the first column
+    Then I should see the checkbox next to the request from "Pupu3" checked
+      And I should see the checkbox next to the request from "Pupu3" enabled
+      And I should see the checkbox next to the request from "Orava3" checked
+      And I should see the checkbox next to the request from "Orava3" enabled
+      And I should see the checkbox next to the request from "Pupu2" unchecked
+      And I should see "2 users selected" at the bottom of the first column
+      And I should see "2 users selected" in the header of the second column
 
   Scenario: Selecting all users
     Given I am on the Translator sandbox management page with users in the sandbox
@@ -122,7 +118,7 @@ Feature: Manage translator sandbox
       And I should see the "Accept" button displayed in the second column
       And I should see the "Reject" button displayed in the second column
       And I should see "1 user selected" at the bottom of the first column
-      And I should see "10 older requests" in the older requests link at the bottom of the first column
+      And I should not see the older requests link at the bottom of the first column
 
   Scenario: Clicking on a name of a user who didn't make any translations shows the user information and the action buttons and doesn't show translations
     Given I am on the Translator sandbox management page with users in the sandbox

@@ -296,12 +296,31 @@
 		}
 	}
 
-	function indicateOlderRequests() {
+	/**
+	 * Returns older requests with the same number of translations.
+	 * @return {jQuery} Older requests
+	 */
+	function getOlderRequests() {
 		var $lastSelectedRequest = $( '.row.request.selected' ).last(),
-			$olderRequests = $lastSelectedRequest.nextAll( ':not(.hide)' ),
-			oldRequestsCount = $olderRequests.length,
-			oldRequestsCountString = mw.language.convertNumber( oldRequestsCount ),
+			currentTranslationCount = $lastSelectedRequest.data( 'data' ).translations;
+
+		return $lastSelectedRequest.nextAll( ':not(.hide)' ).filter( function () {
+			return ( $( this ).data( 'data' ).translations === currentTranslationCount );
+		} );
+	}
+
+	/**
+	 * Updates the number of older requests with the same number
+	 * of translations at the link in the bottom of the requests row
+	 * or hides that link if there are no such requests.
+	 */
+	function indicateOlderRequests() {
+		var oldRequestsCount, oldRequestsCountString,
+			$olderRequests = getOlderRequests(),
 			$olderRequestsIndicator = $( '.older-requests-indicator' );
+
+		oldRequestsCount = $olderRequests.length;
+		oldRequestsCountString = mw.language.convertNumber( oldRequestsCount );
 
 		if ( oldRequestsCount ) {
 			$olderRequestsIndicator
@@ -487,17 +506,13 @@
 	 * @param {jQuery.Event} e
 	 */
 	function oldRequestSelector( e ) {
-		var $requestRows = $( '.requests .request' ),
-			$lastSelectedRequest = $requestRows.filter( '.selected' ).last(),
-			$olderRequests = $lastSelectedRequest.nextAll( ':not(.hide)' );
+		e.preventDefault();
 
-		$olderRequests.each( function( index, request ) {
+		getOlderRequests().each( function( index, request ) {
 			$( request ).find( '.request-selector' )
 				.prop( 'checked', true ) // Otherwise the state doesn't actually change
 				.change();
 		} );
-
-		e.preventDefault();
 	}
 
 	$( document ).ready( function () {
@@ -514,10 +529,13 @@
 
 		// Handle clicks for the 'Select all' checkbox
 		$selectAll.on( 'click', selectAllRequests );
+
 		// Handle clicks on request checkboxes.
 		$requestCheckboxes.on( 'click change', requestSelectHandler );
+
 		// Handle clicks on request rows.
 		$requestRows.on( 'click',  onSelectRequest );
+
 		$( '.older-requests-indicator' ).on( 'click',  oldRequestSelector );
 
 		if ( $requestRows.length ) {
