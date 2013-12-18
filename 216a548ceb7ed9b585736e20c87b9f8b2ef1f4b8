@@ -16,6 +16,24 @@
       "revId": "216a548ceb7ed9b585736e20c87b9f8b2ef1f4b8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_eac97b56",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-18T20:37:42Z",
+      "side": 1,
+      "message": "It can still be overridden as before with file \u003d VisualEditor/modules/ve/i18n/%CODE%.json",
+      "parentUuid": "eeebdf60_6a27abb2",
+      "revId": "216a548ceb7ed9b585736e20c87b9f8b2ef1f4b8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
