@@ -156,6 +156,14 @@ Then(/^I should see "(.+)" at the bottom of the first column$/) do |text|
 	on(ManageTranslatorSandboxPage).selected_counter.should == text
 end
 
+Then(/^I should see that the user wrote a comment that says "(.*?)"$/) do |text|
+	on(ManageTranslatorSandboxPage).signup_comment_text.should == text
+end
+
+Then(/^I should not see that the user wrote a comment$/) do
+	on(ManageTranslatorSandboxPage).signup_comment_text_element.should_not exist
+end
+
 Then(/^I should see the name of the first user in the first column in the header of the second column$/) do
 	on(ManageTranslatorSandboxPage) do |page|
 		page.details_header.should == page.username_in_request(0)

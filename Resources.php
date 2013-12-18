@@ -381,6 +381,7 @@ $wgResourceModules['ext.translate.special.translatesandbox'] = array(
 		'tsb-older-requests',
 		'tsb-accept-all-button-label',
 		'tsb-reject-all-button-label',
+		'tsb-user-posted-a-comment',
 		'tsb-reminder-link-text',
 		'tsb-reminder-sending',
 		'tsb-reminder-sent',
