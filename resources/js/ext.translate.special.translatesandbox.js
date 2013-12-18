@@ -38,7 +38,12 @@
 		var $nextRequest,
 			$selectedRequests = $( '.request-selector:checked' );
 
-		$nextRequest = $selectedRequests.first().closest( '.request' ).prev();
+		$nextRequest = $selectedRequests
+			.first() // First selected request
+			.closest( '.request' ) // The request corresponds that checkbox
+			.prevAll( ':not(.hide)' ) // Go back till a non-hidden request
+			.first(); // The above selecter gives list from bottom to top. Select the bottom one.
+
 		$selectedRequests.closest( '.request' ).remove();
 
 		updateRequestCount();
@@ -46,7 +51,7 @@
 		if ( !$nextRequest.length ) {
 			// If there's no request above the first checked request,
 			// try to get the first request in the column
-			$nextRequest = $( '.requests .request' ).first();
+			$nextRequest = $( '.requests .request:not(.hide)' ).first();
 		}
 
 		if ( $nextRequest.length ) {
