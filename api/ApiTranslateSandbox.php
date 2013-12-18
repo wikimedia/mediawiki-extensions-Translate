@@ -89,6 +89,8 @@ class ApiTranslateSandbox extends ApiBase {
 			$user = User::newFromId( $user );
 			$userpage = $user->getUserPage();
 
+			TranslateSandbox::sendEmail( $this->getUser(), $user, 'rejection' );
+
 			try {
 				TranslateSandbox::deleteUser( $user );
 			} catch ( MWException $e ) {
