@@ -11,7 +11,10 @@ Given(/^I am on the Translator sandbox management page with users in the sandbox
 end
 
 When(/^I search for "(.*)" in the sandboxed users search field$/) do |string|
-	on(ManageTranslatorSandboxPage).search = string
+	on(ManageTranslatorSandboxPage) do |page|
+		page.search = string
+		page.search_element.send_keys :enter
+	end
 end
 
 When(/^I click the sandboxed users language filter button$/) do
