@@ -105,6 +105,11 @@
 			onSkip: function () {
 				var $next = this.$editTrigger.next( '.tux-message' );
 
+				// If there is text in the skipped message, avoid showing the
+				// regular "you have unsaved messages" when navigating away,
+				// because there is no way to get back to these messages.
+				this.markUnunsaved();
+
 				// This can happen when it's
 				// the last message in the translation stash
 				if ( !$next.length ) {
