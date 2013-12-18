@@ -297,12 +297,31 @@
 		}
 	}
 
-	function indicateOlderRequests() {
+	/**
+	 * Returns older requests with the same number of translations.
+	 * @return {jQuery} Older requests
+	 */
+	function getOlderRequests() {
 		var $lastSelectedRequest = $( '.row.request.selected' ).last(),
-			$olderRequests = $lastSelectedRequest.nextAll( ':not(.hide)' ),
-			oldRequestsCount = $olderRequests.length,
-			oldRequestsCountString = mw.language.convertNumber( oldRequestsCount ),
+			currentTranslationCount = $lastSelectedRequest.data( 'data' ).translations;
+
+		return $lastSelectedRequest.nextAll( ':not(.hide)' ).filter( function () {
+			return ( $( this ).data( 'data' ).translations === currentTranslationCount );
+		} );
+	}
+
+	/**
+	 * Updates the number of older requests with the same number
+	 * of translations at the link in the bottom of the requests row
+	 * or hides that link if there are no such requests.
+	 */
+	function indicateOlderRequests() {
+		var oldRequestsCount, oldRequestsCountString,
+			$olderRequests = getOlderRequests(),
 			$olderRequestsIndicator = $( '.older-requests-indicator' );
+
+		oldRequestsCount = $olderRequests.length;
+		oldRequestsCountString = mw.language.convertNumber( oldRequestsCount );
 
 		if ( oldRequestsCount ) {
 			$olderRequestsIndicator
@@ -467,17 +486,13 @@
 		} );
 
 		$( '.older-requests-indicator' ).on( 'click', function ( e ) {
-			var $lastSelectedRequest = $requestRows.filter( '.selected' ).last(),
-				$olderRequests = $lastSelectedRequest.nextAll( ':not(.hide)' );
+			e.preventDefault();
 
-			$olderRequests.each( function( index, request ) {
+			getOlderRequests().each( function( index, request ) {
 				$( request ).find( '.request-selector' )
 					.prop( 'checked', true ) // Otherwise the state doesn't actually change
 					.change();
-
 			} );
-
-			e.preventDefault();
 		} );
 
 		if ( $requestRows.length ) {
