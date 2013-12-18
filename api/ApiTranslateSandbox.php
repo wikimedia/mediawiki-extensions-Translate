@@ -72,6 +72,9 @@ class ApiTranslateSandbox extends ApiBase {
 			'id' => $user->getId(),
 		) );
 
+		$user->setOption( 'language', $this->getContext()->getLanguage()->getCode() );
+		$user->saveSettings();
+
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 	}
 
