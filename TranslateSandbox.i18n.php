@@ -48,6 +48,16 @@ Welcome, and thank you for you contributions!
 
 {{GENDER:$3|$3}},
 {{SITENAME}} staff',
+	'tsb-email-rejected-subject' => 'Your application to be a translator at {{SITENAME}} was rejected',
+	'tsb-email-rejected-body' => 'Hi {{GENDER:$1|$1}},
+
+I regret to inform you that I had to reject your application to become a translator at {{SITENAME}}, because you did not provide any example translation that seems valid.
+
+If you are a well-intentioned translator that got rejected by mistake, you are welcome to become a translator at {{SITENAME}} again. Please sign up here:
+$2
+
+{{GENDER:$3|$3}},
+{{SITENAME}} staff',
 
 	'tsb-request-count' => '$1 {{PLURAL:$1|request|requests}}',
 	'tsb-all-languages-button-label' => 'All languages',
@@ -109,6 +119,14 @@ Followed by a list of the pending requests.',
 	'tsb-email-promoted-body' => 'The body text for an email that announces that a user received full translation rights ("promoted"). Parameters:
 * $1 - the username of the new user who was promoted
 * $2 - the URL to Special:Translate at the website
+* $3 - the username of the administrator who promoted the user',
+	'tsb-request-count' => 'Label showing number of requests. Parameters:
+* $1 - number of requests
+{{Identical|Request}}',
+	'tsb-email-rejected-subject' => 'The subject for an email that announces that a user\'s request to become a translator was rejected.',
+	'tsb-email-rejected-body' => 'The body text for an email that announces that a user\'s request to become a translator was rejected. Parameters:
+* $1 - the username of the new user whose request was rejected
+* $2 - the URL to Special:MainPage at the website
 * $3 - the username of the administrator who promoted the user',
 	'tsb-request-count' => 'Label showing number of requests. Parameters:
 * $1 - number of requests
