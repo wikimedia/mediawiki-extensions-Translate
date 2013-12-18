@@ -935,16 +935,23 @@ $messages['sv'] = array(
 
 /** Turkish (Türkçe)
  * @author Emperyan
+ * @author Joseph
  */
 $messages['tr'] = array(
 	'searchtranslations' => 'Çevirileri ara',
-	'tux-sst-edit' => 'İletiyi düzenleme', # Fuzzy
+	'tux-sst-edit' => 'Çeviriyi düzenleme',
 	'tux-sst-search' => 'Ara',
 	'tux-sst-search-ph' => 'Çevirileri ara',
 	'tux-sst-count' => '{{PLURAL:$1|Bir sonuç bulundu|$1 sonuç bulundu}}',
 	'tux-sst-facet-language' => 'Diller',
 	'tux-sst-facet-group' => 'İleti grupları',
 	'tux-sst-facet-orphan' => '(yetim)',
+	'tux-sst-nosolr-title' => 'Arama kullanılamıyor',
+	'tux-sst-nosolr-body' => 'Bu wikide bir çeviri arama hizmeti yok.',
+	'tux-sst-solr-offline-title' => 'Arama kullanılamıyor',
+	'tux-sst-solr-offline-body' => 'Arama hizmeti geçici olarak kullanılamıyor.',
+	'tux-sst-next' => 'Sonraki sonuçlar',
+	'tux-sst-prev' => 'Önceki sonuçlar',
 );
 
 /** Ukrainian (українська)

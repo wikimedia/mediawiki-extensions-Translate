@@ -7822,7 +7822,7 @@ Du musst Übersetzer sein, um Änderungen speichern zu können.
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Die Übersetzungsvorlage verwendet <nowiki>{{PLURAL:}}</nowiki>, die Übersetzung aber nicht.',
 	'translate-checks-plural-forms' => 'Zu <nowiki>{{PLURAL:}}</nowiki>{{PLURAL:$1|wurde eine Ausprägung|wurden $1 Ausprägungen}} angegeben. Es {{PLURAL:$2|wird allerdings nur eine Ausprägung|werden allerdings nur $2 Ausprägungen}} unterstützt (auschließlich 0= und 1= forms).',
-	'translate-checks-plural-dupe' => 'Zu <nowiki>{{PLURAL:}}</nowiki> wurden zwei gleiche Ausprägungen angegeben. Bspw. sollte aber &#123;&#123;PLURAL:$1|Milch|Milch&#125;&#125; als <nowiki>{{PLURAL:$1|Milch}}</nowiki> angegeben werden.',
+	'translate-checks-plural-dupe' => 'Zu <nowiki>{{PLURAL:}}</nowiki> wurden zwei gleiche Ausprägungen angegeben. Bspw. sollte aber <nowiki>{{PLURAL:$1|Milch|Milch}}</nowiki> als <nowiki>{{PLURAL:$1|Milch}}</nowiki> angegeben werden.',
 	'translate-checks-pagename' => 'Der Namensraum weicht von dem in der Übersetzungsvorlage ab.',
 	'translate-checks-format' => 'Diese Übersetzung entspricht nicht der Übersetzungsvorlage oder enthält eine ungültige Syntax: $1',
 	'translate-checks-escape' => 'Die folgenden Escape-Sequenzen könnten versehentlich vorhanden sein: <strong>$1</strong>',
@@ -8351,6 +8351,7 @@ $messages['diq'] = array(
 /** Lower Sorbian (dolnoserbski)
  * @author Dundak
  * @author Michawiki
+ * @author Shirayuki
  */
 $messages['dsb'] = array(
 	'translate' => 'Pśełožyś',
@@ -8444,7 +8445,7 @@ Změny se njeskładuju, až njekliknjoš na tłocašk "Składowaś" dołojce.',
 	'translate-checks-xhtml' => 'Wuměń pšosym {{PLURAL:$2|Slědujucy tag|slědujucej taga|slědujuce tagi|slědujuce tagi}} pśez {{PLURAL:$2|korektny|korektnej|korektne|korektne}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definicija <nowiki>{{PLURAL:}}</nowiki> wužywa, pśełožk pak nic.',
 	'translate-checks-plural-forms' => 'Za <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|jo se jadna forma pódała|stej se $1 formje pódałej|su se $1 formy pódali|jo se $1 formow pódało}}, ale {{PLURAL:$2|pódpěra se jano jadna forma|pódpěratej se $2 formje|pódpěraju se $2 formy|pódpěra se $2 formow}} (bźez formow 0= a 1=).',
-	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> ma dwě jadnuckej formje na kóńcu.  &#123;&#123;PLURAL:$1|mloko|mloko&#125;&#125; měł se ako <nowiki>{{PLURAL:$1|mloko}}</nowiki> pisaś.',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> ma dwě jadnuckej formje na kóńcu. <nowiki>{{PLURAL:$1|mloko|mloko}}</nowiki> měł se ako <nowiki>{{PLURAL:$1|mloko}}</nowiki> pisaś.',
 	'translate-checks-pagename' => 'Mjenjowy rum pśez definiciju změnjony',
 	'translate-checks-format' => 'Toś ten pśełožk njeslědujo definiciji abo ma njepłaśiwu syntaksu: $1',
 	'translate-checks-escape' => 'Slědujuce eskapowe sekwence mógu pśipadne byś: <strong>$1</strong>',
@@ -11912,8 +11913,8 @@ Si vous savez où ou comment il est utilisé, vous pouvez aider les autres tradu
 	'translate-edit-tmmatch-source' => 'Texte source de la traduction : $1',
 	'translate-edit-tmmatch' => '$1 % de correspondance',
 	'translate-use-suggestion' => 'Remplacer la traduction actuelle par cette suggestion.',
-	'translate-edit-nopermission' => 'Vous devez obtenir la permission de traduire les messages.',
-	'translate-edit-askpermission' => 'Demander la permission',
+	'translate-edit-nopermission' => 'Vous devez obtenir les droits de traduction pour traduire des messages.',
+	'translate-edit-askpermission' => 'Obtenir la permission',
 	'translate-magic-pagename' => 'Traduction étendue de MediaWiki',
 	'translate-magic-help' => "Vous pouvez traduire les alias de pages spéciales, les mots magiques et les noms des espaces de noms.
 
@@ -13430,6 +13431,7 @@ $messages['grc'] = array(
  * @author Als-Chlämens
  * @author Als-Holder
  * @author J. 'mach' wust
+ * @author Shirayuki
  */
 $messages['gsw'] = array(
 	'translate' => 'Ibersetze',
@@ -13486,8 +13488,8 @@ Optionali Mäldige sötte numme übersetzt werde, wänn's in dynrer Sprooch en B
 	'translate-edit-tmmatch-source' => 'Ibersetzigsquälltext: $1',
 	'translate-edit-tmmatch' => '$1% Ibereinstimmig',
 	'translate-use-suggestion' => 'Di aktuäll Ibersetzig mit däm Vorschlag ersetze:',
-	'translate-edit-nopermission' => 'Du bruchsch d Rächt zum Nochrichte ibersetze z chenne.',
-	'translate-edit-askpermission' => 'E Aatrag uf d Rächt stelle',
+	'translate-edit-nopermission' => 'Du bruchsch d Rächt zum Nochrichte ibersetze z chenne.', # Fuzzy
+	'translate-edit-askpermission' => 'E Aatrag uf d Rächt stelle', # Fuzzy
 	'translate-magic-pagename' => 'Erwytereti MediaWiki-Ibersetzig',
 	'translate-magic-help' => 'Du chasch doo Alias fir Spezialsyte, magischi Werter un Namensruumnäme ibersetze.
 
@@ -13524,7 +13526,7 @@ Du muesch in dr Ibersetzer-Gruppe syy go Änderige z spychere.
 	'translate-checks-xhtml' => 'Bitte ersetz {{PLURAL:$2|dää Tag|die Tag}} dur di korrekte: <strong>$1</strong>',
 	'translate-checks-plural' => 'S Original bruucht <nowiki>{{PLURAL:}}</nowiki>, d Ibersetzig aber nit.',
 	'translate-checks-plural-forms' => 'Zue <nowiki>{{PLURAL:}}</nowiki>{{PLURAL:$1|isch ei Form|sin $1 Forme}} aagee wore. S {{PLURAL:$2|wird aber nume ei Form|wäre aber nume $2 Forme}} unterstitzt (uuschließli 0= un 1=).',
-	'translate-checks-plural-dupe' => 'Zue <nowiki>{{PLURAL:}}</nowiki> sin zwoo glychi Forme aagee wore. Bspw. sott aber &#123;&#123;PLURAL:$1|Milch|Milch&#125;&#125; as <nowiki>{{PLURAL:$1|Milch}}</nowiki> aagee wäre.',
+	'translate-checks-plural-dupe' => 'Zue <nowiki>{{PLURAL:}}</nowiki> sin zwoo glychi Forme aagee wore. Bspw. sott aber <nowiki>{{PLURAL:$1|Milch|Milch}}</nowiki> as <nowiki>{{PLURAL:$1|Milch}}</nowiki> aagee wäre.',
 	'translate-checks-pagename' => 'Namensruum gänderet dur d Definition',
 	'translate-checks-format' => 'Die Ibersetzig entspricht nit dr Definition oder het e uugiltigi Syntax: $1',
 	'translate-checks-escape' => 'Die Escape-Sequenze chenne us Versäh vorhande syy: <strong>$1</strong>',
@@ -13939,6 +13941,7 @@ $messages['haw'] = array(
  * @author Guycn2
  * @author Ofrahod
  * @author Rotemliss
+ * @author Shirayuki
  * @author YaronSh
  * @author חיים
  * @author ערן
@@ -14002,7 +14005,7 @@ $messages['he'] = array(
 	'translate-edit-tmmatch' => 'רמת התאמה: $1%',
 	'translate-use-suggestion' => 'החלפת התרגום הנוכחי בהצעה הזאת.',
 	'translate-edit-nopermission' => 'נדרשות הרשאות כדי לתרגם הודעות.',
-	'translate-edit-askpermission' => 'בקשת הרשאה',
+	'translate-edit-askpermission' => 'לקבל הרשאה',
 	'translate-magic-pagename' => 'תרגום מורחב של מדיה־ויקי',
 	'translate-magic-help' => 'באפשרותכם לתרגם כינויים לדפים מיוחדים, מילות קסם ושמות מרחבי שם.
 
@@ -14047,7 +14050,7 @@ $messages['he'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'ההגדרה משתמשת ב־<nowiki>{{PLURAL:}}</nowiki>, אך התרגום אינו משתמש בו.',
 	'translate-checks-plural-forms' => 'בביטוי <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|נכתבה צורה אחת|נכתבו $1 צורות}}, אבל {{PLURAL:$2|נתמכת רק צורה אחת|נתמכות $2 צורות}} (לא כולל צורות 0= וצורות 1=).',
-	'translate-checks-plural-dupe' => 'בביטוי <nowiki>{{PLURAL:}&#125;</nowiki> יש צורות שחוזרות על עצמן בסוף. במקום <nowiki>{{PLURAL:$1|קילומטר|קילומטר}&#125;</nowiki> מומלץ לכתוב <nowiki>{{PLURAL:$1|קילומטר}}</nowiki>.',
+	'translate-checks-plural-dupe' => 'בביטוי <nowiki>{{PLURAL:}}</nowiki> יש צורות שחוזרות על עצמן בסוף. במקום <nowiki>{{PLURAL:$1|קילומטר|קילומטר}}</nowiki> מומלץ לכתוב <nowiki>{{PLURAL:$1|קילומטר}}</nowiki>.',
 	'translate-checks-pagename' => 'מרחבי שם ששונו מהגדרתם',
 	'translate-checks-format' => 'תרגום זה אינו תואם להגדרות או שהוא בעל תחביר שגוי: $1',
 	'translate-checks-escape' => 'ייתכן שהחילופים הבאים נוצרו בשגגה: <strong>$1</strong>',
@@ -14700,6 +14703,7 @@ Molimo provjerite.',
 /** Upper Sorbian (hornjoserbsce)
  * @author Dundak
  * @author Michawiki
+ * @author Shirayuki
  */
 $messages['hsb'] = array(
 	'translate' => 'Přełožić',
@@ -14795,7 +14799,7 @@ Změny so njeskładuja, doniž na tłóčatko ''Stronu składować'' njekliknje�
 	'translate-checks-xhtml' => 'Narunaj prošu {{PLURAL:$2|slědowacu tafličku|slědowacej tafličce|slědowace taflički|slědowacych tafličkow}} přez {{PLURAL:$2|korektnu|korektnej|korektne|korektne}}: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'Definicija wužiwa <nowiki>{{PLURAL:}}</nowiki>, přełožk pak nic.',
 	'translate-checks-plural-forms' => 'Za <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|je so jedna forma podała|stej so $1 formje podałoj|su so $1 formy podali|je so $1 formow podało}}, ale {{PLURAL:$2|podpěruje so jenož jedna forma|podpěrujetej so $2 formje|podpěruja so $2 formy|podpěruje so $2 formow}} (bjez formow 0= a 1=).',
-	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> ma dwě jeničkej formje na kóncu.  &#123;&#123;PLURAL:$1|mloko|mloko&#125;&#125; měł so jako <nowiki>{{PLURAL:$1|mloko}}</nowiki> pisać.',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> ma dwě jeničkej formje na kóncu. <nowiki>{{PLURAL:$1|mloko|mloko}}</nowiki> měł so jako <nowiki>{{PLURAL:$1|mloko}}</nowiki> pisać.',
 	'translate-checks-pagename' => 'Mjenowy rum z definicije změnjeny',
 	'translate-checks-format' => 'Tutón přełožk njeslěduje definiciji abo ma njepłaćiwu syntaksu: $1',
 	'translate-checks-escape' => 'Slědowace eskapowe sekwency móža připadne być: <strong>$1</strong>',
@@ -16897,6 +16901,7 @@ Undirstrikið undir nafninu gefur til kynna hversu langt sé síðan að þýða
  * @author Melos
  * @author Nemo bis
  * @author Pietrodn
+ * @author Shirayuki
  * @author VittGam
  * @author Vituzzu
  */
@@ -16956,8 +16961,8 @@ Se sai dove o come è usato questo messaggio, puoi aiutare gli altri traduttori 
 	'translate-edit-tmmatch-source' => 'Testo di origine per la traduzione: $1',
 	'translate-edit-tmmatch' => '$1&nbsp;% di corrispondenza',
 	'translate-use-suggestion' => 'Sostituisci la traduzione presente con questo suggerimento.',
-	'translate-edit-nopermission' => "Hai bisogno dell'autorizzazione per tradurre i messaggi.",
-	'translate-edit-askpermission' => 'Richiedi autorizzazione',
+	'translate-edit-nopermission' => "Hai bisogno dell'autorizzazione per tradurre i messaggi.", # Fuzzy
+	'translate-edit-askpermission' => 'Richiedi autorizzazione', # Fuzzy
 	'translate-magic-pagename' => 'Traduzione estesa di MediaWiki',
 	'translate-magic-help' => 'Puoi tradurre gli alias delle pagine speciali, le parole magiche e i nomi dei namespace.
 
@@ -16997,7 +17002,7 @@ Le modifiche non vengono salvate finché non clicchi sul pulsante "Salva" sotto.
 	'translate-checks-xhtml' => 'Sostituire {{PLURAL:$2|il marcatore seguente|i marcatori seguenti}} con quelli corretti: <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La definizione usa <nowiki>{{PLURAL:}}</nowiki> ma la traduzione no.',
 	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> è stato usato con {{PLURAL:$1|una forma|$1 forme}}, ma {{PLURAL:$2|è accettata solo una forma|sono accettate $2 forme}} (a parte le forme 0= e 1=).',
-	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> contiene una forma duplicata. <nowiki>&#123;&#123;PLURAL:$1|città|città&#125;&#125;</nowiki> dovrebbe essere scritto come <nowiki>{{PLURAL:$1|città}}</nowiki>.',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> contiene una forma duplicata. <nowiki>{{PLURAL:$1|città|città}}</nowiki> dovrebbe essere scritto come <nowiki>{{PLURAL:$1|città}}</nowiki>.',
 	'translate-checks-pagename' => 'Namespace cambiato rispetto alla definizione',
 	'translate-checks-format' => 'Questa traduzione non segue la definizione o ha una sintassi non valida: $1',
 	'translate-checks-escape' => 'I seguenti cambi di codice potrebbero essere accidentali: <strong>$1</strong>',
@@ -20134,8 +20139,8 @@ Wann Dir wësst wou oder wéi dëse Message gebraucht gëtt, da kënnt Dir aner 
 	'translate-edit-tmmatch-source' => "Quelltext fir d'Iwwersetzung: $1",
 	'translate-edit-tmmatch' => '$1% Iwwereestëmmung',
 	'translate-use-suggestion' => 'Déi aktuell Iwwersetzung duerch dëse Virschlag ersetzen.',
-	'translate-edit-nopermission' => "Dir braucht eng Autorisatioun fir Messagen z'iwwersetzen.",
-	'translate-edit-askpermission' => 'Autorisatioun ufroen',
+	'translate-edit-nopermission' => "Dir braucht eng Iwwersetzungsrechter fir Messagen z'iwwersetzen.",
+	'translate-edit-askpermission' => 'Autorisatioun kréien',
 	'translate-magic-pagename' => 'Erweidert MediaWiki Iwwersetzung',
 	'translate-magic-help' => "Dir kënnt d'Aliase vu Spezialsäiten, magesch Wierder an Nummraum Nimm iwwersetzen.
 
@@ -20608,6 +20613,7 @@ $messages['lrc'] = array(
 	'translate-edit-title' => 'ويرايشت $1',
 	'translate-edit-translation' => 'لرسن',
 	'translate-edit-contribute' => 'هومياری كردن',
+	'translate-edit-askpermission' => 'قول بیئتو',
 	'translate-magic-cm-to-be' => 'تا بوئه',
 	'translate-magic-cm-current' => 'تازه باو',
 	'translate-magic-cm-original' => 'اصل',
@@ -24500,8 +24506,8 @@ Valfrie meldingar skal ein berre setja om når språket ditt har særskilde krav
 	'translate-edit-tmmatch-source' => 'Kjeldetekst for omsetjing: $1',
 	'translate-edit-tmmatch' => '$1% samsvar',
 	'translate-use-suggestion' => 'Byt ut den gjeldande omsetjinga med dette framlegget.',
-	'translate-edit-nopermission' => 'Du treng løyve for å setja om meldingar',
-	'translate-edit-askpermission' => 'Bed om løyve',
+	'translate-edit-nopermission' => 'Du treng løyve for å setja om meldingar', # Fuzzy
+	'translate-edit-askpermission' => 'Bed om løyve', # Fuzzy
 	'translate-magic-pagename' => 'Utvida MediaWiki-omsetjing',
 	'translate-magic-help' => 'Du kan setja om tilleggsnamn på spesialsidenamn, magiske ord og namna på namnerom.
 
@@ -24747,11 +24753,11 @@ $1',
 	'tux-tab-untranslated' => 'Uomsette',
 	'tux-tab-outdated' => 'Utdaterte',
 	'tux-tab-translated' => 'Omsette',
-	'tux-tab-unproofread' => 'Ikkje korrekturlesne',
+	'tux-tab-unproofread' => 'Uvurderte',
 	'tux-edit' => 'Endra',
 	'tux-status-optional' => 'Valfri',
 	'tux-status-fuzzy' => 'Utdatert',
-	'tux-status-proofread' => 'Korrekturlesen',
+	'tux-status-proofread' => 'Vurdert',
 	'tux-status-translated' => 'Omsett',
 	'tux-status-saving' => 'Lagrar …',
 	'tux-status-unsaved' => 'Ulagra',
@@ -24847,6 +24853,7 @@ $messages['nso'] = array(
 /** Occitan (occitan)
  * @author Cedric31
  * @author ChrisPtDe
+ * @author Shirayuki
  */
 $messages['oc'] = array(
 	'translate' => 'Tradusir',
@@ -24904,8 +24911,8 @@ coma d'utilizar pas d'espacis o de transformar de noms pròpris. $1",
 	'translate-edit-tmmatch-source' => 'Tèxte font de la traduccion : $1',
 	'translate-edit-tmmatch' => '$1 % de correspondéncia',
 	'translate-use-suggestion' => 'Remplaçar la traduccion actuala per aquesta suggestion.',
-	'translate-edit-nopermission' => 'Vos cal obténer la permission de tradusir los messatges.',
-	'translate-edit-askpermission' => 'Demandar la permission',
+	'translate-edit-nopermission' => 'Vos cal obténer la permission de tradusir los messatges.', # Fuzzy
+	'translate-edit-askpermission' => 'Demandar la permission', # Fuzzy
 	'translate-magic-pagename' => 'Traduccion de MediaWiki espandida',
 	'translate-magic-help' => "Podètz tradusir los aliasses de paginas especialas, los mots magics, e los noms d'espacis de noms.
 
@@ -24945,7 +24952,7 @@ Los cambiaments seràn pas enregistrats tant qu'auretz pas clicat sul boton « e
 	'translate-checks-xhtml' => 'Sètz convidat(ada) a corregir {{PLURAL:$2|la balisa seguenta|las balisas seguentas}} : <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'La definicion utiliza <nowiki>{{PLURAL:}}</nowiki> mas pas la traduccion',
 	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> a recebut {{PLURAL:$1|una forma|$1 formas}} mas {{PLURAL:$2|una sola es suportada|solas $2 son suportadas}} (fòra las formas 0= e 1=).',
-	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> a de formas duplicadas al final. <nowiki>{{PLURAL:$1|feda|fedas}}</nowiki> deuriá èsser escrich atal : <nowiki>{{PLURAL:$1|fedas}}</nowiki>.',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> a de formas duplicadas al final. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> deuriá èsser escrich atal : <nowiki>{{PLURAL:$1|sheep}}</nowiki>.',
 	'translate-checks-pagename' => 'Nom d’espaci modificat dempuèi la definicion',
 	'translate-checks-format' => 'Aquesta traduccion seguís pas la definicion o a una sintaxi invalida : $1',
 	'translate-checks-escape' => 'Los escapaments seguents pòdon èsser accidentals : <strong>$1</strong>',
@@ -32658,6 +32665,7 @@ $messages['tcy'] = array(
 /** Telugu (తెలుగు)
  * @author Chaduvari
  * @author Kiranmayee
+ * @author Shirayuki
  * @author Veeven
  * @author Visdaviva
  */
@@ -32715,8 +32723,8 @@ $messages['te'] = array(
 	'translate-edit-tmmatch-source' => 'మూలకోశ అనువాదం: $1',
 	'translate-edit-tmmatch' => '$1% పోలిక',
 	'translate-use-suggestion' => 'ఈ అనువాదాన్ని మార్చుటకు సూచననివ్వండి.',
-	'translate-edit-nopermission' => 'మీరు సందేశాలను అనువదించడానికి అనుమతి అవసరం.',
-	'translate-edit-askpermission' => 'అనుమతి కోరండి',
+	'translate-edit-nopermission' => 'మీరు సందేశాలను అనువదించడానికి అనుమతి అవసరం.', # Fuzzy
+	'translate-edit-askpermission' => 'అనుమతి కోరండి', # Fuzzy
 	'translate-magic-pagename' => 'విస్తరిత మీడియావికీ అనువాదం',
 	'translate-magic-module' => 'మాడ్యూలు:',
 	'translate-magic-submit' => 'తీసుకురా',
@@ -32748,7 +32756,7 @@ $messages['te'] = array(
 <strong><nowiki>$1</nowiki></strong>',
 	'translate-checks-plural' => 'అసలు సందేశంలో <nowiki>{{PLURAL:}}</nowiki> అనివుంది కానీ అనువాదంలో లేదు.',
 	'translate-checks-plural-forms' => '<nowiki>{{PLURAL:}}</nowiki> ఇవ్వబడింది {{PLURAL:$1|ఫార్మ్|$1 ఫారములు}} కాని {{PLURAL:$2|ఒకే ఒక ఫార్మ్|$2 ఫారములు}} మద్దతివ్వబడ్డాయి (మినహాయింపు 0= కాని 1=ఫారములు).',
-	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> చివరలో నకలు ఫారములు. <nowiki> {{PLURAL:$1|గొర్రె|గొర్రెలు}}</nowiki> ఎలా వ్రాయాలంటే <nowiki> {{PLURAL:$1|గొర్రె|గొర్రెలు}}',
+	'translate-checks-plural-dupe' => '<nowiki>{{PLURAL:}}</nowiki> చివరలో నకలు ఫారములు. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> ఎలా వ్రాయాలంటే <nowiki>{{PLURAL:$1|sheep}}</nowiki>',
 	'translate-checks-format' => 'ఈ అనువాదం నిర్వచనానుసారంగా లేదు లేక చెల్లని సింటాక్స్ను కలిగివుంది: $1',
 	'translate-checks-escape' => 'క్రింది లోపాలు బహుశా అనుకోకుండా జరగవచ్చు: <strong>$1</strong>',
 	'translate-pref-nonewsletter' => 'నాకు ఈ-మెయిలు వార్తాలేఖలు పంపించవద్దు',
@@ -33642,8 +33650,8 @@ Neden:
 	'translate-edit-definition' => 'İleti tanımı',
 	'translate-edit-translation' => 'Çeviri',
 	'translate-edit-contribute' => 'Katkıda bulun',
-	'translate-edit-no-information' => "''Bu ileti için tanım bulunmuyor.''
-''Eğer bu iletinin nerede ve nasıl kullanıldığını biliyorsanız, bu ileti için bir tanım ekleyerek diğer çevirmenlere yardımcı olabilirsiniz.''", # Fuzzy
+	'translate-edit-no-information' => '<em>Bu ileti için tanım bulunmuyor.
+Eğer bu iletinin nerede ve nasıl kullanıldığını biliyorsanız, bu ileti için bir tanım ekleyerek diğer çevirmenlere yardımcı olabilirsiniz.</em>',
 	'translate-edit-information' => 'İleti hakkında bilgi(ler) ($1)',
 	'translate-edit-in-other-languages' => 'Diğer dillerdeki iletisi',
 	'translate-edit-committed' => 'Yazılımdaki mevcut çeviriler',
@@ -33652,8 +33660,8 @@ Neden:
 	'translate-edit-tmmatch-source' => 'Çeviri kaynağı metin: $1',
 	'translate-edit-tmmatch' => '%$1 benzer',
 	'translate-use-suggestion' => 'Mevcut çeviriyi bu öneri ile değiştirin.',
-	'translate-edit-nopermission' => 'İletileri çevirmek için izniniz olmalı.',
-	'translate-edit-askpermission' => 'İzin iste',
+	'translate-edit-nopermission' => 'İletileri çevirmek için çeviri hakkınız olmalı.',
+	'translate-edit-askpermission' => 'İzin al',
 	'translate-magic-pagename' => 'Genişletilmiş MedyaViki çevirisi',
 	'translate-magic-module' => 'Modül:',
 	'translate-magic-submit' => 'Getir',
@@ -33681,11 +33689,16 @@ Neden:
 	'translate-checks-plural' => 'Tanım <nowiki>{{PLURAL:}}</nowiki> kullanıyor, ancak çeviri kullanmıyor.',
 	'translate-checks-pagename' => 'Tanımdaki ad alanı değiştirilmiş',
 	'translate-checks-format' => 'Bu çeviri tanıma uymuyor ya da geçersiz söz dizimi var: $1',
+	'translate-checks-escape' => 'Şu çıkışlar yanlışlıkla olmuş olabilir: <strong>$1</strong>',
 	'translate-checks-parametersnotequal' => 'Parametre sayısı {{PLURAL:$1|$1}}; {{PLURAL:$2|$2}} olmalı.',
 	'translate-checks-malformed' => '<nowiki>$1</nowiki> hatalı biçimlendirilmiş.',
+	'translate-checks-fudforum-syntax' => 'Bu projede <nowiki>$2</nowiki> yerine <nowiki>$1</nowiki> kullanın.',
 	'translate-pref-nonewsletter' => 'Bana e-posta haber bülteni gönderme',
 	'translate-pref-editassistlang' => 'Yardımcı diller:',
 	'prefs-translate' => 'Çeviri seçenekleri',
+	'translate-pref-editassistlang-help' => 'Dil kodlarının virgülle ayrılmış listesi.
+Bu dillerdeki bir mesajın çevirisi, siz çeviri yaparken görünür.
+Varsayılan dil listesi sizin dilinizw bağlıdır.',
 	'translate-pref-editassistlang-bad' => 'Listede geçersiz dil kodu:
 <nowiki>$1</nowiki>.',
 	'right-translate' => 'Çeviri arayüzünü kullanarak değişiklik yapar',
@@ -33699,6 +33712,7 @@ Neden:
 	'translate-rc-translation-filter-no' => 'Hiçbir şey yapma',
 	'translate-rc-translation-filter-only' => 'Yalnızca çevirileri göster',
 	'translate-rc-translation-filter-filter' => 'Çevirileri filtrele',
+	'translate-rc-translation-filter-site' => 'Sadece site iletilerine değişiklikler',
 	'translationstats' => 'Çeviri istatistikleri',
 	'translate-stats-edits' => 'Değişiklikler',
 	'translate-stats-users' => 'Çevirmenler',
@@ -33732,15 +33746,18 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translations' => 'Tüm çeviriler',
 	'translations-summary' => 'Tüm mevcut çevirilerin gösterilmesi için aşağıya bir ileti adı giriniz.',
 	'translate-translations-no-message' => '"$1", çevrilebilir bir ileti değil',
+	'translate-translations-none' => '"$1" için hiç çeviri yok',
 	'translate-translations-count' => '{{PLURAL:$1|Bir çeviri|$1 çeviri}} bulundu.',
 	'translate-translations-fieldset-title' => 'İleti',
 	'translate-translations-messagename' => 'Ad:',
 	'translate-translations-project' => 'Proje:',
+	'translate-translations-including-no-param' => 'Lütfen altsayfa parametresinde geçerli bir ileti anahtarı belirtin',
 	'translate-translations-history-short' => 't',
 	'languagestats' => 'Dil istatistikleri',
 	'languagestats-summary' => 'Bu sayfa tüm ileti grupları için dil çeviri istatistiklerini gösterir.',
 	'languagestats-stats-for' => '$1 için çeviri istatistikleri ($2).',
 	'languagestats-recenttranslations' => 'son çeviriler',
+	'translate-langstats-incomplete' => 'Bu sayfadaki bazı istatistikler eksik. Daha fazla istatistik almak için lütfen yeniden yükleyin.',
 	'translate-langstats-expand' => 'genişlet',
 	'translate-langstats-collapse' => 'daralt',
 	'translate-langstats-expandall' => 'tümünü genişlet',
@@ -33765,6 +33782,8 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-mgs-submit' => 'İstatistikleri göster',
 	'translate-mgs-column-language' => 'Dil',
 	'translate-mgs-totals' => 'Tüm diller birlikte',
+	'translate-mgs-invalid-group' => 'Belirtilen grup $1 yok.',
+	'translate-mgs-nothing' => 'İstenen istatistikler için gösterilecek bir şey yok.',
 	'supportedlanguages' => 'Desteklenen diller',
 	'supportedlanguages-colorlegend' => 'Renk göstergesi: Son çeviri $1 gün önce yapıldı',
 	'supportedlanguages-portallink' => '[$1] $2 - $3',
@@ -33776,6 +33795,12 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-save' => 'Kaydet ($1)',
 	'translate-jssti-add' => 'Listeye ekle',
 	'managemessagegroups' => 'İleti grubu yönetimi',
+	'translate-smg-notallowed' => 'Bu eylemi yürütmeye izniniz yok.',
+	'translate-smg-nochanges' => 'İşlenecek herhangi bir değişiklik yok.',
+	'translate-smg-submit' => 'Değişiklikleri işlemek için gönder',
+	'translate-smg-submitted' => 'İleti tanımları güncellendi. Değişiklikler arka planda işleniyor.',
+	'translate-smg-more' => 'Bu değişiklikleri gönderdikten sonra işlemek için daha fazla değişiklik olacak.',
+	'translate-smg-left' => 'Vikideki ileti içeriği',
 	'translate-smg-right' => 'Gelen değişiklikler',
 	'translate-manage-import-diff' => 'İleti $1 | Eylemler: $2',
 	'translate-manage-import-new' => 'Yeni ileti: $1',
@@ -33783,17 +33808,38 @@ Bütün değerlerin alt ve üst sınırları vardır.',
 	'translate-manage-action-import' => 'İçe aktar',
 	'translate-manage-action-conflict' => 'İçe aktar ve hatalı (fuzzy) olarak işaretle',
 	'translate-manage-action-ignore' => 'Göz ardı et',
+	'translate-manage-action-fuzzy' => 'Çevirileri içe al ve eski yap',
+	'translate-manage-nochanges' => 'Bu grup için ileti tanımlarında herhangi bir değişiklik yok.',
 	'translate-manage-nochanges-other' => 'Bu dil için değişiklik yapılmadı.
 Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanın.',
+	'translate-manage-inconsistent' => 'İstekte tutarsızlık algılandı.
+Lütfen değişiklikleri gözden geçirin ve yeniden deneyin.
+Ayrıntılar: $1.',
+	'translate-manage-import-summary' => 'Dış bir kaynaktan yeni bir sürüm içe aktarılıyor',
+	'translate-manage-conflict-summary' => 'Dış bir kaynaktan yeni bir sürüm içe aktarılıyor.
+Lütfen kontrol edin.',
+	'translate-manage-fuzzy-summary' => 'İleti tanımı değişti',
 	'translate-manage-submit' => 'Yürüt',
-	'translate-manage-import-done' => 'Tamamlandı!', # Fuzzy
+	'translate-manage-import-ok' => 'İçe aktarılan: $1',
+	'translate-manage-import-done' => 'İçe aktarma tamamlandı!',
 	'importtranslations' => 'Çevirileri içe aktar',
 	'translate-import-from-local' => 'Yerel dosya yükleme:',
 	'translate-import-load' => 'Dosya yükle',
+	'translate-import-err-dl-failed' => 'Dosya alınamıyor:
+$1',
 	'translate-import-err-ul-failed' => 'Dosya yükleme başarısız oldu',
+	'translate-import-err-invalid-title' => 'Sağlanan dosya adı <nowiki>$1</nowiki> geçersiz.',
+	'translate-import-err-no-such-file' => '<nowiki>$1</nowiki> dosyası mevcut değil ya da yerel olarak yüklenmiş.',
+	'translate-import-err-stale-group' => 'Bu dosyanın ait olduğu ileti grubu mevcut değil.',
+	'translate-import-err-no-headers' => 'Dosya Çeviri eklentisi biçiminde iyi biçimlendirilmiş  bir Gettext dosyası değil:
+İleti grubu ve dil dosya başlığından belirlenemiyor.',
+	'translate-import-err-warnings' => 'Bu dosya iyi biçimlendirilmemiş.
+Düzenleyicinizin msgctxt alanlarını çıkarmadığından emin olun.
+Ayrıntılar: $1',
 	'translate-js-summary' => 'Açıklama:',
 	'translate-js-save' => 'Kaydet',
 	'translate-js-next' => 'Kaydet ve sonrakini aç',
+	'translate-js-nonext' => 'Bu, bu sayfadaki son iletiydi.',
 	'translate-js-skip' => 'Sonrakine geç',
 	'translate-js-save-failed' => 'Kaydetme başarısız oldu. Lütfen bu hatayı bildirin.',
 	'translate-js-history' => 'Çeviri geçmişi',
@@ -33808,7 +33854,9 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 	'translate-gs-count' => 'Sayı',
 	'translate-gs-total' => 'Toplam',
 	'translate-gs-avgscore' => 'Ort. skor',
+	'translate-documentation-language' => 'İleti belgelemesi',
 	'translate-searchprofile' => 'Çeviriler',
+	'translate-searchprofile-tooltip' => 'Tüm çevirilerde ara',
 	'translate-search-languagefilter' => 'Dile göre filtre uygula:',
 	'translate-search-nofilter' => 'Filtre yok',
 	'translate-messagereview-submit' => '"İncelendi" olarak işaretle',
@@ -33821,9 +33869,13 @@ Grup detayları görünümüne dönmek için aşağıdaki bağlantıyı kullanı
 	'api-error-unknownmessage' => 'İleti bulunamadı',
 	'api-error-fuzzymessage' => 'Çeviri belirsiz olarak işaretlenmiş',
 	'api-error-owntranslation' => 'Kendi çevirilerinizi incelendi olarak işaretleyemezsiniz',
+	'translate-messagereview-no-fuzzy' => 'Eski çeviriler gözden geçirilmiş olarak işaretlenemez.',
+	'translate-messagereview-no-own' => 'Kendi çevirilerinizi gözden geçirilmiş olarak işaretleyemezsiniz.',
+	'translate-messagereview-doit' => 'Bu çeviriyi gözden geçirilmiş olarak işaretle.',
 	'group-translate-proofr' => 'Çeviri değerlendirenler',
 	'group-translate-proofr-member' => '{{GENDER:$1|çeviri inceleyen}}',
 	'grouppage-translate-proofr' => '{{ns:project}}:Çeviri değerlendirenler',
+	'log-name-translationreview' => 'Çeviri gözden geçirme günlüğü',
 	'group-translate-sandboxed' => 'Onaylanmamış çevirmenler',
 	'group-translate-sandboxed-member' => '{{GENDER:$1|onaylanmamış çevirmen}}',
 	'translate-workflow-state-' => '(ayarla)',

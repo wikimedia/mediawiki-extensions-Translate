@@ -448,9 +448,19 @@ $messages['fr'] = array(
 	'tsb-reminder-title-generic' => 'Complétez votre présentation pour devenir un traducteur',
 	'tsb-reminder-content-generic' => 'Bonjour $1,
 
-Merci de vous être inscrit sur {{SITENAME}}. Si vous achevez vos traductions de test, les administrateurs pourront bientôt vous accorder un plein accès aux traductions.
+Merci de vous être inscrit sur {{SITENAME}}.
 
-Veuillez venir sur $2 et faire quelques traductions de plus.', # Fuzzy
+Si vous achevez vos traductions de test, les administrateurs vous accorderont peu après un plein accès aux traductions.
+
+Veuillez aller ici et faire quelques traductions supplémentaires :
+$2
+
+$3,
+L’équipe de {{SITENAME}}',
+	'tsb-reminder-sending' => 'Envoi du rappel en cours…',
+	'tsb-reminder-sent' => '{{PLURAL:$1|$1 rappel envoyé $2|$1 rappels envoyés, le dernier $2}}',
+	'tsb-reminder-sent-new' => 'Rappel envoyé',
+	'tsb-reminder-failed' => 'L’envoi du rappel a échoué',
 	'tsb-email-promoted-subject' => 'Vous êtes maintenant un traducteur à {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|Une demande|$1 demandes}}',
 	'tsb-all-languages-button-label' => 'Toutes les langues',
@@ -1170,7 +1180,7 @@ Var god kom och gör några fler översättningar här:
 $2
 
 $3
-Personalen på {{SITENAME}}',
+personalen på {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|En begäran|$1 begäran}}',
 	'tsb-all-languages-button-label' => 'Alla språk',
 	'tsb-search-requests' => 'Sökbegäran',
@@ -1246,6 +1256,7 @@ $2
 	'tsb-older-requests' => '$1 {{PLURAL:$1|старший запит|старші запити|старших запитів}}',
 	'tsb-accept-all-button-label' => 'Прийняти всі',
 	'tsb-reject-all-button-label' => 'Відхилити всі',
+	'tsb-user-posted-a-comment' => 'Не перекладач',
 	'tsb-reminder-link-text' => 'Надсилати нагадування по електронній пошті',
 	'tsb-didnt-make-any-translations' => 'Цей користувач не здійснив жодного перекладу.',
 	'tsb-translations-source' => 'Джерело',
