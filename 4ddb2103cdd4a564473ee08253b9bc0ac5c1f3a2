@@ -33,6 +33,24 @@
       "revId": "4ddb2103cdd4a564473ee08253b9bc0ac5c1f3a2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ee75395_4b2c3bf2",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-18T11:16:24Z",
+      "side": 1,
+      "message": "Only if the format is JSON, that is. the current else branch should be kept for php.",
+      "parentUuid": "0ee75395_ab1d07c9",
+      "revId": "4ddb2103cdd4a564473ee08253b9bc0ac5c1f3a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
