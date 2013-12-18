@@ -38,7 +38,7 @@
 		var $nextRequest,
 			$selectedRequests = $( '.request-selector:checked' );
 
-		$nextRequest = $selectedRequests.first().closest( '.request' ).prev();
+		$nextRequest = $selectedRequests.first().closest( '.request' ).prev( ':not(.hide)' );
 		$selectedRequests.closest( '.request' ).remove();
 
 		updateRequestCount();
@@ -46,7 +46,7 @@
 		if ( !$nextRequest.length ) {
 			// If there's no request above the first checked request,
 			// try to get the first request in the column
-			$nextRequest = $( '.requests .request' ).first();
+			$nextRequest = $( '.requests .request' ).first( ':not(.hide)' );
 		}
 
 		if ( $nextRequest.length ) {
