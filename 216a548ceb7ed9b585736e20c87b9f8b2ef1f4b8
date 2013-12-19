@@ -34,6 +34,24 @@
       "revId": "216a548ceb7ed9b585736e20c87b9f8b2ef1f4b8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_1b58738b",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-19T06:48:10Z",
+      "side": 1,
+      "message": "Oh, right. Now using a variable is a pattern change, but I guess that will work.",
+      "parentUuid": "eeebdf60_eac97b56",
+      "revId": "216a548ceb7ed9b585736e20c87b9f8b2ef1f4b8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
