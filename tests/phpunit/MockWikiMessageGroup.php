@@ -14,10 +14,12 @@ class MockWikiMessageGroup extends WikiMessageGroup {
 	public function __construct( $id, array $messages ) {
 		parent::__construct( $id, 'unused' );
 		$this->id = $id;
+		// @todo Member has private access
 		$this->messages = $messages;
 	}
 
 	public function getDefinitions() {
+		// @todo Member has private access
 		return $this->messages;
 	}
 }

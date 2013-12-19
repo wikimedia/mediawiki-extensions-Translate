@@ -36,12 +36,14 @@ class MessageIndexTest extends MediaWikiTestCase {
 	public function testMessageIndexImplementation( $mi ) {
 		$data = self::getTestData();
 		/** @var MessageIndex $mi */
+		// @todo Member has protected access
 		$mi->store( $data );
 
 		$tests = array_rand( $data, 10 );
 		foreach ( $tests as $key ) {
 			$this->assertSame(
 				$data[$key],
+				// @todo Member has protected access
 				$mi->get( $key ),
 				"Values are preserved for random key $key"
 			);
@@ -53,6 +55,7 @@ class MessageIndexTest extends MediaWikiTestCase {
 		foreach ( $tests as $key ) {
 			$this->assertSame(
 				$data[$key],
+				// @todo Member has protected access
 				$mi->get( $key ),
 				"Values are preserved after retrieve for random key $key"
 			);
