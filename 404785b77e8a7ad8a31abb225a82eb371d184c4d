@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_7600b604",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-19T08:17:37Z",
+      "side": 1,
+      "message": "This sentence sounds very complicated to me, but I don\u0027t have better suggestions right now.",
+      "revId": "404785b77e8a7ad8a31abb225a82eb371d184c4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
