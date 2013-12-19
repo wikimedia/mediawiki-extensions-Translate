@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_0ac5ba90",
+        "filename": "tests/phpunit/MessageIndexTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-19T13:43:54Z",
+      "side": 1,
+      "message": "This is actually Testable***MessageIndex where they are public.",
+      "revId": "1282c66978221f1897f38ef24bcf70b7ac3f1537",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
