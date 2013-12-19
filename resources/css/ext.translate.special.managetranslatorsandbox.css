@@ -265,3 +265,7 @@ textarea.body {
 	 */
 	text-align: left;
 }
+
+#firstHeading {
+	display: none;
+}
