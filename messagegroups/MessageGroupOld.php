@@ -252,7 +252,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * All the messages for this group, by language code.
 	 */
-	private $messages = array();
+	protected $messages = array();
 
 	/**
 	 * Returns path to the file where translation of language code $code are.
