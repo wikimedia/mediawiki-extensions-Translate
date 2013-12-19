@@ -51,14 +51,13 @@ Welcome, and thank you for you contributions!
 	'tsb-email-rejected-subject' => 'Your application to be a translator at {{SITENAME}} was rejected',
 	'tsb-email-rejected-body' => 'Hi {{GENDER:$1|$1}},
 
-I regret to inform you that I had to reject your application to become a translator at {{SITENAME}}, because you did not provide any example translation that seems valid.
+Thank you for applying as a translator at {{SITENAME}}. I regret to inform you that I have rejected your application, because the quality of your translations did not meet the requirements.
 
-If you are a well-intentioned translator that got rejected by mistake, you are welcome to become a translator at {{SITENAME}} again. Please sign up here:
+If you think that your application was rejected by mistake, please try to apply again as a translator at {{SITENAME}}. You can sign up here:
 $2
 
 {{GENDER:$3|$3}},
 {{SITENAME}} staff',
-
 	'tsb-request-count' => '$1 {{PLURAL:$1|request|requests}}',
 	'tsb-all-languages-button-label' => 'All languages',
 	'tsb-search-requests' => 'Search requests',
