@@ -131,7 +131,7 @@ class ProcessMessageChanges extends Maintenance {
 	}
 
 	protected function processMessageGroup( FileBasedMessageGroup $group ) {
-		$languages = Language::getLanguageNames( false );
+		$languages = Language::fetchLanguageNames();
 
 		// Process the source language before others
 		$sourceLanguage = $group->getSourceLanguage();
