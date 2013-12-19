@@ -1,0 +1,27 @@
+BASIC:
+  class: MediaWikiExtensionMessageGroup
+  id: ext-examplejsonextension
+  namespace: 8
+  label: Example JsonExtension
+  descriptionmsg: examplejsonextension-desc
+  extensionurl: false
+
+FILES:
+  class: JsonFFS
+  sourcePattern: %GROUPROOT%/mediawiki-extensions/extensions/ExampleJsonExtension/i18n/%CODE%.json
+  targetPattern: mediawiki-extensions/extensions/ExampleJsonExtension/i18n/%CODE%.json
+
+CHECKER:
+  class: MediaWikiMessageChecker
+  checks:
+   - pluralCheck
+   - pluralFormsCheck
+   - wikiParameterCheck
+   - wikiLinksCheck
+   - XhtmlCheck
+   - braceBalanceCheck
+   - pagenameMessagesCheck
+   - miscMWChecks
+
+INSERTABLES:
+  class: MediaWikiInsertablesSuggester

@@ -1,0 +1,27 @@
+BASIC:
+  class: MediaWikiExtensionMessageGroup
+  id: ext-exampleextension2
+  namespace: 8
+  label: Example Extension 2
+  descriptionmsg: exampleextension2-desc
+  extensionurl: false
+
+FILES:
+  class: MediaWikiExtensionFFS
+  sourcePattern: %GROUPROOT%/mediawiki-extensions/extensions/foo
+  targetPattern: mediawiki-extensions/extensions/foo
+
+CHECKER:
+  class: MediaWikiMessageChecker
+  checks:
+   - pluralCheck
+   - pluralFormsCheck
+   - wikiParameterCheck
+   - wikiLinksCheck
+   - XhtmlCheck
+   - braceBalanceCheck
+   - pagenameMessagesCheck
+   - miscMWChecks
+
+INSERTABLES:
+  class: MediaWikiInsertablesSuggester
