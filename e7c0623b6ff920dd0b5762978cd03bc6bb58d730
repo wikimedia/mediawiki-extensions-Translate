@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "eeebdf60_bb062722",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-19T08:16:24Z",
+      "side": 1,
+      "message": "Okay I see it now, you are feeding the expanded text to the job, and sending it even if deletion fails.",
+      "parentUuid": "eeebdf60_7b3adfe5",
+      "revId": "e7c0623b6ff920dd0b5762978cd03bc6bb58d730",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eeebdf60_3b44576e",
         "filename": "TranslateSandbox.i18n.php",
         "patchSetId": 1
