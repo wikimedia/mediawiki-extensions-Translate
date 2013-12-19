@@ -151,7 +151,7 @@ class TranslateSandbox {
 			case 'rejection':
 				$subjectMsg = 'tsb-email-rejected-subject';
 				$bodyMsg = 'tsb-email-rejected-body';
-				$targetSpecialPage = 'MainPage';
+				$targetSpecialPage = 'TwnMainPage';
 
 				break;
 			default:
