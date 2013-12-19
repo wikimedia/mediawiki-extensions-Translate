@@ -120,7 +120,6 @@ class SandboxMessageGroup extends WikiMessageGroup {
 				// or messages given in $wgTranslateSandboxSuggestions or just dated
 				// message index.
 				unset( $list[$index] );
-				wfWarn( "Unsuitable or unknown message $index while preparing sandbox" );
 
 				continue;
 			}
