@@ -90,7 +90,7 @@ Then you will be able to translate without limits.',
 	'log-name-translatorsandbox' => 'Translation sandbox',
 	'log-description-translatorsandbox' => 'A log of actions on translation sandbox users',
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|promoted}} $3 to {{GENDER:$4|translator}}',
-	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|rejected}} the request from $3 to become a translator',
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|rejected}} the request from "$3" to become a translator',
 );
 
 /** Message documentation (Message documentation)
