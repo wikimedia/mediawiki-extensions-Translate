@@ -15,7 +15,7 @@ $messages = array();
  * @author Amire80
  */
 $messages['en'] = array(
-	'translatesandbox' => 'Manage translator sandbox',
+	'managetranslatorsandbox' => 'Manage translator sandbox',
 	'tsb-filter-pending' => 'Pending requests',
 
 	// Reminders
@@ -101,7 +101,7 @@ Then you will be able to translate without limits.',
  * @author Shirayuki
  */
 $messages['qqq'] = array(
-	'translatesandbox' => '{{doc-special|TranslateSandbox}}',
+	'managetranslatorsandbox' => '{{doc-special|TranslateSandbox}}',
 	'tsb-filter-pending' => 'A filter option on [[Special:TranslateSandbox]].
 
 Followed by a list of the pending requests.',
@@ -190,7 +190,7 @@ Additional parameters:
  * @author Naudefj
  */
 $messages['af'] = array(
-	'translatesandbox' => 'Bestuur vertaler-sandput',
+	'managetranslatorsandbox' => 'Bestuur vertaler-sandput',
 	'tsb-filter-pending' => 'Uitstaande versoeke',
 	'tsb-reminder-title-generic' => "Voltooi u bekendstelling om 'n geverifieerde vertaler te word", # Fuzzy
 	'tsb-reminder-content-generic' => "Hallo $1,
@@ -204,7 +204,7 @@ Gaan asseblief na $2 om 'n paar vertalings te maak.", # Fuzzy
  * @author Xuacu
  */
 $messages['ast'] = array(
-	'translatesandbox' => 'Alministrar la zona de pruebas de los traductores',
+	'managetranslatorsandbox' => 'Alministrar la zona de pruebas de los traductores',
 	'tsb-filter-pending' => 'Solicitúes pendientes',
 	'tsb-reminder-title-generic' => "Complete la so presentación pa convertise'n traductor",
 	'tsb-reminder-content-generic' => "Bones, $1:
@@ -281,7 +281,7 @@ $messages['bg'] = array(
  * @author Aftab1995
  */
 $messages['bn'] = array(
-	'translatesandbox' => 'অনুবাদক খেলাঘর পরিচালনা',
+	'managetranslatorsandbox' => 'অনুবাদক খেলাঘর পরিচালনা',
 	'tsb-filter-pending' => 'অপেক্ষমান অনুরোধ',
 	'tsb-reminder-title-generic' => 'একজন যাচাইকৃত অনুবাদক হতে আপনার পরিচিতি সমাপ্ত করুন', # Fuzzy
 	'tsb-reminder-content-generic' => 'প্রিয় $1,
@@ -306,7 +306,7 @@ $messages['br'] = array(
  * @author Rillke
  */
 $messages['de'] = array(
-	'translatesandbox' => 'Übersetzer-Spielwiese konfigurieren',
+	'managetranslatorsandbox' => 'Übersetzer-Spielwiese konfigurieren',
 	'tsb-filter-pending' => 'Ausstehende Anfragen',
 	'tsb-reminder-title-generic' => 'Vervollständige deine Einführung, um ein Übersetzer zu werden.',
 	'tsb-reminder-content-generic' => 'Hallo $1,
@@ -372,7 +372,7 @@ Du wirst dann in der Lage sein, ohne Limits zu übersetzen.',
  * @author Michawiki
  */
 $messages['dsb'] = array(
-	'translatesandbox' => 'Pśełožowarske grajkanišćo zastojaś',
+	'managetranslatorsandbox' => 'Pśełožowarske grajkanišćo zastojaś',
 	'tsb-filter-pending' => 'Njedocynjone napšašowanja',
 	'tsb-reminder-title-generic' => 'Wudopołni swójo zapokazanje, aby pśełožowaŕ był',
 	'tsb-reminder-content-generic' => 'Witaj $1,
@@ -436,7 +436,7 @@ sobuźěłaśerje {{GRAMMAR:genitiw|{{SITENAME}}}}',
  * @author Fitoschido
  */
 $messages['es'] = array(
-	'translatesandbox' => 'Gestionar la zona de pruebas del traductor',
+	'managetranslatorsandbox' => 'Gestionar la zona de pruebas del traductor',
 	'tsb-filter-pending' => 'Solicitudes pendientes',
 	'tsb-reminder-title-generic' => 'Completa tu introducción para volverte un traductor verificado', # Fuzzy
 );
@@ -458,7 +458,7 @@ $messages['fi'] = array(
  * @author Wyz
  */
 $messages['fr'] = array(
-	'translatesandbox' => 'Gérer le bac à sable de tradution',
+	'managetranslatorsandbox' => 'Gérer le bac à sable de tradution',
 	'tsb-filter-pending' => 'Requêtes en attente',
 	'tsb-reminder-title-generic' => 'Complétez votre présentation pour devenir un traducteur',
 	'tsb-reminder-content-generic' => 'Bonjour $1,
@@ -512,7 +512,7 @@ L’équipe de {{SITENAME}}',
  * @author Toliño
  */
 $messages['gl'] = array(
-	'translatesandbox' => 'Administrar a zona de probas dos tradutores',
+	'managetranslatorsandbox' => 'Administrar a zona de probas dos tradutores',
 	'tsb-filter-pending' => 'Solicitudes pendentes',
 	'tsb-reminder-title-generic' => 'Complete a súa introdución para se converter nun tradutor verificado', # Fuzzy
 	'tsb-reminder-content-generic' => 'Boas, $1:
@@ -549,7 +549,7 @@ Logo diso, poderá traducir sen límites.',
  * @author Amire80
  */
 $messages['he'] = array(
-	'translatesandbox' => 'ניהול ארגז חול של מתרגמים',
+	'managetranslatorsandbox' => 'ניהול ארגז חול של מתרגמים',
 	'tsb-filter-pending' => 'בקשות ממתינות',
 	'tsb-reminder-title-generic' => 'נא להשלים את ההיכרות שלך כדי לקבל אישור לתרגם',
 	'tsb-reminder-content-generic' => 'שלום $1,
@@ -615,7 +615,7 @@ $3,
  * @author Michawiki
  */
 $messages['hsb'] = array(
-	'translatesandbox' => 'Přełožowarske hrajkanišćo zrjadować',
+	'managetranslatorsandbox' => 'Přełožowarske hrajkanišćo zrjadować',
 	'tsb-filter-pending' => 'Njesčinjene naprašowanja',
 	'tsb-reminder-title-generic' => 'Wudospołń swoje zawjedźenje, zo by so z přełožowarjom stał',
 	'tsb-reminder-content-generic' => 'Witaj $1,
@@ -679,7 +679,7 @@ sobudźěłaćerjo {{GRAMMAR:genitiw|{{SITENAME}}}}',
  * @author Beta16
  */
 $messages['it'] = array(
-	'translatesandbox' => 'Gestire la sandbox di traduzione',
+	'managetranslatorsandbox' => 'Gestire la sandbox di traduzione',
 	'tsb-filter-pending' => 'Richieste in sospeso',
 	'tsb-reminder-title-generic' => "Completa l'introduzione per diventare un traduttore",
 	'tsb-reminder-content-generic' => "Ciao $1,
@@ -745,7 +745,7 @@ Successivamente sarai in grado di tradurre senza limiti.',
  * @author Shirayuki
  */
 $messages['ja'] = array(
-	'translatesandbox' => '翻訳者サンドボックスの管理',
+	'managetranslatorsandbox' => '翻訳者サンドボックスの管理',
 	'tsb-filter-pending' => '保留中の申請',
 	'tsb-reminder-title-generic' => '翻訳者になるには、自己紹介を記入してください',
 	'tsb-reminder-sending' => '通知を送信しています...',
@@ -790,7 +790,7 @@ $messages['ja'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'translatesandbox' => '번역자 연습장 관리',
+	'managetranslatorsandbox' => '번역자 연습장 관리',
 	'tsb-filter-pending' => '보류 중인 요청',
 	'tsb-reminder-title-generic' => '검증된 번역자가 되려면 소개를 완료하세요', # Fuzzy
 	'tsb-reminder-content-generic' => '$1님 안녕하세요,
@@ -825,7 +825,7 @@ $2에 와서 조금 더 번역을 해주세요.', # Fuzzy
  * @author Purodha
  */
 $messages['ksh'] = array(
-	'translatesandbox' => 'Demm en Schpellwiß för de Övversäzer ennreeschde un verwallde.',
+	'managetranslatorsandbox' => 'Demm en Schpellwiß för de Övversäzer ennreeschde un verwallde.',
 	'tsb-filter-pending' => 'Aanfroore en der Waadeschlang',
 	'tsb-reminder-title-generic' => 'Maach Ding Sällefsvörschtällong fäädesch, öm enen beschträäteschten Övversäzzer ze wääde.', # Fuzzy
 	'tsb-reminder-content-generic' => 'Daach $1,
@@ -839,7 +839,7 @@ Bes esu jood un donn Desch op {{GRAMMAR:Dativ|$2}} enlogge un maach e paa Övver
  * @author Robby
  */
 $messages['lb'] = array(
-	'translatesandbox' => 'Iwwersetzer-Sandkëscht geréieren',
+	'managetranslatorsandbox' => 'Iwwersetzer-Sandkëscht geréieren',
 	'tsb-filter-pending' => 'Ufroen am Suspens',
 	'tsb-reminder-title-generic' => 'Kompletéiert Är Virstellung fir Iwwersetzer ze ginn',
 	'tsb-reminder-sending' => 'Erënnerung gëtt geschéckt...',
@@ -897,7 +897,7 @@ $messages['lv'] = array(
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
-	'translatesandbox' => 'Раководење со преведувачки песочник',
+	'managetranslatorsandbox' => 'Раководење со преведувачки песочник',
 	'tsb-filter-pending' => 'Барања во исчекување',
 	'tsb-reminder-title-generic' => 'Пополнете го вашето претставување и станете овластен преведувач', # Fuzzy
 	'tsb-reminder-content-generic' => 'Здраво $1,
@@ -949,7 +949,7 @@ $messages['mr'] = array(
  * @author Anakmalaysia
  */
 $messages['ms'] = array(
-	'translatesandbox' => 'Uruskan kotak pasir penterjemah',
+	'managetranslatorsandbox' => 'Uruskan kotak pasir penterjemah',
 	'tsb-filter-pending' => 'Permohonan yang menunggu',
 	'tsb-reminder-title-generic' => 'Lengkapkan pengenalan anda untuk menjadi seorang penterjemah',
 	'tsb-reminder-content-generic' => '$1,
@@ -998,7 +998,7 @@ $messages['ne'] = array(
  * @author Sjoerddebruin
  */
 $messages['nl'] = array(
-	'translatesandbox' => 'Vertalersszandbak beheren',
+	'managetranslatorsandbox' => 'Vertalersszandbak beheren',
 	'tsb-filter-pending' => 'Aanvragen in behandeling',
 	'tsb-reminder-title-generic' => 'Voltooi uw introductie om vertaler te worden',
 	'tsb-reminder-content-generic' => 'Hallo $1,
@@ -1063,7 +1063,7 @@ Ons team gaat ze snel controleren en promoveert uw gebruiker snel, zodat u zonde
  * @author Cedric31
  */
 $messages['oc'] = array(
-	'translatesandbox' => 'Gerir lo nauc de sabla de traduccion',
+	'managetranslatorsandbox' => 'Gerir lo nauc de sabla de traduccion',
 	'tsb-filter-pending' => 'Requèstas en espèra',
 	'tsb-reminder-title-generic' => 'Completatz vòstra presentacion per venir un traductor verificat', # Fuzzy
 	'tsb-reminder-content-generic' => 'Bonjorn $1,
@@ -1084,7 +1084,7 @@ $messages['pl'] = array(
  * @author Minisarm
  */
 $messages['ro'] = array(
-	'translatesandbox' => 'Administrare cutie cu nisip traducător',
+	'managetranslatorsandbox' => 'Administrare cutie cu nisip traducător',
 	'tsb-filter-pending' => 'Cereri în așteptare',
 	'tsb-reminder-title-generic' => 'Finalizați-vă introducerea pentru a deveni un translator verificat', # Fuzzy
 );
@@ -1093,7 +1093,7 @@ $messages['ro'] = array(
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
-	'translatesandbox' => "Gestisce 'a sandbox de traduzione",
+	'managetranslatorsandbox' => "Gestisce 'a sandbox de traduzione",
 	'tsb-filter-pending' => 'Richieste appese',
 	'tsb-reminder-title-generic' => "Comblete 'a 'ndroduziona toje pe devendà 'nu traduttore verificate", # Fuzzy
 	'tsb-reminder-content-generic' => "Cià $1,
@@ -1108,7 +1108,7 @@ Pe piacere avìne jndr'à $2 e fà angore quacche otre traduzione.", # Fuzzy
  * @author Okras
  */
 $messages['ru'] = array(
-	'translatesandbox' => 'Управление песочницей переводчика',
+	'managetranslatorsandbox' => 'Управление песочницей переводчика',
 	'tsb-filter-pending' => 'Запросы, ожидающие обработки',
 	'tsb-reminder-title-generic' => 'Завершите свой вводный курс, чтобы стать переводчиком.',
 	'tsb-reminder-content-generic' => 'Привет, $1!
@@ -1182,7 +1182,7 @@ $messages['sr-ec'] = array(
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
-	'translatesandbox' => 'Hantera översättarsandlåda',
+	'managetranslatorsandbox' => 'Hantera översättarsandlåda',
 	'tsb-filter-pending' => 'Väntande förfrågningar',
 	'tsb-reminder-title-generic' => 'Slutför din introduktion för att bli en översättare',
 	'tsb-reminder-content-generic' => 'Hej $1,
@@ -1233,7 +1233,7 @@ $messages['te'] = array(
  * @author Ата
  */
 $messages['uk'] = array(
-	'translatesandbox' => 'Керування грамайданчиком перекладачів',
+	'managetranslatorsandbox' => 'Керування грамайданчиком перекладачів',
 	'tsb-filter-pending' => 'Запити в очікуванні',
 	'tsb-reminder-title-generic' => 'Завершіть своє представлення, щоб стати перекладачем',
 	'tsb-reminder-content-generic' => 'Привіт, $1!
@@ -1299,7 +1299,7 @@ $2
  * @author Minh Nguyen
  */
 $messages['vi'] = array(
-	'translatesandbox' => 'Quản lý chỗ thử biên dịch',
+	'managetranslatorsandbox' => 'Quản lý chỗ thử biên dịch',
 	'tsb-filter-pending' => 'Yêu cầu đang chờ',
 	'tsb-reminder-title-generic' => 'Hoàn thành lời giới thiệu của bạn để trở thành một biên dịch viên xác minh', # Fuzzy
 	'tsb-reminder-content-generic' => 'Xin chào $1,
@@ -1338,7 +1338,7 @@ Sau đó bạn sẽ có thể biên dịch thoải mái không có giới hạn.
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
-	'translatesandbox' => '管理译者沙盒',
+	'managetranslatorsandbox' => '管理译者沙盒',
 	'tsb-filter-pending' => '待解决请求',
 	'tsb-reminder-title-generic' => '填写你的自我介绍，成为一名译者',
 	'tsb-reminder-content-generic' => '你好 $1，
@@ -1381,7 +1381,7 @@ $3，
  * @author Simon Shek
  */
 $messages['zh-hant'] = array(
-	'translatesandbox' => '管理翻譯沙盒',
+	'managetranslatorsandbox' => '管理翻譯沙盒',
 	'tsb-filter-pending' => '未解決的請求',
 	'tsb-reminder-title-generic' => '完成介紹後成為核實的翻譯者', # Fuzzy
 	'tsb-reminder-content-generic' => '$1：
