@@ -137,7 +137,7 @@ class ThinMessage extends TMessage {
 	);
 
 	/**
-	 * @var array Database Result Row
+	 * @var stdClass Database Result Row
 	 */
 	protected $row;
 
