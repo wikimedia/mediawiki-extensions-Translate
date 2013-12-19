@@ -148,6 +148,12 @@ class TranslateSandbox {
 				$targetSpecialPage = 'Translate';
 
 				break;
+			case 'rejection':
+				$subjectMsg = 'tsb-email-rejected-subject';
+				$bodyMsg = 'tsb-email-rejected-body';
+				$targetSpecialPage = 'MainPage';
+
+				break;
 			default:
 				throw new MWException( "'$type' is an invalid type of translate sandbox email" );
 		}
