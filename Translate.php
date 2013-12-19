@@ -17,7 +17,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 /**
  * Version number used in extension credits and in other places where needed.
  */
-define( 'TRANSLATE_VERSION', '2013-11-27' );
+define( 'TRANSLATE_VERSION', '2013-12-19' );
 
 /**
  * Extension credits properties.
@@ -91,6 +91,7 @@ $wgSpecialPageGroups['AggregateGroups'] = 'wiki';
 $wgSpecialPages['SearchTranslations'] = 'SpecialSearchTranslations';
 $wgSpecialPageGroups['SearchTranslations'] = 'wiki';
 $wgSpecialPages['TranslateSandbox'] = 'SpecialTranslateSandbox';
+$wgSpecialPageGroups['TranslateSandbox'] = 'users';
 $wgSpecialPages['TranslationStash'] = 'SpecialTranslationStash';
 $wgSpecialPageGroups['TranslationStash'] = 'wiki';
 
