@@ -11,23 +11,23 @@ $specialPageAliases = array();
 
 /** English (English) */
 $specialPageAliases['en'] = array(
-	'Translate' => array( 'Translate' ),
-	'Magic' => array( 'AdvancedTranslate', 'Magic' ),
-	'TranslationStats' => array( 'TranslationStats', 'TranslationStatistics' ),
-	'Translations' => array( 'Translations' ),
-	'LanguageStats' => array( 'LanguageStats' ),
-	'MessageGroupStats' => array( 'MessageGroupStats' ),
-	'PageTranslation' => array( 'PageTranslation' ),
-	'ImportTranslations' => array( 'ImportTranslations' ),
-	'ManageMessageGroups' => array( 'ManageMessageGroups' ),
-	'FirstSteps' => array( 'FirstSteps' ),
-	'SupportedLanguages' => array( 'SupportedLanguages' ),
-	'MyLanguage' => array( 'MyLanguage' ),
-	'PageTranslationDeletePage' => array( 'PageTranslationDeletePage' ),
 	'AggregateGroups' => array( 'AggregateGroups' ),
+	'FirstSteps' => array( 'FirstSteps' ),
+	'ImportTranslations' => array( 'ImportTranslations' ),
+	'LanguageStats' => array( 'LanguageStats' ),
+	'Magic' => array( 'AdvancedTranslate', 'Magic' ),
+	'ManageMessageGroups' => array( 'ManageMessageGroups' ),
+	'MessageGroupStats' => array( 'MessageGroupStats' ),
+	'MyLanguage' => array( 'MyLanguage' ),
+	'PageTranslation' => array( 'PageTranslation' ),
+	'PageTranslationDeletePage' => array( 'PageTranslationDeletePage' ),
 	'SearchTranslations' => array( 'SearchTranslations' ),
+	'SupportedLanguages' => array( 'SupportedLanguages' ),
+	'Translate' => array( 'Translate' ),
 	'TranslateSandbox' => array( 'ManageTranslatorSandbox', 'TranslateSandbox' ),
 	'TranslationStash' => array( 'TranslationStash' ),
+	'TranslationStats' => array( 'TranslationStats', 'TranslationStatistics' ),
+	'Translations' => array( 'Translations' ),
 );
 
 /** Afrikaans (Afrikaans) */
