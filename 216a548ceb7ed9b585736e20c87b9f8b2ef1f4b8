@@ -52,6 +52,23 @@
       "revId": "216a548ceb7ed9b585736e20c87b9f8b2ef1f4b8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_3bd217d6",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-19T06:51:29Z",
+      "side": 1,
+      "message": "We need else here that sets $file to $g[\u0027file\u0027];",
+      "revId": "216a548ceb7ed9b585736e20c87b9f8b2ef1f4b8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
