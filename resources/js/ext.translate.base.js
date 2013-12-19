@@ -152,15 +152,6 @@
 		}
 	} );
 
-	/**
-	 * A warning to be shown if a user tries to close the page or navigate away
-	 * from it without saving the written translation.
-	 */
-	function translateOnBeforeUnloadRegister() {
-		pageShowHandler();
-		$( window ).on( 'pageshow.translate', pageShowHandler );
-	}
-
 	function pageShowHandler() {
 		$( window ).on( 'beforeunload.translate', function () {
 			if ( mw.translate.isDirty() ) {
@@ -168,6 +159,15 @@
 				return mw.msg( 'translate-js-support-unsaved-warning' );
 			}
 		} );
+	}
+
+	/**
+	 * A warning to be shown if a user tries to close the page or navigate away
+	 * from it without saving the written translation.
+	 */
+	function translateOnBeforeUnloadRegister() {
+		pageShowHandler();
+		$( window ).on( 'pageshow.translate', pageShowHandler );
 	}
 
 	$( document ).ready( function () {
