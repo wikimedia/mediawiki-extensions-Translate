@@ -1,10 +1,11 @@
 <?php
 
 class RubyYamlFFSTest extends MediaWikiTestCase {
-	/**
-	 * @var MessageGroup
-	 */
+	/** @var MessageGroup */
 	protected $group;
+
+	/** @var FFS */
+	protected $ffs;
 
 	protected $groupConfiguration = array(
 		'BASIC' => array(
