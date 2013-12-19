@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_8ade6a13",
+        "filename": "specials/SpecialTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-19T14:43:13Z",
+      "side": 1,
+      "message": "This is now unused, right?",
+      "revId": "34f78a578b4553ec06ab56c172a85a507bb48ad2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
