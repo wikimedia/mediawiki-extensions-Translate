@@ -332,6 +332,156 @@
 		$requestsPane.find( '.requests-list' ).css( 'max-height', requestsHeight );
 	}
 
+	function selectAllRequests() {
+		var selectedCount,
+			$requestCheckboxes = $( '.request-selector' ),
+			$detailsPane = $( '.details.pane' ),
+			$selectAll = $( '.request-selector-all' ),
+			$requestRows = $( '.requests .request' ),
+			selectAllChecked = $selectAll.prop( 'checked' ),
+			$visibleRows = $requestRows.not( '.hide' );
+
+		$visibleRows.each( function ( index, row ) {
+			$( row ).find( '.request-selector' ).prop( {
+				checked: selectAllChecked,
+				disabled: false
+			} );
+		} );
+
+		if ( selectAllChecked ) {
+			displayOnMultipleSelection();
+			$visibleRows.addClass( 'selected' );
+			selectedCount = $requestCheckboxes.filter( ':checked' ).length;
+		} else {
+			$detailsPane.empty();
+			$requestRows.removeClass( 'selected' );
+			selectedCount = 0;
+		}
+
+		updateSelectedIndicator( selectedCount );
+		indicateOlderRequests();
+	}
+
+	/**
+	 * Handle click on request row
+	 * @param {jQuery.Event} e
+	 */
+	function onSelectRequest( e ) {
+		var $requestRow = $( e.target ).closest( '.request'),
+			$requestRows = $( '.requests .request' ),
+			$selectAll = $( '.request-selector-all' );
+
+		displayRequestDetails( $requestRow.data( 'data' ) );
+
+		// Clicking a row makes only that row selected and unselects all other rows
+		$requestRows.each( function ( i, row ) {
+			var $row = $( row );
+
+			if ( row === $requestRow[0] ) {
+				$row.addClass( 'selected' )
+					.find( '.request-selector' ).prop( {
+						checked: true,
+						disabled: true
+					} );
+			} else {
+				$row.removeClass( 'selected' )
+					.find( '.request-selector' ).prop( {
+						checked: false,
+						disabled: false
+					} );
+			}
+		} );
+
+		$selectAll.prop( 'indeterminate', true );
+
+		updateSelectedIndicator( 1 );
+		indicateOlderRequests();
+	}
+
+	/**
+	 * Event handler for request checkbox selection
+	 * @param {jQuery.Event} e
+	 */
+	function requestSelectHandler( e ) {
+		var checkedCount, $checkedBoxes,
+			request = e.target,
+			$detailsPane = $( '.details.pane' ),
+			$requestCheckboxes = $( '.request-selector' ),
+			$selectAll = $( '.request-selector-all' ),
+			$thisRequestRow = $( request ).parents( 'div.request' );
+
+		// Uncheck the rows that were selected by clicking the row
+		$requestCheckboxes.filter( ':disabled' ).prop( 'disabled', false );
+
+		if ( request.checked ) {
+			$thisRequestRow.addClass( 'selected' );
+		} else {
+			$thisRequestRow.removeClass( 'selected' );
+		}
+
+		$checkedBoxes = $requestCheckboxes.filter( ':checked' );
+		checkedCount = $checkedBoxes.length;
+
+		if ( checkedCount === $requestCheckboxes.length ) {
+			// All boxes are selected
+			$selectAll.prop( {
+				checked: true,
+				indeterminate: false
+			} );
+
+			displayOnMultipleSelection();
+		} else if ( checkedCount === 0 ) {
+			// No boxes are selected
+			$selectAll.prop( {
+				checked: false,
+				indeterminate: false
+			} );
+
+			$detailsPane.empty();
+		} else if ( checkedCount === 1 ) {
+			$selectAll.prop( {
+				checked: false,
+				indeterminate: true
+			} );
+
+			$checkedBoxes.prop( 'disabled', true );
+
+			// Here we know that only one checkbox is selected,
+			// so it's OK to query the data from it
+			displayRequestDetails( $checkedBoxes.parents( 'div.request' ).data( 'data' ) );
+		} else {
+			$selectAll.prop( {
+				checked: false,
+				indeterminate: true
+			} );
+
+			displayOnMultipleSelection();
+		}
+
+		updateSelectedIndicator( checkedCount );
+		indicateOlderRequests();
+
+		e.stopPropagation();
+	}
+
+	/**
+	 * Old request click handler
+	 * @param {jQuery.Event} e
+	 */
+	function oldRequestSelector( e ) {
+		var $requestRows = $( '.requests .request' ),
+			$lastSelectedRequest = $requestRows.filter( '.selected' ).last(),
+			$olderRequests = $lastSelectedRequest.nextAll( ':not(.hide)' );
+
+		$olderRequests.each( function( index, request ) {
+			$( request ).find( '.request-selector' )
+				.prop( 'checked', true ) // Otherwise the state doesn't actually change
+				.change();
+		} );
+
+		e.preventDefault();
+	}
+
 	$( document ).ready( function () {
 		var $requestCheckboxes = $( '.request-selector' ),
 			$selectAll = $( '.request-selector-all' ),
@@ -346,141 +496,18 @@
 		$( '.language-selector' ).languageFilter();
 
 		// Handle clicks for the 'Select all' checkbox
-		$selectAll.on( 'click', function () {
-			var selectedCount,
-				selectAllChecked = this.checked,
-				$visibleRows = $requestRows.not( '.hide' );
-
-			$visibleRows.each( function ( index, row ) {
-				$( row ).find( '.request-selector' ).prop( {
-					checked: selectAllChecked,
-					disabled: false
-				} );
-			} );
-
-			if ( selectAllChecked ) {
-				displayOnMultipleSelection();
-				$visibleRows.addClass( 'selected' );
-				selectedCount = $requestCheckboxes.filter( ':checked' ).length;
-			} else {
-				$detailsPane.empty();
-				$requestRows.removeClass( 'selected' );
-				selectedCount = 0;
-			}
-
-			updateSelectedIndicator( selectedCount );
-			indicateOlderRequests();
-		} );
-
-		$requestCheckboxes.on( 'click change', function ( e ) {
-			var checkedCount, $checkedBoxes,
-				$thisRequestRow = $( this ).parents( 'div.request' );
-
-			// Uncheck the rows that were selected by clicking the row
-			$requestCheckboxes.filter( ':disabled' ).prop( 'disabled', false );
-
-			if ( this.checked ) {
-				$thisRequestRow.addClass( 'selected' );
-			} else {
-				$thisRequestRow.removeClass( 'selected' );
-			}
-
-			$checkedBoxes = $requestCheckboxes.filter( ':checked' );
-			checkedCount = $checkedBoxes.length;
-
-			if ( checkedCount === $requestCheckboxes.length ) {
-				// All boxes are selected
-				$selectAll.prop( {
-					checked: true,
-					indeterminate: false
-				} );
-
-				displayOnMultipleSelection();
-			} else if ( checkedCount === 0 ) {
-				// No boxes are selected
-				$selectAll.prop( {
-					checked: false,
-					indeterminate: false
-				} );
-
-				$detailsPane.empty();
-			} else if ( checkedCount === 1 ) {
-				$selectAll.prop( {
-					checked: false,
-					indeterminate: true
-				} );
-
-				$checkedBoxes.prop( 'disabled', true );
-
-				// Here we know that only one checkbox is selected,
-				// so it's OK to query the data from it
-				displayRequestDetails( $checkedBoxes.parents( 'div.request' ).data( 'data' ) );
-			} else {
-				$selectAll.prop( {
-					checked: false,
-					indeterminate: true
-				} );
-
-				displayOnMultipleSelection();
-			}
-
-			updateSelectedIndicator( checkedCount );
-			indicateOlderRequests();
-
-			e.stopPropagation();
-		} );
-
+		$selectAll.on( 'click', selectAllRequests );
+		// Handle clicks on request checkboxes.
+		$requestCheckboxes.on( 'click change', requestSelectHandler );
 		// Handle clicks on request rows.
-		$requestRows.on( 'click', function () {
-			var requestRow = this;
-
-			displayRequestDetails( $( requestRow ).data( 'data' ) );
-
-			// Clicking a row makes only that row selected and unselects all other rows
-			$requestRows.each( function ( i, row ) {
-				var $row = $( row );
-
-				if ( row === requestRow ) {
-					$row.addClass( 'selected' )
-						.find( '.request-selector' ).prop( {
-							checked: true,
-							disabled: true
-						} );
-				} else {
-					$row.removeClass( 'selected' )
-						.find( '.request-selector' ).prop( {
-							checked: false,
-							disabled: false
-						} );
-				}
-			} );
-
-			$selectAll.prop( 'indeterminate', true );
-
-			updateSelectedIndicator( 1 );
-			indicateOlderRequests();
-		} );
-
-		$( '.older-requests-indicator' ).on( 'click', function ( e ) {
-			var $lastSelectedRequest = $requestRows.filter( '.selected' ).last(),
-				$olderRequests = $lastSelectedRequest.nextAll( ':not(.hide)' );
-
-			$olderRequests.each( function( index, request ) {
-				$( request ).find( '.request-selector' )
-					.prop( 'checked', true ) // Otherwise the state doesn't actually change
-					.change();
-
-			} );
-
-			e.preventDefault();
-		} );
+		$requestRows.on( 'click',  onSelectRequest );
+		$( '.older-requests-indicator' ).on( 'click',  oldRequestSelector );
 
 		if ( $requestRows.length ) {
 			$requestRows.first().click();
 		} else {
 			$detailsPane.text( mw.msg( 'tsb-no-requests-from-new-users' ) );
 		}
-
 	} );
 
 	// ======================================
