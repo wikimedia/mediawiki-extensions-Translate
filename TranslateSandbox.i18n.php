@@ -120,9 +120,6 @@ Followed by a list of the pending requests.',
 * $1 - the username of the new user who was promoted
 * $2 - the URL to Special:Translate at the website
 * $3 - the username of the administrator who promoted the user',
-	'tsb-request-count' => 'Label showing number of requests. Parameters:
-* $1 - number of requests
-{{Identical|Request}}',
 	'tsb-email-rejected-subject' => 'The subject for an email that announces that a user\'s request to become a translator was rejected.',
 	'tsb-email-rejected-body' => 'The body text for an email that announces that a user\'s request to become a translator was rejected. Parameters:
 * $1 - the username of the new user whose request was rejected
