@@ -359,9 +359,9 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 	),
 ) + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.translatesandbox'] = array(
-	'scripts' => 'resources/js/ext.translate.special.translatesandbox.js',
-	'styles' => 'resources/css/ext.translate.special.translatesandbox.css',
+$wgResourceModules['ext.translate.special.managetranslatorsandbox'] = array(
+	'scripts' => 'resources/js/ext.translate.special.managetranslatorsandbox.js',
+	'styles' => 'resources/css/ext.translate.special.managetranslatorsandbox.css',
 	'position' => 'top',
 	'dependencies' => array(
 		'ext.translate.loader',
