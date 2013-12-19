@@ -90,8 +90,8 @@ $wgSpecialPages['AggregateGroups'] = 'SpecialAggregateGroups';
 $wgSpecialPageGroups['AggregateGroups'] = 'wiki';
 $wgSpecialPages['SearchTranslations'] = 'SpecialSearchTranslations';
 $wgSpecialPageGroups['SearchTranslations'] = 'wiki';
-$wgSpecialPages['TranslateSandbox'] = 'SpecialTranslateSandbox';
-$wgSpecialPageGroups['TranslateSandbox'] = 'users';
+$wgSpecialPages['ManageTranslatorSandbox'] = 'SpecialManageTranslatorSandbox';
+$wgSpecialPageGroups['ManageTranslatorSandbox'] = 'users';
 $wgSpecialPages['TranslationStash'] = 'SpecialTranslationStash';
 $wgSpecialPageGroups['TranslationStash'] = 'wiki';
 

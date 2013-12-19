@@ -13,20 +13,24 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialTranslateSandbox extends SpecialPage {
+class SpecialManageTranslatorSandbox extends SpecialPage {
 	///< @param TranslationStashStorage
 	protected $stash;
 
 	function __construct() {
 		global $wgTranslateUseSandbox;
-		parent::__construct( 'TranslateSandbox', 'translate-sandboxmanage', $wgTranslateUseSandbox );
+		parent::__construct(
+			'ManageTranslatorSandbox',
+			'translate-sandboxmanage',
+			$wgTranslateUseSandbox
+		);
 	}
 
 	public function execute( $params ) {
 		$this->setHeaders();
 		$this->checkPermissions();
 		$out = $this->getOutput();
-		$out->addModules( 'ext.translate.special.translatesandbox' );
+		$out->addModules( 'ext.translate.special.managetranslatorsandbox' );
 		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 
 		$this->prepareForTests();

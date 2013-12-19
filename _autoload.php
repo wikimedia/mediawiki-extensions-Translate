@@ -46,7 +46,8 @@ $wgAutoloadClasses['SpecialMyLanguage'] = "$dir/specials/SpecialMyLanguage.php";
 $wgAutoloadClasses['SpecialSearchTranslations'] = "$dir/specials/SpecialSearchTranslations.php";
 $wgAutoloadClasses['SpecialSupportedLanguages'] = "$dir/specials/SpecialSupportedLanguages.php";
 $wgAutoloadClasses['SpecialTranslate'] = "$dir/specials/SpecialTranslate.php";
-$wgAutoloadClasses['SpecialTranslateSandbox'] = "$dir/specials/SpecialTranslateSandbox.php";
+$wgAutoloadClasses['SpecialManageTranslatorSandbox'] =
+	"$dir/specials/SpecialManageTranslatorSandbox.php";
 $wgAutoloadClasses['SpecialTranslationStats'] = "$dir/specials/SpecialTranslationStats.php";
 $wgAutoloadClasses['SpecialTranslations'] = "$dir/specials/SpecialTranslations.php";
 $wgAutoloadClasses['SpecialTranslationStash'] = "$dir/specials/SpecialTranslationStash.php";

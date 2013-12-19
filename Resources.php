@@ -298,6 +298,43 @@ $wgResourceModules['ext.translate.special.managegroups'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.special.managetranslatorsandbox'] = array(
+	'scripts' => 'resources/js/ext.translate.special.managetranslatorsandbox.js',
+	'styles' => 'resources/css/ext.translate.special.managetranslatorsandbox.css',
+	'position' => 'top',
+	'dependencies' => array(
+		'ext.translate.loader',
+		'ext.translate.translationstashstorage',
+		'ext.uls.buttons',
+		'ext.uls.mediawiki',
+		'mediawiki.api',
+		'mediawiki.jqueryMsg',
+		'mediawiki.language',
+		'jquery.ui.dialog',
+	),
+	'messages' => array(
+		'tsb-all-languages-button-label',
+		'tsb-accept-button-label',
+		'tsb-reject-button-label',
+		'tsb-selected-count',
+		'tsb-older-requests',
+		'tsb-accept-all-button-label',
+		'tsb-reject-all-button-label',
+		'tsb-user-posted-a-comment',
+		'tsb-reminder-link-text',
+		'tsb-reminder-sending',
+		'tsb-reminder-sent',
+		'tsb-reminder-sent-new',
+		'tsb-reminder-failed',
+		'tsb-didnt-make-any-translations',
+		'tsb-translations-source',
+		'tsb-translations-user',
+		'tsb-translations-current',
+		'tsb-request-count',
+		'tsb-no-requests-from-new-users',
+	),
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.special.pagetranslation'] = array(
 	'scripts' => 'resources/js/ext.translate.special.pagetranslation.js',
 	'styles' => 'resources/css/ext.translate.special.pagetranslation.css',
@@ -356,43 +393,6 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'tpt-discouraged-language',
 		'tux-editor-proofreading-hide-own-translations',
 		'tux-editor-proofreading-show-own-translations',
-	),
-) + $resourcePaths;
-
-$wgResourceModules['ext.translate.special.translatesandbox'] = array(
-	'scripts' => 'resources/js/ext.translate.special.translatesandbox.js',
-	'styles' => 'resources/css/ext.translate.special.translatesandbox.css',
-	'position' => 'top',
-	'dependencies' => array(
-		'ext.translate.loader',
-		'ext.translate.translationstashstorage',
-		'ext.uls.buttons',
-		'ext.uls.mediawiki',
-		'mediawiki.api',
-		'mediawiki.jqueryMsg',
-		'mediawiki.language',
-		'jquery.ui.dialog',
-	),
-	'messages' => array(
-		'tsb-all-languages-button-label',
-		'tsb-accept-button-label',
-		'tsb-reject-button-label',
-		'tsb-selected-count',
-		'tsb-older-requests',
-		'tsb-accept-all-button-label',
-		'tsb-reject-all-button-label',
-		'tsb-user-posted-a-comment',
-		'tsb-reminder-link-text',
-		'tsb-reminder-sending',
-		'tsb-reminder-sent',
-		'tsb-reminder-sent-new',
-		'tsb-reminder-failed',
-		'tsb-didnt-make-any-translations',
-		'tsb-translations-source',
-		'tsb-translations-user',
-		'tsb-translations-current',
-		'tsb-request-count',
-		'tsb-no-requests-from-new-users',
 	),
 ) + $resourcePaths;
 
