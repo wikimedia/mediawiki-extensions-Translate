@@ -131,6 +131,8 @@ class TranslateSandbox {
 	public static function sendEmail( User $sender, User $target, $type ) {
 		global $wgNoReplyAddress;
 
+		$targetLang = $target->getOption( 'language' );
+
 		switch ( $type ) {
 			case 'reminder':
 				if ( !self::isSandboxed( $target ) ) {
@@ -158,13 +160,13 @@ class TranslateSandbox {
 				throw new MWException( "'$type' is an invalid type of translate sandbox email" );
 		}
 
-		$subject = wfMessage( $subjectMsg )->text();
+		$subject = wfMessage( $subjectMsg )->inLanguage( $targetLang )->text();
 		$body = wfMessage(
 			$bodyMsg,
 			$target->getName(),
 			SpecialPage::getTitleFor( $targetSpecialPage )->getCanonicalUrl(),
 			$sender->getName()
-		)->inLanguage( $target->getOption( 'language' ) )->text();
+		)->inLanguage( $targetLang )->text();
 
 		$params = array(
 			'user' => $target->getId(),
