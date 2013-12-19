@@ -6,6 +6,11 @@
  * @license GPL-2.0+
  */
 
+/* Hide the page title to give more space for the content */
+#firstHeading {
+	display: none;
+}
+
 /* Panes */
 .filter.pane,
 .search.pane {
