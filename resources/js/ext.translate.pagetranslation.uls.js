@@ -4,7 +4,6 @@
 	// BC for MW <= 1.21
 	var getUrl = mw.util.getUrl || mw.util.wikiGetlink;
 
-
 	mw.uls.changeLanguage = function ( language ) {
 		var page, uri;
 		page = 'Special:MyLanguage/' + mw.config.get( 'wgPageName' );

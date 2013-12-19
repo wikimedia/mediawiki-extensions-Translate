@@ -546,7 +546,6 @@
 			quickList: mw.uls.getFrequentLanguageList
 		} );
 
-
 		$clearButton.on( 'click', function() {
 			var userLang = mw.config.get( 'wgUserLanguage' );
 
