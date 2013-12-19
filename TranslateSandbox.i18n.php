@@ -97,6 +97,7 @@ Then you will be able to translate without limits.',
  * @author Amire80
  * @author Metalhead64
  * @author Nike
+ * @author Raymond
  * @author Shirayuki
  */
 $messages['qqq'] = array(
@@ -119,11 +120,11 @@ Followed by a list of the pending requests.',
 * $1 - the username of the new user who was promoted
 * $2 - the URL to Special:Translate at the website
 * $3 - the username of the administrator who promoted the user',
-	'tsb-email-rejected-subject' => 'The subject for an email that announces that a user\'s request to become a translator was rejected.',
-	'tsb-email-rejected-body' => 'The body text for an email that announces that a user\'s request to become a translator was rejected. Parameters:
+	'tsb-email-rejected-subject' => "The subject for an email that announces that a user's request to become a translator was rejected.",
+	'tsb-email-rejected-body' => "The body text for an email that announces that a user's request to become a translator was rejected. Parameters:
 * $1 - the username of the new user whose request was rejected
 * $2 - the URL to Special:MainPage at the website
-* $3 - the username of the administrator who promoted the user',
+* $3 - the username of the administrator who promoted the user",
 	'tsb-request-count' => 'Label showing number of requests. Parameters:
 * $1 - number of requests
 {{Identical|Request}}',
@@ -262,7 +263,7 @@ Darréu podrá traducir ensin llendes.',
 	'log-name-translatorsandbox' => 'Entornu aislláu de traducción',
 	'log-description-translatorsandbox' => "Rexistru d'aiciones de los usuarios del entornu aislláu de traducción",
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|promovió}} a $3 a {{GENDER:$4|traductor}}',
-	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|refugó}} la solicitú de $3 de facese traductor',
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|refugó}} la solicitú de $3 de facese traductor', # Fuzzy
 );
 
 /** Bulgarian (български)
@@ -335,6 +336,16 @@ Willkommen und vielen Dank für deine Beiträge!
 
 {{GENDER:$3|$3}},
 Mitarbeiter von {{SITENAME}}',
+	'tsb-email-rejected-subject' => 'Dein Antrag auf Beförderung zum Übersetzer auf {{SITENAME}} wurde abgelehnt',
+	'tsb-email-rejected-body' => 'Hallo $1,
+
+vielen Dank für deinen Antrag auf Beförderung {{GENDER:$1|zum Übersetzer|zur Übersetzerin|zum Übersetzer}} auf {{SITENAME}}. Ich bedauere, dich informieren zu müssen, dass ich deinen Antrag abgelehnt habe, da die Qualität deiner Übersetzungen nicht den Anforderungen entspricht.
+
+Falls du denkst, dass dein Antrag durch einen Fehler abgelehnt wurde, versuche, deinen Übersetzerantrag auf {{SITENAME}} erneut einzureichen. Du kannst dich hier registrieren:
+$2
+
+$3,
+{{GENDER:$3|Mitarbeiter|Mitarbeiterin|Mitarbeiter}} von {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|Eine Anfrage|$1 Anfragen}}',
 	'tsb-all-languages-button-label' => 'Alle Sprachen',
 	'tsb-search-requests' => 'Anfragen durchsuchen',
@@ -344,6 +355,7 @@ Mitarbeiter von {{SITENAME}}',
 	'tsb-older-requests' => '{{PLURAL:$1|Eine ältere Anfrage|$1 ältere Anfragen}}',
 	'tsb-accept-all-button-label' => 'Alle akzeptieren',
 	'tsb-reject-all-button-label' => 'Alle ablehnen',
+	'tsb-user-posted-a-comment' => 'Kein Übersetzer',
 	'tsb-reminder-link-text' => 'E-Mail-Erinnerung senden',
 	'tsb-didnt-make-any-translations' => 'Dieser Benutzer hat noch keine Übersetzungen durchgeführt.',
 	'tsb-translations-source' => 'Quelle',
@@ -361,10 +373,10 @@ Unser Team wird dein Benutzerkonto bald verifizieren und hochstufen.
 Du wirst dann in der Lage sein, ohne Limits zu übersetzen.',
 	'tsb-no-requests-from-new-users' => 'Keine Anträge von neuen Benutzern',
 	'tsb-promoted-from-sandbox' => 'Der Benutzer wurde zum Übersetzer befördert',
-	'log-name-translatorsandbox' => 'Übersetzungsspielwiese',
+	'log-name-translatorsandbox' => 'Übersetzungsspielwiesen-Logbuch',
 	'log-description-translatorsandbox' => 'Es folgt ein Logbuch von Aktionen auf Übersetzungsspielwiesenbenutzer.',
 	'logentry-translatorsandbox-promoted' => '$1 hat $3 {{GENDER:$4|zum Übersetzer|zur Übersetzerin|zum Übersetzer}} {{GENDER:$2|befördert}}',
-	'logentry-translatorsandbox-rejected' => '$1 hat die Anfrage von $3 zur Beförderung {{GENDER:$2|zum Übersetzer|zur Übersetzerin|zum Übersetzer}} abgelehnt',
+	'logentry-translatorsandbox-rejected' => '$1 hat die Anfrage von „$3“ zur Beförderung {{GENDER:$2|zum Übersetzer|zur Übersetzerin|zum Übersetzer}} abgelehnt',
 );
 
 /** Lower Sorbian (dolnoserbski)
@@ -428,7 +440,7 @@ sobuźěłaśerje {{GRAMMAR:genitiw|{{SITENAME}}}}',
 	'log-name-translatorsandbox' => 'Pśełožowańske grajkanišćo',
 	'log-description-translatorsandbox' => 'Protokol akcijow na wužywarjach pśełožowańskego grajkanišća',
 	'logentry-translatorsandbox-promoted' => '$1 jo $3 za {{GENDER:$4|pśełožowarja|pśełožwarku}} {{GENDER:$2|pówušył|pówušyła}}',
-	'logentry-translatorsandbox-rejected' => '$1 jo póžedanje wót $3 na pówušenje za {{GENDER:$2|pśełožowarja|pśełožowarku}} {{GENDER:$2|wótpokazał|wótpokazała}}',
+	'logentry-translatorsandbox-rejected' => '$1 jo póžedanje wót $3 na pówušenje za {{GENDER:$2|pśełožowarja|pśełožowarku}} {{GENDER:$2|wótpokazał|wótpokazała}}', # Fuzzy
 );
 
 /** Spanish (español)
@@ -445,8 +457,34 @@ $messages['es'] = array(
  * @author Nike
  */
 $messages['fi'] = array(
+	'managetranslatorsandbox' => 'Kääntäjähakemusten hallinta',
+	'tsb-filter-pending' => 'Avoimet hakemukset',
+	'tsb-reminder-title-generic' => 'Suorita harjoitus loppuun, jotta sinut voidaan hyväksyä kääntäjäksi',
+	'tsb-reminder-sending' => 'Lähetetään muistutusta...',
+	'tsb-reminder-sent-new' => 'Muistutus lähetetty',
+	'tsb-reminder-failed' => 'Muistutuksen lähettäminen epäonnistui',
+	'tsb-email-promoted-subject' => '{{SITENAME}}: Sinut on hyväksytty kääntäjäksi',
+	'tsb-request-count' => '$1 {{PLURAL:$1|hakemus|hakemusta}}',
+	'tsb-all-languages-button-label' => 'Kaikki kielet',
+	'tsb-search-requests' => 'Hae hakemuksista',
+	'tsb-accept-button-label' => 'Hyväksy',
+	'tsb-reject-button-label' => 'Hylkää',
+	'tsb-selected-count' => '{{PLURAL:$1|$1 käyttäjä|$1 käyttäjää}} valittu',
+	'tsb-older-requests' => '$1 {{PLURAL:$1|vanhempi hakemus|vanhempaa hakemusta}}',
 	'tsb-accept-all-button-label' => 'Hyväksy kaikki',
+	'tsb-reject-all-button-label' => 'Hylkää kaikki',
+	'tsb-reminder-link-text' => 'Lähetä muistutus',
+	'tsb-didnt-make-any-translations' => 'Käyttäjä ei ole tehnyt käännöksiä.',
+	'tsb-translations-source' => 'Lähde',
+	'tsb-translations-user' => 'Käyttäjän käännös',
+	'tsb-translations-current' => 'Nykyinen käännös',
 	'translationstash' => 'Tervetuloa',
+	'translate-translationstash-welcome' => 'Tervetuloa {{GENDER:$1|$1}}. Olet uusi kääntäjä.',
+	'translate-translationstash-welcome-note' => 'Tutustu käännöstyökaluihin. Käännä muutamia viestejä, niin saat täydet käännösoikeudet lempiprojektiesi kääntämiseen.',
+	'translate-translationstash-initialtranslation' => 'Ensimmäinen käännös',
+	'translate-translationstash-translations' => '$1 {{PLURAL:$1|valmis käännös|valmista käännöstä}}',
+	'translate-translationstash-skip-button-label' => 'Ohita',
+	'tsb-limit-reached-title' => 'Kiitos käännöksistäsi',
 );
 
 /** French (français)
@@ -503,7 +541,7 @@ L’équipe de {{SITENAME}}',
 	'log-name-translatorsandbox' => 'Bac à sable de traduction',
 	'log-description-translatorsandbox' => 'Un journal des actions sur les utilisateurs du bac à sable de traduction',
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|a promu}} $3 comme {{{{GENDER:$4|traducteur}}.', # Fuzzy
-	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|a rejeté}} la demande de $3 de devenir traducteur',
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|a rejeté}} la demande de $3 de devenir traducteur', # Fuzzy
 );
 
 /** Galician (galego)
@@ -607,7 +645,7 @@ $3,
 	'log-name-translatorsandbox' => 'ארגז חול של תרגומים',
 	'log-description-translatorsandbox' => 'יומן פעולות על משתמשים בארגז חול של תרגומים',
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|קידם|קידמה}} את $3 לתפקיד {{GENDER:$4|מתרגם|מתרגמת}}',
-	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|דחה|דחתה}} את הבקשה של $3 לקבל הרשאת מתרגם',
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|דחה|דחתה}} את הבקשה של $3 לקבל הרשאת מתרגם', # Fuzzy
 );
 
 /** Upper Sorbian (hornjoserbsce)
@@ -671,11 +709,12 @@ sobudźěłaćerjo {{GRAMMAR:genitiw|{{SITENAME}}}}',
 	'log-name-translatorsandbox' => 'Přełožowanske hrajkanišćo',
 	'log-description-translatorsandbox' => 'Protokol akcijow na wužiwarjach přełožowanskeho hrajkanišća',
 	'logentry-translatorsandbox-promoted' => '$1 je $3 za {{GENDER:$4|přełožowarja|přełožwarku}} {{GENDER:$2|powyšił|powyšiła}}',
-	'logentry-translatorsandbox-rejected' => '$1 je naprašowanje wot $3 na powyšenje za {{GENDER:$2|přełožowarja|přełožowarku}} {{GENDER:$2|wotpokazał|wotpokazała}}',
+	'logentry-translatorsandbox-rejected' => '$1 je naprašowanje wot $3 na powyšenje za {{GENDER:$2|přełožowarja|přełožowarku}} {{GENDER:$2|wotpokazał|wotpokazała}}', # Fuzzy
 );
 
 /** Italian (italiano)
  * @author Beta16
+ * @author Nemo bis
  */
 $messages['it'] = array(
 	'managetranslatorsandbox' => 'Gestire la sandbox di traduzione',
@@ -714,9 +753,10 @@ Lo staff di {{SITENAME}}',
 	'tsb-accept-button-label' => 'Accetta',
 	'tsb-reject-button-label' => 'Rifiuta',
 	'tsb-selected-count' => '{{PLURAL:$1|$1 utente selezionato|$1 utenti selezionati}}',
-	'tsb-older-requests' => '$1 {{PLURAL:$1|richiesta|richieste}} più vecchia',
+	'tsb-older-requests' => '$1 {{PLURAL:$1|richiesta precedente|richieste precedenti}}',
 	'tsb-accept-all-button-label' => 'Accetta tutto',
 	'tsb-reject-all-button-label' => 'Rifiuta tutto',
+	'tsb-user-posted-a-comment' => 'Non un traduttore',
 	'tsb-reminder-link-text' => 'Invia email di promemoria',
 	'tsb-didnt-make-any-translations' => 'Questo utente non ha fatto alcuna traduzione.',
 	'tsb-translations-source' => 'Sorgente',
@@ -737,7 +777,7 @@ Successivamente sarai in grado di tradurre senza limiti.',
 	'log-name-translatorsandbox' => 'Sandbox di traduzione',
 	'log-description-translatorsandbox' => 'Un registro delle azioni sugli utenti della sandbox di traduzione',
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|ha promosso}} $3 a {{GENDER:$4|traduttore|traduttrice|traduttore/trice}}',
-	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|ha rifiutato}} la richiesta di $3 di diventare un traduttore',
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|ha rifiutato}} la richiesta di $3 di diventare un traduttore', # Fuzzy
 );
 
 /** Japanese (日本語)
@@ -761,6 +801,7 @@ $messages['ja'] = array(
 	'tsb-older-requests' => '以前の $1 {{PLURAL:$1|件の申請}}',
 	'tsb-accept-all-button-label' => 'すべて受理',
 	'tsb-reject-all-button-label' => 'すべて却下',
+	'tsb-user-posted-a-comment' => '非翻訳者',
 	'tsb-reminder-link-text' => '通知を送信',
 	'tsb-didnt-make-any-translations' => 'この利用者は何も翻訳していません。',
 	'tsb-translations-source' => '原文',
@@ -780,7 +821,7 @@ $messages['ja'] = array(
 	'log-name-translatorsandbox' => '翻訳サンドボックス',
 	'log-description-translatorsandbox' => '翻訳サンドボックス利用者への操作の記録',
 	'logentry-translatorsandbox-promoted' => '$1 が $3 を{{GENDER:$4|翻訳者}}に{{GENDER:$2|昇格させました}}',
-	'logentry-translatorsandbox-rejected' => '$1 が $3 の翻訳者権限の付与申請を{{GENDER:$2|却下しました}}',
+	'logentry-translatorsandbox-rejected' => '$1 が $3 の翻訳者権限の付与申請を{{GENDER:$2|却下しました}}', # Fuzzy
 );
 
 /** Korean (한국어)
@@ -831,7 +872,21 @@ $messages['ksh'] = array(
 mer bedangke ons dat De Desch köözlesch {{ucfirst:{{GRAMMAR:em|{{ucfirst:{{SITENAME}}}}}}}} aanjemälldt häs. Wann Do jraad noch e paa Övversäzonge för et Prööve fäädesch määß, künne de Wikki_Kööbeße desch freischallde för et Övversäzze.
 
 Bes esu jood un donn Desch op {{GRAMMAR:Dativ|$2}} enlogge un maach e paa Övversäzonge.', # Fuzzy
+	'tsb-all-languages-button-label' => 'Alle Schprohche',
+	'tsb-accept-button-label' => 'Aanämme',
+	'tsb-reject-button-label' => 'Aflehne',
+	'tsb-accept-all-button-label' => 'All aanämme',
+	'tsb-reject-all-button-label' => 'All aflehne',
+	'tsb-user-posted-a-comment' => 'Keine Övversäzer',
+	'translationstash' => 'Wellkumme',
+	'translate-translationstash-welcome' => 'Wellkumme $1, Do bess_en{{GENDER:$1|e||e||e}} neuje Övversäzer{{GENDER:$1||ėn||ėn|}}.',
+	'tsb-limit-reached-title' => 'Dangke för Ding Övversäzonge',
+	'tsb-no-requests-from-new-users' => 'Kein Aanfroore vun neue Metmaacher',
+	'tsb-promoted-from-sandbox' => 'Dä Metmaacher es zom Övversäzer opjeschtohv woode.',
+	'log-name-translatorsandbox' => 'Sandkaste för et Övversäze',
+	'log-description-translatorsandbox' => 'Et Logbooch vun wat de Metmaacher em Sandkaste för et Övversäze jedonn han',
 	'logentry-translatorsandbox-promoted' => '{{GENDER:$2|Dä Metmaacher|De Metmaacherėn|Dä Metmaacher|De Metmaacherėn|Dä Metmaacher}} $1 hät {{GENDER:$4|Dä Metmaacher|De Metmaacherėn|Dä Metmaacher|De Metmaacherėn|Dä Metmaacher}} $3 en di Jrop „Övversäzer“ jedonn.',
+	'logentry-translatorsandbox-rejected' => 'D{{GENDER:$2|ä Metmaacher|e Metmaacherėn|ä Metmaacher|e Metmaacherėn|ä Metmaacher}} $1 hät afjelehnt, dä Metmaacher $3 zom Övversäzer opzeschohfe.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -844,6 +899,7 @@ $messages['lb'] = array(
 	'tsb-reminder-sending' => 'Erënnerung gëtt geschéckt...',
 	'tsb-reminder-sent-new' => 'Eng Erënnerung schécken',
 	'tsb-email-promoted-subject' => 'Dir sidd elo Iwwersetzer op {{SITENAME}}',
+	'tsb-email-rejected-subject' => 'Är Demande fir en Iwwersetzer op {{SITENAME}} ze gi gouf refuséiert.',
 	'tsb-request-count' => '{{PLURAL:$1|Eng Ufro|$1 Ufroen}}',
 	'tsb-all-languages-button-label' => 'All Sproochen',
 	'tsb-accept-button-label' => 'Akzeptéieren',
@@ -851,6 +907,7 @@ $messages['lb'] = array(
 	'tsb-older-requests' => '$1 méi al {{PLURAL:$1|Ufro|Ufroen}}',
 	'tsb-accept-all-button-label' => 'All akzeptéieren',
 	'tsb-reject-all-button-label' => 'Alles refuséieren',
+	'tsb-user-posted-a-comment' => 'Keen Iwwersetzer',
 	'tsb-didnt-make-any-translations' => 'Dëse Benotzer huet nach keng Iwwersetzunge gemaach.',
 	'tsb-translations-source' => 'Quell',
 	'tsb-translations-user' => 'Benotzer Iwwersetzungen',
@@ -933,7 +990,7 @@ $messages['mk'] = array(
 	'log-name-translatorsandbox' => 'Преводен песочник',
 	'log-description-translatorsandbox' => 'Дневник на дејства со корисници на преводниот песочник',
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$4|го|ја}} {{GENDER:$2|унапреди}} $3 во {{GENDER:$4|преведувач}}',
-	'logentry-translatorsandbox-rejected' => '$1 го {{GENDER:$2|одби}} барањето на $3 за да стане преведувач',
+	'logentry-translatorsandbox-rejected' => '$1 го {{GENDER:$2|одби}} барањето на $3 за да стане преведувач', # Fuzzy
 );
 
 /** Marathi (मराठी)
@@ -1036,6 +1093,7 @@ Medewerker van {{SITENAME}}',
 	'tsb-older-requests' => '$1 {{PLURAL:$1|ouder verzoek|oudere verzoeken}}',
 	'tsb-accept-all-button-label' => 'Alles accepteren',
 	'tsb-reject-all-button-label' => 'Alles afwijzen',
+	'tsb-user-posted-a-comment' => 'Geen vertaler',
 	'tsb-reminder-link-text' => 'Herinnering per e-mail verzenden',
 	'tsb-didnt-make-any-translations' => 'Deze gebruiker heeft nog niets vertaald.',
 	'tsb-translations-source' => 'Bron',
@@ -1055,7 +1113,7 @@ Ons team gaat ze snel controleren en promoveert uw gebruiker snel, zodat u zonde
 	'log-name-translatorsandbox' => 'Vertalingenzandbak',
 	'log-description-translatorsandbox' => 'Een logboek van de handelingen van gebruikers in de vertalingenzandbak.',
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|heeft}} $3 gepromoveerd tot {{GENDER:$4|vertaler}}',
-	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|heeft}} het verzoek van $3 om vertaler te worden geweigerd',
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|heeft}} het verzoek van $3 om vertaler te worden geweigerd', # Fuzzy
 );
 
 /** Occitan (occitan)
@@ -1165,7 +1223,7 @@ $2
 	'log-name-translatorsandbox' => 'Песочница для переводов',
 	'log-description-translatorsandbox' => 'Журнал действий с участниками песочницы переводов',
 	'logentry-translatorsandbox-promoted' => '$1 сделал{{GENDER:$2||а}}$3 {{GENDER:$4|переводчиком}}.',
-	'logentry-translatorsandbox-rejected' => '$1 отклонил{{GENDER:$2||а}} запрос от $3 статуса переводчика.',
+	'logentry-translatorsandbox-rejected' => '$1 отклонил{{GENDER:$2||а}} запрос от $3 статуса переводчика.', # Fuzzy
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
@@ -1195,6 +1253,16 @@ $2
 
 $3
 personalen på {{SITENAME}}',
+	'tsb-email-rejected-subject' => 'Din ansökan om att bli en översättare på {{SITENAME}} avslogs',
+	'tsb-email-rejected-body' => 'Hej {{GENDER:$1|$1}},
+
+Tack för att du ansöker om att bli översättare på {{SITENAME}}. Jag måste tyvärr meddela att jag har avslagit din ansökan, eftersom kvaliteten på dina översättningar inte uppfyllde kraven.
+
+Om du tror att din ansökan avslogs av misstag, var god försök att ansöka igen som en översättare på {{SITENAME}}. Du kan registrera dig här:
+$2
+
+{{GENDER:$3|$3}},
+Personal på {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|En begäran|$1 begäran}}',
 	'tsb-all-languages-button-label' => 'Alla språk',
 	'tsb-search-requests' => 'Sökbegäran',
@@ -1202,6 +1270,7 @@ personalen på {{SITENAME}}',
 	'tsb-reject-button-label' => 'Acceptera inte',
 	'tsb-accept-all-button-label' => 'Acceptera alla',
 	'tsb-reject-all-button-label' => 'Avvisa alla',
+	'tsb-user-posted-a-comment' => 'Inte en översättare',
 	'tsb-reminder-link-text' => 'Skicka e-postpåminnelse',
 	'tsb-translations-source' => 'Källa',
 	'tsb-translations-user' => 'Användaröversättningar',
@@ -1216,6 +1285,7 @@ personalen på {{SITENAME}}',
 	'tsb-limit-reached-body' => 'Du har nått översättningsgränsen för nya översättare.
 Vårt team kommer snart verifiera och uppgradera ditt konto.
 Sedan kommer du kunna översätta utan begränsningar.',
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|avvisade}} begäran från "$3" att bli en översättare',
 );
 
 /** Telugu (తెలుగు)
@@ -1291,7 +1361,7 @@ $2
 	'log-name-translatorsandbox' => 'Пісочниця перекладу',
 	'log-description-translatorsandbox' => 'Журнал дій користувачів у пісочниці перекладу',
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|підвищив|підвищила}} $3 до {{GENDER:$4|перекладача|перекладачки}}',
-	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|відхилив|відхилила}} запит від $3 стати перекладачем',
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|відхилив|відхилила}} запит від $3 стати перекладачем', # Fuzzy
 );
 
 /** Vietnamese (Tiếng Việt)

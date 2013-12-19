@@ -2241,9 +2241,9 @@ $messages['it'] = array(
 	'translate-fs-permissions-title' => 'Richiedi i permessi per tradurre',
 	'translate-fs-target-title' => 'Comincia a tradurre!',
 	'translate-fs-email-title' => 'Conferma il tuo indirizzo email',
-	'translate-fs-intro' => "Benvenuto/a nel percorso guidato per i primi passi in {{SITENAME}}.
+	'translate-fs-intro' => 'Benvenuto/a nel percorso guidato per i primi passi in {{SITENAME}}.
 Sarai guidato passo passo nel processo di diventare un traduttore.
-Alla fine sarai in grado di tradurre i ''messaggi di sistema'' di tutti i progetti supportati da {{SITENAME}}.", # Fuzzy
+Alla fine sarai in grado di tradurre i <em>messaggi di sistema</em> di tutti i progetti supportati da {{SITENAME}}.',
 	'translate-fs-selectlanguage' => 'Scegli una lingua',
 	'translate-fs-settings-planguage' => 'Lingua principale:',
 	'translate-fs-settings-planguage-desc' => "La tua lingua principale funge per te sia da lingua dell'interfaccia del wiki sia da lingua predefinita in cui tradurre.",

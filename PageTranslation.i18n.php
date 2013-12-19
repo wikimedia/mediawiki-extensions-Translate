@@ -5534,12 +5534,12 @@ La pagina che stai cercando di modificare non sembra corrispondere ad alcuna pag
 	'tpt-translation-restricted' => "La traduzione di questa pagina in questa lingua è stata impedita dall'amministratore.
 
 Motivo: $1",
-	'tpt-discouraged-language-force' => "L'amministratore ha limitato le lingue in cui questa pagina può essere tradotta. Questa lingua non è compresa tra esse.
+	'tpt-discouraged-language-force' => '<strong>Questa pagina non può essere tradotta in $2.</strong>
 
-Motivo: $1", # Fuzzy
-	'tpt-discouraged-language' => "Questa lingua non è impostata come prioritaria dall'amministratore delle traduzioni per questa pagina.
+Un amministratore delle traduzioni ha deciso che questa pagina può essere tradotta solo in $3.',
+	'tpt-discouraged-language' => '<strong>La traduzione in $2 non è una priorità per questa pagina.</strong>
 
-Motivo: $1", # Fuzzy
+Un amministratore delle traduzioni ha deciso di concentrare gli sforzi traduzioni in $3.',
 	'tpt-discouraged-language-reason' => 'Motivo: $1',
 	'tpt-priority-languages' => "L'amministratore ha impostato le lingue prioritarie per questo gruppo in $1.",
 	'tpt-render-summary' => 'Aggiornamento come da nuova versione della pagina di origine',
