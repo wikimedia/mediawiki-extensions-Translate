@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_3b7697d6",
+        "filename": "TranslateSandbox.i18n.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-19T07:44:40Z",
+      "side": 1,
+      "message": "The gender here won\u0027t do anything, as the user no longer exists at that point of time. I see not much harm keeping it in though.",
+      "revId": "e7c0623b6ff920dd0b5762978cd03bc6bb58d730",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
