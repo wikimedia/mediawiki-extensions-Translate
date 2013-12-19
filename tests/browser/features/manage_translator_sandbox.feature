@@ -18,7 +18,7 @@ Feature: Manage translator sandbox
     Then no users are displayed in the first column
       And I should see "0 requests" at the top of the first column
       And I should see "0 users selected" at the bottom of the first column
-      And I should see "No requests from new users" in the second column
+      And I should see "No requests from new users" in the header of the second column
       And I should not see the older requests link at the bottom of the first column
 
   Scenario: Existing users can be searched on the list
