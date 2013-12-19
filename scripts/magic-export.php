@@ -221,7 +221,7 @@ PHP
 
 			// Write data to handles.
 			$namesEn = LanguageNames::getNames( 'en' );
-			$namesNative = Language::getLanguageNames();
+			$namesNative = Language::fetchLanguageNames();
 
 			foreach ( $this->handles as $group => $handle ) {
 				// Find messages to write to this handle.
