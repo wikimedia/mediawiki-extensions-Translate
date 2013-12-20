@@ -1,0 +1,40 @@
+{
+    "@metadata": {
+        "authors": [
+            "McDutchie"
+        ]
+    },
+    "firststeps": "Prime passos",
+    "firststeps-desc": "[[Special:FirstSteps|Pagina special]] pro familiarisar le usatores de un wiki con le extension Translate",
+    "translate-fs-pagetitle-done": " - finite!",
+    "translate-fs-pagetitle-pending": " - pendente",
+    "translate-fs-pagetitle": "Assistente de initiation - $1",
+    "translate-fs-signup-title": "Crear un conto",
+    "translate-fs-settings-title": "Configurar tu preferentias",
+    "translate-fs-userpage-title": "Crear tu pagina de usator",
+    "translate-fs-permissions-title": "Requestar permissiones de traductor",
+    "translate-fs-target-title": "Comenciar a traducer!",
+    "translate-fs-email-title": "Confirmar tu adresse de e-mail",
+    "translate-fs-intro": "Benvenite al assistente de initiation de {{SITENAME}}.\nTu essera guidate passo a passo trans le processo de devenir traductor.\nAl fin tu potera traducer le ''messages de interfacie'' de tote le projectos supportate in {{SITENAME}}.",
+    "translate-fs-selectlanguage": "Selige un lingua",
+    "translate-fs-settings-planguage": "Lingua primari:",
+    "translate-fs-settings-planguage-desc": "Le lingua primari es le lingua de interfacie in iste wiki,\ne le lingua predefinite pro traductiones.",
+    "translate-fs-settings-slanguage": "Lingua assistente $1:",
+    "translate-fs-settings-slanguage-desc": "Es possibile monstrar traductiones de messages in altere linguas in le editor de traductiones.\nHic tu pote seliger le linguas que tu vole vider (si desirate).",
+    "translate-fs-settings-submit": "Confirmar preferentias",
+    "translate-fs-userpage-level-N": "Io es un parlante native de",
+    "translate-fs-userpage-level-5": "Io es un traductor professional de",
+    "translate-fs-userpage-level-4": "Io ha cognoscentia quasi native de",
+    "translate-fs-userpage-level-3": "Io ha un bon maestria de",
+    "translate-fs-userpage-level-2": "Io ha un maestria moderate de",
+    "translate-fs-userpage-level-1": "Io cognosce un poco de",
+    "translate-fs-userpage-help": "Per favor indica tu habilitates linguistic e parla un poco de te. Si tu cognosce plus de cinque linguas, tu pote adder alteres plus tarde.",
+    "translate-fs-userpage-submit": "Crear tu pagina de usator",
+    "translate-fs-userpage-done": "Ben facite! Tu ha ora un pagina de usator.",
+    "translate-fs-permissions-planguage": "Lingua primari:",
+    "translate-fs-permissions-help": "Ora tu debe poner un requesta de esser addite al gruppo de traductores.\nSelige le lingua primari in le qual tu va traducer.\n\nTu pote mentionar altere linguas e altere remarcas in le quadro de texto hic infra.",
+    "translate-fs-permissions-pending": "Tu requesta ha essite submittite a [[$1]] e un persona del personal del sito lo verificara si presto como possibile.\nSi tu confirma tu adresse de e-mail, tu recipera un notification in e-mail al momento que isto eveni.",
+    "translate-fs-permissions-submit": "Inviar requesta",
+    "translate-fs-target-text": "Felicitationes!\nTu pote ora comenciar a traducer.\n\nNon sia intimidate si isto te pare ancora nove e confundente.\nIn [[Project list]] il ha un summario del projectos al quales tu pote contribuer traductiones.\nLe major parte del projectos ha un curte pagina de description con un ligamine \"''Traducer iste projecto''\", que te portara a un pagina que lista tote le messages non traducite.\nUn lista de tote le gruppos de messages con le [[Special:LanguageStats|stato de traduction actual pro un lingua]] es etiam disponibile.\n\nSi tu senti que tu ha besonio de comprender plus ante de traducer, tu pote leger le [[FAQ|folio a questiones]].\nInfelicemente le documentation pote a vices esser obsolete.\nSi il ha un cosa que tu pensa que tu deberea poter facer, ma non succede a discoperir como, non hesita a poner le question in le [[Support|pagina de supporto]].\n\nTu pote etiam contactar altere traductores del mesme lingua in [[Portal_talk:$1|le pagina de discussion]] del [[Portal:$1|portal de tu lingua]].\nSi tu non ja lo ha facite, [[Special:Preferences|cambia tu lingua de interfacie de usator al lingua in le qual tu vole traducer]], de sorta que le wiki pote monstrar te le ligamines le plus relevante a te.",
+    "translate-fs-email-text": "Per favor entra tu adresse de e-mail in [[Special:Preferences|tu preferentias]] e confirma lo per medio del e-mail que te essera inviate.\n\nIsto permitte que altere usatores te contacta via e-mail.\nTu recipera anque bulletines de novas al plus un vice per mense.\nSi tu non vole reciper bulletines de novas, tu pote disactivar los in le scheda \"{{int:prefs-personal}}\" de tu [[Special:Preferences|preferentias]]."
+}

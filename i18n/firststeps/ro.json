@@ -1,0 +1,40 @@
+{
+    "@metadata": {
+        "authors": [
+            "Minisarm"
+        ]
+    },
+    "firststeps": "Primii pași",
+    "firststeps-desc": "[[Special:FirstSteps|Pagină specială]] pentru a veni în întâmpinarea utilizatorilor unui site wiki care folosesc extensia Translate",
+    "translate-fs-pagetitle-done": " – realizat!",
+    "translate-fs-pagetitle-pending": " – în așteptare",
+    "translate-fs-pagetitle": "Ghidul începătorului – $1",
+    "translate-fs-signup-title": "Înregistrare",
+    "translate-fs-settings-title": "Configurați-vă preferințele",
+    "translate-fs-userpage-title": "Creați-vă propria pagină de utilizator",
+    "translate-fs-permissions-title": "Cereți permisiuni de traducător",
+    "translate-fs-target-title": "Să traducem!",
+    "translate-fs-email-title": "Confirmați-vă adresa de e-mail",
+    "translate-fs-intro": "Bine ați venit: acesta este un ghid al începătorului oferit de {{SITENAME}}.\nVeți fi îndrumat pas cu pas pentru a deveni un traducător.\nÎn finalul procesului, veți putea traduce ''mesaje din interfața'' tuturor proiectelor care dispun de serviciile {{SITENAME}}.",
+    "translate-fs-selectlanguage": "Alegeți o limbă",
+    "translate-fs-settings-planguage": "Limbă principală:",
+    "translate-fs-settings-planguage-desc": "Limba primară va deveni limba interfeței pe acest wiki și limba implicită pentru traducerile dumneavoastră.",
+    "translate-fs-settings-slanguage": "Limba ajutătoare nr. $1:",
+    "translate-fs-settings-slanguage-desc": "Este posibilă afișarea altor traduceri ale mesajelor, în alte limbi, în cadrul editorului.\nAici puteți alege limbile pe care doriți să le afișați.",
+    "translate-fs-settings-submit": "Salvează preferințele",
+    "translate-fs-userpage-level-N": "Sunt vorbitor nativ de",
+    "translate-fs-userpage-level-5": "Sunt traducător profesionist în",
+    "translate-fs-userpage-level-4": "O cunosc asemenea unui vorbitor nativ",
+    "translate-fs-userpage-level-3": "Am cunoștințe bune de",
+    "translate-fs-userpage-level-2": "Am cunoștințe rezonabile de",
+    "translate-fs-userpage-level-1": "O cunosc destul de puțin",
+    "translate-fs-userpage-help": "Vă rugăm să vă indicați competențele lingvistice și să ne spuneți câte ceva despre dumneavoastră. Dacă cunoașteți mai mult de cinci limbi, le puteți adăuga mai târziu pe restul.",
+    "translate-fs-userpage-submit": "Creați-vă pagina de utilizator",
+    "translate-fs-userpage-done": "Foarte bine! Acum aveți o pagină de utilizator.",
+    "translate-fs-permissions-planguage": "Limbă principală:",
+    "translate-fs-permissions-help": "Acum va trebuie să faceți o cerere pentru a fi adăugat grupului de traducători.\nSelectați limba principală în care veți traduce.\n\nPuteți menționa alte limbi și remarci în caseta de mai jos.",
+    "translate-fs-permissions-pending": "Cererea dumneavoastră a fost transmisă către [[$1]], iar cineva din cadrul echipei site-ului o va verifica cât mai curând posibil.\nDacă vă confirmați adresa electronică, veți primi o notificare prin e-mail de îndată ce cererea va fi fost verificată.",
+    "translate-fs-permissions-submit": "Trimite cererea",
+    "translate-fs-target-text": "Felicitări!\nDin acest moment puteți traduce.\n\nNu vă faceți griji dacă încă nu v-ați acomodat, iar unele lucruri vi se par ciudate.\n[[Project list|Lista de aici]] reprezintă o trecere în revistă a proiectelor la care puteți contribui.\nMajoritatea proiectelor beneficiază de o pagină descriptivă care conține și legătura „''Tradu acest proiect''”, legătură ce vă va conduce către o pagină afișând toate mesajele netraduse.\nDe asemenea, este disponibilă o listă a grupurilor de mesaje cu [[Special:LanguageStats|situația curentă în funcție de limbă]].\n\nDacă simțiți că detaliile de până acum sunt insuficiente, puteți consulta  [[FAQ|întrebările frecvente]] înainte de a traduce.\nDin păcate, în unele cazuri, documentația este învechită și neactualizată.\nDacă există vreun lucru de care bănuiți că sunteți capabil, dar nu ați descoperit încă cum să procedați, nu ezitați să puneți întrebări la [[Support|cafeneaua locală]].\n\nPuteți, de asemenea, să contactați și alți traducători de aceeași limbă pe [[Portal_talk:$1|pagina de discuție]] a [[Portal:$1|portalului lingvistic]] asociat comunității dumneavoastră.\nDacă nu ați procedat deja conform îndrumărilor, [[Special:Preferences|schimbați limba interfeței în așa fel încât să fie identică cu limba în care traduceți]]. Astfel, site-ul wiki este capabil să se plieze nevoilor dumneavoastră mult mai bine prin legături relevante.",
+    "translate-fs-email-text": "Vă rugăm să ne furnizați o adresă de e-mail prin intermediul [[Special:Preferences|paginii preferințelor]], după care să o confirmați (verificați-vă căsuța de poștă electronică căutând un mesaj trimis de noi).\n\nAcest lucru oferă posibilitatea altor utilizator să vă contacteze utilizând poșta electronică.\nDe asemenea, veți primi, cel mult o dată pe lună, un mesaj cu noutăți și știri.\nDacă nu doriți să recepționați acest newsletter, vă puteți dezabona în fila „{{int:prefs-personal}}” a [[Special:Preferences|preferințelor]] dumneavoastră."
+}

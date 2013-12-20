@@ -17,7 +17,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 /**
  * Version number used in extension credits and in other places where needed.
  */
-define( 'TRANSLATE_VERSION', '2013-12-19' );
+define( 'TRANSLATE_VERSION', '2013-12-20' );
 
 /**
  * Extension credits properties.
@@ -44,6 +44,13 @@ require_once "$dir/_autoload.php";
  * @cond file_level_code
  */
 
+$wgExtensionMessagesDirs['FirstSteps'] = __DIR__ . "/i18n/firststeps";
+$wgExtensionMessagesDirs['PageTranslation'] = __DIR__ . "/i18n/pagetranslation";
+$wgExtensionMessagesDirs['Translate'] = __DIR__ . "/i18n/core";
+$wgExtensionMessagesDirs['TranslateGroupDescriptions'] = __DIR__ . "/i18n/groupdescriptions";
+$wgExtensionMessagesDirs['TranslateSearch'] = __DIR__ . "/i18n/search";
+$wgExtensionMessagesDirs['TranslateSandbox'] = __DIR__ . "/i18n/sandbox";
+
 // Register extension messages and other localisation.
 $wgExtensionMessagesFiles['Translate'] = "$dir/Translate.i18n.php";
 $wgExtensionMessagesFiles['FirstSteps'] = "$dir/FirstSteps.i18n.php";
@@ -53,6 +60,7 @@ $wgExtensionMessagesFiles['TranslateGroupDescriptions'] =
 $wgExtensionMessagesFiles['TranslateSearch'] = "$dir/TranslateSearch.i18n.php";
 $wgExtensionMessagesFiles['TranslateSandbox'] = "$dir/TranslateSandbox.i18n.php";
 $wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
+
 
 // Register initialization code
 $wgExtensionFunctions[] = 'TranslateHooks::setupTranslate';

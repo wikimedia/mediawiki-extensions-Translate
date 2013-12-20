@@ -1,0 +1,22 @@
+{
+    "@metadata": {
+        "authors": [
+            "Boukman"
+        ]
+    },
+    "firststeps": "Premye etap yo",
+    "firststeps-desc": "[[Special:FirstSteps|Paj espesyal]] pou gide itilizatè yo sou yon wiki ki sèvi ak ekstansyon Tradiksyon",
+    "translate-fs-pagetitle-done": "- fini!",
+    "translate-fs-pagetitle": "Gid pou komanse - $1",
+    "translate-fs-signup-title": "Anrejistre ou",
+    "translate-fs-settings-title": "Konfigire preferans ou yo",
+    "translate-fs-userpage-title": "Kreye paj itilizatè ou an",
+    "translate-fs-permissions-title": "Mande pou otorizasyon tradiktè yo",
+    "translate-fs-target-title": "Kòmanse tradui!",
+    "translate-fs-email-title": "Konfime adrès imèl ou an",
+    "translate-fs-intro": "Byenveni nan asistan premye etap {{SITENAME}}.\nN ap gide ou atravè tout etap pwosesis pou ou vin yon tradiktè.\nLè ou rive nan bout pwosesis sa, w ap kapab tradui tou ''mesaj entèfas'' pou tout pwojè ki sipòte nan {{SITENAME}}.",
+    "translate-fs-userpage-submit": "Kreye paj itilizatè mwen",
+    "translate-fs-userpage-done": "Byen fè!  Kounye a ou gen yon paj itilizatè.",
+    "translate-fs-target-text": "Konpliman!\nOu kapab komanse tradui kounye a.\n\nOu pa bezwen pè si ou santi bagay sa nouvo epi le ba ou konfizyon.\nNan [[Project list|Lis pwojè yo]], genyen yon apèsi tout projè ou kapab kontribye tradiksyon pou yo.\nPifò nan pwojè yo gen yon paj ki bay yon deskripsyon kout avèk yon lyen \"''Tradui pwojè sa a'\", k ap mennen ou nan yon paj ki liste tout mesaj ki poko tradui.\nYon lis ak tout gwoup mesaj yo ki bay [[Special:LanguageStats|estati tradiksyon yo pou yon lang]] disponib tou.\n\nSi ou santi ou ta bezwen konnen pi plis anvan ou komanse tradui, ou ka li [[FAQ|Kesyon ki mande souvan]].\nMalerezman, dokimantasyon gendwa pa a jou.\nSi gen yon bagay ou panse ou ta dwe kapab fè, men ou pa ka jwenn kijan, pa ezite mande nan [[Support|paj sipò]].\n\nOu kapab kontakte lòt tradiktè nan menm lang tou nan [[Portal_talk:$1|paj diskisyon]] pou [[Portal:$1|potay pou lang ou an]].\nSi ou poko fè sa, [[Special:Preferences|chanje lang entèfas itilizatè ou an pou l sèvi ak lang ou pral tradui ladan l]]",
+    "translate-fs-email-text": "Tanpri, bay adrès imèl ou an nan [[Special:Preferences|preferans ou yo]] epi konfime l depi imèl ki te voye ba ou.\n\nSa ap pèmèt lòt itilizatè kontakte ou pa imèl.\nW ap resevwa nouvèl tou yon fwa pa mwa o maksimòm.\nSi ou pa vle resevwa nouvèl, ou kapab retire ou nan opsyon sa nan onglè \"{{int:prefs-personal}}\" ki nan [[Special:Preferences|preferans ou yo]]."
+}

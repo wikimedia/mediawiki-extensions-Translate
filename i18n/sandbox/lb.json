@@ -1,0 +1,31 @@
+{
+    "@metadata": {
+        "authors": [
+            "Robby"
+        ]
+    },
+    "managetranslatorsandbox": "Iwwersetzer-Sandkëscht geréieren",
+    "tsb-filter-pending": "Ufroen am Suspens",
+    "tsb-reminder-title-generic": "Kompletéiert Är Virstellung fir Iwwersetzer ze ginn",
+    "tsb-reminder-sending": "Erënnerung gëtt geschéckt...",
+    "tsb-reminder-sent-new": "Eng Erënnerung schécken",
+    "tsb-email-promoted-subject": "Dir sidd elo Iwwersetzer op {{SITENAME}}",
+    "tsb-request-count": "{{PLURAL:$1|Eng Ufro|$1 Ufroen}}",
+    "tsb-all-languages-button-label": "All Sproochen",
+    "tsb-accept-button-label": "Akzeptéieren",
+    "tsb-reject-button-label": "Refuséieren",
+    "tsb-older-requests": "$1 méi al {{PLURAL:$1|Ufro|Ufroen}}",
+    "tsb-accept-all-button-label": "All akzeptéieren",
+    "tsb-reject-all-button-label": "Alles refuséieren",
+    "tsb-didnt-make-any-translations": "Dëse Benotzer huet nach keng Iwwersetzunge gemaach.",
+    "tsb-translations-source": "Quell",
+    "tsb-translations-user": "Benotzer Iwwersetzungen",
+    "tsb-translations-current": "Iwwersetzungen déi et gëtt",
+    "translationstash": "Wëllkomm",
+    "translate-translationstash-welcome": "Wëllkomm {{GENDER:$1|$1}}, Dir sidd en neien Iwwersetzer",
+    "translate-translationstash-initialtranslation": "Är éischt Iwwersetzung",
+    "tsb-limit-reached-title": "Merci fir Är Iwwersetzungen",
+    "tsb-limit-reached-body": "Dir hutt d'Iwwersetzungslimit fir nei Iwwersetzer erreecht.\nEis Equipe kuckt Äre Benotzerkont geschwënn no a setzt en erop.\nDa kënnt Dir ouni Limitatiounen iwwersetzen.",
+    "tsb-no-requests-from-new-users": "Keng Ufroe vun neie Benotzer",
+    "log-name-translatorsandbox": "Iwwersetzungs-Sandkëscht"
+}

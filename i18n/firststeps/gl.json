@@ -1,0 +1,40 @@
+{
+    "@metadata": {
+        "authors": [
+            "Toliño"
+        ]
+    },
+    "firststeps": "Primeiros pasos",
+    "firststeps-desc": "[[Special:FirstSteps|Páxina especial]] para iniciar aos usuarios no uso da extensión Translate",
+    "translate-fs-pagetitle-done": "; feito!",
+    "translate-fs-pagetitle-pending": "; pendente",
+    "translate-fs-pagetitle": "Asistente para dar os primeiros pasos: $1",
+    "translate-fs-signup-title": "Rexístrese",
+    "translate-fs-settings-title": "Configure as súas preferencias",
+    "translate-fs-userpage-title": "Cree a súa páxina de usuario",
+    "translate-fs-permissions-title": "Solicite permisos de tradutor",
+    "translate-fs-target-title": "Comece a traducir!",
+    "translate-fs-email-title": "Confirme o seu enderezo de correo electrónico",
+    "translate-fs-intro": "Benvido ao asistente para dar os primeiros pasos en {{SITENAME}}.\nEsta guía axudaralle, paso a paso, a través do proceso para se converter nun tradutor.\nCando remate, poderá traducir as ''mensaxes da interface'' de todos os proxectos soportados por {{SITENAME}}.",
+    "translate-fs-selectlanguage": "Escolla unha lingua",
+    "translate-fs-settings-planguage": "Lingua principal:",
+    "translate-fs-settings-planguage-desc": "A lingua principal é tanto a lingua da interface neste wiki\ncomo a lingua na que vai realizar as traducións.",
+    "translate-fs-settings-slanguage": "Lingua axudante $1:",
+    "translate-fs-settings-slanguage-desc": "É posible mostrar as traducións das mensaxes noutras linguas no editor de traducións.\nAquí pode elixir, se quere, as linguas que queira ver.",
+    "translate-fs-settings-submit": "Gardar as preferencias",
+    "translate-fs-userpage-level-N": "Son falante nativo de",
+    "translate-fs-userpage-level-5": "Son tradutor profesional de",
+    "translate-fs-userpage-level-4": "Coñézoa como un falante nativo",
+    "translate-fs-userpage-level-3": "Teño un bo dominio de",
+    "translate-fs-userpage-level-2": "Teño un dominio moderado de",
+    "translate-fs-userpage-level-1": "Sei un pouco de",
+    "translate-fs-userpage-help": "Indique as súas competencias lingüísticas e conte algo sobre vostede. Se sabe máis de cinco linguas, pódeas engadir máis adiante.",
+    "translate-fs-userpage-submit": "Crear a súa páxina de usuario",
+    "translate-fs-userpage-done": "Ben feito! Agora xa ten unha páxina de usuario.",
+    "translate-fs-permissions-planguage": "Lingua principal:",
+    "translate-fs-permissions-help": "Agora ten que facer unha petición para pasar a formar parte do grupo de tradutores.\nSeleccione a lingua principal na que vai traducir.\n\nPode mencionar outras linguas ou observacións na caixa de texto inferior.",
+    "translate-fs-permissions-pending": "A súa solicitude enviouse a \"[[$1]]\" e algún dos membros do persoal do sitio atenderá a petición axiña.\nSe confirma o seu enderezo de correo electrónico recibirá unha notificación en canto ocorra.",
+    "translate-fs-permissions-submit": "Enviar a solicitude",
+    "translate-fs-target-text": "Parabéns!\nAgora xa pode comezar a traducir.\n\nNon teña medo se aínda se sente novo e confuso.\nEn [[Project list]] hai unha visión xeral dos proxectos nos que pode contribuír coas súas traducións.\nA maioría dos proxectos teñen unha páxina cunha breve descrición e mais unha ligazón que di \"''Traducir este proxecto''\", que o levará a unha páxina que lista todas as mensaxes non traducidas.\nTamén hai dispoñible unha lista con todos os grupos de mensaxes co seu [[Special:LanguageStats|estado actual da tradución nunha lingua]].\n\nSe pensa que necesita aprender máis antes de comezar a traducir, pode ler as [[FAQ|preguntas máis frecuentes]].\nPor desgraza, a documentación pode estar desactualizada ás veces.\nSe cre que hai algo que debe ser capaz de facer, pero non sabe como, non dubide en pedir [[Support|axuda]].\n\nTamén pode poñerse en contacto cos demais tradutores da mesma lingua na [[Portal_talk:$1|páxina de conversa]] do [[Portal:$1|portal da súa lingua]].\nSe aínda non o fixo, [[Special:Preferences|cambie a lingua da interface de usuario elixindo aquela na que vai traducir]]; deste xeito, o wiki pode mostrar as ligazóns máis relevantes e que lle poidan interesar.",
+    "translate-fs-email-text": "Proporcione o seu enderezo de correo electrónico [[Special:Preferences|nas súas preferencias]] e confírmeo mediante a mensaxe que chegará á súa bandexa de entrada.\n\nIsto permite que outros usuarios se poñan en contacto con vostede por correo electrónico.\nTamén recibirá boletíns informativos, como máximo unha vez ao mes.\nSe non quere recibir estes boletíns, pode cancelar a subscrición na lapela \"{{int:prefs-personal}}\" das súas [[Special:Preferences|preferencias]]."
+}
