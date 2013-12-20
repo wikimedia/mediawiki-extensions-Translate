@@ -85,7 +85,7 @@ class FileBasedMessageGroup extends MessageGroupBase {
 		}
 
 		// Fallback to sourcePattern which must be defined
-		if ( $patern === null ) {
+		if ( $pattern === null ) {
 			$pattern = $this->getFromConf( 'FILES', 'sourcePattern' );
 		}
 
