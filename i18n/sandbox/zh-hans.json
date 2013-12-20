@@ -1,0 +1,38 @@
+{
+    "@metadata": {
+        "authors": [
+            "Hzy980512",
+            "Liuxinyu970226",
+            "Qiyue2001",
+            "Shizhao",
+            "Yfdyh000"
+        ]
+    },
+    "managetranslatorsandbox": "管理译者沙盒",
+    "tsb-filter-pending": "待解决请求",
+    "tsb-reminder-title-generic": "填写你的自我介绍，成为一名译者",
+    "tsb-reminder-content-generic": "你好 $1，\n\n感谢你注册{{SITENAME}}。\n\n如果您完成你的测试翻译，我们的管理员将尽快授予您完整的翻译访问权。\n\n来这里做些翻译吧：\n$2\n\n$3，\n{{SITENAME}}员工",
+    "tsb-reminder-sending": "正在发送提醒...",
+    "tsb-reminder-sent-new": "发送提醒",
+    "tsb-reminder-failed": "发送提醒失败",
+    "tsb-email-promoted-subject": "你现在是一名{{SITENAME}}的译者了",
+    "tsb-request-count": "$1个申请",
+    "tsb-all-languages-button-label": "所有语言",
+    "tsb-accept-button-label": "接受",
+    "tsb-reject-button-label": "拒绝",
+    "tsb-accept-all-button-label": "接受所有",
+    "tsb-reject-all-button-label": "拒绝所有",
+    "tsb-reminder-link-text": "发送电子邮件提醒",
+    "tsb-translations-source": "来源",
+    "tsb-translations-user": "用户翻译",
+    "tsb-translations-current": "现有翻译",
+    "translationstash": "欢迎",
+    "translate-translationstash-welcome": "欢迎您{{GENDER:$1|$1}}，您已成为新的译者",
+    "translate-translationstash-initialtranslation": "你的初始翻译",
+    "translate-translationstash-translations": "$1完成了翻译",
+    "translate-translationstash-skip-button-label": "尝试其他",
+    "tsb-limit-reached-title": "感谢您的翻译",
+    "tsb-no-requests-from-new-users": "没有新用户请求",
+    "tsb-promoted-from-sandbox": "用户已晋升为译者",
+    "log-name-translatorsandbox": "翻译沙盒"
+}

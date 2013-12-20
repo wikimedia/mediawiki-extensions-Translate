@@ -1,0 +1,11 @@
+{
+    "@metadata": {
+        "authors": [
+            "Joetaras"
+        ]
+    },
+    "managetranslatorsandbox": "Gestisce 'a sandbox de traduzione",
+    "tsb-filter-pending": "Richieste appese",
+    "tsb-reminder-title-generic": "Comblete 'a 'ndroduziona toje pe devendà 'nu traduttore verificate",
+    "tsb-reminder-content-generic": "Cià $1,\n\nGrazie ca tè reggistrate sus a {{SITENAME}}. Ce tu comblete 'u test de traduziune, l'amministrsature ponne darte le privilegge pe l'accesse 'a traduzione comblete.\n\nPe piacere avìne jndr'à $2 e fà angore quacche otre traduzione."
+}
