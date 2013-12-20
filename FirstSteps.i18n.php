@@ -797,9 +797,9 @@ $messages['da'] = array(
 	'translate-fs-permissions-title' => 'Anmodning om oversættertilladelse',
 	'translate-fs-target-title' => 'Start med at oversætte!',
 	'translate-fs-email-title' => 'Bekræft din e-mailadresse',
-	'translate-fs-intro' => "Velkommen til {{SITENAME}} kom godt i gang guide.
-Du vil blive guidet igennem processen med til at blive en oversætter trin for trin.
-I sidste ende vil du være i stand til at oversætte ''brugerflade beskeder'' hos alle støttede projekter på {{SITENAME}}.", # Fuzzy
+	'translate-fs-intro' => 'Velkommen til guiden for at komme godt i gang med {{SITENAME}}.
+Du vil blive guidet igennem processen med at blive en oversætter trin for trin.
+Når du er færdig vil du være i stand til at oversætte <em>brugerfladebeskeder</em> for alle understøttede projekter på {{SITENAME}}.',
 	'translate-fs-selectlanguage' => 'Vælg et sprog',
 	'translate-fs-settings-planguage' => 'Primært sprog:',
 	'translate-fs-settings-planguage-desc' => 'Det primære sprog er både sproget for din brugerflade på denne wiki og standardsproget for dine oversættelser.',

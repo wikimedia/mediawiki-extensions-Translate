@@ -616,6 +616,16 @@ $2
 
 $3,
 צוות {{SITENAME}}',
+	'tsb-email-rejected-subject' => 'הבקשה שלך להיות מתרגם באתר {{SITENAME}} נדחתה',
+	'tsb-email-rejected-body' => 'שלום $1,
+
+תודה על בקשתך להיות {{GENDER:$1|מתרגם|מתרגמת}} באתר {{SITENAME}}. אני {{GENDER:$3|מצטער|מצטערת}} להודיע לך שדחיתי את בקשתך משום שהאיכות של התרגומים שלך לא עמדה בדרישות.
+
+אם נראה לך שהבקשה נדחתה בטעות, {{GENDER:$1|נסה|נסי}} להירשם שוב בתור {{GENDER:$1|מתרגם|מתרגמת}} באתר {{SITENAME}} בכתובת הבאה:
+$2
+
+$3
+סגל {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|בקשה אחת|$1 בקשות}}',
 	'tsb-all-languages-button-label' => 'כל השפות',
 	'tsb-search-requests' => 'חיפוש בקשות',
@@ -625,6 +635,7 @@ $3,
 	'tsb-older-requests' => '{{PLURAL:$1|בקשה אחת ישנה|$1 בקשות ישנות|0=אין בקשות ישנות}} יותר',
 	'tsb-accept-all-button-label' => 'לקבל את כולם',
 	'tsb-reject-all-button-label' => 'לדחות את כולם',
+	'tsb-user-posted-a-comment' => 'לא מתרגם',
 	'tsb-reminder-link-text' => 'לשלוח תזכורת בדוא"ל',
 	'tsb-didnt-make-any-translations' => 'המשתמש הזה לא עשה שום תרגום.',
 	'tsb-translations-source' => 'מחרוזת מקור',
@@ -645,7 +656,7 @@ $3,
 	'log-name-translatorsandbox' => 'ארגז חול של תרגומים',
 	'log-description-translatorsandbox' => 'יומן פעולות על משתמשים בארגז חול של תרגומים',
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|קידם|קידמה}} את $3 לתפקיד {{GENDER:$4|מתרגם|מתרגמת}}',
-	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|דחה|דחתה}} את הבקשה של $3 לקבל הרשאת מתרגם', # Fuzzy
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|דחה|דחתה}} את הבקשה של "$3" לקבל הרשאת מתרגם',
 );
 
 /** Upper Sorbian (hornjoserbsce)
@@ -747,6 +758,7 @@ $2
 
 {{GENDER:$3|$3}},
 Lo staff di {{SITENAME}}',
+	'tsb-email-rejected-subject' => 'La tua richiesta di essere un traduttore su {{SITENAME}} è stata rifiutata',
 	'tsb-request-count' => '{{PLURAL:$1|Una richiesta|$1 richieste}}',
 	'tsb-all-languages-button-label' => 'Tutte le lingue',
 	'tsb-search-requests' => 'Cerca richiesta',
@@ -777,7 +789,7 @@ Successivamente sarai in grado di tradurre senza limiti.',
 	'log-name-translatorsandbox' => 'Sandbox di traduzione',
 	'log-description-translatorsandbox' => 'Un registro delle azioni sugli utenti della sandbox di traduzione',
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|ha promosso}} $3 a {{GENDER:$4|traduttore|traduttrice|traduttore/trice}}',
-	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|ha rifiutato}} la richiesta di $3 di diventare un traduttore', # Fuzzy
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|ha rifiutato}} la richiesta di "$3" di diventare un traduttore',
 );
 
 /** Japanese (日本語)
@@ -792,6 +804,7 @@ $messages['ja'] = array(
 	'tsb-reminder-sent-new' => '通知を送信しました',
 	'tsb-reminder-failed' => '通知を送信できませんでした',
 	'tsb-email-promoted-subject' => 'あなたは{{SITENAME}}の翻訳者になりました',
+	'tsb-email-rejected-subject' => 'あなたへの{{SITENAME}}での翻訳者権限の付与申請は却下されました',
 	'tsb-request-count' => '$1 {{PLURAL:$1|件の申請}}',
 	'tsb-all-languages-button-label' => 'すべての言語',
 	'tsb-search-requests' => '申請の検索',
@@ -821,7 +834,7 @@ $messages['ja'] = array(
 	'log-name-translatorsandbox' => '翻訳サンドボックス',
 	'log-description-translatorsandbox' => '翻訳サンドボックス利用者への操作の記録',
 	'logentry-translatorsandbox-promoted' => '$1 が $3 を{{GENDER:$4|翻訳者}}に{{GENDER:$2|昇格させました}}',
-	'logentry-translatorsandbox-rejected' => '$1 が $3 の翻訳者権限の付与申請を{{GENDER:$2|却下しました}}', # Fuzzy
+	'logentry-translatorsandbox-rejected' => '$1 が「$3」の翻訳者権限の付与申請を{{GENDER:$2|却下しました}}',
 );
 
 /** Korean (한국어)
@@ -872,14 +885,18 @@ $messages['ksh'] = array(
 mer bedangke ons dat De Desch köözlesch {{ucfirst:{{GRAMMAR:em|{{ucfirst:{{SITENAME}}}}}}}} aanjemälldt häs. Wann Do jraad noch e paa Övversäzonge för et Prööve fäädesch määß, künne de Wikki_Kööbeße desch freischallde för et Övversäzze.
 
 Bes esu jood un donn Desch op {{GRAMMAR:Dativ|$2}} enlogge un maach e paa Övversäzonge.', # Fuzzy
+	'tsb-email-promoted-subject' => 'Do bes jäds_ene Övversäzer em {{SITENAME}}',
 	'tsb-all-languages-button-label' => 'Alle Schprohche',
 	'tsb-accept-button-label' => 'Aanämme',
 	'tsb-reject-button-label' => 'Aflehne',
 	'tsb-accept-all-button-label' => 'All aanämme',
 	'tsb-reject-all-button-label' => 'All aflehne',
 	'tsb-user-posted-a-comment' => 'Keine Övversäzer',
+	'tsb-translations-source' => 'Quall',
 	'translationstash' => 'Wellkumme',
 	'translate-translationstash-welcome' => 'Wellkumme $1, Do bess_en{{GENDER:$1|e||e||e}} neuje Övversäzer{{GENDER:$1||ėn||ėn|}}.',
+	'translate-translationstash-initialtranslation' => 'Ding eezde Övversäzong',
+	'translate-translationstash-translations' => '$1 fäädeje {{PLURAL:$1|Övversäzong|Övversäzonge|Övversäzong}}',
 	'tsb-limit-reached-title' => 'Dangke för Ding Övversäzonge',
 	'tsb-no-requests-from-new-users' => 'Kein Aanfroore vun neue Metmaacher',
 	'tsb-promoted-from-sandbox' => 'Dä Metmaacher es zom Övversäzer opjeschtohv woode.',
@@ -1253,6 +1270,20 @@ $2
 
 $3
 personalen på {{SITENAME}}',
+	'tsb-reminder-sent-new' => 'Skicka en påminnelse',
+	'tsb-reminder-failed' => 'Det gick inte att skicka påminnelsen',
+	'tsb-email-promoted-subject' => 'Du är nu en översättare på {{SITENAME}}',
+	'tsb-email-promoted-body' => 'Hej {{GENDER:$1|$1}},
+
+Gratulerar! Jag kollade testöversättningarna du gjorde på {{SITENAME}} och gav dig fullständiga översättningsrättigheter.
+
+Kom till {{SITENAME}} för att fortsätta översätta när som helst:
+$2
+
+Välkommen och tack för dina bidrag!
+
+{{GENDER:$3|$3}},
+Personal på {{SITENAME}}',
 	'tsb-email-rejected-subject' => 'Din ansökan om att bli en översättare på {{SITENAME}} avslogs',
 	'tsb-email-rejected-body' => 'Hej {{GENDER:$1|$1}},
 
@@ -1285,6 +1316,8 @@ Personal på {{SITENAME}}',
 	'tsb-limit-reached-body' => 'Du har nått översättningsgränsen för nya översättare.
 Vårt team kommer snart verifiera och uppgradera ditt konto.
 Sedan kommer du kunna översätta utan begränsningar.',
+	'log-name-translatorsandbox' => 'Översättningssandlåda',
+	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|befordrades}} $3 till {{GENDER:$4|översättare}}',
 	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|avvisade}} begäran från "$3" att bli en översättare',
 );
 
@@ -1331,6 +1364,16 @@ $2
 
 {{GENDER:$3|$3}},
 {{SITENAME}} staff',
+	'tsb-email-rejected-subject' => "Вашу заявку на перекладача на {{ім'я сайту}} відхилено",
+	'tsb-email-rejected-body' => 'Привіт {{GENDER:$1|$1}},
+
+Дякуємо вам за намагання стати перекладачем на  translator at {{SITENAME}}. На жаль, я з жалем повідомляю вас, що відхиляю вашу заявку, бо якість ваших перекладів не відповідає вимогам.
+
+Якщо ви вважаєте, що ваша заявка відхилена помилково, то можете спробувати знову подати заявку на перекладача на please try to apply again as a translator at {{SITENAME}}. Ви можете зареєструватися тут:
+$2
+
+{{GENDER:$3|$3}},
+Команда {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|Один запит|$1 запити|$1 запитів}}',
 	'tsb-all-languages-button-label' => 'Усі мови',
 	'tsb-search-requests' => 'Пошукові запити',
@@ -1361,7 +1404,7 @@ $2
 	'log-name-translatorsandbox' => 'Пісочниця перекладу',
 	'log-description-translatorsandbox' => 'Журнал дій користувачів у пісочниці перекладу',
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|підвищив|підвищила}} $3 до {{GENDER:$4|перекладача|перекладачки}}',
-	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|відхилив|відхилила}} запит від $3 стати перекладачем', # Fuzzy
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|відхилив|відхилила}} запит від  "$3"  стати перекладачем',
 );
 
 /** Vietnamese (Tiếng Việt)
@@ -1370,12 +1413,19 @@ $2
 $messages['vi'] = array(
 	'managetranslatorsandbox' => 'Quản lý chỗ thử biên dịch',
 	'tsb-filter-pending' => 'Yêu cầu đang chờ',
-	'tsb-reminder-title-generic' => 'Hoàn thành lời giới thiệu của bạn để trở thành một biên dịch viên xác minh', # Fuzzy
+	'tsb-reminder-title-generic' => 'Hoàn thành lời giới thiệu của bạn để trở thành một biên dịch viên',
 	'tsb-reminder-content-generic' => 'Xin chào $1,
 
-Cảm ơn bạn đã tham gia {{SITENAME}}. Sau khi bạn dịch các bản dịch kiểm tra, các bảo quản viên sẽ sớm cấp quyền biên dịch đầy đủ cho bạn.
+Cảm ơn bạn đã tham gia {{SITENAME}}.
 
-Xin vui lòng trở lại $2 để dịch tiếp.', # Fuzzy
+Sau khi bạn dịch các bản dịch kiểm tra, các bảo quản viên sẽ sớm cấp quyền biên dịch đầy đủ cho bạn.
+
+Xin vui lòng ghé vào biên dịch thêm thông điệp:
+
+$2
+
+$3,
+Ban quản lý {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|Một yêu cầu|$1 yêu cầu}}',
 	'tsb-all-languages-button-label' => 'Tất cả các ngôn ngữ',
 	'tsb-search-requests' => 'Yêu cầu tìm kiếm',
