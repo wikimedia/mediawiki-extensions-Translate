@@ -132,7 +132,7 @@ class ManageTranslatorSandboxPage
 		# It takes a few moments until Accept and Reject buttons
 		# finish performing the action, and this action always
 		# removes the currently displayed users and changes the header
-		Watir::Wait.until { details_header.text !=  initial_header_text }
+		Watir::Wait.while { @browser.execute_script "return window.tsbUpdatingUsers" }
 	end
 
 	def only_request_with_username_is_selected?(username)

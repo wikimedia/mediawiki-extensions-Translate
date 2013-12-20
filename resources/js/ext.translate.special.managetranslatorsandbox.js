@@ -122,19 +122,31 @@
 						.addClass( 'accept primary green button' )
 						.text( mw.msg( 'tsb-accept-button-label' ) )
 						.on( 'click', function () {
+							window.tsbUpdatingUsers = true;
+
 							doApiAction( {
 								userid: request.userid,
 								'do': 'promote'
-							} ).done( removeSelectedRequests );
+							} ).done( function () {
+								removeSelectedRequests();
+
+								window.tsbUpdatingUsers = false;
+							} );
 						} ),
 					$( '<button>' )
 						.addClass( 'delete destructive button' )
 						.text( mw.msg( 'tsb-reject-button-label' ) )
 						.on( 'click', function () {
+							window.tsbUpdatingUsers = true;
+
 							doApiAction( {
 								userid: request.userid,
 								'do': 'delete'
-							} ).done( removeSelectedRequests );
+							} ).done( function () {
+								removeSelectedRequests();
+
+								window.tsbUpdatingUsers = false;
+							} );
 						} )
 				),
 			$( '<div>' )
@@ -203,6 +215,7 @@
 						.addClass( 'four columns' )
 				)
 			);
+
 		translations.translationstash.translations.sort( sortTranslationsByLanguage );
 		$.each( translations.translationstash.translations, function( index, translation ) {
 			showTranslation( translation );
@@ -265,19 +278,31 @@
 						.addClass( 'accept primary green button' )
 						.text( mw.msg( 'tsb-accept-all-button-label' ) )
 						.on( 'click', function () {
+							window.tsbUpdatingUsers = true;
+
 							doApiAction( {
 								userid: selectedUserIDs,
 								'do': 'promote'
-							} ).done( removeSelectedRequests );
+							} ).done( function () {
+								removeSelectedRequests();
+
+								window.tsbUpdatingUsers = false;
+							} );
 						} ),
 					$( '<button>' )
 						.addClass( 'delete destructive button' )
 						.text( mw.msg( 'tsb-reject-all-button-label' ) )
 						.on( 'click', function () {
+							window.tsbUpdatingUsers = true;
+
 							doApiAction( {
 								userid: selectedUserIDs,
 								'do': 'delete'
-							} ).done( removeSelectedRequests );
+							} ).done( function () {
+								removeSelectedRequests();
+
+								window.tsbUpdatingUsers = false;
+							} );
 						} )
 				)
 		);
