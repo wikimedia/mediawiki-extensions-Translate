@@ -85,14 +85,15 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 			$g['format'] = 'php';
 
 			$copyvars = array(
-				'ignored',
-				'optional',
-				'var',
+				'aliasfile',
 				'desc',
-				'prefix',
-				'mangle',
+				'format',
+				'ignored',
 				'magicfile',
-				'aliasfile'
+				'mangle',
+				'optional',
+				'prefix',
+				'var',
 			);
 
 			foreach ( $copyvars as $var ) {
