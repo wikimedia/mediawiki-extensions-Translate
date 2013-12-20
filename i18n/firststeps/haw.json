@@ -1,0 +1,22 @@
+{
+    "@metadata": {
+        "authors": [
+            "Kolonahe"
+        ]
+    },
+    "firststeps": "Nā Mea Mua Loa",
+    "firststeps-desc": "[[Special:FirstSteps|Special page]] no ka hoʻomaka ʻana o nā mea hoʻohana ma kekahi wiki i hoʻohana i ka pākuʻi unuhi",
+    "translate-fs-pagetitle-done": " - hoʻopau ʻia!",
+    "translate-fs-pagetitle": "Polokalamu Hana Kōkua me ka Hoʻomaka ʻana - $1",
+    "translate-fs-signup-title": "Kāinoa",
+    "translate-fs-settings-title": "Hoʻololi i Kau Makemake",
+    "translate-fs-userpage-title": "Hana i Kau ʻAoʻao Mea hoʻohana",
+    "translate-fs-permissions-title": "Noi no nā ʻAe Unuhi",
+    "translate-fs-target-title": "E Hoʻomaka i ka ʻUnuhina!",
+    "translate-fs-email-title": "Hōʻoia i Kau Wahi leka uila",
+    "translate-fs-intro": "Welina mai i ke Polokalamu hana kōkua no nā mea hana mua loa o {{SITENAME}}.\nE  alakaʻi ana ʻoe i kēia hana o ka lilo ʻana i mea unuhi.\nMa ka hopena, hiki iā ʻoe ke uhuhi i nā \"leka aloloko\" o nā papa hana a pau i kākoʻo ʻia ma {{SITENAME}}.",
+    "translate-fs-userpage-submit": "Hana i kaʻu ʻaoʻao mea hoʻohana",
+    "translate-fs-userpage-done": "Maikaʻi! Loaʻa ka ʻaoʻao mea hoʻohana i kēia manawa.",
+    "translate-fs-target-text": "Hoʻomaikaʻi ʻana!\nHiki ke hoʻomaka i ka uhuni ʻana.\n\nMai makaʻu inā huikau ʻoe.\nMa [[Project list]], aia kekahi ʻike piha o nā papa hana i hiki iā ʻoe ke kōkua.\nʻO ka nui o nā papa hana, loaʻa kekahi ʻaoʻao kikoʻī pōkole me kekahi loulou \"''Translate this project''\" e lawe ana ʻoe i kekahi ʻaoʻao i helu i nā leka unuhi ʻole.\nLoaʻa nō hoʻi kekahi helu no nā leka hui a pau me ke [[Special:LanguageStats|nā kūlana unuhi o kēia wa no kekahi ʻōlelo]].\n\nInā makemake ʻoe e maopopo ma mua hoʻi o kou unuhi ʻana, hiki ke heluhelu i ka [[FAQ|Nīnau i nīnau pinepine]].\nAkā hiki i nā hana palapala ke hele a kahiko i kekahi mau manawa.\nInā loaʻa kekahi mau mea āu i noʻonoʻo hiki paha iā ʻoe ke hana, akā ʻaʻole maopopo, mai nīnau ʻole ma ke [[Support|ʻaoʻao kākoʻo]].\n\nHiki ke walaʻau kekahi me nā mea unuhi ʻē aʻe o ka ʻōlelo like ma loko o ko [[Portal:$1|kau wahi ʻōlelo]] [[Portal_talk:$1|ʻaoʻao kūkākūkā]].\nInā ʻaʻole i hana, [[Special:Preferences|hoʻololi i kau mea hoʻohana aloloko ʻōlelo i ka ʻōlelo āu e makemake e unuhi]], i hiki i ka wiki ke hōʻike i nā loulou e pili ana nau.",
+    "translate-fs-email-text": "E ʻoluʻolu, e kau kau wahi leka uila i loko o [[Special:Preferences|kau makemake]] a ʻae mai loko o ka leka uila e hoʻouna ana iā ʻoe.\n\nHiki i kēia ʻano hana ke hoʻokuʻu i nā mea hoʻohana ʻē aʻe ke walaʻau me ʻoe i ka leka uila ʻana.\nE loaʻa ana nā nū hou i hoʻokahi manawa kēlā me kēia māhina.\nInā ʻaʻole makemake e loaʻa nā nū hou, hiki ke pale i ke kāwāholo \"{{int:prefs-personal}}\" o kau [[Special:Preferences|makemake]]."
+}

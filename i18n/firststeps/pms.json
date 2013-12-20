@@ -1,0 +1,41 @@
+{
+    "@metadata": {
+        "authors": [
+            "Borichèt",
+            "Dragonòt"
+        ]
+    },
+    "firststeps": "Prim pass",
+    "firststeps-desc": "[[Special:FirstSteps|Pàgina special]] për anandié j'utent an sna wiki dovrand l'estension Translate",
+    "translate-fs-pagetitle-done": " - fàit!",
+    "translate-fs-pagetitle-pending": "- an cors",
+    "translate-fs-pagetitle": "Guida për parte - $1",
+    "translate-fs-signup-title": "Ch'as anscriva",
+    "translate-fs-settings-title": "Configura ij tò gust",
+    "translate-fs-userpage-title": "Crea toa pàgina utent",
+    "translate-fs-permissions-title": "Ch'a ciama ij përmess ëd tradutor",
+    "translate-fs-target-title": "Ch'a ancamin-a a volté!",
+    "translate-fs-email-title": "Che an conferma soa adrëssa ëd pòsta eletrònica",
+    "translate-fs-intro": "Bin ëvnù an sl'assistent dij prim pass ëd {{SITENAME}}.\nA sarà guidà pass për pass ant ël process dë vnì un tradutor.\nA la fin a sarà bon a volté ij ''mëssagi dj'antërfasse'' ëd tùit ij proget gestì da {{SITENAME}}.",
+    "translate-fs-selectlanguage": "Sern na lenga",
+    "translate-fs-settings-planguage": "Lenga primaria:",
+    "translate-fs-settings-planguage-desc": "La lenga primaria a funsion-a com toa lenga d'antërfacia dzora a sta wiki\ne com lenga obietiv predefinìa për le tradussion.",
+    "translate-fs-settings-slanguage": "Lenga dl'assistent $1:",
+    "translate-fs-settings-slanguage-desc": "A l'é possìbil smon-e dle tradussion ëd mëssagi an d'àutre lenghe ant l'editor ëd tradussion.\nAmbelessì chiel a peul serne che lenghe, s'a-i na j'é, ch'a-j piaserìa vëdde.",
+    "translate-fs-settings-submit": "Salvé ij sò gust",
+    "translate-fs-userpage-level-N": "Mi i son un parlant nativ ëd",
+    "translate-fs-userpage-level-5": "Mi i son un tradutor professional ëd",
+    "translate-fs-userpage-level-4": "Mi i lo conòsso com un parlant nativ",
+    "translate-fs-userpage-level-3": "Mi i l'heu na bon-a conossensa ëd",
+    "translate-fs-userpage-level-2": "Mi i l'heu na conossensa moderà ëd",
+    "translate-fs-userpage-level-1": "Mi i conòsso un pòch",
+    "translate-fs-userpage-help": "Për piasì ìndica toe conossense dla lenga e dis-ne quaicòs a propòsit ëd ti. S'it conòsse pi che sinch lenghe it peule giontene ëd pi pi tard.",
+    "translate-fs-userpage-submit": "Crea mia pàgina utent",
+    "translate-fs-userpage-done": "Bin fàit! Adess it l'has na pàgina utent.",
+    "translate-fs-permissions-planguage": "Lenga primaria:",
+    "translate-fs-permissions-help": "Adess a dev fé n'arcesta për esse giontà a la partìa dij tradutor.\nCh'a selession-a la lenga prinsipal ant la qual a veul volté.\n\nA peul massioné d'àutre lenghe e d'àutre armarche ant la zòna ëd test sì-sota.",
+    "translate-fs-permissions-pending": "Soa arcesta a l'é stàita spedìa a [[$1]] e quaidun ëd l'echip dël sit a la controlerà pen-a possìbil.\nS'a confirma toa adrëssa eletrònica, a arseivrà na notìfica për pòsta eletrònica cand ch'a sarà ël cas.",
+    "translate-fs-permissions-submit": "Mandé l'arcesta",
+    "translate-fs-target-text": "Congratulassion!\nAdess a peul ancaminé a volté!\n\nCh'a l'abia pa tëmma s'as sent anco' neuv e confus.\nA [[Project list]] a-i é na presentassion dij proget ch'a peul contribuì a volté.\nVàire proget a l'han na curta pàgina ëd descrission con un colegament \"''Vòlta ës proget''\", ch'a lo pòrta a na pàgina ch'a lista tùit ij mëssagi nen voltà.\nNa lista ëd tute le partìe ëd mëssagi con lë [[Special:LanguageStats|stat corent ëd tradussion për na lenga]] a l'é ëdcò disponìbil.\n\nS'a pensa ch'a l'ha dabzògn ëd capì ëd pi prima d'ancaminé a volté, a peul lese le [[FAQ|chestion ciamà ëd soens]].\nPër maleur, dle vire la documentassion a peul esse veja.\nS'a-i é quaicòs ch'a pensa ch'a podrìa esse bon a fé, ma a tiess pa a trové coma, ch'as gene pa a ciamelo a la [[Support|pàgina d'agiut]].\n\nA peul ëdcò contaté ij tradutor amis ëd la midema lenga a la [[Portal_talk:$1|pàgina ëd discussion]] ëd [[Portal:$1|sò portal ëd la lenga]]'.\nS'a l'ha pa anco' falo, [[Special:Preferences|ch'a cangia la lenga ëd soa antërfacia utent a la lenga ant la qual a veul fé dle tradussion]], an manera che la wiki a sia bon-a a smon-e ij colegament pi amportant për chiel.",
+    "translate-fs-email-text": "Për piasì, ch'a buta soa adrëssa ëd pòsta eletrònica ant ij [[Special:Preferences|sò gust]] e ch'a la conferma dal mëssagi che i l'oma mandaje.\n\nSòn a përmët a j'àutri utent ëd contatelo për pòsta eletrònica.\nA arseivrà ëdcò na litra d'anformassion, al pi na vira al mèis.\nS'a veul pa arsèive le litre d'anformassion, a peule serne ëd nò ant la tichëtta \"{{int:prefs-personal}}\" dij sò [[Special:Preferences|gust]]."
+}

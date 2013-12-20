@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "Abshirdheere"
+        ]
+    },
+    "translate-fs-pagetitle": "Tilaabada hore ee - $1",
+    "translate-fs-settings-title": "Isku hagaajinta dooqyedaada",
+    "translate-fs-userpage-title": "Abuur Bogga adeegsedaha",
+    "translate-fs-settings-planguage": "Luqada rasmiga ah",
+    "translate-fs-settings-planguage-desc": "Luqadaada rasmiga ah ee kuu gaarka ah aadna ku arki doonto qoraalada wiki waana turjimaad luqad tusaale ah.",
+    "translate-fs-settings-slanguage": "Luqada kaalmo $1:",
+    "translate-fs-settings-slanguage-desc": "Waxaa suutoowda in la arko fasiaada fariimaha luqadaha kale habaytna turjimidda, halkaan waxaad ka dooran kartaa luqada aad rabto inaad wax ku aragtid, hadiiba meesha laga helo.",
+    "translate-fs-settings-submit": "Kaydi dooqyeda"
+}

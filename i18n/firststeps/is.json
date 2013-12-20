@@ -1,0 +1,36 @@
+{
+    "@metadata": {
+        "authors": [
+            "Snævar"
+        ]
+    },
+    "firststeps": "Fyrstu skrefin",
+    "translate-fs-pagetitle-done": "- búið!",
+    "translate-fs-pagetitle-pending": "- í bið",
+    "translate-fs-signup-title": "Skráðu þig",
+    "translate-fs-settings-title": "Breyttu stillingunum þínum",
+    "translate-fs-userpage-title": "Búðu til notendasíðu",
+    "translate-fs-permissions-title": "Óskaðu eftir þýðingar réttindum",
+    "translate-fs-target-title": "Byrjaðu að þýða!",
+    "translate-fs-email-title": "Staðfestu netfangið þitt",
+    "translate-fs-selectlanguage": "Veldu tungumál",
+    "translate-fs-settings-planguage": "Fyrsta tungumál:",
+    "translate-fs-settings-planguage-desc": "Fyrsta tungumál verður notað bæði sem viðmótstungumálið þitt á þessum wiki og sjálfgefið tungumál fyrir þýðingar.",
+    "translate-fs-settings-slanguage": "Aðstoðar tungumál: $1",
+    "translate-fs-settings-slanguage-desc": "Það er hægt að sýna þýðingar fyrir skilaboð á öðrum tungumálum í þýðingar viðmótinu.\nHér getur þú valið hvaða tungumál, ef einhver, þú villt sjá.",
+    "translate-fs-settings-submit": "Vista stillingar",
+    "translate-fs-userpage-level-N": "Móðurmál mitt er",
+    "translate-fs-userpage-level-5": "Ég hef atvinnufærni í",
+    "translate-fs-userpage-level-4": "Ég tala málið eins og innfæddur",
+    "translate-fs-userpage-level-3": "Ég hef yfirburðarkunnáttu á",
+    "translate-fs-userpage-level-2": "Ég hef miðlungskunnáttu á",
+    "translate-fs-userpage-level-1": "Ég hef grundvallarkunnáttu á",
+    "translate-fs-userpage-help": "Vinsamlegast gefðu upp færni þína á tungumálinu og segðu okkur eitthvað um þig. Ef þú þekkir fleiri en fimm tungumál, þá getur þú bætt við fleirum seinna.",
+    "translate-fs-userpage-submit": "Búðu til notendasíðuna mína",
+    "translate-fs-userpage-done": "Vel gert! Þú hefur nú notendasíðu.",
+    "translate-fs-permissions-planguage": "Fyrsta tungumál:",
+    "translate-fs-permissions-help": "Nú þarft þú að óska eftir að fá þýðinda réttindi.\nVeldu það tungumál sem þú ætlar að þýða á.\n\nÞú getur nefnt önnur tungumál og athugasemdir í texta boxinu hér fyrir neðan.",
+    "translate-fs-permissions-pending": "Beiðni þín hefur verið sent til [[$1]] og starfsmaður síðunnar mun fara yfir hana eins fljótt og auðið er.\nEf þú staðfestir netfangið þitt, þá færð þú tölvupóst um leið og það gerist.",
+    "translate-fs-permissions-submit": "Senda beiðni",
+    "translate-fs-email-text": "Vinsamlegast tilgreindu netfangið þitt í [[Special:Preferences|stillingunum þínum]] og staðfestu það frá tölvupóstinum sem er sendur til þín.\n\nÞetta gerir öðrum notendum kleift að hafa samband við þig með tölvupósti.\nÞú munt einnig fá fréttabréf allt að einu sinni í mánuði.\nEf þú villt ekki fá send fréttabréf þá getur þú afvirkjað möguleikann undir \"{{int:prefs-personal}}\" flipanum í [[Special:Preferences|stillingunum þínum]]"
+}

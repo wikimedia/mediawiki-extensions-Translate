@@ -1,0 +1,42 @@
+{
+    "@metadata": {
+        "authors": [
+            "Les Meloures",
+            "Robby",
+            "Soued031"
+        ]
+    },
+    "firststeps": "Éischt Schrëtt",
+    "firststeps-desc": "[[Special:FirstSteps|Spezialsäit]] fir datt Benotzer besser ukommen fir d'Erweiderung 'Translate' op enger Wiki ze benotzen",
+    "translate-fs-pagetitle-done": " - fäerdeg!",
+    "translate-fs-pagetitle-pending": "- am gaang",
+    "translate-fs-pagetitle": "Assistent fir unzefänken - $1",
+    "translate-fs-signup-title": "Schreift Iech an",
+    "translate-fs-settings-title": "Är Astellunge festleeën",
+    "translate-fs-userpage-title": "Maacht Är Benotzersäit",
+    "translate-fs-permissions-title": "Iwwersetzerrechter ufroen",
+    "translate-fs-target-title": "Ufänke mat iwwersetzen!",
+    "translate-fs-email-title": "Confirméiert Är E-Mail-Adress",
+    "translate-fs-intro": "Wëllkomm beim {{SITENAME}}-Startassistent.\nIech gëtt gewisen, Déi Dir Schrëtt fir Schrëtt zum Iwwersetzer gitt.\nUm Schluss kënnt Dir all <em>Interface-Messagen</em> vun de vun {{SITENAME}} ënnerstetzte Projeten iwwersetzen.",
+    "translate-fs-selectlanguage": "Eng Sprooch eraussichen",
+    "translate-fs-settings-planguage": "Haaptsprooch:",
+    "translate-fs-settings-planguage-desc": "Déi éischt Sprooch ass gläichzäiteg d'Sprooch vun Ärem Interface op dëser Wiki\nan d'Standard-Zilsprooch fir Iwwersetzungen.",
+    "translate-fs-settings-slanguage": "Ënnerstetzungs-Sprooch $1:",
+    "translate-fs-settings-slanguage-desc": "Et ass méiglech fir Iwwersetzunge vu Messagen an anere Sproochen am Iwwersetzungsediteur ze weisen.\nHei kënnt Dir eraussiche wat fir eng Sprooch, wann Dir dat wëllt, Dir gesi wëllt.",
+    "translate-fs-settings-submit": "Astellunge späicheren",
+    "translate-fs-userpage-level-N": "Meng Mamme sprooch ass",
+    "translate-fs-userpage-level-5": "Ech sinn e professionellen Iwwersetzer vu(n)",
+    "translate-fs-userpage-level-4": "Ech kenne se wéi wann et meng Mammesprooch wier",
+    "translate-fs-userpage-level-3": "Ech ka mech gutt ausdrécken op",
+    "translate-fs-userpage-level-2": "Ech hu mëttelméisseg Kenntnisser vu(n)",
+    "translate-fs-userpage-level-1": "Ech kann a bëssen",
+    "translate-fs-userpage-help": "Gitt w.e.g. Är Sproochkenntnisser un an erzielt eppes iwwer Iech. Wann Dir méi wéi fënnef Sprooche kënnt da kënnt Dir déi méi spéit derbäisetzen.",
+    "translate-fs-userpage-submit": "Är Benotzersäit maachen",
+    "translate-fs-userpage-done": "Gutt gemaach! dir hutt elo eng Benotzersäit.",
+    "translate-fs-permissions-planguage": "Haaptsprooch:",
+    "translate-fs-permissions-help": "Elo musst Dir eng Ufro maache fir an de Grupp vun den Iwwersetzer derbäigesat ze ginn.\nSicht Är Haaptsprooch eraus an déi Dir iwwersetze wäert.\n\nDir kënnt aner Sproochen an aner Bemierkungen an d'Textkëscht ënnendrënner derbäisetzen.",
+    "translate-fs-permissions-pending": "Är Ufro gouf op [[$1]] gespäichert an e vun de Mataarbechter vum Site wäert dat sou séier wéi méiglech nokucken. Wann Dir Är Mail-Adress confirméiert, da kritt Dir eng Confirmatioun sou bal wéi dat gemaaach ass.",
+    "translate-fs-permissions-submit": "Ufro schécken",
+    "translate-fs-target-text": "Felicitatiounen!\nDir kënnt elo ufänke mat iwwersetzen.\n\nMaacht Iech näischt doraus wann dat am Ufank fir Iech nach e komescht Gefill ass.\nOp [[Project list]] gëtt et eng Iwwersiicht vu Projeten bei deenen Dir hëllefe kënnt z'iwwersetzen.\nDéi meescht Projeten hunn eng kuerz Beschreiwungssäit mat engem \"''Iwwersetz dës e Projet''\" Link, deen Iech op eng Säit op där all net iwwersate Messagen dropstinn.\nEng Lëscht mat alle Gruppe vu Messagen mat dem [[Special:LanguageStats|aktuellen Iwwersetzungsstatus fir eng Sprooch]] gëtt et och.\n\nWann dir mengt Dir sollt méi verstoen ier Dir ufänkt mat Iwwersetzen, kënnt Dir déi [[FAQ|dacks gestallte Froe]] liesen.\nOnglécklecherweis kann et virkommen datt d'Dokumentatioun heiansdo net à jour ass.\nWann et eppes gëtt vun deem Dir mengt datt Dir e maache kënnt, awer Dir fannt net eraus wéi, dann zéckt net fir eis op der [[Support|Support-Säit]] ze froen.\n\nDir kënnt och aner Iwwersetzer vun der selwechter Sprooch op der [[Portal_talk:$1|Diskussiounssäit]] vun [[Portal:$1|Ärem Sproocheportal]] kontaktéieren. Wann dir et net scho gemaach hutt, [[Special:Preferences|ännert d'Sprooch vum Interface an déi Sprooch an déi Dir iwwersetze wëllt]], sou datt d'Wiki Iech déi wichtegst Linke weise kann.",
+    "translate-fs-email-text": "Gitt w.e.g. Är E-Mail-Adress an [[Special:Preferences|Ären Astellungen]] un a confirméiert se vun der E-Mail aus déi Dir geschéckt kritt.\n\nDat erlaabt et anere Benotzer fir Iech per Mail ze kontaktéieren.\nDir kritt och Newsletteren awer héchstens eng pro Mount.\nWann Dir keng Newslettere kréie wëllt, da kënnt Dir dat am Tab \"{{int:prefs-personal}}\"  vun Ären [[Special:Preferences|Astellungen]] ausschalten."
+}
