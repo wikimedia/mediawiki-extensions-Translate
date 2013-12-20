@@ -201,6 +201,15 @@
 	background-color: #F8F8F8;
 }
 
+.request-footer .selected-counter,
+.request-footer .older-requests-indicator {
+	unicode-bidi: -moz-isolate;
+	unicode-bidi: -webkit-isolate;
+	unicode-bidi: -ms-isolate;
+	unicode-bidi: -o-isolate;
+	unicode-bidi: isolate;
+}
+
 .clear-language-selector,
 .language-selector {
 	margin: 10px 0;
