@@ -1,0 +1,43 @@
+{
+    "@metadata": {
+        "authors": [
+            "BeginaFelicysym",
+            "Chrumps",
+            "Sp5uhe",
+            "Woytecr"
+        ]
+    },
+    "firststeps": "Pierwsze kroki",
+    "firststeps-desc": "[[Special:FirstSteps|Strona specjalna]] ułatwiająca rozpoczęcie pracy na wiki z wykorzystaniem rozszerzenia Translate",
+    "translate-fs-pagetitle-done": "&#32;– gotowe!",
+    "translate-fs-pagetitle-pending": "- oczekiwanie",
+    "translate-fs-pagetitle": "Kreator pierwszych kroków – $1",
+    "translate-fs-signup-title": "Rejestracja",
+    "translate-fs-settings-title": "Konfiguracja preferencji",
+    "translate-fs-userpage-title": "Tworzenie swojej strony użytkownika",
+    "translate-fs-permissions-title": "Wniosek o uprawnienia tłumacza",
+    "translate-fs-target-title": "Zacznij tłumaczyć!",
+    "translate-fs-email-title": "Potwierdź swój adres e‐mail",
+    "translate-fs-intro": "Witaj w kreatorze pierwszych kroków na {{GRAMMAR:MS,pl|{{SITENAME}}}}.\nPomożemy Ci krok po kroku przejść przez proces zostania tłumaczem.\nPo jego zakończeniu będziesz mógł tłumaczyć ''komunikatu interfejsu'' wszystkich wspieranych przez {{GRAMMAR:B.lp|{{SITENAME}}}} projektów.",
+    "translate-fs-selectlanguage": "Wybierz język",
+    "translate-fs-settings-planguage": "Język podstawowy:",
+    "translate-fs-settings-planguage-desc": "Język podstawowy służy jako język interfejsu tej wiki\ni jako domyślny język docelowy tłumaczenia.",
+    "translate-fs-settings-slanguage": "Język pomocniczy $1:",
+    "translate-fs-settings-slanguage-desc": "Istnieje możliwość pokazania tłumaczeń wiadomości w innych językach w oknie edycji tłumaczenia.\nW tym miejscu można wybrać, tłumaczenia na jakie ewentualne języki chcesz widzieć.",
+    "translate-fs-settings-submit": "Zapisz preferencje",
+    "translate-fs-userpage-level-N": "Moim językiem ojczystym jest",
+    "translate-fs-userpage-level-5": "Jestem profesjonalnym tłumaczem na",
+    "translate-fs-userpage-level-4": "Znam język jak ojczysty",
+    "translate-fs-userpage-level-3": "Mam dobrą znajomość",
+    "translate-fs-userpage-level-2": "Mam umiarkowaną znajomość",
+    "translate-fs-userpage-level-1": "Znam trochę",
+    "translate-fs-userpage-help": "Proszę, wskaż swoje umiejętności językowe i opowiedz coś o sobie. Jeśli znasz więcej niż pięć języków, możesz później dodać ich więcej.",
+    "translate-fs-userpage-submit": "Utwórz swoją stronę użytkownika",
+    "translate-fs-userpage-done": "Udało się! Masz już swoją stronę użytkownika.",
+    "translate-fs-permissions-planguage": "Język podstawowy:",
+    "translate-fs-permissions-help": "Teraz musisz umieścić wniosek o dodania siebie do grupy tłumaczy.\nWybierz język podstawowy, na który zamierzasz tłumaczyć.\n\nMożna wymienić inne języki i inne uwagi w polu tekstowym poniżej.",
+    "translate-fs-permissions-pending": "Wniosek został złożony na [[$1]] i ktoś z personelu witryny sprawdzi go tak szybko, jak to możliwe.\nJeśli adres e-mail został przez ciebie potwierdzony, otrzymasz wiadomość z powiadomieniem, gdy tylko się to stanie.",
+    "translate-fs-permissions-submit": "Wyślij wniosek",
+    "translate-fs-target-text": "Gratulujemy!\nMożesz teraz rozpocząć tłumaczenie.\n\nNie bój, jeśli wydaje ci się to się wciąż nowe i pogmatwane.\nNa [[Project list|liście projektu]] zamieszczono przegląd projektów, do których możesz dodawać tłumaczenia.\nWiększość projektów ma krótki opis strony z łączem \"''Tłumacz ten projekt''\", który przenosi do strony, która zawiera listę wszystkich nieprzetłumaczonych wiadomości.\nLista wszystkich grup wiadomości z [[Special:LanguageStats|bieżącym stanem tłumaczenia na język]] jest również dostępna.\n\nJeśli uważasz, że musisz zrozumieć więcej, zanim zaczniesz tłumaczyć, możesz przeczytać [[FAQ|Często zadawane pytania]].\nNiestety dokumentacja może być czasami nieaktualna.\nJeśli istnieje coś, co myślisz, że powinno zostać zrobione, ale nie możesz dowiedzieć się, jak, nie wahaj się o to pytać na [[Support|stronie wsparcia]].\n\nMożna również skontaktować się kolegów tłumaczy na ten sam język na [[Portal_talk:$1|stronie rozmowy]] [[Portal:$1|portalu własnego języka]].\nJeśli to jeszcze zostało ustawione, [[Special:Preferences|zmień język interfejsu użytkownika na język, na który chcesz tłumaczyć]], aby wiki była w stanie pokazać łącza najbardziej odpowiednie dla ciebie.",
+    "translate-fs-email-text": "Podaj swój adres e‐mail w [[Special:Preferences|preferencjach]] i potwierdź go korzystając z e‐maila wysłanego do Ciebie.\n\nUmożliwi to innym użytkownikom kontakt z Tobą.\nBędziesz również, nie częściej niż co miesiąc, otrzymywać biuletyny.\nJeśli nie chcesz otrzymywać informacji o aktualnościach możesz z nich zrezygnować w zakładce „{{int:prefs-personal}}” w swoich [[Special:Preferences|preferencjach]]."
+}

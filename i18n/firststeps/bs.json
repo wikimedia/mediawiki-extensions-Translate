@@ -1,0 +1,23 @@
+{
+    "@metadata": {
+        "authors": [
+            "CERminator",
+            "Palapa"
+        ]
+    },
+    "firststeps": "Prvi koraci",
+    "firststeps-desc": "[[Special:FirstSteps|Posebna stranica]] za pomoć korisnicima koji počinju sa wiki korištenjem proširenja za prevod",
+    "translate-fs-pagetitle-done": " - urađeno!",
+    "translate-fs-pagetitle": "Čarobnjak za početak - $1",
+    "translate-fs-signup-title": "Prijavite se",
+    "translate-fs-settings-title": "Podesi svoje postavke",
+    "translate-fs-userpage-title": "Napravi svoju korisničku stranicu",
+    "translate-fs-permissions-title": "Zahtijevaj prevodilačku dozvolu",
+    "translate-fs-target-title": "Počni prevoditi!",
+    "translate-fs-email-title": "Potvrdi svoju e-mail adresu",
+    "translate-fs-intro": "Dobro došli u čarobnjak za prve korake na {{SITENAME}}.\nOvaj čarobnjak će vas postepeno voditi kroz proces dobijanja prava prevodioca.\nNa kraju ćete moći prevoditi ''poruke interfejsa'' svih podržanih projekata na {{SITENAME}}.",
+    "translate-fs-userpage-submit": "Napravi moju korisničku stranicu",
+    "translate-fs-userpage-done": "Odlično urađeno! Sada imate korisničku stranicu.",
+    "translate-fs-target-text": "Čestitamo!\nSad možete početi prevoditi.\n\nNe plašite se ako se još osjećate novi i zbunjeni.\nNa stranici [[Project list]] postavljen je pregled projekata na kojima možete raditi na prevodu.\nNajveći dio projekata ima stranicu sa kratkim opisom sa linkom \"''Prevedite ovaj projekat'\", koji će vas odvesti na stranicu sa spiskom svih neprevedenih poruka.\nSpisak svih grupa poruka sa [[Special:LanguageStats|trenutnim stanjem prevoda za jezik]] je također dostupan.\nAko želite da shvatite više o samom prevođenju prije nego što počnete, možete pročitati [[FAQ|Najčešće postavljana pitanja]].\nNažalost, dokumentacija nekad može biti zastarjela.\nAko nađete nešto što mislite da možete da uradite, a ne znate kako, ne ustručavajte se da pitate na [[Support|stranici za podršku]].\n\nTakođer možete kontaktirati prijatelje prevodioce na isti jezik na[[Portal_talk:$1|stranici za razgovor]] [[Portal:$1|portala vašeg jezika]].\nAko već niste uradili, [[Special:Preferences|promijenite vaš jezik interfejsa na jezik na koji želite prevoditi]], tako će wiki biti u mogućnosti da vam prikaže najvažnije linkove za vas.",
+    "translate-fs-email-text": "Molimo navedite vašu e-mail adresu u [[Special:Preferences|vašim postavkama]] i potvrdite je iz vašeg e-maila koji vam je poslan.\n\nOvo omogućava drugim korisnicima da vas kontaktiraju putem e-maila.\nTakođer ćete dobijati novosti najviše jednom mjesečno.\nAko ne želite primati novosti, možete se odjaviti na jezičku \"{{int:prefs-personal}}\" u vašim [[Special:Preferences|postavkama]]."
+}

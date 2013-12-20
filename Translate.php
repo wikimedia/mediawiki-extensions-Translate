@@ -17,7 +17,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 /**
  * Version number used in extension credits and in other places where needed.
  */
-define( 'TRANSLATE_VERSION', '2013-12-19' );
+define( 'TRANSLATE_VERSION', '2013-12-23' );
 
 /**
  * Extension credits properties.
@@ -43,6 +43,13 @@ require_once "$dir/_autoload.php";
  * Registering various resources
  * @cond file_level_code
  */
+
+$wgMessagesDirs['FirstSteps'] = __DIR__ . "/i18n/firststeps";
+$wgMessagesDirs['PageTranslation'] = __DIR__ . "/i18n/pagetranslation";
+$wgMessagesDirs['Translate'] = __DIR__ . "/i18n/core";
+$wgMessagesDirs['TranslateGroupDescriptions'] = __DIR__ . "/i18n/groupdescriptions";
+$wgMessagesDirs['TranslateSearch'] = __DIR__ . "/i18n/search";
+$wgMessagesDirs['TranslateSandbox'] = __DIR__ . "/i18n/sandbox";
 
 // Register extension messages and other localisation.
 $wgExtensionMessagesFiles['Translate'] = "$dir/Translate.i18n.php";

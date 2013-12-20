@@ -1,0 +1,40 @@
+{
+    "@metadata": {
+        "authors": [
+            "Purodha"
+        ]
+    },
+    "firststeps": "Eetste Schredde",
+    "firststeps-desc": "[[Special:FirstSteps|Extra Sigg]] för Metmaacher op Wikis met däm Zohsazprojramm <i lang=\"en\">Translate</i> aan et werke ze krijje.",
+    "translate-fs-pagetitle-done": " - jedonn!",
+    "translate-fs-pagetitle-pending": " - noch nit jedonn",
+    "translate-fs-pagetitle": "En de Jäng kumme - $1",
+    "translate-fs-signup-title": "Aanmälde",
+    "translate-fs-settings-title": "Enstellunge maache",
+    "translate-fs-userpage-title": "Metmaachersigg aanlääje",
+    "translate-fs-permissions-title": "Noh dem Rääsch als {{int:Group-translator-member}} froore",
+    "translate-fs-target-title": "Loßlääje mem Övversäze!",
+    "translate-fs-email-title": "De <i lang=\"en\">e-mail</i> Adräß beschtääteje",
+    "translate-fs-intro": "Wellkumme bei {{GRAMMAR:Genitiv ier|{{SITENAME}}}} Hölp bei de eetsde Schredde för neu Metmaacher.\nHeh kreß De Schrett för Schrett jesaat, wi De ene Övversäzer weeß.\nAam Engk kanns De de Täxte un Nohreeschte uß alle Projäkte övversäze, di {{GRAMMAR:em Dativ|{{SITENAME}}}} ongerstöz wääde.",
+    "translate-fs-selectlanguage": "Söhg en Shprooch uß",
+    "translate-fs-settings-planguage": "Houpshprooch:",
+    "translate-fs-settings-planguage-desc": "De Houpshprooch is och di Schprooch, die heh dat Wiki met Der kallt, un des es och Ding shtandattmääßeje Shprooch för dren ze övversäze.",
+    "translate-fs-settings-slanguage": "Zohsäzlejje Shprooch Nommer $1:",
+    "translate-fs-settings-slanguage-desc": "Et es müjjelesch, sesch Övversäzonge en ander Schprooche beim sellver Övversäze aanzeije ze lohße. Söhg uß, wat för esu en Shprooche De ze sinn krijje wells, wann De övverhoup wälsche han wells.",
+    "translate-fs-settings-submit": "Enstellunge faßhallde",
+    "translate-fs-userpage-level-N": "Ming Mottershprooch es:",
+    "translate-fs-userpage-level-5": "Esch ben ene beroofsmääßeje Övversäzer vun:",
+    "translate-fs-userpage-level-4": "Esch kennen mesch esu jood uß, wi wann et ming Motterschprooch wöhr, met:",
+    "translate-fs-userpage-level-3": "Esch kann joot ömjonn met dä Schprooch:",
+    "translate-fs-userpage-level-2": "Esch kann di Schprooch meddelmääßesch:",
+    "translate-fs-userpage-level-1": "Esch kann e beßje vun dä Schprooch:",
+    "translate-fs-userpage-help": "Jiv Ding Shprooche aan, un sach ons jät övvr Desch. Wann De mieh wi fönnef Schprooche kanns, kanns De di schpääder emmer noch derbei donn.",
+    "translate-fs-userpage-submit": "Don en Metmaachersigg för Desch aanlääje",
+    "translate-fs-userpage-done": "Joot jemaat! Jäz häs De en Metmaachersigg.",
+    "translate-fs-permissions-planguage": "Ding Houpshprooch:",
+    "translate-fs-permissions-help": "Jäz moß De en Aanfrooch loßlohße, öm en de Övversäzer-Jropp ze kumme.\nDonn Ding Houpschprooch aanjävve, woh De et miehts noh övversäze wells.\n\nDo kanns natöörlesch ander Schprooche un wat De söns noch saare wells en dä Kaßte heh endraare.",
+    "translate-fs-permissions-pending": "Ding Aanfrooch es jäz noh [[$1]] övvermeddelt, un eine vun de {{int:group-staff/ksh}}\nweed sesch esu flöck, wi_t jeiht, dröm kömmere.\nWann De Ding Addräß för de <i lang=\"en\">e-mail<i> beschtäätesch häs, kriß De en Nohreesch drövver, wann ed esu wigg es.",
+    "translate-fs-permissions-submit": "Lohß Jonn!",
+    "translate-fs-target-text": "Onse Jlöckwonsch!\nJez kanns De et Övversäze aanfange\n\nLohß Desch nit jeck maache, wann dat eets ens jet fresch un onövversseshlesh schingk.\nOp dä Sigg [[Project list|met dä Leß met de Projäkte]] kanns Der enne Övverbleck holle, woh De jäz övverall jet zoh beidraare kanns met Dinge Övversäzonge.\nDe miehßte Projäkte han en koote Sigg övver dat Projäk, woh ene Lengk „Translate this project<!--{{int:xxxxxxxxxxx}}-->“ drop es. Dä brengk Desh op en Leß met alle Täxte un Nohreeschte för dat Projäk, di noch nit övversaz sin.\nEt jitt och en [[Special:LanguageStats|Leß met alle Jroppe vun Täxte un Nohreeshte un de Zahle dohzoh]].\n\nWann De meins, dat De noch jät mieh wesse mööts, ih dat De mem Övversäze aanfängks, jangk en de [[FAQ|öff jeshtallte Froore]] dorsh.\nOnjlöcklesch es, uns Dokemäntazjuhn künnt ald ens övverhollt sin.\nWann De jät donn wells, wat De nit esu eifach henkriß wie et sin sullt, dann bes nit bang un donn op dä Sigg „[[Support|{{int:bw-mainpage-support-title}}]]“ donoh froore.\n\nDo kanns och met Dinge Kolleje, di de sellve Shprooche övversäze wi Do, övver de [[Portal:$1|Pooz-Sigg för Ding Shprooch]] ier [[Portal_talk:$1|Klaafsigg]] zosamme kumme.\nWann De dat noch nit jedonn häs, [[Special:Preferences|donn Ding Shprooch för de Bovverflääsch vum Wiki op di Shprooch ensthälle, woh de noh övversäze wells]], domet et wiki Der de beß zopaß Lengks automattesch aanzeije kann.",
+    "translate-fs-email-text": "Bes esu joot un jiff Ding Adräß för de <i lang=\"en\">e-mail</i> en [[Special:Preferences|Dinge Enstellunge]]\naan, un dun se beschtäätejje. Doför es ene Lengk udder en <i lang=\"en\">URL</i> en dä <i lang=\"en\">e-mail</i>\nan Desh dren.\n\nDat määd et müjjelesch, dat ander Metmaacher Dir en <i lang=\"en\">e-mail</i> schecke künne.\nDo kriß och Neueschkeite vum Wiki zohjescheck, esu ätwa eijmohl em Mohnd.\nWann De dat nit han wells, kanns De et onger „{{int:prefs-personal}}“ en [[Special:Preferences|Dinge Enstellunge]] afschallde."
+}

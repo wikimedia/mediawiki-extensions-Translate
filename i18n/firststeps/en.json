@@ -1,0 +1,41 @@
+{
+    "@metadata": {
+        "authors": [
+            "Nike",
+            "Siebrand"
+        ]
+    },
+    "firststeps": "First steps",
+    "firststeps-desc": "[[Special:FirstSteps|Special page]] for getting users started on a wiki using the Translate extension",
+    "translate-fs-pagetitle-done": " - done!",
+    "translate-fs-pagetitle-pending": " - pending",
+    "translate-fs-pagetitle": "Getting started wizard - $1",
+    "translate-fs-signup-title": "Sign up",
+    "translate-fs-settings-title": "Configure your preferences",
+    "translate-fs-userpage-title": "Create your user page",
+    "translate-fs-permissions-title": "Request translator permissions",
+    "translate-fs-target-title": "Start translating!",
+    "translate-fs-email-title": "Confirm your email address",
+    "translate-fs-intro": "Welcome to the {{SITENAME}} first steps wizard.\nYou will be guided through the process of becoming a translator step by step.\nIn the end you will be able to translate <em>interface messages</em> of all supported projects at {{SITENAME}}.",
+    "translate-fs-selectlanguage": "Pick a language",
+    "translate-fs-settings-planguage": "Primary language:",
+    "translate-fs-settings-planguage-desc": "The primary language doubles as your interface language on this wiki\nand as default target language for translations.",
+    "translate-fs-settings-slanguage": "Assistant language $1:",
+    "translate-fs-settings-slanguage-desc": "It is possible to show translations of messages in other languages in the translation editor.\nHere you can choose which languages, if any, you would like to see.",
+    "translate-fs-settings-submit": "Save preferences",
+    "translate-fs-userpage-level-N": "I am a native speaker of",
+    "translate-fs-userpage-level-5": "I am a professional translator of",
+    "translate-fs-userpage-level-4": "I know it like a native speaker",
+    "translate-fs-userpage-level-3": "I have a good command of",
+    "translate-fs-userpage-level-2": "I have a moderate command of",
+    "translate-fs-userpage-level-1": "I know a little",
+    "translate-fs-userpage-help": "Please indicate your language skills and tell something about yourself. If you know more than five languages, you can add more later.",
+    "translate-fs-userpage-submit": "Create your userpage",
+    "translate-fs-userpage-done": "Well done! You now have an user page.",
+    "translate-fs-permissions-planguage": "Primary language:",
+    "translate-fs-permissions-help": "Now you need to place a request to be added to the translator group.\nSelect the primary language you are going to translate to.\n\nYou can mention other languages and other remarks in textbox below.",
+    "translate-fs-permissions-pending": "Your request has been submitted to [[$1]] and someone from the site staff will check it as soon as possible.\nIf you confirm your email address, you will get an email notification as soon as it happens.",
+    "translate-fs-permissions-submit": "Send request",
+    "translate-fs-target-text": "Congratulations!\nYou can now start translating.\n\nDo not be afraid if it still feels new and confusing to you.\nAt [[Project list]] there is an overview of projects you can contribute translations to.\nMost of the projects have a short description page with a \"''Translate this project''\" link, that will take you to a page which lists all untranslated messages.\nA list of all message groups with the [[Special:LanguageStats|current translation state for a language]] is also available.\n\nIf you feel that you need to understand more before you start translating, you can read the [[FAQ|Frequently asked questions]].\nUnfortunately documentation can be out of date sometimes.\nIf there is something that you think you should be able to do, but cannot find out how, do not hesitate to ask it at the [[Support|support page]].\n\nYou can also contact fellow translators of the same language at [[Portal:$1|your language portal]]'s [[Portal_talk:$1|talk page]].\nIf you have not already done so, [[Special:Preferences|change your user interface language to the language you want to translate in]], so that the wiki is able to show the most relevant links for you.",
+    "translate-fs-email-text": "Please provide your email address in [[Special:Preferences|your preferences]] and confirm it from the email that is sent to you.\n\nThis allows other users to contact you by email.\nYou will also receive newsletters at most once a month.\nIf you do not want to receive newsletters, you can opt-out in the tab \"{{int:prefs-personal}}\" of your [[Special:Preferences|preferences]]."
+}

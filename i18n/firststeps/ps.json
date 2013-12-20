@@ -1,0 +1,23 @@
+{
+    "@metadata": {
+        "authors": [
+            "Ahmed-Najib-Biabani-Ibrahimkhel"
+        ]
+    },
+    "firststeps": "لومړي ګامونه",
+    "translate-fs-pagetitle-done": " - ترسره شو!",
+    "translate-fs-signup-title": "نومليکل",
+    "translate-fs-userpage-title": "ستاسې کارن مخ جوړول",
+    "translate-fs-permissions-title": "د ژباړې د اجازې غوښتنه",
+    "translate-fs-target-title": "په ژباړې پيل وکړۍ",
+    "translate-fs-selectlanguage": "يوه ژبه وټاکۍ",
+    "translate-fs-settings-planguage": "آرنۍ ژبه:",
+    "translate-fs-settings-slanguage": "مرستياله ژبه $1:",
+    "translate-fs-settings-submit": "غوره توبونه خوندي کول",
+    "translate-fs-userpage-level-N": "دا زما مورنۍ ژبه ده",
+    "translate-fs-userpage-level-5": "زه د دې ژبې څانګپوه ژباړن يم",
+    "translate-fs-userpage-level-1": "يو څه پرې پوهېږم",
+    "translate-fs-userpage-submit": "خپل کارن مخ جوړول",
+    "translate-fs-permissions-planguage": "آرنۍ ژبه:",
+    "translate-fs-permissions-submit": "غوښتنه ورلېږل"
+}
