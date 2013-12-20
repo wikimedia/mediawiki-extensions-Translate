@@ -1,0 +1,20 @@
+{
+    "@metadata": {
+        "authors": [
+            "Yocahuna"
+        ]
+    },
+    "firststeps": "Fos tepdem",
+    "firststeps-desc": "[[Special:FirstSteps|Peshal piej]] fi get yuuza taat pan a wiki a yuuz di Chransliet extenshan",
+    "translate-fs-pagetitle-done": "- don!",
+    "translate-fs-pagetitle": "Taat op wizad - $1",
+    "translate-fs-signup-title": "Sain op",
+    "translate-fs-settings-title": "Kanfiga yu prefransdem",
+    "translate-fs-userpage-title": "Kriet yu yuuza piej",
+    "translate-fs-permissions-title": "Rikwes chranslieta pomishan",
+    "translate-fs-target-title": "Taat fi chransliet!",
+    "translate-fs-email-title": "Kanfoerm yu e-miel ajres.",
+    "translate-fs-intro": "Welkom tu di {{SITENAME}} fos tep wizad.\nYu wi gaid chruu di pruoses fi ton chranslieta tep bi tep.\nWen yu don yu wi iebl fi chransliet <strong>intafies mechiz</strong> a aal prajek wa supuot a {{SITENAME}}.",
+    "translate-fs-userpage-submit": "Kriet mi yuuza piej",
+    "translate-fs-userpage-done": "Yaa gwaan! Yu nou ab a yuuza piej."
+}

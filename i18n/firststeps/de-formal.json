@@ -1,0 +1,23 @@
+{
+    "@metadata": {
+        "authors": [
+            "Geitost",
+            "Kghbln",
+            "Purodha",
+            "The Evil IP address"
+        ]
+    },
+    "translate-fs-settings-title": "Ihre Einstellungen anpassen",
+    "translate-fs-userpage-title": "Ihre Benutzerseite erstellen",
+    "translate-fs-email-title": "Ihre E-Mail-Adresse bestätigen",
+    "translate-fs-intro": "Willkommen beim translatewiki.net-Startassistenten.\nIhnen wird hier gezeigt, wie Sie Schritt für Schritt ein Übersetzer bei translatewiki.net werden.\nAm Ende werden Sie alle ''Nachrichten der Benutzeroberfläche'' der von translatewiki.net unterstützten Projekte übersetzen können.",
+    "translate-fs-selectlanguage": "Wählen Sie eine Sprache",
+    "translate-fs-settings-planguage-desc": "Die Hauptsprache ist zum einen Ihre Sprache für die Benutzeroberfläche auf diesem Wiki\nund zum anderen die Zielsprache für Ihre Übersetzungen.",
+    "translate-fs-settings-slanguage-desc": "Es ist möglich im Übersetzungseditor Übersetzungen von Nachrichten in anderen Sprachen anzeigen zu lassen.\nHier können Sie wählen, welche Sprachen Sie, wenn überhaupt, angezeigt bekommen möchten.",
+    "translate-fs-userpage-help": "Bitte geben Sie Ihre Sprachkenntnisse an und teilen Sie uns etwas über sich mit. Sofern Sie Kenntnisse zu mehr als fünf Sprachen haben, können Sie diese später angeben.",
+    "translate-fs-userpage-done": "Gut gemacht! Sie haben nun eine Benutzerseite",
+    "translate-fs-permissions-help": "Jetzt müssen Sie eine Anfrage stellen, um in die Benutzergruppe der Übersetzer aufgenommen werden zu können.\nWählen Sie die Hauptsprache in die Sie übersetzen möchten.\n\nSie können andere Sprachen sowie weitere Hinweise im Textfeld unten angeben.",
+    "translate-fs-permissions-pending": "Ihre Anfrage wurde auf Seite [[$1]] gespeichert. Einer der Mitarbeiter von translatewiki.net wird sie sobald wie möglich prüfen.\nWenn Sie Ihre E-Mail-Adresse bestätigen, erhalten Sie eine E-Mail-Benachrichtigung, sobald dies erfolgt ist.",
+    "translate-fs-target-text": "Glückwunsch!\nSie können nun mit dem Übersetzen beginnen.\n\nSeien Sie nicht verwirrt, wenn es Ihnen noch neu und unübersichtlich vorkommt.\nIn der [[Project list|Projektliste]] gibt es eine Übersicht über die Projekte, die Sie übersetzen können.\nDie meisten Projekte haben eine kurze Beschreibungsseite zusammen mit einem ''„Übersetzen“''-Link, der Sie auf eine Seite mit nicht übersetzten Nachrichten bringt.\nEine Liste aller Nachrichtengruppen und dem [[Special:LanguageStats|momentanen Status einer Sprache]] gibt es auch.\n\nWenn Sie mehr hiervon verstehen möchten, können Sie die [[FAQ|häufig gestellten Fragen]] lesen.\nLeider kann die Dokumentation zeitweise veraltet sein.\nWenn Sie etwas tun möchten, jedoch nicht wissen wie, zögern Sie nicht, auf der [[Support|Hilfeseite]] zu fragen.\n\nSie können auch Übersetzer Ihrer Sprache auf der [[Portal_talk:$1|Diskussionsseite]] des [[Portal:$1|entsprechenden Sprachportals]] kontaktieren.\nDas Portal verlinkt auf Ihre momentane [[Special:Preferences|Spracheinstellung]].\nBitte ändern Sie sie, falls nötig.",
+    "translate-fs-email-text": "Bitte geben Sie Ihre E-Mail-Adresse in [[Special:Preferences|Ihren Einstellungen]] ein und bestätigen Sie die an Sie versandte E-Mail.\n\nDies gibt anderen die Möglichkeit, Sie über E-Mail zu erreichen.\nSie erhalten außerdem bis zu einmal im Monat einen Newsletter.\nWenn Sie keinen Newsletter erhalten möchten, können Sie sich im Tab „{{int:prefs-personal}}“ in Ihren [[Special:Preferences|Einstellungen]] austragen."
+}

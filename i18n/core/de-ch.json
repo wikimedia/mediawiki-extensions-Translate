@@ -1,0 +1,13 @@
+{
+    "@metadata": {
+        "authors": [
+            "Filzstift",
+            "Geitost",
+            "MichaelFrey",
+            "The Evil IP address"
+        ]
+    },
+    "translate-page-description-hasoptional": "Diese Nachrichtengruppe enthält optionale Nachrichten.\nOptionale Nachrichten sollten nur dann übersetzt werden, sofern es in deiner Sprache Bedarf für sie gibt,\nwie beispielsweise die Nichtverwendung von Leerschlägen oder die Transkription von Eigennamen. $1",
+    "translate-edit-no-information": "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weisst, wo und in welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentation hinzufügst.''",
+    "translate-messagereview-reviewswithyou": "Akzeptiert von {{PLURAL:$1|dir selbst|$1 Benutzern, einschliesslich dir selbst}}"
+}
