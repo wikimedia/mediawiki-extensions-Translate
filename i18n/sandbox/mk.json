@@ -1,0 +1,39 @@
+{
+    "@metadata": {
+        "authors": [
+            "Bjankuloski06"
+        ]
+    },
+    "managetranslatorsandbox": "Раководење со преведувачки песочник",
+    "tsb-filter-pending": "Барања во исчекување",
+    "tsb-reminder-title-generic": "Пополнете го вашето претставување и станете овластен преведувач",
+    "tsb-reminder-content-generic": "Здраво $1,\n\nВи благодариме што се регистриравте на {{SITENAME}}. Пополнете ги пробните преводи, и администраторите набргу ќе ви доделат статус на преведувач.\n\nПојдете на $2 и направете уште некои преводи.",
+    "tsb-request-count": "{{PLURAL:$1|Едно барање|$1 барања}}",
+    "tsb-all-languages-button-label": "Сите јазици",
+    "tsb-search-requests": "Пребарајте барања",
+    "tsb-accept-button-label": "Прифати",
+    "tsb-reject-button-label": "Одбиј",
+    "tsb-selected-count": "{{PLURAL:$1|Избран е еден корисник|Избрани се $1 корисници}}",
+    "tsb-older-requests": "{{PLURAL:$1|Едно постаро барање|$1 постари барања}}",
+    "tsb-accept-all-button-label": "Прифати ги сите",
+    "tsb-reject-all-button-label": "Одбиј ги сите",
+    "tsb-reminder-link-text": "Испрати потсетник по е-пошта",
+    "tsb-didnt-make-any-translations": "Корисников нема направено ниеден превод.",
+    "tsb-translations-source": "Извор",
+    "tsb-translations-user": "Кориснички преводи",
+    "tsb-translations-current": "Постоечки преводи",
+    "translationstash": "Добре дојдовте",
+    "translate-translationstash-welcome": "Добре дојдовте {{GENDER:$1|$1}}, вие сте нов преведувач",
+    "translate-translationstash-welcome-note": "Запознајте се со преводните алатки. Преведете некои пораки и стекнете полни преведувачки права за да учествувате во вашите омилени проекти.",
+    "translate-translationstash-initialtranslation": "Вашиот првичен превод",
+    "translate-translationstash-translations": "$1 {{PLURAL:$1|завршен превод|завршени преводи}}",
+    "translate-translationstash-skip-button-label": "Дај друга",
+    "tsb-limit-reached-title": "Ви благодариме за преводите",
+    "tsb-limit-reached-body": "Ја достигнавте границата на преводи од нови преведувачи.\nНаскоро нашата екипа ќе ви ја провери и надгради сметката.\nПотоа ќе можете да преведувате неограничено.",
+    "tsb-no-requests-from-new-users": "Нема барања од нови корисници",
+    "tsb-promoted-from-sandbox": "Корисникот е унапреден во преведувач",
+    "log-name-translatorsandbox": "Преводен песочник",
+    "log-description-translatorsandbox": "Дневник на дејства со корисници на преводниот песочник",
+    "logentry-translatorsandbox-promoted": "$1 {{GENDER:$4|го|ја}} {{GENDER:$2|унапреди}} $3 во {{GENDER:$4|преведувач}}",
+    "logentry-translatorsandbox-rejected": "$1 го {{GENDER:$2|одби}} барањето на $3 за да стане преведувач"
+}

@@ -1,0 +1,19 @@
+{
+    "@metadata": {
+        "authors": [
+            "Anakmalaysia"
+        ]
+    },
+    "managetranslatorsandbox": "Uruskan kotak pasir penterjemah",
+    "tsb-filter-pending": "Permohonan yang menunggu",
+    "tsb-reminder-title-generic": "Lengkapkan pengenalan anda untuk menjadi seorang penterjemah",
+    "tsb-reminder-content-generic": "$1,\n\nTerima kasih kerana mendaftar untuk {{SITENAME}}.\n\nSekiranya anda melengkapkan ujian penterjemahan ini, anda akan menerima akses penterjemah sepenuhnya dari pihak penyelia.\n\nSila ke $2 untuk membuat lebih banyak kerja terjemahan.\n\n$3,\nKakitangan {{SITENAME}}",
+    "tsb-reminder-sending": "Peringatan sedang dihantar...",
+    "tsb-reminder-sent": "{{PLURAL:$1|Telah menghantar $1 peringatan pada $2|Telah menghantar $1 peringatan, yang terbaru pada $2}}",
+    "tsb-reminder-sent-new": "Peringatan dihantar",
+    "tsb-reminder-failed": "Peringatan gagal dihantar",
+    "tsb-email-promoted-subject": "Anda kini seorang penterjemah di {{SITENAME}}",
+    "tsb-email-promoted-body": "{{GENDER:$1|$1}},\n\nTahniah! Saya telah memeriksa terjemahan ujian yang telah anda lakukan di {{SITENAME}}, dan ole itu memberi anda hak penterjemah sepenuhnya.\n\nDatanglah ke {{SITENAME}} untuk terus menterjemah sekarang dan setiap hari:\n$2\n\nSelamat datang dan terima kasih atas sumbangan anda!\n\n{{GENDER:$3|$3}},\nKakitangan {{SITENAME}}",
+    "tsb-request-count": "$1 {{PLURAL:$1|permintaan}}",
+    "logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|menaikkan pangkat}} $3 kepada {{GENDER:$4|penterjemah}}"
+}

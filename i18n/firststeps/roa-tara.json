@@ -1,0 +1,40 @@
+{
+    "@metadata": {
+        "authors": [
+            "Joetaras"
+        ]
+    },
+    "firststeps": "Prime passe",
+    "firststeps-desc": "[[Special:FirstSteps|Pàgena speciale]] pe fà accumenzà le utinde sus a 'na uicchi a ausà l'estenzione de Traduzione",
+    "translate-fs-pagetitle-done": "- apposte!",
+    "translate-fs-pagetitle-pending": "- appese",
+    "translate-fs-pagetitle": "Procedure guidate pe accumenzà - $1",
+    "translate-fs-signup-title": "Reggistrate",
+    "translate-fs-settings-title": "'Mboste le preferenze tune",
+    "translate-fs-userpage-title": "Ccreje 'a pàgena utende toje",
+    "translate-fs-permissions-title": "Cirche le permesse de traduttore",
+    "translate-fs-target-title": "Accuminze a traducere!",
+    "translate-fs-email-title": "Conferme l'indirizze e-mail tune",
+    "translate-fs-intro": "Bovègne jndr'à 'a guide de le prime passe de {{SITENAME}}.\nTu avìne guidate 'mbrà le processe pe devendò traduttore passe pe passe.\nQuanne amme spicciate, tu sì capace de traducete le \"messàgge de inderfacce\" de tutte le pruggette supportate sus a {{SITENAME}}.",
+    "translate-fs-selectlanguage": "Pigghie 'na lènghe",
+    "translate-fs-settings-planguage": "Lènga prengepàle:",
+    "translate-fs-settings-planguage-desc": "'A lènghe prengepàle raddoppie cumme 'a lènghe de inderfacce sus a sta uicchi e cumme lènghe de destinazione de base pe le tradutture.",
+    "translate-fs-settings-slanguage": "Assistende d'a lènghe $1:",
+    "translate-fs-settings-slanguage-desc": "Jè possibbile fa vedè le traduziune de le messàgge jndr'à otre lènghe jndr'à 'u cangiatore de traduzione.\nAqquà tu puè scacchià ce lènghe, vuè ccu vide.",
+    "translate-fs-settings-submit": "Reggistre le preferenze",
+    "translate-fs-userpage-level-N": "Ije sò 'nu lènga madre",
+    "translate-fs-userpage-level-5": "Ije sò 'nu professore",
+    "translate-fs-userpage-level-4": "Ije parle probbie accellènde",
+    "translate-fs-userpage-level-3": "Ije parle cumme 'ndermèdie.",
+    "translate-fs-userpage-level-2": "'U canosche 'nu picche",
+    "translate-fs-userpage-level-1": "'U sacce tèrra-tèrre",
+    "translate-fs-userpage-help": "Pe piacere indiche le canoscenze tue d'a lènga e dinne quaccheccose sus a te. Ce tu canusce cchiù de cinghe lènghe, tu le puè aggiungere apprisse.",
+    "translate-fs-userpage-submit": "Ccreje 'a pàgena utende toje",
+    "translate-fs-userpage-done": "Fatte bbuène! Tu è 'na pàgena utende nove.",
+    "translate-fs-permissions-planguage": "Lènga prengepàle:",
+    "translate-fs-permissions-help": "Mò tu è abbesògne de mettere 'na richieste pe esseer aggiunde jndr'à 'u gruppe de tradutture.\nScacchie 'a lènghe prengepàle ca tu vuè ccu traduce.\n\nTu puè scrivere otre lènghe e otre segnalaziune jndr'à buatte de teste aqquà sotte.",
+    "translate-fs-permissions-pending": "'A richiesta toje ha state confermate sus a [[$1]] e quaccheotre da 'a squadre d'u site adda verificà quanne pò.\nCer tu conferme l'indirizze email tune, tu è 'na notifiche cu 'a mail aprrime possibbile.",
+    "translate-fs-permissions-submit": "Manne 'na richieste",
+    "translate-fs-target-text": "Comblimende!\nTu puè accumenzà a traducere.\n\nNo te pigghià 'u sckande ce angore te sinde nuève e confuse.\nJndr'à l'[[Project list|elenghe de le pruggette]] stè 'na panorameche de le pruggette ca puè traducere.\nAssaije de le pruggette onne 'na pàgene de descrizione corte cu 'nu collegamende \"''Traduce stu proggette''\", ca te porte sus a 'na pàgene ca elenghe tutte le messàgge none tradotte.\n'N'elenghe de tutte le gruppe de messàgge cu 'u [[Special:LanguageStats|state de mò de le traduziune pe lènghe]] jè ppure disponibbile.\n\nCe tu sinde ca è abbesògne de capì megghie apprime de accumenzà a traducere, tu puè leggere le [[FAQ|domande cchiù frequende]].\nSfortunatamende 'a documendazione certe vote pò essere vecchie.\nCe stè quacchecose ca tu pinze ca avissa riuscì a fà, ma non ge iacche accumme fà, nò te fà probbleme a cercà a 'a [[Support|pàgene d'aijute]].\n\nTu puè pure condattà le tradutture d'a stessa lènga toje sus a [[Portal_talk:$1|pàgene de le 'ngazzaminde]] d'u [[Portal:$1|portale d'a lènga toje]].\nCe non g'è fatte accussì, [[Special:Preferences|cange l'inderfacce d'a lènghe, jndr'à lènghe ca vuè ccu traducere]], accussì 'a uicchi te face 'ndrucà le collegaminde cchiù 'mbortande pe te.",
+    "translate-fs-email-text": "Pe piacere mitte l'indirizze email tune jndr'à [[Special:Preferences|le preferenze tune]] e confermale da l'email ca t'arrive.\n\nQuiste permette a le otre utinde de condattarte cu l'email.\nTu puè pure ricevere le newsletter 'na vote a 'u mese.\nCe tu non ge vuè ricevere le newsletter, tu puè luà 'a scelte jndr'à schede \"{{int:prefs-personal}}\" de le [[Special:Preferences|preferenze tune]]."
+}
