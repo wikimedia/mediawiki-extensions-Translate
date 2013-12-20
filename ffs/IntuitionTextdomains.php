@@ -82,6 +82,8 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 				$g['optional'] = array();
 			}
 
+			$g['format'] = 'php';
+
 			$copyvars = array(
 				'ignored',
 				'optional',
