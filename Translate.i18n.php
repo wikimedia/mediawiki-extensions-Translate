@@ -7332,8 +7332,8 @@ Hvis du ved hvor eller hvordan denne besked bruges, kan du hjælpe andre oversæ
 	'translate-edit-tmmatch-source' => 'Kildetekst til oversættelse: $1',
 	'translate-edit-tmmatch' => '$1 % overensstemmelse',
 	'translate-use-suggestion' => 'Erstat den nuværende oversættelse med dette forslag.',
-	'translate-edit-nopermission' => 'Du skal have tilladelse til at oversætte meddelelser.', # Fuzzy
-	'translate-edit-askpermission' => 'Anmod om tilladelse', # Fuzzy
+	'translate-edit-nopermission' => 'Du skal have oversættelsesrettigheder for at kunne oversætte besekeder.',
+	'translate-edit-askpermission' => 'Få tilladelse',
 	'translate-magic-pagename' => 'Udvidet MediaWiki-oversættelse',
 	'translate-magic-help' => 'Du kan oversætte specialsiders aliaser, magiske ord og navnerumsnavne.
 
@@ -8409,8 +8409,8 @@ kaž na pśikład njewužywanje proznych znamuškow abo transliteraciju swójski
 	'translate-edit-tmmatch-source' => 'Žrědłowy tekst pśełožka: $1',
 	'translate-edit-tmmatch' => '$1 % makanja',
 	'translate-use-suggestion' => 'Aktualny pśełožk pśez toś to naraźenje wuměniś',
-	'translate-edit-nopermission' => 'Trjebaš pšawo, aby mógał powěźeńki pśełožowaś.', # Fuzzy
-	'translate-edit-askpermission' => 'Pšawo pominaś', # Fuzzy
+	'translate-edit-nopermission' => 'Trjebaš pśełožowańske pšawa, aby mógał powěźeńki pśełožowaś.',
+	'translate-edit-askpermission' => 'Pšawo dostaś',
 	'translate-magic-pagename' => 'Rozšyrjony pśełožk MediaWiki',
 	'translate-magic-help' => 'Móžoš aliasy specialnych bokow, magiske słowa a mjenja mjenjowych rumow pśełožyś.
 
@@ -8558,6 +8558,7 @@ Barwa pódsmužkowanja pśełožowarskego mjenja pokazujo, kak aktiwny pśełož
 	'translate-smg-nochanges' => 'Njejsu žedne změny za pśeźěłanje.',
 	'translate-smg-submit' => 'Změny na pśeźěłowanje pósłaś',
 	'translate-smg-submitted' => 'Definicije powěźeńkow su se zaktualizěrowali. Změny pśeźěłuju se w slězynje.',
+	'translate-smg-more' => 'Pó składowanju toś tych změnow muse se dalšne změny pśeźěłaś.',
 	'translate-smg-left' => 'Powěsćowe wopśimjeśe we wikiju',
 	'translate-smg-right' => 'Dochadajuce změny',
 	'translate-manage-import-diff' => 'Powěźeńka $1 | akcije: $2',
@@ -8643,6 +8644,12 @@ Drobnostki: $1',
 	'log-description-translationreview' => 'Protokol wšych kontrolow k pśełožkam a zdźěleńskim kupkam.',
 	'logentry-translationreview-message' => '$1 jo pśełožk $3 ako pśeglědany {{GENDER:$2|markěrował|markěrowała}}',
 	'logentry-translationreview-group' => '$1 jo  status pśełožkow w rěcy $4 boka $3 wót $6 do $7 {{GENDER:$2|změnił|změniła}}',
+	'group-translate-sandboxed' => 'Njewobkšuśone pśełožowarje',
+	'group-translate-sandboxed-member' => '{{GENDER:$1|njewobkšuśony pśełožowaŕ|njewobkśuśona pśełožowarka}}',
+	'right-translate-sandboxmanage' => 'Wužywarje grajkanišća zastojaś',
+	'action-translate-sandboxmanage' => 'wužywarje grajkanišća zastojaś',
+	'right-translate-sandboxaction' => 'Akcije wuwjasć, kótarež su na "běłej lisćinje" wužywarjow grajkanišća',
+	'action-translate-sandboxaction' => 'Akcije wuwjasć, kótarež su na "běłej lisćinje" wužywarje grajkanišća',
 	'translate-workflow-state-' => '(njenastajony)',
 	'translate-workflowstatus' => 'Status: $1',
 	'translate-workflow-set-do' => 'Nastajiś',
@@ -8687,6 +8694,7 @@ Jo nejwužytnjej za pśeglědowańske nadawki.',
 	'tux-editor-discard-changes-button-label' => 'Změny zachyśiś',
 	'tux-editor-save-button-label' => 'Pśełožk składowaś',
 	'tux-editor-skip-button-label' => 'K pśiducemu',
+	'tux-editor-cancel-button-label' => 'Pśetergnuś',
 	'tux-editor-confirm-button-label' => 'Pśełožk wobkšuśiś',
 	'tux-editor-shortcut-info' => 'Tłoc "$1", aby składował abo "$2", aby k pśiducemu powěźeńce  dostał',
 	'tux-editor-edit-desc' => 'Dokumentaciju wobźěłaś',
@@ -8728,6 +8736,14 @@ Jo nejwužytnjej za pśeglědowańske nadawki.',
 	'tux-empty-list-translated' => 'Žedne pśełožone powěźeńki',
 	'tux-empty-list-translated-guide' => 'Móžoš pomagaś pśełožowaś',
 	'tux-empty-list-translated-action' => 'Pśełožyś',
+	'tux-empty-no-messages-to-display' => 'Žedne powěsći za zwobraznjenje',
+	'tux-empty-there-are-optional' => 'Su opcionalne powěźeńki, kótarež njepokazuju se w lisćinje',
+	'tux-empty-show-optional-messages' => 'Opcionalne powěźeńki pokazaś',
+	'tux-empty-no-outdated-messages' => 'Žedne zestarjone powěźeńki',
+	'tux-empty-nothing-to-proofread' => 'Njejsu powěźeńki za pśeglědanje',
+	'tux-empty-you-can-help-providing' => 'Móžoš pomagaś, nowe pśełožki pśinosowaś',
+	'tux-empty-nothing-new-to-proofread' => 'Njejo nic nowe za pśeglědanje',
+	'tux-empty-you-can-review-already-proofread' => 'Móžoš pśełožki pśeglědaś, kótarež su južo druge pśeglědali.',
 	'tux-empty-list-other' => 'Njejo nic za pśełožowanje',
 	'tux-empty-list-other-guide' => 'Móžoš pomagaś, eksistěrujuce pśełožki pśeglědaś',
 	'tux-empty-list-other-action' => 'Pśełožki pśeglědaś',
@@ -8735,10 +8751,13 @@ Jo nejwužytnjej za pśeglědowańske nadawki.',
 	'tux-editor-close-tooltip' => 'Zacyniś',
 	'tux-editor-expand-tooltip' => 'Pokazaś',
 	'tux-editor-collapse-tooltip' => 'Schowaś',
+	'tux-editor-message-tools-history' => 'Historija',
+	'tux-editor-message-tools-translations' => 'Wšykne pśełožki',
 	'tux-editor-loading' => 'Zacytujo se ...',
 	'translate-search-more-languages-info' => '$1 {{PLURAL:$1|dalšna rěc|dalšnej rěcy|dalšne rěcy|dalšnych rěcow}}',
 	'translate-statsbar-tooltip' => '$1 % pśełožone, $2 % pśeglědane',
 	'translate-statsbar-tooltip-with-fuzzy' => '$1 % pśełožone, $2 % pśeglědane, $3 % zestarjone',
+	'translate-search-more-groups-info' => '$1 {{PLURAL:$1|dalšna kupka|dalšnej kupce|dalšne kupki|dalšnych kupkow}}',
 );
 
 /** Central Dusun (Dusun Bundu-liwan)
@@ -14761,8 +14780,8 @@ kaž na přikład njewužiwanje mjezerow abo transliteraciju swójskich mjenow. 
 	'translate-edit-tmmatch-source' => 'Žórłowy tekst přełožka: $1',
 	'translate-edit-tmmatch' => '$1 % wotpowědowanja',
 	'translate-use-suggestion' => 'Aktualny přełožk přez tutón namjet wuměnić',
-	'translate-edit-nopermission' => 'Trjebaš prawo, zo by móhł zdźělenki přełožować.', # Fuzzy
-	'translate-edit-askpermission' => 'Prawo požadać', # Fuzzy
+	'translate-edit-nopermission' => 'Trjebaš přełožowanske prawa, zo by móhł zdźělenki přełožować.',
+	'translate-edit-askpermission' => 'Prawo dóstać',
 	'translate-magic-pagename' => 'Rozšěrjeny přełožk MediaWiki',
 	'translate-magic-help' => "Móžěs aliasy specialnych stronow, magiske słowa a mjena mjenowych rumow přełožić.
 
