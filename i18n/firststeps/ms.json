@@ -1,0 +1,40 @@
+{
+    "@metadata": {
+        "authors": [
+            "Anakmalaysia"
+        ]
+    },
+    "firststeps": "Langkah pertama",
+    "firststeps-desc": "[[Special:FirstSteps|Laman khas]] untuk melatih pengguna untuk menggunakan sambungan Terjemahan untuk membangunkan wiki",
+    "translate-fs-pagetitle-done": "- siap!",
+    "translate-fs-pagetitle-pending": " - menunggu",
+    "translate-fs-pagetitle": "Pendeta permulaan - $1",
+    "translate-fs-signup-title": "Daftar diri",
+    "translate-fs-settings-title": "Tataletak keutamaan anda",
+    "translate-fs-userpage-title": "Cipta laman pengguna anda",
+    "translate-fs-permissions-title": "Pohon kebenaran penterjemah",
+    "translate-fs-target-title": "Mula menterjemah!",
+    "translate-fs-email-title": "Sahkan alamat e-mel anda",
+    "translate-fs-intro": "Selamat datang ke pendeta langkah pertama {{SITENAME}}.\nAnda akan dibimbing sepanjang proses langkah demi langkah untuk menjadi penterjemah.\nPada akhirnya, anda akan dapat menterjemahkan \"pesanan antara muka\" bagi semua projek yang disokong di {{SITENAME}}.",
+    "translate-fs-selectlanguage": "Pilih bahasa",
+    "translate-fs-settings-planguage": "Bahasa utama:",
+    "translate-fs-settings-planguage-desc": "Bahasa utama ini juga merupakan bahasa antara muka anda di wiki ini\ndan juga bahasa sasaran asali untuk terjemahan.",
+    "translate-fs-settings-slanguage": "Bahasa pembantu: $1",
+    "translate-fs-settings-slanguage-desc": "Anda boleh memaparkan terjemahan mesej dalam bahasa lain dalam editor penterjemahan.\nDi sini anda boleh memilih bahasa-bahasa yang anda ingin lihat.",
+    "translate-fs-settings-submit": "Simpan keutamaan",
+    "translate-fs-userpage-level-N": "Saya penutur asli",
+    "translate-fs-userpage-level-5": "Saya penterjemah profesional",
+    "translate-fs-userpage-level-4": "Saya fasih seperti penutur asli",
+    "translate-fs-userpage-level-3": "Saya agak fasih",
+    "translate-fs-userpage-level-2": "Saya sederhana fasih",
+    "translate-fs-userpage-level-1": "Saya tahu sedikit",
+    "translate-fs-userpage-help": "Sila nyatakan kemahiran bahasa anda dan perihalkan diri anda kepada kami. Jika anda tahu lebih daripada lima bahasa, anda boleh tambahkan banyak lagi lain kali.",
+    "translate-fs-userpage-submit": "Wujudkan halaman pengguna anda",
+    "translate-fs-userpage-done": "Syabas! Sekarang, anda ada laman pengguna.",
+    "translate-fs-permissions-planguage": "Bahasa utama:",
+    "translate-fs-permissions-help": "Kini, anda perlu membuat permintaan untuk disertakan dalam kumpulan penterjemah.\nPilih bahasa utama yang anda ingin membuat terjemahan anda.\n\nAnda boleh menyebut bahasa-bahasa lain dan catatan-catatan lain dalam ruangan teks di bawah.",
+    "translate-fs-permissions-pending": "Permintaan anda telah diserahkan kepada [[$1]] untuk dilihat oleh seseorang kakitangan secepat mungkin.\nJika anda mengesahkan alamat e-mel anda, anda akan menerima pemberitahuan melalui e-mel secepat mungkin.",
+    "translate-fs-permissions-submit": "Hantar permohonan",
+    "translate-fs-target-text": "Syabas! Sekarang, anda boleh mulai menterjemah.\n\nJangan risau jika kebingungan kerana anda memerlukan masa untuk membiasakan diri. Di [[Project list]] terdapat sekilas pandang projek yang boleh anda sumbangkan terjemahan. Kebanyakan projek mempunyai laman keterangan ringkas dengan pautan \"''Translate this project''\" yang membawa anda ke laman yang menyenaraikan pesanan yang belum diterjemah. Juga terdapat senarai semua kumpulan pesanan dengan [[Special:LanguageStats|status penterjemahan semasa bahasa itu]].\n\nJika anda rasa anda perlu meningkatkan kefahaman anda sebelum memulakan penterjemahan, anda boleh membaca [[FAQ|Soalan Lazim]] kami, tetapi berhati-hati kerana sesetengah isinya mungkin ketinggalan zaman. Jika anda merasa apa-apa yang anda sepatutnya boleh lakukan, tetapi tidak dapat mengetahui caranya, jangan malu untuk bertanya di [[Support|laman bantuan]].\n\nAnda juga boleh menghubungi para penterjemah lain yang sama bahasa dengan anda di [[Portal_talk:$1|laman perbincangan]] [[Portal:$1|portal bahasa anda]]. Sekiranya anda belum berbuat demikian, sila [[Special:Preferences|ubah bahasa antara muka pengguna anda kepada bahasa terjemahan anda]] supaya wiki ini dapat menunjukkan pautan-pautan (''links'') yang paling relevan kepada anda.",
+    "translate-fs-email-text": "Sila berikan alamat e-mel anda di [[Special:Preferences|keutamaan anda]] dan sahkannya daripada e-mel yang dihantar kepada anda.\n\nIni membolehkan pengguna lain untuk menghubungi anda melalui e-mel.\nAnda juga akan menerima surat berita selebih-lebihnya sebulan sekali.\nJika anda tidak ingi menerima surat berita, anda boleh memilih untuk mengecualikan diri daripada senarai penghantaran kami dalam tab \"{{int:prefs-personal}}\" dalam [[Special:Preferences|keutamaan]] anda."
+}

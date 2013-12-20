@@ -1,0 +1,31 @@
+{
+    "@metadata": {
+        "authors": [
+            "Jopparn",
+            "WikiPhoenix"
+        ]
+    },
+    "managetranslatorsandbox": "Hantera översättarsandlåda",
+    "tsb-filter-pending": "Väntande förfrågningar",
+    "tsb-reminder-title-generic": "Slutför din introduktion för att bli en översättare",
+    "tsb-reminder-content-generic": "Hej $1,\n\nTack för din registrering på {{SITENAME}}.\n\nOm du slutför dina testöversättningar kan administratörerna snart ge dig full behörighet till att översätta.\n\nVar god kom och gör några fler översättningar här:\n$2\n\n$3\npersonalen på {{SITENAME}}",
+    "tsb-request-count": "{{PLURAL:$1|En begäran|$1 begäran}}",
+    "tsb-all-languages-button-label": "Alla språk",
+    "tsb-search-requests": "Sökbegäran",
+    "tsb-accept-button-label": "Acceptera",
+    "tsb-reject-button-label": "Acceptera inte",
+    "tsb-accept-all-button-label": "Acceptera alla",
+    "tsb-reject-all-button-label": "Avvisa alla",
+    "tsb-reminder-link-text": "Skicka e-postpåminnelse",
+    "tsb-translations-source": "Källa",
+    "tsb-translations-user": "Användaröversättningar",
+    "tsb-translations-current": "Befintliga översättningar",
+    "translationstash": "Välkommen",
+    "translate-translationstash-welcome": "Välkommen {{GENDER:$1|$1}}, du är en ny översättare",
+    "translate-translationstash-welcome-note": "Bekanta dig med översättningsverktygen. Översätt några meddelanden och få fullständiga översättningsrättigheter för att delta i dina favoritprojekt.",
+    "translate-translationstash-initialtranslation": "Din ursprungliga översättning",
+    "translate-translationstash-translations": "$1 {{PLURAL:$1|fullbordad översättning|fullbordade översättningar}}",
+    "translate-translationstash-skip-button-label": "Prova en annan",
+    "tsb-limit-reached-title": "Tack för dina översättningar",
+    "tsb-limit-reached-body": "Du har nått översättningsgränsen för nya översättare.\nVårt team kommer snart verifiera och uppgradera ditt konto.\nSedan kommer du kunna översätta utan begränsningar."
+}

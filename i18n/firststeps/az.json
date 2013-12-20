@@ -1,0 +1,23 @@
+{
+    "@metadata": {
+        "authors": [
+            "Khan27"
+        ]
+    },
+    "firststeps": "İlk addımlar",
+    "translate-fs-pagetitle-done": " - hazırdı!",
+    "translate-fs-pagetitle-pending": " - gözləyir",
+    "translate-fs-signup-title": "Qeydiyyatdan keç",
+    "translate-fs-settings-title": "Təklifinizi nizamlayın",
+    "translate-fs-userpage-title": "İstifadəçi səhifəni yarat",
+    "translate-fs-permissions-title": "Tərcüməçi icazələrini istə",
+    "translate-fs-target-title": "Tərcüməyə başla!",
+    "translate-fs-email-title": "E-poçt ünvanını təsdiq et",
+    "translate-fs-settings-planguage": "İlkin dil:",
+    "translate-fs-settings-slanguage": "Köməkçi dil $1:",
+    "translate-fs-settings-submit": "Nizamlamaları saxla",
+    "translate-fs-userpage-submit": "Öz istifadəçi səhifəmi yarat",
+    "translate-fs-userpage-done": "Çox gözəl! İndi bir istifadəçi səhifəniz var.",
+    "translate-fs-permissions-planguage": "İlkin dil:",
+    "translate-fs-permissions-submit": "Sorğu göndər"
+}

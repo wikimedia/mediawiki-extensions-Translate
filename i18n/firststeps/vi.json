@@ -1,0 +1,41 @@
+{
+    "@metadata": {
+        "authors": [
+            "Minh Nguyen",
+            "Vinhtantran"
+        ]
+    },
+    "firststeps": "Các bước đầu",
+    "firststeps-desc": "[[Special:FirstSteps|Trang đặc biệt]] để giúp những người mơi đến bắt đầu sử dụng phần mở rộng Dịch",
+    "translate-fs-pagetitle-done": " – đã hoàn tất!",
+    "translate-fs-pagetitle-pending": " – đang chờ",
+    "translate-fs-pagetitle": "Trình Thuật sĩ Bắt đầu – $1",
+    "translate-fs-signup-title": "Ghi danh",
+    "translate-fs-settings-title": "Cấu hình tùy chọn",
+    "translate-fs-userpage-title": "Tạo trang cá nhân",
+    "translate-fs-permissions-title": "Yêu cầu quyền biên dịch viên",
+    "translate-fs-target-title": "Tiến hành dịch!",
+    "translate-fs-email-title": "Xác nhận địa chỉ thư điện tử",
+    "translate-fs-intro": "Hoan nghênh bạn đến với trình hướng dẫn sử dụng {{SITENAME}}.\nBạn sẽ được hướng dẫn từng bước quá trình trở thành biên dịch viên.\nCuối cùng bạn sẽ có thể dịch được <em>thông điệp giao diện</em> của tất cả các dự án được hỗ trợ tại {{SITENAME}}.",
+    "translate-fs-selectlanguage": "Chọn một ngôn ngữ",
+    "translate-fs-settings-planguage": "Ngôn ngữ chính:",
+    "translate-fs-settings-planguage-desc": "Ngôn ngữ chính cũng là ngôn ngữ giao diện khi bạn sử dụng wiki này\nvà là ngôn ngữ mặc định để biên dịch sang.",
+    "translate-fs-settings-slanguage": "Ngôn ngữ bổ trợ $1:",
+    "translate-fs-settings-slanguage-desc": "Để hiển thị bản dịch tương ứng trong ngôn ngữ khác trong hộp biên dịch, chọn các ngôn ngữ bổ trợ tại đây.",
+    "translate-fs-settings-submit": "Lưu tùy chọn",
+    "translate-fs-userpage-level-N": "Ngôn ngữ mẹ đẻ của tôi là",
+    "translate-fs-userpage-level-5": "Tôi là một chuyên gia biên dịch",
+    "translate-fs-userpage-level-4": "Tôi biên dịch gần như ngôn ngữ mẹ đẻ sang",
+    "translate-fs-userpage-level-3": "Tôi biên dịch lưu loát sang",
+    "translate-fs-userpage-level-2": "Tôi biên dịch với trình độ trung bình sang",
+    "translate-fs-userpage-level-1": "Tôi biên dịch với trình độ cơ bản sang",
+    "translate-fs-userpage-help": "Xin vui lòng tự giới thiệu và cho biết khả năng sử dụng các ngôn ngữ. Nếu bạn sử dụng hơn năm thứ tiếng, bạn có thể bổ sung thêm sau này.",
+    "translate-fs-userpage-submit": "Tạo trang cá nhân",
+    "translate-fs-userpage-done": "Tốt lắm! Bây giờ bạn đã có trang người dùng.",
+    "translate-fs-permissions-planguage": "Ngôn ngữ chính:",
+    "translate-fs-permissions-help": "Bây giờ bạn cần phải yêu cầu được thêm vào nhóm biên dịch viên.\nChọn ngôn ngữ chính mà bạn sẽ biên dịch sang.\n\nBạn cũng có thể đề cập đến ngôn ngữ khác và cho biết thêm thông tin trong hộp ở dưới.",
+    "translate-fs-permissions-pending": "Lời yêu cầu của bạn đã được gửi cho [[$1]]. Một nhân viên trang sẽ duyệt qua nó không lâu.\nNếu bạn xác nhận địa chỉ thư điện tử của bạn, bạn sẽ nhận một thư điện tử báo cho bạn ngay khi nó được duyệt qua.",
+    "translate-fs-permissions-submit": "Gửi yêu cầu",
+    "translate-fs-target-text": "Chúc mừng bạn!\nGiờ bạn đã có thể bắt đầu biên dịch.\n\nĐừng e ngại nếu bạn còn cảm thấy bỡ ngỡ và rối rắm.\nTại [[Project list]] có danh sách tổng quan các dự án mà bạn có thể đóng góp bản dịch vào.\nPhần lớn các dự án đều có một trang miêu tả ngắn cùng với liên kết \"''Dịch dự án này''\", nó sẽ đưa bạn đến trang trong đó liệt kê mọi thông điệp chưa dịch.\nDanh sách tất cả các nhóm thông điệp cùng với [[Special:LanguageStats|tình trạng biên dịch hiện tại của một ngôn ngữ]] cũng có sẵn.\n\nNếu bạn cảm thấy bạn cần phải hiểu rõ hơn trước khi bắt đầu dịch, bạn có thể đọc [[FAQ|các câu hỏi thường gặp]].\nRất tiếc là văn bản này đôi khi hơi lạc hậu.\nNếu có gì bạn nghĩ bạn nên làm, nhưng không biết cách, đừng do dự hỏi nó tại [[Support|trang hỗ trợ]].\n\nBạn cũng có thể liên hệ với đồng nghiệp biên dịch của cùng ngôn ngữ ở [[Portal_talk:$1|trang thảo luận]] của [[Portal:$1|cổng ngôn ngữ của bạn]].\nCổng này liên kết đến [[Special:Preferences|tùy chọn ngôn ngữ của bạn]].\nXin hãy thay đổi nếu cần.",
+    "translate-fs-email-text": "Xin cung cấp cho chúng tôi địa chỉ thư điện tử của bạn trong [[Special:Preferences|tùy chọn cá nhân]] và xác nhận nó trong thư chúng tôi gửi cho bạn.\n\nNó cho phép người khác liên hệ với bạn qua thư.\nBạn cũng sẽ nhận được thư tin tức tối đa một bức một tháng.\nNếu bạn không muốn nhận thư tin tức, bạn có thể bỏ nó ra khỏi thẻ “{{int:prefs-personal}}” trong [[Special:Preferences|tùy chọn cá nhân]]."
+}
