@@ -16,6 +16,24 @@
       "revId": "9201ddd67090a71cf3b5576b206c07f5a7208542",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_75d30262",
+        "filename": "resources/css/ext.translate.special.managetranslatorsandbox.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-20T16:24:03Z",
+      "side": 1,
+      "message": "True... Removed in Ie350777426b71fa1baa380c932188389f384ed39",
+      "parentUuid": "eeebdf60_75fc22d6",
+      "revId": "9201ddd67090a71cf3b5576b206c07f5a7208542",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
