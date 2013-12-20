@@ -95,6 +95,8 @@
 						.addClass( 'send-reminder link' )
 						.text( mw.msg( 'tsb-reminder-link-text' ) )
 						.on( 'click', function ( e ) {
+							mw.updatingDom = true;
+
 							e.preventDefault();
 
 							$reminderStatus
@@ -105,8 +107,12 @@
 								userid: request.userid
 							} ).done( function () {
 								$reminderStatus.text( mw.msg( 'tsb-reminder-sent-new' ) );
+
+								mw.updatingDom = false;
 							} ).fail( function () {
 								$reminderStatus.text( mw.msg( 'tsb-reminder-failed' ) );
+
+								mw.updatingDom = false;
 							} );
 						} ),
 					$reminderStatus
@@ -122,19 +128,31 @@
 						.addClass( 'accept primary green button' )
 						.text( mw.msg( 'tsb-accept-button-label' ) )
 						.on( 'click', function () {
+							mw.updatingDom = true;
+
 							doApiAction( {
 								userid: request.userid,
 								'do': 'promote'
-							} ).done( removeSelectedRequests );
+							} ).done( function () {
+								removeSelectedRequests();
+
+								mw.updatingDom = false;
+							} );
 						} ),
 					$( '<button>' )
 						.addClass( 'delete destructive button' )
 						.text( mw.msg( 'tsb-reject-button-label' ) )
 						.on( 'click', function () {
+							mw.updatingDom = true;
+
 							doApiAction( {
 								userid: request.userid,
 								'do': 'delete'
-							} ).done( removeSelectedRequests );
+							} ).done( function () {
+								removeSelectedRequests();
+
+								mw.updatingDom = false;
+							} );
 						} )
 				),
 			$( '<div>' )
@@ -169,6 +187,7 @@
 
 		// @todo: move higher in the tree
 		storage = new mw.translate.TranslationStashStorage();
+		mw.updatingDom = true;
 		storage.getUserTranslations( request.username ).done( showTranslations );
 	}
 
@@ -265,19 +284,31 @@
 						.addClass( 'accept primary green button' )
 						.text( mw.msg( 'tsb-accept-all-button-label' ) )
 						.on( 'click', function () {
+							mw.updatingDom = true;
+
 							doApiAction( {
 								userid: selectedUserIDs,
 								'do': 'promote'
-							} ).done( removeSelectedRequests );
+							} ).done( function () {
+								removeSelectedRequests();
+
+								mw.updatingDom = false;
+							} );
 						} ),
 					$( '<button>' )
 						.addClass( 'delete destructive button' )
 						.text( mw.msg( 'tsb-reject-all-button-label' ) )
 						.on( 'click', function () {
+							mw.updatingDom = true;
+
 							doApiAction( {
 								userid: selectedUserIDs,
 								'do': 'delete'
-							} ).done( removeSelectedRequests );
+							} ).done( function () {
+								removeSelectedRequests();
+
+								mw.updatingDom = false;
+							} );
 						} )
 				)
 		);
