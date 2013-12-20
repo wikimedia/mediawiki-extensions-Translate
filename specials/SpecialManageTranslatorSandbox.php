@@ -211,7 +211,6 @@ HTML;
 		// Sort the requests based on translations and registration date
 		usort( $requests, array( __CLASS__, 'translatorRequestSort' ) );
 
-		$count = count( $requests );
 		foreach ( $requests as $request ) {
 			$items[] = $this->makeRequestItem( $request );
 		}
@@ -225,9 +224,7 @@ HTML;
 			{$this->msg( "tsb-all-languages-button-label" )->escaped()}
 		</button>
 	</div>
-	<div class="five columns request-count">
-		{$this->msg( "tsb-request-count" )->numParams( $count )->parse()}
-	</div>
+	<div class="five columns request-count"></div>
 	<div class="three columns center">
 		<input class="request-selector-all" name="request" type="checkbox" />
 	</div>

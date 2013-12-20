@@ -313,8 +313,22 @@
 	 * Updates the number of requests.
 	 */
 	function updateRequestCount() {
-		$( '.request-count' )
-			.text( mw.msg( 'tsb-request-count', $( '.request:not(.hide)' ).length ) );
+		var $requests = $( '.requests-list .request' ),
+			visibleRequestsCount = $requests.filter( ':not(.hide)' ).length;
+
+		$( '.request-count' ).text(
+			mw.msg( 'tsb-request-count', mw.language.convertNumber( visibleRequestsCount ) )
+		);
+
+		if ( $requests.length === 0 ) {
+			$( '.details.pane' )
+				.empty()
+				.append(
+					$( '<div>' )
+						.addClass( 'tsb-header row' )
+						.text( mw.msg( 'tsb-no-requests-from-new-users' ) )
+				);
+		}
 	}
 
 	/**
@@ -485,8 +499,7 @@
 	$( document ).ready( function () {
 		var $requestCheckboxes = $( '.request-selector' ),
 			$selectAll = $( '.request-selector-all' ),
-			$requestRows = $( '.requests .request' ),
-			$detailsPane = $( '.details.pane' );
+			$requestRows = $( '.requests .request' );
 
 		// Delay so we get the correct height on page load
 		window.setTimeout( setPanesHeight, 0 );
@@ -505,9 +518,9 @@
 
 		if ( $requestRows.length ) {
 			$requestRows.first().click();
-		} else {
-			$detailsPane.text( mw.msg( 'tsb-no-requests-from-new-users' ) );
 		}
+
+		updateRequestCount();
 	} );
 
 	// ======================================

@@ -136,10 +136,6 @@ Then(/^I should see "(.+)" at the top of the first column$/) do |text|
 	on(ManageTranslatorSandboxPage).request_count.should == text
 end
 
-Then(/^I should see "(.*)" in the second column$/) do |text|
-	on(ManageTranslatorSandboxPage).details.should == text
-end
-
 Then(/^I should see the button that clears language selection$/) do
 	on(ManageTranslatorSandboxPage).clear_language_selector_element.should be_visible
 end
