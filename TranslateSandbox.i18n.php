@@ -413,6 +413,16 @@ Witaj a wjeliki źěk za twóje pśinoski!
 
 {{GENDER:$3|$3}},
 sobuźěłaśerje {{GRAMMAR:genitiw|{{SITENAME}}}}',
+	'tsb-email-rejected-subject' => 'Twójo pówušenje za pśełožowarja na {{GRAMMAR:lokatiw|{{SITENAME}}}} jo se wótpokazało',
+	'tsb-email-rejected-body' => 'Witaj {{GENDER:$1|$1}},
+
+źěkujom se za procowanje ako pśełožowaŕ na {{GRAMMAR:lokatiw|{{SITENAME}}}}. Bóžko musym śi informěrowaś, až som twójo procowanje wó pówušenje za pśełožowarja wótpokazał, dokulaž kwalita twójich pśełožkow njewótpowědujo pominanjam.
+
+Jolic mysliš, až twójo procowanje jo se zamólnje wótpokazało, procuj se znowego ako pśełožowarja na {{GRAMMAR:lokatiw|{{SITENAME}}}}. Móžoš se how registrěrowaś:
+$2
+
+{{GENDER:$3|$3}},
+Team {{GRAMMAR:genitiw|{{SITENAME}}}}',
 	'tsb-request-count' => '$1 {{PLURAL:$1|napšašowanje|napšašowani|napšašowanja|napšašowanjow}}',
 	'tsb-all-languages-button-label' => 'Wšykne rěcy',
 	'tsb-search-requests' => 'Napšašowanja pśepytaś',
@@ -422,6 +432,7 @@ sobuźěłaśerje {{GRAMMAR:genitiw|{{SITENAME}}}}',
 	'tsb-older-requests' => '$1 {{PLURAL:$1|starše napšašowanje|staršej napšašowani|starše napšašowanja|staršych napšašowanjow}}',
 	'tsb-accept-all-button-label' => 'Wšykne akceptěrowaś',
 	'tsb-reject-all-button-label' => 'Wšykne wótpokazaś',
+	'tsb-user-posted-a-comment' => 'Žeden pśełožowaŕ',
 	'tsb-reminder-link-text' => 'E-mailowe dopomnjeśe pósłaś',
 	'tsb-didnt-make-any-translations' => 'Toś ten wužywaŕ njejo pśełožki pśewjadł.',
 	'tsb-translations-source' => 'Žrědło',
@@ -440,7 +451,7 @@ sobuźěłaśerje {{GRAMMAR:genitiw|{{SITENAME}}}}',
 	'log-name-translatorsandbox' => 'Pśełožowańske grajkanišćo',
 	'log-description-translatorsandbox' => 'Protokol akcijow na wužywarjach pśełožowańskego grajkanišća',
 	'logentry-translatorsandbox-promoted' => '$1 jo $3 za {{GENDER:$4|pśełožowarja|pśełožwarku}} {{GENDER:$2|pówušył|pówušyła}}',
-	'logentry-translatorsandbox-rejected' => '$1 jo póžedanje wót $3 na pówušenje za {{GENDER:$2|pśełožowarja|pśełožowarku}} {{GENDER:$2|wótpokazał|wótpokazała}}', # Fuzzy
+	'logentry-translatorsandbox-rejected' => '$1 jo napšašowanje wót "$3" na pówušenje za {{GENDER:$2|pśełožowarja|pśełožowarku}} {{GENDER:$2|wótpokazał|wótpokazała}}',
 );
 
 /** Spanish (español)
@@ -693,6 +704,16 @@ Witaj a wulki dźak za twoje přinoški!
 
 {{GENDER:$3|$3}},
 sobudźěłaćerjo {{GRAMMAR:genitiw|{{SITENAME}}}}',
+	'tsb-email-rejected-subject' => 'Twóje powyšenje za přełožowarja na {{GRAMMAR:lokatiw|{{SITENAME}}}} je so wotpokazało',
+	'tsb-email-rejected-body' => 'Witaj {{GENDER:$1|$1}},
+
+dźakuju so za zamołwjenje jako přełožowar na {{GRAMMAR:lokatiw|{{SITENAME}}}}. Bohužel dyrbju ći zdźělić, zo sym twoje zamołwjenje wo powyšenje za přełožowarja wotpokazał, dokelž kwalita twojich přełožkow žadanjam njewotpowěduje.
+
+Jeli mysliš, zo twoje zamołwjenje je so zmylnje wotpokazało, zamołw so znowa jako přełožowarja na {{GRAMMAR:lokatiw|{{SITENAME}}}}. Móžeš so tu registrować:
+$2
+
+{{GENDER:$3|$3}},
+Team {{GRAMMAR:genitiw|{{SITENAME}}}}',
 	'tsb-request-count' => '$1 {{PLURAL:$1|naprašowanje|naprašowani|naprašowanja|naprašowanjow}}',
 	'tsb-all-languages-button-label' => 'Wšě rěče',
 	'tsb-search-requests' => 'Naprašowanja přepytać',
@@ -702,6 +723,7 @@ sobudźěłaćerjo {{GRAMMAR:genitiw|{{SITENAME}}}}',
 	'tsb-older-requests' => '$1 {{PLURAL:$1|starše naprašowanje|staršej naprašowani|starše naprašowanja|staršich naprašowanjow}}',
 	'tsb-accept-all-button-label' => 'Wšě akceptować',
 	'tsb-reject-all-button-label' => 'Wšě wotpokazać',
+	'tsb-user-posted-a-comment' => 'Žadyn přełožowar',
 	'tsb-reminder-link-text' => 'E-mejlowe dopomnjeće pósłać',
 	'tsb-didnt-make-any-translations' => 'Tutón wužiwar njeje přełožki přewjedł.',
 	'tsb-translations-source' => 'Žórło',
@@ -720,7 +742,7 @@ sobudźěłaćerjo {{GRAMMAR:genitiw|{{SITENAME}}}}',
 	'log-name-translatorsandbox' => 'Přełožowanske hrajkanišćo',
 	'log-description-translatorsandbox' => 'Protokol akcijow na wužiwarjach přełožowanskeho hrajkanišća',
 	'logentry-translatorsandbox-promoted' => '$1 je $3 za {{GENDER:$4|přełožowarja|přełožwarku}} {{GENDER:$2|powyšił|powyšiła}}',
-	'logentry-translatorsandbox-rejected' => '$1 je naprašowanje wot $3 na powyšenje za {{GENDER:$2|přełožowarja|přełožowarku}} {{GENDER:$2|wotpokazał|wotpokazała}}', # Fuzzy
+	'logentry-translatorsandbox-rejected' => '$1 je naprašowanje wot "$3" na powyšenje za {{GENDER:$2|přełožowarja|přełožowarku}} {{GENDER:$2|wotpokazał|wotpokazała}}',
 );
 
 /** Italian (italiano)
@@ -1130,7 +1152,7 @@ Ons team gaat ze snel controleren en promoveert uw gebruiker snel, zodat u zonde
 	'log-name-translatorsandbox' => 'Vertalingenzandbak',
 	'log-description-translatorsandbox' => 'Een logboek van de handelingen van gebruikers in de vertalingenzandbak.',
 	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2|heeft}} $3 gepromoveerd tot {{GENDER:$4|vertaler}}',
-	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|heeft}} het verzoek van $3 om vertaler te worden geweigerd', # Fuzzy
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2|heeft}} het verzoek van "$3" om vertaler te worden geweigerd',
 );
 
 /** Occitan (occitan)
@@ -1270,7 +1292,7 @@ $2
 
 $3
 personalen på {{SITENAME}}',
-	'tsb-reminder-sent-new' => 'Skicka en påminnelse',
+	'tsb-reminder-sent-new' => 'Skickade en påminnelse',
 	'tsb-reminder-failed' => 'Det gick inte att skicka påminnelsen',
 	'tsb-email-promoted-subject' => 'Du är nu en översättare på {{SITENAME}}',
 	'tsb-email-promoted-body' => 'Hej {{GENDER:$1|$1}},
@@ -1293,7 +1315,7 @@ Om du tror att din ansökan avslogs av misstag, var god försök att ansöka ige
 $2
 
 {{GENDER:$3|$3}},
-Personal på {{SITENAME}}',
+{{SITENAME}} personal',
 	'tsb-request-count' => '{{PLURAL:$1|En begäran|$1 begäran}}',
 	'tsb-all-languages-button-label' => 'Alla språk',
 	'tsb-search-requests' => 'Sökbegäran',

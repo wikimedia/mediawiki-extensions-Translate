@@ -4227,9 +4227,9 @@ $messages['ug-arab'] = array(
 	'translate-fs-permissions-title' => 'تەرجىمە قىلىش ھوقۇق ئىلتىماسى',
 	'translate-fs-target-title' => 'تەرجىمە قىلىشنى باشلا!',
 	'translate-fs-email-title' => 'ئېلخەت مەنزىلىڭىزنى جەزملەڭ',
-	'translate-fs-intro' => "{{SITENAME}} باشلانغۇچ يېتەكچىسىگە مەرھابا.
+	'translate-fs-intro' => '{{SITENAME}} باشلانغۇچ يېتەكچىسىگە مەرھابا.
 سىزنى قانداق قىلىپ تەرجىمان بولۇشقا يېتەكلەيدۇ.
-ئاخىرىدا {{SITENAME}}دىكى ھەممە قۇرۇلۇشلارنىڭ ''ئارايۈز ئۇچۇرى''نى تەرجىمە قىلالايسىز.", # Fuzzy
+ئاخىرىدا {{SITENAME}}دىكى ھەممە قۇرۇلۇشلارنىڭ <em>ئارايۈز ئۇچۇرى</em>نى تەرجىمە قىلالايسىز.',
 	'translate-fs-selectlanguage' => 'تىلدىن بىرنى تاللاڭ',
 	'translate-fs-settings-planguage' => 'ئاساسىي تىل:',
 	'translate-fs-settings-planguage-desc' => 'ئاساسىي تىل بۇ ۋىكى قۇرۇلۇشىدىكى ئىشلەتكۈچى ئارايۈزى قىلىدۇ،

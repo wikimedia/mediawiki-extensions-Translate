@@ -8680,13 +8680,13 @@ Jo nejwužytnjej za pśeglědowańske nadawki.',
 	'tux-tab-all' => 'Wšykne',
 	'tux-tab-untranslated' => 'Njepśełožony',
 	'tux-tab-outdated' => 'Zestarjony',
-	'tux-tab-translated' => 'Přełožony',
+	'tux-tab-translated' => 'Pśełožony',
 	'tux-tab-unproofread' => 'Njepśeglědany',
 	'tux-edit' => 'Wobźěłaś',
 	'tux-status-optional' => 'Opcionalny',
 	'tux-status-fuzzy' => 'Zestarjony',
 	'tux-status-proofread' => 'Pśeglědany',
-	'tux-status-translated' => 'Přełožony',
+	'tux-status-translated' => 'Pśełožony',
 	'tux-status-saving' => 'Składujo se...',
 	'tux-status-unsaved' => 'Njeskładowany',
 	'tux-editor-placeholder' => 'Twój pśełožk',
@@ -12918,6 +12918,7 @@ $messages['fur'] = array(
 );
 
 /** Western Frisian (Frysk)
+ * @author Kening Aldgilles
  * @author Snakesteuben
  */
 $messages['fy'] = array(
@@ -12927,6 +12928,10 @@ $messages['fy'] = array(
 	'translate-magic-cm-export' => 'Eksportearje',
 	'translate-magic-cm-comment' => 'Oanmerking:',
 	'translate-magic-cm-save' => 'Fêstlizze',
+	'tux-editor-cancel-button-label' => 'Ofbrekke',
+	'tux-proofread-edit-label' => 'Bewurkje',
+	'tux-editor-page-mode' => 'Side',
+	'tux-editor-doc-editor-cancel' => 'Ofbrekke',
 );
 
 /** Irish (Gaeilge)
@@ -30420,8 +30425,8 @@ kot sta neuporaba presledkov ali prečrkovanje izvirnih imen. $1',
 	'translate-edit-definition' => 'Opredelitev sporočila v izvirnem jeziku',
 	'translate-edit-translation' => 'Prevod',
 	'translate-edit-contribute' => 'prispevaj',
-	'translate-edit-no-information' => "''To sporočilo nima dokumentacije.''
-''Če veste, kje in kako je uporabljeno, lahko pomagate drugim prevajalcem z dodajanjem dokumentacije.''", # Fuzzy
+	'translate-edit-no-information' => '<em>Sporočilo nima dokumentacije.
+Če veste, kje in kako je uporabljeno, lahko pomagate drugim prevajalcem z dodajanjem dokumentacije.</em>',
 	'translate-edit-information' => 'Podatki o sporočilu ($1)',
 	'translate-edit-in-other-languages' => 'Sporočilo v drugih jezikih',
 	'translate-edit-committed' => 'Trenutni prevod v programski opremi',
@@ -30430,8 +30435,8 @@ kot sta neuporaba presledkov ali prečrkovanje izvirnih imen. $1',
 	'translate-edit-tmmatch-source' => 'Izvirno besedilo prevoda: $1',
 	'translate-edit-tmmatch' => '$1-% ujemanje',
 	'translate-use-suggestion' => 'Zamenjaj trenutni prevod s tem predlogom.',
-	'translate-edit-nopermission' => 'Za prevajanje sporočil potrebujete dovoljenje.',
-	'translate-edit-askpermission' => 'Zaprosite za dovoljenje',
+	'translate-edit-nopermission' => 'Za prevajanje sporočil potrebujete prevajalske pravice.',
+	'translate-edit-askpermission' => 'Pridobite dovoljenje',
 	'translate-magic-pagename' => 'Razširjeno prevajanje MediaWiki',
 	'translate-magic-help' => 'Prevedete lahko vzdevke posebnih strani, čarobne besede in imena imenskih prostorov.
 
@@ -30617,8 +30622,8 @@ Prosimo, preverite.',
 	'translate-manage-intro-other' => 'Spodaj se nahaja seznam sprememb prevodov v jeziku $1.
 Prosimo, preglejte spremembe in izberite dejanje, ki ga želite storiti za vsako posodobitev.
 Če se odločite prezreti spremembe, bo to dejanje samo začasno.',
-	'translate-manage-import-ok' => 'Uvožena nova različica strani $1.', # Fuzzy
-	'translate-manage-import-done' => 'Vse opravljeno!', # Fuzzy
+	'translate-manage-import-ok' => 'Uvoženo: $1.',
+	'translate-manage-import-done' => 'Uvoz je dokončan!',
 	'importtranslations' => 'Uvažanje prevodov',
 	'translate-import-from-local' => 'Nalaganje lokalne datoteke:',
 	'translate-import-load' => 'Naloži datoteko',
@@ -30765,7 +30770,7 @@ Najuporabnejše za opravila pregleda.',
 	'tux-proofread-translated-by-self' => 'Prevedli ste sami',
 	'tux-empty-list-all' => 'Ta skupina sporočil je prazna',
 	'tux-empty-list-all-guide' => 'Izberite drugo skupino sporočil za prevajanje',
-	'tux-translate-page-no-such-group' => "'''Navedena skupina ne obstaja.''' Izberite drugo skupino sporočil.", # Fuzzy
+	'tux-translate-page-no-such-group' => '<strong>Navedena skupina ne obstaja.</strong> Izberite drugo skupino sporočil.',
 	'tux-empty-list-translated' => 'Ni prevedenih sporočil',
 	'tux-empty-list-translated-guide' => 'Pomagate lahko pri prevajanju',
 	'tux-empty-list-translated-action' => 'Prevedi',
@@ -34193,11 +34198,11 @@ $messages['ug-arab'] = array(
 	'translate-edit-tmmatch-source' => 'تەرجىمە ئەسلى تېكىستى: $1',
 	'translate-edit-tmmatch' => '$1% ماس كېلىدۇ',
 	'translate-use-suggestion' => 'نۆۋەتتىكى تەرجىمىنى بۇ تەكلىپ بىلەن ئالماشتۇر',
-	'translate-edit-nopermission' => 'ئۇچۇرلارنى تەرجىمە قىلىش ھوقۇقىغا ئېرىشىڭ.',
-	'translate-edit-askpermission' => 'ھوقۇق ئىلتىماسى',
+	'translate-edit-nopermission' => 'ئۇچۇرلارنى تەرجىمە قىلىش ھوقۇقىغا ئېرىشىڭ.', # Fuzzy
+	'translate-edit-askpermission' => 'ھوقۇق ئىلتىماسى', # Fuzzy
 	'translate-magic-pagename' => 'كېڭەيتىلگەن MediaWiki تەرجىمە',
 	'translate-magic-module' => 'بۆلەك:',
-	'translate-magic-submit' => 'تۇت',
+	'translate-magic-submit' => 'ئېرىىش',
 	'translate-magic-cm-export' => 'چىقار',
 	'translate-magic-nothing-to-export' => 'چىقىرىدىغان ھېچنىمە  يوق.',
 	'translate-magic-cm-current' => 'نۆۋەتتىكى',
