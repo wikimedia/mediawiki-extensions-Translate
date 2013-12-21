@@ -73,7 +73,10 @@ class JsonFFS extends SimpleFFS {
 		$authors = $collection->getAuthors();
 		$authors = $this->filterAuthors( $authors, $collection->code );
 
-		$authors = array_unique( array_merge( $template['AUTHORS'], $authors ) );
+		if ( isset( $template['AUTHORS'] ) ) {
+			$authors = array_unique( array_merge( $template['AUTHORS'], $authors ) );
+		}
+
 		if ( $authors !== array() ) {
 			$messages['@metadata']['authors'] = array_values( $authors );
 		}
