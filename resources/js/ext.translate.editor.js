@@ -156,7 +156,7 @@
 			if ( this.message.properties ) {
 				$( '.tux-action-bar .tux-statsbar' ).trigger(
 					'change',
-					[ 'translated', this.message.properties.state ]
+					[ 'translated', this.message.properties.status ]
 				);
 				// TODO: Update any other statsbar for the same group in the page.
 			}

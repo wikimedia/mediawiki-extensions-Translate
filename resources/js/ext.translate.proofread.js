@@ -152,7 +152,10 @@
 					proofread.markSelfTranslation();
 					// Update stats - to translated state from current state.
 					$( '.tux-action-bar .tux-statsbar' )
-						.trigger( 'change', [ 'translated', proofread.message.properties.state ] );
+						.trigger(
+							'change',
+							[ 'translated', proofread.message.properties.status ]
+						);
 				}
 			} );
 
@@ -295,7 +298,10 @@
 					.text( mw.language.convertNumber( reviews + 1 ) );
 
 				// Update stats
-				$( '.tux-action-bar .tux-statsbar' ).trigger( 'change', [ 'proofread', proofread.message.properties.state ] );
+				$( '.tux-action-bar .tux-statsbar' ).trigger(
+					'change',
+					[ 'proofread', proofread.message.properties.status ]
+				);
 			}, function () {
 				mw.log( 'Error while submitting the message for proofread.' );
 			} );
