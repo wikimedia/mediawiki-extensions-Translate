@@ -282,42 +282,64 @@
 			}
 		},
 
-		createMessageTools: function () {
-			var $historyItem, $translationsItem,
-				wgScript = mw.config.get( 'wgScript' ),
-				historyUri = new mw.Uri(),
-				translationsUri = new mw.Uri();
+		/**
+		 * Creates a menu element for the message tools.
+		 *
+		 * @param {string} className Used as the element's CSS class
+		 * @param {Object} query Used as the query in the mw.Uri object
+		 * @param {string} message The message of the label of the menu item
+		 * @return {jQuery} The new menu item element
+		 */
+		createMessageToolsItem: function ( className, query, message ) {
+			var uri = new mw.Uri();
 
-			historyUri.path = wgScript;
-			historyUri.query = {
-				title: this.message.title,
-				action: 'history'
-			};
-			$historyItem = $( '<li>' )
-				.addClass( 'message-tools-history' +
-					( ( this.message.translation === null ) ? ' hide' : '' )
-				)
+			uri.path = mw.config.get( 'wgScript' );
+			uri.query = query;
+
+			return $( '<li>' )
+				.addClass( className )
 				.append( $( '<a>' )
-				.attr( {
-					href: historyUri.toString(),
-					target: '_blank'
-				} )
-				.text( mw.msg( 'tux-editor-message-tools-history' ) )
+					.attr( {
+						href: uri.toString(),
+						target: '_blank'
+					} )
+					.text( mw.msg( message ) )
+				);
+		},
+
+		/**
+		 * Creates an element with a dropdown menu including
+		 * tools for the translators.
+		 *
+		 * @return {jQuery} The new message tools menu element
+		 */
+		createMessageTools: function () {
+			var $historyItem, $translationsItem;
+
+			$historyItem = this.createMessageToolsItem(
+				'message-tools-history',
+				{
+					title: this.message.title,
+					action: 'history'
+				},
+				'tux-editor-message-tools-history'
 			);
 
-			translationsUri.path = wgScript;
-			translationsUri.query = {
-				title: 'Special:Translations',
-				message: this.message.title
-			};
-			$translationsItem = $( '<li>' )
-				.addClass( 'message-tools-translations' )
-				.append( $( '<a>' )
-				.attr( {
-					href: translationsUri.toString(),
-					target: '_blank'
-				} )
-				.text( mw.msg( 'tux-editor-message-tools-translations' ) )
+			// Hide this link if the translation doesn't actually exist.
+			// It will be shown when a translation will be created.
+			if ( this.message.translation === null ) {
+				$historyItem.addClass( 'hide' );
+			}
+
+			// A link to Special:Translations,
+			// with translations of this message to other languages
+			$translationsItem = this.createMessageToolsItem(
+				'message-tools-translations',
+				{
+					title: 'Special:Translations',
+					message: this.message.title
+				},
+				'tux-editor-message-tools-translations'
 			);
 
 			return $( '<ul>' )
