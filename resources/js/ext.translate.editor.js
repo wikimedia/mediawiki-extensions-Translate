@@ -115,6 +115,7 @@
 			.remove()
 			.end()
 			.children().removeClass( 'hide' );
+
 			this.dirty = false;
 			mw.translate.dirty = false;
 		},
@@ -150,6 +151,7 @@
 			this.$messageItem
 				.addClass( 'translated' )
 				.removeClass( 'untranslated' );
+
 			this.dirty = false;
 
 			if ( this.message.properties ) {
@@ -162,8 +164,8 @@
 		 * Save the translation
 		 */
 		save: function () {
-			var translateEditor = this,
-				translation;
+			var translation,
+				translateEditor = this;
 
 			mw.translateHooks.run( 'beforeSubmit', translateEditor.$editor );
 			translation = translateEditor.$editor.find( '.editcolumn textarea' ).val();
@@ -257,7 +259,7 @@
 		next: function () {
 			var $next = this.$editTrigger.next( '.tux-message' );
 
-			// skip if the message is hidden. For eg: in a filter result.
+			// Skip if the message is hidden. For example in a filter result.
 			if ( $next.length && $next.hasClass( 'hide' ) ) {
 				this.$editTrigger = $next;
 				return this.next();
