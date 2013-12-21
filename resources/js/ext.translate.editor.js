@@ -482,6 +482,40 @@
 			// are only in one line.
 			$textarea.autosize( {append: '\n\n\n' } );
 
+			// Shortcuts for various insertable things
+			$textarea.on( 'keyup keydown', function ( e ) {
+				var index, info, direction;
+
+				if ( e.type === 'keydown' && e.altKey === true ) {
+					// Up and down arrows
+					if ( e.keyCode === 38 || e.keyCode === 40 ) {
+						direction = e.keyCode === 40 ? 1 : -1;
+						info = translateEditor.$editor.find( '.infocolumn' );
+						info.scrollTop( info.scrollTop() + 100 * direction );
+						translateEditor.showShortcuts();
+					}
+				}
+
+				// Move zero to last
+				index = e.keyCode - 49;
+				if ( index === -1 ) {
+					index = 9;
+				}
+
+				// 0..9 ~ 48..57
+				if ( e.type === 'keydown' &&  e.altKey === true && index >= 0 && index < 10 ) {
+					e.preventDefault();
+					e.stopPropagation();
+					translateEditor.$editor.find( '.shortcut-activated:visible' ).eq( index ).trigger( 'click' );
+				}
+
+				if ( e.which === 18 && e.type === 'keyup' ) {
+					translateEditor.hideShortcuts();
+				} else if ( e.which === 18 && e.type === 'keydown' ) {
+					translateEditor.showShortcuts();
+				}
+			} );
+
 			$textarea.on( 'textchange', function () {
 				var $textarea = $( this ),
 					$saveButton = translateEditor.$editor.find( '.tux-editor-save-button' ),
@@ -535,7 +569,7 @@
 
 			if ( canTranslate ) {
 				$pasteOriginalButton = $( '<button>' )
-					.addClass( 'tux-editor-paste-original-button' )
+					.addClass( 'tux-editor-paste-original-button shortcut-activated' )
 					.text( mw.msg( 'tux-editor-paste-original-button-label' ) )
 					.on( 'click', function () {
 						$textarea
@@ -937,6 +971,7 @@
 				this.$editor.addClass( 'hide' );
 			}
 
+			this.hideShortcuts();
 			this.$editTrigger.removeClass( 'open' );
 			this.$messageItem.removeClass( 'hide' );
 			this.shown = false;
