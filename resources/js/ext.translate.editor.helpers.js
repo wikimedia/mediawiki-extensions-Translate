@@ -240,9 +240,7 @@
 							.text( $.uls.data.getAutonym( translation.language ) )
 					);
 
-				$otherLanguage.on( 'click',
-					translateEditor.suggestionAdder( translation.value, $translationTextarea )
-				);
+				translateEditor.suggestionAdder( $otherLanguage, translation.value );
 
 				translateEditor.$editor.find( '.in-other-languages-title' )
 					.removeClass( 'hide' )
@@ -267,8 +265,6 @@
 
 			$heading = this.$editor.find( '.tm-suggestions-title' );
 			$heading.after( $tmSuggestions );
-
-			$translationTextarea = this.$editor.find( '.tux-textarea-translation' );
 
 			$.each( suggestions, function ( index, translation ) {
 				var $translation,
@@ -321,9 +317,7 @@
 							)
 					);
 
-				$translation.on( 'click',
-					translateEditor.suggestionAdder( translation.target, $translationTextarea )
-				);
+				translateEditor.suggestionAdder( $translation, translation.target );
 
 				$tmSuggestions.append( $translation );
 			} );
@@ -355,7 +349,6 @@
 			this.$editor.find( '.tm-suggestions-title' )
 				.removeClass( 'hide' )
 				.after( $mtSuggestions );
-			$translationTextarea = this.$editor.find( '.tux-textarea-translation' );
 
 			$.each( suggestions, function ( index, translation ) {
 				var $translation;
@@ -371,9 +364,7 @@
 							.text( translation.service )
 					);
 
-				$translation.on( 'click',
-					translateEditor.suggestionAdder( translation.target, $translationTextarea )
-				);
+				translateEditor.suggestionAdder( $translation, translation.target );
 
 				$mtSuggestions.append( $translation );
 			} );
@@ -386,10 +377,12 @@
 		 *
 		 * @param {String} suggestion Text to add
 		 * @param {jQuery} $target Target element (textarea or input)
-		 * @return {Function}
 		 */
-		suggestionAdder: function ( suggestion, $target ) {
-			return function () {
+		suggestionAdder: function ( $source, suggestion ) {
+			var inserter,
+				$target = this.$editor.find( '.tux-textarea-translation' );
+
+			inserter = function () {
 				var selection;
 				if ( window.getSelection ) {
 					selection = window.getSelection().toString();
@@ -401,6 +394,9 @@
 					$target.val( suggestion ).focus().trigger( 'input' );
 				}
 			};
+
+			$source.on( 'click', inserter );
+			$source.addClass( 'shortcut-activated' );
 		},
 
 		/**
@@ -430,7 +426,7 @@
 
 			for ( i = 0; i < count; i++ ) {
 				$( '<button>' )
-					.addClass( 'insertable' )
+					.addClass( 'insertable shortcut-activated' )
 					.text( insertables[i].display )
 					.data( 'iid', i )
 					.appendTo( $buttonArea );
