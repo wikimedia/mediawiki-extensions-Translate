@@ -150,10 +150,14 @@
 			this.$messageItem
 				.addClass( 'translated' )
 				.removeClass( 'untranslated' );
+
 			this.dirty = false;
 
 			if ( this.message.properties ) {
-				$( '.tux-action-bar .tux-statsbar' ).trigger( 'change', [ 'translated', this.message.properties.state ] );
+				$( '.tux-action-bar .tux-statsbar' ).trigger(
+					'change',
+					[ 'translated', this.message.properties.state ]
+				);
 				// TODO: Update any other statsbar for the same group in the page.
 			}
 		},
@@ -162,8 +166,8 @@
 		 * Save the translation
 		 */
 		save: function () {
-			var translateEditor = this,
-				translation;
+			var translation,
+				translateEditor = this;
 
 			mw.translateHooks.run( 'beforeSubmit', translateEditor.$editor );
 			translation = translateEditor.$editor.find( '.editcolumn textarea' ).val();
@@ -257,7 +261,7 @@
 		next: function () {
 			var $next = this.$editTrigger.next( '.tux-message' );
 
-			// skip if the message is hidden. For eg: in a filter result.
+			// Skip if the message is hidden. For example in a filter result.
 			if ( $next.length && $next.hasClass( 'hide' ) ) {
 				this.$editTrigger = $next;
 				return this.next();

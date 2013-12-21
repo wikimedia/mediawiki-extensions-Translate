@@ -4,7 +4,7 @@
 	mw.translate = mw.translate || {};
 
 	/**
-	 * This class can save translation into MediaWiki pages using the
+	 * This class can save a translation into MediaWiki pages using the
 	 * MediaWiki edit WebApi.
 	 * @since 2013.10
 	 */
@@ -32,5 +32,4 @@
 	};
 
 	mw.translate.TranslationApiStorage = TranslationApiStorage;
-
 }( mediaWiki ) );
