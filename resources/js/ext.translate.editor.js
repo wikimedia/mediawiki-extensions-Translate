@@ -110,11 +110,11 @@
 		 * Mark the message as no longer unsaved
 		 */
 		markUnunsaved: function () {
-			this.$editTrigger.find( '.tux-list-status' )
-			.find( '.tux-status-unsaved' )
-			.remove()
-			.end()
-			.children().removeClass( 'hide' );
+			var $tuxListStatus = this.$editTrigger.find( '.tux-list-status' );
+
+			$tuxListStatus.find( '.tux-status-unsaved' ).remove();
+			$tuxListStatus.children().removeClass( 'hide' );
+
 			this.dirty = false;
 			mw.translate.dirty = false;
 		},
