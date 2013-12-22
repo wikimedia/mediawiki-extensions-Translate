@@ -89,6 +89,8 @@
 		this.mode = this.options.mode;
 		this.firstProofreadTipShown = false;
 		this.initialized = false;
+		this.$header = this.$container.siblings( '.tux-messagetable-header' );
+		// Container is between these in the dom.
 		this.$loader = this.$container.siblings( '.tux-messagetable-loader' );
 		this.$actionBar = this.$container.siblings( '.tux-action-bar' );
 		this.messages = [];
@@ -107,14 +109,13 @@
 			var messageTable = this,
 				$filterInput = this.$container.parent().find( '.tux-message-filter-box' );
 
-			$( window ).scroll( function () {
+			// Vector has transitions of 250ms which affect layout. Let those finish.
+			$( window ).on( 'scroll resize', function () {
 				delay( function () {
 					messageTable.scroll();
-				}, 200 );
+				}, 250 );
 			} ).resize( function () {
 				messageTable.resize();
-				$( '.tux-messagetable-header' ).width( $( '.tux-messagelist' ).width() );
-				$( '.tux-action-bar' ).width( $( '.tux-messagelist' ).width() );
 			} );
 
 			if ( mw.translate.isPlaceholderSupported( $filterInput ) ) {
@@ -708,8 +709,6 @@
 		 */
 		scroll: function () {
 			var $window,
-				$tuxTableHeader,
-				$tuxActionBar,
 				isActionBarFloating,
 				needsTableHeaderFloat, needsTableHeaderStick,
 				needsActionBarFloat, needsActionBarStick,
@@ -730,28 +729,28 @@
 			messageListWidth = this.$container.width();
 
 			// Header:
-			$tuxTableHeader = $( '.tux-messagetable-header' );
-			messageTableRelativePos = messageListTop - $tuxTableHeader.height() - windowScrollTop;
+			messageTableRelativePos = messageListTop - this.$header.height() - windowScrollTop;
 			needsTableHeaderFloat = messageTableRelativePos + 10 < 0;
 			needsTableHeaderStick = messageTableRelativePos - 10 >= 0;
 			if ( needsTableHeaderFloat ) {
-				$tuxTableHeader.addClass( 'floating' ).width( messageListWidth );
+				this.$header.addClass( 'floating' ).width( messageListWidth );
 			} else if ( needsTableHeaderStick ) {
-				$tuxTableHeader.removeClass( 'floating' );
+				// Let the element change width automatically again
+				this.$header.removeClass( 'floating' ).css( 'width', '' );
 			}
 
 			// Action bar:
-			$tuxActionBar = $( '.tux-action-bar' );
-			isActionBarFloating = $tuxActionBar.hasClass( 'floating' );
+			isActionBarFloating = this.$actionBar.hasClass( 'floating' );
 			needsActionBarFloat = windowScrollBottom < messageListBottom;
-			needsActionBarStick = windowScrollBottom > ( messageListBottom + $tuxActionBar.height() );
+			needsActionBarStick = windowScrollBottom > ( messageListBottom + this.$actionBar.height() );
 
 			if ( !isActionBarFloating && needsActionBarFloat ) {
-				$tuxActionBar.addClass( 'floating' ).width( messageListWidth );
+				this.$actionBar.addClass( 'floating' ).width( messageListWidth );
 			} else if ( isActionBarFloating && needsActionBarStick ) {
-				$tuxActionBar.removeClass( 'floating' );
+				// Let the element change width automatically again
+				this.$actionBar.removeClass( 'floating' ).css( 'width', '' );
 			} else if ( isActionBarFloating && needsActionBarFloat ) {
-				$tuxActionBar.css( 'left', messageListOffset.left - $window.scrollLeft() );
+				this.$actionBar.width( messageListWidth );
 			}
 		}
 	};
