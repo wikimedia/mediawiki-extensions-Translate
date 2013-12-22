@@ -301,6 +301,14 @@ $messages['br'] = array(
 	'tsb-limit-reached-title' => 'Trugarez evit ho troidigezhioù',
 );
 
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'tsb-older-requests' => '$1 алсамо {{PLURAL:$1|шира дехар|шира дехараш}}',
+	'logentry-translatorsandbox-rejected' => 'гочдархо статусан дехар $3 $1 {{GENDER:$2|юхадаьккхина}}.',
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  * @author Rillke
@@ -1448,14 +1456,44 @@ $2
 
 $3,
 Ban quản lý {{SITENAME}}',
+	'tsb-reminder-sending' => 'Đang gửi lời nhắc nhở…',
+	'tsb-reminder-sent' => 'Đã gửi $1 lời nhắc nhở{{PLURAL:$1||, lần cuối cùng}} vào $2',
+	'tsb-reminder-sent-new' => 'Đã gửi lời nhắc nhở',
+	'tsb-reminder-failed' => 'Thất bại khi gửi lời nhắc nhở',
+	'tsb-email-promoted-subject' => 'Bạn mới trở thành biên dịch viên tại {{SITENAME}}',
+	'tsb-email-promoted-body' => 'Xin chào {{GENDER:$1|$1}},
+
+Chào mừng bạn đã trở thành biên dịch viên tại {{SITENAME}}! Tôi đã kiểm tra các bản dịch thử nghiệm của bạn và cấp quyền biên dịch cho bạn.
+
+Hãy ghé vào {{SITENAME}} mỗi ngày để tiếp tục biên dịch:
+$2
+
+Cảm ơn bạn vì những đóng góp của bạn!
+
+{{GENDER:$3}}$3,
+Nhóm {{SITENAME}}',
+	'tsb-email-rejected-subject' => 'Đơn xin trở thành biên dịch viên tại {{SITENAME}} đã bị từ chối',
+	'tsb-email-rejected-body' => 'Xin chào {{GENDER:$1|$1}},
+
+Cảm ơn bạn đã nộp đơn xin trở thành biên dịch viên tại {{SITENAME}}. Tôi rất tiếc phải thông báo cho bạn rằng tôi đã từ chối đơn xin của bạn vì các bản dịch của bạn không đáp ứng tiêu chuẩn chất lượng.
+
+Nếu bạn nghĩ rằng bạn đã bị từ chối do nhầm lẫn, xin hãy lần nữa xin trở thành biên dịch viên tại {{SITENAME}}. Chỉ việc đi vào đây:
+$2
+
+{{GENDER:$3}}$3,
+Nhóm {{SITENAME}}',
 	'tsb-request-count' => '{{PLURAL:$1|Một yêu cầu|$1 yêu cầu}}',
 	'tsb-all-languages-button-label' => 'Tất cả các ngôn ngữ',
 	'tsb-search-requests' => 'Yêu cầu tìm kiếm',
 	'tsb-accept-button-label' => 'Chấp nhận',
 	'tsb-reject-button-label' => 'Từ chối',
+	'tsb-selected-count' => '$1 người dùng được chọn',
+	'tsb-older-requests' => '$1 yêu cầu cũ hơn',
 	'tsb-accept-all-button-label' => 'Chấp nhận tất cả',
 	'tsb-reject-all-button-label' => 'Từ chối tất cả',
+	'tsb-user-posted-a-comment' => 'Không phải biên dịch viên',
 	'tsb-reminder-link-text' => 'Nhắc nhở qua thư điện tử',
+	'tsb-didnt-make-any-translations' => 'Người dùng này chưa dịch thông điệp nào.',
 	'tsb-translations-source' => 'Nguồn',
 	'tsb-translations-user' => 'Bản dịch của người dùng',
 	'tsb-translations-current' => 'Bản dịch hiện có',
@@ -1469,6 +1507,12 @@ Ban quản lý {{SITENAME}}',
 	'tsb-limit-reached-body' => 'Bạn đã đạt đến giới hạn bản dịch cho biên dịch viên mới.
 Chúng tôi sẽ kiểm tra và nâng cấp tài khoản của bạn không lâu.
 Sau đó bạn sẽ có thể biên dịch thoải mái không có giới hạn.',
+	'tsb-no-requests-from-new-users' => 'Không có yêu cầu từ người dùng mới',
+	'tsb-promoted-from-sandbox' => 'Người dùng đã được phong cấp biên dịch viên',
+	'log-name-translatorsandbox' => 'Chỗ thử biên dịch',
+	'log-description-translatorsandbox' => 'Các tác vụ có liên quan đến người dùng chỗ thử biên dịch',
+	'logentry-translatorsandbox-promoted' => '$1 {{GENDER:$2}}đã phong cấp $3 trở thành {{GENDER:$4}}biên dịch viên',
+	'logentry-translatorsandbox-rejected' => '$1 {{GENDER:$2}}đã từ chối lời yêu cầu của “$3” để trở thành biên dịch viên',
 );
 
 /** Simplified Chinese (中文（简体）‎)
@@ -1476,6 +1520,7 @@ Sau đó bạn sẽ có thể biên dịch thoải mái không có giới hạn.
  * @author Liuxinyu970226
  * @author Qiyue2001
  * @author Shizhao
+ * @author Xiaomingyan
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
@@ -1494,16 +1539,43 @@ $2
 $3，
 {{SITENAME}}员工',
 	'tsb-reminder-sending' => '正在发送提醒...',
+	'tsb-reminder-sent' => '{{PLURAL:$1|向$1发送$2份提醒}}',
 	'tsb-reminder-sent-new' => '发送提醒',
 	'tsb-reminder-failed' => '发送提醒失败',
 	'tsb-email-promoted-subject' => '你现在是一名{{SITENAME}}的译者了',
+	'tsb-email-promoted-body' => '嗨，{{GENDER:$1|$1}}：
+
+祝贺你！我检查了你在{{SITENAME}}的试验翻译，决定授予你完整的译者权限。
+
+现在以及今后的每一天都来{{SITENAME}}继续翻译吧：
+$2
+
+我们欢迎你加入译者队伍，感谢你的贡献！
+
+{{GENDER:$3|$3}}，
+{{SITENAME}}工作人员',
+	'tsb-email-rejected-subject' => '您在{{SITENAME}}的译者请求被拒绝',
+	'tsb-email-rejected-body' => '嗨，{{GENDER:$1|$1}}：
+
+感谢你在{{SITENAME}}申请成为译者。但我不得不遗憾地通知你，我拒绝了你的申请，因为你的的译文质量不符合要求。
+
+如果你认为你的申请是被错误地拒绝了，请尝试在{{SITENAME}}重新申请成为译者。你可以在这里登记：
+$2
+
+{{GENDER:$3|$3}}，
+{{SITENAME}}工作人员',
 	'tsb-request-count' => '$1个申请',
 	'tsb-all-languages-button-label' => '所有语言',
+	'tsb-search-requests' => '搜索申请',
 	'tsb-accept-button-label' => '接受',
 	'tsb-reject-button-label' => '拒绝',
+	'tsb-selected-count' => '{{PLURAL:$1|$1位已选定用户}}',
+	'tsb-older-requests' => '$1个旧有申请',
 	'tsb-accept-all-button-label' => '接受所有',
 	'tsb-reject-all-button-label' => '拒绝所有',
+	'tsb-user-posted-a-comment' => '不是一位译者',
 	'tsb-reminder-link-text' => '发送电子邮件提醒',
+	'tsb-didnt-make-any-translations' => '这位用户尚未作出任何翻译。',
 	'tsb-translations-source' => '来源',
 	'tsb-translations-user' => '用户翻译',
 	'tsb-translations-current' => '现有翻译',
@@ -1516,6 +1588,8 @@ $3，
 	'tsb-no-requests-from-new-users' => '没有新用户请求',
 	'tsb-promoted-from-sandbox' => '用户已晋升为译者',
 	'log-name-translatorsandbox' => '翻译沙盒',
+	'logentry-translatorsandbox-promoted' => '$1{{GENDER:$2|帮助了}}$3的{{GENDER:$4|翻译工作}}',
+	'logentry-translatorsandbox-rejected' => '$1{{GENDER:$2|拒绝了}}来自“$2”的译者请求', # Fuzzy
 );
 
 /** Traditional Chinese (中文（繁體）‎)

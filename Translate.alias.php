@@ -1084,6 +1084,7 @@ $specialPageAliases['vi'] = array(
 	'LanguageStats' => array( 'Thống_kê_ngôn_ngữ' ),
 	'Magic' => array( 'Dịch_nâng_cao' ),
 	'ManageMessageGroups' => array( 'Quản_lý_nhóm_thông_điệp', 'Quản_lý_nhóm', 'Quản_lí_nhóm_thông_điệp', 'Quản_lí_nhóm' ),
+	'ManageTranslatorSandbox' => array( 'Quản_lý_chỗ_thử_biên_dịch', 'Quản_lí_chỗ_thử_biên_dịch' ),
 	'MessageGroupStats' => array( 'Thống_kê_nhóm_thông_điệp', 'Thống_kê_nhóm' ),
 	'MyLanguage' => array( 'Ngôn_ngữ_tôi' ),
 	'PageTranslation' => array( 'Dịch_trang', 'Biên_dịch_trang' ),

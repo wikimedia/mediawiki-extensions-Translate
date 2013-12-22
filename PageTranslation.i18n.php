@@ -2746,12 +2746,12 @@ Zda se, až bok, kótaryž wopytujoš wobźěłaś, njewótpowědujo bokoju, kó
 	'tpt-translation-restricted' => 'Pśełožowański administrator jo pśełožowanjeju toś togo boka  do toś teje rěcy jo zajźował.
 
 Pśicyna: $1',
-	'tpt-discouraged-language-force' => 'Pśełožowański administrator jo rěcy wobgranicował, do kótarychž toś ten bok dajo se pśełožyś. Toś rěc njejo mjazy toś tymi rěcami:
+	'tpt-discouraged-language-force' => '<strong>Toś ten bok njedajo se do $2 pśełožyś.</strong>
 
-Pśicyna: $1', # Fuzzy
-	'tpt-discouraged-language' => 'Toś ta rěc njejo mjazy primarnymi rěcami, kótarež pśełožowański administrator jo za ten toś bok póstajił.
+Pśełožowański administrator jo rozsuźił, až toś ten bok dajo se jano do $3 pśełožowaś.',
+	'tpt-discouraged-language' => '<strong>Pśełožowanje do $2 njama prioritu za toś ten bok.</strong>
 
-Pśicyna: $1', # Fuzzy
+Pśełožowański administrator jo rozsuźił, fokus pśełožowańskich procowanjow na $3 stajiś.',
 	'tpt-discouraged-language-reason' => 'Pśicyna: $1',
 	'tpt-priority-languages' => 'Pśełožowański administrator jo primarne rěcy za toś tu kupku ako $1 nastajił.',
 	'tpt-render-summary' => 'Aktualizacija pó nowej wersiji žrědłowego boka',
@@ -4848,12 +4848,12 @@ Strona, kotruž pospytuješ wobdźěłać, po wšěm zdaću stronje markěrowane
 	'tpt-translation-restricted' => 'Přełožowanski administrator je přełožowanju tuteje strony do tuteje rěče zadźěwał.
 
 Přičina: $1',
-	'tpt-discouraged-language-force' => 'Přełožowanski administrator je rěče wobmjezował, do kotrychž tuta strona da so přełožić. Tuta rěč mjez tutymi rěčemi njeje:
+	'tpt-discouraged-language-force' => '<strong>Tuta strona njehodźi so do $2 přełožić.</strong>
 
-Přičina: $1', # Fuzzy
-	'tpt-discouraged-language' => 'Tuta rěč njeje mjez primarnymi rěčemi, kotrež přełožowanski administrator je za tutu stronu postajił.
+Přełožowanski administrator je rozsudźił, zo tuta strona hodźi so jenož do $3 přełožować.',
+	'tpt-discouraged-language' => '<strong>Přełožowanje do $2 nima prioritu za tutu stronu.</strong>
 
-Přičina: $1', # Fuzzy
+Přełožowanski administrator je rozsudźił, fokus přełožowanskich procowanjow na $3 stajić.',
 	'tpt-discouraged-language-reason' => 'Přičina: $1',
 	'tpt-priority-languages' => 'Přełožowanski administrator je primarne rěče za tutu skupinu jako $1 nastajił.',
 	'tpt-render-summary' => 'Aktualizacija po nowej wersiji žórłoweje strony',

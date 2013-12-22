@@ -878,6 +878,7 @@ $messages['fo'] = array(
  * @author Verdy p
  * @author Wyz
  * @author Xapitoun
+ * @author Yann.fauche
  */
 $messages['fr'] = array(
 	'translategroupdescriptions-desc' => "Descriptions des groupes de messages pour les produits pris en charge par l'[//mediawiki.org/wiki/Extension:Translate extension Translate]",
@@ -921,6 +922,7 @@ Veuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wik
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] est un service affichant les chemins pour la randonnée, le cyclisme, le vélo-tourisme et le patinage à roulettes tout autour du monde. Il utilise la licence GNU GPL',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] permet de trouver rapidement les auteurs d’une page dans un wiki de Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] est un projet visant à offrir une version texte de Wikipedia en mode hors connexion sur un périphérique mobile.',
+	'translate-group-desc-wikimania-scholarships-app' => 'Groupe de messages pour le [https://scholarships.wikimedia.org/apply système de demande de bourse Wikimania]',
 	'translate-group-desc-wikimedia-mobile' => 'Le groupe de messages agrégés contient les applications mobiles pour les projets Wikimédia',
 	'translate-group-desc-wikimedia-mobile-commons' => "[[Translating:WikipediaMobile|Commons Mobile]] est une application pour Android et iOS destinée à l'import et à la navigation sur Wikimedia Commons",
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] est une application inter-plateformes pour mobiles et tablettes permettant de lire et de contribuer à Wikipédia',
@@ -1636,6 +1638,7 @@ $messages['lb'] = array(
 	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]] ass en Tool fir Fichieren op Wikimedia Commons an aner Wikimedia Projeten eropzelueden',
 	'bw-desc-wikiblame' => "[[Translating:WikiBlame|WikiBlame]] erlaabt et fir d'Auteure vun enger Säit op enger Wikimedia-Wiki séier ze fannen.",
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] ass e Projet fir eng reng Textversioun vu Wikipedia offline op engem mobilen Apparat zur Verfügung ze stellen.',
+	'translate-group-desc-wikimania-scholarships-app' => 'Grupp vu Message fir [https://scholarships.wikimedia.org/apply Ufroe fir Wikimania-Boursen]',
 	'translate-group-desc-wikimedia-mobile' => 'Zesummegesate Grupp vu Message fir déi mobil Applikatioune fir Wikimedia Projeten',
 	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]] ass eng App fir Android an iOS fir op Wikimedia Commons ze navigéieren a Fichieren eropzelueden',
 	'translate-group-desc-wikimedia-mobile-wlm' => '[[Translating:WLMMobile|WikiLovesMonuments Mobile]] ass eng Mobil Applikatioun fir beim [[:meta:Wiki Loves Monuments|Projet "Wiki Loves Monuments"]] matzemaachen',
@@ -2777,6 +2780,7 @@ Xem thêm chi tiết tại [[MW:Extension:PDF Writer]] và http://code.pediapres
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]] là một dịch vụ bản đồ cho biết các tuyến đường đi bộ đường dài, xe đạp, xe đạp leo núi, và trượt băng nội tuyến ở khắp thế giới. Dịch vụ được phát hành theo giấy phép GNU GPL.',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] có thể nhanh chóng tìm ra tác giả của trang trong wiki của Wikimedia.',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] là dự án sản xuất phiên bản Wikipedia ngoại tuyến có văn bản thuần để đọc trên thiết bị di động.',
+	'translate-group-desc-wikimania-scholarships-app' => 'Nhóm thông điệp cho [https://scholarships.wikimedia.org/apply đơn xin Học bổng Wikimania]',
 	'translate-group-desc-wikimedia-mobile' => 'Nhóm tổng hợp các thông điệp ứng dụng di động của các dự án Wikimedia',
 	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Di động]] là một ứng dụng dành cho Android hoặc iOS để tải tập tin lên và duyệt Wikimedia Commons',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]] là một ứng dụng đa nền tảng dành cho máy tính di động và bảng để đọc và đóng góp vào Wikipedia.',
@@ -2834,6 +2838,7 @@ $messages['zh-hans'] = array(
 	'bw-desc-freecol' => '在将FreeCol翻译至你的语言之前，请阅读[[Translating:FreeCol]]。Freecol使用GPL许可协议。',
 	'bw-desc-fudforum' => '[http://fudforum.org/ FUDforum]，一个用PHP编写的论坛。',
 	'bw-desc-mantisbt' => '[http://www.mantisbt.org MantisBT]是一个免费的基于Web的Bug追踪系统。请在[[Support|支持]]报告问题。',
+	'translate-group-desc-blockly' => '用于[[Translating:Blockly|Blockly]]的信息组',
 	'translate-group-desc-eol' => '[[Translating:EOL|Encyclopedia of Life]]的消息组',
 	'translate-group-desc-fuel' => '[[Translating:FUEL|FUEL]]使软件翻译更加一致',
 	'translate-group-desc-ihris' => '[[Translating:iHRIS|iHRIS]]的消息组',
@@ -2853,9 +2858,11 @@ $messages['zh-hans'] = array(
 	'translate-group-desc-pywikipedia' => '[[Translating:Pywikibot|Pywikibot]]是一个维基百科编辑工具集合。',
 	'bw-desc-shapado' => '本组包含免费开源问答软件[[Translating:Shapado|Shapado]]的信息',
 	'translate-group-desc-tsint' => '[[Translating:Intuition|Intuition]]的信息组。它是[//toolserver.org Toolserver]工具的i18n系统。（<span class="plainlinks">[[Translating talk:Intuition|支持]]</span>',
+	'translate-group-desc-vicuna' => '[[Translating:VicuñaUploader|VicuñaUploader]]是一个将文件上传到维基共享资源和其他维基媒体计划的工具',
 	'translate-group-desc-waymarked-trails' => '[[Translating:Waymarked Trails|Waymarked Trails]]是一个使用GNU GPL许可证的显示世界范围内远足、骑行、山地骑行、 轮滑路线的服务。',
 	'bw-desc-wikiblame' => '[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame]可以快速找到某Wikimedia wiki中某页面的作者。',
 	'bw-desc-wikireader' => '[[Translating:WikiReader|WikiReader]] 是一个将离线、仅文字版本的维基百科传送到手机上的项目。',
+	'translate-group-desc-wikimania-scholarships-app' => '用于[https://scholarships.wikimedia.org/apply 维基媒体国际会议奖学金计划]的信息组',
 	'translate-group-desc-wikimedia-mobile' => '包含维基媒体项目移动应用的聚合消息组',
 	'translate-group-desc-wikimedia-mobile-commons' => '[[Translating:WikipediaMobile|Commons Mobile]]是一款用于在维基共享资源浏览或上传图片的应用',
 	'translate-group-desc-wikimedia-mobile-wikipedia' => '[[Translating:WikipediaMobile|WikipediaMobile]]是一个跨平台的手机和平板电脑应用，用于阅读和编辑维基百科',

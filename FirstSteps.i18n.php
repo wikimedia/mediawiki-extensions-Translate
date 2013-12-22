@@ -1027,9 +1027,9 @@ $messages['dsb'] = array(
 	'translate-fs-permissions-title' => 'Póžedanje na pśełožowarske pšawa stajiś',
 	'translate-fs-target-title' => 'Zachop pśełožowaś!',
 	'translate-fs-email-title' => 'Twóju e-mailowu adresu wobkšuśiś',
-	'translate-fs-intro' => "Witaj do startowego asistenta {{GRAMMAR:genitiw|SITENAME}}.
+	'translate-fs-intro' => 'Witaj do startowego asistenta {{GRAMMAR:genitiw|SITENAME}}.
 Pokazujo so śi kšać pó kšać, kak buźoš pśełožowaŕ.
-Na kóńcu móžoš ''powěźeńki wužywarskego powjercha'' wšyknych pódpěranych projektow na {{SITENAME}} pśełožowaś.", # Fuzzy
+Na kóńcu móžoš <em>powěźeńki wužywarskego powjercha</em> wšyknych pódpěranych projektow na {{GRAMMAR:lokatiw|{{SITENAME}}}} pśełožowaś.',
 	'translate-fs-selectlanguage' => 'Wubjeŕ rěc',
 	'translate-fs-settings-planguage' => 'Głowna rěc:',
 	'translate-fs-settings-planguage-desc' => 'Głowna rěc ma dwě funkciji: słužy ako rěc wužywarskego pówjercha w toś tom wikiju a ako standardna celowa rěc za pśełožki.',
@@ -1930,9 +1930,9 @@ $messages['hsb'] = array(
 	'translate-fs-permissions-title' => 'Wo přełožowanske prawa prosyć',
 	'translate-fs-target-title' => 'Započń přełožować!',
 	'translate-fs-email-title' => 'Wobkruć swoju e-mejlowu adresu',
-	'translate-fs-intro' => "Witaj do startoweho asistenta projekta {{SITENAME}}.
+	'translate-fs-intro' => 'Witaj do startoweho asistenta projekta {{SITENAME}}.
 Dóstanješ nawod krok po kroku, kak so z přełožowarjom stanješ.
-Na kóncu móžeš ''zdźělenki programoweho powjercha'' wšěch podpěrowanych projektow na {{SITENAME}} přełožić.", # Fuzzy
+Na kóncu móžeš <em>zdźělenki programoweho powjercha</em> wšěch podpěrowanych projektow na {{SITENAME}} přełožić.',
 	'translate-fs-selectlanguage' => 'Wubjer rěč',
 	'translate-fs-settings-planguage' => 'Hłowna rěč:',
 	'translate-fs-settings-planguage-desc' => 'Hłowna rěč ma dwě funkciji: słuži jako rěč wužiwarskeho powjercha w tutym wikiju a jako standardna cilowa rěč za přełožki.',
@@ -4463,6 +4463,7 @@ $messages['yi'] = array(
  * @author Liangent
  * @author Mark85296341
  * @author Qiyue2001
+ * @author Xiaomingyan
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
@@ -4498,10 +4499,9 @@ $messages['zh-hans'] = array(
 	'translate-fs-userpage-submit' => '创建你的用户页',
 	'translate-fs-userpage-done' => '很好！现在你有了一个用户页面。',
 	'translate-fs-permissions-planguage' => '主要语言：',
-	'translate-fs-permissions-help' => '现在，您需要请求参加翻译组。
-请选择您想参入翻译的首选语言。
+	'translate-fs-permissions-help' => '现在，你需要申请加入译者用户组。请选择你的主要翻译目标语言。
 
-您可以在以下的文本框之内提及其他语言及其他备注。',
+你可以在下面的文本框中提及其他语言和其他备注。',
 	'translate-fs-permissions-pending' => '您的请求已提交至[[$1]]，站点管理员会尽快查阅您的请求。
 如果您已验证您的电子邮箱，那么这个请求有答复后就会给您发送邮件。',
 	'translate-fs-permissions-submit' => '发送请求',
