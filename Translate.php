@@ -17,7 +17,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 /**
  * Version number used in extension credits and in other places where needed.
  */
-define( 'TRANSLATE_VERSION', '2013-12-23' );
+define( 'TRANSLATE_VERSION', '2013-12-24' );
 
 /**
  * Extension credits properties.
@@ -44,22 +44,24 @@ require_once "$dir/_autoload.php";
  * @cond file_level_code
  */
 
-$wgMessagesDirs['FirstSteps'] = __DIR__ . "/i18n/firststeps";
 $wgMessagesDirs['PageTranslation'] = __DIR__ . "/i18n/pagetranslation";
 $wgMessagesDirs['Translate'] = __DIR__ . "/i18n/core";
 $wgMessagesDirs['TranslateGroupDescriptions'] = __DIR__ . "/i18n/groupdescriptions";
 $wgMessagesDirs['TranslateSearch'] = __DIR__ . "/i18n/search";
 $wgMessagesDirs['TranslateSandbox'] = __DIR__ . "/i18n/sandbox";
+// Disabled by default @since 2013-12 See $wgSpecialPages['FirstSteps']
+//$wgMessagesDirs['FirstSteps'] = __DIR__ . "/i18n/firststeps";
 
 // Register extension messages and other localisation.
 $wgExtensionMessagesFiles['Translate'] = "$dir/Translate.i18n.php";
-$wgExtensionMessagesFiles['FirstSteps'] = "$dir/FirstSteps.i18n.php";
 $wgExtensionMessagesFiles['PageTranslation'] = "$dir/PageTranslation.i18n.php";
 $wgExtensionMessagesFiles['TranslateGroupDescriptions'] =
 	"$dir/TranslateGroupDescriptions.i18n.php";
 $wgExtensionMessagesFiles['TranslateSearch'] = "$dir/TranslateSearch.i18n.php";
 $wgExtensionMessagesFiles['TranslateSandbox'] = "$dir/TranslateSandbox.i18n.php";
 $wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
+// @since 2013-12 Disabled by default. See $wgSpecialPages['FirstSteps']
+//$wgExtensionMessagesFiles['FirstSteps'] = "$dir/FirstSteps.i18n.php";
 
 // Register initialization code
 $wgExtensionFunctions[] = 'TranslateHooks::setupTranslate';
@@ -87,8 +89,9 @@ $wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
 $wgSpecialPageGroups['ImportTranslations'] = 'wiki';
 $wgSpecialPages['ManageMessageGroups'] = 'SpecialManageGroups';
 $wgSpecialPageGroups['ManageMessageGroups'] = 'wiki';
-// Unlisted special page; does not need $wgSpecialPageGroups.
-$wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps';
+// @since 2013-12 Disabled by default
+// The use of this special page is discouraged. It is not maintained.
+//$wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps';
 $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
 $wgSpecialPageGroups['SupportedLanguages'] = 'wiki';
 // Unlisted special page; does not need $wgSpecialPageGroups.
