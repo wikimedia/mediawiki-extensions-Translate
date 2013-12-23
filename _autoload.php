@@ -36,7 +36,6 @@ $wgAutoloadClasses['TranslateUtils'] = "$dir/TranslateUtils.php";
  * @{
  */
 $wgAutoloadClasses['SpecialAggregateGroups'] = "$dir/specials/SpecialAggregateGroups.php";
-$wgAutoloadClasses['SpecialFirstSteps'] = "$dir/specials/SpecialFirstSteps.php";
 $wgAutoloadClasses['SpecialImportTranslations'] = "$dir/specials/SpecialImportTranslations.php";
 $wgAutoloadClasses['SpecialLanguageStats'] = "$dir/specials/SpecialLanguageStats.php";
 $wgAutoloadClasses['SpecialMagic'] = "$dir/specials/SpecialMagic.php";

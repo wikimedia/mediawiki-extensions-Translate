@@ -1,9 +1,0 @@
-{
-    "@metadata": {
-        "authors": [
-            "Geitost"
-        ]
-    },
-    "translate-fs-target-text": "Glückwunsch!\nDu kannst nun mit dem Übersetzen beginnen.\n\nSei nicht verwirrt, wenn es dir noch neu und unübersichtlich vorkommt.\nIn der [[Project list|Projektliste]] gibt es eine Übersicht über die Projekte, die du übersetzen kannst.\nDie meisten Projekte haben eine kurze Beschreibungsseite zusammen mit einem ''«Übersetzen»''-Link, der dich auf eine Seite mit nicht übersetzten Nachrichten bringt.\nEine Liste aller Nachrichtengruppen und dem [[Special:LanguageStats|momentanen Status einer Sprache]] gibt es auch.\n\nWenn du mehr hiervon verstehen möchtest, kannst du die [[FAQ|häufig gestellten Fragen]] lesen.\nLeider kann die Dokumentation zeitweise veraltet sein.\nWenn du etwas tun möchtest, jedoch nicht weisst wie, zögere nicht, auf der [[Support|Hilfeseite]] zu fragen.\n\nDu kannst auch Übersetzer deiner Sprache auf der [[Portal_talk:$1|Diskussionsseite]] des [[Portal:$1|entsprechenden Sprachportals]] kontaktieren.\nDas Portal verlinkt auf deine momentane [[Special:Preferences|Spracheinstellung]].\nBitte ändere sie, falls nötig.",
-    "translate-fs-email-text": "Bitte gib deine E-Mail-Adresse in [[Special:Preferences|deinen Einstellungen]] ein und bestätige das an dich versandte E-Mail.\n\nDies gibt anderen die Möglichkeit, dich über E-Mail zu erreichen.\nDu erhältst ausserdem bis zu einmal im Monat einen Newsletter.\nWenn du keinen Newsletter erhalten möchtest, kannst du dich im Tab «{{int:prefs-personal}}» in deinen [[Special:Preferences|Einstellungen]] austragen."
-}
