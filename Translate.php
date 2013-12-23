@@ -44,7 +44,6 @@ require_once "$dir/_autoload.php";
  * @cond file_level_code
  */
 
-$wgMessagesDirs['FirstSteps'] = __DIR__ . "/i18n/firststeps";
 $wgMessagesDirs['PageTranslation'] = __DIR__ . "/i18n/pagetranslation";
 $wgMessagesDirs['Translate'] = __DIR__ . "/i18n/core";
 $wgMessagesDirs['TranslateGroupDescriptions'] = __DIR__ . "/i18n/groupdescriptions";
@@ -53,7 +52,6 @@ $wgMessagesDirs['TranslateSandbox'] = __DIR__ . "/i18n/sandbox";
 
 // Register extension messages and other localisation.
 $wgExtensionMessagesFiles['Translate'] = "$dir/Translate.i18n.php";
-$wgExtensionMessagesFiles['FirstSteps'] = "$dir/FirstSteps.i18n.php";
 $wgExtensionMessagesFiles['PageTranslation'] = "$dir/PageTranslation.i18n.php";
 $wgExtensionMessagesFiles['TranslateGroupDescriptions'] =
 	"$dir/TranslateGroupDescriptions.i18n.php";
@@ -87,8 +85,6 @@ $wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
 $wgSpecialPageGroups['ImportTranslations'] = 'wiki';
 $wgSpecialPages['ManageMessageGroups'] = 'SpecialManageGroups';
 $wgSpecialPageGroups['ManageMessageGroups'] = 'wiki';
-// Unlisted special page; does not need $wgSpecialPageGroups.
-$wgSpecialPages['FirstSteps'] = 'SpecialFirstSteps';
 $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
 $wgSpecialPageGroups['SupportedLanguages'] = 'wiki';
 // Unlisted special page; does not need $wgSpecialPageGroups.
