@@ -45,7 +45,8 @@
     "tsb-limit-reached-body": "Text shown below translations when the user has reached the limit for number of translations.",
     "tsb-no-requests-from-new-users": "Shown on [[Special:TranslateSandbox]] when there are no requests for approval from new users.",
     "tsb-promoted-from-sandbox": "{{logentry}}\nAdditional parameters:\n* $4 - (Unused) user ID",
-    "log-name-translatorsandbox": "{{doc-logpage}}",
+	"tsb-create-user-page": "Edit summary for user page creation once approved as translator. Will be in content language.",
+	"log-name-translatorsandbox": "{{doc-logpage}}",
     "log-description-translatorsandbox": "Log page description",
     "logentry-translatorsandbox-promoted": "{{logentry}}\n* $4 - The name of the user that was promoted, can be used for GENDER.",
     "logentry-translatorsandbox-rejected": "{{logentry}}"
