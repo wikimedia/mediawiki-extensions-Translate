@@ -52,6 +52,14 @@ When(/^I click on the link that says "\d+ older requests?" at the bottom of the 
 	on(ManageTranslatorSandboxPage).older_requests_indicator_element.click
 end
 
+When(/^I go to the userpage of user "(.*?)"$/) do |username|
+	visit(UserPage, :using_params => {:extra => username})
+end
+
+Then(/^I should see a babel box with languages "(.*?)"$/) do |languages|
+	on(UserPage).babel_box_has_languages?(languages).should be_true
+end
+
 Then(/^I should not see the older requests link at the bottom of the first column$/) do
 	on(ManageTranslatorSandboxPage).older_requests_indicator_element.should_not be_visible
 end
