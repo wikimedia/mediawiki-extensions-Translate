@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_2c5e4818",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2013-12-23T10:00:00Z",
+      "side": 1,
+      "message": "Are you trying to solve any UX glitch with this changes? If so, could you please add here so that we can test before and after this patch.",
+      "revId": "2858a915c44394e37ef6dfd2e267229552cd2987",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
