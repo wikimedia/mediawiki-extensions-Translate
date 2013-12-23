@@ -12,7 +12,6 @@
  * @ingroup API TranslateAPI
  */
 class ApiTranslateSandbox extends ApiBase {
-
 	public function execute() {
 		global $wgTranslateUseSandbox;
 		if ( !$wgTranslateUseSandbox ) {
@@ -75,6 +74,7 @@ class ApiTranslateSandbox extends ApiBase {
 		$user->setOption( 'language', $this->getContext()->getLanguage()->getCode() );
 		$user->saveSettings();
 
+		$this->createUserPage( $user );
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 	}
 
@@ -148,6 +148,34 @@ class ApiTranslateSandbox extends ApiBase {
 				$this->dieUsage( $e->getMessage(), 'invalidparam' );
 			}
 		}
+	}
+
+	/**
+	 * Create a user page for a user with a babel template based on the signup
+	 * preferences.
+	 *
+	 * @param User $user
+	 * @return Status|bool False when a user page already existed, or the Status
+	 *   of the user page creation from WikiPage::doEditContent().
+	 */
+	protected function createUserPage( User $user ) {
+		$userpage = $user->getUserPage();
+
+		if( $userpage->exists() ) {
+			return Status::newGood();
+		}
+
+		$languagePrefs = FormatJson::decode( $user->getOption( 'translate-sandbox' ) );
+		$languages = implode( '|', $languagePrefs->languages );
+		$babeltext = '{{#babel:' . $languages . '}}';
+		$summary = $this->msg( 'tsb-create-user-page' )->inContentLanguage()->text();
+
+		$page = WikiPage::factory( $userpage );
+		$content = ContentHandler::makeContent( $babeltext, $userpage );
+
+		$editResult = $page->doEditContent( $content, $summary, EDIT_NEW, false, $user );
+
+		return $editResult;
 	}
 
 	public function mustBePosted() {
