@@ -17,7 +17,7 @@
     "translate-fs-permissions-title": "Anmodning om oversættertilladelse",
     "translate-fs-target-title": "Start med at oversætte!",
     "translate-fs-email-title": "Bekræft din e-mailadresse",
-    "translate-fs-intro": "Velkommen til guiden for at komme godt i gang med {{SITENAME}}.\nDu vil blive guidet igennem processen med at blive en oversætter trin for trin.\nNår du er færdig vil du være i stand til at oversætte <em>brugerfladebeskeder</em> for alle understøttede projekter på {{SITENAME}}.",
+    "translate-fs-intro": "Velkommen til guiden for at komme godt i gang med {{SITENAME}}.\nDu vil blive guidet igennem processen med at blive en oversætter trin for trin.\nNår du er færdig vil du være i stand til at oversætte \u003Cem\u003Ebrugerfladebeskeder\u003C/em\u003E for alle understøttede projekter på {{SITENAME}}.",
     "translate-fs-selectlanguage": "Vælg et sprog",
     "translate-fs-settings-planguage": "Primært sprog:",
     "translate-fs-settings-planguage-desc": "Det primære sprog er både sproget for din brugerflade på denne wiki og standardsproget for dine oversættelser.",

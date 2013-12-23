@@ -15,7 +15,7 @@
     "translate-fs-permissions-title": "Wo přełožowanske prawa prosyć",
     "translate-fs-target-title": "Započń přełožować!",
     "translate-fs-email-title": "Wobkruć swoju e-mejlowu adresu",
-    "translate-fs-intro": "Witaj do startoweho asistenta projekta {{SITENAME}}.\nDóstanješ nawod krok po kroku, kak so z přełožowarjom stanješ.\nNa kóncu móžeš <em>zdźělenki programoweho powjercha</em> wšěch podpěrowanych projektow na {{SITENAME}} přełožić.",
+    "translate-fs-intro": "Witaj do startoweho asistenta projekta {{SITENAME}}.\nDóstanješ nawod krok po kroku, kak so z přełožowarjom stanješ.\nNa kóncu móžeš \u003Cem\u003Ezdźělenki programoweho powjercha\u003C/em\u003E wšěch podpěrowanych projektow na {{SITENAME}} přełožić.",
     "translate-fs-selectlanguage": "Wubjer rěč",
     "translate-fs-settings-planguage": "Hłowna rěč:",
     "translate-fs-settings-planguage-desc": "Hłowna rěč ma dwě funkciji: słuži jako rěč wužiwarskeho powjercha w tutym wikiju a jako standardna cilowa rěč za přełožki.",
