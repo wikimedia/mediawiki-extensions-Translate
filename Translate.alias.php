@@ -12,7 +12,6 @@ $specialPageAliases = array();
 /** English (English) */
 $specialPageAliases['en'] = array(
 	'AggregateGroups' => array( 'AggregateGroups' ),
-	'FirstSteps' => array( 'FirstSteps' ),
 	'ImportTranslations' => array( 'ImportTranslations' ),
 	'LanguageStats' => array( 'LanguageStats' ),
 	'Magic' => array( 'AdvancedTranslate', 'Magic' ),
