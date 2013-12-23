@@ -36,6 +36,7 @@ class TranslateSandbox {
 		// Need to have an id first
 		$user->addGroup( 'translate-sandboxed' );
 		$user->clearInstanceCache( 'name' );
+		$user->sendConfirmationMail();
 
 		return $user;
 	}
