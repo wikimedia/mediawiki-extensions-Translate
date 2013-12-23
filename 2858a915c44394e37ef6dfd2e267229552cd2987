@@ -34,6 +34,24 @@
       "revId": "2858a915c44394e37ef6dfd2e267229552cd2987",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_4cb06c3e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-12-23T10:24:15Z",
+      "side": 1,
+      "message": "Siebrand implied that he\u0027s not able to reproduce point 2, in https://bugzilla.wikimedia.org/show_bug.cgi?id\u003d47637#c1",
+      "parentUuid": "eeebdf60_ec9f40b8",
+      "revId": "2858a915c44394e37ef6dfd2e267229552cd2987",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
