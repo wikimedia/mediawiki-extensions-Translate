@@ -386,7 +386,7 @@
 					format: 'json',
 					meta: 'messagegroups',
 					mgformat: 'tree',
-					mgprop: 'id|label|icon|priority|prioritylangs|priorityforce',
+					mgprop: 'id|label|icon|priority|prioritylangs|priorityforce|description',
 					mgiconsize: '32'
 				};
 
