@@ -277,3 +277,10 @@ Feature: Manage translator sandbox
       And I should see the checkbox next to the request from "Pupu3" disabled
       And I should see "1 user selected" at the bottom of the first column
       And I should see "4 requests" at the top of the first column
+
+  Scenario: Accepting a user creates a user page
+    Given I am on the Translator sandbox management page with users in the sandbox
+    When I click on "Kissa" in the first column
+      And I click the "Accept" button
+      And I go to the userpage of user "Kissa"
+    Then I should see a babel box with languages "bn, he, uk, nl, fi"
