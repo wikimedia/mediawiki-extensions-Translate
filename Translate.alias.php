@@ -12,7 +12,8 @@ $specialPageAliases = array();
 /** English (English) */
 $specialPageAliases['en'] = array(
 	'AggregateGroups' => array( 'AggregateGroups' ),
-	'FirstSteps' => array( 'FirstSteps' ),
+	// Disabled by default @since 2013-12 See $wgSpecialPages['FirstSteps']
+	//'FirstSteps' => array( 'FirstSteps' ),
 	'ImportTranslations' => array( 'ImportTranslations' ),
 	'LanguageStats' => array( 'LanguageStats' ),
 	'Magic' => array( 'AdvancedTranslate', 'Magic' ),
