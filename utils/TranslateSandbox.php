@@ -36,6 +36,7 @@ class TranslateSandbox {
 		// Need to have an id first
 		$user->addGroup( 'translate-sandboxed' );
 		$user->clearInstanceCache( 'name' );
+		$user->sendConfirmationMail();
 
 		return $user;
 	}
@@ -207,7 +208,14 @@ class TranslateSandbox {
 			return true;
 		}
 
-		$rights = array( 'read', 'translate-sandboxaction', 'readapi', 'writeapi', 'editmyoptions' );
+		$rights = array(
+			'editmyoptions',
+			'editmyprivateinfo',
+			'read',
+			'readapi',
+			'translate-sandboxaction',
+			'writeapi',
+		);
 
 		// Do not let other hooks add more actions
 		return false;
