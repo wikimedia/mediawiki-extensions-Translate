@@ -16,6 +16,24 @@
       "revId": "2858a915c44394e37ef6dfd2e267229552cd2987",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_ec9f40b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-23T10:10:34Z",
+      "side": 1,
+      "message": "How to reproduce:\n* Go to TUX\n* Scroll down so that header starts floating\n* Scroll back up so that it jumps back in\n* Resize or zoom: the header does not change width anymore",
+      "parentUuid": "eeebdf60_2c5e4818",
+      "revId": "2858a915c44394e37ef6dfd2e267229552cd2987",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
