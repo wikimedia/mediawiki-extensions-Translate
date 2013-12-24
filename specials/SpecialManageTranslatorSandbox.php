@@ -38,6 +38,28 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 	}
 
 	/**
+	 * Deletes a user page if it exists.
+	 * This is needed especially when deleting sandbox users
+	 * that were created as part of the integration tests.
+	 * @since 2013.12
+	 * @param User $user
+	 */
+	protected function deleteUserPage( $user ) {
+		$userpage = WikiPage::factory( $user->getUserPage() );
+		if ( $userpage->exists() ) {
+			$dummyError = '';
+			$userpage->doDeleteArticleReal(
+				wfMessage( 'tsb-delete-userpage-summary' )->inContentLanguage()->text(),
+				false,
+				0,
+				true,
+				$dummyError,
+				$this->getUser()
+			);
+		}
+	}
+
+	/**
 	 * Add users to the sandbox or delete them to facilitate browsers tests.
 	 * Use with caution!
 	 */
@@ -66,6 +88,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 
 					// Get rid of users, even if promoted during tests
 					$userToDelete = User::newFromName( $name, false );
+					$this->deleteUserPage( $userToDelete );
 					TranslateSandbox::deleteUser( $userToDelete, 'force' );
 
 					$user = TranslateSandbox::addUser( $name, "$prefix$i@pupun.kolo", 'porkkana' );
@@ -101,7 +124,10 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 			}
 
 			// Another account for testing a translator to multiple languages
-			TranslateSandbox::deleteUser( User::newFromName( 'Kissa', false ), 'force' );
+			$oldPolyglotUser = User::newFromName( 'Kissa', false );
+			$this->deleteUserPage( $oldPolyglotUser );
+			TranslateSandbox::deleteUser( $oldPolyglotUser, 'force' );
+
 			$polyglotUser = TranslateSandbox::addUser( 'Kissa', 'kissa@pupun.kolo', 'porkkana' );
 			$polyglotUser->setOption(
 				'translate-sandbox',
