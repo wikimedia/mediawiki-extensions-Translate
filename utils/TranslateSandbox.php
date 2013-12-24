@@ -55,16 +55,6 @@ class TranslateSandbox {
 			throw new MWException( "Not a sandboxed user" );
 		}
 
-		// Delete the user page.
-		// This is needed especially when deleting sandbox users
-		// that were created as part of the integration tests.
-		$userpage = WikiPage::factory( $user->getUserPage() );
-		if ( $userpage->exists() ) {
-			$userpage->doDeleteArticleReal(
-				wfMessage( 'tsb-delete-userpage-summary' )->inContentLanguage()->text()
-			);
-		}
-
 		// Delete from database
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete( 'user', array( 'user_id' => $uid ), __METHOD__ );
