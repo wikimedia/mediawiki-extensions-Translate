@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_03c46e67",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-24T12:52:25Z",
+      "side": 1,
+      "message": "Should use interpolation: \"{{#babel:$languages}}\";\n\nAccording to https://www.mediawiki.org/wiki/CC/PHP#String_literals",
+      "revId": "f5d9f464d18b57e747b17fa48ce9a6a7344a81db",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
