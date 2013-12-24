@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_63eb3a0a",
+        "filename": "i18n/sandbox/en.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2013-12-24T11:53:47Z",
+      "side": 1,
+      "message": "The new lines use tabs and the other lines use spaces.",
+      "revId": "31f787ef4125a6b2c926393b2967e09959eb3bc1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
