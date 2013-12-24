@@ -38,6 +38,28 @@ class SpecialManageTranslatorSandbox extends TranslateSpecialPage {
 	}
 
 	/**
+	 * Deletes a user page if it exists.
+	 * This is needed especially when deleting sandbox users
+	 * that were created as part of the integration tests.
+	 * @since 2013.12
+	 * @param User $user
+	 */
+	protected function deleteUserPage( $user ) {
+		$userpage = WikiPage::factory( $user->getUserPage() );
+		if ( $userpage->exists() ) {
+			$dummyError = '';
+			$userpage->doDeleteArticleReal(
+				wfMessage( 'tsb-delete-userpage-summary' )->inContentLanguage()->text(),
+				false,
+				0,
+				true,
+				$dummyError,
+				$this->getUser()
+			);
+		}
+	}
+
+	/**
 	 * Add users to the sandbox or delete them to facilitate browsers tests.
 	 * Use with caution!
 	 */
@@ -66,6 +88,7 @@ class SpecialManageTranslatorSandbox extends TranslateSpecialPage {
 
 					// Get rid of users, even if promoted during tests
 					$userToDelete = User::newFromName( $name, false );
+					$this->deleteUserPage( $userToDelete );
 					TranslateSandbox::deleteUser( $userToDelete, 'force' );
 
 					$user = TranslateSandbox::addUser( $name, "$prefix$i@example.com", 'porkkana' );
@@ -101,23 +124,26 @@ class SpecialManageTranslatorSandbox extends TranslateSpecialPage {
 			}
 
 			// Another account for testing a translator to multiple languages
-			TranslateSandbox::deleteUser( User::newFromName( 'Kissa', false ), 'force' );
-			$polyglotUser = TranslateSandbox::addUser( 'Kissa', 'kissa@example.com', 'porkkana' );
-			$polyglotUser->setOption(
+			$oldPolyglotUser = User::newFromName( 'Kissa', false );
+			$this->deleteUserPage( $oldPolyglotUser );
+			TranslateSandbox::deleteUser( $oldPolyglotUser, 'force' );
+
+			$oldPolyglotUser = TranslateSandbox::addUser( 'Kissa', 'kissa@example.com', 'porkkana' );
+			$oldPolyglotUser->setOption(
 				'translate-sandbox',
 				FormatJson::encode( array(
 					'languages' => $testLanguages,
 					'comment' => "I know some languages, and I'm a developer.",
 				) )
 			);
-			$polyglotUser->saveSettings();
+			$oldPolyglotUser->saveSettings();
 			for ( $polyglotLang = 0; $polyglotLang < $testLanguagesCount; $polyglotLang++ ) {
 				$title = Title::makeTitle(
 					NS_MEDIAWIKI,
 					wfRandomString( 24 ) . '/' . $testLanguages[$polyglotLang]
 				);
 				$translation = "plop in $testLanguages[$polyglotLang]";
-				$stashedTranslation = new StashedTranslation( $polyglotUser, $title, $translation );
+				$stashedTranslation = new StashedTranslation( $oldPolyglotUser, $title, $translation );
 				$this->stash->addTranslation( $stashedTranslation );
 			}
 		} elseif ( $request->getVal( 'integrationtesting' ) === 'empty' ) {
