@@ -17,7 +17,8 @@ class TranslatablePageInsertablesSuggester extends MediaWikiInsertablesSuggester
 		// allowed in a variable name, but here we are stricter to avoid too many
 		// false positives.
 		$matches = array();
-		preg_match_all( '/\$([a-z0-9])+/', $text, $matches, PREG_SET_ORDER );
+		preg_match_all( '/\$(([a-z]+[0-9-]+[a-z0-9-]*)|([0-9]+[a-z-]+[a-z0-9-]*)'
+						. '|([0-9]{6,})|([a-z]+))/', $text, $matches, PREG_SET_ORDER );
 		$new = array_map( function ( $match ) {
 			// Numerical ones are already handled by parent
 			if ( ctype_digit( $match[1] ) ) {
