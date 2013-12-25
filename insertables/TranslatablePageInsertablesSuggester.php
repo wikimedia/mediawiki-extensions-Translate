@@ -13,11 +13,21 @@ class TranslatablePageInsertablesSuggester extends MediaWikiInsertablesSuggester
 	public function getInsertables( $text ) {
 		$insertables = parent::getInsertables( $text );
 
-		// Translatable pages allow naming the variables. Basically anything is
-		// allowed in a variable name, but here we are stricter to avoid too many
-		// false positives.
+		// Translatable pages allow naming the variables. What the regex matches is:
+		// * Variable names starting with letter and then containing numbers or
+		//   hyphen (e.g. $a1, $mw-example)
+		// * Variable names starting with number and then containing letters or
+		//   hyphen (e.g. $1a, $123ex-ample)
+		// * Variable names containing only numbers, but not shorter than 6
+		//   characters (e.g. $123456)
+		// * Variable names containing only letters (e.g. $example)
 		$matches = array();
-		preg_match_all( '/\$([a-z0-9])+/', $text, $matches, PREG_SET_ORDER );
+		preg_match_all(
+			'/\$(([a-z]+[0-9-]+[a-z0-9-]*)|([0-9]+[a-z-]+[a-z0-9-]*)|([0-9]{6,})|([a-z]+))/',
+			$text,
+			$matches,
+			PREG_SET_ORDER
+		);
 		$new = array_map( function ( $match ) {
 			// Numerical ones are already handled by parent
 			if ( ctype_digit( $match[1] ) ) {
