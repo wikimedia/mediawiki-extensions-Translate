@@ -1,7 +1,8 @@
 {
     "@metadata": {
         "authors": [
-            "Rachmat.Wahidi"
+            "Rachmat.Wahidi",
+            "Ayie7791"
         ]
     },
     "translate": "Teujeumah",
@@ -16,23 +17,23 @@
     "translate-taction-disabled": "Buet nyoe geupeumaté ban wiki nyoe.",
     "translate-page-no-such-language": "Bahsa nyang neupiléh hana sah.",
     "translate-page-no-such-group": "Kawan nyang neupiléh hana sah.",
-    "translate-page-disabled": "Teujeumah kawan peusan nyoe u bahsa nyoe ka geupeumaté. Dalèh:\n\n<em>$1</em>",
+    "translate-page-disabled": "Teujeumah kawan peusan nyoe u bahsa nyoe ka geupeumaté. Dalèh:\n\n\u003Cem\u003E$1\u003C/em\u003E",
     "translate-language-disabled": "Teujeumah u bahsa nyoe ka geupeumaté.",
     "translate-page-settings-legend": "Atô",
     "translate-page-group": "Kawan",
     "translate-page-language": "Bahsa",
-    "translate-page-limit": "Bataih",
-    "translate-page-limit-option": "$1 {{PLURAL:$1|peusan|peusan}} lam saboh laman",
+    "translate-page-limit": "Ceuë",
+    "translate-page-limit-option": "$1 {{PLURAL:$1|peusan|peusan}} saboh laman",
     "translate-submit": "Cok",
     "translate-page-navigation-legend": "Keumudoë",
-    "translate-page-showing": "Peudeuh peusan-peusan nibak $1 u $2 nibak $3.",
-    "translate-page-showing-all": "Peudeuh $1 {{PLURAL:$1|peusan|peusan}}.",
+    "translate-page-showing": "Peleumah bandum peusan nibak $1 u $2 nibak $3.",
+    "translate-page-showing-all": "Peuleumah $1 {{PLURAL:$1|peusan|peusan}}.",
     "translate-page-showing-none": "Hana peusan nyang jeuet tapeudeuh.",
     "translate-next": "Laman u keue",
     "translate-prev": "Laman u likôt",
     "translate-page-description-legend": "Hareutoe bhah kawan nyoe",
     "translate-page-edit": "andam",
-    "translate-ext-url": "<hr />Alamat wèb: $1",
+    "translate-ext-url": "\u003Chr /\u003EAlamat wèb: $1",
     "translate-optional": "(teunamah)",
     "translate-ignored": "(hana peuhiröe)",
     "translate-edit-title": "Andam \"$1\"",
