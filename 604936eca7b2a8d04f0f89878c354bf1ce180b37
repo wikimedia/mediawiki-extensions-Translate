@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_d2b40ee7",
+        "filename": "insertables/MediaWikiInsertablesSuggester.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-12-26T10:14:27Z",
+      "side": 1,
+      "message": "This is not ok, MediaWiki messages variables are mostly numbered [1] and they\u0027re never so long.\n\n[1] At least for now. ;) \u003chttp://laxstrom.name/blag/2013/11/20/review-of-gettext-pot-file-format/comment-page-1/#comment-2970\u003e",
+      "revId": "604936eca7b2a8d04f0f89878c354bf1ce180b37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_b2998a82",
+        "filename": "insertables/TranslatablePageInsertablesSuggester.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-12-26T10:14:27Z",
+      "side": 1,
+      "message": "For such a regex you should also expand the code comment above it. For instance, I don\u0027t understand: 1) why you don\u0027t make the first two patterns into one, when they seem to just exclude variables beginning with a hyphen; 2) alternatively, why you don\u0027t merge the 4th into the 1st making [0-9-]+ into [0-9-]*; 3) if you already match all needed numbers here, disable the parent matching?",
+      "revId": "604936eca7b2a8d04f0f89878c354bf1ce180b37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_f2af1290",
+        "filename": "insertables/TranslatablePageInsertablesSuggester.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-12-26T10:14:27Z",
+      "side": 1,
+      "message": "Maybe we should do something custom?",
+      "revId": "604936eca7b2a8d04f0f89878c354bf1ce180b37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
