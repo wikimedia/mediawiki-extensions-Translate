@@ -33,6 +33,24 @@
       "revId": "7f5690f47bdf374ac127e835f23d06320d22c969",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_e605137e",
+        "filename": "insertables/TranslatablePageInsertablesSuggester.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1239
+      },
+      "writtenOn": "2013-12-26T18:37:16Z",
+      "side": 1,
+      "message": "The \"6-or-more-numbers\" thing created that mess. I thought it will be ok, but since MW uses it for translating, and I think there\u0027s no simple way to match the number-only translate variable names, it would be much simpler. I\u0027ll fix it then in the next patch set.",
+      "parentUuid": "eeebdf60_068d9736",
+      "revId": "7f5690f47bdf374ac127e835f23d06320d22c969",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
