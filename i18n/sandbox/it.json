@@ -44,5 +44,5 @@
     "log-name-translatorsandbox": "Sandbox di traduzione",
     "log-description-translatorsandbox": "Un registro delle azioni sugli utenti della sandbox di traduzione",
     "logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|ha promosso}} $3 a {{GENDER:$4|traduttore|traduttrice|traduttore/trice}}",
-    "logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|ha rifiutato}} la richiesta di \"$3\" di diventare un traduttore"
+    "logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|ha rifiutato}} la richiesta di \"$3\" di diventare traduttore/trice"
 }

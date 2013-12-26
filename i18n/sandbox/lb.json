@@ -23,6 +23,7 @@
     "tsb-translations-source": "Quell",
     "tsb-translations-user": "Benotzer Iwwersetzungen",
     "tsb-translations-current": "Iwwersetzungen déi et gëtt",
+    "tsb-delete-userpage-summary": "Benotzersäit vun engem Sandbox-Benotzer läschen",
     "translationstash": "Wëllkomm",
     "translate-translationstash-welcome": "Wëllkomm {{GENDER:$1|$1}}, Dir sidd en neien Iwwersetzer",
     "translate-translationstash-initialtranslation": "Är éischt Iwwersetzung",

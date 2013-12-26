@@ -154,6 +154,7 @@
     "tux-empty-list-other-link": "Гайта берриге хаамаш",
     "tux-editor-close-tooltip": "ДӀачӀагӀа",
     "tux-editor-collapse-tooltip": "Къайлаяккха",
+    "tux-editor-message-tools-history": "Истори",
     "translate-search-more-languages-info": "кхин $1 {{PLURAL:$1|мотт|меттанаш|меттанаш}}",
     "translate-search-more-groups-info": "кхин $1 {{PLURAL:$1|тоба}}"
 }
