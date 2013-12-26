@@ -68,7 +68,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 					$userToDelete = User::newFromName( $name, false );
 					TranslateSandbox::deleteUser( $userToDelete, 'force' );
 
-					$user = TranslateSandbox::addUser( $name, "$prefix$i@pupun.kolo", 'porkkana' );
+					$user = TranslateSandbox::addUser( $name, "$prefix$i@example.com", 'porkkana' );
 					$user->setOption(
 						'translate-sandbox',
 						FormatJson::encode( array(
@@ -102,7 +102,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 
 			// Another account for testing a translator to multiple languages
 			TranslateSandbox::deleteUser( User::newFromName( 'Kissa', false ), 'force' );
-			$polyglotUser = TranslateSandbox::addUser( 'Kissa', 'kissa@pupun.kolo', 'porkkana' );
+			$polyglotUser = TranslateSandbox::addUser( 'Kissa', 'kissa@example.com', 'porkkana' );
 			$polyglotUser->setOption(
 				'translate-sandbox',
 				FormatJson::encode( array(
