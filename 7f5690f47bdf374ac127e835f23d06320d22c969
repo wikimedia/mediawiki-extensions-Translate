@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_a6b4abe5",
+        "filename": "insertables/MediaWikiInsertablesSuggester.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-26T18:27:03Z",
+      "side": 1,
+      "message": "This change means that the number needs be at least 6 digits long, like $135000.\n\nGiven that in MediaWiki variables are numbered from 1 onward to something like 15 being the maximum currently in use, this wont match any MediaWiki variables.\n\nIt\u0027s (almost) never okay to break one thing to fix another .",
+      "revId": "7f5690f47bdf374ac127e835f23d06320d22c969",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_068d9736",
+        "filename": "insertables/TranslatablePageInsertablesSuggester.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-26T18:27:03Z",
+      "side": 1,
+      "message": "Is there a reason adding \u0027-\u0027 to the original []-block would not be good enough?",
+      "revId": "7f5690f47bdf374ac127e835f23d06320d22c969",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
