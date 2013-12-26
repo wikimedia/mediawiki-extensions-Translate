@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "eeebdf60_72a302a9",
+        "filename": "insertables/MediaWikiInsertablesSuggester.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1239
+      },
+      "writtenOn": "2013-12-26T10:23:27Z",
+      "side": 1,
+      "message": "We have to choose then: fixing bug 58445 or matching messages variables... :)",
+      "parentUuid": "eeebdf60_d2b40ee7",
+      "revId": "604936eca7b2a8d04f0f89878c354bf1ce180b37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eeebdf60_b2998a82",
         "filename": "insertables/TranslatablePageInsertablesSuggester.php",
         "patchSetId": 2
