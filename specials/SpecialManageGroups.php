@@ -19,7 +19,7 @@
  * @ingroup SpecialPage TranslateSpecialPage
  * Rewritten in 2012-04-23
  */
-class SpecialManageGroups extends SpecialPage {
+class SpecialManageGroups extends TranslateSpecialPage {
 	const CHANGEFILE = 'translate_messagechanges.cdb';
 	const RIGHT = 'translate-manage';
 

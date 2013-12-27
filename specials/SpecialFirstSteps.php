@@ -16,9 +16,13 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialFirstSteps extends UnlistedSpecialPage {
+class SpecialFirstSteps extends TranslateSpecialPage {
 	public function __construct() {
 		parent::__construct( 'FirstSteps' );
+	}
+
+	public function isListed() {
+		return false;
 	}
 
 	public function execute( $params ) {
