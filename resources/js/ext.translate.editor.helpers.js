@@ -240,9 +240,7 @@
 							.text( $.uls.data.getAutonym( translation.language ) )
 					);
 
-				$otherLanguage.on( 'click',
-					translateEditor.suggestionAdder( translation.value, $translationTextarea )
-				);
+				translateEditor.suggestionAdder( $otherLanguage, translation.value );
 
 				translateEditor.$editor.find( '.in-other-languages-title' )
 					.removeClass( 'hide' )
@@ -255,7 +253,7 @@
 		 * @param {array} suggestions A ttmserver array as returned by API.
 		 */
 		showTranslationMemory: function ( suggestions ) {
-			var $heading, $tmSuggestions, $translationTextarea,
+			var $heading, $tmSuggestions,
 				translateEditor = this;
 
 			if ( !suggestions.length ) {
@@ -267,8 +265,6 @@
 
 			$heading = this.$editor.find( '.tm-suggestions-title' );
 			$heading.after( $tmSuggestions );
-
-			$translationTextarea = this.$editor.find( '.tux-textarea-translation' );
 
 			$.each( suggestions, function ( index, translation ) {
 				var $translation,
@@ -321,9 +317,7 @@
 							)
 					);
 
-				$translation.on( 'click',
-					translateEditor.suggestionAdder( translation.target, $translationTextarea )
-				);
+				translateEditor.suggestionAdder( $translation, translation.target );
 
 				$tmSuggestions.append( $translation );
 			} );
@@ -339,7 +333,7 @@
 		 * @param {array} suggestions
 		 */
 		showMachineTranslations: function ( suggestions ) {
-			var $mtSuggestions, $translationTextarea,
+			var $mtSuggestions,
 				translateEditor = this;
 
 			if ( !suggestions.length ) {
@@ -355,7 +349,6 @@
 			this.$editor.find( '.tm-suggestions-title' )
 				.removeClass( 'hide' )
 				.after( $mtSuggestions );
-			$translationTextarea = this.$editor.find( '.tux-textarea-translation' );
 
 			$.each( suggestions, function ( index, translation ) {
 				var $translation;
@@ -371,25 +364,24 @@
 							.text( translation.service )
 					);
 
-				$translation.on( 'click',
-					translateEditor.suggestionAdder( translation.target, $translationTextarea )
-				);
+				translateEditor.suggestionAdder( $translation, translation.target );
 
 				$mtSuggestions.append( $translation );
 			} );
 		},
 
 		/**
-		 * Returns a function that can be bind to click event. The function
-		 * allows inserting suggestion to $target while also allowing text
-		 * selection without triggering insertion.
+		 * Makes the $source element clickable and clicking it will replace the
+		 * transltion textarea with the given suggestion.
 		 *
+		 * @param {jQuery} $source
 		 * @param {String} suggestion Text to add
-		 * @param {jQuery} $target Target element (textarea or input)
-		 * @return {Function}
 		 */
-		suggestionAdder: function ( suggestion, $target ) {
-			return function () {
+		suggestionAdder: function ( $source, suggestion ) {
+			var inserter,
+				$target = this.$editor.find( '.tux-textarea-translation' );
+
+			inserter = function () {
 				var selection;
 				if ( window.getSelection ) {
 					selection = window.getSelection().toString();
@@ -401,6 +393,9 @@
 					$target.val( suggestion ).focus().trigger( 'input' );
 				}
 			};
+
+			$source.on( 'click', inserter );
+			$source.addClass( 'shortcut-activated' );
 		},
 
 		/**
@@ -430,7 +425,7 @@
 
 			for ( i = 0; i < count; i++ ) {
 				$( '<button>' )
-					.addClass( 'insertable' )
+					.addClass( 'insertable shortcut-activated' )
 					.text( insertables[i].display )
 					.data( 'iid', i )
 					.appendTo( $buttonArea );

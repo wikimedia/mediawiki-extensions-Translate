@@ -392,3 +392,13 @@
 .last-message .tux-editor-skip-button {
 	display: none;
 }
+
+.shortcut-popup {
+	position: absolute;
+	width: 16px;
+	height: 17px;
+	line-height: 17px;
+	overflow: hidden;
+	font-size: 11px;
+	text-align: center;
+}

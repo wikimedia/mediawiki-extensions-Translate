@@ -37,6 +37,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 	'scripts' => array(
 		'resources/js/ext.translate.editor.js',
 		'resources/js/ext.translate.editor.helpers.js',
+		'resources/js/ext.translate.editor.shortcuts.js',
 		'resources/js/ext.translate.proofread.js',
 		'resources/js/ext.translate.pagemode.js',
 	),
