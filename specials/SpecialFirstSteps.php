@@ -236,8 +236,8 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			$babeltext = trim( $babeltext, '|' );
 			$babeltext .= "}}\n";
 
-			$article = new Article( $userpage, 0 );
-			$status = $article->doEdit(
+			$wikiPage = WikiPage::factory( $userpage );
+			$status = $wikiPage->doEdit(
 				$babeltext . $request->getText( $textareaId ),
 				$this->getTitle()
 			);
