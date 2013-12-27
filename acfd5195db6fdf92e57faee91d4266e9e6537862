@@ -88,6 +88,24 @@
       "revId": "acfd5195db6fdf92e57faee91d4266e9e6537862",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_f575b793",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-12-27T11:59:17Z",
+      "side": 1,
+      "message": "Siebrand, that doesn\u0027t address the approach used by core. To start with, the quotation in the answer is about From, not Reply-To.",
+      "parentUuid": "eeebdf60_950f8b33",
+      "revId": "acfd5195db6fdf92e57faee91d4266e9e6537862",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
