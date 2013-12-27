@@ -79,7 +79,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 		$out = Html::openElement( 'div' );
 		$out .= Html::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
-		$out .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
+		$out .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$out .= Html::hidden( 'x', 'D' ); // To detect submission
 		$out .= Html::openElement( 'fieldset' );
 		$out .= Html::element( 'legend', array(), $this->msg( 'translate-mgs-fieldset' )->text() );

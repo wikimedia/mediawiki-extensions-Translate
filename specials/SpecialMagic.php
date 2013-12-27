@@ -81,7 +81,7 @@ class SpecialMagic extends SpecialPage {
 					array( 'name' => 'export' )
 				) .
 				'</td></tr></table>' .
-				Html::hidden( 'title', $this->getTitle()->getPrefixedText() )
+				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() )
 		);
 
 		return $form;

@@ -87,7 +87,7 @@ class SpecialImportTranslations extends SpecialPage {
 			return;
 		}
 
-		$importer = new MessageWebImporter( $this->getTitle(), $group, $code );
+		$importer = new MessageWebImporter( $this->getPageTitle(), $group, $code );
 		$alldone = $importer->execute( $messages );
 
 		if ( $alldone ) {
@@ -134,13 +134,13 @@ class SpecialImportTranslations extends SpecialPage {
 		 */
 		$this->getOutput()->addHTML(
 			Xml::openElement( 'form', array(
-				'action' => $this->getTitle()->getLocalUrl(),
+				'action' => $this->getPageTitle()->getLocalUrl(),
 				'method' => 'post',
 				'enctype' => 'multipart/form-data',
 				'id' => 'mw-translate-import',
 			) ) .
 				Html::hidden( 'token', $this->getUser()->getEditToken() ) .
-				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Xml::inputLabel(
 					$this->msg( 'translate-import-from-local' )->text(),
 					'upload-local', // name

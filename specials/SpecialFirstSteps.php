@@ -65,7 +65,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 
 		// Go straight to create account (or login) page
 		$create = SpecialPage::getTitleFor( 'Userlogin' );
-		$returnto = $this->getTitle()->getPrefixedText();
+		$returnto = $this->getPageTitle()->getPrefixedText();
 		$params = array( 'returnto' => $returnto, 'type' => 'signup' );
 		$out->redirect( $create->getLocalUrl( $params ) );
 
@@ -106,7 +106,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			}
 			$user->saveSettings();
 			// Reload the page if language changed, just in case and this is the easieast way
-			$out->redirect( $this->getTitle()->getLocalUrl() );
+			$out->redirect( $this->getPageTitle()->getLocalUrl() );
 		}
 
 		if ( $user->getOption( 'translate-firststeps' ) === '1' ) {
@@ -120,7 +120,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$output = Html::openElement( 'form', array( 'method' => 'post' ) );
 		$output .= Html::hidden( 'step', 'settings' );
 		$output .= Html::hidden( 'token', $user->getEditToken() );
-		$output .= Html::hidden( 'title', $this->getTitle() );
+		$output .= Html::hidden( 'title', $this->getPageTitle() );
 		$output .= Html::openElement( 'table' );
 
 		$name = $id = 'primary-language';
@@ -239,7 +239,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			$article = new Article( $userpage, 0 );
 			$status = $article->doEdit(
 				$babeltext . $request->getText( $textareaId ),
-				$this->getTitle()
+				$this->getPageTitle()
 			);
 
 			if ( $status->isOK() ) {
@@ -272,7 +272,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 			. Html::openElement( 'form', array( 'method' => 'post' ) )
 			. Html::hidden( 'step', 'userpage' )
 			. Html::hidden( 'token', $this->getUser()->getEditToken() )
-			. Html::hidden( 'title', $this->getTitle() );
+			. Html::hidden( 'title', $this->getPageTitle() );
 
 		$code = $this->getLanguage()->getCode();
 		$labelOption = $this->msg( 'translate-fs-selectlanguage' )->text();
@@ -390,7 +390,7 @@ class SpecialFirstSteps extends UnlistedSpecialPage {
 		$output = Html::openElement( 'form', array( 'method' => 'post' ) );
 		$output .= Html::hidden( 'step', 'permissions' );
 		$output .= Html::hidden( 'token', $user->getEditToken() );
-		$output .= Html::hidden( 'title', $this->getTitle() );
+		$output .= Html::hidden( 'title', $this->getPageTitle() );
 		$name = $id = 'primary-language';
 
 		$code = $this->getLanguage()->getCode();

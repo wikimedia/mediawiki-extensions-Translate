@@ -104,7 +104,7 @@ class SpecialManageGroups extends SpecialPage {
 		$out->addHtml(
 			'' .
 				Html::openElement( 'form', array( 'method' => 'post' ) ) .
-				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Html::hidden( 'token', $this->getUser()->getEditToken() ) .
 				$this->getLegend()
 		);
@@ -333,7 +333,7 @@ class SpecialManageGroups extends SpecialPage {
 			if ( $spClass === null ) {
 				continue; // Page explicitly disabled
 			}
-			$spTitle = $spClass->getTitle();
+			$spTitle = $spClass->getPageTitle();
 
 			$tabs[$section][strtolower( $spName )] = array(
 				'text' => $spClass->getDescription(),

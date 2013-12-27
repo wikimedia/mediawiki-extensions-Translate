@@ -230,7 +230,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$readonly = array( 'readonly' => 'readonly' );
 		$formParams = array(
 			'method' => 'post',
-			'action' => $this->getTitle( $this->oldText )->getLocalURL()
+			'action' => $this->getPageTitle( $this->oldText )->getLocalURL()
 		);
 
 		$form = array();
@@ -352,7 +352,7 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 		$subaction = array( 'name' => 'subaction' );
 		$formParams = array(
 			'method' => 'post',
-			'action' => $this->getTitle( $this->oldText )->getLocalURL()
+			'action' => $this->getPageTitle( $this->oldText )->getLocalURL()
 		);
 
 		$form = array();

@@ -44,7 +44,7 @@ class SpecialPagesTest extends MediaWikiTestCase {
 	 */
 	public function testSpecialPage( $name ) {
 		$page = SpecialPageFactory::getPage( $name );
-		$title = $page->getTitle();
+		$title = $page->getPageTitle();
 
 		$context = RequestContext::newExtraneousContext( $title );
 		$page->setContext( $context );

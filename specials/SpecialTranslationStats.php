@@ -148,7 +148,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		$out->addHTML(
 			Xml::fieldset( $this->msg( 'translate-statsf-options' )->text() ) .
 				Html::openElement( 'form', array( 'action' => $wgScript ) ) .
-				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Html::hidden( 'preview', 1 ) .
 				'<table>'
 		);
@@ -197,7 +197,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 			$spiParams = '/' . $spiParams;
 		}
 
-		$titleText = $this->getTitle()->getPrefixedText();
+		$titleText = $this->getPageTitle()->getPrefixedText();
 
 		$out->addHTML(
 			Html::element( 'hr' ) .
@@ -377,7 +377,7 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 	 * @return string Html.
 	 */
 	protected function image( FormOptions $opts ) {
-		$title = $this->getTitle();
+		$title = $this->getPageTitle();
 		$cgiparams = wfArrayToCgi( array( 'graphit' => true ), $opts->getAllValues() );
 		$href = $title->getLocalUrl( $cgiparams );
 

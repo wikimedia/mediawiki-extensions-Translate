@@ -166,7 +166,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$subaction = array( 'name' => 'subaction' );
 		$formParams = array(
 			'method' => 'post',
-			'action' => $this->getTitle( $this->text )->getLocalURL()
+			'action' => $this->getPageTitle( $this->text )->getLocalURL()
 		);
 
 		$form = array();
@@ -269,7 +269,7 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 		$subaction = array( 'name' => 'subaction' );
 		$formParams = array(
 			'method' => 'post',
-			'action' => $this->getTitle( $this->text )->getLocalURL()
+			'action' => $this->getPageTitle( $this->text )->getLocalURL()
 		);
 
 		$form = array();

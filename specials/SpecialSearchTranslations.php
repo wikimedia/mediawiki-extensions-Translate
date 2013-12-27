@@ -181,7 +181,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			$newParams = array( 'offset' => $offset + $this->limit ) + $params;
 			$attribs = array(
 				'class' => 'pager-next',
-				'href' => $this->getTitle()->getLocalUrl( $newParams ),
+				'href' => $this->getPageTitle()->getLocalUrl( $newParams ),
 			);
 			$next = Html::element( 'a', $attribs, $this->msg( 'tux-sst-next' )->text() );
 		}
@@ -189,7 +189,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			$newParams = array( 'offset' => max( 0, $offset - $this->limit ) ) + $params;
 			$attribs = array(
 				'class' => 'pager-prev',
-				'href' => $this->getTitle()->getLocalUrl( $newParams ),
+				'href' => $this->getPageTitle()->getLocalUrl( $newParams ),
 			);
 			$prev = Html::element( 'a', $attribs, $this->msg( 'tux-sst-prev' )->text() );
 		}
@@ -262,7 +262,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				$nondefaults['language'] = $key;
 			}
 
-			$url = $this->getTitle()->getLocalUrl( $nondefaults );
+			$url = $this->getPageTitle()->getLocalUrl( $nondefaults );
 			$value = $this->getLanguage()->formatNum( $value );
 
 			$output[$key] = array(
@@ -369,7 +369,7 @@ HTML
 			'class' => 'searchinputbox',
 		);
 
-		$title = Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
+		$title = Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$input = Xml::input( 'query', false, $query, $attribs );
 		$submit = Xml::submitButton( $this->msg( 'tux-sst-search' ), array( 'class' => 'button' ) );
 
