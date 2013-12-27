@@ -10,7 +10,7 @@
  * @license GPL-2.0+
  */
 
-class SpecialAggregateGroups extends SpecialPage {
+class SpecialAggregateGroups extends TranslateSpecialPage {
 	function __construct() {
 		parent::__construct( 'AggregateGroups', 'translate-manage' );
 	}

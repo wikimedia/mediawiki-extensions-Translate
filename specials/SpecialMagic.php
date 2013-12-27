@@ -15,7 +15,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialMagic extends SpecialPage {
+class SpecialMagic extends TranslateSpecialPage {
 	const MODULE_MAGIC = 'words';
 	const MODULE_SPECIAL = 'special';
 	const MODULE_NAMESPACE = 'namespace';

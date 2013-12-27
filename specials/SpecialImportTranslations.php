@@ -14,7 +14,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialImportTranslations extends SpecialPage {
+class SpecialImportTranslations extends TranslateSpecialPage {
 	/**
 	 * Set up and fill some dependencies.
 	 */

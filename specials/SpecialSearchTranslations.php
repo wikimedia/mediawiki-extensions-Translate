@@ -13,7 +13,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialSearchTranslations extends SpecialPage {
+class SpecialSearchTranslations extends TranslateSpecialPage {
 	/** @var FormOptions */
 	protected $opts;
 

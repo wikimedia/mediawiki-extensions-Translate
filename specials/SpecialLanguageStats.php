@@ -20,7 +20,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
-class SpecialLanguageStats extends IncludableSpecialPage {
+class SpecialLanguageStats extends TranslateSpecialPage {
 	/**
 	 * @var StatsTable
 	 */
@@ -97,6 +97,10 @@ class SpecialLanguageStats extends IncludableSpecialPage {
 
 		$this->target = $this->getLanguage()->getCode();
 		$this->totals = MessageGroupStats::getEmptyStats();
+	}
+
+	public function isIncludable() {
+		return true;
 	}
 
 	function execute( $par ) {

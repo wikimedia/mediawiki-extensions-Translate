@@ -15,7 +15,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialTranslate extends SpecialPage {
+class SpecialTranslate extends TranslateSpecialPage {
 	/**
 	 * @var TranslateTask
 	 */
