@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_35e8bf0a",
+        "filename": "specials/SpecialManageTranslatorSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-27T12:22:39Z",
+      "side": 1,
+      "message": "ehr?",
+      "revId": "2fc7f5c2a75d721f39a36d6ca651ff1eea5cb060",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
