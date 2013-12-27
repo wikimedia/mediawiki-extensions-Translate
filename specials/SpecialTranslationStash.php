@@ -13,7 +13,7 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslationStash extends SpecialPage {
-	///< @param TranslationStashStorage
+	/** @var TranslationStashStorage */
 	protected $stash;
 
 	function __construct() {

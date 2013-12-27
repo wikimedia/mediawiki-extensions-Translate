@@ -14,7 +14,7 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialManageTranslatorSandbox extends SpecialPage {
-	///< @param TranslationStashStorage
+	/** @var TranslationStashStorage */
 	protected $stash;
 
 	function __construct() {
@@ -183,6 +183,7 @@ HTML;
 		$requests = array();
 		$users = TranslateSandbox::getUsers();
 
+		/** @var User $user */
 		foreach ( $users as $user ) {
 			$reminders = $user->getOption( 'translate-sandbox-reminders' );
 			$reminders = $reminders ? explode( '|', $reminders ) : array();

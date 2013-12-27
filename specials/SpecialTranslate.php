@@ -16,14 +16,10 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslate extends SpecialPage {
-	/**
-	 * @var TranslateTask
-	 */
+	/** @var TranslateTask */
 	protected $task = null;
 
-	/**
-	 * @var MessageGroup
-	 */
+	/** @var MessageGroup */
 	protected $group = null;
 
 	protected $defaults = null;

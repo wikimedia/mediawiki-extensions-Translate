@@ -425,7 +425,7 @@ class MessageGroups {
 	 *
 	 * @param string[] $ids Group IDs
 	 * @param bool $skipMeta Skip aggregate message groups
-	 * @return array
+	 * @return MessageGroup[]
 	 * @since 2012-02-13
 	 */
 	public static function getGroupsById( array $ids, $skipMeta = false ) {
