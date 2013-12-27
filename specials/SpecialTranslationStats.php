@@ -19,11 +19,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
-class SpecialTranslationStats extends IncludableSpecialPage {
-	public function __construct() {
-		parent::__construct( 'TranslationStats' );
-	}
-
+class SpecialTranslationStats extends TranslateSpecialPage {
 	/// @since 2012-03-05
 	protected static $graphs = array(
 		'edits' => 'TranslatePerLanguageStats',
@@ -32,6 +28,14 @@ class SpecialTranslationStats extends IncludableSpecialPage {
 		'reviews' => 'ReviewPerLanguageStats',
 		'reviewers' => 'ReviewPerLanguageStats',
 	);
+
+	public function __construct() {
+		parent::__construct( 'TranslationStats' );
+	}
+
+	public function isIncludable() {
+		return true;
+	}
 
 	/**
 	 * @since 2012-03-05

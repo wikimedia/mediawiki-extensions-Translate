@@ -14,7 +14,7 @@
  *
  * @ingroup SpecialPage PageTranslation
  */
-class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
+class SpecialPageTranslationMovePage extends TranslateSpecialPage {
 	// Basic form parameters both as text and as titles
 	protected $newText, $oldText;
 
@@ -62,6 +62,10 @@ class SpecialPageTranslationMovePage extends UnlistedSpecialPage {
 	public function __construct( $old ) {
 		parent::__construct( 'Movepage' );
 		$this->old = $old;
+	}
+
+	public function isListed() {
+		return false;
 	}
 
 	/**

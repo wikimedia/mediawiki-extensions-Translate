@@ -19,7 +19,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
-class SpecialSupportedLanguages extends SpecialPage {
+class SpecialSupportedLanguages extends TranslateSpecialPage {
 	/// Whether to skip and regenerate caches
 	protected $purge = false;
 

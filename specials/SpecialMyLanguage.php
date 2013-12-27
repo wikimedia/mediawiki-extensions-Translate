@@ -17,9 +17,13 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialMyLanguage extends UnlistedSpecialPage {
+class SpecialMyLanguage extends TranslateSpecialPage {
 	public function __construct() {
 		parent::__construct( 'MyLanguage' );
+	}
+
+	public function isListed() {
+		return false;
 	}
 
 	/// Only takes arguments from $par

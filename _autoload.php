@@ -35,6 +35,7 @@ $wgAutoloadClasses['TranslateUtils'] = "$dir/TranslateUtils.php";
  * There are few more special pages in page translation section.
  * @{
  */
+$wgAutoloadClasses['TranslateSpecialPage'] = "$dir/specials/TranslateSpecialPage.php";
 $wgAutoloadClasses['SpecialAggregateGroups'] = "$dir/specials/SpecialAggregateGroups.php";
 $wgAutoloadClasses['SpecialImportTranslations'] = "$dir/specials/SpecialImportTranslations.php";
 $wgAutoloadClasses['SpecialLanguageStats'] = "$dir/specials/SpecialLanguageStats.php";

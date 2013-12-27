@@ -266,6 +266,23 @@ class SpecialTranslations extends SpecialAllpages {
 	}
 
 	/**
+	 * Get a self-referential title object
+	 *
+	 * For backward compatibility for https://gerrit.wikimedia.org/r/#/c/103587.
+	 * Should be removed when the lowest supported version is MediaWiki 1.23.
+	 *
+	 * @param string|bool $subpage
+	 * @return Title|void
+	 */
+	public function getTitle( $subpage = false ) {
+		if ( method_exists( $this, 'getPageTitle' ) ) {
+			return $this->getPageTitle();
+		} else {
+			return self::getTitleFor( $this->mName, $subpage );
+		}
+	}
+
+	/**
 	 * Get code for a page name
 	 *
 	 * @param string $name Page title (f.e. "MediaWiki:Main_page/nl").

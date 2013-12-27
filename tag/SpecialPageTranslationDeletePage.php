@@ -13,7 +13,7 @@
  *
  * @ingroup SpecialPage PageTranslation
  */
-class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
+class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
 	// Basic form parameters both as text and as titles
 	protected $text;
 
@@ -46,6 +46,10 @@ class SpecialPageTranslationDeletePage extends UnlistedSpecialPage {
 
 	public function __construct() {
 		parent::__construct( 'PageTranslationDeletePage' );
+	}
+
+	public function isListed() {
+		return false;
 	}
 
 	public function execute( $par ) {

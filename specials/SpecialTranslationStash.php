@@ -12,7 +12,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialTranslationStash extends SpecialPage {
+class SpecialTranslationStash extends TranslateSpecialPage {
 	/** @var TranslationStashStorage */
 	protected $stash;
 
