@@ -56,11 +56,11 @@ class TranslateRenderJob extends Job {
 		$summary = $this->getSummary();
 		$flags = $this->getFlags();
 
-		$article = new Article( $title, 0 );
+		$page = WikiPage::factory( $title );
 
 		// @todo FuzzyBot hack
 		PageTranslationHooks::$allowTargetEdit = true;
-		$article->doEdit( $text, $summary, $flags, false, $user );
+		$page->doEdit( $text, $summary, $flags, false, $user );
 		PageTranslationHooks::$allowTargetEdit = false;
 
 		return true;

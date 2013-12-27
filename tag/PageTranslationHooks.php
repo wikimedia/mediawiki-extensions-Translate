@@ -162,13 +162,13 @@ class PageTranslationHooks {
 		// Invalidate caches
 		$pages = $page->getTranslationPages();
 		foreach ( $pages as $title ) {
-			$article = new Article( $title, 0 );
-			$article->doPurge();
+			$wikiPage = WikiPage::factory( $title );
+			$wikiPage->doPurge();
 		}
 
 		// And the source page itself too
-		$article = new Article( $page->getTitle(), 0 );
-		$article->doPurge();
+		$wikiPage = WikiPage::factory( $page->getTitle() );
+		$wikiPage->doPurge();
 	}
 
 	/**

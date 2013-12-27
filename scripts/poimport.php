@@ -300,9 +300,9 @@ class WikiWriter {
 			return;
 		}
 
-		$article = new Article( $title, 0 );
+		$page = WikiPage::factory( $title );
 
-		$status = $article->doEdit(
+		$status = $page->doEdit(
 			$text,
 			'Updating translation from gettext import',
 			0,
