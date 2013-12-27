@@ -52,6 +52,24 @@
       "revId": "c55ee63b95befa88fa74317ec8c0308340c766d0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_d022c14f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-12-27T16:56:43Z",
+      "side": 1,
+      "message": "Dunno whose design you\u0027re talking about now, but alt+shift is standard and alt+\u003cnum\u003e were stolen to Firefox itself so they\u0027re surely not standard from their perspective.",
+      "parentUuid": "eeebdf60_10294936",
+      "revId": "c55ee63b95befa88fa74317ec8c0308340c766d0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
