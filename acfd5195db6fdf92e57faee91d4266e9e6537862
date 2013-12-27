@@ -52,6 +52,24 @@
       "revId": "acfd5195db6fdf92e57faee91d4266e9e6537862",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_d5051315",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2013-12-27T11:41:57Z",
+      "side": 1,
+      "message": "Is MediaWiki enotif\u0027s approach a valid one?\nReply-To: reply@not.possible",
+      "parentUuid": "eeebdf60_5a33700a",
+      "revId": "acfd5195db6fdf92e57faee91d4266e9e6537862",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
