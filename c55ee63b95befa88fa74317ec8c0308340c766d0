@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_706bf582",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-27T16:45:19Z",
+      "side": 1,
+      "message": "Alt+shift+\u003cnum\u003e might work by chance, but it definitely not the intended behavior. For example alf+shift+2 doesn\u0027t work for me.\n\nThis also does not mention alt+uparrow and alt+downarrow.",
+      "revId": "c55ee63b95befa88fa74317ec8c0308340c766d0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
