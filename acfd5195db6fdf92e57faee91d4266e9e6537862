@@ -16,6 +16,24 @@
       "revId": "acfd5195db6fdf92e57faee91d4266e9e6537862",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_9a29f89c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-27T11:20:18Z",
+      "side": 1,
+      "message": "http://tools.ietf.org/search/rfc2606 describes example.com as a reserved domain. The previously used email domain could be a valid and used domain name.\n\nAlso, I got 550 bounce emails to the previous domain.",
+      "parentUuid": "eeebdf60_da3f80d2",
+      "revId": "acfd5195db6fdf92e57faee91d4266e9e6537862",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
