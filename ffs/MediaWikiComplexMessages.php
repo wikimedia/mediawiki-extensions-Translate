@@ -410,7 +410,7 @@ abstract class ComplexMessages {
 
 	public function save( $request ) {
 		$title = Title::newFromText( 'MediaWiki:' . $this->getKeyForSave() );
-		$article = new Article( $title );
+		$page = WikiPage::factory( $title );
 
 		$data = "# DO NOT EDIT THIS PAGE DIRECTLY! Use [[Special:AdvancedTranslate]].\n<pre>\n" .
 			$this->formatForSave( $request ) . "\n</pre>";
@@ -419,7 +419,7 @@ abstract class ComplexMessages {
 			'comment',
 			wfMessage( 'translate-magic-cm-updatedusing' )->inContentLanguage()->text()
 		);
-		$status = $article->doEdit( $data, $comment, 0 );
+		$status = $page->doEdit( $data, $comment, 0 );
 
 		if ( $status === false || ( is_object( $status ) && !$status->isOK() ) ) {
 			throw new MWException( wfMessage( 'translate-magic-cm-savefailed' )->text() );

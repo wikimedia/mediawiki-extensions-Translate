@@ -201,8 +201,8 @@ PHP
 			} else {
 				$this->output( "Processing $l...\n" );
 
-				$article = new Article( $title );
-				$data = $article->getContent();
+				$page = WikiPage::factory( $title );
+				$data = $page->getContent();
 
 				// Parse message file.
 				$segments = explode( "\n", $data );
