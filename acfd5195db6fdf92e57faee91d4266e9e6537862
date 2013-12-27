@@ -34,6 +34,24 @@
       "revId": "acfd5195db6fdf92e57faee91d4266e9e6537862",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_5a33700a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2013-12-27T11:26:11Z",
+      "side": 1,
+      "message": "I thought that failing the sending at DNS level would be better than later. I doubt you will get rid of bounces this way.",
+      "parentUuid": "eeebdf60_9a29f89c",
+      "revId": "acfd5195db6fdf92e57faee91d4266e9e6537862",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
