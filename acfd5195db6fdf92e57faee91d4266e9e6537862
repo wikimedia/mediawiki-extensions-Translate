@@ -70,6 +70,24 @@
       "revId": "acfd5195db6fdf92e57faee91d4266e9e6537862",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_950f8b33",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2013-12-27T11:43:40Z",
+      "side": 1,
+      "message": "@nemo: http://stackoverflow.com/questions/9591044/is-there-a-no-reply-email-header",
+      "parentUuid": "eeebdf60_d5051315",
+      "revId": "acfd5195db6fdf92e57faee91d4266e9e6537862",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
