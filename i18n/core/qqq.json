@@ -226,6 +226,7 @@
     "translate-manage-action-fuzzy": "Used in the group management interface. {{doc-screenshot|Manage-4.png|twn}}\n\nfuzzy = mark translations for review",
     "translate-manage-inconsistent": "Parameters:\n* $1 - a string (key name?) e.g. action-changed-XXXX",
     "translate-manage-toolong": "Parameters:\n* $1 - number of seconds, can be used for PLURAL",
+    "translate-manage-import-summary": "Used as edit summary.",
     "translate-manage-submit": "Used in the group management interface.\n{{doc-screenshot|Manage-3.png|twn}}\n{{Identical|Execute}}",
     "translate-manage-intro-other": "[[File:Manage-2.png|150px|right|Group management interface]]\nIntroduction to special page. See screenshot. Parameters:\n* $1 is a language name.",
     "translate-manage-import-ok": "Message given when a translation has been imported on SpeciaL:ImportTranslations. Parameters:\n* $1 is the target page name for the translation.",

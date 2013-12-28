@@ -401,8 +401,8 @@
     "tux-editor-message-tools-history": "历史",
     "tux-editor-message-tools-translations": "所有翻译",
     "tux-editor-loading": "正在载入...",
-    "translate-search-more-languages-info": "还有$1种语言",
+    "translate-search-more-languages-info": "另外$1种{{PLURAL:$1|语言}}",
     "translate-statsbar-tooltip": "$1%已翻译，$2%已复查",
     "translate-statsbar-tooltip-with-fuzzy": "$1%已翻译，$2%已复查，$3%已过时",
-    "translate-search-more-groups-info": "还有$1个信息组"
+    "translate-search-more-groups-info": "另外$1个{{PLURAL:$1|信息组}}"
 }
