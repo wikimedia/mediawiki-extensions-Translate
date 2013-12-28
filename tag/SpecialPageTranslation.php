@@ -128,7 +128,7 @@ class SpecialPageTranslation extends SpecialPage {
 			// We do want to notify the reviewer if the underlying page changes during review
 			$target = $title->getFullUrl( array( 'oldid' => $revision ) );
 			$link = "<span class='plainlinks'>[$target $revision]</span>";
-			$out->addWikiMsg( 'tpt-oldrevision', $title->getPrefixedText(), $link );
+			$out->addWikiMsg( 'tpt-oldrevision', ':' . $title->getPrefixedText(), $link );
 
 			return;
 		}
@@ -171,7 +171,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$link = SpecialPage::getTitleFor( 'Translate' )->getFullUrl(
 			array( 'group' => $page->getMessageGroupId() ) );
 
-		$this->getOutput()->addWikiMsg( 'tpt-saveok', $titleText, $num, $link );
+		$this->getOutput()->addWikiMsg( 'tpt-saveok', ':' . $titleText, $num, $link );
 		// If TranslationNotifications is installed, and the user can notify
 		// translators, add a convenience link.
 		if ( method_exists( 'SpecialNotifyTranslators', 'execute' ) &&
