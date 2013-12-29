@@ -182,6 +182,10 @@ abstract class MessageGroupBase implements MessageGroup {
 		}
 	}
 
+	/**
+	 * @param $code
+	 * @return MessageCollection
+	 */
 	public function initCollection( $code ) {
 		$namespace = $this->getNamespace();
 		$messages = array();

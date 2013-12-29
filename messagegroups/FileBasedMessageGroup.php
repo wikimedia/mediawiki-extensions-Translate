@@ -56,6 +56,11 @@ class FileBasedMessageGroup extends MessageGroupBase {
 		return $data ? $data['MESSAGES'] : array();
 	}
 
+	/**
+	 * @param string $code Language code.
+	 * @return mixed
+	 * @throws MWException
+	 */
 	public function getSourceFilePath( $code ) {
 		if ( $this->isSourceLanguage( $code ) ) {
 			$pattern = $this->getFromConf( 'FILES', 'definitionFile' );
@@ -100,6 +105,11 @@ class FileBasedMessageGroup extends MessageGroupBase {
 		return $this->replaceVariables( $pattern, $code );
 	}
 
+	/**
+	 * @param string $pattern
+	 * @param string $code
+	 * @return array|string
+	 */
 	protected function replaceVariables( $pattern, $code ) {
 		global $IP, $wgTranslateGroupRoot;
 
