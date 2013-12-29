@@ -54,7 +54,7 @@ $wgAutoloadClasses['SpecialTranslationStash'] = "$dir/specials/SpecialTranslatio
 /**@}*/
 
 /**
- * @name   Old-style file format support (FFS)
+ * @name Old style file format support (FFS)
  * @{
  */
 $wgAutoloadClasses['SimpleFormatReader'] = "$dir/ffs/Simple.php";
@@ -70,6 +70,8 @@ $wgAutoloadClasses['WikiFormatWriter'] = "$dir/ffs/Wiki.php";
 $wgAutoloadClasses['CDBMessageIndex'] = "$dir/utils/MessageIndex.php";
 $wgAutoloadClasses['CachedMessageIndex'] = "$dir/utils/MessageIndex.php";
 $wgAutoloadClasses['DatabaseMessageIndex'] = "$dir/utils/MessageIndex.php";
+$wgAutoloadClasses['ExternalMessageSourceStateComparator'] =
+	"$dir/utils/ExternalMessageSourceStateComparator.php";
 $wgAutoloadClasses['FCFontFinder'] = "$dir/utils/Font.php";
 $wgAutoloadClasses['FileCachedMessageIndex'] = "$dir/utils/MessageIndex.php";
 $wgAutoloadClasses['FuzzyBot'] = "$dir/utils/FuzzyBot.php";
