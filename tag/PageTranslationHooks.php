@@ -603,7 +603,7 @@ class PageTranslationHooks {
 				list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 				$result = array(
 					'tpt-target-page',
-					$page->getTitle()->getPrefixedText(),
+					':' . $page->getTitle()->getPrefixedText(),
 					// This url shouldn't get cached
 					wfExpandUrl( $page->getTranslationUrl( $code ) )
 				);
@@ -754,7 +754,7 @@ class PageTranslationHooks {
 		$wrap = '<div class="mw-translate-page-info">$1</div>';
 		$out = RequestContext::getMain()->getOutput();
 
-		$out->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, $titleText, $per ) );
+		$out->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, ':' . $titleText, $per ) );
 		$out->addHTML( '<hr />' );
 	}
 
