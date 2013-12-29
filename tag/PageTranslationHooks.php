@@ -684,7 +684,8 @@ class PageTranslationHooks {
 			$par = array(
 				'group' => $page->getMessageGroupId(),
 				'language' => $context->getLanguage()->getCode(),
-				'task' => 'view'
+				'action' => 'page',
+				'filter' => '',
 			);
 
 			$translate = SpecialPage::getTitleFor( 'Translate' );

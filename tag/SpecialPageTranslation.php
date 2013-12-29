@@ -168,8 +168,11 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 	public function showSuccess( TranslatablePage $page ) {
 		$titleText = $page->getTitle()->getPrefixedText();
 		$num = $this->getLanguage()->formatNum( $page->getParse()->countSections() );
-		$link = SpecialPage::getTitleFor( 'Translate' )->getFullUrl(
-			array( 'group' => $page->getMessageGroupId() ) );
+		$link = SpecialPage::getTitleFor( 'Translate' )->getFullUrl( array(
+			'group' => $page->getMessageGroupId(),
+			'action' => 'page',
+			'filter' => '',
+		) );
 
 		$this->getOutput()->addWikiMsg( 'tpt-saveok', $titleText, $num, $link );
 		// If TranslationNotifications is installed, and the user can notify
