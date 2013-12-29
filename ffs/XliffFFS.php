@@ -36,8 +36,12 @@ class XliffFFS extends SimpleFFS {
 		return array( '.xlf', '.xliff', '.xml' );
 	}
 
+	/**
+	 * @param string $data
+	 * @param string $element
+	 * @return array Parsed data.
+	 */
 	public function readFromVariable( $data, $element = 'target' ) {
-
 		$messages = array();
 		$mangler = $this->group->getMangler();
 
@@ -87,6 +91,11 @@ class XliffFFS extends SimpleFFS {
 		);
 	}
 
+	/**
+	 * @param string $code Language code.
+	 * @return array|bool
+	 * @throws MWException
+	 */
 	public function read( $code ) {
 		if ( !$this->exists( $code ) ) {
 			return false;

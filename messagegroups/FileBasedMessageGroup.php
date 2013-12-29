@@ -47,15 +47,18 @@ class FileBasedMessageGroup extends MessageGroupBase {
 	}
 
 	public function load( $code ) {
-		/**
-		 * @var $ffs FFS
-		 */
+		/** @var $ffs FFS */
 		$ffs = $this->getFFS();
 		$data = $ffs->read( $code );
 
 		return $data ? $data['MESSAGES'] : array();
 	}
 
+	/**
+	 * @param string $code Language code.
+	 * @return string
+	 * @throws MWException
+	 */
 	public function getSourceFilePath( $code ) {
 		if ( $this->isSourceLanguage( $code ) ) {
 			$pattern = $this->getFromConf( 'FILES', 'definitionFile' );
@@ -100,6 +103,11 @@ class FileBasedMessageGroup extends MessageGroupBase {
 		return $this->replaceVariables( $pattern, $code );
 	}
 
+	/**
+	 * @param string $pattern
+	 * @param string $code Language code.
+	 * @return string
+	 */
 	protected function replaceVariables( $pattern, $code ) {
 		global $IP, $wgTranslateGroupRoot;
 
@@ -113,7 +121,7 @@ class FileBasedMessageGroup extends MessageGroupBase {
 	}
 
 	/**
-	 * @param $code
+	 * @param string $code Language code.
 	 * @return string
 	 */
 	public function mapCode( $code ) {

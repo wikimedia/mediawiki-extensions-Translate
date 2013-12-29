@@ -110,6 +110,11 @@ class AggregateMessageGroup extends MessageGroupBase {
 		return $collection;
 	}
 
+	/**
+	 * @param string $key Message key
+	 * @param string $code Language code
+	 * @return null|string
+	 */
 	public function getMessage( $key, $code ) {
 		/* Just hand over the message content retrieval to the primary message
 		 * group directly. This used to iterate over the subgroups looking for

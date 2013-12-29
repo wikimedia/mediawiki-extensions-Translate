@@ -222,8 +222,8 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * Returns of stored translation of message specified by the $key in language
 	 * code $code.
 	 *
-	 * @param $key \string Key of the message.
-	 * @param $code \string Language code.
+	 * @param string $key Message key
+	 * @param string $code Language code
 	 * @return Mixed List of stored translation or \null.
 	 */
 	public function getMessage( $key, $code ) {

@@ -21,6 +21,11 @@ class FlatPhpFFS extends SimpleFFS {
 	//
 	// READ
 	//
+
+	/**
+	 * @param string $data
+	 * @return array Parsed data.
+	 */
 	public function readFromVariable( $data ) {
 		# Authors first
 		$matches = array();

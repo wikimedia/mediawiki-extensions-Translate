@@ -37,6 +37,10 @@ class GettextFFS extends SimpleFFS {
 		$this->offlineMode = $value;
 	}
 
+	/**
+	 * @param string $data
+	 * @return array
+	 */
 	public function readFromVariable( $data ) {
 		# Authors first
 		$matches = array();

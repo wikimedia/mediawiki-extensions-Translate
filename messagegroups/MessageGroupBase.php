@@ -182,6 +182,10 @@ abstract class MessageGroupBase implements MessageGroup {
 		}
 	}
 
+	/**
+	 * @param string $code Language code.
+	 * @return MessageCollection
+	 */
 	public function initCollection( $code ) {
 		$namespace = $this->getNamespace();
 		$messages = array();
@@ -203,6 +207,11 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $collection;
 	}
 
+	/**
+	 * @param string $key Message key
+	 * @param string $code Language code
+	 * @return string|null
+	 */
 	public function getMessage( $key, $code ) {
 		$cache = new MessageGroupCache( $this, $code );
 		if ( $cache->exists() ) {

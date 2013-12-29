@@ -72,6 +72,10 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 		return $sections;
 	}
 
+	/**
+	 * @param string $code Language code.
+	 * @return array|bool
+	 */
 	public function read( $code ) {
 		$filename = $this->group->getSourceFilePath( $code );
 		if ( !file_exists( $filename ) ) {
@@ -104,6 +108,11 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 		return $value;
 	}
 
+	/**
+	 * @param string $data
+	 * @return array Parsed data.
+	 * @throws MWException
+	 */
 	public function readFromVariable( $data ) {
 		$messages = array();
 		eval( $data );
