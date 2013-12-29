@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "eeebdf60_1a3a7f33",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 608
+      },
+      "writtenOn": "2013-12-29T12:00:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eeebdf60_bac3933c",
+      "revId": "7c26b1cfff00bf7e2326933d906ad02b9b9a87b3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eeebdf60_9ac0cf30",
         "filename": "tag/SpecialPageTranslation.php",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "eeebdf60_fa3ebb25",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 608
+      },
+      "writtenOn": "2013-12-29T12:00:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eeebdf60_9ac0cf30",
+      "revId": "7c26b1cfff00bf7e2326933d906ad02b9b9a87b3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eeebdf60_7abd0bad",
         "filename": "tag/SpecialPageTranslation.php",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-12-29T11:29:57Z",
       "side": 1,
       "message": "Incorrect formatting.",
+      "revId": "7c26b1cfff00bf7e2326933d906ad02b9b9a87b3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_da43f7b4",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 608
+      },
+      "writtenOn": "2013-12-29T12:00:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eeebdf60_7abd0bad",
       "revId": "7c26b1cfff00bf7e2326933d906ad02b9b9a87b3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
