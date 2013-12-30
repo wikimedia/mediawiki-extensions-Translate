@@ -335,7 +335,7 @@ TEXT;
 			'icon'           => ' icon           - Include urls to icon of the group',
 			'priority'       => ' priority       - Include priority status like discouraged',
 			'prioritylangs'  =>
-				' prioritylangs  - Include prefered languages. If not set, this returns false',
+				' prioritylangs  - Include preferred languages. If not set, this returns false',
 			'priorityforce'  =>
 				' priorityforce  - Include priority status - is the priority languages ' .
 					'setting forced',

@@ -148,7 +148,7 @@ class ApiTranslationStash extends ApiBase {
 			'metadata' => 'Json object',
 			'token' => "A token previously acquired with $action",
 			'username' => 'Optionally the user whose stash to get. '
-				. 'Only priviledged users can do this',
+				. 'Only privileged users can do this',
 		);
 	}
 
