@@ -18,6 +18,7 @@
     "tsb-reminder-sent-new": "Rappel envoyé",
     "tsb-reminder-failed": "L’envoi du rappel a échoué",
     "tsb-email-promoted-subject": "Vous êtes maintenant un traducteur à {{SITENAME}}",
+    "tsb-email-promoted-body": "Bonjour {{GENDER:$1|$1}},\n\nFélicitations ! J’ai vérifié les traductions test que vous avez effectuées sur {{SITENAME}} et je vous ai donné les droits complets de {{GENDER:$1|traducteur|traductrice}}.\n\nVenez sur {{SITENAME}} pour continuer à traduire dès maintenant et tous les jours :\n$2\n\nBienvenue et merci pour vos contributions !\n\n{{GENDER:$3|$3}},\nl'équipe de {{SITENAME}}",
     "tsb-email-rejected-subject": "Votre demande pour devenir traducteur sur {{SITENAME}} a été rejetée",
     "tsb-request-count": "{{PLURAL:$1|Une demande|$1 demandes}}",
     "tsb-all-languages-button-label": "Toutes les langues",
