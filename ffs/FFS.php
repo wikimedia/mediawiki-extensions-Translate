@@ -35,7 +35,7 @@ interface FFS {
 	 * Will parse messages, authors, and any custom data from the file
 	 * and return it in associative array with keys like \c AUTHORS and
 	 * \c MESSAGES.
-	 * @param $code \string Languge code.
+	 * @param $code \string Language code.
 	 * @return array of string|mixed Parsed data.
 	 */
 	public function read( $code );
