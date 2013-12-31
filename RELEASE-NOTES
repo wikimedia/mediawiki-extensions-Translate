@@ -1,0 +1,23 @@
+== Translate 2013.12 ==
+Released at 2013-12-31.
+
+=== Noteworthy changes ===
+* Translator Sandbox:
+** Translator Sandbox is a feature to simplify the sign-up process for new translators. It can be enabled using "$wgTranslateUseSandbox = true;", but it will only be useful in conjunction with the TwnMainPage, which is not included in MLEB (at least yet).
+** Stash and translator approval pages are now usable.
+** When a user is accepted, a bare-bones user page with a Babel box is created.
+
+* TUX editor:
+** Bug 53748: Message group related calls were made two order of magnitudes faster, making Special:Translate's group selector, workflow state selector etc. fast enough even on wikis with hundreds or thousands groups.
+** Add useful shortcuts to TUX editor. All buttons to insert/replace text (insertables and then translation aids in order; "discard changes" is skipped) are numbered from 1 up and can be accessed with both alt+<num> and arrow up and down.
+** Update the statusbar at the bottom of the TUX message tables when saving or proofreading.
+
+* Added support to MediaWiki localisation format from PHP files to JSON files. This is part of the Localization Format RFC ( https://www.mediawiki.org/wiki/Requests_for_comment/Localisation_format ).
+** Add support for JSON in mediawiki-defines.txt, allowing the handling of MediaWiki extension that us the new format. Documentation about the updates in MessageGroup configuration can be found at: https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration/MediaWiki
+** Fixed JsonFFS for properly importing and exporting Authors.
+** targetPattern in group configuration is now optional.
+** Migrate the Translate extension itself to JSON based i18n files from PHP files. This change is transparent to all users of extension.
+* Support xliff 1.1 files in addition to xliff 1.2 as well, but without validation.
+
+=== Breaking changes ===
+Special:FirstSteps has been removed from Translate. If you want the feature, you'll have to download it separately.
