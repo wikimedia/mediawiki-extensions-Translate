@@ -17,12 +17,12 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 /**
  * Version number used in extension credits and in other places where needed.
  */
-define( 'TRANSLATE_VERSION', '2013-12-31' );
+define( 'TRANSLATE_VERSION', '2014-01-01' );
 
 /**
  * Extension credits properties.
  */
-$wgExtensionCredits['specialpage'][] = array(
+$GLOBALS['wgExtensionCredits']['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'Translate',
 	'version' => TRANSLATE_VERSION,
@@ -44,188 +44,188 @@ require_once "$dir/_autoload.php";
  * @cond file_level_code
  */
 
-$wgMessagesDirs['PageTranslation'] = __DIR__ . "/i18n/pagetranslation";
-$wgMessagesDirs['Translate'] = __DIR__ . "/i18n/core";
-$wgMessagesDirs['TranslateGroupDescriptions'] = __DIR__ . "/i18n/groupdescriptions";
-$wgMessagesDirs['TranslateSearch'] = __DIR__ . "/i18n/search";
-$wgMessagesDirs['TranslateSandbox'] = __DIR__ . "/i18n/sandbox";
+$GLOBALS['wgMessagesDirs']['PageTranslation'] = __DIR__ . "/i18n/pagetranslation";
+$GLOBALS['wgMessagesDirs']['Translate'] = __DIR__ . "/i18n/core";
+$GLOBALS['wgMessagesDirs']['TranslateGroupDescriptions'] = __DIR__ . "/i18n/groupdescriptions";
+$GLOBALS['wgMessagesDirs']['TranslateSearch'] = __DIR__ . "/i18n/search";
+$GLOBALS['wgMessagesDirs']['TranslateSandbox'] = __DIR__ . "/i18n/sandbox";
 
 // Register extension messages and other localisation.
-$wgExtensionMessagesFiles['Translate'] = "$dir/Translate.i18n.php";
-$wgExtensionMessagesFiles['PageTranslation'] = "$dir/PageTranslation.i18n.php";
-$wgExtensionMessagesFiles['TranslateGroupDescriptions'] =
+$GLOBALS['wgExtensionMessagesFiles']['Translate'] = "$dir/Translate.i18n.php";
+$GLOBALS['wgExtensionMessagesFiles']['PageTranslation'] = "$dir/PageTranslation.i18n.php";
+$GLOBALS['wgExtensionMessagesFiles']['TranslateGroupDescriptions'] =
 	"$dir/TranslateGroupDescriptions.i18n.php";
-$wgExtensionMessagesFiles['TranslateSearch'] = "$dir/TranslateSearch.i18n.php";
-$wgExtensionMessagesFiles['TranslateSandbox'] = "$dir/TranslateSandbox.i18n.php";
-$wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
+$GLOBALS['wgExtensionMessagesFiles']['TranslateSearch'] = "$dir/TranslateSearch.i18n.php";
+$GLOBALS['wgExtensionMessagesFiles']['TranslateSandbox'] = "$dir/TranslateSandbox.i18n.php";
+$GLOBALS['wgExtensionMessagesFiles']['TranslateAlias'] = "$dir/Translate.alias.php";
 
 // Register initialization code
-$wgExtensionFunctions[] = 'TranslateHooks::setupTranslate';
-$wgHooks['CanonicalNamespaces'][] = 'TranslateHooks::setupNamespaces';
-$wgHooks['UnitTestsList'][] = 'TranslateHooks::setupUnitTests';
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'TranslateHooks::schemaUpdates';
-$wgHooks['ParserTestTables'][] = 'TranslateHooks::parserTestTables';
-$wgHooks['PageContentLanguage'][] = 'TranslateHooks::onPageContentLanguage';
+$GLOBALS['wgExtensionFunctions'][] = 'TranslateHooks::setupTranslate';
+$GLOBALS['wgHooks']['CanonicalNamespaces'][] = 'TranslateHooks::setupNamespaces';
+$GLOBALS['wgHooks']['UnitTestsList'][] = 'TranslateHooks::setupUnitTests';
+$GLOBALS['wgHooks']['LoadExtensionSchemaUpdates'][] = 'TranslateHooks::schemaUpdates';
+$GLOBALS['wgHooks']['ParserTestTables'][] = 'TranslateHooks::parserTestTables';
+$GLOBALS['wgHooks']['PageContentLanguage'][] = 'TranslateHooks::onPageContentLanguage';
 
 // Register special pages into MediaWiki
-$wgSpecialPages['Translate'] = 'SpecialTranslate';
-$wgSpecialPageGroups['Translate'] = 'wiki';
-$wgSpecialPages['Translations'] = 'SpecialTranslations';
-$wgSpecialPageGroups['Translations'] = 'pages';
+$GLOBALS['wgSpecialPages']['Translate'] = 'SpecialTranslate';
+$GLOBALS['wgSpecialPageGroups']['Translate'] = 'wiki';
+$GLOBALS['wgSpecialPages']['Translations'] = 'SpecialTranslations';
+$GLOBALS['wgSpecialPageGroups']['Translations'] = 'pages';
 // Disabled by default
-// $wgSpecialPages['Magic'] = 'SpecialMagic';
-$wgSpecialPageGroups['Magic'] = 'wiki';
-$wgSpecialPages['TranslationStats'] = 'SpecialTranslationStats';
-$wgSpecialPageGroups['TranslationStats'] = 'wiki';
-$wgSpecialPages['LanguageStats'] = 'SpecialLanguageStats';
-$wgSpecialPageGroups['LanguageStats'] = 'wiki';
-$wgSpecialPages['MessageGroupStats'] = 'SpecialMessageGroupStats';
-$wgSpecialPageGroups['MessageGroupStats'] = 'wiki';
-$wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
-$wgSpecialPageGroups['ImportTranslations'] = 'wiki';
-$wgSpecialPages['ManageMessageGroups'] = 'SpecialManageGroups';
-$wgSpecialPageGroups['ManageMessageGroups'] = 'wiki';
-$wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
-$wgSpecialPageGroups['SupportedLanguages'] = 'wiki';
+// $GLOBALS['wgSpecialPages']['Magic'] = 'SpecialMagic';
+$GLOBALS['wgSpecialPageGroups']['Magic'] = 'wiki';
+$GLOBALS['wgSpecialPages']['TranslationStats'] = 'SpecialTranslationStats';
+$GLOBALS['wgSpecialPageGroups']['TranslationStats'] = 'wiki';
+$GLOBALS['wgSpecialPages']['LanguageStats'] = 'SpecialLanguageStats';
+$GLOBALS['wgSpecialPageGroups']['LanguageStats'] = 'wiki';
+$GLOBALS['wgSpecialPages']['MessageGroupStats'] = 'SpecialMessageGroupStats';
+$GLOBALS['wgSpecialPageGroups']['MessageGroupStats'] = 'wiki';
+$GLOBALS['wgSpecialPages']['ImportTranslations'] = 'SpecialImportTranslations';
+$GLOBALS['wgSpecialPageGroups']['ImportTranslations'] = 'wiki';
+$GLOBALS['wgSpecialPages']['ManageMessageGroups'] = 'SpecialManageGroups';
+$GLOBALS['wgSpecialPageGroups']['ManageMessageGroups'] = 'wiki';
+$GLOBALS['wgSpecialPages']['SupportedLanguages'] = 'SpecialSupportedLanguages';
+$GLOBALS['wgSpecialPageGroups']['SupportedLanguages'] = 'wiki';
 // Unlisted special page; does not need $wgSpecialPageGroups.
-$wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
-$wgSpecialPages['AggregateGroups'] = 'SpecialAggregateGroups';
-$wgSpecialPageGroups['AggregateGroups'] = 'wiki';
-$wgSpecialPages['SearchTranslations'] = 'SpecialSearchTranslations';
-$wgSpecialPageGroups['SearchTranslations'] = 'wiki';
-$wgSpecialPages['ManageTranslatorSandbox'] = 'SpecialManageTranslatorSandbox';
-$wgSpecialPageGroups['ManageTranslatorSandbox'] = 'users';
-$wgSpecialPages['TranslationStash'] = 'SpecialTranslationStash';
-$wgSpecialPageGroups['TranslationStash'] = 'wiki';
+$GLOBALS['wgSpecialPages']['MyLanguage'] = 'SpecialMyLanguage';
+$GLOBALS['wgSpecialPages']['AggregateGroups'] = 'SpecialAggregateGroups';
+$GLOBALS['wgSpecialPageGroups']['AggregateGroups'] = 'wiki';
+$GLOBALS['wgSpecialPages']['SearchTranslations'] = 'SpecialSearchTranslations';
+$GLOBALS['wgSpecialPageGroups']['SearchTranslations'] = 'wiki';
+$GLOBALS['wgSpecialPages']['ManageTranslatorSandbox'] = 'SpecialManageTranslatorSandbox';
+$GLOBALS['wgSpecialPageGroups']['ManageTranslatorSandbox'] = 'users';
+$GLOBALS['wgSpecialPages']['TranslationStash'] = 'SpecialTranslationStash';
+$GLOBALS['wgSpecialPageGroups']['TranslationStash'] = 'wiki';
 
 // API
-$wgAPIGeneratorModules['messagecollection'] = 'ApiQueryMessageCollection';
-$wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
-$wgAPIMetaModules['languagestats'] = 'ApiQueryLanguageStats';
-$wgAPIMetaModules['messagegroups'] = 'ApiQueryMessageGroups';
-$wgAPIMetaModules['messagegroupstats'] = 'ApiQueryMessageGroupStats';
-$wgAPIMetaModules['messagetranslations'] = 'ApiQueryMessageTranslations';
-$wgAPIModules['aggregategroups'] = 'ApiAggregateGroups';
-$wgAPIModules['groupreview'] = 'ApiGroupReview';
-$wgAPIModules['hardmessages'] = 'ApiHardMessages';
-$wgAPIModules['translatesandbox'] = 'ApiTranslateSandbox';
-$wgAPIModules['translateuser'] = 'ApiTranslateUser';
-$wgAPIModules['translationaids'] = 'ApiTranslationAids';
-$wgAPIModules['translationreview'] = 'ApiTranslationReview';
-$wgAPIModules['translationstash'] = 'ApiTranslationStash';
-$wgAPIModules['ttmserver'] = 'ApiTTMServer';
+$GLOBALS['wgAPIGeneratorModules']['messagecollection'] = 'ApiQueryMessageCollection';
+$GLOBALS['wgAPIListModules']['messagecollection'] = 'ApiQueryMessageCollection';
+$GLOBALS['wgAPIMetaModules']['languagestats'] = 'ApiQueryLanguageStats';
+$GLOBALS['wgAPIMetaModules']['messagegroups'] = 'ApiQueryMessageGroups';
+$GLOBALS['wgAPIMetaModules']['messagegroupstats'] = 'ApiQueryMessageGroupStats';
+$GLOBALS['wgAPIMetaModules']['messagetranslations'] = 'ApiQueryMessageTranslations';
+$GLOBALS['wgAPIModules']['aggregategroups'] = 'ApiAggregateGroups';
+$GLOBALS['wgAPIModules']['groupreview'] = 'ApiGroupReview';
+$GLOBALS['wgAPIModules']['hardmessages'] = 'ApiHardMessages';
+$GLOBALS['wgAPIModules']['translatesandbox'] = 'ApiTranslateSandbox';
+$GLOBALS['wgAPIModules']['translateuser'] = 'ApiTranslateUser';
+$GLOBALS['wgAPIModules']['translationaids'] = 'ApiTranslationAids';
+$GLOBALS['wgAPIModules']['translationreview'] = 'ApiTranslationReview';
+$GLOBALS['wgAPIModules']['translationstash'] = 'ApiTranslationStash';
+$GLOBALS['wgAPIModules']['ttmserver'] = 'ApiTTMServer';
 
 // Before MW 1.20
-$wgHooks['APIQueryInfoTokens'][] = 'ApiTranslationReview::injectTokenFunction';
-$wgHooks['APIQueryInfoTokens'][] = 'ApiGroupReview::injectTokenFunction';
-$wgHooks['APIQueryInfoTokens'][] = 'ApiAggregateGroups::injectTokenFunction';
-$wgHooks['APIQueryInfoTokens'][] = 'ApiHardMessages::injectTokenFunction';
-$wgHooks['APIQueryInfoTokens'][] = 'ApiTranslateSandbox::injectTokenFunction';
+$GLOBALS['wgHooks']['APIQueryInfoTokens'][] = 'ApiTranslationReview::injectTokenFunction';
+$GLOBALS['wgHooks']['APIQueryInfoTokens'][] = 'ApiGroupReview::injectTokenFunction';
+$GLOBALS['wgHooks']['APIQueryInfoTokens'][] = 'ApiAggregateGroups::injectTokenFunction';
+$GLOBALS['wgHooks']['APIQueryInfoTokens'][] = 'ApiHardMessages::injectTokenFunction';
+$GLOBALS['wgHooks']['APIQueryInfoTokens'][] = 'ApiTranslateSandbox::injectTokenFunction';
 // After MW 1.20
-$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiTranslationReview::injectTokenFunction';
-$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiGroupReview::injectTokenFunction';
-$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiAggregateGroups::injectTokenFunction';
-$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiHardMessages::injectTokenFunction';
-$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiTranslateSandbox::injectTokenFunction';
-$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiTranslationStash::injectTokenFunction';
+$GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslationReview::injectTokenFunction';
+$GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiGroupReview::injectTokenFunction';
+$GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiAggregateGroups::injectTokenFunction';
+$GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiHardMessages::injectTokenFunction';
+$GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslateSandbox::injectTokenFunction';
+$GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslationStash::injectTokenFunction';
 // Register hooks.
-$wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
-$wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
-$wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
-$wgHooks['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
-$wgHooks['LanguageGetTranslatedLanguageNames'][] =
+$GLOBALS['wgHooks']['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
+$GLOBALS['wgHooks']['AlternateEdit'][] = 'TranslateEditAddons::intro';
+$GLOBALS['wgHooks']['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
+$GLOBALS['wgHooks']['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
+$GLOBALS['wgHooks']['LanguageGetTranslatedLanguageNames'][] =
 	'TranslateHooks::translateMessageDocumentationLanguage';
-$wgHooks['TranslateSupportedLanguages'][] =
+$GLOBALS['wgHooks']['TranslateSupportedLanguages'][] =
 	'TranslateHooks::translateMessageDocumentationLanguage';
-$wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
+$GLOBALS['wgHooks']['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
 // Prevent translations creating bogus categories
-$wgHooks['LinksUpdate'][] = 'TranslateHooks::preventCategorization';
+$GLOBALS['wgHooks']['LinksUpdate'][] = 'TranslateHooks::preventCategorization';
 // Fuzzy tags for speed.
 if ( !defined( 'MW_SUPPORTS_CONTENTHANDLER' ) ) {
 	// BC 1.20
-	$wgHooks['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
+	$GLOBALS['wgHooks']['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
 } else {
-	$wgHooks['PageContentSaveComplete'][] = 'TranslateEditAddons::onSave';
+	$GLOBALS['wgHooks']['PageContentSaveComplete'][] = 'TranslateEditAddons::onSave';
 }
 
-$wgHooks['Translate:newTranslation'][] = 'TranslateEditAddons::updateTransverTag';
+$GLOBALS['wgHooks']['Translate:newTranslation'][] = 'TranslateEditAddons::updateTransverTag';
 
-$wgHooks['SkinTemplateNavigation::SpecialPage'][] = 'SpecialTranslate::tabify';
-$wgHooks['SkinTemplateNavigation::SpecialPage'][] = 'SpecialManageGroups::tabify';
+$GLOBALS['wgHooks']['SkinTemplateNavigation::SpecialPage'][] = 'SpecialTranslate::tabify';
+$GLOBALS['wgHooks']['SkinTemplateNavigation::SpecialPage'][] = 'SpecialManageGroups::tabify';
 
 // Custom preferences
-$wgDefaultUserOptions['translate'] = 0;
-$wgDefaultUserOptions['translate-editlangs'] = 'default';
-$wgDefaultUserOptions['translate-recent-groups'] = '';
-$wgHooks['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
-$wgHooks['GetPreferences'][] = 'TranslatePreferences::translationAssistLanguages';
+$GLOBALS['wgDefaultUserOptions']['translate'] = 0;
+$GLOBALS['wgDefaultUserOptions']['translate-editlangs'] = 'default';
+$GLOBALS['wgDefaultUserOptions']['translate-recent-groups'] = '';
+$GLOBALS['wgHooks']['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
+$GLOBALS['wgHooks']['GetPreferences'][] = 'TranslatePreferences::translationAssistLanguages';
 
 // Recent changes filters
-$wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
-$wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
-$wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
+$GLOBALS['wgHooks']['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
+$GLOBALS['wgHooks']['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
+$GLOBALS['wgHooks']['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 
 // Translation memory related
-$wgHooks['ArticleDeleteComplete'][] = 'TTMServer::onDelete';
-$wgHooks['TranslateEventMessageMembershipChange'][] = 'TTMServer::onGroupChange';
+$GLOBALS['wgHooks']['ArticleDeleteComplete'][] = 'TTMServer::onDelete';
+$GLOBALS['wgHooks']['TranslateEventMessageMembershipChange'][] = 'TTMServer::onGroupChange';
 
 // Translation display related
-$wgHooks['ArticleContentOnDiff'][] = 'TranslateEditAddons::displayOnDiff';
+$GLOBALS['wgHooks']['ArticleContentOnDiff'][] = 'TranslateEditAddons::displayOnDiff';
 
 // Search profile
-$wgHooks['SpecialSearchProfiles'][] = 'TranslateHooks::searchProfile';
-$wgHooks['SpecialSearchProfileForm'][] = 'TranslateHooks::searchProfileForm';
-$wgHooks['SpecialSearchSetupEngine'][] = 'TranslateHooks::searchProfileSetupEngine';
+$GLOBALS['wgHooks']['SpecialSearchProfiles'][] = 'TranslateHooks::searchProfile';
+$GLOBALS['wgHooks']['SpecialSearchProfileForm'][] = 'TranslateHooks::searchProfileForm';
+$GLOBALS['wgHooks']['SpecialSearchSetupEngine'][] = 'TranslateHooks::searchProfileSetupEngine';
 
-$wgHooks['LinkBegin'][] = 'SpecialMyLanguage::linkfix';
+$GLOBALS['wgHooks']['LinkBegin'][] = 'SpecialMyLanguage::linkfix';
 
 // Stats table manipulation
-$wgHooks['Translate:MessageGroupStats:isIncluded'][] = 'TranslateHooks::hideDiscouragedFromStats';
-$wgHooks['Translate:MessageGroupStats:isIncluded'][] = 'TranslateHooks::hideRestrictedFromStats';
+$GLOBALS['wgHooks']['Translate:MessageGroupStats:isIncluded'][] = 'TranslateHooks::hideDiscouragedFromStats';
+$GLOBALS['wgHooks']['Translate:MessageGroupStats:isIncluded'][] = 'TranslateHooks::hideRestrictedFromStats';
 
-$wgHooks['MakeGlobalVariablesScript'][] = 'TranslateHooks::addConfig';
+$GLOBALS['wgHooks']['MakeGlobalVariablesScript'][] = 'TranslateHooks::addConfig';
 
 // Sandbox
-$wgDefaultUserOptions['translate-sandbox'] = '';
-$wgHooks['GetPreferences'][] = 'TranslateSandbox::onGetPreferences';
-$wgHooks['UserGetRights'][] = 'TranslateSandbox::enforcePermissions';
-$wgHooks['ApiCheckCanExecute'][] = 'TranslateSandbox::onApiCheckCanExecute';
+$GLOBALS['wgDefaultUserOptions']['translate-sandbox'] = '';
+$GLOBALS['wgHooks']['GetPreferences'][] = 'TranslateSandbox::onGetPreferences';
+$GLOBALS['wgHooks']['UserGetRights'][] = 'TranslateSandbox::enforcePermissions';
+$GLOBALS['wgHooks']['ApiCheckCanExecute'][] = 'TranslateSandbox::onApiCheckCanExecute';
 
 // Internal event listeners
-$wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupStats::clear';
-$wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStats::clear';
-$wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupStatesUpdaterJob::onChange';
-$wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStatesUpdaterJob::onChange';
+$GLOBALS['wgHooks']['TranslateEventTranslationEdit'][] = 'MessageGroupStats::clear';
+$GLOBALS['wgHooks']['TranslateEventTranslationReview'][] = 'MessageGroupStats::clear';
+$GLOBALS['wgHooks']['TranslateEventTranslationEdit'][] = 'MessageGroupStatesUpdaterJob::onChange';
+$GLOBALS['wgHooks']['TranslateEventTranslationReview'][] = 'MessageGroupStatesUpdaterJob::onChange';
 
-$wgHooks['AdminLinks'][] = 'TranslateHooks::onAdminLinks';
+$GLOBALS['wgHooks']['AdminLinks'][] = 'TranslateHooks::onAdminLinks';
 
 // New rights
-$wgAvailableRights[] = 'translate';
-$wgAvailableRights[] = 'translate-import';
-$wgAvailableRights[] = 'translate-manage';
-$wgAvailableRights[] = 'translate-messagereview';
-$wgAvailableRights[] = 'translate-groupreview';
-$wgAvailableRights[] = 'translate-sandboxmanage';
+$GLOBALS['wgAvailableRights'][] = 'translate';
+$GLOBALS['wgAvailableRights'][] = 'translate-import';
+$GLOBALS['wgAvailableRights'][] = 'translate-manage';
+$GLOBALS['wgAvailableRights'][] = 'translate-messagereview';
+$GLOBALS['wgAvailableRights'][] = 'translate-groupreview';
+$GLOBALS['wgAvailableRights'][] = 'translate-sandboxmanage';
 
 // New rights group
-$wgGroupPermissions['translate-proofr']['translate-messagereview'] = true;
-$wgAddGroups['translate-proofr'] = array( 'translate-proofr' );
+$GLOBALS['wgGroupPermissions']['translate-proofr']['translate-messagereview'] = true;
+$GLOBALS['wgAddGroups']['translate-proofr'] = array( 'translate-proofr' );
 
 // Logs. More logs are defined in TranslateHooks::setupTranslate
-$wgLogTypes[] = 'translationreview';
-$wgLogActionsHandlers['translationreview/message'] = 'TranslateLogFormatter';
-$wgLogActionsHandlers['translationreview/group'] = 'TranslateLogFormatter';
+$GLOBALS['wgLogTypes'][] = 'translationreview';
+$GLOBALS['wgLogActionsHandlers']['translationreview/message'] = 'TranslateLogFormatter';
+$GLOBALS['wgLogActionsHandlers']['translationreview/group'] = 'TranslateLogFormatter';
 
-$wgLogTypes[] = 'translatorsandbox';
-$wgLogActionsHandlers['translatorsandbox/promoted'] = 'TranslateLogFormatter';
-$wgLogActionsHandlers['translatorsandbox/rejected'] = 'TranslateLogFormatter';
+$GLOBALS['wgLogTypes'][] = 'translatorsandbox';
+$GLOBALS['wgLogActionsHandlers']['translatorsandbox/promoted'] = 'TranslateLogFormatter';
+$GLOBALS['wgLogActionsHandlers']['translatorsandbox/rejected'] = 'TranslateLogFormatter';
 
 // New jobs
-$wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
-$wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
-$wgJobClasses['MessageGroupStatesUpdaterJob'] = 'MessageGroupStatesUpdaterJob';
-$wgJobClasses['TTMServerMessageUpdateJob'] = 'TTMServerMessageUpdateJob';
-$wgJobClasses['TranslateSandboxEmailJob'] = 'TranslateSandboxEmailJob';
+$GLOBALS['wgJobClasses']['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
+$GLOBALS['wgJobClasses']['MessageUpdateJob'] = 'MessageUpdateJob';
+$GLOBALS['wgJobClasses']['MessageGroupStatesUpdaterJob'] = 'MessageGroupStatesUpdaterJob';
+$GLOBALS['wgJobClasses']['TTMServerMessageUpdateJob'] = 'TTMServerMessageUpdateJob';
+$GLOBALS['wgJobClasses']['TranslateSandboxEmailJob'] = 'TranslateSandboxEmailJob';
 
 require "$dir/Resources.php";
 /** @endcond */
@@ -239,19 +239,19 @@ require "$dir/Resources.php";
  * Language code for message documentation. Suggested values are qqq or info.
  * If set to false (default), message documentation feature is disabled.
  */
-$wgTranslateDocumentationLanguageCode = false;
+$GLOBALS['wgTranslateDocumentationLanguageCode'] = false;
 
 /**
  * Name of the bot which will invalidate translations and do maintenance
  * for page translation feature. Also used for importing messages from external
  * sources.
  */
-$wgTranslateFuzzyBotName = 'FuzzyBot';
+$GLOBALS['wgTranslateFuzzyBotName'] = 'FuzzyBot';
 
 /**
  * Add a preference "Do not send me email newsletters" in the email preferences.
  */
-$wgTranslateNewsletterPreference = false;
+$GLOBALS['wgTranslateNewsletterPreference'] = false;
 
 /**
  * Default values for list of languages to show translators as an aid when
@@ -260,7 +260,7 @@ $wgTranslateNewsletterPreference = false;
  *  $wgTranslateLanguageFallbacks['fi'] = 'sv';
  *  $wgTranslateLanguageFallbacks['sv'] = array( 'da', 'no', 'nn' );
  */
-$wgTranslateLanguageFallbacks = array();
+$GLOBALS['wgTranslateLanguageFallbacks'] = array();
 
 /**
  * Text that will be shown in translations if the translation is outdated.
@@ -289,27 +289,27 @@ if ( !defined( 'TRANSLATE_FUZZY' ) ) {
  * - source text to translate
  * - private API key if provided
  */
-$wgTranslateTranslationServices = array();
-$wgTranslateTranslationServices['TTMServer'] = array(
+$GLOBALS['wgTranslateTranslationServices'] = array();
+$GLOBALS['wgTranslateTranslationServices']['TTMServer'] = array(
 	'database' => false, // Passed to wfGetDB
 	'cutoff' => 0.75,
 	'type' => 'ttmserver',
 	'public' => false,
 );
-$wgTranslateTranslationServices['Microsoft'] = array(
+$GLOBALS['wgTranslateTranslationServices']['Microsoft'] = array(
 	'url' => 'http://api.microsofttranslator.com/V2/Http.svc/Translate',
 	'key' => null,
 	'timeout' => 3,
 	'type' => 'microsoft',
 );
-$wgTranslateTranslationServices['Apertium'] = array(
+$GLOBALS['wgTranslateTranslationServices']['Apertium'] = array(
 	'url' => 'http://api.apertium.org/json/translate',
 	'pairs' => 'http://api.apertium.org/json/listPairs',
 	'key' => null,
 	'timeout' => 3,
 	'type' => 'apertium',
 );
-$wgTranslateTranslationServices['Yandex'] = array(
+$GLOBALS['wgTranslateTranslationServices']['Yandex'] = array(
 	'url' => 'https://translate.yandex.net/api/v1.5/tr.json/translate',
 	'key' => null,
 	'pairs' => 'https://translate.yandex.net/api/v1.5/tr.json/getLangs',
@@ -336,7 +336,7 @@ $wgTranslateTranslationServices['example'] = array(
  * feature, you might want to disable 'optional' task. Example:
  *  unset($wgTranslateTasks['optional']);
  */
-$wgTranslateTasks = array(
+$GLOBALS['wgTranslateTasks'] = array(
 	'view' => 'ViewMessagesTask',
 	'untranslated' => 'ViewUntranslatedTask',
 	'optional' => 'ViewOptionalTask',
@@ -357,7 +357,7 @@ $wgTranslateTasks = array(
  *    full page name.
  * @since 2011-03-11
  */
-$wgTranslateSupportUrl = false;
+$GLOBALS['wgTranslateSupportUrl'] = false;
 
 /**
  * When unprivileged users opens a translation editor, he will
@@ -365,7 +365,7 @@ $wgTranslateSupportUrl = false;
  * messages. If this variable is defined, there is a button which will
  * take the user to that page to ask for permission.
  */
-$wgTranslatePermissionUrl = 'Project:Translator';
+$GLOBALS['wgTranslatePermissionUrl'] = 'Project:Translator';
 
 # </source>
 # === Page translation feature ===
@@ -379,20 +379,20 @@ $wgTranslatePermissionUrl = 'Project:Translator';
  * @defgroup PageTranslation Page Translation
  * @see http://translatewiki.net/wiki/Translating:Page_translation_feature
  */
-$wgEnablePageTranslation = true;
+$GLOBALS['wgEnablePageTranslation'] = true;
 
 /**
  * Number for the Translations namespace. Change this if it conflicts with
  * other namespace in your wiki.
  */
-$wgPageTranslationNamespace = 1198;
+$GLOBALS['wgPageTranslationNamespace'] = 1198;
 
 /**
  * When user changes interface language via ULS, should we also switch the
  * language of the translatable page.
  * @since 2013-03-10
  */
-$wgTranslatePageTranslationULS = false;
+$GLOBALS['wgTranslatePageTranslationULS'] = false;
 
 # </source>
 # === Message group configuration ===
@@ -418,7 +418,7 @@ $wgTranslatePageTranslationULS = false;
  * );
  */
 
-$wgTranslateBlacklist = array();
+$GLOBALS['wgTranslateBlacklist'] = array();
 
 /**
  * File containing checks that are to be skipped. See
@@ -427,7 +427,7 @@ $wgTranslateBlacklist = array();
  *
  * @since 2012-10-15
  */
-$wgTranslateCheckBlacklist = false;
+$GLOBALS['wgTranslateCheckBlacklist'] = false;
 
 /**
  * Two-dimensional array of rules that blacklists certain authors from appearing
@@ -441,14 +441,14 @@ $wgTranslateCheckBlacklist = false;
  * As an example by default we have rule that ignores all authors whose name
  * ends in a bot for all languages and all groups.
  */
-$wgTranslateAuthorBlacklist = array();
-$wgTranslateAuthorBlacklist[] = array( 'black', '/^.*;.*;.*Bot$/Ui' );
+$GLOBALS['wgTranslateAuthorBlacklist'] = array();
+$GLOBALS['wgTranslateAuthorBlacklist'][] = array( 'black', '/^.*;.*;.*Bot$/Ui' );
 
 /**
  * List of namespace that contain messages. No talk namespaces.
  * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration
  */
-$wgTranslateMessageNamespaces = array();
+$GLOBALS['wgTranslateMessageNamespaces'] = array();
 
 /**
  * CC = Custom classes.
@@ -457,12 +457,12 @@ $wgTranslateMessageNamespaces = array();
  * or callable function.
  * @deprecated Use TranslatePostInitGroups hook instead.
  */
-$wgTranslateCC = array();
+$GLOBALS['wgTranslateCC'] = array();
 
 /**
  * Location in the filesystem to which paths are relative in custom groups.
  */
-$wgTranslateGroupRoot = '/var/www/externals';
+$GLOBALS['wgTranslateGroupRoot'] = '/var/www/externals';
 
 /**
  * The newest and recommended way of adding custom groups is YAML files.
@@ -470,7 +470,7 @@ $wgTranslateGroupRoot = '/var/www/externals';
  * Usage example:
  *  $wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/Shapado/Shapado.yml";
  */
-$wgTranslateGroupFiles = array();
+$GLOBALS['wgTranslateGroupFiles'] = array();
 
 /**
  * List of possible message group review workflow states and properties
@@ -495,7 +495,7 @@ $wgTranslateGroupFiles = array();
  *      ),
  * );
  */
-$wgTranslateWorkflowStates = false;
+$GLOBALS['wgTranslateWorkflowStates'] = false;
 
 # </source>
 # === System setup related configuration ===
@@ -504,18 +504,18 @@ $wgTranslateWorkflowStates = false;
  * Location of your extensions, if not the default. Only matters
  * if you are localising your own extensions with this extension.
  */
-$wgTranslateExtensionDirectory = "$IP/extensions/";
+$GLOBALS['wgTranslateExtensionDirectory'] = "$IP/extensions/";
 
 /**
  * Set location of cache files. Defaults to $wgCacheDirectory.
  */
-$wgTranslateCacheDirectory = false;
+$GLOBALS['wgTranslateCacheDirectory'] = false;
 
 /**
  * Configures how the message index is stored.
  * The other backends need $wgCacheDirectory to be functional.
  */
-$wgTranslateMessageIndex = array( 'DatabaseMessageIndex' );
+$GLOBALS['wgTranslateMessageIndex'] = array( 'DatabaseMessageIndex' );
 // $wgTranslateMessageIndex = array( 'SerializedMessageIndex' );
 // $wgTranslateMessageIndex = array( 'CDBMessageIndex' );
 
@@ -526,7 +526,7 @@ $wgTranslateMessageIndex = array( 'DatabaseMessageIndex' );
  * processed outside of requests via cron or similar.
  * @since 2012-05-03
  */
-$wgTranslateDelayedMessageIndexRebuild = false;
+$GLOBALS['wgTranslateDelayedMessageIndexRebuild'] = false;
 
 # </source>
 # ==== PHPlot ====
@@ -535,7 +535,7 @@ $wgTranslateDelayedMessageIndexRebuild = false;
  * For Special:TranslationStats PHPlot is needed to produce graphs.
  * Set this the location of phplot.php.
  */
-$wgTranslatePHPlot = false;
+$GLOBALS['wgTranslatePHPlot'] = false;
 
 /**
  * The default font for PHPlot for drawing text. Only used if the automatic
@@ -545,7 +545,7 @@ $wgTranslatePHPlot = false;
  * to change the code to use hard-coded font, or copy fonts to location PHP
  * can access them, and make sure fc-match returns only those fonts.
  */
-$wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
+$GLOBALS['wgTranslatePHPlotFont'] = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
 
 # </source>
 # ==== YAML driver ====
@@ -570,7 +570,7 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
  *
  * For syck-pecl you need libsyck and pecl install syck-beta
  */
-$wgTranslateYamlLibrary = 'spyc';
+$GLOBALS['wgTranslateYamlLibrary'] = 'spyc';
 
 # </source>
 # ==== Sandbox ====
@@ -582,26 +582,26 @@ $wgTranslateYamlLibrary = 'spyc';
  * MediaWiki 1.22 or newer.
  * @since 2013.04
  */
-$wgTranslateUseSandbox = false;
+$GLOBALS['wgTranslateUseSandbox'] = false;
 
 /**
  * To which group the translators are promoted. If left at false, they will just
  * be removed from sandbox and become normal users.
  * @since 2013.04
  */
-$wgTranslateSandboxPromotedGroup = false;
+$GLOBALS['wgTranslateSandboxPromotedGroup'] = false;
 
 /**
  * List of page names to always suggest for sandboxed users.
  * @since 2013.10
  */
-$wgTranslateSandboxSuggestions = array();
+$GLOBALS['wgTranslateSandboxSuggestions'] = array();
 
 /**
  * Maximum number of translations a user can make in the sandbox.
  * @since 2013.10
  */
-$wgTranslateSandboxLimit = 20;
+$GLOBALS['wgTranslateSandboxLimit'] = 20;
 
 # </source>
 # === Unsorted ===
@@ -612,35 +612,35 @@ $wgTranslateSandboxLimit = 20;
  * false it allows users to put untransformed syntax such as "~~~~" into
  * a page without having them be transformed upon save.
  */
-$wgTranslateUsePreSaveTransform = false;
+$GLOBALS['wgTranslateUsePreSaveTransform'] = false;
 
 /**
  * Default action for the RecentChanges filter, which makes it possible to filter
  * translations away or show them only.
  * Possible values: ('noaction', 'only', 'filter', 'site')
  */
-$wgTranslateRcFilterDefault = 'filter';
+$GLOBALS['wgTranslateRcFilterDefault'] = 'filter';
 
 /**
  * Set this to config like $wgTranslateTranslationServices if you want to run
  * SolrTTMServer tests.
  * @since 2013-01-04
  */
-$wgTranslateTestTTMServer = null;
+$GLOBALS['wgTranslateTestTTMServer'] = null;
 
 /**
  * Whether to use the TUX interface by default. tux=1 and tux=0 in the url can
  * be used to switch between old and new. This variable will be removed after
  * transition time.
  */
-$wgTranslateUseTux = true;
+$GLOBALS['wgTranslateUseTux'] = true;
 
 /**
  * List of user names that are allowed to alter their privileges and do other
  * things. Used for supporting integration testing.
  * @since 2013.10
  */
-$wgTranslateTestUsers = array();
+$GLOBALS['wgTranslateTestUsers'] = array();
 
 # </source>
 

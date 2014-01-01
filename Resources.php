@@ -6,6 +6,8 @@
  * @license GPL-2.0+
  */
 
+global $wgResourceModules;
+
 $resourcePaths = array(
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'Translate'
@@ -475,7 +477,7 @@ $wgResourceModules['jquery.ui.position.custom'] = array(
 ) + $resourcePaths;
 
 // BC for MediaWiki <= 1.21
-$wgHooks['ResourceLoaderRegisterModules'][] =
+$GLOBALS['wgHooks']['ResourceLoaderRegisterModules'][] =
 	function ( ResourceLoader $rl ) use ( $resourcePaths ) {
 		if ( !in_array( 'jquery.chosen', $rl->getModuleNames() ) ) {
 			$rl->register(
