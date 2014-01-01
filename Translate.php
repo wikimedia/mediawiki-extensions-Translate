@@ -220,6 +220,8 @@ $wgLogTypes[] = 'translatorsandbox';
 $wgLogActionsHandlers['translatorsandbox/promoted'] = 'TranslateLogFormatter';
 $wgLogActionsHandlers['translatorsandbox/rejected'] = 'TranslateLogFormatter';
 
+$wgLogActionsHandlers['newusers/tsbpromoted'] = 'PromotedSandboxUsersLogFormatter';
+
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
 $wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
