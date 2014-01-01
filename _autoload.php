@@ -88,6 +88,8 @@ $wgAutoloadClasses['MessageTable'] = "$dir/utils/MessageTable.php";
 $wgAutoloadClasses['MessageUpdateJob'] = "$dir/utils/MessageUpdateJob.php";
 $wgAutoloadClasses['MessageWebImporter'] = "$dir/utils/MessageWebImporter.php";
 $wgAutoloadClasses['PHPVariableLoader'] = "$dir/utils/ResourceLoader.php";
+$wgAutoloadClasses['PromotedSandboxUsersLogFormatter'] =
+	"$dir/utils/PromotedSandboxUsersLogFormatter.php";
 $wgAutoloadClasses['RevTag'] = "$dir/utils/RevTag.php";
 $wgAutoloadClasses['ReviewPerLanguageStats'] = "$dir/specials/SpecialTranslationStats.php";
 $wgAutoloadClasses['SerializedMessageIndex'] = "$dir/utils/MessageIndex.php";
