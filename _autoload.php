@@ -97,6 +97,8 @@ $wgAutoloadClasses['StringMangler'] = "$dir/utils/StringMatcher.php";
 $wgAutoloadClasses['StringMatcher'] = "$dir/utils/StringMatcher.php";
 $wgAutoloadClasses['TTMServer'] = "$dir/utils/TTMServer.php";
 $wgAutoloadClasses['TranslateLogFormatter'] = "$dir/utils/TranslateLogFormatter.php";
+$wgAutoloadClasses['PromotedSandboxUsersLogFormatter'] =
+	"$dir/utils/PromotedSandboxUsersLogFormatter.php";
 $wgAutoloadClasses['TranslateMetadata'] = "$dir/utils/TranslateMetadata.php";
 $wgAutoloadClasses['TranslatePerLanguageStats'] = "$dir/specials/SpecialTranslationStats.php";
 $wgAutoloadClasses['TranslatePreferences'] = "$dir/utils/UserToggles.php";
