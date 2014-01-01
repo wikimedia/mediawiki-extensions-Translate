@@ -9,6 +9,7 @@
  */
 
 /** @cond file_level_code */
+global $wgAutoloadClasses;
 $dir = dirname( __FILE__ );
 /** @endcond */
 
