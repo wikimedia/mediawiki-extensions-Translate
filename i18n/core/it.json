@@ -202,7 +202,7 @@
     "supportedlanguages-activity": "$1: $2 {{PLURAL:$2|modifica|modifiche}} - ultima modifica $3 {{PLURAL:$3|giorno|giorni}} fa",
     "translate-save": "Salva ($1)",
     "translate-jssti-add": "Aggiungi all'elenco",
-    "managemessagegroups": "Gestione del gruppo di mesaggi",
+    "managemessagegroups": "Gestione del gruppo di messaggi",
     "translate-smg-notallowed": "Non sei autorizzato a eseguire questa azione.",
     "translate-smg-nochanges": "Non ci sono modifiche da elaborare.",
     "translate-smg-submit": "Invia le modifiche per l'elaborazione",

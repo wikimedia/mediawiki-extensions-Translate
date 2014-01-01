@@ -137,6 +137,8 @@
     "tux-editor-ask-help": "Деха кхин тӀедиллинарг",
     "tux-editor-tm-match": "$1% цхьаьнадогӀуш",
     "tux-warnings-more": "{{PLURAL:$1|кхин $1}}",
+    "tux-warnings-hide": "къайлаяккха",
+    "tux-editor-clear-translated": "Къайлаяха гоч йинарш",
     "tux-editor-proofreading-mode": "Хьажар",
     "tux-editor-translate-mode": "МогӀа",
     "tux-editor-proofreading-hide-own-translations": "Къайлаяха хьой гоч йинарш",

@@ -35,6 +35,7 @@
     "translate-translationstash-skip-button-label": "Prova en annan",
     "tsb-limit-reached-title": "Tack för dina översättningar",
     "tsb-limit-reached-body": "Du har nått översättningsgränsen för nya översättare.\nVårt team kommer snart verifiera och uppgradera ditt konto.\nSedan kommer du kunna översätta utan begränsningar.",
+    "tsb-create-user-page": "Skapa grundläggande användarsida",
     "log-name-translatorsandbox": "Översättningssandlåda",
     "logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|befordrades}} $3 till {{GENDER:$4|översättare}}",
     "logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|avvisade}} begäran från \"$3\" att bli en översättare"
