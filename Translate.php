@@ -219,6 +219,7 @@ $wgLogActionsHandlers['translationreview/group'] = 'TranslateLogFormatter';
 $wgLogTypes[] = 'translatorsandbox';
 $wgLogActionsHandlers['translatorsandbox/promoted'] = 'TranslateLogFormatter';
 $wgLogActionsHandlers['translatorsandbox/rejected'] = 'TranslateLogFormatter';
+$wgLogActionsHandlers['newusers/tsbpromoted'] = 'TranslateLogFormatter';
 
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';

@@ -76,4 +76,9 @@ class TranslateLogFormatter extends LogFormatter {
 
 		return $link;
 	}
+
+	public function getComment() {
+		return $this->msg( 'tsb-promoted-from-sandbox' )->text();
+	}
+
 }

@@ -131,11 +131,11 @@ class ApiTranslateSandbox extends ApiBase {
 			$logid = $logEntry->insert();
 			$logEntry->publish( $logid );
 
-			global $wgContLang;
 			$user->addNewUserLogEntry(
-				'create',
-				$this->msg( 'tsb-promoted-from-sandbox' )->inLanguage( $wgContLang )->text()
+					'create',
+					$this->msg( 'tsb-promoted-from-sandbox' )->text()
 			);
+
 			$this->createUserPage( $user );
 		}
 	}
