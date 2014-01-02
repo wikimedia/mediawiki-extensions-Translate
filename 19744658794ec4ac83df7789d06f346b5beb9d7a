@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_6e209b96",
+        "filename": "utils/PromotedSandboxUsersLogFormatter.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-02T09:14:03Z",
+      "side": 1,
+      "message": "This is not how we mark licenses in Translate. Have a look at any other file for example.",
+      "revId": "19744658794ec4ac83df7789d06f346b5beb9d7a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
