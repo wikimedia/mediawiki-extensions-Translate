@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_2e9bb369",
+        "filename": "_autoload.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-02T11:50:51Z",
+      "side": 1,
+      "message": "Sort alphabetically please.",
+      "revId": "b3359dc1d2633d13ff033cb3e0cfd9100302ee01",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_0eaa2f6d",
+        "filename": "utils/PromotedSandboxUsersLogFormatter.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-02T11:50:51Z",
+      "side": 1,
+      "message": "We don\u0027t have these long boilerplates either, but I can live with it.",
+      "revId": "b3359dc1d2633d13ff033cb3e0cfd9100302ee01",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_eea4aba0",
+        "filename": "utils/PromotedSandboxUsersLogFormatter.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-02T11:50:51Z",
+      "side": 1,
+      "message": "Documentation for this method says: \"         * @return string HTML\"",
+      "revId": "b3359dc1d2633d13ff033cb3e0cfd9100302ee01",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_ceb327e7",
+        "filename": "utils/PromotedSandboxUsersLogFormatter.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-02T11:50:51Z",
+      "side": 1,
+      "message": "So this must be -\u003eescaped().",
+      "revId": "b3359dc1d2633d13ff033cb3e0cfd9100302ee01",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
