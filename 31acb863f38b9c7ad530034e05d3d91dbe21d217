@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "eeebdf60_33544056",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2014-01-02T05:02:12Z",
+      "side": 1,
+      "message": "$wgContLang is unused now",
+      "revId": "31acb863f38b9c7ad530034e05d3d91dbe21d217",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eeebdf60_93878c14",
         "filename": "utils/PromotedSandboxUsersLogFormatter.php",
         "patchSetId": 1
