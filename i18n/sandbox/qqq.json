@@ -50,5 +50,6 @@
     "log-name-translatorsandbox": "{{doc-logpage}}",
     "log-description-translatorsandbox": "Log page description",
     "logentry-translatorsandbox-promoted": "{{logentry}}\n* $4 - The name of the user that was promoted, can be used for GENDER.",
-    "logentry-translatorsandbox-rejected": "{{logentry}}"
+    "logentry-translatorsandbox-rejected": "{{logentry}}",
+    "logentry-newusers-tsbpromoted": "{{logentry}}"
 }
