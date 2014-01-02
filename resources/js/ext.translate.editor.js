@@ -529,7 +529,13 @@
 				}
 
 				// 0..9 ~ 48..57
-				if ( e.type === 'keydown' &&  e.altKey === true && index >= 0 && index < 10 ) {
+				if (
+					e.type === 'keydown' &&
+					e.altKey === true &&
+					e.ctrlKey === false &&
+					e.shiftKey === false &&
+					index >= 0 && index < 10
+				) {
 					e.preventDefault();
 					e.stopPropagation();
 					translateEditor.$editor.find( '.shortcut-activated:visible' ).eq( index ).trigger( 'click' );
