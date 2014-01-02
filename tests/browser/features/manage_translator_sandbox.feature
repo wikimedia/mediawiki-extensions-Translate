@@ -12,6 +12,7 @@ Feature: Manage translator sandbox
 
   Background:
     Given I am logged in as a translation administrator
+      And I have reset my preferences
 
   Scenario: There are no users in the sandbox
     Given I am on the Translator sandbox management page with no users in the sandbox
