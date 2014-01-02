@@ -66,6 +66,9 @@ class ProcessMessageChanges extends Maintenance {
 			$changes[$id] = $comparator->processGroup( $group, $comparator::ALL_LANGUAGES );
 		}
 
+		// Remove all groups without changes
+		$changes = array_filter( $changes );
+
 		if ( count( $changes ) ) {
 			ExternalMessageSourceStateComparator::writeChanges( $changes );
 			$url = SpecialPage::getTitleFor( 'ManageMessageGroups' )->getFullUrl();
