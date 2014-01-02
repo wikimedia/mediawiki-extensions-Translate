@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_8e551fc8",
+        "filename": "api/ApiTranslateSandbox.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-02T10:50:22Z",
+      "side": 1,
+      "message": "Too many tabs.",
+      "revId": "d70dde3764eb2a3fdbcae59bdfe66424a4eeb105",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_6e589bfd",
+        "filename": "utils/TranslateLogFormatter.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-02T10:50:22Z",
+      "side": 1,
+      "message": "This would add it to all Translate logs!",
+      "revId": "d70dde3764eb2a3fdbcae59bdfe66424a4eeb105",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
