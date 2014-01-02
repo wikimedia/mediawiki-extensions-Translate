@@ -2,11 +2,12 @@
     "@metadata": {
         "authors": [
             "Emperyan",
-            "Joseph"
+            "Joseph",
+            "Meelo"
         ]
     },
     "searchtranslations": "Çevirileri ara",
-    "tux-sst-edit": "Çeviriyi düzenleme",
+    "tux-sst-edit": "Çeviriyi düzenle",
     "tux-sst-search": "Ara",
     "tux-sst-search-ph": "Çevirileri ara",
     "tux-sst-count": "{{PLURAL:$1|Bir sonuç bulundu|$1 sonuç bulundu}}",

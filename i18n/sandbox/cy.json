@@ -11,7 +11,7 @@
     "tsb-accept-button-label": "Derbynier",
     "tsb-reject-button-label": "Gwrthoder",
     "translationstash": "Croeso",
-    "translate-translationstash-welcome": "Croeso {{{{GENDER:$1|$1}}, rydych nawr yn gyw-gyfieithydd",
+    "translate-translationstash-welcome": "Croeso {{GENDER:$1|$1}}, rydych nawr yn gyw-gyfieithydd",
     "translate-translationstash-welcome-note": "Cyfarwyddwch â'r teclynnau cyfieithu. Cyfieithwch ambell i neges er mwyn derbyn galluoedd cyfieithydd llawn ac ymuno gyda'ch hoff brosiectau.",
     "translate-translationstash-initialtranslation": "Eich cyfieithiad cyntaf",
     "translate-translationstash-translations": "$1 {{PLURAL:$1|cyfieithiadau wedi eu c|cyfieithiad wedi ei g|gyfieithiad wedi eu c|chyfieithiad wedi eu c|chyfieithiad wedi eu c|cyfieithiad wedi eu c}}wblhau",
@@ -19,7 +19,6 @@
     "tsb-limit-reached-title": "Diolch am eich cyfieithiadau",
     "tsb-limit-reached-body": "Rydych wedi cyrraedd y terfyn cyfieithu i gyw-gyfieithwyr. Fe fydd ein tîm yn gwirio eich cyfrif a'i uwchraddio'n fuan. Yna fe gewch gyfieithu'n ddi-derfyn.",
     "tsb-no-requests-from-new-users": "Dim ceisiadau gan ddefnyddwyr newydd",
-    "tsb-promoted-from-sandbox": "Dyrchafwyd y defnyddiwr yn gyfieithydd",
     "tsb-create-user-page": "Dechrau tudalen sylfaenol i'r defnyddiwr",
     "log-name-translatorsandbox": "Y pwll tywod cyfieithu"
 }

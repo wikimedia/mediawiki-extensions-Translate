@@ -11,6 +11,7 @@
     "tsb-reminder-sent-new": "Eng Erënnerung schécken",
     "tsb-email-promoted-subject": "Dir sidd elo Iwwersetzer op {{SITENAME}}",
     "tsb-email-rejected-subject": "Är Demande fir en Iwwersetzer op {{SITENAME}} ze gi gouf refuséiert.",
+    "tsb-email-rejected-body": "Bonjour $1,\n\nMerci fir Är Ufro als Iwwersetzer op {{SITENAME}}. Ech bedaueren Iech informéieren ze missen, datt ech Är Demande refuséiert hunn well d'Qualitéit vun Ären Iwwersetzungen net den Ufuerderungen entsprécht.\n\nWann Dir mengt Är Ufro gouf iertemlecherweis refuséiert da stellt w.e.g. Är Ufro als Iwwersetzer op {{SITENAME}} nach eng Kéier. Dir kënnt Iech hei registréieren:\n$2\n\n$3,\n{{GENDER:$3|Mataarbechter|Mataarbechterin|Mataarbechter}} vu(n) {{SITENAME}}",
     "tsb-request-count": "{{PLURAL:$1|Eng Ufro|$1 Ufroen}}",
     "tsb-all-languages-button-label": "All Sproochen",
     "tsb-accept-button-label": "Akzeptéieren",
