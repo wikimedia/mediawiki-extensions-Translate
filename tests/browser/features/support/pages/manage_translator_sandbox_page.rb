@@ -32,7 +32,8 @@ class ManageTranslatorSandboxPage
 	end
 
 	def details_button(label)
-		@browser.button(text: label)
+		button_class = label.downcase.gsub(" ", "-")
+		@browser.button(class: button_class)
 	end
 
 	def details_no_translations

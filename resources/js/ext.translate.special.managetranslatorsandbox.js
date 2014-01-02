@@ -134,7 +134,7 @@
 							} );
 						} ),
 					$( '<button>' )
-						.addClass( 'delete destructive button' )
+						.addClass( 'reject destructive button' )
 						.text( mw.msg( 'tsb-reject-button-label' ) )
 						.on( 'click', function () {
 							window.tsbUpdatingUsers = true;
@@ -275,7 +275,7 @@
 				.addClass( 'actions row' )
 				.append(
 					$( '<button>' )
-						.addClass( 'accept primary green button' )
+						.addClass( 'accept-all primary green button' )
 						.text( mw.msg( 'tsb-accept-all-button-label' ) )
 						.on( 'click', function () {
 							window.tsbUpdatingUsers = true;
@@ -290,7 +290,7 @@
 							} );
 						} ),
 					$( '<button>' )
-						.addClass( 'delete destructive button' )
+						.addClass( 'reject-all destructive button' )
 						.text( mw.msg( 'tsb-reject-all-button-label' ) )
 						.on( 'click', function () {
 							window.tsbUpdatingUsers = true;
