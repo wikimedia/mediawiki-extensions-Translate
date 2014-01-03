@@ -10,7 +10,7 @@
     "tux-sst-edit": "Çeviriyi düzenle",
     "tux-sst-search": "Ara",
     "tux-sst-search-ph": "Çevirileri ara",
-    "tux-sst-count": "{{PLURAL:$1|Bir sonuç bulundu|$1 sonuç bulundu}}",
+    "tux-sst-count": "{{PLURAL:$1|Bir sonuç bulundu|$1 sonuç bulundu|0=Sonuç bulunamadı}}",
     "tux-sst-facet-language": "Diller",
     "tux-sst-facet-group": "İleti grupları",
     "tux-sst-facet-orphan": "(yetim)",

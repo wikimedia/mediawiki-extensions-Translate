@@ -4,6 +4,6 @@
             "Умар"
         ]
     },
-    "tsb-older-requests": "$1 алсамо {{PLURAL:$1|шира дехар|шира дехараш}}",
+    "tsb-older-requests": "$1 алсамо {{PLURAL:$1|1=шира дехар|шира дехараш}}",
     "logentry-translatorsandbox-rejected": "гочдархо статусан дехар $3 $1 {{GENDER:$2|юхадаьккхина}}."
 }

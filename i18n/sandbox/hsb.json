@@ -45,5 +45,6 @@
     "log-name-translatorsandbox": "Přełožowanske hrajkanišćo",
     "log-description-translatorsandbox": "Protokol akcijow na wužiwarjach přełožowanskeho hrajkanišća",
     "logentry-translatorsandbox-promoted": "$1 je $3 za {{GENDER:$4|přełožowarja|přełožwarku}} {{GENDER:$2|powyšił|powyšiła}}",
-    "logentry-translatorsandbox-rejected": "$1 je naprašowanje wot \"$3\" na powyšenje za {{GENDER:$2|přełožowarja|přełožowarku}} {{GENDER:$2|wotpokazał|wotpokazała}}"
+    "logentry-translatorsandbox-rejected": "$1 je naprašowanje wot \"$3\" na powyšenje za {{GENDER:$2|přełožowarja|přełožowarku}} {{GENDER:$2|wotpokazał|wotpokazała}}",
+    "logentry-newusers-tsbpromoted": "Wužiwarske konto $3 je so přez powyšenje z hrajkanišća {{GENDER:$2|załožiło}}"
 }

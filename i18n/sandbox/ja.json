@@ -41,5 +41,6 @@
     "log-name-translatorsandbox": "翻訳サンドボックス",
     "log-description-translatorsandbox": "翻訳サンドボックス利用者への操作の記録",
     "logentry-translatorsandbox-promoted": "$1 が $3 を{{GENDER:$4|翻訳者}}に{{GENDER:$2|昇格させました}}",
-    "logentry-translatorsandbox-rejected": "$1 が「$3」の翻訳者権限の付与申請を{{GENDER:$2|却下しました}}"
+    "logentry-translatorsandbox-rejected": "$1 が「$3」の翻訳者権限の付与申請を{{GENDER:$2|却下しました}}",
+    "logentry-newusers-tsbpromoted": "サンドボックスからの昇格に伴い利用者アカウント $3 を{{GENDER:$2|作成}}"
 }

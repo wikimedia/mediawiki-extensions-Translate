@@ -45,5 +45,6 @@
     "log-name-translatorsandbox": "Pśełožowańske grajkanišćo",
     "log-description-translatorsandbox": "Protokol akcijow na wužywarjach pśełožowańskego grajkanišća",
     "logentry-translatorsandbox-promoted": "$1 jo $3 za {{GENDER:$4|pśełožowarja|pśełožwarku}} {{GENDER:$2|pówušył|pówušyła}}",
-    "logentry-translatorsandbox-rejected": "$1 jo napšašowanje wót \"$3\" na pówušenje za {{GENDER:$2|pśełožowarja|pśełožowarku}} {{GENDER:$2|wótpokazał|wótpokazała}}"
+    "logentry-translatorsandbox-rejected": "$1 jo napšašowanje wót \"$3\" na pówušenje za {{GENDER:$2|pśełožowarja|pśełožowarku}} {{GENDER:$2|wótpokazał|wótpokazała}}",
+    "logentry-newusers-tsbpromoted": "Wužywarske konto $3 jo se pśez pówušenje z grajkanišća {{GENDER:$2|załožyło}}"
 }
