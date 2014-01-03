@@ -1,6 +1,6 @@
 <?php
 /**
- * Code hygience test.
+ * Code hygiene test.
  *
  * @file
  * @author Niklas Laxström
@@ -9,6 +9,11 @@
  */
 
 class ResourcesOrderTest extends MediaWikiTestCase {
+	public function setUp() {
+		parent::setUp();
+		$this->setMwGlobals( 'wgResourceModules', array() );
+	}
+
 	public function testAlphabeticalOrder() {
 		require __DIR__ . '/../../Resources.php';
 
