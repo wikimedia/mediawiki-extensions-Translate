@@ -31,7 +31,7 @@ GEM
       syntax
     mime-types (2.0)
     multi_json (1.8.2)
-    multi_test (0.0.2)
+    multi_test (0.0.3)
     net-http-persistent (2.9)
     page-object (0.9.4)
       page_navigation (>= 0.8)
@@ -49,7 +49,7 @@ GEM
       multi_json (~> 1.0)
       rubyzip (~> 1.0)
       websocket (~> 1.0.4)
-    syntax (1.1.0)
+    syntax (1.2.0)
     watir-webdriver (0.6.4)
       selenium-webdriver (>= 2.18.0)
     websocket (1.0.7)
