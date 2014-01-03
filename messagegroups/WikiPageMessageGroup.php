@@ -91,9 +91,9 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	 * Returns of stored translation of message specified by the $key in language
 	 * code $code.
 	 *
-	 * @param $key \string Key of the message.
-	 * @param $code \string Language code.
-	 * @return \mixed Stored translation or null.
+	 * @param string $key Message key
+	 * @param string $code Language code
+	 * @return string|null Stored translation or null.
 	 */
 	public function getMessage( $key, $code ) {
 		if ( $this->isSourceLanguage( $code ) ) {

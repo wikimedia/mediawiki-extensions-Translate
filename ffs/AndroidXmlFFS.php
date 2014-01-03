@@ -21,6 +21,10 @@ class AndroidXmlFFS extends SimpleFFS {
 		return array( '.xml' );
 	}
 
+	/**
+	 * @param string $data
+	 * @return array Parsed data.
+	 */
 	public function readFromVariable( $data ) {
 		$reader = new SimpleXMLElement( $data );
 

@@ -136,8 +136,8 @@ interface MessageGroup {
 	/**
 	 * Returns the definition or translation for given message key in given
 	 * language code.
-	 * @param $key string
-	 * @param $code string
+	 * @param string $key Message key
+	 * @param string $code Language code
 	 * @return string|null
 	 */
 	public function getMessage( $key, $code );

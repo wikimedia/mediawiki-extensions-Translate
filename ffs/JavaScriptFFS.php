@@ -33,7 +33,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 
 	/**
 	 * @param $data array
-	 * @return array
+	 * @return array Parsed data.
 	 */
 	public function readFromVariable( $data ) {
 		/* Parse authors list */

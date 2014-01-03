@@ -60,6 +60,10 @@ class PythonSingleFFS extends SimpleFFS {
 		return $sections;
 	}
 
+	/**
+	 * @param string $code Language code.
+	 * @return array|bool
+	 */
 	public function read( $code ) {
 		$code = $this->group->mapCode( $code );
 		$filename = $this->group->getSourceFilePath( $code );
@@ -114,6 +118,11 @@ class PythonSingleFFS extends SimpleFFS {
 		return $sections;
 	}
 
+	/**
+	 * @param $data
+	 * @return void
+	 * @throws MWException
+	 */
 	public function readFromVariable( $data ) {
 		throw new MWException( 'Not yet supported' );
 	}

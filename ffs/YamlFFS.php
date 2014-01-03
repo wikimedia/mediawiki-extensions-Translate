@@ -14,7 +14,7 @@ class YamlFFS extends SimpleFFS {
 
 	/**
 	 * @param $data
-	 * @return array
+	 * @return array Parsed data.
 	 */
 	public function readFromVariable( $data ) {
 		// Authors first.

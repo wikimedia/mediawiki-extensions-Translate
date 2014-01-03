@@ -39,6 +39,10 @@ class IniFFS extends SimpleFFS {
 		return array( '.ini' );
 	}
 
+	/**
+	 * @param string $data
+	 * @return array Parsed data.
+	 */
 	public function readFromVariable( $data ) {
 		$authors = array();
 		preg_match_all( '/^; Author: (.*)$/m', $data, $matches, PREG_SET_ORDER );

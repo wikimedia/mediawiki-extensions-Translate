@@ -35,7 +35,7 @@ class JavaFFS extends SimpleFFS {
 
 	/**
 	 * @param $data array
-	 * @return array
+	 * @return array Parsed data.
 	 * @throws MWException
 	 */
 	public function readFromVariable( $data ) {
