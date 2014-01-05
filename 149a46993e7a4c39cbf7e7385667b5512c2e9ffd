@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_b0da731f",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-05T13:11:27Z",
+      "side": 1,
+      "message": "I would not suggest babel here.\n\nCldr yes, maybe translatesvg some day.",
+      "revId": "149a46993e7a4c39cbf7e7385667b5512c2e9ffd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_90dd2f1a",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-05T13:11:27Z",
+      "side": 1,
+      "message": "This will move to requires once it is present at packagist.",
+      "revId": "149a46993e7a4c39cbf7e7385667b5512c2e9ffd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
