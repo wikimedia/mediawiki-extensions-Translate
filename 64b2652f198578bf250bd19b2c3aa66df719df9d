@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_303783e2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-05T10:05:19Z",
+      "side": 1,
+      "message": "just messages\u0027",
+      "revId": "64b2652f198578bf250bd19b2c3aa66df719df9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_b04a735d",
+        "filename": "resources/js/ext.translate.editor.helpers.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-05T10:05:19Z",
+      "side": 1,
+      "message": "I\u0027m not sure if setting lang here is better than not setting it at all. Insertables hardly contain any natural language.",
+      "revId": "64b2652f198578bf250bd19b2c3aa66df719df9d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
