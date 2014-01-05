@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_f0ffdba5",
+        "filename": "COPYING",
+        "patchSetId": 1
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-01-05T11:41:33Z",
+      "side": 1,
+      "message": "You sure?",
+      "revId": "9ad5af4f8afd88721fd56f320c78425a02b031f6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
