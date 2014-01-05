@@ -420,11 +420,22 @@
 		addInsertables: function ( insertables ) {
 			var i,
 				count = insertables.length,
+				$sourceMessage = this.$editor.find( '.sourcemessage' ),
 				$buttonArea = this.$editor.find( '.tux-editor-insert-buttons' ),
 				$textarea = this.$editor.find( '.tux-textarea-translation' );
 
 			for ( i = 0; i < count; i++ ) {
+				// The dir and lang attributes must be set here,
+				// because the language of the insertables is the language
+				// of the source message and not of the translation.
+				// The direction may appear confusing, for example,
+				// in tvar strings, which would appear with the dollar sign
+				// on the wrong end.
 				$( '<button>' )
+					.prop( {
+						dir: $sourceMessage.prop( 'dir' ),
+						lang: $sourceMessage.prop( 'lang' )
+					} )
 					.addClass( 'insertable shortcut-activated' )
 					.text( insertables[i].display )
 					.data( 'iid', i )
