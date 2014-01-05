@@ -420,11 +420,16 @@
 		addInsertables: function ( insertables ) {
 			var i,
 				count = insertables.length,
+				$sourceMessage = this.$editor.find( '.sourcemessage' ),
 				$buttonArea = this.$editor.find( '.tux-editor-insert-buttons' ),
 				$textarea = this.$editor.find( '.tux-textarea-translation' );
 
 			for ( i = 0; i < count; i++ ) {
 				$( '<button>' )
+					.prop(
+						dir: $sourceMessage.prop( 'dir' ),
+						lang: $sourceMessage.prop( 'lang' )
+					)
 					.addClass( 'insertable shortcut-activated' )
 					.text( insertables[i].display )
 					.data( 'iid', i )
