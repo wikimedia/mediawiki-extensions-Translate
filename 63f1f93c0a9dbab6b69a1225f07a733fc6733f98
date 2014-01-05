@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_93a3f9fc",
+        "filename": "composer.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-05T18:37:02Z",
+      "side": 1,
+      "message": "require, unlike suggest, must provide a version number. \"*\" will do.\n\nAs a side note: changing this to the matching MLEB version when doing releases should be added to MLEB release procedure.",
+      "revId": "63f1f93c0a9dbab6b69a1225f07a733fc6733f98",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
