@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "eeebdf60_30ce6360",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-01-05T13:30:34Z",
+      "side": 1,
+      "message": "Why not? The sandbox even adds babels and it\u0027s in this repo.",
+      "parentUuid": "eeebdf60_b0da731f",
+      "revId": "149a46993e7a4c39cbf7e7385667b5512c2e9ffd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eeebdf60_90dd2f1a",
         "filename": "composer.json",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-05T13:11:27Z",
       "side": 1,
       "message": "This will move to requires once it is present at packagist.",
+      "revId": "149a46993e7a4c39cbf7e7385667b5512c2e9ffd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_10c91f55",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-01-05T13:30:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eeebdf60_90dd2f1a",
       "revId": "149a46993e7a4c39cbf7e7385667b5512c2e9ffd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
