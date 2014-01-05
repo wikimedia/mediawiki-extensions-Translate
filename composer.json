@@ -29,9 +29,12 @@
 	},
 	"require": {
 		"php": ">=5.3.0",
-		"composer/installers": ">=1.0.1"
+		"composer/installers": ">=1.0.1",
+		"mediawiki/universal-language-selector": "The primary aim is to allow users to select a language and configure its support i
+n an easy way. Main features are language selection, input methods and web fonts."
 	},
 	"suggest": {
+		"mediawiki/babel": "Users can easily indicate their language proficiency on their user page",
 		"mediawiki/translation-notifications": "Manage communication with translators"
 	},
 	"autoload": {
