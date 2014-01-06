@@ -233,44 +233,38 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * @return array[array]
 	 */
 	public static function getPluralForms( $translation ) {
+		// Stores the forms from plural invocations
 		$plurals = array();
-		while ( true ) {
-			$pos = stripos( $translation, '{{plural:' );
-			if ( $pos === false ) {
-				break;
-			}
 
-			$len = strlen( $translation );
-			$stack = 0;
-			for ( $i = $pos; $i < $len; $i++ ) {
-				if ( $translation[$i] === '{' ) {
-					$stack++;
-				} elseif ( $translation[$i] === '}' ) {
-					$stack--;
-				} elseif ( $stack > 2 && $translation[$i] === '|' ) {
-					# These pipes belong to another thing, ignore them
-					$translation[$i] = '_';
-				}
+		$cb = function ( $parser, $frame, $args ) use ( &$plurals ) {
+			$forms = array();
 
-				if ( $stack === 0 ) {
-					// The string '{{PLURAL...' (without closing }})
-					$pluralString = substr( $translation, $pos, $i - $pos - 1 );
-					$forms = explode( '|', $pluralString );
-					array_shift( $forms );
-
-					// Remove this from the current string to continue later
-					$translation = substr( $translation, $i );
-
-					$plurals[] = $forms;
-					break;
+			foreach ( $args as $index => $form ) {
+				// The first arg is the number, we skip it
+				if ( $index !== 0 ) {
+					// Collect the raw text
+					$forms[] = $frame->expand( $form, PPFrame::RECOVER_ORIG );
+					// Expand the text to process embedded plurals
+					$frame->expand( $form );
 				}
 			}
+			$plurals[] = $forms;
 
-			// Unclosed plural, stop here
-			if ( $i === $len ) {
-				break;
-			}
-		}
+			return '';
+		};
+
+		// Setup parser
+		$parser = new Parser();
+		// Load the default magic words etc now.
+		$parser->firstCallInit();
+		// So that they don't overrider our own callback
+		$parser->setFunctionHook( 'plural', $cb, SFH_NO_HASH | SFH_OBJECT_ARGS );
+
+		// Setup things needed for preprocess
+		$title = null;
+		$options = new ParserOptions( new User(), Language::factory( 'en' ) );
+
+		$parser->preprocess( $translation, $title, $options );
 
 		return $plurals;
 	}

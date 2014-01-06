@@ -34,7 +34,7 @@ class MediaWikiMessageCheckerTest extends MediaWikiTestCase {
 	 */
 	public function testGetPluralForms( $expected, $string, $comment ) {
 		$provided = MediaWikiMessageChecker::getPluralForms( $string );
-		$this->assertEquals( $expected, $provided, $comment );
+		$this->assertSame( $expected, $provided, $comment );
 	}
 
 	public function getPluralFormsProvider() {
@@ -68,10 +68,24 @@ class MediaWikiMessageCheckerTest extends MediaWikiTestCase {
 				'unclosed plural tag is ignored'
 			),
 			array(
-				array( array( '1=foo', '{{GENDER:#_he}}' ) ),
+				array( array( '1=foo', '{{GENDER:#|he}}' ) ),
 				'a{{PLURAL:#|1=foo|{{GENDER:#|he}}}}',
-				'pipes in subtemplates are ignored by replacing them with other char'
+				'pipes in subtemplates are ignored'
 			),
+			array(
+				array( array( '[[Special:A|письмо]]', '[[Special:A|писем]]', '[[Special:A|письма]]' ) ),
+				'{{PLURAL:#|[[Special:A|письмо]]|[[Special:A|писем]]|[[Special:A|письма]]}}',
+				'pipes in links are ignored'
+			),
+			array(
+				array(
+					array( 'a', 'b' ),
+					array( 'c', 'd' ),
+					array( '{{PLURAL:#|a|b}}', '{{PLURAL:#|c|d}}' ),
+					),
+				'{{PLURAL:#|{{PLURAL:#|a|b}}|{{PLURAL:#|c|d}}}}',
+				'nested plurals are handled correctly'
+			)
 		);
 	}
 
