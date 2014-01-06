@@ -85,7 +85,6 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 
 		$this->outputLanguageCloud( $natives );
 
-		// Requires NS_PORTAL. If not present, display error text.
 		if ( !defined( 'NS_PORTAL' ) ) {
 			$users = $this->fetchTranslatorsAuto();
 		} else {
@@ -94,7 +93,8 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 
 		$this->preQueryUsers( $users );
 
-		list( $editcounts, $lastedits ) = $this->getUserStats();
+		$usernames = array_keys( call_user_func_array( 'array_merge', array_values( $users ) ) );
+		$userStats = $this->getUserStats( $usernames );
 
 		// Information to be used inside the foreach loop.
 		$linkInfo['rc']['title'] = SpecialPage::getTitleFor( 'Recentchanges' );
@@ -154,7 +154,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 			$linkList = $lang->listToText( $links );
 
 			$out->addHTML( "<p>" . $linkList . "</p>\n" );
-			$this->makeUserList( $users[$code], $editcounts, $lastedits );
+			$this->makeUserList( $users[$code], $userStats );
 		}
 
 		$out->addHtml( Html::element( 'hr' ) );
@@ -302,7 +302,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		$out->addHtml( '</div>' );
 	}
 
-	protected function makeUserList( $users, $editcounts, $lastedits ) {
+	protected function makeUserList( $users, $stats ) {
 		$day = 60 * 60 * 24;
 
 		// Scale of the activity colors, anything
@@ -318,14 +318,14 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 
 			$attribs = array();
 			$styles = array();
-			if ( isset( $editcounts[$username] ) ) {
+			if ( isset( $stats[$username][0] ) ) {
 				if ( $count === -1 ) {
-					$count = $editcounts[$username];
+					$count = $stats[$username][0];
 				}
 
 				$styles['font-size'] = round( log( $count, 10 ) * 30 ) + 70 . '%';
 
-				$last = wfTimestamp( TS_UNIX ) - $lastedits[$username];
+				$last = wfTimestamp( TS_UNIX ) - wfTimeStamp( TS_UNIX, $stats[$username][1] );
 				$last = round( $last / $day );
 				$attribs['title'] = $this->msg( 'supportedlanguages-activity', $username )
 					->numParams( $count, $last )->text();
@@ -355,29 +355,39 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		$this->getOutput()->addHTML( $html );
 	}
 
-	protected function getUserStats() {
+	protected function getUserStats( $users ) {
 		$cache = wfGetCache( CACHE_ANYTHING );
-		$cachekey = wfMemcKey( 'translate-supportedlanguages-userstats' );
-		$data = $cache->get( $cachekey );
-		if ( !$this->purge && is_array( $data ) ) {
-			return $data;
-		}
-
 		$dbr = wfGetDB( DB_SLAVE );
-		$editcounts = $lastedits = array();
-		$tables = array( 'user', 'revision' );
-		$fields = array( 'user_name', 'user_editcount', 'MAX(rev_timestamp) as lastedit' );
-		$conds = array( 'user_id = rev_user' );
-		$options = array( 'GROUP BY' => 'user_name' );
 
-		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
-		foreach ( $res as $row ) {
-			$editcounts[$row->user_name] = $row->user_editcount;
-			$lastedits[$row->user_name] = wfTimestamp( TS_UNIX, $row->lastedit );
+		$cacheKeys = array();
+
+		foreach ( $users as $username ) {
+			$keys[] = wfMemcKey( 'translate', 'sl-usertats', $username );
 		}
 
-		$data = array( $editcounts, $lastedits );
-		$cache->set( $cachekey, $data, 3600 );
+		$cached = $cache->getMulti( $keys );
+		$data = array();
+
+		foreach ( $users as $index => $username ) {
+			$cachekey = $keys[$index];
+
+			if ( !$this->purge && isset( $cached[$cachekey] ) ) {
+				$data[$username] = $cached[$cachekey];
+				continue;
+			}
+
+			$tables = array( 'user', 'revision' );
+			$fields = array( 'user_name', 'user_editcount', 'MAX(rev_timestamp) as lastedit' );
+			$conds = array(
+				'user_name' => $username,
+				'user_id = rev_user',
+			);
+
+			$res = $dbr->selectRow( $tables, $fields, $conds, __METHOD__ );
+			$data[$username] = array( $res->user_editcount, $res->lastedit );
+
+			$cache->set( $cachekey, $data[$username], 3600 );
+		}
 
 		return $data;
 	}
