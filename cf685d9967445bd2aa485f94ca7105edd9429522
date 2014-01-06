@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_494c9e9f",
+        "filename": "specials/SpecialManageTranslatorSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-06T09:14:36Z",
+      "side": 1,
+      "message": "Update or remove as this is protected.",
+      "revId": "cf685d9967445bd2aa485f94ca7105edd9429522",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_29639a0b",
+        "filename": "specials/SpecialManageTranslatorSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-06T09:14:36Z",
+      "side": 1,
+      "message": "This is not old, it\u0027s new, right?",
+      "revId": "cf685d9967445bd2aa485f94ca7105edd9429522",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
