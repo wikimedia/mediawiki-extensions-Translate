@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eeebdf60_89ee2685",
+        "filename": "scripts/create-language-models.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-01-06T08:41:54Z",
+      "side": 1,
+      "message": "Ehr... This may be more than some machines have available in RAM+swap. Is that wise?",
+      "revId": "2bf0c8d9cf5ae5fafcd0c60186d2e2d98bc0ee94",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
