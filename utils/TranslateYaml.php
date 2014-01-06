@@ -74,7 +74,10 @@ class TranslateYaml {
 
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'spyc':
-				require_once __DIR__ . '/../libs/spyc/spyc.php';
+				// Load the bundled version if not otherwise available
+				if ( !class_exists( 'Spyc' ) ) {
+					require_once __DIR__ . '/../libs/spyc/spyc.php';
+				}
 				$yaml = spyc_load( $text );
 
 				return self::fixSpycSpaces( $yaml );
