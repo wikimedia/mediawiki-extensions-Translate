@@ -16,6 +16,24 @@
       "revId": "2bf0c8d9cf5ae5fafcd0c60186d2e2d98bc0ee94",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeebdf60_899506e9",
+        "filename": "scripts/create-language-models.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-01-06T08:58:27Z",
+      "side": 1,
+      "message": "Nope.\n\nIt\u0027s the initial query which i taking almost 1G memory for some reason. The rest is split into subprocesses to limit ever growing memory use.",
+      "parentUuid": "eeebdf60_89ee2685",
+      "revId": "2bf0c8d9cf5ae5fafcd0c60186d2e2d98bc0ee94",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
