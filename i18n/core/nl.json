@@ -192,7 +192,7 @@
     "supportedlanguages-colorlegend": "Legenda voor de kleuren: laatste vertaling $1 dagen geleden.",
     "supportedlanguages-translators": "{{PLURAL:$2|Vertaler|Vertalers}}: $1",
     "supportedlanguages-recenttranslations": "recente vertalingen",
-    "supportedlanguages-count": "$1 {{plural:$1|taal|talen}} in totaal.",
+    "supportedlanguages-count": "$1 {{PLURAL:$1|taal|talen}} in totaal.",
     "supportedlanguages-activity": "$1: $2 {{PLURAL:$2|bewerking|bewerkingen}} - laatste bewerking {{PLURAL:$3|gisteren|$3 dagen}} geleden",
     "translate-save": "Opslaan ($1)",
     "translate-jssti-add": "Aan lijst toevoegen",

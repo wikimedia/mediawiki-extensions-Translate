@@ -3,7 +3,8 @@
         "authors": [
             "Amire80",
             "Rotemliss",
-            "YaronSh"
+            "YaronSh",
+            "Guycn2"
         ]
     },
     "translategroupdescriptions-desc": "תיאורים של קבוצות הודעות למוצרים הנתמכים ב[http://mediawiki.org/wiki/Extension:Translate הרחבת התרגום].",
@@ -54,5 +55,5 @@
     "translate-group-desc-wikimedia-mobile-wlm": "[[Translating:WLMMobile|ויקי אוהבת אתרי מורשת לניידים]] הוא יישום למכשירים ניידים שמיועד לתרומה ל[[:meta:Wiki Loves Monuments|מיזם ויקי אוהבת אתרי מורשת]]",
     "translate-group-desc-waymarked-trails-help": "דפי עזרה של אתרי Waymarked Trails: http://waymarkedtrails.org/help/about",
     "translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] הוא עורך מסמכים בזמן אמת באמת",
-    "translate-group-desc-mathjax": "[[Translating:MathJax|MathJax]] היא ספריית ג'אווה סקריפט תואמת לדפדפנים שונים שמציגה נוסחאות מתמטיות"
+    "translate-group-desc-mathjax": "[[Translating:MathJax|MathJax]] היא ספריית JavaScript שמציגה נוסחות מתמטיות, אשר תואמת לדפדפנים שונים"
 }

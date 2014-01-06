@@ -205,7 +205,7 @@
     "supportedlanguages-portallink": "[$1] $2 — $3",
     "supportedlanguages-translators": "{{PLURAL:$2|1=Переводчик|Переводчики}}: $1",
     "supportedlanguages-recenttranslations": "недавние переводы",
-    "supportedlanguages-count": "Всего $1 {{plural:$1|язык|языка|языков}}.",
+    "supportedlanguages-count": "Всего $1 {{PLURAL:$1|язык|языка|языков}}.",
     "supportedlanguages-activity": "$1: $2 {{PLURAL:$2|правка|правок|правки}} — последняя правка $3 {{PLURAL:$3|день|дней|дня}} назад",
     "translate-save": "Сохранить ($1)",
     "translate-jssti-add": "Добавить в список",

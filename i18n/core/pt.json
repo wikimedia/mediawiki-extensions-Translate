@@ -192,7 +192,7 @@
     "supportedlanguages-colorlegend": "Legenda das cores: última tradução há $1 dias.",
     "supportedlanguages-translators": "{{PLURAL:$2|Tradutor|Tradutores}}: $1",
     "supportedlanguages-recenttranslations": "traduções recentes",
-    "supportedlanguages-count": "$1 {{plural:$1|língua|línguas}} no total.",
+    "supportedlanguages-count": "$1 {{PLURAL:$1|língua|línguas}} no total.",
     "supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edição|edições}} - a última edição foi há $3 {{PLURAL:$3|dia|dias}}",
     "translate-save": "Gravar ($1)",
     "translate-jssti-add": "Adicionar à lista",

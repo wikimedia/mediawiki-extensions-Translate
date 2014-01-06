@@ -202,7 +202,7 @@
     "supportedlanguages-colorlegend": "Legende zu den Farben: Letzte Übersetzung vor $1 Tagen.",
     "supportedlanguages-translators": "{{PLURAL:$2|Übersetzer}}: $1",
     "supportedlanguages-recenttranslations": "Aktuelle Übersetzungen",
-    "supportedlanguages-count": "Insgesamt $1 {{plural:$1|Sprache|Sprachen}}.",
+    "supportedlanguages-count": "Insgesamt $1 {{PLURAL:$1|Sprache|Sprachen}}.",
     "supportedlanguages-activity": "$1: $2 {{PLURAL:$2|Bearbeitung|Bearbeitungen}} - letzte Bearbeitung vor $3 {{PLURAL:$3|Tag|Tagen}}",
     "translate-save": "Speichern ($1)",
     "translate-jssti-add": "Zur Liste hinzufügen",

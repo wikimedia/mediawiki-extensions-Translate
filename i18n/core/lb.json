@@ -185,7 +185,7 @@
     "supportedlanguages-colorlegend": "Erklärung vun de Faarwen: Lescht Iwwersetzung viru(n) $1 Deeg.",
     "supportedlanguages-translators": "{{PLURAL:$2|Iwwersetzer|Iwwersetzer}}: $1",
     "supportedlanguages-recenttranslations": "rezent Iwwersetzungen",
-    "supportedlanguages-count": "{{plural:$1|Eng Sprooch|$1 Sproochen}} am Ganzen.",
+    "supportedlanguages-count": "{{PLURAL:$1|Eng Sprooch|$1 Sproochen}} am Ganzen.",
     "supportedlanguages-activity": "$1: $2 {{PLURAL:$2|Ännerung|Ännerungen}} - lescht Ännerung viru(n) $3 {{PLURAL:$3|Dag|Deeg}}",
     "translate-save": "Späicher ($1)",
     "translate-jssti-add": "Op d'Lëscht derbäisetzen",

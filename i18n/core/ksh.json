@@ -185,7 +185,7 @@
     "supportedlanguages-colorlegend": "De Lejände för de Färve: De läzde Övversäzong es $1 Dääsch her.",
     "supportedlanguages-translators": "{{PLURAL:$2|Eine Övversäzer:|$2 Övversäzer:|Keine Övversäzer}} $1",
     "supportedlanguages-recenttranslations": "neuste Övversäzunge",
-    "supportedlanguages-count": "{{plural:$1|Ein Schprooch|$1 Schprooche|Kein Schprooche}} ensjesamp.",
+    "supportedlanguages-count": "{{PLURAL:$1|Ein Schprooch|$1 Schprooche|Kein Schprooche}} ensjesamp.",
     "supportedlanguages-activity": "$1: {{PLURAL:$2|Ein Änderong|$2 Änderonge|Kein Änderonge}} — de lätzde wohr {{PLURAL:$3|vör einem Daach|vör $3 Dääsch|hück}}.",
     "translate-save": "Save ($1)",
     "translate-jssti-add": "Bei de Leß dobei donn",

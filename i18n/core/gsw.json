@@ -186,7 +186,7 @@
     "supportedlanguages-colorlegend": "Farblegene: Letschti Übersetzig vor $1 Dääg.",
     "supportedlanguages-translators": "{{PLURAL:$2|Ibersetzer|Ibersetzer}}: $1",
     "supportedlanguages-recenttranslations": "Aktuälli Ibersetzige",
-    "supportedlanguages-count": "Insgsamt $1 {{plural:$1|Sprooch|Sprooche}}.",
+    "supportedlanguages-count": "Insgsamt $1 {{PLURAL:$1|Sprooch|Sprooche}}.",
     "supportedlanguages-activity": "$1: $2 {{PLURAL:$2|Bearbeitig|Bearbeitige}} - letschti Bearbeitig vor $3 {{PLURAL:$3|Daag|Dääg}}",
     "translate-save": "Spychere ($1)",
     "translate-jssti-add": "Zue dr Lischt zuefiege",
