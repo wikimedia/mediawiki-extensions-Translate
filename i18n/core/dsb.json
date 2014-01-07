@@ -3,7 +3,8 @@
         "authors": [
             "Dundak",
             "Michawiki",
-            "Shirayuki"
+            "Shirayuki",
+            "Derbeth"
         ]
     },
     "translate": "Pśełožyś",
@@ -71,7 +72,7 @@
     "translate-magic-cm-comment": "Komentar",
     "translate-magic-cm-save": "Składowaś",
     "translate-magic-cm-updatedusing": "Z pomocu [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]] zaktualizěrowany",
-    "translate-magic-cm-savefailed": "Składowanje jo se njeraźiło",
+    "translate-magic-cm-savefailed": "Składowanje njejo se raźiło",
     "translate-magic-special": "Aliasy specialnych bokow",
     "translate-magic-words": "Magiske słowa",
     "translate-magic-namespace": "Mjenja mjenjowych rumow",
@@ -230,7 +231,7 @@
     "translate-js-next": "Pśiducu powěźeńku składowaś a wocyniś",
     "translate-js-nonext": "To jo było slědna powěźeńka na tos tom boku.",
     "translate-js-skip": "K pśiducej powěźeńce skócyś",
-    "translate-js-save-failed": "Składowanje jo se njeraźiło. Pšosym daj toś tu zmólku k wěsći.",
+    "translate-js-save-failed": "Składowanje njejo se raźiło. Pšosym daj toś tu zmólku k wěsći.",
     "translate-js-history": "Pśełožowańska historija",
     "translate-js-support": "Pšašaś se",
     "translate-js-support-title": "Pšos wó pomoc, jolic njejo dosć informacijow, aby se toś ta powěźeńka pšawje pśełožyła.",
@@ -251,7 +252,7 @@
     "translate-search-nofilter": "Žedne filtrowanje",
     "translate-messagereview-submit": "Ako pśeglědany markěrowaś",
     "translate-messagereview-progress": "Markěrujo se ako pśeglědany...",
-    "translate-messagereview-failure": "Markěrowanje ako pśeglědany jo se njeraźiło: $1",
+    "translate-messagereview-failure": "Markěrowanje ako pśeglědany njejo se raźiło: $1",
     "translate-messagereview-done": "Pśeglědany",
     "translate-messagereview-reviews": "Wót {{PLURAL:$1|jadnogo wužywarja|$1 wužywarjowu|$1 wužywarjow}} pśeglědany",
     "translate-messagereview-reviewswithyou": "Wót {{PLURAL:$1|tebje|$1 wužywarjowu inkluziwnje tebje|$1 wužywarjow inkluziwnje tebje}} pśeglědany",

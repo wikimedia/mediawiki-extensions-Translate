@@ -1,7 +1,8 @@
 {
     "@metadata": {
         "authors": [
-            "Michawiki"
+            "Michawiki",
+            "Derbeth"
         ]
     },
     "managetranslatorsandbox": "Pśełožowarske grajkanišćo zastojaś",
@@ -11,7 +12,7 @@
     "tsb-reminder-sending": "Dopomnjeśe se sćelo...",
     "tsb-reminder-sent": "{{PLURAL:$1|$1 dopomnjeśe jo se pósłało $2|$1 dopomnjeśi stej se pósłałej, slědne $2|$1 dopomnjeśa su se pósłali, slědne $2|$1 dopomnjeśow jo se pósłało, slědne $2}}",
     "tsb-reminder-sent-new": "Dopomnjeśe jo se pósłało",
-    "tsb-reminder-failed": "Słanje dopomnjeśa jo se njeraźiło",
+    "tsb-reminder-failed": "Słanje dopomnjeśa njejo se raźiło",
     "tsb-email-promoted-subject": "Sy něnto pśełožowaŕ na {{GRAMMAR:lokatiw|{{SITENAME}}}}",
     "tsb-email-promoted-body": "Witaj {{GENDER:$1|$1}},\n\nwutšobne glukužycenje! Som testowe pśełožki pśeglědał, kótarež sy na {{GRAMMAR:lokatiw|{{SITENAME}}}} pśewjadł a som tebi połne pśełožowarske pšawa dał.\n\nPśiź pšosym k {{GRAMMAR:datiw|{{SITENAME}}}}, aby něnto a kuždy źeń dalej pśełožował:\n$2\n\nWitaj a wjeliki źěk za twóje pśinoski!\n\n{{GENDER:$3|$3}},\nsobuźěłaśerje {{GRAMMAR:genitiw|{{SITENAME}}}}",
     "tsb-email-rejected-subject": "Twójo pówušenje za pśełožowarja na {{GRAMMAR:lokatiw|{{SITENAME}}}} jo se wótpokazało",
