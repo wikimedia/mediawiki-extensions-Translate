@@ -32,7 +32,7 @@ class TranslateGenerateRandomSandboxData extends Maintenance {
 		for ( $i = 0; $i < $users; $i++ ) {
 			$username = 'Pupu' . wfRandomString( 6 );
 			$password = wfRandomString( 12 );
-			$email = "$username.$password@example.com";
+			$email = "$username.$password@blackhole.io";
 			$user = TranslateSandbox::addUser( $username, $password, $email );
 
 			$language = $languages[rand( 0, count( $languages ) - 1 )];

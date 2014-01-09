@@ -20,7 +20,7 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 	}
 
 	public function testAddUser() {
-		$user = TranslateSandbox::addUser( 'Test user', 'test@example.com', 'test password' );
+		$user = TranslateSandbox::addUser( 'Test user', 'test@blackhole.io', 'test password' );
 		$this->assertTrue( $user->isLoggedIn(), 'User exists' );
 
 		// Work around for https://bugzilla.wikimedia.org/46844
@@ -29,7 +29,7 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 	}
 
 	public function testDeleteUser() {
-		$user = TranslateSandbox::addUser( 'Test user2', 'test@example.com', 'test password' );
+		$user = TranslateSandbox::addUser( 'Test user2', 'test@blackhole.io', 'test password' );
 		TranslateSandbox::deleteUser( $user );
 		$this->assertFalse( $user->isLoggedIn(), 'User no longer exists' );
 	}
@@ -39,7 +39,7 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 	 * @expectedExceptionMessage Not a sandboxed user
 	 */
 	public function testDeleteUserPromoted() {
-		$user = TranslateSandbox::addUser( 'Test user3', 'test@example.com', 'test password' );
+		$user = TranslateSandbox::addUser( 'Test user3', 'test@blackhole.io', 'test password' );
 		TranslateSandbox::promoteUser( $user );
 		TranslateSandbox::deleteUser( $user );
 	}
@@ -47,7 +47,7 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 	public function testGetUsers() {
 		$atStart = TranslateSandbox::getUsers()->count();
 
-		$user = TranslateSandbox::addUser( 'Test user4', 'test@example.com', 'test password' );
+		$user = TranslateSandbox::addUser( 'Test user4', 'test@blackhole.io', 'test password' );
 
 		$this->assertEquals(
 			$atStart + 1, TranslateSandbox::getUsers()->count(),
@@ -64,7 +64,7 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 	public function testGetUsersPromotion() {
 		$atStart = TranslateSandbox::getUsers()->count();
 
-		$user = TranslateSandbox::addUser( 'Test user5', 'test@example.com', 'test password' );
+		$user = TranslateSandbox::addUser( 'Test user5', 'test@blackhole.io', 'test password' );
 		$this->assertEquals(
 			$atStart + 1,
 			TranslateSandbox::getUsers()->count(),
@@ -80,14 +80,14 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 	}
 
 	public function testPromoteUser() {
-		$user = TranslateSandbox::addUser( 'Test user6', 'test@example.com', 'test password' );
+		$user = TranslateSandbox::addUser( 'Test user6', 'test@blackhole.io', 'test password' );
 		TranslateSandbox::promoteUser( $user );
 
 		$this->assertContains( 'translator', $user->getGroups() );
 	}
 
 	public function testPermissions() {
-		$user = TranslateSandbox::addUser( 'Test user7', 'test@example.com', 'test password' );
+		$user = TranslateSandbox::addUser( 'Test user7', 'test@blackhole.io', 'test password' );
 		$title = Title::makeTitle( NS_USER_TALK, $user->getName() );
 
 		$this->assertFalse(
