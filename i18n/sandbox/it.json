@@ -16,6 +16,7 @@
     "tsb-email-promoted-subject": "Ora sei un traduttore su {{SITENAME}}",
     "tsb-email-promoted-body": "Ciao $1,\n\nCongratulazioni! Ho controllato le traduzioni di prova che hai effettuato su {{SITENAME}} e ti ho concesso i diritti completi di {{GENDER:$1|traduttore|traduttrice|traduttore/trice}}.\n\nVieni su {{SITENAME}} per continuare a tradurre ora e ogni giorno:\n$2\n\n{{GENDER:$1|Benvenuto|Benvenuta|Benvenuto/a}} e grazie per i tuoi contributi!\n\n{{GENDER:$3|$3}},\nLo staff di {{SITENAME}}",
     "tsb-email-rejected-subject": "La tua richiesta di essere un traduttore su {{SITENAME}} è stata rifiutata",
+    "tsb-email-rejected-body": "Ciao {{GENDER:$1|$1}},\n\nGrazie per aver richiesto di diventare un traduttore su {{SITENAME}}. Mi dispiace informarti che ho dovuto rifiutare la tua domanda, perché la qualità delle traduzioni non soddisfaceva i requisiti.\n\nSe pensi che la tua richiesta sia stata respinta per errore, prova a rifare nuovamente domanda di diventare traduttore su {{SITENAME}}. Puoi registrarti qui:\n$2\n\n{{GENDER:$3|$3}},\nlo staff di {{SITENAME}}",
     "tsb-request-count": "{{PLURAL:$1|Una richiesta|$1 richieste}}",
     "tsb-all-languages-button-label": "Tutte le lingue",
     "tsb-search-requests": "Cerca richiesta",
@@ -45,5 +46,6 @@
     "log-name-translatorsandbox": "Sandbox di traduzione",
     "log-description-translatorsandbox": "Un registro delle azioni sugli utenti della sandbox di traduzione",
     "logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|ha promosso}} $3 a {{GENDER:$4|traduttore|traduttrice|traduttore/trice}}",
-    "logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|ha rifiutato}} la richiesta di \"$3\" di diventare traduttore/trice"
+    "logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|ha rifiutato}} la richiesta di \"$3\" di diventare traduttore/trice",
+    "logentry-newusers-tsbpromoted": "L'utenza $3 è stata {{GENDER:$2|creata}} per promozione dalla sandbox"
 }
