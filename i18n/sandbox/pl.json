@@ -4,5 +4,7 @@
             "Chrumps"
         ]
     },
-    "tsb-all-languages-button-label": "Wszystkie języki"
+    "tsb-all-languages-button-label": "Wszystkie języki",
+    "log-name-translatorsandbox": "Brudnopis tłumaczeń",
+    "log-description-translatorsandbox": "To jest rejestr działań użytkowników brudnopisu tłumaczeń"
 }

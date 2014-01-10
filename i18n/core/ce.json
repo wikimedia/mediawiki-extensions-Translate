@@ -157,6 +157,7 @@
     "tux-messagetable-more-messages": "Кхин $1 {{PLURAL:$1|1=хаам|хаамаш}}",
     "tux-messagetable-loading-messages": "{{PLURAL:$1|1=Гучу бокхуш бу хаам|Гучу бохуш бу хаамаш}}...",
     "tux-message-filter-placeholder": "Литта могӀа",
+    "tux-empty-list-translated": "Гочбина хаамаш бац",
     "tux-empty-nothing-to-proofread": "ХӀума яц хьажа езаш",
     "tux-empty-you-can-help-providing": "Хьан йиш ю гӀо дан хаамаш гоч бина",
     "tux-empty-nothing-new-to-proofread": "Керла хӀума яц хьажа езаш",
@@ -169,5 +170,7 @@
     "tux-editor-collapse-tooltip": "Къайлаяккха",
     "tux-editor-message-tools-history": "Истори",
     "translate-search-more-languages-info": "кхин $1 {{PLURAL:$1|мотт|меттанаш|меттанаш}}",
+    "translate-statsbar-tooltip": "$1% гочйинарш, $2% хьаьжнаш",
+    "translate-statsbar-tooltip-with-fuzzy": "$1% гочйинарш, $2% хьаьжнаш, $3% шираеларш",
     "translate-search-more-groups-info": "кхин $1 {{PLURAL:$1|тоба}}"
 }
