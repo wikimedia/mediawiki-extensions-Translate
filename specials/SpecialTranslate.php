@@ -90,7 +90,10 @@ class SpecialTranslate extends TranslateSpecialPage {
 				if ( isset( $wgTranslateBlacklist[$check][$this->options['language']] ) ) {
 					$reason = $wgTranslateBlacklist[$check][$this->options['language']];
 					$out->addWikiMsg( 'translate-page-disabled', $reason );
-
+					if ( $isBeta ) {
+						// Close div.ext-translate-container
+						$out->addHTML( Html::closeElement( 'div' ) );
+					}
 					return;
 				}
 			}
