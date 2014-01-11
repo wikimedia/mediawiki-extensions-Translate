@@ -223,6 +223,7 @@
     "translate-manage-fuzzy-summary": "تعریف پیغام تغییر کرده‌است",
     "translate-manage-submit": "اجرا",
     "translate-manage-intro-other": "پایین فهرستی تغییرات ترجمه در زبان $1 است.\nلطفاً این تغییرات را بازبینی کرده و عملی که می‌خواهد برای هر به‌روزرسانی انجام دهید را انتخاب کنید.\nاگر شما می‌خواهید تغییرات را نادیده بگیرید، این عمل موقت خواهد بود.",
+    "translate-manage-import-ok": "واردشده: $1",
     "translate-manage-import-done": "وارد کردن تکمیل شد!",
     "importtranslations": "درون‌ریزی ترجمه‌ها",
     "translate-import-from-local": "بارگذاری پرونده محلی:",
