@@ -78,6 +78,7 @@
     "translate-magic-saved": "Sizning tahrirlaringiz muvaffaqiyatli saqlandi.",
     "translate-checks-parameters": "Quyidagi {{PLURAL:$2|koʻrsatkich|koʻrsatkichlar}} qoʻllanilmayapti:\n\u003Cstrong\u003E\u003Cnowiki\u003E$1\u003C/nowiki\u003E\u003C/strong\u003E",
     "translate-checks-balance": "Juft bo'lmagan miqdordagi ochiluvchi va yopiluvchi {{PLURAL:$2|qavslar|qavslar}}:\n\u003Cstrong\u003E\u003Cnowiki\u003E$1\u003C/nowiki\u003E\u003C/strong\u003E",
+    "translate-checks-links": "Quyidagi {{PLURAL:$2|1=havola|$2 ta havola}} muammo keltirib chiqarmoqda:\n\u003Cstrong\u003E\u003Cnowiki\u003E$1\u003C/nowiki\u003E\u003C/strong\u003E",
     "translate-checks-links-missing": "Quyidagi {{PLURAL:$2|havola ishlatilmayapti|$2 ta havola ishlatilmayapti}}:\n\u003Cstrong\u003E\u003Cnowiki\u003E$1\u003C/nowiki\u003E\u003C/strong\u003E",
     "translate-checks-plural": "Originalda \u003Cnowiki\u003E{{PLURAL:}}\u003C/nowiki\u003Edan foydalanilgan, tarjimada esa — yoʻq.",
     "translate-checks-plural-forms": "\u003Cnowiki\u003E{{PLURAL:}}\u003C/nowiki\u003Eda {{PLURAL:$1|$1 ta o'zgaruvchi}} kiritildi, lekin {{PLURAL:$2|faqat bitta o'zgaruvchi|$2 ta o'zgaruvchi}} qo'llaniladi (0= va 1= talik o'zgaruvchilar bundan mustasno).",
