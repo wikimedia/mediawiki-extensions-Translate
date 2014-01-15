@@ -258,6 +258,7 @@
     "log-name-translationreview": "Tõlgete ülevaatuslogi",
     "log-description-translationreview": "Kõigi tõlgete ja sõnumirühmade ülevaatuslogi.",
     "logentry-translationreview-message": "$1 {{GENDER:$2|märkis ülevaadatuks}} tõlke $3",
+    "logentry-translationreview-group": "$1 {{GENDER:$2|muutis}} lehekülje \"$3\" $4 tõlgete oleku: $6 → $7",
     "translate-workflow-state-": "(määramata)",
     "translate-workflowstatus": "Olek: $1",
     "translate-workflow-set-do": "Määra",
