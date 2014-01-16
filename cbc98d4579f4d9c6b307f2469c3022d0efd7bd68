@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aef5673e_a6271eb1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2014-01-16T03:30:23Z",
+      "side": 1,
+      "message": "Surely not \"Add\".  Reason for modification would be good to give here.",
+      "revId": "cbc98d4579f4d9c6b307f2469c3022d0efd7bd68",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aef5673e_c62222a2",
+        "filename": "COPYING",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2014-01-16T03:30:23Z",
+      "side": 1,
+      "message": "Semantic MediaWiki? I am no clear about the context of this change",
+      "revId": "cbc98d4579f4d9c6b307f2469c3022d0efd7bd68",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
