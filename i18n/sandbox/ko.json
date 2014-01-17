@@ -3,24 +3,31 @@
         "authors": [
             "Daisy2002",
             "Hym411",
-            "아라"
+            "아라",
+            "Priviet"
         ]
     },
     "managetranslatorsandbox": "번역자 연습장 관리",
     "tsb-filter-pending": "보류 중인 요청",
     "tsb-reminder-title-generic": "검증된 번역자가 되려면 소개를 완료하세요",
     "tsb-reminder-content-generic": "$1님 안녕하세요,\n\n{{SITENAME}}에 등록해주셔서 감사합니다. 테스트 번역을\n완료하면, 관리자는 곧 전체 번역 접근 권한을 부여할 수\n있습니다.\n\n$2에 와서 조금 더 번역을 해주세요.",
+    "tsb-email-rejected-body": "안녕하세요. {{GENDER:$1|$1}} 님\n\n{{SITENAME}}의 번역자에 지원해주셔서 감사합니다. 안타깝게도 귀하의 지원서는 귀하의 번역이 필수 조건을 충족하지 않아 채택되지 못하였습니다.\n\n만약 당신의 지원서가 잘못 또는 실수로 채택되지 못하였다고 생각하신다면 {{SITENAME}}의 번역자로서 다시 지원해주시기 바랍니다. 여기에서 등록하실 수 있습니다: $2\n\n{{SITENAME}} 담당자, {{GENDER:$3|$3}}",
     "tsb-request-count": "{{PLURAL:$1|요청 한 개|요청 $1개}}",
     "tsb-all-languages-button-label": "모든 언어",
     "tsb-search-requests": "검색 요청",
     "tsb-accept-button-label": "승인",
     "tsb-reject-button-label": "거부",
+    "tsb-selected-count": "{{PLURAL:$1|$1명의 사용자 선택됨}}",
+    "tsb-older-requests": "{{PLURAL:$1|개의 요청}}",
     "tsb-accept-all-button-label": "모두 승인",
     "tsb-reject-all-button-label": "모두 거절",
+    "tsb-user-posted-a-comment": "번역자 아님",
     "tsb-reminder-link-text": "이메일 알림 보내기",
+    "tsb-didnt-make-any-translations": "이 사용자는 번역한 적이 없습니다.",
     "tsb-translations-source": "출처",
     "tsb-translations-user": "사용자 번역",
     "tsb-translations-current": "기존 번역",
+    "tsb-delete-userpage-summary": "연습 사용자의 사용자 문서 삭제",
     "translationstash": "환영합니다",
     "translate-translationstash-welcome": "$1님 환영합니다, 당신은 이제 번역자입니다.",
     "translate-translationstash-welcome-note": "번역 도구에 익숙해지세요. 몇개의 메시지를 번역하고, 당신이 좋아하는 위키에서 번역자 권한을 얻어 위키에 기여하세요.",
@@ -28,5 +35,12 @@
     "translate-translationstash-translations": "완성한 {{PLURAL:$1|번역}} $1개",
     "translate-translationstash-skip-button-label": "다른 문서",
     "tsb-limit-reached-title": "당신의 번역에 감사드립니다.",
-    "tsb-limit-reached-body": "새 번역자를 위한 번역 제한에 도달했습니다. 저희가 당신의 계정을 확인하고 업그레이드한 후에, 제한 없이 번역하실 수 있습니다."
+    "tsb-limit-reached-body": "새 번역자를 위한 번역 제한에 도달했습니다. 저희가 당신의 계정을 확인하고 업그레이드한 후에, 제한 없이 번역하실 수 있습니다.",
+    "tsb-no-requests-from-new-users": "새 사용자의 요청 없음",
+    "tsb-create-user-page": "기본 사용자 문서 만들기",
+    "log-name-translatorsandbox": "번역 연습장",
+    "log-description-translatorsandbox": "번역 연습 사용자의 명령 기록",
+    "logentry-translatorsandbox-promoted": "$1 사용자가 $3 사용자를 {{GENDER:$4|번역자}}로  {{GENDER:$2|승격시켰습니다}}",
+    "logentry-translatorsandbox-rejected": "$1 사용자가 $3 사용자의 {{GENDER:$4|번역자}} 승격 신청을  {{GENDER:$2|거절했습니다}}",
+    "logentry-newusers-tsbpromoted": "사용자 계정 $3은 연습장에서의 승격에 따라 {{GENDER:$2|만들어졌습니다}}"
 }
