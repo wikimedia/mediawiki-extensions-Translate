@@ -9,8 +9,10 @@
     },
     "managetranslatorsandbox": "번역자 연습장 관리",
     "tsb-filter-pending": "보류 중인 요청",
-    "tsb-reminder-title-generic": "검증된 번역자가 되려면 소개를 완료하세요",
-    "tsb-reminder-content-generic": "$1님 안녕하세요,\n\n{{SITENAME}}에 등록해주셔서 감사합니다. 테스트 번역을\n완료하면, 관리자는 곧 전체 번역 접근 권한을 부여할 수\n있습니다.\n\n$2에 와서 조금 더 번역을 해주세요.",
+    "tsb-reminder-title-generic": "검증된 번역자가 되려면 소개를 작성하세요",
+    "tsb-reminder-content-generic": "$1 님 안녕하세요.\n\n{{SITENAME}}에 등록해주셔서 감사합니다.\n테스트 번역을 완료하시면, 관리자가 곧 전체 번역 접근 권한을 부여할 것입니다.\n\n$2에 와서 조금 더 번역을 해주세요.\n\n{{SITENAME}} 직원, $3",
+    "tsb-email-promoted-body": "안녕하세요. {{GENDER:$1|$1}} 님\n\n축하드립니다! {{SITENAME}}에서 하신 테스트 번역을 확인학 전체 번역 권한을 부여해드렸습니다.\n\n지금 {{SITENAME}}에 오셔서 번역을 계속해주세요:\n\n오신 것을 환영하며 당신의 기여에 감사드립니다.\n\n{{SITENAME}} 직원, {{GENDER:$3|$3}}",
+    "tsb-email-rejected-subject": "당신의 {{SITENAME}}의 번역자 지원서가 거절됐습니다.",
     "tsb-email-rejected-body": "안녕하세요. {{GENDER:$1|$1}} 님\n\n{{SITENAME}}의 번역자에 지원해주셔서 감사합니다. 안타깝게도 귀하의 지원서는 귀하의 번역이 필수 조건을 충족하지 않아 채택되지 못하였습니다.\n\n만약 당신의 지원서가 잘못 또는 실수로 채택되지 못하였다고 생각하신다면 {{SITENAME}}의 번역자로서 다시 지원해주시기 바랍니다. 여기에서 등록하실 수 있습니다: $2\n\n{{SITENAME}} 담당자, {{GENDER:$3|$3}}",
     "tsb-request-count": "{{PLURAL:$1|요청 한 개|요청 $1개}}",
     "tsb-all-languages-button-label": "모든 언어",
@@ -41,6 +43,6 @@
     "log-name-translatorsandbox": "번역 연습장",
     "log-description-translatorsandbox": "번역 연습 사용자의 명령 기록",
     "logentry-translatorsandbox-promoted": "$1 사용자가 $3 사용자를 {{GENDER:$4|번역자}}로  {{GENDER:$2|승격시켰습니다}}",
-    "logentry-translatorsandbox-rejected": "$1 사용자가 $3 사용자의 {{GENDER:$4|번역자}} 승격 신청을  {{GENDER:$2|거절했습니다}}",
+    "logentry-translatorsandbox-rejected": "$1 사용자가 $3 사용자의 승격 신청을  {{GENDER:$2|거절했습니다}}",
     "logentry-newusers-tsbpromoted": "사용자 계정 $3은 연습장에서의 승격에 따라 {{GENDER:$2|만들어졌습니다}}"
 }

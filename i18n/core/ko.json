@@ -8,7 +8,8 @@
             "Kwj2772",
             "ToePeu",
             "관인생략",
-            "아라"
+            "아라",
+            "Priviet"
         ]
     },
     "translate": "번역하기",
@@ -62,8 +63,8 @@
     "translate-edit-tmmatch-source": "번역 원본 텍스트: $1",
     "translate-edit-tmmatch": "$1% 일치",
     "translate-use-suggestion": "이 제안에 현재 번역을 바꿉니다.",
-    "translate-edit-nopermission": "메시지를 번역하려면 권한이 필요합니다.",
-    "translate-edit-askpermission": "권한 요청하기",
+    "translate-edit-nopermission": "메시지를 번역할 수 있는 번역 권한이 필요합니다.",
+    "translate-edit-askpermission": "권한 취득하기",
     "translate-magic-pagename": "확장된 미디어위키 번역",
     "translate-magic-help": "여기서 특수 문서 이름, 특수 명령, 이름공간 이름을 번역할 수 있습니다.\n\n특수 문서와 특수 명령은 여러 개의 번역이 가능합니다.\n여러 개의 번역을 할 경우에는 쉼표(,)로 번역을 구별합니다.\n단, 이름공간은 오직 하나의 번역만 가능합니다.\n\n번역할 때 프로젝트 토론 이름공간인 \u003Ccode\u003E$1 talk\u003C/code\u003E은 복잡할 수 있습니다.\n\u003Ccode\u003E$1\u003C/code\u003E(은)는 프로젝트 사이트 이름(예를 들어 \u003Ccode\u003E{{ns:project_talk}}\u003C/code\u003E)으로 바뀝니다.\n사이트 이름을 바꾸지 않고서 적절한 표현 방법을 구성할 수 없다면 [[Support]]에서 문의하세요.\n\n이 편집을 저장하려면 번역자 권한이 필요합니다.\n아래의 저장 버튼을 누르기 전까지는 바뀐 내용이 저장되지 않습니다.",
     "translate-magic-module": "모듈:",
