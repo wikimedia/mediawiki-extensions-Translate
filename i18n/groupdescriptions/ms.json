@@ -38,11 +38,12 @@
     "translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] ialah editor OpenStreetMap berasaskan Flash",
     "translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] ialah koleksi peralatan menyunting Wikipedia",
     "bw-desc-shapado": "[[Translating:Shapado|Shapado]] ialah perisian soal jawab berasaskan web",
-    "translate-group-desc-tsint": "Kumpulan mesej untuk [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], sistem i18n untuk peralatan [http://toolserver.org Toolserver] (<span class=\"plainlinks\">[[Translating talk:Toolserver|bantuan]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition butiran teknikal]</span>)",
+    "translate-group-desc-tsint": "Kumpulan mesej untuk [[Translating:Intuition|Intuition]], sistem i18n untuk peralatan [http://toolserver.org Toolserver] (\u003Cspan class=\"plainlinks\"\u003E[[Translating talk:Intuition|bantuan]]\u003C/span\u003E)",
     "translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]] merupakan alat untuk memuat naik fail ke dalam Wikimedia Commons dan projek-projek Wikimedia yang lain",
     "translate-group-desc-waymarked-trails": "[[Translating:Waymarked Trails|Waymarked Trails]] ialah perkhidmatan yang menunjukkan laluan mengembara, berbasikal, ''mountain bike'' dan berkasut roda di seluruh dunia. Ia memakai lesen GNU GPL",
     "bw-desc-wikiblame": "[[Translating:WikiBlame|WikiBlame]] boleh cepat mencari pengarang sebahagian laman dalam wiki di bawah Wikimedia",
     "bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] menyampaikan versi teks sahaja Wikipedia di luar talian pada peranti mudah alih.",
+    "translate-group-desc-wikimania-scholarships-app": "Kumpulan mesej untuk [https://scholarships.wikimedia.org/apply aplikasi Biasiswa Wikimania]",
     "translate-group-desc-wikimedia-mobile": "Kumpulan mesej teragregat yang merangkumi aplikasi mudah alih untuk projek-projek Wikimedia",
     "translate-group-desc-wikimedia-mobile-commons": "[[Translating:WikipediaMobile|Commons Mobile]] merupakan aplikasi untuk Android atau iOS untuk memuat naik dan melayari Wikimedia Commons",
     "translate-group-desc-wikimedia-mobile-wikipedia": "[[Translating:WikipediaMobile|WikipediaMobile]] merupakan aplikasi merentas platform mudah alih/tablet yang digunakan untuk membaca dan menyumbang kepada Wikipedia",
@@ -50,5 +51,6 @@
     "translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WikikamusMobile]] merupakan aplikasi merentas platform mudah alih/tablet yang digunakan untuk membaca dan menyumbang kepada Wikikamus",
     "translate-group-desc-wikimedia-mobile-wlm": "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] merupakan aplikasi mudah alih untuk menyumbang kepada [[:meta:Wiki Loves Monuments|projek Wiki Loves Monuments]]",
     "translate-group-desc-waymarked-trails-help": "Halaman bantuan Waymarked Trails: http://waymarkedtrails.org/help/about",
-    "translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] ialah editor kerjasama masa nyata yang sejati"
+    "translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] ialah editor kerjasama masa nyata yang sejati",
+    "translate-group-desc-mathjax": "[[Translating:MathJax|MathJax]] merupakan perpustakaan JavaScript rentas pelayar yang memaparkan notasi matematik pada pelayar web"
 }

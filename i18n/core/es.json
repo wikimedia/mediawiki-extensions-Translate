@@ -75,7 +75,7 @@
     "translate-edit-tmmatch-source": "Texto fuente para la traducción: $1",
     "translate-edit-tmmatch": "$1% coincidente",
     "translate-use-suggestion": "Reemplazar la traducción actual con esta sugerencia.",
-    "translate-edit-nopermission": "Necesitas permisos de traducción para para traducir mensajes.",
+    "translate-edit-nopermission": "Necesitas permisos de traducción para traducir mensajes.",
     "translate-edit-askpermission": "Solicitar permiso",
     "translate-magic-pagename": "Traducción extendida de MediaWiki",
     "translate-magic-help": "Puedes traducir los nombres de las páginas especiales, las palabras mágicas, y los de los espacios de nombres.\n\nLos nombres de las páginas especiales y las palabras mágicas pueden tener varias traducciones.\nLas traducciones se separan por comas (,).\nLos espacios de nombre sólo pueden tener una traducción.\n\nTraducir el espacio de nombres de discusión de proyecto \u003Ccode\u003E$1 talk\u003C/code\u003E puede ser complicado.\n\u003Ccode\u003E$1\u003C/code\u003E se reemplaza por el nombre del sitio del proyecto (por ejemplo \u003Ccode\u003E{{ns:project_talk}}\u003C/code\u003E).\nSi en tu idioma no es posible formar una expresión válida sin cambiar el nombre del sitio, contacta con un desarrollador, en la [[Support|página de ayuda]].\n\nPara guardar los cambios debes pertenecer al grupo de traductores\nLos cambios no se graban hasta que no pulses el botón Guardar que aparece abajo.",
@@ -116,7 +116,7 @@
     "prefs-translate": "Opciones de traducción",
     "translate-pref-editassistlang-help": "Lista separada por comas de códigos de idioma.\nLa traducción de un mensaje en estos idiomas se muestra cuando Ud. traduce.\nLa lista de idiomas por defecto depende de su idioma.",
     "translate-pref-editassistlang-bad": "Código de lenguaje invalido en la lista:\n\u003Cnowiki\u003E$1\u003C/nowiki\u003E.",
-    "right-translate": "Editar usando la interfaz de traducción",
+    "right-translate": "Editar con la interfaz de traducción",
     "right-translate-manage": "Administrar grupos de mensajes",
     "action-translate-manage": "administrar grupos de mensaje",
     "right-translate-import": "Importar traducciones offline",
@@ -379,7 +379,7 @@
     "tux-editor-message-tools-translations": "Todas las traducciones",
     "tux-editor-loading": "Cargando...",
     "translate-search-more-languages-info": "$1 {{PLURAL:$1|idioma|idiomas}} más",
-    "translate-statsbar-tooltip": "$1% traducido, $2% revisado",
+    "translate-statsbar-tooltip": "$1 % traducido, $2 % revisado",
     "translate-statsbar-tooltip-with-fuzzy": "$1% traducido, $2% revisado, $3% desactualizado",
     "translate-search-more-groups-info": "$1 {{PLURAL:$1|grupo|grupos}} más"
 }
