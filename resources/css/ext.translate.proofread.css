@@ -67,6 +67,11 @@
 	right: -5px;
 }
 
+.tux-proofread-translation,
+.tux-proofread-source {
+	 white-space: pre-wrap;
+}
+
 .ext-translate-container .tux-messagelist .tux-message-proofread.own-translation,
 .ext-translate-container .tux-messagelist .tux-message-proofread.own-translation:hover {
 	background: #FBFBFB;
