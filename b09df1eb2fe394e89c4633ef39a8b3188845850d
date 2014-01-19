@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aef5673e_44e15b96",
+        "filename": "resources/css/ext.translate.proofread.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2014-01-19T14:53:48Z",
+      "side": 1,
+      "message": "It would be awesome to put the new rule on this selector, which uses the same selector",
+      "revId": "b09df1eb2fe394e89c4633ef39a8b3188845850d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
