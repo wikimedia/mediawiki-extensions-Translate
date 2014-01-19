@@ -38,6 +38,7 @@
 .tux-proofread-source,
 .tux-proofread-translation {
 	word-wrap: break-word;
+	white-space: pre-wrap;
 }
 
 .tux-message-proofread.open .tux-proofread-status,
