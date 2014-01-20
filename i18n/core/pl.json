@@ -207,7 +207,7 @@
     "supportedlanguages-colorlegend": "Znaczenie koloru – ostatnie tłumaczenie $1 dni temu.",
     "supportedlanguages-translators": "{{PLURAL:$2|Tłumacz|Tłumacze:}} $1",
     "supportedlanguages-recenttranslations": "ostatnie tłumaczenia",
-    "supportedlanguages-count": "$1 {{PLURAL:$1|język|języki|języków}} łącznie.",
+    "supportedlanguages-count": "Razem $1 {{PLURAL:$1|język|języki|języków}}.",
     "supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edycja|edycje|edycji}} – ostatnia zmiana $3 {{PLURAL:$3|dzień|dni}} temu",
     "translate-save": "Zapisz ($1)",
     "translate-jssti-add": "Dodaj do listy",

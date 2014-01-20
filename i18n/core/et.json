@@ -76,7 +76,7 @@
     "translate-magic-notsaved": "Sinu muudatust ei salvestatud!",
     "translate-magic-errors": "Palun eemalda tõlgetest {{PLURAL:$1|järgmine tõrge|järgmised tõrked}}:",
     "translate-magic-saved": "Muudatused on edukalt salvestatud.",
-    "translate-checks-parameters": "{{PLURAL:$2|Järgnev parameeter|Järgnevad parameetrid}} on kasutamata:\n\u003Cstrong\u003E\u003Cnowiki\u003E$1\u003C/nowiki\u003E\u003C/strong\u003E",
+    "translate-checks-parameters": "{{PLURAL:$2|Järgmine parameeter|Järgmised parameetrid}} on kasutamata:\n\u003Cstrong\u003E\u003Cnowiki\u003E$1\u003C/nowiki\u003E\u003C/strong\u003E",
     "translate-checks-parameters-unknown": "{{PLURAL:$2|Järgmine parameeter on tundmatu|Järgmised parameetrid on tundmatud}}:\n\u003Cstrong\u003E\u003Cnowiki\u003E$1\u003C/nowiki\u003E\u003C/strong\u003E",
     "translate-checks-balance": "{{PLURAL:$2|Sulge}} on paaritu arv:\n\u003Cstrong\u003E\u003Cnowiki\u003E$1\u003C/nowiki\u003E\u003C/strong\u003E",
     "translate-checks-links": "{{PLURAL:$2|Järgmine link on probleemne|Järgmised $2 linki on probleemsed}}:\n\u003Cstrong\u003E\u003Cnowiki\u003E$1\u003C/nowiki\u003E\u003C/strong\u003E",
