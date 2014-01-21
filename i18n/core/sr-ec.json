@@ -350,7 +350,7 @@
     "tux-messagetable-more-messages": "још $1 {{PLURAL:$1|порука}}",
     "tux-messagetable-loading-messages": "Учитавање {{PLURAL:$1|порука}}...",
     "tux-message-filter-placeholder": "Филтрирани списак",
-    "tux-message-filter-result": "Нађено $1 {{PLURAL:$1|1=резултат|резултата}} за „$2“",
+    "tux-message-filter-result": "Нађено $1 {{PLURAL:$1|резултат|резултата}} за „$2“",
     "tux-message-filter-advanced-button": "Напредна претрага",
     "tux-message-filter-optional-messages-label": "Необавезне поруке",
     "tux-proofread-translated-by-self": "Ваши преводи",

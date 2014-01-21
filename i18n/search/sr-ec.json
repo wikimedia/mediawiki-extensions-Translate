@@ -1,14 +1,15 @@
 {
     "@metadata": {
         "authors": [
-            "Милан Јелисавчић"
+            "Милан Јелисавчић",
+            "Milicevic01"
         ]
     },
     "searchtranslations": "Претрага превода",
     "tux-sst-edit": "Уреди превод",
     "tux-sst-search": "Претражи",
     "tux-sst-search-ph": "Претрага превода",
-    "tux-sst-count": "{{PLURAL:$1|1=Један резултат пронађен|$1 резултата пронађено}}",
+    "tux-sst-count": "{{PLURAL:$1|Један резултат пронађен|$1 резултата пронађено}}",
     "tux-sst-facet-language": "Језици",
     "tux-sst-facet-group": "Групе порука",
     "tux-sst-facet-orphan": "(сироче)",
