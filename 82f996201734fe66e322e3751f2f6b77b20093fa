@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8efa632e_a4f4c651",
+        "filename": "ffs/AndroidXmlFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-01-22T22:38:57Z",
+      "side": 1,
+      "message": "This comments is repeated from line 74. Should be removed here?",
+      "revId": "82f996201734fe66e322e3751f2f6b77b20093fa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
