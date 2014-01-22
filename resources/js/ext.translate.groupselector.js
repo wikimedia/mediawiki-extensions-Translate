@@ -14,6 +14,9 @@
 		this.$menu = null;
 		this.parentGroupId = null;
 		this.options = $.extend( true, {}, $.fn.msggroupselector.defaults, options );
+		// Store the explicitly given options, which can be passed to subgroup
+		// selectors.
+		this.customOptions = options;
 		this.flatGroupList = null;
 
 		this.init();
@@ -171,6 +174,8 @@
 				e.stopPropagation();
 			} );
 
+			// Handle click on row item. This selects the group, and in case it has
+			// subgroups, also opens a new menu to show them.
 			groupSelector.$menu.on( 'click', '.ext-translate-msggroup-item', function () {
 				var $newLink,
 					messageGroup = $( this ).data( 'msggroup' );
@@ -193,10 +198,11 @@
 				$newLink.data( 'msggroupid', messageGroup.id );
 
 				if ( messageGroup.groups && messageGroup.groups.length > 0 ) {
-					$newLink.msggroupselector( {
-						onSelect: groupSelector.options.onSelect
-					} );
-					// keep it open
+					// Pass options for callbacks, language etc. but ignore the position
+					// option unless explicitly given to allow automatic recalculation
+					// of the position compared to the new trigger.
+					$newLink.msggroupselector( groupSelector.customOptions );
+					// Show the new menu immediately
 					$newLink.data( 'msggroupselector' ).show();
 				}
 
@@ -205,6 +211,7 @@
 				}
 			} );
 
+			// Handle the tabs All | Recent
 			groupSelector.$menu.find( '.ext-translate-msggroup-category' ).on( 'click', function () {
 				var $this = $( this );
 
