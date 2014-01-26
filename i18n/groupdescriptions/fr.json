@@ -20,7 +20,7 @@
             "Yann.fauche"
         ]
     },
-    "translategroupdescriptions-desc": "Descriptions des groupes de messages pour les produits pris en charge par l'[//mediawiki.org/wiki/Extension:Translate extension Translate]",
+    "translategroupdescriptions-desc": "Descriptions des groupes de messages pour les produits pris en charge par l’[//mediawiki.org/wiki/Extension:Translate extension Translate]",
     "translate-group-desc-nodesc": "Aucune description n’est disponible pour ce groupe de messages",
     "translate-group-desc-mediawikicore": "Ce groupe de messages contient les messages utilisés dans la version alpha actuelle de MediaWiki ({{CURRENTVERSION}}).",
     "translate-group-desc-mediawikimostused": "Ce groupe de messages contient les [//translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messages les plus souvent utilisés] dans [[Translating:MediaWiki|MediaWiki]].",

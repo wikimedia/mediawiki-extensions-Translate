@@ -6,7 +6,8 @@
             "NemesisIII",
             "Nobody",
             "Wyz",
-            "Linedwell"
+            "Linedwell",
+            "Urhixidur"
         ]
     },
     "managetranslatorsandbox": "Gérer le bac à sable de tradution",
@@ -18,7 +19,7 @@
     "tsb-reminder-sent-new": "Rappel envoyé",
     "tsb-reminder-failed": "L’envoi du rappel a échoué",
     "tsb-email-promoted-subject": "Vous êtes maintenant un traducteur à {{SITENAME}}",
-    "tsb-email-promoted-body": "Bonjour {{GENDER:$1|$1}},\n\nFélicitations ! J’ai vérifié les traductions test que vous avez effectuées sur {{SITENAME}} et je vous ai donné les droits complets de {{GENDER:$1|traducteur|traductrice}}.\n\nVenez sur {{SITENAME}} pour continuer à traduire dès maintenant et tous les jours :\n$2\n\nBienvenue et merci pour vos contributions !\n\n{{GENDER:$3|$3}},\nl'équipe de {{SITENAME}}",
+    "tsb-email-promoted-body": "Bonjour {{GENDER:$1|$1}},\n\nFélicitations ! J’ai vérifié les traductions d’essai que vous avez effectuées sur {{SITENAME}} et je vous ai donné les droits complets de {{GENDER:$1|traducteur|traductrice}}.\n\nVenez sur {{SITENAME}} pour continuer à traduire dès maintenant et tous les jours :\n$2\n\nBienvenue et merci pour vos contributions !\n\n{{GENDER:$3|$3}},\nl’équipe de {{SITENAME}}",
     "tsb-email-rejected-subject": "Votre demande pour devenir traducteur sur {{SITENAME}} a été rejetée",
     "tsb-email-rejected-body": "Bonjour {{GENDER:$1|$1}},\n\nMerci de votre candidature comme traducteur de {{SITENAME}}. J’ai le regret de vous informer que j’ai rejeté votre candidature, car la qualité de vos traductions ne correspond pas aux attentes.\n\nSi vous pensez que votre candidature a été rejetée par erreur, veuillez refaire une demande comme traducteur sur {{SITENAME}}. Vous pouvez vous inscrire ici :\n$2\n\n{{GENDER:$3|$3}},\néquipe de {{SITENAME}}",
     "tsb-request-count": "{{PLURAL:$1|Une demande|$1 demandes}}",
