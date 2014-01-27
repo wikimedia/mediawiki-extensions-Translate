@@ -177,6 +177,7 @@ $wgAutoloadClasses['TTMServerMessageUpdateJob'] = "$dir/ttmserver/TTMServerMessa
  * @{
  */
 $wgAutoloadClasses['AndroidXmlFFS'] = "$dir/ffs/AndroidXmlFFS.php";
+$wgAutoloadClasses['AppleFFS'] = "$dir/ffs/AppleFFS.php";
 $wgAutoloadClasses['DtdFFS'] = "$dir/ffs/DtdFFS.php";
 $wgAutoloadClasses['FFS'] = "$dir/ffs/FFS.php";
 $wgAutoloadClasses['FlatPhpFFS'] = "$dir/ffs/FlatPhpFFS.php";
