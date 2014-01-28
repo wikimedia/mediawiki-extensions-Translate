@@ -21,7 +21,7 @@ class SpecialTranslationStash extends TranslateSpecialPage {
 	}
 
 	public function execute( $params ) {
-		global $wgTranslateSandboxLimit;
+		global $wgTranslateSandboxLimit, $wgTranslatePermissionUrl;
 
 		$this->setHeaders();
 		$out = $this->getOutput();
@@ -29,6 +29,12 @@ class SpecialTranslationStash extends TranslateSpecialPage {
 		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 
 		if ( !$this->hasPermissionToUse() ) {
+
+			if ( $this->getUser()->isLoggedIn() ) {
+				$out->redirect( Title::newFromText( $wgTranslatePermissionUrl )->getLocalUrl() );
+				return;
+			}
+
 			$out->redirect( Title::newMainPage()->getLocalUrl() );
 
 			return;
