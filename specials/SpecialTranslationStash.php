@@ -29,6 +29,12 @@ class SpecialTranslationStash extends TranslateSpecialPage {
 		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 
 		if ( !$this->hasPermissionToUse() ) {
+
+			if ( $this->getUser()->isLoggedIn() ) {
+				$out->redirect( '/wiki/Project:Translator' );
+				return;
+			}
+
 			$out->redirect( Title::newMainPage()->getLocalUrl() );
 
 			return;
