@@ -368,12 +368,15 @@ $GLOBALS['wgTranslateTasks'] = array(
 $GLOBALS['wgTranslateSupportUrl'] = false;
 
 /**
- * When unprivileged users opens a translation editor, he will
- * see message stating that special permission is needed for translating
+ * When unprivileged users opens a translation editor, they will
+ * see a message stating that special permission is needed for translating
  * messages. If this variable is defined, there is a button which will
  * take the user to that page to ask for permission.
+ * The target needs to be reiterated with the second variable to have
+ * the same result with sandbox enable where users can't enter the sandbox.
  */
 $GLOBALS['wgTranslatePermissionUrl'] = 'Project:Translator';
+$GLOBALS['wgTranslateSecondaryPermissionUrl'] = 'Project:Translator';
 
 # </source>
 # === Page translation feature ===
