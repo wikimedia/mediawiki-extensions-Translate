@@ -9,6 +9,14 @@
     "tsb-reminder-title-generic": "Comblete 'a 'ndroduziona toje pe devendà 'nu traduttore",
     "tsb-reminder-content-generic": "Cià $1,\n\nGrazie ca tè reggistrate sus a {{SITENAME}}.\n\nCe tu comblete 'u test de traduziune, l'amministrature ponne darte le privilegge pe l'accesse 'a traduzione comblete.\n\nPe piacere avìne jndr'à $2 e fà angore quacche otre traduzione.\n\n$3,\n'a squadre de {{SITENAME}}",
     "tsb-reminder-sending": "Stoche a manne 'nu promemorie...",
+    "tsb-all-languages-button-label": "Tutte le lènghe",
     "tsb-accept-button-label": "Accette",
-    "tsb-reject-button-label": "Scitte"
+    "tsb-reject-button-label": "Scitte",
+    "tsb-accept-all-button-label": "Accette tutte",
+    "tsb-reject-all-button-label": "Scitte tutte",
+    "tsb-translations-source": "Sorgende",
+    "tsb-translations-user": "Traduziune de l'utende",
+    "tsb-translations-current": "Traduziune esistende",
+    "translationstash": "Bovègne",
+    "translate-translationstash-skip-button-label": "Pruève 'n'otre"
 }

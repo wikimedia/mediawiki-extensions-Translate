@@ -44,11 +44,13 @@
     "bw-desc-osm-site": "Den här gruppen av meddelanden innehåller gränssnittet för [[Translating:Open Street Map|Open Street Map]].\nSe [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} Unicode CLDR sida för förklaring av plural hantering].",
     "translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] är en Flash-baserad redigerare för OpenStreetMap",
     "translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] är en samling verktyg för att redigera Wikipedia",
-    "bw-desc-shapado": "Meddelandegrupp för Q&A-programvaran [[Translating:Shapado|Shapado]] som är fri och har öppen källkod",
-    "translate-group-desc-tsint": "En meddelandegrupp för [[Translating:Intuition|Intuition]], i18n-systemet för verktyg till [http://toolserver.org Toolserver](<span class=\"plainlinks\">[[Translating talk:Intuition|support]]</span>)",
+    "bw-desc-shapado": "Meddelandegrupp för Q\u0026A-programvaran [[Translating:Shapado|Shapado]] som är fri och har öppen källkod",
+    "translate-group-desc-tsint": "En meddelandegrupp för [[Translating:Intuition|Intuition]], i18n-systemet för verktyg till [http://toolserver.org Toolserver](\u003Cspan class=\"plainlinks\"\u003E[[Translating talk:Intuition|support]]\u003C/span\u003E)",
     "translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]] är ett verktyg för att ladda upp filer till Wikimedia Commons och andra Wikimediaprojekt",
     "bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan snabbt hitta författarna till en sida på en Wikimedia wiki.",
     "bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] är ett projekt  för att tillhandahålla en offline textversion av Wikipedia på en mobil enhet.",
+    "translate-group-desc-wikimedia-mobile": "Aggregerade meddelandegrupp som innehåller mobilapplikationer för Wikimedia-projekten",
     "translate-group-desc-wikimedia-mobile-commons": "[[Translating:WikipediaMobile|Commons Mobile]] är en app för Android eller iOS för att ladda upp till och surfar på Wikimedia Commons",
-    "translate-group-desc-wikimedia-mobile-wikipedia": "[[Translating:WikipediaMobile|WikipediaMobile]] är en plattformsoberoende applikation för att läsa och bidra till Wikipedia på mobiler och surfplattor"
+    "translate-group-desc-wikimedia-mobile-wikipedia": "[[Translating:WikipediaMobile|WikipediaMobile]] är en plattformsoberoende applikation för att läsa och bidra till Wikipedia på mobiler och surfplattor",
+    "translate-group-desc-wikimedia-mobile-wlm": "[[Translating:WLMMobile|WikiLovesMonuments Mobile]] är en mobilapplikation för att bidra till [[:meta:Wiki Loves Monuments|Wiki Loves Monuments projektet]]"
 }
