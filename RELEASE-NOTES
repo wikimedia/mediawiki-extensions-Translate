@@ -1,0 +1,22 @@
+== Translate 2014.01 ==
+Released at 2014-01-31.
+
+=== Noteworthy changes ===
+* Bug 45695: Added plural support for Android file format.
+* Bug 46831: Fixed HTML validation error which caused broken layout in
+especially in the Monobook skin when language is blacklisted.
+* Bug 59199: Regression in the previous MLEB release: Message groups without
+changes were listed on Special:ManageMessageGroups.
+* Bug 59241: MediaWiki plural syntax checker no longer warns about false
+positives.
+* Bug 60128: Fixed statsbar for subgroups in the message group selector for
+correct statistics.
+* Bug 60198: Preserve whitespace in review mode. In review mode, whitespace
+was not preserved and new lines were being displayed as single spaces, which
+was messing up the messages.
+* Fixed a regression caused by Alt shortcuts introduced in the previous MLEB
+release: Can again access special characters with AltGr.
+* Translation editor now reacts better to page scrolling and resizing.
+* Set directory and language of insertables to the source messages' values.
+* Special:SupportedLanguages is now faster.
+* Translate can be installed via Composer now.
