@@ -1,9 +1,15 @@
 {
     "@metadata": {
         "authors": [
-            "Reza1615"
+            "Reza1615",
+            "Armin1392"
         ]
     },
+    "tsb-filter-pending": "در حال انتظار درخواست‌ها",
+    "tsb-reminder-sending": "در حال فرستادن یادآوری...",
+    "tsb-reminder-sent-new": "فرستادن یک یادآوری",
+    "tsb-reminder-failed": "عدم موفقیت در فرستادن یادآوری",
+    "tsb-email-promoted-subject": "شما در حال حاضر یک مترجم در {{SITENAME}} هستید",
     "tsb-accept-button-label": "پذیرفتن",
     "tsb-reject-button-label": "ردکردن",
     "tsb-translations-source": "منبع",

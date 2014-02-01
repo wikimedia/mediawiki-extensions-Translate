@@ -1,7 +1,8 @@
 {
     "@metadata": {
         "authors": [
-            "Erdemaslancan"
+            "Erdemaslancan",
+            "Mirzali"
         ]
     },
     "pagetranslation": "Pela açarnayışi",
@@ -20,7 +21,7 @@
     "tpt-discouraged-language-reason": "Sebeb: $1",
     "aggregategroups": "Grubi pêro",
     "tpt-aggregategroup-add": "Deke",
-    "tpt-aggregategroup-save": "Star ke",
+    "tpt-aggregategroup-save": "Qeyd ke",
     "tpt-aggregategroup-new-name": "Name:",
     "pt-movepage-list-translation": "{{PLURAL:$1|Pera|Perê}} açarnayışi",
     "pt-movepage-list-other": "{{PLURAL:$1|Pera bin|Perê bini}}",

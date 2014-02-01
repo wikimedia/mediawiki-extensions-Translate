@@ -30,7 +30,7 @@
     "translate-page-group": "গোট",
     "translate-page-language": "ভাষা",
     "translate-page-limit": "সীমা",
-    "translate-page-limit-option": "$1টা {{PLURAL:$1|বাৰ্তা|বাৰ্তা}} প্ৰতি পৃষ্ঠা",
+    "translate-page-limit-option": "প্ৰতি পৃষ্ঠাত $1টা {{PLURAL:$1|বাৰ্তা}}",
     "translate-submit": "দেখুৱাওক",
     "translate-page-navigation-legend": "দিকদৰ্শন",
     "translate-page-showing": "$3টা বাৰ্তাৰ ভিতৰত $1-ৰ পৰা $2-লৈ দেখুৱাওক",
