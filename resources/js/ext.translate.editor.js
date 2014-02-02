@@ -601,7 +601,7 @@
 
 			if ( canTranslate ) {
 				$pasteOriginalButton = $( '<button>' )
-					.addClass( 'tux-editor-paste-original-button shortcut-activated' )
+					.addClass( 'tux-editor-paste-original-button' )
 					.text( mw.msg( 'tux-editor-paste-original-button-label' ) )
 					.on( 'click', function () {
 						$textarea
