@@ -2,9 +2,11 @@
     "@metadata": {
         "authors": [
             "Ebraminio",
-            "Huji"
+            "Huji",
+            "Armin1392"
         ]
     },
     "translate-group-desc-mediawikicore": "این گروه پیغام حاوی پیغام‌های مورد استفاده در نسخهٔ آلفای فعلی [[Translating:MediaWiki|مدیاویکی]] ({{CURRENTVERSION}}) است",
+    "translate-group-desc-translatablepages": "همهٔ صفحات قابل ترجمه",
     "translate-group-desc-kiwix": "یک گروه پیام برای [[Translating:Kiwix|Kiwix]]"
 }
