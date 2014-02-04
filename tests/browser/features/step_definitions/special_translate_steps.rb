@@ -7,7 +7,7 @@ Given(/^I am translating a message group which has workflow states$/) do
 end
 
 When(/^I click the workflow state$/) do
-	on(TranslatePage).workflow_state_element.click
+	on(TranslatePage).workflow_state_element.when_present.click
 end
 
 Then(/^I should see a workflow state$/) do
