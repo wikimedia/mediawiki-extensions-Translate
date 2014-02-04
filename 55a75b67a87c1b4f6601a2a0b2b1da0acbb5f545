@@ -16,6 +16,24 @@
       "revId": "55a75b67a87c1b4f6601a2a0b2b1da0acbb5f545",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ef7ef47_2f6bc3b6",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-02-04T09:05:31Z",
+      "side": 1,
+      "message": "Thanks, done. Sent patch for docs too: https://gerrit.wikimedia.org/r/#/c/111164/1",
+      "parentUuid": "6ef7ef47_36344aa7",
+      "revId": "55a75b67a87c1b4f6601a2a0b2b1da0acbb5f545",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
