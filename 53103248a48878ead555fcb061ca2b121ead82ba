@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ef7ef47_efbddc64",
+        "filename": "ffs/AppleFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-02-04T07:55:06Z",
+      "side": 1,
+      "message": "See https://integration.wikimedia.org/ci/job/mwext-Translate-phpcs-strict-HEAD/773/console",
+      "revId": "53103248a48878ead555fcb061ca2b121ead82ba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ef7ef47_0fb92878",
+        "filename": "tests/phpunit/ffs/AppleFFSTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-02-04T07:55:06Z",
+      "side": 1,
+      "message": "Please remove trailing whitespace. See https://integration.wikimedia.org/ci/job/mwext-Translate-phpcs-strict-HEAD/773/console",
+      "revId": "53103248a48878ead555fcb061ca2b121ead82ba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
