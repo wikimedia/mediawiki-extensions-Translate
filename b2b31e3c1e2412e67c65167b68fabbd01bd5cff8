@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ef7ef47_7b8ce8db",
+        "filename": "ffs/AppleFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-05T13:49:38Z",
+      "side": 1,
+      "message": "I usually do something like \u0027~//\\s*Author:\\s*(.*)~ To make the patter look less like forest ;)",
+      "revId": "b2b31e3c1e2412e67c65167b68fabbd01bd5cff8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ef7ef47_9b8fb4d1",
+        "filename": "ffs/AppleFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-05T13:49:38Z",
+      "side": 1,
+      "message": "It would be relatively easy to check for this comment on reading too, but this is okay.",
+      "revId": "b2b31e3c1e2412e67c65167b68fabbd01bd5cff8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ef7ef47_bb8270a7",
+        "filename": "ffs/AppleFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-05T13:49:38Z",
+      "side": 1,
+      "message": "Can use single quotes here",
+      "revId": "b2b31e3c1e2412e67c65167b68fabbd01bd5cff8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ef7ef47_db853cb3",
+        "filename": "ffs/AppleFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-05T13:49:38Z",
+      "side": 1,
+      "message": "Why not \u0027\"\u0027?",
+      "revId": "b2b31e3c1e2412e67c65167b68fabbd01bd5cff8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ef7ef47_fba0f83f",
+        "filename": "ffs/AppleFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-05T13:49:38Z",
+      "side": 1,
+      "message": "Better:\n\n/**\n * Foo...",
+      "revId": "b2b31e3c1e2412e67c65167b68fabbd01bd5cff8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ef7ef47_1b9cc411",
+        "filename": "ffs/AppleFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-05T13:49:38Z",
+      "side": 1,
+      "message": "Can also be written as \u0027\\\\\"\u0027",
+      "revId": "b2b31e3c1e2412e67c65167b68fabbd01bd5cff8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ef7ef47_bb7830c0",
+        "filename": "ffs/AppleFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-05T13:49:38Z",
+      "side": 1,
+      "message": "This would be easy to do with Sanitizer::validateCodePoint were public.",
+      "revId": "b2b31e3c1e2412e67c65167b68fabbd01bd5cff8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ef7ef47_9b8574a2",
+        "filename": "ffs/AppleFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-05T13:49:38Z",
+      "side": 1,
+      "message": "Type before name",
+      "revId": "b2b31e3c1e2412e67c65167b68fabbd01bd5cff8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ef7ef47_1b496490",
+        "filename": "tests/phpunit/ffs/AppleFFSTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-05T13:49:38Z",
+      "side": 1,
+      "message": "I recommend adding some test cases with \" in them.",
+      "revId": "b2b31e3c1e2412e67c65167b68fabbd01bd5cff8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
