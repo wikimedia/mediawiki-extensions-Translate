@@ -76,6 +76,7 @@
     "translate-tag-hasnew": "Cette page contient \u003Cspan class=\"plainlinks\"\u003E[$1 des modifications]\u003C/span\u003E qui ne sont pas marquées pour la traduction.",
     "tpt-translation-intro": "Cette page est une \u003Cspan class=\"plainlinks\"\u003E[$1 traduction]\u003C/span\u003E de la page [[$2]] et la traduction est complétée à $3 % et à jour.",
     "tpt-languages-legend": "Autres langues :",
+    "tpt-languages-separator": "\u0026nbsp;•\u0026#32;",
     "tpt-languages-zero": "Commencer la traduction pour cette langue",
     "tpt-tab-translate": "Traduire",
     "tpt-target-page": "Cette page ne peut pas être mise à jour manuellement.\nElle est une version traduite de [[$1]] et la traduction peut être mise à jour en utilisant [$2 l’outil de traduction].",

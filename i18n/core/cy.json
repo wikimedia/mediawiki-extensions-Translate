@@ -2,7 +2,8 @@
     "@metadata": {
         "authors": [
             "Cymrodor",
-            "Lloffiwr"
+            "Lloffiwr",
+            "Robin Owain"
         ]
     },
     "translate": "Cyfieithu",
@@ -191,6 +192,7 @@
     "translate-js-skip": "Neidio i'r nesaf",
     "translate-js-history": "Hynt y cyfieithu",
     "translate-js-support": "Ceisio cymorth",
+    "translate-js-support-unsaved-warning": "Mae gennych gyfieithiadau heb eu cadw",
     "translate-gs-pos": "Safle",
     "translate-gs-code": "Cod",
     "translate-gs-continent": "Cyfandir",
