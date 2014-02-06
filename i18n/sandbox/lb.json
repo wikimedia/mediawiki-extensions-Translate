@@ -30,6 +30,8 @@
     "translationstash": "Wëllkomm",
     "translate-translationstash-welcome": "Wëllkomm {{GENDER:$1|$1}}, Dir sidd en neien Iwwersetzer",
     "translate-translationstash-initialtranslation": "Är éischt Iwwersetzung",
+    "translate-translationstash-translations": "{{PLURAL:$1|eng komplett Iwwersetzung|$1 komplett Iwwersetzungen}}",
+    "translate-translationstash-skip-button-label": "Probéiert eng Aner",
     "tsb-limit-reached-title": "Merci fir Är Iwwersetzungen",
     "tsb-limit-reached-body": "Dir hutt d'Iwwersetzungslimit fir nei Iwwersetzer erreecht.\nEis Equipe kuckt Äre Benotzerkont geschwënn no a setzt en erop.\nDa kënnt Dir ouni Limitatiounen iwwersetzen.",
     "tsb-no-requests-from-new-users": "Keng Ufroe vun neie Benotzer",

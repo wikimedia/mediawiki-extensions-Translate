@@ -272,6 +272,7 @@
     "group-translate-sandboxed": "Net-confirméiert Iwwersetzer",
     "group-translate-sandboxed-member": "{{GENDER:$1|net-confirméierten Iwwersetzer}}",
     "right-translate-sandboxmanage": "Benotzer vun der Sandkëscht geréieren",
+    "action-translate-sandboxmanage": "Benotzer aus der Sandkëscht ze geréieren",
     "translate-workflow-state-": "(net agestallt)",
     "translate-workflowstatus": "Statut: $1",
     "translate-workflow-set-do": "Astellen",
