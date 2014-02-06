@@ -7,10 +7,9 @@
 }
 
 .tux-message-editor .close {
-	/* @embed */
 	background: url('../images/close.png') no-repeat scroll center center transparent;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/close.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/close.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/close.svg);
 	padding: 15px;
 	cursor: pointer;
@@ -24,18 +23,16 @@
 }
 
 .tux-message-editor .editor-contract {
-	/* @embed */
 	background: url('../images/contract-ltr.png') no-repeat scroll center center transparent;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/contract-ltr.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/contract-ltr.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/contract-ltr.svg);
 }
 
 .tux-message-editor .editor-expand {
-	/* @embed */
 	background: url('../images/expand-ltr.png') no-repeat scroll center center transparent;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/expand-ltr.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/expand-ltr.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/expand-ltr.svg);
 }
 
@@ -189,10 +186,9 @@
 }
 
 .message-desc-edit {
-	/* @embed */
 	background: transparent url(../images/action-edit.png) left center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/action-edit.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/action-edit.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/action-edit.svg);
 	background-size: 18px 18px;
 	padding-left: 19px;
@@ -271,18 +267,16 @@
 }
 
 .tux-warning-message.validation {
-	/* @embed */
 	background-image: url(../images/label-flag.png);
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/label-flag.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/label-flag.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/label-flag.svg);
 }
 
 .tux-warning-message.diff {
-	/* @embed */
 	background-image: url(../images/label-clock.png);
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/label-clock.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/label-clock.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/label-clock.svg);
 }
 
@@ -340,7 +334,7 @@
 .tux-editor-insert-buttons .tux-editor-paste-original-button {
 	background: #FBFBFB url(../images/paste.png) left center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/paste.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/paste.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/paste.svg);
 	background-size: 16px 16px;
 	padding-left: 18px;
@@ -372,8 +366,10 @@
 }
 
 .tux-message-tools-menu li.selected {
-	/* @embed */
 	background: url(../images/label-tick.png) right no-repeat;
+	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/label-tick.svg);
+	/* @embed */
+	background-image: linear-gradient(transparent, transparent), url(../images/label-tick.svg);
 	color: #252525;
 }
 

@@ -125,36 +125,32 @@
 }
 
 .tux-status-unsaved {
-	/* @embed */
 	background-image: url(../images/label-pen.png);
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/label-pen.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/label-pen.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/label-pen.svg);
 	background-color: #C9C9C9;
 }
 
 .tux-status-translated,
 .tux-status-proofread {
-	/* @embed */
 	background-image: url(../images/label-tick.png);
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/label-tick.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/label-tick.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/label-tick.svg);
 }
 
 .tux-status-fuzzy {
-	/* @embed */
 	background-image: url(../images/label-clock.png);
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/label-clock.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/label-clock.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/label-clock.svg);
 }
 
 .tux-list-edit a {
-	/* @embed */
 	background: transparent url(../images/action-edit.png) left center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/action-edit.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/action-edit.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/action-edit.svg);
 	background-size: 18px 18px;
 	padding-left: 19px;
@@ -247,14 +243,14 @@
 .tux-action-bar .translate-mode-button:before {
 	background: transparent url(../images/view-list.png) center center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-list.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-list.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/view-list.svg);
 }
 
 .tux-action-bar .translate-mode-button.down:before {
 	background: transparent url(../images/view-list-hi.png) center center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-list-hi.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-list-hi.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/view-list-hi.svg);
 }
 
@@ -265,14 +261,14 @@
 .tux-action-bar .page-mode-button:before {
 	background: transparent url(../images/view-page.png) center center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-page.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-page.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/view-page.svg);
 }
 
 .tux-action-bar .page-mode-button.down:before {
 	background: transparent url(../images/view-list-hi.png) center center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-page-hi.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-page-hi.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/view-page-hi.svg);
 }
 
@@ -283,14 +279,14 @@
 .tux-action-bar .proofread-mode-button:before {
 	background: transparent url(../images/view-proofread.png) center center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-proofread.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-proofread.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/view-proofread.svg);
 }
 
 .tux-action-bar .proofread-mode-button.down:before {
 	background: transparent url(../images/view-proofread-hi.png) center center no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/view-proofread-hi.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/view-proofread-hi.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/view-proofread-hi.svg);
 }
 
