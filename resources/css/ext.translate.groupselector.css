@@ -128,10 +128,9 @@
 }
 
 .ext-translate-msggroup-search-icon {
-	/* @embed */
 	background: url('../images/search.png') no-repeat scroll right center transparent;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/search.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/search.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/search.svg);
 	background-size: 25px;
 	height: 28px;
@@ -170,10 +169,9 @@
 }
 
 .ext-translate-msggroup-item .icon {
-	/* @embed */
 	background: url(../images/project.png) no-repeat scroll right center transparent;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/project.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/project.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/project.svg);
 	/* Keep this in sync with js! */
 	background-size: 32px;
