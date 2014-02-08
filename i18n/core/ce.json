@@ -43,7 +43,7 @@
     "translate-magic-cm-savefailed": "Ӏалаш ян цаелира",
     "translate-magic-special": "Белхан агӀонашан псевдонимаш",
     "translate-magic-words": "Бозбуунчаллин дешнаш",
-    "translate-magic-namespace": "ЦӀерашан ана",
+    "translate-magic-namespace": "ЦӀерийн ана",
     "translate-magic-notsaved": "Хьан нисдар дӏайазъдина дац!",
     "translate-magic-saved": "Хийцамаш кхиамца Ӏалашбина.",
     "translate-checks-parameters": "{{PLURAL:$2|1=Параметр лелош яц|Параметраш лелош яц}}:\n\u003Cstrong\u003E\u003Cnowiki\u003E$1\u003C/nowiki\u003E\u003C/strong\u003E",
