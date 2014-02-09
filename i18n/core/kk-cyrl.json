@@ -8,7 +8,7 @@
     },
     "translate": "Аудару",
     "translate-desc": "MediaWiki дегенді және бұнан тыстарды аудару үшін арналған [[Special:Translate|арнайы бет]]",
-    "translate-taskui-view": "Барлық хабарларды көрсету",
+    "translate-taskui-view": "",
     "translate-taskui-untranslated": "Аударылмаған хабарларды көрсету",
     "translate-taskui-optional": "Қосымша хабарларды көрсету",
     "translate-taskui-reviewall": "Барлық аудармаларды қайта қарау",
