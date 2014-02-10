@@ -32,9 +32,14 @@
 		receiveState: function ( groupId, language, state ) {
 			var instance = this;
 			instance.currentState = state;
-			instance.groupId = groupId;
 			instance.language = language;
 
+			// Only if groupId changes, fetch the new states
+			if ( instance.groupId === groupId ) {
+				return;
+			}
+
+			instance.groupId = groupId;
 			mw.translate.getMessageGroup( groupId, 'workflowstates' )
 				.done( function ( group ) {
 					instance.states = group.workflowstates;
