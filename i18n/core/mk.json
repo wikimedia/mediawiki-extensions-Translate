@@ -144,7 +144,7 @@
     "translate-sidebar-alltrans": "На други јазици",
     "translations": "Сите преводи",
     "translations-summary": "Внесете име на порака за приказ на сите достапни преводи.",
-    "translate-translations-no-message": "„$1“ не е порака која се преведува",
+    "translate-translations-no-message": "„$1“ не е порака што се преведува",
     "translate-translations-none": "Нема преводи за „$1“",
     "translate-translations-count": "{{PLURAL:$1|Пронајден е еден превод|Пронајдени се $1 преводи}}.",
     "translate-translations-fieldset-title": "Порака",

@@ -30,6 +30,7 @@
     "translate-group-desc-readerfeedback": "Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [//www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",
     "translate-group-desc-semantic": "Groupe de message de Meta contenant tous les messages pour toutes les extensions [http://semantic-mediawiki.org/ Semantic MediaWiki]",
     "translate-group-desc-translate": "Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [//www.mediawiki.org/wiki/Extension:Translate Translate]; veuillez vous familiariser avec son [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossaire]",
+    "translate-group-desc-visualeditor": "Méta-Groupe de messages contenant tous les message pour l’extension [http://www.mediawiki.org/wiki/Extension:VisualEditor VisualEditor] de MédiaWiki et aux paquets logiciels connexes",
     "translate-group-desc-wikiaextensions": "Ce méta-groupe de messages contient tous les messages des extensions MediaWiki utilisées par [http://www.wikia.com Wikia].",
     "translate-group-desc-wikimediaextensions": "Ce méta-groupe de messages contient tous les messages des extensions MediaWiki utilisées par la [//wikimedia.org/ Wikimedia Foundation].",
     "translate-group-desc-wikimediaextensions-main": "Groupe de messages méta comprenant tous les messages pour les extensions MediaWiki supportées et qui doivent être traduits pour le [//meta.wikimedia.org/wiki/Language_committee Comité des langues] de Wikimedia",
