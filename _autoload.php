@@ -278,6 +278,9 @@ $wgAutoloadClasses['MockMessageCollectionForExport'] =
 	"$dir/tests/phpunit/MockMessageCollectionForExport.php";
 $wgAutoloadClasses['MockSuperUser'] = "$dir/tests/phpunit/MockSuperUser.php";
 $wgAutoloadClasses['MockWikiMessageGroup'] = "$dir/tests/phpunit/MockWikiMessageGroup.php";
+$wgAutoloadClasses['MediaWikiInsertablesSuggesterTest'] =
+	"$dir/tests/phpunit/insertables/MediaWikiInsertablesSuggesterTest.php";
+
 /**@}*/
 
 /**
