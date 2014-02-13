@@ -19,6 +19,7 @@
     "translate-group-desc-readerfeedback": "MediaWiki 拡張機能 [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] のすべてのメッセージを含む上位メッセージ群",
     "translate-group-desc-semantic": "[http://semantic-mediawiki.org/ Semantic MediaWiki] 拡張機能のすべてのメッセージを含む上位メッセージ群",
     "translate-group-desc-translate": "MediaWiki 拡張機能 [http://www.mediawiki.org/wiki/Extension:Translate Translate] のすべてのメッセージを含む上位メッセージ群。この拡張機能の[//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary 用語集]を参照して用語を把握してください。",
+    "translate-group-desc-visualeditor": "MediaWiki の [http://www.mediawiki.org/wiki/Extension:VisualEditor VisualEditor] 拡張機能のすべてのメッセージを含むメタ メッセージ群",
     "translate-group-desc-wikiaextensions": "[http://www.wikia.com Wikia] で使用されている MediaWiki 拡張機能によってサポートされた、すべてのメッセージからなる上位メッセージ群",
     "translate-group-desc-wikimediaextensions": "[http://wikimedia.org/ ウィキメディア財団]が使用している、サポート対象の MediaWiki 拡張機能のすべてのメッセージを含む上位メッセージ群",
     "translate-group-desc-wikimediaextensions-main": "ウィキメディアの[http://meta.wikimedia.org/wiki/Language_committee 言語委員会]が翻訳を必要とする、サポート対象のMediaWiki拡張機能のすべてのメッセージを含む上位メッセージ群",

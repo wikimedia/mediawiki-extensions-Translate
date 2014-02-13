@@ -17,6 +17,7 @@
     "translate-group-desc-readerfeedback": "미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]의 모든 메시지를 포함하는 메타 그룹입니다.",
     "translate-group-desc-semantic": "모든 [http://semantic-mediawiki.org/ 시맨틱 미디어위키] 확장 기능의 모든 메시지를 포함하는 메타 그룹입니다.",
     "translate-group-desc-translate": "미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:Translate Translate]의 모든 메시지를 포함하는 메타 그룹입니다. 이 확장 기능의 [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary 용어집]을 참고하여 용어를 파악하세요.",
+    "translate-group-desc-visualeditor": "미디어위키 확장 기능 [http://www.mediawiki.org/wiki/Extension:VisualEditor 시각편집기]와 관련된 패키지에 대한 모든 메시지를 포함하고 있는 메타 메시지 그룹",
     "translate-group-desc-wikiaextensions": "[http://www.wikia.com 위키아]에서 쓰이며 여기서 지원하는 미디어위키 확장 기능의 모든 메시지를 포함한 메타 그룹입니다.",
     "translate-group-desc-wikimediaextensions": "[http://wikimedia.org/ 위키미디어 재단]에서 쓰이며 여기서 지원하는 미디어위키 확장 기능의 모든 메시지를 포함한 메타 그룹입니다.",
     "translate-group-desc-wikimediaextensions-main": "위키미디어 [http://meta.wikimedia.org/wiki/Language_committee 언어 위원회]가 번역을 요구하는 미디어위키 확장 기능의 모든 메시지를 포함한 메타 그룹입니다.",

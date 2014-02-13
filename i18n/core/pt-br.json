@@ -275,7 +275,7 @@
     "log-name-translationreview": "Registro de revisão de traduções",
     "log-description-translationreview": "Registro de todas as revisões feitas em traduções e grupos de traduções.",
     "logentry-translationreview-message": "$1 {{GENDER:$2|revisou}} a tradução $3",
-    "logentry-translationreview-group": "$1 {{GENDER:$2|alterou}} o estado de $4 traduções em $3 de $6 para $7",
+    "logentry-translationreview-group": "$1 {{GENDER:$2|alterou}} o estado das traduções de $3 para $4, de $6 para $7",
     "translate-workflow-state-": "(indefinido)",
     "translate-workflowstatus": "Status: $1",
     "translate-workflow-set-do": "Definir",
