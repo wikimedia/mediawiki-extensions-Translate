@@ -214,41 +214,48 @@
 	}
 
 	function updateGroupWarning() {
-		/*jshint loopfunc:true */
-		var preferredLanguages,
-			$groupWarning = $( '.tux-editor-header .group-warning' ),
-			targetLanguage = $( '.tux-messagelist' ).data( 'targetlangcode' ),
+		var $groupWarning = $( '.tux-editor-header .group-warning' ),
 			id = $( '.tux-messagetable-loader' ).data( 'messagegroup' ),
 			props = 'priority|prioritylangs|priorityforce';
 
 		$groupWarning.empty();
 
 		mw.translate.getMessageGroup( id, props ).done( function ( group ) {
+			var preferredLanguages, headerMessage, languagesMessage,
+				targetLanguage = $( '.tux-messagelist' ).data( 'targetlangcode' );
 
-			// Check whether group has priority languages
+			// Check whether the group has priority languages
 			if ( !group.prioritylangs ) {
 				return;
 			}
 
-			// And if current language is among them, we can return early
+			// And if the current language is among them, we can return early
 			if ( $.inArray( targetLanguage, group.prioritylangs ) !== -1 ) {
 				return;
 			}
 
-			// Format a nice warning for the user
-			preferredLanguages = $.map( group.prioritylangs, $.uls.data.getAutonym );
+			// Make a comma-separated list of preferred languages
+			preferredLanguages = $.map( group.prioritylangs, function ( lang ) {
+				// bidi isolation for language names
+				return '<bdi>' + $.uls.data.getAutonym( lang ) + '</bdi>'
+			} ).join( ', ' );
 
-			new mw.Api().parse(
-				mw.message( group.priorityforce ?
-					'tpt-discouraged-language-force' :
-					'tpt-discouraged-language',
-					'',
-					$.uls.data.getAutonym( targetLanguage ),
-					preferredLanguages.join( ', ' )
-				).parse()
-			).done( function ( parsedWarning ) {
-				$groupWarning.html( parsedWarning );
-			} );
+			headerMessage = mw.message( group.priorityforce ?
+				'tpt-discouraged-language-force-header' :
+				'tpt-discouraged-language-header',
+				$.uls.data.getAutonym( targetLanguage )
+			).parse();
+
+			languagesMessage = mw.message( group.priorityforce ?
+				'tpt-discouraged-language-force' :
+				'tpt-discouraged-language',
+				preferredLanguages
+			).parse();
+
+			$groupWarning.append(
+				$( '<p>' ).append( $( '<strong>' ).text( headerMessage ) ),
+				$( '<p>' ).html( languagesMessage ) // html because of the <bdi>
+			);
 		} );
 	}
 
