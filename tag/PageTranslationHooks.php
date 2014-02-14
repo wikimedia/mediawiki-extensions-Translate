@@ -77,13 +77,18 @@ class PageTranslationHooks {
 		global $wgTranslatePageTranslationULS;
 
 		$title = $out->getTitle();
-		if ( TranslatablePage::isSourcePage( $title ) ||
-			TranslatablePage::isTranslationPage( $title )
-		) {
+		$isSource = TranslatablePage::isSourcePage( $title );
+		$isTranslation = TranslatablePage::isTranslationPage( $title );
+
+		if ( $isSource || $isTranslation ) {
 			$out->addModules( 'ext.translate' );
 			if ( $wgTranslatePageTranslationULS ) {
 				$out->addModules( 'ext.translate.pagetranslation.uls' );
 			}
+
+			// Per bug 61331
+			$type =  $isSource ? 'source' : 'translation';
+			$out->addJsConfigVars( 'wgTranslatePageTranslation', $type );
 		}
 
 		return true;
