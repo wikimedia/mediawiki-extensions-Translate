@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_d80680d1",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-14T13:06:59Z",
+      "side": 1,
+      "message": "Could have been in a separate commit",
+      "revId": "cbfce625b1c940af0dbfa24eae8defb7b681a80b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_9810f805",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-14T13:06:59Z",
+      "side": 1,
+      "message": "And because it is parsed.",
+      "revId": "cbfce625b1c940af0dbfa24eae8defb7b681a80b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
