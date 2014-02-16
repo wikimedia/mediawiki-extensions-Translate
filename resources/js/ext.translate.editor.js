@@ -539,6 +539,8 @@
 					e.preventDefault();
 					e.stopPropagation();
 					translateEditor.$editor.find( '.shortcut-activated:visible' ).eq( index ).trigger( 'click' );
+					// Update numbers and locations after trigger should be completed
+					window.setTimeout( function() { translateEditor.showShortcuts(); }, 100 );
 				}
 
 				if ( e.which === 18 && e.type === 'keyup' ) {
@@ -725,7 +727,8 @@
 					.addClass( 'row shortcutinfo' )
 					.text( mw.msg( 'tux-editor-shortcut-info',
 						( mw.util.tooltipAccessKeyPrefix + 's' ).toUpperCase(),
-						( mw.util.tooltipAccessKeyPrefix + 'd' ).toUpperCase() )
+						( mw.util.tooltipAccessKeyPrefix + 'd' ).toUpperCase(),
+						'ALT' )
 					)
 				);
 			}
