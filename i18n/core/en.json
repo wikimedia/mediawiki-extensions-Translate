@@ -327,7 +327,7 @@
     "tux-editor-skip-button-label": "Skip to next",
     "tux-editor-cancel-button-label": "Cancel",
     "tux-editor-confirm-button-label": "Confirm translation",
-    "tux-editor-shortcut-info": "Press \"$1\" to save or \"$2\" to skip to next message",
+    "tux-editor-shortcut-info": "Press \"$1\" to save or \"$2\" to skip to next message or \"$3\" for other shortcuts.",
     "tux-editor-edit-desc": "Edit documentation",
     "tux-editor-add-desc": "Add documentation",
     "tux-editor-suggestions-title": "Suggestions",
