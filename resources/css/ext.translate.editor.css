@@ -212,7 +212,15 @@
 	border-left: 2px solid #3366BB;
 	padding: 5px 5px 5px 10px;
 	background-color: #f5f5f5;
+	/* CSSJanus fails to flip this. Bug 61440
 	margin: 0 5px 3px -5px !important;
+	*/
+}
+
+/* Workaround for the above */
+.grid .row .row .tm-suggestion,
+.grid .row .row .in-other-language {
+	margin: 0 5px 3px -5px;
 }
 
 .tm-suggestion:hover,
