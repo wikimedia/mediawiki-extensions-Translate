@@ -26,7 +26,11 @@ $GLOBALS['wgExtensionCredits']['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'Translate',
 	'version' => TRANSLATE_VERSION,
-	'author' => array( 'Niklas Laxström', 'Siebrand Mazeland' ),
+	'author' => array(
+		'Niklas Laxström',
+		'Santhosh Thottingal',
+		'Siebrand Mazeland'
+	),
 	'descriptionmsg' => 'translate-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Translate',
 );
