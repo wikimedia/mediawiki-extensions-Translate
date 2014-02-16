@@ -402,11 +402,19 @@
 }
 
 .shortcut-popup {
-	position: absolute;
-	width: 16px;
+	/* Firefox likes to add "relative" inline for elements with offset */
+	position: absolute !important;
+	width: 17px;
 	height: 17px;
 	line-height: 17px;
 	overflow: hidden;
-	font-size: 11px;
+	font-size: 13px;
 	text-align: center;
+	border: gray 1px dashed;
+	border-radius: 100%;
+	z-index: 110;
+	background-color: white;
+	margin-top: -10px;
+	/* @noflip */
+	margin-left: -10px;
 }
