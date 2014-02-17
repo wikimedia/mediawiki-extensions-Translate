@@ -3,7 +3,7 @@
  * Create language models for https://github.com/crodas/LanguageDetector based
  * on translation data in your wiki.
  *
- * @author Niklas Laxstrom
+ * @author Niklas Laxström
  *
  * @copyright Copyright © 2013, Niklas Laxström
  * @license GPL-2.0+

@@ -2,7 +2,7 @@
 /**
  * Script to convert Translate extension database schema to v2
  *
- * @author Niklas Laxstrom
+ * @author Niklas Laxström
  * @copyright Copyright © 2011, Niklas Laxström
  * @license GPL-2.0+
  * @file

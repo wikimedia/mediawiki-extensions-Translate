@@ -2,7 +2,7 @@
 /**
  * Script to export translations of one message group to file(s).
  *
- * @author Niklas Laxstrom
+ * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2008-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
