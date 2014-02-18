@@ -111,6 +111,10 @@ Post processing step to format in wiki
  MessageGroup    $group: Message group instance
  string          $code: Language code
 
+;TranslateMessageGroupPathVariables: Allows to manipulate the list of variables for message group path patterns.
+ MessageGroup    $group
+ array          &$variables: Variable name => replacement
+
 ;TranslateMessageTableInit: When creating new MessageTable
  MessageTable   &$table: Default implementation that can be accessed or even replaced
  IContextSource  $context:

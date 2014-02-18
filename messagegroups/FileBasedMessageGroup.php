@@ -118,6 +118,8 @@ class FileBasedMessageGroup extends MessageGroupBase {
 			'%GROUPROOT%' => $wgTranslateGroupRoot,
 		);
 
+		wfRunHooks( 'TranslateMessageGroupPathVariables', array( $this, &$variables ) );
+
 		return str_replace( array_keys( $variables ), array_values( $variables ), $pattern );
 	}
 
