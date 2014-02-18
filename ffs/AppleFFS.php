@@ -124,7 +124,7 @@ class AppleFFS extends SimpleFFS {
 			}
 
 			$key = $mangler->unmangle( $key );
-			$output .= self::writeRow( $key, '=', $value );
+			$output .= self::writeRow( $key, $value );
 		}
 
 		if ( $output ) {
