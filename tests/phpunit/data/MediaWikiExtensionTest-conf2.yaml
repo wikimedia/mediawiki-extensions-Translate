@@ -10,6 +10,8 @@ FILES:
   sourcePattern: %GROUPROOT%/mediawiki-extensions/extensions/WikimediaMessages/WikimediaMessages.i18n.php
   aliasFile: FooBar.alias.php
   magicFile: FooBar.magic.php
+  aliasFileSource: %GROUPROOT%/mediawiki-extensions/extensions/FooBar.alias.php
+  magicFileSource: %GROUPROOT%/mediawiki-extensions/extensions/FooBar.magic.php
 
 CHECKER:
   class: MediaWikiMessageChecker

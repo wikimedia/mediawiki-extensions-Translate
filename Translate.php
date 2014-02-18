@@ -508,12 +508,6 @@ $GLOBALS['wgTranslateWorkflowStates'] = false;
 # === System setup related configuration ===
 # <source lang=php>
 /**
- * Location of your extensions, if not the default. Only matters
- * if you are localising your own extensions with this extension.
- */
-$GLOBALS['wgTranslateExtensionDirectory'] = "$IP/extensions/";
-
-/**
  * Set location of cache files. Defaults to $wgCacheDirectory.
  */
 $GLOBALS['wgTranslateCacheDirectory'] = false;

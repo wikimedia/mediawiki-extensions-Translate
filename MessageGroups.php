@@ -86,7 +86,6 @@ class MessageGroups {
 		$deps[] = new GlobalDependency( 'wgEnablePageTranslation' );
 		$deps[] = new GlobalDependency( 'wgTranslateGroupFiles' );
 		$deps[] = new GlobalDependency( 'wgTranslateCC' );
-		$deps[] = new GlobalDependency( 'wgTranslateExtensionDirectory' );
 		$deps[] = new GlobalDependency( 'wgTranslateWorkflowStates' );
 
 		self::$groups = $wgTranslateCC;

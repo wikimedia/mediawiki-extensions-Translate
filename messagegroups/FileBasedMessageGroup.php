@@ -107,8 +107,9 @@ class FileBasedMessageGroup extends MessageGroupBase {
 	 * @param string $pattern
 	 * @param string $code Language code.
 	 * @return string
+	 * @since 2014.02 Made public
 	 */
-	protected function replaceVariables( $pattern, $code ) {
+	public function replaceVariables( $pattern, $code ) {
 		global $IP, $wgTranslateGroupRoot;
 
 		$variables = array(

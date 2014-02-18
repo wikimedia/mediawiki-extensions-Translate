@@ -69,35 +69,31 @@ class MagicExport extends Maintenance {
 		$this->output( "Opening file handles and loading current data...\n" );
 
 		$groups = MessageGroups::singleton()->getGroups();
-		$filename = null;
 		foreach ( $groups as $group ) {
-			$filename = null;
-			if ( $group instanceof MediaWikiExtensionMessageGroup ) {
-				$conf = $group->getConfiguration();
-				switch ( $this->type ) {
-					case 'special':
-						if ( isset( $conf['FILES']['aliasFile'] ) ) {
-							$filename = $conf['FILES']['aliasFile'];
-						}
-						break;
-					case 'magic':
-						if ( isset( $conf['FILES']['magicFile'] ) ) {
-							$filename = $conf['FILES']['magicFile'];
-						}
-						break;
-				}
-			}
-
-			if ( $filename === null ) {
+			if ( !$group instanceof MediaWikiExtensionMessageGroup ) {
 				continue;
 			}
 
-			global $wgTranslateExtensionDirectory;
-			$inFile = "$wgTranslateExtensionDirectory/$filename";
+			$conf = $group->getConfiguration();
 
-			if ( !file_exists( $inFile ) ) {
+			$inFile = $outFile = null;
+
+			if ( $this->type === 'special' && isset( $conf['FILES']['aliasFile'] ) ) {
+				$inFile  = $conf['FILES']['aliasFileSource'];
+				$outFile = $conf['FILES']['aliasFile'];
+			}
+
+			if ( $this->type === 'magic' && isset( $conf['FILES']['magicFile'] ) ) {
+				$inFile  = $conf['FILES']['magicFileSource'];
+				$outFile = $conf['FILES']['magicFile'];
+			}
+
+			if ( $inFile === null ) {
 				continue;
 			}
+
+			$inFile = $group->replaceVariables( $inFile, 'en' );
+			$outFile =  $this->target . '/' . $outFile;
 
 			include $inFile;
 			switch ( $this->type ) {
@@ -121,7 +117,6 @@ class MagicExport extends Maintenance {
 					break;
 			}
 
-			$outFile = $this->target . '/' . $filename;
 			wfMkdirParents( dirname( $outFile ), null, __METHOD__ );
 			$this->handles[$group->getId()] = fopen( $outFile, 'w' );
 			fwrite( $this->handles[$group->getId()], $this->readHeader( $inFile ) );

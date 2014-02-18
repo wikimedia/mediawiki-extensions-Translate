@@ -113,9 +113,11 @@ class PremadeMediawikiExtensionGroups {
 
 		// @todo Find a better way
 		if ( isset( $info['aliasfile'] ) ) {
+			$conf['FILES']['aliasFileSource'] = $this->path . '/' . $info['aliasfile'];
 			$conf['FILES']['aliasFile'] = $info['aliasfile'];
 		}
 		if ( isset( $info['magicfile'] ) ) {
+			$conf['FILES']['magicFileSource'] = $this->path . '/' . $info['magicfile'];
 			$conf['FILES']['magicFile'] = $info['magicfile'];
 		}
 
@@ -318,27 +320,19 @@ class PremadeMediawikiExtensionGroups {
 			return array();
 		}
 
-		global $wgAutoloadClasses, $IP, $wgTranslateExtensionDirectory;
+		global $wgAutoloadClasses;
 
 		$postfix = 'Configure/load_txt_def/TxtDef.php';
-		if ( file_exists( "$IP/extensions/$postfix" ) ) {
-			$prefix = "$IP/extensions";
-		} elseif ( file_exists( "$wgTranslateExtensionDirectory/$postfix" ) ) {
-			$prefix = $wgTranslateExtensionDirectory;
-		} else {
-			$prefix = false;
+		if ( !file_exists( "{$this->path}/$postfix" ) ) {
+			return array();
 		}
 
-		if ( $prefix ) {
-			$wgAutoloadClasses['TxtDef'] = "$prefix/$postfix";
-			$tmp = TxtDef::loadFromFile( "$prefix/Configure/settings/Settings-ext.txt" );
+		$wgAutoloadClasses['TxtDef'] = "{$this->path}/$postfix";
+		$tmp = TxtDef::loadFromFile( "{$this->path}/Configure/settings/Settings-ext.txt" );
 
-			return array_combine(
-				array_map( array( __CLASS__, 'foldId' ), array_keys( $tmp ) ),
-				array_values( $tmp )
-			);
-		}
-
-		return array();
+		return array_combine(
+			array_map( array( __CLASS__, 'foldId' ), array_keys( $tmp ) ),
+			array_values( $tmp )
+		);
 	}
 }
