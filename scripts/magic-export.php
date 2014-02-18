@@ -105,12 +105,14 @@ class MagicExport extends Maintenance {
 						$this->messagesOld[$group->getId()] = $specialPageAliases;
 						unset( $specialPageAliases );
 					} else {
-						$this->error( "File '$inFile' does not contain an aliases array.", 1 );
+						$this->error( "File '$inFile' does not contain an aliases array." );
+						continue;
 					}
 					break;
 				case 'magic':
 					if ( !isset( $magicWords ) ) {
-						$this->error( "File '$inFile' does not contain a magic words array.", 1 );
+						$this->error( "File '$inFile' does not contain a magic words array." );
+						continue;
 					}
 					$this->messagesOld[$group->getId()] = $magicWords;
 					unset( $magicWords );
@@ -197,7 +199,8 @@ PHP
 				$this->output( "Processing $l...\n" );
 
 				$page = WikiPage::factory( $title );
-				$data = $page->getContent();
+				$content = $page->getContent();
+				$data = $content->getNativeData();
 
 				// Parse message file.
 				$segments = explode( "\n", $data );
@@ -221,6 +224,10 @@ PHP
 			foreach ( $this->handles as $group => $handle ) {
 				// Find messages to write to this handle.
 				$messagesOut = array();
+				if ( !isset( $this->messagesOld[$group] ) ) {
+					continue;
+				}
+
 				foreach ( $this->messagesOld[$group]['en'] as $key => $message ) {
 					if ( array_key_exists( $key, $messagesNew ) ) {
 						$messagesOut[$key] = $messagesNew[$key];
