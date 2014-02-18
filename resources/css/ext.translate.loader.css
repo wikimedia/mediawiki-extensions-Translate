@@ -22,7 +22,7 @@
 	float: left;
 	background: transparent url(../images/loading.gif) right bottom no-repeat;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/loading.svg);
-	background-image: -moz-linear-gradient(transparent, transparent), url(../images/loading.svg);
+	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/loading.svg);
 	background-size: 100%;
 	-webkit-animation-name: tux-loading-indicator-spin;

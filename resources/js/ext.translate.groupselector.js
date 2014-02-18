@@ -496,7 +496,6 @@
 			if ( messagegroup.icon && messagegroup.icon.vector ) {
 				style +=
 					'background-image: -webkit-linear-gradient(transparent, transparent), url(--);' +
-					'background-image: -moz-linear-gradient(transparent, transparent), url(--);' +
 					'background-image: linear-gradient(transparent, transparent), url(--);';
 				style = style.replace( /--/g, messagegroup.icon.vector );
 			}
