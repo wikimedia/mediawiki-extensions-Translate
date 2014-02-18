@@ -2,7 +2,7 @@
 /**
  * Script for comparing supported YAML parser implementations
  *
- * @author Niklas Laxstrom
+ * @author Niklas Laxström
  *
  * @copyright Copyright © 2010, Niklas Laxström
  * @license GPL-2.0+

@@ -2,7 +2,7 @@
 /**
  * A script to populate fuzzy tags to revtag table.
  *
- * @author Niklas Laxstrom
+ * @author Niklas Laxström
  * @copyright Copyright © 2009-2013, Niklas Laxström
  * @license GPL-2.0+
  * @file

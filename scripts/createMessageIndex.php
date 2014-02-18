@@ -5,7 +5,7 @@
  * loadgroup parameter is not provided in the request, which happens if someone
  * reaches a messages from somewhere else than Special:Translate.
  *
- * @author Niklas Laxstrom
+ * @author Niklas Laxström
  * @copyright Copyright © 2008-2011, Niklas Laxström
  * @license GPL-2.0+
  * @file

@@ -2,7 +2,7 @@
 /**
  * Script to export special core features of %MediaWiki.
  *
- * @author Niklas Laxstrom
+ * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2009-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+

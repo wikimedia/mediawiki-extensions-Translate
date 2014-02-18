@@ -2,7 +2,7 @@
 /**
  * Creates serialised database of messages that need checking for problems.
  *
- * @author Niklas Laxstrom
+ * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2008-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
