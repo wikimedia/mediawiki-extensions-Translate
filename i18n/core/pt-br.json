@@ -10,7 +10,8 @@
             "Luckas",
             "Luckas Blade",
             "Opraco",
-            "555"
+            "555",
+            "Caio1478"
         ]
     },
     "translate": "Traduzir",
@@ -360,6 +361,10 @@
     "tux-empty-list-translated-action": "Traduzir",
     "tux-empty-show-optional-messages": "Exibir mensagens opcionais",
     "tux-empty-no-outdated-messages": "Nenhuma mensagem desatualizada",
+    "tux-empty-nothing-to-proofread": "Nada para revisar",
+    "tux-empty-you-can-help-providing": "Você pode ajudar a proporcionar novas traduções",
+    "tux-empty-nothing-new-to-proofread": "Nada de novo para revisar",
+    "tux-empty-you-can-review-already-proofread": "Você pode revisar traduções já revisadas por outros.",
     "tux-empty-list-other-link": "Exibir todas as mensagens",
     "tux-editor-close-tooltip": "Fechar",
     "tux-editor-expand-tooltip": "Expandir",

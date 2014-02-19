@@ -1,9 +1,12 @@
 {
     "@metadata": {
         "authors": [
-            "Veeven"
+            "Veeven",
+            "Ashokjayanti"
         ]
     },
     "translate-group-desc-nodesc": "ఈ సందేశ సమూహానికి వివరణ లేదు",
-    "translate-group-desc-translatablepages": "అనువదించదగ్గ అన్ని పుటలు"
+    "translate-group-desc-universallanguageselector": "MediaWikiవిస్తరణకొరకు అన్ని సందేశాలూ కలిసిన విస్తృత సందేశ సంకలనం[http://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector UniversalLanguageSelector] (ULS)మరియు సంబంధిత సాఫ్ట్ వేర్  \nపాకేజిలు.",
+    "translate-group-desc-translatablepages": "అనువదించదగ్గ అన్ని పుటలు",
+    "translate-group-desc-wikimedia-mobile-wikipedia-ios-ui": "[అనువాదం:[వికిపీడియా మొబైల్| వికిపీడియాiOS]అనువాదం]వికిపీడియా మొబైల్ అప్(2014కొత్త)దాని iOS ప్రత్యేక విడుదల;గ్రాహక పటలం విభాగం"
 }

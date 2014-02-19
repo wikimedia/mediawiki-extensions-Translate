@@ -33,6 +33,7 @@ $specialPageAliases['en'] = array(
 $specialPageAliases['af'] = array(
 	'LanguageStats' => array( 'TaalStatsistieke' ),
 	'Magic' => array( 'GevorderdeVertaal' ),
+	'MyLanguage' => array( 'MyTaal' ),
 	'PageTranslation' => array( 'BladsyVertaling' ),
 	'Translate' => array( 'Vertaal' ),
 	'TranslationStats' => array( 'VertaalStatistieke' ),
@@ -70,11 +71,20 @@ $specialPageAliases['arc'] = array(
 
 /** Egyptian Spoken Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
+	'AggregateGroups' => array( 'مجموعات_متجمعه' ),
 	'ImportTranslations' => array( 'استوراد_الترجمات' ),
 	'LanguageStats' => array( 'احصائيات_اللغات' ),
 	'Magic' => array( 'ترجمة_متقدمة', 'ماجيك' ),
+	'ManageMessageGroups' => array( 'التحكم_بمجموعات_الرسايل' ),
+	'ManageTranslatorSandbox' => array( 'التحكم_بسبوره_المترجم', 'سبوره_الترجمه' ),
+	'MessageGroupStats' => array( 'احصاءات_مجموعات_الرسايل' ),
+	'MyLanguage' => array( 'اللغة_بتاعتى' ),
 	'PageTranslation' => array( 'ترجمة_صفحه' ),
+	'PageTranslationDeletePage' => array( 'صفحه_حذف_ترجمه_الصفحه' ),
+	'SearchTranslations' => array( 'تدوير_الترجمات' ),
+	'SupportedLanguages' => array( 'اللغات_المتدعمه' ),
 	'Translate' => array( 'ترجمه' ),
+	'TranslationStash' => array( 'ستاش_الترجمه' ),
 	'TranslationStats' => array( 'احصائيات_الترجمه' ),
 	'Translations' => array( 'ترجمات' ),
 );
@@ -607,7 +617,7 @@ $specialPageAliases['lb'] = array(
 	'PageTranslation' => array( 'Säiten-Iwwersetzung' ),
 	'PageTranslationDeletePage' => array( 'Läschsäit_fir_Iwwersetzungen' ),
 	'SearchTranslations' => array( 'Iwwersetzunge_sichen' ),
-	'SupportedLanguages' => array( 'Ënnerstetzte_Sproochen' ),
+	'SupportedLanguages' => array( 'Ënnerstetzt_Sproochen' ),
 	'Translate' => array( 'Iwwersetzen' ),
 	'TranslationStats' => array( 'Iwwersetzungsstatistiken' ),
 	'Translations' => array( 'Iwwersetzungen' ),
@@ -836,6 +846,14 @@ $specialPageAliases['pt-br'] = array(
 	'Magic' => array( 'Tradução_avançada' ),
 	'Translate' => array( 'Traduzir' ),
 	'TranslationStats' => array( 'Estado_da_tradução', 'Status_da_tradução' ),
+);
+
+/** Quechua (Runa Simi) */
+$specialPageAliases['qu'] = array(
+	'Magic' => array( 'NawparikusqaTikray' ),
+	'ManageTranslatorSandbox' => array( 'TikranaPukllana' ),
+	'MyLanguage' => array( 'Rimayniy' ),
+	'Translate' => array( 'Tikray' ),
 );
 
 /** Romanian (română) */
@@ -1080,7 +1098,7 @@ $specialPageAliases['zh-hans'] = array(
 	'LanguageStats' => array( '语言统计' ),
 	'Magic' => array( '高级翻译' ),
 	'ManageMessageGroups' => array( '信息组管理' ),
-	'ManageTranslatorSandbox' => array( '管理译者沙盒' ),
+	'ManageTranslatorSandbox' => array( '管理译者沙盒', '翻译沙盒' ),
 	'MessageGroupStats' => array( '信息组状态' ),
 	'MyLanguage' => array( '我的语言' ),
 	'PageTranslation' => array( '页面翻译' ),
@@ -1088,6 +1106,7 @@ $specialPageAliases['zh-hans'] = array(
 	'SearchTranslations' => array( '搜索翻译' ),
 	'SupportedLanguages' => array( '支持的语言' ),
 	'Translate' => array( '翻译' ),
+	'TranslationStash' => array( '翻译隐藏' ),
 	'TranslationStats' => array( '翻译统计' ),
 	'Translations' => array( '译文' ),
 );
