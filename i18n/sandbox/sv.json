@@ -2,13 +2,16 @@
     "@metadata": {
         "authors": [
             "Jopparn",
-            "WikiPhoenix"
+            "WikiPhoenix",
+            "Lokal Profil"
         ]
     },
     "managetranslatorsandbox": "Hantera översättarsandlåda",
     "tsb-filter-pending": "Väntande förfrågningar",
     "tsb-reminder-title-generic": "Slutför din introduktion för att bli en översättare",
     "tsb-reminder-content-generic": "Hej $1,\n\nTack för din registrering på {{SITENAME}}.\n\nOm du slutför dina testöversättningar kan administratörerna snart ge dig full behörighet till att översätta.\n\nVar god kom och gör några fler översättningar här:\n$2\n\n$3\npersonalen på {{SITENAME}}",
+    "tsb-reminder-sending": "Skickar påminnelsen...",
+    "tsb-reminder-sent": "{{PLURAL:$1|Skickade $1 påminnelse $2|Skickade $1 påminnelser, den senaste $2}}",
     "tsb-reminder-sent-new": "Skickade en påminnelse",
     "tsb-reminder-failed": "Det gick inte att skicka påminnelsen",
     "tsb-email-promoted-subject": "Du är nu en översättare på {{SITENAME}}",
@@ -20,10 +23,13 @@
     "tsb-search-requests": "Sökbegäran",
     "tsb-accept-button-label": "Acceptera",
     "tsb-reject-button-label": "Acceptera inte",
+    "tsb-selected-count": "{{PLURAL:$1|En användare vald|$1 användare valda}}",
+    "tsb-older-requests": "$1 äldre {{PLURAL:$1|begäran}}",
     "tsb-accept-all-button-label": "Acceptera alla",
     "tsb-reject-all-button-label": "Avvisa alla",
     "tsb-user-posted-a-comment": "Inte en översättare",
     "tsb-reminder-link-text": "Skicka e-postpåminnelse",
+    "tsb-didnt-make-any-translations": "Denna användare gjorde inga översättningar.",
     "tsb-translations-source": "Källa",
     "tsb-translations-user": "Användaröversättningar",
     "tsb-translations-current": "Befintliga översättningar",
