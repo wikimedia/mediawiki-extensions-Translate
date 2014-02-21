@@ -5,7 +5,8 @@
             "Metalhead64",
             "Nike",
             "Raymond",
-            "Shirayuki"
+            "Shirayuki",
+            "Purodha"
         ]
     },
     "managetranslatorsandbox": "{{doc-special|TranslateSandbox}}",
@@ -26,7 +27,7 @@
     "tsb-accept-button-label": "Button label for accept button in [[Special:TranslateSandbox]].\n{{Identical|Accept}}",
     "tsb-reject-button-label": "Button label for reject button in [[Special:TranslateSandbox]].\n{{Identical|Reject}}",
     "tsb-selected-count": "Shows how many users are selected for accepting or rejecting. Parameters:\n* $1 - the number of users",
-    "tsb-older-requests": "A link shown at the footer of the requests list. Clicking the link selects all the requests that are older than the oldest currently-selected request.\n\nParameters:\n* $1 - the number of older requests. It can be 0.",
+    "tsb-older-requests": "A link shown at the footer of the requests list. Clicking the link selects all the requests that are older than the oldest currently-selected request.\n\nParameters:\n* $1 - the number of older requests. It can be 0, yet if so, the link is hidden per CSS class.",
     "tsb-accept-all-button-label": "Button label for accept-all button in [[Special:TranslateSandbox]].\n\nSee also:\n* {{msg-mw|Tsb-reject-all-button-label}}",
     "tsb-reject-all-button-label": "Button label for reject-all button in [[Special:TranslateSandbox]].\n\nSee also:\n* {{msg-mw|Tsb-accept-all-button-label}}",
     "tsb-user-posted-a-comment": "A label that appears near some text posted by the user.",

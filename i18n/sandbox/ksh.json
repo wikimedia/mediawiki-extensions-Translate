@@ -15,6 +15,7 @@
     "tsb-all-languages-button-label": "Alle Schprohche",
     "tsb-accept-button-label": "Aanämme",
     "tsb-reject-button-label": "Aflehne",
+    "tsb-older-requests": "{{PLURAL:$1|Ein|$1|Kein}} älldere Aanfroore",
     "tsb-accept-all-button-label": "All aanämme",
     "tsb-reject-all-button-label": "All aflehne",
     "tsb-user-posted-a-comment": "Keine Övversäzer",
