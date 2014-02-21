@@ -839,14 +839,19 @@
 				.addClass( 'row loading' )
 				.text( mw.msg( 'tux-editor-loading' ) )
 			);
-
+	
 			if ( mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				$messageDescSaveButton = $( '<button>' )
 					.addClass( 'blue button tux-editor-savedoc-button' )
 					.prop( 'disabled', true )
 					.text( mw.msg( 'tux-editor-doc-editor-save' ) )
 					.on( 'click', function () {
-						translateEditor.saveDocumentation();
+						translateEditor.saveDocumentation()
+							.done( function () {
+								var $descEditLink;
+								$descEditLink = $messageDescViewer.find( '.message-desc-edit' );
+								$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
+							} );
 					} );
 
 				$messageDescCancelButton = $( '<button>' )
@@ -877,7 +882,7 @@
 								$messageDescCancelButton
 							)
 					);
-
+		
 				$messageDescViewer = $( '<div>' )
 					.addClass( 'message-desc-viewer hide' )
 					.append(
