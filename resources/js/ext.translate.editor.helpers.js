@@ -53,9 +53,10 @@
 		saveDocumentation: function () {
 			var translateEditor = this,
 				api = new mw.Api(),
+				deferred = new $.Deferred(),
 				newDocumentation = translateEditor.$editor.find( '.tux-textarea-documentation' ).val();
 
-			api.post( {
+			deferred = api.post( {
 				action: 'edit',
 				title: translateEditor.message.title
 					.replace( /\/[a-z\-]+$/, '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ),
@@ -74,7 +75,6 @@
 							mw.log( 'Error parsing documentation ' + errorCode + ' ' + results.error.info );
 						}
 					);
-
 					// A collapsible element may have been added
 					$( '.mw-identical-title' ).makeCollapsible();
 
@@ -87,6 +87,7 @@
 				mw.notify( 'Error saving message documentation' );
 				mw.log( 'Error saving documentation', errorCode, results );
 			} );
+			return deferred.promise();
 		},
 
 		/**
