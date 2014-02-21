@@ -846,7 +846,11 @@
 					.prop( 'disabled', true )
 					.text( mw.msg( 'tux-editor-doc-editor-save' ) )
 					.on( 'click', function () {
-						translateEditor.saveDocumentation();
+						translateEditor.saveDocumentation()
+							.done( function () {
+								var $descEditLink = $messageDescViewer.find( '.message-desc-edit' );
+								$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
+							} );
 					} );
 
 				$messageDescCancelButton = $( '<button>' )
