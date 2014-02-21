@@ -51,6 +51,12 @@
 		 * Save the documentation
 		 */
 		saveDocumentation: function () {
+
+			var $messageDescViewer, $descEditLink;
+
+			$messageDescViewer = this.$editor.find( '.message-desc-viewer' );
+                        $descEditLink = $messageDescViewer.find( '.message-desc-edit' );
+
 			var translateEditor = this,
 				api = new mw.Api(),
 				newDocumentation = translateEditor.$editor.find( '.tux-textarea-documentation' ).val();
@@ -74,7 +80,7 @@
 							mw.log( 'Error parsing documentation ' + errorCode + ' ' + results.error.info );
 						}
 					);
-
+					$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
 					// A collapsible element may have been added
 					$( '.mw-identical-title' ).makeCollapsible();
 
