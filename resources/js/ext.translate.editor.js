@@ -839,7 +839,7 @@
 				.addClass( 'row loading' )
 				.text( mw.msg( 'tux-editor-loading' ) )
 			);
-	
+
 			if ( mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				$messageDescSaveButton = $( '<button>' )
 					.addClass( 'blue button tux-editor-savedoc-button' )
@@ -882,7 +882,7 @@
 								$messageDescCancelButton
 							)
 					);
-		
+
 				$messageDescViewer = $( '<div>' )
 					.addClass( 'message-desc-viewer hide' )
 					.append(
