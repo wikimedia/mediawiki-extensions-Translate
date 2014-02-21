@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_1a3955cb",
+        "filename": "resources/js/ext.translate.editor.helpers.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-21T17:35:08Z",
+      "side": 1,
+      "message": "The diff will be cleaner if you remove this line",
+      "revId": "26d0ec95bce25d73e6035455c5833d2b70330596",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_fa47c94e",
+        "filename": "resources/js/ext.translate.editor.helpers.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-21T17:35:08Z",
+      "side": 1,
+      "message": "..and add line back above this line",
+      "revId": "26d0ec95bce25d73e6035455c5833d2b70330596",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_3a3e51b6",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 851,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-21T17:35:08Z",
+      "side": 1,
+      "message": "You can shorten this a bit in two ways:\n\na)\nvar $descEditLink \u003d $messageDescViewer.find( \u0027.message-desc-edit\u0027 );\n$descEditLink.text( mw.msg( \u0027tux-editor-edit-desc\u0027 ) );\n\nb)\n$messageDescViewer.find( \u0027.message-desc-edit\u0027 )\n    .text( mw.msg( \u0027tux-editor-edit-desc\u0027 ) );",
+      "revId": "26d0ec95bce25d73e6035455c5833d2b70330596",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
