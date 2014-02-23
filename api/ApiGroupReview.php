@@ -35,6 +35,10 @@ class ApiGroupReview extends ApiBase {
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
+		if ( $user->isBlocked() ) {
+			$this->dieUsage( 'You have been blocked', 'blocked' );
+		}
+
 		$requestParams = $this->extractRequestParams();
 
 		$languages = Language::fetchLanguageNames();
@@ -192,7 +196,7 @@ class ApiGroupReview extends ApiBase {
 
 	public static function getToken() {
 		$user = RequestContext::getMain()->getUser();
-		if ( !$user->isAllowed( self::$right ) ) {
+		if ( !$user->isAllowed( self::$right ) || $user->isBlocked() ) {
 			return false;
 		}
 
