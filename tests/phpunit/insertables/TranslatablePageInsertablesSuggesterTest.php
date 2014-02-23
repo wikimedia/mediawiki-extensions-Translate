@@ -18,12 +18,16 @@ class TranslatablePageInsertablesSuggesterTest extends MediaWikiInsertablesSugge
 
 	public function getInsertablesProvider() {
 		return array(
-			array( 'Hi $1, I am $myname $my-middle-name $myLastName.', array(
-				new Insertable( '$1', '$1', '' ),
-				new Insertable( '$myname', '$myname', '' ),
-				new Insertable( '$my-middle-name', '$my-middle-name', '' ),
-				new Insertable( '$myLastName', '$myLastName', '' ),
-			) ),
+			array(
+				'$1 $myname $my-middle-name $myLastName $number9',
+				array(
+					new Insertable( '$1', '$1', '' ),
+					new Insertable( '$myname', '$myname', '' ),
+					new Insertable( '$my-middle-name', '$my-middle-name', '' ),
+					new Insertable( '$myLastName', '$myLastName', '' ),
+					new Insertable( '$number9', '$number9', '' ),
+				)
+			),
 		);
 	}
 }
