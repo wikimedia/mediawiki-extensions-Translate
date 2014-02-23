@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_8923e153",
+        "filename": "tests/phpunit/insertables/TranslatablePageInsertablesSuggesterTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-23T09:03:52Z",
+      "side": 1,
+      "message": "You know, you could also add a new message in the topmost array instead of trying to embed everything in one string.",
+      "revId": "db2b1d3c8c7195b3d5e3c2f5405a98c04cecfa36",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
