@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_c9656943",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-23T15:11:03Z",
+      "side": 1,
+      "message": "You also changed message group state api",
+      "revId": "d06fc6f6fdebb1952660b104662c95e3eb3a6912",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_a968dd19",
+        "filename": "api/ApiGroupReview.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-23T15:11:03Z",
+      "side": 1,
+      "message": "See the other file.",
+      "revId": "d06fc6f6fdebb1952660b104662c95e3eb3a6912",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_e976e500",
+        "filename": "api/ApiTranslationReview.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-02-23T15:11:03Z",
+      "side": 1,
+      "message": "I\u0027m not sure whether this should be included. If the user is blocked, then (s)he will get invalid token error instead of blocked error?",
+      "revId": "d06fc6f6fdebb1952660b104662c95e3eb3a6912",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
