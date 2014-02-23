@@ -70,10 +70,14 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			/* The filtering params here are swapped wrt MessageCollection.
 			 * There (fuzzy) means do not show fuzzy, which is the same as !fuzzy
 			 * here and fuzzy here means (fuzzy, false) there. */
-			if ( $filter[0] === '!' ) {
-				$messages->filter( substr( $filter, 1 ), true, $value );
-			} else {
-				$messages->filter( $filter, false, $value );
+			try {
+				if ( $filter[0] === '!' ) {
+					$messages->filter( substr( $filter, 1 ), true, $value );
+				} else {
+					$messages->filter( $filter, false, $value );
+				}
+			} catch ( MWException $e) {
+				$this->dieUsage( $e->getMessage(), 'invalidfilter');
 			}
 		}
 
