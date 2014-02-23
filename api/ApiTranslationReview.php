@@ -36,6 +36,9 @@ class ApiTranslationReview extends ApiBase {
 			case 'permissiondenied':
 				$this->dieUsage( 'Permission denied', $error );
 				break; // Unreachable, but throws off code analyzer.
+			case 'blocked':
+				$this->dieUsage( 'You have been blocked', $error );
+				break; // Unreachable, but throws off code analyzer.
 			case 'unknownmessage':
 				$this->dieUsage( 'Unknown message', $error );
 				break; // Unreachable, but throws off code analyzer.
@@ -116,6 +119,10 @@ class ApiTranslationReview extends ApiBase {
 			return 'permissiondenied';
 		}
 
+		if ( $user->isBlocked() ) {
+			return 'blocked';
+		}
+
 		$title = $revision->getTitle();
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
@@ -176,6 +183,7 @@ class ApiTranslationReview extends ApiBase {
 
 		return array_merge( parent::getPossibleErrors(), array(
 			array( 'code' => 'permissiondenied', 'info' => "You must have $right right" ),
+			array( 'code' => 'blocked', 'info' => "You have been blocked from editing" ),
 			array( 'code' => 'unknownmessage', 'info' => 'Title $1 does not belong to a message group' ),
 			array( 'code' => 'fuzzymessage', 'info' => 'Cannot review fuzzy translations' ),
 			array( 'code' => 'owntranslation', 'info' => 'Cannot review own translations' ),
