@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_f159272e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2014-02-24T05:59:25Z",
+      "side": 1,
+      "message": "\u003c 60 characters commit summary is good idea. Rest should go to detailed commit message.",
+      "revId": "2d7ada7bbe393281fb0247a71f230f4ae334dda0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
