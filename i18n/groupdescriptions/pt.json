@@ -5,7 +5,8 @@
             "Hamilton Abreu",
             "Luckas",
             "McDutchie",
-            "Waldir"
+            "Waldir",
+            "Fúlvio"
         ]
     },
     "translategroupdescriptions-desc": "Descrições dos grupos de mensagens dos produtos suportados pela extensão [http://mediawiki.org/wiki/Extension:Translate Translate]",
@@ -17,7 +18,9 @@
     "translate-group-desc-flaggedrevs": "Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Revisão de Edições]",
     "translate-group-desc-readerfeedback": "Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs ReaderFeedback]",
     "translate-group-desc-semantic": "Este meta-grupo contém todas as mensagens para todas as extensões do [http://semantic-mediawiki.org/ MediaWiki Semântico]",
-    "translate-group-desc-translate": "Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Traduzir]",
+    "translate-group-desc-translate": "Meta-grupo de mensagens contendo todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Traduzir]; por favor, familiarize-se com o [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossário]",
+    "translate-group-desc-universallanguageselector": "Meta-grupo de mensagens contendo todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector UniversalLanguageSelector] (ULS) e pacotes de softwares relacionados",
+    "translate-group-desc-visualeditor": "Meta-grupo de mensagens contendo todas as mensagens para a extensão do MediaWiki [http://www.mediawiki.org/wiki/Extension:VisualEditor Editor Visual] e pacotes de softwares relacionados",
     "translate-group-desc-wikiaextensions": "Este meta-grupo contém todas as mensagens para as extensões suportadas do MediaWiki que são usadas pela [http://www.wikia.com Wikia]",
     "translate-group-desc-wikimediaextensions": "Este meta-grupo contém todas as mensagens para as extensões MediaWiki suportadas, usadas pela [http://wikimedia.org/ Wikimedia Foundation]",
     "translate-group-desc-wikimediaextensions-main": "Este meta-grupo contém todas as mensagens para as extensões MediaWiki suportadas, que requerem tradução para o [http://meta.wikimedia.org/wiki/Language_committee Comité de Línguas] da Wikimedia",
@@ -26,7 +29,9 @@
     "bw-desc-freecol": "Antes de traduzir o FreeCol para a sua língua, por favor leia [[Translating:FreeCol]]. O Freecol utiliza a licença GPL.",
     "bw-desc-fudforum": "[http://fudforum.org/ FUDforum], um fórum web escrito em PHP.",
     "bw-desc-mantisbt": "O [http://www.mantisbt.org MantisBT] é um sistema de seguimento de bugs livre e online. Por favor reporte quaisquer problemas em [[Support]].",
+    "translate-group-desc-blockly": "Um grupo de mensagens para [[Translating:Blockly|Blockly]]",
     "translate-group-desc-eol": "Um grupo de mensagens para a [[Translating:EOL|Enciclopédia da Vida]]",
+    "translate-group-desc-fuel": "[[Translating:FUEL|FUEL]] traz mais consistência à tradução de softwares",
     "translate-group-desc-ihris": "Um grupo de mensagens para o [[Translating:iHRIS|iHRIS]]",
     "translate-group-desc-kiwix": "Um grupo de mensagens para o [[Translating:Kiwix|Kiwix]]",
     "translate-group-desc-mantisbt-plugin-core": "Um plugin para o [[Translating:MantisBT|MantisBT]]",
@@ -37,9 +42,13 @@
     "translate-group-desc-openimages-all": "Estas mensagens fazem parte do projeto [[Translating:Open Images|Open Images]]",
     "bw-desc-openstreetmap": "Grupo para todas as mensagens do [[Translating:OpenStreetMap|OpenStreetMap]]",
     "bw-desc-osm-site": "Este grupo contém as mensagens de interface do [[Translating:Open Street Map|Open Street Map]].\nConsulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} a página Unicode CLDR para uma explicação das chaves plurais].",
+    "translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] é um editor do OpenStreetMap baseado em Flash",
     "translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] é um conjunto de ferramentas para editar a Wikipédia",
     "bw-desc-shapado": "Grupo de mensagens do software de perguntas e respostas, livre e de código aberto, [[Translating:Shapado|Shapado]]",
-    "translate-group-desc-tsint": "Um grupo de mensagens para o [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], o sistema de internacionalização das ferramentas [http://toolserver.org Toolserver] (<span class=\"plainlinks\">[[Translating talk:Toolserver|apoio]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalhes técnicos]</span>)",
+    "translate-group-desc-tsint": "Um grupo de mensagens para [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], o sistema de internacionalização das ferramentas [http://toolserver.org Toolserver] (\u003Cspan class=\"plainlinks\"\u003E[[Translating talk:Toolserver|apoio]]\u003C/span\u003E)",
+    "translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]] é uma ferramenta que auxilia no carregamento de ficheiros no Wikimedia Commons e em outros projectos Wikimedia",
+    "translate-group-desc-waymarked-trails": "[[Translating:Waymarked Trails|Waymarked Trails]] é um serviço que mostra rotas de caminhada, ciclismo, ''mountain bike'' e patinação em todo o mundo. Utiliza a licença GNU GPL",
     "bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] consegue encontrar rapidamente os autores de uma página numa wiki da Wikimedia.",
-    "bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] é um projeto para apresentar ''offline'' uma versão de texto da Wikipédia num dispositivo móvel."
+    "bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] é um projeto para apresentar ''offline'' uma versão de texto da Wikipédia num dispositivo móvel.",
+    "translate-group-desc-wikimania-scholarships-app": "Grupo de mensagens para a aplicação [https://scholarships.wikimedia.org/apply Wikimania Scholarship]"
 }
