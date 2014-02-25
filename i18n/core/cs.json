@@ -199,6 +199,7 @@
     "translate-smg-nochanges": "Neexistují žádné změny k zapracování.",
     "translate-smg-submit": "Odeslat změny ke zpracování",
     "translate-smg-submitted": "Definice zpráv byly aktualizovány. Změny se zpracovávají na pozadí.",
+    "translate-smg-more": "Po odeslání těchto změn budou ještě další změny ke zpracování.",
     "translate-smg-left": "Obsah zprávy ve wiki",
     "translate-smg-right": "Příchozí změny",
     "translate-manage-import-diff": "Zpráva $1 | Akce: $2",
