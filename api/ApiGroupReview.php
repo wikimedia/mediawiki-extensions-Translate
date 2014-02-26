@@ -35,6 +35,10 @@ class ApiGroupReview extends ApiBase {
 			$this->dieUsage( 'Permission denied', 'permissiondenied' );
 		}
 
+		if ( $user->isBlocked() ) {
+			$this->dieUsage( 'You have been blocked', 'blocked' );
+		}
+
 		$requestParams = $this->extractRequestParams();
 
 		$languages = Language::fetchLanguageNames();
