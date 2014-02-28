@@ -10,14 +10,14 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2006-2013, Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2006-2014, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
  */
 
 /**
  * Version number used in extension credits and in other places where needed.
  */
-define( 'TRANSLATE_VERSION', '2014-02-04' );
+define( 'TRANSLATE_VERSION', '2014-02-28' );
 
 /**
  * Extension credits properties.
