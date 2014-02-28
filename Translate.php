@@ -25,7 +25,7 @@ define( 'TRANSLATE_VERSION', '2014-02-04' );
 $GLOBALS['wgExtensionCredits']['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'Translate',
-	'version' => TRANSLATE_VERSION,
+	'version' => '[https://www.mediawiki.org/wiki/MLEB MLEB 2014.02]',
 	'author' => array(
 		'Niklas Laxström',
 		'Santhosh Thottingal',

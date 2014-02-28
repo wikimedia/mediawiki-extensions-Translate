@@ -1,0 +1,12 @@
+== Translate 2014.02 ==
+Released at 2014-02-28.
+
+=== Noteworthy changes ===
+* Allow capital letters in MediaWiki style variables (insertables)
+* Bug 60500: Added AppleFFS module for iOS/Mac OS X Localizable.strings files
+* Remove shortcut activated from "paste source". It's similar to "revert changes" button, which does not have the insertable class and thus the number indicating shortcut key won't be visible.
+* Added new hook TranslateMessageGroupPathVariables
+* Bug 61459: Removed $wgTranslateExtensionDirectory option.
+* The magic-export.php was updated to handle failures more gracefully.
+* Bug 50954: In the translation interface, 'Add documentation' link now changes to 'Edit documentation' as soon as documentation is added.
+* Bug 54194: The ApiQueryMessageCollection module no longer throws exceptions on invalid input.
