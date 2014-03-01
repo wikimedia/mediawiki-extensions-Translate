@@ -391,5 +391,7 @@
     "translate-search-more-languages-info": "Information shown as number of languages matching the query using\n[[Special:SearchTranslations]]\n* $1 - number of languages\nSee also:\n* {{msg-mw|Translate-search-more-groups-info}}",
     "translate-statsbar-tooltip": "Descriptive text to show for the stats bar for message groups on mouse over.\n* $1 percentage of messages translated\n* $2 percentage of messages reviewed",
     "translate-statsbar-tooltip-with-fuzzy": "Descriptive text to show for the stats bar for message groups on mouse over.\n\nParameters:\n* $1 - percentage of messages translated (does not include outdated)\n* $2 - percentage of messages reviewed\n* $3 - percentage of messages outdated (not counted as translated)",
-    "translate-search-more-groups-info": "Information shown as number of message groups matching the query using\n[[Special:SearchTranslations]]\n* $1 - number of groups\nSee also:\n* {{msg-mw|Translate-search-more-languages-info}}"
+    "translate-search-more-groups-info": "Information shown as number of message groups matching the query using\n[[Special:SearchTranslations]]\n* $1 - number of groups\nSee also:\n* {{msg-mw|Translate-search-more-languages-info}}",
+    "translate-ulsdep-title": "Page title",
+    "translate-ulsdep-body": "Error message in page body"
 }
