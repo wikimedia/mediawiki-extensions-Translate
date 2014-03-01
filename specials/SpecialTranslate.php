@@ -53,6 +53,12 @@ class SpecialTranslate extends TranslateSpecialPage {
 			}
 		}
 
+		if ( !defined( 'ULS_VERSION' ) ) {
+			throw new MWException(
+				'Translate extension depends on Universal Language Selector extension'
+			);
+		}
+
 		$this->setup( $parameters );
 		$isBeta = self::isBeta( $request );
 
