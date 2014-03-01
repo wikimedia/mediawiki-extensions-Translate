@@ -53,6 +53,13 @@ class SpecialTranslate extends TranslateSpecialPage {
 			}
 		}
 
+		if ( !defined( 'ULS_VERSION' ) ) {
+			throw new ErrorPageError(
+				'translate-ulsdep-title',
+				'translate-ulsdep-body'
+			);
+		}
+
 		$this->setup( $parameters );
 		$isBeta = self::isBeta( $request );
 

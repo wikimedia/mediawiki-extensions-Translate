@@ -388,5 +388,7 @@
     "translate-search-more-languages-info": "$1 more {{PLURAL:$1|language|languages}}",
     "translate-statsbar-tooltip": "$1% translated, $2% reviewed",
     "translate-statsbar-tooltip-with-fuzzy": "$1% translated, $2% reviewed, $3% outdated",
-    "translate-search-more-groups-info": "$1 more {{PLURAL:$1|group|groups}}"
+    "translate-search-more-groups-info": "$1 more {{PLURAL:$1|group|groups}}",
+    "translate-ulsdep-title": "Configuration error",
+    "translate-ulsdep-body": "Translate extension depends on the Universal Language Selector extension."
 }
