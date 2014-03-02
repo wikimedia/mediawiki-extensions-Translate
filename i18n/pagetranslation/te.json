@@ -2,7 +2,8 @@
     "@metadata": {
         "authors": [
             "Kiranmayee",
-            "Veeven"
+            "Veeven",
+            "Chaduvari"
         ]
     },
     "pagetranslation": "పేజీ అనువాదం",
@@ -21,9 +22,16 @@
     "tpt-already-marked": "ఈ పేజీ యొక్క సరికొత్త కూర్పుని ఇప్పటికే అనువాదానికై గుర్తించారు.",
     "tpt-select-prioritylangs-reason": "కారణం:",
     "tpt-sections-prioritylangs": "ప్రాధాన్య భాషలు",
+    "tpt-rev-mark": "అనువాదం కోసం గుర్తు పెట్టు",
+    "tpt-rev-unmark": "అనువాదం నుంచి తీసివెయ్యి",
+    "tpt-rev-discourage": "నిరుత్సాహపరచు",
+    "tpt-rev-encourage": "పునస్థాపించు",
+    "tpt-rev-mark-tooltip": "ఈ పేజీ యొక్క సరికొత్త కూర్పుకు అనువాదం కోసం గుర్తుపెట్టు.",
+    "tpt-rev-unmark-tooltip": "ఈ పేజీని అనువాదం నుండి తీసివెయ్యి.",
+    "tpt-rev-discourage-tooltip": "ఈ పేజీలో ఇకపై అనువాదాలను నీరుగార్చు.",
     "translate-tag-translate-link-desc": "ఈ పేజీని అనువదించండి",
     "translate-tag-markthis": "ఈ పేజీని అనువాదం కొరకు గుర్తించు",
-    "translate-tag-markthisagain": "చివరిసారి <span class=\"plainlinks\">[$2 అనువాదానికి గుర్తించినప్పటి నుండి]</span> ఈ పేజీకి <span class=\"plainlinks\">[$1 మార్పులు]</span> జరిగాయి.",
+    "translate-tag-markthisagain": "చివరిసారి \u003Cspan class=\"plainlinks\"\u003E[$2 అనువాదానికి గుర్తించినప్పటి నుండి]\u003C/span\u003E ఈ పేజీకి \u003Cspan class=\"plainlinks\"\u003E[$1 మార్పులు]\u003C/span\u003E జరిగాయి.",
     "tpt-languages-legend": "ఇతర భాషలు:",
     "tpt-aggregategroup-add": "చేర్చు",
     "tpt-aggregategroup-save": "భద్రపరచు",

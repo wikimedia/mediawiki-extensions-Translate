@@ -1126,6 +1126,7 @@ $specialPageAliases['zh-hant'] = array(
 	'SearchTranslations' => array( '搜尋翻譯' ),
 	'SupportedLanguages' => array( '支持的語言' ),
 	'Translate' => array( '翻譯' ),
+	'TranslationStash' => array( '翻譯隱藏' ),
 	'TranslationStats' => array( '翻譯統計' ),
 	'Translations' => array( '譯文' ),
 );

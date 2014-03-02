@@ -342,7 +342,7 @@
     "tux-warnings-hide": "A label for a small tab above the warnings about the edit area, clicking on which hides the warnings.\n{{Identical|Hide}}",
     "tux-editor-save-failed": "An error shown above the edit box.\n* $1 - the warning that the API returns",
     "tux-editor-n-uses": "Link text in the translation editor which tells how many times the same string was suggested as translation from the translation memory. $1 is a number.",
-    "tux-editor-message-desc-more": "{{doc-actionlink}}\nLink text for expanding long message documentation.\n\nSee also:\n* {{msg-mw|Tux-editor-message-desc-less}}",
+    "tux-editor-message-desc-more": "{{doc-actionlink}}\nLink text for expanding long message documentation.\n\nSee also:\n* {{msg-mw|Tux-editor-message-desc-less}}\n{{Identical|View more}}",
     "tux-editor-message-desc-less": "{{doc-actionlink}}\nLink text for collapsing long message documentation.\n\nSee also:\n* {{msg-mw|Tux-editor-message-desc-more}}",
     "tux-editor-clear-translated": "Label for the button that appears at the footer of the translation editor.\nPressing the button clears all the messages that were translated from the page.",
     "tux-editor-proofreading-mode": "Label for the button that appears at the footer of the translation editor.\nPressing the button goes to the review mode.\n\nTranslate as a verb.\n{{Identical|Review}}",

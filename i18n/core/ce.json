@@ -50,6 +50,7 @@
     "translate-checks-parameters": "{{PLURAL:$2|1=Параметр лелош яц|Параметраш лелош яц}}:\n\u003Cstrong\u003E\u003Cnowiki\u003E$1\u003C/nowiki\u003E\u003C/strong\u003E",
     "translate-checks-parameters-unknown": "{{PLURAL:$2|1=Евзаш йоцу параметр|Евзаш йоцу параметраш}}:\n\u003Cstrong\u003E\u003Cnowiki\u003E$1\u003C/nowiki\u003E\u003C/strong\u003E",
     "translate-checks-balance": "Елла а дӀакъовла а {{PLURAL:$2|къовларш}} нийса яц:\n\u003Cstrong\u003E\u003Cnowiki\u003E$1\u003C/nowiki\u003E\u003C/strong\u003E",
+    "translate-checks-plural": "Оригинал чохь лелош ю \u003Cnowiki\u003E{{PLURAL:}}\u003C/nowiki\u003E, кхузахь — яц.",
     "translate-rc-translation-filter": "Литта гочдарш:",
     "translate-rc-translation-filter-no": "Доза доцуш",
     "translate-rc-translation-filter-only": "Гочдарш бен ма гайта",
