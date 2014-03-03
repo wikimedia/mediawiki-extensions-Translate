@@ -1,10 +1,14 @@
 {
     "@metadata": {
         "authors": [
-            "Freeyak"
+            "Freeyak",
+            "Phurbutsering"
         ]
     },
     "translate": "ཡིག་སྒྱུར།",
+    "translate-taskui-view": "ཆ་འཕྲིན་ཧྲིལ་པོ་སྟོན།",
+    "translate-taskui-untranslated": "ཡིག་བསྒྱུར་མ་བྱས་པའི་བརྡ་འཕྲིན་སྟོན།",
+    "translate-taskui-optional": "འདམ་ཀའི་བརྡ་འཕྲིན་སྟོན།",
     "translate-page-disabled": "སྡེ་ཁག་འདིའི་ནང་དུ་སྐད་རིགས་འདིའི་ཡིག་སྒྱུར་ནུས་མེད་ཆགས་འདུག རྒྱུ་མཚན་ནི། $1",
     "translate-page-settings-legend": "སྒྲིག་བཀོད།",
     "translate-page-group": "སྡེ་ཁག",
@@ -20,7 +24,7 @@
     "translate-prev": "ཤོག་ངོས་གོང་མ།",
     "translate-page-description-legend": "སྡེ་ཁག་ཆ་འཕྲིན།",
     "translate-page-edit": "རྩོམ་སྒྲིག",
-    "translate-ext-url": "<hr />དྲ་ཚིགས། $1",
+    "translate-ext-url": "\u003Chr /\u003Eདྲ་ཚིགས། $1",
     "translate-optional": "(འདེམས་ཚན་ཅན།)",
     "translate-ignored": "(སྣང་མེད་བྱས་པ།)",
     "translate-edit-title": "\"$1\"ལ་རྩོམ་སྒྲིག་བྱེད་པ།",
