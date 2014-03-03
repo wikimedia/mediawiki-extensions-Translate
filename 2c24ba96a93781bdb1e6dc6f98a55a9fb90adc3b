@@ -51,6 +51,24 @@
       "revId": "2c24ba96a93781bdb1e6dc6f98a55a9fb90adc3b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_c4b3e0fb",
+        "filename": "scripts/translator-stats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-03-03T16:14:29Z",
+      "side": 1,
+      "message": "Not vandals, AFAIK. If you want to measure that too, you should probably add a column in the output and flag them.",
+      "parentUuid": "4e04eb01_84cef884",
+      "revId": "2c24ba96a93781bdb1e6dc6f98a55a9fb90adc3b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
