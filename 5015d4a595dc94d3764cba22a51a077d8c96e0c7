@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_a0fb19dd",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-04T12:03:24Z",
+      "side": 1,
+      "message": "I would prefer a hook or a global to avoid site specific code.",
+      "revId": "5015d4a595dc94d3764cba22a51a077d8c96e0c7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
