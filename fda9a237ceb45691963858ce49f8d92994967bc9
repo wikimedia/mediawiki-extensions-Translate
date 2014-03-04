@@ -34,6 +34,24 @@
       "revId": "fda9a237ceb45691963858ce49f8d92994967bc9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_e06b61ec",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-04T14:45:23Z",
+      "side": 1,
+      "message": "That variable is used by the TUX editor. Overloading it for different purpose wont work. My original wish remains valid.",
+      "parentUuid": "4e04eb01_a0fe7964",
+      "revId": "fda9a237ceb45691963858ce49f8d92994967bc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
