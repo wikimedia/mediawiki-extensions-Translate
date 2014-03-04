@@ -16,6 +16,24 @@
       "revId": "fda9a237ceb45691963858ce49f8d92994967bc9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_a0fe7964",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-03-04T13:43:12Z",
+      "side": 1,
+      "message": "Which is a site-specific issue. What do you propose?",
+      "parentUuid": "4e04eb01_e0048182",
+      "revId": "fda9a237ceb45691963858ce49f8d92994967bc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
