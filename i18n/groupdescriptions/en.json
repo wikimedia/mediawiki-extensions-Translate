@@ -47,6 +47,7 @@
     "translate-group-desc-wikimedia-mobile": "Aggregated message group containing mobile applications for Wikimedia projects",
     "translate-group-desc-wikimedia-mobile-commons": "[[Translating:WikipediaMobile|Commons Mobile]] is an app for Android or iOS for uploading and browsing Wikimedia Commons",
     "translate-group-desc-wikimedia-mobile-wikipedia": "[[Translating:WikipediaMobile|WikipediaMobile]] is a cross-platform mobile and tablet application for reading and contributing to Wikipedia",
+    "translate-group-desc-wikimedia-mobile-wikipedia-android": "[[Translating:WikipediaMobile|Wikipedia Android]] is the Android-specific version of the Wikipedia mobile app (new 2014)",
     "translate-group-desc-wikimedia-mobile-wikipedia-ios": "[[Translating:WikipediaMobile|Wikipedia iOS]] is the iOS-specific version of the Wikipedia mobile app (new 2014); main strings list",
     "translate-group-desc-wikimedia-mobile-wikipedia-ios-meta": "[[Translating:WikipediaMobile|Wikipedia iOS]] is the iOS-specific version of the Wikipedia mobile app (new 2014); app metadata subcomponent",
     "translate-group-desc-wikimedia-mobile-wikipedia-ios-ui": "[[Translating:WikipediaMobile|Wikipedia iOS]] is the iOS-specific version of the Wikipedia mobile app (new 2014); user interface subcomponent",
