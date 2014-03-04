@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_e0048182",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-04T13:41:47Z",
+      "side": 1,
+      "message": "TranslateSettings.php\n26:$wgTranslatePermissionUrl \u003d \u0027Special:MainPage\u0027;",
+      "revId": "fda9a237ceb45691963858ce49f8d92994967bc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
