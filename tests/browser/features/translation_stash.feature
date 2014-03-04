@@ -14,6 +14,7 @@ Feature: Translation stash
 
   Background:
     Given I am logged in
+      And I have reset my preferences
       And I am a sandboxed user on the stash page
 
   Scenario: Can select a language to translate into
