@@ -88,6 +88,24 @@
       "revId": "fda9a237ceb45691963858ce49f8d92994967bc9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_3b25fa03",
+        "filename": "specials/SpecialTranslationStash.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-03-04T17:50:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e04eb01_405d7549",
+      "revId": "fda9a237ceb45691963858ce49f8d92994967bc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
