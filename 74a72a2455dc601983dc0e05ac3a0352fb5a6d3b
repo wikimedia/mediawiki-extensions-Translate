@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_85f5cf81",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2014-03-04T08:30:48Z",
+      "side": 1,
+      "message": "How about making it really helpful with a link to https://www.mediawiki.org/wiki/Help:Extension:Translate/Installation",
+      "revId": "74a72a2455dc601983dc0e05ac3a0352fb5a6d3b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
