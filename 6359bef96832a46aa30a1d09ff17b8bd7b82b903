@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_7b649b11",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-05T17:32:53Z",
+      "side": 1,
+      "message": "This key looks a bit odd. Looks like this might be a left over from a draft where this was a boolean for isTranslation type.\n\nMaybe something like wgTranslatePageType?",
+      "revId": "6359bef96832a46aa30a1d09ff17b8bd7b82b903",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
