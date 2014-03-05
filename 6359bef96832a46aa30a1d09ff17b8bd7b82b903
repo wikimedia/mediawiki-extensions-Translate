@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "4e04eb01_5b0f9f3a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-03-05T17:35:51Z",
+      "side": 1,
+      "message": "Maybe make it more explicit to what the change does instead of what the intend is (e.g. Add JS var to indicate whether page is using translation, or Add mw.config page var for translatable page type)",
+      "revId": "6359bef96832a46aa30a1d09ff17b8bd7b82b903",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e04eb01_7b649b11",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 1
