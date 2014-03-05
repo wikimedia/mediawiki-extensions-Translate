@@ -16,6 +16,24 @@
       "revId": "74a72a2455dc601983dc0e05ac3a0352fb5a6d3b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_3b4f333b",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-05T16:16:17Z",
+      "side": 1,
+      "message": "But people don\u0027t read documentation ;)",
+      "parentUuid": "4e04eb01_85f5cf81",
+      "revId": "74a72a2455dc601983dc0e05ac3a0352fb5a6d3b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
