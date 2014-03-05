@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_9b61a734",
+        "filename": "resources/js/ext.translate.editor.shortcuts.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2014-03-05T17:23:34Z",
+      "side": 1,
+      "message": "Whitespace.",
+      "revId": "767b1305ab79c2a45bb4042142b3e8d96e82a660",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_7b5a5b86",
+        "filename": "resources/js/ext.translate.editor.shortcuts.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2014-03-05T17:23:34Z",
+      "side": 1,
+      "message": "Whitespace around the minus.",
+      "revId": "767b1305ab79c2a45bb4042142b3e8d96e82a660",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_1b4d97c7",
+        "filename": "resources/js/ext.translate.editor.shortcuts.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2014-03-05T17:23:34Z",
+      "side": 1,
+      "message": "Whitespace around the plus.",
+      "revId": "767b1305ab79c2a45bb4042142b3e8d96e82a660",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
