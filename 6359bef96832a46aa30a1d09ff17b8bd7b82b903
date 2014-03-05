@@ -33,6 +33,24 @@
       "revId": "6359bef96832a46aa30a1d09ff17b8bd7b82b903",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_c6519612",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-03-05T17:44:31Z",
+      "side": 1,
+      "message": "Not in reply to what above but useful for those following at home: https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary",
+      "parentUuid": "4e04eb01_7b649b11",
+      "revId": "6359bef96832a46aa30a1d09ff17b8bd7b82b903",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
