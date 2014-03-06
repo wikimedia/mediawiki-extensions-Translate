@@ -51,6 +51,24 @@
       "revId": "6359bef96832a46aa30a1d09ff17b8bd7b82b903",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_c74bcd86",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-06T07:49:00Z",
+      "side": 1,
+      "message": "It\u0027s just following the pattern of wgTranslate prefix. Translate extension has other kinds of pages as well, so wgTranslatePageType would need different implementation.",
+      "parentUuid": "4e04eb01_7b649b11",
+      "revId": "6359bef96832a46aa30a1d09ff17b8bd7b82b903",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
