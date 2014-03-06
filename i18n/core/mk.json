@@ -326,7 +326,7 @@
     "tux-editor-skip-button-label": "Прејди на следно",
     "tux-editor-cancel-button-label": "Откажи",
     "tux-editor-confirm-button-label": "Потврди превод",
-    "tux-editor-shortcut-info": "Стиснете на „$1“ за да зачувате или на „$2“ за да прејдете на следната порака",
+    "tux-editor-shortcut-info": "Стиснете на „$1“ за да зачувате, „$2“ за да прејдете на следната порака, или пак „$3“ за други кратенки.",
     "tux-editor-edit-desc": "Уреди документација",
     "tux-editor-add-desc": "Додај документација",
     "tux-editor-suggestions-title": "Предлози",

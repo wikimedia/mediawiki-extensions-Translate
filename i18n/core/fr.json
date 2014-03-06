@@ -352,7 +352,7 @@
     "tux-editor-skip-button-label": "Aller au suivant",
     "tux-editor-cancel-button-label": "Annuler",
     "tux-editor-confirm-button-label": "Confirmer la traduction",
-    "tux-editor-shortcut-info": "Appuyez sur \"$1\" pour enregistrer ou \"$2\" pour passer au message suivant",
+    "tux-editor-shortcut-info": "Appuyez sur « $1 » pour enregistrer ou « $2 » pour passer au message suivant ou « $3 » pour d’autres raccourcis.",
     "tux-editor-edit-desc": "Modifier la documentation",
     "tux-editor-add-desc": "Ajouter une documentation",
     "tux-editor-suggestions-title": "Suggestions",

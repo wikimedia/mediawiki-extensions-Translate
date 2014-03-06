@@ -330,7 +330,7 @@
     "tux-editor-skip-button-label": "Label for skip button",
     "tux-editor-cancel-button-label": "Label for cancel button.\nPressing the button hides the message editor without saving and marks the message internally as \"hard\".\n{{Identical|Cancel}}",
     "tux-editor-confirm-button-label": "Label for confirm button",
-    "tux-editor-shortcut-info": "A help text for the keyboard shortcuts\n* $1 is shortcut key for save button\n* $2 is shortcut key for skip button",
+    "tux-editor-shortcut-info": "A help text for the keyboard shortcuts. Parameters:\n* $1 - shortcut key for save button\n* $2 - shortcut key for skip button\n* $3 - \"ALT\"",
     "tux-editor-edit-desc": "Text for the link to edit message documentation.\n{{Identical|Edit description}}",
     "tux-editor-add-desc": "Text for the link to add message documentation when it doesn't exist",
     "tux-editor-suggestions-title": "Title text for translation memory suggestions.\n{{Identical|Suggestion}}",

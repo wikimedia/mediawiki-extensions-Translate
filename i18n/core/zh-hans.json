@@ -343,7 +343,7 @@
     "tux-editor-skip-button-label": "跳至下一条",
     "tux-editor-cancel-button-label": "取消",
     "tux-editor-confirm-button-label": "确认翻译",
-    "tux-editor-shortcut-info": "点击“$1”保存或“$2”跳至下一条信息",
+    "tux-editor-shortcut-info": "点击“$1”保存或“$2”跳至下一条信息或“$3”对于其他快捷方式。",
     "tux-editor-edit-desc": "编辑说明文件",
     "tux-editor-add-desc": "添加说明文件",
     "tux-editor-suggestions-title": "建议",

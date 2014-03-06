@@ -335,7 +335,7 @@
     "tux-editor-skip-button-label": "次へスキップ",
     "tux-editor-cancel-button-label": "キャンセル",
     "tux-editor-confirm-button-label": "翻訳を確認",
-    "tux-editor-shortcut-info": "保存するには「$1」を、次のメッセージへスキップするには「$2」を押してください",
+    "tux-editor-shortcut-info": "保存するには「$1」を、次のメッセージへスキップするには「$2」を、他のショートカットキーについては「$3」を押してください",
     "tux-editor-edit-desc": "説明文を編集",
     "tux-editor-add-desc": "説明文を追加",
     "tux-editor-suggestions-title": "提案",
