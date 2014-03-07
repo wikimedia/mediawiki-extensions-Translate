@@ -13,7 +13,8 @@
             "Wayiran",
             "ZxxZxxZ",
             "جواد",
-            "درفش کاویانی"
+            "درفش کاویانی",
+            "Armin1392"
         ]
     },
     "translate": "ترجمه",
@@ -240,7 +241,7 @@
     "translate-js-next": "ذخیره و بازکردن بعدی",
     "translate-js-nonext": "این آخرین پیغام این صفحه بود.",
     "translate-js-skip": "پرش به بعدی",
-    "translate-js-save-failed": "ذخیره نشد. لطفا این خطا گزارش کنید.",
+    "translate-js-save-failed": "ذخیره نشد. لطفاً این خطا گزارش کنید.",
     "translate-js-history": "تاریخچهٔ ترجمه",
     "translate-js-support": "پرسش سؤال",
     "translate-js-support-title": "اگر اطلاعات کافی برای ترجمهٔ درست این پیغام موجود نیست، سوال بپرسید.",
@@ -329,7 +330,7 @@
     "tux-editor-skip-button-label": "پرش به بعدی",
     "tux-editor-cancel-button-label": "لغو",
     "tux-editor-confirm-button-label": "تأیید ترجمه",
-    "tux-editor-shortcut-info": "برای ذخیره‌سازی «$1» و برای پرش به پیام بعدی «$2» را بفشارید.",
+    "tux-editor-shortcut-info": "برای ذخیره‌ «$1» یا برای پرش به پیام بعدی «$2» یا برای دیگر میانبرها $3 را فشار دهید.",
     "tux-editor-edit-desc": "ذخیره مستندات",
     "tux-editor-add-desc": "افزودن مستندات",
     "tux-editor-suggestions-title": "پیشنهادها",

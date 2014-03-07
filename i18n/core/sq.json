@@ -2,7 +2,8 @@
     "@metadata": {
         "authors": [
             "Dori",
-            "Puntori"
+            "Puntori",
+            "GretaDoci"
         ]
     },
     "translate": "Përkthime",
@@ -25,5 +26,6 @@
     "translate-statsf-scale-days": "Ditë",
     "translate-statsf-scale-hours": "Orë",
     "translate-statsf-count-users": "Përkthyesit aktiv",
-    "translate-statsf-submit": "Parapamja"
+    "translate-statsf-submit": "Parapamja",
+    "tux-editor-shortcut-info": "Shtypni \"\u003Cspan class=\"notranslate\" translate=\"asnjë\"\u003E$1\u003C/span\u003E\" për të shpëtuar ose \"\u003Cspan class=\"notranslate\" translate=\"asnjë\"\u003E$2\u003C/span\u003E\" për të kaluar tek tjetër mesazh, ose \"\u003Cspan class=\"notranslate\" translate=\"asnjë\"\u003E$3\u003C/span\u003E\"  për shortcut të tjera ."
 }

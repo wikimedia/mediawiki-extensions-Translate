@@ -2,15 +2,22 @@
     "@metadata": {
         "authors": [
             "Reza1615",
-            "Armin1392"
+            "Armin1392",
+            "Ebraminio"
         ]
     },
+    "managetranslatorsandbox": "مدیریت کاربران مترجم",
     "tsb-filter-pending": "در حال انتظار درخواست‌ها",
     "tsb-reminder-title-generic": "معرفی‌نامهٔ خود را برای تبدیل شدن به یک مترجم کامل کنید",
+    "tsb-reminder-content-generic": "سلام $1،\n تشکر برای ثبت‌نام با {{SITENAME}}.\nاگر شما ترجمه‌های امتحانی خود را کامل کنید، سرپرستان به شما ترجمه کامل در دسترس را زود پس از آن به شما تعطا خواهند کرد.\nلطفاً بیایید و چند ترجمه بیشتر اینجا ایجاد کنیدː\n$2\n$3،\nکارکنان {{SITENAME}}",
     "tsb-reminder-sending": "در حال فرستادن یادآوری...",
+    "tsb-reminder-sent": "{{PLURAL:$1|ارسال $1 یادآوری $2|ارسال $1 یادآوری‌ها, آخرین $2}}",
     "tsb-reminder-sent-new": "فرستادن یک یادآوری",
     "tsb-reminder-failed": "عدم موفقیت در فرستادن یادآوری",
     "tsb-email-promoted-subject": "شما در حال حاضر یک مترجم در {{SITENAME}} هستید",
+    "tsb-email-promoted-body": "سلام {{GENDER:$1|$1}}،\n\nتبریکǃ من ترجمه‌های امتحانی که شما در {{SITENAME}} ایجاد کردید را بررسی کردم و به شما تمام حقوق مترجم را دادم.\n\nاکنون به {{SITENAME}} برای ادامه ترجمه بیایید، و هر روزː \n$2\n\nخوش‌‌آمدید، و از شما برای کمک تشکر می کنمǃ\n{{GENDER:$3|$3}}،\n{{SITENAME}} کارکنان",
+    "tsb-email-rejected-subject": "درخواست شما برای مترجم شدن در {{SITENAME}} رد شد",
+    "tsb-email-rejected-body": "سلام {{GENDER:$1|$1}}،\n\nتشکر از شما برای درخواست به عنوان مترجم در {{SITENAME}}. متأسفم که به شما اطلاع دادم که درخواست شما را رد کرده‌ام، زیرا کیفیت ترجمه‌های شما، نیازها را برآورد نکرد.\n\nاگر فکر می‌کنید که درخواست شما اشتباهاً رد شده‌است، لطفاً برای درخواست مجدد به عنوان مترجم در {{SITENAME}} درخواست دهید. شما می‌توانید اینجا ثبت‌نام کنیدː\n$2\n\n{{GENDER:$3|$3}}،\n{{SITENAME}} کارکنان",
     "tsb-request-count": "$1 {{PLURAL:$1|درخواست|درخواست‌ها}}",
     "tsb-all-languages-button-label": "همهٔ زبان‌ها",
     "tsb-search-requests": "جستجوی درخواست‌ها",
@@ -26,11 +33,20 @@
     "tsb-translations-source": "منبع",
     "tsb-translations-user": "ترجمه‌های کاربر",
     "tsb-translations-current": "ترجمه‌های موجود",
+    "tsb-delete-userpage-summary": "حذف صفحه کاربری کاربری یک کاربر سندباکس",
     "translationstash": "خوش آمدید",
+    "translate-translationstash-welcome": "خوش آمدید {{GENDER:$1|$1}}، شما یک مترجم جدید هستید",
+    "translate-translationstash-welcome-note": "آشنا شدن با ابزارهای ترجمه. چند پیام را ترجمه کنید و تمام حقوق مترجم را برای شرکت در پروژه‌های مورد علاقه خود بدست آورید.",
     "translate-translationstash-initialtranslation": "ترجمه‌های اولیهٔ شما",
     "translate-translationstash-translations": "$1تکمیل شده {{PLURAL:$1|ترجمه|ترجمه‌ها}}",
     "translate-translationstash-skip-button-label": "امتحان دیگری",
     "tsb-limit-reached-title": "تشکر برای ترجمه‌های شما",
+    "tsb-limit-reached-body": "شما به حد ترجمه برای مترجمان جدید رسیده‌اید.\nتیم ما بررسی خواهد کرد و حساب شما را به زودی ارتقاء می‌دهد.\nسپس شما قادر به ترجمه بدون محدودیت خواهید بود.",
     "tsb-no-requests-from-new-users": "هیچ درخواستی از کاربران جدید نیست",
-    "tsb-create-user-page": "ایجاد صفحهٔ کاربری اصلی"
+    "tsb-create-user-page": "ایجاد صفحهٔ کاربری اصلی",
+    "log-name-translatorsandbox": "ترجمه سندباکس",
+    "log-description-translatorsandbox": "سیاهه عملیات در ترجمه کاربران سندباکس",
+    "logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|ترفیع}} $3 به {{GENDER:$4|مترجم}}",
+    "logentry-translatorsandbox-rejected": "$1 درخواست {{GENDER:$2|رد شده}} از \"$3\" برای مترجم شدن",
+    "logentry-newusers-tsbpromoted": "حساب کاربری  $3 توسط ترفیع از سندباکس{{GENDER:$2| ایجاد شده}} بود"
 }

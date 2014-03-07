@@ -329,7 +329,7 @@
     "tux-editor-skip-button-label": "מעבר לההודעה הבאה",
     "tux-editor-cancel-button-label": "ביטול",
     "tux-editor-confirm-button-label": "אישור תרגום",
-    "tux-editor-shortcut-info": "\"$1\" לשמירה או \"$2\" למעבר להודעה הבאה",
+    "tux-editor-shortcut-info": "\"$1\" לשמירה, \"$2\" למעבר להודעה הבאה, \"$3\" להצגת קיצורים אחרים.",
     "tux-editor-edit-desc": "עריכת תיעוד",
     "tux-editor-add-desc": "הוספת תיעוד",
     "tux-editor-suggestions-title": "הצעות",
