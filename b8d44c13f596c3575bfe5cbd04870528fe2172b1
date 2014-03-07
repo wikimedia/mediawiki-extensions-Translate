@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_98b2bb45",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-03-07T14:58:24Z",
+      "side": 1,
+      "message": "A parameter was added but qqq was not updated.",
+      "revId": "b8d44c13f596c3575bfe5cbd04870528fe2172b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
