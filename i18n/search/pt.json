@@ -1,8 +1,22 @@
 {
     "@metadata": {
         "authors": [
-            "Luckas"
+            "Luckas",
+            "Hamilton Abreu"
         ]
     },
-    "tux-sst-search": "Pesquisar"
+    "searchtranslations": "Pesquisar nas traduções",
+    "tux-sst-edit": "Editar a tradução",
+    "tux-sst-search": "Pesquisar",
+    "tux-sst-search-ph": "Pesquisar nas traduções",
+    "tux-sst-count": "{{PLURAL:$1|Foi encontrado um resultado|Foram encontrados $1 resultados}}",
+    "tux-sst-facet-language": "Línguas",
+    "tux-sst-facet-group": "Grupos de mensagens",
+    "tux-sst-facet-orphan": "(orfãs)",
+    "tux-sst-nosolr-title": "Pesquisa indisponível",
+    "tux-sst-nosolr-body": "Esta wiki não tem um serviço de pesquisa de traduções.",
+    "tux-sst-solr-offline-title": "Pesquisa indisponível",
+    "tux-sst-solr-offline-body": "O serviço de pesquisa está temporariamente indisponível.",
+    "tux-sst-next": "Resultados seguintes",
+    "tux-sst-prev": "Resultados anteriores"
 }

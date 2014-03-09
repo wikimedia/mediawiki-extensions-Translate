@@ -327,7 +327,7 @@
     "tux-editor-skip-button-label": "Saltar para a seguinte",
     "tux-editor-cancel-button-label": "Cancelar",
     "tux-editor-confirm-button-label": "Confirmar a tradução",
-    "tux-editor-shortcut-info": "Prima \"$1\" para gravar ou \"$2\" para saltar para a mensagem seguinte",
+    "tux-editor-shortcut-info": "Prima \"$1\" para gravar ou \"$2\" para saltar para a mensagem seguinte ou \"$3\" para outros atalhos.",
     "tux-editor-edit-desc": "Editar a documentação",
     "tux-editor-add-desc": "Adicionar documentação",
     "tux-editor-suggestions-title": "Sugestões",

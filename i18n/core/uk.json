@@ -335,7 +335,7 @@
     "tux-editor-skip-button-label": "Перейти до наступного",
     "tux-editor-cancel-button-label": "Скасувати",
     "tux-editor-confirm-button-label": "Підтвердити переклад",
-    "tux-editor-shortcut-info": "Натисніть «$1» щоб зберегти або «$2» для переходу до наступного повідомлення",
+    "tux-editor-shortcut-info": "Натисніть «$1» щоб зберегти або «$2» для переходу до наступного повідомлення або \"$3\" для інших ярликів",
     "tux-editor-edit-desc": "Редагувати документацію",
     "tux-editor-add-desc": "Додати документацію",
     "tux-editor-suggestions-title": "Пропозиції",

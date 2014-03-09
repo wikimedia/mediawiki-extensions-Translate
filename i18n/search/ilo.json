@@ -1,0 +1,21 @@
+{
+    "@metadata": {
+        "authors": [
+            "Lam-ang"
+        ]
+    },
+    "searchtranslations": "Agbiruk kadagiti patarus",
+    "tux-sst-edit": "Urnosen ti patarus",
+    "tux-sst-search": "Biruken",
+    "tux-sst-search-ph": "Agbiruk kadagiti patarus",
+    "tux-sst-count": "{{PLURAL:$1|Maysa a resulta a nabirukan|Dagiti $1 a resulta a nabirukan}}",
+    "tux-sst-facet-language": "Dagiti pagsasao",
+    "tux-sst-facet-group": "Dagiti grupo ti mensahe",
+    "tux-sst-facet-orphan": "(ulila)",
+    "tux-sst-nosolr-title": "Saan a magun-od ti panagbiruk",
+    "tux-sst-nosolr-body": "Daytoy a wiki ket awan ti serbisio a panagbiruk ti patarus",
+    "tux-sst-solr-offline-title": "Saan a magun-od ti panagbiruk",
+    "tux-sst-solr-offline-body": "Ti serbisio ti panagbiruk ket temporario a saan a magun-od",
+    "tux-sst-next": "Dagiti sumaruno a resulta",
+    "tux-sst-prev": "Dagiti dati a resulta"
+}
