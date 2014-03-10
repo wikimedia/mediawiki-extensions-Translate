@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_339e1e0b",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-03-10T09:33:05Z",
+      "side": 1,
+      "message": "Add a link to Extension:UniversalLanguageSelector here?",
+      "revId": "e0348f2b6b8a532a44ceccf48f82c31f27ea4e7b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_5399aa20",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-03-10T09:33:05Z",
+      "side": 1,
+      "message": "Add a comment here about what ULS is?",
+      "revId": "e0348f2b6b8a532a44ceccf48f82c31f27ea4e7b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
