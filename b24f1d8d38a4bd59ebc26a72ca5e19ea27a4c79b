@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e04eb01_fff2b795",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-03-10T18:43:11Z",
+      "side": 1,
+      "message": "Brion \"decreed\" that messages should link to mediawiki.org with full https links, not interwiki links. https://bugzilla.wikimedia.org/show_bug.cgi?id\u003d54835",
+      "revId": "b24f1d8d38a4bd59ebc26a72ca5e19ea27a4c79b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
