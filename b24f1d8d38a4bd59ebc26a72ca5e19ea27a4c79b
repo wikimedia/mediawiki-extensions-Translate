@@ -34,6 +34,24 @@
       "revId": "b24f1d8d38a4bd59ebc26a72ca5e19ea27a4c79b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e04eb01_df213bf8",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-03-10T18:47:05Z",
+      "side": 1,
+      "message": "You were cc\u0027d on https://gerrit.wikimedia.org/r/#/c/83220/ and I asked you what you needed interwiki for, but anyway, what to do now?",
+      "parentUuid": "4e04eb01_5f376b4a",
+      "revId": "b24f1d8d38a4bd59ebc26a72ca5e19ea27a4c79b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
