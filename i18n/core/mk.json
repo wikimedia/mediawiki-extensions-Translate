@@ -387,5 +387,7 @@
     "translate-search-more-languages-info": "уште {{PLURAL:$1|еден јазик|$1 јазици}}",
     "translate-statsbar-tooltip": "$1% преведени, $2% проверени",
     "translate-statsbar-tooltip-with-fuzzy": "$1% преведени, $2% проверени, $3% застарени",
-    "translate-search-more-groups-info": "Уште {{PLURAL:$1|една група|$1 групи}}"
+    "translate-search-more-groups-info": "Уште {{PLURAL:$1|една група|$1 групи}}",
+    "translate-ulsdep-title": "Грешка во поставеноста",
+    "translate-ulsdep-body": "Додатокот за превод е зависен од додатокот „[https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector?uselang=mk Универзален јазичен избирач]“."
 }

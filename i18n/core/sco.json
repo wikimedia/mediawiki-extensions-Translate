@@ -4,5 +4,7 @@
             "John Reid"
         ]
     },
-    "tux-editor-shortcut-info": "Press \"$1\" tae hain or \"$2\" tae skip til nex message or \"$3\" fer ither shortcuts."
+    "tux-editor-shortcut-info": "Press \"$1\" tae hain or \"$2\" tae skip til nex message or \"$3\" fer ither shortcuts.",
+    "translate-ulsdep-title": "Confeeguration mistak",
+    "translate-ulsdep-body": "Owerset extension depends oan the [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector Uneeversal Leid Selecter extension]."
 }

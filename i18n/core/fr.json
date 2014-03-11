@@ -413,5 +413,7 @@
     "translate-search-more-languages-info": "$1 {{PLURAL:$1|langue supplémentaire|langues supplémentaires}}",
     "translate-statsbar-tooltip": "$1% traduit, $2% relu",
     "translate-statsbar-tooltip-with-fuzzy": "$1% traduit, $2% relu, $3% obsolète",
-    "translate-search-more-groups-info": "$1 groupe{{PLURAL:$1||s}} de plus"
+    "translate-search-more-groups-info": "$1 groupe{{PLURAL:$1||s}} de plus",
+    "translate-ulsdep-title": "Erreur de configuration",
+    "translate-ulsdep-body": "L’extension de traduction dépend de l’[https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector Universal extension Sélecteur de langue]."
 }

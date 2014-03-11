@@ -397,5 +397,7 @@
     "translate-search-more-languages-info": "{{PLURAL:$1|Eine weitere Sprache|$1 weitere Sprachen}}",
     "translate-statsbar-tooltip": "$1% übersetzt, $2% überprüft",
     "translate-statsbar-tooltip-with-fuzzy": "$1% übersetzt, $2% überprüft, $3% veraltet",
-    "translate-search-more-groups-info": "{{PLURAL:$1|Eine weitere Gruppe|$1 weitere Gruppen}}"
+    "translate-search-more-groups-info": "{{PLURAL:$1|Eine weitere Gruppe|$1 weitere Gruppen}}",
+    "translate-ulsdep-title": "Konfigurationsfehler",
+    "translate-ulsdep-body": "Die Übersetzungserweiterung hängt von der [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector Erweiterung für die universelle Sprachauswahl] ab."
 }

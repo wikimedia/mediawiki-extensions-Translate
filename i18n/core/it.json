@@ -332,7 +332,7 @@
     "tux-editor-skip-button-label": "Passa al successivo",
     "tux-editor-cancel-button-label": "Annulla",
     "tux-editor-confirm-button-label": "Conferma traduzione",
-    "tux-editor-shortcut-info": "Premi \"$1\" per salvare o \"$2\" per passare al messaggio successivo",
+    "tux-editor-shortcut-info": "Premi \"$1\" per salvare, \"$2\" per passare al messaggio successivo o \"$3\" per altre scorciatoie.",
     "tux-editor-edit-desc": "Modifica documentazione",
     "tux-editor-add-desc": "Aggiungi documentazione",
     "tux-editor-suggestions-title": "Suggerimenti",
@@ -393,5 +393,7 @@
     "translate-search-more-languages-info": "$1 {{PLURAL:$1|altra lingua|altre lingue}}",
     "translate-statsbar-tooltip": "$1% tradotti, $2% revisionati",
     "translate-statsbar-tooltip-with-fuzzy": "$1% tradotti, $2% revisionati, $3% da aggiornare",
-    "translate-search-more-groups-info": "$1 {{PLURAL:$1|altro gruppo|altri gruppi}}"
+    "translate-search-more-groups-info": "$1 {{PLURAL:$1|altro gruppo|altri gruppi}}",
+    "translate-ulsdep-title": "Errore di configurazione",
+    "translate-ulsdep-body": "L'estensione Translate dipende dall'[https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector estensione Universal Language Selector]."
 }

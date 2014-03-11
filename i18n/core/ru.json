@@ -339,7 +339,7 @@
     "tux-editor-skip-button-label": "Следующее",
     "tux-editor-cancel-button-label": "Отмена",
     "tux-editor-confirm-button-label": "Подтвердить перевод",
-    "tux-editor-shortcut-info": "Нажмите «$1» для сохранения или «$2» для перехода к следующему сообщению.",
+    "tux-editor-shortcut-info": "Нажмите «$1» для сохранения, «$2» для перехода к следующему сообщению или «$3» для других ярлыков.",
     "tux-editor-edit-desc": "Изменить документацию",
     "tux-editor-add-desc": "Добавить документацию",
     "tux-editor-suggestions-title": "Подсказки",
@@ -400,5 +400,7 @@
     "translate-search-more-languages-info": "ещё $1 {{PLURAL:$1|язык|языков|языка}}",
     "translate-statsbar-tooltip": "$1% переведённых, $2% проверенных",
     "translate-statsbar-tooltip-with-fuzzy": "$1% переведённых, $2% проверенных, $3% устаревших",
-    "translate-search-more-groups-info": "ещё $1 {{PLURAL:$1|группа|групп|группы}}"
+    "translate-search-more-groups-info": "ещё $1 {{PLURAL:$1|группа|групп|группы}}",
+    "translate-ulsdep-title": "Ошибка конфигурации",
+    "translate-ulsdep-body": "Расширение по переводу зависит от [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector расширения «Универсальный переключатель языков»]."
 }
