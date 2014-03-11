@@ -52,6 +52,24 @@
       "revId": "b24f1d8d38a4bd59ebc26a72ca5e19ea27a4c79b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e0177f3_1e274961",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-11T09:11:31Z",
+      "side": 1,
+      "message": "Please fix it if you have time.",
+      "parentUuid": "4e04eb01_df213bf8",
+      "revId": "b24f1d8d38a4bd59ebc26a72ca5e19ea27a4c79b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
