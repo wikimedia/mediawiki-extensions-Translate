@@ -106,6 +106,24 @@
       "revId": "b24f1d8d38a4bd59ebc26a72ca5e19ea27a4c79b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e0177f3_3e5e857c",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-03-11T10:33:36Z",
+      "side": 1,
+      "message": "I581377f8e8901490ca08df4a4a1a6a5b947da597",
+      "parentUuid": "2e0177f3_3eb8c5e1",
+      "revId": "b24f1d8d38a4bd59ebc26a72ca5e19ea27a4c79b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
