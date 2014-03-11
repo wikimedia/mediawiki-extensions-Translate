@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e0177f3_cff48dbc",
+        "filename": "i18n/pagetranslation/qqq.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-11T17:09:51Z",
+      "side": 1,
+      "message": "Missing -content now?",
+      "revId": "560542629e2083a631fe0baa69a36e2471d05b5d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
