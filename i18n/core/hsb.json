@@ -319,7 +319,7 @@
     "tux-editor-skip-button-label": "K přichodnemu",
     "tux-editor-cancel-button-label": "Přetorhnyć",
     "tux-editor-confirm-button-label": "Přełožk wobkrućić",
-    "tux-editor-shortcut-info": "Tłóč \"$1\", zo by składował abo \"$2\", zo by k přichodnej zdźělence dóšoł",
+    "tux-editor-shortcut-info": "Tłóč \"$1\", zo by składował abo \"$2\", zo by k přichodnej zdźělence dóšoł abo \"$3\" za druhe skrótšenki.",
     "tux-editor-edit-desc": "Dokumentaciju wobdźěłać",
     "tux-editor-add-desc": "Dokumentaciju přidać",
     "tux-editor-suggestions-title": "Namjety",
@@ -380,5 +380,7 @@
     "translate-search-more-languages-info": "$1 {{PLURAL:$1|dalša rěč|dalšej rěči|dalše rěče|dalšich rěčow}}",
     "translate-statsbar-tooltip": "$1 % přełoženy, $2 % přepruwowany",
     "translate-statsbar-tooltip-with-fuzzy": "$1 % přełoženy, $2 % přepruwowany, $3 % zestarjeny",
-    "translate-search-more-groups-info": "$1 {{PLURAL:$1|dalša skupina|dalšej skupinje|dalše skupiny|dalšich skupinow}}"
+    "translate-search-more-groups-info": "$1 {{PLURAL:$1|dalša skupina|dalšej skupinje|dalše skupiny|dalšich skupinow}}",
+    "translate-ulsdep-title": "Konfiguraciski zmylk",
+    "translate-ulsdep-body": "Přełožowanske rozšěrjenje wotwisuje wot [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector rozšěrjenja Universal Language Selector]."
 }

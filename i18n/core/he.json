@@ -390,5 +390,7 @@
     "translate-search-more-languages-info": "עוד {{PLURAL:$1|שפה אחת|$1 שפות}}",
     "translate-statsbar-tooltip": "$1% תורגם, $2% נסקר",
     "translate-statsbar-tooltip-with-fuzzy": "$1% תורגם, $2% נסקר, $3% דורש סקירה",
-    "translate-search-more-groups-info": "עוד {{PLURAL:$1|קבוצה אחת|$1 קבוצות}}"
+    "translate-search-more-groups-info": "עוד {{PLURAL:$1|קבוצה אחת|$1 קבוצות}}",
+    "translate-ulsdep-title": "שגיאת הגדרות",
+    "translate-ulsdep-body": "ההרחבה Translate משתמשת ב[https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector הרחבה Universal Language Selector]."
 }

@@ -391,5 +391,7 @@
     "translate-search-more-languages-info": "$1 {{PLURAL:$1|زبان}} بیشتر",
     "translate-statsbar-tooltip": "$1% ترجمه‌شده، $2% بازبینی‌شده",
     "translate-statsbar-tooltip-with-fuzzy": "$1% ترجمه‌شده، $2% بازبینی‌شده، $3% تاریخ‌گذشته",
-    "translate-search-more-groups-info": "$1 {{PLURAL:$1|گروه|گروه}} دیگر"
+    "translate-search-more-groups-info": "$1 {{PLURAL:$1|گروه|گروه}} دیگر",
+    "translate-ulsdep-title": "تنظیم خطا",
+    "translate-ulsdep-body": "ترجمهٔ افزونه به [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector افزونهٔ انتخاب زبان جهانی] بستگی دارد."
 }

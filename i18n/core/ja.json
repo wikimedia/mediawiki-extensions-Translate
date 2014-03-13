@@ -396,5 +396,6 @@
     "translate-search-more-languages-info": "他 $1 {{PLURAL:$1|言語}}",
     "translate-statsbar-tooltip": "$1% 翻訳済み、$2% 査読済",
     "translate-statsbar-tooltip-with-fuzzy": "$1% 翻訳済み、$2% 査読済、$3% 要修正",
-    "translate-search-more-groups-info": "他 $1 {{PLURAL:$1|メッセージ群}}"
+    "translate-search-more-groups-info": "他 $1 {{PLURAL:$1|メッセージ群}}",
+    "translate-ulsdep-body": "Translate 拡張機能は [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector Universal Language Selector 拡張機能]を必要とします。"
 }
