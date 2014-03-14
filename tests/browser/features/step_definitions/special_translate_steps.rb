@@ -11,7 +11,7 @@ When(/^I click the workflow state$/) do
 end
 
 Then(/^I should see a workflow state$/) do
-	on(TranslatePage).workflow_state_element.should be_visible
+	on(TranslatePage).workflow_state_element.when_present.should be_visible
 end
 
 Then(/^I should not see a workflow state$/) do
