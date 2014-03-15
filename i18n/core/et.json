@@ -299,7 +299,7 @@
     "tux-editor-skip-button-label": "Jäta vahele ja mine järgmise juurde",
     "tux-editor-cancel-button-label": "Loobu",
     "tux-editor-confirm-button-label": "Kinnita tõlge",
-    "tux-editor-shortcut-info": "Vajuta \"$1\", et salvestada, või \"$2\", et see sõnum vahele jätta ja minna järgmise juurde",
+    "tux-editor-shortcut-info": "Vajuta \"$1\", et salvestada, või \"$2\", et see sõnum vahele jätta ja minna järgmise juurde, või \"$3\" teiste kiirklahvide jaoks.",
     "tux-editor-edit-desc": "Redigeeri dokumentatsiooni",
     "tux-editor-add-desc": "Lisa dokumentatsioon",
     "tux-editor-suggestions-title": "Pakkumused",

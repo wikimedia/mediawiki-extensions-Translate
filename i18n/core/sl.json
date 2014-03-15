@@ -320,7 +320,7 @@
     "tux-editor-skip-button-label": "Preskoči na naslednje",
     "tux-editor-cancel-button-label": "Prekliči",
     "tux-editor-confirm-button-label": "Potrdi prevod",
-    "tux-editor-shortcut-info": "Pritisnite »$1« za shranitev ali »$2« za skok na naslednje sporočilo",
+    "tux-editor-shortcut-info": "Pritisnite »$1« za shranitev, »$2« za skok na naslednje sporočilo ali »$3« za druge bližnjice.",
     "tux-editor-edit-desc": "Uredi dokumentacijo",
     "tux-editor-add-desc": "Dodaj dokumentacijo",
     "tux-editor-suggestions-title": "Predlogi",
@@ -381,5 +381,6 @@
     "translate-search-more-languages-info": "Še $1 {{PLURAL:$1|jezik|jezika|jeziki|jezikov}}",
     "translate-statsbar-tooltip": "$1% prevedenih, $2% pregledanih",
     "translate-statsbar-tooltip-with-fuzzy": "$1% prevedenih, $2% pregledanih, $3% zastarelih",
-    "translate-search-more-groups-info": "Še $1 {{PLURAL:$1|skupina|skupini|skupine|skupin}}"
+    "translate-search-more-groups-info": "Še $1 {{PLURAL:$1|skupina|skupini|skupine|skupin}}",
+    "translate-ulsdep-title": "Napaka pri konfiguraciji"
 }

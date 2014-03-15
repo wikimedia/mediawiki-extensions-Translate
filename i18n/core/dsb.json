@@ -320,7 +320,7 @@
     "tux-editor-skip-button-label": "K pśiducemu",
     "tux-editor-cancel-button-label": "Pśetergnuś",
     "tux-editor-confirm-button-label": "Pśełožk wobkšuśiś",
-    "tux-editor-shortcut-info": "Tłoc \"$1\", aby składował abo \"$2\", aby k pśiducemu powěźeńce  dostał",
+    "tux-editor-shortcut-info": "Tłoc \"$1\", aby składował abo \"$2\", aby se k pśiducemu powěźeńce  dostał abo \"$3\" za druge skrotconki.",
     "tux-editor-edit-desc": "Dokumentaciju wobźěłaś",
     "tux-editor-add-desc": "Dokumentaciju pśidaś",
     "tux-editor-suggestions-title": "Naraźenja",
@@ -381,5 +381,7 @@
     "translate-search-more-languages-info": "$1 {{PLURAL:$1|dalšna rěc|dalšnej rěcy|dalšne rěcy|dalšnych rěcow}}",
     "translate-statsbar-tooltip": "$1 % pśełožone, $2 % pśeglědane",
     "translate-statsbar-tooltip-with-fuzzy": "$1 % pśełožone, $2 % pśeglědane, $3 % zestarjone",
-    "translate-search-more-groups-info": "$1 {{PLURAL:$1|dalšna kupka|dalšnej kupce|dalšne kupki|dalšnych kupkow}}"
+    "translate-search-more-groups-info": "$1 {{PLURAL:$1|dalšna kupka|dalšnej kupce|dalšne kupki|dalšnych kupkow}}",
+    "translate-ulsdep-title": "Konfiguraciska zmólka",
+    "translate-ulsdep-body": "Pśełožowańske rozšyrjenje wótwisujo wót [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector rozšyrjenja Universal Language Selector]."
 }

@@ -396,5 +396,7 @@
     "translate-search-more-languages-info": "Ще $1 {{PLURAL:$1|мова|мови|мов}}",
     "translate-statsbar-tooltip": "$1% перекладено, $2% перевірено",
     "translate-statsbar-tooltip-with-fuzzy": "$1% перекладено, $2% перевірено, $3% застаріло",
-    "translate-search-more-groups-info": "Ще $1 {{PLURAL:$1|група|групи|груп}}"
+    "translate-search-more-groups-info": "Ще $1 {{PLURAL:$1|група|групи|груп}}",
+    "translate-ulsdep-title": "Помилка конфігурації",
+    "translate-ulsdep-body": "Розширення із перекладу залежить авд [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector розширення «Універсальний перемикач мов»]."
 }

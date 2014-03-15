@@ -9,7 +9,7 @@
     "translate-taskui-view": "ཆ་འཕྲིན་ཧྲིལ་པོ་སྟོན།",
     "translate-taskui-untranslated": "ཡིག་བསྒྱུར་མ་བྱས་པའི་བརྡ་འཕྲིན་སྟོན།",
     "translate-taskui-optional": "འདམ་ཀའི་བརྡ་འཕྲིན་སྟོན།",
-    "translate-page-disabled": "སྡེ་ཁག་འདིའི་ནང་དུ་སྐད་རིགས་འདིའི་ཡིག་སྒྱུར་ནུས་མེད་ཆགས་འདུག རྒྱུ་མཚན་ནི། $1",
+    "translate-page-disabled": "སྡེ་ཁག་འདིའི་ནང་དུ་སྐད་རིགས་འདིའི་ཡིག་སྒྱུར་ནུས་མེད་ཆགས་འདུག \nརྒྱུ་མཚན་ནི། \u003Cem\u003E$1\u003C/em\u003E",
     "translate-page-settings-legend": "སྒྲིག་བཀོད།",
     "translate-page-group": "སྡེ་ཁག",
     "translate-page-language": "སྐད་རིགས།",

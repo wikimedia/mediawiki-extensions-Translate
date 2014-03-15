@@ -5,5 +5,6 @@
         ]
     },
     "tsb-older-requests": "$1 алсамо {{PLURAL:$1|1=шира дехар|шира дехараш}}",
-    "logentry-translatorsandbox-rejected": "гочдархо статусан дехар $3 $1 {{GENDER:$2|юхадаьккхина}}."
+    "logentry-translatorsandbox-rejected": "гочдархо статусан дехар $3 $1 {{GENDER:$2|юхадаьккхина}}.",
+    "logentry-newusers-tsbpromoted": "Декъашхочун $3 дӀаяздар {{GENDER:$2|кхоьллина}} ловзаран майдан чура дӀаяздарх"
 }

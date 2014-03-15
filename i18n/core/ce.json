@@ -24,6 +24,7 @@
     "translate-page-showing-all": "Ара баьккхина $1 {{PLURAL:$1|хаам|хаамаш|хаам}}.",
     "translate-page-description-legend": "Тобанах хаам",
     "translate-page-edit": "Нисъе",
+    "translate-edit-title": "Хийца «$1»",
     "translate-edit-definition": "Хаам кепе балор",
     "translate-edit-translation": "Гоч",
     "translate-edit-contribute": "нисъе",
@@ -90,7 +91,7 @@
     "translate-untranslated": "Гоч янцарш",
     "translate-percentage-complete": "Кхочушдина",
     "translate-percentage-fuzzy": "Шира елла",
-    "translate-languagestats-overall": "Массо группанш чура хаамаш",
+    "translate-languagestats-overall": "Массо тобанийн чура хаамаш",
     "translate-ls-column-group": "Хаамийн тоба",
     "translate-mgs-group": "Хаамийн тоба:",
     "translate-mgs-column-language": "Мотт",
@@ -159,6 +160,8 @@
     "tux-editor-proofreading-mode": "Хьажар",
     "tux-editor-translate-mode": "МогӀа",
     "tux-editor-proofreading-hide-own-translations": "Къайлаяха хьой гоч йинарш",
+    "tux-editor-proofreading-show-own-translations": "Гайта хьой гоч йинарш",
+    "tux-proofread-edit-label": "Хийцам бе",
     "tux-editor-page-mode": "АгӀо",
     "tux-editor-outdated-warning": "ХӀара гочдар карладаккха дезаш хила мега.",
     "tux-editor-outdated-warning-diff-link": "Схьагайта башхалла",
@@ -167,6 +170,8 @@
     "tux-messagetable-more-messages": "Кхин $1 {{PLURAL:$1|1=хаам|хаамаш}}",
     "tux-messagetable-loading-messages": "{{PLURAL:$1|1=Гучу бокхуш бу хаам|Гучу бохуш бу хаамаш}}...",
     "tux-message-filter-placeholder": "Литта могӀа",
+    "tux-message-filter-result": "Дахарца «$2» {{PLURAL:$1|карина}} $1 {{PLURAL:$1|хилам}}",
+    "tux-message-filter-advanced-button": "Шуьйра лахар",
     "tux-empty-list-translated": "Гочбина хаамаш бац",
     "tux-empty-nothing-to-proofread": "ХӀума яц хьажа езаш",
     "tux-empty-you-can-help-providing": "Хьан йиш ю гӀо дан хаамаш гоч бина",
@@ -184,5 +189,6 @@
     "translate-search-more-languages-info": "кхин $1 {{PLURAL:$1|мотт|меттанаш|меттанаш}}",
     "translate-statsbar-tooltip": "$1% гочйинарш, $2% хьаьжнаш",
     "translate-statsbar-tooltip-with-fuzzy": "$1% гочйинарш, $2% хьаьжнаш, $3% шираеларш",
-    "translate-search-more-groups-info": "кхин $1 {{PLURAL:$1|тоба}}"
+    "translate-search-more-groups-info": "кхин $1 {{PLURAL:$1|тоба}}",
+    "translate-ulsdep-title": "Конфигурацин гӀалат"
 }

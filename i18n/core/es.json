@@ -342,7 +342,7 @@
     "tux-editor-in-other-languages": "En otros idiomas",
     "tux-editor-need-more-help": "¿Necesitas más ayuda?",
     "tux-editor-ask-help": "Pide más información",
-    "tux-editor-tm-match": "$1% de coincidencia",
+    "tux-editor-tm-match": "$1 % de coincidencia",
     "tux-warnings-more": "{{PLURAL:$1|$1 más}}",
     "tux-warnings-hide": "ocultar",
     "tux-editor-n-uses": "usado $1 {{PLURAL:$1|vez|veces}}",

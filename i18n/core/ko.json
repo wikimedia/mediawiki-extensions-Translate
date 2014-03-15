@@ -327,7 +327,7 @@
     "tux-editor-skip-button-label": "다음으로 넘어가기",
     "tux-editor-cancel-button-label": "취소",
     "tux-editor-confirm-button-label": "번역 확인",
-    "tux-editor-shortcut-info": "저장하려면 \"$1\"을 누르거나 다음 메시지로 넘어가려면 \"$2\"를 누르세요",
+    "tux-editor-shortcut-info": "저장하려면 \"$1\"을 누르거나 다음 메시지로 넘어가려면 \"$2\"를 누르거나 다른 단축키를 보려면 \"$3\"을 누르세요",
     "tux-editor-edit-desc": "설명문 편집",
     "tux-editor-add-desc": "설명문 추가",
     "tux-editor-suggestions-title": "제안",
@@ -388,5 +388,6 @@
     "translate-search-more-languages-info": "{{PLURAL:$1|언어}} $1개 더 보기",
     "translate-statsbar-tooltip": "$1% 번역됨, $2% 검토됨",
     "translate-statsbar-tooltip-with-fuzzy": "$1% 번역됨, $2% 검토됨, $3% 오래됨",
-    "translate-search-more-groups-info": "{{PLURAL:$1|그룹}} $1개 더 보기"
+    "translate-search-more-groups-info": "{{PLURAL:$1|그룹}} $1개 더 보기",
+    "translate-ulsdep-title": "구성 오류"
 }

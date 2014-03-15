@@ -1,7 +1,8 @@
 {
     "@metadata": {
         "authors": [
-            "Freeyak"
+            "Freeyak",
+            "Phurbutsering"
         ]
     },
     "pagetranslation": "ཤོག་ངོས་ཡིག་སྒྱུར།",
@@ -9,7 +10,7 @@
     "tpt-diff-new": "ཡིག་འབྲུ་གསར་བ།",
     "translate-tag-translate-link-desc": "ཤོག་ངོས་འདི་བསྒྱུར་བ།",
     "tpt-languages-legend": "སྐད་རིགས་གཞན།",
-    "pt-movepage-list-translation": "ཡིག་སྒྱུར་ཤོག་ངོས།",
+    "pt-movepage-list-translation": "ཡིག་སྒྱུར་ {{PLURAL:$1|ཤོག་ངོས།}}",
     "pt-movepage-legend": "བསྒྱུར་རུང་བའི་ཤོག་ངོས་སྤོར་བ།",
     "pt-movepage-current": "ད་ཡོད་མིང་།",
     "pt-movepage-new": "མིང་གསར་བ།",

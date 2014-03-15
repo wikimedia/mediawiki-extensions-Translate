@@ -1,0 +1,14 @@
+{
+    "@metadata": {
+        "authors": [
+            "John Reid"
+        ]
+    },
+    "pagetranslation": "Page owersetin",
+    "right-pagetranslation": "Maurk versions o pages fer owersetin",
+    "action-pagetranslation": "manage owersetable pages",
+    "tpt-desc": "Extension fer owersetin content pages",
+    "tpt-section": "Owersetin unit $1",
+    "tpt-section-new": "New owersetin unit.\nName: $1",
+    "tpt-section-deleted": "Owersetin unit $1"
+}

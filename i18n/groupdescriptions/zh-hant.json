@@ -5,7 +5,8 @@
             "Justincheng12345",
             "Liangent",
             "Mark85296341",
-            "Simon Shek"
+            "Simon Shek",
+            "Liuxinyu970226"
         ]
     },
     "translategroupdescriptions-desc": "消息組說明 [http://mediawiki.org/wiki/Extension:Translate 翻譯] 擴展所支持的產品",
@@ -26,6 +27,7 @@
     "bw-desc-freecol": "在翻譯 FreeCol 到您的語言之前，請閱讀 [[Translating:FreeCol]]。Freecol 使用 GPL 協議。",
     "bw-desc-fudforum": "[http://fudforum.org/ FUDforum]，一個用 PHP 編寫的論壇。",
     "bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] 是一個以 Web 為基礎的問題追蹤系統。",
+    "translate-group-desc-blockly": "用於[[Translating:Blockly|Blockly]]之資訊組",
     "translate-group-desc-eol": "[[Translating:EOL|Encyclopedia of Life]]的消息組",
     "translate-group-desc-ihris": "[[Translating:iHRIS|iHRIS]]的消息組",
     "translate-group-desc-kiwix": "[[Translating:Kiwix|Kiwix]]的消息組",
@@ -40,10 +42,11 @@
     "translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]]是基於Flash的OpenStreetMap編輯軟件",
     "translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]]是一個維基百科編輯工具集合。",
     "bw-desc-shapado": "本組包含免費開源問答軟件[[Translating:Shapado|Shapado]]的信息",
-    "translate-group-desc-tsint": "[http://toolserver.org Toolserver]工具的國際化系統，[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]的消息組（<span class=\"plainlinks\">[[Translating talk:Toolserver|幫助]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition 技術細節]</span>）",
+    "translate-group-desc-tsint": "[http://toolserver.org Toolserver]工具的國際化系統，[http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]的消息組（\u003Cspan class=\"plainlinks\"\u003E[[Translating talk:Toolserver|幫助]] \u0026middot; [https://wiki.toolserver.org/view/Toolserver_Intuition 技術細節]\u003C/span\u003E）",
     "translate-group-desc-waymarked-trails": "[[Translating:Waymarked Trails|Waymarked Trails]]是一個使用GNU GPL許可證的顯示世界範圍內遠足、騎行、山地騎行、 輪滑路線的服務。",
     "bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] 可以快速找到 Wikimedia 的維基某一個頁面的作者。",
     "bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] 是一個將離線、僅文字版本的維基百科傳送到手機上的計畫。",
+    "translate-group-desc-wikimania-scholarships-app": "用於[https://scholarships.wikimedia.org/apply 維基媒體國際會議旅行資費應用程式]之資訊組",
     "translate-group-desc-wikimedia-mobile": "包含維基媒體項目流動應用程式的聚合訊息組",
     "translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]]是一個真正實時協作編輯器"
 }

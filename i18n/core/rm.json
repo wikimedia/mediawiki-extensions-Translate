@@ -2,7 +2,8 @@
     "@metadata": {
         "authors": [
             "Gion",
-            "Gion-andri"
+            "Gion-andri",
+            "Kazu89"
         ]
     },
     "translate-page-settings-legend": "Parameters",
@@ -27,5 +28,6 @@
     "translate-edit-information": "Infurmaziuns davart il messadi \"$2\" ($1)",
     "translate-edit-in-other-languages": "Messadis \"$1\" en autras linguas",
     "translate-edit-committed": "Translaziun actuala da la software",
-    "translate-edit-warnings": "Avertiment davart translaziuns nuncumplettas"
+    "translate-edit-warnings": "Avertiment davart translaziuns nuncumplettas",
+    "tux-warnings-hide": "zuppentar"
 }
