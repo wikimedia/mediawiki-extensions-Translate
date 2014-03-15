@@ -636,20 +636,18 @@ class MessageGroups {
 	 * @since 2013.09
 	 */
 	public static function haveSingleSourceLanguage( array $groups ) {
-		$languages = array();
+		$seen = '';
 
 		foreach ( $groups as $group ) {
 			$language = $group->getSourceLanguage();
-			if ( !in_array( $language, $languages ) ) {
-				$languages[] = $language;
+			if ( $seen === '' ) {
+				$language = $seen;
+			} elseif ( $language !== $seen ) {
+				return '';
 			}
 		}
 
-		if ( count( $languages ) === 1 ) {
-			return $languages[0];
-		}
-
-		return '';
+		return $seen;
 	}
 
 	/**
