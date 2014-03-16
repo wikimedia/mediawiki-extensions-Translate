@@ -795,6 +795,18 @@ class PageTranslationHooks {
 		) . Html::element( 'hr' );
 
 		$context->getOutput()->addHTML( $header );
+
+		global $wgTranslateKeepOutdatedTranslations;
+		if ( $wgTranslateKeepOutdatedTranslations && floor( $per ) < 100 ) {
+			$groupId = $page->getMessageGroup()->getId();
+			$stats = MessageGroupStats::forItem( $groupId, $code );
+			$fuzzy = $stats[MessageGroupStats::FUZZY];
+			if ( $fuzzy ) {
+				// Only show if there is fuzzy messages
+				$wrap = '<div class="mw-translate-page-info mw-translate-fuzzy">$1</div>';
+				$context->getOutput()->wrapWikiMsg( $wrap, array( 'tpt-translation-intro-fuzzy' ) );
+			}
+		}
 	}
 
 	/// Hook: SpecialPage_initList

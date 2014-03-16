@@ -164,9 +164,11 @@ class TPParse {
 	}
 
 	/**
-	 * Returns translation page with all possible translations replaced in
-	 * and ugly translation tags removed.
+	 * Returns translation page with all possible translations replaced in, ugly
+	 * translation tags removed and outdated translation marked with a class
+	 * mw-translate-fuzzy.
 	 *
+	 * @todo The class marking has to be more intelligent with span&div use.
 	 * @param MessageCollection $collection Collection that holds translated messages.
 	 * @return string Whole page as wikitext.
 	 */
@@ -175,10 +177,16 @@ class TPParse {
 
 		// For finding the messages
 		$prefix = $this->title->getPrefixedDBkey() . '/';
-
+		
+		global $wgTranslateKeepOutdatedTranslations;
 		if ( $collection instanceof MessageCollection ) {
 			$collection->loadTranslations();
-			$collection->filter( 'translated', false );
+			if ($wgTranslateKeepOutdatedTranslations) {
+				$collection->filter( 'hastranslation', false );
+			}
+			else {
+				$collection->filter( 'translated', false );
+			}
 		}
 
 		foreach ( $this->sections as $ph => $s ) {
@@ -189,7 +197,22 @@ class TPParse {
 				 * @var TMessage $msg
 				 */
 				$msg = $collection[$prefix . $s->id];
-				$sectiontext = $msg->translation();
+				if ($wgTranslateKeepOutdatedTranslations) {
+					$translation = $msg->translation();
+					$original = $msg->definition();
+
+					if ( $translation !== null ) {
+						// Ideally we should not have fuzzy here, but old texts do
+						$sectiontext = str_replace( TRANSLATE_FUZZY, '', $translation );
+	
+						if ( $msg->hasTag( 'fuzzy' ) ) {
+							$sectiontext = "<div class=\"mw-translate-fuzzy\">\n$sectiontext\n</div><div class=\"mw-collapsible mw-collapsed\">\n$original\n</div>";
+						}
+					}
+				}
+				else {
+					$sectiontext = $msg->translation();
+				}
 			}
 
 			// Use the original text if no translation is available.
