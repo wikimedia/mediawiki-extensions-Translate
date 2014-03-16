@@ -75,6 +75,7 @@
 	"translate-tag-markthisagain": "\"has changes\" is to be understood as \"has been altered/edited\".\n\nParameters:\n* $1 - a link which points to the diff\n* $2 - a link which points to ...",
 	"translate-tag-hasnew": "\"has changes\" is to be understood as \"has been altered/edited\". $1 is a URL to view changes.",
 	"tpt-translation-intro": "Header of a translation page (see definition on [[mw:Help:Extension:Translate/Glossary]]).\n\nParameters:\n* $1 - URL\n* $2 - page title\n* $3 - translation percentage",
+	"tpt-translation-intro-fuzzy": "Example sentence styled as some content in the current page",
 	"tpt-languages-legend": "The caption of a language selector displayed using <code><nowiki><languages /></nowiki></code>. e.g. on [[Project list]].\n{{Identical|Otherlanguages}}",
 	"tpt-languages-separator": "{{optional}}",
 	"tpt-languages-zero": "Tooltip for a link in <code><nowiki><language /></nowiki></code> when language is included because it is a priority language, but translation does not yet exist.\n\nThe link directly points to the translation view ([[Special:Translate]]).\n\nTranslate this as \"Start translating (the page) into this language\".",
