@@ -163,8 +163,10 @@ class TPParse {
 	}
 
 	/**
-	 * Returns translation page with all possible translations replaced in
-	 * and ugly translation tags removed.
+	 * Returns translation page with all possible translations replaced in, ugly
+	 * translation tags removed and outdated translation marked with a class
+	 * mw-translate-fuzzy.
+	 * @todo The class marking has to be more intelligent with span&div use.
 	 * @param MessageCollection $collection Collection that holds translated messages.
 	 * @return string Whole page as wikitext.
 	 */
@@ -187,7 +189,16 @@ class TPParse {
 				 * @var TMessage $msg
 				 */
 				$msg = $collection[$prefix . $s->id];
-				$sectiontext = $msg->translation();
+				$translation = $msg->translation();
+
+				if ( $translation !== null ) {
+					// Ideally we should not have fuzzy here, but old texts do
+					$sectiontext = str_replace( TRANSLATE_FUZZY, '', $translation );
+
+					if ( $msg->hasTag( 'fuzzy' ) ) {
+						$sectiontext = "<span class=\"mw-translate-fuzzy\">\n$sectiontext\n</span>";
+					}
+				}
 			}
 
 			// Use the original text if no translation is available.
