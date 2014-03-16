@@ -89,6 +89,7 @@ but the latest {{PLURAL:$1|version|versions}} cannot be marked for translation.'
 	'translate-tag-markthisagain' => 'This page has <span class="plainlinks">[$1 changes]</span> since it was last <span class="plainlinks">[$2 marked for translation]</span>.',
 	'translate-tag-hasnew' => 'This page contains <span class="plainlinks">[$1 changes]</span> which are not marked for translation.',
 	'tpt-translation-intro' => 'This page is a <span class="plainlinks">[$1 translated version]</span> of a page [[$2]] and the translation is $3% complete.',
+	'tpt-translation-intro-fuzzy' => 'Outdated translations are marked like this.',
 
 	'tpt-languages-legend' => 'Other languages:',
 	'tpt-languages-separator' => '&#160;•&#160;',
