@@ -73,6 +73,16 @@ class SpecialLanguageStats extends TranslateSpecialPage {
 	protected $target;
 
 	/**
+	 * List of langauges if specified(For Special:MessageGroupStats)
+	 */
+	protected $langList = '';
+
+	/**
+	 * List of groups if specified(For Special:LanguageStats)
+	 */
+	protected $groupList = '';
+
+	/**
 	 * Whether to regenerate stats. Activated by action=purge in query params.
 	 * @var bool
 	 */
@@ -131,6 +141,14 @@ class SpecialLanguageStats extends TranslateSpecialPage {
 			$this->noEmpty = (bool)$params[2];
 		}
 
+		if ( isset( $params[3] ) ) {
+			$this->langList = $params[3];
+		}
+
+		if ( isset( $params[4] ) ) {
+			$this->groupList = $params[4];
+		}
+
 		// Whether the form has been submitted, only relevant if not including
 		$submitted = !$this->including() && $request->getVal( 'x' ) === 'D';
 
@@ -143,6 +161,8 @@ class SpecialLanguageStats extends TranslateSpecialPage {
 			$this->noComplete && !$submitted
 		);
 		$this->noEmpty = $request->getBool( 'suppressempty', $this->noEmpty && !$submitted );
+		$this->langList = $request->getVal( 'languages', $this->langList );
+		$this->groupList = $request->getVal( 'groups', $this->groupList );
 
 		if ( !$this->including() ) {
 			TranslateUtils::addSpecialHelpLink(
@@ -421,20 +441,47 @@ class SpecialLanguageStats extends TranslateSpecialPage {
 	 * @return string
 	 */
 	protected function makeGroupGroup( $item, array $cache, MessageGroup $parent = null ) {
-		if ( !is_array( $item ) ) {
-			return $this->makeGroupRow( $item, $cache, $parent );
+		if ( $this->groupList ) {
+			$groups = explode( ',', $this->groupList );
+
+			if ( !is_array( $item ) ) {
+				// Include pages with a valid parent
+				if ( $parent != null ) {
+					return $this->makeGroupRow( $item, $cache, $parent );
+				}
+				// If 'none' included in list of groups, add all single pages as well
+				if ( in_array( 'none', $groups ) ) {
+					return $this->makeGroupRow( $item, $cache );
+				}
+				// Return nothing otherwise
+				return '';
+			}
+
+			// The first group in the array is the parent AggregateMessageGroup
+			$out = '';
+			$top = array_shift( $item );
+
+			if ( in_array( str_replace( "agg-", "", $top->getId() ), $groups ) ) {
+				$out .= $this->makeGroupRow( $top, $cache );
+
+				// Children for aggregate group
+				foreach ( $item as $subgroup ) {
+					$out .= $this->makeGroupGroup( $subgroup, $cache, $top );
+				}
+			}
+		} else {
+			if ( !is_array( $item ) ) {
+				return $this->makeGroupRow( $item, $cache, $parent );
+			}
+			// The first group in the array is the parent AggregateMessageGroup
+			$out = '';
+			$top = array_shift( $item );
+			$out .= $this->makeGroupRow( $top, $cache );
+			// Children for aggregate group
+			foreach ( $item as $subgroup ) {
+				$out .= $this->makeGroupGroup( $subgroup, $cache, $top );
+			}
 		}
-
-		// The first group in the array is the parent AggregateMessageGroup
-		$out = '';
-		$top = array_shift( $item );
-		$out .= $this->makeGroupRow( $top, $cache, $parent );
-
-		// Rest are children
-		foreach ( $item as $subgroup ) {
-			$out .= $this->makeGroupGroup( $subgroup, $cache, $top );
-		}
-
 		return $out;
 	}
 

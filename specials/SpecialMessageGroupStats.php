@@ -155,7 +155,22 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		MessageGroupStats::setTimeLimit( $this->timelimit );
 		$cache = MessageGroupStats::forGroup( $this->target );
 
-		$languages = array_keys( Language::fetchLanguageNames() );
+		if ( $this->langList ) {
+			$languages = explode( ',', $this->langList );
+			$alllangs =  array_keys( Language::fetchLanguageNames() );
+			$key = 0;
+
+			foreach ( $languages as $l ) {
+				if ( !( in_array( $l, $alllangs ) ) ) {
+					$this->getOutput()->
+					wrapWikiMsg( "<div class='error'>Invalid language code $l</div>" );
+					array_splice( $languages, $key, 1 );
+				}
+				$key++;
+			}
+		} else {
+			$languages = array_keys( Language::fetchLanguageNames() );
+		}
 		sort( $languages );
 		$this->filterPriorityLangs( $languages, $this->target, $cache );
 		foreach ( $languages as $code ) {
