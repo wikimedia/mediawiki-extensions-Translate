@@ -155,7 +155,24 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		MessageGroupStats::setTimeLimit( $this->timelimit );
 		$cache = MessageGroupStats::forGroup( $this->target );
 
-		$languages = array_keys( Language::fetchLanguageNames() );
+		if ( $this->langList ) {
+			$languages = explode( ',', $this->langList );
+			$alllangs = Language::fetchLanguageNames();
+			$key = 0;
+
+			foreach ( $languages as $l ) {
+				if ( !isset( $alllangs[$l] ) ) {
+					$this->getOutput()->
+					wrapWikiMsg(
+						"<div class='error'>$l : $1</div>",
+						'translate-page-no-such-language' );
+					array_splice( $languages, $key, 1 );
+				}
+				$key++;
+			}
+		} else {
+			$languages = array_keys( Language::fetchLanguageNames() );
+		}
 		sort( $languages );
 		$this->filterPriorityLangs( $languages, $this->target, $cache );
 		foreach ( $languages as $code ) {
