@@ -73,6 +73,11 @@ class SpecialLanguageStats extends TranslateSpecialPage {
 	protected $target;
 
 	/**
+	 * List of language codes separated by commas if specified.
+	 */
+	protected $langList='';
+
+	/**
 	 * Whether to regenerate stats. Activated by action=purge in query params.
 	 * @var bool
 	 */
@@ -131,6 +136,10 @@ class SpecialLanguageStats extends TranslateSpecialPage {
 			$this->noEmpty = (bool)$params[2];
 		}
 
+		if ( isset( $params[3] ) ) {
+			$this->langList = $params[3];
+		}
+
 		// Whether the form has been submitted, only relevant if not including
 		$submitted = !$this->including() && $request->getVal( 'x' ) === 'D';
 
@@ -143,6 +152,8 @@ class SpecialLanguageStats extends TranslateSpecialPage {
 			$this->noComplete && !$submitted
 		);
 		$this->noEmpty = $request->getBool( 'suppressempty', $this->noEmpty && !$submitted );
+
+		$this->langList = $request->getVal( 'language', $this->langList );
 
 		if ( !$this->including() ) {
 			TranslateUtils::addSpecialHelpLink(
