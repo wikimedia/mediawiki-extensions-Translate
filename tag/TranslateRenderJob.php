@@ -39,6 +39,8 @@ class TranslateRenderJob extends Job {
 	}
 
 	public function run() {
+		global $wgTranslateKeepOutdatedTranslations;
+
 		// Initialization
 		$title = $this->title;
 		list( , $code ) = TranslateUtils::figureMessage( $title->getPrefixedText() );
@@ -52,7 +54,10 @@ class TranslateRenderJob extends Job {
 		$group = $page->getMessageGroup();
 		$collection = $group->initCollection( $code );
 
-		$text = $page->getParse()->getTranslationPageText( $collection );
+		$text = $page->getParse()->getTranslationPageText(
+			$collection,
+			$wgTranslateKeepOutdatedTranslations
+		);
 
 		// Other stuff
 		$user = $this->getUser();
