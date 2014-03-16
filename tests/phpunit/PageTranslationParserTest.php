@@ -55,7 +55,7 @@ class PageTranslationParserTest extends MediaWikiTestCase {
 		}
 
 		if ( file_exists( "$pattern.pttarget" ) ) {
-			$target = $parse->getTranslationPageText( MessageCollection::newEmpty( 'foo' ) );
+			$target = $parse->getTranslationPageText( array() );
 			$this->assertEquals( file_get_contents( "$pattern.pttarget" ), $target );
 		}
 
