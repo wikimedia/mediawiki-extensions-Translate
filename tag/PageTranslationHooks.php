@@ -756,6 +756,8 @@ class PageTranslationHooks {
 	protected static function translationPageHeader(
 		IContextSource $context, TranslatablePage $page
 	) {
+		global $wgTranslateKeepOutdatedTranslations;
+
 		$title = $context->getTitle();
 		if ( !$title->exists() ) {
 			return;
@@ -771,6 +773,7 @@ class PageTranslationHooks {
 		}
 
 		$language = $context->getLanguage();
+		$output = $context->getOutput();
 
 		if ( $page->getSourceLanguageCode() === $code ) {
 			// If we are on the source language page, link to translate for user's language
@@ -794,7 +797,18 @@ class PageTranslationHooks {
 			$msg
 		) . Html::element( 'hr' );
 
-		$context->getOutput()->addHTML( $header );
+		$output->addHTML( $header );
+
+		if ( $wgTranslateKeepOutdatedTranslations ) {
+			$groupId = $page->getMessageGroupId();
+			// This is already calculated and cached by above call to getTranslationPercentages
+			$stats = MessageGroupStats::forItem( $groupId, $code );
+			if ( $stats[MessageGroupStats::FUZZY] ) {
+				// Only show if there is fuzzy messages
+				$wrap = '<div class="mw-pt-translate-header"><span class="mw-translate-fuzzy">$1</span></div>';
+				$output->wrapWikiMsg( $wrap, array( 'tpt-translation-intro-fuzzy' ) );
+			}
+		}
 	}
 
 	/// Hook: SpecialPage_initList

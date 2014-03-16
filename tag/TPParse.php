@@ -164,13 +164,15 @@ class TPParse {
 	}
 
 	/**
-	 * Returns translation page with all possible translations replaced in
-	 * and ugly translation tags removed.
+	 * Returns translation page with all possible translations replaced in, ugly
+	 * translation tags removed and outdated translation marked with a class
+	 * mw-translate-fuzzy.
 	 *
 	 * @param MessageCollection $collection Collection that holds translated messages.
+	 * @param bool $showOutdated Whether to show outdated sections, wrapped in a HTML class.
 	 * @return string Whole page as wikitext.
 	 */
-	public function getTranslationPageText( $collection ) {
+	public function getTranslationPageText( $collection, $showOutdated ) {
 		$text = $this->template; // The source
 
 		// For finding the messages
@@ -178,18 +180,35 @@ class TPParse {
 
 		if ( $collection instanceof MessageCollection ) {
 			$collection->loadTranslations();
-			$collection->filter( 'translated', false );
+			if ( $showOutdated ) {
+				$collection->filter( 'hastranslation', false );
+			} else {
+				$collection->filter( 'translated', false );
+			}
 		}
 
 		foreach ( $this->sections as $ph => $s ) {
 			$sectiontext = null;
 
 			if ( isset( $collection[$prefix . $s->id] ) ) {
-				/**
-				 * @var TMessage $msg
-				 */
+				/** @var TMessage $msg */
 				$msg = $collection[$prefix . $s->id];
+				/** @var string|null */
 				$sectiontext = $msg->translation();
+
+				// If translation is fuzzy, $sectiontext must be a string
+				if ( $msg->hasTag( 'fuzzy' ) ) {
+					// We do not ever want to show explicit fuzzy marks in the rendered pages
+					$sectiontext = str_replace( TRANSLATE_FUZZY, '', $sectiontext );
+
+					if ( $s->isInline() ) {
+						$sectiontext = "<span class=\"mw-translate-fuzzy\">$sectiontext</span>";
+					} else {
+						// We add new lines around the text to avoid disturbing any mark-up that
+						// has special handling on line start, such as lists.
+						$sectiontext = "<div class=\"mw-translate-fuzzy\">\n$sectiontext\n</div>";
+					}
+				}
 			}
 
 			// Use the original text if no translation is available.
