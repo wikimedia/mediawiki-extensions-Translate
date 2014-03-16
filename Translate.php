@@ -376,6 +376,18 @@ $wgPageTranslationNamespace = 1198;
  */
 $wgTranslatePageTranslationULS = false;
 
+
+/**
+ * If set to true, when a translated page has some units marked as outdated, the 
+ * outdated translation will be shown. If set to false, the original updated unit
+ * in the original language will be shown.
+ * Changing this setting requires the following script to be run to take effect on 
+ * existing changes
+ * Translate/scripts/refresh-translatable-pages.php
+ * @since 2016-11-25
+ */
+$wgTranslateKeepOutdatedTranslations = true;
+
 # </source>
 # === Message group configuration ===
 # <source lang=php>
