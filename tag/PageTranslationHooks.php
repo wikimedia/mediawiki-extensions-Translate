@@ -774,7 +774,6 @@ class PageTranslationHooks {
 		);
 
 		$out = $context->getOutput();
-
 		$out->wrapWikiMsg(
 			$wrap,
 			array(
@@ -784,6 +783,18 @@ class PageTranslationHooks {
 				$language->formatNum( $per )
 			)
 		);
+
+		if ( floor( $per ) < 100 ) {
+			$groupId = $page->getMessageGroup()->getId();
+			$stats = MessageGroupStats::forItem( $groupId, $code );
+			$fuzzy = $stats[MessageGroupStats::FUZZY];
+			if ( $fuzzy ) {
+				// Only show if there is fuzzy messages
+				$wrap = '<div class="mw-translate-page-info mw-translate-fuzzy">$1</div>';
+				$wgOut->wrapWikiMsg( $wrap, array( 'tpt-translation-intro-fuzzy' ) );
+			}
+		}
+
 		$out->addHTML( '<hr />' );
 	}
 
