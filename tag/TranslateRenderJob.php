@@ -51,6 +51,10 @@ class TranslateRenderJob extends Job {
 
 		$group = $page->getMessageGroup();
 		$collection = $group->initCollection( $code );
+		global $wgTranslateKeepOutdatedTranslations;
+		if ( $wgTranslateKeepOutdatedTranslations ) {
+			$collection->loadTranslations( DB_MASTER );
+		}
 
 		$text = $page->getParse()->getTranslationPageText( $collection );
 
