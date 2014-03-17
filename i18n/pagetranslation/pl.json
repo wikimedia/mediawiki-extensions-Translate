@@ -75,7 +75,7 @@
     "tpt-target-page": "Ta strona nie może zostać zaktualizowana ręcznie.\nJest ona tłumaczeniem strony [[$1]], a tłumaczenie może zostać zmienione za pomocą [$2 narzędzia tłumacza].",
     "tpt-unknown-page": "Ta przestrzeń nazw jest zarezerwowana dla tłumaczeń stron z zawartością.\nStrona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stronie oznaczonej do tłumaczenia.",
     "tpt-translation-restricted": "Tłumaczenie tej strony na ten język zostało zablokowane przez administratora tłumaczenia.\n\nPowód: $1",
-    "tpt-discouraged-language-force": "Administrator tłumaczenia ograniczył języki, na które ta strona może być tłumaczona. Ten język do nich nie należy.\n\nPowód: $1",
+    "tpt-discouraged-language-force": "\u003Cstrong\u003ETa strona nie może być przetłumaczona na $2.\u003C/strong\u003E\n\nAdministrator tłumaczeń ograniczył języki, na które ta strona może być tłumaczona do $3.",
     "tpt-discouraged-language": "Ten język nie należy do języków priorytetowych ustawionych przez administratora tłumaczenia dla tej strony.\n\nPowód: $1",
     "tpt-discouraged-language-reason": "Powód: $1",
     "tpt-priority-languages": "Administrator tłumaczenia ustawił języki priorytetowe dla tej grupy jako $1 .",

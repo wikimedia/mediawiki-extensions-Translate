@@ -259,7 +259,7 @@
     "tux-editor-placeholder": "Vòstra traduccion",
     "tux-editor-save-button-label": "Enregistrar la traduccion",
     "tux-editor-skip-button-label": "Anar al seguent",
-    "tux-editor-shortcut-info": "Quichatz sus \"$1\" per enregistrar o \"$2\" per passar al messatge seguent",
+    "tux-editor-shortcut-info": "Quichatz sus « $1 » per enregistrar o « $2 » per passar al messatge seguent o « $3 » per d'autres acorchis.",
     "tux-editor-edit-desc": "Modificar la documentacion",
     "tux-editor-add-desc": "Apondre una documentacion",
     "tux-editor-suggestions-title": "Suggestions",

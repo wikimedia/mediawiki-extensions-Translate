@@ -402,5 +402,6 @@
     "translate-search-more-languages-info": "$1 {{PLURAL:$1|język|języków}} więcej",
     "translate-statsbar-tooltip": "$1% przetłumaczono, $2% przejrzano",
     "translate-statsbar-tooltip-with-fuzzy": "$1% przetłumaczonych, $2% przejrzanych, $3% nieaktualnych",
-    "translate-search-more-groups-info": "$1 więcej  {{PLURAL:$1|grupa|grup}}"
+    "translate-search-more-groups-info": "$1 więcej  {{PLURAL:$1|grupa|grup}}",
+    "translate-ulsdep-title": "Błąd konfiguracji"
 }
