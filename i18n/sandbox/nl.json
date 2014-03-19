@@ -17,8 +17,8 @@
     "tsb-reminder-failed": "Herinnering verzenden mislukt",
     "tsb-email-promoted-subject": "U bent nu vertaler bij {{SITENAME}}",
     "tsb-email-promoted-body": "Hallo {{GENDER:$1|$1}},\n\nGefeliciteerd! Ik heb de testvertalingen gecontroleerd die u op {{SITENAME}} hebt gemaakt en heb uw permanente vertaalrechten gegeven.\n\nKom nu (en bij voorkeur iedere dag) naar {{SITENAME}} om door te gaan met vertalen:\n$2\n\nWelkom en dank u wel voor uw bijdragen!\n\n{{GENDER:$3|$3}},\nMedewerker van {{SITENAME}}",
-    "tsb-email-rejected-subject": "Uw aanvraag om vertaler te zijn bij {{SITENAME}} is afgewezen",
-    "tsb-email-rejected-body": "Hallo {{GENDER:$1|$1}},\n\nDank u voor de aanmelding als vertaler bij {{SITENAME}}. Ik vind het jammer u moeten melden dat ik de aanmelding heb geweigerd aangezien de kwaliteit van uw vertalingen niet aan de eisen voldoet.\n\nAls u van mening bent dat deze weigering op een fout is gebaseerd, kunt u zich opnieuw als vertaler aanmelden bij {{SITENAME}}. U kunt zich hieronder  inschrijven:\n$2 \n\n{{GENDER:$3|$3}}, \n{{SITENAME}} staff",
+    "tsb-email-rejected-subject": "Uw aanvraag om vertaler te worden bij {{SITENAME}} is afgewezen",
+    "tsb-email-rejected-body": "Hallo {{GENDER:$1|$1}},\n\nDank u voor de aanmelding als vertaler bij {{SITENAME}}. Ik vind het jammer u moeten melden dat ik de aanmelding heb geweigerd aangezien de kwaliteit van uw vertalingen niet aan de eisen voldoet.\n\nAls u van mening bent dat deze afwijzing onjuist is, dan kunt u zich opnieuw als vertaler aanmelden bij {{SITENAME}}. U kunt zich hieronder  inschrijven:\n$2\n\n{{GENDER:$3|$3}}, \n{{SITENAME}} staff",
     "tsb-request-count": "{{PLURAL:$1|Eén verzoek|$1 verzoeken}}",
     "tsb-all-languages-button-label": "Alle talen",
     "tsb-search-requests": "Verzoeken zoeken",
@@ -34,7 +34,7 @@
     "tsb-translations-source": "Bron",
     "tsb-translations-user": "Gebruikersvertalingen",
     "tsb-translations-current": "Bestaande vertalingen",
-    "tsb-delete-userpage-summary": "De gebruikerspagina van een kladblok-gebruiker verwijderen",
+    "tsb-delete-userpage-summary": "Gebruikerspagina van een zandbakgebruiker verwijderd",
     "translationstash": "Welkom",
     "translate-translationstash-welcome": "Welkom {{GENDER:$1|$1}}, u bent nu vertaler",
     "translate-translationstash-welcome-note": "Raak vertrouwd met de vertaalhulpmiddelen. Vertaal een aantal willekeurig geselecteerde berichten en krijg volledige vertaalrechten voor uw favoriete projecten.",
@@ -44,10 +44,10 @@
     "tsb-limit-reached-title": "Bedankt voor uw vertalingen",
     "tsb-limit-reached-body": "U hebt de limiet voor het aantal vertalingen voor nieuwe vertalers bereikt.\nOns team gaat ze snel controleren en promoveert uw gebruiker snel, zodat u zonder beperkingen kunt gaan vertalen.",
     "tsb-no-requests-from-new-users": "Geen verzoeken van nieuwe gebruikers",
-    "tsb-create-user-page": "Een eenvoudige basisgebruikerspagina aanmaken",
+    "tsb-create-user-page": "Eenvoudige gebruikerspagina aangemaakt",
     "log-name-translatorsandbox": "Vertalingenzandbak",
     "log-description-translatorsandbox": "Een logboek van de handelingen van gebruikers in de vertalingenzandbak.",
     "logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|heeft}} $3 gepromoveerd tot {{GENDER:$4|vertaler}}",
     "logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|heeft}} het verzoek van \"$3\" om vertaler te worden geweigerd",
-    "logentry-newusers-tsbpromoted": "Gebruikersaccount $3 was {{GENDER:$2|gemaakt}} door promotie vanuit de zandbak"
+    "logentry-newusers-tsbpromoted": "Gebruikers $3 is {{GENDER:$2|aangemaakt}} door promotie vanuit de zandbak"
 }

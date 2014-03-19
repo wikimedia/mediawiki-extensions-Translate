@@ -326,7 +326,7 @@
     "tux-editor-skip-button-label": "Overslaan en volgende",
     "tux-editor-cancel-button-label": "Annuleren",
     "tux-editor-confirm-button-label": "Vertaling bevestigen",
-    "tux-editor-shortcut-info": "Druk op \"$1\" om op te slaan of druk op \"$2\" om naar het volgende bericht te gaan",
+    "tux-editor-shortcut-info": "Druk op \"$1\" om op te slaan of druk op \"$2\" om naar het volgende bericht te gaan of \"$3\" voor andere snelkoppelingen.",
     "tux-editor-edit-desc": "Documentatie bewerken",
     "tux-editor-add-desc": "Documentatie toevoegen",
     "tux-editor-suggestions-title": "Suggesties",
@@ -387,5 +387,7 @@
     "translate-search-more-languages-info": "Nog $1 {{PLURAL:$1|taal|talen}}",
     "translate-statsbar-tooltip": "$1% vertaald, $2% gecontroleerd",
     "translate-statsbar-tooltip-with-fuzzy": "$1% vertaald, $2% gecontroleerd, $3% verouderd",
-    "translate-search-more-groups-info": "nog $1 groep{{PLURAL:$1||en}}"
+    "translate-search-more-groups-info": "nog $1 groep{{PLURAL:$1||en}}",
+    "translate-ulsdep-title": "Fout in de instellingen",
+    "translate-ulsdep-body": "De uitbreiding Translate is afhankelijk van de [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector uitbreiding Universal Language Selector]."
 }
