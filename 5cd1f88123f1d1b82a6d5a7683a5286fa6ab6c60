@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee14bf34_5e94858d",
+        "filename": "scripts/characterEditStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-19T18:07:35Z",
+      "side": 1,
+      "message": "Should this be maximum?",
+      "revId": "5cd1f88123f1d1b82a6d5a7683a5286fa6ab6c60",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
