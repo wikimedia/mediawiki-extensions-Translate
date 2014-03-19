@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee14bf34_b5c86526",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-19T10:10:53Z",
+      "side": 1,
+      "message": "\"if (\"",
+      "revId": "acd4aa33edab881361c753d7119c7d07ad7c394d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_b5ef4582",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-19T10:10:53Z",
+      "side": 1,
+      "message": "This needs some kind of validity check for the languages.\n\nlanguage\u003dfi,%20sv gives:\n\u003cb\u003eNotice\u003c/b\u003e:  Undefined index:  sv in \u003cb\u003e/www/dev.translatewiki.net/w/extensions/Translate/specials/SpecialMessageGroupStats.php\u003c/b\u003e on line \u003cb\u003e223\u003c/b\u003e\u003cbr /\u003e\n\u003cb\u003eNotice\u003c/b\u003e:  Undefined index:  sv in \u003cb\u003e/www/dev.translatewiki.net/w/extensions/Translate/specials/SpecialMessageGroupStats.php\u003c/b\u003e on line \u003cb\u003e281\u003c/b\u003e\u003cbr /\u003e\n\nlanguage\u003d\u003cscript\u003ealert(%27hi%27);\u003c/script\u003e allows XSS vulnerability if PHP notices are enabled.",
+      "revId": "acd4aa33edab881361c753d7119c7d07ad7c394d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
