@@ -30,7 +30,8 @@ class CharacterEditStats extends Maintenance {
 		);
 		$this->addOption(
 			'days',
-			'(optional) Calculate for given number of days (default: 30)',
+			'(optional) Calculate for given number of days (default: 30) ' .
+			'(capped by the max age of recent changes on the wiki)',
 			false, /*required*/
 			true /*has arg*/
 		);
