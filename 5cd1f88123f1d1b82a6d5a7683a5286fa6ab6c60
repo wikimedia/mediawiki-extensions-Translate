@@ -16,6 +16,24 @@
       "revId": "5cd1f88123f1d1b82a6d5a7683a5286fa6ab6c60",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_fe06b9d0",
+        "filename": "scripts/characterEditStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-03-19T18:14:06Z",
+      "side": 1,
+      "message": "I\u0027d rather mimic the name of the variable, or I have to mention it explicitly and that\u0027s ugly",
+      "parentUuid": "ee14bf34_5e94858d",
+      "revId": "5cd1f88123f1d1b82a6d5a7683a5286fa6ab6c60",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
