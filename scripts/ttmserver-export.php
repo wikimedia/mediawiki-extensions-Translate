@@ -43,7 +43,7 @@ class TTMServerBootstrap extends Maintenance {
 		$this->start = microtime( true );
 	}
 
-	protected function statusLine( $text, $channel = null ) {
+	public function statusLine( $text, $channel = null ) {
 		$pid = sprintf( "%5s", getmypid() );
 		$prefix = sprintf( "%6.2f", microtime( true ) - $this->start );
 		$mem = sprintf( "%5.1fM", ( memory_get_usage( true ) / ( 1024 * 1024 ) ) );
@@ -51,6 +51,9 @@ class TTMServerBootstrap extends Maintenance {
 	}
 
 	public function execute() {
+		// Profiling can take lot of memory
+		Profiler::setInstance( new ProfilerStub() );
+
 		global $wgTranslateTranslationServices;
 
 		// TTMServer is the id of the enabled-by-default instance
@@ -61,6 +64,7 @@ class TTMServerBootstrap extends Maintenance {
 
 		$this->config = $config = $wgTranslateTranslationServices[$configKey];
 		$server = TTMServer::factory( $config );
+		$server->setLogger( $this );
 
 		$this->statusLine( "Loading groups...\n" );
 		$groups = MessageGroups::singleton()->getGroups();
@@ -90,7 +94,6 @@ class TTMServerBootstrap extends Maintenance {
 				// Make sure all existing connections are dead,
 				// we can't use them in forked children.
 				LBFactory::destroyInstance();
-
 				$this->exportGroup( $group );
 				exit();
 			} elseif ( $pid === -1 ) {
@@ -121,6 +124,7 @@ class TTMServerBootstrap extends Maintenance {
 
 	protected function exportGroup( MessageGroup $group ) {
 		$server = TTMServer::factory( $this->config );
+		$server->setLogger( $this );
 
 		$id = $group->getId();
 		$sourceLanguage = $group->getSourceLanguage();
@@ -132,19 +136,17 @@ class TTMServerBootstrap extends Maintenance {
 		$collection->initMessages();
 
 		$server->beginBatch();
-		$inserts = array();
 
+		$inserts = array();
 		foreach ( $collection->keys() as $mkey => $title ) {
-			$def = $collection[$mkey]->definition();
-			$inserts[$mkey] = array( $title, $sourceLanguage, $def );
+			$inserts[$mkey] = array( $title, $sourceLanguage, $collection[$mkey]->definition() );
 		}
 
-		do {
+		while ( $inserts !== array() ) {
 			$batch = array_splice( $inserts, 0, $this->mBatchSize );
 			$server->batchInsertDefinitions( $batch );
-		} while ( count( $inserts ) );
+		}
 
-		$inserts = array();
 		foreach ( $stats as $targetLanguage => $numbers ) {
 			if ( $targetLanguage === $sourceLanguage ) {
 				continue;
@@ -158,14 +160,15 @@ class TTMServerBootstrap extends Maintenance {
 			$collection->filter( 'translated', false );
 			$collection->loadTranslations();
 
+			$inserts = array();
 			foreach ( $collection->keys() as $mkey => $title ) {
 				$inserts[$mkey] = array( $title, $targetLanguage, $collection[$mkey]->translation() );
 			}
 
-			do {
+			while ( $inserts !== array() ) {
 				$batch = array_splice( $inserts, 0, $this->mBatchSize );
 				$server->batchInsertTranslations( $batch );
-			} while ( count( $inserts ) );
+			}
 		}
 
 		$server->endBatch();
