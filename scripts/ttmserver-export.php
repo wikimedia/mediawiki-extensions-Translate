@@ -39,7 +39,7 @@ class TTMServerBootstrap extends Maintenance {
 			/*required*/false,
 			/*has arg*/true
 		);
-		$this->setBatchSize( 500 );
+		$this->setBatchSize( 50 );
 		$this->start = microtime( true );
 	}
 
