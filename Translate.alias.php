@@ -716,7 +716,7 @@ $specialPageAliases['myv'] = array(
 	'TranslationStats' => array( 'ЮтавтомадоСтатистика' ),
 );
 
-/** Nahuatl (Nāhuatl) */
+/** Nāhuatl (Nāhuatl) */
 $specialPageAliases['nah'] = array(
 	'Translate' => array( 'Tlahtōlcuepāz', 'Traducir' ),
 );
