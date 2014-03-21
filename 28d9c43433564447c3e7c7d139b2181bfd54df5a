@@ -54,6 +54,40 @@
     },
     {
       "key": {
+        "uuid": "ee14bf34_b227440d",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-21T13:29:04Z",
+      "side": 1,
+      "message": "Generally better to use a Filtered query with a term filter then a Bool query with the term query and the FuzzyLikeThis query.  The difference is that the filter will not effect the score while the bool query must clause will.  Since you don\u0027t need the language to effect the score you _probably_ want the Filtered query instead.",
+      "revId": "28d9c43433564447c3e7c7d139b2181bfd54df5a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_7221acf5",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-21T13:29:04Z",
+      "side": 1,
+      "message": "In Elasticsearch 1.0 the \"fields\" parameter is for loading stored fields and the \"_source\" parameter is for filtering the source document.  Unless the field is calculated on the fly you probably want to use _source.  Unfortunately the version of Elastica we have doesn\u0027t support it with nice syntax so you have to:\n$query-\u003esetParam( \u0027_source\u0027, array( \u0027globalid\u0027, \u0027content\u0027 );",
+      "revId": "28d9c43433564447c3e7c7d139b2181bfd54df5a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee14bf34_6dfb1445",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 1
@@ -65,6 +99,57 @@
       "writtenOn": "2014-03-20T18:41:28Z",
       "side": 1,
       "message": "Needs fixing.",
+      "revId": "28d9c43433564447c3e7c7d139b2181bfd54df5a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_f28c9c01",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-21T13:29:04Z",
+      "side": 1,
+      "message": "We could probably push the Levenshtein distance stuff to a script score on ES side which would improve the results.  Or we could figure out why the FLT query is doing the wrong thing for you and fix it.",
+      "revId": "28d9c43433564447c3e7c7d139b2181bfd54df5a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_f2637c39",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-21T13:29:04Z",
+      "side": 1,
+      "message": "This kind of defeats the purpose a bit.  If we could tell Elasticsearch how to score the results better then we might not have to ask it for so many results.  If you already know the score for a term you can build, say, a Bool query full of constant score queries.  That way they\u0027ll come back in the right order and you\u0027ll be sure to get the best 25 suggestions according to your criteria.",
+      "revId": "28d9c43433564447c3e7c7d139b2181bfd54df5a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_d258788e",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-21T13:29:04Z",
+      "side": 1,
+      "message": "Is this something that just has to be updated or is it supposed to be DB stuff?",
       "revId": "28d9c43433564447c3e7c7d139b2181bfd54df5a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -100,6 +185,75 @@
       "side": 1,
       "message": "Yep. I know ;)",
       "parentUuid": "ee14bf34_ade92c7d",
+      "revId": "28d9c43433564447c3e7c7d139b2181bfd54df5a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_b2550455",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-21T13:29:04Z",
+      "side": 1,
+      "message": "I very rarely call this.  Certainly not on every insert.",
+      "parentUuid": "ee14bf34_e84ef271",
+      "revId": "28d9c43433564447c3e7c7d139b2181bfd54df5a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_32c9f429",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-21T13:29:04Z",
+      "side": 1,
+      "message": "If you just built or rebuild the index that shouldn\u0027t be required.  What is this catching?",
+      "revId": "28d9c43433564447c3e7c7d139b2181bfd54df5a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_52c46811",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-21T13:29:04Z",
+      "side": 1,
+      "message": "This will default to white space splitting without any sort of stemming or stopwords (in 1.0).  Is that what you want?  I _think_ its pretty close.",
+      "revId": "28d9c43433564447c3e7c7d139b2181bfd54df5a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_92e1e099",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-21T13:29:04Z",
+      "side": 1,
+      "message": "If you are going to start hammering the index right after this call you should insert something waiting for the index to be fully created.  See Cirrus\u0027s updateOneSearchIndexConfig.php line 496-522 for how I do it.  Without this you can\u0027t be sure your index is \"ready\".",
       "revId": "28d9c43433564447c3e7c7d139b2181bfd54df5a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
