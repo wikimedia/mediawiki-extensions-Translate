@@ -4,15 +4,15 @@
             "Gazeb"
         ]
     },
-    "translategroupdescriptions-desc": "Пописы ґруп повідомлїн продкуктів підпророваных росшырїнём [http://mediawiki.org/wiki/Extension:Translate Translate]",
+    "translategroupdescriptions-desc": "Пописы ґруп повідомлїн продкуктів підпророваных росшырїнём [https://mediawiki.org/wiki/Extension:Translate Translate]",
     "translate-group-desc-nodesc": "Тота ґрупа повідомлїнь не мать попис",
     "translate-group-desc-mediawikicore": "Тота ґрупа повідомлїнь обсягує повідомлїня хоснованы в сучасній алфаверзії alfaverzi MediaWiki ({{CURRENTVERSION}})",
-    "translate-group-desc-mediawikimostused": "Тота ґрупа повідомлїнь обсягує [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 найхоснованїшых повідомлїнь] в MediaWiki",
+    "translate-group-desc-mediawikimostused": "Тота ґрупа повідомлїнь обсягує [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 найхоснованїшых повідомлїнь] в MediaWiki",
     "translate-group-desc-mediawikiextensions": "Тота метаґрупа обсягує повідомлїня вшыткых підпорованых росшырїнь [[Translating:MediaWiki|MediaWiki]]",
-    "translate-group-desc-collection": "Тота метаґрупа овсягує повідомлня росшырїня [http://www.mediawiki.org/wiki/Extension:Collection Collection]",
-    "translate-group-desc-flaggedrevs": "Тота метаґрупа обсягує повідомлїня росшырїня  [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
-    "translate-group-desc-readerfeedback": "Тота метаґрупа овсягує повідомлня росшырїня [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",
-    "translate-group-desc-semantic": "Тота метаґрупа обсягує вшыткы повідомлїня вшыткых росшырїнь [http://semantic-mediawiki.org/ Semantic MediaWiki]",
-    "translate-group-desc-translate": "Тота метаґрупа обсягує повідомлїня росшырїня  [http://www.mediawiki.org/wiki/Extension:Translate Translate]",
+    "translate-group-desc-collection": "Тота метаґрупа овсягує повідомлня росшырїня [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
+    "translate-group-desc-flaggedrevs": "Тота метаґрупа обсягує повідомлїня росшырїня  [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
+    "translate-group-desc-readerfeedback": "Тота метаґрупа овсягує повідомлня росшырїня [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",
+    "translate-group-desc-semantic": "Тота метаґрупа обсягує вшыткы повідомлїня вшыткых росшырїнь [https://semantic-mediawiki.org/ Semantic MediaWiki]",
+    "translate-group-desc-translate": "Тота метаґрупа обсягує повідомлїня росшырїня  [https://www.mediawiki.org/wiki/Extension:Translate Translate]",
     "translate-group-desc-wikiaextensions": "Тота метаґрупа обсягує повідомлїня MediaWiki-росшырїнь, котры ся хоснують на [http://www.wikia.com Wikia]"
 }

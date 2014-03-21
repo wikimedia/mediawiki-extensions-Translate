@@ -4,6 +4,6 @@
             "Shirayuki"
         ]
     },
-    "translate-group-desc-translate": "Meta message group containing all messages for the MediaWiki extension [http://www.mediawiki.org/wiki/Extension:Translate Translate]; please familiarise yourself with its [//www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossary]",
+    "translate-group-desc-translate": "Meta message group containing all messages for the MediaWiki extension [https://www.mediawiki.org/wiki/Extension:Translate Translate]; please familiarise yourself with its [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossary]",
     "translate-group-desc-waymarked-trails": "[[Translating:Waymarked Trails|Waymarked Trails]] is a service showing routes for hiking, cycling, mountain biking and inline skating around the world. It uses the GNU GPL licence"
 }

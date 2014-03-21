@@ -5,13 +5,12 @@
         ]
     },
     "translate-group-desc-mediawikicore": "تحتوى مجموعه الرسائل هذه على الرسائل المستخدمه فى النسخه ألفا الحاليه من ميدياويكى ({{CURRENTVERSION}})",
-    "translate-group-desc-mediawikimostused": "تحتوى مجموعه الرسائل هذه على [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki الرسائل ال500 الأكثر استخدامًا]  فى ميدياويكي",
+    "translate-group-desc-mediawikimostused": "تحتوى مجموعه الرسائل هذه على [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki الرسائل ال500 الأكثر استخدامًا]  فى ميدياويكي",
     "translate-group-desc-mediawikiextensions": "مجموعه رسائل علويه تحتوى كل رسائل الامتدادات المدعومه لميدياويكى.",
-    "translate-group-desc-collection": "مجموعه رسائل علويه تحتوى كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:Collection Collection] لميدياويكي",
-    "translate-group-desc-flaggedrevs": "مجموعه رسائل علويه تحتوى كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] لميدياويكي",
-    "translate-group-desc-readerfeedback": "مجموعه رسائل علويه تحتوى كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] لميدياويكي",
-    "translate-group-desc-translate": "مجموعه رسائل علويه تحتوى كل رسائل امتداد [http://www.mediawiki.org/wiki/Extension:Translate Translate] لميدياويكي",
+    "translate-group-desc-collection": "مجموعه رسائل علويه تحتوى كل رسائل امتداد [https://www.mediawiki.org/wiki/Extension:Collection Collection] لميدياويكي",
+    "translate-group-desc-flaggedrevs": "مجموعه رسائل علويه تحتوى كل رسائل امتداد [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] لميدياويكي",
+    "translate-group-desc-readerfeedback": "مجموعه رسائل علويه تحتوى كل رسائل امتداد [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] لميدياويكي",
+    "translate-group-desc-translate": "مجموعه رسائل علويه تحتوى كل رسائل امتداد [https://www.mediawiki.org/wiki/Extension:Translate Translate] لميدياويكي",
     "translate-group-desc-wikiaextensions": "مجموعه رسائل علويه تحتوى كل رسائل امتدادات ميدياويكى المدعومه التى تستخدمها [http://www.wikia.com Wikia]",
-    "translate-group-desc-wikimediaextensions": "مجموعه رسائل علويه تحتوى كل رسائل امتدادات ميدياويكى المدعومه التى تستخدمها [http://wikimedia.org/ مؤسسه ويكيميديا]",
-    "translate-group-desc-ui": "مجموعه رسائل علويه تحتوى كل رسائل الامتدادات المتعلقه ب[http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative مبادره استخداميه ويكيبيديا]"
+    "translate-group-desc-wikimediaextensions": "مجموعه رسائل علويه تحتوى كل رسائل امتدادات ميدياويكى المدعومه التى تستخدمها [https://wikimediafoundation.org/ مؤسسه ويكيميديا]"
 }

@@ -6,17 +6,16 @@
             "Petrus Adamus"
         ]
     },
-    "translategroupdescriptions-desc": "Priskriboj de la mesaĝgrupoj por produktoj subtenataj de la [http://mediawiki.org/wiki/Extension:Translate traduka kromprogramo]",
+    "translategroupdescriptions-desc": "Priskriboj de la mesaĝgrupoj por produktoj subtenataj de la [https://mediawiki.org/wiki/Extension:Translate traduka kromprogramo]",
     "translate-group-desc-nodesc": "Neniu priskribo estas havebla por ĉi tiu mesaĝogrupo",
     "translate-group-desc-mediawikicore": "Ĉi tiu mesaĝogrupo enhavas la mesaĝojn uzitajn  en la aktuala alpha-versio  de MediaWiki ({{CURRENTVERSION}})",
-    "translate-group-desc-mediawikimostused": "Ĉi tiu mesaĝogrupo enhavas la [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWik 500 plej ofte uzitajn mesaĝojn] en MediaWiki",
+    "translate-group-desc-mediawikimostused": "Ĉi tiu mesaĝogrupo enhavas la [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWik 500 plej ofte uzitajn mesaĝojn] en MediaWiki",
     "translate-group-desc-mediawikiextensions": "Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki",
-    "translate-group-desc-collection": "Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki [http://www.mediawiki.org/wiki/Extension:Collection Kolekto]",
-    "translate-group-desc-flaggedrevs": "Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki [http://www.mediawiki.org/wiki/Extension:FlaggedRevs Reviziitaj versioj]",
-    "translate-group-desc-readerfeedback": "Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki [http://www.mediawiki.org/wiki/Extension:ReaderFeedback Reagoj de legantoj]",
-    "translate-group-desc-translate": "Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki [http://www.mediawiki.org/wiki/Extension:Translate Tradukado]",
+    "translate-group-desc-collection": "Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki [https://www.mediawiki.org/wiki/Extension:Collection Kolekto]",
+    "translate-group-desc-flaggedrevs": "Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki [https://www.mediawiki.org/wiki/Extension:FlaggedRevs Reviziitaj versioj]",
+    "translate-group-desc-readerfeedback": "Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki [https://www.mediawiki.org/wiki/Extension:ReaderFeedback Reagoj de legantoj]",
+    "translate-group-desc-translate": "Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj etendaĵoj por MediaWiki [https://www.mediawiki.org/wiki/Extension:Translate Tradukado]",
     "translate-group-desc-wikiaextensions": "Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj  MediaWiki-etendaĵoj uzitaj de [http://www.wikia.com Wikia]",
-    "translate-group-desc-wikimediaextensions": "Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj  MediaWiki-etendaĵoj uzitaj de [http://wikimedia.org/ Vikimedia Fondaĵo]",
-    "translate-group-desc-ui": "Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por etendaĵoj rilataj al [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Vikipedia Uzebleca Iniciato]",
+    "translate-group-desc-wikimediaextensions": "Meta-mesaĝogrupo enhavanta ĉiujn mesaĝojn por subtenitaj  MediaWiki-etendaĵoj uzitaj de [https://wikimediafoundation.org/ Vikimedia Fondaĵo]",
     "bw-desc-freecol": "Antaŭ tradukante FreeCol al via lingvo, bonvolu legi [[Translating:FreeCol]]. FreeCol uzas la Ĝeneralan Publikan Permesilon."
 }

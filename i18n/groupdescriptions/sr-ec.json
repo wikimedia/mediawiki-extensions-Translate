@@ -5,19 +5,18 @@
             "Rancher"
         ]
     },
-    "translategroupdescriptions-desc": "Описи група порука за пројекте који су подржани од стране проширења [http://mediawiki.org/wiki/Extension:Translate Translate]",
+    "translategroupdescriptions-desc": "Описи група порука за пројекте који су подржани од стране проширења [https://mediawiki.org/wiki/Extension:Translate Translate]",
     "translate-group-desc-nodesc": "Опис није доступан за ову групу порука",
     "translate-group-desc-mediawikicore": "Ова група садржи поруке које се користе у алфа издању [[Translating:MediaWiki|Медијавикија]] ({{CURRENTVERSION}})",
-    "translate-group-desc-mediawikimostused": "Ова група садржи [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki петсто најчешћих порука] на [[Translating:MediaWiki|Медијавикији]]",
+    "translate-group-desc-mediawikimostused": "Ова група садржи [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki петсто најчешћих порука] на [[Translating:MediaWiki|Медијавикији]]",
     "translate-group-desc-mediawikiextensions": "Мета група порука која садржи све поруке за подржана проширења [[Translating:MediaWiki|Медијавикија]]",
-    "translate-group-desc-collection": "Мета група порука која садржи све поруке проширења [http://www.mediawiki.org/wiki/Extension:Collection Collection]",
-    "translate-group-desc-flaggedrevs": "Мета група порука која садржи све поруке проширења [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
-    "translate-group-desc-readerfeedback": "Мета група порука која садржи све поруке проширења [http://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",
-    "translate-group-desc-translate": "Мета група порука која садржи све поруке проширења [http://www.mediawiki.org/wiki/Extension:Translate Translate]",
+    "translate-group-desc-collection": "Мета група порука која садржи све поруке проширења [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
+    "translate-group-desc-flaggedrevs": "Мета група порука која садржи све поруке проширења [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
+    "translate-group-desc-readerfeedback": "Мета група порука која садржи све поруке проширења [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",
+    "translate-group-desc-translate": "Мета група порука која садржи све поруке проширења [https://www.mediawiki.org/wiki/Extension:Translate Translate]",
     "translate-group-desc-wikiaextensions": "Мета група порука која садржи све поруке за подржана проширења које користи [http://www.wikia.com Викија]",
-    "translate-group-desc-wikimediaextensions": "Мета група порука која садржи све поруке за подржана проширења које користи [http://wikimedia.org/ Задужбина Викимедија]",
-    "translate-group-desc-wikimediaextensions-main": "Мета група порука која садржи све поруке подржаних проширења Медијавикија. Поруке је потребно превести за Викимедијин [http://meta.wikimedia.org/wiki/Language_committee језички одбор]",
-    "translate-group-desc-ui": "Мета група порука која садржи све поруке проширења везане за [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]",
+    "translate-group-desc-wikimediaextensions": "Мета група порука која садржи све поруке за подржана проширења које користи [https://wikimediafoundation.org/ Задужбина Викимедија]",
+    "translate-group-desc-wikimediaextensions-main": "Мета група порука која садржи све поруке подржаних проширења Медијавикија. Поруке је потребно превести за Викимедијин [https://meta.wikimedia.org/wiki/Language_committee језички одбор]",
     "translate-group-desc-translatablepages": "Све преводиве странице",
     "bw-desc-freecol": "[[Translating:FreeCol|Фрикол]] је стратешка игра",
     "bw-desc-fudforum": "[[Translating:FUDforum|FUD-форум]] је место за расправљање о различитим темама",
@@ -37,7 +36,5 @@
     "translate-group-desc-tsint": "Група порука за [http://toolserver.org/~krinkle/TsIntuition Тулсервер интуишон], преводилачки систем за алатке [http://toolserver.org Тулсервера] (\u003Cspan class=\"plainlinks\"\u003E[[Translating talk:Toolserver|подршка]] \u0026middot; [https://wiki.toolserver.org/view/Toolserver_Intuition технички детаљи]\u003C/span\u003E)",
     "bw-desc-wikiblame": "[[Translating:WikiBlame|Викиблејм]] за трен ока проналази ауторе неке странице на Викимедији",
     "bw-desc-wikireader": "[[Translating:WikiReader|Викиридер]] пружа текстуалну верзију Википедије којој се може приступити ван мреже, и то на мобилном уређају",
-    "translate-group-desc-wikimedia-mobile-wikipedia-ios": "[[Translating:WikipediaMobile|Википедија за iOS]] је верзија апликације Википедија за мобилни намењена систему iOS (ново из 2014. године); списак главних ниски",
-    "translate-group-desc-wikimedia-mobile-wikipedia-ios-meta": "[[Translating:WikipediaMobile|Википедија за iOS]] је верзија апликације Википедија за мобилни намењена систему iOS (ново из 2014. године); поткомпонента за метаподатке апликације",
-    "translate-group-desc-wikimedia-mobile-wikipedia-ios-ui": "[[Translating:WikipediaMobile|Википедија за iOS]] је верзија апликације Википедија за мобилни намењена систему iOS (ново из 2014. године); поткомпонента за корисничко окружење"
+    "translate-group-desc-wikimedia-mobile-wikipedia-ios": "[[Translating:WikipediaMobile|Википедија за iOS]] је верзија апликације Википедија за мобилни намењена систему iOS (ново из 2014. године); списак главних ниски"
 }

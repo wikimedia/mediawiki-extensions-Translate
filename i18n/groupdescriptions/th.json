@@ -5,11 +5,10 @@
         ]
     },
     "translate-group-desc-mediawikiextensions": "เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนที่เพิ่มเติมของมีเดียวิกิ",
-    "translate-group-desc-collection": "เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม[http://www.mediawiki.org/wiki/Extension:Collection แหล่งสะสม]ของมีเดียวิกิ",
-    "translate-group-desc-flaggedrevs": "เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม [http://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] ของมีเดียวิกิ",
-    "translate-group-desc-readerfeedback": "เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม[http://www.mediawiki.org/wiki/Extension:ReaderFeedback การตอบรับจากผู้อ่าน]ของมีเดียวิกิ",
-    "translate-group-desc-translate": "เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม[http://www.mediawiki.org/wiki/Extension:Translate การแปล]ของมีเดียวิกิ",
+    "translate-group-desc-collection": "เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม[https://www.mediawiki.org/wiki/Extension:Collection แหล่งสะสม]ของมีเดียวิกิ",
+    "translate-group-desc-flaggedrevs": "เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] ของมีเดียวิกิ",
+    "translate-group-desc-readerfeedback": "เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม[https://www.mediawiki.org/wiki/Extension:ReaderFeedback การตอบรับจากผู้อ่าน]ของมีเดียวิกิ",
+    "translate-group-desc-translate": "เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติม[https://www.mediawiki.org/wiki/Extension:Translate การแปล]ของมีเดียวิกิ",
     "translate-group-desc-wikiaextensions": "เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติมมีเดียวิกิที่ใช้บน [http://www.wikia.com Wikia]",
-    "translate-group-desc-wikimediaextensions": "เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติมมีเดียวิกิที่ใช้โดย [http://wikimedia.org/ มูลนิธิวิกิมีเดีย]",
-    "translate-group-desc-ui": "เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติมที่เกี่ยวข้องกับ [http://meta.wikimedia.org/wiki/Wikipedia_Usability_Initiative Wikipedia Usability Initiative]"
+    "translate-group-desc-wikimediaextensions": "เป็นกลุ่มที่นิยามกลุ่มของข้อความ ที่มีข้อความทั้งหมดสำหรับส่วนเพิ่มเติมมีเดียวิกิที่ใช้โดย [https://wikimediafoundation.org/ มูลนิธิวิกิมีเดีย]"
 }

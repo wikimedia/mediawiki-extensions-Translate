@@ -4,12 +4,12 @@
             "EileenSanda"
         ]
     },
-    "translategroupdescriptions-desc": "Bólkaboð frágreiðing viðvíkjandi vørum sum virka við [http://mediawiki.org/wiki/Extension:Translate Translate] víðkanini",
+    "translategroupdescriptions-desc": "Bólkaboð frágreiðing viðvíkjandi vørum sum virka við [https://mediawiki.org/wiki/Extension:Translate Translate] víðkanini",
     "translate-group-desc-nodesc": "Ongin frágreiðing er tøk fyri henda bólkin av boðum",
     "translate-group-desc-mediawikicore": "Hesin boðbólkur inniheldur boðini ið verða nýtt í verandi alfa versjón av [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})",
-    "translate-group-desc-mediawikimostused": "Hesin boðbólkur inniheldur [http://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 oftast brúktu boð] í [[Translating:MediaWiki|MediaWiki]]",
+    "translate-group-desc-mediawikimostused": "Hesin boðbólkur inniheldur [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 oftast brúktu boð] í [[Translating:MediaWiki|MediaWiki]]",
     "translate-group-desc-mediawikiextensions": "Meta boðbólkur sum inniheldur øll boð til stuðlaðar víðkanir til [[Translating:MediaWiki|MediaWiki]]",
-    "translate-group-desc-collection": "Meta boðbólkur sum inniheldur øll boð viðvíkjandi MediaWiki víðkanini [http://www.mediawiki.org/wiki/Extension:Collection Collection]",
+    "translate-group-desc-collection": "Meta boðbólkur sum inniheldur øll boð viðvíkjandi MediaWiki víðkanini [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
     "translate-group-desc-translatablepages": "Allar síður ið kunnu týðast",
     "bw-desc-fudforum": "[[Translating:FUDforum|FUDforum]] er ein net-baseraður ritbúnaður til kjakforum",
     "translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]] er eitt tól at leggja út fílur til Wikimedia Commons og onnur Wikimedia verkætlanir",

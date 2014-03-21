@@ -210,5 +210,5 @@
     "tux-editor-save-button-label": "Tərcüməni saxla",
     "tux-editor-skip-button-label": "Sonrakına keç",
     "tux-editor-confirm-button-label": "Tərcüməni təsdiq edin",
-    "tux-editor-shortcut-info": "\"$1\" seçərək saxla ya da \"$2\" seçərək növbəti mesaja keç"
+    "tux-editor-shortcut-info": "Yaddaşda saxlamaq üçün \"$1\", növbəti mesaja keçmək üçün \"$2\", digər qısayolları açmaq üçün \"$3\" düyməsini basın."
 }
