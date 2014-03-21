@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee14bf34_ec3efc25",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-21T18:58:27Z",
+      "side": 1,
+      "message": "I would leave these out altogether. People can use the pipe syntax to provide these via named params.",
+      "revId": "aaa3d6788f6ddb9fe9151a891273c91f029b11ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_4c7e08e3",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-21T18:58:27Z",
+      "side": 1,
+      "message": "Why are you checking this here?",
+      "revId": "aaa3d6788f6ddb9fe9151a891273c91f029b11ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_2c6ab412",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-21T18:58:27Z",
+      "side": 1,
+      "message": "!\u003d\u003d",
+      "revId": "aaa3d6788f6ddb9fe9151a891273c91f029b11ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_ec639c39",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-21T18:58:27Z",
+      "side": 1,
+      "message": "What is single page?",
+      "revId": "aaa3d6788f6ddb9fe9151a891273c91f029b11ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_8c52e068",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-21T18:58:27Z",
+      "side": 1,
+      "message": "What is agg-? There is no guarantees that the message group ids follow any pattern.",
+      "revId": "aaa3d6788f6ddb9fe9151a891273c91f029b11ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_4cc4c811",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-21T18:58:27Z",
+      "side": 1,
+      "message": "for the aggregate",
+      "revId": "aaa3d6788f6ddb9fe9151a891273c91f029b11ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_0cced031",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-21T18:58:27Z",
+      "side": 1,
+      "message": "Now I already forgot what was the if block.",
+      "revId": "aaa3d6788f6ddb9fe9151a891273c91f029b11ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_ccd7b8c3",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-21T18:58:27Z",
+      "side": 1,
+      "message": "Why not } elseif { ...",
+      "revId": "aaa3d6788f6ddb9fe9151a891273c91f029b11ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_6cde6ce0",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-21T18:58:27Z",
+      "side": 1,
+      "message": "double space",
+      "revId": "aaa3d6788f6ddb9fe9151a891273c91f029b11ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_ece95c7c",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-21T18:58:27Z",
+      "side": 1,
+      "message": "There are many Language::is*Language methods. One of those should be usable here.",
+      "revId": "aaa3d6788f6ddb9fe9151a891273c91f029b11ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_acfb6443",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-21T18:58:27Z",
+      "side": 1,
+      "message": "Missing i18n is not ok, but I would just ignore invalid language codes anyway.",
+      "revId": "aaa3d6788f6ddb9fe9151a891273c91f029b11ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_4cb96877",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-21T18:58:27Z",
+      "side": 1,
+      "message": "Why not just unset( $languages[$index] ); you need to add the index to the foreach. Or just $langauges \u003d array_filter( $languages, \u0027Language::is*Language\u0027 );",
+      "revId": "aaa3d6788f6ddb9fe9151a891273c91f029b11ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
