@@ -1,3 +1,4 @@
+@firefox @meta.wikimedia.org
 Feature: Special:Translate
 
   This page is the primary web translation interface for users.
@@ -7,17 +8,17 @@ Feature: Special:Translate
   https://commons.wikimedia.org/wiki/File:Translate-workflow-spec.pdf?page=10
   describes how it is meant to look and behave.
 
-  @meta.wikimedia.org @sandbox.translatewiki.net
+  @sandbox.translatewiki.net
   Scenario: Workflow selector not being visible
     Given I am translating a message group which doesn't have workflow states
     Then I should not see a workflow state
 
-  @custom-setup-needed @meta.wikimedia.org
+  @custom-setup-needed
   Scenario: Workflow selector being visible
     Given I am translating a message group which has workflow states
     Then I should see a workflow state
 
-  @custom-setup-needed @meta.wikimedia.org
+  @custom-setup-needed
   Scenario: Workflow selector being clickable
     Given I am translating a message group which has workflow states
     When I click the workflow state

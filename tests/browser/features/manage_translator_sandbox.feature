@@ -1,4 +1,4 @@
-@login @sandbox.translatewiki.net
+@firefox @login @sandbox.translatewiki.net
 Feature: Manage translator sandbox
 
   As a translation administrator,
