@@ -8,15 +8,15 @@
             "Arent"
         ]
     },
-    "translategroupdescriptions-desc": "Beschrijvingen voor berichtengroepen die ondersteund worden door de uitbreiding [https://mediawiki.org/wiki/Extension:Translate Translate]",
+    "translategroupdescriptions-desc": "Beschrijvingen voor berichtengroepen die ondersteund worden door de uitbreiding [https://www.mediawiki.org/wiki/Extension:Translate Translate]",
     "translate-group-desc-nodesc": "Er is geen beschrijving beschikbaar voor deze berichtengroep",
     "translate-group-desc-mediawikicore": "Deze berichtengroep bevat de berichten die in de huidige alpha-versie van [[Translating:MediaWiki|MediaWiki]] gebruikt worden - {{CURRENTVERSION}}",
-    "translate-group-desc-mediawikimostused": "Deze berichtengroep bevat de [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 meest gebruikte berichten] in MediaWiki",
+    "translate-group-desc-mediawikimostused": "Deze berichtengroep bevat de [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 meest gebruikte berichten] in [[Translating:MediaWiki|MediaWiki]]",
     "translate-group-desc-mediawikiextensions": "Metaberichtengroep die alle berichten bevat voor ondersteunde extensies voor MediaWiki",
     "translate-group-desc-collection": "Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
     "translate-group-desc-flaggedrevs": "Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
     "translate-group-desc-readerfeedback": "Metaberichtengroep met alle berichten voor de MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",
-    "translate-group-desc-semantic": "Metaberichtengroep die alle berichten bevat voor [http://https://semantic-mediawiki.org/ Semantische MediaWiki]-extensies",
+    "translate-group-desc-semantic": "Metaberichtengroep die alle berichten bevat voor uitbreidingen voor [https://semantic-mediawiki.org/ Semantische MediaWiki]",
     "translate-group-desc-translate": "Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:Translate Translate]; stel uzelf op de hoogte van de [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary woordenlijst]",
     "translate-group-desc-universallanguageselector": "Metaberichtengroup die alle berichten bevat voor de uitbreiding [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector UniversalLanguageSelector] (ULS) en gerelateerde softwarepakketten.",
     "translate-group-desc-visualeditor": "Metaberichtengroup die alle berichten bevat voor de uitbreiding [https://www.mediawiki.org/wiki/Extension:VisualEditor VisualEditor] en gerelateerde softwarepakketten.",
