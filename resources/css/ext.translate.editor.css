@@ -406,7 +406,7 @@
 	overflow: hidden;
 	font-size: 13px;
 	text-align: center;
-	border: gray 1px dashed;
+	border: 1px dashed gray;
 	border-radius: 100%;
 	z-index: 110;
 	background-color: white;
