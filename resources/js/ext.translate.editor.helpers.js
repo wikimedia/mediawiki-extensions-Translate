@@ -66,15 +66,14 @@
 				var $messageDesc = translateEditor.$editor.find( '.infocolumn-block .message-desc' );
 
 				if ( response.edit.result === 'Success' ) {
-					api.parse( newDocumentation,
-						function ( parsedDocumentation ) {
-							$messageDesc.html( parsedDocumentation );
-						},
-						function ( errorCode, results ) {
-							$messageDesc.html( newDocumentation );
-							mw.log( 'Error parsing documentation ' + errorCode + ' ' + results.error.info );
-						}
-					);
+					api.parse(
+						newDocumentation
+					).done( function ( parsedDocumentation ) {
+						$messageDesc.html( parsedDocumentation );
+					} ).fail( function ( errorCode, results ) {
+						$messageDesc.html( newDocumentation );
+						mw.log( 'Error parsing documentation ' + errorCode + ' ' + results.error.info );
+					} );
 					// A collapsible element may have been added
 					$( '.mw-identical-title' ).makeCollapsible();
 
