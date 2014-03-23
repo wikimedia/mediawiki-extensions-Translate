@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee14bf34_a405b4c6",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-23T11:16:37Z",
+      "side": 1,
+      "message": "Please add space before (",
+      "revId": "d4d53070ae97f3f1d0621d7bf5242e3b55cb56f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_840cf0f1",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-23T11:16:37Z",
+      "side": 1,
+      "message": "and here too",
+      "revId": "d4d53070ae97f3f1d0621d7bf5242e3b55cb56f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
