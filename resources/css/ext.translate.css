@@ -5,7 +5,7 @@
 }
 
 .mw-pt-languages {
-    display: table;
+	display: table;
 	border: 1px solid rgb(170, 170, 170);
 	background: rgb(246, 249, 237) none repeat scroll 0 0;
 	border-collapse: collapse;
