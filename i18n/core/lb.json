@@ -379,5 +379,6 @@
     "translate-search-more-languages-info": "{{PLURAL:$1|Eng Sprooch|$1 Sprooche}} méi",
     "translate-statsbar-tooltip": "$1% iwwersat, $2% nogekuckt",
     "translate-statsbar-tooltip-with-fuzzy": "$1% iwwersat, $2% nogekuckt, $3% vereelzt",
-    "translate-search-more-groups-info": "$1 weider {{PLURAL:$1|Grupp|Gruppen}}"
+    "translate-search-more-groups-info": "$1 weider {{PLURAL:$1|Grupp|Gruppen}}",
+    "translate-ulsdep-title": "Astellungsfeeler"
 }
