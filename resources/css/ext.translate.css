@@ -4,25 +4,28 @@
 	direction: ltr;
 }
 
-.mw-pt-languages table {
-	direction: ltr;
+.mw-pt-languages {
 	border: 1px solid rgb(170, 170, 170);
 	background: rgb(246, 249, 237) none repeat scroll 0 0;
 	border-collapse: collapse;
-	line-height: 1.2;
+	line-height: 1.5;
 	width: 100%;
 	clear: both;
+	overflow: auto;
 }
 
 .mw-pt-languages-label {
+	float: left;
 	border-right: 1px solid rgb(170, 170, 170);
 	padding: 0.5em;
 	background: rgb(238, 243, 226) none repeat scroll 0 0;
-	width: 200px;
 	font-weight: bold;
+	width: 15%;
 }
 
 .mw-pt-languages-list {
+	width: 80%;
+	float: left;
 	padding: 0.5em;
 }
 
