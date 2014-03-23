@@ -320,20 +320,13 @@ class PageTranslationHooks {
 			'lang' => $userLangCode,
 			'dir' => $userLangDir
 		) );
-		$out .= Html::openElement( 'table' );
-		$out .= Html::openElement( 'tbody' );
-		$out .= Html::openElement( 'tr', array( 'valign' => 'top' ) );
-		$out .= Html::rawElement( 'td',
-			array( 'class' => 'mw-pt-languages-label' ),
+		$out .= Html::rawElement( 'div', array( 'class' => 'mw-pt-languages-label' ),
 			wfMessage( 'tpt-languages-legend' )->escaped()
 		);
-		$out .= Html::rawElement( 'td',
+		$out .= Html::rawElement( 'div',
 			array( 'class' => 'mw-pt-languages-list autonym' ),
 			$languages
 		);
-		$out .= Html::closeElement( 'tr' );
-		$out .= Html::closeElement( 'tbody' );
-		$out .= Html::closeElement( 'table' );
 		$out .= Html::closeElement( 'div' );
 
 		return $out;
