@@ -8,13 +8,14 @@
             "Per",
             "Poxnar",
             "Skalman",
-            "WikiPhoenix"
+            "WikiPhoenix",
+            "Jopparn"
         ]
     },
     "translategroupdescriptions-desc": "Meddelandegruppsbeskrivningar för produkter som stöds av [https://mediawiki.org/wiki/Extension:Translate Translate]-tillägget",
     "translate-group-desc-nodesc": "Det finns ingen beskrivning av denna meddelandegrupp",
     "translate-group-desc-mediawikicore": "Den här gruppen av meddelanden innehåller de meddelanden som används i den nuvarande alfaversionen av [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})",
-    "translate-group-desc-mediawikimostused": "Den här gruppen av meddelanden innehåller de [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mest använda meddelanden] i MediaWiki",
+    "translate-group-desc-mediawikimostused": "Den här gruppen av meddelanden innehåller de [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mest använda meddelandena] i [[Translating:MediaWiki|MediaWiki]]",
     "translate-group-desc-mediawikiextensions": "Metagrupp som innehåller alla meddelanden för tillägg som stöds av [[Translating:MediaWiki|MediaWiki]]",
     "translate-group-desc-collection": "Metagrupp med alla meddelanden för MediaWiki-tillägget [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
     "translate-group-desc-flaggedrevs": "Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",

@@ -6,7 +6,7 @@
     },
     "translate-group-desc-nodesc": "I a pas descripcion disponibla per aqueste grop de messatge",
     "translate-group-desc-mediawikicore": "Aqueste grop de messatges conten los messatges utilizats dins la version alfa actuala de MediaWiki ({{CURRENTVERSION}})",
-    "translate-group-desc-mediawikimostused": "Aqueste grop de messatges conten los [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messatges utilizats lo mai sovent] dins MediaWiki",
+    "translate-group-desc-mediawikimostused": "Aqueste grop de messatges conten los [//translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messatges utilizats los mai sovent] dins [[Translating:MediaWiki|MediaWiki]].",
     "translate-group-desc-mediawikiextensions": "Grop dels messatges que contenon totes los messatges de las extensions suportadas per MediaWiki",
     "translate-group-desc-collection": "Grop de messatges Meta que contenon totes los messages de l’extension MediaWiki [https://www.mediawiki.org/wiki/Extension:Collection Colleccion]",
     "translate-group-desc-flaggedrevs": "Grop dels messatges Meta que conten totes los messatges de l’extension MediaWiki [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",

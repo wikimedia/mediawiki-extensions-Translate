@@ -8,7 +8,7 @@
     "translategroupdescriptions-desc": "Opisi skupin sporočil izdelkov, ki jih podpira razširitev [https://mediawiki.org/wiki/Extension:Translate Translate] extension",
     "translate-group-desc-nodesc": "Za to skupino sporočil opis ni na razpolago",
     "translate-group-desc-mediawikicore": "Ta skupina sporočil zajema sporočila, uporabljena v trenutni alfarazličici MediaWiki ({{CURRENTVERSION}})",
-    "translate-group-desc-mediawikimostused": "Ta skupina sporočil vsebuje [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najbolj uporabljanih sporočil] v MediaWiki",
+    "translate-group-desc-mediawikimostused": "Ta skupina sporočil vsebuje [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najbolj uporabljanih sporočil] v [[Translating:MediaWiki|MediaWiki]]",
     "translate-group-desc-mediawikiextensions": "Krovna skupina sporočil, ki vsebuje vsa sporočila podprtih razširitev MediaWiki",
     "translate-group-desc-collection": "Krovna skupina sporočil, ki vsebuje vsa sporočila razširitve MediaWiki [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
     "translate-group-desc-flaggedrevs": "Krovna skupina sporočil, ki vsebuje vsa sporočila razširitve MediaWiki [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
