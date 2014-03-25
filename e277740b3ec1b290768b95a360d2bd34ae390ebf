@@ -33,6 +33,24 @@
       "revId": "e277740b3ec1b290768b95a360d2bd34ae390ebf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_f9922aff",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1407
+      },
+      "writtenOn": "2014-03-25T07:35:13Z",
+      "side": 1,
+      "message": "The language list is used only for Special:MessageGroupStats and the list of languages is checked there.\nThe group list is used in Special:LanguageStats only and the list of groups is checked in Line 453.",
+      "parentUuid": "ee14bf34_99d1eed2",
+      "revId": "e277740b3ec1b290768b95a360d2bd34ae390ebf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
