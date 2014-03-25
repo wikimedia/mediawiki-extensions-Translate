@@ -268,7 +268,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		unset( $this->tags['fuzzy'] );
 		$this->reverseMap = null;
-		$this->getReverseMap();
 	}
 
 	/**
@@ -676,10 +675,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$fields = array( 'page_namespace', 'page_title', 'trr_user' );
 		$conds = $this->getTitleConds( $dbr );
 		$joins = array( 'translate_reviews' =>
-		array(
-			'JOIN',
-			array( 'page_id=trr_page', 'page_latest=trr_revision' )
-		)
+			array(
+				'JOIN',
+				array( 'page_id=trr_page', 'page_latest=trr_revision' )
+			)
 		);
 
 		$this->dbReviewData = $dbr->select( $tables, $fields, $conds, __METHOD__, array(), $joins );

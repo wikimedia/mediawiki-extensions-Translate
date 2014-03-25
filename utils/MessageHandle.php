@@ -47,7 +47,7 @@ class MessageHandle {
 			$title = $this->getTitle();
 			// Check if this is a valid message first
 			$this->key = $title->getDBKey();
-			$known = count( MessageIndex::singleton()->getGroupIds( $this ) );
+			$known = MessageIndex::singleton()->getGroupIds( $this ) !== array();
 
 			$pos = strrpos( $this->key, '/' );
 			if ( $known || $pos === false ) {

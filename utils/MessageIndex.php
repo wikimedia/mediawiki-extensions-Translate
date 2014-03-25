@@ -471,14 +471,12 @@ class CDBMessageIndex extends MessageIndex {
 			}
 		}
 
-		wfProfileIn( __METHOD__ );
 		$value = $reader->get( $key );
 		if ( !is_string( $value ) ) {
 			$value = null;
 		} else {
 			$value = $this->unserialize( $value );
 		}
-		wfProfileOut( __METHOD__ );
 
 		return $value;
 	}
