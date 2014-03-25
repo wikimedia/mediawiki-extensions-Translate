@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee14bf34_194efec4",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-03-25T07:20:49Z",
+      "side": 1,
+      "message": "Typo: languages",
+      "revId": "e277740b3ec1b290768b95a360d2bd34ae390ebf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee14bf34_99d1eed2",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-03-25T07:20:49Z",
+      "side": 1,
+      "message": "Should the input be sanitised and filtered for supported language codes before storing it in this class variable? Same for below.",
+      "revId": "e277740b3ec1b290768b95a360d2bd34ae390ebf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
