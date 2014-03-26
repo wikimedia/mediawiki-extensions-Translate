@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae0e4726_37fa3874",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-26T13:20:07Z",
+      "side": 1,
+      "message": "Sorry, that last issue was for the completion suggester so it wouldn\u0027t apply here.\n\nLooks like what does is this:\n  http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-multi-term-rewrite.html\n\nI think what you want is $fuzzyQuery-\u003esetFieldOptions( \u0027content\u0027, array( \u0027rewrite\u0027 \u003d\u003e \u0027top_terms_1000\u0027 ) );\nThe \"1000\" here limits the matching to only the top scoring 1000 fuzzy matches which _should_ be ok and will make sure to keep it from blowing up trying to score too many matches.",
+      "parentUuid": "ae0e4726_7728b032",
+      "revId": "3b86cceb4eb883531aecbeb42f082cc476400a88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae0e4726_17105403",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 2
