@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ae0e4726_d7d3fcd5",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-26T13:45:25Z",
+      "side": 1,
+      "message": "Hmm. I wonder if at this point I should leave this as-is, to provide a baseline and implement your ideas in second patch. Would that be okay?",
+      "parentUuid": "ae0e4726_37fa3874",
+      "revId": "3b86cceb4eb883531aecbeb42f082cc476400a88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae0e4726_17105403",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 2
@@ -54,6 +72,24 @@
         "endLine": 352,
         "endChar": 9
       },
+      "revId": "3b86cceb4eb883531aecbeb42f082cc476400a88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae0e4726_f7d600c8",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-26T13:45:25Z",
+      "side": 1,
+      "message": "Not timeouts but some other random exceptions occasionally.",
+      "parentUuid": "ae0e4726_17105403",
       "revId": "3b86cceb4eb883531aecbeb42f082cc476400a88",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
