@@ -8,6 +8,6 @@
         ]
     },
     "translate-page-description-hasoptional": "Diese Nachrichtengruppe enthält optionale Nachrichten.\nOptionale Nachrichten sollten nur dann übersetzt werden, sofern es in deiner Sprache Bedarf für sie gibt,\nwie beispielsweise die Nichtverwendung von Leerschlägen oder die Transkription von Eigennamen. $1",
-    "translate-edit-no-information": "''Diese Systemnachricht hat noch keine Dokumentation. Wenn du weisst, wo und in welchem Zusammenhang sie benutzt wird, kannst du anderen Übersetzern helfen, indem du eine Dokumentation hinzufügst.''",
-    "translate-messagereview-reviewswithyou": "Akzeptiert von {{PLURAL:$1|dir selbst|$1 Benutzern, einschliesslich dir selbst}}"
+    "translate-edit-no-information": "\u003Cem\u003EZu dieser Nachricht ist keine Dokumentation vorhanden.\nSofern du weisst, wo und in welchem Zusammenhang sie genutzt wird, kannst du anderen Übersetzern bei ihrer Arbeit helfen, indem du eine Dokumentation hinzufügst.\u003C/em\u003E",
+    "translate-messagereview-reviewswithyou": "Überprüft von {{PLURAL:$1|dir selbst|$1 Benutzern, einschliesslich dir selbst}}"
 }
