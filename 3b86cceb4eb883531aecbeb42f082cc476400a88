@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae0e4726_7728b032",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-26T13:01:15Z",
+      "side": 1,
+      "message": "I wonder if this is https://github.com/elasticsearch/elasticsearch/issues/4441 .  I also wonder how this worked in Solr if, as the issue says, this would require some Lucene work.",
+      "revId": "3b86cceb4eb883531aecbeb42f082cc476400a88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae0e4726_17105403",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-26T13:01:15Z",
+      "side": 1,
+      "message": "Uhg.  Is this still getting OperationTimedOut problems?",
+      "range": {
+        "startLine": 352,
+        "startChar": 5,
+        "endLine": 352,
+        "endChar": 9
+      },
+      "revId": "3b86cceb4eb883531aecbeb42f082cc476400a88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
