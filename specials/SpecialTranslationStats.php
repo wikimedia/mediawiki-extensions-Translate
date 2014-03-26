@@ -635,7 +635,7 @@ class SpecialTranslationStats extends TranslateSpecialPage {
 		$yTick = min( $max, $yTick );
 		$yTick = self::roundToSignificant( $yTick );
 		$plot->SetYTickIncrement( $yTick );
-		$plot->SetPlotAreaWorld( null, 0, null, $max );
+		$plot->SetPlotAreaWorld( null, 0, null, max( $max, 10 ) );
 
 		$plot->SetTransparentColor( 'white' );
 		$plot->SetBackgroundColor( 'white' );
