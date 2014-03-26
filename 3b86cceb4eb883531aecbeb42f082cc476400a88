@@ -164,6 +164,24 @@
       "revId": "3b86cceb4eb883531aecbeb42f082cc476400a88",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae0e4726_3a057d14",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-26T14:00:34Z",
+      "side": 1,
+      "message": "Yeah, that\u0027s caused by mangled data being sent to Elasticsearch.  I see one error where the first line of the HTTP method is mangles and instead of being \n\"POST /path HTTP/1.1\" its just a bunch of text.  No real clue why.  I _think_ php curl uses temporary files somewhere which might be causing trouble.",
+      "parentUuid": "ae0e4726_7791d0fa",
+      "revId": "3b86cceb4eb883531aecbeb42f082cc476400a88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
