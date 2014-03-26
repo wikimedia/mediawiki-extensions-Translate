@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ae0e4726_77eaf074",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-26T13:47:10Z",
+      "side": 1,
+      "message": "Sure!",
+      "parentUuid": "ae0e4726_d7d3fcd5",
+      "revId": "3b86cceb4eb883531aecbeb42f082cc476400a88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae0e4726_17105403",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 2
@@ -90,6 +108,24 @@
       "side": 1,
       "message": "Not timeouts but some other random exceptions occasionally.",
       "parentUuid": "ae0e4726_17105403",
+      "revId": "3b86cceb4eb883531aecbeb42f082cc476400a88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae0e4726_57efec82",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-03-26T13:47:10Z",
+      "side": 1,
+      "message": "Sadness.  Can you capture any of their stack traces?  Elasticsearch may log the whole stack trace to its log file.",
+      "parentUuid": "ae0e4726_f7d600c8",
       "revId": "3b86cceb4eb883531aecbeb42f082cc476400a88",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
