@@ -129,6 +129,24 @@
       "revId": "3b86cceb4eb883531aecbeb42f082cc476400a88",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae0e4726_7791d0fa",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-26T13:53:16Z",
+      "side": 1,
+      "message": "I\u0027ve placed ES log here https://translatewiki.net/static/temp/elasticsearch.log.2014-03-25\n\nThis looks similar to the issue I have with solr, that somehow the request content gets mangled randomly, especially when there are concurrent connections. I spent some hours digging into this yesterday (and before), but I haven\u0027t found the cause yet.",
+      "parentUuid": "ae0e4726_57efec82",
+      "revId": "3b86cceb4eb883531aecbeb42f082cc476400a88",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
