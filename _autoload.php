@@ -165,6 +165,7 @@ $wgAutoloadClasses['ReadableTTMServer'] = "$dir/ttmserver/Interfaces.php";
 $wgAutoloadClasses['WritableTTMServer'] = "$dir/ttmserver/Interfaces.php";
 
 $wgAutoloadClasses['DatabaseTTMServer'] = "$dir/ttmserver/DatabaseTTMServer.php";
+$wgAutoloadClasses['ElasticSearchTTMServer'] = "$dir/ttmserver/ElasticSearchTTMServer.php";
 $wgAutoloadClasses['FakeTTMServer'] = "$dir/ttmserver/FakeTTMServer.php";
 $wgAutoloadClasses['RemoteTTMServer'] = "$dir/ttmserver/RemoteTTMServer.php";
 $wgAutoloadClasses['SolrTTMServer'] = "$dir/ttmserver/SolrTTMServer.php";
