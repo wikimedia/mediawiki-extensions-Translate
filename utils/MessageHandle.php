@@ -47,7 +47,7 @@ class MessageHandle {
 			$title = $this->getTitle();
 			// Check if this is a valid message first
 			$this->key = $title->getDBKey();
-			$known = count( MessageIndex::singleton()->getGroupIds( $this ) );
+			$known = MessageIndex::singleton()->getGroupIds( $this ) !== array();
 
 			$pos = strrpos( $this->key, '/' );
 			if ( $known || $pos === false ) {
@@ -183,6 +183,31 @@ class MessageHandle {
 	 */
 	public function getTitle() {
 		return $this->title;
+	}
+
+	/**
+	 * Get the original title.
+	 * @param string $code Language code.
+	 * @return Title
+	 * @since 2014.04
+	 */
+	public function getTitleForLanguage( $code ) {
+		return Title::makeTitle(
+			$this->title->getNamespace(),
+			$this->getKey() . "/$code"
+		);
+	}
+
+	/**
+	 * Get the title for the page base.
+	 * @return Title
+	 * @since 2014.04
+	 */
+	public function getTitleForBase() {
+		return Title::makeTitle(
+			$this->title->getNamespace(),
+			$this->getKey()
+		);
 	}
 
 	/**
