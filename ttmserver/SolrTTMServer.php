@@ -22,8 +22,11 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 	const COMMIT_WITHIN = 5000;
 
 	protected $client;
-	protected $updates;
-	protected $revIds;
+
+	/**
+	 * Reference to the maintenance script to relay logging output.
+	 */
+	protected $logger;
 
 	public function __construct( $config ) {
 		wfProfileIn( __METHOD__ );
@@ -274,20 +277,14 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		$this->client->update( $update );
 	}
 
-	public function beginBatch() {
-		$this->revIds = array();
-	}
+	public function beginBatch() {}
 
 	public function batchInsertDefinitions( array $batch ) {
 		$lb = new LinkBatch();
 		foreach ( $batch as $data ) {
-			$lb->addObj( $data[0] );
+			$lb->addObj( $data[0]->getTitle() );
 		}
 		$lb->execute();
-
-		foreach ( $batch as $key => $data ) {
-			$this->revIds[$key] = $data[0]->getLatestRevID();
-		}
 
 		$this->batchInsertTranslations( $batch );
 	}
@@ -295,13 +292,30 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 	public function batchInsertTranslations( array $batch ) {
 		$update = $this->client->createUpdate();
 		foreach ( $batch as $key => $data ) {
-			list( $title, , $text ) = $data;
-			$handle = new MessageHandle( $title );
-			$doc = $this->createDocument( $handle, $text, $this->revIds[$key] );
+			list( $handle, $sourceLanguage, $text ) = $data;
+			$revId = $handle->getTitleForLanguage( $sourceLanguage )->getLatestRevID();
+			$doc = $this->createDocument( $handle, $text, $id );
 			// Add document and commit within X seconds.
 			$update->addDocument( $doc, null, self::COMMIT_WITHIN );
 		}
-		$this->client->update( $update );
+
+		$retries = 5;
+
+		while ( $retries-- > 0 ) {
+			try {
+				$this->client->update( $update );
+				break;
+			} catch ( Solarium_Client_HttpException $e ) {
+				if ( $retries === 0 ) {
+					throw $e;
+				} else {
+					$c = get_class( $e );
+					$msg = $e->getMessage();
+					$this->logOutput( "Batch failed ($c: $msg), trying again in 10 seconds" );
+					sleep( 10 );
+				}
+			}
+		}
 	}
 
 	public function endBatch() {
@@ -318,5 +332,16 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 
 	public function getSolarium() {
 		return $this->client;
+	}
+
+	public function setLogger( $logger ) {
+		$this->logger = $logger;
+	}
+
+	// Can it get any uglier?
+	protected function logOutput( $text ) {
+		if ( $this->logger ) {
+			$this->logger->statusLine( "$text\n" );
+		}
 	}
 }
