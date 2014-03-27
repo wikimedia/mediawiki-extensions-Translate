@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae0e4726_a549656c",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-03-27T19:39:17Z",
+      "side": 1,
+      "message": "I would replace this with just\n$languages \u003d array_filter( $languages, \u0027Language::isKnownLanguageTag\u0027 );\nand silently ignore the invalid language codes.",
+      "revId": "df04d26d3f1a6e8a60f0a13b02b426eedfe1fcdf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
