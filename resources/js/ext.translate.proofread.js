@@ -302,6 +302,10 @@
 					'change',
 					[ 'proofread', proofread.message.properties.status ]
 				);
+
+				if ( mw.track ) {
+					mw.track( 'ext.translate.event.proofread', proofread.message );
+				}
 			}, function () {
 				mw.log( 'Error while submitting the message for proofread.' );
 			} );

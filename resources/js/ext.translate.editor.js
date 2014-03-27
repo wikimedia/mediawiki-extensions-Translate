@@ -223,6 +223,10 @@
 
 			mw.translate.dirty = false;
 			mw.translateHooks.run( 'afterSubmit', this.$editor );
+
+			if ( mw.track ) {
+				mw.track( 'ext.translate.event.translation', this.message );
+			}
 		},
 
 		/**
