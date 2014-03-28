@@ -5,13 +5,14 @@
             "Hamilton Abreu",
             "Helder.wiki",
             "555",
-            "Amgauna"
+            "Amgauna",
+            "Cainamarques"
         ]
     },
     "translategroupdescriptions-desc": "Descrições dos grupos de mensagens dos produtos suportados pela extensão [https://mediawiki.org/wiki/Extension:Translate Translate]",
     "translate-group-desc-nodesc": "Não existe descrição para este grupo de mensagens",
     "translate-group-desc-mediawikicore": "Este grupo de mensagens contém as mensagens utilizadas na atual versão alfa do MediaWiki ({{CURRENTVERSION}})",
-    "translate-group-desc-mediawikimostused": "Este grupo de mensagens contém as [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mensagens utilizadas com mais frequência] no MediaWiki",
+    "translate-group-desc-mediawikimostused": "Este grupo de mensagens contém as [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mensagens utilizadas com mais frequência] no [[Translating:MediaWiki|MediaWiki]]",
     "translate-group-desc-mediawikiextensions": "Meta-grupo de mensagens contendo todas as mensagens para extensões do MediaWiki suportadas",
     "translate-group-desc-collection": "Mensagens-Meta-grupo contém todas as mensagens para a extensão MediaWiki [https://www.mediawiki.org/wiki/Extension:Collection Coleção]",
     "translate-group-desc-flaggedrevs": "Mensagens-Meta-grupo contém todas as mensagens para a extensão MediaWiki [https://www.mediawiki.org/wiki/Extension:FlaggedRevs Edições Analisadas]",

@@ -40,5 +40,5 @@
     "tsb-create-user-page": "Eng einfach Benotzersäit uleeën",
     "log-name-translatorsandbox": "Iwwersetzungs-Sandkëscht",
     "logentry-translatorsandbox-rejected": "$1 huet d'Ufro vum \"$3\" fir {{GENDER:$2|Iwwersetzesch|Iwwersetzer}} ze ginn refuséiert",
-    "logentry-newusers-tsbpromoted": "De Benotzerkont $3 gouf {{{{GENDER:$2|ugeluecht}} duerch d'Promotioun aus der Sandkëscht"
+    "logentry-newusers-tsbpromoted": "De Benotzerkont $3 gouf {{GENDER:$2|ugeluecht}} duerch d'Promotioun aus der Sandkëscht"
 }
