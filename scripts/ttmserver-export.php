@@ -43,7 +43,7 @@ class TTMServerBootstrap extends Maintenance {
 		$this->start = microtime( true );
 	}
 
-	protected function statusLine( $text, $channel = null ) {
+	public function statusLine( $text, $channel = null ) {
 		$pid = sprintf( "%5s", getmypid() );
 		$prefix = sprintf( "%6.2f", microtime( true ) - $this->start );
 		$mem = sprintf( "%5.1fM", ( memory_get_usage( true ) / ( 1024 * 1024 ) ) );
@@ -51,6 +51,9 @@ class TTMServerBootstrap extends Maintenance {
 	}
 
 	public function execute() {
+		// Profiling can take lot of memory
+		Profiler::setInstance( new ProfilerStub( array() ) );
+
 		global $wgTranslateTranslationServices;
 
 		// TTMServer is the id of the enabled-by-default instance
@@ -59,44 +62,47 @@ class TTMServerBootstrap extends Maintenance {
 			$this->error( "Translation memory is not configured properly", 1 );
 		}
 
-		$this->config = $config = $wgTranslateTranslationServices[$configKey];
-		$server = TTMServer::factory( $config );
+		$config = $wgTranslateTranslationServices[$configKey];
 
-		$this->statusLine( "Loading groups...\n" );
-		$groups = MessageGroups::singleton()->getGroups();
+		// Do as little as possible in the main thread, to not clobber forked processes.
+		// See also #resetStateForFork.
+		$pid = pcntl_fork();
+		if ( $pid === 0 ) {
+			$this->resetStateForFork();
+			$this->beginBootStrap( $config );
+			exit();
+		} elseif ( $pid === -1 ) {
+			// Fork failed do it serialized
+			$this->beginBootStrap( $config );
+		} else {
+			// Main thread
+			$this->statusLine( "Forked thread $pid to handle bootstrapping\n" );
+			$status = 0;
+			pcntl_waitpid( $pid, $status );
+		}
 
 		$threads = $this->getOption( 'threads', 1 );
 		$pids = array();
 
-		$this->statusLine( "Cleaning up old entries...\n" );
-		$server->beginBootstrap();
-
+		$groups = MessageGroups::singleton()->getGroups();
 		foreach ( $groups as $id => $group ) {
-			/**
-			 * @var MessageGroup $group
-			 */
+			/** @var MessageGroup $group */
 			if ( $group->isMeta() ) {
 				continue;
 			}
 
-			// Fork to avoid unbounded memory usage growth
+			// Fork to increase speed with parallelism. Also helps with memory usage if there are leaks.
 			$pid = pcntl_fork();
 
 			if ( $pid === 0 ) {
-				// Child, reseed because there is no bug in PHP:
-				// http://bugs.php.net/bug.php?id=42465
-				mt_srand( getmypid() );
-
-				// Make sure all existing connections are dead,
-				// we can't use them in forked children.
-				LBFactory::destroyInstance();
-
-				$this->exportGroup( $group );
+				$this->resetStateForFork();
+				$this->exportGroup( $group, $config );
 				exit();
 			} elseif ( $pid === -1 ) {
 				// Fork failed do it serialized
-				$this->exportGroup( $group );
+				$this->exportGroup( $group, $config );
 			} else {
+				// Main thread
 				$this->statusLine( "Forked thread $pid to handle $id\n" );
 				$pids[$pid] = true;
 
@@ -115,12 +121,27 @@ class TTMServerBootstrap extends Maintenance {
 			pcntl_waitpid( $pid, $status );
 		}
 
-		$this->statusLine( "Creating indexes and optimizing...\n" );
+		// It's okay to do this in the main thread as it is the last thing
+		$this->endBootstrap( $config );
+	}
+
+	protected function beginBootStrap( $config ) {
+		$this->statusLine( "Cleaning up old entries...\n" );
+		$server = TTMServer::factory( $config );
+		$server->setLogger( $this );
+		$server->beginBootstrap();
+	}
+
+	protected function endBootstrap( $config ) {
+		$this->statusLine( "Optimizing...\n" );
+		$server = TTMServer::factory( $config );
+		$server->setLogger( $this );
 		$server->endBootstrap();
 	}
 
-	protected function exportGroup( MessageGroup $group ) {
-		$server = TTMServer::factory( $this->config );
+	protected function exportGroup( MessageGroup $group, $config ) {
+		$server = TTMServer::factory( $config );
+		$server->setLogger( $this );
 
 		$id = $group->getId();
 		$sourceLanguage = $group->getSourceLanguage();
@@ -132,17 +153,17 @@ class TTMServerBootstrap extends Maintenance {
 		$collection->initMessages();
 
 		$server->beginBatch();
-		$inserts = array();
 
+		$inserts = array();
 		foreach ( $collection->keys() as $mkey => $title ) {
-			$def = $collection[$mkey]->definition();
-			$inserts[$mkey] = array( $title, $sourceLanguage, $def );
+			$handle = new MessageHandle( $title );
+			$inserts[] = array( $handle, $sourceLanguage, $collection[$mkey]->definition() );
 		}
 
-		do {
+		while ( $inserts !== array() ) {
 			$batch = array_splice( $inserts, 0, $this->mBatchSize );
 			$server->batchInsertDefinitions( $batch );
-		} while ( count( $inserts ) );
+		}
 
 		$inserts = array();
 		foreach ( $stats as $targetLanguage => $numbers ) {
@@ -159,16 +180,32 @@ class TTMServerBootstrap extends Maintenance {
 			$collection->loadTranslations();
 
 			foreach ( $collection->keys() as $mkey => $title ) {
-				$inserts[$mkey] = array( $title, $targetLanguage, $collection[$mkey]->translation() );
+				$handle = new MessageHandle( $title );
+				$inserts[] = array( $handle, $sourceLanguage, $collection[$mkey]->translation() );
 			}
 
-			do {
+			while ( count( $inserts ) >= $this->mBatchSize ) {
 				$batch = array_splice( $inserts, 0, $this->mBatchSize );
 				$server->batchInsertTranslations( $batch );
-			} while ( count( $inserts ) );
+			}
+		}
+
+		while ( $inserts !== array() ) {
+			$batch = array_splice( $inserts, 0, $this->mBatchSize );
+			$server->batchInsertTranslations( $batch );
 		}
 
 		$server->endBatch();
+	}
+
+	protected function resetStateForFork() {
+		// Child, reseed because there is no bug in PHP:
+		// http://bugs.php.net/bug.php?id=42465
+		mt_srand( getmypid() );
+
+		// Make sure all existing connections are dead,
+		// we can't use them in forked children.
+		LBFactory::destroyInstance();
 	}
 }
 

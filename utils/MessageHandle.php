@@ -186,6 +186,31 @@ class MessageHandle {
 	}
 
 	/**
+	 * Get the original title.
+	 * @param string $code Language code.
+	 * @return Title
+	 * @since 2014.04
+	 */
+	public function getTitleForLanguage( $code ) {
+		return Title::makeTitle(
+			$this->title->getNamespace(),
+			$this->getKey() . "/$code"
+		);
+	}
+
+	/**
+	 * Get the title for the page base.
+	 * @return Title
+	 * @since 2014.04
+	 */
+	public function getTitleForBase() {
+		return Title::makeTitle(
+			$this->title->getNamespace(),
+			$this->getKey()
+		);
+	}
+
+	/**
 	 * Check if a string contains the fuzzy string.
 	 *
 	 * @param $text string Arbitrary text
