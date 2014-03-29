@@ -485,8 +485,12 @@
 			} );
 
 			$label = $( '<div>' ).addClass( 'seven columns label' )
-				.text( messagegroup.label )
-				.append( $statsbar );
+				.append(
+					$( '<span>' )
+						.prop( { dir: 'auto' } )
+						.text( messagegroup.label ),
+					$statsbar
+				);
 
 			if ( messagegroup.icon && messagegroup.icon.raster ) {
 				style += 'background-image: url(--);';
