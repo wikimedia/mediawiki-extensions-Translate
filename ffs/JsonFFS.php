@@ -106,8 +106,8 @@ class JsonFFS extends SimpleFFS {
 		}
 
 		// BC for MediaWiki <= 1.21
-		if ( defined( 'FormatJson::UTF8_OK' ) ) {
-			return FormatJSON::encode( $messages, /*pretty*/true, FormatJson::UTF8_OK );
+		if ( defined( 'FormatJson::ALL_OK' ) ) {
+			return FormatJSON::encode( $messages, /*pretty*/true, FormatJson::ALL_OK );
 		} else {
 			return FormatJSON::encode( $messages, /*pretty*/true );
 		}
