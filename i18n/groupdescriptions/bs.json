@@ -35,7 +35,7 @@
     "bw-desc-osm-site": "Ova grupa poruka sadrži poruke interfejsa za [[Translating:Open Street Map|Open Street Map]].\nPogledajte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} Unicode CLDR stranicu za objašnjenje o ključevima množine].",
     "translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] je kolekcija alata za uređivanje Wikipedije",
     "bw-desc-shapado": "[[Translating:Shapado|Shapado]] je program za pitanja i odgovore zasnovan na internetu",
-    "translate-group-desc-tsint": "Grupa poruka za [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n sistem za [http://toolserver.org Toolserver] alate (\u003Cspan class=\"plainlinks\"\u003E[[Translating talk:Toolserver|podrška]] \u0026middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tehnički detalji]\u003C/span\u003E)",
+    "translate-group-desc-tsint": "Grupa poruka za [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], i18n sistem za [http://toolserver.org Toolserver] alate (<span class=\"plainlinks\">[[Translating talk:Toolserver|podrška]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tehnički detalji]</span>)",
     "bw-desc-wikiblame": "Putem [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je moguće brzo pronaći autore stranica u Wikimedia wikijima.",
     "bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] je projekat koji ima za cilj da omogući vanmrežnu tekstualnu verziju Wikipedije na mobilnim uređajima."
 }

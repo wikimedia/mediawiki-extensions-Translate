@@ -24,7 +24,7 @@
     "translate-group-desc-openimages-all": "Ezek az üzenetek az [[Translating:Open Images|Open Images]] projekt részei",
     "bw-desc-osm-site": "Ez a csoport tartalmazza az [[Translating:Open Street Map|Open Street Map]] felhasználói felületének szövegeit.\nA többesszám formátumáról [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} itt] tudhatsz meg többet.",
     "translate-group-desc-pywikipedia": "A [[Translating:Pywikibot|Pywikibot]] a Wikipédia szerkesztéséhez szükséges eszközök gyűjteménye",
-    "translate-group-desc-tsint": "Üzenetcsoport a [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]hez, ami egy i18n-rendszer [http://toolserver.org toolserveres] eszközökhöz (\u003Cspan class=\"plainlinks\"\u003E[[Translating talk:Toolserver|támogatás]] \u0026middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technikai részletek]\u003C/span\u003E)",
+    "translate-group-desc-tsint": "Üzenetcsoport a [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition]hez, ami egy i18n-rendszer [http://toolserver.org toolserveres] eszközökhöz (<span class=\"plainlinks\">[[Translating talk:Toolserver|támogatás]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technikai részletek]</span>)",
     "bw-desc-wikiblame": "A [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] segítségével könnyen megtalálhatod egy Wikimédia-wikis lap szerkesztőit.",
     "bw-desc-wikireader": "A [[Translating:WikiReader|WikiReader]] a Wikipédia csak szöveges, internetkapcsolat nélküli változatát mobil eszközökön elérhetővé tevő projekt."
 }

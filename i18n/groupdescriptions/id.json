@@ -34,8 +34,8 @@
     "bw-desc-openstreetmap": "Kumpulan pesan untuk semua pesan [[Translating:OpenStreetMap|OpenStreetMap]]",
     "bw-desc-osm-site": "Kelompok pesan ini berisi pesan antarmuka untuk [[Translating:Open Street Map|Peta jalan terbuka]].",
     "translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] adalah koleksi peralatan untuk menyunting Wikipedia",
-    "bw-desc-shapado": "Pesan grup untuk perangkat lunak bebas dan sumber terbuka Q\u0026A [[Translating:Shapado|Shapado]]",
-    "translate-group-desc-tsint": "Kelompok pesan untuk [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], sistem i18n untuk alat [http://toolserver.org Toolserver] (\u003Cspan class=\"plainlinks\"\u003E[[Translating talk:Toolserver|dukungan]] \u0026middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detail teknis]\u003C/span\u003E)",
+    "bw-desc-shapado": "Pesan grup untuk perangkat lunak bebas dan sumber terbuka Q&A [[Translating:Shapado|Shapado]]",
+    "translate-group-desc-tsint": "Kelompok pesan untuk [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], sistem i18n untuk alat [http://toolserver.org Toolserver] (<span class=\"plainlinks\">[[Translating talk:Toolserver|dukungan]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detail teknis]</span>)",
     "bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] dapat dengan cepat menampilkan daftar penulis suatu halaman wiki Wikimedia.",
     "bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] merupakan sebuah proyek yang memberikan sebuah versi luring, hanya berisi teks dari Wikipedia pada perangkat selular."
 }

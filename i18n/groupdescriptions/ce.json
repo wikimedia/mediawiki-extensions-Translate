@@ -7,5 +7,6 @@
     "translate-group-desc-mediawikicore": "ХӀокху хаамийн тобан чохь карара альфа-версеш [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}}) лелош болу хаамаш бу",
     "translate-group-desc-semantic": "[https://semantic-mediawiki.org/ Semantic MediaWiki] массо шордарш чохь долу мета-тоба",
     "translate-group-desc-translatablepages": "Гочян массо агӀонаш",
-    "bw-desc-openstreetmap": "[[Translating:OpenStreetMap|OpenStreetMap]] массо хаамашна хаамийн тоба"
+    "bw-desc-openstreetmap": "[[Translating:OpenStreetMap|OpenStreetMap]] массо хаамашна хаамийн тоба",
+    "translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] — Википеди таян гӀирсан гулам"
 }

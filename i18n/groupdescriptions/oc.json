@@ -19,7 +19,7 @@
     "bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] es un logicial gratuit de seguit dels bògues. Raportatz totes los problèmas sus [[Support]].",
     "bw-desc-mwlibrl": "'''mwlib.rl''' es una bibliotèca en python per escriure de documents PDF dempuèi d'articles de MediaWiki que son estats analisats per la bibliotèca mwlib.\n\nVejatz [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl per mai d'entresenhas.",
     "bw-desc-osm-site": "Aqueste grop de messatges conten los messatges de l'interfàcia d'[[Translating:Open Street Map|Open Street Map]].",
-    "translate-group-desc-tsint": "Un grop de messatges per [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], lo sistèma d'internacionalizacion de las aisinas del [http://toolserver.org Toolserver] (\u003Cspan class=\"plainlinks\"\u003E[[Translating talk:Toolserver|supòrt]] \u0026middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalhs tecnics]\u003C/span\u003E)",
+    "translate-group-desc-tsint": "Un grop de messatges per [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], lo sistèma d'internacionalizacion de las aisinas del [http://toolserver.org Toolserver] (<span class=\"plainlinks\">[[Translating talk:Toolserver|supòrt]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition detalhs tecnics]</span>)",
     "bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] es en mesura de trobar rapidament los autors d’una pagina dins un wiki Wikimedia.",
     "bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] es un projècte que visa a ofrir una version tèxte de Wikipèdia en mòde desconnectat sus un periferic mobil."
 }
