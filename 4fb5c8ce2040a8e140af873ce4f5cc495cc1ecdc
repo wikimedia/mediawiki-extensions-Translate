@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae0e4726_d9ac2f87",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-03-30T15:53:54Z",
+      "side": 1,
+      "message": "Should be spaces around equal sign. Also below.",
+      "revId": "4fb5c8ce2040a8e140af873ce4f5cc495cc1ecdc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
