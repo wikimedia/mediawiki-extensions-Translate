@@ -5,7 +5,11 @@
         ]
     },
     "translate-group-desc-mediawikicore": "ХӀокху хаамийн тобан чохь карара альфа-версеш [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}}) лелош болу хаамаш бу",
+    "translate-group-desc-mediawikiextensions": "[[Translating:MediaWiki|MediaWiki]]-ин шордарш ловш болу массо хаамаш чохь болу мета-тоба",
     "translate-group-desc-semantic": "[https://semantic-mediawiki.org/ Semantic MediaWiki] массо шордарш чохь долу мета-тоба",
+    "translate-group-desc-wikiaextensions": "[http://www.wikia.com Wikia] чохь лелош болу MediaWiki шордарш ловш болу массо хаамаш чохь болу метта-тоба",
+    "translate-group-desc-wikimediaextensions": "[https://wikimediafoundation.org/ Викимедиан фондан] чохь лелош болу MediaWiki шордарш ловш болу массо хаамаш чохь болу метта-тоба",
+    "translate-group-desc-wikimediaextensions-main": "Викимедин [https://meta.wikimedia.org/wiki/Language_committee Меттанийн комитетан] гоч бан беза MediaWiki хаамийн метта-тоба",
     "translate-group-desc-translatablepages": "Гочян массо агӀонаш",
     "bw-desc-openstreetmap": "[[Translating:OpenStreetMap|OpenStreetMap]] массо хаамашна хаамийн тоба",
     "translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] — Википеди таян гӀирсан гулам"
