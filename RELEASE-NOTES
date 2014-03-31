@@ -1,0 +1,11 @@
+== Translate 2014.03 ==
+Released at 2014-03-31.
+
+=== Noteworthy changes ===
+* Added support for insertables with numbers in the end on translatable pages.
+* Improvements in TUX shortcuts: Shortcut indicators are now more visible.
+Fixed display in RTL. Added indicators for up/down arrows.
+* characterEditStats.php: Mention the max age of recent changes ($wgRCMaxAge)
+limits.
+* Added a notice about ULS extension dependency. On Special:Translate, it will
+fail with MediaWiki error page if ULS is not installed.
