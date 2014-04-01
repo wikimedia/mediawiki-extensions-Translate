@@ -10,6 +10,7 @@
     "translate-group-desc-mediawikicore": "Nhóm thông điệp này chứa các thông điệp dùng trong phiên bản alpha hiện hành của [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})",
     "translate-group-desc-mediawikimostused": "Nhóm thông điệp này chứa [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 thông điệp dùng nhiều nhất] trong [[Translating:MediaWiki|MediaWiki]]",
     "translate-group-desc-mediawikiextensions": "Nhóm thông điệp chứa các thông điệp của các phần mở rộng [[Translating:MediaWiki|MediaWiki]]",
+    "translate-group-desc-bluespice": "Siêu nhóm thông điệp chứa các thông điệp của các phần mở rộng [https://www.mediawiki.org/wiki/Extension:BlueSpice BlueSpice] cho MediaWiki",
     "translate-group-desc-collection": "Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [https://www.mediawiki.org/wiki/Extension:Collection Collection] cho MediaWiki",
     "translate-group-desc-flaggedrevs": "Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] cho MediaWiki",
     "translate-group-desc-readerfeedback": "Siêu nhóm thông điệp chứa tất cả các thông điệp dùng cho phần mở rộng MediaWiki [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",

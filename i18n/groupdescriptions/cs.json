@@ -10,6 +10,7 @@
     "translate-group-desc-mediawikicore": "Tato skupina zpráv obsahuje zprávy používané v současné alfaverzi MediaWiki ({{CURRENTVERSION}})",
     "translate-group-desc-mediawikimostused": "Tato skupina zpráv obsahuje [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 nejpoužívanějších zpráv] v [[Translating:MediaWiki|MediaWiki]]",
     "translate-group-desc-mediawikiextensions": "Nadskupina zpráv obsahující všechny zprávy ve všech podporovaných rozšířeních MediaWiki",
+    "translate-group-desc-bluespice": "Nadskupina zpráv obsahující všechny zprávy rozšíření [https://www.mediawiki.org/wiki/Extension:BlueSpice Blue Spice]",
     "translate-group-desc-collection": "Nadskupina zpráv obsahující všechny zprávy rozšíření [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
     "translate-group-desc-flaggedrevs": "Nadskupina zpráv obsahující všechny zprávy rozšíření [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
     "translate-group-desc-readerfeedback": "Nadskupina zpráv obsahující všechny zprávy rozšíření [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",

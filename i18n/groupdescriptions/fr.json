@@ -26,6 +26,7 @@
     "translate-group-desc-mediawikicore": "Ce groupe de messages contient les messages utilisés dans la version alpha actuelle de MediaWiki ({{CURRENTVERSION}}).",
     "translate-group-desc-mediawikimostused": "Ce groupe de messages contient les [//translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messages les plus souvent utilisés] dans [[Translating:MediaWiki|MediaWiki]].",
     "translate-group-desc-mediawikiextensions": "Ce méta-groupe de messages contient les messages de toutes les extensions pour MediaWiki supportées.",
+    "translate-group-desc-bluespice": "Méta-groupe de messages contenant tous les messages pour les extensions [https://www.mediawiki.org/wiki/Extension:BlueSpice Blue Spice] de MédiaWiki",
     "translate-group-desc-collection": "Ce méta-groupe de messages contient tous les messages de l’extension MediaWiki [//www.mediawiki.org/wiki/Extension:Collection Collection].",
     "translate-group-desc-flaggedrevs": "Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [//www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
     "translate-group-desc-readerfeedback": "Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [//www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",

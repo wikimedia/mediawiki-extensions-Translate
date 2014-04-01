@@ -14,6 +14,7 @@
     "translate-group-desc-mediawikicore": "Diese Gruppe beinhaltet alle Nachrichten der aktuellen alpha-Version von MediaWiki ({{CURRENTVERSION}})",
     "translate-group-desc-mediawikimostused": "Diese Gruppe beinhaltet die [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 am häufigsten genutzten Nachrichten] in [[Translating:MediaWiki|MediaWiki]]",
     "translate-group-desc-mediawikiextensions": "Diese Hauptgruppe beinhaltet alle Systemnachrichten der von MediaWiki unterstützten Erweiterungen",
+    "translate-group-desc-bluespice": "Diese Meta-Nachrichtengruppe enthält alle Nachrichten für die MediaWiki-[https://www.mediawiki.org/wiki/Extension:BlueSpice Blue-Spice]-Erweiterungen.",
     "translate-group-desc-collection": "Diese Hauptgruppe beinhaltet alle Systemnachrichten für die MediaWiki-Erweiterung [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
     "translate-group-desc-flaggedrevs": "Diese Hauptgruppe beinhaltet alle Systemnachrichten für die MediaWiki-Erweiterung [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
     "translate-group-desc-readerfeedback": "Diese Hauptgruppe beinhaltet alle Systemnachrichten für die MediaWiki-Erweiterung [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",

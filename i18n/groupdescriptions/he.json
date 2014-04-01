@@ -13,6 +13,7 @@
     "translate-group-desc-mediawikicore": "קבוצת הודעות זו כוללת את ההודעות שמשמשות בגרסת האלפא הנוכחית של [[Translating:MediaWiki|מדיה־ויקי]] ({{CURRENTVERSION}})",
     "translate-group-desc-mediawikimostused": "קבוצת הודעות זו כוללת את [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 ההודעות הנפוצות ביותר] ב[[Translating:MediaWiki|מדיה־ויקי]]",
     "translate-group-desc-mediawikiextensions": "מטא־קבוצה המכילה את כל ההודעות של הרחבות הנתמכות ל־[[Translating:MediaWiki|MediaWiki]]",
+    "translate-group-desc-bluespice": "מטא־קבוצה שמכילה את כל ההודעות עבור הרחבת מדיה־ויקי [https://www.mediawiki.org/wiki/Extension:BlueSpice Blue Spice].",
     "translate-group-desc-collection": "מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות ל־[https://www.mediawiki.org/wiki/Extension:Collection Collection]",
     "translate-group-desc-flaggedrevs": "מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות ל־[https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
     "translate-group-desc-readerfeedback": "מטא־קבוצה המכילה את כל ההודעות של הרחבות הקשורות ל־[https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",

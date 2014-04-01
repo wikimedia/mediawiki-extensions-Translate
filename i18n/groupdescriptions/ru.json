@@ -17,6 +17,7 @@
     "translate-group-desc-mediawikicore": "Эта группа сообщений содержит сообщения, используемые в текущей альфа-версии MediaWiki ({{CURRENTVERSION}})",
     "translate-group-desc-mediawikimostused": "Эта группа сообщений содержит [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 наиболее часто используемых сообщений] в [[Translating:MediaWiki|MediaWiki]]",
     "translate-group-desc-mediawikiextensions": "Мета-группа сообщений, содержащая все сообщения поддерживаемых расширений MediaWiki",
+    "translate-group-desc-bluespice": "Мета-группа сообщений, содержащая все сообщения расширений MediaWiki [https://www.mediawiki.org/wiki/Extension:BlueSpice Blue Spice]",
     "translate-group-desc-collection": "Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
     "translate-group-desc-flaggedrevs": "Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
     "translate-group-desc-readerfeedback": "Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",
