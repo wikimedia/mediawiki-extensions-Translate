@@ -218,7 +218,7 @@ abstract class ComplexMessages {
 	protected function readVariable( $group, $code ) {
 		$file = $group['file'];
 		if ( !$group['code'] ) {
-			$file = str_replace( '%CODE%', str_replace( '-', '_', ucfirst( $code ) ), $file );
+			$file = str_replace( 'CODE', str_replace( '-', '_', ucfirst( $code ) ), $file );
 		}
 
 		${$group['var']} = array(); # Initialize
@@ -602,7 +602,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 		$this->data['core'] = array(
 			'label' => 'MediaWiki Core',
 			'var' => 'specialPageAliases',
-			'file' => Language::getMessagesFileName( '%CODE%' ),
+			'file' => Language::getMessagesFileName( 'CODE' ),
 			'code' => false,
 		);
 
@@ -683,7 +683,7 @@ class MagicWordsCM extends ComplexMessages {
 		$this->data['core'] = array(
 			'label' => 'MediaWiki Core',
 			'var' => 'magicWords',
-			'file' => Language::getMessagesFileName( '%CODE%' ),
+			'file' => Language::getMessagesFileName( 'CODE' ),
 			'code' => false,
 		);
 
@@ -731,7 +731,7 @@ class NamespaceCM extends ComplexMessages {
 		$this->data['core'] = array(
 			'label' => 'MediaWiki Core',
 			'var' => 'namespaceNames',
-			'file' => Language::getMessagesFileName( '%CODE%' ),
+			'file' => Language::getMessagesFileName( 'CODE' ),
 			'code' => false,
 		);
 	}
