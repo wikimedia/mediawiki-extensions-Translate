@@ -24,5 +24,6 @@
     "translate-translationstash-translations": "$1 {{PLURAL:$1|ukończone tłumaczenie|ukończone tłumaczenia|ukończonych tłumaczeń}}",
     "tsb-limit-reached-title": "Dziękuję za Twoje tłumaczenia",
     "log-name-translatorsandbox": "Brudnopis tłumaczeń",
-    "log-description-translatorsandbox": "To jest rejestr działań użytkowników brudnopisu tłumaczeń"
+    "log-description-translatorsandbox": "To jest rejestr działań użytkowników brudnopisu tłumaczeń",
+    "logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|awansował|awansowała}} $3 na {{GENDER:$4|tłumacza|tłumaczkę}}"
 }

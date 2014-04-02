@@ -321,7 +321,7 @@
     "tux-status-fuzzy": "Status label in [[Special:Translate]] indicating translation needs updating.\n{{Identical|Outdated}}",
     "tux-status-proofread": "Status label in [[Special:Translate]] indicating that you have reviewed the translation.\n{{Identical|Reviewed}}",
     "tux-status-translated": "Status label in [[Special:Translate]] indicating that a message is translated. An adjective that refers to a message.\n{{Identical|Translated}}",
-    "tux-status-saving": "Status label in [[Special:Translate]] indicating that the translation is being saved.",
+    "tux-status-saving": "Status label in [[Special:Translate]] indicating that the translation is being saved.\n{{Identical|Saving}}",
     "tux-status-unsaved": "Status label in [[Special:Translate]] indicating that the translation is not saved yet.",
     "tux-editor-placeholder": "Placeholder text for the translation editor textbox",
     "tux-editor-paste-original-button-label": "Label for a button that pastes the text in the source language to the translation editor.",

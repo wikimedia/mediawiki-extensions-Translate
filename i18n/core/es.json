@@ -204,7 +204,7 @@
     "supportedlanguages-translators": "{{PLURAL:$2|Traductor|Traductores}}: $1",
     "supportedlanguages-recenttranslations": "traducciones recientes",
     "supportedlanguages-count": "$1 {{PLURAL:$1|idioma|idiomas}} en total.",
-    "supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edición|ediciones}} - última edición $3 {{PLURAL:$3|día|días}} atrás",
+    "supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edición|ediciones}}, última edición hace $3 {{PLURAL:$3|día|días}}",
     "translate-save": "Guardar ($1)",
     "translate-jssti-add": "Añadir a la lista",
     "managemessagegroups": "Gestión de grupos de mensajes",
