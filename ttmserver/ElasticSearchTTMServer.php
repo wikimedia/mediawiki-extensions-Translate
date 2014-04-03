@@ -13,7 +13,10 @@
  * @since 2014.04
  * @ingroup TTMServer
  */
-class ElasticSearchTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMServer {
+class ElasticSearchTTMServer
+	extends TTMServer
+	implements ReadableTTMServer, WritableTTMServer, SearchableTTMserver
+{
 	/**
 	 * @var \Elastica\Client
 	 */
@@ -317,8 +320,13 @@ class ElasticSearchTTMServer extends TTMServer implements ReadableTTMServer, Wri
 		return $this->client;
 	}
 
-	protected function getType() {
-		return $this->getClient()->getIndex( 'ttmserver' )->getType( 'message' );
+	public function getType() {
+		if ( isset( $this->config['index'] ) ) {
+			$index = $this->config['index'];
+		} else {
+			$index = 'ttmserver';
+		}
+		return $this->getClient()->getIndex( $index )->getType( 'message' );
 	}
 
 	protected function getShardCount() {
@@ -367,5 +375,97 @@ class ElasticSearchTTMServer extends TTMServer implements ReadableTTMServer, Wri
 		if ( $this->logger ) {
 			$this->logger->statusLine( "$text\n" );
 		}
+	}
+
+	// Search interface
+	public function search( $queryString, $opts, $highlight ) {
+		$query = new \Elastica\Query();
+
+		$matchQuery = new \Elastica\Query\Match();
+		$matchQuery->setFieldQuery( 'content', $queryString );
+		$query->setQuery( $matchQuery );
+
+		$language = new \Elastica\Facet\Terms( 'language' );
+		$language->setField( 'language' );
+
+		$query->addFacet( $language );
+
+		$group = new \Elastica\Facet\Terms( 'group' );
+		$group->setField( 'group' );
+		$query->addFacet( $group );
+
+		$query->setSize( $opts->getValue( 'limit' ) );
+		$query->setFrom( $opts->getValue( 'offset' ) );
+
+		// Use BoolAnd if one or more filters are used
+		$filters = new \Elastica\Filter\BoolAnd();
+
+		$language = $opts->getValue( 'language' );
+		if ( $language !== '' ) {
+			$languageFilter = new \Elastica\Filter\Term();
+			$languageFilter->setTerm( 'language', $language );
+			$filters->addFilter( $languageFilter );
+		}
+
+		$group = $opts->getValue( 'group' );
+		if ( $group !== '' ) {
+			$groupFilter = new \Elastica\Filter\Term();
+			$groupFilter->setTerm( 'group', $group );
+			$filters->addFilter( $groupFilter );
+		}
+
+		if ( $filters->getFilters() !== array() ) {
+			$query->setFilter( $filters );
+		}
+
+		list( $pre, $post ) = $highlight;
+		$query->setHighlight( array(
+			// The value must be an object
+			'fields' => array( 'content' => (object)array() ),
+			'number_of_fragments' => 0,
+			'pre_tags' => array( $pre ),
+			'post_tags' => array( $post ),
+		) );
+
+		try {
+			return $this->getType()->getIndex()->search( $query );
+		} catch ( \Elastica\Exception\ExceptionInterface $e ) {
+			throw new TTMServerException( $e->getMessage() );
+		}
+	}
+
+	public function getFacets( $resultset ) {
+		$facets = $resultset->getFacets();
+
+		$ret = array(
+			'language' => array(),
+			'group' => array()
+		);
+
+		foreach ( $facets as $type => $facetInfo ) {
+			foreach ( $facetInfo['terms'] as $facetRow ) {
+				$ret[$type][$facetRow['term']] = $facetRow['count'];
+			}
+		}
+
+		return $ret;
+	}
+
+	public function getTotalHits( $resultset ) {
+		return $resultset->getTotalHits();
+	}
+
+	public function getDocuments( $resultset ) {
+		$ret = array();
+		foreach ( $resultset->getResults() as $document ) {
+			$data = $document->getData();
+			$hl = $document->getHighlights();
+			if ( isset( $hl['content'][0] ) ) {
+				$data['content'] = $hl['content'][0];
+			}
+			$ret[] = $data;
+		}
+
+		return $ret;
 	}
 }
