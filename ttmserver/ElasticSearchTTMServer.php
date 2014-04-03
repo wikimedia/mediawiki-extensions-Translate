@@ -317,7 +317,7 @@ class ElasticSearchTTMServer extends TTMServer implements ReadableTTMServer, Wri
 		return $this->client;
 	}
 
-	protected function getType() {
+	public function getType() {
 		return $this->getClient()->getIndex( 'ttmserver' )->getType( 'message' );
 	}
 
