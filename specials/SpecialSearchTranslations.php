@@ -56,7 +56,7 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 		$this->checkPermissions();
 
 		$server = TTMServer::primary();
-		if ( !$server instanceof SolrTTMServer ) {
+		if ( !$server instanceof ElasticSearchTTMServer ) {
 			throw new ErrorPageError( 'tux-sst-nosolr-title', 'tux-sst-nosolr-body' );
 		}
 
@@ -80,29 +80,30 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 		}
 
 		try {
-			$resultset = $this->doSearch( $server->getSolarium(), $queryString );
-		} catch ( Solarium_Client_HttpException $e ) {
-			error_log( 'Translate: Solr search server unavailable' );
+			$resultset = $this->doSearch( $server->getType(), $queryString );
+		} catch ( \Elastica\Exception\ExceptionInterface $e ) {
+			error_log( 'Translate: ElasticSearch search server unavailable:' . $e->getMessage() );
 			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
 		}
 
 		// Part 1: facets
 		$facets = '';
 
-		$facet = $resultset->getFacetSet()->getFacet( 'language' );
+		$facetSets = $resultset->getFacets();
 
+		$facetLanguage = $facetSets['language'];
 		$facets .= Html::element( 'div',
 			array( 'class' => 'row facet languages',
-				'data-facets' => FormatJson::encode( $this->getLanguages( $facet ) ),
+				'data-facets' => FormatJson::encode( $this->getLanguages( $facetLanguage['terms'] ) ),
 				'data-language' => $opts->getValue( 'language' ),
 			),
 			$this->msg( 'tux-sst-facet-language' )
 		);
 
-		$facet = $resultset->getFacetSet()->getFacet( 'group' );
+		$facetGroup = $facetSets['group'];
 		$facets .= Html::element( 'div',
 			array( 'class' => 'row facet groups',
-				'data-facets' => FormatJson::encode( $this->getGroups( $facet ) ),
+				'data-facets' => FormatJson::encode( $this->getGroups( $facetGroup['terms'] ) ),
 				'data-group' => $opts->getValue( 'group' ), ),
 			$this->msg( 'tux-sst-facet-group' )
 		);
@@ -110,10 +111,10 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 		// Part 2: results
 		$results = '';
 
-		$highlighting = $resultset->getHighlighting();
-		foreach ( $resultset as $document ) {
+		//$highlighting = $resultset->getHighlighting();
+		foreach ( $resultset->getResults() as $document ) {
 
-			$hdoc = $highlighting->getResult( $document->globalid );
+			/*$hdoc = $highlighting->getResult( $document->globalid );
 			$text = $hdoc->getField( 'text' );
 			if ( $text === array() ) {
 				$text = $document->text;
@@ -125,9 +126,11 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 				list( $pre, $post ) = $this->hl;
 				$text = str_replace( $pre, '<strong class="tux-highlight">', $text );
 				$text = str_replace( $post, '</strong>', $text );
-			}
+			}*/
+			$data = $document->getData();
+			$text = $data['content'];
 
-			$title = Title::newFromText( $document->messageid . '/' . $document->language );
+			$title = Title::newFromText( $data['localid']. '/' . $data['language'] );
 			if ( !$title ) {
 				// Should not ever happen but who knows...
 				continue;
@@ -136,44 +139,42 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 			$resultAttribs = array(
 				'class' => 'row tux-message',
 				'data-title' => $title->getPrefixedText(),
-				'data-language' => $document->language,
+				'data-language' => $data['language'],
 			);
 
 			$handle = new MessageHandle( $title );
+
+			$edit = '';
 			if ( $handle->isValid() ) {
 				$groupId = $handle->getGroup()->getId();
 				$helpers = new TranslationHelpers( $title, $groupId );
 				$resultAttribs['data-definition'] = $helpers->getDefinition();
 				$resultAttribs['data-translation'] = $helpers->getTranslation();
 				$resultAttribs['data-group'] = $groupId;
-			}
 
-			$result = Html::openElement( 'div', $resultAttribs );
-			$result .= Html::rawElement( 'div', array( 'class' => 'row tux-text' ), $text );
-			$result .= Html::element(
-				'div',
-				array( 'class' => 'row tux-title' ),
-				$document->messageid
-			);
-
-			if ( $handle->isValid() ) {
-				$uri = wfAppendQuery( $document->uri, array( 'action' => 'edit' ) );
+				$uri = wfAppendQuery( $data['uri'], array( 'action' => 'edit' ) );
 				$link = Html::element( 'a', array(
 					'href' => $uri,
 				), $this->msg( 'tux-sst-edit' )->text() );
-				$result .= Html::rawElement(
+				$edit = Html::rawElement(
 					'div',
 					array( 'class' => 'row tux-edit tux-message-item' ),
 					$link
 				);
 			}
 
-			$result .= Html::closeElement( 'div' );
-			$results .= $result;
+			$titleText = $title->getPrefixedText();
+
+			$results = $results
+				. Html::openElement( 'div', $resultAttribs )
+				. Html::rawElement( 'div', array( 'class' => 'row tux-text' ), $text )
+				. Html::element( 'div', array( 'class' => 'row tux-title' ), $titleText )
+				. $edit
+				. Html::closeElement( 'div' );
 		}
 
 		$prev = $next = '';
-		$total = $resultset->getNumFound();
+		$total = $resultset->getTotalHits();
 		$offset = $this->getRequest()->getInt( 'offset' );
 		$params = $this->getRequest()->getValues();
 
@@ -197,18 +198,46 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 		$results .= Html::rawElement( 'div', array(), "$prev $next" );
 
 		$search = $this->getSearchInput( $queryString );
-		$count = $this->msg( 'tux-sst-count' )->numParams( $resultset->getNumFound() );
+		$count = $this->msg( 'tux-sst-count' )->numParams( $resultset->getTotalHits() );
 
 		$this->showSearch( $search, $count, $facets, $results );
 	}
 
-	protected function doSearch( Solarium_Client $client, $queryString ) {
-		$query = $client->createSelect();
-		$dismax = $query->getDisMax();
-		$dismax->setQueryParser( 'edismax' );
-		$query->setQuery( $queryString );
-		$query->setRows( $this->limit );
-		$query->setStart( $this->getRequest()->getInt( 'offset' ) );
+	protected function doSearch( \Elastica\Type $type, $queryString ) {
+		$query = new \Elastica\Query();
+
+		$queryStringQuery = new \Elastica\Query\QueryString();
+		$queryStringQuery->setQuery( $queryString );
+		$query->setQuery( $queryStringQuery );
+
+		$language = new \Elastica\Facet\Terms( 'language' );
+		$language->setField( 'language' );
+
+		$query->addFacet( $language );
+
+		$group = new \Elastica\Facet\Terms( 'group' );
+		$group->setField( 'group' );
+		$query->addFacet( $group );
+
+		$query->setSize( $this->limit );
+		$query->setFrom( $this->getRequest()->getInt( 'offset' ) );
+
+		$language = $this->opts->getValue( 'language' );
+		if ( $language !== '' ) {
+			$languageFilter = new \Elastica\Filter\Term();
+			$languageFilter->setTerm( 'language', $language );
+			$query->setFilter( $languageFilter );
+		}
+
+		$group = $this->opts->getValue( 'group' );
+		if ( $group !== '' ) {
+			$groupFilter = new \Elastica\Filter\Term();
+			$groupFilter->setTerm( 'group', $group );
+			$query->setFilter( $groupFilter );
+		}
+
+		$result = $type->getIndex()->search( $query );
+		return $result;
 
 		list( $pre, $post ) = $this->hl;
 		$hl = $query->getHighlighting();
@@ -218,44 +247,17 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 		$hl->setMaxAnalyzedChars( '5000' );
 		$hl->setFragSize( '5000' );
 		$hl->setSnippets( 1 );
-
-		$languageFilter = $this->opts->getValue( 'language' );
-		if ( $languageFilter !== '' ) {
-			$query->createFilterQuery( 'languageFilter' )
-				->setQuery( 'language:%P1%', array( $languageFilter ) )
-				->addTag( 'filter' );
-		}
-
-		$groupFilter = $this->opts->getValue( 'group' );
-		if ( $groupFilter !== '' ) {
-			$query->createFilterQuery( 'groupFilter' )
-				->setQuery( 'group:%P1%', array( $groupFilter ) )
-				->addTag( 'filter' );
-		}
-
-		$facetSet = $query->getFacetSet();
-
-		$language = $facetSet->createFacetField( 'language' );
-		$language->setField( 'language' );
-		$language->setMincount( 1 );
-		$language->addExclude( 'filter' );
-
-		$group = $facetSet->createFacetField( 'group' );
-		$group->setField( 'group' );
-		$group->setMincount( 1 );
-		$group->setMissing( true );
-		$group->addExclude( 'filter' );
-
-		return $client->select( $query );
 	}
 
-	protected function getLanguages( Solarium_Result_Select_Facet_Field $facet ) {
+	protected function getLanguages( array $facet ) {
 		$output = array();
 
 		$nondefaults = $this->opts->getChangedValues();
 		$selected = $this->opts->getValue( 'language' );
 
-		foreach ( $facet as $key => $value ) {
+		foreach ( $facet as $item ) {
+			$key = $item['term'];
+			$value = $item['count'];
 			if ( $key === $selected ) {
 				unset( $nondefaults['language'] );
 			} else {
@@ -274,9 +276,13 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 		return $output;
 	}
 
-	protected function getGroups( Solarium_Result_Select_Facet_Field $facet ) {
+	protected function getGroups( array $facet ) {
 		$structure = MessageGroups::getGroupStructure();
-		$counts = iterator_to_array( $facet );
+
+		$counts = array();
+		foreach ( $facet as $item ) {
+			$counts[$item['term']] = $item['count'];
+		}
 
 		return $this->makeGroupFacetRows( $structure, $counts );
 	}
