@@ -95,3 +95,35 @@ interface WritableTTMServer {
 	 */
 	public function endBootstrap();
 }
+
+/**
+ * Interface for TTMServer that can act as backend for translation search.
+ * @ingroup TTMServer
+ * @since 2014.04
+ */
+interface SearchableTTMServer {
+	/**
+	 * Performs a search in the translation database.
+	 *
+	 * @param string $queryString String to search for.
+	 * @param FormOptions $opts Query options like language.
+	 * @param array $highlight Tags for highlighting.
+	 * @return mixed Result set
+	 */
+	public function search( $queryString, $opts, $highlight );
+
+	/**
+	 * ...
+	 */
+	public function getFacets( $resultset );
+
+	/**
+	 * @return int
+	 */
+	public function getTotalHits( $resultset );
+
+	/**
+	 * @return array[]
+	 */
+	public function getDocuments( $resultset );
+}
