@@ -56,7 +56,7 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 		$this->checkPermissions();
 
 		$server = TTMServer::primary();
-		if ( !$server instanceof SolrTTMServer ) {
+		if ( !$server instanceof SearchableTTMServer ) {
 			throw new ErrorPageError( 'tux-sst-nosolr-title', 'tux-sst-nosolr-body' );
 		}
 
@@ -68,6 +68,8 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 		$opts->add( 'language', '' );
 		$opts->add( 'group', '' );
 		$opts->add( 'grouppath', '' );
+		$opts->add( 'limit', $this->limit );
+		$opts->add( 'offset', 0 );
 
 		$opts->fetchValuesFromRequest( $this->getRequest() );
 
@@ -79,55 +81,46 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 			return;
 		}
 
+
 		try {
-			$resultset = $this->doSearch( $server->getSolarium(), $queryString );
-		} catch ( Solarium_Client_HttpException $e ) {
-			error_log( 'Translate: Solr search server unavailable' );
+			$resultset = $server->search( $queryString, $opts, $this->hl );
+		} catch ( TTMServerException $e ) {
+			error_log( 'Translation search server unavailable:' . $e->getMessage() );
 			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
 		}
 
 		// Part 1: facets
-		$facets = '';
+		$facets = $server->getFacets( $resultset );
 
-		$facet = $resultset->getFacetSet()->getFacet( 'language' );
-
-		$facets .= Html::element( 'div',
+		$facetHtml = Html::element( 'div',
 			array( 'class' => 'row facet languages',
-				'data-facets' => FormatJson::encode( $this->getLanguages( $facet ) ),
+				'data-facets' => FormatJson::encode( $this->getLanguages( $facets['language'] ) ),
 				'data-language' => $opts->getValue( 'language' ),
 			),
 			$this->msg( 'tux-sst-facet-language' )
 		);
 
-		$facet = $resultset->getFacetSet()->getFacet( 'group' );
-		$facets .= Html::element( 'div',
+		$facetHtml .= Html::element( 'div',
 			array( 'class' => 'row facet groups',
-				'data-facets' => FormatJson::encode( $this->getGroups( $facet ) ),
-				'data-group' => $opts->getValue( 'group' ), ),
+				'data-facets' => FormatJson::encode( $this->getGroups( $facets['group'] ) ),
+				'data-group' => $opts->getValue( 'group' ) ),
 			$this->msg( 'tux-sst-facet-group' )
 		);
 
 		// Part 2: results
-		$results = '';
+		$resultsHtml = '';
+		$documents = $server->getDocuments( $resultset );
 
-		$highlighting = $resultset->getHighlighting();
-		foreach ( $resultset as $document ) {
+		foreach ( $documents as $document ) {
+			$text = $document['content'];
+			$text = htmlspecialchars( $text );
 
-			$hdoc = $highlighting->getResult( $document->globalid );
-			$text = $hdoc->getField( 'text' );
-			if ( $text === array() ) {
-				$text = $document->text;
-				$text = htmlspecialchars( $text );
-			} else {
-				$text = $text[0];
-				$text = htmlspecialchars( $text );
+			list( $pre, $post ) = $this->hl;
+			$text = str_replace( $pre, '<strong class="tux-highlight">', $text );
+			$text = str_replace( $post, '</strong>', $text );
 
-				list( $pre, $post ) = $this->hl;
-				$text = str_replace( $pre, '<strong class="tux-highlight">', $text );
-				$text = str_replace( $post, '</strong>', $text );
-			}
 
-			$title = Title::newFromText( $document->messageid . '/' . $document->language );
+			$title = Title::newFromText( $document['localid'] . '/' . $document['language'] );
 			if ( !$title ) {
 				// Should not ever happen but who knows...
 				continue;
@@ -136,46 +129,44 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 			$resultAttribs = array(
 				'class' => 'row tux-message',
 				'data-title' => $title->getPrefixedText(),
-				'data-language' => $document->language,
+				'data-language' => $document['language'],
 			);
 
 			$handle = new MessageHandle( $title );
+
+			$edit = '';
 			if ( $handle->isValid() ) {
 				$groupId = $handle->getGroup()->getId();
 				$helpers = new TranslationHelpers( $title, $groupId );
 				$resultAttribs['data-definition'] = $helpers->getDefinition();
 				$resultAttribs['data-translation'] = $helpers->getTranslation();
 				$resultAttribs['data-group'] = $groupId;
-			}
 
-			$result = Html::openElement( 'div', $resultAttribs );
-			$result .= Html::rawElement( 'div', array( 'class' => 'row tux-text' ), $text );
-			$result .= Html::element(
-				'div',
-				array( 'class' => 'row tux-title' ),
-				$document->messageid
-			);
-
-			if ( $handle->isValid() ) {
-				$uri = wfAppendQuery( $document->uri, array( 'action' => 'edit' ) );
+				$uri = wfAppendQuery( $document['uri'], array( 'action' => 'edit' ) );
 				$link = Html::element( 'a', array(
 					'href' => $uri,
 				), $this->msg( 'tux-sst-edit' )->text() );
-				$result .= Html::rawElement(
+				$edit = Html::rawElement(
 					'div',
 					array( 'class' => 'row tux-edit tux-message-item' ),
 					$link
 				);
 			}
 
-			$result .= Html::closeElement( 'div' );
-			$results .= $result;
+			$titleText = $title->getPrefixedText();
+
+			$resultsHtml = $resultsHtml
+				. Html::openElement( 'div', $resultAttribs )
+				. Html::rawElement( 'div', array( 'class' => 'row tux-text' ), $text )
+				. Html::element( 'div', array( 'class' => 'row tux-title' ), $titleText )
+				. $edit
+				. Html::closeElement( 'div' );
 		}
 
 		$prev = $next = '';
-		$total = $resultset->getNumFound();
-		$offset = $this->getRequest()->getInt( 'offset' );
-		$params = $this->getRequest()->getValues();
+		$total = $server->getTotalHits( $resultset );
+		$offset = $this->opts->getValue( 'offset' );
+		$params = $this->opts->getChangedValues();
 
 		if ( $total - $offset > $this->limit ) {
 			$newParams = array( 'offset' => $offset + $this->limit ) + $params;
@@ -194,62 +185,15 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 			$prev = Html::element( 'a', $attribs, $this->msg( 'tux-sst-prev' )->text() );
 		}
 
-		$results .= Html::rawElement( 'div', array(), "$prev $next" );
+		$resultsHtml .= Html::rawElement( 'div', array(), "$prev $next" );
 
 		$search = $this->getSearchInput( $queryString );
-		$count = $this->msg( 'tux-sst-count' )->numParams( $resultset->getNumFound() );
+		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
 
-		$this->showSearch( $search, $count, $facets, $results );
+		$this->showSearch( $search, $count, $facetHtml, $resultsHtml );
 	}
 
-	protected function doSearch( Solarium_Client $client, $queryString ) {
-		$query = $client->createSelect();
-		$dismax = $query->getDisMax();
-		$dismax->setQueryParser( 'edismax' );
-		$query->setQuery( $queryString );
-		$query->setRows( $this->limit );
-		$query->setStart( $this->getRequest()->getInt( 'offset' ) );
-
-		list( $pre, $post ) = $this->hl;
-		$hl = $query->getHighlighting();
-		$hl->setFields( 'text' );
-		$hl->setSimplePrefix( $pre );
-		$hl->setSimplePostfix( $post );
-		$hl->setMaxAnalyzedChars( '5000' );
-		$hl->setFragSize( '5000' );
-		$hl->setSnippets( 1 );
-
-		$languageFilter = $this->opts->getValue( 'language' );
-		if ( $languageFilter !== '' ) {
-			$query->createFilterQuery( 'languageFilter' )
-				->setQuery( 'language:%P1%', array( $languageFilter ) )
-				->addTag( 'filter' );
-		}
-
-		$groupFilter = $this->opts->getValue( 'group' );
-		if ( $groupFilter !== '' ) {
-			$query->createFilterQuery( 'groupFilter' )
-				->setQuery( 'group:%P1%', array( $groupFilter ) )
-				->addTag( 'filter' );
-		}
-
-		$facetSet = $query->getFacetSet();
-
-		$language = $facetSet->createFacetField( 'language' );
-		$language->setField( 'language' );
-		$language->setMincount( 1 );
-		$language->addExclude( 'filter' );
-
-		$group = $facetSet->createFacetField( 'group' );
-		$group->setField( 'group' );
-		$group->setMincount( 1 );
-		$group->setMissing( true );
-		$group->addExclude( 'filter' );
-
-		return $client->select( $query );
-	}
-
-	protected function getLanguages( Solarium_Result_Select_Facet_Field $facet ) {
+	protected function getLanguages( array $facet ) {
 		$output = array();
 
 		$nondefaults = $this->opts->getChangedValues();
@@ -274,11 +218,9 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 		return $output;
 	}
 
-	protected function getGroups( Solarium_Result_Select_Facet_Field $facet ) {
+	protected function getGroups( array $facet ) {
 		$structure = MessageGroups::getGroupStructure();
-		$counts = iterator_to_array( $facet );
-
-		return $this->makeGroupFacetRows( $structure, $counts );
+		return $this->makeGroupFacetRows( $structure, $facet );
 	}
 
 	protected function makeGroupFacetRows( array $groups, $counts, $level = 0, $pathString = '' ) {

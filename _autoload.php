@@ -162,7 +162,10 @@ $wgAutoloadClasses['TranslatablePage'] = "$dir/tag/TranslatablePage.php";
  * @{
  */
 $wgAutoloadClasses['ReadableTTMServer'] = "$dir/ttmserver/Interfaces.php";
+$wgAutoloadClasses['SearchableTTMServer'] = "$dir/ttmserver/Interfaces.php";
 $wgAutoloadClasses['WritableTTMServer'] = "$dir/ttmserver/Interfaces.php";
+
+$wgAutoloadClasses['TTMServerException'] = "$dir/ttmserver/Exceptions.php";
 
 $wgAutoloadClasses['DatabaseTTMServer'] = "$dir/ttmserver/DatabaseTTMServer.php";
 $wgAutoloadClasses['ElasticSearchTTMServer'] = "$dir/ttmserver/ElasticSearchTTMServer.php";

@@ -14,7 +14,10 @@
  * @since 2012-06-27
  * @ingroup TTMServer
  */
-class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMServer {
+class SolrTTMServer
+	extends TTMServer
+	implements ReadableTTMServer, SearchableTTMServer, WritableTTMServer
+{
 	/**
 	 * In case auto-commit is not enabled, or even if it is, tell solr to
 	 * commit before this time has passed, in milliseconds.
@@ -345,5 +348,93 @@ class SolrTTMServer extends TTMServer implements ReadableTTMServer, WritableTTMS
 		if ( $this->logger ) {
 			$this->logger->statusLine( "$text\n" );
 		}
+	}
+
+	// Search interface
+	public function search( $queryString, $opts, $highlight ) {
+		$client = $this->getSolarium();
+
+		$query = $client->createSelect();
+		$dismax = $query->getDisMax();
+		$dismax->setQueryParser( 'edismax' );
+		$query->setQuery( $queryString );
+		$query->setRows( $opts->getValue( 'limit' ) );
+		$query->setStart( $opts->getValue( 'offset' ) );
+
+		list( $pre, $post ) = $highlight;
+		$hl = $query->getHighlighting();
+		$hl->setFields( 'text' );
+		$hl->setSimplePrefix( $pre );
+		$hl->setSimplePostfix( $post );
+		$hl->setMaxAnalyzedChars( '5000' );
+		$hl->setFragSize( '5000' );
+		$hl->setSnippets( 1 );
+
+		$languageFilter = $opts->getValue( 'language' );
+		if ( $languageFilter !== '' ) {
+			$query->createFilterQuery( 'languageFilter' )
+				->setQuery( 'language:%P1%', array( $languageFilter ) )
+				->addTag( 'filter' );
+		}
+
+		$groupFilter = $opts->getValue( 'group' );
+		if ( $groupFilter !== '' ) {
+			$query->createFilterQuery( 'groupFilter' )
+				->setQuery( 'group:%P1%', array( $groupFilter ) )
+				->addTag( 'filter' );
+		}
+
+		$facetSet = $query->getFacetSet();
+
+		$language = $facetSet->createFacetField( 'language' );
+		$language->setField( 'language' );
+		$language->setMincount( 1 );
+		$language->addExclude( 'filter' );
+
+		$group = $facetSet->createFacetField( 'group' );
+		$group->setField( 'group' );
+		$group->setMincount( 1 );
+		$group->setMissing( true );
+		$group->addExclude( 'filter' );
+
+		try {
+			return $client->select( $query );
+		 } catch ( Solarium_Client_HttpException $e ) {
+			throw new TTMServer( $e->getMessage() );
+		}
+	}
+
+	public function getFacets( $resultset ) {
+		return array(
+			'language' => iterator_to_array( $resultset->getFacetSet()->getFacet( 'language' ) ),
+			'group' => iterator_to_array( $resultset->getFacetSet()->getFacet( 'group' ) ),
+		);
+	}
+
+	public function getTotalHits( $resultset ) {
+		return $resultset->getNumFound();
+	}
+
+	public function getDocuments( $resultset ) {
+		$highlighting = $resultset->getHighlighting();
+		$ret = array();
+		foreach ( $resultset as $document ) {
+			$fields = iterator_to_array( $document );
+			// Compatibility mapping
+			$fields['localid'] = $fields['messageid'];
+
+			$hdoc = $highlighting->getResult( $document->globalid );
+			$text = $hdoc->getField( 'text' );
+			if ( $text === array() ) {
+				$text = $document->text;
+			} else {
+				$text = $text[0];
+			}
+
+			$fields['content'] = $text;
+			$ret[] = $fields;
+		}
+
+		return $ret;
 	}
 }
