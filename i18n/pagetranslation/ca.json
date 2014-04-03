@@ -6,7 +6,8 @@
             "SMP",
             "Solde",
             "Toniher",
-            "පසිඳු කාවින්ද"
+            "පසිඳු කාවින්ද",
+            "Vriullop"
         ]
     },
     "pagetranslation": "Traducció d'una pàgina",
@@ -29,7 +30,7 @@
     "tpt-nosuchpage": "La pàgina $1 no existeix",
     "tpt-notsuitable": "La pàgina $1 no està preparada per a la seva traducció.\nAssegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi vàlida.",
     "tpt-rev-encourage": "restaura",
-    "translate-tag-translate-link-desc": "Traduir aquesta pàgina",
+    "translate-tag-translate-link-desc": "Traduïu aquesta pàgina",
     "tpt-languages-legend": "Altres idiomes:",
     "tpt-aggregategroup-add": "Afegeix",
     "tpt-aggregategroup-save": "Desa",
