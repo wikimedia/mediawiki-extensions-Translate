@@ -258,7 +258,7 @@ class PremadeMediawikiExtensionGroups {
 
 			// Default message file format is currently php
 			if ( !isset( $g['format'] ) ) {
-				$g['format'] = 'php';
+				$g['format'] = 'json';
 			}
 
 			if ( !isset( $g['file'] ) ) {
