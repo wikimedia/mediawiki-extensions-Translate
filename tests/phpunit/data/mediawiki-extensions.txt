@@ -1,4 +1,5 @@
 Wikimedia Messages
+format = php
 desc = Plop
 ignored = sidebar, robots.txt
 optional = grouppage-recursive-export
@@ -7,9 +8,10 @@ aliasfile = FooBar.alias.php
 magicfile = FooBar.magic.php
 
 Example Extension
+format = php
 
 Example JsonExtension
-format = json
 
 Example Extension 2
+format = php
 file = foo
