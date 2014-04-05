@@ -221,4 +221,9 @@ class PythonSingleFFS extends SimpleFFS {
 
 		return $m[1];
 	}
+
+	// Handled in writeReal
+	protected function tryReadSource( $filename, MessageCollection $collection ) {
+		return;
+	}
 }

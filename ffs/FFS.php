@@ -312,15 +312,15 @@ class SimpleFFS implements FFS {
 	}
 
 	/**
+	 * This tries to pick up external authors in the source files so that they
+	 * are not lost if those authors are not among those who have translated in
+	 * the wiki.
+	 *
 	 * @todo Get rid of this
 	 * @param string $filename
 	 * @param MessageCollection $collection
 	 */
 	protected function tryReadSource( $filename, MessageCollection $collection ) {
-		if ( $this->group instanceof SingleFileBasedMessageGroup ) {
-			return;
-		}
-
 		if ( get_class( $this->group->getFFS() ) !== get_class( $this ) ) {
 			return;
 		}
