@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_6db7ab82",
+        "filename": "scripts/translator-stats-process.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-05T10:19:19Z",
+      "side": 1,
+      "message": "Constructor is missing to add basic usage documentation.",
+      "revId": "ce3128f00b886f2b94816c535348d8f7ea72b333",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_8db20791",
+        "filename": "scripts/translator-stats.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-05T10:19:19Z",
+      "side": 1,
+      "message": "Constructor is missing to add basic usage documentation.",
+      "revId": "ce3128f00b886f2b94816c535348d8f7ea72b333",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
