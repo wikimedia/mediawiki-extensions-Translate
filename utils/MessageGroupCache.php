@@ -98,7 +98,7 @@ class MessageGroupCache {
 		$this->close(); // Close the reader instance just to be sure
 
 		$messages = $this->group->load( $this->code );
-		if ( !count( $messages ) && !( $this->group instanceof SingleFileBasedMessageGroup ) ) {
+		if ( $messages === array() ) {
 			if ( $this->exists() ) {
 				// Delete stale cache files
 				unlink( $this->getCacheFileName() );
@@ -137,14 +137,17 @@ class MessageGroupCache {
 		$group = $this->group;
 		$groupId = $group->getId();
 
+		$pattern = $group->getSourceFilePath( '*' );
 		$filename = $group->getSourceFilePath( $this->code );
 
-		if ( $group instanceof SingleFileBasedMessageGroup ) {
+		// If the file pattern is not dependent on the language, we will assume
+		// that all translations are stored in one file. This means we need to
+		// actually parse the file to know if a language is present.
+		if ( strpos( $pattern, '*' ) === false ) {
 			$source = $group->getFFS()->read( $this->code ) !== false;
 		} else {
 			static $globCache = null;
 			if ( !isset( $globCache[$groupId] ) ) {
-				$pattern = $group->getSourceFilePath( '*' );
 				$globCache[$groupId] = array_flip( glob( $pattern, GLOB_NOESCAPE ) );
 				// Definition file might not match the above pattern
 				$globCache[$groupId][$group->getSourceFilePath( 'en' )] = true;
