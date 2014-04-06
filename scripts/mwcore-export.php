@@ -90,9 +90,9 @@ class MwCoreExport extends Maintenance {
 			$variable = preg_quote( $matches[1], '~' );
 
 			/**
-			 * @var MessageGroupOld $group
+			 * @var FileBasedMessageGroup $group
 			 */
-			$file = $group->getMessageFileWithPath( $l );
+			$file = $group->getSourceFilePath( $l );
 
 			if ( !file_exists( $file ) ) {
 				$this->error( "File $file does not exist!" );
@@ -104,7 +104,7 @@ class MwCoreExport extends Maintenance {
 			$export = trim( $export ) . "\n";
 			$escExport = addcslashes( $export, '\\$' ); # Darn backreferences
 
-			$outFile = $this->getOption( 'target' ) . '/' . $group->getMessageFile( $l );
+			$outFile = $this->getOption( 'target' ) . '/' . $group->getTargetFilename( $l );
 
 			$count = 0;
 			$data = preg_replace( "~$variable\s*=.*?\n\);\n~s", $escExport, $data, 1, $count );

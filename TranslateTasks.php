@@ -314,6 +314,7 @@ class ExportMessagesTask extends ViewMessagesTask {
 			$ffs = $this->group->getFFS();
 			$data = $ffs->writeIntoVariable( $this->collection );
 		} else {
+			// @todo Can this go, too?
 			$writer = $this->group->getWriter();
 			$data = $writer->webExport( $this->collection );
 		}
