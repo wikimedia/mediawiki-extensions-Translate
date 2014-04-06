@@ -170,25 +170,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		$this->mangler = $value;
 	}
 
-	public function getReader( $code ) {
-		return null;
-	}
-
-	/**
-	 * @return SimpleFormatWriter
-	 */
-	public function getWriter() {
-		return new SimpleFormatWriter( $this );
-	}
-
 	public function load( $code ) {
-		$reader = $this->getReader( $code );
-		if ( $reader ) {
-			$messages = $reader->parseMessages( $this->mangler );
-
-			return $messages ? $messages : array();
-		}
-
 		return array();
 	}
 
