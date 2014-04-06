@@ -16,6 +16,24 @@
       "revId": "84d1159c8a7d5719460dd0b642ae8b8e1eb2cb49",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_8be66c12",
+        "filename": "_autoload.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-06T17:22:40Z",
+      "side": 1,
+      "message": "I think it\u0027s a good idea to get rid of everything that is now obsolete. I\u0027ll update the patch set.",
+      "parentUuid": "8e23439c_4b197426",
+      "revId": "84d1159c8a7d5719460dd0b642ae8b8e1eb2cb49",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
