@@ -77,13 +77,6 @@ class SyncGroup extends Maintenance {
 			false, /*required*/
 			false /*has arg*/
 		);
-		$this->addOption(
-			'core-meta',
-			'(optional) Allow export of specific MediaWiki core meta groups ' .
-			'(translatewiki.net specific)',
-			false, /*required*/
-			false /*has arg*/
-		);
 	}
 
 	public function execute() {
@@ -110,21 +103,11 @@ class SyncGroup extends Maintenance {
 			$codes = $supportedCodes;
 		}
 
-		$coreMeta = $this->hasOption( 'core-meta' );
-
 		/** @var MessageGroup $group */
 		foreach ( $groups as $groupId => &$group ) {
 			if ( $group->isMeta() ) {
-				if ( !$coreMeta ) {
-					$this->output( "Skipping meta message group $groupId.\n" );
-					continue;
-				}
-
-				// Special case for MediaWiki core branches with pattern "core-1*"
-				if ( strstr( $group->getId(), 'core-1', true ) !== '' ) {
-					$this->output( "Skipping meta message group $groupId.\n" );
-					continue;
-				}
+				$this->output( "Skipping meta message group $groupId.\n" );
+				continue;
 			}
 
 			$this->output( "{$group->getLabel()} ", $group );

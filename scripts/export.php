@@ -91,13 +91,6 @@ class CommandlineExport extends Maintenance {
 			false, /*required*/
 			false /*has arg*/
 		);
-		$this->addOption(
-			'core-meta',
-			'(optional) Allow export of specific MediaWiki core meta groups ' .
-				'(translatewiki.net specific)',
-			false, /*required*/
-			false /*has arg*/
-		);
 	}
 
 	public function execute() {
@@ -132,23 +125,15 @@ class CommandlineExport extends Maintenance {
 		$groupIds = MessageGroups::expandWildcards( $groupIds );
 		$groups = MessageGroups::getGroupsById( $groupIds );
 
-		$coreMeta = $this->hasOption( 'core-meta' );
 		foreach ( $groups as $groupId => $group ) {
 			if ( !$group instanceof MessageGroup ) {
 				$this->error( "EE2: Unknown message group $groupId.", 1 );
 			}
 
 			if ( $group->isMeta() ) {
-				if ( !$coreMeta ) {
-					$this->output( "Skipping meta message group $groupId.\n" );
-					unset( $groups[$groupId] );
-					continue;
-				} elseif ( strstr( $group->getId(), 'core-1', true ) !== '' ) {
-					// Special case for MediaWiki core branches.
-					$this->output( "Skipping meta message group $groupId.\n" );
-					unset( $groups[$groupId] );
-					continue;
-				}
+				$this->output( "Skipping meta message group $groupId.\n" );
+				unset( $groups[$groupId] );
+				continue;
 			}
 		}
 

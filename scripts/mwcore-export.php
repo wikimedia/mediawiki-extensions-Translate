@@ -90,7 +90,7 @@ class MwCoreExport extends Maintenance {
 			$variable = preg_quote( $matches[1], '~' );
 
 			/**
-			 * @var MessageGroupOld $group
+			 * @var FileBasedMessageGroup $group
 			 */
 			$file = $group->getMessageFileWithPath( $l );
 

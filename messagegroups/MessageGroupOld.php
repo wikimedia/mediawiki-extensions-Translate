@@ -174,13 +174,6 @@ abstract class MessageGroupOld implements MessageGroup {
 		return null;
 	}
 
-	/**
-	 * @return SimpleFormatWriter
-	 */
-	public function getWriter() {
-		return new SimpleFormatWriter( $this );
-	}
-
 	public function load( $code ) {
 		$reader = $this->getReader( $code );
 		if ( $reader ) {
