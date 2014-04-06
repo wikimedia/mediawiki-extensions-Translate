@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_4b197426",
+        "filename": "_autoload.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-06T17:20:50Z",
+      "side": 1,
+      "message": "If I am not mistaken this was the last user of SimpleFormat*, so those can be removed too.\n\nThis also means removing MessageGroupOld::getWriter and removing the BC code paths in export.php and TranslateTasks.php and sync-group.php.\n\nmwcore-export.php has now incorrect typehint of MessageGroupOld. Should be FileBasedMessageGroup and the getMessageFile(WithPath) should be changed.\n\nYou can decide whether to do that in this patch or ina separate patch.",
+      "revId": "84d1159c8a7d5719460dd0b642ae8b8e1eb2cb49",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
