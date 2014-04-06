@@ -87,6 +87,10 @@ abstract class MessageGroupBase implements MessageGroup {
 		return isset( $this->conf[$section][$key] ) ? $this->conf[$section][$key] : null;
 	}
 
+	/**
+	 * @return FFS
+	 * @throws MWException
+	 */
 	public function getFFS() {
 		$class = $this->getFromConf( 'FILES', 'class' );
 
