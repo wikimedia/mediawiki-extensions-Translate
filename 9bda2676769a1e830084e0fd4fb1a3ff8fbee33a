@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_0ba01c99",
+        "filename": "messagegroups/MessageGroupOld.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-06T18:14:26Z",
+      "side": 1,
+      "message": "And it looks like that this is also unused now.",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_eb8cc03c",
+        "filename": "messagegroups/MessageGroupOld.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-06T18:14:26Z",
+      "side": 1,
+      "message": "This could be replaced with just return array(). Further refactoring can be done later.",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_6b9f9056",
+        "filename": "scripts/export.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-06T18:14:26Z",
+      "side": 1,
+      "message": "This else path can be dropped",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_4b7df416",
+        "filename": "scripts/mwcore-export.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-06T18:14:26Z",
+      "side": 1,
+      "message": "This method no longer exists. Use getSourceFilePath()",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_cb90e448",
+        "filename": "scripts/mwcore-export.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-06T18:14:26Z",
+      "side": 1,
+      "message": "This method no longer exists. Use getTargetFilename()",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_8b9aec64",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-06T18:14:26Z",
+      "side": 1,
+      "message": "You can drop this if-else and just do the code in if-path.",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
