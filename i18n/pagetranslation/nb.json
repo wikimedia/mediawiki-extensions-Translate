@@ -5,7 +5,8 @@
             "Laaknor",
             "Nghtwlkr",
             "Njardarlogar",
-            "Purodha"
+            "Purodha",
+            "Danmichaelo"
         ]
     },
     "pagetranslation": "Sideoversetting",
@@ -67,8 +68,8 @@
     "tpt-target-page": "Denne siden kan ikke oppdateres manuelt.\nDenne siden er en oversettelse av siden [[$1]] og oversettelsen kan bli oppdatert ved å bruke [$2 oversettelsesverktøyet].",
     "tpt-unknown-page": "Dette navnerommet er reservert for oversettelser av innholdssider.\nDenne siden som du prøver å redigere ser ikke ut til å samsvare med noen av sidene som er markert for oversettelse.",
     "tpt-translation-restricted": "Oversettelse av denne siden til dette språket har blitt forhindret av en oversettelsesadministrator.\n\nÅrsak: $1",
-    "tpt-discouraged-language-force": "En oversettelsesadministrator har begrenset språkene denne siden kan oversettes til. Dette språket er ikke blant disse språkene.\n\nÅrsak: $1",
-    "tpt-discouraged-language": "Dette språket er ikke blant prioritetsspråkene som er satt av en oversettelsesadministrator for denne siden.\n\nÅrsak: $1",
+    "tpt-discouraged-language-force": "<strong>Denne siden kan ikke oversettes til $2.</strong>\n\nEn oversettelsesadministrator har bestemt at denne siden bare kan oversettes til $3.",
+    "tpt-discouraged-language": "<strong>Oversettelse til $2 er ikke prioritert for denne siden.</strong>\n\nEn oversettelsesadministrator har besluttet å fokusere oversettelsesarbeidet på $3.",
     "tpt-discouraged-language-reason": "Årsak: $1",
     "tpt-priority-languages": "En oversettelsesadministrator har satt prioritetsspråkene for denne gruppen til $1.",
     "tpt-render-summary": "Oppdaterer for å svare til ny versjon av kildesiden",
@@ -91,8 +92,8 @@
     "log-name-pagetranslation": "Logg for sideoversettelser",
     "pt-movepage-title": "Flytt oversettbar side $1",
     "pt-movepage-blockers": "Den oversettbare siden kan ikke flyttes til et nytt navn på grunn av følgende {{PLURAL:$1|feil}}:",
-    "pt-movepage-block-base-exists": "Målgrunnsiden [[:$1]] finnes.",
-    "pt-movepage-block-base-invalid": "Målgrunnsiden er ikke en gyldig tittel.",
+    "pt-movepage-block-base-exists": "Måloversettelsessiden «[[:$1]]» eksisterer.",
+    "pt-movepage-block-base-invalid": "Navnet på den oversettbare målsiden er ikke en gyldig tittel.",
     "pt-movepage-block-tp-exists": "Måloversettelsessiden [[:$2]] finnes.",
     "pt-movepage-block-tp-invalid": "Måloversettelsessidetittelen for [[:$1]] ville vært ugyldig (for lang?).",
     "pt-movepage-block-section-exists": "Målavsnittssiden [[:$2]] finnes fra før.",
@@ -119,13 +120,13 @@
     "pt-deletepage-lang-title": "Sletter den oversettbare siden $1.",
     "pt-deletepage-full-title": "Sletter den oversettbare siden $1.",
     "pt-deletepage-invalid-title": "Den angitte siden er ikke gyldig.",
-    "pt-deletepage-invalid-text": "Den angitte siden er ikke en oversettbar side eller en oversettelse av den.",
+    "pt-deletepage-invalid-text": "Den angitte siden er ikke en oversettbar side eller en oversettelsesside.",
     "pt-deletepage-action-check": "List opp sider som skal slettes",
     "pt-deletepage-action-perform": "Utfør slettingen",
     "pt-deletepage-action-other": "Endre mål",
     "pt-deletepage-lang-legend": "Slett oversettbar side",
     "pt-deletepage-full-legend": "Slett oversettbar side",
-    "pt-deletepage-any-legend": "Slett oversettbar side eller oversettelse av oversettbar side",
+    "pt-deletepage-any-legend": "Slett oversettbar side eller oversettelsesside",
     "pt-deletepage-current": "Sidenavn:",
     "pt-deletepage-reason": "Årsak:",
     "pt-deletepage-subpages": "Slett alle undersider",
@@ -137,5 +138,5 @@
     "pt-deletepage-full-logreason": "Del av den oversettbare siden $1.",
     "pt-deletepage-lang-logreason": "Del av oversettelsessiden $1.",
     "pt-deletepage-started": "Sjekk [[Special:Log/pagetranslation|sideoversettelsesloggen]] for feil- og fullføringsmeldinger.",
-    "pt-deletepage-intro": "Denne spesialsiden lar deg slette hele oversettbare sider eller oversettelser till ett språk.\nSlettingen vil ikke være umiddelbar, fordi mange sider må slettes.\nFeil vil logges i [[Special:Log/pagetranslation|sideoversettelsesloggen]], og må fikses manuelt."
+    "pt-deletepage-intro": "Denne spesialsiden lar deg slette hele oversettbare sider eller en inviduell oversettelsesside på ett språk.\nSlettingen vil ikke være umiddelbar, fordi alle avhengige sider også vil bli slettet.\nFeil vil logges i [[Special:Log/pagetranslation|sideoversettelsesloggen]], og må fikses manuelt."
 }

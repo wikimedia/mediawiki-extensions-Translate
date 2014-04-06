@@ -322,6 +322,7 @@ $specialPageAliases['eo'] = array(
 $specialPageAliases['es'] = array(
 	'Magic' => array( 'Traducción_avanzada' ),
 	'MyLanguage' => array( 'MiIdioma', 'Mi_idioma' ),
+	'SupportedLanguages' => array( 'IdiomasAdmitidos' ),
 	'Translate' => array( 'Traducir' ),
 	'Translations' => array( 'Traducciones' ),
 );

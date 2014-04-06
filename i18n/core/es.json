@@ -352,6 +352,7 @@
     "tux-editor-proofreading-mode": "Revisar",
     "tux-editor-translate-mode": "Lista",
     "tux-editor-proofreading-hide-own-translations": "Ocultar sus traducciones",
+    "tux-editor-proofreading-show-own-translations": "Mostrar tus traducciones",
     "tux-proofread-action-tooltip": "Marcar como revisado",
     "tux-proofread-edit-label": "Editar",
     "tux-editor-page-mode": "Página",
