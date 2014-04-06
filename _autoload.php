@@ -60,8 +60,6 @@ $wgAutoloadClasses['SpecialTranslationStash'] = "$dir/specials/SpecialTranslatio
  */
 $wgAutoloadClasses['SimpleFormatReader'] = "$dir/ffs/Simple.php";
 $wgAutoloadClasses['SimpleFormatWriter'] = "$dir/ffs/Simple.php";
-$wgAutoloadClasses['WikiFormatReader'] = "$dir/ffs/Wiki.php";
-$wgAutoloadClasses['WikiFormatWriter'] = "$dir/ffs/Wiki.php";
 /**@}*/
 
 /**
@@ -240,8 +238,6 @@ $wgAutoloadClasses['ViewUntranslatedTask'] = "$dir/TranslateTasks.php";
  * @{
  */
 $wgAutoloadClasses['AggregateMessageGroup'] = "$dir/messagegroups/AggregateMessageGroup.php";
-$wgAutoloadClasses['CoreMessageGroup'] = "$dir/messagegroups/CoreMessageGroup.php";
-$wgAutoloadClasses['CoreMostUsedMessageGroup'] = "$dir/messagegroups/CoreMostUsedMessageGroup.php";
 $wgAutoloadClasses['FileBasedMessageGroup'] = "$dir/messagegroups/FileBasedMessageGroup.php";
 $wgAutoloadClasses['MediaWikiMessageGroup'] = "$dir/messagegroups/MediaWikiMessageGroup.php";
 $wgAutoloadClasses['MediaWikiExtensionMessageGroup'] =
