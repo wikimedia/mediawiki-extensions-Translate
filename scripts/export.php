@@ -91,13 +91,6 @@ class CommandlineExport extends Maintenance {
 			false, /*required*/
 			false /*has arg*/
 		);
-		$this->addOption(
-			'core-meta',
-			'(optional) Allow export of specific MediaWiki core meta groups ' .
-				'(translatewiki.net specific)',
-			false, /*required*/
-			false /*has arg*/
-		);
 	}
 
 	public function execute() {
@@ -132,23 +125,16 @@ class CommandlineExport extends Maintenance {
 		$groupIds = MessageGroups::expandWildcards( $groupIds );
 		$groups = MessageGroups::getGroupsById( $groupIds );
 
-		$coreMeta = $this->hasOption( 'core-meta' );
+		/** @var FileBasedMessageGroup $group */
 		foreach ( $groups as $groupId => $group ) {
-			if ( !$group instanceof MessageGroup ) {
+			if ( !$group instanceof FileBasedMessageGroup ) {
 				$this->error( "EE2: Unknown message group $groupId.", 1 );
 			}
 
 			if ( $group->isMeta() ) {
-				if ( !$coreMeta ) {
-					$this->output( "Skipping meta message group $groupId.\n" );
-					unset( $groups[$groupId] );
-					continue;
-				} elseif ( strstr( $group->getId(), 'core-1', true ) !== '' ) {
-					// Special case for MediaWiki core branches.
-					$this->output( "Skipping meta message group $groupId.\n" );
-					unset( $groups[$groupId] );
-					continue;
-				}
+				$this->output( "Skipping meta message group $groupId.\n" );
+				unset( $groups[$groupId] );
+				continue;
 			}
 		}
 
@@ -161,10 +147,11 @@ class CommandlineExport extends Maintenance {
 		if ( $hours ) {
 			$namespaces = array();
 
-			/** @var MessageGroup $group */
+			/** @var FileBasedMessageGroup $group */
 			foreach ( $groups as $group ) {
 				$namespaces[$group->getNamespace()] = true;
 			}
+
 			$namespaces = array_keys( $namespaces );
 			$bots = true;
 
@@ -237,80 +224,71 @@ class CommandlineExport extends Maintenance {
 
 			$this->output( "Exporting $groupId...\n" );
 
-			if ( $group instanceof FileBasedMessageGroup ) {
-				$ffs = $group->getFFS();
-				$ffs->setWritePath( $target );
-				$sourceLanguage = $group->getSourceLanguage();
-				$collection = $group->initCollection( $sourceLanguage );
+			$ffs = $group->getFFS();
+			$ffs->setWritePath( $target );
+			$sourceLanguage = $group->getSourceLanguage();
+			$collection = $group->initCollection( $sourceLanguage );
 
-				$definitionFile = false;
+			$definitionFile = false;
 
-				if ( $this->hasOption( 'ppgettext' ) && $ffs instanceof GettextFFS ) {
-					global $wgMaxShellMemory, $wgTranslateGroupRoot;
+			if ( $this->hasOption( 'ppgettext' ) && $ffs instanceof GettextFFS ) {
+				global $wgMaxShellMemory, $wgTranslateGroupRoot;
 
-					// Need more shell memory for msgmerge.
-					$wgMaxShellMemory = 402400;
+				// Need more shell memory for msgmerge.
+				$wgMaxShellMemory = 402400;
 
-					$path = $group->getSourceFilePath( $sourceLanguage );
-					$definitionFile = str_replace(
-						$wgTranslateGroupRoot,
-						$this->getOption( 'ppgettext' ),
-						$path
-					);
+				$path = $group->getSourceFilePath( $sourceLanguage );
+				$definitionFile = str_replace(
+					$wgTranslateGroupRoot,
+					$this->getOption( 'ppgettext' ),
+					$path
+				);
+			}
+
+			$whitelist = $group->getTranslatableLanguages();
+
+			foreach ( $langs as $lang ) {
+				// Do not export languges that are blacklisted (or not whitelisted).
+				// Also check that whitelist is not null, which means that all
+				// languages are allowed for translation and export.
+				if ( is_array( $whitelist ) && !isset( $whitelist[$lang] ) ) {
+					continue;
 				}
 
-				$whitelist = $group->getTranslatableLanguages();
-
-				foreach ( $langs as $lang ) {
-					// Do not export languges that are blacklisted (or not whitelisted).
-					// Also check that whitelist is not null, which means that all
-					// languages are allowed for translation and export.
-					if ( is_array( $whitelist ) && !isset( $whitelist[$lang] ) ) {
-						continue;
-					}
-
-					$collection->resetForNewLanguage( $lang );
-					$collection->loadTranslations();
-					// Don't export ignored, unless it is the source language
-					// or message documentation
-					global $wgTranslateDocumentationLanguageCode;
-					if ( $lang !== $wgTranslateDocumentationLanguageCode
-						&& $lang !== $sourceLanguage
-					) {
-						$collection->filter( 'ignored' );
-					}
-
-					if ( $noFuzzy ) {
-						$collection->filter( 'fuzzy' );
-					}
-
-					$ffs->write( $collection );
-
-					// Do post processing if requested.
-					if ( $definitionFile ) {
-						if ( is_file( $definitionFile ) ) {
-							$targetFileName = $ffs->getWritePath() .
-								"/" . $group->getTargetFilename( $collection->code );
-							$cmd = "msgmerge --quiet " . $noLocation . "--output-file=" .
-								$targetFileName . ' ' . $targetFileName . ' ' . $definitionFile;
-							wfShellExec( $cmd, $ret );
-
-							// Report on errors.
-							if ( $ret ) {
-								$this->error( "ERROR: $ret" );
-							}
-						} else {
-							$this->error( "$definitionFile does not exist.", 1 );
-						}
-					}
+				$collection->resetForNewLanguage( $lang );
+				$collection->loadTranslations();
+				// Don't export ignored, unless it is the source language
+				// or message documentation
+				global $wgTranslateDocumentationLanguageCode;
+				if ( $lang !== $wgTranslateDocumentationLanguageCode
+					&& $lang !== $sourceLanguage
+				) {
+					$collection->filter( 'ignored' );
 				}
-			} else {
+
 				if ( $noFuzzy ) {
-					$this->error( "--no-fuzzy is not supported for this message group." );
+					$collection->filter( 'fuzzy' );
 				}
 
-				$writer = $group->getWriter();
-				$writer->fileExport( $langs, $target );
+				$ffs->write( $collection );
+
+				// Do post processing if requested.
+				if ( $definitionFile ) {
+					if ( is_file( $definitionFile ) ) {
+						$targetFileName = $ffs->getWritePath() .
+							"/" . $group->getTargetFilename( $collection->code );
+						$cmd = "msgmerge --quiet " . $noLocation . "--output-file=" .
+							$targetFileName . ' ' . $targetFileName . ' ' . $definitionFile;
+						wfShellExec( $cmd, $ret );
+
+						// Report on errors.
+						if ( $ret ) {
+							$this->error( "ERROR: $ret" );
+						}
+					} else {
+						$this->error( "$definitionFile does not exist.", 1 );
+					}
+				}
 			}
 		}
 	}
