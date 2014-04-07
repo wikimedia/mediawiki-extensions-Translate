@@ -58,7 +58,6 @@ class ProcessMessageChanges extends Maintenance {
 		$groups = $this->getGroups();
 		$changes = array();
 		$comparator = new ExternalMessageSourceStateComparator();
-		$all = ExternalMessageSourceStateComparator::ALL_LANGUAGES;
 
 		/** @var FileBasedMessageGroup $group */
 		foreach ( $groups as $id => $group ) {

@@ -115,7 +115,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 			return null;
 		}
 
-		return $rev->getText();
+		return ContentHandler::getContentText( $rev->getContent() );
 	}
 
 	/**

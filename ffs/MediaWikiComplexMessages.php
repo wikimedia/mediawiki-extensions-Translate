@@ -408,6 +408,10 @@ abstract class ComplexMessages {
 		return $text;
 	}
 
+	/**
+	 * @param WebRequest $request
+	 * @throws MWException
+	 */
 	public function save( $request ) {
 		$title = Title::newFromText( 'MediaWiki:' . $this->getKeyForSave() );
 		$page = WikiPage::factory( $title );
@@ -419,7 +423,9 @@ abstract class ComplexMessages {
 			'comment',
 			wfMessage( 'translate-magic-cm-updatedusing' )->inContentLanguage()->text()
 		);
-		$status = $page->doEdit( $data, $comment, 0 );
+
+		$content = ContentHandler::makeContent( $data, $page );
+		$status = $page->doEditContent( $content, $comment );
 
 		if ( $status === false || ( is_object( $status ) && !$status->isOK() ) ) {
 			throw new MWException( wfMessage( 'translate-magic-cm-savefailed' )->text() );

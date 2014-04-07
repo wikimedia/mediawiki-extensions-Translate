@@ -302,6 +302,7 @@ class SimpleFFS implements FFS {
 
 		$mangler = $this->group->getMangler();
 
+		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 			$trans = $m->translation();
