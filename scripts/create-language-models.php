@@ -44,7 +44,6 @@ TXT;
 		$languages = TranslateUtils::getLanguageNames( 'en' );
 		$cache = wfGetCache( CACHE_DB );
 		$key = wfMemckey( __METHOD__, $messages );
-		$pages = array();
 
 		$pages = $cache->get( $key );
 		if ( !is_array( $pages ) ) {

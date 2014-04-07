@@ -39,7 +39,9 @@ class AndroidXmlFFS extends SimpleFFS {
 
 		$messages = array();
 		$mangler = $this->group->getMangler();
+		$value = '';
 
+		/** @var SimpleXMLElement $element */
 		foreach ( $reader as $element ) {
 			$key = (string)$element['name'];
 
@@ -51,6 +53,9 @@ class AndroidXmlFFS extends SimpleFFS {
 					$forms[(string)$item['quantity']] = $this->readElementContents( $item );
 				}
 				$value = $this->flattenPlural( $forms );
+			} else {
+				wfDebug( __METHOD__ . ': Unknown XML element name.' );
+				continue;
 			}
 
 			if ( isset( $element['fuzzy'] ) && (string)$element['fuzzy'] === 'true' ) {

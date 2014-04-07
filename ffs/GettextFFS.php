@@ -373,6 +373,7 @@ class GettextFFS extends SimpleFFS {
 		$pluralCount = false;
 		$output = $this->doGettextHeader( $collection, $template, $pluralCount );
 
+		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
 			$transTemplate = isset( $template['TEMPLATE'][$key] ) ?
 				$template['TEMPLATE'][$key] : array();
@@ -464,6 +465,14 @@ PHP;
 		return $output;
 	}
 
+	/**
+	 * @param string $key
+	 * @param TMessage $m
+	 * @param array $trans
+	 * @param array $pot
+	 * @param int $pluralCount
+	 * @return string
+	 */
 	protected function formatMessageBlock( $key, $m, $trans, $pot, $pluralCount ) {
 		$header = $this->formatDocumentation( $key );
 		$content = '';
@@ -527,6 +536,13 @@ PHP;
 		return $output;
 	}
 
+	/**
+	 * @param string $key
+	 * @param array $a
+	 * @param array $b
+	 * @param mixed $default
+	 * @return mixed
+	 */
 	protected static function chainGetter( $key, $a, $b, $default ) {
 		if ( isset( $a[$key] ) ) {
 			return $a[$key];
