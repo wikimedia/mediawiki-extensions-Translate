@@ -465,11 +465,18 @@ class ChangeSyncer {
 			$flags |= EDIT_SUPPRESS_RC;
 		}
 
-		$wikipage = new WikiPage( $title );
 		$this->reportProgress( "Importing {$title->getPrefixedText()}: ", $title );
-		$status = $wikipage->doEdit(
-			$translation, $comment, $flags, false, FuzzyBot::getUser()
+
+		$wikipage = new WikiPage( $title );
+		$content = ContentHandler::makeContent( $translation, $wikipage );
+		$status = $wikipage->doEditContent(
+			$content,
+			$comment,
+			$flags,
+			false,
+			FuzzyBot::getUser()
 		);
+
 		$success = $status === true || ( is_object( $status ) && $status->isOK() );
 		$this->reportProgress( $success ? 'OK' : 'FAILED', $title );
 	}
