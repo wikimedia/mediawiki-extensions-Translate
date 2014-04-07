@@ -197,14 +197,23 @@ class SpecialManageGroups extends TranslateSpecialPage {
 
 		$text = '';
 		if ( $type === 'deletion' ) {
-			$wiki = Revision::newFromTitle( $title )->getText();
-			$this->diff->setText( $wiki, '' );
+			$wiki = ContentHandler::getContentText( Revision::newFromTitle( $title )->getContent() );
+			$oldContent = ContentHandler::makeContent( $wiki, $title );
+			$newContent = ContentHandler::makeContent( '', $title );
+
+			$this->diff->setContent( $oldContent, $newContent );
+
 			$text = $this->diff->getDiff( Linker::link( $title ), '' );
 		} elseif ( $type === 'addition' ) {
-			$this->diff->setText( '', $params['content'] );
+			$oldContent = ContentHandler::makeContent( '', $title );
+			$newContent = ContentHandler::makeContent( $params['content'], $title );
+
+			$this->diff->setContent( $oldContent, $newContent );
+
 			$text = $this->diff->getDiff( '', Linker::link( $title ) );
 		} elseif ( $type === 'change' ) {
-			$wiki = Revision::newFromTitle( $title )->getText();
+			$wiki = ContentHandler::getContentText( Revision::newFromTitle( $title )->getContent() );
+
 			$handle = new MessageHandle( $title );
 			if ( $handle->isFuzzy() ) {
 				$wiki = '!!FUZZY!!' . str_replace( TRANSLATE_FUZZY, '', $wiki );
@@ -220,7 +229,10 @@ class SpecialManageGroups extends TranslateSpecialPage {
 				$limit--;
 			}
 
-			$this->diff->setText( $wiki, $params['content'] );
+			$oldContent = ContentHandler::makeContent( $wiki, $title );
+			$newContent = ContentHandler::makeContent( $params['content'], $title );
+
+			$this->diff->setContent( $oldContent, $newContent );
 			$text .= $this->diff->getDiff( Linker::link( $title ), $actions );
 		}
 
@@ -282,7 +294,7 @@ class SpecialManageGroups extends TranslateSpecialPage {
 			}
 		}
 
-		Job::batchInsert( $jobs );
+		JobQueueGroup::singleton()->push( $jobs );
 
 		$reader->close();
 		rename( $changefile, $changefile . '-' . wfTimestamp() );
@@ -333,6 +345,7 @@ class SpecialManageGroups extends TranslateSpecialPage {
 			if ( $spClass === null ) {
 				continue; // Page explicitly disabled
 			}
+			// @todo Change to getPageTitle() when lowest supported version is 1.23.
 			$spTitle = $spClass->getTitle();
 
 			$tabs[$section][strtolower( $spName )] = array(
