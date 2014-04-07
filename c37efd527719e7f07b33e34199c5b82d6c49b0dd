@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_b053cf42",
+        "filename": "TranslateTasks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-07T18:56:46Z",
+      "side": 1,
+      "message": "Yes!",
+      "revId": "c37efd527719e7f07b33e34199c5b82d6c49b0dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_90169359",
+        "filename": "scripts/export.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-07T18:56:46Z",
+      "side": 1,
+      "message": "I think this should be changed to FileBasedMessageGroup to avoid fatal errors on $group-\u003egetFFS() later if someone specifies an aggregate group or a wiki page.\n\nNot completely sure if we have relied on AggregateGroups being silently ignored.",
+      "revId": "c37efd527719e7f07b33e34199c5b82d6c49b0dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
