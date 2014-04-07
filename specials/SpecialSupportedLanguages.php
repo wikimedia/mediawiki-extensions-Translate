@@ -259,7 +259,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 
 		foreach ( $res as $row ) {
 			$rev = new Revision( $row );
-			$text = $rev->getText();
+			$text = ContentHandler::getContentText( $rev->getContent() );
 			$code = strtolower( preg_replace( '!/translators$!', '', $row->page_title ) );
 
 			preg_match_all( '!{{[Uu]ser\|([^}|]+)!', $text, $matches, PREG_SET_ORDER );
@@ -358,8 +358,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 	protected function getUserStats( $users ) {
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$dbr = wfGetDB( DB_SLAVE );
-
-		$cacheKeys = array();
+		$keys = array();
 
 		foreach ( $users as $username ) {
 			$keys[] = wfMemcKey( 'translate', 'sl-usertats', $username );

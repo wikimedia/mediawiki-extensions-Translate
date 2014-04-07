@@ -32,7 +32,6 @@ class AppleFFS extends SimpleFFS {
 		$authors = $messages = array();
 		$linecontinuation = false;
 
-		$key = '';
 		$value = '';
 		foreach ( $lines as $line ) {
 			if ( $linecontinuation ) {
@@ -77,6 +76,7 @@ class AppleFFS extends SimpleFFS {
 	/**
 	 * Parses non-empty strings file row to key and value.
 	 * @param string $line
+	 * @throws MWException
 	 * @return array( string $key, string $val )
 	 */
 	public static function readRow( $line ) {

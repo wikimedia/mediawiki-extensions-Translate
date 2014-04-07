@@ -57,7 +57,7 @@ class XliffFFS extends SimpleFFS {
 		);
 
 		foreach ( $items as $item ) {
-
+			/** @var SimpleXMLElement $source */
 			$source = $item->$element;
 
 			if ( !$source ) {
@@ -144,6 +144,7 @@ class XliffFFS extends SimpleFFS {
 		$list = $template->getElementsByTagName( 'body' )->item( 0 );
 		$list->nodeValue = null;
 
+		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
 			$key = $mangler->unmangle( $key );
 
