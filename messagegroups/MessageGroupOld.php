@@ -379,6 +379,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * @return MessageGroupStates
 	 */
 	public function getMessageGroupStates() {
+		// @todo Replace deprecated call.
 		$conf = $this->getWorkflowConfiguration();
 
 		return new MessageGroupStates( $conf );

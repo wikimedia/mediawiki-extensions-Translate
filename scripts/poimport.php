@@ -96,7 +96,7 @@ class PoImporter {
 	private $file = false;
 
 	/**
-	 * @param $file File to import
+	 * @param string $file File to import
 	 */
 	public function __construct( $file ) {
 		$this->file = $file;
@@ -221,11 +221,11 @@ class WikiWriter {
 	/** @var callable Function to report progress updates */
 	protected $progressCallback;
 
+	protected $user;
+
 	private $changes = array();
 	private $dryrun = true;
-	private $allclear = false;
 	private $group = null;
-	protected $user;
 
 	/**
 	 * @param array $changes Array of key/langcode => translation.
@@ -257,13 +257,13 @@ class WikiWriter {
 	 */
 	public function execute() {
 		if ( !$this->group ) {
-			$this->reportProgress( "Group $groupId does not exist.", 'groupId', 'error' );
+			$this->reportProgress( "Given group does not exist.", 'groupId', 'error' );
 
 			return;
 		}
 
 		if ( !$this->user->idForName() ) {
-			$this->reportProgress( "User $user does not exist.", 'user', 'error' );
+			$this->reportProgress( "Given user does not exist.", 'user', 'error' );
 
 			return;
 		}
@@ -301,9 +301,9 @@ class WikiWriter {
 		}
 
 		$page = WikiPage::factory( $title );
-
-		$status = $page->doEdit(
-			$text,
+		$content = ContentHandler::makeContent( $text, $title );
+		$status = $page->doEditContent(
+			$content,
 			'Updating translation from gettext import',
 			0,
 			false,

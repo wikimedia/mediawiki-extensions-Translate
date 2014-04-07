@@ -231,9 +231,9 @@ class FuzzyScript {
 		}
 
 		$wikipage = new WikiPage( $title );
-
-		$status = $wikipage->doEdit(
-			$text,
+		$content = ContentHandler::makeContent( $text, $title );
+		$status = $wikipage->doEditContent(
+			$content,
 			$comment ? $comment : 'Marking as fuzzy',
 			EDIT_FORCE_BOT | EDIT_UPDATE,
 			false, /*base revision id*/

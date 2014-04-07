@@ -55,8 +55,10 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 				// @todo Use jobqueue
 				$title = Title::makeTitleSafe( $this->getNamespace(), $key );
 				$page = new WikiPage( $title );
-				$page->doEdit(
-					$state /*content*/,
+				$content = ContentHandler::makeContent( $state, $title );
+
+				$page->doEditContent(
+					$content,
 					wfMessage( 'translate-workflow-autocreated-summary', $state )->inContentLanguage()->text(),
 					0, /*flags*/
 					false, /* base revision id */
