@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e23439c_ff90fa99",
+        "filename": "messagegroups/MessageGroupOld.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-07T10:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e23439c_0ba01c99",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e23439c_eb8cc03c",
         "filename": "messagegroups/MessageGroupOld.php",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-06T18:14:26Z",
       "side": 1,
       "message": "This could be replaced with just return array(). Further refactoring can be done later.",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_dfed3e24",
+        "filename": "messagegroups/MessageGroupOld.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-07T10:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e23439c_eb8cc03c",
       "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8e23439c_bff28201",
+        "filename": "scripts/export.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-07T10:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e23439c_6b9f9056",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e23439c_4b7df416",
         "filename": "scripts/mwcore-export.php",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2014-04-06T18:14:26Z",
       "side": 1,
       "message": "This method no longer exists. Use getSourceFilePath()",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_3fde7271",
+        "filename": "scripts/mwcore-export.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-07T10:30:12Z",
+      "side": 1,
+      "message": "Hmm. That\u0027s not really correct, as that would give languages/i18n/code.json per:\n\n sourcePattern: %GROUPROOT%/mediawiki/master/languages/i18n/%CODE%.json\n\nWe do need languages/messages/MessagesCode.php for this. How do we take care of this?",
+      "parentUuid": "8e23439c_4b7df416",
       "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "8e23439c_dfd41e4e",
+        "filename": "scripts/mwcore-export.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-07T10:30:12Z",
+      "side": 1,
+      "message": "Same as above.",
+      "parentUuid": "8e23439c_cb90e448",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e23439c_8b9aec64",
         "filename": "scripts/sync-group.php",
         "patchSetId": 3
@@ -98,6 +188,24 @@
       "writtenOn": "2014-04-06T18:14:26Z",
       "side": 1,
       "message": "You can drop this if-else and just do the code in if-path.",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_1fc29688",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-07T10:30:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e23439c_8b9aec64",
       "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
