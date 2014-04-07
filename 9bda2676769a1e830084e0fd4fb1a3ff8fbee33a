@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "8e23439c_bd4de79d",
+        "filename": "scripts/mwcore-export.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-07T21:01:05Z",
+      "side": 1,
+      "message": "How so? We need absolute path, I\u0027m just confused to what file.",
+      "parentUuid": "8e23439c_3fde7271",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e23439c_cb90e448",
         "filename": "scripts/mwcore-export.php",
         "patchSetId": 3
@@ -171,6 +189,24 @@
       "side": 1,
       "message": "Same as above.",
       "parentUuid": "8e23439c_cb90e448",
+      "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_7d786fbf",
+        "filename": "scripts/mwcore-export.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-07T21:01:05Z",
+      "side": 1,
+      "message": "Not the same. getTargetFileName is relative",
+      "parentUuid": "8e23439c_dfd41e4e",
       "revId": "9bda2676769a1e830084e0fd4fb1a3ff8fbee33a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
