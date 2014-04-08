@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_8164fde2",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-04-08T14:42:36Z",
+      "side": 1,
+      "message": "Since you only grab the first snippet, you should probably set number_of_fragments to 1 (or 0 if you want to highlight the whole thing).  Another thing to think about it whether you want them to come back in the order that they appear in the _source (the default) or if you want them sorted according to score.",
+      "revId": "7ce6e9b640c3b527578f02b22ec8432ea63c9de5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
