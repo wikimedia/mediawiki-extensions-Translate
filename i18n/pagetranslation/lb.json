@@ -68,6 +68,8 @@
     "tpt-target-page": "Dës Säit kann net manuell aktualiséiert ginn.\nDës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungsfunktioun] aktualiséiert ginn.",
     "tpt-unknown-page": "Dësen Nummraum ass fir d'Iwwersetze vu Säite mat Inhalt reservéiert.\nD'Säit, déi Dir versicht z'änneren, schéngt net mat enger Säit déi fir d'Iwwersetzung markéiert ass ze korrespondéieren.",
     "tpt-translation-restricted": "D'Iwwersetze vun dëser Säit an dës Sprooch gouf vun engem Iwwersetzungs-Administrateur gespaart.\n\nGrond: $1",
+    "tpt-discouraged-language-force-header": "Dës Säit kann net op $1 iwwersat ginn.",
+    "tpt-discouraged-language-header": "D'Iwwersetzen op $1 ass keng Prioritéit fir dës Säit.",
     "tpt-discouraged-language-force": "<strong>Dës Säit kann net op $2 iwwersat ginn.</strong>\n\nEn Iwwersetzungs-Administrateur huet decidéiert datt dës Säit nëmmen op $3 iwwersat ka ginn.",
     "tpt-discouraged-language": "<strong>D'Iwwersetzung op $2 ass keng Prioritéit fir dës Säit.</strong>\n\nEn Iwwersetzungs-Administrateur huet decidéiert fir d'Iwwersetzungs-Efforten op $3 ze konzentréieren.",
     "tpt-discouraged-language-reason": "Grond: $1",

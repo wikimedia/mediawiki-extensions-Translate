@@ -33,7 +33,7 @@
     "tsb-translations-user": "Traduzione utente",
     "tsb-translations-current": "Traduzioni esistenti",
     "tsb-delete-userpage-summary": "Cancellata la pagina utente di un'utente in prova",
-    "translationstash": "Benvenuto(a)",
+    "translationstash": "Benvenuto/a",
     "translate-translationstash-welcome": "{{GENDER:$1|Benvenuto|Benvenuta|Benvenuto/a}} $1, ora sei {{GENDER:$1|un nuovo traduttore|una nuova traduttrice}}",
     "translate-translationstash-welcome-note": "Acquisisci familiarità con gli strumenti di traduzione. Traduci alcuni messaggi ed ottieni i diritti completi per partecipare ai tuoi progetti preferiti.",
     "translate-translationstash-initialtranslation": "La tua traduzione iniziale",
