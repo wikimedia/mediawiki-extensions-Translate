@@ -16,6 +16,24 @@
       "revId": "7ce6e9b640c3b527578f02b22ec8432ea63c9de5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_415ee518",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-08T14:44:27Z",
+      "side": 1,
+      "message": "0 (whole text) is what we do with Solr as well. The messages are short enough that it shouldn\u0027t be a problem.",
+      "parentUuid": "8e23439c_8164fde2",
+      "revId": "7ce6e9b640c3b527578f02b22ec8432ea63c9de5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
