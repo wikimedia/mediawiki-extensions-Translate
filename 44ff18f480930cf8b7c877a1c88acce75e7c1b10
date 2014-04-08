@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_8ffb0944",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-04-08T14:03:51Z",
+      "side": 1,
+      "message": "QueryString has lots of power: maybe too much.  Stuff like switching the field you are querying, doing range queries.  Lots of stuff.  If you can get away with a match query you\u0027d probably be better off.  Otherwise you have to start restricting the syntax on the way in like cirrus does.  That is a painful process that I\u0027m not happy with even now.",
+      "revId": "44ff18f480930cf8b7c877a1c88acce75e7c1b10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
