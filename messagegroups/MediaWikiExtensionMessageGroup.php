@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -12,7 +11,7 @@
  * Message group for %MediaWiki extensions.
  * @ingroup MessageGroup
  */
-class MediaWikiExtensionMessageGroup extends SingleFileBasedMessageGroup {
+class MediaWikiExtensionMessageGroup extends FileBasedMessageGroup {
 	/**
 	 * MediaWiki extensions all should have key in their i18n files
 	 * describing them. This override method implements the logic
