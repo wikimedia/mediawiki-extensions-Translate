@@ -16,6 +16,24 @@
       "revId": "44ff18f480930cf8b7c877a1c88acce75e7c1b10",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_4f8cd1db",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-08T14:10:01Z",
+      "side": 1,
+      "message": "I can probably live with match query.\n\nBut to be able to search messages by page title is also a wanted feature (with solr you can do messageid:MediaWiki:Jan)",
+      "parentUuid": "8e23439c_8ffb0944",
+      "revId": "44ff18f480930cf8b7c877a1c88acce75e7c1b10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
