@@ -34,6 +34,24 @@
       "revId": "44ff18f480930cf8b7c877a1c88acce75e7c1b10",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_e1005106",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-04-08T14:23:17Z",
+      "side": 1,
+      "message": "You can use query string and just escape \"all\" the especial syntax other than : if you want.  There is some danger that folks with use colon to get things you don\u0027t want them to get but that isn\u0027t too great here, I think.  You could just allow everything and close it off if there is abuse.  This is, in effect, what you have now if you let users specify the solr query string syntax.  CirrusSearch\u0027s Searcher-\u003efixupQueryStringPart is how cirrus does most of its escaping.  It has other escaping parts, but those are mostly designed to prevent half baked syntax from slipping through.  You wouldn\u0027t have to do that if you smashed more of the special syntax.",
+      "parentUuid": "8e23439c_4f8cd1db",
+      "revId": "44ff18f480930cf8b7c877a1c88acce75e7c1b10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
