@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e23439c_4b915b49",
+        "filename": "scripts/export.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-09T14:01:56Z",
+      "side": 1,
+      "message": "I know. It was convenience to put it here. Wasn\u0027t planning on moving it.",
+      "parentUuid": "8e23439c_8ba0939b",
+      "revId": "bc24ca81bb49a4823a3f09f841b216be138da8c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e23439c_4b927b58",
         "filename": "scripts/sync-group.php",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-09T13:59:13Z",
       "side": 1,
       "message": "Why not change line 106 instead if we know for sure.",
+      "revId": "bc24ca81bb49a4823a3f09f841b216be138da8c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_eb9f0754",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-09T14:01:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e23439c_4b927b58",
       "revId": "bc24ca81bb49a4823a3f09f841b216be138da8c3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
