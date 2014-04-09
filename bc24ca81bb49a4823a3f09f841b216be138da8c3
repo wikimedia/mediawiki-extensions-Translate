@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_8ba0939b",
+        "filename": "scripts/export.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-09T13:59:13Z",
+      "side": 1,
+      "message": "To be nitpick you don\u0027t know yet that it is an instance of FileBasedMessageGroup. Only after the loop.",
+      "revId": "bc24ca81bb49a4823a3f09f841b216be138da8c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_4b927b58",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-09T13:59:13Z",
+      "side": 1,
+      "message": "Why not change line 106 instead if we know for sure.",
+      "revId": "bc24ca81bb49a4823a3f09f841b216be138da8c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
