@@ -69,6 +69,7 @@
     "tpt-target-page": "このページは手動では更新できません。\nこのページはページ [[$1]] の翻訳版であり、[$2 翻訳ツール]を使用して更新できます。",
     "tpt-unknown-page": "この名前空間はコンテンツ ページの翻訳のために予約されています。\n編集しようとしているページに対応する翻訳対象ページが存在しないようです。",
     "tpt-translation-restricted": "翻訳管理者がこのページのこの言語への翻訳を禁止しています。\n\n理由: $1",
+    "tpt-discouraged-language-force-header": "このページは$1には翻訳できません。",
     "tpt-discouraged-language-force": "<strong>このページは $2 に翻訳できません。</strong>\n\n翻訳管理者がこのページの翻訳先言語を $3 のみに制限しています。",
     "tpt-discouraged-language": "<strong>このページの $2 への翻訳は重要ではありません。</strong>\n翻訳管理者が $3 への翻訳作業に重点を置くことを決めました。",
     "tpt-discouraged-language-reason": "理由: $1",
