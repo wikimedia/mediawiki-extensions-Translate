@@ -30,8 +30,9 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		$page = WikiPage::factory( $title );
 		$this->assertNotNull( $page, 'WikiPage is valid' );
 		$translatablePage = TranslatablePage::newFromTitle( $title );
+		$content = ContentHandler::makeContent( 'kissa', $title );
 
-		$page->doEdit( 'kissa', 'Test case' );
+		$page->doEditContent( $content,  'Test case' );
 
 		$this->assertFalse( $translatablePage->getReadyTag(), 'No ready tag was added' );
 		$this->assertFalse( $translatablePage->getMarkedTag(), 'No marked tag was added' );
@@ -44,7 +45,8 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		$this->assertNotNull( $page, 'WikiPage is valid' );
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 
-		$status = $page->doEdit( '<translate>kissa</translate>', 'Test case' );
+		$content = ContentHandler::makeContent( '<translate>kissa</translate>', $title );
+		$status = $page->doEditContent( $content, 'Test case' );
 		$latest = $status->value['revision']->getId();
 
 		$this->assertSame( $latest, $translatablePage->getReadyTag(), 'Ready tag was added' );
@@ -58,23 +60,23 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		$this->assertNotNull( $page, 'WikiPage is valid' );
 		$translatablePage = TranslatablePage::newFromTitle( $title );
 
-		$status = $page->doEdit( '<translate>koira</translate>', 'Test case' );
+		$content = ContentHandler::makeContent( '<translate>koira</translate>', $title );
+		$status = $page->doEditContent( $content, 'Test case' );
 		$latest = $status->value['revision']->getId();
 
 		$translatablePage->addMarkedTag( $latest, array( 'foo' ) );
 		$this->assertSame( $latest, $translatablePage->getReadyTag(), 'Ready tag was added' );
 		$this->assertSame( $latest, $translatablePage->getMarkedTag(), 'Marked tag was added' );
-		// @todo FIXME: Deprecated! Needs a user to replace.
-		$page->updateRestrictions( array( 'edit' => 'sysop' ), 'Test case' );
-		/*
+
+		global $wgUser;
+		$cascade = false;
 		$page->doUpdateRestrictions(
 			array( 'edit' => 'sysop' ),
-			array(), // expiry
-			false, // cascade allowed
-			'Test case', // reason
-			$user // user
+			array(),
+			$cascade,
+			'Test case',
+			$wgUser
 		);
-		*/
 
 		$newLatest = $latest + 1;
 		$this->assertSame(
@@ -93,13 +95,16 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		$superUser = new MockSuperUser();
 		$title = Title::newFromText( 'Translatable page' );
 		$page = WikiPage::factory( $title );
-		$status = $page->doEdit(
-			'<translate>Hello</translate>',
+		$content = ContentHandler::makeContent( '<translate>Hello</translate>', $title );
+
+		$status = $page->doEditContent(
+			$content,
 			'New page',
 			0,
 			false,
 			$superUser
 		);
+
 		$revision = $status->value['revision']->getId();
 		$translatablePage = TranslatablePage::newFromRevision( $title, $revision );
 		$translatablePage->addMarkedTag( $revision );

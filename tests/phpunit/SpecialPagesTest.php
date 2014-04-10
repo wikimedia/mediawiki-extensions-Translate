@@ -20,7 +20,7 @@ class SpecialPagesTest extends MediaWikiTestCase {
 		$this->setMwGlobals( array(
 			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
 			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
-			'wgDeprecationReleaseLimit' => 1.19,
+			'wgDeprecationReleaseLimit' => 1.21,
 			'wgTranslateTranslationServices' => array(),
 		) );
 	}
@@ -44,6 +44,7 @@ class SpecialPagesTest extends MediaWikiTestCase {
 	 */
 	public function testSpecialPage( $name ) {
 		$page = SpecialPageFactory::getPage( $name );
+		// @todo Change to getPageTitle() when lowest supported version is 1.23.
 		$title = $page->getTitle();
 
 		$context = RequestContext::newExtraneousContext( $title );

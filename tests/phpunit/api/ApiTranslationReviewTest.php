@@ -52,13 +52,16 @@ class ApiTranslationReviewTest extends MediaWikiTestCase {
 		$plainUser = User::newFromName( 'PlainUser' );
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey1/fi' );
-		WikiPage::factory( $title )->doEdit( 'trans1', __METHOD__, 0, false, $superUser1 );
+		$content = ContentHandler::makeContent( 'trans1', $title );
+		WikiPage::factory( $title )->doEditContent( $content, __METHOD__, 0, false, $superUser1 );
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey2/fi' );
-		WikiPage::factory( $title )->doEdit( '!!FUZZY!!trans2', __METHOD__, 0, false, $superUser2 );
+		$content = ContentHandler::makeContent( '!!FUZZY!!trans2', $title );
+		WikiPage::factory( $title )->doEditContent( $content, __METHOD__, 0, false, $superUser2 );
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey3/fi' );
-		WikiPage::factory( $title )->doEdit( 'unknown message', __METHOD__, 0, false, $superUser1 );
+		$content = ContentHandler::makeContent( 'unknown message', $title );
+		WikiPage::factory( $title )->doEditContent( $content, __METHOD__, 0, false, $superUser1 );
 
 		$testcases = array(
 			array(
@@ -101,5 +104,3 @@ class ApiTranslationReviewTest extends MediaWikiTestCase {
 		}
 	}
 }
-
-

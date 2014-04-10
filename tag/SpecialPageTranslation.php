@@ -500,7 +500,12 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 					$diff->setTextLanguage( $wgContLang );
 				}
 				$diff->setReducedLineNumbers();
-				$diff->setText( $s->getOldText(), $s->getText() );
+
+				$oldContent = ContentHandler::makeContent( $s->getOldText(), $diff->getTitle() );
+				$newContent = ContentHandler::makeContent( $s->getText(), $diff->getTitle() );
+
+				$diff->setContent( $oldContent, $newContent );
+
 				$text = $diff->getDiff( $diffOld, $diffNew );
 				$diffOld = $diffNew = null;
 				$diff->showDiffStyle();
@@ -561,7 +566,12 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 				if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
 					$diff->setTextLanguage( $wgContLang );
 				}
-				$diff->setText( $oldTemplate, $newTemplate );
+
+				$oldContent = ContentHandler::makeContent( $oldTemplate, $diff->getTitle() );
+				$newContent = ContentHandler::makeContent( $newTemplate, $diff->getTitle() );
+
+				$diff->setContent( $oldContent, $newContent );
+
 				$text = $diff->getDiff(
 					$this->msg( 'tpt-diff-old' )->escaped(),
 					$this->msg( 'tpt-diff-new' )->escaped()
@@ -649,10 +659,15 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 	public function markForTranslation( TranslatablePage $page, array $sections ) {
 		// Add the section markers to the source page
 		$wikiPage = WikiPage::factory( $page->getTitle() );
-		$status = $wikiPage->doEdit(
-			$page->getParse()->getSourcePageText(), // Content
-			$this->msg( 'tpt-mark-summary' )->inContentLanguage()->text(), // Summary
-			EDIT_FORCE_BOT | EDIT_UPDATE // Flags
+		$content = ContentHandler::makeContent(
+			$page->getParse()->getSourcePageText(),
+			$this->getTitle()
+		);
+
+		$status = $wikiPage->doEditContent(
+			$content,
+			$this->msg( 'tpt-mark-summary' )->inContentLanguage()->text(),
+			EDIT_FORCE_BOT | EDIT_UPDATE
 		);
 
 		if ( !$status->isOK() ) {
@@ -711,10 +726,10 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 		MessageGroups::clearCache();
 
 		$jobs = self::getRenderJobs( $page );
-		Job::batchInsert( $jobs );
+		JobQueueGroup::singleton()->push( $jobs );
 
 		$jobs = self::getTranslationUnitJobs( $page, $sections );
-		Job::batchInsert( $jobs );
+		JobQueueGroup::singleton()->push( $jobs );
 
 		// Logging
 		$this->handlePriorityLanguages( $this->getRequest(), $page );

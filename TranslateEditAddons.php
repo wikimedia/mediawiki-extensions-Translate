@@ -148,29 +148,6 @@ class TranslateEditAddons {
 	}
 
 	/**
-	 * Check if a string contains the fuzzy string.
-	 *
-	 * @param string $text Arbitrary text
-	 * @return bool If string contains fuzzy string.
-	 */
-	public static function hasFuzzyString( $text ) {
-		# wfDeprecated( __METHOD__, '1.19' );
-		return MessageHandle::hasFuzzyString( $text );
-	}
-
-	/**
-	 * Check if a title is marked as fuzzy.
-	 * @param Title $title
-	 * @return bool If title is marked fuzzy.
-	 */
-	public static function isFuzzy( Title $title ) {
-		# wfDeprecated( __METHOD__, '1.19' );
-		$handle = new MessageHandle( $title );
-
-		return $handle->isFuzzy();
-	}
-
-	/**
 	 * Hook: EditPage::showEditForm:fields
 	 */
 	public static function keepFields( EditPage $editpage, OutputPage $out ) {
@@ -189,11 +166,8 @@ class TranslateEditAddons {
 	/**
 	 * Runs message checks, adds tp:transver tags and updates statistics.
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
-	 *
-	 * Switch to this when BC goes no further than 1.21:
-	 *     public static function onSave( WikiPage $wikiPage, $user, $content, $summary,
 	 */
-	public static function onSave( $wikiPage, $user, $content, $summary,
+	public static function onSave( WikiPage $wikiPage, $user, $content, $summary,
 		$minor, $_, $_, $flags, $revision
 	) {
 
@@ -241,7 +215,7 @@ class TranslateEditAddons {
 	 */
 	protected static function checkNeedsFuzzy( MessageHandle $handle, $text ) {
 		// Check for explicit tag.
-		$fuzzy = self::hasFuzzyString( $text );
+		$fuzzy = MessageHandle::hasFuzzyString( $text );
 
 		// Docs are exempt for checks
 		if ( $handle->isDoc() ) {

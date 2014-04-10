@@ -137,7 +137,7 @@ class TranslatablePage {
 				// There is no break statement here on purpose
 				case 'revision':
 					$rev = Revision::newFromTitle( $this->getTitle(), $this->revision );
-					$this->text = $rev->getText();
+					$this->text = ContentHandler::getContentText( $rev->getContent() );
 					break;
 			}
 		}
