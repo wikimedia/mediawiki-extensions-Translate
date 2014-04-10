@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_d4ff3f61",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-04-10T16:49:29Z",
+      "side": 1,
+      "message": "BoolAnd filters are executed in sequence per document.  Bool filters with multiple must clauses are executed by converting each filter into a bit field then anding them together.  The latter is normally faster if either of the sub-filters are reused.  May not make a difference in this context but normally Bool is preferred.  Not sure why I didn\u0027t notice this before.",
+      "revId": "db44edf6e54efa399fe2360bd2a6c567993a85ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_3430b352",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-04-10T16:49:29Z",
+      "side": 1,
+      "message": "I forget, will this complain if $hl[\u0027content\u0027] isn\u0027t set?  ES will sometimes not set the key.  I  think it is if you haven\u0027t indexed any documents at all or something.  Its kindof a funky corner case, IIRC.",
+      "revId": "db44edf6e54efa399fe2360bd2a6c567993a85ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
