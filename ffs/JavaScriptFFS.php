@@ -156,9 +156,9 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			}
 
 			$key = $mangler->unmangle( $message->key() );
-			$key = $this->transformKey( Xml::escapeJsString( $key ) );
+			$key = $this->transformKey( Xml::encodeJsVar( $key ) );
 
-			$translation = Xml::escapeJsString( $message->translation() );
+			$translation = Xml::encodeJsVar( $message->translation() );
 
 			$body .= "\t{$key}: \"{$translation}\",\n";
 		}

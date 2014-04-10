@@ -105,8 +105,8 @@ class JsSelectToInput {
 	 * @return string
 	 */
 	protected function getButton( $msg, $source, $target ) {
-		$source = Xml::escapeJsString( $source );
-		$target = Xml::escapeJsString( $target );
+		$source = Xml::encodeJsVar( $source );
+		$target = Xml::encodeJsVar( $target );
 		$html = Xml::element( 'input', array(
 			'type' => 'button',
 			'value' => wfMessage( $msg )->text(),

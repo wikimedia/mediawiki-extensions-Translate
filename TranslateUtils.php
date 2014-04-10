@@ -372,11 +372,7 @@ class TranslateUtils {
 	 * @since 2012-05-03
 	 */
 	public static function getTokenAction( $token ) {
-		global $wgVersion;
 		$method = "action=tokens&type=$token";
-		if ( version_compare( $wgVersion, '1.20', '<' ) ) {
-			$method = "action=query&prop=info&intoken=$token&titles=Token";
-		}
 
 		return $method;
 	}
