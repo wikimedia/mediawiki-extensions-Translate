@@ -365,20 +365,13 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Convenience function that handles BC with changed way of
-	 * acquiring tokens via API.
+	 * Convenience function to get API query string for retrieving a token.
 	 * @param string $token
 	 * @return string
 	 * @since 2012-05-03
 	 */
 	public static function getTokenAction( $token ) {
-		global $wgVersion;
-		$method = "action=tokens&type=$token";
-		if ( version_compare( $wgVersion, '1.20', '<' ) ) {
-			$method = "action=query&prop=info&intoken=$token&titles=Token";
-		}
-
-		return $method;
+		return "action=tokens&type=$token";
 	}
 
 	/**

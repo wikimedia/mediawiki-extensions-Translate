@@ -15,7 +15,6 @@
  */
 class TranslateDeleteJob extends Job {
 	/**
-	 * @static
 	 * @param $target Title
 	 * @param $base
 	 * @param $full

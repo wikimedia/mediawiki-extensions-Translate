@@ -461,7 +461,7 @@ class SpecialPageTranslationMovePage extends TranslateSpecialPage {
 
 		// This is used by TranslateMoveJob
 		wfGetCache( CACHE_ANYTHING )->set( wfMemcKey( 'translate-pt-move', $base ), count( $jobs ) );
-		Job::batchInsert( $jobs );
+		JobQueueGroup::singleton()->push( $jobs );
 
 		TranslateMoveJob::forceRedirects( false );
 
