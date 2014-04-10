@@ -154,7 +154,6 @@ class TranslateEditAddons {
 	 * @return bool If string contains fuzzy string.
 	 */
 	public static function hasFuzzyString( $text ) {
-		# wfDeprecated( __METHOD__, '1.19' );
 		return MessageHandle::hasFuzzyString( $text );
 	}
 
@@ -164,7 +163,6 @@ class TranslateEditAddons {
 	 * @return bool If title is marked fuzzy.
 	 */
 	public static function isFuzzy( Title $title ) {
-		# wfDeprecated( __METHOD__, '1.19' );
 		$handle = new MessageHandle( $title );
 
 		return $handle->isFuzzy();
@@ -189,11 +187,8 @@ class TranslateEditAddons {
 	/**
 	 * Runs message checks, adds tp:transver tags and updates statistics.
 	 * Hook: ArticleSaveComplete, PageContentSaveComplete
-	 *
-	 * Switch to this when BC goes no further than 1.21:
-	 *     public static function onSave( WikiPage $wikiPage, $user, $content, $summary,
 	 */
-	public static function onSave( $wikiPage, $user, $content, $summary,
+	public static function onSave( WikiPage $wikiPage, $user, $content, $summary,
 		$minor, $_, $_, $flags, $revision
 	) {
 

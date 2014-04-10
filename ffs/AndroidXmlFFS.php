@@ -39,7 +39,6 @@ class AndroidXmlFFS extends SimpleFFS {
 
 		$messages = array();
 		$mangler = $this->group->getMangler();
-		$value = '';
 
 		/** @var SimpleXMLElement $element */
 		foreach ( $reader as $element ) {

@@ -45,7 +45,10 @@ class MessageCollectionTest extends MediaWikiTestCase {
 		$user->setId( 123 );
 		$title = Title::newFromText( 'MediaWiki:translated/fi' );
 		$page = WikiPage::factory( $title );
-		$status = $page->doEdit( 'pupuliini', __METHOD__, false, 0, $user );
+		$content = ContentHandler::makeContent( 'pupuliini', $title );
+
+		$status = $page->doEditContent( $content, __METHOD__, 0, false, $user );
+
 		$value = $status->getValue();
 		$rev = $value['revision'];
 		$revision = $rev->getId();

@@ -40,7 +40,8 @@ class MessageUpdateJob extends Job {
 		$wikiPage = WikiPage::factory( $title );
 		$summary = wfMessage( 'translate-manage-import-summary' )
 			->inContentLanguage()->plain();
-		$wikiPage->doEdit( $params['content'], $summary, $flags, false, $user );
+		$content = ContentHandler::makeContent( $params['content'], $title );
+		$wikiPage->doEditContent( $content, $summary, $flags, false, $user );
 
 		// NOTE: message documentation is excluded from fuzzying!
 		if ( $params['fuzzy'] ) {

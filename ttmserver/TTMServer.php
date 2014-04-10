@@ -125,9 +125,7 @@ class TTMServer {
 	}
 
 	/// Hook: ArticleDeleteComplete
-	/// Switch to this when BC goes no further than 1.21:
-	/// public static function onDelete( WikiPage $wikipage ) {
-	public static function onDelete( $wikipage ) {
+	public static function onDelete( WikiPage $wikipage ) {
 		$handle = new MessageHandle( $wikipage->getTitle() );
 		TTMServer::primary()->update( $handle, null );
 

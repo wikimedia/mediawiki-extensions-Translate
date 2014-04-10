@@ -1104,8 +1104,10 @@ class TranslationHelpers {
 			// And someone might still have deleted it
 			return null;
 		}
-		$oldtext = $oldrev->getText();
-		$newtext = Revision::newFromTitle( $definitionTitle, $latestRevision )->getText();
+
+		$oldtext = ContentHandler::getContentText( $oldrev->getContent() );
+		$newContent = Revision::newFromTitle( $definitionTitle, $latestRevision )->getContent();
+		$newtext = ContentHandler::getContentText( $newContent );
 
 		if ( $oldtext === $newtext ) {
 			return null;
@@ -1115,7 +1117,11 @@ class TranslationHelpers {
 		if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
 			$diff->setTextLanguage( $this->group->getSourceLanguage() );
 		}
-		$diff->setText( $oldtext, $newtext );
+
+		$oldContent = ContentHandler::makeContent( $oldtext, $diff->getTitle() );
+		$newContent = ContentHandler::makeContent( $newtext, $diff->getTitle() );
+
+		$diff->setContent( $oldContent, $newContent );
 		$diff->setReducedLineNumbers();
 		$diff->showDiffStyle();
 
@@ -1137,14 +1143,20 @@ class TranslationHelpers {
 		$diffText = '';
 
 		if ( $latestRev && $previousRev ) {
-			$latest = $latestRev->getText();
-			$previous = $previousRev->getText();
+			$latest = ContentHandler::getContentText( $latestRev->getContent() );
+			$previous = ContentHandler::getContentText( $previousRev->getContent() );
+
 			if ( $previous !== $latest ) {
 				$diff = new DifferenceEngine;
+
 				if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
 					$diff->setTextLanguage( $this->getTargetLanguage() );
 				}
-				$diff->setText( $previous, $latest );
+
+				$oldContent = ContentHandler::makeContent( $previous, $diff->getTitle() );
+				$newContent = ContentHandler::makeContent( $latest, $diff->getTitle() );
+
+				$diff->setContent( $oldContent, $newContent );
 				$diff->setReducedLineNumbers();
 				$diff->showDiffStyle();
 				$diffText = $diff->getDiff( false, false );

@@ -41,7 +41,8 @@ class TranslationFuzzyUpdaterTest extends MediaWikiTestCase {
 	public function testParsing() {
 		$title = Title::newFromText( 'MediaWiki:Ugakey/nl' );
 		$page = WikiPage::factory( $title );
-		$status = $page->doEdit( '$1 van $2', __METHOD__ );
+		$content = ContentHandler::makeContent( '$1 van $2', $title );
+		$status = $page->doEditContent( $content, __METHOD__ );
 		$value = $status->getValue();
 		/**
 		 * @var Revision $rev
@@ -63,14 +64,17 @@ class TranslationFuzzyUpdaterTest extends MediaWikiTestCase {
 		$this->assertTrue( $handle->isValid(), 'Message is known' );
 		$this->assertTrue( $handle->isFuzzy(), 'Message is fuzzy after database fuzzying' );
 		// Update the translation without the fuzzy string
-		$page->doEdit( '$1 van $2', __METHOD__ );
+		$content = ContentHandler::makeContent( '$1 van $2', $title );
+		$page->doEditContent( $content, __METHOD__ );
 		$this->assertFalse( $handle->isFuzzy(), 'Message is unfuzzy after edit' );
 
-		$page->doEdit( '!!FUZZY!!$1 van $2', __METHOD__ );
+		$content = ContentHandler::makeContent( '!!FUZZY!!$1 van $2', $title );
+		$page->doEditContent( $content, __METHOD__ );
 		$this->assertTrue( $handle->isFuzzy(), 'Message is fuzzy after manual fuzzying' );
 
 		// Update the translation without the fuzzy string
-		$page->doEdit( '$1 van $2', __METHOD__ );
+		$content = ContentHandler::makeContent( '$1 van $2', $title );
+		$page->doEditContent( $content, __METHOD__ );
 		$this->assertFalse( $handle->isFuzzy(), 'Message is unfuzzy after edit' );
 	}
 }
