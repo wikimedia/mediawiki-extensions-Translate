@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_f480fb4c",
+        "filename": "ffs/AndroidXmlFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-10T16:11:29Z",
+      "side": 1,
+      "message": "This should probably be inside the loop. Or add } else { continue; }",
+      "revId": "8f12d9be288820da79af03ab7cfeda6bec8defae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
