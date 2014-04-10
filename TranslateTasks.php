@@ -310,15 +310,11 @@ class ExportMessagesTask extends ViewMessagesTask {
 	}
 
 	public function output() {
-		if ( $this->group instanceof MessageGroupBase ) {
-			$ffs = $this->group->getFFS();
-			$data = $ffs->writeIntoVariable( $this->collection );
-		} else {
-			$writer = $this->group->getWriter();
-			$data = $writer->webExport( $this->collection );
-		}
-
-		return Html::element( 'textarea', array( 'id' => 'wpTextbox1', 'rows' => '50' ), $data );
+		return Html::element(
+			'textarea',
+			array( 'id' => 'wpTextbox1', 'rows' => '50' ),
+			$this->group->getFFS()->writeIntoVariable( $this->collection )
+		);
 	}
 }
 
