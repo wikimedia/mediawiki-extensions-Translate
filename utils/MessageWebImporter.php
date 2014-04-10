@@ -214,7 +214,11 @@ class MessageWebImporter {
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $value );
 				$changed[] = self::makeSectionElement( $name, 'new', $text );
 			} else {
-				$diff->setText( $old, $value );
+				$oldContent = ContentHandler::makeContent( $old, $diff->getTitle() );
+				$newContent = ContentHandler::makeContent( $value, $diff->getTitle() );
+
+				$diff->setContent( $oldContent, $newContent );
+
 				$text = $diff->getDiff( '', '' );
 				$type = 'changed';
 
@@ -390,18 +394,18 @@ class MessageWebImporter {
 	}
 
 	/**
-	 * @static
 	 * @throws MWException
 	 * @param Title $title
 	 * @param $message
-	 * @param $comment
+	 * @param $summary
 	 * @param User $user
 	 * @param $editFlags
 	 * @return array
 	 */
-	public static function doImport( $title, $message, $comment, $user = null, $editFlags = 0 ) {
+	public static function doImport( $title, $message, $summary, $user = null, $editFlags = 0 ) {
 		$wikiPage = WikiPage::factory( $title );
-		$status = $wikiPage->doEdit( $message, $comment, $editFlags, false, $user );
+		$content = ContentHandler::makeContent( $message, $title );
+		$status = $wikiPage->doEditContent( $content, $summary, $editFlags, false, $user );
 		$success = $status->isOK();
 
 		if ( $success ) {
@@ -416,7 +420,6 @@ class MessageWebImporter {
 	}
 
 	/**
-	 * @static
 	 * @param Title $title
 	 * @param $message
 	 * @param $comment

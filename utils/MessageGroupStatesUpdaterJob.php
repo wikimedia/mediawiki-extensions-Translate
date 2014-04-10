@@ -21,7 +21,7 @@ class MessageGroupStatesUpdaterJob extends Job {
 	 */
 	public static function onChange( MessageHandle $handle ) {
 		$job = self::newJob( $handle->getTitle() );
-		$job->insert();
+		JobQueueGroup::singleton()->push( $job );
 
 		return true;
 	}
