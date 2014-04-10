@@ -68,7 +68,8 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		// Add one definition
 		$title = Title::newFromText( 'MediaWiki:one/en' );
 		$page = WikiPage::factory( $title );
-		$page->doEdit( '1', __METHOD__ );
+		$content = ContentHandler::makeContent( '1', $title );
+		$page->doEditContent( $content, __METHOD__ );
 
 		$select = $solarium->createSelect();
 		$select->setRows( 1 );
@@ -87,7 +88,8 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		// Add one translation
 		$title = Title::newFromText( 'MediaWiki:one/fi' );
 		$page = WikiPage::factory( $title );
-		$page->doEdit( 'yksi', __METHOD__ );
+		$content = ContentHandler::makeContent( 'yksi', $title );
+		$page->doEditContent( $content, __METHOD__ );
 
 		$select = $solarium->createSelect();
 		$select->setRows( 1 );
@@ -104,7 +106,8 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		// Update definition
 		$title = Title::newFromText( 'MediaWiki:one/en' );
 		$page = WikiPage::factory( $title );
-		$page->doEdit( '1-updated', __METHOD__ );
+		$content = ContentHandler::makeContent( '1-updated', $title );
+		$page->doEditContent( $content, __METHOD__ );
 
 		$select = $solarium->createSelect();
 		$select->setQuery( 'language:en' );
@@ -114,7 +117,8 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		// Translation is fuzzied
 		$title = Title::newFromText( 'MediaWiki:one/fi' );
 		$page = WikiPage::factory( $title );
-		$page->doEdit( '!!FUZZY!!yksi', __METHOD__ );
+		$content = ContentHandler::makeContent( '!!FUZZY!!yksi', $title );
+		$page->doEditContent( $content, __METHOD__ );
 
 		$select = $solarium->createSelect();
 		$select->setQuery( 'language:fi' );
@@ -124,7 +128,8 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		// Translation is udpated
 		$title = Title::newFromText( 'MediaWiki:one/fi' );
 		$page = WikiPage::factory( $title );
-		$page->doEdit( 'yksi-päiv', __METHOD__ );
+		$content = ContentHandler::makeContent( 'yksi-päiv', $title );
+		$page->doEditContent( $content, __METHOD__ );
 
 		$select = $solarium->createSelect();
 		$select->setQuery( 'language:fi' );
@@ -164,7 +169,7 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 
 	protected static function runJobs() {
 		do {
-			$job = Job::pop();
+			$job = JobQueueGroup::singleton()->pop();
 			if ( !$job ) {
 				break;
 			}

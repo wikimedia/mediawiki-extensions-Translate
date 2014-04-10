@@ -48,7 +48,9 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$user = new MockSuperUser();
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'ugakey1/fi' );
 		$wikipage = WikiPage::factory( $title );
-		$wikipage->doEdit( '[[Category:Shouldnotbe]]', __METHOD__, 0, false, $user );
+		$content = ContentHandler::makeContent( '[[Category:Shouldnotbe]]', $title );
+
+		$wikipage->doEditContent( $content, __METHOD__, 0, false, $user );
 		$this->assertEquals(
 			array(),
 			$title->getParentCategories(),
@@ -57,7 +59,9 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'ugakey2/qqq' );
 		$wikipage = WikiPage::factory( $title );
-		$wikipage->doEdit( '[[Category:Shouldbe]]', __METHOD__, 0, false, $user );
+		$content = ContentHandler::makeContent( '[[Category:Shouldbe]]', $title );
+
+		$wikipage->doEditContent( $content, __METHOD__, 0, false, $user );
 		$this->assertEquals(
 			array( 'Category:Shouldbe' => 'MediaWiki:ugakey2/qqq' ),
 			$title->getParentCategories(),
@@ -66,7 +70,9 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'ugakey3/no' );
 		$wikipage = WikiPage::factory( $title );
-		$wikipage->doEdit( '[[Category:Shouldbealso]]', __METHOD__, 0, false, $user );
+		$content = ContentHandler::makeContent( '[[Category:Shouldbealso]]', $title );
+
+		$wikipage->doEditContent( $content, __METHOD__, 0, false, $user );
 		$this->assertEquals( array(), $title->getParentCategories(), 'unknown message' );
 	}
 }

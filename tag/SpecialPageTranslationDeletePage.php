@@ -370,7 +370,7 @@ class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
 			}
 		}
 
-		Job::batchInsert( $jobs );
+		JobQueueGroup::singleton()->push( $jobs );
 
 		$cache = wfGetCache( CACHE_DB );
 		$cache->set(
