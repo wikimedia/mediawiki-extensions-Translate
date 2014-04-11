@@ -26,8 +26,7 @@ class CurrentTranslationAid extends TranslationAid {
 		);
 
 		wfRunHooks( 'TranslatePrefillTranslation', array( &$translation, $this->handle ) );
-		$fuzzy = TranslateEditAddons::hasFuzzyString( $translation );
-		$fuzzy = $fuzzy || TranslateEditAddons::isFuzzy( $title );
+		$fuzzy = MessageHandle::hasFuzzyString( $translation ) || $this->handle->isFuzzy();
 		$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 
 		return array(

@@ -637,12 +637,13 @@ class TranslationHelpers {
 			}
 
 			$text = TranslateUtils::getMessageContent( $page, $mwcode, $ns );
-			if ( $text === null || TranslateEditAddons::hasFuzzyString( $text ) ) {
+			if ( $text === null || MessageHandle::hasFuzzyString( $text ) ) {
 				continue;
 			}
 
 			$title = Title::makeTitleSafe( $ns, "$page/$mwcode" );
-			if ( $title && TranslateEditAddons::isFuzzy( $title ) ) {
+			$handle = new MessageHandle( $title );
+			if ( $handle->isFuzzy() ) {
 				continue;
 			}
 
@@ -738,12 +739,13 @@ class TranslationHelpers {
 
 		foreach ( $pairs[$code] as $candidate => $unused ) {
 			$text = TranslateUtils::getMessageContent( $page, $candidate, $ns );
-			if ( $text === null || TranslateEditAddons::hasFuzzyString( $text ) ) {
+			if ( $text === null || MessageHandle::hasFuzzyString( $text ) ) {
 				continue;
 			}
 
 			$title = Title::makeTitleSafe( $ns, "$page/$candidate" );
-			if ( $title && TranslateEditAddons::isFuzzy( $title ) ) {
+			$handle = new MessageHandle( $title );
+			if ( $handle->isFuzzy() ) {
 				continue;
 			}
 
