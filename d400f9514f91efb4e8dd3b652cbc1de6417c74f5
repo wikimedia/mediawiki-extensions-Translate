@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_12f9444a",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-11T08:00:36Z",
+      "side": 1,
+      "message": "What\u0027s the meaning of this change?",
+      "revId": "d400f9514f91efb4e8dd3b652cbc1de6417c74f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_d292acff",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-11T08:00:36Z",
+      "side": 1,
+      "message": "This should be reworded to something like \"Convenience function to get API query string for retrieving a token\".",
+      "revId": "d400f9514f91efb4e8dd3b652cbc1de6417c74f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_f2f36867",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-11T08:00:36Z",
+      "side": 1,
+      "message": "just return it without creating a variable.",
+      "revId": "d400f9514f91efb4e8dd3b652cbc1de6417c74f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_129024f0",
+        "filename": "ffs/JavaScriptFFS.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-11T08:00:36Z",
+      "side": 1,
+      "message": "encodeJsVar is not direct replacement of escapeJsString. For instance it adds quotes around the value, if it is a string.",
+      "revId": "d400f9514f91efb4e8dd3b652cbc1de6417c74f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_f28a48bf",
+        "filename": "utils/JsSelectToInput.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-04-11T08:00:36Z",
+      "side": 1,
+      "message": "This should use Xml::encodeJsCall( \u0027appendFromSelect\u0027, array( $source, $target ) ); and encodeJsVar should not be used.",
+      "revId": "d400f9514f91efb4e8dd3b652cbc1de6417c74f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
