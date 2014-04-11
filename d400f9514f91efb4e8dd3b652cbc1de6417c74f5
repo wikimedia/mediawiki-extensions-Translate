@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e23439c_2d6aa17e",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-11T10:16:00Z",
+      "side": 1,
+      "message": "Just removing pointless references to 1.19. Apparently this has been deprecated for a long time, but not actually acted on.",
+      "parentUuid": "8e23439c_12f9444a",
+      "revId": "d400f9514f91efb4e8dd3b652cbc1de6417c74f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e23439c_d292acff",
         "filename": "TranslateUtils.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-11T08:00:36Z",
       "side": 1,
       "message": "This should be reworded to something like \"Convenience function to get API query string for retrieving a token\".",
+      "revId": "d400f9514f91efb4e8dd3b652cbc1de6417c74f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_4df6fdd5",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-11T10:16:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e23439c_d292acff",
       "revId": "d400f9514f91efb4e8dd3b652cbc1de6417c74f5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8e23439c_2df181da",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-11T10:16:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e23439c_f2f36867",
+      "revId": "d400f9514f91efb4e8dd3b652cbc1de6417c74f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e23439c_129024f0",
         "filename": "ffs/JavaScriptFFS.php",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2014-04-11T08:00:36Z",
       "side": 1,
       "message": "encodeJsVar is not direct replacement of escapeJsString. For instance it adds quotes around the value, if it is a string.",
+      "revId": "d400f9514f91efb4e8dd3b652cbc1de6417c74f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_6d265965",
+        "filename": "ffs/JavaScriptFFS.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-11T10:16:00Z",
+      "side": 1,
+      "message": "I\u0027ve reverted all related changes.",
+      "parentUuid": "8e23439c_129024f0",
       "revId": "d400f9514f91efb4e8dd3b652cbc1de6417c74f5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
