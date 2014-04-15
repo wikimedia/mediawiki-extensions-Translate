@@ -1,0 +1,9 @@
+Verified+2: jenkins-bot
+Code-Review+1: Nikerabbit <niklas.laxstrom@gmail.com>
+Code-Review+1: KartikMistry <kartik.mistry@gmail.com>
+Code-Review+2: Manybubbles <neverett@wikimedia.org>
+Submitted-by: jenkins-bot
+Submitted-at: Tue, 15 Apr 2014 14:52:23 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/123566
+Project: mediawiki/extensions/Translate
+Branch: refs/heads/master
