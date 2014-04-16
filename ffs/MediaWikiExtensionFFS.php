@@ -131,6 +131,11 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 		);
 	}
 
+	// Handled in writeReal
+	protected function tryReadSource( $filename, MessageCollection $collection ) {
+		return;
+	}
+
 	/**
 	 * @param MessageCollection $collection
 	 * @return string
