@@ -1,28 +1,28 @@
 {
-    "@metadata": {
-        "authors": [
-            "Tifinaghes"
-        ]
-    },
-    "translate": "ⵜⴰⵙⵓⵖⵍⵜ",
-    "translate-page-language": "ⵜⵓⵜⵍⴰⵢⵜ",
-    "translate-rc-translation-filter-no": "ⴰⵡⵔ ⵜⵙⴽⵔⴷ ⴰⵎⵢⴰ",
-    "translate-stats-users": "ⵉⵎⵙⵓⵖⵍⵏ",
-    "translate-stats-registrations": "ⵉⵣⵎⵎⴻⵎⵏ",
-    "translate-statsf-scale-months": "ⴰⵢⵢⵓⵔⵏ",
-    "translate-statsf-scale-weeks": "ⵉⵎⴰⵍⴰⵙⵙⵏ",
-    "translate-statsf-scale-days": "ⵓⵙⵙⴰⵏ",
-    "translate-statsf-scale-hours": "ⵜⵉⵙⵔⴰⴳⵉⵏ",
-    "translate-sidebar-alltrans": "ⵙ ⵜⵓⵜⵍⴰⵢⵉⵏ ⵢⴰⴹⵏ (ⵏⵏⵉⴹⵏ)",
-    "translations": "ⵎⴰⵕⵕⴰ ⵜⵉⵙⵓⵖⴰⵍⵉⵏ",
-    "translate-translations-project": "ⴰⵙⵏⴼⴰⵔ:",
-    "translate-language": "ⵜⵓⵜⵍⴰⵢⵜ",
-    "translate-total": "ⵜⵉⴱⵔⴰⵜⵉⵏ",
-    "translate-ls-column-group": "ⵜⴰⴱⵔⴰⵜ ⵏ ⵜⵔⴰⴱⴱⵓⵜ",
-    "translate-mgs-group": "ⵜⴰⴱⵔⴰⵜ ⵏ ⵜⵔⴰⴱⴱⵓⵜ:",
-    "translate-mgs-column-language": "ⵜⵓⵜⵍⴰⵢⵜ",
-    "translate-save": "ⵣⵎⵎⴻⵎ ($1)",
-    "translate-manage-import-new": "ⵜⴰⴱⵔⴰⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ $1",
-    "translate-gs-speakers": "ⵉⵎⵙⴰⵡⴰⵍⵏ",
-    "translate-msggroupselector-search-recent": "ⵉⵏⴳⴳⵓⵔⴰ"
+	"@metadata": {
+		"authors": [
+			"Tifinaghes"
+		]
+	},
+	"translate": "ⵜⴰⵙⵓⵖⵍⵜ",
+	"translate-page-language": "ⵜⵓⵜⵍⴰⵢⵜ",
+	"translate-rc-translation-filter-no": "ⴰⵡⵔ ⵜⵙⴽⵔⴷ ⴰⵎⵢⴰ",
+	"translate-stats-users": "ⵉⵎⵙⵓⵖⵍⵏ",
+	"translate-stats-registrations": "ⵉⵣⵎⵎⴻⵎⵏ",
+	"translate-statsf-scale-months": "ⴰⵢⵢⵓⵔⵏ",
+	"translate-statsf-scale-weeks": "ⵉⵎⴰⵍⴰⵙⵙⵏ",
+	"translate-statsf-scale-days": "ⵓⵙⵙⴰⵏ",
+	"translate-statsf-scale-hours": "ⵜⵉⵙⵔⴰⴳⵉⵏ",
+	"translate-sidebar-alltrans": "ⵙ ⵜⵓⵜⵍⴰⵢⵉⵏ ⵢⴰⴹⵏ (ⵏⵏⵉⴹⵏ)",
+	"translations": "ⵎⴰⵕⵕⴰ ⵜⵉⵙⵓⵖⴰⵍⵉⵏ",
+	"translate-translations-project": "ⴰⵙⵏⴼⴰⵔ:",
+	"translate-language": "ⵜⵓⵜⵍⴰⵢⵜ",
+	"translate-total": "ⵜⵉⴱⵔⴰⵜⵉⵏ",
+	"translate-ls-column-group": "ⵜⴰⴱⵔⴰⵜ ⵏ ⵜⵔⴰⴱⴱⵓⵜ",
+	"translate-mgs-group": "ⵜⴰⴱⵔⴰⵜ ⵏ ⵜⵔⴰⴱⴱⵓⵜ:",
+	"translate-mgs-column-language": "ⵜⵓⵜⵍⴰⵢⵜ",
+	"translate-save": "ⵣⵎⵎⴻⵎ ($1)",
+	"translate-manage-import-new": "ⵜⴰⴱⵔⴰⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ $1",
+	"translate-gs-speakers": "ⵉⵎⵙⴰⵡⴰⵍⵏ",
+	"translate-msggroupselector-search-recent": "ⵉⵏⴳⴳⵓⵔⴰ"
 }

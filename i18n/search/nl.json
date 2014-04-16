@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Siebrand"
-        ]
-    },
-    "searchtranslations": "Vertalingen zoeken",
-    "tux-sst-edit": "Vertaling bewerken",
-    "tux-sst-search": "Zoeken",
-    "tux-sst-search-ph": "Vertalingen zoeken",
-    "tux-sst-count": "{{PLURAL:$1|Eén resultaat|$1 resultaten}} gevonden",
-    "tux-sst-facet-language": "Talen",
-    "tux-sst-facet-group": "Berichtengroepen",
-    "tux-sst-facet-orphan": "(wees)",
-    "tux-sst-nosolr-title": "Zoeken is niet beschikbaar",
-    "tux-sst-nosolr-body": "Deze wiki heeft geen dienst om vertalingen te zoeken.",
-    "tux-sst-solr-offline-title": "Zoeken is niet beschikbaar",
-    "tux-sst-solr-offline-body": "De zoekdienst is tijdelijk niet beschikbaar.",
-    "tux-sst-next": "Volgende resultaten",
-    "tux-sst-prev": "Vorige resultaten"
+	"@metadata": {
+		"authors": [
+			"Siebrand"
+		]
+	},
+	"searchtranslations": "Vertalingen zoeken",
+	"tux-sst-edit": "Vertaling bewerken",
+	"tux-sst-search": "Zoeken",
+	"tux-sst-search-ph": "Vertalingen zoeken",
+	"tux-sst-count": "{{PLURAL:$1|Eén resultaat|$1 resultaten}} gevonden",
+	"tux-sst-facet-language": "Talen",
+	"tux-sst-facet-group": "Berichtengroepen",
+	"tux-sst-facet-orphan": "(wees)",
+	"tux-sst-nosolr-title": "Zoeken is niet beschikbaar",
+	"tux-sst-nosolr-body": "Deze wiki heeft geen dienst om vertalingen te zoeken.",
+	"tux-sst-solr-offline-title": "Zoeken is niet beschikbaar",
+	"tux-sst-solr-offline-body": "De zoekdienst is tijdelijk niet beschikbaar.",
+	"tux-sst-next": "Volgende resultaten",
+	"tux-sst-prev": "Vorige resultaten"
 }

@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Amire80",
-            "Naudefj",
-            "Winstonza"
-        ]
-    },
-    "managetranslatorsandbox": "Bestuur vertaler-sandput",
-    "tsb-filter-pending": "Uitstaande versoeke",
-    "tsb-reminder-title-generic": "Voltooi u bekendstelling om 'n geverifieerde vertaler te word",
-    "tsb-reminder-content-generic": "Hallo $1,\n\nDankie dat u op {{SITENAME}} geregistreer het. As u u toesvertalings voltooi, sal die administrateurs spoedig volle regte aan u toeken.\n\nGaan asseblief na $2 om 'n paar vertalings te maak.",
-    "tsb-create-user-page": "Skep 'n basiese gebruikersblad"
+	"@metadata": {
+		"authors": [
+			"Amire80",
+			"Naudefj",
+			"Winstonza"
+		]
+	},
+	"managetranslatorsandbox": "Bestuur vertaler-sandput",
+	"tsb-filter-pending": "Uitstaande versoeke",
+	"tsb-reminder-title-generic": "Voltooi u bekendstelling om 'n geverifieerde vertaler te word",
+	"tsb-reminder-content-generic": "Hallo $1,\n\nDankie dat u op {{SITENAME}} geregistreer het. As u u toesvertalings voltooi, sal die administrateurs spoedig volle regte aan u toeken.\n\nGaan asseblief na $2 om 'n paar vertalings te maak.",
+	"tsb-create-user-page": "Skep 'n basiese gebruikersblad"
 }

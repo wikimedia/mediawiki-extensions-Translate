@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Snævar"
-        ]
-    },
-    "translate-tag-translate-link-desc": "Þýða þessa síðu",
-    "tpt-translation-intro": "Þessi síða er <span class=\"plainlinks\">[$1 þýdd útgáfa]</span> af síðunni [[$2]] og þýðingu hennar er $3% lokið.",
-    "tpt-languages-legend": "Önnur tungumál:",
-    "log-name-pagetranslation": "Þýðingarskrá"
+	"@metadata": {
+		"authors": [
+			"Snævar"
+		]
+	},
+	"translate-tag-translate-link-desc": "Þýða þessa síðu",
+	"tpt-translation-intro": "Þessi síða er <span class=\"plainlinks\">[$1 þýdd útgáfa]</span> af síðunni [[$2]] og þýðingu hennar er $3% lokið.",
+	"tpt-languages-legend": "Önnur tungumál:",
+	"log-name-pagetranslation": "Þýðingarskrá"
 }

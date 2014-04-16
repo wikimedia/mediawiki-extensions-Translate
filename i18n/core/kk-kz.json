@@ -1,28 +1,28 @@
 {
-    "@metadata": {
-        "authors": [
-            "AlefZet"
-        ]
-    },
-    "translate": "Аудару",
-    "translate-page-no-such-language": "Келтірілген тіл белгілемесі жарамсыз",
-    "translate-submit": "Келтір!",
-    "translate-next": "Келесі бет",
-    "translate-prev": "Алдыңғы бет",
-    "translate-optional": "(міндетті емес)",
-    "translate-ignored": "(елемейтін)",
-    "translate-magic-pagename": "Кеңейтілген MediaWiki аударуы",
-    "translate-magic-help": "Арнайы бет бүркемелерін, сиқырлы сөздерін, безендіру мәнер атауларын және есім ая атауларын аудара аласыз.\n\nСиқырлы сөздерде ағылшынша нұсқасын кіргізуіңіз жөн, әйтпесе қызметі тоқталады. Тағы да бірінші бабын (0 не 1) әрдайым қалдырыңыз.\n\nАрнайы бет бүркемелерінде және сиқырлы сөздерінде бірнеше аударма болуы мүмкін. Аудармалар үтірмен (,) бөліктенеді. Безендіру мәнер және есім ая атауларында тек бір аударма болуы тиіс.\n\nЕсім ая аудармаларында <code>$1_talk</code> деген арнайы келтіріледі. <code>$1</code> деген айналмалы өздіктік торап атауымен алмастырылады (мысалы, <code>{{SITENAME}} талқылауы</code>). Егер сіздің тіліңізде торап атауын өзгертпей дұрыс сөйлем құрылмаса, дамытушыларға хабарласыңыз.",
-    "translate-magic-submit": "Келтір",
-    "translate-magic-cm-export": "Сыртқа бер",
-    "translate-magic-cm-to-be": "Болуға тиісті",
-    "translate-magic-cm-current": "Ағымдағы",
-    "translate-magic-cm-original": "Түпнұсқасы",
-    "translate-magic-cm-save": "Сақта!",
-    "translate-magic-cm-updatedusing": "[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]] дегенді қолданып сақталған",
-    "translate-magic-cm-savefailed": "Сақтау сәтсіз болды",
-    "translate-magic-special": "Арнайы бет бүркемелері",
-    "translate-magic-words": "Сиқыр сөздер",
-    "translate-magic-namespace": "Есім ая атаулары",
-    "translate-language": "Тілі:"
+	"@metadata": {
+		"authors": [
+			"AlefZet"
+		]
+	},
+	"translate": "Аудару",
+	"translate-page-no-such-language": "Келтірілген тіл белгілемесі жарамсыз",
+	"translate-submit": "Келтір!",
+	"translate-next": "Келесі бет",
+	"translate-prev": "Алдыңғы бет",
+	"translate-optional": "(міндетті емес)",
+	"translate-ignored": "(елемейтін)",
+	"translate-magic-pagename": "Кеңейтілген MediaWiki аударуы",
+	"translate-magic-help": "Арнайы бет бүркемелерін, сиқырлы сөздерін, безендіру мәнер атауларын және есім ая атауларын аудара аласыз.\n\nСиқырлы сөздерде ағылшынша нұсқасын кіргізуіңіз жөн, әйтпесе қызметі тоқталады. Тағы да бірінші бабын (0 не 1) әрдайым қалдырыңыз.\n\nАрнайы бет бүркемелерінде және сиқырлы сөздерінде бірнеше аударма болуы мүмкін. Аудармалар үтірмен (,) бөліктенеді. Безендіру мәнер және есім ая атауларында тек бір аударма болуы тиіс.\n\nЕсім ая аудармаларында <code>$1_talk</code> деген арнайы келтіріледі. <code>$1</code> деген айналмалы өздіктік торап атауымен алмастырылады (мысалы, <code>{{SITENAME}} талқылауы</code>). Егер сіздің тіліңізде торап атауын өзгертпей дұрыс сөйлем құрылмаса, дамытушыларға хабарласыңыз.",
+	"translate-magic-submit": "Келтір",
+	"translate-magic-cm-export": "Сыртқа бер",
+	"translate-magic-cm-to-be": "Болуға тиісті",
+	"translate-magic-cm-current": "Ағымдағы",
+	"translate-magic-cm-original": "Түпнұсқасы",
+	"translate-magic-cm-save": "Сақта!",
+	"translate-magic-cm-updatedusing": "[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]] дегенді қолданып сақталған",
+	"translate-magic-cm-savefailed": "Сақтау сәтсіз болды",
+	"translate-magic-special": "Арнайы бет бүркемелері",
+	"translate-magic-words": "Сиқыр сөздер",
+	"translate-magic-namespace": "Есім ая атаулары",
+	"translate-language": "Тілі:"
 }

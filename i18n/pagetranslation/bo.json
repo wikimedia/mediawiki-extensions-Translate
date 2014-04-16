@@ -1,18 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Freeyak",
-            "Phurbutsering"
-        ]
-    },
-    "pagetranslation": "ཤོག་ངོས་ཡིག་སྒྱུར།",
-    "tpt-diff-old": "ཡིག་འབྲུ་གོང་མ།",
-    "tpt-diff-new": "ཡིག་འབྲུ་གསར་བ།",
-    "translate-tag-translate-link-desc": "ཤོག་ངོས་འདི་བསྒྱུར་བ།",
-    "tpt-languages-legend": "སྐད་རིགས་གཞན།",
-    "pt-movepage-list-translation": "ཡིག་སྒྱུར་ {{PLURAL:$1|ཤོག་ངོས།}}",
-    "pt-movepage-legend": "བསྒྱུར་རུང་བའི་ཤོག་ངོས་སྤོར་བ།",
-    "pt-movepage-current": "ད་ཡོད་མིང་།",
-    "pt-movepage-new": "མིང་གསར་བ།",
-    "pt-movepage-reason": "རྒྱུ་མཚན།"
+	"@metadata": {
+		"authors": [
+			"Freeyak",
+			"Phurbutsering"
+		]
+	},
+	"pagetranslation": "ཤོག་ངོས་ཡིག་སྒྱུར།",
+	"tpt-diff-old": "ཡིག་འབྲུ་གོང་མ།",
+	"tpt-diff-new": "ཡིག་འབྲུ་གསར་བ།",
+	"translate-tag-translate-link-desc": "ཤོག་ངོས་འདི་བསྒྱུར་བ།",
+	"tpt-languages-legend": "སྐད་རིགས་གཞན།",
+	"pt-movepage-list-translation": "ཡིག་སྒྱུར་ {{PLURAL:$1|ཤོག་ངོས།}}",
+	"pt-movepage-legend": "བསྒྱུར་རུང་བའི་ཤོག་ངོས་སྤོར་བ།",
+	"pt-movepage-current": "ད་ཡོད་མིང་།",
+	"pt-movepage-new": "མིང་གསར་བ།",
+	"pt-movepage-reason": "རྒྱུ་མཚན།"
 }

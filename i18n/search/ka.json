@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "David1010"
-        ]
-    },
-    "searchtranslations": "თარგმანების ძიება",
-    "tux-sst-edit": "თარგმანის რედაქტირება",
-    "tux-sst-search": "ძიება",
-    "tux-sst-search-ph": "თარგმანების ძიება",
-    "tux-sst-count": "{{PLURAL:$1|ნაპოვნია ერთი შედეგი|ნაპოვნია $1 შედეგი}}",
-    "tux-sst-facet-language": "ენები",
-    "tux-sst-facet-group": "შეტყობინების ჯგუფები"
+	"@metadata": {
+		"authors": [
+			"David1010"
+		]
+	},
+	"searchtranslations": "თარგმანების ძიება",
+	"tux-sst-edit": "თარგმანის რედაქტირება",
+	"tux-sst-search": "ძიება",
+	"tux-sst-search-ph": "თარგმანების ძიება",
+	"tux-sst-count": "{{PLURAL:$1|ნაპოვნია ერთი შედეგი|ნაპოვნია $1 შედეგი}}",
+	"tux-sst-facet-language": "ენები",
+	"tux-sst-facet-group": "შეტყობინების ჯგუფები"
 }

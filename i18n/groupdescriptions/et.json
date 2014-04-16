@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Hendrik"
-        ]
-    },
-    "bw-desc-freecol": "Enne FreeCol'i tõlkimist oma keelde lugege palun [[Translating:FreeCol]]. FreeCol kasutab GPL litsentsi."
+	"@metadata": {
+		"authors": [
+			"Hendrik"
+		]
+	},
+	"bw-desc-freecol": "Enne FreeCol'i tõlkimist oma keelde lugege palun [[Translating:FreeCol]]. FreeCol kasutab GPL litsentsi."
 }

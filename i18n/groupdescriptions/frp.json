@@ -1,31 +1,31 @@
 {
-    "@metadata": {
-        "authors": [
-            "ChrisPtDe"
-        ]
-    },
-    "translate-group-desc-nodesc": "Niona dèscripcion est disponibla por ceta tropa de mèssâjos.",
-    "translate-group-desc-mediawikicore": "Ceta tropa de mèssâjos contint los mèssâjos utilisâs dens la vèrsion alfa d’ora de MediaWiki ({{CURRENTVERSION}}).",
-    "translate-group-desc-mediawikimostused": "Ceta tropa de mèssâjos contint los [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mèssâjos los ples sovent utilisâs] dens MediaWiki.",
-    "translate-group-desc-mediawikiextensions": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions recognues por [[Translating:MediaWiki|MediaWiki]].",
-    "translate-group-desc-collection": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de l’èxtension MediaWiki [https://www.mediawiki.org/wiki/Extension:Collection Colèccion].",
-    "translate-group-desc-flaggedrevs": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de l’èxtension MediaWiki [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs].",
-    "translate-group-desc-readerfeedback": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de l’èxtension MediaWiki [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback].",
-    "translate-group-desc-translate": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de l’èxtension MediaWiki [https://www.mediawiki.org/wiki/Extension:Translate Translate].",
-    "translate-group-desc-wikiaextensions": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions MediaWiki utilisâs per [http://www.wikia.com Wikia].",
-    "translate-group-desc-wikimediaextensions": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions MediaWiki utilisâs per la [https://wikimediafoundation.org/ Wikimedia Foundation].",
-    "translate-group-desc-translatablepages": "Totes les pâges a traduire",
-    "bw-desc-freecol": "Devant que traduire FreeCol dens voutra lengoua, volyéd liére [[Translating:FreeCol]]. FreeCol utilise la licence GPL.",
-    "bw-desc-fudforum": "[http://fudforum.org/ FUDforum], un barjacâjo vouèbe ècrit en PHP.",
-    "bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] est una programeria libra por la survelyence sur lo Malyâjo de les cofieries.",
-    "translate-group-desc-eol": "Una tropa de mèssâjos por l’[[Translating:EOL|Enciclopèdia de la via]].",
-    "translate-group-desc-ihris": "Una tropa de mèssâjos por [[Translating:iHRIS|iHRIS]].",
-    "translate-group-desc-kiwix": "Una tropa de mèssâjos por [[Translating:Kiwix|Kiwix]].",
-    "translate-group-desc-mediawiki-core-branch": "Mèssâjos por una vèrsion stâbla de [[Translating:MediaWiki|MediaWiki]].",
-    "bw-desc-mwlibrl": "'''mwlib.rl''' est una bibliotèca Python por fâre des documents PDF dês des articllos de MediaWiki qu’ont étâ analisâs per la bibliotèca mwlib.\n\nVêde [[mw:Extension:PDF_Writer]] et pués http://code.pediapress.com/wiki/wiki/mwlibrl por més d’enformacions.",
-    "bw-desc-openstreetmap": "Ceta tropa de mèssâjos contint tôs los mèssâjos d’[[Translating:OpenStreetMap|OpenStreetMap]].",
-    "bw-desc-osm-site": "Ceta tropa de mèssâjos contint los mèssâjos de l’entèrface d’[[Translating:Open Street Map|Open Street Map]].\nVêde la [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} pâge de l’Unicode CLDR por una èxplicacion de l’usâjo des plurâls].",
-    "bw-desc-shapado": "[[Translating:Shapado|Shapado]] est una programeria libra de quèstions et rèponses.",
-    "bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pèrmèt de trovar rêdo los ôtors d’una pâge dens un vouiqui de Wikimedia.",
-    "bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] est un projèt visent a semondre una vèrsion tèxto de Vouiquipèdia en defôr de legne sur un pèrifèrico mobilo."
+	"@metadata": {
+		"authors": [
+			"ChrisPtDe"
+		]
+	},
+	"translate-group-desc-nodesc": "Niona dèscripcion est disponibla por ceta tropa de mèssâjos.",
+	"translate-group-desc-mediawikicore": "Ceta tropa de mèssâjos contint los mèssâjos utilisâs dens la vèrsion alfa d’ora de MediaWiki ({{CURRENTVERSION}}).",
+	"translate-group-desc-mediawikimostused": "Ceta tropa de mèssâjos contint los [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mèssâjos los ples sovent utilisâs] dens MediaWiki.",
+	"translate-group-desc-mediawikiextensions": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions recognues por [[Translating:MediaWiki|MediaWiki]].",
+	"translate-group-desc-collection": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de l’èxtension MediaWiki [https://www.mediawiki.org/wiki/Extension:Collection Colèccion].",
+	"translate-group-desc-flaggedrevs": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de l’èxtension MediaWiki [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs].",
+	"translate-group-desc-readerfeedback": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de l’èxtension MediaWiki [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback].",
+	"translate-group-desc-translate": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de l’èxtension MediaWiki [https://www.mediawiki.org/wiki/Extension:Translate Translate].",
+	"translate-group-desc-wikiaextensions": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions MediaWiki utilisâs per [http://www.wikia.com Wikia].",
+	"translate-group-desc-wikimediaextensions": "Ceta mèta-tropa de mèssâjos contint tôs los mèssâjos de les èxtensions MediaWiki utilisâs per la [https://wikimediafoundation.org/ Wikimedia Foundation].",
+	"translate-group-desc-translatablepages": "Totes les pâges a traduire",
+	"bw-desc-freecol": "Devant que traduire FreeCol dens voutra lengoua, volyéd liére [[Translating:FreeCol]]. FreeCol utilise la licence GPL.",
+	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], un barjacâjo vouèbe ècrit en PHP.",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] est una programeria libra por la survelyence sur lo Malyâjo de les cofieries.",
+	"translate-group-desc-eol": "Una tropa de mèssâjos por l’[[Translating:EOL|Enciclopèdia de la via]].",
+	"translate-group-desc-ihris": "Una tropa de mèssâjos por [[Translating:iHRIS|iHRIS]].",
+	"translate-group-desc-kiwix": "Una tropa de mèssâjos por [[Translating:Kiwix|Kiwix]].",
+	"translate-group-desc-mediawiki-core-branch": "Mèssâjos por una vèrsion stâbla de [[Translating:MediaWiki|MediaWiki]].",
+	"bw-desc-mwlibrl": "'''mwlib.rl''' est una bibliotèca Python por fâre des documents PDF dês des articllos de MediaWiki qu’ont étâ analisâs per la bibliotèca mwlib.\n\nVêde [[mw:Extension:PDF_Writer]] et pués http://code.pediapress.com/wiki/wiki/mwlibrl por més d’enformacions.",
+	"bw-desc-openstreetmap": "Ceta tropa de mèssâjos contint tôs los mèssâjos d’[[Translating:OpenStreetMap|OpenStreetMap]].",
+	"bw-desc-osm-site": "Ceta tropa de mèssâjos contint los mèssâjos de l’entèrface d’[[Translating:Open Street Map|Open Street Map]].\nVêde la [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} pâge de l’Unicode CLDR por una èxplicacion de l’usâjo des plurâls].",
+	"bw-desc-shapado": "[[Translating:Shapado|Shapado]] est una programeria libra de quèstions et rèponses.",
+	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pèrmèt de trovar rêdo los ôtors d’una pâge dens un vouiqui de Wikimedia.",
+	"bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] est un projèt visent a semondre una vèrsion tèxto de Vouiquipèdia en defôr de legne sur un pèrifèrico mobilo."
 }

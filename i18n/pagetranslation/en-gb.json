@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shirayuki",
-            "Thehelpfulone"
-        ]
-    },
-    "tpt-showpage-intro": "Below new, existing and deleted translation units are listed.\nBefore marking this version for translation, check that the changes to translation units are minimised to avoid unnecessary work for translators.",
-    "logentry-pagetranslation-moveok": "$1 {{GENDER:$2|completed}} renaming of translatable page $3 to $4",
-    "logentry-pagetranslation-deletefnok": "$1 {{GENDER:$2|failed}} to delete $3 which belongs to translatable page $4",
-    "logentry-pagetranslation-prioritylanguages": "$1 {{GENDER:$2|set}} the priority languages for translatable page $3 to $5"
+	"@metadata": {
+		"authors": [
+			"Shirayuki",
+			"Thehelpfulone"
+		]
+	},
+	"tpt-showpage-intro": "Below new, existing and deleted translation units are listed.\nBefore marking this version for translation, check that the changes to translation units are minimised to avoid unnecessary work for translators.",
+	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|completed}} renaming of translatable page $3 to $4",
+	"logentry-pagetranslation-deletefnok": "$1 {{GENDER:$2|failed}} to delete $3 which belongs to translatable page $4",
+	"logentry-pagetranslation-prioritylanguages": "$1 {{GENDER:$2|set}} the priority languages for translatable page $3 to $5"
 }

@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Crt",
-            "Nike",
-            "Silvonen",
-            "Stryn"
-        ]
-    },
-    "searchtranslations": "Etsi käännöksiä",
-    "tux-sst-edit": "Muokkaa käännöstä",
-    "tux-sst-search": "Hae",
-    "tux-sst-search-ph": "Etsi käännöksiä",
-    "tux-sst-count": "{{PLURAL:$1|Yksi hakutulos|$1 hakutulosta}}",
-    "tux-sst-facet-language": "Kielet",
-    "tux-sst-facet-group": "Viestiryhmät",
-    "tux-sst-facet-orphan": "(orpo)",
-    "tux-sst-nosolr-title": "Haku ei ole käytössä",
-    "tux-sst-nosolr-body": "Hakupalvelu ei ole käytössä tässä wikissä.",
-    "tux-sst-solr-offline-title": "Haku ei ole käytössä"
+	"@metadata": {
+		"authors": [
+			"Crt",
+			"Nike",
+			"Silvonen",
+			"Stryn"
+		]
+	},
+	"searchtranslations": "Etsi käännöksiä",
+	"tux-sst-edit": "Muokkaa käännöstä",
+	"tux-sst-search": "Hae",
+	"tux-sst-search-ph": "Etsi käännöksiä",
+	"tux-sst-count": "{{PLURAL:$1|Yksi hakutulos|$1 hakutulosta}}",
+	"tux-sst-facet-language": "Kielet",
+	"tux-sst-facet-group": "Viestiryhmät",
+	"tux-sst-facet-orphan": "(orpo)",
+	"tux-sst-nosolr-title": "Haku ei ole käytössä",
+	"tux-sst-nosolr-body": "Hakupalvelu ei ole käytössä tässä wikissä.",
+	"tux-sst-solr-offline-title": "Haku ei ole käytössä"
 }

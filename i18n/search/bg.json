@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "DCLXVI"
-        ]
-    },
-    "tux-sst-search": "Търсене",
-    "tux-sst-facet-language": "Езици",
-    "tux-sst-solr-offline-body": "Услугата за търсене е временно недостъпна.",
-    "tux-sst-next": "Следващи резултати",
-    "tux-sst-prev": "Предишни резултати"
+	"@metadata": {
+		"authors": [
+			"DCLXVI"
+		]
+	},
+	"tux-sst-search": "Търсене",
+	"tux-sst-facet-language": "Езици",
+	"tux-sst-solr-offline-body": "Услугата за търсене е временно недостъпна.",
+	"tux-sst-next": "Следващи резултати",
+	"tux-sst-prev": "Предишни резултати"
 }

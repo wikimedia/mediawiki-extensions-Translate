@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Botuzhaleny-sodamo"
-        ]
-    },
-    "tpt-diff-old": "Икелень текст",
-    "tpt-diff-new": "Од текст",
-    "translate-tag-translate-link-desc": "Йутавтык те лопанть",
-    "tpt-languages-legend": "Лия кельтне:"
+	"@metadata": {
+		"authors": [
+			"Botuzhaleny-sodamo"
+		]
+	},
+	"tpt-diff-old": "Икелень текст",
+	"tpt-diff-new": "Од текст",
+	"translate-tag-translate-link-desc": "Йутавтык те лопанть",
+	"tpt-languages-legend": "Лия кельтне:"
 }

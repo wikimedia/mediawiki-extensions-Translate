@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "VASANTH S.N."
-        ]
-    },
-    "translate": "ಭಾಷಾಂತರ ಮಲ್ಪುಲೆ",
-    "translate-page-group": "ಗುಂಪು",
-    "translate-page-language": "ಭಾಸೆ",
-    "translate-page-limit": "ಮಿತಿ",
-    "translate-next": "ಬೊಕ್ಕದ ಪುಟೊ",
-    "translate-prev": "ದುಂಬುದ ಪುಟೊ",
-    "translate-magic-module": "ಘಟಕ:"
+	"@metadata": {
+		"authors": [
+			"VASANTH S.N."
+		]
+	},
+	"translate": "ಭಾಷಾಂತರ ಮಲ್ಪುಲೆ",
+	"translate-page-group": "ಗುಂಪು",
+	"translate-page-language": "ಭಾಸೆ",
+	"translate-page-limit": "ಮಿತಿ",
+	"translate-next": "ಬೊಕ್ಕದ ಪುಟೊ",
+	"translate-prev": "ದುಂಬುದ ಪುಟೊ",
+	"translate-magic-module": "ಘಟಕ:"
 }

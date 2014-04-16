@@ -1,18 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Servien"
-        ]
-    },
-    "translate": "Vertalen",
-    "translate-taction-proofread": "Naokieken",
-    "translate-taction-lstats": "Taalstaotistieken",
-    "translate-magic-namespace": "Naamruumtebenamingen",
-    "translate-magic-notsaved": "Joew bewarking is niet op-esleugen!",
-    "translate-magic-saved": "Joew wiezigingen bin op-esleugen.",
-    "translate-rc-translation-filter-no": "Niks doon",
-    "translate-statsf-submit": "Naokieken",
-    "translate-translations-fieldset-title": "Tiejige",
-    "translate-language-code": "Taalkode",
-    "translate-language-code-field-name": "Taalkode:"
+	"@metadata": {
+		"authors": [
+			"Servien"
+		]
+	},
+	"translate": "Vertalen",
+	"translate-taction-proofread": "Naokieken",
+	"translate-taction-lstats": "Taalstaotistieken",
+	"translate-magic-namespace": "Naamruumtebenamingen",
+	"translate-magic-notsaved": "Joew bewarking is niet op-esleugen!",
+	"translate-magic-saved": "Joew wiezigingen bin op-esleugen.",
+	"translate-rc-translation-filter-no": "Niks doon",
+	"translate-statsf-submit": "Naokieken",
+	"translate-translations-fieldset-title": "Tiejige",
+	"translate-language-code": "Taalkode",
+	"translate-language-code-field-name": "Taalkode:"
 }

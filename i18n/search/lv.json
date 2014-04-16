@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Papuass"
-        ]
-    },
-    "searchtranslations": "Meklēt tulkojumus",
-    "tux-sst-edit": "Labot tulkojumu",
-    "tux-sst-search": "Meklēt",
-    "tux-sst-search-ph": "Meklēt tulkojumus",
-    "tux-sst-count": "{{PLURAL:$1|Viens rezultāts atrasts|$1 rezultāti atrasti}}",
-    "tux-sst-facet-language": "Valodas",
-    "tux-sst-nosolr-title": "Meklēšana nav pieejama",
-    "tux-sst-solr-offline-title": "Meklēšana nav pieejama"
+	"@metadata": {
+		"authors": [
+			"Papuass"
+		]
+	},
+	"searchtranslations": "Meklēt tulkojumus",
+	"tux-sst-edit": "Labot tulkojumu",
+	"tux-sst-search": "Meklēt",
+	"tux-sst-search-ph": "Meklēt tulkojumus",
+	"tux-sst-count": "{{PLURAL:$1|Viens rezultāts atrasts|$1 rezultāti atrasti}}",
+	"tux-sst-facet-language": "Valodas",
+	"tux-sst-nosolr-title": "Meklēšana nav pieejama",
+	"tux-sst-solr-offline-title": "Meklēšana nav pieejama"
 }

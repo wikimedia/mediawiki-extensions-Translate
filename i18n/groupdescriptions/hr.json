@@ -1,19 +1,19 @@
 {
-    "@metadata": {
-        "authors": [
-            "Ex13",
-            "SpeedyGonsales"
-        ]
-    },
-    "translate-group-desc-mediawikicore": "Ova skupina poruka sadrži poruke koje se rabe u trenutačnoj alpha inačici MediaWikija ({{CURRENTVERSION}})",
-    "translate-group-desc-mediawikimostused": "Ova grupa sadrži [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najčešće rabljenih poruka] u MediaWiki softveru",
-    "translate-group-desc-mediawikiextensions": "Grupa poruka koja sadrži sve poruke za podržane dogradnje za MediaWiki softver",
-    "translate-group-desc-collection": "Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [https://www.mediawiki.org/wiki/Extension:Collection Zbirke]",
-    "translate-group-desc-flaggedrevs": "Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [https://www.mediawiki.org/wiki/Extension:FlaggedRevs Označene promjene]",
-    "translate-group-desc-readerfeedback": "Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [https://www.mediawiki.org/wiki/Extension:ReaderFeedback Odgovor čitatelja (''ReaderFeedback'')]",
-    "translate-group-desc-translate": "Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [https://www.mediawiki.org/wiki/Extension:Translate Prijevod sistemskih poruka]",
-    "translate-group-desc-wikiaextensions": "Grupa poruka koja sadrži sve poruke za podržane MediaWiki dogradnje koje rabi [http://www.wikia.com Wikia]",
-    "translate-group-desc-wikimediaextensions": "Grupa poruka koja sadrži sve poruke za podržane MediaWiki dogradnje koje rabi [https://wikimediafoundation.org/ Zaklada Wikimedia]",
-    "bw-desc-openstreetmap": "Sve poruke povezane s [[Translating:OpenStreetMap|OpenStreetMap]] projektom",
-    "bw-desc-osm-site": "[[Translating:OpenStreetMap|OpenStreetMap]] je karta svijeta koju može svatko uređivati"
+	"@metadata": {
+		"authors": [
+			"Ex13",
+			"SpeedyGonsales"
+		]
+	},
+	"translate-group-desc-mediawikicore": "Ova skupina poruka sadrži poruke koje se rabe u trenutačnoj alpha inačici MediaWikija ({{CURRENTVERSION}})",
+	"translate-group-desc-mediawikimostused": "Ova grupa sadrži [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najčešće rabljenih poruka] u MediaWiki softveru",
+	"translate-group-desc-mediawikiextensions": "Grupa poruka koja sadrži sve poruke za podržane dogradnje za MediaWiki softver",
+	"translate-group-desc-collection": "Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [https://www.mediawiki.org/wiki/Extension:Collection Zbirke]",
+	"translate-group-desc-flaggedrevs": "Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [https://www.mediawiki.org/wiki/Extension:FlaggedRevs Označene promjene]",
+	"translate-group-desc-readerfeedback": "Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [https://www.mediawiki.org/wiki/Extension:ReaderFeedback Odgovor čitatelja (''ReaderFeedback'')]",
+	"translate-group-desc-translate": "Grupa poruka koja sadrži sve poruke za MediaWiki dogradnju [https://www.mediawiki.org/wiki/Extension:Translate Prijevod sistemskih poruka]",
+	"translate-group-desc-wikiaextensions": "Grupa poruka koja sadrži sve poruke za podržane MediaWiki dogradnje koje rabi [http://www.wikia.com Wikia]",
+	"translate-group-desc-wikimediaextensions": "Grupa poruka koja sadrži sve poruke za podržane MediaWiki dogradnje koje rabi [https://wikimediafoundation.org/ Zaklada Wikimedia]",
+	"bw-desc-openstreetmap": "Sve poruke povezane s [[Translating:OpenStreetMap|OpenStreetMap]] projektom",
+	"bw-desc-osm-site": "[[Translating:OpenStreetMap|OpenStreetMap]] je karta svijeta koju može svatko uređivati"
 }

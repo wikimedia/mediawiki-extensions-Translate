@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Veeven"
-        ]
-    },
-    "tsb-filter-pending": "వేచివున్న అభ్యర్థనలు",
-    "tsb-reminder-title-generic": "తనిఖీ అయిన అనువాదకుడిగా మారడానికి మీ పరిచయాన్ని పూర్తిచేయండి"
+	"@metadata": {
+		"authors": [
+			"Veeven"
+		]
+	},
+	"tsb-filter-pending": "వేచివున్న అభ్యర్థనలు",
+	"tsb-reminder-title-generic": "తనిఖీ అయిన అనువాదకుడిగా మారడానికి మీ పరిచయాన్ని పూర్తిచేయండి"
 }

@@ -1,24 +1,24 @@
 {
-    "@metadata": {
-        "authors": [
-            "V.narsikar"
-        ]
-    },
-    "translategroupdescriptions-desc": "[https://mediawiki.org/wiki/Extension:Translate भाषांतर] विस्तारकाद्वारे सहाय्यीकृत उत्पादनांसाठी संदेश गट वर्णन",
-    "translate-group-desc-nodesc": "या संदेशगटासाठी काहीच वर्णन उपलब्ध नाही",
-    "translate-group-desc-mediawikicore": "या संदेशगटात, [[Translating:MediaWiki|मिडियाविकिच्या]] ({{CURRENTVERSION}}) अल्फा आवृत्तीत वापरल्या जाणारे सर्व संदेश  आहेत",
-    "translate-group-desc-mediawikimostused": "या संदेशगटात [[Translating:MediaWiki|मिडियाविकि]] तील [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki सर्वात जास्त वापरल्या जाणारे ५०० संदेश] आहेत",
-    "translate-group-desc-mediawikiextensions": "या मेटा संदेशगटात [[Translating:MediaWiki|मिडियाविकि]]च्या सहाय्यीकृत विस्तारकांचे सर्व संदेश आहेत",
-    "translate-group-desc-collection": "या मेटा संदेशगटात,[https://www.mediawiki.org/wiki/Extension:Collection कलेक्शन] या मिडियाविकि विस्तारकाचे सर्व संदेश आहेत",
-    "translate-group-desc-flaggedrevs": "या मेटा संदेशगटात, [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] या मिडियाविकि विस्तारकाचे  सर्व संदेश आहेत",
-    "translate-group-desc-readerfeedback": "या मेटा संदेशगटात, [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] या मिडियाविकि विस्तारकाचे  सर्व संदेश आहेत",
-    "translate-group-desc-semantic": "या मेटा संदेशगटात, [https://semantic-mediawiki.org/ Semantic MediaWiki] या सर्व सेमॅंटिक मिडियाविकि विस्तारकाचे  सर्व संदेश आहेत",
-    "translate-group-desc-translate": "या मेटा संदेश गटात, मिडियाविकि विस्तारक \n[https://www.mediawiki.org/wiki/Extension:Translate भाषांतर करा] याचे सर्व संदेश आहेत;कृपया त्याच्या [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary शब्दावलीशी] स्वतःस अवगत करा.",
-    "translate-group-desc-universallanguageselector": "मेटा संदेश गट ज्यात, मिडियाविकि विस्तारक [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector वैश्विक भाषा वरणित्र] (ULS) चे व संबंधित संचेतन-गठ्ठ्याचे सर्व संदेश आहेत.",
-    "translate-group-desc-visualeditor": "मेटा संदेश गट ज्यात, मिडियाविकि विस्तारक [https://www.mediawiki.org/wiki/Extension:VisualEditor यथादृष्य संपादका]चे व संबंधित संचेतन-गठ्ठ्याचे सर्व संदेश आहेत.",
-    "translate-group-desc-translatablepages": "भाषांतरासाठीची सर्व पाने",
-    "translate-group-desc-ihris": "[[Translating:iHRIS|iHRIS]] साठी संदेशगट",
-    "translate-group-desc-kiwix": " [[Translating:Kiwix|Kiwix]] साठी संदेशगट",
-    "translate-group-desc-mediawiki-core-branch": "[[Translating:MediaWiki|MediaWiki]] च्या स्थिर आवृत्तीसाठी संदेश",
-    "translate-group-desc-mifos": "[[Translating:Mifos|Mifos]] ही मायक्रोफायनान्स साठी व्यवस्थापन माहिती प्रणाली आहे"
+	"@metadata": {
+		"authors": [
+			"V.narsikar"
+		]
+	},
+	"translategroupdescriptions-desc": "[https://mediawiki.org/wiki/Extension:Translate भाषांतर] विस्तारकाद्वारे सहाय्यीकृत उत्पादनांसाठी संदेश गट वर्णन",
+	"translate-group-desc-nodesc": "या संदेशगटासाठी काहीच वर्णन उपलब्ध नाही",
+	"translate-group-desc-mediawikicore": "या संदेशगटात, [[Translating:MediaWiki|मिडियाविकिच्या]] ({{CURRENTVERSION}}) अल्फा आवृत्तीत वापरल्या जाणारे सर्व संदेश  आहेत",
+	"translate-group-desc-mediawikimostused": "या संदेशगटात [[Translating:MediaWiki|मिडियाविकि]] तील [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki सर्वात जास्त वापरल्या जाणारे ५०० संदेश] आहेत",
+	"translate-group-desc-mediawikiextensions": "या मेटा संदेशगटात [[Translating:MediaWiki|मिडियाविकि]]च्या सहाय्यीकृत विस्तारकांचे सर्व संदेश आहेत",
+	"translate-group-desc-collection": "या मेटा संदेशगटात,[https://www.mediawiki.org/wiki/Extension:Collection कलेक्शन] या मिडियाविकि विस्तारकाचे सर्व संदेश आहेत",
+	"translate-group-desc-flaggedrevs": "या मेटा संदेशगटात, [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] या मिडियाविकि विस्तारकाचे  सर्व संदेश आहेत",
+	"translate-group-desc-readerfeedback": "या मेटा संदेशगटात, [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] या मिडियाविकि विस्तारकाचे  सर्व संदेश आहेत",
+	"translate-group-desc-semantic": "या मेटा संदेशगटात, [https://semantic-mediawiki.org/ Semantic MediaWiki] या सर्व सेमॅंटिक मिडियाविकि विस्तारकाचे  सर्व संदेश आहेत",
+	"translate-group-desc-translate": "या मेटा संदेश गटात, मिडियाविकि विस्तारक \n[https://www.mediawiki.org/wiki/Extension:Translate भाषांतर करा] याचे सर्व संदेश आहेत;कृपया त्याच्या [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary शब्दावलीशी] स्वतःस अवगत करा.",
+	"translate-group-desc-universallanguageselector": "मेटा संदेश गट ज्यात, मिडियाविकि विस्तारक [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector वैश्विक भाषा वरणित्र] (ULS) चे व संबंधित संचेतन-गठ्ठ्याचे सर्व संदेश आहेत.",
+	"translate-group-desc-visualeditor": "मेटा संदेश गट ज्यात, मिडियाविकि विस्तारक [https://www.mediawiki.org/wiki/Extension:VisualEditor यथादृष्य संपादका]चे व संबंधित संचेतन-गठ्ठ्याचे सर्व संदेश आहेत.",
+	"translate-group-desc-translatablepages": "भाषांतरासाठीची सर्व पाने",
+	"translate-group-desc-ihris": "[[Translating:iHRIS|iHRIS]] साठी संदेशगट",
+	"translate-group-desc-kiwix": " [[Translating:Kiwix|Kiwix]] साठी संदेशगट",
+	"translate-group-desc-mediawiki-core-branch": "[[Translating:MediaWiki|MediaWiki]] च्या स्थिर आवृत्तीसाठी संदेश",
+	"translate-group-desc-mifos": "[[Translating:Mifos|Mifos]] ही मायक्रोफायनान्स साठी व्यवस्थापन माहिती प्रणाली आहे"
 }

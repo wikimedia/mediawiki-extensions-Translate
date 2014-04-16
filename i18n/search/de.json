@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Metalhead64"
-        ]
-    },
-    "searchtranslations": "Übersetzungen suchen",
-    "tux-sst-edit": "Übersetzung bearbeiten",
-    "tux-sst-search": "Suchen",
-    "tux-sst-search-ph": "Übersetzungen suchen",
-    "tux-sst-count": "{{PLURAL:$1|Ein Ergebnis gefunden|$1 Ergebnisse gefunden}}",
-    "tux-sst-facet-language": "Sprachen",
-    "tux-sst-facet-group": "Nachrichtengruppen",
-    "tux-sst-facet-orphan": "(verwaist)",
-    "tux-sst-nosolr-title": "Suche nicht verfügbar",
-    "tux-sst-nosolr-body": "Dieses Wiki hat keinen Übersetzungssuchservice.",
-    "tux-sst-solr-offline-title": "Die Suche ist nicht verfügbar",
-    "tux-sst-solr-offline-body": "Der Suchdienst ist derzeit nicht verfügbar.",
-    "tux-sst-next": "Nächste Ergebnisse",
-    "tux-sst-prev": "Vorherige Ergebnisse"
+	"@metadata": {
+		"authors": [
+			"Metalhead64"
+		]
+	},
+	"searchtranslations": "Übersetzungen suchen",
+	"tux-sst-edit": "Übersetzung bearbeiten",
+	"tux-sst-search": "Suchen",
+	"tux-sst-search-ph": "Übersetzungen suchen",
+	"tux-sst-count": "{{PLURAL:$1|Ein Ergebnis gefunden|$1 Ergebnisse gefunden}}",
+	"tux-sst-facet-language": "Sprachen",
+	"tux-sst-facet-group": "Nachrichtengruppen",
+	"tux-sst-facet-orphan": "(verwaist)",
+	"tux-sst-nosolr-title": "Suche nicht verfügbar",
+	"tux-sst-nosolr-body": "Dieses Wiki hat keinen Übersetzungssuchservice.",
+	"tux-sst-solr-offline-title": "Die Suche ist nicht verfügbar",
+	"tux-sst-solr-offline-body": "Der Suchdienst ist derzeit nicht verfügbar.",
+	"tux-sst-next": "Nächste Ergebnisse",
+	"tux-sst-prev": "Vorherige Ergebnisse"
 }

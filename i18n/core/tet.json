@@ -1,25 +1,25 @@
 {
-    "@metadata": {
-        "authors": [
-            "MF-Warburg"
-        ]
-    },
-    "translate": "Tradús",
-    "translate-page-settings-legend": "Preferénsia",
-    "translate-page-group": "Grupu",
-    "translate-page-language": "Lian",
-    "translate-page-limit-option": "$1 {{PLURAL:$1|mensajen|mensajen}} iha pájina ida",
-    "translate-submit": "Hola",
-    "translate-page-showing-all": "Dalan $1 {{PLURAL:$1|mensajen|mensajen}}.",
-    "translate-next": "Pájina oinmai",
-    "translate-prev": "Pájina molok",
-    "translate-page-description-legend": "Informasaun kona-ba grupu",
-    "translate-page-edit": "edita",
-    "translate-edit-title": "Edita \"$1\"",
-    "translate-edit-translation": "Tradusaun",
-    "translate-edit-in-other-languages": "Mensajen iha lian seluk",
-    "translate-magic-submit": "Hola",
-    "translate-stats-edits": "Edisaun sira",
-    "translate-language": "Lian",
-    "translate-searchprofile": "Tradusaun sira"
+	"@metadata": {
+		"authors": [
+			"MF-Warburg"
+		]
+	},
+	"translate": "Tradús",
+	"translate-page-settings-legend": "Preferénsia",
+	"translate-page-group": "Grupu",
+	"translate-page-language": "Lian",
+	"translate-page-limit-option": "$1 {{PLURAL:$1|mensajen|mensajen}} iha pájina ida",
+	"translate-submit": "Hola",
+	"translate-page-showing-all": "Dalan $1 {{PLURAL:$1|mensajen|mensajen}}.",
+	"translate-next": "Pájina oinmai",
+	"translate-prev": "Pájina molok",
+	"translate-page-description-legend": "Informasaun kona-ba grupu",
+	"translate-page-edit": "edita",
+	"translate-edit-title": "Edita \"$1\"",
+	"translate-edit-translation": "Tradusaun",
+	"translate-edit-in-other-languages": "Mensajen iha lian seluk",
+	"translate-magic-submit": "Hola",
+	"translate-stats-edits": "Edisaun sira",
+	"translate-language": "Lian",
+	"translate-searchprofile": "Tradusaun sira"
 }

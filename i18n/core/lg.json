@@ -1,27 +1,27 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kizito"
-        ]
-    },
-    "translate": "Vvuunula",
-    "translate-page-settings-legend": "Entegeka",
-    "translate-page-group": "Kiti kya",
-    "translate-page-language": "Mu lulimi",
-    "translate-page-limit": "Koma ku",
-    "translate-page-limit-option": "{{PLURAL:$1|bubaka bwa mulundi|bubaka bwa mirundi}} $1 ku buli lupapula",
-    "translate-submit": "Nona",
-    "translate-page-navigation-legend": "Okulambula enfo eno",
-    "translate-page-showing": "Olaba obubaka okuva ku $1 okutuuka ku $2 ku $3 awamu.",
-    "translate-page-showing-all": "Ekiti kino kirimu {{PLURAL:$1|obubaka bwa mulundi|obubaka bwa mirundi}} $1.",
-    "translate-next": "Dda ku luddirira luno",
-    "translate-prev": "Dda ku lukulembera luno",
-    "translate-page-description-legend": "Ebifa ku kiti kino",
-    "translate-page-edit": "kyusa",
-    "translate-magic-submit": "Nona",
-    "translate-statsf-scale-days": "Nnaku",
-    "translate-statsf-scale-hours": "Ssaawa",
-    "translate-statsf-submit": "Kulagako",
-    "languagestats": "Ebivvuunulidwa mu lulimi",
-    "translate-language": "Lulimi"
+	"@metadata": {
+		"authors": [
+			"Kizito"
+		]
+	},
+	"translate": "Vvuunula",
+	"translate-page-settings-legend": "Entegeka",
+	"translate-page-group": "Kiti kya",
+	"translate-page-language": "Mu lulimi",
+	"translate-page-limit": "Koma ku",
+	"translate-page-limit-option": "{{PLURAL:$1|bubaka bwa mulundi|bubaka bwa mirundi}} $1 ku buli lupapula",
+	"translate-submit": "Nona",
+	"translate-page-navigation-legend": "Okulambula enfo eno",
+	"translate-page-showing": "Olaba obubaka okuva ku $1 okutuuka ku $2 ku $3 awamu.",
+	"translate-page-showing-all": "Ekiti kino kirimu {{PLURAL:$1|obubaka bwa mulundi|obubaka bwa mirundi}} $1.",
+	"translate-next": "Dda ku luddirira luno",
+	"translate-prev": "Dda ku lukulembera luno",
+	"translate-page-description-legend": "Ebifa ku kiti kino",
+	"translate-page-edit": "kyusa",
+	"translate-magic-submit": "Nona",
+	"translate-statsf-scale-days": "Nnaku",
+	"translate-statsf-scale-hours": "Ssaawa",
+	"translate-statsf-submit": "Kulagako",
+	"languagestats": "Ebivvuunulidwa mu lulimi",
+	"translate-language": "Lulimi"
 }

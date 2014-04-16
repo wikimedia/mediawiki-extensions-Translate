@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "George Animal"
-        ]
-    },
-    "searchtranslations": "Li wergeran bigere",
-    "tux-sst-edit": "Wergerê biguherîne",
-    "tux-sst-search": "Lêgerîn",
-    "tux-sst-search-ph": "Li wergeran bigere",
-    "tux-sst-count": "{{PLURAL:$1|Encamek hat dîtin|$1 encam hatin dîtin}}",
-    "tux-sst-facet-language": "Ziman",
-    "tux-sst-facet-group": "Komên peyaman",
-    "tux-sst-facet-orphan": "(sêwî)"
+	"@metadata": {
+		"authors": [
+			"George Animal"
+		]
+	},
+	"searchtranslations": "Li wergeran bigere",
+	"tux-sst-edit": "Wergerê biguherîne",
+	"tux-sst-search": "Lêgerîn",
+	"tux-sst-search-ph": "Li wergeran bigere",
+	"tux-sst-count": "{{PLURAL:$1|Encamek hat dîtin|$1 encam hatin dîtin}}",
+	"tux-sst-facet-language": "Ziman",
+	"tux-sst-facet-group": "Komên peyaman",
+	"tux-sst-facet-orphan": "(sêwî)"
 }

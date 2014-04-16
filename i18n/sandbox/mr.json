@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "V.narsikar"
-        ]
-    },
-    "tsb-selected-count": "{{PLURAL:$1|$1 सदस्य निवडला|$1 सदस्य निवडले}}",
-    "tsb-no-requests-from-new-users": "नविन सदस्यांपासून काहीच विनंत्या नाहीत"
+	"@metadata": {
+		"authors": [
+			"V.narsikar"
+		]
+	},
+	"tsb-selected-count": "{{PLURAL:$1|$1 सदस्य निवडला|$1 सदस्य निवडले}}",
+	"tsb-no-requests-from-new-users": "नविन सदस्यांपासून काहीच विनंत्या नाहीत"
 }

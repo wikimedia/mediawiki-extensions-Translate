@@ -1,16 +1,16 @@
 {
-    "@metadata": {
-        "authors": [
-            "Fitoschido",
-            "Ovruni"
-        ]
-    },
-    "tux-sst-edit": "Editar traducción",
-    "tux-sst-search": "Buscar",
-    "tux-sst-search-ph": "Buscar traducciones",
-    "tux-sst-count": "Se {{PLURAL:$1|encontró un resultado|encontraron $1 resultados}}",
-    "tux-sst-facet-language": "Idiomas",
-    "tux-sst-facet-group": "Grupos de mensajes",
-    "tux-sst-next": "Resultados siguientes",
-    "tux-sst-prev": "Resultados anteriores"
+	"@metadata": {
+		"authors": [
+			"Fitoschido",
+			"Ovruni"
+		]
+	},
+	"tux-sst-edit": "Editar traducción",
+	"tux-sst-search": "Buscar",
+	"tux-sst-search-ph": "Buscar traducciones",
+	"tux-sst-count": "Se {{PLURAL:$1|encontró un resultado|encontraron $1 resultados}}",
+	"tux-sst-facet-language": "Idiomas",
+	"tux-sst-facet-group": "Grupos de mensajes",
+	"tux-sst-next": "Resultados siguientes",
+	"tux-sst-prev": "Resultados anteriores"
 }

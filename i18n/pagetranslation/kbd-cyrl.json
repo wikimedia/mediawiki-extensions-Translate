@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Тамэ Балъкъэрхэ"
-        ]
-    },
-    "tpt-diff-old": "Ипэ ит текстыр",
-    "tpt-diff-new": "ТекстыщIэ",
-    "translate-tag-translate-link-desc": "НапэкIуэцIыр зэхъуэкIын",
-    "tpt-languages-legend": "НэгъуэщIыбзэхэр:"
+	"@metadata": {
+		"authors": [
+			"Тамэ Балъкъэрхэ"
+		]
+	},
+	"tpt-diff-old": "Ипэ ит текстыр",
+	"tpt-diff-new": "ТекстыщIэ",
+	"translate-tag-translate-link-desc": "НапэкIуэцIыр зэхъуэкIын",
+	"tpt-languages-legend": "НэгъуэщIыбзэхэр:"
 }

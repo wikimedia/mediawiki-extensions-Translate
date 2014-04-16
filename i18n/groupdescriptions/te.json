@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Veeven",
-            "Ashokjayanti"
-        ]
-    },
-    "translate-group-desc-nodesc": "ఈ సందేశ సమూహానికి వివరణ లేదు",
-    "translate-group-desc-universallanguageselector": "MediaWikiవిస్తరణకొరకు అన్ని సందేశాలూ కలిసిన విస్తృత సందేశ సంకలనం[https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector UniversalLanguageSelector] (ULS)మరియు సంబంధిత సాఫ్ట్ వేర్  \nపాకేజిలు.",
-    "translate-group-desc-translatablepages": "అనువదించదగ్గ అన్ని పుటలు"
+	"@metadata": {
+		"authors": [
+			"Veeven",
+			"Ashokjayanti"
+		]
+	},
+	"translate-group-desc-nodesc": "ఈ సందేశ సమూహానికి వివరణ లేదు",
+	"translate-group-desc-universallanguageselector": "MediaWikiవిస్తరణకొరకు అన్ని సందేశాలూ కలిసిన విస్తృత సందేశ సంకలనం[https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector UniversalLanguageSelector] (ULS)మరియు సంబంధిత సాఫ్ట్ వేర్  \nపాకేజిలు.",
+	"translate-group-desc-translatablepages": "అనువదించదగ్గ అన్ని పుటలు"
 }

@@ -1,20 +1,20 @@
 {
-    "@metadata": {
-        "authors": [
-            "Tifinaghes"
-        ]
-    },
-    "pagetranslation": "ⵜⴰⵙⵓⵖⵍⵜ ⵏ ⵜⴰⵙⵏⴰ",
-    "tpt-template": "ⵜⴰⵍⵖⴰ ⵏ ⵜⴰⵙⵏⴰ",
-    "tpt-diff-new": "ⴰⴹⵔⵉⵙ ⴰⵎⴰⵢⵏⵓ",
-    "tpt-select-prioritylangs-reason": "ⴰⵙⵔⴰⴳ:",
-    "tpt-languages-legend": "ⵜⵓⵜⵍⴰⵢⵉⵏ ⵢⴰⴹⵏⵉ:",
-    "tpt-aggregategroup-add": "ⵔⵏⵓ",
-    "tpt-aggregategroup-save": "ⵣⵎⵎⴻⵎ",
-    "tpt-aggregategroup-new-name": "ⴰⵙⵙⴰⵖ:",
-    "pt-movepage-current": "ⴰⵙⵙⴰⵖ ⵏ ⵖⵉⵍⴰ:",
-    "pt-movepage-new": "ⴰⵙⵙⴰⵖ ⴰⵎⴰⵢⵏⵓ:",
-    "pt-movepage-reason": "ⴰⵙⵔⴰⴳ:",
-    "pt-deletepage-current": "ⴰⵙⵙⴰⵖ ⵏ ⵜⴰⵙⵏⴰ:",
-    "pt-deletepage-reason": "ⴰⵙⵔⴰⴳ:"
+	"@metadata": {
+		"authors": [
+			"Tifinaghes"
+		]
+	},
+	"pagetranslation": "ⵜⴰⵙⵓⵖⵍⵜ ⵏ ⵜⴰⵙⵏⴰ",
+	"tpt-template": "ⵜⴰⵍⵖⴰ ⵏ ⵜⴰⵙⵏⴰ",
+	"tpt-diff-new": "ⴰⴹⵔⵉⵙ ⴰⵎⴰⵢⵏⵓ",
+	"tpt-select-prioritylangs-reason": "ⴰⵙⵔⴰⴳ:",
+	"tpt-languages-legend": "ⵜⵓⵜⵍⴰⵢⵉⵏ ⵢⴰⴹⵏⵉ:",
+	"tpt-aggregategroup-add": "ⵔⵏⵓ",
+	"tpt-aggregategroup-save": "ⵣⵎⵎⴻⵎ",
+	"tpt-aggregategroup-new-name": "ⴰⵙⵙⴰⵖ:",
+	"pt-movepage-current": "ⴰⵙⵙⴰⵖ ⵏ ⵖⵉⵍⴰ:",
+	"pt-movepage-new": "ⴰⵙⵙⴰⵖ ⴰⵎⴰⵢⵏⵓ:",
+	"pt-movepage-reason": "ⴰⵙⵔⴰⴳ:",
+	"pt-deletepage-current": "ⴰⵙⵙⴰⵖ ⵏ ⵜⴰⵙⵏⴰ:",
+	"pt-deletepage-reason": "ⴰⵙⵔⴰⴳ:"
 }

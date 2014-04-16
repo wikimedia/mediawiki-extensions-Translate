@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Тамэ Балъкъэрхэ"
-        ]
-    },
-    "translate-page-settings-legend": "Теухуапхъэхэр",
-    "translate-page-group": "Гуп",
-    "translate-page-language": "Бзэ",
-    "translate-page-limit": "ФIимыхуу",
-    "translate-submit": "Къэгъэлъэгъуэн",
-    "translate-optional": "(Iэмалыншэкъым)",
-    "translate-ignored": "(щхьэщыгъэцIэфтауэ)"
+	"@metadata": {
+		"authors": [
+			"Тамэ Балъкъэрхэ"
+		]
+	},
+	"translate-page-settings-legend": "Теухуапхъэхэр",
+	"translate-page-group": "Гуп",
+	"translate-page-language": "Бзэ",
+	"translate-page-limit": "ФIимыхуу",
+	"translate-submit": "Къэгъэлъэгъуэн",
+	"translate-optional": "(Iэмалыншэкъым)",
+	"translate-ignored": "(щхьэщыгъэцIэфтауэ)"
 }

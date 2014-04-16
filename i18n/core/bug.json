@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kurniasan"
-        ]
-    },
-    "translate": "Tare'juma",
-    "translate-submit": "Ala",
-    "translate-page-edit": "padeccéŋ",
-    "translate-edit-no-information": "''Iyyedé méséjeë degaga dokuméntasina. Rékko idi isseŋi kotégaï na pakogaï ripaké, weddiŋi idi maŋinriŋ patare'juma laiŋë menambahkan dokumentasina.''",
-    "translate-edit-information": "Informasina iyyéde leppa ($1)",
-    "translate-magic-cm-save": "Taro",
-    "translate-statsf-submit": "Pribiu"
+	"@metadata": {
+		"authors": [
+			"Kurniasan"
+		]
+	},
+	"translate": "Tare'juma",
+	"translate-submit": "Ala",
+	"translate-page-edit": "padeccéŋ",
+	"translate-edit-no-information": "''Iyyedé méséjeë degaga dokuméntasina. Rékko idi isseŋi kotégaï na pakogaï ripaké, weddiŋi idi maŋinriŋ patare'juma laiŋë menambahkan dokumentasina.''",
+	"translate-edit-information": "Informasina iyyéde leppa ($1)",
+	"translate-magic-cm-save": "Taro",
+	"translate-statsf-submit": "Pribiu"
 }

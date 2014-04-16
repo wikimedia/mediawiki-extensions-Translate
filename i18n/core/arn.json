@@ -1,13 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Poquil"
-        ]
-    },
-    "translate-page-showing": "adkintun mensajes del $1 al $2 de $3",
-    "translate-page-showing-all": "adkintun $1 {{PLURAL:$1|message|messages}}.",
-    "translate-edit-contribute": "ñma",
-    "translate-magic-cm-original": "kuse",
-    "translate-magic-cm-save": "elkünun",
-    "translate-magic-cm-savefailed": "elkünun weda"
+	"@metadata": {
+		"authors": [
+			"Poquil"
+		]
+	},
+	"translate-page-showing": "adkintun mensajes del $1 al $2 de $3",
+	"translate-page-showing-all": "adkintun $1 {{PLURAL:$1|message|messages}}.",
+	"translate-edit-contribute": "ñma",
+	"translate-magic-cm-original": "kuse",
+	"translate-magic-cm-save": "elkünun",
+	"translate-magic-cm-savefailed": "elkünun weda"
 }

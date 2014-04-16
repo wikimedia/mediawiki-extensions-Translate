@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Cedric31"
-        ]
-    },
-    "searchtranslations": "Recèrca de traduccions",
-    "tux-sst-edit": "Modificar la traduccion",
-    "tux-sst-search": "Recercar",
-    "tux-sst-facet-language": "Lengas",
-    "tux-sst-facet-group": "Gropes de messatge",
-    "tux-sst-facet-orphan": "(orfanèl)",
-    "tux-sst-nosolr-title": "Recèrca indisponibla"
+	"@metadata": {
+		"authors": [
+			"Cedric31"
+		]
+	},
+	"searchtranslations": "Recèrca de traduccions",
+	"tux-sst-edit": "Modificar la traduccion",
+	"tux-sst-search": "Recercar",
+	"tux-sst-facet-language": "Lengas",
+	"tux-sst-facet-group": "Gropes de messatge",
+	"tux-sst-facet-orphan": "(orfanèl)",
+	"tux-sst-nosolr-title": "Recèrca indisponibla"
 }

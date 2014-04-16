@@ -1,24 +1,24 @@
 {
-    "@metadata": {
-        "authors": [
-            "Hydra",
-            "Li3939108",
-            "Xiaomingyan",
-            "Yfdyh000"
-        ]
-    },
-    "searchtranslations": "搜索译文",
-    "tux-sst-edit": "编辑译文",
-    "tux-sst-search": "搜索",
-    "tux-sst-search-ph": "搜索译文",
-    "tux-sst-count": "{{PLURAL:$1|找到$1个结果}}",
-    "tux-sst-facet-language": "语言",
-    "tux-sst-facet-group": "信息组",
-    "tux-sst-facet-orphan": "（孤立）",
-    "tux-sst-nosolr-title": "搜索不可用",
-    "tux-sst-nosolr-body": "本wiki没有译文搜索服务。",
-    "tux-sst-solr-offline-title": "搜索不可用",
-    "tux-sst-solr-offline-body": "搜索服务暂时不可用。",
-    "tux-sst-next": "下一页结果",
-    "tux-sst-prev": "上一页结果"
+	"@metadata": {
+		"authors": [
+			"Hydra",
+			"Li3939108",
+			"Xiaomingyan",
+			"Yfdyh000"
+		]
+	},
+	"searchtranslations": "搜索译文",
+	"tux-sst-edit": "编辑译文",
+	"tux-sst-search": "搜索",
+	"tux-sst-search-ph": "搜索译文",
+	"tux-sst-count": "{{PLURAL:$1|找到$1个结果}}",
+	"tux-sst-facet-language": "语言",
+	"tux-sst-facet-group": "信息组",
+	"tux-sst-facet-orphan": "（孤立）",
+	"tux-sst-nosolr-title": "搜索不可用",
+	"tux-sst-nosolr-body": "本wiki没有译文搜索服务。",
+	"tux-sst-solr-offline-title": "搜索不可用",
+	"tux-sst-solr-offline-body": "搜索服务暂时不可用。",
+	"tux-sst-next": "下一页结果",
+	"tux-sst-prev": "上一页结果"
 }

@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Dark Eagle"
-        ]
-    },
-    "tpt-diff-new": "Jauns teksts",
-    "tpt-languages-legend": "Cytys volūdys:",
-    "pt-movepage-new": "Jauna pasauka:",
-    "pt-movepage-reason": "Īmesle:"
+	"@metadata": {
+		"authors": [
+			"Dark Eagle"
+		]
+	},
+	"tpt-diff-new": "Jauns teksts",
+	"tpt-languages-legend": "Cytys volūdys:",
+	"pt-movepage-new": "Jauna pasauka:",
+	"pt-movepage-reason": "Īmesle:"
 }

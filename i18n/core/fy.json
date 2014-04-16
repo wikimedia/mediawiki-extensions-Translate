@@ -1,18 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kening Aldgilles",
-            "Snakesteuben"
-        ]
-    },
-    "translate-page-group": "Groep",
-    "translate-next": "Folgjende side",
-    "translate-page-edit": "bewurkje",
-    "translate-magic-cm-export": "Eksportearje",
-    "translate-magic-cm-comment": "Oanmerking:",
-    "translate-magic-cm-save": "Fêstlizze",
-    "tux-editor-cancel-button-label": "Ofbrekke",
-    "tux-proofread-edit-label": "Bewurkje",
-    "tux-editor-page-mode": "Side",
-    "tux-editor-doc-editor-cancel": "Ofbrekke"
+	"@metadata": {
+		"authors": [
+			"Kening Aldgilles",
+			"Snakesteuben"
+		]
+	},
+	"translate-page-group": "Groep",
+	"translate-next": "Folgjende side",
+	"translate-page-edit": "bewurkje",
+	"translate-magic-cm-export": "Eksportearje",
+	"translate-magic-cm-comment": "Oanmerking:",
+	"translate-magic-cm-save": "Fêstlizze",
+	"tux-editor-cancel-button-label": "Ofbrekke",
+	"tux-proofread-edit-label": "Bewurkje",
+	"tux-editor-page-mode": "Side",
+	"tux-editor-doc-editor-cancel": "Ofbrekke"
 }

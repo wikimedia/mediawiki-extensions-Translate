@@ -1,22 +1,22 @@
 {
-    "@metadata": {
-        "authors": [
-            "David1010"
-        ]
-    },
-    "translate-group-desc-nodesc": "ამ ჯგუფის შეტყობინებებისათვის აღწერა არ არის ხელმისაწვდომი",
-    "translate-group-desc-mediawikiextensions": "შეტყობინებების მეტა-ჯგუფი, შეიცავს [[Translating:MediaWiki|მედიავიკის]] მხარდაჭერილი გაფართოებების ყველა შეტყობინებას",
-    "translate-group-desc-collection": "შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
-    "translate-group-desc-flaggedrevs": "შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
-    "translate-group-desc-readerfeedback": "შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",
-    "translate-group-desc-semantic": "შეტყობინებების მეტა-ჯგუფი, შეიცავს ყველა გაფართოების ყველა შეტყობინებას [https://semantic-mediawiki.org/ Semantic MediaWiki]",
-    "translate-group-desc-translate": "შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [https://www.mediawiki.org/wiki/Extension:Translate თარგმნა]; გთხოვთ, გაეცნოთ მისი [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary ტერმინების ლექსიკონს]",
-    "translate-group-desc-translatablepages": "ყველა თარგმნადი გვერდი",
-    "bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] არის სტარატეგიული თამაში",
-    "translate-group-desc-eol": "შეტყობინებათა ჯგუფი [[Translating:EOL|Encyclopedia of Life]]-თვის",
-    "translate-group-desc-ihris": "შეტყობინებათა ჯგუფი [[Translating:iHRIS|iHRIS]]-თვის",
-    "translate-group-desc-kiwix": "შეტყობინებათა ჯგუფი [[Translating:Kiwix|Kiwix]]-თვის",
-    "translate-group-desc-mantisbt-plugin-core": "ძირითადი პლაგინი [[Translating:MantisBT|MantisBT]]-თვის",
-    "translate-group-desc-mediawiki-core-branch": "შეტყობინებები [[Translating:MediaWiki|მედიავიკის]] სტაბილური ვერსიისათვის",
-    "bw-desc-openstreetmap": "შეტყობინებების ჯგუფი [[Translating:OpenStreetMap|OpenStreetMap]]-ის ყველა შეტყობინებისათვის"
+	"@metadata": {
+		"authors": [
+			"David1010"
+		]
+	},
+	"translate-group-desc-nodesc": "ამ ჯგუფის შეტყობინებებისათვის აღწერა არ არის ხელმისაწვდომი",
+	"translate-group-desc-mediawikiextensions": "შეტყობინებების მეტა-ჯგუფი, შეიცავს [[Translating:MediaWiki|მედიავიკის]] მხარდაჭერილი გაფართოებების ყველა შეტყობინებას",
+	"translate-group-desc-collection": "შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
+	"translate-group-desc-flaggedrevs": "შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
+	"translate-group-desc-readerfeedback": "შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",
+	"translate-group-desc-semantic": "შეტყობინებების მეტა-ჯგუფი, შეიცავს ყველა გაფართოების ყველა შეტყობინებას [https://semantic-mediawiki.org/ Semantic MediaWiki]",
+	"translate-group-desc-translate": "შეტყობინებების მეტა-ჯგუფი, შეიცავს მედიავიკის გაფართოებების ყველა შეტყობინებას [https://www.mediawiki.org/wiki/Extension:Translate თარგმნა]; გთხოვთ, გაეცნოთ მისი [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary ტერმინების ლექსიკონს]",
+	"translate-group-desc-translatablepages": "ყველა თარგმნადი გვერდი",
+	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] არის სტარატეგიული თამაში",
+	"translate-group-desc-eol": "შეტყობინებათა ჯგუფი [[Translating:EOL|Encyclopedia of Life]]-თვის",
+	"translate-group-desc-ihris": "შეტყობინებათა ჯგუფი [[Translating:iHRIS|iHRIS]]-თვის",
+	"translate-group-desc-kiwix": "შეტყობინებათა ჯგუფი [[Translating:Kiwix|Kiwix]]-თვის",
+	"translate-group-desc-mantisbt-plugin-core": "ძირითადი პლაგინი [[Translating:MantisBT|MantisBT]]-თვის",
+	"translate-group-desc-mediawiki-core-branch": "შეტყობინებები [[Translating:MediaWiki|მედიავიკის]] სტაბილური ვერსიისათვის",
+	"bw-desc-openstreetmap": "შეტყობინებების ჯგუფი [[Translating:OpenStreetMap|OpenStreetMap]]-ის ყველა შეტყობინებისათვის"
 }

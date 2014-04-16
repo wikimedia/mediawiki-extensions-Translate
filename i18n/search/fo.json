@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "EileenSanda"
-        ]
-    },
-    "searchtranslations": "Leita eftir týðingum",
-    "tux-sst-edit": "Rætta týðing",
-    "tux-sst-search": "Leita",
-    "tux-sst-search-ph": "Leita eftir týðingum",
-    "tux-sst-count": "{{PLURAL:$1|Eitt úrslit funnið|$1 úrslit funnin}}",
-    "tux-sst-facet-language": "Mál",
-    "tux-sst-facet-group": "Boðbólkar",
-    "tux-sst-facet-orphan": "(foreldraleys)",
-    "tux-sst-nosolr-title": "Leiting ber ikki til",
-    "tux-sst-nosolr-body": "Henda wiki'in hevur ikki eina tænastu har til ber at leita eftir týðingum.",
-    "tux-sst-solr-offline-title": "Leitan ber ikki til",
-    "tux-sst-solr-offline-body": "Leititænastan er fyribils óvirkin.",
-    "tux-sst-next": "Næstu úrslit",
-    "tux-sst-prev": "Undarfarnu úrslit"
+	"@metadata": {
+		"authors": [
+			"EileenSanda"
+		]
+	},
+	"searchtranslations": "Leita eftir týðingum",
+	"tux-sst-edit": "Rætta týðing",
+	"tux-sst-search": "Leita",
+	"tux-sst-search-ph": "Leita eftir týðingum",
+	"tux-sst-count": "{{PLURAL:$1|Eitt úrslit funnið|$1 úrslit funnin}}",
+	"tux-sst-facet-language": "Mál",
+	"tux-sst-facet-group": "Boðbólkar",
+	"tux-sst-facet-orphan": "(foreldraleys)",
+	"tux-sst-nosolr-title": "Leiting ber ikki til",
+	"tux-sst-nosolr-body": "Henda wiki'in hevur ikki eina tænastu har til ber at leita eftir týðingum.",
+	"tux-sst-solr-offline-title": "Leitan ber ikki til",
+	"tux-sst-solr-offline-body": "Leititænastan er fyribils óvirkin.",
+	"tux-sst-next": "Næstu úrslit",
+	"tux-sst-prev": "Undarfarnu úrslit"
 }

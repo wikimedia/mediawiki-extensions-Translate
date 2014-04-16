@@ -1,33 +1,33 @@
 {
-    "@metadata": {
-        "authors": [
-            "Abshirdheere",
-            "Maax",
-            "Mimursal"
-        ]
-    },
-    "translate": "Fasir",
-    "translate-taskui-acceptqueue": "Fariimaha bis ayaan aqbalayaa",
-    "translate-taction-proofread": "Sixid",
-    "translate-taction-lstats": "Tirakoobka Luqadda",
-    "translate-taction-mstats": "Fariinta Tirakoobka Kooxda",
-    "translate-submit": "Qaado",
-    "translate-page-showing": "Soo bandhigista ka bilaabata $1 ilaa $2 of $3.",
-    "translate-page-showing-none": "Wax qoraal ah lama soo bandhigin.",
-    "translate-page-description-legend": "Macluumaad kusaabsan qaybta",
-    "translate-edit-nopermission": "Waxaad ubaahantahay ruqsad si aad u turjunto fariimaha.",
-    "translate-magic-submit": "Qaado",
-    "translate-tag-page-desc": "Turjumidda ee bogga wiki [[$2|$1]].",
-    "languagestats-summary": "Boggaan waxaa lagu soo bandhigay tirakoobka turjumaadda qayba kasta oo ka mid ah fariimaha luaqadaha.",
-    "languagestats-stats-for": "Tirakoobka turtumida luqadda  $1 ($2).",
-    "translate-language-code": "Sumadda luqadda",
-    "translate-language-code-field-name": "Sumadda luqadda:",
-    "translate-suppress-complete": "Gabi ahaanba qari qaybaha qoraalada turjuman",
-    "translate-ls-noempty": "Gabi ahaanba qari qaybaha qoraalada aan la turjumin",
-    "translate-language": "Luqad:",
-    "translate-ls-submit": "Itus tirakoobka",
-    "translate-mgs-pagename": "Fariinta Tirakoobka Kooxda",
-    "translate-mgs-submit": "Itus tirakoobka",
-    "translate-mgs-column-language": "Luqada",
-    "translate-dynagroup-recent-desc": "Qaybtaan waxa ay ku tusaysaa dhamaan turjumiddii ugu dambaysay ee luqadaan.\nEe faaiidada badan leh saxidda luqada."
+	"@metadata": {
+		"authors": [
+			"Abshirdheere",
+			"Maax",
+			"Mimursal"
+		]
+	},
+	"translate": "Fasir",
+	"translate-taskui-acceptqueue": "Fariimaha bis ayaan aqbalayaa",
+	"translate-taction-proofread": "Sixid",
+	"translate-taction-lstats": "Tirakoobka Luqadda",
+	"translate-taction-mstats": "Fariinta Tirakoobka Kooxda",
+	"translate-submit": "Qaado",
+	"translate-page-showing": "Soo bandhigista ka bilaabata $1 ilaa $2 of $3.",
+	"translate-page-showing-none": "Wax qoraal ah lama soo bandhigin.",
+	"translate-page-description-legend": "Macluumaad kusaabsan qaybta",
+	"translate-edit-nopermission": "Waxaad ubaahantahay ruqsad si aad u turjunto fariimaha.",
+	"translate-magic-submit": "Qaado",
+	"translate-tag-page-desc": "Turjumidda ee bogga wiki [[$2|$1]].",
+	"languagestats-summary": "Boggaan waxaa lagu soo bandhigay tirakoobka turjumaadda qayba kasta oo ka mid ah fariimaha luaqadaha.",
+	"languagestats-stats-for": "Tirakoobka turtumida luqadda  $1 ($2).",
+	"translate-language-code": "Sumadda luqadda",
+	"translate-language-code-field-name": "Sumadda luqadda:",
+	"translate-suppress-complete": "Gabi ahaanba qari qaybaha qoraalada turjuman",
+	"translate-ls-noempty": "Gabi ahaanba qari qaybaha qoraalada aan la turjumin",
+	"translate-language": "Luqad:",
+	"translate-ls-submit": "Itus tirakoobka",
+	"translate-mgs-pagename": "Fariinta Tirakoobka Kooxda",
+	"translate-mgs-submit": "Itus tirakoobka",
+	"translate-mgs-column-language": "Luqada",
+	"translate-dynagroup-recent-desc": "Qaybtaan waxa ay ku tusaysaa dhamaan turjumiddii ugu dambaysay ee luqadaan.\nEe faaiidada badan leh saxidda luqada."
 }

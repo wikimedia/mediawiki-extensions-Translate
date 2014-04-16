@@ -1,25 +1,25 @@
 {
-    "@metadata": {
-        "authors": [
-            "Викиней"
-        ]
-    },
-    "pagetranslation": "Которуу барагы",
-    "tpt-template": "Калып барагы",
-    "tpt-diff-new": "Жаңы текст",
-    "tpt-select-prioritylangs-reason": "Себеп:",
-    "tpt-sections-prioritylangs": "Артыкчылыктуу тилдер",
-    "translate-tag-translate-link-desc": "Бул баракты которуу",
-    "translate-tag-markthis": "Бул баракты которуу үчүн белгилөө",
-    "tpt-languages-legend": "Башка тилдер:",
-    "tpt-languages-zero": "Ушул тилге которууну баштоо",
-    "tpt-discouraged-language-reason": "Себеп: $1",
-    "tpt-aggregategroup-save": "Сактоо",
-    "tpt-aggregategroup-new-name": "Аталышы:",
-    "tpt-aggregategroup-new-description": "Баяндамасы (милдеттүү эмес):",
-    "pt-movepage-current": "Азыркы аты:",
-    "pt-movepage-new": "Жаңы аты:",
-    "pt-movepage-reason": "Себеби:",
-    "pt-deletepage-current": "Барактын аты:",
-    "pt-deletepage-reason": "Себеп:"
+	"@metadata": {
+		"authors": [
+			"Викиней"
+		]
+	},
+	"pagetranslation": "Которуу барагы",
+	"tpt-template": "Калып барагы",
+	"tpt-diff-new": "Жаңы текст",
+	"tpt-select-prioritylangs-reason": "Себеп:",
+	"tpt-sections-prioritylangs": "Артыкчылыктуу тилдер",
+	"translate-tag-translate-link-desc": "Бул баракты которуу",
+	"translate-tag-markthis": "Бул баракты которуу үчүн белгилөө",
+	"tpt-languages-legend": "Башка тилдер:",
+	"tpt-languages-zero": "Ушул тилге которууну баштоо",
+	"tpt-discouraged-language-reason": "Себеп: $1",
+	"tpt-aggregategroup-save": "Сактоо",
+	"tpt-aggregategroup-new-name": "Аталышы:",
+	"tpt-aggregategroup-new-description": "Баяндамасы (милдеттүү эмес):",
+	"pt-movepage-current": "Азыркы аты:",
+	"pt-movepage-new": "Жаңы аты:",
+	"pt-movepage-reason": "Себеби:",
+	"pt-deletepage-current": "Барактын аты:",
+	"pt-deletepage-reason": "Себеп:"
 }

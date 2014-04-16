@@ -1,13 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Eruedin",
-            "Moyogo"
-        ]
-    },
-    "translate-page-settings-legend": "Palamɛ́tɛlɛ",
-    "translate-page-language": "Lokótá",
-    "translate-page-navigation-legend": "Botamboli",
-    "translate-next": "Lonkásá na nsima",
-    "translate-page-edit": "kobɔngisa"
+	"@metadata": {
+		"authors": [
+			"Eruedin",
+			"Moyogo"
+		]
+	},
+	"translate-page-settings-legend": "Palamɛ́tɛlɛ",
+	"translate-page-language": "Lokótá",
+	"translate-page-navigation-legend": "Botamboli",
+	"translate-next": "Lonkásá na nsima",
+	"translate-page-edit": "kobɔngisa"
 }

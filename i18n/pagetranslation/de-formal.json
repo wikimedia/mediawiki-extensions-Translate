@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Imre",
-            "Kghbln",
-            "Purodha",
-            "The Evil IP address",
-            "Umherirrender"
-        ]
-    },
-    "tpt-action-nofuzzy": "Setzen Sie die Übersetzungen nicht außer Kraft",
-    "tpt-notsuitable": "Die Seite $1 ist nicht zum Übersetzen geeignet.\nStellen Sie sicher, dass ein <nowiki><translate></nowiki>-Tag und gültige Syntax verwendet wird.",
-    "tpt-showpage-intro": "Untenstehend sind neue, vorhandene und gelöschte Übersetzungseinheiten aufgelistet.\nBevor Sie diese Version zur Übersetzung freigeben, stellen Sie bitte sicher, dass die Änderungen an den Übersetzungseinheiten minimal sind. Damit verhindern Sie unnötige Arbeit für die Übersetzer.",
-    "pt-movepage-started": "Die Basisseite wurde nunmehr verschoben.\nBitte prüfen Sie das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] auf Fehlermeldungen, bzw. die Vollzugsnachricht."
+	"@metadata": {
+		"authors": [
+			"Imre",
+			"Kghbln",
+			"Purodha",
+			"The Evil IP address",
+			"Umherirrender"
+		]
+	},
+	"tpt-action-nofuzzy": "Setzen Sie die Übersetzungen nicht außer Kraft",
+	"tpt-notsuitable": "Die Seite $1 ist nicht zum Übersetzen geeignet.\nStellen Sie sicher, dass ein <nowiki><translate></nowiki>-Tag und gültige Syntax verwendet wird.",
+	"tpt-showpage-intro": "Untenstehend sind neue, vorhandene und gelöschte Übersetzungseinheiten aufgelistet.\nBevor Sie diese Version zur Übersetzung freigeben, stellen Sie bitte sicher, dass die Änderungen an den Übersetzungseinheiten minimal sind. Damit verhindern Sie unnötige Arbeit für die Übersetzer.",
+	"pt-movepage-started": "Die Basisseite wurde nunmehr verschoben.\nBitte prüfen Sie das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] auf Fehlermeldungen, bzw. die Vollzugsnachricht."
 }

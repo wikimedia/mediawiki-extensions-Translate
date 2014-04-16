@@ -1,31 +1,31 @@
 {
-    "@metadata": {
-        "authors": [
-            "Dori",
-            "Puntori",
-            "GretaDoci"
-        ]
-    },
-    "translate": "Përkthime",
-    "translate-page-group": "Grupi",
-    "translate-page-language": "Gjuha",
-    "translate-page-edit": "redakto",
-    "translate-edit-contribute": "kontribute",
-    "translate-magic-module": "Moduli:",
-    "translate-magic-cm-export": "Eksporto",
-    "translate-magic-cm-original": "Origjinali",
-    "translate-magic-cm-comment": "Komenti:",
-    "translate-magic-cm-save": "Ruaje",
-    "translate-magic-cm-savefailed": "Ruajtja dështoi",
-    "translate-stats-edits": "Redaktime",
-    "translate-stats-users": "Përkthyes",
-    "translate-statsf-width": "Gjerësia në piksel:",
-    "translate-statsf-height": "Lartësia në piksel:",
-    "translate-statsf-days": "Periudha kohore në ditë:",
-    "translate-statsf-start": "Periudha kohore në ditë:",
-    "translate-statsf-scale-days": "Ditë",
-    "translate-statsf-scale-hours": "Orë",
-    "translate-statsf-count-users": "Përkthyesit aktiv",
-    "translate-statsf-submit": "Parapamja",
-    "tux-editor-shortcut-info": "Shtypni \"\u003Cspan class=\"notranslate\" translate=\"asnjë\"\u003E$1\u003C/span\u003E\" për të shpëtuar ose \"\u003Cspan class=\"notranslate\" translate=\"asnjë\"\u003E$2\u003C/span\u003E\" për të kaluar tek tjetër mesazh, ose \"\u003Cspan class=\"notranslate\" translate=\"asnjë\"\u003E$3\u003C/span\u003E\"  për shortcut të tjera ."
+	"@metadata": {
+		"authors": [
+			"Dori",
+			"Puntori",
+			"GretaDoci"
+		]
+	},
+	"translate": "Përkthime",
+	"translate-page-group": "Grupi",
+	"translate-page-language": "Gjuha",
+	"translate-page-edit": "redakto",
+	"translate-edit-contribute": "kontribute",
+	"translate-magic-module": "Moduli:",
+	"translate-magic-cm-export": "Eksporto",
+	"translate-magic-cm-original": "Origjinali",
+	"translate-magic-cm-comment": "Komenti:",
+	"translate-magic-cm-save": "Ruaje",
+	"translate-magic-cm-savefailed": "Ruajtja dështoi",
+	"translate-stats-edits": "Redaktime",
+	"translate-stats-users": "Përkthyes",
+	"translate-statsf-width": "Gjerësia në piksel:",
+	"translate-statsf-height": "Lartësia në piksel:",
+	"translate-statsf-days": "Periudha kohore në ditë:",
+	"translate-statsf-start": "Periudha kohore në ditë:",
+	"translate-statsf-scale-days": "Ditë",
+	"translate-statsf-scale-hours": "Orë",
+	"translate-statsf-count-users": "Përkthyesit aktiv",
+	"translate-statsf-submit": "Parapamja",
+	"tux-editor-shortcut-info": "Shtypni \"<span class=\"notranslate\" translate=\"asnjë\">$1</span>\" për të shpëtuar ose \"<span class=\"notranslate\" translate=\"asnjë\">$2</span>\" për të kaluar tek tjetër mesazh, ose \"<span class=\"notranslate\" translate=\"asnjë\">$3</span>\"  për shortcut të tjera ."
 }

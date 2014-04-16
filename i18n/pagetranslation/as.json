@@ -1,35 +1,35 @@
 {
-    "@metadata": {
-        "authors": [
-            "Bishnu Saikia",
-            "Chaipau"
-        ]
-    },
-    "pagetranslation": "পৃষ্ঠা ভাঙনি",
-    "tpt-template": "পৃষ্ঠা সাঁচ",
-    "tpt-diff-old": "আগৰ পাঠ্য",
-    "tpt-diff-new": "নতুন পাঠ্য",
-    "tpt-submit": "এই সংস্কৰণ ভাঙনিৰ বাবে বাচক",
-    "tpt-other-pages-title": "সংযোগহীন পৃষ্ঠাসমূহ",
-    "tpt-discouraged-pages-title": "নিৰুত্সাহজনক পৃষ্ঠাসমূহ",
-    "tpt-select-prioritylangs-reason": "কাৰণ:",
-    "tpt-sections-prioritylangs": "প্ৰাথমিক ভাষাসমূহ",
-    "tpt-rev-discourage": "নিৰুত্সাহ",
-    "tpt-rev-encourage": "পুনঃসংস্থাপন কৰক",
-    "translate-tag-translate-link-desc": "এই পৃষ্ঠা ভাঙনি কৰক",
-    "tpt-languages-legend": "অন্য ভাষা:",
-    "tpt-languages-zero": "এই ভাষাৰ অনুবাদ আৰম্ভ কৰক",
-    "tpt-discouraged-language-reason": "কাৰণ: $1",
-    "tpt-aggregategroup-add": "যোগ কৰক",
-    "tpt-aggregategroup-save": "সাঁচি থওক",
-    "tpt-aggregategroup-new-name": "নাম:",
-    "tpt-aggregategroup-new-description": "বিৱৰণ (বৈকল্পিক):",
-    "tpt-aggregategroup-invalid-group": "এই গোট পোৱা নগ’ল",
-    "pt-movepage-list-translation": "ভাঙনি পৃষ্ঠাসমূহ",
-    "pt-movepage-current": "সাম্প্ৰতিক নাম:",
-    "pt-movepage-new": "নতুন নাম:",
-    "pt-movepage-reason": "কাৰণ:",
-    "pt-movepage-action-perform": "স্থানান্তৰ নকৰিব",
-    "pt-deletepage-current": "পৃষ্ঠাৰ নাম:",
-    "pt-deletepage-reason": "কাৰণ:"
+	"@metadata": {
+		"authors": [
+			"Bishnu Saikia",
+			"Chaipau"
+		]
+	},
+	"pagetranslation": "পৃষ্ঠা ভাঙনি",
+	"tpt-template": "পৃষ্ঠা সাঁচ",
+	"tpt-diff-old": "আগৰ পাঠ্য",
+	"tpt-diff-new": "নতুন পাঠ্য",
+	"tpt-submit": "এই সংস্কৰণ ভাঙনিৰ বাবে বাচক",
+	"tpt-other-pages-title": "সংযোগহীন পৃষ্ঠাসমূহ",
+	"tpt-discouraged-pages-title": "নিৰুত্সাহজনক পৃষ্ঠাসমূহ",
+	"tpt-select-prioritylangs-reason": "কাৰণ:",
+	"tpt-sections-prioritylangs": "প্ৰাথমিক ভাষাসমূহ",
+	"tpt-rev-discourage": "নিৰুত্সাহ",
+	"tpt-rev-encourage": "পুনঃসংস্থাপন কৰক",
+	"translate-tag-translate-link-desc": "এই পৃষ্ঠা ভাঙনি কৰক",
+	"tpt-languages-legend": "অন্য ভাষা:",
+	"tpt-languages-zero": "এই ভাষাৰ অনুবাদ আৰম্ভ কৰক",
+	"tpt-discouraged-language-reason": "কাৰণ: $1",
+	"tpt-aggregategroup-add": "যোগ কৰক",
+	"tpt-aggregategroup-save": "সাঁচি থওক",
+	"tpt-aggregategroup-new-name": "নাম:",
+	"tpt-aggregategroup-new-description": "বিৱৰণ (বৈকল্পিক):",
+	"tpt-aggregategroup-invalid-group": "এই গোট পোৱা নগ’ল",
+	"pt-movepage-list-translation": "ভাঙনি পৃষ্ঠাসমূহ",
+	"pt-movepage-current": "সাম্প্ৰতিক নাম:",
+	"pt-movepage-new": "নতুন নাম:",
+	"pt-movepage-reason": "কাৰণ:",
+	"pt-movepage-action-perform": "স্থানান্তৰ নকৰিব",
+	"pt-deletepage-current": "পৃষ্ঠাৰ নাম:",
+	"pt-deletepage-reason": "কাৰণ:"
 }

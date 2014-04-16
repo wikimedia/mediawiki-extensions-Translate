@@ -1,18 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Aelske",
-            "Ooswesthoesbes",
-            "Pahles"
-        ]
-    },
-    "translate": "Vertale",
-    "translate-page-settings-legend": "Insjtellinge",
-    "translate-page-group": "Gróp",
-    "translate-page-language": "Taal",
-    "translate-page-limit": "Maximaal",
-    "translate-submit": "Ophaole",
-    "translate-next": "Volgende pazjena",
-    "translate-prev": "Veurige pazjena",
-    "translate-optional": "(optioneel)"
+	"@metadata": {
+		"authors": [
+			"Aelske",
+			"Ooswesthoesbes",
+			"Pahles"
+		]
+	},
+	"translate": "Vertale",
+	"translate-page-settings-legend": "Insjtellinge",
+	"translate-page-group": "Gróp",
+	"translate-page-language": "Taal",
+	"translate-page-limit": "Maximaal",
+	"translate-submit": "Ophaole",
+	"translate-next": "Volgende pazjena",
+	"translate-prev": "Veurige pazjena",
+	"translate-optional": "(optioneel)"
 }

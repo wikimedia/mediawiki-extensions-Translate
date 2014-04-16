@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "Gion-andri",
-            "Minisarm"
-        ]
-    },
-    "pagetranslation": "Translaziun da paginas",
-    "tpt-diff-old": "Text precedent",
-    "tpt-diff-new": "Nov text",
-    "tpt-languages-legend": "Autras linguas:"
+	"@metadata": {
+		"authors": [
+			"Gion-andri",
+			"Minisarm"
+		]
+	},
+	"pagetranslation": "Translaziun da paginas",
+	"tpt-diff-old": "Text precedent",
+	"tpt-diff-new": "Nov text",
+	"tpt-languages-legend": "Autras linguas:"
 }

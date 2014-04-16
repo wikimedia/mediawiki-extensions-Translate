@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Toliño"
-        ]
-    },
-    "searchtranslations": "Procurar nas traducións",
-    "tux-sst-edit": "Editar a tradución",
-    "tux-sst-search": "Procurar",
-    "tux-sst-search-ph": "Procurar nas traducións",
-    "tux-sst-count": "{{PLURAL:$1|Atopouse 1 resultado|Atopáronse $1 resultados}}",
-    "tux-sst-facet-language": "Linguas",
-    "tux-sst-facet-group": "Grupos de mensaxes",
-    "tux-sst-facet-orphan": "(orfos)",
-    "tux-sst-nosolr-title": "A procura non está dispoñible",
-    "tux-sst-nosolr-body": "Este wiki non dispón dun servizo de procura de traducións.",
-    "tux-sst-solr-offline-title": "A procura non está dispoñible",
-    "tux-sst-solr-offline-body": "O servizo de procura non está dispoñible temporalmente.",
-    "tux-sst-next": "Resultados seguintes",
-    "tux-sst-prev": "Resultados anteriores"
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"searchtranslations": "Procurar nas traducións",
+	"tux-sst-edit": "Editar a tradución",
+	"tux-sst-search": "Procurar",
+	"tux-sst-search-ph": "Procurar nas traducións",
+	"tux-sst-count": "{{PLURAL:$1|Atopouse 1 resultado|Atopáronse $1 resultados}}",
+	"tux-sst-facet-language": "Linguas",
+	"tux-sst-facet-group": "Grupos de mensaxes",
+	"tux-sst-facet-orphan": "(orfos)",
+	"tux-sst-nosolr-title": "A procura non está dispoñible",
+	"tux-sst-nosolr-body": "Este wiki non dispón dun servizo de procura de traducións.",
+	"tux-sst-solr-offline-title": "A procura non está dispoñible",
+	"tux-sst-solr-offline-body": "O servizo de procura non está dispoñible temporalmente.",
+	"tux-sst-next": "Resultados seguintes",
+	"tux-sst-prev": "Resultados anteriores"
 }

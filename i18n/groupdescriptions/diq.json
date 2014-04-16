@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Erdemaslancan",
-            "Mirzali"
-        ]
-    },
-    "translate-group-desc-mediawikiextensions": "Mesacê gruba meta de mesacê ke pêro dezgehê destegdayışi rê qandê [[Translating:MediaWiki|MediaWiki]]y estê",
-    "translate-group-desc-collection": "MediaWiki ra qandê [https://www.mediawiki.org/wiki/Extension:Collection Koleksiyonanê] grube mesacê MediaWiki",
-    "translate-group-desc-translate": "MediaWiki ra qandê [https://www.mediawiki.org/wiki/Extension:Translate Açarnayışê] grube mesacê MediaWiki",
-    "translate-group-desc-wikiaextensions": "MediaWiki ra qandê mesacan dê [http://www.wikia.com Wikia] ra itad karêno",
-    "translate-group-desc-eol": "Seba [[Translating:EOL|Ensiklopediya Cıwiyayışi]] yew mesacê grube",
-    "translate-group-desc-ihris": "Seba [[Translating:iHRIS|iHRIS]]i yew mesacê grube",
-    "translate-group-desc-kiwix": "Seba [[Translating:Kiwix|Kiwix]]i yew mesacê grube"
+	"@metadata": {
+		"authors": [
+			"Erdemaslancan",
+			"Mirzali"
+		]
+	},
+	"translate-group-desc-mediawikiextensions": "Mesacê gruba meta de mesacê ke pêro dezgehê destegdayışi rê qandê [[Translating:MediaWiki|MediaWiki]]y estê",
+	"translate-group-desc-collection": "MediaWiki ra qandê [https://www.mediawiki.org/wiki/Extension:Collection Koleksiyonanê] grube mesacê MediaWiki",
+	"translate-group-desc-translate": "MediaWiki ra qandê [https://www.mediawiki.org/wiki/Extension:Translate Açarnayışê] grube mesacê MediaWiki",
+	"translate-group-desc-wikiaextensions": "MediaWiki ra qandê mesacan dê [http://www.wikia.com Wikia] ra itad karêno",
+	"translate-group-desc-eol": "Seba [[Translating:EOL|Ensiklopediya Cıwiyayışi]] yew mesacê grube",
+	"translate-group-desc-ihris": "Seba [[Translating:iHRIS|iHRIS]]i yew mesacê grube",
+	"translate-group-desc-kiwix": "Seba [[Translating:Kiwix|Kiwix]]i yew mesacê grube"
 }

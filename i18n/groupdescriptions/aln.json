@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Mdupont"
-        ]
-    },
-    "translate-group-desc-nodesc": "Nuk ka përshkrim është në dispozicion për këtë grup mesazh",
-    "translate-group-desc-wikimediaextensions": "Grupi Meta mesazh që përmban të gjitha mesazhet e për të mbështetur zgjerimet MediaWiki përdorur nga https://wikimediafoundation.org/ [] Wikimedia Foundation"
+	"@metadata": {
+		"authors": [
+			"Mdupont"
+		]
+	},
+	"translate-group-desc-nodesc": "Nuk ka përshkrim është në dispozicion për këtë grup mesazh",
+	"translate-group-desc-wikimediaextensions": "Grupi Meta mesazh që përmban të gjitha mesazhet e për të mbështetur zgjerimet MediaWiki përdorur nga https://wikimediafoundation.org/ [] Wikimedia Foundation"
 }

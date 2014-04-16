@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "MooRePrabu"
-        ]
-    },
-    "translate-statsf-scale-days": "ꢣꢶꢥ꣄ꢥꢸꢥ꣄",
-    "translate-statsf-count-registrations": "ꢥꣁꢮ꣄ꢮꣁ ꢮꢮ꣄ꢬꢸꢥꢵꢬꢸꢥ꣄"
+	"@metadata": {
+		"authors": [
+			"MooRePrabu"
+		]
+	},
+	"translate-statsf-scale-days": "ꢣꢶꢥ꣄ꢥꢸꢥ꣄",
+	"translate-statsf-count-registrations": "ꢥꣁꢮ꣄ꢮꣁ ꢮꢮ꣄ꢬꢸꢥꢵꢬꢸꢥ꣄"
 }

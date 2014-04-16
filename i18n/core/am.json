@@ -1,27 +1,27 @@
 {
-    "@metadata": {
-        "authors": [
-            "Codex Sinaiticus",
-            "Elfalem"
-        ]
-    },
-    "translate": "ማስተርጐሚያ",
-    "translate-page-settings-legend": "ምርጫዎች",
-    "translate-page-group": "ስብስባ",
-    "translate-page-language": "ቋንቋ",
-    "translate-page-limit": "ውሳኔ",
-    "translate-page-limit-option": "$1 {{PLURAL:$1|መልዕክት|መልዕክት}} በየገጹ",
-    "translate-submit": "ይታይ",
-    "translate-page-showing-all": "$1 {{PLURAL:$1|መልዕክት ይታያል|መልዕክቶች ይታያሉ}}።",
-    "translate-next": "የሚቀጥለው ገጽ",
-    "translate-page-edit": "አርም",
-    "translate-edit-definition": "የመልዕክቱ ትርጉም",
-    "translate-edit-contribute": "ለመሣተፍ",
-    "translate-edit-no-information": "''ይኸው መልእክት ምንም መረጃ የለውም።\nመልዕክቱ በየት ወይም እንዴት እንደሚጠቀም ዕውቀት ካለዎ፣ መረጃ በመጨምር ሌሎች አስተርጓሚዎች ሊረዱ ይችላሉ።''",
-    "translate-edit-information": "መረጃ ስለዚሁ መልእክት ($1)",
-    "translate-edit-in-other-languages": "መልዕክቱ በሌሎች ልሳናት",
-    "translate-magic-cm-current": "ያሁኑኑ",
-    "translate-magic-cm-comment": "ማጠቃለያ፦",
-    "translate-sidebar-alltrans": "ይኸው መልዕክት በሌሎች ልሳናት",
-    "translate-language": "ቋንቋ"
+	"@metadata": {
+		"authors": [
+			"Codex Sinaiticus",
+			"Elfalem"
+		]
+	},
+	"translate": "ማስተርጐሚያ",
+	"translate-page-settings-legend": "ምርጫዎች",
+	"translate-page-group": "ስብስባ",
+	"translate-page-language": "ቋንቋ",
+	"translate-page-limit": "ውሳኔ",
+	"translate-page-limit-option": "$1 {{PLURAL:$1|መልዕክት|መልዕክት}} በየገጹ",
+	"translate-submit": "ይታይ",
+	"translate-page-showing-all": "$1 {{PLURAL:$1|መልዕክት ይታያል|መልዕክቶች ይታያሉ}}።",
+	"translate-next": "የሚቀጥለው ገጽ",
+	"translate-page-edit": "አርም",
+	"translate-edit-definition": "የመልዕክቱ ትርጉም",
+	"translate-edit-contribute": "ለመሣተፍ",
+	"translate-edit-no-information": "''ይኸው መልእክት ምንም መረጃ የለውም።\nመልዕክቱ በየት ወይም እንዴት እንደሚጠቀም ዕውቀት ካለዎ፣ መረጃ በመጨምር ሌሎች አስተርጓሚዎች ሊረዱ ይችላሉ።''",
+	"translate-edit-information": "መረጃ ስለዚሁ መልእክት ($1)",
+	"translate-edit-in-other-languages": "መልዕክቱ በሌሎች ልሳናት",
+	"translate-magic-cm-current": "ያሁኑኑ",
+	"translate-magic-cm-comment": "ማጠቃለያ፦",
+	"translate-sidebar-alltrans": "ይኸው መልዕክት በሌሎች ልሳናት",
+	"translate-language": "ቋንቋ"
 }

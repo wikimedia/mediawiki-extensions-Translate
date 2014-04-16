@@ -1,17 +1,17 @@
 {
-    "@metadata": {
-        "authors": [
-            "Erdemaslancan",
-            "Гусейн"
-        ]
-    },
-    "translate": "Пегордынијеј",
-    "translate-page-settings-legend": "Кукон",
-    "translate-page-language": "Зывон",
-    "translate-next": "Пешонә сәһифә",
-    "translate-page-edit": "сәрост кардеј",
-    "translate-edit-translation": "Пегордыније",
-    "translate-magic-cm-current": "Есәтнә",
-    "translate-magic-cm-save": "Огәте",
-    "translate-gethelp": "Арајиш"
+	"@metadata": {
+		"authors": [
+			"Erdemaslancan",
+			"Гусейн"
+		]
+	},
+	"translate": "Пегордынијеј",
+	"translate-page-settings-legend": "Кукон",
+	"translate-page-language": "Зывон",
+	"translate-next": "Пешонә сәһифә",
+	"translate-page-edit": "сәрост кардеј",
+	"translate-edit-translation": "Пегордыније",
+	"translate-magic-cm-current": "Есәтнә",
+	"translate-magic-cm-save": "Огәте",
+	"translate-gethelp": "Арајиш"
 }

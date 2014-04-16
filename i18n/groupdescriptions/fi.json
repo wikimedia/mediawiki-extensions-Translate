@@ -1,31 +1,31 @@
 {
-    "@metadata": {
-        "authors": [
-            "Centerlink",
-            "Cimon Avaro",
-            "Crt",
-            "Nedergard",
-            "Nike",
-            "Silvonen",
-            "Str4nd",
-            "ZeiP"
-        ]
-    },
-    "translategroupdescriptions-desc": "Viestiryhmäkuvaukset tuotteille, joita [https://mediawiki.org/wiki/Extension:Translate Translate]-laajennos tukee",
-    "translate-group-desc-nodesc": "Viestiryhmällä ei ole kuvausta",
-    "translate-group-desc-mediawikicore": "Tämä viestiryhmä sisältää viestit, joita käytetään nykyisessä MediaWikin alfaversiossa ({{CURRENTVERSION}})",
-    "translate-group-desc-mediawikimostused": "Tämä viestiryhmä sisältää [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki MediaWikin 500 useimmin käytettyä viestiä]",
-    "translate-group-desc-mediawikiextensions": "Kokoelmaviestiryhmä, joka sisältää kaikkien [[Translating:MediaWiki|MediaWiki]]-laajennosten viestit.",
-    "translate-group-desc-collection": "Tämä metaviestiryhmä sisältää kaikki viestit, joita käytetään MediaWikin laajennuksessa [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
-    "translate-group-desc-flaggedrevs": "Tämä metaviestiryhmä sisältää kaikki viestit MediaWikin [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs-laajennusta] varten",
-    "translate-group-desc-readerfeedback": "Tämä metaviestiryhmä sisältää kaikki MediaWikin [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback-laajennuksen] viestit",
-    "translate-group-desc-translate": "Tämä metaviestiryhmä sisältää kaikki viestit MediaWikin [https://www.mediawiki.org/wiki/Extension:Translate Käännöstyökalu-laajennusta] varten",
-    "translate-group-desc-wikiaextensions": "Tämä metaviestiryhmä sisältää kaikki ne tuetut MediaWikin laajennuksien viestit, joita [http://www.wikia.com Wikia] käyttää",
-    "translate-group-desc-wikimediaextensions": "Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [https://wikimediafoundation.org/ Wikimedia Foundation] käyttää",
-    "translate-group-desc-translatablepages": "Kaikki käännettävät sivut",
-    "bw-desc-freecol": "Ennen kuin käännät FreeColia kielellesi, luethan sivun [[Translating:FreeCol]]. Freecol käyttää GPL-lisenssiä.",
-    "bw-desc-fudforum": "[[Translating:FUDforum|FUDforum]] on verkkopohjainen keskustelufoorumi",
-    "bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] on verkossa toimiva virheenseurantaohjelmisto",
-    "translate-group-desc-eol": "[[Translating:EOL|Encyclopedia of Life]] -viestiryhmä",
-    "translate-group-desc-ihris": "[[Translating:iHRIS|iHRIS-viestiryhmä]]"
+	"@metadata": {
+		"authors": [
+			"Centerlink",
+			"Cimon Avaro",
+			"Crt",
+			"Nedergard",
+			"Nike",
+			"Silvonen",
+			"Str4nd",
+			"ZeiP"
+		]
+	},
+	"translategroupdescriptions-desc": "Viestiryhmäkuvaukset tuotteille, joita [https://mediawiki.org/wiki/Extension:Translate Translate]-laajennos tukee",
+	"translate-group-desc-nodesc": "Viestiryhmällä ei ole kuvausta",
+	"translate-group-desc-mediawikicore": "Tämä viestiryhmä sisältää viestit, joita käytetään nykyisessä MediaWikin alfaversiossa ({{CURRENTVERSION}})",
+	"translate-group-desc-mediawikimostused": "Tämä viestiryhmä sisältää [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki MediaWikin 500 useimmin käytettyä viestiä]",
+	"translate-group-desc-mediawikiextensions": "Kokoelmaviestiryhmä, joka sisältää kaikkien [[Translating:MediaWiki|MediaWiki]]-laajennosten viestit.",
+	"translate-group-desc-collection": "Tämä metaviestiryhmä sisältää kaikki viestit, joita käytetään MediaWikin laajennuksessa [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
+	"translate-group-desc-flaggedrevs": "Tämä metaviestiryhmä sisältää kaikki viestit MediaWikin [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs-laajennusta] varten",
+	"translate-group-desc-readerfeedback": "Tämä metaviestiryhmä sisältää kaikki MediaWikin [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback-laajennuksen] viestit",
+	"translate-group-desc-translate": "Tämä metaviestiryhmä sisältää kaikki viestit MediaWikin [https://www.mediawiki.org/wiki/Extension:Translate Käännöstyökalu-laajennusta] varten",
+	"translate-group-desc-wikiaextensions": "Tämä metaviestiryhmä sisältää kaikki ne tuetut MediaWikin laajennuksien viestit, joita [http://www.wikia.com Wikia] käyttää",
+	"translate-group-desc-wikimediaextensions": "Tämä metaviestiryhmä sisältää kaikki tuetut MediaWikin laajennuksien viestit, joita [https://wikimediafoundation.org/ Wikimedia Foundation] käyttää",
+	"translate-group-desc-translatablepages": "Kaikki käännettävät sivut",
+	"bw-desc-freecol": "Ennen kuin käännät FreeColia kielellesi, luethan sivun [[Translating:FreeCol]]. Freecol käyttää GPL-lisenssiä.",
+	"bw-desc-fudforum": "[[Translating:FUDforum|FUDforum]] on verkkopohjainen keskustelufoorumi",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] on verkossa toimiva virheenseurantaohjelmisto",
+	"translate-group-desc-eol": "[[Translating:EOL|Encyclopedia of Life]] -viestiryhmä",
+	"translate-group-desc-ihris": "[[Translating:iHRIS|iHRIS-viestiryhmä]]"
 }

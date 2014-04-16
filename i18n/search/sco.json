@@ -1,20 +1,20 @@
 {
-    "@metadata": {
-        "authors": [
-            "John Reid"
-        ]
-    },
-    "searchtranslations": "Rake owersets",
-    "tux-sst-edit": "Eedit owerset",
-    "tux-sst-search": "Rake",
-    "tux-sst-search-ph": "Rake owersets",
-    "tux-sst-count": "{{PLURAL:$1|Yin ootcome foond|$1 ootcomes foond}}",
-    "tux-sst-facet-language": "Leids",
-    "tux-sst-facet-group": "Message groops",
-    "tux-sst-nosolr-title": "Rake onavailable",
-    "tux-sst-nosolr-body": "This wiki disna hae aen owerset rake service.",
-    "tux-sst-solr-offline-title": "Rake onavailable",
-    "tux-sst-solr-offline-body": "The Rake service is tempralie onavailable.",
-    "tux-sst-next": "Nex ootcomes",
-    "tux-sst-prev": "Afore ootcomes"
+	"@metadata": {
+		"authors": [
+			"John Reid"
+		]
+	},
+	"searchtranslations": "Rake owersets",
+	"tux-sst-edit": "Eedit owerset",
+	"tux-sst-search": "Rake",
+	"tux-sst-search-ph": "Rake owersets",
+	"tux-sst-count": "{{PLURAL:$1|Yin ootcome foond|$1 ootcomes foond}}",
+	"tux-sst-facet-language": "Leids",
+	"tux-sst-facet-group": "Message groops",
+	"tux-sst-nosolr-title": "Rake onavailable",
+	"tux-sst-nosolr-body": "This wiki disna hae aen owerset rake service.",
+	"tux-sst-solr-offline-title": "Rake onavailable",
+	"tux-sst-solr-offline-body": "The Rake service is tempralie onavailable.",
+	"tux-sst-next": "Nex ootcomes",
+	"tux-sst-prev": "Afore ootcomes"
 }

@@ -1,32 +1,32 @@
 {
-    "@metadata": {
-        "authors": [
-            "George Animal",
-            "Gomada"
-        ]
-    },
-    "pagetranslation": "Wergera rûpelê",
-    "right-pagetranslation": "Versiyonên rûpelên ji bo wergerê nîşan bike",
-    "tpt-diff-old": "Nivîsa pêşî",
-    "tpt-diff-new": "Nivîsa nû",
-    "tpt-submit": "Vê versiyonê ji bo wergerê îşaret bike",
-    "tpt-nosuchpage": "Rûpela $1 tune.",
-    "tpt-select-prioritylangs-reason": "Sedem:",
-    "translate-tag-translate-link-desc": "Vê rûpelê werrgerîne",
-    "translate-tag-markthis": "Vê rûpelê ji bo wergerê îşaret bike",
-    "tpt-languages-legend": "Zimanên din:",
-    "tpt-download-page": "Rûpela bi wergeran bişîne",
-    "tpt-aggregategroup-add": "Lê zêde bike",
-    "tpt-aggregategroup-new-name": "Nav:",
-    "pt-movepage-list-translation": "Rûpelên wergerê",
-    "pt-movepage-list-other": "Binrûpelên din",
-    "pt-movepage-current": "Navê niha:",
-    "pt-movepage-new": "Navê nû:",
-    "pt-movepage-reason": "Sedem:",
-    "pt-movepage-subpages": "Hemû binrûpelan bigerîne",
-    "pt-deletepage-full-legend": "Rûpela wergerê jê bibe",
-    "pt-deletepage-current": "Navê rûpelê:",
-    "pt-deletepage-reason": "Sedem:",
-    "pt-deletepage-subpages": "Hemû binrûpelan jê bibe",
-    "pt-deletepage-list-other": "Binrûpelên din"
+	"@metadata": {
+		"authors": [
+			"George Animal",
+			"Gomada"
+		]
+	},
+	"pagetranslation": "Wergera rûpelê",
+	"right-pagetranslation": "Versiyonên rûpelên ji bo wergerê nîşan bike",
+	"tpt-diff-old": "Nivîsa pêşî",
+	"tpt-diff-new": "Nivîsa nû",
+	"tpt-submit": "Vê versiyonê ji bo wergerê îşaret bike",
+	"tpt-nosuchpage": "Rûpela $1 tune.",
+	"tpt-select-prioritylangs-reason": "Sedem:",
+	"translate-tag-translate-link-desc": "Vê rûpelê werrgerîne",
+	"translate-tag-markthis": "Vê rûpelê ji bo wergerê îşaret bike",
+	"tpt-languages-legend": "Zimanên din:",
+	"tpt-download-page": "Rûpela bi wergeran bişîne",
+	"tpt-aggregategroup-add": "Lê zêde bike",
+	"tpt-aggregategroup-new-name": "Nav:",
+	"pt-movepage-list-translation": "Rûpelên wergerê",
+	"pt-movepage-list-other": "Binrûpelên din",
+	"pt-movepage-current": "Navê niha:",
+	"pt-movepage-new": "Navê nû:",
+	"pt-movepage-reason": "Sedem:",
+	"pt-movepage-subpages": "Hemû binrûpelan bigerîne",
+	"pt-deletepage-full-legend": "Rûpela wergerê jê bibe",
+	"pt-deletepage-current": "Navê rûpelê:",
+	"pt-deletepage-reason": "Sedem:",
+	"pt-deletepage-subpages": "Hemû binrûpelan jê bibe",
+	"pt-deletepage-list-other": "Binrûpelên din"
 }
