@@ -1,30 +1,30 @@
 {
-    "@metadata": {
-        "authors": [
-            "Lloffiwr"
-        ]
-    },
-    "tsb-filter-pending": "Ceisiadau dan ystyriaeth",
-    "tsb-reminder-title-generic": "Cwblhewch eich cyflwyniad er mwyn cael bod yn gyfieithydd",
-    "tsb-email-promoted-subject": "Rydych nawr yn gyfieithydd ar {{SITENAME}}",
-    "tsb-all-languages-button-label": "Pob iaith",
-    "tsb-accept-button-label": "Derbynier",
-    "tsb-reject-button-label": "Gwrthoder",
-    "tsb-accept-all-button-label": "Derbynier y cwbl",
-    "tsb-reject-all-button-label": "Gwrthoder y cwbl",
-    "tsb-user-posted-a-comment": "Ddim yn gyfieithydd",
-    "tsb-translations-source": "Ffynhonell",
-    "tsb-translations-user": "Cyfieithiadau'r defnyddiwr",
-    "tsb-translations-current": "Cyfieithiadau presennol",
-    "translationstash": "Croeso",
-    "translate-translationstash-welcome": "Croeso {{GENDER:$1|$1}}, rydych nawr yn gyw-gyfieithydd",
-    "translate-translationstash-welcome-note": "Cyfarwyddwch â'r teclynnau cyfieithu. Cyfieithwch ambell i neges er mwyn derbyn galluoedd cyfieithydd llawn ac ymuno gyda'ch hoff brosiectau.",
-    "translate-translationstash-initialtranslation": "Eich cyfieithiad cyntaf",
-    "translate-translationstash-translations": "$1 {{PLURAL:$1|cyfieithiadau wedi eu c|cyfieithiad wedi ei g|gyfieithiad wedi eu c|chyfieithiad wedi eu c|chyfieithiad wedi eu c|cyfieithiad wedi eu c}}wblhau",
-    "translate-translationstash-skip-button-label": "Ceisio un arall",
-    "tsb-limit-reached-title": "Diolch am eich cyfieithiadau",
-    "tsb-limit-reached-body": "Rydych wedi cyrraedd y terfyn cyfieithu i gyw-gyfieithwyr. Fe fydd ein tîm yn gwirio eich cyfrif a'i uwchraddio'n fuan. Yna fe gewch gyfieithu'n ddi-derfyn.",
-    "tsb-no-requests-from-new-users": "Dim ceisiadau gan ddefnyddwyr newydd",
-    "tsb-create-user-page": "Dechrau tudalen sylfaenol i'r defnyddiwr",
-    "log-name-translatorsandbox": "Y pwll tywod cyfieithu"
+	"@metadata": {
+		"authors": [
+			"Lloffiwr"
+		]
+	},
+	"tsb-filter-pending": "Ceisiadau dan ystyriaeth",
+	"tsb-reminder-title-generic": "Cwblhewch eich cyflwyniad er mwyn cael bod yn gyfieithydd",
+	"tsb-email-promoted-subject": "Rydych nawr yn gyfieithydd ar {{SITENAME}}",
+	"tsb-all-languages-button-label": "Pob iaith",
+	"tsb-accept-button-label": "Derbynier",
+	"tsb-reject-button-label": "Gwrthoder",
+	"tsb-accept-all-button-label": "Derbynier y cwbl",
+	"tsb-reject-all-button-label": "Gwrthoder y cwbl",
+	"tsb-user-posted-a-comment": "Ddim yn gyfieithydd",
+	"tsb-translations-source": "Ffynhonell",
+	"tsb-translations-user": "Cyfieithiadau'r defnyddiwr",
+	"tsb-translations-current": "Cyfieithiadau presennol",
+	"translationstash": "Croeso",
+	"translate-translationstash-welcome": "Croeso {{GENDER:$1|$1}}, rydych nawr yn gyw-gyfieithydd",
+	"translate-translationstash-welcome-note": "Cyfarwyddwch â'r teclynnau cyfieithu. Cyfieithwch ambell i neges er mwyn derbyn galluoedd cyfieithydd llawn ac ymuno gyda'ch hoff brosiectau.",
+	"translate-translationstash-initialtranslation": "Eich cyfieithiad cyntaf",
+	"translate-translationstash-translations": "$1 {{PLURAL:$1|cyfieithiadau wedi eu c|cyfieithiad wedi ei g|gyfieithiad wedi eu c|chyfieithiad wedi eu c|chyfieithiad wedi eu c|cyfieithiad wedi eu c}}wblhau",
+	"translate-translationstash-skip-button-label": "Ceisio un arall",
+	"tsb-limit-reached-title": "Diolch am eich cyfieithiadau",
+	"tsb-limit-reached-body": "Rydych wedi cyrraedd y terfyn cyfieithu i gyw-gyfieithwyr. Fe fydd ein tîm yn gwirio eich cyfrif a'i uwchraddio'n fuan. Yna fe gewch gyfieithu'n ddi-derfyn.",
+	"tsb-no-requests-from-new-users": "Dim ceisiadau gan ddefnyddwyr newydd",
+	"tsb-create-user-page": "Dechrau tudalen sylfaenol i'r defnyddiwr",
+	"log-name-translatorsandbox": "Y pwll tywod cyfieithu"
 }

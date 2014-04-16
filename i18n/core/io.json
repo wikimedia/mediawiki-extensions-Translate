@@ -1,34 +1,34 @@
 {
-    "@metadata": {
-        "authors": [
-            "Malafaya",
-            "Wyvernoid"
-        ]
-    },
-    "translate": "Traduko",
-    "translate-page-group": "Grupo",
-    "translate-page-language": "Linguo",
-    "translate-page-limit": "Limito",
-    "translate-next": "Sequanta pagino",
-    "translate-prev": "Antea pagino",
-    "translate-page-edit": "redaktar",
-    "translate-edit-contribute": "kontributez",
-    "translate-edit-information": "Informo pri mesajo \"$2\" ($1)",
-    "translate-edit-in-other-languages": "Mesajo \"$1\" en altra lingui",
-    "translate-magic-cm-current": "Aktuala",
-    "translate-magic-cm-comment": "Komento:",
-    "translate-magic-cm-save": "Registragar",
-    "translate-magic-namespace": "Nomi di la nomari",
-    "translate-rc-translation-filter-only": "Montrez nur tradukuri",
-    "translate-stats-edits": "Editi",
-    "translate-stats-users": "Tradukisti",
-    "translate-statsf-scale-days": "Dii",
-    "translate-statsf-scale-hours": "Hori",
-    "translate-statsf-submit": "Previdar",
-    "translate-sidebar-alltrans": "En altra lingui",
-    "translations": "Omna tradukuri",
-    "translate-translations-messagename": "Nomo:",
-    "translate-language": "Linguo",
-    "translate-total": "Mesaji",
-    "translate-save": "Registragar ($1)"
+	"@metadata": {
+		"authors": [
+			"Malafaya",
+			"Wyvernoid"
+		]
+	},
+	"translate": "Traduko",
+	"translate-page-group": "Grupo",
+	"translate-page-language": "Linguo",
+	"translate-page-limit": "Limito",
+	"translate-next": "Sequanta pagino",
+	"translate-prev": "Antea pagino",
+	"translate-page-edit": "redaktar",
+	"translate-edit-contribute": "kontributez",
+	"translate-edit-information": "Informo pri mesajo \"$2\" ($1)",
+	"translate-edit-in-other-languages": "Mesajo \"$1\" en altra lingui",
+	"translate-magic-cm-current": "Aktuala",
+	"translate-magic-cm-comment": "Komento:",
+	"translate-magic-cm-save": "Registragar",
+	"translate-magic-namespace": "Nomi di la nomari",
+	"translate-rc-translation-filter-only": "Montrez nur tradukuri",
+	"translate-stats-edits": "Editi",
+	"translate-stats-users": "Tradukisti",
+	"translate-statsf-scale-days": "Dii",
+	"translate-statsf-scale-hours": "Hori",
+	"translate-statsf-submit": "Previdar",
+	"translate-sidebar-alltrans": "En altra lingui",
+	"translations": "Omna tradukuri",
+	"translate-translations-messagename": "Nomo:",
+	"translate-language": "Linguo",
+	"translate-total": "Mesaji",
+	"translate-save": "Registragar ($1)"
 }

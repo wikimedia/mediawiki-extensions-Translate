@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Jagwar"
-        ]
-    },
-    "right-translate": "Manova ny interface fandikana",
-    "right-translate-manage": "Mitantana ny gropy fandikana",
-    "right-translate-import": "Mampiditra ny fandikana na offline aza",
-    "translate-sidebar-alltrans": "Amin'ny teny vahiny"
+	"@metadata": {
+		"authors": [
+			"Jagwar"
+		]
+	},
+	"right-translate": "Manova ny interface fandikana",
+	"right-translate-manage": "Mitantana ny gropy fandikana",
+	"right-translate-import": "Mampiditra ny fandikana na offline aza",
+	"translate-sidebar-alltrans": "Amin'ny teny vahiny"
 }

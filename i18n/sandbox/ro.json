@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Minisarm"
-        ]
-    },
-    "managetranslatorsandbox": "Administrare cutie cu nisip traducător",
-    "tsb-filter-pending": "Cereri în așteptare",
-    "tsb-reminder-title-generic": "Finalizați-vă introducerea pentru a deveni un translator verificat"
+	"@metadata": {
+		"authors": [
+			"Minisarm"
+		]
+	},
+	"managetranslatorsandbox": "Administrare cutie cu nisip traducător",
+	"tsb-filter-pending": "Cereri în așteptare",
+	"tsb-reminder-title-generic": "Finalizați-vă introducerea pentru a deveni un translator verificat"
 }

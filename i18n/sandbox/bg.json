@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "DCLXVI"
-        ]
-    },
-    "tsb-all-languages-button-label": "Всички езици",
-    "tsb-accept-button-label": "Приемане",
-    "tsb-accept-all-button-label": "Приемане на всички",
-    "tsb-reject-all-button-label": "Отхвърляне на всички",
-    "tsb-translations-source": "Източник",
-    "tsb-translations-current": "Съществуващи преводи",
-    "tsb-limit-reached-title": "Благодарности за направените преводи"
+	"@metadata": {
+		"authors": [
+			"DCLXVI"
+		]
+	},
+	"tsb-all-languages-button-label": "Всички езици",
+	"tsb-accept-button-label": "Приемане",
+	"tsb-accept-all-button-label": "Приемане на всички",
+	"tsb-reject-all-button-label": "Отхвърляне на всички",
+	"tsb-translations-source": "Източник",
+	"tsb-translations-current": "Съществуващи преводи",
+	"tsb-limit-reached-title": "Благодарности за направените преводи"
 }

@@ -1,16 +1,16 @@
 {
-    "@metadata": {
-        "authors": [
-            "Amikeco",
-            "Bouron"
-        ]
-    },
-    "translate-page-group": "Къорд",
-    "translate-page-language": "Æвзаг",
-    "translate-next": "Фæдылдзог фарс",
-    "translate-prev": "Раздæры фарс",
-    "translate-page-edit": "ивын",
-    "translate-magic-cm-current": "Нырыккон",
-    "translate-magic-cm-save": "Афтæ уæд",
-    "translate-statsf-submit": "Разæркаст"
+	"@metadata": {
+		"authors": [
+			"Amikeco",
+			"Bouron"
+		]
+	},
+	"translate-page-group": "Къорд",
+	"translate-page-language": "Æвзаг",
+	"translate-next": "Фæдылдзог фарс",
+	"translate-prev": "Раздæры фарс",
+	"translate-page-edit": "ивын",
+	"translate-magic-cm-current": "Нырыккон",
+	"translate-magic-cm-save": "Афтæ уæд",
+	"translate-statsf-submit": "Разæркаст"
 }

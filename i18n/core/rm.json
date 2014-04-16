@@ -1,33 +1,33 @@
 {
-    "@metadata": {
-        "authors": [
-            "Gion",
-            "Gion-andri",
-            "Kazu89"
-        ]
-    },
-    "translate-page-settings-legend": "Parameters",
-    "translate-page-group": "Gruppa",
-    "translate-page-language": "Lingua",
-    "translate-page-limit": "Limita",
-    "translate-page-limit-option": "$1 {{PLURAL:$1|messadi|messadis}} per pagina",
-    "translate-submit": "Mussar",
-    "translate-page-navigation-legend": "Navigaziun",
-    "translate-page-showing": "Mussa ils messadis $1 fin $2 da $3.",
-    "translate-page-showing-all": "Mussa $1 {{PLURAL:$1|messadi|messadis}}.",
-    "translate-page-showing-none": "Nagins messadis.",
-    "translate-next": "Proxima pagina",
-    "translate-prev": "Pagina precedenta",
-    "translate-page-description-legend": "Infurmaziun davart la gruppa",
-    "translate-page-edit": "editar",
-    "translate-optional": "(opziunal)",
-    "translate-ignored": "(ignorar)",
-    "translate-edit-definition": "Definiziun dal messadi",
-    "translate-edit-contribute": "contribuir",
-    "translate-edit-no-information": "''Tar quai messadi na datti nagina documentaziun.\nSche vus savais nua e co che quai messadi vegn duvrà, pudais vus gidar auters translaturs cun agiuntar ina documentaziun tar quai messadi.''",
-    "translate-edit-information": "Infurmaziuns davart il messadi \"$2\" ($1)",
-    "translate-edit-in-other-languages": "Messadis \"$1\" en autras linguas",
-    "translate-edit-committed": "Translaziun actuala da la software",
-    "translate-edit-warnings": "Avertiment davart translaziuns nuncumplettas",
-    "tux-warnings-hide": "zuppentar"
+	"@metadata": {
+		"authors": [
+			"Gion",
+			"Gion-andri",
+			"Kazu89"
+		]
+	},
+	"translate-page-settings-legend": "Parameters",
+	"translate-page-group": "Gruppa",
+	"translate-page-language": "Lingua",
+	"translate-page-limit": "Limita",
+	"translate-page-limit-option": "$1 {{PLURAL:$1|messadi|messadis}} per pagina",
+	"translate-submit": "Mussar",
+	"translate-page-navigation-legend": "Navigaziun",
+	"translate-page-showing": "Mussa ils messadis $1 fin $2 da $3.",
+	"translate-page-showing-all": "Mussa $1 {{PLURAL:$1|messadi|messadis}}.",
+	"translate-page-showing-none": "Nagins messadis.",
+	"translate-next": "Proxima pagina",
+	"translate-prev": "Pagina precedenta",
+	"translate-page-description-legend": "Infurmaziun davart la gruppa",
+	"translate-page-edit": "editar",
+	"translate-optional": "(opziunal)",
+	"translate-ignored": "(ignorar)",
+	"translate-edit-definition": "Definiziun dal messadi",
+	"translate-edit-contribute": "contribuir",
+	"translate-edit-no-information": "''Tar quai messadi na datti nagina documentaziun.\nSche vus savais nua e co che quai messadi vegn duvrà, pudais vus gidar auters translaturs cun agiuntar ina documentaziun tar quai messadi.''",
+	"translate-edit-information": "Infurmaziuns davart il messadi \"$2\" ($1)",
+	"translate-edit-in-other-languages": "Messadis \"$1\" en autras linguas",
+	"translate-edit-committed": "Translaziun actuala da la software",
+	"translate-edit-warnings": "Avertiment davart translaziuns nuncumplettas",
+	"tux-warnings-hide": "zuppentar"
 }

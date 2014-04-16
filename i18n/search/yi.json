@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "פוילישער"
-        ]
-    },
-    "tux-sst-edit": "רעדאַקטירן איבערזעצונג",
-    "tux-sst-search": "זוכן",
-    "tux-sst-facet-language": "שפּראַכן",
-    "tux-sst-facet-group": "מעלדונג גרופעס",
-    "tux-sst-facet-orphan": "(יתום)",
-    "tux-sst-next": "נעקסטע רעזולטאטן",
-    "tux-sst-prev": "פֿריערדיקע רעזולטאטן"
+	"@metadata": {
+		"authors": [
+			"פוילישער"
+		]
+	},
+	"tux-sst-edit": "רעדאַקטירן איבערזעצונג",
+	"tux-sst-search": "זוכן",
+	"tux-sst-facet-language": "שפּראַכן",
+	"tux-sst-facet-group": "מעלדונג גרופעס",
+	"tux-sst-facet-orphan": "(יתום)",
+	"tux-sst-next": "נעקסטע רעזולטאטן",
+	"tux-sst-prev": "פֿריערדיקע רעזולטאטן"
 }

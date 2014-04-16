@@ -1,23 +1,23 @@
 {
-    "@metadata": {
-        "authors": [
-            "Ansumang"
-        ]
-    },
-    "translate-page-settings-legend": "संरचनम्",
-    "translate-page-group": "वर्ग",
-    "translate-page-language": "भाषा",
-    "translate-page-edit": "सम्पाद्यताम्",
-    "translate-edit-title": "सम्पाद्यताम् \"$1\"",
-    "translate-edit-translation": "अनुवादम्",
-    "translate-magic-cm-original": "मूल",
-    "translate-magic-cm-comment": "टिप्पणी:",
-    "translate-stats-edits": "सम्पाद्यताम्",
-    "translate-statsf-scale-weeks": "सप्ताहम्",
-    "translate-statsf-scale-days": "दिवस",
-    "translate-statsf-scale-hours": "घण्टा",
-    "translate-statsf-submit": "प्राग्दृश्यम् दर्श्यताम्",
-    "translate-translations-fieldset-title": "संदेश",
-    "translate-translations-messagename": "नामन्:",
-    "translate-translations-project": "प्रकल्पम्:"
+	"@metadata": {
+		"authors": [
+			"Ansumang"
+		]
+	},
+	"translate-page-settings-legend": "संरचनम्",
+	"translate-page-group": "वर्ग",
+	"translate-page-language": "भाषा",
+	"translate-page-edit": "सम्पाद्यताम्",
+	"translate-edit-title": "सम्पाद्यताम् \"$1\"",
+	"translate-edit-translation": "अनुवादम्",
+	"translate-magic-cm-original": "मूल",
+	"translate-magic-cm-comment": "टिप्पणी:",
+	"translate-stats-edits": "सम्पाद्यताम्",
+	"translate-statsf-scale-weeks": "सप्ताहम्",
+	"translate-statsf-scale-days": "दिवस",
+	"translate-statsf-scale-hours": "घण्टा",
+	"translate-statsf-submit": "प्राग्दृश्यम् दर्श्यताम्",
+	"translate-translations-fieldset-title": "संदेश",
+	"translate-translations-messagename": "नामन्:",
+	"translate-translations-project": "प्रकल्पम्:"
 }

@@ -1,17 +1,17 @@
 {
-    "@metadata": {
-        "authors": [
-            "ОйЛ"
-        ]
-    },
-    "translate-page-language": "ѩꙁꙑкъ",
-    "translate-page-edit": "исправи",
-    "translate-edit-title": "исправлѥниѥ ⁖ $1 ⁖",
-    "translate-stats-edits": "мѣнꙑ",
-    "translate-translations-messagename": "имѧ :",
-    "translate-language": "ѩꙁꙑкъ",
-    "translate-mgs-column-language": "ѩꙁꙑкъ",
-    "tux-proofread-edit-label": "исправлѥниѥ",
-    "tux-editor-close-tooltip": "ꙁакрꙑи",
-    "tux-editor-message-tools-history": "їсторїꙗ"
+	"@metadata": {
+		"authors": [
+			"ОйЛ"
+		]
+	},
+	"translate-page-language": "ѩꙁꙑкъ",
+	"translate-page-edit": "исправи",
+	"translate-edit-title": "исправлѥниѥ ⁖ $1 ⁖",
+	"translate-stats-edits": "мѣнꙑ",
+	"translate-translations-messagename": "имѧ :",
+	"translate-language": "ѩꙁꙑкъ",
+	"translate-mgs-column-language": "ѩꙁꙑкъ",
+	"tux-proofread-edit-label": "исправлѥниѥ",
+	"tux-editor-close-tooltip": "ꙁакрꙑи",
+	"tux-editor-message-tools-history": "їсторїꙗ"
 }

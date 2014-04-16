@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Wizardist"
-        ]
-    },
-    "searchtranslations": "Пошук перакладаў",
-    "tux-sst-edit": "Зьмяніць пераклад",
-    "tux-sst-search": "Шукаць",
-    "tux-sst-search-ph": "Пошук перакладаў",
-    "tux-sst-count": "{{PLURAL:$1|Знойдзены $1 вынік|Знойдзена $1 вынікі|Знойдзена $1 вынікаў}}",
-    "tux-sst-facet-language": "Мовы",
-    "tux-sst-facet-group": "Групы паведамленьняў",
-    "tux-sst-facet-orphan": "(сіраціна)",
-    "tux-sst-nosolr-title": "Пошук недаступны",
-    "tux-sst-nosolr-body": "Гэтая вікі ня мае службы пошуку перакладаў.",
-    "tux-sst-solr-offline-title": "Пошук недаступны",
-    "tux-sst-solr-offline-body": "Служба пошуку часова недаступная.",
-    "tux-sst-next": "Наступныя вынікі",
-    "tux-sst-prev": "Папярэднія вынікі"
+	"@metadata": {
+		"authors": [
+			"Wizardist"
+		]
+	},
+	"searchtranslations": "Пошук перакладаў",
+	"tux-sst-edit": "Зьмяніць пераклад",
+	"tux-sst-search": "Шукаць",
+	"tux-sst-search-ph": "Пошук перакладаў",
+	"tux-sst-count": "{{PLURAL:$1|Знойдзены $1 вынік|Знойдзена $1 вынікі|Знойдзена $1 вынікаў}}",
+	"tux-sst-facet-language": "Мовы",
+	"tux-sst-facet-group": "Групы паведамленьняў",
+	"tux-sst-facet-orphan": "(сіраціна)",
+	"tux-sst-nosolr-title": "Пошук недаступны",
+	"tux-sst-nosolr-body": "Гэтая вікі ня мае службы пошуку перакладаў.",
+	"tux-sst-solr-offline-title": "Пошук недаступны",
+	"tux-sst-solr-offline-body": "Служба пошуку часова недаступная.",
+	"tux-sst-next": "Наступныя вынікі",
+	"tux-sst-prev": "Папярэднія вынікі"
 }

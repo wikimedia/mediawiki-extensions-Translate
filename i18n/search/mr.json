@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "V.narsikar"
-        ]
-    },
-    "searchtranslations": "भाषांतर शोधा",
-    "tux-sst-edit": "भाषांतर संपादा",
-    "tux-sst-search": "शोधा",
-    "tux-sst-search-ph": "भाषांतर शोधा",
-    "tux-sst-count": "{{PLURAL:$1|एक निकाल सापडला|$1 निकाल सापडले}}",
-    "tux-sst-facet-language": "भाषा",
-    "tux-sst-facet-group": "संदेश गट",
-    "tux-sst-facet-orphan": "(अनाथ)",
-    "tux-sst-nosolr-title": "'शोध' उपलब्ध नाही",
-    "tux-sst-nosolr-body": "या विकिवर 'भाषांतर शोध सेवा' नाही.",
-    "tux-sst-solr-offline-title": "'शोध' उपलब्ध नाही",
-    "tux-sst-solr-offline-body": "'शोध' सेवा तात्पुरती अनुपलब्ध आहे.",
-    "tux-sst-next": "पुढील निकाल",
-    "tux-sst-prev": "मागील निकाल"
+	"@metadata": {
+		"authors": [
+			"V.narsikar"
+		]
+	},
+	"searchtranslations": "भाषांतर शोधा",
+	"tux-sst-edit": "भाषांतर संपादा",
+	"tux-sst-search": "शोधा",
+	"tux-sst-search-ph": "भाषांतर शोधा",
+	"tux-sst-count": "{{PLURAL:$1|एक निकाल सापडला|$1 निकाल सापडले}}",
+	"tux-sst-facet-language": "भाषा",
+	"tux-sst-facet-group": "संदेश गट",
+	"tux-sst-facet-orphan": "(अनाथ)",
+	"tux-sst-nosolr-title": "'शोध' उपलब्ध नाही",
+	"tux-sst-nosolr-body": "या विकिवर 'भाषांतर शोध सेवा' नाही.",
+	"tux-sst-solr-offline-title": "'शोध' उपलब्ध नाही",
+	"tux-sst-solr-offline-body": "'शोध' सेवा तात्पुरती अनुपलब्ध आहे.",
+	"tux-sst-next": "पुढील निकाल",
+	"tux-sst-prev": "मागील निकाल"
 }

@@ -1,13 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "SPQRobin",
-            "UV"
-        ]
-    },
-    "translate": "Traducere",
-    "translate-next": "Pagina proxima",
-    "translate-prev": "Pagina superior",
-    "translate-magic-cm-save": "Servare",
-    "translate-sidebar-alltrans": "Linguis aliis"
+	"@metadata": {
+		"authors": [
+			"SPQRobin",
+			"UV"
+		]
+	},
+	"translate": "Traducere",
+	"translate-next": "Pagina proxima",
+	"translate-prev": "Pagina superior",
+	"translate-magic-cm-save": "Servare",
+	"translate-sidebar-alltrans": "Linguis aliis"
 }

@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kwisha"
-        ]
-    },
-    "tpt-select-prioritylangs-reason": "Sababu:",
-    "tpt-rev-discourage": "vunja moyo",
-    "tpt-rev-encourage": "rejesha",
-    "translate-tag-translate-link-desc": "Tafsiri ukurasa huu",
-    "tpt-languages-legend": "Lugha zingine:",
-    "tpt-discouraged-language-reason": "Sababu: $1",
-    "tpt-aggregategroup-add": "Ongeza",
-    "tpt-aggregategroup-save": "Hifadhi"
+	"@metadata": {
+		"authors": [
+			"Kwisha"
+		]
+	},
+	"tpt-select-prioritylangs-reason": "Sababu:",
+	"tpt-rev-discourage": "vunja moyo",
+	"tpt-rev-encourage": "rejesha",
+	"translate-tag-translate-link-desc": "Tafsiri ukurasa huu",
+	"tpt-languages-legend": "Lugha zingine:",
+	"tpt-discouraged-language-reason": "Sababu: $1",
+	"tpt-aggregategroup-add": "Ongeza",
+	"tpt-aggregategroup-save": "Hifadhi"
 }

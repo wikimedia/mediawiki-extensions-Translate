@@ -1,28 +1,28 @@
 {
-    "@metadata": {
-        "authors": [
-            "Alison",
-            "Moilleadóir",
-            "පසිඳු කාවින්ද"
-        ]
-    },
-    "translate-page-settings-legend": "Sainroghanna",
-    "translate-page-group": "Ghrúpa",
-    "translate-page-language": "Teanga",
-    "translate-submit": "Faigh",
-    "translate-page-navigation-legend": "Nascleanúint",
-    "translate-edit-in-other-languages": "Teachtaireacht \"$1\" i dteangacha eile",
-    "translate-magic-cm-export": "Easportáil",
-    "translate-magic-cm-current": "reatha",
-    "translate-magic-cm-comment": "Nótaí tráchta:",
-    "translate-magic-cm-save": "Sábháil",
-    "translate-statsf-scale-days": "Lae",
-    "translate-statsf-scale-hours": "Uaire",
-    "translate-statsf-submit": "Réamhamharc",
-    "translate-translations-fieldset-title": "Teachtaireacht",
-    "translate-translations-messagename": "Ainm:",
-    "translate-language": "Teanga",
-    "translate-js-summary": "Achoimre:",
-    "translate-js-save": "Sábháil",
-    "translate-gethelp": "Cuidiú"
+	"@metadata": {
+		"authors": [
+			"Alison",
+			"Moilleadóir",
+			"පසිඳු කාවින්ද"
+		]
+	},
+	"translate-page-settings-legend": "Sainroghanna",
+	"translate-page-group": "Ghrúpa",
+	"translate-page-language": "Teanga",
+	"translate-submit": "Faigh",
+	"translate-page-navigation-legend": "Nascleanúint",
+	"translate-edit-in-other-languages": "Teachtaireacht \"$1\" i dteangacha eile",
+	"translate-magic-cm-export": "Easportáil",
+	"translate-magic-cm-current": "reatha",
+	"translate-magic-cm-comment": "Nótaí tráchta:",
+	"translate-magic-cm-save": "Sábháil",
+	"translate-statsf-scale-days": "Lae",
+	"translate-statsf-scale-hours": "Uaire",
+	"translate-statsf-submit": "Réamhamharc",
+	"translate-translations-fieldset-title": "Teachtaireacht",
+	"translate-translations-messagename": "Ainm:",
+	"translate-language": "Teanga",
+	"translate-js-summary": "Achoimre:",
+	"translate-js-save": "Sábháil",
+	"translate-gethelp": "Cuidiú"
 }

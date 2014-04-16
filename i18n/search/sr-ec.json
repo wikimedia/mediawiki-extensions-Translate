@@ -1,22 +1,22 @@
 {
-    "@metadata": {
-        "authors": [
-            "Милан Јелисавчић",
-            "Milicevic01"
-        ]
-    },
-    "searchtranslations": "Претрага превода",
-    "tux-sst-edit": "Уреди превод",
-    "tux-sst-search": "Претражи",
-    "tux-sst-search-ph": "Претрага превода",
-    "tux-sst-count": "{{PLURAL:$1|Један резултат пронађен|$1 резултата пронађено}}",
-    "tux-sst-facet-language": "Језици",
-    "tux-sst-facet-group": "Групе порука",
-    "tux-sst-facet-orphan": "(сироче)",
-    "tux-sst-nosolr-title": "Претрага недоступна",
-    "tux-sst-nosolr-body": "Овај вики нема сервис за претрагу превода.",
-    "tux-sst-solr-offline-title": "Претрага недоступна",
-    "tux-sst-solr-offline-body": "Сервис за претрагу је привремено недоступан.",
-    "tux-sst-next": "Следећи резултати",
-    "tux-sst-prev": "Претходни резултати"
+	"@metadata": {
+		"authors": [
+			"Милан Јелисавчић",
+			"Milicevic01"
+		]
+	},
+	"searchtranslations": "Претрага превода",
+	"tux-sst-edit": "Уреди превод",
+	"tux-sst-search": "Претражи",
+	"tux-sst-search-ph": "Претрага превода",
+	"tux-sst-count": "{{PLURAL:$1|Један резултат пронађен|$1 резултата пронађено}}",
+	"tux-sst-facet-language": "Језици",
+	"tux-sst-facet-group": "Групе порука",
+	"tux-sst-facet-orphan": "(сироче)",
+	"tux-sst-nosolr-title": "Претрага недоступна",
+	"tux-sst-nosolr-body": "Овај вики нема сервис за претрагу превода.",
+	"tux-sst-solr-offline-title": "Претрага недоступна",
+	"tux-sst-solr-offline-body": "Сервис за претрагу је привремено недоступан.",
+	"tux-sst-next": "Следећи резултати",
+	"tux-sst-prev": "Претходни резултати"
 }

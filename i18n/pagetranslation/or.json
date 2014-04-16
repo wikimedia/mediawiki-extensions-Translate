@@ -1,20 +1,20 @@
 {
-    "@metadata": {
-        "authors": [
-            "Ansumang",
-            "Jnanaranjan Sahu"
-        ]
-    },
-    "pagetranslation": "ପୃଷ୍ଠା ଅନୁବାଦ",
-    "tpt-template": "ପୃଷ୍ଠା ଛାଞ୍ଚ",
-    "tpt-languages-legend": "ଅଲଗା ଭାଷାସବୁ:",
-    "pt-movepage-list-translation": "ଅନୁବାଦ ପୃଷ୍ଠାସବୁ",
-    "pt-movepage-list-other": "ଅନ୍ୟ ଉପପୃଷ୍ଠାସବୁ",
-    "pt-movepage-legend": "ଅନୁବାଦ ହୋଇପାରୁଥିବା ପୃଷ୍ଠାଗୁଡିକୁ ଘୁଞ୍ଚାଇବେ",
-    "pt-movepage-current": "ବର୍ତମାନର ନାମ",
-    "pt-movepage-new": "ନୂଆ  ନାମ",
-    "pt-movepage-reason": "କାରଣ :",
-    "pt-deletepage-current": "ପୃଷ୍ଠା ନାମ:",
-    "pt-deletepage-reason": "କାରଣ:",
-    "pt-deletepage-list-section": "ଅନୁଭାଗ ପୃଷ୍ଠାସବୁ"
+	"@metadata": {
+		"authors": [
+			"Ansumang",
+			"Jnanaranjan Sahu"
+		]
+	},
+	"pagetranslation": "ପୃଷ୍ଠା ଅନୁବାଦ",
+	"tpt-template": "ପୃଷ୍ଠା ଛାଞ୍ଚ",
+	"tpt-languages-legend": "ଅଲଗା ଭାଷାସବୁ:",
+	"pt-movepage-list-translation": "ଅନୁବାଦ ପୃଷ୍ଠାସବୁ",
+	"pt-movepage-list-other": "ଅନ୍ୟ ଉପପୃଷ୍ଠାସବୁ",
+	"pt-movepage-legend": "ଅନୁବାଦ ହୋଇପାରୁଥିବା ପୃଷ୍ଠାଗୁଡିକୁ ଘୁଞ୍ଚାଇବେ",
+	"pt-movepage-current": "ବର୍ତମାନର ନାମ",
+	"pt-movepage-new": "ନୂଆ  ନାମ",
+	"pt-movepage-reason": "କାରଣ :",
+	"pt-deletepage-current": "ପୃଷ୍ଠା ନାମ:",
+	"pt-deletepage-reason": "କାରଣ:",
+	"pt-deletepage-list-section": "ଅନୁଭାଗ ପୃଷ୍ଠାସବୁ"
 }

@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "Papuass"
-        ]
-    },
-    "tsb-all-languages-button-label": "Visas valodas",
-    "tsb-search-requests": "Meklēt pieprasījumus",
-    "tsb-accept-button-label": "Pieņemt",
-    "tsb-reject-button-label": "Noraidīt",
-    "tsb-reminder-link-text": "Sūtīt e-pasta atgādinājumu"
+	"@metadata": {
+		"authors": [
+			"Papuass"
+		]
+	},
+	"tsb-all-languages-button-label": "Visas valodas",
+	"tsb-search-requests": "Meklēt pieprasījumus",
+	"tsb-accept-button-label": "Pieņemt",
+	"tsb-reject-button-label": "Noraidīt",
+	"tsb-reminder-link-text": "Sūtīt e-pasta atgādinājumu"
 }

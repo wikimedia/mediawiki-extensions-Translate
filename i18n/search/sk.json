@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Sudo77(new)"
-        ]
-    },
-    "tux-sst-search": "Hľadať",
-    "tux-sst-facet-language": "Jazyky",
-    "tux-sst-next": "Ďalšie výsledky",
-    "tux-sst-prev": "Predchádzajúce výsledky"
+	"@metadata": {
+		"authors": [
+			"Sudo77(new)"
+		]
+	},
+	"tux-sst-search": "Hľadať",
+	"tux-sst-facet-language": "Jazyky",
+	"tux-sst-next": "Ďalšie výsledky",
+	"tux-sst-prev": "Predchádzajúce výsledky"
 }

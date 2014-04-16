@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Purodha"
-        ]
-    },
-    "searchtranslations": "Övversäzonge söhke",
-    "tux-sst-edit": "de Övversäzong ändere",
-    "tux-sst-search": "Lohß jonn!",
-    "tux-sst-search-ph": "Övversäzonge söhke",
-    "tux-sst-count": "{{PLURAL:$1|Eine|$1|Nix}} jefonge",
-    "tux-sst-facet-language": "Schprooche",
-    "tux-sst-facet-group": "Nohreeschtejroppe",
-    "tux-sst-facet-orphan": "(kein Jropp)",
-    "tux-sst-nosolr-title": "Söhke es nit müjjelesch.",
-    "tux-sst-nosolr-body": "En heh däm Wiki kammer nit noh Översäzonge söhke.",
-    "tux-sst-solr-offline-title": "Söhke es nit müjjelesch.",
-    "tux-sst-solr-offline-body": "Et Söhke es em Momang nit müjjelesch.",
-    "tux-sst-next": "De nähkße Träffer",
-    "tux-sst-prev": "De förrėje Träffer"
+	"@metadata": {
+		"authors": [
+			"Purodha"
+		]
+	},
+	"searchtranslations": "Övversäzonge söhke",
+	"tux-sst-edit": "de Övversäzong ändere",
+	"tux-sst-search": "Lohß jonn!",
+	"tux-sst-search-ph": "Övversäzonge söhke",
+	"tux-sst-count": "{{PLURAL:$1|Eine|$1|Nix}} jefonge",
+	"tux-sst-facet-language": "Schprooche",
+	"tux-sst-facet-group": "Nohreeschtejroppe",
+	"tux-sst-facet-orphan": "(kein Jropp)",
+	"tux-sst-nosolr-title": "Söhke es nit müjjelesch.",
+	"tux-sst-nosolr-body": "En heh däm Wiki kammer nit noh Översäzonge söhke.",
+	"tux-sst-solr-offline-title": "Söhke es nit müjjelesch.",
+	"tux-sst-solr-offline-body": "Et Söhke es em Momang nit müjjelesch.",
+	"tux-sst-next": "De nähkße Träffer",
+	"tux-sst-prev": "De förrėje Träffer"
 }

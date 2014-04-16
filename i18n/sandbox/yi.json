@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "פוילישער"
-        ]
-    },
-    "tsb-all-languages-button-label": "אלע שפראַכן",
-    "tsb-search-requests": "זוך בקשות",
-    "tsb-accept-button-label": "אננעמען",
-    "tsb-reject-button-label": "אפווארפֿן",
-    "tsb-translations-source": "מקור",
-    "tsb-translations-user": "באַניצער איבערזעצונגען",
-    "translationstash": "ברוך הבא!",
-    "translate-translationstash-welcome": "ברוך הבא $1, איר זענט א  {{GENDER:$1|נײַער איבערזעצער|א נײַע איבערזעצערין}}"
+	"@metadata": {
+		"authors": [
+			"פוילישער"
+		]
+	},
+	"tsb-all-languages-button-label": "אלע שפראַכן",
+	"tsb-search-requests": "זוך בקשות",
+	"tsb-accept-button-label": "אננעמען",
+	"tsb-reject-button-label": "אפווארפֿן",
+	"tsb-translations-source": "מקור",
+	"tsb-translations-user": "באַניצער איבערזעצונגען",
+	"translationstash": "ברוך הבא!",
+	"translate-translationstash-welcome": "ברוך הבא $1, איר זענט א  {{GENDER:$1|נײַער איבערזעצער|א נײַע איבערזעצערין}}"
 }

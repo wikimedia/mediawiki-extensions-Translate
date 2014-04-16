@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Xuacu"
-        ]
-    },
-    "searchtranslations": "Guetar nes traducciones",
-    "tux-sst-edit": "Editar traducción",
-    "tux-sst-search": "Guetar",
-    "tux-sst-search-ph": "Guetar nes traducciones",
-    "tux-sst-count": "{{PLURAL:$1|Alcontrose un resultáu|Alcontráronse $1 resultaos}}",
-    "tux-sst-facet-language": "Llingües",
-    "tux-sst-facet-group": "Grupos de mensaxes",
-    "tux-sst-facet-orphan": "(güérfanos)",
-    "tux-sst-nosolr-title": "La gueta nun ta disponible",
-    "tux-sst-nosolr-body": "Esta wiki nun tien un serviciu de gueta de traducciones.",
-    "tux-sst-solr-offline-title": "La gueta nun ta disponible",
-    "tux-sst-solr-offline-body": "El serviciu de gueta nun ta disponible temporalmente.",
-    "tux-sst-next": "Resultaos siguientes",
-    "tux-sst-prev": "Resultaos anteriores"
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"searchtranslations": "Guetar nes traducciones",
+	"tux-sst-edit": "Editar traducción",
+	"tux-sst-search": "Guetar",
+	"tux-sst-search-ph": "Guetar nes traducciones",
+	"tux-sst-count": "{{PLURAL:$1|Alcontrose un resultáu|Alcontráronse $1 resultaos}}",
+	"tux-sst-facet-language": "Llingües",
+	"tux-sst-facet-group": "Grupos de mensaxes",
+	"tux-sst-facet-orphan": "(güérfanos)",
+	"tux-sst-nosolr-title": "La gueta nun ta disponible",
+	"tux-sst-nosolr-body": "Esta wiki nun tien un serviciu de gueta de traducciones.",
+	"tux-sst-solr-offline-title": "La gueta nun ta disponible",
+	"tux-sst-solr-offline-body": "El serviciu de gueta nun ta disponible temporalmente.",
+	"tux-sst-next": "Resultaos siguientes",
+	"tux-sst-prev": "Resultaos anteriores"
 }

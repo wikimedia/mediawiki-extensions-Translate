@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Y-M D"
-        ]
-    },
-    "tsb-filter-pending": "Rekedoù war gortoz",
-    "tsb-all-languages-button-label": "An holl yezhoù",
-    "tsb-accept-button-label": "Asantiñ",
-    "tsb-translations-source": "Mammenn",
-    "tsb-translations-current": "Troidigezhioù zo diouto",
-    "translationstash": "Degemer mat",
-    "tsb-limit-reached-title": "Trugarez evit ho troidigezhioù"
+	"@metadata": {
+		"authors": [
+			"Y-M D"
+		]
+	},
+	"tsb-filter-pending": "Rekedoù war gortoz",
+	"tsb-all-languages-button-label": "An holl yezhoù",
+	"tsb-accept-button-label": "Asantiñ",
+	"tsb-translations-source": "Mammenn",
+	"tsb-translations-current": "Troidigezhioù zo diouto",
+	"translationstash": "Degemer mat",
+	"tsb-limit-reached-title": "Trugarez evit ho troidigezhioù"
 }

@@ -1,33 +1,33 @@
 {
-    "@metadata": {
-        "authors": [
-            "Bua333",
-            "Mucalexx"
-        ]
-    },
-    "translate": "Ibasetzn",
-    "translate-desc": "Dagänzd a [[Special:Translate|Speziaalseiten]] zan Ywersétzen vah d' MediaWiki-Systémnoochrichtner und dénen eanerre weidern Auhwendunger.",
-    "translate-taction-translate": "Ibasetzn",
-    "translate-taction-proofread": "Korrekdualesen",
-    "translate-taction-lstats": "Statistikn zua Sproch",
-    "translate-taction-mstats": "Statistikn zua Nochrichtngruppm",
-    "translate-taction-export": "Exportian",
-    "translate-taction-disabled": "De Aktion is in em Wiki deaktiviad.",
-    "translate-page-language": "Sprooch",
-    "translate-page-limit": "Limit",
-    "translate-submit": "Hoin",
-    "translate-edit-information": "Informazión zur da Systémnoochricht ($1)",
-    "translate-edit-in-other-languages": "Systémnoochricht auf åndre Sproochen",
-    "translate-magic-cm-updatedusing": "Aktualisird durch [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]",
-    "translationstats": "Staatistiken zua d' Ywersétzungen",
-    "translate-sidebar-alltrans": "Auf åndre Sproochen",
-    "translations": "Olle Ywersetzungen",
-    "languagestats": "Staatistiken zur Sprooch",
-    "translate-langstats-expandall": "olle auskloppm",
-    "translate-language": "Sprooch",
-    "supportedlanguages-recenttranslations": "Aktuelle Ywersétzungen",
-    "translate-js-history": "Ywersétzungsgschicht",
-    "translate-js-support": "A Frog stön",
-    "translate-searchprofile": "Ywersétzungen",
-    "translate-searchprofile-tooltip": "Suach in olle Ywersétzungen"
+	"@metadata": {
+		"authors": [
+			"Bua333",
+			"Mucalexx"
+		]
+	},
+	"translate": "Ibasetzn",
+	"translate-desc": "Dagänzd a [[Special:Translate|Speziaalseiten]] zan Ywersétzen vah d' MediaWiki-Systémnoochrichtner und dénen eanerre weidern Auhwendunger.",
+	"translate-taction-translate": "Ibasetzn",
+	"translate-taction-proofread": "Korrekdualesen",
+	"translate-taction-lstats": "Statistikn zua Sproch",
+	"translate-taction-mstats": "Statistikn zua Nochrichtngruppm",
+	"translate-taction-export": "Exportian",
+	"translate-taction-disabled": "De Aktion is in em Wiki deaktiviad.",
+	"translate-page-language": "Sprooch",
+	"translate-page-limit": "Limit",
+	"translate-submit": "Hoin",
+	"translate-edit-information": "Informazión zur da Systémnoochricht ($1)",
+	"translate-edit-in-other-languages": "Systémnoochricht auf åndre Sproochen",
+	"translate-magic-cm-updatedusing": "Aktualisird durch [[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]]",
+	"translationstats": "Staatistiken zua d' Ywersétzungen",
+	"translate-sidebar-alltrans": "Auf åndre Sproochen",
+	"translations": "Olle Ywersetzungen",
+	"languagestats": "Staatistiken zur Sprooch",
+	"translate-langstats-expandall": "olle auskloppm",
+	"translate-language": "Sprooch",
+	"supportedlanguages-recenttranslations": "Aktuelle Ywersétzungen",
+	"translate-js-history": "Ywersétzungsgschicht",
+	"translate-js-support": "A Frog stön",
+	"translate-searchprofile": "Ywersétzungen",
+	"translate-searchprofile-tooltip": "Suach in olle Ywersétzungen"
 }

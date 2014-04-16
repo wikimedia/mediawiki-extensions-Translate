@@ -1,20 +1,20 @@
 {
-    "@metadata": {
-        "authors": [
-            "Erikoo"
-        ]
-    },
-    "translate": "ဘာသာပြန်ပါ",
-    "translate-page-group": "အုပ်စု",
-    "translate-page-language": "ဘာသာ",
-    "translate-page-limit": "ကန့်သတ်ချက်",
-    "translate-page-limit-option": "တစ်မျက်နှာလျှင် {{PLURAL:$1|စာလုံး|စာလုံးပေါင်း}} $1",
-    "translate-submit": "ရှာဖွေပါ",
-    "translate-page-navigation-legend": "အ​ညွှန်း​",
-    "translate-page-showing-all": "{{PLURAL:$1|စာလုံး|စာလုံးပေါင်း}} $1 လုံး ရှာဖွေတွေ့ရှိသည်။",
-    "translate-page-showing-none": "ဖေါ်ပြရန် စကားလုံး မရှိပါ",
-    "translate-next": "နောက်စာမျက်နှာ",
-    "translate-prev": "ပြီးခဲ့သော စာမျက်နှာ",
-    "translate-page-edit": "ပြင်ရန်",
-    "translate-gs-score": "ရမှတ်"
+	"@metadata": {
+		"authors": [
+			"Erikoo"
+		]
+	},
+	"translate": "ဘာသာပြန်ပါ",
+	"translate-page-group": "အုပ်စု",
+	"translate-page-language": "ဘာသာ",
+	"translate-page-limit": "ကန့်သတ်ချက်",
+	"translate-page-limit-option": "တစ်မျက်နှာလျှင် {{PLURAL:$1|စာလုံး|စာလုံးပေါင်း}} $1",
+	"translate-submit": "ရှာဖွေပါ",
+	"translate-page-navigation-legend": "အ​ညွှန်း​",
+	"translate-page-showing-all": "{{PLURAL:$1|စာလုံး|စာလုံးပေါင်း}} $1 လုံး ရှာဖွေတွေ့ရှိသည်။",
+	"translate-page-showing-none": "ဖေါ်ပြရန် စကားလုံး မရှိပါ",
+	"translate-next": "နောက်စာမျက်နှာ",
+	"translate-prev": "ပြီးခဲ့သော စာမျက်နှာ",
+	"translate-page-edit": "ပြင်ရန်",
+	"translate-gs-score": "ရမှတ်"
 }

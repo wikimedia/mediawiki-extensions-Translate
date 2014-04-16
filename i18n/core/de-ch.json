@@ -1,13 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Filzstift",
-            "Geitost",
-            "MichaelFrey",
-            "The Evil IP address"
-        ]
-    },
-    "translate-page-description-hasoptional": "Diese Nachrichtengruppe enthält optionale Nachrichten.\nOptionale Nachrichten sollten nur dann übersetzt werden, sofern es in deiner Sprache Bedarf für sie gibt,\nwie beispielsweise die Nichtverwendung von Leerschlägen oder die Transkription von Eigennamen. $1",
-    "translate-edit-no-information": "<em>Zu dieser Nachricht ist keine Dokumentation vorhanden.\nSofern du weisst, wo und in welchem Zusammenhang sie genutzt wird, kannst du anderen Übersetzern bei ihrer Arbeit helfen, indem du eine Dokumentation hinzufügst.</em>",
-    "translate-messagereview-reviewswithyou": "Überprüft von {{PLURAL:$1|dir selbst|$1 Benutzern, einschliesslich dir selbst}}"
+	"@metadata": {
+		"authors": [
+			"Filzstift",
+			"Geitost",
+			"MichaelFrey",
+			"The Evil IP address"
+		]
+	},
+	"translate-page-description-hasoptional": "Diese Nachrichtengruppe enthält optionale Nachrichten.\nOptionale Nachrichten sollten nur dann übersetzt werden, sofern es in deiner Sprache Bedarf für sie gibt,\nwie beispielsweise die Nichtverwendung von Leerschlägen oder die Transkription von Eigennamen. $1",
+	"translate-edit-no-information": "<em>Zu dieser Nachricht ist keine Dokumentation vorhanden.\nSofern du weisst, wo und in welchem Zusammenhang sie genutzt wird, kannst du anderen Übersetzern bei ihrer Arbeit helfen, indem du eine Dokumentation hinzufügst.</em>",
+	"translate-messagereview-reviewswithyou": "Überprüft von {{PLURAL:$1|dir selbst|$1 Benutzern, einschliesslich dir selbst}}"
 }

@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Mogoeilor"
-        ]
-    },
-    "pagetranslation": "بلگه لرسن",
-    "tpt-diff-old": "متن دمایی",
-    "tpt-diff-new": "متن تازه",
-    "tpt-select-prioritylangs-reason": "دليل:",
-    "tpt-tab-translate": "لرسن",
-    "tpt-aggregategroup-add": "اضاف كو",
-    "tpt-aggregategroup-save": "ذخيره كردن",
-    "tpt-aggregategroup-new-name": "نوم:"
+	"@metadata": {
+		"authors": [
+			"Mogoeilor"
+		]
+	},
+	"pagetranslation": "بلگه لرسن",
+	"tpt-diff-old": "متن دمایی",
+	"tpt-diff-new": "متن تازه",
+	"tpt-select-prioritylangs-reason": "دليل:",
+	"tpt-tab-translate": "لرسن",
+	"tpt-aggregategroup-add": "اضاف كو",
+	"tpt-aggregategroup-save": "ذخيره كردن",
+	"tpt-aggregategroup-new-name": "نوم:"
 }

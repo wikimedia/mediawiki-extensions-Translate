@@ -1,32 +1,32 @@
 {
-    "@metadata": {
-        "authors": [
-            "An13sa",
-            "Kobazulo",
-            "පසිඳු කාවින්ද"
-        ]
-    },
-    "pagetranslation": "Orrialdearen itzulpena",
-    "tpt-section-new": "Itzulpen unitate berria.\nIzena: $1",
-    "tpt-section-deleted": "$1 itzulpen unitatea",
-    "tpt-template": "Orrialde txantiloia",
-    "tpt-diff-old": "Aurreko testua",
-    "tpt-diff-new": "Testu berria",
-    "tpt-edit-failed": "Ezin izan da orrialdea eguneratu: $1",
-    "tpt-select-prioritylangs-reason": "Arrazoia:",
-    "tpt-rev-encourage": "Leheneratu",
-    "translate-tag-translate-link-desc": "Itzuli orri hau",
-    "tpt-languages-legend": "Beste hizkuntzak:",
-    "tpt-discouraged-language-reason": "Arrazoia: $1",
-    "tpt-aggregategroup-add": "Gehitu",
-    "tpt-aggregategroup-save": "Gorde",
-    "tpt-aggregategroup-new-name": "Izena:",
-    "pt-movepage-list-translation": "Itzulpen orrialdeak",
-    "pt-movepage-list-other": "Bestelako azpiorrialdeak",
-    "pt-movepage-current": "Oraingo izena:",
-    "pt-movepage-new": "Izen berria:",
-    "pt-movepage-reason": "Arrazoia:",
-    "pt-movepage-subpages": "Azpiorrialde guztiak mugitu",
-    "pt-deletepage-current": "Orriaren izena:",
-    "pt-deletepage-reason": "Arrazoia:"
+	"@metadata": {
+		"authors": [
+			"An13sa",
+			"Kobazulo",
+			"පසිඳු කාවින්ද"
+		]
+	},
+	"pagetranslation": "Orrialdearen itzulpena",
+	"tpt-section-new": "Itzulpen unitate berria.\nIzena: $1",
+	"tpt-section-deleted": "$1 itzulpen unitatea",
+	"tpt-template": "Orrialde txantiloia",
+	"tpt-diff-old": "Aurreko testua",
+	"tpt-diff-new": "Testu berria",
+	"tpt-edit-failed": "Ezin izan da orrialdea eguneratu: $1",
+	"tpt-select-prioritylangs-reason": "Arrazoia:",
+	"tpt-rev-encourage": "Leheneratu",
+	"translate-tag-translate-link-desc": "Itzuli orri hau",
+	"tpt-languages-legend": "Beste hizkuntzak:",
+	"tpt-discouraged-language-reason": "Arrazoia: $1",
+	"tpt-aggregategroup-add": "Gehitu",
+	"tpt-aggregategroup-save": "Gorde",
+	"tpt-aggregategroup-new-name": "Izena:",
+	"pt-movepage-list-translation": "Itzulpen orrialdeak",
+	"pt-movepage-list-other": "Bestelako azpiorrialdeak",
+	"pt-movepage-current": "Oraingo izena:",
+	"pt-movepage-new": "Izen berria:",
+	"pt-movepage-reason": "Arrazoia:",
+	"pt-movepage-subpages": "Azpiorrialde guztiak mugitu",
+	"pt-deletepage-current": "Orriaren izena:",
+	"pt-deletepage-reason": "Arrazoia:"
 }

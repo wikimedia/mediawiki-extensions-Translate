@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Basharh"
-        ]
-    },
-    "translate-group-desc-mediawikicore": "ܬܚܒܘܫ ܟܢܘܫܬܐ ܕܐܓܪ̈ܬܐ ܗܕܐ ܥܠ ܐܓܪ̈ܬܐ ܦܠܝܚܬ̈ܐ ܒܨܚܚܐ ܕܐܠܦܐ ܗܫܝܬܐ ܡܢ [[Translating:MediaWiki|ܡܝܕܝܐܘܝܩܝ ]] ({{CURRENTVERSION}})"
+	"@metadata": {
+		"authors": [
+			"Basharh"
+		]
+	},
+	"translate-group-desc-mediawikicore": "ܬܚܒܘܫ ܟܢܘܫܬܐ ܕܐܓܪ̈ܬܐ ܗܕܐ ܥܠ ܐܓܪ̈ܬܐ ܦܠܝܚܬ̈ܐ ܒܨܚܚܐ ܕܐܠܦܐ ܗܫܝܬܐ ܡܢ [[Translating:MediaWiki|ܡܝܕܝܐܘܝܩܝ ]] ({{CURRENTVERSION}})"
 }

@@ -1,16 +1,16 @@
 {
-    "@metadata": {
-        "authors": [
-            "Mogoeilor"
-        ]
-    },
-    "tsb-all-languages-button-label": "همه زونيا",
-    "tsb-accept-button-label": "پذيرشت",
-    "tsb-reject-button-label": "رد كردن",
-    "tsb-accept-all-button-label": "همه نه قوول کو",
-    "tsb-reject-all-button-label": "همه نه رد کو",
-    "tsb-translations-source": "سرچشمه",
-    "translationstash": "خوش اومايت",
-    "translate-translationstash-skip-button-label": "يكی هنی نه امتحان بكيد",
-    "tsb-limit-reached-title": "سی والرستن تو منمونيم"
+	"@metadata": {
+		"authors": [
+			"Mogoeilor"
+		]
+	},
+	"tsb-all-languages-button-label": "همه زونيا",
+	"tsb-accept-button-label": "پذيرشت",
+	"tsb-reject-button-label": "رد كردن",
+	"tsb-accept-all-button-label": "همه نه قوول کو",
+	"tsb-reject-all-button-label": "همه نه رد کو",
+	"tsb-translations-source": "سرچشمه",
+	"translationstash": "خوش اومايت",
+	"translate-translationstash-skip-button-label": "يكی هنی نه امتحان بكيد",
+	"tsb-limit-reached-title": "سی والرستن تو منمونيم"
 }

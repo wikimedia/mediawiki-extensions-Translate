@@ -1,26 +1,26 @@
 {
-    "@metadata": {
-        "authors": [
-            "Huuchin"
-        ]
-    },
-    "translate": "Орчуллһн",
-    "translate-page-settings-legend": "Көгүд",
-    "translate-page-group": "Баг",
-    "translate-page-language": "Келн",
-    "translate-page-limit": "Цег",
-    "translate-page-limit-option": "$1 {{PLURAL:$1|зәңг|зәңгс|зәңгс}} халхд",
-    "translate-submit": "Асрх",
-    "translate-page-navigation-legend": "Орм медлһн",
-    "translate-page-showing": "$1 - $2 тойгта зәңгс ($3 ут туршдан) үзүлсн.",
-    "translate-page-showing-none": "Зәңгс үзүлх уга",
-    "translate-next": "дарук халх",
-    "translate-prev": "урдк халх",
-    "translate-page-description-legend": "Багин туск",
-    "translate-edit-tmmatch": "$1%та ирлцән",
-    "translate-pref-editassistlang": "Туслмҗин келс",
-    "translate-sidebar-alltrans": "Талдан келәр",
-    "translate-language": "Келн",
-    "translate-js-next": "Хадһлад, дарук секх",
-    "translate-js-skip": "Дарук"
+	"@metadata": {
+		"authors": [
+			"Huuchin"
+		]
+	},
+	"translate": "Орчуллһн",
+	"translate-page-settings-legend": "Көгүд",
+	"translate-page-group": "Баг",
+	"translate-page-language": "Келн",
+	"translate-page-limit": "Цег",
+	"translate-page-limit-option": "$1 {{PLURAL:$1|зәңг|зәңгс|зәңгс}} халхд",
+	"translate-submit": "Асрх",
+	"translate-page-navigation-legend": "Орм медлһн",
+	"translate-page-showing": "$1 - $2 тойгта зәңгс ($3 ут туршдан) үзүлсн.",
+	"translate-page-showing-none": "Зәңгс үзүлх уга",
+	"translate-next": "дарук халх",
+	"translate-prev": "урдк халх",
+	"translate-page-description-legend": "Багин туск",
+	"translate-edit-tmmatch": "$1%та ирлцән",
+	"translate-pref-editassistlang": "Туслмҗин келс",
+	"translate-sidebar-alltrans": "Талдан келәр",
+	"translate-language": "Келн",
+	"translate-js-next": "Хадһлад, дарук секх",
+	"translate-js-skip": "Дарук"
 }

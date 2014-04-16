@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "Lloffiwr",
-            "Shirayuki",
-            "Thehelpfulone"
-        ]
-    },
-    "supportedlanguages-summary": "This page shows a list of all languages supported by {{SITENAME}},\ntogether with the names of the translators working on that language.\nA translator's name appears larger, the more edits the translator has contributed.\nThe colour of an underline indicates how recently a translator has been active here.",
-    "supportedlanguages-colorlegend": "Legend for the colour: Last translation $1 days ago.",
-    "tux-empty-list-translated": "No translated messages"
+	"@metadata": {
+		"authors": [
+			"Lloffiwr",
+			"Shirayuki",
+			"Thehelpfulone"
+		]
+	},
+	"supportedlanguages-summary": "This page shows a list of all languages supported by {{SITENAME}},\ntogether with the names of the translators working on that language.\nA translator's name appears larger, the more edits the translator has contributed.\nThe colour of an underline indicates how recently a translator has been active here.",
+	"supportedlanguages-colorlegend": "Legend for the colour: Last translation $1 days ago.",
+	"tux-empty-list-translated": "No translated messages"
 }

@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Michawiki"
-        ]
-    },
-    "searchtranslations": "Přełožki pytać",
-    "tux-sst-edit": "Přełožk wobdźěłać",
-    "tux-sst-search": "Pytać",
-    "tux-sst-search-ph": "Přełožki pytać",
-    "tux-sst-count": "{{PLURAL:$1|Jedyn wuslědk namakany|$1 wuslědkaj namakanej|$1 wuslědki namakane|$1 wuslědkow namakane}}",
-    "tux-sst-facet-language": "Rěče",
-    "tux-sst-facet-group": "Zdźělenske skupiny",
-    "tux-sst-facet-orphan": "(wosyroćene)",
-    "tux-sst-nosolr-title": "Pytanje k dispoziciji njesteji",
-    "tux-sst-nosolr-body": "Tutón wiki nima słužbu za pytanje přełožkow.",
-    "tux-sst-solr-offline-title": "Pytanje k dispoziciji njesteji",
-    "tux-sst-solr-offline-body": "Pytanska słužba tuchwilu k dispoziciji njesteji.",
-    "tux-sst-next": "Přichodne wuslědki",
-    "tux-sst-prev": "Předchadne wuslědki"
+	"@metadata": {
+		"authors": [
+			"Michawiki"
+		]
+	},
+	"searchtranslations": "Přełožki pytać",
+	"tux-sst-edit": "Přełožk wobdźěłać",
+	"tux-sst-search": "Pytać",
+	"tux-sst-search-ph": "Přełožki pytać",
+	"tux-sst-count": "{{PLURAL:$1|Jedyn wuslědk namakany|$1 wuslědkaj namakanej|$1 wuslědki namakane|$1 wuslědkow namakane}}",
+	"tux-sst-facet-language": "Rěče",
+	"tux-sst-facet-group": "Zdźělenske skupiny",
+	"tux-sst-facet-orphan": "(wosyroćene)",
+	"tux-sst-nosolr-title": "Pytanje k dispoziciji njesteji",
+	"tux-sst-nosolr-body": "Tutón wiki nima słužbu za pytanje přełožkow.",
+	"tux-sst-solr-offline-title": "Pytanje k dispoziciji njesteji",
+	"tux-sst-solr-offline-body": "Pytanska słužba tuchwilu k dispoziciji njesteji.",
+	"tux-sst-next": "Přichodne wuslědki",
+	"tux-sst-prev": "Předchadne wuslědki"
 }

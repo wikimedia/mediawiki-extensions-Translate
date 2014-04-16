@@ -1,11 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "सरोज कुमार ढकाल"
-        ]
-    },
-    "tsb-older-requests": "$1 पुराना {{PLURAL:$1|अनुरोध|अनुरोधहरू}}",
-    "tsb-didnt-make-any-translations": "यस प्रयोगकर्ताले कुनै अनुवाद गरेको छैन ।",
-    "tsb-promoted-from-sandbox": "प्रयोगकर्तालाई अनुवादकको रुपमा बढावा गरिएको छ",
-    "log-name-translatorsandbox": "अनुवाद प्रयोगस्थल"
+	"@metadata": {
+		"authors": [
+			"सरोज कुमार ढकाल"
+		]
+	},
+	"tsb-older-requests": "$1 पुराना {{PLURAL:$1|अनुरोध|अनुरोधहरू}}",
+	"tsb-didnt-make-any-translations": "यस प्रयोगकर्ताले कुनै अनुवाद गरेको छैन ।",
+	"log-name-translatorsandbox": "अनुवाद प्रयोगस्थल"
 }

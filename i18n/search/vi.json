@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Minh Nguyen"
-        ]
-    },
-    "searchtranslations": "Tìm bản dịch",
-    "tux-sst-edit": "Sửa bản dịch",
-    "tux-sst-search": "Tìm kiếm",
-    "tux-sst-search-ph": "Tìm bản dịch",
-    "tux-sst-count": "Tìm thấy $1 kết quả",
-    "tux-sst-facet-language": "Ngôn ngữ",
-    "tux-sst-facet-group": "Nhóm thông điệp",
-    "tux-sst-facet-orphan": "(mồ côi)",
-    "tux-sst-nosolr-title": "Công cụ tìm kiếm không có sẵn",
-    "tux-sst-nosolr-body": "Wiki này không có công cụ tìm bản dịch.",
-    "tux-sst-solr-offline-title": "Công cụ tìm kiếm không có sẵn",
-    "tux-sst-solr-offline-body": "Công cụ tìm kiếm tạm thời không sẵn dùng.",
-    "tux-sst-next": "Kết quả sau",
-    "tux-sst-prev": "Kết quả trước"
+	"@metadata": {
+		"authors": [
+			"Minh Nguyen"
+		]
+	},
+	"searchtranslations": "Tìm bản dịch",
+	"tux-sst-edit": "Sửa bản dịch",
+	"tux-sst-search": "Tìm kiếm",
+	"tux-sst-search-ph": "Tìm bản dịch",
+	"tux-sst-count": "Tìm thấy $1 kết quả",
+	"tux-sst-facet-language": "Ngôn ngữ",
+	"tux-sst-facet-group": "Nhóm thông điệp",
+	"tux-sst-facet-orphan": "(mồ côi)",
+	"tux-sst-nosolr-title": "Công cụ tìm kiếm không có sẵn",
+	"tux-sst-nosolr-body": "Wiki này không có công cụ tìm bản dịch.",
+	"tux-sst-solr-offline-title": "Công cụ tìm kiếm không có sẵn",
+	"tux-sst-solr-offline-body": "Công cụ tìm kiếm tạm thời không sẵn dùng.",
+	"tux-sst-next": "Kết quả sau",
+	"tux-sst-prev": "Kết quả trước"
 }

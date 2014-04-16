@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Xqt"
-        ]
-    },
-    "pagetranslation": "Iwwersetzing vun Bledder",
-    "tpt-template": "Moddel fer des Blatt",
-    "translate-tag-translate-link-desc": "Des Blatt iwwersetze",
-    "tpt-languages-legend": "Annere Schprooche:",
-    "pt-movepage-new": "Neier Naame:",
-    "pt-movepage-reason": "Grund:",
-    "pt-deletepage-current": "Naame vum Blatt:",
-    "pt-deletepage-reason": "Grund:"
+	"@metadata": {
+		"authors": [
+			"Xqt"
+		]
+	},
+	"pagetranslation": "Iwwersetzing vun Bledder",
+	"tpt-template": "Moddel fer des Blatt",
+	"translate-tag-translate-link-desc": "Des Blatt iwwersetze",
+	"tpt-languages-legend": "Annere Schprooche:",
+	"pt-movepage-new": "Neier Naame:",
+	"pt-movepage-reason": "Grund:",
+	"pt-deletepage-current": "Naame vum Blatt:",
+	"pt-deletepage-reason": "Grund:"
 }

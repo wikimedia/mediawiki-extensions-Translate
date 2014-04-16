@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Chaojoker",
-            "Vadgt"
-        ]
-    },
-    "translate": "Թագմանություն",
-    "translate-taction-translate": "Թագմանություն",
-    "translate-taction-proofread": "Սրբագրել",
-    "translate-edit-translation": "Թագմանություն",
-    "translate-sidebar-alltrans": "Այլ լեզուներով",
-    "translate-manage-import-new": "Նոր Հաղորդագրություն $1"
+	"@metadata": {
+		"authors": [
+			"Chaojoker",
+			"Vadgt"
+		]
+	},
+	"translate": "Թագմանություն",
+	"translate-taction-translate": "Թագմանություն",
+	"translate-taction-proofread": "Սրբագրել",
+	"translate-edit-translation": "Թագմանություն",
+	"translate-sidebar-alltrans": "Այլ լեզուներով",
+	"translate-manage-import-new": "Նոր Հաղորդագրություն $1"
 }

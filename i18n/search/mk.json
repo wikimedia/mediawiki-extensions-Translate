@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Bjankuloski06"
-        ]
-    },
-    "searchtranslations": "Пребарување на преводи",
-    "tux-sst-edit": "Уреди превод",
-    "tux-sst-search": "Пребарај",
-    "tux-sst-search-ph": "Пребарајте преводи",
-    "tux-sst-count": "{{PLURAL:$1|Пронајден е еден резултат|Пронајдени се $1 резултати}}",
-    "tux-sst-facet-language": "Јазици",
-    "tux-sst-facet-group": "Групи на пораки",
-    "tux-sst-facet-orphan": "(осамена)",
-    "tux-sst-nosolr-title": "Пребарувањето е недостапно",
-    "tux-sst-nosolr-body": "Ова вики нема пребарувач.",
-    "tux-sst-solr-offline-title": "Пребарувањето е недостапно",
-    "tux-sst-solr-offline-body": "Пребарувањето е привремено недостапно.",
-    "tux-sst-next": "Следни резултати",
-    "tux-sst-prev": "Претходни резултати"
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"searchtranslations": "Пребарување на преводи",
+	"tux-sst-edit": "Уреди превод",
+	"tux-sst-search": "Пребарај",
+	"tux-sst-search-ph": "Пребарајте преводи",
+	"tux-sst-count": "{{PLURAL:$1|Пронајден е еден резултат|Пронајдени се $1 резултати}}",
+	"tux-sst-facet-language": "Јазици",
+	"tux-sst-facet-group": "Групи на пораки",
+	"tux-sst-facet-orphan": "(осамена)",
+	"tux-sst-nosolr-title": "Пребарувањето е недостапно",
+	"tux-sst-nosolr-body": "Ова вики нема пребарувач.",
+	"tux-sst-solr-offline-title": "Пребарувањето е недостапно",
+	"tux-sst-solr-offline-body": "Пребарувањето е привремено недостапно.",
+	"tux-sst-next": "Следни резултати",
+	"tux-sst-prev": "Претходни резултати"
 }

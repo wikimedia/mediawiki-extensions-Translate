@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Toniher"
-        ]
-    },
-    "searchtranslations": "Cerca a les traduccions",
-    "tux-sst-edit": "Edita la traducció",
-    "tux-sst-search": "Cerca",
-    "tux-sst-search-ph": "Cerca a les traduccions",
-    "tux-sst-count": "{{PLURAL:$1|S'ha trobat $1 resultat|S'han trobat $1 resultats}}",
-    "tux-sst-facet-language": "Llengües",
-    "tux-sst-facet-group": "Grups de missatges",
-    "tux-sst-facet-orphan": "(orfe)",
-    "tux-sst-nosolr-title": "Cerca no disponible",
-    "tux-sst-nosolr-body": "Aquest wiki no té un servei de cerca de les traduccions.",
-    "tux-sst-solr-offline-title": "Cerca no disponible",
-    "tux-sst-solr-offline-body": "El servei de cerca no està disponible temporalment.",
-    "tux-sst-next": "Resultats següents",
-    "tux-sst-prev": "Resultats anteriors"
+	"@metadata": {
+		"authors": [
+			"Toniher"
+		]
+	},
+	"searchtranslations": "Cerca a les traduccions",
+	"tux-sst-edit": "Edita la traducció",
+	"tux-sst-search": "Cerca",
+	"tux-sst-search-ph": "Cerca a les traduccions",
+	"tux-sst-count": "{{PLURAL:$1|S'ha trobat $1 resultat|S'han trobat $1 resultats}}",
+	"tux-sst-facet-language": "Llengües",
+	"tux-sst-facet-group": "Grups de missatges",
+	"tux-sst-facet-orphan": "(orfe)",
+	"tux-sst-nosolr-title": "Cerca no disponible",
+	"tux-sst-nosolr-body": "Aquest wiki no té un servei de cerca de les traduccions.",
+	"tux-sst-solr-offline-title": "Cerca no disponible",
+	"tux-sst-solr-offline-body": "El servei de cerca no està disponible temporalment.",
+	"tux-sst-next": "Resultats següents",
+	"tux-sst-prev": "Resultats anteriors"
 }

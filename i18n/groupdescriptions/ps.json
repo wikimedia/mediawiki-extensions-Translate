@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Ahmed-Najib-Biabani-Ibrahimkhel"
-        ]
-    },
-    "translate-group-desc-translatablepages": "د ژباړې وړ ټول مخونه",
-    "translate-group-desc-eol": "[[Translating:EOL|د ژوند پوهنغونډ]] يوه پيغام ډله",
-    "translate-group-desc-kiwix": "د [[Translating:Kiwix|کيويکس]] يوه پيغام ډله"
+	"@metadata": {
+		"authors": [
+			"Ahmed-Najib-Biabani-Ibrahimkhel"
+		]
+	},
+	"translate-group-desc-translatablepages": "د ژباړې وړ ټول مخونه",
+	"translate-group-desc-eol": "[[Translating:EOL|د ژوند پوهنغونډ]] يوه پيغام ډله",
+	"translate-group-desc-kiwix": "د [[Translating:Kiwix|کيويکس]] يوه پيغام ډله"
 }

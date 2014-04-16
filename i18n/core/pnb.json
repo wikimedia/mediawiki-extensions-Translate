@@ -1,16 +1,16 @@
 {
-    "@metadata": {
-        "authors": [
-            "Khalid Mahmood"
-        ]
-    },
-    "translate": "ترجمعہ",
-    "translate-page-settings-legend": "ترتیب",
-    "translate-page-group": "ٹولی",
-    "translate-page-language": "بولی",
-    "translate-submit": "لے کے آؤ",
-    "translate-page-navigation-legend": "کھوج",
-    "translate-page-showing-none": "وکھانے آسطے کوئی سنیعا نئیں۔",
-    "translate-next": "اگلا صفحہ",
-    "translate-page-description-legend": "ٹولی دے بارے چ معلومات"
+	"@metadata": {
+		"authors": [
+			"Khalid Mahmood"
+		]
+	},
+	"translate": "ترجمعہ",
+	"translate-page-settings-legend": "ترتیب",
+	"translate-page-group": "ٹولی",
+	"translate-page-language": "بولی",
+	"translate-submit": "لے کے آؤ",
+	"translate-page-navigation-legend": "کھوج",
+	"translate-page-showing-none": "وکھانے آسطے کوئی سنیعا نئیں۔",
+	"translate-next": "اگلا صفحہ",
+	"translate-page-description-legend": "ٹولی دے بارے چ معلومات"
 }

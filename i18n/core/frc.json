@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Cedric31",
-            "RoyAlcatraz"
-        ]
-    },
-    "translate": "Tradusir",
-    "translate-submit": "Charcher",
-    "translate-next": "Page suivante",
-    "translate-prev": "Page avant",
-    "translate-optional": "(de choix)",
-    "translate-ignored": "(ignoré)",
-    "translate-language": "Langue:"
+	"@metadata": {
+		"authors": [
+			"Cedric31",
+			"RoyAlcatraz"
+		]
+	},
+	"translate": "Tradusir",
+	"translate-submit": "Charcher",
+	"translate-next": "Page suivante",
+	"translate-prev": "Page avant",
+	"translate-optional": "(de choix)",
+	"translate-ignored": "(ignoré)",
+	"translate-language": "Langue:"
 }

@@ -1,22 +1,22 @@
 {
-    "@metadata": {
-        "authors": [
-            "Nike",
-            "Shirayuki"
-        ]
-    },
-    "searchtranslations": "{{doc-special|SearchTranslations}}\n{{Identical|Search translation}}",
-    "tux-sst-edit": "A link text.",
-    "tux-sst-search": "A button text.\n{{Identical|Search}}",
-    "tux-sst-search-ph": "Placeholder text in input field.\n{{Identical|Search translation}}",
-    "tux-sst-count": "Parameters:\n* $1 - the number of search results",
-    "tux-sst-facet-language": "Label for a facet in [[Special:TranslationSearch]].\n{{Identical|Language}}",
-    "tux-sst-facet-group": "Label for a facet in [[Special:TranslationSearch]].\n{{Identical|Message group}}",
-    "tux-sst-facet-orphan": "Name for group of search results that don't belong to any known message groups.\n{{Identical|Orphan}}",
-    "tux-sst-nosolr-title": "Used as title of error page.\n\nThe body of error message is {{msg-mw|Tux-sst-nosolr-body}}.\n{{Identical|Search unavailable}}",
-    "tux-sst-nosolr-body": "Used as error message.\n\nThe page title for this message is {{msg-mw|Tux-sst-nosolr-title}}.",
-    "tux-sst-solr-offline-title": "Used as title of error page.\n\nThe body of error message is {{msg-mw|Tux-sst-solr-offline-body}}.\n{{Identical|Search unavailable}}",
-    "tux-sst-solr-offline-body": "Used as error message.\n\nThe page title for this message is {{msg-mw|tux-sst-solr-offline-title}}.",
-    "tux-sst-next": "Link to browser more search results.\n\nSee also:\n* {{msg-mw|Tux-sst-prev}}",
-    "tux-sst-prev": "Link to browser more search results.\n\nSee also:\n* {{msg-mw|Tux-sst-next}}"
+	"@metadata": {
+		"authors": [
+			"Nike",
+			"Shirayuki"
+		]
+	},
+	"searchtranslations": "{{doc-special|SearchTranslations}}\n{{Identical|Search translation}}",
+	"tux-sst-edit": "A link text.",
+	"tux-sst-search": "A button text.\n{{Identical|Search}}",
+	"tux-sst-search-ph": "Placeholder text in input field.\n{{Identical|Search translation}}",
+	"tux-sst-count": "Parameters:\n* $1 - the number of search results",
+	"tux-sst-facet-language": "Label for a facet in [[Special:TranslationSearch]].\n{{Identical|Language}}",
+	"tux-sst-facet-group": "Label for a facet in [[Special:TranslationSearch]].\n{{Identical|Message group}}",
+	"tux-sst-facet-orphan": "Name for group of search results that don't belong to any known message groups.\n{{Identical|Orphan}}",
+	"tux-sst-nosolr-title": "Used as title of error page.\n\nThe body of error message is {{msg-mw|Tux-sst-nosolr-body}}.\n{{Identical|Search unavailable}}",
+	"tux-sst-nosolr-body": "Used as error message.\n\nThe page title for this message is {{msg-mw|Tux-sst-nosolr-title}}.",
+	"tux-sst-solr-offline-title": "Used as title of error page.\n\nThe body of error message is {{msg-mw|Tux-sst-solr-offline-body}}.\n{{Identical|Search unavailable}}",
+	"tux-sst-solr-offline-body": "Used as error message.\n\nThe page title for this message is {{msg-mw|tux-sst-solr-offline-title}}.",
+	"tux-sst-next": "Link to browser more search results.\n\nSee also:\n* {{msg-mw|Tux-sst-prev}}",
+	"tux-sst-prev": "Link to browser more search results.\n\nSee also:\n* {{msg-mw|Tux-sst-next}}"
 }

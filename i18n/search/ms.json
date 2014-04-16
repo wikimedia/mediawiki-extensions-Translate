@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Anakmalaysia"
-        ]
-    },
-    "searchtranslations": "Cari terjemahan",
-    "tux-sst-edit": "Sunting terjemahan",
-    "tux-sst-search": "Cari",
-    "tux-sst-search-ph": "Cari terjemahan",
-    "tux-sst-count": "$1 hasil dijumpai",
-    "tux-sst-facet-language": "Bahasa",
-    "tux-sst-facet-group": "Message groups",
-    "tux-sst-facet-orphan": "(yatim)",
-    "tux-sst-nosolr-title": "Tidak boleh mencari",
-    "tux-sst-nosolr-body": "Wiki ini tiada ciri mencari terjemahan.",
-    "tux-sst-solr-offline-title": "Tidak boleh mencari",
-    "tux-sst-solr-offline-body": "Perkhidmatan pencarian tidak disediakan buat sementara waktu.",
-    "tux-sst-next": "Hasil berikutnya",
-    "tux-sst-prev": "Hasil terdahulu"
+	"@metadata": {
+		"authors": [
+			"Anakmalaysia"
+		]
+	},
+	"searchtranslations": "Cari terjemahan",
+	"tux-sst-edit": "Sunting terjemahan",
+	"tux-sst-search": "Cari",
+	"tux-sst-search-ph": "Cari terjemahan",
+	"tux-sst-count": "$1 hasil dijumpai",
+	"tux-sst-facet-language": "Bahasa",
+	"tux-sst-facet-group": "Message groups",
+	"tux-sst-facet-orphan": "(yatim)",
+	"tux-sst-nosolr-title": "Tidak boleh mencari",
+	"tux-sst-nosolr-body": "Wiki ini tiada ciri mencari terjemahan.",
+	"tux-sst-solr-offline-title": "Tidak boleh mencari",
+	"tux-sst-solr-offline-body": "Perkhidmatan pencarian tidak disediakan buat sementara waktu.",
+	"tux-sst-next": "Hasil berikutnya",
+	"tux-sst-prev": "Hasil terdahulu"
 }

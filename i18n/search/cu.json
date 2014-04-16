@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "ОйЛ"
-        ]
-    },
-    "tux-sst-search": "ищи",
-    "tux-sst-facet-language": "ѩꙁꙑци"
+	"@metadata": {
+		"authors": [
+			"ОйЛ"
+		]
+	},
+	"tux-sst-search": "ищи",
+	"tux-sst-facet-language": "ѩꙁꙑци"
 }

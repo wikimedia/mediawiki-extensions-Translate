@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Milicevic01"
-        ]
-    },
-    "tsb-accept-all-button-label": "Прихвати све",
-    "tsb-reject-all-button-label": "Одбији све"
+	"@metadata": {
+		"authors": [
+			"Milicevic01"
+		]
+	},
+	"tsb-accept-all-button-label": "Прихвати све",
+	"tsb-reject-all-button-label": "Одбији све"
 }

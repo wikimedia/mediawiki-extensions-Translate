@@ -1,31 +1,31 @@
 {
-    "@metadata": {
-        "authors": [
-            "DCLXVI",
-            "පසිඳු කාවින්ද"
-        ]
-    },
-    "tpt-diff-old": "Предишен текст",
-    "tpt-diff-new": "Нов текст",
-    "tpt-nosuchpage": "Страницата „$1“ не съществува",
-    "tpt-other-pages-title": "Счупени страници",
-    "tpt-select-prioritylangs-reason": "Причина:",
-    "translate-tag-translate-link-desc": "Превеждане на тази страница",
-    "tpt-languages-legend": "Други езици:",
-    "tpt-discouraged-language-reason": "Причина: $1",
-    "tpt-download-page": "Изнасяне на страница с преводите",
-    "tpt-aggregategroup-add": "Добавяне",
-    "tpt-aggregategroup-save": "Съхраняване",
-    "tpt-aggregategroup-new-name": "Име:",
-    "tpt-aggregategroup-new-description": "Описание (незадължително):",
-    "tpt-aggregategroup-invalid-group": "Групата не съществува",
-    "pt-movepage-list-other": "Други подстраници",
-    "pt-movepage-current": "Текущо име:",
-    "pt-movepage-new": "Ново име:",
-    "pt-movepage-reason": "Причина:",
-    "pt-movepage-subpages": "Преместване на всички подстраници",
-    "pt-deletepage-action-perform": "Извършване на изтриването",
-    "pt-deletepage-reason": "Причина:",
-    "pt-deletepage-subpages": "Изтриване на всички подстраници",
-    "pt-deletepage-list-other": "Други подстраници"
+	"@metadata": {
+		"authors": [
+			"DCLXVI",
+			"පසිඳු කාවින්ද"
+		]
+	},
+	"tpt-diff-old": "Предишен текст",
+	"tpt-diff-new": "Нов текст",
+	"tpt-nosuchpage": "Страницата „$1“ не съществува",
+	"tpt-other-pages-title": "Счупени страници",
+	"tpt-select-prioritylangs-reason": "Причина:",
+	"translate-tag-translate-link-desc": "Превеждане на тази страница",
+	"tpt-languages-legend": "Други езици:",
+	"tpt-discouraged-language-reason": "Причина: $1",
+	"tpt-download-page": "Изнасяне на страница с преводите",
+	"tpt-aggregategroup-add": "Добавяне",
+	"tpt-aggregategroup-save": "Съхраняване",
+	"tpt-aggregategroup-new-name": "Име:",
+	"tpt-aggregategroup-new-description": "Описание (незадължително):",
+	"tpt-aggregategroup-invalid-group": "Групата не съществува",
+	"pt-movepage-list-other": "Други подстраници",
+	"pt-movepage-current": "Текущо име:",
+	"pt-movepage-new": "Ново име:",
+	"pt-movepage-reason": "Причина:",
+	"pt-movepage-subpages": "Преместване на всички подстраници",
+	"pt-deletepage-action-perform": "Извършване на изтриването",
+	"pt-deletepage-reason": "Причина:",
+	"pt-deletepage-subpages": "Изтриване на всички подстраници",
+	"pt-deletepage-list-other": "Други подстраници"
 }

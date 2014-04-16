@@ -1,18 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Filipinayzd"
-        ]
-    },
-    "translate": "Sangliân",
-    "translate-submit": "Kûanón",
-    "translate-next": "Sunod na páhina",
-    "translate-prev": "Nakaaging páhina",
-    "translate-optional": "(opsyonal)",
-    "translate-magic-submit": "Kûanón",
-    "translate-magic-cm-export": "Ipadara",
-    "translate-magic-cm-current": "Presente",
-    "translate-magic-cm-original": "Orihinal",
-    "translate-magic-cm-save": "Itagama",
-    "translate-magic-cm-savefailed": "Bigô an pagtagama"
+	"@metadata": {
+		"authors": [
+			"Filipinayzd"
+		]
+	},
+	"translate": "Sangliân",
+	"translate-submit": "Kûanón",
+	"translate-next": "Sunod na páhina",
+	"translate-prev": "Nakaaging páhina",
+	"translate-optional": "(opsyonal)",
+	"translate-magic-submit": "Kûanón",
+	"translate-magic-cm-export": "Ipadara",
+	"translate-magic-cm-current": "Presente",
+	"translate-magic-cm-original": "Orihinal",
+	"translate-magic-cm-save": "Itagama",
+	"translate-magic-cm-savefailed": "Bigô an pagtagama"
 }

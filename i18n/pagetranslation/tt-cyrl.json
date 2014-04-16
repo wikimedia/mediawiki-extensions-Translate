@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "Ильнар",
-            "Рашат Якупов"
-        ]
-    },
-    "pagetranslation": "Битләр тәрҗемәсе",
-    "tpt-diff-new": "Яңа текст",
-    "translate-tag-translate-link-desc": "Бу битне тәрҗемә итү",
-    "tpt-translation-intro": "Әлеге бит [[$2]] сәхифәсенең <span class=\"plainlinks\">[$1 тәрҗемәсе булып тора]</span>. Тәрҗемә $3% башкарылган."
+	"@metadata": {
+		"authors": [
+			"Ильнар",
+			"Рашат Якупов"
+		]
+	},
+	"pagetranslation": "Битләр тәрҗемәсе",
+	"tpt-diff-new": "Яңа текст",
+	"translate-tag-translate-link-desc": "Бу битне тәрҗемә итү",
+	"tpt-translation-intro": "Әлеге бит [[$2]] сәхифәсенең <span class=\"plainlinks\">[$1 тәрҗемәсе булып тора]</span>. Тәрҗемә $3% башкарылган."
 }

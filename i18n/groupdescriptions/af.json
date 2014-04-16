@@ -1,24 +1,24 @@
 {
-    "@metadata": {
-        "authors": [
-            "Naudefj"
-        ]
-    },
-    "translate-group-desc-nodesc": "Geen beskrywing is vir hierdie boodskapgroep beskikbaar nie",
-    "translate-group-desc-mediawikicore": "Hierdie boodskapgroep bevat die boodskappe wat in die huidige alfa-weergawe van MediaWiki gebruik word - {{CURRENTVERSION}}",
-    "translate-group-desc-mediawikimostused": "Hierdie boodskapgroep bevat Mediawiki se [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mees gebruikte boodskappe]",
-    "translate-group-desc-mediawikiextensions": "Meta-boodskapgroep wat alle boodskappe vir ondersteunde MediaWiki-uitbreidings bevat",
-    "translate-group-desc-collection": "Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:Collection Collection] bevat",
-    "translate-group-desc-flaggedrevs": "Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] bevat",
-    "translate-group-desc-readerfeedback": "Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] bevat",
-    "translate-group-desc-translate": "Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:Translate Translate] bevat",
-    "translate-group-desc-wikiaextensions": "Meta-boodskapgroep wat alle boodskappe vir ondersteude MediaWiki-uitbreidings wat deur [http://www.wikia.com Wikia] gebruik word bevat",
-    "translate-group-desc-wikimediaextensions": "Meta-boodskapgroep wat alle boodskappe te ondersteuning van MediaWiki-uitbreidings wat deur die [https://wikimediafoundation.org/ Wikimedia Stigting] gebruik word bevat",
-    "bw-desc-freecol": "Lees asseblief [[Translating:FreeCol]] alvorens u begin vertaal.\nFreeCol maak van die GPL-lisensie gebruik.",
-    "bw-desc-fudforum": "[http://fudforum.org/ FUDforum], 'n webforum wat in PHP geskryf is.",
-    "bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] is 'n gratis web-gebaseerde foutnaspoor-stelsel. Rapporteer asseblief enige probleme op [[Support|Ondersteuning]].",
-    "bw-desc-mwlibrl": "'''mwlib.rl''' is 'n pythonbiblioteek vir die skep van PDF-dokumente vanaf MediaWiki-artikels wat deur die mwlib-biblioteek  verwerk is.\n\nSien [[mw:Extension:PDF Writer]] en [http://code.pediapress.com/wiki/wiki/mwlibrl PrediaPress] vir meer inligting.",
-    "bw-desc-osm-site": "Hierdie boodskapgroep bevat die koppelvlakboodskappe vir [[Translating:Open Street Map|Open Street Map]]",
-    "bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] is in staat om vinnig die outeurs van 'n bladsy in 'n Wikimedia-wiki te vind.",
-    "bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] is 'n projek wat 'n aflyn-weergawe van Wikipedia op 'n mobiele-toestel lewer."
+	"@metadata": {
+		"authors": [
+			"Naudefj"
+		]
+	},
+	"translate-group-desc-nodesc": "Geen beskrywing is vir hierdie boodskapgroep beskikbaar nie",
+	"translate-group-desc-mediawikicore": "Hierdie boodskapgroep bevat die boodskappe wat in die huidige alfa-weergawe van MediaWiki gebruik word - {{CURRENTVERSION}}",
+	"translate-group-desc-mediawikimostused": "Hierdie boodskapgroep bevat Mediawiki se [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mees gebruikte boodskappe]",
+	"translate-group-desc-mediawikiextensions": "Meta-boodskapgroep wat alle boodskappe vir ondersteunde MediaWiki-uitbreidings bevat",
+	"translate-group-desc-collection": "Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:Collection Collection] bevat",
+	"translate-group-desc-flaggedrevs": "Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] bevat",
+	"translate-group-desc-readerfeedback": "Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] bevat",
+	"translate-group-desc-translate": "Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:Translate Translate] bevat",
+	"translate-group-desc-wikiaextensions": "Meta-boodskapgroep wat alle boodskappe vir ondersteude MediaWiki-uitbreidings wat deur [http://www.wikia.com Wikia] gebruik word bevat",
+	"translate-group-desc-wikimediaextensions": "Meta-boodskapgroep wat alle boodskappe te ondersteuning van MediaWiki-uitbreidings wat deur die [https://wikimediafoundation.org/ Wikimedia Stigting] gebruik word bevat",
+	"bw-desc-freecol": "Lees asseblief [[Translating:FreeCol]] alvorens u begin vertaal.\nFreeCol maak van die GPL-lisensie gebruik.",
+	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], 'n webforum wat in PHP geskryf is.",
+	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] is 'n gratis web-gebaseerde foutnaspoor-stelsel. Rapporteer asseblief enige probleme op [[Support|Ondersteuning]].",
+	"bw-desc-mwlibrl": "'''mwlib.rl''' is 'n pythonbiblioteek vir die skep van PDF-dokumente vanaf MediaWiki-artikels wat deur die mwlib-biblioteek  verwerk is.\n\nSien [[mw:Extension:PDF Writer]] en [http://code.pediapress.com/wiki/wiki/mwlibrl PrediaPress] vir meer inligting.",
+	"bw-desc-osm-site": "Hierdie boodskapgroep bevat die koppelvlakboodskappe vir [[Translating:Open Street Map|Open Street Map]]",
+	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] is in staat om vinnig die outeurs van 'n bladsy in 'n Wikimedia-wiki te vind.",
+	"bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] is 'n projek wat 'n aflyn-weergawe van Wikipedia op 'n mobiele-toestel lewer."
 }

@@ -1,18 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kandar"
-        ]
-    },
-    "pagetranslation": "Alihbasa kaca",
-    "tpt-diff-old": "Téks saméméhna",
-    "tpt-diff-new": "Téks anyar",
-    "tpt-nosuchpage": "Kaca $1 euweuh.",
-    "pt-movepage-current": "Ngaran ayeuna:",
-    "pt-movepage-new": "Ngaran anyar:",
-    "pt-movepage-reason": "Alesan:",
-    "pt-movepage-subpages": "Pindahkeun sakabéh subkaca",
-    "pt-movepage-action-check": "Pariksa susuganan bisa dipindahkeun",
-    "pt-movepage-action-perform": "Pindahkeun",
-    "pt-movepage-action-other": "Ganti tujul"
+	"@metadata": {
+		"authors": [
+			"Kandar"
+		]
+	},
+	"pagetranslation": "Alihbasa kaca",
+	"tpt-diff-old": "Téks saméméhna",
+	"tpt-diff-new": "Téks anyar",
+	"tpt-nosuchpage": "Kaca $1 euweuh.",
+	"pt-movepage-current": "Ngaran ayeuna:",
+	"pt-movepage-new": "Ngaran anyar:",
+	"pt-movepage-reason": "Alesan:",
+	"pt-movepage-subpages": "Pindahkeun sakabéh subkaca",
+	"pt-movepage-action-check": "Pariksa susuganan bisa dipindahkeun",
+	"pt-movepage-action-perform": "Pindahkeun",
+	"pt-movepage-action-other": "Ganti tujul"
 }

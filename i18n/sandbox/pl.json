@@ -1,29 +1,29 @@
 {
-    "@metadata": {
-        "authors": [
-            "Chrumps"
-        ]
-    },
-    "managetranslatorsandbox": "Zarządzanie brudnopisem tłumacza",
-    "tsb-filter-pending": "Oczekujące wnioski",
-    "tsb-reminder-sending": "Wysyłanie przypomnienia...",
-    "tsb-reminder-sent-new": "Wyślij przypomnienie",
-    "tsb-reminder-failed": "Wysłanie przypomnienia nie powiodło się",
-    "tsb-email-promoted-subject": "Teraz jesteś tłumaczem w serwisie {{SITENAME}}",
-    "tsb-email-rejected-subject": "Twój wniosek o uzyskanie uprawnień tłumacza witryny {{SITENAME}} została odrzucony",
-    "tsb-request-count": "$1 {{PLURAL:$1|wniosek|wnioski|wniosków}}",
-    "tsb-all-languages-button-label": "Wszystkie języki",
-    "tsb-accept-button-label": "Akceptuj",
-    "tsb-reject-button-label": "Odrzuć",
-    "tsb-accept-all-button-label": "Akceptuje wszystkie",
-    "tsb-reject-all-button-label": "Odrzuć wszystkie",
-    "tsb-didnt-make-any-translations": "Ten użytkownik nie wykonał żadnego tłumaczenia.",
-    "tsb-translations-source": "Źródło",
-    "translationstash": "Witaj",
-    "translate-translationstash-welcome": "Witaj $1, jesteś {{GENDER:$1|nowym tłumaczem|nową tłumaczką}}",
-    "translate-translationstash-translations": "$1 {{PLURAL:$1|ukończone tłumaczenie|ukończone tłumaczenia|ukończonych tłumaczeń}}",
-    "tsb-limit-reached-title": "Dziękuję za Twoje tłumaczenia",
-    "log-name-translatorsandbox": "Brudnopis tłumaczeń",
-    "log-description-translatorsandbox": "To jest rejestr działań użytkowników brudnopisu tłumaczeń",
-    "logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|awansował|awansowała}} $3 na {{GENDER:$4|tłumacza|tłumaczkę}}"
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"managetranslatorsandbox": "Zarządzanie brudnopisem tłumacza",
+	"tsb-filter-pending": "Oczekujące wnioski",
+	"tsb-reminder-sending": "Wysyłanie przypomnienia...",
+	"tsb-reminder-sent-new": "Wyślij przypomnienie",
+	"tsb-reminder-failed": "Wysłanie przypomnienia nie powiodło się",
+	"tsb-email-promoted-subject": "Teraz jesteś tłumaczem w serwisie {{SITENAME}}",
+	"tsb-email-rejected-subject": "Twój wniosek o uzyskanie uprawnień tłumacza witryny {{SITENAME}} została odrzucony",
+	"tsb-request-count": "$1 {{PLURAL:$1|wniosek|wnioski|wniosków}}",
+	"tsb-all-languages-button-label": "Wszystkie języki",
+	"tsb-accept-button-label": "Akceptuj",
+	"tsb-reject-button-label": "Odrzuć",
+	"tsb-accept-all-button-label": "Akceptuje wszystkie",
+	"tsb-reject-all-button-label": "Odrzuć wszystkie",
+	"tsb-didnt-make-any-translations": "Ten użytkownik nie wykonał żadnego tłumaczenia.",
+	"tsb-translations-source": "Źródło",
+	"translationstash": "Witaj",
+	"translate-translationstash-welcome": "Witaj $1, jesteś {{GENDER:$1|nowym tłumaczem|nową tłumaczką}}",
+	"translate-translationstash-translations": "$1 {{PLURAL:$1|ukończone tłumaczenie|ukończone tłumaczenia|ukończonych tłumaczeń}}",
+	"tsb-limit-reached-title": "Dziękuję za Twoje tłumaczenia",
+	"log-name-translatorsandbox": "Brudnopis tłumaczeń",
+	"log-description-translatorsandbox": "To jest rejestr działań użytkowników brudnopisu tłumaczeń",
+	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|awansował|awansowała}} $3 na {{GENDER:$4|tłumacza|tłumaczkę}}"
 }

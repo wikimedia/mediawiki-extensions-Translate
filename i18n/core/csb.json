@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kaszeba"
-        ]
-    },
-    "translate": "Dolmôczë",
-    "translate-edit-in-other-languages": "Wiadło \"$1\" w jinych jãzëkach",
-    "translate-sidebar-alltrans": "W jinych jãzëkach"
+	"@metadata": {
+		"authors": [
+			"Kaszeba"
+		]
+	},
+	"translate": "Dolmôczë",
+	"translate-edit-in-other-languages": "Wiadło \"$1\" w jinych jãzëkach",
+	"translate-sidebar-alltrans": "W jinych jãzëkach"
 }

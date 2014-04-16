@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Gomoko"
-        ]
-    },
-    "searchtranslations": "Recherche de traductions",
-    "tux-sst-edit": "Modifier la traduction",
-    "tux-sst-search": "Rechercher",
-    "tux-sst-search-ph": "Recherche de traductions",
-    "tux-sst-count": "{{PLURAL:$1|Un résultat trouvé|$1 résultats trouvés}}",
-    "tux-sst-facet-language": "Langues",
-    "tux-sst-facet-group": "Groupes de message",
-    "tux-sst-facet-orphan": "(orphelin)",
-    "tux-sst-nosolr-title": "Recherche indisponible",
-    "tux-sst-nosolr-body": "Ce wiki n’a pas de service de recherche de traduction.",
-    "tux-sst-solr-offline-title": "Recherche indisponible",
-    "tux-sst-solr-offline-body": "Le service de recherche est temporairement indisponible.",
-    "tux-sst-next": "Résultats suivants",
-    "tux-sst-prev": "Résultats précédents"
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"searchtranslations": "Recherche de traductions",
+	"tux-sst-edit": "Modifier la traduction",
+	"tux-sst-search": "Rechercher",
+	"tux-sst-search-ph": "Recherche de traductions",
+	"tux-sst-count": "{{PLURAL:$1|Un résultat trouvé|$1 résultats trouvés}}",
+	"tux-sst-facet-language": "Langues",
+	"tux-sst-facet-group": "Groupes de message",
+	"tux-sst-facet-orphan": "(orphelin)",
+	"tux-sst-nosolr-title": "Recherche indisponible",
+	"tux-sst-nosolr-body": "Ce wiki n’a pas de service de recherche de traduction.",
+	"tux-sst-solr-offline-title": "Recherche indisponible",
+	"tux-sst-solr-offline-body": "Le service de recherche est temporairement indisponible.",
+	"tux-sst-next": "Résultats suivants",
+	"tux-sst-prev": "Résultats précédents"
 }

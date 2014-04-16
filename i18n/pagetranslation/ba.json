@@ -1,20 +1,20 @@
 {
-    "@metadata": {
-        "authors": [
-            "Haqmar"
-        ]
-    },
-    "pt-movepage-list-other": "Башҡа эске биттәр",
-    "pt-movepage-legend": "Тәржемә итеп булған биттәрҙең исемен үҙгәртергә",
-    "pt-movepage-current": "Хәҙерге исеме:",
-    "pt-movepage-new": "Яңы исеме:",
-    "pt-movepage-reason": "Сәбәп:",
-    "pt-movepage-subpages": "Бар эске биттәрҙең исемен үҙгәртергә",
-    "pt-movepage-action-perform": "Исемен үҙгәртергә",
-    "pt-movepage-action-other": "Маҡсатты үҙгәртергә",
-    "pt-deletepage-action-check": "Юйыласаҡ биттәр исемлеге",
-    "pt-deletepage-action-perform": "Юйырға",
-    "pt-deletepage-action-other": "Маҡсатты үҙгәртергә",
-    "pt-deletepage-lang-legend": "Тәржемә битен юйырға",
-    "pt-deletepage-full-legend": "Тәржемә итеп булған битте юйырға"
+	"@metadata": {
+		"authors": [
+			"Haqmar"
+		]
+	},
+	"pt-movepage-list-other": "Башҡа эске биттәр",
+	"pt-movepage-legend": "Тәржемә итеп булған биттәрҙең исемен үҙгәртергә",
+	"pt-movepage-current": "Хәҙерге исеме:",
+	"pt-movepage-new": "Яңы исеме:",
+	"pt-movepage-reason": "Сәбәп:",
+	"pt-movepage-subpages": "Бар эске биттәрҙең исемен үҙгәртергә",
+	"pt-movepage-action-perform": "Исемен үҙгәртергә",
+	"pt-movepage-action-other": "Маҡсатты үҙгәртергә",
+	"pt-deletepage-action-check": "Юйыласаҡ биттәр исемлеге",
+	"pt-deletepage-action-perform": "Юйырға",
+	"pt-deletepage-action-other": "Маҡсатты үҙгәртергә",
+	"pt-deletepage-lang-legend": "Тәржемә битен юйырға",
+	"pt-deletepage-full-legend": "Тәржемә итеп булған битте юйырға"
 }

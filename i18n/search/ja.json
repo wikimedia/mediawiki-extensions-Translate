@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shirayuki"
-        ]
-    },
-    "searchtranslations": "翻訳の検索",
-    "tux-sst-edit": "翻訳を編集",
-    "tux-sst-search": "検索",
-    "tux-sst-search-ph": "翻訳の検索",
-    "tux-sst-count": "{{PLURAL:$1|$1 件見つかりました}}",
-    "tux-sst-facet-language": "言語",
-    "tux-sst-facet-group": "メッセージ群",
-    "tux-sst-facet-orphan": "(孤立)",
-    "tux-sst-nosolr-title": "検索は利用できません",
-    "tux-sst-nosolr-body": "このウィキには翻訳の検索サービスはありません。",
-    "tux-sst-solr-offline-title": "検索は利用できません",
-    "tux-sst-solr-offline-body": "検索サービスは一時的に利用できません。",
-    "tux-sst-next": "次の検索結果",
-    "tux-sst-prev": "前の検索結果"
+	"@metadata": {
+		"authors": [
+			"Shirayuki"
+		]
+	},
+	"searchtranslations": "翻訳の検索",
+	"tux-sst-edit": "翻訳を編集",
+	"tux-sst-search": "検索",
+	"tux-sst-search-ph": "翻訳の検索",
+	"tux-sst-count": "{{PLURAL:$1|$1 件見つかりました}}",
+	"tux-sst-facet-language": "言語",
+	"tux-sst-facet-group": "メッセージ群",
+	"tux-sst-facet-orphan": "(孤立)",
+	"tux-sst-nosolr-title": "検索は利用できません",
+	"tux-sst-nosolr-body": "このウィキには翻訳の検索サービスはありません。",
+	"tux-sst-solr-offline-title": "検索は利用できません",
+	"tux-sst-solr-offline-body": "検索サービスは一時的に利用できません。",
+	"tux-sst-next": "次の検索結果",
+	"tux-sst-prev": "前の検索結果"
 }

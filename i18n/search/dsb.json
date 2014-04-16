@@ -1,21 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Michawiki"
-        ]
-    },
-    "searchtranslations": "Pśełožki pytaś",
-    "tux-sst-edit": "Pśełožk wobźěłaś",
-    "tux-sst-search": "Pytaś",
-    "tux-sst-search-ph": "Pśełožki pytaś",
-    "tux-sst-count": "{{PLURAL:$1|Jaden wuslědk namakany|$1 wuslědka namakanej|$1 wuslědki namakane|$1 wuslědkow namakane}}",
-    "tux-sst-facet-language": "Rěcy",
-    "tux-sst-facet-group": "Zdźěleńske kupki",
-    "tux-sst-facet-orphan": "(wósyrośone)",
-    "tux-sst-nosolr-title": "Pytanje njestoj k dispoziciji",
-    "tux-sst-nosolr-body": "Toś ten wiki njama słužbu za pytanje pśełožkow.",
-    "tux-sst-solr-offline-title": "Pytanje njestoj k dispoziciji",
-    "tux-sst-solr-offline-body": "Pytańska słužba njestoj tuchylu k dispoziciji.",
-    "tux-sst-next": "Pśiduce wuslědki",
-    "tux-sst-prev": "Pjerwjejšne wuslědki"
+	"@metadata": {
+		"authors": [
+			"Michawiki"
+		]
+	},
+	"searchtranslations": "Pśełožki pytaś",
+	"tux-sst-edit": "Pśełožk wobźěłaś",
+	"tux-sst-search": "Pytaś",
+	"tux-sst-search-ph": "Pśełožki pytaś",
+	"tux-sst-count": "{{PLURAL:$1|Jaden wuslědk namakany|$1 wuslědka namakanej|$1 wuslědki namakane|$1 wuslědkow namakane}}",
+	"tux-sst-facet-language": "Rěcy",
+	"tux-sst-facet-group": "Zdźěleńske kupki",
+	"tux-sst-facet-orphan": "(wósyrośone)",
+	"tux-sst-nosolr-title": "Pytanje njestoj k dispoziciji",
+	"tux-sst-nosolr-body": "Toś ten wiki njama słužbu za pytanje pśełožkow.",
+	"tux-sst-solr-offline-title": "Pytanje njestoj k dispoziciji",
+	"tux-sst-solr-offline-body": "Pytańska słužba njestoj tuchylu k dispoziciji.",
+	"tux-sst-next": "Pśiduce wuslědki",
+	"tux-sst-prev": "Pjerwjejšne wuslědki"
 }

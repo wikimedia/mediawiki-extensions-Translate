@@ -1,23 +1,23 @@
 {
-    "@metadata": {
-        "authors": [
-            "Ahmed-Najib-Biabani-Ibrahimkhel"
-        ]
-    },
-    "tsb-all-languages-button-label": "ټولې ژبې",
-    "tsb-search-requests": "د پلټنې غوښتنې",
-    "tsb-accept-button-label": "منل",
-    "tsb-reject-button-label": "ردول",
-    "tsb-selected-count": "{{PLURAL:$1|$1 کارن ټاکل شوی|$1 کارنان ټاکل شوي}}",
-    "tsb-older-requests": "$1 {{PLURAL:$1|زړه غوښتنه|زړې غوښتنې}}",
-    "tsb-accept-all-button-label": "ټول منل",
-    "tsb-reject-all-button-label": "ټول ردول",
-    "tsb-user-posted-a-comment": "يو ژباړن نه دی",
-    "tsb-reminder-link-text": "د يادولو برېښليک ورلېږل",
-    "tsb-didnt-make-any-translations": "دغه کارن کومې ژباړې نه دي ترسره کړي.",
-    "tsb-translations-source": "سرچينه",
-    "tsb-translations-user": "کارن ژباړې",
-    "tsb-translations-current": "شته ژباړې",
-    "translationstash": "ښه راغلۍ",
-    "translate-translationstash-welcome": "ښه راغلۍ {{GENDER:$1|$1}}، تاسې يو نوی ژباړن ياست"
+	"@metadata": {
+		"authors": [
+			"Ahmed-Najib-Biabani-Ibrahimkhel"
+		]
+	},
+	"tsb-all-languages-button-label": "ټولې ژبې",
+	"tsb-search-requests": "د پلټنې غوښتنې",
+	"tsb-accept-button-label": "منل",
+	"tsb-reject-button-label": "ردول",
+	"tsb-selected-count": "{{PLURAL:$1|$1 کارن ټاکل شوی|$1 کارنان ټاکل شوي}}",
+	"tsb-older-requests": "$1 {{PLURAL:$1|زړه غوښتنه|زړې غوښتنې}}",
+	"tsb-accept-all-button-label": "ټول منل",
+	"tsb-reject-all-button-label": "ټول ردول",
+	"tsb-user-posted-a-comment": "يو ژباړن نه دی",
+	"tsb-reminder-link-text": "د يادولو برېښليک ورلېږل",
+	"tsb-didnt-make-any-translations": "دغه کارن کومې ژباړې نه دي ترسره کړي.",
+	"tsb-translations-source": "سرچينه",
+	"tsb-translations-user": "کارن ژباړې",
+	"tsb-translations-current": "شته ژباړې",
+	"translationstash": "ښه راغلۍ",
+	"translate-translationstash-welcome": "ښه راغلۍ {{GENDER:$1|$1}}، تاسې يو نوی ژباړن ياست"
 }

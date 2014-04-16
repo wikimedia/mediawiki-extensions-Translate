@@ -1,17 +1,17 @@
 {
-    "@metadata": {
-        "authors": [
-            "Khan27"
-        ]
-    },
-    "searchtranslations": "Tərcümələri axtar",
-    "tux-sst-edit": "Tərcümələri redaktə et",
-    "tux-sst-search": "Axtar",
-    "tux-sst-search-ph": "Tərcümələri axtar",
-    "tux-sst-count": "{{PLURAL:$1|Bir nəticə tapıldı|$1 nəticə tapıldı}}",
-    "tux-sst-facet-language": "Dillər",
-    "tux-sst-facet-group": "Mesaj qrupları",
-    "tux-sst-facet-orphan": "(yetim)",
-    "tux-sst-nosolr-title": "Axtarış mümkün deyil",
-    "tux-sst-nosolr-body": "Bu viki üçün tərcümə axtarış sistemi yoxdur."
+	"@metadata": {
+		"authors": [
+			"Khan27"
+		]
+	},
+	"searchtranslations": "Tərcümələri axtar",
+	"tux-sst-edit": "Tərcümələri redaktə et",
+	"tux-sst-search": "Axtar",
+	"tux-sst-search-ph": "Tərcümələri axtar",
+	"tux-sst-count": "{{PLURAL:$1|Bir nəticə tapıldı|$1 nəticə tapıldı}}",
+	"tux-sst-facet-language": "Dillər",
+	"tux-sst-facet-group": "Mesaj qrupları",
+	"tux-sst-facet-orphan": "(yetim)",
+	"tux-sst-nosolr-title": "Axtarış mümkün deyil",
+	"tux-sst-nosolr-body": "Bu viki üçün tərcümə axtarış sistemi yoxdur."
 }

@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "Klenje"
-        ]
-    },
-    "translate-tag-translate-link-desc": "Tradûs cheste pagjine",
-    "tpt-languages-legend": "Altris lenghis:",
-    "tpt-aggregategroup-save": "Salve",
-    "tpt-aggregategroup-new-name": "Non:",
-    "pt-movepage-reason": "Reson:"
+	"@metadata": {
+		"authors": [
+			"Klenje"
+		]
+	},
+	"translate-tag-translate-link-desc": "Tradûs cheste pagjine",
+	"tpt-languages-legend": "Altris lenghis:",
+	"tpt-aggregategroup-save": "Salve",
+	"tpt-aggregategroup-new-name": "Non:",
+	"pt-movepage-reason": "Reson:"
 }

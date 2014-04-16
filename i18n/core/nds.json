@@ -1,31 +1,31 @@
 {
-    "@metadata": {
-        "authors": [
-            "Joachim Mos",
-            "Slomox"
-        ]
-    },
-    "translate": "Översetten",
-    "translate-taction-translate": "Översetten",
-    "translate-page-group": "Grupp",
-    "translate-page-language": "Spraak",
-    "translate-page-navigation-legend": "Navigatschoon",
-    "translate-next": "Nächste Siet",
-    "translate-prev": "Vörige Siet",
-    "translate-page-description-legend": "Informatschoon över de Köppel",
-    "translate-page-edit": "ännern",
-    "translate-ext-url": "<hr />Websied: $1",
-    "translate-optional": "(optschoonal)",
-    "translate-edit-title": "Ännern \"$1\"",
-    "translate-edit-translation": "Översetten",
-    "translate-edit-information": "Informatschoon to Nochricht ($1)",
-    "translate-edit-in-other-languages": "Nochricht in annere Spraken",
-    "translate-edit-tmmatch-source": "Översettenborntext: $1",
-    "translate-magic-cm-original": "Original",
-    "translate-magic-cm-comment": "Kommentar:",
-    "translate-magic-cm-save": "Spiekern",
-    "translate-magic-special": "Spezialsieden-Alternativnaams",
-    "translate-language-code": "Spraak-Code",
-    "translate-language-code-field-name": "Spraak-Code:",
-    "tux-proofread-edit-label": "Ännern"
+	"@metadata": {
+		"authors": [
+			"Joachim Mos",
+			"Slomox"
+		]
+	},
+	"translate": "Översetten",
+	"translate-taction-translate": "Översetten",
+	"translate-page-group": "Grupp",
+	"translate-page-language": "Spraak",
+	"translate-page-navigation-legend": "Navigatschoon",
+	"translate-next": "Nächste Siet",
+	"translate-prev": "Vörige Siet",
+	"translate-page-description-legend": "Informatschoon över de Köppel",
+	"translate-page-edit": "ännern",
+	"translate-ext-url": "<hr />Websied: $1",
+	"translate-optional": "(optschoonal)",
+	"translate-edit-title": "Ännern \"$1\"",
+	"translate-edit-translation": "Översetten",
+	"translate-edit-information": "Informatschoon to Nochricht ($1)",
+	"translate-edit-in-other-languages": "Nochricht in annere Spraken",
+	"translate-edit-tmmatch-source": "Översettenborntext: $1",
+	"translate-magic-cm-original": "Original",
+	"translate-magic-cm-comment": "Kommentar:",
+	"translate-magic-cm-save": "Spiekern",
+	"translate-magic-special": "Spezialsieden-Alternativnaams",
+	"translate-language-code": "Spraak-Code",
+	"translate-language-code-field-name": "Spraak-Code:",
+	"tux-proofread-edit-label": "Ännern"
 }
