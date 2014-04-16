@@ -129,6 +129,7 @@ class CommandlineExport extends Maintenance {
 		foreach ( $groups as $groupId => $group ) {
 			if ( !$group instanceof FileBasedMessageGroup ) {
 				$this->output( "EE2: Unknown message group $groupId.\n" );
+				unset( $groups[$groupId] );
 				continue;
 			}
 
