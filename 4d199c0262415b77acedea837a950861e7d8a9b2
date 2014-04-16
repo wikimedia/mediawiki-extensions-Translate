@@ -16,6 +16,24 @@
       "revId": "4d199c0262415b77acedea837a950861e7d8a9b2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_6243df43",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-04-16T17:53:47Z",
+      "side": 1,
+      "message": "self::checkNeedsFuzzy() is still using it, so no.",
+      "parentUuid": "8e23439c_6cfbd8ba",
+      "revId": "4d199c0262415b77acedea837a950861e7d8a9b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
