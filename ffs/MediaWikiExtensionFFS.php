@@ -108,6 +108,8 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 		return $value;
 	}
 
+
+
 	/**
 	 * @param string $data
 	 * @return array Parsed data.
@@ -129,6 +131,11 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 		return array(
 			'MESSAGES' => $messages,
 		);
+	}
+
+	// Handled in writeReal
+	protected function tryReadSource( $filename, MessageCollection $collection ) {
+		return;
 	}
 
 	/**
