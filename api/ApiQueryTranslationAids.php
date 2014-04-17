@@ -125,8 +125,4 @@ class ApiTranslationAids extends ApiBase {
 			"api.php?action=translationaids&title=MediaWiki:January/fi",
 		);
 	}
-
-	public function getVersion() {
-		return __CLASS__ . ': ' . TRANSLATE_VERSION;
-	}
 }

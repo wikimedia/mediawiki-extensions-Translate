@@ -93,8 +93,4 @@ class ApiTTMServer extends ApiBase {
 			'api.php?action=ttmserver&sourcelanguage=en&targetlanguage=fi&text=Help',
 		);
 	}
-
-	public function getVersion() {
-		return __CLASS__ . ': ' . TRANSLATE_VERSION;
-	}
 }

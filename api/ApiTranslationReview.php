@@ -197,10 +197,6 @@ class ApiTranslationReview extends ApiBase {
 		);
 	}
 
-	public function getVersion() {
-		return __CLASS__ . ': ' . TRANSLATE_VERSION;
-	}
-
 	public static function getToken() {
 		$user = RequestContext::getMain()->getUser();
 		if ( !$user->isAllowed( self::$right ) ) {

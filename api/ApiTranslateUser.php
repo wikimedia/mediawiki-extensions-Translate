@@ -38,10 +38,6 @@ class ApiTranslateUser extends ApiBase {
 		);
 	}
 
-	public function getVersion() {
-		return '2012-11-30';
-	}
-
 	/**
 	 * Keeps track of recently used message groups per user.
 	 */

@@ -74,8 +74,4 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 				'zero, only the cached results from the beginning are returned.',
 		);
 	}
-
-	public function getVersion() {
-		return __CLASS__ . ': ' . TRANSLATE_VERSION;
-	}
 }

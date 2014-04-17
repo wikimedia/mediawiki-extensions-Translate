@@ -213,10 +213,6 @@ class ApiAggregateGroups extends ApiBase {
 		);
 	}
 
-	public function getVersion() {
-		return __CLASS__ . ': ' . TRANSLATE_VERSION;
-	}
-
 	public static function getAllPages() {
 		$groups = MessageGroups::getAllGroups();
 		$pages = array();

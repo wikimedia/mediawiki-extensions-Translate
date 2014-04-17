@@ -163,9 +163,4 @@ class ApiTranslationStash extends ApiBase {
 			"api.php?action=translationstash&subaction=query",
 		);
 	}
-
-	// BC for old MW
-	public function getVersion() {
-		return __CLASS__ . ': ' . TRANSLATE_VERSION;
-	}
 }

@@ -284,8 +284,4 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				"More information about latest translation revisions for group $group",
 		);
 	}
-
-	public function getVersion() {
-		return __CLASS__ . ': ' . TRANSLATE_VERSION;
-	}
 }

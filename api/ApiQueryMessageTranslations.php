@@ -156,8 +156,4 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 				"List of translations in the wiki for MediaWiki:January",
 		);
 	}
-
-	public function getVersion() {
-		return __CLASS__ . ': ' . TRANSLATE_VERSION;
-	}
 }

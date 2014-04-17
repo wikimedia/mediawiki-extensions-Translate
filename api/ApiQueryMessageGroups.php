@@ -358,8 +358,4 @@ TEXT;
 			'api.php?action=query&meta=messagegroups',
 		);
 	}
-
-	public function getVersion() {
-		return __CLASS__ . ': ' . TRANSLATE_VERSION;
-	}
 }
