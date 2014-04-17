@@ -260,15 +260,17 @@ $specialPageAliases['diq'] = array(
 	'LanguageStats' => array( 'Zıwanİst' ),
 	'Magic' => array( 'AçarnayışoHerayen' ),
 	'ManageMessageGroups' => array( 'GrubanéMesacanİdareke' ),
+	'ManageTranslatorSandbox' => array( 'İdareyaQumdorAçarnayış', 'QumdorAçarnayış' ),
 	'MessageGroupStats' => array( 'İstatistikéGrubandéMesacan' ),
 	'MyLanguage' => array( 'ZıwaneMe' ),
-	'PageTranslation' => array( 'PeraAçarnayış' ),
-	'PageTranslationDeletePage' => array( 'PelaAçarnayışéPelaBesternayışi' ),
-	'SearchTranslations' => array( 'AçarnayışaCıgeyre' ),
+	'PageTranslation' => array( 'PerraAçarnayış' ),
+	'PageTranslationDeletePage' => array( 'PerraAçarnayışéPerraBesternayış' ),
+	'SearchTranslations' => array( 'AçarnayışaCıgeyreyış' ),
 	'SupportedLanguages' => array( 'ZıwanêkeDestegnênê' ),
 	'Translate' => array( 'Açarnayış' ),
+	'TranslationStash' => array( 'AçarnayışiNımnanyış' ),
 	'TranslationStats' => array( 'İstatistikéAçarnayışi' ),
-	'Translations' => array( 'Açarneri' ),
+	'Translations' => array( 'Açarnoği' ),
 );
 
 /** Lower Sorbian (dolnoserbski) */
