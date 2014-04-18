@@ -19,6 +19,7 @@
 	"tsb-all-languages-button-label": "Todos los idiomas",
 	"tsb-accept-button-label": "Aceptar",
 	"tsb-reject-button-label": "Rechazar",
+	"tsb-older-requests": "$1 solicitud{{PLURAL:$1| anterior|es anteriores}}",
 	"tsb-accept-all-button-label": "Aceptar todos",
 	"tsb-reject-all-button-label": "Rechazar todos",
 	"tsb-user-posted-a-comment": "No es traductor",

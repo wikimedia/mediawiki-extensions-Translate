@@ -19,7 +19,7 @@
 	"tsb-reject-all-button-label": "Odrzuć wszystkie",
 	"tsb-didnt-make-any-translations": "Ten użytkownik nie wykonał żadnego tłumaczenia.",
 	"tsb-translations-source": "Źródło",
-	"translationstash": "Witaj",
+	"translationstash": "Powitanie",
 	"translate-translationstash-welcome": "Witaj $1, jesteś {{GENDER:$1|nowym tłumaczem|nową tłumaczką}}",
 	"translate-translationstash-translations": "$1 {{PLURAL:$1|ukończone tłumaczenie|ukończone tłumaczenia|ukończonych tłumaczeń}}",
 	"tsb-limit-reached-title": "Dziękuję za Twoje tłumaczenia",

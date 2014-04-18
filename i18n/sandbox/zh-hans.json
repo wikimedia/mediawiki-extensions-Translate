@@ -36,7 +36,7 @@
 	"tsb-translations-source": "来源",
 	"tsb-translations-user": "用户翻译",
 	"tsb-translations-current": "现有翻译",
-	"tsb-delete-userpage-summary": "删除沙盒用户的用户页",
+	"tsb-delete-userpage-summary": "删除沙盒用户的用户页面",
 	"translationstash": "欢迎",
 	"translate-translationstash-welcome": "欢迎您{{GENDER:$1|$1}}，您已成为新的译者",
 	"translate-translationstash-welcome-note": "逐渐熟悉翻译工具。翻译一些信息，获得完整的译者权限去参与你喜欢的项目。",

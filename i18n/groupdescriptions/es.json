@@ -29,6 +29,7 @@
 	"bw-desc-freecol": "Antes de traducir FreeCol a tu idioma, por favor lee [[Translating:FreeCol]]. Freecol usa la licencia GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], un foro web escrito en PHP.",
 	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] es un sistema de corrección de errores libre basado en web. Por favor reporta cualquier problema en [[Support]].",
+	"translate-group-desc-blockly": "Grupo de mensajes de [[Translating:Blockly|Blockly]]",
 	"translate-group-desc-eol": "Grupo de mensajes de la [[Translating:EOL|Enciclopedia de la vida]]",
 	"translate-group-desc-ihris": "Un grupo de mensajes de [[Translating:iHRIS|iHRIS]]",
 	"translate-group-desc-kiwix": "Un grupo de mensajes de [[Translating:Kiwix|Kiwix]]",

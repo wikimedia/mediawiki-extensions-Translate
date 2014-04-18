@@ -5,12 +5,18 @@
 			"Ovruni"
 		]
 	},
+	"searchtranslations": "Buscar en las traducciones",
 	"tux-sst-edit": "Editar traducción",
 	"tux-sst-search": "Buscar",
 	"tux-sst-search-ph": "Buscar traducciones",
 	"tux-sst-count": "Se {{PLURAL:$1|encontró un resultado|encontraron $1 resultados}}",
 	"tux-sst-facet-language": "Idiomas",
 	"tux-sst-facet-group": "Grupos de mensajes",
+	"tux-sst-facet-orphan": "(huérfano)",
+	"tux-sst-nosolr-title": "Búsqueda no disponible",
+	"tux-sst-nosolr-body": "Este wiki no tiene un servicio de búsqueda de traducciones.",
+	"tux-sst-solr-offline-title": "Búsqueda no disponible",
+	"tux-sst-solr-offline-body": "El servicio de búsqueda no está disponible temporalmente.",
 	"tux-sst-next": "Resultados siguientes",
 	"tux-sst-prev": "Resultados anteriores"
 }
