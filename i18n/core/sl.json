@@ -382,5 +382,6 @@
 	"translate-statsbar-tooltip": "$1% prevedenih, $2% pregledanih",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% prevedenih, $2% pregledanih, $3% zastarelih",
 	"translate-search-more-groups-info": "Še $1 {{PLURAL:$1|skupina|skupini|skupine|skupin}}",
-	"translate-ulsdep-title": "Napaka pri konfiguraciji"
+	"translate-ulsdep-title": "Napaka pri konfiguraciji",
+	"translate-ulsdep-body": "Razširitev Translate je odvisna od [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector razširitve Universal Language Selector]."
 }
