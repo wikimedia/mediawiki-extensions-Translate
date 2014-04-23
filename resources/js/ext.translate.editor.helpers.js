@@ -145,7 +145,7 @@
 
 				$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
 
-				if ( documentation.value.length > 500 ) {
+				if ( documentation.html.length > 500 ) {
 					expand = function () {
 						$messageDoc.removeClass( 'compact' );
 						$readMore.text( mw.msg( 'tux-editor-message-desc-less' ) );
