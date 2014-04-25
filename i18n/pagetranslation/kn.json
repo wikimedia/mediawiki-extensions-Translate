@@ -1,10 +1,31 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nayvik"
+			"Nayvik",
+			"VASANTH S.N."
 		]
 	},
+	"pagetranslation": "ಪುಟ ಭಾಷಾಂತರ",
+	"tpt-template": "ಪುಟ ಸಿದ್ಧವಿನ್ಯಾಸ",
+	"tpt-diff-old": "ಹಿಂದಿನ ಪಠ್ಯ",
+	"tpt-diff-new": "ಹೊಸ ಪಠ್ಯ",
+	"tpt-old-pages-title": "ಭಾಷಾಂತರದಲ್ಲಿರುವ ಪುಟಗಳು",
+	"tpt-select-prioritylangs-reason": "ಕಾರಣ:",
+	"tpt-rev-mark": "ಭಾಷಾಂತರಕ್ಕೆ ಗುರುತುಮಾಡಿ",
+	"tpt-rev-unmark": "ಭಾಷಾಂತರದಿಂದ ತೆಗೆದುಹಾಕಿ",
+	"tpt-rev-encourage": "ಹಿಂದೆ ಇದ್ದಂತೆ ಮಾಡು",
 	"translate-tag-translate-link-desc": "ಈ ಪುಟವನ್ನು ಅನುವಾದಿಸಿ",
+	"translate-tag-markthis": "ಭಾಷಾಂತರಕ್ಕೆ ಈ ಪುಟವನ್ನು ಗುರುತುಮಾಡಿ",
 	"tpt-languages-legend": "ಇತರ ಭಾಷೆಗಳು:",
-	"pt-movepage-reason": "ಕಾರಣ:"
+	"tpt-tab-translate": "ಭಾಷಾಂತರಿಸಿ",
+	"tpt-discouraged-language-reason": "ಕಾರಣ: $1",
+	"tpt-aggregategroup-add": "ಸೇರಿಸು",
+	"tpt-aggregategroup-save": "ಉಳಿಸಿ",
+	"tpt-aggregategroup-new-name": "ಹೆಸರು:",
+	"pt-movepage-current": "ಪ್ರಸ್ತುತ ಹೆಸರು:",
+	"pt-movepage-new": "ಹೊಸ ಹಸರು:",
+	"pt-movepage-reason": "ಕಾರಣ:",
+	"pt-deletepage-current": "ಪುಟದ ಹೆಸರು:",
+	"pt-deletepage-reason": "ಕಾರಣ:",
+	"pt-deletepage-list-translation": "ಭಾಷಾಂತರ ಪುಟಗಳು"
 }

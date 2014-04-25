@@ -206,6 +206,7 @@
 	"translate-smg-nochanges": "沒有變更要處理。",
 	"translate-smg-submit": "提交變更以處理",
 	"translate-smg-submitted": "消息定義已更新。變更正在後台處理。",
+	"translate-smg-more": "提交這些更改後，這𥚃將會有更多更改處理。",
 	"translate-smg-left": "Wiki中的消息內容",
 	"translate-smg-right": "發生的變更",
 	"translate-manage-import-diff": "訊息 $1 | 操作：$2",
