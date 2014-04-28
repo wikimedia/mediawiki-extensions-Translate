@@ -1,8 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mirzali"
+			"Mirzali",
+			"Marmase"
 		]
 	},
-	"tux-sst-facet-language": "Zıwani"
+	"searchtranslations": "Bı geyr açarnayışa",
+	"tux-sst-edit": "Açarnayışi bıvurne",
+	"tux-sst-search": "Cı geyre",
+	"tux-sst-search-ph": "Bı geyr açarnayışa",
+	"tux-sst-count": "{{PLURAL:$1|Jew netice vineya|$1 neticey vineyay|0=teba nêvineya}}",
+	"tux-sst-facet-language": "Zıwani",
+	"tux-sst-facet-group": "Gruba mesacan",
+	"tux-sst-facet-orphan": "(seyqur)",
+	"tux-sst-nosolr-title": "Cı geyrayışo nêgurweyêno",
+	"tux-sst-nosolr-body": "Na wiki de xızmeta açarnayışi çıniya",
+	"tux-sst-solr-offline-title": "Cı geyrayışo nêgurweyêno",
+	"tux-sst-solr-offline-body": "Xızmeta cı geyrayışi ya enewke nêgurweyêna.",
+	"tux-sst-next": "Neticeyo bahdoyên",
+	"tux-sst-prev": "Neticeyê verêni"
 }
