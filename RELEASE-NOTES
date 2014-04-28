@@ -1,0 +1,10 @@
+== Translate 2014.04 ==
+Released at 2014-04-28.
+
+=== Noteworthy changes ===
+* Added ElasticSearch support for translation memory and translation search.
+* Set JSON message format as default for MediaWiki extensions.
+* Add tracking (mw.track) for primary events: translation and proofread.
+* Removed SingleFileBasedMessageGroup.
+* Removed classes used for supporting the old MediaWiki core format and updated related maintenance scripts.
+* Localisation updates.
