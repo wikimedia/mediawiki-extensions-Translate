@@ -86,7 +86,7 @@
 	"translate-checks-pagename": "Määratluses esinev nimeruum muudetud",
 	"translate-checks-format": "Tõlge ei lähtu määratlusest või selle süntaks on vigane: $1",
 	"translate-checks-parametersnotequal": "Parameetrite arv on {{PLURAL:$1|$1}}; peaks aga olema {{PLURAL:$2|$2}}.",
-	"translate-checks-malformed": "<nowiki>$1</nowiki> on rikutud.",
+	"translate-checks-malformed": "<nowiki>$1</nowiki> on väärdunud.",
 	"translate-pref-nonewsletter": "Ära saada saada mulle sõnumilehti",
 	"translate-pref-editassistlang": "Tugikeeled:",
 	"prefs-translate": "Tõlkesätted",

@@ -4,8 +4,11 @@
 			"פוילישער"
 		]
 	},
+	"searchtranslations": "זוכן איבערזעצונגען",
 	"tux-sst-edit": "רעדאַקטירן איבערזעצונג",
 	"tux-sst-search": "זוכן",
+	"tux-sst-search-ph": "זוכן איבערזעצונגען",
+	"tux-sst-count": "{{PLURAL:$1|איין רעזולטאט געטראפן|$1 רעזולטאטן געטראפן}}",
 	"tux-sst-facet-language": "שפּראַכן",
 	"tux-sst-facet-group": "מעלדונג גרופעס",
 	"tux-sst-facet-orphan": "(יתום)",
