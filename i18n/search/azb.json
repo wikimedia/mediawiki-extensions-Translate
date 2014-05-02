@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mousa"
+		]
+	},
+	"tux-sst-edit": "چئویرمه‌نی دَییشدیر",
+	"tux-sst-search-ph": "چئویرمه‌لر آختاریشی",
+	"tux-sst-count": "{{PLURAL:$1|0=هئچ سونوج تاپیلمادی|بیر سونوج تاپیلدی|$1 سونوج تاپیلدی}}",
+	"tux-sst-facet-language": "دیل‌لر",
+	"tux-sst-facet-group": "مئساژ قروپلاری"
+}

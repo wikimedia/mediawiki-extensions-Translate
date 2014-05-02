@@ -11,7 +11,8 @@
 			"Shirayuki",
 			"The Evil IP address",
 			"Umherirrender",
-			"Vogone"
+			"Vogone",
+			"Sebastian Wallroth"
 		]
 	},
 	"pagetranslation": "Seiten übersetzen",
@@ -101,7 +102,7 @@
 	"pt-shake-empty": "Die Übersetzungseinheit für Marker „$1“ ist leer.",
 	"log-description-pagetranslation": "Logbuch der Änderungen im Zusammenhang mit dem Übersetzungssystem für Seiten",
 	"log-name-pagetranslation": "Übersetzungs-Logbuch",
-	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|markierte}} die Seite $3 zum Übersetzen",
+	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|markierte}}  $3  für die Übersetzung",
 	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|entfernte}} die Seite $3 aus dem Übersetzungssystem",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|schloss}} die Umbenennung der übersetzbaren Seite von $3 in $4 ab",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|hatte}} ein Problem beim Verschieben der Seite von $3 nach $4",

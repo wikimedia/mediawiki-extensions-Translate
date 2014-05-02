@@ -110,7 +110,7 @@
 	"supportedlanguages": "Zıwanê ke qebulyayê",
 	"supportedlanguages-translators": "{{PLURAL:$2|Açerner|Açerneri}}: $1",
 	"supportedlanguages-recenttranslations": "Çarnayışe bahdoni",
-	"supportedlanguages-activity": "$1: Verdê $3 {{PLURAL:$3|roce|rocan}} -  $2 {{PLURAL:$2|iştiraq|İştiraqi}} kerdê",
+	"supportedlanguages-activity": "$1: pêro piya $2 {{PLURAL:$2|vurnayış|vurnayışi}} - vurnayışo peyên $3 {{PLURAL:$3|roce|roci}} aver keriya",
 	"translate-save": "($1) qeyd ke",
 	"translate-jssti-add": "Listiy miyan fi",
 	"managemessagegroups": "İdariya Mesacan de gruban",
