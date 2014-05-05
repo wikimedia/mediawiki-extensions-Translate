@@ -388,5 +388,7 @@
 	"translate-search-more-languages-info": "mais $1 {{PLURAL:$1|língua|línguas}}",
 	"translate-statsbar-tooltip": "$1% traduzidas, $2% revistas",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduzidas, $2% revistas, $3% desatualizadas",
-	"translate-search-more-groups-info": "mais $1 {{PLURAL:$1|grupo|grupos}}"
+	"translate-search-more-groups-info": "mais $1 {{PLURAL:$1|grupo|grupos}}",
+	"translate-ulsdep-title": "Erro de configuração",
+	"translate-ulsdep-body": "A extensão de tradução depende da [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector extensão Universal Language Selector]."
 }
