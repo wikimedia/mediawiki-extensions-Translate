@@ -4,7 +4,8 @@
 			"Freebiekr",
 			"Kwj2772",
 			"아라",
-			"Priviet"
+			"Priviet",
+			"Hym411"
 		]
 	},
 	"pagetranslation": "문서 번역",
@@ -41,8 +42,8 @@
 	"tpt-old-pages-title": "번역 문서",
 	"tpt-other-pages-title": "잘못된 문서",
 	"tpt-discouraged-pages-title": "없어진 문서",
-	"tpt-new-pages": "{{PLURAL:$1|이 문서는}} 번역 태그로 글자를 포함하지만,\n현재 번역에서 표시한 {{PLURAL:$1|이 문서}}의 판이 없습니다.",
-	"tpt-old-pages": "번역으로 표시한 {{PLURAL:$1|이 문서}}의 일부 버전입니다.",
+	"tpt-new-pages": "{{PLURAL:$1|이 문서는}} 번역을 위해 태그된 문자를 포함하지만,\n번역하도록 표시된 {{PLURAL:$1|이 문서}}의 판이 없습니다.",
+	"tpt-old-pages": "{{PLURAL:$1|이 문서}}의 일부 판은 번역하도록 표시되었습니다.",
 	"tpt-other-pages": "{{PLURAL:$1|이 문서의 오래된 판}}은 번역에서 표시했습니다,\n하지만 최신 {{PLURAL:$1|판}}은 번역에서 표시할 수 없었습니다.",
 	"tpt-discouraged-pages": "{{PLURAL:$1|이 문서는}} 추가 번역에서 없어졌습니다.",
 	"tpt-select-prioritylangs": "우선 언어 코드의 쉼표로 구분한 목록:",
