@@ -38,6 +38,7 @@
 	"translate-group-desc-mediawiki-core-branch": "[[Translating:MediaWiki|MediaWiki]] 安定版のメッセージ群",
 	"translate-group-desc-mifos": "[[Translating:Mifos|Mifos]] は、マイクロファイナンスのための経営情報システムです",
 	"bw-desc-mwlibrl": "[[Translating:Mwlib.rl|Mwlib.rl]] は、MediaWiki のページから PDF 文書を作成するためのライブラリです",
+	"translate-group-desc-nfcring-control": "[[Translating:NFC_Ring_Control|NFC Ring Control]] は、NFC タグとやり取りする携帯機器向けアプリです",
 	"translate-group-desc-okawix": "[[Translating:Okawix|Okawix]] は、オフラインでのウィキペディア閲覧機器です",
 	"translate-group-desc-openimages-all": "これらのメッセージは、[[Translating:Open Images|Open Images]] プロジェクトの一部です",
 	"bw-desc-openstreetmap": "[[Translating:OpenStreetMap|OpenStreetMap]] に関連する全メッセージ",

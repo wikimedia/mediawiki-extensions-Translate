@@ -385,5 +385,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "Đã biên dịch $1%, đã duyệt $2%, $3% lỗi thời",
 	"translate-search-more-groups-info": "$1 nhóm nữa",
 	"translate-ulsdep-title": "Lỗi cấu hình",
-	"translate-ulsdep-body": "Phần mở rộng Biên dịch cần [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector phần mở rộng Lựa chọn Ngôn ngữ Toàn thể]."
+	"translate-ulsdep-body": "Phần mở rộng Biên dịch cần [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector?uselang=vi phần mở rộng Lựa chọn Ngôn ngữ Toàn thể]."
 }

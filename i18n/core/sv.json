@@ -398,5 +398,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% översatt, $2% granskat, $3% föråldrat",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|till grupp|fler grupper}}",
 	"translate-ulsdep-title": "Konfigurationsfel",
-	"translate-ulsdep-body": "Översättningstillägget är beroende av [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector Universal Language Selector]-tillägget."
+	"translate-ulsdep-body": "Översättningstillägget är beroende av [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector]-tillägget."
 }

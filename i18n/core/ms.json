@@ -323,7 +323,7 @@
 	"tux-editor-skip-button-label": "Langkau ke mesej seterusnya",
 	"tux-editor-cancel-button-label": "Batalkan",
 	"tux-editor-confirm-button-label": "Sahkan terjemahan",
-	"tux-editor-shortcut-info": "Tekan \"$1\" untuk menyimpan, atau \"$2\" untuk melangkau ke mesej seterusnya",
+	"tux-editor-shortcut-info": "Tekan \"$1\" untuk menyimpan, \"$2\" untuk melangkau ke mesej seterusnya, atau \"$3\" untuk lain-lain pintasan.",
 	"tux-editor-edit-desc": "Sunting dokumentasi",
 	"tux-editor-add-desc": "Wujudkan dokumentasi",
 	"tux-editor-suggestions-title": "Cadangan",
@@ -384,5 +384,7 @@
 	"translate-search-more-languages-info": "$1 lagi bahasa",
 	"translate-statsbar-tooltip": "$1% diterjemah, $2% disemak",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% diterjemah, $2% disemak, $3 lapuk",
-	"translate-search-more-groups-info": "$1 lagi kumpulan"
+	"translate-search-more-groups-info": "$1 lagi kumpulan",
+	"translate-ulsdep-title": "Ralat konfigurasi",
+	"translate-ulsdep-body": "Sambungan Translate bersandarkan [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector sambugnan Universal Language Selector]."
 }

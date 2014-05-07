@@ -395,5 +395,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tradotti, $2% revisionati, $3% da aggiornare",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|altro gruppo|altri gruppi}}",
 	"translate-ulsdep-title": "Errore di configurazione",
-	"translate-ulsdep-body": "L'estensione Translate dipende dall'[https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector estensione Universal Language Selector]."
+	"translate-ulsdep-body": "L'estensione Translate dipende dall'[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector estensione Universal Language Selector]."
 }
