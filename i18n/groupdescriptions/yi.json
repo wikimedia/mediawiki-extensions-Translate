@@ -4,13 +4,14 @@
 			"פוילישער"
 		]
 	},
-	"translategroupdescriptions-desc": "מעלדונג גרופע באשרייבונגען פאר פראדוקטן געשטיצט מיטן [https://mediawiki.org/wiki/Extension:Translate איבערזעצונג] פארברייטערונג",
-	"translate-group-desc-nodesc": "נישט פֿאראן קיין באשרייבונג פאר דער מעלדונג גרופע",
-	"translate-group-desc-mediawikicore": "די מעלדונג גרופע אנטהאלט די מעלגדונגען געניצט אין דער לויפיגער אלפא ווערסיע פון מעדיעוויקי  ({{CURRENTVERSION}})",
-	"translate-group-desc-mediawikimostused": "די מעלדונג גרופע אנטהאלט די [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 מערסטע געניצטע מעלגדונגען] אין [[Translating:MediaWiki|מעדיעוויקים]]",
-	"translate-group-desc-mediawikiextensions": "מעטא מעלדונג גרופע וואס אנטהאלט אלע מעלדונגען פאר געשטיצטע פארברייטערונגען פאר [[Translating:MediaWiki|מעדיעוויקי]]",
-	"translate-group-desc-wikimediaextensions": "מעטא־גרופע וואס אנטהאלט אלע מעלדונגען פאר געשטיצטע מעדיעוויקי פארברייטערונגען געניצט דורך דער [https://wikimediafoundation.org/ וויקימעדיע פונדאציע]",
-	"translate-group-desc-translatablepages": "אלע איבערזעצבאַרע בלעטער",
+	"translate-group-desc-europeana": "[[Translating:Europeana|Europeana]] דערמעגלעכט מענטשן אויספארשן די קולטורעלע רעסורסן פון אייראפע",
 	"translate-group-desc-kiwix": "א מעלדונג גרופע פאר [[Translating:Kiwix|קיוויקס]]",
-	"translate-group-desc-mediawiki-core-branch": "מעלדונגען פאר א סטאבילער ווערסיע פון [[Translating:MediaWiki|מעדיעוויקי]]"
+	"translate-group-desc-mediawiki-core-branch": "מעלדונגען פאר א סטאבילער ווערסיע פון [[Translating:MediaWiki|מעדיעוויקי]]",
+	"translate-group-desc-mediawikicore": "די מעלדונג גרופע אנטהאלט די מעלגדונגען געניצט אין דער לויפיגער אלפא ווערסיע פון מעדיעוויקי  ({{CURRENTVERSION}})",
+	"translate-group-desc-mediawikiextensions": "מעטא מעלדונג גרופע וואס אנטהאלט אלע מעלדונגען פאר געשטיצטע פארברייטערונגען פאר [[Translating:MediaWiki|מעדיעוויקי]]",
+	"translate-group-desc-mediawikimostused": "די מעלדונג גרופע אנטהאלט די [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 מערסטע געניצטע מעלגדונגען] אין [[Translating:MediaWiki|מעדיעוויקים]]",
+	"translate-group-desc-nodesc": "נישט פֿאראן קיין באשרייבונג פאר דער מעלדונג גרופע",
+	"translate-group-desc-translatablepages": "אלע איבערזעצבאַרע בלעטער",
+	"translate-group-desc-wikimediaextensions": "מעטא־גרופע וואס אנטהאלט אלע מעלדונגען פאר געשטיצטע מעדיעוויקי פארברייטערונגען געניצט דורך דער [https://wikimediafoundation.org/ וויקימעדיע פונדאציע]",
+	"translategroupdescriptions-desc": "מעלדונג גרופע באשרייבונגען פאר פראדוקטן געשטיצט מיטן [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate איבערזעצונג] פארברייטערונג"
 }

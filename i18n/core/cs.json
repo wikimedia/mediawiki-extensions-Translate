@@ -7,7 +7,8 @@
 			"Littledogboy",
 			"Matěj Grabovský",
 			"Mormegil",
-			"Vks"
+			"Vks",
+			"Matěj Suchánek"
 		]
 	},
 	"translate": "Překládání",
@@ -42,7 +43,7 @@
 	"translate-next": "Další stránka",
 	"translate-prev": "Předchozí stránka",
 	"translate-page-description-legend": "Informace o skupině",
-	"translate-page-description-hasoptional": "Tato skupina zpráv obsahuje volitelné zprávy.\nVolitelné zprávy se mají překládat pouze pokud má váš jazyk zvláštní potřeby\njako nepoužívání mezer nebo transkripce vlastních jmen. $1",
+	"translate-page-description-hasoptional": "Tato skupina zpráv obsahuje volitelné zprávy.\nVolitelné zprávy se mají překládat pouze, pokud má váš jazyk zvláštní potřeby\njako nepoužívání mezer nebo transkripce vlastních jmen. $1",
 	"translate-page-description-hasoptional-open": "Zobrazit volitelné zprávy.",
 	"translate-page-edit": "editovat",
 	"translate-ext-url": "<hr />Webová stránka: $1",
@@ -64,7 +65,7 @@
 	"translate-edit-nopermission": "K překládání zpráv potřebujete překladatelská práva.",
 	"translate-edit-askpermission": "Získat oprávnění",
 	"translate-magic-pagename": "Rozšířená možnost překladu MediaWiki",
-	"translate-magic-help": "Můžete překládat aliasy speciálních stránek, kouzelná slova a názvy jmenných prostorů.\n\nAliasy speciálních stránek a kouzelná slova mohou mít více překladů.\nPřeklady se oddělují čárkou (,).\nNázvy jmenných prostorů mohou mít jen jeden překlad.\n\nV překladech jmenných prostorů se <code>$1 talk</code> chová zvláštně.\n<code>$1</code> se nahradí názvem projektu (např. <code>{{ns:project_talk}}</code>).\nPokud není ve vašem jazyce možné vytvořit smysluplný výraz bez změny názvu projektu, dejte nám vědět na stránce [[Support]].\n\nAbyste mohli ukládat změny, musíte být překladatel\nZměny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ dole.",
+	"translate-magic-help": "Můžete překládat aliasy speciálních stránek, kouzelná slova a názvy jmenných prostorů.\n\nAliasy speciálních stránek a kouzelná slova mohou mít více překladů.\nPřeklady se oddělují čárkou (,).\nNázvy jmenných prostorů mohou mít jen jeden překlad.\n\nV překladech jmenných prostorů se <code>$1 talk</code> chová zvláštně.\n<code>$1</code> se nahradí názvem projektu (např. <code>{{ns:project_talk}}</code>).\nPokud není ve vašem jazyce možné vytvořit smysluplný výraz bez změny názvu projektu, dejte nám vědět na stránce [[Support]].\n\nAbyste mohli ukládat změny, musíte být překladatel.\nZměny se neuloží, dokud nekliknete na tlačítko „Uložit změny“ dole.",
 	"translate-magic-module": "Modul:",
 	"translate-magic-submit": "Zobrazit",
 	"translate-magic-cm-export": "Exportovat",
@@ -211,7 +212,7 @@
 	"translate-manage-action-fuzzy": "Importovat a označit překlady jako neúplné",
 	"translate-manage-nochanges": "V definici zpráv této skupiny nenastaly žádné změny.",
 	"translate-manage-nochanges-other": "Nebyly provedeny žádné změny pro tento jazyk.\nPomocí dole uvedeného odkazu se vrátíte na zobrazení Podrobnosti o skupině.",
-	"translate-manage-inconsistent": "Zjištěné nekonzistence v požadavku.\nProsím, zkontrolujte změny a zkuste to znovu.\nPodrobnosti: $1",
+	"translate-manage-inconsistent": "Zjištěny nekonzistence v požadavku.\nProsím, zkontrolujte změny a zkuste to znovu.\nPodrobnosti: $1.",
 	"translate-manage-toolong": "Překročen maximální čas zpracování $1 {{PLURAL:$1|sekunda|sekundy|sekund}}.\nPro pokračování odešlete formulář ještě jednou.",
 	"translate-manage-import-summary": "Importuje se nová verze z vnějšího zdroje",
 	"translate-manage-conflict-summary": "Importuje se nová verze z vnějšího zdroje.\nProsím, zkontrolujte ji.",
@@ -382,5 +383,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % přeloženo, $2 % zkontrolováno, $3 % zastaralých",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|další skupina|další skupiny|dalších skupin}}",
 	"translate-ulsdep-title": "Chyba konfigurace",
-	"translate-ulsdep-body": "Rozšíření Translate závisí na [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector rozšíření Universal Language Selector]."
+	"translate-ulsdep-body": "Rozšíření Translate závisí na [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector rozšíření Universal Language Selector]."
 }

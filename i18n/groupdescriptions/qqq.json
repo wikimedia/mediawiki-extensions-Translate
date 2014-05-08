@@ -12,9 +12,7 @@
 	"bw-desc-mwlibrl": "Do not translate the link target <code>Translating:Mwlib.rl</code>.",
 	"bw-desc-openstreetmap": "Do not translate the link target <code>Translating:OpenStreetMap</code>.",
 	"bw-desc-osm-site": "{{doc-important|Do not translate the link target <code>Translating:OpenStreetMap</code>.}}",
-	"bw-desc-shapado": "Do not translate the link target <code>Translating:Shapado</code>.",
 	"bw-desc-wikiblame": "Do not translate the link target <code>Translating:WikiBlame</code>.",
-	"bw-desc-wikireader": "Do not translate the link target <code>Translating:WikiReader</code>.",
 	"translate-group-desc-eol": "{{doc-important|Do not translate the link target <code>Translating:EOL</code>.}}",
 	"translate-group-desc-etherpad-lite": "{{doc-important|Do not translate the link target <code>Translating:Etherpad lite</code>.}}",
 	"translate-group-desc-europeana": "{{doc-important|Do not translate the link target <code>Translating:Europeana</code>.}}",
@@ -27,7 +25,6 @@
 	"translate-group-desc-mediawikimostused": "{{doc-important|Do not translate the link target <code>Translating:MediaWiki</code>.}}",
 	"translate-group-desc-mifos": "Do not translate the link target <code>Translating:Mifos</code>.",
 	"translate-group-desc-nfcring-control": "{{doc-important|Do not translate the link target <code>Translating:NFC Ring Control</code>.}}",
-	"translate-group-desc-okawix": "Do not translate the link target <code>Translating:Okawix</code>.",
 	"translate-group-desc-openimages-all": "Do not translate the link target <code>Translating:Open Images</code>.",
 	"translate-group-desc-potlatch2": "{{doc-important|Do not translate the link target <code>Translating:OpenStreetMap</code>.}}",
 	"translate-group-desc-pywikipedia": "Do not translate the link target <code>Translating:Pywikibot</code>.",
@@ -35,6 +32,5 @@
 	"translate-group-desc-wikimedia-mobile-commons": "{{doc-important|Do not translate the link target <code>Translating:WikipediaMobile</code>.}}",
 	"translate-group-desc-wikimedia-mobile-wikipedia": "{{doc-important|Do not translate the link target <code>Translating:WikipediaMobile</code>.}}",
 	"translate-group-desc-wikimedia-mobile-wikisource": "{{doc-important|Do not translate the link target <code>Translating:WikisourceMobile</code>.}}",
-	"translate-group-desc-wikimedia-mobile-wiktionary": "{{doc-important|Do not translate the link target <code>Translating:WiktionaryMobile</code>.}}",
-	"translate-group-desc-wikimedia-mobile-wlm": "{{doc-important|Do not translate the link target <code>Translating:WLMMobile</code>.}}"
+	"translate-group-desc-wikimedia-mobile-wiktionary": "{{doc-important|Do not translate the link target <code>Translating:WiktionaryMobile</code>.}}"
 }
