@@ -9,6 +9,7 @@
     "translate-group-desc-mediawikiextensions": "Meta message group containing all messages for supported extensions for [[Translating:MediaWiki|MediaWiki]]",
     "translate-group-desc-bluespice": "Meta message group containing all messages for the MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BlueSpice Blue Spice] extensions",
     "translate-group-desc-collection": "Meta message group containing all messages for the MediaWiki extension [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection]",
+    "translate-group-desc-europeana": "[[Translating:Europeana|Europeana 1914-1918]] is a website stories, films and historical material about the First World War",
     "translate-group-desc-flaggedrevs": "Meta message group containing all messages for the MediaWiki extension [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs]",
     "translate-group-desc-readerfeedback": "Meta message group containing all messages for the MediaWiki extension [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
     "translate-group-desc-semantic": "Meta message group containing all messages for all [https://semantic-mediawiki.org/ Semantic MediaWiki] extensions",
