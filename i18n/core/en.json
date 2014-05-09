@@ -154,6 +154,7 @@
     "translate-translations-history-short": "h",
     "languagestats": "Language statistics",
     "languagestats-summary": "This page shows translation statistics for all message groups for a language.",
+    "messagegroupstats-summary": "This page shows Message Group statistics.",
     "languagestats-stats-for": "Translation statistics for $1 ($2).",
     "languagestats-recenttranslations": "recent translations",
     "translate-langstats-incomplete": "Some of the statistics on this page are incomplete. Please reload to get more statistics.",
