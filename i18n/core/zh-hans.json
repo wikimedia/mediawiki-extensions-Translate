@@ -407,5 +407,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1%已翻译，$2%已复核，$3%已过时",
 	"translate-search-more-groups-info": "还有$1个{{PLURAL:$1|信息组}}",
 	"translate-ulsdep-title": "配置错误",
-	"translate-ulsdep-body": "翻译拓展依赖[https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector 通用语言选择器拓展]。"
+	"translate-ulsdep-body": "翻译拓展依赖[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector 通用语言选择器拓展]。"
 }

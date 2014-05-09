@@ -23,7 +23,7 @@
 	"tpt-notsuitable": "La pagina $1 conven pas per èsser tradusida.\nSiatz segur(a) que conten la balisa <nowiki><translate></nowiki> e qu'a una sintaxi corrècta.",
 	"tpt-saveok": "La pagina [[$1]] es estada marcada per èsser tradusida amb $2 {{PLURAL:$2|unitat de traduccion|unitats de traduccion}}.\nLa pagina pòt èsser <span class=\"plainlinks\">[$3 tradusida]</span> tre ara.",
 	"tpt-badsect": "« $1 » es pas un nom valid per una unitat de traduccion $2.",
-	"tpt-showpage-intro": "Çaijós, las traduccions novèlas, las qu'existisson e las suprimidas.\nAbans de marcar aquestas versions per èsser traduchas, verificatz que las modificacions a las seccions son minimizadas per evitar de trabalh inutil als traductors.",
+	"tpt-showpage-intro": "Çaijós, las traduccions novèlas, las qu'existisson e las suprimidas.\nAbans de marcar aquestas versions per èsser tradusidas, verificatz que las modificacions a las seccions son minimizadas per evitar de trabalh inutil als traductors.",
 	"tpt-mark-summary": "Aquesta version es estada marcada per èsser tradusida",
 	"tpt-edit-failed": "Impossible de metre a jorn la pagina $1",
 	"tpt-already-marked": "La darrièra version d'aquesta pagina ja es estada marcada per èsser tradusida.",
