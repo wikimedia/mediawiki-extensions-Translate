@@ -239,7 +239,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 			}
 
 			if ( $translated === $total ) {
-				$extra = array( 'task' => 'reviewall' );
+				$extra = array( 'action' => 'proofread' );
 			} else {
 				$extra = array();
 			}

@@ -272,15 +272,13 @@ class SpecialLanguageStats extends TranslateSpecialPage {
 			$this->target,
 			$this->getLanguage()->getCode()
 		);
-		$task = $this->getUser()->isAllowed( 'translate-messagereview' ) ?
-			'acceptqueue' :
-			'reviewall';
+
 		$rcInLangLink = Linker::link(
 			SpecialPage::getTitleFor( 'Translate', '!recent' ),
 			$this->msg( 'languagestats-recenttranslations' )->escaped(),
 			array(),
 			array(
-				'task' => $task,
+				'action' => 'proofread',
 				'language' => $this->target
 			)
 		);
@@ -493,7 +491,7 @@ class SpecialLanguageStats extends TranslateSpecialPage {
 		if ( $total === null ) {
 			$this->incomplete = true;
 		} elseif ( $translated === $total ) {
-			$extra = array( 'task' => 'reviewall' );
+			$extra = array( 'action' => 'proofread' );
 		}
 
 		$rowParams = array();
