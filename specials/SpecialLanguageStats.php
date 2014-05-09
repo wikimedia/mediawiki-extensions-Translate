@@ -370,12 +370,12 @@ class SpecialLanguageStats extends TranslateSpecialPage {
 		$this->addWorkflowStatesColumn();
 		$out = '';
 
+		MessageGroupStats::setTimeLimit( $this->timelimit );
+		$cache = MessageGroupStats::forLanguage( $this->target );
+
 		if ( $this->purge ) {
 			MessageGroupStats::clearLanguage( $this->target );
 		}
-
-		MessageGroupStats::setTimeLimit( $this->timelimit );
-		$cache = MessageGroupStats::forLanguage( $this->target );
 
 		$structure = MessageGroups::getGroupStructure();
 		foreach ( $structure as $item ) {
