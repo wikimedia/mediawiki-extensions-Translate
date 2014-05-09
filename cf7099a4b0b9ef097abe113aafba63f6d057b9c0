@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_4c3d1829",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-05-09T14:42:30Z",
+      "side": 1,
+      "message": "Message Group should be lower case.",
+      "revId": "cf7099a4b0b9ef097abe113aafba63f6d057b9c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
