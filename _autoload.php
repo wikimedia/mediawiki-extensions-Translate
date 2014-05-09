@@ -289,6 +289,7 @@ $wgAutoloadClasses['TranslationAid'] = "$dir/translationaids/TranslationAid.php"
 $wgAutoloadClasses['UnsupportedTranslationAid'] =
 	"$dir/translationaids/UnsupportedTranslationAid.php";
 $wgAutoloadClasses['UpdatedDefinitionAid'] = "$dir/translationaids/UpdatedDefinitionAid.php";
+$wgAutoloadClasses['TerminologyAid'] = "$dir/translationaids/TerminologyAid.php";
 /**@}*/
 
 /**
