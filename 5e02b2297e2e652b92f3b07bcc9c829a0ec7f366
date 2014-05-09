@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_91dd8b1a",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-05-09T12:26:45Z",
+      "side": 1,
+      "message": "Aren\u0027t you now setting $cache and using it later on, even though it should be purged?",
+      "revId": "5e02b2297e2e652b92f3b07bcc9c829a0ec7f366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
