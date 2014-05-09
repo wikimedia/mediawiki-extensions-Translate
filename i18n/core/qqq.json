@@ -173,6 +173,7 @@
 	"translate-translations-history-short": "Shortest possible abbreviation of \"history\". Used on [[Special:Translations]].",
 	"languagestats": "{{doc-special|LanguageStats}}\n{{Identical|Language statistics}}",
 	"languagestats-summary": "Used in [[Special:LanguageStats]].",
+	"messagegroupstats-summary": "Used in [[Special:MessageGroupStats]]",
 	"languagestats-stats-for": "Used in [[Special:LanguageStats]]. Parameters:\n* $1 - a localised language name\n* $2 - link text {{msg-mw|Languagestats-recenttranslations}}. The link points to [[Special:Translate]] which shows recent translations of the language <code>$1</code>.",
 	"languagestats-recenttranslations": "Used as link text. The link points to [[Special:Translate]] which shows recent translations.\n\nUsed as <code>$2</code> in {{msg-mw|Languagestats-stats-for}}.",
 	"translate-langstats-expand": "{{Doc-actionlink}}\nUsed in [[Special:LanguageStats]] to expand subgroups.\n{{Identical|Expand}}",
