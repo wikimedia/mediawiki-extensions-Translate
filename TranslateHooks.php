@@ -26,6 +26,9 @@ class TranslateHooks {
 		$list[NS_TRANSLATIONS] = 'Translations';
 		$list[NS_TRANSLATIONS_TALK] = 'Translations_talk';
 
+		$list[1196] = 'Terminology';
+		$list[1197] = 'Terminology_talk';
+
 		return true;
 	}
 

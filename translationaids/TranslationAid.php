@@ -136,6 +136,7 @@ abstract class TranslationAid {
 			'support' => 'SupportAid',
 			'gettext' => 'GettextDocumentationAid',
 			'insertables' => 'InsertablesAid',
+			'terminology' => 'TerminologyAid',
 		);
 
 		return $types;

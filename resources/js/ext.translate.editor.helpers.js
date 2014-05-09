@@ -453,6 +453,44 @@
 		},
 
 		/**
+		 * XXX
+		 * @param {object} XXX
+		 */
+		addTerms: function ( terms ) {
+			var i, text, start, middle, end, replacement, offsetchange = 0,
+				count = terms.length,
+				$sourceMessage = this.$editor.find( '.sourcemessage' ),
+				$buttonArea = this.$editor.find( '.tux-editor-insert-buttons' ),
+				$textarea = this.$editor.find( '.tux-textarea-translation' );
+
+
+			if ( terms.error ) {
+				return;
+			}
+
+			text = $sourceMessage.html();
+			for ( i = 0; i < count; i++ ) {
+				start = text.substring( 0, offsetchange + terms[i].range[0] );
+				middle = text.substring( offsetchange + terms[i].range[0], terms[i].range[1] );
+				end = text.substr( offsetchange + terms[i].range[1] );
+				replacement = $( '<span>' )
+					.css( 'background-color', '#F0F0F0' )
+					.html( middle )
+					.click( function () {
+						$textarea.textSelection( 'encapsulateSelection', {
+							pre: 'translation goes here'
+						} );
+					} );
+				offsetchange += replacement[0].outerHTML - middle;
+				$sourceMessage.empty().append( start, replacement, end );
+			}
+
+			console.log( text );
+
+
+		},
+
+		/**
 		 * Loads and shows the translation helpers.
 		 */
 		showTranslationHelpers: function () {
@@ -481,6 +519,7 @@
 				translateEditor.showSupportOptions( result.helpers.support );
 				translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
 				translateEditor.addInsertables( result.helpers.insertables );
+				translateEditor.addTerms( result.helpers.terminology );
 
 				// Load the possible warnings as soon as possible, do not wait
 				// for the user to make changes. Otherwise users might try confirming
