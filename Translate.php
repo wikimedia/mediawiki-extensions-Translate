@@ -169,6 +169,7 @@ $GLOBALS['wgHooks']['GetPreferences'][] = 'TranslatePreferences::translationAssi
 $GLOBALS['wgHooks']['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
 $GLOBALS['wgHooks']['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $GLOBALS['wgHooks']['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
+$GLOBALS['wgHooks']['AbortEmailNotification'][] = 'TranslateHooks::onAbortEmailNotificationReview';
 
 // Translation memory related
 $GLOBALS['wgHooks']['ArticleDeleteComplete'][] = 'TTMServer::onDelete';
