@@ -33,6 +33,7 @@
 			var proofread = this;
 
 			this.render();
+
 			// No review before translating.
 			if ( !this.message.translation ) {
 				this.disableProofread();
@@ -150,6 +151,12 @@
 			)
 			.addClass( this.message.properties.status );
 
+			if ( !translatedBySelf && !proofreadBySelf ) {
+				// This will get removed later if any of various other reasons prevent it
+				this.message.proofreadable = true;
+				this.message.proofreadAction = this.proofread.bind( this );
+			}
+
 			if ( translatedBySelf ) {
 				this.markSelfTranslation();
 			}
@@ -162,6 +169,7 @@
 		},
 
 		disableProofread: function () {
+			this.message.proofreadable = false;
 			this.$message.find( '.tux-proofread-action' )
 				.remove();
 		},
