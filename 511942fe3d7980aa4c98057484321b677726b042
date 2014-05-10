@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e23439c_adc2635b",
+        "filename": "api/ApiTranslationReview.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-05-10T09:14:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e23439c_0d6717b6",
+      "revId": "511942fe3d7980aa4c98057484321b677726b042",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e23439c_4d6d0f96",
         "filename": "api/ApiTranslationReview.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-10T09:06:31Z",
       "side": 1,
       "message": "Would TranslateHooks be a better place?",
+      "revId": "511942fe3d7980aa4c98057484321b677726b042",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_2dce5387",
+        "filename": "api/ApiTranslationReview.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-05-10T09:14:21Z",
+      "side": 1,
+      "message": "No opinion; moving it in next PS. I thought it may make sense to have it close to the place where the action happens.",
+      "parentUuid": "8e23439c_4d6d0f96",
       "revId": "511942fe3d7980aa4c98057484321b677726b042",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2014-05-10T09:06:31Z",
       "side": 1,
       "message": "Referencing the bug here brings no additional value",
+      "revId": "511942fe3d7980aa4c98057484321b677726b042",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_8db7a7f2",
+        "filename": "api/ApiTranslationReview.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-05-10T09:14:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e23439c_ad05c3c6",
       "revId": "511942fe3d7980aa4c98057484321b677726b042",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
