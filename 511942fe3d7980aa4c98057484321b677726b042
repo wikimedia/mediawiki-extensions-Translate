@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8e23439c_8d5d6781",
+        "filename": "api/ApiTranslationReview.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-05-10T09:49:54Z",
+      "side": 1,
+      "message": "Done, says Niklas now.",
+      "parentUuid": "8e23439c_ed63bba5",
+      "revId": "511942fe3d7980aa4c98057484321b677726b042",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e23439c_ad05c3c6",
         "filename": "api/ApiTranslationReview.php",
         "patchSetId": 2
