@@ -513,4 +513,23 @@ class TranslateHooks {
 
 		return true;
 	}
+	
+
+	/**
+	 * Hooks: AbortEmailNotification
+	 *
+	 * False aborts the email.
+	 */
+	public static function onAbortEmailNotificationTranslationReview( $editor, $title, $rc = null ) {
+		# In MediaWiki 1.20–23 we don't have the third parameter.
+		if ( $rc === null ) {
+			return true;
+		}
+
+		if ( $rc->mAttribs['rc_log_type'] === 'translationreview' ) {
+			return false;
+		}
+
+		return true;
+	}
 }
