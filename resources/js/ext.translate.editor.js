@@ -600,7 +600,8 @@
 					mw.translate.dirty = true;
 				}
 
-				$saveButton.text( mw.msg( 'tux-editor-save-button-label' ) );
+				translateEditor.makeSaveButtonJustSave( $saveButton );
+
 				// When there is content in the editor enable the button.
 				// But do not enable when some saving is not finished yet.
 				if ( $.trim( current ) && !translateEditor.saving ) {
@@ -655,8 +656,10 @@
 							// and go back to hiding.
 							$discardChangesButton.addClass( 'hide' );
 
-							// There's nothing new to save
+							// There's nothing new to save...
 							$saveButton.prop( 'disabled', true );
+							// ...unless there is other action
+							translateEditor.makeSaveButtonContextSensitive( $saveButton );
 
 							translateEditor.markUnunsaved();
 						} );
@@ -684,13 +687,7 @@
 						e.stopPropagation();
 					} );
 
-				// When the user opens an outdated translation, the main button should be enabled
-				// and display a "confirm translation" label.
-				if ( this.$messageItem.hasClass( 'fuzzy' ) ) {
-					$saveButton
-						.prop( 'disabled', false )
-						.text( mw.msg( 'tux-editor-confirm-button-label' ) );
-				}
+				this.makeSaveButtonContextSensitive( $saveButton, this.$messageItem );
 			} else {
 				$editingButtonBlock = $( [] );
 
@@ -774,6 +771,53 @@
 			}
 
 			return $editorColumn;
+		},
+
+		/**
+		 * Modifies the save button to provide suitable default action for *unchanged*
+		 * message. It will revert back to normal save button if the text is changed.
+		 *
+		 * @param {jQuery} $button The save button.
+		 */
+		makeSaveButtonContextSensitive: function ( $button ) {
+			var self = this;
+
+			if ( this.message.properties.status === 'fuzzy' ) {
+				$button.prop( 'disabled', false );
+				$button.text( mw.msg( 'tux-editor-confirm-button-label' ) );
+				$button.off( 'click' );
+				$button.on( 'click', function ( e ) {
+					self.save();
+					e.stopPropagation();
+				} );
+			} else  if ( this.message.proofreadable ) {
+				$button.prop( 'disabled', false );
+				$button.text( mw.msg( 'tux-editor-proofread-button-label' ) )
+				$button.off( 'click' );
+				$button.on( 'click', function ( e ) {
+					$button.prop( 'disabled', true );
+					self.message.proofreadAction();
+					self.next();
+					e.stopPropagation();
+				} );
+			}
+		},
+
+  		/**
+		 * Modifies the save button to just save the translation as usual. Whether the
+		 * button is enabled or not is controlled elsewhere.
+		 *
+		 * @param {jQuery} $button The save button.
+		 */
+		makeSaveButtonJustSave: function ( $button ) {
+			var self = this;
+
+			$button.text( mw.msg( 'tux-editor-save-button-label' ) );
+			$button.off( 'click' );
+			$button.on( 'click', function ( e ) {
+				self.save();
+				e.stopPropagation();
+			} );
 		},
 
 		/**
