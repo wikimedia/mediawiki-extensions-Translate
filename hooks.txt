@@ -149,6 +149,8 @@ Post processing step to format in wiki
 ;TranslateTranslationAids: Make new translation aids available to any message group (which must choose an implementation in its getTranslationAids() method).
  array          &$types: List of translation aid identifiers, numerically indexed
 
+;AddNewAccount: Replica of the core hook, see https://www.mediawiki.org/wiki/Manual:Hooks/AddNewAccount
+
 === JavaScript events ===
 
 ;afterRegisterFeatures: Provides an opportunity to register event handlers, etc., whenever a new form is opened.
