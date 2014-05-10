@@ -40,6 +40,7 @@
 	"tpt-badsect": "See definition on [[mw:Help:Extension:Translate/Glossary]].\nParameters:\n* $1 - the identifier of the unit\n* $2 - the number of the unit",
 	"tpt-showpage-intro": "See definition on [[mw:Help:Extension:Translate/Glossary]].",
 	"tpt-mark-summary": "This message is used as an edit summary.",
+	"tpt-mark-nochanges": "A note in Special:PageTranslation when marking a revision of a page for translation.",
 	"tpt-edit-failed": "Used as error message. Parameters:\n* $1 - page title",
 	"tpt-duplicate": "Used as error message.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translation unit ID (name)",
 	"tpt-already-marked": "See definition on [[mw:Help:Extension:Translate/Glossary]].",

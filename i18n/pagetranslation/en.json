@@ -29,6 +29,7 @@
     "tpt-badsect": "\"$1\" is not a valid name for translation unit $2.",
     "tpt-showpage-intro": "Below new, existing and deleted translation units are listed.\nBefore marking this version for translation, check that the changes to translation units are minimized to avoid unnecessary work for translators.",
     "tpt-mark-summary": "Marked this version for translation",
+    "tpt-mark-nochanges": "There is no difference between this revision and the last marked revision.",
     "tpt-edit-failed": "Could not update the page: $1",
     "tpt-duplicate": "Translation unit name $1 is used more than once.",
     "tpt-already-marked": "The latest version of this page has already been marked for translation.",
