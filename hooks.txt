@@ -151,9 +151,6 @@ Post processing step to format in wiki
 
 === JavaScript events ===
 
-;afterRegisterFeatures: Provides an opportunity to register event handlers, etc., whenever a new form is opened.
- jQuery          form: The new form
-
 ;afterSubmit: Provides an opportunity to modify a Translate translation form immediately after it is submitted
  jQuery          form: The form that has just been submitted
 
