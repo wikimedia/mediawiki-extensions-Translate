@@ -489,12 +489,14 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 		 */
 		foreach ( $sections as $s ) {
 			if ( $s->type === 'new' ) {
+				$hasChanges = true;
 				$name = $this->msg( 'tpt-section-new', $s->name )->escaped();
 			} else {
 				$name = $this->msg( 'tpt-section', $s->name )->escaped();
 			}
 
 			if ( $s->type === 'changed' ) {
+				$hasChanges = true;
 				$diff = new DifferenceEngine;
 				if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
 					$diff->setTextLanguage( $wgContLang );
@@ -533,6 +535,7 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 
 		$deletedSections = $page->getParse()->getDeletedSections();
 		if ( count( $deletedSections ) ) {
+			$hasChanges = true;
 			$out->wrapWikiMsg( '==$1==', 'tpt-sections-deleted' );
 
 			/**
@@ -552,6 +555,7 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 
 		// Display template changes if applicable
 		if ( $page->getMarkedTag() !== false ) {
+			$hasChanges = true;
 			$newTemplate = $page->getParse()->getTemplatePretty();
 			$oldPage = TranslatablePage::newFromRevision(
 				$page->getTitle(),
@@ -582,6 +586,10 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 				$contentParams = array( 'class' => 'mw-tpt-sp-content' );
 				$out->addHTML( Xml::tags( 'div', $contentParams, $text ) );
 			}
+		}
+
+		if ( !$hasChanges ) {
+			$out->wrapWikiMsg( '<div class="mw-tpt-mark-nochanges">$1</div>', 'tpt-mark-nochanges' );
 		}
 
 		$this->priorityLanguagesForm( $page );
