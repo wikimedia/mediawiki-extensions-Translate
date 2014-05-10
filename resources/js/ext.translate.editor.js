@@ -371,6 +371,7 @@
 				$pasteOriginalButton,
 				$discardChangesButton = $( [] ),
 				$saveButton,
+				$reviewButton,
 				$requestRight,
 				$skipButton,
 				$cancelButton,
@@ -660,13 +661,27 @@
 						e.stopPropagation();
 					} );
 
+				$reviewButton = $( [] );
+
+				if ( this.$messageItem.hasClass( 'translated' ) ) {
+					$reviewButton = $( '<button>' )
+						.prop( 'disabled', false )
+						.addClass( 'blue button tux-editor-save-button' )
+						.text( mw.msg( 'tux-editor-confirm-button-label' ) )
+						.on( 'click', function( e ) {
+							translateEditor.$messageItem.proofread();
+							e.stopPropagation();
+						} );
+					$saveButton.addClass( 'hide' );
+				}
+
 				// When the user opens an outdated translation, the main button should be enabled
 				// and display a "confirm translation" label.
-				if ( this.$messageItem.hasClass( 'fuzzy' ) ) {
-					$saveButton
-						.prop( 'disabled', false )
-						.text( mw.msg( 'tux-editor-confirm-button-label' ) );
-				}
+				// if ( this.$messageItem.hasClass( 'translated' ) ) {
+				// 	$saveButton
+				// 		.prop( 'disabled', false )
+				// 		.text( mw.msg( 'tux-editor-confirm-button-label' ) );
+				// }
 			} else {
 				$editingButtonBlock = $( [] );
 
@@ -719,7 +734,7 @@
 
 			$controlButtonBlock = $( '<div>' )
 				.addClass( 'twelve columns tux-editor-control-buttons' )
-				.append( $requestRight, $saveButton, $skipButton, $cancelButton );
+				.append( $requestRight, $reviewButton, $saveButton, $skipButton, $cancelButton );
 
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row tux-editor-actions-block' )
