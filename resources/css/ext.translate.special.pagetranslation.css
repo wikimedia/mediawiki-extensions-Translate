@@ -2,6 +2,10 @@
 	padding-bottom: 3ex;
 }
 
+.mw-tpt-mark-nochanges {
+	font-weight: bold;
+}
+
 .mw-tpt-sp-section-type-old {
 	opacity: 0.65;
 }
