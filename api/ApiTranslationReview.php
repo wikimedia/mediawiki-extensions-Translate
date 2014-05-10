@@ -106,6 +106,19 @@ class ApiTranslationReview extends ApiBase {
 
 		return true;
 	}
+	
+	/// Hook: AbortEmailNotification (false aborts the email)
+	public static function onAbortEmailNotification( $editor, $title, $rc = null ) {
+		# In MediaWiki 1.20–23 we don't have the third parameter.
+		if ( $rc === null ) { return true; }
+
+		# Bug 34153
+		if ( $rc->mAttribs['rc_log_type'] === 'translationreview' ) {
+			return false;
+		}
+
+		return true;
+	}
 
 	/**
 	 * Validates review action by checking permissions and other things.
