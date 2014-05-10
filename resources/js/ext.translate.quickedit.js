@@ -155,7 +155,6 @@
 			} );
 		}
 
-		mw.translateHooks.run( 'afterRegisterFeatures', form );
 	}
 
 	mw.translate = $.extend( mw.translate, {
