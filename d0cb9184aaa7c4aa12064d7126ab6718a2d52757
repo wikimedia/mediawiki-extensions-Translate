@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_6d41eb0d",
+        "filename": "api/ApiTranslationReview.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-05-10T09:05:25Z",
+      "side": 1,
+      "message": "Trailing whitespace. Please remove.",
+      "revId": "d0cb9184aaa7c4aa12064d7126ab6718a2d52757",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_cd591f06",
+        "filename": "api/ApiTranslationReview.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-05-10T09:05:25Z",
+      "side": 1,
+      "message": "Please update formatting: Place return and } on separate lines.",
+      "revId": "d0cb9184aaa7c4aa12064d7126ab6718a2d52757",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
