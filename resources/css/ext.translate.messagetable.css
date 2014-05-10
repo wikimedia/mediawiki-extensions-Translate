@@ -63,6 +63,13 @@
 	cursor: pointer;
 }
 
+/* The "block" views of page mode and proofreading mode have 0 margin on
+ * .tux-message. To make the actual editor be of same width, set 0 margin on
+ * the open editor (overriding the -5px set by the grid) */
+.grid .tux-message.open {
+	margin: 0 auto;
+}
+
 .tux-message-item {
 	line-height: 50px;
 	height: 50px;
