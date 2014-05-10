@@ -16,6 +16,7 @@
 	"translate-group-desc-eol": "{{doc-important|Do not translate the link target <code>Translating:EOL</code>.}}",
 	"translate-group-desc-etherpad-lite": "{{doc-important|Do not translate the link target <code>Translating:Etherpad lite</code>.}}",
 	"translate-group-desc-europeana": "{{doc-important|Do not translate the link target <code>Translating:Europeana</code>.}}",
+	"translate-group-desc-huggle": "{{doc-important|Do not translate the link target <code>Translating:Huggle</code>.}}",
 	"translate-group-desc-ihris": "{{doc-important|Do not translate the link target <code>Translating:iHRIS</code>.}}",
 	"translate-group-desc-kiwix": "{{doc-important|Do not translate the link target <code>Translating:Kiwix</code>.}}",
 	"translate-group-desc-mantisbt-plugin-core": "Do not translate the link target <code>Translating:MantisBT</code>.",
