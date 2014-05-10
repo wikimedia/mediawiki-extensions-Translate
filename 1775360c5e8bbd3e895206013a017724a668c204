@@ -16,6 +16,24 @@
       "revId": "1775360c5e8bbd3e895206013a017724a668c204",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_1e185f22",
+        "filename": "ffs/AndroidXmlFFS.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-10T14:55:52Z",
+      "side": 1,
+      "message": "I have no idea. I think someone should test with Android whether partial ones work.",
+      "parentUuid": "0ee75395_a94d8177",
+      "revId": "1775360c5e8bbd3e895206013a017724a668c204",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
