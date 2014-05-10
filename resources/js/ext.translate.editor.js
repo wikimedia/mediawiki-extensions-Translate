@@ -662,7 +662,7 @@
 
 				// When the user opens an outdated translation, the main button should be enabled
 				// and display a "confirm translation" label.
-				if ( this.$messageItem.hasClass( 'fuzzy' ) ) {
+				if ( this.$messageItem.hasClass( 'translated' ) ) {
 					$saveButton
 						.prop( 'disabled', false )
 						.text( mw.msg( 'tux-editor-confirm-button-label' ) );
