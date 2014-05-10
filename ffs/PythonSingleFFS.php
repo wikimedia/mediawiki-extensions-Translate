@@ -158,10 +158,10 @@ class PythonSingleFFS extends SimpleFFS {
 
 		$authorList = '';
 		foreach ( $authors as $author ) {
-			$authorList .= "\t# Author: $author\n";
+			$authorList .= "    # Author: $author\n";
 		}
 
-		$section = "$authorList\t'$code': {\n$block\t},";
+		$section = "$authorList    '$code': {\n$block    },";
 
 		// Store the written part, so that when next language is called,
 		// the new version will be used (instead of the old parsed version
@@ -205,7 +205,7 @@ class PythonSingleFFS extends SimpleFFS {
 			$translation = addcslashes( $translation, "\n'\\" );
 			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 
-			$block .= "\t\t'{$key}': u'{$translation}',\n";
+			$block .= "        '{$key}': u'{$translation}',\n";
 		}
 
 		return $block;
