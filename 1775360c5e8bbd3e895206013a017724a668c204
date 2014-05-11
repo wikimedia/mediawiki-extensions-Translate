@@ -52,6 +52,24 @@
       "revId": "1775360c5e8bbd3e895206013a017724a668c204",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e23439c_0e770aff",
+        "filename": "ffs/AndroidXmlFFS.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-11T08:28:35Z",
+      "side": 1,
+      "message": "According to Yuvi\u0027s testing it will crash if string array is partial.",
+      "parentUuid": "8e23439c_5ee5b705",
+      "revId": "1775360c5e8bbd3e895206013a017724a668c204",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
