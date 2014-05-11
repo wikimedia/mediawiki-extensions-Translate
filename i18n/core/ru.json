@@ -170,6 +170,7 @@
 	"translate-translations-history-short": "ист.",
 	"languagestats": "Статистика по языку",
 	"languagestats-summary": "На этой странице представлена статистика переводов для всех групп сообщений данного языка.",
+	"messagegroupstats-summary": "Эта страница показывает статистику группы сообщений.",
 	"languagestats-stats-for": "Статистика переводов на $1 язык ($2).",
 	"languagestats-recenttranslations": "недавние переводы",
 	"translate-langstats-incomplete": "Некоторые статистические данные на этой странице неполны. Для получения полных данных перезагрузите страницу.",

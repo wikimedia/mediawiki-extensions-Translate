@@ -168,6 +168,7 @@
 	"translate-translations-history-short": "V",
 	"languagestats": "Statistiken zur Sprache",
 	"languagestats-summary": "Diese Seite zeigt Statistiken zu Übersetzungen für alle Nachrichtengruppen einer Sprache.",
+	"messagegroupstats-summary": "Diese Seite zeigt Statistiken zu Nachrichtengruppen.",
 	"languagestats-stats-for": "Übersetzungsstatistik für die Sprache $1 ($2).",
 	"languagestats-recenttranslations": "Aktuelle Übersetzungen",
 	"translate-langstats-incomplete": "Einige der Statistiken auf dieser Seite sind unvollständig. Lade sie erneut, um weitere Statistiken zu erhalten.",

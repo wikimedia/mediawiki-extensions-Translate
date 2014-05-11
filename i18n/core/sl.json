@@ -78,7 +78,7 @@
 	"translate-magic-namespace": "Imena imenskih prostorov",
 	"translate-magic-notsaved": "Vaše urejanje ni bilo shranjeno!",
 	"translate-magic-errors": "Prosimo popravite {{PLURAL:$1|naslednjo napako|naslednji $1 napaki|naslednje $1 napake|naslednjih $1 napak}} v prevodih:",
-	"translate-magic-saved": "Vaše spremembe so bile uspešno shranjene.",
+	"translate-magic-saved": "Vaše spremembe smo uspešno shranili.",
 	"translate-checks-parameters": "{{PLURAL:$2|Naslednji parameter ni uporabljen|Naslednja parametra nista uporabljena|Naslednji parametri niso uporabljeni}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Naslednji parameter je neznan|Naslednja parametra sta neznana|Naslednji parametri so neznani}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "V sporočilu je neparno število {{PLURAL:$2|oklepajev}}:\n<strong><nowiki>$1</nowiki></strong>",
@@ -152,6 +152,7 @@
 	"translate-translations-history-short": "z",
 	"languagestats": "Statistika jezika",
 	"languagestats-summary": "Stran prikazuje statistiko prevodov za vse skupine sporočil jezika.",
+	"messagegroupstats-summary": "Stran prikazuje statistiko skupin sporočil.",
 	"languagestats-stats-for": "Statistika prevodov za jezik $1 ($2).",
 	"languagestats-recenttranslations": "nedavni prevodi",
 	"translate-langstats-incomplete": "Nekatere statistike na tej strani so nepopolne. Prosimo, da za več statistik ponovno naložite stran.",
@@ -383,5 +384,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% prevedenih, $2% pregledanih, $3% zastarelih",
 	"translate-search-more-groups-info": "Še $1 {{PLURAL:$1|skupina|skupini|skupine|skupin}}",
 	"translate-ulsdep-title": "Napaka pri konfiguraciji",
-	"translate-ulsdep-body": "Razširitev Translate je odvisna od [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector razširitve Universal Language Selector]."
+	"translate-ulsdep-body": "Razširitev Translate je odvisna od [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector razširitve Universal Language Selector]."
 }

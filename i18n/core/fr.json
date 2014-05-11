@@ -180,6 +180,7 @@
 	"translate-translations-history-short": "h",
 	"languagestats": "Statistiques des langues",
 	"languagestats-summary": "Cette page affiche les statistiques de traduction de tous les groupes de messages dans une langue donnée.",
+	"messagegroupstats-summary": "Cette page affiche les statistiques de groupe de messages.",
 	"languagestats-stats-for": "Statistiques de traduction pour $1 ($2).",
 	"languagestats-recenttranslations": "traductions récentes",
 	"translate-langstats-incomplete": "Certaines statistiques sur cette page sont incomplètes. Merci de la recharger pour en obtenir davantage.",

@@ -8,7 +8,8 @@
 			"SandroHc",
 			"Vivaelcelta",
 			"Waldir",
-			"Fúlvio"
+			"Fúlvio",
+			"Imperadeiro98"
 		]
 	},
 	"pagetranslation": "Tradução de páginas",
@@ -65,7 +66,7 @@
 	"translate-tag-markthis": "Marcar esta página para tradução",
 	"translate-tag-markthisagain": "Esta página tem <span class=\"plainlinks\">[$1 alterações]</span> desde a última vez que foi <span class=\"plainlinks\">[$2 marcada para tradução]</span>.",
 	"translate-tag-hasnew": "Esta página contém <span class=\"plainlinks\">[$1 alterações]</span> que não estão marcadas para tradução.",
-	"tpt-translation-intro": "Esta página é uma <span class=\"plainlinks\">[$1 versão traduzida]</span> da página [[$2]] e a tradução está $3% completa e atualizada.",
+	"tpt-translation-intro": "Esta página é uma <span class=\"plainlinks\">[$1 versão traduzida]</span> da página [[$2]] e a tradução está $3% completa.",
 	"tpt-languages-legend": "Outras línguas:",
 	"tpt-languages-zero": "Iniciar a tradução para esta língua",
 	"tpt-tab-translate": "Traduzir",

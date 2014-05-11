@@ -61,7 +61,7 @@
 	"translate-tag-markthis": "Dës Säit fir d'Iwwersetzung markéieren",
 	"translate-tag-markthisagain": "Dës Säit huet <span class=\"plainlinks\">[$1 Ännerungen]</span> zënter datt se fir d'lescht <span class=\"plainlinks\">[$2 fir d'Iwwersetzung markéiert gouf]</span>.",
 	"translate-tag-hasnew": "Op dëser Säit si(nn)s <span class=\"plainlinks\">[$1 Ännerungen]</span> déi net fir d'iwwersetzung markéiert sinn.",
-	"tpt-translation-intro": "Dës Säit ass eng <span class=\"plainlinks\">[$1 iwwersate Versioun]</span> vun der Säit [[$2]] an d'Iwweersetzung ass zu $3 % ofgeschloss an aktuell.",
+	"tpt-translation-intro": "Dës Säit ass eng <span class=\"plainlinks\">[$1 iwwersate Versioun]</span> vun der Säit [[$2]] an d'Iwweersetzung ass zu $3 % komplett.",
 	"tpt-languages-legend": "aner Sproochen:",
 	"tpt-languages-zero": "Iwwersetzung fir dës Sprooch ufänken",
 	"tpt-tab-translate": "Iwwersetzen",

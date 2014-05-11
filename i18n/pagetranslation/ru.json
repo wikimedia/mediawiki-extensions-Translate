@@ -72,7 +72,7 @@
 	"translate-tag-markthis": "Отметить эту страницу для перевода",
 	"translate-tag-markthisagain": "Эта страница была <span class=\"plainlinks\">[$1 изменена]</span> с момента последней <span class=\"plainlinks\">[$2 отметки о переводе]</span>.",
 	"translate-tag-hasnew": "На этой странице были произведены <span class=\"plainlinks\">[$1 изменения]</span>, не отмеченные для перевода.",
-	"tpt-translation-intro": "Эта страница является <span class=\"plainlinks\">[$1 переводом]</span> страницы [[$2]]. Перевод актуален и выполнен на $3%.",
+	"tpt-translation-intro": "Эта страница является <span class=\"plainlinks\">[$1 переводом]</span> страницы [[$2]]. Перевод выполнен на $3%.",
 	"tpt-languages-legend": "Другие языки:",
 	"tpt-languages-zero": "Начать перевод на этот язык",
 	"tpt-tab-translate": "Перевести",

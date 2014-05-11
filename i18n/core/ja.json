@@ -164,6 +164,7 @@
 	"translate-translations-history-short": "履歴",
 	"languagestats": "言語別翻訳状況",
 	"languagestats-summary": "このページでは指定した言語におけるメッセージの翻訳状況をメッセージ群ごとに表示しています。",
+	"messagegroupstats-summary": "このページでは、メッセージ群の統計を表示します。",
 	"languagestats-stats-for": "$1 ($2) の翻訳統計です。",
 	"languagestats-recenttranslations": "最近の翻訳",
 	"translate-langstats-incomplete": "このページの統計情報の一部は不完全です。より多くの統計情報を取得するために再読み込みしてください。",

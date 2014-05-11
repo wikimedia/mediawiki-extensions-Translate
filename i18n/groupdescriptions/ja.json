@@ -40,6 +40,7 @@
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] はウィキペディア編集ツールの集合体です",
 	"translate-group-desc-readerfeedback": "MediaWiki 拡張機能 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback] のすべてのメッセージを含む上位メッセージ群",
 	"translate-group-desc-semantic": "[https://semantic-mediawiki.org/ Semantic MediaWiki] 拡張機能のすべてのメッセージを含む上位メッセージ群",
+	"translate-group-desc-sharelatex": "LaTeX エディター [[Translating:ShareLaTeX|ShareLaTeX]] のメッセージ群",
 	"translate-group-desc-translatablepages": "翻訳可能なすべてのページ",
 	"translate-group-desc-translate": "MediaWiki 拡張機能 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate] のすべてのメッセージを含む上位メッセージ群。この拡張機能の[https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary 用語集]を参照して用語を把握してください。",
 	"translate-group-desc-tsint": "[//toolserver.org Toolserver] のツールの国際化システムである [[Translating:Intuition|Intuition]] のメッセージ群 (<span class=\"plainlinks\">[[Translating talk:Intuition|サポート]]</span>)",
