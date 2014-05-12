@@ -160,6 +160,7 @@
 	"translate-translations-history-short": "ג״ק",
 	"languagestats": "סטטיסטיקת השפה",
 	"languagestats-summary": "דף זה מציג את סטטיסטיקת התרגומים עבור כל קבוצות ההודעות של שפה.",
+	"messagegroupstats-summary": "הדף הזה מציג סטטיסטיקות של קבוצות הודעות.",
 	"languagestats-stats-for": "סטטיסטיקות תרגום עבור $1 ($2).",
 	"languagestats-recenttranslations": "תרגומים אחרונים",
 	"translate-langstats-incomplete": "חלק מהסטטיסטיקות בדף הזה אינן מלאות. יש לרענן כדי לקבל עוד סטטיסטיקות.",

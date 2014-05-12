@@ -152,6 +152,7 @@
 	"translate-translations-history-short": "h",
 	"languagestats": "Estadístiques de llingua",
 	"languagestats-summary": "Esta páxina amuesa les estadístiques de traducción de tolos grupos de mensaxes d'una llingua.",
+	"messagegroupstats-summary": "Esta páxina amuesa les estadístiques del grupu de mensaxes.",
 	"languagestats-stats-for": "Estadístiques de traducción pal $1 ($2).",
 	"languagestats-recenttranslations": "traducciones recientes",
 	"translate-langstats-incomplete": "Dalgunes estadístiques d'esta páxina tan incompletes. Recargala pa ver más estadístiques.",
