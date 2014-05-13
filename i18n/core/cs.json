@@ -43,7 +43,7 @@
 	"translate-next": "Další stránka",
 	"translate-prev": "Předchozí stránka",
 	"translate-page-description-legend": "Informace o skupině",
-	"translate-page-description-hasoptional": "Tato skupina zpráv obsahuje volitelné zprávy.\nVolitelné zprávy se mají překládat pouze, pokud má váš jazyk zvláštní potřeby\njako nepoužívání mezer nebo transkripce vlastních jmen. $1",
+	"translate-page-description-hasoptional": "Tato skupina zpráv obsahuje volitelné zprávy.\nVolitelné zprávy se mají překládat, pouze pokud má váš jazyk zvláštní potřeby\njako nepoužívání mezer nebo transkripce vlastních jmen. $1",
 	"translate-page-description-hasoptional-open": "Zobrazit volitelné zprávy.",
 	"translate-page-edit": "editovat",
 	"translate-ext-url": "<hr />Webová stránka: $1",
