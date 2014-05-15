@@ -167,6 +167,7 @@
 	"translate-translations-history-short": "h",
 	"languagestats": "Språkstatistik",
 	"languagestats-summary": "Den här sidan visar översättningsstatistik för alla meddelandegrupper för ett språk.",
+	"messagegroupstats-summary": "Denna sida visar statistik för meddelandegrupper.",
 	"languagestats-stats-for": "Översättningsstatistik för $1 ($2).",
 	"languagestats-recenttranslations": "senaste översättningar",
 	"translate-langstats-incomplete": "En del av statistiken på denna sida är ofullständig. Ladda om sidan för att få mer statistik.",

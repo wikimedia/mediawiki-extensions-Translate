@@ -10,7 +10,8 @@
 			"Olli",
 			"Silvonen",
 			"VezonThunder",
-			"ZeiP"
+			"ZeiP",
+			"Pxos"
 		]
 	},
 	"pagetranslation": "Sivujen kääntäminen",
@@ -90,7 +91,7 @@
 	"pt-shake-position": "Käännösosiotunniste on odottamattomassa paikassa.\nKäännösosion teksti: <pre>$1</pre>",
 	"pt-shake-empty": "Käännösosio $1 sisältää vain tunnisteen.",
 	"log-description-pagetranslation": "Tämä loki sisältää sivunkäännösominaisuuteen liittyviä tapahtumia.",
-	"log-name-pagetranslation": "Sivunkääntöloki",
+	"log-name-pagetranslation": "Sivujen käännösten loki",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|merkitsi}} sivun $3 käännettäväksi",
 	"pt-movepage-title": "Käännettävän sivun $1 siirtäminen",
 	"pt-movepage-blockers": "Käännettävää sivua ei voi siirtää uudelle nimelle {{PLURAL:$1|seuraavasta syystä|seuraavista syistä}}:",
