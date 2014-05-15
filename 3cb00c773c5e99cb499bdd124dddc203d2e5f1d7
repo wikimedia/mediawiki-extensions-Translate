@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e23439c_281065ac",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-15T11:47:56Z",
+      "side": 1,
+      "message": "$hasChanges should be initialized to false somewhere before the loop.",
+      "revId": "3cb00c773c5e99cb499bdd124dddc203d2e5f1d7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
