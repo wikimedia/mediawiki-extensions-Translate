@@ -91,6 +91,7 @@ $GLOBALS['wgSpecialPages']['ManageMessageGroups'] = 'SpecialManageGroups';
 $GLOBALS['wgSpecialPageGroups']['ManageMessageGroups'] = 'wiki';
 $GLOBALS['wgSpecialPages']['SupportedLanguages'] = 'SpecialSupportedLanguages';
 $GLOBALS['wgSpecialPageGroups']['SupportedLanguages'] = 'wiki';
+
 // Unlisted special page; does not need $wgSpecialPageGroups.
 $GLOBALS['wgSpecialPages']['MyLanguage'] = 'SpecialMyLanguage';
 $GLOBALS['wgSpecialPages']['AggregateGroups'] = 'SpecialAggregateGroups';
@@ -393,6 +394,12 @@ $GLOBALS['wgEnablePageTranslation'] = true;
  * other namespace in your wiki.
  */
 $GLOBALS['wgPageTranslationNamespace'] = 1198;
+
+/*
+ * Enables the experimental page migration tools.
+ * @since 2014-05
+ */
+$GLOBALS['wgTranslatePageMigration'] = false;
 
 /**
  * Whether selecting a new interface language via ULS on a translatable page
