@@ -54,6 +54,8 @@ class TranslateHooks {
 			$wgSpecialPages['PageTranslationDeletePage'] = 'SpecialPageTranslationDeletePage';
 			$wgSpecialPageGroups['PageTranslationDeletePage'] = 'pagetools';
 			$wgAvailableRights[] = 'pagetranslation';
+			$wgSpecialPages['PageMigration'] = 'SpecialPageMigration';
+			$wgSpecialPageGroups['PageMigration'] = 'wiki';
 
 			global $wgLogActionsHandlers, $wgLogTypes;
 			$wgLogTypes[] = 'pagetranslation';
