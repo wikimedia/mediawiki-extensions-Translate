@@ -27,6 +27,7 @@ $specialPageAliases['en'] = array(
 	'TranslationStash' => array( 'TranslationStash' ),
 	'TranslationStats' => array( 'TranslationStats', 'TranslationStatistics' ),
 	'Translations' => array( 'Translations' ),
+	'PageMigration' => array( 'PageMigration' ),
 );
 
 /** Afrikaans (Afrikaans) */
