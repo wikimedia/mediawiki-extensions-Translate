@@ -1,0 +1,18 @@
+#sourceunits {
+	float: left;
+	display: inline-block;
+	width: 40%;
+}
+
+#translationunits {
+	margin-left: 1%;
+	display: inline-block;
+	width: 40%;
+}
+
+#sourceunits > div,
+#translationunits > div {
+	overflow-y: auto;
+	height: 150px;
+	border: 2px solid gray;
+}

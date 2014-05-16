@@ -52,6 +52,10 @@ $wgAutoloadClasses['SpecialManageTranslatorSandbox'] =
 $wgAutoloadClasses['SpecialTranslationStats'] = "$dir/specials/SpecialTranslationStats.php";
 $wgAutoloadClasses['SpecialTranslations'] = "$dir/specials/SpecialTranslations.php";
 $wgAutoloadClasses['SpecialTranslationStash'] = "$dir/specials/SpecialTranslationStash.php";
+<<<<<<< HEAD
+=======
+$wgAutoloadClasses['SpecialPageMigration'] = "$dir/specials/SpecialPageMigration.php";
+>>>>>>> [WIP] First version of Special:PageMigration
 /**@}*/
 
 /**
