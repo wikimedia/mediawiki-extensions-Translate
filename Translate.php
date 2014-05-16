@@ -40,7 +40,7 @@ $GLOBALS['wgExtensionCredits']['specialpage'][] = array(
  * Setup class autoloading.
  */
 $dir = __DIR__;
-require_once "$dir/_autoload.php";
+require_once "$dir/Autoload.php";
 /** @endcond */
 
 /**
