@@ -91,6 +91,7 @@ $GLOBALS['wgSpecialPages']['ManageMessageGroups'] = 'SpecialManageGroups';
 $GLOBALS['wgSpecialPageGroups']['ManageMessageGroups'] = 'wiki';
 $GLOBALS['wgSpecialPages']['SupportedLanguages'] = 'SpecialSupportedLanguages';
 $GLOBALS['wgSpecialPageGroups']['SupportedLanguages'] = 'wiki';
+
 // Unlisted special page; does not need $wgSpecialPageGroups.
 $GLOBALS['wgSpecialPages']['MyLanguage'] = 'SpecialMyLanguage';
 $GLOBALS['wgSpecialPages']['AggregateGroups'] = 'SpecialAggregateGroups';
