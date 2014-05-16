@@ -40,7 +40,7 @@ $GLOBALS['wgExtensionCredits']['specialpage'][] = array(
  * Setup class autoloading.
  */
 $dir = __DIR__;
-require_once "$dir/_autoload.php";
+require_once "$dir/Autoload.php";
 /** @endcond */
 
 /**
@@ -91,6 +91,8 @@ $GLOBALS['wgSpecialPages']['ManageMessageGroups'] = 'SpecialManageGroups';
 $GLOBALS['wgSpecialPageGroups']['ManageMessageGroups'] = 'wiki';
 $GLOBALS['wgSpecialPages']['SupportedLanguages'] = 'SpecialSupportedLanguages';
 $GLOBALS['wgSpecialPageGroups']['SupportedLanguages'] = 'wiki';
+$GLOBALS['wgSpecialPages']['PageMigration'] = 'SpecialPageMigration';
+//$GLOBALS['wgSpecialPageGroups']['PageMigration'] = 'wiki';
 // Unlisted special page; does not need $wgSpecialPageGroups.
 $GLOBALS['wgSpecialPages']['MyLanguage'] = 'SpecialMyLanguage';
 $GLOBALS['wgSpecialPages']['AggregateGroups'] = 'SpecialAggregateGroups';
