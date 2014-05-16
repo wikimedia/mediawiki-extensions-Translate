@@ -44,6 +44,7 @@ $wgAutoloadClasses['SpecialMagic'] = "$dir/specials/SpecialMagic.php";
 $wgAutoloadClasses['SpecialManageGroups'] = "$dir/specials/SpecialManageGroups.php";
 $wgAutoloadClasses['SpecialMessageGroupStats'] = "$dir/specials/SpecialMessageGroupStats.php";
 $wgAutoloadClasses['SpecialMyLanguage'] = "$dir/specials/SpecialMyLanguage.php";
+$wgAutoloadClasses['SpecialPageMigration'] = "$dir/specials/SpecialPageMigration.php";
 $wgAutoloadClasses['SpecialSearchTranslations'] = "$dir/specials/SpecialSearchTranslations.php";
 $wgAutoloadClasses['SpecialSupportedLanguages'] = "$dir/specials/SpecialSupportedLanguages.php";
 $wgAutoloadClasses['SpecialTranslate'] = "$dir/specials/SpecialTranslate.php";
