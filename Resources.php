@@ -463,6 +463,11 @@ $wgResourceModules['ext.translate.workflowselector'] = array(
 	),
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.special.pagemigration'] = array(
+	'styles' => 'resources/css/ext.translate.special.pagemigration.css',
+	'scripts' => 'resources/js/ext.translate.special.pagemigration.js',
+) + $resourcePaths;
+
 // Third party module
 $wgResourceModules['jquery.autosize'] = array(
 	'scripts' => 'resources/js/jquery.autosize.js',
