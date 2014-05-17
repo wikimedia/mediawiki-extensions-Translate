@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "6e20cf91_a867f621",
+        "filename": "Translate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-17T15:20:41Z",
+      "side": 1,
+      "message": "That\u0027s because it is in TranslateHooks.php starting line 50.",
+      "parentUuid": "6e20cf91_a8ea5671",
+      "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e20cf91_6810bead",
         "filename": "Translate.php",
         "patchSetId": 3
@@ -310,6 +328,24 @@
       "side": 1,
       "message": "If I keep all the functions out of document.ready and call another function like addTranslationUnit ( identifier, message ) from here, would that be fine? The DOM processing task could be handled by that function.",
       "parentUuid": "6e20cf91_086eea2a",
+      "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_886c3a07",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-17T15:20:41Z",
+      "side": 1,
+      "message": "Start separating the code into different functions. Tutorials like http://www.html5rocks.com/en/tutorials/async/deferred/ might be useful (I haven\u0027t found a really good one yet). We can figure out the best place for those functions later.",
+      "parentUuid": "6e20cf91_689b1e1c",
       "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
