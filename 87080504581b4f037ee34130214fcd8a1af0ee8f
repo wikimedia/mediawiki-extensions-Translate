@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e20cf91_4815029c",
+        "filename": "Translate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-17T13:59:43Z",
+      "side": 1,
+      "message": "This should be added conditionally in the same way as Special:PageTranslation",
+      "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_6810bead",
+        "filename": "Translate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-17T13:59:43Z",
+      "side": 1,
+      "message": "Why is this commented out?",
+      "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_08270a0f",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-17T13:59:43Z",
+      "side": 1,
+      "message": "There should be space before { (multiple instances)",
+      "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_282ac6d7",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-17T13:59:43Z",
+      "side": 1,
+      "message": "trailing tab",
+      "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_e823aefe",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-17T13:59:43Z",
+      "side": 1,
+      "message": "One selector per line: add newline after comma",
+      "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_c820f2f4",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-17T13:59:43Z",
+      "side": 1,
+      "message": "Missing space",
+      "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_c877d2fc",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-17T13:59:43Z",
+      "side": 1,
+      "message": "Only but the minimum necessary code in document ready. For example functions should be declared outside of it.",
+      "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_e87a8ee6",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-17T13:59:43Z",
+      "side": 1,
+      "message": "Mixed spaces and tabs (multiple instances)",
+      "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_8869da1f",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-17T13:59:43Z",
+      "side": 1,
+      "message": "Should be indented one level more",
+      "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_086eea2a",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-17T13:59:43Z",
+      "side": 1,
+      "message": "DOM processing should not happen in the same function as API call.",
+      "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_488ce2ff",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-17T13:59:43Z",
+      "side": 1,
+      "message": "I think most of the DOM processing should happen here.",
+      "revId": "87080504581b4f037ee34130214fcd8a1af0ee8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
