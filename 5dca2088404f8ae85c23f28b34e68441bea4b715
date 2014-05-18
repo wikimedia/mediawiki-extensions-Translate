@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e20cf91_6310e004",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-18T08:30:51Z",
+      "side": 1,
+      "message": "You can add doc blocks for functions, example:\n\n/**\n * Get the paragraphs of a given page at given time.\n * @param {string} fuzzyTimestamp Timestamp in MediaWiki format\n * @param {string} pageTitle\n * @return {jQuery.Promise}\n * @return {Function} return.done\n * @return {Array} return.done.data Array of paragraphs\n */\nfunction splitTranslationPage( fuzzyTimestamp, pageTitle ) {",
+      "revId": "5dca2088404f8ae85c23f28b34e68441bea4b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_e364f0b0",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-18T08:30:51Z",
+      "side": 1,
+      "message": "I\u0027d remove this empty line",
+      "revId": "5dca2088404f8ae85c23f28b34e68441bea4b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_03ffeca8",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-18T08:30:51Z",
+      "side": 1,
+      "message": "This block should only have three tabs for indentation for basic level.",
+      "revId": "5dca2088404f8ae85c23f28b34e68441bea4b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_a32dd843",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-18T08:30:51Z",
+      "side": 1,
+      "message": "One tab too much",
+      "revId": "5dca2088404f8ae85c23f28b34e68441bea4b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_6327c060",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-18T08:30:51Z",
+      "side": 1,
+      "message": "Use obj \u003d\u003d\u003d undefined per https://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript#Type_checks",
+      "revId": "5dca2088404f8ae85c23f28b34e68441bea4b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_2319c827",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-18T08:30:51Z",
+      "side": 1,
+      "message": "Because we are using .then, this should now be return new $.Deferred().reject(); This will replace the earlier deferred with our new one.",
+      "revId": "5dca2088404f8ae85c23f28b34e68441bea4b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_431cc418",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-18T08:30:51Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "5dca2088404f8ae85c23f28b34e68441bea4b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_e312b000",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-18T08:30:51Z",
+      "side": 1,
+      "message": "Production code should not have this kind of logging.",
+      "revId": "5dca2088404f8ae85c23f28b34e68441bea4b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_0316ccf6",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-18T08:30:51Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "5dca2088404f8ae85c23f28b34e68441bea4b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_c3d7b427",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-18T08:30:51Z",
+      "side": 1,
+      "message": "Spaces: .html( \u0027\u0027 );",
+      "revId": "5dca2088404f8ae85c23f28b34e68441bea4b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
