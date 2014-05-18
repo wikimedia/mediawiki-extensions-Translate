@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "6e20cf91_23e8a8dc",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-18T08:50:09Z",
+      "side": 1,
+      "message": "In one of the previous comments, you had asked me to indent this block. Anyway, if 3 tab indentation is needed, shall I do it for all such .then blocks?",
+      "parentUuid": "6e20cf91_03ffeca8",
+      "revId": "5dca2088404f8ae85c23f28b34e68441bea4b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e20cf91_a32dd843",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 8
@@ -132,6 +150,24 @@
       "writtenOn": "2014-05-18T08:30:51Z",
       "side": 1,
       "message": "Production code should not have this kind of logging.",
+      "revId": "5dca2088404f8ae85c23f28b34e68441bea4b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_03f5acb5",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-18T08:50:09Z",
+      "side": 1,
+      "message": "What is the alternative? Else, I will just do a find and replace by // mw.log for the moment?",
+      "parentUuid": "6e20cf91_e312b000",
       "revId": "5dca2088404f8ae85c23f28b34e68441bea4b715",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
