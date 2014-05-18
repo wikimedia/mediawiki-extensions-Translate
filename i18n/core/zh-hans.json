@@ -174,6 +174,7 @@
 	"translate-translations-history-short": "历",
 	"languagestats": "语言统计",
 	"languagestats-summary": "本页面显示某种语言所有信息组的翻译统计。",
+	"messagegroupstats-summary": "此页面显示信息组统计。",
 	"languagestats-stats-for": "$1（$2）的翻译统计。",
 	"languagestats-recenttranslations": "最近翻译",
 	"translate-langstats-incomplete": "本页面某些统计不完整。请重新载入以获取更多统计。",

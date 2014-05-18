@@ -21,7 +21,8 @@
 			"Tempestas",
 			"Translationista",
 			"Vivaelcelta",
-			"Ciencia Al Poder"
+			"Ciencia Al Poder",
+			"Wifidel"
 		]
 	},
 	"translate": "Traducir",
@@ -169,6 +170,7 @@
 	"translate-translations-history-short": "h",
 	"languagestats": "Estadísticas por idioma",
 	"languagestats-summary": "Esta página muestra estadísticas de traducción para todos los grupos de mensajes para un idioma.",
+	"messagegroupstats-summary": "Esta página muestra las estadísticas de grupo mensaje.",
 	"languagestats-stats-for": "Estadísticas de las traducciones en $1 ($2).",
 	"languagestats-recenttranslations": "Traducciones recientes",
 	"translate-langstats-incomplete": "Algunas de las estadísticas de esta página están incompletas. Actualiza la página para obtener más estadísticas.",

@@ -11,7 +11,8 @@
 			"Tommyang",
 			"Xiaomingyan",
 			"Yanmiao liu",
-			"Yfdyh000"
+			"Yfdyh000",
+			"Stieizc"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]]是一个回合制策略游戏",
@@ -29,6 +30,7 @@
 	"translate-group-desc-europeana": "[[Translating:Europeana|Europeana 1914~1918]]是包含有关第一次世界大战的故事、电影和历史材料网站",
 	"translate-group-desc-flaggedrevs": "包含MediaWiki[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs]扩展使用所有消息的元消息组。",
 	"translate-group-desc-fuel": "[[Translating:FUEL|FUEL]]使软件翻译更加一致",
+	"translate-group-desc-huggle": "[[Translating:Huggle|Huggle]]是一个快速的内容比较程序，是用于处理Wikimedia项目中的恶意编辑行为的网页应用。",
 	"translate-group-desc-ihris": "[[Translating:iHRIS|iHRIS]]的消息组",
 	"translate-group-desc-kiwix": "[[Translating:Kiwix|Kiwix]]的消息组",
 	"translate-group-desc-mantisbt-plugin-core": "[[Translating:MantisBT|MantisBT]]的核心插件",
@@ -45,6 +47,7 @@
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]]是一个维基百科编辑工具集合。",
 	"translate-group-desc-readerfeedback": "包含MediaWiki[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]扩展使用所有消息的元消息组。",
 	"translate-group-desc-semantic": "包含所有[https://semantic-mediawiki.org/ Semantic MediaWiki]扩展使用所有消息的元消息组。",
+	"translate-group-desc-sharelatex": "LaTex编辑器[[Translating:ShareLaTeX|ShareLaTeX]]的消息组",
 	"translate-group-desc-translatablepages": "所有翻译网页",
 	"translate-group-desc-translate": "包含所有用于MediaWiki[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate 翻译]拓展相关信息的元信息组；请您熟知其[https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary 术语表]",
 	"translate-group-desc-tsint": "[[Translating:Intuition|Intuition]]的信息组。它是[//toolserver.org Toolserver]工具的i18n系统（<span class=\"plainlinks\">[[Translating talk:Intuition|支持]]</span>）",

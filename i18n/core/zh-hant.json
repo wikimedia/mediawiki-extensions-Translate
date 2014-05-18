@@ -163,6 +163,7 @@
 	"translate-translations-history-short": "記錄",
 	"languagestats": "語言統計",
 	"languagestats-summary": "此頁面顯示了所有訊息群組語言翻譯的統計資訊。",
+	"messagegroupstats-summary": "此頁顯示訊息組統計。",
 	"languagestats-stats-for": "$1 ($2) 的翻譯統計。",
 	"languagestats-recenttranslations": "最近的翻譯",
 	"translate-langstats-incomplete": "此頁面的某些統計資訊未完整讀取，請重新整理以取得更多統計資訊。",
@@ -394,5 +395,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% 已翻譯，$2% 已複查，$3% 已過時",
 	"translate-search-more-groups-info": "還有 $1 個{{PLURAL:$1|群組|群組}}",
 	"translate-ulsdep-title": "設定錯誤",
-	"translate-ulsdep-body": "翻譯擴充套件需要相依 [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector 通用語言選擇擴充套件]。"
+	"translate-ulsdep-body": "翻譯擴充套件需要相依 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector 通用語言選擇器擴充套件]。"
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ansumang"
+			"Ansumang",
+			"NehalDaveND"
 		]
 	},
 	"translate-page-settings-legend": "संरचनम्",
@@ -19,5 +20,6 @@
 	"translate-statsf-submit": "प्राग्दृश्यम् दर्श्यताम्",
 	"translate-translations-fieldset-title": "संदेश",
 	"translate-translations-messagename": "नामन्:",
-	"translate-translations-project": "प्रकल्पम्:"
+	"translate-translations-project": "प्रकल्पम्:",
+	"tux-warnings-hide": "गोप्यताम्"
 }

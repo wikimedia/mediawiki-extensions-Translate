@@ -4,9 +4,22 @@
 			"Klenje"
 		]
 	},
+	"pagetranslation": "Traduzion di une pagjine",
+	"tpt-diff-old": "Test precedent",
+	"tpt-diff-new": "Gnûf test",
+	"tpt-select-prioritylangs-reason": "Reson:",
+	"tpt-sections-prioritylangs": "Lenghis prioritariis",
 	"translate-tag-translate-link-desc": "Tradûs cheste pagjine",
 	"tpt-languages-legend": "Altris lenghis:",
+	"tpt-languages-zero": "Scomence a tradusi in cheste lenghe",
+	"tpt-tab-translate": "Tradûs",
+	"tpt-discouraged-language-reason": "Reson: $1",
+	"tpt-aggregategroup-add": "Zonte",
 	"tpt-aggregategroup-save": "Salve",
 	"tpt-aggregategroup-new-name": "Non:",
-	"pt-movepage-reason": "Reson:"
+	"pt-movepage-current": "Non atuâl:",
+	"pt-movepage-new": "Gnûf non:",
+	"pt-movepage-reason": "Reson:",
+	"pt-deletepage-current": "Non de pagjine:",
+	"pt-deletepage-reason": "Reson:"
 }

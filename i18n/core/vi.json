@@ -151,6 +151,7 @@
 	"translate-translations-history-short": "sử",
 	"languagestats": "Thống kê ngôn ngữ",
 	"languagestats-summary": "Trang này hiển thị thống kê biên dịch cho tất cả các nhóm thông điệp dành cho một ngôn ngữ.",
+	"messagegroupstats-summary": "Trang này có thống kế về nhóm thông điệp.",
 	"languagestats-stats-for": "Thống kê biên dịch của $1 ($2).",
 	"languagestats-recenttranslations": "các bản dịch gần đây",
 	"translate-langstats-incomplete": "Một vài dữ liệu thống kê trên này không được đầy đủ. Xin vui lòng tải lại trang để lấy thêm dữ liệu.",
