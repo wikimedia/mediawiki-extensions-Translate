@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e20cf91_6c768dd7",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "Usually, there is one space before the * on comment blocks.",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_ccb80177",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "Trailing tab",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_ec8bbdc2",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "timestampOld -\u003e return.done.data (if I understood correctly)",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_8cb20991",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "You said you want to replace this logging with something? What for do you need it?",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_6cb7ad82",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "I believe should be return new $.Deferred().reject(); Compare with https://gerrit.wikimedia.org/r/#/c/133399/1/resources/src/mediawiki.api/mediawiki.api.js line 304. You can then remove the local variable \"deferred\".",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_acbdc565",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "This comment can be removed, no?",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_4cacf132",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "See above",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_4c7bd1bd",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "These and the following function can also be outside of document.ready, no?",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_8c71e9df",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "Long line, split into multiple lines. For example\n\nx \u003d $( ... )\n        .attr( ... )\n        .text( ... );\n\n(I used spaces, use tabs)",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_2ca9b521",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "Trailing tabs",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_cc67e121",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "Long line, split into multiple lines (I would split before \".then\")",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_eca29d3a",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "spaces: function ( ... ) {",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_0c85d99f",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "Html::element or even better Html::input. Only use openElement if you pair it with closeElement.",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_2c7895be",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "Just one tab more, do not align.",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_ec817d93",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "Spaces",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_cc4ec19b",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-19T12:29:27Z",
+      "side": 1,
+      "message": "This can be removed now, no?",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
