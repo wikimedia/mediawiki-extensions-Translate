@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "6e20cf91_8c3fa9d3",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-19T12:58:54Z",
+      "side": 1,
+      "message": "Shall it be return.then or return.done? Even I realized about this just now.",
+      "parentUuid": "6e20cf91_ec8bbdc2",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e20cf91_8cb20991",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 10
@@ -64,6 +82,24 @@
       "writtenOn": "2014-05-19T12:29:27Z",
       "side": 1,
       "message": "You said you want to replace this logging with something? What for do you need it?",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_ac3a65e2",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-19T12:58:54Z",
+      "side": 1,
+      "message": "Code debugging in the future? At least till I finish this project. I could replace mw.log by console.log for debugging and then then vice versa before submitting the patch.",
+      "parentUuid": "6e20cf91_8cb20991",
       "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -217,6 +253,24 @@
       "writtenOn": "2014-05-19T12:29:27Z",
       "side": 1,
       "message": "Html::element or even better Html::input. Only use openElement if you pair it with closeElement.",
+      "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e20cf91_0c5cb94d",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-19T12:58:54Z",
+      "side": 1,
+      "message": "Using Html::element",
+      "parentUuid": "6e20cf91_0c85d99f",
       "revId": "ba1781baca5007e9d991b22c640df3352b5f58ac",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
