@@ -155,6 +155,7 @@
 	"translate-translations-history-short": "h",
 	"languagestats": "Språkstatistikk",
 	"languagestats-summary": "Denne siden viser oversettelsesstatistikk for alle meldingsgrupper for et språk.",
+	"messagegroupstats-summary": "Denne siden viser statistikk for meldingsgrupper.",
 	"languagestats-stats-for": "Oversettelsesstatistikk for $1 ($2).",
 	"languagestats-recenttranslations": "siste oversettelser",
 	"translate-langstats-incomplete": "Noe av statistikken på denne siden er ufullstendig. Last siden på nytt for å få mer statistikk.",
@@ -277,6 +278,8 @@
 	"group-translate-sandboxed-member": "{{GENDER:$1|ikke-godkjent oversetter}}",
 	"right-translate-sandboxmanage": "Behandle sandkassebrukere",
 	"action-translate-sandboxmanage": "behandle sandkassebrukere",
+	"right-translate-sandboxaction": "Utføre handlinger som er hvitlistet for sandkassebrukere",
+	"action-translate-sandboxaction": "utføre handlinger som er hvitlistet for sandkassebrukere",
 	"translate-workflow-state-": "(ikke satt)",
 	"translate-workflowstatus": "Status: $1",
 	"translate-workflow-set-do": "Sett",
@@ -321,7 +324,7 @@
 	"tux-editor-skip-button-label": "Hopp over til neste",
 	"tux-editor-cancel-button-label": "Avbryt",
 	"tux-editor-confirm-button-label": "Bekreft oversettelse",
-	"tux-editor-shortcut-info": "Trykk på \"$1\" for å lagre eller \"$2\" for å hoppe videre til neste beskjed",
+	"tux-editor-shortcut-info": "Trykk på «$1» for å lagre eller «$2» for å hoppe videre til neste beskjed eller «$3» for andre snarveier.",
 	"tux-editor-edit-desc": "Rediger dokumentasjon",
 	"tux-editor-add-desc": "Legg til dokumentasjon",
 	"tux-editor-suggestions-title": "Forslag",
@@ -382,5 +385,7 @@
 	"translate-search-more-languages-info": "$1 flere {{PLURAL:$1|språk}}",
 	"translate-statsbar-tooltip": "$1% oversatt, $2% korrekturlest",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% oversatt, $2% korrekturlest, $3% utdatert",
-	"translate-search-more-groups-info": "$1 {{PLURAL:$1|gruppe|grupper}} til"
+	"translate-search-more-groups-info": "$1 {{PLURAL:$1|gruppe|grupper}} til",
+	"translate-ulsdep-title": "Konfigrasjonsfeil",
+	"translate-ulsdep-body": "Oversettelsesutvidelsen er avhengig av [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector utvidelsen Universal Language Selector]."
 }
