@@ -75,7 +75,7 @@
 	"translate-tag-markthis": "Marquer cette page pour être traduite",
 	"translate-tag-markthisagain": "Cette page a eu <span class=\"plainlinks\">[$1 des modifications]</span> depuis qu’elle a été dernièrement <span class=\"plainlinks\">[$2 marquée pour être traduite]</span>.",
 	"translate-tag-hasnew": "Cette page contient <span class=\"plainlinks\">[$1 des modifications]</span> qui ne sont pas marquées pour la traduction.",
-	"tpt-translation-intro": "Cette page est une <span class=\"plainlinks\">[version traduite depuis '$1']</span> de la page [[$2]] et la traduction est complétée à $3 %.",
+	"tpt-translation-intro": "Cette page est une <span class=\"plainlinks\">[$1 version traduite]</span> de la page [[$2]] et la traduction est complétée à $3 %.",
 	"tpt-languages-legend": "Autres langues :",
 	"tpt-languages-separator": "&nbsp;•&#32;",
 	"tpt-languages-zero": "Commencer la traduction pour cette langue",
