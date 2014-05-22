@@ -34,7 +34,7 @@
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] is a collection of tools to edit Wikipedia",
 	"translate-group-desc-readerfeedback": "Meta message group containing all messages for the MediaWiki extension [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-semantic": "Meta message group containing all messages for all [https://semantic-mediawiki.org/ Semantic MediaWiki] extensions",
-	"translate-group-desc-sharelatex": "A message group for [[Translating:ShareLaTeX|ShareLaTeX]], a LaTeX editor",
+	"translate-group-desc-sharelatex": "A message group for [[Translating:ShareLaTeX|ShareLaTeX]], a web-based collaborative LaTeX editor",
 	"translate-group-desc-translatablepages": "All translatable pages",
 	"translate-group-desc-translate": "Meta message group containing all messages for the MediaWiki extension [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]; please familiarize yourself with its [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossary]",
 	"translate-group-desc-tsint": "A message group for [[Translating:Intuition|Intuition]], the i18n system for [//toolserver.org Toolserver] tools (<span class=\"plainlinks\">[[Translating talk:Intuition|support]]</span>)",
