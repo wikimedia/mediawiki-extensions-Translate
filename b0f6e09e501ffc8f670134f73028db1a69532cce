@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_83678822",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Alright.",
+      "parentUuid": "4e1dcb5b_233e7427",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_832f88f3",
         "filename": "resources/css/ext.translate.special.pagemigration.css",
         "patchSetId": 13
@@ -47,6 +65,24 @@
       "writtenOn": "2014-05-22T13:29:16Z",
       "side": 1,
       "message": "Remove if not used.",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_03ac9831",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 13
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_832f88f3",
       "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_e3a87c1f",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_63346c47",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_4339703d",
         "filename": "resources/css/ext.translate.special.pagemigration.css",
         "patchSetId": 13
@@ -81,6 +135,24 @@
       "writtenOn": "2014-05-22T13:29:16Z",
       "side": 1,
       "message": "Should use tabs instead of spaces for indentation.",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_c3a58045",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 13
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_4339703d",
       "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_8e7d6fe7",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "I could not find an example. Can you point me to one?\n\nAlso, what needs to be done from my side to avoid that? What is the limit?",
+      "parentUuid": "4e1dcb5b_2363143d",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_837d48e7",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 13
@@ -115,6 +205,24 @@
       "writtenOn": "2014-05-22T13:29:16Z",
       "side": 1,
       "message": "You should cache #actions",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_4eaf5792",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_837d48e7",
       "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_6eaa1384",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_c32340ff",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_a32044f3",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 13
@@ -149,6 +275,24 @@
       "writtenOn": "2014-05-22T13:29:16Z",
       "side": 1,
       "message": "You should cache #actions",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_8ea56fb4",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_a32044f3",
       "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -172,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_6ec33362",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Did the same for all instances. Just not sure if the indentation is as expected.",
+      "parentUuid": "4e1dcb5b_e3263c11",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_238c34ff",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 13
@@ -183,6 +345,24 @@
       "writtenOn": "2014-05-22T13:29:16Z",
       "side": 1,
       "message": "Why don\u0027t you do this with CSS directly?",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_8ebe8fd0",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Yeah, done. Removed the function and function calls. Thanks.",
+      "parentUuid": "4e1dcb5b_238c34ff",
       "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -240,6 +420,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_0eeb9fdc",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Yeah, it works and I did the same for .addClass above as well.",
+      "parentUuid": "4e1dcb5b_034378b7",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_e33f5c1f",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 13
@@ -274,6 +472,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_2ee65b14",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_c37a20e7",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_e36d1c2f",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 13
@@ -285,6 +501,24 @@
       "writtenOn": "2014-05-22T13:29:16Z",
       "side": 1,
       "message": "I would use $( \u0027#sourceunits div ).eq( i ); or similar",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_4ee197fa",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_e36d1c2f",
       "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -308,6 +542,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_6edc534c",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_a37724fd",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_0358188b",
         "filename": "specials/SpecialPageMigration.php",
         "patchSetId": 13
@@ -319,6 +571,24 @@
       "writtenOn": "2014-05-22T13:29:16Z",
       "side": 1,
       "message": "Too many tabs.",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_831c287e",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_0358188b",
       "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -353,6 +623,24 @@
       "writtenOn": "2014-05-22T13:29:16Z",
       "side": 1,
       "message": "should by Html::element, though preferably done with css altogether",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_a32f249c",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-22T15:37:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_c3510067",
       "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
