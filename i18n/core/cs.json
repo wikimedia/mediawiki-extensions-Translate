@@ -156,6 +156,7 @@
 	"translate-translations-history-short": "h",
 	"languagestats": "Jazykové statistiky",
 	"languagestats-summary": "Tato stránka zobrazuje statistiku překladů všech skupin zpráv v daném jazyce.",
+	"messagegroupstats-summary": "Tato zpráva zobrazuje statistiky skupin zpráv.",
 	"languagestats-stats-for": "Statistiky překladů pro jazyk $1 ($2).",
 	"languagestats-recenttranslations": "nedávné překlady",
 	"translate-langstats-incomplete": "Některé statistiky na této stránce jsou neúplné. Více údajů získáte obnovením stránky.",

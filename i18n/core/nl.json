@@ -10,7 +10,8 @@
 			"Tjcool007",
 			"Tvdm",
 			"User555",
-			"Wiki13"
+			"Wiki13",
+			"Mar(c)"
 		]
 	},
 	"translate": "Vertalen",
@@ -158,6 +159,7 @@
 	"translate-translations-history-short": "g",
 	"languagestats": "Taalstatistieken",
 	"languagestats-summary": "Op deze pagina worden vertaalstatistieken weergegeven voor alle berichtengroepen voor een taal.",
+	"messagegroupstats-summary": "Op deze pagina worden berichtengroepstatistieken weergegeven.",
 	"languagestats-stats-for": "Vertaalstatistieken voor $1 ($2).",
 	"languagestats-recenttranslations": "recente vertalingen",
 	"translate-langstats-incomplete": "Sommige statistieken op deze pagina zijn onvolledig. Herlaad de pagina voor meer complete statistieken.",
@@ -389,5 +391,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% vertaald, $2% gecontroleerd, $3% verouderd",
 	"translate-search-more-groups-info": "nog $1 groep{{PLURAL:$1||en}}",
 	"translate-ulsdep-title": "Fout in de instellingen",
-	"translate-ulsdep-body": "De uitbreiding Translate is afhankelijk van de [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector uitbreiding Universal Language Selector]."
+	"translate-ulsdep-body": "De uitbreiding Translate is afhankelijk van de [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector uitbreiding Universal Language Selector]."
 }

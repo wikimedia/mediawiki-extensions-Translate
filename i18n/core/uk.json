@@ -167,6 +167,7 @@
 	"translate-translations-history-short": "і",
 	"languagestats": "Мовна статистика",
 	"languagestats-summary": "На цій сторінці подано статистику перекладів цією мовою для всіх груп повідомлень.",
+	"messagegroupstats-summary": "На цій сторінці відображається статистика груп повідомлень.",
 	"languagestats-stats-for": "Статистика перекладів мовою: $1 ($2).",
 	"languagestats-recenttranslations": "найновіші переклади",
 	"translate-langstats-incomplete": "Деяка статистика на цій сторінці є неповною. Будь ласка, перезавантажте сторінку для отримання нових даних.",
@@ -398,5 +399,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% перекладено, $2% перевірено, $3% застаріло",
 	"translate-search-more-groups-info": "Ще $1 {{PLURAL:$1|група|групи|груп}}",
 	"translate-ulsdep-title": "Помилка конфігурації",
-	"translate-ulsdep-body": "Розширення із перекладу залежить авд [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector розширення «Універсальний перемикач мов»]."
+	"translate-ulsdep-body": "Розширення перекладу залежить від [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector розширення «Універсальний мовний селектор»]."
 }
