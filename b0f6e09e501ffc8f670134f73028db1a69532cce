@@ -1,0 +1,361 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e1dcb5b_a3ea849a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "Cannot merge while [WIP] is present ;)",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_233e7427",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "Let\u0027s cleanup the id \u0026 class names in followup commit",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_832f88f3",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 13
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "Remove if not used.",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_63346c47",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "trailing space",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_4339703d",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 13
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "Should use tabs instead of spaces for indentation.",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_2363143d",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "There is also api.edit, can you use it instead?\n\nYou should also be aware that if you are creating many pages you might hit rate limiting!",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_837d48e7",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "You should cache #actions",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_c32340ff",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "Append can take multiple elements commpa separated.",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_a32044f3",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "You should cache #actions",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_e3263c11",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "You could get rid of the newUnit variable by doing .appendTo( $( \u0027#translationunits\u0027 ) );\n\nSince this is inside loops, you should cache the $( \u0027#translationunits\u0027 ) in a variable for small performance improvement.",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_238c34ff",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "Why don\u0027t you do this with CSS directly?",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_a34964d5",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "Spacing",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_c34c60e7",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "Spacing",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_034378b7",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "Doesn\u0027t removeClass work with a collection?",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_e33f5c1f",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "Spacing",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_c37a20e7",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "spacing",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_e36d1c2f",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "I would use $( \u0027#sourceunits div ).eq( i ); or similar",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_a37724fd",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "spacing",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_0358188b",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "Too many tabs.",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_e354fc58",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "I18n to be fixed in followup patch",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_c3510067",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T13:29:16Z",
+      "side": 1,
+      "message": "should by Html::element, though preferably done with css altogether",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
