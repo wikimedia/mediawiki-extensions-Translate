@@ -194,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_7b5f70e9",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-22T19:24:35Z",
+      "side": 1,
+      "message": "Not much you can do. 1) Catch that error and display suitable warning and try again later.\n\n2) Create a separate API module which makes all the edits but only increases the rate limiter once.",
+      "parentUuid": "4e1dcb5b_8e7d6fe7",
+      "revId": "b0f6e09e501ffc8f670134f73028db1a69532cce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_837d48e7",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 13
