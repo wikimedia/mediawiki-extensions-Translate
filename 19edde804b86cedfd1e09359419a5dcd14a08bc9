@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e1dcb5b_256e7194",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-23T17:25:29Z",
+      "side": 1,
+      "message": "Another way to write this is {jQuery.Promise[]} ;)",
+      "revId": "19edde804b86cedfd1e09359419a5dcd14a08bc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_056b7583",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 15
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-23T17:25:29Z",
+      "side": 1,
+      "message": "spacing",
+      "revId": "19edde804b86cedfd1e09359419a5dcd14a08bc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_a50161bb",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-23T17:25:29Z",
+      "side": 1,
+      "message": "Might be a tiny bit more readable if you do promise \u003d api... and deferreds.push( promise ), but matter of taste.",
+      "revId": "19edde804b86cedfd1e09359419a5dcd14a08bc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_850665d0",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 15
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-23T17:25:29Z",
+      "side": 1,
+      "message": "return.done.data should be after {Array} and what follows is description.",
+      "revId": "19edde804b86cedfd1e09359419a5dcd14a08bc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_650b49da",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 15
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-23T17:25:29Z",
+      "side": 1,
+      "message": "Xpzcing",
+      "revId": "19edde804b86cedfd1e09359419a5dcd14a08bc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
