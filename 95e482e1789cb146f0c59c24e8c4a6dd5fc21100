@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e1dcb5b_cf8b5ec3",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-23T14:17:44Z",
+      "side": 1,
+      "message": "Unused .then? Remove it?",
+      "revId": "95e482e1789cb146f0c59c24e8c4a6dd5fc21100",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_afb82275",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-23T14:17:44Z",
+      "side": 1,
+      "message": "oldTranslationUnits -\u003e return.done.data",
+      "revId": "95e482e1789cb146f0c59c24e8c4a6dd5fc21100",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_4fb74e82",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-23T14:17:44Z",
+      "side": 1,
+      "message": "spacing",
+      "revId": "95e482e1789cb146f0c59c24e8c4a6dd5fc21100",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_2fac1232",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-23T14:17:44Z",
+      "side": 1,
+      "message": "Trailing tabs",
+      "revId": "95e482e1789cb146f0c59c24e8c4a6dd5fc21100",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_cfa23e3b",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-23T14:17:44Z",
+      "side": 1,
+      "message": "Sync with what?",
+      "revId": "95e482e1789cb146f0c59c24e8c4a6dd5fc21100",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_8f6c4607",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-23T14:17:44Z",
+      "side": 1,
+      "message": ".live is deprecated as of jQuery 1.9. http://jquery.com/upgrade-guide/1.9/#live-removed",
+      "revId": "95e482e1789cb146f0c59c24e8c4a6dd5fc21100",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_6f71eadc",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-23T14:17:44Z",
+      "side": 1,
+      "message": "Extra ()?",
+      "revId": "95e482e1789cb146f0c59c24e8c4a6dd5fc21100",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_4f762ed7",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-23T14:17:44Z",
+      "side": 1,
+      "message": "spacing",
+      "revId": "95e482e1789cb146f0c59c24e8c4a6dd5fc21100",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
