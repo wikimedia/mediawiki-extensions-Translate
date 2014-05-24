@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e1dcb5b_3a9a07be",
+        "filename": "Resources.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-24T14:27:54Z",
+      "side": 1,
+      "message": "You only need to add messages here, if you are using them in JavaScript. That doesn\u0027t seem to be the case currently.",
+      "revId": "661037f2b82ff8c711863405e425f8ce3b449ec5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
