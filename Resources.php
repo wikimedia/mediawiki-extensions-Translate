@@ -466,6 +466,13 @@ $wgResourceModules['ext.translate.workflowselector'] = array(
 $wgResourceModules['ext.translate.special.pagemigration'] = array(
 	'styles' => 'resources/css/ext.translate.special.pagemigration.css',
 	'scripts' => 'resources/js/ext.translate.special.pagemigration.js',
+	'messages' => array(
+		'pm-import-button-label',
+		'pm-savepages-button-label',
+		'pm-cancel-button-label',
+		'pm-pagename-placeholder',
+		'pm-langcode-placeholder'
+	),
 	'dependencies' => array(
 		'mediawiki.api.edit',
 	),
