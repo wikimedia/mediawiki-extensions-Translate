@@ -19,7 +19,7 @@
 	"tpt-templatediff": "문서 틀이 바뀌었습니다.",
 	"tpt-diff-old": "이전 텍스트",
 	"tpt-diff-new": "새 텍스트",
-	"tpt-submit": "번역에 대해 이 판 표시",
+	"tpt-submit": "이 판을 번역하도록 표시",
 	"tpt-sections-oldnew": "새로 및 기존 번역 단위",
 	"tpt-sections-deleted": "삭제된 번역 단위",
 	"tpt-sections-template": "번역 문서 틀",
