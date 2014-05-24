@@ -1,0 +1,81 @@
+#sourceunits {
+	float: left;
+	display: inline-block;
+	width: 40%;
+}
+
+#translationunits {
+	margin-left: 1%;
+	float: left;
+	display: inline-block;
+	width: 40%;
+}
+
+#sourceunits > div,
+#translationunits > div {
+	overflow-y: auto;
+	height: 150px;
+	border: 2px solid gray;
+	margin-bottom: 10px;
+}
+
+#actions {
+	display: inline-block;
+	width: 15%;
+	margin-left: 1%;
+}
+
+#actions > div {
+	height: 150px;
+	margin-bottom: 10px;
+	border: 2px solid transparent;
+}
+
+#actions div:last-child .swap {
+	display: none;
+}
+
+.edit,
+.save-edit,
+.delete,
+.swap {
+	width: 10%;
+	height: 10%;
+	float: left;
+	margin-left: 10%;
+	margin-right: 10%;
+	cursor: pointer;
+}
+
+.disable {
+	pointer-events: none;
+	cursor: default;
+}
+
+.edit {
+	display: inline-block;
+	background: url('../images/action-edit.png');
+	background-image: linear-gradient(transparent, transparent), url('../images/action-edit.png');
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/action-edit.png');
+}
+
+.delete {
+	display: inline-block;
+	background: url('../images/remove.png') transparent;
+	background-image: linear-gradient(transparent, transparent), url('../images/remove.png');
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/remove.png');
+}
+
+.swap {
+	display: inline-block;
+	background: url('../images/label-clock.png') transparent;
+	background-image: linear-gradient(transparent, transparent), url('../images/label-clock.png');
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/label-clock.png');
+}
+
+.save-edit {
+	display: inline-block;
+	background: url('../images/label-tick.png') transparent;
+	background-image: linear-gradient(transparent, transparent), url('../images/label-tick.png');
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/label-tick.png');
+}
