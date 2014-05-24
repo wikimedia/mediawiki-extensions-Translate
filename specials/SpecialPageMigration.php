@@ -25,15 +25,15 @@ class SpecialPageMigration extends SpecialPage {
 		$out = '';
 		$out .= Html::openElement( 'div', array( 'id' => 'pageinput' ) );
 		$out .= Html::element( 'input', array( 'id' => 'pagename', 'type' => 'text',
-			'placeholder' => 'Enter page name' ) );
+			'placeholder' => $this->msg( 'pm-pagename-placeholder' )->text() ) );
 		$out .= Html::element( 'input', array( 'id' => 'langcode', 'type' => 'text',
-			'placeholder' => 'langcode' ) );
+			'placeholder' => $this->msg( 'pm-langcode-placeholder' )->text() ) );
 		$out .= Html::element( 'input', array( 'id' => 'buttonImport', 'type' => 'button',
-			'value' => 'Import' ) );
+			'value' => $this->msg( 'pm-import-button-label' )->text() ) );
 		$out .= Html::element( 'input', array( 'id' => 'buttonSavePages', 'type' => 'button',
-			'value' => 'Save' ) );
+			'value' => $this->msg( 'pm-savepages-button-label' )->text() ) );
 		$out .= Html::element( 'input', array( 'id' => 'buttonCancel', 'type' => 'button',
-			'value' => 'Cancel' ) );
+			'value' => $this->msg( 'pm-cancel-button-label' )->text() ) );
 		$out .= Html::closeElement( 'div' );
 		$out .= Html::element( 'br' );
 		$out .= Html::openElement( 'div', array( 'id' => 'sourceunits' ) );
