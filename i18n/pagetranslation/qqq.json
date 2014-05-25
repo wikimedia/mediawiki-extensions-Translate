@@ -16,7 +16,8 @@
 			"Shirayuki",
 			"Siebrand",
 			"Slboat",
-			"Umherirrender"
+			"Umherirrender",
+			"Robby"
 		]
 	},
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view]]",
@@ -156,9 +157,9 @@
 	"pt-deletepage-list-count": "Used to indicate how many pages will be deleted.\n\nParameters:\n* $1 - number of pages\nSee also:\n* {{msg-mw|Pt-movepage-list-count}}",
 	"pt-deletepage-full-logreason": "Used as summary.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translatable-page title\nSee also:\n* {{msg-mw|Pt-deletepage-lang-logreason}}",
 	"pt-deletepage-lang-logreason": "Used as summary.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translatable-page title\nSee also:\n* {{msg-mw|Pt-deletepage-full-logreason}}",
-	"pm-import-button-label": "Label for button to import the old translations for the given pagename and language code.",
-	"pm-savepages-button-label": "Label for button to save the translations and create correspoding pages.",
-	"pm-cancel-button-label": "Label for button to cancel the imports and clear the window.",
+	"pm-import-button-label": "{{Identical|Import}}",
+	"pm-savepages-button-label": "{{Identical|Save}}",
+	"pm-cancel-button-label": "Label for button to cancel the imports and clear the window.\n{{Identical|Cancel}}",
 	"pm-pagename-placeholder": "Placeholder for the pagename input field.",
 	"pm-langcode-placeholder": "Placeholder for the language code input field."
 }

@@ -159,5 +159,10 @@
 	"pt-deletepage-full-logreason": "חלק מהדף הניתן לתרגום $1.",
 	"pt-deletepage-lang-logreason": "חלק מדך התרגום $1.",
 	"pt-deletepage-started": "נא לבדוק את השגיאות ואת הודעת ההשלמה ב[[Special:Log/pagetranslation|יומן תרגום הדפים]]",
-	"pt-deletepage-intro": "הדך המיוחד הזה מאפשר לך למחוק בשלמותם דפים ניתנים לתרגום או תרגומים שלהם לשפה כלשהי.\nפעולת המחיקה לא תהיה מיידית, כי יש למחוק את כל הדפים התלויים בהם.\nפעולות שייכשלו יירשמו ב[[Special:Log/pagetranslation|יומן תרגום הדפים]] ויהיה צורך לתקן אותן ידנית."
+	"pt-deletepage-intro": "הדך המיוחד הזה מאפשר לך למחוק בשלמותם דפים ניתנים לתרגום או תרגומים שלהם לשפה כלשהי.\nפעולת המחיקה לא תהיה מיידית, כי יש למחוק את כל הדפים התלויים בהם.\nפעולות שייכשלו יירשמו ב[[Special:Log/pagetranslation|יומן תרגום הדפים]] ויהיה צורך לתקן אותן ידנית.",
+	"pm-import-button-label": "ייבוא",
+	"pm-savepages-button-label": "שמירה",
+	"pm-cancel-button-label": "ביטול",
+	"pm-pagename-placeholder": "נא להזין את שם הדף",
+	"pm-langcode-placeholder": "קוד השפה"
 }
