@@ -9,7 +9,8 @@
 			"Vivaelcelta",
 			"Waldir",
 			"Fúlvio",
-			"Imperadeiro98"
+			"Imperadeiro98",
+			"Vitorvicentevalente"
 		]
 	},
 	"pagetranslation": "Tradução de páginas",
@@ -162,5 +163,10 @@
 	"pt-deletepage-full-logreason": "Parte da página traduzível $1.",
 	"pt-deletepage-lang-logreason": "Parte da página traduzida $1.",
 	"pt-deletepage-started": "Verifique a existência de erros ou de uma mensagem de sucesso no [[Special:Log/pagetranslation|registo de traduções]].",
-	"pt-deletepage-intro": "Esta página especial permite eliminar toda uma página traduzível ou uma das suas traduções para uma língua.\nA eliminação não é instantânea, porque também serão eliminadas as páginas dependentes delas.\nOs problemas que ocorrerem serão registados no [[Special:Log/pagetranslation|registo de traduções]] e podem exigir reparação manual."
+	"pt-deletepage-intro": "Esta página especial permite eliminar toda uma página traduzível ou uma das suas traduções para uma língua.\nA eliminação não é instantânea, porque também serão eliminadas as páginas dependentes delas.\nOs problemas que ocorrerem serão registados no [[Special:Log/pagetranslation|registo de traduções]] e podem exigir reparação manual.",
+	"pm-import-button-label": "Importar",
+	"pm-savepages-button-label": "Gravar",
+	"pm-cancel-button-label": "Cancelar",
+	"pm-pagename-placeholder": "Introduza o nome da página",
+	"pm-langcode-placeholder": "Código do idioma"
 }

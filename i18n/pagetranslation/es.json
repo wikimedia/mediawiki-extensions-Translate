@@ -149,5 +149,10 @@
 	"pt-deletepage-full-logreason": "Parte de la página traducible $1.",
 	"pt-deletepage-lang-logreason": "Parte de la página de traducción $1.",
 	"pt-deletepage-started": "Compruebe los errores y los mensajes de conclusión en el [[Special:Log/pagetranslation|registro de traducción de páginas]].",
-	"pt-deletepage-intro": "Esta página especial te permite eliminar páginas traducibles enteras o una página de traducción individual a un idioma. La eliminación no será instantánea, porque deben borrarse todas las páginas dependientes de ella. \nLos fallos se registrarán en el [[Special:Log/pagetranslation|registro de traducción de la página]] y tendrán que ser reparados a mano."
+	"pt-deletepage-intro": "Esta página especial te permite eliminar páginas traducibles enteras o una página de traducción individual a un idioma. La eliminación no será instantánea, porque deben borrarse todas las páginas dependientes de ella. \nLos fallos se registrarán en el [[Special:Log/pagetranslation|registro de traducción de la página]] y tendrán que ser reparados a mano.",
+	"pm-import-button-label": "Importar",
+	"pm-savepages-button-label": "Guardar",
+	"pm-cancel-button-label": "Cancelar",
+	"pm-pagename-placeholder": "Escribe el nombre de la página",
+	"pm-langcode-placeholder": "Código de idioma"
 }

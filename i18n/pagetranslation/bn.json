@@ -25,5 +25,10 @@
 	"pt-movepage-new": "নতুন নাম:",
 	"pt-movepage-reason": "কারণ:",
 	"pt-deletepage-current": "পাতার নাম:",
-	"pt-deletepage-reason": "কারণ:"
+	"pt-deletepage-reason": "কারণ:",
+	"pm-import-button-label": "আমদানি",
+	"pm-savepages-button-label": "সংরক্ষণ",
+	"pm-cancel-button-label": "বাতিল",
+	"pm-pagename-placeholder": "পাতার নাম প্রবেশ করান",
+	"pm-langcode-placeholder": "ভাষা কোড"
 }

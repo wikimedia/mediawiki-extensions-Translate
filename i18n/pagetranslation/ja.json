@@ -155,5 +155,10 @@
 	"pt-deletepage-full-logreason": "翻訳対象ページ「$1」の一部。",
 	"pt-deletepage-lang-logreason": "翻訳ページ「$1」の一部。",
 	"pt-deletepage-started": "[[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認してください。",
-	"pt-deletepage-intro": "この特別ページでは、翻訳対象ページ全体、または指定した言語への翻訳ページを個別に削除できます。\n依存関係があるページもすべて削除するため、削除操作はすぐには完了しません。\n失敗した場合は[[Special:Log/pagetranslation|ページの翻訳記録]]に記録されるので、手動で修正する必要があります。"
+	"pt-deletepage-intro": "この特別ページでは、翻訳対象ページ全体、または指定した言語への翻訳ページを個別に削除できます。\n依存関係があるページもすべて削除するため、削除操作はすぐには完了しません。\n失敗した場合は[[Special:Log/pagetranslation|ページの翻訳記録]]に記録されるので、手動で修正する必要があります。",
+	"pm-import-button-label": "取り込む",
+	"pm-savepages-button-label": "保存",
+	"pm-cancel-button-label": "キャンセル",
+	"pm-pagename-placeholder": "ページ名を入力",
+	"pm-langcode-placeholder": "言語コード"
 }

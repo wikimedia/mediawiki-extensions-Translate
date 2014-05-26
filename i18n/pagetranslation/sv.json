@@ -163,5 +163,10 @@
 	"pt-deletepage-full-logreason": "Del av översättningsbar sida $1.",
 	"pt-deletepage-lang-logreason": "Del av översättningssida $1.",
 	"pt-deletepage-started": "Kontrollera [[Special:Log/pagetranslation|loggen för sidöversättning]] efter fel och meddelande om att det slutförts.",
-	"pt-deletepage-intro": "Denna specialsida låter dig radera en hel översättbar sida eller en enskild översättningssida på ett språk.\nRaderingsåtgärden kommer inte att vara omedelbar, eftersom alla beroende sidor också kommer att raderas.\nFel kommer att registreras i [[Special:Log/pagetranslation|sidöversättningsloggen]] och de behöver repareras manuellt."
+	"pt-deletepage-intro": "Denna specialsida låter dig radera en hel översättbar sida eller en enskild översättningssida på ett språk.\nRaderingsåtgärden kommer inte att vara omedelbar, eftersom alla beroende sidor också kommer att raderas.\nFel kommer att registreras i [[Special:Log/pagetranslation|sidöversättningsloggen]] och de behöver repareras manuellt.",
+	"pm-import-button-label": "Importera",
+	"pm-savepages-button-label": "Spara",
+	"pm-cancel-button-label": "Avbryt",
+	"pm-pagename-placeholder": "Ange sidans namn",
+	"pm-langcode-placeholder": "Språkkod"
 }

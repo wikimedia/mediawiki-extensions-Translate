@@ -117,7 +117,7 @@
 	"action-translate-import": "匯入離線翻譯",
 	"right-translate-messagereview": "複查翻譯",
 	"right-translate-groupreview": "更改訊息群組的工作流程狀態",
-	"translate-rc-translation-filter": "過濾翻譯：",
+	"translate-rc-translation-filter": "搜尋翻譯：",
 	"translate-rc-translation-filter-no": "無",
 	"translate-rc-translation-filter-only": "只顯示翻譯",
 	"translate-rc-translation-filter-filter": "不顯示翻譯",
