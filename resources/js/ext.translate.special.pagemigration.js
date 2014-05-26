@@ -158,6 +158,23 @@
 	}
 
 	/**
+	 * Update the IDs of translation divs and action divs. This function is called
+	 * when a unit is deleted or a new unit is added for manual splitting
+	 */
+	function updateIDs() {
+		var divNumber = 1;
+		$( '#translationunits div' ).each( function() {
+			$( this ).attr( 'id', 't' + ( divNumber ) );
+			divNumber += 1;
+		} );
+		divNumber = 1;
+		$( '#actions div' ).each( function() {
+			$( this ).attr( 'id', 'a' + ( divNumber ) );
+			divNumber += 1;
+		} );
+	}
+
+	/**
 	 * Add empty RHS blocks to always match with the number of source units
 	 */
 	function addEmptyUnits() {
@@ -170,14 +187,12 @@
 			return;
 		} else {
 			difference = noOfSourceUnits - noOfTranslationUnits;
-			previousID = Number( $( '#translationunits div:last' ).attr( 'id' ).replace( 't', '' ) );
 			for ( i = 1; i <= difference; i++ ) {
-				$( '<div>' ).attr( 'id', 't' + ( previousID + 1 ) )
-					.appendTo( divTranslations );
-				$( '<div>' ).attr( 'id', 'a' + ( previousID + 1 ) )
-					.append( $( '<span>' ).attr( 'class', 'edit' ),
+				$( '<div>' ).appendTo( divTranslations );
+				$( '<div>' ).append( $( '<span>' ).attr( 'class', 'edit' ),
 						$( '<span>' ).attr( 'class', 'delete' ),
-						$( '<span>' ).attr( 'class', 'swap' ) )
+						$( '<span>' ).attr( 'class', 'swap' ),
+						$( '<span>' ).attr( 'class', 'add' ) )
 					.appendTo( divActions );
 				previousID += 1;
 			}
@@ -199,7 +214,8 @@
 			$( '<div>' ).attr( 'id', 'a' + ( i + 1 ) )
 				.append( $( '<span>' ).attr( 'class', 'edit' ),
 					$( '<span>' ).attr( 'class', 'delete' ),
-					$( '<span>' ).attr( 'class', 'swap' ) )
+					$( '<span>' ).attr( 'class', 'swap' ),
+					$( '<span>' ).attr( 'class', 'add' ) )
 				.appendTo( divActions );
 		}
 	}
@@ -276,6 +292,20 @@
 		$( '#sourceunits, #translationunits, #actions' ).html( '' );
 	} );
 
+	$( document ).on( 'click', '.add', function() {
+		var parentID, translationID;
+		parentID = $( this ).parent().attr( 'id' );
+		translationID = 't' + parentID.replace( 'a' , '' );
+		$( '<div>' ).insertAfter( '#' + translationID );
+		$( '<div>' ).append( $( '<span>' ).attr( 'class', 'edit' ),
+						$( '<span>' ).attr( 'class', 'delete' ),
+						$( '<span>' ).attr( 'class', 'swap' ),
+						$( '<span>' ).attr( 'class', 'add' ) )
+					.insertAfter( '#' + parentID );
+		noOfTranslationUnits += 1;
+		updateIDs();
+	} );
+
 	$( document ).on( 'click', '.delete', function() {
 		var parentID, translationID;
 		parentID = $( this ).parent().attr( 'id' );
@@ -284,6 +314,7 @@
 		$( this ).parent().remove();
 		noOfTranslationUnits -= 1;
 		addEmptyUnits();
+		updateIDs();
 	} );
 
 	$( document ).on( 'click', '.save-edit', function() {
@@ -336,6 +367,7 @@
 					showTranslationUnits( translations );
 					showActionIcons( noOfTranslationUnits );
 					addEmptyUnits();
+					updateIDs();
 					$( '#buttonSavePages, #buttonCancel').show();
 					$( '#buttonImport' ).hide();
 				} );
