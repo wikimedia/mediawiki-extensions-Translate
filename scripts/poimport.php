@@ -107,7 +107,7 @@ class PoImporter {
 	}
 
 	/// @see Maintenance::output for param docs
-	protected function reportProgress( $text, $channel, $severity = 'status' ) {
+	protected function reportProgress( $text, $channel = null, $severity = 'status' ) {
 		if ( is_callable( $this->progressCallback ) ) {
 			$useErrorOutput = $severity === 'error';
 			call_user_func( $this->progressCallback, $text, $channel, $useErrorOutput );
@@ -198,12 +198,12 @@ class PoImporter {
 
 			if ( $translation !== $oldtranslation ) {
 				if ( $translation === '' ) {
-					$this->reportProgress( "Skipping empty translation in the po file for $key!", 'empty' );
+					$this->reportProgress( "Skipping empty translation in the po file for $key!\n" );
 				} else {
 					if ( $oldtranslation === '' ) {
-						$this->reportProgress( "New translation for $key", 'new' );
+						$this->reportProgress( "New translation for $key\n" );
 					} else {
-						$this->reportProgress( "Translation of $key differs:\n$translation", 'differs' );
+						$this->reportProgress( "Translation of $key differs:\n$translation\n" );
 					}
 					$changes["$key/$code"] = $translation;
 				}
