@@ -10,7 +10,7 @@
 
 class SpecialPageMigration extends SpecialPage {
 	function __construct() {
-		parent::__construct( 'PageMigration' );
+		parent::__construct( 'PageMigration', 'pagetranslation' );
 	}
 
 	function execute( $par ) {
