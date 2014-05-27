@@ -10,13 +10,14 @@
 
 class SpecialPageMigration extends SpecialPage {
 	function __construct() {
-		parent::__construct( 'PageMigration' );
+		parent::__construct( 'PageMigration', 'pagetranslation' );
 	}
 
 	function execute( $par ) {
 		$request = $this->getRequest();
 		$output = $this->getOutput();
 		$this->setHeaders();
+		$this->checkPermissions();
 		$output->addModules( 'ext.translate.special.pagemigration' );
 		# Get request data from, e.g.
 		$param = $request->getText( 'param' );
