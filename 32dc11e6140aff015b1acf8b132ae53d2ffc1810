@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e1dcb5b_d7d9a12d",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-27T10:47:56Z",
+      "side": 1,
+      "message": "Space after \"function\" (also below)",
+      "revId": "32dc11e6140aff015b1acf8b132ae53d2ffc1810",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
