@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_32b0e33d",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-27T12:30:14Z",
+      "side": 1,
+      "message": "uhh, I did a find on function() and replaced with function (). So missed out on that. All done.",
+      "parentUuid": "4e1dcb5b_726f7bc1",
+      "revId": "ba7905972b5725f51fe3950210c7908c4daf55a5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_326103d1",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 1
