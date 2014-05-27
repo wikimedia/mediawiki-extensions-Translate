@@ -163,12 +163,12 @@
 	 */
 	function updateIDs() {
 		var divNumber = 1;
-		$( '#translationunits div' ).each( function() {
+		$( '#translationunits div' ).each( function () {
 			$( this ).attr( 'id', 't' + divNumber );
 			divNumber += 1;
 		} );
 		divNumber = 1;
-		$( '#actions div' ).each( function() {
+		$( '#actions div' ).each( function () {
 			$( this ).attr( 'id', 'a' + divNumber );
 			divNumber += 1;
 		} );
@@ -269,7 +269,7 @@
 		$( '.edit, .delete, .swap' ).removeClass( 'disable' );
 	}
 
-	$( '#buttonSavePages' ).click( function() {
+	$( '#buttonSavePages' ).click( function () {
 		var deferreds;
 
 		if ( noOfSourceUnits !== noOfTranslationUnits ) {
@@ -278,20 +278,20 @@
 		} else {
 			deferreds = createTranslationPages();
 			$( 'input' ).attr( 'disabled', 'disabled' );
-			$.when.apply( null, deferreds ).done(function() {
+			$.when.apply( null, deferreds ).done( function () {
 				$( '#buttonImport' ).show();
 				$( 'input' ).removeAttr( 'disabled' );
 			});
 		}
 	} );
 
-	$( '#buttonCancel' ).click( function() {
+	$( '#buttonCancel' ).click( function () {
 		$( '#buttonSavePages, #buttonCancel').hide();
 		$( '#buttonImport' ).show();
 		$( '#sourceunits, #translationunits, #actions' ).html( '' );
 	} );
 
-	$( document ).on( 'click', '.add', function() {
+	$( document ).on( 'click', '.add', function () {
 		var parentID, translationID;
 		parentID = $( this ).parent().attr( 'id' );
 		translationID = 't' + parentID.replace( 'a' , '' );
@@ -305,7 +305,7 @@
 		updateIDs();
 	} );
 
-	$( document ).on( 'click', '.delete', function() {
+	$( document ).on( 'click', '.delete', function () {
 		var parentID, translationID;
 		parentID = $( this ).parent().attr( 'id' );
 		translationID = 't' + parentID.replace( 'a' , '' );
@@ -316,7 +316,7 @@
 		updateIDs();
 	} );
 
-	$( document ).on( 'click', '.save-edit', function() {
+	$( document ).on( 'click', '.save-edit', function () {
 		var parentID, translationID;
 		parentID = $( this ).parent().attr( 'id' );
 		translationID = 't' + parentID.replace( 'a' , '' );
@@ -326,7 +326,7 @@
 		enableOptions();
 	} );
 
-	$( document ).on( 'click', '.edit', function() {
+	$( document ).on( 'click', '.edit', function () {
 		var parentID, translationID;
 		parentID = $( this ).parent().attr( 'id' );
 		translationID = 't' + parentID.replace( 'a' , '' );
@@ -336,7 +336,7 @@
 		disableOptions();
 	} );
 
-	$ ( document ).on( 'click', '.swap', function() {
+	$ ( document ).on( 'click', '.swap', function () {
 		var parentID, oldID, newID, tempData;
 		parentID = $( this ).parent().attr( 'id' );
 		oldID = Number( parentID.replace( 'a' , '' ) );
@@ -350,7 +350,7 @@
 
 		$( '#buttonSavePages, #buttonCancel').hide();
 
-		$( '#buttonImport' ).click( function() {
+		$( '#buttonImport' ).click( function () {
 			var  pageTitle;
 			pageName = $( '#pagename' ).val();
 			langCode = $( '#langcode' ).val();
