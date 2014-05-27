@@ -31,19 +31,21 @@
 	border: 2px solid transparent;
 }
 
-#actions div:last-child .swap {
+#actions div:last-child .swap,
+#actions div:last-child .add {
 	display: none;
 }
 
 .edit,
 .save-edit,
 .delete,
-.swap {
+.swap,
+.add {
 	width: 10%;
 	height: 10%;
 	float: left;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
 	cursor: pointer;
 }
 
@@ -78,4 +80,11 @@
 	background: url('../images/label-tick.png') transparent;
 	background-image: linear-gradient(transparent, transparent), url('../images/label-tick.png');
 	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/label-tick.png');
+}
+
+.add {
+	display: inline-block;
+	background: url('../images/add.png');
+	background-image: linear-gradient(transparent, transparent), url('../images/add.png');
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/add.png');
 }
