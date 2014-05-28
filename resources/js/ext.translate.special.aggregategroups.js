@@ -68,7 +68,7 @@
 				$span = $( '<span>', spanAttr );
 
 				$ol = $( '#mw-tpa-grouplist-' + parentId );
-				$ol.append( $( '<li>' ).append( $a.after( $span ) ) );
+				$ol.append( $( '<li>' ).append( $a, $span ) );
 
 				// remove this group from the select.
 				$selected.remove();
@@ -105,15 +105,69 @@
 		}
 	}
 
+	function editGroup( event ) {
+		var $target = $( event.target );
+		var $parent = $target.closest( '.mw-tpa-group' );
+		var aggregateGroupId =  $parent.data( 'groupid' ),
+			$displayGroup = $parent.children( '.tp-display-group' ),
+			$editGroup = $parent.children( '.tp-edit-group' );
+		var successFunction, params,
+			aggGroupNameInputName = $editGroup.children( 'input.tp-aggregategroup-edit-name' ),
+			aggGroupNameInputDesc = $editGroup.children( 'input.tp-aggregategroup-edit-description' ),
+			aggregateGroupName = aggGroupNameInputName.val(),
+			aggregateGroupDesc = aggGroupNameInputDesc.val();
+		var api = new mw.Api();
+
+		successFunction = function () {
+			// Replace the text by the new text without altering the other 2 span tags
+			$displayGroup.children( '.tp-name' ).contents().filter( function() {
+				return this.nodeType === 3;
+			} ).replaceWith( aggregateGroupName );
+			$displayGroup.children( '.tp-desc' ).text( aggregateGroupDesc );
+			$displayGroup.removeClass( 'hidden' );
+			$editGroup.addClass( 'hidden' );
+		};
+
+		params = {
+			action: 'aggregategroups',
+			'do': 'update',
+			token: $( '#token' ).val(),
+			groupname: aggregateGroupName,
+			groupdescription: aggregateGroupDesc,
+			aggregategroup: aggregateGroupId,
+			format: 'json'
+		};
+
+		api.post( params ).done( successFunction ).fail( function ( code, data ) {
+			window.alert( data.error.info );
+		} );
+	 }
+
+	function cancelEditGroup( event ) {
+		var $parent = $( event.target ).closest( '.mw-tpa-group' );
+
+		$parent.children( '.tp-display-group' ).removeClass( 'hidden' );
+		$parent.children( '.tp-edit-group' ).addClass( 'hidden' );
+	}
+
 	$( document ).ready( function () {
 		$( '.tp-aggregate-add-button' ).click( associate );
 		$( '.tp-aggregate-remove-button' ).click( dissociate );
 		$( '.tp-aggregate-remove-ag-button' ).click( removeGroup );
+		$( '.tp-aggregategroup-update' ).click( editGroup );
+		$( '.tp-aggregategroup-update-cancel' ).click( cancelEditGroup );
 
 		$( 'a.tpt-add-new-group' ).on( 'click', function ( event ) {
 			$( 'div.tpt-add-new-group' ).removeClass( 'hidden' );
 			// Link has anchor which goes top of the page
 			event.preventDefault();
+		} );
+
+		$( '.tp-aggregate-edit-ag-button' ).on( 'click', function ( event ) {
+			var $parent = $( event.target ).closest( '.mw-tpa-group' );
+
+			$parent.children( '.tp-display-group' ).addClass( 'hidden' );
+			$parent.children( '.tp-edit-group' ).removeClass( 'hidden' );
 		} );
 
 		// FIXME: These selects should be populated with AJAX.
@@ -145,13 +199,60 @@
 				if ( data.error ) {
 					window.alert( data.error.info );
 				} else {
-					var $removeSpan, $div, $groupSelector, $addButton,
+					var $removeSpan, $editSpan, $displayHeader, $div, $groupSelector, $addButton,
+						$cancelButton, $divDisplay, $divEdit, $saveButton,
 						aggregateGroupId = data.aggregategroups.aggregategroupId;
 
-					$removeSpan = $( '<span>' ).attr( 'id', aggregateGroupId ).addClass( 'tp-aggregate-remove-ag-button' );
-					$div = $( '<div class=\'mw-tpa-group\'>' )
-						.append( $( '<h2>' ).text( aggregateGroupName ).append( $removeSpan ) )
-						.append( $( '<p>' ).text( aggregateGroupDesc ) )
+					$removeSpan = $( '<span>' ).attr( 'id', aggregateGroupId )
+						.addClass( 'tp-aggregate-remove-ag-button' );
+					$editSpan = $( '<span>' ).attr( 'id', aggregateGroupId )
+						.addClass( 'tp-aggregate-edit-ag-button' );
+					// Prints the name and the two spans in a single row
+					$displayHeader = $( '<h2>' ).addClass( 'tp-name' ).text( aggregateGroupName )
+						.append( $editSpan, $removeSpan );
+
+					$divDisplay = $( '<div>' ).addClass( 'tp-display-group' )
+						.append( $displayHeader )
+						.append( $( '<p>' ).addClass( 'tp-desc' ).text( aggregateGroupDesc ) );
+
+					$saveButton = ( $( '<input>' )
+						.attr( {
+							type: 'button',
+							class: 'tp-aggregategroup-update',
+							value:  mw.msg( 'tpt-aggregategroup-update' )
+						} )
+					);
+					$cancelButton = ( $( '<input>' )
+						.attr( {
+							type: 'button',
+							class: 'tp-aggregategroup-update-cancel',
+							value: mw.msg( 'tpt-aggregategroup-update-cancel' )
+						} )
+					);
+					$divEdit = $( '<div>' )
+						.addClass( 'tp-edit-group hidden' )
+						.append( $( '<label>' )
+							.text( mw.msg( 'tpt-aggregategroup-edit-name' ) ) )
+					    .append( $( '<input>' )
+							.attr( {
+								class: 'tp-aggregategroup-edit-name',
+								id: 'tp-agg-name',
+								value: aggregateGroupName
+							} )
+						)
+						.append( $( '<br /><label>' )
+							.text( mw.msg( 'tpt-aggregategroup-edit-description' ) ) )
+						.append( $( '<input>' )
+							.attr( {
+								class: 'tp-aggregategroup-edit-description',
+								id: 'tp-agg-desc',
+								value: aggregateGroupDesc
+							} )
+						)
+						.append( $saveButton, $cancelButton );
+
+					$div = $( '<div>' ).addClass( 'mw-tpa-group' )
+						.append( $divDisplay, $divEdit )
 						.append( $( '<ol id=\'mw-tpa-grouplist-' + aggregateGroupId + '\'>' ) );
 
 					$div.data( 'groupid', aggregateGroupId );
@@ -171,6 +272,14 @@
 						$addButton.attr( 'id', aggregateGroupId );
 						$div.append( $groupSelector, $addButton );
 						$addButton.click( associate );
+						$editSpan.on( 'click', function ( event ) {
+							var $parent = $( event.target ).closest( '.mw-tpa-group' );
+							$parent.children( '.tp-display-group' ).addClass( 'hidden' );
+							$parent.children( '.tp-edit-group' ).removeClass( 'hidden' );
+						} );
+
+						$saveButton.click( editGroup );
+						$cancelButton.click( cancelEditGroup );
 						$removeSpan.click( removeGroup );
 						$( 'div.tpt-add-new-group' ).addClass( 'hidden' );
 
