@@ -64,6 +64,8 @@ class SpecialAggregateGroups extends TranslateSpecialPage {
 		 */
 		foreach ( $aggregates as $group ) {
 			$id = $group->getId();
+			$label  = $group->getLabel();
+			$desc = $group->getDescription( $this->getContext() );
 			$div = Html::openElement( 'div', array(
 				'class' => 'mw-tpa-group',
 				'data-groupid' => $id,
@@ -72,15 +74,63 @@ class SpecialAggregateGroups extends TranslateSpecialPage {
 
 			$out->addHtml( $div );
 
+			$edit = Html::element( 'span', array( 'class' => 'tp-aggregate-edit-ag-button' ) );
 			$remove = Html::element( 'span', array( 'class' => 'tp-aggregate-remove-ag-button' ) );
-
-			$header = Html::rawElement(
-				'h2',
-				array(),
-				htmlspecialchars( $group->getLabel() ) . $remove
+			$groupName = Html::rawelement( 'h2',
+				array( 'class' => 'tp-name' ),
+				htmlspecialchars( $label ). $edit . $remove
 			);
-			$out->addHtml( $header );
-			$out->addWikiText( $group->getDescription( $this->getContext() ) );
+			$groupDesc = Html::element( 'p',
+				array( 'class' => 'tp-desc' ),
+				$desc
+			);
+			$groupInfo = Html::rawElement( 'div',
+				array( 'class' => 'tp-display-group' ),
+				$groupName . $groupDesc
+			);
+			$out->addHtml( $groupInfo );
+			//$out->addWikiText( $desc );
+			//$out->addHtml( "</div>" );
+
+			$editGroupNameLabel = $this->msg( 'tpt-aggregategroup-edit-name' )->escaped();
+			$editGroupName = Html::input(
+				'edit-name',
+				$label,
+				'text',
+				array( 'class' => 'tp-aggregategroup-edit-name', 'maxlength' => '200' )
+			);
+			$editGroupDescriptionLabel = $this->msg( 'tpt-aggregategroup-edit-description' )->escaped();
+			$editGroupDescription = Html::input(
+				'edit-desc',
+				$desc,
+				'text',
+				array( 'class' => 'tp-aggregategroup-edit-description' )
+			);
+			$saveButton = Html::element( 'input', array(
+				'type' => 'button',
+				'value' => $this->msg( 'tpt-aggregategroup-update' )->text(),
+				'class' => 'tp-aggregategroup-update'
+			) );
+			$cancelButton = Html::element( 'input', array(
+				'type' => 'button',
+				'value' => $this->msg( 'tpt-aggregategroup-update-cancel' )->text(),
+				'class' => 'tp-aggregategroup-update-cancel'
+			) );
+			$editGroup = Html::rawElement(
+				'div',
+				array(
+					'class' => 'tp-edit-group hidden'
+				),
+				$editGroupNameLabel .
+				$editGroupName . '<br/>' .
+				$editGroupDescriptionLabel .
+				$editGroupDescription .
+				$saveButton .
+				$cancelButton
+			);
+
+			$out->addHtml( $editGroup );
+
 			$this->listSubgroups( $group );
 			$select = $this->getGroupSelector( $pages, $group );
 			$out->addHtml( $select->getHtml() );
