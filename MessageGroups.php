@@ -200,6 +200,18 @@ class MessageGroups {
 		return (bool)self::getGroup( $id );
 	}
 
+
+	/**
+	 * Check if a particular aggregate group label exists
+	 * @param $name string
+	 * @return bool
+	 */
+	public static function labelExists( $name ) {
+		$groups = MessageGroups::getAggregateGroups();
+		$labels = array_map( function ( $g ) { return $g->getLabel(); }, $groups );
+		return (bool)in_array( $name, $labels, true );
+	}
+
 	/**
 	 * Get all enabled message groups.
 	 * @return array ( string => MessageGroup )

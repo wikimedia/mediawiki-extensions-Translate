@@ -274,6 +274,10 @@ $wgResourceModules['ext.translate.special.aggregategroups'] = array(
 	),
 	'messages' => array(
 		'tpt-aggregategroup-remove-confirm',
+		'tpt-aggregategroup-edit-name',
+		'tpt-aggregategroup-edit-description',
+		'tpt-aggregategroup-update',
+		'tpt-aggregategroup-update-cancel'
 	),
 ) + $resourcePaths;
 
