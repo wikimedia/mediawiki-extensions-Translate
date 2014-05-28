@@ -3,7 +3,8 @@
 		"authors": [
 			"Avjoska",
 			"Ker",
-			"Pikne"
+			"Pikne",
+			"Lyrixn"
 		]
 	},
 	"pagetranslation": "Lehekülje tõlkimine",
@@ -135,5 +136,10 @@
 	"pt-deletepage-full-logreason": "Osa tõlgitavast leheküljest $1.",
 	"pt-deletepage-lang-logreason": "Osa tõlkeleheküljest $1.",
 	"pt-deletepage-started": "Palun kontrolli, kas [[Special:Log/pagetranslation|lehekülgede tõlkelogis]] on tõrkeid ja teade lõpulejõudmise kohta.",
-	"pt-deletepage-intro": "See erilehekülg võimaldab kustutada terve tõlgitava lehekülje või ühe keele üksiku tõlkelehekülje.\nToiming pole kohene, sest kõik neist sõltuvad leheküljed kustutatakse samuti.\nNurjumised logitakse [[Special:Log/pagetranslation|lehekülgede tõlkelogisse]] ja need tuleb käsitsi parandada."
+	"pt-deletepage-intro": "See erilehekülg võimaldab kustutada terve tõlgitava lehekülje või ühe keele üksiku tõlkelehekülje.\nToiming pole kohene, sest kõik neist sõltuvad leheküljed kustutatakse samuti.\nNurjumised logitakse [[Special:Log/pagetranslation|lehekülgede tõlkelogisse]] ja need tuleb käsitsi parandada.",
+	"pm-import-button-label": "Impordi",
+	"pm-savepages-button-label": "Salvesta",
+	"pm-cancel-button-label": "Loobu",
+	"pm-pagename-placeholder": "Sisesta lehe nimetus",
+	"pm-langcode-placeholder": "Keelekood"
 }

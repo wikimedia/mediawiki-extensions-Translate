@@ -8,7 +8,8 @@
 			"Meelo",
 			"Suelnur",
 			"Vito Genovese",
-			"Rapsar"
+			"Rapsar",
+			"Mavrikant"
 		]
 	},
 	"pagetranslation": "Çeviri sayfası",
@@ -53,5 +54,10 @@
 	"pt-movepage-new": "Yeni adı:",
 	"pt-movepage-subpages": "Tüm alt sayfaları taşı",
 	"pt-deletepage-current": "Sayfa adı:",
-	"pt-deletepage-subpages": "Tüm alt sayfaları sil"
+	"pt-deletepage-subpages": "Tüm alt sayfaları sil",
+	"pm-import-button-label": "İçe aktar",
+	"pm-savepages-button-label": "Kaydet",
+	"pm-cancel-button-label": "İptal",
+	"pm-pagename-placeholder": "Sayfa adını giriniz",
+	"pm-langcode-placeholder": "Dil kodu"
 }

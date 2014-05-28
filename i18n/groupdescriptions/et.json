@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hendrik"
+			"Hendrik",
+			"Pikne"
 		]
 	},
-	"bw-desc-freecol": "Enne FreeCol'i tõlkimist oma keelde lugege palun [[Translating:FreeCol]]. FreeCol kasutab GPL litsentsi."
+	"bw-desc-freecol": "Enne FreeCol'i tõlkimist oma keelde lugege palun [[Translating:FreeCol]]. FreeCol kasutab GPL litsentsi.",
+	"translate-group-desc-sharelatex": "Sõnumirühm ühiselt kasutatavale veebipõhisele LaTeX-redaktorile [[Translating:ShareLaTeX|ShareLaTeX]]"
 }

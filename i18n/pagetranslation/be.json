@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Тест"
+			"Тест",
+			"Mikalai Udodau"
 		]
 	},
-	"pt-movepage-reason": "Прычына:"
+	"pt-movepage-reason": "Прычына:",
+	"pm-savepages-button-label": "Запісаць",
+	"pm-pagename-placeholder": "Увядзіце назву старонкі",
+	"pm-langcode-placeholder": "Код мовы"
 }

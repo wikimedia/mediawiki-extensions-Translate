@@ -104,5 +104,9 @@
 	"pt-deletepage-list-other": "אנדערע אונטערבלעטער",
 	"pt-deletepage-list-count": "אינגאנצן $1 {{PLURAL:$1|בלאט|בלעטער}} אויסצומעקן.",
 	"pt-deletepage-full-logreason": "טייל פון איבערזעצבארן בלאט $1.",
-	"pt-deletepage-lang-logreason": "טייל פון איבערזעצונג בלאט $1."
+	"pt-deletepage-lang-logreason": "טייל פון איבערזעצונג בלאט $1.",
+	"pm-import-button-label": "אימפארטירן",
+	"pm-savepages-button-label": "אויפֿהיטן",
+	"pm-cancel-button-label": "אַנולירן",
+	"pm-langcode-placeholder": "שפראַך קאד"
 }
