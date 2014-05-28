@@ -19,30 +19,32 @@ class SpecialPageMigration extends SpecialPage {
 		$this->setHeaders();
 		$this->checkPermissions();
 		$output->addModules( 'ext.translate.special.pagemigration' );
+		$output->addModuleStyles( 'jquery.uls.grid' );
 		# Get request data from, e.g.
 		$param = $request->getText( 'param' );
 		# Do stuff
 		# ...
 		$out = '';
-		$out .= Html::openElement( 'div', array( 'id' => 'pageinput' ) );
-		$out .= Html::element( 'input', array( 'id' => 'pagename', 'type' => 'text',
+		$out .= Html::openElement( 'div', array( 'class' => 'grid' ) );
+		$out .= Html::openElement( 'form', array( 'class' => 'p-form row', 'id' => 'p-primary-form' ) );
+		$out .= Html::element( 'input', array( 'id' => 'title', 'class' => 'mw-searchInput',
 			'placeholder' => $this->msg( 'pm-pagename-placeholder' )->text() ) );
-		$out .= Html::element( 'input', array( 'id' => 'langcode', 'type' => 'text',
+		$out .= Html::element( 'input', array( 'id' => 'language', 'type' => 'text',
 			'placeholder' => $this->msg( 'pm-langcode-placeholder' )->text() ) );
-		$out .= Html::element( 'input', array( 'id' => 'buttonImport', 'type' => 'button',
+		$out .= Html::element( 'input', array( 'id' => 'buttonImport',
+			'class' => 'mw-ui-button mw-ui-primary','type' => 'button',
 			'value' => $this->msg( 'pm-import-button-label' )->text() ) );
-		$out .= Html::element( 'input', array( 'id' => 'buttonSavePages', 'type' => 'button',
+		$out .= Html::element( 'input', array( 'id' => 'action-save',
+			'class' => 'mw-ui-button mw-ui-constructive','type' => 'button',
 			'value' => $this->msg( 'pm-savepages-button-label' )->text() ) );
-		$out .= Html::element( 'input', array( 'id' => 'buttonCancel', 'type' => 'button',
+		$out .= Html::element( 'input', array( 'id' => 'action-cancel',
+			'class' => 'mw-ui-button mw-ui-quiet','type' => 'button',
 			'value' => $this->msg( 'pm-cancel-button-label' )->text() ) );
+		$out .= Html::closeElement( 'form' );
+		$out .= Html::openElement( 'div', array( 'class' => 'p-unit-listing' ) );
 		$out .= Html::closeElement( 'div' );
-		$out .= Html::element( 'br' );
-		$out .= Html::openElement( 'div', array( 'id' => 'sourceunits' ) );
 		$out .= Html::closeElement( 'div' );
-		$out .= Html::openElement( 'div', array( 'id' => 'translationunits' ) );
-		$out .= Html::closeElement( 'div' );
-		$out .= Html::openElement( 'div', array( 'id' => 'actions' ) );
-		$out .= Html::closeElement( 'div' );
+
 		$output->addHTML( $out );
 	}
 }
