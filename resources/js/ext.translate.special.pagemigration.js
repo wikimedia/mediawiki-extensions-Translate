@@ -1,7 +1,7 @@
 ( function ( $, mw ) {
 	'use strict';
 	var noOfSourceUnits, noOfTranslationUnits,
-		pageName, langCode;
+		pageName, langCode, sourceUnits = [], translationUnits;
 
 	/**
 	 * Create translation pages using content of right hand side blocks
@@ -11,15 +11,13 @@
 	 */
 	function createTranslationPages() {
 		var api = new mw.Api(), deferreds = [],
-			i, sUnit, tUnit, identifier,
-			title, content, summary, promise;
-
+			i, tUnit, identifier, title,
+			content, summary, promise;
 		for ( i = 0; i < noOfSourceUnits; i++ ) {
-			sUnit = $( '#sourceunits div' ).eq( i );
-			tUnit = $( '#translationunits div' ).eq( i );
-			identifier = sUnit.attr( 'id' ).replace( 's', '' );
+			tUnit = $( '.mw-tpm-sp-unit__target' ).eq( i );
+			identifier = sourceUnits[i].identifier;
 			title = 'Translations:' + pageName + '/' + identifier + '/' + langCode;
-			content = tUnit.text();
+			content = tUnit.val();
 			summary = 'imported translation using [[Special:PageMigration]]';
 			if ( content === '' ) {
 				continue;
@@ -73,6 +71,7 @@
 			mw.log( obj.revisions[0]['*'].split( '\n\n' ) );
 			pageContent = obj.revisions[0]['*'];
 			oldTranslationUnits = pageContent.split( '\n\n' );
+			translationUnits = oldTranslationUnits;
 			return oldTranslationUnits;
 		} ).promise();
 	}
@@ -141,9 +140,8 @@
 			mclanguage: 'en',
 			mcprop: 'definition'
 		} ).then ( function ( data ) {
-			var result, i, sUnit, key,
-				sourceUnits = [];
-
+			var result, i, sUnit, key;
+			sourceUnits = [];
 			result = data.query.messagecollection;
 
 			for ( i = 1; i < result.length; i++ ) {
@@ -158,217 +156,156 @@
 	}
 
 	/**
-	 * Update the IDs of translation divs and action divs. This function is called
-	 * when a unit is deleted or a new unit is added for manual splitting
+	 * Shift rows up by one unit. This is called after a unit is deleted.
+	 * @param {jQuery} start The starting node
 	 */
-	function updateIDs() {
-		var divNumber = 1;
-		$( '#translationunits div' ).each( function () {
-			$( this ).attr( 'id', 't' + divNumber );
-			divNumber += 1;
-		} );
-		divNumber = 1;
-		$( '#actions div' ).each( function () {
-			$( this ).attr( 'id', 'a' + divNumber );
-			divNumber += 1;
-		} );
-	}
-
-	/**
-	 * Add empty RHS blocks to always match with the number of source units
-	 */
-	function addEmptyUnits() {
-		var difference, i, divActions,
-			divTranslations;
-
-		divActions = $( '#actions' );
-		divTranslations = $( '#translationunits' );
-		if ( noOfSourceUnits <= noOfTranslationUnits ) {
-			return;
+	function shiftRowsUp( $start ) {
+		var $current = $start, $next = $start.next(), nextVal;
+		while ( $next.length ) {
+			nextVal = $next.find( '.mw-tpm-sp-unit__target' ).val();
+			$current.find( '.mw-tpm-sp-unit__target' ).val( nextVal );
+			$current = $next;
+			$next = $current.next();
+		}
+		if ( $current.find( '.mw-tpm-sp-unit__source' ).val() ) {
+			$current.find( '.mw-tpm-sp-unit__target' ).val( '' );
 		} else {
-			difference = noOfSourceUnits - noOfTranslationUnits;
-			for ( i = 1; i <= difference; i++ ) {
-				$( '<div>' ).appendTo( divTranslations );
-				$( '<div>' ).append( $( '<span>' ).attr( 'class', 'edit' ),
-					$( '<span>' ).attr( 'class', 'delete' ),
-					$( '<span>' ).attr( 'class', 'swap' ),
-					$( '<span>' ).attr( 'class', 'add' ) )
-				.appendTo( divActions );
+			$current.remove();
+		}
+	}
+
+	function shiftRowsDown( $nextRow, text ) {
+		var oldText;
+
+		while ( $nextRow.length ) {
+			oldText = $nextRow.find( '.mw-tpm-sp-unit__target' ).val();
+			$nextRow.find( '.mw-tpm-sp-unit__target' ).val( text );
+			$nextRow = $nextRow.next();
+			text = oldText;
+		}
+		return text;
+	}
+
+	function createNewUnit( sourceText, targetText ) {
+		var newUnit, sourceUnit, targetUnit, actionUnit;
+
+		newUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit row' );
+		sourceUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__source five columns' )
+			.prop( 'readonly', 'readonly' ).val( sourceText );
+		targetUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__target five columns' )
+			.val( targetText );
+		actionUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit__actions two columns' );
+		actionUnit.append( $( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--delete' ),
+			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--swap' ),
+			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--add' ) );
+		newUnit.append( sourceUnit, targetUnit, actionUnit );
+		return newUnit;
+	}
+
+	/**
+	 * Display the source and target units alongwith the action icons.
+	 * @param {Array} sourceUnits
+	 * @param {Array} translations
+	 */
+	function displayUnits( sourceUnits, translations ) {
+		var i, totalUnits, newUnit, unitListing,
+			sourceText, targetText;
+
+		noOfSourceUnits = sourceUnits.length;
+		noOfTranslationUnits = translations.length;
+		totalUnits = noOfSourceUnits > noOfTranslationUnits ? noOfSourceUnits : noOfTranslationUnits;
+		unitListing = $( '.mw-tpm-sp-unit-listing' );
+		unitListing.html( '' );
+		for ( i = 0; i < totalUnits; i++ ) {
+			sourceText = targetText = '';
+			if ( sourceUnits[i] !== undefined ) {
+				sourceText = sourceUnits[i].definition;
 			}
-			noOfTranslationUnits = noOfSourceUnits;
+			if ( translations[i] !== undefined ) {
+				targetText = translations[i];
+			}
+			newUnit = createNewUnit( sourceText, targetText );
+			unitListing.append( newUnit );
 		}
 	}
 
-	/**
-	 * Display the action icons for each imported translation
-	 * @param {Integer} numberOfTranslationUnits
-	 */
-	function showActionIcons( numberOfTranslationUnits ) {
-		var i, divActions;
-
-		divActions = $( '#actions' );
-		divActions.html( '' );
-
-		for ( i = 0; i < numberOfTranslationUnits; i++ ) {
-			$( '<div>' ).attr( 'id', 'a' + ( i + 1 ) )
-				.append( $( '<span>' ).attr( 'class', 'edit' ),
-					$( '<span>' ).attr( 'class', 'delete' ),
-					$( '<span>' ).attr( 'class', 'swap' ),
-					$( '<span>' ).attr( 'class', 'add' ) )
-				.appendTo( divActions );
-		}
-	}
-
-	/**
-	 * Display the imported translations
-	 * @param {Array} translationUnits Array of translations
-	 */
-	function showTranslationUnits( translationUnits ) {
-		var i, divTranslations;
-
-		divTranslations = $( '#translationunits' );
-		divTranslations.html( '' );
-
-		for ( i = 0; i < translationUnits.length; i++ ) {
-			$( '<div>' ).attr( 'id', 't' + ( i + 1 ) )
-				.text( translationUnits[i] )
-				.appendTo( divTranslations );
-		}
-	}
-
-	/**
-	 * Display the translation units for source page
-	 * @param {Array} sourceUnits Array of Objects
-	 */
-	function showSourceUnits( sourceUnits ) {
-		var i, divSource;
-
-		divSource = $( '#sourceunits' );
-		divSource.html( '' );
-
-		for ( i = 0; i < sourceUnits.length; i++ ) {
-			$( '<div>' ).attr( 'id', 's' + sourceUnits[i].identifier )
-				.text( sourceUnits[i].definition )
-				.appendTo( divSource );
-		}
-	}
-
-	/**
-	 * Disable edit, delete and swap icons when a translation unit is
-	 * opened for editing.
-	 */
-	function disableOptions() {
-		$( '.edit, .delete, .swap' ).addClass( 'disable' );
-	}
-
-	/**
-	 * Enable the edit, delete and swap icons again when a translation unit
-	 * is saved after having been opened for editing.
-	 */
-	function enableOptions() {
-		$( '.edit, .delete, .swap' ).removeClass( 'disable' );
-	}
-
-	$( '#buttonSavePages' ).click( function () {
+	$( '#action-save' ).click( function () {
 		var deferreds;
 
-		if ( noOfSourceUnits !== noOfTranslationUnits ) {
+		if ( noOfSourceUnits < noOfTranslationUnits ) {
 			window.alert( 'Extra units might be present. Please match the source and translation units properly' );
 			return;
 		} else {
 			deferreds = createTranslationPages();
 			$( 'input' ).attr( 'disabled', 'disabled' );
 			$.when.apply( null, deferreds ).done( function () {
-				$( '#buttonImport' ).show();
+				$( '#action-import' ).removeClass( 'hide' );
 				$( 'input' ).removeAttr( 'disabled' );
 			});
 		}
 	} );
 
-	$( '#buttonCancel' ).click( function () {
-		$( '#buttonSavePages, #buttonCancel').hide();
-		$( '#buttonImport' ).show();
-		$( '#sourceunits, #translationunits, #actions' ).html( '' );
+	$( '#action-cancel' ).click( function () {
+		$( '#action-save, #action-cancel' ).hide();
+		$( '#action-import' ).show();
+		$( '.mw-tpm-sp-unit-listing' ).html( '' );
 	} );
 
-	$( document ).on( 'click', '.add', function () {
-		var parentID, translationID;
-		parentID = $( this ).parent().attr( 'id' );
-		translationID = 't' + parentID.replace( 'a' , '' );
-		$( '<div>' ).insertAfter( '#' + translationID );
-		$( '<div>' ).append( $( '<span>' ).attr( 'class', 'edit' ),
-			$( '<span>' ).attr( 'class', 'delete' ),
-			$( '<span>' ).attr( 'class', 'swap' ),
-			$( '<span>' ).attr( 'class', 'add' ) )
-		.insertAfter( '#' + parentID );
+	$( '.mw-tpm-sp-unit-listing' ).on( 'click', '.mw-tpm-sp-action--add', function () {
+		var nextRow, text, newUnit;
+
+		nextRow = $( this ).parents( '.mw-tpm-sp-unit' ).next();
+		text = nextRow.find( '.mw-tpm-sp-unit__target' ).val();
+		nextRow.find( '.mw-tpm-sp-unit__target' ).val( '' );
+		nextRow = nextRow.next();
+		text = shiftRowsDown( nextRow, text );
+		if ( text ) {
+			newUnit = createNewUnit( '', text );
+			$( '.mw-tpm-sp-unit-listing' ).append( newUnit );
+		}
 		noOfTranslationUnits += 1;
-		updateIDs();
 	} );
 
-	$( document ).on( 'click', '.delete', function () {
-		var parentID, translationID;
-		parentID = $( this ).parent().attr( 'id' );
-		translationID = 't' + parentID.replace( 'a' , '' );
-		$( '#' + translationID ).remove();
-		$( this ).parent().remove();
+	$( '.mw-tpm-sp-unit-listing' ).on( 'click', '.mw-tpm-sp-action--delete', function () {
+		var sourceText, rowUnit;
+		rowUnit = $( this ).parents( '.mw-tpm-sp-unit' );
+		sourceText = rowUnit.children( '.mw-tpm-sp-unit__source' ).val();
+		if ( !sourceText ) {
+			$( this ).parent().parent().remove();
+		} else {
+			rowUnit.find( '.mw-tpm-sp-unit__target' ).val( '' );
+			shiftRowsUp( rowUnit );
+		}
 		noOfTranslationUnits -= 1;
-		addEmptyUnits();
-		updateIDs();
 	} );
 
-	$( document ).on( 'click', '.save-edit', function () {
-		var parentID, translationID;
-		parentID = $( this ).parent().attr( 'id' );
-		translationID = 't' + parentID.replace( 'a' , '' );
-		$( '#' + translationID ).attr( 'contenteditable', 'false' );
-		$( '#' + translationID ).css( 'background-color', '#FFFFFF' );
-		$( this ).addClass( 'edit' ).removeClass( 'save-edit' );
-		enableOptions();
+	$( '.mw-tpm-sp-unit-listing' ).on( 'click', '.mw-tpm-sp-action--swap', function () {
+		var rowUnit, tempText, nextVal;
+		rowUnit = $( this ).parents( '.mw-tpm-sp-unit' );
+		tempText = rowUnit.find( '.mw-tpm-sp-unit__target' ).val();
+		nextVal = rowUnit.next().find( '.mw-tpm-sp-unit__target').val()
+		rowUnit.find( '.mw-tpm-sp-unit__target' ).val( nextVal );
+		rowUnit.next().find( '.mw-tpm-sp-unit__target' ).val( tempText );
 	} );
 
-	$( document ).on( 'click', '.edit', function () {
-		var parentID, translationID;
-		parentID = $( this ).parent().attr( 'id' );
-		translationID = 't' + parentID.replace( 'a' , '' );
-		$( '#' + translationID ).attr( 'contenteditable', 'true' );
-		$( '#' + translationID ).css( 'background-color', '#FFF5F0' );
-		$( this ).addClass( 'save-edit' ).removeClass( 'edit' );
-		disableOptions();
-	} );
+	$( '.mw-tpm-sp-unit-listing' ).ready( function () {
 
-	$ ( document ).on( 'click', '.swap', function () {
-		var parentID, oldID, newID, tempData;
-		parentID = $( this ).parent().attr( 'id' );
-		oldID = Number( parentID.replace( 'a' , '' ) );
-		newID = $ ( '#' + parentID ).next().attr( 'id' ).replace( 'a', '' );
-		tempData = $( '#t' + oldID ).text();
-		$( '#t' + oldID ).text( $( '#t' + newID ).text() );
-		$( '#t' + newID ).text( tempData );
-	} );
+		$( '#action-save, #action-cancel').addClass( 'hide' );
 
-	$( document ).ready( function () {
-
-		$( '#buttonSavePages, #buttonCancel').hide();
-
-		$( '#buttonImport' ).click( function () {
-			var  pageTitle;
-			pageName = $( '#pagename' ).val();
-			langCode = $( '#langcode' ).val();
+		$( '#action-import' ).click( function () {
+			var pageTitle;
+			pageName = $( '#title' ).val();
+			langCode = $( '#language' ).val();
 			pageTitle = pageName + '/' + langCode;
 
 			$.when( getSourceUnits( pageName ), getFuzzyTimestamp( pageTitle ) )
 				.then( function ( sourceUnits, fuzzyTimestamp ) {
-				mw.log( 'All done now!' );
 				noOfSourceUnits = sourceUnits.length;
-				showSourceUnits( sourceUnits );
 				splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
 					noOfTranslationUnits = translations.length;
-					showTranslationUnits( translations );
-					showActionIcons( noOfTranslationUnits );
-					addEmptyUnits();
-					updateIDs();
-					$( '#buttonSavePages, #buttonCancel').show();
-					$( '#buttonImport' ).hide();
+					displayUnits( sourceUnits, translations );
+					$( '#action-save, #action-cancel').removeClass( 'hide' );
+					$( '#action-import' ).addClass( 'hide' );
 				} );
 			} );
 		} );
