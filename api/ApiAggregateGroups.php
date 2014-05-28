@@ -123,6 +123,28 @@ class ApiAggregateGroups extends ApiBase {
 			$output['groups'] = self::getAllPages();
 			$output['aggregategroupId'] = $aggregateGroupId;
 			// @todo Logging
+		} elseif ( $action === 'update' ) {
+			if ( !isset( $params['groupname'] ) ) {
+				$this->dieUsageMsg( array( 'missingparam', 'groupname' ) );
+			}
+			$name = trim( $params['groupname'] );
+			if ( strlen( $name ) === 0 ) {
+				$this->dieUsage( 'Invalid aggregate message group name', 'invalidaggregategroupname' );
+			}
+			if ( !isset( $params['groupdescription'] ) ) {
+				$this->dieUsageMsg( array( 'missingparam', 'groupdescription' ) );
+			}
+			$desc = trim( $params['groupdescription'] );
+			$aggregateGroupId = $params['aggregategroup'];
+
+			$oldName = TranslateMetadata::get( $aggregateGroupId, 'name' );
+			$oldDesc = TranslateMetadata::get( $aggregateGroupId, 'description' );
+			if ( $oldName == $name && $oldDesc == $desc) {
+				$this->dieUsageMsg( array( 'invalid-update', 'invalid-update' ) );
+			}
+
+			TranslateMetadata::set( $aggregateGroupId, 'name', $name );
+			TranslateMetadata::set( $aggregateGroupId, 'description', $desc );
 		}
 
 		// If we got this far, nothing has failed
@@ -158,7 +180,7 @@ class ApiAggregateGroups extends ApiBase {
 	public function getAllowedParams() {
 		return array(
 			'do' => array(
-				ApiBase::PARAM_TYPE => array( 'associate', 'dissociate', 'remove', 'add' ),
+				ApiBase::PARAM_TYPE => array( 'associate', 'dissociate', 'remove', 'add', 'update' ),
 				ApiBase::PARAM_REQUIRED => true,
 			),
 			'aggregategroup' => array(
