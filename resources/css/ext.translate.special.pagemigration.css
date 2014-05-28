@@ -1,90 +1,57 @@
-#sourceunits {
-	float: left;
-	display: inline-block;
-	width: 40%;
-}
-
-#translationunits {
-	margin-left: 1%;
-	float: left;
-	display: inline-block;
-	width: 40%;
-}
-
-#sourceunits > div,
-#translationunits > div {
+.mw-tpm-sp-unit__source,
+.mw-tpm-sp-unit__target {
 	overflow-y: auto;
 	height: 150px;
 	border: 2px solid gray;
-	margin-bottom: 10px;
 }
 
-#actions {
-	display: inline-block;
-	width: 15%;
-	margin-left: 1%;
-}
-
-#actions > div {
-	height: 150px;
-	margin-bottom: 10px;
+.mw-tpm-sp-unit__actions {
 	border: 2px solid transparent;
 }
 
-#actions div:last-child .swap,
-#actions div:last-child .add {
+.hide {
 	display: none;
 }
 
-.edit,
-.save-edit,
-.delete,
-.swap,
-.add {
+.mw-tpm-sp-unit:last-child .mw-tpm-sp-action--swap,
+.mw-tpm-sp-unit:last-child .mw-tpm-sp-action--add {
+	display: none;
+}
+
+.mw-tpm-sp-unit {
+	padding-bottom: 10px;
+}
+
+.mw-tpm-sp-unit__source,
+.mw-tpm-sp-unit__target,
+.mw-tpm-sp-unit__actions {
+	height: 150px;
+}
+
+.mw-tpm-sp-action {
 	width: 10%;
 	height: 10%;
 	float: left;
 	margin-left: 5%;
 	margin-right: 5%;
 	cursor: pointer;
-}
-
-.disable {
-	pointer-events: none;
-	cursor: default;
-}
-
-.edit {
 	display: inline-block;
-	background: url('../images/action-edit.png');
-	background-image: linear-gradient(transparent, transparent), url('../images/action-edit.png');
-	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/action-edit.png');
 }
 
-.delete {
-	display: inline-block;
-	background: url('../images/remove.png') transparent;
+.mw-tpm-sp-action--delete {
+	background: url('../images/remove.png') transparent no-repeat;
 	background-image: linear-gradient(transparent, transparent), url('../images/remove.png');
 	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/remove.png');
 }
 
-.swap {
-	display: inline-block;
-	background: url('../images/label-clock.png') transparent;
+.mw-tpm-sp-action--swap {
+	background: url('../images/label-clock.png') transparent no-repeat;
 	background-image: linear-gradient(transparent, transparent), url('../images/label-clock.png');
 	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/label-clock.png');
 }
 
-.save-edit {
-	display: inline-block;
-	background: url('../images/label-tick.png') transparent;
-	background-image: linear-gradient(transparent, transparent), url('../images/label-tick.png');
-	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/label-tick.png');
-}
-
-.add {
-	display: inline-block;
-	background: url('../images/add.png');
+.mw-tpm-sp-action--add {
+	background: url('../images/add.png') transparent no-repeat;
 	background-image: linear-gradient(transparent, transparent), url('../images/add.png');
 	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/add.png');
 }
