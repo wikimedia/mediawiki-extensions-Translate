@@ -211,10 +211,10 @@
 
 		for ( i = 0; i < numberOfTranslationUnits; i++ ) {
 			$( '<div>' ).attr( 'id', 'a' + ( i + 1 ) )
-				.append( $( '<span>' ).attr( 'class', 'edit' ),
-					$( '<span>' ).attr( 'class', 'delete' ),
-					$( '<span>' ).attr( 'class', 'swap' ),
-					$( '<span>' ).attr( 'class', 'add' ) )
+				.append( $( '<span>' ).attr( 'class', 'mw-tpm-sp-action-items_edit' ),
+					$( '<span>' ).attr( 'class', 'mw-tpm-sp-action-items_delete' ),
+					$( '<span>' ).attr( 'class', 'mw-tpm-sp-action-items_swap' ),
+					$( '<span>' ).attr( 'class', 'mw-tpm-sp-action-items_add' ) )
 				.appendTo( divActions );
 		}
 	}
