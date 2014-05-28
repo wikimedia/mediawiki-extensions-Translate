@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e1dcb5b_cdfc6dd8",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-28T08:35:55Z",
+      "side": 1,
+      "message": "For the moment, the ids in this file and the class names in JS file have been replaced only where the HTML is generated. So, the code is broken right now. Once we decide upon and finalize the ids and class names, I will replace them everywhere in CSS and JS.",
+      "revId": "9527600da639fc120b40d6d6fefd79d6d77a6162",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
