@@ -110,8 +110,10 @@ class ApiAggregateGroups extends ApiBase {
 			$desc = trim( $params['groupdescription'] );
 
 			$aggregateGroupId = self::generateAggregateGroupId( $name );
-			$exists = MessageGroups::getGroup( $aggregateGroupId );
-			if ( $exists ) {
+			// The update action breaks this part
+			$idExists = MessageGroups::getGroup( $aggregateGroupId );
+			$nameExists = MessageGroups::labelExists( $name );
+			if ( $idExists || $nameExists ) {
 				$this->dieUsage( 'Message group already exists', 'duplicateaggregategroup' );
 			}
 
@@ -129,6 +131,7 @@ class ApiAggregateGroups extends ApiBase {
 			}
 			$name = trim( $params['groupname'] );
 			if ( strlen( $name ) === 0 ) {
+				// TODO Add error message
 				$this->dieUsage( 'Invalid aggregate message group name', 'invalidaggregategroupname' );
 			}
 			if ( !isset( $params['groupdescription'] ) ) {
@@ -139,10 +142,18 @@ class ApiAggregateGroups extends ApiBase {
 
 			$oldName = TranslateMetadata::get( $aggregateGroupId, 'name' );
 			$oldDesc = TranslateMetadata::get( $aggregateGroupId, 'description' );
-			if ( $oldName == $name && $oldDesc == $desc) {
-				$this->dieUsageMsg( array( 'invalid-update', 'invalid-update' ) );
+
+			// Error if the label exists already
+			$exists = MessageGroups::labelExists( $name );
+			if ( $exists && $oldName !== $name ) {
+				// TODO Add API message
+				$this->dieUsage( 'Message group name already exists', 'duplicateaggregategroup' );
 			}
 
+			if ( $oldName == $name && $oldDesc == $desc ) {
+				// TODO Add API message
+				$this->dieUsageMsg( array( 'Invalid update', 'invalid-update' ) );
+			}
 			TranslateMetadata::set( $aggregateGroupId, 'name', $name );
 			TranslateMetadata::set( $aggregateGroupId, 'description', $desc );
 		}
