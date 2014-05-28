@@ -6,6 +6,13 @@ span.tp-aggregate-remove-button {
 	cursor: pointer;
 }
 
+span.tp-aggregate-edit-ag-button {
+    /* @embed */
+    background: url(../images/action-edit.png) no-repeat scroll left center transparent;
+    padding: 10px;
+    cursor: pointer;
+}
+
 a.tpt-add-new-group {
 	/* @embed */
 	background: url(../images/add.png) no-repeat scroll left center transparent;
@@ -21,5 +28,21 @@ input.tp-aggregategroup-add-name {
 }
 
 input.tp-aggregategroup-add-description {
+	width: 500px;
+}
+
+div.tp-display-group.hidden {
+	display: none;
+}
+
+div.tp-edit-group.hidden {
+	display: none;
+}
+
+input.tp-aggregategroup-edit-name {
+	 width: 250px;
+}
+
+input.tp-aggregategroup-edit-description {
 	width: 500px;
 }
