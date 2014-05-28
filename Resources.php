@@ -343,6 +343,7 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 	'scripts' => 'resources/js/ext.translate.special.pagemigration.js',
 	'dependencies' => array(
 		'mediawiki.api.edit',
+		'mediawiki.ui.button',
 	),
 ) + $resourcePaths;
 
