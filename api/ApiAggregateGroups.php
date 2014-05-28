@@ -110,9 +110,23 @@ class ApiAggregateGroups extends ApiBase {
 			$desc = trim( $params['groupdescription'] );
 
 			$aggregateGroupId = self::generateAggregateGroupId( $name );
-			$exists = MessageGroups::getGroup( $aggregateGroupId );
-			if ( $exists ) {
+
+			// Throw error if group already exists
+			$nameExists = MessageGroups::labelExists( $name );
+			if ( $nameExists ) {
 				$this->dieUsage( 'Message group already exists', 'duplicateaggregategroup' );
+			}
+
+			// ID already exists- Generate a new ID by adding a number to it.
+			$idExists = MessageGroups::getGroup( $aggregateGroupId );
+			if ( $idExists ) {
+				$i = 1;
+				while( $idExists ) {
+					$tempId = $aggregateGroupId . "-" . $i;
+					$idExists = MessageGroups::getGroup( $tempId );
+					$i++;
+				}
+				$aggregateGroupId = $tempId;
 			}
 
 			TranslateMetadata::set( $aggregateGroupId, 'name', $name );
@@ -131,18 +145,21 @@ class ApiAggregateGroups extends ApiBase {
 			if ( strlen( $name ) === 0 ) {
 				$this->dieUsage( 'Invalid aggregate message group name', 'invalidaggregategroupname' );
 			}
-			if ( !isset( $params['groupdescription'] ) ) {
-				$this->dieUsageMsg( array( 'missingparam', 'groupdescription' ) );
-			}
 			$desc = trim( $params['groupdescription'] );
 			$aggregateGroupId = $params['aggregategroup'];
 
 			$oldName = TranslateMetadata::get( $aggregateGroupId, 'name' );
 			$oldDesc = TranslateMetadata::get( $aggregateGroupId, 'description' );
-			if ( $oldName == $name && $oldDesc == $desc) {
-				$this->dieUsageMsg( array( 'invalid-update', 'invalid-update' ) );
+
+			// Error if the label exists already
+			$exists = MessageGroups::labelExists( $name );
+			if ( $exists && $oldName !== $name ) {
+				$this->dieUsage( 'Message group name already exists', 'duplicateaggregategroup' );
 			}
 
+			if ( $oldName == $name && $oldDesc == $desc ) {
+				$this->dieUsage( 'Invalid update', 'invalidupdate' );
+			}
 			TranslateMetadata::set( $aggregateGroupId, 'name', $name );
 			TranslateMetadata::set( $aggregateGroupId, 'description', $desc );
 		}
