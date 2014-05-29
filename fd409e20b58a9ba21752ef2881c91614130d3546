@@ -1,0 +1,446 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e1dcb5b_13d398da",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "p-!",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_b3e18499",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "You might not need fixed height anymore if you are using rows which scale automatically.",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_93de88dd",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it make more sense to put the margin-bottom to p-unit?",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_33e574a0",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "These inline blocks can be moved to p-action.",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_13ea7870",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "back to if (",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_93f5684f",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "string? Isn\u0027t it jQuery? If so, should also be prefixed with $",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_d3fbe042",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "mixed tabs and spaces, space before (",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_339c5412",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "Long line, perhaps use temporary variable.",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_b38f44d1",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "I find more readable to say next \u003d current.next() even though they are the same now",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_33b33498",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "There is .addClass() which is slightly shorter",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_f3ac9c34",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "$( \u0027.mw-tpm-sp-unit-listing\u0027 ) should be queried outside of the loop. I would even go as far as making it a parameter for the function or making the function to return the units for the caller to insert where it wants.",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_b3a6244f",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "This could easily be added in above loop. I also wonder whether this should use .prop",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_93a3283f",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "space before )",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_73688cf2",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "instead of document, you can use the unit-listing element",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_137718d3",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "parents( \u0027selector\u0027 ) is more readable and robust",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_d37880c1",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "I am thinking that  this should be a separate function like shiftRows above.",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_b38504a2",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "Space before (",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_93820896",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "space before (",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_734f6c98",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "I would recommend making a helper like createUnitRow( source, target ). This seems to miss the readonly attribute for the source text?",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_5354702a",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "if (",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_f3625c05",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "\u0027 )\n\nlong line, consider using temporary variable.",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_3349f490",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "\u0027 )",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_d35f6043",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "Just a minor thing but I like using addClass( \u0027hide\u0027 ) instead of show() and hide(). In CSS .hide { display: none; }\n\n\u0027 )",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_b35ce44f",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "double space",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_73364c02",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "\u0027 )",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_533b50e8",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-29T16:53:10Z",
+      "side": 1,
+      "message": "This can be renamed to #action-import for consistency",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
