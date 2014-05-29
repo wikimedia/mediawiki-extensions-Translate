@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ganesh Paudel"
+		]
+	},
+	"pm-import-button-label": "आयात",
+	"pm-savepages-button-label": "संग्रह गर्ने",
+	"pm-cancel-button-label": "रद्द",
+	"pm-pagename-placeholder": "पृष्ठको नाम लेख्नुहोस्",
+	"pm-langcode-placeholder": "भाषा कोड"
+}

@@ -347,6 +347,7 @@ $specialPageAliases['fa'] = array(
 	'Translate' => array( 'ترجمه' ),
 	'TranslationStats' => array( 'آمار_ترجمه‌ها' ),
 	'Translations' => array( 'ترجمه‌ها' ),
+	'PageMigration' => array( 'مهاجرت_صفحه' ),
 );
 
 /** Finnish (suomi) */
@@ -1113,6 +1114,7 @@ $specialPageAliases['zh-hans'] = array(
 	'TranslationStash' => array( '翻译隐藏' ),
 	'TranslationStats' => array( '翻译统计' ),
 	'Translations' => array( '译文' ),
+	'PageMigration' => array( '页面迁移' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
@@ -1133,4 +1135,5 @@ $specialPageAliases['zh-hant'] = array(
 	'TranslationStash' => array( '翻譯隱藏' ),
 	'TranslationStats' => array( '翻譯統計' ),
 	'Translations' => array( '譯文' ),
+	'PageMigration' => array( '頁面轉移' ),
 );
