@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_befb8b43",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T18:38:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_13d398da",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_b3e18499",
         "filename": "resources/css/ext.translate.special.pagemigration.css",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-29T16:53:10Z",
       "side": 1,
       "message": "You might not need fixed height anymore if you are using rows which scale automatically.",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_bea94b23",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T18:38:18Z",
+      "side": 1,
+      "message": "I need some fixed height for the action icons div. Else it becomes too cluttered in case of section headers. Also, if I remove this, the icons cannot be seen at all, don\u0027t know why!",
+      "parentUuid": "4e1dcb5b_b3e18499",
       "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_79e86d0b",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T18:38:18Z",
+      "side": 1,
+      "message": "If I shift it over there, I could hardly see any effect. In the current version, I can see space of 10px between units.",
+      "parentUuid": "4e1dcb5b_93de88dd",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_33e574a0",
         "filename": "resources/css/ext.translate.special.pagemigration.css",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2014-05-29T16:53:10Z",
       "side": 1,
       "message": "These inline blocks can be moved to p-action.",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_7913cd05",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T18:38:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_33e574a0",
       "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
