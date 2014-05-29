@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_d9eb01da",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_13ea7870",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_93f5684f",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 5
@@ -194,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_79bd0dad",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_93f5684f",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_d3fbe042",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 5
@@ -205,6 +241,24 @@
       "writtenOn": "2014-05-29T16:53:10Z",
       "side": 1,
       "message": "mixed tabs and spaces, space before (",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_b97de519",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_d3fbe042",
       "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -245,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_19e4d9da",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_b38f44d1",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_33b33498",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 5
@@ -256,6 +328,24 @@
       "writtenOn": "2014-05-29T16:53:10Z",
       "side": 1,
       "message": "There is .addClass() which is slightly shorter",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_a4513cdf",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_33b33498",
       "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -279,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_59301153",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Caching the variable for now outside the loop and returning newUnit from createNewUnit(). Appending here then.",
+      "parentUuid": "4e1dcb5b_f3ac9c34",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_b3a6244f",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 5
@@ -290,6 +398,24 @@
       "writtenOn": "2014-05-29T16:53:10Z",
       "side": 1,
       "message": "This could easily be added in above loop. I also wonder whether this should use .prop",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_191179b1",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Moved and replaced with .prop",
+      "parentUuid": "4e1dcb5b_b3a6244f",
       "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -313,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_d92ae1d6",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_93a3283f",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_73688cf2",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 5
@@ -324,6 +468,24 @@
       "writtenOn": "2014-05-29T16:53:10Z",
       "side": 1,
       "message": "instead of document, you can use the unit-listing element",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_79218df5",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Using \u0027.mw-tpm-sp-unit-listing\u0027 instead of document",
+      "parentUuid": "4e1dcb5b_73688cf2",
       "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -347,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_19ce1932",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done at other places too.",
+      "parentUuid": "4e1dcb5b_137718d3",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_d37880c1",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 5
@@ -358,6 +538,24 @@
       "writtenOn": "2014-05-29T16:53:10Z",
       "side": 1,
       "message": "I am thinking that  this should be a separate function like shiftRows above.",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_c4de7870",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_d37880c1",
       "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -381,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_d9d781c3",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_b38504a2",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_93820896",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 5
@@ -392,6 +608,24 @@
       "writtenOn": "2014-05-29T16:53:10Z",
       "side": 1,
       "message": "space before (",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_99e1099a",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_93820896",
       "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -415,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_448ca889",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done. And the same is being called from displayUnits() as well now.",
+      "parentUuid": "4e1dcb5b_734f6c98",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_5354702a",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 5
@@ -426,6 +678,24 @@
       "writtenOn": "2014-05-29T16:53:10Z",
       "side": 1,
       "message": "if (",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_79de2de0",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_5354702a",
       "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -449,6 +719,24 @@
     },
     {
       "key": {
+        "uuid": "4e1dcb5b_b9fba543",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_f3625c05",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e1dcb5b_3349f490",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 5
@@ -460,6 +748,24 @@
       "writtenOn": "2014-05-29T16:53:10Z",
       "side": 1,
       "message": "\u0027 )",
+      "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_99f8e947",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-29T20:29:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e1dcb5b_3349f490",
       "revId": "fd409e20b58a9ba21752ef2881c91614130d3546",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
