@@ -243,6 +243,20 @@
 		}
 	}
 
+	/*
+	 * Split headers from remaining text in each translation unit if present.
+	 * @param {Array} translations Array of initial units obtained on splitting
+	 * @return {string} translationUnits Array having the headers split into new unit
+	 */
+	function splitHeaders( translations ) {
+		var i, splitUnits, translationUnits = [];
+		for ( i = 0; i < translations.length; i++ ) {
+		    splitUnits = translations[i].match(/(^==.+$|(?:(?!^==).+\n?)+)/gm);
+			translationUnits = translationUnits.concat( splitUnits );
+		}
+		return translationUnits;
+	}
+
 	$( '#action-save' ).click( function () {
 		var deferreds;
 
@@ -316,8 +330,10 @@
 				.then( function ( sourceUnits, fuzzyTimestamp ) {
 				noOfSourceUnits = sourceUnits.length;
 				splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
-					noOfTranslationUnits = translations.length;
-					displayUnits( sourceUnits, translations );
+					var translationUnits;
+					translationUnits = splitHeaders( translations );
+					noOfTranslationUnits = translationUnits.length;
+					displayUnits( sourceUnits, translationUnits );
 					$( '#action-save, #action-cancel').removeClass( 'hide' );
 					$( '#action-import' ).addClass( 'hide' );
 				} );
