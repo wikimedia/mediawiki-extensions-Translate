@@ -40,6 +40,7 @@
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] 是維基百科的編輯工具集",
 	"translate-group-desc-readerfeedback": "此訊息群組包含了 MediaWiki 的 [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] 擴充套件中所有的訊息",
 	"translate-group-desc-semantic": "此訊息群組包含了 [https://semantic-mediawiki.org/ Semantic MediaWiki] 擴充套件中所有的訊息",
+	"translate-group-desc-sharelatex": "此訊息組用於 [[Translating:ShareLaTeX|ShareLaTeX]]，基於網路協作的 LaTeX 編輯器",
 	"translate-group-desc-translatablepages": "所有可翻譯的頁面",
 	"translate-group-desc-translate": "此訊息群組包含了 MediaWiki 的 [https://www.mediawiki.org/wiki/Extension:Translate 翻譯] 擴充套件中所有的訊息，在翻譯前請先讓您自己熟悉 [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossary] 中的詞匯。",
 	"translate-group-desc-tsint": "用於 [[Translating:Intuition|Intuition]] 的訊息群組，是 [//toolserver.org Toolserver] 工具的 i18n 系統 (<span class=\"plainlinks\">[[Translating talk:Intuition|協助翻譯]]</span>)",

@@ -49,7 +49,7 @@
 	"tsb-create-user-page": "创建基础用户页",
 	"log-name-translatorsandbox": "翻译沙盒",
 	"log-description-translatorsandbox": "翻译沙盒用户的操作日志",
-	"logentry-translatorsandbox-promoted": "$1{{GENDER:$2|帮助了}}$3的{{GENDER:$4|翻译工作}}",
+	"logentry-translatorsandbox-promoted": "$1将$3{{GENDER:$2|提拔}}为{{GENDER:$4|译者}}",
 	"logentry-translatorsandbox-rejected": "$1{{GENDER:$2|拒绝了}}来自“$3”的成为译者请求",
-	"logentry-newusers-tsbpromoted": "用户经沙盒介绍$3{{GENDER:$2|已创建}}"
+	"logentry-newusers-tsbpromoted": "用户账户$3已通过沙盒提拔{{GENDER:$2|创建}}"
 }

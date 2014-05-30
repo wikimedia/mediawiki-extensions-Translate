@@ -59,7 +59,7 @@
 	"tpt-discouraged-pages-title": "不建议的页面",
 	"tpt-new-pages": "以下$1个页面包含具有翻译标记的文本，但没有被标记进行翻译的版本。",
 	"tpt-old-pages": "以下{{PLURAL:$1|此|这些}}页面有被标记进行翻译的版本。",
-	"tpt-other-pages": "以下{{PLURAL:$1|此|这些}}页面有旧版本被标记进行翻译，\n但最新版本不得标记进行翻译。",
+	"tpt-other-pages": "{{PLURAL:$1|此|这些}}页面的旧版本被标记翻译，但最新版本不能标记翻译。",
 	"tpt-discouraged-pages": "{{PLURAL:$1|该|这些}}页面不需要继续翻译。",
 	"tpt-select-prioritylangs": "优先语言代码的逗号分隔型列表",
 	"tpt-select-prioritylangs-force": "不允许向优先语言以外的语言的翻译",
@@ -113,7 +113,7 @@
 	"logentry-pagetranslation-mark": "$1将$3{{GENDER:$2|标记为}}需要翻译",
 	"logentry-pagetranslation-unmark": "$1将$3从翻译中{{GENDER:$2|除去}}",
 	"logentry-pagetranslation-moveok": "$1{{GENDER:$2|完成了}}翻译页面$3到$4的重命名",
-	"logentry-pagetranslation-movenok": "$1{{GENDER:$2|遇到了}}在移动页面$3到$4时遇到了一个问题",
+	"logentry-pagetranslation-movenok": "$1在移动页面$3到$4时{{GENDER:$2|遇到了}}一个问题",
 	"logentry-pagetranslation-deletefok": "$1{{GENDER:$2|完成了}}翻译页面$3的删除",
 	"logentry-pagetranslation-deletefnok": "$1删除属于翻译页面$4的$3{{GENDER:$2|失败}}",
 	"logentry-pagetranslation-deletelok": "$1{{GENDER:$2|完成了}}翻译页面$3的删除",
@@ -173,5 +173,10 @@
 	"pt-deletepage-full-logreason": "翻译页面$1的一部分。",
 	"pt-deletepage-lang-logreason": "翻译页面$1的一部分。",
 	"pt-deletepage-started": "请检查[[Special:Log/pagetranslation|页面翻译日志]]内的错误和完成消息。",
-	"pt-deletepage-intro": "本特殊页面允许您删除一种语言中一整个可翻译页面或单个翻译页面。\n因为所有相关页会一并删除，此操作不会即时完成。\n失败操作记录于[[Special:Log/pagetranslation|页面翻译日志]]中并且需要手动修理。"
+	"pt-deletepage-intro": "本特殊页面允许您删除一种语言中一整个可翻译页面或单个翻译页面。\n因为所有相关页会一并删除，此操作不会即时完成。\n失败操作记录于[[Special:Log/pagetranslation|页面翻译日志]]中并且需要手动修理。",
+	"pm-import-button-label": "导入",
+	"pm-savepages-button-label": "保存",
+	"pm-cancel-button-label": "取消",
+	"pm-pagename-placeholder": "输入页面名称",
+	"pm-langcode-placeholder": "语言代码"
 }
