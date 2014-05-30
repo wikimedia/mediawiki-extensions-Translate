@@ -250,11 +250,24 @@
 		}
 	}
 
+	/*
+	 * Split headers from remaining text in each translation unit if present.
+	 * @param {Array} translations Array of initial units obtained on splitting
+	 * @return {string[]} translationUnits Array having the headers split into new unit
+	 */
+	function splitHeaders( translations ) {
+		return $.map( translations, function ( elem ) {
+			// Check http://regex101.com/r/oT7fZ2 for details
+			return elem.match( /(^==.+$|(?:(?!^==).+\n?)+)/gm );
+		} );
+	}
+
 	/**
 	 * Handler for 'Save' button click event.
 	 */
 	function saveHandler() {
 		var i, list = [], content;
+
 		$( '.mw-tpm-sp-error__message' ).hide( 'fast' );
 		if ( noOfSourceUnits < noOfTranslationUnits ) {
 			$( '.mw-tpm-sp-error__message' ).text( mw.msg( 'pm-extra-units-warning' ) )
@@ -359,8 +372,9 @@
 			.then( function ( sourceUnits, fuzzyTimestamp ) {
 			noOfSourceUnits = sourceUnits.length;
 			splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
-				noOfTranslationUnits = translations.length;
-				displayUnits( sourceUnits, translations );
+				var translationUnits = splitHeaders( translations );
+				noOfTranslationUnits = translationUnits.length;
+				displayUnits( sourceUnits, translationUnits );
 				$( '#action-save, #action-cancel').removeClass( 'hide' );
 				$( '#action-import' ).addClass( 'hide' );
 			} );
