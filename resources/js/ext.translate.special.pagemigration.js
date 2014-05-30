@@ -220,6 +220,7 @@
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Display the imported translations
 	 * @param {Array} translationUnits Array of translations
 	 */
@@ -234,6 +235,26 @@
 				.text( translationUnits[i] )
 				.appendTo( divTranslations );
 		}
+=======
+	 * Create a new row of source text and target text with action icons
+	 * @param {string} sourceText
+	 * @param {string} targetText
+	 */
+	function createNewUnit( sourceText, targetText ) {
+		var newUnit, sourceUnit, targetUnit, actionUnit;
+
+		newUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit row' );
+		sourceUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__source five columns' )
+			.prop( 'readonly', 'readonly' ).val( sourceText );
+		targetUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__target five columns' )
+			.val( targetText );
+		actionUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit__actions two columns' );
+		actionUnit.append( $( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--delete' ),
+			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--swap' ),
+			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--add' ) );
+		newUnit.append( sourceUnit, targetUnit, actionUnit );
+		return newUnit;
+>>>>>>> b0ec2a9... Split headers from other wiki text in translation units at Special:PageMigration
 	}
 
 	/**
@@ -254,6 +275,7 @@
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Disable edit, delete and swap icons when a translation unit is
 	 * opened for editing.
 	 */
@@ -270,6 +292,22 @@
 	}
 
 	$( '#buttonSavePages' ).click( function () {
+=======
+	 * Split headers from remaining text in each translation unit if present.
+	 * @param {Array} translations Array of initial units obtained on splitting
+	 * @return {string} translationUnits Array having the headers split into new unit
+	 */
+	function splitHeaders( translations ) {
+		var i, splitUnits, translationUnits = [];
+		for ( i = 0; i < translations.length; i++ ) {
+			splitUnits = translations[i].match(/(^==.+$|(?:(?!^==).+\n?)+)/gm);
+			translationUnits = translationUnits.concat( splitUnits );
+		}
+		return translationUnits;
+	}
+
+	$( '#action-save' ).click( function () {
+>>>>>>> b0ec2a9... Split headers from other wiki text in translation units at Special:PageMigration
 		var deferreds;
 
 		if ( noOfSourceUnits !== noOfTranslationUnits ) {
@@ -362,6 +400,7 @@
 				noOfSourceUnits = sourceUnits.length;
 				showSourceUnits( sourceUnits );
 				splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
+<<<<<<< HEAD
 					noOfTranslationUnits = translations.length;
 					showTranslationUnits( translations );
 					showActionIcons( noOfTranslationUnits );
@@ -369,6 +408,14 @@
 					updateIDs();
 					$( '#buttonSavePages, #buttonCancel').show();
 					$( '#buttonImport' ).hide();
+=======
+					var translationUnits;
+					translationUnits = splitHeaders( translations );
+					noOfTranslationUnits = translationUnits.length;
+					displayUnits( sourceUnits, translationUnits );
+					$( '#action-save, #action-cancel').removeClass( 'hide' );
+					$( '#action-import' ).addClass( 'hide' );
+>>>>>>> b0ec2a9... Split headers from other wiki text in translation units at Special:PageMigration
 				} );
 			} );
 		} );
