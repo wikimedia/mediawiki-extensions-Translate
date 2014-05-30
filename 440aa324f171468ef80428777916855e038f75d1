@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e1dcb5b_a5d493bf",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-30T18:34:44Z",
+      "side": 1,
+      "message": "No need for height in here.\n\nYou can also move the margin-bottom up here but use padding-bottom instead.",
+      "revId": "440aa324f171468ef80428777916855e038f75d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_a5fb7343",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-30T18:34:44Z",
+      "side": 1,
+      "message": "The images need no-repeat.",
+      "revId": "440aa324f171468ef80428777916855e038f75d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_45925f01",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-30T18:34:44Z",
+      "side": 1,
+      "message": "missing space",
+      "revId": "440aa324f171468ef80428777916855e038f75d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_e5a04b40",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-05-30T18:34:44Z",
+      "side": 1,
+      "message": "How does this code even work when it is not inside $( document ).ready()?",
+      "revId": "440aa324f171468ef80428777916855e038f75d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
