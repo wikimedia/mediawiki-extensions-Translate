@@ -157,6 +157,7 @@
 	"pt-deletepage-list-count": "Used to indicate how many pages will be deleted.\n\nParameters:\n* $1 - number of pages\nSee also:\n* {{msg-mw|Pt-movepage-list-count}}",
 	"pt-deletepage-full-logreason": "Used as summary.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translatable-page title\nSee also:\n* {{msg-mw|Pt-deletepage-lang-logreason}}",
 	"pt-deletepage-lang-logreason": "Used as summary.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translatable-page title\nSee also:\n* {{msg-mw|Pt-deletepage-full-logreason}}",
+	"pagemigration": "Title of the page for Special:PageMigration",
 	"pm-import-button-label": "Used as label for the \"Import\" button.\n{{Identical|Import}}",
 	"pm-savepages-button-label": "Used as label for the \"Save pages\" button.\n{{Identical|Save}}",
 	"pm-cancel-button-label": "Label for button to cancel the imports and clear the window.\n{{Identical|Cancel}}",
