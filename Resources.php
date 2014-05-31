@@ -345,6 +345,13 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 		'mediawiki.api.edit',
 		'mediawiki.ui.button',
 	),
+	'messages' => array(
+		'pm-page-does-not-exist',
+		'pm-old-translations-missing',
+		'pm-extra-units-warning',
+		'pm-pagename-missing',
+		'pm-langcode-missing'
+	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.pagetranslation'] = array(
