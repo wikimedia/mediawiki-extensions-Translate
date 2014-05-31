@@ -1,0 +1,11 @@
+== Translate 2014.05 ==
+Released at 2014-05-31.
+
+=== Noteworthy changes ===
+* Add summary to the Special:MessageGroupStats page.
+* The icon to hide the sidebar on Special:Translate is now clickable in small
+screen sizes.
+* When a user is promoted from translator sandbox, it is treated as account
+creation. Promoted users can now receive NewUserMessage.
+* When doing action=purge on Special:LanguageStats, the stats were not
+completely purged until now.
