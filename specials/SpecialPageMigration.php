@@ -26,6 +26,12 @@ class SpecialPageMigration extends SpecialPage {
 		# ...
 		$out = '';
 		$out .= Html::openElement( 'div', array( 'class' => 'grid' ) );
+		$out .= Html::openElement( 'div', array( 'class' => 'mw-tpm-sp-error-unit row',
+			'id' => 'mw-tpm-sp-error-div' ) );
+		$out .= Html::openElement( 'div',
+			array( 'class' => 'mw-tpm-sp-error-unit__message five columns' ) );
+		$out .= Html::closeElement( 'div' );
+		$out .= Html::closeElement( 'div' );
 		$out .= Html::openElement( 'form', array( 'class' => 'mw-tpm-sp-form row',
 			'id' => 'mw-tpm-sp-primary-form' ) );
 		$out .= Html::element( 'input', array( 'id' => 'title', 'class' => 'mw-searchInput',
