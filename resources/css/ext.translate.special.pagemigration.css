@@ -55,3 +55,11 @@
 	background-image: linear-gradient(transparent, transparent), url('../images/add.png');
 	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/add.png');
 }
+
+.mw-tpm-sp-error__message {
+	font-size: 0.9em;
+	word-wrap: break-word;
+	color: #C00;
+	border: 1px solid #FAC5C5;
+	background-color: #FAE3E3;
+}

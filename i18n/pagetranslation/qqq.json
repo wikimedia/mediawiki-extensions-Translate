@@ -161,5 +161,10 @@
 	"pm-savepages-button-label": "Used as label for the \"Save pages\" button.\n{{Identical|Save}}",
 	"pm-cancel-button-label": "Label for button to cancel the imports and clear the window.\n{{Identical|Cancel}}",
 	"pm-pagename-placeholder": "Placeholder for the pagename input field.",
-	"pm-langcode-placeholder": "Placeholder for the language code input field.\n{{Identical|Language code}}"
+	"pm-langcode-placeholder": "Placeholder for the language code input field.\n{{Identical|Language code}}",
+	"pm-page-does-not-exist": "Parameters:\n* $1 - page title",
+	"pm-old-translations-missing": "Parameters:\n* $1 - page title",
+	"pm-extra-units-warning": "Warning given when number of translation units are greater than the number of source units",
+	"pm-pagename-missing": "Error message given when page title field is blank",
+	"pm-langcode-missing": "Error message given when language code field is blank"
 }

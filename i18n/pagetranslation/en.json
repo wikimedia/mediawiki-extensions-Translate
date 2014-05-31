@@ -160,5 +160,10 @@
     "pm-savepages-button-label": "Save",
     "pm-cancel-button-label": "Cancel",
     "pm-pagename-placeholder": "Enter the page name",
-    "pm-langcode-placeholder": "Language code"
+    "pm-langcode-placeholder": "Language code",
+    "pm-page-does-not-exist": "$1 does not exist",
+    "pm-old-translations-missing": "$1 does not contain old translations",
+    "pm-extra-units-warning": "Extra units might be present. Please match the source and translation units properly",
+    "pm-pagename-missing": "Please enter the page name",
+    "pm-langcode-missing": "Please enter the language code"
 }
