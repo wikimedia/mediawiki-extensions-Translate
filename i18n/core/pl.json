@@ -404,5 +404,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% przetłumaczonych, $2% przejrzanych, $3% nieaktualnych",
 	"translate-search-more-groups-info": "$1 więcej  {{PLURAL:$1|grupa|grup}}",
 	"translate-ulsdep-title": "Błąd konfiguracji",
-	"translate-ulsdep-body": "Rozszerzenie tłumaczeń jest zależne od [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector rozszerzenia Uniwersalny Selektor Języka]."
+	"translate-ulsdep-body": "Rozszerzenie tłumaczeń jest zależne od [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector rozszerzenia Uniwersalny Selektor Języka]."
 }

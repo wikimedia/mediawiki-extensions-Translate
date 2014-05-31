@@ -166,6 +166,7 @@
 	"pt-deletepage-lang-logreason": "Teil der übersetzten Seite $1.",
 	"pt-deletepage-started": "Bitte das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] nach Fehlern und Ausführungsnachrichten prüfen.",
 	"pt-deletepage-intro": "Diese Spezialseite ermöglicht die Löschung einer ganzen übersetzbaren Seite oder einer individuellen Übersetzungsseite in einer Sprache.\nDie Ausführung erfolgt nicht unmittelbar, da auch alle dazugehörigen Seiten gelöscht werden.\nFehler werden im [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] aufgezeichnet und müssen nachträglich manuell berichtigt werden.",
+	"pagemigration": "Seitenmigration",
 	"pm-import-button-label": "Importieren",
 	"pm-savepages-button-label": "Speichern",
 	"pm-cancel-button-label": "Abbrechen",

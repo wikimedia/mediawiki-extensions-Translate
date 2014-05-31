@@ -161,5 +161,9 @@
 	"pt-deletepage-full-logreason": "Część strony do tłumaczenia  $1.",
 	"pt-deletepage-lang-logreason": "Część strony tłumaczenia  $1.",
 	"pt-deletepage-started": "Sprawdź [[Special:Log/pagetranslation|dziennik strony tłumaczenia]] pod względem błędów i komunikatów zakończenia.",
-	"pt-deletepage-intro": "Ta specjalna strona pozwala na usuwanie całej strony przeznaczonej do tłumaczenia lub pojedynczej strony w danym języku.\nAkcja usuwania nie będzie natychmiastowa, ponieważ wszystkie strony zależne od podanych również będą usunięte.\nBłędy będą rejestrowane [[Special:Log/pagetranslation|w dzienniku tłumaczenia strony]] i muszą być naprawione ręcznie."
+	"pt-deletepage-intro": "Ta specjalna strona pozwala na usuwanie całej strony przeznaczonej do tłumaczenia lub pojedynczej strony w danym języku.\nAkcja usuwania nie będzie natychmiastowa, ponieważ wszystkie strony zależne od podanych również będą usunięte.\nBłędy będą rejestrowane [[Special:Log/pagetranslation|w dzienniku tłumaczenia strony]] i muszą być naprawione ręcznie.",
+	"pm-savepages-button-label": "Zapisz",
+	"pm-cancel-button-label": "Anuluj",
+	"pm-pagename-placeholder": "Wprowadź nazwę strony",
+	"pm-langcode-placeholder": "Kod języka"
 }
