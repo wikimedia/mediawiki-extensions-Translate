@@ -54,21 +54,19 @@
 			titles: pageTitle
 		} ).then( function ( data ) {
 			var pageContent, oldTranslationUnits, obj, page;
-
 			for ( page in data.query.pages ) {
 				obj = data.query.pages[page];
 			}
 			if ( typeof obj === undefined ) {
-				// obj was not initialized. Handle this case
-				mw.log( 'No page' );
+				// obj was not initialized
+				window.alert( pageTitle + ' does not exist' );
 				return new $.Deferred().reject();
 			}
-			if ( typeof obj.revisions === undefined ) {
-				// the case of /en subpage
-				mw.log( 'Nothing to import' );
+			if ( obj.revisions === undefined ) {
+				// the case of /en subpage where first edit is by FuzzyBot
+				window.alert( pageTitle + ' does not contain old translations' );
 				return new $.Deferred().reject();
 			}
-			mw.log( obj.revisions[0]['*'].split( '\n\n' ) );
 			pageContent = obj.revisions[0]['*'];
 			oldTranslationUnits = pageContent.split( '\n\n' );
 			translationUnits = oldTranslationUnits;
@@ -98,20 +96,20 @@
 		} ).then ( function ( data ) {
 			var timestampFB, dateFB, timestampOld,
 				page, obj;
-			// FB = FuzzyBot
 			for ( page in data.query.pages ) {
 				obj = data.query.pages[page];
 			}
-			if ( typeof obj === undefined ) {
-				mw.log( 'No page' );
+			// Page does not exist
+			if ( obj.missing === '' ) {
+				window.alert( pageTitle + ' does not exist' );
 				return new $.Deferred().reject();
 			}
-			mw.log( data );
-			if ( typeof obj.revisions === undefined ) {
-				mw.log( 'No edit by FuzzyBot on this page' );
+			// Page exists, but no edit by FuzzyBot
+			if ( obj.revisions === undefined ) {
+				window.alert( pageTitle + ' does not contain old translations' );
 				return new $.Deferred().reject();
 			} else {
-				/*FB over here refers to FuzzyBot*/
+				// FB over here refers to FuzzyBot
 				timestampFB = obj.revisions[0].timestamp;
 				dateFB = new Date( timestampFB );
 				dateFB.setSeconds( dateFB.getSeconds() - 1 );
@@ -143,7 +141,6 @@
 			var result, i, sUnit, key;
 			sourceUnits = [];
 			result = data.query.messagecollection;
-
 			for ( i = 1; i < result.length; i++ ) {
 				sUnit = {};
 				key = result[i].key;
@@ -311,7 +308,14 @@
 			pageName = $( '#title' ).val();
 			langCode = $( '#language' ).val();
 			pageTitle = pageName + '/' + langCode;
-
+			if ( pageName === '' ) {
+				window.alert( 'Please enter the page name' );
+				return;
+			}
+			if ( langCode === '' ) {
+				window.alert( 'Please enter the language code' );
+				return;
+			}
 			$.when( getSourceUnits( pageName ), getFuzzyTimestamp( pageTitle ) )
 				.then( function ( sourceUnits, fuzzyTimestamp ) {
 				noOfSourceUnits = sourceUnits.length;
