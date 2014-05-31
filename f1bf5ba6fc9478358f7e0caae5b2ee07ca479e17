@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e1dcb5b_df4d17c9",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-05-31T13:31:03Z",
+      "side": 1,
+      "message": "Using window.alert as of now. Please advice if something else needs to be used here.",
+      "revId": "f1bf5ba6fc9478358f7e0caae5b2ee07ca479e17",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
