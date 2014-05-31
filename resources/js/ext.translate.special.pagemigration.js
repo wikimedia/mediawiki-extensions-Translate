@@ -54,21 +54,21 @@
 			titles: pageTitle
 		} ).then( function ( data ) {
 			var pageContent, oldTranslationUnits, obj, page;
-
 			for ( page in data.query.pages ) {
 				obj = data.query.pages[page];
 			}
 			if ( typeof obj === undefined ) {
-				// obj was not initialized. Handle this case
-				mw.log( 'No page' );
+				// obj was not initialized
+				$( '.mw-tpm-sp-error-unit__message' ).text( pageTitle + ' does not exist' )
+					.show( 'fast' );
 				return new $.Deferred().reject();
 			}
-			if ( typeof obj.revisions === undefined ) {
-				// the case of /en subpage
-				mw.log( 'Nothing to import' );
+			if ( obj.revisions === undefined ) {
+				// the case of /en subpage where first edit is by FuzzyBot
+				$( '.mw-tpm-sp-error-unit__message' ).text( pageTitle + ' does not contain old translations' )
+					.show( 'fast' );
 				return new $.Deferred().reject();
 			}
-			mw.log( obj.revisions[0]['*'].split( '\n\n' ) );
 			pageContent = obj.revisions[0]['*'];
 			oldTranslationUnits = pageContent.split( '\n\n' );
 			translationUnits = oldTranslationUnits;
@@ -98,20 +98,22 @@
 		} ).then ( function ( data ) {
 			var timestampFB, dateFB, timestampOld,
 				page, obj;
-			// FB = FuzzyBot
 			for ( page in data.query.pages ) {
 				obj = data.query.pages[page];
 			}
-			if ( typeof obj === undefined ) {
-				mw.log( 'No page' );
+			// Page does not exist
+			if ( obj.missing === '' ) {
+				$( '.mw-tpm-sp-error-unit__message' ).text( pageTitle + ' does not exist' )
+					.show( 'fast' );
 				return new $.Deferred().reject();
 			}
-			mw.log( data );
-			if ( typeof obj.revisions === undefined ) {
-				mw.log( 'No edit by FuzzyBot on this page' );
+			// Page exists, but no edit by FuzzyBot
+			if ( obj.revisions === undefined ) {
+				$( '.mw-tpm-sp-error-unit__message' ).text( pageTitle + ' does not contain old translations' )
+					.show( 'fast' );
 				return new $.Deferred().reject();
 			} else {
-				/*FB over here refers to FuzzyBot*/
+				// FB over here refers to FuzzyBot
 				timestampFB = obj.revisions[0].timestamp;
 				dateFB = new Date( timestampFB );
 				dateFB.setSeconds( dateFB.getSeconds() - 1 );
@@ -143,7 +145,6 @@
 			var result, i, sUnit, key;
 			sourceUnits = [];
 			result = data.query.messagecollection;
-
 			for ( i = 1; i < result.length; i++ ) {
 				sUnit = {};
 				key = result[i].key;
@@ -245,9 +246,10 @@
 
 	$( '#action-save' ).click( function () {
 		var deferreds;
-
+		$( '.mw-tpm-sp-error-unit__message' ).hide( 'fast' );
 		if ( noOfSourceUnits < noOfTranslationUnits ) {
-			window.alert( 'Extra units might be present. Please match the source and translation units properly' );
+			$( '.mw-tpm-sp-error-unit__message' ).text( 'Extra units might be present. Please match' +
+				' the source and translation units properly' ).show( 'fast' );
 			return;
 		} else {
 			deferreds = createTranslationPages();
@@ -260,6 +262,7 @@
 	} );
 
 	$( '#action-cancel' ).click( function () {
+		$( '.mw-tpm-sp-error-unit__message' ).hide( 'fast' );
 		$( '#action-save, #action-cancel' ).addClass( 'hide' );
 		$( '#action-import' ).removeClass( 'hide' );
 		$( '.mw-tpm-sp-unit-listing' ).html( '' );
@@ -305,13 +308,23 @@
 	$( '.mw-tpm-sp-unit-listing' ).ready( function () {
 
 		$( '#action-save, #action-cancel').addClass( 'hide' );
-
+		$( '.mw-tpm-sp-error-unit__message' ).addClass( 'hide' );
 		$( '#action-import' ).click( function () {
 			var pageTitle;
 			pageName = $( '#title' ).val();
 			langCode = $( '#language' ).val();
 			pageTitle = pageName + '/' + langCode;
-
+			$( '.mw-tpm-sp-error-unit__message' ).hide( 'fast' );
+			if ( pageName === '' ) {
+				$( '.mw-tpm-sp-error-unit__message' ).text( 'Please enter the page name' )
+					.show( 'fast' );
+				return;
+			}
+			if ( langCode === '' ) {
+				$( '.mw-tpm-sp-error-unit__message' ).text( 'Please enter the language code' )
+					.show( 'fast' );
+				return;
+			}
 			$.when( getSourceUnits( pageName ), getFuzzyTimestamp( pageTitle ) )
 				.then( function ( sourceUnits, fuzzyTimestamp ) {
 				noOfSourceUnits = sourceUnits.length;
