@@ -37,7 +37,7 @@
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] là một thư viện để lập chương trình tự động sửa đổi Wikipedia.",
 	"translate-group-desc-readerfeedback": "Siêu nhóm thông điệp chứa tất cả các thông điệp dùng cho phần mở rộng MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback?uselang=vi ReaderFeedback]",
 	"translate-group-desc-semantic": "Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [https://semantic-mediawiki.org/?uselang=vi MediaWiki Ngữ nghĩa]",
-	"translate-group-desc-sharelatex": "Nhóm thông điệp của trình soạn thảo LaTeX [[Translating:ShareLaTeX|ShareLaTeX]]",
+	"translate-group-desc-sharelatex": "Nhóm thông điệp của [[Translating:ShareLaTeX|ShareLaTeX]], một chương trình cộng tác soạn thảo LaTeX trực tuyến",
 	"translate-group-desc-translatablepages": "Mọi trang dịch được",
 	"translate-group-desc-translate": "Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate?uselang=vi Translate] cho MediaWiki; xin vui lòng đọc hiểu [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary?uselang=vi thuật ngữ]",
 	"translate-group-desc-tsint": "Nhóm thông điệp của [[Translating:Intuition|Intuition]], hệ thống biên dịch các công cụ [//toolserver.org Toolserver] (<span class=\"plainlinks\">[[Translating talk:Intuition|trợ giúp]] · [https://wiki.toolserver.org/view/Toolserver_Intuition?uselang=vi chi tiết kỹ thuật]</span>)",

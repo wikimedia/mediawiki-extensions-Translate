@@ -174,6 +174,7 @@
 	"pt-deletepage-lang-logreason": "翻译页面$1的一部分。",
 	"pt-deletepage-started": "请检查[[Special:Log/pagetranslation|页面翻译日志]]内的错误和完成消息。",
 	"pt-deletepage-intro": "本特殊页面允许您删除一种语言中一整个可翻译页面或单个翻译页面。\n因为所有相关页会一并删除，此操作不会即时完成。\n失败操作记录于[[Special:Log/pagetranslation|页面翻译日志]]中并且需要手动修理。",
+	"pagemigration": "页面迁移",
 	"pm-import-button-label": "导入",
 	"pm-savepages-button-label": "保存",
 	"pm-cancel-button-label": "取消",

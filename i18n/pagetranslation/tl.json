@@ -134,5 +134,7 @@
 	"pt-deletepage-full-logreason": "Bahagi ng maisasalinwikang pahinang $1.",
 	"pt-deletepage-lang-logreason": "Bahagi ng pahina ng salinwikang $1.",
 	"pt-deletepage-started": "Pakisuri ang [[Special:Log/pagetranslation|talaan ng pagsasalinwika ng pahina]] para sa mga kamalian at mensahe ng pagkakabuo.",
-	"pt-deletepage-intro": "Nagpapahintulot sa iyo ang pahinang ito na magbura ng kabuuan ng mga pahinang maisasalinwika o mga pagsasalinwika na papunta sa isang wika.\nAng kilos ng pagbura ay hindi magiging kaagad, dahil maraming mga pahina ang kakailanganing burahin.\nAng mga kabiguan ay itatala sa loob ng [[Special:Log/pagetranslation|tala ng pagsasalinwika ng pahina]] at kakailanganing kinakamay ang pagkukumpuni ng mga ito."
+	"pt-deletepage-intro": "Nagpapahintulot sa iyo ang pahinang ito na magbura ng kabuuan ng mga pahinang maisasalinwika o mga pagsasalinwika na papunta sa isang wika.\nAng kilos ng pagbura ay hindi magiging kaagad, dahil maraming mga pahina ang kakailanganing burahin.\nAng mga kabiguan ay itatala sa loob ng [[Special:Log/pagetranslation|tala ng pagsasalinwika ng pahina]] at kakailanganing kinakamay ang pagkukumpuni ng mga ito.",
+	"pm-savepages-button-label": "Itala",
+	"pm-pagename-placeholder": "Itala ang pangalan ng pahina"
 }
