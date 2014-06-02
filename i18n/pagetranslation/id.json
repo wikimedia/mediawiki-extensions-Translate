@@ -7,7 +7,8 @@
 			"Irwangatot",
 			"IvanLanin",
 			"Rex",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Raynasution"
 		]
 	},
 	"pagetranslation": "Penerjemahan halaman",
@@ -86,5 +87,11 @@
 	"pt-movepage-logreason": "Bagian dari halaman yang dapat diterjemahkan $1.",
 	"pt-movepage-started": "Halaman dasar telah dipindahkan.\nSilakan periksa [[Special:Log/pagetranslation|log penerjemahan halaman]] untuk pesan kesalahan dan penyelesaian.",
 	"pt-locked-page": "Halaman ini dikunci karena halaman yang dapat diterjemahkan saat ini sedang dipindahkan.",
-	"pt-deletepage-reason": "Alasan:"
+	"pt-deletepage-reason": "Alasan:",
+	"pagemigration": "Perpindahan halaman",
+	"pm-import-button-label": "Impor",
+	"pm-savepages-button-label": "Simpan",
+	"pm-cancel-button-label": "Batalkan",
+	"pm-pagename-placeholder": "Masukkan nama halaman",
+	"pm-langcode-placeholder": "Kode Bahasa"
 }

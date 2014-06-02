@@ -60,7 +60,7 @@
 	"tpt-rev-unmark-tooltip": "حذف این صفحه از ترجمه.",
 	"tpt-rev-discourage-tooltip": "دلسرد شدن از ترجمه‌های بیشتر در این صفحه",
 	"tpt-rev-encourage-tooltip": "بازگرداندن این صفحه به ترجمه عادی.",
-	"translate-tag-translate-link-desc": "ترجمه این پروژه",
+	"translate-tag-translate-link-desc": "ترجمهٔ این پروژه",
 	"translate-tag-markthis": "علامت‌گذاری این صفحه برای ترجمه",
 	"translate-tag-markthisagain": "این صفحه <span class=\"plainlinks\">[$1 changes]</span> دارد از زمانی که آخرین <span class=\"plainlinks\">[$2 marked for translation]</span> بود.",
 	"translate-tag-hasnew": "این صفحه شامل <span class=\"plainlinks\">[$1 changes]</span> است که برای ترجمه علامت‌گذاری نشده‌اند.",

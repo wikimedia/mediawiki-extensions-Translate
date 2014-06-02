@@ -4,7 +4,8 @@
 			"Karthi.dr",
 			"Shanmugamp7",
 			"TRYPPN",
-			"மதனாஹரன்"
+			"மதனாஹரன்",
+			"Kalyanasundar"
 		]
 	},
 	"pagetranslation": "பக்கத்தின் மொழிபெயர்ப்பு",
@@ -85,5 +86,6 @@
 	"pt-deletepage-list-count": "மொத்தம்  $1   {{PLURAL:$1|பக்கம் |பக்கங்கள்}} நீக்கப்பட.",
 	"pt-deletepage-full-logreason": "மொழிபெயர்க்க தகுந்த பக்கத்தின் பகுதி $1.",
 	"pt-deletepage-lang-logreason": "மொழிபெயர்ப்பு பக்கத்தின் பகுதி  $1 .",
-	"pt-deletepage-started": "தயவுகூர்ந்து  [[Special:Log/pagetranslation|பக்க மொழிபெயர்ப்பு குறிப்பேடு]] ல்  பிழைகளை மற்றும் நிறைவு தகவலை சரிபார்க்கவும், ."
+	"pt-deletepage-started": "தயவுகூர்ந்து  [[Special:Log/pagetranslation|பக்க மொழிபெயர்ப்பு குறிப்பேடு]] ல்  பிழைகளை மற்றும் நிறைவு தகவலை சரிபார்க்கவும், .",
+	"pagemigration": "பக்க இடப்பெயர்வு"
 }

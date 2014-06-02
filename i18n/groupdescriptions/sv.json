@@ -44,7 +44,7 @@
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] är en samling verktyg för att redigera Wikipedia",
 	"translate-group-desc-readerfeedback": "Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-semantic": "Metameddelandegrupp som innehåller alla meddelanden för alla tillägg till [https://semantic-mediawiki.org/ Semantic MediaWiki]",
-	"translate-group-desc-sharelatex": "En meddelandegrupp för [[Translating:ShareLaTeX|ShareLaTeX]], en LaTeX editor",
+	"translate-group-desc-sharelatex": "En meddelandegrupp för [[Translating:ShareLaTeX|ShareLaTeX]], en webbaserad samverkande LaTeX-redigerare",
 	"translate-group-desc-translatablepages": "Alla översättningsbara sidor",
 	"translate-group-desc-translate": "Metameddelandegrupp som innehåller alla meddelanden för MediaWiki-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]; var god bekanta dig med [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary ordlistan]",
 	"translate-group-desc-tsint": "En meddelandegrupp för [[Translating:Intuition|Intuition]], i18n-systemet för verktyg till [http://toolserver.org Toolserver](<span class=\"plainlinks\">[[Translating talk:Intuition|support]]</span>)",
