@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e1dcb5b_f659182e",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "Do not use Title Case.\n\nYou can also drop the \"New\" and \"optional\" parts, just make sure the current values are prefilled.",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_b6a3a0fc",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "Or \"Save\".",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_96aae4cf",
+        "filename": "resources/css/ext.translate.special.aggregategroups.css",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "Use tabs for indentation",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_76ad08e7",
+        "filename": "resources/css/ext.translate.special.aggregategroups.css",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "If you don\u0027t need the element name, drop it. Class name should be enough in most cases. In this case I would actually just do .hidden { display: none; } in case it doesn\u0027t exist already (please check).",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_76fbc8de",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "Please make it so that this method only calls the API with given parameters and returns a promise. In somewhere else have the code which finds the values and displays results to the user.",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_36af90e0",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "Please pull \"$target.parents( \u0027.mw-tpa-group\u0027 ).\" into separate variable. Also use closest() instead of parents().",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_7684e85e",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "Here too drop the element name.",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_f68fd876",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "Please use mw.Api.",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_56e20c2f",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "You must pass valid html snippet OR element name to $. I would recommended $( \u0027\u003ch2\u003e\u0027 ).addClass( \u0027tp-name\u0027 ).text( ... ); here and below.",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_36dd5074",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "Append can take multiple parameters.",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_16ec941f",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "You must set for\u003d\"id of the input field\" for labels, unless the label element wraps the input element.",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_36c43094",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "The function body is getting very long. See if you can make it a separate function.",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_f6e6b83e",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "Extra space. getLabel also takes context as parameter.",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_d6d5fc48",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "The canonical case is rawElement.",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_56c9ecac",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "There is also Html::submitButton",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e1dcb5b_b6d84080",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T08:37:00Z",
+      "side": 1,
+      "message": "\u0027\u003cbr /\u003e\u0027 or \u0027\u003cbr\u003e\u0027",
+      "revId": "49d9a4c74afaab6015727c11dc66163eceae6c63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
