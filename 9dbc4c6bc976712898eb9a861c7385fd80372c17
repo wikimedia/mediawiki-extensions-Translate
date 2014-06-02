@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e1dcb5b_360c3045",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-02T11:20:29Z",
+      "side": 1,
+      "message": "This should be {Array} or even more correct {string[]}",
+      "revId": "9dbc4c6bc976712898eb9a861c7385fd80372c17",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
