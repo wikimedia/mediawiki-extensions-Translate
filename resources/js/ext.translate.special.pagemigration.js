@@ -54,7 +54,6 @@
 			titles: pageTitle
 		} ).then( function ( data ) {
 			var pageContent, oldTranslationUnits, obj, page;
-
 			for ( page in data.query.pages ) {
 				obj = data.query.pages[page];
 			}
@@ -143,7 +142,6 @@
 			var result, i, sUnit, key;
 			sourceUnits = [];
 			result = data.query.messagecollection;
-
 			for ( i = 1; i < result.length; i++ ) {
 				sUnit = {};
 				key = result[i].key;
@@ -154,6 +152,13 @@
 			return sourceUnits;
 		} ).promise();
 	}
+
+	mw.translate = mw.translate || {};
+	mw.translate = $.extend( mw.translate, {
+		getSourceUnits: getSourceUnits,
+		getFuzzyTimestamp: getFuzzyTimestamp,
+		splitTranslationPage: splitTranslationPage
+	} );
 
 	/**
 	 * Shift rows up by one unit. This is called after a unit is deleted.
