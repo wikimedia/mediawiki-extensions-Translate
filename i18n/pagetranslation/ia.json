@@ -150,5 +150,6 @@
 	"pt-deletepage-full-logreason": "Parte del pagina traducibile $1.",
 	"pt-deletepage-lang-logreason": "Parte del pagina traducite $1.",
 	"pt-deletepage-started": "Per favor verifica in le [[Special:Log/pagetranslation|registro de traduction de paginas]] le existentia de errores e del message de completion.",
-	"pt-deletepage-intro": "Iste pagina special permitte deler un tote pagina traducibile o un pagina de traduction individual in un certe lingua.\nLe deletion non essera instantanee perque tote le paginas que depende de illos essera delite tamben.\nFallimentos essera registrate in le [[Special:Log/pagetranslation|registro de traduction de paginas]] e requirera reparation manual."
+	"pt-deletepage-intro": "Iste pagina special permitte deler un tote pagina traducibile o un pagina de traduction individual in un certe lingua.\nLe deletion non essera instantanee perque tote le paginas que depende de illos essera delite tamben.\nFallimentos essera registrate in le [[Special:Log/pagetranslation|registro de traduction de paginas]] e requirera reparation manual.",
+	"pagemigration": "Migration de paginas"
 }

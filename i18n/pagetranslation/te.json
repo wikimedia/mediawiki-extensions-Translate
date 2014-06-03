@@ -50,5 +50,10 @@
 	"pt-deletepage-reason": "కారణం:",
 	"pt-deletepage-subpages": "అన్ని ఉపపేజీలను తొలగించు",
 	"pt-deletepage-list-translation": "అనువాద పేజీలు",
-	"pt-deletepage-list-other": "ఇతర ఉపపేజీలు"
+	"pt-deletepage-list-other": "ఇతర ఉపపేజీలు",
+	"pm-import-button-label": "దిగుమతి చెయ్యి",
+	"pm-savepages-button-label": "భద్రపరచు",
+	"pm-cancel-button-label": "రద్దుచేయి",
+	"pm-pagename-placeholder": "మీ ప్రతికి పేరును ఇవ్వండి",
+	"pm-langcode-placeholder": "భాష సంకేతం"
 }

@@ -41,5 +41,10 @@
 	"pt-movepage-subpages": "Premesti sve podstranice",
 	"pt-movepage-action-check": "Proveri da li je premeštanje izvodljivo",
 	"pt-movepage-action-perform": "Premesti",
-	"pt-movepage-action-other": "Promeni cilj"
+	"pt-movepage-action-other": "Promeni cilj",
+	"pm-import-button-label": "Uvezi",
+	"pm-savepages-button-label": "Sačuvaj",
+	"pm-cancel-button-label": "Otkaži",
+	"pm-pagename-placeholder": "Unesite naziv stranice",
+	"pm-langcode-placeholder": "Kod jezika"
 }

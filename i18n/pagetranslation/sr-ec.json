@@ -79,5 +79,10 @@
 	"pt-deletepage-list-pages": "Списак страница за брисање",
 	"pt-deletepage-list-translation": "Странице за превођење",
 	"pt-deletepage-list-other": "Остале подстранице",
-	"pt-deletepage-list-count": "Укупно $1 {{PLURAL:$1|страница|странице|страница}} за брисање."
+	"pt-deletepage-list-count": "Укупно $1 {{PLURAL:$1|страница|странице|страница}} за брисање.",
+	"pm-import-button-label": "Увези",
+	"pm-savepages-button-label": "Сачувај",
+	"pm-cancel-button-label": "Откажи",
+	"pm-pagename-placeholder": "Унесите назив странице",
+	"pm-langcode-placeholder": "Код језика"
 }
