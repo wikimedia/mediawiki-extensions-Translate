@@ -511,5 +511,10 @@ $wgHooks['ResourceLoaderTestModules'][] =
 			'dependencies' => array( 'ext.translate.parsers' ),
 		) + $resourcePaths;
 
+		$modules['qunit']['ext.translate.special.pagemigration.test'] = array(
+			'scripts' => array( 'tests/qunit/ext.translate.special.pagemigration.test.js' ),
+			'dependencies' => array( 'ext.translate.special.pagemigration' ),
+		) + $resourcePaths;
+
 		return true;
 	};
