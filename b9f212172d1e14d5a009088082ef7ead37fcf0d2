@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e1a5767_3c39f53e",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 67
+      },
+      "writtenOn": "2014-06-03T17:39:28Z",
+      "side": 1,
+      "message": "We normally don\u0027t use such capitalization; just \"New name\" and \"New description\" is better for consistency. You should also add documentation to qqq.json.",
+      "revId": "b9f212172d1e14d5a009088082ef7ead37fcf0d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_dc3fa11f",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 67
+      },
+      "writtenOn": "2014-06-03T17:39:28Z",
+      "side": 1,
+      "message": "It would be good to add some function documentation, like @param and @return.",
+      "revId": "b9f212172d1e14d5a009088082ef7ead37fcf0d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_1c8cf9fe",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 67
+      },
+      "writtenOn": "2014-06-03T17:39:28Z",
+      "side": 1,
+      "message": "Please add @return string.",
+      "revId": "b9f212172d1e14d5a009088082ef7ead37fcf0d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
