@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e1a5767_5caa7183",
+        "filename": "tests/qunit/ext.translate.special.pagemigration.test.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-03T17:19:08Z",
+      "side": 1,
+      "message": "The number here is redundant",
+      "revId": "e68371168d84cad77c380b7087da97d5692bf4a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_bccbc574",
+        "filename": "tests/qunit/ext.translate.special.pagemigration.test.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-03T17:19:08Z",
+      "side": 1,
+      "message": "I usually wrap lines at 100 chars (sometimes even at 80)",
+      "revId": "e68371168d84cad77c380b7087da97d5692bf4a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_9c9fe962",
+        "filename": "tests/qunit/ext.translate.special.pagemigration.test.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-03T17:19:08Z",
+      "side": 1,
+      "message": "Can you try adding at test case when a page doesn\u0027t exist, for example.",
+      "revId": "e68371168d84cad77c380b7087da97d5692bf4a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_dc956144",
+        "filename": "tests/qunit/ext.translate.special.pagemigration.test.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-03T17:19:08Z",
+      "side": 1,
+      "message": "trailing space",
+      "revId": "e68371168d84cad77c380b7087da97d5692bf4a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_3c869519",
+        "filename": "tests/qunit/ext.translate.special.pagemigration.test.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-03T17:19:08Z",
+      "side": 1,
+      "message": "Why are you not doing strictEqual( translationUnits.length, 3, ... )?",
+      "revId": "e68371168d84cad77c380b7087da97d5692bf4a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
