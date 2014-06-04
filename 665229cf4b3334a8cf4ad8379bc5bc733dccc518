@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e1a5767_263d5bb9",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-04T15:43:07Z",
+      "side": 1,
+      "message": "Doesn\u0027t grid set this?",
+      "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_e618837c",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-04T15:43:07Z",
+      "side": 1,
+      "message": "Try to avoid repeading $( \u0027.mw-tpm-sp-error-unit__message\u0027 ) many times.",
+      "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_86278fb1",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-04T15:43:07Z",
+      "side": 1,
+      "message": "Page does not exist if missing field is present",
+      "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_c62c6792",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-04T15:43:07Z",
+      "side": 1,
+      "message": "what\u0027s the \"unit\" meaning in \"error-unit\"",
+      "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_6653531b",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-04T15:43:07Z",
+      "side": 1,
+      "message": "Why not just Html::element() since you are closing it immediately",
+      "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
