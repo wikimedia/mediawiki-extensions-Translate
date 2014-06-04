@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Cymrodor",
-			"Lloffiwr"
+			"Lloffiwr",
+			"Xxglennxx"
 		]
 	},
 	"pagetranslation": "Cyfieithu tudalen",
@@ -39,7 +40,7 @@
 	"pt-movepage-action-check": "Cadarnhau bod symud y dudalen yn bosibl",
 	"pt-movepage-action-perform": "Symuder",
 	"pt-movepage-action-other": "Dewis tudalen wahanol",
-	"pt-deletepage-action-perform": "Dileer",
+	"pt-deletepage-action-perform": "Dilëir",
 	"pt-deletepage-action-other": "Dewis tudalen wahanol",
 	"pt-deletepage-current": "Enw'r dudalen:",
 	"pt-deletepage-reason": "Rheswm:",
