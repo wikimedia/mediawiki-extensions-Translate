@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "2e1a5767_2671db0b",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-04T17:23:31Z",
+      "side": 1,
+      "message": "Yes, it is intentional and requested by me :)",
+      "parentUuid": "2e1a5767_66223352",
+      "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e1a5767_263d5bb9",
         "filename": "resources/css/ext.translate.special.pagemigration.css",
         "patchSetId": 5
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "Do you want me to select $( \u0027.mw-tpm-sp-error-unit__message\u0027 ) globally or once per function?",
       "parentUuid": "2e1a5767_e618837c",
+      "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_468cd7ff",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-04T17:23:31Z",
+      "side": 1,
+      "message": "Once per function for now.",
+      "parentUuid": "2e1a5767_06dedf70",
       "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
