@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2e1a5767_66223352",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-04T16:30:04Z",
+      "side": 1,
+      "message": "That is because we are using BEM: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/",
+      "parentUuid": "2e1a5767_e62f6384",
+      "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e1a5767_263d5bb9",
         "filename": "resources/css/ext.translate.special.pagemigration.css",
         "patchSetId": 5
