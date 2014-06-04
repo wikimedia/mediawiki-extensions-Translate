@@ -249,7 +249,10 @@
 		}
 	}
 
-	$( '#action-save' ).click( function () {
+	/**
+	 * Handler for 'Save' button click event.
+	*/
+	function saveHandler() {
 		var deferreds;
 		$( '.mw-tpm-sp-error__message' ).hide( 'fast' );
 		if ( noOfSourceUnits < noOfTranslationUnits ) {
@@ -264,19 +267,26 @@
 				$( 'input' ).removeAttr( 'disabled' );
 			});
 		}
-	} );
+	}
 
-	$( '#action-cancel' ).click( function () {
+	/**
+	 * Handler for 'Cancel' button click event.
+	*/
+	function cancelHandler() {
 		$( '.mw-tpm-sp-error__message' ).hide( 'fast' );
 		$( '#action-save, #action-cancel' ).addClass( 'hide' );
 		$( '#action-import' ).removeClass( 'hide' );
 		$( '.mw-tpm-sp-unit-listing' ).html( '' );
-	} );
+	}
 
-	$( '.mw-tpm-sp-unit-listing' ).on( 'click', '.mw-tpm-sp-action--add', function () {
+	/**
+	 * Handler for add new unit icon ('+') click event. Adds a translation unit
+	 * below the current unit.
+	*/
+	function addHandler( event ) {
 		var nextRow, text, newUnit;
 
-		nextRow = $( this ).parents( '.mw-tpm-sp-unit' ).next();
+		nextRow = $( event.target ).parents( '.mw-tpm-sp-unit' ).next();
 		text = nextRow.find( '.mw-tpm-sp-unit__target' ).val();
 		nextRow.find( '.mw-tpm-sp-unit__target' ).val( '' );
 		nextRow = nextRow.next();
@@ -286,58 +296,82 @@
 			$( '.mw-tpm-sp-unit-listing' ).append( newUnit );
 		}
 		noOfTranslationUnits += 1;
-	} );
+	}
 
-	$( '.mw-tpm-sp-unit-listing' ).on( 'click', '.mw-tpm-sp-action--delete', function () {
+	/**
+	 * Handler for delete icon ('-') click event. Deletes the unit and shifts
+	 * the units up by one.
+	*/
+	function deleteHandler( event ) {
 		var sourceText, rowUnit;
-		rowUnit = $( this ).parents( '.mw-tpm-sp-unit' );
+		rowUnit = $( event.target ).parents( '.mw-tpm-sp-unit' );
 		sourceText = rowUnit.children( '.mw-tpm-sp-unit__source' ).val();
 		if ( !sourceText ) {
-			$( this ).parent().parent().remove();
+			rowUnit.remove();
 		} else {
 			rowUnit.find( '.mw-tpm-sp-unit__target' ).val( '' );
 			shiftRowsUp( rowUnit );
 		}
 		noOfTranslationUnits -= 1;
-	} );
+	}
 
-	$( '.mw-tpm-sp-unit-listing' ).on( 'click', '.mw-tpm-sp-action--swap', function () {
+	/**
+	 * Handler for swap icon click event. Swaps the text in the current unit
+	 * with the text in the unit below.
+	*/
+	function swapHandler( event ) {
 		var rowUnit, tempText, nextVal;
-		rowUnit = $( this ).parents( '.mw-tpm-sp-unit' );
+		rowUnit = $( event.target ).parents( '.mw-tpm-sp-unit' );
 		tempText = rowUnit.find( '.mw-tpm-sp-unit__target' ).val();
 		nextVal = rowUnit.next().find( '.mw-tpm-sp-unit__target').val();
 		rowUnit.find( '.mw-tpm-sp-unit__target' ).val( nextVal );
 		rowUnit.next().find( '.mw-tpm-sp-unit__target' ).val( tempText );
-	} );
+	}
 
-	$( document ).ready( function () {
-		var errorBox = $( '.mw-tpm-sp-error__message' );
-		$( '#action-save, #action-cancel').addClass( 'hide' );
-		errorBox.addClass( 'hide' );
-		$( '#action-import' ).click( function () {
-			var pageTitle;
-			pageName = $( '#title' ).val();
-			langCode = $( '#language' ).val();
-			pageTitle = pageName + '/' + langCode;
-			errorBox.hide( 'fast' );
-			if ( pageName === '' ) {
-				errorBox.text( mw.msg( 'pm-pagename-missing' ) ).show( 'fast' );
-				return;
-			}
-			if ( langCode === '' ) {
-				errorBox.text( mw.msg( 'pm-langcode-missing' ) ).show( 'fast' );
-				return;
-			}
-			$.when( getSourceUnits( pageName ), getFuzzyTimestamp( pageTitle ) )
-				.then( function ( sourceUnits, fuzzyTimestamp ) {
-				noOfSourceUnits = sourceUnits.length;
-				splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
-					noOfTranslationUnits = translations.length;
-					displayUnits( sourceUnits, translations );
-					$( '#action-save, #action-cancel').removeClass( 'hide' );
-					$( '#action-import' ).addClass( 'hide' );
-				} );
+	/**
+	 * Handler for 'Import' button click event. Imports source and translation
+	 * units and displays them.
+	*/
+	function importHandler() {
+		var pageTitle, errorBox = $( '.mw-tpm-sp-error__message' );
+		pageName = $( '#title' ).val();
+		langCode = $( '#language' ).val();
+		pageTitle = pageName + '/' + langCode;
+		errorBox.hide( 'fast' );
+		if ( pageName === '' ) {
+			errorBox.text( mw.msg( 'pm-pagename-missing' ) ).show( 'fast' );
+			return;
+		}
+		if ( langCode === '' ) {
+			errorBox.text( mw.msg( 'pm-langcode-missing' ) ).show( 'fast' );
+			return;
+		}
+		$.when( getSourceUnits( pageName ), getFuzzyTimestamp( pageTitle ) )
+			.then( function ( sourceUnits, fuzzyTimestamp ) {
+			noOfSourceUnits = sourceUnits.length;
+			splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
+				noOfTranslationUnits = translations.length;
+				displayUnits( sourceUnits, translations );
+				$( '#action-save, #action-cancel').removeClass( 'hide' );
+				$( '#action-import' ).addClass( 'hide' );
 			} );
 		} );
-	} );
+	}
+
+	/**
+	 * Listens to various click events
+	*/
+	function listen() {
+		var $listing = $( '.mw-tpm-sp-unit-listing' );
+		$( '.mw-tpm-sp-error__message' ).addClass( 'hide' );
+		$( '#action-save, #action-cancel').addClass( 'hide' );
+		$( '#action-import' ).click( importHandler );
+		$( '#action-save' ).click( saveHandler );
+		$( '#action-cancel' ).click( cancelHandler );
+		$listing.on( 'click', '.mw-tpm-sp-action--swap', swapHandler );
+		$listing.on( 'click', '.mw-tpm-sp-action--delete', deleteHandler );
+		$listing.on( 'click', '.mw-tpm-sp-action--add', addHandler );
+	}
+
+	$( document ).ready( listen );
 } ( jQuery, mediaWiki ) );
