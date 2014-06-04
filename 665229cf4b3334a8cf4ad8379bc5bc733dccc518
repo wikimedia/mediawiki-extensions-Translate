@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "2e1a5767_666a33b3",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-04T16:00:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e1a5767_263d5bb9",
+      "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e1a5767_e618837c",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 5
@@ -47,6 +65,24 @@
       "writtenOn": "2014-06-04T15:43:07Z",
       "side": 1,
       "message": "Try to avoid repeading $( \u0027.mw-tpm-sp-error-unit__message\u0027 ) many times.",
+      "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_06dedf70",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-04T16:00:18Z",
+      "side": 1,
+      "message": "Do you want me to select $( \u0027.mw-tpm-sp-error-unit__message\u0027 ) globally or once per function?",
+      "parentUuid": "2e1a5767_e618837c",
       "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "2e1a5767_a69f2bb9",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-04T16:00:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e1a5767_86278fb1",
+      "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e1a5767_c62c6792",
         "filename": "specials/SpecialPageMigration.php",
         "patchSetId": 5
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "2e1a5767_a6edeb24",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-04T16:00:18Z",
+      "side": 1,
+      "message": "I mean the error container. What would you suggest?",
+      "parentUuid": "2e1a5767_c62c6792",
+      "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e1a5767_6653531b",
         "filename": "specials/SpecialPageMigration.php",
         "patchSetId": 5
@@ -98,6 +170,24 @@
       "writtenOn": "2014-06-04T15:43:07Z",
       "side": 1,
       "message": "Why not just Html::element() since you are closing it immediately",
+      "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_46fcd7d5",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-04T16:00:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e1a5767_6653531b",
       "revId": "665229cf4b3334a8cf4ad8379bc5bc733dccc518",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
