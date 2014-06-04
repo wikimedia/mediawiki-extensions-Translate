@@ -29,7 +29,7 @@ class SpecialPageMigration extends SpecialPage {
 		$out .= Html::openElement( 'div', array( 'class' => 'mw-tpm-sp-error row',
 			'id' => 'mw-tpm-sp-error-div' ) );
 		$out .= Html::element( 'div',
-			array( 'class' => 'mw-tpm-sp-error__message five columns' ) );
+			array( 'class' => 'mw-tpm-sp-error__message five columns hide' ) );
 		$out .= Html::closeElement( 'div' );
 		$out .= Html::openElement( 'form', array( 'class' => 'mw-tpm-sp-form row',
 			'id' => 'mw-tpm-sp-primary-form' ) );
@@ -38,13 +38,13 @@ class SpecialPageMigration extends SpecialPage {
 		$out .= Html::element( 'input', array( 'id' => 'language', 'type' => 'text',
 			'placeholder' => $this->msg( 'pm-langcode-placeholder' )->text() ) );
 		$out .= Html::element( 'input', array( 'id' => 'action-import',
-			'class' => 'mw-ui-button mw-ui-primary','type' => 'button',
+			'class' => 'mw-ui-button mw-ui-primary', 'type' => 'button',
 			'value' => $this->msg( 'pm-import-button-label' )->text() ) );
 		$out .= Html::element( 'input', array( 'id' => 'action-save',
-			'class' => 'mw-ui-button mw-ui-constructive','type' => 'button',
+			'class' => 'mw-ui-button mw-ui-constructive hide', 'type' => 'button',
 			'value' => $this->msg( 'pm-savepages-button-label' )->text() ) );
 		$out .= Html::element( 'input', array( 'id' => 'action-cancel',
-			'class' => 'mw-ui-button mw-ui-quiet','type' => 'button',
+			'class' => 'mw-ui-button mw-ui-quiet hide', 'type' => 'button',
 			'value' => $this->msg( 'pm-cancel-button-label' )->text() ) );
 		$out .= Html::closeElement( 'form' );
 		$out .= Html::openElement( 'div', array( 'class' => 'mw-tpm-sp-unit-listing' ) );
