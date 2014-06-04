@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e1a5767_46ff3763",
+        "filename": "tests/qunit/ext.translate.special.pagemigration.test.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-04T17:17:25Z",
+      "side": 1,
+      "message": "Hmm a bit weird to assert that the fail callback does not get anything. Makes it hard for the caller to know what went wrong. If you want, you could have the error code as parameter.",
+      "revId": "6ff0b5b0fe7b7a5c1cff84c85396f8847d37972a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
