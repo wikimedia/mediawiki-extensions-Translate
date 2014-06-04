@@ -54,7 +54,6 @@
 			titles: pageTitle
 		} ).then( function ( data ) {
 			var pageContent, oldTranslationUnits, obj, page;
-
 			for ( page in data.query.pages ) {
 				obj = data.query.pages[page];
 			}
@@ -102,12 +101,12 @@
 			for ( page in data.query.pages ) {
 				obj = data.query.pages[page];
 			}
-			if ( typeof obj === undefined ) {
+			if ( obj.missing === '' ) {
 				mw.log( 'No page' );
 				return new $.Deferred().reject();
 			}
 			mw.log( data );
-			if ( typeof obj.revisions === undefined ) {
+			if ( obj.revisions === undefined ) {
 				mw.log( 'No edit by FuzzyBot on this page' );
 				return new $.Deferred().reject();
 			} else {
@@ -143,7 +142,6 @@
 			var result, i, sUnit, key;
 			sourceUnits = [];
 			result = data.query.messagecollection;
-
 			for ( i = 1; i < result.length; i++ ) {
 				sUnit = {};
 				key = result[i].key;
@@ -154,6 +152,13 @@
 			return sourceUnits;
 		} ).promise();
 	}
+
+	mw.translate = mw.translate || {};
+	mw.translate = $.extend( mw.translate, {
+		getSourceUnits: getSourceUnits,
+		getFuzzyTimestamp: getFuzzyTimestamp,
+		splitTranslationPage: splitTranslationPage
+	} );
 
 	/**
 	 * Shift rows up by one unit. This is called after a unit is deleted.
