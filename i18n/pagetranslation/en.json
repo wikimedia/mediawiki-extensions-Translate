@@ -167,5 +167,8 @@
     "pm-old-translations-missing": "$1 does not contain old translations",
     "pm-extra-units-warning": "Extra units might be present. Please match the source and translation units properly",
     "pm-pagename-missing": "Please enter the page name",
-    "pm-langcode-missing": "Please enter the language code"
+    "pm-langcode-missing": "Please enter the language code",
+    "pm-add-icon-hover-text": "Add a unit below",
+    "pm-swap-icon-hover-text": "Swap with unit below",
+    "pm-delete-icon-hover-text": "Delete unit"
 }
