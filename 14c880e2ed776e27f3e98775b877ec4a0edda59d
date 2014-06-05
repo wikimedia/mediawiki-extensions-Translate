@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e1a5767_27f8ab45",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-05T21:02:38Z",
+      "side": 1,
+      "message": "parents should be closest (didn\u0027t notice this earlier)",
+      "revId": "14c880e2ed776e27f3e98775b877ec4a0edda59d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_678583b1",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-05T21:02:38Z",
+      "side": 1,
+      "message": "nextRow.find( \u0027.mw-tpm-sp-unit__target\u0027 ) is used twice.",
+      "revId": "14c880e2ed776e27f3e98775b877ec4a0edda59d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_478287aa",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-05T21:02:38Z",
+      "side": 1,
+      "message": "please use children() or find() consistently",
+      "revId": "14c880e2ed776e27f3e98775b877ec4a0edda59d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_078c8fda",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-05T21:02:38Z",
+      "side": 1,
+      "message": "These are not listening things. Do you think you could make them hidden by default in PHP side?",
+      "revId": "14c880e2ed776e27f3e98775b877ec4a0edda59d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
