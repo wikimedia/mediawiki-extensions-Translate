@@ -2,5 +2,5 @@
 host=gerrit.wikimedia.org
 port=29418
 project=mediawiki/extensions/Translate.git
-defaultbranch=master
+defaultbranch=wmf/1.24wmf8
 defaultrebase=0
