@@ -350,7 +350,10 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 		'pm-old-translations-missing',
 		'pm-extra-units-warning',
 		'pm-pagename-missing',
-		'pm-langcode-missing'
+		'pm-langcode-missing',
+		'pm-add-icon-hover-text',
+		'pm-swap-icon-hover-text',
+		'pm-delete-icon-hover-text'
 	),
 ) + $resourcePaths;
 
