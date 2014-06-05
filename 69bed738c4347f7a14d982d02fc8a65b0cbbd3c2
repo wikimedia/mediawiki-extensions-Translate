@@ -16,6 +16,24 @@
       "revId": "69bed738c4347f7a14d982d02fc8a65b0cbbd3c2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_d49f6861",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-06-05T13:29:25Z",
+      "side": 1,
+      "message": "Confirmed still present. BPositive, please file a bug with expected behaviour.",
+      "parentUuid": "2e1a5767_14e840dc",
+      "revId": "69bed738c4347f7a14d982d02fc8a65b0cbbd3c2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
