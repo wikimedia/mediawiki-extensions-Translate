@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "2e1a5767_07824f97",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-05T21:04:03Z",
+      "side": 1,
+      "message": "It\u0027s getting better, but I still do have some suggestions for further improvements ;)",
+      "revId": "14c880e2ed776e27f3e98775b877ec4a0edda59d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e1a5767_27f8ab45",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 3
