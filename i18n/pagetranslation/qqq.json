@@ -167,5 +167,8 @@
 	"pm-old-translations-missing": "Parameters:\n* $1 - page title",
 	"pm-extra-units-warning": "Warning given when number of translation units are greater than the number of source units",
 	"pm-pagename-missing": "Error message given when page title field is blank",
-	"pm-langcode-missing": "Error message given when language code field is blank"
+	"pm-langcode-missing": "Error message given when language code field is blank",
+	"pm-add-icon-hover-text": "Hover text for add new unit icon",
+	"pm-swap-icon-hover-text": "Hover text for swap with unit below icon",
+	"pm-delete-icon-hover-text": "Hover text for delete unit icon"
 }
