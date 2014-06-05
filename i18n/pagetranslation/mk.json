@@ -162,5 +162,10 @@
 	"pm-savepages-button-label": "Зачувај",
 	"pm-cancel-button-label": "Откажи",
 	"pm-pagename-placeholder": "Внесете име на страницата",
-	"pm-langcode-placeholder": "Јазичен код"
+	"pm-langcode-placeholder": "Јазичен код",
+	"pm-page-does-not-exist": "$1 не постои",
+	"pm-old-translations-missing": "$1 не содржи стари преводи",
+	"pm-extra-units-warning": "Може да има дополнителни единици. Погрижете се да соодветствуваат единиците во изворниот текст и преводот",
+	"pm-pagename-missing": "Внесете име на страница",
+	"pm-langcode-missing": "Внесете јазичен код"
 }

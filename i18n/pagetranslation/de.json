@@ -171,5 +171,10 @@
 	"pm-savepages-button-label": "Speichern",
 	"pm-cancel-button-label": "Abbrechen",
 	"pm-pagename-placeholder": "Seitennamen eingeben",
-	"pm-langcode-placeholder": "Sprachcode"
+	"pm-langcode-placeholder": "Sprachcode",
+	"pm-page-does-not-exist": "$1 ist nicht vorhanden",
+	"pm-old-translations-missing": "$1 enthält keine alten Übersetzungen",
+	"pm-extra-units-warning": "Es könnten zusätzliche Einheiten verfügbar sein. Bitte die Quell- und Übersetzungseinheiten ordnungsgemäß anpassen.",
+	"pm-pagename-missing": "Bitte den Seitennamen eingeben",
+	"pm-langcode-missing": "Bitte den Sprachcode eingeben"
 }
