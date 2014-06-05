@@ -399,7 +399,7 @@ $GLOBALS['wgPageTranslationNamespace'] = 1198;
  * Enables the experimental page migration tools.
  * @since 2014-05
  */
-$GLOBALS['wgTranslatePageMigration'] = false;
+$GLOBALS['wgTranslatePageMigration'] = true;
 
 /**
  * Whether selecting a new interface language via ULS on a translatable page
