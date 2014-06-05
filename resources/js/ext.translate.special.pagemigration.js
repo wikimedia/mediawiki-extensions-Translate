@@ -215,9 +215,12 @@
 		targetUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__target five columns' )
 			.val( targetText );
 		actionUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit__actions two columns' );
-		actionUnit.append( $( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--delete' ),
-			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--swap' ),
-			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--add' ) );
+		actionUnit.append( $( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--delete' )
+				.attr( 'title', 'Delete unit' ),
+			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--swap' )
+				.attr( 'title', 'Swap with unit below' ),
+			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--add' )
+				.attr( 'title', 'Add a unit below' ) );
 		newUnit.append( sourceUnit, targetUnit, actionUnit );
 		return newUnit;
 	}
