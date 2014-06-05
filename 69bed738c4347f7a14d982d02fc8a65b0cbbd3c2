@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e1a5767_14e840dc",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-05T13:24:46Z",
+      "side": 1,
+      "message": "Nemo wrote: \"I didn\u0027t manage to trigger the error for excess units, I just press \"Save\", it\u0027s accepted and nothing happens.\"\n\nGlobal variables are not so nice for understanding the code flow. Please test and fix this issue in a followup if still present.",
+      "revId": "69bed738c4347f7a14d982d02fc8a65b0cbbd3c2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
