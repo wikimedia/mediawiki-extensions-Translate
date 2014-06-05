@@ -34,6 +34,24 @@
       "revId": "69bed738c4347f7a14d982d02fc8a65b0cbbd3c2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e1a5767_b48bcc1a",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-05T13:32:07Z",
+      "side": 1,
+      "message": "One can test it right away for input as \u0027Help:Special pages\u0027 and \u0027fr\u0027 and then click Save button.",
+      "parentUuid": "2e1a5767_14e840dc",
+      "revId": "69bed738c4347f7a14d982d02fc8a65b0cbbd3c2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
