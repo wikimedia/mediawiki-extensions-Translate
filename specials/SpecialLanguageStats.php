@@ -15,7 +15,7 @@
  *
  * Loosely based on the statistics code in phase3/maintenance/language
  *
- * Use {{Special:LanguageStats/nl/1}} to show for 'nl' and suppres completely
+ * Use {{Special:LanguageStats/nl/1}} to show for 'nl' and suppress completely
  * translated groups.
  *
  * @ingroup SpecialPage TranslateSpecialPage Stats
