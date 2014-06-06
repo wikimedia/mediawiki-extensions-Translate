@@ -157,10 +157,15 @@
 	"pt-deletepage-lang-logreason": "Một phần của trang dịch $1.",
 	"pt-deletepage-started": "Xin hãy kiểm tra những lỗi hay thông điệp kết quả thành công trong [[Special:Log/pagetranslation|nhật trình dịch trang]].",
 	"pt-deletepage-intro": "Trang đặc biệt này cho phép bạn xóa toàn bộ trang dịch được hoặc một trang biên dịch trong một ngôn ngữ nào đó.\nTác vụ xóa sẽ không được thực hiện ngay, bởi vì tất cả mọi trang dựa vào nó cũng sẽ bị xóa.\nCác thất bại được ghi vào [[Special:Log/pagetranslation|nhật trình dịch trang]] sẽ cần phải được sửa bằng tay.",
-	"pagemigration": "Di chuyển trang",
+	"pagemigration": "Di chuyển trang biên dịch",
 	"pm-import-button-label": "Nhập",
 	"pm-savepages-button-label": "Lưu",
 	"pm-cancel-button-label": "Hủy bỏ",
 	"pm-pagename-placeholder": "Nhập tên trang",
-	"pm-langcode-placeholder": "Mã ngôn ngữ"
+	"pm-langcode-placeholder": "Mã ngôn ngữ",
+	"pm-page-does-not-exist": "$1 không tồn tại",
+	"pm-old-translations-missing": "$1 không chứa các bản dịch cũ",
+	"pm-extra-units-warning": "Có thể còn dư một số đơn vị dịch. Xin hãy làm cho các đơn vị nguồn và dịch hợp nhau.",
+	"pm-pagename-missing": "Vui lòng nhập tên trang",
+	"pm-langcode-missing": "Vui lòng nhập mã ngôn ngữ"
 }

@@ -164,10 +164,15 @@
 	"pt-deletepage-lang-logreason": "Parte da página traduzida $1.",
 	"pt-deletepage-started": "Verifique a existência de erros ou de uma mensagem de sucesso no [[Special:Log/pagetranslation|registo de traduções]].",
 	"pt-deletepage-intro": "Esta página especial permite eliminar toda uma página traduzível ou uma das suas traduções para uma língua.\nA eliminação não é instantânea, porque também serão eliminadas as páginas dependentes delas.\nOs problemas que ocorrerem serão registados no [[Special:Log/pagetranslation|registo de traduções]] e podem exigir reparação manual.",
-	"pagemigration": "Migração de página",
+	"pagemigration": "Migração de página de tradução",
 	"pm-import-button-label": "Importar",
 	"pm-savepages-button-label": "Gravar",
 	"pm-cancel-button-label": "Cancelar",
 	"pm-pagename-placeholder": "Introduza o nome da página",
-	"pm-langcode-placeholder": "Código do idioma"
+	"pm-langcode-placeholder": "Código do idioma",
+	"pm-page-does-not-exist": "$1 não existe",
+	"pm-old-translations-missing": "$1 não contém tradução antigas",
+	"pm-extra-units-warning": "Unidades extras podem estar presentes. Por favor, faça corresponder corretamente o código e a tradução",
+	"pm-pagename-missing": "Por favor, introduza o nome da página",
+	"pm-langcode-missing": "Digite o código de idioma"
 }

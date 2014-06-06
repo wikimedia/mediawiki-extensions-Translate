@@ -174,10 +174,18 @@
 	"pt-deletepage-lang-logreason": "翻译页面$1的一部分。",
 	"pt-deletepage-started": "请检查[[Special:Log/pagetranslation|页面翻译日志]]内的错误和完成消息。",
 	"pt-deletepage-intro": "本特殊页面允许您删除一种语言中一整个可翻译页面或单个翻译页面。\n因为所有相关页会一并删除，此操作不会即时完成。\n失败操作记录于[[Special:Log/pagetranslation|页面翻译日志]]中并且需要手动修理。",
-	"pagemigration": "页面迁移",
+	"pagemigration": "翻译页面迁移",
 	"pm-import-button-label": "导入",
 	"pm-savepages-button-label": "保存",
 	"pm-cancel-button-label": "取消",
 	"pm-pagename-placeholder": "输入页面名称",
-	"pm-langcode-placeholder": "语言代码"
+	"pm-langcode-placeholder": "语言代码",
+	"pm-page-does-not-exist": "$1不存在",
+	"pm-old-translations-missing": "$1没有旧翻译",
+	"pm-extra-units-warning": "提供的单位可能有误。请正确匹配翻译单位和源单位",
+	"pm-pagename-missing": "请输入页面名称",
+	"pm-langcode-missing": "请输入语言代码",
+	"pm-add-icon-hover-text": "往下面添加单位",
+	"pm-swap-icon-hover-text": "和下面的单位替换",
+	"pm-delete-icon-hover-text": "删除单位"
 }

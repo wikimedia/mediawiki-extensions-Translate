@@ -153,6 +153,7 @@
 	"translate-translations-history-short": "एच",
 	"languagestats": "भाषेची सांख्यिकी",
 	"languagestats-summary": "हे पान एका भाषेसाठी असलेल्या सर्व संदेशगटांची सांख्यिकी दाखविते.",
+	"messagegroupstats-summary": "हे पान संदेश गटांची सांख्यिकी दर्शविते.",
 	"languagestats-stats-for": "$1 ($2) साठी भाषांतर सांख्यिकी.",
 	"languagestats-recenttranslations": "अलीकडील भाषांतरे",
 	"translate-langstats-incomplete": "या पानावरील काही सांख्यिकी अपूर्ण आहेत.अधिक सांख्यिकी मिळविण्यास या पानाचे पुनर्भारण करा.",

@@ -160,6 +160,7 @@
 	"pt-deletepage-lang-logreason": "חלק מדך התרגום $1.",
 	"pt-deletepage-started": "נא לבדוק את השגיאות ואת הודעת ההשלמה ב[[Special:Log/pagetranslation|יומן תרגום הדפים]]",
 	"pt-deletepage-intro": "הדך המיוחד הזה מאפשר לך למחוק בשלמותם דפים ניתנים לתרגום או תרגומים שלהם לשפה כלשהי.\nפעולת המחיקה לא תהיה מיידית, כי יש למחוק את כל הדפים התלויים בהם.\nפעולות שייכשלו יירשמו ב[[Special:Log/pagetranslation|יומן תרגום הדפים]] ויהיה צורך לתקן אותן ידנית.",
+	"pagemigration": "העברת דף מתורגם",
 	"pm-import-button-label": "ייבוא",
 	"pm-savepages-button-label": "שמירה",
 	"pm-cancel-button-label": "ביטול",
@@ -169,5 +170,8 @@
 	"pm-old-translations-missing": "$1 אינו מכיל תרגומים ישנים",
 	"pm-extra-units-warning": "ייתכן שקיימות כאן יחידות נספות. נא להתאים את המקור ואת יחידות התרגום.",
 	"pm-pagename-missing": "נא להזין את שם הדף",
-	"pm-langcode-missing": "נא להזין את קוד השפה"
+	"pm-langcode-missing": "נא להזין את קוד השפה",
+	"pm-add-icon-hover-text": "להוסיף יחידה למטה",
+	"pm-swap-icon-hover-text": "להחליף עם יחידה מעל",
+	"pm-delete-icon-hover-text": "למחוק יחידה"
 }

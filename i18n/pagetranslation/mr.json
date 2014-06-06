@@ -86,5 +86,15 @@
 	"pt-deletepage-list-pages": "वगळावयाच्या पानांची यादी",
 	"pt-deletepage-list-translation": "भाषांतरासाठीची पाने",
 	"pt-deletepage-list-section": "भाषांतर एकक पाने",
-	"pt-deletepage-list-other": "इतर उपपाने"
+	"pt-deletepage-list-other": "इतर उपपाने",
+	"pagemigration": "भाषांतर पानाचे स्थानांतरण",
+	"pm-import-button-label": "आयात करा",
+	"pm-savepages-button-label": "जतन करा",
+	"pm-cancel-button-label": "रद्द करा",
+	"pm-pagename-placeholder": "पानाचे नाव टाका",
+	"pm-langcode-placeholder": "भाषा संकेत (कोड)",
+	"pm-page-does-not-exist": "$1 अस्तीत्वात नाही",
+	"pm-old-translations-missing": "$1 मध्ये जूनी भाषांतरे नाहीत",
+	"pm-pagename-missing": "कृपया पानाचे नाव टाका",
+	"pm-langcode-missing": "कृपया भाषासंकेत टाका"
 }

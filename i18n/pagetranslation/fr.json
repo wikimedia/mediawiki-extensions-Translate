@@ -173,7 +173,7 @@
 	"pt-deletepage-lang-logreason": "Partie de la page de traduction $1.",
 	"pt-deletepage-started": "Veuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] pour les erreurs et le message de la fin.",
 	"pt-deletepage-intro": "Cette page spéciale vous permet de supprimer une page traduisible entièrement, ou une page traduisible individuelle dans une langue.\nL'action de suppression n'est pas instantanée, car plusieurs pages dépendantes de celle-ci seront aussi supprimées.\nLes échecs seront inscrits dans le [[Special:Log/pagetranslation|journal des traductions]] et ils doivent être corrigés à la main.",
-	"pagemigration": "Migration de page",
+	"pagemigration": "Migration de page de traduction",
 	"pm-import-button-label": "Importer",
 	"pm-savepages-button-label": "Enregistrer",
 	"pm-cancel-button-label": "Annuler",

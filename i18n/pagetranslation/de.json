@@ -166,7 +166,7 @@
 	"pt-deletepage-lang-logreason": "Teil der übersetzten Seite $1.",
 	"pt-deletepage-started": "Bitte das [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] nach Fehlern und Ausführungsnachrichten prüfen.",
 	"pt-deletepage-intro": "Diese Spezialseite ermöglicht die Löschung einer ganzen übersetzbaren Seite oder einer individuellen Übersetzungsseite in einer Sprache.\nDie Ausführung erfolgt nicht unmittelbar, da auch alle dazugehörigen Seiten gelöscht werden.\nFehler werden im [[Special:Log/pagetranslation|Übersetzungs-Logbuch]] aufgezeichnet und müssen nachträglich manuell berichtigt werden.",
-	"pagemigration": "Seitenmigration",
+	"pagemigration": "Übersetzungsseitenmigration",
 	"pm-import-button-label": "Importieren",
 	"pm-savepages-button-label": "Speichern",
 	"pm-cancel-button-label": "Abbrechen",
@@ -176,5 +176,8 @@
 	"pm-old-translations-missing": "$1 enthält keine alten Übersetzungen",
 	"pm-extra-units-warning": "Es könnten zusätzliche Einheiten verfügbar sein. Bitte die Quell- und Übersetzungseinheiten ordnungsgemäß anpassen.",
 	"pm-pagename-missing": "Bitte den Seitennamen eingeben",
-	"pm-langcode-missing": "Bitte den Sprachcode eingeben"
+	"pm-langcode-missing": "Bitte den Sprachcode eingeben",
+	"pm-add-icon-hover-text": "Unten eine Einheit hinzufügen",
+	"pm-swap-icon-hover-text": "Mit der unteren Einheit tauschen",
+	"pm-delete-icon-hover-text": "Einheit löschen"
 }
