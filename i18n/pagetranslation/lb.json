@@ -149,10 +149,13 @@
 	"pt-deletepage-lang-logreason": "Deel vun der iwwersater Säit $1.",
 	"pt-deletepage-started": "Kuckt w.e.g. d'[[Special:Log/pagetranslation|Logbuch vun den Iwwersetzunge]] fir Feelermeldungen respektiv d'Meldung datt alles ok ass, no.",
 	"pt-deletepage-intro": "Dës Spezialsäit erméiglecht et eng ganz iwwersetzbar Säit oder eng individuell Iwwersetzungssäit an enger Sprooch ze läschen.\nD'Läschaktioun gesäit een net direkt well all d'Säiten déi dovun ofhänken och geläscht ginn.\nFeeler ginn am [[Special:Log/pagetranslation|Iwwersetzungs-Logbuch]] agedro a mussen duerno manuell gefléckt ginn.",
-	"pagemigration": "Migratioun vun der Säit",
+	"pagemigration": "Migratioun vun der Iwwersetzungssäit",
 	"pm-import-button-label": "Importéieren",
 	"pm-savepages-button-label": "Späicheren",
 	"pm-cancel-button-label": "Ofbriechen",
 	"pm-pagename-placeholder": "Gitt den Numm vun der Säit an",
-	"pm-langcode-placeholder": "Sproochcode"
+	"pm-langcode-placeholder": "Sproochcode",
+	"pm-add-icon-hover-text": "Eng Eenheet drënner derbäisetzen",
+	"pm-swap-icon-hover-text": "Mat der Eenheet drënner wiesselen",
+	"pm-delete-icon-hover-text": "Eenheet läschen"
 }

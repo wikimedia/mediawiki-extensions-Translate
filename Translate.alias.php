@@ -575,6 +575,7 @@ $specialPageAliases['ko'] = array(
 	'TranslationStash' => array( '비공개번역' ),
 	'TranslationStats' => array( '번역통계' ),
 	'Translations' => array( '번역목록' ),
+	'PageMigration' => array( '문서이주' ),
 );
 
 /** Karachay-Balkar (къарачай-малкъар) */

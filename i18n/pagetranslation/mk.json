@@ -167,5 +167,8 @@
 	"pm-old-translations-missing": "$1 не содржи стари преводи",
 	"pm-extra-units-warning": "Може да има дополнителни единици. Погрижете се да соодветствуваат единиците во изворниот текст и преводот",
 	"pm-pagename-missing": "Внесете име на страница",
-	"pm-langcode-missing": "Внесете јазичен код"
+	"pm-langcode-missing": "Внесете јазичен код",
+	"pm-add-icon-hover-text": "Додај единица подолу",
+	"pm-swap-icon-hover-text": "Замени ја единицата подолу",
+	"pm-delete-icon-hover-text": "Избриши единица"
 }
