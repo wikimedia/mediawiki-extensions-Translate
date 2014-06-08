@@ -345,7 +345,7 @@
 	"tux-message-filter-result": "Nađeno $1 {{PLURAL:$1|rezultat|rezultata}} za „$2“",
 	"tux-message-filter-advanced-button": "Napredna pretraga",
 	"tux-message-filter-optional-messages-label": "Neobavezne poruke",
-	"tux-proofread-translated-by-self": "Vaši prevodi",
+	"tux-proofread-translated-by-self": "Vaš prevod",
 	"tux-empty-list-all": "Ova grupa poruka je prazna",
 	"tux-empty-list-all-guide": "Izaberite drugu grupu poruka za prevođenje",
 	"tux-translate-page-no-such-group": "<strong>Naznačena grupa ne postoji.</strong> Izaberite drugu grupu poruka.",

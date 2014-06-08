@@ -167,5 +167,8 @@
 	"pm-old-translations-missing": "$1 không chứa các bản dịch cũ",
 	"pm-extra-units-warning": "Có thể còn dư một số đơn vị dịch. Xin hãy làm cho các đơn vị nguồn và dịch hợp nhau.",
 	"pm-pagename-missing": "Vui lòng nhập tên trang",
-	"pm-langcode-missing": "Vui lòng nhập mã ngôn ngữ"
+	"pm-langcode-missing": "Vui lòng nhập mã ngôn ngữ",
+	"pm-add-icon-hover-text": "Thêm một đơn vị bên dưới",
+	"pm-swap-icon-hover-text": "Đổi chỗ với đơn vị bên dưới",
+	"pm-delete-icon-hover-text": "Xóa đơn vị"
 }

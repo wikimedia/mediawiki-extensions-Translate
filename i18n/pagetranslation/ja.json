@@ -160,5 +160,8 @@
 	"pm-savepages-button-label": "保存",
 	"pm-cancel-button-label": "キャンセル",
 	"pm-pagename-placeholder": "ページ名を入力",
-	"pm-langcode-placeholder": "言語コード"
+	"pm-langcode-placeholder": "言語コード",
+	"pm-add-icon-hover-text": "単位を下に追加",
+	"pm-swap-icon-hover-text": "下の単位と入れ替える",
+	"pm-delete-icon-hover-text": "単位を削除"
 }

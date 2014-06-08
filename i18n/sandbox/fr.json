@@ -7,10 +7,11 @@
 			"Nobody",
 			"Wyz",
 			"Linedwell",
-			"Urhixidur"
+			"Urhixidur",
+			"McDutchie"
 		]
 	},
-	"managetranslatorsandbox": "Gérer le bac à sable de tradution",
+	"managetranslatorsandbox": "Gérer le bac à sable de traduction",
 	"tsb-filter-pending": "Requêtes en attente",
 	"tsb-reminder-title-generic": "Complétez votre présentation pour devenir un traducteur",
 	"tsb-reminder-content-generic": "Bonjour $1,\n\nMerci de vous être inscrit sur {{SITENAME}}.\n\nSi vous achevez vos traductions de test, les administrateurs vous accorderont peu après un plein accès aux traductions.\n\nVeuillez aller ici et faire quelques traductions supplémentaires :\n$2\n\n$3,\nL’équipe de {{SITENAME}}",

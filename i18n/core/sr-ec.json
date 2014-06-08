@@ -353,7 +353,7 @@
 	"tux-message-filter-result": "Нађено $1 {{PLURAL:$1|резултат|резултата}} за „$2“",
 	"tux-message-filter-advanced-button": "Напредна претрага",
 	"tux-message-filter-optional-messages-label": "Необавезне поруке",
-	"tux-proofread-translated-by-self": "Ваши преводи",
+	"tux-proofread-translated-by-self": "Ваш превод",
 	"tux-empty-list-all": "Ова група порука је празна",
 	"tux-empty-list-all-guide": "Изаберите другу групу порука за превођење",
 	"tux-translate-page-no-such-group": "<strong>Назначена група не постоји.</strong> Изаберите другу групу порука.",

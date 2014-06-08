@@ -10,7 +10,8 @@
 			"Rotsee",
 			"Tobulos1",
 			"WikiPhoenix",
-			"Lokal Profil"
+			"Lokal Profil",
+			"McDutchie"
 		]
 	},
 	"pagetranslation": "Sidöversättning",
@@ -172,6 +173,6 @@
 	"pm-langcode-placeholder": "Språkkod",
 	"pm-page-does-not-exist": "$1 finns inte",
 	"pm-add-icon-hover-text": "Lägg till en enhet nedan",
-	"pm-swap-icon-hover-text": "Byt ned enheten nedan",
+	"pm-swap-icon-hover-text": "Byt med enheten nedan",
 	"pm-delete-icon-hover-text": "Radera enhet"
 }

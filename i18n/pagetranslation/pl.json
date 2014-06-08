@@ -11,7 +11,8 @@
 			"Sp5uhe",
 			"ToSter",
 			"WTM",
-			"Woytecr"
+			"Woytecr",
+			"Matik7"
 		]
 	},
 	"pagetranslation": "Tłumaczenie stron",
@@ -165,5 +166,12 @@
 	"pm-savepages-button-label": "Zapisz",
 	"pm-cancel-button-label": "Anuluj",
 	"pm-pagename-placeholder": "Wprowadź nazwę strony",
-	"pm-langcode-placeholder": "Kod języka"
+	"pm-langcode-placeholder": "Kod języka",
+	"pm-page-does-not-exist": "$1 nie istnieje",
+	"pm-old-translations-missing": "$1 nie zawiera starego tłumaczenia",
+	"pm-pagename-missing": "Podaj nazwę strony",
+	"pm-langcode-missing": "Proszę podać kod języka",
+	"pm-add-icon-hover-text": "Dodaj jednostkę poniżej",
+	"pm-swap-icon-hover-text": "Zamień z jednostką poniżej",
+	"pm-delete-icon-hover-text": "Usuń jednostkę"
 }

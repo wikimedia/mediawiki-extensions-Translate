@@ -5,7 +5,8 @@
 			"Kusavica",
 			"Mormegil",
 			"Rudko",
-			"Teslaton"
+			"Teslaton",
+			"Sudo77(new)"
 		]
 	},
 	"translate": "Preložiť",
@@ -244,5 +245,6 @@
 	"logentry-translationreview-message": "$1 {{GENDER:$2|akceptoval|akceptovala|akceptoval}} preklad $3",
 	"translate-dynagroup-recent-label": "Nedávne preklady",
 	"translate-dynagroup-recent-desc": "Táto skupina správ obsahuje všetky nedávne preklady do tohoto jazyka. Užitočné pre účely korektúry.",
-	"translate-gethelp": "Pomoc"
+	"translate-gethelp": "Pomoc",
+	"tux-editor-in-other-languages": "V iných jazykoch"
 }
