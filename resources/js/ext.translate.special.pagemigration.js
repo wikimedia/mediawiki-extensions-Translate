@@ -70,7 +70,6 @@
 			}
 			pageContent = obj.revisions[0]['*'];
 			oldTranslationUnits = pageContent.split( '\n\n' );
-			translationUnits = oldTranslationUnits;
 			return oldTranslationUnits;
 		} ).promise();
 	}
@@ -253,6 +252,54 @@
 	}
 
 	/**
+	 * Get the index of next translation unit containing h2 header
+	 * @param {Integer} startIndex Index to start the scan from
+	 * @return {Integer} i Index of the next unit found, -1 if not
+	 */
+	function getHeaderUnit( startIndex ) {
+		var i, regex;
+		regex = new RegExp( /^==[^=]+==$/m );
+		for ( i = startIndex; i < translationUnits.length; i++ ) {
+			if ( regex.test( translationUnits[i] ) ) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	/**
+	 * Align h2 headers in the order they appear
+	 */
+	function alignHeaders() {
+		var i, regex, tIndex = 0,
+			text, emptyCount;
+
+		regex = new RegExp( /^==[^=]+==$/m );
+		for ( i = 0; i < noOfSourceUnits; i++ ) {
+			if ( regex.test( sourceUnits[i].definition ) ) {
+				tIndex = getHeaderUnit( tIndex );
+				// search is over
+				if ( tIndex === -1 ) {
+					break;
+				}
+				// remove the unit
+				text = translationUnits.splice( tIndex, 1 ).toString();
+				emptyCount = i - tIndex;
+				// add empty units if needed
+				if ( emptyCount > 0 ) {
+					while( emptyCount !== 0) {
+						translationUnits.splice( tIndex, 0, '' );
+						emptyCount -= 1;	
+					}
+				}
+				// add the unit back
+				translationUnits.splice( i, 0, text );
+				tIndex = i + 1;
+			}
+		}
+	}
+
+	/**
 	 * Handler for 'Save' button click event.
 	 */
 	function saveHandler() {
@@ -354,8 +401,10 @@
 			.then( function ( sourceUnits, fuzzyTimestamp ) {
 			noOfSourceUnits = sourceUnits.length;
 			splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
-				noOfTranslationUnits = translations.length;
-				displayUnits( sourceUnits, translations );
+				translationUnits = translations;
+				alignHeaders();
+				noOfTranslationUnits = translationUnits.length;
+				displayUnits( sourceUnits, translationUnits );
 				$( '#action-save, #action-cancel').removeClass( 'hide' );
 				$( '#action-import' ).addClass( 'hide' );
 			} );
