@@ -1,7 +1,7 @@
 ( function ( $, mw ) {
 	'use strict';
 	var noOfSourceUnits, noOfTranslationUnits,
-		pageName, langCode, sourceUnits = [], translationUnits;
+		pageName, langCode, sourceUnits = [];
 
 	/**
 	 * Create translation pages using content of right hand side blocks
@@ -70,7 +70,6 @@
 			}
 			pageContent = obj.revisions[0]['*'];
 			oldTranslationUnits = pageContent.split( '\n\n' );
-			translationUnits = oldTranslationUnits;
 			return oldTranslationUnits;
 		} ).promise();
 	}
@@ -158,7 +157,8 @@
 	mw.translate = $.extend( mw.translate, {
 		getSourceUnits: getSourceUnits,
 		getFuzzyTimestamp: getFuzzyTimestamp,
-		splitTranslationPage: splitTranslationPage
+		splitTranslationPage: splitTranslationPage,
+		alignHeaders: alignHeaders
 	} );
 
 	/**
@@ -250,6 +250,70 @@
 			newUnit = createNewUnit( sourceText, targetText );
 			unitListing.append( newUnit );
 		}
+	}
+
+	/**
+	 * Get the index of next translation unit containing h2 header
+	 * @param {Integer} startIndex Index to start the scan from
+	 * @return {Integer} i Index of the next unit found, -1 if not
+	 */
+	function getHeaderUnit( startIndex, translationUnits ) {
+		var i, regex;
+		regex = new RegExp( /^==[^=]+==$/m );
+		for ( i = startIndex; i < translationUnits.length; i++ ) {
+			if ( regex.test( translationUnits[i] ) ) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	/**
+	 * Align h2 headers in the order they appear.
+	 * Assumption: The source headers and translation headers appear in
+	 * the same order.
+	 */
+	function alignHeaders( sourceUnits, translationUnits ) {
+		var i, regex, tIndex = 0,
+			matchText, emptyCount, mergeText;
+
+		regex = new RegExp( /^==[^=]+==$/m );
+		for ( i = 0; i < sourceUnits.length; i++ ) {
+			if ( regex.test( sourceUnits[i].definition ) ) {
+				tIndex = getHeaderUnit( tIndex, translationUnits );
+				mergeText = '';
+				// search is over
+				if ( tIndex === -1 ) {
+					break;
+				}
+				// remove the unit
+				matchText = translationUnits.splice( tIndex, 1 ).toString();
+				emptyCount = i - tIndex;
+				if ( emptyCount > 0 ) {
+					// add empty units
+					while ( emptyCount !== 0 ) {
+						translationUnits.splice( tIndex, 0, '' );
+						emptyCount -= 1;
+					}
+				} else if ( emptyCount < 0 ) {
+					// merge units until there is room for tIndex translation unit to
+					// align with ith source unit
+					while ( emptyCount !== 0 ) {
+						mergeText += translationUnits.splice( i, 1 ).toString() + '\n';
+						emptyCount += 1;
+					}
+					if ( i !== 0 ) {
+						translationUnits[i - 1] += '\n' + mergeText;
+					} else {
+						matchText = mergeText + matchText;
+					}
+				}
+				// add the unit back
+				translationUnits.splice( i, 0, matchText );
+				tIndex = i + 1;
+			}
+		}
+		return translationUnits;
 	}
 
 	/**
@@ -354,8 +418,10 @@
 			.then( function ( sourceUnits, fuzzyTimestamp ) {
 			noOfSourceUnits = sourceUnits.length;
 			splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
-				noOfTranslationUnits = translations.length;
-				displayUnits( sourceUnits, translations );
+				var translationUnits = translations;
+				translationUnits = alignHeaders( sourceUnits, translationUnits );
+				noOfTranslationUnits = translationUnits.length;
+				displayUnits( sourceUnits, translationUnits );
 				$( '#action-save, #action-cancel').removeClass( 'hide' );
 				$( '#action-import' ).addClass( 'hide' );
 			} );
