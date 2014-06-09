@@ -53,11 +53,14 @@ class UpdatedDefinitionAid extends TranslationAid {
 			throw new TranslationHelperException( "No changes" );
 		}
 
-		$diff = new DifferenceEngine;
+		$oldContent = ContentHandler::makeContent( $oldtext, null, CONTENT_MODEL_WIKITEXT );
+		$newContent = ContentHandler::makeContent( $newtext, null, CONTENT_MODEL_WIKITEXT );
+
+		$diff = new DifferenceEngine( $this->context );
 		if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
 			$diff->setTextLanguage( $this->group->getSourceLanguage() );
 		}
-		$diff->setText( $oldtext, $newtext );
+		$diff->setContent( $oldContent, $newContent );
 		$diff->setReducedLineNumbers();
 		$diff->showDiffStyle();
 
