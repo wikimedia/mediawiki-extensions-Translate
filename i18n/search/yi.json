@@ -12,6 +12,10 @@
 	"tux-sst-facet-language": "שפּראַכן",
 	"tux-sst-facet-group": "מעלדונג גרופעס",
 	"tux-sst-facet-orphan": "(יתום)",
+	"tux-sst-nosolr-title": "זוך נישט פאראן",
+	"tux-sst-nosolr-body": "די וויקי האט נישט קיין איבערזעצונג זוך דינסט.",
+	"tux-sst-solr-offline-title": "זוך נישט פאראן",
+	"tux-sst-solr-offline-body": "די זוכדינסט איז צײַטווײַליק נישט פאראן.",
 	"tux-sst-next": "נעקסטע רעזולטאטן",
 	"tux-sst-prev": "פֿריערדיקע רעזולטאטן"
 }

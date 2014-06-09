@@ -172,6 +172,10 @@
 	"pm-pagename-placeholder": "Ange sidans namn",
 	"pm-langcode-placeholder": "Språkkod",
 	"pm-page-does-not-exist": "$1 finns inte",
+	"pm-old-translations-missing": "$1 innehåller inte gamla översättningar",
+	"pm-extra-units-warning": "Extra enheter kan förekomma. Vänligen matcha källan och översättningsenheterna korrekt",
+	"pm-pagename-missing": "Vänligen ange sidnamnet",
+	"pm-langcode-missing": "Vänligen ange språkkoden",
 	"pm-add-icon-hover-text": "Lägg till en enhet nedan",
 	"pm-swap-icon-hover-text": "Byt med enheten nedan",
 	"pm-delete-icon-hover-text": "Radera enhet"

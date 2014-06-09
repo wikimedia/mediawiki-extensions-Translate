@@ -173,5 +173,8 @@
 	"pm-old-translations-missing": "$1 non contiene vecchie traduzioni",
 	"pm-extra-units-warning": "Sono presenti unità aggiuntive. Abbina correttamente le unità di origine e di traduzione",
 	"pm-pagename-missing": "Inserisci il nome della pagina",
-	"pm-langcode-missing": "Inserisci il codice della lingua"
+	"pm-langcode-missing": "Inserisci il codice della lingua",
+	"pm-add-icon-hover-text": "Aggiungi un'unità sotto",
+	"pm-swap-icon-hover-text": "Scambia con l'unità sotto",
+	"pm-delete-icon-hover-text": "Cancella unità"
 }

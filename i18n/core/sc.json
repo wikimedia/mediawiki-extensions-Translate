@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Via maxima"
+		]
+	},
+	"translate": "Tradui",
+	"translate-desc": "[[Special:Translate|Special page]] po tradusi MediaWiki and beyond",
+	"translate-taskui-view": "Amosta totu is messagius"
+}

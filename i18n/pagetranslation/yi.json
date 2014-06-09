@@ -56,6 +56,7 @@
 	"tpt-languages-zero": "אנהייבן איבערזעצן די דאזיקע שפראך",
 	"tpt-tab-translate": "איבערזעצן",
 	"tpt-target-page": "מען קען נישט דערהיינטיקן דעם בלאט מאנועל.\nדער בלאט איז אן איבערזעצונג פונעם בלאט [[$1]] און מען קען דערהיינטיקן די איבערזעצונג מיט די [$2 איבערזעצונג געצייג].",
+	"tpt-discouraged-language-force-header": "מען קען נישט איבערזעצן דעם בלאט אויף $1.",
 	"tpt-discouraged-language-reason": "אורזאך: $1",
 	"tpt-download-page": "עקספארטירן בלאט מיט איבערזעצונגען",
 	"tpt-aggregategroup-add": "צולייגן",
@@ -108,5 +109,8 @@
 	"pm-import-button-label": "אימפארטירן",
 	"pm-savepages-button-label": "אויפֿהיטן",
 	"pm-cancel-button-label": "אַנולירן",
-	"pm-langcode-placeholder": "שפראַך קאד"
+	"pm-langcode-placeholder": "שפראַך קאד",
+	"pm-page-does-not-exist": "$1 עקזיסטירט נישט",
+	"pm-old-translations-missing": "$1 אנטהאלט נישט קיין אלטע איבערזעצונגען",
+	"pm-delete-icon-hover-text": "אויסמעקן איינס"
 }

@@ -5,7 +5,8 @@
 			"Dj",
 			"Glanthor Reviol",
 			"Misibacsi",
-			"Xbspiro"
+			"Xbspiro",
+			"Csega"
 		]
 	},
 	"pagetranslation": "Lap fordítása",
@@ -96,5 +97,8 @@
 	"pt-deletepage-current": "Lap neve:",
 	"pt-deletepage-reason": "Ok:",
 	"pt-deletepage-subpages": "Összes allap törlése",
-	"pt-deletepage-list-pages": "Törlendő lapok listája"
+	"pt-deletepage-list-pages": "Törlendő lapok listája",
+	"pagemigration": "Fordítási oldal migráció",
+	"pm-swap-icon-hover-text": "Csere az alábbi egységgel",
+	"pm-delete-icon-hover-text": "Egység törlése"
 }
