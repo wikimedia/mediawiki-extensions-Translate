@@ -338,8 +338,8 @@
 	 */
 	function importHandler() {
 		var pageTitle, errorBox = $( '.mw-tpm-sp-error__message' );
-		pageName = $( '#title' ).val();
-		langCode = $( '#language' ).val();
+		pageName = $( '#title' ).val().trim();
+		langCode = $( '#language' ).val().trim();
 		pageTitle = pageName + '/' + langCode;
 		errorBox.hide( 'fast' );
 		if ( pageName === '' ) {
