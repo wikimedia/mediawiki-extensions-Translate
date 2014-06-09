@@ -83,6 +83,15 @@ abstract class TranslationAid {
 	}
 
 	/**
+	 * @return Content
+	 */
+	protected function getDefinitionContent() {
+		$text = $this->getDefinition();
+
+		return ContentHandler::makeContent( $text, $this->handle->getTitle() );
+	}
+
+	/**
 	 * Get the translations in all languages. Cached for performance.
 	 * Fuzzy translation are not included.
 	 *

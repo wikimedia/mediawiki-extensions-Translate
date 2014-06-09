@@ -46,18 +46,26 @@ class UpdatedDefinitionAid extends TranslationAid {
 			throw new TranslationHelperException( "Old definition version doesn't exist anymore" );
 		}
 
-		$oldtext = $oldrev->getText();
-		$newtext = $this->getDefinition();
+		$oldContent = $oldrev->getContent();
+		$newContent = $this->getDefinitionContent();
 
-		if ( $oldtext === $newtext ) {
-			throw new TranslationHelperException( "No changes" );
+		if ( !$oldContent ) {
+			throw new TranslationHelperException( "Old definition version doesn't exist anymore" );
 		}
 
-		$diff = new DifferenceEngine;
+		if ( !$oldContent instanceof WikitextContent || !$newContent instanceof WikitextContent ) {
+			throw new TranslationHelperException( 'Can only work on Wikitext content' );
+		}
+
+		if ( $oldContent->equals( $newContent ) ) {
+			throw new TranslationHelperException( 'No changes' );
+		}
+
+		$diff = new DifferenceEngine( $this->context );
 		if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
 			$diff->setTextLanguage( $this->group->getSourceLanguage() );
 		}
-		$diff->setText( $oldtext, $newtext );
+		$diff->setContent( $oldContent, $newContent );
 		$diff->setReducedLineNumbers();
 		$diff->showDiffStyle();
 
