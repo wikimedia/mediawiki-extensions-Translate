@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_459bca1b",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T17:30:14Z",
+      "side": 1,
+      "message": "Should we have wfArrayInsertBefore? ;)",
+      "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_0585c2b1",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T17:30:14Z",
+      "side": 1,
+      "message": "What\u0027s the point of the exception? Can\u0027t we just append to the end in the worse case?",
+      "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
