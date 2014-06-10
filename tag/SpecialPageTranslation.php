@@ -147,6 +147,27 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 
 		// Non-fatal error which prevents saving
 		if ( $error === false && $request->wasPosted() ) {
+			// Check if user wants to translate title
+			// If not, remove it from the list of sections
+			$translateTitle = $request->getCheck( 'translatetitle' );
+
+			// Searching for the title section here if present
+			foreach ( $sections as $s ) {
+				if ( $s->id === 'Page display title' ) {
+					// Get the key for page display title
+					$key = key($sections);
+				}
+			}
+
+			if ( $translateTitle && !isset( $sections[$key] ) ) {
+				// If user marks a translation for title in some later revision
+				$displaytitle = $this->getTitleSection();
+				$sections[TranslateUtils::getPlaceholder()] = $displaytitle;
+			} elseif ( !$translateTitle && isset( $sections[$key] ) ) {
+				// User doesn't want to translate title
+				unset( $sections[$key] );
+			}
+
 			$err = $this->markForTranslation( $page, $sections );
 
 			if ( $err ) {
@@ -583,6 +604,24 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 				$out->addHTML( Xml::tags( 'div', $contentParams, $text ) );
 			}
 		}
+
+		// Checkbox whether to translate the title or no
+		// Default state based on last revision
+		// Checked for the first revision
+		$prevSections = $page->getSections();
+		$key = array_search( 'Page display title', $prevSections );
+		$titleTranslateDef = 1;
+		if ( !$key ) {
+			$titleTranslateDef = 0;
+		}
+
+		$out->addHTML( Xml::checkLabel(
+			$this->msg('tpt-translate-title'),
+			"translatetitle",
+			'mw-translate-title',
+			$titleTranslateDef
+			)
+		);
 
 		$this->priorityLanguagesForm( $page );
 
