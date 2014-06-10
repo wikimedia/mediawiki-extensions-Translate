@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_942c4a91",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T08:41:49Z",
+      "side": 1,
+      "message": "You should think about it. Think about this division of errors: fatal errors and transient errors which can be acted by retrying.\n\nIt seems that you need more complex dispatcher code for this part. Something which can:\n* Send N parallel requests (N can be 1 as well for serial)\n* Wait X time between requests\n* Retry on transient errors\n* Return a complete list of promises so that the caller can inspect which ones succeeded and failed. One way to do is to create a separate deferred which will call done()/fail() with the list of deferreds we are building here.\n\nSomething like:\nvar mainDeferred \u003d ...;\n// The current code here\n\n// Once all requests are done\nmainDeferred.resolve( deferreds );\n\n// At the end of function\nreturn mainDeferred;\n\nIt probably even makes sense to create a separate module for this dispatcher. You can also ask on usual places like wikitech or gadget devs whether people have encountered this issue before, or search internet for other existing solutions.",
+      "parentUuid": "ee391fd1_d13f841f",
+      "revId": "a510dfa79f8f418e16dab6465ba3e25daca6da97",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_91ea1c9b",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 2
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_544ee273",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T08:41:49Z",
+      "side": 1,
+      "message": "I was thinking along the line: why not return it always?",
+      "parentUuid": "ee391fd1_311010ad",
+      "revId": "a510dfa79f8f418e16dab6465ba3e25daca6da97",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_113e2c27",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 2
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "Oh yeah, what can be a workaround for this?",
       "parentUuid": "ee391fd1_113e2c27",
+      "revId": "a510dfa79f8f418e16dab6465ba3e25daca6da97",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_94432a43",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T08:41:49Z",
+      "side": 1,
+      "message": "See above.",
+      "parentUuid": "ee391fd1_f12968e3",
       "revId": "a510dfa79f8f418e16dab6465ba3e25daca6da97",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
