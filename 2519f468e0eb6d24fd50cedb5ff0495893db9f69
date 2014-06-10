@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_fa57fd5a",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T16:07:44Z",
+      "side": 1,
+      "message": "getCheck()",
+      "revId": "2519f468e0eb6d24fd50cedb5ff0495893db9f69",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_9a4eb1c3",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T16:07:44Z",
+      "side": 1,
+      "message": "The loop would be shorter as $sections \u003d array_filter( $sections, function ( $item ) { return $item-\u003eid !\u003d\u003d \u0027Page display title\u0027; } );",
+      "revId": "2519f468e0eb6d24fd50cedb5ff0495893db9f69",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_7ac30d0b",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T16:07:44Z",
+      "side": 1,
+      "message": "I think the default value should be based on whether the title was previously included for transation (and default to true if the page is marked for the first time)",
+      "revId": "2519f468e0eb6d24fd50cedb5ff0495893db9f69",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

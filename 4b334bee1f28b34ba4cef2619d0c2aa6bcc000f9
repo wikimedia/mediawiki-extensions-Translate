@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_da543959",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T16:07:44Z",
+      "side": 0,
+      "message": "Why is this line removed?",
+      "revId": "4b334bee1f28b34ba4cef2619d0c2aa6bcc000f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_ba517567",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T16:07:44Z",
+      "side": 0,
+      "message": "And this?",
+      "revId": "4b334bee1f28b34ba4cef2619d0c2aa6bcc000f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
