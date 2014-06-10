@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_d13f841f",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-10T07:24:36Z",
+      "side": 1,
+      "message": "Uhmm, how about calling the same function in .fail()?",
+      "parentUuid": "ee391fd1_712fb8f4",
+      "revId": "a510dfa79f8f418e16dab6465ba3e25daca6da97",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_91ea1c9b",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_311010ad",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-10T07:24:36Z",
+      "side": 1,
+      "message": "I was of the impression that the deferred array will be populated completely and when i \u003d\u003d\u003d 0, it would be a good time to return it.",
+      "parentUuid": "ee391fd1_91ea1c9b",
+      "revId": "a510dfa79f8f418e16dab6465ba3e25daca6da97",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_113e2c27",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2014-06-10T07:20:22Z",
       "side": 1,
       "message": "Because, at the time you check this, you have only created the first deferred, and the latter ones are being added after the first call is done.",
+      "revId": "a510dfa79f8f418e16dab6465ba3e25daca6da97",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_f12968e3",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-10T07:24:36Z",
+      "side": 1,
+      "message": "Oh yeah, what can be a workaround for this?",
+      "parentUuid": "ee391fd1_113e2c27",
       "revId": "a510dfa79f8f418e16dab6465ba3e25daca6da97",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
