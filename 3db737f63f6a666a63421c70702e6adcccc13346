@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_e55e3e48",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 33
+      },
+      "writtenOn": "2014-06-10T17:37:46Z",
+      "side": 1,
+      "message": "possibly but imho i don\u0027t think it\u0027s nice to rely on global functions and then it also breaks compatibility with earlier versions of MediaWiki.",
+      "parentUuid": "ee391fd1_459bca1b",
+      "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_0585c2b1",
         "filename": "TranslateHooks.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-10T17:30:14Z",
       "side": 1,
       "message": "What\u0027s the point of the exception? Can\u0027t we just append to the end in the worse case?",
+      "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_a5815694",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 33
+      },
+      "writtenOn": "2014-06-10T17:37:46Z",
+      "side": 1,
+      "message": "then a warning?  i think it\u0027s useful to know when it is broken although tests help",
+      "parentUuid": "ee391fd1_0585c2b1",
       "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
