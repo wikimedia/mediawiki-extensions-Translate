@@ -633,7 +633,7 @@ class TranslatablePage {
 	 * @return string[] List of string
 	 * @since 2012-08-06
 	 */
-	protected function getSections() {
+	public function getSections() {
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array( 'trs_page' => $this->getTitle()->getArticleID() );
 		$res = $dbw->select( 'translate_sections', 'trs_key', $conds, __METHOD__ );
