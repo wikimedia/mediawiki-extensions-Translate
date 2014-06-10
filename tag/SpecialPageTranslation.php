@@ -144,9 +144,20 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 		// This will modify the sections to include name property
 		$error = false;
 		$sections = $this->checkInput( $page, $error );
-
 		// Non-fatal error which prevents saving
 		if ( $error === false && $request->wasPosted() ) {
+			// Check if user wants to translate title
+			// If not, remove it from the list of sections
+			$translateTitle = (int)$request->getVal( 'translatetitle' );
+			if ( $translateTitle === 1 ) {
+				foreach ( $sections as $s ) {
+					$p = $s->id;
+					if ( $p === 'Page display title' ) {
+						$key = array_search( $s, $sections );
+						unset( $sections[$key] );
+					}
+				}
+			}
 			$err = $this->markForTranslation( $page, $sections );
 
 			if ( $err ) {
@@ -446,7 +457,6 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 			$usedNames[$s->id] = true;
 			$s->name = $s->id;
 		}
-
 		return $sections;
 	}
 
@@ -584,6 +594,16 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 			}
 		}
 
+		// Checkbox whether to translate the title or no
+		// Checked by default
+		$out->addHTML( Xml::checkLabel(
+				$this->msg('tpt-translate-title'),
+				"translatetitle",
+				'mw-translate-title',
+				true
+			)
+		);
+
 		$this->priorityLanguagesForm( $page );
 
 		$out->addHTML(
@@ -663,7 +683,6 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 			$page->getParse()->getSourcePageText(),
 			$this->getTitle()
 		);
-
 		$status = $wikiPage->doEditContent(
 			$content,
 			$this->msg( 'tpt-mark-summary' )->inContentLanguage()->text(),
