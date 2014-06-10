@@ -105,6 +105,24 @@
       "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_40229851",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 33
+      },
+      "writtenOn": "2014-06-10T18:03:43Z",
+      "side": 1,
+      "message": "hmm, actually the tests won\u0027t catch this. do we really want to rely on php notice again if this breaks in the future?",
+      "parentUuid": "ee391fd1_c067a8b3",
+      "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
