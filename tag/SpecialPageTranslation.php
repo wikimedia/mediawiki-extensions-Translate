@@ -147,6 +147,17 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 
 		// Non-fatal error which prevents saving
 		if ( $error === false && $request->wasPosted() ) {
+			// Check if user wants to translate title
+			// If not, remove it from the list of sections
+			$translateTitle = $request->getCheck( 'translatetitle' );
+			if ( !$translateTitle ) {
+				$sections = array_filter( $sections, function( $s ) {
+					if ( $s->id !== 'Page display title' ) {
+						return true;
+					}
+				});
+			}
+
 			$err = $this->markForTranslation( $page, $sections );
 
 			if ( $err ) {
@@ -483,6 +494,21 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 
 		$diffOld = $this->msg( 'tpt-diff-old' )->escaped();
 		$diffNew = $this->msg( 'tpt-diff-new' )->escaped();
+
+		// Checkbox whether to translate the title or no- placed above the title section
+		// Default state based on last revision, Checked for the first revision
+		$hasTitleSection = 1;
+		$prevSections = $page->getSections();
+		if( $prevSections ) {
+			$hasTitleSection = in_array( 'Page display title', $prevSections, true );
+		}
+
+		$out->addHTML( Xml::checkLabel(
+			$this->msg( 'tpt-translate-title' )->text(),
+			'translatetitle',
+			'mw-translate-title',
+			$hasTitleSection
+		) );
 
 		/**
 		 * @var TPSection $s
