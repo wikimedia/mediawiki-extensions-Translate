@@ -1,7 +1,9 @@
 ( function ( $, mw ) {
 	'use strict';
 	var noOfSourceUnits, noOfTranslationUnits,
-		pageName, langCode, sourceUnits = [], translationUnits;
+		pageName, langCode, deferreds = [],
+		sourceUnits = [], translationUnits,
+		mainDefferred = new $.Deferred();
 
 	/**
 	 * Create translation pages using content of right hand side blocks
@@ -9,29 +11,34 @@
 	 * content is not empty.
 	 * @return {jQuery.Promise[]} deferreds
 	 */
-	function createTranslationPages() {
-		var api = new mw.Api(), deferreds = [],
-			i, tUnit, identifier, title,
+	function createTranslationPages( i ) {
+		var api = new mw.Api(),
+			tUnit, identifier, title,
 			content, summary, promise;
-		for ( i = 0; i < noOfSourceUnits; i++ ) {
-			tUnit = $( '.mw-tpm-sp-unit__target' ).eq( i );
-			identifier = sourceUnits[i].identifier;
-			title = 'Translations:' + pageName + '/' + identifier + '/' + langCode;
-			content = tUnit.val();
-			summary = 'imported translation using [[Special:PageMigration]]';
-			if ( content === '' ) {
-				continue;
-			}
+
+		if ( i === noOfSourceUnits ) {
+			mainDefferred.resolve( deferreds );
+			return mainDefferred;
+		}
+		tUnit = $( '.mw-tpm-sp-unit__target' ).eq( i );
+		identifier = sourceUnits[i].identifier;
+		title = 'Translations:' + pageName + '/' + identifier + '/' + langCode;
+		content = tUnit.val();
+		summary = 'imported translation using [[Special:PageMigration]]';
+		if ( content === '' ) {
+			createTranslationPages( i + 1 );
+		} else {
 			promise = api.postWithEditToken( {
 				action: 'edit',
 				format: 'json',
 				title: title,
 				text: content,
 				summary: summary,
+			} ).done( function () {
+				createTranslationPages( i + 1 ) ;
 			} ).promise();
 			deferreds.push( promise );
 		}
-		return deferreds;
 	}
 
 	/**
@@ -263,12 +270,21 @@
 				.show( 'fast' );
 			return;
 		} else {
-			deferreds = createTranslationPages();
+			deferreds = [];
 			$( 'input' ).attr( 'disabled', 'disabled' );
-			$.when.apply( null, deferreds ).done( function () {
+			mainDefferred = createTranslationPages ( 0 );
+			mainDefferred.done( function( deferreds ) {
+				// using this right now to avoid error by jenkins
+				mw.log(deferreds);
 				$( '#action-import' ).removeClass( 'hide' );
 				$( 'input' ).removeAttr( 'disabled' );
 			});
+			// This is not working as expected. it goes into the callback as
+			// soon as the first unit is saved and the fields get enabled.
+			// $.when.apply( null, deferreds ).done( function () {
+			// 	$( '#action-import' ).removeClass( 'hide' );
+			// 	$( 'input' ).removeAttr( 'disabled' );
+			// });
 		}
 	}
 
