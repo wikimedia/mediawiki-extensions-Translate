@@ -147,6 +147,14 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 
 		// Non-fatal error which prevents saving
 		if ( $error === false && $request->wasPosted() ) {
+			// Check if user wants to translate title
+			// If not, remove it from the list of sections
+			if ( !$request->getCheck( 'translatetitle' ) ) {
+				$sections = array_filter( $sections, function( $s ) {
+					return $s->id !== 'Page display title';
+				} );
+			}
+
 			$err = $this->markForTranslation( $page, $sections );
 
 			if ( $err ) {
@@ -484,10 +492,28 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 		$diffOld = $this->msg( 'tpt-diff-old' )->escaped();
 		$diffNew = $this->msg( 'tpt-diff-new' )->escaped();
 
+		// Check whether page title was previously marked for translation.
+		// If the page is marked for translation the first time, default to checked.
+		$previous = $page->getSections();
+		$defaultChecked = !$previous || in_array( 'Page display title', $previous, true );
+
 		/**
 		 * @var TPSection $s
 		 */
 		foreach ( $sections as $s ) {
+			if ( $s->name === 'Page display title' ) {
+				// Set section type as new if title previously unchecked
+				$s->type = $defaultChecked ? $s->type : 'new';
+
+				// Checkbox for page title optional translation
+				$this->getOutput()->addHTML ( Xml::checkLabel(
+					$this->msg( 'tpt-translate-title' )->text(),
+					'translatetitle',
+					'mw-translate-title',
+					$defaultChecked
+				) );
+			}
+
 			if ( $s->type === 'new' ) {
 				$name = $this->msg( 'tpt-section-new', $s->name )->escaped();
 			} else {
