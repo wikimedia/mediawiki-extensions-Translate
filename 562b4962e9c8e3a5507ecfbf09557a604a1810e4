@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_9781ec94",
+        "filename": "translationaids/UpdatedDefinitionAid.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2014-06-10T13:21:49Z",
+      "side": 1,
+      "message": "better use -\u003egetContent  here, then check that the content actually is wikitext. Then there is no need to create an artificial wikitext content object.",
+      "revId": "562b4962e9c8e3a5507ecfbf09557a604a1810e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_174dfc9b",
+        "filename": "translationaids/UpdatedDefinitionAid.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2014-06-10T13:21:49Z",
+      "side": 1,
+      "message": "Create a new function getDefinitionContent to make this nice and consistent. The you get $newContent here directly.",
+      "revId": "562b4962e9c8e3a5507ecfbf09557a604a1810e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_57538443",
+        "filename": "translationaids/UpdatedDefinitionAid.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2014-06-10T13:21:49Z",
+      "side": 1,
+      "message": "If you don\u0027t have $oldtext but only $oldContent, check $oldContent-\u003eequals( $newContent ) after constructing newContent.",
+      "revId": "562b4962e9c8e3a5507ecfbf09557a604a1810e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_774e889d",
+        "filename": "translationaids/UpdatedDefinitionAid.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2014-06-10T13:21:49Z",
+      "side": 1,
+      "message": "Should not be needed, see above.",
+      "revId": "562b4962e9c8e3a5507ecfbf09557a604a1810e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_b75bd056",
+        "filename": "translationaids/UpdatedDefinitionAid.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2014-06-10T13:21:49Z",
+      "side": 1,
+      "message": "If you already know that it\u0027s wikitext, you can just use new WikitextContent( $text ).",
+      "revId": "562b4962e9c8e3a5507ecfbf09557a604a1810e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
