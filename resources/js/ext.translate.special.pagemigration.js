@@ -1,37 +1,35 @@
 ( function ( $, mw ) {
 	'use strict';
 	var noOfSourceUnits, noOfTranslationUnits,
-		pageName, langCode, sourceUnits = [], translationUnits;
+		pageName, langCode, sourceUnits = [],
+		translationUnits;
 
 	/**
 	 * Create translation pages using content of right hand side blocks
 	 * and identifiers from left hand side blocks. Create pages only if
 	 * content is not empty.
-	 * @return {jQuery.Promise[]} deferreds
+	 * @return {Function} Returns a function which returns a jQuery.Promise
 	 */
-	function createTranslationPages() {
-		var api = new mw.Api(), deferreds = [],
-			i, tUnit, identifier, title,
-			content, summary, promise;
-		for ( i = 0; i < noOfSourceUnits; i++ ) {
-			tUnit = $( '.mw-tpm-sp-unit__target' ).eq( i );
+	function createTranslationPage( i, content ) {
+
+		return function () {
+			var api = new mw.Api(),
+			identifier, title, summary,
+			deferred = new $.Deferred();
+
 			identifier = sourceUnits[i].identifier;
 			title = 'Translations:' + pageName + '/' + identifier + '/' + langCode;
-			content = tUnit.val();
 			summary = 'imported translation using [[Special:PageMigration]]';
-			if ( content === '' ) {
-				continue;
-			}
-			promise = api.postWithEditToken( {
+
+			deferred = api.postWithEditToken( {
 				action: 'edit',
 				format: 'json',
 				title: title,
 				text: content,
 				summary: summary,
-			} ).promise();
-			deferreds.push( promise );
-		}
-		return deferreds;
+			} );
+			return deferred.promise();
+		};
 	}
 
 	/**
@@ -256,19 +254,26 @@
 	 * Handler for 'Save' button click event.
 	 */
 	function saveHandler() {
-		var deferreds;
+		var i, list = [], content;
 		$( '.mw-tpm-sp-error__message' ).hide( 'fast' );
 		if ( noOfSourceUnits < noOfTranslationUnits ) {
 			$( '.mw-tpm-sp-error__message' ).text( mw.msg( 'pm-extra-units-warning' ) )
 				.show( 'fast' );
 			return;
 		} else {
-			deferreds = createTranslationPages();
 			$( 'input' ).attr( 'disabled', 'disabled' );
-			$.when.apply( null, deferreds ).done( function () {
+			for ( i = 0; i < noOfSourceUnits; i++ ) {
+				content = $( '.mw-tpm-sp-unit__target' ).eq( i ).val();
+				content = $.trim( content );
+				if ( content !== '' ) {
+					list.push( createTranslationPage( i, content ) );
+				}
+			}
+
+			$.ajaxDispatcher( list, 1 ).done( function () {
 				$( '#action-import' ).removeClass( 'hide' );
 				$( 'input' ).removeAttr( 'disabled' );
-			});
+			} );
 		}
 	}
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * JavaScript and CSS resource definitions.
  *
@@ -349,6 +350,7 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 	'dependencies' => array(
 		'mediawiki.api.edit',
 		'mediawiki.ui.button',
+		'jquery.ajaxdispatcher',
 	),
 	'messages' => array(
 		'pm-page-does-not-exist',
@@ -488,6 +490,10 @@ $wgResourceModules['ext.translate.workflowselector'] = array(
 ) + $resourcePaths;
 
 // Third party module
+$wgResourceModules['jquery.ajaxdispatcher'] = array(
+	'scripts' => 'resources/js/jquery.ajaxdispatcher.js',
+) + $resourcePaths;
+
 $wgResourceModules['jquery.autosize'] = array(
 	'scripts' => 'resources/js/jquery.autosize.js',
 ) + $resourcePaths;
