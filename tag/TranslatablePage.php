@@ -220,6 +220,18 @@ class TranslatablePage {
 	}
 
 	/**
+	 * Returns a object which represents the title section
+	 *
+	 * @return TP
+	 */
+	public function getTitleSection() {
+		$displaytitle = new TPSection;
+		$displaytitle->id = $this->displayTitle;
+		$displaytitle->text = $this->getTitle()->getPrefixedText();
+		return $displaytitle;
+	}
+
+	/**
 	 * Returns a TPParse object which represents the parsed page.
 	 *
 	 * @throws TPException
@@ -238,9 +250,7 @@ class TranslatablePage {
 		$sections = array();
 
 		// Add section to allow translating the page name
-		$displaytitle = new TPSection;
-		$displaytitle->id = $this->displayTitle;
-		$displaytitle->text = $this->getTitle()->getPrefixedText();
+		$displaytitle = $this->getTitleSection();
 		$sections[TranslateUtils::getPlaceholder()] = $displaytitle;
 
 		$tagPlaceHolders = array();
@@ -633,7 +643,7 @@ class TranslatablePage {
 	 * @return string[] List of string
 	 * @since 2012-08-06
 	 */
-	protected function getSections() {
+	public function getSections() {
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array( 'trs_page' => $this->getTitle()->getArticleID() );
 		$res = $dbw->select( 'translate_sections', 'trs_key', $conds, __METHOD__ );
