@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_9a435143",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-10T13:42:10Z",
+      "side": 1,
+      "message": "I checked for other solutions and recursion was the approach they recommended on SO.\n\n// Once all requests are done \nmainDeferred.resolve( deferreds );\n\n^Does this mean we should go back to a loop? I am not getting how this fits with a recursive solution? Perhaps we could work in an etherpad on this? :)",
+      "parentUuid": "ee391fd1_942c4a91",
+      "revId": "a510dfa79f8f418e16dab6465ba3e25daca6da97",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_91ea1c9b",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 2
