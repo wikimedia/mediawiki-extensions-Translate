@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_712fb8f4",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T07:20:22Z",
+      "side": 1,
+      "message": "So all remaining ones will not even be tried if one fails? Some kind of error handling is needed.",
+      "revId": "a510dfa79f8f418e16dab6465ba3e25daca6da97",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_91ea1c9b",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T07:20:22Z",
+      "side": 1,
+      "message": "Why this check?",
+      "revId": "a510dfa79f8f418e16dab6465ba3e25daca6da97",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_113e2c27",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T07:20:22Z",
+      "side": 1,
+      "message": "Because, at the time you check this, you have only created the first deferred, and the latter ones are being added after the first call is done.",
+      "revId": "a510dfa79f8f418e16dab6465ba3e25daca6da97",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
