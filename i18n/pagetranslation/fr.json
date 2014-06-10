@@ -183,5 +183,8 @@
 	"pm-old-translations-missing": "$1 ne contient pas d’anciennes traductions",
 	"pm-extra-units-warning": "Des unités supplémentaires peuvent être présentes. Veuillez faire correspondre correctement les unités source et de traduction",
 	"pm-pagename-missing": "Veuillez saisir le nom de la page",
-	"pm-langcode-missing": "Veuillez saisir le code de langue"
+	"pm-langcode-missing": "Veuillez saisir le code de langue",
+	"pm-add-icon-hover-text": "Ajouter une unité ci-dessous",
+	"pm-swap-icon-hover-text": "Échanger avec l’unité ci-dessous",
+	"pm-delete-icon-hover-text": "Supprimer l’unité"
 }
