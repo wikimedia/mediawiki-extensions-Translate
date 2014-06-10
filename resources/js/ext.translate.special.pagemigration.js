@@ -1,37 +1,43 @@
 ( function ( $, mw ) {
 	'use strict';
 	var noOfSourceUnits, noOfTranslationUnits,
-		pageName, langCode, sourceUnits = [], translationUnits;
+		pageName, langCode, sourceUnits = [],
+		translationUnits;
 
 	/**
 	 * Create translation pages using content of right hand side blocks
 	 * and identifiers from left hand side blocks. Create pages only if
 	 * content is not empty.
-	 * @return {jQuery.Promise[]} deferreds
+	 * @return {Function}
 	 */
-	function createTranslationPages() {
-		var api = new mw.Api(), deferreds = [],
-			i, tUnit, identifier, title,
-			content, summary, promise;
-		for ( i = 0; i < noOfSourceUnits; i++ ) {
+	function createTranslationPage( i ) {
+
+		return function () {
+			var api = new mw.Api(),
+			tUnit, identifier, title,
+			content, summary, deferred = new $.Deferred();
+
 			tUnit = $( '.mw-tpm-sp-unit__target' ).eq( i );
 			identifier = sourceUnits[i].identifier;
 			title = 'Translations:' + pageName + '/' + identifier + '/' + langCode;
 			content = tUnit.val();
 			summary = 'imported translation using [[Special:PageMigration]]';
-			if ( content === '' ) {
-				continue;
-			}
-			promise = api.postWithEditToken( {
-				action: 'edit',
-				format: 'json',
-				title: title,
-				text: content,
-				summary: summary,
-			} ).promise();
-			deferreds.push( promise );
-		}
-		return deferreds;
+
+			window.setTimeout( function () {
+				api.postWithEditToken( {
+					action: 'edit',
+					format: 'json',
+					title: title,
+					text: content,
+					summary: summary,
+				} ).done( function () {
+					deferred.resolve();
+				} ).fail( function () {
+					deferred.reject();
+				} );
+			}, 500 );
+			return deferred;
+		};
 	}
 
 	/**
@@ -256,19 +262,22 @@
 	 * Handler for 'Save' button click event.
 	 */
 	function saveHandler() {
-		var deferreds;
+		var i, list = [];
 		$( '.mw-tpm-sp-error__message' ).hide( 'fast' );
 		if ( noOfSourceUnits < noOfTranslationUnits ) {
 			$( '.mw-tpm-sp-error__message' ).text( mw.msg( 'pm-extra-units-warning' ) )
 				.show( 'fast' );
 			return;
 		} else {
-			deferreds = createTranslationPages();
 			$( 'input' ).attr( 'disabled', 'disabled' );
-			$.when.apply( null, deferreds ).done( function () {
+			for ( i = 0; i < noOfSourceUnits; i++) {
+				list.push( createTranslationPage( i ) );
+			}
+
+			$.ajaxDispatcher( list, 2 ).done( function ( promises ) {
 				$( '#action-import' ).removeClass( 'hide' );
 				$( 'input' ).removeAttr( 'disabled' );
-			});
+			} );
 		}
 	}
 
