@@ -364,7 +364,18 @@ class TranslateHooks {
 			'namespaces' => $wgTranslateMessageNamespaces,
 		);
 
-		$profiles = wfArrayInsertAfter( $profiles, $insert, 'help' );
+		// insert translations before 'all'
+		$index = array_search( 'all', array_keys( $profiles ) );
+
+		if ( !$index ) {
+			throw new MWException( "'all' not found in $profiles" );
+		}
+
+		$profiles = array_merge(
+			array_slice( $profiles, 0, $index ),
+			$insert,
+			array_slice( $profiles, 0 )
+		);
 
 		return true;
 	}

@@ -75,4 +75,31 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$wikipage->doEditContent( $content, __METHOD__, 0, false, $user );
 		$this->assertEquals( array(), $title->getParentCategories(), 'unknown message' );
 	}
+
+	public function testSearchProfile() {
+		$profiles = array(
+			'files' => array(),
+			'all' => array(),
+			'advanced' => array()
+		);
+
+		$expected = array( 'files', 'translation', 'all', 'advanced' );
+
+		TranslateHooks::searchProfile( $profiles );
+
+		$this->assertEquals( $expected, array_keys( $profiles ) );
+	}
+
+	public function testSearchProfileThrowsException() {
+		$profiles = array(
+			'files' => array(),
+			'help' => array(),
+			'advanced' => array()
+		);
+
+		$this->setExpectedException( 'MWException' );
+
+		TranslateHooks::searchProfile( $profiles );
+	}
+
 }
