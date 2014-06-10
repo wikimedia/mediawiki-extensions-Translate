@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_006ed093",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T17:56:41Z",
+      "side": 1,
+      "message": "Ah, I thought it was defined in Translate but it wasn\u0027t. Could still be useful for testing, but I wont force it.",
+      "parentUuid": "ee391fd1_e55e3e48",
+      "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_0585c2b1",
         "filename": "TranslateHooks.php",
         "patchSetId": 2
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "then a warning?  i think it\u0027s useful to know when it is broken although tests help",
       "parentUuid": "ee391fd1_0585c2b1",
+      "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_c067a8b3",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-10T17:56:41Z",
+      "side": 1,
+      "message": "I\u0027m in favor of defensive coding in general, but this could potentially break Special:Search for people who do not know how to fix it.",
+      "parentUuid": "ee391fd1_a5815694",
       "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
