@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_895f84e8",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T14:56:24Z",
+      "side": 1,
+      "message": "This doesn\u0027t do anything without call to checkPermissions() in execute()",
+      "revId": "1b452e2daefbad3ea836c467e1c1f1f66faf95a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
