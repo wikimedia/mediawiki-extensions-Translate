@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_7390d346",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T08:32:45Z",
+      "side": 1,
+      "message": "This code is hard to understand. There seem to be three different cases:\n\n1) Page marked for translation the first time with title included -\u003e Do nothing\n2) Page marked for translation without title -\u003e Remove title if present\n3) Page marked for translation with title included when it previously wasn\u0027t. -\u003e Add it back manually.\n\nI do not understand why getParse would not add title in case of 3). If it does, this case is the same as 1).",
+      "revId": "c71cb2be5420692914578ca6175a6d8f384cbd2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_d3cbff73",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T08:32:45Z",
+      "side": 1,
+      "message": "Isn\u0027t this just $hasTitleSection \u003d in_array( \u0027Page display title\u0027, $prevSections, true );\n\nHow do you handle the case that the page is marked translation for the first time?",
+      "revId": "c71cb2be5420692914578ca6175a6d8f384cbd2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_53af0f92",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T08:32:45Z",
+      "side": 1,
+      "message": "spacing, -\u003etext()",
+      "revId": "c71cb2be5420692914578ca6175a6d8f384cbd2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_33b48be4",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T08:32:45Z",
+      "side": 1,
+      "message": "single quotes",
+      "revId": "c71cb2be5420692914578ca6175a6d8f384cbd2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_f395e343",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T08:32:45Z",
+      "side": 1,
+      "message": "Incorrect indentation",
+      "revId": "c71cb2be5420692914578ca6175a6d8f384cbd2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_5395cf34",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T08:32:45Z",
+      "side": 1,
+      "message": "No need to mention it is an object",
+      "revId": "c71cb2be5420692914578ca6175a6d8f384cbd2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_7391f351",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T08:32:45Z",
+      "side": 1,
+      "message": "TPSection\n\n@since 2014.06",
+      "revId": "c71cb2be5420692914578ca6175a6d8f384cbd2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
