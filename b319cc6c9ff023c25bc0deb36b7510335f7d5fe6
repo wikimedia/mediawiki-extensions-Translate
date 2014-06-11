@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_e432b705",
+        "filename": "MessageGroups.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T17:54:48Z",
+      "side": 1,
+      "message": "Not sure if you need separate method for this. Or perhaps the api module itself is a better place?\n\nGetting the labels is as easy as $labels \u003d array_map( function ( $g ) { $g-\u003egetLabel(); }, MessageGroups::getAggregateGroups() );\n\nChecking if label exists is then in_array( $label, $labels, true );",
+      "revId": "b319cc6c9ff023c25bc0deb36b7510335f7d5fe6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_a41caf7d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T17:54:48Z",
+      "side": 1,
+      "message": "Coding style:\n\nif ( $label \u003d\u003d\u003d $name ) {\n    return true;\n}",
+      "revId": "b319cc6c9ff023c25bc0deb36b7510335f7d5fe6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_df189e7c",
+        "filename": "resources/css/ext.translate.special.aggregategroups.css",
+        "patchSetId": 16
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T17:54:48Z",
+      "side": 1,
+      "message": "This selector is usually defined as \".hide {\"",
+      "revId": "b319cc6c9ff023c25bc0deb36b7510335f7d5fe6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_bf2cba90",
+        "filename": "resources/css/ext.translate.special.aggregategroups.css",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T17:54:48Z",
+      "side": 1,
+      "message": "Avoid \"input\" prefix.",
+      "revId": "b319cc6c9ff023c25bc0deb36b7510335f7d5fe6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_9f2216a1",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T17:54:48Z",
+      "side": 1,
+      "message": "Append takes multiple parameters, but I don\u0027t quite understand what this change does.",
+      "revId": "b319cc6c9ff023c25bc0deb36b7510335f7d5fe6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_ff3922cc",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T17:54:48Z",
+      "side": 1,
+      "message": "Add spaces to follow JavaScript coding conventions.",
+      "revId": "b319cc6c9ff023c25bc0deb36b7510335f7d5fe6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_1f64e6e0",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T17:54:48Z",
+      "side": 1,
+      "message": "Only one var statement per function allowed",
+      "revId": "b319cc6c9ff023c25bc0deb36b7510335f7d5fe6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_9f70d6a4",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T17:54:48Z",
+      "side": 1,
+      "message": "Perhaps you can inline these functions for clarity.",
+      "revId": "b319cc6c9ff023c25bc0deb36b7510335f7d5fe6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_df5d3e1c",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T17:54:48Z",
+      "side": 1,
+      "message": "Append takes multiple parameters",
+      "revId": "b319cc6c9ff023c25bc0deb36b7510335f7d5fe6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_5fa94edb",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T17:54:48Z",
+      "side": 1,
+      "message": "$( event.target ).parents( \u0027.mw-tpa-group\u0027 ) should not be repeated twice. Pull it into variable or use .end().",
+      "revId": "b319cc6c9ff023c25bc0deb36b7510335f7d5fe6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
