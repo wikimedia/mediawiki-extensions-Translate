@@ -16,6 +16,24 @@
       "revId": "1b452e2daefbad3ea836c467e1c1f1f66faf95a4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_096b9483",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-06-11T15:02:54Z",
+      "side": 1,
+      "message": "Docs say to use userCanExecute() which I did in doBasicChecks() called from execute(): worked in my test.",
+      "parentUuid": "ee391fd1_895f84e8",
+      "revId": "1b452e2daefbad3ea836c467e1c1f1f66faf95a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
