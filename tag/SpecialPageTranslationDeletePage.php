@@ -45,7 +45,7 @@ class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
 	protected $translationPages;
 
 	public function __construct() {
-		parent::__construct( 'PageTranslationDeletePage' );
+		parent::__construct( 'PageTranslationDeletePage', 'pagetranslation' );
 	}
 
 	public function isListed() {
@@ -129,6 +129,15 @@ class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
 	 * @return bool
 	 */
 	protected function doBasicChecks() {
+		# Check rights
+		if (  !$this->userCanExecute( $this->getUser() )  ) {
+			$this->displayRestrictionError();
+			return;
+		}
+		if ( !$this->getUser()->isAllowed( 'delete' ) ) ) {
+			throw new PermissionsError( 'delete', $permErrors );
+		}
+
 		# Check for database lock
 		if ( wfReadOnly() ) {
 			throw new ReadOnlyError;
@@ -142,7 +151,7 @@ class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
 			throw new ErrorPageError( 'nopagetitle', 'nopagetext' );
 		}
 
-		# Check rights
+		# Check delete for this page
 		$permErrors = $this->title->getUserPermissionsErrors( 'delete', $this->getUser() );
 		if ( !empty( $permErrors ) ) {
 			throw new PermissionsError( 'delete', $permErrors );
