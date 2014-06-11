@@ -123,6 +123,24 @@
       "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_13f507c8",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-11T15:41:47Z",
+      "side": 1,
+      "message": "That\u0027s why I was suggesting to append it to the list in that case as well. At most it is not in the best position, but no functionality is broken.",
+      "parentUuid": "ee391fd1_40229851",
+      "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
