@@ -6,7 +6,8 @@
 			"Giro720",
 			"Helder.wiki",
 			"Luckas",
-			"555"
+			"555",
+			"Fabsouza1"
 		]
 	},
 	"pagetranslation": "Tradução de páginas",
@@ -69,6 +70,8 @@
 	"tpt-target-page": "Esta página não pode ser atualizada manualmente.\nEsta página é uma tradução da página [[$1]]. Sua tradução pode ser atualizada usando [$2 a ferramenta de tradução].",
 	"tpt-unknown-page": "Este espaço nominal é reservado para traduções de páginas de conteúdo.\nA página que você está tentando editar não aparenta corresponder a nenhuma página marcada para tradução.",
 	"tpt-translation-restricted": "Um coordenador de traduções desautorizou que esta página seja traduzida para este idioma.\n\nMotivo: $1",
+	"tpt-discouraged-language-force-header": "Est página não pode ser traduzida para $1.",
+	"tpt-discouraged-language-force-content": "Um administrador de tradução decidiu que esta página só pode ser traduzida para $1.",
 	"tpt-discouraged-language-force": "<strong>Esta página não pode ser traduzida para $2.</strong>\n\nUm administrador de traduções decidiu que a página só pode ser traduzida para $3.",
 	"tpt-discouraged-language": "<strong>A tradução para $2 não é prioritária para esta página.</strong>\n\nUm administrador de traduções decidiu focar o esforço de tradução em $3.",
 	"tpt-discouraged-language-reason": "Motivo: $1",
@@ -141,5 +144,16 @@
 	"pt-deletepage-full-logreason": "Parte da página traduzível $1.",
 	"pt-deletepage-lang-logreason": "Parte da página traduzida $1.",
 	"pt-deletepage-started": "Verifique no [[Special:Log/pagetranslation|registro de tradução de páginas]] eventuais mensagens de erro e/ou de atividade concluída.",
-	"pt-deletepage-intro": "Esta página especial permite eliminar todas as páginas de uma página traduzível ou apenas as traduções de um idioma.\nA eliminação não será instantânea por serem muitas as páginas integrantes de cada conjunto.\nOs erros serão reportados no [[Special:Log/pagetranslation|registro de tradução de páginas]] e precisarão ser corrigidos manualmente."
+	"pt-deletepage-intro": "Esta página especial permite eliminar todas as páginas de uma página traduzível ou apenas as traduções de um idioma.\nA eliminação não será instantânea por serem muitas as páginas integrantes de cada conjunto.\nOs erros serão reportados no [[Special:Log/pagetranslation|registro de tradução de páginas]] e precisarão ser corrigidos manualmente.",
+	"pagemigration": "Migração de página de tradução",
+	"pm-savepages-button-label": "Salvar",
+	"pm-cancel-button-label": "Cancelar",
+	"pm-pagename-placeholder": "Digite o nome da página",
+	"pm-langcode-placeholder": "Código do idioma",
+	"pm-page-does-not-exist": "$1 não existe",
+	"pm-old-translations-missing": "$1 não contém traduções antigas",
+	"pm-pagename-missing": "Por favor, insira o nome da página",
+	"pm-langcode-missing": "Por favor, insira o código de idioma",
+	"pm-add-icon-hover-text": "Adicione uma unidade abaixo",
+	"pm-delete-icon-hover-text": "Excluir unidade"
 }
