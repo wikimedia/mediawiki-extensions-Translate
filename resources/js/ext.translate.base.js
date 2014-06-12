@@ -131,6 +131,14 @@
 			return mw.config.get( 'TranslateMessageReviewRight' );
 		},
 
+		/**
+		 * Check if the current user is allowed to delete on this wiki.
+		 * @return {boolean}
+		 */
+		canDelete: function () {
+			return mw.config.get( 'DeleteRight' );
+		},
+
 		addDocumentationLanguage: function () {
 			var docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
 			if ( $.uls.data.languages[docLanguageCode] ) {
