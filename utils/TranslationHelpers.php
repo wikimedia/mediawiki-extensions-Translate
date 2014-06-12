@@ -476,7 +476,7 @@ class TranslationHelpers {
 	}
 
 	protected static function makeGoogleQueryParams( $definition, $pair, $config ) {
-		global $wgSitename, $wgVersion, $wgProxyKey;
+		global $wgSitename, $wgVersion, $wgSecretKey;
 
 		$app = "$wgSitename (MediaWiki $wgVersion; Translate " . TRANSLATE_VERSION . ")";
 		$context = RequestContext::getMain();
@@ -488,7 +488,7 @@ class TranslationHelpers {
 			'v' => '1.0',
 			'langpair' => $pair,
 			// Unique but not identifiable
-			'userip' => sha1( $wgProxyKey . $context->getUser()->getName() ),
+			'userip' => sha1( $wgSecretKey . $context->getUser()->getName() ),
 			'x-application' => $app,
 		);
 
