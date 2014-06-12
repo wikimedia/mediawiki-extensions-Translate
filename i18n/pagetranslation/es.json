@@ -154,5 +154,8 @@
 	"pm-savepages-button-label": "Guardar",
 	"pm-cancel-button-label": "Cancelar",
 	"pm-pagename-placeholder": "Escribe el nombre de la página",
-	"pm-langcode-placeholder": "Código de idioma"
+	"pm-langcode-placeholder": "Código de idioma",
+	"pm-page-does-not-exist": "$1 no existe",
+	"pm-pagename-missing": "Escribe el nombre de la página",
+	"pm-langcode-missing": "Escribe el código de idioma"
 }

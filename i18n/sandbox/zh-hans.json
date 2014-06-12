@@ -10,7 +10,7 @@
 		]
 	},
 	"managetranslatorsandbox": "管理译者沙盒",
-	"tsb-filter-pending": "待解决请求",
+	"tsb-filter-pending": "等待的请求",
 	"tsb-reminder-title-generic": "填写你的自我介绍，成为一名译者",
 	"tsb-reminder-content-generic": "你好 $1，\n\n感谢你注册{{SITENAME}}。\n\n如果您完成你的测试翻译，我们的管理员将尽快授予您完整的翻译访问权。\n\n来这里做些翻译吧：\n$2\n\n$3，\n{{SITENAME}}员工",
 	"tsb-reminder-sending": "正在发送提醒...",
