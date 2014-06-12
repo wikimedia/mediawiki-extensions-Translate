@@ -170,5 +170,6 @@
     "pm-langcode-missing": "Please enter the language code",
     "pm-add-icon-hover-text": "Add a unit below",
     "pm-swap-icon-hover-text": "Swap with unit below",
-    "pm-delete-icon-hover-text": "Delete unit"
+    "pm-delete-icon-hover-text": "Delete unit",
+    "ptp-save-summary": "prepared the page for translation using page preparation tool"
 }
