@@ -175,5 +175,6 @@
     "pm-add-icon-hover-text": "Add a unit below",
     "pm-swap-icon-hover-text": "Swap with unit below",
     "pm-delete-icon-hover-text": "Delete unit",
-    "tpt-translate-title": "Allow translation of page title"
+    "tpt-translate-title": "Allow translation of page title",
+    "pp-save-summary": "Prepared the page for translation"
 }

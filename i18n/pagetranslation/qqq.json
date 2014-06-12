@@ -175,5 +175,6 @@
 	"pm-add-icon-hover-text": "Hover text for add new unit icon",
 	"pm-swap-icon-hover-text": "Hover text for swap with unit below icon",
 	"pm-delete-icon-hover-text": "Hover text for delete unit icon",
-	"tpt-translate-title": "Label for checkbox on [[Special:PageTranslation]] to mark title for translation."
+	"tpt-translate-title": "Label for checkbox on [[Special:PageTranslation]] to mark title for translation.",
+	"pp-save-summary": "Edit summary for saving a page prepared for translation by the tool"
 }

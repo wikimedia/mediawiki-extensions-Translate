@@ -233,6 +233,16 @@ $wgResourceModules['ext.translate.navitoggle'] = array(
 	),
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.pagepreparation'] = array(
+	'scripts' => 'resources/js/ext.translate.pagepreparation.js',
+	'messages' => array( 'pp-save-summary' ),
+	'dependencies' => array(
+		'mediawiki.api',
+		'mediawiki.api.edit',
+		'jquery.mwExtension',
+	),
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.pagetranslation.uls'] = array(
 	'scripts' => 'resources/js/ext.translate.pagetranslation.uls.js',
 	'dependencies' => array(
