@@ -35,7 +35,7 @@
 			'do': 'dissociate',
 			group: $target.data( 'groupid' )
 		} );
-		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
+		new mw.Api().post( params ).done( successFunction );
 	}
 
 	function associate( event ) {
@@ -81,7 +81,7 @@
 			'do': 'associate',
 			group: subgroupId
 		} );
-		$.post( mw.util.wikiScript( 'api' ), params, successFunction );
+		new mw.Api().post( params ).done( successFunction );
 	}
 
 	function removeGroup( event ) {
@@ -101,7 +101,7 @@
 			params = $.extend( getApiParams( $target ), {
 				'do': 'remove'
 			} );
-			$.post( mw.util.wikiScript( 'api' ), params, successFunction );
+			new mw.Api().post( params ).done( successFunction );
 		}
 	}
 
@@ -195,7 +195,7 @@
 				groupdescription: aggregateGroupDesc,
 				format: 'json'
 			};
-			$.post( mw.util.wikiScript( 'api' ), params, successFunction );
+			new mw.Api().post( params ).done( successFunction );
 		} );
 	} );
 } ( jQuery, mediaWiki ) );
