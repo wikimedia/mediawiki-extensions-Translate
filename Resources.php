@@ -156,7 +156,6 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 	'dependencies' => array(
 		'ext.translate.base',
 		'ext.translate.hooks',
-		'mediawiki.api',
 		'mediawiki.Uri',
 		'mediawiki.util',
 		'jquery.appear',
@@ -269,7 +268,6 @@ $wgResourceModules['ext.translate.special.aggregategroups'] = array(
 	'styles' => 'resources/css/ext.translate.special.aggregategroups.css',
 	'position' => 'top',
 	'dependencies' => array(
-		'mediawiki.api',
 		'mediawiki.util',
 		'jquery.async',
 		'jquery.chosen'
