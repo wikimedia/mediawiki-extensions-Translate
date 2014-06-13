@@ -495,6 +495,7 @@ class TranslateHooks {
 			$vars['TranslateRight'] = $out->getUser()->isAllowed( 'translate' );
 			$vars['TranslateMessageReviewRight'] =
 				$out->getUser()->isAllowed( 'translate-messagereview' );
+			$vars['DeleteRight'] = $out->getUser()->isAllowed( 'delete' );
 			$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
 			$vars['wgTranslatePermissionUrl'] = $wgTranslatePermissionUrl;
 			$vars['wgTranslateUseSandbox'] = $wgTranslateUseSandbox;

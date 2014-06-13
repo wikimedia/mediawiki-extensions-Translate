@@ -43,6 +43,7 @@
 		this.expanded = false;
 		this.listen();
 		this.storage = this.options.storage || new mw.translate.TranslationApiStorage();
+		this.canDelete = mw.translate.canDelete();
 	}
 
 	TranslateEditor.prototype = {
@@ -187,6 +188,12 @@
 			translateEditor.$editor.find( '.message-tools-history' )
 				.removeClass( 'hide' );
 
+			// Show the delete menu item if the user can delete
+			if ( this.canDelete ) {
+				translateEditor.$editor.find( '.message-tools-delete' )
+					.removeClass( 'hide' );
+			}
+
 			this.storage.save(
 				translateEditor.message.title,
 				translation
@@ -322,7 +329,7 @@
 		 * @return {jQuery} The new message tools menu element
 		 */
 		createMessageTools: function () {
-			var $historyItem, $translationsItem;
+			var $historyItem, $deleteItem, $translationsItem;
 
 			$historyItem = this.createMessageToolsItem(
 				'message-tools-history',
@@ -333,10 +340,22 @@
 				'tux-editor-message-tools-history'
 			);
 
-			// Hide this link if the translation doesn't actually exist.
-			// It will be shown when a translation will be created.
+			$deleteItem = this.createMessageToolsItem(
+				'message-tools-delete',
+				{
+					title: this.message.title,
+					action: 'delete'
+				},
+				'tux-editor-message-tools-delete'
+			);
+
+			// Hide these links if the translation doesn't actually exist.
+			// They will be shown when a translation will be created.
 			if ( this.message.translation === null ) {
 				$historyItem.addClass( 'hide' );
+				$deleteItem.addClass( 'hide' );
+			} else if ( !this.canDelete ) {
+				$deleteItem.addClass( 'hide' );
 			}
 
 			// A link to Special:Translations,
@@ -352,7 +371,7 @@
 
 			return $( '<ul>' )
 				.addClass( 'dropdown-menu tux-message-tools-menu hide' )
-				.append( $historyItem, $translationsItem );
+				.append( $historyItem, $deleteItem, $translationsItem );
 		},
 
 		prepareEditorColumn: function () {
