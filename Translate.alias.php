@@ -785,6 +785,7 @@ $specialPageAliases['nl'] = array(
 	'Translate' => array( 'Vertalen' ),
 	'TranslationStats' => array( 'Vertaalstatistieken', 'Vertalingsstatistieken' ),
 	'Translations' => array( 'Vertalingen' ),
+	'PageMigration' => array( 'PaginaMigreren' ),
 );
 
 /** Norwegian Nynorsk (norsk nynorsk) */
