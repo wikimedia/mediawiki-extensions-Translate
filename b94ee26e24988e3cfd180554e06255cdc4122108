@@ -16,6 +16,24 @@
       "revId": "b94ee26e24988e3cfd180554e06255cdc4122108",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_b03e1a25",
+        "filename": "resources/js/ext.translate.base.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 535
+      },
+      "writtenOn": "2014-06-13T15:31:29Z",
+      "side": 1,
+      "message": "If you prefer, it could make sure the user can translate and can delete.",
+      "parentUuid": "ee391fd1_127bafec",
+      "revId": "b94ee26e24988e3cfd180554e06255cdc4122108",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
