@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_16a6febe",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 67
+      },
+      "writtenOn": "2014-06-13T19:06:07Z",
+      "side": 1,
+      "message": "Apparently spaces are used instead of tabs, so use spaces here as well for consistency.\nMaybe add qqq too for this message.",
+      "revId": "a40bf52f957e217fe2cc6cbe2f90e9fb5a53af9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_b6b4d2e5",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 67
+      },
+      "writtenOn": "2014-06-13T19:06:07Z",
+      "side": 1,
+      "message": "I would move this checkbox to above, where the translation unit for the title is mentioned. That seems more intuitive to me.\n\nIdeally it would be right below the title unit, but since there\u0027s a foreach(), maybe just below the \"tpt-sections-oldnew\" header.",
+      "revId": "a40bf52f957e217fe2cc6cbe2f90e9fb5a53af9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
