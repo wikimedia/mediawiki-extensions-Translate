@@ -260,7 +260,7 @@
 	"tux-editor-skip-button-label": "Qatiqman t'iskuy",
 	"tux-editor-cancel-button-label": "Ama niy",
 	"tux-editor-confirm-button-label": "T'ikrasqata takyachiy",
-	"tux-editor-shortcut-info": "\"$1\"-ta ñit'iy waqaychanapaq, icha \"$2\"-ta ñit'iy qatiq willayman t'iskunaykipaq",
+	"tux-editor-shortcut-info": "\"$1\"-ta ñit'iy waqaychanapaq, icha \"$2\"-ta ñit'iy qatiq willayman t'iskunaykipaq, icha \"$3\"-ta wakin chiqanchanakunapaq.",
 	"tux-editor-edit-desc": "T'iktunata llamk'apuy",
 	"tux-editor-add-desc": "T'iktunata yapay",
 	"tux-editor-suggestions-title": "Munachiykuna",

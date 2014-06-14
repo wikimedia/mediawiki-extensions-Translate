@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Luckas",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Vitorvicentevalente"
 		]
 	},
 	"searchtranslations": "Pesquisar nas traduções",
@@ -10,7 +11,7 @@
 	"tux-sst-search": "Pesquisar",
 	"tux-sst-search-ph": "Pesquisar nas traduções",
 	"tux-sst-count": "{{PLURAL:$1|Foi encontrado um resultado|Foram encontrados $1 resultados}}",
-	"tux-sst-facet-language": "Línguas",
+	"tux-sst-facet-language": "Idiomas",
 	"tux-sst-facet-group": "Grupos de mensagens",
 	"tux-sst-facet-orphan": "(orfãs)",
 	"tux-sst-nosolr-title": "Pesquisa indisponível",

@@ -69,7 +69,7 @@
 	"translate-tag-markthis": "Diese Seite zur Übersetzung freigeben",
 	"translate-tag-markthisagain": "Diese Seite wurde <span class=\"plainlinks\">[$1 bearbeitet]</span>, nachdem sie zuletzt <span class=\"plainlinks\">[$2 zur Übersetzung freigegeben]</span> wurde.",
 	"translate-tag-hasnew": "Diese Seite enthält <span class=\"plainlinks\">[$1 Bearbeitungen]</span>, die nicht zum Übersetzen freigegeben sind.",
-	"tpt-translation-intro": "Diese Seite ist eine <span class=\"plainlinks\">[$1 übersetzte Version]</span> der Seite [[$2]] und die Übersetzung ist zu $3 % abgeschlossen und aktuell.",
+	"tpt-translation-intro": "Diese Seite ist eine <span class=\"plainlinks\">[$1 übersetzte Version]</span> der Seite [[$2]] und die Übersetzung ist zu $3 % abgeschlossen sowie aktuell.",
 	"tpt-languages-legend": "Sprachen:",
 	"tpt-languages-zero": "Mit dem Übersetzen in diese Sprache anfangen",
 	"tpt-tab-translate": "Übersetzen",
