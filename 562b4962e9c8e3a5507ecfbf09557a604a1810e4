@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_02923457",
+        "filename": "translationaids/UpdatedDefinitionAid.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-06-14T14:32:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_9781ec94",
+      "revId": "562b4962e9c8e3a5507ecfbf09557a604a1810e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_174dfc9b",
         "filename": "translationaids/UpdatedDefinitionAid.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-10T13:21:49Z",
       "side": 1,
       "message": "Create a new function getDefinitionContent to make this nice and consistent. The you get $newContent here directly.",
+      "revId": "562b4962e9c8e3a5507ecfbf09557a604a1810e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_e2861018",
+        "filename": "translationaids/UpdatedDefinitionAid.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-06-14T14:32:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_174dfc9b",
       "revId": "562b4962e9c8e3a5507ecfbf09557a604a1810e4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_c28b0c1f",
+        "filename": "translationaids/UpdatedDefinitionAid.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-06-14T14:32:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_57538443",
+      "revId": "562b4962e9c8e3a5507ecfbf09557a604a1810e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_774e889d",
         "filename": "translationaids/UpdatedDefinitionAid.php",
         "patchSetId": 1
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_a28008fa",
+        "filename": "translationaids/UpdatedDefinitionAid.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-06-14T14:32:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_774e889d",
+      "revId": "562b4962e9c8e3a5507ecfbf09557a604a1810e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_b75bd056",
         "filename": "translationaids/UpdatedDefinitionAid.php",
         "patchSetId": 1
@@ -81,6 +153,24 @@
       "writtenOn": "2014-06-10T13:21:49Z",
       "side": 1,
       "message": "If you already know that it\u0027s wikitext, you can just use new WikitextContent( $text ).",
+      "revId": "562b4962e9c8e3a5507ecfbf09557a604a1810e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_827d041a",
+        "filename": "translationaids/UpdatedDefinitionAid.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2014-06-14T14:32:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_b75bd056",
       "revId": "562b4962e9c8e3a5507ecfbf09557a604a1810e4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
