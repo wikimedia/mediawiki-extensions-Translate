@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_ec33a2be",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-15T19:11:53Z",
+      "side": 1,
+      "message": "Should probably be data.error \u0026\u0026 data.error.info for safety",
+      "revId": "787c4fac4de7ae3f2d0605262096d4fc77214de6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
