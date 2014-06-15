@@ -68,6 +68,40 @@
 	}
 
 	/**
+	 * Add an anchor to a section header with the given headerText
+	 * @param {string} headerText
+	 * @param {string} pageContent
+	 * @return {string}
+	 */
+	function addAnchor( headerText, pageContent ) {
+		var headerSearchRegex, anchorID, replaceAnchorRegex,
+			spanSearchRegex;
+
+		anchorID = headerText.replace( ' ', '-' ).toLowerCase();
+		headerText = $.escapeRE( headerText );
+		// Search for the header having text as headerText
+		// Regex: http://regex101.com/r/fD6iL1
+		headerSearchRegex = new RegExp( '(==+[ ]*' + headerText + '[ ]*==+)', 'gi' );
+		// This is to ensure the tags and the anchor are added only once
+		if ( !pageContent.contains( '<span id="' + anchorID + '"' ) ) {
+			pageContent = pageContent.replace( headerSearchRegex, '</translate>\n' +
+				'<span id="' + anchorID + '"></span>\n<translate>\n$1' );
+		}
+
+		// This is to add back the tags which were removed in cleanupTags()
+		if ( !pageContent.contains( '</translate>\n<span id="' + anchorID + '"' ) ) {
+			spanSearchRegex = new RegExp( '(<span id="' + anchorID + '"></span>)', 'gi' );
+			pageContent = pageContent.replace( spanSearchRegex, '\n</translate>\n$1\n</translate>\n' );
+		}
+
+		// Replace the link text with the anchorID defined above
+		// Regex: http://regex101.com/r/kB5bK3
+		replaceAnchorRegex = new RegExp( '(\\[\\[#)' + headerText + '(.*\\]\\])', 'gi' );
+		pageContent = pageContent.replace( replaceAnchorRegex, '$1' + anchorID + '$2' );
+		return pageContent;
+	}
+
+	/**
 	 * Convert all the links into two-party form and add the 'Special:MyLanguage/' prefix
 	 * to links in valid namespaces for the wiki. For example, [[Example]] would be converted
 	 * to [[Special:MyLanguage/Example|Example]].
@@ -75,8 +109,10 @@
 	 * @return {string}
 	 */
 	function fixInternalLinks( pageContent ) {
-		var normalizeRegex, linkPrefixRegex,
-			namespaces, nsString;
+
+		var normalizeRegex, linkPrefixRegex, sectionLinksRegex,
+			match, searchText;
+		searchText = pageContent;
 
 		normalizeRegex = new RegExp( /\[\[(?!Category)([^|]*?)\]\]/gi );
 		// First convert all links into two-party form. If a link is not having a pipe,
@@ -86,6 +122,15 @@
 
 		namespaces = getNamespaces();
 		nsString = namespaces.join( '|' );
+		// Finds all the links to sections on the same page.
+		// Regex: http://regex101.com/r/cX6jT3
+		sectionLinksRegex = new RegExp( /\[\[#(.*?)\|(.*?)\]\]/gi );
+		match = sectionLinksRegex.exec( searchText );
+		while ( match !== null ) {
+			pageContent = addAnchor( match[1], pageContent );
+			match = sectionLinksRegex.exec( searchText );
+		}
+
 		linkPrefixRegex = new RegExp( '\\[\\[((?:(?:special(?!:MyLanguage\\b)|' + nsString +
 			'):)?[^:]*?)\\]\\]', 'gi' );
 		// Add the 'Special:MyLanguage/' prefix for all internal links of valid namespaces and
@@ -103,6 +148,8 @@
 	function postPreparationCleanup( pageContent ) {
 		// Removes any extra newlines introduced by the tool
 		pageContent = pageContent.replace( /\n\n+/gi, '\n\n' );
+		// Removes the Special:MyLanguage/ prefix for section links
+		pageContent = pageContent.replace( /Special:MyLanguage\/#/gi, '#' );
 		return pageContent;
 	}
 
