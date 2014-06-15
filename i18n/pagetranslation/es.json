@@ -39,6 +39,7 @@
 	"tpt-oldrevision": "$2 no es la última versión de la página [[$1]].\nSolamente las últimas versiones pueden ser marcadas para traducción",
 	"tpt-notsuitable": "La página $1 no es adecuada para traducción.\nAsegúrate que tiene etiquetas <nowiki><translate></nowiki> y tiene una sintaxis válida.",
 	"tpt-saveok": "La página [[$1]] ha sido marcada para traducción con $2 {{PLURAL:$2|unidad de traducción |unidades de traducción}}.\nLa página puede ser ahora <span class=\"plainlinks\">[$3 traducida]</span>.",
+	"tpt-offer-notify": "Puedes <span class=\"plainlinks\">[$1 notificar a los traductores]</span> de esta página.",
 	"tpt-badsect": "\"$1\" no es un nombre válido para una unidad de traducción $2.",
 	"tpt-showpage-intro": "Debajo están listadas las unidades de traducción nuevas, existentes y borradas.\nAntes de marcar esta versión para traducción, verifica que los cambios a las unidades de traducción son mínimos para evitar trabajo innecesario a los traductores.",
 	"tpt-mark-summary": "Marcada esta sección para traducción",
@@ -150,6 +151,7 @@
 	"pt-deletepage-lang-logreason": "Parte de la página de traducción $1.",
 	"pt-deletepage-started": "Compruebe los errores y los mensajes de conclusión en el [[Special:Log/pagetranslation|registro de traducción de páginas]].",
 	"pt-deletepage-intro": "Esta página especial te permite eliminar páginas traducibles enteras o una página de traducción individual a un idioma. La eliminación no será instantánea, porque deben borrarse todas las páginas dependientes de ella. \nLos fallos se registrarán en el [[Special:Log/pagetranslation|registro de traducción de la página]] y tendrán que ser reparados a mano.",
+	"pagemigration": "Migración de página de traducción",
 	"pm-import-button-label": "Importar",
 	"pm-savepages-button-label": "Guardar",
 	"pm-cancel-button-label": "Cancelar",
@@ -157,5 +159,6 @@
 	"pm-langcode-placeholder": "Código de idioma",
 	"pm-page-does-not-exist": "$1 no existe",
 	"pm-pagename-missing": "Escribe el nombre de la página",
-	"pm-langcode-missing": "Escribe el código de idioma"
+	"pm-langcode-missing": "Escribe el código de idioma",
+	"pm-delete-icon-hover-text": "Eliminar unidad"
 }

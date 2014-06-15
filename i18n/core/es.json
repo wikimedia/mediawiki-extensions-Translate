@@ -233,7 +233,7 @@
 	"translate-manage-fuzzy-summary": "La definición de mensaje ha cambiado",
 	"translate-manage-submit": "Ejecutar",
 	"translate-manage-intro-other": "A continuación esta la lista de modificaciones de traducción en idioma $1.\nPor favor revíselos y elija la acción apropiada para cada uno.\nSi prefiere ignorar los cambios, se sobrescribirán en la próxima exportación.",
-	"translate-manage-import-ok": "Se importó nueva versión de página $1.",
+	"translate-manage-import-ok": "Importada: $1",
 	"translate-manage-import-done": "¡Ya está!",
 	"importtranslations": "Importar traducciones",
 	"translate-import-from-local": "Importación de archivo local:",

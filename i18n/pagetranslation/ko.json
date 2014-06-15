@@ -157,6 +157,6 @@
 	"pt-deletepage-started": "오류와 메시지 완료를 위한 [[Special:Log/pagetranslation|문서 번역 기록]]를 확인하세요.",
 	"pt-deletepage-intro": "이 특수 문서는 전체 번역 가능한 문서 또는 언어의 개별 번역 문서를 삭제할 수 있습니다.\n번역에 따라 모든 문서가 삭제되기 때문에 즉시 삭제 작업이 되지 않습니다.\n실패하면 [[Special:Log/pagetranslation|문서 번역 기록]]에 기록되고 직접 복구해야 합니다.",
 	"pagemigration": "번역 문서 이주",
-	"pm-pagename-missing": "페이지 제목을 입력하세요",
-	"pm-add-icon-hover-text": "아래 단위 추가"
+	"pm-pagename-missing": "문서 이름을 입력하세요",
+	"pm-add-icon-hover-text": "아래에 단위 추가"
 }

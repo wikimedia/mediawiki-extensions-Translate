@@ -29,6 +29,7 @@
 	"tsb-translations-user": "Traducciones del usuario",
 	"tsb-translations-current": "Traducciones existentes",
 	"translationstash": "Te damos la bienvenida",
+	"translate-translationstash-initialtranslation": "Tu primera traducción",
 	"tsb-limit-reached-title": "Gracias por tus traducciones",
 	"tsb-create-user-page": "Crear página de usuario básica",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|rechazó}} la solicitud de «$3» para convertirse en traductor"

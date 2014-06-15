@@ -159,5 +159,8 @@
 	"pt-deletepage-full-logreason": "Onderdeel van te vertalen pagina $1.",
 	"pt-deletepage-lang-logreason": "Onderdeel van de vertaalde pagina $1.",
 	"pt-deletepage-started": "Controleer het [[Special:Log/pagetranslation|Logboek paginavertaling]] op fouten en of de opdracht is afgerond.",
-	"pt-deletepage-intro": "Via deze pagina kunt u vertaalbare pagina's of vertaalde pagina's in een taal verwijderen.\nHet verwijderen vindt niet per direct plaats, omdat het mogelijk is dat vele pagina's verwijderd moeten worden.\nFouten worden opgenomen in het [[Special:Log/pagetranslation|Logboek paginavertaling]] en deze moeten handmatig gecorrigeerd worden."
+	"pt-deletepage-intro": "Via deze pagina kunt u vertaalbare pagina's of vertaalde pagina's in een taal verwijderen.\nHet verwijderen vindt niet per direct plaats, omdat het mogelijk is dat vele pagina's verwijderd moeten worden.\nFouten worden opgenomen in het [[Special:Log/pagetranslation|Logboek paginavertaling]] en deze moeten handmatig gecorrigeerd worden.",
+	"pm-savepages-button-label": "Opslaan",
+	"pm-cancel-button-label": "Annuleren",
+	"pm-langcode-placeholder": "Taalcode"
 }
