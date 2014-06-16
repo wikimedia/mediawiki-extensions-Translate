@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_de3d1fba",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-16T18:54:44Z",
+      "side": 1,
+      "message": "I would just write if( !$request-\u003egetCheck( \u0027translatetitle\u0027 ) ) {",
+      "revId": "6a416241313a91b2af08e0bd43143a8e34a78042",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_be3a5bbe",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-16T18:54:44Z",
+      "side": 1,
+      "message": "I would just write return $s-\u003eid !\u003d\u003d \u0027Page display title\u0027;",
+      "revId": "6a416241313a91b2af08e0bd43143a8e34a78042",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_9e479750",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-16T18:54:44Z",
+      "side": 1,
+      "message": "Add space",
+      "revId": "6a416241313a91b2af08e0bd43143a8e34a78042",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_fe58e336",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-16T18:54:44Z",
+      "side": 1,
+      "message": "I would just do:\n\n// Check whether page title was previously included for translation.\n// If the page is marked for translation the first time, default to checked.\n$previous \u003d $page-\u003egetSections();\n$checked \u003d !$previous || in_array( \u0027Page display title\u0027, $previous, true );",
+      "revId": "6a416241313a91b2af08e0bd43143a8e34a78042",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_1e54c700",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-16T18:54:44Z",
+      "side": 1,
+      "message": "You could also place the checkbox here by checking $s-\u003ename. You can also add a class this way for the title unit.",
+      "revId": "6a416241313a91b2af08e0bd43143a8e34a78042",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_7e44f34a",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-16T18:54:44Z",
+      "side": 1,
+      "message": "Can you add a note Public since 2014.06",
+      "revId": "6a416241313a91b2af08e0bd43143a8e34a78042",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
