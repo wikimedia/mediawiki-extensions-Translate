@@ -430,10 +430,15 @@ $specialPageAliases['hr'] = array(
 
 /** Upper Sorbian (hornjoserbsce) */
 $specialPageAliases['hsb'] = array(
-	'LanguageStats' => array( 'Rěčne statistiki' ),
-	'Magic' => array( 'Rozšěrjene přełožowanje', 'Magiske' ),
+	'ImportTranslations' => array( 'Přełožki_importować' ),
+	'LanguageStats' => array( 'Rěčne_statistiki' ),
+	'Magic' => array( 'Rozšěrjene_přełožowanje', 'Magiske' ),
+	'MyLanguage' => array( 'Moja_rěč' ),
+	'PageTranslation' => array( 'Přełožowanje_stronow' ),
+	'SearchTranslations' => array( 'Přełožki_pytać' ),
+	'SupportedLanguages' => array( 'Podpěrane_rěče' ),
 	'Translate' => array( 'Přełožić' ),
-	'TranslationStats' => array( 'Statistika přełožkow' ),
+	'TranslationStats' => array( 'Statistika_přełožkow' ),
 	'Translations' => array( 'Přełožki' ),
 );
 

@@ -14,7 +14,7 @@
 	},
 	"bw-desc-freecol": "Innan du översätter FreeCol till ditt språk, var god läs [[Translating:FreeCol]]. FreeCol använder GPL-licensen.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], ett webbforum skrivet i PHP.",
-	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] är ett gratis webbaserat bugspårningssystem. Vänligen rapportera alla problem på [[Support]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] är ett gratis webbaserat bugspårningssystem. Vänligen rapportera alla problem på [[Support]].",
 	"bw-desc-mwlibrl": "'''mwlib.rl''' är ett pythonbibliotek för att skapa PDF-document från MediaWiki-artiklar som tolkats av mwlib-biblioteket.\n\nSe [[mw:Extension:PDF_Writer]] och http://code.pediapress.com/wiki/wiki/mwlibrl för mer information.",
 	"bw-desc-openstreetmap": "Alla meddelanden som rör [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Den här gruppen av meddelanden innehåller gränssnittet för [[Translating:Open Street Map|Open Street Map]].\nSe [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} Unicode CLDR sida för förklaring av plural hantering].",

@@ -151,6 +151,7 @@
 	"translate-translations-history-short": "s",
 	"languagestats": "Rěčna statistika",
 	"languagestats-summary": "Strona pokazuje přełožowansku statistiku za wšě zdźělenske skupiny za rěč.",
+	"messagegroupstats-summary": "Tuta strona pokazuje statistiku wo skupinach powěsćow.",
 	"languagestats-stats-for": "Přełožowanska statistika za $1 ($2).",
 	"languagestats-recenttranslations": "nowše přełožki",
 	"translate-langstats-incomplete": "Někotre statistiki na tutej stronje su njedospołne. Prošu začitaj ju znowa, zo by dalše statistiki dóstał.",
@@ -382,5 +383,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % přełoženy, $2 % přepruwowany, $3 % zestarjeny",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|dalša skupina|dalšej skupinje|dalše skupiny|dalšich skupinow}}",
 	"translate-ulsdep-title": "Konfiguraciski zmylk",
-	"translate-ulsdep-body": "Přełožowanske rozšěrjenje wotwisuje wot [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector rozšěrjenja Universal Language Selector]."
+	"translate-ulsdep-body": "Přełožowanske rozšěrjenje wotwisuje wot [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector rozšěrjenja Universal Language Selector]."
 }

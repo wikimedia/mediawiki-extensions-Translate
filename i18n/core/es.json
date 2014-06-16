@@ -22,7 +22,8 @@
 			"Translationista",
 			"Vivaelcelta",
 			"Ciencia Al Poder",
-			"Wifidel"
+			"Wifidel",
+			"Macofe"
 		]
 	},
 	"translate": "Traducir",
@@ -273,7 +274,7 @@
 	"translate-messagereview-progress": "Marcando como revisada...",
 	"translate-messagereview-failure": "Error al marcar como revisada: $1",
 	"translate-messagereview-done": "Revisada",
-	"translate-messagereview-reviews": "Aceptada por {{PLURAL:$1|un usuario|$1 usuarios}}",
+	"translate-messagereview-reviews": "Revisada por {{PLURAL:$1|un usuario|$1 usuarios}}",
 	"translate-messagereview-reviewswithyou": "Aceptada por {{PLURAL:$1|ti|$1 usuarios incluyéndote a ti}}",
 	"api-error-invalidrevision": "No se encontró la traducción",
 	"api-error-unknownmessage": "No se encontró el mensaje",

@@ -7,7 +7,8 @@
 			"Solde",
 			"Toniher",
 			"පසිඳු කාවින්ද",
-			"Vriullop"
+			"Vriullop",
+			"Fitoschido"
 		]
 	},
 	"pagetranslation": "Traducció d'una pàgina",
@@ -62,5 +63,11 @@
 	"pt-movepage-logreason": "Part de la pàgina a traduir $1.",
 	"pt-movepage-started": "La pàgina base està traslladada.\nComproveu el [[Special:Log/pagetranslation|registre de traducció de pàgines]] pels errors i el missatge de finalització.",
 	"pt-locked-page": "Aquesta pàgina està bloquejada perquè la pàgina a traduir està en un procés de trasllat.",
-	"pt-deletepage-reason": "Raó:"
+	"pt-deletepage-reason": "Raó:",
+	"pm-import-button-label": "Importa",
+	"pm-savepages-button-label": "Desa",
+	"pm-cancel-button-label": "Cancel·la",
+	"pm-pagename-placeholder": "Introduïu el nom de la pàgina",
+	"pm-langcode-placeholder": "Codi d’idioma",
+	"pm-langcode-missing": "Introduïu el codi de l’idioma"
 }
