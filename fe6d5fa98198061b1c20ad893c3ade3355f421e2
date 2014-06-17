@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_4436f901",
+        "filename": "MessageGroups.php",
+        "patchSetId": 19
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-17T15:20:09Z",
+      "side": 1,
+      "message": "@param string $name",
+      "revId": "fe6d5fa98198061b1c20ad893c3ade3355f421e2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_441dd977",
+        "filename": "resources/css/ext.translate.special.aggregategroups.css",
+        "patchSetId": 19
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-17T15:20:09Z",
+      "side": 1,
+      "message": "extra space",
+      "revId": "fe6d5fa98198061b1c20ad893c3ade3355f421e2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
