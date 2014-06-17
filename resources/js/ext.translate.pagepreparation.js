@@ -125,6 +125,21 @@
 	}
 
 	/**
+	 * Keep templates outside <translate>....</translate> tags
+	 * Does not deal with nested templates, needs manual changes.
+	 * @param {string} pageContent
+	 * @return {string} pageContent
+	 */
+	function doTemplates( pageContent ) {
+		var templateRegex;
+		// Regex: http://regex101.com/r/wA3iX0
+		templateRegex = new RegExp( /^({{[\s\S]*?}})/gm );
+
+		pageContent = pageContent.replace( templateRegex, '</translate>\n$1\n<translate>' );
+		return pageContent;
+	}
+
+	/**
 	 * Cleanup done after the page is prepared for translation by the tool.
 	 * @param {string} pageContent
 	 * @return {string}
@@ -132,6 +147,8 @@
 	function postPreparationCleanup( pageContent ) {
 		// Removes any extra newlines introduced by the tool
 		pageContent = pageContent.replace( /\n\n+/gi, '\n\n' );
+		// Removes redundant <translate> tags
+		pageContent = pageContent.replace( /\n<translate>(\n*?)<\/translate>/gi, '' );
 		return pageContent;
 	}
 
@@ -221,6 +238,7 @@
 				pageContent = addTranslateTags( pageContent );
 				pageContent = addNewLines( pageContent );
 				pageContent = fixInternalLinks( pageContent );
+				pageContent = doTemplates( pageContent );
 				pageContent = postPreparationCleanup( pageContent );
 				pageContent = $.trim( pageContent );
 				$.when( getDiff( pageName, pageContent ) ).done( function ( diff ) {
