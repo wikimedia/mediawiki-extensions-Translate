@@ -203,7 +203,7 @@ class MessageGroups {
 
 	/**
 	 * Check if a particular aggregate group label exists
-	 * @param $name string
+	 * @param string $name
 	 * @return bool
 	 */
 	public static function labelExists( $name ) {
