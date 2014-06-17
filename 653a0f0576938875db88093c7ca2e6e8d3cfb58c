@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_3591e64a",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-17T10:22:08Z",
+      "side": 1,
+      "message": "I would add \"Returns a function which returns a jQuery.Promise.\"",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_558c6a32",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-17T10:22:08Z",
+      "side": 1,
+      "message": "Better:\n\ndeferred \u003d api.postWithEditToken( ... );\nreturn deferred.promise();",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_f59a3e65",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-17T10:22:08Z",
+      "side": 1,
+      "message": "Missing space",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_1596e242",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-17T10:22:08Z",
+      "side": 1,
+      "message": "Might want to do $.trim() here as well",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_35b8c6c2",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-17T10:22:08Z",
+      "side": 1,
+      "message": "Perhaps one retry is enough.",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_b59cb660",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-17T10:22:08Z",
+      "side": 1,
+      "message": "Should be removed ;)",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_f5b11edd",
+        "filename": "resources/js/jquery.ajaxdispatcher.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-17T10:22:08Z",
+      "side": 1,
+      "message": "Trailing whtiespace",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
