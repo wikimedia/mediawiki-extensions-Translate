@@ -157,7 +157,7 @@ class ApiAggregateGroups extends ApiBase {
 				$this->dieUsage( 'Message group name already exists', 'duplicateaggregategroup' );
 			}
 
-			if ( $oldName == $name && $oldDesc == $desc ) {
+			if ( $oldName === $name && $oldDesc === $desc ) {
 				$this->dieUsage( 'Invalid update', 'invalidupdate' );
 			}
 			TranslateMetadata::set( $aggregateGroupId, 'name', $name );
