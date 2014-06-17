@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_35920658",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-17T10:13:57Z",
+      "side": 1,
+      "message": "It is not really whether the checkbox was previously checked, but whether it should be checked by default.",
+      "revId": "48b70ef31dd9352a76cf1312649ca3a689a3ef39",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_558d8a35",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-17T10:13:57Z",
+      "side": 1,
+      "message": "Ooops, now the checkbox also gets the grayed out styling, which is not wanted. The class is also \"old\" when marking page for first time, which is wrong.",
+      "revId": "48b70ef31dd9352a76cf1312649ca3a689a3ef39",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_f58b5e1e",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-17T10:13:57Z",
+      "side": 1,
+      "message": "Perhaps add it after or before the addHTML call?",
+      "revId": "48b70ef31dd9352a76cf1312649ca3a689a3ef39",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_d5805afb",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-17T10:13:57Z",
+      "side": 1,
+      "message": "Just merge with above line: @since 2012-08-06; Public since 2014.06",
+      "revId": "48b70ef31dd9352a76cf1312649ca3a689a3ef39",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
