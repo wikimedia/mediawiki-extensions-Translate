@@ -125,6 +125,44 @@
 	}
 
 	/**
+	 * Add <translate> tags around translatable content for Files. Deals with
+	 * files with and without alt text.
+	 * @param {string} pageContent
+	 * @return {string} pageContent
+	 */
+	function fixFiles( pageContent ) {
+		var captionFilesRegex, fileRegex;
+
+		captionFilesRegex = new RegExp( /\[\[([Ff]ile.*\|)(.*?)\]\]/gi );
+		// Add translate tags for files with captions
+		// Regex: http://regex101.com/r/zM0cI7
+		pageContent = pageContent.replace( captionFilesRegex,
+			'</translate>\n[[$1<translate>$2</translate>]]\n<translate>' );
+
+		fileRegex = new RegExp( /\[\[([Ff]ile[^|]*?)\]\]/gi );
+		// Add translate tags for files without captions
+		// Regex : http://regex101.com/r/cB3xJ9
+		pageContent = pageContent.replace( fileRegex,
+			'\n</translate>[[$1]]\n<translate>' );
+		return pageContent;
+	}
+
+	/**
+	 * Keep templates outside <translate>....</translate> tags
+	 * Does not deal with nested templates, needs manual changes.
+	 * @param {string} pageContent
+	 * @return {string} pageContent
+	 */
+	function fixTemplates( pageContent ) {
+		var templateRegex;
+		// Regex: http://regex101.com/r/wA3iX0
+		templateRegex = new RegExp( /^({{[\s\S]*?}})/gm );
+
+		pageContent = pageContent.replace( templateRegex, '</translate>\n$1\n<translate>' );
+		return pageContent;
+	}
+
+	/**
 	 * Cleanup done after the page is prepared for translation by the tool.
 	 * @param {string} pageContent
 	 * @return {string}
@@ -132,6 +170,8 @@
 	function postPreparationCleanup( pageContent ) {
 		// Removes any extra newlines introduced by the tool
 		pageContent = pageContent.replace( /\n\n+/gi, '\n\n' );
+		// Removes redundant <translate> tags
+		pageContent = pageContent.replace( /\n<translate>(\n*?)<\/translate>/gi, '' );
 		return pageContent;
 	}
 
@@ -220,7 +260,9 @@
 				pageContent = addLanguageBar( pageContent );
 				pageContent = addTranslateTags( pageContent );
 				pageContent = addNewLines( pageContent );
+				pageContent = fixFiles( pageContent );
 				pageContent = fixInternalLinks( pageContent );
+				pageContent = fixTemplates( pageContent );
 				pageContent = postPreparationCleanup( pageContent );
 				pageContent = $.trim( pageContent );
 				$.when( getDiff( pageName, pageContent ) ).done( function ( diff ) {
