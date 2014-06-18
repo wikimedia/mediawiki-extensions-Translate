@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_12814aa4",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:14:24Z",
+      "side": 1,
+      "message": "You were not keeping the .done and .fail calls were you? You don\u0027t need them.",
+      "parentUuid": "ee391fd1_ecbdcb17",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_f59a3e65",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 8
