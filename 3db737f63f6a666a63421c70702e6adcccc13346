@@ -141,6 +141,24 @@
       "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_bdbfefcc",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 33
+      },
+      "writtenOn": "2014-06-18T17:01:31Z",
+      "side": 1,
+      "message": "not 100% convinced about being silent on this error, but removed the warning.",
+      "parentUuid": "ee391fd1_13f507c8",
+      "revId": "3db737f63f6a666a63421c70702e6adcccc13346",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
