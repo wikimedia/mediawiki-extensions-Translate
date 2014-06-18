@@ -16,6 +16,24 @@
       "revId": "869c8badd007de902512bd95d86e89b31fcbd1ce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_8fd87180",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T13:58:36Z",
+      "side": 1,
+      "message": "Nope, its lazy.\n\nYou can test it here and see the same in the explanation on the right:\nhttp://regex101.com/r/wA3iX0\n\nI will add this link in the subsequent patch.",
+      "parentUuid": "ee391fd1_0f96c197",
+      "revId": "869c8badd007de902512bd95d86e89b31fcbd1ce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
