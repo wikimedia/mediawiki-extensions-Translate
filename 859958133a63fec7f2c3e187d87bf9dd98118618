@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_4f5849fd",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-06-18T14:12:10Z",
+      "side": 1,
+      "message": "Why the + and isn\u0027t .* too greedy in case there are multiple templates of different sorts on the line?",
+      "revId": "859958133a63fec7f2c3e187d87bf9dd98118618",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_0fe7e10e",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-06-18T14:12:10Z",
+      "side": 1,
+      "message": "I don\u0027t see something to handle categories, so we should add the \u003c/translate\u003e before any category if present. Is it possible here or is it more complex?",
+      "revId": "859958133a63fec7f2c3e187d87bf9dd98118618",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_6f0c2df1",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-06-18T14:12:10Z",
+      "side": 1,
+      "message": "This won\u0027t match if the wiki language (and hence namespace name) is not English though.\nI\u0027m no JS regex expert but I don\u0027t understand why both [Cc] and i",
+      "revId": "859958133a63fec7f2c3e187d87bf9dd98118618",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_2f1d0515",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-06-18T14:12:10Z",
+      "side": 1,
+      "message": "Alt is |alt\u003d, did you mean caption?",
+      "revId": "859958133a63fec7f2c3e187d87bf9dd98118618",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_cfc79966",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-06-18T14:12:10Z",
+      "side": 1,
+      "message": "nsString is only used in fixInternalLinks, shouldn\u0027t it just be passed to that function or even called from inside it?",
+      "revId": "859958133a63fec7f2c3e187d87bf9dd98118618",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
