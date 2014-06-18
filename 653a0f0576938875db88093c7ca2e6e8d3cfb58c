@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_0cafefdf",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T11:21:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_3591e64a",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_558c6a32",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-17T10:22:08Z",
       "side": 1,
       "message": "Better:\n\ndeferred \u003d api.postWithEditToken( ... );\nreturn deferred.promise();",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_ecbdcb17",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T11:21:52Z",
+      "side": 1,
+      "message": "If I do that, then \"deferred.resolve is not a function\", it reports.",
+      "parentUuid": "ee391fd1_558c6a32",
       "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_ec94ab8f",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T11:21:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_f59a3e65",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_1596e242",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2014-06-17T10:22:08Z",
       "side": 1,
       "message": "Might want to do $.trim() here as well",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_0c96cf97",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T11:21:52Z",
+      "side": 1,
+      "message": "Oh right! Done!",
+      "parentUuid": "ee391fd1_1596e242",
       "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_2ce2b32e",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T11:21:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_35b8c6c2",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_b59cb660",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 8
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_0cddaf73",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T11:21:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_b59cb660",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_f5b11edd",
         "filename": "resources/js/jquery.ajaxdispatcher.js",
         "patchSetId": 8
@@ -115,6 +223,24 @@
       "writtenOn": "2014-06-17T10:22:08Z",
       "side": 1,
       "message": "Trailing whtiespace",
+      "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_acd58349",
+        "filename": "resources/js/jquery.ajaxdispatcher.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T11:21:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_f5b11edd",
       "revId": "653a0f0576938875db88093c7ca2e6e8d3cfb58c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
