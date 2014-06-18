@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_92689a1a",
+        "filename": "Resources.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:10:00Z",
+      "side": 1,
+      "message": "need the normal mediawiki.api as well.",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_725f7678",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:10:00Z",
+      "side": 1,
+      "message": "needs i18n",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_3259ee90",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:10:00Z",
+      "side": 1,
+      "message": "Is this a wanted feature?",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_1254aa55",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:10:00Z",
+      "side": 1,
+      "message": "this seems to be equal to /\u003ctranslate\u003e\\n?/gi",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_92c77a15",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:10:00Z",
+      "side": 1,
+      "message": "Does this template take parameters, or why are you matching extra?",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_72ce5633",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:10:00Z",
+      "side": 1,
+      "message": "extra space",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_d2762201",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:10:00Z",
+      "side": 1,
+      "message": "return.done.value instead of pageContent or something.",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_528b52e8",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:10:00Z",
+      "side": 1,
+      "message": "Redundant comment imho",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_9281baca",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:10:00Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_d2dce2e7",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:10:00Z",
+      "side": 1,
+      "message": "You should return an array. You need to escape the namespace names with $.escapeRE from jquery.mwExtension before using them in the regular expression.\n\nYou can also use list.join(\u0027|\u0027) after escaping.",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_7211b6b0",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:10:00Z",
+      "side": 1,
+      "message": "Usually Namespace without capital S. Why are you calling this method if you are not using the return value?",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_521472a0",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:10:00Z",
+      "side": 1,
+      "message": "Why .then() and not .done()?",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_f2248609",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-18T16:10:00Z",
+      "side": 1,
+      "message": "You don\u0027t have any kind of confirmation that it succeeded yet?",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
