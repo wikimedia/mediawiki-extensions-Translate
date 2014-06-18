@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_d2f3c267",
+        "filename": "Resources.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T19:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_92689a1a",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_725f7678",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-18T16:10:00Z",
       "side": 1,
       "message": "needs i18n",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_b8925dfe",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T19:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_725f7678",
       "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_fd47b74e",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T19:10:57Z",
+      "side": 1,
+      "message": "Yes, because if you wish to prepare the page for the second time or any time again in the future, the tool would add it back.\n\nSo now, the logic is - remove everything, and add it back. Simple to implement and works naturally.",
+      "parentUuid": "ee391fd1_3259ee90",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_1254aa55",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2014-06-18T16:10:00Z",
       "side": 1,
       "message": "this seems to be equal to /\u003ctranslate\u003e\\n?/gi",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_789cf512",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T19:10:57Z",
+      "side": 1,
+      "message": "Yeah, done! For the one below as well. Thanks.",
+      "parentUuid": "ee391fd1_1254aa55",
       "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_f8cc658e",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T19:10:57Z",
+      "side": 1,
+      "message": "As per https://www.mediawiki.org/wiki/Template:Languages#Syntax , the parameter is optional. So I have kept it.",
+      "parentUuid": "ee391fd1_92c77a15",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_72ce5633",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 9
@@ -98,6 +188,24 @@
       "writtenOn": "2014-06-18T16:10:00Z",
       "side": 1,
       "message": "extra space",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_589ff106",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T19:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_72ce5633",
       "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_f88fc5cf",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T19:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_d2762201",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_528b52e8",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 9
@@ -132,6 +258,24 @@
       "writtenOn": "2014-06-18T16:10:00Z",
       "side": 1,
       "message": "Redundant comment imho",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_d88ac1bf",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T19:10:57Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "ee391fd1_528b52e8",
       "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_98bc3969",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T19:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_9281baca",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_d2dce2e7",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 9
@@ -166,6 +328,24 @@
       "writtenOn": "2014-06-18T16:10:00Z",
       "side": 1,
       "message": "You should return an array. You need to escape the namespace names with $.escapeRE from jquery.mwExtension before using them in the regular expression.\n\nYou can also use list.join(\u0027|\u0027) after escaping.",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_58b6d186",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T19:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_d2dce2e7",
       "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_d8a1a137",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T19:10:57Z",
+      "side": 1,
+      "message": "This method is now called inside fixInternalLinks(). I forgot to remove it from here. Done!",
+      "parentUuid": "ee391fd1_7211b6b0",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_521472a0",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 9
@@ -206,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_b8681df3",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T19:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee391fd1_521472a0",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_f2248609",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 9
@@ -217,6 +433,24 @@
       "writtenOn": "2014-06-18T16:10:00Z",
       "side": 1,
       "message": "You don\u0027t have any kind of confirmation that it succeeded yet?",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_7872b5e3",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-18T19:10:57Z",
+      "side": 1,
+      "message": "Adding a trivial window.alert for the time being on success.",
+      "parentUuid": "ee391fd1_f2248609",
       "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
