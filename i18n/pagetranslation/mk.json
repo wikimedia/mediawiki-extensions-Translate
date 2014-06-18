@@ -85,6 +85,10 @@
 	"tpt-aggregategroup-new-description": "Опис (незадолжително):",
 	"tpt-aggregategroup-remove-confirm": "Дали сте сигурни дека сакате да ја избришете оваа збирна група?",
 	"tpt-aggregategroup-invalid-group": "Групата не постои",
+	"tpt-aggregategroup-edit-name": "Име:",
+	"tpt-aggregategroup-edit-description": "Опис:",
+	"tpt-aggregategroup-update": "Зачувај",
+	"tpt-aggregategroup-update-cancel": "Откажи",
 	"pt-parse-open": "Неврамнотежена &lt;translate> ознака.\nШаблон за преводот: <pre>$1</pre>",
 	"pt-parse-close": "Неврамнотежена &lt;/translate> ознака.\nШаблон за преводот: <pre>$1</pre>",
 	"pt-parse-nested": "Не се дозволени гвнездени &lt;translate> преводни единици.\nТекст на ознаката: <pre>$1</pre>",
@@ -170,5 +174,6 @@
 	"pm-langcode-missing": "Внесете јазичен код",
 	"pm-add-icon-hover-text": "Додај единица подолу",
 	"pm-swap-icon-hover-text": "Замени ја единицата подолу",
-	"pm-delete-icon-hover-text": "Избриши единица"
+	"pm-delete-icon-hover-text": "Избриши единица",
+	"tpt-translate-title": "Дозволи превод на насловот на страницата"
 }

@@ -25,5 +25,7 @@
 	"pm-savepages-button-label": "Ӏалашдан",
 	"pm-cancel-button-label": "Цаоьшу",
 	"pm-pagename-placeholder": "Язъе агӀона цӀе",
-	"pm-langcode-placeholder": "Метта код"
+	"pm-langcode-placeholder": "Метта код",
+	"pm-old-translations-missing": "$1 шира гочдарш чохь дац",
+	"pm-pagename-missing": "Дехар до, дӀаязъе агӀона цӀе:"
 }

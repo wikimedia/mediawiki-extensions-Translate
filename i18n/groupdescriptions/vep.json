@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Игорь Бродский"
+			"Игорь Бродский",
+			"Lokal Profil"
 		]
 	},
 	"bw-desc-freecol": "Edel sidä, kut tö kändaškandet FreeCol teiden kel'he, olgat hüväd, lugekat [[Translating:FreeCol]]-lehtpol't. Freecol kävutab GPL-licenzijan.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], PHP-s kirjutadud verkforum.",
-	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] om vigoiden löudmižen joudai verksistem. Olgat hüväd, kirjutagat erazvuiččiš petusiš [[Support|Abulehtpolel]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] om vigoiden löudmižen joudai verksistem. Olgat hüväd, kirjutagat erazvuiččiš petusiš [[Support|Abulehtpolel]].",
 	"bw-desc-mwlibrl": "'''mwlib.rl'''  om python-kirjišt, kudamb om tehtud käta MediaWikin kirjutesid PDF-formatha; nened kirjutesed ümbriratas mwlib-kirjišton abul.\n\nLižainformacijad sab löuta [[mw:Extension:PDF_Writer]] da http://code.pediapress.com/wiki/wiki/mwlibrl-lehtsilpäi.",
 	"bw-desc-osm-site": "Nece tedotusiden gruppas om [[Translating:Open Street Map|Open Street Map]]-interfeisan tedotusid.",
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] laskeb löuta teravas lehtpolen avtorid Wikimedii-projektoiš."

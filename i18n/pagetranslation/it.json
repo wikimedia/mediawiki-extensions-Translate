@@ -91,6 +91,10 @@
 	"tpt-aggregategroup-new-description": "Descrizione (opzionale):",
 	"tpt-aggregategroup-remove-confirm": "Sei sicuro di voler cancellare questo gruppo aggregato?",
 	"tpt-aggregategroup-invalid-group": "Il gruppo non esiste",
+	"tpt-aggregategroup-edit-name": "Nome:",
+	"tpt-aggregategroup-edit-description": "Descrizione:",
+	"tpt-aggregategroup-update": "Salva",
+	"tpt-aggregategroup-update-cancel": "Annulla",
 	"pt-parse-open": "Marcatore &lt;translate> sbilanciato.\nStruttura della traduzione: <pre>$1</pre>",
 	"pt-parse-close": "Marcatore &lt;/translate> sbilanciato.\nStruttura della traduzione: <pre>$1</pre>",
 	"pt-parse-nested": "Non sono ammessi elementi di traduzione &lt;translate> nidificati.\nTesto del marcatore: <pre>$1</pre>",
@@ -176,5 +180,6 @@
 	"pm-langcode-missing": "Inserisci il codice della lingua",
 	"pm-add-icon-hover-text": "Aggiungi un'unità sotto",
 	"pm-swap-icon-hover-text": "Scambia con l'unità sotto",
-	"pm-delete-icon-hover-text": "Cancella unità"
+	"pm-delete-icon-hover-text": "Cancella unità",
+	"tpt-translate-title": "Permetti la traduzione del titolo della pagina"
 }

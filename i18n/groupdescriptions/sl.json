@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Dbc334",
-			"Eleassar"
+			"Eleassar",
+			"Lokal Profil"
 		]
 	},
 	"bw-desc-freecol": "Pred prevajanjem FreeCol v svoj jezik si, prosimo, preberite [[Translating:FreeCol]]. Freecol uporablja licenco GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], spletni forum napisan v PHP.",
-	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] je prost spletni sistem za sledenje hroščem. Prosimo, sporočite morebitne težave na [[Support|Podpora]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] je prost spletni sistem za sledenje hroščem. Prosimo, sporočite morebitne težave na [[Support|Podpora]].",
 	"bw-desc-mwlibrl": "[[Translating:Mwlib.rl|Mwlib.rl]] je knjižnica za ustvarjanje dokumentov PDF iz strani MediaWiki",
 	"bw-desc-openstreetmap": "Skupina sporočil za vsa sporočila [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Ta skupina sporočil zajema sporočila vmesnika [[Translating:Open Street Map|Open Street Map]].\nOglejte si [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} stran Unicode CLDR za razlago množinskih ključev].",

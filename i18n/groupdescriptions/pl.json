@@ -7,12 +7,13 @@
 			"Sp5uhe",
 			"ToSter",
 			"Chrumps",
-			"Vengir"
+			"Vengir",
+			"Lokal Profil"
 		]
 	},
 	"bw-desc-freecol": "Zanim rozpoczniesz tłumaczenie FreeCol, zapoznaj się z [[Translating:FreeCol]]. Freecol udostępniane jest na licencji GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum] – forum internetowe napisane w PHP.",
-	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] jest bezpłatnym internetowym systemem obsługi zgłoszeń usterek. Prosimy o zgłaszanie wszelkich problemów [[Support|obsłudze]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] jest bezpłatnym internetowym systemem obsługi zgłoszeń usterek. Prosimy o zgłaszanie wszelkich problemów [[Support|obsłudze]].",
 	"bw-desc-mwlibrl": "[[Translating:Mwlib.rl|Mwlib.rl]] jest biblioteką do tworzenia dokumentów PDF ze stron MediaWiki",
 	"bw-desc-openstreetmap": "Grupa wszystkich komunikatów [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Ta grupa komunikatów zawiera interfejs [[Translating:Open Street Map|Open Street Map]]. Zobacz [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} stronę Unicode CLDR wyjaśniającą zasady tworzenia liczby mnogiej].",

@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"SMP"
+			"SMP",
+			"Lokal Profil"
 		]
 	},
 	"bw-desc-freecol": "Abans de traduir FreeCol al vostre idioma, llegeiu [[Translating:FreeCol]]. Freecol utilitza una llicència GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], un fòrum web escrit en PHP.",
-	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] és un sistema de gestió d'errors via web. Si us plau, informeu de qualsevol problema a [[Support]]."
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] és un sistema de gestió d'errors via web. Si us plau, informeu de qualsevol problema a [[Support]]."
 }

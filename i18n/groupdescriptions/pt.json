@@ -7,12 +7,13 @@
 			"McDutchie",
 			"Waldir",
 			"Fúlvio",
-			"Imperadeiro98"
+			"Imperadeiro98",
+			"Lokal Profil"
 		]
 	},
 	"bw-desc-freecol": "Antes de traduzir o FreeCol para a sua língua, por favor leia [[Translating:FreeCol]]. O Freecol utiliza a licença GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], um fórum web escrito em PHP.",
-	"bw-desc-mantisbt": "O [http://www.mantisbt.org MantisBT] é um sistema de seguimento de bugs livre e online. Por favor reporte quaisquer problemas em [[Support]].",
+	"bw-desc-mantisbt": "O [[Translating:MantisBT|MantisBT]] é um sistema de seguimento de bugs livre e online. Por favor reporte quaisquer problemas em [[Support]].",
 	"bw-desc-mwlibrl": "O [[Translating:Mwlib.rl|Mwlib.rl]] é uma biblioteca para produzir documentos PDF a partir de páginas do MediaWiki",
 	"bw-desc-openstreetmap": "Grupo para todas as mensagens do [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "O [[Translating:OpenStreetMap|OpenStreetMap]] é um mapa editável de todo o mundo",

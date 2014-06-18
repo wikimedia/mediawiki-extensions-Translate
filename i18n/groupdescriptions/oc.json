@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cedric31"
+			"Cedric31",
+			"Lokal Profil"
 		]
 	},
 	"bw-desc-freecol": "Abans de tradusir FreeCol dins vòstra lenga, legissètz [[Translating:FreeCol|FreeCol]]. Freecol utiliza la licéncia GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], un forum internet escrich en PHP.",
-	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] es un logicial gratuit de seguit dels bògues. Raportatz totes los problèmas sus [[Support]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] es un logicial gratuit de seguit dels bògues. Raportatz totes los problèmas sus [[Support]].",
 	"bw-desc-mwlibrl": "'''mwlib.rl''' es una bibliotèca en python per escriure de documents PDF dempuèi d'articles de MediaWiki que son estats analisats per la bibliotèca mwlib.\n\nVejatz [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl per mai d'entresenhas.",
 	"bw-desc-osm-site": "Aqueste grop de messatges conten los messatges de l'interfàcia d'[[Translating:Open Street Map|Open Street Map]].",
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] es en mesura de trobar rapidament los autors d’una pagina dins un wiki Wikimedia.",

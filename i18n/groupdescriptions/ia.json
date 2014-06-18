@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"McDutchie"
+			"McDutchie",
+			"Lokal Profil"
 		]
 	},
 	"bw-desc-freecol": "Ante de traducer FreeCol in tu lingua, per favor lege [[Translating:FreeCol]]. FreeCol usa le licentia GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], un foro web scribite in PHP.",
-	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] es un systema libere pro gerer defectos via web. Per favor reporta omne problema in [[Support]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] es un systema libere pro gerer defectos via web. Per favor reporta omne problema in [[Support]].",
 	"bw-desc-mwlibrl": "'''mwlib.rl''' es un bibliotheca de Python pro facer documentos PDF ex articulos MediaWiki convertite per le bibliotheca mwlib.\n\nVide [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl pro plus information.",
 	"bw-desc-openstreetmap": "Gruppo pro tote le messages de [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Iste gruppo de messages contine le messages de interfacie pro [[Translating:Open Street Map|Open Street Map]].\nVide le [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} pagina CLDR Unicode] pro un explication de como se codifica le plurales.",

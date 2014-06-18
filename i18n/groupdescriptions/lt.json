@@ -2,13 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Perkunas",
-			"Tomasdd"
+			"Tomasdd",
+			"Lokal Profil"
 		]
 	},
 	"bw-desc-freecol": "Prieš verčiant FreeCol į jūsų kalbą, skaitykite [[Translating:FreeCol]]. FreeCol naudoja GPL licenciją.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], PHP kalba parašytas internetinis forumas.",
-	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] yra nemokama klaidų stebėjimo sistema. [[Support]] puslapyje prašome pranešti bet kokius netikslumus ar klaidas.",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] yra nemokama klaidų stebėjimo sistema. [[Support]] puslapyje prašome pranešti bet kokius netikslumus ar klaidas.",
 	"bw-desc-osm-site": "[[Translating:OpenStreetMap|OpenStreetMap]] - tai redaguojamas pasaulio žemėlapis",
-	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] padeda greitai surasti puslapio autorių įvairuose Vikimedia projektuose.",
-	"bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] projetas, kuris pateikia automatinę Vikipedijos versiją mobiliose įrangose."
+	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] padeda greitai surasti puslapio autorių įvairuose Vikimedia projektuose."
 }

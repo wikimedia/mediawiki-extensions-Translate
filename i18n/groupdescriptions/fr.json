@@ -23,7 +23,7 @@
 	},
 	"bw-desc-freecol": "Avant de traduire FreeCol dans votre langue, veuillez lire [[Translating:FreeCol]]. Freecol est publié sous licence GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], un forum internet écrit en PHP.",
-	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] est un système gratuit pour le suivi sur le web des anomalies. Rapportez tous les problèmes sur [[Support]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] est un système gratuit pour le suivi sur le web des anomalies.",
 	"bw-desc-mwlibrl": "'''mwlib.rl''' est une bibliothèque Python pour créer des documents PDF à partir des articles de MediaWiki qui ont été analysés par la bibliothèque mwlib.\n\nVeuillez consulter [[mw:Extension:PDF Writer]] et http://code.pediapress.com/wiki/wiki/mwlibrl pour plus d’informations.",
 	"bw-desc-openstreetmap": "Groupe de messages pour tous les messages de [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "[[Translating:OpenStreetMap|OpenStreetMap]] est une carte modifiable du monde entier",

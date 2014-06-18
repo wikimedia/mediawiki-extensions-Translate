@@ -3,13 +3,13 @@
 		"authors": [
 			"March",
 			"Rinatus",
-			"Ильнар"
+			"Ильнар",
+			"Lokal Profil"
 		]
 	},
 	"bw-desc-freecol": "FreeCol проектын узегезнең телегезгә тәрҗемә иткәнче башта [[Translating:FreeCol]]ны карагыз, чөнки ул GPL лицензиясен куллана.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum] —  PHPда язылган веб-форум.",
-	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT — килгән хаталарны карау өчен нигезләнгән веб-система. Зинһар, булган кимчелекләрне [[Support]] битендә әйтегез.",
-	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] — Википедияне рәтләү өчен җиһазлар җыентыгы",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] — килгән хаталарны карау өчен нигезләнгән веб-система. Зинһар, булган кимчелекләрне [[Support]] битендә әйтегез.",
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] Викимедиа авторларының битен табарга ярдәм итә.",
-	"bw-desc-wikireader": "[[Translating:WikiReader|WikiReader]] —  Википедиянең кәрәзле телефондагы автаном юрамасы"
+	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] — Википедияне рәтләү өчен җиһазлар җыентыгы"
 }

@@ -101,6 +101,10 @@
 	"tpt-aggregategroup-new-description": "Description (facultative):",
 	"tpt-aggregategroup-remove-confirm": "Êtes-vous sûr de vouloir supprimer ce groupe agrégé?",
 	"tpt-aggregategroup-invalid-group": "Le groupe n'existe pas",
+	"tpt-aggregategroup-edit-name": "Nom :",
+	"tpt-aggregategroup-edit-description": "Description :",
+	"tpt-aggregategroup-update": "Enregistrer",
+	"tpt-aggregategroup-update-cancel": "Annuler",
 	"pt-parse-open": "Balise &lt;translate> asymétrique.\nModèle de traduction : <pre>$1</pre>",
 	"pt-parse-close": "Balise &lt;/translate> asymétrique.\nModèle de traduction : <pre>$1</pre>",
 	"pt-parse-nested": "Les sections &lt;translate> imbriquées ne sont pas autorisées.\nTexte de la balise : <pre>$1</pre>",
@@ -186,5 +190,6 @@
 	"pm-langcode-missing": "Veuillez saisir le code de langue",
 	"pm-add-icon-hover-text": "Ajouter une unité ci-dessous",
 	"pm-swap-icon-hover-text": "Échanger avec l’unité ci-dessous",
-	"pm-delete-icon-hover-text": "Supprimer l’unité"
+	"pm-delete-icon-hover-text": "Supprimer l’unité",
+	"tpt-translate-title": "Autoriser la traduction du titre de la page"
 }

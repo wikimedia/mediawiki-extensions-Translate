@@ -4,15 +4,15 @@
 			"Dead3y3",
 			"Omnipaedista",
 			"Protnet",
-			"ZaDiak"
+			"ZaDiak",
+			"Lokal Profil"
 		]
 	},
-	"translate-group-desc-mediawikicore": "Αυτή η ομάδα μηνυμάτων περιέχει μηνύματα που χρησιμοποιούνται στην τρέχουσα alpha έκδοση του [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})",
 	"bw-desc-freecol": "Πριν μεταφράσετε το FreeCol στη γλώσσα σας, παρακαλώ διαβάστε το [[Translating:FreeCol]]. Το Freecol χρησιμοποιεί την GPL άδεια χρήσης.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], ένα διαδικτυακό φόρουμ γραμμένο σε PHP.",
-	"bw-desc-mantisbt": "Το [http://www.mantisbt.org MantisBT] είναι ένα δωρεάν web-based σύστημα εντοπισμού σφαλμάτων. Παρακαλώ αναφέρετε όποια προβλήματα στην [[Support|Υποστήριξη]].",
+	"bw-desc-mantisbt": "Το [[Translating:MantisBT|MantisBT]] είναι ένα δωρεάν web-based σύστημα εντοπισμού σφαλμάτων. Παρακαλώ αναφέρετε όποια προβλήματα στην [[Support|Υποστήριξη]].",
 	"bw-desc-mwlibrl": "Η '''mwlib.rl''' είναι μια βιβλιοθήκη python για τη σύνταξη εγγράφων PDF από άρθρα MediaWiki τα οποία έχουν αναλυθεί από την βιβλιοθήκη mwlib.\n\nΠαρακαλώ δείτε τις σελίδες [[mw:Extension:PDF_Writer]] και http://code.pediapress.com/wiki/wiki/mwlibrl για περισσότερες πληροφορίες.",
 	"bw-desc-osm-site": "Αυτή η ομάδα μηνυμάτων περιέχει τα μηνύματα διεπαφής για το [[Translating:Open Street Map|Open Street Map]].\nΔείτε την [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} σελίδα Unicode CLDR για εξήγηση των κλειδιών πληθυντικού].",
 	"bw-desc-wikiblame": "Το [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] είναι σε θέση να βρει γρήγορα τους συντάκτες μιας σελίδας σε ένα wiki Wikimedia.",
-	"bw-desc-wikireader": "Το [[Translating:WikiReader|WikiReader]] είναι ενα εγχείρημα για παράδοση μιας εκτός σύνδεσης, μόνο κειμένου έκδοσης της Βικιπαίδειας σε μια κινητή συσκευή."
+	"translate-group-desc-mediawikicore": "Αυτή η ομάδα μηνυμάτων περιέχει μηνύματα που χρησιμοποιούνται στην τρέχουσα alpha έκδοση του [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})"
 }

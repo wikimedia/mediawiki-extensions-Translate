@@ -94,6 +94,10 @@
 	"tpt-aggregategroup-new-description": "Beschreibung (optional):",
 	"tpt-aggregategroup-remove-confirm": "Bist Du sicher, dass Du diese Gruppe löschen möchtest?",
 	"tpt-aggregategroup-invalid-group": "Die Gruppe ist nicht vorhanden",
+	"tpt-aggregategroup-edit-name": "Name:",
+	"tpt-aggregategroup-edit-description": "Beschreibung:",
+	"tpt-aggregategroup-update": "Speichern",
+	"tpt-aggregategroup-update-cancel": "Abbrechen",
 	"pt-parse-open": "Eine &lt;translate&gt;-Markierung hat kein Gegenstück.\nÜbersetzungsvorlage: <pre>$1</pre>",
 	"pt-parse-close": "Eine &lt;/translate>-Markierung hat kein Gegenstück.\nÜbersetzungsvorlage: <pre>$1</pre>",
 	"pt-parse-nested": "Verschachtelte &lt;translate>-Übersetzungseinheiten sind nicht möglich.\nText des Tags: <pre>$1</pre>",
@@ -179,5 +183,6 @@
 	"pm-langcode-missing": "Bitte den Sprachcode eingeben",
 	"pm-add-icon-hover-text": "Unten eine Einheit hinzufügen",
 	"pm-swap-icon-hover-text": "Mit der unteren Einheit tauschen",
-	"pm-delete-icon-hover-text": "Einheit löschen"
+	"pm-delete-icon-hover-text": "Einheit löschen",
+	"tpt-translate-title": "Übersetzung eines Seitentitels erlauben"
 }

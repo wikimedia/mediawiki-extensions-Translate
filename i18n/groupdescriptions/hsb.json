@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Michawiki"
+			"Michawiki",
+			"Lokal Profil"
 		]
 	},
 	"bw-desc-freecol": "Prjedy hač přełožuješ FreeCol do swojeje rěče, přečitaj prošu [[Translating:FreeCol]]. FreeCol wužiwa licencu GPL.",
 	"bw-desc-fudforum": "[[Translating:FUDforum|FUDforum]] je webforum spisany w PHP.",
-	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] je swobodny system na zakładźe weba za slědowanje programowych zmylkow. Zdźěl prošu problemy na stronje [[Support|Podpěra]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] je swobodny system na zakładźe weba za slědowanje programowych zmylkow. Zdźěl prošu problemy na stronje [[Support|Podpěra]].",
 	"bw-desc-mwlibrl": "'''mwlib.rl''' je pythonowa biblioteka za wutworjenje PDF-dokumentow z nastawkow MediaWiki, kotrež buchu přez biblioteku mwlib analyzowane.\n\nProšu hlej [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/mwlibrl za dalše informacije.",
 	"bw-desc-openstreetmap": "Skupina zdźělenkow za wšě zdźělenki z [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Zdźělenki wužiwarskeho powjercha za [[Translating:OpenStreetMap|OpenStreetMap]], wobdźěłujomnu kartu cyłeho swěta",

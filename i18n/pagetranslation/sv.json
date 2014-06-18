@@ -93,6 +93,10 @@
 	"tpt-aggregategroup-new-description": "Beskrivning (valfri):",
 	"tpt-aggregategroup-remove-confirm": "Är du säker på att du vill radera denna samlingsgrupp?",
 	"tpt-aggregategroup-invalid-group": "Gruppen finns inte",
+	"tpt-aggregategroup-edit-name": "Namn:",
+	"tpt-aggregategroup-edit-description": "Beskrivning:",
+	"tpt-aggregategroup-update": "Spara",
+	"tpt-aggregategroup-update-cancel": "Avbryt",
 	"pt-parse-open": "Obalanserad &lt;translate>-tagg.\nÖversättningsmall: <pre>$1</pre>",
 	"pt-parse-close": "Obalanserad &lt;/translate>-tagg.\nÖversättningsmall: <pre>$1</pre>",
 	"pt-parse-nested": "Inbäddade &lt;translate>-översättningsenheter är inte tillåtna.\nTaggtext: <pre>$1</pre>",
@@ -178,5 +182,6 @@
 	"pm-langcode-missing": "Vänligen ange språkkoden",
 	"pm-add-icon-hover-text": "Lägg till en enhet nedan",
 	"pm-swap-icon-hover-text": "Byt med enheten nedan",
-	"pm-delete-icon-hover-text": "Radera enhet"
+	"pm-delete-icon-hover-text": "Radera enhet",
+	"tpt-translate-title": "Tillåt översättning av sidans titel"
 }

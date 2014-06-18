@@ -88,6 +88,10 @@
 	"tpt-aggregategroup-new-description": "תיאור (לא חובה):",
 	"tpt-aggregategroup-remove-confirm": "האם ברצונך באמת למחוק את הקבוצה המשולבת הזאת?",
 	"tpt-aggregategroup-invalid-group": "הקבוצה אינה קיימת",
+	"tpt-aggregategroup-edit-name": "שם:",
+	"tpt-aggregategroup-edit-description": "תיאור:",
+	"tpt-aggregategroup-update": "שמירה",
+	"tpt-aggregategroup-update-cancel": "ביטול",
 	"pt-parse-open": "תג &lt;translate> לא מאוזן.\nתבנית תרגום: <pre>$1</pre>",
 	"pt-parse-close": "תג &lt;/translate> לא מאוזן.\nתבנית תרגום: <pre>$1</pre>",
 	"pt-parse-nested": "קטעי &lt;translate> מקוננים אינם מורשים.\nתוכן התג: <pre>$1</pre>",
@@ -173,5 +177,6 @@
 	"pm-langcode-missing": "נא להזין את קוד השפה",
 	"pm-add-icon-hover-text": "להוסיף יחידה למטה",
 	"pm-swap-icon-hover-text": "להחליף עם יחידה מעל",
-	"pm-delete-icon-hover-text": "למחוק יחידה"
+	"pm-delete-icon-hover-text": "למחוק יחידה",
+	"tpt-translate-title": "לאפשר תרגום של כותרת הדף"
 }

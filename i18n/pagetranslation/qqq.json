@@ -95,10 +95,10 @@
 	"tpt-aggregategroup-new-description": "Label for the description field in [[Special:AggregateGroups]].\n{{Identical|Description}}",
 	"tpt-aggregategroup-remove-confirm": "Confirmation message shown while user tried to delete an aggregate group in [[Special:AggregateGroups]]",
 	"tpt-aggregategroup-invalid-group": "Show on [[Special:AggregateGroups]] after remove button of a group, if the stored group id does not match any currently known groups.",
-	"tpt-aggregategroup-edit-name": "Label for the edit name field in [[Special:AggregateGroups]].",
-	"tpt-aggregategroup-edit-description": "Label for the edit description field in [[Special:AggregateGroups]].",
-	"tpt-aggregategroup-update": "Label for button on [[Special:AggregateGroups]] to update",
-	"tpt-aggregategroup-update-cancel": "Label for button on [[Special:AggregateGroups]] to cancel editing",
+	"tpt-aggregategroup-edit-name": "Label for the edit name field in [[Special:AggregateGroups]].\n{{Identical|Name}}",
+	"tpt-aggregategroup-edit-description": "Label for the edit description field in [[Special:AggregateGroups]].\n{{Identical|Description}}",
+	"tpt-aggregategroup-update": "Label for button on [[Special:AggregateGroups]] to update.\n{{Identical|Save}}",
+	"tpt-aggregategroup-update-cancel": "Label for button on [[Special:AggregateGroups]] to cancel editing.\n{{Identical|Cancel}}",
 	"pt-parse-open": "Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.\n\n\"Translation template\" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.\n\nParameters:\n* $1 - translation template\nSee also:\n* {{msg-mw|Pt-parse-close}}",
 	"pt-parse-close": "Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.\n\n\"Translation template\" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.\n\nParameters:\n* $1 - translation template\nSee also:\n* {{msg-mw|Pt-parse-open}}",
 	"pt-parse-nested": "Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.\n\nSee definitions on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translation unit (=section) text",
@@ -175,5 +175,5 @@
 	"pm-add-icon-hover-text": "Hover text for add new unit icon",
 	"pm-swap-icon-hover-text": "Hover text for swap with unit below icon",
 	"pm-delete-icon-hover-text": "Hover text for delete unit icon",
-	"tpt-translate-title": "Checkbox on Special:PageTranslation to mark title for translation"
+	"tpt-translate-title": "Label for checkbox on [[Special:PageTranslation]] to mark title for translation."
 }

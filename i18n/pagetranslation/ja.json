@@ -84,6 +84,10 @@
 	"tpt-aggregategroup-new-description": "説明 (省略可):",
 	"tpt-aggregategroup-remove-confirm": "この集約群を本当に削除しますか?",
 	"tpt-aggregategroup-invalid-group": "グループは存在しません",
+	"tpt-aggregategroup-edit-name": "名前:",
+	"tpt-aggregategroup-edit-description": "説明:",
+	"tpt-aggregategroup-update": "保存",
+	"tpt-aggregategroup-update-cancel": "キャンセル",
 	"pt-parse-open": "&lt;translate> タグの対応がとれていません。\n翻訳の雛型: <pre>$1</pre>",
 	"pt-parse-close": "&lt;/translate> タグの対応がとれていません。\n翻訳の雛型: <pre>$1</pre>",
 	"pt-parse-nested": "&lt;translate> 翻訳単位の入れ子は許されません。\nタグの内容: <pre>$1</pre>",
@@ -168,5 +172,6 @@
 	"pm-langcode-missing": "言語コードを入力してください",
 	"pm-add-icon-hover-text": "単位を下に追加",
 	"pm-swap-icon-hover-text": "下の単位と入れ替える",
-	"pm-delete-icon-hover-text": "単位を削除"
+	"pm-delete-icon-hover-text": "単位を削除",
+	"tpt-translate-title": "ページ名を翻訳できるようにする"
 }

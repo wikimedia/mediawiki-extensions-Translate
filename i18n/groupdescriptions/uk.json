@@ -9,12 +9,13 @@
 			"Olvin",
 			"Prima klasy4na",
 			"Ата",
-			"Тест"
+			"Тест",
+			"Lokal Profil"
 		]
 	},
 	"bw-desc-freecol": "Перед тим, як перекладати FreeCol на вашу мову, прочитайте, будь ласка, [[Translating:FreeCol]]. Freecol використовує ліцензію GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum] — веб-форум, написаний на PHP.",
-	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] це вільна веб-система для відслідковування багів. Будь ласка, повідомляйте будь-які проблеми у [[Support|службу підтримки]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] це вільна веб-система для відслідковування багів. Будь ласка, повідомляйте будь-які проблеми у [[Support|службу підтримки]].",
 	"bw-desc-mwlibrl": "'''mwlib.rl''' це бібліотека на мові python для створення PDF-документів зі сторінок MediaWiki, які були проаналізовані mwlib.\n\nГляньте, будь ласка, [[mw:Extension:PDF_Writer]] та http://code.pediapress.com/wiki/wiki/mwlibrl для доклднішої інформації.",
 	"bw-desc-openstreetmap": "Група повідомлень [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Ця група містить повідомлення інтерфейсу [[Translating:OpenStreetMap|OpenStreetMap]].\nОзнайомтесь зі [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} сторінкою Unicode CLDR для отримання пояснень щодо творення форм множини].",

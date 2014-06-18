@@ -7,12 +7,13 @@
 			"555",
 			"Amgauna",
 			"Cainamarques",
-			"Fabsouza1"
+			"Fabsouza1",
+			"Lokal Profil"
 		]
 	},
 	"bw-desc-freecol": "Antes de traduzir o FreeCol para a sua língua, por favor leia [[Translating:FreeCol]]. O Freecol utiliza a licença GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], um fórum web escrito em PHP.",
-	"bw-desc-mantisbt": "O [http://www.mantisbt.org MantisBT] é um sistema de seguimento de bugs livre e online. Por favor reporte quaisquer problemas em [[Support]].",
+	"bw-desc-mantisbt": "O [[Translating:MantisBT|MantisBT]] é um sistema de seguimento de bugs livre e online. Por favor reporte quaisquer problemas em [[Support]].",
 	"bw-desc-mwlibrl": "O '''mwlib.rl''' é uma biblioteca python para produzir documentos PDF a partir de artigos MediaWiki que forem analisados pela biblioteca mwlib.\n\nPor favor veja [[mw:Extension:PDF_Writer]] e http://code.pediapress.com/wiki/wiki/mwlibrl para mais informações.",
 	"bw-desc-openstreetmap": "Grupo para todas as mensagens do [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Este grupo contém as mensagens de interface do [[Translating:Open Street Map|Open Street Map]].\nConsulte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} a página Unicode CLDR para uma explicação das chaves plurais].",

@@ -10,12 +10,13 @@
 			"Translationista",
 			"Vivaelcelta",
 			"Fitoschido",
-			"Vfrico"
+			"Vfrico",
+			"Lokal Profil"
 		]
 	},
 	"bw-desc-freecol": "Antes de traducir FreeCol a tu idioma, por favor lee [[Translating:FreeCol]]. Freecol usa la licencia GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], un foro web escrito en PHP.",
-	"bw-desc-mantisbt": "[http://www.mantisbt.org MantisBT] es un sistema de corrección de errores libre basado en web. Por favor reporta cualquier problema en [[Support]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] es un sistema de corrección de errores libre basado en web. Por favor reporta cualquier problema en [[Support]].",
 	"bw-desc-mwlibrl": "'''mwlib.rl''' es una biblioteca python para escribir documentos PDF de artículos MediaWiki los cuales fueron analizados por la biblioteca mwlib.\n\nPor favor mira [[mw:Extension:PDF_Writer]] y http://code.pediapress.com/wiki/wiki/mwlibrl para mayor información.",
 	"bw-desc-openstreetmap": "Grupo de mensajes para todos los mensajes de [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Este grupo de mensajes contiene los mensajes de interfaz para [[Translating:Open Street Map|Open Street Map]]",
