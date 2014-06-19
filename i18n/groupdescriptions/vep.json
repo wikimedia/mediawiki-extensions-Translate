@@ -10,5 +10,6 @@
 	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] om vigoiden löudmižen joudai verksistem. Olgat hüväd, kirjutagat erazvuiččiš petusiš [[Support|Abulehtpolel]].",
 	"bw-desc-mwlibrl": "'''mwlib.rl'''  om python-kirjišt, kudamb om tehtud käta MediaWikin kirjutesid PDF-formatha; nened kirjutesed ümbriratas mwlib-kirjišton abul.\n\nLižainformacijad sab löuta [[mw:Extension:PDF_Writer]] da http://code.pediapress.com/wiki/wiki/mwlibrl-lehtsilpäi.",
 	"bw-desc-osm-site": "Nece tedotusiden gruppas om [[Translating:Open Street Map|Open Street Map]]-interfeisan tedotusid.",
-	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] laskeb löuta teravas lehtpolen avtorid Wikimedii-projektoiš."
+	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] laskeb löuta teravas lehtpolen avtorid Wikimedii-projektoiš.",
+	"translate-group-desc-nocc": "[http://nocc.sourceforge.net NOCC] om PHP-kelel kirjutadud web-klijent. Olgat hüväd, kirjutagat erazvuiččiš petusiš [[Support|Abulehtpolel]]."
 }

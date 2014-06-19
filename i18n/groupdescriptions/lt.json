@@ -10,5 +10,6 @@
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], PHP kalba parašytas internetinis forumas.",
 	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] yra nemokama klaidų stebėjimo sistema. [[Support]] puslapyje prašome pranešti bet kokius netikslumus ar klaidas.",
 	"bw-desc-osm-site": "[[Translating:OpenStreetMap|OpenStreetMap]] - tai redaguojamas pasaulio žemėlapis",
-	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] padeda greitai surasti puslapio autorių įvairuose Vikimedia projektuose."
+	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] padeda greitai surasti puslapio autorių įvairuose Vikimedia projektuose.",
+	"translate-group-desc-nocc": "[http://nocc.sourceforge.net NOCC] yra elektroninio pašto klientas, parašytas PHP kodu. [[Support]] prašome pranešti apie bet kokias problemas ar klaidas."
 }

@@ -16,6 +16,7 @@
 	"translate-group-desc-mediawikicore": "Hierdie boodskapgroep bevat die boodskappe wat in die huidige alfa-weergawe van MediaWiki gebruik word - {{CURRENTVERSION}}",
 	"translate-group-desc-mediawikiextensions": "Meta-boodskapgroep wat alle boodskappe vir ondersteunde MediaWiki-uitbreidings bevat",
 	"translate-group-desc-mediawikimostused": "Hierdie boodskapgroep bevat Mediawiki se [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mees gebruikte boodskappe]",
+	"translate-group-desc-nocc": "[http://nocc.sourceforge.net NOCC] is 'n e-pos webkliënt wat in PHP geskryf is. Meld asseblief enige probleme aan by [[Support|Ondersteuning]].",
 	"translate-group-desc-nodesc": "Geen beskrywing is vir hierdie boodskapgroep beskikbaar nie",
 	"translate-group-desc-readerfeedback": "Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] bevat",
 	"translate-group-desc-translate": "Meta-boodskapgroep wat alle boodskappe vir die MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Extension:Translate Translate] bevat",

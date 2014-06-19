@@ -17,6 +17,7 @@
 	"translate-group-desc-mediawikicore": "Ez a csoport a MediaWiki jelenlegi alfaverziójának ({{CURRENTVERSION}}) üzeneteit tartalmazza",
 	"translate-group-desc-mediawikiextensions": "Gyűjtőcsoport, ami az összes MediaWiki-kiterjesztés üzeneteit tartalmazza",
 	"translate-group-desc-mediawikimostused": "Ez a csoport a MediaWikiben [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki leggyakrabban használt 500 üzenetet] tartalmazza",
+	"translate-group-desc-nocc": "A [http://nocc.sourceforge.net NOCC] egy PHP-ban írt webmail-kliens. A problémákat [[Support|Segítség]] oldalon jelezheted.",
 	"translate-group-desc-nodesc": "Az üzenetcsoporthoz nincs leírás",
 	"translate-group-desc-openimages-all": "Ezek az üzenetek az [[Translating:Open Images|Open Images]] projekt részei",
 	"translate-group-desc-pywikipedia": "A [[Translating:Pywikibot|Pywikibot]] a Wikipédia szerkesztéséhez szükséges eszközök gyűjteménye",

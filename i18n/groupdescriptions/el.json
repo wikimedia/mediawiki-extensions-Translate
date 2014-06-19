@@ -14,5 +14,6 @@
 	"bw-desc-mwlibrl": "Η '''mwlib.rl''' είναι μια βιβλιοθήκη python για τη σύνταξη εγγράφων PDF από άρθρα MediaWiki τα οποία έχουν αναλυθεί από την βιβλιοθήκη mwlib.\n\nΠαρακαλώ δείτε τις σελίδες [[mw:Extension:PDF_Writer]] και http://code.pediapress.com/wiki/wiki/mwlibrl για περισσότερες πληροφορίες.",
 	"bw-desc-osm-site": "Αυτή η ομάδα μηνυμάτων περιέχει τα μηνύματα διεπαφής για το [[Translating:Open Street Map|Open Street Map]].\nΔείτε την [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} σελίδα Unicode CLDR για εξήγηση των κλειδιών πληθυντικού].",
 	"bw-desc-wikiblame": "Το [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] είναι σε θέση να βρει γρήγορα τους συντάκτες μιας σελίδας σε ένα wiki Wikimedia.",
-	"translate-group-desc-mediawikicore": "Αυτή η ομάδα μηνυμάτων περιέχει μηνύματα που χρησιμοποιούνται στην τρέχουσα alpha έκδοση του [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})"
+	"translate-group-desc-mediawikicore": "Αυτή η ομάδα μηνυμάτων περιέχει μηνύματα που χρησιμοποιούνται στην τρέχουσα alpha έκδοση του [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})",
+	"translate-group-desc-nocc": "To [http://nocc.sourceforge.net NOCC] είναι ένας webmail client γραμμένος στη PHP. Παρακαλώ αναφέρετε οποιαδήποτε προβλήματα στην [[Support|Υποστήριξη]]."
 }

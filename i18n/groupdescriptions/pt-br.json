@@ -31,6 +31,7 @@
 	"translate-group-desc-mediawikiextensions": "Meta-grupo de mensagens contendo todas as mensagens para extensões do MediaWiki suportadas",
 	"translate-group-desc-mediawikimostused": "Este grupo de mensagens contém as [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mensagens utilizadas com mais frequência] no [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mifos": "[[Translating:Mifos|Mifos]] é um sistema de informação de gestão (MIS) para microfinanças",
+	"translate-group-desc-nocc": "O [http://nocc.sourceforge.net NOCC] é um cliente de e-mail escrito em PHP. Por favor reporte qualquer problema em [[Support]].",
 	"translate-group-desc-nodesc": "Não existe descrição para este grupo de mensagens",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] é um conjunto de ferramentas para editar a Wikipédia",
 	"translate-group-desc-readerfeedback": "Grupo de mensagens do Meta contendo todas as mensagens para a extensão do MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",

@@ -94,6 +94,10 @@
 	"tpt-aggregategroup-new-description": "Descripción (opcional):",
 	"tpt-aggregategroup-remove-confirm": "¿Está seguro que desea eliminar este grupo agregado?",
 	"tpt-aggregategroup-invalid-group": "El grupo no existe",
+	"tpt-aggregategroup-edit-name": "Nombre:",
+	"tpt-aggregategroup-edit-description": "Descripción:",
+	"tpt-aggregategroup-update": "Guardar",
+	"tpt-aggregategroup-update-cancel": "Cancelar",
 	"pt-parse-open": "Etiqueta &lt;translate> desequilibrada.\nPlantilla de traducción: <pre>$1</pre>",
 	"pt-parse-close": "Etiqueta &lt;/translate> desequilibrada.\nPlantilla de traducción: <pre>$1</pre>",
 	"pt-parse-nested": "No se permiten &lt;translate> unidades de traducción anidadas.\nTexto de etiqueta: <pre>$1</pre>",
@@ -160,5 +164,6 @@
 	"pm-page-does-not-exist": "$1 no existe",
 	"pm-pagename-missing": "Escribe el nombre de la página",
 	"pm-langcode-missing": "Escribe el código de idioma",
-	"pm-delete-icon-hover-text": "Eliminar unidad"
+	"pm-delete-icon-hover-text": "Eliminar unidad",
+	"tpt-translate-title": "Permitir la traducción del título de la página"
 }

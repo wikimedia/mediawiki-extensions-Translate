@@ -7,5 +7,6 @@
 	},
 	"bw-desc-freecol": "Abans de traduir FreeCol al vostre idioma, llegeiu [[Translating:FreeCol]]. Freecol utilitza una llicència GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], un fòrum web escrit en PHP.",
-	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] és un sistema de gestió d'errors via web. Si us plau, informeu de qualsevol problema a [[Support]]."
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] és un sistema de gestió d'errors via web. Si us plau, informeu de qualsevol problema a [[Support]].",
+	"translate-group-desc-nocc": "[http://nocc.sourceforge.net NOCC] és un client de correu electrònic desenvolupat en PHP. Si us plau, informeu de qualsevol problema a [[Support]]."
 }

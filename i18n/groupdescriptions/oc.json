@@ -16,6 +16,7 @@
 	"translate-group-desc-mediawikicore": "Aqueste grop de messatges conten los messatges utilizats dins la version alfa actuala de MediaWiki ({{CURRENTVERSION}})",
 	"translate-group-desc-mediawikiextensions": "Grop dels messatges que contenon totes los messatges de las extensions suportadas per MediaWiki",
 	"translate-group-desc-mediawikimostused": "Aqueste grop de messatges conten los [//translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messatges utilizats los mai sovent] dins [[Translating:MediaWiki|MediaWiki]].",
+	"translate-group-desc-nocc": "[http://nocc.sourceforge.net NOCC] es un client webmail escrich en PHP. Raportatz totes los problèmas sus [[Support]].",
 	"translate-group-desc-nodesc": "I a pas descripcion disponibla per aqueste grop de messatge",
 	"translate-group-desc-readerfeedback": "Grop dels messatges Meta que conten totes los messatges de l’extension MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-translate": "Grop dels messatges Meta que conten totes los messatges de l’extension MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]; familiarizatz-vos amb son [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossari]",

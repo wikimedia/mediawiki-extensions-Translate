@@ -41,6 +41,7 @@
 	"translate-group-desc-mediawikimostused": "此消息组包含在[[Translating:MediaWiki|MediaWiki]]使用的[https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500条最常用的消息]。",
 	"translate-group-desc-mifos": "[[Translating:Mifos|Mifos]]是一种小额信贷管理信息系统。",
 	"translate-group-desc-nfcring-control": "[[Translating:NFC_Ring_Control|NFC戒指控制]]是一个与NFC标签交互的手机应用程序",
+	"translate-group-desc-nocc": "[http://nocc.sourceforge.net NOCC] 是一个使用PHP编写的收发邮件客户端。请在[[Support|支持]]报告问题。",
 	"translate-group-desc-nodesc": "没有该信息组的说明",
 	"translate-group-desc-openimages-all": "这些消息属于[[Translating:Open Images|Open Images]]项目",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]]是基于Flash的OpenStreetMap编辑器。",

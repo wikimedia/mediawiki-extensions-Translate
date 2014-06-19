@@ -47,6 +47,7 @@
 	"translate-group-desc-mediawikimostused": "Ce groupe de messages contient les [//translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 messages les plus souvent utilisés] dans [[Translating:MediaWiki|MediaWiki]].",
 	"translate-group-desc-mifos": "[[Translating:Mifos|Mifos]] est un système de gestion de l’information pour la microfinance",
 	"translate-group-desc-nfcring-control": "[[Translating:NFC_Ring_Control|NFC Ring Control]] est une application mobile pour interagir avec les balises NFC",
+	"translate-group-desc-nocc": "[http://nocc.sourceforge.net NOCC] est un client webmail écrit en PHP. Rapportez tous les problèmes sur [[Support]].",
 	"translate-group-desc-nodesc": "Aucune description n’est disponible pour ce groupe de messages",
 	"translate-group-desc-openimages-all": "Ces messages font partie du [[Translating:Open Images|Projet Open Images]]",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] est un éditeur OpenStreetMap basé sur du flash",

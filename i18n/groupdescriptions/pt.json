@@ -35,6 +35,7 @@
 	"translate-group-desc-mediawikiextensions": "Este meta-grupo contém todas as mensagens para as extensões do [[Translating:MediaWiki|MediaWiki]] suportadas",
 	"translate-group-desc-mediawikimostused": "Este grupo de mensagens contém as [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mensagens mais frequentemente utilizadas] no [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mifos": "[[Translating:Mifos|Mifos]] é um sistema de informação de gestão (MIS) para microfinanças",
+	"translate-group-desc-nocc": "O [http://nocc.sourceforge.net NOCC] é um cliente de email escrito em PHP. Por favor reporte quaisquer problemas em [[Support]].",
 	"translate-group-desc-nodesc": "Não existe descrição para este grupo de mensagens",
 	"translate-group-desc-openimages-all": "Estas mensagens fazem parte do projeto [[Translating:Open Images|Open Images]]",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] é um editor do OpenStreetMap baseado em Flash",

@@ -17,6 +17,7 @@
 	"translate-group-desc-mediawikicore": "Táto skupina správ obsahuje správy použité v aktuálnej alfa verzii MediaWiki ({{CURRENTVERSION}})",
 	"translate-group-desc-mediawikiextensions": "Metaskupina správ obsahujúca všetky správy podporovaných rozšírení MediaWiki",
 	"translate-group-desc-mediawikimostused": "Táto skupina správ obsahuje [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najpoužívanejších správ] v MediaWiki",
+	"translate-group-desc-nocc": "[http://nocc.sourceforge.net NOCC] je webmailový klient napísaný v PHP. Akékoľvek problémy hláste na [[Support|stránke Podpory]].",
 	"translate-group-desc-readerfeedback": "Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-translate": "Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki [https://www.mediawiki.org/wiki/Extension:Translate Translate]",
 	"translate-group-desc-wikiaextensions": "Metaskupina správ obsahujúca všetky správy rozšírenia MediaWiki, ktoré používa [http://www.wikia.com Wikia]",
