@@ -6,11 +6,14 @@
  * @author Santhosh Thottingal
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2012 Santhosh Thottingal, Niklas Laxström, Siebrand Mazeland
+ * @author Kunal Grover
+ * @copyright Copyright © 2012 Santhosh Thottingal, Niklas Laxström, Siebrand Mazeland, Kunal Grover
  * @license GPL-2.0+
  */
 
 class SpecialAggregateGroups extends TranslateSpecialPage {
+	protected $hasPermission = 0;
+
 	function __construct() {
 		parent::__construct( 'AggregateGroups', 'translate-manage' );
 	}
@@ -21,9 +24,8 @@ class SpecialAggregateGroups extends TranslateSpecialPage {
 		$out = $this->getOutput();
 
 		// Check permissions
-		// @todo Allow read only for other users
-		if ( !$this->getUser()->isAllowed( 'translate-manage' ) ) {
-			throw new PermissionsError( 'translate-manage' );
+		if ( $this->getUser()->isAllowed( 'translate-manage' ) ) {
+			$this->hasPermission = true;
 		}
 
 		$groups = MessageGroups::getAllGroups();
@@ -71,8 +73,64 @@ class SpecialAggregateGroups extends TranslateSpecialPage {
 
 		$out .= $div;
 
-		$edit = Html::element( 'span', array( 'class' => 'tp-aggregate-edit-ag-button' ) );
-		$remove = Html::element( 'span', array( 'class' => 'tp-aggregate-remove-ag-button' ) );
+		$edit = '';
+		$remove = '';
+		$editGroup = '';
+		$select = '';
+		$addButton = '';
+
+		// Add divs for editing Aggregate Groups
+		if ( $this->hasPermission ) {
+			// Group edit and remove buttons
+			$edit = Html::element( 'span', array( 'class' => 'tp-aggregate-edit-ag-button' ) );
+			$remove = Html::element( 'span', array( 'class' => 'tp-aggregate-remove-ag-button' ) );
+
+			// Edit group div
+			$editGroupNameLabel = $this->msg( 'tpt-aggregategroup-edit-name' )->escaped();
+			$editGroupName = Html::input(
+				'tp-agg-name',
+				$label,
+				'text',
+				array( 'class' => 'tp-aggregategroup-edit-name', 'maxlength' => '200' )
+			);
+			$editGroupDescriptionLabel = $this->msg( 'tpt-aggregategroup-edit-description' )->escaped();
+			$editGroupDescription = Html::input(
+				'tp-agg-desc',
+				$desc,
+				'text',
+				array( 'class' => 'tp-aggregategroup-edit-description' )
+			);
+			$saveButton = Xml::submitButton(
+				$this->msg( 'tpt-aggregategroup-update' )->text(),
+				array( 'class' => 'tp-aggregategroup-update' )
+			);
+			$cancelButton = Xml::submitButton(
+				$this->msg( 'tpt-aggregategroup-update-cancel' )->text(),
+				array( 'class' => 'tp-aggregategroup-update-cancel' )
+			);
+			$editGroup = Html::rawElement(
+				'div',
+				array(
+					'class' => 'tp-edit-group hidden'
+				),
+				$editGroupNameLabel .
+				$editGroupName . '<br />' .
+				$editGroupDescriptionLabel .
+				$editGroupDescription .
+				$saveButton .
+				$cancelButton
+			);
+
+			// Subgroups selector
+			$select = $this->getGroupSelector( $pages, $group )->getHtml();
+			$addButton = Html::element( 'input',
+				array( 'type' => 'button',
+					'value' => $this->msg( 'tpt-aggregategroup-add' )->text(),
+					'class' => 'tp-aggregate-add-button' )
+			);
+		}
+
+		// Aggregate Group info div
 		$groupName = Html::rawElement( 'h2',
 			array( 'class' => 'tp-name' ),
 			htmlspecialchars( $label ). $edit . $remove
@@ -88,54 +146,9 @@ class SpecialAggregateGroups extends TranslateSpecialPage {
 		);
 
 		$out .= $groupInfo;
-
-		$editGroupNameLabel = $this->msg( 'tpt-aggregategroup-edit-name' )->escaped();
-		$editGroupName = Html::input(
-			'tp-agg-name',
-			$label,
-			'text',
-			array( 'class' => 'tp-aggregategroup-edit-name', 'maxlength' => '200' )
-		);
-		$editGroupDescriptionLabel = $this->msg( 'tpt-aggregategroup-edit-description' )->escaped();
-		$editGroupDescription = Html::input(
-			'tp-agg-desc',
-			$desc,
-			'text',
-			array( 'class' => 'tp-aggregategroup-edit-description' )
-		);
-		$saveButton = Xml::submitButton(
-			$this->msg( 'tpt-aggregategroup-update' )->text(),
-			array( 'class' => 'tp-aggregategroup-update' )
-		);
-		$cancelButton = Xml::submitButton(
-			$this->msg( 'tpt-aggregategroup-update-cancel' )->text(),
-			array( 'class' => 'tp-aggregategroup-update-cancel' )
-		);
-		$editGroup = Html::rawElement(
-			'div',
-			array(
-				'class' => 'tp-edit-group hidden'
-			),
-			$editGroupNameLabel .
-			$editGroupName . '<br />' .
-			$editGroupDescriptionLabel .
-			$editGroupDescription .
-			$saveButton .
-			$cancelButton
-		);
-
 		$out .= $editGroup;
-
 		$out .= $this->listSubgroups( $group );
-		$select = $this->getGroupSelector( $pages, $group );
-
-		$out .= $select->getHtml();
-		$addButton = Html::element( 'input',
-			array( 'type' => 'button',
-				'value' => $this->msg( 'tpt-aggregategroup-add' )->text(),
-				'class' => 'tp-aggregate-add-button' )
-		);
-		$out .= $addButton;
+		$out .= $select . $addButton;
 		$out .= "</div>";
 		return $out;
 	}
@@ -155,37 +168,39 @@ class SpecialAggregateGroups extends TranslateSpecialPage {
 			$out->addHTML( $this->showAggregateGroup( $group, $pages ) );
 		}
 
-		// Add new group
-		$out->addHtml( Html::element( 'input', array(
-			'type' => 'hidden',
-			'id' => 'token',
-			'value' => ApiAggregateGroups::getToken()
-		) ) );
-		$out->addHtml( "<br/><a class='tpt-add-new-group' href='#'>" .
-			$this->msg( 'tpt-aggregategroup-add-new' )->escaped() .
-			"</a>" );
-		$newGroupNameLabel = $this->msg( 'tpt-aggregategroup-new-name' )->escaped();
-		$newGroupName = Html::element(
-			'input',
-			array( 'class' => 'tp-aggregategroup-add-name', 'maxlength' => '200' )
-		);
-		$newGroupDescriptionLabel = $this->msg( 'tpt-aggregategroup-new-description' )->escaped();
-		$newGroupDescription = Html::element( 'input',
-			array( 'class' => 'tp-aggregategroup-add-description' )
-		);
-		$saveButton = Html::element( 'input', array(
-			'type' => 'button',
-			'value' => $this->msg( 'tpt-aggregategroup-save' )->text(),
-			'id' => 'tpt-aggregategroups-save',
-			'class' => 'tp-aggregate-save-button'
-		) );
-		$newGroupDiv = Html::rawElement(
-			'div',
-			array( 'class' => 'tpt-add-new-group hidden' ),
-			"$newGroupNameLabel $newGroupName<br />" .
+		// Add new group if user has permissions
+		if ( $this->hasPermission ) {
+			$out->addHtml( Html::element( 'input', array(
+				'type' => 'hidden',
+				'id' => 'token',
+				'value' => ApiAggregateGroups::getToken()
+			) ) );
+			$out->addHtml( "<br/><a class='tpt-add-new-group' href='#'>" .
+				$this->msg( 'tpt-aggregategroup-add-new' )->escaped() .
+				"</a>" );
+			$newGroupNameLabel = $this->msg( 'tpt-aggregategroup-new-name' )->escaped();
+			$newGroupName = Html::element(
+				'input',
+				array( 'class' => 'tp-aggregategroup-add-name', 'maxlength' => '200' )
+			);
+			$newGroupDescriptionLabel = $this->msg( 'tpt-aggregategroup-new-description' )->escaped();
+			$newGroupDescription = Html::element( 'input',
+				array( 'class' => 'tp-aggregategroup-add-description' )
+			);
+			$saveButton = Html::element( 'input', array(
+				'type' => 'button',
+				'value' => $this->msg( 'tpt-aggregategroup-save' )->text(),
+				'id' => 'tpt-aggregategroups-save',
+				'class' => 'tp-aggregate-save-button'
+			) );
+			$newGroupDiv = Html::rawElement(
+				'div',
+				array( 'class' => 'tpt-add-new-group hidden' ),
+				"$newGroupNameLabel $newGroupName<br />" .
 				"$newGroupDescriptionLabel $newGroupDescription<br />$saveButton"
-		);
-		$out->addHtml( $newGroupDiv );
+			);
+			$out->addHtml( $newGroupDiv );
+		}
 	}
 
 	/**
@@ -213,12 +228,15 @@ class SpecialAggregateGroups extends TranslateSpecialPage {
 		}
 
 		foreach ( $subgroups as $id => $group ) {
-			$remove = Html::element( 'span',
-				array(
-					'class' => 'tp-aggregate-remove-button',
-					'data-groupid' => $id,
-				)
-			);
+			$remove = '';
+			if ( $this->hasPermission ) {
+				$remove = Html::element( 'span',
+					array(
+						'class' => 'tp-aggregate-remove-button',
+						'data-groupid' => $id,
+					)
+				);
+			}
 
 			if ( $group ) {
 				$text = Linker::linkKnown( $group->getTitle() );
