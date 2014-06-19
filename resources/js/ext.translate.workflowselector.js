@@ -142,6 +142,7 @@
 				instance.changeState( state )
 					.done( function () {
 						instance.receiveState( instance.groupId, instance.language, state );
+						instance.display();
 					} )
 					.fail( function () {
 						window.alert( 'Change of state failed' );
