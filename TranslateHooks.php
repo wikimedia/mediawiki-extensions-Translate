@@ -505,7 +505,7 @@ class TranslateHooks {
 	}
 
 	/**
-	 * Hooks: AdminLinks
+	 * Hook: AdminLinks
 	 */
 	public static function onAdminLinks( &$tree ) {
 		global $wgTranslateUseSandbox;
@@ -520,7 +520,7 @@ class TranslateHooks {
 	}
 
 	/**
-	 * Hooks: AbortEmailNotification
+	 * Hook: AbortEmailNotification
 	 *
 	 * False aborts the email.
 	 */
