@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_206e26c5",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-19T21:27:34Z",
+      "side": 1,
+      "message": "php has booleans ;)",
+      "revId": "c6f707b642e28dcf51eb6e9d2204b370a1a7e982",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
