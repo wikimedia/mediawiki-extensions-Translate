@@ -36,6 +36,8 @@
 
 			// Only if groupId changes, fetch the new states
 			if ( instance.groupId === groupId ) {
+				// But update the display
+				instance.display();
 				return;
 			}
 
@@ -142,7 +144,6 @@
 				instance.changeState( state )
 					.done( function () {
 						instance.receiveState( instance.groupId, instance.language, state );
-						instance.display();
 					} )
 					.fail( function () {
 						window.alert( 'Change of state failed' );
