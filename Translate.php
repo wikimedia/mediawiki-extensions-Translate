@@ -91,9 +91,6 @@ $GLOBALS['wgSpecialPages']['ManageMessageGroups'] = 'SpecialManageGroups';
 $GLOBALS['wgSpecialPageGroups']['ManageMessageGroups'] = 'wiki';
 $GLOBALS['wgSpecialPages']['SupportedLanguages'] = 'SpecialSupportedLanguages';
 $GLOBALS['wgSpecialPageGroups']['SupportedLanguages'] = 'wiki';
-
-// Unlisted special page; does not need $wgSpecialPageGroups.
-$GLOBALS['wgSpecialPages']['MyLanguage'] = 'SpecialMyLanguage';
 $GLOBALS['wgSpecialPages']['AggregateGroups'] = 'SpecialAggregateGroups';
 $GLOBALS['wgSpecialPageGroups']['AggregateGroups'] = 'wiki';
 $GLOBALS['wgSpecialPages']['SearchTranslations'] = 'SpecialSearchTranslations';
@@ -182,8 +179,6 @@ $GLOBALS['wgHooks']['ArticleContentOnDiff'][] = 'TranslateEditAddons::displayOnD
 $GLOBALS['wgHooks']['SpecialSearchProfiles'][] = 'TranslateHooks::searchProfile';
 $GLOBALS['wgHooks']['SpecialSearchProfileForm'][] = 'TranslateHooks::searchProfileForm';
 $GLOBALS['wgHooks']['SpecialSearchSetupEngine'][] = 'TranslateHooks::searchProfileSetupEngine';
-
-$GLOBALS['wgHooks']['LinkBegin'][] = 'SpecialMyLanguage::linkfix';
 
 // Stats table manipulation
 $GLOBALS['wgHooks']['Translate:MessageGroupStats:isIncluded'][] =
