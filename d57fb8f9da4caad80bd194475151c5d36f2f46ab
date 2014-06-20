@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_8ce989a9",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-06-20T15:36:43Z",
+      "side": 1,
+      "message": "The second \u003ctranslate\u003e is not ok if it\u0027s at the end of the page, would cause unbalanced tags.",
+      "range": {
+        "startLine": 113,
+        "startChar": 29,
+        "endLine": 113,
+        "endChar": 40
+      },
+      "revId": "d57fb8f9da4caad80bd194475151c5d36f2f46ab",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
