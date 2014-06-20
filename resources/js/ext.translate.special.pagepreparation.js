@@ -49,8 +49,8 @@
 	}
 
 	/**
-	 * Remove all the <translate> tags before preparing the page. The
-	 * tool will add them back wherever needed.
+	 * Remove all the <translate> tags and {{translation}} templates before
+	 * preparing the page. The tool will add them back wherever needed.
 	 * @param {string} pageContent
 	 * @return {string}
 	 */
@@ -71,6 +71,32 @@
 		}
 		pageContent = pageContent.replace( /\{\{languages.*?\}\}/gi, '' );
 		return pageContent;
+	}
+
+	/**
+	 * Add <translate> tags around Categories to make them a part of the page template
+	 * and tag them with the {{translation}} template.
+	 * @param {string} pageContent
+	 * @return {jQuery.Promise}
+	 */
+	function doCategories( pageContent ) {
+		return getNamespaceAliases( 14 ).then( function ( aliases ) {
+			var aliasList, categoryRegex;
+
+			aliases.push( 'category' );
+			for ( var i = 0; i < aliases.length; i++ ) {
+				aliases[i] = $.escapeRE( aliases[i] );
+			}
+
+			aliasList = aliases.join( '|' );
+			// Regex: http://regex101.com/r/sJ3gZ4/2
+			categoryRegex = new RegExp( '\\[\\[((' + aliasList + ')' +
+				':[^\\|]+)(\\|[^\\|]*?)?\\]\\]', 'gi' );
+			pageContent = pageContent.replace( categoryRegex, '\n</translate>\n' +
+				'[[$1{{#translation:}}$3]]\n<translate>\n' );
+
+			return pageContent;
+		} );
 	}
 
 	/**
@@ -156,7 +182,7 @@
 	 * @return {jQuery.Promise}
 	 */
 	function doFiles( pageContent ) {
-		getNamespaceAliases( 6 ).then( function ( aliases ) {
+		return getNamespaceAliases( 6 ).then( function ( aliases ) {
 			var aliasList, captionFilesRegex, fileRegex;
 
 			aliases.push( 'file' );
@@ -300,7 +326,9 @@
 				pageContent = addNewLines( pageContent );
 				pageContent = fixInternalLinks( pageContent );
 				pageContent = doTemplates( pageContent );
-				doFiles( pageContent ).done( function( pageContent ) {
+				doFiles( pageContent )
+				.then( doCategories )
+				.done( function( pageContent ) {
 					pageContent = postPreparationCleanup( pageContent );
 					pageContent = $.trim( pageContent );
 					getDiff( pageName, pageContent ).done( function ( diff ) {
