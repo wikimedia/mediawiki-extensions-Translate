@@ -22,6 +22,24 @@
       "revId": "d57fb8f9da4caad80bd194475151c5d36f2f46ab",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_4c95e1e5",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-20T15:57:08Z",
+      "side": 1,
+      "message": "Nope, it wont unbalance. A \u003c/translate\u003e is added at the end of the page in addTranslateTags(). And \u003ctranslate\u003e(\\n*)\u003c/translate\u003e tags are removed after preparation.",
+      "parentUuid": "ee391fd1_8ce989a9",
+      "revId": "d57fb8f9da4caad80bd194475151c5d36f2f46ab",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
