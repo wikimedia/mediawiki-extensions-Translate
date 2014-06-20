@@ -11,7 +11,8 @@
 			"Tvdm",
 			"User555",
 			"Wiki13",
-			"Mar(c)"
+			"Mar(c)",
+			"Southparkfan"
 		]
 	},
 	"translate": "Vertalen",
@@ -384,6 +385,7 @@
 	"tux-editor-expand-tooltip": "Uitvouwen",
 	"tux-editor-collapse-tooltip": "Inklappen",
 	"tux-editor-message-tools-history": "Geschiedenis",
+	"tux-editor-message-tools-delete": "Verwijderen",
 	"tux-editor-message-tools-translations": "Alle vertalingen",
 	"tux-editor-loading": "Bezig met laden…",
 	"translate-search-more-languages-info": "Nog $1 {{PLURAL:$1|taal|talen}}",

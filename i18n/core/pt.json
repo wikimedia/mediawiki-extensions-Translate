@@ -385,6 +385,7 @@
 	"tux-editor-expand-tooltip": "Expandir",
 	"tux-editor-collapse-tooltip": "Recolher",
 	"tux-editor-message-tools-history": "Histórico",
+	"tux-editor-message-tools-delete": "Eliminar",
 	"tux-editor-message-tools-translations": "Todas as traduções",
 	"tux-editor-loading": "A carregar…",
 	"translate-search-more-languages-info": "mais $1 {{PLURAL:$1|língua|línguas}}",

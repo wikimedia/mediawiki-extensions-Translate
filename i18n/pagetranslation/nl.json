@@ -88,6 +88,10 @@
 	"tpt-aggregategroup-new-description": "Beschrijving (optioneel):",
 	"tpt-aggregategroup-remove-confirm": "Weet u zeker dat u deze samengestelde groep wilt verwijderen?",
 	"tpt-aggregategroup-invalid-group": "De groep bestaat niet",
+	"tpt-aggregategroup-edit-name": "Naam:",
+	"tpt-aggregategroup-edit-description": "Beschrijving:",
+	"tpt-aggregategroup-update": "Opslaan",
+	"tpt-aggregategroup-update-cancel": "Annuleren",
 	"pt-parse-open": "Ongebalanceerd label &lt;translate>.\nVertaalsjabloon: <pre>$1</pre>",
 	"pt-parse-close": "Ongebalanceerd label &lt;translate>.\nVertaalsjabloon: <pre>$1</pre>",
 	"pt-parse-nested": "Geneste vertaaleenheden met &lt;translate> zijn niet toegestaan.\nLabeltekst: <pre>$1</pre>",
@@ -160,7 +164,12 @@
 	"pt-deletepage-lang-logreason": "Onderdeel van de vertaalde pagina $1.",
 	"pt-deletepage-started": "Controleer het [[Special:Log/pagetranslation|Logboek paginavertaling]] op fouten en of de opdracht is afgerond.",
 	"pt-deletepage-intro": "Via deze pagina kunt u vertaalbare pagina's of vertaalde pagina's in een taal verwijderen.\nHet verwijderen vindt niet per direct plaats, omdat het mogelijk is dat vele pagina's verwijderd moeten worden.\nFouten worden opgenomen in het [[Special:Log/pagetranslation|Logboek paginavertaling]] en deze moeten handmatig gecorrigeerd worden.",
+	"pm-import-button-label": "Importeren",
 	"pm-savepages-button-label": "Opslaan",
 	"pm-cancel-button-label": "Annuleren",
-	"pm-langcode-placeholder": "Taalcode"
+	"pm-pagename-placeholder": "Geef de paginanaam op",
+	"pm-langcode-placeholder": "Taalcode",
+	"pm-page-does-not-exist": "$1 bestaat niet",
+	"pm-old-translations-missing": "$1 bevat geen oude vertalingen",
+	"tpt-translate-title": "Sta vertaling van de paginanaam toe"
 }

@@ -11,18 +11,19 @@
 			"Vivaelcelta",
 			"Fitoschido",
 			"Vfrico",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Themasterriot"
 		]
 	},
 	"bw-desc-freecol": "Antes de traducir FreeCol a tu idioma, por favor lee [[Translating:FreeCol]]. Freecol usa la licencia GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], un foro web escrito en PHP.",
-	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] es un sistema de corrección de errores libre basado en web. Por favor reporta cualquier problema en [[Support]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] es un sistema de corrección de errores libre basado en la web.",
 	"bw-desc-mwlibrl": "'''mwlib.rl''' es una biblioteca python para escribir documentos PDF de artículos MediaWiki los cuales fueron analizados por la biblioteca mwlib.\n\nPor favor mira [[mw:Extension:PDF_Writer]] y http://code.pediapress.com/wiki/wiki/mwlibrl para mayor información.",
 	"bw-desc-openstreetmap": "Grupo de mensajes para todos los mensajes de [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Este grupo de mensajes contiene los mensajes de interfaz para [[Translating:Open Street Map|Open Street Map]]",
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] es capaz de encontrar rápidamente los autores de una página en una wiki de Wikimedia.",
 	"translate-group-desc-blockly": "Grupo de mensajes de [[Translating:Blockly|Blockly]]",
-	"translate-group-desc-collection": "Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
+	"translate-group-desc-collection": "Grupo de mensajes Meta conteniendo todos los mensajes para la extensión MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection]",
 	"translate-group-desc-eol": "Grupo de mensajes de la [[Translating:EOL|Enciclopedia de la vida]]",
 	"translate-group-desc-flaggedrevs": "Grupo de mensajes que contiene todos los mensajes de la extensión de MediaWiki [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
 	"translate-group-desc-ihris": "Un grupo de mensajes de [[Translating:iHRIS|iHRIS]]",

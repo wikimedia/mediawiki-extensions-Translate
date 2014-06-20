@@ -409,6 +409,7 @@
 	"tux-editor-expand-tooltip": "Développer",
 	"tux-editor-collapse-tooltip": "Replier",
 	"tux-editor-message-tools-history": "Historique",
+	"tux-editor-message-tools-delete": "Supprimer",
 	"tux-editor-message-tools-translations": "Toutes les traductions",
 	"tux-editor-loading": "Chargement en cours…",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|langue supplémentaire|langues supplémentaires}}",

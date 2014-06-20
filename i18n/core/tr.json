@@ -12,7 +12,8 @@
 			"Rapsar",
 			"Srhat",
 			"Suelnur",
-			"Vito Genovese"
+			"Vito Genovese",
+			"Sayginer"
 		]
 	},
 	"translate": "Çevir",
@@ -365,6 +366,7 @@
 	"tux-editor-expand-tooltip": "Genişlet",
 	"tux-editor-collapse-tooltip": "Daralt",
 	"tux-editor-message-tools-history": "Geçmiş",
+	"tux-editor-message-tools-delete": "Sil",
 	"tux-editor-message-tools-translations": "Bütün çeviriler",
 	"tux-editor-loading": "Yükleniyor...",
 	"translate-search-more-languages-info": "$1 tane daha {{PLURAL:$1|dil|dil}}",

@@ -393,6 +393,7 @@
 	"tux-editor-expand-tooltip": "Ausklappen",
 	"tux-editor-collapse-tooltip": "Einklappen",
 	"tux-editor-message-tools-history": "Versionsgeschichte",
+	"tux-editor-message-tools-delete": "Löschen",
 	"tux-editor-message-tools-translations": "Alle Übersetzungen",
 	"tux-editor-loading": "Lade …",
 	"translate-search-more-languages-info": "{{PLURAL:$1|Eine weitere Sprache|$1 weitere Sprachen}}",

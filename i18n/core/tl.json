@@ -285,5 +285,6 @@
 	"translate-dynagroup-byc": "Salinwikang ginawa ni {{GENDER:$1|$1}} ($2)",
 	"translate-dynagroup-last": "Pinakahuling pagbago ni {{GENDER:$1|$1}}",
 	"translate-dynagroup-lastc": "Pinakahuling pagbago ni {{GENDER:$1|$1}} ($2)",
-	"translate-gethelp": "Tulong"
+	"translate-gethelp": "Tulong",
+	"tux-editor-message-tools-delete": "Burahin"
 }

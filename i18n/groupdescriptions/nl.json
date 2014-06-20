@@ -6,7 +6,8 @@
 			"SPQRobin",
 			"Siebrand",
 			"Arent",
-			"Mar(c)"
+			"Mar(c)",
+			"Southparkfan"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] is a beurtgebaseerd strategiespel",
@@ -35,13 +36,14 @@
 	"translate-group-desc-mediawikimostused": "Deze berichtengroep bevat de [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 meest gebruikte berichten] in [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mifos": "[[Translating:Mifos|Mifos]] is een beheersysteem voor microfinanciering",
 	"translate-group-desc-nfcring-control": "[[Translating:NFC_Ring_Control|NFC Ring Control]] is een mobiele app voor interactie met NFC-tags",
+	"translate-group-desc-nocc": "[[Translating:NOCC|NOCC]] is een webmailclient",
 	"translate-group-desc-nodesc": "Er is geen beschrijving beschikbaar voor deze berichtengroep",
 	"translate-group-desc-openimages-all": "Deze berichten zijn onderdeel van het project [[Translating:Open Images|Open Beelden]]",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch 2]] is een Flash-gebaseerde OpenStreetMap-bewerker",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] is een verzameling hulpprogramma's om Wikipedia mee te bewerken",
 	"translate-group-desc-readerfeedback": "Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-semantic": "Metaberichtengroep die alle berichten bevat voor uitbreidingen voor [https://semantic-mediawiki.org/ Semantische MediaWiki]",
-	"translate-group-desc-sharelatex": "Een berichtengroep voor [[Translating:ShareLaTeX|ShareLaTeX]], een LaTeX-editor",
+	"translate-group-desc-sharelatex": "Een berichtengroep voor [[Translating:ShareLaTeX|ShareLaTeX]], een web-gebasseerde LaTeX-editor",
 	"translate-group-desc-translatablepages": "Alle te vertalen pagina's",
 	"translate-group-desc-translate": "Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]; stel uzelf op de hoogte van de [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary woordenlijst]",
 	"translate-group-desc-tsint": "Een berichtengroep voor [[Translating:Intuition|Intuition]], het i18n-systeem voor [//toolserver.org Toolserverprogramma's] (<span class=\"plainlinks\">[[Translating talk:Intuition|ondersteuning]]</span>)",

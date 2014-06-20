@@ -374,6 +374,7 @@
 	"tux-editor-expand-tooltip": "Opklappen",
 	"tux-editor-collapse-tooltip": "Zesummeklappen",
 	"tux-editor-message-tools-history": "Versiounen",
+	"tux-editor-message-tools-delete": "Läschen",
 	"tux-editor-message-tools-translations": "All Iwwersetzungen",
 	"tux-editor-loading": "Lueden...",
 	"translate-search-more-languages-info": "{{PLURAL:$1|Eng Sprooch|$1 Sprooche}} méi",
