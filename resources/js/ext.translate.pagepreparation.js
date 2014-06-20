@@ -22,14 +22,15 @@
 	}
 
 	/**
-	 * Remove all the <translate> tags before preparing the page. The
-	 * tool will add them back wherever needed.
+	 * Remove all the <translate> tags and {{translation}} templates before
+	 * preparing the page. The tool will add them back wherever needed.
 	 * @param {string} pageContent
 	 * @return {string} pageContent
 	 */
 	function cleanupTags( pageContent ) {
 		pageContent = pageContent.replace( /<translate>\n?/gi, '' );
 		pageContent = pageContent.replace( /<\/translate>\n?/gi, '' );
+		pageContent = pageContent.replace( /\{\{translation\}\}/gi, '' );
 		return pageContent;
 	}
 
@@ -94,6 +95,22 @@
 		// mainspace.
 		// Regex : http://regex101.com/r/zZ9jH9
 		pageContent = pageContent.replace( linkPrefixRegex, '[[Special:MyLanguage/$1]]' );
+		return pageContent;
+	}
+
+	/**
+	 * Add <translate> tags around Categories to make them a part of the page template
+	 * and tag them with the {{translation}} template.
+	 * @param {string} pageContent
+	 * @return {string} pageContent
+	 */
+	function fixCategories( pageContent ) {
+		var categoryRegex;
+
+		// Regex: http://regex101.com/r/sJ3gZ4
+		categoryRegex = new RegExp( /\[\[(Category:[^|]+)(\|[^|]*?)?\]\]/gi );
+		pageContent = pageContent.replace( categoryRegex, '\n</translate>\n' +
+			'[[$1{{translation}}$2]]\n<translate>\n');
 		return pageContent;
 	}
 
@@ -197,6 +214,7 @@
 			pageContent = addNewLines( pageContent );
 			pageContent = fixFiles( pageContent );
 			pageContent = fixInternalLinks( pageContent );
+			pageContent = fixCategories( pageContent );
 			pageContent = postPreparationCleanup( pageContent );
 			pageContent = $.trim( pageContent );
 			savePage( pageName, pageContent ).done( function () {
