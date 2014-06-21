@@ -758,8 +758,7 @@ class PageTranslationHooks {
 
 	/// Hook: SpecialPage_initList
 	public static function replaceMovePage( &$list ) {
-		$old = is_array( $list['Movepage'] );
-		$list['Movepage'] = array( 'SpecialPageTranslationMovePage', $old );
+		$list['Movepage'] = 'SpecialPageTranslationMovePage';
 
 		return true;
 	}

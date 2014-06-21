@@ -59,9 +59,8 @@ class SpecialPageTranslationMovePage extends TranslateSpecialPage {
 	 */
 	protected $sectionPages = null;
 
-	public function __construct( $old ) {
+	public function __construct() {
 		parent::__construct( 'Movepage' );
-		$this->old = $old;
 	}
 
 	public function isListed() {
@@ -133,11 +132,8 @@ class SpecialPageTranslationMovePage extends TranslateSpecialPage {
 			}
 		} else {
 			// Delegate... don't want to reimplement this
-			if ( $this->old ) {
-				$this->doOldNormalMovePage();
-			} else {
-				$this->doNormalMovePage( $par );
-			}
+			$sp = new MovePageForm();
+			$sp->execute( $par );
 		}
 	}
 
@@ -169,25 +165,6 @@ class SpecialPageTranslationMovePage extends TranslateSpecialPage {
 
 		// Let the caller know it's safe to continue
 		return true;
-	}
-
-	protected function doNormalMovePage( $par ) {
-		$sp = new MovePageForm();
-		$sp->execute( $par );
-	}
-
-	protected function doOldNormalMovePage() {
-		$form = new MovePageForm( $this->oldTitle, $this->newTitle );
-		$request = $this->getRequest();
-
-		if ( 'submit' == $request->getVal( 'action' ) &&
-			$this->checkToken() &&
-			$request->wasPosted()
-		) {
-			$form->doSubmit();
-		} else {
-			$form->showForm( '' );
-		}
 	}
 
 	/**
