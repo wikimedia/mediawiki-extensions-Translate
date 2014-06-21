@@ -46,6 +46,12 @@ class TranslatablePage {
 	 */
 	protected $displayTitle = 'Page display title';
 
+	/**
+	 * Whether the title should be translated
+	 * @var bool
+	 */
+	protected $translateTitle;
+
 	protected $cachedParse;
 
 	/**
@@ -207,12 +213,40 @@ class TranslatablePage {
 		return MessageGroups::getGroup( $this->getMessageGroupId() );
 	}
 
+	/** Check whether title is marked for translation and cache the value
+	 * @return bool
+	 */
+	public function hasTranslateTitle() {
+		// Cached value
+		if( isset( $this->translateTitle ) ) {
+			return $this->translateTitle;
+		}
+
+		$this->translateTitle = true;
+
+		// Check if title section exists in list of sections
+		$previous = $this->getSections();
+		if ( $previous ) {
+			if ( !in_array( $this->displayTitle, $previous ) ) {
+				$this->translateTitle = false;
+			}
+		}
+
+		return $this->translateTitle;
+	}
+
 	/**
 	 * Get translated page title.
 	 * @param string $code Language code.
 	 * @return string|null
 	 */
 	public function getPageDisplayTitle( $code ) {
+		// Return null if title not marked for translation
+		if ( !$this->hasTranslateTitle() ) {
+			return null;
+		}
+
+		// Display title from DB
 		$section = str_replace( ' ', '_', $this->displayTitle );
 		$page = $this->getTitle()->getPrefixedDBKey();
 
@@ -631,9 +665,9 @@ class TranslatablePage {
 	/**
 	 * Returns a list section ids.
 	 * @return string[] List of string
-	 * @since 2012-08-06; Public since 2014.06
+	 * @since 2012-08-06
 	 */
-	public function getSections() {
+	protected function getSections() {
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array( 'trs_page' => $this->getTitle()->getArticleID() );
 		$res = $dbw->select( 'translate_sections', 'trs_key', $conds, __METHOD__ );
