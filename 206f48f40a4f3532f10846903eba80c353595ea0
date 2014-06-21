@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_2afb98df",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-21T11:53:07Z",
+      "side": 1,
+      "message": "That feels somewhat dangerous, in case the script does something wrong, people would need to fix it over and over and eventually just not use it. I hope that at least the unit identifiers are kept.",
+      "parentUuid": "ee391fd1_fd47b74e",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_1254aa55",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 9
