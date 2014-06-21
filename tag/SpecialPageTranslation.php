@@ -494,8 +494,7 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 
 		// Check whether page title was previously marked for translation.
 		// If the page is marked for translation the first time, default to checked.
-		$previous = $page->getSections();
-		$defaultChecked = !$previous || in_array( 'Page display title', $previous, true );
+		$defaultChecked = (bool)$page->getPageDisplayTitle( '' );
 
 		/**
 		 * @var TPSection $s

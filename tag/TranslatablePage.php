@@ -46,6 +46,12 @@ class TranslatablePage {
 	 */
 	protected $displayTitle = 'Page display title';
 
+	/**
+	 * Whether the title should be translated
+	 * @var bool
+	 */
+	protected $translateTitle = true;
+
 	protected $cachedParse;
 
 	/**
@@ -213,6 +219,23 @@ class TranslatablePage {
 	 * @return string|null
 	 */
 	public function getPageDisplayTitle( $code ) {
+		// Cached value
+		if( $this->translateTitle === false ) {
+			return $this->translateTitle;
+		}
+
+		// Don't display page title from DB if not marked for translation
+		if ( !in_array( $this->displayTitle, $this->getSections() ) ) {
+			$this->translateTitle = false;
+			return false;
+		}
+
+		// Support dummy code to check if title can be translated
+		if ( $code === '' ) {
+			return $this->translateTitle;
+		}
+
+		// Display title from DB
 		$section = str_replace( ' ', '_', $this->displayTitle );
 		$page = $this->getTitle()->getPrefixedDBKey();
 
@@ -631,9 +654,9 @@ class TranslatablePage {
 	/**
 	 * Returns a list section ids.
 	 * @return string[] List of string
-	 * @since 2012-08-06; Public since 2014.06
+	 * @since 2012-08-06
 	 */
-	public function getSections() {
+	protected function getSections() {
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array( 'trs_page' => $this->getTitle()->getArticleID() );
 		$res = $dbw->select( 'translate_sections', 'trs_key', $conds, __METHOD__ );
