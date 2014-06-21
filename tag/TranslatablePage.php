@@ -214,8 +214,13 @@ class TranslatablePage {
 	 */
 	public function getPageDisplayTitle( $code ) {
 		$section = str_replace( ' ', '_', $this->displayTitle );
-		$page = $this->getTitle()->getPrefixedDBKey();
 
+		// Don't display page title from DB if not marked for translation
+		if ( !in_array( $section, $this->getSections() ) ) {
+			return false;
+		}
+
+		$page = $this->getTitle()->getPrefixedDBKey();
 		return $this->getMessageGroup()->getMessage( "$page/$section", $code );
 	}
 
