@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_2b003903",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-22T17:22:10Z",
+      "side": 1,
+      "message": "This method is called a lot, and on each call we are doing a database query and slow in_array lookup. This is obvious if you enable debug comments (or the debug toolbar) and look at database queries.\n\nI would cache the value in $this-\u003epageDisplayTitle and return that if it is not null.\n\nThis will also never match, since the values in sections are using spaces instead of underscores.",
+      "revId": "065307a018ed957ea4dcaa18c03f84f7e395e74e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
