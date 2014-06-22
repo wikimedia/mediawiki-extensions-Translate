@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_65f43251",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-22T05:13:39Z",
+      "side": 1,
+      "message": "Yes, they are kept.",
+      "parentUuid": "ee391fd1_2afb98df",
+      "revId": "206f48f40a4f3532f10846903eba80c353595ea0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_1254aa55",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 9
