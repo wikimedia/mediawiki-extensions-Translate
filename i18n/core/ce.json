@@ -257,6 +257,7 @@
 	"tux-editor-expand-tooltip": "Схьаяста",
 	"tux-editor-collapse-tooltip": "Къайлаяккха",
 	"tux-editor-message-tools-history": "Истори",
+	"tux-editor-message-tools-delete": "ДӀаяккха",
 	"tux-editor-message-tools-translations": "Массо а гочдарш",
 	"tux-editor-loading": "Чуйолуш…",
 	"translate-search-more-languages-info": "кхин $1 {{PLURAL:$1|мотт|меттанаш}}",
