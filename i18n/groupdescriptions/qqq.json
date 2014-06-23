@@ -3,7 +3,8 @@
 		"authors": [
 			"Purodha",
 			"Shirayuki",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Siebrand"
 		]
 	},
 	"bw-desc-freecol": "{{doc-important|Do not translate the link target <code>Translating:FreeCol</code>.}}",
@@ -26,9 +27,10 @@
 	"translate-group-desc-mediawikimostused": "{{doc-important|Do not translate the link target <code>Translating:MediaWiki</code>.}}",
 	"translate-group-desc-mifos": "Do not translate the link target <code>Translating:Mifos</code>.",
 	"translate-group-desc-nfcring-control": "{{doc-important|Do not translate the link target <code>Translating:NFC Ring Control</code>.}}",
+	"translate-group-desc-nocc": "Do not translate the link target <code>Translating:NOCC</code>.",
 	"translate-group-desc-openimages-all": "Do not translate the link target <code>Translating:Open Images</code>.",
 	"translate-group-desc-potlatch2": "{{doc-important|Do not translate the link target <code>Translating:OpenStreetMap</code>.}}",
-	"translate-group-desc-pywikipedia": "Do not translate the link target <code>Translating:Pywikibot</code>.",
+	"translate-group-desc-pywikipedia": "{{doc-important|Do not translate the link target <code>Translating:Pywikibot</code>.}}",
 	"translate-group-desc-sharelatex": "{{doc-important|Do not translate the link target <code>Translating:ShareLaTeX</code>.}}",
 	"translate-group-desc-waymarked-trails": "{{doc-important|Do not translate the link target <code>Translating:Waymarked Trails</code>.}}",
 	"translate-group-desc-wikimedia-mobile-commons": "{{doc-important|Do not translate the link target <code>Translating:WikipediaMobile</code>.}}",

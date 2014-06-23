@@ -8,7 +8,7 @@
 	},
 	"bw-desc-freecol": "Trước khi dịch FreeCol ra ngôn ngữ của bạn, xin hãy đọc [[Translating:FreeCol]]. Freecol sử dụng giấy phép GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], một diễn đàn mạng được viết bằng PHP.",
-	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] là hệ thống miễn phí để theo dõi lỗi trên Web. Xin hãy báo cáo lỗi tại [[Support]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] là hệ thống theo dõi lỗi trên Web",
 	"bw-desc-mwlibrl": "'''mwlib.rl''' là một thư viện Python để tạo ra tài liệu PDF từ những bài MediaWiki được thư viện mwlib xử lý.\n\nXem thêm chi tiết tại [[MW:Extension:PDF Writer]] và http://code.pediapress.com/wiki/wiki/mwlibrl .",
 	"bw-desc-openstreetmap": "Nhóm thông điệp chứa các thông điệp của [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Nhóm thông điệp này chứa các thông điệp của giao diện [[Translating:OpenStreetMap|OpenStreetMap]].",

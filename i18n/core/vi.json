@@ -379,6 +379,7 @@
 	"tux-editor-expand-tooltip": "Mở rộng",
 	"tux-editor-collapse-tooltip": "Thu gọn",
 	"tux-editor-message-tools-history": "Lịch sử",
+	"tux-editor-message-tools-delete": "Xóa",
 	"tux-editor-message-tools-translations": "Tất cả các bản dịch",
 	"tux-editor-loading": "Đang tải…",
 	"translate-search-more-languages-info": "$1 ngôn ngữ khác",

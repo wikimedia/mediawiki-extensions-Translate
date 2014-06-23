@@ -392,6 +392,7 @@
 	"tux-editor-expand-tooltip": "Expandera",
 	"tux-editor-collapse-tooltip": "Göm",
 	"tux-editor-message-tools-history": "Historik",
+	"tux-editor-message-tools-delete": "Radera",
 	"tux-editor-message-tools-translations": "Alla översättningar",
 	"tux-editor-loading": "Läser in...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|till|fler}} språk",

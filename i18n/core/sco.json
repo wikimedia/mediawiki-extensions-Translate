@@ -324,6 +324,7 @@
 	"tux-editor-close-tooltip": "Claise",
 	"tux-editor-expand-tooltip": "Mak mair muckle",
 	"tux-editor-message-tools-history": "Histerie",
+	"tux-editor-message-tools-delete": "Delyte",
 	"tux-editor-message-tools-translations": "Aw owersets",
 	"tux-editor-loading": "Laidin...",
 	"translate-search-more-languages-info": "$1 mair {{PLURAL:$1|leid|leids}}",

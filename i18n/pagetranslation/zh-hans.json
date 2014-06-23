@@ -102,6 +102,10 @@
 	"tpt-aggregategroup-new-description": "说明 （可选）：",
 	"tpt-aggregategroup-remove-confirm": "确实要删除此聚合组吗？",
 	"tpt-aggregategroup-invalid-group": "组别不存在",
+	"tpt-aggregategroup-edit-name": "名称：",
+	"tpt-aggregategroup-edit-description": "说明：",
+	"tpt-aggregategroup-update": "保存",
+	"tpt-aggregategroup-update-cancel": "取消",
 	"pt-parse-open": "&lt;translate>标签不平衡。\n翻译模板：<pre>$1</pre>",
 	"pt-parse-close": "&lt;/translate>标签不平衡。\n翻译模板：<pre>$1</pre>",
 	"pt-parse-nested": "不允许嵌套&lt;translate>翻译单元。\n标签文本：$1",
@@ -187,5 +191,6 @@
 	"pm-langcode-missing": "请输入语言代码",
 	"pm-add-icon-hover-text": "往下面添加单位",
 	"pm-swap-icon-hover-text": "和下面的单位替换",
-	"pm-delete-icon-hover-text": "删除单位"
+	"pm-delete-icon-hover-text": "删除单位",
+	"tpt-translate-title": "允许页面标题的翻译"
 }

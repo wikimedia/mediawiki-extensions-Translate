@@ -15,10 +15,10 @@
 			"Stieizc"
 		]
 	},
-	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]]是一个回合制策略游戏",
+	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] 是一个回合制策略游戏",
 	"bw-desc-fudforum": "[[Translating:FUDforum|FUDforum]]是一个基于web的论坛讨论软件",
 	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]]是一个基于Web的程序错误追踪软件",
-	"bw-desc-mwlibrl": "[[Translating:Mwlib.rl|Mwlib.rl]]是用于从MediaWiki页面创建PDF文档的知识库",
+	"bw-desc-mwlibrl": "[[Translating:Mwlib.rl|Mwlib.rl]] 是用于从MediaWiki页面创建PDF文档的知识库",
 	"bw-desc-openstreetmap": "本组包含所有[[Translating:OpenStreetMap|OpenStreetMap]]信息",
 	"bw-desc-osm-site": "[[Translating:OpenStreetMap|OpenStreetMap]]是一个可编辑的世界地图",
 	"bw-desc-wikiblame": "[[Translating:WikiBlame|WikiBlame]]可以快速找到某维基媒体wiki中某页面的作者。",
@@ -41,8 +41,8 @@
 	"translate-group-desc-mediawikimostused": "此消息组包含在[[Translating:MediaWiki|MediaWiki]]使用的[https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500条最常用的消息]。",
 	"translate-group-desc-mifos": "[[Translating:Mifos|Mifos]]是一种小额信贷管理信息系统。",
 	"translate-group-desc-nfcring-control": "[[Translating:NFC_Ring_Control|NFC戒指控制]]是一个与NFC标签交互的手机应用程序",
-	"translate-group-desc-nocc": "[http://nocc.sourceforge.net NOCC] 是一个使用PHP编写的收发邮件客户端。请在[[Support|支持]]报告问题。",
-	"translate-group-desc-nodesc": "没有该信息组的说明",
+	"translate-group-desc-nocc": "[[Translating:NOCC|NOCC]] 是一个网络邮件客户端",
+	"translate-group-desc-nodesc": "没有该信息组的说明可用",
 	"translate-group-desc-openimages-all": "这些消息属于[[Translating:Open Images|Open Images]]项目",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]]是基于Flash的OpenStreetMap编辑器。",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]]是一个维基百科编辑工具集合。",

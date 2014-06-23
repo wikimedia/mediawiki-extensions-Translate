@@ -85,6 +85,10 @@
 	"tpt-aggregategroup-new-description": "Miêu tả (tùy chọn):",
 	"tpt-aggregategroup-remove-confirm": "Bạn có chắc muốn xóa nhóm hợp này?",
 	"tpt-aggregategroup-invalid-group": "Nhóm không tồn tại",
+	"tpt-aggregategroup-edit-name": "Tên:",
+	"tpt-aggregategroup-edit-description": "Miêu tả:",
+	"tpt-aggregategroup-update": "Lưu",
+	"tpt-aggregategroup-update-cancel": "Hủy bỏ",
 	"pt-parse-open": "Thẻ &lt;translate> không đều.\nBản mẫu thông dịch: <pre>$1</pre>",
 	"pt-parse-close": "Thẻ &lt;/translate> không đều.\nBản mẫu thông dịch: <pre>$1</pre>",
 	"pt-parse-nested": "Không được phép bỏ đơn vị dịch thuật &lt;translate> trong đơn vị dịch thuật khác.\nVăn bản thẻ: <pre>$1</pre>",
@@ -170,5 +174,6 @@
 	"pm-langcode-missing": "Vui lòng nhập mã ngôn ngữ",
 	"pm-add-icon-hover-text": "Thêm một đơn vị bên dưới",
 	"pm-swap-icon-hover-text": "Đổi chỗ với đơn vị bên dưới",
-	"pm-delete-icon-hover-text": "Xóa đơn vị"
+	"pm-delete-icon-hover-text": "Xóa đơn vị",
+	"tpt-translate-title": "Cho phép dịch tên trang"
 }

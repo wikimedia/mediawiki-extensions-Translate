@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Anshumangupta21"
+			"Anshumangupta21",
+			"Nepaboy"
 		]
 	},
 	"translate": "अनुवादन करीं",
@@ -48,5 +49,6 @@
 	"translate-magic-cm-export": "निर्यात",
 	"translate-magic-nothing-to-export": "निर्यात करै खातिर किछु नइखे बा।",
 	"translate-magic-cm-current": "वर्तमान",
-	"translate-magic-cm-original": "मूल"
+	"translate-magic-cm-original": "मूल",
+	"tux-editor-message-tools-delete": "मिटाईं"
 }
