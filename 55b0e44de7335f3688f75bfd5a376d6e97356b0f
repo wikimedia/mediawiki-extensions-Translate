@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_5f4b3763",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-23T14:30:46Z",
+      "side": 1,
+      "message": "This function is called from alignHeaders(), which is called in the .done of splitTranslationPage(). Do you want me to pass the length to this function from alignHeaders() instead?",
+      "parentUuid": "ee391fd1_f4433265",
+      "revId": "55b0e44de7335f3688f75bfd5a376d6e97356b0f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_3421baac",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-23T14:06:18Z",
       "side": 1,
       "message": "Would be nice if you made a unit test for this function. The test would also clarify what this does.",
+      "revId": "55b0e44de7335f3688f75bfd5a376d6e97356b0f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_3f4e3373",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-23T14:30:46Z",
+      "side": 1,
+      "message": "Okay, as a part of this or as a separate patch?",
+      "parentUuid": "ee391fd1_3421baac",
       "revId": "55b0e44de7335f3688f75bfd5a376d6e97356b0f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
