@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ee391fd1_e4f81be4",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-23T20:39:22Z",
+      "side": 1,
+      "message": "Length? translationUnits is the global, which should either be passed via function parameters or the code should be refactored into a class. First is probably less work.",
+      "parentUuid": "ee391fd1_5f4b3763",
+      "revId": "55b0e44de7335f3688f75bfd5a376d6e97356b0f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee391fd1_3421baac",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 5
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "Also, as it does not take any arguments and uses all globals, it is somewhat difficult to write a test for this or imitate it.",
       "parentUuid": "ee391fd1_3421baac",
+      "revId": "55b0e44de7335f3688f75bfd5a376d6e97356b0f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_c4fbd7dc",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-23T20:39:22Z",
+      "side": 1,
+      "message": "Yes exactly. The point of writing test is also to force you to refactor this function to not use globals so that you can actually test it easily.",
+      "parentUuid": "ee391fd1_fafe7965",
       "revId": "55b0e44de7335f3688f75bfd5a376d6e97356b0f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
