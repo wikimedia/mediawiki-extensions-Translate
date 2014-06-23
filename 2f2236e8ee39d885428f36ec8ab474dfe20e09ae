@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee391fd1_ae2af28c",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-23T19:33:53Z",
+      "side": 1,
+      "message": "/**\n * Description... (no need to mention about caching)\n *\n * @return bool\n * @since 2014.06\n */\n\nPlease make this either hasTranslatedTitle() or hasPageDisplayTitle() and change the variable name accordingly.",
+      "revId": "2f2236e8ee39d885428f36ec8ab474dfe20e09ae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_2e3722fe",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-23T19:33:53Z",
+      "side": 1,
+      "message": "if ( $this-\u003ename !\u003d\u003d null ) {",
+      "revId": "2f2236e8ee39d885428f36ec8ab474dfe20e09ae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee391fd1_8e0cce46",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-23T19:33:53Z",
+      "side": 1,
+      "message": "I would make this\nif ( $previous \u0026\u0026 in_array( $this-\u003edisplayTitle, $previous ) ) {\n...\n}",
+      "revId": "2f2236e8ee39d885428f36ec8ab474dfe20e09ae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
