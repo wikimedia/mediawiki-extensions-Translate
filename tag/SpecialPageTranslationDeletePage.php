@@ -134,8 +134,10 @@ class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
 			$this->displayRestrictionError();
 			return;
 		}
-		if ( !$this->getUser()->isAllowed( 'delete' ) ) {
-			throw new PermissionsError( 'delete', $permErrors );
+
+		$permissionErrors = $this->title->getUserPermissionsErrors( 'delete', $this->getUser() );
+		if ( count( $permissionErrors ) ) {
+			throw new PermissionsError( 'delete', $permissionErrors );
 		}
 
 		# Check for database lock
