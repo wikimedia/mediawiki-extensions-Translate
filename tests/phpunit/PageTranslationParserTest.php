@@ -37,7 +37,7 @@ class PageTranslationParserTest extends MediaWikiTestCase {
 		$pattern = $file;
 
 		if ( $filename === 'FailNotAtomic.ptfile' ) {
-			$this->markTestSkipped( 'Extented validation not yet implemented' );
+			$this->markTestSkipped( 'Extended validation not yet implemented' );
 		}
 
 		$failureExpected = strpos( $pagename, 'Fail' ) === 0;

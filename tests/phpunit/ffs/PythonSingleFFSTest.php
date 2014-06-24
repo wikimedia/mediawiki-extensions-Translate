@@ -40,10 +40,10 @@ class PythonSingleFFSTest extends MediaWikiTestCase {
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new PythonSingleFFS( $group );
 
-		$command = wfEscapeShellArg( "import simplejson as json; print 'mui'" );
+		$command = wfEscapeShellArg( "import json; print 'mui'" );
 		$ret = wfShellExec( "python -c $command" );
 		if ( trim( $ret ) !== 'mui' ) {
-			$this->markTestSkipped( 'Dependency python simplejson not installed' );
+			$this->markTestSkipped( 'Dependency python json not installed' );
 
 			return;
 		}
