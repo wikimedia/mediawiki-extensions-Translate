@@ -39,21 +39,21 @@
 }
 
 .mw-tpm-sp-action--delete {
-	background: url('../images/remove.png') transparent no-repeat;
-	background-image: linear-gradient(transparent, transparent), url('../images/remove.png');
-	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/remove.png');
+	background: url('../images/trash_darkgray.svg') transparent no-repeat;
+	background-image: linear-gradient(transparent, transparent), url('../images/trash_darkgray.svg');
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/trash_darkgray.svg');
 }
 
 .mw-tpm-sp-action--swap {
-	background: url('../images/label-clock.png') transparent no-repeat;
-	background-image: linear-gradient(transparent, transparent), url('../images/label-clock.png');
-	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/label-clock.png');
+	background: url('../images/switch.svg') transparent no-repeat;
+	background-image: linear-gradient(transparent, transparent), url('../images/switch.svg');
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/switch.svg');
 }
 
 .mw-tpm-sp-action--add {
-	background: url('../images/add.png') transparent no-repeat;
-	background-image: linear-gradient(transparent, transparent), url('../images/add.png');
-	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/add.png');
+	background: url('../images/plus_darkgray.svg') transparent no-repeat;
+	background-image: linear-gradient(transparent, transparent), url('../images/plus_darkgray.svg');
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/plus_darkgray.svg');
 }
 
 .mw-tpm-sp-error__message {
