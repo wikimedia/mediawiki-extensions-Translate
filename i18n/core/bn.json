@@ -246,6 +246,7 @@
 	"tux-editor-expand-tooltip": "প্রসারণ",
 	"tux-editor-collapse-tooltip": "সংকোচন",
 	"tux-editor-message-tools-history": "ইতিহাস",
+	"tux-editor-message-tools-delete": "অপসারণ",
 	"tux-editor-message-tools-translations": "সমস্ত অনুবাদসমূহ",
 	"tux-editor-loading": "লোডিং...",
 	"translate-search-more-languages-info": "আরও $1টি {{PLURAL:$1|ভাষা}}",

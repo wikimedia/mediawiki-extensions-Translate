@@ -30,5 +30,6 @@
 	"pm-pagename-placeholder": "Язъе агӀона цӀе",
 	"pm-langcode-placeholder": "Метта код",
 	"pm-old-translations-missing": "$1 шира гочдарш чохь дац",
-	"pm-pagename-missing": "Дехар до, дӀаязъе агӀона цӀе:"
+	"pm-pagename-missing": "Дехар до, дӀаязъе агӀона цӀе:",
+	"pm-langcode-missing": "Дехар до, меттан код язъе"
 }
