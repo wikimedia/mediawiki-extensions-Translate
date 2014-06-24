@@ -91,6 +91,10 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 			$users = $this->fetchTranslatorsPortal( $natives );
 		}
 
+		if ( $users === array() ) {
+			return;
+		}
+
 		$this->preQueryUsers( $users );
 
 		$usernames = array_keys( call_user_func_array( 'array_merge', array_values( $users ) ) );

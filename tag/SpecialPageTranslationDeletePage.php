@@ -134,14 +134,6 @@ class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
 			$this->displayRestrictionError();
 			return;
 		}
-		if ( !$this->getUser()->isAllowed( 'delete' ) ) {
-			throw new PermissionsError( 'delete', $permErrors );
-		}
-
-		# Check for database lock
-		if ( wfReadOnly() ) {
-			throw new ReadOnlyError;
-		}
 
 		if ( $this->title === null ) {
 			throw new ErrorPageError( 'notargettitle', 'notargettext' );
@@ -151,10 +143,14 @@ class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
 			throw new ErrorPageError( 'nopagetitle', 'nopagetext' );
 		}
 
-		# Check delete for this page
-		$permErrors = $this->title->getUserPermissionsErrors( 'delete', $this->getUser() );
-		if ( !empty( $permErrors ) ) {
-			throw new PermissionsError( 'delete', $permErrors );
+		$permissionErrors = $this->title->getUserPermissionsErrors( 'delete', $this->getUser() );
+		if ( count( $permissionErrors ) ) {
+			throw new PermissionsError( 'delete', $permissionErrors );
+		}
+
+		# Check for database lock
+		if ( wfReadOnly() ) {
+			throw new ReadOnlyError;
 		}
 
 		// Let the caller know it's safe to continue
