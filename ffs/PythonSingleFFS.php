@@ -102,7 +102,7 @@ class PythonSingleFFS extends SimpleFFS {
 		 */
 		$filename = $this->group->getSourceFilePath( 'mul' );
 		$filename = addcslashes( $filename, '\\"' );
-		$command = wfEscapeShellArg( "import simplejson as json; execfile(\"$filename\"); " .
+		$command = wfEscapeShellArg( "import json; execfile(\"$filename\"); " .
 			"print json.dumps(msg)" );
 		$json = wfShellExec( "python -c $command" );
 
