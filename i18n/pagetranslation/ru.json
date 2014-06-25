@@ -97,6 +97,10 @@
 	"tpt-aggregategroup-new-description": "Описание (необязательно):",
 	"tpt-aggregategroup-remove-confirm": "Вы правда хотите удалить агрегированную группу?",
 	"tpt-aggregategroup-invalid-group": "Группа не существует.",
+	"tpt-aggregategroup-edit-name": "Имя:",
+	"tpt-aggregategroup-edit-description": "Описание:",
+	"tpt-aggregategroup-update": "Сохранить",
+	"tpt-aggregategroup-update-cancel": "Отмена",
 	"pt-parse-open": "Несбалансированный тег &lt;translate>.\nШаблон перевода: <pre>$1</pre>",
 	"pt-parse-close": "Несбалансированный тег &lt;translate>.\nШаблон перевода: <pre>$1</pre>",
 	"pt-parse-nested": "Недопустимы вложенные разделы &lt;translate>.\nТекст тега: <pre>$1</pre>",
@@ -179,5 +183,6 @@
 	"pm-old-translations-missing": "$1 не содержит старые переводы",
 	"pm-extra-units-warning": "Могут присутствовать дополнительные блоки. Пожалуйста, соотнесите правильно источники и блоков перевода",
 	"pm-pagename-missing": "Пожалуйста, введите имя страницы",
-	"pm-langcode-missing": "Пожалуйста, введите код языка"
+	"pm-langcode-missing": "Пожалуйста, введите код языка",
+	"tpt-translate-title": "Разрешить перевод названия страницы"
 }

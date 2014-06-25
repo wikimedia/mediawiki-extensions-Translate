@@ -396,6 +396,7 @@
 	"tux-editor-expand-tooltip": "Развернуть",
 	"tux-editor-collapse-tooltip": "Свернуть",
 	"tux-editor-message-tools-history": "История",
+	"tux-editor-message-tools-delete": "Удалить",
 	"tux-editor-message-tools-translations": "Все переводы",
 	"tux-editor-loading": "Загрузка…",
 	"translate-search-more-languages-info": "ещё $1 {{PLURAL:$1|язык|языков|языка}}",
