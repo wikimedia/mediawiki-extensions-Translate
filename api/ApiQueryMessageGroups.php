@@ -26,7 +26,16 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		$filter = $params['filter'];
 
 		$groups = array();
-		if ( $params['format'] === 'flat' ) {
+
+		// Parameter root as all for all pages subgroups
+		if ( $params['root'] === 'all' ) {
+			$allGroups = MessageGroups::getAllGroups();
+			foreach ( $allGroups as $group ) {
+				if ( $group instanceof WikiPageMessageGroup ) {
+					$groups[] = $group;
+				}
+			}
+		} elseif ( $params['format'] === 'flat' ) {
 			if ( $params['root'] !== '' ) {
 				$group = MessageGroups::getGroup( $params['root'] );
 				if ( $group ) {
@@ -61,7 +70,9 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 		// Do not list the sandbox group. The code that knows it
 		// exists can access it directly.
-		unset( $groups['!sandbox'] );
+		if ( isset( $groups['!sandbox'] ) ) {
+			unset( $groups['!sandbox'] );
+		}
 
 		$props = array_flip( $params['prop'] );
 
