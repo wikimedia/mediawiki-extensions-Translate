@@ -89,6 +89,7 @@
     "tpt-aggregategroup-edit-description": "Description:",
     "tpt-aggregategroup-update": "Save",
     "tpt-aggregategroup-update-cancel": "Cancel",
+    "tpt-invalid-group": "Invalid group",
     "pt-parse-open": "Unbalanced &lt;translate> tag.\nTranslation template: <pre>$1</pre>",
     "pt-parse-close": "Unbalanced &lt;/translate> tag.\nTranslation template: <pre>$1</pre>",
     "pt-parse-nested": "Nested &lt;translate> translation units are not allowed.\nTag text: <pre>$1</pre>",

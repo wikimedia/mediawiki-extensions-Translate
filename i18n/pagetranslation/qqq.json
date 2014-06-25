@@ -99,6 +99,7 @@
 	"tpt-aggregategroup-edit-description": "Label for the edit description field in [[Special:AggregateGroups]].\n{{Identical|Description}}",
 	"tpt-aggregategroup-update": "Label for button on [[Special:AggregateGroups]] to update.\n{{Identical|Save}}",
 	"tpt-aggregategroup-update-cancel": "Label for button on [[Special:AggregateGroups]] to cancel editing.\n{{Identical|Cancel}}",
+	"tpt-invalid-group": "Message when user tries to add an invalid group.",
 	"pt-parse-open": "Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.\n\n\"Translation template\" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.\n\nParameters:\n* $1 - translation template\nSee also:\n* {{msg-mw|Pt-parse-close}}",
 	"pt-parse-close": "Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.\n\n\"Translation template\" is the structure of a translation page, where the place for the translations of each section is marked with a placeholder.\n\nParameters:\n* $1 - translation template\nSee also:\n* {{msg-mw|Pt-parse-open}}",
 	"pt-parse-nested": "Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.\n\nSee definitions on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translation unit (=section) text",

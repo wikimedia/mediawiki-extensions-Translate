@@ -121,7 +121,12 @@ class SpecialAggregateGroups extends TranslateSpecialPage {
 			);
 
 			// Subgroups selector
-			$select = $this->getGroupSelector( $pages, $group )->getHtml();
+			$select = Html::input(
+				'tp-subgroups-input',
+				'',
+				'text',
+				array( 'class' => 'tp-group-input' )
+			);
 			$addButton = Html::element( 'input',
 				array( 'type' => 'button',
 					'value' => $this->msg( 'tpt-aggregategroup-add' )->text(),
@@ -251,36 +256,6 @@ class SpecialAggregateGroups extends TranslateSpecialPage {
 		$out .= Html::closeElement( 'ol' );
 
 		return $out;
-	}
-
-	/**
-	 * @param $availableGroups
-	 * @param MessageGroup $parent
-	 * @return XmlSelect
-	 */
-	protected function getGroupSelector( $availableGroups, $parent ) {
-		$id = $this->htmlIdForGroup( $parent, 'mw-tpa-groupselect-' );
-		$select = new XmlSelect( 'group', $id );
-		$select->setAttribute( 'class', 'mw-tpa-groupselect' );
-
-		// Not calling $parent->getGroups() because it has done filtering already
-		$subgroups = TranslateMetadata::getSubgroups( $parent->getId() );
-		$subgroups = array_flip( $subgroups );
-		/**
-		 * @var $group MessageGroup
-		 */
-		foreach ( $availableGroups as $group ) {
-			$groupId = $group->getId();
-
-			// Do not include already included groups in the list
-			if ( isset( $subgroups[$groupId] ) ) {
-				continue;
-			}
-
-			$select->addOption( $group->getLabel(), $groupId );
-		}
-
-		return $select;
 	}
 
 	/**
