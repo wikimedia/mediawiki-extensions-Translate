@@ -270,16 +270,15 @@ $wgResourceModules['ext.translate.special.aggregategroups'] = array(
 	'styles' => 'resources/css/ext.translate.special.aggregategroups.css',
 	'position' => 'top',
 	'dependencies' => array(
-		'mediawiki.util',
-		'jquery.async',
-		'jquery.chosen'
+		'jquery.ui.autocomplete'
 	),
 	'messages' => array(
 		'tpt-aggregategroup-remove-confirm',
 		'tpt-aggregategroup-edit-name',
 		'tpt-aggregategroup-edit-description',
 		'tpt-aggregategroup-update',
-		'tpt-aggregategroup-update-cancel'
+		'tpt-aggregategroup-update-cancel',
+		'tpt-invalid-group'
 	),
 ) + $resourcePaths;
 
