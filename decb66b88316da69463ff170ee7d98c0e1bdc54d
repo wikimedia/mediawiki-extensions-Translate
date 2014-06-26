@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae43a74e_d07768fc",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:33:39Z",
+      "side": 1,
+      "message": "Why can\u0027t you use format\u003dflat?",
+      "revId": "decb66b88316da69463ff170ee7d98c0e1bdc54d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_3071140c",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:33:39Z",
+      "side": 1,
+      "message": "This code is redundant, isset does not complain about unset variables.",
+      "revId": "decb66b88316da69463ff170ee7d98c0e1bdc54d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_1055f052",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:33:39Z",
+      "side": 1,
+      "message": "We do not allow multiple var statements per function",
+      "revId": "decb66b88316da69463ff170ee7d98c0e1bdc54d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_d04e48c4",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:33:39Z",
+      "side": 1,
+      "message": "Spaces",
+      "revId": "decb66b88316da69463ff170ee7d98c0e1bdc54d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_f0514c66",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:33:39Z",
+      "side": 1,
+      "message": "resp is not defined here, is it?",
+      "revId": "decb66b88316da69463ff170ee7d98c0e1bdc54d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_b0c3c409",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:33:39Z",
+      "side": 1,
+      "message": "Hmm, wasn\u0027t there patch changing $.post to mw.api? Perhaps you can do it here while we are changing and testing this code anyway.",
+      "revId": "decb66b88316da69463ff170ee7d98c0e1bdc54d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_30d7d4c6",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:33:39Z",
+      "side": 1,
+      "message": "You probably want to delay this until we are actually adding a group.",
+      "revId": "decb66b88316da69463ff170ee7d98c0e1bdc54d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_10d4d0bd",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:33:39Z",
+      "side": 1,
+      "message": "Hmm there should be better selector for this... I\u0027ll test.",
+      "revId": "decb66b88316da69463ff170ee7d98c0e1bdc54d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_d0dd28e3",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:33:39Z",
+      "side": 1,
+      "message": "Html::input",
+      "revId": "decb66b88316da69463ff170ee7d98c0e1bdc54d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
