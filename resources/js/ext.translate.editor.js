@@ -44,6 +44,8 @@
 		this.listen();
 		this.storage = this.options.storage || new mw.translate.TranslationApiStorage();
 		this.canDelete = mw.translate.canDelete();
+		this.delayValidation = delayer();
+		this.delayResize = delayer();
 	}
 
 	TranslateEditor.prototype = {
@@ -606,7 +608,7 @@
 					$pasteSourceButton.removeClass( 'hide' );
 				}
 
-				delay( function () {
+				translateEditor.delayValidation( function () {
 					translateEditor.validateTranslation();
 				}, 500 );
 			} );
@@ -780,7 +782,7 @@
 				translation: $textarea.val()
 			}, function ( data ) {
 				var warningIndex,
-					warnings = jQuery.parseJSON( data );
+					warnings = $.parseJSON( data );
 
 				translateEditor.removeWarning( 'validation' );
 				if ( !warnings || !warnings.length ) {
@@ -1001,7 +1003,7 @@
 			// layout of the text area after this function. Use very small
 			// delay to have it settle down and have correct results. Otherwise
 			// there will be a size change once the first letter is typed.
-			delay( function() {
+			this.delayResize( function() {
 				$textarea.trigger( 'autosize.resizeIncludeStyle' );
 			}, 1 );
 
@@ -1139,12 +1141,14 @@
 
 	$.fn.translateeditor.Constructor = TranslateEditor;
 
-	function delay () {
-		var timer = 0;
+	function delayer() {
+		return (function () {
+			var timer = 0;
 
-		return function ( callback, milliseconds ) {
-			clearTimeout( timer );
-			timer = setTimeout( callback, milliseconds );
-		};
+			return function ( callback, milliseconds ) {
+				clearTimeout( timer );
+				timer = setTimeout( callback, milliseconds );
+			};
+		} () );
 	}
 }( jQuery, mediaWiki ) );
