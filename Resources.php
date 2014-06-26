@@ -240,6 +240,7 @@ $wgResourceModules['ext.translate.pagepreparation'] = array(
 		'mediawiki.api',
 		'mediawiki.api.edit',
 		'jquery.mwExtension',
+		'mediawiki.action.history.diff',
 	),
 ) + $resourcePaths;
 
