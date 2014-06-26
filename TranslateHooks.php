@@ -57,6 +57,8 @@ class TranslateHooks {
 			if ( $wgTranslatePageMigration ) {
 				$wgSpecialPages['PageMigration'] = 'SpecialPageMigration';
 				$wgSpecialPageGroups['PageMigration'] = 'wiki';
+				$wgSpecialPages['PagePreparation'] = 'SpecialPagePreparation';
+				$wgSpecialPageGroups['PagePreparation'] = 'wiki';
 			}
 
 			global $wgLogActionsHandlers, $wgLogTypes;
