@@ -376,6 +376,7 @@
 	"tux-editor-expand-tooltip": "Прошири",
 	"tux-editor-collapse-tooltip": "Скупи",
 	"tux-editor-message-tools-history": "Историја",
+	"tux-editor-message-tools-delete": "Обриши",
 	"tux-editor-message-tools-translations": "Сви преводи",
 	"tux-editor-loading": "Учитавање…",
 	"translate-search-more-languages-info": "још $1 {{PLURAL:$1|језик|језика}}",
