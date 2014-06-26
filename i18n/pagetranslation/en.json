@@ -176,5 +176,9 @@
     "pm-swap-icon-hover-text": "Swap with unit below",
     "pm-delete-icon-hover-text": "Delete unit",
     "tpt-translate-title": "Allow translation of page title",
-    "ptp-save-summary": "prepared the page for translation using page preparation tool"
+    "ptp-save-summary": "prepared the page for translation using page preparation tool",
+    "pagepreparation": "Translation page preparation",
+    "pp-pagename-placeholder": "Enter the page name",
+    "pp-prepare-button-label": "Prepare",
+    "pp-prepare-save-label": "Save"
 }
