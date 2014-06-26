@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "ae43a74e_6a620808",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T19:34:30Z",
+      "side": 1,
+      "message": "Those look like wanted newlines, not extra.",
+      "parentUuid": "ae43a74e_0ad49ceb",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae43a74e_d0a2c83a",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 14
@@ -171,6 +189,24 @@
       "side": 1,
       "message": "I mean links with the pipe (|). Kaganer used this terminology at https://www.mediawiki.org/wiki/Extension_talk:Translate/Mass_migration_tools#Some_notes in point number 3.",
       "parentUuid": "ae43a74e_d0a2c83a",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_2a5c004e",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T19:34:30Z",
+      "side": 1,
+      "message": "Oh well, not going to complain.",
+      "parentUuid": "ae43a74e_ca05747e",
       "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -276,6 +312,24 @@
       "side": 1,
       "message": "I think unwanted is the right word. Because we are already dealing with Categories, Files, elsewhere. These are not outdated on the wiki.",
       "parentUuid": "ae43a74e_504db89a",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_ca3a14e4",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T19:34:30Z",
+      "side": 1,
+      "message": "I mean it refers to a global variable which is not a global.",
+      "parentUuid": "ae43a74e_8ad2ccd3",
       "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
