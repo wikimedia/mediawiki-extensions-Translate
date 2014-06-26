@@ -5,7 +5,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2009-2013 Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -73,8 +72,7 @@ class TranslationEditPage {
 		$context->getOutput()->disable();
 
 		$data = $this->getEditInfo();
-		$groupId = $context->getRequest()->getText( 'loadgroup', '' );
-		$helpers = new TranslationHelpers( $this->getTitle(), $groupId );
+		$helpers = new TranslationHelpers( $this->getTitle(), '' );
 
 		$id = "tm-target-{$helpers->dialogID()}";
 		$helpers->setTextareaId( $id );

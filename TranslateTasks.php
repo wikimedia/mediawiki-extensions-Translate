@@ -5,7 +5,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2013 Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -195,7 +194,6 @@ class ViewMessagesTask extends TranslateTask {
 
 	protected function output() {
 		$table = MessageTable::newFromContext( $this->context, $this->collection, $this->group );
-		$table->appendEditLinkParams( 'loadtask', $this->getId() );
 
 		return $table->fullTable( $this->offsets, $this->nondefaults );
 	}
@@ -215,7 +213,6 @@ class ReviewMessagesTask extends ViewMessagesTask {
 
 	protected function output() {
 		$table = MessageTable::newFromContext( $this->context, $this->collection, $this->group );
-		$table->appendEditLinkParams( 'loadtask', $this->getId() );
 		$table->setReviewMode();
 
 		return $table->fullTable( $this->offsets, $this->nondefaults );

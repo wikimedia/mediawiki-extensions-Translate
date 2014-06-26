@@ -5,7 +5,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2010-2013 Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -54,13 +53,12 @@ class TranslationHelpers {
 	}
 
 	/**
-	 * Tries to determine to which group this message belongs. It tries to get
-	 * group id from loadgroup GET-paramater, but fallbacks to messageIndex file
-	 * if no valid group was provided.
+	 * Tries to determine to which group this message belongs. Falls back to the
+	 * message index if valid group id was not supplied.
 	 *
 	 * @param MessageHandle $handle
 	 * @param string $groupId
-	 * @return MessageGroup which the key belongs to, or null.
+	 * @return MessageGroup|null Group the key belongs to, or null.
 	 */
 	protected function getMessageGroup( MessageHandle $handle, $groupId ) {
 		$mg = MessageGroups::getGroup( $groupId );

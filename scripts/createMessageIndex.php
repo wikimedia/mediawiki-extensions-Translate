@@ -1,12 +1,10 @@
 <?php
 /**
  * Creates a database of keys in all groups, so that namespace and key can be
- * used to get the group they belong to. This is used as a fallback when
- * loadgroup parameter is not provided in the request, which happens if someone
- * reaches a messages from somewhere else than Special:Translate.
+ * used to get the group they belong to. This is used as a fallback when there
+ * is no other way to know which message group a message belongs to.
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2011, Niklas Laxström
  * @license GPL-2.0+
  * @file
  */
