@@ -177,5 +177,9 @@
 	"pm-delete-icon-hover-text": "Hover text for delete unit icon",
 	"tpt-translate-title": "Label for checkbox on [[Special:PageTranslation]] to mark title for translation.",
 	"tpt-translate-title": "Checkbox on Special:PageTranslation to mark title for translation",
-	"ptp-save-summary": "Edit summary for saving a page prepared for translation by the tool"
+	"ptp-save-summary": "Edit summary for saving a page prepared for translation by the tool",
+	"pagepreparation": "{{doc-special|PageMigration}}",
+    "pp-pagename-placeholder": "Placeholder for the pagename input field.",
+    "pp-prepare-button-label": "Used as label for the \"Prepare\" button.\n{{Identical|Prepare}}",
+    "pp-save-button-label": "Used as label for the \"Save\" button.\n{{Identical|Save}}"
 }
