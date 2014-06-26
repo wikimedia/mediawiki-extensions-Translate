@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae43a74e_db9f8961",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-26T19:30:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae43a74e_308594b2",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae43a74e_90bd6066",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-26T15:43:42Z",
       "side": 1,
       "message": "Aren\u0027t these two the same as /\u003c/?translate\u003e\\n?/gi ?",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_0a913c9c",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-26T19:30:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae43a74e_90bd6066",
       "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ae43a74e_4ade2472",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-26T19:30:22Z",
+      "side": 1,
+      "message": "So you mean just \n\n@return {string} ?",
+      "parentUuid": "ae43a74e_30ac7432",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae43a74e_f0a5cc44",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 14
@@ -64,6 +118,24 @@
       "writtenOn": "2014-06-26T15:43:42Z",
       "side": 1,
       "message": "Why would this result in extra newlines? Should the beginning be anchored to the line start to avoid changing text with \u003d\u003d in the content few times.",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_0ad49ceb",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-26T19:30:22Z",
+      "side": 1,
+      "message": "Okay, new regex: /^(\u003d\u003d.*\u003d\u003d)\\n*/gm\n\nDiff showing new lines:\nhttp://pagemigration.wmflabs.org/w/index.php?title\u003dMmm\u0026diff\u003d3676\u0026oldid\u003d3675",
+      "parentUuid": "ae43a74e_f0a5cc44",
       "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ae43a74e_ca05747e",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-26T19:30:22Z",
+      "side": 1,
+      "message": "I mean links with the pipe (|). Kaganer used this terminology at https://www.mediawiki.org/wiki/Extension_talk:Translate/Mass_migration_tools#Some_notes in point number 3.",
+      "parentUuid": "ae43a74e_d0a2c83a",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae43a74e_906c4007",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 14
@@ -98,6 +188,24 @@
       "writtenOn": "2014-06-26T15:43:42Z",
       "side": 1,
       "message": "Unable to review this, too complicated for me.",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_ca345449",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-26T19:30:22Z",
+      "side": 1,
+      "message": "I got it confirmed at #regex. You can use the link below to verify and test it.",
+      "parentUuid": "ae43a74e_906c4007",
       "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ae43a74e_ea64b847",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-26T19:30:22Z",
+      "side": 1,
+      "message": "Okay, going with\n\nreturn obj.revisions[0][\u0027*\u0027];",
+      "parentUuid": "ae43a74e_f084aca5",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae43a74e_504db89a",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 14
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "ae43a74e_8ad2ccd3",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-26T19:30:22Z",
+      "side": 1,
+      "message": "I think unwanted is the right word. Because we are already dealing with Categories, Files, elsewhere. These are not outdated on the wiki.",
+      "parentUuid": "ae43a74e_504db89a",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae43a74e_d081a893",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 14
@@ -149,6 +293,24 @@
       "writtenOn": "2014-06-26T15:43:42Z",
       "side": 1,
       "message": "Don\u0027t repeat the variable name for @return statements",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_4afbc444",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-06-26T19:30:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae43a74e_d081a893",
       "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
