@@ -178,5 +178,16 @@
 	"pm-swap-icon-hover-text": "Hover text for swap with unit below icon",
 	"pm-delete-icon-hover-text": "Hover text for delete unit icon",
 	"tpt-translate-title": "Label for checkbox on [[Special:PageTranslation]] to mark title for translation.",
-	"pp-save-summary": "Edit summary for saving a page prepared for translation by the tool"
+	"pp-save-summary": "Edit summary for saving a page prepared for translation by the tool",
+	"tpt-translate-title": "Checkbox on Special:PageTranslation to mark title for translation",
+	"pagepreparation": "{{doc-special|PageMigration}}",
+	"pp-pagename-placeholder": "Placeholder for the pagename input field.",
+	"pp-prepare-button-label": "Used as label for the \"Prepare\" button.\n{{Identical|Prepare}}",
+	"pp-save-button-label": "Used as label for the \"Save\" button.\n{{Identical|Save}}",
+	"pp-save-message": "Message shown after the page is saved with the prepared text which contains a link to edit it",
+	"pp-prepare-message": "Info message shown after the page is prepared for translation",
+	"pp-already-prepared-message": "Info message shown if the page is already prepared for translation",
+	"pp-pagename-missing": "Error message given when page title field is blank",
+	"pp-diff-old-header": "Header text for old revision for the diff shown at Special:PagePreparation",
+	"pp-diff-new-header": "Header text for new revision for the diff shown at Special:PagePreparation"
 }
