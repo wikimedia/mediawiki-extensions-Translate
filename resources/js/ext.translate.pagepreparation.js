@@ -187,21 +187,28 @@
 	}
 
 	$( document ).ready( function () {
-		var pageName;
-		pageName = mw.config.get( 'wgPageName' );
-		$.when( getPageContent( pageName ) ).done( function ( pageContent ) {
-			pageContent = $.trim( pageContent );
-			pageContent = cleanupTags( pageContent );
-			pageContent = addLanguageBar( pageContent );
-			pageContent = addTranslateTags( pageContent );
-			pageContent = addNewLines( pageContent );
-			pageContent = fixFiles( pageContent );
-			pageContent = fixInternalLinks( pageContent );
-			pageContent = postPreparationCleanup( pageContent );
-			pageContent = $.trim( pageContent );
-			savePage( pageName, pageContent ).done( function () {
-				// This is just for the time being. So not doing i18n
-				window.alert( 'The page was prepared for translation and has been saved.' );
+
+		$( '#action-prepare' ).click( function () {
+			var pageName = $.trim( $( '#title' ).val() );
+			if ( pageName === '' ) {
+				window.alert( 'Please enter the page name' );
+				return;
+			}
+
+			$.when( getPageContent( pageName ) ).done( function ( pageContent ) {
+				pageContent = $.trim( pageContent );
+				pageContent = cleanupTags( pageContent );
+				pageContent = addLanguageBar( pageContent );
+				pageContent = addTranslateTags( pageContent );
+				pageContent = addNewLines( pageContent );
+				pageContent = fixFiles( pageContent );
+				pageContent = fixInternalLinks( pageContent );
+				pageContent = postPreparationCleanup( pageContent );
+				pageContent = $.trim( pageContent );
+				savePage( pageName, pageContent ).done( function () {
+					// This is just for the time being. So not doing i18n
+					window.alert( 'The page was prepared for translation and has been saved.' );
+				} );
 			} );
 		} );
 	} );
