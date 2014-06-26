@@ -1,6 +1,8 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	var pageContent, pageName = '';
+
 	/**
 	 * Save the page with a given page name and given content to the wiki.
 	 * @param {string} pageName Page title
@@ -8,17 +10,45 @@
 	 * @return {jQuery.promise}
 	 */
 	function savePage( pageName, pageContent ) {
-		var api = new mw.Api(), summary,
-			deferred = new $.Deferred();
+		var api = new mw.Api(), summary;
+
 		summary = mw.msg( 'ptp-save-summary' );
-		deferred = api.postWithEditToken( {
+		return api.postWithEditToken( {
 			action: 'edit',
 			format: 'json',
 			title: pageName,
 			text: pageContent,
-			summary: summary,
-		} );
-		return deferred.promise();
+			summary: summary
+		} ).promise();
+	}
+
+	/**
+	 * Get the diff between the current revision and the prepared page content
+	 * @param {string} pageName Page title
+	 * @param {string} pageContent Content of the page to be saved
+	 * @return {jQuery.promise}
+	 * @return {Function} return.done
+	 * @return {string} return.done.data
+	 */
+	function getDiff( pageName, pageContent ) {
+		var api = new mw.Api();
+
+		return api.get( {
+			action:'query',
+			prop: 'revisions',
+			format: 'json',
+			rvprop: 'content',
+			rvlimit: '1',
+			titles: pageName,
+			rvdifftotext: pageContent
+		} ).then( function ( data ) {
+			var obj, diff;
+			for ( var page in data.query.pages ) {
+				obj = data.query.pages[page];
+			}
+			diff = obj.revisions[0].diff['*'];
+			return diff;
+		} ).promise();
 	}
 
 	/**
@@ -187,21 +217,51 @@
 	}
 
 	$( document ).ready( function () {
-		var pageName;
-		pageName = mw.config.get( 'wgPageName' );
-		$.when( getPageContent( pageName ) ).done( function ( pageContent ) {
-			pageContent = $.trim( pageContent );
-			pageContent = cleanupTags( pageContent );
-			pageContent = addLanguageBar( pageContent );
-			pageContent = addTranslateTags( pageContent );
-			pageContent = addNewLines( pageContent );
-			pageContent = fixFiles( pageContent );
-			pageContent = fixInternalLinks( pageContent );
-			pageContent = postPreparationCleanup( pageContent );
-			pageContent = $.trim( pageContent );
+
+		$( '#action-save' ).click( function () {
+			var serverName, pageUrl = '';
+			serverName = mw.config.get( 'wgServerName' );
 			savePage( pageName, pageContent ).done( function () {
-				// This is just for the time being. So not doing i18n
-				window.alert( 'The page was prepared for translation and has been saved.' );
+				pageUrl = pageName + '?action=edit';
+				$( '.messageDiv' ).html( mw.msg( 'pp-save-message', pageUrl ) ).show();
+				$( '.divDiff' ).hide( 'fast' );
+				$( '#action-prepare' ).show();
+				$( '#title' ).val( '' );
+				$( '#action-save' ).hide();
+			} );
+		} );
+
+		$( '#action-prepare' ).click( function () {
+			var messageDiv = $( '.messageDiv' );
+			pageName = $.trim( $( '#title' ).val() );
+			messageDiv.hide();
+			if ( pageName === '' ) {
+				window.alert( 'Please enter the page name' );
+				return;
+			}
+
+			$.when( getPageContent( pageName ) ).done( function ( content ) {
+				pageContent = content;
+				pageContent = $.trim( pageContent );
+				pageContent = cleanupTags( pageContent );
+				pageContent = addLanguageBar( pageContent );
+				pageContent = addTranslateTags( pageContent );
+				pageContent = addNewLines( pageContent );
+				pageContent = fixFiles( pageContent );
+				pageContent = fixInternalLinks( pageContent );
+				pageContent = postPreparationCleanup( pageContent );
+				pageContent = $.trim( pageContent );
+				$.when( getDiff( pageName, pageContent ) ).done( function ( diff ) {
+					$( '#diff-body' ).html( diff );
+					$( '.divDiff' ).show( 'fast' );
+					if ( diff !== '' ) {
+						messageDiv.html( mw.msg( 'pp-prepare-message' ) ).show();
+						$( '#action-prepare' ).hide();
+						$( '#action-save' ).show();
+					} else {
+						messageDiv.html( mw.msg( 'pp-already-prepared-message' ) ).show();
+					}
+				} );
 			} );
 		} );
 	} );

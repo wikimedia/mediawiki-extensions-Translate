@@ -176,5 +176,12 @@
     "pm-swap-icon-hover-text": "Swap with unit below",
     "pm-delete-icon-hover-text": "Delete unit",
     "tpt-translate-title": "Allow translation of page title",
-    "ptp-save-summary": "prepared the page for translation using page preparation tool"
+    "ptp-save-summary": "prepared the page for translation using page preparation tool",
+    "pagepreparation": "Prepare page for translation",
+    "pp-pagename-placeholder": "Enter the page name",
+    "pp-prepare-button-label": "Prepare",
+    "pp-save-button-label": "Save",
+    "pp-save-message": "The page was saved. You can <a href='$1'>edit</a> it.",
+    "pp-prepare-message": "The page was prepared for translation. See the diff below. Click the {{int:pp-save-button-label}} button if okay!",
+    "pp-already-prepared-message": "It seems the page has already been prepared for translation. There are no changes compared to the previous version."
 }

@@ -235,11 +235,18 @@ $wgResourceModules['ext.translate.navitoggle'] = array(
 
 $wgResourceModules['ext.translate.pagepreparation'] = array(
 	'scripts' => 'resources/js/ext.translate.pagepreparation.js',
-	'messages' => array( 'ptp-save-summary' ),
+	'messages' => array(
+		'ptp-save-summary',
+		'pp-save-message',
+		'pp-save-button-label',
+		'pp-prepare-message',
+		'pp-already-prepared-message'
+	),
 	'dependencies' => array(
 		'mediawiki.api',
 		'mediawiki.api.edit',
 		'jquery.mwExtension',
+		'mediawiki.action.history.diff',
 	),
 ) + $resourcePaths;
 
