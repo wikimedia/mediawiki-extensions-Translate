@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae43a74e_308594b2",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:43:42Z",
+      "side": 1,
+      "message": "No need to create own deferred here, just return the promise returned by this method call.",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_90bd6066",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:43:42Z",
+      "side": 1,
+      "message": "Aren\u0027t these two the same as /\u003c/?translate\u003e\\n?/gi ?",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_30ac7432",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:43:42Z",
+      "side": 1,
+      "message": "No need to repeat the variable name here. Just take it away.",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_f0a5cc44",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:43:42Z",
+      "side": 1,
+      "message": "Why would this result in extra newlines? Should the beginning be anchored to the line start to avoid changing text with \u003d\u003d in the content few times.",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_d0a2c83a",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:43:42Z",
+      "side": 1,
+      "message": "two-party?",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_906c4007",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:43:42Z",
+      "side": 1,
+      "message": "Unable to review this, too complicated for me.",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_f084aca5",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:43:42Z",
+      "side": 1,
+      "message": "You don\u0027t really need variable for this, do you.",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_504db89a",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:43:42Z",
+      "side": 1,
+      "message": "Outdated.",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_d081a893",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-06-26T15:43:42Z",
+      "side": 1,
+      "message": "Don\u0027t repeat the variable name for @return statements",
+      "revId": "c12eac8c51139ac7972f16894bb30240c7917267",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
