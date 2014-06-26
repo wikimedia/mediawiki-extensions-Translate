@@ -168,7 +168,7 @@
 					$messageDescViewer.find( '.message-desc-control' )
 						.prepend( $readMore );
 
-					$messageDoc.addClass( 'long compact' ).on( 'hover', expand );
+					$messageDoc.addClass( 'long compact' ).on( 'mouseenter mouseleave', expand );
 				}
 
 				// Enable the collapsible elements,
