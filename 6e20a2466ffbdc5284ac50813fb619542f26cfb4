@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae43a74e_afbd9a65",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-06-27T14:20:00Z",
+      "side": 1,
+      "message": "While \u0027resp\u0027 isn\u0027t a global variable, it\u0027s in quite a high scope, that\u0027s a sign of a design problem.\n\nBut, more importantly actually, its values should not be silently transported between functions. The code is calling a function to populate this variable and then another function that happens to access the variable. Pass it as an argument instead, or use a context of sorts.",
+      "revId": "6e20a2466ffbdc5284ac50813fb619542f26cfb4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_eff4c252",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-06-27T14:20:00Z",
+      "side": 1,
+      "message": "Accessing global variables through the \u0027window\u0027 object is slower, subject to mistakes (if you misspell \u0027alert\u0027, there will not be a lint error), and bypasses checks against unregistered global variables.\n\nUse alert().\n\nIf using alert() causes a problem, fix it (e.g. whitelist \u0027alert\u0027 as /*global */ atop this file).",
+      "revId": "6e20a2466ffbdc5284ac50813fb619542f26cfb4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_efa2823a",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-06-27T14:20:00Z",
+      "side": 1,
+      "message": "Don\u0027t execute the same DOM query multiple times (treat them as SQL queries in your mind). Store the result and use it twice. Of, if you only ever need it twice, you can use chaining to re-use it more implicitly:\n\n $input \u003d $( \u0027.tp-group-input\u0027 ).focus( excludeFunction );\n\n $input.autocomplete();\n\n\nOr:\n\n $( \u0027.tp-group-input\u0027 )\n     .focus( excludeFunction )\n     .autocomplete();",
+      "revId": "6e20a2466ffbdc5284ac50813fb619542f26cfb4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
