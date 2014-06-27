@@ -1,0 +1,15 @@
+== Translate 2014.06 ==
+Released at 2014-06-28.
+
+=== Noteworthy changes ===
+* New feature: Special:PageMigration,
+** Fetches and displays the translation units created by Translate for the given page.
+** Imports the old translations for given language on paragraph level and displays them.
+** Feature can be now conditionally enabled by setting $wgTranslatePageMigration to true.
+** Allows to edit or delete a translation as well as swapping with the unit below.
+** Allows to save the translations by creating corresponding pages.
+* Enabled Special:PageMigration by default for translation admins.
+* Special:AggregateGroups page is read only now.
+* Email notifications not be send upon translation review now.
+* Page title can be translatable.
+* Regression fix: Message checker live updates is working again with this release.
