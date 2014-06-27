@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae43a74e_eb75d593",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-06-27T15:02:26Z",
+      "side": 1,
+      "message": "/*global alert:false */\n\n( function ( $, mw ) {\n\n...\n\nAlso, I think a header would be great, stating license and main authors.",
+      "revId": "308e939dd5764a59c96b2efdc503de08de668dfb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
