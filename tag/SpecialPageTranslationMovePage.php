@@ -69,7 +69,7 @@ class SpecialPageTranslationMovePage extends TranslateSpecialPage {
 
 	/**
 	 * Partially copies from SpecialMovepage.php, because it cannot be
-	 * extented in other ways.
+	 * extended in other ways.
 	 */
 	public function execute( $par ) {
 		$request = $this->getRequest();
