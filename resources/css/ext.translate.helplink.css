@@ -7,8 +7,10 @@
 }
 
 .mw-translate-helplink a {
-	/* @embed */
 	background: url(../images/help.png) no-repeat scroll left center transparent;
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/help.svg');
+	/* @embed */
+	background-image: linear-gradient(transparent, transparent), url('../images/help.svg');
 	padding-left: 20px;
 	float: right;
 }

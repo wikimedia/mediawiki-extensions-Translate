@@ -40,20 +40,23 @@
 
 .mw-tpm-sp-action--delete {
 	background: url('../images/remove.png') transparent no-repeat;
-	background-image: linear-gradient(transparent, transparent), url('../images/remove.png');
-	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/remove.png');
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/remove.svg');
+	/* @embed */
+	background-image: linear-gradient(transparent, transparent), url('../images/remove.svg');
 }
 
 .mw-tpm-sp-action--swap {
 	background: url('../images/label-clock.png') transparent no-repeat;
-	background-image: linear-gradient(transparent, transparent), url('../images/label-clock.png');
-	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/label-clock.png');
+	background-image: linear-gradient(transparent, transparent), url('../images/label-clock.svg');
+	/* @embed */
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/label-clock.svg');
 }
 
 .mw-tpm-sp-action--add {
 	background: url('../images/add.png') transparent no-repeat;
-	background-image: linear-gradient(transparent, transparent), url('../images/add.png');
-	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/add.png');
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/add.svg');
+	/* @embed */
+	background-image: linear-gradient(transparent, transparent), url('../images/add.svg');
 }
 
 .mw-tpm-sp-error__message {
