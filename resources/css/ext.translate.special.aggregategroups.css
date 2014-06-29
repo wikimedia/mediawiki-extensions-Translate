@@ -1,21 +1,28 @@
 span.tp-aggregate-remove-ag-button,
 span.tp-aggregate-remove-button {
-	/* @embed */
 	background: url(../images/remove.png) no-repeat scroll left center transparent;
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/remove.svg');
+	/* @embed */
+	background-image: linear-gradient(transparent, transparent), url('../images/remove.svg');
 	padding: 10px;
 	cursor: pointer;
 }
 
 span.tp-aggregate-edit-ag-button {
-	/* @embed */
 	background: url(../images/action-edit.png) no-repeat scroll left center transparent;
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/action-edit.svg');
+	/* @embed */
+	background-image: linear-gradient(transparent, transparent), url('../images/action-edit.svg');
+	background-size: 18px 18px;
 	padding: 10px;
 	cursor: pointer;
 }
 
 a.tpt-add-new-group {
-	/* @embed */
 	background: url(../images/add.png) no-repeat scroll left center transparent;
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/add.svg');
+	/* @embed */
+	background-image: linear-gradient(transparent, transparent), url('../images/add.svg');
 	padding-left: 20px;
 }
 
