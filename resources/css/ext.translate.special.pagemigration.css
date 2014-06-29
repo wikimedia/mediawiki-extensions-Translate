@@ -40,8 +40,9 @@
 
 .mw-tpm-sp-action--delete {
 	background: url('../images/remove.png') transparent no-repeat;
-	background-image: linear-gradient(transparent, transparent), url('../images/remove.png');
-	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/remove.png');
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/remove.svg');
+	/* @embed */
+	background-image: linear-gradient(transparent, transparent), url('../images/remove.svg');
 }
 
 .mw-tpm-sp-action--swap {
@@ -52,8 +53,9 @@
 
 .mw-tpm-sp-action--add {
 	background: url('../images/add.png') transparent no-repeat;
-	background-image: linear-gradient(transparent, transparent), url('../images/add.png');
-	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/add.png');
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../images/add.svg');
+	/* @embed */
+	background-image: linear-gradient(transparent, transparent), url('../images/add.svg');
 }
 
 .mw-tpm-sp-error__message {
