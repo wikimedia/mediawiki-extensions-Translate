@@ -295,6 +295,7 @@
 	"tux-status-unsaved": "Salvestamata",
 	"tux-editor-placeholder": "Sinu tõlge",
 	"tux-editor-paste-original-button-label": "Kleebi lähtetekst",
+	"tux-editor-discard-changes-button-label": "Hülga muudatused",
 	"tux-editor-save-button-label": "Salvesta tõlge",
 	"tux-editor-skip-button-label": "Jäta vahele ja mine järgmise juurde",
 	"tux-editor-cancel-button-label": "Loobu",

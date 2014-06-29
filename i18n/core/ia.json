@@ -374,6 +374,7 @@
 	"tux-editor-expand-tooltip": "Displicar",
 	"tux-editor-collapse-tooltip": "Plicar",
 	"tux-editor-message-tools-history": "Historia",
+	"tux-editor-message-tools-delete": "Deler",
 	"tux-editor-message-tools-translations": "Tote le traductiones",
 	"tux-editor-loading": "Cargamento…",
 	"translate-search-more-languages-info": "$1 altere {{PLURAL:$1|lingua|linguas}}",

@@ -83,6 +83,9 @@
 	"tpt-aggregategroup-new-description": "Description (optional):",
 	"tpt-aggregategroup-remove-confirm": "Es tu secur de voler deler iste gruppo aggregate?",
 	"tpt-aggregategroup-invalid-group": "Gruppo non existe",
+	"tpt-aggregategroup-edit-name": "Nomine:",
+	"tpt-aggregategroup-update": "Salveguardar",
+	"tpt-aggregategroup-update-cancel": "Cancellar",
 	"pt-parse-open": "Etiquetta &lt;translate> asymmetric.\nPatrono de traduction: <pre>$1</pre>",
 	"pt-parse-close": "Etiquetta &lt;/translate> asymmetric.\nPatrono de traduction: <pre>$1</pre>",
 	"pt-parse-nested": "Le unitates de traduction &lt;translate> annidate non es permittite.\nTexto del etiquetta: <pre>$1</pre>",
@@ -168,5 +171,6 @@
 	"pm-langcode-missing": "Per favor entra le codice de lingua",
 	"pm-add-icon-hover-text": "Adde un unitate hic infra",
 	"pm-swap-icon-hover-text": "Excambiar con le unitate hic infra",
-	"pm-delete-icon-hover-text": "Deler unitate"
+	"pm-delete-icon-hover-text": "Deler unitate",
+	"tpt-translate-title": "Permitter le traduction del titulo del pagina"
 }
