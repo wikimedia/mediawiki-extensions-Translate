@@ -54,7 +54,22 @@ class MessageGroupCache {
 	 * @return bool
 	 */
 	public function exists() {
-		return file_exists( $this->getCacheFileName() );
+		$old = $this->getOldCacheFileName();
+		$new = $this->getCacheFileName();
+		$exists = file_exists( $new );
+
+		if ( $exists ) {
+			return true;
+		}
+
+		// Perform migration if possible
+		if ( file_exists( $old ) ) {
+			wfMkdirParents( dirname( $new ) );
+			rename( $old, $new );
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
@@ -108,6 +123,7 @@ class MessageGroupCache {
 		}
 		$hash = md5( file_get_contents( $this->group->getSourceFilePath( $this->code ) ) );
 
+		wfMkdirParents( dirname( $this->getCacheFileName() ) );
 		$cache = CdbWriter::open( $this->getCacheFileName() );
 		$keys = array_keys( $messages );
 		$cache->set( '#keys', serialize( $keys ) );
@@ -217,10 +233,8 @@ class MessageGroupCache {
 		if ( $this->cache === null ) {
 			$this->cache = CdbReader::open( $this->getCacheFileName() );
 			if ( $this->cache->get( '#version' ) !== '3' ) {
-				$this->updateCacheFormat( $this->cache );
 				$this->close();
-
-				return $this->open();
+				unlink( $this->getCacheFileName() );
 			}
 		}
 
@@ -242,43 +256,18 @@ class MessageGroupCache {
 	 * @return string
 	 */
 	protected function getCacheFileName() {
-		$cacheFileName = "translate_groupcache-{$this->group->getId()}-{$this->code}.cdb";
+		$cacheFileName = "translate_groupcache-{$this->group->getId()}/{$this->code}.cdb";
 
 		return TranslateUtils::cacheFile( $cacheFileName );
 	}
 
 	/**
-	 * Updates cache to cache format 2.
-	 * @param CdbReader $oldcache
+	 * Returns full path the the old cache file location.
+	 * @return string
 	 */
-	protected function updateCacheFormat( $oldcache ) {
-		// Read the data from the old format
-		$conv = array(
-			'#keys' => $oldcache->get( '<|keys#>' ),
-			'#created' => $oldcache->get( '<|timestamp#>' ),
-			'#updated' => wfTimestamp(),
-			'#filehash' => $oldcache->get( '<|hash#>' ),
-			'#version' => '3',
-		);
-		$conv['#msgcount'] = count( $conv['#keys'] );
+	protected function getOldCacheFileName() {
+		$cacheFileName = "translate_groupcache-{$this->group->getId()}-{$this->code}.cdb";
 
-		$messages = array();
-		foreach ( unserialize( $conv['#keys'] ) as $key ) {
-			$messages[$key] = $oldcache->get( $key );
-		}
-
-		ksort( $messages );
-		$conv['#msghash'] = md5( serialize( $messages ) );
-		$oldcache->close();
-
-		// Store the data in new format
-		$cache = CdbWriter::open( $this->getCacheFileName() );
-		foreach ( $conv as $key => $value ) {
-			$cache->set( $key, $value );
-		}
-		foreach ( $messages as $key => $value ) {
-			$cache->set( $key, $value );
-		}
-		$cache->close();
+		return TranslateUtils::cacheFile( $cacheFileName );
 	}
 }
