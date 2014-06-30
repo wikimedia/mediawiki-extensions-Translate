@@ -93,6 +93,7 @@
 	"tpt-aggregategroup-remove-confirm": "Tem a certeza de querer eliminar este grupo agregador?",
 	"tpt-aggregategroup-invalid-group": "Grupo inexistente",
 	"tpt-aggregategroup-edit-name": "Nome:",
+	"tpt-aggregategroup-edit-description": "Descrição:",
 	"tpt-aggregategroup-update": "Gravar",
 	"tpt-aggregategroup-update-cancel": "Cancelar",
 	"pt-parse-open": "O elemento &lt;translate> está desequilibrado.\nModelo de tradução: <pre>$1</pre>",
@@ -177,5 +178,9 @@
 	"pm-old-translations-missing": "$1 não contém tradução antigas",
 	"pm-extra-units-warning": "Unidades extras podem estar presentes. Por favor, faça corresponder corretamente o código e a tradução",
 	"pm-pagename-missing": "Por favor, introduza o nome da página",
-	"pm-langcode-missing": "Digite o código de idioma"
+	"pm-langcode-missing": "Digite o código de idioma",
+	"pm-add-icon-hover-text": "Adicionar uma unidade abaixo",
+	"pm-swap-icon-hover-text": "Trocar com a unidade abaixo",
+	"pm-delete-icon-hover-text": "Eliminar unidade",
+	"tpt-translate-title": "Permitir tradução do título da página"
 }
