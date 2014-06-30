@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae43a74e_3ddaf178",
+        "filename": "utils/MessageGroupCache.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-06-30T15:25:21Z",
+      "side": 1,
+      "message": "typo \"the the\"",
+      "revId": "338e6f4b1bd6a8292b3c8f69a83cee5243dcc6dc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
