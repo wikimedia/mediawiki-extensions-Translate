@@ -9,7 +9,7 @@
 	},
 	"bw-desc-freecol": "Před překládáním FreeCol do vašeho jazyka si přečtěte [[Translating:FreeCol]]. FreeCol používá licenci GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], webové fórum napsané v PHP.",
-	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] je webový systém pro správu chyb. Problémy hlaste na stránku [[Support]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] je webový systém pro správu chyb",
 	"bw-desc-mwlibrl": "'''mwlib.rl''' je knihovna pro Python umožňující tvorbu PDF dokumentů podle článků MediaWiki zpracovaných knihovnou mwlib.\n\nPodrobnosti najdete na stránkách [[mw:Extension:PDF_Writer]] a http://code.pediapress.com/wiki/wiki/mwlibrl.",
 	"bw-desc-openstreetmap": "Skupina pro všechny zprávy [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Tato skupina obsahuje zprávy rozhraní pro [[Translating:Open Street Map|Open Street Map]].\nVysvětlení klíčů u funkce PLURAL najdete na [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} stránce Unicode CLDR].",

@@ -377,6 +377,7 @@
 	"tux-editor-expand-tooltip": "Roztáhnout",
 	"tux-editor-collapse-tooltip": "Sbalit",
 	"tux-editor-message-tools-history": "Historie",
+	"tux-editor-message-tools-delete": "Smazat",
 	"tux-editor-message-tools-translations": "Všechny překlady",
 	"tux-editor-loading": "Načítá se…",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|další jazyk|další jazyky|dalších jazyků}}",

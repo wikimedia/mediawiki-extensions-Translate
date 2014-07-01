@@ -1047,6 +1047,18 @@ $specialPageAliases['tt-cyrl'] = array(
 	'Translations' => array( 'Тәрҗемәләр' ),
 );
 
+/** Tuvinian (тыва дыл) */
+$specialPageAliases['tyv'] = array(
+	'MyLanguage' => array( 'Дылым' ),
+	'PageTranslation' => array( 'Арын_очулгазы' ),
+	'PageTranslationDeletePage' => array( 'Очулдуругда_арынны_казыыр' ),
+	'SearchTranslations' => array( 'Очулгалар_дилээр' ),
+	'SupportedLanguages' => array( 'Дөгүмнээн_дылдар' ),
+	'Translate' => array( 'Очулдурар' ),
+	'TranslationStats' => array( 'Очулга_статистиказы' ),
+	'Translations' => array( 'Очулгалар' ),
+);
+
 /** Ukrainian (українська) */
 $specialPageAliases['uk'] = array(
 	'AggregateGroups' => array( 'Агреговані_групи' ),
