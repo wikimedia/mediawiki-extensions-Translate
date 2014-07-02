@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"Macofe"
 		]
 	},
 	"managetranslatorsandbox": "Gestionar la zona de pruebas del traductor",
 	"tsb-filter-pending": "Solicitudes pendientes",
-	"tsb-reminder-title-generic": "Completa tu introducción para volverte un traductor verificado",
+	"tsb-reminder-title-generic": "Completa tu introducción para volverte un traductor",
 	"tsb-reminder-content-generic": "Hola, $1:\n\nGracias por registrarte en {{SITENAME}}.\n\nSi completas tus traducciones de prueba, los administradores te otorgarán los permisos de traducción en breve.\n\nTraduce un poco más, aquí:\n$2\n\n$3,\n{{SITENAME}} staff",
 	"tsb-reminder-sending": "Enviando el recordatorio…",
 	"tsb-reminder-sent": "{{PLURAL:$1|Se envió $1 recordatorio $2|Se enviaron $1 recordatorios, el último $2}}",
@@ -29,8 +30,11 @@
 	"tsb-translations-user": "Traducciones del usuario",
 	"tsb-translations-current": "Traducciones existentes",
 	"translationstash": "Te damos la bienvenida",
+	"translate-translationstash-welcome": "{{GENDER:$1|Bienvenido|Bienvenida}}, $1. Ahora eres {{GENDER:$1|un traductor|una traductora}}",
 	"translate-translationstash-initialtranslation": "Tu primera traducción",
 	"tsb-limit-reached-title": "Gracias por tus traducciones",
 	"tsb-create-user-page": "Crear página de usuario básica",
+	"log-name-translatorsandbox": "Zona de pruebas de traducción",
+	"log-description-translatorsandbox": "Un registro de acciones relacionadas con los usuarios en pruebas de traducción",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|rechazó}} la solicitud de «$3» para convertirse en traductor"
 }

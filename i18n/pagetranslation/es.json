@@ -15,7 +15,8 @@
 			"Sanbec",
 			"Translationista",
 			"Vivaelcelta",
-			"Fitoschido"
+			"Fitoschido",
+			"Macofe"
 		]
 	},
 	"pagetranslation": "Traducción de página",
@@ -71,7 +72,7 @@
 	"translate-tag-translate-link-desc": "Traducir esta página",
 	"translate-tag-markthis": "Marcar esta página para traducción",
 	"translate-tag-markthisagain": "Esta página tiene <span class=\"plainlinks\">[$1 cambios]</span> desde la última vez que fue <span class=\"plainlinks\">[$2 marcada para traducción]</span>.",
-	"translate-tag-hasnew": "Esta página contiene <span class=\"plainlinks\">[$1 cambios]</span> los cuales no han sido marcados para traducción.",
+	"translate-tag-hasnew": "Esta página contiene <span class=\"plainlinks\">[$1 cambios]</span> que no se han marcado para su traducción.",
 	"tpt-translation-intro": "Esta página es una <span class=\"plainlinks\">[$1 versión traducida]</span> de la página [[$2]]. La traducción está completa al $3 %.",
 	"tpt-languages-legend": "Otros idiomas:",
 	"tpt-languages-zero": "Iniciar la traducción para este idioma",
@@ -80,8 +81,8 @@
 	"tpt-unknown-page": "Este espacio de nombre está reservado para traducciones de páginas de contenido.\nLa página que estás tratando de editar no parece corresponder con alguna página marcada para traducción.",
 	"tpt-translation-restricted": "La traducción de esta página a este idioma ha sido impedida por un administrador de traducción.\n\nMotivo de la restricción: $1",
 	"tpt-discouraged-language-force-header": "Esta página no se puede traducir al $1.",
-	"tpt-discouraged-language-force": "Un administrador de traducción ha limitado los idiomas a los que esta página puede ser traducida. Este idioma no está entre ellos.\n\nRazón: $1",
-	"tpt-discouraged-language": "Este idioma no está entre los idiomas prioritarios establecidos por un administrador de traducción para esta página.\n\nRazón: $1",
+	"tpt-discouraged-language-force": "<strong>Esta página no puede ser traducida a $2.</strong>\n\nUna administración de traducción decidió que sólo puede traducirse a $3.",
+	"tpt-discouraged-language": "<strong>La traducción a $2 no es una prioridad para esta página.</strong>\n\nUna administración de traducción decidió enfocar los esfuerzos de traducción en $3.",
 	"tpt-discouraged-language-reason": "Motivo: $1",
 	"tpt-priority-languages": "Un administrador de traducciones ha definido los idiomas prioritarios de este grupo: $1.",
 	"tpt-render-summary": "Actualizando para hallar una nueva versión de la página fuente",
