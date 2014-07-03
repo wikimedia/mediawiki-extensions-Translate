@@ -179,6 +179,7 @@
 	"translate-mgs-invalid-group": "די ספעציפֿירטע גרופע $1 איז נישט פֿאראן.",
 	"translate-mgs-nothing": "נישט פאראן וואס צו ווײַזן פאר די פארלאנגטע סטאטיסטיק.",
 	"supportedlanguages": "געשטיצטע שפראַכן",
+	"supportedlanguages-summary": "דער בלאט ווײַזט א רשימה פון אלע שפראכן געשטיצט דורך {{SITENAME}},\nמיט די נעמען פון די איבערזעצער וואס ארבעטן אויף יענער שפראך.\nוואס מער די צאל פון ענדערונגען פון אן איבערזעצער, וואס גרעסער ווערט זײַן נאמען געוויזן.\nדער קאליר פון דער ליניע אונטער דעם נאמען ווילט ווען דער איבערזעצער איז לעצט געווען טעטיק דא.",
 	"supportedlanguages-colorlegend": "לעגענדע פאר די קאלירן:לעצטע איבערזעצונג פאר $1 טעג.",
 	"supportedlanguages-translators": "{{PLURAL:$2|איבערזעצער|איבערזעצער}}: $1",
 	"supportedlanguages-recenttranslations": "לעצטיקע איבערזעצונגען",
@@ -355,10 +356,12 @@
 	"tux-editor-expand-tooltip": "פֿאַרברייטערן",
 	"tux-editor-collapse-tooltip": "אײַנציען",
 	"tux-editor-message-tools-history": "היסטאריע",
+	"tux-editor-message-tools-delete": "אויסמעקן",
 	"tux-editor-message-tools-translations": "אַלע איבערזעצונגען",
 	"tux-editor-loading": "לאָדט…",
 	"translate-search-more-languages-info": "נאך {{PLURAL:$1|איין שפראך|$1 שפראכן}}",
 	"translate-statsbar-tooltip": "$1% איבערגעזעצט, $2% איבערגעקוקט",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% איבערגעזעצט, $2% איבערגעקוקט, $3% פֿארעלטערט",
-	"translate-search-more-groups-info": "נאך {{PLURAL:$1|גרופע|גרופעס}}: $1"
+	"translate-search-more-groups-info": "נאך {{PLURAL:$1|גרופע|גרופעס}}: $1",
+	"translate-ulsdep-title": "קאנפיגוראציע גרײַז"
 }

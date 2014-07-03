@@ -14,7 +14,7 @@
 	"tsb-reminder-sent-new": "Se envió un recordatorio",
 	"tsb-reminder-failed": "Falló el envío del recordatorio",
 	"tsb-email-promoted-subject": "Ahora tienes permisos de traductor en {{SITENAME}}",
-	"tsb-email-promoted-body": "Hola, $1:\n\n¡Enhorabuena! He revisado las traducciones de prueba que realizaste en {{SITENAME}} y te he otorgado los permisos de traducción.\n\nVen a {{SITENAME}} para seguir colaborando siempre que quieras:\n$2\n\nTe damos la bienvenida, y gracias por tus contribuciones.\n\n{{GENDER:$3|$3}},\nPersonal de {{SITENAME}}",
+	"tsb-email-promoted-body": "Hola, {{GENDER:$1|$1}}:\n\n¡Enhorabuena! He revisado las traducciones de prueba que realizaste en {{SITENAME}} y te he otorgado los permisos de traducción.\n\nVen a {{SITENAME}} para seguir colaborando siempre que quieras:\n$2\n\nTe damos la bienvenida, y gracias por tus contribuciones.\n\n{{GENDER:$3|$3}},\nPersonal de {{SITENAME}}",
 	"tsb-email-rejected-subject": "Se rechazó tu solicitud para convertirte en traductor en {{SITENAME}}",
 	"tsb-request-count": "$1 {{PLURAL:$1|solicitud|solicitudes}}",
 	"tsb-all-languages-button-label": "Todos los idiomas",
