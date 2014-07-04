@@ -8,12 +8,13 @@
 			"ToSter",
 			"Chrumps",
 			"Vengir",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Alan ffm"
 		]
 	},
 	"bw-desc-freecol": "Zanim rozpoczniesz tłumaczenie FreeCol, zapoznaj się z [[Translating:FreeCol]]. Freecol udostępniane jest na licencji GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum] – forum internetowe napisane w PHP.",
-	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] jest bezpłatnym internetowym systemem obsługi zgłoszeń usterek. Prosimy o zgłaszanie wszelkich problemów [[Support|obsłudze]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] jest internetowym systemem obsługi zgłoszeń usterek",
 	"bw-desc-mwlibrl": "[[Translating:Mwlib.rl|Mwlib.rl]] jest biblioteką do tworzenia dokumentów PDF ze stron MediaWiki",
 	"bw-desc-openstreetmap": "Grupa wszystkich komunikatów [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Ta grupa komunikatów zawiera interfejs [[Translating:Open Street Map|Open Street Map]]. Zobacz [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} stronę Unicode CLDR wyjaśniającą zasady tworzenia liczby mnogiej].",
@@ -49,5 +50,5 @@
 	"translate-group-desc-wikimedia-mobile-commons": "[[Translating:WikipediaMobile|Commons Mobile]] jest aplikacją dla Androida i iOS służącą do przeglądania i przesyłania plików do Wikimedia Commons",
 	"translate-group-desc-wikimediaextensions": "Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń MediaWiki używanych przez [https://wikimediafoundation.org/ Fundację Wikimedia]",
 	"translate-group-desc-wikimediaextensions-main": "Grupa meta komunikatów zawierająca wszystkie wymagające przetłumaczenia komunikaty wspieranych rozszerzeń MediaWiki na potrzeby [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee komitetu językowego] Wikimedia",
-	"translategroupdescriptions-desc": "Opis grupy komunikatów dla produktów wspieranych przez [https://mediawiki.org/wiki/Extension:Translate rozszerzenie tłumaczenia]"
+	"translategroupdescriptions-desc": "Opis grupy komunikatów dla produktów wspieranych przez [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate rozszerzenie tłumaczenia]"
 }
