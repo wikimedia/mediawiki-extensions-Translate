@@ -94,6 +94,10 @@
 	"tpt-aggregategroup-new-description": "Опис (необов'язково):",
 	"tpt-aggregategroup-remove-confirm": "Ви дійсно бажаєте видалити цю загальну групу?",
 	"tpt-aggregategroup-invalid-group": "Група не існує",
+	"tpt-aggregategroup-edit-name": "Назва:",
+	"tpt-aggregategroup-edit-description": "Опис:",
+	"tpt-aggregategroup-update": "Зберегти",
+	"tpt-aggregategroup-update-cancel": "Скасувати",
 	"pt-parse-open": "Незбалансований тег &lt;translate>.\nШаблон перекладу: <pre>$1</pre>",
 	"pt-parse-close": "Незбалансований тег &lt;/translate>.\nШаблон перекладу: <pre>$1</pre>",
 	"pt-parse-nested": "Вкладати одну одиницю перекладу &lt;translate> в іншу не допускається.\nТекст тегу: <pre>$1</pre>",
@@ -171,5 +175,14 @@
 	"pm-savepages-button-label": "Зберегти",
 	"pm-cancel-button-label": "Скасувати",
 	"pm-pagename-placeholder": "Введіть назву сторінки",
-	"pm-langcode-placeholder": "Код мови"
+	"pm-langcode-placeholder": "Код мови",
+	"pm-page-does-not-exist": "$1 не існує",
+	"pm-old-translations-missing": "$1 не містить старих перекладів",
+	"pm-extra-units-warning": "Можуть бути наявні додаткові блоки. Будь ласка, правильно співвіднесіть джерело і блоки перекладу",
+	"pm-pagename-missing": "Будь ласка, введіть назву сторінки",
+	"pm-langcode-missing": "Будь ласка, введіть код мови",
+	"pm-add-icon-hover-text": "Додати блок нижче",
+	"pm-swap-icon-hover-text": "Поміняти місцями з блоком нижче",
+	"pm-delete-icon-hover-text": "Видалити блок",
+	"tpt-translate-title": "Дозволити переклад заголовка сторінки"
 }

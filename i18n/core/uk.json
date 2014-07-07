@@ -392,6 +392,7 @@
 	"tux-editor-expand-tooltip": "Розгорнути",
 	"tux-editor-collapse-tooltip": "Згорнути",
 	"tux-editor-message-tools-history": "Історія",
+	"tux-editor-message-tools-delete": "Вилучити",
 	"tux-editor-message-tools-translations": "Усі переклади",
 	"tux-editor-loading": "Завантаження…",
 	"translate-search-more-languages-info": "Ще $1 {{PLURAL:$1|мова|мови|мов}}",
