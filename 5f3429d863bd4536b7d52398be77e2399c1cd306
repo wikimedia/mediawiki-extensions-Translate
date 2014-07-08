@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_7101f2b8",
+        "filename": "Autoload.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-08T07:57:32Z",
+      "side": 1,
+      "message": "Please break as in previous revision.",
+      "revId": "5f3429d863bd4536b7d52398be77e2399c1cd306",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_5106f6d2",
+        "filename": "Autoload.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-08T07:57:32Z",
+      "side": 1,
+      "message": "Please use the $al shortcut. Also below.",
+      "revId": "5f3429d863bd4536b7d52398be77e2399c1cd306",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
