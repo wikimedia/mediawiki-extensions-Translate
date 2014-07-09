@@ -135,6 +135,27 @@ class SpecialPageTranslationMovePage extends TranslateSpecialPage {
 			$sp = new MovePageForm();
 			$sp->execute( $par );
 		}
+
+		if ( $request->wasPosted() ) {
+			// Update the old and the new translation pages
+
+			// Get the translation page and the code
+			$t1 = $this->oldTitle->getBaseText();
+			$code1 = substr( $t1, strrpos( $t1, '/' ) + 1 );
+			$t1 = substr( $t1, 0, strpos( $t1, '/' ) );
+			$title1 = Title::newFromText( $t1 );
+			$p1 = TranslatablePage::newFromTitle( $title1 );
+			// Update the translation page
+			PageTranslationHooks::updateTranslationPage( $p1, $code1, $user, $flags = '', $summary = '' );
+
+			// Update for the destination page also
+			$t2 = $request->getText( 'wpNewTitleMain' );
+			$code2 = substr( $t2, strrpos( $t2, '/' ) + 1 );
+			$t2 = substr( $t2, 0, strpos( $t2, '/' ) );
+			$title2 = Title::newFromText( $t2 );
+			$p2 = TranslatablePage::newFromTitle( $title2 );
+			PageTranslationHooks::updateTranslationPage( $p2, $code2, $user, $flags = '', $summary = '' );
+		}
 	}
 
 	/**
