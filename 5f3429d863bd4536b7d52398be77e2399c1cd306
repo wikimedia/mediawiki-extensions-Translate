@@ -33,6 +33,24 @@
       "revId": "5f3429d863bd4536b7d52398be77e2399c1cd306",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_cb090a36",
+        "filename": "Autoload.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-09T05:22:58Z",
+      "side": 1,
+      "message": "The $al shortcut has already been used above, isn\u0027t it? For example, $al[\u0027TranslateSpecialPage\u0027] is already present above.",
+      "parentUuid": "8e28a382_5106f6d2",
+      "revId": "5f3429d863bd4536b7d52398be77e2399c1cd306",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
