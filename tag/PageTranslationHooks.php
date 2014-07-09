@@ -886,4 +886,36 @@ class PageTranslationHooks {
 
 		return true;
 	}
+
+	public static function onTitleMoveComplete( Title &$ot, Title &$nt, User &$user,
+		$oldid, $newid, $reason
+	) {
+		$oldHandle = new MessageHandle( $ot );
+		$updated_groups = array();
+
+		// Check if the handle for old title is valid, returns false for all translation units
+		// when a source translation page is being moved since the page doesn't exist
+		// This way we can avoid this hook being called multiple times in case of moving a Source
+		// page
+		if ( $oldHandle->isValid() ) {
+			foreach ( array( $ot, $nt ) as $title ) {
+				$isOldTitle = ( $ot === $title );
+				$handle = $isOldTitle ? $oldHandle : new MessageHandle( $title );
+				$language = $handle->getCode();
+				$group = $handle->getGroup();
+
+				// Update the page only once if source and destination
+				// units belong to the same page
+				if ( !in_array( $group, $updated_groups ) &&
+					// Not checking if old handle is valid again here
+					( $isOldTitle || $handle->isValid() ) &&
+					$group instanceof WikiPageMessageGroup
+				) {
+					$updated_groups[] = $group;
+					$page = TranslatablePage::newFromTitle( $group->getTitle() );
+					self::updateTranslationPage( $page, $language, $user, '', $reason );
+				}
+			}
+		}
+	}
 }
