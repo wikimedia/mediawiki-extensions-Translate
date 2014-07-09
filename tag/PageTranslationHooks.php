@@ -886,4 +886,26 @@ class PageTranslationHooks {
 
 		return true;
 	}
+
+	public static function onTitleMoveComplete( Title &$ot, Title &$nt, User &$user, $oldid, $newid, $reason ) {
+		// Update the source translation page
+		// Get the translation page and the code
+		$handle1 = new MessageHandle( $ot );
+		list( /* $unused */, $code1 ) = $handle1->figureMessage();
+		$group1 = $handle1->getGroup();
+		if ( $group1 instanceof WikiPageMessageGroup ) {
+			// Update the translation page
+			$page1 = TranslatablePage::newFromTitle( $group1->getTitle() );
+			self::updateTranslationPage( $page1, $code1, $user, '', $reason );
+		}
+
+		// Update for the destination page also
+		$handle2 = new MessageHandle( $nt );
+		list( /* $unused */, $code2 ) = $handle2->figureMessage();
+		$group2 = $handle2->getGroup();
+		if ( $group2 instanceof WikiPageMessageGroup ) {
+			$page2 = TranslatablePage::newFromTitle( $group2->getTitle() );
+			self::updateTranslationPage( $page2, $code2, $user, '', $reason );
+		}
+	}
 }
