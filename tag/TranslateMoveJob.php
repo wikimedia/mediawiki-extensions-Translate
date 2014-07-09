@@ -57,6 +57,7 @@ class TranslateMoveJob extends Job {
 		$doer = User::newFromName( $this->getPerformer() );
 
 		PageTranslationHooks::$allowTargetEdit = true;
+		PageTranslationHooks::$jobQueueRunning = true;
 		$oldUser = $wgUser;
 		$wgUser = $user;
 		self::forceRedirects( false );
@@ -101,6 +102,8 @@ class TranslateMoveJob extends Job {
 			$entry->setTarget( Title::newFromText( $base ) );
 			$logid = $entry->insert();
 			$entry->publish( $logid );
+
+			PageTranslationHooks::$jobQueueRunning = false;
 		}
 
 		$wgUser = $oldUser;
