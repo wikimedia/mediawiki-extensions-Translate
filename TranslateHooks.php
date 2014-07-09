@@ -37,6 +37,10 @@ class TranslateHooks {
 	public static function setupTranslate() {
 		global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
 
+		// Update translated page when translation unit is moved
+		$wgHooks['SpecialMovepageAfterMove'][] =
+			'PageTranslationHooks::onSpecialMovepageAfterMove';
+
 		if ( $wgTranslatePHPlot ) {
 			$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
 		}

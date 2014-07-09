@@ -886,4 +886,26 @@ class PageTranslationHooks {
 
 		return true;
 	}
+
+	public static function onSpecialMovepageAfterMove( &$form, &$ot , &$nt ) {
+		// Is a check that the page is a translation unit required here?
+		// This function isn't called when a source translatable page
+
+		// Update the old and the new translation pages here
+
+		// Get the translation page and the code
+		list( $t1, $code1 ) = TranslateUtils::figureMessage( $ot->getText() );
+		$t1 = substr( $t1, 0, strrpos( $t1, '/' ) );
+		$title1 = Title::newFromText( $t1 );
+		$p1 = TranslatablePage::newFromTitle( $title1 );
+		// Update the translation page
+		self::updateTranslationPage( $p1, $code1, FuzzyBot::getUser(), '', '' );
+
+		// Update for the destination page also
+		list( $t2, $code2 ) = TranslateUtils::figureMessage( $nt->getText() );
+		$t2 = substr( $t2, 0, strrpos( $t2, '/' ) );
+		$title2 = Title::newFromText( $t2 );
+		$p2 = TranslatablePage::newFromTitle( $title2 );
+		self::updateTranslationPage( $p2, $code2, FuzzyBot::getUser(), '', '' );
+	}
 }
