@@ -886,4 +886,33 @@ class PageTranslationHooks {
 
 		return true;
 	}
+
+	public static function onTitleMoveComplete( Title &$ot, Title &$nt, User &$user,
+		$oldid, $newid, $reason
+	) {
+		// Hack, check if the handle for old title is valid, returns false
+		// for all translation units when a source translation page is being moved
+		$oldHandle = new MessageHandle( $ot );
+
+		if ( $oldHandle->isValid() ) {
+			// Process both old and new titles if not same
+			foreach ( array_unique( array( $ot, $nt ) ) as $title ) {
+				// Flag so that another message handle for old title is not created
+				$flag = ( $title === $ot );
+				$handle = $flag ? $oldHandle : new MessageHandle( $title );
+
+				// Is there a need to check if the new handle is valid?
+				if ( $flag || $handle->isValid() ) {
+					$language = $handle->getCode();
+					$group = $handle->getGroup();
+
+					if ( $group instanceof WikiPageMessageGroup ) {
+						// Update the old page
+						$page = TranslatablePage::newFromTitle( $group->getTitle() );
+						self::updateTranslationPage( $page, $language, $user, '', $reason );
+					}
+				}
+			}
+		}
+	}
 }
