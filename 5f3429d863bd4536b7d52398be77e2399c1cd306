@@ -51,6 +51,24 @@
       "revId": "5f3429d863bd4536b7d52398be77e2399c1cd306",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_09271a0f",
+        "filename": "Autoload.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-09T10:20:32Z",
+      "side": 1,
+      "message": "That was outside my diff view, thanks for reminding my. Then why would you duplicate this code?",
+      "parentUuid": "8e28a382_cb090a36",
+      "revId": "5f3429d863bd4536b7d52398be77e2399c1cd306",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
