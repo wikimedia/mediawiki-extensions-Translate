@@ -31,7 +31,8 @@
 			"Wyz",
 			"Yumeki",
 			"Zcqsc06",
-			"Zetud"
+			"Zetud",
+			"Linedwell"
 		]
 	},
 	"translate": "Traduire",
@@ -213,7 +214,7 @@
 	"supportedlanguages": "Langues prises en charge",
 	"supportedlanguages-summary": "Cette page affiche une liste de toutes les langues prises en charge par {{SITENAME}}, avec les noms des traducteurs qui travaillent dans cette langue.\nLe nom d'un traducteur apparaît en plus gros en fonction du nombre de modifications auxquelles il a contribué.\nLa couleur du soulignement indique si le traducteur a été actif ici récemment.",
 	"supportedlanguages-colorlegend": "Légende pour la couleur: Dernière traduction il y a $1 jours.",
-	"supportedlanguages-portallink": "<nowiki>[</nowiki>$1<nowiki>]</nowiki> $2 — $3",
+	"supportedlanguages-portallink": "[$1] $2 — $3",
 	"supportedlanguages-portallink-nocldr": "<nowiki>[</nowiki>$1<nowiki>]</nowiki> $2",
 	"supportedlanguages-translators": "{{PLURAL:$2|Traducteur|Traducteurs}} : $1",
 	"supportedlanguages-recenttranslations": "traductions récentes",
