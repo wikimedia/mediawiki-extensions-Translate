@@ -69,6 +69,24 @@
       "revId": "5f3429d863bd4536b7d52398be77e2399c1cd306",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_5ffa7474",
+        "filename": "Autoload.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-09T14:36:48Z",
+      "side": 1,
+      "message": "Those aren\u0027t my additions. Niklas had added them recently.",
+      "parentUuid": "8e28a382_09271a0f",
+      "revId": "5f3429d863bd4536b7d52398be77e2399c1cd306",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
