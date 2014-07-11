@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_acf47b84",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-11T12:10:35Z",
+      "side": 1,
+      "message": "Use TranslateUtils::figureMessage() here. Same below a few times.",
+      "revId": "427e717efe4c7f1840b04a491cfb3bbb21d703cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
