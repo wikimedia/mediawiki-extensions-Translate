@@ -204,7 +204,7 @@
 	"supportedlanguages-localsummary": "{{notranslate}}\nPlace any site specific message here.",
 	"supportedlanguages-portallink": "{{optional}}\nParameters:\n* $1 - language code\n* $2 - localized language name\n* $3 - native language name\nSee also:\n* {{msg-mw|Supportedlanguages-portallink-nocldr}}",
 	"supportedlanguages-portallink-nocldr": "{{optional}}\nUsed if the localized language name is available. Parameters:\n* $1 - language code\n* $2 - native language name\nSee also:\n* {{msg-mw|Supportedlanguages-portallink}}",
-	"supportedlanguages-translators": "On [[Special:SupportedLanguages]].\n* $1 - the list of translators names\n* $2 - the number of translators listed\n{{Identical|Translator}}",
+	"supportedlanguages-translators": "Row for a language in [[Special:SupportedLanguages]], under the respective header.\n* $1 - the list of translators names\n* $2 - the number of translators listed\n{{Identical|Translator}}",
 	"supportedlanguages-recenttranslations": "Link on [[Special:SupportedLanguages]] to [[Special:RecentChanges]].",
 	"supportedlanguages-count": "On [[Special:SupportedLanguages]]\n*$1 is the total number of supported languages.",
 	"supportedlanguages-activity": "Used as tooltip text for username in users list, to show user's activity.\n\nSee [{{canonicalurl:Special:SupportedLanguages}}#fr example].\n\nParameters:\n* $1 - username\n* $2 - number of edits the user made\n* $3 - number of days",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bua333",
-			"Mucalexx"
+			"Mucalexx",
+			"Joe Watzmo"
 		]
 	},
 	"translate": "Ibasetzn",
@@ -29,5 +30,7 @@
 	"translate-js-history": "Ywersétzungsgschicht",
 	"translate-js-support": "A Frog stön",
 	"translate-searchprofile": "Ywersétzungen",
-	"translate-searchprofile-tooltip": "Suach in olle Ywersétzungen"
+	"translate-searchprofile-tooltip": "Suach in olle Ywersétzungen",
+	"tux-editor-expand-tooltip": "Auskloppn",
+	"tux-editor-collapse-tooltip": "eikloppn"
 }
