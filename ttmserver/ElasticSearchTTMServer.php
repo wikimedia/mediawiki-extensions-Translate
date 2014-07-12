@@ -52,7 +52,9 @@ class ElasticSearchTTMServer
 
 		$query = new \Elastica\Query();
 
-		$fuzzyQuery = new \Elastica\Query\Fuzzy( 'content', $text );
+		$fuzzyQuery = new \Elastica\Query\FuzzyLikeThis();
+		$fuzzyQuery->setLikeText( $text );
+		$fuzzyQuery->addFields( array( 'content' ) );
 		$query->setQuery( $fuzzyQuery );
 
 		$languageFilter = new \Elastica\Filter\Term();
