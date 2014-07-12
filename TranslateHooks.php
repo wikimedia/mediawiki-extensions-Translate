@@ -533,6 +533,18 @@ class TranslateHooks {
 	}
 
 	/**
+	 * Hook: UserMergeAccountFields
+	 */
+	public static function onUserMergeAccountFields( &$fields ) {
+		// table, user id, user name
+		$fields[] = array( 'translate_reviews', 'trr_user' );
+		// For completeness - not expecting anyone to rename users in sandbox
+		$fields[] = array( 'translate_stash', 'ts_user' );
+
+		return true;
+	}
+
+	/**
 	 * Hook: AbortEmailNotification
 	 *
 	 * False aborts the email.
