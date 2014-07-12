@@ -865,7 +865,7 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 			$title = Title::makeTitle( NS_TRANSLATIONS, "$prefix/$unit/$code" );
 
 			$fuzzy = $s->type === 'changed';
-			$jobs[] = MessageUpdateJob::newJob( $title, $s->text, $fuzzy );
+			$jobs[] = MessageUpdateJob::newJob( $title, $s->getTextWithVariables(), $fuzzy );
 		}
 
 		return $jobs;
