@@ -532,6 +532,57 @@ class TranslateHooks {
 		return true;
 	}
 
+	private static $userMergeTables = array(
+		'translate_stash' => 'ts_user',
+		'translate_reviews' => 'trr_user',
+	);
+
+	/**
+	 * Handler for E:UserMerge's MergeAccountFromTo hook
+	 *
+	 * @param User $oldUser
+	 * @param User $newUser
+	 * @return bool
+	 */
+	public static function onMergeAccountFromTo( User &$oldUser, User &$newUser ) {
+		$dbw = wfGetDB( DB_MASTER );
+
+		// Update the non-duplicate rows, we'll just delete
+		// the duplicate ones later
+		foreach ( self::$userMergeTables as $table => $field ) {
+			$dbw->update(
+				$table,
+				array( $field => $newUser->getId() ),
+				array( $field => $oldUser->getId() ),
+				__METHOD__,
+				array( 'IGNORE' )
+			);
+		}
+
+		return true;
+	}
+
+	/**
+	 * Handler for E:UserMerge's DeleteAccount hook
+	 *
+	 * @param User $oldUser
+	 * @return bool
+	 */
+	public static function onDeleteAccount( User &$oldUser ) {
+		$dbw = wfGetDB( DB_MASTER );
+
+		// Delete any remaining rows that didn't get merged
+		foreach ( self::$userMergeTables as $table => $field ) {
+			$dbw->delete(
+				$table,
+				array( $field => $oldUser->getId() ),
+				__METHOD__
+			);
+		}
+
+		return true;
+	}
+
 	/**
 	 * Hook: AbortEmailNotification
 	 *

@@ -205,7 +205,10 @@ $GLOBALS['wgHooks']['TranslateEventTranslationReview'][] = 'MessageGroupStats::c
 $GLOBALS['wgHooks']['TranslateEventTranslationEdit'][] = 'MessageGroupStatesUpdaterJob::onChange';
 $GLOBALS['wgHooks']['TranslateEventTranslationReview'][] = 'MessageGroupStatesUpdaterJob::onChange';
 
+// Other extensions
 $GLOBALS['wgHooks']['AdminLinks'][] = 'TranslateHooks::onAdminLinks';
+$GLOBALS['wgHooks']['MergeAccountFromTo'][] = 'TranslateHooks::onMergeAccountFromTo';
+$GLOBALS['wgHooks']['DeleteAccount'][] = 'TranslateHooks::onDeleteAccount';
 
 // New rights
 $GLOBALS['wgAvailableRights'][] = 'translate';
