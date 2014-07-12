@@ -194,11 +194,11 @@ class TPParse {
 
 			// For the source language, this will actually be the source, which
 			// contains variable declarations (tvar) instead of variables ($1).
-			// The getTextForTrans will convert declarations to normal variables
+			// The getTextWithVariables will convert declarations to normal variables
 			// for us so that the variable substitutions below will also work
 			// for the source language.
 			if ( $sectiontext === null || $sectiontext === $s->getText() ) {
-				$sectiontext = $s->getTextForTrans();
+				$sectiontext = $s->getTextWithVariables();
 			}
 
 			// Substitute variables into section text and substitute text into document
