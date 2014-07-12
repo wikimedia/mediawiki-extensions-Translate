@@ -782,7 +782,7 @@
 				translation: $textarea.val()
 			}, function ( data ) {
 				var warningIndex,
-					warnings = $.parseJSON( data );
+					warnings = JSON.parse( data );
 
 				translateEditor.removeWarning( 'validation' );
 				if ( !warnings || !warnings.length ) {
