@@ -35,6 +35,6 @@
 	"tsb-limit-reached-title": "Gracias por tus traducciones",
 	"tsb-create-user-page": "Crear página de usuario básica",
 	"log-name-translatorsandbox": "Zona de pruebas de traducción",
-	"log-description-translatorsandbox": "Un registro de acciones relacionadas con los usuarios en pruebas de traducción",
+	"log-description-translatorsandbox": "Un registro de acciones de usuarios en zona de pruebas de traducción",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|rechazó}} la solicitud de «$3» para convertirse en traductor"
 }

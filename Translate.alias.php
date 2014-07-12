@@ -413,9 +413,22 @@ $specialPageAliases['gsw'] = array(
 
 /** Hebrew (עברית) */
 $specialPageAliases['he'] = array(
+	'ImportTranslations' => array( 'ייבוא_תרגומים' ),
+	'LanguageStats' => array( 'סטטיסטיקות_שפה' ),
 	'Magic' => array( 'תרגום_מתקדם' ),
+	'ManageMessageGroups' => array( 'ניהול_קבוצות_הודעות' ),
+	'ManageTranslatorSandbox' => array( 'ניהול_ארגז_חול_של_מתרגמים' ),
+	'MessageGroupStats' => array( 'סטטיסטיקות_של_קבוצות_הודעות' ),
+	'MyLanguage' => array( 'השפה_שלי' ),
+	'PageTranslation' => array( 'תרגום_דף' ),
+	'PageTranslationDeletePage' => array( 'מחיקת_דף_מתורגם' ),
+	'SearchTranslations' => array( 'חיפוש_תרגומים' ),
+	'SupportedLanguages' => array( 'שפות_נתמכות' ),
 	'Translate' => array( 'תרגום' ),
+	'TranslationStash' => array( 'מחסן_תרגומים' ),
 	'TranslationStats' => array( 'סטטיסטיקות_תרגום' ),
+	'Translations' => array( 'תרגומים' ),
+	'PageMigration' => array( 'המרת_דף' ),
 );
 
 /** Hindi (हिन्दी) */
