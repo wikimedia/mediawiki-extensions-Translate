@@ -64,10 +64,9 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
 
 		foreach ( $res as $r ) {
-			/// @todo: use getTextForTrans?
-			$text = $r->trs_text;
-			$text = preg_replace( $re, '$\1', $text );
-			$defs[$r->trs_key] = $text;
+			$section = new TPSection();
+			$section->text = $r->trs_text;
+			$defs[$r->trs_key] = $section->getTextWithVariables();
 		}
 
 		$new_defs = array();

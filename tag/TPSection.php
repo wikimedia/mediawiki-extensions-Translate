@@ -34,6 +34,17 @@ class TPSection {
 	}
 
 	/**
+	 * Returns the text with tvars replaces with placeholders.
+	 * @return string Wikitext.
+	 * @since 2014.07
+	 */
+	public function getTextWithVariables() {
+		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
+
+		return preg_replace( $re, '$\1', $this->text );
+	}
+
+	/**
 	 * Returns section text with variables replaced.
 	 * @return string Wikitext.
 	 */
