@@ -151,6 +151,7 @@
 	"translate-translations-history-short": "V",
 	"languagestats": "Sproochstatistiken",
 	"languagestats-summary": "Dës Säit weist d'Statistike vun der Iwwersetzung fir all Gruppe vu Message fir eng Sprooch.",
+	"messagegroupstats-summary": "Dës Säit weist d'Statistike vun de Gruppe vu Messagen.",
 	"languagestats-stats-for": "Iwwersetzungsstatistike fir $1 ($2).",
 	"languagestats-recenttranslations": "Rezent Iwwersetzungen",
 	"translate-langstats-incomplete": "E puer vun de Statistiken op dëser Säit sinn net komplett. Luet d'Säit nei fir méi Statistiken ze kréien.",
@@ -381,5 +382,6 @@
 	"translate-statsbar-tooltip": "$1% iwwersat, $2% nogekuckt",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% iwwersat, $2% nogekuckt, $3% vereelzt",
 	"translate-search-more-groups-info": "$1 weider {{PLURAL:$1|Grupp|Gruppen}}",
-	"translate-ulsdep-title": "Astellungsfeeler"
+	"translate-ulsdep-title": "Astellungsfeeler",
+	"translate-ulsdep-body": "D'Iwwersetzungerweiderung hänkt vun der  [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universeller Sproochauswiel-Erweiderung] of."
 }

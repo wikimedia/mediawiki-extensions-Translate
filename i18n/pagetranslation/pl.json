@@ -69,7 +69,7 @@
 	"translate-tag-markthis": "Oznacz tę stronę do tłumaczenia",
 	"translate-tag-markthisagain": "Ta strona została zmieniona <span class=\"plainlinks\">[$1 razy]</span>, od kiedy ostatnio była <span class=\"plainlinks\">[$2 oznaczona do tłumaczenia]</span>.",
 	"translate-tag-hasnew": "Ta strona zawiera <span class=\"plainlinks\">[$1 zmiany]</span>, które nie zostały oznaczone do tłumaczenia.",
-	"tpt-translation-intro": "Ta strona to <span class=\"plainlinks\">[$1 przetłumaczona wersja]</span> strony [[$2]], a tłumaczenie jest ukończone lub aktualne w $3%.",
+	"tpt-translation-intro": "Ta strona to <span class=\"plainlinks\">[$1 przetłumaczona wersja]</span> strony [[$2]], a tłumaczenie jest ukończone w $3%.",
 	"tpt-languages-legend": "Inne języki:",
 	"tpt-languages-zero": "Rozpocznij tłumaczenie na ten język",
 	"tpt-tab-translate": "Przetłumacz",
@@ -94,6 +94,10 @@
 	"tpt-aggregategroup-new-description": "Opis (opcjonalnie):",
 	"tpt-aggregategroup-remove-confirm": "Na pewno usunąć tę grupę agregacji?",
 	"tpt-aggregategroup-invalid-group": "Grupa nie istnieje",
+	"tpt-aggregategroup-edit-name": "Nazwa:",
+	"tpt-aggregategroup-edit-description": "Opis:",
+	"tpt-aggregategroup-update": "Zapisz",
+	"tpt-aggregategroup-update-cancel": "Anuluj",
 	"pt-parse-open": "Niezrównoważony znacznik &lt;translate>.\nSzablon tłumaczenia – <pre>$1</pre>",
 	"pt-parse-close": "Niezrównoważony znacznik &lt;/translate>.\nSzablon tłumaczenia – <pre>$1</pre>",
 	"pt-parse-nested": "Zagnieżdżanie jednostek tłumaczenia &lt;translate> nie jest dopuszczalne.\nTekst znacznika: <pre>$1</pre>",
@@ -107,6 +111,7 @@
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|zmienił|zmieniła}} nazwę strony przeznaczonej do tłumaczenia z $3 na $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|napotkał|napotkała}} problem podczas przenoszenia strony $3 do $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|zakończył|zakończyła}} usuwanie strony przeznaczonej do tłumaczenia $3",
+	"logentry-pagetranslation-deletelok": "$1 {{GENDER:$2|usunął|usunęła}} stronę przeznaczoną do tłumaczenia $3",
 	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|zachęcił|zachęciła}} do tłumaczenia $3",
 	"logentry-pagetranslation-discourage": "$1 {{GENDER:$2|zniechęcił|zniechęciła}} do tłumaczenia $3",
 	"logentry-pagetranslation-prioritylanguages-unset": "$1 {{GENDER:$2|usunął|usunęła}} języki priorytetowe ze strony przeznaczonej do tłumaczenia $3",
@@ -163,6 +168,7 @@
 	"pt-deletepage-lang-logreason": "Część strony tłumaczenia  $1.",
 	"pt-deletepage-started": "Sprawdź [[Special:Log/pagetranslation|dziennik strony tłumaczenia]] pod względem błędów i komunikatów zakończenia.",
 	"pt-deletepage-intro": "Ta specjalna strona pozwala na usuwanie całej strony przeznaczonej do tłumaczenia lub pojedynczej strony w danym języku.\nAkcja usuwania nie będzie natychmiastowa, ponieważ wszystkie strony zależne od podanych również będą usunięte.\nBłędy będą rejestrowane [[Special:Log/pagetranslation|w dzienniku tłumaczenia strony]] i muszą być naprawione ręcznie.",
+	"pm-import-button-label": "Importuj",
 	"pm-savepages-button-label": "Zapisz",
 	"pm-cancel-button-label": "Anuluj",
 	"pm-pagename-placeholder": "Wprowadź nazwę strony",
@@ -173,5 +179,6 @@
 	"pm-langcode-missing": "Proszę podać kod języka",
 	"pm-add-icon-hover-text": "Dodaj jednostkę poniżej",
 	"pm-swap-icon-hover-text": "Zamień z jednostką poniżej",
-	"pm-delete-icon-hover-text": "Usuń jednostkę"
+	"pm-delete-icon-hover-text": "Usuń jednostkę",
+	"tpt-translate-title": "Umożliwienie tłumaczenia tytułu strony"
 }

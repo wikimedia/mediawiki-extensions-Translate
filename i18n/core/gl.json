@@ -20,7 +20,7 @@
 	"translate-taction-translate": "Traducir",
 	"translate-taction-proofread": "Revisar",
 	"translate-taction-lstats": "Estatísticas da lingua",
-	"translate-taction-mstats": "Estatísticas do grupo de mensaxes",
+	"translate-taction-mstats": "Estatísticas dos grupos de mensaxes",
 	"translate-taction-export": "Exportar",
 	"translate-taction-disabled": "A acción está desactivada neste wiki.",
 	"translate-page-no-such-language": "O código de lingua especificado non é válido.",
@@ -153,6 +153,7 @@
 	"translate-translations-history-short": "h",
 	"languagestats": "Estatísticas da lingua",
 	"languagestats-summary": "Esta páxina mostra as estatísticas de tradución dos grupos de mensaxes dunha lingua.",
+	"messagegroupstats-summary": "Esta páxina mostra as estatísticas dos grupos de mensaxes.",
 	"languagestats-stats-for": "Estatísticas das traducións en $1 ($2).",
 	"languagestats-recenttranslations": "traducións recentes",
 	"translate-langstats-incomplete": "Algunhas das estatísticas desta páxina están incompletas. Recargue a páxina para ollar máis estatísticas.",
@@ -172,7 +173,7 @@
 	"translate-languagestats-overall": "Todos os grupos de mensaxes xuntos",
 	"translate-ls-submit": "Mostrar as estatísticas",
 	"translate-ls-column-group": "Grupo de mensaxes",
-	"translate-mgs-pagename": "Estatísticas do grupo de mensaxes",
+	"translate-mgs-pagename": "Estatísticas dos grupos de mensaxes",
 	"translate-mgs-fieldset": "Mostrar as preferencias",
 	"translate-mgs-group": "Grupo de mensaxes:",
 	"translate-mgs-nocomplete": "Non mostrar as linguas que teñen a tradución completa",
@@ -379,6 +380,7 @@
 	"tux-editor-expand-tooltip": "Expandir",
 	"tux-editor-collapse-tooltip": "Contraer",
 	"tux-editor-message-tools-history": "Historial",
+	"tux-editor-message-tools-delete": "Borrar",
 	"tux-editor-message-tools-translations": "Todas as traducións",
 	"tux-editor-loading": "Cargando...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|lingua|linguas}} máis",
@@ -386,5 +388,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traducidas, $2% revisadas, $3% desfasadas",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grupo|grupos}} máis",
 	"translate-ulsdep-title": "Erro de configuración",
-	"translate-ulsdep-body": "A extensión de tradución depende da [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector extensión do selector universal de linguas]"
+	"translate-ulsdep-body": "A extensión de tradución depende da [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector extensión do selector universal de linguas]."
 }
