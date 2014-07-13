@@ -32,7 +32,7 @@
     "tsb-reminder-link-text": "Send email reminder",
     "tsb-didnt-make-any-translations": "This user did not make any translations.",
     "tsb-translations-source": "Source",
-    "tsb-translations-user": "User translations",
+    "tsb-translations-user": "{{GENDER:$1|User}} translations",
     "tsb-translations-current": "Existing translations",
     "tsb-delete-userpage-summary": "Deleting the user page of a sandbox user",
     "translationstash": "Welcome",
