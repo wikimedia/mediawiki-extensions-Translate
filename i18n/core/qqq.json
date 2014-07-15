@@ -159,7 +159,7 @@
 	"translate-statsf-language": "Field label on [[Special:TranslationStats|form]] for generating graph.",
 	"translate-statsf-group": "Field label on [[Special:TranslationStats|form]] for generating graph.",
 	"translate-statsf-submit": "Submit button label on [[Special:TranslationStats|form]] for generating graph.\n\n{{Identical|Preview}}",
-	"translate-tag-page-desc": "Used as description for the message group in [[Special:Translate]].\n\nParameters:\n* $1 - the page title\n* $2 - link to the translation page <code>Special:MyLanguage/$1</code>, not the source page",
+	"translate-tag-page-desc": "Used as description for the message group in [[Special:Translate]].\n\nParameters:\n* $1 - the page title\n* $2 - link to the translation page\n* $3 - source language <code>Special:MyLanguage/$1</code>, not the source page",
 	"translate-sidebar-alltrans": "{{Identical|Otherlanguages}}",
 	"translations": "{{doc-special|Translations}}\n{{Identical|All translations}}",
 	"translations-summary": "Used in [[Special:Translations]].",
