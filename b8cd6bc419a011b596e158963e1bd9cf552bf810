@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_7a1d0966",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 67
+      },
+      "writtenOn": "2014-07-15T14:44:41Z",
+      "side": 1,
+      "message": "I think parentheses should not be hardcoded; there\u0027s a \"parentheses\" message but in this case it\u0027s maybe best to pass $pageLanguage as a separate parameter to translate-tag-page-desc.",
+      "revId": "b8cd6bc419a011b596e158963e1bd9cf552bf810",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
