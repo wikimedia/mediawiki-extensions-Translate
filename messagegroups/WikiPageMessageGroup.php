@@ -135,6 +135,9 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	public function getDescription( IContextSource $context = null ) {
 		$title = $this->getTitle()->getPrefixedText();
 		$target = ":$title";
+		$pageLanguageCode = $this->getSourceLanguage();
+		$inLanguageCode = $context->getLanguage()->getCode();
+		$languageName = Language::fetchLanguageName( $pageLanguageCode, $inLanguageCode );
 
 		// Allow for adding a custom group description by using
 		// "MediaWiki:Tp-custom-<group ID>".
@@ -145,7 +148,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 			$customText = $msg->plain();
 		}
 
-		$msg = wfMessage( 'translate-tag-page-desc', $title, $target );
+		$msg = wfMessage( 'translate-tag-page-desc', $title, $target, $languageName, $pageLanguageCode );
 		self::addContext( $msg, $context );
 
 		return $msg->plain() . $customText;

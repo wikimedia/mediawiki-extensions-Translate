@@ -140,7 +140,7 @@
     "translate-statsf-group": "Comma-separated list of group codes:",
     "translate-statsf-submit": "Preview",
     "translate-tag-category": "Translatable pages",
-    "translate-tag-page-desc": "Translation of the wiki page [[$2|$1]].",
+    "translate-tag-page-desc": "Translation of the wiki page [[$2|$1]] from $3 ($4).",
     "translate-sidebar-alltrans": "In other languages",
     "translations": "All translations",
     "translations-summary": "Enter a message name below to show all available translations.",
