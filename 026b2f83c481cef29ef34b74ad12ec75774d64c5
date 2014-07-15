@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_10694188",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 67
+      },
+      "writtenOn": "2014-07-15T21:53:29Z",
+      "side": 1,
+      "message": "You forgot to add ($4) here :)",
+      "revId": "026b2f83c481cef29ef34b74ad12ec75774d64c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f06355a5",
+        "filename": "i18n/core/qqq.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 67
+      },
+      "writtenOn": "2014-07-15T21:53:29Z",
+      "side": 1,
+      "message": "$4 should be documented here as well",
+      "revId": "026b2f83c481cef29ef34b74ad12ec75774d64c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f0f0f5c5",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 67
+      },
+      "writtenOn": "2014-07-15T21:53:29Z",
+      "side": 1,
+      "message": "I was wondering if this is the correct Title object to use, but I see there is a $this-\u003egetSourceLanguage() function in this class; you should probably use that.",
+      "revId": "026b2f83c481cef29ef34b74ad12ec75774d64c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_50d34930",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 67
+      },
+      "writtenOn": "2014-07-15T21:53:29Z",
+      "side": 1,
+      "message": "Maybe use less ambiguous variable names, like $languageName (or maybe $pageLanguageCode and $pageLanguageName).",
+      "revId": "026b2f83c481cef29ef34b74ad12ec75774d64c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
