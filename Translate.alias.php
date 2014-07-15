@@ -59,6 +59,7 @@ $specialPageAliases['ar'] = array(
 	'TranslationStash' => array( 'ستاش_الترجمة' ),
 	'TranslationStats' => array( 'إحصاءات_الترجمة' ),
 	'Translations' => array( 'ترجمات' ),
+	'PageMigration' => array( 'هجرة_الصفحة' ),
 );
 
 /** Aramaic (ܐܪܡܝܐ) */
@@ -88,6 +89,7 @@ $specialPageAliases['arz'] = array(
 	'TranslationStash' => array( 'ستاش_الترجمه' ),
 	'TranslationStats' => array( 'احصائيات_الترجمه' ),
 	'Translations' => array( 'ترجمات' ),
+	'PageMigration' => array( 'هجره_الصفحه' ),
 );
 
 /** Assamese (অসমীয়া) */

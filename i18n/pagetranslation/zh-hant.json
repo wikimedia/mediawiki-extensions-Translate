@@ -91,6 +91,9 @@
 	"tpt-aggregategroup-new-description": "說明 （可選）：",
 	"tpt-aggregategroup-remove-confirm": "確實要刪除此聚合組嗎？",
 	"tpt-aggregategroup-invalid-group": "組別不存在",
+	"tpt-aggregategroup-edit-name": "名稱：",
+	"tpt-aggregategroup-edit-description": "描述：",
+	"tpt-aggregategroup-update": "儲存",
 	"pt-parse-open": "&lt;translate>標籤不平衡。\n翻譯模板：<pre>$1</pre>",
 	"pt-parse-close": "&lt;/translate>標籤不平衡。\n翻譯模板：<pre>$1</pre>",
 	"pt-parse-nested": "不允許嵌套&lt;translate>翻譯單元。\n標記文本：<pre>$1</pre>",
@@ -162,5 +165,15 @@
 	"pt-deletepage-full-logreason": "可翻譯頁面「$1」的一部分。",
 	"pt-deletepage-lang-logreason": "翻譯頁面「$1」的一部分。",
 	"pt-deletepage-started": "請檢查[[Special:Log/pagetranslation|頁面翻譯日誌]]內的錯誤和完成消息。",
-	"pt-deletepage-intro": "本特殊頁面允許您刪除一頁可翻譯的頁面、或單一種語言的其中一頁頁面的翻譯訊息頁面。\n因為所有有關頁面將會被刪除，此刪除操作將不會一瞬間完成。\n任何刪除失敗將在[[Special:Log/pagetranslation|頁面翻譯日誌]]記錄，並且需要手動修理。"
+	"pt-deletepage-intro": "本特殊頁面允許您刪除一頁可翻譯的頁面、或單一種語言的其中一頁頁面的翻譯訊息頁面。\n因為所有有關頁面將會被刪除，此刪除操作將不會一瞬間完成。\n任何刪除失敗將在[[Special:Log/pagetranslation|頁面翻譯日誌]]記錄，並且需要手動修理。",
+	"pagemigration": "翻譯頁面遷移",
+	"pm-import-button-label": "匯入",
+	"pm-savepages-button-label": "儲存",
+	"pm-pagename-placeholder": "輸入頁面名稱",
+	"pm-langcode-placeholder": "語言代碼",
+	"pm-page-does-not-exist": "$1 不存在",
+	"pm-old-translations-missing": "$1 沒有舊的翻譯",
+	"pm-pagename-missing": "請輸入頁面名稱",
+	"pm-langcode-missing": "請輸入語言代碼",
+	"tpt-translate-title": "允許翻譯頁面標題"
 }
