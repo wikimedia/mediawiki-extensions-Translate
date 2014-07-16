@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_529b49c1",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:42:17Z",
+      "side": 1,
+      "message": "Does not follow our glossary: https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary\n\nShould be translatable page preparation or more friendly \"Prepare page for translation\"",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_32967d98",
+        "filename": "i18n/pagetranslation/qqq.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:42:17Z",
+      "side": 1,
+      "message": "Please use tabs",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_d2ee191f",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:42:17Z",
+      "side": 1,
+      "message": "Swap with line below, add line for return.done being a function",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f2e6b53e",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:42:17Z",
+      "side": 1,
+      "message": "summary is unused here",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f2bd95fe",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:42:17Z",
+      "side": 1,
+      "message": "Unacceptable hardcoding of links. Use mw.Title where possible, for example getUrl.",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_d234d9a9",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:42:17Z",
+      "side": 1,
+      "message": "Needs i18n",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_923e5186",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:42:17Z",
+      "side": 1,
+      "message": "You are repeatedly calling the same elements from the dom inside this function. Cache them in variables.\n\nYou can also split these click handlers to separate functions and pass the elements they need as parameters.",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f24c7545",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:42:17Z",
+      "side": 1,
+      "message": "???",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_12694188",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:42:17Z",
+      "side": 1,
+      "message": "This is unreadable. I suggest using a html template like for example here: https://github.com/wikimedia/mediawiki-extensions-TwnMainPage/blob/master/specials/SpecialTwnMainPage.php#L282\n\nRemember to do proper escaping.",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_52f6a9d5",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:42:17Z",
+      "side": 1,
+      "message": "This look like very fragile way to get diff html. We need to figure out a better way.",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
