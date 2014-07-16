@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_9223f153",
+        "filename": "i18n/pagetranslation/qqq.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:43:31Z",
+      "side": 1,
+      "message": "Please move this fix to where it was introduced.",
+      "revId": "1dc328c46ee41e40c3cc406cd41c739f0dbd8859",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
