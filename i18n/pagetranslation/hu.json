@@ -6,7 +6,8 @@
 			"Glanthor Reviol",
 			"Misibacsi",
 			"Xbspiro",
-			"Csega"
+			"Csega",
+			"Tacsipacsi"
 		]
 	},
 	"pagetranslation": "Lap fordítása",
@@ -77,9 +78,9 @@
 	"pt-movepage-title": "A(z) $1 fordítható lap átnevezése",
 	"pt-movepage-blockers": "Nem lehet átnevezni a fordítható lapot az új névre a következő {{PLURAL:$1|hiba|hibák}} miatt:",
 	"pt-movepage-list-pages": "Átnevezendő lapok listája",
-	"pt-movepage-list-translation": "Fordítható lapok",
-	"pt-movepage-list-section": "Fordítási egység lapok",
-	"pt-movepage-list-other": "További allapok",
+	"pt-movepage-list-translation": "Fordítható {{PLURAL:$1|lap|lapok}}",
+	"pt-movepage-list-section": "Fordítási egység {{PLURAL:$1|lap|lapok}}",
+	"pt-movepage-list-other": "További {{PLURAL:$1|allap|allapok}}",
 	"pt-movepage-list-count": "Összesen {{PLURAL:$1|egy|$1}} lapot kell átnevezni.",
 	"pt-movepage-legend": "Fordítható lap átnevezése",
 	"pt-movepage-current": "Jelenlegi név:",
