@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_57633b0a",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 16
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:24:46Z",
+      "side": 1,
+      "message": "ptp? tpt? pt? pm?\n\nIs it not enough to say \"prepared the page for translation\"?",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_37254fbd",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:24:46Z",
+      "side": 1,
+      "message": "Some minor stylistic notes:\n\n1) I would not use temporary variable here for the summary\n2) Usually we have empty line before return statement.",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_173493f0",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:24:46Z",
+      "side": 1,
+      "message": "What if someone uses \u003clanguages /\u003e? You probably don\u0027t want to depend on \\n when checking presence.",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f72ea79f",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:24:46Z",
+      "side": 1,
+      "message": "bar -\u003e tag perhaps?",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_97176356",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:24:46Z",
+      "side": 1,
+      "message": "two-party form still irks me. Perhaps you can add example ([[Target|display]] instead of [[Target_and_display]])?",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_771ab77f",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:24:46Z",
+      "side": 1,
+      "message": "Mmm not nice that this hardcodes the English translation of the namespace. Please fix or file a bug.",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f7058717",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:24:46Z",
+      "side": 1,
+      "message": "for the given page.",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_9206511f",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-16T15:24:46Z",
+      "side": 1,
+      "message": "Why don\u0027t we just redirect to the page?",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
