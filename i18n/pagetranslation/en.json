@@ -162,6 +162,7 @@
     "pt-deletepage-started": "Please check the [[Special:Log/pagetranslation|page translation log]] for errors and completion message.",
     "pt-deletepage-intro": "This special page allows you delete a whole translatable page, or an individual translation page in a language.\nThe delete action will not be instant, because all the pages depending on them will also be deleted.\nFailures will be logged in the [[Special:Log/pagetranslation|page translation log]] and they need to be repaired by hand.",
     "pagemigration": "Translation page migration",
+    "pagemigration-summary": "Specify a translation page and restore any translation made before the Translate system was enabled on that page.",
     "pm-import-button-label": "Import",
     "pm-savepages-button-label": "Save",
     "pm-cancel-button-label": "Cancel",
