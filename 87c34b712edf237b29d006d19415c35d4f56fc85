@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_1e44a4bc",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-17T13:52:27Z",
+      "side": 1,
+      "message": "TitleMoveComplete is better hook",
+      "revId": "87c34b712edf237b29d006d19415c35d4f56fc85",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_be48f0cf",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-17T13:52:27Z",
+      "side": 1,
+      "message": "Use MessageHandle. If the message is not known, you can skip processing.\n\nIf the message is known, you can get the message group directly.\n\nIf the message group is not WikiPageMessageGroup, you can skip processing.\n\nYou need the do these checks twice, once for original title and once for translatable title.\n\nYou can also use the original user and original summary for updateTranslationPage call.",
+      "revId": "87c34b712edf237b29d006d19415c35d4f56fc85",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
