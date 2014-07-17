@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_77a634c0",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-17T19:31:56Z",
+      "side": 1,
+      "message": "Using the friendly one.",
+      "parentUuid": "8e28a382_529b49c1",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_32967d98",
         "filename": "i18n/pagetranslation/qqq.json",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-16T15:42:17Z",
       "side": 1,
       "message": "Please use tabs",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f7990481",
+        "filename": "i18n/pagetranslation/qqq.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-17T19:31:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_32967d98",
       "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_5a335f5f",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-17T19:31:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_d2ee191f",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_f2e6b53e",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-16T15:42:17Z",
       "side": 1,
       "message": "summary is unused here",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_3a3ad333",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-17T19:31:56Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "8e28a382_f2e6b53e",
       "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_2a8a761c",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-17T19:31:56Z",
+      "side": 1,
+      "message": "Turns out to be that just pageName + \u0027?action\u003dedit\u0027 is sufficient to take you to the right link.",
+      "parentUuid": "8e28a382_f2bd95fe",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_d234d9a9",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 6
@@ -98,6 +188,24 @@
       "writtenOn": "2014-07-16T15:42:17Z",
       "side": 1,
       "message": "Needs i18n",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_ea7b4e22",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-17T19:31:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_d234d9a9",
       "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_0aa0da8b",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-17T19:31:56Z",
+      "side": 1,
+      "message": "Fixed the first one. Will do the later one in a separate patch as a part of fixing the code architecture like we had done for Special:PageMigration?",
+      "parentUuid": "8e28a382_923e5186",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_f24c7545",
         "filename": "specials/SpecialPagePreparation.php",
         "patchSetId": 6
@@ -132,6 +258,24 @@
       "writtenOn": "2014-07-16T15:42:17Z",
       "side": 1,
       "message": "???",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_0a7c5ab3",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-17T19:31:56Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "8e28a382_f24c7545",
       "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_d70ba82c",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-17T19:31:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_12694188",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_52f6a9d5",
         "filename": "specials/SpecialPagePreparation.php",
         "patchSetId": 6
@@ -166,6 +328,24 @@
       "writtenOn": "2014-07-16T15:42:17Z",
       "side": 1,
       "message": "This look like very fragile way to get diff html. We need to figure out a better way.",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_b70a5c27",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-17T19:31:56Z",
+      "side": 1,
+      "message": "Sure.",
+      "parentUuid": "8e28a382_52f6a9d5",
       "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
