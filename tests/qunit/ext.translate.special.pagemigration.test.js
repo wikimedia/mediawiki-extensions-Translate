@@ -75,4 +75,28 @@
 		} );
 	} );
 
+	QUnit.test( '-- Align h2 headers', function ( assert ) {
+		QUnit.expect( 2 );
+		var sourceUnits, translationUnits1, result1,
+			translationUnits2, result2;
+
+		sourceUnits = [{'identifier':'1','definition':'abc'}, {'identifier':'2','definition':'==123=='},
+			{'identifier':'3','definition':'pqr'}, {'identifier':'4','definition':'xyz'},
+			{'identifier':'5','definition':'mno'}, {'identifier':'6','definition':'==456=='}];
+
+		translationUnits1 = ['==123==', 'pqr', '==456=='];
+
+		translationUnits2 = ['abc', 'lmn', '==123==', 'pqr', '==456=='];
+
+		result1 = ['', '==123==', 'pqr', '', '', '==456=='];
+
+		result2 = ['abc\nlmn\n', '==123==', 'pqr', '', '', '==456=='];
+
+		translationUnits1 = mw.translate.alignHeaders( sourceUnits, translationUnits1 );
+		assert.deepEqual( translationUnits1, result1, 'h2 headers aligned without merging' );
+
+		translationUnits2 = mw.translate.alignHeaders( sourceUnits, translationUnits2 );
+		assert.deepEqual( translationUnits2, result2, 'h2 headers aligned with merging' );
+	} );
+
 }( jQuery, mediaWiki ) );
