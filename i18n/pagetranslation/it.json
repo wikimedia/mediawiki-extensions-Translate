@@ -168,6 +168,7 @@
 	"pt-deletepage-started": "Controlla il [[Special:Log/pagetranslation|registro delle traduzioni di pagine]] per verificare il messaggio di completamento ed eventuali errori.",
 	"pt-deletepage-intro": "Questa pagina speciale ti consente di cancellare del tutto una pagina traducibile o una sua traduzione in una lingua.\nLa cancellazione non sarà istantanea, perché anche tutte le pagine che dipendono da quella dovranno essere cancellate.\nGli errori sono riportati nel [[Special:Log/pagetranslation|registro delle traduzioni di pagine]] e devono essere corretti a mano.",
 	"pagemigration": "Migrazione pagine di traduzione",
+	"pagemigration-summary": "Specifica una pagina traducibile e ripristina qualsiasi traduzione fatta prima che il sistema Translate sia stato attivato in quella pagina.",
 	"pm-import-button-label": "Importa",
 	"pm-savepages-button-label": "Salva",
 	"pm-cancel-button-label": "Annulla",

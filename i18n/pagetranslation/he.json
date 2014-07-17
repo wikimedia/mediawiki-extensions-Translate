@@ -165,6 +165,7 @@
 	"pt-deletepage-started": "נא לבדוק את השגיאות ואת הודעת ההשלמה ב[[Special:Log/pagetranslation|יומן תרגום הדפים]]",
 	"pt-deletepage-intro": "הדך המיוחד הזה מאפשר לך למחוק בשלמותם דפים ניתנים לתרגום או תרגומים שלהם לשפה כלשהי.\nפעולת המחיקה לא תהיה מיידית, כי יש למחוק את כל הדפים התלויים בהם.\nפעולות שייכשלו יירשמו ב[[Special:Log/pagetranslation|יומן תרגום הדפים]] ויהיה צורך לתקן אותן ידנית.",
 	"pagemigration": "העברת דף מתורגם",
+	"pagemigration-summary": "יש לציין דף תרגום ולשחזר כל תרגום שנעשה לפני שההרחבה Translate הופעלה בדף.",
 	"pm-import-button-label": "ייבוא",
 	"pm-savepages-button-label": "שמירה",
 	"pm-cancel-button-label": "ביטול",

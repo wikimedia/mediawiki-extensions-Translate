@@ -227,7 +227,7 @@
 	"translate-import-err-dl-failed": "Ne eblas akiri la dosieron:\n$1",
 	"translate-import-err-ul-failed": "Dosiero alŝuto ne estis sukcesa",
 	"translate-import-err-invalid-title": "La provizita dosiernomo <nowiki>$1</nowiki> estas malvalida",
-	"translate-import-err-no-such-file": "La dosiero <nowiki>$1</nowiki> ne ekzistas aŭ ne estis ŝargita loke.",
+	"translate-import-err-no-such-file": "La dosiero <nowiki>$1</nowiki> ne ekzistas aŭ ne estis ŝargita ĉi-loke.",
 	"translate-import-err-stale-group": "La mesaĝgrupo al kiu apartenas ĉi tiu dosiero ne ekzistas.",
 	"translate-import-err-no-headers": "La dosiero estas ne bone formita Gettext-dosiero en la formato de la Traduk-etendaĵo:\nneeblas decidi grupon kaj lingvon el dosierkapo.",
 	"translate-import-err-warnings": "La dosiero ne estas bone formita.\nBonvolu kontroli ke via redaktilo ne forigas msgctxt-kampojn.\nDetaloj: $1",

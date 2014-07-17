@@ -9,7 +9,8 @@
 			"Misibacsi",
 			"Tacsipacsi",
 			"Tgr",
-			"Wilander"
+			"Wilander",
+			"Csega"
 		]
 	},
 	"translate": "Fordítás",
@@ -333,7 +334,7 @@
 	"tux-editor-outdated-warning": "A fordítást lehet, hogy frissíteni kell.",
 	"tux-editor-outdated-warning-diff-link": "Változtatások megjelenítése",
 	"tux-editor-doc-editor-placeholder": "Üzenetdokumentáció",
-	"tux-editor-doc-editor-save": "Dokumentáció elmentése",
+	"tux-editor-doc-editor-save": "Dokumentáció mentése",
 	"tux-editor-doc-editor-cancel": "Mégse",
 	"tux-messagetable-more-messages": "$1 további üzenet",
 	"tux-messagetable-loading-messages": "{{PLURAL:$1|Üzenet|Üzenetek}} betöltése…",

@@ -170,6 +170,7 @@
 	"pt-deletepage-started": "Kontrollera [[Special:Log/pagetranslation|loggen för sidöversättning]] efter fel och meddelande om att det slutförts.",
 	"pt-deletepage-intro": "Denna specialsida låter dig radera en hel översättbar sida eller en enskild översättningssida på ett språk.\nRaderingsåtgärden kommer inte att vara omedelbar, eftersom alla beroende sidor också kommer att raderas.\nFel kommer att registreras i [[Special:Log/pagetranslation|sidöversättningsloggen]] och de behöver repareras manuellt.",
 	"pagemigration": "Sidmigrering",
+	"pagemigration-summary": "Ange en översättningssida och återställ de översättningar som gjorts innan översättningssystemet aktiverades på den sidan.",
 	"pm-import-button-label": "Importera",
 	"pm-savepages-button-label": "Spara",
 	"pm-cancel-button-label": "Avbryt",

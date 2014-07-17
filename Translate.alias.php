@@ -744,7 +744,7 @@ $specialPageAliases['myv'] = array(
 	'TranslationStats' => array( 'ЮтавтомадоСтатистика' ),
 );
 
-/** Nāhuatl (Nāhuatl) */
+/** Nahuatl (Nāhuatl) */
 $specialPageAliases['nah'] = array(
 	'Translate' => array( 'Tlahtōlcuepāz', 'Traducir' ),
 );
@@ -991,6 +991,7 @@ $specialPageAliases['sv'] = array(
 	'Translate' => array( 'Översätt' ),
 	'TranslationStats' => array( 'Översättningsstatistik' ),
 	'Translations' => array( 'Översättningar' ),
+	'PageMigration' => array( 'Sidmigrering' ),
 );
 
 /** Swahili (Kiswahili) */

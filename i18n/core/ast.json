@@ -377,6 +377,7 @@
 	"tux-editor-expand-tooltip": "Espander",
 	"tux-editor-collapse-tooltip": "Plegar",
 	"tux-editor-message-tools-history": "Historial",
+	"tux-editor-message-tools-delete": "Desaniciar",
 	"tux-editor-message-tools-translations": "Toles traducciones",
 	"tux-editor-loading": "Cargando...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|llingua|llingües}} más",
