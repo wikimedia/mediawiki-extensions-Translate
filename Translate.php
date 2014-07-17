@@ -565,7 +565,7 @@ $GLOBALS['wgTranslatePHPlotFont'] = '/usr/share/fonts/truetype/ttf-dejavu/DejaVu
 # ==== YAML driver ====
 # <source lang=php>
 /**
- * Currently supported YAML drivers are spyc and syck and sycl-pecl.
+ * Currently supported YAML drivers are spyc and syck.
  *
  * For syck we're shelling out to perl. So you need:
  *
@@ -581,8 +581,6 @@ $GLOBALS['wgTranslatePHPlotFont'] = '/usr/share/fonts/truetype/ttf-dejavu/DejaVu
  * For the shell to work, you also need an en.UTF-8 locale installed on your system.
  * add a line "en.UTF-8" to your /etc/locale.gen or uncomment an existing one and run locale-gen
  * if you do not have it already.
- *
- * For syck-pecl you need libsyck and pecl install syck-beta
  */
 $GLOBALS['wgTranslateYamlLibrary'] = 'spyc';
 

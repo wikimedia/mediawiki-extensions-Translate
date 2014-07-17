@@ -31,7 +31,7 @@ class YamlTests extends Maintenance {
 		$mems = array();
 		$mempeaks = array();
 
-		foreach ( array( 'syck', 'spyc', 'syck-pecl' ) as $driver ) {
+		foreach ( array( 'syck', 'spyc' ) as $driver ) {
 			$mempeaks[$driver] = -memory_get_peak_usage( true );
 			$mems[$driver] = -memory_get_usage( true );
 			$times[$driver] = -microtime( true );
