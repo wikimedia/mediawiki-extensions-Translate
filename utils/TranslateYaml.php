@@ -85,10 +85,6 @@ class TranslateYaml {
 				$yaml = self::syckLoad( $text );
 
 				return self::fixSyckBooleans( $yaml );
-			case 'syck-pecl':
-				$text = preg_replace( '~^(\s*)no(\s*:\s*[a-zA-Z-_]+\s*)$~m', '\1"no"\2', $text );
-
-				return syck_load( $text );
 			default:
 				throw new MWException( "Unknown Yaml library" );
 		}
@@ -140,9 +136,6 @@ class TranslateYaml {
 				require_once __DIR__ . '/../libs/spyc/spyc.php';
 
 				return Spyc::YAMLDump( $text );
-			case 'syck-pecl':
-				// Just horrible output
-				// return syck_dump( $text );
 			case 'syck':
 				return self::syckDump( $text );
 			default:
