@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_931762f2",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-18T08:10:57Z",
+      "side": 1,
+      "message": "Doesn\u0027t count( $users2 ) \u003e 1 evaluate to true? Returning the username of the first user only would be misleading. Perhaps we also need to use PLURAL, or have two separate messages for 1 user vs. more than one.",
+      "revId": "885de8ac313d085828fa46e8d7ba1f6e7e769642",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
