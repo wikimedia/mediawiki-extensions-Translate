@@ -30,7 +30,7 @@
 	"tsb-reminder-link-text": "Отправить напоминание по электронной почте",
 	"tsb-didnt-make-any-translations": "Этот участник не сделал ни одного перевода.",
 	"tsb-translations-source": "Источник",
-	"tsb-translations-user": "Переводы пользователя",
+	"tsb-translations-user": "Переводы {{GENDER:$1|пользователя}}",
 	"tsb-translations-current": "Существующие переводы",
 	"tsb-delete-userpage-summary": "Удаление страницы участника, относящейся к участнику из песочницы",
 	"translationstash": "Добро пожаловать",

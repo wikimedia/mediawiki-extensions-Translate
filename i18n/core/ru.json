@@ -156,7 +156,7 @@
 	"translate-statsf-group": "Список кодов групп через запятую:",
 	"translate-statsf-submit": "Предпросмотр",
 	"translate-tag-category": "Переводимые страницы",
-	"translate-tag-page-desc": "Перевод вики-страницы [[$2|$1]].",
+	"translate-tag-page-desc": "Перевод вики-страницы [[$2|$1]] с $3 ($4).",
 	"translate-sidebar-alltrans": "На других языках",
 	"translations": "Все переводы",
 	"translations-summary": "Введите имя сообщения для показа всех доступных переводов.",

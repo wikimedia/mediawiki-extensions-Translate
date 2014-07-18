@@ -21,7 +21,7 @@
 	"tsb-email-promoted-body": "嗨，{{GENDER:$1|$1}}：\n\n祝贺你！我检查了你在{{SITENAME}}的试验翻译，决定授予你完整的译者权限。\n\n现在以及今后的每一天都来{{SITENAME}}继续翻译吧：\n$2\n\n我们欢迎你加入译者队伍，感谢你的贡献！\n\n{{GENDER:$3|$3}}，\n{{SITENAME}}工作人员",
 	"tsb-email-rejected-subject": "您在{{SITENAME}}的译者请求被拒绝",
 	"tsb-email-rejected-body": "嗨，{{GENDER:$1|$1}}：\n\n感谢你在{{SITENAME}}申请成为译者。但我不得不遗憾地通知你，我拒绝了你的申请，因为你的的译文质量不符合要求。\n\n如果你认为你的申请是被错误地拒绝了，请尝试在{{SITENAME}}重新申请成为译者。你可以在这里登记：\n$2\n\n{{GENDER:$3|$3}}，\n{{SITENAME}}工作人员",
-	"tsb-request-count": "$1个申请",
+	"tsb-request-count": "$1条{{PLURAL:$1|申请}}",
 	"tsb-all-languages-button-label": "所有语言",
 	"tsb-search-requests": "搜索申请",
 	"tsb-accept-button-label": "接受",
