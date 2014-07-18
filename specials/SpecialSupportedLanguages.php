@@ -348,12 +348,20 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 			$links[] = Linker::link( $title, $enc, $attribs );
 		}
 
+		// for GENDER support
+		$username = '';
+		if ( count( $users ) === 1 ) {
+			$keys = array_keys( $users );
+			$username = $keys[0];
+		}
+
 		$linkList = $this->getLanguage()->listToText( $links );
 		$html = "<p class='mw-translate-spsl-translators'>";
 		$html .= $this->msg(
 			'supportedlanguages-translators',
 			$linkList,
-			count( $links )
+			count( $links ),
+			$username
 		)->text();
 		$html .= "</p>\n";
 		$this->getOutput()->addHTML( $html );

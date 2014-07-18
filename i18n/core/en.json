@@ -190,7 +190,7 @@
     "supportedlanguages-localsummary": "",
     "supportedlanguages-portallink": "[$1] $2 - $3",
     "supportedlanguages-portallink-nocldr": "[$1] $2",
-    "supportedlanguages-translators": "{{PLURAL:$2|Translator|Translators}}: $1",
+    "supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Translator}}|Translators}}: $1",
     "supportedlanguages-recenttranslations": "recent translations",
     "supportedlanguages-count": "$1 {{PLURAL:$1|language|languages}} in total.",
     "supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edit|edits}} - last edit $3 {{PLURAL:$3|day|days}} ago",
