@@ -119,20 +119,13 @@ $GLOBALS['wgAPIModules']['translationaids'] = 'ApiTranslationAids';
 $GLOBALS['wgAPIModules']['translationreview'] = 'ApiTranslationReview';
 $GLOBALS['wgAPIModules']['translationstash'] = 'ApiTranslationStash';
 $GLOBALS['wgAPIModules']['ttmserver'] = 'ApiTTMServer';
-
-// Before MW 1.20
-$GLOBALS['wgHooks']['APIQueryInfoTokens'][] = 'ApiTranslationReview::injectTokenFunction';
-$GLOBALS['wgHooks']['APIQueryInfoTokens'][] = 'ApiGroupReview::injectTokenFunction';
-$GLOBALS['wgHooks']['APIQueryInfoTokens'][] = 'ApiAggregateGroups::injectTokenFunction';
-$GLOBALS['wgHooks']['APIQueryInfoTokens'][] = 'ApiHardMessages::injectTokenFunction';
-$GLOBALS['wgHooks']['APIQueryInfoTokens'][] = 'ApiTranslateSandbox::injectTokenFunction';
-// After MW 1.20
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslationReview::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiGroupReview::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiAggregateGroups::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiHardMessages::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslateSandbox::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslationStash::injectTokenFunction';
+
 // Register hooks.
 $GLOBALS['wgHooks']['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $GLOBALS['wgHooks']['AlternateEdit'][] = 'TranslateEditAddons::intro';
@@ -146,12 +139,7 @@ $GLOBALS['wgHooks']['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disab
 // Prevent translations creating bogus categories
 $GLOBALS['wgHooks']['LinksUpdate'][] = 'TranslateHooks::preventCategorization';
 // Fuzzy tags for speed.
-if ( !defined( 'MW_SUPPORTS_CONTENTHANDLER' ) ) {
-	// BC 1.20
-	$GLOBALS['wgHooks']['ArticleSaveComplete'][] = 'TranslateEditAddons::onSave';
-} else {
-	$GLOBALS['wgHooks']['PageContentSaveComplete'][] = 'TranslateEditAddons::onSave';
-}
+$GLOBALS['wgHooks']['PageContentSaveComplete'][] = 'TranslateEditAddons::onSave';
 
 $GLOBALS['wgHooks']['Translate:newTranslation'][] = 'TranslateEditAddons::updateTransverTag';
 

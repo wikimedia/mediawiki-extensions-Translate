@@ -175,11 +175,6 @@ class MediaWikiMessageChecker extends MessageChecker {
 			$key = $message->key();
 			$translation = $message->translation();
 
-			// Does this version of MediaWiki support v1.20-style CLDR plural rules?
-			if ( !method_exists( 'Language', 'getPluralRules' ) ) {
-				return;
-			}
-
 			// Are there any plural forms for this language in this message?
 			if ( stripos( $translation, '{{plural:' ) === false ) {
 				return;
