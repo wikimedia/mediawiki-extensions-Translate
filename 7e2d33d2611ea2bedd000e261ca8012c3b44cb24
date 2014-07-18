@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_1e97f93f",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-18T10:22:36Z",
+      "side": 1,
+      "message": "Please \u003d\u003d\u003d. Why is $users2 needed? Can\u0027t you do $username \u003d \u0027\u0027; if ( count( $users ) \u003d\u003d\u003d 1 ) { $keys \u003d array_keys( $users ); $username \u003d $keys[0]; }",
+      "revId": "7e2d33d2611ea2bedd000e261ca8012c3b44cb24",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
