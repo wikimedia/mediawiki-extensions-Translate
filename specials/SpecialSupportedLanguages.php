@@ -314,6 +314,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		$period = $this->period;
 
 		$links = array();
+		$users2 = array();
 		$statsTable = new StatsTable();
 
 		foreach ( $users as $username => $count ) {
@@ -346,6 +347,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 			}
 
 			$links[] = Linker::link( $title, $enc, $attribs );
+			$users2[] = $username;
 		}
 
 		$linkList = $this->getLanguage()->listToText( $links );
@@ -353,7 +355,8 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		$html .= $this->msg(
 			'supportedlanguages-translators',
 			$linkList,
-			count( $links )
+			count( $links ),
+			count( $users2 ) == 1 ? $users2[0] : ""
 		)->text();
 		$html .= "</p>\n";
 		$this->getOutput()->addHTML( $html );
