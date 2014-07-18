@@ -242,29 +242,6 @@ class PageTranslationHooks {
 			$name = TranslateUtils::getLanguageName( $code, $code );
 			$name = htmlspecialchars( $name ); // Unlikely, but better safe
 
-			/* Percentages are too accurate and take more
-			 * space than simple images */
-			$percent *= 100;
-			if ( $percent < 20 ) {
-				$image = 1;
-			} elseif ( $percent < 40 ) {
-				$image = 2;
-			} elseif ( $percent < 60 ) {
-				$image = 3;
-			} elseif ( $percent < 80 ) {
-				$image = 4;
-			} else {
-				$image = 5;
-			}
-
-			$percentImage = Xml::element( 'img', array(
-				'src' => TranslateUtils::assetPath( "resources/images/prog-$image.png" ),
-				'alt' => wfMessage( 'percent', $percent )->text(),
-				'title' => wfMessage( 'percent', $percent )->text(),
-				'width' => '9',
-				'height' => '9',
-			) );
-
 			// Add links to other languages
 			$suffix = ( $code === $sourceLanguage ) ? '' : "/$code";
 			$targetTitleString = $pageTitle->getDBkey() . $suffix;
@@ -279,15 +256,42 @@ class PageTranslationHooks {
 				$classes[] = 'mw-pt-languages-selected';
 			}
 
-			if ( count( $classes ) ) {
-				$attribs = array( 'class' => implode( ' ', $classes ) );
-				$name = Html::rawElement( 'span', $attribs, $name );
-			}
-
 			if ( $currentTitle->equals( $subpage ) ) {
-				// No further processing needed
+				if ( $classes ) {
+					$name = Html::rawElement( 'span', array( 'class' => $classes ), $name );
+				}
 			} elseif ( $subpage->isKnown() ) {
-				$name = Linker::linkKnown( $subpage, $name );
+				$pagename = $page->getPageDisplayTitle( $code );
+				if ( !is_string( $pagename ) ) {
+					$pagename = $subpage->getPrefixedText();
+				}
+
+				$classes[] = 'mw-pt-progress';
+				/* Percentages are too accurate and take more
+				 * space than simple images */
+				$percent *= 100;
+				if ( $percent < 20 ) {
+					$classes[] = 'mw-pt-progress--stub';
+				} elseif ( $percent < 40 ) {
+					$classes[] = 'mw-pt-progress--low';
+				} elseif ( $percent < 60 ) {
+					$classes[] = 'mw-pt-progress--med';
+				} elseif ( $percent < 80 ) {
+					$classes[] = 'mw-pt-progress--high';
+				} else {
+					$classes[] = 'mw-pt-progress--complete';
+				}
+
+				$title = wfMessage( 'tpt-languages-nonzero' )
+					->params( $pagename )
+					->numParams( $percent )
+					->text();
+				$attribs = array(
+					'title' => $title,
+					'class' => $classes,
+				);
+
+				$name = Linker::linkKnown( $subpage, $name, $attribs );
 			} else {
 				/* When language is included because it is a priority language,
 				 * but translation does not yet exists, link directly to the
@@ -298,14 +302,16 @@ class PageTranslationHooks {
 					'language' => $code,
 					'task' => 'view'
 				);
+
+				$classes[] = 'new';  // For red link color
 				$attribs = array(
 					'title' => wfMessage( 'tpt-languages-zero' )->text(),
-					'class' => 'new', // For red link color
+					'class' => $classes,
 				);
 				$name = Linker::link( $specialTranslateTitle, $name, $attribs, $params );
 			}
 
-			$languages[] = "$name&#160;$percentImage";
+			$languages[] = $name;
 		}
 
 		// dirmark (rlm/lrm) is added, because languages with RTL names can
