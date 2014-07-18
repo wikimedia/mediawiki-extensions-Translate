@@ -323,19 +323,6 @@ class TranslateUtils {
 		return "$dir/$filename";
 	}
 
-	public static function groupSelector( $default = false ) {
-		$groups = MessageGroups::getAllGroups();
-		$selector = new XmlSelect( 'group', 'group', $default );
-
-		foreach ( $groups as $id => $class ) {
-			if ( MessageGroups::getGroup( $id )->exists() ) {
-				$selector->addOption( $class->getLabel(), $id );
-			}
-		}
-
-		return $selector;
-	}
-
 	/**
 	 * Adds help link with an icon to upper right corner.
 	 * @param OutputPage $out

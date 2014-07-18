@@ -90,7 +90,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		$out .= Xml::label( $this->msg( 'translate-mgs-group' )->text(), 'group' );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::openElement( 'td', array( 'class' => 'mw-input' ) );
-		$out .= TranslateUtils::groupSelector( $this->target )->getHTML();
+		$out .= $this->getGroupSelector( $this->target )->getHTML();
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::closeElement( 'tr' );
 
@@ -290,4 +290,23 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	protected function getWorkflowStates( $field = 'tgr_lang', $filter = 'tgr_group' ) {
 		return parent::getWorkflowStates( $field, $filter );
 	} // @codingStandardsIgnoreEnd
+
+	/**
+	 * Creates a simple message group selector.
+	 *
+	 * @param string $default Group id of the group chosen by default. Optional.
+	 * @return XmlSelect
+	 */
+	protected function getGroupSelector( $default = false ) {
+		$groups = MessageGroups::getAllGroups();
+		$selector = new XmlSelect( 'group', 'group', $default );
+
+		foreach ( $groups as $id => $class ) {
+			if ( MessageGroups::getGroup( $id )->exists() ) {
+				$selector->addOption( $class->getLabel(), $id );
+			}
+		}
+
+		return $selector;
+	}
 }
