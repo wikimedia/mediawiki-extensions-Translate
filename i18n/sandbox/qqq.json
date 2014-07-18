@@ -34,7 +34,7 @@
 	"tsb-reminder-link-text": "Link text for sending reminder emails about translator signup requests.\n\nSee also:\n* {{msg-mw|Tsb-reminder-sent-new}}",
 	"tsb-didnt-make-any-translations": "Displayed instead of the translations if the selected user didn't make any translations.",
 	"tsb-translations-source": "Table header label for source messages of user translations in [[Special:TranslateSandbox]].\n{{Identical|Source}}",
-	"tsb-translations-user": "Table header label for user translations in [[Special:TranslateSandbox]].",
+	"tsb-translations-user": "Table header label for user translations in [[Special:TranslateSandbox]].\n\nParameters:\n* $1 - user, can be used for GENDER",
 	"tsb-translations-current": "Table header label for existing translations in [[Special:TranslateSandbox]].",
 	"tsb-delete-userpage-summary": "Edit summary for deleting the user page of a sandboxed user.",
 	"translationstash": "Page title for [[Special:TranslationStash]].\n{{Identical|Welcome}}",

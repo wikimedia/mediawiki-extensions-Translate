@@ -208,7 +208,7 @@
 						.text( mw.msg( 'tsb-translations-source' ) )
 						.addClass( 'four columns' ),
 					$( '<div>' )
-						.text( mw.msg( 'tsb-translations-user' ) )
+						.text( mw.msg( 'tsb-translations-user', mw.user ) )
 						.addClass( 'four columns' ),
 					$( '<div>' )
 						.text( mw.msg( 'tsb-translations-current' ) )
