@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_d02a808e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-19T16:33:35Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "8e28a382_f2147546",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_57633b0a",
         "filename": "i18n/pagetranslation/en.json",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-16T15:24:46Z",
       "side": 1,
       "message": "ptp? tpt? pt? pm?\n\nIs it not enough to say \"prepared the page for translation\"?",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_b025b4be",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 16
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-19T16:33:35Z",
+      "side": 1,
+      "message": "tpt is not added by me. I will replace ptp with pp. Using pm and pp as per the special page names.",
+      "parentUuid": "8e28a382_57633b0a",
       "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_f8c2f75b",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-19T16:33:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_37254fbd",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_173493f0",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 16
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-16T15:24:46Z",
       "side": 1,
       "message": "What if someone uses \u003clanguages /\u003e? You probably don\u0027t want to depend on \\n when checking presence.",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_d8b97be7",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-19T16:33:35Z",
+      "side": 1,
+      "message": "Fine, removed the \\n while checking. But while inserting, I am inserting it with \\n",
+      "parentUuid": "8e28a382_173493f0",
       "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_b8bc6fd6",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-19T16:33:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_f72ea79f",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_97176356",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 16
@@ -98,6 +188,24 @@
       "writtenOn": "2014-07-16T15:24:46Z",
       "side": 1,
       "message": "two-party form still irks me. Perhaps you can add example ([[Target|display]] instead of [[Target_and_display]])?",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_78ce0788",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-19T16:33:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_97176356",
       "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_d8b05bf3",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-19T16:33:35Z",
+      "side": 1,
+      "message": "This is the case everywhere, isn\u0027t it? Everything is hardcoded for English as we are already doing it for English as the source language for this project, isn\u0027t it?",
+      "parentUuid": "8e28a382_771ab77f",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_f7058717",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 16
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_787cc71b",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-19T16:33:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_f7058717",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_9206511f",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 16
@@ -149,6 +293,24 @@
       "writtenOn": "2014-07-16T15:24:46Z",
       "side": 1,
       "message": "Why don\u0027t we just redirect to the page?",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f326a662",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-19T16:33:35Z",
+      "side": 1,
+      "message": "This does not exist anymore. The Special page patch provides a link to edit the page. So this would go away when that patch gets merged.",
+      "parentUuid": "8e28a382_9206511f",
       "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
