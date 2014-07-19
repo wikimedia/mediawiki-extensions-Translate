@@ -29,7 +29,7 @@
 	"tsb-reminder-link-text": "Nhắc nhở qua thư điện tử",
 	"tsb-didnt-make-any-translations": "Người dùng này chưa dịch thông điệp nào.",
 	"tsb-translations-source": "Nguồn",
-	"tsb-translations-user": "Bản dịch của người dùng",
+	"tsb-translations-user": "Bản dịch của {{GENDER:$1}}người dùng",
 	"tsb-translations-current": "Bản dịch hiện có",
 	"tsb-delete-userpage-summary": "Đã xóa trang cá nhân của người dùng chỗ thử biên dịch",
 	"translationstash": "Hoan nghênh",

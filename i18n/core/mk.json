@@ -140,7 +140,7 @@
 	"translate-statsf-group": "Список на групни кодови, одвоени со запирка:",
 	"translate-statsf-submit": "Преглед",
 	"translate-tag-category": "Преводливи страници",
-	"translate-tag-page-desc": "Превод на викистраницата [[$2|$1]]",
+	"translate-tag-page-desc": "Превод на викистраницата [[$2|$1]] од $3 ($4).",
 	"translate-sidebar-alltrans": "На други јазици",
 	"translations": "Сите преводи",
 	"translations-summary": "Внесете име на порака за приказ на сите достапни преводи.",

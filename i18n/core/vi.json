@@ -137,7 +137,7 @@
 	"translate-statsf-group": "Danh sách các mã nhóm phân tách bằng dấu phẩy:",
 	"translate-statsf-submit": "Xem trước",
 	"translate-tag-category": "Các trang dịch được",
-	"translate-tag-page-desc": "Bản dịch trang wiki [[$2|$1]].",
+	"translate-tag-page-desc": "Bản dịch trang wiki [[$2|$1]] từ $3 ($4).",
 	"translate-sidebar-alltrans": "Theo ngôn ngữ khác",
 	"translations": "Tất cả các bản dịch",
 	"translations-summary": "Nhập vào một tên thông điệp phía dưới để hiển thị tất cả các bản dịch hiện có.",

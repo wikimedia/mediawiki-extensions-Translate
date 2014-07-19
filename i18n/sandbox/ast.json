@@ -29,7 +29,7 @@
 	"tsb-reminder-link-text": "Unviar un recordatoriu per corréu electrónicu",
 	"tsb-didnt-make-any-translations": "Esti usuariu nun fizo denguna traducción.",
 	"tsb-translations-source": "Fonte",
-	"tsb-translations-user": "Traducciones del usuariu",
+	"tsb-translations-user": "Traducciones {{GENDER:$1|del usuariu|de la usuaria}}",
 	"tsb-translations-current": "Traducciones esistentes",
 	"tsb-delete-userpage-summary": "Desaniciando la páxina d'usuariu d'un usuariu de pruebes",
 	"translationstash": "Bienveníos",

@@ -146,7 +146,7 @@
 	"translate-statsf-group": "רשימת קודי קבוצות (מופרדים בפסיק):",
 	"translate-statsf-submit": "תצוגה מקדימה",
 	"translate-tag-category": "דפים שאפשר לתרגם",
-	"translate-tag-page-desc": "תרגום של דף הוויקי [[$2|$1]].",
+	"translate-tag-page-desc": "תרגום של דף הוויקי [[$2|$1]] מ־$3 ($4).",
 	"translate-sidebar-alltrans": "בשפות אחרות",
 	"translations": "כל התרגומים",
 	"translations-summary": "הקלידו את שם ההודעה להלן כדי להציג את כל התרגומים הזמינים.",

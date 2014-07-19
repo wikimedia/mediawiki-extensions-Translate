@@ -26,7 +26,7 @@
 	"tsb-reminder-link-text": "E-Mail-Erënnerung schécken",
 	"tsb-didnt-make-any-translations": "Dëse Benotzer huet nach keng Iwwersetzunge gemaach.",
 	"tsb-translations-source": "Quell",
-	"tsb-translations-user": "Benotzer Iwwersetzungen",
+	"tsb-translations-user": "{{GENDER:$1|Benotzer}} Iwwersetzungen",
 	"tsb-translations-current": "Iwwersetzungen déi et gëtt",
 	"tsb-delete-userpage-summary": "Benotzersäit vun engem Sandbox-Benotzer läschen",
 	"translationstash": "Wëllkomm",

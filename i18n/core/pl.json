@@ -159,7 +159,7 @@
 	"translate-statsf-group": "Kody grup rozdzielone przecinkami:",
 	"translate-statsf-submit": "Podgląd",
 	"translate-tag-category": "Strony do przetłumaczenia",
-	"translate-tag-page-desc": "Tłumaczenie wiki strony [[$2|$1]].",
+	"translate-tag-page-desc": "Tłumaczenie wiki strony [[$2|$1]] z $3 ($4).",
 	"translate-sidebar-alltrans": "W innych językach",
 	"translations": "Wszystkie tłumaczenia",
 	"translations-summary": "Wprowadź poniżej nazwę komunikatu, aby zobaczyć wszystkie dostępne tłumaczenia.",

@@ -137,7 +137,7 @@
 	"translate-statsf-group": "Komma-getrennte Lëscht vun de Gruppecoden:",
 	"translate-statsf-submit": "Kucken ouni ofzespäicheren",
 	"translate-tag-category": "Sàiten déi iwwersat kënne ginn",
-	"translate-tag-page-desc": "Iwwersetzung vun der Wiki-Säit [[$2|$1]].",
+	"translate-tag-page-desc": "Iwwersetzung vun der Wiki-Säit [[$2|$1]] vu(n) $3 ($4).",
 	"translate-sidebar-alltrans": "An anere Sproochen",
 	"translations": "All Iwwersetzungen",
 	"translations-summary": "Gitt w.e.g. en Numm vun engem Message hei ënnendrënner an fir all disponibel Iwwersetzungen ze weisen.",

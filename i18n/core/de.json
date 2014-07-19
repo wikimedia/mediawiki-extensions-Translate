@@ -154,7 +154,7 @@
 	"translate-statsf-group": "Komma-getrennte Liste der Gruppencodes:",
 	"translate-statsf-submit": "Vorschau",
 	"translate-tag-category": "Übersetzbare Seiten",
-	"translate-tag-page-desc": "Übersetzung der Wikiseite [[$2|$1]].",
+	"translate-tag-page-desc": "Übersetzung der Wikiseite [[$2|$1]] von $3 ($4).",
 	"translate-sidebar-alltrans": "In anderen Sprachen",
 	"translations": "Alle Übersetzungen",
 	"translations-summary": "Gib einen Nachrichtennamen ein, um alle verfügbaren Übersetzungen anzuzeigen.",

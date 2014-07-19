@@ -162,6 +162,7 @@
 	"pt-deletepage-started": "Xin hãy kiểm tra những lỗi hay thông điệp kết quả thành công trong [[Special:Log/pagetranslation|nhật trình dịch trang]].",
 	"pt-deletepage-intro": "Trang đặc biệt này cho phép bạn xóa toàn bộ trang dịch được hoặc một trang biên dịch trong một ngôn ngữ nào đó.\nTác vụ xóa sẽ không được thực hiện ngay, bởi vì tất cả mọi trang dựa vào nó cũng sẽ bị xóa.\nCác thất bại được ghi vào [[Special:Log/pagetranslation|nhật trình dịch trang]] sẽ cần phải được sửa bằng tay.",
 	"pagemigration": "Di chuyển trang biên dịch",
+	"pagemigration-summary": "Chỉ định một trang biên dịch và phục hồi bản dịch nào được thực hiện trước khi hệ thống Biên dịch được kích hoạt trên trang đó.",
 	"pm-import-button-label": "Nhập",
 	"pm-savepages-button-label": "Lưu",
 	"pm-cancel-button-label": "Hủy bỏ",

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Vitorvicentevalente"
 		]
 	},
 	"managetranslatorsandbox": "Administrar a área de teste de tradutores",
@@ -29,7 +30,7 @@
 	"tsb-reminder-link-text": "Enviar lembrança por correio eletrónico",
 	"tsb-didnt-make-any-translations": "Este utilizador não fez traduções.",
 	"tsb-translations-source": "Fonte",
-	"tsb-translations-user": "Traduções do utilizador",
+	"tsb-translations-user": "Traduções {{GENDER:$1|do utilizador|da utilizadora|do(a) utilizador(a)}}",
 	"tsb-translations-current": "Traduções existentes",
 	"tsb-delete-userpage-summary": "A eliminar a página de utilizador de um utilizador da área de teste de tradutores",
 	"translationstash": "Bem-vindo(a)",

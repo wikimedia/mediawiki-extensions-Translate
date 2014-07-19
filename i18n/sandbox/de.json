@@ -30,7 +30,7 @@
 	"tsb-reminder-link-text": "E-Mail-Erinnerung senden",
 	"tsb-didnt-make-any-translations": "Dieser Benutzer hat noch keine Übersetzungen durchgeführt.",
 	"tsb-translations-source": "Quelle",
-	"tsb-translations-user": "Benutzerübersetzungen",
+	"tsb-translations-user": "{{GENDER:$1|Benutzerübersetzungen}}",
 	"tsb-translations-current": "Vorhandene Übersetzungen",
 	"tsb-delete-userpage-summary": "Benutzerseite eines Spielwiesenbenutzers gelöscht",
 	"translationstash": "Willkommen",

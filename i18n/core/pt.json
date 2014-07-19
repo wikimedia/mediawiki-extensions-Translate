@@ -146,7 +146,7 @@
 	"translate-statsf-group": "Lista de códigos de grupo, separados por vírgulas:",
 	"translate-statsf-submit": "Gerar gráfico",
 	"translate-tag-category": "Páginas traduzíveis",
-	"translate-tag-page-desc": "Tradução da página wiki [[$2|$1]].",
+	"translate-tag-page-desc": "Tradução da página wiki [[$2|$1]] de $3 ($4).",
 	"translate-sidebar-alltrans": "Noutras línguas",
 	"translations": "Todas as traduções",
 	"translations-summary": "Introduza abaixo o nome de uma mensagem para ver todas as traduções disponíveis.",

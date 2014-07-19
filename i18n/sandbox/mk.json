@@ -29,7 +29,7 @@
 	"tsb-reminder-link-text": "Испрати потсетник по е-пошта",
 	"tsb-didnt-make-any-translations": "Корисников нема направено ниеден превод.",
 	"tsb-translations-source": "Извор",
-	"tsb-translations-user": "Кориснички преводи",
+	"tsb-translations-user": "{{GENDER:$1|Кориснички}} преводи",
 	"tsb-translations-current": "Постоечки преводи",
 	"tsb-delete-userpage-summary": "Бришење на корисничка страница на песочнички корисник",
 	"translationstash": "Добре дојдовте",
