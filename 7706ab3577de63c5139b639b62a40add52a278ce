@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_9872d30e",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-19T17:37:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_792f379d",
+      "revId": "7706ab3577de63c5139b639b62a40add52a278ce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_f91a077d",
         "filename": "i18n/pagetranslation/en.json",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-18T13:01:24Z",
       "side": 1,
       "message": "\"No changes compared to previous version\" -\u003e \"There are no changes compared to the previous version\"",
+      "revId": "7706ab3577de63c5139b639b62a40add52a278ce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_786de72c",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-19T17:37:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_f91a077d",
       "revId": "7706ab3577de63c5139b639b62a40add52a278ce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
