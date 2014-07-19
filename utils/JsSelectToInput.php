@@ -105,12 +105,10 @@ class JsSelectToInput {
 	 * @return string
 	 */
 	protected function getButton( $msg, $source, $target ) {
-		$source = Xml::escapeJsString( $source );
-		$target = Xml::escapeJsString( $target );
 		$html = Xml::element( 'input', array(
 			'type' => 'button',
 			'value' => wfMessage( $msg )->text(),
-			'onclick' => "appendFromSelect( '$source', '$target' );"
+			'onclick' => Xml::encodeJsCall( 'appendFromSelect', array( $source, $target ) )
 		) );
 
 		return $html;
