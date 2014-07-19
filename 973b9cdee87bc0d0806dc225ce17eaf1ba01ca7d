@@ -247,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_f8043782",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-19T17:14:15Z",
+      "side": 1,
+      "message": "I am in the language engineering, so obviously I will say that hard coding to any particular language is not okay.",
+      "parentUuid": "8e28a382_d8b05bf3",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_f7058717",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 16
