@@ -33,6 +33,24 @@
       "revId": "4357d1fe9fcf1b05fff764c31624af8d2b9703ec",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_a17c36b5",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-20T08:07:49Z",
+      "side": 1,
+      "message": "Nevermind, not even that: this is the space before the img tag which the patch is removing, e.g. čeština\u003c/a\u003e\u0026nbsp;\u003cimg src\u003d\"//bits.wikimedia.org/static-1.24wmf13/extensions/Translate/resources/images/prog-5.png\" alt\u003d\"100\u0026nbsp;%\" title\u003d\"100\u0026nbsp;%\" height\u003d\"9\" width\u003d\"9\"\u003e\u0026nbsp;•",
+      "parentUuid": "8e28a382_c1e86279",
+      "revId": "4357d1fe9fcf1b05fff764c31624af8d2b9703ec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
