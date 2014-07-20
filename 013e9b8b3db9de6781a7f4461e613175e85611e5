@@ -247,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_41f47250",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-20T07:35:03Z",
+      "side": 1,
+      "message": "BPositive, if you have learnt how to by now, why not do it here directly? :-) Nikerabbit, opinions?",
+      "parentUuid": "8e28a382_0aa0da8b",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_f24c7545",
         "filename": "specials/SpecialPagePreparation.php",
         "patchSetId": 6
