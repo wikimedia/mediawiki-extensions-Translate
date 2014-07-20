@@ -32,7 +32,8 @@
 			"Yumeki",
 			"Zcqsc06",
 			"Zetud",
-			"Linedwell"
+			"Linedwell",
+			"Orikrin1998"
 		]
 	},
 	"translate": "Traduire",
@@ -167,7 +168,7 @@
 	"translate-statsf-group": "Liste de codes de groupes séparés par des virgules :",
 	"translate-statsf-submit": "Prévisualiser",
 	"translate-tag-category": "Pages traduisibles",
-	"translate-tag-page-desc": "Traduction de la page wiki [[$2|$1]].",
+	"translate-tag-page-desc": "Traduction de la page wiki [[$2|$1]] depuis $3 ($4).",
 	"translate-sidebar-alltrans": "Dans les autres langues",
 	"translations": "Toutes les traductions",
 	"translations-summary": "Entrez un nom de message ci-dessous pour visualiser toutes les traductions disponibles.",

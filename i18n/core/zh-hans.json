@@ -26,7 +26,8 @@
 			"Xiaomingyan",
 			"Yfdyh000",
 			"乌拉跨氪",
-			"Hudafu"
+			"Hudafu",
+			"Fengchao"
 		]
 	},
 	"translate": "翻译",
@@ -160,7 +161,7 @@
 	"translate-statsf-group": "逗号分隔的信息组代码列表：",
 	"translate-statsf-submit": "预览",
 	"translate-tag-category": "可翻译页面",
-	"translate-tag-page-desc": "wiki页面[[$2|$1]]的翻译。",
+	"translate-tag-page-desc": "wiki [[$2|$1]]基于语言 $3 ($4) 的翻译。",
 	"translate-sidebar-alltrans": "其他语言",
 	"translations": "所有翻译",
 	"translations-summary": "请在下面输入信息名称以显示所有可用翻译。",

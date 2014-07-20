@@ -26,7 +26,7 @@
 	"tsb-reminder-link-text": "通知を送信",
 	"tsb-didnt-make-any-translations": "この利用者は何も翻訳していません。",
 	"tsb-translations-source": "原文",
-	"tsb-translations-user": "利用者による翻訳",
+	"tsb-translations-user": "{{GENDER:$1|利用者}}による翻訳",
 	"tsb-translations-current": "既存の翻訳",
 	"tsb-delete-userpage-summary": "サンドボックス利用者の利用者ページを削除",
 	"translationstash": "ようこそ",

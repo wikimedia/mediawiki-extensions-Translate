@@ -157,7 +157,7 @@
 	"translate-statsf-group": "Lista de códigos de grupo separados por comas:",
 	"translate-statsf-submit": "Vista previa",
 	"translate-tag-category": "Páginas traducibles",
-	"translate-tag-page-desc": "Traducción de la página wiki [[$2|$1]].",
+	"translate-tag-page-desc": "Traducción de la página wiki [[$2|$1]] del $3 ($4).",
 	"translate-sidebar-alltrans": "En otros idiomas",
 	"translations": "Todas las traducciones",
 	"translations-summary": "Introduce un nombre de mensaje para ver todas las traducciones disponibles.",
