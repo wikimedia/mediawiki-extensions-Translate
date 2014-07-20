@@ -150,7 +150,7 @@
 	"translate-statsf-group": "メッセージ群コードを列挙 (カンマ区切り):",
 	"translate-statsf-submit": "プレビュー",
 	"translate-tag-category": "翻訳可能なページ",
-	"translate-tag-page-desc": "ウィキページ [[$2|$1]] に対する翻訳です。",
+	"translate-tag-page-desc": "ウィキページ [[$2|$1]] に対する $3 ($4) からの翻訳です。",
 	"translate-sidebar-alltrans": "他言語での翻訳",
 	"translations": "全翻訳結果",
 	"translations-summary": "既存のすべての翻訳を表示するには下欄にメッセージ名を入力してください。",
