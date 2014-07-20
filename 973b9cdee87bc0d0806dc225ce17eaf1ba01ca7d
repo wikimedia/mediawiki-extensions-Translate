@@ -265,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_61a76e4d",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-20T08:00:13Z",
+      "side": 1,
+      "message": "BPositive, no it\u0027s not the case everywhere: all the rest in this patch and the others uses \"universal\" markup like brackets or Translate\u0027s own tags, except https://gerrit.wikimedia.org/r/140926 which is problematic. (Special pages links are an exception, we don\u0027t translate them in message files either.)\n\nThe wiki\u0027s language can\u0027t be assumed to be English, but checking for \"File\" wouldn\u0027t even work for English because there is the \"Image\" alias. You probably need to make a function which fetches all the local equivalents for a namespace, and use it to build the regexes containing namespace names.",
+      "parentUuid": "8e28a382_f8043782",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_f7058717",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 16
