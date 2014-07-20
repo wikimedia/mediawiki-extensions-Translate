@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_e7748e98",
+        "filename": "i18n/pagetranslation/qqq.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-20T18:27:32Z",
+      "side": 1,
+      "message": "Duplicate key.",
+      "revId": "af1c5935af12404c3a3d98a2823f4a7c90832ed6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
