@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_e1e59ea0",
+        "filename": "resources/css/ext.translate.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-20T07:29:25Z",
+      "side": 1,
+      "message": "Was this class applied anywhere?",
+      "revId": "4357d1fe9fcf1b05fff764c31624af8d2b9703ec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_c1e86279",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-20T07:29:25Z",
+      "side": 1,
+      "message": "Ok with default tpt-languages-separator (\u0026#160;•\u0026#32;); any custom version missing spaces can be easily fixed.",
+      "revId": "4357d1fe9fcf1b05fff764c31624af8d2b9703ec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

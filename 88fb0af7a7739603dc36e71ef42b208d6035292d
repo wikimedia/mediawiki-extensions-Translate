@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_6153ee6e",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-20T07:29:25Z",
+      "side": 0,
+      "message": "Where did the alt text go? Linker::linkKnown doesn\u0027t add one, unless that\u0027s an undocumented feature.",
+      "revId": "88fb0af7a7739603dc36e71ef42b208d6035292d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
