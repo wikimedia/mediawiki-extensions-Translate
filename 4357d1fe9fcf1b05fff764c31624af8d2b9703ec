@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "8e28a382_a757a604",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-20T18:23:40Z",
+      "side": 1,
+      "message": "Please make sure that qqq states that plural can be used for $2.",
+      "revId": "4357d1fe9fcf1b05fff764c31624af8d2b9703ec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_873eeab3",
+        "filename": "i18n/pagetranslation/qqq.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-20T18:23:40Z",
+      "side": 1,
+      "message": "Percentage rounded to integer, or with decimals?",
+      "revId": "4357d1fe9fcf1b05fff764c31624af8d2b9703ec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_e1e59ea0",
         "filename": "resources/css/ext.translate.css",
         "patchSetId": 2
