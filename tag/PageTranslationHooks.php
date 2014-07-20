@@ -95,21 +95,15 @@ class PageTranslationHooks {
 	}
 
 	/**
-	 * Hook: ArticleSaveComplete, PageContentSaveComplete
-	 *
-	 * Change to this line once BC is 1.21 and later:
-	 * public static function onSectionSave( WikiPage $wikiPage, User $user, $content, $summary,
+	 * Hook: PageContentSaveComplete
 	 */
-	public static function onSectionSave( $wikiPage, User $user, $content, $summary,
+	public static function onSectionSave( WikiPage $wikiPage, User $user, $content, $summary,
 		$minor, $_, $_, $flags, $revision
 	) {
 		$title = $wikiPage->getTitle();
 
 		if ( $content instanceof TextContent ) {
 			$text = $content->getNativeData();
-		} elseif ( is_string( $content ) ) {
-			// BC 1.20
-			$text = $content;
 		} else {
 			// Screw it, not interested
 			return true;
@@ -334,10 +328,10 @@ class PageTranslationHooks {
 
 	/**
 	 * Display nice error when editing content.
-	 * Hook: EditFilterMergedContent (since MW 1.21)
+	 * Hook: EditFilterMergedContent
 	 */
 	public static function tpSyntaxCheckForEditContent( $context, $content, $status, $summary ) {
-		if ( !( $content instanceof TextContent ) ) {
+		if ( !$content instanceof TextContent ) {
 			return true; // whatever.
 		}
 
@@ -352,21 +346,6 @@ class PageTranslationHooks {
 			//todo: use Message object instead.
 
 			call_user_func_array( array( $status, 'fatal' ), $msg );
-		}
-
-		return true;
-	}
-
-	/**
-	 * Display nice error for editpage.
-	 * Hook: EditFilterMerged (until MW 1.20)
-	 */
-	public static function tpSyntaxCheckForEditPage( $editpage, $text, &$error, $summary ) {
-		$title = $editpage->getTitle();
-		$e = self::tpSyntaxError( $title, $text );
-
-		if ( $e ) {
-			$error .= Html::rawElement( 'div', array( 'class' => 'error' ), $e->getMessage() );
 		}
 
 		return true;
@@ -393,16 +372,13 @@ class PageTranslationHooks {
 	/**
 	 * When attempting to save, last resort. Edit page would only display
 	 * edit conflict if there wasn't tpSyntaxCheckForEditPage
-	 * Hook: ArticleSave, PageContentSave
+	 * Hook: PageContentSave
 	 */
 	public static function tpSyntaxCheck( $wikiPage, $user, $content, $summary,
 		$minor, $_, $_, $flags, $status
 	) {
 		if ( $content instanceof TextContent ) {
 			$text = $content->getNativeData();
-		} elseif ( is_string( $content ) ) {
-			// BC 1.20
-			$text = $content;
 		} else {
 			// Screw it, not interested
 			return true;
@@ -426,7 +402,7 @@ class PageTranslationHooks {
 	}
 
 	/**
-	 * Hook: ArticleSaveComplete, PageContentSaveComplete
+	 * Hook: PageContentSaveComplete
 	 */
 	public static function addTranstag( $wikiPage, $user, $content, $summary,
 		$minor, $_, $_, $flags, $revision
@@ -438,9 +414,6 @@ class PageTranslationHooks {
 
 		if ( $content instanceof TextContent ) {
 			$text = $content->getNativeData();
-		} elseif ( is_string( $content ) ) {
-			// BC 1.20
-			$text = $content;
 		} else {
 			// Screw it, not interested
 			return true;

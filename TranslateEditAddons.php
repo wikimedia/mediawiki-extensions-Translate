@@ -165,7 +165,7 @@ class TranslateEditAddons {
 
 	/**
 	 * Runs message checks, adds tp:transver tags and updates statistics.
-	 * Hook: ArticleSaveComplete, PageContentSaveComplete
+	 * Hook: PageContentSaveComplete
 	 */
 	public static function onSave( WikiPage $wikiPage, $user, $content, $summary,
 		$minor, $_, $_, $flags, $revision
@@ -173,9 +173,6 @@ class TranslateEditAddons {
 
 		if ( $content instanceof TextContent ) {
 			$text = $content->getNativeData();
-		} elseif ( is_string( $content ) ) {
-			// BC 1.20
-			$text = $content;
 		} else {
 			// Screw it, not interested
 			return true;
@@ -344,11 +341,8 @@ class TranslateEditAddons {
 		$th->setEditMode( false );
 
 		$de->loadNewText();
-		if ( isset( $de->mNewContent ) && $de->mNewContent instanceof TextContent ) {
+		if ( $de->mNewContent instanceof TextContent ) {
 			$th->setTranslation( $de->mNewContent->getNativeData() );
-		} elseif ( isset( $de->mNewtext ) ) {
-			// BC 1.20
-			$th->setTranslation( $de->mNewtext );
 		} else {
 			// Screw you, not interested.
 			return true;

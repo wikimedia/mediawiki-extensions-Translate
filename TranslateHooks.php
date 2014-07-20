@@ -107,28 +107,18 @@ class TranslateHooks {
 			/// @todo Register our css, is there a better place for this?
 			$wgHooks['OutputPageBeforeHTML'][] = 'PageTranslationHooks::injectCss';
 
-			if ( !defined( 'MW_SUPPORTS_CONTENTHANDLER' ) ) {
-				// BC 1.20
-				$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
-				$wgHooks['ArticleSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
-				$wgHooks['EditFilterMerged'][] = 'PageTranslationHooks::tpSyntaxCheckForEditPage';
-				$wgHooks['ArticleSaveComplete'][] = 'PageTranslationHooks::addTranstag';
-				$wgHooks['RevisionInsertComplete'][] =
-					'PageTranslationHooks::updateTranstagOnNullRevisions';
-			} else {
-				// Add transver tags and update translation target pages
-				$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
+			// Add transver tags and update translation target pages
+			$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
 
-				// Check syntax for \<translate>
-				$wgHooks['PageContentSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
-				$wgHooks['EditFilterMergedContent'][] =
-					'PageTranslationHooks::tpSyntaxCheckForEditContent';
+			// Check syntax for \<translate>
+			$wgHooks['PageContentSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
+			$wgHooks['EditFilterMergedContent'][] =
+				'PageTranslationHooks::tpSyntaxCheckForEditContent';
 
-				// Add transtag to page props for discovery
-				$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::addTranstag';
-				$wgHooks['RevisionInsertComplete'][] =
-					'PageTranslationHooks::updateTranstagOnNullRevisions';
-			}
+			// Add transtag to page props for discovery
+			$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::addTranstag';
+			$wgHooks['RevisionInsertComplete'][] =
+				'PageTranslationHooks::updateTranstagOnNullRevisions';
 
 			// Register \<languages/>
 			$wgHooks['ParserFirstCallInit'][] = 'TranslateHooks::setupParserHooks';
