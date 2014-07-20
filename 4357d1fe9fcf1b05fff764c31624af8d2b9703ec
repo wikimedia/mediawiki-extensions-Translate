@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_815eda46",
+        "filename": "resources/css/ext.translate.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-20T08:26:43Z",
+      "side": 1,
+      "message": "Was already present.",
+      "parentUuid": "8e28a382_e1e59ea0",
+      "revId": "4357d1fe9fcf1b05fff764c31624af8d2b9703ec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_c1e86279",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 2

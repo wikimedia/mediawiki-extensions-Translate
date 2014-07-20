@@ -16,6 +16,24 @@
       "revId": "88fb0af7a7739603dc36e71ef42b208d6035292d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_615d2e4a",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-20T08:26:43Z",
+      "side": 0,
+      "message": "Not needed since the image is added by css.",
+      "parentUuid": "8e28a382_6153ee6e",
+      "revId": "88fb0af7a7739603dc36e71ef42b208d6035292d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
