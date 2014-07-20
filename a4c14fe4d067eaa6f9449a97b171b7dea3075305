@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_016c2a04",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-20T08:03:48Z",
+      "side": 1,
+      "message": "The ^: seems to exclude any link outside ns0, is this expected? See Project:Support_desk at http://pagemigration.wmflabs.org/w/index.php?title\u003dCommunication\u0026diff\u003d3747\u0026oldid\u003d3746",
+      "revId": "a4c14fe4d067eaa6f9449a97b171b7dea3075305",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
