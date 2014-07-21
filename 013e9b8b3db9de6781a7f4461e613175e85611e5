@@ -265,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_ed6b4fec",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-21T05:07:01Z",
+      "side": 1,
+      "message": "I was of the opinion that if we do it in a separate patch, it would be easy to merge.",
+      "parentUuid": "8e28a382_41f47250",
+      "revId": "013e9b8b3db9de6781a7f4461e613175e85611e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_f24c7545",
         "filename": "specials/SpecialPagePreparation.php",
         "patchSetId": 6
