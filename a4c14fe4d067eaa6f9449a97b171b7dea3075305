@@ -33,6 +33,24 @@
       "revId": "a4c14fe4d067eaa6f9449a97b171b7dea3075305",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_3f5f3e15",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-21T07:40:27Z",
+      "side": 1,
+      "message": "Yes, that is how it should be, IMO. Because, if I add the prefix for Project:Support_desk on labs, it would be a red link. \u0027Project\u0027 is not present in ns0 on the test instance.\n\nIf you run mw.config.get( \u0027wgNamespaceIds\u0027 ) on mediawiki.org, Project and Project_talk can be seen in the result and hence, the prefix would be added to them. Hope I clarified well.",
+      "parentUuid": "8e28a382_016c2a04",
+      "revId": "a4c14fe4d067eaa6f9449a97b171b7dea3075305",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
