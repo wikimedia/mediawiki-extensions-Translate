@@ -3,7 +3,8 @@
 		"authors": [
 			"Nemo bis",
 			"Чаховіч Уладзіслаў",
-			"Дзяніс Тутэйшы"
+			"Дзяніс Тутэйшы",
+			"Mikalai Udodau"
 		]
 	},
 	"translate": "Пераклад",
@@ -79,7 +80,7 @@
 	"translate-magic-saved": "Зробленыя праўкі паспяхова запісаны.",
 	"translate-checks-parameters": "{{PLURAL:$2|Наступны параметр не выкарыстоўваецца|Наступныя параметры не выкарыстоўваюцца}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Невядомы параметр|Невядомыя параметры}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-balance": "Няпарная колькасьць {{PLURAL:$2|дужак}}:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-balance": "Няпарная колькасць {{PLURAL:$2|дужак}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Наступная спасылка выклікае праблемы|Наступныя спасылкі выклікаюць праблемы}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Адсутнічае $2 спасылка|Адсутнічаюць $2 спасылкі|Адсутнічаюць $2 спасылак}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "Калі ласка, выправіце {{PLURAL:$2|наступны тэг|наступныя тэгі}}:\n<strong><nowiki>$1</nowiki></strong>",
@@ -124,7 +125,7 @@
 	"translate-statsf-scale-months": "Месяцы",
 	"translate-statsf-scale-weeks": "Тыдні",
 	"translate-statsf-scale-days": "Дні",
-	"translate-statsf-scale-hours": "Часы",
+	"translate-statsf-scale-hours": "Гадзіны",
 	"translate-statsf-count": "Мера:",
 	"translate-statsf-count-edits": "Колькасць правак",
 	"translate-statsf-count-users": "Дзеючых перакладчыкаў",

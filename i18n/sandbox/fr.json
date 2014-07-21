@@ -36,7 +36,7 @@
 	"tsb-reminder-link-text": "Envoyer un courriel de rappel",
 	"tsb-didnt-make-any-translations": "Cet utilisateur n’a fait aucune traduction.",
 	"tsb-translations-source": "Source",
-	"tsb-translations-user": "Traductions utilisateur",
+	"tsb-translations-user": "Traductions {{GENDER:$1|de l’utilisateur|de l’utilisatrice}}",
 	"tsb-translations-current": "Traductions existantes",
 	"tsb-delete-userpage-summary": "Suppression de la page utilisateur d’un utilisateur du bac à sable",
 	"translationstash": "Bienvenue",

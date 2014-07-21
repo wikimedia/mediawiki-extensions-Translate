@@ -283,6 +283,7 @@
 	"translate-stats-workflow": "Állapot",
 	"translate-workflowgroup-label": "Munkafolyamat állapotok",
 	"translate-dynagroup-recent-label": "Friss fordítások",
+	"translate-dynagroup-additions-label": "Legutóbb hozzáadva",
 	"translate-dynagroup-by": "{{GENDER:$1|$1}} fordítása",
 	"translate-dynagroup-byc": "{{GENDER:$1|$1}} fordítása ($2)",
 	"translate-gethelp": "Súgó",

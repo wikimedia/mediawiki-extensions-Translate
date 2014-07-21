@@ -131,7 +131,7 @@
 	"translate-statsf-group": "Komaga eraldatud rühmakoodide loend:",
 	"translate-statsf-submit": "Eelvaade",
 	"translate-tag-category": "Tõlgitavad leheküljed",
-	"translate-tag-page-desc": "Vikilehekülje [[$2|$1]] tõlkimine.",
+	"translate-tag-page-desc": "Vikilehekülje [[$2|$1]] tõlkimine $3 keelest ($4).",
 	"translate-sidebar-alltrans": "Tõlge teistes keeltes",
 	"translations": "Kõik tõlked",
 	"translations-summary": "Sisesta allapoole sõnumi nimi, et näha kõiki olemasolevaid tõlkeid.",
