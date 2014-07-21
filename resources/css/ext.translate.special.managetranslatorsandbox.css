@@ -204,7 +204,6 @@
 .request-footer .older-requests-indicator {
 	unicode-bidi: -moz-isolate;
 	unicode-bidi: -webkit-isolate;
-	unicode-bidi: -ms-isolate;
 	unicode-bidi: isolate;
 }
 
