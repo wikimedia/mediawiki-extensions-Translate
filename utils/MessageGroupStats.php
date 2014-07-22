@@ -139,14 +139,28 @@ class MessageGroupStats {
 	 * Hook: TranslateEventTranslationReview
 	 */
 	public static function clear( MessageHandle $handle ) {
+		$code = $handle->getCode();
+		$ids = $handle->getGroupIds();
 		$dbw = wfGetDB( DB_MASTER );
-		$conds = array(
-			'tgs_group' => $handle->getGroupIds(),
-			'tgs_lang' => $handle->getCode(),
-		);
 
+		$locked = false;
+		// Try to avoid deadlocks with duplicated deletes where there is no row
+		// @note: this only helps in auto-commit mode (which job runners use)
+		if ( count( $ids ) == 1 ) {
+			$key = __CLASS__ . ":modify:{$ids[0]}-$code";
+			$locked = $dbw->lock( $key, __METHOD__, 1 );
+			if ( !$locked ) {
+				return true;
+			}
+		}
+
+		$conds = array( 'tgs_group' => $ids, 'tgs_lang' => $code );
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
 		wfDebugLog( 'messagegroupstats', "Cleared " . serialize( $conds ) );
+
+		if ( $locked ) {
+			$dbw->unlock( $key, __METHOD__ );
+		}
 
 		// Hooks must return value
 		return true;
@@ -358,12 +372,18 @@ class MessageGroupStats {
 		);
 
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->insert(
-			self::TABLE,
-			$data,
-			__METHOD__,
-			array( 'IGNORE' )
-		);
+		// Try to avoid deadlocks with S->X lock upgrades in MySQL
+		// @note: this only helps in auto-commit mode (which job runners use)
+		$key = __CLASS__ . ":modify:$id-$code";
+		if ( $dbw->lock( $key, __METHOD__, 1 ) ) {
+			$dbw->insert(
+				self::TABLE,
+				$data,
+				__METHOD__,
+				array( 'IGNORE' )
+			);
+			$dbw->unlock( $key, __METHOD__ );
+		}
 
 		return $aggregates;
 	}
