@@ -283,6 +283,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_6dd631c9",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 16
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-22T16:38:01Z",
+      "side": 1,
+      "message": "So as far as this patch is concerned, shall I do File|Image and then file a bug? Or completely remove this function and the function call?",
+      "parentUuid": "8e28a382_61a76e4d",
+      "revId": "973b9cdee87bc0d0806dc225ce17eaf1ba01ca7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_f7058717",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 16
