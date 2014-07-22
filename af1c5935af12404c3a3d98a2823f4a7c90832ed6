@@ -16,6 +16,24 @@
       "revId": "af1c5935af12404c3a3d98a2823f4a7c90832ed6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_2da14936",
+        "filename": "i18n/pagetranslation/qqq.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-22T16:47:04Z",
+      "side": 1,
+      "message": "Yes, it was introduced at https://gerrit.wikimedia.org/r/#/c/139110/17/i18n/pagetranslation/qqq.json , so I will remove the duplicate entry over there. This patch depends on that one.",
+      "parentUuid": "8e28a382_e7748e98",
+      "revId": "af1c5935af12404c3a3d98a2823f4a7c90832ed6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
