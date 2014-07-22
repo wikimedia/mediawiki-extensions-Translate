@@ -358,12 +358,17 @@ class MessageGroupStats {
 		);
 
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->insert(
-			self::TABLE,
-			$data,
-			__METHOD__,
-			array( 'IGNORE' )
-		);
+		// Try to avoid deadlocks with S->X lock upgrades in MySQL
+		$key = __CLASS__ . ":insert:$id-$code";
+		if ( $dbw->lock( $key, __METHOD__, 1 ) ) {
+			$dbw->insert(
+				self::TABLE,
+				$data,
+				__METHOD__,
+				array( 'IGNORE' )
+			);
+			$dbw->unlock( $key, __METHOD__ );
+		}
 
 		return $aggregates;
 	}
