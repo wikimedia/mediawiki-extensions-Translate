@@ -7,7 +7,8 @@
 			"Siebrand",
 			"Arent",
 			"Mar(c)",
-			"Southparkfan"
+			"Southparkfan",
+			"Mathonius"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] is a beurtgebaseerd strategiespel",
@@ -57,8 +58,8 @@
 	"translate-group-desc-wikimedia-mobile": "Samengevoegde groep die mobiele applicaties voor Wikimediaprojecten bevat",
 	"translate-group-desc-wikimedia-mobile-commons": "[[Translating:WikipediaMobile|Commons Mobile]] is een app voor Android of iOS voor het uploaden naar en bekijken van Wikimedia Commons",
 	"translate-group-desc-wikimedia-mobile-wikipedia": "[[Translating:WikipediaMobile|WikipediaMobile]] is a cross-platform mobiele en tabletapplicatie voor het lezen en bijdragen aan Wikipedia",
-	"translate-group-desc-wikimedia-mobile-wikipedia-android": "[[Translating:WikipediaMobile|Wikipedia Android]] is de Wikipedia Android app voor Wikipedia",
-	"translate-group-desc-wikimedia-mobile-wikipedia-ios": "[[Translating:WikipediaMobile|Wikipedia iOS]] is de Wikipedia app voor iOS",
+	"translate-group-desc-wikimedia-mobile-wikipedia-android": "[[Translating:WikipediaMobile|Wikipedia Android]] is de Wikipedia-app voor Android",
+	"translate-group-desc-wikimedia-mobile-wikipedia-ios": "[[Translating:WikipediaMobile|Wikipedia iOS]] is de Wikipedia-app voor iOS",
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] is een platformonafhankelijke toepassing voor mobiele telefoons en tablet-pc's voor het lezen van en bijdragen aan Wikisource",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] is een platformonafhankelijke toepassing voor mobiele telefoons en tablet-pc's voor het lezen van en bijdragen aan Wikiwoordenboek",
 	"translate-group-desc-wikimediaextensions": "Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door de [https://wikimediafoundation.org/ Wikimedia Foundation]",

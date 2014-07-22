@@ -34,7 +34,7 @@
 	"tsb-reminder-link-text": "发送电子邮件提醒",
 	"tsb-didnt-make-any-translations": "这位用户尚未作出任何翻译。",
 	"tsb-translations-source": "来源",
-	"tsb-translations-user": "用户翻译",
+	"tsb-translations-user": "{{GENDER:$1|用户}}翻译",
 	"tsb-translations-current": "现有翻译",
 	"tsb-delete-userpage-summary": "删除沙盒用户的用户页面",
 	"translationstash": "欢迎",
