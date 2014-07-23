@@ -1,0 +1,20 @@
+!! functionhooks
+translation
+!! endfunctionhooks
+
+!! article
+Foo/uga
+!! text
+Ugaa ugaa
+!! endarticle
+
+
+!! test
+#translation as magic word
+!! options
+language=uga
+!! input
+{{#translation:}}
+!!result
+/uga
+!! end
