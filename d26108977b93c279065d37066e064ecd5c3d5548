@@ -33,6 +33,24 @@
       "revId": "d26108977b93c279065d37066e064ecd5c3d5548",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_8a4258af",
+        "filename": "resources/images/plus_darkgray.svg",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-23T14:55:12Z",
+      "side": 1,
+      "message": "https://www.mediawiki.org/wiki/Manual:Assets\nAlso, needs UNIX line endings.",
+      "parentUuid": "8e28a382_6aa72ca5",
+      "revId": "d26108977b93c279065d37066e064ecd5c3d5548",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
