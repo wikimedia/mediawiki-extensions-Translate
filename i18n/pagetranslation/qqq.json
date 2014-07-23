@@ -75,6 +75,7 @@
 	"tpt-languages-legend": "The caption of a language selector displayed using <code><nowiki><languages /></nowiki></code>. e.g. on [[Project list]].\n{{Identical|Otherlanguages}}",
 	"tpt-languages-separator": "{{optional}}",
 	"tpt-languages-zero": "Tooltip for a link in <code><nowiki><language /></nowiki></code> when language is included because it is a priority language, but translation does not yet exist.\n\nThe link directly points to the translation view ([[Special:Translate]]).\n\nTranslate this as \"Start translating (the page) into this language\".",
+	"tpt-languages-nonzero": "Tooltip for a link to go to a translated version of a translatable page.\n\nParameters:\n* $1 page title (translated if present)\n* $2: translation percentage, without decimals (supports PLURAL)",
 	"tpt-tab-translate": "Used as label for the tab.\n\nReplaces the edit tab with translation tab for translation pages.\n{{Identical|Translate}}",
 	"tpt-target-page": "Message displayed when trying to edit a translatable page directly. Parameters:\n* $1 is the translatable page\n* $2 is a link to the translation tool for the translatable page.",
 	"tpt-unknown-page": "See [[mw:Help:Extension:Translate/Translation example]] for context on page translation feature.",

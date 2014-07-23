@@ -63,6 +63,7 @@
     "tpt-languages-legend": "Other languages:",
     "tpt-languages-separator": "&#160;•&#32;",
     "tpt-languages-zero": "Start translation for this language",
+    "tpt-languages-nonzero": "$1 ($2% translated)",
     "tpt-tab-translate": "Translate",
     "tpt-target-page": "This page cannot be updated manually.\nThis page is a translation of the page [[$1]] and the translation can be updated using [$2 the translation tool].",
     "tpt-unknown-page": "This namespace is reserved for content page translations.\nThe page you are trying to edit does not seem to correspond any page marked for translation.",

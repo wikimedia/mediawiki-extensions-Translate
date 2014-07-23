@@ -31,11 +31,42 @@
 	width: 80%;
 }
 
+.mw-pt-languages-list a {
+	white-space: nowrap;
+}
+
 .mw-pt-translate-header {
 	font-size: x-small;
 	text-align: center;
 }
 
-.mw-pt-languages-selected, .mw-pt-languages-ui {
+.mw-pt-languages-selected,
+.mw-pt-languages-ui {
 	font-weight: bold;
+}
+
+.mw-pt-progress {
+	padding-right: 11px;
+	background: transparent right center no-repeat;
+	background-size: 9px 9px;
+}
+
+.mw-pt-progress--stub {
+	background-image: url('../images/prog-1.png');
+}
+
+.mw-pt-progress--low {
+	background-image: url('../images/prog-2.png');
+}
+
+.mw-pt-progress--med {
+	background-image: url('../images/prog-3.png');
+}
+
+.mw-pt-progress--high {
+	background-image: url('../images/prog-4.png');
+}
+
+.mw-pt-progress--complete {
+	background-image: url('../images/prog-5.png');
 }
