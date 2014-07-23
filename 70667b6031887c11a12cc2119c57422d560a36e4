@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_6f8a9bc1",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T18:03:16Z",
+      "side": 1,
+      "message": "I would support dropping these unhelpful @param docs, but I can do that as followup as well.",
+      "revId": "70667b6031887c11a12cc2119c57422d560a36e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_cf874fb9",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T18:03:16Z",
+      "side": 1,
+      "message": "Two tabs preferred.",
+      "revId": "70667b6031887c11a12cc2119c57422d560a36e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
