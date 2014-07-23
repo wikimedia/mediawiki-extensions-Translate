@@ -6,7 +6,6 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2007-2013 Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
  */
 
@@ -145,22 +144,6 @@ class TranslateEditAddons {
 		TranslationHelpers::addModules( $context->getOutput() );
 
 		return $th->getBoxes();
-	}
-
-	/**
-	 * Hook: EditPage::showEditForm:fields
-	 */
-	public static function keepFields( EditPage $editpage, OutputPage $out ) {
-		$request = $editpage->getArticle()->getContext()->getRequest();
-
-		$out->addHTML(
-			"\n" .
-				Html::hidden( 'loadgroup', $request->getText( 'loadgroup' ) ) .
-				Html::hidden( 'loadtask', $request->getText( 'loadtask' ) ) .
-				"\n"
-		);
-
-		return true;
 	}
 
 	/**

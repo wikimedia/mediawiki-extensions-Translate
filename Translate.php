@@ -130,7 +130,6 @@ $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslationStash::injectTo
 $GLOBALS['wgHooks']['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
 $GLOBALS['wgHooks']['AlternateEdit'][] = 'TranslateEditAddons::intro';
 $GLOBALS['wgHooks']['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
-$GLOBALS['wgHooks']['EditPage::showEditForm:fields'][] = 'TranslateEditAddons::keepFields';
 $GLOBALS['wgHooks']['LanguageGetTranslatedLanguageNames'][] =
 	'TranslateHooks::translateMessageDocumentationLanguage';
 $GLOBALS['wgHooks']['TranslateSupportedLanguages'][] =

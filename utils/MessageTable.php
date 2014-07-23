@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2013 Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -27,10 +26,6 @@ class MessageTable {
 	 */
 	protected $group;
 
-	/**
-	 * @var array
-	 */
-	protected $editLinkParams = array();
 	/**
 	 * @var IContextSource
 	 */
@@ -76,15 +71,6 @@ class MessageTable {
 		$this->collection = $collection;
 		$this->group = $group;
 		$this->setHeaderText( 'table', $group->getLabel() );
-		$this->appendEditLinkParams( 'loadgroup', $group->getId() );
-	}
-
-	public function setEditLinkParams( array $array ) {
-		$this->editLinkParams = $array;
-	}
-
-	public function appendEditLinkParams( /*string*/$key, /*string*/$value ) {
-		$this->editLinkParams[$key] = $value;
 	}
 
 	public function setReviewMode( $mode = true ) {
@@ -195,7 +181,7 @@ class MessageTable {
 				-35
 			) );
 			$linkAttribs = array(
-				'href' => $title->getLocalUrl( array( 'action' => 'edit' ) + $this->editLinkParams ),
+				'href' => $title->getLocalUrl( array( 'action' => 'edit' ) ),
 			);
 			$linkAttribs += TranslationEditPage::jsEdit( $title, $this->group->getId() );
 
