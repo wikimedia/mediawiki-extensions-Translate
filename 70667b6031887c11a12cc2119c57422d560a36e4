@@ -33,6 +33,23 @@
       "revId": "70667b6031887c11a12cc2119c57422d560a36e4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_4fbb5f71",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-23T18:04:01Z",
+      "side": 1,
+      "message": "Indent only one more than \"public\" in the previous line.",
+      "revId": "70667b6031887c11a12cc2119c57422d560a36e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
