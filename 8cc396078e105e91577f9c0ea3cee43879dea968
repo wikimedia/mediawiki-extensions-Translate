@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_2a8fe430",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T14:42:21Z",
+      "side": 1,
+      "message": "remove pageContent",
+      "revId": "8cc396078e105e91577f9c0ea3cee43879dea968",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_6aa16c9e",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T14:42:21Z",
+      "side": 1,
+      "message": "What ensures anchorID is a valid string to put in here?",
+      "revId": "8cc396078e105e91577f9c0ea3cee43879dea968",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_4a9eb067",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T14:42:21Z",
+      "side": 1,
+      "message": "extra space",
+      "revId": "8cc396078e105e91577f9c0ea3cee43879dea968",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_8a7ff80f",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T14:42:21Z",
+      "side": 1,
+      "message": "Can\u0027t you avoid changing section links in the first place?",
+      "revId": "8cc396078e105e91577f9c0ea3cee43879dea968",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
