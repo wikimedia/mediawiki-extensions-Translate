@@ -67,6 +67,24 @@
       "revId": "8cc396078e105e91577f9c0ea3cee43879dea968",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_ca3ce02f",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-23T14:53:58Z",
+      "side": 1,
+      "message": "If they\u0027re not changed in source text, translators would have no context to kee them working in translations.",
+      "parentUuid": "8e28a382_8a7ff80f",
+      "revId": "8cc396078e105e91577f9c0ea3cee43879dea968",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
