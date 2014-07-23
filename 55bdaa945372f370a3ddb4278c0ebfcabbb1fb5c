@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_aa2cf4f2",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-23T14:59:01Z",
+      "side": 1,
+      "message": "Nothing is broken. :) But yes, the functions could just be doCategories etc.",
+      "parentUuid": "8e28a382_0a08a893",
+      "revId": "55bdaa945372f370a3ddb4278c0ebfcabbb1fb5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_2a03647b",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 5
@@ -64,6 +82,24 @@
       "writtenOn": "2014-07-23T14:51:06Z",
       "side": 1,
       "message": "This too should have i18n. for the \"Category\" part.",
+      "revId": "55bdaa945372f370a3ddb4278c0ebfcabbb1fb5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_0a8548d4",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-23T14:59:01Z",
+      "side": 1,
+      "message": "See also discussion about File https://gerrit.wikimedia.org/r/#/c/139110/ (not yet resubmitted)",
+      "parentUuid": "8e28a382_2a03647b",
       "revId": "55bdaa945372f370a3ddb4278c0ebfcabbb1fb5c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
