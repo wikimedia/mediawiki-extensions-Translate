@@ -579,4 +579,25 @@ class TranslateHooks {
 
 		return true;
 	}
+
+	public static function setupTranslateParserFunction( &$parser ) {
+		$parser->setFunctionHook( 'translation', 'TranslateHooks::translateRenderParserFunction' );
+
+		return true;
+	}
+
+	public static function translateRenderParserFunction( $parser ) {
+		$pageTitle =  $parser->getTitle()->getDBkey();
+		if ( strpos( $pageTitle, '/' ) !== false ) {
+			$pos = strrpos( $pageTitle, '/' );
+			$basepage = substr( $pageTitle, 0, $pos );
+			$code = substr( $pageTitle, $pos + 1 );
+			$codes = Language::fetchLanguageNames();
+			if ( isset( $codes[$code] ) ) {
+				return "/" . $code;
+			}
+		}
+
+		return "";
+	}
 }
