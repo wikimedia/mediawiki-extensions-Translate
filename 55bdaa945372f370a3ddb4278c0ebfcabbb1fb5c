@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_aacf545a",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T14:51:06Z",
+      "side": 1,
+      "message": "I\u0027m not sure why do we need to remove them. What if the user has added them manually somewhere where the tool doesn\u0027t add them?",
+      "revId": "55bdaa945372f370a3ddb4278c0ebfcabbb1fb5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_8acc9866",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T14:51:06Z",
+      "side": 1,
+      "message": "remove pageContent",
+      "revId": "55bdaa945372f370a3ddb4278c0ebfcabbb1fb5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_0a08a893",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T14:51:06Z",
+      "side": 1,
+      "message": "The categories are not broken, so I would not use the verb \"fix\". Perhaps makeCategoriesVaryOnLanguage.",
+      "revId": "55bdaa945372f370a3ddb4278c0ebfcabbb1fb5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_2a03647b",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T14:51:06Z",
+      "side": 1,
+      "message": "This too should have i18n. for the \"Category\" part.",
+      "revId": "55bdaa945372f370a3ddb4278c0ebfcabbb1fb5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
