@@ -62,6 +62,7 @@ $GLOBALS['wgExtensionMessagesFiles']['TranslateGroupDescriptions'] =
 $GLOBALS['wgExtensionMessagesFiles']['TranslateSearch'] = "$dir/TranslateSearch.i18n.php";
 $GLOBALS['wgExtensionMessagesFiles']['TranslateSandbox'] = "$dir/TranslateSandbox.i18n.php";
 $GLOBALS['wgExtensionMessagesFiles']['TranslateAlias'] = "$dir/Translate.alias.php";
+$GLOBALS['wgExtensionMessagesFiles']['TranslateMagic'] = "$dir/Translate.i18n.magic.php";
 
 // Register initialization code
 $GLOBALS['wgExtensionFunctions'][] = 'TranslateHooks::setupTranslate';
@@ -143,6 +144,8 @@ $GLOBALS['wgHooks']['LanguageGetTranslatedLanguageNames'][] =
 $GLOBALS['wgHooks']['TranslateSupportedLanguages'][] =
 	'TranslateHooks::translateMessageDocumentationLanguage';
 $GLOBALS['wgHooks']['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
+$wgHooks['MagicWordwgVariableIDs'][] = 'TranslateHooks::onRegisterMagicWords';
+$wgHooks['ParserGetVariableValueSwitch'][] = 'TranslateHooks::onParserGetVariableValueSwitch';
 // Prevent translations creating bogus categories
 $GLOBALS['wgHooks']['LinksUpdate'][] = 'TranslateHooks::preventCategorization';
 // Fuzzy tags for speed.

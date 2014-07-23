@@ -549,4 +549,20 @@ class TranslateHooks {
 
 		return true;
 	}
+
+	public static function onRegisterMagicWords( &$magicWordsIds ) {
+
+		$magicWordsIds[] = 'translation';
+
+		return true;
+	}
+
+	public static function onParserGetVariableValueSwitch( &$parser, &$cache, &$magicWordId, &$ret ) {
+		if ( $magicWordId === 'myword' ) {
+
+			$ret = $cache['translation'] = "translation";
+		}
+
+		return true;
+	}
 }
