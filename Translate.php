@@ -171,7 +171,7 @@ $GLOBALS['wgHooks']['SpecialSearchProfiles'][] = 'TranslateHooks::searchProfile'
 $GLOBALS['wgHooks']['SpecialSearchProfileForm'][] = 'TranslateHooks::searchProfileForm';
 $GLOBALS['wgHooks']['SpecialSearchSetupEngine'][] = 'TranslateHooks::searchProfileSetupEngine';
 
-$GLOBALS['wgHooks']['LinkBegin'][] = 'SpecialMyLanguage::linkfix';
+$GLOBALS['wgHooks']['LinkBegin'][] = 'TranslateHooks::linkfix';
 
 // Stats table manipulation
 $GLOBALS['wgHooks']['Translate:MessageGroupStats:isIncluded'][] =
