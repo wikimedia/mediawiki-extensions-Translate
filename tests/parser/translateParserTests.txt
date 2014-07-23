@@ -1,0 +1,34 @@
+!! functionhooks
+translation
+!! endfunctionhooks
+
+!! test
+#translation as magic word for valid language code
+!! options
+title=[[Test/mr]]
+!! input
+{{#translation:}}
+!!result
+<p>/mr
+</p>
+!! end
+
+!! test
+#translation as magic word for source page
+!! options
+title=[[Test]]
+!! input
+{{#translation:}}
+!!result
+
+!! end
+
+!! test
+#translation as magic word for invalid language code
+!! options
+title=[[Test/ugaaa]]
+!! input
+{{#translation:}}
+!!result
+
+!! end
