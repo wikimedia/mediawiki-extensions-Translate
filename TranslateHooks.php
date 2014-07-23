@@ -579,4 +579,18 @@ class TranslateHooks {
 
 		return true;
 	}
+
+	public static function TranslateSetupParserFunction( &$parser ) {
+
+		$parser->setFunctionHook( 'translation', 'TranslateRenderParserFunction' );
+
+		return true;
+	}
+
+	public static function TranslateRenderParserFunction( $parser ) {
+
+		$output = "/" . $parser->getTitle()->getPageLanguage();
+
+		return $output;
+	}
 }
