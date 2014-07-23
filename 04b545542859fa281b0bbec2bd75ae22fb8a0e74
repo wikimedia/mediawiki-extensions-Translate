@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_af63e3d7",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T17:12:04Z",
+      "side": 1,
+      "message": "This should be inside the $wgEnablePageTranslation block below.",
+      "revId": "04b545542859fa281b0bbec2bd75ae22fb8a0e74",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_cfb50f31",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 893,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T17:12:04Z",
+      "side": 1,
+      "message": "This comment is probably not needed.",
+      "revId": "04b545542859fa281b0bbec2bd75ae22fb8a0e74",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_2fa7f30a",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T17:12:04Z",
+      "side": 1,
+      "message": "$oldLanguage \u003d $oldHandle-\u003egetCode();",
+      "revId": "04b545542859fa281b0bbec2bd75ae22fb8a0e74",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_0fa8b7d6",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T17:12:04Z",
+      "side": 1,
+      "message": "You should call -\u003eidValid() first.",
+      "revId": "04b545542859fa281b0bbec2bd75ae22fb8a0e74",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_afb2c344",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T17:12:04Z",
+      "side": 1,
+      "message": "This comment is probably not needed",
+      "revId": "04b545542859fa281b0bbec2bd75ae22fb8a0e74",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_6f8f3b79",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-23T17:12:04Z",
+      "side": 1,
+      "message": "To avoid repeating code twice, it should be easy to do:\n// Original and new title might be off different translatable pages, so check both\nforeach ( array( $ot, $nt ) as $title ) {\n  $handle \u003d new MessageHandle( $title );\n  if ( !$handle-\u003eisValid() ) {\n     continue;\n  }\n  ...\n}",
+      "revId": "04b545542859fa281b0bbec2bd75ae22fb8a0e74",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
