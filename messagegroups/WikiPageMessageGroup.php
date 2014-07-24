@@ -135,7 +135,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$title = $this->getTitle()->getPrefixedText();
 		$target = ":$title";
 		$pageLanguageCode = $this->getSourceLanguage();
-		$inLanguageCode = $context->getLanguage()->getCode();
+		$inLanguageCode = $context ? $context->getLanguage()->getCode() : null;
 		$languageName = Language::fetchLanguageName( $pageLanguageCode, $inLanguageCode );
 
 		// Allow for adding a custom group description by using
