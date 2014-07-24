@@ -189,7 +189,7 @@
 	"supportedlanguages-colorlegend": "Легенда за бојата: Последен превод извршен пред $1 дена.",
 	"supportedlanguages-portallink": "[$1] $2 - $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
-	"supportedlanguages-translators": "{{PLURAL:$2|Преведувач|Преведувачи}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Преведувач}}|Преведувач}}: $1",
 	"supportedlanguages-recenttranslations": "скорешни преводи",
 	"supportedlanguages-count": "Вкупно $1 {{PLURAL:$1|јазик|јазици}}.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|уредување|уредувања}} - последното пред $3 {{PLURAL:$3|ден|дена}}",

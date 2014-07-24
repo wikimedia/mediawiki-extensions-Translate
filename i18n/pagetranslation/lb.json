@@ -64,6 +64,7 @@
 	"tpt-translation-intro": "Dës Säit ass eng <span class=\"plainlinks\">[$1 iwwersate Versioun]</span> vun der Säit [[$2]] an d'Iwweersetzung ass zu $3 % komplett.",
 	"tpt-languages-legend": "aner Sproochen:",
 	"tpt-languages-zero": "Iwwersetzung fir dës Sprooch ufänken",
+	"tpt-languages-nonzero": "$1 ($2% iwwersat)",
 	"tpt-tab-translate": "Iwwersetzen",
 	"tpt-target-page": "Dës Säit kann net manuell aktualiséiert ginn.\nDës Säit ass eng Iwwersetzung vun der Säit [[$1]] an d'Iwwersetzung ka mat Hëllef vun der [$2 Iwwersetzungsfunktioun] aktualiséiert ginn.",
 	"tpt-unknown-page": "Dësen Nummraum ass fir d'Iwwersetze vu Säite mat Inhalt reservéiert.\nD'Säit, déi Dir versicht z'änneren, schéngt net mat enger Säit déi fir d'Iwwersetzung markéiert ass ze korrespondéieren.",
@@ -166,5 +167,6 @@
 	"pm-add-icon-hover-text": "Eng Eenheet drënner derbäisetzen",
 	"pm-swap-icon-hover-text": "Mat der Eenheet drënner wiesselen",
 	"pm-delete-icon-hover-text": "Eenheet läschen",
-	"tpt-translate-title": "Iwwersetzung vum Titel vun der Säit erlaben"
+	"tpt-translate-title": "Iwwersetzung vum Titel vun der Säit erlaben",
+	"pp-save-summary": "Huet d'Säit fir d'Iwwersetzung preparéiert"
 }

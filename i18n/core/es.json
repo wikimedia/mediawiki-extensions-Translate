@@ -204,7 +204,7 @@
 	"supportedlanguages": "Idiomas admitidos",
 	"supportedlanguages-summary": "Esta página muestra una lista de todos los idiomas admitidos por {{SITENAME}},\njunto con los nombres de los traductores que trabajan en ese idioma.\nCuanto más haya traducido un traductor, más grande aparecerá su nombre.\nEl color del subrayado indica cuán activo es un traductor aquí.",
 	"supportedlanguages-colorlegend": "Leyenda del color: Última traducción hecha hace $1 días.",
-	"supportedlanguages-translators": "{{PLURAL:$2|Traductor|Traductores}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Traductor|Traductora}}|Traductores}}: $1",
 	"supportedlanguages-recenttranslations": "traducciones recientes",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|idioma|idiomas}} en total.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edición|ediciones}}, última edición hace $3 {{PLURAL:$3|día|días}}",

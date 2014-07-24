@@ -79,6 +79,7 @@
 	"tpt-languages-legend": "Autres langues :",
 	"tpt-languages-separator": "&nbsp;•&#32;",
 	"tpt-languages-zero": "Commencer la traduction pour cette langue",
+	"tpt-languages-nonzero": "$1 ($2% traduit)",
 	"tpt-tab-translate": "Traduire",
 	"tpt-target-page": "Cette page ne peut pas être mise à jour manuellement.\nElle est une version traduite de [[$1]] et la traduction peut être mise à jour en utilisant [$2 l’outil de traduction].",
 	"tpt-unknown-page": "Cet espace de noms est réservé pour la traduction de pages.\nLa page que vous essayez de modifier ne semble correspondre à aucune page marquée pour être traduite.",
@@ -192,5 +193,6 @@
 	"pm-add-icon-hover-text": "Ajouter une unité ci-dessous",
 	"pm-swap-icon-hover-text": "Échanger avec l’unité ci-dessous",
 	"pm-delete-icon-hover-text": "Supprimer l’unité",
-	"tpt-translate-title": "Autoriser la traduction du titre de la page"
+	"tpt-translate-title": "Autoriser la traduction du titre de la page",
+	"pp-save-summary": "Page préparée pour la traduction"
 }

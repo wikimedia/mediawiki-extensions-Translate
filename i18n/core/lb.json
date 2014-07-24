@@ -184,7 +184,7 @@
 	"supportedlanguages": "Ënnerstëtzt Sproochen",
 	"supportedlanguages-summary": "Op dëser Säit steet eng Lëscht vun alle Sproochen déi op {{SITENAME}} ënnerstëtzt ginn, zesumme mam Numm vun den Iwwersetzer déi un där Sprooch schaffen.\nDen Numm vum Iwwersetzer ass méi grouss desto méi Iwwersetzungen de Benotzer gemaach huet.\nD'Faarf mat där den Numm vum Benotzer ënnerstrach ass weist wéi rezent dee Benotzer hei aktiv war.",
 	"supportedlanguages-colorlegend": "Erklärung vun de Faarwen: Lescht Iwwersetzung viru(n) $1 Deeg.",
-	"supportedlanguages-translators": "{{PLURAL:$2|Iwwersetzer|Iwwersetzer}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Iwwersetzer}}}}: $1",
 	"supportedlanguages-recenttranslations": "rezent Iwwersetzungen",
 	"supportedlanguages-count": "{{PLURAL:$1|Eng Sprooch|$1 Sproochen}} am Ganzen.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|Ännerung|Ännerungen}} - lescht Ännerung viru(n) $3 {{PLURAL:$3|Dag|Deeg}}",

@@ -57,6 +57,7 @@
 	"translate-tag-hasnew": "Ez a lap tartalmaz <span class=\"plainlinks\">[$1 változtatásokat]</span>, amelyek nincsenek fordításra jelölve.",
 	"tpt-translation-intro": "Ez a(z) [[$2]] lap egy <span class=\"plainlinks\">[$1 lefordított változata]</span>, és a fordítás $3%-a kész és friss.",
 	"tpt-languages-legend": "Más nyelvek:",
+	"tpt-languages-nonzero": "$1 (lefordítva: $2%)",
 	"tpt-target-page": "Ezt a lapot nem lehet kézzel frissíteni.\nA(z) [[$1]] lap fordítása, és a fordítását [$2 a fordítás segédeszköz] segítségével lehet frissíteni.",
 	"tpt-unknown-page": "Ez a névtér a tartalmi lapok fordításainak van fenntartva.\nA lap, amit szerkeszteni próbálsz, úgy tűnik hogy nem egyezik egy fordításra jelölt lappal sem.",
 	"tpt-discouraged-language": "<strong>$2 — a fordítás erre a nyelvre nem a legfontosabb feladat.</strong>\n\nAz adminisztrátori javaslat szerint a legfontosabb nyelvek a következők: $3.\n\nKérjük, ha beszéled ezek közül valamelyiket, fontold meg, hogy inkább arra a nyelvre fordítasz előbb: munkádnak így többek láthatják hasznát.",

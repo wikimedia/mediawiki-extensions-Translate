@@ -201,7 +201,7 @@
 	"supportedlanguages": "Unterstützte Sprachen",
 	"supportedlanguages-summary": "Diese Seite zeigt eine Liste aller auf {{SITENAME}} unterstützen Sprachen, zusammen mit den Namen der Übersetzer, die an der jeweiligen Sprache mitgearbeitet haben.\nJe intensiver ein Übersetzer mitgearbeitet hat, desto größer wird sein Benutzername angezeigt.\nDie zur Unterstreichung des Benutzernamens genutzte Farbe zeigt an, wann der Übersetzer zuletzt aktiv mitgearbeitet hat.",
 	"supportedlanguages-colorlegend": "Legende zu den Farben: Letzte Übersetzung vor $1 Tagen.",
-	"supportedlanguages-translators": "{{PLURAL:$2|Übersetzer}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Übersetzer|Übersetzerin}}|Übersetzer}}: $1",
 	"supportedlanguages-recenttranslations": "Aktuelle Übersetzungen",
 	"supportedlanguages-count": "Insgesamt $1 {{PLURAL:$1|Sprache|Sprachen}}.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|Bearbeitung|Bearbeitungen}} - letzte Bearbeitung vor $3 {{PLURAL:$3|Tag|Tagen}}",

@@ -193,7 +193,7 @@
 	"supportedlanguages": "שפות נתמכות",
 	"supportedlanguages-summary": "הדף הזה מציג רשימה של כל השפות שהאתר {{SITENAME}} תומך בהן,\nעם שמות של מתרגמים שעובדים על אותן השפות.\nגודל שם המתרגם יחסי למספר העריכות שלו.\nצבע הקו התחתי מראה כמה זמן המתרגם פעיל כאן.",
 	"supportedlanguages-colorlegend": "מקרא לצבעים: תרגום אחרון לפני $1 ימים",
-	"supportedlanguages-translators": "{{PLURAL:$2|מתרגם|מתרגמים}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|מתרגם|מתרגמת}}|מתרגמים}}: $1",
 	"supportedlanguages-recenttranslations": "תרגומים אחרונים",
 	"supportedlanguages-count": "{{PLURAL:$1|שפה אחת|$1 שפות}} בסך הכול.",
 	"supportedlanguages-activity": "$1: {{PLURAL:$2|עריכה אחת|$2 עריכות}} - עריכה אחרונה לפני {{PLURAL:$3|יום אחד|$3 ימים}}",

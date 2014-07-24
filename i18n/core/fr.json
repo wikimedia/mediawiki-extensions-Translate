@@ -217,7 +217,7 @@
 	"supportedlanguages-colorlegend": "Légende pour la couleur: Dernière traduction il y a $1 jours.",
 	"supportedlanguages-portallink": "[$1] $2 — $3",
 	"supportedlanguages-portallink-nocldr": "<nowiki>[</nowiki>$1<nowiki>]</nowiki> $2",
-	"supportedlanguages-translators": "{{PLURAL:$2|Traducteur|Traducteurs}} : $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Traducteur|Traductrice}}|Traducteurs}} : $1",
 	"supportedlanguages-recenttranslations": "traductions récentes",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|langue|langues}} au total.",
 	"supportedlanguages-activity": "$1 : $2 modification{{PLURAL:$2||s}} - Dernière modification il y a $3 jour{{PLURAL:$3||s}}",

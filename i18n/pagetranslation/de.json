@@ -72,6 +72,7 @@
 	"tpt-translation-intro": "Diese Seite ist eine <span class=\"plainlinks\">[$1 übersetzte Version]</span> der Seite [[$2]] und die Übersetzung ist zu $3 % abgeschlossen sowie aktuell.",
 	"tpt-languages-legend": "Sprachen:",
 	"tpt-languages-zero": "Mit dem Übersetzen in diese Sprache anfangen",
+	"tpt-languages-nonzero": "$1 ($2% übersetzt)",
 	"tpt-tab-translate": "Übersetzen",
 	"tpt-target-page": "Diese Seite kann nicht manuell aktualisiert werden.\nDiese Seite ist eine Übersetzung der Seite [[$1]] und die Übersetzung kann mithilfe des [$2 Übersetzungswerkzeuges] aktualisiert werden.",
 	"tpt-unknown-page": "Dieser Namensraum ist für das Übersetzen von Wikiseiten reserviert.\nDie Seite, die gerade bearbeitet wird, hat keine Verbindung zu einer übersetzbaren Seite.",
@@ -185,5 +186,6 @@
 	"pm-add-icon-hover-text": "Unten eine Einheit hinzufügen",
 	"pm-swap-icon-hover-text": "Mit der unteren Einheit tauschen",
 	"pm-delete-icon-hover-text": "Einheit löschen",
-	"tpt-translate-title": "Übersetzung eines Seitentitels erlauben"
+	"tpt-translate-title": "Übersetzung eines Seitentitels erlauben",
+	"pp-save-summary": "Bereitete die Seite zur Übersetzung vor"
 }

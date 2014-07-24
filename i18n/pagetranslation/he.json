@@ -66,6 +66,7 @@
 	"tpt-translation-intro": "הדף הזה הוא <span class=\"plainlinks\">[$1 גרסה מתורגמת]</span> של הדף [[$2]] והתרגום שלם ב־$3%.",
 	"tpt-languages-legend": "שפות אחרות:",
 	"tpt-languages-zero": "להתחיל לתרגום לשפה הזאת",
+	"tpt-languages-nonzero": "$1 (מתורגם: $2%)",
 	"tpt-tab-translate": "תרגום",
 	"tpt-target-page": "לא ניתן לעדכן דף זה ידנית.\nדף זה הוא תרגום של הדף [[$1]] וניתן לעדכן את התרגום באמצעות [$2 כלי התרגום].",
 	"tpt-unknown-page": "מרחב שם זה שמור לצורך תרגומי דפי התוכן.\nהדף אותו אתם מנסים לערוך אינו תואם לאף דף המסומן לתרגום.",
@@ -179,5 +180,6 @@
 	"pm-add-icon-hover-text": "להוסיף יחידה למטה",
 	"pm-swap-icon-hover-text": "להחליף עם יחידה מעל",
 	"pm-delete-icon-hover-text": "למחוק יחידה",
-	"tpt-translate-title": "לאפשר תרגום של כותרת הדף"
+	"tpt-translate-title": "לאפשר תרגום של כותרת הדף",
+	"pp-save-summary": "הדף הוכן לתרגום"
 }

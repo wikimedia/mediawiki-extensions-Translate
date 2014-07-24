@@ -178,7 +178,7 @@
 	"supportedlanguages-summary": "Siin leheküljel on toodud kõik keeled, mida {{SITENAME}} toetab\nja neis keeltes kaastööd tegevate tõlkijate nimed.\nMida suurem on tõlkija nimi, seda rohkem muudatusi on ta teinud.\nAllkriipsu värvus näitab, kui hiljuti on tõlkija siin kaastööd teinud.",
 	"supportedlanguages-colorlegend": "Värvuslegend: Viimane tõlge $1 päeva tagasi.",
 	"supportedlanguages-portallink": "[$1] $2 – $3",
-	"supportedlanguages-translators": "{{PLURAL:$2|Tõlkija|Tõlkijad}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Tõlkija}}|Tõlkijad}}: $1",
 	"supportedlanguages-recenttranslations": "viimased tõlked",
 	"supportedlanguages-count": "Kokku {{PLURAL:$1|üks keel|$1 keelt}}.",
 	"supportedlanguages-activity": "$1: {{PLURAL:$2|Üks muudatus|$2 muudatust}} – viimane muudatus {{PLURAL:$3|eile|$3 päeva tagasi}}",

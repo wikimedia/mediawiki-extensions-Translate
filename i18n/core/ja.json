@@ -199,7 +199,7 @@
 	"supportedlanguages-colorlegend": "色の凡例: 最後の翻訳が $1 日前",
 	"supportedlanguages-portallink": "[$1] $2 - $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
-	"supportedlanguages-translators": "{{PLURAL:$2|翻訳者}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|翻訳者}}|翻訳者}}: $1",
 	"supportedlanguages-recenttranslations": "最近の翻訳",
 	"supportedlanguages-count": "合計 $1 {{PLURAL:$1|言語}}",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|回の編集}}・$3 {{PLURAL:$3|日}}前に最終編集",

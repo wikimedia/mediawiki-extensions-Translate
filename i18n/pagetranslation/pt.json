@@ -70,6 +70,7 @@
 	"tpt-translation-intro": "Esta página é uma <span class=\"plainlinks\">[$1 versão traduzida]</span> da página [[$2]] e a tradução está $3% completa.",
 	"tpt-languages-legend": "Outras línguas:",
 	"tpt-languages-zero": "Iniciar a tradução para esta língua",
+	"tpt-languages-nonzero": "$1 ($2% traduzida)",
 	"tpt-tab-translate": "Traduzir",
 	"tpt-target-page": "Esta página não pode ser atualizada manualmente.\nEla é uma tradução da página [[$1]] e a tradução pode ser atualizada usando [$2 a ferramenta de tradução].",
 	"tpt-unknown-page": "Este espaço nominal está reservado para traduções de páginas de conteúdo.\nA página que está a tentar editar não parece corresponder a nenhuma página marcada para tradução.",
