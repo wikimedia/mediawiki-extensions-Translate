@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "8e28a382_0c4c3a9e",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-24T15:18:03Z",
+      "side": 1,
+      "message": "You could use this kind of variable (public static) as the flag which could be set from the TranslateMoveJob while they are running.",
+      "revId": "9a569048f9ebe7d96d35fbc8cb9532c0eb24bfa7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_8178f626",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 7
@@ -13,6 +30,24 @@
       "writtenOn": "2014-07-24T00:27:42Z",
       "side": 1,
       "message": "It will already be checked before the move so is it required?",
+      "revId": "9a569048f9ebe7d96d35fbc8cb9532c0eb24bfa7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_cc619201",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 904,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-24T15:18:03Z",
+      "side": 1,
+      "message": "I was thinking of having the loop as the function body directly. You do not need the checks outside the loop.",
+      "parentUuid": "8e28a382_8178f626",
       "revId": "9a569048f9ebe7d96d35fbc8cb9532c0eb24bfa7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
