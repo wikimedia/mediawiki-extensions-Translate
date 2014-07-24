@@ -85,6 +85,24 @@
       "revId": "8cc396078e105e91577f9c0ea3cee43879dea968",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_c29959c8",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-24T17:48:59Z",
+      "side": 1,
+      "message": "Meaning: if we add \"durable\" anchors to the translatable page template but the source page doesn\u0027t use them for links, when translating the units with internal links translators will not know they have to switch the header with the one in template. So, if we want to add anchors for internal links, they must be used everywhere.\n\nIf Nikerabbit thinks this is not necessary, I think the docs should be updated.",
+      "parentUuid": "8e28a382_ca3ce02f",
+      "revId": "8cc396078e105e91577f9c0ea3cee43879dea968",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
