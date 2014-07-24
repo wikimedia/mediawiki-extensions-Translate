@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_8178f626",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 904,
+      "author": {
+        "id": 1407
+      },
+      "writtenOn": "2014-07-24T00:27:42Z",
+      "side": 1,
+      "message": "It will already be checked before the move so is it required?",
+      "revId": "9a569048f9ebe7d96d35fbc8cb9532c0eb24bfa7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
