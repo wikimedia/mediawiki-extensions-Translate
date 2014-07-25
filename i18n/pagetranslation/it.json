@@ -69,6 +69,7 @@
 	"tpt-translation-intro": "Questa pagina è una <span class=\"plainlinks\">[$1 versione tradotta]</span> della pagina [[$2]]; la traduzione è completa al $3&nbsp;%.",
 	"tpt-languages-legend": "Altre lingue:",
 	"tpt-languages-zero": "Inizia a tradurre in questa lingua",
+	"tpt-languages-nonzero": "$1 ($2% tradotta)",
 	"tpt-tab-translate": "Traduci",
 	"tpt-target-page": "Questa pagina non può essere aggiornata manualmente. Questa pagina è una traduzione della pagina [[$1]] e la traduzione può essere aggiornata tramite [$2 lo strumento di traduzione].",
 	"tpt-unknown-page": "Questo namespace è riservato alle traduzioni del contenuto delle pagine.\nLa pagina che stai cercando di modificare non sembra corrispondere ad alcuna pagina segnata per la traduzione.",
@@ -182,5 +183,6 @@
 	"pm-add-icon-hover-text": "Aggiungi un'unità sotto",
 	"pm-swap-icon-hover-text": "Scambia con l'unità sotto",
 	"pm-delete-icon-hover-text": "Cancella unità",
-	"tpt-translate-title": "Permetti la traduzione del titolo della pagina"
+	"tpt-translate-title": "Permetti la traduzione del titolo della pagina",
+	"pp-save-summary": "Preparata la pagina per la traduzione"
 }

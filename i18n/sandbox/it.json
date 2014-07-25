@@ -30,7 +30,7 @@
 	"tsb-reminder-link-text": "Invia email di promemoria",
 	"tsb-didnt-make-any-translations": "Questo utente non ha fatto alcuna traduzione.",
 	"tsb-translations-source": "Sorgente",
-	"tsb-translations-user": "Traduzione utente",
+	"tsb-translations-user": "Traduzioni {{GENDER:$1|utente}}",
 	"tsb-translations-current": "Traduzioni esistenti",
 	"tsb-delete-userpage-summary": "Cancellata la pagina utente di un'utente in prova",
 	"translationstash": "Benvenuto/a",
