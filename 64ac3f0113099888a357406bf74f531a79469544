@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_1c0fc13b",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-25T17:00:30Z",
+      "side": 1,
+      "message": "Did you use .parse() and load jqueryMsg? https://www.mediawiki.org/wiki/Manual:Messages_API#Format_options",
+      "parentUuid": "8e28a382_1c28e193",
+      "revId": "64ac3f0113099888a357406bf74f531a79469544",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_ea0e7c90",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 8
