@@ -161,6 +161,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_b73566a5",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-25T19:47:30Z",
+      "side": 1,
+      "message": "Thanks for the carrot.",
+      "parentUuid": "8e28a382_373f36b3",
+      "revId": "64ac3f0113099888a357406bf74f531a79469544",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_ea0e7c90",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 8
@@ -172,6 +190,24 @@
       "writtenOn": "2014-07-23T15:00:28Z",
       "side": 1,
       "message": "These do not need to be globals.",
+      "revId": "64ac3f0113099888a357406bf74f531a79469544",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_e93432dc",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-25T19:47:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_ea0e7c90",
       "revId": "64ac3f0113099888a357406bf74f531a79469544",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -195,6 +231,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_176d5a95",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-25T19:47:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_ca13c0b7",
+      "revId": "64ac3f0113099888a357406bf74f531a79469544",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_8a2938e3",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 8
@@ -206,6 +260,24 @@
       "writtenOn": "2014-07-23T15:00:28Z",
       "side": 1,
       "message": "Cache commonly used selectors.",
+      "revId": "64ac3f0113099888a357406bf74f531a79469544",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_972f0a3a",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-25T19:47:30Z",
+      "side": 1,
+      "message": "This is used just once over here. Do you want me to cache the messageDiv globally?",
+      "parentUuid": "8e28a382_8a2938e3",
       "revId": "64ac3f0113099888a357406bf74f531a79469544",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -229,6 +301,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_17eafad5",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-25T19:47:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_6a228cfd",
+      "revId": "64ac3f0113099888a357406bf74f531a79469544",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_2a8004c4",
         "filename": "specials/SpecialPagePreparation.php",
         "patchSetId": 8
@@ -240,6 +330,24 @@
       "writtenOn": "2014-07-23T15:00:28Z",
       "side": 1,
       "message": "It\u0027s not 2015 yet.",
+      "revId": "64ac3f0113099888a357406bf74f531a79469544",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_29ac7aea",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-25T19:47:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_2a8004c4",
       "revId": "64ac3f0113099888a357406bf74f531a79469544",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -263,6 +371,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_c9ba961e",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-25T19:47:30Z",
+      "side": 1,
+      "message": "Okies, removing id",
+      "parentUuid": "8e28a382_6a796cf1",
+      "revId": "64ac3f0113099888a357406bf74f531a79469544",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_8a701807",
         "filename": "specials/SpecialPagePreparation.php",
         "patchSetId": 8
@@ -274,6 +400,24 @@
       "writtenOn": "2014-07-23T15:00:28Z",
       "side": 1,
       "message": "Extra space. -\u003etext() is not safe for html output. You have to use -\u003eescaped, and probably make these variables so that the template is more readable.",
+      "revId": "64ac3f0113099888a357406bf74f531a79469544",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_6c297084",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-25T19:47:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_8a701807",
       "revId": "64ac3f0113099888a357406bf74f531a79469544",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -297,6 +441,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_4c68f4b7",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-25T19:47:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_4a76b002",
+      "revId": "64ac3f0113099888a357406bf74f531a79469544",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_ea855cd4",
         "filename": "specials/SpecialPagePreparation.php",
         "patchSetId": 8
@@ -308,6 +470,24 @@
       "writtenOn": "2014-07-23T15:00:28Z",
       "side": 1,
       "message": "Have you tried constructing empty diff object and removing the content and using that html for the output?",
+      "revId": "64ac3f0113099888a357406bf74f531a79469544",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_ccbaa41e",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-25T19:47:30Z",
+      "side": 1,
+      "message": "Yes, I have tried that. The case of empty diff has also been handled. Check line 262 at https://gerrit.wikimedia.org/r/#/c/142241/8/resources/js/ext.translate.pagepreparation.js",
+      "parentUuid": "8e28a382_ea855cd4",
       "revId": "64ac3f0113099888a357406bf74f531a79469544",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
