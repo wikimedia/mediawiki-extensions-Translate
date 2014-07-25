@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_d713525b",
+        "filename": "Autoload.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-25T17:10:02Z",
+      "side": 1,
+      "message": "Doing it later is okay, just don\u0027t forget.",
+      "parentUuid": "8e28a382_dcdb79ec",
+      "revId": "64ac3f0113099888a357406bf74f531a79469544",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_6aecccb8",
         "filename": "Resources.php",
         "patchSetId": 8
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "Did you use .parse() and load jqueryMsg? https://www.mediawiki.org/wiki/Manual:Messages_API#Format_options",
       "parentUuid": "8e28a382_1c28e193",
+      "revId": "64ac3f0113099888a357406bf74f531a79469544",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_373f36b3",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-25T17:10:02Z",
+      "side": 1,
+      "message": "It does work if you get all the pieces right: this confirms it:\n\nmw.messages.set( { test: \u0027Hi [$1 I am a link]\u0027 } );\nmw.message( \u0027test\u0027, mw.Title.newFromText( \u0027Uga\u0027 ).getUrl( { action: \u0027edit\u0027 } ) ).parse();\n\"Hi \u003ca href\u003d\"/wiki/Uga?action\u003dedit\"\u003eI am a link\u003c/a\u003e\"",
+      "parentUuid": "8e28a382_1c0fc13b",
       "revId": "64ac3f0113099888a357406bf74f531a79469544",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
