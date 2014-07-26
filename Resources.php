@@ -14,9 +14,20 @@ $resourcePaths = array(
 	'remoteExtPath' => 'Translate'
 );
 
-$wgResourceModules['ext.translate'] = array(
-	'styles' => 'resources/css/ext.translate.css',
+$wgResourceModules['ext.translate.min'] = array(
+	'styles' => array(
+		'resources/css/ext.translate.css',
+		'resources/css/ext.translate.langbar.css'
+	),
 	'position' => 'top',
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate'] = array(
+	'scripts' => 'resources/js/ext.translate.langbar.js',
+	'dependencies' => array(
+		'ext.uls.compactlinks',
+		'jquery.jStorage'
+	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.base'] = array(
