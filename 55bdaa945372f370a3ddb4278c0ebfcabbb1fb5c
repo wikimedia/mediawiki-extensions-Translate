@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_b8ef92e3",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-26T13:51:36Z",
+      "side": 1,
+      "message": "Quite possible, but that would involve changing all the concerned regexes. I kind of missed out on this point.\n\nI\u0027ve made a note of this and will prefer to work separately on it again.",
+      "parentUuid": "8e28a382_aacf545a",
+      "revId": "55bdaa945372f370a3ddb4278c0ebfcabbb1fb5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_8acc9866",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 5
@@ -65,6 +83,24 @@
       "side": 1,
       "message": "Nothing is broken. :) But yes, the functions could just be doCategories etc.",
       "parentUuid": "8e28a382_0a08a893",
+      "revId": "55bdaa945372f370a3ddb4278c0ebfcabbb1fb5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_18d46616",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-26T13:51:36Z",
+      "side": 1,
+      "message": "Okay, I will do it for this function right now and for the others in a separate patch for obvious reasons.",
+      "parentUuid": "8e28a382_aa2cf4f2",
       "revId": "55bdaa945372f370a3ddb4278c0ebfcabbb1fb5c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
