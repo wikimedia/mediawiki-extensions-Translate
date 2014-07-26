@@ -15,7 +15,12 @@ $resourcePaths = array(
 );
 
 $wgResourceModules['ext.translate'] = array(
-	'styles' => 'resources/css/ext.translate.css',
+	'styles' => array(
+		'resources/css/ext.translate.css',
+		'resources/css/ext.translate.langbar.css'
+	),
+	'scripts' => 'resources/js/ext.translate.langbar.js',
+	'dependencies' => 'ext.uls.compactlinks',
 	'position' => 'top',
 ) + $resourcePaths;
 
