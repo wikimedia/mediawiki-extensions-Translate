@@ -191,5 +191,11 @@
     "pp-already-prepared-message": "It seems the page has already been prepared for translation. There are no changes compared to the previous version.",
     "pp-pagename-missing": "Please enter the page name.",
     "pp-diff-old-header": "Source text",
-    "pp-diff-new-header": "Prepared text"
+    "pp-diff-new-header": "Prepared text",
+    "tpt-langbar-viewchanges": "View changes",
+    "tpt-langbar-viewchanges-tooltip": "View changes from last marked version",
+    "tpt-langbar-mark": "Mark for translation",
+    "tpt-langbar-mark-tooltip": "Mark this version for translation",
+    "tpt-langbar-translate-tooltip": "Translate this page to $1",
+    "tpt-langbar-min-text": "$1 languages"
 }
