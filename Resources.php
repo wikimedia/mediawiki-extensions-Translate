@@ -15,8 +15,11 @@ $resourcePaths = array(
 );
 
 $wgResourceModules['ext.translate'] = array(
-	'styles' => 'resources/css/ext.translate.css',
-	'position' => 'top',
+	'scripts' => 'resources/js/ext.translate.langbar.js',
+	'dependencies' => array(
+		'ext.uls.compactlinks',
+		'jquery.jStorage'
+	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.base'] = array(
@@ -216,6 +219,14 @@ $wgResourceModules['ext.translate.messagewebimporter'] = array(
 	'styles' => 'resources/css/ext.translate.messagewebimporter.css',
 	'position' => 'top',
 ) + $resourcePaths;
+
+$wgResourceModules['ext.translate.min'] = array(
+		'styles' => array(
+			'resources/css/ext.translate.css',
+			'resources/css/ext.translate.langbar.css'
+		),
+		'position' => 'top',
+	) + $resourcePaths;
 
 $wgResourceModules['ext.translate.multiselectautocomplete'] = array(
 	'scripts' => 'resources/js/ext.translate.multiselectautocomplete.js',
