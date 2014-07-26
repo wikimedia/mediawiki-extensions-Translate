@@ -1,0 +1,131 @@
+.mw-translate-langbar-min {
+	/* @embed */
+	background: transparent url('../../../UniversalLanguageSelector/lib/jquery.uls/images/icon-language.png') no-repeat;
+	/* @embed */
+	background-image: -webkit-linear-gradient(transparent, transparent), url('../../../UniversalLanguageSelector/lib/jquery.uls/images/icon-language.svg');
+	/* @embed */
+	background-image: linear-gradient(transparent, transparent), url('../../../UniversalLanguageSelector/lib/jquery.uls/images/icon-language.svg');
+	padding-left: 30px;
+	cursor: pointer;
+}
+
+.mw-translate-langbar-min-ltr {
+	float: right;
+}
+
+.mw-translate-langbar-min-rtl {
+	float: left;
+}
+
+.mw-translate-langbar-container {
+	display: table;
+	border-collapse: collapse;
+	overflow:auto;
+}
+
+.mw-translate-langbar-container-ltr {
+	float: right;
+	margin-right: 10px;
+}
+
+.mw-translate-langbar-container-rtl {
+	float: left;
+	margin-left: 10px;
+}
+
+.mw-translate-langbar-row {
+	display: table-row;
+	list-style: none;
+	border: 0.1em solid #d2d2d2;
+	clear: both;
+}
+
+.mw-translate-langbar-row li {
+	float: left;
+}
+
+.mw-translate-language {
+	display: table-cell;
+	font-family: sans-serif;
+	border-right: 0.1em solid #ccc;
+	padding: 0.3em 1em;
+	margin: 0;
+	line-height: 1.5em ;
+	color: #555555;
+}
+
+.mw-translate-language:hover {
+	background-color: #E0E0D5;
+}
+
+.mw-translate-selected {
+	background-color: #E0E0D5;
+}
+
+.mw-translate-viewmore {
+	width: 10px;
+	text-align: center;
+	border-right: 0;
+}
+
+.mw-translate-viewmore:hover {
+	cursor: pointer;
+}
+
+.mw-translate-translate {
+	color: #3753b0;
+	text-align: center;
+	padding: 0.6em 0 0.6em 0;
+	line-height: 0.6em;
+	width: 100%;
+}
+
+.mw-translate-mark {
+	width:56%;
+	color:#111111;
+	border-right: 0;
+}
+
+.mw-translate-translate:hover{
+	background-color: #fff;
+}
+
+.mw-translate-option {
+	clear: both;
+	border: 0.1em solid #ccc;
+	position: absolute;
+	background: #fff;
+}
+
+.mw-translate-action:hover {
+	cursor: pointer;
+}
+
+.mw-translate-percentage {
+	border-right: 0;
+	width:14%;
+	text-align: center;
+	color:#888888;
+}
+
+.mw-translate-percentage:hover {
+	background-color: #fff;
+	cursor: default;
+}
+
+.mw-translate-langbar-row li ul {
+	margin: 0;
+	height:auto;
+	clear:both;
+	display: none;
+	list-style: none;
+	padding: 0;
+}
+
+.mw-translate-langbar-row li ul li {
+	text-align: left;
+}
+
+.mw-translate-langbar-row li:hover ul {
+	display: block;
+}
