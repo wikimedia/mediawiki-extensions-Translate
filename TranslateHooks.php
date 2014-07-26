@@ -168,9 +168,6 @@ class TranslateHooks {
 			$wgHooks['getUserPermissionsErrors'][] =
 				'PageTranslationHooks::preventPatrolling';
 
-			// Our custom header for translation pages
-			$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::translatablePageHeader';
-
 			// Edit notice shown on translatable pages
 			$wgHooks['TitleGetEditNotices'][] = 'PageTranslationHooks::onTitleGetEditNotices';
 
