@@ -223,5 +223,12 @@
 	"tpt-unlink-button": "Button text",
 	"tpt-unlink-summary": "Edit summary",
 	"tpt-generic-confirm": "Confirmation message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.",
-	"tpt-generic-button": "Butten text message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.\n{{Identical|Confirm}}"
+	"tpt-generic-button": "Butten text message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.\n{{Identical|Confirm}}",
+	"tpt-unlink-summary": "Edit summary",
+	"tpt-langbar-viewchanges": "Text for view changes button in Language bar",
+	"tpt-langbar-viewchanges-tooltip": "Tooltip for view changes button in Language bar",
+	"tpt-langbar-mark": "Text for mark for translation button in Language bar",
+	"tpt-langbar-mark-tooltip": "Tooltip for mark for translation button in Language bar",
+	"tpt-langbar-translate-tooltip": "Tooltip for Translate button in Language bar.\n\nParameters:\n* $1 - Language to translate to",
+	"tpt-langbar-min-text": "Text for minimalistic language bar.\n\nParameters:\n* $1 - Number of languages available"
 }
