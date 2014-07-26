@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_58842e0f",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-07-26T14:14:37Z",
+      "side": 1,
+      "message": "\"I\u0027ve made a note of this\". Ugh, no private notes in unknown places please, use bugzilla",
+      "parentUuid": "8e28a382_b8ef92e3",
+      "revId": "55bdaa945372f370a3ddb4278c0ebfcabbb1fb5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_8acc9866",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 5
