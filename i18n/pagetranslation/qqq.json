@@ -197,5 +197,11 @@
 	"pp-diff-new-header": "Header text for new revision for the diff shown at Special:PagePreparation",
 	"tpt-unlink-confirm": "Confirmation message shown to user when unmarking page in active translation",
 	"tpt-unlink-button": "Button text",
-	"tpt-unlink-summary": "Edit summary"
+	"tpt-unlink-summary": "Edit summary",
+	"tpt-langbar-viewchanges": "Text for view changes button in Language bar",
+	"tpt-langbar-viewchanges-tooltip": "Tooltip for view changes button in Language bar",
+	"tpt-langbar-mark": "Text for mark for translation button in Language bar",
+	"tpt-langbar-mark-tooltip": "Tooltip for mark for translation button in Language bar",
+	"tpt-langbar-translate-tooltip": "Tooltip for Translate button in Language bar.\n\nParameters:\n* $1 - Language to translate to",
+	"tpt-langbar-min-text": "Text for minimalistic language bar.\n\nParameters:\n* $1 - Number of languages available"
 }
