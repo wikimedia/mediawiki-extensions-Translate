@@ -206,5 +206,12 @@
 	"tpt-unlink-button": "Remove from translation",
 	"tpt-unlink-summary": "Removed page from translation",
 	"tpt-generic-confirm": "Please confirm the action.",
-	"tpt-generic-button": "Confirm"
+	"tpt-generic-button": "Confirm",
+	"tpt-unlink-summary": "Removed page from translation",
+	"tpt-langbar-viewchanges": "View changes",
+	"tpt-langbar-viewchanges-tooltip": "View changes from last marked version",
+	"tpt-langbar-mark": "Mark for translation",
+	"tpt-langbar-mark-tooltip": "Mark this version for translation",
+	"tpt-langbar-translate-tooltip": "Translate this page to $1",
+	"tpt-langbar-min-text": "$1 languages"
 }
