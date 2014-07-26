@@ -3,39 +3,3 @@
 	text-align: center;
 	direction: ltr;
 }
-
-.mw-pt-languages {
-	display: table;
-	border: 1px solid rgb(170, 170, 170);
-	background: rgb(246, 249, 237) none repeat scroll 0 0;
-	border-collapse: collapse;
-	line-height: 1.2;
-	width: 100%;
-	clear: both;
-	overflow: auto;
-}
-
-.mw-pt-languages-label {
-	display: table-cell;
-	border-right: 1px solid rgb(170, 170, 170);
-	padding: 0.5em;
-	background: rgb(238, 243, 226) none repeat scroll 0 0;
-	font-weight: bold;
-	width: 15%;
-}
-
-.mw-pt-languages-list {
-	padding-left: 0.5em;
-	padding-bottom: 0.7em;
-	display: table-cell;
-	width: 80%;
-}
-
-.mw-pt-translate-header {
-	font-size: x-small;
-	text-align: center;
-}
-
-.mw-pt-languages-selected, .mw-pt-languages-ui {
-	font-weight: bold;
-}

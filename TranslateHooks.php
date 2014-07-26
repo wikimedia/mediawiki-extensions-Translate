@@ -149,9 +149,6 @@ class TranslateHooks {
 			$wgHooks['getUserPermissionsErrorsExpensive'][] =
 				'PageTranslationHooks::preventDirectEditing';
 
-			// Our custom header for translation pages
-			$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::translatablePageHeader';
-
 			// Custom move page that can move all the associated pages too
 			$wgHooks['SpecialPage_initList'][] = 'PageTranslationHooks::replaceMovePage';
 			// Locking during page moves

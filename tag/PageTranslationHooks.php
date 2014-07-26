@@ -184,49 +184,98 @@ class PageTranslationHooks {
 	 */
 	public static function languages( $data, $params, $parser ) {
 		$currentTitle = $parser->getTitle();
+		$isSourcePage = true;
 
 		// Check if this is a source page or a translation page
 		$page = TranslatablePage::newFromTitle( $currentTitle );
 		if ( $page->getMarkedTag() === false ) {
 			$page = TranslatablePage::isTranslationPage( $currentTitle );
+			$isSourcePage = false;
 		}
 
 		if ( $page === false || $page->getMarkedTag() === false ) {
 			return '';
 		}
 
-		$status = $page->getTranslationPercentages();
-		if ( !$status ) {
-			return '';
-		}
+		$marked = $page->getMarkedTag();
+		$ready = $page->getReadyTag();
+		$latest = $currentTitle->getLatestRevId();
+		$canmark = ( $ready === $latest ) && ( $marked !== $latest );
 
-		// If priority languages have been set always show those languages
-		$priorityLangs = TranslateMetadata::get( $page->getMessageGroupId(), 'prioritylangs' );
-		$priorityForce = TranslateMetadata::get( $page->getMessageGroupId(), 'priorityforce' );
-		$filter = null;
-		if ( strlen( $priorityLangs ) > 0 ) {
-			$filter = array_flip( explode( ',', $priorityLangs ) );
-		}
-		if ( $filter !== null ) {
-			// If translation is restricted to some languages, only show them
-			if ( $priorityForce === 'on' ) {
-				// Do not filter the source language link
-				$filter[$page->getMessageGroup()->getSourceLanguage()] = true;
-				$status = array_intersect_key( $status, $filter );
-			}
-			foreach ( $filter as $langCode => $value ) {
-				if ( !isset( $status[$langCode] ) ) {
-					// We need to show all priority languages even if no translation started
-					$status[$langCode] = 0;
+		$status = $page->getTranslationPercentages();
+		$currentLanguage = $currentTitle->getPageLanguage()->getCode();
+		$percentTranslation = $status[$currentLanguage];
+
+		$translateStyle = $isSourcePage ? "width:100%" : "width:85%";
+		$percentInfo = '';
+		$markButton = '';
+		$downButton = '';
+		$secondaryToolbar = '';
+
+		//$parser->getOutput()->addJsConfigVars( 'mw.config', 'tests' );
+		if ( $isSourcePage ) {
+			if ( $canmark && $parser->getUser()->isAllowed( 'pagetranslation' ) ) {
+				$par = array( 'target' => $currentTitle->getPrefixedText() );
+				$translate = SpecialPage::getTitleFor( 'PageTranslation' );
+
+				$markButton = Html::rawElement( 'li', array(
+					'class' => 'lang translate',
+					'style' => "width:56%; color:#111111; border-right:0"
+					), 'Mark for translation'
+				);
+				$markButton = Linker::link( $translate, $markButton, array(), $par );
+				$translateStyle = "width:40%";
+
+				// This page has previous unmarked changes
+				if ( $marked ) {
+					$downButton = Html::openElement( 'li', array( 'class' => 'action' ) );
+					$downButton .= Html::element( 'img', array(
+						'src' => TranslateUtils::assetPath( "resources/images/down.png" ),
+						'alt' => 'More',
+						'title' => 'More',
+						'width' => '10',
+						'height' => '10',
+					) );
+
+					$downButton .= Html::openElement( 'ul' );
+
+					$changesButton = Html::rawElement( 'li', array( 'class' => 'lang option' ),
+						'View Changes'
+					);
+					$changesButton = Linker::link( $currentTitle, $changesButton, array(),
+						array( 'oldid' => $marked, 'diff' => $latest ) );
+					$downButton .= $changesButton . '</ul></li>';
 				}
 			}
+		} else {
+			$percentInfo .= Html::element( 'li', array( 'class' => 'lang translate perc' ),
+				$percentTranslation*100 . '%'
+			);
+		}
+
+		if ( $marked && $parser->getUser()->isAllowed( 'translate' ) ) {
+			$par = array(
+				'group' => $page->getMessageGroupId(),
+				'language' => $currentLanguage,
+				'action' => 'page',
+				'filter' => '',
+			);
+
+			$translate = SpecialPage::getTitleFor( 'Translate' );
+
+			$translateButton = Html::rawElement( 'li', array(
+				'class' => 'lang translate',
+				'style' => $translateStyle
+			), wfMessage( 'translate-tag-translate-link-desc' )->escaped() );
+			$translateButton = Linker::link( $translate, $translateButton, array(), $par );
+
+			$secondaryToolbar .= HTML::openElement( 'ul', array( 'class' => 'nav' ) );
+			$secondaryToolbar .= $translateButton . $markButton . $percentInfo . $downButton;
+			$secondaryToolbar .= HTML::closeElement( 'ul' );
 		}
 
 		// Fix title
 		$pageTitle = $page->getTitle();
-
-		// Sort by language code, which seems to be the only sane method
-		ksort( $status );
 
 		// This way the parser knows to fragment the parser cache by language code
 		$userLangCode = $parser->getOptions()->getUserLang();
@@ -236,10 +285,19 @@ class PageTranslationHooks {
 		// This should do the same thing for now.
 		$sourceLanguage = $pageTitle->getPageLanguage()->getCode();
 
-		$languages = array();
-		foreach ( $status as $code => $percent ) {
-			// Get autonyms
-			$name = TranslateUtils::getLanguageName( $code, $code );
+		$langBar = HTML::element(
+			'div', array( 'class' => 'langbar-min langbar-min-' . $userLangDir ),
+			TranslateUtils::getLanguageName( $currentLanguage, $userLangCode )
+		);
+
+		$langBar .= HTML::openElement( 'div', array(
+			'class' => 'container container-' . $userLangDir . ' ' . $userLangDir
+		) );
+		$langBar .= HTML::openElement( 'ul', array( 'class' => 'nav' ) );
+
+		$output = langPopulate::langPopulateOrder( $parser, $page );
+		foreach ( $output as $code => $percent ) {
+			$name = TranslateUtils::getLanguageName( $code, $userLangCode );
 			$name = htmlspecialchars( $name ); // Unlikely, but better safe
 
 			/* Percentages are too accurate and take more
@@ -261,8 +319,8 @@ class PageTranslationHooks {
 				'src' => TranslateUtils::assetPath( "resources/images/prog-$image.png" ),
 				'alt' => wfMessage( 'percent', $percent )->text(),
 				'title' => wfMessage( 'percent', $percent )->text(),
-				'width' => '9',
-				'height' => '9',
+				'width' => '20',
+				'height' => '20',
 			) );
 
 			// Add links to other languages
@@ -270,24 +328,14 @@ class PageTranslationHooks {
 			$targetTitleString = $pageTitle->getDBkey() . $suffix;
 			$subpage = Title::makeTitle( $pageTitle->getNamespace(), $targetTitleString );
 
-			$classes = array();
-			if ( $code === $userLangCode ) {
-				$classes[] = 'mw-pt-languages-ui';
-			}
+			$langCell = Html::rawElement( 'li', array( 'class' => 'lang' ), "$name&#160;$percentImage" );
 
 			if ( $currentTitle->equals( $subpage ) ) {
-				$classes[] = 'mw-pt-languages-selected';
-			}
-
-			if ( count( $classes ) ) {
-				$attribs = array( 'class' => implode( ' ', $classes ) );
-				$name = Html::rawElement( 'span', $attribs, $name );
-			}
-
-			if ( $currentTitle->equals( $subpage ) ) {
-				// No further processing needed
+				$langCell = Html::rawElement( 'li', array( 'class' => 'lang selected' ),
+					"$name&#160;$percentImage"
+				);
 			} elseif ( $subpage->isKnown() ) {
-				$name = Linker::linkKnown( $subpage, $name );
+				$langCell = Linker::linkKnown( $subpage, $langCell );
 			} else {
 				/* When language is included because it is a priority language,
 				 * but translation does not yet exists, link directly to the
@@ -302,34 +350,16 @@ class PageTranslationHooks {
 					'title' => wfMessage( 'tpt-languages-zero' )->text(),
 					'class' => 'new', // For red link color
 				);
-				$name = Linker::link( $specialTranslateTitle, $name, $attribs, $params );
+				$langCell = Linker::link( $specialTranslateTitle, $langCell, $attribs, $params );
 			}
 
-			$languages[] = "$name&#160;$percentImage";
+			$langBar .= $langCell;
 		}
-
-		// dirmark (rlm/lrm) is added, because languages with RTL names can
-		// mess the display
-		$lang = Language::factory( $userLangCode );
-		$sep = wfMessage( 'tpt-languages-separator' )->inLanguage( $lang )->plain();
-		$sep .= $lang->getDirMark();
-		$languages = implode( $sep, $languages );
-
-		$out = Html::openElement( 'div', array(
-			'class' => 'mw-pt-languages noprint',
-			'lang' => $userLangCode,
-			'dir' => $userLangDir
-		) );
-		$out .= Html::rawElement( 'div', array( 'class' => 'mw-pt-languages-label' ),
-			wfMessage( 'tpt-languages-legend' )->escaped()
-		);
-		$out .= Html::rawElement( 'div',
-			array( 'class' => 'mw-pt-languages-list autonym' ),
-			$languages
-		);
-		$out .= Html::closeElement( 'div' );
-
-		return $out;
+		$langBar .= '<li class="lang viewmore">...</li>';
+		$langBar .= HTML::closeElement( 'ul' );
+		$langBar .= $secondaryToolbar;
+		$langBar .= HTML::closeElement( 'div' );
+		return $langBar;
 	}
 
 	/**
