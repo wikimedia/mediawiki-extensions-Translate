@@ -338,7 +338,7 @@
 	"tux-editor-doc-editor-save": "Dokumentáció mentése",
 	"tux-editor-doc-editor-cancel": "Mégse",
 	"tux-messagetable-more-messages": "$1 további üzenet",
-	"tux-messagetable-loading-messages": "$1 üzenet betöltése…",
+	"tux-messagetable-loading-messages": "{{PLURAL:$1|Üzenet|Üzenetek}} betöltése…",
 	"tux-message-filter-placeholder": "Lista szűrése",
 	"tux-message-filter-result": "$1 találat van a(z) „$2” kifejezésre",
 	"tux-message-filter-advanced-button": "Speciális keresés",

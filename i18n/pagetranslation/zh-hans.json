@@ -80,6 +80,7 @@
 	"tpt-translation-intro": "本页是页面[[$2]]的<span class=\"plainlinks\">[$1 翻译版本]</span>，翻译工作已完成$3%。",
 	"tpt-languages-legend": "其他语言：",
 	"tpt-languages-zero": "开始这种语言的翻译",
+	"tpt-languages-nonzero": "$1（$2%已翻译）",
 	"tpt-tab-translate": "翻译",
 	"tpt-target-page": "本页面无法手动更新。\n本页面是[[$1]]页面的翻译版，可以使用[$2 翻译工具]来更新该翻译。",
 	"tpt-unknown-page": "此命名空间是保留给内容页面翻译。\n您尝试编辑的页面似乎没有对应任何被标记进行翻译的页面。",
@@ -193,5 +194,6 @@
 	"pm-add-icon-hover-text": "往下面添加单位",
 	"pm-swap-icon-hover-text": "和下面的单位替换",
 	"pm-delete-icon-hover-text": "删除单位",
-	"tpt-translate-title": "允许页面标题的翻译"
+	"tpt-translate-title": "允许页面标题的翻译",
+	"pp-save-summary": "准备翻译的页面"
 }
