@@ -125,6 +125,65 @@
 	}
 
 	/**
+	 * Fetch all the aliases for a given namespace on the wiki.
+	 * @param {integer} namespaceId
+	 * @return {jQuery.promise}
+	 * @return {Function} return.done
+	 * @return {Array} return.done.data
+	 */
+	function getNamespaceAliases( namespaceId ) {
+		var api = new mw.Api();
+
+		return api.get( {
+			action:'query',
+			meta: 'siteinfo',
+			siprop: 'namespacealiases'
+		} ).then( function ( data ) {
+			var aliases = [];
+			for ( var alias in data.query.namespacealiases ) {
+				if ( data.query.namespacealiases[alias].id === namespaceID ) {
+					aliases.push( data.query.namespacealiases[alias]['*'] );
+				}
+			}
+			return aliases;
+		} ).promise();
+	}
+
+	/**
+	 * Add translate tags around only translatable content for files and keep everything else
+	 * as a part of the page template.
+	 * @param {string} pageContent
+	 * @return {string}
+	 */
+	function doFiles( pageContent ) {
+		var deferred = new $.Deferred();
+
+		$.when( getNamespaceAliases( 6 ) ).then( function ( aliases ) {
+			var aliasList, captionFilesRegex, fileRegex;
+
+			aliases.push( 6 );
+
+			for ( var i = 0; i < aliases.length; i++ ) {
+				aliases[i] = $.escapeRE( aliases[i] );
+			}
+
+			aliasList = aliases.join( '|' );
+
+			// Add translate tags for files with captions
+			captionFilesRegex = new RegExp( '\\[\\[(' + aliasList + ')(.*\\|)(.*?)\\]\\]', 'gi' );
+			pageContent = pageContent.replace( captionFilesRegex,
+				'</translate>\n[[$1$2<translate>$3</translate>]]\n<translate>' );
+
+			// Add translate tags for files without captions
+			fileRegex = new RegExp( '/\\[\\[((' + aliasList + ')[^\\|]*?)\\]\\]', 'gi' );
+			pageContent = pageContent.replace( fileRegex, '\n</translate>[[$1]]\n<translate>' );
+
+			deferred.resolve( pageContent );
+		} );
+		return deferred.promise();
+	}
+
+	/**
 	 * Cleanup done after the page is prepared for translation by the tool.
 	 * @param {string} pageContent
 	 * @return {string}
@@ -221,18 +280,20 @@
 				pageContent = addTranslateTags( pageContent );
 				pageContent = addNewLines( pageContent );
 				pageContent = fixInternalLinks( pageContent );
-				pageContent = postPreparationCleanup( pageContent );
-				pageContent = $.trim( pageContent );
-				$.when( getDiff( pageName, pageContent ) ).done( function ( diff ) {
-					$( '.diff tbody' ).append( diff );
-					$( '.divDiff' ).show( 'fast' );
-					if ( diff !== '' ) {
-						messageDiv.html( mw.msg( 'pp-prepare-message' ) ).show();
-						$( '#action-prepare' ).hide();
-						$( '#action-save' ).show();
-					} else {
-						messageDiv.html( mw.msg( 'pp-already-prepared-message' ) ).show();
-					}
+				doFiles( pageContent ).done( function( pageContent ) {
+					pageContent = postPreparationCleanup( pageContent );
+					pageContent = $.trim( pageContent );
+					getDiff( pageName, pageContent ).done( function ( diff ) {
+						$( '.diff tbody' ).append( diff );
+						$( '.divDiff' ).show( 'fast' );
+						if ( diff !== '' ) {
+							messageDiv.html( mw.msg( 'pp-prepare-message' ) ).show();
+							$( '#action-prepare' ).hide();
+							$( '#action-save' ).show();
+						} else {
+							messageDiv.html( mw.msg( 'pp-already-prepared-message' ) ).show();
+						}
+					} );
 				} );
 			} );
 		} );
