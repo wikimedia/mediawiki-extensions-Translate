@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "8e28a382_b31a106d",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-27T17:51:41Z",
+      "side": 1,
+      "message": "These error messages need punctuation.",
+      "revId": "69bed738c4347f7a14d982d02fc8a65b0cbbd3c2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e1a5767_14e840dc",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 8
