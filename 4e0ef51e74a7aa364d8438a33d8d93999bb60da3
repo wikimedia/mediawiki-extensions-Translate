@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_507ac2b8",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 11
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-27T17:27:25Z",
+      "side": 1,
+      "message": "Sorry, I could have been clearer here. Please use double quotes for consistency.",
+      "revId": "4e0ef51e74a7aa364d8438a33d8d93999bb60da3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
