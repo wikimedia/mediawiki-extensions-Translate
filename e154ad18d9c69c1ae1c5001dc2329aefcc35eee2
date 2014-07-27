@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_109e7a66",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-27T15:11:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_98ba966b",
+      "revId": "e154ad18d9c69c1ae1c5001dc2329aefcc35eee2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_58b0ae88",
         "filename": "i18n/pagetranslation/en.json",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-26T17:33:01Z",
       "side": 1,
       "message": "I think this needs punctuation.",
+      "revId": "e154ad18d9c69c1ae1c5001dc2329aefcc35eee2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f08e4e32",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-27T15:11:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_58b0ae88",
       "revId": "e154ad18d9c69c1ae1c5001dc2329aefcc35eee2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
