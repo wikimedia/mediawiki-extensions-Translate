@@ -15,7 +15,8 @@
 			"Simon Shek",
 			"Waihorace",
 			"Wrightbus",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"LNDDYL"
 		]
 	},
 	"translate": "翻譯",
@@ -105,7 +106,7 @@
 	"translate-checks-parametersnotequal": "共有 {{PLURAL:$1|$1}} 個參數，應有{{PLURAL:$2|$2}} 個。",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> 格式不正確。",
 	"translate-checks-fudforum-syntax": "在此專案中使用 <nowiki>$1</nowiki> 替代 <nowiki>$2</nowiki>。",
-	"translate-pref-nonewsletter": "不要發送電子報給我",
+	"translate-pref-nonewsletter": "不要傳送電子報給我",
 	"translate-pref-editassistlang": "輔助語言：",
 	"prefs-translate": "翻譯選項",
 	"translate-pref-editassistlang-help": "以逗號分隔語言代碼。\n當您翻譯的時，會隨著顯示這些語言的訊息。\n預設會使用您的語言。",

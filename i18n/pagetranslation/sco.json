@@ -55,7 +55,7 @@
 	"translate-tag-markthis": "Maurk this page fer owersetin",
 	"translate-tag-markthisagain": "This page haes <span class=\"plainlinks\">[$1 chynges]</span> sin it wis laist <span class=\"plainlinks\">[$2 maurkt fer owersetin]</span>.",
 	"translate-tag-hasnew": "This page contains <span class=\"plainlinks\">[$1 chynges]</span> that arna maurkt fer owersetin.",
-	"tpt-translation-intro": "This page is aen <span class=\"plainlinks\">[$1 owerset version]</span> o ae page [[$2]] n the owersetin is $3% compleate.",
+	"tpt-translation-intro": "This page is aen <span class=\"plainlinks\">[$1 owerset version]</span> o the page [[$2]] n the owersetin is $3% compleate.",
 	"tpt-languages-legend": "Ither leids:",
 	"tpt-languages-zero": "Stairt owersetin fer this leid",
 	"tpt-tab-translate": "Owerset",

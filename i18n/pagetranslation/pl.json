@@ -72,6 +72,7 @@
 	"tpt-translation-intro": "Ta strona to <span class=\"plainlinks\">[$1 przetłumaczona wersja]</span> strony [[$2]], a tłumaczenie jest ukończone w $3%.",
 	"tpt-languages-legend": "Inne języki:",
 	"tpt-languages-zero": "Rozpocznij tłumaczenie na ten język",
+	"tpt-languages-nonzero": "$1 (przetłumaczono $2%)",
 	"tpt-tab-translate": "Przetłumacz",
 	"tpt-target-page": "Ta strona nie może zostać zaktualizowana ręcznie.\nJest ona tłumaczeniem strony [[$1]], a tłumaczenie może zostać zmienione za pomocą [$2 narzędzia tłumacza].",
 	"tpt-unknown-page": "Ta przestrzeń nazw jest zarezerwowana dla tłumaczeń stron z zawartością.\nStrona, którą próbujesz edytować, prawdopodobnie nie odpowiada żadnej stronie oznaczonej do tłumaczenia.",

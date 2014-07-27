@@ -119,7 +119,7 @@
 	"translate-statsf-group": "Comma-separatit leet o groop codes:",
 	"translate-statsf-submit": "Luikower",
 	"translate-tag-category": "Owersetable pages",
-	"translate-tag-page-desc": "Owersetin o the wiki page [[$2|$1]].",
+	"translate-tag-page-desc": "Owersetin o the wiki page [[$2|$1]] fae $3($4).",
 	"translate-sidebar-alltrans": "In ither leids",
 	"translations": "Aw owersets",
 	"translations-summary": "Enter ae message name ablo tae shaw aw available owersets.",
@@ -160,7 +160,7 @@
 	"supportedlanguages": "Supportit leids",
 	"supportedlanguages-summary": "This page shaws ae leet o aw leids supportit bi {{SITENAME}},\nthegather wi the names o the owerseters wairkin oan that leid.\nAen owerseter's name appears muckler, the mair eedits the owerseter haes contreebuted.\nThe colour o aen unnerline indeecates ho recyntlie aen owerseter haes been acteeve here.",
 	"supportedlanguages-colorlegend": "Legend fer the colour: Laist owerset $1 days syne.",
-	"supportedlanguages-translators": "{{PLURAL:$2|Owerseter|Owerseters}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Owerseter}}|Owerseters}}: $1",
 	"supportedlanguages-recenttranslations": "recynt owersets",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|leid|lleids}} in total.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|eedit|eedits}} - laist eedit $3 {{PLURAL:$3|day|days}} syne",
@@ -332,5 +332,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% owerset, $2% luikt ower, $3% ootdated",
 	"translate-search-more-groups-info": "$1 mair {{PLURAL:$1|groop|groops}}",
 	"translate-ulsdep-title": "Confeeguration mistak",
-	"translate-ulsdep-body": "Owerset extension depends oan the [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector Uneeversal Leid Selecter extension]."
+	"translate-ulsdep-body": "Owerset extension depends oan the [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Uneeversal Leid Selecter extension]."
 }

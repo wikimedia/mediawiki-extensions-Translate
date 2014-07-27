@@ -3,17 +3,18 @@
 		"authors": [
 			"Simon Shek",
 			"Liuxinyu970226",
-			"Cwlin0416"
+			"Cwlin0416",
+			"LNDDYL"
 		]
 	},
 	"managetranslatorsandbox": "管理翻譯人員沙盒",
 	"tsb-filter-pending": "等候的請求",
 	"tsb-reminder-title-generic": "成為翻譯人員之前，請先填寫您的自我介紹",
 	"tsb-reminder-content-generic": "您好 $1，\n\n感謝您註冊 {{SITENAME}}。\n\n在您完成翻譯測驗後，管理員會儘快授予您完整的翻譯權限。\n\n請到下列網址進行更多的翻譯工作: \n$2\n\n$3,\n{{SITENAME}} 工作團隊",
-	"tsb-reminder-sending": "發送備忘通知中...",
+	"tsb-reminder-sending": "傳送備忘通知中...",
 	"tsb-reminder-sent": "已發送 $1 封備忘通知，最後一封於 $2",
-	"tsb-reminder-sent-new": "發送備忘通知",
-	"tsb-reminder-failed": "發送備忘通知失敗",
+	"tsb-reminder-sent-new": "傳送備忘通知",
+	"tsb-reminder-failed": "傳送備忘通知失敗",
 	"tsb-email-promoted-subject": "您已成為 {{SITENAME}} 的翻譯人員",
 	"tsb-email-promoted-body": "您好 {{GENDER:$1|$1}}，\n\n恭喜您！ 我已核可您在 {{SITENAME}} 所做的翻譯測驗並授權您所有翻譯人員的權限。\n\n您可至 {{SITENAME}} 繼續翻譯工作:\n$2\n\n歡迎您的加入並感謝您所做的貢獻！\n\n{{GENDER:$3|$3}}，\n{{SITENAME}} 工作團隊",
 	"tsb-email-rejected-subject": "您於 {{SITENAME}} 翻譯人員申請被拒絕",
@@ -28,7 +29,7 @@
 	"tsb-accept-all-button-label": "接受所有",
 	"tsb-reject-all-button-label": "拒絕所有",
 	"tsb-user-posted-a-comment": "非翻譯人員",
-	"tsb-reminder-link-text": "發送電子郵件備忘通知",
+	"tsb-reminder-link-text": "傳送電子郵件備忘通知",
 	"tsb-didnt-make-any-translations": "此使用者尚未做過任何翻譯。",
 	"tsb-translations-source": "原始碼",
 	"tsb-translations-user": "使用者翻譯",

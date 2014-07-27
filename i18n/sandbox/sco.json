@@ -27,7 +27,7 @@
 	"tsb-reminder-link-text": "Send wab-mail myndin",
 	"tsb-didnt-make-any-translations": "This uiser didna dae onie owersets.",
 	"tsb-translations-source": "Soorce",
-	"tsb-translations-user": "Uiser owersets",
+	"tsb-translations-user": "{{GENDER:$1|Uiser}} owersets",
 	"tsb-translations-current": "Exeestin owersets",
 	"tsb-delete-userpage-summary": "Delytin the uiser page o ae saunpit uiser",
 	"translationstash": "Weelcome",
