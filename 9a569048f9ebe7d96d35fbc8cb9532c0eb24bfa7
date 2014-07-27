@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_6e6160a3",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1407
+      },
+      "writtenOn": "2014-07-27T00:55:45Z",
+      "side": 1,
+      "message": "That seems to not work",
+      "parentUuid": "8e28a382_0c4c3a9e",
+      "revId": "9a569048f9ebe7d96d35fbc8cb9532c0eb24bfa7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_8178f626",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 7
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "I was thinking of having the loop as the function body directly. You do not need the checks outside the loop.",
       "parentUuid": "8e28a382_8178f626",
+      "revId": "9a569048f9ebe7d96d35fbc8cb9532c0eb24bfa7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_4e5224df",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 904,
+      "author": {
+        "id": 1407
+      },
+      "writtenOn": "2014-07-27T00:55:45Z",
+      "side": 1,
+      "message": "The outside check is required to ensure that the move involves a translation unit and not a translatable page.\nThis approach will fail in case the translation unit exists but the page doesn\u0027t. Is it possible?",
+      "parentUuid": "8e28a382_cc619201",
       "revId": "9a569048f9ebe7d96d35fbc8cb9532c0eb24bfa7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
