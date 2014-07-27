@@ -125,6 +125,59 @@
 	}
 
 	/**
+	 * Fetch all the aliases for a given namespace on the wiki.
+	 * @param {string} pageContent
+	 * @return {Array} The list of aliases for the given namespace
+	 */
+	function getNamespaceAliases( namespace ) {
+		var namespaceID, api = new mw.Api();
+
+		namespaceID = mw.config.get( 'wgNamespaceIds' )[namespace];
+		return api.get( {
+			action:'query',
+			meta: 'siteinfo',
+			siprop: 'namespacealiases'
+		} ).then( function ( data ) {
+			var aliases = [];
+			for ( var alias in data.query.namespacealiases ) {
+				if( data.query.namespacealiases[alias].id === namespaceID ) {
+					aliases.push( $.escapeRE( data.query.namespacealiases[alias]['*'] ) );
+				}
+			}
+			return aliases;
+		} ).promise();
+	}
+
+	/**
+	 * Add translate tags around only translatable content for files and keep everything else
+	 * as a part of the page template.
+	 * @param {string} pageContent
+	 * @return {string}
+	 */
+	function doFiles( pageContent ) {
+		var deferred = new $.Deferred();
+
+		$.when( getNamespaceAliases( 'file' ) ).then( function ( aliases ) {
+			var aliasList, captionFilesRegex, fileRegex;
+
+			aliases.push( 'file' );
+			aliasList = aliases.join('|');
+
+			// Add translate tags for files with captions
+			captionFilesRegex = new RegExp( '\\[\\[(' + aliasList + ')(.*\\|)(.*?)\\]\\]', 'gi' );
+			pageContent = pageContent.replace( captionFilesRegex,
+				'</translate>\n[[$1$2<translate>$3</translate>]]\n<translate>' );
+
+			// Add translate tags for files without captions
+			fileRegex = new RegExp( '/\\[\\[((' + aliasList + ')[^\\|]*?)\\]\\]', 'gi' );
+			pageContent = pageContent.replace( fileRegex, '\n</translate>[[$1]]\n<translate>' );
+
+			deferred.resolve( pageContent );
+		} );
+		return deferred.promise();
+	}
+
+	/**
 	 * Cleanup done after the page is prepared for translation by the tool.
 	 * @param {string} pageContent
 	 * @return {string}
