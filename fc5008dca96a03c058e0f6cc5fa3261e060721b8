@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_d0ac729f",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-27T14:58:28Z",
+      "side": 1,
+      "message": "There is a small issue over here. This return does not return from the doFiles function as a result of which pageContent remains undefined over where it is called. Any pointers on how to go about this?",
+      "revId": "fc5008dca96a03c058e0f6cc5fa3261e060721b8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_90b26af7",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-27T14:58:28Z",
+      "side": 1,
+      "message": "pageContent becomes undefined here and hence further usage inside fixInternalLinks throws errors",
+      "revId": "fc5008dca96a03c058e0f6cc5fa3261e060721b8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
