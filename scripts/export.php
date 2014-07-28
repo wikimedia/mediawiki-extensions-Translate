@@ -127,14 +127,14 @@ class CommandlineExport extends Maintenance {
 
 		/** @var FileBasedMessageGroup $group */
 		foreach ( $groups as $groupId => $group ) {
-			if ( !$group instanceof FileBasedMessageGroup ) {
-				$this->output( "EE2: Unknown message group $groupId.\n" );
+			if ( $group->isMeta() ) {
+				$this->output( "Skipping meta message group $groupId.\n" );
 				unset( $groups[$groupId] );
 				continue;
 			}
 
-			if ( $group->isMeta() ) {
-				$this->output( "Skipping meta message group $groupId.\n" );
+			if ( !$group instanceof FileBasedMessageGroup ) {
+				$this->output( "EE2: Unexportable message group $groupId.\n" );
 				unset( $groups[$groupId] );
 				continue;
 			}
