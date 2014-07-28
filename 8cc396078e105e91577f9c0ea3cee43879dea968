@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_3878508a",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-28T16:50:10Z",
+      "side": 1,
+      "message": "What prevents having \" in it?",
+      "parentUuid": "8e28a382_422a097b",
+      "revId": "8cc396078e105e91577f9c0ea3cee43879dea968",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_4a9eb067",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 5
@@ -172,6 +190,24 @@
       "side": 1,
       "message": "I think Nemo clarified my point. And also as far as the cleanup is concerned, that was simple to implement. Add the prefix for all links and then remove it for internal links (after the anchor has been added for them)",
       "parentUuid": "8e28a382_c29959c8",
+      "revId": "8cc396078e105e91577f9c0ea3cee43879dea968",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_985ce41f",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-28T16:50:10Z",
+      "side": 1,
+      "message": "I am completely not understanding what Nemo is talking about.\n\nI was asking whether it would be easier to add check for # in the place which adds the special:mylanguage prefix, instead of having to clean it up later.\n\nAs far as I understand we add an anchor if and only if we find a link to header in the page.",
+      "parentUuid": "8e28a382_223c9d8d",
       "revId": "8cc396078e105e91577f9c0ea3cee43879dea968",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
