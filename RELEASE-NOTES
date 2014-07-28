@@ -1,0 +1,11 @@
+== Translate 2014.07 ==
+Released at 2014-07-28.
+
+=== Noteworthy changes ===
+* Bug 67921: Store translatable page translation units in variable form to improve translation memory suggestions.
+* Display source language for the pages in Special:Translate
+* Fixed ElasticSearchTTMServer to not return matches for single word messages only.
+* Changes in Special:PageMigration:
+** Bug 66162: Simplistic alignment based on h2 headers.
+** Bug 65942: Split headers from other wiki text in translation units.
+** Added script for preparing the page for Translation.
