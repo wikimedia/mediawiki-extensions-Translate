@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_45f43aca",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-28T16:59:17Z",
+      "side": 1,
+      "message": "I\u0027ve linked you resources about promises and deferreds earlier. Here are some more, please read them:\n\nhttp://blog.mediumequalsmessage.com/promise-deferred-objects-in-javascript-pt1-theory-and-semantics\nhttp://blog.mediumequalsmessage.com/promise-deferred-objects-in-javascript-pt2-practical-use",
+      "parentUuid": "8e28a382_d0ac729f",
+      "revId": "fc5008dca96a03c058e0f6cc5fa3261e060721b8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_90b26af7",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 2
