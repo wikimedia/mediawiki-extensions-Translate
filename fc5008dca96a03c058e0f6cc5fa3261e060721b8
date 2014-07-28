@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_edb78c33",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-07-28T19:40:45Z",
+      "side": 1,
+      "message": "Oh yes, I am having memory problems too I guess :P Well, I referred to the work we had done earlier at https://gerrit.wikimedia.org/r/#/c/133720/6/resources/js/ext.translate.special.pagemigration.js and the problem is solved now :)",
+      "parentUuid": "8e28a382_45f43aca",
+      "revId": "fc5008dca96a03c058e0f6cc5fa3261e060721b8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_90b26af7",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 2
