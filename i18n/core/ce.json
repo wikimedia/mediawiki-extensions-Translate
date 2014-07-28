@@ -143,7 +143,7 @@
 	"translate-mgs-totals": "Берриге меттанаш",
 	"translate-mgs-nothing": "Гучубаха хаамаш бац.",
 	"supportedlanguages": "Ловш долу меттанаш",
-	"supportedlanguages-translators": "{{PLURAL:$2|Гочдархо|Гочдархой}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Гочдархо}}|Гочдархой}}: $1",
 	"supportedlanguages-recenttranslations": "дукха хан йоццуш гоч динарш",
 	"supportedlanguages-count": "Бериг $1 {{PLURAL:$1|мотт|меттанаш|меттанаш}}",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|1=нисдар|нисдарш}} — тӀаьхьарлера нисдар $3 {{PLURAL:$3|де}} хьалха",

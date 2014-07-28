@@ -14,6 +14,7 @@
 	"tpt-old-pages": "{{PLURAL:$1|1=хӀокху агӀона|хӀокху агӀонийн}} цхьайолу версеш гочян билгалйина ю.",
 	"tpt-discouraged-pages": "{{PLURAL:$1|1=ХӀара агӀо|ХӀара агӀонаш}} кхий гочйира яц аьлла сацам бина.",
 	"tpt-languages-legend": "Кхин меттанаш:",
+	"tpt-languages-nonzero": "$1 ($2% гочдина)",
 	"aggregategroups": "Вовшаштоьхна тобанаш",
 	"tpt-aggregategroup-add": "ТӀетоха",
 	"tpt-aggregategroup-new-description": "Цуьнах лаьцна (тӀехь дац):",
@@ -35,7 +36,9 @@
 	"pm-cancel-button-label": "Цаоьшу",
 	"pm-pagename-placeholder": "Язъе агӀона цӀе",
 	"pm-langcode-placeholder": "Метта код",
+	"pm-page-does-not-exist": "«$1» яц",
 	"pm-old-translations-missing": "$1 шира гочдарш чохь дац",
 	"pm-pagename-missing": "Дехар до, дӀаязъе агӀона цӀе:",
-	"pm-langcode-missing": "Дехар до, меттан код язъе"
+	"pm-langcode-missing": "Дехар до, меттан код язъе",
+	"pp-save-summary": "АгӀо гочян кечяр"
 }

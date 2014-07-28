@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yanteng3"
+			"Yanteng3",
+			"StephDC"
 		]
 	},
-	"tpt-aggregategroup-save": "存"
+	"tpt-aggregategroup-save": "存",
+	"pm-old-translations-missing": "$1 不含旧譯。"
 }

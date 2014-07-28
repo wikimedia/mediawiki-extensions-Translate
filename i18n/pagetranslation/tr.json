@@ -9,7 +9,8 @@
 			"Suelnur",
 			"Vito Genovese",
 			"Rapsar",
-			"Mavrikant"
+			"Mavrikant",
+			"Sayginer"
 		]
 	},
 	"pagetranslation": "Çeviri sayfası",
@@ -59,5 +60,8 @@
 	"pm-savepages-button-label": "Kaydet",
 	"pm-cancel-button-label": "İptal",
 	"pm-pagename-placeholder": "Sayfa adını giriniz",
-	"pm-langcode-placeholder": "Dil kodu"
+	"pm-langcode-placeholder": "Dil kodu",
+	"pm-page-does-not-exist": "$1 mevcut değil.",
+	"pm-pagename-missing": "Lütfen sayfa adı girin.",
+	"pm-langcode-missing": "Lütfen dil kodunu girin."
 }
