@@ -92,6 +92,7 @@ abstract class MessageIndex {
 			$msg = __METHOD__ . ': trying to recurse - building the index first time?';
 			wfWarn( $msg );
 
+			$recusion--;
 			return array();
 		}
 		$recursion++;
@@ -508,10 +509,8 @@ class CDBMessageIndex extends MessageIndex {
 
 		$file = TranslateUtils::cacheFile( $this->filename );
 		if ( !file_exists( $file ) ) {
-			/* The rebuild() will call retrieve(), which we prevent from
-			 * recursing by setting the index to empty array now.
-			 */
-			$this->index = array();
+			// Create an empty index to allow rebuild
+			$this->store( array() );
 			$this->index = $this->rebuild();
 		}
 
