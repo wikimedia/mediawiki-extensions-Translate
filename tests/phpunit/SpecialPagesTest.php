@@ -1,15 +1,15 @@
 <?php
 /**
- * General unit tests for special pages.
+ * General integration test for special pages.
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
 /**
- * Unit tests for making sure special pages execute
+ * Integration tests for making sure special pages do not fail in unexpected ways when viewed
+ * without parameters as anonymous or logged in user.
  * @group Database
  * @group large
  */
