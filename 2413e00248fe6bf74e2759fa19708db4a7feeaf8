@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_5f1e3fbf",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-29T16:48:39Z",
+      "side": 1,
+      "message": "DifferenceEngine::addHeader() perhaps?",
+      "revId": "2413e00248fe6bf74e2759fa19708db4a7feeaf8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
