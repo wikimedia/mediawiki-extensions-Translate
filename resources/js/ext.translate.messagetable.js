@@ -1,7 +1,7 @@
 ( function ( $, mw ) {
 	'use strict';
 
-	var delay, itemsClass, getUrl;
+	var delay, itemsClass;
 
 	delay = ( function () {
 		var timer = 0;
@@ -17,9 +17,6 @@
 		page: '.tux-message-pagemode',
 		translate: '.tux-message'
 	};
-
-	// BC for MW <= 1.21
-	getUrl = mw.util.getUrl || mw.util.wikiGetlink;
 
 	mw.translate = mw.translate || {};
 	mw.translate = $.extend( mw.translate, {
@@ -257,7 +254,7 @@
 							$( '<a>' )
 								.attr( {
 									title: mw.msg( 'translate-edit-title', message.key ),
-									href: ( new mw.Uri( getUrl( message.title ) ) )
+									href: ( new mw.Uri( mw.util.getUrl( message.title ) ) )
 										.extend( { action: 'edit' } )
 								} )
 								.text( mw.msg( 'tux-edit' ) )
@@ -370,7 +367,7 @@
 					.find( 'div' )
 					.text( mw.msg( 'tux-message-filter-result', resultCount, query ) );
 				$result.find( 'button' ).on( 'click', function () {
-					window.location.href = new mw.Uri( getUrl( 'Special:SearchTranslations' ) )
+					window.location.href = new mw.Uri( mw.util.getUrl( 'Special:SearchTranslations' ) )
 						.extend( { query: query } );
 				} );
 			}
