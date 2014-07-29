@@ -205,7 +205,7 @@
 	"supportedlanguages": "Obsługiwane języki",
 	"supportedlanguages-summary": "Na tej stronie znajduje się lista wszystkich języków, obsługiwanych przez {{GRAMMAR:B.lp|{{SITENAME}}}}, razem z pseudonimami tłumaczy, pracującymi w danym języku.\nWiększa czcionka świadczy o większej liczbie edycji wykonanych przez tłumacza.\nKolorem podkreślenia wyróżniono jak dawno tłumacz był aktywny.",
 	"supportedlanguages-colorlegend": "Znaczenie koloru – ostatnie tłumaczenie $1 dni temu.",
-	"supportedlanguages-translators": "{{PLURAL:$2|Tłumacz|Tłumacze:}} $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Tłumacz|Tłumaczka}}|Tłumacze}}: $1",
 	"supportedlanguages-recenttranslations": "ostatnie tłumaczenia",
 	"supportedlanguages-count": "Razem $1 {{PLURAL:$1|język|języki|języków}}.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edycja|edycje|edycji}} – ostatnia zmiana $3 {{PLURAL:$3|dzień|dni}} temu",

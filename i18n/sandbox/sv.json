@@ -31,7 +31,7 @@
 	"tsb-reminder-link-text": "Skicka e-postpåminnelse",
 	"tsb-didnt-make-any-translations": "Denna användare gjorde inga översättningar.",
 	"tsb-translations-source": "Källa",
-	"tsb-translations-user": "Användaröversättningar",
+	"tsb-translations-user": "{{GENDER:$1|Användar}}översättningar",
 	"tsb-translations-current": "Befintliga översättningar",
 	"tsb-delete-userpage-summary": "Tar bort användarsidan för en sandlådeanvändare",
 	"translationstash": "Välkommen",

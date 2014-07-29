@@ -197,7 +197,7 @@
 	"supportedlanguages": "支援的語言",
 	"supportedlanguages-summary": "本頁顯示 {{SITENAME}} 所有支援的語言清單，\n連同翻譯該語言的翻譯人員姓名，\n翻譯人員的姓名越大，代表翻譯人員的編輯貢獻越多，\n底線的顏色用來表示翻譯人員最近活動的狀況。",
 	"supportedlanguages-colorlegend": "色彩圖例：最近一次翻譯於 $1 天前。",
-	"supportedlanguages-translators": "{{PLURAL:$2|翻譯人員|翻譯人員}}：$1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|翻譯人員}}}}：$1",
 	"supportedlanguages-recenttranslations": "最近的翻譯",
 	"supportedlanguages-count": "總共有 $1 語言",
 	"supportedlanguages-activity": "$1：$2 次編輯 - 最近一次編輯於 $3 天前",
