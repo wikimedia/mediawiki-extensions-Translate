@@ -513,26 +513,10 @@ $wgResourceModules['jquery.textchange'] = array(
 ) + $resourcePaths;
 
 // Use different name to not conflict with core.
-// MediaWiki 1.21 has 1.8.x, which is too old for us.
+// MediaWiki <= 1.23 has 1.8.x, which is too old for us.
 $wgResourceModules['jquery.ui.position.custom'] = array(
 	'scripts' => 'resources/js/jquery.ui.position.js',
 ) + $resourcePaths;
-
-// BC for MediaWiki <= 1.21
-$GLOBALS['wgHooks']['ResourceLoaderRegisterModules'][] =
-	function ( ResourceLoader $rl ) use ( $resourcePaths ) {
-		if ( !in_array( 'jquery.chosen', $rl->getModuleNames() ) ) {
-			$rl->register(
-				'jquery.chosen',
-				array(
-					'scripts' => 'resources/jquery.chosen/chosen.jquery.js',
-					'styles' => 'resources/jquery.chosen/chosen.css',
-				) + $resourcePaths
-			);
-		}
-
-		return true;
-	};
 
 $wgHooks['ResourceLoaderTestModules'][] =
 	// Dependencies must be arrays here
