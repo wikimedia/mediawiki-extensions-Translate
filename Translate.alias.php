@@ -833,9 +833,9 @@ $specialPageAliases['or'] = array(
 /** Punjabi (ਪੰਜਾਬੀ) */
 $specialPageAliases['pa'] = array(
 	'Magic' => array( 'ਉੱਚੇ_ਦਰਜੇ_ਦਾ_ਉਲਥਾ', 'ਜਾਦੂ' ),
-	'MyLanguage' => array( 'ਮੇਰੀ_ਭਾਸ਼ਾ' ),
-	'PageTranslation' => array( 'ਸਫ਼ਾ_ਉਲਥਾ' ),
-	'Translate' => array( 'ਉਲਥਾ' ),
+	'MyLanguage' => array( 'ਮੇਰੀ_ਭਾਸ਼ਾ', 'ਮੇਰੀ_ਬੋਲੀ' ),
+	'PageTranslation' => array( 'ਸਫ਼ੇ_ਦਾ_ਉਲਥਾ', 'ਸਫ਼ੇ_ਦਾ_ਤਰਜਮਾ' ),
+	'Translate' => array( 'ਉਲਥਾਓ', 'ਤਰਜਮਾ_ਕਰੋ' ),
 );
 
 /** Polish (polski) */
