@@ -18,13 +18,14 @@ class TranslateHooks {
 	 * @return bool
 	 */
 	public static function setupNamespaces( &$list ) {
-		global $wgPageTranslationNamespace;
+		global $wgPageTranslationNamespace, $wgNamespaceRobotPolicies;
 		if ( !defined( 'NS_TRANSLATIONS' ) ) {
 			define( 'NS_TRANSLATIONS', $wgPageTranslationNamespace );
 			define( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace + 1 );
 		}
 		$list[NS_TRANSLATIONS] = 'Translations';
 		$list[NS_TRANSLATIONS_TALK] = 'Translations_talk';
+		$wgNamespaceRobotPolicies[NS_TRANSLATIONS] = 'noindex';
 
 		return true;
 	}
