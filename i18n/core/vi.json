@@ -185,7 +185,7 @@
 	"supportedlanguages-summary": "Trang này liệt kê tất cả các ngôn ngữ được {{SITENAME}} hỗ trợ, cùng với tên các biên dịch viên đang làm việc trên ngôn ngữ đó.\nBiên dịch viên càng đóng góp nhiều thì tên của họ càng lớn hơn.\nMàu đường gạch dưới cho biết biên dịch viên đã tích cực tại đây cách đây bao lâu.",
 	"supportedlanguages-colorlegend": "Chú thích các màu: Bản dịch gần đây nhất cách đây $1 ngày.",
 	"supportedlanguages-portallink": "[$1] $2 – $3",
-	"supportedlanguages-translators": "{{PLURAL:$2|Biên dịch viên|Các biên dịch viên}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|Biên dịch viên|Các biên dịch viên}}{{GENDER:$3}}: $1",
 	"supportedlanguages-recenttranslations": "các bản dịch gần đây",
 	"supportedlanguages-count": "$1 ngôn ngữ tổng cộng.",
 	"supportedlanguages-activity": "$1: $2 lần sửa đổi – lần cuối cách đây $3 ngày",

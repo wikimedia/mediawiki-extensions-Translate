@@ -102,5 +102,7 @@
 	"pt-deletepage-list-pages": "Törlendő lapok listája",
 	"pagemigration": "Fordítási oldal migráció",
 	"pm-swap-icon-hover-text": "Csere az alábbi egységgel",
-	"pm-delete-icon-hover-text": "Egység törlése"
+	"pm-delete-icon-hover-text": "Egység törlése",
+	"pp-save-button-label": "Mentés",
+	"pp-diff-old-header": "Forrás szöveg"
 }

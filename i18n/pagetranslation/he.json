@@ -181,5 +181,15 @@
 	"pm-swap-icon-hover-text": "להחליף עם יחידה מעל",
 	"pm-delete-icon-hover-text": "למחוק יחידה",
 	"tpt-translate-title": "לאפשר תרגום של כותרת הדף",
-	"pp-save-summary": "הדף הוכן לתרגום"
+	"pp-save-summary": "הדף הוכן לתרגום",
+	"pagepreparation": "הכנת דף",
+	"pp-pagename-placeholder": "נא להזין את שם הדף",
+	"pp-prepare-button-label": "הכנה",
+	"pp-save-button-label": "שמירה",
+	"pp-save-message": "הדף נשמר באפשרותך [$1 לערוך] אותו.",
+	"pp-prepare-message": "הדף הוכן לתרגום. ר' את ההשוואה להלן. יש ללחוץ על הכפתור \"{{int:pp-save-button-label}} אם הכול בסדר!",
+	"pp-already-prepared-message": "נראה שהדף כבר הוכן לתרגום. אין שינויים בהשוואה לגרסה הקודמת.",
+	"pp-pagename-missing": "נא להזין את שם הדף.",
+	"pp-diff-old-header": "טקסט המקור",
+	"pp-diff-new-header": "טקסט שהוכן"
 }

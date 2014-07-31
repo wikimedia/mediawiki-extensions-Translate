@@ -184,5 +184,15 @@
 	"pm-add-icon-hover-text": "Adicionar uma unidade abaixo",
 	"pm-swap-icon-hover-text": "Trocar com a unidade abaixo",
 	"pm-delete-icon-hover-text": "Eliminar unidade",
-	"tpt-translate-title": "Permitir tradução do título da página"
+	"tpt-translate-title": "Permitir tradução do título da página",
+	"pp-save-summary": "Preparação de página para tradução",
+	"pagepreparation": "Preparar página para tradução",
+	"pp-pagename-placeholder": "Introduza o nome da página",
+	"pp-prepare-button-label": "Preparar",
+	"pp-save-button-label": "Gravar",
+	"pp-save-message": "A página foi gravada. Pode [$1 editá-la] agora.",
+	"pp-prepare-message": "A página foi preparada para tradução. Veja a comparação abaixo. Clique no botão \"{{int:pp-save-button-label}}\" se estiver tudo correto!",
+	"pp-already-prepared-message": "Parece que a página já foi preparada para tradução. Não há alterações em relação à versão anterior.",
+	"pp-pagename-missing": "Por favor, introduza o nome da página.",
+	"pp-diff-new-header": "Texto preparado"
 }

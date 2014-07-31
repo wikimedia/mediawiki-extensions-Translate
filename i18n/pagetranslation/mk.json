@@ -178,5 +178,15 @@
 	"pm-swap-icon-hover-text": "Замени ја единицата подолу",
 	"pm-delete-icon-hover-text": "Избриши единица",
 	"tpt-translate-title": "Дозволи превод на насловот на страницата",
-	"pp-save-summary": "Подготвена страница за превод"
+	"pp-save-summary": "Подготвена страница за превод",
+	"pagepreparation": "Подготвена страница за превод",
+	"pp-pagename-placeholder": "Внесете име на страницата",
+	"pp-prepare-button-label": "Подготви",
+	"pp-save-button-label": "Зачувај",
+	"pp-save-message": "Страницата е зачувана. Можете да ја [$1 измените].",
+	"pp-prepare-message": "Страницата е подготвена за преведување. Погледајте ја разликата подолу. Стиснете на „{{int:pp-save-button-label}}“ ако мислите дека сè е во ред!",
+	"pp-already-prepared-message": "Се чини дека страницата е веќе подготвена за превод. Нема промени во однос на минатата верзија.",
+	"pp-pagename-missing": "Внесете име на страницата.",
+	"pp-diff-old-header": "Изворен текст",
+	"pp-diff-new-header": "Подготвен текст"
 }

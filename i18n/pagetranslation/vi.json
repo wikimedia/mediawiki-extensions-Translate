@@ -63,6 +63,7 @@
 	"tpt-translation-intro": "Trang này là một <span class=\"plainlinks\">[$1 bản dịch]</span> của trang [[$2]] và bản dịch đã hoàn thành $3%.",
 	"tpt-languages-legend": "Ngôn ngữ khác:",
 	"tpt-languages-zero": "Bắt đầu bản dịch trong ngôn ngữ này",
+	"tpt-languages-nonzero": "$1 (đã biên dịch $2%)",
 	"tpt-tab-translate": "Biên dịch",
 	"tpt-target-page": "Trang này không thể cập nhật bằng tay.\nNó là một bản dịch của trang [[$1]] và có thể cập nhật bản dịch bằng cách sử dụng [$2 công cụ dịch thuật].",
 	"tpt-unknown-page": "Không gian tên này được dành cho các bản dịch trang nội dung.\nTrang bạn muốn sửa đổi dường như không tương ứng với trang nào đã được đánh dấu cần dịch.",
@@ -176,5 +177,6 @@
 	"pm-add-icon-hover-text": "Thêm một đơn vị bên dưới",
 	"pm-swap-icon-hover-text": "Đổi chỗ với đơn vị bên dưới",
 	"pm-delete-icon-hover-text": "Xóa đơn vị",
-	"tpt-translate-title": "Cho phép dịch tên trang"
+	"tpt-translate-title": "Cho phép dịch tên trang",
+	"pp-save-summary": "Đã chuẩn bị trang để dịch"
 }

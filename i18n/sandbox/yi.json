@@ -10,7 +10,7 @@
 	"tsb-reject-button-label": "אפווארפֿן",
 	"tsb-user-posted-a-comment": "נישט קיין איבערזעצער",
 	"tsb-translations-source": "מקור",
-	"tsb-translations-user": "באַניצער איבערזעצונגען",
+	"tsb-translations-user": "{{GENDER:$1|באַניצער איבערזעצונגען}}",
 	"translationstash": "ברוך הבא!",
 	"translate-translationstash-welcome": "ברוך הבא $1, איר זענט א  {{GENDER:$1|נײַער איבערזעצער|א נײַע איבערזעצערין}}"
 }

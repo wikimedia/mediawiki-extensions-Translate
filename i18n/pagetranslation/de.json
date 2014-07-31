@@ -187,5 +187,15 @@
 	"pm-swap-icon-hover-text": "Mit der unteren Einheit tauschen",
 	"pm-delete-icon-hover-text": "Einheit löschen",
 	"tpt-translate-title": "Übersetzung eines Seitentitels erlauben",
-	"pp-save-summary": "Bereitete die Seite zur Übersetzung vor"
+	"pp-save-summary": "Bereitete die Seite zur Übersetzung vor",
+	"pagepreparation": "Seite zur Übersetzung vorbereiten",
+	"pp-pagename-placeholder": "Den Seitennamen eingeben",
+	"pp-prepare-button-label": "Vorbereiten",
+	"pp-save-button-label": "Speichern",
+	"pp-save-message": "Die Seite wurde gespeichert. Du kannst sie [$1 bearbeiten].",
+	"pp-prepare-message": "Die Seite wurde für die Übersetzung vorbereitet. Sieh dir den unten stehenden Unterschied an. Klicke auf „{{int:pp-save-button-label}}“, wenn alles in Ordnung ist!",
+	"pp-already-prepared-message": "Es scheint, als ob die Seite bereits für die Übersetzung vorbereitet wurde. Es gibt im Vergleich zur aktuellen Version keine Unterschiede.",
+	"pp-pagename-missing": "Bitte den Seitennamen eingeben.",
+	"pp-diff-old-header": "Quelltext",
+	"pp-diff-new-header": "Vorbereiteter Text"
 }

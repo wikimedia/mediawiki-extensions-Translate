@@ -663,6 +663,11 @@ $specialPageAliases['lt'] = array(
 	'Translate' => array( 'Vertimas' ),
 );
 
+/** Literary Chinese (文言) */
+$specialPageAliases['lzh'] = array(
+	'Translate' => array( '譯' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'AggregateGroups' => array( 'ЗбирниГрупи' ),
@@ -1168,7 +1173,7 @@ $specialPageAliases['zh-hant'] = array(
 	'PageTranslation' => array( '頁面翻譯' ),
 	'PageTranslationDeletePage' => array( '刪除譯文頁面' ),
 	'SearchTranslations' => array( '搜尋翻譯' ),
-	'SupportedLanguages' => array( '支持的語言' ),
+	'SupportedLanguages' => array( '支援的語言' ),
 	'Translate' => array( '翻譯' ),
 	'TranslationStash' => array( '翻譯隱藏' ),
 	'TranslationStats' => array( '翻譯統計' ),
