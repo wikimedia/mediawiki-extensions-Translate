@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_2139ffef",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2014-07-31T17:18:06Z",
+      "side": 1,
+      "message": "This can be in the `else` part of the next condition.",
+      "revId": "556a787a06190643375d6e895c3aa83ca260b40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_c1411b5f",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2014-07-31T17:18:06Z",
+      "side": 1,
+      "message": "If it\u0027s not disabled by default, this line is not needed.",
+      "revId": "556a787a06190643375d6e895c3aa83ca260b40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_61094733",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2014-07-31T17:18:06Z",
+      "side": 1,
+      "message": "Is this really supposed to be the label?",
+      "revId": "556a787a06190643375d6e895c3aa83ca260b40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_a113af66",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2014-07-31T17:18:06Z",
+      "side": 1,
+      "message": "There should be an empty line after a long chain of jQuery method calls.",
+      "revId": "556a787a06190643375d6e895c3aa83ca260b40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_810e733c",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2014-07-31T17:18:06Z",
+      "side": 1,
+      "message": "Code shouldn\u0027t be commented out. If it\u0027s not needed, remove it.",
+      "revId": "556a787a06190643375d6e895c3aa83ca260b40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
