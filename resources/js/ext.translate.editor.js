@@ -82,12 +82,7 @@
 			if ( this.message.properties && this.message.properties.status === 'fuzzy' ) {
 				this.addWarning(
 					mw.message( 'tux-editor-outdated-warning' ).escaped(),
-					'diff'
-				).append( $( '<span>' )
-					// Hide initially.
-					// Will be shown if there's a valid diff available.
-					.addClass( 'show-diff-link hide' )
-					.text( mw.msg( 'tux-editor-outdated-warning-diff-link' ) )
+					'fuzzy'
 				);
 			}
 
@@ -216,6 +211,7 @@
 
 			// remove warnings if any.
 			this.removeWarning( 'diff' );
+			this.removeWarning( 'fuzzy' );
 			this.removeWarning( 'validation' );
 
 			$( '.tux-editor-clear-translated' )
@@ -786,11 +782,8 @@
 					return;
 				}
 
-				// Remove useless outdated warning without diff, since our checks
-				// have found issues to complain about.
-				if ( translateEditor.$editor.find( '.show-diff-link' ).hasClass( 'hide' ) ) {
-					translateEditor.removeWarning( 'diff' );
-				}
+				// Remove useless fuzzy warning if we have more details
+				this.removeWarning( 'fuzzy' );
 
 				// Disable confirm translation button, since fuzzy translations
 				// cannot be confirmed. The check for dirty state can be removed
@@ -1085,6 +1078,8 @@
 		 * @param {object} definitiondiff A definitiondiff object as returned by API.
 		 */
 		addDefinitionDiff: function ( definitiondiff ) {
+			var $trigger;
+
 			if ( !definitiondiff || definitiondiff.error ) {
 				mw.log( 'Error loading translation diff ' + definitiondiff && definitiondiff.error );
 				return;
@@ -1093,12 +1088,18 @@
 			// Load the diff styles
 			mw.loader.load( 'mediawiki.action.history.diff', undefined, true );
 
-			// TODO add an option to hide diff
-			this.$editor.find( '.show-diff-link' )
-				.removeClass( 'hide' )
+			var $trigger = $( '<span>' )
+				.addClass( 'show-diff-link' )
+				.text( mw.msg( 'tux-editor-outdated-warning-diff-link' ) )
 				.on( 'click', function () {
 					$( this ).parent().html( definitiondiff.html );
 				} );
+
+			this.removeWarning( 'fuzzy' );
+			this.addWarning(
+				mw.message( 'tux-editor-outdated-warning' ).escaped(),
+				'diff'
+			).append( $trigger );
 		},
 
 		/**
