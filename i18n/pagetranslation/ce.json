@@ -40,5 +40,13 @@
 	"pm-old-translations-missing": "$1 шира гочдарш чохь дац",
 	"pm-pagename-missing": "Дехар до, дӀаязъе агӀона цӀе:",
 	"pm-langcode-missing": "Дехар до, меттан код язъе",
-	"pp-save-summary": "АгӀо гочян кечяр"
+	"pp-save-summary": "АгӀо гочян кечяр",
+	"pagepreparation": "АгӀо гочян кечяр",
+	"pp-pagename-placeholder": "Язъе агӀона цӀе",
+	"pp-prepare-button-label": "Кечъян",
+	"pp-save-button-label": "Ӏалашян",
+	"pp-save-message": "АгӀо Ӏалашйина. Хьан йиш ю иза [$1 таян].",
+	"pp-pagename-missing": "Дехар до, дӀаязъе агӀона цӀе.",
+	"pp-diff-old-header": "ДӀадолалун йоза",
+	"pp-diff-new-header": "Кечдина йоза"
 }

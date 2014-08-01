@@ -117,5 +117,8 @@
 	"pm-langcode-placeholder": "שפראַך קאד",
 	"pm-page-does-not-exist": "$1 עקזיסטירט נישט",
 	"pm-old-translations-missing": "$1 אנטהאלט נישט קיין אלטע איבערזעצונגען",
-	"pm-delete-icon-hover-text": "אויסמעקן איינס"
+	"pm-delete-icon-hover-text": "אויסמעקן איינס",
+	"pp-pagename-placeholder": "אײַנגעבן בלאטנאמען",
+	"pp-save-button-label": "אויפֿהיטן",
+	"pp-diff-old-header": "קוואל־טעקסט"
 }

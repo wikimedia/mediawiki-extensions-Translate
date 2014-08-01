@@ -168,5 +168,13 @@
 	"pm-swap-icon-hover-text": "Mat der Eenheet drënner wiesselen",
 	"pm-delete-icon-hover-text": "Eenheet läschen",
 	"tpt-translate-title": "Iwwersetzung vum Titel vun der Säit erlaben",
-	"pp-save-summary": "Huet d'Säit fir d'Iwwersetzung preparéiert"
+	"pp-save-summary": "Huet d'Säit fir d'Iwwersetzung preparéiert",
+	"pagepreparation": "D'Säit fir d'Iwwersetzung virbereeden",
+	"pp-pagename-placeholder": "Gitt den Numm vun der Säit an",
+	"pp-prepare-button-label": "Preparéieren",
+	"pp-save-button-label": "Späicheren",
+	"pp-save-message": "D^?Säit gouf gespäichert. Dir kënnt se [$1 änneren].",
+	"pp-pagename-missing": "Gitt w.e.g. den Numm vun der Säit an.",
+	"pp-diff-old-header": "Quelltext",
+	"pp-diff-new-header": "Preparéierten Text"
 }

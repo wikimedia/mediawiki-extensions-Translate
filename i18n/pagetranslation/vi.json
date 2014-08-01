@@ -178,5 +178,15 @@
 	"pm-swap-icon-hover-text": "Đổi chỗ với đơn vị bên dưới",
 	"pm-delete-icon-hover-text": "Xóa đơn vị",
 	"tpt-translate-title": "Cho phép dịch tên trang",
-	"pp-save-summary": "Đã chuẩn bị trang để dịch"
+	"pp-save-summary": "Đã chuẩn bị trang để dịch",
+	"pagepreparation": "Chuẩn bị trang để dịch",
+	"pp-pagename-placeholder": "Nhập tên trang",
+	"pp-prepare-button-label": "Chuẩn bị",
+	"pp-save-button-label": "Lưu",
+	"pp-save-message": "Trang đã được lưu. Bạn có thể [$1 sửa đổi] nó.",
+	"pp-prepare-message": "Trang đã được chuẩn bị để dịch. Xem khác biệt bên dưới. Bấm nút “{{int:pp-save-button-label}}” nếu được.",
+	"pp-already-prepared-message": "Hình như trang đã được chuẩn bị để dịch rồi. Không có khác biệt so với phiên bản trước.",
+	"pp-pagename-missing": "Vui lòng nhập tên trang.",
+	"pp-diff-old-header": "Văn bản gốc",
+	"pp-diff-new-header": "Văn bản đã chuẩn bị"
 }

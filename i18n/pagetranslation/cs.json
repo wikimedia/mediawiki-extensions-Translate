@@ -7,7 +7,8 @@
 			"Matěj Grabovský",
 			"Michaelbrabec",
 			"Mormegil",
-			"Vks"
+			"Vks",
+			"H4nek"
 		]
 	},
 	"pagetranslation": "Překlad stránek",
@@ -124,5 +125,6 @@
 	"pm-add-icon-hover-text": "Přidat část níže",
 	"pm-swap-icon-hover-text": "Prohodit s částí níže",
 	"pm-delete-icon-hover-text": "Smazat položku",
-	"tpt-translate-title": "Umožnit překlad názvu stránky"
+	"tpt-translate-title": "Umožnit překlad názvu stránky",
+	"pp-pagename-missing": "Zadejte prosím název stránky."
 }

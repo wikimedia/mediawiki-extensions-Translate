@@ -32,5 +32,7 @@
 	"pt-deletepage-current": "Nameyê pele:",
 	"pt-deletepage-reason": "Sebeb:",
 	"pt-deletepage-list-translation": "Pelê açarnayışi",
-	"pt-deletepage-list-other": "Bınpelê bini"
+	"pt-deletepage-list-other": "Bınpelê bini",
+	"pp-save-button-label": "Qeyd ke",
+	"pp-diff-old-header": "Metnê çımey"
 }

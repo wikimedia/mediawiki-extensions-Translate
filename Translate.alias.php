@@ -1158,6 +1158,7 @@ $specialPageAliases['zh-hans'] = array(
 	'TranslationStats' => array( '翻译统计' ),
 	'Translations' => array( '译文' ),
 	'PageMigration' => array( '页面迁移' ),
+	'PagePreparation' => array( '页面预备' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */

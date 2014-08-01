@@ -186,5 +186,15 @@
 	"pm-swap-icon-hover-text": "Byt med enheten nedan",
 	"pm-delete-icon-hover-text": "Radera enhet",
 	"tpt-translate-title": "Tillåt översättning av sidans titel",
-	"pp-save-summary": "Förbered sidan för översättning"
+	"pp-save-summary": "Förbered sidan för översättning",
+	"pagepreparation": "Förbered sida för översättning",
+	"pp-pagename-placeholder": "Ange sidans namn",
+	"pp-prepare-button-label": "Förbered",
+	"pp-save-button-label": "Spara",
+	"pp-save-message": "Sidan har sparats. Du kan [$1 redigera] den.",
+	"pp-prepare-message": "Sidan har förberetts för översättning. Se skillnaden nedan. Klicka på knappen \"{{int:pp-Spara-knappen-etikett}}\" om det är okej!",
+	"pp-already-prepared-message": "Det verkar sidan redan har förberetts för översättning. Det finns inga ändringar jämfört med den tidigare versionen.",
+	"pp-pagename-missing": "Var god ange sidans namn.",
+	"pp-diff-old-header": "Källtext",
+	"pp-diff-new-header": "Förberedd text"
 }

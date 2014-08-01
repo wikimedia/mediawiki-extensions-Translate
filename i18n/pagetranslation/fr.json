@@ -194,5 +194,15 @@
 	"pm-swap-icon-hover-text": "Échanger avec l’unité ci-dessous",
 	"pm-delete-icon-hover-text": "Supprimer l’unité",
 	"tpt-translate-title": "Autoriser la traduction du titre de la page",
-	"pp-save-summary": "Page préparée pour la traduction"
+	"pp-save-summary": "Page préparée pour la traduction",
+	"pagepreparation": "Préparer la page pour sa traduction",
+	"pp-pagename-placeholder": "Entrer le nom de la page",
+	"pp-prepare-button-label": "Préparer",
+	"pp-save-button-label": "Enregistrer",
+	"pp-save-message": "La page a été enregistrée. Vous pouvez la [$1 modifier].",
+	"pp-prepare-message": "La page a été préparée pour sa traduction. Voyez les différences di-dessous. Cliquez sur le bouton « {{int:pp-save-button-label}} » si cela convient !",
+	"pp-already-prepared-message": "Il semble que la page ait déjà été préparée pour sa traduction. Il n’y a pas de modification depuis la version précédente.",
+	"pp-pagename-missing": "Veuillez entrer le nom de la page.",
+	"pp-diff-old-header": "Texte source",
+	"pp-diff-new-header": "Texte préparé"
 }

@@ -63,5 +63,7 @@
 	"pm-langcode-placeholder": "Dil kodu",
 	"pm-page-does-not-exist": "$1 mevcut değil.",
 	"pm-pagename-missing": "Lütfen sayfa adı girin.",
-	"pm-langcode-missing": "Lütfen dil kodunu girin."
+	"pm-langcode-missing": "Lütfen dil kodunu girin.",
+	"pp-pagename-placeholder": "Sayfa adı girin",
+	"pp-save-button-label": "Kaydet"
 }
