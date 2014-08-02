@@ -38,7 +38,6 @@ class AndroidXmlFFS extends SimpleFFS {
 		$reader = new SimpleXMLElement( $data );
 
 		$messages = array();
-		$mangler = $this->group->getMangler();
 
 		/** @var SimpleXMLElement $element */
 		foreach ( $reader as $element ) {
@@ -64,9 +63,12 @@ class AndroidXmlFFS extends SimpleFFS {
 			$messages[$key] = $value;
 		}
 
+		$mangler = $this->group->getMangler();
+		$messages = TranslateUtils::mapArrayKeys( array( $mangler, 'mangle' ), $messages );
+
 		return array(
 			'AUTHORS' => array(), // @todo
-			'MESSAGES' => $mangler->mangle( $messages ),
+			'MESSAGES' => $messages,
 		);
 	}
 
