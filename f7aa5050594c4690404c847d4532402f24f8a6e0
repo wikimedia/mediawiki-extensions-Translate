@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_f7eccbb9",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 883,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-02T20:32:18Z",
+      "side": 1,
+      "message": "Is it possible to prevent the action by returning false from the hook or is this executed after the actual change?",
+      "revId": "f7aa5050594c4690404c847d4532402f24f8a6e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_7738db39",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-02T20:32:18Z",
+      "side": 1,
+      "message": "Only one, right?",
+      "revId": "f7aa5050594c4690404c847d4532402f24f8a6e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_f74babca",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-02T20:32:18Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure I have helper function somewhere in Translate for changing the language code subpage of a title.",
+      "revId": "f7aa5050594c4690404c847d4532402f24f8a6e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
