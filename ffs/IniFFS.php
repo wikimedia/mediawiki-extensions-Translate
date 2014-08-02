@@ -57,7 +57,8 @@ class IniFFS extends SimpleFFS {
 
 		$messages = parse_ini_string( $data );
 		if ( is_array( $messages ) ) {
-			$messages = $this->group->getMangler()->mangle( $messages );
+			$mangler = $this->group->getMangler();
+			$messages = TranslateUtils::mapArrayKeys( array( $mangler, 'mangle' ), $messages );
 		} else {
 			$messages = null;
 		}
