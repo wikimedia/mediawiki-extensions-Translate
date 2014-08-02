@@ -158,6 +158,9 @@ class TranslateHooks {
 
 			// Replaced edit tab with translation tab for translation pages
 			$wgHooks['SkinTemplateNavigation'][] = 'PageTranslationHooks::translateTab';
+
+			// Hook on changing page language
+			$wgHooks['ChangePageLanguage'][] = 'PageTranslationHooks::moveDefaultTranslationPage';
 		}
 	}
 
