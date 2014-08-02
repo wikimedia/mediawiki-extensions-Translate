@@ -51,7 +51,7 @@ class StringMatcherTest extends MediaWikiTestCase {
 	 * @dataProvider problematicMessageKeyProvider
 	 */
 	public function testKeyMangling( $key, $comment ) {
-		$matcher = StringMatcher::emptyMatcher();
+		$matcher = new StringMatcher();
 		$mangled = $matcher->mangle( $key );
 
 		$title = Title::makeTitleSafe( NS_MEDIAWIKI, $mangled );

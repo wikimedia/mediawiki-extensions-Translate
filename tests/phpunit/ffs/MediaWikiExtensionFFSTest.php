@@ -54,7 +54,7 @@ class MediaWikiExtensionFFSTest extends MediaWikiTestCase {
 		$method = $obj->getMethod( 'generateMessageBlock' );
 		$method->setAccessible( true );
 		$collection = new MockMessageCollectionForExport();
-		$mangler = StringMatcher::emptyMatcher();
+		$mangler = new StringMatcher();
 
 		$result = $method->invoke( $ffs, $collection, $mangler );
 

@@ -127,11 +127,12 @@ class PremadeMediawikiExtensionGroups {
 			$conf['MANGLER']['patterns'] = $info['mangle'];
 
 			$mangler = new StringMatcher( $info['prefix'], $info['mangle'] );
+			$callback = array( $mangler, 'mangle' );
 			if ( isset( $info['ignored'] ) ) {
-				$info['ignored'] = $mangler->mangle( $info['ignored'] );
+				$info['ignored'] = array_map( $callback, $info['ignored'] );
 			}
 			if ( isset( $info['optional'] ) ) {
-				$info['optional'] = $mangler->mangle( $info['optional'] );
+				$info['optional'] = array_map( $callback, $info['optional'] );
 			}
 		}
 

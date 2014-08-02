@@ -161,7 +161,8 @@ class SimpleFFS implements FFS {
 			$messages[$key] = $message;
 		}
 
-		$messages = $this->group->getMangler()->mangle( $messages );
+		$mangler = $this->group->getMangler();
+		$messages = TranslateUtils::mapArrayKeys( array( $mangler, 'mangle' ), $messages );
 
 		return array(
 			'AUTHORS' => $authors,
