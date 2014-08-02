@@ -420,4 +420,20 @@ class TranslateUtils {
 
 		return $langs;
 	}
+
+	/**
+	 * Wrapper for altering array keys similar to array_map.
+	 *
+	 * @param callable $callback
+	 * @param array $array
+	 * @return array
+	 */
+	public static function mapArrayKeys( $callback, array $array ) {
+		$copy = array();
+		foreach ( $array as $key => $value ) {
+			$key = call_user_func( $callback, $key );
+			$copy[$key] = $value;
+		}
+		return $copy;
+	}
 }

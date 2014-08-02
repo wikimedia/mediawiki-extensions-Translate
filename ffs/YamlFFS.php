@@ -31,7 +31,10 @@ class YamlFFS extends SimpleFFS {
 		}
 
 		$messages = $this->flatten( $messages );
-		$messages = $this->group->getMangler()->mangle( $messages );
+
+		$mangler = $this->group->getMangler();
+		$messages = TranslateUtils::mapArrayKeys( array( $mangler, 'mangle' ), $messages );
+
 		foreach ( $messages as &$value ) {
 			$value = rtrim( $value, "\n" );
 		}
