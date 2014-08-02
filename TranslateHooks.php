@@ -164,6 +164,9 @@ class TranslateHooks {
 
 			// Update translated page when translation unit is moved
 			$wgHooks['TitleMoveComplete'][] = 'PageTranslationHooks::onMoveTranslationUnits';
+
+			// Hook on changing page language
+			$wgHooks['ChangePageLanguage'][] = 'PageTranslationHooks::moveDefaultTranslationPage';
 		}
 	}
 
