@@ -865,4 +865,59 @@ class PageTranslationHooks {
 
 		return true;
 	}
+
+	/**
+	 * Move the default translation page on change in page language
+	 * Hook: PageLanguageChange
+	 * @since 2014.08
+	 */
+	static function moveDefaultTranslationPage( Title $title, $oldLang, $newLang, User $user,
+		Status $status
+	) {
+		global $wgLanguageCode;
+
+		// Checking if old or new language are default wiki languages
+		$oldLang = $oldLang ? $oldLang : $wgLanguageCode;
+		$newLang = $newLang ? $newLang : $wgLanguageCode;
+
+		$newPageTitle = $title->getSubpage( $newLang );
+		if ( $newPageTitle->exists() ) {
+			// If subpage exists already, changing page language isn't possible.
+			$status->fatal( 'pt-movepage-block-tp-exists', '', $newPageTitle->getText() );
+		} else {
+			$page = TranslatablePage::newFromTitle( $title );
+			$oldPageTitle = $title->getSubpage( $oldLang );
+			$jobs = array();
+			$base = $title->getText();
+			$params = array(
+				'base-source' => $base,
+				'base-target' => $base
+			);
+
+			// Adding translation page to job queue
+			$jobs[$oldPageTitle->getPrefixedText()] = TranslateMoveJob::newJob(
+				$oldPageTitle, $newPageTitle, $params, $user
+			);
+
+			// Adding section pages to job queue
+			$sectionPages = $page->getTranslationUnitPages( 'all ', $oldLang );
+			foreach ( $sectionPages as $old ) {
+				list( $oldBase, /*unused*/ ) = TranslateUtils::figureMessage(
+					$old->getPrefixedText()
+				);
+				$target = $oldBase . '/' . $newLang;
+				$new = Title::newFromText( $target );
+				$jobs[$old->getPrefixedText()] = TranslateMoveJob::newJob(
+					$old, $new, $params, $user
+				);
+			}
+
+			wfGetCache( CACHE_ANYTHING )->set(
+				wfMemcKey( 'translate-pt-move', $page->getText() ),
+				count( $jobs )
+			);
+			JobQueueGroup::singleton()->push( $jobs );
+		}
+		return true;
+	}
 }
