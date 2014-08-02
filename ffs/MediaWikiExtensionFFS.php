@@ -124,7 +124,7 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 
 		$messages = array_shift( $messages );
 		$mangler = $this->group->getMangler();
-		$messages = $mangler->mangle( $messages );
+		$messages = TranslateUtils::mapArrayKeys( array( $mangler, 'mangle' ), $messages );
 
 		return array(
 			'MESSAGES' => $messages,

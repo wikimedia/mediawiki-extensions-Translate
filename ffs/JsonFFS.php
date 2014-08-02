@@ -49,7 +49,8 @@ class JsonFFS extends SimpleFFS {
 
 		unset( $messages['@metadata'] );
 
-		$messages = $this->group->getMangler()->mangle( $messages );
+		$mangler = $this->group->getMangler();
+		$messages = TranslateUtils::mapArrayKeys( array( $mangler, 'mangle' ), $messages );
 
 		return array(
 			'MESSAGES' => $messages,

@@ -96,9 +96,8 @@ interface MessageGroup {
 	public function getChecker();
 
 	/**
-	 * Return a message mangler or null.
-	 * @todo Make an interface for message manglers
-	 * @return StringMatcher or null
+	 * Return a message mangler.
+	 * @return StringMangler
 	 */
 	public function getMangler();
 

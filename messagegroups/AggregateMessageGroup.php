@@ -38,7 +38,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 
 	public function getMangler() {
 		if ( !isset( $this->mangler ) ) {
-			$this->mangler = StringMatcher::emptyMatcher();
+			$this->mangler = new StringMatcher();
 		}
 
 		return $this->mangler;
