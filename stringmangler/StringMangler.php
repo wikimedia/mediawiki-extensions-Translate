@@ -17,9 +17,6 @@
  *
  */
 interface StringMangler {
-	/// @todo Does this really need to be in the interface???
-	public static function EmptyMatcher();
-
 	/**
 	 * General way to pass configuration to the mangler.
 	 * @param array $configuration
@@ -30,21 +27,21 @@ interface StringMangler {
 	 * Match strings against a pattern.
 	 * If string matches, mangle() should mangle the key.
 	 * @param string $string Message key.
-	 * @return \bool
+	 * @return bool
 	 */
 	public function match( $string );
 
 	/**
-	 * Mangles a list of message keys.
-	 * @param string|string[] $data Unmangled message keys.
-	 * @return string|string[] Mangled message keys.
+	 * Mangle a single key.
+	 * @param string $key
+	 * @return string
 	 */
-	public function mangle( $data );
+	public function mangle( $key );
 
 	/**
-	 * Reverses the operation mangle() did.
-	 * @param string|string[] $data Mangled message keys.
-	 * @return string|string[] Umangled message keys.
+	 * Reverse of mangle.
+	 * @param string $key
+	 * @return string
 	 */
-	public function unMangle( $data );
+	public function unmangle( $key );
 }

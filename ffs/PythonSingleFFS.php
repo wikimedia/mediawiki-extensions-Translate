@@ -201,6 +201,7 @@ class PythonSingleFFS extends SimpleFFS {
 				continue;
 			}
 
+			// @todo Should we not unmangle here?
 			$key = addcslashes( $message->key(), "\n'\\" );
 			$translation = addcslashes( $translation, "\n'\\" );
 			$translation = str_replace( TRANSLATE_FUZZY, '', $translation );

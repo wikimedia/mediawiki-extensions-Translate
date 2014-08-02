@@ -43,7 +43,6 @@ class XliffFFS extends SimpleFFS {
 	 */
 	public function readFromVariable( $data, $element = 'target' ) {
 		$messages = array();
-		$mangler = $this->group->getMangler();
 
 		$reader = new SimpleXMLElement( $data );
 		$reader->registerXPathNamespace(
@@ -86,8 +85,11 @@ class XliffFFS extends SimpleFFS {
 			$messages[$key] = $value;
 		}
 
+		$mangler = $this->group->getMangler();
+		$messages = TranslateUtils::mapArrayKeys( array( $mangler, 'mangle' ), $messages );
+
 		return array(
-			'MESSAGES' => $mangler->mangle( $messages ),
+			'MESSAGES' => $messages,
 		);
 	}
 

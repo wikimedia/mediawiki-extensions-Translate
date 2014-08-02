@@ -48,7 +48,8 @@ class DtdFFS extends SimpleFFS {
 				$values[$i] );
 		}
 
-		$messages = $this->group->getMangler()->mangle( $messages );
+		$mangler = $this->group->getMangler();
+		$messages = TranslateUtils::mapArrayKeys( array( $mangler, 'mangle' ), $messages );
 
 		return array(
 			'AUTHORS' => $authors,
