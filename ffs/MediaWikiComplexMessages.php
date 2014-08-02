@@ -17,6 +17,7 @@ abstract class ComplexMessages {
 	const LANG_MASTER = 0;
 	const LANG_CHAIN = 1;
 	const LANG_CURRENT = 2;
+	const PLACEHOLDER = 'languagecodeplaceholder';
 
 	protected $language = null;
 	protected $targetDir = null;
@@ -218,7 +219,7 @@ abstract class ComplexMessages {
 	protected function readVariable( $group, $code ) {
 		$file = $group['file'];
 		if ( !$group['code'] ) {
-			$file = str_replace( 'CODE', str_replace( '-', '_', ucfirst( $code ) ), $file );
+			$file = str_replace( self::PLACEHOLDER, str_replace( '-', '_', ucfirst( $code ) ), $file );
 		}
 
 		${$group['var']} = array(); # Initialize
@@ -608,7 +609,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 		$this->data['core'] = array(
 			'label' => 'MediaWiki Core',
 			'var' => 'specialPageAliases',
-			'file' => Language::getMessagesFileName( 'CODE' ),
+			'file' => Language::getMessagesFileName( self::PLACEHOLDER ),
 			'code' => false,
 		);
 
@@ -689,7 +690,7 @@ class MagicWordsCM extends ComplexMessages {
 		$this->data['core'] = array(
 			'label' => 'MediaWiki Core',
 			'var' => 'magicWords',
-			'file' => Language::getMessagesFileName( 'CODE' ),
+			'file' => Language::getMessagesFileName( self::PLACEHOLDER ),
 			'code' => false,
 		);
 
@@ -737,7 +738,7 @@ class NamespaceCM extends ComplexMessages {
 		$this->data['core'] = array(
 			'label' => 'MediaWiki Core',
 			'var' => 'namespaceNames',
-			'file' => Language::getMessagesFileName( 'CODE' ),
+			'file' => Language::getMessagesFileName( self::PLACEHOLDER ),
 			'code' => false,
 		);
 	}
