@@ -184,5 +184,9 @@
 	"pm-swap-icon-hover-text": "Zamień z jednostką poniżej",
 	"pm-delete-icon-hover-text": "Usuń jednostkę",
 	"tpt-translate-title": "Umożliwienie tłumaczenia tytułu strony",
-	"pp-save-summary": "Przygotowano stronę do tłumaczenia"
+	"pp-save-summary": "Przygotowano stronę do tłumaczenia",
+	"pp-pagename-placeholder": "Wprowadź nazwę strony",
+	"pp-save-button-label": "Zapisz",
+	"pp-pagename-missing": "Podaj nazwę strony.",
+	"pp-diff-old-header": "Tekst źródłowy"
 }

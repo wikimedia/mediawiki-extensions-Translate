@@ -125,5 +125,8 @@
 	"pt-deletepage-list-other": "Ispajennoù all",
 	"pt-deletepage-list-count": "$1 {{PLURAL:bajenn|pajenn}} da ziverkañ en holl.",
 	"pt-deletepage-full-logreason": "Rann eus ar bajenn da dreiñ $1.",
-	"pt-deletepage-lang-logreason": "Rann eus ar bajenn da dreiñ $1."
+	"pt-deletepage-lang-logreason": "Rann eus ar bajenn da dreiñ $1.",
+	"pm-page-does-not-exist": "N'eus ket eus $1.",
+	"pp-prepare-button-label": "Prientiñ",
+	"pp-save-button-label": "Enrollañ"
 }
