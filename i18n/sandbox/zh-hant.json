@@ -32,7 +32,7 @@
 	"tsb-reminder-link-text": "傳送電子郵件備忘通知",
 	"tsb-didnt-make-any-translations": "此使用者尚未做過任何翻譯。",
 	"tsb-translations-source": "原始碼",
-	"tsb-translations-user": "使用者翻譯",
+	"tsb-translations-user": "{{GENDER:$1|使用者}}翻譯",
 	"tsb-translations-current": "現有翻譯",
 	"tsb-delete-userpage-summary": "刪除沙盒使用者中的使用者頁面",
 	"translationstash": "歡迎光臨",

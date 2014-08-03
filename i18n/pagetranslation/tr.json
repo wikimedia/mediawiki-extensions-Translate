@@ -65,5 +65,7 @@
 	"pm-pagename-missing": "Lütfen sayfa adı girin.",
 	"pm-langcode-missing": "Lütfen dil kodunu girin.",
 	"pp-pagename-placeholder": "Sayfa adı girin",
-	"pp-save-button-label": "Kaydet"
+	"pp-save-button-label": "Kaydet",
+	"pp-save-message": "Sayfa kaydedildi. Artık [$1  düzenleme] yapabilirsiniz.",
+	"pp-pagename-missing": "Lütfen sayfa adı girin."
 }

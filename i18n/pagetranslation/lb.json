@@ -174,6 +174,8 @@
 	"pp-prepare-button-label": "Preparéieren",
 	"pp-save-button-label": "Späicheren",
 	"pp-save-message": "D^?Säit gouf gespäichert. Dir kënnt se [$1 änneren].",
+	"pp-prepare-message": "D'Säit gouf fir d'Iwwersetzung virbereed. Kuckt d'Differenz hei drënner. Klickt de \"{{int:pp-save-button-label}}\" Knäppche wann et ok ass!",
+	"pp-already-prepared-message": "Et schéngt datt d'Säit scho fir d'Iwwersetzung virbereed gouf. Et gëtt keng Ännerungen am Verglach mat der vireger Versioun.",
 	"pp-pagename-missing": "Gitt w.e.g. den Numm vun der Säit an.",
 	"pp-diff-old-header": "Quelltext",
 	"pp-diff-new-header": "Preparéierten Text"

@@ -15,7 +15,8 @@
 			"Usp",
 			"VezonThunder",
 			"Vililikku",
-			"ZeiP"
+			"ZeiP",
+			"Pxos"
 		]
 	},
 	"translate": "Käännä",
@@ -118,7 +119,7 @@
 	"right-translate-messagereview": "Hyväksyä käännöksiä",
 	"right-translate-groupreview": "Muuttaa viestiryhmien tilaa",
 	"translate-rc-translation-filter": "Käännösten suodatus",
-	"translate-rc-translation-filter-no": "ei toimenpidettä",
+	"translate-rc-translation-filter-no": "älä suodata",
 	"translate-rc-translation-filter-only": "näytä vain käännökset",
 	"translate-rc-translation-filter-filter": "piilota käännökset",
 	"translate-rc-translation-filter-site": "vain muutokset sivuston viesteihin",

@@ -55,7 +55,7 @@
 	"translate-edit-definition": "Alapértelmezett érték",
 	"translate-edit-translation": "Fordítás",
 	"translate-edit-contribute": "szerkesztés",
-	"translate-edit-no-information": "''Ehhez az üzenethez még nincs leírás. Ha tudod, hogy hogyan kell használni, akkor segítheted a többi fordítót a dokumentálásával.''",
+	"translate-edit-no-information": "''Ehhez az üzenethez még nincs leírás. Ha tudod, hogy hol vagy hogyan jelenik meg, segítheted a többi fordítót az üzenet dokumentálásával.''",
 	"translate-edit-information": "Információk az üzenetről ($1)",
 	"translate-edit-in-other-languages": "Az üzenet más nyelveken",
 	"translate-edit-committed": "Jelenlegi fordítás",

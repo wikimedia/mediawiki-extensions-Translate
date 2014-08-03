@@ -203,6 +203,7 @@
 	"pp-save-button-label": "保存",
 	"pp-save-message": "此页面已保存。您可[$1 编辑]它。",
 	"pp-prepare-message": "此页面已准备翻译。请参见下面的差异。点击“{{int:pp-save-button-label}}”以确定。",
+	"pp-already-prepared-message": "看起来页面已经准备翻译。没有与之前版本比较的更改。",
 	"pp-pagename-missing": "请输入页面名。",
 	"pp-diff-old-header": "源文本",
 	"pp-diff-new-header": "准备好的文本"

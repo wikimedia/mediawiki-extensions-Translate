@@ -164,7 +164,7 @@
 	"pm-pagename-placeholder": "Escribe el nombre de la página",
 	"pm-langcode-placeholder": "Código de idioma",
 	"pm-page-does-not-exist": "$1 no existe",
-	"pm-old-translations-missing": "$1 no contiene traducciones viejas.",
+	"pm-old-translations-missing": "$1 no contiene traducciones obsoletas.",
 	"pm-pagename-missing": "Escribe el nombre de la página",
 	"pm-langcode-missing": "Escribe el código de idioma",
 	"pm-delete-icon-hover-text": "Eliminar unidad",

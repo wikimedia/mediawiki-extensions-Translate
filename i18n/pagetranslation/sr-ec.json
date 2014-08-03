@@ -88,5 +88,7 @@
 	"pm-savepages-button-label": "Сачувај",
 	"pm-cancel-button-label": "Откажи",
 	"pm-pagename-placeholder": "Унесите назив странице",
-	"pm-langcode-placeholder": "Код језика"
+	"pm-langcode-placeholder": "Код језика",
+	"pp-pagename-placeholder": "Унесите назив странице",
+	"pp-save-button-label": "Сачувај"
 }
