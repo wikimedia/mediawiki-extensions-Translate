@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_0b328e05",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-03T21:42:46Z",
+      "side": 1,
+      "message": "This line should be moved few lines down and the redundant if removed.",
+      "revId": "ebf435fa20d07a044813a52ee784112dcbed58c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_2b0e6a3e",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-03T21:42:46Z",
+      "side": 1,
+      "message": "It doesn\u0027t return an icon, just a class which is styled by CSS as appropriate.",
+      "revId": "ebf435fa20d07a044813a52ee784112dcbed58c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_8b155e4f",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-03T21:42:46Z",
+      "side": 1,
+      "message": "Type missing",
+      "revId": "ebf435fa20d07a044813a52ee784112dcbed58c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_0b096e33",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-03T21:42:46Z",
+      "side": 1,
+      "message": "It\u0027s not a string.",
+      "revId": "ebf435fa20d07a044813a52ee784112dcbed58c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_ab225aae",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-03T21:42:46Z",
+      "side": 1,
+      "message": "This wont actually do anything as $classes is not passed as reference. But just make it return an array.",
+      "revId": "ebf435fa20d07a044813a52ee784112dcbed58c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
