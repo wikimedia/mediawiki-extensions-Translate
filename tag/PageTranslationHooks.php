@@ -248,33 +248,15 @@ class PageTranslationHooks {
 
 			if ( $currentTitle->equals( $subpage ) ) {
 				$classes[] = 'mw-pt-languages-selected';
-			}
-
-			if ( $currentTitle->equals( $subpage ) ) {
-				if ( $classes ) {
-					$name = Html::rawElement( 'span', array( 'class' => $classes ), $name );
-				}
+				$classes[] = self::tpProgressIcon( $percent, $classes );
+				$name = Html::rawElement( 'span', array( 'class' => $classes ), $name );
 			} elseif ( $subpage->isKnown() ) {
 				$pagename = $page->getPageDisplayTitle( $code );
 				if ( !is_string( $pagename ) ) {
 					$pagename = $subpage->getPrefixedText();
 				}
 
-				$classes[] = 'mw-pt-progress';
-				/* Percentages are too accurate and take more
-				 * space than simple images */
-				$percent *= 100;
-				if ( $percent < 20 ) {
-					$classes[] = 'mw-pt-progress--stub';
-				} elseif ( $percent < 40 ) {
-					$classes[] = 'mw-pt-progress--low';
-				} elseif ( $percent < 60 ) {
-					$classes[] = 'mw-pt-progress--med';
-				} elseif ( $percent < 80 ) {
-					$classes[] = 'mw-pt-progress--high';
-				} else {
-					$classes[] = 'mw-pt-progress--complete';
-				}
+				$classes[] = self::tpProgressIcon( $percent, $classes );
 
 				$title = wfMessage( 'tpt-languages-nonzero' )
 					->params( $pagename )
@@ -330,6 +312,28 @@ class PageTranslationHooks {
 		$out .= Html::closeElement( 'div' );
 
 		return $out;
+	}
+
+	/**
+	 * Return icon CSS class for given progress status: percentages
+	 * are too accurate and take more space than simple images
+	 * @param $percent float
+	 * @return array
+	 */
+	protected static function tpProgressIcon( $percent ) {
+		$classes[] = 'mw-pt-progress';
+		$percent *= 100;
+		if ( $percent < 20 ) {
+			$classes[] = 'mw-pt-progress--stub';
+		} elseif ( $percent < 40 ) {
+			$classes[] = 'mw-pt-progress--low';
+		} elseif ( $percent < 60 ) {
+			$classes[] = 'mw-pt-progress--med';
+		} elseif ( $percent < 80 ) {
+			$classes[] = 'mw-pt-progress--high';
+		} else {
+			$classes[] = 'mw-pt-progress--complete';
+		}
 	}
 
 	/**
