@@ -248,33 +248,15 @@ class PageTranslationHooks {
 
 			if ( $currentTitle->equals( $subpage ) ) {
 				$classes[] = 'mw-pt-languages-selected';
-			}
-
-			if ( $currentTitle->equals( $subpage ) ) {
-				if ( $classes ) {
-					$name = Html::rawElement( 'span', array( 'class' => $classes ), $name );
-				}
+				$classes = array_merge( $classes, self::tpProgressIcon( $percent ) );
+				$name = Html::rawElement( 'span', array( 'class' => $classes ), $name );
 			} elseif ( $subpage->isKnown() ) {
 				$pagename = $page->getPageDisplayTitle( $code );
 				if ( !is_string( $pagename ) ) {
 					$pagename = $subpage->getPrefixedText();
 				}
 
-				$classes[] = 'mw-pt-progress';
-				/* Percentages are too accurate and take more
-				 * space than simple images */
-				$percent *= 100;
-				if ( $percent < 20 ) {
-					$classes[] = 'mw-pt-progress--stub';
-				} elseif ( $percent < 40 ) {
-					$classes[] = 'mw-pt-progress--low';
-				} elseif ( $percent < 60 ) {
-					$classes[] = 'mw-pt-progress--med';
-				} elseif ( $percent < 80 ) {
-					$classes[] = 'mw-pt-progress--high';
-				} else {
-					$classes[] = 'mw-pt-progress--complete';
-				}
+				$classes = array_merge( $classes, self::tpProgressIcon( $percent ) );
 
 				$title = wfMessage( 'tpt-languages-nonzero' )
 					->params( $pagename )
@@ -333,6 +315,29 @@ class PageTranslationHooks {
 	}
 
 	/**
+	 * Return icon CSS class for given progress status: percentages
+	 * are too accurate and take more space than simple images.
+	 * @param $percent float
+	 * @return string[]
+	 */
+	protected static function tpProgressIcon( $percent ) {
+		$classes = array( 'mw-pt-progress' );
+		$percent *= 100;
+		if ( $percent < 20 ) {
+			$classes[] = 'mw-pt-progress--stub';
+		} elseif ( $percent < 40 ) {
+			$classes[] = 'mw-pt-progress--low';
+		} elseif ( $percent < 60 ) {
+			$classes[] = 'mw-pt-progress--med';
+		} elseif ( $percent < 80 ) {
+			$classes[] = 'mw-pt-progress--high';
+		} else {
+			$classes[] = 'mw-pt-progress--complete';
+		}
+		return $classes;
+	}
+
+	/**
 	 * Display nice error when editing content.
 	 * Hook: EditFilterMergedContent
 	 */
@@ -377,7 +382,7 @@ class PageTranslationHooks {
 
 	/**
 	 * When attempting to save, last resort. Edit page would only display
-	 * edit conflict if there wasn't tpSyntaxCheckForEditPage
+	 * edit conflict if there wasn't tpSyntaxCheckForEditPage.
 	 * Hook: PageContentSave
 	 */
 	public static function tpSyntaxCheck( $wikiPage, $user, $content, $summary,
@@ -512,7 +517,7 @@ class PageTranslationHooks {
 	}
 
 	/**
-	 * Prevent editing of restricted languages
+	 * Prevent editing of restricted languages.
 	 * Hook: getUserPermissionsErrorsExpensive
 	 * @since 2012-03-01
 	 */
