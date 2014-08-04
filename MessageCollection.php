@@ -230,12 +230,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->authors = array_unique( $authors );
 	}
 
-	/**
-	 * @deprecated 2013-01-18 enabled by default
-	 */
-	public function setReviewMode( $value = true ) {
-	}
-
 	// Data modifiers
 
 	/**
