@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_eb797ff2",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-04T10:12:45Z",
+      "side": 1,
+      "message": "if (",
+      "revId": "b4eafc0407100a2932d79076b6cf503935688cb9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_ab67f748",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-04T10:12:45Z",
+      "side": 1,
+      "message": "I\u0027d rather not do the escaping in this function. One thing per function.",
+      "revId": "b4eafc0407100a2932d79076b6cf503935688cb9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_6b5d8f7d",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-04T10:12:45Z",
+      "side": 1,
+      "message": "spaces",
+      "revId": "b4eafc0407100a2932d79076b6cf503935688cb9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_2b5b078a",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-04T10:12:45Z",
+      "side": 1,
+      "message": "$.when is not needed for one thing only.  you can do doFiles().done() directly I believe.",
+      "revId": "b4eafc0407100a2932d79076b6cf503935688cb9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
