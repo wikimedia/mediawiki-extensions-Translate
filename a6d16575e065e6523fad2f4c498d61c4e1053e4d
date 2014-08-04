@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_ebfdffae",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-04T09:37:38Z",
+      "side": 1,
+      "message": "Please add period at the end.",
+      "revId": "a6d16575e065e6523fad2f4c498d61c4e1053e4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_cbf803bf",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-04T09:37:38Z",
+      "side": 1,
+      "message": "This is correct, but string[] is even more accurate.",
+      "revId": "a6d16575e065e6523fad2f4c498d61c4e1053e4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
