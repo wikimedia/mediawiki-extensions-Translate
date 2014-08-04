@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_2b12e75b",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-04T09:01:43Z",
+      "side": 1,
+      "message": "LANG_PLACEHOLDER?",
+      "revId": "1da7c95922e921289129aa8c5186d7ae93815dfb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
