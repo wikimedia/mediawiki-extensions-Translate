@@ -16,6 +16,24 @@
       "revId": "1da7c95922e921289129aa8c5186d7ae93815dfb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_2b39c7d3",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-04T09:06:49Z",
+      "side": 1,
+      "message": "It is not related to the three other constant so it would be misleading imho. Given it\u0027s inside the class there is no need to prefix it to avoid conflicts.",
+      "parentUuid": "8e28a382_2b12e75b",
+      "revId": "1da7c95922e921289129aa8c5186d7ae93815dfb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
