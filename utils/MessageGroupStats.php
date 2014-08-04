@@ -147,7 +147,7 @@ class MessageGroupStats {
 		// Try to avoid deadlocks with duplicated deletes where there is no row
 		// @note: this only helps in auto-commit mode (which job runners use)
 		if ( count( $ids ) == 1 ) {
-			$key = __CLASS__ . ":modify:{$ids[0]}-$code";
+			$key = __CLASS__ . ":modify:{$ids[0]}";
 			$locked = $dbw->lock( $key, __METHOD__, 1 );
 			if ( !$locked ) {
 				return true;
@@ -374,7 +374,7 @@ class MessageGroupStats {
 		$dbw = wfGetDB( DB_MASTER );
 		// Try to avoid deadlocks with S->X lock upgrades in MySQL
 		// @note: this only helps in auto-commit mode (which job runners use)
-		$key = __CLASS__ . ":modify:$id-$code";
+		$key = __CLASS__ . ":modify:$id";
 		if ( $dbw->lock( $key, __METHOD__, 1 ) ) {
 			$dbw->insert(
 				self::TABLE,
