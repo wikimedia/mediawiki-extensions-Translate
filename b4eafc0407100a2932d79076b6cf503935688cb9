@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_dc668bb7",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-04T16:47:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_eb797ff2",
+      "revId": "b4eafc0407100a2932d79076b6cf503935688cb9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_ab67f748",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-04T10:12:45Z",
       "side": 1,
       "message": "I\u0027d rather not do the escaping in this function. One thing per function.",
+      "revId": "b4eafc0407100a2932d79076b6cf503935688cb9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_fc6b877f",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-04T16:47:49Z",
+      "side": 1,
+      "message": "I created a function:\n\nfunction escapeRE( data ) {\n\n\t\treturn $.escapeRE( data );\n}\n\nand called it from here. Is that fine? Else, I will have to do the escaping at every place where the list of aliases is returned.",
+      "parentUuid": "8e28a382_ab67f748",
       "revId": "b4eafc0407100a2932d79076b6cf503935688cb9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_bc617f9f",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-04T16:47:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_6b5d8f7d",
+      "revId": "b4eafc0407100a2932d79076b6cf503935688cb9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_2b5b078a",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-04T10:12:45Z",
       "side": 1,
       "message": "$.when is not needed for one thing only.  you can do doFiles().done() directly I believe.",
+      "revId": "b4eafc0407100a2932d79076b6cf503935688cb9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_9c2b632e",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-04T16:47:49Z",
+      "side": 1,
+      "message": "Done for this and call to getDiff() as well.",
+      "parentUuid": "8e28a382_2b5b078a",
       "revId": "b4eafc0407100a2932d79076b6cf503935688cb9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
