@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "8e28a382_abc1375a",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-04T09:50:45Z",
+      "side": 1,
+      "message": "Please do not start method names with capital letter.\n\nThese are either called onHookName or doSomethingSpecific.",
+      "revId": "67699985f24f91a2afa839f15958599d5ebcc195",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_976d8703",
         "filename": "TranslateHooks.php",
         "patchSetId": 5
@@ -30,6 +47,24 @@
       "writtenOn": "2014-08-02T21:43:19Z",
       "side": 1,
       "message": "I created a page with {{#translation}} as text. This function does not get called at all.",
+      "revId": "67699985f24f91a2afa839f15958599d5ebcc195",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_ebbe1faa",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-04T09:50:45Z",
+      "side": 1,
+      "message": "If I add {{#translation:}} I get:\n\n[8f682242] /w/i.php?title\u003dPorkkana\u0026action\u003dsubmit Exception from line 3689 of /www/dev.translatewiki.net/w/includes/parser/Parser.php: Tag hook for translation is not callable",
+      "parentUuid": "8e28a382_7770dbd8",
       "revId": "67699985f24f91a2afa839f15958599d5ebcc195",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
