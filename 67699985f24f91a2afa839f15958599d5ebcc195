@@ -68,6 +68,24 @@
       "revId": "67699985f24f91a2afa839f15958599d5ebcc195",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_31b6d83c",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-04T14:23:41Z",
+      "side": 1,
+      "message": "Do you also need to add the colon? I tested with {{#translation}} as the render function does not take any arguments at all. And why is the hook not callable?",
+      "parentUuid": "8e28a382_ebbe1faa",
+      "revId": "67699985f24f91a2afa839f15958599d5ebcc195",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
