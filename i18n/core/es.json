@@ -40,7 +40,7 @@
 	"translate-taction-lstats": "Estadísticas del idioma",
 	"translate-taction-mstats": "Estadísticas del grupo de mensajes",
 	"translate-taction-export": "Exportar",
-	"translate-taction-disabled": "Esta acción está deshabilitada en este wiki.",
+	"translate-taction-disabled": "Esta acción está desactivada en este wiki.",
 	"translate-page-no-such-language": "No se especificó un idioma válido.",
 	"translate-page-no-such-group": "El grupo especificado no es válido.",
 	"translate-page-disabled": "Se han desactivado las traducciones a este idioma en este grupo.\nMotivo:\n\n<em>$1</em>",
