@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_d2142fef",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-05T09:47:24Z",
+      "side": 1,
+      "message": "You are still doing two things in this function. Adding a wrapper around the function call does not change it. The escaping should happen somewhere else.",
+      "revId": "2187d56acf101a1502ed5ba63620b7c93bf4055e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
