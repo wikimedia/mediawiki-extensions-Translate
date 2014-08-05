@@ -959,4 +959,37 @@ class PageTranslationHooks {
 			}
 		}
 	}
+
+	/**
+	 * Hook to update translation page on deleting a translation unit
+	 * Hook: ArticleDeleteComplete
+	 * @since 2016.04
+	 */
+	public static function onDeleteTranslationUnit( WikiPage &$unit, User &$user, $reason,
+		$id, $content, $logEntry
+	) {
+		// Do the update. In case job queue is doing the work, the update is not done here
+		if ( self::$jobQueueRunning ) {
+			return;
+		}
+		$title = $unit->getTitle();
+
+		$handle = new MessageHandle( $title );
+		if ( !$handle->isValid() ) {
+			return;
+		}
+
+		$group = $handle->getGroup();
+		if ( !$group instanceof WikiPageMessageGroup ) {
+			return true;
+		}
+
+		$page = TranslatablePage::newFromTitle( $group->getTitle() );
+		$id = $page->getMessageGroupId();
+
+		MessageGroupStats::clearGroup( $id );
+		MessageGroupStats::forGroup( $id );
+
+		self::updateTranslationPage( $page, $handle->getCode(), $user, 0, $reason );
+	}
 }
