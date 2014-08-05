@@ -47,6 +47,7 @@ class TranslateDeleteJob extends Job {
 		$doer = User::newFromName( $this->getPerformer() );
 
 		PageTranslationHooks::$allowTargetEdit = true;
+		PageTranslationHooks::$jobQueueRunning = true;
 
 		$error = '';
 		$wikipage = new WikiPage( $title );
@@ -87,6 +88,7 @@ class TranslateDeleteJob extends Job {
 				$page->invalidateCache();
 			}
 			$title->invalidateCache();
+			PageTranslationHooks::$jobQueueRunning = false;
 		}
 
 		return true;
