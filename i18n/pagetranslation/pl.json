@@ -185,8 +185,12 @@
 	"pm-delete-icon-hover-text": "Usuń jednostkę",
 	"tpt-translate-title": "Umożliwienie tłumaczenia tytułu strony",
 	"pp-save-summary": "Przygotowano stronę do tłumaczenia",
+	"pagepreparation": "Przygotowanie strony do tłumaczenia",
 	"pp-pagename-placeholder": "Wprowadź nazwę strony",
+	"pp-prepare-button-label": "Przygotuj",
 	"pp-save-button-label": "Zapisz",
+	"pp-already-prepared-message": "Wydaje się, że ta strona została już przygotowana do tłumaczenia. Nie ma żadnych zmian w porównaniu z poprzednią wersją.",
 	"pp-pagename-missing": "Podaj nazwę strony.",
-	"pp-diff-old-header": "Tekst źródłowy"
+	"pp-diff-old-header": "Tekst źródłowy",
+	"pp-diff-new-header": "Przygotowany tekst"
 }

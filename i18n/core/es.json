@@ -402,5 +402,6 @@
 	"translate-statsbar-tooltip": "$1 % traducido, $2 % revisado",
 	"translate-statsbar-tooltip-with-fuzzy": "$1 % traducido, $2 % revisado, $3 % desactualizado",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grupo|grupos}} más",
-	"translate-ulsdep-title": "Error de configuración"
+	"translate-ulsdep-title": "Error de configuración",
+	"translate-ulsdep-body": "La extensión Translate depende de la [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector extensión Universal Language Selector]."
 }

@@ -256,6 +256,7 @@ $specialPageAliases['de'] = array(
 	'TranslationStats' => array( 'Übersetzungsstatistik' ),
 	'Translations' => array( 'Übersetzungen' ),
 	'PageMigration' => array( 'Seitenmigration' ),
+	'PagePreparation' => array( 'Seitenvorbereitung' ),
 );
 
 /** Zazaki (Zazaki) */
