@@ -1,50 +1,10 @@
 <?php
 /**
- * Code for mangling message keys to avoid conflicting keys.
+ * Default StringMangler implementation.
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2013, Niklas Laxström
  * @license GPL-2.0+
  */
-
-/**
- * Interface that key-mangling classes must implement.
- *
- * The operations have to be reversible so that
- * x equals unMangle( mangle( x ) ).
- */
-interface StringMangler {
-	/// @todo Does this really need to be in the interface???
-	public static function EmptyMatcher();
-
-	/**
-	 * General way to pass configuration to the mangler.
-	 * @param array $configuration
-	 */
-	public function setConf( $configuration );
-
-	/**
-	 * Match strings against a pattern.
-	 * If string matches, mangle() should mangle the key.
-	 * @param string $string Message key.
-	 * @return \bool
-	 */
-	public function match( $string );
-
-	/**
-	 * Mangles a list of message keys.
-	 * @param string|string[] $data Unmangled message keys.
-	 * @return string|string[] Mangled message keys.
-	 */
-	public function mangle( $data );
-
-	/**
-	 * Reverses the operation mangle() did.
-	 * @param string|string[] $data Mangled message keys.
-	 * @return string|string[] Umangled message keys.
-	 */
-	public function unMangle( $data );
-}
 
 /**
  * The versatile default implementation of StringMangler interface.
