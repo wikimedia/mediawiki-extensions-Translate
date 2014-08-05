@@ -16,6 +16,24 @@
       "revId": "2187d56acf101a1502ed5ba63620b7c93bf4055e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_a8d012f8",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-05T17:58:17Z",
+      "side": 1,
+      "message": "Okay, removing the newly written function in this PS. And doing the work of escaping the list is returned.",
+      "parentUuid": "8e28a382_d2142fef",
+      "revId": "2187d56acf101a1502ed5ba63620b7c93bf4055e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
