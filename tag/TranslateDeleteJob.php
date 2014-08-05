@@ -55,6 +55,7 @@ class TranslateDeleteJob extends Job {
 		$reason = $this->getReason();
 
 		PageTranslationHooks::$allowTargetEdit = true;
+		PageTranslationHooks::$jobQueueRunning = true;
 
 		$error = '';
 		$wikipage = new WikiPage( $title );
@@ -97,6 +98,7 @@ class TranslateDeleteJob extends Job {
 				$page->invalidateCache();
 			}
 			$title->invalidateCache();
+			PageTranslationHooks::$jobQueueRunning = false;
 		}
 
 		return true;
