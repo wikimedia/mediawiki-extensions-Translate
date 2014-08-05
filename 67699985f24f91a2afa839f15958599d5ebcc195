@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_32e37304",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-05T09:56:18Z",
+      "side": 1,
+      "message": "You are calilng function TranslateRenderParserFunction which does not exist, your function is in this class.",
+      "revId": "67699985f24f91a2afa839f15958599d5ebcc195",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_7770dbd8",
         "filename": "TranslateHooks.php",
         "patchSetId": 5
