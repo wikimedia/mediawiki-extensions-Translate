@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_83d7774f",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-05T19:18:28Z",
+      "side": 1,
+      "message": "This actually returns a promise. Please fix docs.",
+      "revId": "0db10b6a42e6cc1202c1332214168d941ef2eefa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
