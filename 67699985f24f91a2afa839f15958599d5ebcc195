@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_c8a7dea2",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-05T17:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_abc1375a",
+      "revId": "67699985f24f91a2afa839f15958599d5ebcc195",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_976d8703",
         "filename": "TranslateHooks.php",
         "patchSetId": 5
@@ -47,6 +65,24 @@
       "writtenOn": "2014-08-05T09:56:18Z",
       "side": 1,
       "message": "You are calilng function TranslateRenderParserFunction which does not exist, your function is in this class.",
+      "revId": "67699985f24f91a2afa839f15958599d5ebcc195",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_a8a25290",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-05T17:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_32e37304",
       "revId": "67699985f24f91a2afa839f15958599d5ebcc195",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
