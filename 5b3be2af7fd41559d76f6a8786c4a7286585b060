@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_51c2765e",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-08-06T13:33:38Z",
+      "side": 1,
+      "message": "\"value\" is a confusing name. This is an element (\"node\"), right?\n\ninnerText is non-standard, has bugs (by design), and is not cross-browser supported. Use node.textContent (if you only support modern browsers) or $(node).text() otherwise.",
+      "revId": "5b3be2af7fd41559d76f6a8786c4a7286585b060",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_71a452b6",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-08-06T13:33:38Z",
+      "side": 1,
+      "message": "Use prop() instead of attr() for \u0027value\u0027. You don\u0027t want to change the attribute of the DOM element in the tree. What you want is to change the live value in the rendered page, use properties for that.\n\nThis currently works due to the jQuery Migrate layer, but this buggy incorrect behaviour has been deprecated and will no longer work in the future when we remove jQuery Migrate, at which point attribute and properties no longer overlap.",
+      "revId": "5b3be2af7fd41559d76f6a8786c4a7286585b060",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
