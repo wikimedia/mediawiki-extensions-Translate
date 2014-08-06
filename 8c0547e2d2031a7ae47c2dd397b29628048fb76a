@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_b445084a",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-06T14:38:07Z",
+      "side": 1,
+      "message": "You should use $(node).text() and similar for trim, so that older browsers are supported.",
+      "revId": "8c0547e2d2031a7ae47c2dd397b29628048fb76a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_94420c3e",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-06T14:38:07Z",
+      "side": 1,
+      "message": "Class is only an attribute, not a property. Also below a few times.",
+      "revId": "8c0547e2d2031a7ae47c2dd397b29628048fb76a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
