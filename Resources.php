@@ -244,6 +244,7 @@ $wgResourceModules['ext.translate.pagepreparation'] = array(
 		'pp-pagename-missing'
 	),
 	'dependencies' => array(
+		'mediawiki.ui',
 		'mediawiki.api',
 		'mediawiki.api.edit',
 		'jquery.mwExtension',
