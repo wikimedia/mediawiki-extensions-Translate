@@ -14,8 +14,11 @@
  * @ingroup PageTranslation
  */
 class PageTranslationHooks {
-	// Uuugly hack
+	// Uuugly hacks
 	public static $allowTargetEdit = false;
+
+	// Check if job queue is running
+	public static $jobQueueRunning = false;
 
 	/**
 	 * Hook: ParserBeforeStrip
@@ -869,5 +872,42 @@ class PageTranslationHooks {
 		}
 
 		return true;
+	}
+
+	/**
+	 * Hook to update source and destination translation pages on moving translation units
+	 * Hook: TitleMoveComplete
+	 * @since 2014.08
+	 */
+	public static function onMoveTranslationUnits( Title &$ot, Title &$nt, User &$user,
+		$oldid, $newid, $reason
+	) {
+		// Do the update only once. In case running by job queue, the update is not done here
+		if ( self::$jobQueueRunning ) {
+			return;
+		}
+
+		$groupLast = null;
+		foreach ( array( $ot, $nt ) as $title ) {
+			$handle = new MessageHandle( $title );
+			if ( !$handle->isValid() ) {
+				continue;
+			}
+
+			$group = $handle->getGroup();
+			if ( !$group instanceof WikiPageMessageGroup ) {
+				continue;
+			}
+
+			$language = $handle->getCode();
+
+			// Update the page only once if source and destination units
+			// belong to the same page
+			if ( $group !== $groupLast ) {
+				$groupLast = $group;
+				$page = TranslatablePage::newFromTitle( $group->getTitle() );
+				self::updateTranslationPage( $page, $language, $user, 0, $reason );
+			}
+		}
 	}
 }

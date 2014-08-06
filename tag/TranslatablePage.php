@@ -250,7 +250,13 @@ class TranslatablePage {
 		$section = str_replace( ' ', '_', $this->displayTitle );
 		$page = $this->getTitle()->getPrefixedDBKey();
 
-		return $this->getMessageGroup()->getMessage( "$page/$section", $code );
+		$group = $this->getMessageGroup();
+		// Sanity check, seems to happen during moves
+		if ( !$group instanceof WikiPageMessageGroup ) {
+			return null;
+		}
+
+		return $group->getMessage( "$page/$section", $code );
 	}
 
 	/**
