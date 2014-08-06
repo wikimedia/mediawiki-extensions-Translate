@@ -33,7 +33,7 @@ class SpecialPagePreparation extends SpecialPage {
 		$out = <<<HTML
 <div class="grid">
 	<form class="mw-tpp-sp-form row" name="mw-tpp-sp-input-form">
-		<input name="title" id="title" class="mw-searchInput"
+		<input name="title" id="title" class="mw-searchInput mw-ui-input"
 			placeholder="{$pagenamePlaceholder}" />
 		<button id="action-prepare" class="mw-ui-button mw-ui-primary" type="button">
 			{$prepareButtonValue}</button>
