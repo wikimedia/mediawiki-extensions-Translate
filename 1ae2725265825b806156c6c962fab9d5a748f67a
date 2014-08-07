@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_1fc2a939",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-08-07T16:23:49Z",
+      "side": 1,
+      "message": "Hm? Do you mean namespace (canonical) name?",
+      "revId": "1ae2725265825b806156c6c962fab9d5a748f67a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_dfbb01b9",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-08-07T16:23:49Z",
+      "side": 1,
+      "message": "Isn\u0027t it better to pass the ID directly to this function? This looks fragile.",
+      "range": {
+        "startLine": 137,
+        "startChar": 2,
+        "endLine": 137,
+        "endChar": 13
+      },
+      "revId": "1ae2725265825b806156c6c962fab9d5a748f67a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
