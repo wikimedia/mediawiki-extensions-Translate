@@ -93,6 +93,24 @@
       "revId": "1ae2725265825b806156c6c962fab9d5a748f67a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_e54cea45",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-08-07T19:08:31Z",
+      "side": 1,
+      "message": "i.e. something like this: https://gerrit.wikimedia.org/r/#/c/149632/9..10/resources/js/ext.translate.pagepreparation.js,cm",
+      "parentUuid": "8e28a382_42ccd466",
+      "revId": "1ae2725265825b806156c6c962fab9d5a748f67a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
