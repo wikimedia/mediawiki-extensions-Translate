@@ -31,7 +31,7 @@ class YamlTests extends Maintenance {
 		$mems = array();
 		$mempeaks = array();
 
-		foreach ( array( 'syck', 'spyc' ) as $driver ) {
+		foreach ( array( 'syck', 'spyc', 'phpyaml' ) as $driver ) {
 			$mempeaks[$driver] = -memory_get_peak_usage( true );
 			$mems[$driver] = -memory_get_usage( true );
 			$times[$driver] = -microtime( true );
@@ -49,6 +49,7 @@ class YamlTests extends Maintenance {
 
 			self::sortNestedArrayAssoc( $documents[$driver] );
 			file_put_contents( "yaml-test-$driver.txt", var_export( $documents[$driver], true ) );
+			file_put_contents( "yaml-output-$driver.txt", TranslateYaml::dump( $documents[$driver] ) );
 		}
 		var_dump( $times );
 		var_dump( $mems );

@@ -73,6 +73,9 @@ class TranslateYaml {
 		global $wgTranslateYamlLibrary;
 
 		switch ( $wgTranslateYamlLibrary ) {
+			case 'phpyaml':
+				return yaml_parse( $text );
+
 			case 'spyc':
 				// Load the bundled version if not otherwise available
 				if ( !class_exists( 'Spyc' ) ) {
@@ -132,6 +135,9 @@ class TranslateYaml {
 		global $wgTranslateYamlLibrary;
 
 		switch ( $wgTranslateYamlLibrary ) {
+			case 'phpyaml':
+				return yaml_emit( $text, YAML_UTF8_ENCODING );
+
 			case 'spyc':
 				require_once __DIR__ . '/../libs/spyc/spyc.php';
 

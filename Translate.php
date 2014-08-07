@@ -552,7 +552,9 @@ $GLOBALS['wgTranslatePHPlotFont'] = '/usr/share/fonts/truetype/ttf-dejavu/DejaVu
 # ==== YAML driver ====
 # <source lang=php>
 /**
- * Currently supported YAML drivers are spyc and syck.
+ * Currently supported YAML drivers are phpyaml, spyc and syck.
+ *
+ * For phpyaml see http://php.net/manual/en/book.yaml.php.
  *
  * For syck we're shelling out to perl. So you need:
  *
@@ -568,6 +570,10 @@ $GLOBALS['wgTranslatePHPlotFont'] = '/usr/share/fonts/truetype/ttf-dejavu/DejaVu
  * For the shell to work, you also need an en.UTF-8 locale installed on your system.
  * add a line "en.UTF-8" to your /etc/locale.gen or uncomment an existing one and run locale-gen
  * if you do not have it already.
+ *
+ * phpyaml is the fastest and based on libyaml so the output should be most
+ * compatible. spyc output format is least compatible. syck is slowest but
+ * almost as good as phpyaml.
  */
 $GLOBALS['wgTranslateYamlLibrary'] = 'spyc';
 
