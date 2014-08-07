@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_02bfeca8",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-07T17:31:27Z",
+      "side": 1,
+      "message": "Oh yes, will replace.",
+      "parentUuid": "8e28a382_1fc2a939",
+      "revId": "1ae2725265825b806156c6c962fab9d5a748f67a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_dfbb01b9",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 9
@@ -36,6 +54,24 @@
         "endLine": 137,
         "endChar": 13
       },
+      "revId": "1ae2725265825b806156c6c962fab9d5a748f67a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_a2b6d8d5",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-07T17:31:27Z",
+      "side": 1,
+      "message": "By \u0027this\u0027, do you mean getNamespaceAliases() or the api call below?",
+      "parentUuid": "8e28a382_dfbb01b9",
       "revId": "1ae2725265825b806156c6c962fab9d5a748f67a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
