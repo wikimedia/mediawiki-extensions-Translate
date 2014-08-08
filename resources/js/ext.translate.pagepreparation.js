@@ -30,7 +30,7 @@
 	function getDiff( pageName, pageContent ) {
 		var api = new mw.Api();
 
-		return api.get( {
+		return api.post( {
 			action:'query',
 			prop: 'revisions',
 			format: 'json',
