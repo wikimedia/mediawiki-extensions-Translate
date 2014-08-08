@@ -16,6 +16,24 @@
       "revId": "238b97c07dd48e5b041eab14857110df1b288685",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_262f9587",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1239
+      },
+      "writtenOn": "2014-08-08T14:48:49Z",
+      "side": 1,
+      "message": "I must admit I didn\u0027t notice it. Though it\u0027s not my mistake, I fixed it in the next patchset.",
+      "parentUuid": "8e28a382_43d3b3d7",
+      "revId": "238b97c07dd48e5b041eab14857110df1b288685",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
