@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_b795f1e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-08T22:22:58Z",
+      "side": 1,
+      "message": "You could shorten this a big, perhaps dropping the word \"function\"",
+      "revId": "cbc4b3ab0edccbb819e5051c363b81cbac8b66c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_779f8907",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-08T22:22:58Z",
+      "side": 1,
+      "message": "\"diff text\" is inaccurate. Call it page source for example.",
+      "revId": "cbc4b3ab0edccbb819e5051c363b81cbac8b66c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_57848db5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-08T22:22:58Z",
+      "side": 1,
+      "message": "Post does have restrictions as well, enforced server side, so this is inaccurate as well. In practical terms we are not going to have so big pages that this would be an issue.",
+      "revId": "cbc4b3ab0edccbb819e5051c363b81cbac8b66c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
