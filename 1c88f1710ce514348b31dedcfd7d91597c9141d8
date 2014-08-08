@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_2bcc0366",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-08T05:02:24Z",
+      "side": 1,
+      "message": "Oh no! That would screw up things! When this line gets executed, \n\naliases \u003d [\u0027Image\u0027, 6]\n\nand thus, the regex would not work as aliasList would be \u0027Image|6\u0027\n\nI think it is better to pass the canonical name of the namespace to that function instead of passing values like \u00276\u0027.  If you disagree, then this line needs to be changed to:\n\naliases.push( \u0027file\u0027 );",
+      "revId": "1c88f1710ce514348b31dedcfd7d91597c9141d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
