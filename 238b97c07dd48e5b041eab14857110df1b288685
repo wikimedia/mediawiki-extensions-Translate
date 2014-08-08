@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_43d3b3d7",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-08T14:16:27Z",
+      "side": 1,
+      "message": "This not swapped?",
+      "revId": "238b97c07dd48e5b041eab14857110df1b288685",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
