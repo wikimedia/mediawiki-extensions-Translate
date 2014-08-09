@@ -1,7 +1,7 @@
 ( function ( $, mw ) {
 	'use strict';
 	var noOfSourceUnits, noOfTranslationUnits,
-		pageName, langCode, sourceUnits = [];
+		pageName = '', langCode = '', sourceUnits = [];
 
 	/**
 	 * Create translation pages using content of right hand side blocks
@@ -411,11 +411,18 @@
 	 * units and displays them.
 	 */
 	function importHandler() {
-		var pageTitle, errorBox = $( '.mw-tpm-sp-error__message' );
-		pageName = $.trim( $( '#title' ).val() );
-		langCode = $.trim( $( '#language' ).val() );
-		pageTitle = pageName + '/' + langCode;
+		var pageTitle, slashPos, errorBox = $( '.mw-tpm-sp-error__message' );
+		pageTitle = $.trim( $( '#title' ).val() );
+		slashPos = pageTitle.lastIndexOf( '/' );
 		errorBox.hide( 'fast' );
+		if ( pageTitle === '' ) {
+			errorBox.text( mw.msg( 'pm-pagetitle-missing' ) ).show( 'fast' );
+			return;
+		}
+		if ( slashPos !== -1 ) {
+			pageName = pageTitle.substring( 0, slashPos );
+			langCode = pageTitle.substring( slashPos + 1 );
+		}
 		if ( pageName === '' ) {
 			errorBox.text( mw.msg( 'pm-pagename-missing' ) ).show( 'fast' );
 			return;
