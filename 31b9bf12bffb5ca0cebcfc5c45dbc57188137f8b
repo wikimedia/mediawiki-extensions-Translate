@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_4d299ce1",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-08-09T08:34:41Z",
+      "side": 1,
+      "message": "Perhaps simpler: \"adjust the translation units... button to save them.\" translations vs. units vs. translation pages vs. (below) translation page vs. translation units can be a bit confusing. :-)",
+      "revId": "31b9bf12bffb5ca0cebcfc5c45dbc57188137f8b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
