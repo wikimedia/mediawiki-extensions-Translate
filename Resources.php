@@ -368,6 +368,7 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 	'styles' => 'resources/css/ext.translate.special.pagemigration.css',
 	'scripts' => 'resources/js/ext.translate.special.pagemigration.js',
 	'dependencies' => array(
+		'mediawiki.ui',
 		'mediawiki.api.edit',
 		'mediawiki.ui.button',
 		'jquery.ajaxdispatcher',
@@ -376,6 +377,7 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 		'pm-page-does-not-exist',
 		'pm-old-translations-missing',
 		'pm-extra-units-warning',
+		'pm-pagetitle-missing',
 		'pm-pagename-missing',
 		'pm-langcode-missing',
 		'pm-add-icon-hover-text',
