@@ -200,7 +200,7 @@
 
 		newUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit row' );
 		sourceUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__source five columns' )
-			.prop( 'readonly', 'readonly' ).val( sourceText );
+			.prop( 'readonly', 'readonly' ).attr( 'tabindex', '-1' ).val( sourceText );
 		targetUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__target five columns' )
 			.val( targetText );
 		actionUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit__actions two columns' );
