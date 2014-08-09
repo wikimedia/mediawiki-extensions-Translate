@@ -16,6 +16,24 @@
       "revId": "7f57c754a67a422ed6cc6cc1447a96855e2708be",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_b284dc5f",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-09T12:33:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_28963e98",
+      "revId": "7f57c754a67a422ed6cc6cc1447a96855e2708be",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
