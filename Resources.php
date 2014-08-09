@@ -372,6 +372,10 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 		'pm-pagetitle-invalid',
 		'pm-pagetitle-missing',
 		'pm-swap-icon-hover-text',
+		'pm-on-import-message-text',
+		'pm-on-save-message-text',
+		'pm-savepages-button-label',
+		'pm-cancel-button-label',
 	),
 ) + $resourcePaths;
 

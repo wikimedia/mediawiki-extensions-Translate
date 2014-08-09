@@ -345,6 +345,7 @@
 			return;
 		} else {
 			$( 'input' ).prop( 'disabled', true );
+			$( '.mw-tpm-sp-instructions' ).hide( 'fast' );
 			for ( i = 0; i < noOfSourceUnits; i++ ) {
 				content = $( '.mw-tpm-sp-unit__target' ).eq( i ).val();
 				content = $.trim( content );
@@ -356,6 +357,7 @@
 			$.ajaxDispatcher( list, 1 ).done( function () {
 				$( '#action-import' ).removeClass( 'hide' );
 				$( 'input' ).prop( 'disabled', false );
+				$( '.mw-tpm-sp-instructions' ).text( mw.msg( 'pm-on-save-message-text' ) ).show('fast');
 			} );
 		}
 	}
@@ -365,6 +367,7 @@
 	 */
 	function cancelHandler() {
 		$( '.mw-tpm-sp-error__message' ).hide( 'fast' );
+		$( '.mw-tpm-sp-instructions' ).hide( 'fast' );
 		$( '#action-save, #action-cancel' ).addClass( 'hide' );
 		$( '#action-import' ).removeClass( 'hide' );
 		$( '.mw-tpm-sp-unit-listing' ).html( '' );
@@ -428,7 +431,8 @@
 	 */
 	function importHandler( e ) {
 		var pageTitle, slashPos, titleObj,
-			errorBox = $( '.mw-tpm-sp-error__message' );
+			errorBox = $( '.mw-tpm-sp-error__message' ),
+			messageBox = $( '.mw-tpm-sp-instructions' );
 
 		e.preventDefault();
 
@@ -439,6 +443,7 @@
 		}
 
 		titleObj = mw.Title.newFromText( pageTitle );
+		messageBox.hide( 'fast' );
 		if ( titleObj === null ) {
 			errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).show( 'fast' );
 			return;
@@ -472,6 +477,7 @@
 				displayUnits( sourceUnits, translationUnits );
 				$( '#action-save, #action-cancel' ).removeClass( 'hide' );
 				$( '#action-import' ).addClass( 'hide' );
+				messageBox.text( mw.msg( 'pm-on-import-message-text' ) ).show('fast');
 			} );
 		} );
 	}
