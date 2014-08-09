@@ -356,6 +356,8 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 	'dependencies' => array(
 		'jquery.ajaxdispatcher',
 		'mediawiki.api',
+		'mediawiki.api.edit',
+		'mediawiki.ui',
 		'mediawiki.ui.button',
 	),
 	'messages' => array(
@@ -367,11 +369,13 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 		'pm-page-does-not-exist',
 		'pm-pagename-missing',
 		'pm-pagetitle-invalid',
+		'pm-pagetitle-missing',
 		'pm-swap-icon-hover-text',
 	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.pagepreparation'] = array(
+	'styles' => 'resources/css/ext.translate.special.pagepreparation.css',
 	'scripts' => 'resources/js/ext.translate.special.pagepreparation.js',
 	'dependencies' => array(
 		'jquery.mwExtension',
