@@ -219,7 +219,7 @@ abstract class ComplexMessages {
 	protected function readVariable( $group, $code ) {
 		$file = $group['file'];
 		if ( !$group['code'] ) {
-			$file = str_replace( self::PLACEHOLDER, str_replace( '-', '_', ucfirst( $code ) ), $file );
+			$file = str_ireplace( self::PLACEHOLDER, str_replace( '-', '_', ucfirst( $code ) ), $file );
 		}
 
 		${$group['var']} = array(); # Initialize
