@@ -329,6 +329,7 @@
 			return;
 		} else {
 			$( 'input' ).attr( 'disabled', 'disabled' );
+			$( '.mw-tpm-sp-messageDiv' ).hide( 'fast' );
 			for ( i = 0; i < noOfSourceUnits; i++ ) {
 				content = $( '.mw-tpm-sp-unit__target' ).eq( i ).val();
 				content = $.trim( content );
@@ -340,6 +341,7 @@
 			$.ajaxDispatcher( list, 1 ).done( function () {
 				$( '#action-import' ).removeClass( 'hide' );
 				$( 'input' ).removeAttr( 'disabled' );
+				$( '.mw-tpm-sp-messageDiv' ).text( mw.msg( 'pm-on-save-message-text' ) ).show('fast');
 			} );
 		}
 	}
@@ -349,6 +351,7 @@
 	 */
 	function cancelHandler() {
 		$( '.mw-tpm-sp-error__message' ).hide( 'fast' );
+		$( '.mw-tpm-sp-messageDiv' ).hide( 'fast' );
 		$( '#action-save, #action-cancel' ).addClass( 'hide' );
 		$( '#action-import' ).removeClass( 'hide' );
 		$( '.mw-tpm-sp-unit-listing' ).html( '' );
@@ -409,7 +412,8 @@
 	 * units and displays them.
 	 */
 	function importHandler() {
-		var pageTitle, titleObj, errorBox = $( '.mw-tpm-sp-error__message' );
+		var pageTitle, titleObj, errorBox = $( '.mw-tpm-sp-error__message' ),
+			messageBox = $( '.mw-tpm-sp-messageDiv' );
 		pageName = $.trim( $( '#title' ).val() );
 		langCode = $.trim( $( '#language' ).val() );
 		pageTitle = pageName + '/' + langCode;
@@ -420,6 +424,7 @@
 			return;
 		}
 		pageTitle = titleObj.getPrefixedDb();
+		messageBox.hide( 'fast' );
 		if ( pageName === '' ) {
 			errorBox.text( mw.msg( 'pm-pagename-missing' ) ).show( 'fast' );
 			return;
@@ -438,6 +443,7 @@
 				displayUnits( sourceUnits, translationUnits );
 				$( '#action-save, #action-cancel').removeClass( 'hide' );
 				$( '#action-import' ).addClass( 'hide' );
+				messageBox.text( mw.msg( 'pm-on-import-message-text' ) ).show('fast');
 			} );
 		} );
 	}

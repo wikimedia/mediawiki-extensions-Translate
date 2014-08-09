@@ -53,6 +53,7 @@ class SpecialPageMigration extends SpecialPage {
 			'class' => 'mw-ui-button mw-ui-quiet hide', 'type' => 'button',
 			'value' => $this->msg( 'pm-cancel-button-label' )->text() ) );
 		$out .= Html::closeElement( 'form' );
+		$out .= Html::element( 'div', array( 'class' => 'mw-tpm-sp-messageDiv hide' ) );
 		$out .= Html::openElement( 'div', array( 'class' => 'mw-tpm-sp-unit-listing' ) );
 		$out .= Html::closeElement( 'div' );
 		$out .= Html::closeElement( 'div' );
