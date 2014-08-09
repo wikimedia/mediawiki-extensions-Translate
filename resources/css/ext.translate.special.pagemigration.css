@@ -5,6 +5,10 @@
 	border: 2px solid gray;
 }
 
+#title {
+	width: 35%;
+}
+
 .mw-tpm-sp-unit__actions {
 	border: 2px solid transparent;
 }

@@ -44,16 +44,18 @@ class SpecialPageMigration extends SpecialPage {
 			'id' => 'mw-tpm-sp-primary-form' ) );
 		$out .= Html::element( 'input', array( 'id' => 'pm-summary', 'type' => 'hidden',
 			'value' => $this->msg( 'pm-summary-import' )->inContentLanguage()->text() ) );
-		$out .= Html::element( 'input', array( 'id' => 'title', 'class' => 'mw-searchInput',
-			'placeholder' => $this->msg( 'pm-pagename-placeholder' )->text() ) );
-		$out .= Html::element( 'input', array( 'id' => 'language', 'type' => 'text',
-			'placeholder' => $this->msg( 'pm-langcode-placeholder' )->text() ) );
+		$out .= "\n";
+		$out .= Html::element( 'input', array( 'id' => 'title', 'class' => 'mw-searchInput mw-ui-input',
+			'placeholder' => $this->msg( 'pm-pagetitle-placeholder' )->text() ) );
+		$out .= "\n";
 		$out .= Html::element( 'input', array( 'id' => 'action-import',
 			'class' => 'mw-ui-button mw-ui-primary', 'type' => 'button',
 			'value' => $this->msg( 'pm-import-button-label' )->text() ) );
+		$out .= "\n";
 		$out .= Html::element( 'input', array( 'id' => 'action-save',
 			'class' => 'mw-ui-button mw-ui-constructive hide', 'type' => 'button',
 			'value' => $this->msg( 'pm-savepages-button-label' )->text() ) );
+		$out .= "\n";
 		$out .= Html::element( 'input', array( 'id' => 'action-cancel',
 			'class' => 'mw-ui-button mw-ui-quiet hide', 'type' => 'button',
 			'value' => $this->msg( 'pm-cancel-button-label' )->text() ) );
