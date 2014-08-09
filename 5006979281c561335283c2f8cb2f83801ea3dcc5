@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_d57072db",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-08-09T16:10:47Z",
+      "side": 1,
+      "message": "This is unnecessarily complicated. Just use the fragment after last /, as in SpecialMyLanguage::findTitle.",
+      "revId": "5006979281c561335283c2f8cb2f83801ea3dcc5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
