@@ -178,6 +178,8 @@
     "pm-add-icon-hover-text": "Add a unit below",
     "pm-swap-icon-hover-text": "Swap with unit below",
     "pm-delete-icon-hover-text": "Delete unit",
+    "pm-on-import-message-text": "The translations have been imported. Use the features provided to adjust the units and click the \"{{int:pm-savepages-button-label}}\" button to create the translation pages. Click the \"{{int:pm-cancel-button-label}}\" button to discard.",
+    "pm-on-save-message-text": "The translation units have been saved; you can now enter the title of a new translation page to migrate it, or do some changes to the units below and save a new revision.",
     "tpt-translate-title": "Allow translation of page title",
     "pp-save-summary": "Prepared the page for translation",
     "pagepreparation": "Prepare page for translation",
