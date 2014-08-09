@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_f274a498",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-09T12:26:02Z",
+      "side": 1,
+      "message": "replacing with \"use the add, swap and delete options to adjust....\"",
+      "parentUuid": "8e28a382_cde90c80",
+      "revId": "e8942abce9c5777af9c52b5687ea85222823e474",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_adeec084",
         "filename": "i18n/pagetranslation/en.json",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-09T09:17:07Z",
       "side": 1,
       "message": "* The semi-colon can be a period. you should then be changed to You.\n* Do some changes -\u003e Make changes",
+      "revId": "e8942abce9c5777af9c52b5687ea85222823e474",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_d269a8bd",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-09T12:26:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_adeec084",
       "revId": "e8942abce9c5777af9c52b5687ea85222823e474",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
