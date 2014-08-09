@@ -16,6 +16,24 @@
       "revId": "6fa0fb489744104a8cbb5924fe0cc40d1911615c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_325a2c23",
+        "filename": "resources/images/switch.svg",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-09T12:28:29Z",
+      "side": 0,
+      "message": "Yes, I had edited it in Inkscape and resubmited it.",
+      "parentUuid": "8e28a382_ad2000a9",
+      "revId": "6fa0fb489744104a8cbb5924fe0cc40d1911615c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
