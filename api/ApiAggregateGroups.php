@@ -191,7 +191,14 @@ class ApiAggregateGroups extends ApiBase {
 	}
 
 	public function needsToken() {
-		return true;
+		return 'csrf';
+	}
+
+	// This function maintains backwards compatibility with self::getToken()
+	// below. If salt is removed from self::getToken() and nothing else (e.g.
+	// JS) generates the token directly, this could probably be removed.
+	protected function getWebUITokenSalt( array $params ) {
+		return self::$salt;
 	}
 
 	public function getAllowedParams() {
@@ -264,6 +271,8 @@ class ApiAggregateGroups extends ApiBase {
 		return $pages;
 	}
 
+	// These two functions implement pre-1.24 token fetching via the
+	// ApiTokensGetTokenTypes hook, kept for backwards compatibility.
 	public static function getToken() {
 		$user = RequestContext::getMain()->getUser();
 		if ( !$user->isAllowed( self::$right ) ) {

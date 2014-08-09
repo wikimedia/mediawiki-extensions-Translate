@@ -116,7 +116,7 @@ class ApiHardMessages extends ApiBase {
 	}
 
 	public function needsToken() {
-		return true;
+		return 'csrf';
 	}
 
 	public function getAllowedParams() {
@@ -161,6 +161,8 @@ class ApiHardMessages extends ApiBase {
 		);
 	}
 
+	// These two functions implement pre-1.24 token fetching via the
+	// ApiTokensGetTokenTypes hook, kept for backwards compatibility.
 	public static function getToken() {
 		$user = RequestContext::getMain()->getUser();
 		if ( !$user->isAllowed( self::$right ) ) {
