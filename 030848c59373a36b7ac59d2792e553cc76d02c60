@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_d552b215",
+        "filename": "specials/SpecialPageMigration.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-09T14:37:45Z",
+      "side": 1,
+      "message": "Can\u0027t you use Html::element()? Would make the line below obsolete.",
+      "revId": "030848c59373a36b7ac59d2792e553cc76d02c60",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
