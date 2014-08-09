@@ -39,10 +39,8 @@ class SpecialPageMigration extends SpecialPage {
 			'id' => 'mw-tpm-sp-primary-form' ) );
 		$out .= Html::element( 'input', array( 'id' => 'pm-summary', 'type' => 'hidden',
 			'value' => $this->msg( 'pm-summary-import' )->inContentLanguage()->text() ) );
-		$out .= Html::element( 'input', array( 'id' => 'title', 'class' => 'mw-searchInput',
-			'placeholder' => $this->msg( 'pm-pagename-placeholder' )->text() ) );
-		$out .= Html::element( 'input', array( 'id' => 'language', 'type' => 'text',
-			'placeholder' => $this->msg( 'pm-langcode-placeholder' )->text() ) );
+		$out .= Html::element( 'input', array( 'id' => 'title', 'class' => 'mw-searchInput mw-ui-input',
+			'placeholder' => $this->msg( 'pm-pagetitle-placeholder' )->text() ) );
 		$out .= Html::element( 'input', array( 'id' => 'action-import',
 			'class' => 'mw-ui-button mw-ui-primary', 'type' => 'button',
 			'value' => $this->msg( 'pm-import-button-label' )->text() ) );
