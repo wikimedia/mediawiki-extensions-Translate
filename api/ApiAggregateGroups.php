@@ -191,7 +191,11 @@ class ApiAggregateGroups extends ApiBase {
 	}
 
 	public function needsToken() {
-		return true;
+		return 'csrf';
+	}
+
+	protected function getWebUITokenSalt( array $params ) {
+		return self::$salt;
 	}
 
 	public function getAllowedParams() {
