@@ -84,6 +84,7 @@
 	"tpt-aggregategroup-new-description": "Kuvaus (vapaaehtoinen):",
 	"tpt-aggregategroup-remove-confirm": "Haluatko varmasti poistaa tämän kokoelmaryhmän?",
 	"tpt-aggregategroup-invalid-group": "Ryhmää ei ole",
+	"tpt-invalid-group": "Virheellinen ryhmä",
 	"pt-parse-open": "Sulkematon &lt;translate>-tägi.\nKäännöspohja: <pre>$1</pre>",
 	"pt-parse-close": "Avaamaton &lt;/translate>-tägi.\nKäännöspohja: <pre>$1</pre>",
 	"pt-parse-nested": "Sisäkkäiset &lt;translate>-tägit eivät ole sallittuja.\nKäännettävä teksti: <pre>$1</pre>",

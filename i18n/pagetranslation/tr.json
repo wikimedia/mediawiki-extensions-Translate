@@ -50,6 +50,7 @@
 	"tpt-aggregategroup-save": "Kaydet",
 	"tpt-aggregategroup-new-name": "Ad:",
 	"tpt-aggregategroup-new-description": "Açıklama (isteğe bağlı):",
+	"tpt-invalid-group": "Geçersiz grup",
 	"pt-movepage-list-other": "Diğer alt {{PLURAL:$1|sayfalar|sayfalar}}",
 	"pt-movepage-current": "Geçerli adı:",
 	"pt-movepage-new": "Yeni adı:",

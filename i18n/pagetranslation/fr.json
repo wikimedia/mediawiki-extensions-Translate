@@ -106,6 +106,7 @@
 	"tpt-aggregategroup-edit-description": "Description :",
 	"tpt-aggregategroup-update": "Enregistrer",
 	"tpt-aggregategroup-update-cancel": "Annuler",
+	"tpt-invalid-group": "Groupe non valide",
 	"pt-parse-open": "Balise &lt;translate> asymétrique.\nModèle de traduction : <pre>$1</pre>",
 	"pt-parse-close": "Balise &lt;/translate> asymétrique.\nModèle de traduction : <pre>$1</pre>",
 	"pt-parse-nested": "Les sections &lt;translate> imbriquées ne sont pas autorisées.\nTexte de la balise : <pre>$1</pre>",

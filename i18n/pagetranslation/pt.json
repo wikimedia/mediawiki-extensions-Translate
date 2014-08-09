@@ -97,6 +97,7 @@
 	"tpt-aggregategroup-edit-description": "Descrição:",
 	"tpt-aggregategroup-update": "Gravar",
 	"tpt-aggregategroup-update-cancel": "Cancelar",
+	"tpt-invalid-group": "Grupo inválido",
 	"pt-parse-open": "O elemento &lt;translate> está desequilibrado.\nModelo de tradução: <pre>$1</pre>",
 	"pt-parse-close": "O elemento &lt;/translate> está desequilibrado.\nModelo de tradução: <pre>$1</pre>",
 	"pt-parse-nested": "Não são permitidas unidades de tradução &lt;translate> intercaladas.\nTexto do elemento: <pre>$1</pre>",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ashok modhvadia",
-			"Dsvyas"
+			"Dsvyas",
+			"KartikMistry"
 		]
 	},
 	"pagetranslation": "પાનું ભાષાંતરણ",
@@ -30,5 +31,6 @@
 	"tpt-old-pages": "{{PLURAL:$1|આ પાના|આ પાનાં}}નાં કેટલાક સંસ્કરણ ભાષાંતર માટે ચિહ્નિત કરાયેલા છે.",
 	"translate-tag-translate-link-desc": "આ પાનાનું ભાષાંતર કરો",
 	"translate-tag-markthis": "આ પાનાંને ભાષાંતર માટે ચિહ્નિત કરો",
-	"tpt-languages-legend": "અન્ય ભાષાઓ:"
+	"tpt-languages-legend": "અન્ય ભાષાઓ:",
+	"tpt-invalid-group": "અયોગ્ય સમૂહ"
 }

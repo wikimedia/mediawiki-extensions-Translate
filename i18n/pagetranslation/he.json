@@ -93,6 +93,7 @@
 	"tpt-aggregategroup-edit-description": "תיאור:",
 	"tpt-aggregategroup-update": "שמירה",
 	"tpt-aggregategroup-update-cancel": "ביטול",
+	"tpt-invalid-group": "קבוצה בלתי־תקינה",
 	"pt-parse-open": "תג &lt;translate> לא מאוזן.\nתבנית תרגום: <pre>$1</pre>",
 	"pt-parse-close": "תג &lt;/translate> לא מאוזן.\nתבנית תרגום: <pre>$1</pre>",
 	"pt-parse-nested": "קטעי &lt;translate> מקוננים אינם מורשים.\nתוכן התג: <pre>$1</pre>",

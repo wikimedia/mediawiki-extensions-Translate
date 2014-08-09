@@ -96,6 +96,7 @@
 	"tpt-aggregategroup-edit-description": "Descrizione:",
 	"tpt-aggregategroup-update": "Salva",
 	"tpt-aggregategroup-update-cancel": "Annulla",
+	"tpt-invalid-group": "Gruppo non valido",
 	"pt-parse-open": "Marcatore &lt;translate> sbilanciato.\nStruttura della traduzione: <pre>$1</pre>",
 	"pt-parse-close": "Marcatore &lt;/translate> sbilanciato.\nStruttura della traduzione: <pre>$1</pre>",
 	"pt-parse-nested": "Non sono ammessi elementi di traduzione &lt;translate> nidificati.\nTesto del marcatore: <pre>$1</pre>",

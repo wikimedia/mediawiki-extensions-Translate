@@ -98,6 +98,7 @@
 	"tpt-aggregategroup-edit-description": "Beskrivning:",
 	"tpt-aggregategroup-update": "Spara",
 	"tpt-aggregategroup-update-cancel": "Avbryt",
+	"tpt-invalid-group": "Ogiltig grupp",
 	"pt-parse-open": "Obalanserad &lt;translate>-tagg.\nÖversättningsmall: <pre>$1</pre>",
 	"pt-parse-close": "Obalanserad &lt;/translate>-tagg.\nÖversättningsmall: <pre>$1</pre>",
 	"pt-parse-nested": "Inbäddade &lt;translate>-översättningsenheter är inte tillåtna.\nTaggtext: <pre>$1</pre>",

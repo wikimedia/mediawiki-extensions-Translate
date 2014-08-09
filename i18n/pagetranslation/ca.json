@@ -69,5 +69,7 @@
 	"pm-cancel-button-label": "Cancel·la",
 	"pm-pagename-placeholder": "Introduïu el nom de la pàgina",
 	"pm-langcode-placeholder": "Codi d’idioma",
-	"pm-langcode-missing": "Introduïu el codi de l’idioma"
+	"pm-langcode-missing": "Introduïu el codi de l’idioma",
+	"pp-save-button-label": "Desa",
+	"pp-pagename-missing": "Introduïu el nom de la pàgina."
 }

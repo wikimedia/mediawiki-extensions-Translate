@@ -352,7 +352,7 @@
 	"tux-editor-outdated-warning-diff-link": "Näytä muutokset",
 	"tux-editor-doc-editor-placeholder": "Ohjeistus",
 	"tux-editor-doc-editor-save": "Tallenna ohjeistus",
-	"tux-editor-doc-editor-cancel": "Peru",
+	"tux-editor-doc-editor-cancel": "Peruuta",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|viesti|viestiä}} lisää",
 	"tux-messagetable-loading-messages": "Ladataan {{PLURAL:$1|viestiä|viestejä}}...",
 	"tux-message-filter-placeholder": "Hae listasta",

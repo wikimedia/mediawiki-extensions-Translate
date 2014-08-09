@@ -99,6 +99,7 @@
 	"tpt-aggregategroup-edit-description": "Opis:",
 	"tpt-aggregategroup-update": "Zapisz",
 	"tpt-aggregategroup-update-cancel": "Anuluj",
+	"tpt-invalid-group": "Nieprawidłowa grupa",
 	"pt-parse-open": "Niezrównoważony znacznik &lt;translate>.\nSzablon tłumaczenia – <pre>$1</pre>",
 	"pt-parse-close": "Niezrównoważony znacznik &lt;/translate>.\nSzablon tłumaczenia – <pre>$1</pre>",
 	"pt-parse-nested": "Zagnieżdżanie jednostek tłumaczenia &lt;translate> nie jest dopuszczalne.\nTekst znacznika: <pre>$1</pre>",

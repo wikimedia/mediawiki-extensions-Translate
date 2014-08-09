@@ -102,6 +102,7 @@
 	"tpt-aggregategroup-edit-description": "Описание:",
 	"tpt-aggregategroup-update": "Сохранить",
 	"tpt-aggregategroup-update-cancel": "Отмена",
+	"tpt-invalid-group": "Недопустимая группа",
 	"pt-parse-open": "Несбалансированный тег &lt;translate>.\nШаблон перевода: <pre>$1</pre>",
 	"pt-parse-close": "Несбалансированный тег &lt;translate>.\nШаблон перевода: <pre>$1</pre>",
 	"pt-parse-nested": "Недопустимы вложенные разделы &lt;translate>.\nТекст тега: <pre>$1</pre>",

@@ -46,5 +46,7 @@
 	"pm-savepages-button-label": "Sačuvaj",
 	"pm-cancel-button-label": "Otkaži",
 	"pm-pagename-placeholder": "Unesite naziv stranice",
-	"pm-langcode-placeholder": "Kod jezika"
+	"pm-langcode-placeholder": "Kod jezika",
+	"pp-pagename-placeholder": "Unesite naziv stranice",
+	"pp-save-button-label": "Sačuvaj"
 }

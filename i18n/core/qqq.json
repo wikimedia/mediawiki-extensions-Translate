@@ -231,7 +231,7 @@
 	"translate-manage-import-summary": "Used as edit summary.",
 	"translate-manage-submit": "Used in the group management interface.\n{{doc-screenshot|Manage-3.png|twn}}\n{{Identical|Execute}}",
 	"translate-manage-intro-other": "[[File:Manage-2.png|150px|right|Group management interface]]\nIntroduction to special page. See screenshot. Parameters:\n* $1 is a language name.",
-	"translate-manage-import-ok": "Message given when a translation has been imported on SpeciaL:ImportTranslations. Parameters:\n* $1 is the target page name for the translation.",
+	"translate-manage-import-ok": "Message given when a translation has been imported on Special:ImportTranslations. Parameters:\n* $1 is the target page name for the translation.",
 	"translate-manage-import-done": "Message given when actions on SpeciaL:ImportTranslations have completed.",
 	"importtranslations": "{{doc-special|ImportTranslations}}\n{{doc-screenshot|Import-1.png|twn}}",
 	"translate-import-from-local": "Used in [[Special:ImportTranslations]]. {{doc-screenshot|Import-1.png|twn}}",

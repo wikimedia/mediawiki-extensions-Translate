@@ -90,6 +90,7 @@
 	"tpt-aggregategroup-edit-description": "Опис:",
 	"tpt-aggregategroup-update": "Зачувај",
 	"tpt-aggregategroup-update-cancel": "Откажи",
+	"tpt-invalid-group": "Неважечка група",
 	"pt-parse-open": "Неврамнотежена &lt;translate> ознака.\nШаблон за преводот: <pre>$1</pre>",
 	"pt-parse-close": "Неврамнотежена &lt;/translate> ознака.\nШаблон за преводот: <pre>$1</pre>",
 	"pt-parse-nested": "Не се дозволени гвнездени &lt;translate> преводни единици.\nТекст на ознаката: <pre>$1</pre>",

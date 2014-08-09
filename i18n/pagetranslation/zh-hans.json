@@ -108,6 +108,7 @@
 	"tpt-aggregategroup-edit-description": "说明：",
 	"tpt-aggregategroup-update": "保存",
 	"tpt-aggregategroup-update-cancel": "取消",
+	"tpt-invalid-group": "无效组",
 	"pt-parse-open": "&lt;translate>标签不平衡。\n翻译模板：<pre>$1</pre>",
 	"pt-parse-close": "&lt;/translate>标签不平衡。\n翻译模板：<pre>$1</pre>",
 	"pt-parse-nested": "不允许嵌套&lt;translate>翻译单元。\n标签文本：$1",
