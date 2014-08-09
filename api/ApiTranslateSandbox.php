@@ -187,11 +187,17 @@ class ApiTranslateSandbox extends ApiBase {
 		return true;
 	}
 
+	// There is some 1.24 backwards compatibility code in this and the
+	// following two functions.
 	public function needsToken() {
-		return true;
+		return 'csrf';
 	}
 
 	public function getTokenSalt() {
+		return 'sandbox';
+	}
+
+	protected function getWebUITokenSalt( array $params ) {
 		return 'sandbox';
 	}
 

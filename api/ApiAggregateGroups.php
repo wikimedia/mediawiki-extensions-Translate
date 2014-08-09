@@ -190,8 +190,14 @@ class ApiAggregateGroups extends ApiBase {
 		return self::$salt;
 	}
 
+	// There is some 1.24 backwards compatibility code in this and the
+	// following function.
 	public function needsToken() {
-		return true;
+		return 'csrf';
+	}
+
+	protected function getWebUITokenSalt( array $params ) {
+		return self::$salt;
 	}
 
 	public function getAllowedParams() {

@@ -115,8 +115,9 @@ class ApiHardMessages extends ApiBase {
 		return true;
 	}
 
+	// There is some 1.24 backwards compatibility code in this function.
 	public function needsToken() {
-		return true;
+		return 'csrf';
 	}
 
 	public function getAllowedParams() {
