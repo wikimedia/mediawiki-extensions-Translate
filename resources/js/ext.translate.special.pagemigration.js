@@ -23,6 +23,7 @@
 			deferred = api.postWithEditToken( {
 				action: 'edit',
 				format: 'json',
+				watchlist: 'nochange',
 				title: title,
 				text: content,
 				summary: summary,
