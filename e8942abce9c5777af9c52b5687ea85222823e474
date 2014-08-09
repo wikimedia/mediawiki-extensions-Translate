@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_cde90c80",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-09T09:17:07Z",
+      "side": 1,
+      "message": "\"use the features provided\" is pretty vague language. I\u0027d advise to revise this sentence and be as concise and precise as possible.",
+      "revId": "e8942abce9c5777af9c52b5687ea85222823e474",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_adeec084",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-09T09:17:07Z",
+      "side": 1,
+      "message": "* The semi-colon can be a period. you should then be changed to You.\n* Do some changes -\u003e Make changes",
+      "revId": "e8942abce9c5777af9c52b5687ea85222823e474",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
