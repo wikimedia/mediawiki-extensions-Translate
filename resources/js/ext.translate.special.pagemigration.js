@@ -427,8 +427,8 @@
 			.then( function ( sourceUnits, fuzzyTimestamp ) {
 			noOfSourceUnits = sourceUnits.length;
 			splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
-				var translationUnits = splitHeaders( translations );
-				translationUnits = alignHeaders( sourceUnits, translationUnits );
+				var translationUnits = alignHeaders( sourceUnits, translations );
+				translationUnits = splitHeaders( translationUnits );
 				noOfTranslationUnits = translationUnits.length;
 				displayUnits( sourceUnits, translationUnits );
 				$( '#action-save, #action-cancel').removeClass( 'hide' );
