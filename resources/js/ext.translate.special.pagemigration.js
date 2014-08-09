@@ -1,7 +1,7 @@
 ( function ( $, mw ) {
 	'use strict';
 	var noOfSourceUnits, noOfTranslationUnits,
-		pageName, langCode, sourceUnits = [];
+		pageName = '', langCode = '', sourceUnits = [];
 
 	/**
 	 * Create translation pages using content of right hand side blocks
@@ -409,17 +409,30 @@
 	 * units and displays them.
 	 */
 	function importHandler() {
-		var pageTitle, titleObj, errorBox = $( '.mw-tpm-sp-error__message' );
-		pageName = $.trim( $( '#title' ).val() );
-		langCode = $.trim( $( '#language' ).val() );
-		pageTitle = pageName + '/' + langCode;
-		errorBox.hide( 'fast' );
+		var pageTitle, slashPos, titleObj, errorBox = $( '.mw-tpm-sp-error__message' );
+
+		pageTitle = $.trim( $( '#title' ).val() );
 		titleObj = mw.Title.newFromText( pageTitle );
 		if ( titleObj === null ) {
 			errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).show( 'fast' );
 			return;
 		}
 		pageTitle = titleObj.getPrefixedDb();
+		slashPos = pageTitle.lastIndexOf( '/' );
+		errorBox.hide( 'fast' );
+
+		if ( pageTitle === '' ) {
+			errorBox.text( mw.msg( 'pm-pagetitle-missing' ) ).show( 'fast' );
+			return;
+		}
+		if ( slashPos !== -1 ) {
+			pageName = pageTitle.substring( 0, slashPos );
+			langCode = pageTitle.substring( slashPos + 1 );
+		}
+		else {
+			errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).show( 'fast' );
+			return;
+		}
 		if ( pageName === '' ) {
 			errorBox.text( mw.msg( 'pm-pagename-missing' ) ).show( 'fast' );
 			return;

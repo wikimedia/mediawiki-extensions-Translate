@@ -5,6 +5,16 @@
 	border: 2px solid gray;
 }
 
+#title {
+	width: 35%;
+}
+
+#action-import,
+#action-save,
+#action-cancel {
+	margin-left: 1%;
+}
+
 .mw-tpm-sp-unit__actions {
 	border: 2px solid transparent;
 }
