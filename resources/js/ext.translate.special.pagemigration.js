@@ -411,10 +411,12 @@
 	 * units and displays them.
 	 */
 	function importHandler() {
-		var pageTitle, errorBox = $( '.mw-tpm-sp-error__message' );
+		var pageTitle, titleObj, errorBox = $( '.mw-tpm-sp-error__message' );
 		pageName = $.trim( $( '#title' ).val() );
 		langCode = $.trim( $( '#language' ).val() );
 		pageTitle = pageName + '/' + langCode;
+		titleObj = new mw.Title( pageTitle );
+		pageTitle = titleObj.getPrefixedDb();
 		errorBox.hide( 'fast' );
 		if ( pageName === '' ) {
 			errorBox.text( mw.msg( 'pm-pagename-missing' ) ).show( 'fast' );
