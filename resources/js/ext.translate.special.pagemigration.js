@@ -411,11 +411,17 @@
 	 * units and displays them.
 	 */
 	function importHandler() {
-		var pageTitle, errorBox = $( '.mw-tpm-sp-error__message' );
+		var pageTitle, titleObj, errorBox = $( '.mw-tpm-sp-error__message' );
 		pageName = $.trim( $( '#title' ).val() );
 		langCode = $.trim( $( '#language' ).val() );
 		pageTitle = pageName + '/' + langCode;
 		errorBox.hide( 'fast' );
+		titleObj = mw.Title.newFromText( pageTitle );
+		if ( titleObj === null ) {
+			errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).show( 'fast' );
+			return;
+		}
+		pageTitle = titleObj.getPrefixedDb();
 		if ( pageName === '' ) {
 			errorBox.text( mw.msg( 'pm-pagename-missing' ) ).show( 'fast' );
 			return;

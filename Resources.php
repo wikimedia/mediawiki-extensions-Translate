@@ -380,7 +380,8 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 		'pm-langcode-missing',
 		'pm-add-icon-hover-text',
 		'pm-swap-icon-hover-text',
-		'pm-delete-icon-hover-text'
+		'pm-delete-icon-hover-text',
+		'pm-pagetitle-invalid'
 	),
 ) + $resourcePaths;
 
