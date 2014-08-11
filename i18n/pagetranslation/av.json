@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gazimagomedov"
+		]
+	},
+	"tpt-invalid-group": "Данде кколареб къокъа",
+	"pp-prepare-button-label": "ХIадурабизе",
+	"pp-save-button-label": "ЦIунизе",
+	"pp-diff-old-header": "Бахчараб текст",
+	"pp-diff-new-header": "ХIадурараб текст"
+}

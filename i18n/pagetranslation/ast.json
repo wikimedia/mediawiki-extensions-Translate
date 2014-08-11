@@ -62,6 +62,7 @@
 	"tpt-translation-intro": "Esta páxina ye una <span class=\"plainlinks\">[$1 versión traducida]</span> de la páxina [[$2]] y la traducción ta completada nún $3%.",
 	"tpt-languages-legend": "Otres llingües:",
 	"tpt-languages-zero": "Principiar la traducción nesta llingua",
+	"tpt-languages-nonzero": "$1 ($2% traducío)",
 	"tpt-tab-translate": "Traducir",
 	"tpt-target-page": "Esta páxina nun se pue anovar manualmente.\nEsta páxina ye una traducción de la páxina [[$1]] y la traducción pue anovase usando [$2 la ferramienta de traducción].",
 	"tpt-unknown-page": "Esti espaciu de nomes ta acutáu pa les traducciones de les páxines de conteníu.\nLa páxina que tas intentando editar paez que nun correspuende con denguna páxina marcada pa traducir.",
@@ -88,6 +89,7 @@
 	"tpt-aggregategroup-edit-description": "Descripción:",
 	"tpt-aggregategroup-update": "Guardar",
 	"tpt-aggregategroup-update-cancel": "Encaboxar",
+	"tpt-invalid-group": "Grupu inválidu",
 	"pt-parse-open": "Etiqueta &lt;translate> desequilibrada.\nPlantía de traducción: <pre>$1</pre>",
 	"pt-parse-close": "Etiqueta &lt;/translate> desequilibrada.\nPlantía de traducción: <pre>$1</pre>",
 	"pt-parse-nested": "Nun se permiten unidaes de traducción &lt;translate> añeraes.\nTestu de la etiqueta: <pre>$1</pre>",
@@ -175,5 +177,16 @@
 	"pm-add-icon-hover-text": "Amiesta una unidá abaxo",
 	"pm-swap-icon-hover-text": "Cambiar cola unidá d'abaxo",
 	"pm-delete-icon-hover-text": "Desaniciar unidá",
-	"tpt-translate-title": "Permitir traducir el títulu de la páxina"
+	"tpt-translate-title": "Permitir traducir el títulu de la páxina",
+	"pp-save-summary": "Preparada la páxina pa traducción",
+	"pagepreparation": "Preparar la páxina pa traducción",
+	"pp-pagename-placeholder": "Escribi'l nome de la páxina",
+	"pp-prepare-button-label": "Preparar",
+	"pp-save-button-label": "Guardar",
+	"pp-save-message": "Guardóse la páxina. Pues [$1 editala].",
+	"pp-prepare-message": "Preparóse la páxina pa traducción. Mira les diferencies más abaxo. ¡Fai clic nel botón «{{int:pp-save-button-label}}» si ta correuto!",
+	"pp-already-prepared-message": "Paez que la páxina yá se preparó pa traducir. Nun hai cambios comparando cola versión anterior.",
+	"pp-pagename-missing": "Escribi'l nome de la páxina",
+	"pp-diff-old-header": "Testu fonte",
+	"pp-diff-new-header": "Testu preparáu"
 }

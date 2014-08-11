@@ -185,7 +185,7 @@
 	"supportedlanguages": "Llingües sofitaes",
 	"supportedlanguages-summary": "Esta páxina amuesa la llista de toles llingües que sofita {{SITENAME}}, xunto colos nomes de los traductores que trabayen nelles.\nCuantes más traducciones tenga feches un traductor, más grande apaecerá'l so nome.\nEl color del solliniáu indica'l tiempu que fai dende qu'un traductor tuvo activu equí.",
 	"supportedlanguages-colorlegend": "Lleenda del color: Cabera traducción hai $1 díes.",
-	"supportedlanguages-translators": "{{PLURAL:$2|Traductor|Traductores}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Traductor|Traductora}}|Traductores}}: $1",
 	"supportedlanguages-recenttranslations": "traducciones recientes",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|llingua|llingües}} en total.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edición|ediciones}}; cabera edición hai $3 {{PLURAL:$3|día|díes}}",
