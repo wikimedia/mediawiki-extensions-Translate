@@ -16,6 +16,24 @@
       "revId": "38252a891d1d5359a643b0fe66bab4395d6995ed",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_e82ca847",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-11T19:44:12Z",
+      "side": 1,
+      "message": "Sure, used \u003csamp\u003e.",
+      "parentUuid": "8e28a382_bc3caa8f",
+      "revId": "38252a891d1d5359a643b0fe66bab4395d6995ed",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
