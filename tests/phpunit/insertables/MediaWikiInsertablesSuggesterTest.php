@@ -26,6 +26,10 @@ class MediaWikiInsertablesSuggesterTest extends MediaWikiTestCase {
 				new Insertable( '$1', '$1', '' ),
 				new Insertable( 'GENDER:$1', '{{GENDER:$1|', '}}' ),
 			) ),
+			// Parameterless gender
+			array( '{{GENDER:|he|she}}', array(
+				new Insertable( 'GENDER:', '{{GENDER:|', '}}' ),
+			) ),
 		);
 	}
 }
