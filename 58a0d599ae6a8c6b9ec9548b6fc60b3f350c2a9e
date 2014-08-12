@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_608c4c3b",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-12T08:13:49Z",
+      "side": 1,
+      "message": "This will throw JS exception if the given input is not valid title. Use mw.Title.newFromText and check the return value.",
+      "revId": "58a0d599ae6a8c6b9ec9548b6fc60b3f350c2a9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
