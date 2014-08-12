@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_29e4efa2",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-12T17:47:22Z",
+      "side": 1,
+      "message": "Unescaped messages are not okay. You need to find another way like not using tags or using parameters.",
+      "revId": "f806e82379e69d464eb3b3c4fbdc91458ebfec3c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_e9fdc739",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-12T17:47:22Z",
+      "side": 1,
+      "message": "Why not in css file?",
+      "revId": "f806e82379e69d464eb3b3c4fbdc91458ebfec3c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
