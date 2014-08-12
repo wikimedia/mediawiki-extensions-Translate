@@ -31,6 +31,7 @@
 	"translate-group-desc-mediawiki-core-branch": "Komunikaty stabilnej wersji oprogramowania [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mediawikicore": "Grupa zawiera komunikaty wykorzystywane w bieżącej wersji alfa MediaWiki ({{CURRENTVERSION}})",
 	"translate-group-desc-mediawikiextensions": "Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń do MediaWiki",
+	"translate-group-desc-mediawikiskins": "Grupa komunikatów Meta zawierająca wszystkie komunikaty dla skórek obsługiwanych w [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mediawikimostused": "Ta grupa komunikatów zawiera [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 najczęściej używanych komunikatów] w [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mifos": "[[Translating:Mifos|Mifos]] jest systemem zarządzania informacją dla mikrofinansów",
 	"translate-group-desc-nocc": "[http://nocc.sourceforge.net NOCC] jest internetowym klientem poczty napisanym w PHP. Prosimy o zgłaszanie wszelkich problemów [[Support|obsłudze]].",
