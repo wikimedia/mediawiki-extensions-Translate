@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_f4b0fed9",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-12T19:25:28Z",
+      "side": 1,
+      "message": "This gets rendered properly as I am using .html on errorBox.",
+      "parentUuid": "8e28a382_29e4efa2",
+      "revId": "f806e82379e69d464eb3b3c4fbdc91458ebfec3c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_e9fdc739",
         "filename": "specials/SpecialPagePreparation.php",
         "patchSetId": 3
