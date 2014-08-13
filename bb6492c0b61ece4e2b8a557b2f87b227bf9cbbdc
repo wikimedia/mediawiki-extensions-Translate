@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_7b6756b5",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-13T18:26:30Z",
+      "side": 1,
+      "message": "Double space",
+      "revId": "bb6492c0b61ece4e2b8a557b2f87b227bf9cbbdc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_3b28ae31",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-13T18:26:30Z",
+      "side": 1,
+      "message": "Oh and you can replate these two lines with Language::isKnownLanguageTag().",
+      "revId": "bb6492c0b61ece4e2b8a557b2f87b227bf9cbbdc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_bb1b7e20",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-13T18:26:30Z",
+      "side": 1,
+      "message": "Single quotes preferred.",
+      "revId": "bb6492c0b61ece4e2b8a557b2f87b227bf9cbbdc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
