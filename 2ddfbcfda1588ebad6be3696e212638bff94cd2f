@@ -16,6 +16,40 @@
       "revId": "2ddfbcfda1588ebad6be3696e212638bff94cd2f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_e0d151d1",
+        "filename": "tests/parser/translateParserTests.txt",
+        "patchSetId": 11
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-13T17:35:44Z",
+      "side": 1,
+      "message": "This seems to be unused?",
+      "revId": "2ddfbcfda1588ebad6be3696e212638bff94cd2f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_00e45da2",
+        "filename": "tests/parser/translateParserTests.txt",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-13T17:35:44Z",
+      "side": 1,
+      "message": "This does not work with current implementation anymore. Now you need to set title!\n\nPlease also add test case for when there is no language subpage or subpage at all.",
+      "revId": "2ddfbcfda1588ebad6be3696e212638bff94cd2f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
