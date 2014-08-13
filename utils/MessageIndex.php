@@ -92,7 +92,7 @@ abstract class MessageIndex {
 			$msg = __METHOD__ . ': trying to recurse - building the index first time?';
 			wfWarn( $msg );
 
-			$recusion--;
+			$recursion--;
 			return array();
 		}
 		$recursion++;
