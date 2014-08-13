@@ -363,8 +363,10 @@ class DatabaseMessageIndex extends MessageIndex {
 			$rows[] = array( 'tmi_key' => $key, 'tmi_value' => $value );
 		}
 
+		$dbw->startAtomic( __METHOD__ );
 		$dbw->delete( 'translate_messageindex', '*', __METHOD__ );
-		$dbw->replace( 'translate_messageindex', array( array( 'tmi_key' ) ), $rows, __METHOD__ );
+		$dbw->insert( 'translate_messageindex', $rows, __METHOD__ );
+		$dbw->endAtomic( __METHOD__ );
 
 		$this->index = $array;
 		wfProfileOut( __METHOD__ );
