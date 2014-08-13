@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_a0546957",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-13T17:34:03Z",
+      "side": 1,
+      "message": "You can replace these four lines with $handle \u003d new MessageHandle( $title );\n$code \u003d $handle-\u003egetCode().",
+      "revId": "2ddfbcfda1588ebad6be3696e212638bff94cd2f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
