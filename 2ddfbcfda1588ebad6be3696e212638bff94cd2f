@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_1b75f292",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-13T18:16:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_a0546957",
+      "revId": "2ddfbcfda1588ebad6be3696e212638bff94cd2f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_e0d151d1",
         "filename": "tests/parser/translateParserTests.txt",
         "patchSetId": 11
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_1ba4d203",
+        "filename": "tests/parser/translateParserTests.txt",
+        "patchSetId": 11
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-13T18:16:53Z",
+      "side": 1,
+      "message": "Done. Removed.",
+      "parentUuid": "8e28a382_e0d151d1",
+      "revId": "2ddfbcfda1588ebad6be3696e212638bff94cd2f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_00e45da2",
         "filename": "tests/parser/translateParserTests.txt",
         "patchSetId": 11
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-13T17:35:44Z",
       "side": 1,
       "message": "This does not work with current implementation anymore. Now you need to set title!\n\nPlease also add test case for when there is no language subpage or subpage at all.",
+      "revId": "2ddfbcfda1588ebad6be3696e212638bff94cd2f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_bbe01e26",
+        "filename": "tests/parser/translateParserTests.txt",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-13T18:16:53Z",
+      "side": 1,
+      "message": "Yeah, using title option now. Added a couple of more tests as required.",
+      "parentUuid": "8e28a382_00e45da2",
       "revId": "2ddfbcfda1588ebad6be3696e212638bff94cd2f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
