@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_bb3c9ebd",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-13T18:06:23Z",
+      "side": 1,
+      "message": "Removed the \u003csamp\u003e tags as suggested by Niklas. We would run into issues of escaping the html. So removing the tags as a solution for the time being.",
+      "revId": "ed0027fc142556febf5125c331151a833d047b46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
