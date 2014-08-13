@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_db09aa30",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-08-13T18:11:14Z",
+      "side": 1,
+      "message": "This splits by double newline only",
+      "revId": "9cbef0a653213aca45375836abbbd457e96706d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_1b2732b3",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-08-13T18:11:14Z",
+      "side": 1,
+      "message": "Then the blocks of text are aligned by order of h2",
+      "range": {
+        "startLine": 430,
+        "startChar": 27,
+        "endLine": 430,
+        "endChar": 39
+      },
+      "revId": "9cbef0a653213aca45375836abbbd457e96706d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_3b70aea2",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-08-13T18:11:14Z",
+      "side": 1,
+      "message": "And this splits the h2+",
+      "range": {
+        "startLine": 431,
+        "startChar": 19,
+        "endLine": 431,
+        "endChar": 20
+      },
+      "revId": "9cbef0a653213aca45375836abbbd457e96706d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
