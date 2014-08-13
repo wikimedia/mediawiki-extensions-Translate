@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yanteng3"
+			"Yanteng3",
+			"Jason924tw"
 		]
 	},
 	"translate": "譯",
@@ -90,6 +91,8 @@
 	"translate-js-skip": "次譯",
 	"translate-js-support": "問",
 	"translate-documentation-language": "訊之檔",
+	"translate-searchprofile": "譯",
+	"translate-searchprofile-tooltip": "尋譯",
 	"translate-messagereview-submit": "記為已校",
 	"translate-messagereview-progress": "記為已校之……",
 	"translate-messagereview-done": "已校",
