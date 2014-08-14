@@ -36,6 +36,7 @@
 	"translate-group-desc-mediawiki-core-branch": "Сообщения для стабильной версии [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mediawikicore": "Эта группа сообщений содержит сообщения, используемые в текущей альфа-версии MediaWiki ({{CURRENTVERSION}})",
 	"translate-group-desc-mediawikiextensions": "Мета-группа сообщений, содержащая все сообщения поддерживаемых расширений MediaWiki",
+	"translate-group-desc-mediawikiskins": "Мета-группа сообщений, содержащая все сообщения поддерживаемых тем оформления для [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mediawikimostused": "Эта группа сообщений содержит [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 наиболее часто используемых сообщений] в [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mifos": "[[Translating:Mifos|Mifos]] — это система управления информацией в области микрофинансов",
 	"translate-group-desc-nfcring-control": "[[Translating:NFC_Ring_Control|NFC Ring Control]] — это мобильное приложение для взаимодействия с NFC-метками",
