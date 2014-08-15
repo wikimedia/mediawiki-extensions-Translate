@@ -211,6 +211,9 @@
 				translateEditor.onSaveSuccess();
 			} ).fail( function ( errorCode, response ) {
 				translateEditor.onSaveFail( response.error && response.error.info || 'Unknown error' );
+				if ( errorCode === 'assertuserfailed' ) {
+					alert( mw.msg( 'tux-session-expired' ) );
+				}
 			} );
 		},
 
