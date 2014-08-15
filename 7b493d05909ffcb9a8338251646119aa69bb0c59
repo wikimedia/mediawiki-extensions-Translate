@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_a38fc52d",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-15T08:09:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_a3c1055a",
+      "revId": "7b493d05909ffcb9a8338251646119aa69bb0c59",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_83b849e3",
         "filename": "resources/js/ext.translate.pagepreparation.js",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-15T07:34:08Z",
       "side": 1,
       "message": "If anchorId contains $1 or $2 or such this will produce unwanted results.",
+      "revId": "7b493d05909ffcb9a8338251646119aa69bb0c59",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_83860917",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-15T08:09:16Z",
+      "side": 1,
+      "message": "using anchorID.replace( \u0027$\u0027, \u0027$$$\u0027 )",
+      "parentUuid": "8e28a382_83b849e3",
       "revId": "7b493d05909ffcb9a8338251646119aa69bb0c59",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
