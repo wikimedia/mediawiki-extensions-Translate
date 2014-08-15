@@ -797,7 +797,7 @@
 				}
 
 				// Remove useless fuzzy warning if we have more details
-				this.removeWarning( 'fuzzy' );
+				translateEditor.removeWarning( 'fuzzy' );
 
 				// Disable confirm translation button, since fuzzy translations
 				// cannot be confirmed. The check for dirty state can be removed
