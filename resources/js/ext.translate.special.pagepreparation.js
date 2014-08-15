@@ -263,6 +263,10 @@
 	$( document ).ready( function () {
 		var pageContent;
 
+		$( '#action-cancel' ).click( function () {
+			document.location.reload( true );
+		} );
+
 		$( '#action-save' ).click( function () {
 			var serverName, pageUrl = '', pageName;
 			pageName = $.trim( $( '#title' ).val() );
@@ -274,6 +278,7 @@
 				$( '#action-prepare' ).show();
 				$( '#title' ).val( '' );
 				$( '#action-save' ).hide();
+				$( '#action-cancel' ).hide();
 			} );
 		} );
 
@@ -305,6 +310,7 @@
 							messageDiv.html( mw.msg( 'pp-prepare-message' ) ).show();
 							$( '#action-prepare' ).hide();
 							$( '#action-save' ).show();
+							$( '#action-cancel' ).show();
 						} else {
 							messageDiv.html( mw.msg( 'pp-already-prepared-message' ) ).show();
 						}

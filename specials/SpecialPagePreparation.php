@@ -21,6 +21,7 @@ class SpecialPagePreparation extends SpecialPage {
 		$pagenamePlaceholder = $this->msg( 'pp-pagename-placeholder' )->escaped();
 		$prepareButtonValue = $this->msg( 'pp-prepare-button-label' )->escaped();
 		$saveButtonValue = $this->msg( 'pp-save-button-label' )->escaped();
+		$cancelButtonValue = $this->msg( 'pp-cancel-button-label' )->escaped();
 		$summaryValue = $this->msg( 'pp-save-summary' )->inContentLanguage()->escaped();
 		$output->addModules( 'ext.translate.special.pagepreparation' );
 		$output->addModuleStyles( 'jquery.uls.grid' );
@@ -41,6 +42,8 @@ class SpecialPagePreparation extends SpecialPage {
 			{$prepareButtonValue}</button>
 		<button id="action-save" class="mw-ui-button mw-ui-constructive hide" type="button">
 			{$saveButtonValue}</button>
+		<button id="action-cancel" class="mw-ui-button mw-ui-quiet hide" type="button">
+			{$cancelButtonValue}</button>
 	</form>
 	<div class="messageDiv hide"></div>
 	<div class="divDiff hide">
