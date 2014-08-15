@@ -239,6 +239,7 @@ $wgResourceModules['ext.translate.pagepreparation'] = array(
 		'pp-save-summary',
 		'pp-save-message',
 		'pp-save-button-label',
+		'pp-cancel-button-label',
 		'pp-prepare-message',
 		'pp-already-prepared-message',
 		'pp-pagename-missing'
