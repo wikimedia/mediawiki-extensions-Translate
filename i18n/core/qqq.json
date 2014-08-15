@@ -396,5 +396,6 @@
 	"translate-statsbar-tooltip-with-fuzzy": "Descriptive text to show for the stats bar for message groups on mouse over.\n\nParameters:\n* $1 - percentage of messages translated (does not include outdated)\n* $2 - percentage of messages reviewed\n* $3 - percentage of messages outdated (not counted as translated)",
 	"translate-search-more-groups-info": "Information shown as number of message groups matching the query using\n[[Special:SearchTranslations]]\n* $1 - number of groups\nSee also:\n* {{msg-mw|Translate-search-more-languages-info}}",
 	"translate-ulsdep-title": "Page title",
-	"translate-ulsdep-body": "Error message in page body"
+	"translate-ulsdep-body": "Error message in page body",
+	"tux-session-expired": "Warning shown to the user in a popup when translation could not be saved because the session is expired."
 }
