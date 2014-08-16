@@ -18,7 +18,7 @@
 
 			identifier = sourceUnits[i].identifier;
 			title = 'Translations:' + pageName + '/' + identifier + '/' + langCode;
-			summary = 'imported translation using [[Special:PageMigration]]';
+			summary = $( '#pm-summary' ).val();
 
 			deferred = api.postWithEditToken( {
 				action: 'edit',

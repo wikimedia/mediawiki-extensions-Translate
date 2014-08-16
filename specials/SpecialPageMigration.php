@@ -33,6 +33,8 @@ class SpecialPageMigration extends SpecialPage {
 		$out .= Html::closeElement( 'div' );
 		$out .= Html::openElement( 'form', array( 'class' => 'mw-tpm-sp-form row',
 			'id' => 'mw-tpm-sp-primary-form' ) );
+		$out .= Html::element( 'input', array( 'id' => 'pm-summary', 'type' => 'hidden',
+			'value' => $this->msg( 'pm-summary-import' )->inContentLanguage()->text() ) );
 		$out .= Html::element( 'input', array( 'id' => 'title', 'class' => 'mw-searchInput',
 			'placeholder' => $this->msg( 'pm-pagename-placeholder' )->text() ) );
 		$out .= Html::element( 'input', array( 'id' => 'language', 'type' => 'text',
