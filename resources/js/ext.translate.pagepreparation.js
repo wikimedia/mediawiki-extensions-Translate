@@ -116,10 +116,10 @@
 		namespaces = getNamespaces();
 		nsString = namespaces.join( '|' );
 		linkPrefixRegex = new RegExp( '\\[\\[((?:(?:special(?!:MyLanguage\\b)|' + nsString +
-			'):)?[^:]*?)\\]\\]', 'gi' );
+			'):)?[^:/]*?)\\]\\]', 'gi' );
 		// Add the 'Special:MyLanguage/' prefix for all internal links of valid namespaces and
 		// mainspace.
-		// Regex : http://regex101.com/r/zZ9jH9
+		// Regex : http://regex101.com/r/zZ9jH9/2
 		pageContent = pageContent.replace( linkPrefixRegex, '[[Special:MyLanguage/$1]]' );
 		return pageContent;
 	}
