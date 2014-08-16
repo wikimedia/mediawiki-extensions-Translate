@@ -66,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "8e28a382_daad0fe7",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-16T12:30:37Z",
+      "side": 1,
+      "message": "Split by h2? And what about \u0027\\n\\n\u0027?",
+      "parentUuid": "8e28a382_9b3fa220",
+      "revId": "9cbef0a653213aca45375836abbbd457e96706d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_3b70aea2",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 1
@@ -107,6 +125,24 @@
         "endLine": 431,
         "endChar": 20
       },
+      "revId": "9cbef0a653213aca45375836abbbd457e96706d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_7b519664",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-16T12:30:37Z",
+      "side": 1,
+      "message": "It would split the ones which got collapsed, or which were containing a mix of headers and wikitext. So we won\u0027t have excess ones.\n\nPlus, we are forgetting that Special:PagePreparation does add newlines before and after headers if not present. So we would not run into excess target units as those many source units are already present.",
+      "parentUuid": "8e28a382_3bd9ce2c",
       "revId": "9cbef0a653213aca45375836abbbd457e96706d9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
