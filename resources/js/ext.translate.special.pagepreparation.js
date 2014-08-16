@@ -108,18 +108,21 @@
 			namespaces, nsString;
 
 		normalizeRegex = new RegExp( /\[\[(?!Category)([^|]*?)\]\]/gi );
-		// First convert all links into two-party form. If a link is not having a pipe,
-		// add a pipe and duplicate the link text
+		// First convert all links into two-party form. If a link is not
+		// having a pipe, add a pipe and duplicate the link text
 		// Regex : http://regex101.com/r/pO9nN2
 		pageContent = pageContent.replace( normalizeRegex, '[[$1|$1]]' );
 
 		namespaces = getNamespaces();
-		nsString = namespaces.join( '|' );
-		linkPrefixRegex = new RegExp( '\\[\\[((?:(?:special(?!:MyLanguage\\b)|' + nsString +
-			'):)?[^:]*?)\\]\\]', 'gi' );
-		// Add the 'Special:MyLanguage/' prefix for all internal links of valid namespaces and
-		// mainspace.
-		// Regex : http://regex101.com/r/zZ9jH9
+		// Add the 'Special:MyLanguage/' prefix for all internal links
+		// of valid namespaces and main namespace.
+		linkPrefixRegex = new RegExp( '\\[\\[((?![:./]|Special:|Media:)(?:' +
+		// Skip explicit and relative links........↗    ↗
+		// and negative namespaces links.............../
+		// but allow actual namespaces in addition to main namespace
+		// and capture, keep as is anything else till the next brackets.
+		namespaces.join( '|' ) + ')?[^\]]+)\\]\\]', 'gi' );
+		// Works best with piped links, otherwise label must be added.
 		pageContent = pageContent.replace( linkPrefixRegex, '[[Special:MyLanguage/$1]]' );
 		return pageContent;
 	}
