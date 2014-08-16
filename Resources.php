@@ -381,7 +381,8 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 		'pm-add-icon-hover-text',
 		'pm-swap-icon-hover-text',
 		'pm-delete-icon-hover-text',
-		'pm-pagetitle-invalid'
+		'pm-pagetitle-invalid',
+		'pm-summary-import',
 	),
 ) + $resourcePaths;
 

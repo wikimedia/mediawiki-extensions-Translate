@@ -21,6 +21,7 @@ class SpecialPagePreparation extends SpecialPage {
 		$pagenamePlaceholder = $this->msg( 'pp-pagename-placeholder' )->escaped();
 		$prepareButtonValue = $this->msg( 'pp-prepare-button-label' )->escaped();
 		$saveButtonValue = $this->msg( 'pp-save-button-label' )->escaped();
+		$summaryValue = $this->msg( 'pp-save-summary' )->inContentLanguage();
 		$output->addModules( 'ext.translate.pagepreparation' );
 		$output->addModuleStyles( 'jquery.uls.grid' );
 		$param = $request->getText( 'param' );
@@ -33,6 +34,7 @@ class SpecialPagePreparation extends SpecialPage {
 		$out = <<<HTML
 <div class="grid">
 	<form class="mw-tpp-sp-form row" name="mw-tpp-sp-input-form">
+		<input id="pp-summary" type="hidden" value="{$summaryValue}" />
 		<input name="title" id="title" class="mw-searchInput mw-ui-input"
 			placeholder="{$pagenamePlaceholder}" />
 		<button id="action-prepare" class="mw-ui-button mw-ui-primary" type="button">
