@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_289ba91c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-08-17T12:58:07Z",
+      "side": 1,
+      "message": "where the \"first place\" is the loading of the TUX page. Maybe make this clear.",
+      "revId": "b096ffc70fa6edf6f7d364fee3a7715abc0f7c3b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_4894b5ea",
+        "filename": "resources/js/ext.translate.storage.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-08-17T12:58:07Z",
+      "side": 1,
+      "message": "as an anonymous user (if anonymous could save)",
+      "revId": "b096ffc70fa6edf6f7d364fee3a7715abc0f7c3b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_089ead0a",
+        "filename": "resources/js/ext.translate.storage.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-08-17T12:58:07Z",
+      "side": 1,
+      "message": "Is it intuitive enough that when undefined is set, the parameter is not set at all?",
+      "revId": "b096ffc70fa6edf6f7d364fee3a7715abc0f7c3b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
