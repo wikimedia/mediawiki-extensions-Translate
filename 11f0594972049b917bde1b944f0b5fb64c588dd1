@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_68677123",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-08-17T14:51:04Z",
+      "side": 1,
+      "message": "There is a default value for highlightClass.\n\n@param {string} [highlightClass\u003d\u0027tux-highlight\u0027]",
+      "revId": "11f0594972049b917bde1b944f0b5fb64c588dd1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_287169dd",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-08-17T14:51:04Z",
+      "side": 1,
+      "message": "That\u0027s a complicated name for a function. Actually you unmark here.",
+      "revId": "11f0594972049b917bde1b944f0b5fb64c588dd1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
