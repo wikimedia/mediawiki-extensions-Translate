@@ -8,7 +8,8 @@
 			"Amgauna",
 			"Cainamarques",
 			"Fabsouza1",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Rodrigo codignoli"
 		]
 	},
 	"bw-desc-freecol": "Antes de traduzir o FreeCol para a sua língua, por favor leia [[Translating:FreeCol]]. O Freecol utiliza a licença GPL.",
@@ -29,6 +30,7 @@
 	"translate-group-desc-mantisbt-plugin-core": "Um plugin para o [[Translating:MantisBT|MantisBT]]",
 	"translate-group-desc-mediawikicore": "Este grupo de mensagens contém as mensagens utilizadas na atual versão alfa do MediaWiki ({{CURRENTVERSION}})",
 	"translate-group-desc-mediawikiextensions": "Meta-grupo de mensagens contendo todas as mensagens para extensões do MediaWiki suportadas",
+	"translate-group-desc-mediawikiskins": "Meta-grupo de mensagens contendo todas as mensagens para extensões do MediaWiki suportadas",
 	"translate-group-desc-mediawikimostused": "Este grupo de mensagens contém as [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 mensagens utilizadas com mais frequência] no [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mifos": "[[Translating:Mifos|Mifos]] é um sistema de informação de gestão (MIS) para microfinanças",
 	"translate-group-desc-nocc": "O [http://nocc.sourceforge.net NOCC] é um cliente de e-mail escrito em PHP. Por favor reporte qualquer problema em [[Support]].",

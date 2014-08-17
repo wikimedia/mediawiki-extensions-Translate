@@ -196,6 +196,7 @@
 	"pm-add-icon-hover-text": "往下面添加单位",
 	"pm-swap-icon-hover-text": "和下面的单位替换",
 	"pm-delete-icon-hover-text": "删除单位",
+	"pm-pagetitle-invalid": "请输入一个有效的页面标题",
 	"tpt-translate-title": "允许页面标题的翻译",
 	"pp-save-summary": "准备翻译的页面",
 	"pagepreparation": "准备翻译的页面",

@@ -365,7 +365,7 @@
 	"tux-proofread-translated-by-self": "Vertaald door u",
 	"tux-empty-list-all": "Deze berichtengroep is leeg",
 	"tux-empty-list-all-guide": "Selecteer een andere berichtengroep om te vertalen",
-	"tux-translate-page-no-such-group": "<strong>De opgegeven groep bestaat niet.<strong> Selecteer een andere berichtengroep.",
+	"tux-translate-page-no-such-group": "<strong>De opgegeven groep bestaat niet.</strong> Selecteer een andere berichtengroep.",
 	"tux-empty-list-translated": "Geen vertaalde berichten",
 	"tux-empty-list-translated-guide": "U kunt helpen met vertalen",
 	"tux-empty-list-translated-action": "Vertalen",

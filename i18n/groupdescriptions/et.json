@@ -6,5 +6,6 @@
 		]
 	},
 	"bw-desc-freecol": "Enne FreeCol'i tõlkimist oma keelde lugege palun [[Translating:FreeCol]]. FreeCol kasutab GPL litsentsi.",
+	"translate-group-desc-mediawikiskins": "Meta-sõnumirühm, mis sisaldab kõiki sõnumeid toetatud [[Translating:MediaWiki|MediaWiki]] kujunduste jaoks.",
 	"translate-group-desc-sharelatex": "Sõnumirühm ühiselt kasutatavale veebipõhisele LaTeX-redaktorile [[Translating:ShareLaTeX|ShareLaTeX]]"
 }

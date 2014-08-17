@@ -7,7 +7,8 @@
 			"Helder.wiki",
 			"Luckas",
 			"555",
-			"Fabsouza1"
+			"Fabsouza1",
+			"Rodrigo codignoli"
 		]
 	},
 	"pagetranslation": "Tradução de páginas",
@@ -155,5 +156,6 @@
 	"pm-pagename-missing": "Por favor, insira o nome da página",
 	"pm-langcode-missing": "Por favor, insira o código de idioma",
 	"pm-add-icon-hover-text": "Adicione uma unidade abaixo",
-	"pm-delete-icon-hover-text": "Excluir unidade"
+	"pm-delete-icon-hover-text": "Excluir unidade",
+	"pm-pagetitle-invalid": "Por favor, forneça um título válido para á página."
 }

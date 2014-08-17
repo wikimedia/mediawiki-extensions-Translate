@@ -36,6 +36,7 @@
 	"tpt-aggregategroup-add": "Afegeix",
 	"tpt-aggregategroup-save": "Desa",
 	"tpt-aggregategroup-new-name": "Nom:",
+	"tpt-invalid-group": "El grup no és vàlid",
 	"pt-movepage-title": "Mou la pàgina traduïble $1",
 	"pt-movepage-blockers": "La pàgina traduïble no pot ser reanomenada a causa {{PLURAL:$1|de l'error següent|dels errors següents}}:",
 	"pt-movepage-block-base-exists": "La pàgina base de traaducció [[:$1]] ja existeix.",
@@ -70,6 +71,7 @@
 	"pm-pagename-placeholder": "Introduïu el nom de la pàgina",
 	"pm-langcode-placeholder": "Codi d’idioma",
 	"pm-langcode-missing": "Introduïu el codi de l’idioma",
+	"pm-pagetitle-invalid": "Introduïu un títol vàlid per la pàgina",
 	"pp-save-button-label": "Desa",
 	"pp-pagename-missing": "Introduïu el nom de la pàgina."
 }

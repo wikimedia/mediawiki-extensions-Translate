@@ -847,6 +847,7 @@ $specialPageAliases['pa'] = array(
 
 /** Polish (polski) */
 $specialPageAliases['pl'] = array(
+	'AggregateGroups' => array( 'Grupy_zbiorcze' ),
 	'ImportTranslations' => array( 'Import_tłumaczeń' ),
 	'LanguageStats' => array( 'Statystyka_językowa' ),
 	'Magic' => array( 'Rozszerzone_tłumaczenie_MediaWiki' ),
@@ -857,6 +858,8 @@ $specialPageAliases['pl'] = array(
 	'Translate' => array( 'Przetłumacz' ),
 	'TranslationStats' => array( 'Statystyki_tłumaczenia' ),
 	'Translations' => array( 'Tłumaczenia' ),
+	'PageMigration' => array( 'Migracja_strony' ),
+	'PagePreparation' => array( 'Przygotowanie_strony' ),
 );
 
 /** Pashto (پښتو) */

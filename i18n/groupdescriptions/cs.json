@@ -30,6 +30,7 @@
 	"translate-group-desc-mediawiki-core-branch": "Zprávy ze stabilní verze [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mediawikicore": "Tato skupina zpráv obsahuje zprávy používané v současné alfaverzi MediaWiki ({{CURRENTVERSION}})",
 	"translate-group-desc-mediawikiextensions": "Nadskupina zpráv obsahující všechny zprávy ve všech podporovaných rozšířeních MediaWiki",
+	"translate-group-desc-mediawikiskins": "Nadskupina zpráv obsahující všechny zprávy ve všech podporovaných vzhledech [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mediawikimostused": "Tato skupina zpráv obsahuje [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 nejpoužívanějších zpráv] v [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mifos": "[[Translating:Mifos|Mifos]] je informační systém pro správu mikrofinancování",
 	"translate-group-desc-nfcring-control": "[[Translating:NFC_Ring_Control|NFC Ring Control]] je mobilní aplikace pro interakci s NFC tagy",
