@@ -90,16 +90,29 @@
 		},
 
 		/**
-		 * Mark the message as unsaved, can be resumed later
+		 * Mark the message as unsaved because of edits, can be resumed later
+		 * @param {string} [highlightClass] Class for background highlighting
 		 */
-		markUnsaved: function () {
-			this.$editTrigger.find( '.tux-list-status' )
-				.children().addClass( 'hide' ).end()
-				.append( $( '<span>' )
-					.addClass( 'tux-status-unsaved' )
-					.text( mw.msg( 'tux-status-unsaved' ) )
-				);
+		markUnsaved: function ( highlightClass ) {
+			var $tuxListStatus = this.$editTrigger.find( '.tux-list-status' );
+
+			highlightClass = highlightClass || 'tux-highlight';
+
+			$tuxListStatus.children( '.tux-status-unsaved' ).remove();
+			$tuxListStatus.children().addClass( 'hide' );
+			$( '<span>' )
+				.addClass( 'tux-status-unsaved ' + highlightClass )
+				.text( mw.msg( 'tux-status-unsaved' ) )
+				.appendTo( $tuxListStatus );
 		},
+
+		/**
+		 * Mark the message as unsaved because of saving failure.
+		 */
+		markUnsavedFailure: function () {
+			this.markUnsaved( 'tux-warning' );
+		},
+
 
 		/**
 		 * Mark the message as no longer unsaved
@@ -107,7 +120,7 @@
 		markUnunsaved: function () {
 			var $tuxListStatus = this.$editTrigger.find( '.tux-list-status' );
 
-			$tuxListStatus.find( '.tux-status-unsaved' ).remove();
+			$tuxListStatus.children( '.tux-status-unsaved' ).remove();
 			$tuxListStatus.children().removeClass( 'hide' );
 
 			this.dirty = false;
@@ -118,17 +131,18 @@
 		 * Mark the message as being saved
 		 */
 		markSaving: function () {
+			var $tuxListStatus = this.$editTrigger.find( '.tux-list-status' );
+
 			// Disable the save button
 			this.$editor.find( '.tux-editor-save-button' )
 				.prop( 'disabled', true );
 
 			// Add a "Saving" indicator
-			this.$editTrigger.find( '.tux-list-status' )
-				.empty()
-				.append( $( '<span>' )
-					.addClass( 'tux-status-unsaved' )
-					.text( mw.msg( 'tux-status-saving' ) )
-				);
+			$tuxListStatus.empty();
+			$( '<span>' )
+				.addClass( 'tux-status-unsaved' )
+				.text( mw.msg( 'tux-status-saving' ) )
+				.appendTo( $tuxListStatus );
 		},
 
 		/**
@@ -241,7 +255,7 @@
 				'translation-saving'
 			);
 			this.saving = false;
-			this.markUnsaved();
+			this.markUnsavedFailure();
 		},
 
 		/**

@@ -249,6 +249,10 @@
 	background-color: #FFFFCC;
 }
 
+.tux-highlight {
+	background-color: #C9C9C9;
+}
+
 .tux-warning-message {
 	font-size: 14px;
 	padding: 2px 15% 2px 5px;
