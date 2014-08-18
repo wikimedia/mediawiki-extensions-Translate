@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_0f47cc23",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-18T09:19:59Z",
+      "side": 1,
+      "message": "Start with a capital letter and use a nicer display name for the link? Suggested:\n\n Imported translation using [[Special:PageMigration|page migration]]",
+      "revId": "61fff77bc5c19bafc5db1f5754cfd7f30b670326",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
