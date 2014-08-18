@@ -164,9 +164,6 @@ class TranslateHooks {
 
 			// Update translated page when translation unit is moved
 			$wgHooks['TitleMoveComplete'][] = 'PageTranslationHooks::onMoveTranslationUnits';
-
-			// Update translated page when translation unit is deleted
-			$wgHooks['ArticleDeleteComplete'][] = 'PageTranslationHooks::onDeleteTranslationUnits';
 		}
 	}
 
