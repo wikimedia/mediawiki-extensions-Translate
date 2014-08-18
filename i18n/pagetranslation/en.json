@@ -179,6 +179,7 @@
     "pm-swap-icon-hover-text": "Swap with unit below",
     "pm-delete-icon-hover-text": "Delete unit",
     "pm-pagetitle-invalid": "Please enter a valid page title",
+    "pm-summary-import": "Imported translation using [[Special:PageMigration|page migration]]",
     "tpt-translate-title": "Allow translation of page title",
     "pp-save-summary": "Prepared the page for translation",
     "pagepreparation": "Prepare page for translation",

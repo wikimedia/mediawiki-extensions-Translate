@@ -15,7 +15,7 @@
 			format: 'json',
 			title: pageName,
 			text: pageContent,
-			summary: mw.msg( 'pp-save-summary' ),
+			summary: $( '#pp-summary' ).val(),
 		} ).promise();
 	}
 
