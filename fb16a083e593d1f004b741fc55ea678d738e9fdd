@@ -52,6 +52,24 @@
       "revId": "fb16a083e593d1f004b741fc55ea678d738e9fdd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e28a382_0a29fa99",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1511
+      },
+      "writtenOn": "2014-08-18T13:44:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e28a382_4a3f02d4",
+      "revId": "fb16a083e593d1f004b741fc55ea678d738e9fdd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
