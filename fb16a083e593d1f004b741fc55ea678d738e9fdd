@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_8aea8a71",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-18T13:23:42Z",
+      "side": 1,
+      "message": "I think this should read \"Split headers from paragraph text\". Headers are wikitext, too.",
+      "revId": "fb16a083e593d1f004b741fc55ea678d738e9fdd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
