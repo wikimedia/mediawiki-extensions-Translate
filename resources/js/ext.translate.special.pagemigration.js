@@ -218,6 +218,8 @@
 				.attr( 'title', mw.msg( 'pm-add-icon-hover-text' ) ),
 			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--swap' )
 				.attr( 'title', mw.msg( 'pm-swap-icon-hover-text' ) ),
+			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--split' )
+				.attr( 'title', mw.msg( 'pm-split-icon-hover-text' ) ),
 			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--delete' )
 				.attr( 'title', mw.msg( 'pm-delete-icon-hover-text' ) ) );
 		newUnit.append( sourceUnit, targetUnit, actionUnit );
@@ -389,6 +391,48 @@
 	}
 
 	/**
+	 * Handler for the split icon click event. It separates the headers from
+	 * other wiki text present in the corresponding unit and adds new units
+	 * below the current one.
+	 */
+	function splitHandler( event ) {
+		var textToSplit, splitList, currRow, nextRow,
+			text, newUnit, tempList;
+
+		currRow = $( event.target ).closest( '.mw-tpm-sp-unit' );
+		textToSplit = currRow.find( '.mw-tpm-sp-unit__target' ).val();
+		splitList = splitHeaders( [textToSplit] );
+		currRow.find( '.mw-tpm-sp-unit__target' ).val( splitList.splice( 0, 1 ) );
+		nextRow = currRow.next();
+		while ( splitList.length ) {
+			textToSplit = splitList.join( '\n' );
+			text = shiftRowsDown( nextRow, textToSplit );
+			splitList = splitHeaders( [textToSplit] );
+			currRow = nextRow;
+			nextRow = currRow.next();
+			currRow.find( '.mw-tpm-sp-unit__target' ).val( splitList.splice( 0, 1 ) );
+
+			if ( text ) {
+				/* It contains mix of headers and wikitext */
+				tempList = splitHeaders( [text] );
+				if ( tempList.length > 1 ) {
+					splitList = tempList;
+					/* So, create the unit by splicing the first element of the list */
+					newUnit = createNewUnit( '', splitList.splice( 0, 1 ) );
+					$( '.mw-tpm-sp-unit-listing' ).append( newUnit );
+				}
+				/* It does not contain mix of headers and wikitext */
+				else {
+					/* So, just create the unit */
+					newUnit = createNewUnit( '', text );
+					$( '.mw-tpm-sp-unit-listing' ).append( newUnit );
+				}
+			}
+			noOfTranslationUnits += 1;
+		}
+	}
+
+	/**
 	 * Handler for delete icon ('-') click event. Deletes the unit and shifts
 	 * the units up by one.
 	 */
@@ -467,6 +511,7 @@
 		$listing.on( 'click', '.mw-tpm-sp-action--swap', swapHandler );
 		$listing.on( 'click', '.mw-tpm-sp-action--delete', deleteHandler );
 		$listing.on( 'click', '.mw-tpm-sp-action--add', addHandler );
+		$listing.on( 'click', '.mw-tpm-sp-action--split', splitHandler );
 	}
 
 	$( document ).ready( listen );

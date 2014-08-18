@@ -367,6 +367,7 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 		'pm-page-does-not-exist',
 		'pm-pagename-missing',
 		'pm-pagetitle-invalid',
+		'pm-split-icon-hover-text',
 		'pm-swap-icon-hover-text',
 	),
 ) + $resourcePaths;
