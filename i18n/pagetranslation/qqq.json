@@ -177,6 +177,7 @@
 	"pm-langcode-missing": "Error message given when language code field is blank",
 	"pm-add-icon-hover-text": "Hover text for add new unit icon",
 	"pm-swap-icon-hover-text": "Hover text for swap with unit below icon",
+	"pm-split-icon-hover-text": "Hover text for split icon",
 	"pm-delete-icon-hover-text": "Hover text for delete unit icon",
 	"pm-pagetitle-invalid": "Error message given when an invalid page title is entered",
 	"tpt-translate-title": "Checkbox on Special:PageTranslation to mark title for translation",
