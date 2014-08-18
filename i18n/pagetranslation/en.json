@@ -177,6 +177,7 @@
     "pm-langcode-missing": "Please enter the language code.",
     "pm-add-icon-hover-text": "Add a unit below",
     "pm-swap-icon-hover-text": "Swap with unit below",
+    "pm-split-icon-hover-text": "Split headers from other wikitext",
     "pm-delete-icon-hover-text": "Delete unit",
     "pm-pagetitle-invalid": "Please enter a valid page title",
     "tpt-translate-title": "Allow translation of page title",
