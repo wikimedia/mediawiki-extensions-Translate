@@ -65,6 +65,7 @@
 	"pm-page-does-not-exist": "$1 mevcut değil.",
 	"pm-pagename-missing": "Lütfen sayfa adı girin.",
 	"pm-langcode-missing": "Lütfen dil kodunu girin.",
+	"pm-pagetitle-invalid": "Lütfen geçerli bir sayfa başlığı girin",
 	"pp-pagename-placeholder": "Sayfa adı girin",
 	"pp-save-button-label": "Kaydet",
 	"pp-save-message": "Sayfa kaydedildi. Artık [$1  düzenleme] yapabilirsiniz.",

@@ -188,6 +188,7 @@
 	"pm-swap-icon-hover-text": "Mit der unteren Einheit tauschen",
 	"pm-delete-icon-hover-text": "Einheit löschen",
 	"pm-pagetitle-invalid": "Bitte einen gültigen Seitentitel eingeben",
+	"pm-summary-import": "Übersetzung importiert mithilfe der [[Special:PageMigration|Seitenmigration]]",
 	"tpt-translate-title": "Übersetzung eines Seitentitels erlauben",
 	"pp-save-summary": "Bereitete die Seite zur Übersetzung vor",
 	"pagepreparation": "Seite zur Übersetzung vorbereiten",

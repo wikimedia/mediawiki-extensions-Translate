@@ -236,7 +236,7 @@
 	"tux-editor-outdated-warning": "ХӀара гочдар карладаккха дезаш хила мега.",
 	"tux-editor-outdated-warning-diff-link": "Схьагайта башхалла",
 	"tux-editor-doc-editor-placeholder": "хаамийн документаци",
-	"tux-editor-doc-editor-save": "Ӏалаш йе документаци",
+	"tux-editor-doc-editor-save": "Ӏалашъе документаци",
 	"tux-editor-doc-editor-cancel": "Цаоьшу",
 	"tux-messagetable-more-messages": "Кхин $1 {{PLURAL:$1|хаам|хаамаш}}",
 	"tux-messagetable-loading-messages": "{{PLURAL:$1|1=Гучу бокхуш бу хаам|Гучу бохуш бу хаамаш}}...",

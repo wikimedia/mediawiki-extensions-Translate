@@ -173,5 +173,6 @@
 	"pm-add-icon-hover-text": "単位を下に追加",
 	"pm-swap-icon-hover-text": "下の単位と入れ替える",
 	"pm-delete-icon-hover-text": "単位を削除",
+	"pm-pagetitle-invalid": "有効なページ名を入力してください",
 	"tpt-translate-title": "ページ名を翻訳できるようにする"
 }
