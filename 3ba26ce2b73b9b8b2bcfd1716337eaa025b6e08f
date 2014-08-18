@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_743867eb",
+        "filename": "Resources.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-18T07:33:22Z",
+      "side": 1,
+      "message": "A test expects resource modules to be defined in alphabetical order. This is why a test is failing, and Jenkins scores -1.",
+      "revId": "3ba26ce2b73b9b8b2bcfd1716337eaa025b6e08f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
