@@ -24,7 +24,10 @@
 			var deferred = new mw.Api().postWithEditToken( {
 				action: 'edit',
 				title: title,
-				text: translation
+				text: translation,
+				// If the session expires, fail the saving instead of saving it
+				// as an anonymous user(if anonymous can save)
+				assert: mw.user.isAnon() ? undefined : 'user'
 			} );
 
 			return deferred.promise();
