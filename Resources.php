@@ -111,6 +111,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-editor-message-tools-delete',
 		'tux-editor-message-tools-translations',
 		'tux-editor-loading',
+		'tux-session-expired',
 	),
 	'position' => 'top',
 ) + $resourcePaths;
