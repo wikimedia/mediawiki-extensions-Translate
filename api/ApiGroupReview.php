@@ -125,10 +125,19 @@ class ApiGroupReview extends ApiBase {
 	}
 
 	public function needsToken() {
-		return true;
+		return 'csrf';
 	}
 
+	// This function exists for backwards compatibility with MediaWiki before
+	// 1.24
 	public function getTokenSalt() {
+		return self::$salt;
+	}
+
+	// This function maintains backwards compatibility with self::getToken()
+	// below. If salt is removed from self::getToken() and nothing else (e.g.
+	// JS) generates the token directly, this could probably be removed.
+	protected function getWebUITokenSalt( array $params ) {
 		return self::$salt;
 	}
 
@@ -190,6 +199,8 @@ class ApiGroupReview extends ApiBase {
 		);
 	}
 
+	// These two functions implement pre-1.24 token fetching via the
+	// ApiTokensGetTokenTypes hook, kept for backwards compatibility.
 	public static function getToken() {
 		$user = RequestContext::getMain()->getUser();
 		if ( !$user->isAllowed( self::$right ) ) {
