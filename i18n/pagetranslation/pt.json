@@ -186,6 +186,7 @@
 	"pm-swap-icon-hover-text": "Trocar com a unidade abaixo",
 	"pm-delete-icon-hover-text": "Eliminar unidade",
 	"pm-pagetitle-invalid": "Por favor, forneça um título válido de página.",
+	"pm-summary-import": "Tradução importa utilizando a [[Special:PageMigration|migração de página]]",
 	"tpt-translate-title": "Permitir tradução do título da página",
 	"pp-save-summary": "Preparação de página para tradução",
 	"pagepreparation": "Preparar página para tradução",

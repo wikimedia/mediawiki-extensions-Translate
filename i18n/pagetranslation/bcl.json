@@ -83,5 +83,7 @@
 	"pt-shake-position": "Mga marka kan yunit nin dakit-taramon sa bakong pinag-aasahan na posisyon.\nTeksto sa yunit in pagdakit-taramon: <pre>$1</pre>",
 	"pt-shake-empty": "Mayong laman na yunit kan dakit-taramon para sa paramarka na \"$1\".",
 	"log-description-pagetranslation": "Magtala para sa mga aksyon na minasumpay sa sistema kan pahina nin dakit-taramon",
-	"log-name-pagetranslation": "Talaan kan dakit-taramong pahina"
+	"log-name-pagetranslation": "Talaan kan dakit-taramong pahina",
+	"pm-summary-import": "Importadong dakit-taramon na ginagamit an [[Special:PageMigration|migrasyon sa pahina]]",
+	"pp-save-button-label": "Itagáma"
 }

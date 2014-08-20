@@ -179,6 +179,7 @@
 	"pm-swap-icon-hover-text": "Замени ја единицата подолу",
 	"pm-delete-icon-hover-text": "Избриши единица",
 	"pm-pagetitle-invalid": "Внесетре важечки наслов на страницата",
+	"pm-summary-import": "Увезен превод користејќи [[Special:PageMigration|преселба на страници]]",
 	"tpt-translate-title": "Дозволи превод на насловот на страницата",
 	"pp-save-summary": "Подготвена страница за превод",
 	"pagepreparation": "Подготвена страница за превод",

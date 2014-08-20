@@ -152,7 +152,7 @@
 	"translate-statsf-scale-days": "Radio button label on [[Special:TranslationStats|form]] for generating graph.\n{{Identical|Day}}",
 	"translate-statsf-scale-hours": "Radio button label on [[Special:TranslationStats|form]] for generating graph.\n{{Identical|Hour}}",
 	"translate-statsf-count": "Used on [[Special:TranslationStats]].",
-	"translate-statsf-count-edits": "Radio button label on [[Special:TranslationStats|form]] for generating graph.",
+	"translate-statsf-count-edits": "Radio button label on [[Special:TranslationStats|form]] for generating graph.\n{{Identical|Number of edits}}",
 	"translate-statsf-count-users": "Radio button label on [[Special:TranslationStats|form]] for generating graph.",
 	"translate-statsf-count-registrations": "Option at [[Special:TranslationStats]].\n{{Identical|New user}}",
 	"translate-statsf-count-reviews": "Radio button label on [[Special:TranslationStats|form]] for generating graph.",
