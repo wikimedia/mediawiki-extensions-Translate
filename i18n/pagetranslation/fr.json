@@ -195,6 +195,7 @@
 	"pm-swap-icon-hover-text": "Échanger avec l’unité ci-dessous",
 	"pm-delete-icon-hover-text": "Supprimer l’unité",
 	"pm-pagetitle-invalid": "Veuillez entrer un titre de page valide",
+	"pm-summary-import": "Traduction importée en utilisant [[Special:PageMigration|la migration de page]]",
 	"tpt-translate-title": "Autoriser la traduction du titre de la page",
 	"pp-save-summary": "Page préparée pour la traduction",
 	"pagepreparation": "Préparer la page pour sa traduction",

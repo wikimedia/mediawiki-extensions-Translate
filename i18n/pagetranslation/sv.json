@@ -187,6 +187,7 @@
 	"pm-swap-icon-hover-text": "Byt med enheten nedan",
 	"pm-delete-icon-hover-text": "Radera enhet",
 	"pm-pagetitle-invalid": "Ange en giltig sidtitel",
+	"pm-summary-import": "Översättning importerad med hjälpt av [[Special:PageMigration|sidmigrering]]",
 	"tpt-translate-title": "Tillåt översättning av sidans titel",
 	"pp-save-summary": "Förbered sidan för översättning",
 	"pagepreparation": "Förbered sida för översättning",

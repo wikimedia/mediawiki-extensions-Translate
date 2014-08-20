@@ -182,6 +182,7 @@
 	"pm-swap-icon-hover-text": "להחליף עם יחידה מעל",
 	"pm-delete-icon-hover-text": "למחוק יחידה",
 	"pm-pagetitle-invalid": "נא להזין כותרת דף תקינה",
+	"pm-summary-import": "דף מיובא באמצעות [[Special:PageMigration|העברת דף מתורגם]]",
 	"tpt-translate-title": "לאפשר תרגום של כותרת הדף",
 	"pp-save-summary": "הדף הוכן לתרגום",
 	"pagepreparation": "הכנת דף",
