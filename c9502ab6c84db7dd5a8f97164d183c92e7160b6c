@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e322bf2_98a592b4",
+        "filename": "resources/js/ext.translate.storage.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2014-08-22T17:21:35Z",
+      "side": 1,
+      "message": "perhaps \"... is not sent to the server\" is even more explicit",
+      "revId": "c9502ab6c84db7dd5a8f97164d183c92e7160b6c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
