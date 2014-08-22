@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "4e322bf2_782786b2",
+        "filename": "resources/js/ext.translate.storage.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-08-22T16:47:47Z",
+      "side": 1,
+      "message": "c9502ab6c84db7dd5a8f97164d183c92e7160b6c",
+      "parentUuid": "4e322bf2_1d64f4e0",
+      "revId": "b096ffc70fa6edf6f7d364fee3a7715abc0f7c3b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e28a382_089ead0a",
         "filename": "resources/js/ext.translate.storage.js",
         "patchSetId": 1
