@@ -26,7 +26,8 @@
 				title: title,
 				text: translation,
 				// If the session expires, fail the saving instead of saving it
-				// as an anonymous user(if anonymous can save)
+				// as an anonymous user (if anonymous can save).
+				// When undefined, the parameter is not set at all
 				assert: mw.user.isAnon() ? undefined : 'user'
 			} );
 
