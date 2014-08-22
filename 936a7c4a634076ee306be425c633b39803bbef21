@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e322bf2_27f44183",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-22T08:09:26Z",
+      "side": 1,
+      "message": "Missing -\u003eparse() or -\u003eescaped(); Please fix.",
+      "revId": "936a7c4a634076ee306be425c633b39803bbef21",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
