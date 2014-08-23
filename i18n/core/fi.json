@@ -324,7 +324,7 @@
 	"tux-editor-discard-changes-button-label": "Hylkää muutokset",
 	"tux-editor-save-button-label": "Tallenna käännös",
 	"tux-editor-skip-button-label": "Hyppää seuraavaan",
-	"tux-editor-cancel-button-label": "Peru",
+	"tux-editor-cancel-button-label": "Peruuta",
 	"tux-editor-confirm-button-label": "Hyväksy käännös",
 	"tux-editor-shortcut-info": "Paina \"$1\" tallentaaksesi tai \"$2\" hypätäksesi seuraavaan viestiin",
 	"tux-editor-edit-desc": "Muokkaa ohjeistusta",

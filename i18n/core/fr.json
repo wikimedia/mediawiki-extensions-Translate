@@ -419,5 +419,6 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduit, $2% relu, $3% obsolète",
 	"translate-search-more-groups-info": "$1 groupe{{PLURAL:$1||s}} de plus",
 	"translate-ulsdep-title": "Erreur de configuration",
-	"translate-ulsdep-body": "L’extension de traduction dépend de l’[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal extension Sélecteur de langue]."
+	"translate-ulsdep-body": "L’extension de traduction dépend de l’[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal extension Sélecteur de langue].",
+	"tux-session-expired": "Vous n’êtes plus connecté. Veuillez vous connecter dans un autre onglet. Sinon, faites une copie des traductions non enregistrées, connectez-vous et revenez sur cette page."
 }

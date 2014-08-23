@@ -5,7 +5,8 @@
 			"තඹරු විජේසේකර",
 			"පසිඳු කාවින්ද",
 			"බිඟුවා",
-			"ශ්වෙත"
+			"ශ්වෙත",
+			"Indunil Chamara"
 		]
 	},
 	"pagetranslation": "පිටුව පරිවර්තනය",
@@ -111,5 +112,6 @@
 	"pt-deletepage-list-count": "එකතුව වශයෙන් {{PLURAL:$1|පිටු|පිටු}} $1 ක් මැකීමට ඇත.",
 	"pt-deletepage-full-logreason": "$1 පරිවර්තනමය පිටුවෙහි කොටසක්.",
 	"pt-deletepage-lang-logreason": "$1 පරිවර්තන පිටුවෙහි කොටසක්.",
-	"pt-deletepage-started": "සම්පූර්ණ පණිවුඩය සහ දෝෂයන් සඳහා කරුණාකර [[Special:Log/pagetranslation|පිටු පරිවර්තන ලඝු සටහන]] පිරික්සන්න."
+	"pt-deletepage-started": "සම්පූර්ණ පණිවුඩය සහ දෝෂයන් සඳහා කරුණාකර [[Special:Log/pagetranslation|පිටු පරිවර්තන ලඝු සටහන]] පිරික්සන්න.",
+	"pm-pagetitle-invalid": "කරුණාකර වලංගු නාමයක් පිටුවට යොදන්න"
 }

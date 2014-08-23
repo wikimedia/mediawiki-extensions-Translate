@@ -27,7 +27,7 @@
 	"tpt-section": "[[File:Page_translation_mark_view.png|thumb|Page translation]]\nA screenshot of the translation administration page is available.\n\nParameters:\n* $1 - the identifier of the unit, or the string \"Page display title\" (special unit identifier for page title; hard-coded)",
 	"tpt-section-new": "[[File:Page_translation_mark_view.png|thumb|Page translation]]\nA screenshot of the translation administration page is available.\n\nParameters:\n* $1 - the identifier of the unit, or the string \"Page display title\" (special unit identifier for page title; hard-coded)",
 	"tpt-section-deleted": "See definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - the identifier of the unit, or the string \"Page display title\" (special unit identifier for page title; hard-coded)",
-	"tpt-template": "See definition on [[mw:Help:Extension:Translate/Glossary]].",
+	"tpt-template": "See definition on [[mw:Help:Extension:Translate/Glossary]].\n{{Identical|Page template}}",
 	"tpt-templatediff": "See definition on [[mw:Help:Extension:Translate/Glossary]].",
 	"tpt-sections-oldnew": "\"New and existing\" refers to the sum of: (a) new translation units in a translatable page, plus (b) the already existing ones from previous version of a translatable page.",
 	"tpt-sections-deleted": "See definition on [[mw:Help:Extension:Translate/Glossary]].",

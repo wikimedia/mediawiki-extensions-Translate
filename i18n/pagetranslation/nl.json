@@ -6,7 +6,8 @@
 			"SPQRobin",
 			"Siebrand",
 			"Southparkfan",
-			"Mar(c)"
+			"Mar(c)",
+			"Sjoerddebruin"
 		]
 	},
 	"pagetranslation": "Paginavertaling",
@@ -172,5 +173,6 @@
 	"pm-langcode-placeholder": "Taalcode",
 	"pm-page-does-not-exist": "$1 bestaat niet",
 	"pm-old-translations-missing": "$1 bevat geen oude vertalingen",
+	"pm-pagetitle-invalid": "Vul een geldige paginatitel in",
 	"tpt-translate-title": "Vertaling van de paginanaam toestaan"
 }

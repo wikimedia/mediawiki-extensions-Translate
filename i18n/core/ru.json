@@ -404,5 +404,6 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% переведённых, $2% проверенных, $3% устаревших",
 	"translate-search-more-groups-info": "ещё $1 {{PLURAL:$1|группа|групп|группы}}",
 	"translate-ulsdep-title": "Ошибка конфигурации",
-	"translate-ulsdep-body": "Расширение по переводу зависит от [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector расширения «Универсальный переключатель языков»]."
+	"translate-ulsdep-body": "Расширение по переводу зависит от [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector расширения «Универсальный переключатель языков»].",
+	"tux-session-expired": "Вы не авторизованы. Пожалуйста, авторизуйтесь в отдельной вкладке, или скопируйте несохранённый перевод и вернитесь на эту страницу после авторизации."
 }
