@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e322bf2_8d754f95",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-23T09:05:14Z",
+      "side": 1,
+      "message": "Please use the Change-Id or commit hash in the future. Software specific links will become irrelevant as we change the software from time to time.",
+      "revId": "fe4cdd1525d5dd68d36e1346c7ca9b328ce47f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
