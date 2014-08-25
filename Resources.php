@@ -237,7 +237,6 @@ $wgResourceModules['ext.translate.navitoggle'] = array(
 $wgResourceModules['ext.translate.pagepreparation'] = array(
 	'scripts' => 'resources/js/ext.translate.pagepreparation.js',
 	'messages' => array(
-		'pp-save-summary',
 		'pp-save-message',
 		'pp-save-button-label',
 		'pp-prepare-message',
@@ -383,7 +382,6 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 		'pm-swap-icon-hover-text',
 		'pm-delete-icon-hover-text',
 		'pm-pagetitle-invalid',
-		'pm-summary-import',
 	),
 ) + $resourcePaths;
 
