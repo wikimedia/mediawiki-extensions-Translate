@@ -77,7 +77,16 @@ class MessageGroupCache {
 	 * @return string[] Message keys that can be passed one-by-one to get() method.
 	 */
 	public function getKeys() {
-		return unserialize( $this->open()->get( '#keys' ) );
+		$value = $this->open()->get( '#keys' );
+		$array = unserialize( $value );
+
+		// Debugging for bug 69830
+		if ( !is_array( $array ) ) {
+			$filename = $this->getCacheFileName();
+			throw new MWException( "Unable to get keys from '$filename'" );
+		}
+
+		return $array;
 	}
 
 	/**
