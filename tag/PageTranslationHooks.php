@@ -739,9 +739,8 @@ class PageTranslationHooks {
 		$wrap = '<div class="mw-translate-page-info">$1</div>';
 		$out = RequestContext::getMain()->getOutput();
 
-		global $wgLang;
-		$out->wrapWikiMsg( $wrap,
-			array( 'tpt-translation-intro', $url, ':' . $titleText, $wgLang->formatNum( $per ) ) );
+		$out->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, ':' . $titleText,
+			RequestContext::getMain()->getLanguage()->formatNum( $per ) ) );
 		$out->addHTML( '<hr />' );
 	}
 
