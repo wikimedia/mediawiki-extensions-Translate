@@ -1,102 +1,6 @@
+/*global alert: false*/
 ( function ( $, mw ) {
 	'use strict';
-
-	// Cache token so we don't have to keep fetching new ones for every single request.
-	var cachedToken = null;
-
-	mw.translate = mw.translate || {};
-
-	mw.translate = $.extend( mw.translate, {
-		/**
-		 * Post to translation review API with correct token.
-		 * If we have no token, get one and try to post.
-		 * If we have a cached token try using that, and if it fails, blank out the
-		 * cached token and start over.
-		 *
-		 * @param params {Object} API parameters
-		 * @param ok {Function} callback for success
-		 * @param err {Function} [optional] error callback
-		 * @return {jqXHR}
-		 */
-		proofread: function ( params, ok, err ) {
-			var useTokenToPost, getTokenIfBad, promise,
-				translate = this,
-				api = new mw.Api();
-
-			if ( cachedToken === null ) {
-				// We don't have a valid cached token, so get a fresh one and try posting.
-				// We do not trap any 'badtoken' or 'notoken' errors, because we don't want
-				// an infinite loop. If this fresh token is bad, something else is very wrong.
-				useTokenToPost = function ( token ) {
-					params.token = token;
-					api.post( params, ok, err );
-				};
-
-				promise = translate.getProofreadToken( useTokenToPost, err );
-			} else {
-				// We do have a token, but it might be expired. So if it is 'bad' then
-				// start over with a new token.
-				params.token = cachedToken;
-				getTokenIfBad = function ( code, result ) {
-					if ( code === 'badtoken' ) {
-						// force a new token, clear any old one
-						cachedToken = null;
-						translate.proofread( params, ok, err );
-					} else {
-						err( code, result );
-					}
-				};
-
-				promise = api.post( params, {
-					ok: ok,
-					err: getTokenIfBad
-				} );
-			}
-
-			return promise;
-		},
-
-		/**
-		 * Api helper to grab an translationreview token
-		 *
-		 * token callback has signature ( String token )
-		 * error callback has signature ( String code, Object results, XmlHttpRequest xhr, Exception exception )
-		 * Note that xhr and exception are only available for 'http_*' errors
-		 * code may be any http_* error code (see mw.Api), or 'token_missing'
-		 *
-		 * @param tokenCallback {Function} received token callback
-		 * @param err {Function} error callback
-		 * @return {jqXHR}
-		 */
-		getProofreadToken: function ( tokenCallback, err ) {
-			var parameters = {
-					action: 'tokens',
-					type: 'translationreview'
-				},
-				ok = function ( data ) {
-					var token;
-					// If token type is not available for this user,
-					// key 'translationreviewtoken' is missing or can contain Boolean false
-					if ( data.tokens && data.tokens.translationreviewtoken ) {
-						token = data.tokens.translationreviewtoken;
-						cachedToken = token;
-						tokenCallback( token );
-					} else {
-						err( 'token-missing', data );
-					}
-				},
-				ajaxOptions = {
-					ok: ok,
-					err: err,
-					// Due to the API assuming we're logged out if we pass the callback-parameter,
-					// we have to disable jQuery's callback system, and instead parse JSON string,
-					// by setting 'jsonp' to false.
-					jsonp: false
-				};
-
-			return new mw.Api().get( parameters, ajaxOptions );
-		}
-	} );
 
 	/**
 	 * Proofread Plugin
@@ -282,32 +186,41 @@
 		 * Mark this message as proofread.
 		 */
 		proofread: function () {
-			var proofread = this,
-				reviews;
+			var reviews, counter, params,
+				message = this.message,
+				$message = this.$message;
 
-			mw.translate.proofread( {
+			params = {
 				action: 'translationreview',
 				revision: this.message.properties.revision,
-				format: 'json'
-			}, function () {
-				proofread.$message.find( '.tux-proofread-action' )
-					.addClass( 'accepted' );
+			};
 
-				reviews = proofread.$message.find( '.tux-proofread-count' ).data( 'reviewCount' );
-				proofread.$message.find( '.tux-proofread-count' )
-					.text( mw.language.convertNumber( reviews + 1 ) );
+			if ( !mw.user.isAnon() ) {
+				params.assert = 'user';
+			}
+
+			new mw.Api().postWithToken( 'translationreview', params ).done( function () {
+				$message.find( '.tux-proofread-action' ).addClass( 'accepted' );
+
+				counter = $message.find( '.tux-proofread-count' );
+				reviews = counter.data( 'reviewCount' );
+				counter.text( mw.language.convertNumber( reviews + 1 ) );
 
 				// Update stats
 				$( '.tux-action-bar .tux-statsbar' ).trigger(
 					'change',
-					[ 'proofread', proofread.message.properties.status ]
+					[ 'proofread', message.properties.status ]
 				);
 
 				if ( mw.track ) {
-					mw.track( 'ext.translate.event.proofread', proofread.message );
+					mw.track( 'ext.translate.event.proofread', message );
 				}
-			}, function () {
-				mw.log( 'Error while submitting the message for proofread.' );
+			} ).fail( function ( errorCode ) {
+				$message.find( '.tux-proofread-action' ).addClass( 'tux-warning' );
+				// In MW 1.24 alpha postWithToken returns token-missing instead of assertuserfailed
+				if ( errorCode === 'assertuserfailed' || errorCode === 'token-missing'  ) {
+					alert( mw.msg( 'tux-session-expired' ) );
+				}
 			} );
 		},
 
