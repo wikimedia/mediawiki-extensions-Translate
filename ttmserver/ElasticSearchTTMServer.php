@@ -49,6 +49,9 @@ class ElasticSearchTTMServer
 		 * 2) Do another query for translations for those strings
 		 */
 		wfProfileIn( __METHOD__ );
+		$connection = $this->getClient()->getConnection();
+		$oldTimeout = $connection->getTimeout();
+		$connection->setTimeout( 10 );
 
 		$query = new \Elastica\Query();
 
@@ -133,6 +136,8 @@ class ElasticSearchTTMServer
 
 			return ( $a['quality'] < $b['quality'] ) ? 1 : -1;
 		} );
+
+		$connection->setTimeout( $oldTimeout );
 
 		wfProfileOut( __METHOD__ );
 
