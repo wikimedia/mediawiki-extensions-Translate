@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"DCLXVI"
+			"DCLXVI",
+			"StanProg"
 		]
 	},
+	"searchtranslations": "Търсене на преводи",
 	"tux-sst-search": "Търсене",
+	"tux-sst-search-ph": "Търсене на преводи",
 	"tux-sst-facet-language": "Езици",
 	"tux-sst-solr-offline-body": "Услугата за търсене е временно недостъпна.",
 	"tux-sst-next": "Следващи резултати",

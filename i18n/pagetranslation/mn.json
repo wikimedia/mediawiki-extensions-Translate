@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chinneeb"
+			"Chinneeb",
+			"Wisdom"
 		]
 	},
-	"pt-movepage-reason": "Шалтгаан:"
+	"tpt-invalid-group": "Буруу бүлэг",
+	"pt-movepage-reason": "Шалтгаан:",
+	"pm-pagetitle-invalid": "Тохирох гарчиг өгнө үү"
 }

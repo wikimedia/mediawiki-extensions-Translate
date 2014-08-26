@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chinneeb"
+			"Chinneeb",
+			"Wisdom"
 		]
 	},
 	"translate-page-language": "Хэл",
 	"translate-magic-cm-comment": "Тайлбар:",
-	"translate-language": "Хэл"
+	"translate-language": "Хэл",
+	"tux-session-expired": "Таны логин гарсан байна. Энэ таб -аа хаалгүй шинэ таб нэмээд логин хийчихээд хадгалаарай."
 }

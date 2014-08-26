@@ -49,7 +49,7 @@
 	"translate-statsf-group": "Ботпулосо явонь списка, косо куронь кодт:",
 	"translate-statsf-submit": "Васнянь неевтезэ",
 	"translate-tag-category": "Ютавтомкс лопат",
-	"translate-tag-page-desc": "\"[[$2|$1]]\" вики лопась ютавтозь.",
+	"translate-tag-page-desc": "\"[[$2|$1]]\" вики лопась ютавтозь «$3 ($4)» лопасто.",
 	"translate-sidebar-alltrans": "Лия кельсэ",
 	"translations": "Весе йутавтовкст",
 	"translate-translations-no-message": "\"$1\" пачтямнэсь а йутавтови",

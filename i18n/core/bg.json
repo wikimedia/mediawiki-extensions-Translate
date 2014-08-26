@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"DCLXVI",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"StanProg"
 		]
 	},
 	"translate": "Превеждане",
@@ -112,6 +113,7 @@
 	"languagestats": "Езикови статистики",
 	"languagestats-summary": "Тази страница показва статистиките за преводите на всички групи съобщения за езика.",
 	"languagestats-stats-for": "Статистики за преводите на $1 ($2).",
+	"languagestats-recenttranslations": "последни преводи",
 	"translate-language-code": "Езиков код",
 	"translate-language-code-field-name": "Езиков код:",
 	"translate-suppress-complete": "Скриване на изцяло преведените групи съобщения",
@@ -146,6 +148,7 @@
 	"translate-gs-total": "Общо",
 	"translate-searchprofile": "Преводи",
 	"translate-stats-workflow": "Статут",
+	"translate-dynagroup-recent-label": "Последни преводи",
 	"translate-gethelp": "Помощ",
 	"translate-msggroupselector-search-all": "Всички",
 	"tux-languageselector": "Превеждане на",

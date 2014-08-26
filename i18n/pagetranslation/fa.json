@@ -8,7 +8,8 @@
 			"ZxxZxxZ",
 			"پاناروما",
 			"Armin1392",
-			"Omid.koli"
+			"Omid.koli",
+			"Alirezaaa"
 		]
 	},
 	"pagetranslation": "ترجمهٔ صفحه",
@@ -65,7 +66,7 @@
 	"translate-tag-markthis": "علامت‌گذاری این صفحه برای ترجمه",
 	"translate-tag-markthisagain": "این صفحه <span class=\"plainlinks\">[$1 changes]</span> دارد از زمانی که آخرین <span class=\"plainlinks\">[$2 marked for translation]</span> بود.",
 	"translate-tag-hasnew": "این صفحه شامل <span class=\"plainlinks\">[$1 changes]</span> است که برای ترجمه علامت‌گذاری نشده‌اند.",
-	"tpt-translation-intro": "این صفحه یک <span class=\"plainlinks\">[$1 translated version]</span> یک صفحه [[$2]] است و ترجمه کامل  $3% است.",
+	"tpt-translation-intro": "این صفحه <span class=\"plainlinks\">[$1 نسخهٔ ترجمه‌شدهٔ]</span> صفحهٔ [[$2]] است و ترجمهٔ آن $3% کامل شده‌است.",
 	"tpt-languages-legend": "زبان‌های دیگر:",
 	"tpt-languages-zero": "شروع ترجمه برای این زبان",
 	"tpt-tab-translate": "ترجمه",
@@ -86,7 +87,7 @@
 	"tpt-aggregategroup-new-description": "توضیحات (اختیاری):",
 	"tpt-aggregategroup-remove-confirm": "آیا مطمئن هستید که می‌خواهید این گروه جمع شده را حذف کنید؟",
 	"tpt-aggregategroup-invalid-group": "گروه وجود ندارد",
-	"tpt-invalid-group": "گروه غیرمعتبر",
+	"tpt-invalid-group": "گروه نامعتبر",
 	"pt-parse-open": "نامتعادل و‌ ال‌تی؛ ترجمه> برچسب.\nالگو ترجمهː <pre>$1</pre>",
 	"pt-parse-close": "نامتعادل &lt; /ترجمه > برچسب.\nالگو ترجمه: <pre>$1</pre>",
 	"pt-parse-nested": "تو در تو &lt; ترجمه> واحدهای ترجمه مجاز نیست.\nبرچسب متن: <pre>$1</pre>",
@@ -159,5 +160,6 @@
 	"pt-deletepage-lang-logreason": "قسمتی از صفحهٔ ترجمه \"$1\".",
 	"pt-deletepage-started": "لطفاً [[Special:Log/pagetranslation|سیاهه صفحه ترجمه]] را برای خطاها و پیام تکمیل بررسی کنید.",
 	"pt-deletepage-intro": "این صفحه خاص به شما برای حذف تمام یک صفحه ترجمه ،یا یک صفحه ترجمه فردی در یک زبان اجازه می‌دهد.\nبه دلیل صفحات بسیار که در حال انتظار برای حذف خواهند بود، عمل حذف فوری نخواهد‌بود.\nهنگامی که صفحات منتقل می‌شوند, امکان ارتباط برقرار کردن با صفحات در سوال نیست.\nشکست‌ها در [[Special:Log/pagetranslation|سیاهه صفحه ترجمه]] وارد خواهند‌شد و آنها نیاز به تعمیر با دست دارند.",
-	"pm-pagetitle-invalid": "لطفا عنوان صفحه‌ای معتبر را وارد کنید"
+	"pm-pagetitle-invalid": "لطفا یک عنوان صفحه معتبر وارد کنید",
+	"pm-summary-import": "ترجمه با استفاده از [[Special:PageMigration|مهاجرت صفحه]] وارد شده‌است"
 }

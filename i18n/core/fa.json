@@ -14,7 +14,8 @@
 			"ZxxZxxZ",
 			"جواد",
 			"درفش کاویانی",
-			"Armin1392"
+			"Armin1392",
+			"Alirezaaa"
 		]
 	},
 	"translate": "ترجمه",
@@ -386,6 +387,7 @@
 	"tux-editor-expand-tooltip": "گسترش",
 	"tux-editor-collapse-tooltip": "نهفتن",
 	"tux-editor-message-tools-history": "تاریخچه",
+	"tux-editor-message-tools-delete": "حذف",
 	"tux-editor-message-tools-translations": "همهٔ ترجمه‌ها",
 	"tux-editor-loading": "در حال بارگیری...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|زبان}} بیشتر",
@@ -393,5 +395,6 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% ترجمه‌شده، $2% بازبینی‌شده، $3% تاریخ‌گذشته",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|گروه|گروه}} دیگر",
 	"translate-ulsdep-title": "تنظیم خطا",
-	"translate-ulsdep-body": "ترجمهٔ افزونه به [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector افزونهٔ انتخاب زبان جهانی] بستگی دارد."
+	"translate-ulsdep-body": "ترجمهٔ افزونه به [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector افزونهٔ انتخاب زبان جهانی] بستگی دارد.",
+	"tux-session-expired": "شما دیگر داخل نیستید. خواهشمند است در یک سربرگ جدا وارد شوید. راه دیگر، یک نسخه از ترجمه‌های ذخیره‌نشده تهیه کنید، وارد شوید و به این صفحه بازگردید."
 }
