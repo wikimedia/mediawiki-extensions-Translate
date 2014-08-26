@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e322bf2_6a7b17ec",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-08-26T12:46:37Z",
+      "side": 1,
+      "message": "Explaining the signature \u0027undefined\u0027 here shouldn\u0027t be needed. Either it makes sense, or it\u0027s a terrible signature we should (and still can) change.",
+      "revId": "c6ee04cc0f7caa5f952c525e47234ba0b9283d6f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_ca632b3a",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-08-26T12:46:37Z",
+      "side": 1,
+      "message": "Don\u0027t access alert as property of window, use it as a global function. That means it needs to be declared atop the file with /*global */.\n\nUsing it as window. both masks the property (thus no static validation if you misspell it) and makes the code larger/slightly slower (global lookup + property proxy).",
+      "revId": "c6ee04cc0f7caa5f952c525e47234ba0b9283d6f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
