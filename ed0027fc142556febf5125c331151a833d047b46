@@ -34,6 +34,24 @@
       "revId": "ed0027fc142556febf5125c331151a833d047b46",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_251d4079",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-26T14:53:01Z",
+      "side": 1,
+      "message": "Even if that is fixed in core, it will take at least an year until we can use it due to BC requirements.\n\nIt seems easier to just go for alternative solution with a placeholder attribute or explaining by words.",
+      "parentUuid": "4e322bf2_45f5ec4b",
+      "revId": "ed0027fc142556febf5125c331151a833d047b46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
