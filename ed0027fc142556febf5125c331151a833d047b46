@@ -16,6 +16,24 @@
       "revId": "ed0027fc142556febf5125c331151a833d047b46",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_45f5ec4b",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-26T14:34:00Z",
+      "side": 1,
+      "message": "If \u003csamp\u003e is incorrectly escaped while it\u0027s an allowed HTML tag, that\u0027s a bug in core. Please report it and it should be relatively easily resolved, but don\u0027t remove the useful formatting prematurely.",
+      "parentUuid": "8e28a382_bb3c9ebd",
+      "revId": "ed0027fc142556febf5125c331151a833d047b46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
