@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e322bf2_b71cc36b",
+        "filename": "tests/phpunit/MessageGroupStatesUpdaterJobTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-26T14:57:39Z",
+      "side": 1,
+      "message": "Any reason to not call this in setUp() with others?",
+      "revId": "fe8aa28b4060c550c41253de27fbb52716b2a6ea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_3730d3e4",
+        "filename": "tests/phpunit/SolrTTMServerTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-08-26T14:57:39Z",
+      "side": 1,
+      "message": "The setUp() already sets this.",
+      "revId": "fe8aa28b4060c550c41253de27fbb52716b2a6ea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
