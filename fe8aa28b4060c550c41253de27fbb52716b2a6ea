@@ -33,6 +33,24 @@
       "revId": "fe8aa28b4060c550c41253de27fbb52716b2a6ea",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_1744b749",
+        "filename": "tests/phpunit/SolrTTMServerTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-08-26T15:00:57Z",
+      "side": 1,
+      "message": "What\u0027s \"this test\" in https://bugzilla.wikimedia.org/show_bug.cgi?id\u003d68636#c1",
+      "parentUuid": "4e322bf2_3730d3e4",
+      "revId": "fe8aa28b4060c550c41253de27fbb52716b2a6ea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
