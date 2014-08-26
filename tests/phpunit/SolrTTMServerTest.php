@@ -45,6 +45,7 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 
 	public function testSearchableTTMServer() {
 		global $wgTranslateTestTTMServer;
+		$this->setMwGlobals( 'wgTranslateTranslationServices', array() );
 		if ( !$wgTranslateTestTTMServer ) {
 			$this->markTestSkipped( 'No test TTMServer available' );
 		}

@@ -108,6 +108,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 	}
 
 	public function testHooks() {
+		$this->setMwGlobals( 'wgTranslateTranslationServices', array() );
 		$user = new MockSuperUser();
 		$group = MessageGroups::getGroup( 'group-trans' );
 
