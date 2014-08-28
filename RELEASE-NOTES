@@ -1,0 +1,15 @@
+== Translate 2014.08 ==
+Released at 2014-08-28.
+
+=== Noteworthy changes ===
+* Breaking change: Dropped support for MediaWiki 1.21 (2014.05 is the latest version of MLEB as a whole which supports 1.21)
+* Avoid losing translators' edits: improved handling of expired sessions ({{bug|69314}}).
+** Status has yellow background if the translation has not been saved.
+** Show an alert to the user if session has expired.
+** Prevent saving translations as an anonymous user accidentally.
+* Restore progress icon for the current translation page (regression from MLEB 2014.07).
+* Update associated translation pages when moving translation units.
+* Show definition diff for all messages if available, not just for outdated messages.
+* Special:AggregateGroups: Group selector is now input field with autocompletion instead of combobox.
+* Special:PageMigration: Don't add the created pages to watchlist.
+* Special:PagePreparation: This is a new special page to assist in preparing pages for translation
