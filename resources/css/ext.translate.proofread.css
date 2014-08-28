@@ -107,11 +107,14 @@
 }
 
 .tux-proofread-action {
-	background: url(../images/check-sprite-ltr.png) right top no-repeat;
+	background-position: right top;
+	background-repeat: no-repeat;
+	background-image: url(../images/check-sprite-ltr.png);
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/check-sprite-ltr.svg);
 	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/check-sprite-ltr.svg);
-	height: 31px;
+	/* There is 1px white row between each icon */
+	height: 30px;
 	cursor: pointer;
 }
 
