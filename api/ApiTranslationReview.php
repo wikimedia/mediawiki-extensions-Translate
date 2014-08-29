@@ -187,19 +187,6 @@ class ApiTranslationReview extends ApiBase {
 		return 'Mark translations reviewed';
 	}
 
-	public function getPossibleErrors() {
-		$right = self::$right;
-
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'code' => 'permissiondenied', 'info' => "You must have $right right" ),
-			array( 'code' => 'blocked', 'info' => "You have been blocked from editing" ),
-			array( 'code' => 'unknownmessage', 'info' => 'Title $1 does not belong to a message group' ),
-			array( 'code' => 'fuzzymessage', 'info' => 'Cannot review fuzzy translations' ),
-			array( 'code' => 'owntranslation', 'info' => 'Cannot review own translations' ),
-			array( 'code' => 'invalidrevision', 'info' => 'Revision $1 is invalid' ),
-		) );
-	}
-
 	public function getExamples() {
 		return array(
 			'api.php?action=translationreview&revision=1&token=foo',

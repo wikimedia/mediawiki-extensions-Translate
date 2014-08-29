@@ -109,17 +109,6 @@ class ApiTranslationAids extends ApiBase {
 		return 'Query all translations aids';
 	}
 
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'code' => 'invalidtitle', 'info' => 'The given title is invalid' ),
-			array( 'code' => 'invalidgroup', 'info' => 'The given or guessed group is invalid' ),
-			array(
-				'code' => 'nomessagefortitle',
-				'info' => 'Title does not correspond to a translatable message'
-			),
-		) );
-	}
-
 	protected function getExamples() {
 		return array(
 			"api.php?action=translationaids&title=MediaWiki:January/fi",

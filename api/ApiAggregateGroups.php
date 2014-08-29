@@ -245,14 +245,6 @@ class ApiAggregateGroups extends ApiBase {
 			'groups and associate or dissociate message groups from them (one at a time).';
 	}
 
-	public function getPossibleErrors() {
-		$right = self::$right;
-
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'code' => 'permissiondenied', 'info' => "You must have $right right" ),
-		) );
-	}
-
 	public function getExamples() {
 		return array(
 			"api.php?action=aggregategroups&do=associate&group=groupId&aggregategroup=aggregateGroupId",

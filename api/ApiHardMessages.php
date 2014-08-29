@@ -145,16 +145,6 @@ class ApiHardMessages extends ApiBase {
 		return 'Mark translations hard';
 	}
 
-	public function getPossibleErrors() {
-		$right = self::$right;
-
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'code' => 'permissiondenied', 'info' => "You must have $right right" ),
-			array( 'code' => 'invalidtitle', 'info' => 'Title $1 is invalid' ),
-			array( 'code' => 'invalidrevision', 'info' => 'Revision $1 is invalid' ),
-		) );
-	}
-
 	public function getExamples() {
 		return array(
 			'api.php?action=hardmessages&title=SampleTitle&token=foo',
