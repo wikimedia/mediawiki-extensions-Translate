@@ -146,11 +146,11 @@ class MessageGroupStats {
 		$locked = false;
 		// Try to avoid deadlocks with duplicated deletes where there is no row
 		// @note: this only helps in auto-commit mode (which job runners use)
-		if ( count( $ids ) == 1 ) {
+		if ( !$dbw->getFlag( DBO_TRX ) && count( $ids ) == 1 ) {
 			$key = __CLASS__ . ":modify:{$ids[0]}";
 			$locked = $dbw->lock( $key, __METHOD__, 1 );
 			if ( !$locked ) {
-				return true;
+				return true; // raced out
 			}
 		}
 
@@ -375,13 +375,22 @@ class MessageGroupStats {
 		// Try to avoid deadlocks with S->X lock upgrades in MySQL
 		// @note: this only helps in auto-commit mode (which job runners use)
 		$key = __CLASS__ . ":modify:$id";
-		if ( $dbw->lock( $key, __METHOD__, 1 ) ) {
-			$dbw->insert(
-				self::TABLE,
-				$data,
-				__METHOD__,
-				array( 'IGNORE' )
-			);
+		$locked = false;
+		if ( !$dbw->getFlag( DBO_TRX ) ) {
+			$locked = $dbw->lock( $key, __METHOD__, 1 );
+			if ( !$locked ) {
+				return $aggregates; // raced out
+			}
+		}
+
+		$dbw->insert(
+			self::TABLE,
+			$data,
+			__METHOD__,
+			array( 'IGNORE' )
+		);
+
+		if ( $locked ) {
 			$dbw->unlock( $key, __METHOD__ );
 		}
 
