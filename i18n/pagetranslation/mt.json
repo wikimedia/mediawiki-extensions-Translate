@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrisportelli"
+			"Chrisportelli",
+			"Leli Forte"
 		]
 	},
 	"pagetranslation": "Traduzzjoni tal-paġni",
@@ -9,5 +10,6 @@
 	"translate-tag-translate-link-desc": "Ittraduċi din il-paġna",
 	"tpt-languages-legend": "Lingwi oħra:",
 	"tpt-aggregategroup-add": "Żid",
-	"tpt-aggregategroup-save": "Salva"
+	"tpt-aggregategroup-save": "Salva",
+	"pm-pagetitle-invalid": "Ikteb titlu validu għall-paġna."
 }

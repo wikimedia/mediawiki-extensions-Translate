@@ -9,7 +9,8 @@
 			"پاناروما",
 			"Armin1392",
 			"Omid.koli",
-			"Alirezaaa"
+			"Alirezaaa",
+			"Reza1615"
 		]
 	},
 	"pagetranslation": "ترجمهٔ صفحه",
@@ -87,6 +88,10 @@
 	"tpt-aggregategroup-new-description": "توضیحات (اختیاری):",
 	"tpt-aggregategroup-remove-confirm": "آیا مطمئن هستید که می‌خواهید این گروه جمع شده را حذف کنید؟",
 	"tpt-aggregategroup-invalid-group": "گروه وجود ندارد",
+	"tpt-aggregategroup-edit-name": "نام:",
+	"tpt-aggregategroup-edit-description": "شرح:",
+	"tpt-aggregategroup-update": "ذخیره",
+	"tpt-aggregategroup-update-cancel": "انصراف",
 	"tpt-invalid-group": "گروه نامعتبر",
 	"pt-parse-open": "نامتعادل و‌ ال‌تی؛ ترجمه> برچسب.\nالگو ترجمهː <pre>$1</pre>",
 	"pt-parse-close": "نامتعادل &lt; /ترجمه > برچسب.\nالگو ترجمه: <pre>$1</pre>",
@@ -128,7 +133,7 @@
 	"pt-movepage-list-count": "در کل $1 {{PLURAL:$1|صفحه|صفحه‌ها}} برای حذف شدن.",
 	"pt-movepage-legend": "انتقال صفحهٔ قابل ترجمه",
 	"pt-movepage-current": "نام فعلی:",
-	"pt-movepage-new": "نام جدید:",
+	"pt-movepage-new": "نام تازه:",
 	"pt-movepage-reason": "دلیل:",
 	"pt-movepage-subpages": "انتقال همهٔ زیرصفحه‌ها",
 	"pt-movepage-action-check": "بررسی کن که انتقال ممکن باشد",
@@ -160,6 +165,12 @@
 	"pt-deletepage-lang-logreason": "قسمتی از صفحهٔ ترجمه \"$1\".",
 	"pt-deletepage-started": "لطفاً [[Special:Log/pagetranslation|سیاهه صفحه ترجمه]] را برای خطاها و پیام تکمیل بررسی کنید.",
 	"pt-deletepage-intro": "این صفحه خاص به شما برای حذف تمام یک صفحه ترجمه ،یا یک صفحه ترجمه فردی در یک زبان اجازه می‌دهد.\nبه دلیل صفحات بسیار که در حال انتظار برای حذف خواهند بود، عمل حذف فوری نخواهد‌بود.\nهنگامی که صفحات منتقل می‌شوند, امکان ارتباط برقرار کردن با صفحات در سوال نیست.\nشکست‌ها در [[Special:Log/pagetranslation|سیاهه صفحه ترجمه]] وارد خواهند‌شد و آنها نیاز به تعمیر با دست دارند.",
+	"pm-import-button-label": "درون‌ریزی شود",
+	"pm-savepages-button-label": "ذخیره",
+	"pm-cancel-button-label": "انصراف",
+	"pm-langcode-placeholder": "کد زبان",
+	"pm-page-does-not-exist": "$1 وجود ندارد.",
 	"pm-pagetitle-invalid": "لطفا یک عنوان صفحه معتبر وارد کنید",
-	"pm-summary-import": "ترجمه با استفاده از [[Special:PageMigration|مهاجرت صفحه]] وارد شده‌است"
+	"pm-summary-import": "ترجمه با استفاده از [[Special:PageMigration|مهاجرت صفحه]] وارد شده‌است",
+	"pp-save-button-label": "ذخیره"
 }

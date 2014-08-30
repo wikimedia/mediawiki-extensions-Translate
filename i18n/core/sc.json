@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Via maxima"
+			"Via maxima",
+			"Taxandru"
 		]
 	},
 	"translate": "Tradui",
 	"translate-desc": "[[Special:Translate|Special page]] po tradusi MediaWiki and beyond",
-	"translate-taskui-view": "Amosta totu is messagius"
+	"translate-taskui-view": "Ammustra totu is missadas"
 }
