@@ -3,7 +3,8 @@
 		"authors": [
 			"Reza1615",
 			"Armin1392",
-			"Ebraminio"
+			"Ebraminio",
+			"Alirezaaa"
 		]
 	},
 	"managetranslatorsandbox": "مدیریت کاربران مترجم",
@@ -35,14 +36,14 @@
 	"tsb-translations-current": "ترجمه‌های موجود",
 	"tsb-delete-userpage-summary": "حذف صفحه کاربری کاربری یک کاربر سندباکس",
 	"translationstash": "خوش آمدید",
-	"translate-translationstash-welcome": "خوش آمدید {{GENDER:$1|$1}}، شما یک مترجم جدید هستید",
+	"translate-translationstash-welcome": "خوش آمدید {{GENDER:$1|$1}}، شما یک مترجم تازه هستید",
 	"translate-translationstash-welcome-note": "آشنا شدن با ابزارهای ترجمه. چند پیام را ترجمه کنید و تمام حقوق مترجم را برای شرکت در پروژه‌های مورد علاقه خود بدست آورید.",
 	"translate-translationstash-initialtranslation": "ترجمه‌های اولیهٔ شما",
 	"translate-translationstash-translations": "$1تکمیل شده {{PLURAL:$1|ترجمه|ترجمه‌ها}}",
 	"translate-translationstash-skip-button-label": "امتحان دیگری",
 	"tsb-limit-reached-title": "تشکر برای ترجمه‌های شما",
 	"tsb-limit-reached-body": "شما به حد ترجمه برای مترجمان جدید رسیده‌اید.\nتیم ما بررسی خواهد کرد و حساب شما را به زودی ارتقاء می‌دهد.\nسپس شما قادر به ترجمه بدون محدودیت خواهید بود.",
-	"tsb-no-requests-from-new-users": "هیچ درخواستی از کاربران جدید نیست",
+	"tsb-no-requests-from-new-users": "هیچ درخواستی از کاربران تازه نیست",
 	"tsb-create-user-page": "ایجاد صفحهٔ کاربری اصلی",
 	"log-name-translatorsandbox": "ترجمه سندباکس",
 	"log-description-translatorsandbox": "سیاهه عملیات در ترجمه کاربران سندباکس",

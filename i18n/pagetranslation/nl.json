@@ -67,6 +67,7 @@
 	"tpt-translation-intro": "Deze pagina is een <span class=\"plainlinks\">[$1 vertaalde versie]</span> van de pagina [[$2]] en de vertaling is $3% compleet.",
 	"tpt-languages-legend": "Andere talen:",
 	"tpt-languages-zero": "Vertaling voor deze taal starten",
+	"tpt-languages-nonzero": "$1 ($2% vertaald)",
 	"tpt-tab-translate": "Vertalen",
 	"tpt-target-page": "Deze pagina kan niet handmatig worden bijgewerkt.\nDeze pagina is een vertaling van de pagina [[$1]].\nDe vertaling kan bijgewerkt worden via de [$2 vertaalhulpmiddelen].",
 	"tpt-unknown-page": "Deze naamruimte is gereserveerd voor de vertalingen van van pagina's.\nDe pagina die u probeert te bewerken lijkt niet overeen te komen met een te vertalen pagina.",
@@ -174,5 +175,9 @@
 	"pm-page-does-not-exist": "$1 bestaat niet",
 	"pm-old-translations-missing": "$1 bevat geen oude vertalingen",
 	"pm-pagetitle-invalid": "Vul een geldige paginatitel in",
-	"tpt-translate-title": "Vertaling van de paginanaam toestaan"
+	"tpt-translate-title": "Vertaling van de paginanaam toestaan",
+	"pagepreparation": "Pagina voorbereiden voor vertaling",
+	"pp-prepare-button-label": "Voorbereiden",
+	"pp-save-button-label": "Opslaan",
+	"pp-pagename-missing": "Voer een paginanaam in."
 }

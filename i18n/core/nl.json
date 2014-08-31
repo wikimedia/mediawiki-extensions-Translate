@@ -12,7 +12,8 @@
 			"User555",
 			"Wiki13",
 			"Mar(c)",
-			"Southparkfan"
+			"Southparkfan",
+			"Sjoerddebruin"
 		]
 	},
 	"translate": "Vertalen",
@@ -146,7 +147,7 @@
 	"translate-statsf-group": "Kommagescheiden lijst van groepscodes:",
 	"translate-statsf-submit": "Voorvertoning",
 	"translate-tag-category": "Vertaalbare pagina's",
-	"translate-tag-page-desc": "Vertaling van de wikipagina [[$2|$1]].",
+	"translate-tag-page-desc": "Vertaling van de wikipagina [[$2|$1]] van $3 ($4).",
 	"translate-sidebar-alltrans": "In andere talen",
 	"translations": "Alle vertalingen",
 	"translations-summary": "Voer de naam van een bericht in om alle beschikbare vertalingen weer te geven.",
