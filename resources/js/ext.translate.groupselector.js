@@ -1,7 +1,7 @@
 ( function ( $, mw ) {
 	'use strict';
 
-	var groupLoader, delay;
+	var groupsLoader, recentGroupsLoader, delay;
 
 	/**
 	 * options
@@ -12,6 +12,10 @@
 	function TranslateMessageGroupSelector( element, options ) {
 		this.$trigger = $( element );
 		this.$menu = null;
+		this.$search = null;
+		this.$list = null;
+		this.$loader = null;
+
 		this.parentGroupId = null;
 		this.options = $.extend( true, {}, $.fn.msggroupselector.defaults, options );
 		// Store the explicitly given options, which can be passed to subgroup
@@ -23,7 +27,6 @@
 	}
 
 	TranslateMessageGroupSelector.prototype = {
-		loader: null,
 		constructor: TranslateMessageGroupSelector,
 
 		/**
@@ -43,13 +46,11 @@
 				$listFilters,
 				$listFiltersGroup,
 				$search,
-				$searchInput,
 				$searchIcon,
-				$searchGroup,
-				$loader,
-				$msgGroupList;
+				$searchGroup;
 
-			this.$menu = $( '<div class="ext-translate-msggroup-selector-menu grid">' );
+			this.$menu = $( '<div>' )
+				.addClass( 'ext-translate-msggroup-selector-menu grid' );
 
 			$groupTitle = $( '<div>' )
 				.addClass( 'row' )
@@ -62,18 +63,20 @@
 			$searchIcon = $( '<div>' )
 				.addClass( 'two columns ext-translate-msggroup-search-icon' );
 
-			$searchInput = $( '<input>' )
+			this.$search = $( '<input>' )
 				.prop( 'type', 'text' )
 				.addClass( 'ext-translate-msggroup-search-input' );
 
-			if ( mw.translate.isPlaceholderSupported( $searchInput ) ) {
-				$searchInput.prop( 'placeholder', mw.msg( 'translate-msggroupselector-search-placeholder' ) );
+			if ( mw.translate.isPlaceholderSupported( this.$search ) ) {
+				this.$search.prop( 'placeholder', mw.msg( 'translate-msggroupselector-search-placeholder' ) );
 			}
 
-			$search = $( '<div>' ).addClass( 'ten columns' )
-				.append( $searchInput );
+			$search = $( '<div>' )
+				.addClass( 'ten columns' )
+				.append( this.$search );
 
-			$listFilters = $( '<div>' ).addClass( 'filters six columns' )
+			$listFilters = $( '<div>' )
+				.addClass( 'filters six columns' )
 				.append(
 					$( '<div>' )
 						.addClass( 'ext-translate-msggroup-category all selected' )
@@ -91,11 +94,13 @@
 				.addClass( 'row filters-group' )
 				.append( $listFilters, $searchGroup );
 
-			$msgGroupList = $( '<div>' )
+			this.$list = $( '<div>' )
 				.addClass( 'row ext-translate-msggroup-list' );
 
-			$loader = $( '<div>' ).addClass( 'tux-loading-indicator' );
-			this.$menu.append( $groupTitle, $listFiltersGroup, $loader, $msgGroupList );
+			this.$loader = $( '<div>' )
+				.addClass( 'tux-loading-indicator' );
+
+			this.$menu.append( $groupTitle, $listFiltersGroup, this.$loader, this.$list );
 
 			$( 'body' ).append( this.$menu );
 		},
@@ -110,33 +115,20 @@
 				.hide();
 			this.$menu.addClass( 'open' ).show();
 			this.position();
-			// Keep the focus in the message group search box.
-			this.$menu.find( '.ext-translate-msggroup-search-input' ).focus();
-			this.showDefaultGroups();
-		},
-
-		showDefaultGroups: function () {
-			var self = this;
-
-			this.$menu.find( '.ext-translate-msggroup-list' ).empty();
-			this.loadGroups().done( function( groups ) {
-				var groupsToShow = mw.translate.findGroup( self.parentGroupId, groups );
-
-				// We do not want to display the group itself, only its subgroups
-				if ( self.parentGroupId ) {
-					groupsToShow = groupsToShow.groups;
-				}
-
-				self.addGroupRows( groupsToShow );
-			} );
+			// Place the focus in the message group search box.
+			this.$search.focus();
+			// Start loading the groups, but assess the situation again after
+			// they are loaded, in case user has made further interactions.
+			this.loadGroups().done( $.proxy( this.showList, this ) );
+			// Hide the selector panel when clicking outside of it
+			$( 'html' ).one( 'click', $.proxy( this.hide, this ) );
 		},
 
 		/**
 		 * Hide the selector
 		 */
 		hide: function () {
-			this.$menu.hide();
-			this.$menu.removeClass( 'open' );
+			this.$menu.hide().removeClass( 'open' );
 		},
 
 		/**
@@ -154,13 +146,7 @@
 		 * Attach event listeners
 		 */
 		listen: function () {
-			var groupSelector = this,
-				$search;
-
-			// Hide the selector panel when clicking outside of it
-			$( 'html' ).on( 'click', function () {
-				groupSelector.hide();
-			} );
+			var groupSelector = this;
 
 			groupSelector.$trigger.on( 'click', function ( e ) {
 				groupSelector.toggle();
@@ -227,20 +213,16 @@
 				groupSelector.$menu.find( '.ext-translate-msggroup-category' )
 					.toggleClass( 'selected' );
 
-				if ( $this.hasClass( 'recent' ) ) {
-					groupSelector.getRecentGroups();
-				} else {
-					groupSelector.showDefaultGroups();
-				}
+				groupSelector.$search.val( '' );
+				groupSelector.showList();
 			} );
 
-			$search = this.$menu.find( '.ext-translate-msggroup-search-input' );
-			$search.on( 'click', $.proxy( this.show, this ) )
+			this.$search.on( 'click', $.proxy( this.show, this ) )
 				.on( 'keypress', $.proxy( this.keyup, this ) )
 				.on( 'keyup', $.proxy( this.keyup, this ) );
 
 			if ( this.eventSupported( 'keydown' ) ) {
-				$search.on( 'keydown', $.proxy( this.keyup, this ) );
+				this.$search.on( 'keydown', $.proxy( this.keyup, this ) );
 			}
 		},
 
@@ -248,15 +230,7 @@
 		 * Handle the keypress/keyup events in the message group search box.
 		 */
 		keyup: function () {
-			var query,
-				groupSelector = this,
-				$search = this.$menu.find( '.ext-translate-msggroup-search-input' );
-
-			// Respond to the keypress events after a small timeout to avoid freeze when typed fast.
-			delay( function () {
-				query = $.trim( $search.val() ).toLowerCase();
-				groupSelector.filter( query );
-			}, 300 );
+			delay( $.proxy( this.showList, this ), 300 );
 		},
 
 		/**
@@ -270,47 +244,80 @@
 		},
 
 		/**
-		 * Get recent message groups.
+		 * Shows suitable list for current view, taking possible filter into account
 		 */
-		getRecentGroups: function () {
-			var api = new mw.Api(),
-				groupSelector = this,
-				$list = this.$menu.find( '.ext-translate-msggroup-list' ),
-				recentMessageGroups = $( '.ext-translate-msggroup-selector' )
-					.data( 'recentmsggroups' );
+		showList: function () {
+			var query = $.trim( this.$search.val() ).toLowerCase();
 
-			$list.empty();
+			if ( query ) {
+				this.filter( query );
+			} else {
+				this.showUnfilteredList();
+			}
+		},
 
-			function addRecentMessageGroups( recentgroups ) {
+		/**
+		 * Shows an unfiltered list of groups depending on the selected tab.
+		 */
+		showUnfilteredList: function () {
+			var $selected = this.$menu.find( '.ext-translate-msggroup-category.selected' );
+
+			if ( $selected.hasClass( 'all' ) ) {
+				this.showDefaultGroups();
+			} else if ( $selected.hasClass( 'recent' ) ) {
+				this.showRecentGroups();
+			}
+		},
+
+		/**
+		 * Shows the list of message groups excluding subgroups.
+		 *
+		 * In case a parent message group has been given, only subgroups of that
+		 * message group are shown, otherwise all top-level message groups are shown.
+		 */
+		showDefaultGroups: function () {
+			var groupSelector = this;
+
+			this.$loader.show();
+
+			this.loadGroups().done( function( groups ) {
+				var groupsToShow = mw.translate.findGroup( groupSelector.parentGroupId, groups );
+
+				// We do not want to display the group itself, only its subgroups
+				if ( groupSelector.parentGroupId ) {
+					groupsToShow = groupsToShow.groups;
+				}
+
+				groupSelector.$loader.hide();
+				groupSelector.$list.empty();
+				groupSelector.addGroupRows( groupsToShow );
+			} );
+		},
+
+		/**
+		 * Show recent message groups.
+		 */
+		showRecentGroups: function () {
+			var groupSelector = this;
+
+			this.$loader.show();
+
+			$.when( this.loadRecentGroups(), this.loadGroups() )
+			.then( function ( recentGroups, allGroups ) {
 				var rows = [];
 
-				groupSelector.loadGroups().done( function( groups ) {
-					$.each( recentgroups, function ( index, id ) {
-						var messagegroup = mw.translate.findGroup( id, groups );
+				$.each( recentGroups, function ( index, id ) {
+					var group = mw.translate.findGroup( id, allGroups );
 
-						if ( messagegroup ) {
-							rows.push( groupSelector.prepareMessageGroupRow( messagegroup ) );
-						}
-					} );
-
-					$list.append( rows );
+					if ( group ) {
+						rows.push( groupSelector.prepareMessageGroupRow( group ) );
+					}
 				} );
-			}
 
-			if ( recentMessageGroups ) {
-				addRecentMessageGroups( recentMessageGroups );
-			} else {
-				groupSelector.$menu.find( '.tux-loading-indicator' ).show();
-				api.get( {
-					action: 'translateuser',
-					format: 'json'
-				} ).done( function ( result ) {
-					$( '.ext-translate-msggroup-selector' )
-						.data( 'recentmsggroups', result.translateuser.recentgroups );
-					addRecentMessageGroups( result.translateuser.recentgroups );
-					groupSelector.$menu.find( '.tux-loading-indicator' ).hide();
-				} );
-			}
+				groupSelector.$loader.hide();
+				groupSelector.$list.empty();
+				groupSelector.$list.append( rows );
+			} );
 		},
 
 		/**
@@ -342,18 +349,10 @@
 		/**
 		 * Search the message groups based on label or id.
 		 * Label match is prefix match, while id match is exact match.
-		 * @param query
+		 * @param {string} query
 		 */
 		filter: function ( query ) {
 			var self = this;
-
-			// Show the initial list if the query is empty/undefined/null
-			if ( !query ) {
-				this.showDefaultGroups();
-				return;
-			}
-
-			this.$menu.find( '.ext-translate-msggroup-list' ).empty();
 
 			this.loadGroups().done( function( groups ) {
 				var currentGroup, index, matcher, foundGroups = [];
@@ -378,6 +377,8 @@
 					}
 				}
 
+				self.$loader.hide();
+				self.$list.empty();
 				self.addGroupRows( foundGroups );
 			} );
 		},
@@ -385,28 +386,55 @@
 		/**
 		 * Load message groups and relevant properties using the API.
 		 *
+		 * @return {jQuery.promise}
 		 */
 		loadGroups: function () {
-			if ( groupLoader === undefined ) {
-				var params = {
-					action: 'query',
-					format: 'json',
-					meta: 'messagegroups',
-					mgformat: 'tree',
-					mgprop: 'id|label|icon|priority|prioritylangs|priorityforce',
-					mgiconsize: '32'
-				};
-
-				groupLoader = $.Deferred();
-				new mw.Api()
-					.get( params )
-					.done( function( result ) {
-						groupLoader.resolve( result.query.messagegroups );
-					} )
-					.fail( groupLoader.reject );
+			if ( groupsLoader !== undefined ) {
+				return groupsLoader;
 			}
 
-			return groupLoader;
+			var params = {
+				action: 'query',
+				format: 'json',
+				meta: 'messagegroups',
+				mgformat: 'tree',
+				mgprop: 'id|label|icon|priority|prioritylangs|priorityforce',
+				mgiconsize: '32'
+			};
+
+			groupsLoader = new mw.Api()
+				.get( params )
+				.then( function( result ) {
+					return result.query.messagegroups;
+				} )
+				.promise();
+
+			return groupsLoader;
+		},
+
+		/**
+		 * Returns list of recently used message groups by the user.
+		 *
+		 * @return {jQuery.promise}
+		 */
+		loadRecentGroups: function () {
+			if ( recentGroupsLoader !== undefined ) {
+				return recentGroupsLoader;
+			}
+
+			var params = {
+				action: 'translateuser',
+				format: 'json'
+			};
+
+			recentGroupsLoader = new mw.Api()
+				.get( params )
+				.then( function( result ) {
+					return result.translateuser.recentgroups;
+				} )
+				.promise();
+
+			return recentGroupsLoader;
 		},
 
 		/**
@@ -416,18 +444,13 @@
 		 */
 		addGroupRows: function ( groups ) {
 			var groupSelector = this,
-				$msgGroupRows,
+				$msgGroupRows = [],
 				$parent,
-				$msgGroupList = this.$menu.find( '.ext-translate-msggroup-list' ),
 				targetLanguage = this.options.language;
-
-			this.$menu.find( '.tux-loading-indicator' ).hide();
 
 			if ( !groups ) {
 				return;
 			}
-
-			$msgGroupRows = [];
 
 			$.each( groups, function ( index, group ) {
 				/* Hide from the selector:
@@ -445,19 +468,17 @@
 				$msgGroupRows.push( groupSelector.prepareMessageGroupRow( group ) );
 			} );
 
-			if ( groupSelector.parentGroupId ) {
-				$parent = $msgGroupList.find( '.ext-translate-msggroup-item[data-msggroupid="' +
-					groupSelector.parentGroupId + '"]' );
+			if ( this.parentGroupId ) {
+				$parent = this.$list.find( '.ext-translate-msggroup-item[data-msggroupid="' +
+					this.parentGroupId + '"]' );
 
 				if ( $parent.length ) {
 					$parent.after( $msgGroupRows );
-				} else {
-					$msgGroupList.append( $msgGroupRows );
+					return;
 				}
-			} else {
-				$msgGroupList.append( $msgGroupRows );
 			}
 
+			this.$list.append( $msgGroupRows );
 		},
 
 		/**
@@ -473,18 +494,21 @@
 				$subGroupsLabel,
 				style = '';
 
-			$row = $( '<div>' ).addClass( 'row ext-translate-msggroup-item' )
+			$row = $( '<div>' )
+				.addClass( 'row ext-translate-msggroup-item' )
 				.attr( 'data-msggroupid', messagegroup.id )
 				.data( 'msggroup', messagegroup );
 
-			$icon = $( '<div>' ).addClass( 'one column icon' );
+			$icon = $( '<div>' )
+				.addClass( 'one column icon' );
 
 			$statsbar = $( '<div>' ).languagestatsbar( {
 				language: this.options.language,
 				group: messagegroup.id
 			} );
 
-			$label = $( '<div>' ).addClass( 'seven columns label' )
+			$label = $( '<div>' )
+				.addClass( 'seven columns label' )
 				.append(
 					$( '<span>' )
 						.prop( { dir: 'auto' } )
