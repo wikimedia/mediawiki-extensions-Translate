@@ -263,7 +263,7 @@ class PageTranslationHooks {
 
 				$title = wfMessage( 'tpt-languages-nonzero' )
 					->params( $pagename )
-					->numParams( $percent )
+					->numParams( 100 * $percent )
 					->text();
 				$attribs = array(
 					'title' => $title,
