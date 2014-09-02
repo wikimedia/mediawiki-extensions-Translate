@@ -20,7 +20,7 @@ More documentation is at
 == Contributing ==
 * Translations? Go to https://translatewiki.net and sign up.
 * Code? File format handlers? New message groups? Graphics? Suggestions?
-  Bug reports? Please start a thread at http://translatewiki.net/wiki/Support,
+  Bug reports? Please start a thread at https://translatewiki.net/wiki/Support,
   report a bug in https://bugzilla.wikimedia.org or join us at #mediawiki-i18n
   and let us know what you have in mind.
 
@@ -30,5 +30,3 @@ Known bugs and feature requests are collected at:
 
 Documentation for the extension is at:
  https://www.mediawiki.org/wiki/Help:Extension:Translate
-And for the code at:
- https://translatewiki.net/docs/Translate/html/

@@ -381,7 +381,7 @@ $GLOBALS['wgTranslateSecondaryPermissionUrl'] = 'Project:Translator';
  * with simple markup and automatic tracking of changes.
  *
  * @defgroup PageTranslation Page Translation
- * @see http://translatewiki.net/wiki/Translating:Page_translation_feature
+ * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration
  */
 $GLOBALS['wgEnablePageTranslation'] = true;
 
