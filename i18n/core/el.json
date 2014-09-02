@@ -18,7 +18,7 @@
 	},
 	"translate": "Μεταφράστε",
 	"translate-desc": "[[Special:Translate|Ειδική σελίδα]] για τη μετάφραση του MediaWiki και άλλων",
-	"translate-taskui-view": "Εμφάνιση όλων των μηνυμάτων",
+	"translate-taskui-view": "Προβολή όλων των μηνυμάτων",
 	"translate-taskui-untranslated": "Εμφάνιση αμετάφραστων μηνυμάτων",
 	"translate-taskui-optional": "Εμφάνιση προαιρετικών μηνυμάτων",
 	"translate-taskui-acceptqueue": "Μόνο μηνύματα που μπορώ να μαρκάρω ως θεωρημένα",
