@@ -354,7 +354,7 @@
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|missatge|missatges}} més",
 	"tux-messagetable-loading-messages": "{{PLURAL:$1|S’està carregant el missatge|S’estan carregant els missatges}}…",
 	"tux-message-filter-placeholder": "Filtra la llista",
-	"tux-message-filter-result": "Hem trobat $1 {{PLURAL:$1|resultat|resultats}} per \"$2\"",
+	"tux-message-filter-result": "Hem trobat $1 {{PLURAL:$1|resultat|resultats}} per «$2»",
 	"tux-message-filter-advanced-button": "Cerca avançada",
 	"tux-message-filter-optional-messages-label": "Missatges opcionals",
 	"tux-proofread-translated-by-self": "Traduït per tu",
