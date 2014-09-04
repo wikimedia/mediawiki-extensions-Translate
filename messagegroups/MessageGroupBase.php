@@ -14,7 +14,7 @@
  * and are managed with Special:ManageMessageGroups and
  * processMessageChanges.php.
  *
- * @see http://translatewiki.net/wiki/Translating:Group_configuration
+ * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration
  * @ingroup MessageGroup
  */
 abstract class MessageGroupBase implements MessageGroup {
