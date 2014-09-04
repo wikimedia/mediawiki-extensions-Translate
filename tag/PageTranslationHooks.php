@@ -740,7 +740,7 @@ class PageTranslationHooks {
 		$out = RequestContext::getMain()->getOutput();
 
 		$out->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, ':' . $titleText,
-			RequestContext::getMain()->getLanguage()->formatNum( $per ) ) );
+			RequestContext::msg( 'percent' )->numParams( $per )->text() ) );
 		$out->addHTML( '<hr />' );
 	}
 
