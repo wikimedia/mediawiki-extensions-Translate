@@ -53,12 +53,33 @@ class ElasticSearchTTMServer
 		$oldTimeout = $connection->getTimeout();
 		$connection->setTimeout( 10 );
 
-		$query = new \Elastica\Query();
-
 		$fuzzyQuery = new \Elastica\Query\FuzzyLikeThis();
 		$fuzzyQuery->setLikeText( $text );
 		$fuzzyQuery->addFields( array( 'content' ) );
-		$query->setQuery( $fuzzyQuery );
+
+		$groovyScript =
+<<<GROOVY
+import org.apache.lucene.search.spell.*
+new LevensteinDistance().getDistance(srctxt, _source['content'])
+GROOVY;
+		$script = new \Elastica\Script(
+			$groovyScript,
+			array( 'srctxt' => $text ),
+			\Elastica\Script::LANG_GROOVY
+		);
+		$boostQuery = new \Elastica\Query\FunctionScore();
+		$boostQuery->addScriptScoreFunction( $script );
+		$boostQuery->setBoostMode( \Elastica\Query\FunctionScore::BOOST_MODE_REPLACE );
+
+		// Wrap the fuzzy query so it can be used as a filter.
+		// This is slightly faster, as ES can throw away the scores by this query.
+		$fuzzyFilter = new \Elastica\Filter\Query();
+		$fuzzyFilter->setQuery( $fuzzyQuery );
+		$boostQuery->setFilter( $fuzzyFilter );
+
+		// The whole query
+		$query = new \Elastica\Query();
+		$query->setQuery( $boostQuery );
 
 		$languageFilter = new \Elastica\Filter\Term();
 		$languageFilter->setTerm( 'language', $sourceLanguage );
@@ -85,13 +106,7 @@ class ElasticSearchTTMServer
 		$contents = $scores = $terms = array();
 		foreach ( $resultset->getResults() as $result ) {
 			$data = $result->getData();
-
-			// FIXME: hacked in client side scoring as the search query
-			// returns wildly irrelevant results. This is slow.
-			$len1 = mb_strlen( $text );
-			$len2 = mb_strlen( $data['content'] );
-			$dist = self::levenshtein( $text, $data['content'], $len1, $len2 );
-			$score = 1 - ( $dist * 0.9 / min( $len1, $len2 ) );
+			$score = $result->getScore();
 			if ( $score < $this->config['cutoff'] ) {
 				continue;
 			}
