@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_50711ca6",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-09-04T12:29:41Z",
+      "side": 1,
+      "message": "Please check this line carefully.",
+      "revId": "a5f418c40c0c6e2b6004ba37187eb6747a41b5c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e2fb78d_106b94b6",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-09-04T12:29:41Z",
+      "side": 1,
+      "message": "ES for unknown reason normalizes this to 0-1 so I\u0027m just using it directly.",
+      "revId": "a5f418c40c0c6e2b6004ba37187eb6747a41b5c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
