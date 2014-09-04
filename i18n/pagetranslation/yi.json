@@ -51,7 +51,7 @@
 	"translate-tag-markthis": "מארקירן דעם בלאט פאר איבערזעצונג",
 	"translate-tag-markthisagain": "דער בלאַט האט <span class=\"plainlinks\">[ $1 ענדערונגען]</span> זינט ער איז לעצט געווארן <span class=\"plainlinks\">[ $2 אנגעצייכנט פֿאַר איבערזעצונג].</span>",
 	"translate-tag-hasnew": "דער בלאַט אַנטהאַלט  <span class=\"plainlinks\">[ $1 ענדערונגען]</span> וואָס זענען נישט אנגעצייכנט פֿאַר איבערזעצונג.",
-	"tpt-translation-intro": "דער דאזיקער בלאט איז א <span class=\"plainlinks\">[$1 איבערגעזעצטע ווערסיע]</span> פון דעם בלאט [[$2]] און די איבערזעצונג איז $3% פארענדיקט.",
+	"tpt-translation-intro": "דער דאזיקער בלאט איז א <span class=\"plainlinks\">[$1 איבערגעזעצטע ווערסיע]</span> פון דעם בלאט [[$2]] און די איבערזעצונג איז $3 פארענדיקט.",
 	"tpt-languages-legend": "אנדערע שפראַכן:",
 	"tpt-languages-zero": "אנהייבן איבערזעצן די דאזיקע שפראך",
 	"tpt-tab-translate": "איבערזעצן",

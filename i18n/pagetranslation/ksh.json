@@ -58,7 +58,7 @@
 	"translate-tag-markthis": "Donn heh di Sigg för et Övversäze makeere",
 	"translate-tag-markthisagain": "Hee di Sigg es <span class=\"plainlinks\">[$1 jeändert woode]</span> zick se et läz <span class=\"plainlinks\">[$2 för ze Övversäze]</span> makeet woode es.",
 	"translate-tag-hasnew": "Hee di Sigg <span class=\"plainlinks\">[$1 es jeändert woode]</span>, es ävver nit för ze Övversäze makeet woode.",
-	"tpt-translation-intro": "Hee di Sigg es en <span class=\"plainlinks\">[$1 övversaz Version]</span> vun dä Sigg „[[$2]]“ un es zoh $3% jedonn un om aktoälle Shtandt.",
+	"tpt-translation-intro": "Hee di Sigg es en <span class=\"plainlinks\">[$1 övversaz Version]</span> vun dä Sigg „[[$2]]“ un es zoh $3 jedonn un om aktoälle Shtandt.",
 	"tpt-languages-legend": "Ander Schprooche:",
 	"tpt-languages-zero": "Donn ens loßlääje mem Övversäze en heh di Schprooch",
 	"tpt-tab-translate": "Övversäze",

@@ -61,7 +61,7 @@
 	"translate-tag-markthis": "Пазначыць гэту старонку для перакладу",
 	"translate-tag-markthisagain": "Гэта старонка ўтрымлівае <span class=\"plainlinks\">[$1 зьмены]</span> пасьля апошняй <span class=\"plainlinks\">[$2 пазнакі для перакладу]</span>.",
 	"translate-tag-hasnew": "Гэта старонка ўтрымлівае <span class=\"plainlinks\">[$1 зьмены]</span> не пазначаныя для перакладу.",
-	"tpt-translation-intro": "Гэтая старонка — <span class=\"plainlinks\">[$1 перакладзеная вэрсія]</span> старонкі [[$2]]. Пераклад завершаны на $3%.",
+	"tpt-translation-intro": "Гэтая старонка — <span class=\"plainlinks\">[$1 перакладзеная вэрсія]</span> старонкі [[$2]]. Пераклад завершаны на $3.",
 	"tpt-languages-legend": "Іншыя мовы:",
 	"tpt-languages-zero": "Пачаць пераклад на гэтую мову",
 	"tpt-tab-translate": "Перакладаць",

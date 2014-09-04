@@ -58,7 +58,7 @@
 	"translate-tag-translate-link-desc": "Tõlgi see leht",
 	"translate-tag-markthisagain": "Seda lehekülge on <span class=\"plainlinks\">[$1 muudetud]</span> pärast seda, kui see viimati <span class=\"plainlinks\">[$2 tõlkimiseks märgiti]</span>.",
 	"translate-tag-hasnew": "See lehekülg sisaldab <span class=\"plainlinks\">[$1 muudatusi]</span>, mida pole märgitud tõlkimiseks.",
-	"tpt-translation-intro": "See on lehekülje [[$2]] <span class=\"plainlinks\">[$1 tõlgitud versioon]</span> ja tõlkest on valmis $3%.",
+	"tpt-translation-intro": "See on lehekülje [[$2]] <span class=\"plainlinks\">[$1 tõlgitud versioon]</span> ja tõlkest on valmis $3.",
 	"tpt-languages-legend": "Teistes keeltes:",
 	"tpt-languages-zero": "Alusta sellesse keelde tõlkimist",
 	"tpt-tab-translate": "Tõlgi",

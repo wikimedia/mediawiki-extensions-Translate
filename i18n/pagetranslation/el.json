@@ -64,7 +64,7 @@
 	"translate-tag-markthis": "Σήμανση αυτής της σελίδας για μετάφραση",
 	"translate-tag-markthisagain": "Αυτή η σελίδα έχει <span class=\"plainlinks\">[$1 αλλαγές]</span> από την τελευταία φορά που είχε <span class=\"plainlinks\">[$2 σημανθεί για μετάφραση]</span>.",
 	"translate-tag-hasnew": "Αυτή η σελίδα περιέχει <span class=\"plainlinks\">[$1 αλλαγές]</span> που δεν έχουν σημανθεί για μετάφραση.",
-	"tpt-translation-intro": "Αυτή η σελίδα είναι μια <span class=\"plainlinks\">[$1 μεταφρασμένη έκδοση]</span> της σελίδας [[$2]] και η μετάφραση είναι $3% ολοκληρωμένη.",
+	"tpt-translation-intro": "Αυτή η σελίδα είναι μια <span class=\"plainlinks\">[$1 μεταφρασμένη έκδοση]</span> της σελίδας [[$2]] και η μετάφραση είναι $3 ολοκληρωμένη.",
 	"tpt-languages-legend": "Άλλες γλώσσες:",
 	"tpt-languages-zero": "Έναρξη μετάφρασης για αυτήν τη γλώσσα",
 	"tpt-tab-translate": "Μετάφραση",

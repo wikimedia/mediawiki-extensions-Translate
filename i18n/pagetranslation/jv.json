@@ -50,7 +50,7 @@
 	"translate-tag-markthis": "Tandhai kaca iki kanggo terjemahan",
 	"translate-tag-markthisagain": "Kaca iki nduwèni <span class=\"plainlinks\">[$1 owahan]</span> kawit pungkasan <span class=\"plainlinks\">[$2 ditandhai kanggo terjemahan]</span>.",
 	"translate-tag-hasnew": "Kaca iki kaisi <span class=\"plainlinks\">[$1 owahan]</span> sing ora ditandhai kanggo terjemahan.",
-	"tpt-translation-intro": "Kaca iki <span class=\"plainlinks\">[$1 vèrsi sing wis diterjemahaké]</span> saka kaca [[$2]] lan terjemahan wis rampung $3%.",
+	"tpt-translation-intro": "Kaca iki <span class=\"plainlinks\">[$1 vèrsi sing wis diterjemahaké]</span> saka kaca [[$2]] lan terjemahan wis rampung $3.",
 	"tpt-languages-legend": "Basa liya:",
 	"tpt-languages-zero": "Lekasi terjemahan kanggo basa iki",
 	"tpt-target-page": "Kaca iki ora bisa dianyari manual.\nKaca iki kaca terjemahan [[$1]] lan terjemahan bisa dianyari nganggo [$2 prangkat terjemahan].",

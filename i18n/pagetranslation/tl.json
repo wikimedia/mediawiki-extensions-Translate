@@ -57,7 +57,7 @@
 	"translate-tag-markthis": "Tatakan ang pahinang ito para isalinwika",
 	"translate-tag-markthisagain": "Ang pahinang ito ay may <span class=\"plainlinks\">[$1 mga pagbabago]</span> mula pa noong huli itong <span class=\"plainlinks\">[$2 tinatakan para isalinwika]</span>.",
 	"translate-tag-hasnew": "Naglalaman ang pahinang ito ng <span class=\"plainlinks\">[$1 mga pagbabagong]</span> hindi tinatakan para isalinwika.",
-	"tpt-translation-intro": "Ang pahinang ito ay isang <span class=\"plainlinks\">[$1 naisalinwikang bersyon]</span> ng isang pahina [[$2]] at ang salinwika ay $3% kumpleto na.",
+	"tpt-translation-intro": "Ang pahinang ito ay isang <span class=\"plainlinks\">[$1 naisalinwikang bersyon]</span> ng isang pahina [[$2]] at ang salinwika ay $3 kumpleto na.",
 	"tpt-languages-legend": "Iba pang mga wika:",
 	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Simulan ang pagsasalinwika para sa wikang ito",

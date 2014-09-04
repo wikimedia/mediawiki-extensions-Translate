@@ -58,7 +58,7 @@
 	"translate-tag-markthis": "Merkañ ar bajenn-mañ evit an treiñ",
 	"translate-tag-markthisagain": "Er bajenn-mañ ez eus bet <span class=\"plainlinks\">[$1 kemm]</span> abaoe m'eo bet <span class=\"plainlinks\">[$2 merket da vezañ troet]</span>.",
 	"translate-tag-hasnew": "Er bajenn-mañ ez eus <span class=\"plainlinks\">[$1 kemm]</span> ha n'int ket bet merket da vezañ troet.",
-	"tpt-translation-intro": "Ur stumm <span class=\"plainlinks\">[$1 troet]</span> eus ar bajenn [[$2]] eo ar bajenn-mañ; kaset ez eus bet da benn $3% eus an droidigezh anezhi, ha diouzh an deiz emañ.",
+	"tpt-translation-intro": "Ur stumm <span class=\"plainlinks\">[$1 troet]</span> eus ar bajenn [[$2]] eo ar bajenn-mañ; kaset ez eus bet da benn $3 eus an droidigezh anezhi, ha diouzh an deiz emañ.",
 	"tpt-languages-legend": "Yezhoù all :",
 	"tpt-languages-zero": "Stagañ gant an troidigezhioù evit ar yezh-se",
 	"tpt-target-page": "N'hall ket ar bajenn-mañ bezañ hizivaet gant an dorn.\nUr stumm troet eus [[$1]] eo ar bajenn-mañ; gallout a ra bezañ hizivaet en ur implijout [$2 an ostilh treiñ].",

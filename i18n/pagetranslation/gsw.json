@@ -59,7 +59,7 @@
 	"translate-tag-markthis": "Die Syte zum ibersetze markiere",
 	"translate-tag-markthisagain": "An däre Syte het s <span class=\"plainlinks\">[$1 Änderige]</span> gee, syt si s lescht Mol <span class=\"plainlinks\">[$2 zum Ibersetze markiert wore isch]</span>.",
 	"translate-tag-hasnew": "In däre Syte het s <span class=\"plainlinks\">[$1 Änderige]</span>, wu nit zum Ibersetze markiert sin.",
-	"tpt-translation-intro": "Die Syte isch e <span class=\"plainlinks\">[$1 ibersetzti Version]</span> vun ere Syte [[$2]] un d Ibersetzig isch zue $3% vollständig un aktuäll.",
+	"tpt-translation-intro": "Die Syte isch e <span class=\"plainlinks\">[$1 ibersetzti Version]</span> vun ere Syte [[$2]] un d Ibersetzig isch zue $3 vollständig un aktuäll.",
 	"tpt-languages-legend": "Anderi Sproche:",
 	"tpt-languages-zero": "Mit em Ibersetze in die Sproch aafange",
 	"tpt-target-page": "Die Syte cha nit vu Hand aktualisiert wäre.\nDie Syte isch e Ibersetzig vu dr Syte [[$1]] un d Ibersetzig cha aktualisert wäre mit em [$2 Ibersetzigstool].",

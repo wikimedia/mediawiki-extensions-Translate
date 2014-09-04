@@ -56,7 +56,7 @@
 	"translate-tag-markthis": "Markahan ining pahina para ipagdakit-taramon",
 	"translate-tag-markthisagain": "Ining pahina igwa nin <span class=\"plainlinks\">[$1 mga kaliwatan]</span> poon pa kaitong huri ining <span class=\"plainlinks\">[$2 pinagmarkahan para ipagdakit-taramon]</span>.",
 	"translate-tag-hasnew": "Ining pahina igwa nin <span class=\"plainlinks\">[$1 mga kaliwatan]</span> na dae pinagmarkahan para ipagdakit-taramon.",
-	"tpt-translation-intro": "Ining pahina sarong <span class=\"plainlinks\">[$1 pinagdakit-taramon na bersyon]</span> kan pahina [[$2]] asin an pagdakit-taramon na $3% nakumpleto na.",
+	"tpt-translation-intro": "Ining pahina sarong <span class=\"plainlinks\">[$1 pinagdakit-taramon na bersyon]</span> kan pahina [[$2]] asin an pagdakit-taramon na $3 nakumpleto na.",
 	"tpt-languages-legend": "Ibang mga lengguwahe:",
 	"tpt-languages-zero": "Magpoon sa pagdakit-taramon para sa lengguwaheng ini",
 	"tpt-target-page": "Ining pahina dae puwedeng manwal na pagpanumpayan.\nIning pahina sarong dakit-taramon kan pahina [[$1]] asin an pinagdakit-taramon mapuwedeng panumbayan na gamit an [$2 an gamit sa pagdakit-taramon].",

@@ -63,7 +63,7 @@
 	"translate-tag-markthis": "סימון דף זה לתרגום",
 	"translate-tag-markthisagain": "בדף הזה יש <span class=\"plainlinks\">[$1 שינויים]</span> שנעשו מאז שהוא <span class=\"plainlinks\">[$2 סומן לתרגום]</span> בפעם האחרונה.",
 	"translate-tag-hasnew": "דף זה מכיל <span class=\"plainlinks\">[$1 שינויים]</span> שאינם מסומנים לתרגום.",
-	"tpt-translation-intro": "הדף הזה הוא <span class=\"plainlinks\">[$1 גרסה מתורגמת]</span> של הדף [[$2]] והתרגום שלם ב־$3%.",
+	"tpt-translation-intro": "הדף הזה הוא <span class=\"plainlinks\">[$1 גרסה מתורגמת]</span> של הדף [[$2]] והתרגום שלם ב־$3.",
 	"tpt-languages-legend": "שפות אחרות:",
 	"tpt-languages-zero": "להתחיל לתרגום לשפה הזאת",
 	"tpt-languages-nonzero": "$1 (מתורגם: $2%)",

@@ -35,7 +35,7 @@
 	"tpt-rev-encourage-tooltip": "Врати страницу за нормално превођење.",
 	"translate-tag-translate-link-desc": "Преведите ову страницу",
 	"translate-tag-markthis": "Означи страницу као „за превођење“",
-	"tpt-translation-intro": "Ово је <span class=\"plainlinks\">[$1 преведена верзија]</span> странице [[$2]]. Превод је $3% завршен.",
+	"tpt-translation-intro": "Ово је <span class=\"plainlinks\">[$1 преведена верзија]</span> странице [[$2]]. Превод је $3 завршен.",
 	"tpt-languages-legend": "Остали језици:",
 	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Почните превођења на овом језику",

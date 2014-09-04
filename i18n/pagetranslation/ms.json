@@ -59,7 +59,7 @@
 	"translate-tag-markthis": "Tandai laman ini untuk diterjemah",
 	"translate-tag-markthisagain": "Laman ini mengalami <span class=\"plainlinks\">[$1 perubahan]</span> sejak kali terakhir <span class=\"plainlinks\">[$2 ditandai untuk diterjemah]</span>.",
 	"translate-tag-hasnew": "Laman ini mengalami <span class=\"plainlinks\">[$1 perubahan]</span> yang belum ditandai untuk diterjemah.",
-	"tpt-translation-intro": "Laman ini merupakan <span class=\"plainlinks\">[$1 versi terjemahan]</span> laman [[$2]] dan penterjemahannya $3% siap.",
+	"tpt-translation-intro": "Laman ini merupakan <span class=\"plainlinks\">[$1 versi terjemahan]</span> laman [[$2]] dan penterjemahannya $3 siap.",
 	"tpt-languages-legend": "Bahasa lain:",
 	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Mulakan terjemahan dalam bahasa ini",

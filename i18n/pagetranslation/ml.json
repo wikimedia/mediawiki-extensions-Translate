@@ -31,7 +31,7 @@
 	"tpt-rev-discourage": "നിരുത്സാഹപ്പെടുത്തുക",
 	"tpt-rev-encourage": "പുനഃസ്ഥാപിക്കുക",
 	"translate-tag-translate-link-desc": "ഈ താൾ പരിഭാഷപ്പെടുത്തുക",
-	"tpt-translation-intro": "ഈ താൾ [[$2]] എന്ന താളിന്റെ <span class=\"plainlinks\">[$1 പരിഭാഷ]</span> ആണ്, പരിഭാഷ $3% പൂർണ്ണമാണ്.",
+	"tpt-translation-intro": "ഈ താൾ [[$2]] എന്ന താളിന്റെ <span class=\"plainlinks\">[$1 പരിഭാഷ]</span> ആണ്, പരിഭാഷ $3 പൂർണ്ണമാണ്.",
 	"tpt-languages-legend": "മറ്റു ഭാഷകൾ:",
 	"tpt-languages-zero": "ഈ ഭാഷയിൽ പരിഭാഷ തുടങ്ങുക",
 	"tpt-tab-translate": "പരിഭാഷപ്പെടുത്തുക",

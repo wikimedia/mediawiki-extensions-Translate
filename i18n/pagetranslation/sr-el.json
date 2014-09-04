@@ -20,7 +20,7 @@
 	"tpt-rev-encourage-tooltip": "Vrati stranicu za normalno prevođenje.",
 	"translate-tag-translate-link-desc": "Prevedite ovu stranu",
 	"translate-tag-markthis": "Označi stranicu kao „za prevođenje“",
-	"tpt-translation-intro": "Ova stranica je <span class=\"plainlinks\">[$1 prevedeno izdanje]</span> stranice [[$2]]. Prevod je $3% završen.",
+	"tpt-translation-intro": "Ova stranica je <span class=\"plainlinks\">[$1 prevedeno izdanje]</span> stranice [[$2]]. Prevod je $3 završen.",
 	"tpt-languages-separator": "&#160;•&#32;",
 	"log-name-pagetranslation": "Dnevnik prevoda stranica",
 	"pt-movepage-title": "Premeštanje prevodive stranice $1",

@@ -52,7 +52,7 @@
 	"tpt-rev-encourage-tooltip": "Restaurează această pagină la traducerea normală.",
 	"translate-tag-translate-link-desc": "Tradu această pagină",
 	"translate-tag-markthis": "Marchează această pagină pentru traducere",
-	"tpt-translation-intro": "Această pagină reprezintă <span class=\"plainlinks\">[$1 versiunea tradusă]</span> a paginii [[$2]], procesul de traducere fiind completat în proporție de $3%.",
+	"tpt-translation-intro": "Această pagină reprezintă <span class=\"plainlinks\">[$1 versiunea tradusă]</span> a paginii [[$2]], procesul de traducere fiind completat în proporție de $3.",
 	"tpt-languages-legend": "Alte limbi:",
 	"tpt-tab-translate": "Traducere",
 	"tpt-discouraged-language-reason": "Motiv: $1",

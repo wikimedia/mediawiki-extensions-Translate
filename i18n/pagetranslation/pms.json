@@ -58,7 +58,7 @@
 	"translate-tag-markthis": "Marca costa pàgina për la tradussion",
 	"translate-tag-markthisagain": "Costa pàgina a l'ha avù <span class=\"plainlinks\">[$1 cangiament]</span> da cand a l'é stàita <span class=\"plainlinks\">[$2 marcà për la tradussion]</span> l'ùltima vira.",
 	"translate-tag-hasnew": "Costa pàgina a conten <span class=\"plainlinks\">[$1 cangiament]</span> ch'a son pa marcà për la tradussion.",
-	"tpt-translation-intro": "Sta pàgina-sì a l'é na <span class=\"plainlinks\">[$1 vërsion traduvùa]</span> ëd na pàgina [[$2]] e la tradussion a l'é $3% completa e agiornà.",
+	"tpt-translation-intro": "Sta pàgina-sì a l'é na <span class=\"plainlinks\">[$1 vërsion traduvùa]</span> ëd na pàgina [[$2]] e la tradussion a l'é $3 completa e agiornà.",
 	"tpt-languages-legend": "Àutre lenghe:",
 	"tpt-languages-zero": "Ancamin-a la tradussion për sta lenga",
 	"tpt-target-page": "Sta pàgina-sì a peul pa esse modificà a man.\nSta pàgina-sì a l'é na tradussion ëd la pàgina [[$1]] e la tradussion a peul esse modificà an dovrand [$2 l'utiss ëd tradussion].",
