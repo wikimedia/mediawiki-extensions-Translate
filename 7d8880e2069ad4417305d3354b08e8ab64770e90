@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2fb78d_90a304a8",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-09-04T13:18:14Z",
+      "side": 1,
+      "message": "It might be worth trying this with\n$boostQuery-\u003esetFilter( new \\Elastica\\Filter\\Query( $fuzzyQuery ) );\nwhich should instruct Elasticsearch to throw out the $fuzzyQuery\u0027s score.  It should be faster but I don\u0027t know if it\u0027ll be noticeably faster.",
+      "revId": "7d8880e2069ad4417305d3354b08e8ab64770e90",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
