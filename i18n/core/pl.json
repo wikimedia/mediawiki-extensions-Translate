@@ -240,7 +240,7 @@
 	"translate-manage-import-done": "Import zakończony!",
 	"importtranslations": "Importowanie tłumaczeń",
 	"translate-import-from-local": "Załadowanie lokalnego pliku",
-	"translate-import-load": "Ładowanie pliku",
+	"translate-import-load": "Pobierz plik",
 	"translate-import-err-dl-failed": "Nie udało się przesłać pliku $1",
 	"translate-import-err-ul-failed": "Nie udało się przesłać pliku",
 	"translate-import-err-invalid-title": "Podana nazwa pliku <nowiki>$1</nowiki> jest nieprawidłowa.",
