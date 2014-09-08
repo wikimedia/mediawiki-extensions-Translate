@@ -33,7 +33,8 @@
 			"Zcqsc06",
 			"Zetud",
 			"Linedwell",
-			"Orikrin1998"
+			"Orikrin1998",
+			"Dr Brains"
 		]
 	},
 	"translate": "Traduire",
@@ -312,7 +313,7 @@
 	"right-translate-sandboxaction": "Exécuter des actions sur liste blanche pour les utilisateurs non-enregistrés",
 	"action-translate-sandboxaction": "exécuter des actions sur liste blanche pour les utilisateurs non-enregistrés",
 	"translate-workflow-state-": "(désactivé)",
-	"translate-workflowstatus": "Statut: $1",
+	"translate-workflowstatus": "Statut : $1",
 	"translate-workflow-set-do": "Activé",
 	"translate-workflow-set-doing": "Activation...",
 	"translate-workflow-set-done": "Activé !",
