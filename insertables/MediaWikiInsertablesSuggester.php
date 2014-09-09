@@ -23,7 +23,7 @@ class MediaWikiInsertablesSuggester {
 
 		$matches = array();
 		preg_match_all(
-			'/({{((?:PLURAL|GENDER|GRAMMAR):[^|]+)\|).*?(}})/i',
+			'/({{((?:PLURAL|GENDER|GRAMMAR):[^|]*)\|).*?(}})/i',
 			$text,
 			$matches,
 			PREG_SET_ORDER
