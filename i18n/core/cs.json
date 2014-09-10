@@ -8,7 +8,8 @@
 			"Matěj Grabovský",
 			"Mormegil",
 			"Vks",
-			"Matěj Suchánek"
+			"Matěj Suchánek",
+			"Utar"
 		]
 	},
 	"translate": "Překládání",
@@ -370,7 +371,7 @@
 	"tux-empty-nothing-new-to-proofread": "Nic nového ke kontrole",
 	"tux-empty-you-can-review-already-proofread": "Můžete zkontrolovat překlady, které již zkontrolovali jiní.",
 	"tux-empty-list-other": "Není co překládat",
-	"tux-empty-list-other-guide": "Můžete pomoci zkontrolovat existující překlady",
+	"tux-empty-list-other-guide": "Můžete pomoci zkontrolovat existující překlady.",
 	"tux-empty-list-other-action": "Zkontrolovat překlady",
 	"tux-empty-list-other-link": "Zobrazit všechny zprávy",
 	"tux-editor-close-tooltip": "Zavřít",

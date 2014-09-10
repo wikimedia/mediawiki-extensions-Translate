@@ -65,6 +65,7 @@
 	"tpt-translation-intro": "このページはページ [[$2]] を「<span class=\"plainlinks\">[$1 翻訳]</span>」したものです。翻訳は $3% 完了しています。",
 	"tpt-languages-legend": "他言語での翻訳:",
 	"tpt-languages-zero": "この言語への翻訳を開始",
+	"tpt-languages-nonzero": "$1 ($2% 翻訳済み)",
 	"tpt-tab-translate": "翻訳",
 	"tpt-target-page": "このページは手動では更新できません。\nこのページはページ [[$1]] の翻訳版であり、[$2 翻訳ツール]を使用して更新できます。",
 	"tpt-unknown-page": "この名前空間はコンテンツ ページの翻訳のために予約されています。\n編集しようとしているページに対応する翻訳対象ページが存在しないようです。",
@@ -176,5 +177,8 @@
 	"pm-delete-icon-hover-text": "単位を削除",
 	"pm-pagetitle-invalid": "有効なページ名を入力してください",
 	"pm-summary-import": "[[Special:PageMigration|ページ移行]]を使用して翻訳を取り込み",
-	"tpt-translate-title": "ページ名を翻訳できるようにする"
+	"tpt-translate-title": "ページ名を翻訳できるようにする",
+	"pp-pagename-placeholder": "ページ名を入力",
+	"pp-save-button-label": "保存",
+	"pp-pagename-missing": "ページ名を入力してください。"
 }
