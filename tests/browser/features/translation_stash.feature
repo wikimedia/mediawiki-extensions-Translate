@@ -13,7 +13,7 @@ Feature: Translation stash
   The easiest way to achieve this is to add the test username to $wgTranslateTestUsers[].
 
   Background:
-    Given I am logged in
+    Given I am logged in at sandbox
       And I am a sandboxed user on the stash page
 
   Scenario: Can select a language to translate into

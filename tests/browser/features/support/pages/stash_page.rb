@@ -6,8 +6,8 @@ class StashPage
 
 	a(:edit, text: "Edit")
 
-	span(:language_selector, :class => "uls")
-	text_field(:language_filter, :id => "languagefilter")
+	a(:language_selector, :class => "uls-trigger")
+	text_field(:language_filter, :id => "uls-languagefilter")
 
 	button(:skip_button, :class => "tux-editor-skip-button")
 
