@@ -688,6 +688,7 @@ $specialPageAliases['mk'] = array(
 	'TranslationStats' => array( 'СтатистикиЗаПреведување' ),
 	'Translations' => array( 'Преводи' ),
 	'PageMigration' => array( 'СелењеСтраници' ),
+	'PagePreparation' => array( 'ПодготовнаНаСтраници' ),
 );
 
 /** Malayalam (മലയാളം) */
