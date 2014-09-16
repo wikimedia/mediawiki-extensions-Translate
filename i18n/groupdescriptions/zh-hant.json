@@ -19,7 +19,7 @@
 	"translate-group-desc-blockly": "[[Translating:Blockly|Blockly]] 的訊息群組",
 	"translate-group-desc-bluespice": "此訊息群組包含了 MediaWiki 的 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BlueSpice Blue Spice] 擴充套件中所有的訊息",
 	"translate-group-desc-collection": "此訊息群組包含了 MediaWiki 的 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection] 擴充套件中所有的訊息",
-	"translate-group-desc-eol": "[[Translating:EOL|Encyclopedia of Life]] 的訊息群組",
+	"translate-group-desc-eol": "[[Translating:EOL|生命大百科]]的訊息群組",
 	"translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] 是一套即時協同作業的編輯程式",
 	"translate-group-desc-europeana": "[[Translating:Europeana|歐盟 1914-1918]] 是一個網站包含了有關第一次世界大戰中的故事、電影與歷史文物的內容。",
 	"translate-group-desc-flaggedrevs": "此訊息群組包含了 MediaWiki 的 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs] 擴充套件中所有的訊息",
@@ -56,11 +56,11 @@
 	"translate-group-desc-wikimedia-mobile": "匯總訊息群組包含了 Wikimedia 專案中的所有手機應用程式",
 	"translate-group-desc-wikimedia-mobile-commons": "[[Translating:WikipediaMobile|Commons Mobile]] 是一套用來可以在 Android 或 iOS 上傳與瀏覽 Wikimedia Commons 檔案的手機應用程式",
 	"translate-group-desc-wikimedia-mobile-wikipedia": "[[Translating:WikipediaMobile|WikipediaMobile]] 是一套可以在手機與平板電腦上閱讀與貢獻 Wikipedia 文件的跨平台應用程式",
-	"translate-group-desc-wikimedia-mobile-wikipedia-android": "[[Translating:WikipediaMobile|Wikipedia Android]] 是一套專為  Android 所設計的 Wikipedia 手機應用程式",
-	"translate-group-desc-wikimedia-mobile-wikipedia-ios": "[[Translating:WikipediaMobile|Wikipedia iOS]] 是一套專為  iOS 所設計的 Wikipedia 手機應用程式",
+	"translate-group-desc-wikimedia-mobile-wikipedia-android": "[[Translating:WikipediaMobile|Wikipedia Android]] 是一套專為 Android 所設計的維基百科手機應用程式",
+	"translate-group-desc-wikimedia-mobile-wikipedia-ios": "[[Translating:WikipediaMobile|Wikipedia iOS]] 是一套專為 iOS 所設計的維基百科手機應用程式",
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] 是一套可以在手機與平板電腦上閱讀與貢獻 Wikisource 文件的跨平台應用程式",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] 是一套可以在手機與平板電腦上閱讀與貢獻 Wiktionary 文件的跨平台應用程式",
-	"translate-group-desc-wikimediaextensions": "此訊息群組包含了所有 [https://wikimediafoundation.org/ Wikimedia Foundation] 使用的 MediaWiki 擴充套件中所有的訊息",
+	"translate-group-desc-wikimediaextensions": "此訊息群組包含了所有[https://wikimediafoundation.org/ 維基媒體基金會]使用的 MediaWiki 擴充套件中所有的訊息",
 	"translate-group-desc-wikimediaextensions-main": "此訊息群組包含了所有 [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Language committee] 使用的 MediaWiki 擴充套件中所有的訊息",
 	"translategroupdescriptions-desc": "有關目前 [https://mediawiki.org/wiki/Special:MyLanguage/Extension:Translate 翻譯] 擴充套件所支援產品的訊息群組內容描述。"
 }
