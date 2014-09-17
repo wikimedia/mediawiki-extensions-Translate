@@ -34,7 +34,8 @@
 			"פוילישער",
 			"아라",
 			"555",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Tacsipacsi"
 		]
 	},
 	"translate": "{{doc-special|Translate}}\nIt is the verb \"to translate\".\n{{Identical|Translate}}",
@@ -101,6 +102,7 @@
 	"translate-magic-cm-comment": "On [[Special:AdvancedTranslate]].\n\n{{Identical|Comment}}",
 	"translate-magic-cm-save": "Button text on [[Special:AdvancedTranslate]].\n\n{{Identical|Save}}",
 	"translate-magic-cm-updatedusing": "Used as comment(?).\n\nRefers to {{msg-mw|Translate-magic-pagename}}.",
+	"translate-magic-special": "Appears on [[Special:AdvancedTranslate]]",
 	"translate-magic-namespace": "{{Identical|Namespace name}}",
 	"translate-magic-errors": "This message is followed by the error messages.\n\nParameters:\n* $1 - number of error messages, can be used for PLURAL",
 	"translate-checks-parameters": "Warning message from automated syntax check for translators.\n* $1 - parameters\n* $2 - number of parameters\n{{Related|Translate-checks}}",
