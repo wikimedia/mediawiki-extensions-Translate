@@ -62,6 +62,9 @@ $GLOBALS['wgExtensionMessagesFiles']['TranslateGroupDescriptions'] =
 $GLOBALS['wgExtensionMessagesFiles']['TranslateSearch'] = "$dir/TranslateSearch.i18n.php";
 $GLOBALS['wgExtensionMessagesFiles']['TranslateSandbox'] = "$dir/TranslateSandbox.i18n.php";
 $GLOBALS['wgExtensionMessagesFiles']['TranslateAlias'] = "$dir/Translate.alias.php";
+// Backwards compatibility
+// See https://bugzilla.wikimedia.org/show_bug.cgi?id=69461
+$GLOBALS['wgExtensionMessagesFiles']['TranslateMyLanguageAlias'] = "$dir/Translate.MyLanguage.alias.php";
 $GLOBALS['wgExtensionMessagesFiles']['TranslateMagic'] = "$dir/Translate.i18n.magic.php";
 
 // Register initialization code
