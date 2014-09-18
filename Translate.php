@@ -35,6 +35,10 @@ $GLOBALS['wgExtensionCredits']['specialpage'][] = array(
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Translate',
 );
 
+// Check whether core MediaWiki here has Special:MyLanguage.
+// This must be done before loading Translate's own Autoload list.
+$coreMyLanguage = isset( $GLOBALS['wgAutoloadClasses']['SpecialMyLanguage'] );
+
 /**
  * @cond file_level_code
  * Setup class autoloading.
@@ -62,6 +66,13 @@ $GLOBALS['wgExtensionMessagesFiles']['TranslateGroupDescriptions'] =
 $GLOBALS['wgExtensionMessagesFiles']['TranslateSearch'] = "$dir/TranslateSearch.i18n.php";
 $GLOBALS['wgExtensionMessagesFiles']['TranslateSandbox'] = "$dir/TranslateSandbox.i18n.php";
 $GLOBALS['wgExtensionMessagesFiles']['TranslateAlias'] = "$dir/Translate.alias.php";
+// Backwards compatibility
+// See https://bugzilla.wikimedia.org/69461
+if ( !$coreMyLanguage ) {
+	$GLOBALS['wgExtensionMessagesFiles']['TranslateMyLanguageAlias'] =
+		"$dir/Translate.MyLanguage.alias.php";
+}
+
 $GLOBALS['wgExtensionMessagesFiles']['TranslateMagic'] = "$dir/Translate.i18n.magic.php";
 
 // Register initialization code
