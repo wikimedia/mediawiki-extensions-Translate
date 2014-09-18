@@ -62,6 +62,15 @@ $GLOBALS['wgExtensionMessagesFiles']['TranslateGroupDescriptions'] =
 $GLOBALS['wgExtensionMessagesFiles']['TranslateSearch'] = "$dir/TranslateSearch.i18n.php";
 $GLOBALS['wgExtensionMessagesFiles']['TranslateSandbox'] = "$dir/TranslateSandbox.i18n.php";
 $GLOBALS['wgExtensionMessagesFiles']['TranslateAlias'] = "$dir/Translate.alias.php";
+// Backwards compatibility:
+// If Special:MyLanguage is not in core, load translations of its name
+// from the Translate extension's code.
+// See https://bugzilla.wikimedia.org/69461
+if ( !isset( $GLOBALS['wgAutoloadLocalClasses']['SpecialMyLanguage'] ) ) {
+	$GLOBALS['wgExtensionMessagesFiles']['TranslateMyLanguageAlias'] =
+		"$dir/Translate.MyLanguage.alias.php";
+}
+
 $GLOBALS['wgExtensionMessagesFiles']['TranslateMagic'] = "$dir/Translate.i18n.magic.php";
 
 // Register initialization code
