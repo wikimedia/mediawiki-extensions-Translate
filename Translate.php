@@ -401,10 +401,13 @@ $GLOBALS['wgPageTranslationNamespace'] = 1198;
 $GLOBALS['wgTranslatePageMigration'] = true;
 
 /**
- * Whether selecting a new interface language via ULS on a translatable page
- * also redirects the user to its translation page in the same language.
- * The language of following translation pages visited will still be controlled
- * by Special:MyLanguage (hence links not passing through it are not affected).
+ * If set to true, when a user selects an interface language via ULS (Universal
+ * Language Selector), if the current page is a translatable page or a translation
+ * page then the user is also redirected to the corresponding transaltion page
+ * in the selected language.
+ * The language of the translation pages visited afterwards will still depend on the
+ * links followed (it will be the interface language only if the links use the
+ * Special:MyLanguage syntax).
  * @since 2013-03-10
  */
 $GLOBALS['wgTranslatePageTranslationULS'] = false;
