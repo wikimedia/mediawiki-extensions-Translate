@@ -16,6 +16,24 @@
       "revId": "77f835f7f626ccf1a9bb95d38b24424c16e2e55e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee62ffec_a05ed979",
+        "filename": "Translate.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2014-09-21T10:52:24Z",
+      "side": 1,
+      "message": "Beh, I\u0027m silly. Should it be \u003e\u003d or \u003c\u003d?‏ If it\u0027s for running Translate with old MediaWiki, then it should be \u003c\u003d, shouldn\u0027t it?‏",
+      "parentUuid": "ee62ffec_c091cd53",
+      "revId": "77f835f7f626ccf1a9bb95d38b24424c16e2e55e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
