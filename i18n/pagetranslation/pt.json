@@ -197,5 +197,6 @@
 	"pp-prepare-message": "A página foi preparada para tradução. Veja a comparação abaixo. Clique no botão \"{{int:pp-save-button-label}}\" se estiver tudo correto!",
 	"pp-already-prepared-message": "Parece que a página já foi preparada para tradução. Não há alterações em relação à versão anterior.",
 	"pp-pagename-missing": "Por favor, introduza o nome da página.",
+	"pp-diff-old-header": "Texto-fonte",
 	"pp-diff-new-header": "Texto preparado"
 }

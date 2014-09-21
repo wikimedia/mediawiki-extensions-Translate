@@ -98,6 +98,7 @@
 	"tpt-aggregategroup-edit-description": "Опис:",
 	"tpt-aggregategroup-update": "Зберегти",
 	"tpt-aggregategroup-update-cancel": "Скасувати",
+	"tpt-invalid-group": "Неприпустима група",
 	"pt-parse-open": "Незбалансований тег &lt;translate>.\nШаблон перекладу: <pre>$1</pre>",
 	"pt-parse-close": "Незбалансований тег &lt;/translate>.\nШаблон перекладу: <pre>$1</pre>",
 	"pt-parse-nested": "Вкладати одну одиницю перекладу &lt;translate> в іншу не допускається.\nТекст тегу: <pre>$1</pre>",
@@ -171,6 +172,7 @@
 	"pt-deletepage-started": "Будь ласка, перевірте [[Special:Log/pagetranslation|журнал перекладу сторінок]] на наявність помилок і повідомлення про завершення.",
 	"pt-deletepage-intro": "Ця службова сторінка дозволяє Вам вилучати сторінки, призначені для перекладу, разом з перекладами або ж вилучати переклади визначеною мовою.\nЦя дія не буде миттєвою, бо потребуватиме вилучення багатьох залежних сторінок.\nЯкщо вилучення буде невдалим, його буде записано в [[Special:Log/pagetranslation|журналі перекладу]] і такі випадки потрібно буде усунути вручну.",
 	"pagemigration": "Міграція сторінок перекладу",
+	"pagemigration-summary": "Вкажіть сторінку перекладу і відновіть будь-який переклад, зроблений до того, як Система перекладу була включена на цій сторінці.",
 	"pm-import-button-label": "Імпортувати",
 	"pm-savepages-button-label": "Зберегти",
 	"pm-cancel-button-label": "Скасувати",
@@ -184,5 +186,15 @@
 	"pm-add-icon-hover-text": "Додати блок нижче",
 	"pm-swap-icon-hover-text": "Поміняти місцями з блоком нижче",
 	"pm-delete-icon-hover-text": "Видалити блок",
-	"tpt-translate-title": "Дозволити переклад заголовка сторінки"
+	"pm-pagetitle-invalid": "Будь ласка, введіть правильний заголовок сторінки",
+	"tpt-translate-title": "Дозволити переклад заголовка сторінки",
+	"pp-save-summary": "Підготовлена сторінка для перекладу",
+	"pagepreparation": "Підготувати сторінку для перекладу",
+	"pp-pagename-placeholder": "Введіть назву сторінки",
+	"pp-prepare-button-label": "Підготувати",
+	"pp-save-button-label": "Зберегти",
+	"pp-save-message": "Сторінка була збережена. Ви можете [$1 редагувати].",
+	"pp-pagename-missing": "Будь ласка, введіть назву сторінки",
+	"pp-diff-old-header": "Вихідний текст",
+	"pp-diff-new-header": "Підготовлений текст"
 }
