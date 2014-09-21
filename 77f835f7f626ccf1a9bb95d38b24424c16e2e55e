@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee62ffec_c091cd53",
+        "filename": "Translate.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-09-21T09:26:47Z",
+      "side": 1,
+      "message": "There is no such thing as \u003d\u003e so this always returns null.",
+      "revId": "77f835f7f626ccf1a9bb95d38b24424c16e2e55e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
