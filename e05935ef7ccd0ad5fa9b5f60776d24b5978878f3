@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee62ffec_450f2734",
+        "filename": "Translate.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-09-22T17:09:30Z",
+      "side": 1,
+      "message": "I\u0027m sorry, core actually uses wgAutoloadLocalClasses and that has no ordering issues.",
+      "revId": "e05935ef7ccd0ad5fa9b5f60776d24b5978878f3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
