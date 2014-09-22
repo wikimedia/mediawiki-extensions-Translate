@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee62ffec_54d7dfc4",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-09-22T12:37:11Z",
+      "side": 1,
+      "message": "IMHO better a newline here. The inlined button looks a bit messy to me.",
+      "revId": "486b42dd529fe0475e640fd285f43d13b5c87689",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
