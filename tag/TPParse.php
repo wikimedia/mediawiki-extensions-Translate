@@ -149,8 +149,9 @@ class TPParse {
 	}
 
 	/**
-	 * Returns the source page stripped of most translation mark-up.
-	 * @return \string Wikitext.
+	 * Returns the source page with translation section mark-up added.
+	 *
+	 * @return string Wikitext.
 	 */
 	public function getSourcePageText() {
 		$text = $this->template;
@@ -165,6 +166,7 @@ class TPParse {
 	/**
 	 * Returns translation page with all possible translations replaced in
 	 * and ugly translation tags removed.
+	 *
 	 * @param MessageCollection $collection Collection that holds translated messages.
 	 * @return string Whole page as wikitext.
 	 */
