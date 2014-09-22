@@ -22,7 +22,7 @@ class SpecialPagePreparation extends SpecialPage {
 		$prepareButtonValue = $this->msg( 'pp-prepare-button-label' )->escaped();
 		$saveButtonValue = $this->msg( 'pp-save-button-label' )->escaped();
 		$summaryValue = $this->msg( 'pp-save-summary' )->inContentLanguage()->escaped();
-		$output->addModules( 'ext.translate.pagepreparation' );
+		$output->addModules( 'ext.translate.special.pagepreparation' );
 		$output->addModuleStyles( 'jquery.uls.grid' );
 		$param = $request->getText( 'param' );
 

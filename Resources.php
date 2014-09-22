@@ -234,8 +234,8 @@ $wgResourceModules['ext.translate.navitoggle'] = array(
 	),
 ) + $resourcePaths;
 
-$wgResourceModules['ext.translate.pagepreparation'] = array(
-	'scripts' => 'resources/js/ext.translate.pagepreparation.js',
+$wgResourceModules['ext.translate.special.pagepreparation'] = array(
+	'scripts' => 'resources/js/ext.translate.special.pagepreparation.js',
 	'messages' => array(
 		'pp-save-message',
 		'pp-save-button-label',
