@@ -30,4 +30,8 @@ class TranslateSpecialPage extends SpecialPage {
 			return self::getTitleFor( $this->mName, $subpage );
 		}
 	}
+
+	protected function getGroupName() {
+		return 'wiki';
+	}
 }

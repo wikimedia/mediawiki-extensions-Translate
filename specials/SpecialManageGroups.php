@@ -33,6 +33,10 @@ class SpecialManageGroups extends TranslateSpecialPage {
 		parent::__construct( 'ManageMessageGroups' );
 	}
 
+	protected function getGroupName() {
+		return 'wiki';
+	}
+
 	public function execute( $par ) {
 		$this->setHeaders();
 		$out = $this->getOutput();

@@ -26,6 +26,10 @@ class SpecialManageTranslatorSandbox extends TranslateSpecialPage {
 		);
 	}
 
+	protected function getGroupName() {
+		return 'users';
+	}
+
 	public function execute( $params ) {
 		$this->setHeaders();
 		$this->checkPermissions();
