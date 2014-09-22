@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee62ffec_346eab2b",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-09-22T12:34:07Z",
+      "side": 1,
+      "message": "This and the two below changes could be submitted separately and merged.",
+      "revId": "c6313b4bc806d61ef862005e110e25664bf9b47f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
