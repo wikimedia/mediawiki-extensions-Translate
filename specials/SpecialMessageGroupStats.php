@@ -37,6 +37,10 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		return $this->msg( 'translate-mgs-pagename' )->text();
 	}
 
+	protected function getGroupName() {
+		return 'wiki';
+	}
+
 	/// Overwritten from SpecialLanguageStats
 	protected function isValidValue( $value ) {
 		$group = MessageGroups::getGroup( $value );

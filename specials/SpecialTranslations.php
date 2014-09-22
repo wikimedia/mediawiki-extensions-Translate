@@ -20,6 +20,10 @@ class SpecialTranslations extends SpecialAllpages {
 		parent::__construct( 'Translations' );
 	}
 
+	protected function getGroupName() {
+		return 'pages';
+	}
+
 	/**
 	 * Entry point : initialise variables and call subfunctions.
 	 * @param string $par Message key. Becomes "MediaWiki:Allmessages" when called like

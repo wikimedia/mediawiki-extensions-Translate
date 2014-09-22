@@ -74,35 +74,22 @@ $GLOBALS['wgHooks']['PageContentLanguage'][] = 'TranslateHooks::onPageContentLan
 
 // Register special pages into MediaWiki
 $GLOBALS['wgSpecialPages']['Translate'] = 'SpecialTranslate';
-$GLOBALS['wgSpecialPageGroups']['Translate'] = 'wiki';
 $GLOBALS['wgSpecialPages']['Translations'] = 'SpecialTranslations';
-$GLOBALS['wgSpecialPageGroups']['Translations'] = 'pages';
 // Disabled by default
 // $GLOBALS['wgSpecialPages']['Magic'] = 'SpecialMagic';
-$GLOBALS['wgSpecialPageGroups']['Magic'] = 'wiki';
 $GLOBALS['wgSpecialPages']['TranslationStats'] = 'SpecialTranslationStats';
-$GLOBALS['wgSpecialPageGroups']['TranslationStats'] = 'wiki';
 $GLOBALS['wgSpecialPages']['LanguageStats'] = 'SpecialLanguageStats';
-$GLOBALS['wgSpecialPageGroups']['LanguageStats'] = 'wiki';
 $GLOBALS['wgSpecialPages']['MessageGroupStats'] = 'SpecialMessageGroupStats';
-$GLOBALS['wgSpecialPageGroups']['MessageGroupStats'] = 'wiki';
 $GLOBALS['wgSpecialPages']['ImportTranslations'] = 'SpecialImportTranslations';
-$GLOBALS['wgSpecialPageGroups']['ImportTranslations'] = 'wiki';
 $GLOBALS['wgSpecialPages']['ManageMessageGroups'] = 'SpecialManageGroups';
-$GLOBALS['wgSpecialPageGroups']['ManageMessageGroups'] = 'wiki';
 $GLOBALS['wgSpecialPages']['SupportedLanguages'] = 'SpecialSupportedLanguages';
-$GLOBALS['wgSpecialPageGroups']['SupportedLanguages'] = 'wiki';
 
 // Unlisted special page; does not need $wgSpecialPageGroups.
 $GLOBALS['wgSpecialPages']['MyLanguage'] = 'SpecialMyLanguage';
 $GLOBALS['wgSpecialPages']['AggregateGroups'] = 'SpecialAggregateGroups';
-$GLOBALS['wgSpecialPageGroups']['AggregateGroups'] = 'wiki';
 $GLOBALS['wgSpecialPages']['SearchTranslations'] = 'SpecialSearchTranslations';
-$GLOBALS['wgSpecialPageGroups']['SearchTranslations'] = 'wiki';
 $GLOBALS['wgSpecialPages']['ManageTranslatorSandbox'] = 'SpecialManageTranslatorSandbox';
-$GLOBALS['wgSpecialPageGroups']['ManageTranslatorSandbox'] = 'users';
 $GLOBALS['wgSpecialPages']['TranslationStash'] = 'SpecialTranslationStash';
-$GLOBALS['wgSpecialPageGroups']['TranslationStash'] = 'wiki';
 
 // API
 $GLOBALS['wgAPIGeneratorModules']['messagecollection'] = 'ApiQueryMessageCollection';
