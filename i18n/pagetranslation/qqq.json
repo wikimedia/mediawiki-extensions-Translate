@@ -191,5 +191,8 @@
 	"pp-already-prepared-message": "Info message shown if the page is already prepared for translation",
 	"pp-pagename-missing": "Error message given when page title field is blank",
 	"pp-diff-old-header": "Header text for old revision for the diff shown at Special:PagePreparation",
-	"pp-diff-new-header": "Header text for new revision for the diff shown at Special:PagePreparation"
+	"pp-diff-new-header": "Header text for new revision for the diff shown at Special:PagePreparation",
+	"tpt-unlink-confirm": "Confirmation message shown to user when unmarking page in active translation",
+	"tpt-unlink-button": "Button text",
+	"tpt-unlink-summary": "Edit summary"
 }
