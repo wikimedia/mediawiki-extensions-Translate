@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee62ffec_8a71acdf",
+        "filename": "Translate.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-09-22T16:56:45Z",
+      "side": 1,
+      "message": "You need to use $GLOBALS, otherwise this is not defined at all when installed via Composer.",
+      "revId": "e735b887214ec86d681b83a61251ceb5da0cbf11",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
