@@ -1126,6 +1126,7 @@ $specialPageAliases['vi'] = array(
 	'Translate' => array( 'Dịch', 'Biên_dịch' ),
 	'TranslationStats' => array( 'Thống_kê_biên_dịch' ),
 	'Translations' => array( 'Bản_dịch' ),
+	'PagePreparation' => array( 'Sửa_soạn_trang' ),
 );
 
 /** Wolof (Wolof) */

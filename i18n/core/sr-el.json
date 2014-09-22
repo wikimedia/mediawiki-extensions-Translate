@@ -368,6 +368,7 @@
 	"tux-editor-expand-tooltip": "Proširi",
 	"tux-editor-collapse-tooltip": "Skupi",
 	"tux-editor-message-tools-history": "Istorija",
+	"tux-editor-message-tools-delete": "Obriši",
 	"tux-editor-message-tools-translations": "Svi prevodi",
 	"tux-editor-loading": "Učitavanje...",
 	"translate-search-more-languages-info": "još $1 {{PLURAL:$1|jezik|jezika}}",

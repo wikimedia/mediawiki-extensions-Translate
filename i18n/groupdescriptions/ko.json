@@ -41,7 +41,7 @@
 	"translate-group-desc-semantic": "모든 [https://semantic-mediawiki.org/ 시맨틱 미디어위키] 확장 기능의 모든 메시지를 포함하는 메타 그룹입니다.",
 	"translate-group-desc-translatablepages": "모든 번역 가능한 문서",
 	"translate-group-desc-translate": "미디어위키 확장 기능 [https://www.mediawiki.org/wiki/Extension:Translate Translate]의 모든 메시지를 포함하는 메타 그룹입니다. 이 확장 기능의 [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary 용어집]을 참고하여 용어를 파악하세요.",
-	"translate-group-desc-tsint": "[[Translating:Intuition|Intuition]] 메시지 그룹, [//toolserver.org 툴서버] 도구용 i18n 시스템 for  (<span class=\"plainlinks\">[[Translating talk:Intuition|지원]]</span>)",
+	"translate-group-desc-tsint": "[[Translating:Intuition|Intuition]] 메시지 그룹, [//tools.wmflabs.org/ 툴서버] 도구용 i18n 시스템 for  (<span class=\"plainlinks\">[[Translating talk:Intuition|지원]]</span>)",
 	"translate-group-desc-universallanguageselector": "미디어위키 확장 기능 [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector 보편언어선택기](ULS)을 위한 모든 메시지를 포함하는 메타 메시지 그룹와 연관된 소프트웨어 패키지",
 	"translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]]은 위키미디어 공용과 다른 위키미디어 프로젝트에 파일을 올리기 위한 도구입니다",
 	"translate-group-desc-visualeditor": "미디어위키 확장 기능 [https://www.mediawiki.org/wiki/Extension:VisualEditor 시각편집기]와 관련된 패키지에 대한 모든 메시지를 포함하고 있는 메타 메시지 그룹",

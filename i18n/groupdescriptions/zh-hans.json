@@ -52,7 +52,7 @@
 	"translate-group-desc-sharelatex": "用于基于网页协作的LaTeX编辑器[[Translating:ShareLaTeX|ShareLaTeX]]的消息组",
 	"translate-group-desc-translatablepages": "所有翻译网页",
 	"translate-group-desc-translate": "包含所有用于MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate 翻译]拓展相关信息的元信息组；请您熟知其[https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary 术语表]",
-	"translate-group-desc-tsint": "[[Translating:Intuition|Intuition]]的信息组。它是[//toolserver.org Toolserver]工具的i18n系统（<span class=\"plainlinks\">[[Translating talk:Intuition|支持]]</span>）",
+	"translate-group-desc-tsint": "[[Translating:Intuition|Intuition]]的信息组。它是[//tools.wmflabs.org/ Toolserver]工具的i18n系统（<span class=\"plainlinks\">[[Translating talk:Intuition|支持]]</span>）",
 	"translate-group-desc-universallanguageselector": "元信息组包含所有MediaWiki拓展[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector 通用语言选择器]（ULS）和相关软件包的信息",
 	"translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]]是一个将文件上传到维基共享资源和其他维基媒体计划的工具",
 	"translate-group-desc-visualeditor": "包含所有用于MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:VisualEditor 可视化编辑器]拓展和相关软件包相关信息的元信息组",

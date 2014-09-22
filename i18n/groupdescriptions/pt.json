@@ -47,7 +47,7 @@
 	"translate-group-desc-semantic": "Este meta-grupo contém todas as mensagens para todas as extensões do [https://semantic-mediawiki.org/ MediaWiki Semântico]",
 	"translate-group-desc-translatablepages": "Todas as páginas traduzíveis",
 	"translate-group-desc-translate": "Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Traduzir]; familiarize-se com o respetivo [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossário], por favor",
-	"translate-group-desc-tsint": "Um grupo de mensagens para o [[Translating:Intuition|Intuition]], o sistema de internacionalização das ferramentas [//toolserver.org Toolserver] (<span class=\"plainlinks\">[[Translating talk:Intuition|apoio]]</span>)",
+	"translate-group-desc-tsint": "Um grupo de mensagens para o [[Translating:Intuition|Intuition]], o sistema de internacionalização das ferramentas [//tools.wmflabs.org/ Toolserver] (<span class=\"plainlinks\">[[Translating talk:Intuition|apoio]]</span>)",
 	"translate-group-desc-universallanguageselector": "Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector UniversalLanguageSelector] (ULS) e pacotes de software relacionados",
 	"translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]] é uma ferramenta que auxilia o carregamento de ficheiros no Wikimedia Commons e noutros projetos Wikimedia",
 	"translate-group-desc-visualeditor": "Este meta-grupo contém todas as mensagens para a extensão do MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:VisualEditor Editor Visual] e pacotes de software relacionados",

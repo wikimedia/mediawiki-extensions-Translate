@@ -43,7 +43,7 @@
 	"translate-group-desc-semantic": "Grupa meta wiadomości zawierająca wszystkie wiadomości dla wszystkich rozszerzeń [https://semantic-mediawiki.org/ Semantic MediaWiki]",
 	"translate-group-desc-translatablepages": "Wszystkie przetłumaczalne strony",
 	"translate-group-desc-translate": "Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń MediaWiki [https://www.mediawiki.org/wiki/Extension:Translate Translate]",
-	"translate-group-desc-tsint": "Grupa wiadomości dla [[Translating:Intuition|Intuition]] - systemu i18n narzędzi [//toolserver.org Toolserver] (<span class=\"plainlinks\">[[Translating talk:Intuition|obsługa]]</span>)",
+	"translate-group-desc-tsint": "Grupa wiadomości dla [[Translating:Intuition|Intuition]] - systemu i18n narzędzi [//tools.wmflabs.org/ Toolserver] (<span class=\"plainlinks\">[[Translating talk:Intuition|obsługa]]</span>)",
 	"translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]] to narzędzie do przesyłania plików na Wikimedia Commons i do innych projektów Wikimedia",
 	"translate-group-desc-waymarked-trails": "[[Translating:Waymarked Trails|Waymarked Trails]] jest usługą wyświetlającą trasy wycieczek pieszych, rowerowych, kolarstwa górskiego i łyżworolkowych na całym świecie. Na licencji GNU GPL",
 	"translate-group-desc-wikiaextensions": "Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń MediaWiki używanych przez [http://www.wikia.com Wikia]",

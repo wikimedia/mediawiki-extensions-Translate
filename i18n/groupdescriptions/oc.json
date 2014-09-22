@@ -20,7 +20,7 @@
 	"translate-group-desc-nodesc": "I a pas descripcion disponibla per aqueste grop de messatge",
 	"translate-group-desc-readerfeedback": "Grop dels messatges Meta que conten totes los messatges de l’extension MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-translate": "Grop dels messatges Meta que conten totes los messatges de l’extension MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]; familiarizatz-vos amb son [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossari]",
-	"translate-group-desc-tsint": "Un grop de messatges per [[Translating:Intuition|Intuition]], lo sistèma d'internacionalizacion de las aisinas del [//toolserver.org Toolserver] (<span class=\"plainlinks\">[[Translating talk:Intuition|supòrt]]</span>)",
+	"translate-group-desc-tsint": "Un grop de messatges per [[Translating:Intuition|Intuition]], lo sistèma d'internacionalizacion de las aisinas del [//tools.wmflabs.org/ Toolserver] (<span class=\"plainlinks\">[[Translating talk:Intuition|supòrt]]</span>)",
 	"translate-group-desc-wikiaextensions": "Grop dels messatges Meta que contenon totes los messatges de las extensions MediaWiki utilizadas per [http://www.wikia.com Wikia]",
 	"translate-group-desc-wikimediaextensions": "Meta grop de messatges que contenon totes los messatges per las extensions utilizadas per la [https://wikimediafoundation.org/ Wikimedia Foundation]"
 }
