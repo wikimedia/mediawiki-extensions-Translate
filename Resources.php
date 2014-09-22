@@ -390,6 +390,7 @@ $wgResourceModules['ext.translate.special.pagetranslation'] = array(
 	'styles' => 'resources/css/ext.translate.special.pagetranslation.css',
 	'dependencies' => array(
 		'ext.translate.multiselectautocomplete',
+		'mediawiki.ui.button',
 	),
 	'position' => 'top',
 ) + $resourcePaths;
