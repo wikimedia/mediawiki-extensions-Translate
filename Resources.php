@@ -234,25 +234,6 @@ $wgResourceModules['ext.translate.navitoggle'] = array(
 	),
 ) + $resourcePaths;
 
-$wgResourceModules['ext.translate.pagepreparation'] = array(
-	'scripts' => 'resources/js/ext.translate.pagepreparation.js',
-	'messages' => array(
-		'pp-save-message',
-		'pp-save-button-label',
-		'pp-prepare-message',
-		'pp-already-prepared-message',
-		'pp-pagename-missing'
-	),
-	'dependencies' => array(
-		'mediawiki.ui',
-		'mediawiki.api',
-		'mediawiki.api.edit',
-		'jquery.mwExtension',
-		'mediawiki.action.history.diff',
-		'mediawiki.jqueryMsg',
-	),
-) + $resourcePaths;
-
 $wgResourceModules['ext.translate.pagetranslation.uls'] = array(
 	'scripts' => 'resources/js/ext.translate.pagetranslation.uls.js',
 	'dependencies' => array(
@@ -382,6 +363,25 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 		'pm-swap-icon-hover-text',
 		'pm-delete-icon-hover-text',
 		'pm-pagetitle-invalid',
+	),
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.pagepreparation'] = array(
+	'scripts' => 'resources/js/ext.translate.special.pagepreparation.js',
+	'messages' => array(
+		'pp-save-message',
+		'pp-save-button-label',
+		'pp-prepare-message',
+		'pp-already-prepared-message',
+		'pp-pagename-missing'
+	),
+	'dependencies' => array(
+		'mediawiki.ui',
+		'mediawiki.api',
+		'mediawiki.api.edit',
+		'jquery.mwExtension',
+		'mediawiki.action.history.diff',
+		'mediawiki.jqueryMsg',
 	),
 ) + $resourcePaths;
 
