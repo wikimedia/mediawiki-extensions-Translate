@@ -22,6 +22,7 @@
 	"translate-group-desc-kiwix": "{{doc-important|Do not translate the link target <code>Translating:Kiwix</code>.}}",
 	"translate-group-desc-mantisbt-plugin-core": "Do not translate the link target <code>Translating:MantisBT</code>.",
 	"translate-group-desc-mediawiki-core-branch": "{{doc-important|Do not translate the link target <code>Translating:MediaWiki</code>.}}",
+	"translate-group-desc-mediawikiapi": "{{doc-important|Do not translate the link target <code>Translating:MediaWiki</code>.}}",
 	"translate-group-desc-mediawikicore": "{{doc-important|Do not translate the link target <code>Translating:MediaWiki</code>.}}",
 	"translate-group-desc-mediawikiextensions": "{{doc-important|Do not translate the link target <code>Translating:MediaWiki</code>.}}",
 	"translate-group-desc-mediawikiskins": "{{doc-important|Do not translate the link target <code>Translating:MediaWiki</code>.}}",

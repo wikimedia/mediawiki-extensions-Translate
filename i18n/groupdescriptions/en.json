@@ -23,6 +23,7 @@
 	"translate-group-desc-mantisbt-plugin-core": "A core plugin for [[Translating:MantisBT|MantisBT]]",
 	"translate-group-desc-mathjax": "[[Translating:MathJax|MathJax]] is a cross-browser JavaScript library that displays mathematical notation in web browsers",
 	"translate-group-desc-mediawiki-core-branch": "Messages for a stable version of [[Translating:MediaWiki|MediaWiki]]",
+	"translate-group-desc-mediawikiapi": "This message group contains the messages used in the Action API for the current alpha version of [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})",
 	"translate-group-desc-mediawikicore": "This message group contains the messages used in the current alpha version of [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})",
 	"translate-group-desc-mediawikiextensions": "Meta message group containing all messages for supported extensions for [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mediawikiskins": "Meta message group containing all messages for supported skins for [[Translating:MediaWiki|MediaWiki]]",
