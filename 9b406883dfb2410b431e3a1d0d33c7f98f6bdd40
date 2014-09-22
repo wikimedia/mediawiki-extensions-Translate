@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee62ffec_d422afa1",
+        "filename": "Translate.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-09-22T09:29:14Z",
+      "side": 1,
+      "message": "https://bugzilla.wikimedia.org/69461 would be shorter.",
+      "revId": "9b406883dfb2410b431e3a1d0d33c7f98f6bdd40",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee62ffec_f415b341",
+        "filename": "Translate.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-09-22T09:29:14Z",
+      "side": 1,
+      "message": "\u003e var_dump( version_compare( \u00271.23.1\u0027, \u00271.23\u0027, \u0027\u003c\u003d\u0027 ) );\nbool(false)\n\nI think the closest to something reasonable we can get is: \u00271.23p\u0027, \u0027\u003c\u0027\n\n\u003e var_dump( version_compare( \u00271.23.5\u0027, \u00271.23p\u0027, \u0027\u003c\u0027 ) );\nbool(true)\n\n\u003e var_dump( version_compare( \u00271.24\u0027, \u00271.23p\u0027, \u0027\u003c\u0027 ) );\nbool(false)\n\n\u003e var_dump( version_compare( \u00271.24alpha\u0027, \u00271.23p\u0027, \u0027\u003c\u0027 ) );\nbool(false)\n\n\u003e var_dump( version_compare( \u00271.24wmf2\u0027, \u00271.23p\u0027, \u0027\u003c\u0027 ) );\nbool(false)",
+      "revId": "9b406883dfb2410b431e3a1d0d33c7f98f6bdd40",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
