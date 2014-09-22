@@ -33,7 +33,7 @@
     "tpt-edit-failed": "Could not update the page: $1",
     "tpt-duplicate": "Translation unit name $1 is used more than once.",
     "tpt-already-marked": "The latest version of this page has already been marked for translation.",
-    "tpt-unmarked": "Page $1 is no longer marked for translation.",
+    "tpt-unmarked": "Page [[:$1]] is no longer marked for translation.",
     "tpt-list-nopages": "No pages are marked for translation or ready to be marked for translation.",
     "tpt-new-pages-title": "Pages proposed for translation",
     "tpt-old-pages-title": "Pages in translation",
@@ -191,5 +191,8 @@
     "pp-already-prepared-message": "It seems the page has already been prepared for translation. There are no changes compared to the previous version.",
     "pp-pagename-missing": "Please enter the page name.",
     "pp-diff-old-header": "Source text",
-    "pp-diff-new-header": "Prepared text"
+    "pp-diff-new-header": "Prepared text",
+    "tpt-unlink-confirm": "Please confirm that you really want to remove this page from the translation system.\nLanguage selector and translated page names will stop working.\nThe translation pages will become editable.",
+    "tpt-unlink-button": "Remove from translation",
+    "tpt-unlink-summary": "Removed page from translation"
 }
