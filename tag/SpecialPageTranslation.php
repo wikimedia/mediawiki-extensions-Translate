@@ -96,18 +96,53 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 			return;
 		}
 
+		if ( $action === 'unlink' ) {
+			if ( !$request->wasPosted() ) {
+				$this->showUnlinkConfirmation( $title );
+
+				return;
+			} else {
+				$page = TranslatablePage::newFromTitle( $title );
+				$content = ContentHandler::makeContent(
+					self::getStrippedSourcePageText( $page->getParse() ),
+					$title
+				);
+
+				$status = WikiPage::factory( $title )->doEditContent(
+					$content,
+					$this->msg( 'tpt-unlink-summary' )->inContentLanguage()->text(),
+					EDIT_FORCE_BOT | EDIT_UPDATE
+				);
+
+				if ( !$status->isOK() ) {
+					$out->wrapWikiMsg(
+						'<div class="errorbox">$1</div>',
+						array( 'tpt-edit-failed', $status->getWikiText() )
+					);
+
+					return;
+				}
+
+				$page = TranslatablePage::newFromTitle( $title );
+				$this->unmarkPage( $page, $user );
+				$out->wrapWikiMsg(
+					'<div class="successbox">$1</div>',
+					array( 'tpt-unmarked', $title->getPrefixedText() )
+				);
+				$this->listPages();
+
+				return;
+			}
+		}
+
 		if ( $action === 'unmark' ) {
 			$page = TranslatablePage::newFromTitle( $title );
-			$page->unmarkTranslatablePage();
-			$page->getTitle()->invalidateCache();
-
-			$entry = new ManualLogEntry( 'pagetranslation', 'unmark' );
-			$entry->setPerformer( $user );
-			$entry->setTarget( $page->getTitle() );
-			$logid = $entry->insert();
-			$entry->publish( $logid );
-
-			$out->addWikiMsg( 'tpt-unmarked', $title->getPrefixedText() );
+			$this->unmarkPage( $page, $user );
+			$out->wrapWikiMsg(
+				'<div class="successbox">$1</div>',
+				array( 'tpt-unmarked', $title->getPrefixedText() )
+			);
+			$this->listPages();
 
 			return;
 		}
@@ -119,7 +154,10 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 
 		$page = TranslatablePage::newFromRevision( $title, $revision );
 		if ( !$page instanceof TranslatablePage ) {
-			$out->addWikiMsg( 'tpt-notsuitable', $title->getPrefixedText(), $revision );
+			$out->wrapWikiMsg(
+				'<div class="errorbox">$1</div>',
+				array( 'tpt-notsuitable', $title->getPrefixedText(), $revision )
+			);
 
 			return;
 		}
@@ -128,14 +166,21 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 			// We do want to notify the reviewer if the underlying page changes during review
 			$target = $title->getFullUrl( array( 'oldid' => $revision ) );
 			$link = "<span class='plainlinks'>[$target $revision]</span>";
-			$out->addWikiMsg( 'tpt-oldrevision', ':' . $title->getPrefixedText(), $link );
+			$out->wrapWikiMsg(
+				'<div class="warningbox">$1</div>',
+				array( 'tpt-oldrevision', $title->getPrefixedText(), $link  )
+			);
+			$this->listPages();
 
 			return;
 		}
 
 		$lastrev = $page->getMarkedTag();
 		if ( $lastrev !== false && $lastrev === $revision ) {
-			$out->addWikiMsg( 'tpt-already-marked' );
+			$out->wrapWikiMsg(
+				'<div class="warningbox">$1</div>',
+				array( 'tpt-already-marked'  )
+			);
 			$this->listPages();
 
 			return;
@@ -182,7 +227,11 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 			'filter' => '',
 		) );
 
-		$this->getOutput()->addWikiMsg( 'tpt-saveok', ':' . $titleText, $num, $link );
+		$this->getOutput()->wrapWikiMsg(
+			'<div class="successbox">$1</div>',
+			array( 'tpt-saveok', $titleText, $num, $link   )
+		);
+
 		// If TranslationNotifications is installed, and the user can notify
 		// translators, add a convenience link.
 		if ( method_exists( 'SpecialNotifyTranslators', 'execute' ) &&
@@ -192,6 +241,38 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 				array( 'tpage' => $page->getTitle()->getArticleID() ) );
 			$this->getOutput()->addWikiMsg( 'tpt-offer-notify', $link );
 		}
+	}
+
+	protected function showUnlinkConfirmation( Title $target ) {
+		$formParams = array(
+			'method' => 'post',
+			'action' => $this->getTitle()->getFullURL(),
+		);
+
+		$this->getOutput()->addHtml(
+			Html::openElement( 'form', $formParams ) .
+			Html::hidden( 'do', 'unlink' ) .
+			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'target', $target->getPrefixedText() ) .
+			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
+			$this->msg( 'tpt-unlink-confirm', $target->getPrefixedtext() )->parse() .
+			Xml::submitButton(
+				$this->msg( 'tpt-unlink-button' )->text(),
+				array( 'class' => 'mw-ui-button mw-ui-destructive' )
+			) .
+			Html::closeElement( 'form' )
+		);
+	}
+
+	protected function unmarkPage( TranslatablePage $page, $user ) {
+		$page->unmarkTranslatablePage();
+		$page->getTitle()->invalidateCache();
+
+		$entry = new ManualLogEntry( 'pagetranslation', 'unmark' );
+		$entry->setPerformer( $user );
+		$entry->setTarget( $page->getTitle() );
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 	}
 
 	public function loadPagesFromDB() {
@@ -378,18 +459,6 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 						'token' => $token,
 					)
 				);
-			} elseif ( $type === 'broken' ) {
-				$actions[] = Linker::link(
-					$this->getTitle(),
-					$this->msg( 'tpt-rev-unmark' )->escaped(),
-					array( 'title' => $this->msg( 'tpt-rev-unmark-tooltip' )->text() ),
-					array(
-						'do' => 'unmark',
-						'target' => $title->getPrefixedText(),
-						'revision' => -1,
-						'token' => $token,
-					)
-				);
 			}
 
 			if ( $type === 'active' ) {
@@ -411,6 +480,20 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 					array( 'title' => $this->msg( 'tpt-rev-encourage-tooltip' )->text() ),
 					array(
 						'do' => 'encourage',
+						'target' => $title->getPrefixedText(),
+						'revision' => -1,
+						'token' => $token,
+					)
+				);
+			}
+
+			if ( $type !== 'proposed' ) {
+				$actions[] = Linker::link(
+					$this->getTitle(),
+					$this->msg( 'tpt-rev-unmark' )->escaped(),
+					array( 'title' => $this->msg( 'tpt-rev-unmark-tooltip' )->text() ),
+					array(
+						'do' => $type === 'broken' ? 'unmark' : 'unlink',
 						'target' => $title->getPrefixedText(),
 						'revision' => -1,
 						'token' => $token,
@@ -686,7 +769,7 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 		$wikiPage = WikiPage::factory( $page->getTitle() );
 		$content = ContentHandler::makeContent(
 			$page->getParse()->getSourcePageText(),
-			$this->getTitle()
+			$page->getTitle()
 		);
 
 		$status = $wikiPage->doEditContent(
@@ -869,5 +952,18 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 		}
 
 		return $jobs;
+	}
+
+	/**
+	 * Returns the source page without any translation markup.
+	 *
+	 * @param TPParse $parse
+	 * @return string
+	 * @since 2014.09
+	 */
+	public static function getStrippedSourcePageText( TPParse $parse ) {
+		$text = $parse->getTranslationPageText( array() );
+		$text = preg_replace( '~<languages\s*/>\n?~s', '', $text );
+		return $text;
 	}
 }
