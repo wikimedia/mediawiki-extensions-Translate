@@ -9,7 +9,8 @@
 			"Cainamarques",
 			"Fabsouza1",
 			"Lokal Profil",
-			"Rodrigo codignoli"
+			"Rodrigo codignoli",
+			"Guilhermemau"
 		]
 	},
 	"bw-desc-freecol": "Antes de traduzir o FreeCol para a sua língua, por favor leia [[Translating:FreeCol]]. O Freecol utiliza a licença GPL.",
@@ -40,6 +41,7 @@
 	"translate-group-desc-semantic": "Grupo de mensagens do Meta contendo todas as mensagens de todas extensões do [https://semantic-mediawiki.org/ Semantic MediaWiki]",
 	"translate-group-desc-translatablepages": "Todas as páginas traduzíveis",
 	"translate-group-desc-translate": "Grupo de mensagens do Meta contendo todas as mensagens da extensão do MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Tradução]; se familiarize com seus [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary jargões]",
+	"translate-group-desc-tsint": "Um grupo de mensagens para [[Tradução: Intuition|Intuição]], o sistema de i18n para ferramentas [//tools.wmflabs.org/ Wikimedia ferramenta Labs] (<span class=\"plainlinks\"> [[Tradução conversa: Intuition|support]]</span>)",
 	"translate-group-desc-wikiaextensions": "Este meta-grupo contém todas as mensagens para as extensões suportadas do MediaWiki que são usadas pela [http://www.wikia.com Wikia]",
 	"translate-group-desc-wikimediaextensions": "Grupo de mensagens do Meta contendo todas as mensagens para as extensões MediaWiki suportadas e utilizadas pela [https://wikimediafoundation.org/ Fundação Wikimedia]",
 	"translate-group-desc-wikimediaextensions-main": "Grupo de mensagens do Meta contendo todas as mensagens para as extensões MediaWiki suportadas que requerem tradução para o [https://meta.wikimedia.org/wiki/Language_committee Comité de Línguas] da Wikimedia",

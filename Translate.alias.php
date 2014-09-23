@@ -613,7 +613,7 @@ $specialPageAliases['lb'] = array(
 	'Translations' => array( 'Iwwersetzungen' ),
 );
 
-/** lumbaart (lumbaart) */
+/** Lombard (lumbaart) */
 $specialPageAliases['lmo'] = array(
 	'Translate' => array( 'Volta' ),
 	'Translations' => array( 'Tradüzion' ),
@@ -709,7 +709,7 @@ $specialPageAliases['myv'] = array(
 	'TranslationStats' => array( 'ЮтавтомадоСтатистика' ),
 );
 
-/** Nahuatl (Nāhuatl) */
+/** Nāhuatl (Nāhuatl) */
 $specialPageAliases['nah'] = array(
 	'Translate' => array( 'Tlahtōlcuepāz', 'Traducir' ),
 );
@@ -1041,7 +1041,7 @@ $specialPageAliases['uk'] = array(
 	'Translations' => array( 'Переклади' ),
 );
 
-/** vèneto (vèneto) */
+/** Venetian (vèneto) */
 $specialPageAliases['vec'] = array(
 	'Translate' => array( 'Tradusi' ),
 	'Translations' => array( 'Tradussioni' ),
