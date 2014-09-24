@@ -50,7 +50,7 @@
 	"translate-group-desc-sharelatex": "Группа сообщений для [[Translating:ShareLaTeX|ShareLaTeX]], совместного LaTeX-редактора на основе веб-интерфейса",
 	"translate-group-desc-translatablepages": "Все страницы для перевода",
 	"translate-group-desc-translate": "Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]; пожалуйста, ознакомьтесь с его [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary словарём терминов]",
-	"translate-group-desc-tsint": "Группа сообщений для [[Translating:Intuition|Intuition]], системы интернационализации [//tools.wmflabs.org/ Toolserver] (<span class=\"plainlinks\">[[Translating talk:Intuition|поддержка]]</span>)",
+	"translate-group-desc-tsint": "Группа сообщений для [[Translating:Intuition|Intuition]], системы интернационализации [//tools.wmflabs.org/ Wikimedia Tool Labs] (<span class=\"plainlinks\">[[Translating talk:Intuition|поддержка]]</span>)",
 	"translate-group-desc-universallanguageselector": "Группа мета-сообщений, содержащая все сообщения для MediaWiki-расширения [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector UniversalLanguageSelector] (ULS) и связанных с ними программных пакетов",
 	"translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]] — это средство для загрузки файлов на Викисклад и другие проекты Викимедиа",
 	"translate-group-desc-visualeditor": "Группа мета-сообщений, содержащая все сообщения для MediaWiki-расширения [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:VisualEditor VisualEditor] и связанных с ними программных пакетов",
