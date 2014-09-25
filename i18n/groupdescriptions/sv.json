@@ -49,7 +49,7 @@
 	"translate-group-desc-sharelatex": "En meddelandegrupp för [[Translating:ShareLaTeX|ShareLaTeX]], en webbaserad samverkande LaTeX-redigerare",
 	"translate-group-desc-translatablepages": "Alla översättningsbara sidor",
 	"translate-group-desc-translate": "Metameddelandegrupp som innehåller alla meddelanden för MediaWiki-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]; var god bekanta dig med [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary ordlistan]",
-	"translate-group-desc-tsint": "En meddelandegrupp för [[Translating:Intuition|Intuition]], i18n-systemet för verktyg till [http://toolserver.org Toolserver](<span class=\"plainlinks\">[[Translating talk:Intuition|support]]</span>)",
+	"translate-group-desc-tsint": "En meddelandegrupp för [[Translating:Intuition|Intuition]], i18n-systemet för verktyg till [//tools.wmflabs.org/ Wikimedia Tool Labs]-verktyg (<span class=\"plainlinks\">[[Translating talk:Intuition|support]]</span>)",
 	"translate-group-desc-universallanguageselector": "Meta meddelandegruppen som innehåller alla meddelanden för MediaWiki-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector UniversalLanguageSelector] (ULS) och relaterade programvarupaket",
 	"translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]] är ett verktyg för att ladda upp filer till Wikimedia Commons och andra Wikimediaprojekt",
 	"translate-group-desc-visualeditor": "Meta meddelandegruppen som innehåller alla meddelanden för MediaWiki-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:VisualEditor VisualEditor] och relaterade programvarupaket",
