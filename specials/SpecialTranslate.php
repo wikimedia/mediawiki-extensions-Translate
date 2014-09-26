@@ -542,7 +542,7 @@ class SpecialTranslate extends TranslateSpecialPage {
 
 		// @todo FIXME The selector should have expanded parent-child lists
 		$output = Html::openElement( 'div', array(
-			'class' => 'eight columns ext-translate-msggroup-selector',
+			'class' => 'eight columns tux-breadcrumb',
 			'data-language' => $this->options['language'],
 		) ) .
 			Html::element( 'span',
@@ -766,7 +766,7 @@ class SpecialTranslate extends TranslateSpecialPage {
 
 		$output->addHtml(
 			Html::openElement( 'div', array(
-				'class' => 'eight columns ext-translate-msggroup-selector',
+				'class' => 'eight columns tux-breadcrumb',
 				'data-language' => $this->options['language'],
 			) ) .
 				'<span class="grouptitle">' .
