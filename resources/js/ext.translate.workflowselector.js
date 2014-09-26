@@ -101,7 +101,7 @@
 			}
 
 			$list = $( '<ul>' )
-				.addClass( 'dropdown-menu tux-workflow-status-selector hide' );
+				.addClass( 'tux-dropdown-menu tux-workflow-status-selector hide' );
 
 			$display = $( '<div>' )
 				.addClass( 'tux-workflow-status' )
