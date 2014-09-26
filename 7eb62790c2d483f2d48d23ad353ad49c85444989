@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ee875fcf_010caa3c",
+        "filename": "resources/css/ext.translate.loader.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-09-26T18:18:42Z",
+      "side": 1,
+      "message": "Yes, but where can I read about it",
+      "parentUuid": "ee875fcf_61fb3612",
+      "revId": "7eb62790c2d483f2d48d23ad353ad49c85444989",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e518320_e63cfebe",
         "filename": "specials/SpecialTranslate.php",
         "patchSetId": 3
