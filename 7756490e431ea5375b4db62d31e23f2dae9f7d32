@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce8c5bf9_43b4f8e4",
+        "filename": "resources/css/ext.translate.loader.css",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-09-26T20:22:39Z",
+      "side": 1,
+      "message": "Why here if .tux-loading-indicator is in resources/css/ext.translate.special.translationstash.css?",
+      "range": {
+        "startLine": 41,
+        "startChar": 1,
+        "endLine": 41,
+        "endChar": 4
+      },
+      "revId": "7756490e431ea5375b4db62d31e23f2dae9f7d32",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
