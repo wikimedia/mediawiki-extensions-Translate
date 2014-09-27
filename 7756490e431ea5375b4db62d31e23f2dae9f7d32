@@ -22,6 +22,24 @@
       "revId": "7756490e431ea5375b4db62d31e23f2dae9f7d32",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce8c5bf9_941b14d4",
+        "filename": "resources/css/ext.translate.loader.css",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-09-27T08:52:18Z",
+      "side": 1,
+      "message": "I don\u0027t understand your question. This is *the* place for styles for tux-loading-indicator.\n\nI was going to merge the stash styles into this one but they were slightly different so I left it for later.",
+      "parentUuid": "ce8c5bf9_43b4f8e4",
+      "revId": "7756490e431ea5375b4db62d31e23f2dae9f7d32",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
