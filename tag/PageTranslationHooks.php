@@ -308,7 +308,8 @@ class PageTranslationHooks {
 		$out .= Html::rawElement( 'div', array( 'class' => 'mw-pt-languages-label' ),
 			wfMessage( 'tpt-languages-legend' )->escaped()
 		);
-		$out .= Html::rawElement( 'div',
+		$out .= Html::rawElement(
+			'div',
 			array( 'class' => 'mw-pt-languages-list autonym' ),
 			$languages
 		);
@@ -702,9 +703,14 @@ class PageTranslationHooks {
 			return;
 		}
 
+		$language = $context->getLanguage();
 		$legend = Html::rawElement(
 			'div',
-			array( 'class' => 'mw-pt-translate-header noprint nomobile' ),
+			array(
+				'class' => 'mw-pt-translate-header noprint nomobile',
+				'dir' => $language->getDir(),
+				'lang' => $language->getCode(),
+			),
 			$context->getLanguage()->semicolonList( $actions )
 		) . Html::element( 'hr' );
 
@@ -736,11 +742,28 @@ class PageTranslationHooks {
 		$url = wfExpandUrl( $page->getTranslationUrl( $code ), PROTO_RELATIVE );
 
 		// Output
-		$wrap = '<div class="mw-translate-page-info">$1</div>';
-		$out = RequestContext::getMain()->getOutput();
+		$context = RequestContext::getMain();
+		$language = $context->getLanguage();
+		$wrap = Html::rawElement( 'div',
+			array(
+				'class' => 'mw-translate-page-info',
+				'lang' => $language->getCode(),
+				'dir' => $language->getDir(),
+			),
+			'$1'
+		);
 
-		$out->wrapWikiMsg( $wrap, array( 'tpt-translation-intro', $url, ':' . $titleText,
-			RequestContext::getMain()->getLanguage()->formatNum( $per ) ) );
+		$out = $context->getOutput();
+
+		$out->wrapWikiMsg(
+			$wrap,
+			array(
+				'tpt-translation-intro',
+				$url,
+				':' . $titleText,
+				$language->formatNum( $per )
+			)
+		);
 		$out->addHTML( '<hr />' );
 	}
 
