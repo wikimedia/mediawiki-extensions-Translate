@@ -704,7 +704,11 @@ class PageTranslationHooks {
 
 		$legend = Html::rawElement(
 			'div',
-			array( 'class' => 'mw-pt-translate-header noprint nomobile' ),
+			array(
+				'class' => 'mw-pt-translate-header noprint nomobile'
+				'dir' => $context->getLanguage()->getDir(),
+				'lang' => $context->getLanguage()->getCode(),
+			),
 			$context->getLanguage()->semicolonList( $actions )
 		) . Html::element( 'hr' );
 
