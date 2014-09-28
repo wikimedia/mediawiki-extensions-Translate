@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce8c5bf9_b5ead203",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-09-28T09:55:02Z",
+      "side": 1,
+      "message": "it was the newline here",
+      "revId": "d25a7d8e8e7f03daba4c0e5e452ce14c55512750",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
