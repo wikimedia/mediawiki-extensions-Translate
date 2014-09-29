@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce8c5bf9_6c6fa0c1",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-09-29T20:23:49Z",
+      "side": 1,
+      "message": "\"Language selector  ...\" should be \"The language selector ...\"",
+      "revId": "8cd9206f5fc67d4f4e2da923ee145ce1bacbe345",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
