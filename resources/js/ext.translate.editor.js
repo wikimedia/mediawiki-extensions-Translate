@@ -382,7 +382,7 @@
 			);
 
 			return $( '<ul>' )
-				.addClass( 'dropdown-menu tux-message-tools-menu hide' )
+				.addClass( 'tux-dropdown-menu tux-message-tools-menu hide' )
 				.append( $historyItem, $deleteItem, $translationsItem );
 		},
 
