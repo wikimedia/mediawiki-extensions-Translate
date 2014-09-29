@@ -1,0 +1,9 @@
+== Translate 2014.09 ==
+Released at 2014-09-29.
+
+=== Noteworthy changes ===
+* Regression fixed: Translate's compatibility with MediaWiki 1.22 has been restored.
+* Regression fixed: Fix translation ratios in translatable page language selector.
+* Special:MyLanguage is now in core. For backwards compatibility, translations of Special:MyLanguage aliases were moved to a separate file (Bug 69461).
+* Bug 67778: Added UserMerge support.
+* $wgTranslatePageTranslationULS now works as intended on all translation pages by removing the language code from the page name.
