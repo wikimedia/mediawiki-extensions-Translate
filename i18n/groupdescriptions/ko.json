@@ -43,7 +43,7 @@
 	"translate-group-desc-translate": "미디어위키 확장 기능 [https://www.mediawiki.org/wiki/Extension:Translate Translate]의 모든 메시지를 포함하는 메타 그룹입니다. 이 확장 기능의 [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary 용어집]을 참고하여 용어를 파악하세요.",
 	"translate-group-desc-tsint": "[[Translating:Intuition|Intuition]] 메시지 그룹, [//tools.wmflabs.org/ 툴서버] 도구용 i18n 시스템 for  (<span class=\"plainlinks\">[[Translating talk:Intuition|지원]]</span>)",
 	"translate-group-desc-universallanguageselector": "미디어위키 확장 기능 [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector 보편언어선택기](ULS)을 위한 모든 메시지를 포함하는 메타 메시지 그룹와 연관된 소프트웨어 패키지",
-	"translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]]은 위키미디어 공용과 다른 위키미디어 프로젝트에 파일을 올리기 위한 도구입니다",
+	"translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]]는 위키미디어 공용과 다른 위키미디어 프로젝트에 파일을 올리기 위한 도구입니다",
 	"translate-group-desc-visualeditor": "미디어위키 확장 기능 [https://www.mediawiki.org/wiki/Extension:VisualEditor 시각편집기]와 관련된 패키지에 대한 모든 메시지를 포함하고 있는 메타 메시지 그룹",
 	"translate-group-desc-waymarked-trails": "[[Translating:Waymarked Trails|Waymarked Trails]]는 전세계 하이킹, 자전거 타기, 산악 자전거, 인라인 스케이팅 경로를 보여주는 서비스입니다. GNU GPL 라이선스를 사용합니다.",
 	"translate-group-desc-waymarked-trails-help": "Waymarked Trails 웹 사이트의 도움말 페이지입니다: http://waymarkedtrails.org/help/about",
