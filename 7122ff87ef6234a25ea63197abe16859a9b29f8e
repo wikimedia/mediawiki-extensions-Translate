@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce8c5bf9_18594439",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-10-06T14:13:54Z",
+      "side": 1,
+      "message": "You should use $this-\u003egetRequest()-\u003egetVal( \u0027language\u0027 )",
+      "revId": "7122ff87ef6234a25ea63197abe16859a9b29f8e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
