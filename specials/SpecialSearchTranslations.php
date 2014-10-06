@@ -313,9 +313,11 @@ HTML
 		$title = Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
 		$input = Xml::input( 'query', false, $query, $attribs );
 		$submit = Xml::submitButton( $this->msg( 'tux-sst-search' ), array( 'class' => 'button' ) );
+		$lang = $this->getRequest()->getVal( 'language' );
+		$language = is_null( $lang ) ? '' : Html::hidden( 'language', $lang );
 
 		$form = Html::rawElement( 'form', array( 'action' => wfScript() ),
-			$title . $input . $submit
+			$title . $input . $submit . $language
 		);
 
 		return $form;
