@@ -307,6 +307,7 @@ HTML
 		$attribs = array(
 			'placeholder' => $this->msg( 'tux-sst-search-ph' ),
 			'class' => 'searchinputbox',
+			'dir' => $this->getLanguage()->getDir(),
 		);
 
 		$title = Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
