@@ -25,7 +25,7 @@
 	"tpt-action-nofuzzy": "Nu invalida traduceri",
 	"tpt-badtitle": "Numele de pagină dat ($1) nu este un titlu valid",
 	"tpt-nosuchpage": "Pagina $1 nu există",
-	"tpt-oldrevision": "$2 nu este cea mai recentă versiune a paginii [[$1]].\nDoar cele mai recente versiuni pot fi marcate pentru traducere.",
+	"tpt-oldrevision": "$2 nu este cea mai recentă versiune a paginii [[:$1]].\nDoar cele mai recente versiuni pot fi marcate pentru traducere.",
 	"tpt-notsuitable": "Pagina $1 nu se califică pentru traducere.\nAsigurați-vă că are eticheta <nowiki><translate></nowiki> și are o sintaxă validă.",
 	"tpt-offer-notify": "Puteți <span class=\"plainlinks\">[$1 notifica traducătorii]</span> despre această pagină.",
 	"tpt-badsect": "„$1” nu este un nume valid pentru unitatea de traducere $2.",

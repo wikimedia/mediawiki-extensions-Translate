@@ -22,7 +22,7 @@
 	"tpt-action-nofuzzy": "Nò invalidà le traduziune",
 	"tpt-badtitle": "'U nome d'a pàgene date ($1) non g'è 'nu titole valide",
 	"tpt-nosuchpage": "Pàgene $1 non g'esiste",
-	"tpt-oldrevision": "$2 non g'è l'urtema versione d'a pàgene [[$1]].\nSulamende le urteme versiune ponne essere signate pa traduzione.",
+	"tpt-oldrevision": "$2 non g'è l'urtema versione d'a pàgene [[:$1]].\nSulamende le urteme versiune ponne essere signate pa traduzione.",
 	"tpt-badsect": "\"$1\" non g'è 'nu nome valide pe l'aunità de traduzione $2.",
 	"tpt-mark-summary": "Signate sta versione pa traduzione",
 	"tpt-edit-failed": "Non ge pozze aggiornà 'a pàgene: $1",

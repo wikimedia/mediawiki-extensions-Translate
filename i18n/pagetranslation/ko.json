@@ -6,7 +6,8 @@
 			"아라",
 			"Priviet",
 			"Hym411",
-			"Tyey"
+			"Tyey",
+			"Revi"
 		]
 	},
 	"pagetranslation": "문서 번역",
@@ -27,9 +28,9 @@
 	"tpt-action-nofuzzy": "번역을 무효화하지 마세요",
 	"tpt-badtitle": "주어진 문서 이름($1)은 올바른 제목이 아닙니다",
 	"tpt-nosuchpage": "$1 문서가 존재하지 않습니다",
-	"tpt-oldrevision": "$2 판은 [[$1]] 문서의 최신 판이 아닙니다.\n최신 판만 번역에서 표시할 수 있습니다.",
+	"tpt-oldrevision": "$2 판은 [[:$1]] 문서의 최신 판이 아닙니다.\n최신 판만 번역에서 표시할 수 있습니다.",
 	"tpt-notsuitable": "$1 문서는 번역에 적합하지 않습니다.\n<nowiki><translate></nowiki> 태그가 있고 올바른 문법인지 확인하세요.",
-	"tpt-saveok": "[[$1]] 문서는 $2 {{PLURAL:$2|번역 단위}}로 번역에 대해 표시했습니다.\n문서는 지금 <span class=\"plainlinks\">[$3 번역]</span>할 수 있습니다.",
+	"tpt-saveok": "[[:$1]] 문서는 $2 {{PLURAL:$2|번역 단위}}로 번역에 대해 표시했습니다.\n문서는 지금 <span class=\"plainlinks\">[$3 번역]</span>할 수 있습니다.",
 	"tpt-offer-notify": "이 문서에 대해 <span class=\"plainlinks\">[$1 번역자 알림]</span>을 받을 수 있습니다.",
 	"tpt-badsect": "\"$1\"(은)는 $2 번역 유닉에 대해 올바른 이름이 아닙니다.",
 	"tpt-showpage-intro": "다음은 새로와 기존, 삭제된 번역 단위가 나열되어 있습니다.\n번역에 대한 이 판을 표시하기 전에 번역 단위에 대한 바뀜이 번역에 대한 불필요한 작업을 피하기 위해 최소화되어 있는지 확인하세요.",

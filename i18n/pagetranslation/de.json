@@ -33,9 +33,9 @@
 	"tpt-action-nofuzzy": "Die Übersetzungen nicht als veraltet markieren",
 	"tpt-badtitle": "Der angegebene Seitenname „$1“ ist kein gültiger Titel",
 	"tpt-nosuchpage": "Die Seite „$1“ ist nicht vorhanden",
-	"tpt-oldrevision": "$2 ist nicht die letzte Version der Seite [[$1]].\nNur die letzte Version kann zur Übersetzung freigegeben werden.",
+	"tpt-oldrevision": "$2 ist nicht die letzte Version der Seite [[:$1]].\nNur die letzte Version kann zur Übersetzung freigegeben werden.",
 	"tpt-notsuitable": "Die Seite $1 ist nicht zum Übersetzen geeignet.\nStelle sicher, dass ein <nowiki><translate></nowiki>-Tag und gültige Syntax verwendet wird.",
-	"tpt-saveok": "Die Seite [[$1]] wurde mit {{PLURAL:$2|einem übersetzbaren Abschnitt|$2 übersetzbaren Abschnitten}} zur Übersetzung freigegeben.\nDiese Seite kann nun <span class=\"plainlinks\">[$3 übersetzt]</span> werden.",
+	"tpt-saveok": "Die Seite [[:$1]] wurde mit {{PLURAL:$2|einem übersetzbaren Abschnitt|$2 übersetzbaren Abschnitten}} zur Übersetzung freigegeben.\nDiese Seite kann nun <span class=\"plainlinks\">[$3 übersetzt]</span> werden.",
 	"tpt-offer-notify": "Du kannst über diese Seite <span class=\"plainlinks\">[$1 Übersetzer benachrichtigen]</span>.",
 	"tpt-badsect": "„$1“ ist kein gültiger Name für Übersetzungseinheit $2.",
 	"tpt-showpage-intro": "Untenstehend sind neue, vorhandene und gelöschte Übersetzungseinheiten aufgelistet.\nBevor du diese Version zur Übersetzung freigibst, stelle bitte sicher, dass die Änderungen an den Übersetzungseinheiten minimal sind. Damit verhinderst du unnötige Arbeit für die Übersetzer.",
@@ -200,5 +200,8 @@
 	"pp-already-prepared-message": "Es scheint, als ob die Seite bereits für die Übersetzung vorbereitet wurde. Es gibt im Vergleich zur aktuellen Version keine Unterschiede.",
 	"pp-pagename-missing": "Bitte den Seitennamen eingeben.",
 	"pp-diff-old-header": "Quelltext",
-	"pp-diff-new-header": "Vorbereiteter Text"
+	"pp-diff-new-header": "Vorbereiteter Text",
+	"tpt-unlink-confirm": "Bitte bestätige, dass du wirklich diese Seite aus dem Übersetzungssystem entfernen möchtest.\nDie Sprachauswahl und übersetzte Seitennamen hören auf zu funktionieren.\nDie Übersetzungsseiten werden bearbeitbar.",
+	"tpt-unlink-button": "Von der Übersetzung entfernen",
+	"tpt-unlink-summary": "Seite von der Übersetzung entfernt"
 }

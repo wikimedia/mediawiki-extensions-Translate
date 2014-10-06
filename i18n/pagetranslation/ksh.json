@@ -22,7 +22,7 @@
 	"tpt-action-nofuzzy": "Donn de Övversäzunge nit als övverhollt makeere",
 	"tpt-badtitle": "Dä Name „$1“ es keine jöltijje Tittel för en Sigg",
 	"tpt-nosuchpage": "De Sigg „$1“ jidd_et nit.",
-	"tpt-oldrevision": "„$2“ es nit de neuste Version fun dä Sigg „[[$1]]“, ävver bloß de neuste kam_mer för et Övversäze makeere.",
+	"tpt-oldrevision": "„$2“ es nit de neuste Version fun dä Sigg „[[:$1]]“, ävver bloß de neuste kam_mer för et Övversäze makeere.",
 	"tpt-notsuitable": "Di Sigg „$1“ paß nit för et Övversäze. Maach <code><nowiki><translate></nowiki></code>-Makeerunge erin, un looer dat de Süntax shtemmp.",
 	"tpt-saveok": "De Sigg „$1“ es för ze Övversäze makeet. Doh dren {{PLURAL:$2|es eine Knubbel|sinn_er $2 Knubbelle|es ävver keine Knubbel}} för ze Övversäze. Di Sigg kam_mer <span class=\"plainlinks\">[$3 jäz övversäze]</span>.",
 	"tpt-offer-notify": "Do kanns de Översäzere <span class=\"plainlinks\">[$1 övver heh di Sigg bescheidsaare]</span>.",

@@ -21,7 +21,7 @@
 	"tpt-action-nofuzzy": "Sétz d' Ywersétzungen néd ausser Kroft",
 	"tpt-badtitle": "Da ågeewerne Seitennåm „$1“ is koah gütiger Titl néd",
 	"tpt-nosuchpage": "Dé Seiten $1 existird néd",
-	"tpt-oldrevision": "$2 is néd d' létzde Versión voh derer Seiten [[$1]].\nNetter d' létzde Versión kå zur Ywersétzung markird wern.",
+	"tpt-oldrevision": "$2 is néd d' létzde Versión voh derer Seiten [[:$1]].\nNetter d' létzde Versión kå zur Ywersétzung markird wern.",
 	"tpt-notsuitable": "Dé Seiten $1 is néd zum Ywersétzen geignet.\nStö sicher, daas a <nowiki><translate></nowiki>-Tag und gütige Syntax vawendt werd.",
 	"tpt-languages-legend": "Ånderne Sproochen:",
 	"pt-deletepage-any-legend": "Ywersétzbore óder ywersétzde Seiten léschen",
