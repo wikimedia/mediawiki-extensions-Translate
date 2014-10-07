@@ -207,5 +207,8 @@
 	"pp-already-prepared-message": "Il semble que la page ait déjà été préparée pour sa traduction. Il n’y a pas de modifications depuis la version précédente.",
 	"pp-pagename-missing": "Veuillez entrer le nom de la page.",
 	"pp-diff-old-header": "Texte source",
-	"pp-diff-new-header": "Texte préparé"
+	"pp-diff-new-header": "Texte préparé",
+	"tpt-unlink-confirm": "Veuillez confirmer que vous voulez vraiment supprimer cette page du système de traduction.\nLe sélecteur de langue et les noms des pages traduites cesseront de fonctionner.\nLes pages traduites deviendront modifiables.",
+	"tpt-unlink-button": "Supprimer de la traduction",
+	"tpt-unlink-summary": "Page supprimée de la traduction"
 }
