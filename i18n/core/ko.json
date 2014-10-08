@@ -9,7 +9,8 @@
 			"ToePeu",
 			"관인생략",
 			"아라",
-			"Priviet"
+			"Priviet",
+			"Revi"
 		]
 	},
 	"translate": "번역하기",
@@ -335,7 +336,7 @@
 	"tux-editor-need-more-help": "도움이 더 필요하십니까?",
 	"tux-editor-ask-help": "자세한 정보에 대한 질문",
 	"tux-editor-tm-match": "$1% 일치",
-	"tux-warnings-more": "{{PLURAL:$1|$1개 더}}",
+	"tux-warnings-more": "{{PLURAL:$1|$1개 더 보기}}",
 	"tux-warnings-hide": "숨기기",
 	"tux-editor-save-failed": "번역을 저장하는 데 실패했습니다: $1",
 	"tux-editor-n-uses": "$1{{PLURAL:$1|번}} 쓰임",

@@ -181,5 +181,6 @@
 	"pp-already-prepared-message": "Et schéngt datt d'Säit scho fir d'Iwwersetzung virbereed gouf. Et gëtt keng Ännerungen am Verglach mat der vireger Versioun.",
 	"pp-pagename-missing": "Gitt w.e.g. den Numm vun der Säit an.",
 	"pp-diff-old-header": "Quelltext",
-	"pp-diff-new-header": "Preparéierten Text"
+	"pp-diff-new-header": "Preparéierten Text",
+	"tpt-unlink-button": "Vun der Iwwersetzung ewechhuelen"
 }
