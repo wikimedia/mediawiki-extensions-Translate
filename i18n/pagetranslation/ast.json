@@ -190,5 +190,8 @@
 	"pp-already-prepared-message": "Paez que la páxina yá se preparó pa traducir. Nun hai cambios comparando cola versión anterior.",
 	"pp-pagename-missing": "Escribi'l nome de la páxina",
 	"pp-diff-old-header": "Testu fonte",
-	"pp-diff-new-header": "Testu preparáu"
+	"pp-diff-new-header": "Testu preparáu",
+	"tpt-unlink-confirm": "Confirma que realmente quies desaniciar esta páxina del sistema de traducción.\nEl selector de llingua y los nomes traducíos de la páxina dexarán de funcionar.\nLes páxines de traducción podrán editase.",
+	"tpt-unlink-button": "Desaniciar de la traducción",
+	"tpt-unlink-summary": "Páxina desaniciada de la traducción."
 }

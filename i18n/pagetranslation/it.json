@@ -9,7 +9,8 @@
 			"Gianfranco",
 			"Nemo bis",
 			"VittGam",
-			"Ximo17"
+			"Ximo17",
+			"Baffo"
 		]
 	},
 	"pagetranslation": "Traduzione pagine",
@@ -197,5 +198,8 @@
 	"pp-already-prepared-message": "Sembra che la pagina sia stata già preparata per la traduzione. Non ci sono modifiche rispetto alla versione precedente.",
 	"pp-pagename-missing": "Inserisci il nome della pagina.",
 	"pp-diff-old-header": "Testo sorgente",
-	"pp-diff-new-header": "Testo preparato"
+	"pp-diff-new-header": "Testo preparato",
+	"tpt-unlink-confirm": "Si prega di confermare che si desidera davvero togliere il sistema di traduzione di questa pagina.\nIl selettore di lingua e nomi di pagina tradotta smetterà di funzionare.\nLe pagine di traduzione diventa modificabile.",
+	"tpt-unlink-button": "Rimuovi dalla traduzione",
+	"tpt-unlink-summary": "Rimuovi questa pagina dalla traduzione."
 }

@@ -199,5 +199,7 @@
 	"pp-already-prepared-message": "Det verkar sidan redan har förberetts för översättning. Det finns inga ändringar jämfört med den tidigare versionen.",
 	"pp-pagename-missing": "Var god ange sidans namn.",
 	"pp-diff-old-header": "Källtext",
-	"pp-diff-new-header": "Förberedd text"
+	"pp-diff-new-header": "Förberedd text",
+	"tpt-unlink-button": "Ta bort från översättning",
+	"tpt-unlink-summary": "Tog bort sidan från översättning"
 }
