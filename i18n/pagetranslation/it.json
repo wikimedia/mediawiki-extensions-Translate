@@ -199,7 +199,7 @@
 	"pp-pagename-missing": "Inserisci il nome della pagina.",
 	"pp-diff-old-header": "Testo sorgente",
 	"pp-diff-new-header": "Testo preparato",
-	"tpt-unlink-confirm": "Si prega di confermare che si desidera davvero togliere il sistema di traduzione di questa pagina.\nIl selettore di lingua e nomi di pagina tradotta smetterà di funzionare.\nLe pagine di traduzione diventa modificabile.",
+	"tpt-unlink-confirm": "Si prega di confermare che vuoi davvero togliere questa pagina dal sistema di traduzione.\nIl selettore di lingua e il nome della pagina tradotta smetterà di funzionare.\nLa pagina di traduzione diventerà modificabile.",
 	"tpt-unlink-button": "Rimuovi dalla traduzione",
-	"tpt-unlink-summary": "Rimuovi questa pagina dalla traduzione."
+	"tpt-unlink-summary": "Rimuovi questa pagina dalla traduzione"
 }

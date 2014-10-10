@@ -11,7 +11,8 @@
 			"Tobulos1",
 			"WikiPhoenix",
 			"Lokal Profil",
-			"McDutchie"
+			"McDutchie",
+			"Skärminspelning"
 		]
 	},
 	"pagetranslation": "Sidöversättning",
@@ -200,6 +201,7 @@
 	"pp-pagename-missing": "Var god ange sidans namn.",
 	"pp-diff-old-header": "Källtext",
 	"pp-diff-new-header": "Förberedd text",
+	"tpt-unlink-confirm": "Bekräfta att du verkligen vill ta bort denna sida från översättningssystemet.\nSpråkväljaren och översatta sidnamn kommer slutar att fungera.\nÖversättningssidorna kommer bli redigerbara.",
 	"tpt-unlink-button": "Ta bort från översättning",
 	"tpt-unlink-summary": "Tog bort sidan från översättning"
 }

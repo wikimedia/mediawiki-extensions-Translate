@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ansumang",
-			"Siddhartha Ghai"
+			"Siddhartha Ghai",
+			"संजीव कुमार"
 		]
 	},
 	"pagetranslation": "पृष्ठ अनुवाद",
@@ -10,6 +11,8 @@
 	"tpt-template": "पृष्ठ साँचा",
 	"tpt-diff-old": "पूर्व लेख",
 	"tpt-diff-new": "नया लेख",
+	"tpt-oldrevision": "$2, [[:$1]] का नवीनतम संस्करण नहीं है।\nकेवल नवीनतम संस्करण को अनुवाद के लिए चिह्नित किया जा सकता है।",
+	"tpt-saveok": "पृष्ठ [[:$1]] को $2 {{PLURAL:$2|अनुवाद इकाई|अनुवाद इकाइयों}} के साथ अनुवाद के लिए चिह्नित किया गया है।\nयह पृष्ठ <span class=\"plainlinks\">[$3 अनुवादित]</span> किया जा सकता है।",
 	"tpt-other-pages-title": "टूटा पृष्ठ",
 	"pt-movepage-list-translation": "अनुवाद पृष्ठ",
 	"pt-movepage-list-section": "अनुभाग पृष्ठ",
@@ -22,5 +25,8 @@
 	"pt-deletepage-list-pages": "पृष्ठ तालिका हटाने के लिए",
 	"pt-deletepage-list-translation": "अनुवाद पृष्ठ",
 	"pt-deletepage-list-section": "अनुभाग पृष्ठ",
-	"pt-deletepage-list-other": "अन्य उपपृष्ठ"
+	"pt-deletepage-list-other": "अन्य उपपृष्ठ",
+	"tpt-unlink-confirm": "कृपया पुष्टि करें कि आप वास्तव में इस पृष्ठ को अनुवाद निकाय से हटाना चाहते हो।\nभाषा चयनकर्ता और अनुवादित पृष्ठ नाम काम करना बन्द कर देंगे। अनुवाद पृष्ठ सम्पादनीय हो जायेगा।",
+	"tpt-unlink-button": "अनुवाद से निकालें",
+	"tpt-unlink-summary": "अनुवाद से निकाला गया पृष्ठ"
 }
