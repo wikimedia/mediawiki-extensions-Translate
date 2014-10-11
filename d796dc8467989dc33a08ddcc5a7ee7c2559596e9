@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e96e304_48e170fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2014-10-11T14:55:33Z",
+      "side": 1,
+      "message": "Add better description. Also,\n\nBug: 57964\n\nis standard format we follow.",
+      "revId": "d796dc8467989dc33a08ddcc5a7ee7c2559596e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_68e6ac15",
+        "filename": "ffs/GettextFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2014-10-11T14:55:33Z",
+      "side": 1,
+      "message": "You can just remove entire line, may be else block if not needed.",
+      "revId": "d796dc8467989dc33a08ddcc5a7ee7c2559596e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
