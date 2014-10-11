@@ -108,7 +108,7 @@ class GettextFFS extends SimpleFFS {
 				$potmode = true;
 			}
 		} else {
-			throw new MWException( "Gettext file header was not found:\n\n$data" );
+			//throw new MWException( "Gettext file header was not found:\n\n$data" );  // removed as of bug 57964
 		}
 
 		$template = array();
