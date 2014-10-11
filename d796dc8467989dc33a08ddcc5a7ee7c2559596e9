@@ -33,6 +33,24 @@
       "revId": "d796dc8467989dc33a08ddcc5a7ee7c2559596e9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_e89f1c61",
+        "filename": "ffs/GettextFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-10-11T15:39:04Z",
+      "side": 1,
+      "message": "It\u0027s not okay to continue processing a file which has been detected as invalid. The exception will also be needed when isValid() method is implemented for this class.",
+      "parentUuid": "8e96e304_68e6ac15",
+      "revId": "d796dc8467989dc33a08ddcc5a7ee7c2559596e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
