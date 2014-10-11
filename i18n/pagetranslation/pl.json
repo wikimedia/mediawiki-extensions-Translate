@@ -40,6 +40,7 @@
 	"tpt-badsect": "„$1” nie jest dozwoloną nazwą jednostki tłumaczenia $2.",
 	"tpt-showpage-intro": "Poniżej wypisane są nowe, istniejące i usunięte sekcje.\nPrzed oznaczeniem tej wersji do tłumaczenia, aby uniknąć niepotrzebnej pracy tłumaczy, sprawdź czy zmiany w sekcjach zostały zminimalizowane.",
 	"tpt-mark-summary": "Oznaczono tę wersję do tłumaczenia",
+	"tpt-mark-nochanges": "Nie ma różnicy pomiędzy tą wersją a wersją ostatnio oznaczoną.",
 	"tpt-edit-failed": "Nie udało się zaktualizować strony $1",
 	"tpt-duplicate": "Nazwa jednostki tłumaczenia  $1  jest używana więcej niż jeden raz.",
 	"tpt-already-marked": "Najnowsza wersja tej strony już wcześniej została oznaczona do tłumaczenia.",
