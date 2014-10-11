@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e96e304_a8c35460",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-10-11T15:00:06Z",
+      "side": 1,
+      "message": "I recently added (warning|success|error)box classes. Would be good to be consistent with those I think.",
+      "revId": "a8d6e5a21d507b176f3487e4dcb1a97a22fe8d30",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
