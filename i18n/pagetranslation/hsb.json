@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Michawiki"
+			"Michawiki",
+			"Mikławš"
 		]
 	},
 	"pagetranslation": "Přełožowanje strony",
@@ -22,7 +23,7 @@
 	"tpt-action-nofuzzy": "Njeanuluj přełožki",
 	"tpt-badtitle": "Podate mjeno strony ($1) płaćiwy titul njeje",
 	"tpt-nosuchpage": "Strona $1 njeeksistuje",
-	"tpt-oldrevision": "$2 aktualna wersija strony [[:$1]] njeje.\nJenož aktualne wersije hodźa so za přełožowanje markěrować.",
+	"tpt-oldrevision": "$2 njeje aktualna wersija strony [[:$1]].\nJenož aktualne wersije hodźa so za přełožowanje markěrować.",
 	"tpt-notsuitable": "Strona $1 za přełožowanje přihódna njeje.\nZaswěsć, zo ma taflički <nowiki><translate></nowiki> a płaćiwu syntaksu.",
 	"tpt-saveok": "Strona [[:$1]] je so za přełožowanje z $2 {{PLURAL:$2|přełožujomnej jednotku|přełožujomnej jednotkomaj|přełožujomnymi jednotkami|přełožujomnymi jednotkami}} markěrowała.\nStrona hodźi so nětko <span class=\"plainlinks\">[$3 přełožować]</span>.",
 	"tpt-offer-notify": "Móžeš wo tutej stronje <span class=\"plainlinks\">[$1 přełožowarjow informować]</span>.",

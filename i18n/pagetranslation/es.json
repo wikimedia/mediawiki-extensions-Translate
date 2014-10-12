@@ -44,6 +44,7 @@
 	"tpt-badsect": "\"$1\" no es un nombre válido para la unidad de traducción $2.",
 	"tpt-showpage-intro": "Debajo están listadas las unidades de traducción nuevas, existentes y borradas.\nAntes de marcar esta versión para traducción, verifica que los cambios a las unidades de traducción son mínimos para evitar trabajo innecesario a los traductores.",
 	"tpt-mark-summary": "Marcada esta sección para traducción",
+	"tpt-mark-nochanges": "No hay ninguna diferencia entre esta revisión y la última revisión marcada.",
 	"tpt-edit-failed": "No pudo actualizar la página : $1",
 	"tpt-duplicate": "El nombre de la unidad de traducción  $1 es utilizado más de una vez.",
 	"tpt-already-marked": "La última versión de esta página ya ha sido marcada para traducción.",
@@ -204,5 +205,7 @@
 	"pp-already-prepared-message": "Parece que la página ya se ha preparado para la traducción. No hay cambios respecto a la versión anterior.",
 	"pp-pagename-missing": "Escribe el nombre de la página.",
 	"pp-diff-old-header": "Texto fuente",
-	"pp-diff-new-header": "Texto preparado"
+	"pp-diff-new-header": "Texto preparado",
+	"tpt-unlink-button": "Eliminar de la traducción",
+	"tpt-unlink-summary": "Eliminar página de la traducción"
 }

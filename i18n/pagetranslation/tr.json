@@ -33,6 +33,7 @@
 	"tpt-badsect": "\"$1\", $2 çeviri birimi için geçerli bir ad değil.",
 	"tpt-showpage-intro": "Aşağıda yeni, mevcut ve silinmiş çeviri birimleri listelenmiştir.\nBu sürümü çeviri için işaretlemeden önce, çevirmenlere gereksiz iş çıkarmamak için çeviri birimlerinde yapılan değişikliklerin asgari seviyede olduğundan emin olun.",
 	"tpt-mark-summary": "Bu sürüm çeviri için işaretlendi",
+	"tpt-mark-nochanges": "Bu sürüm ile kontrol edilmiş son sürüm arasında hiçbir fark yoktur.",
 	"tpt-edit-failed": "Sayfa güncellenemedi: $1",
 	"tpt-already-marked": "Bu sayfanın en son sürümü çeviri için işaretlenmiş.",
 	"tpt-list-nopages": "Çeviri için işaretlenen ya da işaretlenmeye hazır olan herhangi bir sayfa bulunmuyor.",

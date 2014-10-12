@@ -30,6 +30,7 @@
 	"tpt-badsect": "\"$1\" bukan nama yang sah untuk unit penterjemahan $2.",
 	"tpt-showpage-intro": "Di bawah tersenarainya unit-unit terjemahan yang baru, sedia ada dan terhapus.\nSebelum menandai versi ini untuk diterjemah, pastikan supaya perubahan kepada unit terjemahan diminimumkan untuk mengelakkan beban yang tidak perlu untuk penterjemah.",
 	"tpt-mark-summary": "Menandakan versi ini untuk diterjemah",
+	"tpt-mark-nochanges": "Tiada perbezaan antara semakan ini dengan semakan tertanda yang terdahulu.",
 	"tpt-edit-failed": "Laman ini tidak dapat dikemas kini: $1",
 	"tpt-duplicate": "Nama unit terjemahan $1 terguna lebih daripada sekali.",
 	"tpt-already-marked": "Versi terkini laman ini sudah ditandai untuk diterjemah.",
@@ -156,5 +157,8 @@
 	"pt-deletepage-full-logreason": "Sebahagian laman boleh terjemah $1.",
 	"pt-deletepage-lang-logreason": "Sebahagian laman penterjemahan $1.",
 	"pt-deletepage-started": "Sila periksa [[Special:Log/pagetranslation|log penterjemahan laman]] untuk ralat dan mesej penyiapan.",
-	"pt-deletepage-intro": "Laman khas ini membolehkan anda menghapuskan seluruh laman boleh terjemah atau halaman terjemahan individu dalam sesebuah bahasa.\nTindakan penghapusan itu tidak meninggalkan kesan serta-merta kerana semua halaman yang bergantung padanya akan turut dihapuskan.\nKegagalan akan dilogkan dalam [[Special:Log/pagetranslation|log penterjemahan laman]] dan perlu dibaiki dengan tangan."
+	"pt-deletepage-intro": "Laman khas ini membolehkan anda menghapuskan seluruh laman boleh terjemah atau halaman terjemahan individu dalam sesebuah bahasa.\nTindakan penghapusan itu tidak meninggalkan kesan serta-merta kerana semua halaman yang bergantung padanya akan turut dihapuskan.\nKegagalan akan dilogkan dalam [[Special:Log/pagetranslation|log penterjemahan laman]] dan perlu dibaiki dengan tangan.",
+	"tpt-unlink-confirm": "Sila sahkan bahawa anda benar-benar ingin menggugurkan laman ini dari sistem penterjemahan.\nPemilih bahasa dan nama-nama laman yang diterjemah akan berhenti berfungsi.\nLaman-laman penterjenahan akan tidak boleh disunting lagi.",
+	"tpt-unlink-button": "Gugurkan dari terjemahan",
+	"tpt-unlink-summary": "Menggugurkan laman dari terjemahan"
 }

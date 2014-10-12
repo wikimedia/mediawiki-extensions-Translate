@@ -6,10 +6,15 @@
 		]
 	},
 	"pagetranslation": "Traduzzjoni tal-paġni",
+	"tpt-oldrevision": "$2 mhijiex l-aħħar verżjoni tal-paġna [[:$1]].\nL-aħħar verżjonijiet biss jistgħu jiġu mmarkati għat-traduzzjoni.",
+	"tpt-mark-nochanges": "M'hemm l-ebda differenza bejn din ir-reviżjoni u l-aħħar reviżjoni mmarkata.",
 	"tpt-old-pages": "Xi verżjonijiet ta' {{PLURAL:$1|din il-paġna ġiet immarkata|dawn il-paġni ġew immarkati}} għat-traduzzjoni.",
 	"translate-tag-translate-link-desc": "Ittraduċi din il-paġna",
 	"tpt-languages-legend": "Lingwi oħra:",
 	"tpt-aggregategroup-add": "Żid",
 	"tpt-aggregategroup-save": "Salva",
-	"pm-pagetitle-invalid": "Ikteb titlu validu għall-paġna."
+	"pm-pagetitle-invalid": "Ikteb titlu validu għall-paġna.",
+	"tpt-unlink-confirm": "Jekk jogħġbok ikkonferma li verament tixtieq tneħħi din il-paġna mis-sistema ta' traduzzjoni.\nIs-selettur tal-lingwa u l-ismijiet tal-paġni tradotti ma jibqgħux jaħdmu.\nIl-paġni ta' traduzzjoni se jsiru modifikabbli.",
+	"tpt-unlink-button": "Neħħi mit-traduzzjoni",
+	"tpt-unlink-summary": "Il-paġna tneħħew mit-traduzzjoni"
 }

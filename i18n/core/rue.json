@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gazeb"
+			"Gazeb",
+			"Tkalyn"
 		]
 	},
 	"translate": "Перекладаня",
@@ -201,5 +202,6 @@
 	"translate-gs-multiple": "По веце",
 	"translate-gs-count": "Рахунок",
 	"translate-gs-total": "Цілком",
-	"translate-gs-avgscore": "Сер. оцінка"
+	"translate-gs-avgscore": "Сер. оцінка",
+	"translate-searchprofile": "Переклады"
 }
