@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e96e304_4aaf2092",
+        "filename": "ffs/GettextFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2014-10-13T11:01:10Z",
+      "side": 1,
+      "message": "Trailing space. You need to install phpcs and run it before submitting patch to Gerrit. See: https://www.mediawiki.org/wiki/Continuous_integration/PHP_CodeSniffer",
+      "revId": "3f2ba5ab48d64956450574baf77f87f22c45e30d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
