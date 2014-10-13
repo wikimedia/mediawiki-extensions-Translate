@@ -107,9 +107,7 @@ class GettextFFS extends SimpleFFS {
 			if ( in_array( 'fuzzy', $flags, true ) ) {
 				$potmode = true;
 			}
-		} else {
-			//throw new MWException( "Gettext file header was not found:\n\n$data" );  // removed as of bug 57964
-		}
+		} 
 
 		$template = array();
 		$messages = array();
