@@ -26,6 +26,7 @@
 	"translate-group-desc-mantisbt-plugin-core": "Một trong những phần bổ trợ chính của [[Translating:MantisBT|MantisBT]]",
 	"translate-group-desc-mathjax": "[[Translating:MathJax|MathJax]] là một thư viện JavaScript đa trình duyệt hiển thị các biểu thức toán học trong trình duyệt",
 	"translate-group-desc-mediawiki-core-branch": "Các thông điệp trong một phiên bản ổn định của [[Translating:MediaWiki|MediaWiki]]",
+	"translate-group-desc-mediawikiapi": "Nhóm thông điệp này chứa các thông điệp dùng cho API Tác vụ trong phiên bản alpha hiện hành của [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})",
 	"translate-group-desc-mediawikicore": "Nhóm thông điệp này chứa các thông điệp dùng trong phiên bản alpha hiện hành của [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})",
 	"translate-group-desc-mediawikiextensions": "Nhóm thông điệp chứa các thông điệp của các phần mở rộng [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mediawikiskins": "Siêu nhóm thông điệp chứa các thông điệp của các giao diện [[Translating:MediaWiki|MediaWiki]] được hỗ trợ",
