@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e96e304_6cc54e90",
+        "filename": "ffs/ApacheCocoonXmlFFS.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-10-15T09:45:07Z",
+      "side": 1,
+      "message": "https://cocoon.apache.org/2.1/userdocs/i18nTransformer.html ?",
+      "revId": "a13c4a60e8eb466b77d76c2c2fdd838bd3670e20",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
