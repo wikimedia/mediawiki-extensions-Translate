@@ -12,7 +12,8 @@
 			"ToSter",
 			"WTM",
 			"Woytecr",
-			"Matik7"
+			"Matik7",
+			"Py64"
 		]
 	},
 	"pagetranslation": "Tłumaczenie stron",
@@ -197,5 +198,8 @@
 	"pp-already-prepared-message": "Wydaje się, że ta strona została już przygotowana do tłumaczenia. Nie ma żadnych zmian w porównaniu z poprzednią wersją.",
 	"pp-pagename-missing": "Podaj nazwę strony.",
 	"pp-diff-old-header": "Tekst źródłowy",
-	"pp-diff-new-header": "Przygotowany tekst"
+	"pp-diff-new-header": "Przygotowany tekst",
+	"tpt-unlink-confirm": "Proszę potwierdzić, że na pewno chcesz usunąć tą stronę z systemu tłumaczenia.\nWybór języka i przetłumaczone nazwy stron przestaną działać.\nStrony tłumaczenia będą edytowalne.",
+	"tpt-unlink-button": "Usuń z tłumaczenia.",
+	"tpt-unlink-summary": "Usunięto stronę z tłumaczenia."
 }
