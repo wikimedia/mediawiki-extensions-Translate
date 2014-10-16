@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e96e304_97ac5a34",
+        "filename": "ffs/JavaScriptFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 657
+      },
+      "writtenOn": "2014-10-16T17:58:42Z",
+      "side": 1,
+      "message": "that change doesn\u0027t seem to be intended?",
+      "revId": "1ea02498962a757ffe11fa353c35589a966cde9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_3754662a",
+        "filename": "ffs/JavaScriptFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 657
+      },
+      "writtenOn": "2014-10-16T17:58:42Z",
+      "side": 1,
+      "message": "whitespace issue: no space before \"(\", but after it, and before \")\"\nsee other code for reference.",
+      "revId": "1ea02498962a757ffe11fa353c35589a966cde9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_17360a01",
+        "filename": "ffs/JavaScriptFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 657
+      },
+      "writtenOn": "2014-10-16T17:58:42Z",
+      "side": 1,
+      "message": "whitespace: here and at the line below the space before the closing \")\" is missing (for last and innermost).",
+      "revId": "1ea02498962a757ffe11fa353c35589a966cde9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
