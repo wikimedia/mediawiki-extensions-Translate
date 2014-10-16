@@ -55,7 +55,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		 * Find the start and end of the data section (enclosed in curly braces).
 		 */
 		$dataStart = strpos( $data, '{' );
-		$dataEnd = strrpos( $data, '}' );
+		$dataEnd = strpos( $data, '}' );
 
 		/**
 		 * Strip everything outside of the data section.
@@ -89,11 +89,6 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		$messages = array();
 		foreach ( $data as $segment ) {
 			/**
-			 * Add back trailing quote, removed by explosion.
-			 */
-			$segment .= '"';
-
-			/**
 			 * Concatenate separated strings.
 			 */
 			$segment = str_replace( '"+', '" +', $segment );
@@ -103,23 +98,23 @@ abstract class JavaScriptFFS extends SimpleFFS {
 				$segment[$i] = ltrim( ltrim( $segment[$i] ), '"' );
 			}
 			$segment = implode( $segment );
-
 			/**
-			 * Remove line breaks between message keys and messages.
+			 * Splits the string and store in the form of array.
 			 */
-			$segment = preg_replace( "#\:(\s+)[\\\"\']#", ': "', $segment );
-
+			$segment = preg_split( "(#\:(\s+)[\\\"\']#)", $segment );
+			/**
+			 * JSON production from the array/
+			 */
+			$segment = json_encode( $segment, JSON_PRETTY_PRINT );
 			/**
 			 * Break in to key and message.
 			 */
-			$segments = explode( ': "', $segment );
-
+			$segment = explode( ',', $segment );
 			/**
 			 * Strip excess whitespace from key and value, then quotation marks.
 			 */
-			$key = trim( trim( $segments[0] ), "'\"" );
-			$value = trim( trim( $segments[1] ), "'\"" );
-
+			$key = trim( trim( trim( $segment[0], '["') ), '"' );
+			$value = trim( trim( trim( $segment[1], '"]') ), '"' );
 			/**
 			 * Unescape any JavaScript string syntax and append to message array.
 			 */
