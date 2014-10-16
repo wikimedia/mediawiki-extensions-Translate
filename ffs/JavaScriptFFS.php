@@ -4,6 +4,7 @@
  * Generic file format support for JavaScript formatted files.
  * @ingroup FFS
  */
+require_once "SimpleFFS.php";
 abstract class JavaScriptFFS extends SimpleFFS {
 	public function getFileExtensions() {
 		return array( '.js' );
@@ -55,7 +56,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		 * Find the start and end of the data section (enclosed in curly braces).
 		 */
 		$dataStart = strpos( $data, '{' );
-		$dataEnd = strrpos( $data, '}' );
+		$dataEnd = strpos( $data, '}' );
 
 		/**
 		 * Strip everything outside of the data section.
@@ -88,38 +89,34 @@ abstract class JavaScriptFFS extends SimpleFFS {
 
 		$messages = array();
 		foreach ( $data as $segment ) {
+                        /**
+                         * Concatenate separated strings.
+                         */
+                        $segment = str_replace( '"+', '" +', $segment );
+                        $segment = explode( '" +', $segment );
+                        $count = count( $segment );
+                        for ( $i = 0; $i < $count; $i++ ) {
+                                $segment[$i] = ltrim( ltrim( $segment[$i] ), '"' );
+                        }
+                        $segment = implode( $segment );
+                        /**
+                         * Splits the string and store in the form of array.
+                         */
+                        $segment = preg_split( "(#\:(\s+)[\\\"\']#)", $segment );
 			/**
-			 * Add back trailing quote, removed by explosion.
+			 * JSON production from the array/
 			 */
-			$segment .= '"';
+                        $segment = json_encode ($segment, JSON_PRETTY_PRINT);
 
-			/**
-			 * Concatenate separated strings.
-			 */
-			$segment = str_replace( '"+', '" +', $segment );
-			$segment = explode( '" +', $segment );
-			$count = count( $segment );
-			for ( $i = 0; $i < $count; $i++ ) {
-				$segment[$i] = ltrim( ltrim( $segment[$i] ), '"' );
-			}
-			$segment = implode( $segment );
-
-			/**
-			 * Remove line breaks between message keys and messages.
-			 */
-			$segment = preg_replace( "#\:(\s+)[\\\"\']#", ': "', $segment );
-
-			/**
-			 * Break in to key and message.
-			 */
-			$segments = explode( ': "', $segment );
-
-			/**
-			 * Strip excess whitespace from key and value, then quotation marks.
-			 */
-			$key = trim( trim( $segments[0] ), "'\"" );
-			$value = trim( trim( $segments[1] ), "'\"" );
-
+                        /**
+                         * Break in to key and message.
+                         */
+                        $segment = explode( ',', $segment );
+                        /**
+                         * Strip excess whitespace from key and value, then quotation marks.
+                         */
+                        $key = trim( trim( trim( $segment[0], '["') ), '"');
+                        $value = trim( trim( trim( $segment[1], '"]') ), '"');
 			/**
 			 * Unescape any JavaScript string syntax and append to message array.
 			 */
