@@ -96,8 +96,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			/**
 			 * Concatenate separated strings.
 			 */
-			$segment = str_replace( '"+', '" +', $segment );
-			$segment = explode( '" +', $segment );
+			$segment = explode( '"+', $segment );
 			$count = count( $segment );
 			for ( $i = 0; $i < $count; $i++ ) {
 				$segment[$i] = ltrim( ltrim( $segment[$i] ), '"' );
