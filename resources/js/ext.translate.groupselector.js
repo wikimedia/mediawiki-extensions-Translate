@@ -152,7 +152,8 @@
 		 * Attach event listeners
 		 */
 		listen: function () {
-			var groupSelector = this;
+			var $tabs,
+				groupSelector = this;
 
 			groupSelector.$trigger.on( 'click', function ( e ) {
 				groupSelector.toggle();
@@ -204,7 +205,8 @@
 			} );
 
 			// Handle the tabs All | Recent
-			groupSelector.$menu.find( '.tux-grouptab' ).on( 'click', function () {
+			$tabs = groupSelector.$menu.find( '.tux-grouptab' );
+			$tabs.on( 'click', function () {
 				var $this = $( this );
 
 				/* Do nothing if user clicks the active tab.
@@ -216,8 +218,8 @@
 					return;
 				}
 
-				groupSelector.$menu.find( 'tux-grouptab--selected' );
-
+				// This is okay as long as we only have two classes
+				$tabs.toggleClass( 'tux-grouptab--selected' );
 				groupSelector.$search.val( '' );
 				groupSelector.showList();
 			} );
@@ -265,11 +267,11 @@
 		 * Shows an unfiltered list of groups depending on the selected tab.
 		 */
 		showUnfilteredList: function () {
-			var $selected = this.$menu.find( '.ext-translate-msggroup-category.selected' );
+			var $selected = this.$menu.find( '.tux-grouptab--selected' );
 
-			if ( $selected.hasClass( 'all' ) ) {
+			if ( $selected.hasClass( 'tux-grouptab--all' ) ) {
 				this.showDefaultGroups();
-			} else if ( $selected.hasClass( 'recent' ) ) {
+			} else if ( $selected.hasClass( 'tux-grouptab--recent' ) ) {
 				this.showRecentGroups();
 			}
 		},
