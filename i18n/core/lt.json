@@ -6,7 +6,8 @@
 			"Homo",
 			"Mantak111",
 			"Perkunas",
-			"Vpovilaitis"
+			"Vpovilaitis",
+			"Hugo.arg"
 		]
 	},
 	"translate": "Vertimas",
@@ -93,10 +94,10 @@
 	"action-translate-import": "importuoti atsijungusius vertimus",
 	"right-translate-messagereview": "Peržiūrėti vertimus",
 	"right-translate-groupreview": "Keisti pranešimų grupių darbo eigos būseną",
-	"translate-rc-translation-filter": "Filtruoti vertimus:",
+	"translate-rc-translation-filter": "Perkošti vertimus:",
 	"translate-rc-translation-filter-no": "Nieko nedaryti",
 	"translate-rc-translation-filter-only": "Rodyti tik vertimus",
-	"translate-rc-translation-filter-filter": "Filtruoti vertimus",
+	"translate-rc-translation-filter-filter": "Perkošti vertimus",
 	"translate-rc-translation-filter-site": "Tik keisti į svetainę pranešimus",
 	"translationstats": "Vertimo statistikos",
 	"translate-stats-edits": "Redagavimai",
@@ -213,7 +214,7 @@
 	"translate-documentation-language": "Pranešimo dokumentacija",
 	"translate-searchprofile": "Vertimai",
 	"translate-searchprofile-tooltip": "Ieškoti iš visų vertimų",
-	"translate-search-languagefilter": "Filtruoti pagal kalbą:",
+	"translate-search-languagefilter": "Perkošti pagal kalbą:",
 	"translate-search-nofilter": "Nėra filtravimo",
 	"translate-messagereview-submit": "Žymė peržiūrėta",
 	"translate-messagereview-progress": "Žymėjama kaip peržiūrėta...",
