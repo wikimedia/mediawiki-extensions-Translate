@@ -972,12 +972,10 @@ class SpecialTranslate extends TranslateSpecialPage {
 	}
 
 	public static function isBeta( WebRequest $request ) {
-		global $wgTranslateUseTux;
-
 		$tux = $request->getVal( 'tux', null );
 
 		if ( $tux === null ) {
-			$tux = $request->getCookie( 'tux', null, $wgTranslateUseTux );
+			$tux = $request->getCookie( 'tux', null, true );
 		} elseif ( $tux ) {
 			$request->response()->setCookie( 'tux', 1 );
 		} else {
