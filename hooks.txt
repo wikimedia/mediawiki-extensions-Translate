@@ -41,13 +41,13 @@ to add events to the Translate extension.
 
 <!--
 Post processing step to format in wiki
-^;([^ ]+): >>> ;<nowiki>\1<nowiki>:
+^;([^ ]+): >>> ;<nowiki>\1</nowiki>:
 -->
 
 === PHP events ===
 
 ;SpecialTranslate::executeTask: You can output the default task output
- RequestContext  $context: For adding output, accesing current interface language etc.
+ RequestContext  $context: For adding output, accessing current interface language etc.
  TranslateTask   $task = null: Current task if any
  MessageGroup    $group
  array           $options: Active options
@@ -163,5 +163,5 @@ Post processing step to format in wiki
  object          message: The message object, with a range of useful (and manipulable) properties
 
 ;showTranslationHelpers: Provides an opportunity to handle custom translation helpers
- object          result.helpers: JSON subset focussing on the helpers returned e.g. result.helpers.definition
+ object          result.helpers: JSON subset focusing on the helpers returned e.g. result.helpers.definition
  jQuery          translateEditor.$editor: The current translation-editing form
