@@ -390,12 +390,6 @@ $GLOBALS['wgEnablePageTranslation'] = true;
  */
 $GLOBALS['wgPageTranslationNamespace'] = 1198;
 
-/*
- * Enables the experimental page migration tools.
- * @since 2014-05
- */
-$GLOBALS['wgTranslatePageMigration'] = true;
-
 /**
  * If set to true, when a user selects an interface language via ULS (Universal
  * Language Selector), if the current page is a translatable page or a translation
