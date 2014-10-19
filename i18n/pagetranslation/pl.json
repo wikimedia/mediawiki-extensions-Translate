@@ -199,7 +199,7 @@
 	"pp-pagename-missing": "Podaj nazwę strony.",
 	"pp-diff-old-header": "Tekst źródłowy",
 	"pp-diff-new-header": "Przygotowany tekst",
-	"tpt-unlink-confirm": "Proszę potwierdzić, że na pewno chcesz usunąć tą stronę z systemu tłumaczenia.\nWybór języka i przetłumaczone nazwy stron przestaną działać.\nStrony tłumaczenia będą edytowalne.",
+	"tpt-unlink-confirm": "Proszę potwierdzić, że na pewno chcesz usunąć tę stronę z systemu tłumaczenia.\nWybór języka i przetłumaczone nazwy stron przestaną działać.\nStrony tłumaczenia będą edytowalne.",
 	"tpt-unlink-button": "Usuń z tłumaczenia.",
 	"tpt-unlink-summary": "Usunięto stronę z tłumaczenia."
 }
