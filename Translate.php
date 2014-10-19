@@ -273,6 +273,9 @@ if ( !defined( 'TRANSLATE_FUZZY' ) ) {
 /**
  * Define various web services that provide translation suggestions.
  *
+ * Translation memories are documented in our main documentation.
+ * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories
+ *
  * For Apertium, you should get an API key.
  * @see http://wiki.apertium.org/wiki/Apertium_web_service
  *
@@ -318,18 +321,6 @@ $GLOBALS['wgTranslateTranslationServices']['Yandex'] = array(
 	'langlimit' => 1,
 	'type' => 'yandex',
 );
-/* Example configuration for remote TTMServer
-$wgTranslateTranslationServices['example'] = array(
-	'url' => 'http://example.com/w/api.php',
-	'viewurl' => '//example.com/wiki/',
-	'displayname' => 'example.com',
-	'cutoff' => 0.75,
-	'timeout-sync' => 4,
-	'timeout-async' => 4,
-	'type' => 'ttmserver',
-	'class' => 'RemoteTTMServer',
-);
-*/
 
 /**
  * List of tasks in Special:Translate. If you are only using page translation
