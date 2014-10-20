@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e96e304_d6f88c48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-10-20T21:43:51Z",
+      "side": 1,
+      "message": "Please observe https://www.mediawiki.org/wiki/Gerrit/Commit_message_guidelines",
+      "revId": "fc2ef091871217d98202eda6ddfc64faee4dab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
