@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "8e96e304_b695c0e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-10-20T21:44:52Z",
+      "side": 1,
+      "message": "Please observe https://www.mediawiki.org/wiki/Gerrit/Commit_message_guidelines",
+      "revId": "3f2ba5ab48d64956450574baf77f87f22c45e30d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_969204ff",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-10-20T21:44:52Z",
+      "side": 1,
+      "message": "There are two change IDs in this patch set.",
+      "revId": "3f2ba5ab48d64956450574baf77f87f22c45e30d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e96e304_4aaf2092",
         "filename": "ffs/GettextFFS.php",
         "patchSetId": 1
