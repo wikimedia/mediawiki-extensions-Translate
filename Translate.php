@@ -623,13 +623,6 @@ $GLOBALS['wgTranslateRcFilterDefault'] = 'filter';
 $GLOBALS['wgTranslateTestTTMServer'] = null;
 
 /**
- * Whether to use the TUX interface by default. tux=1 and tux=0 in the url can
- * be used to switch between old and new. This variable will be removed after
- * transition time.
- */
-$GLOBALS['wgTranslateUseTux'] = true;
-
-/**
  * List of user names that are allowed to alter their privileges and do other
  * things. Used for supporting integration testing.
  * @since 2013.10
