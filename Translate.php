@@ -204,10 +204,6 @@ $GLOBALS['wgAvailableRights'][] = 'translate-messagereview';
 $GLOBALS['wgAvailableRights'][] = 'translate-groupreview';
 $GLOBALS['wgAvailableRights'][] = 'translate-sandboxmanage';
 
-// New rights group
-$GLOBALS['wgGroupPermissions']['translate-proofr']['translate-messagereview'] = true;
-$GLOBALS['wgAddGroups']['translate-proofr'] = array( 'translate-proofr' );
-
 // Logs. More logs are defined in TranslateHooks::setupTranslate
 $GLOBALS['wgLogTypes'][] = 'translationreview';
 $GLOBALS['wgLogActionsHandlers']['translationreview/message'] = 'TranslateLogFormatter';
