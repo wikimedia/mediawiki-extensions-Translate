@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e96e304_0a4d633f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-10-21T10:51:46Z",
+      "side": 1,
+      "message": "You are actually modifying the parsing behavior.",
+      "revId": "48b243ce1b85b325ff522eb87fe0ff9e77bf8e1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_aa5b0ffc",
+        "filename": "ffs/JavaScriptFFS.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-10-21T10:51:46Z",
+      "side": 1,
+      "message": "You did not explain this change. To me it looks like this will break if translations contain } in the string.",
+      "revId": "48b243ce1b85b325ff522eb87fe0ff9e77bf8e1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_8a5893fe",
+        "filename": "ffs/JavaScriptFFS.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-10-21T10:51:46Z",
+      "side": 1,
+      "message": "Did you test this? # is no longer the delimiter but part of the pattern.",
+      "revId": "48b243ce1b85b325ff522eb87fe0ff9e77bf8e1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e96e304_2a6fff90",
+        "filename": "ffs/JavaScriptFFS.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-10-21T10:51:46Z",
+      "side": 1,
+      "message": "Why are you encoding $segment which should be an array( key, list ) [1]? That does not make any sense to me.\n\n[1] but is actually single string due to above comment.",
+      "revId": "48b243ce1b85b325ff522eb87fe0ff9e77bf8e1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
