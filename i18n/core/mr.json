@@ -6,7 +6,8 @@
 			"Kaustubh",
 			"Mahitgar",
 			"Saleelk",
-			"V.narsikar"
+			"V.narsikar",
+			"संतोष दहिवळ"
 		]
 	},
 	"translate": "भाषांतर करा",
@@ -257,9 +258,6 @@
 	"translate-messagereview-no-fuzzy": "Fuzzy भाषांतरांवर पुनरावलोकित म्हणून खूण करु शकत नाही.",
 	"translate-messagereview-no-own": "आपण आपल्याच भाषांतरांवर पुनरावलोकित म्हणून खूण करु शकत नाही.",
 	"translate-messagereview-doit": "या भाषांतरावर पुनरावलोकित म्हणून खूण करा.",
-	"group-translate-proofr": "भाषांतर पुनरावलोकक",
-	"group-translate-proofr-member": "{{GENDER:$1|भाषांतर पुनरावलोकक}}",
-	"grouppage-translate-proofr": "{{ns:project}}:भाषांतर पुनरावलोकक",
 	"log-name-translationreview": "भाषांतर पुनरावलोकन नोंदी",
 	"log-description-translationreview": "भाषांतरे व संदेश गटातील सर्व पुनरावलोककांच्या नोंदी.",
 	"group-translate-sandboxed": "अन-अनुमोदित भाषांतरकार",
