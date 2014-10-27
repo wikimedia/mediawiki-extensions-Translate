@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e936f18_cfe6c013",
+        "filename": "scripts/plural-convert.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-10-27T21:45:08Z",
+      "side": 1,
+      "message": "$updates should be initialized to empty array here. Otherwise the updates from previous languages will be reapplied (but they are no-ops so it only causes slowdown).",
+      "revId": "32e9ed4f9ca84677d0b35029dbdeebe10fb12a9c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
