@@ -101,19 +101,19 @@ class GroupStatistics extends Maintenance {
 	 */
 	public $localisedWeights = array(
 		'wikimedia' => array(
-			'core-0-mostused' => 40,
-			'core' => 30,
-			'ext-0-wikimedia' => 30
+			//'core-0-mostused' => 40,
+			'core' => 50,
+			'ext-0-wikimedia' => 50
 		),
 		'fundraiser' => array(
 			'ext-di-di' => 16,
 			'ext-di-pfpg' => 84,
 		),
 		'mediawiki' => array(
-			'core-0-mostused' => 30,
-			'core' => 30,
-			'ext-0-wikimedia' => 20,
-			'ext-0-all' => 20
+			//'core-0-mostused' => 30,
+			'core' => 50,
+			'ext-0-wikimedia' => 25,
+			'ext-0-all' => 25
 		)
 	);
 
