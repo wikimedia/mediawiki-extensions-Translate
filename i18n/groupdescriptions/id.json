@@ -12,7 +12,6 @@
 	"bw-desc-freecol": "Sebelum menerjemahkan FreeCol ke bahasa Anda, harap baca [[Translating:FreeCol]] terlebih dahulu. FreeCol menggunakan lisensi GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], sebuah web forum yang ditulis dalam PHP.",
 	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] adalah sebuah sistem penelusuran bug berbasis web. Laporkan temuan-temuan masalah di [[Support]].",
-	"bw-desc-mwlibrl": "'''mwlib.rl''' adalah sebuah pustaka python untuk membuat dokumen PDF dari artikel-artikel MediaWiki yang diparser menggunakan pustaka mwlib.\n\nLihat pula [[mw:Extension:PDF Writer]] dan http://code.pediapress.com/wiki/wiki/mwlibrl untuk informasi lebih lanjut.",
 	"bw-desc-openstreetmap": "Kumpulan pesan untuk semua pesan [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Kelompok pesan ini berisi pesan antarmuka untuk [[Translating:Open Street Map|Peta jalan terbuka]].",
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] dapat dengan cepat menampilkan daftar penulis suatu halaman wiki Wikimedia.",

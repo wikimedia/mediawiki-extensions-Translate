@@ -254,7 +254,6 @@
 	"translate-messagereview-no-fuzzy": "Fuzzy vertalings kan nie aanvaar word nie.",
 	"translate-messagereview-no-own": "Jy kan nie jou eie vertalings aanvaar.",
 	"translate-messagereview-doit": "Aanvaar hierdie vertaling as 'n korrekte vertaling.",
-	"group-translate-proofr": "Vertaling beoordelaars",
 	"log-name-translationreview": "Vertaling review log",
 	"log-description-translationreview": "Logboek met alle kontroles van vertalings en boodskapgroepe.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|het}} die vertaling $3 aanvaar",

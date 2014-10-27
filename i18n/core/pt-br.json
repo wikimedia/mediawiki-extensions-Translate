@@ -12,7 +12,8 @@
 			"Opraco",
 			"555",
 			"Caio1478",
-			"Fabsouza1"
+			"Fabsouza1",
+			"He7d3r"
 		]
 	},
 	"translate": "Traduzir",
@@ -272,9 +273,6 @@
 	"translate-messagereview-no-fuzzy": "Traduções obsoletas não podem ser revisadas.",
 	"translate-messagereview-no-own": "Você não pode marcar suas próprias traduções como revisadas.",
 	"translate-messagereview-doit": "Marcar esta tradução como revisada.",
-	"group-translate-proofr": "Revisores de traduções",
-	"group-translate-proofr-member": "{{GENDER:$1|Revisor|Revisora}} de traduções",
-	"grouppage-translate-proofr": "{{ns:project}}:Revisores de traduções",
 	"group-translate-proofr.css": "/* O CSS colocado aqui afetará apenas os revisores de traduções */",
 	"group-translate-proofr.js": "/* O JavaScript colocado aqui afetará apenas os revisores de traduções */",
 	"log-name-translationreview": "Registro de revisão de traduções",

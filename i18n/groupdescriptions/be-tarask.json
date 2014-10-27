@@ -11,7 +11,6 @@
 	"bw-desc-freecol": "Перад тым, як перакладаць FreeCol на Вашую мову, калі ласка, прачытайце [[Translating:FreeCol]]. Freecol выкарыстоўвае ліцэнзію GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum] — рухавік для вэб-форумаў на PHP.",
 	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] — вольная ўэб-сыстэма сачэньня за памылкамі. Калі ласка, паведамляйце пра любыя праблемы ў [[Support]].",
-	"bw-desc-mwlibrl": "'''mwlib.rl''' — бібліятэка на Python для стварэньня PDF-дакумэнтаў з артыкулаў MediaWiki, прааналізаваных бібліятэкай mwlib.\n\nДля дадатковай інфармацыі, калі ласка, глядзіце [[mw:Extension:PDF_Writer]] і http://code.pediapress.com/wiki/wiki/mwlibrl.",
 	"bw-desc-openstreetmap": "Група паведамленьняў для ўсіх паведамленьняў [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Гэтая група зьмяшчае паведамленьні для [[Translating:Open Street Map|Open Street Map]].\nГлядзіце [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} старонку Unicode CLDR] зь інструкцыяй фармаваньня множнага ліку.",
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] дазваляе хутка знайсьці аўтараў пэўнай старонкі ці выказваньня ў праектах Фундацыі «Вікімэдыя».",

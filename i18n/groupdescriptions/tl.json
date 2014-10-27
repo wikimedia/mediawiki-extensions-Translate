@@ -8,7 +8,6 @@
 	"bw-desc-freecol": "Bago isalin ang FreeCol sa wika mo, paki basa ang [[Translating:FreeCol]]. Gumagamit ang Freecol ng lisensyang GPL.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], isang poro sa web na nakasulat sa PHP.",
 	"bw-desc-mantisbt": "Ang [[Translating:MantisBT|MantisBT]] ay isang malayang sistemang pangweb na pangtunton ng depekto. Paki-ulat ang anumang paksa sa [[Support|Suporta]].",
-	"bw-desc-mwlibrl": "Ang '''mwlib.rl''' ay isang aklatang-sawa para pagsusulat ng mga kasulatang PDF mula sa mga artikulo ng MediaWiki na nilitis ng aklatang mwlib.\n\nMangyaring tingnan ang [[mw:Extension:PDF_Writer]] at ang http://code.pediapress.com/wiki/wiki/mwlibrl para sa mas marami pang kabatiran.",
 	"bw-desc-openstreetmap": "Lahat ng mga mensaheng may kaugnayan sa [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Naglalaman ang pangkat na pangmensaheng ito ng mga mensaheng panghangganang-mukha para sa [[Translating:Open Street Map|Bukas na Mapa ng Kalye]].  Tingnan ang [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} pahina ng Unikodigong CLDR para sa paliwanag ng mga susing pangmaramihan].",
 	"bw-desc-wikiblame": "Kayang mabilisang hanapin ng [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] ang mga may-akda ng isang pahinang nasa loob ng isang wiki ng Wikimedia.",

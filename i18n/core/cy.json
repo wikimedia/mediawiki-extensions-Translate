@@ -214,8 +214,6 @@
 	"api-error-invalidrevision": "Ni chafwyd hyd i'r cyfieithiad",
 	"api-error-unknownmessage": "Ni chafwyd hyd i'r neges",
 	"api-error-fuzzymessage": "Dynodwyd y cyfieithiad gyda fuzzy",
-	"group-translate-proofr": "Adolygwyr y cyfieithu",
-	"grouppage-translate-proofr": "{{ns:project}}:Adolygwyr y cyfieithu",
 	"log-name-translationreview": "Lòg adolygu cyfieithiadau",
 	"translate-workflow-state-": "(heb ei osod)",
 	"translate-workflowstatus": "Cyflwr: $1",

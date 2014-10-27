@@ -201,8 +201,6 @@
 	"translate-search-nofilter": "వడపోత లేదు",
 	"translate-messagereview-submit": "అంగీకరించు",
 	"translate-messagereview-no-own": "మీ అనువాదాలను మీరే అంగీకరించలేరు.",
-	"group-translate-proofr": "అనువాద సమీక్షకులు",
-	"grouppage-translate-proofr": "{{ns:project}}:అనువాద సమీక్షకులు",
 	"log-name-translationreview": "అనువాద సమీక్షల చిట్టా",
 	"translate-workflowstatus": "స్థితి: $1",
 	"translate-stats-workflow": "స్థితి",
