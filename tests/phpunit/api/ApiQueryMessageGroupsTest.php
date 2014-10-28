@@ -56,6 +56,7 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		);
 
 		// Check structure
+		var_dump( $data );
 		$this->assertCount( 1, $data );
 		$this->assertArrayHasKey( 'query', $data );
 		$this->assertCount( 1, $data['query'] );
