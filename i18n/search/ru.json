@@ -9,7 +9,7 @@
 	"tux-sst-edit": "Редактировать перевод",
 	"tux-sst-search": "Найти",
 	"tux-sst-search-ph": "Поиск переводов",
-	"tux-sst-count": "{{PLURAL:$1|Найден $1 результат|Найдено $1 результатов|Найдены $1 результата}}",
+	"tux-sst-count": "{{PLURAL:$1|Найден $1 результат|Найдены $1 результата|Найдено $1 результатов}}",
 	"tux-sst-facet-language": "Языки",
 	"tux-sst-facet-group": "Группы сообщений",
 	"tux-sst-facet-orphan": "(сирота)",
