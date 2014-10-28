@@ -52,11 +52,13 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 				'action' => 'query',
 				'meta' => 'messagegroups',
 				'mgprop' => 'id|label|class|namespace|exists',
+				// @see https://gerrit.wikimedia.org/r/#/c/160222/
+				'continue' => ''
 			)
 		);
 
 		// Check structure
-		$this->assertCount( 1, $data );
+		$this->assertArrayNotHasKey( 'warnings', $data );
 		$this->assertArrayHasKey( 'query', $data );
 		$this->assertCount( 1, $data['query'] );
 		$this->assertArrayHasKey( 'messagegroups', $data['query'] );
@@ -97,13 +99,15 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 					'action' => 'query',
 					'meta' => 'messagegroups',
 					'mgprop' => 'id|label|class|namespace|exists',
-					'mgfilter' => $id
+					'mgfilter' => $id,
+					// @see https://gerrit.wikimedia.org/r/#/c/160222/
+					'continue' => ''
 				)
 			);
 
 			if ( $id === 'MadeUpGroup' ) {
 				// Check structure (shouldn't find anything)
-				$this->assertCount( 1, $data );
+				$this->assertArrayNotHasKey( 'warnings', $data );
 				$this->assertArrayHasKey( 'query', $data );
 				$this->assertCount( 1, $data['query'] );
 				$this->assertArrayHasKey( 'messagegroups', $data['query'] );
@@ -112,7 +116,7 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 			}
 
 			// Check structure (filter is unique given these names)
-			$this->assertCount( 1, $data );
+			$this->assertArrayNotHasKey( 'warnings', $data );
 			$this->assertArrayHasKey( 'query', $data );
 			$this->assertCount( 1, $data['query'] );
 			$this->assertArrayHasKey( 'messagegroups', $data['query'] );
@@ -136,11 +140,11 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 			array(
 				'action' => 'query',
 				'meta' => 'messagegroups',
-				'mgprop' => 'madeupproperty'
+				'mgprop' => 'madeupproperty',
+				// @see https://gerrit.wikimedia.org/r/#/c/160222/
+				'continue' => ''
 			)
 		);
-
-		$this->assertCount( 2, $data );
 
 		$this->assertArrayHasKey( 'query', $data );
 		$this->assertCount( 1, $data['query'] );
