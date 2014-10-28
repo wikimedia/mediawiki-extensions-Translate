@@ -331,7 +331,7 @@ class TranslateUtils {
 	 * @since 2012-01-12
 	 */
 	public static function addSpecialHelpLink( OutputPage $out, $to, $overrideBaseUrl = false ) {
-		$out->addModules( 'ext.translate.helplink' );
+		$out->addModuleStyles( 'ext.translate.helplink' );
 		$text = wfMessage( 'translate-gethelp' )->escaped();
 
 		if ( $overrideBaseUrl ) {
@@ -344,11 +344,18 @@ class TranslateUtils {
 			'a',
 			array(
 				'href' => $helpUrl,
-				'target' => '_blank'
+				'target' => '_blank',
+				'class' => 'mw-translate-helplink',
 			),
-			"$text" );
-		$wrapper = Html::rawElement( 'div', array( 'class' => 'mw-translate-helplink' ), $link );
-		$out->addHtml( $wrapper );
+			$text
+		);
+
+		if ( method_exists( $out, 'addIndicators' ) ) {
+			$out->addIndicators( array( 'translate-help' => $link ) );
+		} else {
+			$wrapper = Html::rawElement( 'div', array( 'class' => 'mw-translate-helplink-wrapper' ), $link );
+			$out->addHtml( $wrapper );
+		}
 	}
 
 	/**

@@ -1,4 +1,11 @@
 .mw-translate-helplink {
+	/* @embed */
+	background: url(../images/help.png) no-repeat scroll left center transparent;
+	padding-left: 20px;
+}
+
+/* BC for MW <= 1.24 */
+.mw-translate-helplink-wrapper {
 	float: right;
 	width: 100%;
 	display: block;
@@ -6,9 +13,6 @@
 	margin-bottom: -10px;
 }
 
-.mw-translate-helplink a {
-	/* @embed */
-	background: url(../images/help.png) no-repeat scroll left center transparent;
-	padding-left: 20px;
+.mw-translate-helplink-wrapper .mw-translate-helplink {
 	float: right;
 }
