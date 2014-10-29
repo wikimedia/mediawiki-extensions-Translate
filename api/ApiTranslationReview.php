@@ -174,6 +174,9 @@ class ApiTranslationReview extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		$action = TranslateUtils::getTokenAction( 'translationreview' );
 
@@ -183,13 +186,29 @@ class ApiTranslationReview extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Mark translations reviewed';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=translationreview&revision=1&token=foo',
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=translationreview&revision=1&token=foo'
+				=> 'apihelp-translationreview-example-1',
 		);
 	}
 

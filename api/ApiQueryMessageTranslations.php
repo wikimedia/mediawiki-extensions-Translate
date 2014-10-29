@@ -126,24 +126,45 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 			'offset' => array(
 				ApiBase::PARAM_DFLT => 0,
 				ApiBase::PARAM_TYPE => 'integer',
+				/** @todo Once support for MediaWiki < 1.25 is dropped, just use ApiBase::PARAM_HELP_MSG directly */
+				constant( 'ApiBase::PARAM_HELP_MSG' ) ?: '' => 'api-help-param-continue',
 			),
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'title' => 'Full title of a known message',
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Query all translations for a single message';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	protected function getExamples() {
 		return array(
 			"api.php?action=query&meta=messagetranslations&mttitle=MediaWiki:January " .
 				"List of translations in the wiki for MediaWiki:January",
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&meta=messagetranslations&mttitle=MediaWiki:January'
+				=> 'apihelp-query+messagetranslations-example-1',
 		);
 	}
 }

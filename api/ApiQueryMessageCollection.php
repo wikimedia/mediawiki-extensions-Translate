@@ -210,6 +210,8 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			'offset' => array(
 				ApiBase::PARAM_DFLT => '',
 				ApiBase::PARAM_TYPE => 'string',
+				/** @todo Once support for MediaWiki < 1.25 is dropped, just use ApiBase::PARAM_HELP_MSG directly */
+				constant( 'ApiBase::PARAM_HELP_MSG' ) ?: '' => 'api-help-param-continue',
 			),
 			'filter' => array(
 				ApiBase::PARAM_TYPE => 'string',
@@ -230,6 +232,9 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'group' => 'Message group',
@@ -265,10 +270,16 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Query MessageCollection about translations';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	protected function getExamples() {
 		$group = 'page-Example';
 
@@ -282,6 +293,22 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			"api.php?action=query&generator=messagecollection&gmcgroup=$group" .
 				"&gmclanguage=nl&prop=revisions " .
 				"More information about latest translation revisions for group $group",
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&meta=siteinfo&siprop=languages'
+				=> 'apihelp-query+messagecollection-example-1',
+			'action=query&list=messagecollection&mcgroup=page-Example'
+				=> 'apihelp-query+messagecollection-example-2',
+			'action=query&list=messagecollection&mcgroup=page-Example&mclanguage=fi&mcprop=definition|translation|tags&mcfilter=optional'
+				=> 'apihelp-query+messagecollection-example-3',
+			'action=query&generator=messagecollection&gmcgroup=page-Example&gmclanguage=nl&prop=revisions'
+				=> 'apihelp-query+messagecollection-example-4',
 		);
 	}
 }

@@ -56,6 +56,8 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 			'offset' => array(
 				ApiBase::PARAM_DFLT => 0,
 				ApiBase::PARAM_TYPE => 'string',
+				/** @todo Once support for MediaWiki < 1.25 is dropped, just use ApiBase::PARAM_HELP_MSG directly */
+				constant( 'ApiBase::PARAM_HELP_MSG' ) ?: '' => 'api-help-param-continue',
 			),
 			'timelimit' => array(
 				ApiBase::PARAM_DFLT => 8,
@@ -66,6 +68,9 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'offset' => 'If not all stats are calculated, you will get a query-continue ' .

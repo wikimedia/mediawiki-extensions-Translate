@@ -233,6 +233,9 @@ class ApiTranslateSandbox extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		$action = TranslateUtils::getTokenAction( 'translatesandbox' );
 
@@ -246,6 +249,9 @@ class ApiTranslateSandbox extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Signup and manage sandboxed users';
 	}
