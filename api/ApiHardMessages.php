@@ -132,6 +132,9 @@ class ApiHardMessages extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		$action = TranslateUtils::getTokenAction( 'hardmessages' );
 
@@ -141,13 +144,29 @@ class ApiHardMessages extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Mark translations hard';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=hardmessages&title=SampleTitle&token=foo',
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=hardmessages&title=SampleTitle&token=foo'
+				=> 'apihelp-hardmessages-example-1',
 		);
 	}
 

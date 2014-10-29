@@ -53,6 +53,7 @@ $GLOBALS['wgMessagesDirs']['Translate'] = __DIR__ . "/i18n/core";
 $GLOBALS['wgMessagesDirs']['TranslateGroupDescriptions'] = __DIR__ . "/i18n/groupdescriptions";
 $GLOBALS['wgMessagesDirs']['TranslateSearch'] = __DIR__ . "/i18n/search";
 $GLOBALS['wgMessagesDirs']['TranslateSandbox'] = __DIR__ . "/i18n/sandbox";
+$GLOBALS['wgMessagesDirs']['TranslateApi'] = __DIR__ . "/i18n/api";
 
 // Register extension messages and other localisation.
 $GLOBALS['wgExtensionMessagesFiles']['Translate'] = "$dir/Translate.i18n.php";

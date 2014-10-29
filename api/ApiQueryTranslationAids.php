@@ -96,6 +96,9 @@ class ApiTranslationAids extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'title' => 'Full title of a known message',
@@ -105,13 +108,29 @@ class ApiTranslationAids extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Query all translations aids';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	protected function getExamples() {
 		return array(
 			"api.php?action=translationaids&title=MediaWiki:January/fi",
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=translationaids&title=MediaWiki:January/fi'
+				=> 'apihelp-translationaids-example-1',
 		);
 	}
 }

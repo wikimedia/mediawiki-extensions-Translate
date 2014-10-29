@@ -286,6 +286,9 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		return $allowedParams;
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		$depth = <<<TEXT
 When using the tree format, limit the depth to this many levels. Value 0 means
@@ -359,14 +362,30 @@ TEXT;
 		return $properties;
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Return information about message groups. Note that uselang parameter ' .
 			'affects the output of language dependent parts.';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	protected function getExamples() {
 		return array(
 			'api.php?action=query&meta=messagegroups',
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&meta=messagegroups'
+				=> 'apihelp-query+messagegroups-example-1',
 		);
 	}
 }

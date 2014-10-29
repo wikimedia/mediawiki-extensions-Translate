@@ -49,6 +49,9 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 		return $params;
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		$desc = parent::getParamDescription();
 		$desc['group'] = 'Message group id';
@@ -56,16 +59,32 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 		return $desc;
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Query message group stats';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	protected function getExamples() {
 		$group = 'page-Example';
 
 		return array(
 			"api.php?action=query&meta=messagegroupstats&mgsgroup=$group List of " .
 				"translation completion statistics for group $group",
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&meta=messagegroupstats&mgsgroup=page-Example'
+				=> 'apihelp-query+messagegroupstats-example-1',
 		);
 	}
 }
