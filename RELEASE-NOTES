@@ -1,0 +1,12 @@
+== Translate 2014.10 ==
+Released at 2014-10-31.
+
+=== Noteworthy changes ===
+* New feature: Remove any page from translation with two clicks from Special:PageTranslation. Previously, translate tags had to be removed manually first.
+* Special:PageTranslation also has prettier warning and error notifications.
+* The user group translate-proofr is no longer created by default. If you were using it, you can add it back with following code in your LocalSettings.php:
+ $wgGroupPermissions['translate-proofr']['translate-messagereview'] = true;
+ $wgAddGroups['translate-proofr'] = array( 'translate-proofr' );
+* Removed $wgTranslatePageMigration (enabled by default), $wgTranslateUseTux (no longer in use) and translate-proofr group (needs sysadmin action if in use).
+* Bug 48672: When marking page for translation, show a note before submit if there are no differences.
+* Added support for page status indicators. This alters very slightly the way help icons are displayed on some special pages.
