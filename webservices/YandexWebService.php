@@ -55,6 +55,11 @@ class YandexWebService extends TranslationWebService {
 			throw new TranslationWebServiceException( 'API key is not set' );
 		}
 
+		# http://api.yandex.com/translate/doc/dg/reference/translate.xml
+		if ( strlen( $text ) > 10000 ) {
+			throw new TranslationWebServiceException( 'Source text too long' );
+		}
+
 		$service = $this->service;
 
 		$text = trim( $text );
