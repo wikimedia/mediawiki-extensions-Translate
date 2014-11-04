@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "6e936f18_c5af49dd",
+        "filename": "i18n/api/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2014-11-04T14:48:31Z",
+      "side": 1,
+      "message": "Feel free to change it if you want. This description was taken directly from the malformed string in ApiQueryLanguageStats::getExamples().",
+      "parentUuid": "6e936f18_ce10cb55",
+      "revId": "3c26d80dcf3d717b2a01cf749e9188c40bdaba0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e936f18_13182085",
         "filename": "i18n/api/en.json",
         "patchSetId": 2
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "6e936f18_0585315a",
+        "filename": "i18n/api/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2014-11-04T14:48:31Z",
+      "side": 1,
+      "message": "Feel free to change it if you want. This text was taken directly from ApiQueryMessageCollection::getParamDescription() with minimal cleanup.\n\nI have no idea what you mean by \"needs workaround\".",
+      "parentUuid": "6e936f18_13182085",
+      "revId": "3c26d80dcf3d717b2a01cf749e9188c40bdaba0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e936f18_6e009704",
         "filename": "i18n/api/en.json",
         "patchSetId": 2
@@ -65,6 +101,24 @@
       "writtenOn": "2014-11-04T07:45:39Z",
       "side": 1,
       "message": "Not experimental.",
+      "revId": "3c26d80dcf3d717b2a01cf749e9188c40bdaba0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e936f18_c5966997",
+        "filename": "i18n/api/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2014-11-04T14:48:31Z",
+      "side": 1,
+      "message": "Feel free to change it if you want. This description was taken directly from ApiTranslateUser::getDescription().",
+      "parentUuid": "6e936f18_6e009704",
       "revId": "3c26d80dcf3d717b2a01cf749e9188c40bdaba0d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
