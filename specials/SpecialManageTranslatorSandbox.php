@@ -229,6 +229,7 @@ HTML;
 			$requests[] = array(
 				'username' => $user->getName(),
 				'email' => $user->getEmail(),
+				'gender' => $user->getOption( 'gender' ),
 				'registrationdate' => $user->getRegistration(),
 				'translations' => count( $this->stash->getTranslations( $user ) ),
 				'languagepreferences' => FormatJson::decode( $user->getOption( 'translate-sandbox' ) ),

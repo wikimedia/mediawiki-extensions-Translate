@@ -185,7 +185,8 @@
 	}
 
 	function showTranslations( translations ) {
-		var $target = $( '.translations' );
+		var gender,
+			$target = $( '.translations' );
 
 		$target.empty();
 
@@ -200,6 +201,7 @@
 			return;
 		}
 
+		gender = $( '.requests-list .request.selected' ).data( 'data' ).gender;
 		$target.append(
 			$( '<div>' )
 				.addClass( 'row title' )
@@ -208,7 +210,7 @@
 						.text( mw.msg( 'tsb-translations-source' ) )
 						.addClass( 'four columns' ),
 					$( '<div>' )
-						.text( mw.msg( 'tsb-translations-user', mw.user ) )
+						.text( mw.msg( 'tsb-translations-user', gender ) )
 						.addClass( 'four columns' ),
 					$( '<div>' )
 						.text( mw.msg( 'tsb-translations-current' ) )
