@@ -7,14 +7,20 @@
 		]
 	},
 	"translate-page-group": "Groep",
+	"translate-page-language": "Taal",
+	"translate-page-navigation-legend": "Navigaasje",
 	"translate-next": "Folgjende side",
 	"translate-page-edit": "bewurkje",
 	"translate-magic-cm-export": "Eksportearje",
 	"translate-magic-cm-comment": "Oanmerking:",
 	"translate-magic-cm-save": "Fêstlizze",
 	"translate-translations-messagename": "Namme:",
-	"tux-editor-cancel-button-label": "Ofbrekke",
+	"translate-language": "Taal",
+	"translate-mgs-column-language": "Taal",
+	"translate-gethelp": "Help",
+	"tux-editor-cancel-button-label": "Annulearje",
 	"tux-proofread-edit-label": "Bewurkje",
 	"tux-editor-page-mode": "Side",
-	"tux-editor-doc-editor-cancel": "Ofbrekke"
+	"tux-editor-doc-editor-cancel": "Annulearje",
+	"tux-editor-message-tools-history": "Skiednis"
 }

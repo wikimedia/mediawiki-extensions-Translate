@@ -5,5 +5,7 @@
 		]
 	},
 	"tpt-aggregategroup-new-name": "Namme:",
-	"tpt-aggregategroup-edit-name": "Namme:"
+	"tpt-aggregategroup-edit-name": "Namme:",
+	"tpt-aggregategroup-update-cancel": "Annulearje",
+	"pm-cancel-button-label": "Annulearje"
 }
