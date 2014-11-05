@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e936f18_d6bcd8d7",
+        "filename": "ffs/JavaScriptFFS.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-11-05T14:50:29Z",
+      "side": 1,
+      "message": "This is a function about *parsing* JavaScript.",
+      "revId": "a0511c86ac85507d512515f75fd6b4f32fe424d0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
