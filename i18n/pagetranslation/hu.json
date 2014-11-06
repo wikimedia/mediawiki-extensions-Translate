@@ -77,6 +77,7 @@
 	"pt-parse-nested": "Egymásba ágyazott &lt;translate> szakaszok nem engedélyezettek.\nElem szövege: <pre>$1</pre>",
 	"log-description-pagetranslation": "A lapfordító rendszerhez kapcsolódó műveletek naplója",
 	"log-name-pagetranslation": "Oldalfordítási napló",
+	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|megjelölte}} a(z) $3 lapot fordításra",
 	"pt-movepage-title": "A(z) $1 fordítható lap átnevezése",
 	"pt-movepage-blockers": "Nem lehet átnevezni a fordítható lapot az új névre a következő {{PLURAL:$1|hiba|hibák}} miatt:",
 	"pt-movepage-list-pages": "Átnevezendő lapok listája",
