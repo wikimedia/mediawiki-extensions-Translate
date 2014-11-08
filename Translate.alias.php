@@ -396,6 +396,7 @@ $specialPageAliases['gsw'] = array(
 
 /** Hebrew (עברית) */
 $specialPageAliases['he'] = array(
+	'AggregateGroups' => array( 'קבוצות_משולבות' ),
 	'ImportTranslations' => array( 'ייבוא_תרגומים' ),
 	'LanguageStats' => array( 'סטטיסטיקות_שפה' ),
 	'Magic' => array( 'תרגום_מתקדם' ),
@@ -411,6 +412,7 @@ $specialPageAliases['he'] = array(
 	'TranslationStats' => array( 'סטטיסטיקות_תרגום' ),
 	'Translations' => array( 'תרגומים' ),
 	'PageMigration' => array( 'המרת_דף' ),
+	'PagePreparation' => array( 'הכנת_דף' ),
 );
 
 /** Hindi (हिन्दी) */
