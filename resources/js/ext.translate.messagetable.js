@@ -329,8 +329,8 @@
 		 * @param {String} query
 		 */
 		search: function ( query ) {
-			var resultCount = 0,
-				$result,
+			var $note, $button, $result,
+				resultCount = 0,
 				matcher = new RegExp( '(^|\\s|\\b)' + escapeRegex( query ), 'gi' );
 
 			this.$container.find( itemsClass[ this.mode ] ).each( function () {
@@ -349,14 +349,20 @@
 
 			$result = this.$container.find( '.tux-message-filter-result' );
 			if ( !$result.length ) {
-				$result = $( '<div>' ).addClass( 'row highlight tux-message-filter-result' )
-					.append(
-						$( '<div>' )
-							.addClass( 'ten columns advanced-search' ),
-						$( '<button>' )
-							.addClass( 'two columns button advanced-search' )
-							.text( mw.msg( 'tux-message-filter-advanced-button' ) )
-					);
+				$note = $( '<div>' )
+					.addClass( 'nine columns advanced-search' ),
+
+				$button = $( '<div>' )
+					.addClass( "three columns" )
+					.append( $( '<button>' )
+						.addClass( 'button' )
+						.text( mw.msg( 'tux-message-filter-advanced-button' ) )
+					 );
+
+				$result = $( '<div>' )
+					.addClass( 'row highlight tux-message-filter-result' )
+					.append( $note, $button );
+
 				this.$container.prepend( $result );
 			}
 
@@ -364,7 +370,7 @@
 				$result.addClass( 'hide' );
 			} else {
 				$result.removeClass( 'hide' )
-					.find( 'div' )
+					.find( '.advanced-search' )
 					.text( mw.msg( 'tux-message-filter-result', resultCount, query ) );
 				$result.find( 'button' ).on( 'click', function () {
 					window.location.href = new mw.Uri( mw.util.getUrl( 'Special:SearchTranslations' ) )
