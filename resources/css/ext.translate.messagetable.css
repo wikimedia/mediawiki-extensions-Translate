@@ -316,7 +316,7 @@
 }
 
 .tux-message-filter-result .button {
-	height: 30px;
+	float: right;
 	padding: 5px;
 	margin: 5px 0;
 	font-size: 15px;
