@@ -133,7 +133,7 @@ class TPParse {
 
 		$this->dbSections = array();
 
-		$db = wfGetDB( DB_SLAVE );
+		$db = wfGetDB( DB_MASTER );
 		$tables = 'translate_sections';
 		$vars = array( 'trs_key', 'trs_text' );
 		$conds = array( 'trs_page' => $this->title->getArticleID() );
