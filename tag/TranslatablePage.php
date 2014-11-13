@@ -509,7 +509,7 @@ class TranslatablePage {
 		$aid = $this->getTitle()->getArticleID();
 
 		if ( is_object( $revision ) ) {
-			throw new MWException( 'Got object, excepted id' );
+			throw new MWException( 'Got object, expected id' );
 		}
 
 		$conds = array(
