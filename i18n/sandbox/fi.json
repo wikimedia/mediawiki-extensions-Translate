@@ -21,6 +21,7 @@
 	"tsb-older-requests": "$1 {{PLURAL:$1|vanhempi hakemus|vanhempaa hakemusta}}",
 	"tsb-accept-all-button-label": "Hyväksy kaikki",
 	"tsb-reject-all-button-label": "Hylkää kaikki",
+	"tsb-user-posted-a-comment": "Ei kääntäjä",
 	"tsb-reminder-link-text": "Lähetä muistutus",
 	"tsb-didnt-make-any-translations": "Käyttäjä ei ole tehnyt käännöksiä.",
 	"tsb-translations-source": "Lähde",

@@ -14,6 +14,7 @@
 	"bw-desc-freecol": "Ennen kuin käännät FreeColia kielellesi, luethan sivun [[Translating:FreeCol]]. Freecol käyttää GPL-lisenssiä.",
 	"bw-desc-fudforum": "[[Translating:FUDforum|FUDforum]] on verkkopohjainen keskustelufoorumi",
 	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] on verkossa toimiva virheenseurantaohjelmisto",
+	"bw-desc-openstreetmap": "[[Translating:OpenStreetMap|OpenStreetMap]]in viestit",
 	"translate-group-desc-collection": "Tämä metaviestiryhmä sisältää kaikki viestit, joita käytetään MediaWikin laajennuksessa [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
 	"translate-group-desc-eol": "[[Translating:EOL|Encyclopedia of Life]] -viestiryhmä",
 	"translate-group-desc-flaggedrevs": "Tämä metaviestiryhmä sisältää kaikki viestit MediaWikin [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs-laajennusta] varten",
