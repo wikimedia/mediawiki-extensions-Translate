@@ -254,7 +254,7 @@ GROOVY;
 				'number_of_shards' => $this->getShardCount(),
 				'number_of_replicas' => $this->getReplicaCount(),
 			),
-			true
+			false /* Do not drop the index if exists */
 		);
 
 		$settings = $type->getIndex()->getSettings();
