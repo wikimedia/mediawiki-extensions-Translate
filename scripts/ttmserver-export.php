@@ -51,9 +51,6 @@ class TTMServerBootstrap extends Maintenance {
 	}
 
 	public function execute() {
-		// Profiling can take lot of memory
-		Profiler::setInstance( new ProfilerStub( array() ) );
-
 		global $wgTranslateTranslationServices;
 
 		// TTMServer is the id of the enabled-by-default instance
