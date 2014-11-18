@@ -249,13 +249,16 @@ GROOVY;
 
 	public function beginBootstrap() {
 		$type = $this->getType();
-		$type->getIndex()->create(
-			array(
-				'number_of_shards' => $this->getShardCount(),
-				'number_of_replicas' => $this->getReplicaCount(),
-			),
-			true
-		);
+
+		if ( !$type->getIndex()->exists() ) {
+			$type->getIndex()->create(
+				array(
+					'number_of_shards' => $this->getShardCount(),
+					'number_of_replicas' => $this->getReplicaCount(),
+				),
+				false /* Do not drop the index if exists */
+			);
+		}
 
 		$settings = $type->getIndex()->getSettings();
 		$settings->setRefreshInterval( -1 );
