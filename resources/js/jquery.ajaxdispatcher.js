@@ -12,7 +12,7 @@
 	function ajaxDispatcher( list, maxRetries ) {
 		maxRetries = maxRetries || 0;
 
-		var deferred = new $.Deferred();
+		var deferred = $.Deferred();
 		return $.when( helper( list, maxRetries ) )
 			.then( function ( promises ) {
 				return deferred.resolve( promises );
@@ -21,7 +21,7 @@
 
 	function helper( list, maxRetries ) {
 		var first, rest, retries, retrier,
-			deferred = new $.Deferred();
+			deferred = $.Deferred();
 
 		if ( list.length === 0 ) {
 			deferred.resolve( [] );
