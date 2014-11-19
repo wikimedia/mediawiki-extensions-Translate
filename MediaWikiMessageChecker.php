@@ -253,7 +253,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 		// Load the default magic words etc now.
 		$parser->firstCallInit();
 		// So that they don't overrider our own callback
-		$parser->setFunctionHook( 'plural', $cb, SFH_NO_HASH | SFH_OBJECT_ARGS );
+		$parser->setFunctionHook( 'plural', $cb, Parser::SFH_NO_HASH | Parser::SFH_OBJECT_ARGS );
 
 		// Setup things needed for preprocess
 		$title = null;
