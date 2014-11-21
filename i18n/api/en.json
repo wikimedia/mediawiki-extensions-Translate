@@ -68,7 +68,7 @@
 	"apihelp-translationstash-param-subaction": "Action.",
 	"apihelp-translationstash-param-title": "Title of the translation unit page.",
 	"apihelp-translationstash-param-translation": "Translation made by the user.",
-	"apihelp-translationstash-param-metadata": "Json object.",
+	"apihelp-translationstash-param-metadata": "JSON object.",
 	"apihelp-translationstash-param-username": "Optionally the user whose stash to get. Only privileged users can do this.",
 	"apihelp-translationstash-example-1": "Add a translation to the stash for [[MediaWiki:Jan/fi]]",
 	"apihelp-translationstash-example-2": "Query the stash",
