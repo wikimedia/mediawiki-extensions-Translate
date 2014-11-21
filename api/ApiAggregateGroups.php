@@ -227,6 +227,9 @@ class ApiAggregateGroups extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		$action = TranslateUtils::getTokenAction( 'aggregategroups' );
 
@@ -240,14 +243,30 @@ class ApiAggregateGroups extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Manage aggregate message groups. You can add and remove aggregate message' .
 			'groups and associate or dissociate message groups from them (one at a time).';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			"api.php?action=aggregategroups&do=associate&group=groupId&aggregategroup=aggregateGroupId",
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=aggregategroups&do=associate&group=groupId&aggregategroup=aggregateGroupId'
+				=> 'apihelp-aggregategroups-example-1',
 		);
 	}
 

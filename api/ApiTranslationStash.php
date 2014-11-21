@@ -138,6 +138,9 @@ class ApiTranslationStash extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		$action = TranslateUtils::getTokenAction( 'translationstash' );
 
@@ -152,15 +155,33 @@ class ApiTranslationStash extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Add translations to stash';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			"api.php?action=translationstash&subaction=add&title=MediaWiki:Jan/fi&" .
 				"translation=tammikuu&metadata={}",
 			"api.php?action=translationstash&subaction=query",
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=translationstash&subaction=add&title=MediaWiki:Jan/fi&translation=tammikuu&metadata={}'
+				=> 'apihelp-translationstash-example-1',
+			'action=translationstash&subaction=query'
+				=> 'apihelp-translationstash-example-2',
 		);
 	}
 }
