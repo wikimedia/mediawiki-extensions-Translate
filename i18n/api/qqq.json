@@ -1,8 +1,5 @@
 {
-	"@metadata": {
-		"authors": [
-		]
-	},
+	"@metadata": [],
 	"apihelp-aggregategroups-description": "{{doc-apihelp-description|aggregategroups}}",
 	"apihelp-aggregategroups-param-do": "{{doc-apihelp-param|aggregategroups|do}}",
 	"apihelp-aggregategroups-param-aggregategroup": "{{doc-apihelp-param|aggregategroups|aggregategroup}}",
@@ -26,9 +23,9 @@
 	"apihelp-query+messagecollection-param-group": "{{doc-apihelp-param|query+messagecollection|group}}",
 	"apihelp-query+messagecollection-param-language": "{{doc-apihelp-param|query+messagecollection|language}}",
 	"apihelp-query+messagecollection-param-limit": "{{doc-apihelp-param|query+messagecollection|limit}}",
+	"apihelp-query+messagecollection-param-offset": "{{doc-apihelp-param|query+messagecollection|offset}}",
 	"apihelp-query+messagecollection-param-filter": "{{doc-apihelp-param|query+messagecollection|filter}}",
 	"apihelp-query+messagecollection-param-prop": "{{doc-apihelp-param|query+messagecollection|prop}}",
-	"apihelp-query+messagecollection-param-offset": "{{doc-apihelp-param|query+messagecollection|offset}}",
 	"apihelp-query+messagecollection-example-1": "{{doc-apihelp-example|query+messagecollection}}",
 	"apihelp-query+messagecollection-example-2": "{{doc-apihelp-example|query+messagecollection}}",
 	"apihelp-query+messagecollection-example-3": "{{doc-apihelp-example|query+messagecollection}}",
