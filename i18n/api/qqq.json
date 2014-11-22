@@ -1,5 +1,9 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
 	"apihelp-aggregategroups-description": "{{doc-apihelp-description|aggregategroups}}",
 	"apihelp-aggregategroups-param-do": "{{doc-apihelp-param|aggregategroups|do}}",
 	"apihelp-aggregategroups-param-aggregategroup": "{{doc-apihelp-param|aggregategroups|aggregategroup}}",
@@ -21,7 +25,7 @@
 	"apihelp-query+languagestats-example-1": "{{doc-apihelp-example|query+languagestats}}",
 	"apihelp-query+messagecollection-description": "{{doc-apihelp-description|query+messagecollection}}",
 	"apihelp-query+messagecollection-param-group": "{{doc-apihelp-param|query+messagecollection|group}}",
-	"apihelp-query+messagecollection-param-language": "{{doc-apihelp-param|query+messagecollection|language}}",
+	"apihelp-query+messagecollection-param-language": "{{doc-apihelp-param|query+messagecollection|language}}\n{{Identical|Language code}}",
 	"apihelp-query+messagecollection-param-limit": "{{doc-apihelp-param|query+messagecollection|limit}}",
 	"apihelp-query+messagecollection-param-offset": "{{doc-apihelp-param|query+messagecollection|offset}}",
 	"apihelp-query+messagecollection-param-filter": "{{doc-apihelp-param|query+messagecollection|filter}}",

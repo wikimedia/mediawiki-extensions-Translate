@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"apihelp-groupreview-param-language": "Меттан код.",
+	"apihelp-query+languagestats-param-language": "Меттан код.",
+	"apihelp-query+messagecollection-param-group": "Хаамийн тоба.",
+	"apihelp-query+messagecollection-param-language": "Меттан код.",
+	"apihelp-translationstash-param-subaction": "Дийраш."
+}

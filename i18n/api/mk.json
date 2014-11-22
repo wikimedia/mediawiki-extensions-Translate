@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"apihelp-aggregategroups-description": "Раководење со насобрани групи пораки.\n\nМожете да додавате или отстранувате насобрани групи пораки и да ги придружување во или отстранувате од збировите (една по една).",
+	"apihelp-aggregategroups-example-1": "Придружи група.",
+	"apihelp-groupreview-param-group": "Група пораки.",
+	"apihelp-groupreview-param-language": "Јазичен код.",
+	"apihelp-groupreview-param-state": "Новата состојба на групата.",
+	"apihelp-groupreview-example-1": "Означи ја групата „група-Пример“ како готова за германски",
+	"apihelp-query+languagestats-param-language": "Јазичен код.",
+	"apihelp-ttmserver-example-1": "Дај предлози за преведување на „Help“ од англиски на фински"
+}

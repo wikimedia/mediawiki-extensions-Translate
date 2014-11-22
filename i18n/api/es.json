@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"apihelp-aggregategroups-param-do": "Qué hacer con el grupo de mensajes agregados.",
+	"apihelp-aggregategroups-param-aggregategroup": "ID del grupo de mensajes agregado.",
+	"apihelp-aggregategroups-param-group": "ID del grupo de mensajes.",
+	"apihelp-aggregategroups-example-1": "Asociar un grupo",
+	"apihelp-groupreview-param-language": "Código de idioma.",
+	"apihelp-query+languagestats-description": "Consultar estadísticas de idioma.",
+	"apihelp-query+languagestats-param-language": "Código de idioma.",
+	"apihelp-query+languagestats-example-1": "Lista de estadísticas de traducciones completadas en finés.",
+	"apihelp-query+messagecollection-param-group": "Grupo de mensajes.",
+	"apihelp-query+messagecollection-param-language": "Código de idioma.",
+	"apihelp-query+messagecollection-param-limit": "El número de mensajes que mostrar (después de filtrar).",
+	"apihelp-query+messagecollection-example-1": "Lista de idiomas admitidos",
+	"apihelp-query+messagegroups-description": "Devolver información sobre grupos de mensajes.\n\nNota que el parámetro \"uselang\" afecta la salida de las partes dependientes del idioma.",
+	"apihelp-query+messagegroupstats-description": "Consultar estadísticas del grupo de mensajes.",
+	"apihelp-query+messagetranslations-description": "Consultar todas las traducciones para un único mensaje.",
+	"apihelp-translatesandbox-description": "Registrar y gestionar usuarios aislados (en \"sandbox\").",
+	"apihelp-translatesandbox-param-do": "Lo que hacer",
+	"apihelp-translatesandbox-param-username": "Nombre de usuario al crear el usuario.",
+	"apihelp-translateuser-description": "Información relacionada a traducción acerca del usuario.",
+	"apihelp-translationaids-description": "Consultar todas las asistencias de traducciones.",
+	"apihelp-translationreview-description": "Marcar traducciones como revisadas.",
+	"apihelp-translationreview-param-revision": "El número de revisión que revisar.",
+	"apihelp-translationreview-example-1": "Revisar revisión 1",
+	"apihelp-translationstash-param-subaction": "Acción",
+	"apihelp-translationstash-param-metadata": "Objeto JSON.",
+	"apihelp-ttmserver-param-targetlanguage": "Un código de idioma de la sugerencia.",
+	"apihelp-ttmserver-param-text": "El texto para el cual buscar sugerencias.",
+	"apihelp-ttmserver-example-1": "Obtener sugerencias para traducir \"Help\" del inglés al finés"
+}

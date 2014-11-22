@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Alvaro Vidal-Abarca"
+		]
+	},
+	"apihelp-aggregategroups-example-1": "Associar un grup",
+	"apihelp-groupreview-param-language": "Codi d'idioma.",
+	"apihelp-query+languagestats-param-language": "Codi d'idioma.",
+	"apihelp-query+messagecollection-param-group": "Grup de missatges.",
+	"apihelp-query+messagecollection-param-language": "Codi d'idioma.",
+	"apihelp-query+messagecollection-param-limit": "Quantitat de missatges a mostrar (després de filtrar).",
+	"apihelp-query+messagecollection-example-1": "Llista d'idiomes suportats",
+	"apihelp-query+messagetranslations-description": "Consulta totes les traduccions per a un sol missatge.",
+	"apihelp-query+messagetranslations-param-title": "El títol complet d'un missatge conegut.",
+	"apihelp-translatesandbox-param-do": "Què fer.",
+	"apihelp-translatesandbox-param-username": "Nom d'usuari a l'hora de crear l'usuari.",
+	"apihelp-translationaids-description": "Consulta totes les ajudes de traducció.",
+	"apihelp-translationstash-param-metadata": "Objecte JSON.",
+	"apihelp-ttmserver-param-targetlanguage": "Un codi d'idioma de la proposta.",
+	"apihelp-ttmserver-param-text": "El text per trobar suggeriments.",
+	"apihelp-ttmserver-example-1": "Obtenir suggeriments per a la traducció de \"Ajuda\" de l'anglès al finès"
+}

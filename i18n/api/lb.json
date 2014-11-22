@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"apihelp-groupreview-param-language": "Sproochcode.",
+	"apihelp-query+languagestats-param-language": "Sproochcode.",
+	"apihelp-query+messagecollection-param-language": "Sproochcode.",
+	"apihelp-query+messagecollection-example-1": "Lëscht vun den ënnerstëtzte Sproochen",
+	"apihelp-translatesandbox-param-do": "Wat maachen.",
+	"apihelp-translationreview-param-revision": "D'Nummer vun der Versioun fir nozekucken.",
+	"apihelp-translationreview-example-1": "Versioun 1 nokucken",
+	"apihelp-translationstash-param-subaction": "Aktioun."
+}
