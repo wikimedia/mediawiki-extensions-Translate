@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Liuxinyu970226"
 		]
 	},
 	"apihelp-aggregategroups-description": "{{doc-apihelp-description|aggregategroups}}",
@@ -13,7 +14,7 @@
 	"apihelp-aggregategroups-example-1": "{{doc-apihelp-example|aggregategroups}}",
 	"apihelp-groupreview-description": "{{doc-apihelp-description|groupreview}}",
 	"apihelp-groupreview-param-group": "{{doc-apihelp-param|groupreview|group}}",
-	"apihelp-groupreview-param-language": "{{doc-apihelp-param|groupreview|language}}",
+	"apihelp-groupreview-param-language": "{{doc-apihelp-param|groupreview|language}}\n{{Identical|Language code}}",
 	"apihelp-groupreview-param-state": "{{doc-apihelp-param|groupreview|state}}",
 	"apihelp-groupreview-example-1": "{{doc-apihelp-example|groupreview}}",
 	"apihelp-hardmessages-description": "{{doc-apihelp-description|hardmessages}}",
@@ -21,7 +22,7 @@
 	"apihelp-hardmessages-example-1": "{{doc-apihelp-example|hardmessages}}",
 	"apihelp-query+languagestats-description": "{{doc-apihelp-description|query+languagestats}}",
 	"apihelp-query+languagestats-param-timelimit": "{{doc-apihelp-param|query+languagestats|timelimit}}",
-	"apihelp-query+languagestats-param-language": "{{doc-apihelp-param|query+languagestats|language}}",
+	"apihelp-query+languagestats-param-language": "{{doc-apihelp-param|query+languagestats|language}}\n{{Identical|Language code}}",
 	"apihelp-query+languagestats-example-1": "{{doc-apihelp-example|query+languagestats}}",
 	"apihelp-query+messagecollection-description": "{{doc-apihelp-description|query+messagecollection}}",
 	"apihelp-query+messagecollection-param-group": "{{doc-apihelp-param|query+messagecollection|group}}",
@@ -66,7 +67,7 @@
 	"apihelp-translationreview-param-revision": "{{doc-apihelp-param|translationreview|revision}}",
 	"apihelp-translationreview-example-1": "{{doc-apihelp-example|translationreview}}",
 	"apihelp-translationstash-description": "{{doc-apihelp-description|translationstash}}",
-	"apihelp-translationstash-param-subaction": "{{doc-apihelp-param|translationstash|subaction}}",
+	"apihelp-translationstash-param-subaction": "{{doc-apihelp-param|translationstash|subaction}}\n{{Identical|Action}}",
 	"apihelp-translationstash-param-title": "{{doc-apihelp-param|translationstash|title}}",
 	"apihelp-translationstash-param-translation": "{{doc-apihelp-param|translationstash|translation}}",
 	"apihelp-translationstash-param-metadata": "{{doc-apihelp-param|translationstash|metadata}}",

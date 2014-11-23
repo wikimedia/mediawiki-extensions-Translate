@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"apihelp-aggregategroups-param-group": "信息组ID。",
+	"apihelp-groupreview-param-group": "信息组。",
+	"apihelp-groupreview-param-language": "语言代码。",
+	"apihelp-query+languagestats-param-language": "语言代码。",
+	"apihelp-query+messagecollection-param-group": "信息组。",
+	"apihelp-query+messagecollection-param-language": "语言代码。",
+	"apihelp-translatesandbox-param-do": "要干什么。",
+	"apihelp-translatesandbox-param-email": "创建用户时发送电子邮件。",
+	"apihelp-translationreview-example-1": "复核修订版本1",
+	"apihelp-translationstash-param-subaction": "操作。",
+	"apihelp-translationstash-param-metadata": "JSON对象。"
+}

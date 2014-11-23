@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"apihelp-groupreview-param-language": "語言代碼。",
+	"apihelp-query+messagecollection-param-language": "語言代碼。"
+}

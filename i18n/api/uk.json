@@ -4,5 +4,9 @@
 			"Ypryima"
 		]
 	},
-	"apihelp-groupreview-param-language": "Мовний код."
+	"apihelp-groupreview-param-language": "Мовний код.",
+	"apihelp-query+messagecollection-param-limit": "Скільки повідомлень показувати (після фільтрації)",
+	"apihelp-translatesandbox-param-username": "Ім'я користувача при створенні користувача.",
+	"apihelp-translationreview-example-1": "Перевірка версій",
+	"apihelp-translationstash-param-metadata": "JSON об'єкт"
 }
