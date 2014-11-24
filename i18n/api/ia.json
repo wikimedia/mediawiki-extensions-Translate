@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"apihelp-query+messagecollection-param-limit": "Numero de messages a monstrar (post filtration).",
+	"apihelp-query+messagecollection-example-3": "Lista de messages optional in finnese con etiquettas pro le pagina del gruppo - Exemplo",
+	"apihelp-query+messagegroups-param-iconsize": "Dimension preferite del icone de gruppo rasterisate.",
+	"apihelp-translatesandbox-param-username": "Nomine de usator al momento de creation del usator.",
+	"apihelp-translationaids-description": "Consultar tote le adjutas de traduction.",
+	"apihelp-translationstash-param-metadata": "Objecto JSON.",
+	"apihelp-ttmserver-param-targetlanguage": "Un codice de lingua del suggestion.",
+	"apihelp-ttmserver-param-text": "Le texto pro le qual cercar suggestiones."
+}

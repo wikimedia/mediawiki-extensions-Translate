@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"Fitoschido"
 		]
 	},
 	"apihelp-aggregategroups-param-do": "Qué hacer con el grupo de mensajes agregados.",
-	"apihelp-aggregategroups-param-aggregategroup": "ID del grupo de mensajes agregado.",
-	"apihelp-aggregategroups-param-group": "ID del grupo de mensajes.",
+	"apihelp-aggregategroups-param-aggregategroup": "Identificador del grupo de mensajes agregado.",
+	"apihelp-aggregategroups-param-group": "Identificador del grupo de mensajes.",
 	"apihelp-aggregategroups-example-1": "Asociar un grupo",
 	"apihelp-groupreview-param-language": "Código de idioma.",
 	"apihelp-query+languagestats-description": "Consultar estadísticas de idioma.",

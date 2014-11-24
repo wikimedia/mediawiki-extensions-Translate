@@ -5,14 +5,21 @@
 		]
 	},
 	"apihelp-aggregategroups-param-group": "信息组ID。",
+	"apihelp-aggregategroups-example-1": "定义一个群组",
 	"apihelp-groupreview-param-group": "信息组。",
 	"apihelp-groupreview-param-language": "语言代码。",
 	"apihelp-query+languagestats-param-language": "语言代码。",
 	"apihelp-query+messagecollection-param-group": "信息组。",
 	"apihelp-query+messagecollection-param-language": "语言代码。",
+	"apihelp-query+messagecollection-example-3": "芬兰语中的可选消息列表，带有用于page-Example组的标签",
+	"apihelp-query+messagegroups-param-iconsize": "栅格化群组图标的首选大小。",
+	"apihelp-query+messagegroupstats-param-group": "信息组ID。",
 	"apihelp-translatesandbox-param-do": "要干什么。",
 	"apihelp-translatesandbox-param-email": "创建用户时发送电子邮件。",
+	"apihelp-translationaids-description": "查询所有翻译帮助。",
 	"apihelp-translationreview-example-1": "复核修订版本1",
 	"apihelp-translationstash-param-subaction": "操作。",
-	"apihelp-translationstash-param-metadata": "JSON对象。"
+	"apihelp-translationstash-param-metadata": "JSON对象。",
+	"apihelp-ttmserver-param-targetlanguage": "建议的语言代码。",
+	"apihelp-ttmserver-param-text": "用于寻找建议的文本。"
 }
