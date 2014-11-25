@@ -119,12 +119,20 @@ $GLOBALS['wgAPIModules']['translationaids'] = 'ApiTranslationAids';
 $GLOBALS['wgAPIModules']['translationreview'] = 'ApiTranslationReview';
 $GLOBALS['wgAPIModules']['translationstash'] = 'ApiTranslationStash';
 $GLOBALS['wgAPIModules']['ttmserver'] = 'ApiTTMServer';
+// b/c for API action=tokens
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslationReview::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiGroupReview::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiAggregateGroups::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiHardMessages::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslateSandbox::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslationStash::injectTokenFunction';
+// for API action=query?meta=tokens
+$GLOBALS['wgHooks']['ApiQueryTokensRegisterTypes'][] = 'ApiTranslationReview::defineTokens';
+$GLOBALS['wgHooks']['ApiQueryTokensRegisterTypes'][] = 'ApiGroupReview::defineTokens';
+$GLOBALS['wgHooks']['ApiQueryTokensRegisterTypes'][] = 'ApiAggregateGroups::defineTokens';
+$GLOBALS['wgHooks']['ApiQueryTokensRegisterTypes'][] = 'ApiHardMessages::defineTokens';
+$GLOBALS['wgHooks']['ApiQueryTokensRegisterTypes'][] = 'ApiTranslateSandbox::defineTokens';
+$GLOBALS['wgHooks']['ApiQueryTokensRegisterTypes'][] = 'ApiTranslationStash::defineTokens';
 
 // Register hooks.
 $GLOBALS['wgHooks']['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
