@@ -176,6 +176,12 @@ class ApiHardMessages extends ApiBase {
 		return true;
 	}
 
+	public static function defineTokens( array &$map ) {
+		$list['hardmessage'] = 'hardmessage';
+
+		return true;
+	}
+
 	public static function getRight() {
 		return self::$right;
 	}

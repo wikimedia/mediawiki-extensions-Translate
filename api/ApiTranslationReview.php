@@ -212,6 +212,12 @@ class ApiTranslationReview extends ApiBase {
 		return true; // Hooks must return bool
 	}
 
+	public static function defineTokens( array &$map ) {
+		$list['translationreview'] = self::$salt;
+
+		return true;
+	}
+
 	public static function getRight() {
 		return self::$right;
 	}

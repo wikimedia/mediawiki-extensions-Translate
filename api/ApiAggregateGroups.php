@@ -279,6 +279,12 @@ class ApiAggregateGroups extends ApiBase {
 		return true; // Hooks must return bool
 	}
 
+	public static function defineTokens( array &$map ) {
+		$list['aggregategroups'] = 'aggregategroups';
+
+		return true;
+	}
+
 	public static function getRight() {
 		return self::$right;
 	}

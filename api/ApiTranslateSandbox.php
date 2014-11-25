@@ -244,4 +244,11 @@ class ApiTranslateSandbox extends ApiBase {
 
 		return true;
 	}
+
+	public static function defineTokens( array &$map ) {
+		$list['translatesandbox'] = 'sandbox';
+
+		return true;
+	}
+
 }

@@ -205,6 +205,12 @@ class ApiGroupReview extends ApiBase {
 		return true; // Hooks must return bool
 	}
 
+	public static function defineTokens( array &$map ) {
+		$list['groupreview'] = 'groupreview';
+
+		return true;
+	}
+
 	public static function getRight() {
 		return self::$right;
 	}

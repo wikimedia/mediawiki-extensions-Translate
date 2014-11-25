@@ -112,6 +112,12 @@ class ApiTranslationStash extends ApiBase {
 		return true;
 	}
 
+	public static function defineTokens( array &$map ) {
+		$list['translationstash'] = 'translationstash';
+
+		return true;
+	}
+
 	public function getAllowedParams() {
 		return array(
 			'subaction' => array(
