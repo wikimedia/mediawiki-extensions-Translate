@@ -20,7 +20,7 @@
 			title = 'Translations:' + pageName + '/' + identifier + '/' + langCode;
 			summary = $( '#pm-summary' ).val();
 
-			deferred = api.postWithEditToken( {
+			deferred = api.postWithToken( 'edit', {
 				action: 'edit',
 				format: 'json',
 				watchlist: 'nochange',

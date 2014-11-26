@@ -59,7 +59,6 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'mediawiki.util',
 		'mediawiki.Uri',
 		'mediawiki.api',
-		'mediawiki.api.edit',
 		'mediawiki.api.parse',
 		'mediawiki.user',
 		'mediawiki.jqueryMsg',
@@ -349,7 +348,7 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 	'styles' => 'resources/css/ext.translate.special.pagemigration.css',
 	'scripts' => 'resources/js/ext.translate.special.pagemigration.js',
 	'dependencies' => array(
-		'mediawiki.api.edit',
+		'mediawiki.api',
 		'mediawiki.ui.button',
 		'jquery.ajaxdispatcher',
 	),
@@ -378,7 +377,6 @@ $wgResourceModules['ext.translate.special.pagepreparation'] = array(
 	'dependencies' => array(
 		'mediawiki.ui',
 		'mediawiki.api',
-		'mediawiki.api.edit',
 		'jquery.mwExtension',
 		'mediawiki.action.history.diff',
 		'mediawiki.jqueryMsg',

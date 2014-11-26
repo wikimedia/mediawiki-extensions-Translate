@@ -21,7 +21,7 @@
 		 * @return {jQuery.Promise}
 		 */
 		save: function ( title, translation ) {
-			var deferred = new mw.Api().postWithEditToken( {
+			var deferred = (new mw.Api()).postWithToken( 'edit', {
 				action: 'edit',
 				title: title,
 				text: translation,
