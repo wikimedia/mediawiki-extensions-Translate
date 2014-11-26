@@ -20,14 +20,17 @@
 		 * @return {jQuery.Promise}
 		 */
 		save: function ( title, translation ) {
-			var deferred = new mw.Api().postWithToken( 'translationstash', {
+			var token;
+
+			token = mw.config.get( 'wgTranslateSupportsCsrfToken' ) ? 'csrf' : 'translationstash';
+			options = {
 				action: 'translationstash',
 				subaction: 'add',
 				title: title,
 				translation: translation
-			} );
+			};
 
-			return deferred.promise();
+			return (new mw.Api()).postWithToken( token, options ).promise();
 		},
 
 		/**
@@ -35,13 +38,16 @@
 		 * @return {jQuery.Promise}
 		 */
 		getUserTranslations: function ( user ) {
-			var deferred = new mw.Api().postWithToken( 'translationstash', {
+			var token;
+
+			token = mw.config.get( 'wgTranslateSupportsCsrfToken' ) ? 'csrf' : 'translationstash';
+			options = {
 				action: 'translationstash',
 				subaction: 'query',
 				username: user
-			} );
+			};
 
-			return deferred.promise();
+			return (new mw.Api()).postWithToken( token, options ).promise();
 		}
 
 	};
