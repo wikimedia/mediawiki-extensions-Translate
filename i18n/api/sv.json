@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lokal Profil"
+			"Lokal Profil",
+			"WikiPhoenix"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "Meddelandegrupp-ID.",
+	"apihelp-aggregategroups-example-1": "Associera en grupp",
 	"apihelp-groupreview-param-group": "Meddelandegrupp.",
 	"apihelp-groupreview-param-language": "Språkkod.",
 	"apihelp-groupreview-example-1": "Markera gruppen \"group-Example\" som redo för tyska",

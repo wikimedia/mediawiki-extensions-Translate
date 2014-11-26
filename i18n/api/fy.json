@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robin0van0der0vliet"
+		]
+	},
+	"apihelp-groupreview-param-language": "Taalkoade.",
+	"apihelp-query+languagestats-param-language": "Taalkoade.",
+	"apihelp-query+messagecollection-param-language": "Taalkoade."
+}
