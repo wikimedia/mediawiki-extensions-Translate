@@ -1,13 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"HERAN"
 		]
 	},
+	"apihelp-aggregategroups-param-aggregategroup": "聚合信息组ID。",
 	"apihelp-aggregategroups-param-group": "信息组ID。",
+	"apihelp-aggregategroups-param-groupname": "聚合信息组名称。",
+	"apihelp-aggregategroups-param-groupdescription": "聚合信息组说明。",
 	"apihelp-aggregategroups-example-1": "定义一个群组",
 	"apihelp-groupreview-param-group": "信息组。",
 	"apihelp-groupreview-param-language": "语言代码。",
+	"apihelp-groupreview-param-state": "组的新状态。",
 	"apihelp-hardmessages-description": "将翻译标记为困难。",
 	"apihelp-hardmessages-example-1": "将“SampleTitle”标记为困难",
 	"apihelp-query+languagestats-description": "查询语言状态。",
@@ -19,19 +24,27 @@
 	"apihelp-query+messagecollection-example-3": "芬兰语中的可选消息列表，带有用于page-Example组的标签",
 	"apihelp-query+messagegroups-param-iconsize": "栅格化群组图标的首选大小。",
 	"apihelp-query+messagegroups-example-1": "显示信息组",
+	"apihelp-query+messagegroupstats-description": "查询信息组状态。",
 	"apihelp-query+messagegroupstats-param-group": "信息组ID。",
+	"apihelp-query+messagetranslations-param-title": "已知消息的完整标题。",
+	"apihelp-query+messagetranslations-example-1": "Wiki中用于MediaWiki:January的翻译列表",
 	"apihelp-translatesandbox-param-do": "要干什么。",
 	"apihelp-translatesandbox-param-username": "创建用户时的用户名。",
 	"apihelp-translatesandbox-param-password": "创建用户时的密码。",
 	"apihelp-translatesandbox-param-email": "创建用户时发送电子邮件。",
+	"apihelp-translateuser-example-1": "显示有关用户的信息",
 	"apihelp-translationaids-description": "查询所有翻译帮助。",
+	"apihelp-translationaids-param-title": "已知消息的完整标题。",
 	"apihelp-translationaids-example-1": "显示[[MediaWiki:January/fi]]的建议",
+	"apihelp-translationreview-description": "标记该翻译为已复核。",
 	"apihelp-translationreview-example-1": "复核修订版本1",
 	"apihelp-translationstash-param-subaction": "操作。",
 	"apihelp-translationstash-param-translation": "由用户做出的翻译。",
 	"apihelp-translationstash-param-metadata": "JSON对象。",
+	"apihelp-translationstash-example-1": "加入[[MediaWiki:Jan/fi]]的一次翻译至藏匿处",
 	"apihelp-translationstash-example-2": "查询藏匿",
 	"apihelp-ttmserver-param-sourcelanguage": "原始文本的语言代码。",
 	"apihelp-ttmserver-param-targetlanguage": "建议的语言代码。",
-	"apihelp-ttmserver-param-text": "用于寻找建议的文本。"
+	"apihelp-ttmserver-param-text": "用于寻找建议的文本。",
+	"apihelp-ttmserver-example-1": "获取有关将“Help”从英语翻译成芬兰语的建议"
 }

@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Lokal Profil",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Dan Koehl",
+			"Victorsa"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "Meddelandegrupp-ID.",
@@ -24,6 +26,9 @@
 	"apihelp-translatesandbox-param-email": "E-post när du skapar en användare.",
 	"apihelp-translateuser-example-1": "Visa information om användaren",
 	"apihelp-translationstash-param-metadata": "JSON-objekt.",
+	"apihelp-ttmserver-param-service": "Vilken av de tillgängliga översättningstjänsterna som bör användas.",
 	"apihelp-ttmserver-param-sourcelanguage": "En språkkod för källtexten.",
-	"apihelp-ttmserver-param-targetlanguage": "En språkkod för förslaget."
+	"apihelp-ttmserver-param-targetlanguage": "En språkkod för förslaget.",
+	"apihelp-ttmserver-param-text": "Texten att hitta förslag på.",
+	"apihelp-ttmserver-example-1": "Få förslag för att översätta \"Hjälp\" från engelska till finska"
 }
