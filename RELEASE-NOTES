@@ -1,0 +1,12 @@
+== Translate 2014.11 ==
+Released at 2014-11-29.
+
+=== Noteworthy changes ===
+* Translate WebAPI documentation is now localized. Only works in MediaWiki 1.24
+and newer.
+* Fixed a bug which prevented bootstrapping of shared TTMServer database with
+the ElasticSearch backend.
+* If you are using the '''Solr backend '''for the translation memory or the
+translation search, please let us know. If there are no users for the Solr
+backend, we will deprecate and later remove it in favor of the better
+maintained ElasticSearch backend.
