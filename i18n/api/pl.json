@@ -13,5 +13,6 @@
 	"apihelp-query+messagegroups-example-1": "Pokaż grupy komunikatów",
 	"apihelp-translateuser-example-1": "Pokaż informacje o użytkowniku",
 	"apihelp-translationstash-param-translation": "Tłumaczenia wykonane przez użytkownika.",
-	"apihelp-translationstash-param-metadata": "Obiekt JSON."
+	"apihelp-translationstash-param-metadata": "Obiekt JSON.",
+	"apihelp-ttmserver-param-sourcelanguage": "Kod języka tekstu źródłowego."
 }
