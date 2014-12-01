@@ -10,7 +10,7 @@
 	function savePage( pageName, pageContent ) {
 		var api = new mw.Api();
 
-		return api.postWithEditToken( {
+		return api.postWithToken( 'edit', {
 			action: 'edit',
 			format: 'json',
 			title: pageName,

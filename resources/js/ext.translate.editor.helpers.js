@@ -56,12 +56,11 @@
 				deferred = new $.Deferred(),
 				newDocumentation = translateEditor.$editor.find( '.tux-textarea-documentation' ).val();
 
-			deferred = api.post( {
+			deferred = api.postWithToken( 'edit', {
 				action: 'edit',
 				title: translateEditor.message.title
 					.replace( /\/[a-z\-]+$/, '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ),
-				text: newDocumentation,
-				token: mw.user.tokens.get( 'editToken' )
+				text: newDocumentation
 			} ).done( function ( response ) {
 				var $messageDesc = translateEditor.$editor.find( '.infocolumn-block .message-desc' );
 
