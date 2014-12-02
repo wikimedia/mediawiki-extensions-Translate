@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ea06b5a_43a59fff",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2014-12-02T20:51:22Z",
+      "side": 1,
+      "message": "You probably never want this to go above 100,000 or something just to prevent memory exhaustion on the Elasticsearch servers.  Just to be paranoid.",
+      "revId": "8a97b721a9cfa31b031317ba7d937eb3009e5903",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
