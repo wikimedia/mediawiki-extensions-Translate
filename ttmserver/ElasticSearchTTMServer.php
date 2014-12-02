@@ -85,35 +85,62 @@ GROOVY;
 		$languageFilter->setTerm( 'language', $sourceLanguage );
 		$query->setFilter( $languageFilter );
 
-		/* The interface usually displays three best candidates. These might
-		 * come from more than three matches, if the translation is the same.
-		 * This might not find all suggestions, if the top N best matching
-		 * source texts don't have translations, but worse matches do. We
-		 * could loop with start parameter to fetch more until we have enough
-		 * suggestions or the quality drops below the cutoff point. */
-		$query->setSize( 25 );
+		// The interface usually displays three best candidates. These might
+		// come from more than three source things, if the translations are
+		// the same. In other words suggestions are grouped by the suggested
+		// translation. This algorithm might not find all suggestions, if the
+		// top N best matching source texts don't have equivalent translations
+		// in the target language, but worse matches which we did not fetch do.
+		// This code tries to balance between doing too many or too big queries
+		// and not fetching enough results to show all possible suggestions.
+		$sizeFirst = 100;
+		$sizeSecond = $sizeFirst * 5;
+
+		$query->setFrom( 0 );
+		$query->setSize( $sizeFirst );
 		$query->setParam( '_source', array( 'content' ) );
 		$query->setParam( 'min_score', $this->config['cutoff'] );
-		$resultset = $this->getType()->search( $query );
+		$query->setSort( array( '_score', '_uid' ) );
 
-		/* This query is doing two unrelated things:
-		 * 1) Collect the message contents and scores so that they can
-		 *    be accessed later for the translations we found.
-		 * 2) Build the query string for the query that fetches the
-		 *    translations.
-		 * This code is a bit uglier than I'd like it to be, since there
-		 * there is no field that globally identifies a message (message
-		 * definition and translations). */
+		// This query is doing two unrelated things:
+		// 1) Collect the message contents and scores so that they can
+		//    be accessed later for the translations we found.
+		// 2) Build the query string for the query that fetches the translations.
 		$contents = $scores = $terms = array();
-		foreach ( $resultset->getResults() as $result ) {
-			$data = $result->getData();
-			$score = $result->getScore();
+		do {
+			$resultset = $this->getType()->search( $query );
+			foreach ( $resultset->getResults() as $result ) {
+				$data = $result->getData();
+				$score = $result->getScore();
 
-			$sourceId = preg_replace( '~/[^/]+$~', '', $result->getId() );
-			$contents[$sourceId] = $data['content'];
-			$scores[$sourceId] = $score;
-			$terms[] = "$sourceId/$targetLanguage";
-		}
+				$sourceId = preg_replace( '~/[^/]+$~', '', $result->getId() );
+				$contents[$sourceId] = $data['content'];
+				$scores[$sourceId] = $score;
+				$terms[] = "$sourceId/$targetLanguage";
+			}
+
+			// Check if it looks like that we are hitting the long tail already.
+			// Otherwise, we'll do a query to fetch some more to reach a "sane"
+			// breaking point, i.e. include all suggestions with same content
+			// for reliable used X times statistics.
+			if ( count( array_unique( $scores ) ) > 5 ) {
+				break;
+			}
+
+			// Okay, We are now in second iteration of the loop. We already got
+			// lots of suggestions. We will give up for now even if it means we
+			// return in some sense incomplete results.
+			if ( count( $resultset ) === $sizeSecond ) {
+				break;
+			}
+
+			// After the first query, the smallest score is the new threshold.
+			$query->setParam( 'min_score', $score );
+			$query->setFrom( $query->getParam( 'size' ) + $query->getParam( 'from' ) );
+			$query->setSize( $sizeSecond );
+
+			// Break if we already got all hits
+		} while ( $resultset->getTotalHits() > count( $contents ) );
 
 		$idQuery = new \Elastica\Query\Terms();
 		$idQuery->setTerms( '_id', $terms );
