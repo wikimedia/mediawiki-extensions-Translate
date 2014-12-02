@@ -93,6 +93,7 @@ GROOVY;
 		 * suggestions or the quality drops below the cutoff point. */
 		$query->setSize( 25 );
 		$query->setParam( '_source', array( 'content' ) );
+		$query->setParam( 'min_score', $this->config['cutoff'] );
 		$resultset = $this->getType()->search( $query );
 
 		/* This query is doing two unrelated things:
@@ -107,9 +108,6 @@ GROOVY;
 		foreach ( $resultset->getResults() as $result ) {
 			$data = $result->getData();
 			$score = $result->getScore();
-			if ( $score < $this->config['cutoff'] ) {
-				continue;
-			}
 
 			$sourceId = preg_replace( '~/[^/]+$~', '', $result->getId() );
 			$contents[$sourceId] = $data['content'];
