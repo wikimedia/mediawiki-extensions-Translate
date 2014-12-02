@@ -150,5 +150,5 @@
 	"pt-deletepage-full-logreason": "Deil vun dä övversäzbaa Sigg „$1“",
 	"pt-deletepage-lang-logreason": "Deil vun dä övversaz Sigg „$1“",
 	"pt-deletepage-started": "Loor em [[Special:Log/pagetranslation|Logbooch vun de Övversäzonge]] noh Fähler un Nohreeschte.",
-	"pt-deletepage-intro": "Heh di Söndersigg määd et müjjelesch. kumplätte övversäbaa Sigge udder Övversäzonge en en beshtemmpte Shprooch fottzeschmieße.\nDat Fottschmieße dohrt e Wielsche, weil alle dervun affhängeje Sigge derbei och fott jeschmeße wääde möße.\nFähler kumme en et [[Special:Log/pagetranslation|Logbooch vum Övversäze]] un möße vun Hand jraadjeröck wääde."
+	"pt-deletepage-intro": "Heh di {{int:specialpage}} määd et müjjelesch. kumplätte övversäbaa Sigge udder Övversäzonge en en beshtemmpte Schprohch fottzeschmiiße.\nDat Fottschmiiße dohrt e Wihlsche, weil alle dervun affhängeje Sigge derbei och fott jeschmeße wääde möße.\nFähler kumme en et [[Special:Log/pagetranslation|Logbooch vum Övversäze]] un möße vun Hand jrahdjeröck wähde."
 }

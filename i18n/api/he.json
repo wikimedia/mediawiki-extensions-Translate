@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"apihelp-translationreview-description": "סימון תרגומים בתור נסקרים.",
+	"apihelp-translationreview-param-revision": "מספר הגרסה לסקירה.",
+	"apihelp-translationreview-example-1": "סקירת גרסה 1",
+	"apihelp-translationstash-description": "הוספת תרגומים למחסן.",
+	"apihelp-translationstash-param-subaction": "פעולה.",
+	"apihelp-translationstash-param-title": "כותרת דף יחידת התרגום.",
+	"apihelp-translationstash-param-translation": "תרגומים שעשה המשתמש.",
+	"apihelp-translationstash-param-metadata": "עצם JSON.",
+	"apihelp-translationstash-param-username": "לא חובה - המשתמש שיתקבל המחסן שלו. רק בעלי הרשאות יכולים לעשות את זה.",
+	"apihelp-translationstash-example-1": "הוספת למחסן של התרגום של [[MediaWiki:Jan/fi]].",
+	"apihelp-translationstash-example-2": "שאילתה למחסן",
+	"apihelp-ttmserver-description": "שאילתת הצעות מזיכרון תרגום.",
+	"apihelp-ttmserver-param-service": "באיזה משירותי התרגום הזמינים להשתמש.",
+	"apihelp-ttmserver-param-sourcelanguage": "קוד השפה של טקסט המקור.",
+	"apihelp-ttmserver-param-targetlanguage": "קוד השפה של ההצעה.",
+	"apihelp-ttmserver-param-text": "עבור איזה טקסט למצוא הצעות.",
+	"apihelp-ttmserver-example-1": "קבלת הצעות לתרגום המחרוזת \"Help\" מאנגלית לפינית"
+}
