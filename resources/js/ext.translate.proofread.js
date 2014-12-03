@@ -186,7 +186,7 @@
 		 * Mark this message as proofread.
 		 */
 		proofread: function () {
-			var reviews, counter, params,
+			var reviews, counter, params, token,
 				message = this.message,
 				$message = this.$message;
 
@@ -199,7 +199,9 @@
 				params.assert = 'user';
 			}
 
-			new mw.Api().postWithToken( 'translationreview', params ).done( function () {
+			token = mw.config.get( 'wgTranslateSupportsCsrfToken' ) ? 'csrf' : 'translationreview';
+
+			new mw.Api().postWithToken( token, params ).done( function () {
 				$message.find( '.tux-proofread-action' ).addClass( 'accepted' );
 
 				counter = $message.find( '.tux-proofread-count' );
