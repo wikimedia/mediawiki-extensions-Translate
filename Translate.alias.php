@@ -58,6 +58,7 @@ $specialPageAliases['ar'] = array(
 	'TranslationStats' => array( 'إحصاءات_الترجمة' ),
 	'Translations' => array( 'ترجمات' ),
 	'PageMigration' => array( 'هجرة_الصفحة' ),
+	'PagePreparation' => array( 'تحضير_الصفحة' ),
 );
 
 /** Aramaic (ܐܪܡܝܐ) */
