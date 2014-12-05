@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mordecool"
+		]
+	},
+	"apihelp-query+languagestats-param-language": "Código da linguagem",
+	"apihelp-translatesandbox-param-do": "O que fazer.",
+	"apihelp-translationstash-param-subaction": "Ação."
+}

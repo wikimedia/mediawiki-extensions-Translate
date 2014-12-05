@@ -32,5 +32,5 @@
 	"apihelp-translationstash-param-metadata": "Objeto JSON.",
 	"apihelp-ttmserver-param-targetlanguage": "Un código de idioma de la sugerencia.",
 	"apihelp-ttmserver-param-text": "El texto para el cual buscar sugerencias.",
-	"apihelp-ttmserver-example-1": "Obtener sugerencias para traducir \"Help\" del inglés al finés"
+	"apihelp-ttmserver-example-1": "Obtener sugerencias para traducir «Help» del inglés al finés"
 }

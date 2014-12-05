@@ -8,7 +8,7 @@
 	"tux-sst-edit": "Таде гочдар",
 	"tux-sst-search": "Лаха",
 	"tux-sst-search-ph": "Гоч лахар",
-	"tux-sst-count": "{{PLURAL:$1|Карина $1 хилам|Карина $1 хиламаш}}",
+	"tux-sst-count": "{{PLURAL:$1|Карина $1 хилам}}",
 	"tux-sst-facet-language": "Меттанаш",
 	"tux-sst-facet-group": "Хаамийн тоба",
 	"tux-sst-next": "ТӀехьа догӀург",
