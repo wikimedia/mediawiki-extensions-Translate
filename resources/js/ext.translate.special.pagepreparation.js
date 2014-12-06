@@ -156,7 +156,7 @@
 	 * @return {string}
 	 */
 	function doFiles( pageContent ) {
-		var deferred = new $.Deferred();
+		var deferred = $.Deferred();
 
 		$.when( getNamespaceAliases( 6 ) ).then( function ( aliases ) {
 			var aliasList, captionFilesRegex, fileRegex;

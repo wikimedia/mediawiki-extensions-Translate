@@ -12,15 +12,14 @@
 	function createTranslationPage( i, content ) {
 
 		return function () {
-			var api = new mw.Api(),
-			identifier, title, summary,
-			deferred = new $.Deferred();
+			var identifier, title, summary,
+				api = new mw.Api();
 
 			identifier = sourceUnits[i].identifier;
 			title = 'Translations:' + pageName + '/' + identifier + '/' + langCode;
 			summary = $( '#pm-summary' ).val();
 
-			deferred = api.postWithToken( 'edit', {
+			return api.postWithToken( 'edit', {
 				action: 'edit',
 				format: 'json',
 				watchlist: 'nochange',
@@ -28,7 +27,6 @@
 				text: content,
 				summary: summary,
 			} );
-			return deferred.promise();
 		};
 	}
 
@@ -59,12 +57,12 @@
 			if ( typeof obj === undefined ) {
 				// obj was not initialized
 				errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).show( 'fast' );
-				return new $.Deferred().reject();
+				return $.Deferred().reject();
 			}
 			if ( obj.revisions === undefined ) {
 				// the case of /en subpage where first edit is by FuzzyBot
 				errorBox.text( mw.msg( 'pm-old-translations-missing', pageTitle ) ).show( 'fast' );
-				return new $.Deferred().reject();
+				return $.Deferred().reject();
 			}
 			pageContent = obj.revisions[0]['*'];
 			oldTranslationUnits = pageContent.split( '\n\n' );
@@ -101,12 +99,12 @@
 			// Page does not exist if missing field is present
 			if ( obj.missing === '' ) {
 				errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).show( 'fast' );
-				return new $.Deferred().reject();
+				return $.Deferred().reject();
 			}
 			// Page exists, but no edit by FuzzyBot
 			if ( obj.revisions === undefined ) {
 				errorBox.text( mw.msg( 'pm-old-translations-missing', pageTitle ) ).show( 'fast' );
-				return new $.Deferred().reject();
+				return $.Deferred().reject();
 			} else {
 				// FB over here refers to FuzzyBot
 				timestampFB = obj.revisions[0].timestamp;
