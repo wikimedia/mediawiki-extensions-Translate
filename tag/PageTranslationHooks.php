@@ -296,7 +296,7 @@ class PageTranslationHooks {
 		// dirmark (rlm/lrm) is added, because languages with RTL names can
 		// mess the display
 		$lang = Language::factory( $userLangCode );
-		$sep = wfMessage( 'tpt-languages-separator' )->inLanguage( $lang )->plain();
+		$sep = wfMessage( 'tpt-languages-separator' )->inLanguage( $lang )->escaped();
 		$sep .= $lang->getDirMark();
 		$languages = implode( $sep, $languages );
 
