@@ -27,7 +27,7 @@ class TranslateToolbox {
 		$handle = new MessageHandle( $title );
 		if ( $handle->isValid() ) {
 			$message = $title->getNsText() . ':' . $handle->getKey();
-			$desc = wfMessage( 'translate-sidebar-alltrans' )->text();
+			$desc = wfMessage( 'translate-sidebar-alltrans' )->escaped();
 			$url = htmlspecialchars( SpecialPage::getTitleFor( 'Translations' )
 				->getLocalURL( array ('message' => $message ) ) );
 
