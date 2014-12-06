@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e9df725_a92114ae",
+        "filename": "tests/phpunit/TranslateSandboxTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-12-06T22:22:45Z",
+      "side": 0,
+      "message": "Ooops removed too much.",
+      "revId": "fef8bb6a68c4d3d139ed050597a7ab15bed31bb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
