@@ -482,7 +482,7 @@ class SpecialTranslate extends TranslateSpecialPage {
 			$taskParams = array( 'filter' => $filter ) + $params;
 			ksort( $taskParams );
 			$href = $this->getTitle()->getLocalUrl( $taskParams );
-			$link = Html::element( 'a', array( 'href' => $href ), $this->msg( $tabClass ) );
+			$link = Html::element( 'a', array( 'href' => $href ), $this->msg( $tabClass )->text() );
 			$output .= Html::rawElement( 'li', array(
 				'class' => 'column ' . $tabClass,
 				'data-filter' => $filter,
@@ -551,11 +551,11 @@ class SpecialTranslate extends TranslateSpecialPage {
 		) ) .
 			Html::element( 'span',
 				array( 'class' => 'grouptitle' ),
-				$this->msg( 'translate-msggroupselector-projects' )->escaped()
+				$this->msg( 'translate-msggroupselector-projects' )->text()
 			) .
 			Html::element( 'span',
 				array( 'class' => 'grouptitle grouplink expanded' ),
-				$this->msg( 'translate-msggroupselector-search-all' )->escaped()
+				$this->msg( 'translate-msggroupselector-search-all' )->text()
 			) .
 			Html::element( 'span',
 				array(
