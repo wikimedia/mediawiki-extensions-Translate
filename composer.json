@@ -28,7 +28,7 @@
 		}
 	],
 	"support": {
-		"issues": "https://bugzilla.wikimedia.org/",
+		"issues": "https://phabricator.wikimedia.org/tag/mediawiki-extensions-translate/",
 		"irc": "irc://irc.freenode.net/mediawiki-i18n",
 		"forum": "https://www.mediawiki.org/wiki/Extension_talk:Translate",
 		"wiki": "https://www.mediawiki.org/wiki/Extension:Translate"

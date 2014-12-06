@@ -384,7 +384,7 @@ abstract class ComplexMessages {
 	function formatForSave( WebRequest $request ) {
 		$text = '';
 
-		// Do not replace spaces by underscores for magic words. See bug 46613
+		// Do not replace spaces by underscores for magic words. See bug T48613
 		$replaceSpace = $request->getVal( 'module' ) !== 'magic';
 
 		foreach ( array_keys( $this->data ) as $group ) {

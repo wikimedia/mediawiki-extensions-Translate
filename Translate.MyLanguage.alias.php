@@ -4,7 +4,7 @@
  * This is a backwards compatibility file that separates the translations
  * in the extension from the translations of the same page's name
  * in core MediaWiki. For more information see the following bug:
- * https://bugzilla.wikimedia.org/show_bug.cgi?id=69461
+ * https://phabricator.wikimedia.org/T71461
  *
  * @file
  * @license GPL-2.0+

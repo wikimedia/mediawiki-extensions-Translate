@@ -66,7 +66,8 @@ $GLOBALS['wgExtensionMessagesFiles']['TranslateAlias'] = "$dir/Translate.alias.p
 // Backwards compatibility:
 // If Special:MyLanguage is not in core, load translations of its name
 // from the Translate extension's code.
-// See https://bugzilla.wikimedia.org/69461
+// See https://phabricator.wikimedia.org/T71461
+// Can be removed when MW 1.23 is no longer supported
 if ( !isset( $GLOBALS['wgAutoloadLocalClasses']['SpecialMyLanguage'] ) ) {
 	$GLOBALS['wgExtensionMessagesFiles']['TranslateMyLanguageAlias'] =
 		"$dir/Translate.MyLanguage.alias.php";
