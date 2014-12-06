@@ -80,12 +80,6 @@ class MessageGroupCache {
 		$value = $this->open()->get( '#keys' );
 		$array = unserialize( $value );
 
-		// Debugging for bug 69830
-		if ( !is_array( $array ) ) {
-			$filename = $this->getCacheFileName();
-			throw new MWException( "Unable to get keys from '$filename'" );
-		}
-
 		return $array;
 	}
 

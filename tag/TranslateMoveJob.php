@@ -44,7 +44,8 @@ class TranslateMoveJob extends Job {
 
 	function run() {
 		// Unfortunately the global is needed until bug is fixed:
-		// https://bugzilla.wikimedia.org/show_bug.cgi?id=49086
+		// https://phabricator.wikimedia.org/T51086
+		// Once MW >= 1.24 is supported, can use MovePage class.
 		global $wgUser;
 
 		// Initialization

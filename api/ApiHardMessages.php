@@ -40,7 +40,7 @@ class ApiHardMessages extends ApiBase {
 		$revision = Revision::newFromTitle( $baseTitle );
 
 		if ( !$revision ) {
-			// This can fail. See https://bugzilla.wikimedia.org/show_bug.cgi?id=43286
+			// This can fail. See https://phabricator.wikimedia.org/T45286
 			$this->dieUsage( 'Invalid revision', 'invalidrevision' );
 		}
 
