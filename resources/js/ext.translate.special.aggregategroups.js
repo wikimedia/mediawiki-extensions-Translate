@@ -232,7 +232,7 @@
 				aggregateGroupDesc = aggGroupNameInputDesc.val();
 
 			// Empty the fields. If they are not emptied, then when another group
-			// is added, the values will appear again. Bug 36296.
+			// is added, the values will appear again.
 			aggGroupNameInputName.val( '' );
 			aggGroupNameInputDesc.val( '' );
 
