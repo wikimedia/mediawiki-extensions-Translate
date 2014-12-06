@@ -393,7 +393,7 @@
 		/**
 		 * Load message groups and relevant properties using the API.
 		 *
-		 * @return {jQuery.promise}
+		 * @return {jQuery.Promise}
 		 */
 		loadGroups: function () {
 			if ( groupsLoader !== undefined ) {
@@ -422,7 +422,7 @@
 		/**
 		 * Returns list of recently used message groups by the user.
 		 *
-		 * @return {jQuery.promise}
+		 * @return {jQuery.Promise}
 		 */
 		loadRecentGroups: function () {
 			if ( recentGroupsLoader !== undefined ) {

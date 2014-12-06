@@ -21,7 +21,7 @@
 		 * @return {jQuery.Promise}
 		 */
 		save: function ( title, translation ) {
-			var deferred = (new mw.Api()).postWithToken( 'edit', {
+			return (new mw.Api()).postWithToken( 'edit', {
 				action: 'edit',
 				title: title,
 				text: translation,
@@ -30,8 +30,6 @@
 				// When undefined, the parameter is not included in the request
 				assert: mw.user.isAnon() ? undefined : 'user'
 			} );
-
-			return deferred.promise();
 		}
 	};
 

@@ -53,8 +53,7 @@
 		 * @return {jQuery.Promise} Object containing the requested properties on success.
 		 */
 		getMessageGroup: function ( id, props ) {
-			var params,
-				deferred = new $.Deferred();
+			var params;
 
 			if ( $.isArray( props ) ) {
 				props = props.join( '|' );
@@ -71,14 +70,9 @@
 				mgroot: id
 			};
 
-			new mw.Api()
-				.get( params )
-				.done( function ( result ) {
-					deferred.resolve( result.query.messagegroups[0] );
-				} )
-				.fail( deferred.reject );
-
-			return deferred.promise();
+			return (new mw.Api()).get( params ).then( function ( result ) {
+				return result.query.messagegroups[0];
+			} );
 		},
 
 		/**
