@@ -45,7 +45,7 @@
 			}
 			diff = obj.revisions[0].diff['*'];
 			return diff;
-		} ).promise();
+		} );
 	}
 
 	/**
@@ -146,19 +146,17 @@
 				}
 			}
 			return aliases;
-		} ).promise();
+		} );
 	}
 
 	/**
 	 * Add translate tags around only translatable content for files and keep everything else
 	 * as a part of the page template.
 	 * @param {string} pageContent
-	 * @return {string}
+	 * @return {jQuery.promise}
 	 */
 	function doFiles( pageContent ) {
-		var deferred = new $.Deferred();
-
-		$.when( getNamespaceAliases( 6 ) ).then( function ( aliases ) {
+		getNamespaceAliases( 6 ).then( function ( aliases ) {
 			var aliasList, captionFilesRegex, fileRegex;
 
 			aliases.push( 'file' );
@@ -178,9 +176,8 @@
 			fileRegex = new RegExp( '/\\[\\[((' + aliasList + ')[^\\|]*?)\\]\\]', 'gi' );
 			pageContent = pageContent.replace( fileRegex, '\n</translate>[[$1]]\n<translate>' );
 
-			deferred.resolve( pageContent );
+			return pageContent;
 		} );
-		return deferred.promise();
 	}
 
 	/**
@@ -233,7 +230,7 @@
 				obj = data.query.pages[page];
 			}
 			return obj.revisions[0]['*'];
-		} ).promise();
+		} );
 	}
 
 	/**
