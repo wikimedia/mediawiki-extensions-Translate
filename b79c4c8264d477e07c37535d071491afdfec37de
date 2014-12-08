@@ -16,6 +16,24 @@
       "revId": "b79c4c8264d477e07c37535d071491afdfec37de",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e9df725_f65db41b",
+        "filename": "tests/phpunit/TranslateSandboxTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2014-12-08T06:55:07Z",
+      "side": 1,
+      "message": "Because there was no hint the removal was intentional.",
+      "parentUuid": "2e9df725_36647ce1",
+      "revId": "b79c4c8264d477e07c37535d071491afdfec37de",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
