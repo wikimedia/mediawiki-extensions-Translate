@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e9df725_c7b7a4d2",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-12-08T18:28:36Z",
+      "side": 1,
+      "message": "\".promise()\" is redundant here for \".then()\" already returns the promise.",
+      "revId": "ea56df974b77dbaddc341f6978300b8fd83fef2e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e9df725_67ac9085",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-12-08T18:28:36Z",
+      "side": 1,
+      "message": "(same)",
+      "revId": "ea56df974b77dbaddc341f6978300b8fd83fef2e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e9df725_87b19cde",
+        "filename": "resources/js/ext.translate.special.pagepreparation.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-12-08T18:28:36Z",
+      "side": 1,
+      "message": "Could do \"return $.when( .. ).then( .. );\" with a \"return pageContent;\" inside.",
+      "revId": "ea56df974b77dbaddc341f6978300b8fd83fef2e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e9df725_27c6884f",
+        "filename": "resources/js/ext.translate.special.pagepreparation.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-12-08T18:28:36Z",
+      "side": 1,
+      "message": "(same)",
+      "revId": "ea56df974b77dbaddc341f6978300b8fd83fef2e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
