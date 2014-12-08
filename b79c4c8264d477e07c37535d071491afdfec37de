@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e9df725_36647ce1",
+        "filename": "tests/phpunit/TranslateSandboxTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-12-08T06:53:45Z",
+      "side": 1,
+      "message": "Why did you revert what I did. Only $groups \u003d $user-\u003egetGroups(); is needed.",
+      "revId": "b79c4c8264d477e07c37535d071491afdfec37de",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
