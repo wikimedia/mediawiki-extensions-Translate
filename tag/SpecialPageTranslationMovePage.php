@@ -75,7 +75,7 @@ class SpecialPageTranslationMovePage extends TranslateSpecialPage {
 		$request = $this->getRequest();
 		$user = $this->getUser();
 
-		// Yes, the use of getVal() and getText() is wanted, see bug 20365
+		// Yes, the use of getVal() and getText() is wanted, see bug T22365
 		$this->oldText = $request->getVal( 'wpOldTitle', $request->getVal( 'target', $par ) );
 		$this->newText = $request->getText( 'wpNewTitle' );
 

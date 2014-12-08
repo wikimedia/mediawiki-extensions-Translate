@@ -23,8 +23,8 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 		$user = TranslateSandbox::addUser( 'Test user', 'test@blackhole.io', 'test password' );
 		$this->assertTrue( $user->isLoggedIn(), 'User exists' );
 
-		// Work around for https://bugzilla.wikimedia.org/46844
 		$groups = array_unique( $user->getGroups() );
+
 		$this->assertSame( array( 'translate-sandboxed' ), $groups, 'User is in the sandboxed group' );
 	}
 

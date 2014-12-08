@@ -208,7 +208,7 @@
 				} );
 				$td
 					.html( convertWhiteSpaceToHTML( text ) )
-					.attr( 'dir', 'auto' ) // (bug 29233) hacky, but better than nothing
+					.attr( 'dir', 'auto' ) // (bug T31233) hacky, but better than nothing
 					.removeClass( 'untranslated' )
 					.addClass( 'justtranslated' );
 			};
@@ -349,7 +349,7 @@
 				// Update the cell value with the new translation
 				$this
 					.html( convertWhiteSpaceToHTML( text ) )
-					.attr( 'dir', 'auto' ) // (bug 29233) hacky, but better than nothing
+					.attr( 'dir', 'auto' ) // (bug T31233) hacky, but better than nothing
 					.removeClass( 'untranslated' )
 					.addClass( 'justtranslated' );
 			};
