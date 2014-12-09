@@ -357,12 +357,11 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 
 		$linkList = $this->getLanguage()->listToText( $links );
 		$html = "<p class='mw-translate-spsl-translators'>";
-		$html .= $this->msg(
-			'supportedlanguages-translators',
-			$linkList,
-			count( $links ),
-			$username
-		)->text();
+		$html .= $this->msg( 'supportedlanguages-translators' )
+			->rawParams( $linkList )
+			->numParams( count( $links ) )
+			->params( $username )
+			->escaped();
 		$html .= "</p>\n";
 		$this->getOutput()->addHTML( $html );
 	}
