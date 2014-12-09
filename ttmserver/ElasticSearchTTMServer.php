@@ -109,6 +109,11 @@ GROOVY;
 		$contents = $scores = $terms = array();
 		do {
 			$resultset = $this->getType()->search( $query );
+
+			if ( count( $resultset ) === 0 ) {
+				break;
+			}
+
 			foreach ( $resultset->getResults() as $result ) {
 				$data = $result->getData();
 				$score = $result->getScore();
@@ -142,40 +147,45 @@ GROOVY;
 			// Break if we already got all hits
 		} while ( $resultset->getTotalHits() > count( $contents ) );
 
-		$idQuery = new \Elastica\Query\Terms();
-		$idQuery->setTerms( '_id', $terms );
-
-		$query = new \Elastica\Query( $idQuery );
-		$query->setSize( 25 );
-		$query->setParam( '_source', array( 'wiki', 'uri', 'content', 'localid' ) );
-		$resultset = $this->getType()->search( $query );
-
 		$suggestions = array();
-		foreach ( $resultset->getResults() as $result ) {
-			$data = $result->getData();
 
-			// Construct the matching source id
-			$sourceId = preg_replace( '~/[^/]+$~', '', $result->getId() );
+		// Skip second query if first query found nothing. Keeping only one return
+		// statement in this method to avoid forgetting to reset connection timeout
+		if ( $terms !== array() ) {
+			$idQuery = new \Elastica\Query\Terms();
+			$idQuery->setTerms( '_id', $terms );
 
-			$suggestions[] = array(
-				'source' => $contents[$sourceId],
-				'target' => $data['content'],
-				'context' => $data['localid'],
-				'quality' => $scores[$sourceId],
-				'wiki' => $data['wiki'],
-				'location' => $data['localid'] . '/' . $targetLanguage,
-				'uri' => $data['uri'],
-			);
-		}
+			$query = new \Elastica\Query( $idQuery );
+			$query->setSize( 25 );
+			$query->setParam( '_source', array( 'wiki', 'uri', 'content', 'localid' ) );
+			$resultset = $this->getType()->search( $query );
 
-		// Ensure reults are in quality order
-		uasort( $suggestions, function ( $a, $b ) {
-			if ( $a['quality'] === $b['quality'] ) {
-				return 0;
+			foreach ( $resultset->getResults() as $result ) {
+				$data = $result->getData();
+
+				// Construct the matching source id
+				$sourceId = preg_replace( '~/[^/]+$~', '', $result->getId() );
+
+				$suggestions[] = array(
+					'source' => $contents[$sourceId],
+					'target' => $data['content'],
+					'context' => $data['localid'],
+					'quality' => $scores[$sourceId],
+					'wiki' => $data['wiki'],
+					'location' => $data['localid'] . '/' . $targetLanguage,
+					'uri' => $data['uri'],
+				);
 			}
 
-			return ( $a['quality'] < $b['quality'] ) ? 1 : -1;
-		} );
+			// Ensure reults are in quality order
+			uasort( $suggestions, function ( $a, $b ) {
+				if ( $a['quality'] === $b['quality'] ) {
+					return 0;
+				}
+
+				return ( $a['quality'] < $b['quality'] ) ? 1 : -1;
+			} );
+		}
 
 		$connection->setTimeout( $oldTimeout );
 
