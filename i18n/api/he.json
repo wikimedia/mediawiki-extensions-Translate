@@ -4,6 +4,8 @@
 			"Amire80"
 		]
 	},
+	"apihelp-translationaids-description": "שאילתה על כל עזרי התרגום.",
+	"apihelp-translationaids-param-prop": "אילו עזרי תרגום לכלול.",
 	"apihelp-translationreview-description": "סימון תרגומים בתור נסקרים.",
 	"apihelp-translationreview-param-revision": "מספר הגרסה לסקירה.",
 	"apihelp-translationreview-example-1": "סקירת גרסה 1",
