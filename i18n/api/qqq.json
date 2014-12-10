@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Amire80"
 		]
 	},
 	"apihelp-aggregategroups-description": "{{doc-apihelp-description|aggregategroups}}",
@@ -49,7 +50,7 @@
 	"apihelp-query+messagegroupstats-example-1": "{{doc-apihelp-example|query+messagegroupstats}}",
 	"apihelp-query+messagetranslations-description": "{{doc-apihelp-description|query+messagetranslations}}",
 	"apihelp-query+messagetranslations-param-title": "{{doc-apihelp-param|query+messagetranslations|title}}",
-	"apihelp-query+messagetranslations-example-1": "{{doc-apihelp-example|query+messagetranslations}}",
+	"apihelp-query+messagetranslations-example-1": "Don't translate \"MediaWiki:January\".\n\n{{doc-apihelp-example|query+messagetranslations}}",
 	"apihelp-translatesandbox-description": "{{doc-apihelp-description|translatesandbox}}",
 	"apihelp-translatesandbox-param-do": "{{doc-apihelp-param|translatesandbox|do}}",
 	"apihelp-translatesandbox-param-userid": "{{doc-apihelp-param|translatesandbox|userid}}",
@@ -62,7 +63,7 @@
 	"apihelp-translationaids-param-title": "{{doc-apihelp-param|translationaids|title}}",
 	"apihelp-translationaids-param-group": "{{doc-apihelp-param|translationaids|group}}",
 	"apihelp-translationaids-param-prop": "{{doc-apihelp-param|translationaids|prop}}",
-	"apihelp-translationaids-example-1": "{{doc-apihelp-example|translationaids}}",
+	"apihelp-translationaids-example-1": "Don't translate \"<nowiki>[[MediaWiki:January/fi]]</nowiki>\".\n\n{{doc-apihelp-example|translationaids}}",
 	"apihelp-translationreview-description": "{{doc-apihelp-description|translationreview}}",
 	"apihelp-translationreview-param-revision": "{{doc-apihelp-param|translationreview|revision}}",
 	"apihelp-translationreview-example-1": "{{doc-apihelp-example|translationreview}}",

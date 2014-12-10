@@ -137,7 +137,7 @@
 	"translate-statsf-group": "En Leß fun Köözelle för Jroppe, met Kommas dozwesche:",
 	"translate-statsf-submit": "Vöraanseech",
 	"translate-tag-category": "Sigge, di mer övversäze kann",
-	"translate-tag-page-desc": "De Övversäzong fun dä Sigg „[[$2|$1]]“ em Wikki.<br />",
+	"translate-tag-page-desc": "De Övversäzong fun dä Sigg „[[$2|$1]]“ em Wikki, us dä Schprohch $3 (<ode>$4</code>)",
 	"translate-sidebar-alltrans": "En ander Schprohche",
 	"translations": "Alle Övversätzonge",
 	"translations-summary": "Jif ene Name för en Nohreesch enn, öm all de Övversätzunge aanzezeije.",
@@ -151,6 +151,7 @@
 	"translate-translations-history-short": "V",
 	"languagestats": "Schtateßteke för di Schprohch",
 	"languagestats-summary": "Di Sigg hee zeisch Schtatesteke vun de Övversätzonge för alle Nohreeschtejroppe un för ein Schprohch.",
+	"messagegroupstats-summary": "Heh di Sigg zeisch Schtateßteke övver de jroppe vun Täxte un Hohreeschte.",
 	"languagestats-stats-for": "Övversäzongsstatistike för $1 ($2)",
 	"languagestats-recenttranslations": "Neuste Övversäzonge",
 	"translate-langstats-incomplete": "Ene Deil vun dä Schtatistike op heh dä Sigg sin nit kumplät. Mem di Sigg neu Laade kritt mer mih Daate aanjezeisch.",
@@ -183,7 +184,7 @@
 	"supportedlanguages": "Ongerschtöz Schprohche",
 	"supportedlanguages-summary": "He sin alle Schprohche opjeleß, di mer {{GRAMMAR:em|{{SITENAME}}}} ongerschtöze.\nDobei schtonn de Nahme vun dä Övversäzer, di aan dä Schprohch aam ärbeide sin.\nJrühßer jeschrewwe Övversäzer han mieh övversaz, wi kleiner jeschrevve.\nJröhn jeschrevve Medmaacher han köözlesch noch jet jedonn, ruud jeschrevve han länger nix mih jedonn.",
 	"supportedlanguages-colorlegend": "De Lejände för de Färve: De läzde Övversäzong es $1 Dääsch her.",
-	"supportedlanguages-translators": "{{PLURAL:$2|Eine Övversäzer:|$2 Övversäzer:|Keine Övversäzer}} $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Eine Övversäzer|Ein Övversäzerėn|Eine Övversäzer|Ein Övversäzerėn|Eine Övversäzer}}:|$2 Övversäzer:|Keine Övversäzer}} $1",
 	"supportedlanguages-recenttranslations": "neuste Övversäzunge",
 	"supportedlanguages-count": "{{PLURAL:$1|Ein Schprohch|$1 Schprohche|Kein Schprohche}} ensjesamp.",
 	"supportedlanguages-activity": "$1: {{PLURAL:$2|Ein Änderong|$2 Änderonge|Kein Änderonge}} — de lätzde wohr {{PLURAL:$3|vör einem Daach|vör $3 Dääsch|hück}}.",
@@ -374,6 +375,7 @@
 	"tux-editor-expand-tooltip": "Donn et Ongerfinster för zem Övversäzonge enblände",
 	"tux-editor-collapse-tooltip": "Donn et Ongerfinster för zem Övversäzonge ußblände",
 	"tux-editor-message-tools-history": "Väsjohne",
+	"tux-editor-message-tools-delete": "Schmiiß fott!",
 	"tux-editor-message-tools-translations": "Alle Övversäzonge",
 	"tux-editor-loading": "Ben aam Laade{{int:ellipsis}}",
 	"translate-search-more-languages-info": "{{PLURAL:$1|0=Kein Schprohch|1=Ein Schprohch|$1 Schprohche}} mieh",
@@ -381,5 +383,6 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% fäädesch övversaz, $3% övverhollt, $2% jääjejelässe",
 	"translate-search-more-groups-info": "{{PLURAL:$1|Ein Jrop|$1 Jroppe|Kein Jropp}} mieh",
 	"translate-ulsdep-title": "Fähler bei de Enschtällonge",
-	"translate-ulsdep-body": "Dat Zohsazprojramm <i lang=\"en\" xml:lang=\"en\">e-mail</i>Translate</i> bruch dat Zohsazprojramm [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector <i lang=\"en\" xml:lang=\"en\">e-mail</i>Universal Language Selector</i>]."
+	"translate-ulsdep-body": "Dat Zohsazprojramm <i lang=\"en\" xml:lang=\"en\">Translate</i> bruch dat Zohsazprojramm [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector <i lang=\"en\" xml:lang=\"en\">e-mail</i>Universal Language Selector</i>].",
+	"tux-session-expired": "Do bes nit mieh ennjelogg.\nBes esu johd un donn en enem extra Brauserfinster widder enlogge.\nUdder donn Ding Övversäzonge woh anders faßhallde, di noch nit em Wiki jeseschert woodte, donn neu enlogge, un jangk dann retuur op heh di Sigg, un donn Ding Övversäzonge widder erövver koppeere!"
 }
