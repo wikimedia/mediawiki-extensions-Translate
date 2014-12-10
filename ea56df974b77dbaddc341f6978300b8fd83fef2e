@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "2e9df725_3ca68451",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-12-10T19:09:24Z",
+      "side": 1,
+      "message": "reject() is Deferred method, it returns the same deferred. If you expose that, you should call promise() on it, $.Deferred().reject().promise().\n\nHowever in this case the deferred is only returned internally to then(), not exposed, so no need to add it there I guess. But this one here on line 70 is redundant, because then() already returns a (new) promise.",
+      "parentUuid": "2e9df725_c205527e",
+      "revId": "ea56df974b77dbaddc341f6978300b8fd83fef2e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e9df725_67ac9085",
         "filename": "resources/js/ext.translate.special.pagemigration.js",
         "patchSetId": 2
@@ -83,6 +101,24 @@
       "side": 1,
       "message": "Speaking of this, is there need to use $.when( getNamespaceAliases( 6 ) ).then() or would just getNamespaceAliases( 6 ).then() work as well?",
       "parentUuid": "2e9df725_87b19cde",
+      "revId": "ea56df974b77dbaddc341f6978300b8fd83fef2e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e9df725_7c7bacbd",
+        "filename": "resources/js/ext.translate.special.pagepreparation.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2014-12-10T19:09:24Z",
+      "side": 1,
+      "message": "Indeed. $.when() is a method to create one proxy deferred that tracks multiple other defereds (so you don\u0027t have to do nested callbacks or increment variables, etc). But since you only have one, the $.when() is superfluous.",
+      "parentUuid": "2e9df725_e24c0ee7",
       "revId": "ea56df974b77dbaddc341f6978300b8fd83fef2e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
