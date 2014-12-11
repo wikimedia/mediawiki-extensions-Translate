@@ -74,7 +74,7 @@
 	"translate-checks-parameters": "{{PLURAL:$2|1=Параметр лелош яц|Параметраш лелош яц}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|1=Евзаш йоцу параметр|Евзаш йоцу параметраш}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "Елла а дӀакъовла а {{PLURAL:$2|къовларш}} нийса яц:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-links-missing": "{{PLURAL:$2|$2 хьажораг яц|$2 хьажоргаш яц}}:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-links-missing": "{{PLURAL:$2|$2 хьажоргаш яц}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Оригинал чохь лелош ю <nowiki>{{PLURAL:}}</nowiki>, кхузахь — яц.",
 	"translate-checks-plural-dupe": "МогӀан юьхьигехь <nowiki>{{PLURAL:}}</nowiki> цхьатера шиъ дош ду, <nowiki>{{PLURAL:$1|пальто|пальто}} меттан</nowiki> <nowiki>{{PLURAL:$1|пальто}} яздича дика ду</nowiki>.",
 	"action-translate-manage": "хаамийн тобанийн урхалладар",

@@ -392,7 +392,7 @@
 	"tux-empty-nothing-new-to-proofread": "没有要校对的新内容",
 	"tux-empty-you-can-review-already-proofread": "您可以校对已被他人校对过的翻译。",
 	"tux-empty-list-other": "没有要翻译的内容",
-	"tux-empty-list-other-guide": "你可以帮助复核已有译文",
+	"tux-empty-list-other-guide": "您可以帮助复核已有译文",
 	"tux-empty-list-other-action": "复核译文",
 	"tux-empty-list-other-link": "显示所有信息",
 	"tux-editor-close-tooltip": "关闭",
@@ -407,6 +407,6 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1%已翻译，$2%已复核，$3%已过时",
 	"translate-search-more-groups-info": "还有$1个{{PLURAL:$1|信息组}}",
 	"translate-ulsdep-title": "配置错误",
-	"translate-ulsdep-body": "翻译拓展依赖[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector 通用语言选择器拓展]。",
+	"translate-ulsdep-body": "翻译扩展依赖[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector 通用语言选择器扩展]。",
 	"tux-session-expired": "您不再保持登录状态。请在单独的选项卡登录，或者制作未保存翻译的副本、登录并返回此页面。"
 }
