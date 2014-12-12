@@ -98,7 +98,8 @@ GROOVY;
 		$query->setFrom( 0 );
 		$query->setSize( $sizeFirst );
 		$query->setParam( '_source', array( 'content' ) );
-		$query->setParam( 'min_score', $this->config['cutoff'] );
+		$cutoff = isset( $this->config['cutoff'] ) ? $this->config['cutoff'] : 0.65;
+		$query->setParam( 'min_score', $cutoff );
 		$query->setSort( array( '_score', '_uid' ) );
 
 		// This query is doing two unrelated things:
