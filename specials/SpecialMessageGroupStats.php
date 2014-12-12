@@ -159,7 +159,9 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		MessageGroupStats::setTimeLimit( $this->timelimit );
 		$cache = MessageGroupStats::forGroup( $this->target );
 
-		$languages = array_keys( Language::fetchLanguageNames() );
+		$languages = array_keys(
+			TranslateUtils::getLanguageNames( $this->getLanguage()->getCode() )
+		);
 		sort( $languages );
 		$this->filterPriorityLangs( $languages, $this->target, $cache );
 		foreach ( $languages as $code ) {
@@ -278,7 +280,11 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 			'language' => $code
 		);
 
-		$text = htmlspecialchars( "$code: {$this->names[$code]}" );
+		if ( isset( $this->names[$code] ) ) {
+			$text = htmlspecialchars( "$code: {$this->names[$code]}" );
+		} else {
+			$text = htmlspecialchars( $code );
+		}
 		$link = Linker::link( $this->translate, $text, array(), $queryParameters );
 
 		return Html::rawElement( 'td', array(), $link );
