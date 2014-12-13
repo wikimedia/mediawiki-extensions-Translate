@@ -24,7 +24,7 @@
 	"translate-group-desc-readerfeedback": "Gyűjtőcsoport, ami a [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback] MediaWiki-kiterjesztéshez tartozó összes üzenetet tartalmazza",
 	"translate-group-desc-translatablepages": "Az összes fordítható lap",
 	"translate-group-desc-translate": "Gyűjtőcsoport, ami a [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate] MediaWiki-kiterjesztéshez tartozó összes üzenetet tartalmazza; kérjük, előbb ismerkedj meg a [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary szószedetével]",
-	"translate-group-desc-tsint": "Üzenetcsoport a [[Translating:Intuition|Intuitionhez]], ami egy i18n-rendszer [//tools.wmflabs.org/ toolserveres] eszközökhöz (<span class=\"plainlinks\">[[Translating talk:Intuition|támogatás]]</span>)",
+	"translate-group-desc-tsint": "Üzenetcsoport a [[Translating:Intuition|Intuitionhez]], ami egy i18n-rendszer [//tools.wmflabs.org/ Tool Labses] eszközökhöz (<span class=\"plainlinks\">[[Translating talk:Intuition|támogatás]]</span>)",
 	"translate-group-desc-wikiaextensions": "Gyűjtőcsoport, ami a [http://www.wikia.com Wikia] által használt MediaWiki-kiterjesztések összes üzenetét tartalmazza",
 	"translate-group-desc-wikimediaextensions": "Gyűjtőcsoport, ami a [https://wikimediafoundation.org/ Wikimédia Alapítvány] által használt MediaWiki-kiterjesztések összes üzenetét tartalmazza"
 }

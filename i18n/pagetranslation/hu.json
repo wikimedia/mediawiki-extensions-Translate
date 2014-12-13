@@ -55,7 +55,7 @@
 	"translate-tag-markthis": "Lap megjelölése fordításra",
 	"translate-tag-markthisagain": "Ezen a lapon történtek <span class=\"plainlinks\">[$1 változtatások]</span>, mióta utoljára <span class=\"plainlinks\">[$2 megjelölték fordításra]</span>.",
 	"translate-tag-hasnew": "Ez a lap tartalmaz <span class=\"plainlinks\">[$1 változtatásokat]</span>, amelyek nincsenek fordításra jelölve.",
-	"tpt-translation-intro": "Ez a(z) [[$2]] lap egy <span class=\"plainlinks\">[$1 lefordított változata]</span>, és a fordítás $3%-a kész és friss.",
+	"tpt-translation-intro": "Ez a(z) [[$2]] lap egy <span class=\"plainlinks\">[$1 lefordított változata]</span>, és a fordítás $3%-a van kész.",
 	"tpt-languages-legend": "Más nyelvek:",
 	"tpt-languages-nonzero": "$1 (lefordítva: $2%)",
 	"tpt-tab-translate": "Fordítás",

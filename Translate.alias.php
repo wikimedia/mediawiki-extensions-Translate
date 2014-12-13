@@ -1082,6 +1082,11 @@ $specialPageAliases['yue'] = array(
 	'Translate' => array( '譯' ),
 );
 
+/** Chinese (中文) */
+$specialPageAliases['zh'] = array(
+	'Translate' => array( '翻译', '翻譯' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'AggregateGroups' => array( '信息组总计' ),

@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80"
+			"Amire80",
+			"Guycn2"
 		]
 	},
+	"apihelp-groupreview-param-language": "קוד השפה.",
+	"apihelp-query+languagestats-param-language": "קוד השפה.",
+	"apihelp-query+messagecollection-param-language": "קוד השפה.",
+	"apihelp-query+messagecollection-example-1": "רשימת שפות נתמכות",
 	"apihelp-query+messagegroupstats-param-group": "מזהה קבוצת הודעות.",
 	"apihelp-query+messagegroupstats-example-1": "רשימה של סטטיסטיקת השלמת תרגומים עבור הדף page-Example",
 	"apihelp-query+messagetranslations-description": "שאילתה של כל התרגומים של הודעה אחת.",
