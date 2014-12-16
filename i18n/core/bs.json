@@ -4,7 +4,8 @@
 			"CERminator",
 			"DzWiki",
 			"Edinwiki",
-			"KWiki"
+			"KWiki",
+			"Palapa"
 		]
 	},
 	"translate": "Prijevod",
@@ -169,7 +170,7 @@
 	"translate-manage-submit": "Izvrši",
 	"translate-manage-intro-other": "Ispod je spisak izmjena na prevodima na $1 jeziku.\nMolimo provjerite izmjene i izaberite akciju koju želite da uradite za svaki prevod.\nAko odaberete da zanemarite izmjene, one će biti prepisane pri slijedećem izvozu.",
 	"translate-manage-import-ok": "Uvezena nova verzija stranice $1.",
-	"translate-manage-import-done": "Sve završeno!",
+	"translate-manage-import-done": "Uvoz završen!",
 	"importtranslations": "Uvoz prijevoda",
 	"translate-import-from-local": "Postavljanje lokalne datoteke:",
 	"translate-import-load": "Učitaj datoteku",

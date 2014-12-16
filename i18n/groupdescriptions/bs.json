@@ -5,12 +5,13 @@
 			"Smooth O",
 			"KWiki",
 			"Krinkle",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Palapa"
 		]
 	},
 	"bw-desc-freecol": "Prije nego što počnete da prevodite FreeCol na Vaš jezik, molimo pročitajte [[Translating:FreeCol]]. FreeCol koristi GPL licencu.",
 	"bw-desc-fudforum": "[http://fudforum.org/ FUDforum], web forum napisan u PHP.",
-	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] je slobodni sistem praćenja grešaka zasnovan na webu. Molimo prijavite svaku grešku na stranicu [[Support]].",
+	"bw-desc-mantisbt": "[[Translating:MantisBT|MantisBT]] je web-bazirani softver za praćenje grešaka",
 	"bw-desc-openstreetmap": "Sve poruke vezane za [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Ova grupa poruka sadrži poruke interfejsa za [[Translating:Open Street Map|Open Street Map]].\nPogledajte [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} Unicode CLDR stranicu za objašnjenje o ključevima množine].",
 	"bw-desc-wikiblame": "Putem [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] je moguće brzo pronaći autore stranica u Wikimedia wikijima.",
