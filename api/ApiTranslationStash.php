@@ -55,7 +55,7 @@ class ApiTranslationStash extends ApiBase {
 			$output['translations'] = array();
 
 			$translations = $stash->getTranslations( $user );
-			foreach( $translations as $translation ) {
+			foreach ( $translations as $translation ) {
 				$output['translations'][] = $this->formatTranslation( $translation );
 			}
 		}

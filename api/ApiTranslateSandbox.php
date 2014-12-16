@@ -162,7 +162,7 @@ class ApiTranslateSandbox extends ApiBase {
 	protected function createUserPage( User $user ) {
 		$userpage = $user->getUserPage();
 
-		if( $userpage->exists() ) {
+		if ( $userpage->exists() ) {
 			return false;
 		}
 

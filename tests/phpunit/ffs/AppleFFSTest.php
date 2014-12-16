@@ -79,7 +79,7 @@ STRINGS;
 		$parsed = $ffs->readFromVariable( $infile );
 
 		$outfile = '';
-		foreach( $parsed['MESSAGES'] as $key => $value ) {
+		foreach ( $parsed['MESSAGES'] as $key => $value ) {
 			$outfile .= AppleFFS::writeRow( $key, $value );
 		}
 		$reparsed = $ffs->readFromVariable( $outfile );
