@@ -24,7 +24,7 @@
 		);
 
 		assert.strictEqual(
-			'No kun <a href="/wiki/m:MassMessage">m:MassMessage</a> ja plum <a href="/wiki/m:">Meta-Wiki</a>.',
+			'No kun <a href="' + mw.util.getUrl( 'm:MassMessage' ) + '">m:MassMessage</a> ja plum <a href="' + mw.util.getUrl( 'm:' ) + '">Meta-Wiki</a>.',
 			mw.translate.formatMessageGently( 'No kun [[m:MassMessage]] ja plum [[m:|Meta-Wiki]].' ),
 			'Link parsing is non-greedy'
 		);
