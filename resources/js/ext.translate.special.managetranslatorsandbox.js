@@ -26,12 +26,12 @@
 	}
 
 	function doApiAction( options ) {
-		var token;
+		var api = new mw.Api();
 
-		token = mw.config.get( 'wgTranslateSupportsCsrfToken' ) ? 'csrf' : 'translatesandbox';
 		options = $.extend( {}, { action: 'translatesandbox' }, options );
 
-		return (new mw.Api()).postWithToken( token, options ).promise();
+		return api.postWithToken( 'translatesandbox', options )
+			.promise();
 	}
 
 	function removeSelectedRequests() {

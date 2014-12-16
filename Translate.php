@@ -180,10 +180,6 @@ $GLOBALS['wgHooks']['Translate:MessageGroupStats:isIncluded'][] =
 	'TranslateHooks::hideRestrictedFromStats';
 
 $GLOBALS['wgHooks']['MakeGlobalVariablesScript'][] = 'TranslateHooks::addConfig';
-// BC for <= MW 1.23
-$GLOBALS['wgHooks']['ResourceLoaderGetConfigVars'][] = function ( &$vars ) {
-	$vars['wgTranslateSupportsCsrfToken'] = class_exists( 'ApiQueryTokens' );
-};
 
 // Sandbox
 $GLOBALS['wgDefaultUserOptions']['translate-sandbox'] = '';
