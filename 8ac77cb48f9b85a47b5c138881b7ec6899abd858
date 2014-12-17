@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6cb3ef_87cf4582",
+        "filename": "tests/qunit/ext.translate.parsers.test.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-12-17T10:46:06Z",
+      "side": 1,
+      "message": "Define the config variables that mw.util uses in the environment. Otherwise this test is almost the same as code itself.",
+      "revId": "8ac77cb48f9b85a47b5c138881b7ec6899abd858",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
