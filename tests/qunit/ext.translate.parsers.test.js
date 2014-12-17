@@ -11,6 +11,8 @@
 	QUnit.module( 'ext.translate.parsers', QUnit.newMwEnvironment() );
 
 	QUnit.test( '-- External links', 3, function ( assert ) {
+		mw.config.set( 'wgArticlePath', '/wiki/$1' );
+
 		assert.strictEqual(
 			'This page is [in English]',
 			mw.translate.formatMessageGently( 'This page is [in English]' ),
