@@ -242,6 +242,7 @@
 	"translate-js-support": "Ask question",
 	"translate-js-support-title": "Ask for help if there is not enough information to translate this message correctly.",
 	"translate-js-support-unsaved-warning": "You have unsaved translations.",
+	"translate-js-support-unsaved-warning-confirm": "You have unsaved translations.\nDo you want to discard the translations?",
 	"translate-gs-pos": "Pos.",
 	"translate-gs-code": "Code",
 	"translate-gs-continent": "Continent",
