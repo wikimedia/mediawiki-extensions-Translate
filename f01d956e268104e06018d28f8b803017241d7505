@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6cb3ef_13efdbae",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-12-21T08:25:46Z",
+      "side": 1,
+      "message": "I mean this line.",
+      "revId": "f01d956e268104e06018d28f8b803017241d7505",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
