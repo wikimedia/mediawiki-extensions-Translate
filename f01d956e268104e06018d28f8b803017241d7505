@@ -16,6 +16,24 @@
       "revId": "f01d956e268104e06018d28f8b803017241d7505",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6cb3ef_b37aac1d",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-12-22T17:55:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e6cb3ef_13efdbae",
+      "revId": "f01d956e268104e06018d28f8b803017241d7505",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
