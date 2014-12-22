@@ -179,7 +179,7 @@
 	"pm-langcode-placeholder": "語言代碼",
 	"pm-page-does-not-exist": "$1 不存在",
 	"pm-old-translations-missing": "$1 沒有舊的翻譯",
-	"pm-extra-units-warning": "可能存在額外的翻譯單位，請確實比對來源與翻譯單位。",
+	"pm-extra-units-warning": "可能存在額外的翻譯單位。請確實比對來源與翻譯單位。",
 	"pm-pagename-missing": "請輸入頁面名稱",
 	"pm-langcode-missing": "請輸入語言代碼",
 	"pm-add-icon-hover-text": "新增以下單位",

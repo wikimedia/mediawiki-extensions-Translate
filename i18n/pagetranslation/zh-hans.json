@@ -191,7 +191,7 @@
 	"pm-langcode-placeholder": "语言代码",
 	"pm-page-does-not-exist": "$1不存在",
 	"pm-old-translations-missing": "$1没有旧翻译",
-	"pm-extra-units-warning": "提供的单位可能有误。请正确匹配翻译单位和源单位",
+	"pm-extra-units-warning": "提供的单位可能有误。请正确匹配翻译单位和源单位。",
 	"pm-pagename-missing": "请输入页面名称",
 	"pm-langcode-missing": "请输入语言代码",
 	"pm-add-icon-hover-text": "往下面添加单位",
