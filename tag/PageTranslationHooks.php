@@ -290,7 +290,11 @@ class PageTranslationHooks {
 				$name = Linker::link( $specialTranslateTitle, $name, $attribs, $params );
 			}
 
-			$languages[] = $name;
+			$languages[] = Html::rawElement(
+				'li',
+				array(),
+				$name
+			);
 		}
 
 		// dirmark (rlm/lrm) is added, because languages with RTL names can
@@ -309,7 +313,7 @@ class PageTranslationHooks {
 			wfMessage( 'tpt-languages-legend' )->escaped()
 		);
 		$out .= Html::rawElement(
-			'div',
+			'ul',
 			array( 'class' => 'mw-pt-languages-list autonym' ),
 			$languages
 		);

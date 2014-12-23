@@ -25,13 +25,18 @@
 }
 
 .mw-pt-languages-list {
-	padding-left: 0.5em;
-	padding-bottom: 0.7em;
+	padding-left: 0.5em !important;
+	padding-bottom: 0.7em !important;
 	display: table-cell;
 	width: 80%;
+	list-style-type: none;
 }
 
-.mw-pt-languages-list a {
+.mw-pt-languages-list li {
+	display: inline;
+}
+
+.mw-pt-languages-list li a {
 	white-space: nowrap;
 }
 
