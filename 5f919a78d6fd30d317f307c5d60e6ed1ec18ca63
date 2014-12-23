@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6cb3ef_459fbe06",
+        "filename": "api/ApiQueryTranslationAids.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-12-23T20:32:36Z",
+      "side": 0,
+      "message": "If I am not mistaken, this was added by you in befba26e ;)",
+      "revId": "5f919a78d6fd30d317f307c5d60e6ed1ec18ca63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
