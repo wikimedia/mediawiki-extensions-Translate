@@ -208,6 +208,10 @@
 		 * @param {array} translations An inotherlanguages array as returned by the translation helpers API.
 		 */
 		showAssistantLanguages: function ( translations ) {
+			if( translations.error ) {
+				// Do not proceed if errored/unsupported
+				return;
+			}
 			var translateEditor = this,
 				$translationTextarea;
 
