@@ -50,7 +50,7 @@ class ApiTranslationAids extends ApiBase {
 		foreach ( $props as $type ) {
 			// Do not proceed if translation aid is not supported for this message group
 			if ( !isset( $types[$type] ) ) {
-				continue;
+				$types[$type] = 'UnsupportedTranslationAid';
 			}
 
 			$start = microtime( true );
