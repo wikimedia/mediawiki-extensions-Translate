@@ -6,5 +6,6 @@
 	},
 	"apihelp-groupreview-param-language": "Taalkoade.",
 	"apihelp-query+languagestats-param-language": "Taalkoade.",
-	"apihelp-query+messagecollection-param-language": "Taalkoade."
+	"apihelp-query+messagecollection-param-language": "Taalkoade.",
+	"apihelp-translationstash-param-subaction": "Hanneling."
 }

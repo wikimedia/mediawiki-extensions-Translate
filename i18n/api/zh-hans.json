@@ -38,6 +38,7 @@
 	"apihelp-translateuser-example-1": "显示有关用户的信息",
 	"apihelp-translationaids-description": "查询所有翻译帮助。",
 	"apihelp-translationaids-param-title": "已知消息的完整标题。",
+	"apihelp-translationaids-param-prop": "包含的翻译助手。",
 	"apihelp-translationaids-example-1": "显示[[MediaWiki:January/fi]]的建议",
 	"apihelp-translationreview-description": "标记该翻译为已复核。",
 	"apihelp-translationreview-param-revision": "要复核的修订版本号。",

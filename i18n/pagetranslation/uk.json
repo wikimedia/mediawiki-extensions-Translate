@@ -69,7 +69,7 @@
 	"tpt-rev-encourage-tooltip": "Відновити цю сторінку для звичайного перекладу",
 	"translate-tag-translate-link-desc": "Перекласти цю сторінку",
 	"translate-tag-markthis": "Позначити цю сторінку для перекладу",
-	"translate-tag-markthisagain": "На цій сторінці було здійснено <span class=\"plainlinks\">[$1 змін]</span> з моменту, коли ця сторінка була востаннє <span class=\"plainlinks\">[$2 відмічена до перекладу]</span>.",
+	"translate-tag-markthisagain": "На цій сторінці {{PLURAL:$1|була здійснена|були здійснені}} <span class=\"plainlinks\">[$1 {{PLURAL:$1|зміна|зміни}}]</span> з моменту, коли вона востаннє була <span class=\"plainlinks\">[$2 відмічена до перекладу]</span>.",
 	"translate-tag-hasnew": "На цій сторінці було здійснено <span class=\"plainlinks\">[$1 зміни]</span>, які не відмічені для перекладу.",
 	"tpt-translation-intro": "Ця сторінка є <span class=\"plainlinks\">[$1 перекладом]</span> сторінки [[$2]]. Переклад виконано на $3%.",
 	"tpt-languages-legend": "Інші мови:",
