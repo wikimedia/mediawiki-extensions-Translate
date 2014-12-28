@@ -199,7 +199,7 @@
 
 	function checkDirty() {
 		if ( mw.translate.isDirty() ) {
-			return window.confirm( mw.msg( 'translate-js-support-unsaved-warning' ) );
+			return window.confirm( mw.msg( 'translate-js-support-unsaved-warning-confirm' ) );
 		}
 		return true;
 	}
