@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Siebrand"
 		]
 	},
-	"apihelp-translationstash-param-metadata": "JSON-object"
+	"apihelp-translationstash-param-metadata": "JSON-object."
 }
