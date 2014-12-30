@@ -105,7 +105,11 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 			}
 
 			$translation = str_replace( TRANSLATE_FUZZY, '', $info[0] );
-			$result->setContent( $data, $translation );
+			if ( defined( 'ApiResult::META_CONTENT' ) ) {
+				ApiResult::setContentValue( $data, 'translation', $translation );
+			} else {
+				ApiResult::setContent( $data, $translation );
+			}
 
 			$fit = $result->addValue( array( 'query', $this->getModuleName() ), null, $data );
 			if ( !$fit ) {
@@ -114,7 +118,11 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 			}
 		}
 
-		$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'message' );
+		if ( defined( 'ApiResult::META_CONTENT' ) ) {
+			$result->defineIndexedTagName( array( 'query', $this->getModuleName() ), 'message' );
+		} else {
+			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'message' );
+		}
 	}
 
 	public function getAllowedParams() {

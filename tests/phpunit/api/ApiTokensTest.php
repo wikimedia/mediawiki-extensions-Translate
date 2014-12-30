@@ -30,7 +30,13 @@ class ApiTokensTranslateTest extends MediaWikiTestCase {
 		$api = new ApiMain( $req );
 		$api->execute();
 
-		$data = $api->getResultData();
+		if ( defined( 'ApiResult::META_CONTENT' ) ) {
+			$data = ApiResult::removeMetadata(
+				$api->getResult()->getResultData()
+			);
+		} else {
+			$data = $api->getResultData();
+		}
 		if ( isset( $data['query'] ) ) {
 			foreach ( $data['query']['pages'] as $page ) {
 				$this->assertSame( $expected, $page[$id . 'token'] );
