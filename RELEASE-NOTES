@@ -1,0 +1,7 @@
+== Translate 2014.12 ==
+Released at 2014-12-30.
+
+=== Noteworthy changes ===
+* Due to MediaWiki core plural rule changes, Translate extension contains interface translations which are not compatible with any released version of MediaWiki. If you are using Translate in the affected languages, (See https://blog.wikimedia.org/2014/11/04/updates-in-mediawiki-internationalization-reflect-changes-from-cldr/ for more details and list of affected languages) you might want to consider using MLEB 2014.09 instead. The issue manifests as incorrect plural forms used in the interface for certain numbers.
+* T76184: Improvements in ElasticSearch TTM. Query results are now more reliable and consistent.
+* T49044: Fixed issue with button with long text in Special:Translate.
