@@ -204,8 +204,16 @@ TXT;
 				$api = new ApiMain( $params );
 				$api->execute();
 
-				$result = $api->getResultData();
-				$text = $result['parse']['text']['*'];
+				if ( defined( 'ApiResult::META_CONTENT' ) ) {
+					$result = $api->getResult()->getResultData();
+					$contentKey = isset( $result['parse']['text'][ApiResult::META_CONTENT] )
+						? $result['parse']['text'][ApiResult::META_CONTENT]
+						: '*';
+				} else {
+					$result = $api->getResultData();
+					$contentKey = '*';
+				}
+				$text = $result['parse']['text'][$contentKey];
 				$text = strip_tags( $text );
 				$text = str_replace( '!!FUZZY!!', '', $text );
 				$text = preg_replace( '/\$[0-9]/', '', $text );

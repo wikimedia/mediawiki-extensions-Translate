@@ -211,12 +211,19 @@ class TranslationEditPage {
 
 		$api = new ApiMain( $params );
 		$api->execute();
-		$data = $api->getResultData();
+		if ( defined( 'ApiResult::META_CONTENT' ) ) {
+			$data = $api->getResult()->getResultData();
+		} else {
+			$data = $api->getResultData();
+		}
 
 		if ( !isset( $data['query']['pages'] ) ) {
 			throw new MWException( 'Api query failed' );
 		}
 		$data = $data['query']['pages'];
+		if ( defined( 'ApiResult::META_CONTENT' ) ) {
+			$data = ApiResult::removeMetadataNonRecursive( $data );
+		}
 		$data = array_shift( $data );
 
 		return $data;

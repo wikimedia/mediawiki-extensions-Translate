@@ -39,7 +39,11 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 			$result->addValue( array( 'query', $this->getModuleName() ), null, $data );
 		}
 
-		$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'stats' );
+		if ( defined( 'ApiResult::META_CONTENT' ) ) {
+			$result->defineIndexedTagName( array( 'query', $this->getModuleName() ), 'stats' );
+		} else {
+			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'stats' );
+		}
 	}
 
 	protected function makeItem( $item, $stats ) {

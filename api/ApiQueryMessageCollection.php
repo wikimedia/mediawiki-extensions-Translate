@@ -122,10 +122,17 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		}
 
 		if ( is_null( $resultPageSet ) ) {
-			$result->setIndexedTagName_internal(
-				array( 'query', $this->getModuleName() ),
-				'message'
-			);
+			if ( defined( 'ApiResult::META_CONTENT' ) ) {
+				$result->defineIndexedTagName(
+					array( 'query', $this->getModuleName() ),
+					'message'
+				);
+			} else {
+				$result->setIndexedTagName_internal(
+					array( 'query', $this->getModuleName() ),
+					'message'
+				);
+			}
 		} else {
 			$resultPageSet->populateFromTitles( $pages );
 		}
@@ -162,7 +169,11 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		if ( isset( $props['properties'] ) ) {
 			foreach ( $message->getPropertyNames() as $prop ) {
 				$data['properties'][$prop] = $message->getProperty( $prop );
-				$result->setIndexedTagName_recursive( $data['properties'], 'val' );
+				if ( defined( 'ApiResult::META_CONTENT' ) ) {
+					ApiResult::setIndexedTagNameOnSubarrays( $data['properties'], 'val' );
+				} else {
+					$result->setIndexedTagName_recursive( $data['properties'], 'val' );
+				}
 			}
 		}
 

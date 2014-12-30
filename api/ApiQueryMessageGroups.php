@@ -100,7 +100,11 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			}
 		}
 
-		$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'group' );
+		if ( defined( 'ApiResult::META_CONTENT' ) ) {
+			$result->defineIndexedTagName( array( 'query', $this->getModuleName() ), 'group' );
+		} else {
+			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'group' );
+		}
 	}
 
 	/**
