@@ -45,6 +45,7 @@
 	"apihelp-translationreview-example-1": "复核修订版本1",
 	"apihelp-translationstash-description": "将译文放在藏匿处。",
 	"apihelp-translationstash-param-subaction": "操作。",
+	"apihelp-translationstash-param-title": "翻译单位页面的标题。",
 	"apihelp-translationstash-param-translation": "由用户做出的翻译。",
 	"apihelp-translationstash-param-metadata": "JSON对象。",
 	"apihelp-translationstash-example-1": "加入[[MediaWiki:Jan/fi]]的一次翻译至藏匿处",
