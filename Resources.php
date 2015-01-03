@@ -11,7 +11,7 @@ global $wgResourceModules;
 
 $resourcePaths = array(
 	'localBasePath' => __DIR__,
-	'remoteExtPath' => 'Translate'
+	'remoteExtPath' => 'Translate',
 );
 
 $wgResourceModules['ext.translate'] = array(
@@ -24,7 +24,7 @@ $wgResourceModules['ext.translate.base'] = array(
 	'dependencies' => array(
 		'mediawiki.util',
 		'mediawiki.api',
-		'ext.translate.hooks'
+		'ext.translate.hooks',
 	),
 	'messages' => array(
 		'translate-js-support-unsaved-warning',
@@ -270,7 +270,9 @@ $wgResourceModules['ext.translate.special.aggregategroups'] = array(
 	'styles' => 'resources/css/ext.translate.special.aggregategroups.css',
 	'position' => 'top',
 	'dependencies' => array(
-		'jquery.ui.autocomplete'
+		'jquery.ui.autocomplete',
+		'mediawiki.api',
+		'mediawiki.util',
 	),
 	'messages' => array(
 		'tpt-aggregategroup-remove-confirm',
@@ -279,7 +281,7 @@ $wgResourceModules['ext.translate.special.aggregategroups'] = array(
 		'tpt-aggregategroup-update',
 		'tpt-aggregategroup-update-cancel',
 		'tpt-invalid-group',
-		'tpt-aggregategroup-add'
+		'tpt-aggregategroup-add',
 	),
 ) + $resourcePaths;
 
@@ -297,7 +299,7 @@ $wgResourceModules['ext.translate.special.languagestats'] = array(
 		'translate-langstats-expandall',
 		'translate-langstats-collapseall',
 		'translate-langstats-expand',
-		'translate-langstats-collapse'
+		'translate-langstats-collapse',
 	),
 	'dependencies' => 'jquery.tablesorter',
 ) + $resourcePaths;
@@ -372,7 +374,7 @@ $wgResourceModules['ext.translate.special.pagepreparation'] = array(
 		'pp-save-button-label',
 		'pp-prepare-message',
 		'pp-already-prepared-message',
-		'pp-pagename-missing'
+		'pp-pagename-missing',
 	),
 	'dependencies' => array(
 		'mediawiki.ui',
@@ -423,6 +425,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 	'dependencies' => array(
 		'mediawiki.jqueryMsg',
 		'mediawiki.Uri',
+		'mediawiki.api',
 		'mediawiki.api.parse',
 		'ext.translate.base',
 		'ext.translate.groupselector',
@@ -455,6 +458,7 @@ $wgResourceModules['ext.translate.special.translationstash'] = array(
 		'ext.translate.editor',
 		'ext.translate.messagetable',
 		'ext.translate.translationstashstorage',
+		'mediawiki.api',
 		'mediawiki.language',
 		'ext.uls.mediawiki',
 	),
@@ -495,6 +499,9 @@ $wgResourceModules['ext.translate.tabgroup'] = array(
 
 $wgResourceModules['ext.translate.translationstashstorage'] = array(
 	'scripts' => 'resources/js/ext.translate.translationstashstorage.js',
+	'dependencies' => array(
+		'mediawiki.api',
+	),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.workflowselector'] = array(
@@ -506,6 +513,7 @@ $wgResourceModules['ext.translate.workflowselector'] = array(
 	),
 	'dependencies' => array(
 		'ext.translate.dropdownmenu',
+		'mediawiki.api',
 	),
 ) + $resourcePaths;
 
