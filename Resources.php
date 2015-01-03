@@ -432,6 +432,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'ext.uls.mediawiki',
 	),
 	'messages' => array(
+		'translate-js-support-unsaved-warning',
 		'translate-workflow-set-do',
 		'translate-workflow-set-doing',
 		'translate-workflow-set-done',
