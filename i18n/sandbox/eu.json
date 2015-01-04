@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Subi"
+		]
+	},
+	"tsb-all-languages-button-label": "Hizkuntza guztiak",
+	"translationstash": "Ongi etorri",
+	"translate-translationstash-welcome": "Ongi etorri {{GENDER:$1|$1}}, itzultzaile berria zara"
+}

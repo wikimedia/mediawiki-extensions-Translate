@@ -3,7 +3,8 @@
 		"authors": [
 			"An13sa",
 			"Kobazulo",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Subi"
 		]
 	},
 	"pagetranslation": "Orrialdearen itzulpena",
@@ -21,6 +22,13 @@
 	"tpt-aggregategroup-add": "Gehitu",
 	"tpt-aggregategroup-save": "Gorde",
 	"tpt-aggregategroup-new-name": "Izena:",
+	"tpt-aggregategroup-new-description": "Deskribapena (aukerakoa):",
+	"tpt-aggregategroup-invalid-group": "Taldea ez da existitzen",
+	"tpt-aggregategroup-edit-name": "Izena:",
+	"tpt-aggregategroup-edit-description": "Deskribapena:",
+	"tpt-aggregategroup-update": "Gorde",
+	"tpt-aggregategroup-update-cancel": "Utzi",
+	"tpt-invalid-group": "Talde baliogabea",
 	"pt-movepage-list-translation": "Itzulpen orrialdeak",
 	"pt-movepage-list-other": "Bestelako azpiorrialdeak",
 	"pt-movepage-current": "Oraingo izena:",
@@ -28,5 +36,10 @@
 	"pt-movepage-reason": "Arrazoia:",
 	"pt-movepage-subpages": "Azpiorrialde guztiak mugitu",
 	"pt-deletepage-current": "Orriaren izena:",
-	"pt-deletepage-reason": "Arrazoia:"
+	"pt-deletepage-reason": "Arrazoia:",
+	"pm-savepages-button-label": "Gorde",
+	"pm-cancel-button-label": "Utzi",
+	"pm-langcode-placeholder": "Hizkuntza-kodea",
+	"pm-page-does-not-exist": "$1 ez da existitzen.",
+	"pp-save-button-label": "Gorde"
 }

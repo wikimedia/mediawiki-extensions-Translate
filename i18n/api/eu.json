@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Subi"
+		]
+	},
+	"apihelp-groupreview-param-language": "Hizkuntza-kodea.",
+	"apihelp-query+languagestats-param-language": "Hizkuntza-kodea.",
+	"apihelp-query+messagecollection-param-language": "Hizkuntza-kodea.",
+	"apihelp-translatesandbox-param-do": "Egin beharrekoa."
+}

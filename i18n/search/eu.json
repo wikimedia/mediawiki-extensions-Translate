@@ -1,10 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"An13sa"
+			"An13sa",
+			"Subi"
 		]
 	},
-	"tux-sst-edit": "Mezua aldatu",
+	"tux-sst-edit": "Itzulpena aldatu",
 	"tux-sst-search": "Bilatu",
-	"tux-sst-facet-language": "Hizkuntzak"
+	"tux-sst-search-ph": "Itzulpenak bilatu",
+	"tux-sst-facet-language": "Hizkuntzak",
+	"tux-sst-facet-orphan": "(umezurtza)",
+	"tux-sst-nosolr-title": "Bilaketa ez dago erabilgarri",
+	"tux-sst-solr-offline-title": "Bilaketa ez dago erabilgarri",
+	"tux-sst-next": "Hurrengo emaitzak",
+	"tux-sst-prev": "Aurreko emaitzak"
 }
