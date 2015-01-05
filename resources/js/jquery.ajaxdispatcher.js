@@ -7,7 +7,7 @@
 	 * @author Niklas Laxström, 2014
 	 *
 	 * @param {callable[]} list List of callbacks returning promises.
-	 * @return {jQuery.promise}
+	 * @return {jQuery.Promise}
 	 */
 	function ajaxDispatcher( list, maxRetries ) {
 		maxRetries = maxRetries || 0;

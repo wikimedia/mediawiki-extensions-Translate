@@ -5,7 +5,7 @@
 	 * Save the page with a given page name and given content to the wiki.
 	 * @param {string} pageName Page title
 	 * @param {string} pageContent Content of the page to be saved
-	 * @return {jQuery.promise}
+	 * @return {jQuery.Promise}
 	 */
 	function savePage( pageName, pageContent ) {
 		var api = new mw.Api();
@@ -23,7 +23,7 @@
 	 * Get the diff between the current revision and the prepared page content
 	 * @param {string} pageName Page title
 	 * @param {string} pageContent Content of the page to be saved
-	 * @return {jQuery.promise}
+	 * @return {jQuery.Promise}
 	 * @return {Function} return.done
 	 * @return {string} return.done.data
 	 */
@@ -45,7 +45,7 @@
 			}
 			diff = obj.revisions[0].diff['*'];
 			return diff;
-		} ).promise();
+		} );
 	}
 
 	/**
@@ -127,7 +127,7 @@
 	/**
 	 * Fetch all the aliases for a given namespace on the wiki.
 	 * @param {integer} namespaceId
-	 * @return {jQuery.promise}
+	 * @return {jQuery.Promise}
 	 * @return {Function} return.done
 	 * @return {Array} return.done.data
 	 */
@@ -146,19 +146,17 @@
 				}
 			}
 			return aliases;
-		} ).promise();
+		} );
 	}
 
 	/**
 	 * Add translate tags around only translatable content for files and keep everything else
 	 * as a part of the page template.
 	 * @param {string} pageContent
-	 * @return {string}
+	 * @return {jQuery.Promise}
 	 */
 	function doFiles( pageContent ) {
-		var deferred = new $.Deferred();
-
-		$.when( getNamespaceAliases( 6 ) ).then( function ( aliases ) {
+		getNamespaceAliases( 6 ).then( function ( aliases ) {
 			var aliasList, captionFilesRegex, fileRegex;
 
 			aliases.push( 'file' );
@@ -178,9 +176,8 @@
 			fileRegex = new RegExp( '/\\[\\[((' + aliasList + ')[^\\|]*?)\\]\\]', 'gi' );
 			pageContent = pageContent.replace( fileRegex, '\n</translate>[[$1]]\n<translate>' );
 
-			deferred.resolve( pageContent );
+			return pageContent;
 		} );
-		return deferred.promise();
 	}
 
 	/**
@@ -233,7 +230,7 @@
 				obj = data.query.pages[page];
 			}
 			return obj.revisions[0]['*'];
-		} ).promise();
+		} );
 	}
 
 	/**

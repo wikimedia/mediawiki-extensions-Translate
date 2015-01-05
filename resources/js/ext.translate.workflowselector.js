@@ -55,28 +55,19 @@
 		 * @return {jQuery.Promise}
 		 */
 		changeState: function ( state ) {
-			var instance = this,
-				tokenCall, deferred;
+			var token, params,
+				api = new mw.Api();
 
-			deferred = new $.Deferred();
-			tokenCall = new mw.Api().get( { action: 'tokens', type: 'groupreview' } );
+			params = {
+				action: 'groupreview',
+				group: this.groupId,
+				language: this.language,
+				state: state,
+				format: 'json'
+			};
+			token = mw.config.get( 'wgTranslateSupportsCsrfToken' ) ? 'csrf' : 'groupreview';
 
-			tokenCall.fail( deferred.reject );
-			tokenCall.done( function ( result ) {
-				var params = {
-					action: 'groupreview',
-					group: instance.groupId,
-					language: instance.language,
-					state: state,
-					token: result.tokens.groupreviewtoken,
-					format: 'json'
-				};
-				new mw.Api().post( params )
-					.done( deferred.resolve )
-					.fail( deferred.reject );
-			} );
-
-			return deferred.promise();
+			return api.postWithToken( token, params );
 		},
 
 		/**
