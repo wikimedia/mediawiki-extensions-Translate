@@ -16,6 +16,24 @@
       "revId": "03bef2cc8d3c66b8fde63682e9cf504bb1082ad5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6cb3ef_3342ea3f",
+        "filename": "resources/js/ext.translate.special.pagepreparation.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-01-05T14:52:43Z",
+      "side": 1,
+      "message": "Thanks! I think I was just copy-pasting without thinking.",
+      "parentUuid": "0e6cb3ef_b356fa07",
+      "revId": "03bef2cc8d3c66b8fde63682e9cf504bb1082ad5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
