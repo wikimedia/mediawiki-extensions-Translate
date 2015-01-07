@@ -130,7 +130,7 @@
 	"translate-statsf-group": "Rhestr coma-wahanedig o godau grŵp:",
 	"translate-statsf-submit": "Rhagolwg",
 	"translate-tag-category": "Tudalennau y gellir eu cyfieithu",
-	"translate-tag-page-desc": "Cyfieithiad y dudalen wici [[$2|$1]].",
+	"translate-tag-page-desc": "Cyfieithiad o dudalen wici [[$2|$1]] o $3 ($4).",
 	"translate-sidebar-alltrans": "Ieithoedd eraill",
 	"translations": "Yr holl gyfieithiadau",
 	"translations-summary": "Gosodwch enw neges isod, er mwyn gweld yr holl gyfieithiadau ohoni sydd ar gael.",
