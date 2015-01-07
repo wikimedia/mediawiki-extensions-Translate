@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee703fc5_38a9e0dc",
+        "filename": "i18n/groupdescriptions/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2015-01-07T09:04:02Z",
+      "side": 1,
+      "message": "Group descriptions don\u0027t end with punctuation.",
+      "revId": "2664e038cebbd0d5340f27147a76441680ba1a09",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
