@@ -72,6 +72,7 @@ class YandexWebService extends TranslationWebService {
 			'key' => $this->config['key'],
 			'text' => $text,
 			'lang' => "$from-$to",
+			'format' => 'html',
 		);
 
 		$url = $this->config['url'];
