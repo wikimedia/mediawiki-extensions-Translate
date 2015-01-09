@@ -336,10 +336,12 @@
 	"tux-editor-expand-tooltip": "Spanne",
 	"tux-editor-collapse-tooltip": "Scunne",
 	"tux-editor-message-tools-history": "Cunde",
+	"tux-editor-message-tools-delete": "Scangìlle",
 	"tux-editor-message-tools-translations": "Tutte le traduziune",
 	"tux-editor-loading": "Stoche a scareche…",
 	"translate-search-more-languages-info": "$1 cchiù {{PLURAL:$1|lènghe}}",
 	"translate-statsbar-tooltip": "$1% tradotte, $2% reviste",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tradotte, $2% reviste, $3% da aggiornà",
-	"translate-search-more-groups-info": "$1 cchiù {{PLURAL:$1|gruppe}}"
+	"translate-search-more-groups-info": "$1 cchiù {{PLURAL:$1|gruppe}}",
+	"translate-ulsdep-title": "Errore de configurazione"
 }
