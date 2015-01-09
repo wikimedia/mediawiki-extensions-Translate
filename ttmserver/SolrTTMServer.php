@@ -32,14 +32,12 @@ class SolrTTMServer
 	protected $logger;
 
 	public function __construct( $config ) {
-		wfProfileIn( __METHOD__ );
 		parent::__construct( $config );
 		if ( isset( $config['config'] ) ) {
 			$this->client = new Solarium_Client( $config['config'] );
 		} else {
 			$this->client = new Solarium_Client();
 		}
-		wfProfileOut( __METHOD__ );
 	}
 
 	public function isLocalSuggestion( array $suggestion ) {
@@ -64,7 +62,6 @@ class SolrTTMServer
 		 * 1) Find all strings in source language that match text
 		 * 2) Do another query for translations for those strings
 		 */
-		wfProfileIn( __METHOD__ );
 		// For now impose a length limit on query string to avoid doing
 		// very slow queries. Magic number.
 		if ( strlen( $text ) > 789 ) {
@@ -164,8 +161,6 @@ class SolrTTMServer
 			return ( $a['quality'] < $b['quality'] ) ? 1 : -1;
 		} );
 
-		wfProfileOut( __METHOD__ );
-
 		return $suggestions;
 	}
 
@@ -175,7 +170,6 @@ class SolrTTMServer
 		if ( $handle->getCode() === '' ) {
 			return false;
 		}
-		wfProfileIn( __METHOD__ );
 
 		/* There are various different cases here:
 		 * [new or updated] [fuzzy|non-fuzzy] [translation|definition]
@@ -237,12 +231,9 @@ class SolrTTMServer
 			$this->client->update( $update );
 		} catch ( Solarium_Exception $e ) {
 			error_log( "SolrTTMServer update-write failed" );
-			wfProfileOut( __METHOD__ );
 
 			return false;
 		}
-
-		wfProfileOut( __METHOD__ );
 
 		return true;
 	}
