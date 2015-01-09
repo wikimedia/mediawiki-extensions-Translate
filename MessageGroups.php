@@ -119,10 +119,17 @@ class MessageGroups {
 		wfProfileOut( __METHOD__ . '-hook' );
 
 		wfProfileIn( __METHOD__ . '-yaml' );
+		$parser = new MessageGroupConfigurationParser();
 		foreach ( $wgTranslateGroupFiles as $configFile ) {
-			wfDebug( $configFile . "\n" );
 			$deps[] = new FileDependency( realpath( $configFile ) );
-			$fgroups = TranslateYaml::parseGroupFile( $configFile );
+
+			$yaml = file_get_contents( $configFile );
+			$fgroups = $parser->getHopefullyValidConfigurations(
+				$yaml,
+				function ( $index, $config, $errmsg ) use ( $configFile ) {
+					trigger_error( "Document $index in $configFile is invalid: $errmsg", E_USER_WARNING );
+				}
+			);
 
 			foreach ( $fgroups as $id => $conf ) {
 				if ( !empty( $conf['AUTOLOAD'] ) && is_array( $conf['AUTOLOAD'] ) ) {

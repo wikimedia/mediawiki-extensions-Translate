@@ -9,7 +9,7 @@
  * \c keySeparator which defaults to '='.
  * @ingroup FFS
  */
-class JavaFFS extends SimpleFFS {
+class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	public function supportsFuzzy() {
 		return 'write';
 	}
@@ -249,5 +249,28 @@ class JavaFFS extends SimpleFFS {
 		}
 
 		return $output;
+	}
+
+	public static function getExtraSchema() {
+		$schema = array(
+			'root' => array(
+				'_type' => 'array',
+				'_children' => array(
+					'FILES' => array(
+						'_type' => 'array',
+						'_children' => array(
+							'header' => array(
+								'_type' => 'text',
+							),
+							'keySeparator' => array(
+								'_type' => 'text',
+							),
+						)
+					)
+				)
+			)
+		);
+
+		return $schema;
 	}
 }
