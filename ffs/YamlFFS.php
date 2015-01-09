@@ -7,7 +7,7 @@
  * If it is set to true, all messages will under language code.
  * @ingroup FFS
  */
-class YamlFFS extends SimpleFFS {
+class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	public function getFileExtensions() {
 		return array( '.yaml', '.yml' );
 	}
@@ -246,5 +246,25 @@ class YamlFFS extends SimpleFFS {
 	 */
 	public function unflattenPlural( $key, $value ) {
 		return array( $key => $value );
+	}
+
+	public static function getExtraSchema() {
+		$schema = array(
+			'root' => array(
+				'_type' => 'array',
+				'_children' => array(
+					'FILES' => array(
+						'_type' => 'array',
+						'_children' => array(
+							'codeAsRoot' => array(
+								'_type' => 'boolean',
+							),
+						)
+					)
+				)
+			)
+		);
+
+		return $schema;
 	}
 }

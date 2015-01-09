@@ -19,7 +19,7 @@ class GettextPluralException extends MwException {
  * New-style FFS class that implements support for gettext file format.
  * @ingroup FFS
  */
-class GettextFFS extends SimpleFFS {
+class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	public function supportsFuzzy() {
 		return 'yes';
 	}
@@ -663,5 +663,32 @@ PHP;
 		}
 
 		return $splitPlurals;
+	}
+
+	public static function getExtraSchema() {
+		$schema = array(
+			'root' => array(
+				'_type' => 'array',
+				'_children' => array(
+					'FILES' => array(
+						'_type' => 'array',
+						'_children' => array(
+							'header' => array(
+								'_type' => 'text',
+							),
+							'keyAlgorithm' => array(
+								'_type' => 'enum',
+								'_values' => array( 'simple', 'legacy' ),
+							),
+							'CtxtAsKey' => array(
+								'_type' => 'boolean',
+							),
+						)
+					)
+				)
+			)
+		);
+
+		return $schema;
 	}
 }
