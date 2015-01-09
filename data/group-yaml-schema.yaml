@@ -1,0 +1,78 @@
+root:
+  _type: array
+  _children:
+    BASIC:
+      _type: array
+      _required: true
+      _children:
+        class:
+          _type: text
+          _not_empty: true
+        codeBrowser:
+          _type: text
+        description:
+          _type: text
+        icon:
+          _type: text
+        id:
+          _type: text
+          _not_empty: true
+        label:
+          _type: text
+          _not_empty: true
+        meta:
+          _type: boolean
+        namespace:
+          _type: text
+        sourcelanguage:
+          _type: text
+          _description: defaults to "en"
+    MANGLER:
+      _type: array
+      _children:
+        class:
+          _type: text
+          _not_empty: true
+    CHECKER:
+      _type: array
+      _children:
+        class:
+          _type: text
+          _not_empty: true
+        checks:
+          _type: prototype
+          _prototype:
+            _type: text
+    INSERTABLES:
+      _type: array
+      _children:
+        class:
+          _type: text
+          _not_empty: true
+    TAGS:
+      _type: prototype
+      _prototype:
+        _type: prototype
+        _max_items: 99999 # default is 200, which is too little
+        _prototype:
+          _type: text
+    AUTOLOAD:
+      _type: array
+      _ignore_extra_keys: true
+      _children: []
+    GROUPS:
+      _type: prototype
+      _min_items: 1
+      _prototype:
+        _type: text
+    LANGUAGES:
+      _type: array
+      _children:
+        whitelist:
+          _type: prototype
+          _prototype:
+            _type: text
+        blacklist:
+          _type: prototype
+          _prototype:
+            _type: text

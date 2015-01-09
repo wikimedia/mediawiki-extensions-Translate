@@ -11,7 +11,7 @@
  * It supports exact matches and patterns with any-wildcard (*).
  * All matching strings are prefixed with the same prefix.
  */
-class StringMatcher implements StringMangler {
+class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	/// Prefix for mangled message keys
 	protected $sPrefix = '';
 	/// Exact message keys
@@ -217,5 +217,32 @@ class StringMatcher implements StringMangler {
 
 		// Also check that the indexing starts from zero
 		return !array_key_exists( 0, $array );
+	}
+
+	public static function getExtraSchema() {
+		$schema = array(
+			'root' => array(
+				'_type' => 'array',
+				'_children' => array(
+					'MANGLER' => array(
+						'_type' => 'array',
+						'_children' => array(
+							'prefix' => array(
+								'_type' => 'text',
+								'_not_empty' => true
+							),
+							'patterns' => array(
+								'_type' => 'array',
+								'_required' => true,
+								'_ignore_extra_keys' => true,
+								'_children' => array(),
+							),
+						)
+					)
+				)
+			)
+		);
+
+		return $schema;
 	}
 }

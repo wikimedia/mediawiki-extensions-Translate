@@ -16,7 +16,7 @@
  * custom type of message groups.
  * @ingroup MessageGroup
  */
-class FileBasedMessageGroup extends MessageGroupBase {
+class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaExtender {
 	protected $reverseCodeMap;
 
 	/**
@@ -145,5 +145,41 @@ class FileBasedMessageGroup extends MessageGroupBase {
 
 			return $code;
 		}
+	}
+
+	public static function getExtraSchema() {
+		$schema = array(
+			'root' => array(
+				'_type' => 'array',
+				'_children' => array(
+					'FILES' => array(
+						'_type' => 'array',
+						'_children' => array(
+							'class' => array(
+								'_type' => 'text',
+								'_not_empty' => true,
+							),
+							'codeMap' => array(
+								'_type' => 'array',
+								'_ignore_extra_keys' => true,
+								'_children' => array(),
+							),
+							'definitionFile' => array(
+								'_type' => 'text',
+							),
+							'sourcePattern' => array(
+								'_type' => 'text',
+								'_not_empty' => true,
+							),
+							'targetPattern' => array(
+								'_type' => 'text',
+							),
+						)
+					)
+				)
+			)
+		);
+
+		return $schema;
 	}
 }

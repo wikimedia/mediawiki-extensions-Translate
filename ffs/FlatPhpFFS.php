@@ -13,7 +13,7 @@
  * Implements file format support for PHP files which consist of multiple
  * variable assignments.
  */
-class FlatPhpFFS extends SimpleFFS {
+class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	public function getFileExtensions() {
 		return array( '.php' );
 	}
@@ -135,5 +135,25 @@ PHP;
 		}
 
 		return $output;
+	}
+
+	public static function getExtraSchema() {
+		$schema = array(
+			'root' => array(
+				'_type' => 'array',
+				'_children' => array(
+					'FILES' => array(
+						'_type' => 'array',
+						'_children' => array(
+							'header' => array(
+								'_type' => 'text',
+							),
+						)
+					)
+				)
+			)
+		);
+
+		return $schema;
 	}
 }
