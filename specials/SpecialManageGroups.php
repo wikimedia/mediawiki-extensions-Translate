@@ -229,7 +229,7 @@ class SpecialManageGroups extends TranslateSpecialPage {
 
 			if ( $group->getSourceLanguage() === $code ) {
 				$label = $this->msg( 'translate-manage-action-fuzzy' )->text();
-				$actions .= ' ' . Xml::checkLabel( $label, "f/$id", "f/$id" );
+				$actions .= ' ' . Xml::checkLabel( $label, "f/$id", "f/$id", true );
 				$limit--;
 			}
 
