@@ -274,24 +274,20 @@ class SerializedMessageIndex extends MessageIndex {
 			return $this->index;
 		}
 
-		wfProfileIn( __METHOD__ );
 		$file = TranslateUtils::cacheFile( $this->filename );
 		if ( file_exists( $file ) ) {
 			$this->index = unserialize( file_get_contents( $file ) );
 		} else {
 			$this->index = $this->rebuild();
 		}
-		wfProfileOut( __METHOD__ );
 
 		return $this->index;
 	}
 
 	protected function store( array $array ) {
-		wfProfileIn( __METHOD__ );
 		$file = TranslateUtils::cacheFile( $this->filename );
 		file_put_contents( $file, serialize( $array ) );
 		$this->index = $array;
-		wfProfileOut( __METHOD__ );
 	}
 }
 
@@ -320,20 +316,17 @@ class DatabaseMessageIndex extends MessageIndex {
 			return $this->index;
 		}
 
-		wfProfileIn( __METHOD__ );
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select( 'translate_messageindex', '*', array(), __METHOD__ );
 		$this->index = array();
 		foreach ( $res as $row ) {
 			$this->index[$row->tmi_key] = $this->unserialize( $row->tmi_value );
 		}
-		wfProfileOut( __METHOD__ );
 
 		return $this->index;
 	}
 
 	protected function get( $key ) {
-		wfProfileIn( __METHOD__ );
 		$dbr = wfGetDB( DB_SLAVE );
 		$value = $dbr->selectField(
 			'translate_messageindex',
@@ -348,13 +341,11 @@ class DatabaseMessageIndex extends MessageIndex {
 			$value = null;
 		}
 
-		wfProfileOut( __METHOD__ );
 
 		return $value;
 	}
 
 	protected function store( array $array ) {
-		wfProfileIn( __METHOD__ );
 		$dbw = wfGetDB( DB_MASTER );
 		$rows = array();
 
@@ -374,7 +365,6 @@ class DatabaseMessageIndex extends MessageIndex {
 		}
 
 		$this->index = $array;
-		wfProfileOut( __METHOD__ );
 	}
 }
 
@@ -403,7 +393,6 @@ class CachedMessageIndex extends MessageIndex {
 			return $this->index;
 		}
 
-		wfProfileIn( __METHOD__ );
 		$key = wfMemckey( $this->key );
 		$data = $this->cache->get( $key );
 		if ( is_array( $data ) ) {
@@ -411,18 +400,15 @@ class CachedMessageIndex extends MessageIndex {
 		} else {
 			$this->index = $this->rebuild();
 		}
-		wfProfileOut( __METHOD__ );
 
 		return $this->index;
 	}
 
 	protected function store( array $array ) {
-		wfProfileIn( __METHOD__ );
 		$key = wfMemckey( $this->key );
 		$this->cache->set( $key, $array );
 
 		$this->index = $array;
-		wfProfileOut( __METHOD__ );
 	}
 }
 
@@ -457,13 +443,11 @@ class CDBMessageIndex extends MessageIndex {
 			return $this->index;
 		}
 
-		wfProfileIn( __METHOD__ );
 		$keys = (array)$this->unserialize( $reader->get( '#keys' ) );
 		$this->index = array();
 		foreach ( $keys as $key ) {
 			$this->index[$key] = $this->unserialize( $reader->get( $key ) );
 		}
-		wfProfileOut( __METHOD__ );
 
 		return $this->index;
 	}
@@ -490,7 +474,6 @@ class CDBMessageIndex extends MessageIndex {
 	}
 
 	protected function store( array $array ) {
-		wfProfileIn( __METHOD__ );
 		$this->reader = null;
 
 		$file = TranslateUtils::cacheFile( $this->filename );
@@ -506,7 +489,6 @@ class CDBMessageIndex extends MessageIndex {
 		$cache->close();
 
 		$this->index = $array;
-		wfProfileOut( __METHOD__ );
 	}
 
 	protected function getReader() {

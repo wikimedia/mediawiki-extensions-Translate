@@ -48,7 +48,6 @@ class ElasticSearchTTMServer
 		 * 1) Find all strings in source language that match text
 		 * 2) Do another query for translations for those strings
 		 */
-		wfProfileIn( __METHOD__ );
 		$connection = $this->getClient()->getConnection();
 		$oldTimeout = $connection->getTimeout();
 		$connection->setTimeout( 10 );
@@ -189,7 +188,6 @@ GROOVY;
 
 		$connection->setTimeout( $oldTimeout );
 
-		wfProfileOut( __METHOD__ );
 
 		return $suggestions;
 	}
@@ -201,7 +199,6 @@ GROOVY;
 			return false;
 		}
 
-		wfProfileIn( __METHOD__ );
 
 		/* There are various different cases here:
 		 * [new or updated] [fuzzy|non-fuzzy] [translation|definition]
@@ -244,7 +241,6 @@ GROOVY;
 				break;
 			} catch ( \Elastica\Exception\ExceptionInterface $e ) {
 				if ( $retries === 0 ) {
-					wfProfileOut( __METHOD__ );
 					throw $e;
 				} else {
 					$c = get_class( $e );
@@ -255,7 +251,6 @@ GROOVY;
 			}
 		}
 
-		wfProfileOut( __METHOD__ );
 
 		return true;
 	}
