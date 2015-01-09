@@ -84,7 +84,6 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 	}
 
 	protected function insertSource( Title $context, $sourceLanguage, $text ) {
-		wfProfileIn( __METHOD__ );
 		$row = array(
 			'tms_lang' => $sourceLanguage,
 			'tms_len' => mb_strlen( $text ),
@@ -105,8 +104,6 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 			$dbw->insert( 'translate_tmf', $row, __METHOD__ );
 		}
 
-		wfProfileOut( __METHOD__ );
-
 		return $sid;
 	}
 
@@ -115,7 +112,6 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 	 * Tries to find the most useful tokens.
 	 */
 	protected function filterForFulltext( $language, $input ) {
-		wfProfileIn( __METHOD__ );
 		$lang = Language::factory( $language );
 
 		$text = preg_replace( '/[^[:alnum:]]/u', ' ', $input );
@@ -123,7 +119,6 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		$text = $lang->lc( $text );
 		$segments = preg_split( '/\s+/', $text, -1, PREG_SPLIT_NO_EMPTY );
 		if ( count( $segments ) < 4 ) {
-			wfProfileOut( __METHOD__ );
 
 			return array();
 		}
@@ -138,7 +133,6 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 
 		$segments = array_unique( $segments );
 		$segments = array_slice( $segments, 0, 10 );
-		wfProfileOut( __METHOD__ );
 
 		return $segments;
 	}
@@ -209,7 +203,6 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 	}
 
 	public function query( $sourceLanguage, $targetLanguage, $text ) {
-		wfProfileIn( __METHOD__ );
 		// Calculate the bounds of the string length which are able
 		// to satisfy the cutoff percentage in edit distance.
 		$len = mb_strlen( $text );
@@ -237,13 +230,11 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		}
 
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__ );
-		wfProfileOut( __METHOD__ );
 
 		return $this->processQueryResults( $res, $text, $targetLanguage );
 	}
 
 	protected function processQueryResults( $res, $text, $targetLanguage ) {
-		wfProfileIn( __METHOD__ );
 		$timeLimit = microtime( true ) + 5;
 
 		$lenA = mb_strlen( $text );
@@ -280,7 +271,6 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 			}
 		}
 		$results = TTMServer::sortSuggestions( $results );
-		wfProfileOut( __METHOD__ );
 
 		return $results;
 	}

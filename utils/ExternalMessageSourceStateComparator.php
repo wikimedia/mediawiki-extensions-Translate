@@ -64,7 +64,6 @@ class ExternalMessageSourceStateComparator {
 	}
 
 	protected function processLanguage( FileBasedMessageGroup $group, $code ) {
-		wfProfileIn( __METHOD__ );
 		$cache = new MessageGroupCache( $group, $code );
 		$reason = 0;
 		if ( !$cache->isValid( $reason ) ) {
@@ -77,7 +76,6 @@ class ExternalMessageSourceStateComparator {
 				$cache->create();
 			}
 		}
-		wfProfileOut( __METHOD__ );
 	}
 
 	/**
@@ -104,7 +102,6 @@ class ExternalMessageSourceStateComparator {
 	protected function addMessageUpdateChanges( FileBasedMessageGroup $group, $code,
 		$reason, $cache
 	) {
-		wfProfileIn( __METHOD__ );
 		/* This throws a warning if message definitions are not yet
 		 * cached and will read the file for definitions. */
 		wfSuppressWarnings();
@@ -119,7 +116,6 @@ class ExternalMessageSourceStateComparator {
 		$ffs = $group->getFFS();
 		if ( $code === $group->getSourceLanguage() && !$ffs->exists( $code ) ) {
 			$path = $group->getSourceFilePath( $code );
-			wfProfileOut( __METHOD__ );
 			throw new MWException( "Source message file for {$group->getId()} does not exist: $path" );
 		}
 
@@ -127,7 +123,6 @@ class ExternalMessageSourceStateComparator {
 
 		// Does not exist
 		if ( $file === false ) {
-			wfProfileOut( __METHOD__ );
 
 			return;
 		}
@@ -138,7 +133,6 @@ class ExternalMessageSourceStateComparator {
 			$ffsClass = get_class( $ffs );
 
 			error_log( "$id has an FFS ($ffsClass) - it didn't return cake for $code" );
-			wfProfileOut( __METHOD__ );
 
 			return;
 		}
@@ -214,7 +208,6 @@ class ExternalMessageSourceStateComparator {
 			}
 		}
 
-		wfProfileOut( __METHOD__ );
 	}
 
 	protected function addChange( $type, $language, $key, $content ) {
@@ -245,7 +238,6 @@ class ExternalMessageSourceStateComparator {
 	 */
 	public static function writeChanges( $array ) {
 		// This method is almost identical with MessageIndex::store
-		wfProfileIn( __METHOD__ );
 		/* This will overwrite the previous cache file if any. Once the cache
 		 * file is processed with Special:ManageMessageGroups, it is
 		 * renamed so that it wont be processed again. */
@@ -259,6 +251,5 @@ class ExternalMessageSourceStateComparator {
 			$cache->set( $key, $value );
 		}
 		$cache->close();
-		wfProfileOut( __METHOD__ );
 	}
 }

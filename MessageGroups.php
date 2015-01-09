@@ -28,7 +28,6 @@ class MessageGroups {
 			return;
 		}
 
-		wfProfileIn( __METHOD__ );
 		self::$groups = array();
 
 		global $wgAutoloadClasses;
@@ -47,7 +46,6 @@ class MessageGroups {
 				$wgAutoloadClasses[$class] = $file;
 			}
 		}
-		wfProfileOut( __METHOD__ );
 	}
 
 	/**
@@ -77,7 +75,6 @@ class MessageGroups {
 	 * to have three ways: Yaml files, translatable pages and with the hook.
 	 */
 	protected static function loadGroupDefinitions() {
-		wfProfileIn( __METHOD__ );
 
 		global $wgEnablePageTranslation, $wgTranslateGroupFiles;
 		global $wgTranslateCC, $wgAutoloadClasses, $wgTranslateWorkflowStates;
@@ -158,7 +155,6 @@ class MessageGroups {
 		wfProfileOut( __METHOD__ . '-save' );
 
 		wfDebug( __METHOD__ . "-end\n" );
-		wfProfileOut( __METHOD__ );
 	}
 
 	/**
@@ -500,14 +496,12 @@ class MessageGroups {
 	 * @since 2012-04-30
 	 */
 	public static function getGroupsByType( $type ) {
-		wfProfileIn( __METHOD__ );
 		$groups = self::getAllGroups();
 		foreach ( $groups as $id => $group ) {
 			if ( !$group instanceof $type ) {
 				unset( $groups[$id] );
 			}
 		}
-		wfProfileOut( __METHOD__ );
 
 		return $groups;
 	}
@@ -523,7 +517,6 @@ class MessageGroups {
 	 */
 	public static function getGroupStructure() {
 		$groups = self::getAllGroups();
-		wfProfileIn( __METHOD__ );
 
 		// Determine the top level groups of the tree
 		$tree = $groups;
@@ -580,8 +573,6 @@ class MessageGroups {
 			$participants = implode( ', ', $unused );
 			throw new MWException( "Found cyclic aggregate message groups: $participants" );
 		}
-
-		wfProfileOut( __METHOD__ );
 
 		return $tree;
 	}
