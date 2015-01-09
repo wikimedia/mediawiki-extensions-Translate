@@ -15,53 +15,23 @@
  */
 class TranslateYaml {
 	/**
-	 * @param $filename string
-	 * @return array
+	 * @deprecated in 2014.01
 	 */
 	public static function parseGroupFile( $filename ) {
 		$data = file_get_contents( $filename );
-		$documents = preg_split( "/^---$/m", $data, -1, PREG_SPLIT_NO_EMPTY );
-		$groups = array();
-		$template = false;
-		foreach ( $documents as $document ) {
-			$document = self::loadString( $document );
+		wfDeprecated( 'Use MessageGroupConfigurationParser' );
+		$parser = new MessageGroupConfigurationParser();
 
-			if ( isset( $document['TEMPLATE'] ) ) {
-				$template = $document['TEMPLATE'];
-			} else {
-				if ( !isset( $document['BASIC']['id'] ) ) {
-					$error = "No path ./BASIC/id (group id not defined) ";
-					$error .= "in YAML document located in $filename";
-					trigger_error( $error );
-					continue;
-				}
-				$groups[$document['BASIC']['id']] = $document;
-			}
-		}
-
-		foreach ( $groups as $i => $group ) {
-			$groups[$i] = self::mergeTemplate( $template, $group );
-		}
-
-		return $groups;
+		return $parser->getHopefullyValidConfigurations( $data );
 	}
 
 	/**
-	 * Merges a document template (base) to actual definition (specific)
-	 * @param $base
-	 * @param $specific
-	 * @return array
+	 * @deprecated in 2014.01
 	 */
 	public static function mergeTemplate( $base, $specific ) {
-		foreach ( $specific as $key => $value ) {
-			if ( is_array( $value ) && isset( $base[$key] ) && is_array( $base[$key] ) ) {
-				$base[$key] = self::mergeTemplate( $base[$key], $value );
-			} else {
-				$base[$key] = $value;
-			}
-		}
+		wfDeprecated( 'Use MessageGroupConfigurationParser' );
 
-		return $base;
+		return MessageGroupConfigurationParser::mergeTemplate( $base, $specific );
 	}
 
 	/**
