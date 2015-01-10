@@ -10,7 +10,8 @@
 			"Rubin",
 			"Александр Сигачёв",
 			"Rubin16",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Максим777"
 		]
 	},
 	"bw-desc-freecol": "Прежде чем переводить FreeCol на ваш язык, пожалуйста, прочтите [[Translating:FreeCol]]. Freecol использует лицензию GPL.",
@@ -29,6 +30,7 @@
 	"translate-group-desc-fuel": "[[Translating:FUEL|FUEL]] приносит больше согласованности при переводе программного обеспечения",
 	"translate-group-desc-huggle": "[[Translating:Huggle|Huggle]] — это быстрое браузерное приложение для сравнения, помогающее в борьбе с вандализмом в проектах Викимедиа",
 	"translate-group-desc-ihris": "Группа сообщений для [[Translating:iHRIS|iHRIS]]",
+	"translate-group-desc-inaturalist": "[[Перевод:INaturalist|iNaturalist]] - это веб-сайт, чтобы записывать то, что вы видите в природе, встретить других любителей природы, и узнать о природном мире",
 	"translate-group-desc-kiwix": "Группа сообщений для [[Translating:Kiwix|Kiwix]]",
 	"translate-group-desc-mantisbt-plugin-core": "Основной плагин для [[Translating:MantisBT|MantisBT]]",
 	"translate-group-desc-mathjax": "[[Translating:MathJax|MathJax]] — это кросс-браузерная JavaScript-библиотека, которая отображает математические обозначения в веб-браузерах",
