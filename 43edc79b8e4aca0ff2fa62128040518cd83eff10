@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee703fc5_867ae61d",
+        "filename": "resources/js/ext.translate.editor.helpers.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-01-12T16:44:47Z",
+      "side": 1,
+      "message": "Please make this \"if (\", and preferbably move below var statement.",
+      "revId": "43edc79b8e4aca0ff2fa62128040518cd83eff10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
