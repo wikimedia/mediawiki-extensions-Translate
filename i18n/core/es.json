@@ -365,7 +365,7 @@
 	"tux-editor-doc-editor-save": "Guardar la documentación",
 	"tux-editor-doc-editor-cancel": "Cancelar",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|mensaje|mensajes}} más",
-	"tux-messagetable-loading-messages": "Cargando {{PLURAL:$1|mensaje|mensajes}}...",
+	"tux-messagetable-loading-messages": "Cargando {{PLURAL:$1|el mensaje|los mensajes}}…",
 	"tux-message-filter-placeholder": "Filtrar lista",
 	"tux-message-filter-result": "Se encontraron $1 {{PLURAL:$1|resultado|resultados}} para \"$2\"",
 	"tux-message-filter-advanced-button": "Búsqueda avanzada",
