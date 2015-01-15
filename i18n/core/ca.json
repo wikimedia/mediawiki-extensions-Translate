@@ -68,7 +68,7 @@
 	"translate-edit-tmmatch": "coincidència del $1%",
 	"translate-use-suggestion": "Substitueixi la traducció actual amb aquest suggeriment.",
 	"translate-edit-nopermission": "Necessiteu permís per traduir missatges.",
-	"translate-edit-askpermission": "Demana permís",
+	"translate-edit-askpermission": "Obté permís",
 	"translate-magic-pagename": "Traducció ampliada del MediaWiki",
 	"translate-magic-help": "Aquí podeu traduir els àlies de les pàgines especials, les paraules màgiques i els títols dels diferents espais de noms (''namespaces'').\n\nEls àlies de les pàgines especials i les paraules màgiques poden tenir múltiples traduccions. Separeu-les per una coma (,). Els espais de noms només poden tenir una traducció.\n\nDins les traduccions dels espais de noms, la <code>$1 talk</code> és especial. <code>$1</code> es substitueix pel nom del projecte (per exemple <code>{{ns:project_talk}}</code>). Si no és possible fer-ho així en el vostre idioma sense canviar la forma gramatical del nom del projecte, siusplau contacteu amb nosaltres: [[Support]].\n\nHeu de tenir permisos de traductor per a desar els canvis, que no es guardaran fins que no cliqueu el botó corresponent.",
 	"translate-magic-module": "Mòdul:",
@@ -220,7 +220,8 @@
 	"translate-manage-conflict-summary": "Important una nova versió des d'una font externa.\nSiusplau, comproveu-ho.",
 	"translate-manage-fuzzy-summary": "La definició del missatge ha canviat",
 	"translate-manage-submit": "Executa",
-	"translate-manage-import-done": "Fet!",
+	"translate-manage-import-ok": "Importat: $1",
+	"translate-manage-import-done": "S'ha completat la importació!",
 	"importtranslations": "Importa traduccions",
 	"translate-import-from-local": "Càrrega de fitxer local:",
 	"translate-import-load": "Carrega fitxer",
@@ -377,10 +378,12 @@
 	"tux-editor-expand-tooltip": "Amplia",
 	"tux-editor-collapse-tooltip": "Tanca",
 	"tux-editor-message-tools-history": "Historial",
+	"tux-editor-message-tools-delete": "Suprimeix",
 	"tux-editor-message-tools-translations": "Totes les traduccions",
 	"tux-editor-loading": "S'està carregant…",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|idioma|idiomes}} més",
 	"translate-statsbar-tooltip": "$1% traduït,  $2% revisat",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduït,  $2 % revisat,  $3% desfasat",
-	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grup|grups}} més"
+	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grup|grups}} més",
+	"translate-ulsdep-title": "Error de configuració"
 }
