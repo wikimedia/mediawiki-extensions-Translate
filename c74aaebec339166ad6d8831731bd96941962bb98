@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae6ac7d6_4085c459",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-15T01:11:18Z",
+      "side": 1,
+      "message": "\"Instead, use the translate action\nto review it.\": Can we maybe put a link to that here? Try returning an array( \u0027message-key\u0027, \u0027message argument\u0027) in the hook to add parameters (not sure that works for this hook).",
+      "revId": "c74aaebec339166ad6d8831731bd96941962bb98",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae6ac7d6_40ae24e6",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-15T01:11:18Z",
+      "side": 1,
+      "message": "Missing @param and @return documentation",
+      "revId": "c74aaebec339166ad6d8831731bd96941962bb98",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
