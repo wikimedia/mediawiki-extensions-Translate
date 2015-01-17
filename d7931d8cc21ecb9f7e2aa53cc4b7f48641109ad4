@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae6ac7d6_32448f4a",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-01-17T22:16:56Z",
+      "side": 1,
+      "message": "It should be @param type $name.\n\nJust FYI, if I encounter incorrect or outdated param documentation for hook subscribers, I usually remove it.",
+      "revId": "d7931d8cc21ecb9f7e2aa53cc4b7f48641109ad4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae6ac7d6_926a3bb0",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-01-17T22:16:56Z",
+      "side": 1,
+      "message": "To avoid possible performance issues, I would rewrite this to \nif ( $action !\u003d\u003d \u0027patrol\u0027 ) {\n   return true;\n}\n\n$page \u003d /this function call might do a database query/\nif ( $page !\u003d\u003d false ) {\n  $result[] \u003d ...",
+      "revId": "d7931d8cc21ecb9f7e2aa53cc4b7f48641109ad4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
