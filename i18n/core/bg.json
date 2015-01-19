@@ -4,7 +4,8 @@
 			"DCLXVI",
 			"පසිඳු කාවින්ද",
 			"StanProg",
-			"Vodnokon4e"
+			"Vodnokon4e",
+			"Spiritia"
 		]
 	},
 	"translate": "Превеждане",
@@ -185,7 +186,7 @@
 	"tux-editor-doc-editor-cancel": "Отказване",
 	"tux-message-filter-advanced-button": "Разширено търсене",
 	"tux-empty-list-translated-action": "Превеждане",
-	"tux-empty-list-other-link": "Показване не всички съобщения",
+	"tux-empty-list-other-link": "Показване на всички съобщения",
 	"tux-editor-close-tooltip": "Затваряне",
 	"tux-editor-message-tools-history": "История",
 	"tux-editor-message-tools-translations": "Всички преводи",
