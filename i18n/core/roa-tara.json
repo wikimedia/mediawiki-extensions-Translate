@@ -195,6 +195,7 @@
 	"translate-manage-action-fuzzy": "'Mborte e mitte le traduziune da revedè",
 	"translate-manage-nochanges": "Non ge stonne cangiaminde jndr'à le definiziune de le messàgge jndr'à stu gruppe.",
 	"translate-manage-submit": "Esegue",
+	"translate-manage-import-ok": "'Mbortate: $1",
 	"translate-manage-import-done": "'Mbortazione combletate!",
 	"importtranslations": "'Mborte le traduziune",
 	"translate-import-from-local": "Carecamende d'u file locale:",
