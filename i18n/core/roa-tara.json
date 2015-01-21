@@ -329,6 +329,8 @@
 	"tux-empty-show-optional-messages": "Fà vedè le messàgge opzionale",
 	"tux-empty-no-outdated-messages": "Nisciune messàgge da aggiornà",
 	"tux-empty-nothing-to-proofread": "Ninde da rivedè",
+	"tux-empty-nothing-new-to-proofread": "Ninde de nuève da rivedè",
+	"tux-empty-you-can-review-already-proofread": "Tu puè revedè le traduziune ggià riviste da l'otre.",
 	"tux-empty-list-other": "Ninde da traducere",
 	"tux-empty-list-other-guide": "Tu puè dà 'na màne revedenne le traduziune esistende",
 	"tux-empty-list-other-action": "Traduziune reviste",
