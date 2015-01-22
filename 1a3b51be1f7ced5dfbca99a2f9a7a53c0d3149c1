@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae6ac7d6_b5e63712",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-22T10:07:35Z",
+      "side": 1,
+      "message": "@param mixed $result",
+      "revId": "1a3b51be1f7ced5dfbca99a2f9a7a53c0d3149c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae6ac7d6_95e1b3fd",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-22T10:07:35Z",
+      "side": 1,
+      "message": "You want $action !\u003d\u003d \u0027patrol\u0027 here",
+      "revId": "1a3b51be1f7ced5dfbca99a2f9a7a53c0d3149c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae6ac7d6_55eb1bdb",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-01-22T10:07:35Z",
+      "side": 1,
+      "message": "No need to check $action again",
+      "revId": "1a3b51be1f7ced5dfbca99a2f9a7a53c0d3149c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
