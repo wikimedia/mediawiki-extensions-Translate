@@ -595,6 +595,32 @@ class PageTranslationHooks {
 	}
 
 	/**
+	 * Prevent patrol links from appearing on translation pages.
+	 * Hook: getUserPermissionsErrors
+	 *
+	 * @param Title $title
+	 * @param User $user
+	 * @param string $action
+	 * @param mixed $result
+	 *
+	 * @return bool
+	 */
+	public static function preventPatrolling( Title $title, User $user, $action, &$result ) {
+		if ( $action !== 'patrol') {
+			return true;
+		}
+
+		$page = TranslatablePage::isTranslationPage( $title );
+
+		if ( $page !== false ) {
+			$result[] = 'tpt-patrolling-blocked';
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
 	 * Redirects the delete action to our own for translatable pages.
 	 * Hook: ArticleConfirmDelete
 	 *

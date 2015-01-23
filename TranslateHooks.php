@@ -141,6 +141,9 @@ class TranslateHooks {
 			// Prevent editing of translation pages directly
 			$wgHooks['getUserPermissionsErrorsExpensive'][] =
 				'PageTranslationHooks::preventDirectEditing';
+			// Prevent patroling of translation pages
+			$wgHooks['getUserPermissionsErrors'][] =
+				'PageTranslationHooks::preventPatrolling';
 
 			// Our custom header for translation pages
 			$wgHooks['ArticleViewHeader'][] = 'PageTranslationHooks::translatablePageHeader';
