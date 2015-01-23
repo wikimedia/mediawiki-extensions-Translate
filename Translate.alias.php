@@ -107,6 +107,23 @@ $specialPageAliases['ast'] = array(
 	'Translate' => array( 'Traducir' ),
 );
 
+/** Avaric (авар) */
+$specialPageAliases['av'] = array(
+	'AggregateGroups' => array( 'Агрегированные_группы' ),
+	'ImportTranslations' => array( 'Импорт_переводов' ),
+	'LanguageStats' => array( 'Статистика_языка' ),
+	'Magic' => array( 'Расширенный_перевод' ),
+	'ManageMessageGroups' => array( 'Управление_группами_сообщений' ),
+	'MessageGroupStats' => array( 'Статистика_группы_сообщений' ),
+	'PageTranslation' => array( 'Перевод_страниц' ),
+	'PageTranslationDeletePage' => array( 'Удаление_переводимой_страницы' ),
+	'SearchTranslations' => array( 'Поиск_переводов' ),
+	'SupportedLanguages' => array( 'Поддерживаемые_языки' ),
+	'Translate' => array( 'Перевести' ),
+	'TranslationStats' => array( 'Статистика_переводов' ),
+	'Translations' => array( 'Переводы' ),
+);
+
 /** Azerbaijani (azərbaycanca) */
 $specialPageAliases['az'] = array(
 	'PageTranslation' => array( 'SəhifəTərcüməsi' ),

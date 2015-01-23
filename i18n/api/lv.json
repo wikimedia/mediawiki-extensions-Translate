@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Papuass"
+		]
+	},
+	"apihelp-aggregategroups-param-group": "Ziņojumu grupas ID.",
+	"apihelp-groupreview-param-group": "Ziņojumu grupa.",
+	"apihelp-groupreview-param-language": "Valodas kods.",
+	"apihelp-query+languagestats-param-language": "Valodas kods.",
+	"apihelp-query+messagecollection-param-language": "Valodas kods."
+}
