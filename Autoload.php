@@ -184,6 +184,7 @@ $al['MediaWikiExtensionFFS'] = "$dir/ffs/MediaWikiExtensionFFS.php";
 $al['RubyYamlFFS'] = "$dir/ffs/RubyYamlFFS.php";
 $al['ShapadoJsFFS'] = "$dir/ffs/JavaScriptFFS.php";
 $al['SimpleFFS'] = "$dir/ffs/SimpleFFS.php";
+$al['SimpleXmlFFS'] = "$dir/ffs/SimpleXml.php";
 $al['XliffFFS'] = "$dir/ffs/XliffFFS.php";
 $al['YamlFFS'] = "$dir/ffs/YamlFFS.php";
 /**@}*/
