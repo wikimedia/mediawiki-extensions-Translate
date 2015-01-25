@@ -18,7 +18,8 @@
 			"Wyz",
 			"Y-M D",
 			"Zetud",
-			"Brunoperel"
+			"Brunoperel",
+			"Benjozork"
 		]
 	},
 	"pagetranslation": "Traduction de pages",
@@ -83,6 +84,7 @@
 	"tpt-languages-nonzero": "$1 ($2% traduit)",
 	"tpt-tab-translate": "Traduire",
 	"tpt-target-page": "Cette page ne peut pas être mise à jour manuellement.\nElle est une version traduite de [[$1]] et la traduction peut être mise à jour en utilisant [$2 l’outil de traduction].",
+	"tpt-patrolling-blocked": "Cette page ne peut pas être surveillée. Utilisez l'action traduire pour l'examiner.",
 	"tpt-unknown-page": "Cet espace de noms est réservé pour la traduction de pages.\nLa page que vous essayez de modifier ne semble correspondre à aucune page marquée pour être traduite.",
 	"tpt-translation-restricted": "La traduction de cette page dans cette langue a été empêchée par un administrateur des traductions.\n\nMotif: $1",
 	"tpt-discouraged-language-force-header": "Cette page ne peut pas être traduite en $1.",

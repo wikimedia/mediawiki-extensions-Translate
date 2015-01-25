@@ -3,7 +3,8 @@
 		"authors": [
 			"Dundak",
 			"Michawiki",
-			"Shirayuki"
+			"Shirayuki",
+			"J budissin"
 		]
 	},
 	"translate": "Přełožić",
@@ -302,7 +303,7 @@
 	"tux-tab-untranslated": "Njepřełoženy",
 	"tux-tab-outdated": "Zestarjeny",
 	"tux-tab-translated": "Přełoženy",
-	"tux-tab-unproofread": "Njepřepruwowany",
+	"tux-tab-unproofread": "Njepřepruwowane",
 	"tux-edit": "Wobdźěłać",
 	"tux-status-optional": "Opcionalny",
 	"tux-status-fuzzy": "Zestarjeny",
