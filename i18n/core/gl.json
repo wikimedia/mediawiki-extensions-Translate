@@ -139,7 +139,7 @@
 	"translate-statsf-group": "Lista de códigos de grupos de mensaxes (separados por comas):",
 	"translate-statsf-submit": "Vista previa",
 	"translate-tag-category": "Páxinas que se poden traducir",
-	"translate-tag-page-desc": "Tradución da páxina wiki \"[[$2|$1]]\".",
+	"translate-tag-page-desc": "Tradución da páxina wiki \"[[$2|$1]]\" en $3 ($4).",
 	"translate-sidebar-alltrans": "Noutras linguas",
 	"translations": "Todas as traducións",
 	"translations-summary": "Escriba o nome dunha mensaxe para ver todas as traducións dispoñibles.",
@@ -186,7 +186,7 @@
 	"supportedlanguages": "Linguas soportadas",
 	"supportedlanguages-summary": "Esta páxina mostra unha lista de todas as linguas soportadas por {{SITENAME}},\nasí como os nomes dos tradutores que traballan nelas.\nCantas máis contribucións fixese un usuario, máis grande aparecerá o seu nome.\nA cor do suliñado indica como de activo estivo o tradutor recentemente.",
 	"supportedlanguages-colorlegend": "Lenda das cores: Última tradución hai $1 días.",
-	"supportedlanguages-translators": "{{PLURAL:$2|Tradutor|Tradutores}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Tradutor|Tradutora}}|Tradutores}}: $1",
 	"supportedlanguages-recenttranslations": "traducións recentes",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|lingua|linguas}} en total.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edición|edicións}}; última edición hai $3 {{PLURAL:$3|día|días}}",
@@ -385,5 +385,6 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traducidas, $2% revisadas, $3% desfasadas",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grupo|grupos}} máis",
 	"translate-ulsdep-title": "Erro de configuración",
-	"translate-ulsdep-body": "A extensión de tradución depende da [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector extensión do selector universal de linguas]."
+	"translate-ulsdep-body": "A extensión de tradución depende da [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector extensión do selector universal de linguas].",
+	"tux-session-expired": "Pechouse a súa sesión. Por favor, acceda ao sistema noutra lapela. Como alternativa, copie as traducións non gardadas, acceda ao sistema e regrese a esta páxina."
 }
