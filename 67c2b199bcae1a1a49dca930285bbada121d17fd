@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e7fc396_d657645b",
+        "filename": "webservices/CxserverWebService.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2015-01-27T19:44:05Z",
+      "side": 1,
+      "message": "Isn\u0027t this something that could be dealt with in the cx server?",
+      "revId": "67c2b199bcae1a1a49dca930285bbada121d17fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
