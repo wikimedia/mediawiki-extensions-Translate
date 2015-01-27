@@ -34,6 +34,7 @@ abstract class TranslationWebService {
 			'apertium' => 'ApertiumWebService',
 			'yandex' => 'YandexWebService',
 			'ttmserver' => 'RemoteTTMServerWebService',
+			'cxserver' => 'CxserverWebService',
 		);
 
 		if ( !isset( $config['timeout'] ) ) {

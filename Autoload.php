@@ -294,6 +294,7 @@ $al['UpdatedDefinitionAid'] = "$dir/translationaids/UpdatedDefinitionAid.php";
  * @{
  */
 $al['ApertiumWebService'] = "$dir/webservices/ApertiumWebService.php";
+$al['CxserverWebService'] = "$dir/webservices/CxserverWebService.php";
 $al['MicrosoftWebService'] = "$dir/webservices/MicrosoftWebService.php";
 $al['RemoteTTMServerWebService'] = "$dir/webservices/RemoteTTMServerWebService.php";
 $al['TranslationWebService'] = "$dir/webservices/TranslationWebService.php";
