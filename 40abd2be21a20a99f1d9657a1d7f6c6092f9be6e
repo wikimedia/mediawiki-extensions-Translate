@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e7fc396_d96d5798",
+        "filename": "ffs/AndroidXmlFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-01-27T21:11:17Z",
+      "side": 1,
+      "message": "Doesn\u0027t this result the translation itself having quotes around it?",
+      "revId": "40abd2be21a20a99f1d9657a1d7f6c6092f9be6e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
