@@ -34,6 +34,8 @@ class AndroidXmlFFSTest extends MediaWikiTestCase {
 		<item quantity="one">bunny</item>
 		<item quantity="other">bunnies</item>
 	</plurals>
+	<string name="has_quotes">Go to \"Wikipedia\"</string>
+	<string name="starts_with_at">\@Wikipedia</string>
 </resources>
 XML;
 
@@ -47,6 +49,8 @@ XML;
 			'wpt_voicerec' => 'Voice recording',
 			'wpt_stillimage' => '!!FUZZY!!Picture',
 			'alot' => '{{PLURAL|one=bunny|other=bunnies}}',
+			'has_quotes' => 'Go to "Wikipedia"',
+			'starts_with_at' => '@Wikipedia',
 		);
 		$expected = array( 'MESSAGES' => $expected, 'AUTHORS' => array() );
 		$this->assertEquals( $expected, $parsed );
