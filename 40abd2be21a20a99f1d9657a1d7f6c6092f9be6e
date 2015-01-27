@@ -16,6 +16,24 @@
       "revId": "40abd2be21a20a99f1d9657a1d7f6c6092f9be6e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e7fc396_79ef6383",
+        "filename": "ffs/AndroidXmlFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 25
+      },
+      "writtenOn": "2015-01-27T21:29:00Z",
+      "side": 1,
+      "message": "https://developer.android.com/guide/topics/resources/string-resource.html#FormattingAndStyling \u003c- according to docs surrounding quotes will get trimmed. Yeah it\u0027s a weeeeeird file format",
+      "parentUuid": "8e7fc396_d96d5798",
+      "revId": "40abd2be21a20a99f1d9657a1d7f6c6092f9be6e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
