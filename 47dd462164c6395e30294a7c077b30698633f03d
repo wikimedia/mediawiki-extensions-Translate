@@ -16,6 +16,24 @@
       "revId": "47dd462164c6395e30294a7c077b30698633f03d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e7fc396_b04c28e6",
+        "filename": "MessageGroupConfigurationParser.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-01-28T18:02:58Z",
+      "side": 1,
+      "message": "Do you want me to fix it here or later (when fixing T86474)?",
+      "parentUuid": "8e7fc396_b0a2e8a2",
+      "revId": "47dd462164c6395e30294a7c077b30698633f03d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
