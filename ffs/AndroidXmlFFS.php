@@ -76,7 +76,13 @@ class AndroidXmlFFS extends SimpleFFS {
 
 	protected function formatElementContents( $contents ) {
 		// Kudos to the brilliant person who invented this braindead file format
-		return addcslashes( $contents, '"\'' );
+		$escaped = addcslashes( $contents, '"\'' );
+		if ( substr( $escaped, 0, 1 ) === '@' ) {
+			// '@' at beginning of string refers to another string by name.
+			// Add backslash to escape it too.
+			$escaped = '\\' . $escaped;
+		}
+		return $escaped;
 	}
 
 	protected function writeReal( MessageCollection $collection ) {
