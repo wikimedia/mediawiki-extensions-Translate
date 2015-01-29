@@ -47,7 +47,7 @@ class MwCoreExport extends Maintenance {
 			$this->error( 'Target directory is not writable.', 1 );
 		}
 
-		$langs = TranslateUtils::parseLanguageCodes( $this->getOption( 'lang' ) );
+		$langs = TranslateUtils::parseLanguageCodes( $this->getOption( 'lang', '*' ) );
 		$group = MessageGroups::getGroup( 'core' );
 		$type = $this->getOption( 'type' );
 
@@ -89,10 +89,11 @@ class MwCoreExport extends Maintenance {
 
 			$variable = preg_quote( $matches[1], '~' );
 
-			/**
-			 * @var FileBasedMessageGroup $group
-			 */
+			/// @var FileBasedMessageGroup $group
 			$file = $group->getSourceFilePath( $l );
+			// bandage
+			$real = Language::getFileName( '/messages/Messages', $l );
+			$file = preg_replace( '~/i18n/(.+)\.json$~', $real, $file );
 
 			if ( !file_exists( $file ) ) {
 				$this->error( "File $file does not exist!" );
@@ -105,6 +106,7 @@ class MwCoreExport extends Maintenance {
 			$escExport = addcslashes( $export, '\\$' ); # Darn backreferences
 
 			$outFile = $this->getOption( 'target' ) . '/' . $group->getTargetFilename( $l );
+			$outFile = preg_replace( '~/i18n/(.+)\.json$~', $real, $outFile );
 
 			$count = 0;
 			$data = preg_replace( "~$variable\s*=.*?\n\);\n~s", $escExport, $data, 1, $count );
