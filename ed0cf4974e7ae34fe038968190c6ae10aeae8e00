@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e7fc396_0707d620",
+        "filename": "insertables/TranslatablePageInsertablesSuggester.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-01-29T19:20:08Z",
+      "side": 1,
+      "message": "This would mean all insertables would need to end in a single underscore. That\u0027s not what we want.",
+      "revId": "ed0cf4974e7ae34fe038968190c6ae10aeae8e00",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
