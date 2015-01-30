@@ -4,7 +4,8 @@
 			"Reza1615",
 			"Armin1392",
 			"Ebraminio",
-			"Alirezaaa"
+			"Alirezaaa",
+			"Mjbmr"
 		]
 	},
 	"managetranslatorsandbox": "مدیریت کاربران مترجم",
@@ -34,7 +35,7 @@
 	"tsb-translations-source": "منبع",
 	"tsb-translations-user": "ترجمه‌های کاربر",
 	"tsb-translations-current": "ترجمه‌های موجود",
-	"tsb-delete-userpage-summary": "حذف صفحه کاربری کاربری یک کاربر سندباکس",
+	"tsb-delete-userpage-summary": "حذف صفحه کاربری کاربر جعبه شنی",
 	"translationstash": "خوش آمدید",
 	"translate-translationstash-welcome": "خوش آمدید {{GENDER:$1|$1}}، شما یک مترجم تازه هستید",
 	"translate-translationstash-welcome-note": "آشنا شدن با ابزارهای ترجمه. چند پیام را ترجمه کنید و تمام حقوق مترجم را برای شرکت در پروژه‌های مورد علاقه خود بدست آورید.",
@@ -45,8 +46,8 @@
 	"tsb-limit-reached-body": "شما به حد ترجمه برای مترجمان جدید رسیده‌اید.\nتیم ما بررسی خواهد کرد و حساب شما را به زودی ارتقاء می‌دهد.\nسپس شما قادر به ترجمه بدون محدودیت خواهید بود.",
 	"tsb-no-requests-from-new-users": "هیچ درخواستی از کاربران تازه نیست",
 	"tsb-create-user-page": "ایجاد صفحهٔ کاربری اصلی",
-	"log-name-translatorsandbox": "ترجمه سندباکس",
-	"log-description-translatorsandbox": "سیاهه عملیات در ترجمه کاربران سندباکس",
+	"log-name-translatorsandbox": "جعبه شنی ترجمه",
+	"log-description-translatorsandbox": "سیاهه‌ای از عملکرد بر روی کاربران جعبه شنی ترجمه",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|ترفیع}} $3 به {{GENDER:$4|مترجم}}",
 	"logentry-translatorsandbox-rejected": "$1 درخواست {{GENDER:$2|رد شده}} از \"$3\" برای مترجم شدن",
 	"logentry-newusers-tsbpromoted": "حساب کاربری  $3 توسط ترفیع از سندباکس{{GENDER:$2| ایجاد شده}} بود"
