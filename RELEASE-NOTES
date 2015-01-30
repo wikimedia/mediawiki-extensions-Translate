@@ -1,0 +1,8 @@
+== Translate 2015.01 ==
+Released at 2015-01-30.
+
+=== Highlights ===
+* T44162: Patrol footer will not appear on translation pages now.
+* T76731: Added Content Translation Machine Translation backend support.
+* T86000: Message group configurations are now optionally validated.
+* Make 'fuzzy' as a default action for changes in source language in Special:ManageMessageGroups.
