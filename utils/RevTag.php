@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2011 Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -25,7 +24,10 @@ class RevTag {
 		} else {
 			$dbr = wfGetDB( DB_SLAVE );
 			if ( $dbr->tableExists( 'revtag_type' ) ) {
-				return self::$schema = 1;
+				throw new Exception(
+					"Please run migrate-schema2.php. " .
+					"https://phabricator.wikimedia.org/T60273"
+				);
 			} else {
 				return self::$schema = 2;
 			}
