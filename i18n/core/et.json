@@ -145,6 +145,7 @@
 	"translate-translations-history-short": "a",
 	"languagestats": "Keele arvandmed",
 	"languagestats-summary": "Sel lehel esitatakse tõlkimise statistika kõigi sõnumirühmade jaoks antud keeles.",
+	"messagegroupstats-summary": "Siin leheküljel näidatakse sõnumirühma arvandmeid.",
 	"languagestats-stats-for": "Tõlgete arvandmed $1 keele jaoks ($2).",
 	"languagestats-recenttranslations": "viimased tõlked",
 	"translate-langstats-incomplete": "Osa arvandmetest sellel leheküljel on ebatäielikud. Palun laadi lehekülg uuesti, et veel arvandmeid hankida.",
