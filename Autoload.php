@@ -171,6 +171,7 @@ $al['TTMServerMessageUpdateJob'] = "$dir/ttmserver/TTMServerMessageUpdateJob.php
  * @name   "Classes for file format support (FFS)"
  * @{
  */
+$al['AmdFFS'] = "$dir/ffs/AmdFFS.php";
 $al['AndroidXmlFFS'] = "$dir/ffs/AndroidXmlFFS.php";
 $al['AppleFFS'] = "$dir/ffs/AppleFFS.php";
 $al['DtdFFS'] = "$dir/ffs/DtdFFS.php";
