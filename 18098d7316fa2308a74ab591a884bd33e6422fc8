@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_b86cff06",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-03T12:14:12Z",
+      "side": 1,
+      "message": "Other FFS do these in comments, I think you should do that too.",
+      "revId": "18098d7316fa2308a74ab591a884bd33e6422fc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_58712bdc",
+        "filename": "Autoload.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-03T12:14:12Z",
+      "side": 1,
+      "message": "Alphabetical order please.",
+      "revId": "18098d7316fa2308a74ab591a884bd33e6422fc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_787667d7",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-03T12:14:12Z",
+      "side": 1,
+      "message": "Please remove trailing whitespaces",
+      "revId": "18098d7316fa2308a74ab591a884bd33e6422fc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_187bb3be",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-03T12:14:12Z",
+      "side": 1,
+      "message": "Please see if you can also implement isValid().",
+      "revId": "18098d7316fa2308a74ab591a884bd33e6422fc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_b8539f42",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-03T12:14:12Z",
+      "side": 1,
+      "message": "Inline comments just one star /*",
+      "revId": "18098d7316fa2308a74ab591a884bd33e6422fc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_58484b8c",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-03T12:14:12Z",
+      "side": 1,
+      "message": "Space before *",
+      "revId": "18098d7316fa2308a74ab591a884bd33e6422fc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_f8811793",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-03T12:14:12Z",
+      "side": 1,
+      "message": "FormatJson.\n\nJust converting failure to parse the json to empty array is a bit nasty. Missing comma might go unnoticed easily. Implementing isValid() would help, or throwing an exception.",
+      "revId": "18098d7316fa2308a74ab591a884bd33e6422fc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_385f8f46",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-03T12:14:12Z",
+      "side": 1,
+      "message": "FormatJson. Since this is JavaScript, you might not want to use FormatJson::ALL_OK but some more restrictive setting.",
+      "revId": "18098d7316fa2308a74ab591a884bd33e6422fc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_f858375b",
+        "filename": "tests/phpunit/ffs/AmdFFSTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-03T12:14:12Z",
+      "side": 1,
+      "message": "You might want to use \u003c\u003c\u003cJS or \u003c\u003c\u003cJAVASCRIPT, as some editors are clever enough to use different syntax highlighting for those blocks.",
+      "revId": "18098d7316fa2308a74ab591a884bd33e6422fc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
