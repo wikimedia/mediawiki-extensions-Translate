@@ -188,6 +188,7 @@ $al['ShapadoJsFFS'] = "$dir/ffs/JavaScriptFFS.php";
 $al['SimpleFFS'] = "$dir/ffs/SimpleFFS.php";
 $al['XliffFFS'] = "$dir/ffs/XliffFFS.php";
 $al['YamlFFS'] = "$dir/ffs/YamlFFS.php";
+$al['AmdFFS'] = "$dir/ffs/AmdFFS.php";
 /**@}*/
 
 /**
