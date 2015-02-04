@@ -44,5 +44,6 @@
 	"pt-deletepage-list-pages": "Dzēšamo lapu saraksts",
 	"pt-deletepage-list-translation": "Tulkojuma lapas",
 	"pt-deletepage-list-other": "Citas apakšlapas",
-	"pm-langcode-placeholder": "Valodas kods"
+	"pm-langcode-placeholder": "Valodas kods",
+	"pp-cancel-button-label": "Atcelt"
 }

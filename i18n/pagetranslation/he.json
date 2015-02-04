@@ -191,6 +191,7 @@
 	"pp-pagename-placeholder": "נא להזין את שם הדף",
 	"pp-prepare-button-label": "הכנה",
 	"pp-save-button-label": "שמירה",
+	"pp-cancel-button-label": "ביטול",
 	"pp-save-message": "הדף נשמר באפשרותך [$1 לערוך] אותו.",
 	"pp-prepare-message": "הדף הוכן לתרגום. ר' את ההשוואה להלן. יש ללחוץ על הכפתור \"{{int:pp-save-button-label}} אם הכול בסדר!",
 	"pp-already-prepared-message": "נראה שהדף כבר הוכן לתרגום. אין שינויים בהשוואה לגרסה הקודמת.",

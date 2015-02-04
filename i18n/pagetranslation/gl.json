@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toliño"
+			"Toliño",
+			"Fisterraeomar"
 		]
 	},
 	"pagetranslation": "Tradución de páxinas",
@@ -176,5 +177,6 @@
 	"pm-swap-icon-hover-text": "Cambiar coa unidade inferior",
 	"pm-delete-icon-hover-text": "Borrar a unidade",
 	"tpt-translate-title": "Permitir a tradución do título da páxina",
-	"pp-save-summary": "Preparo a páxina para a súa tradución"
+	"pp-save-summary": "Preparo a páxina para a súa tradución",
+	"pp-cancel-button-label": "Cancelar"
 }

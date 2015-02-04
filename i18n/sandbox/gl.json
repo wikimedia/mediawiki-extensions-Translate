@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Toliño"
+			"Toliño",
+			"Elisardojm"
 		]
 	},
 	"managetranslatorsandbox": "Administrar a zona de probas dos tradutores",
@@ -30,7 +31,7 @@
 	"tsb-reminder-link-text": "Enviar un recordatorio por correo electrónico",
 	"tsb-didnt-make-any-translations": "Este usuario non fixo ningunha tradución.",
 	"tsb-translations-source": "Fonte",
-	"tsb-translations-user": "Traducións do usuario",
+	"tsb-translations-user": "Traduccións {{GENDER:$1|do usuario|da usuaria}}",
 	"tsb-translations-current": "Traducións existentes",
 	"tsb-delete-userpage-summary": "Borro a páxina de usuario dunha zona de probas de usuario",
 	"translationstash": "Benvido",

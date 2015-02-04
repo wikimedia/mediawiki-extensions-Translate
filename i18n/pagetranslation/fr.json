@@ -19,7 +19,8 @@
 			"Y-M D",
 			"Zetud",
 			"Brunoperel",
-			"Benjozork"
+			"Benjozork",
+			"Element303"
 		]
 	},
 	"pagetranslation": "Traduction de pages",
@@ -205,6 +206,7 @@
 	"pp-pagename-placeholder": "Entrer le nom de la page",
 	"pp-prepare-button-label": "Préparer",
 	"pp-save-button-label": "Enregistrer",
+	"pp-cancel-button-label": "Annuler",
 	"pp-save-message": "La page a été enregistrée. Vous pouvez la [$1 modifier].",
 	"pp-prepare-message": "La page a été préparée pour sa traduction. Consultez les différences ci-dessous. Cliquez sur le bouton « {{int:pp-save-button-label}} » si cela vous convient !",
 	"pp-already-prepared-message": "Il semble que la page ait déjà été préparée pour sa traduction. Il n’y a pas de modifications depuis la version précédente.",
