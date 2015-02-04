@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_b9487b8d",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-04T13:24:43Z",
+      "side": 1,
+      "message": "Nowadays we use 2015.02 format to match MLEB release numbers. Makes it also less necessary to update the date everyday when review is delayed ;)",
+      "revId": "cdb25f5a4a31c32a6c7445b0328fc6efb075f937",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_d94d379d",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-04T13:24:43Z",
+      "side": 1,
+      "message": "Spaces around $data",
+      "revId": "cdb25f5a4a31c32a6c7445b0328fc6efb075f937",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_59a3673f",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-04T13:24:43Z",
+      "side": 1,
+      "message": "I would use preg_match_all here with pattern something like this: \u0027~ \\*  - (.+)$\u0027\n\nPerhaps move this to separate function even.",
+      "revId": "cdb25f5a4a31c32a6c7445b0328fc6efb075f937",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_7962e307",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-04T13:24:43Z",
+      "side": 1,
+      "message": "Spaces around $data",
+      "revId": "cdb25f5a4a31c32a6c7445b0328fc6efb075f937",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_b9715bdf",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-04T13:24:43Z",
+      "side": 1,
+      "message": "There are still few inline comments like this using /**. I said earlier to use /* but even better is to convert all of them to use // like on line 75 for example.",
+      "revId": "cdb25f5a4a31c32a6c7445b0328fc6efb075f937",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_39854ba0",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-04T13:24:43Z",
+      "side": 1,
+      "message": "This can stay as it is, or convert it to /// (three slashes).",
+      "revId": "cdb25f5a4a31c32a6c7445b0328fc6efb075f937",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_995fbf44",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-04T13:24:43Z",
+      "side": 1,
+      "message": "Type is string, I think.",
+      "revId": "cdb25f5a4a31c32a6c7445b0328fc6efb075f937",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_395c6b4e",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-04T13:24:43Z",
+      "side": 1,
+      "message": "type is string representing (hopefully) json",
+      "revId": "cdb25f5a4a31c32a6c7445b0328fc6efb075f937",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_d97697d5",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-04T13:24:43Z",
+      "side": 1,
+      "message": "Should have spaces around +.",
+      "revId": "cdb25f5a4a31c32a6c7445b0328fc6efb075f937",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_f967d320",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-04T13:24:43Z",
+      "side": 1,
+      "message": "Stray line I guess? We currently don\u0027t run doxgen anyway.",
+      "revId": "cdb25f5a4a31c32a6c7445b0328fc6efb075f937",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_196def01",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-04T13:24:43Z",
+      "side": 1,
+      "message": "Matter of taste I guess but usually:\n/**\n * First line goes here",
+      "revId": "cdb25f5a4a31c32a6c7445b0328fc6efb075f937",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_19540f2a",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-04T13:24:43Z",
+      "side": 1,
+      "message": "perhaps use rtrim()? Or I would rather do:\n\n$prefix \u003d \"\\ *  - \";\n$authorList \u003d implode( \"\\n$prefix\", $authors );\n$authorList \u003d \" * Translators:\\n$prefix$authorList\";",
+      "revId": "cdb25f5a4a31c32a6c7445b0328fc6efb075f937",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_5959275c",
+        "filename": "tests/phpunit/ffs/AmdFFSTest.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-04T13:24:43Z",
+      "side": 1,
+      "message": "Trailing space",
+      "revId": "cdb25f5a4a31c32a6c7445b0328fc6efb075f937",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
