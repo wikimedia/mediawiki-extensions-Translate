@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2010-2013 Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -15,6 +14,10 @@
  * @since 2013-01-01
  */
 class YandexWebService extends TranslationWebService {
+	public function getType() {
+		return 'mt';
+	}
+
 	protected function mapCode( $code ) {
 		if ( $code === 'be-tarask' ) {
 			$code = 'be';
@@ -50,7 +53,7 @@ class YandexWebService extends TranslationWebService {
 		return $pairs;
 	}
 
-	protected function doRequest( $text, $from, $to ) {
+	protected function getQuery( $text, $from, $to ) {
 		if ( !isset( $this->config['key'] ) ) {
 			throw new TranslationWebServiceException( 'API key is not set' );
 		}
@@ -65,43 +68,30 @@ class YandexWebService extends TranslationWebService {
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
 
-		$options = array();
-		$options['timeout'] = $this->config['timeout'];
-		$options['method'] = 'POST';
-		$options['postData'] = array(
-			'key' => $this->config['key'],
-			'text' => $text,
-			'lang' => "$from-$to",
-			'format' => 'html',
-		);
-
-		$url = $this->config['url'];
-		$req = MWHttpRequest::factory( $url, $options );
-		wfProfileIn( 'TranslateWebServiceRequest-' . $service );
-		$status = $req->execute();
-		wfProfileOut( 'TranslateWebServiceRequest-' . $service );
-
-		if ( !$status->isOK() ) {
-			$error = $req->getContent();
-			// Most likely a timeout or other general error
-			throw new TranslationWebServiceException( "Http::get failed:\n" .
-					"* " . serialize( $error ) . "\n" .
-					"* " . serialize( $status )
+		return TranslationQuery::factory( $this->config['url'] )
+			->timeout( $this->config['timeout'] )
+			->postWithData(
+				array(
+					'key' => $this->config['key'],
+					'text' => $text,
+					'lang' => "$from-$to",
+					'format' => 'html',
+				)
 			);
-		}
+	}
 
-		$response = FormatJson::decode( $req->getContent() );
+	protected function parseResponse( TranslationQueryResponse $reply ) {
+		$body = $reply->getBody();
+		$response = FormatJson::decode( $body );
 		if ( !is_object( $response ) ) {
-			throw new TranslationWebServiceException( serialize( $req->getContent() ) );
+			throw new TranslationWebServiceException( 'Invalid json: ' . serialize( $body ) );
 		} elseif ( $response->code !== 200 ) {
-			$exception = "(HTTP {$response->code}) with ($service ($from|$to)): " .
-				$response->message;
-			throw new TranslationWebServiceException( $exception );
+			throw new TranslationWebServiceException( $response->message );
 		}
 
-		$sug = Sanitizer::decodeCharReferences( $response->text[0] );
-		$sug = $this->unwrapUntranslatable( $sug );
+		$text = Sanitizer::decodeCharReferences( $response->text[0] );
+		$text = $this->unwrapUntranslatable( $text );
 
-		return trim( $sug );
+		return trim( $text );
 	}
 }

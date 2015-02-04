@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2010-2013 Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -15,6 +14,10 @@
  * @since 2013-01-01
  */
 class MicrosoftWebService extends TranslationWebService {
+	public function getType() {
+		return 'mt';
+	}
+
 	protected function mapCode( $code ) {
 		$map = array(
 			'zh-hant' => 'zh-CHT',
@@ -71,16 +74,13 @@ class MicrosoftWebService extends TranslationWebService {
 		return $pairs;
 	}
 
-	protected function doRequest( $text, $from, $to ) {
+	protected function getQuery( $text, $from, $to ) {
 		if ( !isset( $this->config['key'] ) ) {
 			throw new TranslationWebServiceException( 'API key is not set' );
 		}
 
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
-
-		$options = array();
-		$options['timeout'] = $this->config['timeout'];
 
 		$params = array(
 			'text' => $text,
@@ -90,24 +90,18 @@ class MicrosoftWebService extends TranslationWebService {
 		);
 
 		$url = 'http://api.microsofttranslator.com/V2/Http.svc/Translate?';
-		$url .= wfArrayToCgi( $params );
+		return TranslationQuery::factory( $this->config['url'] )
+			->timeout( $this->config['timeout'] )
+			->queryParamaters( $params );
+	}
 
-		$req = MWHttpRequest::factory( $url, $options );
-		wfProfileIn( 'TranslateWebServiceRequest-' . $this->service );
-		$status = $req->execute();
-		wfProfileOut( 'TranslateWebServiceRequest-' . $this->service );
+	protected function parseResponse( TranslationQueryResponse $reply ) {
+		$body = $reply->getBody();
 
-		if ( !$status->isOK() ) {
-			$error = $req->getContent();
-			// Most likely a timeout or other general error
-			$exception = 'Http::get failed: ' . $url . serialize( $error ) . serialize( $status );
-			throw new TranslationWebServiceException( $exception );
-		}
-
-		$ret = $req->getContent();
-		$text = preg_replace( '~<string.*>(.*)</string>~', '\\1', $ret );
+		$text = preg_replace( '~<string.*>(.*)</string>~', '\\1', $body );
 		$text = Sanitizer::decodeCharReferences( $text );
+		$text = $this->unwrapUntranslatable( $text );
 
-		return $this->unwrapUntranslatable( $text );
+		return $text;
 	}
 }

@@ -284,6 +284,8 @@ $al['InOtherLanguagesAid'] = "$dir/translationaids/InOtherLanguagesAid.php";
 $al['InsertablesAid'] = "$dir/translationaids/InsertablesAid.php";
 $al['MachineTranslationAid'] = "$dir/translationaids/MachineTranslationAid.php";
 $al['MessageDefinitionAid'] = "$dir/translationaids/MessageDefinitionAid.php";
+$al['QueryAggregatorAwareTranslationAid'] =
+	"$dir/translationaids/QueryAggregatorAwareTranslationAid.php";
 $al['SupportAid'] = "$dir/translationaids/SupportAid.php";
 $al['TTMServerAid'] = "$dir/translationaids/TTMServerAid.php";
 $al['TranslationAid'] = "$dir/translationaids/TranslationAid.php";
@@ -300,9 +302,13 @@ $al['ApertiumWebService'] = "$dir/webservices/ApertiumWebService.php";
 $al['CxserverWebService'] = "$dir/webservices/CxserverWebService.php";
 $al['MicrosoftWebService'] = "$dir/webservices/MicrosoftWebService.php";
 $al['RemoteTTMServerWebService'] = "$dir/webservices/RemoteTTMServerWebService.php";
+$al['TranslationQuery'] = "$dir/webservices/TranslationQuery.php";
+$al['TranslationQueryResponse'] = "$dir/webservices/TranslationQueryResponse.php";
 $al['TranslationWebService'] = "$dir/webservices/TranslationWebService.php";
 $al['TranslationWebServiceException'] =
 	"$dir/webservices/TranslationWebServiceException.php";
+$al['QueryAggregator'] = "$dir/webservices/QueryAggregator.php";
+$al['QueryAggregatorAware'] = "$dir/webservices/QueryAggregatorAware.php";
 $al['YandexWebService'] = "$dir/webservices/YandexWebService.php";
 /**@}*/
 

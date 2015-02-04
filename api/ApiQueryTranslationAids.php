@@ -44,18 +44,36 @@ class ApiTranslationAids extends ApiBase {
 		$times = array();
 
 		$props = $params['prop'];
+		$aggregator = new QueryAggregator();
 
+		// Figure out the intersection of supported and requested aids
 		$types = $group->getTranslationAids();
-		$result = $this->getResult();
-		foreach ( $props as $type ) {
-			// Do not proceed if translation aid is not supported for this message group
-			if ( !isset( $types[$type] ) ) {
-				continue;
-			}
+		$props = array_intersect( $props, array_keys( $types ) );
 
-			$start = microtime( true );
+		$result = $this->getResult();
+
+		// Create list of aids, populate web services queries
+		$aids = array();
+		foreach ( $props as $type ) {
 			$class = $types[$type];
 			$obj = new $class( $group, $handle, $this );
+
+			if ( $obj instanceof QueryAggregatorAware ) {
+				$obj->setQueryAggregator( $aggregator );
+				$obj->populateQueries();
+			}
+
+			$aids[$type] = $obj;
+		}
+
+		// Execute all web service queries asynchronously to save time
+		$start = microtime( true );
+		$aggregator->run();
+		$times['__query_aggregator'] = round( microtime( true ) - $start, 3 );
+
+		// Construct the result data structure
+		foreach ( $aids as $type => $obj ) {
+			$start = microtime( true );
 
 			try {
 				$aid = $obj->getData();
