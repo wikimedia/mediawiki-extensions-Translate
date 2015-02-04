@@ -13,6 +13,10 @@
  * @since 2015.02
  */
 class CxserverWebService extends TranslationWebService {
+	public function getType() {
+		return 'mt';
+	}
+
 	protected function mapCode( $code ) {
 		return $code;
 	}
@@ -42,44 +46,30 @@ class CxserverWebService extends TranslationWebService {
 		return $pairs;
 	}
 
-	protected function doRequest( $text, $from, $to ) {
+	protected function getQuery( $text, $from, $to ) {
 		if ( !isset( $this->config['host'] ) ) {
 			throw new TranslationWebServiceException( 'Cxserver host not set' );
 		}
 
-		$service = $this->service;
-
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
-
-		$options = array();
-		$options['timeout'] = $this->config['timeout'];
-		$options['method'] = 'POST';
-		$options['postData'] = $text;
-
 		$url = $this->config['host'] . "/mt/$from/$to";
-		$req = MWHttpRequest::factory( $url, $options );
-		wfProfileIn( 'TranslateWebServiceRequest-' . $service );
-		$status = $req->execute();
-		wfProfileOut( 'TranslateWebServiceRequest-' . $service );
 
-		if ( !$status->isOK() ) {
-			$error = $req->getContent();
-			// Most likely a timeout or other general error
-			throw new TranslationWebServiceException( "Http::get failed:\n" .
-					"* " . serialize( $error ) . "\n" .
-					"* " . serialize( $status )
-			);
-		}
+		return TranslationQuery::factory( $url )
+			->timeout( $this->config['timeout'] )
+			->postWithData( $text );
+	}
 
-		$response = FormatJson::decode( $req->getContent() );
+	protected function parseResponse( TranslationQueryResponse $reply ) {
+		$body = $reply->getBody();
+		$response = FormatJson::decode( $body );
 		if ( !is_object( $response ) ) {
-			throw new TranslationWebServiceException( serialize( $req->getContent() ) );
+			throw new TranslationWebServiceException( 'Invalid json: ' . serialize( $body ) );
 		}
 
-		$sug = preg_replace( '~^<div>(.*)</div>$~', '\1', $response->contents );
-		$sug = $this->unwrapUntranslatable( $sug );
+		$text = preg_replace( '~^<div>(.*)</div>$~', '\1', $response->contents );
+		$text = $this->unwrapUntranslatable( $text );
 
-		return trim( $sug );
+		return trim( $text );
 	}
 }
