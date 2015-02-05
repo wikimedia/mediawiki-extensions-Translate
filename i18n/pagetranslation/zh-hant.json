@@ -192,6 +192,7 @@
 	"pp-pagename-placeholder": "輸入頁面名稱",
 	"pp-prepare-button-label": "準備",
 	"pp-save-button-label": "儲存",
+	"pp-cancel-button-label": "取消",
 	"pp-save-message": "頁面已儲存。 您可 [$1] 編輯該頁面。",
 	"pp-prepare-message": "已準備好翻譯用頁面。 請參考下方差異。 點選 \"{{int:pp-save-button-label}}\" 確認!",
 	"pp-already-prepared-message": "該頁面似乎已有翻譯用頁面。 且與先前的版本無任何差異。",
