@@ -29,7 +29,7 @@ class SpecialTranslationStash extends TranslateSpecialPage {
 		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 
 		if ( !$this->hasPermissionToUse() ) {
-			if ( $this->getUser()->isLoggedIn() ) {
+			if ( $this->getUser()->isLoggedIn() && $wgTranslateSecondaryPermissionUrl ) {
 				$out->redirect(
 					Title::newFromText( $wgTranslateSecondaryPermissionUrl )->getLocalUrl()
 				);
