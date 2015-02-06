@@ -8,7 +8,7 @@ BASIC:
 
 FILES:
   class: JsonFFS
-  sourcePattern: %GROUPROOT%/mediawiki-extensions/extensions/ExampleJsonExtension/i18n/%CODE%.json
+  sourcePattern: "%GROUPROOT%/mediawiki-extensions/extensions/ExampleJsonExtension/i18n/%CODE%.json"
 
 CHECKER:
   class: MediaWikiMessageChecker

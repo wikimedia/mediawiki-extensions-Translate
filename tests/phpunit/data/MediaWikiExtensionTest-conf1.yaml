@@ -8,7 +8,7 @@ BASIC:
 
 FILES:
   class: MediaWikiExtensionFFS
-  sourcePattern: %GROUPROOT%/mediawiki-extensions/extensions/ExampleExtension/ExampleExtension.i18n.php
+  sourcePattern: "%GROUPROOT%/mediawiki-extensions/extensions/ExampleExtension/ExampleExtension.i18n.php"
 
 CHECKER:
   class: MediaWikiMessageChecker
