@@ -194,6 +194,7 @@
 	"pp-pagename-placeholder": "Wprowadź nazwę strony",
 	"pp-prepare-button-label": "Przygotuj",
 	"pp-save-button-label": "Zapisz",
+	"pp-cancel-button-label": "Anuluj",
 	"pp-save-message": "Strona została zapisana. Możesz ją [$1 edytować].",
 	"pp-already-prepared-message": "Wydaje się, że ta strona została już przygotowana do tłumaczenia. Nie ma żadnych zmian w porównaniu z poprzednią wersją.",
 	"pp-pagename-missing": "Podaj nazwę strony.",
