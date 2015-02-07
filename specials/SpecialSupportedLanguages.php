@@ -42,15 +42,19 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		// Do not add html content to OutputPage before this block of code!
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$cachekey = wfMemcKey( 'translate-supportedlanguages', $lang->getCode() );
-		$data = $cache->get( $cachekey );
-		if ( !$this->purge && is_string( $data ) ) {
-			TranslateUtils::addSpecialHelpLink(
-				$out,
-				'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators'
-			);
-			$out->addHtml( $data );
+		if ( $this->purge ) {
+			$cache->delete( $cachekey );
+		} else {
+			$data = $cache->get( $cachekey );
+			if ( is_string( $data ) ) {
+				TranslateUtils::addSpecialHelpLink(
+					$out,
+					'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators'
+				);
+				$out->addHtml( $data );
 
-			return;
+				return;
+			}
 		}
 
 		TranslateUtils::addSpecialHelpLink(
@@ -163,9 +167,13 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$cachekey = wfMemcKey( 'translate-supportedlanguages-language-cloud' );
-		$data = $cache->get( $cachekey );
-		if ( !$this->purge && is_array( $data ) ) {
-			return $data;
+		if ( $this->purge ) {
+			$cache->delete( $cachekey );
+		} else {
+			$data = $cache->get( $cachekey );
+			if ( is_array( $data ) ) {
+				return $data;
+			}
 		}
 
 		$dbr = wfGetDB( DB_SLAVE );
@@ -196,9 +204,13 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$cachekey = wfMemcKey( 'translate-supportedlanguages-translator-list' );
-		$data = $cache->get( $cachekey );
-		if ( !$this->purge && is_array( $data ) ) {
-			return $data;
+		if ( $this->purge ) {
+			$cache->delete( $cachekey );
+		} else {
+			$data = $cache->get( $cachekey );
+			if ( is_array( $data ) ) {
+				return $data;
+			}
 		}
 
 		$dbr = wfGetDB( DB_SLAVE );
