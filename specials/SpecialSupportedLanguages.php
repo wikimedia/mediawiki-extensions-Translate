@@ -181,9 +181,10 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		$fields = array( 'substring_index(rc_title, \'/\', -1) as lang', 'count(*) as count' );
 		$timestamp = $dbr->timestamp( wfTimeStamp( TS_UNIX ) - 60 * 60 * 24 * $this->period );
 		$conds = array(
-			'rc_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
+			# Without the quotes rc_timestamp index wont be used and this query is much slower
+			"rc_timestamp > '$timestamp'",
 			'rc_namespace' => $wgTranslateMessageNamespaces,
-			'rc_timestamp > ' . $timestamp,
+			'rc_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
 		);
 		$options = array( 'GROUP BY' => 'lang', 'HAVING' => 'count > 20' );
 
