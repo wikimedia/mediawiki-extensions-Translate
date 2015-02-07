@@ -33,6 +33,7 @@ $GLOBALS['wgExtensionCredits']['specialpage'][] = array(
 	),
 	'descriptionmsg' => 'translate-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Translate',
+	'license-name' => 'GPL-2.0+',
 );
 
 /**
