@@ -39,24 +39,6 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		$this->setHeaders();
 		$out->addModules( 'ext.translate.special.supportedlanguages' );
 
-		// Do not add html content to OutputPage before this block of code!
-		$cache = wfGetCache( CACHE_ANYTHING );
-		$cachekey = wfMemcKey( 'translate-supportedlanguages', $lang->getCode() );
-		if ( $this->purge ) {
-			$cache->delete( $cachekey );
-		} else {
-			$data = $cache->get( $cachekey );
-			if ( is_string( $data ) ) {
-				TranslateUtils::addSpecialHelpLink(
-					$out,
-					'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators'
-				);
-				$out->addHtml( $data );
-
-				return;
-			}
-		}
-
 		TranslateUtils::addSpecialHelpLink(
 			$out,
 			'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators'
@@ -70,32 +52,35 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 			return;
 		}
 
-		$out->addWikiMsg( 'supportedlanguages-colorlegend', $this->getColorLegend() );
 		$out->addWikiMsg( 'supportedlanguages-localsummary' );
 
-		// Check if CLDR extension has been installed.
-		$cldrInstalled = class_exists( 'LanguageNames' );
-		$locals = Language::fetchLanguageNames( $lang->getCode(), 'all' );
-		$natives = Language::fetchLanguageNames( null, 'all' );
+		$names = Language::fetchLanguageNames( null, 'all' );
+		$languages = $this->languageCloud();
+		// There might be all sorts of subpages which are not languages
+		$languages = array_intersect_key( $languages, $names );
 
-		$natives = Language::fetchLanguageNames();
-		ksort( $natives );
+		$this->outputLanguageCloud( $languages, $names );
+		$out->addWikiMsg( 'supportedlanguages-count', $lang->formatNum( count( $languages ) ) );
 
-		$this->outputLanguageCloud( $natives );
+		if ( $par && Language::isKnownLanguageTag( $par ) ) {
+			$code = $par;
 
-		if ( !defined( 'NS_PORTAL' ) ) {
-			$users = $this->fetchTranslatorsAuto();
-		} else {
-			$users = $this->fetchTranslatorsPortal( $natives );
+			$out->addWikiMsg( 'supportedlanguages-colorlegend', $this->getColorLegend() );
+
+			$users = $this->fetchTranslators( $code );
+
+			global $wgTranslateAuthorBlacklist;
+			$users = $this->filterUsers( $users, $code, $wgTranslateAuthorBlacklist );
+			$this->preQueryUsers( $users );
+			$this->showLanguage( $code, $users );
 		}
+	}
 
-		if ( $users === array() ) {
-			return;
-		}
+	protected function showLanguage( $code, $users ) {
+		$out = $this->getOutput();
+		$lang = $this->getLanguage();
 
-		$this->preQueryUsers( $users );
-
-		$usernames = array_keys( call_user_func_array( 'array_merge', array_values( $users ) ) );
+		$usernames = array_keys( $users );
 		$userStats = $this->getUserStats( $usernames );
 
 		// Information to be used inside the foreach loop.
@@ -104,65 +89,47 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
 		$linkInfo['stats']['msg'] = $this->msg( 'languagestats' )->escaped();
 
-		foreach ( array_keys( $natives ) as $code ) {
-			if ( !isset( $users[$code] ) ) {
-				continue;
-			}
+		$local = Language::fetchLanguageName( $code, $lang->getCode(), 'all' );
+		$native = Language::fetchLanguageName( $code, null, 'all' );
 
-			// If CLDR is installed, add localised header and link title.
-			if ( $cldrInstalled ) {
-				$headerText = $this->msg( 'supportedlanguages-portallink' )
-					->params( $code, $locals[$code], $natives[$code] )->escaped();
-			} else {
-				// No CLDR, so a less localised header and link title.
-				$headerText = $this->msg( 'supportedlanguages-portallink-nocldr' )
-					->params( $code, $natives[$code] )->escaped();
-			}
 
-			$headerText = htmlspecialchars( $headerText );
-
-			$out->addHtml( Html::openElement( 'h2', array( 'id' => $code ) ) );
-			if ( defined( 'NS_PORTAL' ) ) {
-				$portalTitle = Title::makeTitleSafe( NS_PORTAL, $code );
-				$out->addHtml( Linker::linkKnown( $portalTitle, $headerText ) );
-			} else {
-				$out->addHtml( $headerText );
-			}
-
-			$out->addHTML( "</h2>" );
-
-			// Add useful links for language stats and recent changes for the language.
-			$links = array();
-			$links[] = Linker::link(
-				$linkInfo['stats']['title'],
-				$linkInfo['stats']['msg'],
-				array(),
-				array(
-					'code' => $code,
-					'suppresscomplete' => '1'
-				),
-				array( 'known', 'noclasses' )
-			);
-			$links[] = Linker::link(
-				$linkInfo['rc']['title'],
-				$linkInfo['rc']['msg'],
-				array(),
-				array(
-					'translations' => 'only',
-					'trailer' => "/" . $code
-				),
-				array( 'known', 'noclasses' )
-			);
-			$linkList = $lang->listToText( $links );
-
-			$out->addHTML( "<p>" . $linkList . "</p>\n" );
-			$this->makeUserList( $users[$code], $userStats );
+		if ( $local !== $native ) {
+			$headerText = $this->msg( 'supportedlanguages-portallink' )
+				->params( $code, $local, $native )->escaped();
+		} else {
+			// No CLDR, so a less localised header and link title.
+			$headerText = $this->msg( 'supportedlanguages-portallink-nocldr' )
+				->params( $code, $native )->escaped();
 		}
 
-		$out->addHtml( Html::element( 'hr' ) );
-		$out->addWikiMsg( 'supportedlanguages-count', $lang->formatNum( count( $users ) ) );
+		$out->addHtml( Html::rawElement( 'h2', array( 'id' => $code ), $headerText ) );
 
-		$cache->set( $cachekey, $out->getHTML(), 3600 );
+		// Add useful links for language stats and recent changes for the language.
+		$links = array();
+		$links[] = Linker::link(
+			$linkInfo['stats']['title'],
+			$linkInfo['stats']['msg'],
+			array(),
+			array(
+				'code' => $code,
+				'suppresscomplete' => '1'
+			),
+			array( 'known', 'noclasses' )
+		);
+		$links[] = Linker::link(
+			$linkInfo['rc']['title'],
+			$linkInfo['rc']['msg'],
+			array(),
+			array(
+				'translations' => 'only',
+				'trailer' => "/" . $code
+			),
+			array( 'known', 'noclasses' )
+		);
+		$linkList = $lang->listToText( $links );
+
+		$out->addHTML( "<p>" . $linkList . "</p>\n" );
+		$this->makeUserList( $users, $userStats );
 	}
 
 	protected function languageCloud() {
@@ -203,11 +170,11 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		return $data;
 	}
 
-	protected function fetchTranslatorsAuto() {
+	protected function fetchTranslators( $code ) {
 		global $wgTranslateMessageNamespaces;
 
 		$cache = wfGetCache( CACHE_ANYTHING );
-		$cachekey = wfMemcKey( 'translate-supportedlanguages-translator-list' );
+		$cachekey = wfMemcKey( 'translate-supportedlanguages-translator-list', $code );
 		if ( $this->purge ) {
 			$cache->delete( $cachekey );
 		} else {
@@ -221,21 +188,20 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		$tables = array( 'page', 'revision' );
 		$fields = array(
 			'rev_user_text',
-			'substring_index(page_title, \'/\', -1) as lang',
 			'count(page_id) as count'
 		);
 		$conds = array(
-			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
+			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $code ),
 			'page_namespace' => $wgTranslateMessageNamespaces,
 			'page_id=rev_page',
 		);
-		$options = array( 'GROUP BY' => 'rev_user_text, lang' );
+		$options = array( 'GROUP BY' => 'rev_user_text' );
 
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
 
 		$data = array();
 		foreach ( $res as $row ) {
-			$data[$row->lang][$row->rev_user_text] = $row->count;
+			$data[$row->rev_user_text] = $row->count;
 		}
 
 		$cache->set( $cachekey, $data, 3600 );
@@ -243,69 +209,44 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		return $data;
 	}
 
-	public function fetchTranslatorsPortal( $natives ) {
-		$titles = array();
-		foreach ( $natives as $code => $_ ) {
-			$titles[] = Title::capitalize( $code, NS_PORTAL ) . '/translators';
-		}
+	protected function filterUsers( array $users, $code, $blacklist ) {
+		foreach ( array_keys( $users ) as $username ) {
+			# We do not know the group
+			$hash = "#;$code;$username";
 
-		$dbr = wfGetDB( DB_SLAVE );
-		$tables = array( 'page', 'revision', 'text' );
-		$vars = array_merge(
-			Revision::selectTextFields(),
-			Revision::selectPageFields(),
-			Revision::selectFields()
-		);
-		$conds = array(
-			'page_latest = rev_id',
-			'rev_text_id = old_id',
-			'page_namespace' => NS_PORTAL,
-			'page_title' => $titles,
-		);
+			$blacklisted = false;
+			foreach ( $blacklist as $rule ) {
+				list( $type, $regex ) = $rule;
 
-		$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
-
-		$users = array();
-		$lc = LinkCache::singleton();
-
-		foreach ( $res as $row ) {
-			$title = Title::newFromRow( $row );
-			// Does not contain page_content_model, but should not matter
-			$lc->addGoodLinkObjFromRow( $title, $row );
-
-			$rev = Revision::newFromRow( $row );
-			$text = ContentHandler::getContentText( $rev->getContent() );
-			$code = strtolower( preg_replace( '!/translators$!', '', $row->page_title ) );
-
-			preg_match_all( '!{{[Uu]ser\|([^}|]+)!', $text, $matches, PREG_SET_ORDER );
-			foreach ( $matches as $match ) {
-				$user = Title::capitalize( $match[1], NS_USER );
-				if ( !isset( $users[$code] ) ) {
-					$users[$code] = array();
+				if ( preg_match( $regex, $hash ) ) {
+					if ( $type === 'white' ) {
+						$blacklisted = false;
+						break;
+					} else {
+						$blacklisted = true;
+					}
 				}
-				$users[$code][strtr( $user, '_', ' ' )] = -1;
+			}
+
+			if ( $blacklisted ) {
+				unset( $users[$username] );
 			}
 		}
 
 		return $users;
 	}
 
-	protected function outputLanguageCloud( $names ) {
+	protected function outputLanguageCloud( array $languages, array $names ) {
 		$out = $this->getOutput();
 
-		$langs = $this->languageCloud();
 		$out->addHtml( '<div class="tagcloud autonym">' );
-		$langs = $this->shuffle_assoc( $langs );
-		foreach ( $langs as $k => $v ) {
-			if ( !isset( $names[$k] ) ) {
-				// All sorts of incorrect languages may turn up
-				continue;
-			}
+		$langs = $this->shuffle_assoc( $languages );
+		foreach ( $languages as $k => $v ) {
 			$name = $names[$k];
 			$size = round( log( $v ) * 20 ) + 10;
 
 			$params = array(
-				'href' => "#$k",
+				'href' => $this->getPageTitle( $k )->getLocalUrl(),
 				'class' => 'tag',
 				'style' => "font-size:$size%",
 				'lang' => $k,
@@ -438,12 +379,10 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 
 	protected function preQueryUsers( $users ) {
 		$lb = new LinkBatch;
-		foreach ( $users as $translators ) {
-			foreach ( $translators as $user => $count ) {
-				$user = Title::capitalize( $user, NS_USER );
-				$lb->add( NS_USER, $user );
-				$lb->add( NS_USER_TALK, $user );
-			}
+		foreach ( $users as $user => $count ) {
+			$user = Title::capitalize( $user, NS_USER );
+			$lb->add( NS_USER, $user );
+			$lb->add( NS_USER_TALK, $user );
 		}
 		$lb->execute();
 	}
