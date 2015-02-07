@@ -265,7 +265,6 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__ );
 
 		$users = array();
-		$lb = new LinkBatch;
 		$lc = LinkCache::singleton();
 
 		foreach ( $res as $row ) {
@@ -280,16 +279,12 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 			preg_match_all( '!{{[Uu]ser\|([^}|]+)!', $text, $matches, PREG_SET_ORDER );
 			foreach ( $matches as $match ) {
 				$user = Title::capitalize( $match[1], NS_USER );
-				$lb->add( NS_USER, $user );
-				$lb->add( NS_USER_TALK, $user );
 				if ( !isset( $users[$code] ) ) {
 					$users[$code] = array();
 				}
 				$users[$code][strtr( $user, '_', ' ' )] = -1;
 			}
 		}
-
-		$lb->execute();
 
 		return $users;
 	}
