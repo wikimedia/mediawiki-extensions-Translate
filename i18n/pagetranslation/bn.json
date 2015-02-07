@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Aftab1995",
-			"Bellayet"
+			"Bellayet",
+			"Aftabuzzaman"
 		]
 	},
 	"pagetranslation": "পাতা অনুবাদ",
@@ -31,5 +32,6 @@
 	"pm-savepages-button-label": "সংরক্ষণ",
 	"pm-cancel-button-label": "বাতিল",
 	"pm-pagename-placeholder": "পাতার নাম প্রবেশ করান",
-	"pm-langcode-placeholder": "ভাষা কোড"
+	"pm-langcode-placeholder": "ভাষা কোড",
+	"pp-cancel-button-label": "বাতিল"
 }
