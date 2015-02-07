@@ -113,6 +113,12 @@ class SimpleFFS implements FFS {
 			throw new MWException( "Unable to read file $filename." );
 		}
 
+		if ( !StringUtils::isUtf8( $input ) ) {
+			throw new MWException( "Contents of $filename are not valid utf-8." );
+		}
+
+		$input = Utf8Normal::cleanUp( $input );
+
 		return $this->readFromVariable( $input );
 	}
 
