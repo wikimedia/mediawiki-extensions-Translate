@@ -179,7 +179,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = array( 'recentchanges' );
 		$fields = array( 'substring_index(rc_title, \'/\', -1) as lang', 'count(*) as count' );
-		$timestamp = $dbr->timestamp( TS_DB, wfTimeStamp( TS_UNIX ) - 60 * 60 * 24 * $this->period );
+		$timestamp = $dbr->timestamp( wfTimeStamp( TS_UNIX ) - 60 * 60 * 24 * $this->period );
 		$conds = array(
 			'rc_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
 			'rc_namespace' => $wgTranslateMessageNamespaces,
