@@ -249,7 +249,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		$tables = array( 'page', 'revision', 'text' );
 		$vars = array_merge(
 			Revision::selectTextFields(),
-			array( 'page_title', 'page_namespace' ),
+			Revision::selectPageFields(),
 			Revision::selectFields()
 		);
 		$conds = array(
@@ -263,9 +263,14 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 
 		$users = array();
 		$lb = new LinkBatch;
+		$lc = LinkCache::singleton();
 
 		foreach ( $res as $row ) {
-			$rev = new Revision( $row );
+			$title = Title::newFromRow( $row );
+			// Does not contain page_content_model, but should not matter
+			$lc->addGoodLinkObjFromRow( $title, $row );
+
+			$rev = Revision::newFromRow( $row );
 			$text = ContentHandler::getContentText( $rev->getContent() );
 			$code = strtolower( preg_replace( '!/translators$!', '', $row->page_title ) );
 
