@@ -71,17 +71,8 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 
 		// Check if CLDR extension has been installed.
 		$cldrInstalled = class_exists( 'LanguageNames' );
-
-		$locals = array();
-		if ( $cldrInstalled ) {
-			$locals = LanguageNames::getNames( $lang->getCode(),
-				LanguageNames::FALLBACK_NORMAL,
-				LanguageNames::LIST_MW_AND_CLDR
-			);
-		}
-
-		$natives = Language::fetchLanguageNames();
-		ksort( $natives );
+		$locals = Language::fetchLanguageNames( $lang->getCode(), 'all' );
+		$natives = Language::fetchLanguageNames( null, 'all' );
 
 		$this->outputLanguageCloud( $natives );
 
