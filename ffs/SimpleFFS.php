@@ -100,7 +100,7 @@ class SimpleFFS implements FFS {
 	 *
 	 * @param string $code Language code.
 	 * @return array|bool False if the file does not exist
-	 * @throws MWException if the file appears to exist, but cannot be read
+	 * @throws MWException if the file is not readable or has bad encoding
 	 */
 	public function read( $code ) {
 		if ( !$this->exists( $code ) ) {
@@ -112,6 +112,12 @@ class SimpleFFS implements FFS {
 		if ( $input === false ) {
 			throw new MWException( "Unable to read file $filename." );
 		}
+
+		if ( !StringUtils::isUtf8( $input ) ) {
+			throw new MWException( "Contents of $filename are not valid utf-8." );
+		}
+
+		$input = UtfNormal::cleanUp( $input );
 
 		return $this->readFromVariable( $input );
 	}
