@@ -41,7 +41,7 @@ class SpecialLanguageStats extends TranslateSpecialPage {
 	 * bailing out.
 	 * @var int
 	 */
-	protected $timelimit = 8;
+	protected $timelimit = 2;
 
 	/**
 	 * Flag to set if nothing to show.
