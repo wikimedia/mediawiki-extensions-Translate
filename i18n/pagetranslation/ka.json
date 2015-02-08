@@ -3,7 +3,8 @@
 		"authors": [
 			"BRUTE",
 			"David1010",
-			"Temuri rajavi"
+			"Temuri rajavi",
+			"MIKHEIL"
 		]
 	},
 	"pagetranslation": "გვერდის თარგმანი",
@@ -44,5 +45,6 @@
 	"pt-deletepage-reason": "მიზეზი:",
 	"pt-deletepage-subpages": "ყველა ქვეგვერდის წაშლა",
 	"pt-deletepage-list-translation": "სათარგმნი გვერდები",
-	"pt-deletepage-list-other": "სხვა ქვეგვერდები"
+	"pt-deletepage-list-other": "სხვა ქვეგვერდები",
+	"pp-cancel-button-label": "გაუქმება"
 }
