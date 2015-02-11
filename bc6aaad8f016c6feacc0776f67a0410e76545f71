@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_7775d5c7",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-02-11T20:36:43Z",
+      "side": 1,
+      "message": "How big will this inserts be? 20k rows? Will you run into the max_packet size limit or is that not likely?",
+      "revId": "bc6aaad8f016c6feacc0776f67a0410e76545f71",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
