@@ -29,6 +29,8 @@ class MessageGroupStats {
 	protected static $timeStart = null;
 	/// @var float
 	protected static $limit = null;
+	/// @var array
+	protected static $updates = array();
 
 	/**
 	 * Set the maximum time statistics are calculated.
@@ -83,6 +85,8 @@ class MessageGroupStats {
 			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code );
 		}
 
+		self::queueUpdates();
+
 		return $stats[$id][$code];
 	}
 
@@ -98,6 +102,8 @@ class MessageGroupStats {
 			$flattened[$group] = $languages[$code];
 		}
 
+		self::queueUpdates();
+
 		return $flattened;
 	}
 
@@ -112,6 +118,8 @@ class MessageGroupStats {
 			return array();
 		}
 		$stats = self::forGroupInternal( $group );
+
+		self::queueUpdates();
 
 		return $stats[$id];
 	}
@@ -129,6 +137,8 @@ class MessageGroupStats {
 			$stats = self::forGroupInternal( $g, $stats );
 		}
 
+		self::queueUpdates();
+
 		return $stats;
 	}
 
@@ -142,28 +152,9 @@ class MessageGroupStats {
 		$code = $handle->getCode();
 		$ids = $handle->getGroupIds();
 		$dbw = wfGetDB( DB_MASTER );
-
-		$locked = false;
-		// Try to avoid deadlocks with duplicated deletes where there is no row
-		// @note: this only helps in auto-commit mode (which job runners use)
-		if ( !$dbw->getFlag( DBO_TRX ) && count( $ids ) == 1 ) {
-			$key = __CLASS__ . ":modify:{$ids[0]}";
-			$locked = $dbw->lock( $key, __METHOD__, 1 );
-			if ( !$locked ) {
-				return true; // raced out
-			}
-		}
-
 		$conds = array( 'tgs_group' => $ids, 'tgs_lang' => $code );
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
 		wfDebugLog( 'messagegroupstats', "Cleared " . serialize( $conds ) );
-
-		if ( $locked ) {
-			$dbw->unlock( $key, __METHOD__ );
-		}
-
-		// Hooks must return value
-		return true;
 	}
 
 	public static function clearGroup( $id ) {
@@ -362,7 +353,7 @@ class MessageGroupStats {
 			return $aggregates;
 		}
 
-		$data = array(
+		self::$updates[] = array(
 			'tgs_group' => $id,
 			'tgs_lang' => $code,
 			'tgs_total' => $aggregates[self::TOTAL],
@@ -370,29 +361,6 @@ class MessageGroupStats {
 			'tgs_fuzzy' => $aggregates[self::FUZZY],
 			'tgs_proofread' => $aggregates[self::PROOFREAD],
 		);
-
-		$dbw = wfGetDB( DB_MASTER );
-		// Try to avoid deadlocks with S->X lock upgrades in MySQL
-		// @note: this only helps in auto-commit mode (which job runners use)
-		$key = __CLASS__ . ":modify:$id";
-		$locked = false;
-		if ( !$dbw->getFlag( DBO_TRX ) ) {
-			$locked = $dbw->lock( $key, __METHOD__, 1 );
-			if ( !$locked ) {
-				return $aggregates; // raced out
-			}
-		}
-
-		$dbw->insert(
-			self::TABLE,
-			$data,
-			__METHOD__,
-			array( 'IGNORE' )
-		);
-
-		if ( $locked ) {
-			$dbw->unlock( $key, __METHOD__ );
-		}
 
 		return $aggregates;
 	}
@@ -467,5 +435,45 @@ class MessageGroupStats {
 		$number = intval( $number );
 
 		return $number < 0 ? "$number" : "+$number";
+	}
+
+	protected static function queueUpdates() {
+		if ( !count( self::$updates ) ) {
+			return;
+		}
+
+		$dbw = wfGetDB( DB_MASTER );
+		$table = self::TABLE;
+		$updates = &self::$updates;
+
+		self::runWithLock(
+			$dbw,
+			'updates',
+			__METHOD__,
+			function ( $dbw, $method ) use( $table, &$updates ) {
+				$dbw->insert(
+					$table,
+					$updates,
+					$method,
+					array( 'IGNORE' )
+				);
+
+				$updates = array();
+			}
+		);
+	}
+
+	protected static function runWithLock( $dbw, $key, $method, $callback ) {
+		$dbw->onTransactionIdle( function () use ( $dbw, $key, $method, $callback ) {
+			$key = 'MessageGroupStats:' . $key;
+			$locked = $dbw->lock( $key, $method, 1 );
+			if ( !$locked ) {
+				return; // Raced out
+			}
+
+			call_user_func( $callback, $dbw, $method );
+
+			$dbw->unlock( $key, $method );
+		} );
 	}
 }
