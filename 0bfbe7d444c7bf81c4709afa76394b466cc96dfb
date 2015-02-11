@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_977e71e0",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-02-11T20:14:45Z",
+      "side": 1,
+      "message": "You don\u0027t have to check getFlag() if this runs with the onTransactionIdle() hook, since DBO_TRX is always off for them.",
+      "revId": "0bfbe7d444c7bf81c4709afa76394b466cc96dfb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
