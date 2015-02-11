@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_20b076f0",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-11T16:49:30Z",
+      "side": 1,
+      "message": "Stupid mistake here removes the shuffling. I think it\u0027s better that way as the language cloud plays more important role for navigation now. I can remove the dead code in follow-up.",
+      "revId": "48c3a377a8354adce70ff965f07a3bbdde4f7b63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
