@@ -16,6 +16,24 @@
       "revId": "bc6aaad8f016c6feacc0776f67a0410e76545f71",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_172a618f",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-11T20:51:54Z",
+      "side": 1,
+      "message": "I think it is unlikely, never happened (to my knowledge on twn). While there can be thousands of rows, the data is just two strings (\u003c300 bytes) and four numbers.",
+      "parentUuid": "6e7c4fa4_7775d5c7",
+      "revId": "bc6aaad8f016c6feacc0776f67a0410e76545f71",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
