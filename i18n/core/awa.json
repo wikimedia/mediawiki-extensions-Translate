@@ -7,5 +7,13 @@
 	"translate-edit-in-other-languages": "सनेशा दुसर भाषा मा",
 	"translate-sidebar-alltrans": "दुसर भाषा में",
 	"languagestats": "भाषा कय आकलन",
+	"languagestats-summary": "इ पन्ना भाषा कय कुल सन्देश समुह कय अनुवाद आकलन देखावत है ।",
+	"languagestats-stats-for": "$1 ($2) कय खत्तीर अनुवाद आकँडा।",
+	"languagestats-recenttranslations": "नँवा अनुवाद",
+	"translate-language-code": "भाषा कय कोड",
+	"translate-language-code-field-name": "भाषा कय कोड:",
+	"supportedlanguages": "कुल समर्थित भाषा",
+	"supportedlanguages-recenttranslations": "नँवा अनुवाद",
+	"supportedlanguages-count": "कुल $1 {{PLURAL:$1|भाषा|भाषा}} ।",
 	"tux-editor-in-other-languages": "दुसर भाषा में"
 }
