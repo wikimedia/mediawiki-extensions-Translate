@@ -12,7 +12,8 @@
 			"WikiPhoenix",
 			"Lokal Profil",
 			"McDutchie",
-			"Skärminspelning"
+			"Skärminspelning",
+			"Jenniesarina"
 		]
 	},
 	"pagetranslation": "Sidöversättning",
@@ -196,6 +197,7 @@
 	"pp-pagename-placeholder": "Ange sidans namn",
 	"pp-prepare-button-label": "Förbered",
 	"pp-save-button-label": "Spara",
+	"pp-cancel-button-label": "Avbryt",
 	"pp-save-message": "Sidan har sparats. Du kan [$1 redigera] den.",
 	"pp-prepare-message": "Sidan har förberetts för översättning. Se skillnaden nedan. Klicka på knappen \"{{int:pp-Spara-knappen-etikett}}\" om det är okej!",
 	"pp-already-prepared-message": "Det verkar sidan redan har förberetts för översättning. Det finns inga ändringar jämfört med den tidigare versionen.",

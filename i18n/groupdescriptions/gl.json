@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Toliño",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Elisardojm"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] é un xogo de estratexia por quendas",
@@ -39,7 +40,7 @@
 	"translate-group-desc-semantic": "Grupo de mensaxes meta que contén todas as mensaxes das extensións de [https://semantic-mediawiki.org/ Semantic MediaWiki]",
 	"translate-group-desc-translatablepages": "Todas as páxinas que se poden traducir",
 	"translate-group-desc-translate": "Grupo de mensaxes que contén todas as mensaxes da extensión [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate] de MediaWiki; bótelle unha ollada primeiro ao [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glosario]",
-	"translate-group-desc-tsint": "Un grupo de mensaxes para [[Translating:Intuition|Intuition]], o sistema i18n das ferramentas do [//tools.wmflabs.org/ Toolserver] (<span class=\"plainlinks\">[[Translating talk:Intuition|soporte]]</span>)",
+	"translate-group-desc-tsint": "Un grupo de mensaxes para [[Translating:Intuition|Intuition]], o sistema i18n das ferramentas do [//tools.wmflabs.org/Wikimedia Tool Labs] (<span class=\"plainlinks\">[[Translating talk:Intuition|soporte]]</span>)",
 	"translate-group-desc-universallanguageselector": "Grupo de mensaxes que contén todas as mensaxes da extensión [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector UniversalLanguageSelector] (ULS) de MediaWiki e os paquetes de software relacionados",
 	"translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]] é unha ferramenta para cargar ficheiros á Wikimedia Commons e aos outros proxectos da Wikimedia",
 	"translate-group-desc-visualeditor": "Grupo de mensaxes que contén todas as mensaxes da extensión [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:VisualEditor VisualEditor] de MediaWiki e os paquetes de software relacionados",
