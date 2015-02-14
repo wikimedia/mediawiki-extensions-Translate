@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_55c3da8b",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 941,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-02-14T12:06:27Z",
+      "side": 1,
+      "message": "Instead of many levels of nesting, I prefer early returns with negated conditions:\n\nif ( self::$jobQueueRunning ) {\n   return;\n}",
+      "revId": "c1457663184afd2c6fe7600b7a26750e7287716c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
