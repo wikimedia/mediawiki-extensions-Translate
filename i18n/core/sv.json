@@ -19,7 +19,8 @@
 			"Skalman",
 			"Tobulos1",
 			"WikiPhoenix",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Marfuas"
 		]
 	},
 	"translate": "Översätt",
@@ -356,7 +357,7 @@
 	"tux-proofread-edit-label": "Redigera",
 	"tux-editor-page-mode": "Sida",
 	"tux-editor-outdated-warning": "Denna översättning kan behöva uppdateras.",
-	"tux-editor-outdated-warning-diff-link": "Visa skillnader",
+	"tux-editor-outdated-warning-diff-link": "Visa differenser",
 	"tux-editor-doc-editor-placeholder": "Meddelandedokumentation",
 	"tux-editor-doc-editor-save": "Spara dokumentation",
 	"tux-editor-doc-editor-cancel": "Avbryt",

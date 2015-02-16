@@ -179,5 +179,6 @@
 	"pagepreparation": "Pagina voorbereiden voor vertaling",
 	"pp-prepare-button-label": "Voorbereiden",
 	"pp-save-button-label": "Opslaan",
+	"pp-cancel-button-label": "Annuleren",
 	"pp-pagename-missing": "Voer een paginanaam in."
 }
