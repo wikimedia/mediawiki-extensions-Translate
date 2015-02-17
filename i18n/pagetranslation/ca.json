@@ -9,7 +9,8 @@
 			"පසිඳු කාවින්ද",
 			"Vriullop",
 			"Fitoschido",
-			"Jmarchn"
+			"Jmarchn",
+			"Macofe"
 		]
 	},
 	"pagetranslation": "Traducció d'una pàgina",
@@ -74,5 +75,6 @@
 	"pm-langcode-missing": "Introduïu el codi de l’idioma",
 	"pm-pagetitle-invalid": "Introduïu un títol vàlid per la pàgina",
 	"pp-save-button-label": "Desa",
+	"pp-cancel-button-label": "Canceŀla",
 	"pp-pagename-missing": "Introduïu el nom de la pàgina."
 }
