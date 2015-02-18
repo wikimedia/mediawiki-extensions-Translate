@@ -4,6 +4,7 @@
 			"C.R."
 		]
 	},
+	"tpt-languages-nonzero": "$1 ($2% traduciuta)",
 	"pm-pagetitle-invalid": "Pe' piacere mettite nu titolo 'e paggena bbuono",
 	"pm-summary-import": "Traduzziona mpurtata usanno 'a [[Special:PageMigration|migrazione 'e paggena]]"
 }

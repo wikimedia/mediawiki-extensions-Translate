@@ -263,7 +263,7 @@
 	"translate-search-nofilter": "بدون پالایش",
 	"translate-messagereview-submit": "نشانه‌گذاری به‌عنوان بازبینی‌شده",
 	"translate-messagereview-progress": "در حال نشانه‌گذاری به‌عنوان بازبینی‌شده...",
-	"translate-messagereview-failure": "نشانه‌گذاری به‌عنوان بازبینی‌شده نافرجام ماند: $1",
+	"translate-messagereview-failure": "نشانه‌گذاری به عنوان بازبینی‌شده نافرجام ماند: $1",
 	"translate-messagereview-done": "بازبینی‌شده",
 	"translate-messagereview-reviews": "بازبینی‌شده بدست {{PLURAL:$1|یک کاربر|$1 کاربر}}",
 	"translate-messagereview-reviewswithyou": "بازبینی به دست {{PLURAL:$1|یک کاربر|$1 کاربر از جمله شما}}",

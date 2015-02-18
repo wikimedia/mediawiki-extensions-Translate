@@ -66,6 +66,7 @@
 	"tpt-translation-intro": "Toto je <span class=\"plainlinks\">[$1 přeložená verze]</span> stránky [[$2]], překlad je hotový z $3 %.",
 	"tpt-languages-legend": "Jiné jazyky:",
 	"tpt-languages-zero": "Začít překlad do tohoto jazyka",
+	"tpt-languages-nonzero": "$1 ({{PLURAL:$2|přeloženo|přeložena|přeloženo}} $2 %)",
 	"tpt-tab-translate": "Přeložit",
 	"tpt-target-page": "Tuto stránku nelze ručně aktualizovat.\nTato stránka je překladem stránky [[$1]] a překlad lze aktualizovat pomocí [$2 nástroje pro překlad].",
 	"tpt-unknown-page": "Tento jmenný prostor je vyhrazen pro překlady stránek s obsahem.\nZdá se, že stránka, kterou se pokoušíte upravovat, neodpovídá žádné stránce označené pro překlad.",
