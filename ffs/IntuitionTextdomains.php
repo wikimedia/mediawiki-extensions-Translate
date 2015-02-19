@@ -40,9 +40,8 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 			} else {
 				// Intuition text-domains are case-insensitive and internally
 				// converts to lowercase names starting with a capital letter.
-				// eg. "MyTool" -> "Mytool.i18n.php"
-				// No subdirectories!
-				$file = ucfirst( $sanitizedName ) . '.i18n.php';
+				// eg. "MyTool" -> "Mytool/%CODE%.json"
+				$file = preg_replace( '/\s+/', '', "$sanitizedName/%CODE%.json" );
 			}
 
 			if ( isset( $g['descmsg'] ) ) {
@@ -82,7 +81,7 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 				$g['optional'] = array();
 			}
 
-			$g['format'] = 'php';
+			$g['format'] = 'json';
 
 			$copyvars = array(
 				'aliasfile',
