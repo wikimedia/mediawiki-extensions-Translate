@@ -10,7 +10,8 @@
 			"Vriullop",
 			"Fitoschido",
 			"Jmarchn",
-			"Macofe"
+			"Macofe",
+			"Joan manel"
 		]
 	},
 	"pagetranslation": "Traducció d'una pàgina",
@@ -35,6 +36,7 @@
 	"tpt-rev-encourage": "restaura",
 	"translate-tag-translate-link-desc": "Traduïu aquesta pàgina",
 	"tpt-languages-legend": "Altres idiomes:",
+	"tpt-languages-nonzero": "$1 ($2% traduït)",
 	"tpt-aggregategroup-add": "Afegeix",
 	"tpt-aggregategroup-save": "Desa",
 	"tpt-aggregategroup-new-name": "Nom:",

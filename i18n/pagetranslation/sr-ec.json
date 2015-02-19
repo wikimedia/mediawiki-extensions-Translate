@@ -40,6 +40,7 @@
 	"tpt-languages-legend": "Остали језици:",
 	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Почните превођења на овом језику",
+	"tpt-languages-nonzero": "$1 ($2% преведено)",
 	"tpt-discouraged-language-reason": "Разлог: $1",
 	"tpt-aggregategroup-add": "Додај",
 	"tpt-aggregategroup-save": "Сачувај",

@@ -23,6 +23,7 @@
 	"translate-tag-markthis": "Označi stranicu kao „za prevođenje“",
 	"tpt-translation-intro": "Ova stranica je <span class=\"plainlinks\">[$1 prevedeno izdanje]</span> stranice [[$2]]. Prevod je $3% završen.",
 	"tpt-languages-separator": "&#160;•&#32;",
+	"tpt-languages-nonzero": "$1 ($2% prevedeno)",
 	"tpt-aggregategroup-edit-name": "Naziv:",
 	"tpt-aggregategroup-edit-description": "Opis:",
 	"tpt-aggregategroup-update": "Sačuvaj",
