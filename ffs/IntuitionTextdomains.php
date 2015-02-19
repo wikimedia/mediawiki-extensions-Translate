@@ -82,7 +82,7 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 				$g['optional'] = array();
 			}
 
-			$g['format'] = 'php';
+			$g['format'] = 'json';
 
 			$copyvars = array(
 				'aliasfile',
