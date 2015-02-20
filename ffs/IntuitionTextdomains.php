@@ -38,10 +38,9 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 			if ( isset( $g['file'] ) ) {
 				$file = $g['file'];
 			} else {
-				// Intuition text-domains are case-insensitive and internally
-				// converts to lowercase names starting with a capital letter.
-				// eg. "MyTool" -> "Mytool/%CODE%.json"
-				$file = preg_replace( '/\s+/', '', "$sanitizedName/%CODE%.json" );
+				// Canonical names for Intuition text-domains are lowercase
+				// eg. "MyTool" -> "mytool/en.json"
+				$file = "$sanitizedName/%CODE%.json";
 			}
 
 			if ( isset( $g['descmsg'] ) ) {
