@@ -34,6 +34,7 @@
 	"tpt-translation-intro": "ഈ താൾ [[$2]] എന്ന താളിന്റെ <span class=\"plainlinks\">[$1 പരിഭാഷ]</span> ആണ്, പരിഭാഷ $3% പൂർണ്ണമാണ്.",
 	"tpt-languages-legend": "മറ്റു ഭാഷകൾ:",
 	"tpt-languages-zero": "ഈ ഭാഷയിൽ പരിഭാഷ തുടങ്ങുക",
+	"tpt-languages-nonzero": "$1 ($2% പരിഭാഷപ്പെടുത്തി)",
 	"tpt-tab-translate": "പരിഭാഷപ്പെടുത്തുക",
 	"tpt-target-page": "ഈ താൾ താങ്കൾക്ക് പുതുക്കാൻ കഴിയില്ല.\nഈ താൾ [[$1]] എന്ന താളിന്റെ പരിഭാഷയാണ്, പരിഭാഷ പുതുക്കാൻ [$2 പരിഭാഷാ ഉപകരണം] ഉപയോഗിക്കുക.",
 	"tpt-discouraged-language-reason": "കാരണം: $1",
