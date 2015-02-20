@@ -41,7 +41,7 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 				// Intuition text-domains are case-insensitive and internally
 				// converts to lowercase names starting with a capital letter.
 				// eg. "MyTool" -> "Mytool/%CODE%.json"
-				$file = preg_replace( '/\s+/', '', "$name/%CODE%.json" );
+				$file = preg_replace( '/\s+/', '', "$sanitizedName/%CODE%.json" );
 			}
 
 			if ( isset( $g['descmsg'] ) ) {
