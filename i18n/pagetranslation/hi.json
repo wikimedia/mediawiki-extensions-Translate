@@ -14,6 +14,7 @@
 	"tpt-oldrevision": "$2, [[:$1]] का नवीनतम संस्करण नहीं है।\nकेवल नवीनतम संस्करण को अनुवाद के लिए चिह्नित किया जा सकता है।",
 	"tpt-saveok": "पृष्ठ [[:$1]] को $2 {{PLURAL:$2|अनुवाद इकाई|अनुवाद इकाइयों}} के साथ अनुवाद के लिए चिह्नित किया गया है।\nयह पृष्ठ <span class=\"plainlinks\">[$3 अनुवादित]</span> किया जा सकता है।",
 	"tpt-other-pages-title": "टूटा पृष्ठ",
+	"tpt-languages-nonzero": "$1 ($2% अनूदित)",
 	"pt-movepage-list-translation": "अनुवाद पृष्ठ",
 	"pt-movepage-list-section": "अनुभाग पृष्ठ",
 	"pt-movepage-list-other": "अन्य उपपृष्ठ",

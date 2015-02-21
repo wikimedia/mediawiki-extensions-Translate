@@ -3,7 +3,8 @@
 		"authors": [
 			"Ashok modhvadia",
 			"Dsvyas",
-			"KartikMistry"
+			"KartikMistry",
+			"Vyom"
 		]
 	},
 	"translate": "ભાષાંતર",
@@ -130,6 +131,7 @@
 	"translate-js-save": "સાચવો",
 	"translate-js-support": "પ્રશ્ન પૂછો",
 	"translate-gs-total": "કુલ",
+	"translate-documentation-language": "સંદેશનું દસ્તાવેજીકરણ",
 	"translate-messagereview-done": "પરીક્ષણ થયેલું",
 	"translate-gethelp": "મદદ",
 	"tux-tab-unproofread": "પરીક્ષણરહિત",
