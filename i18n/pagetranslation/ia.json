@@ -61,6 +61,7 @@
 	"tpt-translation-intro": "Iste pagina es un <span class=\"plainlinks\">[$1 version traducite]</span> del pagina [[$2]] e le traduction es complete a $3%.",
 	"tpt-languages-legend": "Altere linguas:",
 	"tpt-languages-zero": "Comenciar le traduction in iste lingua",
+	"tpt-languages-nonzero": "$1 ($2% traducite)",
 	"tpt-tab-translate": "Traducer",
 	"tpt-target-page": "Iste pagina non pote esser actualisate manualmente.\nIste pagina es un traduction del pagina [[$1]] e le traduction pote esser actualisate con le [$2 instrumento de traduction].",
 	"tpt-unknown-page": "Iste spatio de nomines es reservate pro traductiones de paginas de contento.\nLe pagina que tu vole modificar non pare corresponder con alcun pagina marcate pro traduction.",
