@@ -3,7 +3,8 @@
 		"authors": [
 			"Noor2020",
 			"Tahir mq",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"عثمان خان شاہ"
 		]
 	},
 	"translate": "کا ترجمہ",
@@ -85,6 +86,7 @@
 	"translate-gs-multiple": "ایک سے زیادہ",
 	"translate-gs-count": "شمار",
 	"translate-gs-total": "کل",
+	"translate-documentation-language": "پیغام دستاویزات",
 	"translate-searchprofile": "ترجمہ",
 	"translate-messagereview-submit": "قبول",
 	"translate-workflow-set-do": "مرتب کریں",
