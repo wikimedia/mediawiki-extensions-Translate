@@ -61,6 +61,7 @@
 	"tpt-translation-intro": "Sta pàgina-sì a l'é na <span class=\"plainlinks\">[$1 vërsion traduvùa]</span> ëd na pàgina [[$2]] e la tradussion a l'é $3% completa e agiornà.",
 	"tpt-languages-legend": "Àutre lenghe:",
 	"tpt-languages-zero": "Ancamin-a la tradussion për sta lenga",
+	"tpt-languages-nonzero": "$1 ($2% voltà)",
 	"tpt-target-page": "Sta pàgina-sì a peul pa esse modificà a man.\nSta pàgina-sì a l'é na tradussion ëd la pàgina [[$1]] e la tradussion a peul esse modificà an dovrand [$2 l'utiss ëd tradussion].",
 	"tpt-unknown-page": "Sto spassi nominal-sì a l'é riservà për tradussion ëd pàgine ëd contnù.\nLa pàgina ch'it preuve a modifiché a smija pa ch'a corisponda a na pàgina marcà për tradussion.",
 	"tpt-translation-restricted": "La tradussion dë sta pàgina an costa lenga a l'é stàita ampedìa da n'aministrator dle tradussion.\n\nRason: $1",
