@@ -14,6 +14,10 @@
  * @ingroup JobQueue
  */
 class MessageGroupStatesUpdaterJob extends Job {
+	public function __construct( $title, $params = array() ) {
+		parent::__construct( __CLASS__, $title, $params );
+		$this->removeDuplicates = true;
+	}
 
 	/**
 	 * Hook: TranslateEventTranslationEdit
@@ -34,10 +38,6 @@ class MessageGroupStatesUpdaterJob extends Job {
 		$job = new self( $title );
 
 		return $job;
-	}
-
-	public function __construct( $title, $params = array(), $id = 0 ) {
-		parent::__construct( __CLASS__, $title, $params, $id );
 	}
 
 	public function run() {
