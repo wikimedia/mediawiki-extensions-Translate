@@ -4,7 +4,8 @@
 			"Ans",
 			"Manop",
 			"Passawuth",
-			"Woraponboonkerd"
+			"Woraponboonkerd",
+			"Horus"
 		]
 	},
 	"translate": "แปล",
@@ -138,5 +139,6 @@
 	"translate-gs-speakers": "จำนวนผู้ใช้",
 	"translate-gs-score": "คะแนน",
 	"translate-gs-total": "รวม",
-	"translate-gs-avgscore": "คะแนนเฉลี่ย"
+	"translate-gs-avgscore": "คะแนนเฉลี่ย",
+	"translate-documentation-language": "เอกสารกำกับสาร"
 }

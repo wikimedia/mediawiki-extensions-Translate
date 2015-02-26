@@ -61,6 +61,7 @@
 	"tpt-translation-intro": "See on lehekülje [[$2]] <span class=\"plainlinks\">[$1 tõlgitud versioon]</span> ja tõlkest on valmis $3%.",
 	"tpt-languages-legend": "Teistes keeltes:",
 	"tpt-languages-zero": "Alusta sellesse keelde tõlkimist",
+	"tpt-languages-nonzero": "$1 ($2% tõlgitud)",
 	"tpt-tab-translate": "Tõlgi",
 	"tpt-target-page": "Seda lehekülge ei saa käsitsi uuendada.\nSee lehekülg on lehekülje [[$1]] tõlge ja tõlget saab uuendada [$2 tõlkeriista] abil.",
 	"tpt-unknown-page": "See nimeruum on sisulehekülgede tõlkimiseks.\nLehekülg, mida redigeerida üritad, ei paista olevat seotud ühegi tõlkimiseks märgitud leheküljega.",

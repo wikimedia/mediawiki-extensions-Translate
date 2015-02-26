@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"apihelp-aggregategroups-description": "Xestionar grupos de mensaxes agregaos.\n\nPues amestar y desaniciar grupos de mensaxes agregaos y asociar o disociar grupos de mensaxes d'ellos (unu de cada vez).",
+	"apihelp-aggregategroups-param-do": "Qué facer col grupu de mensaxes agregaos.",
+	"apihelp-aggregategroups-param-aggregategroup": "ID del grupu de mensaxes agregaos.",
+	"apihelp-aggregategroups-param-group": "ID del grupu de mensaxes.",
+	"apihelp-aggregategroups-param-groupname": "Nome del grupu de mensaxes agregaos.",
+	"apihelp-aggregategroups-param-groupdescription": "Descripción del grupu de mensaxes agregaos.",
+	"apihelp-aggregategroups-example-1": "Asociar un grupu",
+	"apihelp-groupreview-description": "Configurar los estaos del fluxu de trabayu del grupu de mensaxes.",
+	"apihelp-groupreview-param-group": "Grupu de mensaxes.",
+	"apihelp-groupreview-param-language": "Códigu de llingua.",
+	"apihelp-groupreview-param-state": "El nuevu estáu pal grupu.",
+	"apihelp-query+languagestats-param-language": "Códigu de llingua.",
+	"apihelp-query+languagestats-example-1": "Llista d'estadístiques de completáu de traducciones pal finés.",
+	"apihelp-query+messagecollection-description": "Consultar MessageCollection sobro les traducciones.",
+	"apihelp-query+messagecollection-param-group": "Grupu de mensaxes.",
+	"apihelp-query+messagecollection-param-language": "Códigu de llingua.",
+	"apihelp-query+messagecollection-param-limit": "Cantidá de mensaxes a amosar (después de filtriar).",
+	"apihelp-query+messagecollection-example-1": "Llista de llingües con encontu",
+	"apihelp-translationstash-param-subaction": "Aición."
+}

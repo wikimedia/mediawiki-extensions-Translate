@@ -185,6 +185,7 @@
 	"pp-pagename-placeholder": "Escribi'l nome de la páxina",
 	"pp-prepare-button-label": "Preparar",
 	"pp-save-button-label": "Guardar",
+	"pp-cancel-button-label": "Encaboxar",
 	"pp-save-message": "Guardóse la páxina. Pues [$1 editala].",
 	"pp-prepare-message": "Preparóse la páxina pa traducción. Mira les diferencies más abaxo. ¡Fai clic nel botón «{{int:pp-save-button-label}}» si ta correuto!",
 	"pp-already-prepared-message": "Paez que la páxina yá se preparó pa traducir. Nun hai cambios comparando cola versión anterior.",
