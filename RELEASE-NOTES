@@ -1,0 +1,11 @@
+== Translate 2015.02 ==
+Released at 2015-02-27.
+
+=== Noteworthy changes ===
+* Improvements in Special:PagePreparation:
+** T69591: Added 'Cancel' button.
+** T68880: Categories kept as a part of page template.
+* T87503: Validate and normalize input file encoding in FFS.
+* T54728: Split language details to subpage on Special:SupportedLanguages.
+* Performance improvements by removing unneeded queries.
+* T53410: Performance improvements in Special:MessageGroupStats and Special:LanguageStats
