@@ -266,15 +266,7 @@
 		 * Record it to mark as hard.
 		 */
 		skip: function () {
-			// Only record skips of fuzzy or untranslated as hards
-			// @TODO devise better algorithm
-			if ( this.$messageItem.is( '.fuzzy, .untranslated' ) ) {
-				// We can just ignore the result even if it fails
-				(new mw.Api()).postWithToken( 'edit', {
-					action: 'hardmessages',
-					title: this.message.title
-				} );
-			}
+			// @TODO devise good algorithm for identifying hard to translate messages
 		},
 
 		/**
