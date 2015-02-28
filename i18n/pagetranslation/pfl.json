@@ -59,6 +59,7 @@
 	"tpt-translation-intro": "Die Said isch ä <span class=\"plainlinks\">[$1 iwasedzdi Fassung]</span> vunde Said [[$2]] un die Iwasedzung isch zu $3 % ferdisch.",
 	"tpt-languages-legend": "Onare Schbroche",
 	"tpt-languages-zero": "Midm Iwasedze in die Schbrooch oafonge",
+	"tpt-languages-nonzero": "$1 ($2% iwwasezd)",
 	"tpt-target-page": "Die Said konned vun Hoand agdualisiad werre.\nDie Said ischä Iwasedzung vunde Said [[$1]] un die Iwasedzung koama midm [$2 Iwasedzungsweagzaisch] agdualisiere.",
 	"tpt-unknown-page": "D'Noamensraum isch fas Iwasedze vun Wikisaide reswawiad.\nDie Said, wu grad schaffe duschd, enschbrischd käna iwasedbari Said.",
 	"tpt-translation-restricted": "S'Iwasedze vunde Said in die Schbrooch isch duaschn Administrator vahinad worre.\n\nGrund: $1",
