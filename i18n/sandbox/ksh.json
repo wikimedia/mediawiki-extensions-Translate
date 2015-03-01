@@ -20,6 +20,7 @@
 	"tsb-reject-all-button-label": "All aflehne",
 	"tsb-user-posted-a-comment": "Keine Övversäzer",
 	"tsb-reminder-link-text": "Schegg_en Äennerong pä <i lang=\"en\" xml:lang=\"en\">e-mail</i>",
+	"tsb-didnt-make-any-translations": "Dä metmaacher hät kein Övversäzonge jemaat.",
 	"tsb-translations-source": "Quall",
 	"tsb-translations-user": "Övversäzonge vum Metmaacher",
 	"translationstash": "Wellkumme",
@@ -29,8 +30,10 @@
 	"translate-translationstash-skip-button-label": "Nemm en andere",
 	"tsb-limit-reached-title": "Dangke för Ding Övversäzonge",
 	"tsb-no-requests-from-new-users": "Kein Aanfroore vun neue Metmaacher",
+	"tsb-create-user-page": "E jrondlähje Metmaacher_Sigg aanjelaht.",
 	"log-name-translatorsandbox": "Sandkaste för et Övversäze",
 	"log-description-translatorsandbox": "Et Logbooch vun wat de Metmaacher em Sandkaste för et Övversäze jedonn han",
 	"logentry-translatorsandbox-promoted": "{{GENDER:$2|Dä Metmaacher|De Metmaacherėn|Dä Metmaacher|De Metmaacherėn|Dä Metmaacher}} $1 hät {{GENDER:$4|Dä Metmaacher|De Metmaacherėn|Dä Metmaacher|De Metmaacherėn|Dä Metmaacher}} $3 en di Jrop „Övversäzer“ jedonn.",
-	"logentry-translatorsandbox-rejected": "D{{GENDER:$2|ä Metmaacher|e Metmaacherėn|ä Metmaacher|e Metmaacherėn|ä Metmaacher}} $1 hät afjelehnt, dä Metmaacher $3 zom Övversäzer opzeschohfe."
+	"logentry-translatorsandbox-rejected": "D{{GENDER:$2|ä Metmaacher|e Metmaacherėn|ä Metmaacher|e Metmaacherėn|ä Metmaacher}} $1 hät afjelehnt, dä Metmaacher $3 zom Övversäzer opzeschohfe.",
+	"logentry-newusers-tsbpromoted": "{{GENDER:$2|Däm|Däm|Däm Metmaacher|Dä|Däm}} $3 {{GENDER:$2|singe|singe|singe|iere|singe}} Zohjang wohd vun {{GENDER:$2|däm singe|däm singe|dämm singe|dä iehre|däm singe}} Schpellwiß för et Övversäze aanjeläät."
 }

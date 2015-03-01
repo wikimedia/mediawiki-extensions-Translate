@@ -130,6 +130,7 @@
 	"translate-msggroupselector-search-all": "ټول",
 	"tux-tab-all": "ټول",
 	"tux-tab-untranslated": "ناژباړلي",
+	"tux-tab-outdated": "نېټه اوښتي",
 	"tux-edit": "سمول",
 	"tux-warnings-more": "{{PLURAL:$1|$1  نور}}",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|بل پيغام|نور پيغامونه}}"

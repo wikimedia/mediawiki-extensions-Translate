@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Nayvik",
-			"VASANTH S.N."
+			"VASANTH S.N.",
+			"Omshivaprakash"
 		]
 	},
 	"pagetranslation": "ಪುಟ ಭಾಷಾಂತರ",
@@ -17,6 +18,7 @@
 	"translate-tag-translate-link-desc": "ಈ ಪುಟವನ್ನು ಅನುವಾದಿಸಿ",
 	"translate-tag-markthis": "ಭಾಷಾಂತರಕ್ಕೆ ಈ ಪುಟವನ್ನು ಗುರುತುಮಾಡಿ",
 	"tpt-languages-legend": "ಇತರ ಭಾಷೆಗಳು:",
+	"tpt-languages-nonzero": "$1 ($2% ಅನುವಾದಗೊಂಡಿದೆ)",
 	"tpt-tab-translate": "ಭಾಷಾಂತರಿಸಿ",
 	"tpt-discouraged-language-reason": "ಕಾರಣ: $1",
 	"tpt-aggregategroup-add": "ಸೇರಿಸು",
