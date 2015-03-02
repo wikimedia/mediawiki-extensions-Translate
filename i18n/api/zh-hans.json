@@ -31,6 +31,7 @@
 	"apihelp-query+messagecollection-param-limit": "显示的消息数量（过滤后）。",
 	"apihelp-query+messagecollection-param-offset": "起始的整数或键值。",
 	"apihelp-query+messagecollection-example-1": "支持的语言列表",
+	"apihelp-query+messagecollection-example-2": "定义用于组页面-示例的非可选消息列表",
 	"apihelp-query+messagecollection-example-3": "芬兰语中的可选消息列表，带有用于page-Example组的标签",
 	"apihelp-query+messagegroups-param-iconsize": "栅格化群组图标的首选大小。",
 	"apihelp-query+messagegroups-example-1": "显示信息组",
