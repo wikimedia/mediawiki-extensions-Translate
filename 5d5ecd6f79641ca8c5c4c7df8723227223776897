@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_c531f801",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-03-03T18:56:19Z",
+      "side": 1,
+      "message": "Its a good idea to use a more specific key that $code, since they are not namespaced by the pool type or anything.",
+      "revId": "5d5ecd6f79641ca8c5c4c7df8723227223776897",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
