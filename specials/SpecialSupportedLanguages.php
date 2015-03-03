@@ -34,7 +34,8 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		$out = $this->getOutput();
 		$lang = $this->getLanguage();
 
-		$this->purge = $this->getRequest()->getVal( 'action' ) === 'purge';
+		// Only for manual debugging nowdays
+		$this->purge = false;
 
 		$this->setHeaders();
 		$out->addModules( 'ext.translate.special.supportedlanguages' );
@@ -67,7 +68,21 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 
 			$out->addWikiMsg( 'supportedlanguages-colorlegend', $this->getColorLegend() );
 
-			$users = $this->fetchTranslators( $code );
+
+			$work = new PoolCounterWorkViaCallback( 'TranslateFetchTranslators', $code,
+				array(
+					'doWork' => function () use ( $code ) {
+						return $this->fetchTranslators( $code );
+					}
+				)
+			);
+			$users = $work->execute();
+
+			if ( $users === false ) {
+				// generic-pool-error is from MW core
+				$out->wrapWikiMsg( '<div class="warningbox">$1</div>', 'generic-pool-error' );
+				return;
+			}
 
 			global $wgTranslateAuthorBlacklist;
 			$users = $this->filterUsers( $users, $code, $wgTranslateAuthorBlacklist );
@@ -169,7 +184,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		return $data;
 	}
 
-	protected function fetchTranslators( $code ) {
+	public function fetchTranslators( $code ) {
 		global $wgTranslateMessageNamespaces;
 
 		$cache = wfGetCache( CACHE_ANYTHING );
