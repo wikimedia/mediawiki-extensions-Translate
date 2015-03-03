@@ -16,6 +16,24 @@
       "revId": "5d5ecd6f79641ca8c5c4c7df8723227223776897",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_280d2139",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-03T18:57:25Z",
+      "side": 1,
+      "message": "Oh I didn\u0027t know that, the documentation was a bit sparse. Will fix.",
+      "parentUuid": "6e7c4fa4_c531f801",
+      "revId": "5d5ecd6f79641ca8c5c4c7df8723227223776897",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
