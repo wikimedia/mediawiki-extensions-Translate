@@ -938,6 +938,11 @@ class PageTranslationHooks {
 				continue;
 			}
 
+			// Documentation pages are never translation pages
+			if ( $handle->isDoc() ) {
+				continue;
+			}
+
 			$group = $handle->getGroup();
 			if ( !$group instanceof WikiPageMessageGroup ) {
 				continue;
