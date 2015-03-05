@@ -61,6 +61,7 @@
 	"apihelp-translationstash-param-title": "翻译单位页面的标题。",
 	"apihelp-translationstash-param-translation": "由用户做出的翻译。",
 	"apihelp-translationstash-param-metadata": "JSON对象。",
+	"apihelp-translationstash-param-username": "要获取的随机用户的藏匿。只有特权用户可以做这件事。",
 	"apihelp-translationstash-example-1": "加入[[MediaWiki:Jan/fi]]的一次翻译至藏匿处",
 	"apihelp-translationstash-example-2": "查询藏匿",
 	"apihelp-ttmserver-description": "从翻译记忆库查询建议。",

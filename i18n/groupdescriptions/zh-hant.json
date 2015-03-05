@@ -59,6 +59,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] 是一套可以在手機與平板電腦上閱讀與貢獻 Wikisource 文件的跨平台應用程式",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] 是一套可以在手機與平板電腦上閱讀與貢獻維基詞典的跨平台應用程式",
 	"translate-group-desc-wikimediaextensions": "此訊息群組包含了所有[https://wikimediafoundation.org/ 維基媒體基金會]使用的 MediaWiki 擴充套件中所有的訊息",
-	"translate-group-desc-wikimediaextensions-main": "此訊息群組包含了所有 [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Language committee] 使用的 MediaWiki 擴充套件中所有的訊息",
+	"translate-group-desc-wikimediaextensions-main": "此訊息群組包含了所有維基媒體 [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee 語言委員會 (Language committee)] 使用的 MediaWiki 擴充套件中所有的訊息",
 	"translategroupdescriptions-desc": "有關目前 [https://mediawiki.org/wiki/Special:MyLanguage/Extension:Translate 翻譯] 擴充套件所支援產品的訊息群組內容描述。"
 }
