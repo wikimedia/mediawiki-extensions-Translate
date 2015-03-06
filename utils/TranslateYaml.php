@@ -44,7 +44,13 @@ class TranslateYaml {
 
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'phpyaml':
-				return yaml_parse( $text );
+				$ret = yaml_parse( $text );
+				if ( $ret === false ) {
+					// Convert failures to exceptions
+					throw new InvalidArgumentException( "Invalid Yaml string" );
+				}
+
+				return $ret;
 
 			case 'spyc':
 				// Load the bundled version if not otherwise available

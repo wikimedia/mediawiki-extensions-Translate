@@ -119,7 +119,11 @@ class SimpleFFS implements FFS {
 
 		$input = UtfNormal::cleanUp( $input );
 
-		return $this->readFromVariable( $input );
+		try {
+			return $this->readFromVariable( $input );
+		} catch ( Exception $e ) {
+			throw new MWException( "Parsing $filename failed: " . $e->getMessage() );
+		}
 	}
 
 	/**
