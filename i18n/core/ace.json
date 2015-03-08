@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Rachmat.Wahidi",
-			"Ayie7791"
+			"Ayie7791",
+			"Si Gam Acèh"
 		]
 	},
 	"translate": "Teujeumah",
@@ -42,5 +43,6 @@
 	"translate-edit-contribute": "beuneuri",
 	"translate-edit-information": "Hareutoe bhah peusan ($1)",
 	"translate-edit-in-other-languages": "Peusan bak bahsa la'én",
-	"translate-edit-committed": "Teujeumah lam peukakah leumiek jinoe"
+	"translate-edit-committed": "Teujeumah lam peukakah leumiek jinoe",
+	"translate-documentation-language": "Dokumentasi peusan"
 }
