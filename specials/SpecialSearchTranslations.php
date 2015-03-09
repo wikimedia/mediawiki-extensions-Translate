@@ -30,7 +30,7 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 	 * How many search results to display per page
 	 * @var int
 	 */
-	protected $limit = 25;
+	protected $limit;
 
 	public function __construct() {
 		parent::__construct( 'SearchTranslations' );
@@ -62,6 +62,8 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.searchtranslations' );
+		$request = $this->getRequest();
+		list( $this->limit, $this->offset ) = $request->getLimitOffset( 20, '' );
 
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );
@@ -161,34 +163,87 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 				. Html::closeElement( 'div' );
 		}
 
-		$prev = $next = '';
 		$total = $server->getTotalHits( $resultset );
 		$offset = $this->opts->getValue( 'offset' );
 		$params = $this->opts->getChangedValues();
+		$limit = $this->opts->getValue( 'limit' );
+		$prevnext = null;
 
-		if ( $total - $offset > $this->limit ) {
-			$newParams = array( 'offset' => $offset + $this->limit ) + $params;
-			$attribs = array(
-				'class' => 'pager-next',
-				'href' => $this->getTitle()->getLocalUrl( $newParams ),
-			);
-			$next = Html::element( 'a', $attribs, $this->msg( 'tux-sst-next' )->text() );
-		}
-		if ( $offset ) {
-			$newParams = array( 'offset' => max( 0, $offset - $this->limit ) ) + $params;
-			$attribs = array(
-				'class' => 'pager-prev',
-				'href' => $this->getTitle()->getLocalUrl( $newParams ),
-			);
-			$prev = Html::element( 'a', $attribs, $this->msg( 'tux-sst-prev' )->text() );
+		if ( $total > $limit || $offset ) {
+					$prevnext = $this->getLanguage()->viewPrevNext(
+					$this->getTitle(),
+					$offset,
+					$limit,
+					$params,
+					$limit + $offset >= $total
+				);
 		}
 
-		$resultsHtml .= Html::rawElement( 'div', array(), "$prev $next" );
+		$resultsHtml .= Html::rawElement( 'div', array( 'class' => 'row tux-text' ), $prevnext );
 
 		$search = $this->getSearchInput( $queryString );
-		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
+
+		$result = $total - $offset;
+		if ( $limit < $result ) {
+			$result = $limit;
+		}
+		if ( $total > 0 && $offset < $total ) {
+			$count = $this->msg( 'tux-sst-count' )
+				->numParams( $offset + 1, $offset + $result, $total )
+				->numParams( $result )
+				->parse();
+		}
 
 		$this->showSearch( $search, $count, $facetHtml, $resultsHtml );
+	}
+
+	protected function viewPrevNext( Title $title, $offset, $limit,
+				array $newParams = array(), $atend = false ) {
+		# Make 'previous' link
+		$prev = $this->msg( 'tux-sst-prev' )->inLanguage( $this )->title( $title )
+			->numParams( $limit )->text();
+
+		if ( $offset > 0 ) {
+			$plink = $this->numLink( $title, max( 0, $offset - $limit ), $limit,
+				$newParams, $prev, 'prev-tooltiptext', 'pager-prev' );
+		} else {
+			$plink = htmlspecialchars( $prev );
+		}
+
+		# Make 'next' link
+		$next = $this->msg( 'tux-sst-next' )->inLanguage( $this )->title( $title )
+			->numParams( $limit )->text();
+
+		if ( $atend ) {
+			$nlink = htmlspecialchars( $next );
+		} else {
+			$nlink = $this->numLink( $title, $offset + $limit, $limit,
+				$newParams, $next, 'next-tooltiptext', 'pager-next' );
+		}
+
+		# Make links to set number of items per page
+		$numLinks = array();
+		foreach ( array( 20, 50, 100, 250, 500 ) as $num ) {
+			$numLinks[] = $this->numLink( $title, $offset, $num,
+				$newParams, $num, 'num-tooltiptext', 'pager-num' );
+		}
+
+		return $this->msg( 'tux-sst-view' )->inLanguage( $this )->title( $title
+			)->rawParams( $plink, $nlink, $this->pipeList( $numLinks ) )->escaped();
+	}
+
+	protected function numLink( Title $title, $offset, $limit, array $newParams, $link,
+				$tooltipMsg, $class ) {
+		$newParams = array( 'limit' => $limit, 'offset' => $offset ) + $newParams;
+		$tooltip = $this->msg( $tooltipMsg )->inLanguage( $this )->title( $title )
+			->numParams( $limit )->text();
+
+		return Html::element( 'a', array( 'href' => $title->getLocalURL( $newParams ),
+			'title' => $tooltip, 'class' => $class ), $link );
+	}
+
+	protected function pipeList( array $list ) {
+		return implode( $this->msg( 'pipe-separator' )->inLanguage( $this )->escaped(), $list );
 	}
 
 	protected function getLanguages( array $facet ) {
