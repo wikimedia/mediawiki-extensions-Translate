@@ -6,5 +6,6 @@
 		]
 	},
 	"translate-tag-translate-link-desc": "Tradutön padi at",
-	"tpt-languages-legend": "Püks votik:"
+	"tpt-languages-legend": "Püks votik:",
+	"tpt-languages-nonzero": "$1 ($2% petradutöl)"
 }
