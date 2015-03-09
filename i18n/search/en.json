@@ -8,7 +8,7 @@
 	"tux-sst-edit": "Edit translation",
 	"tux-sst-search": "Search",
 	"tux-sst-search-ph": "Search translations",
-	"tux-sst-count": "{{PLURAL:$1|One result found|$1 results found}}",
+	"tux-sst-count": "Showing {{PLURAL:$4|Result <strong>$1</strong> of <strong>$3</strong>|Results <strong>$1 - $2</strong> of <strong>$3</strong>}}",
 	"tux-sst-facet-language": "Languages",
 	"tux-sst-facet-group": "Message groups",
 	"tux-sst-facet-orphan": "(orphan)",
@@ -16,6 +16,11 @@
 	"tux-sst-nosolr-body": "This wiki does not have a translation search service.",
 	"tux-sst-solr-offline-title": "Search unavailable",
 	"tux-sst-solr-offline-body": "The search service is temporarily unavailable.",
-	"tux-sst-next": "Next results",
-	"tux-sst-prev": "Previous results"
+	"tux-sst-next": "Next {{PLURAL:$1|$1}}",
+	"tux-sst-prev": "Previous {{PLURAL:$1|$1}}",
+	"tux-sst-view": "View ($1 {{int:pipe-separator}} $2) ($3)",
+	"prev-tooltiptext": "Previous $1 {{PLURAL:$1|result|results}}",
+	"next-tooltiptext": "Next $1 {{PLURAL:$1|result|results}}",
+	"num-tooltiptext": "Show $1 {{PLURAL:$1|result|results}} per page",
+	"pipe-separator": "&#32;|&#32;"
 }
