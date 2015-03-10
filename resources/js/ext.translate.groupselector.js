@@ -9,7 +9,7 @@
 	 *  - onSelect: callback with message group id when selected
 	 *  - language: language for statistics.
 	 */
-	function TranslateMessageGroupSelector( element, options ) {
+	function TranslateMessageGroupSelector( element, options, groups ) {
 		this.$trigger = $( element );
 		this.$menu = null;
 		this.$search = null;
@@ -22,6 +22,7 @@
 		// selectors.
 		this.customOptions = options;
 		this.flatGroupList = null;
+		this.groups = groups;
 
 		this.init();
 	}
@@ -270,10 +271,22 @@
 			var $selected = this.$menu.find( '.tux-grouptab--selected' );
 
 			if ( $selected.hasClass( 'tux-grouptab--all' ) ) {
-				this.showDefaultGroups();
+				if ( this.groups ) {
+					this.showGroups( this.groups );
+				} else {
+					this.showDefaultGroups();
+				}
 			} else if ( $selected.hasClass( 'tux-grouptab--recent' ) ) {
 				this.showRecentGroups();
 			}
+		},
+
+		/**
+		 * Shows the list of filtered message groups.
+		 */
+		showGroups:  function ( groups ) {
+			this.$loader.show();
+			this.loadMsgGroups( groups );
 		},
 
 		/**
@@ -305,26 +318,31 @@
 		 * Show recent message groups.
 		 */
 		showRecentGroups: function () {
+			this.$loader.show();
+			$.when( this.loadRecentGroups() )
+				.then( $.proxy( this.loadMsgGroups, this ) );
+		},
+
+		/**
+		 * load message groups.
+		 */
+		loadMsgGroups: function ( groups ) {
 			var groupSelector = this;
 
-			this.$loader.show();
+			$.when( this.loadGroups() )
+				.then( function ( allGroups ) {
+					var rows = [];
+					$.each( groups, function ( index, id ) {
 
-			$.when( this.loadRecentGroups(), this.loadGroups() )
-			.then( function ( recentGroups, allGroups ) {
-				var rows = [];
-
-				$.each( recentGroups, function ( index, id ) {
-					var group = mw.translate.findGroup( id, allGroups );
-
-					if ( group ) {
-						rows.push( groupSelector.prepareMessageGroupRow( group ) );
-					}
+						var group = mw.translate.findGroup( id, allGroups );
+						if ( group ) {
+							rows.push( groupSelector.prepareMessageGroupRow( group ) );
+						}
+					} );
+					groupSelector.$loader.hide();
+					groupSelector.$list.empty();
+					groupSelector.$list.append( rows );
 				} );
-
-				groupSelector.$loader.hide();
-				groupSelector.$list.empty();
-				groupSelector.$list.append( rows );
-			} );
 		},
 
 		/**
@@ -577,14 +595,14 @@
 	 * msggroupselector PLUGIN DEFINITION
 	 */
 
-	$.fn.msggroupselector = function ( options ) {
+	$.fn.msggroupselector = function ( options, groups ) {
 		return this.each( function () {
 			var $this = $( this ),
 				data = $this.data( 'msggroupselector' );
 
 			if ( !data ) {
 				$this.data( 'msggroupselector',
-					( data = new TranslateMessageGroupSelector( this, options ) )
+					( data = new TranslateMessageGroupSelector( this, options, groups ) )
 				);
 			}
 
