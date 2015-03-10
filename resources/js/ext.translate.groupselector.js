@@ -8,8 +8,9 @@
 	 *  - position: accepts same values as jquery.ui.position
 	 *  - onSelect: callback with message group id when selected
 	 *  - language: language for statistics.
+	 * groups: list of message group ids
 	 */
-	function TranslateMessageGroupSelector( element, options ) {
+	function TranslateMessageGroupSelector( element, options, groups ) {
 		this.$trigger = $( element );
 		this.$menu = null;
 		this.$search = null;
@@ -22,6 +23,7 @@
 		// selectors.
 		this.customOptions = options;
 		this.flatGroupList = null;
+		this.groups = groups;
 
 		this.init();
 	}
@@ -270,7 +272,11 @@
 			var $selected = this.$menu.find( '.tux-grouptab--selected' );
 
 			if ( $selected.hasClass( 'tux-grouptab--all' ) ) {
-				this.showDefaultGroups();
+				if ( this.groups ) {
+					this.showSelectedGroups( this.groups );
+				} else {
+					this.showDefaultGroups();
+				}
 			} else if ( $selected.hasClass( 'tux-grouptab--recent' ) ) {
 				this.showRecentGroups();
 			}
@@ -305,26 +311,35 @@
 		 * Show recent message groups.
 		 */
 		showRecentGroups: function () {
-			var groupSelector = this;
-
-			this.$loader.show();
-
 			$.when( this.loadRecentGroups(), this.loadGroups() )
-			.then( function ( recentGroups, allGroups ) {
-				var rows = [];
+				.done( $.proxy( this.showSelectedGroups, this ) );
+		},
 
-				$.each( recentGroups, function ( index, id ) {
-					var group = mw.translate.findGroup( id, allGroups );
-
-					if ( group ) {
-						rows.push( groupSelector.prepareMessageGroupRow( group ) );
-					}
+		/**
+		 * Load message groups.
+		 * @param {Array} groups: List of the message group ids to show.
+		 */
+		showSelectedGroups: function ( groups ) {
+			var groupSelector = this;
+			this.$loader.show();
+			this.loadGroups()
+				.then( function ( allGroups ) {
+					var rows = [];
+					$.each( groups, function ( index, id ) {
+						var group = mw.translate.findGroup( id, allGroups );
+						if ( group ) {
+							rows.push( groupSelector.prepareMessageGroupRow( group ) );
+						}
+					} );
+					return rows;
+				} )
+				.always( function() {
+					groupSelector.$loader.hide();
+					groupSelector.$list.empty();
+				} )
+				.done( function( rows ) {
+					groupSelector.$list.append( rows );
 				} );
-
-				groupSelector.$loader.hide();
-				groupSelector.$list.empty();
-				groupSelector.$list.append( rows );
-			} );
 		},
 
 		/**
@@ -577,14 +592,14 @@
 	 * msggroupselector PLUGIN DEFINITION
 	 */
 
-	$.fn.msggroupselector = function ( options ) {
+	$.fn.msggroupselector = function ( options, groups ) {
 		return this.each( function () {
 			var $this = $( this ),
 				data = $this.data( 'msggroupselector' );
 
 			if ( !data ) {
 				$this.data( 'msggroupselector',
-					( data = new TranslateMessageGroupSelector( this, options ) )
+					( data = new TranslateMessageGroupSelector( this, options, groups ) )
 				);
 			}
 
