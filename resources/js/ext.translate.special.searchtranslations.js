@@ -241,17 +241,21 @@
 			$parent.append( $grouSelectorTrigger );
 
 			$grouSelectorTrigger.msggroupselector( {
-				language: mw.config.get( 'wgUserLanguage' ),
-				position: {
-					my: 'left top',
-					at: 'left top'
+					language: mw.config.get( 'wgUserLanguage' ),
+					position: {
+						my: 'left top',
+						at: 'left top'
+					},
+					onSelect: function ( group ) {
+						var uri = new mw.Uri( window.location.href );
+						uri.extend( { 'group': group.id } );
+						window.location.href = uri.toString();
+					}
 				},
-				onSelect: function ( group ) {
-					var uri = new mw.Uri( window.location.href );
-					uri.extend( { 'group': group.id } );
-					window.location.href = uri.toString();
-				}
-			} );
+				$.map( resultGroups, function ( value, index ) {
+					return [index];
+				} )
+			);
 		}
 	}
 
