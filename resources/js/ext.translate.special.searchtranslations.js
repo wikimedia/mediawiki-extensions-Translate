@@ -183,7 +183,9 @@
 			maxListSize = 10,
 			currentGroup = $( '.facet.groups' ).data( 'group' ),
 			resultCount = groupList.length,
-			position;
+			position,
+			groups,
+			options;
 
 		level = level || 0;
 		groupList = groupList.splice( 0, maxListSize );
@@ -254,16 +256,22 @@
 					collision: 'none'
 				};
 			}
-
-			$grouSelectorTrigger.msggroupselector( {
+			options = {
 				language: mw.config.get( 'wgUserLanguage' ),
 				position: position,
 				onSelect: function ( group ) {
-					var uri = new mw.Uri( window.location.href );
+					var uri = new mw.Uri( location.href );
 					uri.extend( { 'group': group.id } );
-					window.location.href = uri.toString();
+					location.href = uri.toString();
 				}
+			};
+			groups = $.map( resultGroups, function ( value, index ) {
+				return index;
 			} );
+			$grouSelectorTrigger.msggroupselector(
+				options,
+				groups
+			);
 		}
 	}
 
