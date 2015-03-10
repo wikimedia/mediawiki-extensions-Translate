@@ -247,11 +247,15 @@
 					at: 'left top'
 				},
 				onSelect: function ( group ) {
-					var uri = new mw.Uri( window.location.href );
+					var uri = new mw.Uri( location.href );
 					uri.extend( { 'group': group.id } );
-					window.location.href = uri.toString();
+					location.href = uri.toString();
 				}
-			} );
+			},
+				$.map( resultGroups, function ( value, index ) {
+					return [index];
+				} )
+			);
 		}
 	}
 
