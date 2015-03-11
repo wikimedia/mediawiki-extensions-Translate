@@ -248,6 +248,11 @@
 				this.options.position.of = this.$trigger;
 			}
 			this.$menu.position( this.options.position );
+			if ( this.$menu.offset().top > this.options.position.of.offset().top ) {
+				this.$menu.removeClass( 'tux-triangle-down' ).addClass( 'tux-triangle-up' );
+			} else {
+				this.$menu.removeClass( 'tux-triangle-up' ).addClass( 'tux-triangle-down' );
+			}
 		},
 
 		/**

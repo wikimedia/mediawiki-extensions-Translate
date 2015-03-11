@@ -68,25 +68,46 @@
 }
 
 /* The triangle shaped callout */
-.tux-groupselector:before {
-	border-bottom: 7px solid #888;
-	border-left: 7px solid transparent;
-	border-right: 7px solid transparent;
+.tux-triangle-down:before,
+.tux-triangle-down:after,
+.tux-triangle-up:before,
+.tux-triangle-up:after {
 	content: "";
 	display: inline-block;
-	left: 99px;
 	position: absolute;
+}
+
+.tux-triangle-down:before,
+.tux-triangle-up:before {
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	left: 99px;
+}
+
+.tux-triangle-down:after,
+.tux-triangle-up:after {
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	left: 100px;
+}
+
+.tux-triangle-down:before {
+	border-top: 7px solid #888;
+	bottom: -7px;
+}
+
+.tux-triangle-down:after {
+	border-top: 6px solid #FFFFFF;
+	bottom: -6px;
+}
+
+.tux-triangle-up:before {
+	border-bottom: 7px solid #888;
 	top: -7px;
 }
 
-.tux-groupselector:after {
+.tux-triangle-up:after {
 	border-bottom: 6px solid #F0F0F0;
-	border-left: 6px solid transparent;
-	border-right: 6px solid transparent;
-	content: "";
-	display: inline-block;
-	left: 100px;
-	position: absolute;
 	top: -6px;
 }
 

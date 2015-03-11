@@ -262,7 +262,7 @@
 
 	$( document ).ready( function () {
 		var $translateContainer, $hideTranslatedButton, $controlOwnButton, $messageList,
-			targetLanguage, docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri;
+			targetLanguage, docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri, position;
 
 		$messageList = $( '.tux-messagelist' );
 		if ( $messageList.length ) {
@@ -288,9 +288,16 @@
 
 		// This is the selector for non-TUX mode
 		prepareWorkflowSelector();
+		if ( $( 'body' ).hasClass( 'rtl' ) ) {
+			position = {
+				my: 'right top',
+				at: 'right+80 bottom+5'
+			};
+		}
 		$( '.tux-breadcrumb .grouplink' ).msggroupselector( {
 			onSelect: mw.translate.changeGroup,
-			language: targetLanguage
+			language: targetLanguage,
+			position: position
 		} );
 
 		updateGroupWarning();

@@ -244,7 +244,7 @@
 				language: mw.config.get( 'wgUserLanguage' ),
 				position: {
 					my: 'left top',
-					at: 'left top'
+					at: 'left-90 bottom+5'
 				},
 				onSelect: function ( group ) {
 					var uri = new mw.Uri( window.location.href );
