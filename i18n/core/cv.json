@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chuvash2014"
+		]
+	},
+	"translate": "Куçарни",
+	"translate-langstats-expand": "сар",
+	"translate-language-code": "Чĕлхен кодчĕ",
+	"translate-language-code-field-name": "Чĕлхен кодчĕ:",
+	"translate-untranslated": "Куçарманнисем",
+	"translate-percentage-fuzzy": "Кивелнĕ",
+	"tux-tab-all": "Пурте",
+	"tux-tab-untranslated": "Куçарманнисем",
+	"tux-tab-outdated": "Кивелнисем",
+	"tux-tab-translated": "Куçарнисем"
+}
