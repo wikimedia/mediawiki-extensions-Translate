@@ -182,7 +182,8 @@
 			uri,
 			maxListSize = 10,
 			currentGroup = $( '.facet.groups' ).data( 'group' ),
-			resultCount = groupList.length;
+			resultCount = groupList.length,
+			position;
 
 		level = level || 0;
 		groupList = groupList.splice( 0, maxListSize );
@@ -240,12 +241,23 @@
 				);
 			$parent.append( $grouSelectorTrigger );
 
+			if ( $( 'body' ).hasClass( 'rtl' ) ) {
+				position = {
+					my: 'right top',
+					at: 'right+90 top+40',
+					collision: 'none'
+				};
+			} else {
+				position = {
+					my: 'left top',
+					at: 'left-90 top+40',
+					collision: 'none'
+				};
+			}
+
 			$grouSelectorTrigger.msggroupselector( {
 				language: mw.config.get( 'wgUserLanguage' ),
-				position: {
-					my: 'left top',
-					at: 'left top'
-				},
+				position: position,
 				onSelect: function ( group ) {
 					var uri = new mw.Uri( window.location.href );
 					uri.extend( { 'group': group.id } );
