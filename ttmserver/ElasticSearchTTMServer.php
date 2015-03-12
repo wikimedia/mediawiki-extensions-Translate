@@ -283,6 +283,20 @@ GROOVY;
 				array(
 					'number_of_shards' => $this->getShardCount(),
 					'number_of_replicas' => $this->getReplicaCount(),
+					'analysis' => array(
+						'analyzer' => array(
+							'indexAnalyzer' => array(
+								'type' => 'custom',
+								'tokenizer' => 'messageidTokenizer'
+							)
+						),
+						'tokenizer' => array(
+							'messageidTokenizer' => array(
+								'type' => 'pattern',
+								'pattern' => '\:'
+							)
+						)
+					)
 				),
 				false /* Do not drop the index if exists */
 			);
@@ -300,7 +314,7 @@ GROOVY;
 		$mapping->setType( $type );
 		$mapping->setProperties( array(
 			'wiki'     => array( 'type' => 'string', 'index' => 'not_analyzed' ),
-			'localid'  => array( 'type' => 'string', 'index' => 'not_analyzed' ),
+			'localid'  => array( 'type' => 'string', 'index' => 'analyzed', 'analyzer' => 'indexAnalyzer' ),
 			'uri'      => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'language' => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'group'    => array( 'type' => 'string', 'index' => 'not_analyzed' ),
