@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_666785b5",
+        "filename": "resources/css/ext.translate.groupselector.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-12T15:04:12Z",
+      "side": 1,
+      "message": "We have a rule that only one selector per line, so there should be a line break after each comma.",
+      "revId": "e3b7b64e417d613e1bc62758e4c908975d580427",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_462da940",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-12T15:04:12Z",
+      "side": 1,
+      "message": "Does this work in RTL languages?",
+      "revId": "e3b7b64e417d613e1bc62758e4c908975d580427",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
