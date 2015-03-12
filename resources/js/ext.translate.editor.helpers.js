@@ -304,7 +304,7 @@
 						$( '<div>' )
 							.addClass( 'three columns quality text-right' )
 							.text( mw.msg( 'tux-editor-tm-match',
-								Math.round( translation.quality * 100 ) ) ),
+								Math.floor( translation.quality * 100 ) ) ),
 						$( '<div>' )
 							.addClass( 'row text-right' )
 							.append(
