@@ -183,7 +183,7 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 			$prev = Html::element( 'a', $attribs, $this->msg( 'tux-sst-prev' )->text() );
 		}
 
-		$resultsHtml .= Html::rawElement( 'div', array(), "$prev $next" );
+		$resultsHtml .= Html::rawElement( 'div', array( 'class' => 'tux-pagination-links' ), "$prev $next" );
 
 		$search = $this->getSearchInput( $queryString );
 		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
