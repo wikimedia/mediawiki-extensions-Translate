@@ -377,7 +377,7 @@
 	"tux-editor-message-tools-history": "Väsjohne",
 	"tux-editor-message-tools-delete": "Schmiiß fott!",
 	"tux-editor-message-tools-translations": "Alle Övversäzonge",
-	"tux-editor-loading": "Ben aam Laade{{int:ellipsis}}",
+	"tux-editor-loading": "Ben aam Lahde&nbsp;…",
 	"translate-search-more-languages-info": "{{PLURAL:$1|0=Kein Schprohch|1=Ein Schprohch|$1 Schprohche}} mieh",
 	"translate-statsbar-tooltip": "$1% övversaz, $2% jähjejelässe",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% fähdesch övversaz, $3% övverhollt, $2% jähjejelässe",
