@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_fcf9eb7e",
+        "filename": "i18n/search/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-12T07:43:02Z",
+      "side": 1,
+      "message": "These are MediaWiki core messages and cannot be duplicated here because they will conflict with the core messages..",
+      "revId": "306730cb0d0660eb2f599e3922befc6a231e8522",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
