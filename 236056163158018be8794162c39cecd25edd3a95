@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_3c644345",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-12T07:59:23Z",
+      "side": 1,
+      "message": "You probably do not need $.when here at all. Just do this.loadRecentGroups().then( ... );",
+      "revId": "236056163158018be8794162c39cecd25edd3a95",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_bc57f35b",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-12T07:59:23Z",
+      "side": 1,
+      "message": "Start with capital letter.\n\nPlease document the parameter\n\n@param {type} groups Description of the param",
+      "revId": "236056163158018be8794162c39cecd25edd3a95",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_dc542f59",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-12T07:59:23Z",
+      "side": 1,
+      "message": "Avoid abbreviations where possible, Message is not that much longer than Msg.",
+      "revId": "236056163158018be8794162c39cecd25edd3a95",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_5c69ff1b",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-12T07:59:23Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "236056163158018be8794162c39cecd25edd3a95",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_1c63873c",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-12T07:59:23Z",
+      "side": 1,
+      "message": "Try to avoid mixing DOM manipulation, ajax requests and ajax request result manipulation. In this case you could return \"rows\" and those will be available in .done().",
+      "revId": "236056163158018be8794162c39cecd25edd3a95",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_7c515b64",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-12T07:59:23Z",
+      "side": 1,
+      "message": "Why changed indentation?",
+      "revId": "236056163158018be8794162c39cecd25edd3a95",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_3cc3e30b",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-12T07:59:23Z",
+      "side": 1,
+      "message": "You can change this to just location.href",
+      "revId": "236056163158018be8794162c39cecd25edd3a95",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_5cc81f25",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-12T07:59:23Z",
+      "side": 1,
+      "message": "same",
+      "revId": "236056163158018be8794162c39cecd25edd3a95",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
