@@ -171,6 +171,8 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 				. Html::closeElement( 'div' );
 		}
 
+		$resultsHtml .= Html::rawElement( 'hr', array( 'class' => 'tux-pagination-line' ) );
+
 		$prev = $next = '';
 		$total = $server->getTotalHits( $resultset );
 		$offset = $this->opts->getValue( 'offset' );
@@ -179,7 +181,7 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 		if ( $total - $offset > $this->limit ) {
 			$newParams = array( 'offset' => $offset + $this->limit ) + $params;
 			$attribs = array(
-				'class' => 'pager-next',
+				'class' => 'mw-ui-button pager-next',
 				'href' => $this->getTitle()->getLocalUrl( $newParams ),
 			);
 			$next = Html::element( 'a', $attribs, $this->msg( 'tux-sst-next' )->text() );
@@ -187,13 +189,15 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 		if ( $offset ) {
 			$newParams = array( 'offset' => max( 0, $offset - $this->limit ) ) + $params;
 			$attribs = array(
-				'class' => 'pager-prev',
+				'class' => 'mw-ui-button pager-prev',
 				'href' => $this->getTitle()->getLocalUrl( $newParams ),
 			);
 			$prev = Html::element( 'a', $attribs, $this->msg( 'tux-sst-prev' )->text() );
 		}
 
-		$resultsHtml .= Html::rawElement( 'div', array(), "$prev $next" );
+		$resultsHtml .= Html::rawElement( 'div', array( 'class' => 'tux-pagination-links' ),
+			"$prev $next"
+		);
 
 		$search = $this->getSearchInput( $queryString );
 		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
