@@ -78,6 +78,18 @@
 	color: #555;
 }
 
+/* Pagination links */
+.tux-searchpage .results .tux-pagination-line {
+	color: #eee;
+	font-size: 1px;
+}
+
+.tux-searchpage .results .tux-pagination-links {
+	font-size: 20px;
+	padding-top: 20px;
+	text-align: center;
+}
+
 /* Search area */
 .tux-searchpage .searchinput {
 	padding: 10px 0;
