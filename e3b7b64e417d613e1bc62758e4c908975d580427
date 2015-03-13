@@ -33,6 +33,24 @@
       "revId": "e3b7b64e417d613e1bc62758e4c908975d580427",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_a6fb5410",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-03-13T00:40:06Z",
+      "side": 1,
+      "message": "Yes it works in RTL Languages.",
+      "parentUuid": "6e7c4fa4_462da940",
+      "revId": "e3b7b64e417d613e1bc62758e4c908975d580427",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
