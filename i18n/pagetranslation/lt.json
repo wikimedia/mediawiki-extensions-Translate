@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Eitvys200",
-			"Mantak111"
+			"Mantak111",
+			"Hugo.arg"
 		]
 	},
 	"pagetranslation": "Puslapio vertimas",
@@ -30,6 +31,7 @@
 	"translate-tag-markthis": "Pažymėti šį puslapį vertimui",
 	"tpt-languages-legend": "Kitos kalbos:",
 	"tpt-languages-zero": "Pradėti šios kalbos vertimą",
+	"tpt-languages-nonzero": "$1 ($2% išversta)",
 	"tpt-discouraged-language-reason": "Priežastis: $1",
 	"tpt-download-page": "Puslapyje eksportuojamas su vertimais",
 	"aggregategroups": "Bendros grupės",
