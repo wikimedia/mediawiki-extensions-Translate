@@ -66,6 +66,7 @@
 	"tpt-translation-intro": "Denne side er en <span class=\"plainlinks\">[$1 oversat version]</span> af siden [[$2]], og oversættelsen er $3 % komplet.",
 	"tpt-languages-legend": "Andre sprog:",
 	"tpt-languages-zero": "Begynd på oversættelsen til dette sprog",
+	"tpt-languages-nonzero": "$1 ($2% oversat)",
 	"tpt-tab-translate": "Oversæt",
 	"tpt-target-page": "Denne side kan ikke opdateres manuelt.\nSiden er en oversættelse af siden [[$1]] og oversættelsen kan opdateres ved at bruge [$2 oversættelsesværktøjet].",
 	"tpt-unknown-page": "Dette navnerum er reserveret til oversættelser af indholdssider.\nSiden som du prøver at redigere, ser ikke ud til at svare til nogen side markeret for oversættelse.",
