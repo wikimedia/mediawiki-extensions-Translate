@@ -44,7 +44,7 @@
 	"tpt-offer-notify": "Puedes <span class=\"plainlinks\">[$1 notificar a los traductores]</span> de esta página.",
 	"tpt-badsect": "\"$1\" no es un nombre válido para la unidad de traducción $2.",
 	"tpt-showpage-intro": "Debajo están listadas las unidades de traducción nuevas, existentes y borradas.\nAntes de marcar esta versión para traducción, verifica que los cambios a las unidades de traducción son mínimos para evitar trabajo innecesario a los traductores.",
-	"tpt-mark-summary": "Marcada esta sección para traducción",
+	"tpt-mark-summary": "Se marcó esta sección para su traducción",
 	"tpt-mark-nochanges": "No hay ninguna diferencia entre esta revisión y la última revisión marcada.",
 	"tpt-edit-failed": "No pudo actualizar la página : $1",
 	"tpt-duplicate": "El nombre de la unidad de traducción  $1 es utilizado más de una vez.",

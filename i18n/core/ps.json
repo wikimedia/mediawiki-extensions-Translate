@@ -132,9 +132,10 @@
 	"tux-tab-all": "ټول",
 	"tux-tab-untranslated": "ناژباړلي",
 	"tux-tab-outdated": "نېټه اوښتي",
-	"tux-tab-translated": "ژباړلي",
+	"tux-tab-translated": "ژباړل شوی",
 	"tux-edit": "سمول",
-	"tux-status-translated": "ژباړلي",
+	"tux-status-translated": "ژباړل شوی",
+	"tux-editor-ask-help": "د نورو مالوماتو غوښتنه",
 	"tux-warnings-more": "{{PLURAL:$1|$1  نور}}",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|بل پيغام|نور پيغامونه}}",
 	"tux-empty-list-translated-action": "ژباړل"
