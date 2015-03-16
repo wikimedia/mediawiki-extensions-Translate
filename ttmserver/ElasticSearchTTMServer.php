@@ -525,9 +525,47 @@ GROOVY;
 		return $resultset->getTotalHits();
 	}
 
-	public function getDocuments( $resultset ) {
+	public function getDocuments( $resultset, $userLanguage ) {
+		$scores = $terms = array();
+
+		foreach ( $resultset->getResults() as $result ) {
+		$score = $result->getScore();
+		$sourceId = preg_replace( '~/[^/]+$~', '', $result->getId() );
+		$scores[$sourceId] = $score;
+		$terms[] = "$sourceId/$userLanguage";
+		}
+
+		$newResultSet = array();
+		if ( $terms !== array() ) {
+			$idQuery = new \Elastica\Query\Terms();
+			$idQuery->setTerms( '_id', $terms );
+			$query = new \Elastica\Query( $idQuery );
+			$query->setSize( 25 );
+			$query->setParam( '_source', array( 'wiki', 'uri', 'content', 'localid', 'language', 'group') );
+			$newResultSet = $this->getType()->getIndex()->search( $query );
+		}
+
+		$sourceIds = array();
+		$finalResultSet = array();
+
+		foreach ( $newResultSet->getResults() as $document){
+			//for those results whose translations exist.
+			$finalResultSet[] = $document;
+			$sourceId = preg_replace( '~/[^/]+$~', '', $document->getId() );
+			$sourceIds[] = $sourceId;
+			}
+
+		foreach ( $resultset->getResults() as $result ) {
+			$sourceId = preg_replace( '~/[^/]+$~', '', $result->getId() );
+
+			// for those results whose translations don't exist.
+			if ( !in_array( $sourceId, $sourceIds ) ) {
+					$finalResultSet[] = $result;
+			}
+		}
+
 		$ret = array();
-		foreach ( $resultset->getResults() as $document ) {
+		foreach ( $finalResultSet as $document ) {
 			$data = $document->getData();
 			$hl = $document->getHighlights();
 			if ( isset( $hl['content'][0] ) ) {

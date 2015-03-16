@@ -125,5 +125,5 @@ interface SearchableTTMServer {
 	/**
 	 * @return array[]
 	 */
-	public function getDocuments( $resultset );
+	public function getDocuments( $resultset, $userLanguage );
 }
