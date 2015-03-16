@@ -42,6 +42,7 @@
 	"translate-tag-hasnew": "Aquesta pagina conten <span class=\"plainlinks\">[$1 de modificacions]</span> que son pas marcadas per la traduccion.",
 	"tpt-translation-intro": "Aquesta pagina es una <span class=\"plainlinks\">[$1 version tradusida]</span> de la pagina [[$2]] e la traduccion es completada a $3 %.",
 	"tpt-languages-legend": "Autras lengas :",
+	"tpt-languages-nonzero": "$1 ($2% tradusit)",
 	"tpt-target-page": "Aquesta pagina pòt pas èsser mesa a jorn manualament.\nEs una version tradusida de [[$1]] e la traduccion pòt èsser mesa a jorn en utilizant [$2 l'aisina de traduccion].",
 	"tpt-unknown-page": "Aqueste espaci de noms es reservat per la traduccion de paginas.\nLa pagina qu'ensajatz de modificar sembla pas correspondre a cap de pagina marcada per èsser tradusida.",
 	"tpt-render-summary": "Mesa a jorn per èsser en acòrd amb la version novèla de la font de la pagina",
