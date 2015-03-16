@@ -73,6 +73,9 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 
 		$opts->fetchValuesFromRequest( $this->getRequest() );
 
+		$context = $this->getContext();
+		$userLanguage = $context->getLanguage()->getCode();
+
 		$queryString = $opts->getValue( 'query' );
 
 		if ( $queryString === '' ) {
@@ -108,7 +111,7 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 
 		// Part 2: results
 		$resultsHtml = '';
-		$documents = $server->getDocuments( $resultset );
+		$documents = $server->getDocuments( $resultset, $userLanguage );
 
 		foreach ( $documents as $document ) {
 			$text = $document['content'];
@@ -117,6 +120,12 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 			list( $pre, $post ) = $this->hl;
 			$text = str_replace( $pre, '<strong class="tux-highlight">', $text );
 			$text = str_replace( $post, '</strong>', $text );
+
+			if ( $userLanguage !== $document['language'] ) {
+				$document['uri'] = str_replace( $document['language'], $userLanguage,
+					$document['uri'] );
+				$document['language'] = $userLanguage;
+			}
 
 			$title = Title::newFromText( $document['localid'] . '/' . $document['language'] );
 			if ( !$title ) {
