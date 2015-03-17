@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_4171eea5",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 873
+      },
+      "writtenOn": "2015-03-17T14:53:30Z",
+      "side": 1,
+      "message": "missing indent I think",
+      "revId": "9088ad4c276979f2f0c8e4e10784a077b74b2bb7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
