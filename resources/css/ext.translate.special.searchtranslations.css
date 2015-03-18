@@ -68,11 +68,13 @@
 }
 
 .tux-searchpage .results .tux-text {
+	text-align: left;
 	font-size: 16px;
 	padding-top: 20px;
 }
 
 .tux-searchpage .results .tux-title {
+	text-align: left;
 	color: #555;
 }
 

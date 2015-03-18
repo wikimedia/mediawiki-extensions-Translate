@@ -152,11 +152,21 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 			}
 
 			$titleText = $title->getPrefixedText();
+			$titleAttribs = array(
+				'class' => 'row tux-title',
+				'dir' => 'ltr',
+			);
+
+			$textAttribs = array(
+				'class' => 'row tux-text',
+				'lang' => wfBCP47( $document['language'] ),
+				'dir' => Language::factory( $document['language'] )->getDir(),
+			);
 
 			$resultsHtml = $resultsHtml
 				. Html::openElement( 'div', $resultAttribs )
-				. Html::rawElement( 'div', array( 'class' => 'row tux-text' ), $text )
-				. Html::element( 'div', array( 'class' => 'row tux-title' ), $titleText )
+				. Html::rawElement( 'div', $textAttribs, $text )
+				. Html::element( 'div', $titleAttribs, $titleText )
 				. $edit
 				. Html::closeElement( 'div' );
 		}
