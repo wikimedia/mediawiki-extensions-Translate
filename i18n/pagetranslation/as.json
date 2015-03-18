@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bishnu Saikia",
-			"Chaipau"
+			"Chaipau",
+			"Gitartha.bordoloi"
 		]
 	},
 	"pagetranslation": "পৃষ্ঠা ভাঙনি",
@@ -19,6 +20,7 @@
 	"translate-tag-translate-link-desc": "এই পৃষ্ঠা ভাঙনি কৰক",
 	"tpt-languages-legend": "অন্য ভাষা:",
 	"tpt-languages-zero": "এই ভাষাৰ অনুবাদ আৰম্ভ কৰক",
+	"tpt-languages-nonzero": "$1 ($2% অনূদিত)",
 	"tpt-discouraged-language-reason": "কাৰণ: $1",
 	"tpt-aggregategroup-add": "যোগ কৰক",
 	"tpt-aggregategroup-save": "সাঁচি থওক",

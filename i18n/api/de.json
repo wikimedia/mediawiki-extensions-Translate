@@ -6,5 +6,6 @@
 	},
 	"apihelp-query+messagetranslations-example-1": "Liste der Übersetzungen im Wiki für MediaWiki:January",
 	"apihelp-translationaids-example-1": "Hilfen für [[MediaWiki:January/fi]] anzeigen",
-	"apihelp-translationstash-example-1": "Fügt eine Übersetzung zum Übersetzungsspeicher für [[MediaWiki:Jan/fi]] hinzu"
+	"apihelp-translationstash-example-1": "Fügt eine Übersetzung zum Übersetzungsspeicher für [[MediaWiki:Jan/fi]] hinzu",
+	"apihelp-ttmserver-param-sourcelanguage": "Ein Sprachcode des Quelltextes."
 }

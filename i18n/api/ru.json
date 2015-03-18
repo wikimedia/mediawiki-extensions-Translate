@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Okras"
+			"Okras",
+			"Kaganer"
 		]
 	},
+	"apihelp-aggregategroups-param-aggregategroup": "ID агрегированной группы сообщений",
 	"apihelp-aggregategroups-param-group": "ID группы сообщений",
 	"apihelp-translatesandbox-param-do": "Что делать.",
 	"apihelp-translationstash-param-subaction": "Действие.",
-	"apihelp-translationstash-param-metadata": "JSON-объект."
+	"apihelp-translationstash-param-metadata": "Объект JSON."
 }
