@@ -42,9 +42,6 @@ class TranslateHooks {
 			$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
 		}
 
-		global $wgReservedUsernames, $wgTranslateFuzzyBotName;
-		$wgReservedUsernames[] = $wgTranslateFuzzyBotName;
-
 		// Page translation setup check and init if enabled.
 		global $wgEnablePageTranslation;
 		if ( $wgEnablePageTranslation ) {
@@ -168,6 +165,13 @@ class TranslateHooks {
 			// Update translated page when translation unit is moved
 			$wgHooks['TitleMoveComplete'][] = 'PageTranslationHooks::onMoveTranslationUnits';
 		}
+	}
+
+	public static function onUserGetReservedNames( &$names ) {
+		global $wgTranslateFuzzyBotName;
+		$names[] = $wgTranslateFuzzyBotName;
+
+		return true;
 	}
 
 	/**
