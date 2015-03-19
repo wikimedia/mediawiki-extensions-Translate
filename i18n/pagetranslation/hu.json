@@ -61,6 +61,8 @@
 	"tpt-tab-translate": "Fordítás",
 	"tpt-target-page": "Ezt a lapot nem lehet kézzel frissíteni.\nA(z) [[$1]] lap fordítása, és a fordítását [$2 a fordítás segédeszköz] segítségével lehet frissíteni.",
 	"tpt-unknown-page": "Ez a névtér a tartalmi lapok fordításainak van fenntartva.\nA lap, amit szerkeszteni próbálsz, úgy tűnik hogy nem egyezik egy fordításra jelölt lappal sem.",
+	"tpt-discouraged-language-header": "A fordítás $1 nyelvre nem fontos ennél a lapnál.",
+	"tpt-discouraged-language-content": "Egy fordítási adminisztrátor úgy döntött, hogy elsődlegesen $1 nyelvre kell fordítani.",
 	"tpt-discouraged-language": "<strong>$2 — a fordítás erre a nyelvre nem a legfontosabb feladat.</strong>\n\nAz adminisztrátori javaslat szerint a legfontosabb nyelvek a következők: $3.\n\nKérjük, ha beszéled ezek közül valamelyiket, fontold meg, hogy inkább arra a nyelvre fordítasz előbb: munkádnak így többek láthatják hasznát.",
 	"tpt-render-summary": "Frissítés, hogy megegyezzen a forráslap új változatával",
 	"tpt-download-page": "Lap exportálása fordításokkal együtt",

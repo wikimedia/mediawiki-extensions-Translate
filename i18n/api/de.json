@@ -4,8 +4,15 @@
 			"Metalhead64"
 		]
 	},
+	"apihelp-query+messagegroups-example-1": "Nachrichtengruppen anzeigen",
+	"apihelp-query+messagetranslations-param-title": "Vollständiger Titel einer bekannten Nachricht.",
 	"apihelp-query+messagetranslations-example-1": "Liste der Übersetzungen im Wiki für MediaWiki:January",
+	"apihelp-translatesandbox-param-password": "Passwort beim Erstellen des Benutzers.",
 	"apihelp-translationaids-example-1": "Hilfen für [[MediaWiki:January/fi]] anzeigen",
+	"apihelp-translationreview-example-1": "Überprüft die Version 1",
+	"apihelp-translationstash-description": "Fügt Übersetzungen dem Speicher hinzu.",
+	"apihelp-translationstash-param-subaction": "Aktion.",
 	"apihelp-translationstash-example-1": "Fügt eine Übersetzung zum Übersetzungsspeicher für [[MediaWiki:Jan/fi]] hinzu",
-	"apihelp-ttmserver-param-sourcelanguage": "Ein Sprachcode des Quelltextes."
+	"apihelp-ttmserver-param-sourcelanguage": "Ein Sprachcode des Quelltextes.",
+	"apihelp-ttmserver-param-text": "Der Text, für den Vorschläge gefunden werden sollen."
 }
