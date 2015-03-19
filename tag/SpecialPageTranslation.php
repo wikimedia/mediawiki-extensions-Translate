@@ -863,7 +863,7 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 
 		// Clear more caches
 		$page->getTitle()->invalidateCache();
-		MessageIndexRebuildJob::newJob()->run();
+		MessageIndexRebuildJob::newJob()->insert();
 
 		return false;
 	}
