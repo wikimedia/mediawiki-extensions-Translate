@@ -184,6 +184,8 @@
 	"supportedlanguages": "Ongerschtöz Schprohche",
 	"supportedlanguages-summary": "He sin alle Schprohche opjeleß, di mer {{GRAMMAR:em|{{SITENAME}}}} ongerschtöze.\nDobei schtonn de Nahme vun dä Övversäzer, di aan dä Schprohch aam ärbeide sin.\nJrühßer jeschrewwe Övversäzer han mieh övversaz, wi kleiner jeschrevve.\nJröhn jeschrevve Medmaacher han köözlesch noch jet jedonn, ruud jeschrevve han länger nix mih jedonn.",
 	"supportedlanguages-colorlegend": "De Lejände för de Färve: De läzde Övversäzong es $1 Dääsch her.",
+	"supportedlanguages-portallink": "[$1] $2 — $3",
+	"supportedlanguages-portallink-nocldr": "<nowiki>[</nowiki>$1<nowiki>]</nowiki> $2",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Eine Övversäzer|Ein Övversäzerėn|Eine Övversäzer|Ein Övversäzerėn|Eine Övversäzer}}:|$2 Övversäzer:|Keine Övversäzer}} $1",
 	"supportedlanguages-recenttranslations": "neuste Övversäzunge",
 	"supportedlanguages-count": "{{PLURAL:$1|Ein Schprohch|$1 Schprohche|Kein Schprohche}} ensjesamp.",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"DCLXVI",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"StanProg"
 		]
 	},
 	"tpt-diff-old": "Предишен текст",
@@ -12,6 +13,7 @@
 	"tpt-select-prioritylangs-reason": "Причина:",
 	"translate-tag-translate-link-desc": "Превеждане на тази страница",
 	"tpt-languages-legend": "Други езици:",
+	"tpt-languages-nonzero": "$1 ($2% преведено)",
 	"tpt-discouraged-language-reason": "Причина: $1",
 	"tpt-download-page": "Изнасяне на страница с преводите",
 	"tpt-aggregategroup-add": "Добавяне",
