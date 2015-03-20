@@ -136,6 +136,7 @@ $GLOBALS['wgHooks']['TranslateSupportedLanguages'][] =
 	'TranslateHooks::translateMessageDocumentationLanguage';
 $GLOBALS['wgHooks']['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
 $GLOBALS['wgHooks']['ParserFirstCallInit'][] = 'TranslateHooks::setupTranslateParserFunction';
+$GLOBALS['wgHooks']['UserGetReservedNames'][] = 'TranslateHooks::onUserGetReservedNames';
 
 // Prevent translations creating bogus categories
 $GLOBALS['wgHooks']['LinksUpdate'][] = 'TranslateHooks::preventCategorization';
