@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6e7c4fa4_f93befe5",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-03-20T15:22:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_b9ab37d3",
+      "revId": "01caf654dcf4e9f6cafb1c257dbdbd670576aeb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_59b46333",
         "filename": "TranslateHooks.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-20T13:30:51Z",
       "side": 1,
       "message": "The return statement is not needed anymore as far as I know.",
+      "revId": "01caf654dcf4e9f6cafb1c257dbdbd670576aeb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_993c3be0",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-03-20T15:22:14Z",
+      "side": 1,
+      "message": "Removed, I wasn\u0027t sure how much back-compat Translate wanted.",
+      "parentUuid": "6e7c4fa4_59b46333",
       "revId": "01caf654dcf4e9f6cafb1c257dbdbd670576aeb0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
