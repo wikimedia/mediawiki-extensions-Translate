@@ -135,6 +135,7 @@
 	"tux-tab-translated": "ژباړل شوی",
 	"tux-edit": "سمول",
 	"tux-status-translated": "ژباړل شوی",
+	"tux-status-saving": "خوندي کېږي...",
 	"tux-editor-ask-help": "د نورو مالوماتو غوښتنه",
 	"tux-warnings-more": "{{PLURAL:$1|$1  نور}}",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|بل پيغام|نور پيغامونه}}",

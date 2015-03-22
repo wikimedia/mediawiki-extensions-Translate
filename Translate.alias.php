@@ -631,6 +631,7 @@ $specialPageAliases['lb'] = array(
 	'Translate' => array( 'Iwwersetzen' ),
 	'TranslationStats' => array( 'Iwwersetzungsstatistiken' ),
 	'Translations' => array( 'Iwwersetzungen' ),
+	'PageMigration' => array( 'Säite-Migratioun' ),
 );
 
 /** Lombard (lumbaart) */
