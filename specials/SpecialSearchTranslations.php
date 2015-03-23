@@ -152,21 +152,11 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 			}
 
 			$titleText = $title->getPrefixedText();
-			$titleAttribs = array(
-				'class' => 'row tux-title',
-				'dir' => 'ltr',
-			);
-
-			$textAttribs = array(
-				'class' => 'row tux-text',
-				'lang' => wfBCP47( $document['language'] ),
-				'dir' => Language::factory( $document['language'] )->getDir(),
-			);
 
 			$resultsHtml = $resultsHtml
 				. Html::openElement( 'div', $resultAttribs )
-				. Html::rawElement( 'div', $textAttribs, $text )
-				. Html::element( 'div', $titleAttribs, $titleText )
+				. Html::rawElement( 'div', array( 'class' => 'row tux-text' ), $text )
+				. Html::element( 'div', array( 'class' => 'row tux-title' ), $titleText )
 				. $edit
 				. Html::closeElement( 'div' );
 		}
@@ -182,7 +172,7 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 				'class' => 'pager-next',
 				'href' => $this->getTitle()->getLocalUrl( $newParams ),
 			);
-			$next = Html::element( 'a', $attribs, $this->msg( 'tux-sst-next' )->text() );
+			$next = Html::element( 'a', $attribs, $this->msg( 'tux-sst-next'.$this->limit )->text() );
 		}
 		if ( $offset ) {
 			$newParams = array( 'offset' => max( 0, $offset - $this->limit ) ) + $params;
@@ -190,10 +180,10 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 				'class' => 'pager-prev',
 				'href' => $this->getTitle()->getLocalUrl( $newParams ),
 			);
-			$prev = Html::element( 'a', $attribs, $this->msg( 'tux-sst-prev' )->text() );
+			$prev = Html::element( 'a', $attribs, $this->msg( 'tux-sst-prev'.$this->limit )->text() );
 		}
 
-		$resultsHtml .= Html::rawElement( 'div', array(), "$prev $next" );
+		$resultsHtml .= Html::rawElement( 'div', array('class' => 'prev-next' ), "$prev $next" );
 
 		$search = $this->getSearchInput( $queryString );
 		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
