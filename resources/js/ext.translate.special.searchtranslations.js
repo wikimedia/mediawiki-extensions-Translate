@@ -95,7 +95,9 @@
 
 		if ( currentLanguage && $.inArray( currentLanguage, quickLanguageList ) >= 0 ) {
 			quickLanguageList = unique.splice( 0, 5 );
-			quickLanguageList = quickLanguageList.concat( currentLanguage );
+			if ( $.inArray( currentLanguage, quickLanguageList ) === -1 ) {
+				quickLanguageList = quickLanguageList.concat( currentLanguage );
+			}
 		} else {
 			quickLanguageList = unique.splice( 0, 6 );
 		}
@@ -116,9 +118,9 @@
 			}
 
 			$languages.append( $( '<div>')
-				.addClass( 'row facet-item ' + selectedClasss )
+				.addClass( 'row facet-item ' )
 				.append( $( '<span>')
-					.addClass('facet-name')
+					.addClass('facet-name ' + selectedClasss )
 					.append( $('<a>')
 						.attr( 'href', result.url )
 						.text( mw.config.get( 'wgULSLanguages' )[languageCode] || languageCode )
@@ -156,12 +158,11 @@
 	}
 
 	function showMessageGroups() {
-		var currentGroup,
+		var currentGroup = {},
 			groupList,
 			$groups;
 
 		$groups = $( '.facet.groups' );
-		currentGroup = $groups.data( 'group' );
 
 		if ( !resultGroups ) {
 			// No search results
@@ -185,9 +186,13 @@
 			resultCount = groupList.length;
 
 		level = level || 0;
-		groupList = groupList.splice( 0, maxListSize );
+		if ( level == 0 ) {
+			groupList = groupList.splice( 0, maxListSize );
+		}
 		if ( currentGroup && resultGroups[currentGroup] &&
-			$.inArray( currentGroup, groupList ) < 0
+			$.inArray( currentGroup, groupList ) < 0 &&
+			( $.isEmptyObject( parentGroup ) == true ||
+			parentGroup.id != currentGroup )
 		) {
 			// Make sure current selected group is displayed always.
 			groupList = groupList.concat( currentGroup );
@@ -227,7 +232,7 @@
 			}
 		}
 
-		if ( resultCount > maxListSize ) {
+		if ( resultCount > maxListSize && level == 0 ) {
 			$grouSelectorTrigger = $( '<div>')
 				.addClass( 'rowfacet-item ' )
 				.append( $( '<a>' )
