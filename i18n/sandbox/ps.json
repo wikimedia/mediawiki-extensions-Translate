@@ -18,6 +18,6 @@
 	"tsb-translations-source": "سرچينه",
 	"tsb-translations-user": "کارن ژباړې",
 	"tsb-translations-current": "شته ژباړې",
-	"translationstash": "ښه راغلۍ",
-	"translate-translationstash-welcome": "ښه راغلۍ {{GENDER:$1|$1}}، تاسې يو نوی ژباړن ياست"
+	"translationstash": "ښه راغلئ",
+	"translate-translationstash-welcome": "ښه راغلئ {{GENDER:$1|$1}}، تاسې يو نوی ژباړن ياست"
 }

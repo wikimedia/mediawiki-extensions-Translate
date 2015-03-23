@@ -21,8 +21,8 @@
 	"translate-submit": "راغونډول",
 	"translate-page-navigation-legend": "گرځښت",
 	"translate-page-showing-all": "$1 {{PLURAL:$1|پيغام|پيغامونه}} ښکاره کول.",
-	"translate-next": "راتلونکی مخ",
-	"translate-prev": "پخوانی مخ",
+	"translate-next": "بل مخ",
+	"translate-prev": "تېر مخ",
 	"translate-page-description-legend": "د ډلې په اړه مالومات",
 	"translate-page-edit": "سمول",
 	"translate-ext-url": "<hr />وېبځی: $1",
@@ -89,6 +89,7 @@
 	"translate-total": "پيغامونه",
 	"translate-untranslated": "ناژباړلي",
 	"translate-percentage-complete": "بشپړتابه",
+	"translate-languagestats-overall": "ټولې پيغام ډلې يوځای",
 	"translate-ls-submit": "شمار ښکاره کول",
 	"translate-ls-column-group": "پيغام ډله",
 	"translate-mgs-pagename": "د پيغام ډلې شمار",
@@ -138,6 +139,7 @@
 	"tux-status-saving": "خوندي کېږي...",
 	"tux-editor-ask-help": "د نورو مالوماتو غوښتنه",
 	"tux-warnings-more": "{{PLURAL:$1|$1  نور}}",
+	"tux-editor-page-mode": "مخ",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|بل پيغام|نور پيغامونه}}",
 	"tux-empty-list-translated-action": "ژباړل"
 }

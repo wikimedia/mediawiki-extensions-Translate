@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ahmed-Najib-Biabani-Ibrahimkhel"
+		]
+	},
+	"apihelp-aggregategroups-param-group": "د پيغام ډلې پېژند.",
+	"apihelp-groupreview-param-group": "پيغام ډله.",
+	"apihelp-query+messagecollection-param-group": "پيغام ډله.",
+	"apihelp-query+messagegroups-example-1": "پيغام ډلې ښکاره کول",
+	"apihelp-query+messagegroupstats-param-group": "د پيغام ډلې پېژند."
+}

@@ -3,7 +3,8 @@
 		"authors": [
 			"Ex13",
 			"Herr Mlinka",
-			"SpeedyGonsales"
+			"SpeedyGonsales",
+			"Roberta F."
 		]
 	},
 	"pagetranslation": "Prijevod stranice",
@@ -24,6 +25,7 @@
 	"translate-tag-translate-link-desc": "Prevedi ovu stranicu",
 	"translate-tag-markthis": "Označi ovu stranicu za prijevod",
 	"tpt-languages-legend": "Drugi jezici:",
+	"tpt-languages-nonzero": "$1 ($2 % prevedeno)",
 	"pt-movepage-list-pages": "Popis stranica za premještanje",
 	"pt-movepage-list-other": "Ostale podstranice",
 	"pt-movepage-current": "Trenutačni naziv:",

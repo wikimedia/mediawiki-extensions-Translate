@@ -5,7 +5,8 @@
 			"Bhawani Gautam Rhk",
 			"RajeshPandey",
 			"सरोज कुमार ढकाल",
-			"Krish Dulal"
+			"Krish Dulal",
+			"बिप्लब आनन्द"
 		]
 	},
 	"translate": "अनुवाद गर्ने",
@@ -101,5 +102,6 @@
 	"translate-percentage-complete": "सकिएका",
 	"translate-percentage-fuzzy": "पुराना (काम नलाग्ने)",
 	"supportedlanguages-recenttranslations": "भर्खरैका अनुवादहरु",
+	"translate-documentation-language": "सन्देश दस्तावेज",
 	"translate-searchprofile": "अनुवाद"
 }

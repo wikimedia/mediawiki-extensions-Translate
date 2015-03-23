@@ -23,7 +23,7 @@
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view]]",
 	"right-pagetranslation": "{{doc-right|pagetranslation}}",
 	"action-pagetranslation": "{{doc-action|pagetranslation}})",
-	"tpt-desc": "{{desc|name=Translate - Page Translation|url=http://www.mediawiki.org/wiki/Extension:Translate/PageTranslation}}",
+	"tpt-desc": "{{desc|name=Translate - Page Translation|url=https://www.mediawiki.org/wiki/Extension:Translate/PageTranslation}}",
 	"tpt-section": "[[File:Page_translation_mark_view.png|thumb|Page translation]]\nA screenshot of the translation administration page is available.\n\nParameters:\n* $1 - the identifier of the unit, or the string \"Page display title\" (special unit identifier for page title; hard-coded)",
 	"tpt-section-new": "[[File:Page_translation_mark_view.png|thumb|Page translation]]\nA screenshot of the translation administration page is available.\n\nParameters:\n* $1 - the identifier of the unit, or the string \"Page display title\" (special unit identifier for page title; hard-coded)",
 	"tpt-section-deleted": "See definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - the identifier of the unit, or the string \"Page display title\" (special unit identifier for page title; hard-coded)",
