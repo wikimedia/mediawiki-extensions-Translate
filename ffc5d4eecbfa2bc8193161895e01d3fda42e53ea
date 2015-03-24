@@ -16,6 +16,24 @@
       "revId": "ffc5d4eecbfa2bc8193161895e01d3fda42e53ea",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_8f604da1",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-24T05:57:54Z",
+      "side": 1,
+      "message": "It does use push() behind the scenes: https://github.com/wikimedia/mediawiki-extensions-Translate/blob/master/utils/MessageIndexRebuildJob.php#L46\n\nIs that okay? I can rename or delete the method but I think that should be in a separate commit.",
+      "parentUuid": "6e7c4fa4_66de41e1",
+      "revId": "ffc5d4eecbfa2bc8193161895e01d3fda42e53ea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
