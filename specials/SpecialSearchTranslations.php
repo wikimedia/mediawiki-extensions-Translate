@@ -90,21 +90,25 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 
 		// Part 1: facets
 		$facets = $server->getFacets( $resultset );
+		$total = $server->getTotalHits( $resultset );
+		$facetHtml = '';
 
-		$facetHtml = Html::element( 'div',
-			array( 'class' => 'row facet languages',
-				'data-facets' => FormatJson::encode( $this->getLanguages( $facets['language'] ) ),
-				'data-language' => $opts->getValue( 'language' ),
-			),
-			$this->msg( 'tux-sst-facet-language' )
-		);
+		if ( $total > 0 ) {
+			$facetHtml = Html::element( 'div',
+				array( 'class' => 'row facet languages',
+					'data-facets' => FormatJson::encode( $this->getLanguages( $facets['language'] ) ),
+					'data-language' => $opts->getValue( 'language' ),
+				),
+				$this->msg( 'tux-sst-facet-language' )
+			);
 
-		$facetHtml .= Html::element( 'div',
-			array( 'class' => 'row facet groups',
-				'data-facets' => FormatJson::encode( $this->getGroups( $facets['group'] ) ),
-				'data-group' => $opts->getValue( 'group' ) ),
-			$this->msg( 'tux-sst-facet-group' )
-		);
+			$facetHtml .= Html::element( 'div',
+				array( 'class' => 'row facet groups',
+					'data-facets' => FormatJson::encode( $this->getGroups( $facets['group'] ) ),
+					'data-group' => $opts->getValue( 'group' ) ),
+				$this->msg( 'tux-sst-facet-group' )
+			);
+		}
 
 		// Part 2: results
 		$resultsHtml = '';
@@ -172,7 +176,6 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 		}
 
 		$prev = $next = '';
-		$total = $server->getTotalHits( $resultset );
 		$offset = $this->opts->getValue( 'offset' );
 		$params = $this->opts->getChangedValues();
 
