@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_77833fd1",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-25T09:33:17Z",
+      "side": 1,
+      "message": "Can you document \"groups\" parameter above.",
+      "revId": "def8f6530838f64d98b7d1b1811be27d68434983",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_b71d57c3",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-25T09:33:17Z",
+      "side": 1,
+      "message": "Extra space.",
+      "revId": "def8f6530838f64d98b7d1b1811be27d68434983",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_b74b17b3",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-25T09:33:17Z",
+      "side": 1,
+      "message": "I would move this line to loadMessageGroups.",
+      "revId": "def8f6530838f64d98b7d1b1811be27d68434983",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_77c9ff27",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-25T09:33:17Z",
+      "side": 1,
+      "message": "You can keep the $.when( this.loadRecentGroups(), this.loadGroups() ).done( ... ); here to allow loading both requests in parallel. Right now you first load a small request before starting to load the big, slow request.",
+      "revId": "def8f6530838f64d98b7d1b1811be27d68434983",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_776a5f13",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-25T09:33:17Z",
+      "side": 1,
+      "message": "Isn\u0027t it \"List of the message group ids of the groups to show\"?",
+      "revId": "def8f6530838f64d98b7d1b1811be27d68434983",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_3760672d",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-25T09:33:17Z",
+      "side": 1,
+      "message": "The name could be showSelectedGroups, as it is not really about loading but filtering and showing.",
+      "revId": "def8f6530838f64d98b7d1b1811be27d68434983",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_974e1bc4",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-25T09:33:17Z",
+      "side": 1,
+      "message": "Perhaps this line would now better fit into the .done() below? Or alternatively there could be .always( ... ) in the between to make sure it is also hidden on error conditions. In that case the call to $list.empty() should also be in the always callback, I think.",
+      "revId": "def8f6530838f64d98b7d1b1811be27d68434983",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_57eba376",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-25T09:33:17Z",
+      "side": 1,
+      "message": "You don\u0027t need [] here.\n\nI also find the indentation a bit confusing. Perhaps you could put the results of this into a variable? Perhaps same for options so you could make the msggroupselector( ... ); one-liner.",
+      "revId": "def8f6530838f64d98b7d1b1811be27d68434983",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
