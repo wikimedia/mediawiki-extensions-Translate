@@ -23,6 +23,8 @@ require_once "$IP/maintenance/Maintenance.php";
 class TTMServerBootstrap extends Maintenance {
 	/// @var Array Configuration of requested TTMServer
 	protected $config;
+	// Option for reindexing
+	protected $reindex;
 
 	public function __construct() {
 		parent::__construct();
@@ -39,6 +41,8 @@ class TTMServerBootstrap extends Maintenance {
 			/*required*/false,
 			/*has arg*/true
 		);
+		// This option erases all data, empties the index and rebuilds it.
+		$this->addOption( 'reindex', 'Update the index mapping. Warning: Clears all existing data in the index.' );
 		$this->setBatchSize( 500 );
 		$this->start = microtime( true );
 	}
@@ -60,6 +64,7 @@ class TTMServerBootstrap extends Maintenance {
 		}
 
 		$config = $wgTranslateTranslationServices[$configKey];
+		$this->reindex = $this->getOption( 'reindex', false );
 
 		// Do as little as possible in the main thread, to not clobber forked processes.
 		// See also #resetStateForFork.
@@ -126,6 +131,9 @@ class TTMServerBootstrap extends Maintenance {
 		$this->statusLine( "Cleaning up old entries...\n" );
 		$server = TTMServer::factory( $config );
 		$server->setLogger( $this );
+		if ( $this->reindex ) {
+			$server->doMappingUpdate();
+		}
 		$server->beginBootstrap();
 	}
 
