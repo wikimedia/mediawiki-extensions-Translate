@@ -96,14 +96,13 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			/**
 			 * Concatenate separated strings.
 			 */
-			$segment = str_replace( '"+', '" +', $segment );
-			$segment = explode( '" +', $segment );
+			$segment = explode( '+', $segment );
 			$count = count( $segment );
 			for ( $i = 0; $i < $count; $i++ ) {
-				$segment[$i] = ltrim( ltrim( $segment[$i] ), '"' );
+				$segment[$i] = trim( trim( $segment[$i] ), '"' );
 			}
 			$segment = implode( $segment );
-
+			$segment[$i] = trim( trim( $segment[$i] ), '"' );
 			/**
 			 * Remove line breaks between message keys and messages.
 			 */
