@@ -26,6 +26,10 @@ class ElasticSearchTTMServer
 	 * Reference to the maintenance script to relay logging output.
 	 */
 	protected $logger;
+	/**
+	 * Used for Reindex
+	 */
+	protected $reindex = false;
 
 	public function isLocalSuggestion( array $suggestion ) {
 		return $suggestion['wiki'] === wfWikiId();
@@ -274,18 +278,28 @@ GROOVY;
 
 		return new \Elastica\Document( $globalid, $data );
 	}
-
-	public function beginBootstrap() {
+	/*
+	* Create index
+	*/
+	public function createIndex( $rebuild ) {
 		$type = $this->getType();
-
-		if ( !$type->getIndex()->exists() ) {
-			$type->getIndex()->create(
+		$type->getIndex()->create(
 				array(
 					'number_of_shards' => $this->getShardCount(),
 					'number_of_replicas' => $this->getReplicaCount(),
 				),
-				false /* Do not drop the index if exists */
+				$rebuild
 			);
+	}
+
+	public function beginBootstrap() {
+		if ( $this->reindex ){
+			$this->logOutput( 'Rebuilding the index ...' );
+			$this->createIndex( true );
+		}
+		$type = $this->getType();
+		if ( !$type->getIndex()->exists() ) {
+			$this->createIndex( false );
 		}
 
 		$settings = $type->getIndex()->getSettings();
@@ -428,6 +442,10 @@ GROOVY;
 		if ( $this->logger ) {
 			$this->logger->statusLine( "$text\n" );
 		}
+	}
+
+	public function setReindex( $reindex ) {
+		$this->reindex = $reindex;
 	}
 
 	// Search interface
