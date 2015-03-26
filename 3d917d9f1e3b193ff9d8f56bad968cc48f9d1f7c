@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_993404a9",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-26T10:41:08Z",
+      "side": 1,
+      "message": "This could be just a one line.",
+      "revId": "3d917d9f1e3b193ff9d8f56bad968cc48f9d1f7c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_b939c0a0",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-26T10:41:08Z",
+      "side": 1,
+      "message": "Extra space at the end. Also, this script will rebuild the index (or parts of it) by default. I think the wording should clearer that this updates the schema of the index – I am not sure what is the term people use for this.\n\nhttps://www.elastic.co/blog/changing-mapping-with-zero-downtime\n\nAlso, when sharing one ES with multiple wikis, this option will erase all data. That should be mentioned.",
+      "revId": "3d917d9f1e3b193ff9d8f56bad968cc48f9d1f7c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_1948f430",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-26T10:41:08Z",
+      "side": 1,
+      "message": "Align the stars.",
+      "revId": "3d917d9f1e3b193ff9d8f56bad968cc48f9d1f7c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_793fa882",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-26T10:41:08Z",
+      "side": 1,
+      "message": "This should probably be protected. $rebuild parameter is not documented.",
+      "revId": "3d917d9f1e3b193ff9d8f56bad968cc48f9d1f7c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_f94ad826",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-26T10:41:08Z",
+      "side": 1,
+      "message": "I think this would be clearer as \"else if\". Now it leaves me wondering if there is case where we are reindexing but that fails to create an index, and here we would try again.",
+      "revId": "3d917d9f1e3b193ff9d8f56bad968cc48f9d1f7c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_995ba4fc",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-26T10:41:08Z",
+      "side": 1,
+      "message": "How about calling it forceReindex and not take parameter?\n\nPlease also document the function and add @since 2015.03",
+      "revId": "3d917d9f1e3b193ff9d8f56bad968cc48f9d1f7c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
