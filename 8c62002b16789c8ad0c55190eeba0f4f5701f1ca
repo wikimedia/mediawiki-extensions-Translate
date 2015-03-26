@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_141d1b14",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-26T13:47:00Z",
+      "side": 1,
+      "message": "It is not an option but separate parameter.",
+      "revId": "8c62002b16789c8ad0c55190eeba0f4f5701f1ca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_d4124301",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-26T13:47:00Z",
+      "side": 1,
+      "message": "Heh, now it is so thin that you can remove this method completely and just call showSelectedGroups directly.",
+      "revId": "8c62002b16789c8ad0c55190eeba0f4f5701f1ca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
