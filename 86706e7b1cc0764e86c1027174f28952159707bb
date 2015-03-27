@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_99e716d3",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-27T18:11:30Z",
+      "side": 1,
+      "message": "Good, but this comment is more useful in the description of reindex option in the next line. People are more likely to read the --help output than the code, I believe ;)",
+      "revId": "86706e7b1cc0764e86c1027174f28952159707bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_193b0637",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-27T18:11:30Z",
+      "side": 1,
+      "message": "For example: \u0027Update the index mappings. Warning: clears all existing data in the index\u0027.",
+      "revId": "86706e7b1cc0764e86c1027174f28952159707bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_79bebaac",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-27T18:11:30Z",
+      "side": 1,
+      "message": "Please add empty line above this line.",
+      "revId": "86706e7b1cc0764e86c1027174f28952159707bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_99b956c3",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-27T18:11:30Z",
+      "side": 1,
+      "message": "/**",
+      "revId": "86706e7b1cc0764e86c1027174f28952159707bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_f9e16acb",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-27T18:11:30Z",
+      "side": 1,
+      "message": ") {",
+      "revId": "86706e7b1cc0764e86c1027174f28952159707bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_d9ca6e49",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-27T18:11:30Z",
+      "side": 1,
+      "message": "I prefer no space before ...\n\nYou could update this to say \u0027Updating the index mappings...\u0027.",
+      "revId": "86706e7b1cc0764e86c1027174f28952159707bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_99d076f9",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-27T18:11:30Z",
+      "side": 1,
+      "message": "/**",
+      "revId": "86706e7b1cc0764e86c1027174f28952159707bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_f9f88a7b",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-27T18:11:30Z",
+      "side": 1,
+      "message": "External user of this call does not need to know about the internal variable name. You can change this to say \"Force the update of index mappings\".",
+      "revId": "86706e7b1cc0764e86c1027174f28952159707bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
