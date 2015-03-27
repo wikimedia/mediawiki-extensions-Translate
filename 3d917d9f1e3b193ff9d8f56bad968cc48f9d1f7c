@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "6e7c4fa4_7c46adc4",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-27T08:14:46Z",
+      "side": 1,
+      "message": "The script will rebuild the index in any case regardless of the parameter. If it is a shared index, it will rebuild only part of the index.\n\nMy point is that this option is about updating the index mappings/schema. The way we do the reindexing after that is not part of this patch.",
+      "parentUuid": "6e7c4fa4_01e632ab",
+      "revId": "3d917d9f1e3b193ff9d8f56bad968cc48f9d1f7c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_1948f430",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 2
@@ -134,6 +152,24 @@
       "side": 1,
       "message": "$reindex value is to be passed from ttmserver-export.php.\nI have used this function as a setter for $reindex parameter in ElasticSearchTTMServer.",
       "parentUuid": "6e7c4fa4_995ba4fc",
+      "revId": "3d917d9f1e3b193ff9d8f56bad968cc48f9d1f7c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_dc0ee190",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-03-27T08:14:46Z",
+      "side": 1,
+      "message": "As far as I know it will only ever be set to true.\n\n# Whatever term we will use, see comments on the another file\npublic function doSchemaUpdate() {\n  $this-\u003eupdateSchema \u003d true;\n}",
+      "parentUuid": "6e7c4fa4_618da6d7",
       "revId": "3d917d9f1e3b193ff9d8f56bad968cc48f9d1f7c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
