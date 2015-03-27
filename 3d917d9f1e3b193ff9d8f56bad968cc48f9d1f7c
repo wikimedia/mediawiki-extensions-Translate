@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "6e7c4fa4_01e632ab",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-03-27T02:30:07Z",
+      "side": 1,
+      "message": "This script will rebuild the index from scratch. So, the search will be down while rebuild process. The link you have provided takes different approach, it creates index aliases to reindex data in the background and therefore the search will be up the entire time. I could look into this method and add another option for this approach and may be call it \"reindex\"?\n\nFor this script we can change the option from \"reindex\" to something like \"eraseAndStart\" or \"restart\" or could you suggest something more suitable.",
+      "parentUuid": "6e7c4fa4_b939c0a0",
+      "revId": "3d917d9f1e3b193ff9d8f56bad968cc48f9d1f7c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_1948f430",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 2
@@ -98,6 +116,24 @@
       "writtenOn": "2015-03-26T10:41:08Z",
       "side": 1,
       "message": "How about calling it forceReindex and not take parameter?\n\nPlease also document the function and add @since 2015.03",
+      "revId": "3d917d9f1e3b193ff9d8f56bad968cc48f9d1f7c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_618da6d7",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-03-27T02:30:07Z",
+      "side": 1,
+      "message": "$reindex value is to be passed from ttmserver-export.php.\nI have used this function as a setter for $reindex parameter in ElasticSearchTTMServer.",
+      "parentUuid": "6e7c4fa4_995ba4fc",
       "revId": "3d917d9f1e3b193ff9d8f56bad968cc48f9d1f7c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
