@@ -208,6 +208,7 @@
 	"pp-pagename-missing": "Escribe el nombre de la página.",
 	"pp-diff-old-header": "Texto fuente",
 	"pp-diff-new-header": "Texto preparado",
+	"tpt-unlink-confirm": "Confirma que realmente quieres eliminar esta página del sistema de traducción.\nEl selector de idiomas y los nombres de las páginas traducidas dejarán de funcionar.\nLas páginas de traducción se volverán editables.",
 	"tpt-unlink-button": "Eliminar de la traducción",
 	"tpt-unlink-summary": "Eliminar página de la traducción"
 }

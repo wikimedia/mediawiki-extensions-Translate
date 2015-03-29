@@ -139,6 +139,9 @@
 	"tux-status-saving": "خوندي کېږي...",
 	"tux-editor-ask-help": "د نورو مالوماتو غوښتنه",
 	"tux-warnings-more": "{{PLURAL:$1|$1  نور}}",
+	"tux-editor-clear-translated": "ژباړل شوي پټول",
+	"tux-editor-proofreading-hide-own-translations": "خپلې ژباړې پټول",
+	"tux-editor-proofreading-show-own-translations": "خپلې ژباړې ښکاره کول",
 	"tux-editor-page-mode": "مخ",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|بل پيغام|نور پيغامونه}}",
 	"tux-empty-list-translated-action": "ژباړل"
