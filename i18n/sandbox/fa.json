@@ -30,7 +30,7 @@
 	"tsb-accept-all-button-label": "پذیرش همه",
 	"tsb-reject-all-button-label": "رد همه",
 	"tsb-user-posted-a-comment": "یک مترجم نیست",
-	"tsb-reminder-link-text": "فرستادن رایانامهٔ یادآوری",
+	"tsb-reminder-link-text": "ارسال ایمیل یادآور",
 	"tsb-didnt-make-any-translations": "این کاربر هیچ ترجمه‌ای انجام نداده.",
 	"tsb-translations-source": "منبع",
 	"tsb-translations-user": "ترجمه‌های کاربر",
@@ -48,7 +48,7 @@
 	"tsb-create-user-page": "ایجاد صفحهٔ کاربری اصلی",
 	"log-name-translatorsandbox": "جعبه شنی ترجمه",
 	"log-description-translatorsandbox": "سیاهه‌ای از عملکرد بر روی کاربران جعبه شنی ترجمه",
-	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|ترفیع}} $3 به {{GENDER:$4|مترجم}}",
-	"logentry-translatorsandbox-rejected": "$1 درخواست {{GENDER:$2|رد شده}} از \"$3\" برای مترجم شدن",
+	"logentry-translatorsandbox-promoted": "$1، $3 را به {{GENDER:$4|مترجم}} {{GENDER:$2|ترفیع}} داد",
+	"logentry-translatorsandbox-rejected": "$1 درخواست «$3» را برای مترجم شدن {{GENDER:$2|رد کرد}}",
 	"logentry-newusers-tsbpromoted": "حساب کاربری  $3 توسط ترفیع از سندباکس{{GENDER:$2| ایجاد شده}} بود"
 }
