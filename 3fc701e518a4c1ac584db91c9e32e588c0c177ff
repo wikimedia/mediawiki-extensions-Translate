@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_fdba9604",
+        "filename": "resources/css/ext.translate.special.searchtranslations.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-04-01T07:40:54Z",
+      "side": 1,
+      "message": "links with small l",
+      "revId": "3fc701e518a4c1ac584db91c9e32e588c0c177ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_9d35a2a5",
+        "filename": "resources/css/ext.translate.special.searchtranslations.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-04-01T07:40:54Z",
+      "side": 1,
+      "message": "Please add an empty line between blocks.",
+      "revId": "3fc701e518a4c1ac584db91c9e32e588c0c177ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_5d3b8a96",
+        "filename": "resources/css/ext.translate.special.searchtranslations.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-04-01T07:40:54Z",
+      "side": 1,
+      "message": "Why does the pager-prev not have the same styling?",
+      "revId": "3fc701e518a4c1ac584db91c9e32e588c0c177ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_7d3e8687",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-04-01T07:40:54Z",
+      "side": 1,
+      "message": "Please move these styles to css file and add a class here.",
+      "revId": "3fc701e518a4c1ac584db91c9e32e588c0c177ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
