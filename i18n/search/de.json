@@ -16,6 +16,6 @@
 	"tux-sst-nosolr-body": "Dieses Wiki hat keinen Übersetzungssuchservice.",
 	"tux-sst-solr-offline-title": "Die Suche ist nicht verfügbar",
 	"tux-sst-solr-offline-body": "Der Suchdienst ist derzeit nicht verfügbar.",
-	"tux-sst-next": "Nächste Ergebnisse",
-	"tux-sst-prev": "Vorherige Ergebnisse"
+	"tux-sst-next": "Nächste ›",
+	"tux-sst-prev": "‹ Vorherige"
 }

@@ -268,19 +268,19 @@ $specialPageAliases['de'] = array(
 $specialPageAliases['diq'] = array(
 	'AggregateGroups' => array( 'GrubéAggregate' ),
 	'ImportTranslations' => array( 'AçarnayışaZerrefi' ),
-	'LanguageStats' => array( 'Zıwanİst' ),
+	'LanguageStats' => array( 'İstatistikêZıwani' ),
 	'Magic' => array( 'AçarnayışoHerayen' ),
 	'ManageMessageGroups' => array( 'GrubanéMesacanİdareke' ),
 	'ManageTranslatorSandbox' => array( 'İdareyaQumdorAçarnayış', 'QumdorAçarnayış' ),
-	'MessageGroupStats' => array( 'İstatistikéGrubandéMesacan' ),
-	'PageTranslation' => array( 'PerraAçarnayış' ),
+	'MessageGroupStats' => array( 'İstatistikêGrubaMesacan' ),
+	'PageTranslation' => array( 'Açarnayışê_Pele' ),
 	'PageTranslationDeletePage' => array( 'PerraAçarnayışéPerraBesternayış' ),
 	'SearchTranslations' => array( 'AçarnayışaCıgeyreyış' ),
 	'SupportedLanguages' => array( 'ZıwanêkeDestegnênê' ),
 	'Translate' => array( 'Açarnayış' ),
 	'TranslationStash' => array( 'AçarnayışiNımnanyış' ),
-	'TranslationStats' => array( 'İstatistikéAçarnayışi' ),
-	'Translations' => array( 'Açarnoği' ),
+	'TranslationStats' => array( 'İstatistikêAçarnayışi' ),
+	'Translations' => array( 'Açarnayoği' ),
 );
 
 /** Lower Sorbian (dolnoserbski) */
