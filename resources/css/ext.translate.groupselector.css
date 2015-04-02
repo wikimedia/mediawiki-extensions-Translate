@@ -90,6 +90,12 @@
 	top: -6px;
 }
 
+/* Remove the triangle shaped callout */
+.tux-groupselector.removecallout:before,
+.tux-groupselector.removecallout:after {
+	content: none;
+}
+
 .grid .tux-groupselector__title {
 	border: none;
 	color: #555555;
