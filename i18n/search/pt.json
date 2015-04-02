@@ -3,7 +3,8 @@
 		"authors": [
 			"Luckas",
 			"Hamilton Abreu",
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Macofe"
 		]
 	},
 	"searchtranslations": "Pesquisar nas traduções",
@@ -18,6 +19,6 @@
 	"tux-sst-nosolr-body": "Esta wiki não tem um serviço de pesquisa de traduções.",
 	"tux-sst-solr-offline-title": "Pesquisa indisponível",
 	"tux-sst-solr-offline-body": "O serviço de pesquisa está temporariamente indisponível.",
-	"tux-sst-next": "Resultados seguintes",
-	"tux-sst-prev": "Resultados anteriores"
+	"tux-sst-next": "Seguintes ›",
+	"tux-sst-prev": "‹ Anteriores"
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Jopparn"
 		]
 	},
 	"searchtranslations": "Sök översättningar",
@@ -16,6 +17,6 @@
 	"tux-sst-nosolr-body": "Denna wiki har inte en tjänst för att söka efter översättningar.",
 	"tux-sst-solr-offline-title": "Sökning är inte tillgänglig",
 	"tux-sst-solr-offline-body": "Söktjänsten är inte tillgänglig för tillfället.",
-	"tux-sst-next": "Nästa resultat",
-	"tux-sst-prev": "Föregående resultat"
+	"tux-sst-next": "Nästa ›",
+	"tux-sst-prev": "‹ Föregående"
 }
