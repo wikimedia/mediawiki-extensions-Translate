@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_9ef261cd",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1957
+      },
+      "writtenOn": "2015-04-03T21:28:37Z",
+      "side": 1,
+      "message": "The reason for this should be // documented.",
+      "revId": "ce6eed14c699938907ea429acbe1e5c17a8c34e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
