@@ -128,7 +128,10 @@
 			this.$container.on( 'clear', $.proxy( messageTable.clear, messageTable ) );
 
 			this.$loader.appear( function () {
-				messageTable.load();
+				// Avoid the overlap calls to load()
+				setTimeout( function () {
+					messageTable.load();
+				}, 250 );
 			}, {
 				// Appear callback need to be called more than once.
 				one: false
