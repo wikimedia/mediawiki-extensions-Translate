@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"아라"
+			"아라",
+			"SeoJeongHo"
 		]
 	},
 	"searchtranslations": "번역 검색",
@@ -16,6 +17,6 @@
 	"tux-sst-nosolr-body": "이 위키는 번역 검색 서비스가 없습니다.",
 	"tux-sst-solr-offline-title": "검색을 사용할 수 없음",
 	"tux-sst-solr-offline-body": "검색 서비스를 일시적으로 사용할 수 없습니다.",
-	"tux-sst-next": "다음 결과",
-	"tux-sst-prev": "이전 결과"
+	"tux-sst-next": "다음 ›",
+	"tux-sst-prev": "‹ 이전"
 }
