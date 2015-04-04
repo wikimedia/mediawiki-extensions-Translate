@@ -675,7 +675,7 @@
 
 				$saveButton = $( '<button>' )
 					.prop( 'disabled', true )
-					.addClass( 'blue button tux-editor-save-button' )
+					.addClass( 'mw-ui-button mw-ui-constructive tux-editor-save-button' )
 					.text( mw.msg( 'tux-editor-save-button-label' ) )
 					.on( 'click', function ( e ) {
 						translateEditor.save();
@@ -715,7 +715,7 @@
 			}
 
 			$skipButton = $( '<button>' )
-				.addClass( 'button tux-editor-skip-button' )
+				.addClass( 'mw-ui-button tux-editor-skip-button' )
 				.text( mw.msg( 'tux-editor-skip-button-label' ) )
 				.on( 'click', function ( e ) {
 					translateEditor.skip();
@@ -730,7 +730,7 @@
 
 			// This appears instead of "Skip" on the last message on the page
 			$cancelButton = $( '<button>' )
-				.addClass( 'button tux-editor-cancel-button' )
+				.addClass( 'mw-ui-button tux-editor-cancel-button' )
 				.text( mw.msg( 'tux-editor-cancel-button-label' ) )
 				.on( 'click', function ( e ) {
 					translateEditor.skip();
@@ -868,7 +868,7 @@
 
 			if ( mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				$messageDescSaveButton = $( '<button>' )
-					.addClass( 'blue button tux-editor-savedoc-button' )
+					.addClass( 'mw-ui-button mw-ui-constructive tux-editor-savedoc-button' )
 					.prop( 'disabled', true )
 					.text( mw.msg( 'tux-editor-doc-editor-save' ) )
 					.on( 'click', function () {
@@ -880,7 +880,7 @@
 					} );
 
 				$messageDescCancelButton = $( '<button>' )
-					.addClass( 'button tux-editor-skipdoc-button' )
+					.addClass( 'mw-ui-button tux-editor-skipdoc-button' )
 					.text( mw.msg( 'tux-editor-doc-editor-cancel' ) )
 					.on( 'click', function () {
 						translateEditor.hideDocumentationEditor();
