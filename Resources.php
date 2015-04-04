@@ -54,7 +54,6 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'ext.translate.storage',
 		'ext.translate.hooks',
 		'ext.translate.dropdownmenu',
-		'ext.uls.buttons',
 		'jquery.uls.grid',
 		'mediawiki.util',
 		'mediawiki.Uri',
