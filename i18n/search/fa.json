@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ebraminio"
+			"Ebraminio",
+			"Danialbehzadi"
 		]
 	},
 	"searchtranslations": "جستجوی ترجمه‌ها",
@@ -16,6 +17,6 @@
 	"tux-sst-nosolr-body": "این ویکی خدمات جستجوی ترجمه ندارد.",
 	"tux-sst-solr-offline-title": "جستجوی ناموجود است",
 	"tux-sst-solr-offline-body": "خدمت جستجو به‌صورت موقت ناموجود است.",
-	"tux-sst-next": "نتایج بعدی",
-	"tux-sst-prev": "نتایج قبلی"
+	"tux-sst-next": "بعدی ←",
+	"tux-sst-prev": "→ پیشین"
 }

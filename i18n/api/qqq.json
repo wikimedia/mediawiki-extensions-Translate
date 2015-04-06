@@ -3,7 +3,8 @@
 		"authors": [
 			"Robby",
 			"Liuxinyu970226",
-			"Amire80"
+			"Amire80",
+			"Nemo bis"
 		]
 	},
 	"apihelp-aggregategroups-description": "{{doc-apihelp-description|aggregategroups}}",
@@ -41,7 +42,7 @@
 	"apihelp-query+messagegroups-param-filter": "{{doc-apihelp-param|query+messagegroups|filter}}",
 	"apihelp-query+messagegroups-param-format": "{{doc-apihelp-param|query+messagegroups|format}}",
 	"apihelp-query+messagegroups-param-iconsize": "{{doc-apihelp-param|query+messagegroups|iconsize}}",
-	"apihelp-query+messagegroups-param-prop": "{{doc-apihelp-param|query+messagegroups|prop}}",
+	"apihelp-query+messagegroups-param-prop": "{{doc-apihelp-param|query+messagegroups|prop}}\nSee the [[mw:Help:Extension:Translate/Message group states|description of ''states'']].",
 	"apihelp-query+messagegroups-param-root": "{{doc-apihelp-param|query+messagegroups|root}}",
 	"apihelp-query+messagegroups-example-1": "{{doc-apihelp-example|query+messagegroups}}",
 	"apihelp-query+messagegroupstats-description": "{{doc-apihelp-description|query+messagegroupstats}}",
@@ -72,9 +73,9 @@
 	"apihelp-translationstash-param-title": "{{doc-apihelp-param|translationstash|title}}",
 	"apihelp-translationstash-param-translation": "{{doc-apihelp-param|translationstash|translation}}",
 	"apihelp-translationstash-param-metadata": "{{doc-apihelp-param|translationstash|metadata}}",
-	"apihelp-translationstash-param-username": "{{doc-apihelp-param|translationstash|username}}",
-	"apihelp-translationstash-example-1": "{{doc-apihelp-example|translationstash}}",
-	"apihelp-translationstash-example-2": "{{doc-apihelp-example|translationstash}}",
+	"apihelp-translationstash-param-username": "{{doc-apihelp-param|translationstash|username}}\nThe stash is also called [[mw:Translation_UX/Specification#Translation_sandbox|sandbox]].",
+	"apihelp-translationstash-example-1": "{{doc-apihelp-example|translationstash}}\nThe stash is also called [[mw:Translation_UX/Specification#Translation_sandbox|sandbox]].",
+	"apihelp-translationstash-example-2": "{{doc-apihelp-example|translationstash}}\nThe stash is also called [[mw:Translation_UX/Specification#Translation_sandbox|sandbox]].",
 	"apihelp-ttmserver-description": "{{doc-apihelp-description|ttmserver}}",
 	"apihelp-ttmserver-param-service": "{{doc-apihelp-param|ttmserver|service}}",
 	"apihelp-ttmserver-param-sourcelanguage": "{{doc-apihelp-param|ttmserver|sourcelanguage}}",

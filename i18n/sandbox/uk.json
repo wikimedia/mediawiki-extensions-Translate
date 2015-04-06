@@ -3,7 +3,8 @@
 		"authors": [
 			"Andriykopanytsia",
 			"Base",
-			"Ата"
+			"Ата",
+			"Piramidion"
 		]
 	},
 	"managetranslatorsandbox": "Керування грамайданчиком перекладачів",
@@ -31,7 +32,7 @@
 	"tsb-reminder-link-text": "Надсилати нагадування по електронній пошті",
 	"tsb-didnt-make-any-translations": "Цей користувач не здійснив жодного перекладу.",
 	"tsb-translations-source": "Джерело",
-	"tsb-translations-user": "Користувацькі переклади",
+	"tsb-translations-user": "Переклади {{GENDER:$1|користувача|користувачки}}",
 	"tsb-translations-current": "Існуючі переклади",
 	"tsb-delete-userpage-summary": "Видалення сторінки користувача з користувача пісочниці",
 	"translationstash": "Ласкаво просимо",
