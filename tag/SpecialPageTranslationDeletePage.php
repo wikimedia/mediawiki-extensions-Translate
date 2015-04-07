@@ -55,6 +55,8 @@ class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
 	public function execute( $par ) {
 		$request = $this->getRequest();
 
+		$par = (string)$par;
+
 		// Yes, the use of getVal() and getText() is wanted, see bug T22365
 		$this->text = $request->getVal( 'wpTitle', $par );
 		$this->title = Title::newFromText( $this->text );

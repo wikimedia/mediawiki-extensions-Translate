@@ -36,6 +36,8 @@ class SpecialTranslations extends SpecialAllpages {
 
 		$out = $this->getOutput();
 
+		$par = (string)$par;
+
 		if ( $this->including() ) {
 			$title = Title::newFromText( $par );
 			if ( !$title ) {
