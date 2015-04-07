@@ -386,6 +386,16 @@ $specialPageAliases['frp'] = array(
 	'Translations' => array( 'Traduccions' ),
 );
 
+/** Western Frisian (Frysk) */
+$specialPageAliases['fy'] = array(
+	'ImportTranslations' => array( 'OersettingsYmportearje' ),
+	'LanguageStats' => array( 'Taalstatistiken' ),
+	'PageTranslation' => array( 'Sideoersetting' ),
+	'SearchTranslations' => array( 'OersettingsSykje' ),
+	'Translate' => array( 'Oersette' ),
+	'Translations' => array( 'Oersettings' ),
+);
+
 /** Galician (galego) */
 $specialPageAliases['gl'] = array(
 	'ImportTranslations' => array( 'Importar_traducións' ),

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toliño"
+			"Toliño",
+			"Elisardojm"
 		]
 	},
 	"searchtranslations": "Procurar nas traducións",
@@ -16,6 +17,6 @@
 	"tux-sst-nosolr-body": "Este wiki non dispón dun servizo de procura de traducións.",
 	"tux-sst-solr-offline-title": "A procura non está dispoñible",
 	"tux-sst-solr-offline-body": "O servizo de procura non está dispoñible temporalmente.",
-	"tux-sst-next": "Resultados seguintes",
-	"tux-sst-prev": "Resultados anteriores"
+	"tux-sst-next": "Seguintes ›",
+	"tux-sst-prev": "< Anteriores"
 }
