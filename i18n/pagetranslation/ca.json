@@ -11,7 +11,8 @@
 			"Fitoschido",
 			"Jmarchn",
 			"Macofe",
-			"Joan manel"
+			"Joan manel",
+			"Ssola"
 		]
 	},
 	"pagetranslation": "Traducció d'una pàgina",
@@ -54,7 +55,7 @@
 	"pt-movepage-list-pages": "Llista de pàgines per moure",
 	"pt-movepage-list-translation": "{{PLURAL:$1|Pàgina|Pàgines}} de traducció",
 	"pt-movepage-list-section": "{{PLURAL:$1|Pàgina|Pàgines}} d'unitat de traducció",
-	"pt-movepage-list-other": "Altres sub{{PLURAL:$1|pàgina|pàgines}}",
+	"pt-movepage-list-other": "{{PLURAL:$1|Una altra subpàgina|Altres subpàgines}}",
 	"pt-movepage-list-count": "En total, $1 {{PLURAL:$1|pàgina|pàgines}} a moure.",
 	"pt-movepage-legend": "Mou la pàgina traduïble",
 	"pt-movepage-current": "Nom actual:",
@@ -69,6 +70,7 @@
 	"pt-movepage-started": "La pàgina base està traslladada.\nComproveu el [[Special:Log/pagetranslation|registre de traducció de pàgines]] pels errors i el missatge de finalització.",
 	"pt-locked-page": "Aquesta pàgina està bloquejada perquè la pàgina a traduir està en un procés de trasllat.",
 	"pt-deletepage-reason": "Raó:",
+	"pt-deletepage-list-other": "Altres subpàgines",
 	"pm-import-button-label": "Importa",
 	"pm-savepages-button-label": "Desa",
 	"pm-cancel-button-label": "Cancel·la",

@@ -7,5 +7,6 @@
 	"tpt-diff-new": "Nýggjur tekstur",
 	"tpt-submit": "Merk hesa versjónina til týðing",
 	"tpt-nosuchpage": "Síðan $1 er ikki til",
-	"tpt-edit-failed": "Tað bar ikki til at dagføra síðuna: $1"
+	"tpt-edit-failed": "Tað bar ikki til at dagføra síðuna: $1",
+	"tpt-languages-nonzero": "$1 ($2% týtt)"
 }

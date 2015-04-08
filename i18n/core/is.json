@@ -5,7 +5,8 @@
 			"Jóna Þórunn",
 			"S.Örvarr.S",
 			"Snævar",
-			"Spacebirdy"
+			"Spacebirdy",
+			"Sveinn í Felli"
 		]
 	},
 	"translate": "Þýða",
@@ -271,7 +272,7 @@
 	"tux-proofread-action-tooltip": "Merkja sem yfirfarið",
 	"tux-proofread-edit-label": "Breyta",
 	"tux-editor-page-mode": "Síða",
-	"tux-editor-outdated-warning": "Þessi þýðing þarf kanski að vera uppfærð.",
+	"tux-editor-outdated-warning": "Þessa þýðingu þyrfti kannski að uppfæra.",
 	"tux-editor-outdated-warning-diff-link": "Sýna mun",
 	"tux-editor-doc-editor-placeholder": "Leiðbeiningar skilaboða",
 	"tux-editor-doc-editor-save": "Vista leiðbeiningar",

@@ -155,6 +155,25 @@ $specialPageAliases['bg'] = array(
 	'Translations' => array( 'Преводи' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'AggregateGroups' => array( 'گروپ_ئآنی_جم' ),
+	'ImportTranslations' => array( 'ترجمه_ئانی_درون_بررّگ' ),
+	'LanguageStats' => array( 'زبان_ئانی_سرجم' ),
+	'Magic' => array( 'پیشرپته_ئین_ترجمه' ),
+	'ManageMessageGroups' => array( 'پیامی_گروپ_ئانی_مدیریت' ),
+	'ManageTranslatorSandbox' => array( 'ترجمه_ئی_تمرین_ئی_تاکدیمی_مدیریت' ),
+	'MessageGroupStats' => array( 'پیام_ی_گروپ_ئی_سرجم' ),
+	'PageTranslation' => array( 'ترجمه_ئی_تاکدیم' ),
+	'PageTranslationDeletePage' => array( 'ترجمه_ئی_تاکدیم', 'تاکدیمی_پاک_کورتین' ),
+	'SearchTranslations' => array( 'ترجمه_ئانی_گشتین' ),
+	'SupportedLanguages' => array( 'پُشتیوانی_بوته_ئین_زبانان' ),
+	'Translate' => array( 'ترجمه' ),
+	'TranslationStats' => array( 'ترجمه_ئانی_سرجم' ),
+	'Translations' => array( 'ترجمه_ئان' ),
+	'PageMigration' => array( 'تاکدیمی_لَڑ_و_بار' ),
+);
+
 /** Banjar (Bahasa Banjar) */
 $specialPageAliases['bjn'] = array(
 	'ImportTranslations' => array( 'Impor_tarjamahan' ),

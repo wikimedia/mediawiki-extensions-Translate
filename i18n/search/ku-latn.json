@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"George Animal"
+			"George Animal",
+			"Bikarhêner"
 		]
 	},
 	"searchtranslations": "Li wergeran bigere",
@@ -11,5 +12,6 @@
 	"tux-sst-count": "{{PLURAL:$1|Encamek hat dîtin|$1 encam hatin dîtin}}",
 	"tux-sst-facet-language": "Ziman",
 	"tux-sst-facet-group": "Komên peyaman",
-	"tux-sst-facet-orphan": "(sêwî)"
+	"tux-sst-facet-orphan": "(sêwî)",
+	"tux-sst-next": "Pêşve›"
 }
