@@ -199,7 +199,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 			}
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_SLAVE, 'vslow' );
 		$tables = array( 'page', 'revision' );
 		$fields = array(
 			'rev_user_text',
