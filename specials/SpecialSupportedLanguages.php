@@ -68,17 +68,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 
 			$out->addWikiMsg( 'supportedlanguages-colorlegend', $this->getColorLegend() );
 
-			$work = new PoolCounterWorkViaCallback(
-				'TranslateFetchTranslators',
-				"TranslateFetchTranslators-$code",
-				array(
-					'doWork' => function () use ( $code ) {
-						return $this->fetchTranslators( $code );
-					}
-				)
-			);
-			$users = $work->execute();
-
+			$users = $this->fetchTranslators( $code );
 			if ( $users === false ) {
 				// generic-pool-error is from MW core
 				$out->wrapWikiMsg( '<div class="warningbox">$1</div>', 'generic-pool-error' );
@@ -185,19 +175,61 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		return $data;
 	}
 
+	/**
+	 * Fetch the translators for a language with caching
+	 *
+	 * @param string $code
+	 * @return array|bool Map of (user name => page count) or false on failure
+	 */
 	public function fetchTranslators( $code ) {
-		global $wgTranslateMessageNamespaces;
-
 		$cache = wfGetCache( CACHE_ANYTHING );
-		$cachekey = wfMemcKey( 'translate-supportedlanguages-translator-list', $code );
+		$cachekey = wfMemcKey( 'translate-supportedlanguages-translator-list-v1', $code );
+
 		if ( $this->purge ) {
 			$cache->delete( $cachekey );
+			$data = false;
 		} else {
+			$staleCutoffUnix = time() - 3600;
 			$data = $cache->get( $cachekey );
-			if ( is_array( $data ) ) {
-				return $data;
+			if ( is_array( $data ) && $data['asOfTime'] > $staleCutoffUnix ) {
+				return $data['users'];
 			}
 		}
+
+		$that = $this;
+		$work = new PoolCounterWorkViaCallback(
+			'TranslateFetchTranslators',
+			"TranslateFetchTranslators-$code",
+			array(
+				'doWork' => function () use ( $that, $code, $cache, $cachekey ) {
+					$users = $that->loadTranslators( $code );
+					$newData = array( 'users' => $users, 'asOfTime' => time() );
+					$cache->set( $cachekey, $newData, 86400 );
+					return $users;
+				},
+				'doCachedWork' => function () use ( $cache, $cachekey ) {
+					$newData = $cache->get( $cachekey );
+					// Use new cache value from other thread
+					return is_array( $newData ) ? $newData['users'] : false;
+				},
+				'fallback' => function () use ( $data ) {
+					// Use stale cache if possible
+					return is_array( $data ) ? $data['users'] : false;
+				}
+			)
+		);
+
+		return $work->execute();
+	}
+
+	/**
+	 * Fetch the translators for a language
+	 *
+	 * @param type $code
+	 * @return array Map of (user name => page count)
+	 */
+	public function loadTranslators( $code ) {
+		global $wgTranslateMessageNamespaces;
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = array( 'page', 'revision' );
@@ -210,7 +242,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 			'page_namespace' => $wgTranslateMessageNamespaces,
 			'page_id=rev_page',
 		);
-		$options = array( 'GROUP BY' => 'rev_user_text' );
+		$options = array( 'GROUP BY' => 'rev_user_text', 'ORDER BY' => 'NULL' );
 
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
 
@@ -218,8 +250,6 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		foreach ( $res as $row ) {
 			$data[$row->rev_user_text] = $row->count;
 		}
-
-		$cache->set( $cachekey, $data, 3600 );
 
 		return $data;
 	}
