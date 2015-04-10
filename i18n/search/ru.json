@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kaganer",
-			"Lockal"
+			"Lockal",
+			"Okras"
 		]
 	},
 	"searchtranslations": "Поиск переводов",
@@ -17,6 +18,6 @@
 	"tux-sst-nosolr-body": "В этой вики отсутствует сервис поиска переводов.",
 	"tux-sst-solr-offline-title": "Поиск недоступен",
 	"tux-sst-solr-offline-body": "Служба поиска временно недоступна.",
-	"tux-sst-next": "Следующие результаты",
-	"tux-sst-prev": "Предыдущие результаты"
+	"tux-sst-next": "Далее ›",
+	"tux-sst-prev": "‹ Назад"
 }
