@@ -52,8 +52,8 @@ class MediaWikiMessageCheckerTest extends MediaWikiTestCase {
 			),
 
 			array(
-				array( array( '1', '2{{car}}3' ) ),
-				'a{{PLURAL:#|1|2{{car}}3}}',
+				array( array( '1', '2{{}}3' ) ),
+				'a{{PLURAL:#|1|2{{}}3}}',
 				'one plural magic word with curlies inside is parsed correctly'
 			),
 
