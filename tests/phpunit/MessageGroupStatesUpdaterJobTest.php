@@ -110,6 +110,17 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 	public function testHooks() {
 		$user = new MockSuperUser();
 		$group = MessageGroups::getGroup( 'group-trans' );
+		$this->setMwGlobals( array(
+			'wgShowExceptionDetails' => true,
+			'wgShowSQLErrors' => true,
+			'wgShowDBErrorBacktrace' => true,
+			'wgDebugComments' => true,
+			'wgDebugDumpSql' => true,
+			'wgDevelopmentWarnings' => true,
+			'wgDebugTimestamps' => true,
+			'wgShowDebug' => true,
+			'wgDebugLogFile' => 'php://stdout',
+		) );
 
 		// In the beginning...
 		$currentState = ApiGroupReview::getState( $group, 'fi' );
