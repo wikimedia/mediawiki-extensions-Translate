@@ -18,6 +18,17 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 			'wgTranslateTranslationServices' => array(),
 			'wgTranslateMessageNamespaces' => array( NS_MEDIAWIKI ),
 		) );
+
+		$this->setMwGlobals( array(
+			'wgShowExceptionDetails' => true,
+			'wgDebugComments' => true,
+			'wgDebugDumpSql' => true,
+			'wgDevelopmentWarnings' => true,
+			'wgDebugTimestamps' => true,
+			'wgShowDebug' => true,
+			'wgDebugLogFile' => 'php://stdout',
+		) );
+
 		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
 		MessageGroups::clearCache();
 		MessageIndexRebuildJob::newJob()->run();
