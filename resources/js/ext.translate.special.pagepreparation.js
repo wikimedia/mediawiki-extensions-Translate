@@ -287,7 +287,8 @@
 	}
 
 	$( document ).ready( function () {
-		var pageContent;
+		var pageContent,
+			$input = $( '#page' );
 
 		$( '#action-cancel' ).click( function () {
 			document.location.reload( true );
@@ -295,14 +296,14 @@
 
 		$( '#action-save' ).click( function () {
 			var serverName, pageUrl = '', pageName;
-			pageName = $.trim( $( '#title' ).val() );
+			pageName = $.trim( $input.val() );
 			serverName = mw.config.get( 'wgServerName' );
 			savePage( pageName, pageContent ).done( function () {
 				pageUrl = mw.Title.newFromText( pageName ).getUrl( { action: 'edit' } );
 				$( '.messageDiv' ).html( mw.message( 'pp-save-message', pageUrl ).parse() ).show();
 				$( '.divDiff' ).hide( 'fast' );
 				$( '#action-prepare' ).show();
-				$( '#title' ).val( '' );
+				$input.val( '' );
 				$( '#action-save' ).hide();
 				$( '#action-cancel' ).hide();
 			} );
@@ -310,7 +311,7 @@
 
 		$( '#action-prepare' ).click( function () {
 			var pageName, messageDiv = $( '.messageDiv' );
-			pageName = $.trim( $( '#title' ).val() );
+			pageName = $.trim( $input.val() );
 			messageDiv.hide();
 			if ( pageName === '' ) {
 				window.alert( mw.msg( 'pp-pagename-missing' ) );

@@ -18,6 +18,8 @@ class SpecialPagePreparation extends SpecialPage {
 		$output = $this->getOutput();
 		$this->setHeaders();
 		$this->checkPermissions();
+
+		$inputValue = htmlspecialchars( $request->getText( 'page', $par ) );
 		$pagenamePlaceholder = $this->msg( 'pp-pagename-placeholder' )->escaped();
 		$prepareButtonValue = $this->msg( 'pp-prepare-button-label' )->escaped();
 		$saveButtonValue = $this->msg( 'pp-save-button-label' )->escaped();
@@ -25,7 +27,6 @@ class SpecialPagePreparation extends SpecialPage {
 		$summaryValue = $this->msg( 'pp-save-summary' )->inContentLanguage()->escaped();
 		$output->addModules( 'ext.translate.special.pagepreparation' );
 		$output->addModuleStyles( 'jquery.uls.grid' );
-		$param = $request->getText( 'param' );
 
 		$out = '';
 		$diff = new DifferenceEngine( $this->getContext() );
@@ -34,10 +35,10 @@ class SpecialPagePreparation extends SpecialPage {
 
 		$out = <<<HTML
 <div class="grid">
-	<form class="mw-tpp-sp-form row" name="mw-tpp-sp-input-form">
+	<form class="mw-tpp-sp-form row" name="mw-tpp-sp-input-form" action="">
 		<input id="pp-summary" type="hidden" value="{$summaryValue}" />
-		<input name="title" id="title" class="mw-searchInput mw-ui-input"
-			placeholder="{$pagenamePlaceholder}" />
+		<input name="page" id="page" class="mw-searchInput mw-ui-input"
+			placeholder="{$pagenamePlaceholder}" value="{$inputValue}"/>
 		<button id="action-prepare" class="mw-ui-button mw-ui-primary" type="button">
 			{$prepareButtonValue}</button>
 		<button id="action-save" class="mw-ui-button mw-ui-constructive hide" type="button">
