@@ -245,12 +245,13 @@ $wgResourceModules['ext.translate.pagepreparation'] = array(
 		'pp-pagename-missing'
 	),
 	'dependencies' => array(
-		'mediawiki.ui',
+		'jquery.mwExtension',
+		'mediawiki.Title',
+		'mediawiki.action.history.diff',
 		'mediawiki.api',
 		'mediawiki.api.edit',
-		'jquery.mwExtension',
-		'mediawiki.action.history.diff',
 		'mediawiki.jqueryMsg',
+		'mediawiki.ui',
 	),
 ) + $resourcePaths;
 
