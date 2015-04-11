@@ -137,7 +137,8 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 				/** @todo Once support for MediaWiki < 1.25 is dropped, just
 				 * use ApiBase::PARAM_HELP_MSG directly
 				 */
-				constant( 'ApiBase::PARAM_HELP_MSG' ) ?: '' => 'api-help-param-continue',
+				defined( 'ApiBase::PARAM_HELP_MSG' ) ? ApiBase::PARAM_HELP_MSG : '' =>
+					'api-help-param-continue',
 			),
 		);
 	}
