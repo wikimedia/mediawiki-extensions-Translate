@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu"
+			"Xuacu",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] ye un xuegu d'estratexa por turnos",
@@ -54,6 +55,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Uiquiesbilla",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] ye una aplicación de plataforma cruzada pa móviles y tabletes pa lleer y collaborar con Wiktionary",
 	"translate-group-desc-wikimediaextensions": "Grupu de mensaxes Meta que contien tolos mensaxes pa les estensiones sofitaes por MediaWiki qu'usa la [https://wikimediafoundation.org/ Fundación Wikimedia]",
-	"translate-group-desc-wikimediaextensions-main": "Meta grupu de mensaxes que contién tolos mensaxes de les estensiones de MediaWiki sofitaes que necesiten traducción pal [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee comité de llingües] de Wikimedia",
+	"translate-group-desc-wikimediaextensions-main": "Meta grupu de mensaxes que contién tolos mensaxes de les estensiones de [[Translating:MediaWiki|MediaWiki]] sofitaes que necesiten traducción pal [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee comité de llingües] de Wikimedia",
 	"translategroupdescriptions-desc": "Descripciones de los grupos de mensaxes de los productos compatibles con la estensión [https://mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]"
 }

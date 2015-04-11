@@ -5,7 +5,8 @@
 			"Jim-by",
 			"Renessaince",
 			"Wizardist",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Перад тым, як перакладаць FreeCol на Вашую мову, калі ласка, прачытайце [[Translating:FreeCol]]. Freecol выкарыстоўвае ліцэнзію GPL.",
@@ -38,6 +39,6 @@
 	"translate-group-desc-tsint": "Група паведамленьняў [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], сыстэмы перакладаў для [http://tolserver.org сэрвэра інструмэнтаў] (<span class=\"plainlinks\">[[Translating talk:Toolserver|падтрымка]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition тэхнічныя дэталі]</span>)",
 	"translate-group-desc-wikiaextensions": "Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для падтрымліваемых пашырэньняў MediaWiki, выкарыстоўваемых [http://www.wikia.com Wikia]",
 	"translate-group-desc-wikimediaextensions": "Мэта-група паведамленьняў, якая ўтрымлівае ўсе паведамленьні для падтрымліваемых пашырэньняў MediaWiki, выкарыстоўваемых [https://wikimediafoundation.org/ фундацыяй «Вікімэдыя»]",
-	"translate-group-desc-wikimediaextensions-main": "Мэта-група паведамленьняў, якая утрымлівае ўсе паведамленьні для пашырэньняў MediaWiki, якія патрабуюць перакладу для [https://meta.wikimedia.org/wiki/Language_committee моўнага камітэту] Wikimedia",
+	"translate-group-desc-wikimediaextensions-main": "Мэта-група паведамленьняў, якая утрымлівае ўсе паведамленьні для пашырэньняў [[Translating:MediaWiki|MediaWiki]], якія патрабуюць перакладу для [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee моўнага камітэту] Wikimedia",
 	"translategroupdescriptions-desc": "Апісаньні групаў паведамленьняў для прадуктаў, якія падтрымліваюцца пашырэньнем [https://mediawiki.org/wiki/Extension:Translate перакладу]"
 }

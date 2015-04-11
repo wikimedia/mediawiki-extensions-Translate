@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Michawiki",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Nježli až pśełožujoš FreeCol do swójeje rěcy, pśecytaj pšosym [[Translating:FreeCol]]. FreeCol wužywa licencu GPL.",
@@ -51,6 +52,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] jo nałoženje za mobilne rědy a tablety za cytanje a sobuźěło we Wikižrědle",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] jo nałoženje za mobilne rědy a tablety za cytanje a sobuźěło we Wikisłowniku",
 	"translate-group-desc-wikimediaextensions": "Toś ta głowna kupka wopśimujo wše powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež wužywaju se pśez [https://wikimediafoundation.org/ Wikimedia Foundation]",
-	"translate-group-desc-wikimediaextensions-main": "Metakupka powěźeńkow, kótaraž wopśimujo wšykne powěźeńki za pódpěrane rozšyrjenja MediaWiki, kótarež muse se za [https://meta.wikimedia.org/wiki/Language_committee Rěcny komitej] Wikimedije pśełožyś",
+	"translate-group-desc-wikimediaextensions-main": "Metakupka powěźeńkow, kótaraž wopśimujo wšykne powěźeńki za pódpěrane rozšyrjenja [[Translating:MediaWiki|MediaWiki]], kótarež muse se za [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Rěcny komitej] Wikimedije pśełožyś",
 	"translategroupdescriptions-desc": "Wopisanja kupkow powěźeńkow za produkty pódpěrane wót rozšyrjenja [https://mediawiki.org/wiki/Extension:Translate Translate]"
 }

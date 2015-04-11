@@ -6,7 +6,8 @@
 			"Metalhead64",
 			"Pill",
 			"The Evil IP address",
-			"Umherirrender"
+			"Umherirrender",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Vor dem Übersetzungsstart für FreeCol bitte [[Translating:FreeCol]] lesen. FreeCol nutzt die GPL-Lizenz.",
@@ -61,6 +62,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] ist eine plattformunabhängige Mobil- und Tabletanwendung zum Lesen und Bearbeiten von Wikisource",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] ist eine plattformunabhängige Mobil- und Tabletanwendung zum Lesen und Bearbeiten von Wiktionary",
 	"translate-group-desc-wikimediaextensions": "Diese Hauptgruppe beinhaltet alle Systemnachrichten der unterstützten MediaWiki-Erweiterungen, die von der [https://wikimediafoundation.org/ Wikimedia Foundation] genutzt werden",
-	"translate-group-desc-wikimediaextensions-main": "Diese Hauptgruppe beinhaltet alle Systemnachrichten der unterstützten MediaWiki-Erweiterungen, die vom Wikimedia [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Sprachenkomitee] genutzt werden",
+	"translate-group-desc-wikimediaextensions-main": "Diese Hauptgruppe beinhaltet alle Systemnachrichten der unterstützten [[Translating:MediaWiki|MediaWiki]]-Erweiterungen, die vom Wikimedia [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Sprachenkomitee] genutzt werden",
 	"translategroupdescriptions-desc": "Beschreibung der Nachrichtengruppen von Projekten, die bei der Übersetzung von der Programmerweiterung [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate „Translate“] unterstützt werden"
 }

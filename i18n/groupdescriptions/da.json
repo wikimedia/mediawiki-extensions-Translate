@@ -6,7 +6,8 @@
 			"Emilkris33",
 			"Hylle",
 			"Kaare",
-			"Peter Alberti"
+			"Peter Alberti",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] er et turbaseret strategispil",
@@ -47,6 +48,6 @@
 	"translate-group-desc-wikiaextensions": "Meta besked gruppe der indeholder alle beskeder til understøttede MediaWiki udvidelser brugt af [http://www.wikia.com Wikia]",
 	"translate-group-desc-wikimedia-mobile": "Aggregeret beskedgruppe, der indeholder mobile applikationer til Wikimediaprojekter",
 	"translate-group-desc-wikimediaextensions": "Meta besked gruppe der indeholder alle beskeder til understøttede MediaWiki udvidelser brugt af [https://wikimediafoundation.org/ Wikimedia Foundation]",
-	"translate-group-desc-wikimediaextensions-main": "Meta besked gruppe der indeholder alle beskeder til understøttede MediaWiki udvidelser der kræves oversættelse af for Wikimedia [https://meta.wikimedia.org/wiki/Language_committee Language committee]",
+	"translate-group-desc-wikimediaextensions-main": "Meta besked gruppe der indeholder alle beskeder til understøttede [[Translating:MediaWiki|MediaWiki]] udvidelser der kræves oversættelse af for Wikimedia [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Language committee]",
 	"translategroupdescriptions-desc": "Beskrivelser af beskedgrupper for produkter der understøttes af [https://mediawiki.org/wiki/Extension:Translate Translate] udvidelsen"
 }

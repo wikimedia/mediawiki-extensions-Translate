@@ -4,7 +4,8 @@
 			"Mormegil",
 			"Reaperman",
 			"Matěj Suchánek",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Před překládáním FreeCol do vašeho jazyka si přečtěte [[Translating:FreeCol]]. FreeCol používá licenci GPL.",
@@ -59,6 +60,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] je mnohoplatformní mobilní a tabletová aplikace pro čtení Wikizdrojů a přispívání do nich",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] je mnohoplatformní mobilní a tabletová aplikace pro čtení Wikislovníku a přispívání do něj",
 	"translate-group-desc-wikimediaextensions": "Nadskupina zpráv obsahující všechny zprávy používané v rozšířeních MediaWiki používaných na wiki [https://wikimediafoundation.org/ nadace Wikimedia Foundation]",
-	"translate-group-desc-wikimediaextensions-main": "Nadskupina zpráv obsahující všechny zprávy v podporovaných rozšířeních MediaWiki, jejichž překlad vyžaduje [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Jazyková komise nadace Wikimedia]",
+	"translate-group-desc-wikimediaextensions-main": "Nadskupina zpráv obsahující všechny zprávy v podporovaných rozšířeních [[Translating:MediaWiki|MediaWiki]], jejichž překlad vyžaduje [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Jazyková komise nadace Wikimedia]",
 	"translategroupdescriptions-desc": "Popisy skupin zpráv pro produkty podporované rozšířením [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]"
 }

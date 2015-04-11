@@ -62,6 +62,7 @@
 	"tpt-translation-intro": "Tuta strona je <span class=\"plainlinks\">[$1 přełožena wersija]</span> strony [[$2]] a $3 % přełožka je dokónčene a přełožk je aktualny.",
 	"tpt-languages-legend": "Druhe rěče:",
 	"tpt-languages-zero": "Přełožowanje za tutu rěč započeć",
+	"tpt-languages-nonzero": "$1 ($2% přełožene)",
 	"tpt-tab-translate": "Přełožić",
 	"tpt-target-page": "Tuta strona njeda so manulenje aktualizować.\nTuta strona je přełožk strony [[$1]] a přełožk hodźi so z pomocu [$2 Přełožić] aktualizować.",
 	"tpt-unknown-page": "Tutón mjenowy rum je za přełožki wobsahowych stronow wuměnjeny.\nStrona, kotruž pospytuješ wobdźěłać, po wšěm zdaću stronje markěrowanej za přełožowanje njewotpowěduje.",

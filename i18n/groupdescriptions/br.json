@@ -6,7 +6,8 @@
 			"Gwendal",
 			"McDutchie",
 			"Y-M D",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Kent stagañ da dreiñ FreeCol en ho yezh, lennit [[Translating:FreeCol]]. Ober a ra Freecol gant an aotre GPL.",
@@ -38,6 +39,6 @@
 	"translate-group-desc-tsint": "Ur strollad kemennadennoù evit [http://toolserver.org/~krinkle/TsIntuition Toolserver Intuition], ar reizhiad etrebroadelaat ostilhoù an [http://toolserver.org Toolserver] (<span class=\"plainlinks\">[[Translating talk:Toolserver|support]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technical details]</span>)",
 	"translate-group-desc-wikiaextensions": "Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [http://www.wikia.com Wikia]",
 	"translate-group-desc-wikimediaextensions": "Meta-strollad kemennadennoù ennañ holl gemennadennoù an astennoù MediaWiki implijet gant [https://wikimediafoundation.org/ Wikimedia Foundation]",
-	"translate-group-desc-wikimediaextensions-main": "Stroll kemennadennoù Meta enno holl gemennadennoù an astennoù MediaWiki skoret a zle bezañ troet evit [https://meta.wikimedia.org/wiki/Language_committee Bodad yezh] wikimedia",
+	"translate-group-desc-wikimediaextensions-main": "Stroll kemennadennoù Meta enno holl gemennadennoù an astennoù [[Translating:MediaWiki|MediaWiki]] skoret a zle bezañ troet evit [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Bodad yezh] Wikimedia",
 	"translategroupdescriptions-desc": "Deskrivadurioù ar strolladoù kemennadennoù evit ar produioù skoret gant an astenn [https://mediawiki.org/wiki/Extension:Translate Translate]"
 }

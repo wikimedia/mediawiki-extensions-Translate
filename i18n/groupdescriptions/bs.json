@@ -6,7 +6,8 @@
 			"KWiki",
 			"Krinkle",
 			"Lokal Profil",
-			"Palapa"
+			"Palapa",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Prije nego što počnete da prevodite FreeCol na Vaš jezik, molimo pročitajte [[Translating:FreeCol]]. FreeCol koristi GPL licencu.",
@@ -38,6 +39,6 @@
 	"translate-group-desc-tsint": "Grupa poruka za [[Translating:Intuition|Intuition]], i18n sistem za [//tools.wmflabs.org/ Toolserver] alate ([[Translating talk:Intuition|podrška]])",
 	"translate-group-desc-wikiaextensions": "Grupa meta poruka koja sadrži sve poruke za podržana MediaWiki proširenja za [http://www.wikia.com Wikia]",
 	"translate-group-desc-wikimediaextensions": "Grupa meta poruka koja sadrži sve poruke za podržana MediaWiki proširenja korištena od strane [https://wikimediafoundation.org/ Fondacije Wikimedia]",
-	"translate-group-desc-wikimediaextensions-main": "Grupa meta poruka koja sadrži sve poruke za podršku MediaWiki proširenja neophodnih za prevođenje za Wikimedia [https://meta.wikimedia.org/wiki/Language_committee Jezički komitet]",
+	"translate-group-desc-wikimediaextensions-main": "Grupa meta poruka koja sadrži sve poruke za podršku [[Translating:MediaWiki|MediaWiki]] proširenja neophodnih za prevođenje za Wikimedia [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Jezički komitet]",
 	"translategroupdescriptions-desc": "Opisi grupe poruka za proizvode podržane od strane dodatka [https://mediawiki.org/wiki/Extension:Translate Translate]"
 }
