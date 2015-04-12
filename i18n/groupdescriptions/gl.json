@@ -3,7 +3,8 @@
 		"authors": [
 			"Toliño",
 			"Lokal Profil",
-			"Elisardojm"
+			"Elisardojm",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] é un xogo de estratexia por quendas",
@@ -14,11 +15,11 @@
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php?user_lang=gl Wikiblame] é capaz de atopar rapidamente os autores dunha páxina nun wiki da Wikimedia.",
 	"translate-group-desc-blockly": "Grupo de mensaxes de [[Translating:Blockly|Blockly]]",
 	"translate-group-desc-bluespice": "Grupo de mensaxes que contén todas as mensaxes das extensións [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BlueSpice Blue Spice] de MediaWiki",
-	"translate-group-desc-collection": "Grupo de mensaxes que contén todas as mensaxes da extensión [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection] de MediaWiki",
+	"translate-group-desc-collection": "Grupo de mensaxes que contén todas as mensaxes da extensión [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection] de [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-eol": "Grupo de mensaxes da [[Translating:EOL|Enciclopedia da vida]]",
 	"translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] é un editor colaborativo en tempo real",
 	"translate-group-desc-europeana": "[[Translating:Europeana|Europeana 1914-1918]] é unha páxina web con historias, vídeos e material histórico sobre a Primeira Guerra Mundial",
-	"translate-group-desc-flaggedrevs": "Grupo de mensaxes que contén todas as mensaxes da extensión [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs] de MediaWiki",
+	"translate-group-desc-flaggedrevs": "Grupo de mensaxes que contén todas as mensaxes da extensión [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs] de [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-fuel": "[[Translating:FUEL|FUEL]] achega máis coherencia ás traducións de software",
 	"translate-group-desc-huggle": "[[Translating:Huggle|Huggle]] é unha aplicación de exploración rápida das diferenzas para loitar contra o vandalismo nos proxectos da Wikimedia",
 	"translate-group-desc-ihris": "Grupo de mensaxes de [[Translating:iHRIS|iHRIS]]",
@@ -36,7 +37,7 @@
 	"translate-group-desc-openimages-all": "Estas mensaxes forman parte do proxecto [[Translating:Open Images|Open Images]]",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] é un editor do OpenStreetMap baseado en Flash",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] é unha colección de ferramentas para editar a Wikipedia",
-	"translate-group-desc-readerfeedback": "Grupo de mensaxes que contén todas as mensaxes da extensión [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback] de MediaWiki",
+	"translate-group-desc-readerfeedback": "Grupo de mensaxes que contén todas as mensaxes da extensión [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback] de [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-semantic": "Grupo de mensaxes meta que contén todas as mensaxes das extensións de [https://semantic-mediawiki.org/ Semantic MediaWiki]",
 	"translate-group-desc-translatablepages": "Todas as páxinas que se poden traducir",
 	"translate-group-desc-translate": "Grupo de mensaxes que contén todas as mensaxes da extensión [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate] de MediaWiki; bótelle unha ollada primeiro ao [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glosario]",
@@ -55,6 +56,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar na Wikisource",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] é unha aplicación para dispositivos móbiles e tabletas para ler e colaborar no Wiktionary",
 	"translate-group-desc-wikimediaextensions": "Grupo de mensaxes que contén todas as mensaxes das extensións soportadas por MediaWiki usadas pola [https://wikimediafoundation.org/ Fundación Wikimedia]",
-	"translate-group-desc-wikimediaextensions-main": "Grupo de mensaxes meta que contén todas as mensaxes soportadas polas extensións de MediaWiki que necesitan tradución para o [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee comité de linguas] da Wikimedia",
+	"translate-group-desc-wikimediaextensions-main": "Grupo de mensaxes meta que contén todas as mensaxes soportadas polas extensións de [[Translating:MediaWiki|MediaWiki]] que necesitan tradución para o [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee comité de linguas] da Wikimedia",
 	"translategroupdescriptions-desc": "Grupo de mensaxes coas descricións dos produtos soportados pola extensión [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]"
 }

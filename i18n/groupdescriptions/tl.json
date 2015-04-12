@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"AnakngAraw",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Bago isalin ang FreeCol sa wika mo, paki basa ang [[Translating:FreeCol]]. Gumagamit ang Freecol ng lisensyang GPL.",
@@ -11,10 +12,10 @@
 	"bw-desc-openstreetmap": "Lahat ng mga mensaheng may kaugnayan sa [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Naglalaman ang pangkat na pangmensaheng ito ng mga mensaheng panghangganang-mukha para sa [[Translating:Open Street Map|Bukas na Mapa ng Kalye]].  Tingnan ang [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} pahina ng Unikodigong CLDR para sa paliwanag ng mga susing pangmaramihan].",
 	"bw-desc-wikiblame": "Kayang mabilisang hanapin ng [http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] ang mga may-akda ng isang pahinang nasa loob ng isang wiki ng Wikimedia.",
-	"translate-group-desc-collection": "Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa dugtong pang-MediaWiki na [https://www.mediawiki.org/wiki/Extension:Collection Kalipunan]",
+	"translate-group-desc-collection": "Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para sa dugtong pang-[[Translating:MediaWiki|MediaWiki]] na [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Kalipunan]",
 	"translate-group-desc-eol": "Isang pangkat ng mensahe para sa [[Translating:EOL|Ensiklopedya ng Buhay]]",
 	"translate-group-desc-europeana": "Ang [[Translating:Europeana|Europeana]] ay nagbibigay-daan sa mga taong galugarin ang dihital na mga yamang pangkalinangan ng Europa",
-	"translate-group-desc-flaggedrevs": "Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para dugtong ng MediaWiki na [https://www.mediawiki.org/wiki/Extension:FlaggedRevs Binandilang mga Pagbabago]",
+	"translate-group-desc-flaggedrevs": "Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para dugtong ng [[Translating:MediaWiki|MediaWiki]] na [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs Binandilang mga Pagbabago]",
 	"translate-group-desc-ihris": "Isang pangkat ng mensahe para sa [[Translating:iHRIS|iHRIS]]",
 	"translate-group-desc-kiwix": "Isang pangkat ng mensahe para sa [[Translating:Kiwix|Kiwix]]",
 	"translate-group-desc-mantisbt-plugin-core": "Isang pangunahing pamasak para sa [[Translating:MantisBT|MantisBT]]",
@@ -28,7 +29,7 @@
 	"translate-group-desc-openimages-all": "Ang mga mensaheng ito ay bahagi ng proyektong [[Translating:Open Images|Open Images]]",
 	"translate-group-desc-potlatch2": "Ang [[Translating:OpenStreetMap|Potlatch2]] ay isang patnugot ng OpenStreetMap na nakahimpil sa Flash",
 	"translate-group-desc-pywikipedia": "Ang [[Translating:Pywikibot|Pywikibot]] ay isang kalipunan ng mga kasangkapan upang mapatnugutan ang Wikipedia",
-	"translate-group-desc-readerfeedback": "Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para dugtong ng MediaWiki na [https://www.mediawiki.org/wiki/Extension:ReaderFeedback Katugunan ng Mambabasa]",
+	"translate-group-desc-readerfeedback": "Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para dugtong ng [[Translating:MediaWiki|MediaWiki]] na [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback Katugunan ng Mambabasa]",
 	"translate-group-desc-semantic": "Pangkat ng mensahe ng meta na naglalaman ng lahat ng mga mensahe para sa lahat ng mga dugtong ng [https://semantic-mediawiki.org/ Semantikong MediaWiki]",
 	"translate-group-desc-translatablepages": "Lahat ng mga pahinang maisasalinwika",
 	"translate-group-desc-translate": "Pangkat ng mensahe ng Meta na naglalaman ng lahat ng mga mensahe para dugtong ng MediaWiki na [https://www.mediawiki.org/wiki/Extension:Translate Isalinwika]",

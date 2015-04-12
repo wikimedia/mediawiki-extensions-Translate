@@ -62,6 +62,7 @@
 	"tpt-translation-intro": "Die Syte isch e <span class=\"plainlinks\">[$1 ibersetzti Version]</span> vun ere Syte [[$2]] un d Ibersetzig isch zue $3% vollständig un aktuäll.",
 	"tpt-languages-legend": "Anderi Sproche:",
 	"tpt-languages-zero": "Mit em Ibersetze in die Sproch aafange",
+	"tpt-languages-nonzero": "$1 ($2% ibersetzt)",
 	"tpt-target-page": "Die Syte cha nit vu Hand aktualisiert wäre.\nDie Syte isch e Ibersetzig vu dr Syte [[$1]] un d Ibersetzig cha aktualisert wäre mit em [$2 Ibersetzigstool].",
 	"tpt-unknown-page": "Dää Namensruum isch reserviert fir Ibersetzige vu Inhaltssyte.\nD Syte, wu Du witt bearbeite, ghert schyns zue keire Syte, wu zum Ibersetze markiert isch.",
 	"tpt-translation-restricted": "S Ibersetze vu däre Syte in die Sproch isch vun eme Ibersetzigsadministrator deaktiviert wore.\n\nGrund: $1",

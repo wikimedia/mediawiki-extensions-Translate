@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Minisarm",
-			"Ion"
+			"Ion",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] este un joc de strategie de tip ''turn-based''",
@@ -11,10 +12,10 @@
 	"bw-desc-openstreetmap": "Toate mesajele asociate cu [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "[[Translating:OpenStreetMap|OpenStreetMap]] este o hartă a lumii care poate fi liber modificată",
 	"bw-desc-wikiblame": "[[Translating:WikiBlame|WikiBlame]] este capabil să găsească rapid autorii unei pagini dintr-un site wiki susținut de Wikimedia",
-	"translate-group-desc-collection": "Grup de mesaje meta conținând toate mesajele extensiei [https://www.mediawiki.org/wiki/Extension:Collection Collection] a MediaWiki",
+	"translate-group-desc-collection": "Grup de mesaje meta conținând toate mesajele extensiei [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection] a [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-eol": "Un grup de mesaje pentru [[Translating:EOL|Encyclopedia of Life]]",
 	"translate-group-desc-europeana": "[[Translating:Europeana|Europeana]] permite oamenilor să exploreze resursele digitale ale culturii europene",
-	"translate-group-desc-flaggedrevs": "Grup de mesaje meta conținând toate mesajele extensiei [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] a MediaWiki",
+	"translate-group-desc-flaggedrevs": "Grup de mesaje meta conținând toate mesajele extensiei [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs] a [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-ihris": "Un grup de mesaje pentru [[Translating:iHRIS|iHRIS]]",
 	"translate-group-desc-kiwix": "Un grup de mesaj pentru [[Translating:Kiwix|Kiwix]]",
 	"translate-group-desc-mantisbt-plugin-core": "Un plugin-nucleu pentru [[Translating:MantisBT|MantisBT]]",
@@ -28,7 +29,7 @@
 	"translate-group-desc-openimages-all": "Aceste mesaje sunt componente ale proiectului [[Translating:Open Images|Open Images]]",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] este un editor OpenStreetMap bazat în Flash",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] este o colecție de unelte utilizate la modificarea paginilor din Wikipedia",
-	"translate-group-desc-readerfeedback": "Grup de mesaje meta conținând toate mesajele extensiei [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] a MediaWiki",
+	"translate-group-desc-readerfeedback": "Grup de mesaje meta conținând toate mesajele extensiei [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback] a [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-semantic": "Grup de mesaje meta care conține toate mesajele tuturor extensiilor [https://semantic-mediawiki.org/ Semantic MediaWiki]",
 	"translate-group-desc-translatablepages": "Toate paginile traductibile",
 	"translate-group-desc-translate": "Grup de mesaje meta conținând toate mesajele extensiei [https://www.mediawiki.org/wiki/Extension:Translate Translate] a MediaWiki",
@@ -36,6 +37,6 @@
 	"translate-group-desc-waymarked-trails": "[[Translating:Waymarked Trails|Waymarked Trails]] este un serviciu care afișează itinerarii pentru drumeții, ciclism, ciclism montan și patinaj cu role în jurul lumii. Utilizează licența GNU GPL",
 	"translate-group-desc-wikiaextensions": "Grup de mesaje meta conținând toate mesajele extensiilor susținute de MediaWiki și utilizate de [http://www.wikia.com Wikia]",
 	"translate-group-desc-wikimediaextensions": "Grup de mesaje meta conținând toate mesajele extensiilor susținute de MediaWiki și utilizate de [https://wikimediafoundation.org/ Fundația Wikimedia]",
-	"translate-group-desc-wikimediaextensions-main": "Grup de mesaje meta conținând toate mesajele extensiilor susținute de MediaWiki și solicitate a fi traduse pentru [https://meta.wikimedia.org/wiki/Language_committee Comitetul lingvistic] al Wikimedia",
+	"translate-group-desc-wikimediaextensions-main": "Grup de mesaje meta conținând toate mesajele extensiilor susținute de [[Translating:MediaWiki|MediaWiki]] și solicitate a fi traduse pentru [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Comitetul lingvistic] al Wikimedia",
 	"translategroupdescriptions-desc": "Descrieri ale grupului de mesaje pentru produse susținute de extensia [https://mediawiki.org/wiki/Extension:Translate Translate]"
 }

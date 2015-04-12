@@ -3,7 +3,8 @@
 		"authors": [
 			"Minh Nguyen",
 			"Vinhtantran",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Trước khi dịch FreeCol ra ngôn ngữ của bạn, xin hãy đọc [[Translating:FreeCol]]. Freecol sử dụng giấy phép GPL.",
@@ -14,11 +15,11 @@
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] có thể nhanh chóng tìm ra tác giả của trang trong wiki của Wikimedia.",
 	"translate-group-desc-blockly": "Một nhóm thông điệp dành cho [[Translating:Blockly|Blockly]]",
 	"translate-group-desc-bluespice": "Siêu nhóm thông điệp chứa các thông điệp của các phần mở rộng [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BlueSpice?uselang=vi BlueSpice] cho MediaWiki",
-	"translate-group-desc-collection": "Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection?uselang=vi Collection] cho MediaWiki",
+	"translate-group-desc-collection": "Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection] cho [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-eol": "Nhóm thông điệp của [[Translating:EOL|Bách khoa toàn thư Sự sống]]",
 	"translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] là một trình soạn hợp tác rất tức thời",
 	"translate-group-desc-europeana": "[[Translating:Europeana|Europeana 1914–1918]] là trang Web có chuyện kể, phim, và vật liệu lịch sử về Chiến tranh thế giới thứ nhất",
-	"translate-group-desc-flaggedrevs": "Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs?uselang=vi FlaggedRevs] cho MediaWiki",
+	"translate-group-desc-flaggedrevs": "Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs?uselang=vi FlaggedRevs] cho [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-fuel": "[[Translating:FUEL|FUEL]] nhất quán hóa việc biên dịch phần mềm",
 	"translate-group-desc-huggle": "[[Translating:Huggle|Huggle]] là một ứng dụng duyệt bản khác biệt nhanh nhẹn để chống phá hoại trên các dự án Wikimedia",
 	"translate-group-desc-ihris": "Nhóm thông điệp cho [[Translating:iHRIS|iHRIS]]",
@@ -39,7 +40,7 @@
 	"translate-group-desc-openimages-all": "Các thông điệp này thuộc về dự án [[Translating:Open Images|Open Images]]",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] là một trình vẽ bản đồ OpenStreetMap dùng Flash.",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] là một thư viện để lập chương trình tự động sửa đổi Wikipedia.",
-	"translate-group-desc-readerfeedback": "Siêu nhóm thông điệp chứa tất cả các thông điệp dùng cho phần mở rộng MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback?uselang=vi ReaderFeedback]",
+	"translate-group-desc-readerfeedback": "Siêu nhóm thông điệp chứa tất cả các thông điệp dùng cho phần mở rộng [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback?uselang=vi ReaderFeedback]",
 	"translate-group-desc-semantic": "Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [https://semantic-mediawiki.org/?uselang=vi MediaWiki Ngữ nghĩa]",
 	"translate-group-desc-translatablepages": "Mọi trang dịch được",
 	"translate-group-desc-translate": "Siêu nhóm thông điệp chứa các thông điệp của phần mở rộng [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate?uselang=vi Translate] cho MediaWiki; xin vui lòng đọc hiểu [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary?uselang=vi thuật ngữ]",
@@ -58,6 +59,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] là một ứng dụng đa nền tảng dành cho máy tính di động và bảng để đọc và đóng góp vào Wikisource.",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] là một ứng dụng đa nền tảng dành cho máy tính di động và bảng để đọc và đóng góp vào Wiktionary.",
 	"translate-group-desc-wikimediaextensions": "Siêu nhóm thông điệp chứa thông điệp của các phần mở rộng MediaWiki được [https://wikimediafoundation.org/ Quỹ Wikimedia] sử dụng",
-	"translate-group-desc-wikimediaextensions-main": "Siêu nhóm thông điệp chứa thông điệp của các phần mở rộng MediaWiki được hỗ trợ cần dịch cho [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee?uselang=vi Ủy ban Ngôn ngữ]",
+	"translate-group-desc-wikimediaextensions-main": "Siêu nhóm thông điệp chứa thông điệp của các phần mở rộng [[Translating:MediaWiki|MediaWiki]] được hỗ trợ cần dịch cho [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee?uselang=vi Ủy ban Ngôn ngữ]",
 	"translategroupdescriptions-desc": "Miêu tả các sản phẩm được phần mở rộng [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate?uselang=vi Translate] hỗ trợ"
 }

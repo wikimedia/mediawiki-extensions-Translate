@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Milicevic01",
-			"Rancher"
+			"Rancher",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|Фрикол]] је стратешка игра",
@@ -33,6 +34,6 @@
 	"translate-group-desc-wikiaextensions": "Мета група порука која садржи све поруке за подржана проширења које користи [http://www.wikia.com Викија]",
 	"translate-group-desc-wikimedia-mobile-wikipedia-ios": "[[Translating:WikipediaMobile|Википедија за iOS]] је верзија апликације Википедија за мобилни намењена систему iOS",
 	"translate-group-desc-wikimediaextensions": "Мета група порука која садржи све поруке за подржана проширења које користи [https://wikimediafoundation.org/ Задужбина Викимедија]",
-	"translate-group-desc-wikimediaextensions-main": "Мета група порука која садржи све поруке подржаних проширења Медијавикија. Поруке је потребно превести за Викимедијин [https://meta.wikimedia.org/wiki/Language_committee језички одбор]",
+	"translate-group-desc-wikimediaextensions-main": "Мета група порука која садржи све поруке подржаних проширења [[Translating:MediaWiki|Медијавикија]]Медијавикија. Поруке је потребно превести за Викимедијин [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee језички одбор]",
 	"translategroupdescriptions-desc": "Описи група порука за пројекте који су подржани од стране проширења [https://mediawiki.org/wiki/Extension:Translate Translate]"
 }

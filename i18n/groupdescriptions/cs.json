@@ -5,7 +5,8 @@
 			"Reaperman",
 			"Matěj Suchánek",
 			"Lokal Profil",
-			"Macofe"
+			"Macofe",
+			"Cvanca"
 		]
 	},
 	"bw-desc-freecol": "Před překládáním FreeCol do vašeho jazyka si přečtěte [[Translating:FreeCol]]. FreeCol používá licenci GPL.",
@@ -46,12 +47,12 @@
 	"translate-group-desc-translatablepages": "Všechny přeložitelné stránky",
 	"translate-group-desc-translate": "Nadskupina zpráv obsahující všechny zprávy rozšíření [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]; seznamte se prosím s jeho [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary terminologií]",
 	"translate-group-desc-tsint": "Skupina zpráv pro [[Translating:Intuition|Intuition]], lokalizační systém pro nástroje na [//tools.wmflabs.org/ Wikimedia Tool Labs] ([[Translating talk:Intuition|podpora]])",
-	"translate-group-desc-universallanguageselector": "Nadskupina zpráv obsahující všechny zprávy rozšíření [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector UniversalLanguageSelector] (ULS) a související softwarové balíčky",
+	"translate-group-desc-universallanguageselector": "Nadskupina zpráv obsahující všechny zprávy rozšíření [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector UniversalLanguageSelector] (ULS) a související softwarové balíčky",
 	"translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]] je nástroj pro načítání souborů na Wikimedia Commons a další projekty Wikimedia",
 	"translate-group-desc-visualeditor": "Nadskupina zpráv obsahující všechny zprávy rozšíření [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:VisualEditor VisualEditor] a související softwarové balíčky",
 	"translate-group-desc-waymarked-trails": "[[Translating:Waymarked Trails|Waymarked Trails]] je služba zobrazující trasy pro turistiku, cyklistiku, MTB a inline bruslení po celém světě. Používá licenci GNU GPL",
 	"translate-group-desc-waymarked-trails-help": "Nápověda na stránkách Waymarked Trails: http://waymarkedtrails.org/help/about",
-	"translate-group-desc-wikiaextensions": "Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních MediaWiki používaných na [http://www.wikia.com Wikia]",
+	"translate-group-desc-wikiaextensions": "Nadskupina zpráv obsahující všechny zprávy používané v podporovaných rozšířeních [[Translating:MediaWiki|MediaWiki]] používaných na [http://www.wikia.com Wikia]",
 	"translate-group-desc-wikimania-scholarships-app": "Skupina zpráv pro [https://scholarships.wikimedia.org/apply Stipendia na Wikimania]",
 	"translate-group-desc-wikimedia-mobile": "Nadskupina zpráv obsahující mobilní aplikace k projektům Wikimedia",
 	"translate-group-desc-wikimedia-mobile-wikipedia": "[[Translating:WikipediaMobile|WikipediaMobile]] je mnohoplatformní mobilní a tabletová aplikace pro čtení Wikipedie a přispívání do ní",

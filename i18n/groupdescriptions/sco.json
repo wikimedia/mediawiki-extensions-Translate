@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"John Reid",
-			"Pkra"
+			"Pkra",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] is ae turn-based strategie game",
@@ -13,10 +14,10 @@
 	"bw-desc-wikiblame": "[[Translating:WikiBlame|WikiBlame]] is quicklie able tae fynd the writers o ae pairt o ae page in ae Wikimedia wiki",
 	"translate-group-desc-blockly": "Ae message groop fer [[Translating:Blockly|Blockly]]",
 	"translate-group-desc-bluespice": "Meta message groop containin aw o the messages fer the MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BlueSpice Blue Spice] extensions",
-	"translate-group-desc-collection": "Meta message groop containin aw messages fer the MediaWiki extension [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection]",
+	"translate-group-desc-collection": "Meta message groop containin aw messages fer the [[Translating:MediaWiki|MediaWiki]] extension [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection]",
 	"translate-group-desc-eol": "Ae message groop fer [[Translating:EOL|Encyclypædia o Life]]",
 	"translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] is ae reallie-real time collaberateeve eediter",
-	"translate-group-desc-flaggedrevs": "Meta message groop containin aw messages fer the MediaWiki extension [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs]",
+	"translate-group-desc-flaggedrevs": "Meta message groop containin aw messages fer the [[Translating:MediaWiki|MediaWiki]] extension [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs]",
 	"translate-group-desc-fuel": "[[Translating:FUEL|FUEL]] brings mair conseestancie til saffware owersetin",
 	"translate-group-desc-ihris": "Ae message groop fer [[Translating:iHRIS|iHRIS]]",
 	"translate-group-desc-kiwix": "Ae message groop fer [[Translating:Kiwix|Kiwix]]",
@@ -31,7 +32,7 @@
 	"translate-group-desc-openimages-all": "Thir messages ar pairt o the [[Translating:Open Images|Apen Eemages]] waurk",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] is ae Flash-based ApenStreetMap eediter",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] is ae collection o tuils fer tae eedit Wikipædia",
-	"translate-group-desc-readerfeedback": "Meta message groop containin aw messages fer the MediaWiki extension [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
+	"translate-group-desc-readerfeedback": "Meta message groop containin aw messages fer the [[Translating:MediaWiki|MediaWiki]] extension [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-semantic": "Meta message groop containin aw messages fer aw [https://semantic-mediawiki.org/ Semantic MediaWiki] extensions",
 	"translate-group-desc-translatablepages": "Aw owersetable pages",
 	"translate-group-desc-translate": "Meta message groop containin aw messages fer the MediaWiki extension [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Owerset]; please familiarise yersel wi its [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossarie]",
@@ -50,6 +51,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisoorceMobile]] is ae cross-platform mobile n tablet appleecation fer readin n contreebutin til Wikisoorce",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionairMobile]] is ae cross-platform mobile n tablet appleecation fer readin n contreebutin til Wiktionair",
 	"translate-group-desc-wikimediaextensions": "Meta message groop containin aw messages fer supportit MediaWiki extensions uised bi the [https://wikimediafoundation.org/ Wikimedia Foundation]",
-	"translate-group-desc-wikimediaextensions-main": "Meta message groop containin aw messages fer supportit MediaWiki extensions needit tae be owerset fer the Wikimedia [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Leid committee]",
+	"translate-group-desc-wikimediaextensions-main": "Meta message groop containin aw messages fer supportit [[Translating:MediaWiki|MediaWiki]] extensions needit tae be owerset fer the Wikimedia [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Leid committee]",
 	"translategroupdescriptions-desc": "Message groop descreeptions fer products supportit bi the [https://mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Owerset] extension"
 }

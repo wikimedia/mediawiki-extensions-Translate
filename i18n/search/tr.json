@@ -3,7 +3,8 @@
 		"authors": [
 			"Emperyan",
 			"Joseph",
-			"Meelo"
+			"Meelo",
+			"Sayginer"
 		]
 	},
 	"searchtranslations": "Çevirileri ara",
@@ -18,6 +19,6 @@
 	"tux-sst-nosolr-body": "Bu wikide bir çeviri arama hizmeti yok.",
 	"tux-sst-solr-offline-title": "Arama kullanılamıyor",
 	"tux-sst-solr-offline-body": "Arama hizmeti geçici olarak kullanılamıyor.",
-	"tux-sst-next": "Sonraki sonuçlar",
-	"tux-sst-prev": "Önceki sonuçlar"
+	"tux-sst-next": "Sonraki ›",
+	"tux-sst-prev": "‹ Önceki"
 }

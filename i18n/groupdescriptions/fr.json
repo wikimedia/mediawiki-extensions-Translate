@@ -18,7 +18,8 @@
 			"Wyz",
 			"Xapitoun",
 			"Yann.fauche",
-			"Jgaignerot"
+			"Jgaignerot",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Avant de traduire FreeCol dans votre langue, veuillez lire [[Translating:FreeCol]]. Freecol est publié sous licence GPL.",
@@ -29,11 +30,11 @@
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] permet de trouver rapidement les auteurs d’une page dans un wiki de Wikimedia.",
 	"translate-group-desc-blockly": "Un groupe de message pour [[Translating:Blockly|Blockly]]",
 	"translate-group-desc-bluespice": "Méta-groupe de messages contenant tous les messages pour les extensions [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BlueSpice Blue Spice] de MédiaWiki",
-	"translate-group-desc-collection": "Ce méta-groupe de messages contient tous les messages de l’extension MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection].",
+	"translate-group-desc-collection": "Ce méta-groupe de messages contient tous les messages de l’extension [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection].",
 	"translate-group-desc-eol": "Un groupe de messages pour l’''[[Translating:EOL|Encyclopedia of Life]]''",
 	"translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] est un éditeur collaboratif réellement en temps réel",
 	"translate-group-desc-europeana": "[[Translating:Europeana|Europeana 1914-1918]] est un site web avec des histoires, des films et des matériaux historiques sur la Première guerre mondiale",
-	"translate-group-desc-flaggedrevs": "Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs]",
+	"translate-group-desc-flaggedrevs": "Groupe des messages Meta contenant tous les messages de l’extension [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs]",
 	"translate-group-desc-fuel": "[[Translating:FUEL|FUEL]] apporte plus de cohérence à la traduction de logiciel",
 	"translate-group-desc-huggle": "[[Translating:Huggle|Huggle]] est une application web de diff pour traiter le vandalisme sur les projets Wikimedia",
 	"translate-group-desc-ihris": "Un groupe de messages pour [[Translating:iHRIS|iHRIS]]",
@@ -53,7 +54,7 @@
 	"translate-group-desc-openimages-all": "Ces messages font partie du [[Translating:Open Images|Projet Open Images]]",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] est un éditeur OpenStreetMap basé sur du flash",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] est une collection d'outils pour modifier Wikipédia",
-	"translate-group-desc-readerfeedback": "Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
+	"translate-group-desc-readerfeedback": "Groupe des messages Meta contenant tous les messages de l’extension [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-semantic": "Groupe de message de Meta contenant tous les messages pour toutes les extensions [https://semantic-mediawiki.org/ Semantic MediaWiki]",
 	"translate-group-desc-translatablepages": "Toutes les pages traductibles",
 	"translate-group-desc-translate": "Groupe des messages Meta contenant tous les messages de l’extension MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]; veuillez vous familiariser avec son [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossaire]",
@@ -72,6 +73,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] est une application inter-plateformes pour mobiles et tablettes permettant de consulter et contribuer à Wikisource",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] est une application inter-plateformes pour mobiles et tablettes permettant de lire et contribuer à Wiktionary",
 	"translate-group-desc-wikimediaextensions": "Ce méta-groupe de messages contient tous les messages des extensions MediaWiki utilisées par la [//wikimedia.org/ Wikimedia Foundation].",
-	"translate-group-desc-wikimediaextensions-main": "Groupe de messages méta comprenant tous les messages pour les extensions MediaWiki supportées et qui doivent être traduits pour le [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Comité des langues] de Wikimedia",
+	"translate-group-desc-wikimediaextensions-main": "Groupe de messages méta comprenant tous les messages pour les extensions [[Translating:MediaWiki|MediaWiki]] supportées et qui doivent être traduits pour le [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Comité des langues] de Wikimedia",
 	"translategroupdescriptions-desc": "Descriptions des groupes de messages pour les produits pris en charge par l’[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate extension Translate]"
 }

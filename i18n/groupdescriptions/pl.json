@@ -10,7 +10,8 @@
 			"Vengir",
 			"Lokal Profil",
 			"Alan ffm",
-			"Darellur"
+			"Darellur",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Zanim rozpoczniesz tłumaczenie FreeCol, zapoznaj się z [[Translating:FreeCol]]. Freecol udostępniane jest na licencji GPL.",
@@ -20,10 +21,10 @@
 	"bw-desc-osm-site": "Ta grupa komunikatów zawiera interfejs [[Translating:Open Street Map|Open Street Map]]. Zobacz [http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#{{UILANGCODE}} stronę Unicode CLDR wyjaśniającą zasady tworzenia liczby mnogiej].",
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pozwala szybko odnaleźć autorów strony w Wikimedia wiki.",
 	"translate-group-desc-blockly": "Grupa komunikatów dla [[Translating:Blockly|Blockly]]",
-	"translate-group-desc-collection": "Metagrupa zawiera wszystkie komunikaty MediaWiki używane przez rozszerzenie [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Kolekcja]",
+	"translate-group-desc-collection": "Metagrupa zawiera wszystkie komunikaty [[Translating:MediaWiki|MediaWiki]] używane przez rozszerzenie [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Kolekcja]",
 	"translate-group-desc-eol": "Grupa komunikatów [[Translating:EOL|Encyklopedii życia]]",
 	"translate-group-desc-europeana": "[[Translating:Europeana|Europeana]] umożliwia ludziom odkrywanie dorobku kulturowego Europy",
-	"translate-group-desc-flaggedrevs": "Metagrupa zawierająca wszystkie komunikaty rozszerzenia MediaWiki [https://www.mediawiki.org/Special:MyLanguage/wiki/Extension:FlaggedRevs FlaggedRevs]",
+	"translate-group-desc-flaggedrevs": "Metagrupa zawierająca wszystkie komunikaty rozszerzenia [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/Special:MyLanguage/wiki/Extension:FlaggedRevs FlaggedRevs]",
 	"translate-group-desc-huggle": "[[Translating:Huggle|Huggle]] to szybka aplikacja do porównywania wersji stron, która pomaga w zwalczaniu wandalizmu na projektach Wikimedia.",
 	"translate-group-desc-ihris": "Grupa komunikatów [[Translating:iHRIS|iHRIS]]",
 	"translate-group-desc-kiwix": "Grupy wiadomości dla [[Translating:Kiwix|Kiwix]]",
@@ -39,7 +40,7 @@
 	"translate-group-desc-openimages-all": "Komunikaty projektu [[Translating:Open Images|Open Images]]",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] jest edytorem OpenStreetMap opartym na technologii Flash",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] to kolekcja narzędzi służących do edycji Wikipedii",
-	"translate-group-desc-readerfeedback": "Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzenia MediaWiki [https://www.mediawiki.org/Special:MyLanguage/wiki/Extension:ReaderFeedback ReaderFeedback]",
+	"translate-group-desc-readerfeedback": "Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzenia [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-semantic": "Grupa meta wiadomości zawierająca wszystkie wiadomości dla wszystkich rozszerzeń [https://semantic-mediawiki.org/ Semantic MediaWiki]",
 	"translate-group-desc-translatablepages": "Wszystkie przetłumaczalne strony",
 	"translate-group-desc-translate": "Metagrupa komunikatów zawierająca wszystkie komunikaty rozszerzeń MediaWiki [https://www.mediawiki.org/wiki/Extension:Translate Translate]",
@@ -49,6 +50,6 @@
 	"translate-group-desc-wikiaextensions": "Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń MediaWiki używanych przez [http://www.wikia.com Wikia]",
 	"translate-group-desc-wikimedia-mobile": "Grupy zbiorcze komunikatów zawierające aplikacje mobilne dla projektów Wikimedia",
 	"translate-group-desc-wikimediaextensions": "Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń MediaWiki używanych przez [https://wikimediafoundation.org/ Fundację Wikimedia]",
-	"translate-group-desc-wikimediaextensions-main": "Grupa meta komunikatów zawierająca wszystkie wymagające przetłumaczenia komunikaty wspieranych rozszerzeń MediaWiki na potrzeby [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee komitetu językowego] Wikimedia",
+	"translate-group-desc-wikimediaextensions-main": "Grupa meta komunikatów zawierająca wszystkie wymagające przetłumaczenia komunikaty wspieranych rozszerzeń [[Translating:MediaWiki|MediaWiki]] na potrzeby [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee komitetu językowego] Wikimedia",
 	"translategroupdescriptions-desc": "Opis grupy komunikatów dla produktów wspieranych przez [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate rozszerzenie tłumaczenia]"
 }

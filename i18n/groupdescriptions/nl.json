@@ -9,7 +9,8 @@
 			"Mar(c)",
 			"Southparkfan",
 			"Mathonius",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] is a beurtgebaseerd strategiespel",
@@ -20,11 +21,11 @@
 	"bw-desc-wikiblame": "[[Translating:WikiBlame|WikiBlame]] is in staat om snel de auteurs van een pagina in een Wikimedia-wiki te vinden",
 	"translate-group-desc-blockly": "Een berichtengroep voor [[Translating:Blockly|Blockly]]",
 	"translate-group-desc-bluespice": "Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreidingen [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BlueSpice Blue Spice]",
-	"translate-group-desc-collection": "Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection]",
+	"translate-group-desc-collection": "Metaberichtengroep die alle berichten bevat voor de [[Translating:MediaWiki|MediaWiki]]-uitbreiding [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection]",
 	"translate-group-desc-eol": "Een berichtengroep voor [[Translating:EOL|Encyclopedia of Life]]",
 	"translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] is een echte tekstverwerker om real-time mee samen te werken",
 	"translate-group-desc-europeana": "[[Translating:Europeana|Europeana 1914-1918]] is een website met verhalen, films en historisch materiaal over de Eerste Wereldoorlog",
-	"translate-group-desc-flaggedrevs": "Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs]",
+	"translate-group-desc-flaggedrevs": "Metaberichtengroep die alle berichten bevat voor de [[Translating:MediaWiki|MediaWiki]]-uitbreiding [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs]",
 	"translate-group-desc-fuel": "[[Translating:FUEL|FUEL]] brengt meer consistentie naar softwarevertalingen",
 	"translate-group-desc-huggle": "[[Translating:Huggle|Huggle]] is een snelle verschillenbrowserapplicatie voor het omgaan met vandalisme op Wikimedia-projecten",
 	"translate-group-desc-ihris": "Een berichtengroep voor [[Translating:iHRIS|iHRIS]]",
@@ -42,7 +43,7 @@
 	"translate-group-desc-openimages-all": "Deze berichten zijn onderdeel van het project [[Translating:Open Images|Open Beelden]]",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch 2]] is een Flash-gebaseerde OpenStreetMap-bewerker",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] is een verzameling hulpprogramma's om Wikipedia mee te bewerken",
-	"translate-group-desc-readerfeedback": "Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
+	"translate-group-desc-readerfeedback": "Metaberichtengroep die alle berichten bevat voor de [[Translating:MediaWiki|MediaWiki]]-uitbreiding [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-semantic": "Metaberichtengroep die alle berichten bevat voor uitbreidingen voor [https://semantic-mediawiki.org/ Semantische MediaWiki]",
 	"translate-group-desc-translatablepages": "Alle te vertalen pagina's",
 	"translate-group-desc-translate": "Metaberichtengroep die alle berichten bevat voor de MediaWiki-uitbreiding [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]; stel uzelf op de hoogte van de [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary woordenlijst]",
@@ -61,6 +62,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] is een platformonafhankelijke toepassing voor mobiele telefoons en tablet-pc's voor het lezen van en bijdragen aan Wikisource",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] is een platformonafhankelijke toepassing voor mobiele telefoons en tablet-pc's voor het lezen van en bijdragen aan Wikiwoordenboek",
 	"translate-group-desc-wikimediaextensions": "Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen gebruikt door de [https://wikimediafoundation.org/ Wikimedia Foundation]",
-	"translate-group-desc-wikimediaextensions-main": "Metaberichtengroep die alle berichten bevat voor ondersteunde MediaWiki-uitbreidingen die vertaald dienen te worden voor het [https://meta.wikimedia.org/wiki/Language_committee Taalcomité] van Wikimedia",
+	"translate-group-desc-wikimediaextensions-main": "Metaberichtengroep die alle berichten bevat voor ondersteunde [[Translating:MediaWiki|MediaWiki]]-uitbreidingen die vertaald dienen te worden voor het [https://meta.wikimedia.org/wiki/Language_committee Taalcomité] van Wikimedia",
 	"translategroupdescriptions-desc": "Berichtengroepomschrijvingen voor producten die ondersteund worden door de uitbreiding [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]"
 }

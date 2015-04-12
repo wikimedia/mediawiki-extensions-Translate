@@ -9,7 +9,8 @@
 			"Poxnar",
 			"Skalman",
 			"WikiPhoenix",
-			"Jopparn"
+			"Jopparn",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Innan du översätter FreeCol till ditt språk, var god läs [[Translating:FreeCol]]. FreeCol använder GPL-licensen.",
@@ -20,11 +21,11 @@
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] kan snabbt hitta författarna till en sida på en Wikimedia wiki.",
 	"translate-group-desc-blockly": "En meddelandegrupp för [[Translating:Blockly|Blockly]]",
 	"translate-group-desc-bluespice": "Metagrupp med alla meddelanden för MediaWiki-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BlueSpice Blue Spice]",
-	"translate-group-desc-collection": "Metagrupp med alla meddelanden för MediaWiki-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection]",
+	"translate-group-desc-collection": "Metagrupp med alla meddelanden för [[Translating:MediaWiki|MediaWiki]]-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection]",
 	"translate-group-desc-eol": "En meddelandegrupp för [[Translating:EOL|Encyclopedia of Life]]",
 	"translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] är en kollaborativ editor i äkta-realtid",
 	"translate-group-desc-europeana": "[[Translating:Europeana|Europeana 1914-1918]] är en webbplats med berättelser, film och historiskt material om första världskriget",
-	"translate-group-desc-flaggedrevs": "Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs]",
+	"translate-group-desc-flaggedrevs": "Metagrupp som innehåller alla meddelanden för [[Translating:MediaWiki|MediaWiki]]-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs]",
 	"translate-group-desc-fuel": "[[Translating:FUEL|FUEL]] ger mer konsekvens till programvaruöversättning",
 	"translate-group-desc-huggle": "[[Translating:Huggle|Huggle]] är en snabb diff-läsarapplikation för att hantera vandalism på Wikimedia-projekt",
 	"translate-group-desc-ihris": "En meddelandegrupp för [[Translating:iHRIS|iHRIS]]",
@@ -44,7 +45,7 @@
 	"translate-group-desc-openimages-all": "Dessa meddelanden är en del av [[Translating:Open Images|Open Images]]-projektet",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] är en Flash-baserad redigerare för OpenStreetMap",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] är en samling verktyg för att redigera Wikipedia",
-	"translate-group-desc-readerfeedback": "Metagrupp som innehåller alla meddelanden för MediaWiki-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
+	"translate-group-desc-readerfeedback": "Metagrupp som innehåller alla meddelanden för [[Translating:MediaWiki|MediaWiki]]-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-semantic": "Metameddelandegrupp som innehåller alla meddelanden för alla tillägg till [https://semantic-mediawiki.org/ Semantic MediaWiki]",
 	"translate-group-desc-translatablepages": "Alla översättningsbara sidor",
 	"translate-group-desc-translate": "Metameddelandegrupp som innehåller alla meddelanden för MediaWiki-tillägget [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]; var god bekanta dig med [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary ordlistan]",
@@ -63,6 +64,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] är en plattformsoberoende applikation för att läsa och bidra till Wikisource på mobiler och surfplattor",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] är en plattformsoberoende applikation för att läsa och bidra till Wiktionary på mobiler och surfplattor",
 	"translate-group-desc-wikimediaextensions": "Metagrupp som innehåller alla meddelanden för MediaWiki-tillägg som används av [https://wikimediafoundation.org/ Wikimedia Foundation]",
-	"translate-group-desc-wikimediaextensions-main": "Metameddelandegrupp som innehåller alla meddelanden för stödjande MediaWiki-tillägg som krävs för att översättas för Wikimedias [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee språkkommitté]",
+	"translate-group-desc-wikimediaextensions-main": "Metameddelandegrupp som innehåller alla meddelanden för stödjande [[Translating:MediaWiki|MediaWiki]]-tillägg som krävs för att översättas för Wikimedias [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee språkkommitté]",
 	"translategroupdescriptions-desc": "Meddelandegruppsbeskrivningar för produkter som stöds av [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]-tillägget"
 }

@@ -3,7 +3,8 @@
 		"authors": [
 			"Als-Chlämens",
 			"Als-Holder",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Voreb Du aafangsch mit Ibersetze vu FreeCol, liis bitte zerscht [[Translating:FreeCol]]. Freecol nutzt d GPL-Lizänz.",
@@ -12,10 +13,10 @@
 	"bw-desc-openstreetmap": "Nochrichtegruppe fir alli [[Translating:OpenStreetMap|OpenStreetMap]]-Nochrichte",
 	"bw-desc-osm-site": "In däre Gruppe het s Nochrichte vu dr Benutzeroberflechi fir [[Translating:Open Street Map|Open Street Map]].",
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] cha d Autore vun ere Syte im e Wikimedia-Wiki schnäll uusefinde.",
-	"translate-group-desc-collection": "In däre Hauptgruppe het s alli Syschtemnochrichte fir d MediaWiki-Erwyterig [https://www.mediawiki.org/wiki/Extension:Collection Collection]",
+	"translate-group-desc-collection": "In däre Hauptgruppe het s alli Syschtemnochrichte fir d [[Translating:MediaWiki|MediaWiki]]-Erwyterig [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection]",
 	"translate-group-desc-eol": "Mäldigsgruppe für [[Translating:EOL|Läbens-Enzyklopädi]]",
 	"translate-group-desc-europeana": "[[Translating:Europeana|Europeana]] macht e Zuegang zum europäische Kulturerb megli",
-	"translate-group-desc-flaggedrevs": "In däre Hauptgruppe het s alli Syschtemnochrichte fir d MediaWiki-Erwyterig [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs]",
+	"translate-group-desc-flaggedrevs": "In däre Hauptgruppe het s alli Syschtemnochrichte fir d [[Translating:MediaWiki|MediaWiki]]-Erwyterig [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs]",
 	"translate-group-desc-ihris": "Nochrichte fir [[Translating:iHRIS|iHRIS]]",
 	"translate-group-desc-kiwix": "Mäldige fir [[Translating:Kiwix|Kiwix]]",
 	"translate-group-desc-mantisbt-plugin-core": "E Haupt-Plugin fir [[Translating:MantisBT|MantisBT]]",
@@ -28,13 +29,13 @@
 	"translate-group-desc-nodesc": "Fir die Nochrichte-Gruppe isch kei Bschryybig verfiegbar.",
 	"translate-group-desc-openimages-all": "Die Nochrichte sin Teil vum [[Translating:Open Images|Open Images]]-Projäkt",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] isch e Sammlig vu Wärchzyyg zum Bearbeite vu dr Wikipedia",
-	"translate-group-desc-readerfeedback": "Meta-Nochrichte-Gruppe, wu s alli Nochrichte din het fir d MediaWiki-Erwyterig [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback]",
+	"translate-group-desc-readerfeedback": "Meta-Nochrichte-Gruppe, wu s alli Nochrichte din het fir d [[Translating:MediaWiki|MediaWiki]]-Erwyterig [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-semantic": "In dere Meta Mäldigsgruppe sin alli Systemmädlige für d MediaWiki-Erwyyterig [https://semantic-mediawiki.org/wiki/Semantic_MediaWiki_–_Startsyte Semantic MediaWiki] un de Erwyyterige wo dört yybunde sin",
 	"translate-group-desc-translatablepages": "Alli ibersetzbare Syte",
 	"translate-group-desc-translate": "In däre Hauptgruppe het s alli Syschtemnochrichte fir d MediaWiki-Erwyterig [https://www.mediawiki.org/wiki/Extension:Translate Translate]",
 	"translate-group-desc-tsint": "Mäldigsgruppe für [http://toolserver.org/~krinkle/TsIntuition „Toolserver Intuition“], s I18N-System für d Hilfsprogramm wo uffem [http://toolserver.org Toolserver] ghoschtet sin. (<span class=\"plainlinks\">[[Translating talk:Toolserver|Hilf]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition technischi Hywyys]</span>)",
 	"translate-group-desc-wikiaextensions": "In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu  [http://www.wikia.com Wikia] brucht wäre",
 	"translate-group-desc-wikimediaextensions": "In däre Hauptgruppe het s alli Syschtemnochrichte vu dr unterstitzte MediaWiki-Erwyterige, wu vu dr [https://wikimediafoundation.org/ Wikimedia Foundation] brucht wäre",
-	"translate-group-desc-wikimediaextensions-main": "Meta-Nochrichte-Gruppe, wu s alli Syschtemnochrichte din het vu dr unterstitzte MediaWiki-Erwyterige, wu fir s Wikimedia [https://meta.wikimedia.org/wiki/Language_committee Sprochekomitee] mien ibersetzt wäre.",
+	"translate-group-desc-wikimediaextensions-main": "Meta-Nochrichte-Gruppe, wu s alli Syschtemnochrichte din het vu dr unterstitzte [[Translating:MediaWiki|MediaWiki]]-Erwyterige, wu fir s Wikimedia [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Sprochekomitee] mien ibersetzt wäre.",
 	"translategroupdescriptions-desc": "Bschryybig vu dr Nochrichtegruppe vu Projäkt, wu mit dr Softwareerwyterig [https://mediawiki.org/wiki/Extension:Translate „Translate“] unterstitzt wäre"
 }

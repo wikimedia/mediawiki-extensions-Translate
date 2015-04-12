@@ -3,7 +3,8 @@
 		"authors": [
 			"Borichèt",
 			"Dragonòt",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Prima ëd volté FreeCol an soa lenga, për piasì ch'a lesa [[Translating:FreeCol]]. Freecol a deuvra la licensa GPL.",
@@ -12,11 +13,11 @@
 	"bw-desc-openstreetmap": "Partìa ëd mëssagi për tùit ij mëssagi [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "Sta partìa ëd messagi-sì a conten ij messagi d'antërfassa për [[Translating:Open Street Map|Open Street Map]].",
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] a peil trové an pressa j'àutor ëd na pàgina an na wiki ëd Wikimedia.",
-	"translate-group-desc-collection": "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [https://www.mediawiki.org/wiki/Extension:Collection Colession]",
+	"translate-group-desc-collection": "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Colession]",
 	"translate-group-desc-eol": "Na partìa ëd mëssagi për l'[[Translating:EOL|Enciclopedìa dla Vita]]",
 	"translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] a l'é n'editor colaborativ vreman an temp real",
 	"translate-group-desc-europeana": "[[Translating:Europeana|Europeana]] a abìlita le përson-e a esploré j'arsorse culturaj digitaj d'Euròpa",
-	"translate-group-desc-flaggedrevs": "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [https://www.mediawiki.org/wiki/Extension:FlaggedRevs Revision signalà]",
+	"translate-group-desc-flaggedrevs": "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs Revision signalà]",
 	"translate-group-desc-ihris": "Na partìa ëd mëssagi për [[Translating:iHRIS|iHRIS]]",
 	"translate-group-desc-kiwix": "Na partìa ëd mëssagi për [[Translating:Kiwix|Kiwix]]",
 	"translate-group-desc-mantisbt-plugin-core": "Un plugin sentral për [[Translating:MantisBT|MantisBT]]",
@@ -30,7 +31,7 @@
 	"translate-group-desc-openimages-all": "Sti mëssagi-sì a son part dël prget [[Translating:Open Images|Open Images]]",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] a l'é n'editor OpenStreetMap basà su Flash",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] a l'é na colession d'utiss për modifiché Wikipedia",
-	"translate-group-desc-readerfeedback": "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension MediaWiki [https://www.mediawiki.org/wiki/Extension:ReaderFeedback Sugeriment dij letor]",
+	"translate-group-desc-readerfeedback": "Meta partìa ëd mëssagi contenent tùit ij mëssagi për l'estension [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback Sugeriment dij letor]",
 	"translate-group-desc-semantic": "Partìa ëd mëssagi Meta contenent tùit ij mëssagi për tute j'estension [https://semantic-mediawiki.org/ Semantic MediaWiki]",
 	"translate-group-desc-translatablepages": "Tute le pàgine ch'as peulo volté",
 	"translate-group-desc-translate": "Partìa dij mëssagi Meta contenent tùit ij mëssagi për l'estension MediaWiki [https://www.mediawiki.org/wiki/Extension:Translate Tradussion]; për piasì, ch'as familiarisa con sò [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossari]",
@@ -43,6 +44,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wikisource",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] a l'é n'aplicassion për sacociàbil e taulëtta antër-piataforme për lese e contribuì a Wiktionary",
 	"translate-group-desc-wikimediaextensions": "Meta partìa ëd mëssagi contenent tùit ij mëssagi për j'estension MediaWiki mantnùe dovrà da la [https://wikimediafoundation.org/ Fondassion Wikimedia]",
-	"translate-group-desc-wikimediaextensions-main": "Partìa ëd meta mëssagi contenent tùit ij mëssagi për j'estension MediaWiki mantnùe e ch'a venta volté për ël [https://meta.wikimedia.org/wiki/Language_committee Comità dle lenghe] ëd Wikimedia",
+	"translate-group-desc-wikimediaextensions-main": "Partìa ëd meta mëssagi contenent tùit ij mëssagi për j'estension [[Translating:MediaWiki|MediaWiki]] mantnùe e ch'a venta volté për ël [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Comità dle lenghe] ëd Wikimedia",
 	"translategroupdescriptions-desc": "Descrission dle partìe ëd mëssagi për ij prodot mantnù da l'estension [https://mediawiki.org/wiki/Extension:Translate Translate]"
 }

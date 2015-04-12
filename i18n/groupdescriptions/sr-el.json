@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Rancher"
+			"Rancher",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|Frikol]] je strateška igra",
@@ -31,6 +32,6 @@
 	"translate-group-desc-tsint": "Grupa poruka za [http://toolserver.org/~krinkle/TsIntuition Tulserver intuišon], prevodilački sistem za alatke [http://toolserver.org Tulservera] (<span class=\"plainlinks\">[[Translating talk:Toolserver|podrška]] &middot; [https://wiki.toolserver.org/view/Toolserver_Intuition tehnički detalji]</span>)",
 	"translate-group-desc-wikiaextensions": "Meta grupa poruka koja sadrži sve poruke za podržana proširenja koje koristi [http://www.wikia.com Vikija]",
 	"translate-group-desc-wikimediaextensions": "Meta grupa poruka koja sadrži sve poruke za podržana proširenja koje koristi [https://wikimediafoundation.org/ Zadužbina Vikimedija]",
-	"translate-group-desc-wikimediaextensions-main": "Meta grupa poruka koja sadrži sve poruke podržanih proširenja Medijavikija. Poruke je potrebno prevesti za Vikimedijin [https://meta.wikimedia.org/wiki/Language_committee jezički odbor]",
+	"translate-group-desc-wikimediaextensions-main": "Meta grupa poruka koja sadrži sve poruke podržanih proširenja [[Translating:MediaWiki|Medijavikija]]. Poruke je potrebno prevesti za Vikimedijin [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee jezički odbor]",
 	"translategroupdescriptions-desc": "Opisi grupa poruka za projekte koji su podržani od strane proširenja [https://mediawiki.org/wiki/Extension:Translate Translate]"
 }

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"McDutchie",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Ante de traducer FreeCol in tu lingua, per favor lege [[Translating:FreeCol]]. FreeCol usa le licentia GPL.",
@@ -13,11 +14,11 @@
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] pote rapidemente trovar le autores de un pagina in un wiki de Wikimedia.",
 	"translate-group-desc-blockly": "Un gruppo de messages pro [[Translating:Blockly|Blockly]]",
 	"translate-group-desc-bluespice": "Metagruppo con tote le messages pro le extensiones [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BlueSpice Blue Spice] de MediaWiki",
-	"translate-group-desc-collection": "Metagruppo con tote le messages pro le extension de [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection] de MediaWiki",
+	"translate-group-desc-collection": "Metagruppo con tote le messages pro le extension de [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection] de [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-eol": "Un gruppo de messages pro le [[Translating:EOL|Encyclopedia del Vita]]",
 	"translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] es un editor collaborative in tempore realmente real",
 	"translate-group-desc-europeana": "[[Translating:Europeana|Europeana 1914-1918]] es un sito web con historias, films e material historic sur le Prime Guerra Mundial",
-	"translate-group-desc-flaggedrevs": "Metagruppo con tote le messages pro le extension [https://www.mediawiki.org/wiki/Special:MyLanguage Marcaversiones] de MediaWiki",
+	"translate-group-desc-flaggedrevs": "Metagruppo con tote le messages pro le extension [https://www.mediawiki.org/wiki/Special:MyLanguage Marcaversiones] de [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-fuel": "[[Translating:FUEL|FUEL]] apporta plus consistentia al traduction de software",
 	"translate-group-desc-huggle": "[[Translating:Huggle|Huggle]] es un application pro le exploration rapide de differentias pro tractar le vandalismo in projectos de Wikimedia",
 	"translate-group-desc-ihris": "Un gruppo de messages pro [[Translating:iHRIS|iHRIS]]",
@@ -33,7 +34,7 @@
 	"translate-group-desc-openimages-all": "Iste messages face parte del projecto [[Translating:Open Images|Open Images]]",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] es un editor pro OpenStreetMap a base de Flash",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] es un collection de instrumentos pro modificar Wikipedia",
-	"translate-group-desc-readerfeedback": "Metagruppo con tote le messages pro le extension MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
+	"translate-group-desc-readerfeedback": "Metagruppo con tote le messages pro le extension [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-semantic": "Meta-gruppo que contine le messages pro tote le extensiones de [https://semantic-mediawiki.org/ Semantic MediaWiki]",
 	"translate-group-desc-translatablepages": "Tote le paginas traducibile",
 	"translate-group-desc-translate": "Metagruppo con tote le messages pro le extension de MediaWiki [https://www.mediawiki.org/Special:MyLanguage/wiki/Extension:Translate Traducer]; per favor familiarisa te con le [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary glossario].",
@@ -41,6 +42,6 @@
 	"translate-group-desc-waymarked-trails": "[[Translating:Waymarked Trails|Waymarked Trails]] es un servicio que monstra routes de sport pedestre, cyclismo, mountain bike e patinage in linea in tote le mundo. Illo usa le licentia GNU GPL.",
 	"translate-group-desc-wikiaextensions": "Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per [http://www.wikia.com Wikia]",
 	"translate-group-desc-wikimediaextensions": "Metagruppo con tote le messages pro le extensiones supportate de MediaWiki usate per le [https://wikimediafoundation.org/ Fundation Wikimedia]",
-	"translate-group-desc-wikimediaextensions-main": "Metagruppo que contine tote le messages pro le extensiones supportate per MediaWiki que debe esser traducite pro le [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Comité de linguas] del Fundation Wikimedia",
+	"translate-group-desc-wikimediaextensions-main": "Metagruppo que contine tote le messages pro le extensiones supportate per [[Translating:MediaWiki|MediaWiki]] que debe esser traducite pro le [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Comité de linguas] del Fundation Wikimedia",
 	"translategroupdescriptions-desc": "Descriptiones de gruppos de messages pro productos supportate per le extension [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]"
 }

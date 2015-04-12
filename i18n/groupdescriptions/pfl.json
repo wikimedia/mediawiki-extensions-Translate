@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Manuae"
+			"Manuae",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] ischä rundebasiades Schdradegieschbiel",
@@ -10,9 +11,9 @@
 	"bw-desc-openstreetmap": "Alli Nochrischde zu [[Translating:OpenStreetMap|OpenStreetMap]]",
 	"bw-desc-osm-site": "[[Translating:OpenStreetMap|OpenStreetMap]] ischä vaänabari Kaad vunde gonse Weld",
 	"bw-desc-wikiblame": "[[Translating:WikiBlame|WikiBlame]] eameschlischds Uffinne vunem Audoa vuner Said inem Wikimedia Wiki.",
-	"translate-group-desc-collection": "Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [https://www.mediawiki.org/wiki/Extension:Collection Collection] hod.",
+	"translate-group-desc-collection": "Meda-Nochrischdegrubb, wu alli Nochrischde vunde [[Translating:MediaWiki|MediaWiki]]-Eawaidarung [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection] hod.",
 	"translate-group-desc-eol": "Ä Nochrischdegrubb fas [[Translating:EOL|Sachweadabuch vum Lewe]]",
-	"translate-group-desc-flaggedrevs": "Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [https://www.mediawiki.org/wiki/Extension:FlaggedRevs FlaggedRevs] hod.",
+	"translate-group-desc-flaggedrevs": "Meda-Nochrischdegrubb, wu alli Nochrischde vunde [[Translating:MediaWiki|MediaWiki]]-Eawaidarung [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs] hod.",
 	"translate-group-desc-ihris": "Ä Nochrischdegrubb fa [[Translating:iHRIS|iHRIS]]",
 	"translate-group-desc-kiwix": "Ä Nochrischdegrubb fa [[Translating:Kiwix|Kiwix]]",
 	"translate-group-desc-mantisbt-plugin-core": "Ä Kean-Oischubb fa [[Translating:MantisBT|MantisBT]]",
@@ -26,7 +27,7 @@
 	"translate-group-desc-openimages-all": "Die Nochrischde sinen Deel vum [[Translating:Open Images|Open Images]]-Voahawe",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] ischä Flash-gschdidzds OpenStreetMap B'awaidungsbrogram",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] ischä Sommlung vun Weagzaisch zum Änare vunde Wikipedia",
-	"translate-group-desc-readerfeedback": "Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [https://www.mediawiki.org/wiki/Extension:ReaderFeedback ReaderFeedback] hod.",
+	"translate-group-desc-readerfeedback": "Meda-Nochrischdegrubb, wu alli Nochrischde vunde [[Translating:MediaWiki|MediaWiki]]-Eawaidarung [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback] hod.",
 	"translate-group-desc-semantic": "Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [https://semantic-mediawiki.org/ Semantic MediaWiki] hod.",
 	"translate-group-desc-translatablepages": "Alli iwasedzbari Saide",
 	"translate-group-desc-translate": "Meda-Nochrischdegrubb, wu alli Nochrischde vunde MediaWiki-Eawaidarung [https://www.mediawiki.org/wiki/Extension:Translate Translate] hod.",
@@ -34,6 +35,6 @@
 	"translate-group-desc-waymarked-trails": "[[Translating:Waymarked Trails|Waymarked Trails]] ischn Dinschd fa Weesche fas Woandare, Radle, Beaschradle un Rollschuh laafe uffde gonse Weld. Bnudzd die GNU GPL G'nehmischung",
 	"translate-group-desc-wikiaextensions": "Meda-Nochrischdegrubb, wu alli Nochrischde fa unaschdizdi MediaWiki-Eawaidarung vun [http://www.wikia.com Wikia] hod.",
 	"translate-group-desc-wikimediaextensions": "Meda-Nochrischdegrubb, wu alli Nochrischde fa unaschdizdi MediaWiki-Eawaidarung vun [https://wikimediafoundation.org/ Wikimedia Foundation] hod.",
-	"translate-group-desc-wikimediaextensions-main": "Meda-Nochrischdegrubb, wu alli Nochrischde fa unaschdizdi MediaWiki-Eawaidarung hod, wu fas Iwasedze vun [https://meta.wikimedia.org/wiki/Language_committee Language committee] nodwendisch sin.",
+	"translate-group-desc-wikimediaextensions-main": "Meda-Nochrischdegrubb, wu alli Nochrischde fa unaschdizdi [[Translating:MediaWiki|MediaWiki]]-Eawaidarung hod, wu fas Iwasedze vun [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Language committee] nodwendisch sin.",
 	"translategroupdescriptions-desc": "Bschraiwung vunde Nochrischdegrubb fa Brodugd vunde unaschdidzdi [https://mediawiki.org/wiki/Extension:Translate Iwasedzung] Eawaidarung"
 }

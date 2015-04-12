@@ -7,7 +7,8 @@
 			"Mark85296341",
 			"Simon Shek",
 			"Liuxinyu970226",
-			"LNDDYL"
+			"LNDDYL",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] 是一套回合制的策略遊戲",
@@ -18,11 +19,11 @@
 	"bw-desc-wikiblame": "[[Translating:WikiBlame|WikiBlame]] 一套可以快速找到 Wikimedia 頁面中某一個段落作者的工具",
 	"translate-group-desc-blockly": "[[Translating:Blockly|Blockly]] 的訊息群組",
 	"translate-group-desc-bluespice": "此訊息群組包含了 MediaWiki 的 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BlueSpice Blue Spice] 擴充套件中所有的訊息",
-	"translate-group-desc-collection": "此訊息群組包含了 MediaWiki 的 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection] 擴充套件中所有的訊息",
+	"translate-group-desc-collection": "此訊息群組包含了 [[Translating:MediaWiki|MediaWiki]] 的 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection] 擴充套件中所有的訊息",
 	"translate-group-desc-eol": "[[Translating:EOL|生命大百科]]的訊息群組",
 	"translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] 是一套即時協同作業的編輯程式",
 	"translate-group-desc-europeana": "[[Translating:Europeana|歐盟 1914-1918]] 是一個網站包含了有關第一次世界大戰中的故事、電影與歷史文物的內容。",
-	"translate-group-desc-flaggedrevs": "此訊息群組包含了 MediaWiki 的 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs] 擴充套件中所有的訊息",
+	"translate-group-desc-flaggedrevs": "此訊息群組包含了 [[Translating:MediaWiki|MediaWiki]] 的 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs] 擴充套件中所有的訊息",
 	"translate-group-desc-fuel": "[[Translating:FUEL|FUEL]] 一套可讓軟體翻譯有更高一致性的軟體",
 	"translate-group-desc-huggle": "[[Translating:Huggle|Huggle]] 是快速比對差異瀏覽器應用程式，可於維基媒體專案遭到破壞時使用",
 	"translate-group-desc-ihris": "[[Translating:iHRIS|iHRIS]] 的訊息群組",
@@ -40,7 +41,7 @@
 	"translate-group-desc-openimages-all": "這些訊息屬於 [[Translating:Open Images|Open Images]] 專案的一部份",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] 是一套以 Flash 為基礎的 OpenStreetMap 編輯器",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] 是維基百科的編輯工具集",
-	"translate-group-desc-readerfeedback": "此訊息群組包含了 MediaWiki 的 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback] 擴充套件中所有的訊息",
+	"translate-group-desc-readerfeedback": "此訊息群組包含了 [[Translating:MediaWiki|MediaWiki]] 的 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback] 擴充套件中所有的訊息",
 	"translate-group-desc-semantic": "此訊息群組包含了 [https://semantic-mediawiki.org/ Semantic MediaWiki] 擴充套件中所有的訊息",
 	"translate-group-desc-translatablepages": "所有可翻譯的頁面",
 	"translate-group-desc-translate": "此訊息群組包含了 MediaWiki 的[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate 翻譯]擴充套件中所有的訊息；在翻譯前請先讓您自己熟悉[https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary 術語表]中的詞匯。",
@@ -59,6 +60,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] 是一套可以在手機與平板電腦上閱讀與貢獻 Wikisource 文件的跨平台應用程式",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] 是一套可以在手機與平板電腦上閱讀與貢獻維基詞典的跨平台應用程式",
 	"translate-group-desc-wikimediaextensions": "此訊息群組包含了所有[https://wikimediafoundation.org/ 維基媒體基金會]使用的 MediaWiki 擴充套件中所有的訊息",
-	"translate-group-desc-wikimediaextensions-main": "此訊息群組包含了所有維基媒體 [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee 語言委員會 (Language committee)] 使用的 MediaWiki 擴充套件中所有的訊息",
+	"translate-group-desc-wikimediaextensions-main": "此訊息群組包含了所有維基媒體 [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee 語言委員會 (Language committee)] 使用的 [[Translating:MediaWiki|MediaWiki]] 擴充套件中所有的訊息",
 	"translategroupdescriptions-desc": "有關目前 [https://mediawiki.org/wiki/Special:MyLanguage/Extension:Translate 翻譯] 擴充套件所支援產品的訊息群組內容描述。"
 }

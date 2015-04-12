@@ -11,7 +11,8 @@
 			"Александр Сигачёв",
 			"Rubin16",
 			"Lokal Profil",
-			"Максим777"
+			"Максим777",
+			"Macofe"
 		]
 	},
 	"bw-desc-freecol": "Прежде чем переводить FreeCol на ваш язык, пожалуйста, прочтите [[Translating:FreeCol]]. Freecol использует лицензию GPL.",
@@ -22,11 +23,11 @@
 	"bw-desc-wikiblame": "[http://wikipedia.ramselehof.de/wikiblame.php Wikiblame] позволяет быстро найти авторов страницы в проектах Викимедиа.",
 	"translate-group-desc-blockly": "Группа сообщений для [[Translating:Blockly|Blockly]]",
 	"translate-group-desc-bluespice": "Мета-группа сообщений, содержащая все сообщения расширений MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BlueSpice Blue Spice]",
-	"translate-group-desc-collection": "Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection]",
+	"translate-group-desc-collection": "Мета-группа сообщений, содержащая все сообщения расширения [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection]",
 	"translate-group-desc-eol": "Группа сообщений для [[Translating:EOL|Энциклопедия жизни]]",
 	"translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]] — это редактор, предназначенный для совместной работы в реальном времени",
 	"translate-group-desc-europeana": "[[Translating:Europeana|Europeana 1914—1918]] — это веб-сайт с историями, фильмами и историческими материалами о Первой мировой войне",
-	"translate-group-desc-flaggedrevs": "Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs]",
+	"translate-group-desc-flaggedrevs": "Мета-группа сообщений, содержащая все сообщения расширения [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:FlaggedRevs FlaggedRevs]",
 	"translate-group-desc-fuel": "[[Translating:FUEL|FUEL]] приносит больше согласованности при переводе программного обеспечения",
 	"translate-group-desc-huggle": "[[Translating:Huggle|Huggle]] — это быстрое браузерное приложение для сравнения, помогающее в борьбе с вандализмом в проектах Викимедиа",
 	"translate-group-desc-ihris": "Группа сообщений для [[Translating:iHRIS|iHRIS]]",
@@ -47,7 +48,7 @@
 	"translate-group-desc-openimages-all": "Эти сообщения относятся к проекту [[Translating:Open Images|Open Images]]",
 	"translate-group-desc-potlatch2": "[[Translating:OpenStreetMap|Potlatch2]] — это основанный на Flash редактор OpenStreetMap",
 	"translate-group-desc-pywikipedia": "[[Translating:Pywikibot|Pywikibot]] — набор инструментов для редактирования Википедии",
-	"translate-group-desc-readerfeedback": "Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
+	"translate-group-desc-readerfeedback": "Мета-группа сообщений, содержащая все сообщения расширения [[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:ReaderFeedback ReaderFeedback]",
 	"translate-group-desc-semantic": "Мета-группа сообщений, содержащая все сообщения для всех расширений [https://semantic-mediawiki.org/ Semantic MediaWiki]",
 	"translate-group-desc-translatablepages": "Все страницы для перевода",
 	"translate-group-desc-translate": "Мета-группа сообщений, содержащая все сообщения расширения MediaWiki [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]; пожалуйста, ознакомьтесь с его [https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary словарём терминов]",
@@ -66,6 +67,6 @@
 	"translate-group-desc-wikimedia-mobile-wikisource": "[[Translating:WikisourceMobile|WikisourceMobile]] — кросспатформенное приложение для мобильных устройств и планшетов, обеспечивающее чтение и редактирование Викитеки",
 	"translate-group-desc-wikimedia-mobile-wiktionary": "[[Translating:WiktionaryMobile|WiktionaryMobile]] — кросспатформенное приложение для мобильных устройств и планшетов, обеспечивающее чтение и редактирование Викисловаря",
 	"translate-group-desc-wikimediaextensions": "Мета-группа сообщений, содержащая все сообщения поддерживаемых расширений MediaWiki, используемых [https://wikimediafoundation.org/ Фондом Викимедиа]",
-	"translate-group-desc-wikimediaextensions-main": "Мета-группа сообщений, содержащая все сообщения расширений MediaWiki, которые требуется перевести для [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Языкового комитета] Викимедии",
+	"translate-group-desc-wikimediaextensions-main": "Мета-группа сообщений, содержащая все сообщения расширений [[Translating:MediaWiki|MediaWiki]], которые требуется перевести для [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee Языкового комитета] Викимедии",
 	"translategroupdescriptions-desc": "Описания групп сообщений для продуктов, поддерживаемых расширением [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate Translate]"
 }
