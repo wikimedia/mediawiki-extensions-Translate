@@ -89,6 +89,7 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 				'ignored',
 				'magicfile',
 				'mangle',
+				'namespacefile',
 				'optional',
 				'prefix',
 				'var',

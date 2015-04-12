@@ -120,6 +120,10 @@ class PremadeMediawikiExtensionGroups {
 			$conf['FILES']['magicFileSource'] = $this->path . '/' . $info['magicfile'];
 			$conf['FILES']['magicFile'] = $info['magicfile'];
 		}
+		if ( isset( $info['namespacefile'] ) ) {
+			$conf['FILES']['namespaceFileSource'] = $this->path . '/' . $info['namespacefile'];
+			$conf['FILES']['namespaceFile'] = $info['namespacefile'];
+		}
 
 		if ( isset( $info['prefix'] ) ) {
 			$conf['MANGLER']['class'] = 'StringMatcher';
@@ -193,6 +197,7 @@ class PremadeMediawikiExtensionGroups {
 						case 'format':
 						case 'id':
 						case 'magicfile':
+						case 'namespacefile':
 						case 'var':
 							$newgroup[$key] = $value;
 							break;
@@ -298,6 +303,7 @@ class PremadeMediawikiExtensionGroups {
 				'ignored',
 				'magicfile',
 				'mangle',
+				'namespacefile',
 				'optional',
 				'prefix',
 				'var',

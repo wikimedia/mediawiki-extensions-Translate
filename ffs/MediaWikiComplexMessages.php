@@ -741,6 +741,26 @@ class NamespaceCM extends ComplexMessages {
 			'file' => Language::getMessagesFileName( self::PLACEHOLDER ),
 			'code' => false,
 		);
+
+		$groups = MessageGroups::singleton()->getGroups();
+		foreach ( $groups as $g ) {
+			if ( !$g instanceof MediaWikiExtensionMessageGroup ) {
+				continue;
+			}
+			$conf = $g->getConfiguration();
+			if ( !isset( $conf['FILES']['namespaceFileSource'] ) ) {
+				continue;
+			}
+			$file = $g->replaceVariables( $conf['FILES']['namespaceFileSource'], 'en' );
+			if ( file_exists( $file ) ) {
+				$this->data[$g->getId()] = array(
+					'label' => $g->getLabel(),
+					'var' => 'namespaceNames',
+					'file' => $file,
+					'code' => $code,
+				);
+			}
+		}
 	}
 
 	protected $constants = array(
