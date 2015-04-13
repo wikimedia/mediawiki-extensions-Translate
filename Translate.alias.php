@@ -671,7 +671,7 @@ $specialPageAliases['lmo'] = array(
 
 /** Lithuanian (lietuvių) */
 $specialPageAliases['lt'] = array(
-	'PageTranslation' => array( 'Puslapio vertimas' ),
+	'PageTranslation' => array( 'Puslapio_vertimas' ),
 	'Translate' => array( 'Vertimas' ),
 );
 

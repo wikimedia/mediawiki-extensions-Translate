@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Aftab1995",
-			"Nasir8891"
+			"Nasir8891",
+			"Aftabuzzaman"
 		]
 	},
 	"searchtranslations": "অনুবাদ অনুসন্ধান",
@@ -17,6 +18,6 @@
 	"tux-sst-nosolr-body": "এই উইকিতে অনুবাদ অনুসন্ধান সক্রিয় নেই।",
 	"tux-sst-solr-offline-title": "অনুসন্ধান সক্রিয় নেই",
 	"tux-sst-solr-offline-body": "অনুসন্ধান পরিষেবাটি সাময়িকভাবে অনুপলব্ধ।",
-	"tux-sst-next": "পরবর্তী ফলাফল",
-	"tux-sst-prev": "পূর্বের ফলাফল"
+	"tux-sst-next": "পরবর্তী ›",
+	"tux-sst-prev": "‹ পূর্ববর্তী"
 }
