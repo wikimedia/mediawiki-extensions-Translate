@@ -90,6 +90,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 		$userStats = $this->getUserStats( $usernames );
 
 		// Information to be used inside the foreach loop.
+		$linkInfo = array();
 		$linkInfo['rc']['title'] = SpecialPage::getTitleFor( 'Recentchanges' );
 		$linkInfo['rc']['msg'] = $this->msg( 'supportedlanguages-recenttranslations' )->escaped();
 		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
@@ -161,7 +162,7 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 			'rc_namespace' => $wgTranslateMessageNamespaces,
 			'rc_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
 		);
-		$options = array( 'GROUP BY' => 'lang', 'HAVING' => 'count > 20' );
+		$options = array( 'GROUP BY' => 'lang', 'HAVING' => 'count > 20', 'ORDER BY' => 'NULL' );
 
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
 
