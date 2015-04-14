@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"محمد أحمد عبد الفتاح"
+		]
+	},
+	"searchtranslations": "ابحث في الترجمات",
+	"tux-sst-edit": "عدل الترجمة",
+	"tux-sst-search": "ابحث",
+	"tux-sst-facet-group": "مجموعات الرسائل",
+	"tux-sst-nosolr-title": "البحث غير متوفر",
+	"tux-sst-solr-offline-title": "البحث غير متوفر"
+}

@@ -5,7 +5,8 @@
 			"OsamaK",
 			"ترجمان05",
 			"روخو",
-			"Bibas"
+			"Bibas",
+			"محمد أحمد عبد الفتاح"
 		]
 	},
 	"pagetranslation": "ترجمة صفحة",
@@ -48,6 +49,7 @@
 	"tpt-translation-intro": "هذه الصفحة هي <span class=\"plainlinks\">[$1 نسخة مترجمة]</span> لصفحة [[$2]] والترجمة مكتملة ومحدثة بنسبة $3%.",
 	"tpt-languages-legend": "لغات أخرى:",
 	"tpt-languages-nonzero": "$1 (قد ترجمت بنسبة $2%)",
+	"tpt-tab-translate": "ترجم",
 	"tpt-target-page": "لا يمكن تحديث هذه الصفحة يدويًا.\nهذه الصفحة ترجمة لصفحة [[$1]] ويمكن تحديث الترجمة باستخدام [$2 أداة الترجمة].",
 	"tpt-unknown-page": "هذا النطاق محجوز لترجمات صفحات المحتوى.\nالصفحة التي تحاول تعديلها لا يبدو أنها تتبع أي صفحة معلمة للترجمة.",
 	"tpt-render-summary": "تحديث لمطابقة نسخة صفحة المصدر الجديدة",
@@ -55,6 +57,9 @@
 	"tpt-aggregategroup-add": "أضف",
 	"tpt-aggregategroup-save": "احفظ",
 	"tpt-aggregategroup-new-name": "الاسم:",
+	"tpt-aggregategroup-new-description": "الوصف (اختياري):",
+	"tpt-aggregategroup-update": "احفظ",
+	"tpt-aggregategroup-update-cancel": "ألغ",
 	"pt-movepage-block-tp-exists": "صفحة الهدف المترجمة [[:$2]] موجودة.",
 	"pt-movepage-list-pages": "قائمة الصفحات التي ستنقل",
 	"pt-movepage-list-translation": "صفحات الترجمة",
@@ -71,5 +76,12 @@
 	"pt-deletepage-reason": "السبب:",
 	"pt-deletepage-subpages": "أحذف جميع الصفحات الفرعية",
 	"pt-deletepage-list-translation": "صفحات الترجمة",
-	"pt-deletepage-list-other": "صفحات فرعية أخرى"
+	"pt-deletepage-list-other": "صفحات فرعية أخرى",
+	"pm-savepages-button-label": "احفظ",
+	"pm-cancel-button-label": "ألغ",
+	"pm-pagename-placeholder": "أدخل اسم الصفحة",
+	"pm-langcode-placeholder": "رمز اللغة",
+	"pm-page-does-not-exist": "$1 غير موجودة",
+	"pp-save-button-label": "احفظ",
+	"pp-cancel-button-label": "ألغ"
 }

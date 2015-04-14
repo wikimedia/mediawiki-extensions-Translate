@@ -4,6 +4,10 @@
 			"Metalhead64"
 		]
 	},
+	"apihelp-aggregategroups-param-group": "Nachrichtengruppenkennung.",
+	"apihelp-query+languagestats-param-language": "Sprachcode.",
+	"apihelp-query+messagecollection-param-group": "Nachrichtengruppe.",
+	"apihelp-query+messagecollection-example-1": "Liste unterstützter Sprachen",
 	"apihelp-query+messagegroups-example-1": "Nachrichtengruppen anzeigen",
 	"apihelp-query+messagegroupstats-param-group": "Nachrichtengruppenkennung.",
 	"apihelp-query+messagetranslations-param-title": "Vollständiger Titel einer bekannten Nachricht.",

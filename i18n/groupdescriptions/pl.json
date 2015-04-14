@@ -47,9 +47,9 @@
 	"translate-group-desc-tsint": "Grupa wiadomości, [[Translating:Intuition|Intuition]], systemy internacjonalizacji [//tools.wmflabs.org/ Wikimedia Tool Labs] (<span class=\"plainlinks\">[[Translating talk:Intuition|obsługa]]</span>)",
 	"translate-group-desc-vicuna": "[[Translating:VicuñaUploader|VicuñaUploader]] to narzędzie do przesyłania plików na Wikimedia Commons i do innych projektów Wikimedia",
 	"translate-group-desc-waymarked-trails": "[[Translating:Waymarked Trails|Waymarked Trails]] jest usługą wyświetlającą trasy wycieczek pieszych, rowerowych, kolarstwa górskiego i łyżworolkowych na całym świecie. Na licencji GNU GPL",
-	"translate-group-desc-wikiaextensions": "Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń MediaWiki używanych przez [http://www.wikia.com Wikia]",
+	"translate-group-desc-wikiaextensions": "Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń [[Translating:MediaWiki|MediaWiki]] używanych przez [http://www.wikia.com Wikia]",
 	"translate-group-desc-wikimedia-mobile": "Grupy zbiorcze komunikatów zawierające aplikacje mobilne dla projektów Wikimedia",
-	"translate-group-desc-wikimediaextensions": "Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń MediaWiki używanych przez [https://wikimediafoundation.org/ Fundację Wikimedia]",
+	"translate-group-desc-wikimediaextensions": "Metagrupa zawiera wszystkie komunikaty obsługiwanych rozszerzeń [[Translating:MediaWiki|MediaWiki]] używanych przez [https://wikimediafoundation.org/ Fundację Wikimedia]",
 	"translate-group-desc-wikimediaextensions-main": "Grupa meta komunikatów zawierająca wszystkie wymagające przetłumaczenia komunikaty wspieranych rozszerzeń [[Translating:MediaWiki|MediaWiki]] na potrzeby [https://meta.wikimedia.org/wiki/Special:MyLanguage/Language_committee komitetu językowego] Wikimedia",
 	"translategroupdescriptions-desc": "Opis grupy komunikatów dla produktów wspieranych przez [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Translate rozszerzenie tłumaczenia]"
 }
