@@ -123,7 +123,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 
 		if ( is_null( $resultPageSet ) ) {
 			if ( defined( 'ApiResult::META_CONTENT' ) ) {
-				$result->defineIndexedTagName(
+				$result->addIndexedTagName(
 					array( 'query', $this->getModuleName() ),
 					'message'
 				);
@@ -170,7 +170,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			foreach ( $message->getPropertyNames() as $prop ) {
 				$data['properties'][$prop] = $message->getProperty( $prop );
 				if ( defined( 'ApiResult::META_CONTENT' ) ) {
-					ApiResult::setIndexedTagNameOnSubarrays( $data['properties'], 'val' );
+					ApiResult::setIndexedTagNameRecursive( $data['properties'], 'val' );
 				} else {
 					$result->setIndexedTagName_recursive( $data['properties'], 'val' );
 				}

@@ -31,9 +31,9 @@ class ApiTokensTranslateTest extends MediaWikiTestCase {
 		$api->execute();
 
 		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$data = ApiResult::removeMetadata(
-				$api->getResult()->getResultData()
-			);
+			$data = $api->getResult()->getResultData( null, array(
+				'Strip' => 'all',
+			) );
 		} else {
 			$data = $api->getResultData();
 		}

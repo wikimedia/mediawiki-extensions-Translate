@@ -37,7 +37,7 @@ class ApiTTMServer extends ApiBase {
 		}
 
 		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$result->defineIndexedTagName( $this->getModuleName(), 'suggestion' );
+			$result->addIndexedTagName( $this->getModuleName(), 'suggestion' );
 		} else {
 			$result->setIndexedTagName_internal( $this->getModuleName(), 'suggestion' );
 		}
