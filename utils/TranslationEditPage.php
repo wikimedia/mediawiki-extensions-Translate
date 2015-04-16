@@ -222,7 +222,7 @@ class TranslationEditPage {
 		}
 		$data = $data['query']['pages'];
 		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$data = ApiResult::removeMetadataNonRecursive( $data );
+			$data = ApiResult::stripMetadataNonRecursive( $data );
 		}
 		$data = array_shift( $data );
 
