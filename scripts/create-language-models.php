@@ -205,8 +205,9 @@ TXT;
 				$api->execute();
 
 				if ( defined( 'ApiResult::META_CONTENT' ) ) {
-					$result = $api->getResult()->getResultData();
-					$result = ApiResult::transformForBC( $result );
+					$result = $api->getResult()->getResultData( null, array(
+						'BC' => array(),
+					) );
 				} else {
 					$result = $api->getResultData();
 				}
