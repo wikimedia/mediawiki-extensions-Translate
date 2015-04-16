@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Crochet.david"
 		]
 	},
 	"searchtranslations": "Recherche de traductions",
@@ -16,6 +17,6 @@
 	"tux-sst-nosolr-body": "Ce wiki n’a pas de service de recherche de traduction.",
 	"tux-sst-solr-offline-title": "Recherche indisponible",
 	"tux-sst-solr-offline-body": "Le service de recherche est temporairement indisponible.",
-	"tux-sst-next": "Résultats suivants",
+	"tux-sst-next": "Suivant →",
 	"tux-sst-prev": "Résultats précédents"
 }
