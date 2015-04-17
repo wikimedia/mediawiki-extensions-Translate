@@ -145,5 +145,6 @@
 	"tux-editor-proofreading-show-own-translations": "خپلې ژباړې ښکاره کول",
 	"tux-editor-page-mode": "مخ",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|بل پيغام|نور پيغامونه}}",
-	"tux-empty-list-translated-action": "ژباړل"
+	"tux-empty-list-translated-action": "ژباړل",
+	"tux-empty-list-other": "د ژباړلو لپاره څه نشته."
 }

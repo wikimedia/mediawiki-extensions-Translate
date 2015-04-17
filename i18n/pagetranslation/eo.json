@@ -4,7 +4,8 @@
 			"Anakmalaysia",
 			"ArnoLagrange",
 			"Blahma",
-			"Yekrats"
+			"Yekrats",
+			"KuboF"
 		]
 	},
 	"pagetranslation": "Paĝa traduko",
@@ -43,6 +44,7 @@
 	"translate-tag-markthis": "Marki ĉi tiun paĝon por tradukado",
 	"tpt-languages-legend": "Aliaj lingvoj:",
 	"tpt-languages-zero": "Ektraduki por ĉi tiu lingvo",
+	"tpt-languages-nonzero": "$1 ($2% {{PLURAL:$2|tradukita|tradukitaj}})",
 	"tpt-discouraged-language-reason": "Kialo: $1",
 	"tpt-download-page": "Eksporti paĝon kun tradukoj",
 	"tpt-aggregategroup-add": "Aldoni",
