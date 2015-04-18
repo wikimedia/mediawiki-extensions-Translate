@@ -610,6 +610,9 @@ class TranslateHooks {
 	/**
 	 * Make Special:MyLanguage links red if the target page doesn't exists.
 	 * A bit hacky because the core code is not so flexible.
+	 *
+	 * Hook: LinkBegin
+	 *
 	 * @param $dummy
 	 * @param Title $target
 	 * @param string $html
@@ -617,31 +620,36 @@ class TranslateHooks {
 	 * @param array $query
 	 * @param array $options
 	 * @param string|null $ret
-	 * @return bool
 	 */
 	public static function linkfix( $dummy, $target, &$html, &$customAttribs,
 		&$query, &$options, &$ret
 	) {
-		if ( $target->getNamespace() == NS_SPECIAL ) {
-			list( $name, $subpage ) = SpecialPageFactory::resolveAlias( $target->getDBkey() );
-			if ( $name === 'MyLanguage' ) {
-				$realTarget = Title::newFromText( $subpage );
-				if ( !$realTarget || !$realTarget->exists() ) {
-					$options[] = 'broken';
-					$index = array_search( 'known', $options, true );
-					if ( $index !== false ) {
-						unset( $options[$index] );
-					}
-
-					$index = array_search( 'noclasses', $options, true );
-					if ( $index !== false ) {
-						unset( $options[$index] );
-					}
-				}
-			}
+		if ( !$target->inNamespace( NS_SPECIAL ) ) {
+			return;
 		}
 
-		return true;
+		list( $name, $subpage ) = SpecialPageFactory::resolveAlias( $target->getDBkey() );
+		if ( $name !== 'MyLanguage' ) {
+			return;
+		}
+
+		if ( (string)$subpage === '' ) {
+			return;
+		}
+
+		$realTarget = Title::newFromText( $subpage );
+		if ( !$realTarget || !$realTarget->exists() ) {
+			$options[] = 'broken';
+			$index = array_search( 'known', $options, true );
+			if ( $index !== false ) {
+				unset( $options[$index] );
+			}
+
+			$index = array_search( 'noclasses', $options, true );
+			if ( $index !== false ) {
+				unset( $options[$index] );
+			}
+		}
 	}
 
 	public static function setupTranslateParserFunction( &$parser ) {
