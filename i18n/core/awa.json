@@ -24,5 +24,6 @@
 	"supportedlanguages": "कुल समर्थित भाषा",
 	"supportedlanguages-recenttranslations": "नँवा अनुवाद",
 	"supportedlanguages-count": "कुल $1 {{PLURAL:$1|भाषा|भाषा}} ।",
+	"translate-documentation-language": "मैसेज डकुमेन्टेशन",
 	"tux-editor-in-other-languages": "दुसर भाषा में"
 }

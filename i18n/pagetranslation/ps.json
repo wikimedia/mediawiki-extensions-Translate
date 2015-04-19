@@ -24,6 +24,7 @@
 	"tpt-aggregategroup-add": "ورگډول",
 	"tpt-aggregategroup-save": "خوندي کول",
 	"tpt-aggregategroup-new-name": "نوم:",
+	"tpt-aggregategroup-update-cancel": "ناگارل",
 	"pt-movepage-list-pages": "د لېږدون د مخونو لړليک",
 	"pt-movepage-list-translation": "د ژباړې {{PLURAL:$1|مخ|مخونه}}",
 	"pt-movepage-list-section": "د ژباړې د څپرکي {{PLURAL:$1|مخ|مخونه}}",
@@ -42,5 +43,6 @@
 	"pt-deletepage-list-translation": "د ژباړې مخونه",
 	"pt-deletepage-list-section": "د څپرکي د مخونو ژباړه",
 	"pt-deletepage-list-other": "نور واړه مخونه",
+	"pm-cancel-button-label": "ناگارل",
 	"pp-cancel-button-label": "ناگارل"
 }

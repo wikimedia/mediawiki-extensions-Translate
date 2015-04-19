@@ -22,7 +22,7 @@
 	"bw-desc-osm-site": "[[Translating:OpenStreetMap|OpenStreetMap]]是一个可编辑的世界地图",
 	"bw-desc-wikiblame": "[[Translating:WikiBlame|WikiBlame]]可以快速找到某维基媒体wiki中某页面的作者。",
 	"translate-group-desc-blockly": "用于[[Translating:Blockly|Blockly]]的消息组",
-	"translate-group-desc-bluespice": "包含用于[[Translating:MediaWiki|MediaWiki]][https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BlueSpice Blue Spice]扩展所有信息的元信息组",
+	"translate-group-desc-bluespice": "包含用于[[Translating:MediaWiki|MediaWiki]] [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:BlueSpice Blue Spice]扩展所有信息的元信息组",
 	"translate-group-desc-collection": "包含[[Translating:MediaWiki|MediaWiki]][https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Collection Collection]扩展使用所有消息的元消息组。",
 	"translate-group-desc-eol": "[[Translating:EOL|网络生命大百科]]的信息组",
 	"translate-group-desc-etherpad-lite": "[[Translating:Etherpad lite|Etherpad lite]]是一个真正的实时协同编辑器",
