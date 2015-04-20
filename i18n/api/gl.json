@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Banjo"
+		]
+	},
+	"apihelp-groupreview-param-language": "Código da lingua.",
+	"apihelp-query+languagestats-param-language": "Código da lingua.",
+	"apihelp-query+messagecollection-param-language": "Código da lingua.",
+	"apihelp-translationstash-param-subaction": "Acción.",
+	"apihelp-translationstash-param-metadata": "Obxecto JSON."
+}

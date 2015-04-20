@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Toliño",
-			"Fisterraeomar"
+			"Fisterraeomar",
+			"Banjo"
 		]
 	},
 	"pagetranslation": "Tradución de páxinas",
@@ -89,6 +90,7 @@
 	"tpt-aggregategroup-edit-description": "Descrición:",
 	"tpt-aggregategroup-update": "Gardar",
 	"tpt-aggregategroup-update-cancel": "Cancelar",
+	"tpt-invalid-group": "Grupo non válido",
 	"pt-parse-open": "Etiqueta &lt;translate> desequilibrada.\nModelo de tradución: <pre>$1</pre>",
 	"pt-parse-close": "Etiqueta &lt;/translate> desequilibrada.\nModelo de tradución: <pre>$1</pre>",
 	"pt-parse-nested": "Non se permiten as unidades de tradución &lt;translate> aniñadas.\nTexto da etiqueta: <pre>$1</pre>",
@@ -178,5 +180,6 @@
 	"pm-delete-icon-hover-text": "Borrar a unidade",
 	"tpt-translate-title": "Permitir a tradución do título da páxina",
 	"pp-save-summary": "Preparo a páxina para a súa tradución",
+	"pp-save-button-label": "Gardar",
 	"pp-cancel-button-label": "Cancelar"
 }
