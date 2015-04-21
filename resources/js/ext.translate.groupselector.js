@@ -117,6 +117,8 @@
 		 * Show the selector
 		 */
 		show: function () {
+			// Close dialog on page click
+			$( 'html' ).click();
 			// Hide all other open menus
 			$( '.tux-groupselector.open' )
 				.removeClass( 'open' )
