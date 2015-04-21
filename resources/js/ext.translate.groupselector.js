@@ -117,10 +117,8 @@
 		 * Show the selector
 		 */
 		show: function () {
-			// Hide all other open menus
-			$( '.tux-groupselector.open' )
-				.removeClass( 'open' )
-				.hide();
+			var hider;
+
 			this.$menu.addClass( 'open' ).show();
 			this.position();
 			// Place the focus in the message group search box.
@@ -128,8 +126,10 @@
 			// Start loading the groups, but assess the situation again after
 			// they are loaded, in case user has made further interactions.
 			this.loadGroups().done( $.proxy( this.showList, this ) );
+
 			// Hide the selector panel when clicking outside of it
-			$( 'html' ).one( 'click', $.proxy( this.hide, this ) );
+			hider = $.proxy( this.hide, this );
+			setTimeout( function() { $( 'html' ).one( 'click', hider ); } );
 		},
 
 		/**
@@ -159,9 +159,7 @@
 
 			groupSelector.$trigger.on( 'click', function ( e ) {
 				groupSelector.toggle();
-
 				e.preventDefault();
-				e.stopPropagation();
 			} );
 
 			groupSelector.$menu.on( 'click', function ( e ) {
