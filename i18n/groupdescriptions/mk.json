@@ -29,7 +29,7 @@
 	"translate-group-desc-mediawikiapi": "Оваа група пораки ги опфаќа пораките  што се користат во Action API за тековната алфа-верзија на [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})",
 	"translate-group-desc-mediawikicore": "Оваа група содржи пораки кои се користат на моменталната алфа-верзија на [[Translating:MediaWiki|МедијаВики]] ({{CURRENTVERSION}})",
 	"translate-group-desc-mediawikiextensions": "Мета-група која ги содржи сите пораки за поддржаните додатоци за МедијаВики",
-	"translate-group-desc-mediawikiskins": "Мета-група која ги содржи сите пораки за поддржаните рува на [[Translating:MediaWiki|МедијаВики]]",
+	"translate-group-desc-mediawikiskins": "Метагрупа која ги содржи сите пораки за поддржаните рува на [[Translating:MediaWiki|МедијаВики]]",
 	"translate-group-desc-mediawikimostused": "Во оваа група пораки се наведени [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500-те најупотребувани пораки] на [[Translating:MediaWiki|МедијаВики]]",
 	"translate-group-desc-mifos": "[[Translating:Mifos|Mifos]] е раководен инфосистем за микрофинансирање",
 	"translate-group-desc-nfcring-control": "[[Translating:NFC_Ring_Control|Контрола со NFC-прстен]] е мобилен извршник за работа со NFC-ознаки",
