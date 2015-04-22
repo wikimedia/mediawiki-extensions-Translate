@@ -48,6 +48,16 @@ class MessageGroups {
 		}
 	}
 
+
+	/**
+	 * Immediately update the cache.
+	 * @since 2015.04
+	 */
+	public static function recache() {
+		self::$groups = array();
+		self::loadGroupDefinitions();
+	}
+
 	/**
 	 * Manually reset group cache.
 	 *
@@ -75,7 +85,6 @@ class MessageGroups {
 	 * to have three ways: Yaml files, translatable pages and with the hook.
 	 */
 	protected static function loadGroupDefinitions() {
-
 		global $wgEnablePageTranslation, $wgTranslateGroupFiles;
 		global $wgTranslateCC, $wgAutoloadClasses, $wgTranslateWorkflowStates;
 

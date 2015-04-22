@@ -391,7 +391,7 @@ class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
 		}
 
 		$this->clearMetadata();
-		MessageGroups::clearCache();
+		MessageGroups::recache();
 		MessageIndexRebuildJob::newJob()->insert();
 
 		$this->getOutput()->addWikiMsg( 'pt-deletepage-started' );
