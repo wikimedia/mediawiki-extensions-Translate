@@ -48,6 +48,16 @@ class MessageGroups {
 		}
 	}
 
+
+	/**
+	 * Immediately update the cache.
+	 * @since 2015.04
+	 */
+	public static function recache() {
+		self::$groups = array();
+		self::loadGroupDefinitions();
+	}
+
 	/**
 	 * Manually reset group cache.
 	 *
