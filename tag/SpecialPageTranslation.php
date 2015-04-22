@@ -840,7 +840,7 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 		TranslateMetadata::set( $page->getMessageGroupId(), 'maxid', $maxid );
 
 		$page->addMarkedTag( $newrevision );
-		MessageGroups::clearCache();
+		MessageGroups::recache();
 
 		$jobs = self::getRenderJobs( $page );
 		JobQueueGroup::singleton()->push( $jobs );

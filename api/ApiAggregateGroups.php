@@ -168,7 +168,7 @@ class ApiAggregateGroups extends ApiBase {
 		$output['result'] = 'ok';
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 		// Cache needs to be cleared after any changes to groups
-		MessageGroups::clearCache();
+		MessageGroups::recache();
 		MessageIndexRebuildJob::newJob()->insert();
 	}
 
