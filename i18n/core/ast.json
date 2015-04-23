@@ -39,7 +39,7 @@
 	"translate-next": "Páxina siguiente",
 	"translate-prev": "Páxina anterior",
 	"translate-page-description-legend": "Información del grupu",
-	"translate-page-description-hasoptional": "Esti grupu de mensaxes contién mensaxes opcionales.\nLos mensaxes opcionales sólo deberíen traducise cuando la llingua tenga necesidaes especiales,\ncomo nun usar espacios o pa treslliterar nomes propios. $1",
+	"translate-page-description-hasoptional": "Esti grupu de mensaxes contien mensaxes opcionales.\nLos mensaxes opcionales sólo deberíen traducise cuando la llingua tenga necesidaes especiales,\ncomo nun usar espacios o pa treslliterar nomes propios. $1",
 	"translate-page-description-hasoptional-open": "Amosar los mensaxes opcionales.",
 	"translate-page-edit": "editar",
 	"translate-ext-url": "<hr />Sitiu web: $1",
