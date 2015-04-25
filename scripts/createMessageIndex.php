@@ -25,7 +25,7 @@ class CreateMessageIndex extends Maintenance {
 	}
 
 	public function execute() {
-		MessageGroups::recache();
+		MessageGroups::singleton()->recache();
 		MessageIndex::singleton()->rebuild();
 	}
 }

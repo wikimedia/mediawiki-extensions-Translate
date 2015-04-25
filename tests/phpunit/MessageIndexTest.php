@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -71,6 +70,7 @@ class MessageIndexTest extends MediaWikiTestCase {
 			array( new TestableDatabaseMessageIndex() ),
 			array( new TestableCDBMessageIndex() ),
 			array( new TestableSerializedMessageIndex() ),
+			array( new TestableHashMessageIndex() ),
 			// Not testing CachedMessageIndex because there is no easy way to mockup those.
 		);
 	}
@@ -101,6 +101,18 @@ class TestableCDBMessageIndex extends CDBMessageIndex {
 }
 
 class TestableSerializedMessageIndex extends SerializedMessageIndex {
+	// @codingStandardsIgnoreStart PHP CodeSniffer warns "Useless method overriding
+	// detected", but store() and get() are protected in parent.
+	public function store( array $a ) {
+		parent::store( $a );
+	}
+
+	public function get( $a ) {
+		return parent::get( $a );
+	} // @codingStandardsIgnoreEnd
+}
+
+class TestableHashMessageIndex extends HashMessageIndex {
 	// @codingStandardsIgnoreStart PHP CodeSniffer warns "Useless method overriding
 	// detected", but store() and get() are protected in parent.
 	public function store( array $a ) {

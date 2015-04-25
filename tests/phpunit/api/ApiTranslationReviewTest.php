@@ -3,7 +3,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -17,18 +16,16 @@ class ApiTranslationReviewTest extends MediaWikiTestCase {
 		global $wgHooks;
 		$this->setMwGlobals( array(
 			'wgHooks' => $wgHooks,
-			'wgTranslateCC' => array(),
-			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
-			'wgTranslateWorkflowStates' => false,
-			'wgEnablePageTranslation' => false,
-			'wgTranslateGroupFiles' => array(),
 			'wgGroupPermissions' => array(),
-			'wgTranslateTranslationServices' => array(),
 			'wgTranslateMessageNamespaces' => array( NS_MEDIAWIKI ),
 		) );
 		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
-		MessageGroups::clearCache();
-		MessageIndexRebuildJob::newJob()->run();
+		$mg = MessageGroups::singleton();
+		$mg->setCache( wfGetCache( 'hash' ) );
+		$mg->recache();
+
+		MessageIndex::setInstance( new HashMessageIndex() );
+		MessageIndex::singleton()->rebuild();
 	}
 
 	public function getTestGroups( &$list ) {

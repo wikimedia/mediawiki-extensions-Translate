@@ -9,7 +9,6 @@
  */
 
 /**
- * @group Database
  * @group medium
  */
 class ApiQueryMessageGroupsTest extends ApiTestCase {
@@ -20,16 +19,13 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		global $wgHooks;
 		$this->setMwGlobals( array(
 			'wgHooks' => $wgHooks,
-			'wgTranslateCC' => array(),
-			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
-			'wgTranslateWorkflowStates' => false,
-			'wgTranslateGroupFiles' => array(),
-			'wgEnablePageTranslation' => false,
 			'wgTranslateTranslationServices' => array(),
 		) );
 		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
-		MessageGroups::clearCache();
-		MessageIndexRebuildJob::newJob()->run();
+
+		$mg = MessageGroups::singleton();
+		$mg->setCache( wfGetCache( 'hash' ) );
+		$mg->recache();
 	}
 
 	public function getTestGroups( &$list ) {

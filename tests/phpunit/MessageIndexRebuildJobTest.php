@@ -17,15 +17,21 @@ class MessageIndexRebuildJobTest extends MediaWikiTestCase {
 
 	public function setUp() {
 		parent::setUp();
+
+		global $wgHooks;
 		$this->setMwGlobals( array(
-			'wgTranslateCC' => array(),
-			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
-			'wgTranslateWorkflowStates' => false,
-			'wgEnablePageTranslation' => false,
-			'wgTranslateGroupFiles' => array(),
+			'wgHooks' => $wgHooks,
 			'wgTranslateTranslationServices' => array(),
 			'wgTranslateDelayedMessageIndexRebuild' => false
 		) );
+		$wgHooks['TranslatePostInitGroups'] = array();
+
+		$mg = MessageGroups::singleton();
+		$mg->setCache( wfGetCache( 'hash' ) );
+		$mg->recache();
+
+		MessageIndex::setInstance( new HashMessageIndex() );
+		MessageIndex::singleton()->rebuild();
 	}
 
 	public function testInsertImmediate() {

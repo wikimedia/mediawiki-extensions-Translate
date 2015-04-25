@@ -3,13 +3,13 @@
  * Unit tests.
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2012 Niklas Laxström
  * @file
  * @license GPL-2.0+
  */
 
 /**
  * @group Database
+ * ^ See AggregateMessageGroup::getGroups -> MessageGroups::getPriority
  */
 class MessageGroupsTest extends MediaWikiTestCase {
 	protected function setUp() {
@@ -22,16 +22,17 @@ class MessageGroupsTest extends MediaWikiTestCase {
 		global $wgHooks;
 		$this->setMwGlobals( array(
 			'wgHooks' => $wgHooks,
-			'wgTranslateCC' => array(),
-			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
-			'wgTranslateWorkflowStates' => false,
-			'wgEnablePageTranslation' => false,
 			'wgTranslateGroupFiles' => $conf,
 			'wgTranslateTranslationServices' => array(),
 		) );
-		$wgHooks['TranslatePostInitGroups'] = array();
-		MessageGroups::clearCache();
-		MessageIndexRebuildJob::newJob()->run();
+		$wgHooks['TranslatePostInitGroups'] = array( 'MessageGroups::getConfiguredGroups' );
+
+		$mg = MessageGroups::singleton();
+		$mg->setCache( wfGetCache( 'hash' ) );
+		$mg->recache();
+
+		MessageIndex::setInstance( new HashMessageIndex() );
+		MessageIndex::singleton()->rebuild();
 	}
 
 	/**
@@ -72,7 +73,7 @@ class MessageGroupsTest extends MediaWikiTestCase {
 		$this->setMwGlobals( array(
 			'wgTranslateGroupFiles' => array( __DIR__ . '/data/MixedSourceLanguageGroups.yaml' ),
 		) );
-		MessageGroups::clearCache();
+		MessageGroups::singleton()->recache();
 
 		$enGroup1 = MessageGroups::getGroup( 'EnglishGroup1' );
 		$enGroup2 = MessageGroups::getGroup( 'EnglishGroup2' );
