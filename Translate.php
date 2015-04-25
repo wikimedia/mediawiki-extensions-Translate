@@ -195,6 +195,14 @@ $GLOBALS['wgHooks']['TranslateEventTranslationReview'][] = 'MessageGroupStats::c
 $GLOBALS['wgHooks']['TranslateEventTranslationEdit'][] = 'MessageGroupStatesUpdaterJob::onChange';
 $GLOBALS['wgHooks']['TranslateEventTranslationReview'][] = 'MessageGroupStatesUpdaterJob::onChange';
 
+// Internal groups registers
+$GLOBALS['wgHooks']['TranslatePostInitGroups'][] = 'MessageGroups::getCCGroups';
+$GLOBALS['wgHooks']['TranslatePostInitGroups'][] = 'MessageGroups::getTranslatablePages';
+$GLOBALS['wgHooks']['TranslatePostInitGroups'][] = 'MessageGroups::getConfiguredGroups';
+$GLOBALS['wgHooks']['TranslatePostInitGroups'][] = 'MessageGroups::getWorkflowGroups';
+$GLOBALS['wgHooks']['TranslatePostInitGroups'][] = 'MessageGroups::getAggregateGroups';
+
+
 // Other extensions
 $GLOBALS['wgHooks']['AdminLinks'][] = 'TranslateHooks::onAdminLinks';
 $GLOBALS['wgHooks']['MergeAccountFromTo'][] = 'TranslateHooks::onMergeAccountFromTo';

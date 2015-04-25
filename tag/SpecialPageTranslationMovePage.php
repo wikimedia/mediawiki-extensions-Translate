@@ -461,7 +461,7 @@ class SpecialPageTranslationMovePage extends TranslateSpecialPage {
 		$newGroupId = $newTpage->getMessageGroupId();
 		$this->moveMetadata( $oldGroupId, $newGroupId );
 
-		MessageGroups::recache();
+		MessageGroups::singleton()->recache();
 		MessageIndexRebuildJob::newJob()->insert();
 
 		$this->getOutput()->addWikiMsg( 'pt-movepage-started' );

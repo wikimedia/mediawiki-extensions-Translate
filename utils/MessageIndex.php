@@ -35,6 +35,14 @@ abstract class MessageIndex {
 	}
 
 	/**
+	 * Override the global instance, for testing.
+	 * @since 2015.04
+	 */
+	public static function setInstance( MessageIndex $instance ) {
+		self::$instance = $instance;
+	}
+
+	/**
 	 * Retrieves a list of groups given MessageHandle belongs to.
 	 * @since 2012-01-04
 	 * @param MessageHandle $handle
@@ -503,5 +511,38 @@ class CDBMessageIndex extends MessageIndex {
 		}
 
 		return $this->reader = CdbReader::open( $file );
+	}
+}
+
+
+/**
+ * Storage on hash.
+ *
+ * For testing.
+ *
+ * @since 2015.04
+ */
+class HashMessageIndex extends MessageIndex {
+	/// @var array
+	protected $index = array();
+
+	/** @return array */
+	public function retrieve() {
+		return $this->index;
+	}
+
+	protected function get( $key ) {
+		if ( isset( $this->index[$key] ) ) {
+			return $this->index[$key];
+		} else {
+			return null;
+		}
+	}
+
+	protected function store( array $array ) {
+		$this->index = $array;
+	}
+
+	protected function clearMessageGroupStats( array $old, array $new ) {
 	}
 }
