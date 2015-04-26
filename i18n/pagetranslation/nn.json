@@ -54,6 +54,7 @@
 	"tpt-translation-intro": "Sida er ein <span class=\"plainlinks\">[$1 omsett versjon]</span> av sida [[$2]], og omsetjinga er $3% ferdig.",
 	"tpt-languages-legend": "Andre språk:",
 	"tpt-languages-zero": "Byrja omsetjing for dette språket",
+	"tpt-languages-nonzero": "$1 ($2 % sett om)",
 	"tpt-translation-restricted": "Omsetjing av sida til dette språket er stogga av ein omsetjingsadministrator.\n\nÅrsak: $1",
 	"tpt-discouraged-language-force": "<strong>Sida kan ikkje setjast om til $2.</strong>\n\nEin omsetjingsadministrator har avgjort at sida berre kan setjast om til $3.",
 	"tpt-discouraged-language-reason": "Årsak: $1",

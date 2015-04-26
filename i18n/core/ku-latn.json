@@ -154,7 +154,7 @@
 	"tux-editor-in-other-languages": "Bi zimanên din",
 	"tux-editor-need-more-help": "Zêdetir alîkarî hewce ye?",
 	"tux-editor-ask-help": "Ji bo agahiyên berfirehtir bipirse",
-	"tux-editor-tm-match": "Ji sedî $1% lê tê",
+	"tux-editor-tm-match": "$1% lê tê",
 	"tux-warnings-more": "{{PLURAL:$1|zêdetir $1}}",
 	"tux-warnings-hide": "veşêre",
 	"tux-editor-save-failed": "Tomarkirina wergerê biser neket:$1",

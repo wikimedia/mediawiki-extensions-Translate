@@ -4,7 +4,8 @@
 			"GreenZeb",
 			"Marozols",
 			"Papuass",
-			"Yyy"
+			"Yyy",
+			"Kikos"
 		]
 	},
 	"translate": "Tulkošana",
@@ -129,6 +130,7 @@
 	"translate-gs-speakers": "Runātāji",
 	"translate-gs-count": "Skaits",
 	"translate-gs-total": "Kopā",
+	"translate-documentation-language": "Paziņojuma dokumentācija",
 	"translate-search-languagefilter": "Filtrēt pēc valodas:",
 	"translate-workflow-state-": "(nav uzstādīts)",
 	"translate-stats-workflow": "Statuss",

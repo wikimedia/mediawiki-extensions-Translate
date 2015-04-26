@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chaojoker",
-			"Vadgt"
+			"Vadgt",
+			"Դավիթ Սարոյան"
 		]
 	},
 	"translate": "Թագմանություն",
@@ -11,5 +12,6 @@
 	"translate-edit-translation": "Թագմանություն",
 	"translate-magic-module": "Մոդուլ:",
 	"translate-sidebar-alltrans": "Այլ լեզուներով",
-	"translate-manage-import-new": "Նոր Հաղորդագրություն $1"
+	"translate-manage-import-new": "Նոր Հաղորդագրություն $1",
+	"translate-documentation-language": "Հաղորդագրության փաստաթղթեր"
 }

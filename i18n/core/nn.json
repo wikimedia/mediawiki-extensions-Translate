@@ -8,7 +8,8 @@
 			"Harald Khan",
 			"Jon Harald Søby",
 			"Nghtwlkr",
-			"Njardarlogar"
+			"Njardarlogar",
+			"Ranveig"
 		]
 	},
 	"translate": "Set om",
@@ -88,7 +89,7 @@
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Denne parameteren er ukjend|Desse parametrane er ukjende}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "{{PLURAL:$2|Det|Det}} er eit ujamt tal parentesar:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Denne lenkja er problematisk|Desse $2 lenkjene er problematiske}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-links-missing": "{{PLURAL:$2|Denne lenkja|Desse $2 lenkjene}} saknar:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-links-missing": "{{PLURAL:$2|Denne lenkja|Desse $2 lenkjene}} manglar:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "Byt ut {{PLURAL:$2|dette merket med det rette|desse merka med dei rette}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Definisjonen nyttar <nowiki>{{PLURAL:}}</nowiki>, men omsetjinga gjer det ikkje.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> vart gjeven {{PLURAL:$1|éi form|$1 former}}, men berre {{PLURAL:$2|éi form|$2 former}} er stødde (utanom 0=- og 1=-former).",

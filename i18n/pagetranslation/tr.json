@@ -10,7 +10,8 @@
 			"Vito Genovese",
 			"Rapsar",
 			"Mavrikant",
-			"Sayginer"
+			"Sayginer",
+			"Ömer Berkay"
 		]
 	},
 	"pagetranslation": "Çeviri sayfası",
@@ -44,6 +45,7 @@
 	"translate-tag-hasnew": "Bu sayfa, çeviri için işaretlenmemiş <span class=\"plainlinks\">[$1 değişiklik]</span> içeriyor.",
 	"tpt-translation-intro": "Bu sayfa, [[$2]] sayfasının <span class=\"plainlinks\">[$1 çevrilmiş bir sürümüdür]</span> ve çeviri %$3 oranında tamamlanmıştır.",
 	"tpt-languages-legend": "Diğer diller:",
+	"tpt-languages-nonzero": "$1 ($2% çevrildi)",
 	"tpt-render-summary": "Kaynak sayfanın yeni sürümü ile eşleme için güncelleniyor",
 	"tpt-download-page": "Çevirileri olan sayfayı dışa aktar",
 	"aggregategroups": "Grupları birleştir",

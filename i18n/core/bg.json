@@ -164,6 +164,7 @@
 	"translate-js-support-unsaved-warning": "Имате несъхранени преводи.",
 	"translate-gs-code": "Код",
 	"translate-gs-total": "Общо",
+	"translate-documentation-language": "Документация на съобщението",
 	"translate-searchprofile": "Преводи",
 	"logentry-translationreview-group": "$1 {{GENDER:$2|промени}} състоянието на преводите на $3 на $4 език от „$6“ на „$7“",
 	"translate-stats-workflow": "Статут",

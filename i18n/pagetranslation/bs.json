@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"CERminator",
-			"Edinwiki"
+			"Edinwiki",
+			"Palapa"
 		]
 	},
 	"pagetranslation": "Prijevod stranice",
@@ -42,6 +43,7 @@
 	"translate-tag-hasnew": "Ova stranica sadrži <span class=\"plainlinks\">[$1 izmjena]</span> koje nisu označene za prevođenje.",
 	"tpt-translation-intro": "Ova stranica je <span class=\"plainlinks\">[$1 prevedena verzija]</span> stranice [[$2]] a prijevod je $3% dovršen i ažuriran.",
 	"tpt-languages-legend": "Drugi jezici:",
+	"tpt-languages-nonzero": "$1 ($2% prevedeno)",
 	"tpt-target-page": "Ova stranica ne može biti ručno ažurirana.\nOva stranica je prijevod stranice [[$1]] a prijevodi se mogu ažurirati putem [$2 alata za prevođenje].",
 	"tpt-unknown-page": "Ovaj imenski prostor je rezervisan za prevode stranica sadržaja.\nStranica koju pokušavate uređivati ne odgovara nekoj od stranica koje su označene za prevođenje.",
 	"tpt-render-summary": "Ažuriram na novu verziju izvorne stranice",

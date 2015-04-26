@@ -18,6 +18,7 @@
 	"tpt-rev-encourage": "Leheneratu",
 	"translate-tag-translate-link-desc": "Itzuli orri hau",
 	"tpt-languages-legend": "Beste hizkuntzak:",
+	"tpt-languages-nonzero": "$1 (%$2 itzulita)",
 	"tpt-discouraged-language-reason": "Arrazoia: $1",
 	"tpt-aggregategroup-add": "Gehitu",
 	"tpt-aggregategroup-save": "Gorde",

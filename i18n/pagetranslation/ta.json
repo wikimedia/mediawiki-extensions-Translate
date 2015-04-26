@@ -6,7 +6,8 @@
 			"TRYPPN",
 			"மதனாஹரன்",
 			"Kalyanasundar",
-			"ElangoRamanujam"
+			"ElangoRamanujam",
+			"Jayarathina"
 		]
 	},
 	"pagetranslation": "பக்கத்தின் மொழிபெயர்ப்பு",
@@ -45,6 +46,7 @@
 	"translate-tag-markthis": "இந்த பக்கத்தை மொழிபெயர்ப்புக்காக குறியிடு",
 	"tpt-languages-legend": "மற்ற மொழிகள்:",
 	"tpt-languages-zero": "இம் மொழியின் சிறிய மொழிபெயர்ப்பு",
+	"tpt-languages-nonzero": "$1 ($2% மொழிபெயர்க்கப்பட்டது)",
 	"tpt-translation-restricted": "இப்பக்கத்தை இந்த மொழிக்கு மொழிபெயர்ப்பது மொழிபெயர்ப்பு நிருவாகி ஒருவரால் காக்கப்பட்டுள்ளது.\n\nகாரணம்: $1",
 	"tpt-discouraged-language-reason": "காரணம்: $1",
 	"tpt-aggregategroup-add": "சேர்",

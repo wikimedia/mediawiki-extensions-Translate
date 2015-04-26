@@ -6,7 +6,8 @@
 			"Mormegil",
 			"Rudko",
 			"Teslaton",
-			"Sudo77(new)"
+			"Sudo77(new)",
+			"TomášPolonec"
 		]
 	},
 	"translate": "Preložiť",
@@ -235,6 +236,7 @@
 	"translate-gs-count": "Počet",
 	"translate-gs-total": "Celkom",
 	"translate-gs-avgscore": "Priem. skóre",
+	"translate-documentation-language": "Dokumentácia k hláseniam",
 	"translate-messagereview-done": "Prijaté",
 	"api-error-invalidrevision": "Preklad sa nenašiel",
 	"log-name-translationreview": "Log hodnotení prekladov",
