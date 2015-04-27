@@ -4,5 +4,6 @@
 			"Servien"
 		]
 	},
+	"tpt-languages-nonzero": "$1 ($2% vertaald)",
 	"pm-langcode-placeholder": "Taalkode"
 }

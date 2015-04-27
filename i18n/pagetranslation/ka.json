@@ -24,6 +24,7 @@
 	"tpt-rev-encourage": "აღდგენა",
 	"translate-tag-translate-link-desc": "ამ გვერდის თარგმნა",
 	"tpt-languages-legend": "სხვა ენები:",
+	"tpt-languages-nonzero": "$1 ($2% ნათარგმნი)",
 	"tpt-discouraged-language-reason": "მიზეზი: $1",
 	"tpt-aggregategroup-add": "დამატება",
 	"tpt-aggregategroup-save": "შენახვა",

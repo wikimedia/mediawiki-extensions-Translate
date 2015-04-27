@@ -11,6 +11,7 @@
 	"tpt-old-pages": "Xi verżjonijiet ta' {{PLURAL:$1|din il-paġna ġiet immarkata|dawn il-paġni ġew immarkati}} għat-traduzzjoni.",
 	"translate-tag-translate-link-desc": "Ittraduċi din il-paġna",
 	"tpt-languages-legend": "Lingwi oħra:",
+	"tpt-languages-nonzero": "$1 ($2% tradott)",
 	"tpt-aggregategroup-add": "Żid",
 	"tpt-aggregategroup-save": "Salva",
 	"pm-pagetitle-invalid": "Ikteb titlu validu għall-paġna.",

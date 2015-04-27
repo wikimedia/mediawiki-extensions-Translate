@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ansumang"
+			"Ansumang",
+			"Shubha"
 		]
 	},
+	"tpt-languages-nonzero": "$1 ($2% अनुवादः जातः)",
 	"pt-movepage-reason": "कारणम् :"
 }
