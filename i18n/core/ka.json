@@ -124,7 +124,7 @@
 	"translate-mgs-totals": "ყველა ენა ერთად",
 	"supportedlanguages": "მხარდაჭერილი ენები",
 	"supportedlanguages-colorlegend": "ფერადი ლეგენდა: ბოლო თარგმანი იყო $1 დღის წინ.",
-	"supportedlanguages-translators": "{{PLURAL:$2|თარჯიმანი|თარჯიმანი}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|მთარგმნელი}}|მთარგმნელი}}: $1",
 	"supportedlanguages-recenttranslations": "ბოლო თარგმანები",
 	"supportedlanguages-count": "სულ $1 {{PLURAL:$1|ენა|ენა}}.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|რედაქტირება|რედაქტირება}} - ბოლო რედაქტირება $3 {{PLURAL:$3|დღის|დღის}} წინ",

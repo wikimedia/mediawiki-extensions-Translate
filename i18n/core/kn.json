@@ -5,7 +5,8 @@
 			"Dipin",
 			"Munirathnam",
 			"Nayvik",
-			"VASANTH S.N."
+			"VASANTH S.N.",
+			"Omshivaprakash"
 		]
 	},
 	"translate": "ಭಾಷಾಂತರಿಸಿ",
@@ -112,5 +113,6 @@
 	"translate-manage-import-done": "ಎಲ್ಲಾ ಮಾಡಲ್ಪಟ್ಟಿದೆ!",
 	"importtranslations": "ಭಾಷಾಂತರಗಳನ್ನು ಆಮದು ಮಾಡಿ",
 	"translate-gs-total": "ಒಟ್ಟು",
+	"translate-documentation-language": "ಸಂದೇಶ ದಾಖಲೀಕರಣ",
 	"translate-dynagroup-recent-label": "ಇತ್ತೀಚಿನ ಅನುವಾದಗಳು"
 }
