@@ -1,10 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
-			"Banjo"
+			"Banjo",
+			"Elisardojm"
 		]
 	},
+	"apihelp-aggregategroups-description": "Xestionar grupos de mensaxes agregados.\n\nPode engadir e eliminar grupos de mensaxes agregados, e asociar ou disociar a eles grupos de mensaxes (un de cada vez).",
+	"apihelp-aggregategroups-param-do": "Que facer co grupo de mensaxes agregados.",
+	"apihelp-aggregategroups-param-aggregategroup": "Identificador do grupo de mensaxes agregados.",
+	"apihelp-aggregategroups-param-group": "Identificador do grupo de mensaxes.",
+	"apihelp-aggregategroups-param-groupname": "Nome do grupo de mensaxes agregado.",
+	"apihelp-aggregategroups-param-groupdescription": "Descrición do grupo de mensaxes agregado.",
+	"apihelp-aggregategroups-example-1": "Asociar un grupo",
+	"apihelp-groupreview-param-group": "Grupo de mensaxes.",
 	"apihelp-groupreview-param-language": "Código da lingua.",
+	"apihelp-groupreview-param-state": "Novo estado para o grupo.",
+	"apihelp-groupreview-example-1": "Marcar ó grupo \"grupo-Exemplo\" como listo para o alemán",
+	"apihelp-hardmessages-param-title": "Título da mensaxe a marcar como complicada.",
+	"apihelp-hardmessages-example-1": "Marcar \"SampleTitle\" como complicado",
+	"apihelp-query+languagestats-description": "Consultar estatísticas de idioma.",
 	"apihelp-query+languagestats-param-language": "Código da lingua.",
 	"apihelp-query+messagecollection-param-language": "Código da lingua.",
 	"apihelp-translationstash-param-subaction": "Acción.",
