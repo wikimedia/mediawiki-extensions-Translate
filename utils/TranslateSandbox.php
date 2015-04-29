@@ -66,10 +66,7 @@ class TranslateSandbox {
 
 		// Nobody should access the user by id anymore, but in case they do, purge
 		// the cache so they wont get stale data
-		// @todo why the bunny is this private?!
-		// $user->clearSharedCache();
-		global $wgMemc;
-		$wgMemc->delete( wfMemcKey( 'user', 'id', $uid ) );
+		$user->invalidateCache();
 
 		// In case we create an user with same name as was deleted during the same
 		// request, we must also reset this cache or the User class will try to load
