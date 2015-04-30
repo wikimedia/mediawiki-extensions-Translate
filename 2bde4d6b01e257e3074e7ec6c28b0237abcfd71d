@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_c9575c28",
+        "filename": "utils/TranslateSandbox.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-04-30T09:14:34Z",
+      "side": 1,
+      "message": "I want to remove the user, not update it. Are you sure invalidateCache wont do any writes to the DB?",
+      "revId": "2bde4d6b01e257e3074e7ec6c28b0237abcfd71d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
