@@ -1,0 +1,8 @@
+== Translate 2015.04 ==
+Released at 2015-04-30.
+
+=== Highlights ===
+* Avoid unneeded warnings on stable MediaWiki releases.
+* T54728: Small optimizations to Special:SupportedLanguages
+* Styled search result navigation buttons in Special:SearchTranslations
+* Fixed Special:PagePreparation, now works better and has autocompletion
