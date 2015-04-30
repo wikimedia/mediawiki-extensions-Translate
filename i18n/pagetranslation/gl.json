@@ -3,7 +3,8 @@
 		"authors": [
 			"Toliño",
 			"Fisterraeomar",
-			"Banjo"
+			"Banjo",
+			"Elisardojm"
 		]
 	},
 	"pagetranslation": "Tradución de páxinas",
@@ -31,6 +32,7 @@
 	"tpt-badsect": "\"$1\" non é un nome válido para a unidade de tradución $2.",
 	"tpt-showpage-intro": "A continuación están listadas as unidades de tradución novas, existentes e borradas.\nAntes de marcar esta versión para ser traducida, comprobe que as modificacións feitas ás unidades de tradución foron minimizadas para evitarlles traballo innecesario aos tradutores.",
 	"tpt-mark-summary": "Marcou esta versión para ser traducida",
+	"tpt-mark-nochanges": "Non hai ningunha diferenza entre esta revisión e a última revisión marcada.",
 	"tpt-edit-failed": "Non se puido actualizar a páxina: $1",
 	"tpt-duplicate": "O nome da unidade de tradución \"$1\" úsase máis dunha vez.",
 	"tpt-already-marked": "A última versión desta páxina xa foi marcada para ser traducida.",
@@ -66,6 +68,7 @@
 	"tpt-languages-nonzero": "$1 (traducida ao $2%)",
 	"tpt-tab-translate": "Traducir",
 	"tpt-target-page": "Esta páxina non se pode actualizar manualmente.\nEsta páxina é unha tradución da páxina \"[[$1]]\" e a tradución pódese actualizar usando [$2 a ferramenta de tradución].",
+	"tpt-patrolling-blocked": "A páxina non pode ser vixiada. No canto diso, use a acción traducir para examinala.",
 	"tpt-unknown-page": "Este espazo de nomes está reservado para traducións de páxinas de contido.\nA páxina que está intentando editar parece non corresponder a algunha páxina marcada para ser traducida.",
 	"tpt-translation-restricted": "Un administrador de traducións impediu a tradución da páxina nesta lingua.\n\nMotivo: $1",
 	"tpt-discouraged-language-force-header": "Esta páxina non se pode traducir ao $1.",
@@ -178,8 +181,15 @@
 	"pm-add-icon-hover-text": "Engadir unha unidade embaixo",
 	"pm-swap-icon-hover-text": "Cambiar coa unidade inferior",
 	"pm-delete-icon-hover-text": "Borrar a unidade",
+	"pm-pagetitle-invalid": "Achegue un título de páxina válido.",
+	"pm-summary-import": "Importouse a tradución usando [[Special:PageMigration|migración de páxina]]",
 	"tpt-translate-title": "Permitir a tradución do título da páxina",
 	"pp-save-summary": "Preparo a páxina para a súa tradución",
+	"pagepreparation": "Preparar a páxina para a tradución",
+	"pp-pagename-placeholder": "Insira o nome da páxina",
+	"pp-prepare-button-label": "Preparar",
 	"pp-save-button-label": "Gardar",
-	"pp-cancel-button-label": "Cancelar"
+	"pp-cancel-button-label": "Cancelar",
+	"pp-save-message": "A páxina foi gardada. Pode [$1 editala].",
+	"pp-prepare-message": "Preparouse a páxina para a tradución. Consulte os cambios abaixo. Prema no botón \"{{int:pp-save-button-label}}\" se está todo ben!"
 }
