@@ -7,7 +7,8 @@
 			"බිඟුවා",
 			"ශ්වෙත",
 			"Indunil Chamara",
-			"Susith Chandira Gts"
+			"Susith Chandira Gts",
+			"හරිත"
 		]
 	},
 	"pagetranslation": "පිටුව පරිවර්තනය",
@@ -60,6 +61,7 @@
 	"translate-tag-hasnew": "මෙම පිටුවේ අඩංගු වන <span class=\"plainlinks\">[$1 වෙනස්කම්]</span> පරිවර්තනය සඳහා සලකුණු කොට නොමැත.",
 	"tpt-languages-legend": "වෙනත් භාෂා:",
 	"tpt-languages-zero": "මෙම භාෂාව සඳහා පරිවර්තනය අරඹන්න",
+	"tpt-languages-nonzero": "$1 ($2% පරිවර්තිතයි)",
 	"tpt-discouraged-language-reason": "හේතුව: $1",
 	"tpt-render-summary": "මූලාශ්‍ර පිටුවේ නව අනුවාදය වෙත ගැලපීම සඳහා යාවත්කාලීන කරමින්",
 	"tpt-download-page": "පරිවර්තනය සහිත පිටුව නිර්යාත කරන්න",
