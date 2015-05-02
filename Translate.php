@@ -55,15 +55,8 @@ $GLOBALS['wgMessagesDirs']['TranslateGroupDescriptions'] = __DIR__ . "/i18n/grou
 $GLOBALS['wgMessagesDirs']['TranslateSearch'] = __DIR__ . "/i18n/search";
 $GLOBALS['wgMessagesDirs']['TranslateSandbox'] = __DIR__ . "/i18n/sandbox";
 $GLOBALS['wgMessagesDirs']['TranslateApi'] = __DIR__ . "/i18n/api";
-
-// Register extension messages and other localisation.
-$GLOBALS['wgExtensionMessagesFiles']['Translate'] = "$dir/Translate.i18n.php";
-$GLOBALS['wgExtensionMessagesFiles']['PageTranslation'] = "$dir/PageTranslation.i18n.php";
-$GLOBALS['wgExtensionMessagesFiles']['TranslateGroupDescriptions'] =
-	"$dir/TranslateGroupDescriptions.i18n.php";
-$GLOBALS['wgExtensionMessagesFiles']['TranslateSearch'] = "$dir/TranslateSearch.i18n.php";
-$GLOBALS['wgExtensionMessagesFiles']['TranslateSandbox'] = "$dir/TranslateSandbox.i18n.php";
 $GLOBALS['wgExtensionMessagesFiles']['TranslateAlias'] = "$dir/Translate.alias.php";
+$GLOBALS['wgExtensionMessagesFiles']['TranslateMagic'] = "$dir/Translate.i18n.magic.php";
 // Backwards compatibility:
 // If Special:MyLanguage is not in core, load translations of its name
 // from the Translate extension's code.
@@ -73,8 +66,6 @@ if ( !isset( $GLOBALS['wgAutoloadLocalClasses']['SpecialMyLanguage'] ) ) {
 	$GLOBALS['wgExtensionMessagesFiles']['TranslateMyLanguageAlias'] =
 		"$dir/Translate.MyLanguage.alias.php";
 }
-
-$GLOBALS['wgExtensionMessagesFiles']['TranslateMagic'] = "$dir/Translate.i18n.magic.php";
 
 // Register initialization code
 $GLOBALS['wgExtensionFunctions'][] = 'TranslateHooks::setupTranslate';
@@ -576,8 +567,7 @@ $GLOBALS['wgTranslateYamlLibrary'] = 'spyc';
 
 /**
  * Whether to allow users to sign up via a sandbox. Sandboxed users cannot do
- * much until approved and thus they can be get rid of easily. Only works with
- * MediaWiki 1.22 or newer.
+ * much until approved and thus they can be get rid of easily.
  * @since 2013.04
  */
 $GLOBALS['wgTranslateUseSandbox'] = false;

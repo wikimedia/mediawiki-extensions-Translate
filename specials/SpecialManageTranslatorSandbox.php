@@ -13,7 +13,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialManageTranslatorSandbox extends TranslateSpecialPage {
+class SpecialManageTranslatorSandbox extends SpecialPage {
 	/** @var TranslationStashStorage */
 	protected $stash;
 
@@ -296,7 +296,7 @@ HTML;
 	 * Sorts groups by descending order of number of translations,
 	 * registration date and username
 	 *
-	 * @since 1.23
+	 * @since 2013.12
 	 * @param array $a Translation request
 	 * @param array $b Translation request
 	 * @return int comparison result

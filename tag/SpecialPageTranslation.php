@@ -5,7 +5,6 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2008-2013 Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
  */
 
@@ -18,9 +17,13 @@
  *
  * @ingroup SpecialPage PageTranslation
  */
-class SpecialPageTranslation extends TranslateSpecialPage {
+class SpecialPageTranslation extends SpecialPage {
 	function __construct() {
 		parent::__construct( 'PageTranslation' );
+	}
+
+	protected function getGroupName() {
+		return 'wiki';
 	}
 
 	public function execute( $parameters ) {
@@ -246,13 +249,13 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 	protected function showUnlinkConfirmation( Title $target ) {
 		$formParams = array(
 			'method' => 'post',
-			'action' => $this->getTitle()->getFullURL(),
+			'action' => $this->getPageTitle()->getFullURL(),
 		);
 
 		$this->getOutput()->addHtml(
 			Html::openElement( 'form', $formParams ) .
 			Html::hidden( 'do', 'unlink' ) .
-			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'target', $target->getPrefixedText() ) .
 			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
 			$this->msg( 'tpt-unlink-confirm', $target->getPrefixedtext() )->parseAsBlock() .
@@ -449,7 +452,7 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 			$pending = $type === 'active' && $page['latest'] !== $page['tp:mark'];
 			if ( $type === 'proposed' || $pending ) {
 				$actions[] = Linker::link(
-					$this->getTitle(),
+					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-mark' )->escaped(),
 					array( 'title' => $this->msg( 'tpt-rev-mark-tooltip' )->text() ),
 					array(
@@ -463,7 +466,7 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 
 			if ( $type === 'active' ) {
 				$actions[] = Linker::link(
-					$this->getTitle(),
+					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-discourage' )->escaped(),
 					array( 'title' => $this->msg( 'tpt-rev-discourage-tooltip' )->text() ),
 					array(
@@ -475,7 +478,7 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 				);
 			} elseif ( $type === 'discouraged' ) {
 				$actions[] = Linker::link(
-					$this->getTitle(),
+					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-encourage' )->escaped(),
 					array( 'title' => $this->msg( 'tpt-rev-encourage-tooltip' )->text() ),
 					array(
@@ -489,7 +492,7 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 
 			if ( $type !== 'proposed' ) {
 				$actions[] = Linker::link(
-					$this->getTitle(),
+					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-unmark' )->escaped(),
 					array( 'title' => $this->msg( 'tpt-rev-unmark-tooltip' )->text() ),
 					array(
@@ -558,13 +561,13 @@ class SpecialPageTranslation extends TranslateSpecialPage {
 
 		$formParams = array(
 			'method' => 'post',
-			'action' => $this->getTitle()->getFullURL(),
+			'action' => $this->getPageTitle()->getFullURL(),
 			'class' => 'mw-tpt-sp-markform',
 		);
 
 		$out->addHTML(
 			Xml::openElement( 'form', $formParams ) .
-			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'revision', $page->getRevision() ) .
 			Html::hidden( 'target', $page->getTitle()->getPrefixedtext() ) .
 			Html::hidden( 'token', $this->getUser()->getEditToken() )

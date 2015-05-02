@@ -12,12 +12,16 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialTranslationStash extends TranslateSpecialPage {
+class SpecialTranslationStash extends SpecialPage {
 	/** @var TranslationStashStorage */
 	protected $stash;
 
 	function __construct() {
 		parent::__construct( 'TranslationStash' );
+	}
+
+	protected function getGroupName() {
+		return 'wiki';
 	}
 
 	public function execute( $params ) {

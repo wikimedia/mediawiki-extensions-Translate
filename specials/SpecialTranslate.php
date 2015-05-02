@@ -5,7 +5,6 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2006-2013 Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
  */
 
@@ -15,7 +14,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialTranslate extends TranslateSpecialPage {
+class SpecialTranslate extends SpecialPage {
 	/** @var TranslateTask */
 	protected $task = null;
 
@@ -28,6 +27,10 @@ class SpecialTranslate extends TranslateSpecialPage {
 
 	function __construct() {
 		parent::__construct( 'Translate' );
+	}
+
+	protected function getGroupName() {
+		return 'wiki';
 	}
 
 	/**
@@ -132,7 +135,7 @@ class SpecialTranslate extends TranslateSpecialPage {
 				if ( $hasOptional ) {
 					$linktext = $this->msg( 'translate-page-description-hasoptional-open' )->escaped();
 					$params = array( 'task' => 'optional' ) + $this->nondefaults;
-					$link = Linker::link( $this->getTitle(), $linktext, array(), $params );
+					$link = Linker::link( $this->getPageTitle(), $linktext, array(), $params );
 					$note = $this->msg( 'translate-page-description-hasoptional' )
 						->rawParams( $link )->parseAsBlock();
 
@@ -361,13 +364,13 @@ class SpecialTranslate extends TranslateSpecialPage {
 				// @todo handle these two separately
 				unset( $params['task'] );
 				$params['action'] = 'proofread';
-				$out->redirect( $this->getTitle()->getLocalUrl( $params ) );
+				$out->redirect( $this->getPageTitle()->getLocalUrl( $params ) );
 				break;
 
 			case 'view':
 				unset( $params['task'] );
 				$params['filter'] = '';
-				$out->redirect( $this->getTitle()->getLocalUrl( $params ) );
+				$out->redirect( $this->getPageTitle()->getLocalUrl( $params ) );
 				break;
 
 			// Optional does not directly map to the new UI.
@@ -377,7 +380,7 @@ class SpecialTranslate extends TranslateSpecialPage {
 			case 'untranslated':
 				unset( $params['task'] );
 				$params['filter'] = '!translated';
-				$out->redirect( $this->getTitle()->getLocalUrl( $params ) );
+				$out->redirect( $this->getPageTitle()->getLocalUrl( $params ) );
 				break;
 		}
 	}
@@ -434,7 +437,7 @@ class SpecialTranslate extends TranslateSpecialPage {
 			Html::openElement( 'fieldset', $formAttributes ) .
 				Html::element( 'legend', array(), $this->msg( 'translate-page-settings-legend' )->text() ) .
 				Html::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
-				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Html::hidden( 'taction', $this->options['taction'] ) .
 				"$nonEssential\n$extra\n$button\n" .
 				Html::closeElement( 'form' ) .
@@ -481,7 +484,7 @@ class SpecialTranslate extends TranslateSpecialPage {
 			$tabClass = "tux-tab-$tab";
 			$taskParams = array( 'filter' => $filter ) + $params;
 			ksort( $taskParams );
-			$href = $this->getTitle()->getLocalUrl( $taskParams );
+			$href = $this->getPageTitle()->getLocalUrl( $taskParams );
 			$link = Html::element( 'a', array( 'href' => $href ), $this->msg( $tabClass )->text() );
 			$output .= Html::rawElement( 'li', array(
 				'class' => 'column ' . $tabClass,

@@ -14,12 +14,16 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialImportTranslations extends TranslateSpecialPage {
+class SpecialImportTranslations extends SpecialPage {
 	/**
 	 * Set up and fill some dependencies.
 	 */
 	public function __construct() {
 		parent::__construct( 'ImportTranslations', 'translate-import' );
+	}
+
+	protected function getGroupName() {
+		return 'wiki';
 	}
 
 	/**
@@ -87,7 +91,7 @@ class SpecialImportTranslations extends TranslateSpecialPage {
 			return;
 		}
 
-		$importer = new MessageWebImporter( $this->getTitle(), $group, $code );
+		$importer = new MessageWebImporter( $this->getPageTitle(), $group, $code );
 		$alldone = $importer->execute( $messages );
 
 		if ( $alldone ) {
@@ -134,13 +138,13 @@ class SpecialImportTranslations extends TranslateSpecialPage {
 		 */
 		$this->getOutput()->addHTML(
 			Xml::openElement( 'form', array(
-				'action' => $this->getTitle()->getLocalUrl(),
+				'action' => $this->getPageTitle()->getLocalUrl(),
 				'method' => 'post',
 				'enctype' => 'multipart/form-data',
 				'id' => 'mw-translate-import',
 			) ) .
 				Html::hidden( 'token', $this->getUser()->getEditToken() ) .
-				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Xml::inputLabel(
 					$this->msg( 'translate-import-from-local' )->text(),
 					'upload-local', // name

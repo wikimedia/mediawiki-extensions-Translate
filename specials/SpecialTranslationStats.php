@@ -5,7 +5,6 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2008-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
  */
 
@@ -19,7 +18,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
-class SpecialTranslationStats extends TranslateSpecialPage {
+class SpecialTranslationStats extends SpecialPage {
 	/// @since 2012-03-05
 	protected static $graphs = array(
 		'edits' => 'TranslatePerLanguageStats',
@@ -35,6 +34,10 @@ class SpecialTranslationStats extends TranslateSpecialPage {
 
 	public function isIncludable() {
 		return true;
+	}
+
+	protected function getGroupName() {
+		return 'wiki';
 	}
 
 	/**
@@ -152,7 +155,7 @@ class SpecialTranslationStats extends TranslateSpecialPage {
 		$out->addHTML(
 			Xml::fieldset( $this->msg( 'translate-statsf-options' )->text() ) .
 				Html::openElement( 'form', array( 'action' => $wgScript ) ) .
-				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Html::hidden( 'preview', 1 ) .
 				'<table>'
 		);
@@ -201,7 +204,7 @@ class SpecialTranslationStats extends TranslateSpecialPage {
 			$spiParams = '/' . $spiParams;
 		}
 
-		$titleText = $this->getTitle()->getPrefixedText();
+		$titleText = $this->getPageTitle()->getPrefixedText();
 
 		$out->addHTML(
 			Html::element( 'hr' ) .
@@ -381,7 +384,7 @@ class SpecialTranslationStats extends TranslateSpecialPage {
 	 * @return string Html.
 	 */
 	protected function image( FormOptions $opts ) {
-		$title = $this->getTitle();
+		$title = $this->getPageTitle();
 		$cgiparams = wfArrayToCgi( array( 'graphit' => true ), $opts->getAllValues() );
 		$href = $title->getLocalUrl( $cgiparams );
 

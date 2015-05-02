@@ -5,10 +5,10 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2010-2013 Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
  */
 
+# BC for MW < 1.24
 /**
  * Unlisted special page just to redirect the user to the translated version of
  * a page, if it exists.
@@ -17,7 +17,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialMyLanguage extends TranslateSpecialPage {
+class SpecialMyLanguage extends SpecialPage {
 	public function __construct() {
 		parent::__construct( 'MyLanguage' );
 	}

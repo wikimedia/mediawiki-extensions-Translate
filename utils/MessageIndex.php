@@ -353,15 +353,10 @@ class DatabaseMessageIndex extends MessageIndex {
 			$rows[] = array( 'tmi_key' => $key, 'tmi_value' => $value );
 		}
 
-		// BC for <= MW 1.22
-		if ( method_exists( $dbw, 'startAtomic' ) ) {
-			$dbw->startAtomic( __METHOD__ );
-		}
+		$dbw->startAtomic( __METHOD__ );
 		$dbw->delete( 'translate_messageindex', '*', __METHOD__ );
 		$dbw->insert( 'translate_messageindex', $rows, __METHOD__ );
-		if ( method_exists( $dbw, 'endAtomic' ) ) {
-			$dbw->endAtomic( __METHOD__ );
-		}
+		$dbw->endAtomic( __METHOD__ );
 
 		$this->index = $array;
 	}

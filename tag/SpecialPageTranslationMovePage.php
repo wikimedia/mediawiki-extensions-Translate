@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright  Copyright © 2010-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -14,7 +13,7 @@
  *
  * @ingroup SpecialPage PageTranslation
  */
-class SpecialPageTranslationMovePage extends TranslateSpecialPage {
+class SpecialPageTranslationMovePage extends SpecialPage {
 	// Basic form parameters both as text and as titles
 	protected $newText, $oldText;
 
@@ -211,7 +210,7 @@ class SpecialPageTranslationMovePage extends TranslateSpecialPage {
 		$readonly = array( 'readonly' => 'readonly' );
 		$formParams = array(
 			'method' => 'post',
-			'action' => $this->getTitle( $this->oldText )->getLocalURL()
+			'action' => $this->getPageTitle( $this->oldText )->getLocalURL()
 		);
 
 		$form = array();
@@ -333,7 +332,7 @@ class SpecialPageTranslationMovePage extends TranslateSpecialPage {
 		$subaction = array( 'name' => 'subaction' );
 		$formParams = array(
 			'method' => 'post',
-			'action' => $this->getTitle( $this->oldText )->getLocalURL()
+			'action' => $this->getPageTitle( $this->oldText )->getLocalURL()
 		);
 
 		$form = array();

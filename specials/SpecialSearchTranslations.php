@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2013 Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -13,7 +12,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialSearchTranslations extends TranslateSpecialPage {
+class SpecialSearchTranslations extends SpecialPage {
 	/** @var FormOptions */
 	protected $opts;
 
@@ -182,7 +181,7 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 			$newParams = array( 'offset' => $offset + $this->limit ) + $params;
 			$attribs = array(
 				'class' => 'mw-ui-button pager-next',
-				'href' => $this->getTitle()->getLocalUrl( $newParams ),
+				'href' => $this->getPageTitle()->getLocalUrl( $newParams ),
 			);
 			$next = Html::element( 'a', $attribs, $this->msg( 'tux-sst-next' )->text() );
 		}
@@ -190,7 +189,7 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 			$newParams = array( 'offset' => max( 0, $offset - $this->limit ) ) + $params;
 			$attribs = array(
 				'class' => 'mw-ui-button pager-prev',
-				'href' => $this->getTitle()->getLocalUrl( $newParams ),
+				'href' => $this->getPageTitle()->getLocalUrl( $newParams ),
 			);
 			$prev = Html::element( 'a', $attribs, $this->msg( 'tux-sst-prev' )->text() );
 		}
@@ -218,7 +217,7 @@ class SpecialSearchTranslations extends TranslateSpecialPage {
 				$nondefaults['language'] = $key;
 			}
 
-			$url = $this->getTitle()->getLocalUrl( $nondefaults );
+			$url = $this->getPageTitle()->getLocalUrl( $nondefaults );
 			$value = $this->getLanguage()->formatNum( $value );
 
 			$output[$key] = array(
@@ -324,7 +323,7 @@ HTML
 			'dir' => $this->getLanguage()->getDir(),
 		);
 
-		$title = Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
+		$title = Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$input = Xml::input( 'query', false, $query, $attribs );
 		$submit = Xml::submitButton( $this->msg( 'tux-sst-search' ), array( 'class' => 'button' ) );
 		$lang = $this->getRequest()->getVal( 'language' );

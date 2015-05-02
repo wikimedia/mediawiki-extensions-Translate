@@ -5,7 +5,6 @@
  * @file
  * @author Siebrand Mazeland
  * @author Niklas Laxstörm
- * @copyright Copyright © 2008-2013 Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
  */
 
@@ -94,7 +93,7 @@ class SpecialTranslations extends SpecialAllpages {
 
 		$out = Xml::openElement( 'div', array( 'class' => 'namespaceoptions' ) );
 		$out .= Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
-		$out .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
+		$out .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$out .= Xml::openElement( 'fieldset' );
 		$out .= Xml::element(
 			'legend',
@@ -269,23 +268,6 @@ class SpecialTranslations extends SpecialAllpages {
 
 		$vars = array( 'trlKeys' => $ajaxPageList );
 		$this->getOutput()->addScript( Skin::makeVariablesScript( $vars ) );
-	}
-
-	/**
-	 * Get a self-referential title object
-	 *
-	 * For backward compatibility for https://gerrit.wikimedia.org/r/#/c/103587.
-	 * Should be removed when the lowest supported version is MediaWiki 1.23.
-	 *
-	 * @param string|bool $subpage
-	 * @return Title|void
-	 */
-	public function getTitle( $subpage = false ) {
-		if ( method_exists( $this, 'getPageTitle' ) ) {
-			return $this->getPageTitle();
-		} else {
-			return self::getTitleFor( $this->mName, $subpage );
-		}
 	}
 
 	/**
