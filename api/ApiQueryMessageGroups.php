@@ -247,8 +247,11 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 					$allowed = $user->isAllowed( $config['right'] );
 				}
 
-				$stateConfig[$state]['_canchange'] = $allowed;
-				$stateConfig[$state]['_name'] =
+				if ( $allowed ) {
+					$stateConfig[$state]['canchange'] = 1;
+				}
+
+				$stateConfig[$state]['name'] =
 					$this->msg( "translate-workflow-state-$state" )->text();
 			}
 		}
