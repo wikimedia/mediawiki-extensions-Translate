@@ -250,6 +250,9 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				$stateConfig[$state]['_canchange'] = $allowed;
 				$stateConfig[$state]['_name'] =
 					$this->msg( "translate-workflow-state-$state" )->text();
+
+				// Workaround for http://www.gossamer-threads.com/lists/wiki/wikitech/584489
+				ApiResult::setPreserveKeysList( $stateConfig[$state], array( '_canchange', '_name' ) );
 			}
 		}
 
