@@ -110,16 +110,16 @@
 
 				$state = $( '<li>' )
 					.data( 'state', data )
-					.text( data._name );
+					.text( data.name );
 
-				if ( data._canchange && id !== instance.currentState ) {
+				if ( data.canchange && id !== instance.currentState ) {
 					$state.addClass( 'changeable' );
 				} else {
 					$state.addClass( 'unchangeable' );
 				}
 
 				if ( id === instance.currentState ) {
-					$display.text( instance.getStateDisplay( data._name ) );
+					$display.text( instance.getStateDisplay( data.name ) );
 					$state.addClass( 'selected' );
 				}
 
