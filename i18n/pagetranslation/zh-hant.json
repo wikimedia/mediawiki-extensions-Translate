@@ -186,6 +186,7 @@
 	"pm-swap-icon-hover-text": "替換以下單位",
 	"pm-delete-icon-hover-text": "刪除單位",
 	"pm-pagetitle-invalid": "請輸入一個有效的頁面標題",
+	"pm-summary-import": "已使用 [[Special:PageMigration|頁面遷移]] 匯入翻譯",
 	"tpt-translate-title": "允許翻譯頁面標題",
 	"pp-save-summary": "準備翻譯用頁面",
 	"pagepreparation": "準備翻譯用頁面",
@@ -198,5 +199,8 @@
 	"pp-already-prepared-message": "該頁面似乎已有翻譯用頁面。 且與先前的版本無任何差異。",
 	"pp-pagename-missing": "請輸入頁面名稱。",
 	"pp-diff-old-header": "來源內容",
-	"pp-diff-new-header": "準備內容"
+	"pp-diff-new-header": "準備內容",
+	"tpt-unlink-confirm": "請確認您真的希望自翻譯系統移除此頁面。\n該語言選擇器與已翻譯的頁面名稱將會停止運作。\n該翻譯頁面將會變成可編輯。",
+	"tpt-unlink-button": "自翻譯移除",
+	"tpt-unlink-summary": "已自翻譯移除頁面"
 }
