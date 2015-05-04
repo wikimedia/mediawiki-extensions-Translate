@@ -55,6 +55,11 @@
 	font-weight: bold;
 }
 
+.tux-searchpage .facet-item a:visited,
+.tux-searchpage .facet-item a:link {
+	color: #0645AD;
+}
+
 /* Results */
 .tux-searchpage .count {
 	color: #555;
