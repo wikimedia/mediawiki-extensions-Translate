@@ -16,6 +16,24 @@
       "revId": "2bde4d6b01e257e3074e7ec6c28b0237abcfd71d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_a55218dc",
+        "filename": "utils/TranslateSandbox.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1357
+      },
+      "writtenOn": "2015-05-04T21:08:36Z",
+      "side": 1,
+      "message": "invalidateCache() will only update a memcache key via touch() and do the same memcache delete that was being done manually here. No DB writes that I can see.",
+      "parentUuid": "0ed113e2_c9575c28",
+      "revId": "2bde4d6b01e257e3074e7ec6c28b0237abcfd71d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
