@@ -95,7 +95,9 @@
 
 		if ( currentLanguage && $.inArray( currentLanguage, quickLanguageList ) >= 0 ) {
 			quickLanguageList = unique.splice( 0, 5 );
-			quickLanguageList = quickLanguageList.concat( currentLanguage );
+			if ( $.inArray( currentLanguage, quickLanguageList ) === -1 ) {
+				quickLanguageList = quickLanguageList.concat( currentLanguage );
+			}
 		} else {
 			quickLanguageList = unique.splice( 0, 6 );
 		}
@@ -116,9 +118,9 @@
 			}
 
 			$languages.append( $( '<div>')
-				.addClass( 'row facet-item ' + selectedClasss )
+				.addClass( 'row facet-item' )
 				.append( $( '<span>')
-					.addClass('facet-name')
+					.addClass('facet-name ' + selectedClasss )
 					.append( $('<a>')
 						.attr( 'href', result.url )
 						.text( mw.config.get( 'wgULSLanguages' )[languageCode] || languageCode )
@@ -161,7 +163,6 @@
 			$groups;
 
 		$groups = $( '.facet.groups' );
-		currentGroup = $groups.data( 'group' );
 
 		if ( !resultGroups ) {
 			// No search results
@@ -172,7 +173,7 @@
 		listGroups( groupList, currentGroup, $groups );
 	}
 
-	function listGroups( groupList, parentGroup, $parent, level ) {
+	function listGroups( groupList, parentGrouppath, $parent, level ) {
 		var i,
 			$grouSelectorTrigger,
 			selectedClass = '',
@@ -185,16 +186,20 @@
 			resultCount = groupList.length,
 			position,
 			groups,
-			options;
+			options,
+			grouppath;
 
 		level = level || 0;
-		groupList = groupList.splice( 0, maxListSize );
-		if ( currentGroup && resultGroups[currentGroup] &&
-			$.inArray( currentGroup, groupList ) < 0
+		if ( level === 0 ) {
+			groupList = groupList.splice( 0, maxListSize );
+		}
+		grouppath = getParameterByName( 'grouppath' ).split( '|' )[0];
+		if ( currentGroup && resultGroups[ grouppath ] &&
+			$.inArray( grouppath, groupList) < 0 &&
+			level === 0
 		) {
 			// Make sure current selected group is displayed always.
-			groupList = groupList.concat( currentGroup );
-			groupList.sort( sortGroups );
+			groupList = groupList.concat( grouppath );
 		}
 		groupList.sort( sortGroups );
 		for ( i = 0; i <= groupList.length; i++ ) {
@@ -209,8 +214,13 @@
 				selectedClass = '';
 			}
 
-			uri = new mw.Uri( window.location.href );
-			uri.extend( { 'group': groupId } );
+			uri = new mw.Uri( location.href );
+			if ( parentGrouppath !== undefined ) {
+				grouppath = parentGrouppath + '|' + groupId;
+			} else {
+				grouppath =  groupId;
+			}
+			uri.extend( { 'group': groupId, 'grouppath': grouppath } );
 
 			$groupRow = $( '<div>' )
 				.addClass( 'row facet-item ' + ' facet-level-' + level )
@@ -226,11 +236,11 @@
 				);
 			$parent.append( $groupRow );
 			if ( group.groups && level < 2 ) {
-				listGroups( Object.keys( group.groups ), group, $groupRow, level + 1 );
+				listGroups( Object.keys( group.groups ), grouppath, $groupRow, level + 1 );
 			}
 		}
 
-		if ( resultCount > maxListSize ) {
+		if ( resultCount > maxListSize && resultCount - groupList.length > 0 && level === 0 ) {
 			$grouSelectorTrigger = $( '<div>')
 				.addClass( 'rowfacet-item ' )
 				.append( $( '<a>' )
@@ -261,7 +271,7 @@
 				position: position,
 				onSelect: function ( group ) {
 					var uri = new mw.Uri( location.href );
-					uri.extend( { 'group': group.id } );
+					uri.extend( { 'group': group.id, 'grouppath': group.id } );
 					location.href = uri.toString();
 				}
 			};
@@ -287,5 +297,10 @@
 			languageNameB = mw.config.get( 'wgULSLanguages' )[languageB] || languageB;
 
 		return languageNameA.localeCompare( languageNameB );
+	}
+
+	function getParameterByName( name ) {
+		var uri = new mw.Uri();
+		return uri.query[ name ] || '';
 	}
 }( jQuery, mediaWiki ) );
