@@ -191,5 +191,12 @@
 	"pp-save-button-label": "Gardar",
 	"pp-cancel-button-label": "Cancelar",
 	"pp-save-message": "A páxina foi gardada. Pode [$1 editala].",
-	"pp-prepare-message": "Preparouse a páxina para a tradución. Consulte os cambios abaixo. Prema no botón \"{{int:pp-save-button-label}}\" se está todo ben!"
+	"pp-prepare-message": "Preparouse a páxina para a tradución. Consulte os cambios abaixo. Prema no botón \"{{int:pp-save-button-label}}\" se está todo ben!",
+	"pp-already-prepared-message": "Parece que a páxina xa se preparou para a tradución. Non hai cambios respecto á versión anterior.",
+	"pp-pagename-missing": "Insira o nome da páxina",
+	"pp-diff-old-header": "Texto fonte",
+	"pp-diff-new-header": "Texto preparado",
+	"tpt-unlink-confirm": "Confirme que realmente quere eliminar esta páxina do sistema de tradución.\nO selector de idiomas e os nomes das páxinas traducidas deixarán de funcionar.\nAs páxinas de tradución volveranse editables.",
+	"tpt-unlink-button": "Eliminar da tradución",
+	"tpt-unlink-summary": "Páxina eliminada da tradución"
 }

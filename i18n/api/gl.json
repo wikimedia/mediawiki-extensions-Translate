@@ -20,6 +20,7 @@
 	"apihelp-hardmessages-param-title": "Título da mensaxe a marcar como complicada.",
 	"apihelp-hardmessages-example-1": "Marcar \"SampleTitle\" como complicado",
 	"apihelp-query+languagestats-description": "Consultar estatísticas de idioma.",
+	"apihelp-query+languagestats-param-timelimit": "Tempo máximo para calcular as estatísticas que faltan. Se cero, só se devolven os resultados almacenados ó comezo.",
 	"apihelp-query+languagestats-param-language": "Código da lingua.",
 	"apihelp-query+languagestats-example-1": "Lista de estatíticas de traducións completadas en finés.",
 	"apihelp-query+messagecollection-description": "Consultar MessageCollection sobre traducións.",
