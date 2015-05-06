@@ -299,6 +299,11 @@ $GLOBALS['wgTranslateTranslationServices']['TTMServer'] = array(
 	'type' => 'ttmserver',
 	'public' => false,
 );
+$GLOBALS['wgTranslateTranslationServices']['TTMServer'] = array(
+	'class' => 'ElasticSearchTTMServer',
+	'cutoff' => 0.75,
+	'type' => 'ttmserver'
+);
 $GLOBALS['wgTranslateTranslationServices']['Microsoft'] = array(
 	'url' => 'http://api.microsofttranslator.com/V2/Http.svc/Translate',
 	'key' => null,
