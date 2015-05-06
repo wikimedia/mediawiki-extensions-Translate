@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"George Animal",
-			"Gomada"
+			"Gomada",
+			"Bikarhêner"
 		]
 	},
 	"pagetranslation": "Wergera rûpelê",
@@ -15,6 +16,7 @@
 	"translate-tag-translate-link-desc": "Vê rûpelê werrgerîne",
 	"translate-tag-markthis": "Vê rûpelê ji bo wergerê îşaret bike",
 	"tpt-languages-legend": "Zimanên din:",
+	"tpt-languages-nonzero": "$1 ($2% hate wergerandin)",
 	"tpt-download-page": "Rûpela bi wergeran bişîne",
 	"tpt-aggregategroup-add": "Lê zêde bike",
 	"tpt-aggregategroup-new-name": "Nav:",

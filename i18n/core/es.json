@@ -295,7 +295,7 @@
 	"action-translate-sandboxaction": "ejecutar acciones permitidas a los usuarios de la zona de pruebas",
 	"translate-workflow-state-": "(no definido)",
 	"translate-workflowstatus": "Estado: $1",
-	"translate-workflow-set-do": "Activar",
+	"translate-workflow-set-do": "Activado",
 	"translate-workflow-set-doing": "Activando...",
 	"translate-workflow-set-done": "¡Hecho!",
 	"translate-workflow-set-error-alreadyset": "El estado requerido es idéntico a la situación actual.",
