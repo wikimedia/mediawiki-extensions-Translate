@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Aushulz"
+			"Aushulz",
+			"Pippinu"
 		]
 	},
+	"tpt-languages-nonzero": "$1 (traduciuta ô $2%)",
 	"pt-movepage-reason": "Mutivu:",
 	"pt-deletepage-reason": "Mutivu:"
 }

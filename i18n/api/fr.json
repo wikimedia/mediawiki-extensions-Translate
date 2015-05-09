@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Djiboun"
+		]
+	},
+	"apihelp-query+languagestats-description": "Demande les statistiques de langue.",
+	"apihelp-query+languagestats-param-language": "Code de langue.",
+	"apihelp-query+messagecollection-param-group": "Groupe du message.",
+	"apihelp-query+messagecollection-param-language": "Code de langue.",
+	"apihelp-query+messagecollection-param-limit": "Combien de messages à afficher (après filtrage).",
+	"apihelp-query+messagecollection-example-1": "Liste des langues prises en charge",
+	"apihelp-query+messagegroups-example-1": "Affiche les groupes de message",
+	"apihelp-query+messagegroupstats-description": "Demande de statistiques de groupe de message.",
+	"apihelp-query+messagegroupstats-param-group": "Identifiant du groupe de message.",
+	"apihelp-query+messagetranslations-description": "Demande l'ensemble des traductions pour un seul message.",
+	"apihelp-query+messagetranslations-example-1": "Liste des traductions dans le wiki pour MediaWiki:janvier"
+}
