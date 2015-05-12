@@ -69,7 +69,7 @@ $specialPageAliases['arc'] = array(
 	'Translations' => array( 'ܬܘܪ̈ܓܡܐ' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'AggregateGroups' => array( 'مجموعات_متجمعه' ),
 	'ImportTranslations' => array( 'استوراد_الترجمات' ),
@@ -396,7 +396,7 @@ $specialPageAliases['fr'] = array(
 	'Translations' => array( 'Traductions' ),
 );
 
-/** Franco-Provençal (arpetan) */
+/** Arpitan (arpetan) */
 $specialPageAliases['frp'] = array(
 	'LanguageStats' => array( 'Statistiques_de_les_lengoues', 'StatistiquesDeLesLengoues' ),
 	'Magic' => array( 'Traduccion_avanciê', 'TraduccionAavanciê' ),
