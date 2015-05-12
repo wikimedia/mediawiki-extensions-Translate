@@ -266,7 +266,10 @@
 				}
 			};
 			groups = $.map( resultGroups, function ( value, index ) {
-				return index;
+				// Return groups not in groupList
+				if ( $.inArray( index, groupList ) === -1 ) {
+					return index;
+				}
 			} );
 			$grouSelectorTrigger.msggroupselector(
 				options,
