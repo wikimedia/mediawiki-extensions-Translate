@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_c36274d4",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-05-13T16:52:58Z",
+      "side": 1,
+      "message": "FYI, to have the boolean be output as a JSON boolean in backwards-compatible mode you\u0027d do this:\n\n $stateConfig[$state][\u0027canchange\u0027] \u003d $allowed;\n $stateConfig[$state][ApiResult::META_BC_BOOLS][] \u003d \u0027canchange\u0027;\n\nMore info on all these changes at https://lists.wikimedia.org/pipermail/wikitech-l/2015-May/081646.html",
+      "revId": "f97f9ca7c5efef2e5fb9b0c785216cbad110a957",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
