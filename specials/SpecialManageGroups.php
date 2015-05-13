@@ -6,7 +6,6 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2009-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
  */
 
@@ -19,7 +18,7 @@
  * @ingroup SpecialPage TranslateSpecialPage
  * Rewritten in 2012-04-23
  */
-class SpecialManageGroups extends TranslateSpecialPage {
+class SpecialManageGroups extends SpecialPage {
 	const CHANGEFILE = 'translate_messagechanges.cdb';
 	const RIGHT = 'translate-manage';
 
@@ -108,7 +107,7 @@ class SpecialManageGroups extends TranslateSpecialPage {
 		$out->addHtml(
 			'' .
 				Html::openElement( 'form', array( 'method' => 'post' ) ) .
-				Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
+				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Html::hidden( 'token', $this->getUser()->getEditToken() ) .
 				$this->getLegend()
 		);
@@ -349,8 +348,7 @@ class SpecialManageGroups extends TranslateSpecialPage {
 			if ( $spClass === null ) {
 				continue; // Page explicitly disabled
 			}
-			// @todo Change to getPageTitle() when lowest supported version is 1.23.
-			$spTitle = $spClass->getTitle();
+			$spTitle = $spClass->getPageTitle();
 
 			$tabs[$section][strtolower( $spName )] = array(
 				'text' => $spClass->getDescription(),

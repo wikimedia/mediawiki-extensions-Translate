@@ -5,7 +5,6 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2012-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
  */
 
@@ -19,7 +18,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
-class SpecialSupportedLanguages extends TranslateSpecialPage {
+class SpecialSupportedLanguages extends SpecialPage {
 	/// Whether to skip and regenerate caches
 	protected $purge = false;
 
@@ -28,6 +27,10 @@ class SpecialSupportedLanguages extends TranslateSpecialPage {
 
 	public function __construct() {
 		parent::__construct( 'SupportedLanguages' );
+	}
+
+	protected function getGroupName() {
+		return 'wiki';
 	}
 
 	public function execute( $par ) {

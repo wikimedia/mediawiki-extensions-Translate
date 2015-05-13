@@ -13,6 +13,10 @@ class SpecialPagePreparation extends SpecialPage {
 		parent::__construct( 'PagePreparation', 'pagetranslation' );
 	}
 
+	protected function getGroupName() {
+		return 'wiki';
+	}
+
 	function execute( $par ) {
 		$request = $this->getRequest();
 		$output = $this->getOutput();

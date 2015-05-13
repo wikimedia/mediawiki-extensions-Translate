@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -13,7 +12,7 @@
  *
  * @ingroup SpecialPage PageTranslation
  */
-class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
+class SpecialPageTranslationDeletePage extends SpecialPage {
 	// Basic form parameters both as text and as titles
 	protected $text;
 
@@ -177,7 +176,7 @@ class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
 		$subaction = array( 'name' => 'subaction' );
 		$formParams = array(
 			'method' => 'post',
-			'action' => $this->getTitle( $this->text )->getLocalURL()
+			'action' => $this->getPageTitle( $this->text )->getLocalURL()
 		);
 
 		$form = array();
@@ -280,7 +279,7 @@ class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
 		$subaction = array( 'name' => 'subaction' );
 		$formParams = array(
 			'method' => 'post',
-			'action' => $this->getTitle( $this->text )->getLocalURL()
+			'action' => $this->getPageTitle( $this->text )->getLocalURL()
 		);
 
 		$form = array();
@@ -391,7 +390,7 @@ class SpecialPageTranslationDeletePage extends TranslateSpecialPage {
 		}
 
 		$this->clearMetadata();
-		MessageGroups::clearCache();
+		MessageGroups::recache();
 		MessageIndexRebuildJob::newJob()->insert();
 
 		$this->getOutput()->addWikiMsg( 'pt-deletepage-started' );

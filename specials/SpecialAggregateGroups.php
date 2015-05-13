@@ -7,15 +7,18 @@
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @author Kunal Grover
- * @copyright Copyright © 2012 Santhosh Thottingal, Niklas Laxström, Siebrand Mazeland, Kunal Grover
  * @license GPL-2.0+
  */
 
-class SpecialAggregateGroups extends TranslateSpecialPage {
+class SpecialAggregateGroups extends SpecialPage {
 	protected $hasPermission = false;
 
 	function __construct() {
 		parent::__construct( 'AggregateGroups', 'translate-manage' );
+	}
+
+	protected function getGroupName() {
+		return 'wiki';
 	}
 
 	public function execute( $parameters ) {

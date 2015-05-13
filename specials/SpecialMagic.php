@@ -5,7 +5,6 @@
  * @file
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2008-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
  */
 
@@ -15,7 +14,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage
  */
-class SpecialMagic extends TranslateSpecialPage {
+class SpecialMagic extends SpecialPage {
 	const MODULE_MAGIC = 'words';
 	const MODULE_SPECIAL = 'special';
 	const MODULE_NAMESPACE = 'namespace';
@@ -38,6 +37,10 @@ class SpecialMagic extends TranslateSpecialPage {
 
 	public function __construct() {
 		parent::__construct( 'Magic' );
+	}
+
+	protected function getGroupName() {
+		return 'wiki';
 	}
 
 	/**
@@ -81,7 +84,7 @@ class SpecialMagic extends TranslateSpecialPage {
 					array( 'name' => 'export' )
 				) .
 				'</td></tr></table>' .
-				Html::hidden( 'title', $this->getTitle()->getPrefixedText() )
+				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() )
 		);
 
 		return $form;

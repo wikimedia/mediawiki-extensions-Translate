@@ -5,7 +5,6 @@
  * @file
  * @author Siebrand Mazeland
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2013 Siebrand Mazeland, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -20,7 +19,7 @@
  *
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
-class SpecialLanguageStats extends TranslateSpecialPage {
+class SpecialLanguageStats extends SpecialPage {
 	/**
 	 * @var StatsTable
 	 */
@@ -101,6 +100,10 @@ class SpecialLanguageStats extends TranslateSpecialPage {
 
 	public function isIncludable() {
 		return true;
+	}
+
+	protected function getGroupName() {
+		return 'wiki';
 	}
 
 	function execute( $par ) {
@@ -199,7 +202,7 @@ class SpecialLanguageStats extends TranslateSpecialPage {
 
 		$out = Html::openElement( 'div' );
 		$out .= Html::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
-		$out .= Html::hidden( 'title', $this->getTitle()->getPrefixedText() );
+		$out .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$out .= Html::hidden( 'x', 'D' ); // To detect submission
 		$out .= Html::openElement( 'fieldset' );
 		$out .= Html::element(

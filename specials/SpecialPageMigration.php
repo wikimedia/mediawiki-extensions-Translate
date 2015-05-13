@@ -13,6 +13,10 @@ class SpecialPageMigration extends SpecialPage {
 		parent::__construct( 'PageMigration', 'pagetranslation' );
 	}
 
+	protected function getGroupName() {
+		return 'wiki';
+	}
+
 	function execute( $par ) {
 		$request = $this->getRequest();
 		$output = $this->getOutput();
