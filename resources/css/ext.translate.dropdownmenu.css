@@ -1,15 +1,14 @@
-.tux-dropdown-menu {
-	padding-top: 2em;
+/* ul is included because otherwise core rules .mw-content-ltr ul and such take presedence */
+ul.tux-dropdown-menu {
 	border: 1px solid #c9c9c9;
 	/* @noflip */
 	-webkit-box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
 	/* @noflip */
 	box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
 	font-size: 14px;
-	margin: 0 5px;
-	list-style: none;
+	margin: 0;
 	padding: 4px;
-	width: 200px;
+	list-style: none;
 	z-index: 300;
 	background: #fff;
 	display: block;
