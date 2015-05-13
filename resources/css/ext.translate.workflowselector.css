@@ -5,21 +5,31 @@
 	cursor: pointer;
 	display: inline-block;
 	padding: 2px 4px;
-	margin: 5px 0;
+	margin-top: 5px;
+	min-width: 150px;
 }
 
 .tux-workflow-status:hover {
 	border: 1px solid #c9c9c9;
 }
 
-.tux-workflow-status:after {
-	margin-left: 3px;
+.tux-workflow-status-triangle {
+	float: right;
+}
+
+.tux-workflow-status-triangle:after {
+	margin: 3px;
 	border-left: 3px solid transparent;
 	border-right: 3px solid transparent;
 	border-top: 3px solid #555;
 	content: "";
 	display: inline-block;
 	vertical-align: middle;
+}
+
+ul.tux-workflow-status-selector {
+	min-width: 150px;
+	margin-top: -1px;
 }
 
 .tux-workflow-status-selector li {
