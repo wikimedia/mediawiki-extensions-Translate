@@ -34,7 +34,7 @@
 	"apihelp-query+messagecollection-example-3": "List of optional messages in Finnish with tags for group page-Example",
 	"apihelp-query+messagecollection-example-4": "More information about latest translation revisions for group page-Example",
 	"apihelp-query+messagegroups-description": "Return information about message groups.\n\nNote that the uselang parameter affects the output of language dependent parts.",
-	"apihelp-query+messagegroups-param-depth": "When using the tree format, limit the depth to this many levels. Value 0 means that no subgroups are shown. If the limit is reached, a prop groupcount is added and it states the number of direct children.",
+	"apihelp-query+messagegroups-param-depth": "When using the tree format, limit the depth to this many levels. Value 0 means that no subgroups are shown. If the limit is reached, the output includes a \"groupcount\" value, which states the number of direct children.",
 	"apihelp-query+messagegroups-param-filter": "Only return messages with IDs that match one or more of the inputs given (case-insensitive, separated by pipes, * wildcard).",
 	"apihelp-query+messagegroups-param-format": "In a tree format message groups can exist multiple places in the tree.",
 	"apihelp-query+messagegroups-param-iconsize": "Preferred size of rasterised group icon.",
