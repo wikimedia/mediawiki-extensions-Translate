@@ -44,6 +44,7 @@
 	"tpt-languages-legend": "Otre lènghe:",
 	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Accuminze 'a traduzione pe sta lènghe",
+	"tpt-languages-nonzero": "$1 ($2% tradotte)",
 	"tpt-tab-translate": "Traduce",
 	"tpt-discouraged-language-reason": "Mutive: $1",
 	"aggregategroups": "Gruppe aggregate",
