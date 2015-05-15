@@ -517,7 +517,7 @@ HTML
 		$lang = $this->getRequest()->getVal( 'language' );
 		$language = is_null( $lang ) ? '' : Html::hidden( 'language', $lang );
 
-		$form = Html::rawElement( 'form', array( 'action' => wfScript() ),
+		$form = Html::rawElement( 'form', array( 'action' => wfScript(), 'name' => 'searchform' ),
 			$title . $input . $submit . $checkLabel . $language
 		);
 
