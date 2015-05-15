@@ -67,6 +67,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );
 		$opts->add( 'sourcelanguage', $wgLanguageCode );
+		$opts->add( 'searchstring', '' );
 		$opts->add( 'language', '' );
 		$opts->add( 'group', '' );
 		$opts->add( 'grouppath', '' );
@@ -77,7 +78,9 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$opts->fetchValuesFromRequest( $this->getRequest() );
 
-		$queryString = $opts->getValue( 'query' );
+		$query = $opts->getValue( 'query' );
+		$searchstring = $opts->getValue( 'searchstring' );
+		$queryString = ( $searchstring !== '' ) ? $searchstring : $query;
 
 		if ( $queryString === '' ) {
 			$this->showEmptySearch();
@@ -237,7 +240,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			"$prev $next"
 		);
 
-		$search = $this->getSearchInput( $queryString );
+		$search = $this->getSearchInput( $query );
 		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
 
 		$this->showSearch( $search, $count, $facetHtml, $resultsHtml, $total );
@@ -502,7 +505,7 @@ HTML
 		$lang = $this->getRequest()->getVal( 'language' );
 		$language = is_null( $lang ) ? '' : Html::hidden( 'language', $lang );
 
-		$form = Html::rawElement( 'form', array( 'action' => wfScript() ),
+		$form = Html::rawElement( 'form', array( 'action' => wfScript(), 'name' => 'searchform' ),
 			$title . $input . $submit . $language
 		);
 
