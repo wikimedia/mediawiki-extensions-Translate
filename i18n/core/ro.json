@@ -8,7 +8,8 @@
 			"McDutchie",
 			"Minisarm",
 			"Sociologist",
-			"Stelistcristi"
+			"Stelistcristi",
+			"ImGelu"
 		]
 	},
 	"translate": "Traducere",
@@ -308,11 +309,11 @@
 	"tux-editor-placeholder": "Traducerea dumneavoastră",
 	"tux-editor-paste-original-button-label": "Introdu textul-sursă",
 	"tux-editor-discard-changes-button-label": "Anulează modificările",
-	"tux-editor-save-button-label": "Salvare traducere",
+	"tux-editor-save-button-label": "Salvează traducerea",
 	"tux-editor-skip-button-label": "Sari mai departe",
 	"tux-editor-cancel-button-label": "Revocare",
 	"tux-editor-confirm-button-label": "Confirmare traducere",
-	"tux-editor-shortcut-info": "Apăsați „$1” pentru a salva sau „$2” pentru a sări la următorul mesaj ori „$3” pentru alte comenzi rapide.",
+	"tux-editor-shortcut-info": "Apasă „$1” pentru a salva sau „$2” pentru a sări la următorul mesaj ori „$3” pentru alte comenzi rapide.",
 	"tux-editor-edit-desc": "Modifică documentația",
 	"tux-editor-add-desc": "Adăugare documentație",
 	"tux-editor-suggestions-title": "Sugestii",
