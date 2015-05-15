@@ -64,6 +64,7 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );
+		$opts->add( 'string', '' );
 		$opts->add( 'language', '' );
 		$opts->add( 'group', '' );
 		$opts->add( 'grouppath', '' );
@@ -72,7 +73,9 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$opts->fetchValuesFromRequest( $this->getRequest() );
 
-		$queryString = $opts->getValue( 'query' );
+		$query = $opts->getValue( 'query' );
+		$string = $opts->getValue( 'string' );
+		$queryString = $string ? $string : $query;
 
 		if ( $queryString === '' ) {
 			$this->showEmptySearch();
@@ -198,7 +201,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			"$prev $next"
 		);
 
-		$search = $this->getSearchInput( $queryString );
+		$search = $this->getSearchInput( $query );
 		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
 
 		$this->showSearch( $search, $count, $facetHtml, $resultsHtml );
