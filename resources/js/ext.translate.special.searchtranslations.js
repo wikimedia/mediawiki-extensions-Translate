@@ -28,6 +28,21 @@
 
 		$messages.last().addClass( 'last-message' );
 
+		$( '.button' ).click( function() {
+			var query = $( '.searchinputbox' ).val(),
+				result = lexOperators( query );
+
+			$.each( result, function( index, value ) {
+				$( 'form[name=searchform]' )
+				.append( $( '<input>' )
+					.attr( {
+						type: 'hidden',
+						value: value,
+						name: index
+					} )
+				);
+			} );
+		} );
 		showLanguages();
 		showMessageGroups();
 	} );
@@ -272,6 +287,46 @@
 				options,
 				groups
 			);
+		}
+	}
+
+	function lexOperators( str ) {
+		var string = str.split( ' ' ),
+			result= {},
+			query = '';
+
+		$.each( string, function( index, value ) {
+			matchOperators( value, function( obj ) {
+				if ( obj === false ) {
+					query = query + ' ' + value;
+				} else {
+					result[ obj.operator ] = obj.value;
+				}
+			} );
+		} );
+
+		result.string = query.trim();
+		return result;
+	}
+
+	function matchOperators( str, callback ) {
+		var matches,
+			counter = false,
+			// Add operators for different filters
+			operatorRegex = { 'language' : 'lang' , 'group' : 'grp' };
+
+		$.each( operatorRegex, function( index, value ) {
+			var regex = new RegExp( value + ':(\\S+)', 'i' );
+			if ( ( matches = regex.exec( str ) ) !== null ) {
+				counter = true;
+				callback( {
+					operator: index,
+					value: matches[1]
+				} );
+			}
+		} );
+		if ( !counter ) {
+			callback( false );
 		}
 	}
 
