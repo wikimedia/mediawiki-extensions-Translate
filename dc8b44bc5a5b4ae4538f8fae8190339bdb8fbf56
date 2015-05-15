@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_ced04d56",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-15T11:46:58Z",
+      "side": 1,
+      "message": "It looks like you could mediawiki.Uri to avoid parsing the thing yourself.",
+      "revId": "dc8b44bc5a5b4ae4538f8fae8190339bdb8fbf56",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
