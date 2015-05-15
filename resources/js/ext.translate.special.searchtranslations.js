@@ -23,6 +23,29 @@
 
 		$messages.last().addClass( 'last-message' );
 
+		$( '.tux-searchpage .button' ).click( function () {
+			var query = $( '.tux-searchpage .searchinputbox' ).val(),
+				result = lexOperators( query ),
+				$form = $( '.tux-searchpage form[name=searchform]' );
+
+			$.each( result, function ( index, value ) {
+				var $input = $( '<input>')
+					.prop( 'type', 'hidden' ),
+					$elem = $form.find( 'input[name=' + index + ']' );
+
+				if ( $elem.length ) {
+					$elem.val( value );
+				} else {
+					$form.append( $input
+						.prop( {
+							value: value,
+							name: index
+						} )
+					);
+				}
+			} );
+		} );
+
 		buildSelectedBox();
 		showLanguages();
 		showMessageGroups();
@@ -296,6 +319,46 @@
 				options,
 				groups
 			);
+		}
+	}
+
+	function lexOperators( str ) {
+		var string = str.split( ' ' ),
+			result= {},
+			query = '';
+
+		$.each( string, function ( index, value ) {
+			matchOperators( value, function( obj ) {
+				if ( obj === false ) {
+					query = query + ' ' + value;
+				} else {
+					result[ obj.operator ] = obj.value;
+				}
+			} );
+		} );
+		result.query = query.trim();
+
+		return result;
+	}
+
+	function matchOperators( str, callback ) {
+		var matches,
+			counter = false,
+			// Add operators for different filters
+			operatorRegex = [ 'language' , 'group' ];
+
+		$.each( operatorRegex, function ( index, value ) {
+			var regex = new RegExp( value + ':(\\S+)', 'i' );
+			if ( ( matches = regex.exec( str ) ) !== null ) {
+				counter = true;
+				callback( {
+					operator: value,
+					value: matches[1]
+				} );
+			}
+		} );
+		if ( !counter ) {
+			callback( false );
 		}
 	}
 
