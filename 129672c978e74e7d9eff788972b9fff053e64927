@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_687ef9ae",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-15T07:25:17Z",
+      "side": 1,
+      "message": "$( \u0027.button\u0027 )",
+      "revId": "129672c978e74e7d9eff788972b9fff053e64927",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_288471a2",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-15T07:25:17Z",
+      "side": 1,
+      "message": "Use only one var statement.\n\nvar x, y,\n   z \u003d b;",
+      "revId": "129672c978e74e7d9eff788972b9fff053e64927",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_8879ddc4",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-15T07:25:17Z",
+      "side": 1,
+      "message": "Please do not use string concatenation to build html.\n\n$( \u0027\u003cinput\u003e\u0027 ).val( value ).prop( \u0027type\u0027, \u0027hidden\u0027 ) ...\n\n\u0027form\u0027 should be more precise selector, now it will apply to all form elements on the page.",
+      "revId": "129672c978e74e7d9eff788972b9fff053e64927",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_e851893b",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-15T07:25:17Z",
+      "side": 1,
+      "message": "space before {",
+      "revId": "129672c978e74e7d9eff788972b9fff053e64927",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_a847017b",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-15T07:25:17Z",
+      "side": 1,
+      "message": "no space before :. You do not need quotes for the keys.",
+      "revId": "129672c978e74e7d9eff788972b9fff053e64927",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_8860fdfc",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-15T07:25:17Z",
+      "side": 1,
+      "message": "} );",
+      "revId": "129672c978e74e7d9eff788972b9fff053e64927",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
