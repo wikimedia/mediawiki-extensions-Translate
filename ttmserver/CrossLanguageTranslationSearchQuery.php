@@ -26,7 +26,7 @@ class CrossLanguageTranslationSearchQuery {
 	public function getDocuments() {
 		$documents = array();
 		$total = $start = 0;
-		$queryString = $this->params['query'];
+		$queryString = $this->params['searchstring'];
 		$offset = $this->params['offset'];
 		$limit = $this->params['limit'];
 		$size = 1000;
