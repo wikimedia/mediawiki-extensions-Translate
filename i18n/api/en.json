@@ -74,8 +74,8 @@
 	"apihelp-translationstash-example-2": "Query the stash",
 	"apihelp-ttmserver-description": "Query suggestions from translation memories.",
 	"apihelp-ttmserver-param-service": "Which of the available translation services to use.",
-	"apihelp-ttmserver-param-sourcelanguage": "A language code of the source text.",
-	"apihelp-ttmserver-param-targetlanguage": "A language code of the suggestion.",
+	"apihelp-ttmserver-param-sourcelanguage": "The language code of the source text.",
+	"apihelp-ttmserver-param-targetlanguage": "The language code of the suggestion.",
 	"apihelp-ttmserver-param-text": "The text to find suggestions for.",
 	"apihelp-ttmserver-example-1": "Get suggestions for translating \"Help\" from English to Finnish"
 }
