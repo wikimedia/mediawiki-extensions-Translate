@@ -86,8 +86,6 @@ $GLOBALS['wgSpecialPages']['MessageGroupStats'] = 'SpecialMessageGroupStats';
 $GLOBALS['wgSpecialPages']['ImportTranslations'] = 'SpecialImportTranslations';
 $GLOBALS['wgSpecialPages']['ManageMessageGroups'] = 'SpecialManageGroups';
 $GLOBALS['wgSpecialPages']['SupportedLanguages'] = 'SpecialSupportedLanguages';
-
-// Unlisted special page; does not need $wgSpecialPageGroups.
 $GLOBALS['wgSpecialPages']['MyLanguage'] = 'SpecialMyLanguage';
 $GLOBALS['wgSpecialPages']['AggregateGroups'] = 'SpecialAggregateGroups';
 $GLOBALS['wgSpecialPages']['SearchTranslations'] = 'SpecialSearchTranslations';

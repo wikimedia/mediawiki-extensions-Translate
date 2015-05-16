@@ -23,7 +23,7 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	protected function getGroupName() {
-		return 'wiki';
+		return 'pagetools';
 	}
 
 	public function execute( $parameters ) {

@@ -46,18 +46,14 @@ class TranslateHooks {
 		global $wgEnablePageTranslation;
 		if ( $wgEnablePageTranslation ) {
 			// Special page and the right to use it
-			global $wgSpecialPages, $wgAvailableRights, $wgSpecialPageGroups;
+			global $wgSpecialPages, $wgAvailableRights;
 			$wgSpecialPages['PageTranslation'] = 'SpecialPageTranslation';
-			$wgSpecialPageGroups['PageTranslation'] = 'pagetools';
 			$wgSpecialPages['PageTranslationDeletePage'] = 'SpecialPageTranslationDeletePage';
-			$wgSpecialPageGroups['PageTranslationDeletePage'] = 'pagetools';
 
 			$wgAvailableRights[] = 'pagetranslation';
 
 			$wgSpecialPages['PageMigration'] = 'SpecialPageMigration';
-			$wgSpecialPageGroups['PageMigration'] = 'wiki';
 			$wgSpecialPages['PagePreparation'] = 'SpecialPagePreparation';
-			$wgSpecialPageGroups['PagePreparation'] = 'wiki';
 
 			global $wgLogActionsHandlers, $wgLogTypes;
 			$wgLogTypes[] = 'pagetranslation';
