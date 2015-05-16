@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"KhangND"
+		]
+	},
+	"apihelp-query+messagegroups-param-depth": "Khi sử dụng định dạng cây, giới hạn chiều cao đến các cấp độ. Giá trị 0 nghĩa là không nhóm con nào được hiển thị. Nếu đạt tới giới hạn, kết quả xuất sẽ bao gồm giá trị \"số nhóm\", tức số lượng con trực tiếp.",
+	"apihelp-ttmserver-param-sourcelanguage": "Mã ngôn ngữ của văn bản nguồn."
+}

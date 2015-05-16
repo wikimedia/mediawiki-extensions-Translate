@@ -56,8 +56,8 @@
 	"apihelp-translationstash-example-2": "Consultar la reserva",
 	"apihelp-ttmserver-description": "Consultar sugerencias de la memoria de traducción.",
 	"apihelp-ttmserver-param-service": "Qué servicios de traducción disponibles usar.",
-	"apihelp-ttmserver-param-sourcelanguage": "Un código de idioma del texto fuente.",
-	"apihelp-ttmserver-param-targetlanguage": "Un código de idioma de la sugerencia.",
+	"apihelp-ttmserver-param-sourcelanguage": "El código de idioma del texto fuente.",
+	"apihelp-ttmserver-param-targetlanguage": "El código de idioma de la sugerencia.",
 	"apihelp-ttmserver-param-text": "El texto para el cual buscar sugerencias.",
 	"apihelp-ttmserver-example-1": "Obtener sugerencias para traducir «Help» del inglés al finés"
 }
