@@ -24,9 +24,13 @@
 	"translate-statsf-scale-hours": "Oeren",
 	"translate-translations-messagename": "Namme:",
 	"translate-translations-project": "Projekt:",
+	"translate-language-code": "Taalkoade",
+	"translate-language-code-field-name": "Taalkoade:",
 	"translate-language": "Taal",
 	"translate-mgs-column-language": "Taal",
 	"supportedlanguages-translators": "{{PLURAL:$2|Oersetter|Oersetters}}: $1",
+	"translate-save": "Bewarje ($1)",
+	"translate-js-save": "Bewarje",
 	"translate-documentation-language": "Berjochtbeskriuwing",
 	"translate-searchprofile": "Oersettings",
 	"translate-gethelp": "Help",
@@ -36,5 +40,6 @@
 	"tux-proofread-edit-label": "Bewurkje",
 	"tux-editor-page-mode": "Side",
 	"tux-editor-doc-editor-cancel": "Annulearje",
+	"tux-editor-close-tooltip": "Slute",
 	"tux-editor-message-tools-history": "Skiednis"
 }

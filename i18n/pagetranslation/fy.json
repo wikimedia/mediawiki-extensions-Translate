@@ -4,9 +4,17 @@
 			"Robin0van0der0vliet"
 		]
 	},
+	"tpt-select-prioritylangs-reason": "Reden:",
 	"tpt-languages-nonzero": "$1 ($2% oerset)",
+	"tpt-discouraged-language-reason": "Reden: $1",
+	"tpt-aggregategroup-save": "Bewarje",
 	"tpt-aggregategroup-new-name": "Namme:",
 	"tpt-aggregategroup-edit-name": "Namme:",
+	"tpt-aggregategroup-update": "Bewarje",
 	"tpt-aggregategroup-update-cancel": "Annulearje",
-	"pm-cancel-button-label": "Annulearje"
+	"pt-movepage-reason": "Reden:",
+	"pt-deletepage-reason": "Reden:",
+	"pm-savepages-button-label": "Bewarje",
+	"pm-cancel-button-label": "Annulearje",
+	"pm-langcode-placeholder": "Taalkoade"
 }

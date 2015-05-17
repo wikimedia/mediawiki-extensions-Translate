@@ -35,7 +35,7 @@
 	"apihelp-query+messagecollection-example-3": "Список на незадолжителни пораки на фински со ознаки за групата страница-Пример",
 	"apihelp-query+messagecollection-example-4": "Повеќе информации за најновите преработки на преводот за групата страница-Пример",
 	"apihelp-query+messagegroups-description": "Дај информации за групите пораки.\n\nИмајте на ум дека параметарот „uselang“ влијае врз јазично-зависните делови.",
-	"apihelp-query+messagegroups-param-depth": "Кога го користите форматот „дрво“, ограничете ја длабочината на олку нивоа. Вредноста 0 значи дека нема да се покажат подгрупи. Ако се достигне границата, ќе се појави порака која ќе го наведе бројот на непосредни подгрупи.",
+	"apihelp-query+messagegroups-param-depth": "Кога го користите форматот „дрво“, ограничете ја длабочината на олку нивоа. Вредноста 0 значи дека нема да се покажат подгрупи. Ако се достигне границата, во изводот ќе има и вредност „groupcount“, која ќе го наведе бројот на непосредни подгрупи.",
 	"apihelp-query+messagegroups-param-filter": "Давај само пораки со назнаки што одговараат на еден или повеќе зададени вносови (не разликува голема/мала буква, одделете со исправени црти, џокер *)",
 	"apihelp-query+messagegroups-param-format": "Во форматот „дрво“, групите пораки можат да постојат на повеќе места во дрвото.",
 	"apihelp-query+messagegroups-param-iconsize": "Претпочитана големина на растеризираната икона на групата.",
@@ -75,8 +75,8 @@
 	"apihelp-translationstash-example-2": "Побарај во складот",
 	"apihelp-ttmserver-description": "Побарај предлози од преводните помнила.",
 	"apihelp-ttmserver-param-service": "Која од расположивите преводни служби да се користи.",
-	"apihelp-ttmserver-param-sourcelanguage": "Јазичен код на изворниот текст.",
-	"apihelp-ttmserver-param-targetlanguage": "Јазичен код на предлогот.",
+	"apihelp-ttmserver-param-sourcelanguage": "Јазичниот код на изворниот текст.",
+	"apihelp-ttmserver-param-targetlanguage": "Јазичниот код на предлогот.",
 	"apihelp-ttmserver-param-text": "За кој текст да се најдат предлози.",
 	"apihelp-ttmserver-example-1": "Дај предлози за преведување на „Help“ од англиски на фински"
 }

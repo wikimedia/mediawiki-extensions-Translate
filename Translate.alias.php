@@ -130,7 +130,7 @@ $specialPageAliases['az'] = array(
 	'Translations' => array( 'Tərcümələr' ),
 );
 
-/** South Azerbaijani (تورکجه) */
+/** South Azerbaijani (تۆرکجه) */
 $specialPageAliases['azb'] = array(
 	'PageTranslation' => array( 'صحیفه_چئویرمه‌سی' ),
 	'Translations' => array( 'چئویرمه‌لر' ),
