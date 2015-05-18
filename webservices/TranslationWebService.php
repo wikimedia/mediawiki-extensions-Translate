@@ -1,10 +1,9 @@
 <?php
 /**
- * Contains code related to webs ervice support.
+ * Contains code related to web service support.
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2010-2013 Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -33,7 +32,7 @@ abstract class TranslationWebService {
 			'microsoft' => 'MicrosoftWebService',
 			'apertium' => 'ApertiumWebService',
 			'yandex' => 'YandexWebService',
-			'ttmserver' => 'RemoteTTMServerWebService',
+			'remote-ttmserver' => 'RemoteTTMServerWebService',
 			'cxserver' => 'CxserverWebService',
 		);
 
@@ -51,69 +50,61 @@ abstract class TranslationWebService {
 	}
 
 	/**
-	 * Do the only supported thing for web services: get a suggestion for
-	 * translation. Prefers source language as input for suggestions.
+	 * Gets the name of this service, for example to display it for the user.
 	 *
-	 * @param array $translations List of all translations listed by language code.
-	 * @param string $sourceLanguage Language code as used by MediaWiki.
-	 * @param string $targetLanguage Language code as used by MediaWiki.
-	 * @return array[] The returned suggestion arrays contain the following keys:
-	 *  - value: the suggestion
-	 *  - language: the language of the suggestion (=$targetLanguage)
-	 *  - source_text: the text used as input for the web service
-	 *  - source_language: the language of the text used as input
-	 *  - service: name of the web service
+	 * @return string Plain text name for this service.
+	 * @since 2014.02
 	 */
-	public function getSuggestions( $translations, $sourceLanguage, $targetLanguage ) {
-		if ( $this->checkTranslationServiceFailure() ) {
-			return array();
-		}
+	public function getName() {
+		return $this->service;
+	}
 
-		$from = $this->mapCode( $sourceLanguage );
-		$to = $this->mapCode( $targetLanguage );
-
+	/**
+	 * Get queries for this service. Queries from multiple services can be
+	 * collected and run asynchronously with QueryAggregator.
+	 *
+	 * @param string $text Source text
+	 * @param string $from Source language
+	 * @param string $to Target language
+	 * @return TranslationQuery[]
+	 * @since 2015.12
+	 */
+	public function getQueries( $text, $from, $to ) {
 		try {
-			$results = array();
-
-			// Try to use the source language when possible.
-			$supported = $this->getSupportedLanguagePairs();
-			if ( isset( $supported[$from][$to] ) && isset( $translations[$from] ) ) {
-				// Delete all the other languages.
-				// Use the unmapped code to avoid double mapping
-				$translations = array( $sourceLanguage => $translations[$from] );
-			}
-
-			// Loop of the the translations we have to see which can be used as source
-			// @todo: Support setting priority of languages like Yandex used to have
-			foreach ( $translations as $language => $text ) {
-				$from = $this->mapCode( $language );
-
-				if ( isset( $supported[$from][$to] ) ) {
-					$sug = $this->doRequest( $text, $from, $to );
-					if ( strval( $sug === '' ) ) {
-						continue;
-					}
-
-					$results[] = array(
-						'target' => $sug,
-						'service' => $this->service,
-						'source_language' => $language,
-						'source' => $text,
-					);
-				}
-
-				if ( count( $results ) >= 3 ) {
-					break;
-				}
-			}
-
-			return $results;
+			return array( $this->getQuery( $text, $from, $to ) );
 		} catch ( Exception $e ) {
-			$this->reportTranslationServiceFailure( $e );
-
+			$this->reportTranslationServiceFailure( $e->getMessage() );
 			return array();
 		}
 	}
+
+	/**
+	 * Get the web service specific response returned by QueryAggregator.
+	 *
+	 * @param TranslationQueryResponse $response
+	 * @return mixed
+	 * @since 2015.12
+	 */
+	public function getResultData( TranslationQueryResponse $response ) {
+		if ( $response->getStatusCode() !== 200 ) {
+			$this->reportTranslationServiceFailure( $response->getStatusMessage() );
+			return array();
+		}
+
+		try {
+			return $this->parseResponse( $response );
+		} catch ( Exception $e ) {
+			$this->reportTranslationServiceFailure( $e->getMessage() );
+			return array();
+		}
+	}
+
+	/**
+	 * Returns the type of this web service.
+	 * @see TranslationAid::getTypes
+	 * @return string
+	 */
+	abstract public function getType();
 
 	/* Service api */
 
@@ -136,14 +127,24 @@ abstract class TranslationWebService {
 	abstract protected function doPairs();
 
 	/**
-	 * Get the suggestion. See getSuggestions for the public method.
+	 * Get the query. See getQueries for the public method.
 	 *
 	 * @param string $text Text to translate.
 	 * @param string $from Language code of the text, as used by the service.
 	 * @param string $to Language code of the translation, as used by the service.
-	 * @return string Translation suggestion.
+	 * @return TranslationQuery
+	 * @since 2015.02
 	 */
-	abstract protected function doRequest( $text, $from, $to );
+	abstract protected function getQuery( $text, $from, $to );
+
+	/**
+	 * Get the response. See getResultData for the public method.
+	 *
+	 * @param TranslationQueryResponse $response
+	 * @return mixed
+	 * @since 2015.02
+	 */
+	abstract protected function parseResponse( TranslationQueryResponse $response );
 
 	/* Default implementation */
 
@@ -160,6 +161,19 @@ abstract class TranslationWebService {
 	protected function __construct( $service, $config ) {
 		$this->service = $service;
 		$this->config = $config;
+	}
+
+	/**
+	 * Test whether given language pair is supported by the service.
+	 *
+	 * @param string $from Source language
+	 * @param string $to Target language
+	 * @return bool
+	 * @since 2015.12
+	 */
+	public function isSupportedLanguagePair( $from, $to ) {
+		$pairs = $this->getSupportedLanguagePairs();
+		return isset( $pairs[$from][$to] );
 	}
 
 	/**
@@ -250,12 +264,9 @@ abstract class TranslationWebService {
 	/**
 	 * Increases the failure count for this service
 	 */
-	protected function reportTranslationServiceFailure( Exception $e ) {
+	protected function reportTranslationServiceFailure( $msg ) {
 		$service = $this->service;
-		wfDebugLog(
-			'translationservices',
-			"Translation service $service problem: " . $e->getMessage()
-		);
+		wfDebugLog( 'translationservices', "Translation service $service problem: $msg" );
 
 		$key = wfMemckey( "translate-service-$service" );
 		$value = wfGetCache( CACHE_ANYTHING )->get( $key );

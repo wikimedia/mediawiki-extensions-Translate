@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2010-2013 Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -15,6 +14,10 @@
  * @since 2013-01-01
  */
 class ApertiumWebService extends TranslationWebService {
+	public function getType() {
+		return 'mt';
+	}
+
 	protected function mapCode( $code ) {
 		return str_replace( '-', '_', wfBCP47( $code ) );
 	}
@@ -38,53 +41,37 @@ class ApertiumWebService extends TranslationWebService {
 		return $pairs;
 	}
 
-	protected function doRequest( $text, $from, $to ) {
-		$service = $this->service;
+	protected function getQuery( $text, $from, $to ) {
+		if ( !isset( $this->config['key'] ) ) {
+			throw new TranslationWebServiceException( 'API key is not set' );
+		}
 
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
 
-		$options = array();
-		$options['timeout'] = $this->config['timeout'];
 		$params = array(
 			'q' => $text,
 			'langpair' => "$from|$to",
 			'x-application' => "Translate " . TRANSLATE_VERSION . ")",
 		);
 
-		if ( $this->config['key'] ) {
-			$params['key'] = $this->config['key'];
-		}
+		return TranslationQuery::factory( $this->config['url'] )
+			->timeout( $this->config['timeout'] )
+			->queryParamaters( $params );
+	}
 
-		$url = $this->config['url'] . '?' . wfArrayToCgi( $params );
-
-		$req = MWHttpRequest::factory( $url, $options );
-		wfProfileIn( 'TranslateWebServiceRequest-' . $this->service );
-		$status = $req->execute();
-		wfProfileOut( 'TranslateWebServiceRequest-' . $this->service );
-
-		if ( !$status->isOK() ) {
-			$error = $req->getContent();
-			// Most likely a timeout or other general error
-			throw new TranslationWebServiceException(
-				"Http::get failed:\n" .
-					"* " . serialize( $error ) . "\n" .
-					"* " . serialize( $status )
-			);
-		}
-
-		$response = FormatJson::decode( $req->getContent() );
+	protected function parseResponse( TranslationQueryResponse $reply ) {
+		$body = $reply->getBody();
+		$response = FormatJson::decode( $body );
 		if ( !is_object( $response ) ) {
-			throw new TranslationWebServiceException( serialize( $req->getContent() ) );
+			throw new TranslationWebServiceException( 'Invalid json: ' . serialize( $body ) );
 		} elseif ( $response->responseStatus !== 200 ) {
-			$error = "(HTTP {$response->responseStatus}) with ($service ($from|$to)): " .
-				$response->responseDetails;
-			throw new TranslationWebServiceException( $error );
+			throw new TranslationWebServiceException( $response->responseDetails );
 		}
 
-		$sug = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
-		$sug = $this->unwrapUntranslatable( $sug );
+		$text = Sanitizer::decodeCharReferences( $response->responseData->translatedText );
+		$text = $this->unwrapUntranslatable( $text );
 
-		return trim( $sug );
+		return trim( $text );
 	}
 }

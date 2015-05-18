@@ -15,20 +15,8 @@
  * @since 2013-01-01
  */
 class RemoteTTMServerWebService extends TranslationWebService {
-	public function getSuggestions( $translations, $from, $to ) {
-		if ( $this->checkTranslationServiceFailure() ) {
-			return array();
-		}
-
-		try {
-			$text = $translations[$from];
-
-			return $this->doRequest( $text, $from, $to );
-		} catch ( Exception $e ) {
-			$this->reportTranslationServiceFailure( $e );
-
-			return array();
-		}
+	public function getType() {
+		return 'ttmserver';
 	}
 
 	protected function mapCode( $code ) {
@@ -39,7 +27,7 @@ class RemoteTTMServerWebService extends TranslationWebService {
 		return null; // Unused
 	}
 
-	protected function doRequest( $text, $from, $to ) {
+	protected function getQuery( $text, $from, $to ) {
 		$params = array(
 			'format' => 'json',
 			'action' => 'ttmserver',
@@ -49,26 +37,16 @@ class RemoteTTMServerWebService extends TranslationWebService {
 			'*', // Because we hate IE
 		);
 
-		$url = $this->config['url'] . '?';
-		$url .= wfArrayToCgi( $params );
-		$req = MWHttpRequest::factory( $url );
-		wfProfileIn( 'TranslateWebServiceRequest-' . $this->service );
-		$status = $req->execute();
-		wfProfileOut( 'TranslateWebServiceRequest-' . $this->service );
-		$response = $req->getContent();
+		return TranslationQuery::factory( $this->config['url'] )
+			->timeout( $this->config['timeout'] )
+			->queryParamaters( $params );
+	}
 
-		if ( !$status->isOK() ) {
-			// Most likely a timeout or other general error
-			throw new TranslationWebServiceException(
-				"Http::get failed:\n" .
-					"* " . serialize( $response ) . "\n" .
-					"* " . serialize( $status )
-			);
-		}
-
-		$parsed = FormatJson::decode( $response, true );
+	protected function parseResponse( TranslationQueryResponse $reply ) {
+		$body = $reply->getBody();
+		$parsed = FormatJson::decode( $body, true );
 		if ( !is_array( $parsed ) ) {
-			throw new TranslationWebServiceException( serialize( $response ) );
+			throw new TranslationWebServiceException( 'Invalid json: ' . serialize( $body ) );
 		}
 
 		if ( !isset( $parsed['ttmserver'] ) ) {

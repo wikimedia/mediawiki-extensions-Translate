@@ -439,7 +439,7 @@ class TranslationHelpers {
 			}
 
 			if ( !$method ) {
-				throw new MWException( __METHOD__ . ": Unsupported type {$config['type']}" );
+				continue;
 			}
 
 			try {
