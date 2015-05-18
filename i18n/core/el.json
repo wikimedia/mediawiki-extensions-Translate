@@ -391,5 +391,7 @@
 	"translate-statsbar-tooltip": "$1% μεταφρασμένα, $2% θεωρημένα",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% μεταφρασμένα, $2% θεωρημένα, $3 παρωχημένα",
 	"translate-search-more-groups-info": "$1 ακόμα {{PLURAL:$1|ομάδα|ομάδες}}",
-	"translate-ulsdep-title": "Σφάλμα ρύθμισης"
+	"translate-ulsdep-title": "Σφάλμα ρύθμισης",
+	"translate-ulsdep-body": "Η επέκταση Μετάφραση εξαρτάται από την [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector επέκταση Καθολικός Επιλογέας Γλώσσας].",
+	"tux-session-expired": "Δεν είστε πια συνδεδεμένος/η. Παρακαλούμε συνδεθείτε σε ξεχωριστή καρτέλα. Εναλλακτικά, δημιουργήστε ένα αντίγραφο των μη αποθηκευμένων μεταφράσεων, συνδεθείτε και επιστρέψετε σε αυτή τη σελίδα."
 }

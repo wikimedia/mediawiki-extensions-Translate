@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tacsipacsi"
+		]
+	},
+	"apihelp-aggregategroups-description": "Összesített üzenetcsoportok kezelése.\n\nHozzá tudsz adni és el tudsz távolítani összesített üzenetcsoportokat, és hozzájuk tudsz adni vagy el tudsz távolítani belőlük üzenetcsoportokat (egyszerre egyet).",
+	"apihelp-aggregategroups-param-do": "Mit csináljon az összesített üzenetcsoporttal.",
+	"apihelp-aggregategroups-param-aggregategroup": "Összesített üzenetcsoport azonosítója.",
+	"apihelp-aggregategroups-param-group": "Üzenetcsoport azonosítója.",
+	"apihelp-aggregategroups-param-groupname": "Összesített üzenetcsoport neve.",
+	"apihelp-aggregategroups-param-groupdescription": "Összesített üzenetcsoport leírása.",
+	"apihelp-aggregategroups-example-1": "Üzenetcsoport hozzáadása",
+	"apihelp-groupreview-param-group": "Üzenetcsoport.",
+	"apihelp-groupreview-param-language": "Nyelvkód.",
+	"apihelp-groupreview-param-state": "A csoport új állapota.",
+	"apihelp-groupreview-example-1": "„group-Example” német nyelven készként jelölése",
+	"apihelp-query+languagestats-param-language": "Nyelvkód.",
+	"apihelp-query+messagecollection-param-group": "Üzenetcsoport.",
+	"apihelp-query+messagecollection-param-language": "Nyelvkód.",
+	"apihelp-query+messagecollection-param-limit": "Mennyi üzenetet mutasson (szűrés után).",
+	"apihelp-query+messagecollection-example-1": "Támogatott nyelvek listája"
+}

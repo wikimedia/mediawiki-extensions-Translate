@@ -19,7 +19,7 @@
 	"apihelp-query+messagegroupstats-param-group": "Nachrichtengruppenkennung.",
 	"apihelp-query+messagetranslations-description": "Ruft alle Übersetzungen für eine einzelne Nachricht ab.",
 	"apihelp-query+messagetranslations-param-title": "Vollständiger Titel einer bekannten Nachricht.",
-	"apihelp-query+messagetranslations-example-1": "Liste der Übersetzungen im Wiki für MediaWiki:January",
+	"apihelp-query+messagetranslations-example-1": "Liste der Übersetzungen im Wiki für „MediaWiki:January“",
 	"apihelp-translatesandbox-param-username": "Benutzername beim Erstellen des Benutzers.",
 	"apihelp-translatesandbox-param-password": "Passwort beim Erstellen des Benutzers.",
 	"apihelp-translatesandbox-param-email": "E-Mail beim Erstellen des Benutzers.",

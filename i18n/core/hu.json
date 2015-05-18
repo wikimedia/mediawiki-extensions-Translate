@@ -92,6 +92,8 @@
 	"translate-checks-links-missing": "A következő {{PLURAL:$2|hivatkozás hiányzik|hivatkozások hiányoznak}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "A következő {{PLURAL:$2|elemet|elemeket}} cseréld le a megfelelőekre:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Az alapértelmezett változatban van <nowiki>{{PLURAL:}}</nowiki> forma, míg a fordításban nincs (magyar nyelv esetén ez nem feltétlenül probléma!).",
+	"translate-checks-plural-forms": "A <nowiki>{{PLURAL:}}</nowiki> $1 formát kapott, de csak $2 forma támogatott (0= és 1= kivételével).",
+	"translate-checks-plural-dupe": "<nowiki>A {{PLURAL:}} dupla formákat kap a végén. A $1 {{PLURAL:$1|kutya|kutya}} $1 kutya formában írandó (és még véletlenül se $1 {{PLURAL:$1|kutya|kutyák}}-ként, az felér a magyar nyelv elpusztításával :)</nowiki><!-- nyafog a smiley: tessék, itt van még egy (-->!)<nowiki>, ha az üzenetben nincs előtte szám, akkor {{PLURAL:$1|kutya|kutya}} helyett {{PLURAL:$1|kutya|kutyák}}, amennyiben máshogy megjelenik szám előtte, akkor {{PLURAL:$1|kutya}} kell.</nowiki>",
 	"translate-checks-pagename": "A névtér nem egyezik meg a definícióval",
 	"translate-checks-format": "A fordítás nem felel meg a definíciónak, vagy érvénytelen a szintaxisa: $1",
 	"translate-checks-escape": "A következő escape-ek valószínűleg véletlenül történtek: <strong>$1</strong>",
