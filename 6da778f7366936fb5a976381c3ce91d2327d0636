@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_dc76b99e",
+        "filename": "webservices/TranslationWebService.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2015-05-18T12:29:45Z",
+      "side": 1,
+      "message": "debug code",
+      "revId": "6da778f7366936fb5a976381c3ce91d2327d0636",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
