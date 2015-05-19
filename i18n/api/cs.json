@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vks"
+		]
+	},
+	"apihelp-query+languagestats-param-language": "Kód jazyka.",
+	"apihelp-query+messagecollection-param-group": "Skupina zpráv.",
+	"apihelp-query+messagecollection-param-language": "Kód jazyka.",
+	"apihelp-translationstash-param-subaction": "Akce.",
+	"apihelp-translationstash-param-metadata": "JSON objekt."
+}

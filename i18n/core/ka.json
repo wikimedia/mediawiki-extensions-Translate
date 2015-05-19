@@ -6,7 +6,8 @@
 			"Malafaya",
 			"Sopho",
 			"Temuri rajavi",
-			"გიორგიმელა"
+			"გიორგიმელა",
+			"Otogi"
 		]
 	},
 	"translate": "თარგმნა",
@@ -221,5 +222,7 @@
 	"tux-message-filter-advanced-button": "გაფართოებული ძიება",
 	"tux-message-filter-optional-messages-label": "არასავალდებულო შეტყობინებები",
 	"tux-empty-list-other": "სათარგმნი არაფერია",
+	"tux-empty-list-other-guide": "თქვენ შეგიძლიათ გადახედოთ არსებულ თარგმანებს",
+	"tux-empty-list-other-action": "თარგმანების გადახედვა",
 	"tux-empty-list-other-link": "ყველა შეტყობინების ჩვენება"
 }

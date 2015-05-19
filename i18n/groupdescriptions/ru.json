@@ -12,7 +12,8 @@
 			"Rubin16",
 			"Lokal Profil",
 			"Максим777",
-			"Macofe"
+			"Macofe",
+			"Otogi"
 		]
 	},
 	"bw-desc-freecol": "Прежде чем переводить FreeCol на ваш язык, пожалуйста, прочтите [[Translating:FreeCol]]. Freecol использует лицензию GPL.",
@@ -37,7 +38,7 @@
 	"translate-group-desc-mathjax": "[[Translating:MathJax|MathJax]] — это кросс-браузерная JavaScript-библиотека, которая отображает математические обозначения в веб-браузерах",
 	"translate-group-desc-mediawiki-core-branch": "Сообщения для стабильной версии [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mediawikiapi": "Эта группа сообщений содержит сообщения, используемые в Action API для текущей альфа-версии [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})",
-	"translate-group-desc-mediawikicore": "Эта группа сообщений содержит сообщения, используемые в текущей альфа-версии MediaWiki ({{CURRENTVERSION}})",
+	"translate-group-desc-mediawikicore": "Эта группа сообщений содержит сообщения, используемые в текущей альфа-версии [[Translating:MediaWiki|MediaWiki]] ({{CURRENTVERSION}})",
 	"translate-group-desc-mediawikiextensions": "Мета-группа сообщений, содержащая все сообщения поддерживаемых расширений MediaWiki",
 	"translate-group-desc-mediawikiskins": "Мета-группа сообщений, содержащая все сообщения поддерживаемых тем оформления для [[Translating:MediaWiki|MediaWiki]]",
 	"translate-group-desc-mediawikimostused": "Эта группа сообщений содержит [https://translatewiki.net/wiki/Most_often_used_messages_in_MediaWiki 500 наиболее часто используемых сообщений] в [[Translating:MediaWiki|MediaWiki]]",

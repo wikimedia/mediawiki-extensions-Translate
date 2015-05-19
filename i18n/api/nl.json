@@ -5,5 +5,10 @@
 			"Siebrand"
 		]
 	},
+	"apihelp-query+messagecollection-example-2": "Lijst met niet-optionele berichtdefinities voor de groep \"page-Example\"",
+	"apihelp-query+messagecollection-example-3": "Lijst met optionele berichten in het Fins met labels voor de groep \"page-Example\"",
+	"apihelp-query+messagecollection-example-4": "Meer informatie over de nieuwste vertaalde versies voor de groep \"page-Example\"",
+	"apihelp-query+messagegroupstats-example-1": "Lijst met vertalingsstatistieken voor de groep \"page-Example\"",
+	"apihelp-query+messagetranslations-example-1": "Lijst met vertalingen in de wiki voor \"MediaWiki:January\"",
 	"apihelp-translationstash-param-metadata": "JSON-object."
 }

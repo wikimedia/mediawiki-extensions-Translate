@@ -86,6 +86,10 @@
 	"tpt-aggregategroup-new-name": "Jméno:",
 	"tpt-aggregategroup-new-description": "Popis (nepovinné):",
 	"tpt-aggregategroup-invalid-group": "Skupina neexistuje",
+	"tpt-aggregategroup-edit-name": "Jméno:",
+	"tpt-aggregategroup-edit-description": "Popis:",
+	"tpt-aggregategroup-update": "Uložit",
+	"tpt-invalid-group": "Neplatná skupina",
 	"log-description-pagetranslation": "Protokol úkonů souvisejících se systémem překladu stránek",
 	"log-name-pagetranslation": "Kniha překladů stránek",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|označil|označila}} stránku $3 k překladu",
@@ -127,5 +131,9 @@
 	"pm-swap-icon-hover-text": "Prohodit s částí níže",
 	"pm-delete-icon-hover-text": "Smazat položku",
 	"tpt-translate-title": "Umožnit překlad názvu stránky",
-	"pp-pagename-missing": "Zadejte prosím název stránky."
+	"pp-prepare-button-label": "Připravit",
+	"pp-save-button-label": "Uložit",
+	"pp-cancel-button-label": "Storno",
+	"pp-pagename-missing": "Zadejte prosím název stránky.",
+	"pp-diff-old-header": "Zdrojový text"
 }

@@ -1,11 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mormegil"
+			"Mormegil",
+			"Vks"
 		]
 	},
 	"tsb-email-promoted-subject": "Na {{grammar:6sg|{{SITENAME}}}} jste teď překladatelem",
 	"tsb-email-rejected-subject": "Vaše žádost stát se překladatelem na {{grammar:6sg|{{SITENAME}}}} byla zamítnuta",
+	"tsb-accept-button-label": "Přijmout",
+	"tsb-reject-button-label": "Odmítnout",
+	"tsb-accept-all-button-label": "Přijmout vše",
+	"tsb-reject-all-button-label": "Odmítnout vše",
+	"tsb-translations-source": "Zdroj",
 	"translationstash": "Vítejte",
 	"translate-translationstash-welcome": "Vítejte, {{GENDER:$1|uživateli|uživatelko}} $1, jste {{GENDER:$1|nový překladatel|nová překladatelka}}",
 	"translate-translationstash-welcome-note": "Seznamte se s překládacími nástroji. Abyste se mohli účastnit oblíbených projektů, přeložte některé zprávy a získejte plná překladatelská oprávnění.",

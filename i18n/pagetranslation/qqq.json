@@ -181,7 +181,7 @@
 	"pm-swap-icon-hover-text": "Hover text for the icon on Special:PageMigration which, when clicked, swaps a unit (text area) with the unit below.",
 	"pm-delete-icon-hover-text": "Hover text for delete unit icon",
 	"pm-pagetitle-invalid": "Error message given when an invalid page title is entered",
-	"pm-summary-import": "Edit summary used while creating translation pages which were imported using Special:PageMigration",
+	"pm-summary-import": "Edit summary used while creating translation pages which were imported using [[Special:PageMigration]], see [[mw:Help:Extension:Translate/Page_translation_administration#Migrating to page translation]]",
 	"tpt-translate-title": "Checkbox on Special:PageTranslation to mark title for translation",
 	"pp-save-summary": "Edit summary for saving a page prepared for translation by the tool",
 	"pagepreparation": "{{doc-special|PageMigration}}",

@@ -127,7 +127,7 @@
 	"action-translate-import": "importowanie tłumaczeń wykonanych offline",
 	"right-translate-messagereview": "Przeglądanie tłumaczeń",
 	"right-translate-groupreview": "Zmiana status przepływu pracy dla grup komunikatów",
-	"translate-rc-translation-filter": "Filtruj tłumaczenia",
+	"translate-rc-translation-filter": "Filtr tłumaczeń:",
 	"translate-rc-translation-filter-no": "nie filtruj",
 	"translate-rc-translation-filter-only": "pokaż tylko tłumaczenia",
 	"translate-rc-translation-filter-filter": "pokaż wszystkie oprócz tłumaczeń",

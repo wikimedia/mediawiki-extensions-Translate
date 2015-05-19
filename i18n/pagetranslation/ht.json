@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Boukman"
+			"Boukman",
+			"Tisave"
 		]
 	},
 	"pagetranslation": "Tradiksyon paj yo",
@@ -41,6 +42,7 @@
 	"translate-tag-hasnew": "Paj sa genyen <span class=\"plainlinks\">[$1 chanjman]</span> ki pa make pou tradui.",
 	"tpt-translation-intro": "Paj sa a, se yon <span class=\"plainlinks\">[$1 vèsyon ki tradui]</span> de paj [[$2]], epi tradiksyon a fèt a $3%.",
 	"tpt-languages-legend": "Lòt lang yo:",
+	"tpt-languages-nonzero": "$1 ($2 tradui)",
 	"tpt-target-page": "Paj sa a, se yon tradiksyon paj [[$1]] epi ou kapab mete a jou tradiksyon an lè ou itilize [$2 zouti tradiksyon an].",
 	"tpt-unknown-page": "Espas non sa a rezève pou tradiksyon paj yo.\nPaj w ap eseye modifye pa sanble koresponn ak yon paj ki make pou tradiksyon.",
 	"tpt-render-summary": "N ap mete ajou pou nou genyen nouvo vèsyon paj sous la.",

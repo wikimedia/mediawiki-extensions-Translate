@@ -2,12 +2,28 @@
 	"@metadata": {
 		"authors": [
 			"Okras",
-			"Kaganer"
+			"Kaganer",
+			"Дмитрий"
 		]
 	},
 	"apihelp-aggregategroups-param-aggregategroup": "ID агрегированной группы сообщений",
 	"apihelp-aggregategroups-param-group": "ID группы сообщений",
+	"apihelp-groupreview-param-group": "Группа сообщений.",
+	"apihelp-groupreview-param-language": "Код языка.",
+	"apihelp-groupreview-param-state": "Новое состояние группы.",
+	"apihelp-query+languagestats-param-language": "Код языка.",
+	"apihelp-query+messagecollection-param-group": "Группа сообщений.",
+	"apihelp-query+messagecollection-param-language": "Код языка.",
+	"apihelp-query+messagecollection-example-1": "Список поддерживаемых языков",
+	"apihelp-query+messagecollection-example-2": "Список обязательных определений сообщений для группы «page-Example»",
+	"apihelp-query+messagecollection-example-3": "Список необязательных сообщений на финском языке с метками для группы «page-Example»",
+	"apihelp-query+messagegroups-example-1": "Показать группы сообщений",
+	"apihelp-query+messagegroupstats-description": "Запросить статистику группы сообщений",
+	"apihelp-query+messagegroupstats-param-group": "ID группы сообщений.",
 	"apihelp-translatesandbox-param-do": "Что делать.",
+	"apihelp-translationreview-description": "Пометить переводы как проверенные.",
 	"apihelp-translationstash-param-subaction": "Действие.",
-	"apihelp-translationstash-param-metadata": "Объект JSON."
+	"apihelp-translationstash-param-translation": "Перевод, сделанный участником.",
+	"apihelp-translationstash-param-metadata": "Объект JSON.",
+	"apihelp-ttmserver-param-sourcelanguage": "Код языка исходного текста."
 }
