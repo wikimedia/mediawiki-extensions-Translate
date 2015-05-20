@@ -4,7 +4,9 @@
 			"محمد أحمد عبد الفتاح"
 		]
 	},
+	"tsb-filter-pending": "الطلبات المعلقة",
 	"tsb-all-languages-button-label": "كل اللغات",
 	"tsb-accept-all-button-label": "اقبل الكل",
-	"tsb-translations-current": "الترجمات الموجودة"
+	"tsb-translations-current": "الترجمات الموجودة",
+	"log-name-translatorsandbox": "ملعب الترجمة"
 }

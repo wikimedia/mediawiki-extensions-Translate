@@ -23,7 +23,7 @@
 	"tpt-nosuchpage": "Page $1 disna exeest",
 	"tpt-oldrevision": "$2 isna the laitest version o the page [[:$1]].\nYinlie laitest versions can be maurkt fer owersetin.",
 	"tpt-notsuitable": "Page $1 isna suitable fer owersetin.\nMak sair that it haes <nowiki><translate></nowiki> tags n haes ae valit syntax.",
-	"tpt-saveok": "The page [[:$1]] haes been maurkt fer owersetin wi $2 {{PLURAL:$2|translation unit|owersetin units}}.\nThe page can nou be <span class=\"plainlinks\">[$3 owerset]</span>.",
+	"tpt-saveok": "The page [[:$1]] haes been maurkt fer owersetin wi $2 {{PLURAL:$2|owersetin unit|owersetin units}}.\nThe page can nou be <span class=\"plainlinks\">[$3 owerset]</span>.",
 	"tpt-offer-notify": "Ye can <span class=\"plainlinks\">[$1 tell owerseters]</span> aneat this page.",
 	"tpt-badsect": "\"$1\" isna ae valit name fer owerset unit $2.",
 	"tpt-showpage-intro": "Ablo new, exeestin n delytit owerset units ar leetit.\nAfore maurkin this version fer owersetin, check that the chynges til owerset units ar wee tae avoid onnecessair wairk fer the owerseters.",

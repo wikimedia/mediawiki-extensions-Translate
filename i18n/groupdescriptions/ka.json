@@ -14,6 +14,7 @@
 	"translate-group-desc-kiwix": "შეტყობინებათა ჯგუფი [[Translating:Kiwix|Kiwix]]-თვის",
 	"translate-group-desc-mantisbt-plugin-core": "ძირითადი პლაგინი [[Translating:MantisBT|MantisBT]]-თვის",
 	"translate-group-desc-mediawiki-core-branch": "შეტყობინებები [[Translating:MediaWiki|მედიავიკის]] სტაბილური ვერსიისათვის",
+	"translate-group-desc-mediawikiapi": "ეს შეტყობინებათა ჯგუფი შეიცავს შეტყობინებებს, რომლებიც გამოიყენება Action API-ში [[Translating:MediaWiki|MediaWiki]]-ის ({{CURRENTVERSION}}) მიმდინარე ალფა-ვერსიისთვის",
 	"translate-group-desc-mediawikicore": "ეს შეტყობინებათა ჯგუფი შეიცავს შეტყობინებებს, რომლებიც გამოიყენება [[Translating:MediaWiki|MediaWiki]]-ის ({{CURRENTVERSION}}) მიმდინარე ალფა-ვერსიაში",
 	"translate-group-desc-mediawikiextensions": "შეტყობინებების მეტა-ჯგუფი, შეიცავს [[Translating:MediaWiki|მედიავიკის]] მხარდაჭერილი გაფართოებების ყველა შეტყობინებას",
 	"translate-group-desc-nodesc": "ამ ჯგუფის შეტყობინებებისათვის აღწერა არ არის ხელმისაწვდომი",
