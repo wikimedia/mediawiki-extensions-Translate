@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"David1010"
+		]
+	},
+	"tsb-filter-pending": "მომლოდინე მოთხოვნები",
+	"tsb-reminder-title-generic": "დაასრულეთ შესავალი რათა გახდეთ მთარგმნელი",
+	"tsb-reminder-sending": "შეხსენება იგზავნება...",
+	"tsb-reminder-sent": "{{PLURAL:$1|გაიგზავნა $1 შეხსენება $2-ზე|გაიგზავნა $1 შეხსენება, ბოლო $2-ზე}}",
+	"tsb-reminder-sent-new": "შეხსენება გაგზავნილია",
+	"tsb-reminder-failed": "შეხსენების გაგზავნა ვერ მოხერხდა",
+	"tsb-email-promoted-subject": "თქვენ ახლა მთარგმნელი ხართ პროექტში „{{SITENAME}}“",
+	"tsb-email-rejected-subject": "თქვენი მთარგმნელის უფლებების მოთხოვნა პროექტისათვის „{{SITENAME}}“ უარყოფილია",
+	"tsb-request-count": "$1 {{PLURAL:$1|მოთხოვნა|მოთხოვნა}}",
+	"tsb-all-languages-button-label": "ყველა ენა",
+	"tsb-search-requests": "მოთხოვნების ძიება",
+	"tsb-accept-button-label": "მიღება",
+	"tsb-reject-button-label": "უარყოფა",
+	"tsb-selected-count": "{{PLURAL:$1|არჩეულია $1 მომხმარებელი|არჩეულია $1 მომხმარებელი}}",
+	"tsb-older-requests": "$1 ძველი {{PLURAL:$1|მოთხოვნა|მოთხოვნა}}",
+	"tsb-accept-all-button-label": "ყველას მიღება",
+	"tsb-reject-all-button-label": "ყველას უარყოფა",
+	"tsb-user-posted-a-comment": "არ არის მთარგმნელი",
+	"tsb-reminder-link-text": "შეხსენების ელ.ფოსტით გაგზავნა",
+	"tsb-didnt-make-any-translations": "ამ მომხმარებელს არცერთი თარგმანი არ შეუსრულებია.",
+	"tsb-translations-source": "წყარო",
+	"tsb-translations-user": "{{GENDER:$1|მომხმარებლის}} თარგმანები",
+	"tsb-translations-current": "არსებული თარგმანები",
+	"translationstash": "მოგესალმებით",
+	"translate-translationstash-welcome": "მოგესალმებით {{GENDER:$1|$1}}, თქვენ ახალი მთარგმნელი ხართ",
+	"translate-translationstash-initialtranslation": "თქვენი თავდაპირველი თარგმანი",
+	"translate-translationstash-translations": "$1 დასრულებული {{PLURAL:$1|თარგმანი|თარგმანი}}",
+	"translate-translationstash-skip-button-label": "სხვა სცადეთ",
+	"tsb-limit-reached-title": "მადლობა თქვენი თარგმანებისთვის",
+	"tsb-no-requests-from-new-users": "ახალი მოხმარებლებისგან მოთხოვნები არ არის",
+	"tsb-create-user-page": "მომხმარებლის საბაზო გვერდის შექმნა"
+}

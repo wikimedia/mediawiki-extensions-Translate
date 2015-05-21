@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Haqmar"
+			"Haqmar",
+			"Рустам Нурыев"
 		]
 	},
+	"tpt-languages-nonzero": "$1 ($2% тәржемә ителгән)",
 	"pt-movepage-list-other": "Башҡа эске биттәр",
 	"pt-movepage-legend": "Тәржемә итеп булған биттәрҙең исемен үҙгәртергә",
 	"pt-movepage-current": "Хәҙерге исеме:",

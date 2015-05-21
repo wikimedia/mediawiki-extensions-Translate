@@ -173,5 +173,6 @@
 	"pm-page-does-not-exist": "$1 وجود ندارد.",
 	"pm-pagetitle-invalid": "لطفا یک عنوان صفحه معتبر وارد کنید",
 	"pm-summary-import": "ترجمه با استفاده از [[Special:PageMigration|مهاجرت صفحه]] وارد شده‌است",
-	"pp-save-button-label": "ذخیره"
+	"pp-save-button-label": "ذخیره",
+	"pp-cancel-button-label": "انصراف"
 }

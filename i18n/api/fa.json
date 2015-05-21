@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Reza1615"
+		]
+	},
+	"apihelp-groupreview-param-group": "گروه پیغام‌ها.",
+	"apihelp-groupreview-param-language": "کد زبان.",
+	"apihelp-query+languagestats-param-language": "کد زبان.",
+	"apihelp-query+messagecollection-param-group": "گروه پیغام‌ها.",
+	"apihelp-query+messagecollection-param-language": "کد زبان.",
+	"apihelp-translationstash-param-subaction": "فعالیت."
+}

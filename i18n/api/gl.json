@@ -33,7 +33,7 @@
 	"apihelp-query+messagecollection-example-3": "Lista de mensaxes opcionais en finlandés con etiquetas para o grupo \"page-Example\"",
 	"apihelp-query+messagecollection-example-4": "Máis información acerca das últimas revisións de tradución para o grupo \"page-Example\"",
 	"apihelp-query+messagegroups-description": "Devolver información sobre grupos de mensaxes.\n\nTeña en conta que o parámetro \"uselang\" afecta á saída das partes dependentes do idioma.",
-	"apihelp-query+messagegroups-param-depth": "Candos se usa o formato en árbore, limitar a profundidade ós seus niveis. O valor 0 indica que non se mostran subgrupos. Se o límite é alcanzado, engádese unha propiedade \"groupcount\" que indica o número de fillos directos.",
+	"apihelp-query+messagegroups-param-depth": "Candos se usa o formato en árbore, limitar a profundidade ós seus niveis. O valor 0 indica que non se mostran subgrupos. Se o límite é alcanzado, a saínda inclúe un valor \"groupcount\" que indica o número de fillos directos.",
 	"apihelp-query+messagegroups-param-filter": "Só devolver mensaxes con identificadores que se correspondan cunha ou máis das entradas indicadas (sen diferenciar maiúsculas e minúsculas, separados por barras verticais, comodín *).",
 	"apihelp-query+messagegroups-param-format": "Nos grupos de mensaxes en forma de árbore poden existir múltiples lugares na árbore.",
 	"apihelp-query+messagegroups-param-iconsize": "Tamaño preferido da icona de grupo rasterizada.",
@@ -69,8 +69,8 @@
 	"apihelp-translationstash-example-2": "Consultar a reserva",
 	"apihelp-ttmserver-description": "Consultar as suxerencias das memorias de tradución.",
 	"apihelp-ttmserver-param-service": "Que servizos de tradución usar, entre os dispoñibles.",
-	"apihelp-ttmserver-param-sourcelanguage": "Código de idioma do texto fonte.",
-	"apihelp-ttmserver-param-targetlanguage": "Código de idioma da suxerencia.",
+	"apihelp-ttmserver-param-sourcelanguage": "O código de idioma do texto fonte.",
+	"apihelp-ttmserver-param-targetlanguage": "O código de idioma da suxerencia.",
 	"apihelp-ttmserver-param-text": "Texto para o cal buscar suxerencias.",
 	"apihelp-ttmserver-example-1": "Obter suxerencias para traducir \"Help\" do inglés ó finés"
 }
