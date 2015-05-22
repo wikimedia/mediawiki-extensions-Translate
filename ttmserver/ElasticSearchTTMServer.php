@@ -295,6 +295,14 @@ GROOVY;
 				array(
 					'number_of_shards' => $this->getShardCount(),
 					'number_of_replicas' => $this->getReplicaCount(),
+					'analysis' => array(
+						'analyzer' => array(
+							'caseSensitiveAnalyzer' => array(
+								'tokenizer' => 'standard',
+								'filter' => array( 'standard', 'stop' )
+							)
+						)
+					)
 				),
 				$rebuild
 			);
@@ -325,7 +333,22 @@ GROOVY;
 			'uri'      => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'language' => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'group'    => array( 'type' => 'string', 'index' => 'not_analyzed' ),
-			'content'  => array( 'type' => 'string', 'index' => 'analyzed', 'term_vector' => 'yes' ),
+			'content'  => array(
+				'type' => 'string',
+				'fields' => array(
+					'content' => array(
+						'type' => 'string',
+						'index' => 'analyzed',
+						'term_vector' => 'yes'
+					),
+					'case_sensitive' => array(
+						'type' => 'string',
+						'index' => 'analyzed',
+						'analyzer' => 'caseSensitiveAnalyzer',
+						'term_vector' => 'yes'
+					)
+				)
+			)
 		) );
 		$mapping->send();
 
@@ -467,7 +490,12 @@ GROOVY;
 		// without language subpage) with exact match only.
 		$serchQuery = new \Elastica\Query\Bool();
 		$contentQuery = new \Elastica\Query\Match();
-		$contentQuery->setFieldQuery( 'content', $queryString );
+		$case = $opts->getValue( 'case' );
+		$contentString = 'content';
+		if ( $case === '1' ) {
+			$contentString = 'content.case_sensitive';
+		}
+		$contentQuery->setFieldQuery( $contentString, $queryString );
 		$serchQuery->addShould( $contentQuery );
 		$messageQuery = new \Elastica\Query\Term();
 		$messageQuery->setTerm( 'localid', $queryString );
@@ -518,7 +546,7 @@ GROOVY;
 		$query->setHighlight( array(
 			// The value must be an object
 			'fields' => array(
-				'content' => array(
+				$contentString => array(
 					'number_of_fragments' => 0,
 				),
 			),
@@ -561,6 +589,8 @@ GROOVY;
 			$hl = $document->getHighlights();
 			if ( isset( $hl['content'][0] ) ) {
 				$data['content'] = $hl['content'][0];
+			} elseif ( isset( $hl['content.case_sensitive'][0] ) ) {
+				$data['content'] = $hl['content.case_sensitive'][0];
 			}
 			$ret[] = $data;
 		}
