@@ -26,5 +26,6 @@
 	"tux-sst-ellipsis-untranslated": "No translation",
 	"tux-sst-ellipsis-outdated": "Outdated translations",
 	"tux-sst-link-all-match": "Require all search words.",
-	"tux-sst-match-message": "Showing translations which match any of the search words. $1"
+	"tux-sst-match-message": "Showing translations which match any of the search words. $1",
+	"tux-sst-case-sensitive": "Case sensitive"
 }
