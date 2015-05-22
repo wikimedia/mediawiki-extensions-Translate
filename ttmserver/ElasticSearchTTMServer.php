@@ -308,6 +308,10 @@ GROOVY;
 							'type' => 'custom',
 							'tokenizer' => 'standard',
 							'filter' => array( 'standard', 'lowercase', 'prefix_filter' )
+						),
+						'casesensitive' => array(
+							'tokenizer' => 'standard',
+							'filter' => array( 'standard' )
 						)
 					)
 				)
@@ -353,6 +357,12 @@ GROOVY;
 						'type' => 'string',
 						'index_analyzer' => 'prefix',
 						'search_analyzer' => 'standard',
+						'term_vector' => 'yes'
+					),
+					'case_sensitive' => array(
+						'type' => 'string',
+						'index' => 'analyzed',
+						'analyzer' => 'casesensitive',
 						'term_vector' => 'yes'
 					)
 				)
@@ -491,16 +501,20 @@ GROOVY;
 	}
 
 	// Parse query string and build the search query
-	protected function parseQueryString( $queryString ) {
+	protected function parseQueryString( $queryString, $opts ) {
 		$fields = $highlights = array();
 		$terms = preg_split( '/\s+/', $queryString );
+		$case = $opts['case'];
 
 		// Map each word in the query string with its corresponding field
 		foreach ( $terms as $term ) {
 			$prefix = strstr( $term, '*', true );
-			// For wildcard search
 			if ( $prefix ) {
+				// For wildcard search
 				$fields['content.prefix_complete'][] = $prefix;
+			} elseif ( $case === '1' ) {
+				// For case sensitive search
+				$fields['content.case_sensitive'][] = $term;
 			} else {
 				$fields['content'][] = $term;
 			}
@@ -534,7 +548,7 @@ GROOVY;
 	public function search( $queryString, $opts, $highlight ) {
 		$query = new \Elastica\Query();
 
-		list( $searchQuery, $highlights ) = $this->parseQueryString( $queryString );
+		list( $searchQuery, $highlights ) = $this->parseQueryString( $queryString, $opts );
 		$query->setQuery( $searchQuery );
 
 		$language = new \Elastica\Facet\Terms( 'language' );
@@ -620,6 +634,8 @@ GROOVY;
 			$hl = $document->getHighlights();
 			if ( isset( $hl['content.prefix_complete'][0] ) ) {
 				$data['content'] = $hl['content.prefix_complete'][0];
+			} elseif ( isset( $hl['content.case_sensitive'][0] ) ) {
+				$data['content'] = $hl['content.case_sensitive'][0];
 			} elseif ( isset( $hl['content'][0] ) ) {
 				$data['content'] = $hl['content'][0];
 			}
