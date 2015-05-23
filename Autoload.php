@@ -68,6 +68,7 @@ $al['ExternalMessageSourceStateComparator'] =
 $al['FCFontFinder'] = "$dir/utils/Font.php";
 $al['FileCachedMessageIndex'] = "$dir/utils/MessageIndex.php";
 $al['FuzzyBot'] = "$dir/utils/FuzzyBot.php";
+$al['HashMessageIndex'] = "$dir/utils/MessageIndex.php";
 $al['HTMLJsSelectToInputField'] = "$dir/utils/HTMLJsSelectToInputField.php";
 $al['JsSelectToInput'] = "$dir/utils/JsSelectToInput.php";
 $al['MessageGroupCache'] = "$dir/utils/MessageGroupCache.php";

@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -19,21 +18,18 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		global $wgHooks, $wgTranslateTranslationServices, $wgTranslateTestTTMServer;
 		$this->setMwGlobals( array(
 			'wgHooks' => $wgHooks,
-			'wgTranslateCC' => array(),
-			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
-			'wgTranslateWorkflowStates' => false,
-			'wgEnablePageTranslation' => false,
-			'wgTranslateGroupFiles' => array(),
 			'wgTranslateTranslationServices' => array(),
 		) );
 		$wgTranslateTranslationServices['TTMServer'] = $wgTranslateTestTTMServer;
 
 		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'addGroups' ) );
-		MessageGroups::clearCache();
-		MessageIndexRebuildJob::newJob()->run();
-		// Also clear the "old" value when running multiple tests together
-		MessageIndexRebuildJob::newJob()->run();
-		self::runJobs();
+
+		$mg = MessageGroups::singleton();
+		$mg->setCache( wfGetCache( 'hash' ) );
+		$mg->recache();
+
+		MessageIndex::setInstance( new HashMessageIndex() );
+		MessageIndex::singleton()->rebuild();
 	}
 
 	public function addGroups( &$list ) {
@@ -144,8 +140,8 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		// And now the messages should be orphaned
 		global $wgHooks;
 		$wgHooks['TranslatePostInitGroups'] = array();
-		MessageGroups::clearCache();
-		MessageIndexRebuildJob::newJob()->run();
+		MessageGroups::singleton()->recache();
+		MessageIndex::singleton()->rebuild();
 		self::runJobs();
 
 		$select = $solarium->createSelect();

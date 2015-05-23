@@ -11,16 +11,14 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 		global $wgHooks;
 		$this->setMwGlobals( array(
 			'wgHooks' => $wgHooks,
-			'wgTranslateCC' => array(),
-			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
-			'wgTranslateWorkflowStates' => false,
-			'wgTranslateGroupFiles' => array(),
 			'wgTranslateTranslationServices' => array(),
 			'wgTranslateMessageNamespaces' => array( NS_MEDIAWIKI ),
 		) );
 		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
-		MessageGroups::clearCache();
-		MessageIndexRebuildJob::newJob()->run();
+
+		$mg = MessageGroups::singleton();
+		$mg->setCache( wfGetCache( 'hash' ) );
+		$mg->recache();
 	}
 
 	public function getTestGroups( &$list ) {

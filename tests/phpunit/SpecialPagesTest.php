@@ -17,11 +17,20 @@ class SpecialPagesTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 
+		global $wgHooks;
 		$this->setMwGlobals( array(
-			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
-			'wgTranslateMessageIndex' => array( 'DatabaseMessageIndex' ),
+			'wgHooks' => $wgHooks,
 			'wgTranslateTranslationServices' => array(),
+			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
 		) );
+		$wgHooks['TranslatePostInitGroups'] = array();
+
+		$mg = MessageGroups::singleton();
+		$mg->setCache( wfGetCache( 'hash' ) );
+		$mg->recache();
+
+		MessageIndex::setInstance( new HashMessageIndex() );
+		MessageIndex::singleton()->rebuild();
 	}
 
 	public static function provideSpecialPages() {
