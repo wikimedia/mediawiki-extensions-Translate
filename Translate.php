@@ -101,7 +101,6 @@ $GLOBALS['wgAPIMetaModules']['messagegroupstats'] = 'ApiQueryMessageGroupStats';
 $GLOBALS['wgAPIMetaModules']['messagetranslations'] = 'ApiQueryMessageTranslations';
 $GLOBALS['wgAPIModules']['aggregategroups'] = 'ApiAggregateGroups';
 $GLOBALS['wgAPIModules']['groupreview'] = 'ApiGroupReview';
-$GLOBALS['wgAPIModules']['hardmessages'] = 'ApiHardMessages';
 $GLOBALS['wgAPIModules']['translatesandbox'] = 'ApiTranslateSandbox';
 $GLOBALS['wgAPIModules']['translateuser'] = 'ApiTranslateUser';
 $GLOBALS['wgAPIModules']['translationaids'] = 'ApiTranslationAids';
@@ -111,7 +110,6 @@ $GLOBALS['wgAPIModules']['ttmserver'] = 'ApiTTMServer';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslationReview::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiGroupReview::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiAggregateGroups::injectTokenFunction';
-$GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiHardMessages::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslateSandbox::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslationStash::injectTokenFunction';
 
