@@ -390,5 +390,5 @@
 	"translate-search-more-groups-info": "$1 more {{PLURAL:$1|group|groups}}",
 	"translate-ulsdep-title": "Configuration error",
 	"translate-ulsdep-body": "Translate extension depends on the [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector extension].",
-	"tux-session-expired": "You are no longer logged in. Please log in in a separate tab. Alternatively, make a copy of unsaved translations, log in and return to this page."
+	"tux-session-expired": "You are no longer logged in. Please log in in a separate tab. Alternatively, make a copy of unsaved translations, log in, return to this page and enter your translations again."
 }
