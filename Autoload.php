@@ -196,7 +196,6 @@ $al['YamlFFS'] = "$dir/ffs/YamlFFS.php";
  */
 $al['ApiAggregateGroups'] = "$dir/api/ApiAggregateGroups.php";
 $al['ApiGroupReview'] = "$dir/api/ApiGroupReview.php";
-$al['ApiHardMessages'] = "$dir/api/ApiHardMessages.php";
 $al['ApiQueryLanguageStats'] = "$dir/api/ApiQueryLanguageStats.php";
 $al['ApiQueryMessageCollection'] = "$dir/api/ApiQueryMessageCollection.php";
 $al['ApiQueryMessageGroupStats'] = "$dir/api/ApiQueryMessageGroupStats.php";
