@@ -12,7 +12,7 @@
 	"tsb-reminder-title-generic": "Complete your introduction to become a translator",
 	"tsb-reminder-content-generic": "Hi $1,\n\nThanks for registering with {{SITENAME}}.\n\nIf you complete your test translations, the administrators will grant you full translation access soon afterwards.\n\nPlease come over and make some more translations here:\n$2\n\n$3,\n{{SITENAME}} staff",
 	"tsb-reminder-sending": "Sending the reminder...",
-	"tsb-reminder-sent": "{{PLURAL:$1|Sent $1 reminder $2|Sent $1 reminders, the last one $2}}",
+	"tsb-reminder-sent": "{{PLURAL:$1|Sent $1 reminder. Time: $2.|Sent $1 reminders. Time of the last one: $2.}}",
 	"tsb-reminder-sent-new": "Sent a reminder",
 	"tsb-reminder-failed": "Sending the reminder failed",
 	"tsb-email-promoted-subject": "You are now a translator at {{SITENAME}}",
