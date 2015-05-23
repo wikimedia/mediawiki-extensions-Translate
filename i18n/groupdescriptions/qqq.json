@@ -4,7 +4,8 @@
 			"Purodha",
 			"Shirayuki",
 			"Liuxinyu970226",
-			"Siebrand"
+			"Siebrand",
+			"Nemo bis"
 		]
 	},
 	"bw-desc-freecol": "{{doc-important|Do not translate the link target <code>Translating:FreeCol</code>.}}",
@@ -28,7 +29,7 @@
 	"translate-group-desc-mediawikiskins": "{{doc-important|Do not translate the link target <code>Translating:MediaWiki</code>.}}",
 	"translate-group-desc-mediawikimostused": "{{doc-important|Do not translate the link target <code>Translating:MediaWiki</code>.}}",
 	"translate-group-desc-mifos": "Do not translate the link target <code>Translating:Mifos</code>.",
-	"translate-group-desc-nfcring-control": "{{doc-important|Do not translate the link target <code>Translating:NFC Ring Control</code>.}}",
+	"translate-group-desc-nfcring-control": "{{doc-important|Do not translate the link target <code>Translating:NFC Ring Control</code>.}}\n----\nNFC tag is jargon for a passive [[w:Near field communication|NFC target]] (an unpowered chip).",
 	"translate-group-desc-nocc": "Do not translate the link target <code>Translating:NOCC</code>.",
 	"translate-group-desc-openimages-all": "Do not translate the link target <code>Translating:Open Images</code>.",
 	"translate-group-desc-potlatch2": "{{doc-important|Do not translate the link target <code>Translating:OpenStreetMap</code>.}}",

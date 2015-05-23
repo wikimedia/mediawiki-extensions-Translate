@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"MIKHEIL"
+			"MIKHEIL",
+			"David1010"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "შეტყობინების ჯგუფის ID.",
+	"apihelp-groupreview-param-group": "შეტყობინების ჯგუფი.",
 	"apihelp-groupreview-param-language": "ენის კოდი.",
 	"apihelp-query+languagestats-param-language": "ენის კოდი.",
 	"apihelp-query+messagecollection-param-group": "შეტყობინების ჯგუფი.",

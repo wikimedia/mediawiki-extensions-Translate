@@ -1,8 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ricordisamoa"
+			"Ricordisamoa",
+			"F. Cosoleto"
 		]
 	},
-	"apihelp-query+messagecollection-example-1": "Elenco delle lingue supportate"
+	"apihelp-query+languagestats-param-language": "Codice lingua.",
+	"apihelp-query+languagestats-example-1": "Elenco delle statistiche di completamento traduzione per il finlandese",
+	"apihelp-query+messagecollection-param-language": "Codice lingua.",
+	"apihelp-query+messagecollection-param-limit": "Il numero di messaggi da visualizzare (dopo applicazione del filtro).",
+	"apihelp-query+messagecollection-example-1": "Elenco delle lingue supportate",
+	"apihelp-query+messagetranslations-param-title": "Titolo completo di un messaggio conosciuto.",
+	"apihelp-translatesandbox-param-do": "Che cosa fare.",
+	"apihelp-translationaids-param-title": "Titolo completo di un messaggio conosciuto.",
+	"apihelp-translationstash-param-subaction": "Azione.",
+	"apihelp-translationstash-param-metadata": "Oggetto JSON.",
+	"apihelp-ttmserver-param-service": "Quale dei disponibili servizi di traduzione usare.",
+	"apihelp-ttmserver-param-sourcelanguage": "Il codice della lingua del testo di partenza.",
+	"apihelp-ttmserver-param-targetlanguage": "Il codice della lingua del suggerimento.",
+	"apihelp-ttmserver-param-text": "Testo per il quale trovare suggerimenti.",
+	"apihelp-ttmserver-example-1": "Ottieni suggerimenti per la traduzione di \"help\" dall'inglese al finlandese"
 }

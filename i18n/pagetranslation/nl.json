@@ -7,7 +7,8 @@
 			"Siebrand",
 			"Southparkfan",
 			"Mar(c)",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Robin0van0der0vliet"
 		]
 	},
 	"pagetranslation": "Paginavertaling",
@@ -174,11 +175,14 @@
 	"pm-langcode-placeholder": "Taalcode",
 	"pm-page-does-not-exist": "$1 bestaat niet",
 	"pm-old-translations-missing": "$1 bevat geen oude vertalingen",
+	"pm-delete-icon-hover-text": "Eenheid verwijderen",
 	"pm-pagetitle-invalid": "Vul een geldige paginatitel in",
 	"tpt-translate-title": "Vertaling van de paginanaam toestaan",
 	"pagepreparation": "Pagina voorbereiden voor vertaling",
 	"pp-prepare-button-label": "Voorbereiden",
 	"pp-save-button-label": "Opslaan",
 	"pp-cancel-button-label": "Annuleren",
-	"pp-pagename-missing": "Voer een paginanaam in."
+	"pp-pagename-missing": "Voer een paginanaam in.",
+	"pp-diff-old-header": "Brontekst",
+	"tpt-unlink-button": "Verwijderen uit vertaling"
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Siebrand"
+			"Siebrand",
+			"Robin0van0der0vliet"
 		]
 	},
 	"searchtranslations": "Vertalingen zoeken",
@@ -16,6 +17,6 @@
 	"tux-sst-nosolr-body": "Deze wiki heeft geen dienst om vertalingen te zoeken.",
 	"tux-sst-solr-offline-title": "Zoeken is niet beschikbaar",
 	"tux-sst-solr-offline-body": "De zoekdienst is tijdelijk niet beschikbaar.",
-	"tux-sst-next": "Volgende resultaten",
-	"tux-sst-prev": "Vorige resultaten"
+	"tux-sst-next": "Volgende ›",
+	"tux-sst-prev": "‹ Vorige"
 }

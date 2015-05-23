@@ -2,13 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"Sjoerddebruin",
-			"Siebrand"
+			"Siebrand",
+			"Robin0van0der0vliet"
 		]
 	},
+	"apihelp-groupreview-param-group": "Berichtgroep.",
+	"apihelp-groupreview-param-language": "Taalcode.",
+	"apihelp-query+languagestats-param-language": "Taalcode.",
+	"apihelp-query+messagecollection-param-group": "Berichtgroep.",
+	"apihelp-query+messagecollection-param-language": "Taalcode.",
 	"apihelp-query+messagecollection-example-2": "Lijst met niet-optionele berichtdefinities voor de groep \"page-Example\"",
 	"apihelp-query+messagecollection-example-3": "Lijst met optionele berichten in het Fins met labels voor de groep \"page-Example\"",
 	"apihelp-query+messagecollection-example-4": "Meer informatie over de nieuwste vertaalde versies voor de groep \"page-Example\"",
 	"apihelp-query+messagegroupstats-example-1": "Lijst met vertalingsstatistieken voor de groep \"page-Example\"",
 	"apihelp-query+messagetranslations-example-1": "Lijst met vertalingen in de wiki voor \"MediaWiki:January\"",
+	"apihelp-translationstash-param-subaction": "Handeling.",
 	"apihelp-translationstash-param-metadata": "JSON-object."
 }

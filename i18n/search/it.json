@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Pippinu"
+			"Pippinu",
+			"F. Cosoleto"
 		]
 	},
 	"searchtranslations": "Ricerca traduzioni",
@@ -17,6 +18,6 @@
 	"tux-sst-nosolr-body": "Questo wiki non ha un servizio di ricerca delle traduzioni.",
 	"tux-sst-solr-offline-title": "Ricerca non disponibile",
 	"tux-sst-solr-offline-body": "Il servizio di ricerca è temporaneamente non disponibile.",
-	"tux-sst-next": "Risultati succesivi",
-	"tux-sst-prev": "Risultati precedenti"
+	"tux-sst-next": "Risultati successivi ›",
+	"tux-sst-prev": "‹ Risultati precedenti"
 }

@@ -195,6 +195,7 @@
 	"pp-pagename-placeholder": "Inserisci il nome della pagina",
 	"pp-prepare-button-label": "Prepara",
 	"pp-save-button-label": "Salva",
+	"pp-cancel-button-label": "Annulla",
 	"pp-save-message": "La pagina è stata salvata. Puoi [$1 modificarla].",
 	"pp-prepare-message": "La pagina è stata preparata per la traduzione. Vedi le differenze di seguito. Clicca \"{{int:pp-save-button-label}}\" se va bene!",
 	"pp-already-prepared-message": "Sembra che la pagina sia stata già preparata per la traduzione. Non ci sono modifiche rispetto alla versione precedente.",

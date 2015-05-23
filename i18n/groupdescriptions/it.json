@@ -6,7 +6,8 @@
 			"Darth Kule",
 			"Gianfranco",
 			"Nemo bis",
-			"Macofe"
+			"Macofe",
+			"F. Cosoleto"
 		]
 	},
 	"bw-desc-freecol": "[[Translating:FreeCol|FreeCol]] è un gioco strategico a turni.",
@@ -25,6 +26,7 @@
 	"translate-group-desc-fuel": "[[Translating:FUEL|FUEL]] rende più consistente la traduzione di software",
 	"translate-group-desc-huggle": "[[Translating:Huggle|Huggle]] è un'applicazione per browser per vedere velocemente i diff, per affrontare gli atti di vandalismo sui progetti Wikimedia",
 	"translate-group-desc-ihris": "Un gruppo di messaggi per [[Translating:iHRIS|iHRIS]]",
+	"translate-group-desc-inaturalist": "[[Translating:INaturalist|iNaturalist]] è un sito per raccontare quello che si vede in natura, incontrare altri appassionati e approfondire altri aspetti del mondo naturale",
 	"translate-group-desc-kiwix": "Un gruppo di messaggi per [[Translating:Kiwix|Kiwix]]",
 	"translate-group-desc-mantisbt-plugin-core": "Un'estensione di [[Translating:MantisBT|MantisBT]]",
 	"translate-group-desc-mathjax": "[[Translating:MathJax|MathJax]] è una libreria JavaScript cross-browser per visualizzare la notazione matematica nei browser web",
