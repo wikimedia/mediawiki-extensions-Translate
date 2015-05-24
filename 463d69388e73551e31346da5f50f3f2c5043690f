@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_a99ee3bb",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-24T14:20:12Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be (new mw.Api()).post( ... )?",
+      "revId": "463d69388e73551e31346da5f50f3f2c5043690f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
