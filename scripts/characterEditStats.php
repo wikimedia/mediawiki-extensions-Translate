@@ -1,6 +1,6 @@
 <?php
 /**
- * Show number of characters translated over a given period of time.
+ * Show number of bytes added to translations over a given period of time.
  *
  * @author Santhosh Thottingal
  * @copyright Copyright 2013 Santhosh Thottingal
@@ -21,7 +21,12 @@ require_once "$IP/maintenance/Maintenance.php";
 class CharacterEditStats extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Script to show number of characters translated .';
+		$this->mDescription = 'Script to count the bytes added ("diff size") '
+			. 'to translations by recent edits. Note that diff size on translation '
+			. 'units may correspond to diff size on translation pages only when the '
+			. 'edit is to an existing translation. Even then, many translations do '
+			. 'not have a one-to-one corresponding edit on the translation page, due '
+			. 'to T47894. Hence we consider only edits to translation unit pages.';
 		$this->addOption(
 			'top',
 			'(optional) Show given number of language codes (default: show all)',
@@ -41,7 +46,10 @@ class CharacterEditStats extends Maintenance {
 		);
 		$this->addOption(
 			'diff',
-			'(optional) Count the edit diffs alone'
+			'(optional) Calculate the difference in size between the recent '
+			. 'revision and the previous one (rc_new_len, rc_old_len). Can '
+			. 'be useful especialy if translation updates are more than new'
+			. 'translations.'
 		);
 		$this->addOption(
 			'ns',
@@ -74,19 +82,35 @@ class CharacterEditStats extends Maintenance {
 
 		// Select set of edits to report on
 
-		// Fetch some extrac fields that normally TranslateUtils::translationChanges wont
-		$extraFields = array( 'rc_old_len', 'rc_new_len' );
-		$rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces, $extraFields );
+		global $wgRCMaxAge;
+		if ( $this->hasOption( 'diff' ) ) {
+			if ( $days * 3600 * 24 > $wgRCMaxAge ) {
+				$this->output( 'NOTE: The selected timestamp is higher than $wgRCMaxAge: '
+					. "only the last $wgRCMaxAge seconds will actually be considered."
+				);
+				$days = $wgRCMaxAge / 24 / 3600;
+			}
+
+			// Fetch some extra fields that normally TranslateUtils::translationChanges won't
+			$extraFields = array( 'rc_old_len', 'rc_new_len' );
+			$length = false;
+		} else {
+			// Fetch the length of new translation units
+			$length = true;
+		}
+
+		$rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces,
+			$extraFields, $length );
 		// Get counts for edits per language code after filtering out edits by FuzzyBot
 		$codes = array();
 
 		foreach ( $rows as $_ ) {
 			// Filter out edits by $wgTranslateFuzzyBotName
-			if ( $_->rc_user_text === $wgTranslateFuzzyBotName ) {
+			if ( $_->user_text === $wgTranslateFuzzyBotName ) {
 				continue;
 			}
 
-			$handle = new MessageHandle( Title::newFromText( $_->rc_title ) );
+			$handle = new MessageHandle( Title::newFromText( $_->title ) );
 			$code = $handle->getCode();
 
 			if ( !isset( $codes[$code] ) ) {
@@ -96,7 +120,7 @@ class CharacterEditStats extends Maintenance {
 			if ( $this->hasOption( 'diff' ) ) {
 				$diff = abs( $_->rc_new_len - $_->rc_old_len );
 			} else {
-				$diff = $_->rc_new_len;
+				$diff = $_->length;
 			}
 			$codes[$code] += $diff;
 		}
