@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_e6c09881",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-05-24T13:06:08Z",
+      "side": 1,
+      "message": "These changes seem unrelated to the bug this is fixing?",
+      "revId": "cafb03df1e365e4580ffb85b9df20334062defee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
