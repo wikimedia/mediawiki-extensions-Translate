@@ -96,9 +96,13 @@ class SpecialTranslate extends SpecialPage {
 				'*'
 			);
 
+			$langCode = this->options['language'];
 			foreach ( $checks as $check ) {
-				if ( isset( $wgTranslateBlacklist[$check][$this->options['language']] ) ) {
-					$reason = $wgTranslateBlacklist[$check][$this->options['language']];
+				if (
+					isset( $wgTranslateBlacklist[$check][$langCode] ) ||
+					$this->group->getSourceLanguageCode() === $langCode
+				) {
+					$reason = $wgTranslateBlacklist[$check][$langCode];
 					$out->addWikiMsg( 'translate-page-disabled', $reason );
 					if ( $isBeta ) {
 						// Close div.ext-translate-container
