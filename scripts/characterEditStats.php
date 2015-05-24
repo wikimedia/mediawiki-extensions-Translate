@@ -74,19 +74,37 @@ class CharacterEditStats extends Maintenance {
 
 		// Select set of edits to report on
 
-		// Fetch some extrac fields that normally TranslateUtils::translationChanges wont
-		$extraFields = array( 'rc_old_len', 'rc_new_len' );
-		$rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces, $extraFields );
+		global $wgRCMaxAge;
+		if ( $this->hasOption( 'diff' ) ) {
+			if ( $days * 3600 * 24 > $wgRCMaxAge ) {
+				$this->output( 'NOTE: The selected timestamp is higher than $wgRCMaxAge: '
+					. "to calculate the diff size, only the last $wgRCMaxAge seconds will "
+					. 'be considered.'
+				);
+				$days = $wgRCMaxAge / 24 / 3600;
+			}
+
+			// Fetch some extra fields that normally TranslateUtils::translationChanges won't
+			$extraFields = array( 'rc_old_len', 'rc_new_len' );
+		}
+		if ( $days * 3600 * 24 > $wgRCMaxAge ) {
+			$t = 'rev';
+		} else {
+			$t = 'rc';
+		}
+
+		$rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces,
+			$extraFields, $translationSize = true );
 		// Get counts for edits per language code after filtering out edits by FuzzyBot
 		$codes = array();
 
 		foreach ( $rows as $_ ) {
 			// Filter out edits by $wgTranslateFuzzyBotName
-			if ( $_->rc_user_text === $wgTranslateFuzzyBotName ) {
+			if ( $_->$t . '_user_text' === $wgTranslateFuzzyBotName ) {
 				continue;
 			}
 
-			$handle = new MessageHandle( Title::newFromText( $_->rc_title ) );
+			$handle = new MessageHandle( Title::newFromText( $_->$t . '_title' ) );
 			$code = $handle->getCode();
 
 			if ( !isset( $codes[$code] ) ) {
@@ -96,7 +114,7 @@ class CharacterEditStats extends Maintenance {
 			if ( $this->hasOption( 'diff' ) ) {
 				$diff = abs( $_->rc_new_len - $_->rc_old_len );
 			} else {
-				$diff = $_->rc_new_len;
+				$diff = $_->translationSize;
 			}
 			$codes[$code] += $diff;
 		}
