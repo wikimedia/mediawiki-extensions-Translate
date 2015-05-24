@@ -202,11 +202,6 @@ $GLOBALS['wgLogTypes'][] = 'translationreview';
 $GLOBALS['wgLogActionsHandlers']['translationreview/message'] = 'TranslateLogFormatter';
 $GLOBALS['wgLogActionsHandlers']['translationreview/group'] = 'TranslateLogFormatter';
 
-$GLOBALS['wgLogTypes'][] = 'translatorsandbox';
-$GLOBALS['wgLogActionsHandlers']['translatorsandbox/promoted'] = 'TranslateLogFormatter';
-$GLOBALS['wgLogActionsHandlers']['translatorsandbox/rejected'] = 'TranslateLogFormatter';
-$GLOBALS['wgLogActionsHandlers']['newusers/tsbpromoted'] = 'LogFormatter';
-
 // New jobs
 $GLOBALS['wgJobClasses']['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
 $GLOBALS['wgJobClasses']['MessageUpdateJob'] = 'MessageUpdateJob';

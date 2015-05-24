@@ -42,6 +42,15 @@ class TranslateHooks {
 			$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
 		}
 
+		// Translator sandbox setup if enabled
+		global $wgTranslateUseSandbox, $wgLogActionsHandlers, $wgLogTypes;
+		if ( $wgTranslateUseSandbox ) {
+			$wgLogTypes[] = 'translatorsandbox';
+			$wgLogActionsHandlers['translatorsandbox/promoted'] = 'TranslateLogFormatter';
+			$wgLogActionsHandlers['translatorsandbox/rejected'] = 'TranslateLogFormatter';
+			$wgLogActionsHandlers['newusers/tsbpromoted'] = 'LogFormatter';
+		}
+
 		// Page translation setup check and init if enabled.
 		global $wgEnablePageTranslation;
 		if ( $wgEnablePageTranslation ) {
