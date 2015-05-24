@@ -188,6 +188,33 @@ class TranslateHooks {
 			// Update translated page when translation unit is moved
 			$wgHooks['TitleMoveComplete'][] = 'PageTranslationHooks::onMoveTranslationUnits';
 		}
+
+		global $wgTranslateUseSandbox;
+		if ( $wgTranslateUseSandbox ) {
+			global $wgSpecialPages, $wgAvailableRights, $wgDefaultUserOptions;
+
+			$wgSpecialPages['ManageTranslatorSandbox'] = 'SpecialManageTranslatorSandbox';
+			$wgSpecialPages['TranslationStash'] = 'SpecialTranslationStash';
+			$wgDefaultUserOptions['translate-sandbox'] = '';
+			// right-translate-sandboxmanage action-translate-sandboxmanage
+			$wgAvailableRights[] = 'translate-sandboxmanage';
+
+			$wgHooks['GetPreferences'][] = 'TranslateSandbox::onGetPreferences';
+			$wgHooks['UserGetRights'][] = 'TranslateSandbox::enforcePermissions';
+			$wgHooks['ApiCheckCanExecute'][] = 'TranslateSandbox::onApiCheckCanExecute';
+
+			global $wgLogTypes, $wgLogActionsHandlers;
+			// log-name-translatorsandbox log-description-translatorsandbox
+			$wgLogTypes[] = 'translatorsandbox';
+			// logentry-translatorsandbox-promoted logentry-translatorsandbox-rejected
+			$wgLogActionsHandlers['translatorsandbox/promoted'] = 'TranslateLogFormatter';
+			$wgLogActionsHandlers['translatorsandbox/rejected'] = 'TranslateLogFormatter';
+			// logentry-newusers-tsbpromoted
+			$wgLogActionsHandlers['newusers/tsbpromoted'] = 'LogFormatter';
+
+			global $wgJobClasses;
+			$wgJobClasses['TranslateSandboxEmailJob'] = 'TranslateSandboxEmailJob';
+		}
 	}
 
 	/**

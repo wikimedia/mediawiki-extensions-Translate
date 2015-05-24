@@ -17,6 +17,9 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 			'wgTranslateUseSandbox' => true,
 			'wgTranslateSandboxPromotedGroup' => 'translator',
 		) );
+
+		// Make sure the hooks are installed even if $wgTranslateUseSandbox is false.
+		TranslateUtils::setupTranslate();
 	}
 
 	public function testAddUser() {
