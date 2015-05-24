@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_23abf21c",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-05-24T12:27:25Z",
+      "side": 1,
+      "message": "\"format\" should be removed because mw.Api expects JSON, and messagetable does not parse JSON.\n\nMessagetable.js expects mw.Api to parse the response, so it should also let mw.Api be in change of choosing the format.",
+      "revId": "af79c9a395894432a01aa64f41df795212349c90",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
