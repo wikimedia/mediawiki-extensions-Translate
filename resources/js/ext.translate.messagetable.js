@@ -41,6 +41,7 @@
 		this.$loaderIcon = this.$loader.find( '.tux-loading-indicator' );
 		this.$loaderInfo = this.$loader.find( '.tux-messagetable-loader-info' );
 		this.$actionBar = this.$container.siblings( '.tux-action-bar' );
+		this.$proofreadOwnTranslations = this.$actionBar.find( '.tux-proofread-own-translations-button' );
 		this.messages = [];
 		this.loading = false;
 		this.init();
@@ -86,6 +87,20 @@
 
 			this.$actionBar.find( 'button.page-mode-button' ).on( 'click', function () {
 				messageTable.switchMode( 'page' );
+			} );
+
+			this.$proofreadOwnTranslations.click( function () {
+				var $this = $( this ),
+					hideMessage = mw.msg( 'tux-editor-proofreading-hide-own-translations' ),
+					showMessage = mw.msg( 'tux-editor-proofreading-show-own-translations' );
+
+				if ( $this.hasClass( 'down' ) ) {
+					messageTable.setHideOwnInProofreading( false );
+					$this.removeClass( 'down' ).text( hideMessage );
+				} else {
+					messageTable.setHideOwnInProofreading( true );
+					$this.addClass( 'down' ).text( showMessage );
+				}
 			} );
 		},
 
@@ -487,6 +502,7 @@
 					$( window ).trigger( 'scroll' );
 				}
 
+				self.updateHideOwnInProofreadingToggleVisibility();
 				self.updateLastMessage();
 			} )
 			.fail( function ( errorCode, response ) {
@@ -529,6 +545,26 @@
 				.addClass( 'mw-ui-button mw-ui-progressive mw-ui-big' )
 				.text( mw.msg( labelMsg ) )
 				.on( 'click', callback );
+		},
+
+		/**
+		 * Enables own message hiding in proofread mode.
+		 */
+		setHideOwnInProofreading: function ( enabled ) {
+			if ( enabled ) {
+				this.$container.addClass( 'tux-hide-own' );
+			} else {
+				this.$container.removeClass( 'tux-hide-own' );
+			}
+		},
+
+		updateHideOwnInProofreadingToggleVisibility: function () {
+			console.log( 'wii', this.$container.find( '.tux-message-proofread.own-translation' ).length );
+			if ( this.$container.find( '.tux-message-proofread.own-translation' ).length ) {
+				this.$proofreadOwnTranslations.removeClass( 'hide' );
+			} else {
+				this.$proofreadOwnTranslations.addClass( 'hide' );
+			}
 		},
 
 		/**
@@ -638,10 +674,9 @@
 				userId = mw.config.get( 'wgUserId' ),
 				$tuxTabUntranslated,
 				$tuxTabUnproofread,
-				$controlOwnButton,
 				$hideTranslatedButton;
 
-			messageTable.$actionBar.find( '.down' ).removeClass( 'down' );
+			messageTable.$actionBar.find( '.tux-view-switcher .down' ).removeClass( 'down' );
 			if ( mode === 'translate' ) {
 				messageTable.$actionBar.find( '.translate-mode-button' ).addClass( 'down' );
 			}
@@ -663,7 +698,6 @@
 
 			$tuxTabUntranslated = $( '.tux-message-selector > .tux-tab-untranslated' );
 			$tuxTabUnproofread = $( '.tux-message-selector > .tux-tab-unproofread' );
-			$controlOwnButton = messageTable.$actionBar.find( '.tux-proofread-own-translations-button' );
 			$hideTranslatedButton = messageTable.$actionBar.find( '.tux-editor-clear-translated' );
 
 			if ( messageTable.mode === 'proofread' ) {
@@ -678,14 +712,13 @@
 					mw.translate.changeFilter( 'translated|!reviewer:' + userId +
 						'|!last-translator:' + userId );
 					$tuxTabUnproofread.addClass( 'selected' );
+					// Own translations are not present in proofread + unreviewed mode
 				}
 
-				$controlOwnButton.removeClass( 'hide' );
 				$hideTranslatedButton.addClass( 'hide' );
 			} else {
 				$tuxTabUntranslated.removeClass( 'hide' );
 				$tuxTabUnproofread.addClass( 'hide' );
-				$controlOwnButton.addClass( 'hide' );
 
 				if ( filter.indexOf( '!translated' ) > -1 ) {
 					$hideTranslatedButton.removeClass( 'hide' );
@@ -711,6 +744,7 @@
 				mw.msg( 'tux-messagetable-loading-messages', this.$loader.data( 'pagesize' ) )
 			);
 
+			messageTable.updateHideOwnInProofreadingToggleVisibility();
 			messageTable.updateLastMessage();
 		},
 

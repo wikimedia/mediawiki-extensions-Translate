@@ -308,22 +308,6 @@
 				$( this ).prop( 'disabled', true );
 			} );
 
-		$controlOwnButton = $translateContainer.find( '.tux-proofread-own-translations-button' );
-		$controlOwnButton.click( function () {
-			var $this = $( this ),
-				ownTranslatedMessages = $translateContainer.find( '.own-translation' ),
-				hideMessage = mw.msg( 'tux-editor-proofreading-hide-own-translations' ),
-				showMessage = mw.msg( 'tux-editor-proofreading-show-own-translations' );
-
-			if ( $this.hasClass( 'down' ) ) {
-				ownTranslatedMessages.removeClass( 'hide' );
-				$this.removeClass( 'down' ).text( hideMessage );
-			} else {
-				ownTranslatedMessages.addClass( 'hide' );
-				$this.addClass( 'down' ).text( showMessage );
-			}
-		} );
-
 		// Message filter click handler
 		$translateContainer.find( '.row.tux-message-selector > li' ).on( 'click', function () {
 			var newFilter,
