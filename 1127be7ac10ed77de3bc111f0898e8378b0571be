@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_667fc864",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-24T12:54:41Z",
+      "side": 1,
+      "message": "As you are declaring these globals unconditionally above, please remove these two.",
+      "revId": "1127be7ac10ed77de3bc111f0898e8378b0571be",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
