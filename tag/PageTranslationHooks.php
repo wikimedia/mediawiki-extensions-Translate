@@ -901,14 +901,17 @@ class PageTranslationHooks {
 	 */
 	static function translateTab( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
-		// Set display title
+
+		$handle = new MessageHandle( $title );
+		$code = $handle->getCode();
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( !$page ) {
 			return true;
 		}
-
-		$handle = new MessageHandle( $title );
-		$code = $handle->getCode();
+		// The source language has a subpage too, but cannot be translated
+		if ( $page->getSourceLanguage() === $code ) {
+			return true;
+		}
 
 		if ( isset( $tabs['views']['edit'] ) ) {
 			$tabs['views']['edit']['text'] = $skin->msg( 'tpt-tab-translate' )->text();
