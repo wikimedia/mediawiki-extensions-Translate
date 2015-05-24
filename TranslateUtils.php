@@ -98,7 +98,8 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Fetches recent changes for titles in given namespaces
+	 * Fetches recent changes for titles in given namespaces.
+	 * Also uses the revision table if the time period is longer than max age.
 	 *
 	 * @param int $hours Number of hours.
 	 * @param bool $bots Should bot edits be included.
@@ -107,12 +108,19 @@ class TranslateUtils {
 	 * @return array List of recent changes.
 	 */
 	public static function translationChanges(
-		$hours = 24, $bots = false, $ns = null, $extraFields = array()
+		$hours = 24, $bots = false, $ns = null, $extraFields = array(), $translationSize = false
 	) {
-		global $wgTranslateMessageNamespaces;
+		global $wgTranslateMessageNamespaces, $wgRCMaxAge;
 
 		$dbr = wfGetDB( DB_SLAVE );
-		$recentchanges = $dbr->tableName( 'recentchanges' );
+		if ( $hours * 3600 <= $wgRCMaxAge ) {
+			$recentchanges = $dbr->tableName( 'recentchanges' );
+			$t = rc;
+		} else {
+			$recentchanges = $dbr->tableName( 'revision' );
+			$t = rev;
+		}
+		
 		$hours = intval( $hours );
 		$cutoff_unixtime = time() - ( $hours * 3600 );
 		$cutoff = $dbr->timestamp( $cutoff_unixtime );
@@ -122,17 +130,25 @@ class TranslateUtils {
 			$namespaces = $dbr->makeList( $ns );
 		}
 
+		if ( $translationSize ) {
+			if ( $t === 'rc' ) {
+				$extraFields[] = 'rc_new_len AS translationSize';
+			} else {
+				$extraFields[] = 'rev_len AS translationSize';
+			}
+		}
+
 		$fields = array_merge(
-			array( 'rc_title', 'rc_timestamp', 'rc_user_text', 'rc_namespace' ),
+			array( $t . '_title', $t . '_timestamp', $t . '_user_text', $t . '_namespace' ),
 			$extraFields
 		);
 		$fields = implode( ',', $fields );
 		// @todo Raw SQL
 		$sql = "SELECT $fields, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
-			"WHERE rc_timestamp >= '{$cutoff}' " .
-			( $bots ? '' : 'AND rc_bot = 0 ' ) .
-			"AND rc_namespace in ($namespaces) " .
-			"ORDER BY lang ASC, rc_timestamp DESC";
+			"WHERE ' . $t . '_timestamp >= '{$cutoff}' " .
+			( $bots && $t === 'rc' ? '' : 'AND ' . $t . '_bot = 0 ' ) .
+			"AND ' . $t . '_namespace in ($namespaces) " .
+			"ORDER BY lang ASC, ' . $t . '_timestamp DESC";
 
 		$res = $dbr->query( $sql, __METHOD__ );
 		$rows = iterator_to_array( $res );
