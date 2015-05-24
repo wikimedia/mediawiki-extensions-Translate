@@ -57,6 +57,7 @@
 	"translate-page-no-such-language": "Shown when someone requests a language that doesn't exists. Examples:\n* Special:LanguageStats, under the selectors [{{FULLURL:Special:LanguageStats|language=ugagaga}}]\n* Special:Translate until 2013, next to the language dropdown [//translatewiki.net/w/i.php?title=Special:Translate&tux=0&group=out-blockly-0-all&language=ugagaga]",
 	"translate-page-no-such-group": "Shown when someone requests a group that doesn't exists. [{{FULLURL:Special:Translate|group=invalidgroup}} Example].",
 	"translate-page-disabled": "Parameters:\n* $1 - reason that the language has been blacklisted",
+	"translate-page-disabled-source": "Possible reason for {{mws-mw|translate-page-disabled}}.\nParameters:\n $1 - language name.",
 	"translate-language-disabled": "Shown when someone requests a blacklisted language. [{{FULLURL:Special:Translate|group=mediawiki&language=zh-tw}} Example].",
 	"translate-page-settings-legend": "{{Identical|Settings}}",
 	"translate-page-group": "{{Identical|Group}}",

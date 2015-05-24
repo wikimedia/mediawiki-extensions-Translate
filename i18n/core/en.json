@@ -26,6 +26,7 @@
 	"translate-page-no-such-language": "Specified language was invalid.",
 	"translate-page-no-such-group": "Specified group was invalid.",
 	"translate-page-disabled": "Translations to this language in this group have been disabled.\nReason:\n\n<em>$1</em>",
+	"translate-page-disabled-source": "$1 is the source language of this page.",
 	"translate-language-disabled": "Translation to this language is disabled.",
 	"translate-page-settings-legend": "Settings",
 	"translate-page-group": "Group",

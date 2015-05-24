@@ -99,6 +99,22 @@ class SpecialTranslate extends SpecialPage {
 		if ( count( $errors ) ) {
 			return;
 		} else {
+			$langCode = $this->options['language'];
+
+			if ( $this->group->getSourceLanguage() === $langCode ) {
+					$langName = TranslateUtils::getLanguageName(
+						$langCode,
+						$this->getLanguage()->getCode()
+					);
+					$reason = $this->msg( 'translate-page-disabled-source', $langName )->plain();
+					$out->addWikiMsg( 'translate-page-disabled', $reason );
+					if ( $isBeta ) {
+						// Close div.ext-translate-container
+						$out->addHTML( Html::closeElement( 'div' ) );
+					}
+					return;
+			}
+
 			$checks = array(
 				$this->options['group'],
 				strtok( $this->options['group'], '-' ),
@@ -106,8 +122,8 @@ class SpecialTranslate extends SpecialPage {
 			);
 
 			foreach ( $checks as $check ) {
-				if ( isset( $wgTranslateBlacklist[$check][$this->options['language']] ) ) {
-					$reason = $wgTranslateBlacklist[$check][$this->options['language']];
+				if ( isset( $wgTranslateBlacklist[$check][$langCode] ) ) {
+					$reason = $wgTranslateBlacklist[$check][$langCode];
 					$out->addWikiMsg( 'translate-page-disabled', $reason );
 					if ( $isBeta ) {
 						// Close div.ext-translate-container
