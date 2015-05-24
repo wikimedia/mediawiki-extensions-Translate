@@ -98,21 +98,30 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Fetches recent changes for titles in given namespaces
+	 * Fetches recent changes for titles in given namespaces.
+	 * Also uses the revision table if the time period is longer than max age.
 	 *
 	 * @param int $hours Number of hours.
-	 * @param bool $bots Should bot edits be included.
+	 * @param bool $bots Whether to include bot edits. Always included with revision table.
 	 * @param null|int[] $ns List of namespace IDs.
 	 * @param string[] $extraFields List of extra columns to fetch.
+	 * @param bool $length Whether to add a length column named "rc_new_len".
 	 * @return array List of recent changes.
 	 */
 	public static function translationChanges(
-		$hours = 24, $bots = false, $ns = null, $extraFields = array()
+		$hours = 24, $bots = false, $ns = null, $extraFields = array(), $length = false
 	) {
-		global $wgTranslateMessageNamespaces;
+		global $wgTranslateMessageNamespaces, $wgRCMaxAge;
 
 		$dbr = wfGetDB( DB_SLAVE );
-		$recentchanges = $dbr->tableName( 'recentchanges' );
+		if ( $hours * 3600 <= $wgRCMaxAge ) {
+			$table = $dbr->tableName( 'recentchanges' );
+			$t = 'rc';
+		} else {
+			$table = $dbr->tableName( 'revision' );
+			$t = 'rev';
+		}
+
 		$hours = intval( $hours );
 		$cutoff_unixtime = time() - ( $hours * 3600 );
 		$cutoff = $dbr->timestamp( $cutoff_unixtime );
@@ -122,19 +131,43 @@ class TranslateUtils {
 			$namespaces = $dbr->makeList( $ns );
 		}
 
-		$fields = array_merge(
-			array( 'rc_title', 'rc_timestamp', 'rc_user_text', 'rc_namespace' ),
-			$extraFields
-		);
-		$fields = implode( ',', $fields );
-		// @todo Raw SQL
-		$sql = "SELECT $fields, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
-			"WHERE rc_timestamp >= '{$cutoff}' " .
-			( $bots ? '' : 'AND rc_bot = 0 ' ) .
-			"AND rc_namespace in ($namespaces) " .
-			"ORDER BY lang ASC, rc_timestamp DESC";
+		if ( $length ) {
+			if ( $t === 'rc' ) {
+				$extraFields[] = 'rc_new_len';
+			} else {
+				$extraFields[] = 'rev_len AS rc_new_len';
+			}
+		}
 
-		$res = $dbr->query( $sql, __METHOD__ );
+		$commonFields = array( "{$t}_timestamp AS rc_timestamp", "{$t}_user_text AS rc_user_text" );
+		$options = "ORDER BY lang ASC, rc_timestamp DESC";
+		$join_conds = "";
+		if ( $t === 'rc' ) {
+			$fields = array_merge(
+				array( "{$t}_title AS rc_title",
+				"{$t}_namespace AS rc_namespace",
+				"substring_index(title, '/', -1) as lang" ),
+				$commonFields,
+				$extraFields
+			);
+			$options = "HAVING rc_timestamp >= '{$cutoff}' " .
+				( $bots && $t === 'rc' ? '' : 'AND rc_bot = 0 ' ) .
+				"AND namespace in ($namespaces) " . $options;
+		} else {
+			$fields = array_merge(
+				array( 'page_title AS rc_title',
+				'page_namespace AS rc_namespace',
+				"substring_index(page_title, '/', -1) as lang" ),
+				$commonFields,
+				$extraFields
+			);
+			$join_conds = "JOIN page ON rev_page = page_id" .
+				"AND rc_namespace in ($namespaces) " .
+				"AND rev_parent_id = 0";
+			$options = "HAVING rc_timestamp >= '{$cutoff}' " . $options;
+		}
+
+		$res = $dbr->select( $table, $fields, $conds, __METHOD__, $options, $join_conds );
 		$rows = iterator_to_array( $res );
 
 		return $rows;
