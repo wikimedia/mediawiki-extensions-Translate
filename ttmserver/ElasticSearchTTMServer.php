@@ -55,11 +55,12 @@ class ElasticSearchTTMServer
 		 */
 		$connection = $this->getClient()->getConnection();
 		$oldTimeout = $connection->getTimeout();
-		$connection->setTimeout( 10 );
+		$connection->setTimeout( 1 );
 
 		$fuzzyQuery = new \Elastica\Query\FuzzyLikeThis();
 		$fuzzyQuery->setLikeText( $text );
 		$fuzzyQuery->addFields( array( 'content' ) );
+		$fuzzyQuery->setMinSimilarity( '0' );
 
 		$groovyScript =
 <<<GROOVY
@@ -84,6 +85,8 @@ GROOVY;
 		// The whole query
 		$query = new \Elastica\Query();
 		$query->setQuery( $boostQuery );
+		//$query->setQuery( $fuzzyQuery );
+		#$query->setParam( 'uga', 'chaga' );
 
 		$languageFilter = new \Elastica\Filter\Term();
 		$languageFilter->setTerm( 'language', $sourceLanguage );
@@ -114,6 +117,7 @@ GROOVY;
 		$contents = $scores = $terms = array();
 		do {
 			$resultset = $this->getType()->search( $query );
+			return;
 
 			if ( count( $resultset ) === 0 ) {
 				break;
