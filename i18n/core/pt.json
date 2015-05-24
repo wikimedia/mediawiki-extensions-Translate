@@ -391,5 +391,5 @@
 	"translate-search-more-groups-info": "mais $1 {{PLURAL:$1|grupo|grupos}}",
 	"translate-ulsdep-title": "Erro de configuração",
 	"translate-ulsdep-body": "A tradução da extensão depende da [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector extensão Seletor Universal de Idiomas].",
-	"tux-session-expired": "Não está mais autenticado. Por favor, inicie a sessão num outro separador. Em alternativa, faça uma cópia das traduções que não foram gravadas, inicie sessão e regresse a esta página."
+	"tux-session-expired": "Não está mais autenticado. Por favor, inicie a sessão num outro separador. Em alternativa, faça uma cópia das traduções que não foram gravadas, inicie sessão e regresse a esta página para inserir as suas traduções novamente."
 }

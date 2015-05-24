@@ -4,8 +4,10 @@
 			"Robin0van0der0vliet"
 		]
 	},
+	"apihelp-groupreview-param-group": "Berjochtgroep.",
 	"apihelp-groupreview-param-language": "Taalkoade.",
 	"apihelp-query+languagestats-param-language": "Taalkoade.",
+	"apihelp-query+messagecollection-param-group": "Berjochtgroep.",
 	"apihelp-query+messagecollection-param-language": "Taalkoade.",
 	"apihelp-translationstash-param-subaction": "Hanneling."
 }

@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"NehalDaveND"
+		]
+	},
+	"tux-sst-edit": "अनुवाद सम्पादित करें",
+	"tux-sst-search": "खोजें",
+	"tux-sst-search-ph": "अनुवाद ढूँढे",
+	"tux-sst-facet-language": "भाषाएँ",
+	"tux-sst-facet-group": "संदेश-समूह",
+	"tux-sst-next": "अग्रिम ›",
+	"tux-sst-prev": "‹ पिछला"
+}

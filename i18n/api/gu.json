@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"NehalDaveND"
+		]
+	},
+	"apihelp-query+messagecollection-param-group": "સંદેશ જૂથો",
+	"apihelp-query+messagecollection-param-language": "ભાષાસંહિતા:",
+	"apihelp-translatesandbox-param-do": "શું કરવું.",
+	"apihelp-translationstash-param-subaction": "ક્રિયા"
+}

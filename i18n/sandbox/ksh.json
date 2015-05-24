@@ -9,7 +9,7 @@
 	"tsb-reminder-title-generic": "Maach Ding Sällefsvörschtällong fäädesch, öm enen beschtääteschten Övversäzzer ze wääde.",
 	"tsb-reminder-content-generic": "Daach $1,\nmer bedangke ons dat De Desch köözlesch {{ucfirst:{{GRAMMAR:em|{{ucfirst:{{SITENAME}}}}}}}} aanjemälldt häs. Wann Do jraad noch e paa Övversäzonge för et Prööve fäädesch määß, künne de Wikki_Kööbeße desch freischallde för et Övversäzze.\n\nBes esu jood un donn Desch op {{GRAMMAR:Dativ|$2}} enlogge un maach e paa Övversäzonge.\n\n$3\nvum Päsonaal {{ucfirst:{{GRAMMAR:gen|{{ucfirst:{{SITENAME}}}}}}}}",
 	"tsb-reminder-sending": "Ben de Äennerong aam schecke&nbsp;&hellip;",
-	"tsb-reminder-sent": "{{PLURAL:$1|Ein Ä'ennerong $2 jeschek|$1 Ä'enneronge jeschek, zerläz $2|Kein Ä'ennerong $2 jeschek}}",
+	"tsb-reminder-sent": "{{PLURAL:$1|Ein Ä'ennerong öm $2 Uhr jeschek|$1 Ä'enneronge jeschek, zerläz öm $2 Uhr|Kein Ä'ennerong öm $2 Uhr jeschek}}.",
 	"tsb-reminder-sent-new": "Han de Äennerong verscheck.",
 	"tsb-reminder-failed": "Han kein Äennerong verscheck. Et hät nit jeflupp.",
 	"tsb-email-promoted-subject": "Do bes jäds_ene Övversäzer em {{SITENAME}}",

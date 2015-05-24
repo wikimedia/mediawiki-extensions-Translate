@@ -14,7 +14,7 @@
 	"apihelp-query+messagecollection-param-group": "Nachrichtengruppe.",
 	"apihelp-query+messagecollection-param-language": "Sprachcode.",
 	"apihelp-query+messagecollection-example-1": "Liste unterstützter Sprachen",
-	"apihelp-query+messagecollection-example-3": "Listet optionale Nachrichten in Finnisch mit Markierungen für die Gruppe page-Example auf",
+	"apihelp-query+messagecollection-example-3": "Listet optionale Nachrichten in Finnisch mit Markierungen für die Gruppe „page-Example“ auf",
 	"apihelp-query+messagegroups-example-1": "Nachrichtengruppen anzeigen",
 	"apihelp-query+messagegroupstats-param-group": "Nachrichtengruppenkennung.",
 	"apihelp-query+messagetranslations-description": "Ruft alle Übersetzungen für eine einzelne Nachricht ab.",
@@ -33,6 +33,6 @@
 	"apihelp-translationstash-param-translation": "Übersetzung erstellt vom Benutzer.",
 	"apihelp-translationstash-param-metadata": "JSON-Objekt.",
 	"apihelp-translationstash-example-1": "Fügt eine Übersetzung zum Übersetzungsspeicher für [[MediaWiki:Jan/fi]] hinzu",
-	"apihelp-ttmserver-param-sourcelanguage": "Ein Sprachcode des Quelltextes.",
+	"apihelp-ttmserver-param-sourcelanguage": "Der Sprachcode des Quelltextes.",
 	"apihelp-ttmserver-param-text": "Der Text, für den Vorschläge gefunden werden sollen."
 }

@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"NehalDaveND"
+		]
+	},
+	"tsb-all-languages-button-label": "सभी भाषाएँ",
+	"tsb-accept-button-label": "स्वीकृत",
+	"tsb-reject-button-label": "अस्वीकृत",
+	"tsb-accept-all-button-label": "सभी स्वीकृत",
+	"tsb-reject-all-button-label": "सभी अस्वीकृत",
+	"tsb-translations-source": "मूल",
+	"translationstash": "स्वागत"
+}

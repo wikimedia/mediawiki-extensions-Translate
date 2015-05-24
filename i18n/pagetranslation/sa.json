@@ -2,9 +2,33 @@
 	"@metadata": {
 		"authors": [
 			"Ansumang",
-			"Shubha"
+			"Shubha",
+			"NehalDaveND"
 		]
 	},
+	"tpt-select-prioritylangs-reason": "कारणम् :",
+	"tpt-languages-legend": "अन्यभाषाः :",
 	"tpt-languages-nonzero": "$1 ($2% अनुवादः जातः)",
-	"pt-movepage-reason": "कारणम् :"
+	"tpt-tab-translate": "अनूद्यताम्",
+	"tpt-discouraged-language-reason": "कारणम् : $1",
+	"tpt-aggregategroup-add": "योज्यताम्",
+	"tpt-aggregategroup-save": "रक्ष्यताम्",
+	"tpt-aggregategroup-new-name": "नाम :",
+	"tpt-aggregategroup-new-description": "विवरणम् (ऐच्छिकम्)",
+	"tpt-aggregategroup-edit-name": "नाम :",
+	"tpt-aggregategroup-edit-description": "वर्णनम् :",
+	"tpt-aggregategroup-update": "रक्ष्यताम्",
+	"tpt-aggregategroup-update-cancel": "निरस्यताम्",
+	"tpt-invalid-group": "अमान्यं दलम्",
+	"pt-movepage-current": "वर्तमानं योजकनाम",
+	"pt-movepage-reason": "कारणम् :",
+	"pt-deletepage-current": "पृष्ठनाम :",
+	"pt-deletepage-reason": "कारणम् :",
+	"pt-deletepage-list-other": "अन्यानि उपपृष्ठानि",
+	"pm-import-button-label": "आयातं करोतु",
+	"pm-savepages-button-label": "रक्ष्यताम्",
+	"pm-cancel-button-label": "निरस्यताम्",
+	"pm-pagename-placeholder": "प्रयोक्तृनाम लिख्यताम्",
+	"pp-save-button-label": "रक्ष्यताम्",
+	"pp-cancel-button-label": "निरस्यताम्"
 }

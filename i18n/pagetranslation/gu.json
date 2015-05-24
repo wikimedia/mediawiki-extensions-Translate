@@ -4,7 +4,8 @@
 			"Ashok modhvadia",
 			"Dsvyas",
 			"KartikMistry",
-			"Arbhatt"
+			"Arbhatt",
+			"NehalDaveND"
 		]
 	},
 	"pagetranslation": "પાનું ભાષાંતરણ",
@@ -30,9 +31,12 @@
 	"tpt-list-nopages": "કોઈ પાનાં ભાષાંતર માટે ચિહ્નિત કરેલા નથી કે ન તો કોઈ પાનું ભાષાંતર માટે ચિહ્નિત થવા માટે તૈયાર છે.",
 	"tpt-new-pages": "{{PLURAL:$1|આ પાના|આ પાનાઓ}} ભાષાંતર ટેગ શાથેનું લખાણ ધરાવે છે, પરંતુ {{PLURAL:$1|આ પાના|આ પાનાઓ}}નું હાલનું સંસ્કરણ ભાષાંતર માટે ચિહ્નિત કરાયેલ નથી.",
 	"tpt-old-pages": "{{PLURAL:$1|આ પાના|આ પાનાં}}નાં કેટલાક સંસ્કરણ ભાષાંતર માટે ચિહ્નિત કરાયેલા છે.",
+	"tpt-select-prioritylangs-reason": "કારણ:",
+	"tpt-rev-encourage": "ફરી સ્થાપિત કરો",
 	"translate-tag-translate-link-desc": "આ પાનાનું ભાષાંતર કરો",
 	"translate-tag-markthis": "આ પાનાંને ભાષાંતર માટે ચિહ્નિત કરો",
 	"tpt-languages-legend": "અન્ય ભાષાઓ:",
 	"tpt-languages-nonzero": "$1 ($2% ભાષાંતરીત)",
+	"tpt-tab-translate": "ભાષાંતર કરો",
 	"tpt-invalid-group": "અયોગ્ય સમૂહ"
 }
