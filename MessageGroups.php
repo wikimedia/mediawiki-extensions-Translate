@@ -130,7 +130,7 @@ class MessageGroups {
 	}
 
 	/// Hook: TranslatePostInitGroups
-	public static function getTranslatablePages( array &$groups, array &$deps, array $autoload ) {
+	public static function getTranslatablePages( array &$groups, array &$deps, array &$autoload ) {
 		global $wgEnablePageTranslation;
 
 		$deps[] = new GlobalDependency( 'wgEnablePageTranslation' );
@@ -156,7 +156,7 @@ class MessageGroups {
 	}
 
 	/// Hook: TranslatePostInitGroups
-	public static function getConfiguredGroups( array &$groups, array &$deps, array $autoload ) {
+	public static function getConfiguredGroups( array &$groups, array &$deps, array &$autoload ) {
 		global $wgTranslateGroupFiles, $wgAutoloadClasses;
 
 		$deps[] = new GlobalDependency( 'wgTranslateGroupFiles' );
@@ -189,7 +189,7 @@ class MessageGroups {
 	}
 
 	/// Hook: TranslatePostInitGroups
-	public static function getWorkflowGroups( array &$groups, array &$deps, array $autoload ) {
+	public static function getWorkflowGroups( array &$groups, array &$deps, array &$autoload ) {
 		global $wgTranslateWorkflowStates;
 
 		$deps[] = new GlobalDependency( 'wgTranslateWorkflowStates' );
@@ -200,12 +200,12 @@ class MessageGroups {
 	}
 
 	/// Hook: TranslatePostInitGroups
-	public static function getAggregateGroups( array &$groups, array &$deps, array $autoload ) {
+	public static function getAggregateGroups( array &$groups, array &$deps, array &$autoload ) {
 		$groups += self::loadAggregateGroups();
 	}
 
 	/// Hook: TranslatePostInitGroups
-	public static function getCCGroups( array &$groups, array &$deps, array $autoload ) {
+	public static function getCCGroups( array &$groups, array &$deps, array &$autoload ) {
 		global $wgTranslateCC;
 
 		$deps[] = new GlobalDependency( 'wgTranslateCC' );
