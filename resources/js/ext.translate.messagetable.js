@@ -669,6 +669,7 @@
 			if ( messageTable.mode === 'proofread' ) {
 				$tuxTabUntranslated.addClass( 'hide' );
 				$tuxTabUnproofread.removeClass( 'hide' );
+				$controlOwnButton.removeClass( 'hide' );
 
 				// Fix the filter if it is untranslated. Untranslated does not make sense
 				// for proofread mode. Keep the filter if it is not 'untranslated'
@@ -678,9 +679,12 @@
 					mw.translate.changeFilter( 'translated|!reviewer:' + userId +
 						'|!last-translator:' + userId );
 					$tuxTabUnproofread.addClass( 'selected' );
+					// Own translations are not present in proofread + unreviewed mode
+					$controlOwnButton.addClass( 'hide' );
+				} else if ( filter.indexOf( '!reviewer' ) >= 0 ) {
+					$controlOwnButton.addClass( 'hide' );
 				}
 
-				$controlOwnButton.removeClass( 'hide' );
 				$hideTranslatedButton.addClass( 'hide' );
 			} else {
 				$tuxTabUntranslated.removeClass( 'hide' );
