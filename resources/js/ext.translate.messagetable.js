@@ -32,7 +32,8 @@
 				mcoffset: offset,
 				mclimit: limit,
 				mcfilter: filter,
-				mcprop: 'definition|translation|tags|properties'
+				mcprop: 'definition|translation|tags|properties',
+				rawcontinue: 1
 			} );
 		},
 
