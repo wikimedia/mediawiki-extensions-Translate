@@ -74,7 +74,7 @@
 				.removeClass( 'hide' );
 
 			// And start loading
-			$loader.trigger( 'appear' );
+			$loader.trigger( 'tux-loader-appear' );
 		}
 	} );
 
@@ -127,14 +127,11 @@
 
 			this.$container.on( 'clear', $.proxy( messageTable.clear, messageTable ) );
 
-			this.$loader.appear( function () {
+			this.$loader.on( 'tux-loader-appear', function () {
 				// Avoid the overlap calls to load()
 				setTimeout( function () {
 					messageTable.load();
 				}, 250 );
-			}, {
-				// Appear callback need to be called more than once.
-				one: false
 			} );
 
 			this.$actionBar.find( 'button.proofread-mode-button' ).on( 'click', function () {
@@ -381,7 +378,7 @@
 				} );
 			}
 
-			this.$loader.trigger( 'appear' );
+			this.$loader.trigger( 'tux-loader-appear' );
 			this.updateLastMessage();
 
 			// Trigger a scroll event for the window to make sure all floating toolbars
