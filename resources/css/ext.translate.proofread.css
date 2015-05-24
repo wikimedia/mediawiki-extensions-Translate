@@ -72,6 +72,10 @@
 	background: #FBFBFB;
 }
 
+.tux-messagelist.tux-hide-own .tux-message-proofread.own-translation {
+	display: none;
+}
+
 .translated-by-self {
 	color: #777;
 	text-align: right;
