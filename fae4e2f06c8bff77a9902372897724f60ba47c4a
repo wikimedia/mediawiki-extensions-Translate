@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_350c8445",
+        "filename": "Resources.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2015-05-25T07:02:07Z",
+      "side": 1,
+      "message": "Redundant with mediawiki.api?",
+      "range": {
+        "startLine": 355,
+        "startChar": 12,
+        "endLine": 355,
+        "endChar": 13
+      },
+      "revId": "fae4e2f06c8bff77a9902372897724f60ba47c4a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
