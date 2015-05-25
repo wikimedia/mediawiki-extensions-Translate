@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_5d54ce56",
+        "filename": "resources/css/ext.translate.special.pagemigration.css",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-25T12:20:15Z",
+      "side": 1,
+      "message": "I have never seen percentages used for margins.\n\nUse px instead?",
+      "revId": "65784ce2cd6d6e1aecf7c7c54e1653cff0bb6305",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_3dd6aac9",
+        "filename": "resources/css/ext.translate.special.pagepreparation.css",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-25T12:20:15Z",
+      "side": 1,
+      "message": "This is no longer exists I think.",
+      "revId": "65784ce2cd6d6e1aecf7c7c54e1653cff0bb6305",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_bde93a80",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-25T12:20:15Z",
+      "side": 1,
+      "message": "Add empty line above.",
+      "revId": "65784ce2cd6d6e1aecf7c7c54e1653cff0bb6305",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_fddfc2d9",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-25T12:20:15Z",
+      "side": 1,
+      "message": "} else {",
+      "revId": "65784ce2cd6d6e1aecf7c7c54e1653cff0bb6305",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_bdb7fa83",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-05-25T12:20:15Z",
+      "side": 1,
+      "message": "Sounds like overtly specific error message for input such as  /de",
+      "revId": "65784ce2cd6d6e1aecf7c7c54e1653cff0bb6305",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
