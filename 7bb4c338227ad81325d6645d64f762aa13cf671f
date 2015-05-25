@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_603245f1",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-05-25T12:36:32Z",
+      "side": 1,
+      "message": "May be better rewritten as:\n\n grouppath \u003d getParameterByName( \u0027grouppath\u0027 ).split( \u0027|\u0027 )[0];\n\nor\n\n grouppath \u003d getParameterByName( \u0027grouppath\u0027 )\n     .split( \u0027|\u0027 )[0];",
+      "revId": "7bb4c338227ad81325d6645d64f762aa13cf671f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_202c3d8f",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-05-25T12:36:32Z",
+      "side": 1,
+      "message": "The query string is accessible as \u0027location.search\u0027. There is no reason to use mw.Uri for that, which does a lot of parsing, decoding. And then calling getQueryString, re-encodes all values, only to then decode them a second time below.\n\nAlso, to access a single parameter, you can use mw.Uri( .. ).query[ name ].\n\nThe first parameter to mw.Uri is optional and defaults to the current location. This has the added benefit of allowing to re-use a cached object.\n\nSimplified version:\n\n var uri \u003d new mw.Uri();\n return uri.query[ name ] || \u0027\u0027;",
+      "revId": "7bb4c338227ad81325d6645d64f762aa13cf671f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
