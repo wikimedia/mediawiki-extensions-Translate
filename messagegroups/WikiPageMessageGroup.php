@@ -61,7 +61,6 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 
 		$defs = array();
 		$prefix = $this->getTitle()->getPrefixedDBKey() . '/';
-		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
 
 		foreach ( $res as $r ) {
 			$section = new TPSection();
