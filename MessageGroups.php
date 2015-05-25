@@ -246,15 +246,8 @@ class MessageGroups {
 	 * @return MessageGroup|null if it doesn't exist.
 	 */
 	public static function getGroup( $id ) {
-		// BC with page| which is now page-
-		$id = strtr( $id, '|', '-' );
-		/* Translatable pages use spaces, but MW occasionally likes to
-		 * normalize spaces to underscores */
-		if ( strpos( $id, 'page-' ) === 0 ) {
-			$id = strtr( $id, '_', ' ' );
-		}
-
 		$groups = self::singleton()->getGroups();
+		$id = self::normalizeId( $id );
 
 		if ( isset( $groups[$id] ) ) {
 			return $groups[$id];
@@ -268,6 +261,28 @@ class MessageGroups {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Fixes id and does aliases resolving.
+	 *
+	 * @param string $id
+	 * @return string
+	 * @since 2016.01
+	 */
+	public static function normalizeId( $id ) {
+		/* Translatable pages use spaces, but MW occasionally likes to
+		 * normalize spaces to underscores */
+		if ( strpos( $id, 'page-' ) === 0 ) {
+			$id = strtr( $id, '_', ' ' );
+		}
+
+		global $wgTranslateGroupAliases;
+		if ( isset( $wgTranslateGroupAliases[$id] ) ) {
+			$id = $wgTranslateGroupAliases[$id];
+		}
+
+		return $id;
 	}
 
 	/**
@@ -326,7 +341,7 @@ class MessageGroups {
 		if ( $group instanceof MessageGroup ) {
 			$id = $group->getId();
 		} else {
-			$id = $group;
+			$id = self::normalizeId( $group );
 		}
 
 		return isset( self::$prioritycache[$id] ) ? self::$prioritycache[$id] : '';
@@ -344,7 +359,7 @@ class MessageGroups {
 		if ( $group instanceof MessageGroup ) {
 			$id = $group->getId();
 		} else {
-			$id = $group;
+			$id = self::normalizeId( $group );
 		}
 
 		self::$prioritycache[$id] = $priority;
@@ -540,6 +555,11 @@ class MessageGroups {
 	 */
 	public static function expandWildcards( $ids ) {
 		$all = array();
+
+		$ids = (array)$ids;
+		foreach ( $ids as $index => $id ) {
+			$ids[$index] = self::normalizeId( $id );
+		}
 
 		$matcher = new StringMatcher( '', (array)$ids );
 		foreach ( self::getAllGroups() as $id => $_ ) {
