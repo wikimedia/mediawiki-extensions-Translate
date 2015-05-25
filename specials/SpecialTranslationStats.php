@@ -846,6 +846,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		$options = array( 'ORDER BY' => 'rc_timestamp' );
 
 		$this->groups = array_filter( array_map( 'trim', explode( ',', $this->opts['group'] ) ) );
+		$this->groups = array_map( 'MessageGroups::normalizeId', $this->groups );
 		$this->codes = array_filter( array_map( 'trim', explode( ',', $this->opts['language'] ) ) );
 
 		$namespaces = self::namespacesFromGroups( $this->groups );
