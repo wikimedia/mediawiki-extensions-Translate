@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Geopoet"
+		]
+	},
+	"apihelp-query+messagecollection-example-2": "Listahan kan bakong opsyonal na mga pakahulugan nin mensahe para sa grupo \"pahina-Ehemplo\"",
+	"apihelp-query+messagecollection-example-3": "Listahan kan opsyonal na mga mensahe sa Finnish na igwang mga marka para sa grupo \"pahina-Ehemplo\"",
+	"apihelp-query+messagecollection-example-4": "Kadagdagan na impormasyon manunungod sa pinakahuring rebisyon sa dinakit-taramon para sa grupo \"pahina-Ehemplo\"",
+	"apihelp-query+messagegroupstats-example-1": "Listahan nin estadistika kan nakumpleto nang dinakit-taramon para sa grupo \"pahina-Ehemplo\"",
+	"apihelp-query+messagetranslations-example-1": "Listahan kan mga dinakit-taramon sa laog kan wiki para sa \"MediaWiki:Enero\""
+}

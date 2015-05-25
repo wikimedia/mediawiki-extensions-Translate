@@ -8,6 +8,7 @@
 	"tsb-filter-pending": "Ufroen am Suspens",
 	"tsb-reminder-title-generic": "Kompletéiert Är Virstellung fir Iwwersetzer ze ginn",
 	"tsb-reminder-sending": "Erënnerung gëtt geschéckt...",
+	"tsb-reminder-sent": "{{PLURAL:$1|Eng Erënnerung geschéckt. Zäit: $2.|$1 Erënnerunge geschéckt. Zäit vun der leschter: $2.}}",
 	"tsb-reminder-sent-new": "Eng Erënnerung schécken",
 	"tsb-reminder-failed": "D'Erënnerung schécken huet net funktionéiert",
 	"tsb-email-promoted-subject": "Dir sidd elo Iwwersetzer op {{SITENAME}}",

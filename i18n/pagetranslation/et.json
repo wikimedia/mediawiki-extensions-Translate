@@ -141,7 +141,7 @@
 	"pm-import-button-label": "Impordi",
 	"pm-savepages-button-label": "Salvesta",
 	"pm-cancel-button-label": "Loobu",
-	"pm-pagename-placeholder": "Sisesta lehe nimetus",
+	"pm-pagename-placeholder": "Sisesta lehekülje pealkiri",
 	"pm-langcode-placeholder": "Keelekood",
 	"pm-pagetitle-invalid": "Palun sisesta korrektne lehekülje pealkiri"
 }

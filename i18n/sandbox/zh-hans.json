@@ -14,7 +14,7 @@
 	"tsb-reminder-title-generic": "填写你的自我介绍，成为一名译者",
 	"tsb-reminder-content-generic": "你好 $1，\n\n感谢你注册{{SITENAME}}。\n\n如果您完成你的测试翻译，我们的管理员将尽快授予您完整的翻译访问权。\n\n来这里做些翻译吧：\n$2\n\n$3，\n{{SITENAME}}员工",
 	"tsb-reminder-sending": "正在发送提醒...",
-	"tsb-reminder-sent": "{{PLURAL:$1|向$1发送$2份提醒}}",
+	"tsb-reminder-sent": "{{PLURAL:$1|已发送$1份提醒。时间：$2。|已发送$1份提醒。最近一次时间：$2。}}",
 	"tsb-reminder-sent-new": "发送提醒",
 	"tsb-reminder-failed": "发送提醒失败",
 	"tsb-email-promoted-subject": "你现在是一名{{SITENAME}}的译者了",

@@ -6,6 +6,10 @@
 			"NehalDaveND"
 		]
 	},
+	"tpt-template": "पृष्ठफलकम्",
+	"tpt-diff-old": "पूर्वतनः पाठः",
+	"tpt-diff-new": "नवीनः पाठः",
+	"tpt-other-pages-title": "सन्धिभग्नानि पृष्ठानि",
 	"tpt-select-prioritylangs-reason": "कारणम् :",
 	"tpt-languages-legend": "अन्यभाषाः :",
 	"tpt-languages-nonzero": "$1 ($2% अनुवादः जातः)",
@@ -21,14 +25,20 @@
 	"tpt-aggregategroup-update-cancel": "निरस्यताम्",
 	"tpt-invalid-group": "अमान्यं दलम्",
 	"pt-movepage-current": "वर्तमानं योजकनाम",
+	"pt-movepage-new": "नवीननाम :",
 	"pt-movepage-reason": "कारणम् :",
+	"pt-deletepage-action-other": "लक्ष्यं परिवर्त्यताम्",
+	"pt-deletepage-lang-legend": "अनुवादपृष्ठम् अपाक्रियताम्",
 	"pt-deletepage-current": "पृष्ठनाम :",
 	"pt-deletepage-reason": "कारणम् :",
+	"pt-deletepage-subpages": "सर्वाणि उपपृष्ठानि अपाक्रियन्ताम्",
+	"pt-deletepage-list-translation": "पृष्ठम् अनुद्यताम्",
 	"pt-deletepage-list-other": "अन्यानि उपपृष्ठानि",
 	"pm-import-button-label": "आयातं करोतु",
 	"pm-savepages-button-label": "रक्ष्यताम्",
 	"pm-cancel-button-label": "निरस्यताम्",
 	"pm-pagename-placeholder": "प्रयोक्तृनाम लिख्यताम्",
+	"pm-langcode-placeholder": "भाषाकूटः",
 	"pp-save-button-label": "रक्ष्यताम्",
 	"pp-cancel-button-label": "निरस्यताम्"
 }

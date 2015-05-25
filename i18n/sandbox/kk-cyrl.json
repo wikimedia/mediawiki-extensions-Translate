@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Arystanbek"
+		]
+	},
+	"tsb-filter-pending": "Күтудегі сұраулар",
+	"tsb-reminder-title-generic": "Аудармашы болу үшін өзіңіз туралу таныстурды енгізуді аяқтаңыз",
+	"tsb-reminder-sent-new": "Еске салуды жіберу",
+	"tsb-reminder-failed": "Еске салуды жіберу сәтсіздікке ұшырады",
+	"tsb-email-promoted-subject": "Сіз қазір {{SITENAME}} сайтында аудармашысыз",
+	"tsb-request-count": "$1 {{PLURAL:$1|сұраным|сұраным}}",
+	"tsb-all-languages-button-label": "Барлық тілдер",
+	"tsb-search-requests": "Іздеусұраныстары",
+	"tsb-accept-button-label": "Қабылдау",
+	"tsb-reject-button-label": "Қайтару",
+	"tsb-selected-count": "{{PLURAL:$1|$1 қатысушы таңдалды|$1 қатысушылар таңдалды}}",
+	"tsb-older-requests": "$1 бұрынғы {{PLURAL:$1|сұраным|сұраным}}",
+	"tsb-accept-all-button-label": "Барлығын қабылдау",
+	"tsb-reject-all-button-label": "Барлығын қайтару",
+	"tsb-user-posted-a-comment": "Аудармашы емес",
+	"tsb-reminder-link-text": "Еске салу электронды хатын жіберу",
+	"tsb-didnt-make-any-translations": "Бұл қатысушы қандайда бір аударма жасаған жоқ.",
+	"tsb-translations-source": "Қайнары",
+	"tsb-translations-user": "{{GENDER:$1|Қатысушы}} аудармалары",
+	"tsb-translations-current": "Бар аудармалар",
+	"translationstash": "Қош келдіңіз!",
+	"translate-translationstash-welcome": "Қош келдіңіз {{GENDER:$1|$1}}, сіз жаңа аудармашысыз",
+	"translate-translationstash-initialtranslation": "Сіздің алғашқы аудармаңыз",
+	"translate-translationstash-translations": "$1 {{PLURAL:$1|аударма|аудармалар}} жасады",
+	"translate-translationstash-skip-button-label": "Басқасын көріңіз",
+	"tsb-limit-reached-title": "Аудармаларыңыз үшін рақмет",
+	"tsb-no-requests-from-new-users": "Жаңа қатысушылардан өтініш жоқ",
+	"tsb-create-user-page": "Негізгі қатысушы бетін бастау",
+	"log-name-translatorsandbox": "Аударма зертханасы",
+	"logentry-translatorsandbox-promoted": "$1 $3 есімді қатысушыны {{GENDER:$4|аудармашы}} дегенге {{GENDER:$2|дәрежесін көтерді}}"
+}

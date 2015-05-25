@@ -5,7 +5,8 @@
 			"Gallaecio",
 			"Toliño",
 			"Xosé",
-			"Fitoschido"
+			"Fitoschido",
+			"Elisardojm"
 		]
 	},
 	"translate": "Traducir",
@@ -386,5 +387,5 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grupo|grupos}} máis",
 	"translate-ulsdep-title": "Erro de configuración",
 	"translate-ulsdep-body": "A extensión de tradución depende da [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector extensión do selector universal de linguas].",
-	"tux-session-expired": "Pechouse a súa sesión. Por favor, acceda ao sistema noutra lapela. Como alternativa, copie as traducións non gardadas, acceda ao sistema e regrese a esta páxina."
+	"tux-session-expired": "Pechouse a súa sesión. Por favor, acceda ao sistema noutra lapela. Como alternativa, copie as traducións non gardadas, acceda ao sistema, regrese a esta páxina e insira as súas traducións de novo."
 }

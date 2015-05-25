@@ -4,5 +4,11 @@
 			"NehalDaveND"
 		]
 	},
+	"apihelp-groupreview-param-group": "सन्देशसमूहः",
+	"apihelp-groupreview-param-language": "भाषाकूटः",
+	"apihelp-query+languagestats-param-language": "भाषाकूटः",
+	"apihelp-query+messagecollection-param-group": "सन्देशसमूहः",
+	"apihelp-query+messagecollection-param-language": "भाषाकूटः",
+	"apihelp-translatesandbox-param-do": "किं करणीयम् ।",
 	"apihelp-translationstash-param-subaction": "क्रिया ।"
 }

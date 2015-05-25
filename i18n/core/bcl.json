@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Filipinayzd"
+			"Filipinayzd",
+			"Geopoet"
 		]
 	},
 	"translate": "Sangliân",
@@ -14,5 +15,6 @@
 	"translate-magic-cm-current": "Presente",
 	"translate-magic-cm-original": "Orihinal",
 	"translate-magic-cm-save": "Itagama",
-	"translate-magic-cm-savefailed": "Bigô an pagtagama"
+	"translate-magic-cm-savefailed": "Bigô an pagtagama",
+	"tux-session-expired": "Ika dae na tabi nakalaog. Pakilaog na sana sa sarong separadong tab. Sa alternatibong paagi, humimo nin sarong kopya kan dae pa natatagamang mga dakit-taramon, maglaog, magbalik sa pahinang ini asin ilaog giraray an saimong dinakit-taramon."
 }

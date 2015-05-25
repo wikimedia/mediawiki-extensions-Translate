@@ -5,8 +5,13 @@
 		]
 	},
 	"tsb-filter-pending": "الطلبات المعلقة",
+	"tsb-email-promoted-subject": "أنت الآن مترجم في {{SITENAME}}",
 	"tsb-all-languages-button-label": "كل اللغات",
+	"tsb-search-requests": "طلبات البحث",
+	"tsb-accept-button-label": "اقبل",
+	"tsb-reject-button-label": "ارفض",
 	"tsb-accept-all-button-label": "اقبل الكل",
 	"tsb-translations-current": "الترجمات الموجودة",
+	"tsb-no-requests-from-new-users": "لا طلبات من المستخدمين الجدد",
 	"log-name-translatorsandbox": "ملعب الترجمة"
 }

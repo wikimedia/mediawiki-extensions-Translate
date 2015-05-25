@@ -12,5 +12,8 @@
 	"tux-sst-facet-group": "مجموعات الرسائل",
 	"tux-sst-facet-orphan": "(يتيمة)",
 	"tux-sst-nosolr-title": "البحث غير متوفر",
-	"tux-sst-solr-offline-title": "البحث غير متوفر"
+	"tux-sst-nosolr-body": "هذا الويكي لا يوفر خدمة البحث في الترجمات.",
+	"tux-sst-solr-offline-title": "البحث غير متوفر",
+	"tux-sst-next": "التالي »",
+	"tux-sst-prev": "« السابق"
 }

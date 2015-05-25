@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Arystanbek"
+		]
+	},
+	"apihelp-query+languagestats-param-language": "Тіл коды",
+	"apihelp-query+messagecollection-param-group": "Хабарлама тобы.",
+	"apihelp-query+messagecollection-param-language": "Тіл коды.",
+	"apihelp-query+messagecollection-param-limit": "Қанша хабарлама көрсету (сүзгілеуден кейін).",
+	"apihelp-query+messagegroups-example-1": "Хабарлама топтарфн көрсету",
+	"apihelp-query+messagegroupstats-param-group": "Хабарлама топ сәйкестендіогіші.",
+	"apihelp-translatesandbox-param-username": "Қатысушы есімі қатысушы бастау кезінде.",
+	"apihelp-translatesandbox-param-password": "Құптя сөз қатысушы пайдалану кезінде.",
+	"apihelp-translatesandbox-param-email": "Е-почта қатысушы бастау кезінде.",
+	"apihelp-translationstash-param-subaction": "Әрекет",
+	"apihelp-translationstash-param-title": "Аударма бірлік бетінің тақырыбы.",
+	"apihelp-translationstash-param-translation": "Қатысушы арқылы жасадған аудармалар.",
+	"apihelp-translationstash-param-metadata": "JSON обьект."
+}

@@ -56,6 +56,8 @@
 	"tpt-tab-translate": "ترجم",
 	"tpt-target-page": "لا يمكن تحديث هذه الصفحة يدويًا.\nهذه الصفحة ترجمة لصفحة [[$1]] ويمكن تحديث الترجمة باستخدام [$2 أداة الترجمة].",
 	"tpt-unknown-page": "هذا النطاق محجوز لترجمات صفحات المحتوى.\nالصفحة التي تحاول تعديلها لا يبدو أنها تتبع أي صفحة معلمة للترجمة.",
+	"tpt-discouraged-language-force-header": "هذه الصفحة لا يمكن ترجمتها إلى $1.",
+	"tpt-discouraged-language-reason": "السبب: $1",
 	"tpt-render-summary": "تحديث لمطابقة نسخة صفحة المصدر الجديدة",
 	"tpt-download-page": "صدّر الصفحة مع الترجمات",
 	"tpt-aggregategroup-add": "أضف",
@@ -90,8 +92,12 @@
 	"pm-pagename-placeholder": "أدخل اسم الصفحة",
 	"pm-langcode-placeholder": "رمز اللغة",
 	"pm-page-does-not-exist": "$1 غير موجودة",
+	"tpt-translate-title": "اسمح بترجمة عنوان الصفحة",
 	"pp-pagename-placeholder": "أدخل اسم الصفحة",
 	"pp-prepare-button-label": "جهز",
 	"pp-save-button-label": "احفظ",
-	"pp-cancel-button-label": "ألغ"
+	"pp-cancel-button-label": "ألغ",
+	"pp-diff-old-header": "نص المصدر",
+	"tpt-unlink-button": "أزل من الترجمة",
+	"tpt-unlink-summary": "إزالة هذه الصفحة من الترجمة"
 }

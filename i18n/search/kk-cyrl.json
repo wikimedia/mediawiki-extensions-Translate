@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Arystanbek"
+		]
+	},
+	"searchtranslations": "Аудармаларды іздеу",
+	"tux-sst-edit": "Аударумаларды өңдеу",
+	"tux-sst-search": "Іздеу",
+	"tux-sst-search-ph": "Аудармаларды іздеу",
+	"tux-sst-count": "{{PLURAL:$1|Бір нәтиже табылды|$1 нәтижк табылды}}",
+	"tux-sst-facet-language": "Тілдер",
+	"tux-sst-facet-group": "Хабарлама топтары",
+	"tux-sst-nosolr-title": "Іздеу қол жетімді емес",
+	"tux-sst-nosolr-body": "Уиикиде аударманы іздеу сервисі жоқ.",
+	"tux-sst-solr-offline-title": "Іздеу қол жетімді емес",
+	"tux-sst-solr-offline-body": "Іздеу сервисі уақытша қол жетімді емес",
+	"tux-sst-next": "Келесі →",
+	"tux-sst-prev": "‹Алдыңғы"
+}

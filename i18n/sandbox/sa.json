@@ -4,5 +4,10 @@
 			"NehalDaveND"
 		]
 	},
+	"tsb-accept-button-label": "स्वीक्रियताम्",
+	"tsb-reject-button-label": "तिरस्क्रियताम्",
+	"tsb-accept-all-button-label": "सर्वं स्वीक्रियताम्",
+	"tsb-reject-all-button-label": "सर्वं तिरस्क्रियताम्",
+	"tsb-translations-source": "स्रोतः",
 	"translationstash": "स्वागतम्"
 }
