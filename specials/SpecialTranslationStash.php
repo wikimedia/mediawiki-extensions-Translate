@@ -200,8 +200,7 @@ HTML
 			}
 		}
 
-		// User has not chosen any valid language. Pick one at random.
-		$codes = array_keys( $supported );
-		return Language::factory( $codes[rand( 0, count( $codes ) - 1 )] );
+		// User has not chosen any valid language. Pick the source.
+		return $source->getCode();
 	}
 }
