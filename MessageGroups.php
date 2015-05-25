@@ -189,6 +189,11 @@ class MessageGroups {
 		}
 		self::init();
 
+		global $wgTranslateGroupAliases;
+		if ( isset $wgTranslateGroupAliases[$id] ) {
+			$id = $wgTranslateGroupAliases[$id];
+		}
+
 		if ( isset( self::$groups[$id] ) ) {
 			if ( is_callable( self::$groups[$id] ) ) {
 				return call_user_func( self::$groups[$id], $id );
