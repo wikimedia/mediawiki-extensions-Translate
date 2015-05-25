@@ -228,6 +228,11 @@ class MessageGroups {
 			$id = strtr( $id, '_', ' ' );
 		}
 
+		global $wgTranslateGroupAliases;
+		if ( isset( $wgTranslateGroupAliases[$id] ) ) {
+			$id = $wgTranslateGroupAliases[$id];
+		}
+
 		$groups = self::singleton()->getGroups();
 
 		if ( isset( $groups[$id] ) ) {
