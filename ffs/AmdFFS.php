@@ -89,8 +89,6 @@ class AmdFFS extends SimpleFFS {
 	 */
 	protected function writeReal( MessageCollection $collection ) {
 		$messages = array();
-		$template = $this->read( $collection->getLanguage() );
-
 		$mangler = $this->group->getMangler();
 
 		/// @var $m ThinMessage
