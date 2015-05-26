@@ -133,7 +133,6 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		# Check rights
 		if (  !$this->userCanExecute( $this->getUser() )  ) {
 			$this->displayRestrictionError();
-			return;
 		}
 
 		if ( $this->title === null ) {
