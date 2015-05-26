@@ -209,6 +209,11 @@
 			var translateEditor = this,
 				$translationTextarea;
 
+			if ( translations.error ) {
+				// Do not proceed if errored/unsupported
+				return;
+			}
+
 			$translationTextarea = this.$editor.find( '.tux-textarea-translation' );
 
 			$.each( translations, function ( index ) {
