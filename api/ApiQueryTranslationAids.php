@@ -55,6 +55,11 @@ class ApiTranslationAids extends ApiBase {
 		// Create list of aids, populate web services queries
 		$aids = array();
 		foreach ( $props as $type ) {
+			// Do not proceed if translation aid is not supported for this message group
+			if ( !isset( $types[$type] ) ){
+				$types[$type] = 'UnsupportedTranslationAid';
+			}
+
 			$class = $types[$type];
 			$obj = new $class( $group, $handle, $this );
 
