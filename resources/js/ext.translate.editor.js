@@ -113,7 +113,6 @@
 			this.markUnsaved( 'tux-warning' );
 		},
 
-
 		/**
 		 * Mark the message as no longer unsaved
 		 */

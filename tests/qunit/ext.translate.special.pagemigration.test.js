@@ -98,5 +98,4 @@
 		translationUnits2 = mw.translate.alignHeaders( sourceUnits, translationUnits2 );
 		assert.deepEqual( translationUnits2, result2, 'h2 headers aligned with merging' );
 	} );
-
 }( jQuery, mediaWiki ) );

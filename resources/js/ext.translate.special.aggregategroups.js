@@ -148,7 +148,7 @@
 	$( document ).ready( function () {
 		var excludeFunction, autocompleteFunction,
 			api = new mw.Api(),
-			exclude = [], resp, groups=[],
+			exclude = [], resp, groups = [],
 			$input = $( '.tp-group-input' );
 
 		excludeFunction = function( event ) {
@@ -295,7 +295,6 @@
 
 				$div.data( 'groupid', aggregateGroupId );
 				$div.data( 'id', aggregateGroupId );
-
 
 				$groupSelector = $( '<input>' ).attr( {
 					'type': 'text'  ,
