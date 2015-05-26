@@ -235,7 +235,7 @@
 					),
 					$( '<span>' )
 						.addClass( 'facet-count ' + selectedClass )
-						.text( group.count )
+						.text( mw.language.convertNumber( group.count ) )
 				);
 			$parent.append( $groupRow );
 			if ( group.groups && level < 2 ) {
@@ -281,6 +281,7 @@
 			groups = $.map( resultGroups, function ( value, index ) {
 				return index;
 			} );
+			groups.sort( sortGroups );
 			$grouSelectorTrigger.msggroupselector(
 				options,
 				groups
@@ -289,10 +290,16 @@
 	}
 
 	function sortGroups( groupIdA, groupIdB ) {
-		var groupAName = mw.translate.findGroup( groupIdA, resultGroups ).label,
-			groupBName = mw.translate.findGroup( groupIdB, resultGroups ).label;
+		var groupAName = mw.translate.findGroup( groupIdA, resultGroups ).count,
+			groupBName = mw.translate.findGroup( groupIdB, resultGroups ).count;
 
-		return groupAName.localeCompare( groupBName );
+		if ( groupAName > groupBName ) {
+			return -1;
+		} else if ( groupAName < groupBName ) {
+			return 1;
+		}
+
+		return 0;
 	}
 
 	function sortLanguages( languageA, languageB ) {
