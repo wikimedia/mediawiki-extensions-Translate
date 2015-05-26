@@ -265,11 +265,10 @@ class SpecialSearchTranslations extends SpecialPage {
 			}
 
 			$value = isset( $counts[$id] ) ? $counts[$id] : 0;
-			$count = $this->getLanguage()->formatNum( $value );
 
 			$output[$id] = array(
 				'id' => $id,
-				'count' => $count,
+				'count' => $value,
 				'label' => $group->getLabel(),
 			);
 
