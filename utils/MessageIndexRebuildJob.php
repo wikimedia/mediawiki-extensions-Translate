@@ -43,11 +43,9 @@ class MessageIndexRebuildJob extends Job {
 	public function insert() {
 		global $wgTranslateDelayedMessageIndexRebuild;
 		if ( $wgTranslateDelayedMessageIndexRebuild ) {
-			return JobQueueGroup::singleton()->push( $this );
+			JobQueueGroup::singleton()->push( $this );
 		} else {
 			$this->run();
-
-			return true;
 		}
 	}
 }
