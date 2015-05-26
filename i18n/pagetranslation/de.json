@@ -40,7 +40,7 @@
 	"tpt-badsect": "„$1“ ist kein gültiger Name für Übersetzungseinheit $2.",
 	"tpt-showpage-intro": "Untenstehend sind neue, vorhandene und gelöschte Übersetzungseinheiten aufgelistet.\nBevor du diese Version zur Übersetzung freigibst, stelle bitte sicher, dass die Änderungen an den Übersetzungseinheiten minimal sind. Damit verhinderst du unnötige Arbeit für die Übersetzer.",
 	"tpt-mark-summary": "Diese Seite wurde zum Übersetzen freigegeben",
-	"tpt-mark-nochanges": "Es gibt keinen Unterschied zwischen dieser Version und der zuletzt markierten Version.",
+	"tpt-mark-nochanges": "Es gibt keine Änderungen zum Überprüfen. Das Markieren dieser Seite zur Übersetzung wird weder die Seite noch eine vorhandene Übersetzungseinheit bearbeiten.",
 	"tpt-edit-failed": "Seite kann nicht aktualisiert werden: $1",
 	"tpt-duplicate": "Der Übersetzungseinheitname $1 wird mehr als einmal verwendet.",
 	"tpt-already-marked": "Die letzte Version dieser Seite wurde bereits zum Übersetzen freigegeben.",

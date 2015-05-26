@@ -32,7 +32,7 @@
 	"tpt-badsect": "\"$1\" non é un nome válido para a unidade de tradución $2.",
 	"tpt-showpage-intro": "A continuación están listadas as unidades de tradución novas, existentes e borradas.\nAntes de marcar esta versión para ser traducida, comprobe que as modificacións feitas ás unidades de tradución foron minimizadas para evitarlles traballo innecesario aos tradutores.",
 	"tpt-mark-summary": "Marcou esta versión para ser traducida",
-	"tpt-mark-nochanges": "Non hai ningunha diferenza entre esta revisión e a última revisión marcada.",
+	"tpt-mark-nochanges": "Non hai cambios para revisar. Marcando esta páxina para tradución non editará a páxina nen nengunha unidade de tradución existente.",
 	"tpt-edit-failed": "Non se puido actualizar a páxina: $1",
 	"tpt-duplicate": "O nome da unidade de tradución \"$1\" úsase máis dunha vez.",
 	"tpt-already-marked": "A última versión desta páxina xa foi marcada para ser traducida.",

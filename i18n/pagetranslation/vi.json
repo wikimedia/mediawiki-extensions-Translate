@@ -31,7 +31,7 @@
 	"tpt-badsect": "“$1” không phải là tên hợp lệ cho đơn vị dịch thuật $2.",
 	"tpt-showpage-intro": "Dưới đây là các đơn vị dịch thuật mới, đang tồn tại, hoặc đã bị xóa.\nTrước khi đánh dấu phiên bản này chờ dịch, hãy kiểm tra những thay đổi tại các đơn vị dịch thuật đã được thu gọn lại để tránh công việc không cần thiết cho biên dịch viên chưa.",
 	"tpt-mark-summary": "Đánh dấu phiên bản này là cần dịch",
-	"tpt-mark-nochanges": "Không có khác biệt giữa phiên bản này và phiên bản trước được đánh dấu.",
+	"tpt-mark-nochanges": "Không có thay đổi nào để xem xét. Đánh dấu trang này để dịch sẽ không sửa đổi trang này hoặc bất kỳ mục dịch nào đang tồn tại.",
 	"tpt-edit-failed": "Không thể cập nhật trang: $1",
 	"tpt-duplicate": "Tên đơn vị dịch $1 được sử dụng hơn một lần.",
 	"tpt-already-marked": "Phiên bản mới nhất của trang này đã được đánh dấu cần dịch rồi.",
