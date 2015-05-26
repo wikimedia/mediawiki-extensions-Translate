@@ -188,6 +188,7 @@
 			options;
 
 		level = level || 0;
+		groupList.sort( sortGroups );
 		groupList = groupList.splice( 0, maxListSize );
 		if ( currentGroup && resultGroups[currentGroup] &&
 			$.inArray( currentGroup, groupList ) < 0
@@ -268,6 +269,7 @@
 			groups = $.map( resultGroups, function ( value, index ) {
 				return index;
 			} );
+			groups.sort( sortGroups );
 			$grouSelectorTrigger.msggroupselector(
 				options,
 				groups
@@ -276,8 +278,8 @@
 	}
 
 	function sortGroups( groupIdA, groupIdB ) {
-		var groupAName = mw.translate.findGroup( groupIdA, resultGroups ).label,
-			groupBName = mw.translate.findGroup( groupIdB, resultGroups ).label;
+		var groupAName = mw.translate.findGroup( groupIdA, resultGroups ).count,
+			groupBName = mw.translate.findGroup( groupIdB, resultGroups ).count;
 
 		return groupAName.localeCompare( groupBName );
 	}
