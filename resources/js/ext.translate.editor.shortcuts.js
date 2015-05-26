@@ -18,7 +18,7 @@
 
 			maxLeft = editorOffset.left;
 			if ( !rtl ) {
-				 maxLeft += this.$editor.outerWidth();
+				maxLeft += this.$editor.outerWidth();
 			}
 
 			this.hideShortcuts();
