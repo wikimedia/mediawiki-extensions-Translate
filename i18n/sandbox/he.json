@@ -9,7 +9,7 @@
 	"tsb-reminder-title-generic": "נא להשלים את ההיכרות שלך כדי לקבל אישור לתרגם",
 	"tsb-reminder-content-generic": "שלום $1,\n\nתודה שנרשמת לאתר {{SITENAME}}.\n\nאם {{GENDER:$1|תסיים|תסיימי}} לעשות את תרגומי הבדיקה, המנהלים ייתנו לך גישה מלאה לתרגם קצת אחרי־כן.\n\nנשאר רק לבוא לעשות עוד כמה תרגומים כאן:\n$2\n\n$3\nצוות {{SITENAME}}",
 	"tsb-reminder-sending": "שליחת התזכורת...",
-	"tsb-reminder-sent": "{{PLURAL:$1|נשלחה תזכורת אחת|נשלחו $1 תזכורות, האחרונה $2}}",
+	"tsb-reminder-sent": "{{PLURAL:$1|נשלחה תזכורת אחת ב־$2|נשלחו $1 תזכורות, האחרונה ב־$2}}",
 	"tsb-reminder-sent-new": "נשלחה תזכורת",
 	"tsb-reminder-failed": "שליחת התזכורת נכשלה",
 	"tsb-email-promoted-subject": "קיבלת הרשאה לתרגם באתר {{SITENAME}}",

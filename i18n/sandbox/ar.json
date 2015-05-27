@@ -11,6 +11,7 @@
 	"tsb-accept-button-label": "اقبل",
 	"tsb-reject-button-label": "ارفض",
 	"tsb-accept-all-button-label": "اقبل الكل",
+	"tsb-reject-all-button-label": "ارفض الكل",
 	"tsb-translations-source": "المصدر",
 	"tsb-translations-current": "الترجمات الموجودة",
 	"tsb-no-requests-from-new-users": "لا طلبات من المستخدمين الجدد",

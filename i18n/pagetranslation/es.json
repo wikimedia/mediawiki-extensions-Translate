@@ -45,7 +45,7 @@
 	"tpt-badsect": "\"$1\" no es un nombre válido para la unidad de traducción $2.",
 	"tpt-showpage-intro": "Debajo están listadas las unidades de traducción nuevas, existentes y borradas.\nAntes de marcar esta versión para traducción, verifica que los cambios a las unidades de traducción son mínimos para evitar trabajo innecesario a los traductores.",
 	"tpt-mark-summary": "Se marcó esta sección para su traducción",
-	"tpt-mark-nochanges": "No hay ninguna diferencia entre esta revisión y la última revisión marcada.",
+	"tpt-mark-nochanges": "No hay cambios para revisar. Marcar esta página para su traducción no editará la página ni ninguna de las unidades de traducción existentes.",
 	"tpt-edit-failed": "No pudo actualizar la página : $1",
 	"tpt-duplicate": "El nombre de la unidad de traducción  $1 es utilizado más de una vez.",
 	"tpt-already-marked": "La última versión de esta página ya ha sido marcada para traducción.",

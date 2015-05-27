@@ -47,7 +47,7 @@
 	"translate-translationstash-translations": "$1 a achevé {{PLURAL:$1|une traduction|des traductions}}",
 	"translate-translationstash-skip-button-label": "Essayer une autre",
 	"tsb-limit-reached-title": "Merci pour vos traductions",
-	"tsb-limit-reached-body": "Vous avez atteint la limite de traduction pour les nouveaux traducteurs.\nNotre équipe va vérifier et de mettre à niveau votre compte bientôt.\nEnsuite, vous serez en mesure de traduire sans limites.",
+	"tsb-limit-reached-body": "Vous avez atteint la limite de traductions pour les nouveaux traducteurs.\nNotre équipe va vérifier et mettre à niveau votre compte bientôt.\nEnsuite, vous serez en mesure de traduire sans limites.",
 	"tsb-no-requests-from-new-users": "Aucune requête de nouveaux utilisateurs",
 	"tsb-create-user-page": "Créer une page utilisateur de base",
 	"log-name-translatorsandbox": "Bac à sable de traduction",
