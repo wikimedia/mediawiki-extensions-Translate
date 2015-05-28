@@ -5,6 +5,7 @@
 			"Guycn2"
 		]
 	},
+	"apihelp-aggregategroups-description": "ניהול קבוצות הודעות משולבות.\n\nאפשר להוסיף ולהסיר קבוצות משולבות ולשייך אליהן קבוצות הודעות או להסיר אותן (אחת‏־אחת).",
 	"apihelp-groupreview-param-language": "קוד השפה.",
 	"apihelp-query+languagestats-param-language": "קוד השפה.",
 	"apihelp-query+messagecollection-param-language": "קוד השפה.",
