@@ -11,6 +11,7 @@
 	"tux-sst-count": "{{PLURAL:$1|Карина $1 хилам}}",
 	"tux-sst-facet-language": "Меттанаш",
 	"tux-sst-facet-group": "Хаамийн тоба",
+	"tux-sst-solr-offline-body": "Лахар хана болхбеш дац.",
 	"tux-sst-next": "ТӀехьа догӀург",
 	"tux-sst-prev": "Хьалхо хиларг"
 }
