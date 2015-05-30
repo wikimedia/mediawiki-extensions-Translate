@@ -409,5 +409,5 @@
 	"translate-search-more-groups-info": "还有$1个{{PLURAL:$1|信息组}}",
 	"translate-ulsdep-title": "配置错误",
 	"translate-ulsdep-body": "翻译扩展依赖[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector 通用语言选择器扩展]。",
-	"tux-session-expired": "您不再保持登录状态。请在单独的选项卡登录，或者制作未保存翻译的副本、登录并返回此页面。"
+	"tux-session-expired": "您不再保持登录状态。请在单独的选项卡登录。或者制作未保存翻译的副本、登录、返回此页面并再次输入您的翻译。"
 }
