@@ -1,4 +1,9 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Poiuyt"
+		]
+	},
+	"tpt-languages-nonzero": "$1（$2%翻译脱）",
 	"pt-movepage-reason": "理由："
 }
