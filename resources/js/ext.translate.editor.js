@@ -1074,6 +1074,8 @@
 				$next.data( 'translateeditor' ).init();
 			}
 
+			mw.translateHooks.run( 'afterEditorShown', this.$editor );
+
 			return false;
 		},
 

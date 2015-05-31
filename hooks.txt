@@ -156,6 +156,9 @@ Post processing step to format in wiki
 ;afterSubmit: Provides an opportunity to modify a Translate translation form immediately after it is submitted
  jQuery          form: The form that has just been submitted
 
+;afterEditorShown: Provides an opportunity to manipulate the editing interface once it's shown
+ jQuery          translateEditor.$editor: The current translation-editing form
+
 ;beforeSubmit: Provides an opportunity to modify a Translate translation form immediately before it is submitted
  jQuery          form: The form being submitted
 
