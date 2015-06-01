@@ -32,6 +32,7 @@
 	"tpt-badsect": "\"$1\" ass kee valbelen Numm fir d'Iwwersetzungseenheet $2.",
 	"tpt-showpage-intro": "Ënnendrënner stinn déi nei, aktuell a geläscht Abschnitter.\nIer Dir dës Versioun fir d'iwwersetze markéiert, kuckt w.e.g. no datt d'Ännerunge vun den Abschnitter déi iwwersat solle ginn op e Minimum reduzéiert gi fir onnëtz Aarbecht vun den Iwwersetzer ze vermeiden.",
 	"tpt-mark-summary": "huet dës Versioun fir d'Iwwersetzung markéiert",
+	"tpt-mark-nochanges": "Keng Ännerunge fir nozekucken. D'Markéiere fir z'iwwersetze vun dëser Säit ännert weder d'Säit nach eng Iwwersetzungseenheet déi et scho gëtt.",
 	"tpt-edit-failed": "D'Säit $1 konnt net aktualiséiert ginn",
 	"tpt-duplicate": "Den Numm $1 vun der Iwwersetzungwseenheet gëtt méi wéi eemol benotzt.",
 	"tpt-already-marked": "Déilescht Versioun vun dëser Säit gouf scho fir d'Iwwersetzung markéiert.",

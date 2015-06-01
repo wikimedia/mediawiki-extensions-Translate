@@ -81,6 +81,7 @@
 	"tpt-languages-nonzero": "$1 ($2% traducido)",
 	"tpt-tab-translate": "Traducir",
 	"tpt-target-page": "Esta página no puede ser actualizada manualmente.\nEsta página es una traducción de la página [[$1]] y la traducción puede ser actualizada usando [$2 la herramienta de traducción].",
+	"tpt-patrolling-blocked": "Esta página no puede patrullarse. En su lugar, usa la acción de traducción para revisarla.",
 	"tpt-unknown-page": "Este espacio de nombre está reservado para traducciones de páginas de contenido.\nLa página que estás tratando de editar no parece corresponder con ninguna página marcada para traducción.",
 	"tpt-translation-restricted": "La traducción de esta página a este idioma ha sido impedida por un administrador de traducción.\n\nMotivo: $1",
 	"tpt-discouraged-language-force-header": "Esta página no se puede traducir al $1.",
