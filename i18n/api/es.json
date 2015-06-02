@@ -13,6 +13,7 @@
 	"apihelp-aggregategroups-param-groupname": "Nombre del grupo de mensajes agregado.",
 	"apihelp-aggregategroups-param-groupdescription": "Descripción del grupo de mensajes agregado.",
 	"apihelp-aggregategroups-example-1": "Asociar un grupo",
+	"apihelp-groupreview-description": "Establecer los estados de flujo de trabajo de los grupos de mensajes.",
 	"apihelp-groupreview-param-group": "Grupo de mensajes.",
 	"apihelp-groupreview-param-language": "Código de idioma.",
 	"apihelp-groupreview-param-state": "El estado nuevo para el grupo.",
