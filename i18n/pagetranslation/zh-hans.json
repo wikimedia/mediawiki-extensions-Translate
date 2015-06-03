@@ -113,7 +113,7 @@
 	"tpt-invalid-group": "无效组",
 	"pt-parse-open": "&lt;translate>标签不平衡。\n翻译模板：<pre>$1</pre>",
 	"pt-parse-close": "&lt;/translate>标签不平衡。\n翻译模板：<pre>$1</pre>",
-	"pt-parse-nested": "不允许嵌套&lt;translate>翻译单元。\n标签文本：$1",
+	"pt-parse-nested": "不允许嵌套&lt;translate>翻译单元。\n标签文本：<pre>$1</pre>",
 	"pt-shake-multiple": "单一翻译单元含多个翻译单元标记。\n翻译单元文本：<pre>$1</pre>",
 	"pt-shake-position": "翻译单元标记在意外位置。\n翻译单元文本：<pre>$1</pre>",
 	"pt-shake-empty": "为“$1”的翻译单位标记是空的。",

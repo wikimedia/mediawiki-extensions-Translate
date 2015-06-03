@@ -10,7 +10,8 @@
 			"Waihorace",
 			"Wrightbus",
 			"Liuxinyu970226",
-			"LNDDYL"
+			"LNDDYL",
+			"Zhxy 519"
 		]
 	},
 	"pagetranslation": "頁面翻譯",
@@ -98,8 +99,8 @@
 	"tpt-aggregategroup-update": "儲存",
 	"tpt-aggregategroup-update-cancel": "取消",
 	"tpt-invalid-group": "無效的群組",
-	"pt-parse-open": "&lt;translate> 標籤不對稱。\n翻譯樣板：<pre>$1</pre>",
-	"pt-parse-close": "&lt;/translate> 標籤不對稱。\n翻譯樣板：<pre>$1</pre>",
+	"pt-parse-open": "&lt;translate> 標籤不對稱。\n翻譯模板：<pre>$1</pre>",
+	"pt-parse-close": "&lt;/translate> 標籤不對稱。\n翻譯模板：<pre>$1</pre>",
 	"pt-parse-nested": "不允許巢狀 &lt;translate> 翻譯單元。\n標籤內容：<pre>$1</pre>",
 	"pt-shake-multiple": "一個翻譯單元中含多個翻譯單元標記。\n翻譯單元內容：<pre>$1</pre>",
 	"pt-shake-position": "翻譯單元標記在預期之外的位置。\n翻譯單元內容：<pre>$1</pre>",
