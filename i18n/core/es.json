@@ -402,5 +402,5 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grupo|grupos}} más",
 	"translate-ulsdep-title": "Error de configuración",
 	"translate-ulsdep-body": "La extensión Translate depende de la [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector extensión Universal Language Selector].",
-	"tux-session-expired": "Tu sesión se ha cerrado. Inicia sesión en una pestaña aparte. Alternativamente, haz una copia de las traducciones sin guardar, inicia sesión y regresa a esta página."
+	"tux-session-expired": "Tu sesión se ha cerrado. Inicia sesión en una pestaña aparte. Alternativamente, haz una copia de las traducciones sin guardar, inicia sesión, regresa a esta página y vuelve a escribir tus traducciones."
 }
