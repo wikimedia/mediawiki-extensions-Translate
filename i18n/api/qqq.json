@@ -29,7 +29,7 @@
 	"apihelp-query+messagecollection-param-language": "{{doc-apihelp-param|query+messagecollection|language}}\n{{Identical|Language code}}",
 	"apihelp-query+messagecollection-param-limit": "{{doc-apihelp-param|query+messagecollection|limit}}",
 	"apihelp-query+messagecollection-param-offset": "{{doc-apihelp-param|query+messagecollection|offset}}",
-	"apihelp-query+messagecollection-param-filter": "{{doc-apihelp-param|query+messagecollection|filter}}",
+	"apihelp-query+messagecollection-param-filter": "Copy \"<nowiki>&#58;N</nowiki>\", which appears twice towards the end as is. It is the character \":\", which cannot be used because it would be considered markup.\n\n{{doc-apihelp-param|query+messagecollection|filter}}",
 	"apihelp-query+messagecollection-param-prop": "{{doc-apihelp-param|query+messagecollection|prop}}",
 	"apihelp-query+messagecollection-example-1": "{{doc-apihelp-example|query+messagecollection}}",
 	"apihelp-query+messagecollection-example-2": "{{doc-apihelp-example|query+messagecollection}}",
