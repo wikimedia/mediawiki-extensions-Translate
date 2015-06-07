@@ -46,6 +46,7 @@
 	"tpt-rev-mark": "علم للترجمة",
 	"tpt-rev-unmark": "إزالة هذه الصفحة من الترجمة",
 	"tpt-rev-encourage": "استرجاع",
+	"tpt-rev-mark-tooltip": "حدد أحدث نسخة من هذه الصفحة للترجمة.",
 	"translate-tag-translate-link-desc": "ترجم هذه الصفحة",
 	"translate-tag-markthis": "علّم هذه الصفحة للترجمة",
 	"translate-tag-markthisagain": "هذه الصفحة بها <span class=\"plainlinks\">[$1 تغيير]</span> منذ تم <span class=\"plainlinks\">[$2 تعليمها للترجمة]</span> لآخر مرة.",

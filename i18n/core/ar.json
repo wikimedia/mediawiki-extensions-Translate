@@ -303,6 +303,7 @@
 	"tux-editor-translate-mode": "قائمة",
 	"tux-editor-proofreading-hide-own-translations": "أخف ترجماتك",
 	"tux-editor-proofreading-show-own-translations": "أظهر ترجماتك",
+	"tux-proofread-action-tooltip": "قبول الترجمة",
 	"tux-proofread-edit-label": "عدل",
 	"tux-editor-page-mode": "صفحة",
 	"tux-editor-outdated-warning": "قد تحتاج هذه الترجمة إلى تحديث.",
