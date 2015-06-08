@@ -34,6 +34,7 @@
 	"apihelp-query+messagecollection-example-4": "更多有关“page-Example”组最近翻译修订的信息",
 	"apihelp-query+messagegroups-description": "返回有关消息组的信息。\n\n注意uselang参数会影响语言相关部分的输出。",
 	"apihelp-query+messagegroups-param-depth": "当使用树形格式时，限制深度至如此多水平。值0意味着不会显示子组。如果达到限制，输出会包含一个“groupcount”值，它指出直系子组的数值。",
+	"apihelp-query+messagegroups-param-format": "在树格式信息组可以存在于树中的多个位置。",
 	"apihelp-query+messagegroups-param-iconsize": "栅格化群组图标的首选大小。",
 	"apihelp-query+messagegroups-param-prop": "要获得的有关翻译的信息：\n;id:包含组ID。\n;label:包含组标签。\n;description:包含组描述。\n;class:包含组分类名。\n;namespace:包含组名字空间。不是所有组都属于单一名字空间。\n;exists:包含自计算的组实际属性。\n;icon:包含至URL的组图标。\n;priority:包含优先状态，例如劝阻。\n;prioritylangs:包含首选语言。如果未设置，这将返回否。\n;priorityforce:包含优先状态——优先语言是否被强制设置。\n;workflowstates:包含用于消息组的工作流状态。",
 	"apihelp-query+messagegroups-example-1": "显示信息组",

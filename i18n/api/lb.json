@@ -9,6 +9,7 @@
 	"apihelp-query+messagecollection-param-language": "Sproochcode.",
 	"apihelp-query+messagecollection-example-1": "Lëscht vun den ënnerstëtzte Sproochen",
 	"apihelp-query+messagecollection-example-4": "Méi Informatioun iwwer déi lescht Iwwersetzungsversioun fir de Grupp \"Beispill-Säit\"",
+	"apihelp-query+messagegroups-param-format": "Am Baamformat kënne Gruppe vu Messagen op verschiddene Plazen am Bam existéieren.",
 	"apihelp-query+messagetranslations-param-title": "Kompletten Titel vun engem bekannte Message.",
 	"apihelp-query+messagetranslations-example-1": "Lëscht vun Iwwersetzungen an der Wiki fir \"MediaWiki:January\"",
 	"apihelp-translatesandbox-param-do": "Wat maachen.",
