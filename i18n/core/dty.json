@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"रमेश सिंह बोहरा"
+			"रमेश सिंह बोहरा",
+			"राम प्रसाद जोशी"
 		]
 	},
+	"translate-sidebar-alltrans": "अन्य भाषामी",
 	"translate-documentation-language": "खवर दस्तावेज"
 }

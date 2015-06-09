@@ -299,6 +299,7 @@
 	"tux-editor-ask-help": "اطلب المزيد من المعلومات",
 	"tux-editor-tm-match": "مطابقة بنسبة %$1",
 	"tux-warnings-hide": "أخف",
+	"tux-editor-n-uses": "مستخدمة {{PLURAL:$1|ولا مرة|مرة واحدة|مرتين|$1 مرات|$1 مرة}}",
 	"tux-editor-message-desc-more": "أظهر المزيد",
 	"tux-editor-message-desc-less": "أظهر أقل",
 	"tux-editor-clear-translated": "أخف المترجمة",

@@ -35,7 +35,7 @@
 	"tsb-translations-user": "Gebruikersvertalingen",
 	"tsb-translations-current": "Bestaande vertalingen",
 	"tsb-delete-userpage-summary": "Gebruikerspagina van een zandbakgebruiker verwijderd",
-	"translationstash": "Welkom",
+	"translationstash": "Welkomstpagina voor vertalers",
 	"translate-translationstash-welcome": "Welkom {{GENDER:$1|$1}}, u bent nu vertaler",
 	"translate-translationstash-welcome-note": "Raak vertrouwd met de vertaalhulpmiddelen. Vertaal een aantal willekeurig geselecteerde berichten en krijg volledige vertaalrechten voor uw favoriete projecten.",
 	"translate-translationstash-initialtranslation": "Uw vertaling",
