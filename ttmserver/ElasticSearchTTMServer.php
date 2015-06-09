@@ -263,6 +263,7 @@ GROOVY;
 	 */
 	protected function createDocument( MessageHandle $handle, $text, $revId ) {
 		$language = $handle->getCode();
+		$languageCode = $handle->getLanguageCodesForTranslations();
 
 		$localid = $handle->getTitleForBase()->getPrefixedText();
 		$wiki = wfWikiId();
@@ -273,6 +274,8 @@ GROOVY;
 			'uri' => $handle->getTitle()->getCanonicalUrl(),
 			'localid' => $localid,
 			'language' => $language,
+			'translated' => $languageCode['translated'],
+			'untranslated' => $languageCode['untranslated'],
 			'content' => $text,
 			'group' => $handle->getGroupIds(),
 		);
@@ -319,6 +322,8 @@ GROOVY;
 			'localid'  => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'uri'      => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'language' => array( 'type' => 'string', 'index' => 'not_analyzed' ),
+			'translated' => array( 'type' => 'string', 'index' => 'not_analyzed' ),
+			'untranslated' => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'group'    => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'content'  => array( 'type' => 'string', 'index' => 'analyzed', 'term_vector' => 'yes' ),
 		) );
@@ -460,24 +465,46 @@ GROOVY;
 
 		// Allow searching either by message content or message id (page name
 		// without language subpage) with exact match only.
-		$serchQuery = new \Elastica\Query\Bool();
+		$searchQuery = new \Elastica\Query\Bool();
 		$contentQuery = new \Elastica\Query\Match();
 		$contentQuery->setFieldQuery( 'content', $queryString );
-		$serchQuery->addShould( $contentQuery );
+		$searchQuery->addShould( $contentQuery );
 		$messageQuery = new \Elastica\Query\Term();
 		$messageQuery->setTerm( 'localid', $queryString );
-		$serchQuery->addShould( $messageQuery );
-		$query->setQuery( $serchQuery );
+		$searchQuery->addShould( $messageQuery );
 
-		$language = new \Elastica\Facet\Terms( 'language' );
-		$language->setField( 'language' );
+		// Use Filtered query as a top level search query
+		$filteredQuery = new \Elastica\Query\Filtered();
+		$filterbool = new \Elastica\Filter\Bool();
+
+		$context = RequestContext::getMain();
+		$languageCode = $context->getLanguage()->getCode();
+
+		$languageFilter = new \Elastica\Filter\Term();
+		$languageFilter->setTerm( 'language', $languageCode );
+		$filterbool->addMust( $languageFilter );
+
+		$filteredQuery->setFilter( $filterbool );
+		$filteredQuery->setQuery( $searchQuery );
+
+		// Wrap Filtered query inside another query element for search
+		$query->setQuery( $filteredQuery );
+
+		// Add facets to list languages for translated and untranslated messages
+		$language = new \Elastica\Facet\Terms( 'translated' );
+		$language->setField( 'translated' );
+		$language->setSize( 500 );
+		$query->addFacet( $language );
+
+		$language = new \Elastica\Facet\Terms( 'untranslated' );
+		$language->setField( 'untranslated' );
 		$language->setSize( 500 );
 		$query->addFacet( $language );
 
 		$group = new \Elastica\Facet\Terms( 'group' );
 		$group->setField( 'group' );
 		// Would like to prioritize the top level groups and not show subgroups
-		// if the top group has only few hits, but that doesn't seem to be possile.
+		// if the top group has only few hits, but that doesn't seem to be possible.
 		$group->setSize( 500 );
 		$query->addFacet( $group );
 
@@ -491,9 +518,10 @@ GROOVY;
 		$filters = new \Elastica\Filter\Bool();
 
 		$language = $opts->getValue( 'language' );
+		$filter = $opts->getValue( 'filter' );
 		if ( $language !== '' ) {
 			$languageFilter = new \Elastica\Filter\Term();
-			$languageFilter->setTerm( 'language', $language );
+			$languageFilter->setTerm( $filter, $language );
 			$filters->addMust( $languageFilter );
 		}
 
@@ -532,7 +560,8 @@ GROOVY;
 		$facets = $resultset->getFacets();
 
 		$ret = array(
-			'language' => array(),
+			'translated' => array(),
+			'untranslated' => array(),
 			'group' => array()
 		);
 

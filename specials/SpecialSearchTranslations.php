@@ -62,11 +62,15 @@ class SpecialSearchTranslations extends SpecialPage {
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.searchtranslations' );
 
+		// Reuse Special:Translate tabs to display translated and untranslated messages
+		$out->addModuleStyles( 'ext.translate.special.translate' );
+
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );
 		$opts->add( 'language', '' );
 		$opts->add( 'group', '' );
 		$opts->add( 'grouppath', '' );
+		$opts->add( 'filter', '' );
 		$opts->add( 'limit', $this->limit );
 		$opts->add( 'offset', 0 );
 
@@ -90,12 +94,13 @@ class SpecialSearchTranslations extends SpecialPage {
 		// Part 1: facets
 		$facets = $server->getFacets( $resultset );
 
+		$filter = $opts->getValue( 'filter' );
 		$facetHtml = Html::element( 'div',
 			array( 'class' => 'row facet languages',
-				'data-facets' => FormatJson::encode( $this->getLanguages( $facets['language'] ) ),
+				'data-facets' => FormatJson::encode( $this->getLanguages( $facets[$filter] ) ),
 				'data-language' => $opts->getValue( 'language' ),
 			),
-			$this->msg( 'tux-sst-facet-language' )
+			$this->msg( 'tux-languageselector' )
 		);
 
 		$facetHtml .= Html::element( 'div',
@@ -109,6 +114,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$resultsHtml = '';
 		$documents = $server->getDocuments( $resultset );
 
+		$language = $opts->getValue( 'language' );
 		foreach ( $documents as $document ) {
 			$text = $document['content'];
 			$text = TranslateUtils::convertWhiteSpaceToHTML( $text );
@@ -117,12 +123,14 @@ class SpecialSearchTranslations extends SpecialPage {
 			$text = str_replace( $pre, '<strong class="tux-highlight">', $text );
 			$text = str_replace( $post, '</strong>', $text );
 
+			if ( $language !== '' ) {
+				$document['language'] = $language;
+			}
 			$title = Title::newFromText( $document['localid'] . '/' . $document['language'] );
 			if ( !$title ) {
 				// Should not ever happen but who knows...
 				continue;
 			}
-
 			$resultAttribs = array(
 				'class' => 'row tux-message',
 				'data-title' => $title->getPrefixedText(),
@@ -287,6 +295,7 @@ class SpecialSearchTranslations extends SpecialPage {
 	}
 
 	protected function showSearch( $search, $count, $facets, $results ) {
+		$messageSelector = $this->messageSelector();
 		$this->getOutput()->addHtml( <<<HTML
 <div class="grid tux-searchpage">
 	<div class="row searchinput">
@@ -295,6 +304,7 @@ class SpecialSearchTranslations extends SpecialPage {
 	<div class="row count">
 		<div class="nine columns offset-by-three">$count</div>
 	</div>
+	$messageSelector
 	<div class="row searchcontent">
 		<div class="three columns facets">$facets</div>
 		<div class="nine columns results">$results</div>
@@ -316,6 +326,42 @@ HTML
 		);
 	}
 
+	// Add tabs for untranslated and translated messages
+	protected function messageSelector() {
+		$nondefaults = $this->opts->getChangedValues();
+		$output = Html::openElement( 'div', array( 'class' => 'row tux-messagetable-header' ) );
+		$output .= Html::openElement( 'div', array( 'class' => 'seven columns' ) );
+		$output .= Html::openElement( 'ul', array( 'class' => 'row tux-message-selector' ) );
+		$tabs = array(
+			'untranslated' => 'untranslated',
+			//'outdated' => 'fuzzy',
+			'translated' => 'translated'
+		);
+
+		$selected = $this->opts->getValue( 'filter' );
+		foreach ( $tabs as $tab => $filter ) {
+			$tabClass = "tux-tab-$tab";
+			$taskParams = array( 'filter' => $filter ) + $nondefaults;
+			ksort( $taskParams );
+			$href = $this->getTitle()->getLocalUrl( $taskParams );
+			$link = Html::element( 'a', array( 'href' => $href ), $this->msg( $tabClass )->text() );
+			if ( $selected === $tab ) {
+				$tabClass = $tabClass . ' selected';
+			}
+			$output .= Html::rawElement( 'li', array(
+				'class' => 'column ' . $tabClass,
+				'data-filter' => $filter,
+				'data-title' => $tab,
+			), $link );
+		}
+
+		$output .= Html::closeElement( 'ul' );
+		$output .= Html::closeElement( 'div' );
+		$output .= Html::closeElement( 'div' );
+
+		return $output;
+	}
+
 	protected function getSearchInput( $query ) {
 		$attribs = array(
 			'placeholder' => $this->msg( 'tux-sst-search-ph' ),
@@ -327,10 +373,13 @@ HTML
 		$input = Xml::input( 'query', false, $query, $attribs );
 		$submit = Xml::submitButton( $this->msg( 'tux-sst-search' ), array( 'class' => 'button' ) );
 		$lang = $this->getRequest()->getVal( 'language' );
-		$language = is_null( $lang ) ? '' : Html::hidden( 'language', $lang );
+		$code = $this->getLanguage()->getCode();
+		$language = is_null( $lang ) ?
+			Html::hidden( 'language', $code ) : Html::hidden( 'language', $lang );
+		$filter = Html::hidden( 'filter', 'translated' );
 
 		$form = Html::rawElement( 'form', array( 'action' => wfScript() ),
-			$title . $input . $submit . $language
+			$title . $input . $submit . $language . $filter
 		);
 
 		return $form;

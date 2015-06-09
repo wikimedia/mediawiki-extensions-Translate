@@ -241,4 +241,50 @@ class MessageHandle {
 
 		return $res !== false;
 	}
+
+	/**
+	 * Get list of translated and untranslated language codes
+	 * for the handle.
+	 * @return array
+	 */
+	public function getLanguageCodesForTranslations() {
+		$dbr = wfGetDB( DB_SLAVE );
+
+		$prefix = $this->key . '/';
+		$likePattern = $dbr->buildLike( $prefix, $dbr->anyString() );
+		$conds = array(
+			'page_namespace' => $this->title->getNamespace(),
+			"page_title $likePattern"
+		);
+
+		$res = $dbr->select(
+			'page',
+			array( 'page_namespace', 'page_title' ),
+			array(
+				'page_namespace' => $this->title->getNamespace(),
+				"page_title $likePattern"
+			),
+			__METHOD__
+		);
+
+		$titles = TitleArray::newFromResult( $res );
+		$codes = Language::fetchLanguageNames();
+
+		$translated = $untranslated = array();
+		foreach ( $titles as $title ) {
+			list( $name, $code ) = TranslateUtils::figureMessage( $title->getText() );
+			if ( !isset( $codes[$code] ) ) {
+				continue;
+			}
+			$translated[] = $code;
+		}
+
+		foreach ( $codes as $key => $value  ) {
+			if ( !in_array( $key, $translated ) ) {
+				$untranslated[] = $key;
+			}
+		}
+
+		return array( 'translated' => $translated, 'untranslated' => $untranslated );
+	}
 }
