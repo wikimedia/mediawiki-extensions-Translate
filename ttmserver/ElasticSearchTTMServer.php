@@ -216,13 +216,14 @@ GROOVY;
 
 		$title = $handle->getTitle();
 		$sourceLanguage = $handle->getGroup()->getSourceLanguage();
+		$localid = $handle->getTitleForBase()->getPrefixedText();
+		$wiki = wfWikiId();
 
 		// Do not delete definitions, because the translations are attached to that
 		if ( $handle->getCode() !== $sourceLanguage ) {
-			$localid = $handle->getTitleForBase()->getPrefixedText();
 
 			$boolQuery = new \Elastica\Query\Bool();
-			$boolQuery->addMust( new Elastica\Query\Term( array( 'wiki' => wfWikiId() ) ) );
+			$boolQuery->addMust( new Elastica\Query\Term( array( 'wiki' => $wiki ) ) );
 			$boolQuery->addMust( new Elastica\Query\Term( array( 'language' => $handle->getCode() ) ) );
 			$boolQuery->addMust( new Elastica\Query\Term( array( 'localid' => $localid ) ) );
 
@@ -252,6 +253,42 @@ GROOVY;
 					error_log( __METHOD__ . ": update failed ($c: $msg); retrying." );
 					sleep( 10 );
 				}
+			}
+		}
+
+		$languageCode = $handle->getLanguageCodesForTranslations();
+
+		// Update translated and untranslated fields for all message indexes with same localid
+		foreach ( $languageCode['translated'] as $key => $value ) {
+			$local = "$wiki-$localid-$revId/$value";
+			$scriptText =
+<<<GROOVY
+if ( ctx._source.translated.contains(lang) ) {
+	ctx.op = "none";
+} else {
+	ctx._source.translated += lang;
+	ctx._source.untranslated.remove(lang);
+}
+GROOVY;
+			$script = new \Elastica\Script(
+				$scriptText,
+				array( 'lang' => $handle->getCode() ),
+				\Elastica\Script::LANG_GROOVY
+			);
+			$script->setId( $local );
+			$docscript[] = $script;
+		}
+
+		foreach ( $docscript as $key => $value ) {
+			try {
+				$bulk = new \Elastica\Bulk( $this->getClient() );
+				$bulk->setType( $this->getType() );
+				$bulk->addData( $value, 'update' );
+				$bulk->send();
+			} catch ( \Elastica\Exception\Bulk\ResponseException $e ) {
+				error_log( "Update failed: " . $e );
+			} catch ( \Elastica\Exception\ExceptionInterface $e ) {
+				error_log( $e );
 			}
 		}
 
