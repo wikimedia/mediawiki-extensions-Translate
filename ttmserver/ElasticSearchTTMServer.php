@@ -255,6 +255,42 @@ GROOVY;
 			}
 		}
 
+		$languageCode = $handle->getLanguageCodesForTranslations();
+
+		// Update translated and untranslated fields for all message indexes with same localid
+		foreach ( $languageCode['translated'] as $key => $value ) {
+			$local = "$wiki-$localid-$revId/$value";
+			$scriptText =
+<<<GROOVY
+if ( ctx._source.translated.contains(lang) ) {
+	ctx.op = "none";
+} else {
+	ctx._source.translated += lang;
+	ctx._source.untranslated.remove(lang);
+}
+GROOVY;
+			$script = new \Elastica\Script(
+				$scriptText,
+				array( 'lang' => $handle->getCode() ),
+				\Elastica\Script::LANG_GROOVY
+			);
+			$script->setId( $local );
+			$docscript[] = $script;
+		}
+
+		foreach ( $docscript as $key => $value ) {
+			try {
+				$bulk = new \Elastica\Bulk( $this->getClient() );
+				$bulk->setType( $this->getType() );
+				$bulk->addData( $value, 'update' );
+				$bulk->send();
+			} catch ( \Elastica\Exception\Bulk\ResponseException $e ) {
+				error_log( "Update failed: " . $e );
+			} catch ( \Elastica\Exception\ExceptionInterface $e ) {
+				error_log( $e );
+			}
+		}
+
 		return true;
 	}
 
