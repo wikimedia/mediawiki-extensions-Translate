@@ -43,10 +43,7 @@ class MessageGroups {
 		} else {
 			wfDebug( __METHOD__ . "-withcache\n" );
 			$groups = $value['cc'];
-
-			foreach ( $value['autoload'] as $class => $file ) {
-				$wgAutoloadClasses[$class] = $file;
-			}
+			self::appendAutoloader( $value['autoload'], $wgAutoloadClasses );
 		}
 
 		$this->postInit( $groups );
@@ -108,14 +105,37 @@ class MessageGroups {
 	}
 
 	/**
+	 * Safely merges first array to second array, throwing warning on duplicates and removing
+	 * duplicates from the first array.
+	 * @param array $additions Things to append
+	 * @param array $to Where to append
+	 */
+	protected static function appendAutoloader( array &$additions, array &$to ) {
+		foreach ( $additions as $class => $file ) {
+			if ( isset( $to[$class] ) && $to[$class] !== $file  ) {
+				$msg = "Autoload conflict for $class: {$to[$class]} !== $file";
+				trigger_error( $msg, E_USER_WARNING );
+				continue;
+			}
+
+			$to[$class] = $file;
+		}
+	}
+
+	/**
 	 * This constructs the list of all groups from multiple different
 	 * sources. When possible, a cache dependency is created to automatically
 	 * recreate the cache when configuration changes.
 	 */
 	protected function loadGroupDefinitions() {
+		global $wgAutoloadClasses;
+
 		$groups = $deps = $autoload = array();
 
 		wfRunHooks( 'TranslatePostInitGroups', array( &$groups, &$deps, &$autoload ) );
+
+		// Register autoloaders for this request, both values modified by reference
+		self::appendAutoloader( $autoload, $wgAutoloadClasses );
 
 		$key = wfMemckey( 'translate-groups' );
 		$value = array(
@@ -157,7 +177,7 @@ class MessageGroups {
 
 	/// Hook: TranslatePostInitGroups
 	public static function getConfiguredGroups( array &$groups, array &$deps, array &$autoload ) {
-		global $wgTranslateGroupFiles, $wgAutoloadClasses;
+		global $wgTranslateGroupFiles;
 
 		$deps[] = new GlobalDependency( 'wgTranslateGroupFiles' );
 
@@ -176,11 +196,10 @@ class MessageGroups {
 			foreach ( $fgroups as $id => $conf ) {
 				if ( !empty( $conf['AUTOLOAD'] ) && is_array( $conf['AUTOLOAD'] ) ) {
 					$dir = dirname( $configFile );
-					foreach ( $conf['AUTOLOAD'] as $class => $file ) {
-						// For this request and for caching.
-						$wgAutoloadClasses[$class] = "$dir/$file";
-						$autoload[$class] = "$dir/$file";
-					}
+					$additions = array_map( function ( $file ) use ( $dir ) {
+						return "$dir/$file";
+					}, $conf['AUTOLOAD'] );
+					self::appendAutoloader( $additions, $autoload );
 				}
 
 				$groups[$id] = MessageGroupBase::factory( $conf );
