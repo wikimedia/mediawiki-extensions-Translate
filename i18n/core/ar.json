@@ -190,6 +190,7 @@
 	"translate-jssti-add": "أضف إلى القائمة",
 	"managemessagegroups": "إدارة مجموعة الرسائل",
 	"translate-smg-notallowed": "غير مسموح لك بتنفيذ هذا الفعل.",
+	"translate-smg-nochanges": "لا توجد تغييرات لمعالجتها.",
 	"translate-manage-import-diff": "الرسالة $1 | الإجراءات: $2",
 	"translate-manage-import-new": "رسالة جديدة $1",
 	"translate-manage-import-deleted": "رسالة محذوفة $1",

@@ -8,5 +8,8 @@
 	"apihelp-groupreview-param-group": "مجموعة الرسائل.",
 	"apihelp-query+messagecollection-param-group": "مجموعة الرسائل.",
 	"apihelp-query+messagecollection-example-1": "قائمة اللغات المدعومة",
-	"apihelp-query+messagegroups-example-1": "أظهر مجموعات الرسائل"
+	"apihelp-query+messagegroups-example-1": "أظهر مجموعات الرسائل",
+	"apihelp-query+messagegroupstats-param-group": "معرف مجموعة الرسائل.",
+	"apihelp-translatesandbox-param-username": "اسم المستخدم عند إنشاء مستخدم.",
+	"apihelp-translationaids-param-title": "العنوان الكامل لرسالة معروفة."
 }

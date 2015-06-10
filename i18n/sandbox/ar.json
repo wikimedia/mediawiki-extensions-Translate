@@ -4,6 +4,7 @@
 			"محمد أحمد عبد الفتاح"
 		]
 	},
+	"managetranslatorsandbox": "إدارة ملعب المترجم",
 	"tsb-filter-pending": "الطلبات المعلقة",
 	"tsb-email-promoted-subject": "أنت الآن مترجم في {{SITENAME}}",
 	"tsb-all-languages-button-label": "كل اللغات",
@@ -14,6 +15,7 @@
 	"tsb-reject-all-button-label": "ارفض الكل",
 	"tsb-translations-source": "المصدر",
 	"tsb-translations-current": "الترجمات الموجودة",
+	"translate-translationstash-initialtranslation": "ترجمتك الابتدائية",
 	"tsb-no-requests-from-new-users": "لا طلبات من المستخدمين الجدد",
 	"log-name-translatorsandbox": "ملعب الترجمة"
 }
