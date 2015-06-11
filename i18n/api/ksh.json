@@ -17,7 +17,7 @@
 	"apihelp-groupreview-param-state": "Der neue Zohschtand för di Jropp.",
 	"apihelp-groupreview-example-1": "Makehr, dat de Jropp „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">group-Example</code>“ parraht för Deutsch wöhr.",
 	"apihelp-query+languagestats-description": "Frohch noh de Schtateßeke vun de Schprohche.",
-	"apihelp-query+languagestats-param-timelimit": "De längste Zigg, di för et Berääschne vun zohsäzlejje Schtateßteke jebruch wähde darref. Wann se Noll es, kritt mer blohß ahle Dahte zerök, die alld em Schpeischer wohre.",
+	"apihelp-query+languagestats-param-timelimit": "De längste Zigg, di för et Berääschne vun zohsäzlejje Schtateßteke jebruch wähde darref. Wann se Noll es, kritt mer blohß ahle Dahte zerök, di alld em Schpeischer wohre.",
 	"apihelp-query+languagestats-param-language": "Et Shprohcheköözel.",
 	"apihelp-query+languagestats-example-1": "En Lesß met de Schtateßteke för Finnesch",
 	"apihelp-query+messagecollection-description": "Frohch noh de Övversäzonge en dä Jropp <code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">MessageCollection</code>.",
