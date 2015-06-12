@@ -28,6 +28,7 @@
 	"apihelp-query+messagecollection-param-limit": "显示的消息数量（过滤后）。",
 	"apihelp-query+messagecollection-param-offset": "起始的整数或键值。",
 	"apihelp-query+messagecollection-param-filter": "消息集合过滤器。使用<kbd>!</kbd>否定条件。例如<kbd>!fuzzy</kbd>意思是只列出所有未过期消息。过滤器以特定顺序应用。\n;fuzzy:带fuzzy标签的消息。\n;optional:只应在需要更改时翻译的消息。\n;ignored:不应翻译的消息。\n;hastranslation:无论过期与否，带翻译的消息。\n;translated:带有未过期翻译的消息。\n;changed:自从上次导出之日起，已翻译或更改的消息。\n;reviewer&#58;N:当用户数字<kbd>N</kbd>在复核者之间时的消息。\n;last-translator&#58;N:当用户数字<kbd>N</kbd>是最终翻译者时的消息。",
+	"apihelp-query+messagecollection-param-prop": "要获取的属性：\n;definition:信息定义。\n;translation:当前翻译（如果有则不带$1字符串，使用标签以检查已过时或损坏的翻译）。\n;tags:信息标签，例如可选、已忽略和过时。\n;properties:信息属性，例如状态、修订、最后翻译者。可在信息间变化。\n;revision:<span class=\"deprecated\">已弃用！</span>请改用$2prop=properties。",
 	"apihelp-query+messagecollection-example-1": "支持的语言列表",
 	"apihelp-query+messagecollection-example-2": "定义用于组“page-Example”的非可选消息列表",
 	"apihelp-query+messagecollection-example-3": "芬兰语中的可选消息列表，带有用于“page-Example”组的标签",
