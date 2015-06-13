@@ -7,7 +7,8 @@
 			"सरोज कुमार ढकाल",
 			"Krish Dulal",
 			"बिप्लब आनन्द",
-			"NehalDaveND"
+			"NehalDaveND",
+			"राम प्रसाद जोशी"
 		]
 	},
 	"translate": "अनुवाद गर्ने",
@@ -58,7 +59,7 @@
 	"translate-magic-cm-savefailed": "संग्रह विफल भयो",
 	"translate-magic-words": "जादुई शव्दहरु",
 	"translate-magic-notsaved": "तपाईंको सम्पादन संग्रह गरिएको थिएन!",
-	"translate-magic-saved": "तपाईंका परिवर्तनहरु सफलता पूर्वक संग्रह भए।",
+	"translate-magic-saved": "तपाईंका परिवर्तनहरू सफलता पूर्वक संग्रह भए।",
 	"translate-checks-parameters-unknown": "निम्न {{PLURAL:$2|पैरामीटर अज्ञात हो|पैरामीटरहरु अज्ञात हुन्}} :\n<strong><nowiki>$1</nowiki></strong>",
 	"translationstats": "अनुवाद तथ्यांक",
 	"translate-stats-edits": "सम्पादनहरु",
