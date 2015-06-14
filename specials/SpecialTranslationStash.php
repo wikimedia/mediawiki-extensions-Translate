@@ -201,6 +201,6 @@ HTML
 		}
 
 		// User has not chosen any valid language. Pick the source.
-		return $source->getCode();
+		return Language::factory( $source->getCode() );
 	}
 }
