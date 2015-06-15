@@ -66,7 +66,7 @@
 	"translate-tag-translate-link-desc": "ترجمهٔ این پروژه",
 	"translate-tag-markthis": "علامت‌گذاری این صفحه برای ترجمه",
 	"translate-tag-markthisagain": "این صفحه  از آخرین باری که <span class=\"plainlinks\">[$2 برای ترجمه علامت‌گذاری]</span> شده بود <span class=\"plainlinks\">[$1 تغییراتی]</span> داشته است.",
-	"translate-tag-hasnew": "این صفحه شامل <span class=\"plainlinks\">[$1 changes]</span> است که برای ترجمه علامت‌گذاری نشده‌اند.",
+	"translate-tag-hasnew": "این صفحه شامل <span class=\"plainlinks\">[$1 تغییراتی]</span> است که برای ترجمه علامت‌گذاری نشده‌اند.",
 	"tpt-translation-intro": "این صفحه <span class=\"plainlinks\">[$1 نسخهٔ ترجمه‌شدهٔ]</span> صفحهٔ [[$2]] است و ترجمهٔ آن $3٪ کامل شده‌است.",
 	"tpt-languages-legend": "زبان‌های دیگر:",
 	"tpt-languages-zero": "شروع ترجمه برای این زبان",
