@@ -52,7 +52,7 @@ class AmdFFS extends SimpleFFS {
 	 */
 	public static function isValid( $data ) {
 		$data = AmdFFS::extractMessagePart( $data );
-		return is_array( FormatJSON::decode( $data, /*as array*/true ) );
+		return is_array( FormatJson::decode( $data, /*as array*/true ) );
 	}
 
 	public function getFileExtensions() {
@@ -66,7 +66,7 @@ class AmdFFS extends SimpleFFS {
 	public function readFromVariable( $data ) {
 		$authors = AmdFFS::extractAuthors( $data );
 		$data = AmdFFS::extractMessagePart( $data );
-		$messages = (array) FormatJSON::decode( $data, /*as array*/true );
+		$messages = (array) FormatJson::decode( $data, /*as array*/true );
 		$metadata = array();
 
 		// Take care of regular language bundles, as well as the root bundle.
@@ -113,7 +113,7 @@ class AmdFFS extends SimpleFFS {
 			return '';
 		}
 		$header = $this->header( $collection->code, $collection->getAuthors() );
-		return $header . FormatJSON::encode( $messages, "\t", FormatJson::UTF8_OK ) . ");\n";
+		return $header . FormatJson::encode( $messages, "\t", FormatJson::UTF8_OK ) . ");\n";
 	}
 
 	/**
