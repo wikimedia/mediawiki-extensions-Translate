@@ -176,8 +176,12 @@ class TranslateEditAddons {
 		}
 
 		$fuzzy = self::checkNeedsFuzzy( $handle, $text );
-		self::updateFuzzyTag( $title, $rev, $fuzzy );
-		wfRunHooks( 'TranslateEventTranslationEdit', array( $handle ) );
+		$fuzzyOp = self::updateFuzzyTag( $title, $rev, $fuzzy );
+
+		// Skip the hook if no change in status or content
+		if ( $revision || $fuzzyOp ) {
+			wfRunHooks( 'TranslateEventTranslationEdit', array( $handle ) );
+		}
 
 		if ( $fuzzy === false ) {
 			wfRunHooks( 'Translate:newTranslation', array( $handle, $rev, $text, $user ) );
@@ -228,6 +232,7 @@ class TranslateEditAddons {
 	 * @param Title $title
 	 * @param int $revision
 	 * @param bool $fuzzy
+	 * @param bool Whether status changed
 	 */
 	protected static function updateFuzzyTag( Title $title, $revision, $fuzzy ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -245,6 +250,8 @@ class TranslateEditAddons {
 		} else {
 			$dbw->delete( 'revtag', $conds, __METHOD__ );
 		}
+
+		return (bool)$dbw->affectedRows();
 	}
 
 	/**
