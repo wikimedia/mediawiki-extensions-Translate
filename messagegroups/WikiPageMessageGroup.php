@@ -97,6 +97,11 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		if ( $this->isSourceLanguage( $code ) ) {
 			$stuff = $this->load( $code );
 
+			$title = Title::newFromText( $key );
+			if ( $title ) {
+				$key = $title->getPrefixedDBKey();
+			}
+
 			return isset( $stuff[$key] ) ? $stuff[$key] : null;
 		}
 
