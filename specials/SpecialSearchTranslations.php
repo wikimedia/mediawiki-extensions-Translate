@@ -61,12 +61,14 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.searchtranslations' );
+		$out->addModuleStyles( 'ext.translate.special.translate' );
 
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );
 		$opts->add( 'language', '' );
 		$opts->add( 'group', '' );
 		$opts->add( 'grouppath', '' );
+		$opts->add( 'filter', '' );
 		$opts->add( 'limit', $this->limit );
 		$opts->add( 'offset', 0 );
 
@@ -81,34 +83,70 @@ class SpecialSearchTranslations extends SpecialPage {
 		}
 
 		try {
-			$resultset = $server->search( $queryString, $opts, $this->hl );
+			$resultquery = $server->search( $queryString, $opts, $this->hl );
 		} catch ( TTMServerException $e ) {
 			error_log( 'Translation search server unavailable:' . $e->getMessage() );
 			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
 		}
 
+		$result = $this->applyFilter( $resultquery );
+
 		// Part 1: facets
-		$facets = $server->getFacets( $resultset );
-
-		$facetHtml = Html::element( 'div',
-			array( 'class' => 'row facet languages',
-				'data-facets' => FormatJson::encode( $this->getLanguages( $facets['language'] ) ),
-				'data-language' => $opts->getValue( 'language' ),
-			),
-			$this->msg( 'tux-sst-facet-language' )
-		);
-
-		$facetHtml .= Html::element( 'div',
-			array( 'class' => 'row facet groups',
-				'data-facets' => FormatJson::encode( $this->getGroups( $facets['group'] ) ),
-				'data-group' => $opts->getValue( 'group' ) ),
-			$this->msg( 'tux-sst-facet-group' )
-		);
+		$facets = $result['facets'];
+		$lang = $opts->getValue( 'language' );
+		if ( $lang !== '' && $lang !== null && array_key_exists( $lang, $facets['language'] ) ) {
+			$total = $facets['language'][$lang];
+		} else {
+			$total = 0;
+		}
+		$facetHtml = $this->viewFacets( $facets );
 
 		// Part 2: results
-		$resultsHtml = '';
-		$documents = $server->getDocuments( $resultset );
+		$resultsHtml = $this->getResultsHtml( $result['documents'] );
 
+		$resultsHtml .= Html::rawElement( 'hr', array( 'class' => 'tux-pagination-line' ) );
+
+		$prev = $next = '';
+		$offset = $this->opts->getValue( 'offset' );
+		$params = $this->opts->getChangedValues();
+
+		if ( $total - $offset > $this->limit ) {
+			$newParams = array( 'offset' => $offset + $this->limit ) + $params;
+			$attribs = array(
+				'class' => 'mw-ui-button pager-next',
+				'href' => $this->getPageTitle()->getLocalUrl( $newParams ),
+			);
+			$next = Html::element( 'a', $attribs, $this->msg( 'tux-sst-next' )->text() );
+		}
+		if ( $offset ) {
+			$newParams = array( 'offset' => max( 0, $offset - $this->limit ) ) + $params;
+			$attribs = array(
+				'class' => 'mw-ui-button pager-prev',
+				'href' => $this->getPageTitle()->getLocalUrl( $newParams ),
+			);
+			$prev = Html::element( 'a', $attribs, $this->msg( 'tux-sst-prev' )->text() );
+		}
+
+		$resultsHtml .= Html::rawElement( 'div', array( 'class' => 'tux-pagination-links' ),
+			"$prev $next"
+		);
+
+		$search = $this->getSearchInput( $queryString );
+		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
+
+		$language = $opts->getValue( 'language' );
+		if ( $language === '') {
+			$resultsHtml = Html::element( 'span',
+				array(),
+				$this->msg( 'tux-sst-nolang-selected' )->text()
+			);
+		}
+
+		$this->showSearch( $search, $count, $facetHtml, $resultsHtml );
+	}
+
+	protected function getResultsHtml( $documents ) {
+		$resultsHtml = '';
 		foreach ( $documents as $document ) {
 			$text = $document['content'];
 			$text = TranslateUtils::convertWhiteSpaceToHTML( $text );
@@ -169,39 +207,25 @@ class SpecialSearchTranslations extends SpecialPage {
 				. $edit
 				. Html::closeElement( 'div' );
 		}
+		return $resultsHtml;
+	}
 
-		$resultsHtml .= Html::rawElement( 'hr', array( 'class' => 'tux-pagination-line' ) );
-
-		$prev = $next = '';
-		$total = $server->getTotalHits( $resultset );
-		$offset = $this->opts->getValue( 'offset' );
-		$params = $this->opts->getChangedValues();
-
-		if ( $total - $offset > $this->limit ) {
-			$newParams = array( 'offset' => $offset + $this->limit ) + $params;
-			$attribs = array(
-				'class' => 'mw-ui-button pager-next',
-				'href' => $this->getPageTitle()->getLocalUrl( $newParams ),
-			);
-			$next = Html::element( 'a', $attribs, $this->msg( 'tux-sst-next' )->text() );
-		}
-		if ( $offset ) {
-			$newParams = array( 'offset' => max( 0, $offset - $this->limit ) ) + $params;
-			$attribs = array(
-				'class' => 'mw-ui-button pager-prev',
-				'href' => $this->getPageTitle()->getLocalUrl( $newParams ),
-			);
-			$prev = Html::element( 'a', $attribs, $this->msg( 'tux-sst-prev' )->text() );
-		}
-
-		$resultsHtml .= Html::rawElement( 'div', array( 'class' => 'tux-pagination-links' ),
-			"$prev $next"
+	protected function viewFacets( $facets ) {
+		$facetHtml = Html::element( 'div',
+			array( 'class' => 'row facet languages',
+				'data-facets' => FormatJson::encode( $this->getLanguages( $facets['language'] ) ),
+				'data-language' => $this->opts->getValue( 'language' ),
+			),
+			$this->msg( 'tux-sst-facet-language' )
 		);
 
-		$search = $this->getSearchInput( $queryString );
-		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
-
-		$this->showSearch( $search, $count, $facetHtml, $resultsHtml );
+		$facetHtml .= Html::element( 'div',
+			array( 'class' => 'row facet groups',
+				'data-facets' => FormatJson::encode( $this->getGroups( $facets['group'] ) ),
+				'data-group' => $this->opts->getValue( 'group' ) ),
+			$this->msg( 'tux-sst-facet-group' )
+		);
+		return $facetHtml;
 	}
 
 	protected function getLanguages( array $facet ) {
@@ -287,6 +311,7 @@ class SpecialSearchTranslations extends SpecialPage {
 	}
 
 	protected function showSearch( $search, $count, $facets, $results ) {
+		$messageSelector = $this->messageSelector();
 		$this->getOutput()->addHtml( <<<HTML
 <div class="grid tux-searchpage">
 	<div class="row searchinput">
@@ -295,6 +320,7 @@ class SpecialSearchTranslations extends SpecialPage {
 	<div class="row count">
 		<div class="nine columns offset-by-three">$count</div>
 	</div>
+	$messageSelector
 	<div class="row searchcontent">
 		<div class="three columns facets">$facets</div>
 		<div class="nine columns results">$results</div>
@@ -316,6 +342,72 @@ HTML
 		);
 	}
 
+	protected function messageSelector() {
+		$nondefaults = $this->opts->getChangedValues();
+		$output = Html::openElement( 'div', array( 'class' => 'row tux-messagetable-header' ) );
+		$output .= Html::openElement( 'div', array( 'class' => 'seven columns' ) );
+		$output .= Html::openElement( 'ul', array( 'class' => 'row tux-message-selector' ) );
+		$tabs = array(
+			'untranslated' => 'untranslated',
+			'translated' => 'translated',
+			'outdated' => 'fuzzy'
+		);
+
+		$selected = $this->opts->getValue( 'filter' );
+		foreach ( $tabs as $tab => $filter ) {
+			$tabClass = "tux-tab-$tab";
+			$taskParams = array( 'filter' => $filter ) + $nondefaults;
+			ksort( $taskParams );
+			$href = $this->getTitle()->getLocalUrl( $taskParams );
+			$link = Html::element( 'a', array( 'href' => $href ), $this->msg( $tabClass )->text() );
+			if ( $selected === $filter ) {
+				$tabClass = $tabClass . ' selected';
+			}
+			$output .= Html::rawElement( 'li', array(
+				'class' => 'column ' . $tabClass,
+				'data-filter' => $filter,
+				'data-title' => $tab,
+			), $link );
+		}
+
+		$output .= Html::closeElement( 'ul' );
+		$output .= Html::closeElement( 'div' );
+		$output .= Html::closeElement( 'div' );
+
+		return $output;
+	}
+
+	/* Messages indexed include fuzzy messages
+	 * Fuzzy messages are indexed with 'fuzzy' field
+	 * Messages which are not indexed are untranslated messages
+	 */
+	protected function applyFilter( $resultquery ) {
+		$server = TTMServer::primary();
+		$filter = $this->opts->getValue( 'filter' );
+		if ( !in_array( $filter, $server->getAvailableFilters(), true ) ) {
+			throw new MWException( "Unknown filter $filter" );
+		}
+
+		// Get list of ids and scores to find second query
+		$output = $server->getLocalId( $resultquery );
+		// Get the list of messages for which translations exist
+		$resultset = $server->filterTranslation( $output, $this->opts );
+
+		if ( $filter === 'untranslated' ) {
+			// Update Facet for untranslated messages
+			$facets = $server->getFacets( $resultset );
+			$facets['language'] = $server->getFacetsForUntranslated( $facets['language'] );
+
+			$translated = $server->getLocalId( $resultset );
+			$fullData = $server->getFullData( $resultquery );
+			$documents = $server->filterUntranslated( $fullData, $translated, $this->opts );
+		} else {
+			$facets = $server->getFacets( $resultset );
+			$documents = $server->getDocuments( $resultset );
+		}
+		return array( 'documents' => $documents, 'facets' => $facets ) ;
+	}
+
 	protected function getSearchInput( $query ) {
 		$attribs = array(
 			'placeholder' => $this->msg( 'tux-sst-search-ph' ),
@@ -327,10 +419,12 @@ HTML
 		$input = Xml::input( 'query', false, $query, $attribs );
 		$submit = Xml::submitButton( $this->msg( 'tux-sst-search' ), array( 'class' => 'button' ) );
 		$lang = $this->getRequest()->getVal( 'language' );
-		$language = is_null( $lang ) ? '' : Html::hidden( 'language', $lang );
+		$code = $this->getLanguage()->getCode();
+		$language = is_null( $lang ) ? Html::hidden( 'language', $code ) : Html::hidden( 'language', $lang );
 
+		$filter = Html::hidden( 'filter', 'translated' );
 		$form = Html::rawElement( 'form', array( 'action' => wfScript() ),
-			$title . $input . $submit . $language
+			$title . $input . $submit . $language . $filter
 		);
 
 		return $form;

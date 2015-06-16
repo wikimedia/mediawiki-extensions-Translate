@@ -105,7 +105,7 @@
 		for ( i = 0; i <= quickLanguageList.length; i++ ) {
 			languageCode = quickLanguageList[i];
 			result = languages[languageCode];
-			if ( !result ) {
+			if ( !result || result.count === '0' ) {
 				continue;
 			}
 
