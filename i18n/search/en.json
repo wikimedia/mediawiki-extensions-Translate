@@ -17,5 +17,6 @@
 	"tux-sst-solr-offline-title": "Search unavailable",
 	"tux-sst-solr-offline-body": "The search service is temporarily unavailable.",
 	"tux-sst-next": "Next ›",
-	"tux-sst-prev": "‹ Previous"
+	"tux-sst-prev": "‹ Previous",
+	"tux-sst-nolang-selected": "Please select a target language to see messages"
 }
