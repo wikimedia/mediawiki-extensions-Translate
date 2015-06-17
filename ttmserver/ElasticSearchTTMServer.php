@@ -460,54 +460,29 @@ GROOVY;
 
 		// Allow searching either by message content or message id (page name
 		// without language subpage) with exact match only.
-		$serchQuery = new \Elastica\Query\Bool();
+		$searchQuery = new \Elastica\Query\Bool();
 		$contentQuery = new \Elastica\Query\Match();
 		$contentQuery->setFieldQuery( 'content', $queryString );
-		$serchQuery->addShould( $contentQuery );
+		$searchQuery->addShould( $contentQuery );
 		$messageQuery = new \Elastica\Query\Term();
 		$messageQuery->setTerm( 'localid', $queryString );
-		$serchQuery->addShould( $messageQuery );
-		$query->setQuery( $serchQuery );
+		$searchQuery->addShould( $messageQuery );
 
-		$language = new \Elastica\Facet\Terms( 'language' );
-		$language->setField( 'language' );
-		$language->setSize( 500 );
-		$query->addFacet( $language );
+		$filteredQuery = new \Elastica\Query\Filtered();
+		$filterbool = new \Elastica\Filter\Bool();
 
-		$group = new \Elastica\Facet\Terms( 'group' );
-		$group->setField( 'group' );
-		// Would like to prioritize the top level groups and not show subgroups
-		// if the top group has only few hits, but that doesn't seem to be possile.
-		$group->setSize( 500 );
-		$query->addFacet( $group );
+		$context = RequestContext::getMain();
+		$languageCode = $context->getLanguage()->getCode();
 
-		$query->setSize( $opts->getValue( 'limit' ) );
-		$query->setFrom( $opts->getValue( 'offset' ) );
+		$languageFilter = new \Elastica\Filter\Term();
+		$languageFilter->setTerm( 'language', $languageCode );
+		$filterbool->addMust( $languageFilter );
 
-		// BoolAnd filters are executed in sequence per document. Bool filters with
-		// multiple must clauses are executed by converting each filter into a bit
-		// field then anding them together. The latter is normally faster if either
-		// of the subfilters are reused. May not make a difference in this context.
-		$filters = new \Elastica\Filter\Bool();
+		$filteredQuery->setFilter($filterbool);
+		$filteredQuery->setQuery($searchQuery);
 
-		$language = $opts->getValue( 'language' );
-		if ( $language !== '' ) {
-			$languageFilter = new \Elastica\Filter\Term();
-			$languageFilter->setTerm( 'language', $language );
-			$filters->addMust( $languageFilter );
-		}
-
-		$group = $opts->getValue( 'group' );
-		if ( $group !== '' ) {
-			$groupFilter = new \Elastica\Filter\Term();
-			$groupFilter->setTerm( 'group', $group );
-			$filters->addMust( $groupFilter );
-		}
-
-		// Check that we have at least one filter to avoid invalid query errors.
-		if ( $language !== '' || $group !== '' ) {
-			$query->setFilter( $filters );
-		}
+		$query->setQuery( $filteredQuery );
+		$query->setParam( '_source', array( 'localid', 'group' ) );
 
 		list( $pre, $post ) = $highlight;
 		$query->setHighlight( array(
@@ -521,11 +496,146 @@ GROOVY;
 			'post_tags' => array( $post ),
 		) );
 
-		try {
-			return $this->getType()->getIndex()->search( $query );
-		} catch ( \Elastica\Exception\ExceptionInterface $e ) {
-			throw new TTMServerException( $e->getMessage() );
+		$query->setFrom( 0 );
+		$query->setSize( 500 );
+		$terms = $scores = array();
+		do {
+			try {
+				$resultset = $this->getType()->getIndex()->search( $query );
+			} catch ( \Elastica\Exception\ExceptionInterface $e ) {
+				throw new TTMServerException( $e->getMessage() );
+			}
+
+			if ( count( $resultset ) === 0 ) {
+				break;
+			}
+
+			foreach ( $resultset->getResults() as $result ) {
+				$data = $result->getData();
+				$score = $result->getScore();
+				$scores[$data['localid']] = $score;
+				$terms[] = $data['localid'];
+			}
+			$query->setFrom( $query->getParam( 'size' ) + $query->getParam( 'from' ) );
+			$query->setSize( $resultset->getTotalHits() );
+
+		} while ( $resultset->getTotalHits() > count( $terms ) );
+		return array (
+			'terms' => $terms,
+			'scores' => $scores
+		);
+	}
+
+	/* Do two things:
+	 * 1) Find messages in ES index using message keys
+	 *    and scores from search(). Feed the messages
+	 *    to MessageCollection to check those are translated
+	 *    messages, if not found, fetch next few messages
+	 *    from index until the limit.
+	 * 2) Fetch data for facets counts
+	 */
+	public function filterTranslation( $data, $opts ) {
+		$idQuery = new \Elastica\Query\Terms();
+		$idQuery->setTerms( 'localid', $data['terms'] );
+
+		$query = new \Elastica\Query();
+		$groovyScript =
+<<<GROOVY
+return prescore.get(doc['localid'].value);
+GROOVY;
+		$script = new \Elastica\Script(
+			$groovyScript,
+			array( 'prescore' => $data['scores'] ),
+			\Elastica\Script::LANG_GROOVY
+		);
+
+		// Use Function Score to retain scores from the previous query
+		$boostQuery = new \Elastica\Query\FunctionScore();
+		$boostQuery->addScriptScoreFunction( $script );
+		$boostQuery->setBoostMode( \Elastica\Query\FunctionScore::BOOST_MODE_REPLACE );
+
+		$filteredQuery = new \Elastica\Query\Filtered();
+		$filterbool = new \Elastica\Filter\Bool();
+
+		$boostQuery->setQuery( $idQuery );
+
+		// Wrap inside another query
+		$query->setQuery( $boostQuery );
+
+		// Language facet to retrieve count for each language
+		$language = new \Elastica\Facet\Terms( 'language' );
+		$language->setField( 'language' );
+		$language->setSize( 500 );
+		$query->addFacet( $language );
+
+		// Group facet to retrieve count for each group
+		$group = new \Elastica\Facet\Terms( 'group' );
+		$group->setField( 'group' );
+		$group->setSize( 500 );
+		$query->addFacet( $group );
+
+		$filters = new \Elastica\Filter\Bool();
+
+		$language = $opts->getValue( 'language' );
+		$languageFilter = new \Elastica\Filter\Term();
+		$languageFilter->setTerm( 'language', $language );
+		$filters->addMust( $languageFilter );
+
+		$group = $opts->getValue( 'group' );
+		if ( $group !== '' ) {
+			$groupFilter = new \Elastica\Filter\Term();
+			$groupFilter->setTerm( 'group', $group );
+			$filters->addMust( $groupFilter );
 		}
+		$query->setFilter( $filters );
+
+		$offset = $opts->getValue( 'offset' );
+		$limit = $opts->getValue( 'limit' );
+		$query->setFrom( 0 );
+		$query->setSize( $offset + $limit );
+		$query->setParam( '_source', array( 'content', 'localid', 'language', 'group', 'wiki' ) );
+		$messages = array();
+		$collect = array();
+		do {
+			try {
+			// Fetch messages from ES
+			$results = $this->getType()->getIndex()->search( $query );
+			} catch ( \Elastica\Exception\ExceptionInterface $e ) {
+				throw new TTMServerException( $e->getMessage() );
+			}
+
+			// Use Message Collection to check the message keys are translated
+			foreach ( $results->getResults() as $document ) {
+				$data = $document->getData();
+				$localid = explode( ':', $data['localid'] );
+				$namespace = strtoupper( "NS_" . $localid[0] );
+				$key = implode( ':', array( constant( $namespace ), $localid[1] ) );
+				$messages[$key] = $data['content'];
+			}
+
+			$definitions = new MessageDefinitions( $messages );
+			$collection = MessageCollection::newFromDefinitions( $definitions, $language );
+
+			// Filter translated messages
+			$collection->filter( 'translated', false );
+			$collection->loadTranslations();
+			foreach ( $collection->keys() as $mkey => $title ) {
+				$collect[$mkey]['title'] = $title;
+				$collect[$mkey]['definition'] = $collection[$mkey]->definition();
+				$collect[$mkey]['translation'] = $collection[$mkey]->translation();
+			}
+			$query->setFrom( $query->getParam( 'from' ) + $query->getParam( 'size' ) );
+			$query->setSize( $limit );
+
+		} while ( count( $collect ) < ( $offset + $limit )
+			&& ( $offset + $limit ) < $results->getTotalHits()
+		);
+
+		$collect = array_slice( $collect, $offset, $limit );
+		return array( 'facets' => $this->getFacets( $results ),
+			'messages' => $collect,
+			'total' => $results->getTotalHits()
+		);
 	}
 
 	public function getFacets( $resultset ) {
