@@ -460,34 +460,121 @@ GROOVY;
 
 		// Allow searching either by message content or message id (page name
 		// without language subpage) with exact match only.
-		$serchQuery = new \Elastica\Query\Bool();
+		$searchQuery = new \Elastica\Query\Bool();
 		$contentQuery = new \Elastica\Query\Match();
 		$contentQuery->setFieldQuery( 'content', $queryString );
-		$serchQuery->addShould( $contentQuery );
+		$searchQuery->addShould( $contentQuery );
 		$messageQuery = new \Elastica\Query\Term();
 		$messageQuery->setTerm( 'localid', $queryString );
-		$serchQuery->addShould( $messageQuery );
-		$query->setQuery( $serchQuery );
+		$searchQuery->addShould( $messageQuery );
 
+		$filteredQuery = new \Elastica\Query\Filtered();
+		$filterbool = new \Elastica\Filter\Bool();
+
+		$context = RequestContext::getMain();
+		$languageCode = $context->getLanguage()->getCode();
+
+		$languageFilter = new \Elastica\Filter\Term();
+		$languageFilter->setTerm( 'language', $languageCode );
+		$filterbool->addMust( $languageFilter );
+
+		$filteredQuery->setFilter($filterbool);
+		$filteredQuery->setQuery($searchQuery);
+
+		$query->setQuery( $filteredQuery );
+		$query->setParam( '_source', array( 'localid', 'group' ) );
+
+		list( $pre, $post ) = $highlight;
+		$query->setHighlight( array(
+			// The value must be an object
+			'fields' => array(
+				'content' => array(
+					'number_of_fragments' => 0,
+				),
+			),
+			'pre_tags' => array( $pre ),
+			'post_tags' => array( $post ),
+		) );
+
+		$query->setFrom( 0 );
+		$query->setSize( 500 );
+		$terms = $scores = array();
+		do {
+			try {
+				$resultset = $this->getType()->getIndex()->search( $query );
+			} catch ( \Elastica\Exception\ExceptionInterface $e ) {
+				throw new TTMServerException( $e->getMessage() );
+			}
+
+			if ( count( $resultset ) === 0 ) {
+				break;
+			}
+
+			foreach ( $resultset->getResults() as $result ) {
+				$data = $result->getData();
+				$score = $result->getScore();
+				$scores[$data['localid']] = $score;
+				$terms[] = $data['localid'];
+			}
+			$query->setFrom( $query->getParam( 'size' ) + $query->getParam( 'from' ) );
+			$query->setSize( $resultset->getTotalHits() );
+
+		} while ( $resultset->getTotalHits() > count( $terms ) );
+		$results = $this->filterTranslation(
+			array (
+				'terms' => $terms,
+				'scores' => $scores
+			),
+			$opts
+		);
+		return $results;
+	}
+
+	/* Do two things:
+	 * 1) Find messages in ES index using message keys
+	 *    and scores.
+	 * 2) Fetch data for facets counts
+	 */
+	public function filterTranslation( $data, $opts ) {
+		$idQuery = new \Elastica\Query\Terms();
+		$idQuery->setTerms( 'localid', $data['terms'] );
+
+		$query = new \Elastica\Query();
+		$groovyScript =
+<<<GROOVY
+return prescore.get(doc['localid'].value);
+GROOVY;
+		$script = new \Elastica\Script(
+			$groovyScript,
+			array( 'prescore' => $data['scores'] ),
+			\Elastica\Script::LANG_GROOVY
+		);
+
+		// Use Function Score to retain scores from the previous query
+		$boostQuery = new \Elastica\Query\FunctionScore();
+		$boostQuery->addScriptScoreFunction( $script );
+		$boostQuery->setBoostMode( \Elastica\Query\FunctionScore::BOOST_MODE_REPLACE );
+
+		$filteredQuery = new \Elastica\Query\Filtered();
+		$filterbool = new \Elastica\Filter\Bool();
+
+		$boostQuery->setQuery( $idQuery );
+
+		// Wrap inside another query
+		$query->setQuery( $boostQuery );
+
+		// Language facet to retrieve count for each language
 		$language = new \Elastica\Facet\Terms( 'language' );
 		$language->setField( 'language' );
 		$language->setSize( 500 );
 		$query->addFacet( $language );
 
+		// Group facet to retrieve count for each group
 		$group = new \Elastica\Facet\Terms( 'group' );
 		$group->setField( 'group' );
-		// Would like to prioritize the top level groups and not show subgroups
-		// if the top group has only few hits, but that doesn't seem to be possile.
 		$group->setSize( 500 );
 		$query->addFacet( $group );
 
-		$query->setSize( $opts->getValue( 'limit' ) );
-		$query->setFrom( $opts->getValue( 'offset' ) );
-
-		// BoolAnd filters are executed in sequence per document. Bool filters with
-		// multiple must clauses are executed by converting each filter into a bit
-		// field then anding them together. The latter is normally faster if either
-		// of the subfilters are reused. May not make a difference in this context.
 		$filters = new \Elastica\Filter\Bool();
 
 		$language = $opts->getValue( 'language' );
@@ -504,22 +591,15 @@ GROOVY;
 			$filters->addMust( $groupFilter );
 		}
 
-		// Check that we have at least one filter to avoid invalid query errors.
 		if ( $language !== '' || $group !== '' ) {
 			$query->setFilter( $filters );
 		}
 
-		list( $pre, $post ) = $highlight;
-		$query->setHighlight( array(
-			// The value must be an object
-			'fields' => array(
-				'content' => array(
-					'number_of_fragments' => 0,
-				),
-			),
-			'pre_tags' => array( $pre ),
-			'post_tags' => array( $post ),
-		) );
+		$offset = $opts->getValue( 'offset' );
+		$limit = $opts->getValue( 'limit' );
+		$query->setFrom( $offset );
+		$query->setSize( $limit );
+		$query->setParam( '_source', array( 'content', 'localid', 'language', 'group', 'wiki' ) );
 
 		try {
 			return $this->getType()->getIndex()->search( $query );
