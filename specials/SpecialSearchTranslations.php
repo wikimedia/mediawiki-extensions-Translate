@@ -80,6 +80,11 @@ class SpecialSearchTranslations extends SpecialPage {
 			return;
 		}
 
+		if ( $opts->getValue( 'language' ) === '' ) {
+			$language = $this->getLanguage()->getCode();
+			$opts->add( 'language', $language );
+		}
+
 		try {
 			$resultset = $server->search( $queryString, $opts, $this->hl );
 		} catch ( TTMServerException $e ) {
