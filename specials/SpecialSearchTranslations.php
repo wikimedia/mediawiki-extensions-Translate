@@ -80,15 +80,25 @@ class SpecialSearchTranslations extends SpecialPage {
 			return;
 		}
 
+		if ( $opts->getValue( 'language' ) === '' ) {
+			$language = $this->getLanguage()->getCode();
+			$opts->add( 'language', $language );
+		}
+
 		try {
+			// Get terms and scores of all message keys found
+			// for a search string in a source language
 			$resultset = $server->search( $queryString, $opts, $this->hl );
 		} catch ( TTMServerException $e ) {
 			error_log( 'Translation search server unavailable:' . $e->getMessage() );
 			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
 		}
 
+		// Retrieve translated messages in a target language
+		$result = $server->filterTranslation( $resultset, $opts );
+
 		// Part 1: facets
-		$facets = $server->getFacets( $resultset );
+		$facets = $result['facets'];
 
 		$facetHtml = Html::element( 'div',
 			array( 'class' => 'row facet languages',
@@ -107,39 +117,38 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		// Part 2: results
 		$resultsHtml = '';
-		$documents = $server->getDocuments( $resultset );
-
-		foreach ( $documents as $document ) {
-			$text = $document['content'];
+		$documents = $result['messages'];
+		$language = $opts->getValue( 'language' );
+		foreach ( $documents as $mkey => $values ) {
+			$text = $documents[$mkey]['definition'];
 			$text = TranslateUtils::convertWhiteSpaceToHTML( $text );
 
 			list( $pre, $post ) = $this->hl;
 			$text = str_replace( $pre, '<strong class="tux-highlight">', $text );
 			$text = str_replace( $post, '</strong>', $text );
 
-			$title = Title::newFromText( $document['localid'] . '/' . $document['language'] );
-			if ( !$title ) {
+			if ( !$documents[$mkey]['title'] ) {
 				// Should not ever happen but who knows...
 				continue;
 			}
 
 			$resultAttribs = array(
 				'class' => 'row tux-message',
-				'data-title' => $title->getPrefixedText(),
-				'data-language' => $document['language'],
+				'data-title' => $documents[$mkey]['title']->getPrefixedText(),
+				'data-language' => $language,
 			);
 
-			$handle = new MessageHandle( $title );
+			$handle = new MessageHandle( $documents[$mkey]['title'] );
 
 			$edit = '';
 			if ( $handle->isValid() ) {
 				$groupId = $handle->getGroup()->getId();
-				$helpers = new TranslationHelpers( $title, $groupId );
+				$helpers = new TranslationHelpers( $documents[$mkey]['title'], $groupId );
 				$resultAttribs['data-definition'] = $helpers->getDefinition();
 				$resultAttribs['data-translation'] = $helpers->getTranslation();
 				$resultAttribs['data-group'] = $groupId;
 
-				$uri = wfAppendQuery( $document['uri'], array( 'action' => 'edit' ) );
+				$uri = wfAppendQuery( $handle->getTitle()->getCanonicalUrl(), array( 'action' => 'edit' ) );
 				$link = Html::element( 'a', array(
 					'href' => $uri,
 				), $this->msg( 'tux-sst-edit' )->text() );
@@ -150,7 +159,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				);
 			}
 
-			$titleText = $title->getPrefixedText();
+			$titleText = $documents[$mkey]['title']->getPrefixedText();
 			$titleAttribs = array(
 				'class' => 'row tux-title',
 				'dir' => 'ltr',
@@ -158,8 +167,8 @@ class SpecialSearchTranslations extends SpecialPage {
 
 			$textAttribs = array(
 				'class' => 'row tux-text',
-				'lang' => wfBCP47( $document['language'] ),
-				'dir' => Language::factory( $document['language'] )->getDir(),
+				'lang' => wfBCP47( $language ),
+				'dir' => Language::factory( $language )->getDir(),
 			);
 
 			$resultsHtml = $resultsHtml
@@ -173,7 +182,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$resultsHtml .= Html::rawElement( 'hr', array( 'class' => 'tux-pagination-line' ) );
 
 		$prev = $next = '';
-		$total = $server->getTotalHits( $resultset );
+		$total = $result['total'];
 		$offset = $this->opts->getValue( 'offset' );
 		$params = $this->opts->getChangedValues();
 
@@ -211,12 +220,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$selected = $this->opts->getValue( 'language' );
 
 		foreach ( $facet as $key => $value ) {
-			if ( $key === $selected ) {
-				unset( $nondefaults['language'] );
-			} else {
-				$nondefaults['language'] = $key;
-			}
-
+			$nondefaults['language'] = $key;
 			$url = $this->getPageTitle()->getLocalUrl( $nondefaults );
 			$value = $this->getLanguage()->formatNum( $value );
 
@@ -327,7 +331,9 @@ HTML
 		$input = Xml::input( 'query', false, $query, $attribs );
 		$submit = Xml::submitButton( $this->msg( 'tux-sst-search' ), array( 'class' => 'button' ) );
 		$lang = $this->getRequest()->getVal( 'language' );
-		$language = is_null( $lang ) ? '' : Html::hidden( 'language', $lang );
+		$code = $this->getLanguage()->getCode();
+		$language = is_null( $lang ) ?
+			Html::hidden( 'language', $code ) : Html::hidden( 'language', $lang );
 
 		$form = Html::rawElement( 'form', array( 'action' => wfScript() ),
 			$title . $input . $submit . $language
