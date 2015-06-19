@@ -81,13 +81,20 @@ GROOVY;
 		$fuzzyFilter->setQuery( $fuzzyQuery );
 		$boostQuery->setFilter( $fuzzyFilter );
 
-		// The whole query
-		$query = new \Elastica\Query();
-		$query->setQuery( $boostQuery );
+		// Use filtered query to wrap function score and language filter
+		$filteredQuery = new \Elastica\Query\Filtered();
+		$filterbool = new \Elastica\Filter\Bool();
 
 		$languageFilter = new \Elastica\Filter\Term();
 		$languageFilter->setTerm( 'language', $sourceLanguage );
-		$query->setFilter( $languageFilter );
+		$filterbool->addMust( $languageFilter );
+
+		$filteredQuery->setFilter( $filterbool );
+		$filteredQuery->setQuery( $boostQuery );
+
+		// The whole query
+		$query = new \Elastica\Query();
+		$query->setQuery( $filteredQuery );
 
 		// The interface usually displays three best candidates. These might
 		// come from more than three source things, if the translations are
