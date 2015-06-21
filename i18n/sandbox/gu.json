@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"KartikMistry"
+			"KartikMistry",
+			"Ashok modhvadia"
 		]
 	},
 	"managetranslatorsandbox": "ભાષાંતર સેન્ડબોક્સનું સંચાલન કરો",
@@ -19,7 +20,7 @@
 	"tsb-reminder-link-text": "યાદ કરાવતો ઇમેલ મોકલો",
 	"tsb-didnt-make-any-translations": "આ સભ્યે કોઇ ભાષાંતરો કરેલ નથી.",
 	"tsb-translations-source": "સ્રોત",
-	"tsb-translations-user": "સભ્ય ભાષાંતરો",
+	"tsb-translations-user": "{{GENDER:$1|સભ્ય}} ભાષાંતરો",
 	"tsb-translations-current": "હાલનાં ભાષાંતરો",
 	"translationstash": "સ્વાગત",
 	"translate-translationstash-welcome": "સ્વાગત {{GENDER:$1|$1}}, તમે હવે ભાષાંતરકર્તા છો",

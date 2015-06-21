@@ -89,6 +89,7 @@
 	"tpt-aggregategroup-edit-name": "Jméno:",
 	"tpt-aggregategroup-edit-description": "Popis:",
 	"tpt-aggregategroup-update": "Uložit",
+	"tpt-aggregategroup-update-cancel": "Storno",
 	"tpt-invalid-group": "Neplatná skupina",
 	"log-description-pagetranslation": "Protokol úkonů souvisejících se systémem překladu stránek",
 	"log-name-pagetranslation": "Kniha překladů stránek",

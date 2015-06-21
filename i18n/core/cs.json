@@ -384,5 +384,5 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|další skupina|další skupiny|dalších skupin}}",
 	"translate-ulsdep-title": "Chyba konfigurace",
 	"translate-ulsdep-body": "Rozšíření Translate závisí na [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector rozšíření Universal Language Selector].",
-	"tux-session-expired": "Již nejste přihlášen(a). Přihlašte se prosím v jiné záložce. Anebo si okopírujte neuložené překlady, přihlaste se a vraťte se na tuto stránku."
+	"tux-session-expired": "Již nejste přihlášen(a). Přihlaste se prosím v jiné záložce. Anebo si okopírujte neuložené překlady, přihlaste se, vraťte se na tuto stránku a zadejte je znovu."
 }

@@ -383,5 +383,5 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grupu|grupos}} más",
 	"translate-ulsdep-title": "Error de configuración",
 	"translate-ulsdep-body": "La estensión Translate depende de la [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector estensión Universal Language Selector].",
-	"tux-session-expired": "La sesión zarróse yá. Anicia sesión nuna llingüeta aparte. Alternativamente, copia les traducciones ensin guardar, anicia sesión y vuelvi a esta páxina."
+	"tux-session-expired": "La sesión zarróse yá. Anicia sesión n'una llingüeta aparte. Alternativamente, copia les traducciones ensin guardar, anicia sesión, vuelvi a esta páxina y escribi les traducciones otra vuelta."
 }

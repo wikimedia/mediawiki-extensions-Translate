@@ -23,5 +23,7 @@
 	"tpt-already-marked": "កំណែ​ចុងក្រោយ​នៃទំព័រ​នេះ​ត្រូវបាន​សម្គាល់​ទុកសម្រាប់​បកប្រែ​។",
 	"translate-tag-translate-link-desc": "បកប្រែទំព័រនេះ",
 	"translate-tag-markthis": "សម្គាល់​ទំព័រ​​នេះ​សម្រាប់​ការបកប្រែ​",
-	"tpt-languages-legend": "ជាភាសាដទៃទៀត៖"
+	"tpt-languages-legend": "ជាភាសាដទៃទៀត៖",
+	"tpt-languages-nonzero": "$1 ($2% បកប្រែរួច)",
+	"tpt-tab-translate": "បកប្រែ"
 }
