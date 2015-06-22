@@ -204,6 +204,7 @@ $al['ApiQueryMessageGroups'] = "$dir/api/ApiQueryMessageGroups.php";
 $al['ApiQueryMessageTranslations'] = "$dir/api/ApiQueryMessageTranslations.php";
 $al['ApiStatsQuery'] = "$dir/api/ApiStatsQuery.php";
 $al['ApiTTMServer'] = "$dir/api/ApiTTMServer.php";
+$al['ApiSearchTranslations'] = "$dir/api/ApiSearchTranslations.php";
 $al['ApiTranslateSandbox'] = "$dir/api/ApiTranslateSandbox.php";
 $al['ApiTranslateUser'] = "$dir/api/ApiTranslateUser.php";
 $al['ApiTranslationAids'] = "$dir/api/ApiQueryTranslationAids.php";

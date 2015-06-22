@@ -454,6 +454,14 @@ GROOVY;
 		$this->updateMapping = true;
 	}
 
+	public function doSearch( $query, $params ) {
+		$opts = new FormOptions();
+		foreach ( $params as $param => $value ) {
+			$opts->add( $param, $value );
+		}
+		return $this->search( $query, $opts, '' );
+	}
+
 	// Search interface
 	public function search( $queryString, $opts, $highlight ) {
 		$query = new \Elastica\Query();
