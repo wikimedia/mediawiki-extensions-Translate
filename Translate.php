@@ -107,6 +107,7 @@ $GLOBALS['wgAPIModules']['translationaids'] = 'ApiTranslationAids';
 $GLOBALS['wgAPIModules']['translationreview'] = 'ApiTranslationReview';
 $GLOBALS['wgAPIModules']['translationstash'] = 'ApiTranslationStash';
 $GLOBALS['wgAPIModules']['ttmserver'] = 'ApiTTMServer';
+$GLOBALS['wgAPIModules']['searchtranslations'] = 'ApiSearchTranslations';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiTranslationReview::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiGroupReview::injectTokenFunction';
 $GLOBALS['wgHooks']['ApiTokensGetTokenTypes'][] = 'ApiAggregateGroups::injectTokenFunction';
