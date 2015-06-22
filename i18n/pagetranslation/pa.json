@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Babanwalia"
+			"Babanwalia",
+			"Satdeep gill"
 		]
 	},
 	"tpt-mark-nochanges": "ਇਸ ਸੁਧਾਈ ਅਤੇ ਆਖ਼ਰੀ ਨਿਸ਼ਾਨਦੇਹ ਸੁਧਾਈ ਵਿੱਚ ਕੋਈ ਫ਼ਰਕ ਨਹੀਂ ਹੈ।",
 	"tpt-translation-intro": "ਇਹ ਸਫ਼ਾ [[$2]] ਸਫ਼ੇ ਦਾ <span class=\"plainlinks\">[$1 ਤਰਜਮਾ ਕੀਤਾ ਰੂਪ]</span> ਹੈ ਅਤੇ ਤਰਜਮਾਕਾਰੀ $3% ਪੂਰੀ ਹੋਈ ਹੈ।",
 	"tpt-languages-legend": "ਹੋਰ ਬੋਲੀਆਂ:",
+	"tpt-languages-nonzero": "$1 ($2% ਅਨੁਵਾਦਿਤ)",
 	"tpt-unlink-button": "ਤਰਜਮਾਕਾਰੀ ਤੋਂ ਹਟਾਉ",
 	"tpt-unlink-summary": "ਸਫ਼ੇ ਨੂੰ ਤਰਜਮਾਕਾਰੀ ਤੋਂ ਹਟਾਇਆ"
 }
