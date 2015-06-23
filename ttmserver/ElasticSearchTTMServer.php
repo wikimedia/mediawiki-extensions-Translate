@@ -32,6 +32,11 @@ class ElasticSearchTTMServer
 	 */
 	protected $updateMapping = false;
 
+	/**
+	 * Used for highlighting
+	 */
+	protected $highlight = array( '', '' );
+
 	public function isLocalSuggestion( array $suggestion ) {
 		return $suggestion['wiki'] === wfWikiId();
 	}
@@ -292,12 +297,28 @@ GROOVY;
 	public function createIndex( $rebuild ) {
 		$type = $this->getType();
 		$type->getIndex()->create(
-				array(
-					'number_of_shards' => $this->getShardCount(),
-					'number_of_replicas' => $this->getReplicaCount(),
-				),
-				$rebuild
-			);
+			array(
+				'number_of_shards' => $this->getShardCount(),
+				'number_of_replicas' => $this->getReplicaCount(),
+				'analysis' => array(
+					'filter' => array(
+						'prefix_filter' => array(
+							'type' => 'edge_ngram',
+							'min_gram'=> 2,
+							'max_gram'=> 20
+						)
+					),
+					'analyzer' => array(
+						'prefix' => array(
+							'type' => 'custom',
+							'tokenizer' => 'standard',
+							'filter' => array( 'standard', 'lowercase', 'prefix_filter' )
+						)
+					)
+				)
+			),
+			$rebuild
+		);
 	}
 
 	public function beginBootstrap() {
@@ -325,7 +346,22 @@ GROOVY;
 			'uri'      => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'language' => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'group'    => array( 'type' => 'string', 'index' => 'not_analyzed' ),
-			'content'  => array( 'type' => 'string', 'index' => 'analyzed', 'term_vector' => 'yes' ),
+			'content'  => array(
+				'type' => 'string',
+				'fields' => array(
+					'content' => array(
+						'type' => 'string',
+						'index' => 'analyzed',
+						'term_vector' => 'yes'
+					),
+					'prefix_complete' => array(
+						'type' => 'string',
+						'index_analyzer' => 'prefix',
+						'search_analyzer' => 'standard',
+						'term_vector' => 'yes'
+					)
+				)
+			),
 		) );
 		$mapping->send();
 
@@ -459,20 +495,58 @@ GROOVY;
 		$this->updateMapping = true;
 	}
 
+	// Parse query string and build the search query
+	protected function parseQueryString( $queryString ) {
+		$fields = $highlights = array();
+		$terms = preg_split( '/\s+/', $queryString );
+
+		// Map each word in the query string with its corresponding field
+		foreach ( $terms as $term ) {
+			$prefix = strstr( $term, '*', true );
+			// For wildcard search
+			if ( $prefix ) {
+				$fields['content.prefix_complete'][] = $prefix;
+			} else {
+				$fields['content'][] = $term;
+			}
+		}
+
+		// Allow searching either by message content or message id (page name
+		// without language subpage) with exact match only.
+		$searchQuery = new \Elastica\Query\Bool();
+		foreach ( $fields as $analyzer => $words ) {
+			foreach ( $words as $word ) {
+				$boolQuery = new \Elastica\Query\Bool();
+				$contentQuery = new \Elastica\Query\Match();
+				$contentQuery->setFieldQuery( $analyzer, $word );
+				$boolQuery->addShould( $contentQuery );
+				$messageQuery = new \Elastica\Query\Term();
+				$messageQuery->setTerm( 'localid', $word );
+				$boolQuery->addShould( $messageQuery );
+				$searchQuery->addShould( $boolQuery );
+
+				// Fields for highlighting
+				$highlights[$analyzer] =  array(
+					'number_of_fragments' => 0
+				);
+			}
+		}
+
+		return array(
+			'searchquery' => $searchQuery,
+			'highlights' => $highlights
+		);
+	}
+
 	// Search interface
 	public function search( $queryString, $opts, $highlight ) {
 		$query = new \Elastica\Query();
 
-		// Allow searching either by message content or message id (page name
-		// without language subpage) with exact match only.
-		$serchQuery = new \Elastica\Query\Bool();
-		$contentQuery = new \Elastica\Query\Match();
-		$contentQuery->setFieldQuery( 'content', $queryString );
-		$serchQuery->addShould( $contentQuery );
-		$messageQuery = new \Elastica\Query\Term();
-		$messageQuery->setTerm( 'localid', $queryString );
-		$serchQuery->addShould( $messageQuery );
-		$query->setQuery( $serchQuery );
+		$this->highlight = $highlight;
+		$output = $this->parseQueryString( $queryString );
+		$searchQuery = $output['searchquery'];
+		$highlights = $output['highlights'];
+		$query->setQuery( $searchQuery );
 
 		$language = new \Elastica\Facet\Terms( 'language' );
 		$language->setField( 'language' );
@@ -517,13 +591,9 @@ GROOVY;
 		list( $pre, $post ) = $highlight;
 		$query->setHighlight( array(
 			// The value must be an object
-			'fields' => array(
-				'content' => array(
-					'number_of_fragments' => 0,
-				),
-			),
 			'pre_tags' => array( $pre ),
 			'post_tags' => array( $post ),
+			'fields' => $highlights,
 		) );
 
 		try {
@@ -554,14 +624,80 @@ GROOVY;
 		return $resultset->getTotalHits();
 	}
 
+	/**
+	 * Find position of each string surrounded by start and end delimiters.
+	 * Example: getContents( 'The <em>language</em> code to search string for.', <em>, </em> )
+	 * would produce array( 5 => 'language' )
+	 * @param string $content The text content to parse.
+	 * @param string $startDelimiter delimiter before the text
+	 * @param string $endDelimiter delimiter after the text
+	 * @return array $contents List of positions with strings wrapped in between delimiters
+	 */
+	protected function getContents( $content, $startDelimiter, $endDelimiter ) {
+		$contents = array();
+		$startDelimiterLength = strlen( $startDelimiter );
+		$endDelimiterLength = strlen( $endDelimiter );
+		$fullDelimiterLength = $startDelimiterLength + $endDelimiterLength;
+		$startFrom = $contentStart = $contentEnd = $count = 0;
+
+		$contentStart = strpos( $content, $startDelimiter, $startFrom );
+		while ( $contentStart !== false ) {
+			$delimiterStart = $contentStart;
+			$contentStart += $startDelimiterLength;
+			$contentEnd = strpos( $content, $endDelimiter, $contentStart );
+			if ( $contentEnd === false ) {
+				break;
+			}
+			$offset = $delimiterStart - ( $count * $fullDelimiterLength );
+			$contents[$offset] = substr( $content, $contentStart, $contentEnd - $contentStart );
+
+			$startFrom = $contentEnd + $endDelimiterLength;
+			$contentStart = strpos( $content, $startDelimiter, $startFrom );
+			$count++;
+		}
+
+		return $contents;
+	}
+
 	public function getDocuments( $resultset ) {
 		$ret = array();
+
+		list( $pre, $post ) = $this->highlight;
+		$len = strlen( $pre ) + strlen ( $post );
 		foreach ( $resultset->getResults() as $document ) {
 			$data = $document->getData();
 			$hl = $document->getHighlights();
-			if ( isset( $hl['content'][0] ) ) {
-				$data['content'] = $hl['content'][0];
+
+			// Single field search highlighting
+			if ( count( $hl ) === 1 ) {
+				$key = array_keys( $hl );
+				$data['content'] = $hl[$key[0]][0];
+				$ret[] = $data;
+				continue;
 			}
+
+			// When a query search more than one field, highlight
+			// all the matches found across all the fields.
+			$content = $data['content'];
+			$highlights = array();
+			foreach ( $hl as $key => $value ) {
+				$contents = $this->getContents( $value[0], $pre, $post );
+				$highlights = $highlights + $contents;
+			}
+			ksort( $highlights );
+
+			$count = 0;
+			foreach ( $highlights as $index => $replace ) {
+				$content = substr_replace(
+					$content,
+					$pre . $replace . $post,
+					( $count * $len ) + $index,
+					strlen( $replace )
+				);
+				$count++;
+			}
+
+			$data['content'] = $content;
 			$ret[] = $data;
 		}
 
