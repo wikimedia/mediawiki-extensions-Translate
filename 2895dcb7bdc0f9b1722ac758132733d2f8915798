@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_0643dc67",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-06-23T15:25:42Z",
+      "side": 1,
+      "message": "I was planning to use it for autosuggestion of message keys but not sure yet as I came across complete suggester.",
+      "parentUuid": "8ec42329_266a98eb",
+      "revId": "2895dcb7bdc0f9b1722ac758132733d2f8915798",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_a6d9a8f9",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 1
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_41030e11",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-06-23T15:25:42Z",
+      "side": 1,
+      "message": "This was my random guess we could come up with some value for min_gram and max_gram( max_gram can be set to the largest word in the index ) based on search logs.",
+      "parentUuid": "8ec42329_069f5c07",
+      "revId": "2895dcb7bdc0f9b1722ac758132733d2f8915798",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_c684f4b6",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 1
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_a1119258",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-06-23T15:25:42Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "8ec42329_c684f4b6",
+      "revId": "2895dcb7bdc0f9b1722ac758132733d2f8915798",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_06b67c85",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 1
@@ -98,6 +152,24 @@
       "writtenOn": "2015-06-23T15:10:17Z",
       "side": 1,
       "message": "Here we define that content is analyzed in the content.content field(?) as usual, and in addition the content.prefix_complete contains the ngram prefixes using our custom analyzer defined above.",
+      "revId": "2895dcb7bdc0f9b1722ac758132733d2f8915798",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_412a2e7b",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-06-23T15:25:42Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "8ec42329_06b67c85",
       "revId": "2895dcb7bdc0f9b1722ac758132733d2f8915798",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
