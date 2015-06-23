@@ -287,12 +287,28 @@ GROOVY;
 	public function createIndex( $rebuild ) {
 		$type = $this->getType();
 		$type->getIndex()->create(
-				array(
-					'number_of_shards' => $this->getShardCount(),
-					'number_of_replicas' => $this->getReplicaCount(),
-				),
-				$rebuild
-			);
+			array(
+				'number_of_shards' => $this->getShardCount(),
+				'number_of_replicas' => $this->getReplicaCount(),
+				'analysis' => array(
+					'filter' => array(
+						'prefix_filter' => array(
+							'type' => 'edge_ngram',
+							'min_gram'=> 2,
+							'max_gram'=> 20
+						)
+					),
+					'analyzer' => array(
+						'prefix' => array(
+							'type' => 'custom',
+							'tokenizer' => 'standard',
+							'filter' => array( 'standard', 'lowercase', 'prefix_filter' )
+						)
+					)
+				)
+			),
+			$rebuild
+		);
 	}
 
 	public function beginBootstrap() {
@@ -320,7 +336,21 @@ GROOVY;
 			'uri'      => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'language' => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'group'    => array( 'type' => 'string', 'index' => 'not_analyzed' ),
-			'content'  => array( 'type' => 'string', 'index' => 'analyzed', 'term_vector' => 'yes' ),
+			'content'  => array(
+				'type' => 'string',
+				'fields' => array(
+					'content' => array(
+						'type' => 'string',
+						'index' => 'analyzed',
+						'term_vector' => 'yes'
+					),
+					'prefix_complete' => array(
+						'type' => 'string',
+						'index_analyzer' => 'prefix',
+						'search_analyzer' => 'standard'
+					)
+				)
+			),
 		) );
 		$mapping->send();
 
@@ -458,11 +488,18 @@ GROOVY;
 	public function search( $queryString, $opts, $highlight ) {
 		$query = new \Elastica\Query();
 
+		$contentString = 'content';
+		$prefix = strstr( $queryString, '*', true );
+		if ( $prefix ) {
+			$queryString = $prefix;
+			$contentString = 'content.prefix_complete';
+		}
+
 		// Allow searching either by message content or message id (page name
 		// without language subpage) with exact match only.
 		$serchQuery = new \Elastica\Query\Bool();
 		$contentQuery = new \Elastica\Query\Match();
-		$contentQuery->setFieldQuery( 'content', $queryString );
+		$contentQuery->setFieldQuery( $contentString, $queryString );
 		$serchQuery->addShould( $contentQuery );
 		$messageQuery = new \Elastica\Query\Term();
 		$messageQuery->setTerm( 'localid', $queryString );
