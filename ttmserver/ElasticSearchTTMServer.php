@@ -287,12 +287,28 @@ GROOVY;
 	public function createIndex( $rebuild ) {
 		$type = $this->getType();
 		$type->getIndex()->create(
-				array(
-					'number_of_shards' => $this->getShardCount(),
-					'number_of_replicas' => $this->getReplicaCount(),
-				),
-				$rebuild
-			);
+			array(
+				'number_of_shards' => $this->getShardCount(),
+				'number_of_replicas' => $this->getReplicaCount(),
+				'analysis' => array(
+					'filter' => array(
+						'prefix_filter' => array(
+							'type' => 'edge_ngram',
+							'min_gram'=> 2,
+							'max_gram'=> 20
+						)
+					),
+					'analyzer' => array(
+						'prefix' => array(
+							'type' => 'custom',
+							'tokenizer' => 'standard',
+							'filter' => array( 'standard', 'lowercase', 'prefix_filter' )
+						)
+					)
+				)
+			),
+			$rebuild
+		);
 	}
 
 	public function beginBootstrap() {
@@ -320,7 +336,22 @@ GROOVY;
 			'uri'      => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'language' => array( 'type' => 'string', 'index' => 'not_analyzed' ),
 			'group'    => array( 'type' => 'string', 'index' => 'not_analyzed' ),
-			'content'  => array( 'type' => 'string', 'index' => 'analyzed', 'term_vector' => 'yes' ),
+			'content'  => array(
+				'type' => 'string',
+				'fields' => array(
+					'content' => array(
+						'type' => 'string',
+						'index' => 'analyzed',
+						'term_vector' => 'yes'
+					),
+					'prefix_complete' => array(
+						'type' => 'string',
+						'index_analyzer' => 'prefix',
+						'search_analyzer' => 'standard',
+						'term_vector' => 'yes'
+					)
+				)
+			),
 		) );
 		$mapping->send();
 
@@ -458,15 +489,40 @@ GROOVY;
 	public function search( $queryString, $opts, $highlight ) {
 		$query = new \Elastica\Query();
 
+		$fields = $highlights = array();
+		$terms = explode( ' ', $queryString );
+
+		// Map each word in the search string with its corresponding field
+		foreach ( $terms as $term ) {
+			$prefix = strstr( $term, '*', true );
+			// For wildcard search
+			if ( $prefix ) {
+				$fields['content.prefix_complete'][] = $prefix;
+			} else {
+				$fields['content'][] = $term;
+			}
+		}
+
 		// Allow searching either by message content or message id (page name
 		// without language subpage) with exact match only.
 		$serchQuery = new \Elastica\Query\Bool();
-		$contentQuery = new \Elastica\Query\Match();
-		$contentQuery->setFieldQuery( 'content', $queryString );
-		$serchQuery->addShould( $contentQuery );
-		$messageQuery = new \Elastica\Query\Term();
-		$messageQuery->setTerm( 'localid', $queryString );
-		$serchQuery->addShould( $messageQuery );
+		foreach ( $fields as $analyzer => $words ) {
+			foreach ( $words as $word ) {
+				$boolQuery = new \Elastica\Query\Bool();
+				$contentQuery = new \Elastica\Query\Match();
+				$contentQuery->setFieldQuery( $analyzer, $word );
+				$boolQuery->addShould( $contentQuery );
+
+				$messageQuery = new \Elastica\Query\Term();
+				$messageQuery->setTerm( 'localid', $word );
+				$boolQuery->addShould( $messageQuery );
+
+				$serchQuery->addShould( $boolQuery );
+
+				// Fields for highlighting
+				$highlights[$analyzer] =  array( 'number_of_fragments' => 0 );
+			}
+		}
 		$query->setQuery( $serchQuery );
 
 		$language = new \Elastica\Facet\Terms( 'language' );
@@ -512,11 +568,7 @@ GROOVY;
 		list( $pre, $post ) = $highlight;
 		$query->setHighlight( array(
 			// The value must be an object
-			'fields' => array(
-				'content' => array(
-					'number_of_fragments' => 0,
-				),
-			),
+			'fields' => $highlights,
 			'pre_tags' => array( $pre ),
 			'post_tags' => array( $post ),
 		) );
@@ -556,6 +608,10 @@ GROOVY;
 			$hl = $document->getHighlights();
 			if ( isset( $hl['content'][0] ) ) {
 				$data['content'] = $hl['content'][0];
+			}
+
+			if ( isset( $hl['content.prefix_complete'][0] ) ) {
+				$data['content'] = $hl['content.prefix_complete'][0];
 			}
 			$ret[] = $data;
 		}
