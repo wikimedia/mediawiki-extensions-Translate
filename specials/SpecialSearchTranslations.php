@@ -61,12 +61,14 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.searchtranslations' );
+		$out->addModuleStyles( 'ext.translate.special.translate' );
 
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );
 		$opts->add( 'language', '' );
 		$opts->add( 'group', '' );
 		$opts->add( 'grouppath', '' );
+		$opts->add( 'filter', '' );
 		$opts->add( 'limit', $this->limit );
 		$opts->add( 'offset', 0 );
 
@@ -87,8 +89,30 @@ class SpecialSearchTranslations extends SpecialPage {
 			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
 		}
 
+		if ( $opts->getValue( 'filter' ) === 'translated' ) {
+			$result = $server->filterTranslation( $resultset, $opts );
+		} elseif ( $opts->getValue( 'filter' ) === 'untranslated' ) {
+			$result = $server->filterNoTranslation( $resultset, $opts );
+			$resultS = $server->makeFacets( $resultset, $opts );
+			$result['facets'] = $server->getFacets( $resultS );
+
+			// Facet for untranslated messages
+			$facets = $result['facets']['language'];
+			$totalvalue = $facets[$this->getLanguage()->getCode()];
+			$codes = Language::fetchLanguageNames();
+			foreach ( $codes as $targetLanguage => $value ) {
+				if ( array_key_exists( $targetLanguage, $facets ) ) {
+					$facets[$targetLanguage] = $totalvalue - $facets[$targetLanguage];
+				} else {
+					$facets[$targetLanguage] = $totalvalue;
+				}
+			}
+			krsort( $facets );
+			$result['facets']['language'] = $facets;
+		}
+
 		// Part 1: facets
-		$facets = $server->getFacets( $resultset );
+		$facets = $result['facets'];
 
 		$facetHtml = Html::element( 'div',
 			array( 'class' => 'row facet languages',

@@ -528,6 +528,73 @@ GROOVY;
 		}
 	}
 
+	// Filter untranslated messages
+	public function filterNoTranslation( $data, $opts ) {
+
+		$content = $data['content'];
+		$terms = $data['terms'];
+		$count = 0;
+		$language = $opts->getValue( 'language' );
+		$offset = $opts->getValue( 'offset' );
+		$limit = $opts->getValue( 'limit' );
+		$collect = array();
+		do {
+			$terms_new = array_slice ( $terms, $count, $limit );
+			$messages = array();
+			foreach ( $terms_new as $document ) {
+				$localid = explode( ':', $document );
+				$namespace = strtoupper( "NS_" . $localid[0] );
+				$key = implode( ':', array( constant( $namespace ), $localid[1] ) );
+				$messages[$key] = $content[$document];
+			}
+
+			$definitions = new MessageDefinitions( $messages );
+			$collection = MessageCollection::newFromDefinitions( $definitions, $language );
+
+			$collection->filter( 'hastranslation', true );
+			foreach ( $collection->keys() as $mkey => $title ) {
+				$collect[$mkey]['title'] = $title;
+				$collect[$mkey]['definition'] = $messages[$mkey];
+			}
+
+			$count = $count + $limit;
+		} while ( count( $collect ) <  $offset + $limit
+			&& $count  < count( $terms )
+		);
+		$collect = array_slice( $collect, $offset, $limit );
+
+		return array( 'messages' => $collect );
+	}
+
+	public function makeFacets( $data, $opts ) {
+		$idQuery = new \Elastica\Query\Terms();
+		$idQuery->setTerms( 'localid', $data['terms'] );
+
+		$query = new \Elastica\Query();
+		// Wrap inside another query
+		$query->setQuery( $idQuery );
+
+		// Language facet to retrieve count for each language
+		$language = new \Elastica\Facet\Terms( 'language' );
+		$language->setField( 'language' );
+		$language->setSize( 500 );
+		$query->addFacet( $language );
+
+		// Group facet to retrieve count for each group
+		$group = new \Elastica\Facet\Terms( 'group' );
+		$group->setField( 'group' );
+		$group->setSize( 500 );
+		$query->addFacet( $group );
+
+		$query->setParam( '_source', array( 'language', 'group' ) );
+		try {
+			// Fetch messages from ES
+			return $this->getType()->getIndex()->search( $query );
+		} catch ( \Elastica\Exception\ExceptionInterface $e ) {
+			throw new TTMServerException( $e->getMessage() );
+		}
+	}
+
 	public function getFacets( $resultset ) {
 		$facets = $resultset->getFacets();
 
