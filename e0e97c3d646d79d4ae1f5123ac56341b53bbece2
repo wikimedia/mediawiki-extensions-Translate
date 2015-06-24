@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_a592f44c",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2015-06-24T13:02:28Z",
+      "side": 1,
+      "message": "Please i18n this string and the strings below.",
+      "revId": "e0e97c3d646d79d4ae1f5123ac56341b53bbece2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
