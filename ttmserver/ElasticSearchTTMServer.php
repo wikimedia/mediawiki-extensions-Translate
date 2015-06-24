@@ -532,6 +532,7 @@ GROOVY;
 
 	// Search interface
 	public function search( $queryString, $opts, $highlight ) {
+		global $wgLanguageCode;
 		$query = new \Elastica\Query();
 
 		$this->highlight = $highlight;
@@ -559,7 +560,12 @@ GROOVY;
 		// of the subfilters are reused. May not make a difference in this context.
 		$filters = new \Elastica\Filter\Bool();
 
-		$language = $opts->getValue( 'language' );
+		if ( $filter === 'untranslated' ) {
+			$language = '';
+		} else {
+			$language = $opts->getValue( 'language' );
+		}
+
 		if ( $language !== '' ) {
 			$languageFilter = new \Elastica\Filter\Term();
 			$languageFilter->setTerm( 'language', $language );
@@ -586,11 +592,22 @@ GROOVY;
 			'fields' => $highlights,
 		) );
 
-		try {
-			return $this->getType()->getIndex()->search( $query );
-		} catch ( \Elastica\Exception\ExceptionInterface $e ) {
-			throw new TTMServerException( $e->getMessage() );
-		}
+		do {
+			try {
+				$resultset = $this->getType()->getIndex()->search( $query );
+			} catch ( \Elastica\Exception\ExceptionInterface $e ) {
+				throw new TTMServerException( $e->getMessage() );
+			}
+			$query->setFrom( 0 );
+			$size = $query->getParam( 'size' );
+			$query->setSize( $resultset->getTotalHits() );
+
+		} while (
+			$filter === 'untranslated' &&
+			$resultset->getTotalHits() > $size
+		);
+
+		return $resultset;
 	}
 
 	public function getFacets( $resultset ) {
