@@ -812,13 +812,12 @@
 			params = {
 				action: 'translationreview',
 				token: $b.data( 'token' ),
-				revision: $b.data( 'revision' ),
-				format: 'json'
+				revision: $b.data( 'revision' )
 			};
 			$b.val( mw.msg( 'translate-messagereview-progress' ) );
 			$b.prop( 'disabled', true );
 
-			$.post( mw.util.wikiScript( 'api' ), params, successFunction ).fail( failFunction );
+			new mw.Api().post( params ).done( successFunction ).fail( failFunction );
 		} );
 	} );
 
