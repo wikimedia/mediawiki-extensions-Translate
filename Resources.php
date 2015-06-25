@@ -435,12 +435,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'ext.uls.mediawiki',
 	),
 	'messages' => array(
-		'translate-workflow-set-do',
-		'translate-workflow-set-doing',
-		'translate-workflow-set-done',
-		'translate-workflow-set-error-alreadyset',
 		'translate-documentation-language',
-		'translate-workflow-state-',
 		'tpt-discouraged-language-force-header',
 		'tpt-discouraged-language-force-content',
 		'tpt-discouraged-language-header',
@@ -509,6 +504,7 @@ $wgResourceModules['ext.translate.workflowselector'] = array(
 	'scripts' => 'resources/js/ext.translate.workflowselector.js',
 	'messages' => array(
 		'translate-workflow-set-doing',
+		'translate-workflow-state-',
 		'translate-workflowstatus',
 	),
 	'dependencies' => array(

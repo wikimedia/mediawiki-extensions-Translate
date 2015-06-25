@@ -17,21 +17,6 @@
 	white-space: nowrap;
 }
 
-/*
- * This reserves one corner with curvy lines for the message group status.
- */
-#mw-sp-translate-workflow {
-	float: right;
-	vertical-align: middle;
-	padding: 0.5em;
-	margin-left: 20px;
-	margin-right: -1em;
-	margin-top: -1em;
-	border-bottom: 2px dotted #666;
-	border-left: 1px dotted #AAA;
-	border-bottom-left-radius: 10px;
-}
-
 .tux-message-selector {
 	font-size: 14px;
 	margin: 0;

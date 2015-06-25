@@ -147,11 +147,6 @@ class SpecialTranslate extends SpecialPage {
 				}
 			}
 
-			$status = $this->getWorkflowStatus();
-			if ( $status !== false ) {
-				$description = $status . $description;
-			}
-
 			$groupId = $this->group->getId();
 			// PHP is such an awesome language
 			$priorityLangs = TranslateMetadata::get( $groupId, 'prioritylangs' );
@@ -788,88 +783,6 @@ class SpecialTranslate extends SpecialPage {
 
 	protected function tuxWorkflowSelector() {
 		return Html::element( 'div', array( 'class' => 'tux-workflow twelve columns' ) );
-	}
-
-	protected function getWorkflowStatus() {
-		$stateConfig = $this->group->getMessageGroupStates()->getStates();
-		if ( !$stateConfig ) {
-			return false;
-		}
-
-		if ( MessageGroups::isDynamic( $this->group ) ) {
-			return false;
-		}
-
-		$dbr = wfGetDB( DB_SLAVE );
-		$current = $dbr->selectField(
-			'translate_groupreviews',
-			'tgr_state',
-			array( 'tgr_group' => $this->options['group'], 'tgr_lang' => $this->options['language'] ),
-			__METHOD__
-		);
-
-		$options = array();
-		$stateConfig = array_merge(
-			array( '' => array( 'right' => 'impossible-right' ) ),
-			$stateConfig
-		);
-
-		$user = $this->getUser();
-		if ( $user->isAllowed( 'translate-groupreview' ) ) {
-			// Add an option for every state
-			foreach ( $stateConfig as $state => $config ) {
-				$stateMessage = $this->msg( "translate-workflow-state-$state" );
-				$stateText = $stateMessage->isBlank() ? $state : $stateMessage->text();
-
-				$attributes = array(
-					'value' => $state,
-				);
-
-				if ( $state === strval( $current ) ) {
-					$attributes['selected'] = 'selected';
-				}
-
-				if ( is_array( $config ) && isset( $config['right'] )
-					&& !$user->isAllowed( $config['right'] )
-				) {
-					// Grey out the forbidden option
-					$attributes['disabled'] = 'disabled';
-				}
-
-				$options[] = Html::element( 'option', $attributes, $stateText );
-			}
-			$stateIndicator = Html::rawElement( 'select',
-				array(
-					'class' => 'mw-translate-workflowselector',
-					'name' => 'workflow',
-				),
-				implode( "\n", $options )
-			);
-
-			$setButtonAttributes = array(
-				'type' => 'button',
-				'id' => 'mw-translate-workflowset',
-				'data-token' => ApiGroupReview::getToken( 0, '' ),
-				'data-group' => $this->options['group'],
-				'data-language' => $this->options['language'],
-				'style' => 'visibility: hidden;',
-				'value' => 'Set',
-			);
-			$stateIndicator .= Html::element( 'input', $setButtonAttributes );
-		} elseif ( strval( $current ) !== '' ) {
-			$stateIndicator = $current;
-		} else {
-			$stateIndicator = $this->msg( 'translate-workflow-state-' )->escaped();
-		}
-
-		$message = $this->msg( 'translate-workflowstatus' )->rawParams( $stateIndicator );
-		$box = Html::rawElement(
-			'div',
-			array( 'id' => 'mw-sp-translate-workflow' ),
-			$message->escaped()
-		);
-
-		return $box;
 	}
 
 	/**
