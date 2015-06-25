@@ -6,6 +6,9 @@
 		]
 	},
 	"translate-edit-no-information": "''यै रैबारको दस्तावेजीकरण (documentation) छैन''\n''यदि तम यो सन्देश कहाँ अथवा कसरी प्रयोग गरिन्छ भन्ने कुरडी जाणन्छौ भन्या तमीले यैको दस्तावेजीकरण थप गरी अरु अनुवादकहरूलाई सहयोग दिन सक्द्याछौ ।''",
+	"translate-edit-information": "($1) रैबारका बारेमी जानकारी",
+	"translate-edit-in-other-languages": "रैबार अन्य भाषाहरूमी",
+	"translate-edit-tmsugs": "अनुवाद स्मृतिबठे सुझावहरू",
 	"translate-stats-edits": "सम्पादनहरू",
 	"translate-stats-users": "अनुवादकहरू",
 	"translate-statsf-count-users": "सक्रिय अनुवादकहरू",
