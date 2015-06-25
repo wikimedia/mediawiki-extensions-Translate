@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_ceef14e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-06-25T14:56:50Z",
+      "side": 1,
+      "message": "Usually API as it is acronym.",
+      "revId": "226d1a4b2235d5a82daec37eb15ede4cf5528152",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_2e3b3898",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-06-25T14:56:50Z",
+      "side": 1,
+      "message": "This does not check that the service actually exists. You can fix that by setting the allowed values below.",
+      "revId": "226d1a4b2235d5a82daec37eb15ede4cf5528152",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_6ed9405b",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-06-25T14:56:50Z",
+      "side": 1,
+      "message": "If we do not provide highlighting, the appropriate default value would be array( \u0027\u0027, \u0027\u0027 ).",
+      "revId": "226d1a4b2235d5a82daec37eb15ede4cf5528152",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_2ecc98bf",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-06-25T14:56:50Z",
+      "side": 1,
+      "message": "You should set the allowed values. See getAvailableTranslationServices in ApiTTMServer. The difference is that we can list all searchable TTMServers here.",
+      "revId": "226d1a4b2235d5a82daec37eb15ede4cf5528152",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
