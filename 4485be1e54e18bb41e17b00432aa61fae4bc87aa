@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_bdbf64f6",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-06-25T06:25:52Z",
+      "side": 1,
+      "message": "Nowdays I use @since 2015.05 format according to match the MLEB release number format.",
+      "revId": "4485be1e54e18bb41e17b00432aa61fae4bc87aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_5dd1a056",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-06-25T06:25:52Z",
+      "side": 1,
+      "message": "For testing, it could be handy if we could pass in as a parameter which (public) TTMServer to use, if there are many available.",
+      "revId": "4485be1e54e18bb41e17b00432aa61fae4bc87aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_7d357ca2",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-06-25T06:25:52Z",
+      "side": 1,
+      "message": "Is the point of this loop to filter out some values out of the $document?",
+      "revId": "4485be1e54e18bb41e17b00432aa61fae4bc87aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_fd488c33",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-06-25T06:25:52Z",
+      "side": 1,
+      "message": "Since you added these things to the i18n, I think you can remove these methods, except getExamples().",
+      "revId": "4485be1e54e18bb41e17b00432aa61fae4bc87aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_1d46b825",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-06-25T06:25:52Z",
+      "side": 1,
+      "message": "I am not sure why this is needed. It also makes this only work with ES (there is also Solr backend still supported).",
+      "revId": "4485be1e54e18bb41e17b00432aa61fae4bc87aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
