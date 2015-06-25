@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_fd596c90",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-06-25T07:33:34Z",
+      "side": 1,
+      "message": "Yes. It filters out \u0027wiki\u0027 value but giving it a second thought it may be needed so removing the loop.",
+      "parentUuid": "8ec42329_7d357ca2",
+      "revId": "4485be1e54e18bb41e17b00432aa61fae4bc87aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_fd488c33",
         "filename": "api/ApiSearchTranslations.php",
         "patchSetId": 6
@@ -81,6 +99,24 @@
       "writtenOn": "2015-06-25T06:25:52Z",
       "side": 1,
       "message": "I am not sure why this is needed. It also makes this only work with ES (there is also Solr backend still supported).",
+      "revId": "4485be1e54e18bb41e17b00432aa61fae4bc87aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_bd4f64c0",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-06-25T07:33:34Z",
+      "side": 1,
+      "message": "I used it to convert params array to FormOptions object but looking into Solr backend implementation, it too passes same obj so I am moving this part to api.",
+      "parentUuid": "8ec42329_1d46b825",
       "revId": "4485be1e54e18bb41e17b00432aa61fae4bc87aa",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
