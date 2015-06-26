@@ -7,7 +7,8 @@
 			"Gitartha.bordoloi",
 			"Jaminianurag",
 			"Nilamdyuti",
-			"Xqt"
+			"Xqt",
+			"Dibya Dutta"
 		]
 	},
 	"translate": "অনুবাদ কৰক",
@@ -113,6 +114,7 @@
 	"translate-translations-project": "প্ৰকল্প:",
 	"translate-translations-history-short": "ই",
 	"languagestats": "ভাষাৰ পৰিসংখ্যা",
+	"messagegroupstats-summary": "এই পৃষ্ঠাখনে বাৰ্তা গোটসমুহৰ পৰিসংখ্যা দেখুৱাইছে।",
 	"languagestats-stats-for": "$1 ($2)’ৰ বাবে ভাঙনি পৰিসংখ্যা",
 	"languagestats-recenttranslations": "শেহতীয়া ভাঙনিসমূহ",
 	"translate-langstats-expand": "বহলাওক",
