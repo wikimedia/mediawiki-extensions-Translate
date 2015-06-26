@@ -376,7 +376,7 @@ $wgResourceModules['ext.translate.special.pagepreparation'] = array(
 		'pp-pagename-missing',
 	),
 	'dependencies' => array(
-		'jquery.mwExtension',
+		'mediawiki.RegExp',
 		'mediawiki.Title',
 		'mediawiki.action.history.diff',
 		'mediawiki.api',
