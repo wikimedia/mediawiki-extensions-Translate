@@ -592,7 +592,12 @@ class TranslationHelpers {
 		if ( !$pairs ) {
 
 			$pairs = array();
-			$json = Http::get( $config['pairs'], 5 );
+			// BC for MW <= 1.24
+			$json = Http::request(
+				'GET',
+				$config['pairs'],
+				array( 'timeout' => 5 )
+			);
 			$response = FormatJson::decode( $json );
 
 			if ( $json === false ) {
@@ -692,7 +697,12 @@ class TranslationHelpers {
 
 		if ( !$pairs ) {
 			$pairs = array();
-			$json = Http::get( $config['pairs'], $config['timeout'] );
+			// BC for MW <= 1.24
+			$json = Http::request(
+				'GET',
+				$config['pairs'],
+				array( 'timeout' => $config['timeout'] )
+			);
 			$response = FormatJson::decode( $json );
 
 			if ( $json === false ) {

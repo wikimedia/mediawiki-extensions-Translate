@@ -29,7 +29,12 @@ class CxserverWebService extends TranslationWebService {
 		$pairs = array();
 
 		$url = $this->config['host'] . '/languagepairs';
-		$json = Http::get( $url, $this->config['timeout'] );
+		// BC for MW <= 1.24
+		$json = Http::request(
+			'GET',
+			$url,
+			array( $this->config['timeout'] )
+		);
 		$response = FormatJson::decode( $json, true );
 
 		if ( !is_array( $response ) ) {

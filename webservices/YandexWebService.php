@@ -37,7 +37,12 @@ class YandexWebService extends TranslationWebService {
 		);
 
 		$url = $this->config['pairs'] . '?' . wfArrayToCgi( $params );
-		$json = Http::get( $url, $this->config['timeout'] );
+		// BC MW <= 1.24
+		$json = Http::request(
+			'GET',
+			$url,
+			array( 'timeout' => $this->config['timeout'] )
+		);
 		$response = FormatJson::decode( $json );
 
 		if ( !is_object( $response ) ) {
