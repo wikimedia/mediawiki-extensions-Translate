@@ -269,6 +269,8 @@
 	"translate-stats-workflow": "الحالة",
 	"translate-dynagroup-recent-label": "أحدث الترجمات",
 	"translate-dynagroup-additions-label": "الإضافات الأخيرة",
+	"translate-dynagroup-by": "قام بالترجمة {{GENDER:$1|$1}}",
+	"translate-dynagroup-byc": "قام بالترجمة {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "مساعدة",
 	"translate-msggroupselector-projects": "مجموعة الرسائل",
 	"translate-msggroupselector-search-placeholder": "ابحث عن المجموعات",

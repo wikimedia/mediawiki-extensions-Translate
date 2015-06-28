@@ -1,10 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Subi"
+			"Subi",
+			"Sator"
 		]
 	},
+	"tsb-reminder-sent": "{{PLURAL:$1|Sent $1 reminder. Time: $2.|Sent $1 reminders. Time of the last one: $2.}}",
+	"tsb-reminder-sent-new": "Gogorarazpena bidali",
 	"tsb-all-languages-button-label": "Hizkuntza guztiak",
+	"tsb-accept-button-label": "Onartu",
+	"tsb-reject-button-label": "Ukatu",
+	"tsb-selected-count": "{{PLURAL:$1|$1 user selected|$1 lankide aukeratuak}}",
+	"tsb-accept-all-button-label": "Dena onartu",
+	"tsb-reject-all-button-label": "Dena ukatu",
+	"tsb-reminder-link-text": "Gogorarazpen posta bidali",
+	"tsb-didnt-make-any-translations": "Lankide honek ez du itzulpenik egin",
+	"tsb-translations-source": "Iturria",
+	"tsb-translations-user": "{{GENDER:$1|Lankidearen}} itzulpen",
 	"translationstash": "Ongi etorri",
-	"translate-translationstash-welcome": "Ongi etorri {{GENDER:$1|$1}}, itzultzaile berria zara"
+	"translate-translationstash-welcome": "Ongi etorri {{GENDER:$1|$1}}, itzultzaile berria zara",
+	"translate-translationstash-skip-button-label": "Probatu beste bat"
 }
