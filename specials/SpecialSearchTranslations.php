@@ -80,6 +80,11 @@ class SpecialSearchTranslations extends SpecialPage {
 			return;
 		}
 
+		if ( $opts->getValue( 'language' ) === '' ) {
+			$language = $this->getLanguage()->getCode();
+			$opts->add( 'language', $language );
+		}
+
 		try {
 			$resultset = $server->search( $queryString, $opts, $this->hl );
 		} catch ( TTMServerException $e ) {
@@ -87,7 +92,36 @@ class SpecialSearchTranslations extends SpecialPage {
 			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
 		}
 
+		$messages = $documents = $terms = array();
+		$language = $opts->getValue( 'language' );
+		foreach ( $resultset->getResults() as $document ) {
+			$data = $document->getData();
+			$localid = explode( ':', $data['localid'] );
+			$namespace = strtoupper( "NS_" . $localid[0] );
+			$key = implode( ':', array( constant( $namespace ), $localid[1] ) );
+			$messages[$key] = $data['content'];
+			$terms[] = $data['localid'];
+		}
+
+
+		$definitions = new MessageDefinitions( $messages );
+		$collection = MessageCollection::newFromDefinitions( $definitions, $language );
+		$collection->filter( 'translated', false );
+
+		$off = $collection->slice( $opts->getValue('offset'), $this->limit );
+		$collection->loadTranslations();
+
+		foreach ( $collection->keys() as $mkey => $title ) {
+			$documents[$mkey]['title'] = $title;
+			$documents[$mkey]['definition'] = $messages[$mkey];
+			$documents[$mkey]['translation'] = $collection[$mkey]->translation();
+		}
+
 		// Part 1: facets
+		if ( method_exists( $server, 'makeFacets' ) ) {
+			$resultset = $server->makeFacets( $terms, $opts );
+		}
+
 		$facets = $server->getFacets( $resultset );
 		$total = $server->getTotalHits( $resultset );
 		$facetHtml = '';
@@ -111,39 +145,37 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		// Part 2: results
 		$resultsHtml = '';
-		$documents = $server->getDocuments( $resultset );
 
-		foreach ( $documents as $document ) {
-			$text = $document['content'];
+		foreach ( $documents as $mkey => $values ) {
+			$text = $documents[$mkey]['translation'];
 			$text = TranslateUtils::convertWhiteSpaceToHTML( $text );
 
 			list( $pre, $post ) = $this->hl;
 			$text = str_replace( $pre, '<strong class="tux-highlight">', $text );
 			$text = str_replace( $post, '</strong>', $text );
 
-			$title = Title::newFromText( $document['localid'] . '/' . $document['language'] );
-			if ( !$title ) {
+			if ( !$documents[$mkey]['title'] ) {
 				// Should not ever happen but who knows...
 				continue;
 			}
 
 			$resultAttribs = array(
 				'class' => 'row tux-message',
-				'data-title' => $title->getPrefixedText(),
-				'data-language' => $document['language'],
+				'data-title' => $documents[$mkey]['title']->getPrefixedText(),
+				'data-language' => $language,
 			);
 
-			$handle = new MessageHandle( $title );
+			$handle = new MessageHandle( $documents[$mkey]['title'] );
 
 			$edit = '';
 			if ( $handle->isValid() ) {
 				$groupId = $handle->getGroup()->getId();
-				$helpers = new TranslationHelpers( $title, $groupId );
+				$helpers = new TranslationHelpers( $documents[$mkey]['title'], $groupId );
 				$resultAttribs['data-definition'] = $helpers->getDefinition();
 				$resultAttribs['data-translation'] = $helpers->getTranslation();
 				$resultAttribs['data-group'] = $groupId;
 
-				$uri = wfAppendQuery( $document['uri'], array( 'action' => 'edit' ) );
+				$uri = wfAppendQuery( $handle->getTitle()->getCanonicalUrl(), array( 'action' => 'edit' ) );
 				$link = Html::element( 'a', array(
 					'href' => $uri,
 				), $this->msg( 'tux-sst-edit' )->text() );
@@ -154,7 +186,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				);
 			}
 
-			$titleText = $title->getPrefixedText();
+			$titleText = $documents[$mkey]['title']->getPrefixedText();
 			$titleAttribs = array(
 				'class' => 'row tux-title',
 				'dir' => 'ltr',
@@ -162,8 +194,8 @@ class SpecialSearchTranslations extends SpecialPage {
 
 			$textAttribs = array(
 				'class' => 'row tux-text',
-				'lang' => wfBCP47( $document['language'] ),
-				'dir' => Language::factory( $document['language'] )->getDir(),
+				'lang' => wfBCP47( $language ),
+				'dir' => Language::factory( $language )->getDir(),
 			);
 
 			$resultsHtml = $resultsHtml
