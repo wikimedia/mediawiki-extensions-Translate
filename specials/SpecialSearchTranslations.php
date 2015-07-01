@@ -85,7 +85,7 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$filter = $opts->getValue( 'filter' );
 		try {
-			if ( $filter === 'untranslated' ) {
+			if ( $filter !== '' ) {
 				$documents = array();
 				$total = $start = 0;
 				$actualoffset = $offset = $opts->getValue( 'offset' );
@@ -289,7 +289,7 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$definitions = new MessageDefinitions( $messages );
 		$collection = MessageCollection::newFromDefinitions( $definitions, $language );
-		$collection->filter( 'hastranslation', true );
+		$collection->filter( 'translated', false );
 
 		$total = count( $collection );
 		$offset = $collection->slice( $offset, $limit );
@@ -303,7 +303,11 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$collection->loadTranslations();
 		foreach ( $collection->keys() as $mkey => $title ) {
-			$documents[$mkey]['content'] = $collection[$mkey]->definition();
+			$translation = $collection[$mkey]->translation();
+			if ( $translation === null || $translation === '' ) {
+				$translation = $collection[$mkey]->definition();
+			}
+			$documents[$mkey]['content'] = $translation;
 			$output = explode( '/', $title->getPrefixedText() );
 			$documents[$mkey]['localid'] = $output[0];
 			$documents[$mkey]['language'] = $language;
