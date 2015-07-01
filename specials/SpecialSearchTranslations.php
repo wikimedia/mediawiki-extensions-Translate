@@ -51,6 +51,7 @@ class SpecialSearchTranslations extends SpecialPage {
 	}
 
 	public function execute( $par ) {
+		global $wgLanguageCode;
 		$this->setHeaders();
 		$this->checkPermissions();
 
@@ -64,9 +65,11 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );
+		$opts->add( 'sourcelanguage', '' );
 		$opts->add( 'language', '' );
 		$opts->add( 'group', '' );
 		$opts->add( 'grouppath', '' );
+		$opts->add( 'filter', '' );
 		$opts->add( 'limit', $this->limit );
 		$opts->add( 'offset', 0 );
 
@@ -87,9 +90,24 @@ class SpecialSearchTranslations extends SpecialPage {
 			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
 		}
 
-		// Part 1: facets
+		$terms = array();
+		$filter = $opts->getValue( 'filter' );
+		$language = $opts->getValue( 'language' );
+		if ( $filter === 'translated' ) {
+			if ( $language === '' ) {
+				$opts->add( 'language', $this->getLanguage()->getCode() );
+			}
+			$collection = $this->applyFilter( $resultset );
+			$docs = $collection['documents'];
+			$terms = $collection['terms'];
+			$total = $collection['total'];
+			$documents = $this->getMessages( $docs );
+		} else {
+			$documents = $server->getDocuments( $resultset );
+			$total = $server->getTotalHits( $resultset );
+		}
+
 		$facets = $server->getFacets( $resultset );
-		$total = $server->getTotalHits( $resultset );
 		$facetHtml = '';
 
 		if ( count( $facets['language'] ) > 0 ) {
@@ -113,7 +131,6 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		// Part 2: results
 		$resultsHtml = '';
-		$documents = $server->getDocuments( $resultset );
 
 		foreach ( $documents as $document ) {
 			$text = $document['content'];
@@ -144,7 +161,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				$resultAttribs['data-translation'] = $helpers->getTranslation();
 				$resultAttribs['data-group'] = $groupId;
 
-				$uri = wfAppendQuery( $document['uri'], array( 'action' => 'edit' ) );
+				$uri = $title->getLocalUrl( array( 'action' => 'edit' ) );
 				$link = Html::element(
 					'a',
 					array( 'href' => $uri ),
@@ -217,6 +234,67 @@ class SpecialSearchTranslations extends SpecialPage {
 		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
 
 		$this->showSearch( $search, $count, $facetHtml, $resultsHtml );
+	}
+
+	protected function getMessages( $collect ) {
+		$ret = $documents = array();
+		foreach ( $collect as $mkey => $value ) {
+			$ret = array();
+			$ret['content'] = $collect[$mkey]['translation'];
+			$output = explode( '/', $collect[$mkey]['title']->getPrefixedText() );
+			$ret['localid'] = $output[0];
+			$ret['language'] = $output[1];
+			$documents[] = $ret;
+		}
+		return $documents;
+	}
+
+	protected function applyFilter( $resultset ) {
+		$messages = $documents = $terms = array();
+		$server = TTMServer::primary();
+
+		$language = $this->opts->getValue( 'language' );
+		foreach ( $resultset->getResults() as $document ) {
+			$data = $document->getData();
+
+			if ( !$server->isLocalSuggestion( $data ) ) {
+				continue;
+			}
+
+			$title = Title::newFromText( $data['localid'] );
+			if ( !$title ) {
+				continue;
+			}
+
+			$handle = new MessageHandle( $title );
+			if ( !$handle->isValid() ) {
+				continue;
+			}
+
+			$key = $title->getNamespace() . ':' . $title->getDBKey();
+			$messages[$key] = $data['content'];
+			$terms[] = $data['localid'];
+		}
+
+		$definitions = new MessageDefinitions( $messages );
+		$collection = MessageCollection::newFromDefinitions( $definitions, $language );
+		$collection->filter( 'translated', false );
+
+		$total = count( $collection );
+		$offset = $collection->slice( $this->opts->getValue( 'offset' ), $this->limit );
+		$collection->loadTranslations();
+
+		foreach ( $collection->keys() as $mkey => $title ) {
+			$documents[$mkey]['title'] = $title;
+			$documents[$mkey]['definition'] = $messages[$mkey];
+			$documents[$mkey]['translation'] = $collection[$mkey]->translation();
+		}
+
+		return array(
+			'documents' => $documents,
+			'terms'=> $terms,
+			'total' => $total
+		);
 	}
 
 	protected function getLanguages( array $facet ) {
@@ -332,6 +410,7 @@ HTML
 	}
 
 	protected function getSearchInput( $query ) {
+		global $wgLanguageCode;
 		$attribs = array(
 			'placeholder' => $this->msg( 'tux-sst-search-ph' ),
 			'class' => 'searchinputbox',
@@ -344,8 +423,13 @@ HTML
 		$lang = $this->getRequest()->getVal( 'language' );
 		$language = is_null( $lang ) ? '' : Html::hidden( 'language', $lang );
 
+		$filter = $this->getRequest()->getVal( 'filter' );
+		$filter = is_null( $filter ) ? Html::hidden( 'filter', 'all' ) : Html::hidden( 'filter', $filter );
+
+		$languageCode = $wgLanguageCode;
+		$sourcelanguage = Html::hidden( 'sourcelanguage', $languageCode );
 		$form = Html::rawElement( 'form', array( 'action' => wfScript() ),
-			$title . $input . $submit . $language
+			$title . $input . $submit . $language . $sourcelanguage
 		);
 
 		return $form;
