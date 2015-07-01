@@ -288,7 +288,7 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$definitions = new MessageDefinitions( $messages );
 		$collection = MessageCollection::newFromDefinitions( $definitions, $language );
-		$collection->filter( 'hastranslation', true );
+		$collection->filter( 'translated', false );
 
 		$total = count( $collection );
 		$offset = $collection->slice( $offset, $limit );
