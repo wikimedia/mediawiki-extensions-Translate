@@ -465,42 +465,94 @@ GROOVY;
 
 		// Allow searching either by message content or message id (page name
 		// without language subpage) with exact match only.
-		$serchQuery = new \Elastica\Query\Bool();
+		$searchQuery = new \Elastica\Query\Bool();
 		$contentQuery = new \Elastica\Query\Match();
 		$contentQuery->setFieldQuery( 'content', $queryString );
-		$serchQuery->addShould( $contentQuery );
+		$searchQuery->addShould( $contentQuery );
 		$messageQuery = new \Elastica\Query\Term();
 		$messageQuery->setTerm( 'localid', $queryString );
-		$serchQuery->addShould( $messageQuery );
-		$query->setQuery( $serchQuery );
+		$searchQuery->addShould( $messageQuery );
 
+		$filteredQuery = new \Elastica\Query\Filtered();
+		$filterbool = new \Elastica\Filter\Bool();
+
+		$context = RequestContext::getMain();
+		$languageCode = $context->getLanguage()->getCode();
+
+		$languageFilter = new \Elastica\Filter\Term();
+		$languageFilter->setTerm( 'language', $languageCode );
+		$filterbool->addMust( $languageFilter );
+
+		$group = $opts->getValue( 'group' );
+		if ( $group !== '' ) {
+			$groupFilter = new \Elastica\Filter\Term();
+			$groupFilter->setTerm( 'group', $group );
+			$filterbool->addMust( $groupFilter );
+		}
+
+		$filteredQuery->setFilter($filterbool);
+		$filteredQuery->setQuery($searchQuery);
+
+		$query->setQuery( $filteredQuery );
+		$query->setParam( '_source', array( 'localid', 'group', 'content' ) );
+
+		list( $pre, $post ) = $highlight;
+		$query->setHighlight( array(
+			// The value must be an object
+			'fields' => array(
+				$contentString => array(
+					'number_of_fragments' => 0,
+				),
+			),
+			'pre_tags' => array( $pre ),
+			'post_tags' => array( $post ),
+		) );
+
+		$query->setFrom( 0 );
+		$query->setSize( 500 );
+		do {
+			try {
+				$resultset = $this->getType()->getIndex()->search( $query );
+			} catch ( \Elastica\Exception\ExceptionInterface $e ) {
+				throw new TTMServerException( $e->getMessage() );
+			}
+			$size = $query->getParam( 'size' );
+			$query->setSize( $resultset->getTotalHits() );
+
+		} while ( $resultset->getTotalHits() > $size );
+		return $resultset;
+	}
+
+	// Fetch data for facets counts
+	public function makeFacets( $terms, $opts ) {
+
+		$filteredQuery = new \Elastica\Query\Filtered();
+		$idQuery = new \Elastica\Filter\Terms();
+		$idQuery->setTerms( 'localid', $terms );
+
+		$filteredQuery->setFilter($idQuery);
+		$query = new \Elastica\Query();
+
+		$query->setQuery( $filteredQuery );
+
+		// Language facet to retrieve count for each language
 		$language = new \Elastica\Facet\Terms( 'language' );
 		$language->setField( 'language' );
-		$language->setSize( 500 );
+		$language->setSize( 600 );
 		$query->addFacet( $language );
 
+		// Group facet to retrieve count for each group
 		$group = new \Elastica\Facet\Terms( 'group' );
 		$group->setField( 'group' );
-		// Would like to prioritize the top level groups and not show subgroups
-		// if the top group has only few hits, but that doesn't seem to be possile.
 		$group->setSize( 500 );
 		$query->addFacet( $group );
 
-		$query->setSize( $opts->getValue( 'limit' ) );
-		$query->setFrom( $opts->getValue( 'offset' ) );
-
-		// BoolAnd filters are executed in sequence per document. Bool filters with
-		// multiple must clauses are executed by converting each filter into a bit
-		// field then anding them together. The latter is normally faster if either
-		// of the subfilters are reused. May not make a difference in this context.
 		$filters = new \Elastica\Filter\Bool();
 
 		$language = $opts->getValue( 'language' );
-		if ( $language !== '' ) {
-			$languageFilter = new \Elastica\Filter\Term();
-			$languageFilter->setTerm( 'language', $language );
-			$filters->addMust( $languageFilter );
-		}
+		$languageFilter = new \Elastica\Filter\Term();
+		$languageFilter->setTerm( 'language', $language );
+		$filters->addMust( $languageFilter );
 
 		$group = $opts->getValue( 'group' );
 		if ( $group !== '' ) {
@@ -508,23 +560,13 @@ GROOVY;
 			$groupFilter->setTerm( 'group', $group );
 			$filters->addMust( $groupFilter );
 		}
+		$query->setFilter( $filters );
 
-		// Check that we have at least one filter to avoid invalid query errors.
-		if ( $language !== '' || $group !== '' ) {
-			$query->setFilter( $filters );
-		}
-
-		list( $pre, $post ) = $highlight;
-		$query->setHighlight( array(
-			// The value must be an object
-			'fields' => array(
-				'content' => array(
-					'number_of_fragments' => 0,
-				),
-			),
-			'pre_tags' => array( $pre ),
-			'post_tags' => array( $post ),
-		) );
+		$offset = $opts->getValue( 'offset' );
+		$limit = $opts->getValue( 'limit' );
+		$query->setFrom( $offset );
+		$query->setSize( $limit );
+		$query->setParam( '_source', array( 'content', 'localid', 'language', 'group', 'wiki' ) );
 
 		try {
 			return $this->getType()->getIndex()->search( $query );
