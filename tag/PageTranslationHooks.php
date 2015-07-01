@@ -950,6 +950,11 @@ class PageTranslationHooks {
 
 			$language = $handle->getCode();
 
+			// Ignore pages such as Translations:Page/unit without language code
+			if ( strval( $code ) === '' ) {
+				continue;
+			}
+
 			// Update the page only once if source and destination units
 			// belong to the same page
 			if ( $group !== $groupLast ) {
