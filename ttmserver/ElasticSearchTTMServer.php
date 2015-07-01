@@ -461,6 +461,7 @@ GROOVY;
 
 	// Search interface
 	public function search( $queryString, $opts, $highlight ) {
+		global $wgLanguageCode;
 		$query = new \Elastica\Query();
 
 		// Allow searching either by message content or message id (page name
@@ -472,7 +473,30 @@ GROOVY;
 		$messageQuery = new \Elastica\Query\Term();
 		$messageQuery->setTerm( 'localid', $queryString );
 		$serchQuery->addShould( $messageQuery );
-		$query->setQuery( $serchQuery );
+
+		if ( $opts->getValue( 'filter' ) === 'translated' ) {
+			$filteredQuery = new \Elastica\Query\Filtered();
+			$filterbool = new \Elastica\Filter\Bool();
+
+			if ( $opts->getValue( 'sourcelanguage' ) !== ''
+				&& $opts->getValue( 'sourcelanguage' ) !== null
+			) {
+				$sourcelanguage = $opts->getValue( 'sourcelanguage' );
+			} else {
+				$sourcelanguage = $wgLanguageCode;
+			}
+
+			$languageFilter = new \Elastica\Filter\Term();
+			$languageFilter->setTerm( 'language', $sourcelanguage );
+			$filterbool->addMust( $languageFilter );
+
+			$filteredQuery->setFilter($filterbool);
+			$filteredQuery->setQuery($serchQuery);
+
+			$query->setQuery( $filteredQuery );
+		} else {
+			$query->setQuery( $serchQuery );
+		}
 
 		$language = new \Elastica\Facet\Terms( 'language' );
 		$language->setField( 'language' );
@@ -495,7 +519,12 @@ GROOVY;
 		// of the subfilters are reused. May not make a difference in this context.
 		$filters = new \Elastica\Filter\Bool();
 
-		$language = $opts->getValue( 'language' );
+		if ( $opts->getValue( 'filter' ) === 'translated' ) {
+			$language = '';
+		} else {
+			$language = $opts->getValue( 'language' );
+		}
+
 		if ( $language !== '' ) {
 			$languageFilter = new \Elastica\Filter\Term();
 			$languageFilter->setTerm( 'language', $language );
@@ -525,6 +554,68 @@ GROOVY;
 			'pre_tags' => array( $pre ),
 			'post_tags' => array( $post ),
 		) );
+
+		do {
+			try {
+				$resultset = $this->getType()->getIndex()->search( $query );
+			} catch ( \Elastica\Exception\ExceptionInterface $e ) {
+				throw new TTMServerException( $e->getMessage() );
+			}
+			$query->setFrom( 0 );
+			$size = $query->getParam( 'size' );
+			$query->setSize( $resultset->getTotalHits() );
+
+		} while ( $opts->getValue('filter') === 'translated'
+			&& $resultset->getTotalHits() > $size
+		);
+
+		return $resultset;
+	}
+
+	// Fetch data for facets counts
+	public function makeFacets( $terms, $opts ) {
+
+		$filteredQuery = new \Elastica\Query\Filtered();
+		$idQuery = new \Elastica\Filter\Terms();
+		$idQuery->setTerms( 'localid', $terms );
+
+		$filteredQuery->setFilter($idQuery);
+		$query = new \Elastica\Query();
+
+		$query->setQuery( $filteredQuery );
+
+		// Language facet to retrieve count for each language
+		$language = new \Elastica\Facet\Terms( 'language' );
+		$language->setField( 'language' );
+		$language->setSize( 600 );
+		$query->addFacet( $language );
+
+		// Group facet to retrieve count for each group
+		$group = new \Elastica\Facet\Terms( 'group' );
+		$group->setField( 'group' );
+		$group->setSize( 500 );
+		$query->addFacet( $group );
+
+		$filters = new \Elastica\Filter\Bool();
+
+		$language = $opts->getValue( 'language' );
+		$languageFilter = new \Elastica\Filter\Term();
+		$languageFilter->setTerm( 'language', $language );
+		$filters->addMust( $languageFilter );
+
+		$group = $opts->getValue( 'group' );
+		if ( $group !== '' ) {
+			$groupFilter = new \Elastica\Filter\Term();
+			$groupFilter->setTerm( 'group', $group );
+			$filters->addMust( $groupFilter );
+		}
+		$query->setFilter( $filters );
+
+		$offset = $opts->getValue( 'offset' );
+		$limit = $opts->getValue( 'limit' );
+		$query->setFrom( $offset );
+		$query->setSize( $limit );
+		$query->setParam( '_source', array( 'content', 'localid', 'language', 'group', 'wiki' ) );
 
 		try {
 			return $this->getType()->getIndex()->search( $query );
