@@ -91,7 +91,13 @@ class CrossLanguageTranslationSearchQuery {
 
 		$definitions = new MessageDefinitions( $messages );
 		$collection = MessageCollection::newFromDefinitions( $definitions, $language );
-		$collection->filter( 'hastranslation', true );
+
+		$filter = $this->params['filter'];
+		if ( $filter === 'untranslated' ) {
+			$collection->filter( 'hastranslation', true );
+		} elseif ( $filter !== '' ) {
+			$collection->filter( $filter, false );
+		}
 
 		$total = count( $collection );
 		$offset = $collection->slice( $offset, $limit );
@@ -103,8 +109,15 @@ class CrossLanguageTranslationSearchQuery {
 			'total' => $total,
 		);
 
+		if ( $filter === 'translated' ) {
+			$collection->loadTranslations();
+		}
+
 		foreach ( $collection->keys() as $mkey => $title ) {
 			$documents[$mkey]['content'] = $messages[$mkey];
+			if ( $filter === 'translated' ) {
+				$documents[$mkey]['content'] = $collection[$mkey]->translation();
+			}
 			$handle = new MessageHandle( $title );
 			$documents[$mkey]['localid'] = $handle->getTitleForBase()->getPrefixedText();
 			$documents[$mkey]['language'] = $language;
