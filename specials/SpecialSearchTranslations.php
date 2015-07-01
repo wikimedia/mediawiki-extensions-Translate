@@ -85,6 +85,7 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$filter = $opts->getValue( 'filter' );
 		try {
+			$terms = array();
 			if ( $filter !== '' ) {
 				$documents = array();
 				$total = $start = 0;
@@ -99,7 +100,7 @@ class SpecialSearchTranslations extends SpecialPage {
 					$options->setValue( 'offset', $start );
 					$resultset = $server->search( $queryString, $options, $this->hl );
 
-					list( $results, $offsets ) = $this->extractMessages(
+					list( $results, $offsets, $terms ) = $this->extractMessages(
 						$resultset,
 						$offset,
 						$limit
@@ -124,25 +125,31 @@ class SpecialSearchTranslations extends SpecialPage {
 			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
 		}
 
-		$terms = array();
+		// Part 1: facets
 		$filter = $opts->getValue( 'filter' );
-		$language = $opts->getValue( 'language' );
-		if ( $filter === 'translated' ) {
-			if ( $language === '' ) {
-				$opts->add( 'language', $this->getLanguage()->getCode() );
-			}
-			$collection = $this->applyFilter( $resultset );
-			$docs = $collection['documents'];
-			$terms = $collection['terms'];
-			$total = $collection['total'];
-			$documents = $this->getMessages( $docs );
-		} else {
-			$documents = $server->getDocuments( $resultset );
-			$total = $server->getTotalHits( $resultset );
+		if ( method_exists( $server, 'makeFacets' ) && $filter !== '' ) {
+			$resultset = $server->makeFacets( $terms, $opts );
 		}
 
 		$facets = $server->getFacets( $resultset );
 		$facetHtml = '';
+
+		// Customize facets for untranslated messages
+		if ( $filter === 'untranslated' ) {
+			$sourcelanguage = $opts->getValue( 'sourcelanguage' );
+			$language = $opts->getValue( 'language' );
+			$totalValue = $facets['language'][$sourcelanguage];
+
+			$codes = Language::fetchLanguageNames();
+			foreach ( $codes as $languageCode => $value ) {
+				if ( array_key_exists( $languageCode, $facets['language'] ) ) {
+					$facets['language'][$languageCode] = $totalValue - $facets['language'][$languageCode];
+				} else {
+					$facets['language'][$languageCode] = $totalValue;
+				}
+			}
+			// $total = $facets['language'][$language];
+		}
 
 		if ( count( $facets['language'] ) > 0 ) {
 			$facetHtml = Html::element( 'div',
@@ -277,10 +284,13 @@ class SpecialSearchTranslations extends SpecialPage {
 	 * Slice messages according to limit and offset given.
 	 */
 	protected function extractMessages( $resultset, $offset, $limit ) {
-		$messages = $documents = $ret = array();
+		$messages = $documents = $ret = $terms = array();
 		$server = TTMServer::primary();
 
-		$language = $this->getLanguage()->getCode();
+		$language = $this->opts->getValue( 'language' );
+		if ( $language === '' ) {
+			$this->opts->setValue( 'language', $this->getLanguage()->getCode() );
+		}
 		foreach ( $resultset->getResults() as $document ) {
 			$data = $document->getData();
 
@@ -300,6 +310,7 @@ class SpecialSearchTranslations extends SpecialPage {
 
 			$key = $title->getNamespace() . ':' . $title->getDBKey();
 			$messages[$key] = $data['content'];
+			$terms[] = $data['localid'];
 		}
 
 		$definitions = new MessageDefinitions( $messages );
@@ -324,7 +335,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			$ret[] = $documents[$mkey];
 		}
 
-		return array( $ret, $offsets );
+		return array( $ret, $offsets, $terms );
 	}
 
 	protected function getLanguages( array $facet ) {
