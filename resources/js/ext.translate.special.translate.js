@@ -1,67 +1,6 @@
 ( function ( $, mw ) {
 	'use strict';
 
-	/* Non-TUX Workflow selector code */
-	function prepareWorkflowSelector() {
-		var $submit, $select, submitFunction;
-
-		$submit = $( '#mw-translate-workflowset' );
-		$select = $( '#mw-sp-translate-workflow' ).find( 'select' );
-
-		$select.find( 'option[value=]' ).prop( 'disabled', true );
-
-		submitFunction = function ( event ) {
-			var successFunction = function ( data ) {
-				if ( data.error ) {
-					$submit.val( mw.msg( 'translate-workflow-set-do' ) );
-					$submit.prop( 'disabled', false );
-					window.alert( data.error.info );
-				} else {
-					$submit.val( mw.msg( 'translate-workflow-set-done' ) );
-					$select.find( 'option[selected]' ).prop( 'selected', false );
-					$select.find( 'option[value=' + event.data.newstate + ']' ).prop( 'selected', true );
-				}
-			};
-
-			$submit.prop( 'disabled', true );
-			$submit.val( mw.msg( 'translate-workflow-set-doing' ) );
-			changeWorkflowStatus( $submit.data( 'group' ),
-				$submit.data( 'language' ),
-				event.data.newstate,
-				$submit.data( 'token' )
-			).done( successFunction );
-		};
-
-		$select.change( function ( event ) {
-			var current = $( this ).find( 'option[selected]' ).val(),
-				tobe = event.target.value;
-
-			$submit.val( mw.msg( 'translate-workflow-set-do' ) );
-			$submit.unbind( 'click' );
-			if ( current !== tobe ) {
-				$submit.css( 'visibility', 'visible' );
-				$submit.prop( 'disabled', false );
-				$submit.click( { newstate: tobe }, submitFunction );
-			} else {
-				$submit.prop( 'disabled', true );
-			}
-		} );
-	}
-
-	function changeWorkflowStatus ( group, language, state, token ) {
-		var api = new mw.Api(),
-		params = {
-			action: 'groupreview',
-			group: group,
-			language: language,
-			state: state,
-			token: token,
-			format: 'json'
-		};
-
-		return api.post( params );
-	}
-
 	mw.translate = mw.translate || {};
 
 	mw.translate = $.extend( mw.translate, {
@@ -286,8 +225,6 @@
 		targetLanguage = $messageList.data( 'targetlangcode' ) || // for tux=1
 			mw.config.get( 'wgUserLanguage' ); // for tux=0
 
-		// This is the selector for non-TUX mode
-		prepareWorkflowSelector();
 		if ( $( 'body' ).hasClass( 'rtl' ) ) {
 			position = {
 				my: 'right top',
