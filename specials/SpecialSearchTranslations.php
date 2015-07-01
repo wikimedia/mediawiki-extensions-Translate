@@ -124,7 +124,23 @@ class SpecialSearchTranslations extends SpecialPage {
 			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
 		}
 
-		// Part 1: facets
+		$terms = array();
+		$filter = $opts->getValue( 'filter' );
+		$language = $opts->getValue( 'language' );
+		if ( $filter === 'translated' ) {
+			if ( $language === '' ) {
+				$opts->add( 'language', $this->getLanguage()->getCode() );
+			}
+			$collection = $this->applyFilter( $resultset );
+			$docs = $collection['documents'];
+			$terms = $collection['terms'];
+			$total = $collection['total'];
+			$documents = $this->getMessages( $docs );
+		} else {
+			$documents = $server->getDocuments( $resultset );
+			$total = $server->getTotalHits( $resultset );
+		}
+
 		$facets = $server->getFacets( $resultset );
 		$facetHtml = '';
 
@@ -423,6 +439,7 @@ HTML
 	}
 
 	protected function getSearchInput( $query ) {
+		global $wgLanguageCode;
 		$attribs = array(
 			'placeholder' => $this->msg( 'tux-sst-search-ph' ),
 			'class' => 'searchinputbox',
@@ -435,8 +452,13 @@ HTML
 		$lang = $this->getRequest()->getVal( 'language' );
 		$language = is_null( $lang ) ? '' : Html::hidden( 'language', $lang );
 
+		$filter = $this->getRequest()->getVal( 'filter' );
+		$filter = is_null( $filter ) ? Html::hidden( 'filter', 'all' ) : Html::hidden( 'filter', $filter );
+
+		$languageCode = $wgLanguageCode;
+		$sourcelanguage = Html::hidden( 'sourcelanguage', $languageCode );
 		$form = Html::rawElement( 'form', array( 'action' => wfScript() ),
-			$title . $input . $submit . $language
+			$title . $input . $submit . $language . $sourcelanguage
 		);
 
 		return $form;
