@@ -201,7 +201,6 @@
 	"logentry-translationreview-group": "$1 {{GENDER:$2|хийцина}} «$3» агӀона гочдаран хьал $4 мотт «$6» → «$7»",
 	"group-translate-sandboxed": "ЧӀагӀбина гочдархой",
 	"translate-workflow-set-doing": "ДӀахӀоттош ю...",
-	"translate-workflow-set-done": "ДӀахӀоттйна!",
 	"translate-stats-workflow": "Статус",
 	"translate-dynagroup-recent-label": "Дукха хан йоццуш гоч динарш",
 	"translate-dynagroup-recent-desc": "ХӀокху тобан чохь гучу йолу дукха хан йоцуш гоч йина хӀокху меттан хаамаш.\n\nХӀара дӀахӀоттам пайдане бу хьажа.",
