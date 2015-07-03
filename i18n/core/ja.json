@@ -15,7 +15,8 @@
 			"Whym",
 			"青子守歌",
 			"아라",
-			"Rxy"
+			"Rxy",
+			"Sujiniku"
 		]
 	},
 	"translate": "翻訳",
@@ -292,10 +293,7 @@
 	"action-translate-sandboxaction": "サンドボックス利用者に許可された操作の実行",
 	"translate-workflow-state-": "(解除)",
 	"translate-workflowstatus": "進捗状況: $1",
-	"translate-workflow-set-do": "設定",
 	"translate-workflow-set-doing": "設定中...",
-	"translate-workflow-set-done": "設定完了!",
-	"translate-workflow-set-error-alreadyset": "要求された進捗状況は、現在の進捗状況と同じです。",
 	"translate-workflow-autocreated-summary": "作業進捗状況$1のページの自動作成",
 	"translate-stats-workflow": "進捗状況",
 	"translate-workflowgroup-label": "作業進捗状況",
@@ -398,5 +396,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% 翻訳済み、$2% 査読済、$3% 要修正",
 	"translate-search-more-groups-info": "他 $1 {{PLURAL:$1|メッセージ群}}",
 	"translate-ulsdep-body": "Translate 拡張機能は [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector 拡張機能]を必要とします。",
-	"tux-session-expired": "ログインしていない状態になっています。別のタブでログインしてください。できない場合は、未保存の翻訳をコピーしておいて、ログインしてこのページに戻ってきてください。"
+	"tux-session-expired": "ログインしていない状態になっています。別のタブでログインしてください。できない場合は、未保存の翻訳をコピーしておいて、ログインして、このページに戻ってきて、翻訳ページに入り直してください。"
 }

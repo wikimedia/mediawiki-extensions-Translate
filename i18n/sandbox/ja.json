@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shirayuki"
+			"Shirayuki",
+			"Sujiniku"
 		]
 	},
 	"managetranslatorsandbox": "翻訳者サンドボックスの管理",
 	"tsb-filter-pending": "保留中の申請",
 	"tsb-reminder-title-generic": "翻訳者になるには、自己紹介を記入してください",
 	"tsb-reminder-sending": "通知を送信しています...",
-	"tsb-reminder-sent": "{{PLURAL:$1|$2に $1 件の通知を送信しました|$1 件の通知を送信しました。最終送信は $2です}}",
+	"tsb-reminder-sent": "{{PLURAL:$1|$2に $1 件の通知を送信しました。時間は $2 です。|$1 件の通知を送信しました。最終送信の時間は $2 です。}}",
 	"tsb-reminder-sent-new": "通知を送信しました",
 	"tsb-reminder-failed": "通知を送信できませんでした",
 	"tsb-email-promoted-subject": "あなたは{{SITENAME}}の翻訳者になりました",
