@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_9c8343d0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2015-07-03T15:29:14Z",
+      "side": 1,
+      "message": "Not currently I think: the checkbox doesn\u0027t seem to have effect.\nhttp://translation-search.wmflabs.org/w/index.php?title\u003dSpecial%3ASearchTranslations\u0026query\u003dWiki\u0026language\u003den\u0026case\u003d1\u0026filter\u003dtranslated\u0026string\u003dWiki",
+      "revId": "2648d330653b22de25344bd51a3974ff32a0d06b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
