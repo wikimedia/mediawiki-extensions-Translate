@@ -534,6 +534,12 @@ class TranslateHooks {
 		return true;
 	}
 
+	/**
+	 * Any user of this list should make sure that the tables
+	 * actually exist, since they may be optional
+	 *
+	 * @var array
+	 */
 	private static $userMergeTables = array(
 		'translate_stash' => 'ts_user',
 		'translate_reviews' => 'trr_user',
@@ -552,13 +558,15 @@ class TranslateHooks {
 		// Update the non-duplicate rows, we'll just delete
 		// the duplicate ones later
 		foreach ( self::$userMergeTables as $table => $field ) {
-			$dbw->update(
-				$table,
-				array( $field => $newUser->getId() ),
-				array( $field => $oldUser->getId() ),
-				__METHOD__,
-				array( 'IGNORE' )
-			);
+			if ( $dbw->tableExists( $table ) ) {
+				$dbw->update(
+					$table,
+					array( $field => $newUser->getId() ),
+					array( $field => $oldUser->getId() ),
+					__METHOD__,
+					array( 'IGNORE' )
+				);
+			}
 		}
 
 		return true;
@@ -575,11 +583,13 @@ class TranslateHooks {
 
 		// Delete any remaining rows that didn't get merged
 		foreach ( self::$userMergeTables as $table => $field ) {
-			$dbw->delete(
-				$table,
-				array( $field => $oldUser->getId() ),
-				__METHOD__
-			);
+			if ( $dbw->tableExists( $table ) ) {
+				$dbw->delete(
+					$table,
+					array( $field => $oldUser->getId() ),
+					__METHOD__
+				);
+			}
 		}
 
 		return true;
