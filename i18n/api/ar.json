@@ -1,13 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Meno25"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "معرف مجموعة الرسائل.",
 	"apihelp-groupreview-param-group": "مجموعة الرسائل.",
 	"apihelp-groupreview-param-language": "كود اللغة.",
+	"apihelp-query+languagestats-param-language": "كود اللغة.",
 	"apihelp-query+messagecollection-param-group": "مجموعة الرسائل.",
+	"apihelp-query+messagecollection-param-language": "كود اللغة.",
 	"apihelp-query+messagecollection-example-1": "قائمة اللغات المدعومة",
 	"apihelp-query+messagegroups-example-1": "أظهر مجموعات الرسائل",
 	"apihelp-query+messagegroupstats-param-group": "معرف مجموعة الرسائل.",

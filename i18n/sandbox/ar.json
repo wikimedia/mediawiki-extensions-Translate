@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Meno25"
 		]
 	},
 	"managetranslatorsandbox": "إدارة ملعب المترجم",
@@ -15,6 +16,7 @@
 	"tsb-reject-all-button-label": "ارفض الكل",
 	"tsb-translations-source": "المصدر",
 	"tsb-translations-current": "الترجمات الموجودة",
+	"translationstash": "مرحبا",
 	"translate-translationstash-initialtranslation": "ترجمتك الابتدائية",
 	"tsb-no-requests-from-new-users": "لا طلبات من المستخدمين الجدد",
 	"log-name-translatorsandbox": "ملعب الترجمة"
