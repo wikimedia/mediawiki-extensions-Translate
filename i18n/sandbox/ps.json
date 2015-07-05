@@ -16,7 +16,7 @@
 	"tsb-reminder-link-text": "د يادولو برېښليک ورلېږل",
 	"tsb-didnt-make-any-translations": "دغه کارن کومې ژباړې نه دي ترسره کړي.",
 	"tsb-translations-source": "سرچينه",
-	"tsb-translations-user": "کارن ژباړې",
+	"tsb-translations-user": "{{GENDER:$1|کارن}} ژباړې",
 	"tsb-translations-current": "شته ژباړې",
 	"translationstash": "ښه راغلئ",
 	"translate-translationstash-welcome": "ښه راغلئ {{GENDER:$1|$1}}، تاسې يو نوی ژباړن ياست"

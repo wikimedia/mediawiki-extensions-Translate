@@ -6,7 +6,9 @@
 	},
 	"apihelp-aggregategroups-param-group": "د پيغام ډلې پېژند.",
 	"apihelp-groupreview-param-group": "پيغام ډله.",
+	"apihelp-query+languagestats-param-language": "د ژبې کوډ.",
 	"apihelp-query+messagecollection-param-group": "پيغام ډله.",
+	"apihelp-query+messagecollection-param-language": "د ژبې کوډ.",
 	"apihelp-query+messagegroups-example-1": "پيغام ډلې ښکاره کول",
 	"apihelp-query+messagegroupstats-param-group": "د پيغام ډلې پېژند."
 }
