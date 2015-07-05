@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_c39c7f6f",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-07-05T12:25:42Z",
+      "side": 1,
+      "message": "Too generic. This will likely conflict with random elements from MediaWiki core, other extensions, and gadget. Either use a more specific class, or give it context to narrow down its scope.\n\nI don\u0027t know this extension very well, but I imagine something like \".tux-searchpage \" as context would significantly narrow down its scope.\n\nAlthough ideally, and this is not a problem for this commit, this extension should not be using such generic classes in general.",
+      "revId": "386af401b0da22b3e5aa664692990c89e666ac10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_638fcb2f",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-07-05T12:25:42Z",
+      "side": 1,
+      "message": "Same issue.",
+      "revId": "386af401b0da22b3e5aa664692990c89e666ac10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_8392f754",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-07-05T12:25:42Z",
+      "side": 1,
+      "message": "Same issue.",
+      "revId": "386af401b0da22b3e5aa664692990c89e666ac10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_e382db00",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-07-05T12:25:42Z",
+      "side": 1,
+      "message": "I don\u0027t know what browsers this module intends to support, but if you support old IE (which MediaWiki does by default). Then this must parse type\u003d\"hidden\" as part of the element as changes to input.type after wards are not supported.",
+      "revId": "386af401b0da22b3e5aa664692990c89e666ac10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_037e0714",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-07-05T12:25:42Z",
+      "side": 1,
+      "message": "This must use prop() instead of attr(). This code is interacting with the live element right after it is created. Properties affect live state.\n\nAttributes are for when an HTML string is written that the browser will parse (e.g. in PHP or when using innerHTML parser). Changing attributes this way will only affect the DOM, not the visual rendering.",
+      "revId": "386af401b0da22b3e5aa664692990c89e666ac10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
