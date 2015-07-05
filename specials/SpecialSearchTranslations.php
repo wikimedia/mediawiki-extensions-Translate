@@ -92,7 +92,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$total = $server->getTotalHits( $resultset );
 		$facetHtml = '';
 
-		if ( $total > 0 ) {
+		if ( count( $facets['language'] ) > 0 ) {
 			$facetHtml = Html::element( 'div',
 				array( 'class' => 'row facet languages',
 					'data-facets' => FormatJson::encode( $this->getLanguages( $facets['language'] ) ),
@@ -100,7 +100,9 @@ class SpecialSearchTranslations extends SpecialPage {
 				),
 				$this->msg( 'tux-sst-facet-language' )
 			);
+		}
 
+		if ( count( $facets['group'] ) > 0 ) {
 			$facetHtml .= Html::element( 'div',
 				array( 'class' => 'row facet groups',
 					'data-facets' => FormatJson::encode( $this->getGroups( $facets['group'] ) ),
