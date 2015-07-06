@@ -16,6 +16,24 @@
       "revId": "598175c436d46505a0bc4756207617175510101d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_eec87f53",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-06T09:08:13Z",
+      "side": 1,
+      "message": "I have tried to unformat the formatted numbers( I have assumed the separators to be \u0027,\u0027,  \u0027.\u0027 and whitespace, there can be others too in which case it might fail ). Well I could not think of any other way to change numbers to unformatted form as javascript internationalization API do not support any such method. Could you suggest any other way?",
+      "parentUuid": "8ec42329_ce45831b",
+      "revId": "598175c436d46505a0bc4756207617175510101d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
