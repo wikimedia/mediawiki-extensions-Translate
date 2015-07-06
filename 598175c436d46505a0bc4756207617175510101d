@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_ce45831b",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-06T08:07:03Z",
+      "side": 1,
+      "message": "If the number is formatted, all your bets are already off trying to parse it, as the digits might not even be the usual Arabic ones. There needs to be a way to provide the raw unformatted number.",
+      "revId": "598175c436d46505a0bc4756207617175510101d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
