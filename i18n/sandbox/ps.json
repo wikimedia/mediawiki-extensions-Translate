@@ -4,6 +4,7 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel"
 		]
 	},
+	"tsb-request-count": "$1 {{PLURAL:$1|غوښتنه|غوښتنې}}",
 	"tsb-all-languages-button-label": "ټولې ژبې",
 	"tsb-search-requests": "د پلټنې غوښتنې",
 	"tsb-accept-button-label": "منل",
@@ -19,5 +20,10 @@
 	"tsb-translations-user": "{{GENDER:$1|کارن}} ژباړې",
 	"tsb-translations-current": "شته ژباړې",
 	"translationstash": "ښه راغلئ",
-	"translate-translationstash-welcome": "ښه راغلئ {{GENDER:$1|$1}}، تاسې يو نوی ژباړن ياست"
+	"translate-translationstash-welcome": "ښه راغلئ {{GENDER:$1|$1}}، تاسې يو نوی ژباړن ياست",
+	"translate-translationstash-initialtranslation": "ستاسې لومړنۍ ژباړه",
+	"translate-translationstash-translations": "$1 {{PLURAL:$1|ژباړه بشپړه شوې|ژباړې بشپړې شوي}}",
+	"translate-translationstash-skip-button-label": "بل آزمويل",
+	"tsb-limit-reached-title": "له ژباړو څخه مو مننه",
+	"log-name-translatorsandbox": "د ژباړې شگبکس"
 }

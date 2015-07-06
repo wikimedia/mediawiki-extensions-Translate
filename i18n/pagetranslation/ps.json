@@ -26,6 +26,7 @@
 	"tpt-aggregategroup-add": "ورگډول",
 	"tpt-aggregategroup-save": "خوندي کول",
 	"tpt-aggregategroup-new-name": "نوم:",
+	"tpt-aggregategroup-invalid-group": "دا ډله نشته",
 	"tpt-aggregategroup-edit-name": "نوم:",
 	"tpt-aggregategroup-edit-description": "څرگندونه:",
 	"tpt-aggregategroup-update": "خوندي کول",
@@ -46,6 +47,7 @@
 	"pt-deletepage-current": "د مخ نوم:",
 	"pt-deletepage-reason": "سبب:",
 	"pt-deletepage-subpages": "ټول واړه مخونه ړنگول",
+	"pt-deletepage-list-pages": "د ړنگولو د مخونو لړليک",
 	"pt-deletepage-list-translation": "د ژباړې مخونه",
 	"pt-deletepage-list-section": "د څپرکي د مخونو ژباړه",
 	"pt-deletepage-list-other": "نور واړه مخونه",
@@ -55,5 +57,10 @@
 	"pm-langcode-placeholder": "د ژبې کوډ",
 	"pm-page-does-not-exist": "$1 نشته.",
 	"tpt-translate-title": "د مخ سرليک د ژباړې پرېښه",
-	"pp-cancel-button-label": "ناگارل"
+	"pp-pagename-placeholder": "د مخ نوم ورکړئ",
+	"pp-prepare-button-label": "چمتو کول",
+	"pp-save-button-label": "خوندي کول",
+	"pp-cancel-button-label": "ناگارل",
+	"pp-pagename-missing": "لطفاً د مخ نوم مو ورکړئ.",
+	"pp-diff-old-header": "د سرچينې متن"
 }
