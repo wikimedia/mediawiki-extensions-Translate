@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_4e275363",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-06T08:24:34Z",
+      "side": 1,
+      "message": "I would format this either as:\n\noperatorRegex \u003d { language: \u0027lang\u0027, group: \u0027grp\u0027 };\n\nor even better\n\noperatorRegex \u003d {\n    language: \u0027lang\u0027,\n    group: \u0027grp\u0027\n};\n\nInstead of \"lang\" and \"grp\" should we use \"language\" and \"group\"? They are not much slower to type, and much more likely if someone is just guessing if such things exists.",
+      "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_2e268764",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-06T08:24:34Z",
+      "side": 1,
+      "message": "spaced before ( for unnamed functions. See line 282 for example.",
+      "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_8e145bef",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-06T08:24:34Z",
+      "side": 1,
+      "message": "What\u0027s string? Can we have a better name for it? Is it even used?",
+      "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_ae1117fe",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-06T08:24:34Z",
+      "side": 1,
+      "message": "Can $string be \"0\"? If so this can fail.",
+      "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
