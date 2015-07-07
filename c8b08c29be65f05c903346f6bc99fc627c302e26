@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_b822b6fa",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-07T06:28:08Z",
+      "side": 1,
+      "message": "Now I remember, \u0027string\u0027 refers to the actual search string, after extracting from the whole query, e.g, \"wiki\" is the search string in \"wiki language:en\". At first I thought to rename it as \u0027search\u0027 but it conflicted with the wiki search(CirrusSearch) so renamed it as \u0027searchstring\u0027.",
+      "parentUuid": "8ec42329_58995270",
+      "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_ae1117fe",
         "filename": "specials/SpecialSearchTranslations.php",
         "patchSetId": 6
