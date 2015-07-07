@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_4be5fa05",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-07T10:01:23Z",
+      "side": 1,
+      "message": "If we find such input, why not update it\u0027s value directly?",
+      "revId": "784336adc03bf3e0f32070a84a0c3278fe5db582",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_ebe946e3",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-07T10:01:23Z",
+      "side": 1,
+      "message": "Perhaps use temporary variable for the $input to avoid excessive nesting which is hard to indent clearly.",
+      "revId": "784336adc03bf3e0f32070a84a0c3278fe5db582",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_cbf00ac7",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-07T10:01:23Z",
+      "side": 1,
+      "message": "Usually empty line above return statement.",
+      "revId": "784336adc03bf3e0f32070a84a0c3278fe5db582",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_6bbd56d4",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-07T10:01:23Z",
+      "side": 1,
+      "message": "I can\u0027t think of an use case where someone would manually type grouppath. On the other hand it is only one word here so it doesn\u0027t harm either.",
+      "revId": "784336adc03bf3e0f32070a84a0c3278fe5db582",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_0bce1287",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-07T10:01:23Z",
+      "side": 1,
+      "message": "You said you would remove string as it is unused, but I only see it renamed now. What happened?",
+      "revId": "784336adc03bf3e0f32070a84a0c3278fe5db582",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
