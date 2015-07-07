@@ -14,6 +14,7 @@
 	"apihelp-query+languagestats-param-language": "Код языка.",
 	"apihelp-query+messagecollection-param-group": "Группа сообщений.",
 	"apihelp-query+messagecollection-param-language": "Код языка.",
+	"apihelp-query+messagecollection-param-limit": "Сколько сообщений показывать (после фильтрации).",
 	"apihelp-query+messagecollection-example-1": "Список поддерживаемых языков",
 	"apihelp-query+messagecollection-example-2": "Список обязательных определений сообщений для группы «page-Example»",
 	"apihelp-query+messagecollection-example-3": "Список необязательных сообщений на финском языке с метками для группы «page-Example»",
