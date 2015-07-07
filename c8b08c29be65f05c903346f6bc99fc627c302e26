@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_ab501e62",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-07T11:07:53Z",
+      "side": 1,
+      "message": "So do I understand correctly: query is used for display to the user while string is actually used as the search thing?",
+      "parentUuid": "8ec42329_b822b6fa",
+      "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_ae1117fe",
         "filename": "specials/SpecialSearchTranslations.php",
         "patchSetId": 6
