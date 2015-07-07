@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_38948639",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-07T05:00:54Z",
+      "side": 1,
+      "message": "true. Lets use language and group parameters.",
+      "parentUuid": "8ec42329_4e275363",
+      "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_2e268764",
         "filename": "resources/js/ext.translate.special.searchtranslations.js",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2015-07-06T08:24:34Z",
       "side": 1,
       "message": "What\u0027s string? Can we have a better name for it? Is it even used?",
+      "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_58995270",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-07T05:00:54Z",
+      "side": 1,
+      "message": "Removing it no longer in use.",
+      "parentUuid": "8ec42329_8e145bef",
       "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
