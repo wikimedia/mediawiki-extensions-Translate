@@ -143,6 +143,8 @@ class SandboxMessageGroup extends WikiMessageGroup {
 
 	/**
 	 * Subpage language code, if any in the title, is ignored.
+	 * @param MessageHandle $handle
+	 * @return null|string
 	 */
 	public function getMessageContent( MessageHandle $handle ) {
 		$groupId = MessageIndex::getPrimaryGroupId( $handle );

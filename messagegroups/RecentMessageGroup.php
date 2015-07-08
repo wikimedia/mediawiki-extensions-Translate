@@ -134,6 +134,9 @@ class RecentMessageGroup extends WikiMessageGroup {
 
 	/**
 	 * Subpage language code, if any in the title, is ignored.
+	 * @param MessageHandle $handle
+	 * @return null|string
+	 * @throws MWException
 	 */
 	public function getMessageContent( MessageHandle $handle ) {
 		$groupId = MessageIndex::getPrimaryGroupId( $handle );
