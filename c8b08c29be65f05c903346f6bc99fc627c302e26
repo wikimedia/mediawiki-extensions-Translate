@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_f2a7e7a2",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-09T08:23:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_4e275363",
+      "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_2e268764",
         "filename": "resources/js/ext.translate.special.searchtranslations.js",
         "patchSetId": 6
@@ -48,6 +66,24 @@
       "writtenOn": "2015-07-06T08:24:34Z",
       "side": 1,
       "message": "spaced before ( for unnamed functions. See line 282 for example.",
+      "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_12a5d39a",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-09T08:23:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_2e268764",
       "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -154,6 +190,24 @@
       "writtenOn": "2015-07-06T08:24:34Z",
       "side": 1,
       "message": "Can $string be \"0\"? If so this can fail.",
+      "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_529b5b68",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-09T08:23:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_ae1117fe",
       "revId": "c8b08c29be65f05c903346f6bc99fc627c302e26",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
