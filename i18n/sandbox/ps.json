@@ -4,6 +4,10 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel"
 		]
 	},
+	"managetranslatorsandbox": "ژباړن شگبکس مهارول",
+	"tsb-reminder-sent-new": "يوه يادگيرنه ولېږله",
+	"tsb-reminder-failed": "د يادگيرنې لېږنه نابرياله شوه",
+	"tsb-email-promoted-subject": "اوس تاسې په {{SITENAME}} کې يو ژباړن ياست",
 	"tsb-request-count": "$1 {{PLURAL:$1|غوښتنه|غوښتنې}}",
 	"tsb-all-languages-button-label": "ټولې ژبې",
 	"tsb-search-requests": "د پلټنې غوښتنې",
@@ -25,5 +29,6 @@
 	"translate-translationstash-translations": "$1 {{PLURAL:$1|ژباړه بشپړه شوې|ژباړې بشپړې شوي}}",
 	"translate-translationstash-skip-button-label": "بل آزمويل",
 	"tsb-limit-reached-title": "له ژباړو څخه مو مننه",
+	"tsb-create-user-page": "يو بنسټيز کارن مخ جوړول",
 	"log-name-translatorsandbox": "د ژباړې شگبکس"
 }
