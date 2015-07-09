@@ -203,14 +203,14 @@
 			if ( !group ) {
 				continue;
 			}
+			uri = new mw.Uri( window.location.href );
 			if ( currentGroup === groupId ) {
 				selectedClass = 'selected';
+				uri.extend( { 'group': '' } );
 			} else {
 				selectedClass = '';
+				uri.extend( { 'group': groupId } );
 			}
-
-			uri = new mw.Uri( window.location.href );
-			uri.extend( { 'group': groupId } );
 
 			$groupRow = $( '<div>' )
 				.addClass( 'row facet-item ' + ' facet-level-' + level )
