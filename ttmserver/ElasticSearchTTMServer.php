@@ -466,12 +466,23 @@ GROOVY;
 		// Allow searching either by message content or message id (page name
 		// without language subpage) with exact match only.
 		$serchQuery = new \Elastica\Query\Bool();
-		$contentQuery = new \Elastica\Query\Match();
-		$contentQuery->setFieldQuery( 'content', $queryString );
-		$serchQuery->addShould( $contentQuery );
-		$messageQuery = new \Elastica\Query\Term();
-		$messageQuery->setTerm( 'localid', $queryString );
-		$serchQuery->addShould( $messageQuery );
+
+		$matches = array();
+		while ( preg_match( '/(.*)\s+AND\s+(.*)/', $queryString, $output ) ) {
+			$matches[] = $output[2];
+			$queryString = $output[1];
+		}
+		$matches[] = $queryString;
+		foreach ( $matches as $match ) {
+			$boolQuery = new \Elastica\Query\Bool();
+			$contentQuery = new \Elastica\Query\Match();
+			$contentQuery->setFieldQuery( 'content', $match );
+			$boolQuery->addShould( $contentQuery );
+			$messageQuery = new \Elastica\Query\Term();
+			$messageQuery->setTerm( 'localid', $match );
+			$boolQuery->addShould( $messageQuery );
+			$serchQuery->addMust( $boolQuery );
+		}
 		$query->setQuery( $serchQuery );
 
 		$language = new \Elastica\Facet\Terms( 'language' );
