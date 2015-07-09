@@ -510,9 +510,9 @@ GROOVY;
 	protected function parseQueryString( $queryString, $opts ) {
 		$fields = $highlights = array();
 		$terms = preg_split( '/\s+/', $queryString );
-		$type = $opts->getValue( 'match' );
+		$match = $opts->getValue( 'match' );
 
-		if ( $type === 'exact' ) {
+		if ( $match === 'exact' ) {
 			return $this->buildExactPhrase( $queryString );
 		}
 
@@ -539,7 +539,12 @@ GROOVY;
 				$messageQuery = new \Elastica\Query\Term();
 				$messageQuery->setTerm( 'localid', $word );
 				$boolQuery->addShould( $messageQuery );
-				$searchQuery->addShould( $boolQuery );
+
+				if ( $match === 'all' ) {
+					$searchQuery->addMust( $boolQuery );
+				} else {
+					$searchQuery->addShould( $boolQuery );
+				}
 
 				// Fields for highlighting
 				$highlights[$analyzer] =  array(
