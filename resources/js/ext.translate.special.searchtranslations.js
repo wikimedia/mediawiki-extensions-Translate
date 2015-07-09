@@ -208,11 +208,6 @@
 			if ( !group ) {
 				continue;
 			}
-			if ( currentGroup === groupId ) {
-				selectedClass = 'selected';
-			} else {
-				selectedClass = '';
-			}
 
 			uri = new mw.Uri( location.href );
 			if ( parentGrouppath !== undefined ) {
@@ -221,6 +216,14 @@
 				grouppath =  groupId;
 			}
 			uri.extend( { 'group': groupId, 'grouppath': grouppath } );
+
+			if ( currentGroup === groupId ) {
+				selectedClass = 'selected';
+				uri.extend( { 'group': '', 'grouppath': '' } );
+			} else {
+				selectedClass = '';
+				uri.extend( { 'group': groupId, 'grouppath': grouppath } );
+			}
 
 			$groupRow = $( '<div>' )
 				.addClass( 'row facet-item ' + ' facet-level-' + level )
