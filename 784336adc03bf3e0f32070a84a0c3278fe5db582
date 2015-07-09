@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_32c56f42",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-09T08:24:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_cbf32a68",
+      "revId": "784336adc03bf3e0f32070a84a0c3278fe5db582",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_ebe946e3",
         "filename": "resources/js/ext.translate.special.searchtranslations.js",
         "patchSetId": 8
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_52c27b3a",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-09T08:24:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_ebe946e3",
+      "revId": "784336adc03bf3e0f32070a84a0c3278fe5db582",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_cbf00ac7",
         "filename": "resources/js/ext.translate.special.searchtranslations.js",
         "patchSetId": 8
@@ -65,6 +101,24 @@
       "writtenOn": "2015-07-07T10:01:23Z",
       "side": 1,
       "message": "Usually empty line above return statement.",
+      "revId": "784336adc03bf3e0f32070a84a0c3278fe5db582",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_12bcf3b0",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-09T08:24:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_cbf00ac7",
       "revId": "784336adc03bf3e0f32070a84a0c3278fe5db582",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -100,6 +154,24 @@
       "side": 1,
       "message": "I should remove grouppath from here as of now as this will not be in effect until https://gerrit.wikimedia.org/r/#/c/208589/ is merged which allows searching with subgroups. If the user typed only group:(subgroup) then this will not reflect in UI without the grouppath parameter.",
       "parentUuid": "8ec42329_6bbd56d4",
+      "revId": "784336adc03bf3e0f32070a84a0c3278fe5db582",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_92e783df",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-09T08:24:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_2b9aee17",
       "revId": "784336adc03bf3e0f32070a84a0c3278fe5db582",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
