@@ -26,12 +26,13 @@ class TranslateRcFilter {
 	 * @return bool true
 	 */
 	public static function translationFilter( &$conds, &$tables, &$join_conds, $opts ) {
-		global $wgTranslateMessageNamespaces, $wgTranslateRcFilterDefault;
+		global $wgRequest, $wgTranslateMessageNamespaces, $wgTranslateRcFilterDefault;
 
-		$request = RequestContext::getMain()->getRequest();
-		$translations = $request->getVal( 'translations', $wgTranslateRcFilterDefault );
+		$translations = $wgRequest->getVal( 'translations', $wgTranslateRcFilterDefault );
 		$opts->add( 'translations', $wgTranslateRcFilterDefault );
 		$opts->setValue( 'translations', $translations );
+
+		$trailer = $wgRequest->getVal( 'trailer' );
 
 		$dbr = wfGetDB( DB_SLAVE );
 
@@ -44,12 +45,18 @@ class TranslateRcFilter {
 
 		if ( $translations === 'only' ) {
 			$conds[] = 'rc_namespace IN (' . $dbr->makeList( $namespaces ) . ')';
-			$conds[] = 'rc_title like \'%%/%%\'';
+
+			if ( $trailer !== null ) {
+				$conds[] = 'rc_title ' . $dbr->buildLike( $dbr->anyString(), $trailer );
+			}
 		} elseif ( $translations === 'filter' ) {
 			$conds[] = 'rc_namespace NOT IN (' . $dbr->makeList( $namespaces ) . ')';
 		} elseif ( $translations === 'site' ) {
 			$conds[] = 'rc_namespace IN (' . $dbr->makeList( $namespaces ) . ')';
-			$conds[] = 'rc_title not like \'%%/%%\'';
+
+			if ( $trailer !== null ) {
+				$conds[] = 'rc_title NOT ' . $dbr->buildLike( $dbr->anyString(), $trailer );
+			}
 		}
 
 		return true;
