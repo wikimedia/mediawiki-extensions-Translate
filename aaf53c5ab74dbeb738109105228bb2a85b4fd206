@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_878418b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-10T08:18:15Z",
+      "side": 1,
+      "message": "This does not sufficiently explain the wanted behavior",
+      "revId": "aaf53c5ab74dbeb738109105228bb2a85b4fd206",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_a78114a6",
+        "filename": "utils/RcFilter.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-10T08:18:15Z",
+      "side": 1,
+      "message": "Introducing state globals to the code is no longer acceptable.",
+      "revId": "aaf53c5ab74dbeb738109105228bb2a85b4fd206",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_478e30d7",
+        "filename": "utils/RcFilter.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-10T08:18:15Z",
+      "side": 1,
+      "message": "\"trailer\" is implemented in CleanChanges extension, it does not belong here.",
+      "revId": "aaf53c5ab74dbeb738109105228bb2a85b4fd206",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
