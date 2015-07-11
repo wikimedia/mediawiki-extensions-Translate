@@ -3,7 +3,8 @@
 		"authors": [
 			"CERminator",
 			"Edinwiki",
-			"Palapa"
+			"Palapa",
+			"Semso98"
 		]
 	},
 	"pagetranslation": "Prijevod stranice",
@@ -36,7 +37,7 @@
 	"tpt-new-pages": "{{PLURAL:$1|Ova stranica sadrži|Ove stranice sadrže}} tekst sa oznakama prijevoda, ali nijedna od verzija {{PLURAL:$1|ove stranice|ovih stranica}} nije trenutno označena za prevođenje.",
 	"tpt-old-pages": "Neke verzije {{PLURAL:$1|ove stranice|ovih stranica}} su označene za prevođenje.",
 	"tpt-other-pages": "{{PLURAL:$1|Stara verzija ove stranice je označena|Stare verzije ovih stranica su označene}} za prevođenje,\nali {{PLURAL:$1|posljednja verzija ne može|posljednje verzije ne mogu}} biti {{PLURAL:$1|označena|označene}} za prevođenje.",
-	"tpt-rev-unmark": "ukloni ovu stranicu iz prevođenja",
+	"tpt-rev-unmark": "ukloni iz prevođenja",
 	"translate-tag-translate-link-desc": "Prevedi ovu stranicu",
 	"translate-tag-markthis": "Označi ovu stranicu za prevođenje",
 	"translate-tag-markthisagain": "Ova stranica ima <span class=\"plainlinks\">[$1 izmjena]</span> od kako je posljednji put <span class=\"plainlinks\">[$2 označena za prevođenje]</span>.",
