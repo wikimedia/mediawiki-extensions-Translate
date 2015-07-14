@@ -4,7 +4,9 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel"
 		]
 	},
+	"apihelp-aggregategroups-param-aggregategroup": "د راغونډونکي پيغام ډلې پېژند.",
 	"apihelp-aggregategroups-param-group": "د پيغام ډلې پېژند.",
+	"apihelp-aggregategroups-example-1": "يوه ډله اړوندول",
 	"apihelp-groupreview-param-group": "پيغام ډله.",
 	"apihelp-groupreview-param-language": "د ژبې کوډ.",
 	"apihelp-query+languagestats-param-language": "د ژبې کوډ.",
