@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Crochet.david"
+			"Crochet.david",
+			"TomT0m"
 		]
 	},
 	"searchtranslations": "Recherche de traductions",
@@ -18,5 +19,5 @@
 	"tux-sst-solr-offline-title": "Recherche indisponible",
 	"tux-sst-solr-offline-body": "Le service de recherche est temporairement indisponible.",
 	"tux-sst-next": "Suivant →",
-	"tux-sst-prev": "Résultats précédents"
+	"tux-sst-prev": "< Précédent"
 }

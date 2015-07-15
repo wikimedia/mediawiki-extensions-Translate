@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Djiboun"
+			"Djiboun",
+			"Pathe",
+			"TomT0m"
 		]
 	},
+	"apihelp-groupreview-param-language": "Code de langue",
 	"apihelp-query+languagestats-description": "Demande les statistiques de langue.",
 	"apihelp-query+languagestats-param-language": "Code de langue.",
 	"apihelp-query+messagecollection-param-group": "Groupe du message.",
@@ -14,5 +17,7 @@
 	"apihelp-query+messagegroupstats-description": "Demande de statistiques de groupe de message.",
 	"apihelp-query+messagegroupstats-param-group": "Identifiant du groupe de message.",
 	"apihelp-query+messagetranslations-description": "Demande l'ensemble des traductions pour un seul message.",
-	"apihelp-query+messagetranslations-example-1": "Liste des traductions dans le wiki pour MediaWiki:janvier"
+	"apihelp-query+messagetranslations-example-1": "Liste des traductions du wiki pour «MediaWiki:janvier»",
+	"apihelp-translatesandbox-param-do": "Que faire.",
+	"apihelp-translateuser-example-1": "Afficher les informations à propos de l'utilisateur"
 }

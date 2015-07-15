@@ -20,7 +20,8 @@
 			"Zetud",
 			"Brunoperel",
 			"Benjozork",
-			"Element303"
+			"Element303",
+			"TomT0m"
 		]
 	},
 	"pagetranslation": "Traduction de pages",
@@ -48,7 +49,7 @@
 	"tpt-badsect": "« $1 » n’est pas un nom valide pour une unité de traduction $2.",
 	"tpt-showpage-intro": "Ci-dessous, les nouvelles traductions, celles existantes et supprimées.\nAvant de marquer ces versions pour être traduites, vérifier que les modifications aux sections sont minimisées pour éviter du travail inutile aux traducteurs.",
 	"tpt-mark-summary": "Cette version a été marquée pour être traduite",
-	"tpt-mark-nochanges": "Il n’y a pas de différence entre cette révision et la dernière révision marquée.",
+	"tpt-mark-nochanges": "Pas de modification à relire. Marquer cette page à traduire ne vas modifier ni la page ni aucune unité de traduction existante.",
 	"tpt-edit-failed": "Impossible de mettre à jour la page $1",
 	"tpt-duplicate": "Le nom de l'unité traduction $1 est utilisé plus d'une fois.",
 	"tpt-already-marked": "La dernière version de cette page a déjà été marquée pour être traduite.",
