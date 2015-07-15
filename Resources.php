@@ -416,6 +416,13 @@ $wgResourceModules['ext.translate.special.searchtranslations'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.special.searchtranslations.operatorsuggest'] = array(
+	'scripts' => 'resources/js/ext.translate.special.operatorsuggest.js',
+	'dependencies' => array(
+		'jquery.ui.autocomplete',
+	),
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.special.searchtranslations.styles'] = array(
 	'styles' => 'resources/css/ext.translate.special.searchtranslations.css',
 	'position' => 'top',
