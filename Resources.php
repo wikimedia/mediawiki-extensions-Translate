@@ -418,6 +418,13 @@ $wgResourceModules['ext.translate.special.supportedlanguages'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.special.operatorsuggest'] = array(
+	'scripts' => 'resources/js/ext.translate.special.operatorsuggest.js',
+	'dependencies' => array(
+		'jquery.ui.autocomplete',
+	),
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.special.translate'] = array(
 	'styles' => 'resources/css/ext.translate.special.translate.css',
 	'scripts' => 'resources/js/ext.translate.special.translate.js',
