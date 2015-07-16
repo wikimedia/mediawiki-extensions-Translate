@@ -5,7 +5,8 @@
 			"E THP",
 			"Ebrahimi-amir",
 			"Mousa",
-			"Reza1615"
+			"Reza1615",
+			"Koroğlu"
 		]
 	},
 	"translate": "ترجومه ائت",
@@ -37,7 +38,7 @@
 	"translate-page-showing": "$3 مئساژ ایچینده $1-دن $2-ه گؤستریلیر.",
 	"translate-page-showing-all": "{{PLURAL:$1|بیر|$1}} مئساژ گؤستریلیر.",
 	"translate-page-showing-none": "گؤسترمک اوچون بیر مئساژ یوخدور.",
-	"translate-next": "سونراکی صحیفه",
+	"translate-next": "سونراکی صفحه",
 	"translate-prev": "قاباقکی صحیفه",
 	"translate-page-description-legend": "بو قروپ اوچون بیلگیلر",
 	"translate-page-description-hasoptional": "بو مئساژ گروپوندا، ایستگه باغلی مئساژلار واردیر.\nایستگه باغلی مئساژلار یالنیز دیلین خاص شرطلری اولاندا چئویرمه‌لی‌دیرلر، مثلاً اگر دیل‌ده سؤزجوک آراسی بوشلوق یوخدور، یا بعضی آدلار گرک چئویریله. $1",
@@ -265,10 +266,7 @@
 	"logentry-translationreview-group": "$1، $3-ین $4 ترجومه‌لرینین وضعیتی‌نی $6-دن $7-ه {{GENDER:$2|دَییشدیردی}}",
 	"translate-workflow-state-": "(وئریلمه‌میش)",
 	"translate-workflowstatus": "وضعیت: $1",
-	"translate-workflow-set-do": "تنظیم‌له",
 	"translate-workflow-set-doing": "تنظیم‌لنیر...",
-	"translate-workflow-set-done": "تنظیملندی!",
-	"translate-workflow-set-error-alreadyset": "ایسته‌نیلمیش وضعیت، ایندیکی وضعیت ایله بیردیر.",
 	"translate-workflow-autocreated-summary": "$1 وضعیتی ایش-آخیمی اوچون اوتوماتیک صحیفه یاراتما",
 	"translate-stats-workflow": "وضعیت",
 	"translate-workflowgroup-label": "ایش-آخیمی وضعیتلری",

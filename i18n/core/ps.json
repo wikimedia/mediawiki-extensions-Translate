@@ -123,6 +123,7 @@
 	"translate-mgs-group": "پيغام ډله:",
 	"translate-mgs-submit": "شمارنې ښکاره کول",
 	"translate-mgs-column-language": "ژبه",
+	"translate-mgs-totals": "ټولې ژبې سره يوځای",
 	"supportedlanguages": "ملاتړې ژبې",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|ژباړن}}|ژباړنان}}: $1",
 	"supportedlanguages-recenttranslations": "تازه ژباړې",

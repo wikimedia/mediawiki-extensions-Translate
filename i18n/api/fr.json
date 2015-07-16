@@ -3,10 +3,21 @@
 		"authors": [
 			"Djiboun",
 			"Pathe",
-			"TomT0m"
+			"TomT0m",
+			"Gomoko"
 		]
 	},
+	"apihelp-aggregategroups-param-do": "Que faire avec le groupe de message agrégé.",
+	"apihelp-aggregategroups-param-aggregategroup": "ID du groupe de message agrégé.",
+	"apihelp-aggregategroups-param-group": "ID du groupe de message.",
+	"apihelp-aggregategroups-param-groupname": "Nom du groupe de message agrégé.",
+	"apihelp-aggregategroups-param-groupdescription": "Description du groupe de message agrégé.",
+	"apihelp-aggregategroups-example-1": "Associer un groupe",
+	"apihelp-groupreview-description": "Définir les états de travail du groupe de message.",
+	"apihelp-groupreview-param-group": "Groupe de message.",
 	"apihelp-groupreview-param-language": "Code de langue",
+	"apihelp-groupreview-param-state": "Le nouvel état pour le groupe.",
+	"apihelp-groupreview-example-1": "Marquer le groupe « group-Example » comme prêt pour l’allemand",
 	"apihelp-query+languagestats-description": "Demande les statistiques de langue.",
 	"apihelp-query+languagestats-param-language": "Code de langue.",
 	"apihelp-query+messagecollection-param-group": "Groupe du message.",
@@ -19,5 +30,16 @@
 	"apihelp-query+messagetranslations-description": "Demande l'ensemble des traductions pour un seul message.",
 	"apihelp-query+messagetranslations-example-1": "Liste des traductions du wiki pour «MediaWiki:janvier»",
 	"apihelp-translatesandbox-param-do": "Que faire.",
-	"apihelp-translateuser-example-1": "Afficher les informations à propos de l'utilisateur"
+	"apihelp-translateuser-example-1": "Afficher les informations à propos de l'utilisateur",
+	"apihelp-translationreview-example-1": "Relire la révision 1",
+	"apihelp-translationstash-param-subaction": "Action.",
+	"apihelp-translationstash-param-title": "Titre de la page d’unité de traduction.",
+	"apihelp-translationstash-param-translation": "Traduction faite par l’utilisateur.",
+	"apihelp-translationstash-param-metadata": "Objet JSON.",
+	"apihelp-translationstash-param-username": "Facultativement, l’utilisateur dont récupérer la réserve. Seuls les utilisateurs privilégiés peuvent faire cela.",
+	"apihelp-translationstash-example-1": "Ajouter une traduction à la réserve pour [[MediaWiki:Jan/fi]]",
+	"apihelp-translationstash-example-2": "Interroger la réserve",
+	"apihelp-ttmserver-description": "Suggestions de recherche d’après les souvenirs de traduction.",
+	"apihelp-ttmserver-param-service": "Quels services de traduction disponibles utiliser.",
+	"apihelp-ttmserver-param-sourcelanguage": "Le code de langue du texte de la source."
 }
