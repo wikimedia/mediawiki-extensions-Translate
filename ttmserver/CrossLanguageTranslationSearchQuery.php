@@ -109,13 +109,13 @@ class CrossLanguageTranslationSearchQuery {
 			'total' => $total,
 		);
 
-		if ( $filter === 'translated' ) {
+		if ( $filter === 'translated' || $filter === 'fuzzy' ) {
 			$collection->loadTranslations();
 		}
 
 		foreach ( $collection->keys() as $mkey => $title ) {
 			$documents[$mkey]['content'] = $messages[$mkey];
-			if ( $filter === 'translated' ) {
+			if ( $filter === 'translated' || $filter === 'fuzzy' ) {
 				$documents[$mkey]['content'] = $collection[$mkey]->translation();
 			}
 			$handle = new MessageHandle( $title );
@@ -130,6 +130,7 @@ class CrossLanguageTranslationSearchQuery {
 	protected function getAvailableFilters() {
 		return array(
 			'translated',
+			'fuzzy',
 			'untranslated'
 		);
 	}
