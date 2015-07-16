@@ -125,6 +125,21 @@ class SpecialSearchTranslations extends SpecialPage {
 			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
 		}
 
+		$terms = array();
+		if( $opts->getValue( 'filter' ) === 'outdated' ) {
+			if ( $opts->getValue( 'language' ) === '' ) {
+				$opts->add( 'language', $this->getLanguage()->getCode() );
+			}
+			$collection = $this->applyFilter( $resultset );
+			$docs = $collection['documents'];
+			$terms = $collection['terms'];
+			$documents = $this->getMessages( $docs );
+			$total = $collection['total'];
+		} else {
+			$documents = $server->getDocuments( $resultset );
+			$total = $server->getTotalHits( $resultset );
+		}
+
 		// Part 1: facets
 		$facets = $server->getFacets( $resultset );
 		$facetHtml = '';
@@ -289,7 +304,7 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$definitions = new MessageDefinitions( $messages );
 		$collection = MessageCollection::newFromDefinitions( $definitions, $language );
-		$collection->filter( 'hastranslation', true );
+		$collection->filter( 'fuzzy', false );
 
 		$total = count( $collection );
 		$offset = $collection->slice( $offset, $limit );
