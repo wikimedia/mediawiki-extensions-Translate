@@ -67,6 +67,8 @@ class SpecialSearchTranslations extends SpecialPage {
 		$opts->add( 'query', '' );
 		$opts->add( 'sourcelanguage', '' );
 		$opts->add( 'language', '' );
+		$opts->add( 'sourcelanguage', '' );
+		$opts->add( 'filter', '' );
 		$opts->add( 'group', '' );
 		$opts->add( 'grouppath', '' );
 		$opts->add( 'filter', '' );
@@ -107,8 +109,38 @@ class SpecialSearchTranslations extends SpecialPage {
 			$total = $server->getTotalHits( $resultset );
 		}
 
+		// Part 1: facets
+		$filter = $opts->getValue( 'filter' );
+		if (
+			method_exists( $server, 'makeFacets' ) &&
+			( $filter === 'translated' || $filter === 'untranslated' )
+		) {
+			$resultset = $server->makeFacets( $terms, $opts );
+		}
+
 		$facets = $server->getFacets( $resultset );
 		$facetHtml = '';
+
+		// Customize facets for untranslated messages
+		$sourcelanguage = $opts->getValue( 'sourcelanguage' );
+		if ( $filter === 'untranslated' ) {
+			$sourcelanguage = $opts->getValue( 'sourcelanguage' );
+			if ( $sourcelanguage === '' ) {
+				$sourcelanguage = $wgLanguageCode;
+			}
+			$language = $opts->getValue( 'language' );
+			$total = $facets['language'][$sourcelanguage];
+
+			$codes = Language::fetchLanguageNames();
+			foreach ( $codes as $languageCode => $value ) {
+				if ( array_key_exists( $languageCode, $facets['language'] ) ) {
+					$facets['language'][$languageCode] = $total - $facets['language'][$languageCode];
+				} else {
+					$facets['language'][$languageCode] = $total;
+				}
+			}
+			$total = $facets['language'][$language];
+		}
 
 		if ( count( $facets['language'] ) > 0 ) {
 			$facetHtml = Html::element( 'div',
