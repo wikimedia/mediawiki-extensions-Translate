@@ -440,7 +440,7 @@ class ChangeSyncer {
 				break;
 			}
 
-			if ( $revision->getRawUserText() === $wgTranslateFuzzyBotName ) {
+			if ( $revision->getUserText( Revision::RAW ) === $wgTranslateFuzzyBotName ) {
 				$revision = $revision->getPrevious();
 				continue;
 			}
