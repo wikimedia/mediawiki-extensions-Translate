@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_db2ace73",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-17T14:09:32Z",
+      "side": 1,
+      "message": "$filter \u003d $opts-\u003egetValue( \u0027filter\u0027 ) to make this line shorter.\n\nAlso add newline after \"if (\"",
+      "revId": "5f646d56bf0bb039d0e9b6fba5a101a76dcbc47a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
