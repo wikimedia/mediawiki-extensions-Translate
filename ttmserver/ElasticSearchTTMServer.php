@@ -533,6 +533,58 @@ GROOVY;
 		}
 	}
 
+	// Fetch data for facets counts
+	public function makeFacets( $terms, $opts ) {
+
+		$filteredQuery = new \Elastica\Query\Filtered();
+		$idQuery = new \Elastica\Filter\Terms();
+		$idQuery->setTerms( 'localid', $terms );
+
+		$filteredQuery->setFilter($idQuery);
+		$query = new \Elastica\Query();
+
+		$query->setQuery( $filteredQuery );
+
+		// Language facet to retrieve count for each language
+		$language = new \Elastica\Facet\Terms( 'language' );
+		$language->setField( 'language' );
+		$language->setSize( 600 );
+		$query->addFacet( $language );
+
+		// Group facet to retrieve count for each group
+		$group = new \Elastica\Facet\Terms( 'group' );
+		$group->setField( 'group' );
+		$group->setSize( 500 );
+		$query->addFacet( $group );
+
+		$filters = new \Elastica\Filter\Bool();
+
+		$language = $opts->getValue( 'language' );
+		$languageFilter = new \Elastica\Filter\Term();
+		$languageFilter->setTerm( 'language', $language );
+		$filters->addMust( $languageFilter );
+
+		$group = $opts->getValue( 'group' );
+		if ( $group !== '' ) {
+			$groupFilter = new \Elastica\Filter\Term();
+			$groupFilter->setTerm( 'group', $group );
+			$filters->addMust( $groupFilter );
+		}
+		$query->setFilter( $filters );
+
+		$offset = $opts->getValue( 'offset' );
+		$limit = $opts->getValue( 'limit' );
+		$query->setFrom( $offset );
+		$query->setSize( $limit );
+		$query->setParam( '_source', array( 'content', 'localid', 'language', 'group', 'wiki' ) );
+
+		try {
+			return $this->getType()->getIndex()->search( $query );
+		} catch ( \Elastica\Exception\ExceptionInterface $e ) {
+			throw new TTMServerException( $e->getMessage() );
+		}
+	}
+
 	public function getFacets( $resultset ) {
 		$facets = $resultset->getFacets();
 

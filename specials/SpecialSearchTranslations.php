@@ -88,6 +88,12 @@ class SpecialSearchTranslations extends SpecialPage {
 		}
 
 		// Part 1: facets
+		if ( method_exists( $server, 'makeFacets' )
+			&& ( $opts->getValue( 'filter' ) === 'translated' || $opts->getValue( 'filter' ) === 'untranslated' )
+		) {
+			$resultset = $server->makeFacets( $terms, $opts );
+		}
+
 		$facets = $server->getFacets( $resultset );
 		$total = $server->getTotalHits( $resultset );
 		$facetHtml = '';
