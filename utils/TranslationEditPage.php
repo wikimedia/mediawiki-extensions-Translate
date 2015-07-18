@@ -77,12 +77,6 @@ class TranslationEditPage {
 		$id = "tm-target-{$helpers->dialogID()}";
 		$helpers->setTextareaId( $id );
 
-		if ( $this->suggestions === 'only' ) {
-			echo $helpers->getBoxes( $this->suggestions );
-
-			return;
-		}
-
 		if ( $this->suggestions === 'checks' ) {
 			echo $helpers->getBoxes( $this->suggestions );
 
