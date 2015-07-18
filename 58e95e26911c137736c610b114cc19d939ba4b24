@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_e5f4bfcd",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-18T16:34:54Z",
+      "side": 1,
+      "message": "I like this feature, but I wonder would it be possible to have for example \"kirjau wikip*\" not act as \"kirjau* wikip*\" and \"wikip* kirjaudu\" not act as \"wikip*\".",
+      "revId": "58e95e26911c137736c610b114cc19d939ba4b24",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
