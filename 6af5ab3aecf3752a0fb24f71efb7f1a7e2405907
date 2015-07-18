@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_65220fa4",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-18T15:05:18Z",
+      "side": 1,
+      "message": "2015.07 now",
+      "revId": "6af5ab3aecf3752a0fb24f71efb7f1a7e2405907",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_451fd35e",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-18T15:05:18Z",
+      "side": 1,
+      "message": "There is no need to check for publicity here as the same info is accessible via Special:SearchTranslations",
+      "revId": "6af5ab3aecf3752a0fb24f71efb7f1a7e2405907",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
