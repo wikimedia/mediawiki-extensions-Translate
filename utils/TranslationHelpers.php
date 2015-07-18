@@ -183,10 +183,6 @@ class TranslationHelpers {
 			return (string)$this->callBox( 'check', $all['check'] );
 		}
 
-		if ( $this->group instanceof RecentMessageGroup ) {
-			$all['last-diff'] = array( $this, 'getLastDiff' );
-		}
-
 		$boxes = array();
 		foreach ( $all as $type => $cb ) {
 			$box = $this->callBox( $type, $cb );
@@ -577,67 +573,6 @@ class TranslationHelpers {
 		return $diff->getDiff(
 			wfMessage( 'tpt-diff-old' )->escaped(),
 			wfMessage( 'tpt-diff-new' )->escaped()
-		);
-	}
-
-	protected function getLastDiff() {
-		// Shortcuts
-		$title = $this->handle->getTitle();
-		$latestRevId = $title->getLatestRevID();
-		$previousRevId = $title->getPreviousRevisionID( $latestRevId );
-
-		$latestRev = Revision::newFromTitle( $title, $latestRevId );
-		$previousRev = Revision::newFromTitle( $title, $previousRevId );
-
-		$diffText = '';
-
-		if ( $latestRev && $previousRev ) {
-			$latest = ContentHandler::getContentText( $latestRev->getContent() );
-			$previous = ContentHandler::getContentText( $previousRev->getContent() );
-
-			if ( $previous !== $latest ) {
-				$diff = new DifferenceEngine;
-
-				if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
-					$diff->setTextLanguage( $this->getTargetLanguage() );
-				}
-
-				$oldContent = ContentHandler::makeContent( $previous, $diff->getTitle() );
-				$newContent = ContentHandler::makeContent( $latest, $diff->getTitle() );
-
-				$diff->setContent( $oldContent, $newContent );
-				$diff->setReducedLineNumbers();
-				$diff->showDiffStyle();
-				$diffText = $diff->getDiff( false, false );
-			}
-		}
-
-		if ( !$latestRev ) {
-			return null;
-		}
-
-		$context = RequestContext::getMain();
-		$user = $latestRev->getUserText( Revision::FOR_THIS_USER, $context->getUser() );
-		$comment = $latestRev->getComment();
-
-		if ( $diffText === '' ) {
-			if ( strval( $comment ) !== '' ) {
-				$text = $context->msg( 'translate-dynagroup-byc', $user, $comment )->escaped();
-			} else {
-				$text = $context->msg( 'translate-dynagroup-by', $user )->escaped();
-			}
-		} else {
-			if ( strval( $comment ) !== '' ) {
-				$text = $context->msg( 'translate-dynagroup-lastc', $user, $comment )->escaped();
-			} else {
-				$text = $context->msg( 'translate-dynagroup-last', $user )->escaped();
-			}
-		}
-
-		return TranslateUtils::fieldset(
-			$text,
-			$diffText,
-			array( 'class' => 'mw-sp-translate-latestchange' )
 		);
 	}
 
