@@ -5,7 +5,8 @@
 			"Pathe",
 			"TomT0m",
 			"Gomoko",
-			"Wladek92"
+			"Wladek92",
+			"Sacamol"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gérer les groupes d'agrégation de messages.\n\nVous pouvez ajouter et supprimer des agrégats de  groupes de messages et les associer ou de les dissocier les uns des autres (un à la fois).",
@@ -13,7 +14,7 @@
 	"apihelp-aggregategroups-param-aggregategroup": "ID du groupe de message agrégé.",
 	"apihelp-aggregategroups-param-group": "ID du groupe de message.",
 	"apihelp-aggregategroups-param-groupname": "Nom du groupe de message agrégé.",
-	"apihelp-aggregategroups-param-groupdescription": "Description du groupe de message agrégé.",
+	"apihelp-aggregategroups-param-groupdescription": "Description du groupe de messages agrégé.",
 	"apihelp-aggregategroups-example-1": "Associer un groupe",
 	"apihelp-groupreview-description": "Définir les états de transition du groupe de messages.",
 	"apihelp-groupreview-param-group": "Groupe de messages.",
@@ -32,13 +33,21 @@
 	"apihelp-query+messagecollection-param-filter": "Filtres sur les collections de messages. Utilisez <kbd>! </kbd> pour nier la condition. Par exemple <kbd>!floue</kbd> signifie uniquement la liste de tous les messages non-floue . Les filtres sont appliqués dans l'ordre indiqué.\n;floue: messages avec étiquette fuzzy.\n;optionnel: messages qui doivent être traduits que si des changements sont nécessaires.\n;ignoré: messages qui ne sont jamais traduits.\n;possède  traduction: messages qui ont une traduction peu importe si elle est floue ou pas.\n;traduit: messages qui ont une traduction qui n'est pas floue.\n;changé: messages qui ont été traduits ou changé depuis la dernière exportation.\n;examinateur&#58;N: messages dont le numéro d'utilisateur <kbd>N</kbd> figure parmi les examinateurs.\n;dernier traducteur&#58;N: messages dont le numéro d'utilisateur <kbd>N</kbd> est celui de la dernière personne qui a traduit.",
 	"apihelp-query+messagecollection-example-1": "Liste des langues prises en charge",
 	"apihelp-query+messagecollection-example-2": "Liste des définitions de messages non-facultatifs pour le groupe \"Exemple-de-page\"",
+	"apihelp-query+messagegroups-description": "Retourne des informations sur les groupes de messages.\n\nNotez que le paramètre uselang concerne la sortie des éléments dépendants de la langue.",
+	"apihelp-query+messagegroups-param-format": "Dans la présentation sous forme d'arbre, les groupes de messages peuvent exister en plusieurs endroits de l'arborescence.",
 	"apihelp-query+messagegroups-example-1": "Affiche les groupes de message",
 	"apihelp-query+messagegroupstats-description": "Demande de statistiques de groupe de message.",
 	"apihelp-query+messagegroupstats-param-group": "Identifiant du groupe de message.",
 	"apihelp-query+messagetranslations-description": "Demande l'ensemble des traductions pour un seul message.",
+	"apihelp-query+messagetranslations-param-title": "Titre complet d'un message connu.",
 	"apihelp-query+messagetranslations-example-1": "Liste des traductions du wiki pour «MediaWiki:janvier»",
 	"apihelp-translatesandbox-param-do": "Que faire.",
+	"apihelp-translatesandbox-param-username": "Nom d'utilisateur lors de la création d'un utilisateur.",
+	"apihelp-translatesandbox-param-password": "Mot de passe lors de la création d'un utilisateur.",
+	"apihelp-translatesandbox-param-email": "E-mail lors de la création d'un utilisateur.",
+	"apihelp-translateuser-description": "Informations relatives a la traduction et concernant l'utilisateur.",
 	"apihelp-translateuser-example-1": "Afficher les informations à propos de l'utilisateur",
+	"apihelp-translationreview-param-revision": "Le numéro de révision à revoir.",
 	"apihelp-translationreview-example-1": "Relire la révision 1",
 	"apihelp-translationstash-param-subaction": "Action.",
 	"apihelp-translationstash-param-title": "Titre de la page d’unité de traduction.",
@@ -49,5 +58,6 @@
 	"apihelp-translationstash-example-2": "Interroger la réserve",
 	"apihelp-ttmserver-description": "Rechercher des suggestions à partire de l'historique des traductions.",
 	"apihelp-ttmserver-param-service": "Quels services de traduction disponibles utiliser.",
-	"apihelp-ttmserver-param-sourcelanguage": "Le code de langue du texte de la source."
+	"apihelp-ttmserver-param-sourcelanguage": "Le code de langue du texte de la source.",
+	"apihelp-ttmserver-param-text": "Le texte pour lequel on cherche des suggestions."
 }
