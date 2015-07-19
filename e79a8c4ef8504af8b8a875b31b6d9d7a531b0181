@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_b3cd9e64",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-19T16:06:10Z",
+      "side": 1,
+      "message": "This is same as array_keys( $wgTranslateTranslationServices )",
+      "revId": "e79a8c4ef8504af8b8a875b31b6d9d7a531b0181",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
