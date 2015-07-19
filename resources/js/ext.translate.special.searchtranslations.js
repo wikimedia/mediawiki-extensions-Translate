@@ -202,7 +202,7 @@
 			groupList = groupList.concat( grouppath );
 		}
 		groupList.sort( sortGroups );
-		for ( i = 0; i <= groupList.length; i++ ) {
+		for ( i = 0; i < groupList.length; i++ ) {
 			groupId = groupList[i];
 			group = mw.translate.findGroup( groupId, resultGroups );
 			if ( !group ) {
