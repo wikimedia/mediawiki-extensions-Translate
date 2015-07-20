@@ -33,9 +33,12 @@ class RemoteTTMServerWebService extends TranslationWebService {
 			'action' => 'ttmserver',
 			'sourcelanguage' => $from,
 			'targetlanguage' => $to,
-			'text' => $text,
-			'*', // Because we hate IE
+			'text' => $text
 		);
+
+		if ( isset( $this->config['service'] ) ) {
+			$params['service'] = $this->config['service'];
+		}
 
 		return TranslationQuery::factory( $this->config['url'] )
 			->timeout( $this->config['timeout'] )
