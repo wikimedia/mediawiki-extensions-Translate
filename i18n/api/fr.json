@@ -6,7 +6,8 @@
 			"TomT0m",
 			"Gomoko",
 			"Wladek92",
-			"Sacamol"
+			"Sacamol",
+			"Hpetit"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gérer les groupes d'agrégation de messages.\n\nVous pouvez ajouter et supprimer des agrégats de  groupes de messages et les associer ou de les dissocier les uns des autres (un à la fois).",
@@ -58,7 +59,7 @@
 	"apihelp-translationaids-description": "Recherche toutes les aides à la traduction.",
 	"apihelp-translationaids-param-title": "Titre complet d'un message connu.",
 	"apihelp-translationaids-param-group": "Le groupe de messages auquel appartient le message. S'il est vide, alors le groupe principal est utilisé.",
-	"apihelp-translationaids-param-prop": "Quels aides à la traduction inclure.",
+	"apihelp-translationaids-param-prop": "Quelles aides à la traduction inclure.",
 	"apihelp-translationreview-description": "Marquer les traductions comme relues.",
 	"apihelp-translationreview-param-revision": "Le numéro de révision à revoir.",
 	"apihelp-translationreview-example-1": "Relire la révision 1",
