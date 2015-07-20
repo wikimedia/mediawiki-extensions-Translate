@@ -40,6 +40,20 @@ abstract class TranslationWebService {
 			$config['timeout'] = 3;
 		}
 
+		// Alter local ttmserver instance to appear as remote
+		// to take advantage of the query aggregator. But only
+		// if they are public.
+		if (
+			isset( $config['class'] ) &&
+			$config['class'] === 'ElasticSearchTTMServer' &&
+			isset( $config['public'] ) &&
+			$config['public'] === true
+		) {
+			$config['type'] = 'remote-ttmserver';
+			$config['service'] = $name;
+			$config['url'] = wfExpandURl( wfScript( 'api' ), PROTO_CANONICAL );
+		}
+
 		if ( isset( $handlers[$config['type']] ) ) {
 			$class = $handlers[$config['type']];
 
