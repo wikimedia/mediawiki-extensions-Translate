@@ -69,7 +69,7 @@ class ApiTranslationAids extends ApiBase {
 		// Execute all web service queries asynchronously to save time
 		$start = microtime( true );
 		$aggregator->run();
-		$times['__query_aggregator'] = round( microtime( true ) - $start, 3 );
+		$times['query_aggregator'] = round( microtime( true ) - $start, 3 );
 
 		// Construct the result data structure
 		foreach ( $aids as $type => $obj ) {
