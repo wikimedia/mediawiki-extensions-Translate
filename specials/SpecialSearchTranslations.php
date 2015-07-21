@@ -137,7 +137,6 @@ class SpecialSearchTranslations extends SpecialPage {
 
 			$handle = new MessageHandle( $title );
 
-			$edit = '';
 			if ( $handle->isValid() ) {
 				$groupId = $handle->getGroup()->getId();
 				$helpers = new TranslationHelpers( $title, $groupId );
@@ -146,15 +145,26 @@ class SpecialSearchTranslations extends SpecialPage {
 				$resultAttribs['data-group'] = $groupId;
 
 				$uri = wfAppendQuery( $document['uri'], array( 'action' => 'edit' ) );
-				$link = Html::element( 'a', array(
-					'href' => $uri,
-				), $this->msg( 'tux-sst-edit' )->text() );
-				$edit = Html::rawElement(
-					'div',
-					array( 'class' => 'row tux-edit tux-message-item' ),
-					$link
+				$link = Html::element(
+					'a',
+					array( 'href' => $uri ),
+					$this->msg( 'tux-sst-edit' )->text()
+				);
+			} else {
+				$url = wfParseUrl( $document['uri'] );
+				$domain = $url['host'];
+				$link = Html::element(
+					'a',
+					array( 'href' => $document['uri'] ),
+					$this->msg( 'tux-sst-view-foreign', $domain )->text()
 				);
 			}
+
+			$access = Html::rawElement(
+				'div',
+				array( 'class' => 'row tux-edit tux-message-item' ),
+				$link
+			);
 
 			$titleText = $title->getPrefixedText();
 			$titleAttribs = array(
@@ -172,7 +182,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				. Html::openElement( 'div', $resultAttribs )
 				. Html::rawElement( 'div', $textAttribs, $text )
 				. Html::element( 'div', $titleAttribs, $titleText )
-				. $edit
+				. $access
 				. Html::closeElement( 'div' );
 		}
 
