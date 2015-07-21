@@ -174,6 +174,44 @@ class PageTranslationHooks {
 	}
 
 	/**
+	 * Creates a new TranslatablePage object and checks, if it is the source language
+	 * or not.
+	 * @return TranslatablePage|bool Returns the object, if this isn't the language source page,
+	 *  false otherwise.
+	 */
+	private static function getTranslateablePage( Title $title ) {
+		// Check if this is a source page or a translation page
+		$page = TranslatablePage::newFromTitle( $title );
+		if ( $page->getMarkedTag() === false ) {
+			$page = TranslatablePage::isTranslationPage( $title );
+		}
+
+		if ( $page === false || $page->getMarkedTag() === false ) {
+			return false;
+		}
+		return $page;
+	}
+
+	/**
+	 * Returns a new created Title object of the subpage, which contains the translated content
+	 * for the given language code.
+	 * @param Title $title Title object of the base (source language) page
+	 * @param String $code The language code
+	 * @return Title The Title object of the subpage
+	 */
+	private static function getSubPage( Title $title, $code ) {
+		// Should call $page->getMessageGroup()->getSourceLanguage(), but
+		// group is sometimes null on WMF during page moves, reason unknown.
+		// This should do the same thing for now.
+		$sourceLanguage = $title->getPageLanguage()->getCode();
+		$suffix = ( $code === $sourceLanguage ) ? '' : "/$code";
+		$targetTitleString = $title->getDBkey() . $suffix;
+		$subpage = Title::makeTitle( $title->getNamespace(), $targetTitleString );
+
+		return $subpage;
+	}
+
+	/**
 	 * @param $data
 	 * @param $params
 	 * @param $parser Parser
@@ -182,13 +220,8 @@ class PageTranslationHooks {
 	public static function languages( $data, $params, $parser ) {
 		$currentTitle = $parser->getTitle();
 
-		// Check if this is a source page or a translation page
-		$page = TranslatablePage::newFromTitle( $currentTitle );
-		if ( $page->getMarkedTag() === false ) {
-			$page = TranslatablePage::isTranslationPage( $currentTitle );
-		}
-
-		if ( $page === false || $page->getMarkedTag() === false ) {
+		$page = self::getTranslateablePage( $currentTitle );
+		if ( !$page ) {
 			return '';
 		}
 
@@ -228,10 +261,6 @@ class PageTranslationHooks {
 		// This way the parser knows to fragment the parser cache by language code
 		$userLangCode = $parser->getOptions()->getUserLang();
 		$userLangDir = $parser->getOptions()->getUserLangObj()->getDir();
-		// Should call $page->getMessageGroup()->getSourceLanguage(), but
-		// group is sometimes null on WMF during page moves, reason unknown.
-		// This should do the same thing for now.
-		$sourceLanguage = $pageTitle->getPageLanguage()->getCode();
 
 		$languages = array();
 		foreach ( $status as $code => $percent ) {
@@ -240,9 +269,7 @@ class PageTranslationHooks {
 			$name = htmlspecialchars( $name ); // Unlikely, but better safe
 
 			// Add links to other languages
-			$suffix = ( $code === $sourceLanguage ) ? '' : "/$code";
-			$targetTitleString = $pageTitle->getDBkey() . $suffix;
-			$subpage = Title::makeTitle( $pageTitle->getNamespace(), $targetTitleString );
+			$subpage = self::getSubPage( $pageTitle, $code );
 
 			$classes = array();
 			if ( $code === $userLangCode ) {
@@ -963,5 +990,29 @@ class PageTranslationHooks {
 				self::updateTranslationPage( $page, $language, $user, 0, $reason );
 			}
 		}
+	}
+
+	/**
+	 * Populate page translations to langlinks table
+	 * @param LinksUpdate $lu The LinksUpdate object for this page
+	 * @return bool
+	 */
+	public static function onLinksUpdate( LinksUpdate $lu ) {
+		// check, if the langlinks should be updated or not
+		$page = $page = self::getTranslateablePage( $lu->getTitle() );
+		if ( !$page ||
+			!$status = $page->getTranslationPercentages() ) {
+			return true;
+		}
+
+		// Fix title
+		$pageTitle = $page->getTitle();
+
+		// update the language links in LinksUpdate
+		foreach ( $status as $code => $per ) {
+			$subPage = self::getSubPage( $pageTitle, $code );
+			$lu->mInterlangs[$code] = $subPage->getPrefixedText();
+		}
+		return true;
 	}
 }

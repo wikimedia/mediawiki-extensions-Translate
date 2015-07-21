@@ -117,7 +117,10 @@ class TranslateHooks {
 				'PageTranslationHooks::updateTranstagOnNullRevisions';
 
 			// Register \<languages/>
-			$wgHooks['ParserFirstCallInit'][] = 'TranslateHooks::setupParserHooks';
+			$wgHooks['ParserFirstCallInit'][] = 'TranslateHooks::setupParserHooks';	
+
+			// Populate to langlinks table
+			$wgHooks['LinksUpdate'][] = 'PageTranslationHooks::onLinksUpdate';
 
 			// Strip \<translate> tags etc. from source pages when rendering
 			$wgHooks['ParserBeforeStrip'][] = 'PageTranslationHooks::renderTagPage';
