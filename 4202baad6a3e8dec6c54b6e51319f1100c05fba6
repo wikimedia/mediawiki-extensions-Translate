@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_e1afbe76",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-21T22:29:03Z",
+      "side": 1,
+      "message": "if (",
+      "revId": "4202baad6a3e8dec6c54b6e51319f1100c05fba6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_a13e9622",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-21T22:29:03Z",
+      "side": 1,
+      "message": "This seems good change, but why is it in this patchset? Also, getLocalUrl() is better.",
+      "revId": "4202baad6a3e8dec6c54b6e51319f1100c05fba6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_e1e6dee2",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-21T22:29:03Z",
+      "side": 1,
+      "message": "I think we should check that it is local message here.",
+      "revId": "4202baad6a3e8dec6c54b6e51319f1100c05fba6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_41d7b2f2",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-21T22:29:03Z",
+      "side": 1,
+      "message": "Would Title::newFromText work here? Then you can can call methods on that object.",
+      "revId": "4202baad6a3e8dec6c54b6e51319f1100c05fba6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_61d2ee02",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-21T22:29:03Z",
+      "side": 1,
+      "message": "I think we should also use MessageHandle to further validate that it is a currently known message.",
+      "revId": "4202baad6a3e8dec6c54b6e51319f1100c05fba6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_2104e67f",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-21T22:29:03Z",
+      "side": 1,
+      "message": "missing spaces",
+      "revId": "4202baad6a3e8dec6c54b6e51319f1100c05fba6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_e1fd7e6a",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-21T22:29:03Z",
+      "side": 1,
+      "message": "while (\na\nb\n) {",
+      "revId": "4202baad6a3e8dec6c54b6e51319f1100c05fba6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
