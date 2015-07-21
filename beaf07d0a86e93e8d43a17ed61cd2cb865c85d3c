@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_fe4e7f9a",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2015-07-21T20:57:05Z",
+      "side": 0,
+      "message": "This function never existed, it was called setIndicators: https://gerrit.wikimedia.org/r/#/c/162609/18/includes/OutputPage.php,cm",
+      "revId": "beaf07d0a86e93e8d43a17ed61cd2cb865c85d3c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
