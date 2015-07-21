@@ -8,6 +8,7 @@
 	},
 	"searchtranslations": "{{doc-special|SearchTranslations}}\n{{Identical|Search translation}}",
 	"tux-sst-edit": "A link text.",
+	"tux-sst-view-foreign": "A link text. Parameters:\n* $1 - the domain/host name where the link points to.",
 	"tux-sst-search": "A button text.\n{{Identical|Search}}",
 	"tux-sst-search-ph": "Placeholder text in input field.\n{{Identical|Search translation}}",
 	"tux-sst-count": "Parameters:\n* $1 - the number of search results",
