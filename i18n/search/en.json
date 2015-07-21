@@ -6,6 +6,7 @@
 	},
 	"searchtranslations": "Search translations",
 	"tux-sst-edit": "Edit translation",
+	"tux-sst-view-foreign": "View at $1",
 	"tux-sst-search": "Search",
 	"tux-sst-search-ph": "Search translations",
 	"tux-sst-count": "{{PLURAL:$1|One result found|$1 results found}}",
