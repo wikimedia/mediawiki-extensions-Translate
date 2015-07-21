@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_21686618",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-21T22:44:24Z",
+      "side": 1,
+      "message": "I think we should actually limit the serach to the current wiki when applying any of the translated/optional etc. filters.",
+      "parentUuid": "8ec42329_e1e6dee2",
+      "revId": "4202baad6a3e8dec6c54b6e51319f1100c05fba6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_41d7b2f2",
         "filename": "specials/SpecialSearchTranslations.php",
         "patchSetId": 12
