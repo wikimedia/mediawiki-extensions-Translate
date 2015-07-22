@@ -491,9 +491,10 @@ GROOVY;
 	}
 
 	// Parse query string and build the search query
-	protected function parseQueryString( $queryString ) {
+	protected function parseQueryString( $queryString, $opts ) {
 		$fields = $highlights = array();
 		$terms = preg_split( '/\s+/', $queryString );
+		$match = $opts['match'];
 
 		// Map each word in the query string with its corresponding field
 		foreach ( $terms as $term ) {
@@ -518,7 +519,12 @@ GROOVY;
 				$messageQuery = new \Elastica\Query\Term();
 				$messageQuery->setTerm( 'localid', $word );
 				$boolQuery->addShould( $messageQuery );
-				$searchQuery->addShould( $boolQuery );
+
+				if ( $match === 'all' ) {
+					$searchQuery->addMust( $boolQuery );
+				} else {
+					$searchQuery->addShould( $boolQuery );
+				}
 
 				// Fields for highlighting
 				$highlights[$analyzer] =  array(
@@ -553,7 +559,7 @@ GROOVY;
 	public function search( $queryString, $opts, $highlight ) {
 		$query = new \Elastica\Query();
 
-		list( $searchQuery, $highlights ) = $this->parseQueryString( $queryString );
+		list( $searchQuery, $highlights ) = $this->parseQueryString( $queryString, $opts );
 		$query->setQuery( $searchQuery );
 
 		$language = new \Elastica\Facet\Terms( 'language' );

@@ -20,5 +20,7 @@
 	"tux-sst-solr-offline-title": "Used as title of error page.\n\nThe body of error message is {{msg-mw|Tux-sst-solr-offline-body}}.\n{{Identical|Search unavailable}}",
 	"tux-sst-solr-offline-body": "Used as error message.\n\nThe page title for this message is {{msg-mw|tux-sst-solr-offline-title}}.",
 	"tux-sst-next": "Link to browser more search results.\n\nSee also:\n* {{msg-mw|Tux-sst-prev}}",
-	"tux-sst-prev": "Link to browser more search results.\n\nSee also:\n* {{msg-mw|Tux-sst-next}}"
+	"tux-sst-prev": "Link to browser more search results.\n\nSee also:\n* {{msg-mw|Tux-sst-next}}",
+	"tux-sst-link-all-match": "Link to filter the results to match all search words.",
+	"tux-sst-match-message": "Used to inform users about an option to get results for all search words."
 }
