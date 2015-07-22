@@ -18,5 +18,7 @@
 	"tux-sst-solr-offline-title": "Search unavailable",
 	"tux-sst-solr-offline-body": "The search service is temporarily unavailable.",
 	"tux-sst-next": "Next ›",
-	"tux-sst-prev": "‹ Previous"
+	"tux-sst-prev": "‹ Previous",
+	"tux-sst-link-all-match": "Require all search words.",
+	"tux-sst-match-message": "Showing translations which match any of the search words. $1"
 }
