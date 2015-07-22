@@ -276,7 +276,7 @@ class MessageGroupStats {
 		$stats = self::extractResults( $res, $stats );
 
 		# Go over each language filling missing entries
-		$languages = array_keys( Language::fetchLanguageNames() );
+		$languages = array_keys( TranslateUtils::getLanguageNames( 'en' ) );
 		// This is for calculating things in correct order
 		sort( $languages );
 		foreach ( $languages as $code ) {
