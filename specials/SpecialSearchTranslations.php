@@ -70,6 +70,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$opts->add( 'group', '' );
 		$opts->add( 'grouppath', '' );
 		$opts->add( 'filter', '' );
+		$opts->add( 'match', '' );
 		$opts->add( 'limit', $this->limit );
 		$opts->add( 'offset', 0 );
 
@@ -432,11 +433,47 @@ HTML
 		$title = Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$input = Xml::input( 'query', false, $query, $attribs );
 		$submit = Xml::submitButton( $this->msg( 'tux-sst-search' ), array( 'class' => 'button' ) );
+
+		$match = $this->opts->getValue( 'match' );
+		$matchOperators = array(
+			'any',
+			'all',
+			'exact'
+		);
+
+		$options = array();
+		foreach ( $matchOperators as $matchOperator ) {
+			$attributes = array(
+				'value' => $matchOperator,
+			);
+			if ( $match === $matchOperator ) {
+				$attributes['selected'] = 'selected';
+			}
+			$options[] = Xml::element( 'option',
+				$attributes,
+				// Messages for grepping:
+				// tux-sst-match-any
+				// tux-sst-match-exact
+				$this->msg( 'tux-sst-match-' . $matchOperator )
+			);
+		}
+
+		$matches = Html::rawElement( 'select',
+			array(
+				'class' => 'match-operators',
+				'name' => 'match',
+			),
+			implode( "\n", $options )
+		);
+		$matches = Html::openElement( 'div', array( 'class' => 'search-operators' ) ) .
+			$matches .
+			Html::closeElement( 'div' );
+
 		$lang = $this->getRequest()->getVal( 'language' );
 		$language = is_null( $lang ) ? '' : Html::hidden( 'language', $lang );
 
 		$form = Html::rawElement( 'form', array( 'action' => wfScript() ),
-			$title . $input . $submit . $language
+			$title . $input . $submit . $matches . $language
 		);
 
 		return $form;
