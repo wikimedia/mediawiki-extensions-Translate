@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_9848a88d",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-22T21:44:21Z",
+      "side": 1,
+      "message": "highlighting",
+      "revId": "088d8a21e8ec6f38949fd8a3974f109d2e8d38e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_735f1d15",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-22T21:44:21Z",
+      "side": 1,
+      "message": "Thie search() function is getting a bit long. Do you think it would make sense to move the beginning till line ~540 to separate method named parseQueryString that returns $searchQuery.",
+      "revId": "088d8a21e8ec6f38949fd8a3974f109d2e8d38e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_d37051a5",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-22T21:44:21Z",
+      "side": 1,
+      "message": "Perhaps a very small example would clarify what this function actually does.",
+      "revId": "088d8a21e8ec6f38949fd8a3974f109d2e8d38e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_1347b951",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-22T21:44:21Z",
+      "side": 1,
+      "message": "$highlights",
+      "revId": "088d8a21e8ec6f38949fd8a3974f109d2e8d38e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
