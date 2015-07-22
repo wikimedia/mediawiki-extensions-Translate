@@ -520,6 +520,22 @@ GROOVY;
 				$boolQuery->addShould( $messageQuery );
 				$searchQuery->addShould( $boolQuery );
 
+				// Allow searching by exact message title (page name with
+				// language subpage).
+				$title = Title::newFromText( $word );
+				$handle = new MessageHandle( $title );
+				if ( $handle->isValid() && $handle->getCode() !== '' ) {
+					$localid = $handle->getTitleForBase()->getPrefixedText();
+					$boolQuery = new \Elastica\Query\Bool();
+					$messageId = new \Elastica\Query\Term();
+					$messageId->setTerm( 'localid', $localid );
+					$boolQuery->addMust( $messageId );
+					$language = new \Elastica\Query\Term();
+					$language->setTerm( 'language', $handle->getCode() );
+					$boolQuery->addMust( $language );
+					$searchQuery->addShould( $boolQuery );
+				}
+
 				// Fields for highlighting
 				$highlights[$analyzer] =  array(
 					'number_of_fragments' => 0
