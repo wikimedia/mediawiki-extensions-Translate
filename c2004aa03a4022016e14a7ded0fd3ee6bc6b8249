@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_f55d35f0",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-22T20:16:52Z",
+      "side": 1,
+      "message": "We can use MessageHandle here to check that the title belongs to translatable name, then use getTitleForBase for localid and getCode() to force a language (if subpage is present).",
+      "revId": "c2004aa03a4022016e14a7ded0fd3ee6bc6b8249",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
