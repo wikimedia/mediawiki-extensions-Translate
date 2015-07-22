@@ -490,10 +490,31 @@ GROOVY;
 		$this->updateMapping = true;
 	}
 
+	// Build exact string match query
+	protected function buildExactPhrase( $queryString ) {
+		$searchQuery = new \Elastica\Query\Bool();
+		$match = new \Elastica\Query\Match();
+		$match->setFieldQuery( 'content', $queryString );
+		$match->setFieldType( 'content', 'phrase' );
+		$searchQuery->addShould( $match );
+
+		// Fields for highlighting
+		$highlights['content'] =  array(
+			'number_of_fragments' => 0
+		);
+
+		return array( $searchQuery, $highlights );
+	}
+
 	// Parse query string and build the search query
-	protected function parseQueryString( $queryString ) {
+	protected function parseQueryString( $queryString, $opts ) {
 		$fields = $highlights = array();
 		$terms = preg_split( '/\s+/', $queryString );
+		$type = $opts->getValue( 'match' );
+
+		if ( $type === 'exact' ) {
+			return $this->buildExactPhrase( $queryString );
+		}
 
 		// Map each word in the query string with its corresponding field
 		foreach ( $terms as $term ) {
@@ -534,7 +555,7 @@ GROOVY;
 	public function search( $queryString, $opts, $highlight ) {
 		$query = new \Elastica\Query();
 
-		list( $searchQuery, $highlights ) = $this->parseQueryString( $queryString );
+		list( $searchQuery, $highlights ) = $this->parseQueryString( $queryString, $opts );
 		$query->setQuery( $searchQuery );
 
 		$language = new \Elastica\Facet\Terms( 'language' );
