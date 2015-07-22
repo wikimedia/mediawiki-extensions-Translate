@@ -518,7 +518,12 @@ GROOVY;
 				$messageQuery = new \Elastica\Query\Term();
 				$messageQuery->setTerm( 'localid', $word );
 				$boolQuery->addShould( $messageQuery );
-				$searchQuery->addShould( $boolQuery );
+
+				if ( $match === 'all' ) {
+					$searchQuery->addMust( $boolQuery );
+				} else {
+					$searchQuery->addShould( $boolQuery );
+				}
 
 				// Fields for highlighting
 				$highlights[$analyzer] =  array(
