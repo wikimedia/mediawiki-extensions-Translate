@@ -357,6 +357,7 @@ HTML
 		$match = $this->opts->getValue( 'match' );
 		$matchOperators = array(
 			'any',
+			'all',
 			'exact'
 		);
 
@@ -372,6 +373,7 @@ HTML
 				$attributes,
 				// Messages for grepping:
 				// tux-sst-match-any
+				// tux-sst-match-all
 				// tux-sst-match-exact
 				$this->msg( 'tux-sst-match-' . $matchOperator )->text()
 			);

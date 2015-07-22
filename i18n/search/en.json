@@ -20,5 +20,6 @@
 	"tux-sst-next": "Next ›",
 	"tux-sst-prev": "‹ Previous",
 	"tux-sst-match-any": "Any",
+	"tux-sst-match-all": "All",
 	"tux-sst-match-exact": "Exact"
 }

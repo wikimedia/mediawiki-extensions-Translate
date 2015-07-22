@@ -22,5 +22,6 @@
 	"tux-sst-next": "Link to browser more search results.\n\nSee also:\n* {{msg-mw|Tux-sst-prev}}",
 	"tux-sst-prev": "Link to browser more search results.\n\nSee also:\n* {{msg-mw|Tux-sst-next}}",
 	"tux-sst-match-any": "Shows an option to match any word in the search string.",
+	"tux-sst-match-all": "Shows an option to match all words in the search string.",
 	"tux-sst-match-exact": "Shows an option to match the exact search string."
 }
