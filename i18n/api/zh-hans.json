@@ -74,5 +74,13 @@
 	"apihelp-ttmserver-param-sourcelanguage": "原始文本的语言代码。",
 	"apihelp-ttmserver-param-targetlanguage": "建议的语言代码。",
 	"apihelp-ttmserver-param-text": "用于寻找建议的文本。",
-	"apihelp-ttmserver-example-1": "获取有关将“Help”从英语翻译成芬兰语的建议"
+	"apihelp-ttmserver-example-1": "获取有关将“Help”从英语翻译成芬兰语的建议",
+	"apihelp-searchtranslations-description": "搜索译文。",
+	"apihelp-searchtranslations-param-service": "哪些翻译服务可供使用。",
+	"apihelp-searchtranslations-param-query": "要搜索的字符串。",
+	"apihelp-searchtranslations-param-language": "要搜索字符串的语言代码。",
+	"apihelp-searchtranslations-param-group": "要搜索字符串的组id。",
+	"apihelp-searchtranslations-param-offset": "用于译文的抵消。",
+	"apihelp-searchtranslations-param-limit": "结果大小。",
+	"apihelp-searchtranslations-example-1": "显示用于语言的翻译。"
 }

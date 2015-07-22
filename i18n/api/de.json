@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"Colfin 96"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "Nachrichtengruppenkennung.",
@@ -34,5 +35,9 @@
 	"apihelp-translationstash-param-metadata": "JSON-Objekt.",
 	"apihelp-translationstash-example-1": "Fügt eine Übersetzung zum Übersetzungsspeicher für [[MediaWiki:Jan/fi]] hinzu",
 	"apihelp-ttmserver-param-sourcelanguage": "Der Sprachcode des Quelltextes.",
-	"apihelp-ttmserver-param-text": "Der Text, für den Vorschläge gefunden werden sollen."
+	"apihelp-ttmserver-param-text": "Der Text, für den Vorschläge gefunden werden sollen.",
+	"apihelp-searchtranslations-description": "Übersetzungen suchen.",
+	"apihelp-searchtranslations-param-service": "Welcher der verfügbaren Übersetzungsdienste genutzt werden sollte.",
+	"apihelp-searchtranslations-param-limit": "Größe des Ergebnisses.",
+	"apihelp-searchtranslations-example-1": "Übersetzungen für die Sprache anzeigen."
 }

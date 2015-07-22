@@ -14,5 +14,9 @@
 	"apihelp-translateuser-example-1": "Pokaż informacje o użytkowniku",
 	"apihelp-translationstash-param-translation": "Tłumaczenia wykonane przez użytkownika.",
 	"apihelp-translationstash-param-metadata": "Obiekt JSON.",
-	"apihelp-ttmserver-param-sourcelanguage": "Kod języka tekstu źródłowego."
+	"apihelp-ttmserver-param-sourcelanguage": "Kod języka tekstu źródłowego.",
+	"apihelp-searchtranslations-description": "Wyszukiwanie tłumaczeń.",
+	"apihelp-searchtranslations-param-language": "Kod języka do wyszukiwania ciąg znaków.",
+	"apihelp-searchtranslations-param-limit": "Rozmiar wyniku.",
+	"apihelp-searchtranslations-example-1": "Pokaż tłumaczenia dla języka."
 }

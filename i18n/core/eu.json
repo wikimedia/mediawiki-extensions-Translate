@@ -5,7 +5,8 @@
 			"Kobazulo",
 			"Theklan",
 			"Xabier Armendaritz",
-			"Subi"
+			"Subi",
+			"Sator"
 		]
 	},
 	"translate": "Itzuli",
@@ -51,7 +52,7 @@
 	"translate-edit-in-other-languages": "Mezua beste hizkuntzetan",
 	"translate-edit-warnings": "Bukatu gabeko itzulpenei buruzko oharrak",
 	"translate-edit-tmmatch": "$1% bilaketa",
-	"translate-edit-askpermission": "Baimena eskatu",
+	"translate-edit-askpermission": "Baimena lortu",
 	"translate-magic-pagename": "MediaWiki itzulpen zabaldua",
 	"translate-magic-module": "Modulu:",
 	"translate-magic-submit": "Bilatu",
@@ -178,7 +179,6 @@
 	"api-error-invalidrevision": "Itzulpena ez da aurkitu",
 	"api-error-unknownmessage": "Mezua ez da aurkitu",
 	"translate-workflowstatus": "Egoera: $1",
-	"translate-workflow-set-done": "Gorde botoia sakatu behin itzulpen egin eta gero",
 	"translate-stats-workflow": "Egoera",
 	"translate-dynagroup-recent-label": "Azken itzulpenak",
 	"translate-gethelp": "Laguntza",

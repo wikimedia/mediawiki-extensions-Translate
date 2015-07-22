@@ -76,5 +76,13 @@
 	"apihelp-ttmserver-param-sourcelanguage": "קוד השפה של טקסט המקור.",
 	"apihelp-ttmserver-param-targetlanguage": "קוד השפה של ההצעה.",
 	"apihelp-ttmserver-param-text": "עבור איזה טקסט למצוא הצעות.",
-	"apihelp-ttmserver-example-1": "קבלת הצעות לתרגום המחרוזת \"Help\" מאנגלית לפינית"
+	"apihelp-ttmserver-example-1": "קבלת הצעות לתרגום המחרוזת \"Help\" מאנגלית לפינית",
+	"apihelp-searchtranslations-description": "חיפוש תרגומים.",
+	"apihelp-searchtranslations-param-service": "באילו משירותי התרגום הזמינים להשתמש.",
+	"apihelp-searchtranslations-param-query": "איזו מחרוזת לחפש.",
+	"apihelp-searchtranslations-param-language": "קוד השפה לחיפוש מחרוזת.",
+	"apihelp-searchtranslations-param-group": "מזהה הקבוצה לחיפוש המחרוזת.",
+	"apihelp-searchtranslations-param-offset": "היסט לתרגומים.",
+	"apihelp-searchtranslations-param-limit": "גודל התוצאה.",
+	"apihelp-searchtranslations-example-1": "הצגת תרגומים בשפה."
 }

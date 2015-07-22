@@ -18,5 +18,9 @@
 	"apihelp-translationreview-param-revision": "D'Nummer vun der Versioun fir nozekucken.",
 	"apihelp-translationreview-example-1": "Versioun 1 nokucken",
 	"apihelp-translationstash-param-subaction": "Aktioun.",
-	"apihelp-translationstash-param-metadata": "JSON-Objet."
+	"apihelp-translationstash-param-metadata": "JSON-Objet.",
+	"apihelp-searchtranslations-description": "Iwwersetzunge sichen.",
+	"apihelp-searchtranslations-param-query": "D'Zeechen no deene gesicht gi soll.",
+	"apihelp-searchtranslations-param-limit": "Gréisst vum Resultat",
+	"apihelp-searchtranslations-example-1": "Iwwersetzunge fir d'Sprooch weisen."
 }

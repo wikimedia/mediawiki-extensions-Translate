@@ -25,7 +25,7 @@
 	"apihelp-query+messagecollection-param-language": "Јазичен код.",
 	"apihelp-query+messagecollection-param-limit": "Колку страници да се прикажат (по филтрирањето).",
 	"apihelp-query+messagecollection-param-offset": "Цел број или отстапување со клуч за почетокот.",
-	"apihelp-query+messagecollection-param-filter": "Филтри за собирање пораки. Користете ! за да одрекнете некој услов. На пример !fuzzy значи да се испишат сите пораки што не се неисправни. Филтрите се применуваат по укажаниот редослед.\n;fuzzy: Неисправни пораки (со ознака „fuzzy“).\n;optional: Пораки што треба да се преведат само ако се потребни промени.\n;ignored: Пораки што никогаш не се преведуваат.\n;hastranslation: Пораки што имаат превод без оглед дали се неисправни.\n;translated: Пораки што имаат превод кој не е неисправен.\n;changed: Пораки преведени или изменети од последната пријава.\n;reviewer&#58;#: Пораки проверувани од корисник со дадена назнака.\n;last-translator&#58;#: Пораки чиј последен преведувач е корисник со дадена назнака.",
+	"apihelp-query+messagecollection-param-filter": "Филтри за собирање пораки. Користете <kbd>!</kbd> за да одрекнете некој услов. На пример, <kbd>!fuzzy</kbd> значи да се испишат сите пораки што не се неисправни. Филтрите се применуваат по укажаниот редослед.\n;fuzzy: Неисправни пораки (со ознака „fuzzy“).\n;optional: Пораки што треба да се преведат само ако се потребни промени.\n;ignored: Пораки што никогаш не се преведуваат.\n;hastranslation: Пораки што имаат превод без оглед дали се неисправни.\n;translated: Пораки што имаат превод кој не е неисправен.\n;changed: Пораки преведени или изменети од последната пријава.\n;reviewer&#58;N: Пораки каде корисникот со број <kbd>N</kbd> е меѓу оценувачите.\n;last-translator&#58;N: Пораки каде корисникот со број <kbd>N</kbd> е последниот преведувач.",
 	"apihelp-query+messagecollection-param-prop": "Кои својства да се дадат:\n;definition: Определба на пораката.\n;translation: Тековен превод (без низата $1, ако ја има, користеет ги ознаките за да проверите дали има застарени или расипани преводи).\n;tags: Ознаки за пораката, како незадолжителна, занемарена или неисправна (fuzzy).\n;properties: Својства на пораката како статус, преработка, последен преведувач. Може да се разликува од порака до порака.\n;revision: <span class=\"deprecated\">Застарено!</span> Користете $2prop=properties.",
 	"apihelp-query+messagecollection-example-1": "Список на поддржани јазици",
 	"apihelp-query+messagecollection-example-2": "Список на определби на задолжителните пораки за групата „page-Example“",
@@ -75,5 +75,13 @@
 	"apihelp-ttmserver-param-sourcelanguage": "Јазичниот код на изворниот текст.",
 	"apihelp-ttmserver-param-targetlanguage": "Јазичниот код на предлогот.",
 	"apihelp-ttmserver-param-text": "За кој текст да се најдат предлози.",
-	"apihelp-ttmserver-example-1": "Дај предлози за преведување на „Help“ од англиски на фински"
+	"apihelp-ttmserver-example-1": "Дај предлози за преведување на „Help“ од англиски на фински",
+	"apihelp-searchtranslations-description": "Пребарајте преводи.",
+	"apihelp-searchtranslations-param-service": "Која од расположивите преводни служби да се користи.",
+	"apihelp-searchtranslations-param-query": "Низата што треба да се побара.",
+	"apihelp-searchtranslations-param-language": "На кој јазичен код се бара низата.",
+	"apihelp-searchtranslations-param-group": "Назнака на групата во која се бара низата.",
+	"apihelp-searchtranslations-param-offset": "Отстап за преводите.",
+	"apihelp-searchtranslations-param-limit": "Големина на исходот.",
+	"apihelp-searchtranslations-example-1": "Прикажи преводи на овој јазик."
 }
