@@ -67,6 +67,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$opts->add( 'language', '' );
 		$opts->add( 'group', '' );
 		$opts->add( 'grouppath', '' );
+		$opts->add( 'type', '' );
 		$opts->add( 'limit', $this->limit );
 		$opts->add( 'offset', 0 );
 
@@ -341,11 +342,40 @@ HTML
 		$title = Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$input = Xml::input( 'query', false, $query, $attribs );
 		$submit = Xml::submitButton( $this->msg( 'tux-sst-search' ), array( 'class' => 'button' ) );
+
+		$options = array();
+		$type = $this->opts->getValue( 'type' );
+		$typeOperators = array(
+			'or' => 'Any',
+			'exact' => 'Exact'
+		);
+		foreach ( $typeOperators as $key => $value ) {
+			$attributes = array();
+			$attributes = array(
+				'value' => $key,
+			);
+			if ( $type === $key || ( $type === '' && $key === 'or' ) ) {
+				$attributes['selected'] = '';
+			}
+			$options[] = Xml::element( 'option', $attributes, $value );
+		}
+
+		$types = Html::rawElement( 'select',
+			array(
+				'class' => 'searchtypes',
+				'name' => 'type',
+			),
+			implode( "\n", $options )
+		);
+		$types = Html::openElement( 'div', array( 'class' => 'search-operators' ) ) .
+			$types .
+			Html::closeElement( 'div' );
+
 		$lang = $this->getRequest()->getVal( 'language' );
 		$language = is_null( $lang ) ? '' : Html::hidden( 'language', $lang );
 
 		$form = Html::rawElement( 'form', array( 'action' => wfScript() ),
-			$title . $input . $submit . $language
+			$title . $input . $submit . $types . $language
 		);
 
 		return $form;
