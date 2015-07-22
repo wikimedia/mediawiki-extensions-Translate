@@ -459,19 +459,35 @@ GROOVY;
 		$this->updateMapping = true;
 	}
 
+	// Build exact phrase query
+	protected function buildExactPhrase( $queryString ) {
+		$serchQuery = new \Elastica\Query\Bool();
+		$match = new \Elastica\Query\Match();
+		$match->setFieldQuery( 'content', $queryString );
+		$match->setFieldType( 'content', 'phrase' );
+		$serchQuery->addShould( $match );
+
+		return $serchQuery;
+	}
+
 	// Search interface
 	public function search( $queryString, $opts, $highlight ) {
 		$query = new \Elastica\Query();
+		$type = $opts->getValue( 'type' );
 
-		// Allow searching either by message content or message id (page name
-		// without language subpage) with exact match only.
-		$serchQuery = new \Elastica\Query\Bool();
-		$contentQuery = new \Elastica\Query\Match();
-		$contentQuery->setFieldQuery( 'content', $queryString );
-		$serchQuery->addShould( $contentQuery );
-		$messageQuery = new \Elastica\Query\Term();
-		$messageQuery->setTerm( 'localid', $queryString );
-		$serchQuery->addShould( $messageQuery );
+		if ( $type === 'exact' ) {
+			$serchQuery = $this->buildExactPhrase( $queryString );
+		} else {
+			// Allow searching either by message content or message id (page name
+			// without language subpage) with exact match only.
+			$serchQuery = new \Elastica\Query\Bool();
+			$contentQuery = new \Elastica\Query\Match();
+			$contentQuery->setFieldQuery( 'content', $queryString );
+			$serchQuery->addShould( $contentQuery );
+			$messageQuery = new \Elastica\Query\Term();
+			$messageQuery->setTerm( 'localid', $queryString );
+			$serchQuery->addShould( $messageQuery );
+		}
 		$query->setQuery( $serchQuery );
 
 		$language = new \Elastica\Facet\Terms( 'language' );
