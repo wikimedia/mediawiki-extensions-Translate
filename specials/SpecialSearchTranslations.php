@@ -437,6 +437,7 @@ HTML
 		$match = $this->opts->getValue( 'match' );
 		$matchOperators = array(
 			'any',
+			'all',
 			'exact'
 		);
 
