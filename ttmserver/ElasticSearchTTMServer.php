@@ -472,6 +472,22 @@ GROOVY;
 		$messageQuery = new \Elastica\Query\Term();
 		$messageQuery->setTerm( 'localid', $queryString );
 		$serchQuery->addShould( $messageQuery );
+
+		// Allow searching by exact message title (page name with
+		// language subpage).
+		$terms = explode( '/', $queryString );
+		if ( count( $terms ) === 2 ) {
+			$boolQuery = new \Elastica\Query\Bool();
+			$messageId = new \Elastica\Query\Term();
+			$messageId->setTerm( 'localid', $terms[0] );
+			$boolQuery->addMust( $messageId );
+
+			$language = new \Elastica\Query\Term();
+			$language->setTerm( 'language', $terms[1] );
+			$boolQuery->addMust( $language );
+
+			$serchQuery->addShould( $boolQuery );
+		}
 		$query->setQuery( $serchQuery );
 
 		$language = new \Elastica\Facet\Terms( 'language' );
