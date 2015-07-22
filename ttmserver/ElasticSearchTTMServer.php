@@ -524,6 +524,25 @@ GROOVY;
 				$highlights[$analyzer] =  array(
 					'number_of_fragments' => 0
 				);
+
+				// Allow searching by exact message title (page name with
+				// language subpage).
+				$title = Title::newFromText( $word );
+				if ( !$title ) {
+					continue;
+				}
+				$handle = new MessageHandle( $title );
+				if ( $handle->isValid() && $handle->getCode() !== '' ) {
+					$localid = $handle->getTitleForBase()->getPrefixedText();
+					$boolQuery = new \Elastica\Query\Bool();
+					$messageId = new \Elastica\Query\Term();
+					$messageId->setTerm( 'localid', $localid );
+					$boolQuery->addMust( $messageId );
+					$language = new \Elastica\Query\Term();
+					$language->setTerm( 'language', $handle->getCode() );
+					$boolQuery->addMust( $language );
+					$searchQuery->addShould( $boolQuery );
+				}
 			}
 		}
 
