@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_474822cf",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-22T08:59:18Z",
+      "side": 1,
+      "message": "I am not storing \u0027uri\u0027 mapping for translated messages as we can get url from the Title object.",
+      "parentUuid": "8ec42329_a13e9622",
+      "revId": "4202baad6a3e8dec6c54b6e51319f1100c05fba6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_e1e6dee2",
         "filename": "specials/SpecialSearchTranslations.php",
         "patchSetId": 12
