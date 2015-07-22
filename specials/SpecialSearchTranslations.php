@@ -71,6 +71,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$opts->add( 'group', '' );
 		$opts->add( 'grouppath', '' );
 		$opts->add( 'filter', '' );
+		$opts->add( 'match', '' );
 		$opts->add( 'limit', $this->limit );
 		$opts->add( 'offset', 0 );
 
@@ -239,7 +240,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$search = $this->getSearchInput( $queryString );
 		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
 
-		$this->showSearch( $search, $count, $facetHtml, $resultsHtml );
+		$this->showSearch( $search, $count, $facetHtml, $resultsHtml, $total );
 	}
 
 	protected function getLanguages( array $facet ) {
@@ -330,7 +331,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		return $output;
 	}
 
-	protected function showSearch( $search, $count, $facets, $results ) {
+	protected function showSearch( $search, $count, $facets, $results, $total ) {
 		$messageSelector = $this->messageSelector();
 		$this->getOutput()->addHtml( <<<HTML
 <div class="grid tux-searchpage">
@@ -340,6 +341,27 @@ class SpecialSearchTranslations extends SpecialPage {
 	<div class="row count">
 		<div class="nine columns offset-by-three">$count</div>
 	</div>
+HTML
+		);
+
+		$query = trim( $this->opts->getValue( 'query' ) );
+		$hasSpace = preg_match( '/\s/', $query );
+		$match = $this->opts->getValue( 'match' );
+		$size = 100;
+		if ( $total > $size && $match !== 'all' && $hasSpace ) {
+			$params = $this->opts->getChangedValues();
+			$params = array( 'match' => 'all' ) + $params;
+			$linkText = $this->msg( 'tux-sst-link-all-match' )->text();
+			$link = $this->getTitle()->getFullUrl( $params );
+			$link = "<span class='plainlinks'>[$link $linkText]</span>";
+
+			$this->getOutput()->wrapWikiMsg(
+				'<div class="successbox">$1</div>',
+				array( 'tux-sst-match-message', $link )
+			);
+		}
+
+		$this->getOutput()->addHtml( <<<HTML
 	<div class="row searchcontent">
 		<div class="three columns facets">$facets</div>
 		<div class="nine columns results">$results</div>

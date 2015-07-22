@@ -24,5 +24,7 @@
 	"tux-sst-untranslated": "No translation from $1",
 	"tux-sst-outdated": "Outdated translations from $1",
 	"tux-sst-ellipsis-untranslated": "No translation",
-	"tux-sst-ellipsis-outdated": "Outdated translations"
+	"tux-sst-ellipsis-outdated": "Outdated translations",
+	"tux-sst-link-all-match": "Require all search words.",
+	"tux-sst-match-message": "Showing translations which match any of the search words. $1"
 }

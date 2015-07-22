@@ -26,5 +26,7 @@
 	"tux-sst-untranslated": "Label for a tab to show untranslated messages matching the query in the source language. Parameters:\n* $1 - the language code of the source text.",
 	"tux-sst-outdated": "Label for a tab to show outdated messages matching the query in the source language. Parameters:\n* $1 - the language code of the source text.",
 	"tux-sst-ellipsis-untranslated": "Used as label for an ellipsis to hide untranslated messages.",
-	"tux-sst-ellipsis-outdated": "Used as label for an ellipsis to hide outdated messages."
+	"tux-sst-ellipsis-outdated": "Used as label for an ellipsis to hide outdated messages.",
+	"tux-sst-link-all-match": "Link to filter the results to match all search words.",
+	"tux-sst-match-message": "Used to inform users about an option to get results for all search words. Parameters:\n* $1 - message tux-sst-link-all-match."
 }

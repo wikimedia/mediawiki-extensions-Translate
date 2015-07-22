@@ -180,3 +180,7 @@ h1.firstHeading {
 .tux-searchpage .tux-message-selector .more ul a {
 	white-space: pre-wrap;
 }
+
+.tux-searchpage .successbox {
+	margin-left: 25%;
+}
