@@ -8,6 +8,7 @@
 	},
 	"searchtranslations": "Buscar en las traducciones",
 	"tux-sst-edit": "Editar traducción",
+	"tux-sst-view-foreign": "Ver en $1",
 	"tux-sst-search": "Buscar",
 	"tux-sst-search-ph": "Buscar traducciones",
 	"tux-sst-count": "Se {{PLURAL:$1|encontró un resultado|encontraron $1 resultados}}",

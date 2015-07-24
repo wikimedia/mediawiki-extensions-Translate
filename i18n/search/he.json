@@ -6,6 +6,7 @@
 	},
 	"searchtranslations": "חיפוש בתרגומים",
 	"tux-sst-edit": "עריכת התרגום",
+	"tux-sst-view-foreign": "להציג באתר $1",
 	"tux-sst-search": "חיפוש",
 	"tux-sst-search-ph": "חיפוש בתרגומים",
 	"tux-sst-count": "{{PLURAL:$1|נמצאה תוצאה אחת|נמצאו $1 תוצאות}}",

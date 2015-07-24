@@ -65,5 +65,13 @@
 	"apihelp-ttmserver-param-sourcelanguage": "El código de idioma del texto fuente.",
 	"apihelp-ttmserver-param-targetlanguage": "El código de idioma de la sugerencia.",
 	"apihelp-ttmserver-param-text": "El texto para el cual buscar sugerencias.",
-	"apihelp-ttmserver-example-1": "Obtener sugerencias para traducir «Help» del inglés al finés"
+	"apihelp-ttmserver-example-1": "Obtener sugerencias para traducir «Help» del inglés al finés",
+	"apihelp-searchtranslations-description": "Buscar traducciones.",
+	"apihelp-searchtranslations-param-service": "Qué servicios de traducción disponibles usar.",
+	"apihelp-searchtranslations-param-query": "La cadena que buscar.",
+	"apihelp-searchtranslations-param-language": "Código de idioma para el cual buscar la cadena.",
+	"apihelp-searchtranslations-param-group": "El identificador de grupo en el que buscar la cadena.",
+	"apihelp-searchtranslations-param-offset": "\"Offset\" para las traducciones.",
+	"apihelp-searchtranslations-param-limit": "Tamaño del resultado.",
+	"apihelp-searchtranslations-example-1": "Mostrar las traducciones para el idioma."
 }

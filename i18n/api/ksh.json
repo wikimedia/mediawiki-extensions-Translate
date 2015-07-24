@@ -74,5 +74,8 @@
 	"apihelp-ttmserver-param-sourcelanguage": "dat Schprohcheköözel vun dämm Quälltäx.",
 	"apihelp-ttmserver-param-targetlanguage": "Dat Schprohcheköözel vun dämm Vörschlaach.",
 	"apihelp-ttmserver-param-text": "Dä Täx för Vörschlähsch för ze fenge.",
-	"apihelp-ttmserver-example-1": "Donn Vörschlähsch holle för „Hölp“ us em Änglesche en et Fennesche ze övversäze."
+	"apihelp-ttmserver-example-1": "Donn Vörschlähsch holle för „Hölp“ us em Änglesche en et Fennesche ze övversäze.",
+	"apihelp-searchtranslations-description": "Övversäzonge söhke.",
+	"apihelp-searchtranslations-param-query": "Der Täx, dä jesöhk wähde sull.",
+	"apihelp-searchtranslations-example-1": "Donn de Övversäzonge för heh di Schprohch aanzeije"
 }

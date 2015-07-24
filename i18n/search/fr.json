@@ -3,11 +3,13 @@
 		"authors": [
 			"Gomoko",
 			"Crochet.david",
-			"TomT0m"
+			"TomT0m",
+			"Wladek92"
 		]
 	},
 	"searchtranslations": "Recherche de traductions",
 	"tux-sst-edit": "Modifier la traduction",
+	"tux-sst-view-foreign": "Voir sur $1",
 	"tux-sst-search": "Rechercher",
 	"tux-sst-search-ph": "Recherche de traductions",
 	"tux-sst-count": "{{PLURAL:$1|Un résultat trouvé|$1 résultats trouvés}}",

@@ -6,6 +6,7 @@
 	},
 	"searchtranslations": "Übersetzungen suchen",
 	"tux-sst-edit": "Übersetzung bearbeiten",
+	"tux-sst-view-foreign": "Auf $1 ansehen",
 	"tux-sst-search": "Suchen",
 	"tux-sst-search-ph": "Übersetzungen suchen",
 	"tux-sst-count": "{{PLURAL:$1|Ein Ergebnis gefunden|$1 Ergebnisse gefunden}}",

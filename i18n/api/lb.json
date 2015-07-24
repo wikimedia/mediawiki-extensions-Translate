@@ -20,6 +20,7 @@
 	"apihelp-translationstash-param-subaction": "Aktioun.",
 	"apihelp-translationstash-param-metadata": "JSON-Objet.",
 	"apihelp-searchtranslations-description": "Iwwersetzunge sichen.",
+	"apihelp-searchtranslations-param-service": "Wat fir ee vun den disponibelen Iwwersetzungsservicer benotzt gi soll.",
 	"apihelp-searchtranslations-param-query": "D'Zeechen no deene gesicht gi soll.",
 	"apihelp-searchtranslations-param-limit": "Gréisst vum Resultat",
 	"apihelp-searchtranslations-example-1": "Iwwersetzunge fir d'Sprooch weisen."

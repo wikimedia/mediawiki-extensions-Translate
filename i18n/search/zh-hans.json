@@ -10,6 +10,7 @@
 	},
 	"searchtranslations": "搜索译文",
 	"tux-sst-edit": "编辑译文",
+	"tux-sst-view-foreign": "在$1查看",
 	"tux-sst-search": "搜索",
 	"tux-sst-search-ph": "搜索译文",
 	"tux-sst-count": "{{PLURAL:$1|找到$1个结果}}",

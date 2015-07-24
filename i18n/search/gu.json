@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ashok modhvadia"
+			"Ashok modhvadia",
+			"Dsvyas"
 		]
 	},
 	"searchtranslations": "ભાષાંતરો શોધો",
 	"tux-sst-edit": "ભાષાંતરો સંપાદિત કરો",
 	"tux-sst-search": "શોધો",
 	"tux-sst-search-ph": "ભાષાંતરો શોધો",
-	"tux-sst-count": "{{PLURAL:$1|એક પરિણામ મળ્યુ|$1 પરિણામો મળ્યા}}",
+	"tux-sst-count": "{{PLURAL:$1|એક પરિણામ મળ્યું|$1 પરિણામો મળ્યા}}",
 	"tux-sst-facet-language": "ભાષાઓ",
 	"tux-sst-facet-group": "સંદેશ જૂથો",
 	"tux-sst-facet-orphan": "(અનાથ)",
