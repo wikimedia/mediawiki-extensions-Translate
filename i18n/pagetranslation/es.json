@@ -100,7 +100,7 @@
 	"tpt-aggregategroup-add-new": "Añadir un nuevo grupo de agregación",
 	"tpt-aggregategroup-new-name": "Nombre:",
 	"tpt-aggregategroup-new-description": "Descripción (opcional):",
-	"tpt-aggregategroup-remove-confirm": "¿Está seguro que desea eliminar este grupo agregado?",
+	"tpt-aggregategroup-remove-confirm": "¿Estás seguro que quieres eliminar este grupo agregado?",
 	"tpt-aggregategroup-invalid-group": "El grupo no existe",
 	"tpt-aggregategroup-edit-name": "Nombre:",
 	"tpt-aggregategroup-edit-description": "Descripción:",

@@ -6,6 +6,7 @@
 	},
 	"searchtranslations": "Пребарување на преводи",
 	"tux-sst-edit": "Уреди превод",
+	"tux-sst-view-foreign": "Пог. на $1",
 	"tux-sst-search": "Пребарај",
 	"tux-sst-search-ph": "Пребарајте преводи",
 	"tux-sst-count": "{{PLURAL:$1|Пронајден е еден резултат|Пронајдени се $1 резултати}}",
