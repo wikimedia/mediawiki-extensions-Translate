@@ -278,10 +278,7 @@
 	"action-translate-sandboxaction": "thực hiện các tác vụ mà người dùng cách ly được cho phép thực hiện",
 	"translate-workflow-state-": "(không định)",
 	"translate-workflowstatus": "Trạng thái: $1",
-	"translate-workflow-set-do": "Định rõ",
 	"translate-workflow-set-doing": "Đang định rõ…",
-	"translate-workflow-set-done": "Đã định xong!",
-	"translate-workflow-set-error-alreadyset": "Trạng thái được yêu cầu là giống hệt với trạng thái hiện tại.",
 	"translate-workflow-autocreated-summary": "Tự động tạo ra trang cho trạng thái luồng làm việc $1",
 	"translate-stats-workflow": "Trạng thái",
 	"translate-workflowgroup-label": "Trạng thái luồng làm việc",
@@ -290,10 +287,6 @@
 	"translate-dynagroup-recent-desc": "Nhóm thông điệp này bao gồm các bản dịch gần đây trong ngôn ngữ này.\nNó có ích đối với các tác vụ duyệt.",
 	"translate-dynagroup-additions-label": "Thông điệp bổ sung gần đây",
 	"translate-dynagroup-additions-desc": "Nhóm thông điệp này chứa các thông điệp mới được bổ sung hoặc thay đổi gần đây.",
-	"translate-dynagroup-by": "Bản dịch của $1",
-	"translate-dynagroup-byc": "Bản dịch của $1 ($2)",
-	"translate-dynagroup-last": "Thay đổi cuối cùng của $1",
-	"translate-dynagroup-lastc": "Thay đổi cuối cùng của $1 ($2)",
 	"translate-gethelp": "Trợ giúp",
 	"translate-msggroupselector-projects": "Nhóm thông điệp",
 	"translate-msggroupselector-search-placeholder": "Tìm nhóm",
@@ -385,5 +378,5 @@
 	"translate-search-more-groups-info": "$1 nhóm nữa",
 	"translate-ulsdep-title": "Lỗi cấu hình",
 	"translate-ulsdep-body": "Phần mở rộng Biên dịch cần [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector?uselang=vi phần mở rộng Lựa chọn Ngôn ngữ Toàn thể].",
-	"tux-session-expired": "Bạn không còn đăng nhập. Xin vui lòng đăng nhập trong thẻ riêng. Thay thế, hãy sao chép các bản dịch chưa lưu, đăng nhập, và trở lại trang này."
+	"tux-session-expired": "Bạn không còn đăng nhập. Xin vui lòng đăng nhập trong thẻ riêng. Thay thế, hãy sao chép các bản dịch chưa lưu, đăng nhập, trở lại trang này, và nhập lại các bản dịch của bạn."
 }

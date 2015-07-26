@@ -77,5 +77,7 @@
 	"apihelp-ttmserver-example-1": "Donn Vörschlähsch holle för „Hölp“ us em Änglesche en et Fennesche ze övversäze.",
 	"apihelp-searchtranslations-description": "Övversäzonge söhke.",
 	"apihelp-searchtranslations-param-query": "Der Täx, dä jesöhk wähde sull.",
+	"apihelp-searchtranslations-param-language": "Et Köözel för di Schprohch för dä Täx dren ze söhke.",
+	"apihelp-searchtranslations-param-group": "De Kännong för di Jropp för dä Täx dren ze söhke.",
 	"apihelp-searchtranslations-example-1": "Donn de Övversäzonge för heh di Schprohch aanzeije"
 }

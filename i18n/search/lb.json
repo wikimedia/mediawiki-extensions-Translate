@@ -6,6 +6,7 @@
 	},
 	"searchtranslations": "Iwwersetzunge sichen",
 	"tux-sst-edit": "Iwwersetzung änneren",
+	"tux-sst-view-foreign": "Op $1 kucken",
 	"tux-sst-search": "Sichen",
 	"tux-sst-search-ph": "Iwwersetzunge sichen",
 	"tux-sst-count": "{{PLURAL:$1|Ee Resultat|$1 Resultater}} fonnt",
