@@ -148,6 +148,7 @@
 	"translate-percentage-fuzzy": "Zastarijelo",
 	"translate-languagestats-overall": "Sve grupe poruka zajedno",
 	"translate-mgs-pagename": "Statistika grupe",
+	"translate-mgs-submit": "Prikaži statistiku",
 	"translate-mgs-column-language": "Jezik",
 	"supportedlanguages": "Podržani jezici",
 	"supportedlanguages-summary": "Ova stranica prikazuje spisak svih jezika podržanih na {{SITENAME}}, zajedno sa imenima prevodioca koji rade na tom jeziku.\nAko želite više podataka o pojedinom jeziku, možete kliknuti na link portala tog jezika.\nKlikom na ime prevodioca će vas odvesti na korisničku stranicu tog prevodioca.\n\nAko jezik nije naveden, možete potražiti kako možete početi lokalizacijski projekat za taj jezik putem stranice \"[[Translating:Process|Novi Jezik]]\".\n\nAko prevodite na određeni jezik, a vaše ime nije prikazano, molimo dodajte vaše ime na spisak prevodioca na [[:Category:Languages|portal]] za taj jezik.\nPogledajte traku menija za link na portal za jezik koji ste naveli u svojim postavkama.",

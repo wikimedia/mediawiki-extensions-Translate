@@ -99,6 +99,7 @@
 	"pm-langcode-placeholder": "رمز اللغة",
 	"pm-page-does-not-exist": "$1 غير موجودة",
 	"pm-old-translations-missing": "$1 لا يحتوي ترجمات قديمة.",
+	"pm-add-icon-hover-text": "أضف وحدة في الأسفل",
 	"pm-delete-icon-hover-text": "حذف الوحدة",
 	"tpt-translate-title": "اسمح بترجمة عنوان الصفحة",
 	"pp-pagename-placeholder": "أدخل اسم الصفحة",
