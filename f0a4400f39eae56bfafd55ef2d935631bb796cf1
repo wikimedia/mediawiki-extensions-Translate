@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_217282ac",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2015-07-27T09:31:58Z",
+      "side": 1,
+      "message": "Does this really work? Would be useful to add function documentation stating what kind of item $collect is.",
+      "range": {
+        "startLine": 244,
+        "startChar": 53,
+        "endLine": 244,
+        "endChar": 68
+      },
+      "revId": "f0a4400f39eae56bfafd55ef2d935631bb796cf1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
