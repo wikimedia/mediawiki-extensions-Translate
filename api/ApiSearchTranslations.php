@@ -17,20 +17,123 @@ class ApiSearchTranslations extends ApiBase {
 			$opts->add( $param, $value );
 		}
 
-		$searchResults = $server->search(
-			$params['query'],
-			$opts,
-			array( '', '' )
-		);
-
 		$result = $this->getResult();
-		$documents = $server->getDocuments( $searchResults );
 
+		if ( $params['filter'] !== '' ) {
+			$documents = array();
+			$total = $start = 0;
+			$offset = $params['offset'];
+			$limit = $params['limit'];
+			$size = 1000;
+
+			$opts->setValue( 'limit', $size );
+			$opts->setValue( 'language', $params['sourcelanguage'] );
+			do {
+				$opts->setValue( 'offset', $start );
+				$searchResults = $server->search(
+					$params['query'],
+					$opts,
+					array( '', '' )
+				);
+
+				list( $results, $offsets ) = $this->extractMessages(
+					$searchResults,
+					$offset,
+					$limit
+				);
+				$offset = $offsets['start'] + $offsets['left'] - $offsets['total'];
+				$limit = $limit - $offsets['left'];
+				$total = $total + $offsets['total'];
+
+				$documents = array_merge( $documents, $results );
+				$start = $start + $size;
+			} while (
+				$offsets['start'] + $offsets['left'] >= $offsets['total'] &&
+				$searchResults->getTotalHits() > $start
+			);
+		} else {
+			$searchResults = $server->search(
+				$params['query'],
+				$opts,
+				array( '', '' )
+			);
+			$documents = $server->getDocuments( $searchResults );
+			$total = $server->getTotalHits( $searchResults );
+		}
+		$result->addValue( array( 'search', 'metadata' ), 'total', $total );
 		$result->addValue( 'search', 'translations', $documents );
 	}
 
-	public function getAllowedParams() {
+	/*
+	 * Extract messages from the resultset and build message definitions.
+	 * Create a message collection from the definitions in the target language.
+	 * Filter the message collection to get filtered messages.
+	 * Slice messages according to limit and offset given.
+	 */
+	protected function extractMessages( $resultset ) {
 		global $wgTranslateTranslationServices;
+		$params = $this->extractRequestParams();
+
+		$config = $wgTranslateTranslationServices[$params['service']];
+		$server = TTMServer::factory( $config );
+
+		$messages = $documents = $ret = array();
+		foreach ( $resultset->getResults() as $document ) {
+			$data = $document->getData();
+			if ( !$server->isLocalSuggestion( $data ) ) {
+				continue;
+			}
+
+			$title = Title::newFromText( $data['localid'] );
+			if ( !$title ) {
+				continue;
+			}
+
+			$handle = new MessageHandle( $title );
+			if ( !$handle->isValid() ) {
+				continue;
+			}
+
+			$key = $title->getNamespace() . ':' . $title->getDBKey();
+			$messages[$key] = $data['content'];
+		}
+
+		$language = $this->getLanguage()->getCode();
+		$definitions = new MessageDefinitions( $messages );
+		$collection = MessageCollection::newFromDefinitions( $definitions, $language );
+
+		$filter = $params['filter'];
+		if ( $filter[0] === '!' ) {
+			$collection->filter( substr( $filter, 1 ), true );
+		} elseif ( $filter !== '' ) {
+			$collection->filter( $filter, false );
+		}
+
+		$total = count( $collection );
+		$offset = $collection->slice( $offset, $limit );
+		$left = count( $collection );
+
+		$offsets = array(
+			'start' => $offset[2],
+			'left' => $left,
+			'total' => $total,
+		);
+
+		$collection->loadTranslations();
+		foreach ( $collection->keys() as $mkey => $title ) {
+			$documents[$mkey]['definition'] = $collection[$mkey]->definition();
+			$documents[$mkey]['translation'] = $collection[$mkey]->translation();
+			$handle = new MessageHandle( $title );
+			$documents[$mkey]['localid'] = $handle->getTitleForBase()->getPrefixedText();
+			$documents[$mkey]['uri'] = $handle->getTitle()->getCanonicalUrl();
+			$ret[] = $documents[$mkey];
+		}
+
+		return array( $ret, $offsets );
+	}
+
+	public function getAllowedParams() {
+		global $wgTranslateTranslationServices, $wgLanguageCode;
 
 		return array(
 			'service' => array(
@@ -46,6 +149,14 @@ class ApiSearchTranslations extends ApiBase {
 				ApiBase::PARAM_DFLT => '',
 			),
 			'group' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_DFLT => '',
+			),
+			'sourcelanguage' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_DFLT => $wgLanguageCode,
+			),
+			'filter' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_DFLT => '',
 			),
@@ -67,6 +178,7 @@ class ApiSearchTranslations extends ApiBase {
 	public function getExamples() {
 		return array(
 			'api.php?action=searchtranslations&language=fr&query=aide',
+			'api.php?action=searchtranslations&language=fr&query=edit&filter=translated',
 		);
 	}
 
@@ -75,6 +187,8 @@ class ApiSearchTranslations extends ApiBase {
 		return array(
 			'action=searchtranslations&language=fr&query=aide'
 				=> 'apihelp-searchtranslations-example-1',
+			'action=searchtranslations&language=fr&query=edit&filter=translated'
+				=> 'apihelp-searchtranslations-example-2',
 		);
 	}
 }
