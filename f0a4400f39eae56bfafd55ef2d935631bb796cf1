@@ -22,6 +22,24 @@
       "revId": "f0a4400f39eae56bfafd55ef2d935631bb796cf1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_a2be6a5e",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-28T09:11:58Z",
+      "side": 1,
+      "message": "yes it works, renamed the applyfilter() to extractMessages() and merged the code in getMessages() to  extractMessages(). Also added documentation for the extractMessages().",
+      "parentUuid": "8ec42329_217282ac",
+      "revId": "f0a4400f39eae56bfafd55ef2d935631bb796cf1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
