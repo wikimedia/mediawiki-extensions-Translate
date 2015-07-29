@@ -25,7 +25,10 @@ class ApiSearchTranslations extends ApiBase {
 
 		$result = $this->getResult();
 
-		if ( $params['filter'] === 'translated' ) {
+		if (
+			$params['filter'] === 'translated' ||
+			$params['filter'] === 'untranslated'
+		) {
 			$sourceLanguage = $params['sourcelanguage'];
 			$language = $params['language'];
 			if ( $language === '' ) {
@@ -33,11 +36,19 @@ class ApiSearchTranslations extends ApiBase {
 			}
 
 			$documents = $this->extractMessages( $searchResults );
-			$result->addValue(
-				'search',
-				'translations from ' . $sourceLanguage . ' to ' . $language,
-				$documents
-			);
+			if ( $params['filter'] === 'translated' ) {
+				$result->addValue(
+					'search',
+					'translations from ' . $sourceLanguage . ' to ' . $language,
+					$documents
+				);
+			} else {
+				$result->addValue(
+					'search',
+					'No translations from ' . $sourceLanguage . ' to ' . $language,
+					$documents
+				);
+			}
 		} else {
 			$documents = $server->getDocuments( $searchResults );
 			$result->addValue( 'search', 'translations', $documents );
@@ -78,7 +89,11 @@ class ApiSearchTranslations extends ApiBase {
 			$language = $this->getLanguage()->getCode();
 		}
 		$collection = MessageCollection::newFromDefinitions( $definitions, $language );
-		$collection->filter( 'translated', false );
+		if ( $params['filter'] === 'translated' ) {
+			$collection->filter( 'translated', false );
+		} elseif ( $params['filter'] === 'untranslated' ) {
+			$collection->filter( 'hastranslation', true );
+		}
 		$offset = $collection->slice(
 			$params['offset'],
 			$params['limit']
