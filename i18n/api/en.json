@@ -78,9 +78,12 @@
 	"apihelp-searchtranslations-description": "Search translations.",
 	"apihelp-searchtranslations-param-service": "Which of the available translation services to use.",
 	"apihelp-searchtranslations-param-query": "The string to search for.",
+	"apihelp-searchtranslations-param-sourcelanguage": "The language code of the source text.",
 	"apihelp-searchtranslations-param-language": "The language code to search string for.",
 	"apihelp-searchtranslations-param-group": "The group id to search string in.",
+	"apihelp-searchtranslations-param-filter": "Filter messages.",
 	"apihelp-searchtranslations-param-offset": "Offset for the translations.",
 	"apihelp-searchtranslations-param-limit": "Size of the result.",
-	"apihelp-searchtranslations-example-1": "Show translations for the language."
+	"apihelp-searchtranslations-example-1": "Show translations for the language.",
+	"apihelp-searchtranslations-example-2": "Show non-existing translations in the target language."
 }
