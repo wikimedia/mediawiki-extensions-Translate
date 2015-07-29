@@ -27,7 +27,8 @@ class ApiSearchTranslations extends ApiBase {
 
 		if (
 			$params['filter'] === 'translated' ||
-			$params['filter'] === 'untranslated'
+			$params['filter'] === 'untranslated' ||
+			$params['filter'] === 'outdated'
 		) {
 			$sourceLanguage = $params['sourcelanguage'];
 			$language = $params['language'];
@@ -42,10 +43,16 @@ class ApiSearchTranslations extends ApiBase {
 					'translations from ' . $sourceLanguage . ' to ' . $language,
 					$documents
 				);
-			} else {
+			} elseif ( $params['filter'] === 'untranslated' ) {
 				$result->addValue(
 					'search',
 					'No translations from ' . $sourceLanguage . ' to ' . $language,
+					$documents
+				);
+			} elseif ( $params['filter'] === 'outdated' ) {
+				$result->addValue(
+					'search',
+					'Outdated translations from ' . $sourceLanguage . ' to ' . $language,
 					$documents
 				);
 			}
@@ -93,6 +100,8 @@ class ApiSearchTranslations extends ApiBase {
 			$collection->filter( 'translated', false );
 		} elseif ( $params['filter'] === 'untranslated' ) {
 			$collection->filter( 'hastranslation', true );
+		} elseif ( $params['filter'] === 'outdated' ) {
+			$collection->filter( 'fuzzy', false );
 		}
 		$offset = $collection->slice(
 			$params['offset'],
