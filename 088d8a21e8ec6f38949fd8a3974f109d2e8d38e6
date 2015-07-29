@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_42b1bbf2",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-29T09:37:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_9848a88d",
+      "revId": "088d8a21e8ec6f38949fd8a3974f109d2e8d38e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_735f1d15",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-22T21:44:21Z",
       "side": 1,
       "message": "Thie search() function is getting a bit long. Do you think it would make sense to move the beginning till line ~540 to separate method named parseQueryString that returns $searchQuery.",
+      "revId": "088d8a21e8ec6f38949fd8a3974f109d2e8d38e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_e299c780",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-29T09:37:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_735f1d15",
       "revId": "088d8a21e8ec6f38949fd8a3974f109d2e8d38e6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_0297334c",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-29T09:37:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_d37051a5",
+      "revId": "088d8a21e8ec6f38949fd8a3974f109d2e8d38e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_1347b951",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-22T21:44:21Z",
       "side": 1,
       "message": "$highlights",
+      "revId": "088d8a21e8ec6f38949fd8a3974f109d2e8d38e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_a29f3f62",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-29T09:37:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_1347b951",
       "revId": "088d8a21e8ec6f38949fd8a3974f109d2e8d38e6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
