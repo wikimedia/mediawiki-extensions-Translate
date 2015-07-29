@@ -8,6 +8,7 @@
 	 *  - position: accepts same values as jquery.ui.position
 	 *  - onSelect: callback with message group id when selected
 	 *  - language: language for statistics.
+	 *  - preventSelector: boolean to load but not show the group selector.
 	 * groups: list of message group ids
 	 */
 	function TranslateMessageGroupSelector( element, options, groups ) {
@@ -200,8 +201,10 @@
 					// option unless explicitly given to allow automatic recalculation
 					// of the position compared to the new trigger.
 					$newLink.msggroupselector( groupSelector.customOptions );
-					// Show the new menu immediately
-					$newLink.data( 'msggroupselector' ).show();
+					if ( !groupSelector.options.preventSelector ) {
+						// Show the new menu immediately
+						$newLink.data( 'msggroupselector' ).show();
+					}
 				}
 
 				if ( groupSelector.options.onSelect ) {
