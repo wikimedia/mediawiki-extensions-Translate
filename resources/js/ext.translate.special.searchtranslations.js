@@ -277,7 +277,8 @@
 					var uri = new mw.Uri( location.href );
 					uri.extend( { 'group': group.id, 'grouppath': group.id } );
 					location.href = uri.toString();
-				}
+				},
+				preventSelector: true
 			};
 			groups = $.map( resultGroups, function ( value, index ) {
 				return index;
