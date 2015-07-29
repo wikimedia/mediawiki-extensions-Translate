@@ -6,7 +6,7 @@
 		]
 	},
 	"translate": "Övversäze",
-	"translate-desc": "[[Special:Translate|Söndersigk]] för et Översäze fon MediaWiki sing Meldonge, un mieh",
+	"translate-desc": "[[Special:Translate|Söndersigk]] för et Översäze fum MediaWiki sing Mäldonge un Nohreeschte, un mih",
 	"translate-taskui-view": "Alle Täxte udder Nohreeschte aanzeije",
 	"translate-taskui-untranslated": "Onövversaz Täxte udder Nohreeschte aanzeije",
 	"translate-taskui-optional": "'Nid esu nüüdeje' Täxte udder Nohreeschte aanzeije.",
@@ -182,7 +182,7 @@
 	"translate-mgs-invalid-group": "De aanjejovve Jropp „$1“ jidd_et nit.",
 	"translate-mgs-nothing": "För heh di Schtatistik ham_mer nix aanzezeije.",
 	"supportedlanguages": "Ongerschtöz Schprohche",
-	"supportedlanguages-summary": "He sin alle Schprohche opjeleß, di mer {{GRAMMAR:em|{{SITENAME}}}} ongerschtöze.\nDobei schtonn de Nahme vun dä Övversäzer, di aan dä Schprohch aam ärbeide sin.\nJrühßer jeschrewwe Övversäzer han mieh övversaz, wi kleiner jeschrevve.\nJröhn jeschrevve Metmaacher han köözlesch noch jet jedonn, ruud jeschrevve han länger nix mih jedonn.",
+	"supportedlanguages-summary": "He sin alle Schprohche opjeleß, di mer {{GRAMMAR:em|{{SITENAME}}}} ongerschtöze.\nDobei schtonn de Nahme vun dä Övversäzer, di aan dä Schprohch aam ärbeide sin.\nJrühßer jeschrewwe Övversäzer han mih övversaz, wi kleiner jeschrevve.\nJröhn jeschrevve Metmaacher han köözlesch noch jet jedonn, ruud jeschrevve han länger nix mih jedonn.",
 	"supportedlanguages-colorlegend": "De Lejände för de Färve: De läzde Övversäzong es $1 Dääsch her.",
 	"supportedlanguages-portallink": "[$1] $2 — $3",
 	"supportedlanguages-portallink-nocldr": "<nowiki>[</nowiki>$1<nowiki>]</nowiki> $2",
@@ -279,10 +279,7 @@
 	"action-translate-sandboxaction": "för onbeschtääteschte Övversäzer zohjelohße Saache ze maache",
 	"translate-workflow-state-": "(nit jesaz)",
 	"translate-workflowstatus": "Der Zohschtand es: $1",
-	"translate-workflow-set-do": "Lohß Jonn!",
 	"translate-workflow-set-doing": "Ben am Waade&nbsp;...",
-	"translate-workflow-set-done": "Jedonn!",
-	"translate-workflow-set-error-alreadyset": "Der jewönschte Zohschtand es dä Zohschtand, wi hä jäz es.",
 	"translate-workflow-autocreated-summary": "Di Sigg för dä Beäbeidongszohschtand „$1“ es automattetsch aanjelaat woode.",
 	"translate-stats-workflow": "Zohstand",
 	"translate-workflowgroup-label": "Beäbeidongszohschtänd",
@@ -291,10 +288,6 @@
 	"translate-dynagroup-recent-desc": "Heh di Jropp vun Täxte un Nohreeschte hät all de neue Översäzonge in heh di Schprohch.\nDat es joht för et Jähjelässe.",
 	"translate-dynagroup-additions-label": "Köözlesch derbei jekumme",
 	"translate-dynagroup-additions-desc": "Di Jropp hät neue un veränderte Täxte un Nohreeschte.",
-	"translate-dynagroup-by": "De Övversäzong es {{GENDER:$1|vum|vum|vum Metmaacher|vun dä|vum}} $1",
-	"translate-dynagroup-byc": "De Övversäzong es {{GENDER:$1|vum|vum|vum Metmaacher|vun dä|vum}} $1 ($2)",
-	"translate-dynagroup-last": "De läzde Änderong {{GENDER:$1|vum|vum|vum Metmaacher|vun dä|vum}} $1",
-	"translate-dynagroup-lastc": "De läzde Änderong {{GENDER:$1|vum|vum|vum Metmaacher|vun dä|vum}} $1 ($2)",
 	"translate-gethelp": "Hölp",
 	"translate-msggroupselector-projects": "Nohreeschtejrop",
 	"translate-msggroupselector-search-placeholder": "Nohrechtejropp zem Söhke",
@@ -386,5 +379,5 @@
 	"translate-search-more-groups-info": "{{PLURAL:$1|Ein Jropp|$1 Jroppe|Kein Jropp}} mih",
 	"translate-ulsdep-title": "Fähler bei de Enschtällonge",
 	"translate-ulsdep-body": "Dat Zohsazprojramm <i lang=\"en\" xml:lang=\"en\">Translate</i> bruch dat Zohsazprojramm [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector <i lang=\"en\" xml:lang=\"en\">e-mail</i>Universal Language Selector</i>].",
-	"tux-session-expired": "Do bes nit mieh ennjelogg.\nBes esu johd un donn en enem extra Brauserfinster widder enlogge.\nUdder donn Ding Övversäzonge woh anders faßhallde, di noch nit em Wiki jeseschert woodte, donn neu enlogge, un jangk dann retuur op heh di Sigg, un donn Ding Övversäzonge widder erövver koppeere!"
+	"tux-session-expired": "Do bes nit mih ennjelogg.\nBes esu johd un donn en enem extra Brauserfinster widder enlogge.\nUdder donn Ding Övversäzonge woh anders faßhallde, di noch nit em Wiki jeseschert woodte, donn neu enlogge, un jangk dann retuur op heh di Sigg, un donn Ding Övversäzonge widder erövver koppeere!"
 }

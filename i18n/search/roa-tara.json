@@ -6,6 +6,7 @@
 	},
 	"searchtranslations": "Cirche le traduziune",
 	"tux-sst-edit": "Cange 'a traduzione",
+	"tux-sst-view-foreign": "'Ndruche sus a $1",
 	"tux-sst-search": "Cirche",
 	"tux-sst-search-ph": "Cirche le traduziune",
 	"tux-sst-count": "{{PLURAL:$1|'Nu resultate acchiate|$1 resultate acchiate}}",
@@ -16,6 +17,6 @@
 	"tux-sst-nosolr-body": "Sta uicchi non g'ave 'nu servizie de ricerche pe le traduziune.",
 	"tux-sst-solr-offline-title": "Ricerche non disponibbile",
 	"tux-sst-solr-offline-body": "'U servizie de ricerche jè temboraneamende indisponibbile.",
-	"tux-sst-next": "Prossime resultate",
-	"tux-sst-prev": "Resultate precedende"
+	"tux-sst-next": "Prossime →",
+	"tux-sst-prev": "‹ Precedende"
 }
