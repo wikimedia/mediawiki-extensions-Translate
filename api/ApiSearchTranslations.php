@@ -12,20 +12,22 @@ class ApiSearchTranslations extends ApiBase {
 		$config = $wgTranslateTranslationServices[$params['service']];
 		$server = TTMServer::factory( $config );
 
-		$opts = new FormOptions();
-		foreach ( $params as $param => $value ) {
-			$opts->add( $param, $value );
-		}
-
-		$searchResults = $server->search(
-			$params['query'],
-			$opts,
-			array( '', '' )
-		);
-
 		$result = $this->getResult();
-		$documents = $server->getDocuments( $searchResults );
 
+		if ( $params['filter'] !== '' ) {
+			$translationSearch = new CrossLanguageTranslationSearchQuery( $params, $server );
+			$documents = $translationSearch->getDocuments();
+			$total = $translationSearch->getTotalHits();
+		} else {
+			$searchResults = $server->search(
+				$params['query'],
+				$params,
+				array( '', '' )
+			);
+			$documents = $server->getDocuments( $searchResults );
+			$total = $server->getTotalHits( $searchResults );			
+		}
+		$result->addValue( array( 'search', 'metadata' ), 'total', $total );
 		$result->addValue( 'search', 'translations', $documents );
 	}
 
@@ -41,11 +43,19 @@ class ApiSearchTranslations extends ApiBase {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
 			),
+			'sourcelanguage' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_DFLT => $wgLanguageCode,
+			),
 			'language' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_DFLT => '',
 			),
 			'group' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_DFLT => '',
+			),
+			'filter' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_DFLT => '',
 			),
