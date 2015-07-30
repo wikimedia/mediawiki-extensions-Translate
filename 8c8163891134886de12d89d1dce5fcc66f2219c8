@@ -68,6 +68,24 @@
       "revId": "8c8163891134886de12d89d1dce5fcc66f2219c8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_9724b95b",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-30T17:03:29Z",
+      "side": 1,
+      "message": "Is that 20 bytes or 20 characters? To me it sounds like it wont be an issue for the user to spot those words in the rare case a search term actually is that long.",
+      "parentUuid": "8ec42329_45c77a4a",
+      "revId": "8c8163891134886de12d89d1dce5fcc66f2219c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
