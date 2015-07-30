@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_ba875c65",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-30T18:09:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_0a4ae1c8",
+      "revId": "8c8163891134886de12d89d1dce5fcc66f2219c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_ea1c35cd",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-30T13:53:25Z",
       "side": 1,
       "message": "and do list( $searchQuery, $highlights \u003d $this-\u003eparseQueryString( $queryString );",
+      "revId": "8c8163891134886de12d89d1dce5fcc66f2219c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_1ab79036",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-30T18:09:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_ea1c35cd",
       "revId": "8c8163891134886de12d89d1dce5fcc66f2219c8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -83,6 +119,24 @@
       "side": 1,
       "message": "Is that 20 bytes or 20 characters? To me it sounds like it wont be an issue for the user to spot those words in the rare case a search term actually is that long.",
       "parentUuid": "8ec42329_45c77a4a",
+      "revId": "8c8163891134886de12d89d1dce5fcc66f2219c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_d754812c",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-30T18:09:13Z",
+      "side": 1,
+      "message": "It is 20 characters.",
+      "parentUuid": "8ec42329_9724b95b",
       "revId": "8c8163891134886de12d89d1dce5fcc66f2219c8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
