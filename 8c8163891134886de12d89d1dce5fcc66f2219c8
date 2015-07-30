@@ -50,6 +50,24 @@
       "revId": "8c8163891134886de12d89d1dce5fcc66f2219c8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_45c77a4a",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 671,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-30T15:35:08Z",
+      "side": 1,
+      "message": "yes content.prefix_complete is the superset of content and we could use it directly but it would not provide highlight for case where the length of the search word is greater than 20.\nwhat should we do?",
+      "parentUuid": "8ec42329_aa3b8d34",
+      "revId": "8c8163891134886de12d89d1dce5fcc66f2219c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
