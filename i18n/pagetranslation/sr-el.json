@@ -30,6 +30,8 @@
 	"tpt-aggregategroup-update-cancel": "Otkaži",
 	"log-name-pagetranslation": "Dnevnik prevoda stranica",
 	"logentry-pagetranslation-mark": "$1 je {{GENDER:$2|označio|označila}} stranicu $3 za prevođenje",
+	"logentry-pagetranslation-deletefok": "$1 je {{GENDER:$2|obrisao|obrisala}} prevodivu stranicu $3",
+	"logentry-pagetranslation-deletelok": "$1 je {{GENDER:$2|obrisao|obrisala}} prevodivu stranicu $3",
 	"pt-movepage-title": "Premeštanje prevodive stranice $1",
 	"pt-movepage-block-base-exists": "Ciljna osnovna stranica [[:$1]] postoji.",
 	"pt-movepage-block-base-invalid": "Cilj prevodive stranice ne predstavlja ispravan naziv.",

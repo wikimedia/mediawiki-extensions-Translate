@@ -105,7 +105,7 @@
 	"pm-cancel-button-label": "Болдырмау",
 	"pm-pagename-placeholder": "Бет атауын енгізу",
 	"pm-langcode-placeholder": "Тіл коды",
-	"pm-page-does-not-exist": "$1 жоқ.",
+	"pm-page-does-not-exist": "$1 беті жоқ.",
 	"pm-old-translations-missing": "$1 ескі аудармаларды қамтымайды.",
 	"pm-pagename-missing": "Бет атауын енгізіңіз:",
 	"pm-langcode-missing": "Тід кодын енгізіңіз.",
