@@ -170,6 +170,24 @@
       "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_79a25b94",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-07-31T12:34:18Z",
+      "side": 1,
+      "message": "There should be some kind of hard limit. Just loading a lot of messages itself can cause us to run out of memory. With some reasonable limit, be it 1000 or 4000, we can hopefully avoid excessive resource usage and do just one query instead of two.\n\nAlso when the user pages the results 25 at a time, the queries don\u0027t get faster on the ES side according to https://www.elastic.co/guide/en/elasticsearch/guide/current/pagination.html which is another reason to impose some limits.",
+      "parentUuid": "8ec42329_190477c8",
+      "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
