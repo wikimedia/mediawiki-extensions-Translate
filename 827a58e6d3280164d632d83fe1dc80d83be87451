@@ -152,6 +152,24 @@
       "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_190477c8",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-07-31T12:02:59Z",
+      "side": 1,
+      "message": "Currently, the loop runs twice at max if filter is present, this is done to fetch all the message keys in the source language. If there are 4000 messages found, then the first iteration fetch $limit size results and the second iteration fetch all the messages.\nI like the idea to increase the $limit parameter to something large, e.g. 1000. But why do we have to remove the loop from here? If there are 4000 messages found, then we are fetching only 1000 messages. Are you saying to loop through in Special:SearchTranslations(four times)? \nAlso, suppose we found 25($limit) messages after filtering message collection within those 1000 messages then should we no more loop through the rest 3000? Won\u0027t the total count of messages after filtering be incorrect( since it only came from the first 1000 and not from the remaining 3000 )?",
+      "parentUuid": "8ec42329_0a13c106",
+      "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
