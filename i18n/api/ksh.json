@@ -79,5 +79,6 @@
 	"apihelp-searchtranslations-param-query": "Der Täx, dä jesöhk wähde sull.",
 	"apihelp-searchtranslations-param-language": "Et Köözel för di Schprohch för dä Täx dren ze söhke.",
 	"apihelp-searchtranslations-param-group": "De Kännong för di Jropp för dä Täx dren ze söhke.",
+	"apihelp-searchtranslations-param-offset": "Affschtand för Övversäzonge. <!--  https://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Apihelp-searchtranslations-param-offset/en -->",
 	"apihelp-searchtranslations-example-1": "Donn de Övversäzonge för heh di Schprohch aanzeije"
 }
