@@ -12,3 +12,4 @@ tests/pagetranslation/*.fail
 composer.lock
 extensions/
 vendor/
+node_modules/
