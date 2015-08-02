@@ -43,8 +43,5 @@
 		"mediawiki/translation-notifications": "Manage communication with translators",
 		"mustangostang/spyc": "More recent version of the bundled spyc library",
 		"romaricdrigon/metayaml": "If you want to validate message group configurations"
-	},
-	"autoload": {
-		"files": ["Translate.php"]
 	}
 }
