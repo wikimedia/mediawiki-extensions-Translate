@@ -44,6 +44,16 @@
 		"mustangostang/spyc": "More recent version of the bundled spyc library",
 		"romaricdrigon/metayaml": "If you want to validate message group configurations"
 	},
+	"require-dev": {
+		"jakub-onderka/php-parallel-lint": "0.9.*",
+		"mediawiki/mediawiki-codesniffer": "0.3.0"
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude vendor",
+			"phpcs -p"
+		]
+	},
 	"autoload": {
 		"files": ["Translate.php"]
 	}
