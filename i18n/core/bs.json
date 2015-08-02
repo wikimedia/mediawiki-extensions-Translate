@@ -213,6 +213,7 @@
 	"translate-messagereview-submit": "Označi provjereno",
 	"translate-messagereview-done": "Provjereno",
 	"log-name-translationreview": "Zapisnik provjere prijevoda",
+	"logentry-translationreview-message": "$1 {{GENDER:$2|potvrdio|potvrdila}} je prijevod $3",
 	"translate-stats-workflow": "Stanje",
 	"translate-dynagroup-additions-desc": "Ova grupa poruka prikazuje nove i izmijenjene poruke.",
 	"translate-gethelp": "Pomoć",

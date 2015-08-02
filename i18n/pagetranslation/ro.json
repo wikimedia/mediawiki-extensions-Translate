@@ -54,6 +54,7 @@
 	"translate-tag-markthis": "Marchează această pagină pentru traducere",
 	"tpt-translation-intro": "Această pagină reprezintă <span class=\"plainlinks\">[$1 versiunea tradusă]</span> a paginii [[$2]], procesul de traducere fiind completat în proporție de $3%.",
 	"tpt-languages-legend": "Alte limbi:",
+	"tpt-languages-zero": "Începeți traducerea în această limbă",
 	"tpt-languages-nonzero": "$1 ($2% tradusă)",
 	"tpt-tab-translate": "Traducere",
 	"tpt-discouraged-language-reason": "Motiv: $1",

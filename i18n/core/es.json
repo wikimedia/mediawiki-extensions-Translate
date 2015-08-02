@@ -289,7 +289,7 @@
 	"logentry-translationreview-group": "$1 {{GENDER:$2|cambió}} el estado de las traducciones en $4 de $3, que pasó de $6 a $7",
 	"group-translate-sandboxed": "Traductores sin aprobar",
 	"group-translate-sandboxed-member": "{{GENDER:$1|traductor|traductora}} sin aprobar",
-	"right-translate-sandboxmanage": "Gestionar usuarios de la zona de probas",
+	"right-translate-sandboxmanage": "Gestionar usuarios de la zona de pruebas",
 	"action-translate-sandboxmanage": "gestionar usuarios de la zona de pruebas",
 	"right-translate-sandboxaction": "Ejecutar acciones permitidas para los usuarios de la zona de pruebas",
 	"action-translate-sandboxaction": "ejecutar acciones permitidas a los usuarios de la zona de pruebas",
