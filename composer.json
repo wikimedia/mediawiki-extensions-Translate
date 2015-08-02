@@ -44,8 +44,5 @@
 		"mustangostang/spyc": "More recent version of the bundled spyc library",
 		"romaricdrigon/metayaml": "If you want to validate message group configurations",
 		"ruflin/elastica": "Support for translation memory and search in ElasticSearch"
-	},
-	"autoload": {
-		"files": ["Translate.php"]
 	}
 }
