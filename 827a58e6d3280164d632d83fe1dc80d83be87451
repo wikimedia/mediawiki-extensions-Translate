@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_674f056f",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-02T11:33:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_eaf3d504",
+      "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_8acb31a8",
         "filename": "specials/SpecialSearchTranslations.php",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-30T13:26:18Z",
       "side": 1,
       "message": "Use setValue",
+      "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_0752c115",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-02T11:33:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_8acb31a8",
       "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_27557dfc",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-02T11:33:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_aa562dcf",
+      "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_ea60b5a1",
         "filename": "specials/SpecialSearchTranslations.php",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-30T13:26:18Z",
       "side": 1,
       "message": "Unused variable",
+      "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_c73fd9af",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-02T11:33:33Z",
+      "side": 1,
+      "message": "Using it to set \u0027localid\u0027 in the next line.",
+      "parentUuid": "8ec42329_ea60b5a1",
       "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_e73a15bf",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-02T11:33:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_4a6f898f",
+      "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_6a6cc599",
         "filename": "specials/SpecialSearchTranslations.php",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2015-07-30T13:26:18Z",
       "side": 1,
       "message": "You don\u0027t need to set this at all at this point.",
+      "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_87455149",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-02T11:33:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_6a6cc599",
       "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_67a5c5ff",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-02T11:33:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_4af6a9d5",
+      "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_6af365e3",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 7
@@ -132,6 +258,24 @@
       "writtenOn": "2015-07-30T13:26:18Z",
       "side": 1,
       "message": "Same here.",
+      "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_07a881d6",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-02T11:33:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_6af365e3",
       "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -185,6 +329,24 @@
       "side": 1,
       "message": "There should be some kind of hard limit. Just loading a lot of messages itself can cause us to run out of memory. With some reasonable limit, be it 1000 or 4000, we can hopefully avoid excessive resource usage and do just one query instead of two.\n\nAlso when the user pages the results 25 at a time, the queries don\u0027t get faster on the ES side according to https://www.elastic.co/guide/en/elasticsearch/guide/current/pagination.html which is another reason to impose some limits.",
       "parentUuid": "8ec42329_190477c8",
+      "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_27ab3dd5",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-02T11:33:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec42329_0a13c106",
       "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
