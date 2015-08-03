@@ -205,7 +205,7 @@
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Перекладач|Перекладачка}}|Перекладачі}}: $1",
 	"supportedlanguages-recenttranslations": "останні переклади",
 	"supportedlanguages-count": "Всього $1 {{PLURAL:$1|мова|мови|мов}}.",
-	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|редагування|редагування|редагувань}} — остання правка $3 {{PLURAL:$3|день|дня|днів}} тому",
+	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|редагування|редагування|редагувань}} — останнє редагування $3 {{PLURAL:$3|день|дні|днів}} тому",
 	"translate-save": "Зберегти ($1)",
 	"translate-jssti-add": "Додати в список",
 	"managemessagegroups": "Керування групами повідомлень",
@@ -293,10 +293,7 @@
 	"action-translate-sandboxaction": "виконання дій, дозволених користувачам у пісочниці",
 	"translate-workflow-state-": "(не встановлено)",
 	"translate-workflowstatus": "Статус: $1",
-	"translate-workflow-set-do": "Встановити",
 	"translate-workflow-set-doing": "Встановлення...",
-	"translate-workflow-set-done": "Установлено!",
-	"translate-workflow-set-error-alreadyset": "Поточний стан ідентичний тому, що вимагається встановити.",
 	"translate-workflow-autocreated-summary": "Автоматичне створення сторінки стану для процесу обробки $1.",
 	"translate-stats-workflow": "Статус",
 	"translate-workflowgroup-label": "Стан процесу обробки",
@@ -305,10 +302,6 @@
 	"translate-dynagroup-recent-desc": "Ця група повідомлень містить усі останні переклади цією мовою.\nНайзручніший режим для завдань перевірки.",
 	"translate-dynagroup-additions-label": "Останні доповнення",
 	"translate-dynagroup-additions-desc": "Ця група повідомлень містить нові та змінені повідомлення.",
-	"translate-dynagroup-by": "{{GENDER:$1|Переклав|Переклала}} $1",
-	"translate-dynagroup-byc": "{{GENDER:$1|Переклав|Переклала}} $1 ($2)",
-	"translate-dynagroup-last": "Востаннє змінено {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Востаннє змінено {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Довідка",
 	"translate-msggroupselector-projects": "Група повідомлень",
 	"translate-msggroupselector-search-placeholder": "Шукати групи",
@@ -400,5 +393,5 @@
 	"translate-search-more-groups-info": "Ще $1 {{PLURAL:$1|група|групи|груп}}",
 	"translate-ulsdep-title": "Помилка конфігурації",
 	"translate-ulsdep-body": "Розширення перекладу залежить від [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector розширення «Універсальний мовний селектор»].",
-	"tux-session-expired": "Зараз ви не авторизовані. Будь ласка, увійдіть до системи на окремій вкладці. Або зробіть копію незбереженого перекладу, увійдіть та поверніться до цієї сторінки."
+	"tux-session-expired": "Зараз Ви не авторизовані. Будь ласка, увійдіть до системи на окремій вкладці. Або зробіть копію незбереженого перекладу, увійдіть, поверніться до цієї сторінки та введіть свої переклади знову."
 }
