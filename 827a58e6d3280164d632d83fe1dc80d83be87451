@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_93cb5020",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-03T16:56:50Z",
+      "side": 1,
+      "message": "Is there any method for title object to retrieve only message name with namespace and without language code, e.g. Mediawiki:title-name?",
+      "parentUuid": "8ec42329_ea60b5a1",
+      "revId": "827a58e6d3280164d632d83fe1dc80d83be87451",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_4a6f898f",
         "filename": "specials/SpecialSearchTranslations.php",
         "patchSetId": 7
