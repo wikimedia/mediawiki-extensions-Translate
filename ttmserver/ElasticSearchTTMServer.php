@@ -534,7 +534,6 @@ GROOVY;
 	public function search( $queryString, $opts, $highlight ) {
 		$query = new \Elastica\Query();
 
-		$this->highlight = $highlight;
 		list( $searchQuery, $highlights ) = $this->parseQueryString( $queryString );
 		$query->setQuery( $searchQuery );
 
