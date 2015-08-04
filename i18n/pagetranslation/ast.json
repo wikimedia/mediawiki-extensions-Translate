@@ -30,7 +30,7 @@
 	"tpt-badsect": "\"$1\" nun ye un nome válidu pa la unidá de traducción $2.",
 	"tpt-showpage-intro": "Abaxo ta la llista de les unidaes de traducción nueves, esistentes y desaniciaes.\nEnantes de marcar esta versión pa traducir, comprueba que los cambios fechos nes unidaes de traducción seyan mínimos pa evitar trabayu innecesariu de los traductores.",
 	"tpt-mark-summary": "Marcó esta versión pa traducir",
-	"tpt-mark-nochanges": "Nun hai nenguna diferencia ente esta revisión y la última revisión marcada.",
+	"tpt-mark-nochanges": "Nun hai cambios por revisar. Marcar esta páxina pa traducir nun editará la páxina nin nenguna unidá de traducción esistente.",
 	"tpt-edit-failed": "Nun se pudo anovar la páxina: $1",
 	"tpt-duplicate": "El nome de la unidá de traducción  $1 s'utiliza más d'una vegada.",
 	"tpt-already-marked": "La cabera versión d'esta páxina yá se marcó pa traducir.",

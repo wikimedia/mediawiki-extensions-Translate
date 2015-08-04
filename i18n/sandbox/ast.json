@@ -9,7 +9,7 @@
 	"tsb-reminder-title-generic": "Complete la so presentación pa convertise'n traductor",
 	"tsb-reminder-content-generic": "Bones, $1:\n\nGracies por rexistrase'n {{SITENAME}}.\n\nSi completa les traducciones\nde prueba, Los alministradores pronto darán-y permisu de traducción\ncompletu.\n\nPor favor, vuelva a $2 y faiga delles traducciones más equí: $2\n\n$3, equipu de {{SITENAME}}",
 	"tsb-reminder-sending": "Unviando'l recordatoriu...",
-	"tsb-reminder-sent": "{{PLURAL:$1|Unviáu $1 recordatoriu $2|Unviaos $1 recordatorios, l'últimu $2}}",
+	"tsb-reminder-sent": "{{PLURAL:$1|Unviáu $1 recordatoriu. Hora: $2.|Unviaos $1 recordatorios. Hora del últimu: $2.}}",
 	"tsb-reminder-sent-new": "Unviar un recordatoriu",
 	"tsb-reminder-failed": "Falló unviar un recordatoriu",
 	"tsb-email-promoted-subject": "Agora yá ye traductor en {{SITENAME}}",
