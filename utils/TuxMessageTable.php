@@ -48,7 +48,7 @@ HTML;
 		$modeProofread = $this->msg( 'tux-editor-proofreading-mode' )->escaped();
 
 		$actionbar = <<<HTML
-<div class="tux-action-bar row">
+<div class="tux-action-bar hide row">
 	<div class="three columns tux-message-list-statsbar" data-messagegroup="$groupId"></div>
 	<div class="three columns text-center">
 		<button class="toggle button tux-proofread-own-translations-button hide-own hide">

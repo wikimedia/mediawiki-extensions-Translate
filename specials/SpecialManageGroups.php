@@ -340,7 +340,7 @@ class SpecialManageGroups extends SpecialPage {
 			return true;
 		}
 
-		$skin->getOutput()->addModules( 'ext.translate.tabgroup' );
+		$skin->getOutput()->addModuleStyles( 'ext.translate.tabgroup' );
 
 		$tabs['namespaces'] = array();
 		foreach ( $pagesInGroup as $spName => $section ) {
