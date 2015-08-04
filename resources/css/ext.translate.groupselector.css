@@ -1,46 +1,3 @@
-/*
- * Breadcrumb
- */
-.tux-breadcrumb {
-	margin-bottom: 10px;
-}
-
-.tux-breadcrumb .grouplink + .grouplink:before {
-	border-left: 4px solid #777;
-	border-top: 4px solid transparent;
-	border-bottom: 4px solid transparent;
-	content: "";
-	display: inline-block;
-	vertical-align: middle;
-	position: relative;
-	left: -5px;
-}
-
-.tux-breadcrumb span {
-	border: medium none;
-	color: #555555;
-	font-size: 14pt;
-	font-weight: normal;
-	line-height: 1.25em;
-	padding-bottom: 3px;
-	padding-left: 15px;
-	padding-top: 1.25em;
-}
-
-.tux-breadcrumb span.grouptitle {
-	float: left;
-	padding: 0 6px 0 0;
-}
-
-.tux-breadcrumb span.grouplink {
-	color: #0645AD;
-	cursor: pointer;
-	float: left;
-	min-height: 1px;
-	padding: 0 6px;
-	position: relative;
-}
-
 /**
  * Group selector
  */
@@ -96,7 +53,7 @@
 	content: none;
 }
 
-.grid .tux-groupselector__title {
+.grid .row .tux-groupselector__title {
 	border: none;
 	color: #555555;
 	font-size: 14pt;
@@ -107,21 +64,8 @@
 }
 
 .tux-groupselector__filter {
-	position: relative;
-	height: 36px;
+	height: 30px;
 	border-bottom: solid 1px #c9c9c9;
-}
-
-.grid .tux-groupselector__filter__tabs {
-	position: absolute; /* grid override */
-	bottom: 0;
-}
-
-.grid .tux-groupselector__filter__search {
-	position: absolute; /* grid override */
-	padding-right: 0; /* grid override */
-	right: 0;
-	bottom: 2px;
 }
 
 .tux-groupselector__filter__search__input {
@@ -129,18 +73,16 @@
 	width: 100%;
 	height: 28px;
 	border: 1px solid #C9C9C9;
-	padding: 0 5px;
 }
 
 .tux-groupselector__filter__search__icon {
-	background: url('../images/search.png') no-repeat scroll right center transparent;
+	background: url(../images/search.png) no-repeat scroll right center transparent;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/search.svg);
 	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/search.svg);
 	background-size: 25px;
 	height: 28px;
 	width: 28px;
-	float: right;
 }
 
 .tux-groupselector button {
@@ -153,6 +95,9 @@
  * Group tab
  */
 .tux-grouptab {
+	box-sizing: border-box;
+	line-height: 30px;
+	height: 30px;
 	color: #252525;
 	cursor: pointer;
 	padding: 2px 5px;
@@ -209,7 +154,7 @@
 	width: 50px;
 }
 
-.grid .tux-grouplist__item__subgroups {
+.grid .row .tux-grouplist__item__subgroups {
 	position: absolute; /* grid override */
 	padding: 0 15px 2px 0; /* grid override */
 	font-weight: normal;

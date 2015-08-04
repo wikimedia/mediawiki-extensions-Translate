@@ -101,6 +101,7 @@
 		init: function () {
 			this.switchMode( this.mode );
 			this.initialized = true;
+			this.$actionBar.removeClass( 'hide' );
 		},
 
 		listen: function () {

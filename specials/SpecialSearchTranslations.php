@@ -61,6 +61,8 @@ class SpecialSearchTranslations extends SpecialPage {
 		}
 
 		$out = $this->getOutput();
+		$out->addModuleStyles( 'jquery.uls.grid' );
+		$out->addModuleStyles( 'ext.translate.special.searchtranslations.styles' );
 		$out->addModules( 'ext.translate.special.searchtranslations' );
 		$out->addModuleStyles( 'ext.translate.special.translate' );
 		TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate#searching' );
