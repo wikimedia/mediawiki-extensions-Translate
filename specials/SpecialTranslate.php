@@ -40,6 +40,10 @@ class SpecialTranslate extends SpecialPage {
 		global $wgTranslateBlacklist, $wgContLang;
 
 		$out = $this->getOutput();
+		$out->addModuleStyles( array(
+			'ext.translate.special.translate.styles',
+			'jquery.uls.grid',
+		) );
 		$out->addModules( 'ext.translate.special.translate' );
 
 		$this->setHeaders();
@@ -82,6 +86,7 @@ class SpecialTranslate extends SpecialPage {
 			$out->addHTML( $this->tuxSettingsForm( $errors ) );
 			$out->addHTML( $this->messageSelector() );
 		} else {
+			$out->addModuleStyles( 'ext.translate.legacy' );
 			TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Translation_example' );
 			// Show errors nicely.
 			$out->addHTML( $this->settingsForm( $errors ) );
@@ -799,7 +804,7 @@ class SpecialTranslate extends SpecialPage {
 			return true;
 		}
 
-		$skin->getOutput()->addModules( 'ext.translate.tabgroup' );
+		$skin->getOutput()->addModuleStyles( 'ext.translate.tabgroup' );
 
 		// Extract subpage syntax, otherwise the values are not passed forward
 		$params = array();

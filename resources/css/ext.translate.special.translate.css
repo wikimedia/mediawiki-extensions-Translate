@@ -1,22 +1,85 @@
 /*
- * Form at Special:Translate
+ * Breadcrumb for message group selector
  */
-.mw-sp-translate-error {
-	font-style: italic;
-	background-color: yellow;
+.tux-breadcrumb {
+	margin-bottom: 10px;
 }
 
-/* This gets pretty far on wide screens... */
-.mw-sp-translate-settings input[type=submit] {
+.tux-breadcrumb .grouplink + .grouplink:before {
+	border-left: 4px solid #777;
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	left: -5px;
+}
+
+.tux-breadcrumb span {
+	border: medium none;
+	color: #555555;
+	font-size: 14pt;
+	font-weight: normal;
+	line-height: 1.25em;
+	padding-bottom: 3px;
+	padding-left: 15px;
+	padding-top: 1.25em;
+}
+
+.tux-breadcrumb span.grouptitle {
+	float: left;
+	padding: 0 6px 0 0;
+}
+
+.tux-breadcrumb span.grouplink {
+	color: #0645AD;
+	cursor: pointer;
+	float: left;
+	min-height: 1px;
+	padding: 0 6px;
+	position: relative;
+}
+
+/* Language selector */
+.ext-translate-language-selector-label {
+	color: #555555;
+}
+
+.ext-translate-language-selector {
 	float: right;
+	text-align: right;
+	border: medium none;
+	font-size: 14pt;
+	font-weight: normal;
+	line-height: 1.25em;
+	padding-bottom: 3px;
+	padding-left: 15px;
+	padding-top: 1.25em;
 }
 
-/* For some reason a non-breaking space is not enough to keep the label
- * with the dropdown. */
-.mw-sp-translate-settings label {
-	white-space: nowrap;
+/* The triangle shaped down-pointing callout after the language name
+ * in the target language selector
+ */
+.ext-translate-language-selector:after {
+	margin-left: 4px;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid #0645AD;
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
 }
 
+.ext-translate-language-selector .uls {
+	color: #0645AD;
+	cursor: pointer;
+	min-height: 1px;
+	position: relative;
+}
+
+
+/* */
 .tux-message-selector {
 	font-size: 14px;
 	margin: 0;
