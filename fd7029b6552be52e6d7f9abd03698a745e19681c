@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_0b2ceea5",
+        "filename": "composer.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-05T21:14:58Z",
+      "side": 1,
+      "message": "Do you mean Vector skin?\n\nPlease point me to the discussion which explains why or what is the difference or why there is no difference. Otherwise I would go with most popular format.",
+      "parentUuid": "8ec42329_cb534641",
+      "revId": "fd7029b6552be52e6d7f9abd03698a745e19681c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_2bf68a8c",
         "filename": "composer.json",
         "patchSetId": 4
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Hi yes but vector has started to do it this way because it is cleaner.",
       "parentUuid": "8ec42329_2bf68a8c",
+      "revId": "fd7029b6552be52e6d7f9abd03698a745e19681c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_eb3082fe",
+        "filename": "composer.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-05T21:14:58Z",
+      "side": 1,
+      "message": "Please point me to the discussion which explains why or what is the difference or why there is no difference.",
+      "parentUuid": "8ec42329_0b7e2eaa",
       "revId": "fd7029b6552be52e6d7f9abd03698a745e19681c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
