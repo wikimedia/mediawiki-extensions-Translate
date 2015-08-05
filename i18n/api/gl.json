@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Banjo",
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
 	"apihelp-aggregategroups-description": "Xestionar grupos de mensaxes agregados.\n\nPode engadir e eliminar grupos de mensaxes agregados, e asociar ou disociar a eles grupos de mensaxes (un de cada vez).",
@@ -71,10 +72,18 @@
 	"apihelp-translationstash-param-username": "Opcionalmente a reserva do usuario que coller. Isto só o poden facer usuarios privilexiados.",
 	"apihelp-translationstash-example-1": "Engadir unha tradución á reserva para [[MediaWiki:Jan/fi]]",
 	"apihelp-translationstash-example-2": "Consultar a reserva",
-	"apihelp-ttmserver-description": "Consultar as suxerencias das memorias de tradución.",
+	"apihelp-ttmserver-description": "Consultar as suxestións da memoria de tradución.",
 	"apihelp-ttmserver-param-service": "Que servizos de tradución usar, entre os dispoñibles.",
-	"apihelp-ttmserver-param-sourcelanguage": "O código de idioma do texto fonte.",
-	"apihelp-ttmserver-param-targetlanguage": "O código de idioma da suxerencia.",
-	"apihelp-ttmserver-param-text": "Texto para o cal buscar suxerencias.",
-	"apihelp-ttmserver-example-1": "Obter suxerencias para traducir \"Help\" do inglés ó finés"
+	"apihelp-ttmserver-param-sourcelanguage": "O código de lingua do texto fonte.",
+	"apihelp-ttmserver-param-targetlanguage": "O código de lingua da suxestión.",
+	"apihelp-ttmserver-param-text": "Texto para o cal buscar suxestións.",
+	"apihelp-ttmserver-example-1": "Obter suxestións para traducir \"Help\" do inglés ao finés",
+	"apihelp-searchtranslations-description": "Procurar nas traducións.",
+	"apihelp-searchtranslations-param-service": "O servizo de tradución a utilizar.",
+	"apihelp-searchtranslations-param-query": "A cadea que buscar.",
+	"apihelp-searchtranslations-param-language": "O código da lingua na que procurar a cadea.",
+	"apihelp-searchtranslations-param-group": "O identificador do grupo no que procurar a cadea.",
+	"apihelp-searchtranslations-param-offset": "Desprazamento para as traducións.",
+	"apihelp-searchtranslations-param-limit": "Tamaño do resultado.",
+	"apihelp-searchtranslations-example-1": "Mostrar as traducións para a lingua."
 }

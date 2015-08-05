@@ -7,6 +7,7 @@
 	},
 	"searchtranslations": "Procurar nas traducións",
 	"tux-sst-edit": "Editar a tradución",
+	"tux-sst-view-foreign": "Ver en $1",
 	"tux-sst-search": "Procurar",
 	"tux-sst-search-ph": "Procurar nas traducións",
 	"tux-sst-count": "{{PLURAL:$1|Atopouse 1 resultado|Atopáronse $1 resultados}}",

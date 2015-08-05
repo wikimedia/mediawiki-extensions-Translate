@@ -17,6 +17,7 @@
 	"apihelp-query+messagecollection-example-1": "Liste unterstützter Sprachen",
 	"apihelp-query+messagecollection-example-3": "Listet optionale Nachrichten in Finnisch mit Markierungen für die Gruppe „page-Example“ auf",
 	"apihelp-query+messagegroups-example-1": "Nachrichtengruppen anzeigen",
+	"apihelp-query+messagegroupstats-description": "Ruft Statistiken zu Nachrichtengruppen ab.",
 	"apihelp-query+messagegroupstats-param-group": "Nachrichtengruppenkennung.",
 	"apihelp-query+messagetranslations-description": "Ruft alle Übersetzungen für eine einzelne Nachricht ab.",
 	"apihelp-query+messagetranslations-param-title": "Vollständiger Titel einer bekannten Nachricht.",
