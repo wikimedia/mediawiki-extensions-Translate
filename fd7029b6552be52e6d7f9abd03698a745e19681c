@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_66204747",
+        "filename": "composer.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-08-05T21:44:07Z",
+      "side": 1,
+      "message": "Well I doint think there was a discussion only that it was added. but if there are minor updates to 0.9 release we woulden need update this file every time there is a release in that series.",
+      "parentUuid": "8ec42329_0b2ceea5",
+      "revId": "fd7029b6552be52e6d7f9abd03698a745e19681c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_2bf68a8c",
         "filename": "composer.json",
         "patchSetId": 4
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "Please point me to the discussion which explains why or what is the difference or why there is no difference.",
       "parentUuid": "8ec42329_0b7e2eaa",
+      "revId": "fd7029b6552be52e6d7f9abd03698a745e19681c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_46f2ebdf",
+        "filename": "composer.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-08-05T21:44:07Z",
+      "side": 1,
+      "message": "Well there isent a discussion for this but if you see the commnet here by @Legoktm that will answer the question. Link \u003d https://gerrit.wikimedia.org/r/#/c/227431/",
+      "parentUuid": "8ec42329_eb3082fe",
       "revId": "fd7029b6552be52e6d7f9abd03698a745e19681c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
