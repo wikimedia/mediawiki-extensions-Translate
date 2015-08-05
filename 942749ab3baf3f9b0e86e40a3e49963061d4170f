@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_cf5cb9f6",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-05T08:35:41Z",
+      "side": 1,
+      "message": "You should add mediawiki.language to the dependencies of this module.",
+      "revId": "942749ab3baf3f9b0e86e40a3e49963061d4170f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
