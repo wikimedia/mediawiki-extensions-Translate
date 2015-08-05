@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8ec42329_cb534641",
+        "filename": "composer.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-08-05T21:09:46Z",
+      "side": 1,
+      "message": "Yes but vector and a few other extension do it this way.",
+      "parentUuid": "8ec42329_8bfbfe74",
+      "revId": "fd7029b6552be52e6d7f9abd03698a745e19681c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec42329_2bf68a8c",
         "filename": "composer.json",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-05T20:46:32Z",
       "side": 1,
       "message": "Every other extensions uses \"phpcs --standard\u003dvendor/mediawiki/mediawiki-codesniffer/MediaWiki --extensions\u003dphp,php5,inc --ignore\u003dvendor -p .\" Why different here?",
+      "revId": "fd7029b6552be52e6d7f9abd03698a745e19681c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_0b7e2eaa",
+        "filename": "composer.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-08-05T21:09:46Z",
+      "side": 1,
+      "message": "Hi yes but vector has started to do it this way because it is cleaner.",
+      "parentUuid": "8ec42329_2bf68a8c",
       "revId": "fd7029b6552be52e6d7f9abd03698a745e19681c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
