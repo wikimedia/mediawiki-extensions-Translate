@@ -159,6 +159,24 @@
       "revId": "fd7029b6552be52e6d7f9abd03698a745e19681c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_ae1b65d2",
+        "filename": "composer.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-08-06T08:43:10Z",
+      "side": 1,
+      "message": "Whoops forgot to add that to here.",
+      "parentUuid": "8ec42329_ceba711e",
+      "revId": "fd7029b6552be52e6d7f9abd03698a745e19681c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
