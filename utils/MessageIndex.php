@@ -180,7 +180,7 @@ abstract class MessageIndex {
 			$title = Title::makeTitle( $ns, $pagename );
 			$handle = new MessageHandle( $title );
 			list ( $oldGroups, $newGroups ) = $data;
-			wfRunHooks( 'TranslateEventMessageMembershipChange',
+			Hooks::run( 'TranslateEventMessageMembershipChange',
 				array( $handle, $oldGroups, $newGroups ) );
 		}
 	}

@@ -421,7 +421,7 @@ PHP;
 		$specs['Content-Type'] = 'text/plain; charset=UTF-8';
 		$specs['Content-Transfer-Encoding'] = '8bit';
 		$specs['Language'] = wfBCP47( $this->group->mapCode( $code ) );
-		wfRunHooks( 'Translate:GettextFFS:headerFields', array( &$specs, $this->group, $code ) );
+		Hooks::run( 'Translate:GettextFFS:headerFields', array( &$specs, $this->group, $code ) );
 		$specs['X-Generator'] = $this->getGenerator();
 
 		if ( $this->offlineMode ) {

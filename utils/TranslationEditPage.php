@@ -107,7 +107,7 @@ class TranslationEditPage {
 		}
 
 		$extraInputs = '';
-		wfRunHooks( 'TranslateGetExtraInputs', array( &$translation, &$extraInputs ) );
+		Hooks::run( 'TranslateGetExtraInputs', array( &$translation, &$extraInputs ) );
 
 		$textarea = Html::element( 'textarea', $textareaParams, $translation );
 

@@ -191,7 +191,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		}
 		wfProfileOut( __METHOD__ . '-workflowstates' );
 
-		wfRunHooks(
+		Hooks::run(
 			'TranslateProcessAPIMessageGroupsProperties',
 			array( &$a, $props, $params, $g )
 		);
@@ -288,7 +288,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				ApiBase::PARAM_DFLT => '',
 			),
 		);
-		wfRunHooks( 'TranslateGetAPIMessageGroupsParameterList', array( &$allowedParams ) );
+		Hooks::run( 'TranslateGetAPIMessageGroupsParameterList', array( &$allowedParams ) );
 
 		return $allowedParams;
 	}
@@ -324,7 +324,7 @@ TEXT;
 		);
 
 		$p = $this->getModulePrefix(); // Can be useful for documentation
-		wfRunHooks( 'TranslateGetAPIMessageGroupsParameterDescs', array( &$paramDescs, $p ) );
+		Hooks::run( 'TranslateGetAPIMessageGroupsParameterDescs', array( &$paramDescs, $p ) );
 
 		$indent = "\n" . str_repeat( ' ', 24 );
 		$wrapWidth = 104 - 24;
@@ -364,7 +364,7 @@ TEXT;
 				' workflowstates - Include the workflow states for the message group',
 		);
 
-		wfRunHooks( 'TranslateGetAPIMessageGroupsPropertyDescs', array( &$properties ) );
+		Hooks::run( 'TranslateGetAPIMessageGroupsPropertyDescs', array( &$properties ) );
 
 		return $properties;
 	}

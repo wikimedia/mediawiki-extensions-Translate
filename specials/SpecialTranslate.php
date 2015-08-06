@@ -110,7 +110,7 @@ class SpecialTranslate extends SpecialPage {
 		}
 
 		$params = array( $this->getContext(), $this->task, $this->group, $this->options );
-		if ( !wfRunHooks( 'SpecialTranslate::executeTask', $params ) ) {
+		if ( !Hooks::run( 'SpecialTranslate::executeTask', $params ) ) {
 			return;
 		}
 
@@ -322,7 +322,7 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->defaults = $defaults;
 		$this->nondefaults = $nondefaults;
-		wfRunHooks( 'TranslateGetSpecialTranslateOptions', array( &$defaults, &$nondefaults ) );
+		Hooks::run( 'TranslateGetSpecialTranslateOptions', array( &$defaults, &$nondefaults ) );
 
 		$this->options = $nondefaults + $defaults;
 		$this->group = MessageGroups::getGroup( $this->options['group'] );
