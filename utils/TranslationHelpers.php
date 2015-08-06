@@ -203,7 +203,7 @@ class TranslationHelpers {
 			}
 		}
 
-		wfRunHooks( 'TranslateGetBoxes', array( $this->group, $this->handle, &$boxes ) );
+		Hooks::run( 'TranslateGetBoxes', array( $this->group, $this->handle, &$boxes ) );
 
 		if ( count( $boxes ) ) {
 			return Html::rawElement(
@@ -1439,7 +1439,7 @@ class TranslationHelpers {
 
 	public static function addModules( OutputPage $out ) {
 		$modules = array( 'ext.translate.quickedit' );
-		wfRunHooks( 'TranslateBeforeAddModules', array( &$modules ) );
+		Hooks::run( 'TranslateBeforeAddModules', array( &$modules ) );
 		$out->addModules( $modules );
 
 		// Might be needed, but ajax doesn't load it

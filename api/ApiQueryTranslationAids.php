@@ -96,7 +96,7 @@ class ApiTranslationAids extends ApiBase {
 
 	public function getAllowedParams() {
 		$props = array_keys( TranslationAid::getTypes() );
-		wfRunHooks( 'TranslateTranslationAids', array( &$props ) );
+		Hooks::run( 'TranslateTranslationAids', array( &$props ) );
 
 		return array(
 			'title' => array(

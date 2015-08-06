@@ -54,7 +54,7 @@ class MessageTable {
 		$table = new self( $collection, $group );
 		$table->setContext( $context );
 
-		wfRunHooks( 'TranslateMessageTableInit', array( &$table, $context, $collection, $group ) );
+		Hooks::run( 'TranslateMessageTableInit', array( &$table, $context, $collection, $group ) );
 
 		return $table;
 	}
@@ -168,7 +168,7 @@ class MessageTable {
 				$extraAttribs = self::getLanguageAttributes( $sourceLang );
 			}
 
-			wfRunHooks(
+			Hooks::run(
 				'TranslateFormatMessageBeforeTable',
 				array( &$message, $m, $this->group, $targetLang, &$extraAttribs )
 			);

@@ -180,11 +180,11 @@ class TranslateEditAddons {
 
 		// Skip the hook if no change in status or content
 		if ( $revision || $fuzzyOp ) {
-			wfRunHooks( 'TranslateEventTranslationEdit', array( $handle ) );
+			Hooks::run( 'TranslateEventTranslationEdit', array( $handle ) );
 		}
 
 		if ( $fuzzy === false ) {
-			wfRunHooks( 'Translate:newTranslation', array( $handle, $rev, $text, $user ) );
+			Hooks::run( 'Translate:newTranslation', array( $handle, $rev, $text, $user ) );
 		}
 
 		TTMServer::onChange( $handle, $text, $fuzzy );

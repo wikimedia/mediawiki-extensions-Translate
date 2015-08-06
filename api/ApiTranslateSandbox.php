@@ -133,7 +133,7 @@ class ApiTranslateSandbox extends ApiBase {
 
 			$user->addNewUserLogEntry( 'tsbpromoted' );
 			$this->createUserPage( $user );
-			wfRunHooks( 'AddNewAccount', array( $user, false ) );
+			Hooks::run( 'AddNewAccount', array( $user, false ) );
 		}
 	}
 

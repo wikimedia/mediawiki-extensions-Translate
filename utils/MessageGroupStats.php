@@ -338,7 +338,7 @@ class MessageGroupStats {
 					$stats[$sid][$code] = self::forItemInternal( $stats, $subgroup, $code );
 				}
 
-				$include = wfRunHooks( 'Translate:MessageGroupStats:isIncluded', array( $sid, $code ) );
+				$include = Hooks::run( 'Translate:MessageGroupStats:isIncluded', array( $sid, $code ) );
 				if ( $include ) {
 					$aggregates = self::multiAdd( $aggregates, $stats[$sid][$code] );
 				}

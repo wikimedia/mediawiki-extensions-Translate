@@ -316,7 +316,7 @@ class StatsTable {
 			$blacklisted = true;
 		}
 
-		$include = wfRunHooks( 'Translate:MessageGroupStats:isIncluded', array( $groupId, $code ) );
+		$include = Hooks::run( 'Translate:MessageGroupStats:isIncluded', array( $groupId, $code ) );
 		if ( !$include ) {
 			$blacklisted = true;
 		}

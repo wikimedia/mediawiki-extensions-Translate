@@ -114,7 +114,7 @@ class ApiGroupReview extends ApiBase {
 		$logid = $entry->insert();
 		$entry->publish( $logid );
 
-		wfRunHooks( 'TranslateEventMessageGroupStateChange',
+		Hooks::run( 'TranslateEventMessageGroupStateChange',
 			array( $group, $code, $currentState, $newState ) );
 
 		return true;

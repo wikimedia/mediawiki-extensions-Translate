@@ -132,7 +132,7 @@ class MessageGroups {
 
 		$groups = $deps = $autoload = array();
 
-		wfRunHooks( 'TranslatePostInitGroups', array( &$groups, &$deps, &$autoload ) );
+		Hooks::run( 'TranslatePostInitGroups', array( &$groups, &$deps, &$autoload ) );
 
 		// Register autoloaders for this request, both values modified by reference
 		self::appendAutoloader( $autoload, $wgAutoloadClasses );

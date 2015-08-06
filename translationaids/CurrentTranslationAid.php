@@ -25,7 +25,7 @@ class CurrentTranslationAid extends TranslationAid {
 			$title->getNamespace()
 		);
 
-		wfRunHooks( 'TranslatePrefillTranslation', array( &$translation, $this->handle ) );
+		Hooks::run( 'TranslatePrefillTranslation', array( &$translation, $this->handle ) );
 		$fuzzy = MessageHandle::hasFuzzyString( $translation ) || $this->handle->isFuzzy();
 		$translation = str_replace( TRANSLATE_FUZZY, '', $translation );
 

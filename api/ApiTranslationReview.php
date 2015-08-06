@@ -102,7 +102,7 @@ class ApiTranslationReview extends ApiBase {
 		$entry->publish( $logid );
 
 		$handle = new MessageHandle( $title );
-		wfRunHooks( 'TranslateEventTranslationReview', array( $handle ) );
+		Hooks::run( 'TranslateEventTranslationReview', array( $handle ) );
 
 		return true;
 	}
