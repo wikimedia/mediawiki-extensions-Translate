@@ -62,6 +62,7 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.searchtranslations' );
+		$out->addModuleStyles( 'ext.translate.special.translate' );
 
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );
@@ -289,7 +290,13 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$definitions = new MessageDefinitions( $messages );
 		$collection = MessageCollection::newFromDefinitions( $definitions, $language );
-		$collection->filter( 'hastranslation', true );
+
+		$filter = $this->opts->getValue( 'filter' );
+		if ( $filter[0] === '!' ) {
+			$collection->filter( substr( $filter, 1 ), true );
+		} else {
+			$collection->filter( $filter, false );
+		}
 
 		$total = count( $collection );
 		$offset = $collection->slice( $offset, $limit );
@@ -400,10 +407,11 @@ class SpecialSearchTranslations extends SpecialPage {
 	}
 
 	protected function showSearch( $search, $count, $facets, $results ) {
+		$messageSelector = $this->messageSelector();
 		$this->getOutput()->addHtml( <<<HTML
 <div class="grid tux-searchpage">
 	<div class="row searchinput">
-		<div class="nine columns offset-by-three">$search</div>
+		<div class="nine columns offset-by-three">$messageSelector $search</div>
 	</div>
 	<div class="row count">
 		<div class="nine columns offset-by-three">$count</div>
@@ -428,6 +436,107 @@ HTML
 HTML
 		);
 	}
+
+	// Build ellipsis to select options
+	protected function ellipsisSelector( $key, $value ) {
+		$nondefaults = $this->opts->getChangedValues();
+		$taskParams = array( 'filter' => $value ) + $nondefaults;
+		ksort( $taskParams );
+		$href = $this->getTitle()->getLocalUrl( $taskParams );
+		$link = Html::element( 'a',
+			array( 'href' => $href ),
+	                $this->msg( 'tux-sst-' . $key )->text()
+		);
+
+		$container = Html::rawElement( 'li', array(
+			'class' => 'column ' ,
+			'data-filter' => $value,
+			'data-title' => $key,
+		), $link );
+
+		return $container;
+	}
+
+	/*
+	 * Design the tabs
+	 */
+	protected function messageSelector() {
+		$nondefaults = $this->opts->getChangedValues();
+		$output = Html::openElement( 'div', array( 'class' => 'row tux-messagetable-header' ) );
+		$output .= Html::openElement( 'div', array( 'class' => 'seven columns' ) );
+		$output .= Html::openElement( 'ul', array( 'class' => 'row tux-message-selector' ) );
+		$tabs = array(
+			'default' => '',
+			'translated' => 'translated',
+			'untranslated' => '!hastranslation'
+		);
+
+		$ellipsisOptions = array(
+			'outdated' => 'fuzzy'
+		);
+
+		$selected = $this->opts->getValue( 'filter' );
+		$keys = array_keys( $tabs );
+		if ( !in_array( $selected, array_values( $tabs ) ) ) {
+			$key = $keys[count( $keys ) - 1];
+			$ellipsisOptions = array( $key => $tabs[$key] );
+
+			// Remove the last tab
+			unset( $tabs[$key] );
+			$tabs = array_merge( $tabs, array( 'outdated' => $selected ) );
+		}
+
+		$container = Html::openElement( 'ul', array( 'class' => 'column tux-message-selector' ) );
+		foreach ( $ellipsisOptions as $optKey => $optValue ) {
+			$container .= $this->ellipsisSelector( $optKey, $optValue );
+		}
+
+		$sourcelanguage = $this->opts->getValue( 'sourcelanguage' );
+		$sourcelanguage = TranslateUtils::getLanguageName( $sourcelanguage );
+		$text = $this->msg( 'tux-sst-from' )->text() .
+			$sourcelanguage .
+			$this->msg( 'tux-sst-of' )->text();
+		foreach ( $tabs as $tab => $filter ) {
+			$tabClass = "tux-sst-$tab";
+			$taskParams = array( 'filter' => $filter ) + $nondefaults;
+			ksort( $taskParams );
+			$href = $this->getTitle()->getLocalUrl( $taskParams );
+			if ( $tab === 'default' ) {
+				$link = Html::element(
+					'a',
+					array( 'href' => $href ),
+					$this->msg( $tabClass )->text()
+				);
+                        } else {
+				$link = Html::element(
+					'a',
+					array( 'href' => $href ),
+					$this->msg( $tabClass )->text() . $text
+				);
+			}
+
+			if ( $selected === $filter ) {
+				$tabClass = $tabClass . ' selected';
+			}
+			$output .= Html::rawElement( 'li', array(
+				'class' => 'column ' . $tabClass,
+				'data-filter' => $filter,
+				'data-title' => $tab,
+			), $link );
+		}
+
+		// More column
+		$output .= Html::openElement( 'li', array( 'class' => 'column more' ) ) .
+			'...' .
+			$container .
+			Html::closeElement( 'li' );
+
+		$output .= Html::closeElement( 'ul' );
+		$output .= Html::closeElement( 'div' );
+		$output .= Html::closeElement( 'div' );
+
+		return $output;
+        }
 
 	protected function getSearchInput( $query ) {
 		$attribs = array(
