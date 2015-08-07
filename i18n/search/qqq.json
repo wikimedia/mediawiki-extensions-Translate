@@ -20,5 +20,11 @@
 	"tux-sst-solr-offline-title": "Used as title of error page.\n\nThe body of error message is {{msg-mw|Tux-sst-solr-offline-body}}.\n{{Identical|Search unavailable}}",
 	"tux-sst-solr-offline-body": "Used as error message.\n\nThe page title for this message is {{msg-mw|tux-sst-solr-offline-title}}.",
 	"tux-sst-next": "Link to browser more search results.\n\nSee also:\n* {{msg-mw|Tux-sst-prev}}",
-	"tux-sst-prev": "Link to browser more search results.\n\nSee also:\n* {{msg-mw|Tux-sst-next}}"
+	"tux-sst-prev": "Link to browser more search results.\n\nSee also:\n* {{msg-mw|Tux-sst-next}}",
+	"tux-sst-default": "Label for a tab to show translations for the language.",
+	"tux-sst-translated": "Label for a tab to show translated messages matching the query in the source language.",
+	"tux-sst-untranslated": "Label for a tab to show untranslated messages matching the query in the source language.",
+	"tux-sst-outdated": "Label for a tab to show outdated messages matching the query in the source language.",
+	"tux-sst-ellipsis-untranslated": "Used as label for an ellipsis to hide untranslated messages.",
+	"tux-sst-ellipsis-outdated": "Used as label for an ellipsis to hide outdated messages."
 }
