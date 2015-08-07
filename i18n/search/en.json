@@ -18,5 +18,11 @@
 	"tux-sst-solr-offline-title": "Search unavailable",
 	"tux-sst-solr-offline-body": "The search service is temporarily unavailable.",
 	"tux-sst-next": "Next ›",
-	"tux-sst-prev": "‹ Previous"
+	"tux-sst-prev": "‹ Previous",
+	"tux-sst-default": "Translations",
+	"tux-sst-translated": "Translations from $1",
+	"tux-sst-untranslated": "No translation from $1",
+	"tux-sst-outdated": "Outdated translations from $1",
+	"tux-sst-ellipsis-untranslated": "No translation",
+	"tux-sst-ellipsis-outdated": "Outdated translations"
 }

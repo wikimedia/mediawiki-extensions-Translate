@@ -167,3 +167,16 @@ h1.firstHeading {
 	font-size: 14px;
 	padding: 0 8px;
 }
+
+/* Override tabs */
+.tux-searchpage .tux-messagetable-header .seven {
+	width: 100%;
+}
+
+.tux-searchpage .tux-message-selector .more ul {
+	width: auto;
+}
+
+.tux-searchpage .tux-message-selector .more ul a {
+	white-space: pre-wrap;
+}
