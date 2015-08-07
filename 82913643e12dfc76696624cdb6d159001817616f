@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_cedee371",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-07T09:22:58Z",
+      "side": 1,
+      "message": "$actualOffset",
+      "revId": "82913643e12dfc76696624cdb6d159001817616f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_eedb9f7e",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-07T09:22:58Z",
+      "side": 1,
+      "message": "$actualLimit",
+      "revId": "82913643e12dfc76696624cdb6d159001817616f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_4e58b300",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-07T09:22:58Z",
+      "side": 1,
+      "message": "Why do you call the same thing with two different names: count and left",
+      "revId": "82913643e12dfc76696624cdb6d159001817616f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_4eff53ae",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-07T09:22:58Z",
+      "side": 1,
+      "message": "We filtered those having translation earlier, why load them now?",
+      "revId": "82913643e12dfc76696624cdb6d159001817616f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_6e048fc9",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-07T09:22:58Z",
+      "side": 1,
+      "message": "Isn\u0027t this always true given that the filtering above?",
+      "revId": "82913643e12dfc76696624cdb6d159001817616f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_8efc5bb4",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-07T09:22:58Z",
+      "side": 1,
+      "message": "You can use MessageHandle::getTitleForBase.",
+      "revId": "82913643e12dfc76696624cdb6d159001817616f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
