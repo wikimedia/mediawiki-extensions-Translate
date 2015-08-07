@@ -51,6 +51,7 @@ class SpecialSearchTranslations extends SpecialPage {
 	}
 
 	public function execute( $par ) {
+		global $wgLanguageCode;
 		$this->setHeaders();
 		$this->checkPermissions();
 
@@ -64,9 +65,11 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );
+		$opts->add( 'sourcelanguage', $wgLanguageCode );
 		$opts->add( 'language', '' );
 		$opts->add( 'group', '' );
 		$opts->add( 'grouppath', '' );
+		$opts->add( 'filter', '' );
 		$opts->add( 'limit', $this->limit );
 		$opts->add( 'offset', 0 );
 
@@ -80,8 +83,42 @@ class SpecialSearchTranslations extends SpecialPage {
 			return;
 		}
 
+		$filter = $opts->getValue( 'filter' );
 		try {
-			$resultset = $server->search( $queryString, $opts, $this->hl );
+			if ( $filter !== '' ) {
+				$documents = array();
+				$total = $start = 0;
+				$offset = $opts->getValue( 'offset' );
+				$limit = $opts->getValue( 'limit' );
+				$size = 1000;
+
+				$options = clone( $opts );
+				$options->setValue( 'limit', $size );
+				$options->setValue( 'language', $opts->getValue( 'sourcelanguage' ) );
+				do {
+					$options->setValue( 'offset', $start );
+					$resultset = $server->search( $queryString, $options, $this->hl );
+
+					list( $results, $offsets ) = $this->extractMessages(
+						$resultset,
+						$offset,
+						$limit
+					);
+					$offset = $offsets['start'] + $offsets['left'] - $offsets['total'];
+					$limit = $limit - $offsets['left'];
+					$total = $total + $offsets['total'];
+
+					$documents = array_merge( $documents, $results );
+					$start = $start + $size;
+				} while (
+					$offsets['start'] + $offsets['left'] >= $offsets['total'] &&
+					$resultset->getTotalHits() > $start
+				);
+			} else {
+				$resultset = $server->search( $queryString, $opts, $this->hl );
+				$documents = $server->getDocuments( $resultset );
+				$total = $server->getTotalHits( $resultset );
+			}
 		} catch ( TTMServerException $e ) {
 			error_log( 'Translation search server unavailable:' . $e->getMessage() );
 			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
@@ -89,7 +126,6 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		// Part 1: facets
 		$facets = $server->getFacets( $resultset );
-		$total = $server->getTotalHits( $resultset );
 		$facetHtml = '';
 
 		if ( count( $facets['language'] ) > 0 ) {
@@ -113,7 +149,6 @@ class SpecialSearchTranslations extends SpecialPage {
 
 		// Part 2: results
 		$resultsHtml = '';
-		$documents = $server->getDocuments( $resultset );
 
 		foreach ( $documents as $document ) {
 			$text = $document['content'];
@@ -144,7 +179,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				$resultAttribs['data-translation'] = $helpers->getTranslation();
 				$resultAttribs['data-group'] = $groupId;
 
-				$uri = wfAppendQuery( $document['uri'], array( 'action' => 'edit' ) );
+				$uri = $title->getLocalUrl( array( 'action' => 'edit' ) );
 				$link = Html::element(
 					'a',
 					array( 'href' => $uri ),
@@ -217,6 +252,63 @@ class SpecialSearchTranslations extends SpecialPage {
 		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
 
 		$this->showSearch( $search, $count, $facetHtml, $resultsHtml );
+	}
+
+	/*
+	 * Extract messages from the resultset and build message definitions.
+	 * Create a message collection from the definitions in the target language.
+	 * Filter the message collection to get filtered messages.
+	 * Slice messages according to limit and offset given.
+	 */
+	protected function extractMessages( $resultset, $offset, $limit ) {
+		$messages = $documents = $ret = array();
+		$server = TTMServer::primary();
+
+		$language = $this->getLanguage()->getCode();
+		foreach ( $resultset->getResults() as $document ) {
+			$data = $document->getData();
+
+			if ( !$server->isLocalSuggestion( $data ) ) {
+				continue;
+			}
+
+			$title = Title::newFromText( $data['localid'] );
+			if ( !$title ) {
+				continue;
+			}
+
+			$handle = new MessageHandle( $title );
+			if ( !$handle->isValid() ) {
+				continue;
+			}
+
+			$key = $title->getNamespace() . ':' . $title->getDBKey();
+			$messages[$key] = $data['content'];
+		}
+
+		$definitions = new MessageDefinitions( $messages );
+		$collection = MessageCollection::newFromDefinitions( $definitions, $language );
+		$collection->filter( 'hastranslation', true );
+
+		$total = count( $collection );
+		$offset = $collection->slice( $offset, $limit );
+		$left = count( $collection );
+
+		$offsets = array(
+			'start' => $offset[2],
+			'left' => $left,
+			'total' => $total,
+		);
+
+		foreach ( $collection->keys() as $mkey => $title ) {
+			$documents[$mkey]['content'] = $messages[$mkey];
+			$handle = new MessageHandle( $title );
+			$documents[$mkey]['localid'] = $handle->getTitleForBase()->getPrefixedText();
+			$documents[$mkey]['language'] = $language;
+			$ret[] = $documents[$mkey];
+		}
+
+		return array( $ret, $offsets );
 	}
 
 	protected function getLanguages( array $facet ) {
