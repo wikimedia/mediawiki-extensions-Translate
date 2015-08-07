@@ -145,6 +145,7 @@
 	"translate-translations-history-short": "h",
 	"languagestats": "Statisteche d'a lènghe",
 	"languagestats-summary": "Sta pàgene face vedè le traduziune pe tutte le gruppe de messàgge pe 'na lènghe.",
+	"messagegroupstats-summary": "Sta pàgene face 'ndrucà le statisteche de le gruppe de messàgge.",
 	"languagestats-stats-for": "Statisteche de le traduziune pe $1 ($2).",
 	"languagestats-recenttranslations": "traduziune recende",
 	"translate-langstats-expand": "spanne",
@@ -258,10 +259,6 @@
 	"translate-dynagroup-recent-label": "Traduziune recende",
 	"translate-dynagroup-additions-label": "Urteme aggiunde",
 	"translate-dynagroup-additions-desc": "Stu gruppe de messàgge face vedè le messàgge nuève e cangiate.",
-	"translate-dynagroup-by": "Traduziona fatte da {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "Traduziona fatte da {{GENDER:$1|$1}} ($2)",
-	"translate-dynagroup-last": "Urteme cangiamende de {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Urteme cangiamende de {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Ajute",
 	"translate-msggroupselector-projects": "Gruppe de messàgge",
 	"translate-msggroupselector-search-placeholder": "Gruppe de ricerche",
@@ -332,6 +329,7 @@
 	"tux-empty-show-optional-messages": "Fà vedè le messàgge opzionale",
 	"tux-empty-no-outdated-messages": "Nisciune messàgge da aggiornà",
 	"tux-empty-nothing-to-proofread": "Ninde da rivedè",
+	"tux-empty-you-can-help-providing": "Tu puè dà 'na màne danne traduziune nuève",
 	"tux-empty-nothing-new-to-proofread": "Ninde de nuève da rivedè",
 	"tux-empty-you-can-review-already-proofread": "Tu puè revedè le traduziune ggià riviste da l'otre.",
 	"tux-empty-list-other": "Ninde da traducere",
@@ -349,5 +347,6 @@
 	"translate-statsbar-tooltip": "$1% tradotte, $2% reviste",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tradotte, $2% reviste, $3% da aggiornà",
 	"translate-search-more-groups-info": "$1 cchiù {{PLURAL:$1|gruppe}}",
-	"translate-ulsdep-title": "Errore de configurazione"
+	"translate-ulsdep-title": "Errore de configurazione",
+	"translate-ulsdep-body": "L'estenzione de traduzione depenne da l'[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector estenzione Scacchiatore Universale de Lènghe]."
 }
