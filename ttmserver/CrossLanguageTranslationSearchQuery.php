@@ -67,7 +67,7 @@ class CrossLanguageTranslationSearchQuery {
 	protected function extractMessages( $resultset, $offset, $limit ) {
 		$messages = $documents = $ret = array();
 
-		$language = RequestContext::getMain()->getLanguage()->getCode();
+		$language = $this->params['language'];
 		foreach ( $resultset->getResults() as $document ) {
 			$data = $document->getData();
 
