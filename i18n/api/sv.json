@@ -28,8 +28,8 @@
 	"apihelp-translationstash-param-translation": "Översättning som gjorts av användaren.",
 	"apihelp-translationstash-param-metadata": "JSON-objekt.",
 	"apihelp-ttmserver-param-service": "Vilken av de tillgängliga översättningstjänsterna som bör användas.",
-	"apihelp-ttmserver-param-sourcelanguage": "En språkkod för källtexten.",
-	"apihelp-ttmserver-param-targetlanguage": "En språkkod för förslaget.",
+	"apihelp-ttmserver-param-sourcelanguage": "Språkkoden för källtexten.",
+	"apihelp-ttmserver-param-targetlanguage": "Språkkoden för förslaget.",
 	"apihelp-ttmserver-param-text": "Texten att hitta förslag på.",
 	"apihelp-ttmserver-example-1": "Få förslag för att översätta \"Hjälp\" från engelska till finska"
 }
