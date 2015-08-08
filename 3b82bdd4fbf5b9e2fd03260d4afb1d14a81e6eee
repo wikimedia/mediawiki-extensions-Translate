@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_c78b22c3",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-08T16:31:36Z",
+      "side": 1,
+      "message": "if (",
+      "revId": "3b82bdd4fbf5b9e2fd03260d4afb1d14a81e6eee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_67b82e75",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-08T16:31:36Z",
+      "side": 1,
+      "message": "This doesn\u0027t look correct.",
+      "revId": "3b82bdd4fbf5b9e2fd03260d4afb1d14a81e6eee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_e7abbe19",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-08T16:31:36Z",
+      "side": 1,
+      "message": "This class should not know about this.",
+      "revId": "3b82bdd4fbf5b9e2fd03260d4afb1d14a81e6eee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
