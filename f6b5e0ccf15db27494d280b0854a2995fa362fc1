@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_47a0923e",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-08T16:28:29Z",
+      "side": 1,
+      "message": "Needs i18n",
+      "revId": "f6b5e0ccf15db27494d280b0854a2995fa362fc1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_e7841eb8",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-08T16:28:29Z",
+      "side": 1,
+      "message": "Doesn\u0027t this mean, that if I have case sensitive checkbox checked, wildcard search no longer works?",
+      "revId": "f6b5e0ccf15db27494d280b0854a2995fa362fc1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
