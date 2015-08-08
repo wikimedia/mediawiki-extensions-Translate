@@ -574,7 +574,7 @@ GROOVY;
 
 		// Check that we have at least one filter to avoid invalid query errors.
 		if ( $language !== '' || $group !== '' ) {
-			$query->setFilter( $filters );
+			$query->setPostFilter( $filters );
 		}
 
 		list( $pre, $post ) = $highlight;
