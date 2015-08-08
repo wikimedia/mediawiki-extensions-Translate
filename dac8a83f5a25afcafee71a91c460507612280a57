@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_67c34e0b",
+        "filename": "i18n/search/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-08T16:23:19Z",
+      "side": 1,
+      "message": "These two should use variables, $1, $2 etc.",
+      "revId": "dac8a83f5a25afcafee71a91c460507612280a57",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_87c8ba26",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-08T16:23:19Z",
+      "side": 1,
+      "message": "Filter can be an empty string.",
+      "revId": "dac8a83f5a25afcafee71a91c460507612280a57",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_27cd4635",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-08T16:23:19Z",
+      "side": 1,
+      "message": "Do not mix tabs and spaces.\n\nThere should be a comment somewhere listing all the message keys used here to help grepping.",
+      "revId": "dac8a83f5a25afcafee71a91c460507612280a57",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_e7d65ec8",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-08T16:23:19Z",
+      "side": 1,
+      "message": "Why space?",
+      "revId": "dac8a83f5a25afcafee71a91c460507612280a57",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_67ea6e75",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-08T16:23:19Z",
+      "side": 1,
+      "message": "class be an array iirc",
+      "revId": "dac8a83f5a25afcafee71a91c460507612280a57",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_87ef5a82",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-08T16:23:19Z",
+      "side": 1,
+      "message": "tabs",
+      "revId": "dac8a83f5a25afcafee71a91c460507612280a57",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
