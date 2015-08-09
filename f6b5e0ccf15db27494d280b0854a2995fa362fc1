@@ -33,6 +33,24 @@
       "revId": "f6b5e0ccf15db27494d280b0854a2995fa362fc1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_6c49ee69",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-09T18:43:44Z",
+      "side": 1,
+      "message": "yes.\nWe could modify it to work either of the following ways:\n1. Search for \u0027Private Wikipe*\u0027 \u003d\u003e searches for \u0027Private\u0027(case sensitive) and \u0027Wikipe*\u0027(wildcard but case insensitive)\n2. Search for \u0027Private Wikipe*\u0027 \u003d\u003e searches for \u0027Private\u0027(case sensitive) and \u0027Wikipe*\u0027 (case sensitive with wildcard). This approach would increase the index size.\nWhich option should we go for?",
+      "parentUuid": "6ec1af18_e7841eb8",
+      "revId": "f6b5e0ccf15db27494d280b0854a2995fa362fc1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
