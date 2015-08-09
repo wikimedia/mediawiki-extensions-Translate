@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_f90fe239",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-09T17:54:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_e7fdfe39",
+      "revId": "c8bed172ea1d1b9e5347252fb464b228439e0b78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_07fb6a45",
         "filename": "specials/SpecialSearchTranslations.php",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_190d0e42",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-09T17:54:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_07fb6a45",
+      "revId": "c8bed172ea1d1b9e5347252fb464b228439e0b78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_a7f7f655",
         "filename": "specials/SpecialSearchTranslations.php",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-08T16:25:27Z",
       "side": 1,
       "message": "Consider using Xml::select or similar class.",
+      "revId": "c8bed172ea1d1b9e5347252fb464b228439e0b78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_d906a623",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-09T17:54:40Z",
+      "side": 1,
+      "message": "Using Html::rawElement to create select element.",
+      "parentUuid": "6ec1af18_a7f7f655",
       "revId": "c8bed172ea1d1b9e5347252fb464b228439e0b78",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
