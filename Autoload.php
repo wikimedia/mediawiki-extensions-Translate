@@ -165,6 +165,7 @@ $al['RemoteTTMServer'] = "$dir/ttmserver/RemoteTTMServer.php";
 $al['SolrTTMServer'] = "$dir/ttmserver/SolrTTMServer.php";
 $al['TTMServer'] = "$dir/ttmserver/TTMServer.php";
 $al['TTMServerMessageUpdateJob'] = "$dir/ttmserver/TTMServerMessageUpdateJob.php";
+$al['CrossLanguageTranslationSearchQuery'] = "$dir/ttmserver/CrossLanguageTranslationSearchQuery.php";
 /**@}*/
 
 /**

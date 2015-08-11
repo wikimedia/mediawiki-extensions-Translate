@@ -549,8 +549,8 @@ GROOVY;
 		$group->setSize( 500 );
 		$query->addFacet( $group );
 
-		$query->setSize( $opts->getValue( 'limit' ) );
-		$query->setFrom( $opts->getValue( 'offset' ) );
+		$query->setSize( $opts['limit'] );
+		$query->setFrom( $opts['offset'] );
 
 		// BoolAnd filters are executed in sequence per document. Bool filters with
 		// multiple must clauses are executed by converting each filter into a bit
@@ -558,14 +558,14 @@ GROOVY;
 		// of the subfilters are reused. May not make a difference in this context.
 		$filters = new \Elastica\Filter\Bool();
 
-		$language = $opts->getValue( 'language' );
+		$language = $opts['language'];
 		if ( $language !== '' ) {
 			$languageFilter = new \Elastica\Filter\Term();
 			$languageFilter->setTerm( 'language', $language );
 			$filters->addMust( $languageFilter );
 		}
 
-		$group = $opts->getValue( 'group' );
+		$group = $opts['group'];
 		if ( $group !== '' ) {
 			$groupFilter = new \Elastica\Filter\Term();
 			$groupFilter->setTerm( 'group', $group );
