@@ -300,6 +300,10 @@
 					.append(
 						$( '<div>' )
 							.addClass( 'nine columns suggestiontext' )
+							.attr( {
+								lang: translation.language,
+								dir: $.uls.data.getDir( translation.language )
+							} )
 							.text( translation.target ),
 						$( '<div>' )
 							.addClass( 'three columns quality text-right' )
@@ -355,6 +359,10 @@
 					.append(
 						$( '<div>' )
 							.addClass( 'nine columns suggestiontext' )
+							.attr( {
+								lang: translation.language,
+								dir: $.uls.data.getDir( translation.language )
+							} )
 							.text( translation.target ),
 						$( '<div>' )
 							.addClass( 'three columns text-right service' )
