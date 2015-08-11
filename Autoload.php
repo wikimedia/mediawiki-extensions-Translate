@@ -30,6 +30,7 @@ $al['TranslateEditAddons'] = "$dir/TranslateEditAddons.php";
 $al['TranslateHooks'] = "$dir/TranslateHooks.php";
 $al['TranslateTasks'] = "$dir/TranslateTasks.php";
 $al['TranslateUtils'] = "$dir/TranslateUtils.php";
+$al['CrossLanguageTranslationSearchQuery'] = "$dir/CrossLanguageTranslationSearchQuery.php";
 /**@}*/
 
 /**
