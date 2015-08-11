@@ -106,7 +106,7 @@ interface SearchableTTMServer {
 	 * Performs a search in the translation database.
 	 *
 	 * @param string $queryString String to search for.
-	 * @param FormOptions $opts Query options like language.
+	 * @param array $opts Query options like language.
 	 * @param array $highlight Tags for highlighting.
 	 * @return mixed Result set
 	 */

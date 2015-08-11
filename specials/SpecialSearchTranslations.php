@@ -83,39 +83,16 @@ class SpecialSearchTranslations extends SpecialPage {
 			return;
 		}
 
+		$params = $opts->getAllValues();
 		$filter = $opts->getValue( 'filter' );
 		try {
 			if ( $filter !== '' ) {
-				$documents = array();
-				$total = $start = 0;
-				$offset = $opts->getValue( 'offset' );
-				$limit = $opts->getValue( 'limit' );
-				$size = 1000;
-
-				$options = clone( $opts );
-				$options->setValue( 'limit', $size );
-				$options->setValue( 'language', $opts->getValue( 'sourcelanguage' ) );
-				do {
-					$options->setValue( 'offset', $start );
-					$resultset = $server->search( $queryString, $options, $this->hl );
-
-					list( $results, $offsets ) = $this->extractMessages(
-						$resultset,
-						$offset,
-						$limit
-					);
-					$offset = $offsets['start'] + $offsets['left'] - $offsets['total'];
-					$limit = $limit - $offsets['left'];
-					$total = $total + $offsets['total'];
-
-					$documents = array_merge( $documents, $results );
-					$start = $start + $size;
-				} while (
-					$offsets['start'] + $offsets['left'] >= $offsets['total'] &&
-					$resultset->getTotalHits() > $start
-				);
+				$translationSearch = new CrossLanguageTranslationSearchQuery( $params, $server );
+				$documents = $translationSearch->getDocuments();
+				$total = $translationSearch->getTotalHits();
+				$resultset = $translationSearch->getResultSet();
 			} else {
-				$resultset = $server->search( $queryString, $opts, $this->hl );
+				$resultset = $server->search( $queryString, $params, $this->hl );
 				$documents = $server->getDocuments( $resultset );
 				$total = $server->getTotalHits( $resultset );
 			}
@@ -252,63 +229,6 @@ class SpecialSearchTranslations extends SpecialPage {
 		$count = $this->msg( 'tux-sst-count' )->numParams( $total );
 
 		$this->showSearch( $search, $count, $facetHtml, $resultsHtml );
-	}
-
-	/*
-	 * Extract messages from the resultset and build message definitions.
-	 * Create a message collection from the definitions in the target language.
-	 * Filter the message collection to get filtered messages.
-	 * Slice messages according to limit and offset given.
-	 */
-	protected function extractMessages( $resultset, $offset, $limit ) {
-		$messages = $documents = $ret = array();
-		$server = TTMServer::primary();
-
-		$language = $this->getLanguage()->getCode();
-		foreach ( $resultset->getResults() as $document ) {
-			$data = $document->getData();
-
-			if ( !$server->isLocalSuggestion( $data ) ) {
-				continue;
-			}
-
-			$title = Title::newFromText( $data['localid'] );
-			if ( !$title ) {
-				continue;
-			}
-
-			$handle = new MessageHandle( $title );
-			if ( !$handle->isValid() ) {
-				continue;
-			}
-
-			$key = $title->getNamespace() . ':' . $title->getDBKey();
-			$messages[$key] = $data['content'];
-		}
-
-		$definitions = new MessageDefinitions( $messages );
-		$collection = MessageCollection::newFromDefinitions( $definitions, $language );
-		$collection->filter( 'hastranslation', true );
-
-		$total = count( $collection );
-		$offset = $collection->slice( $offset, $limit );
-		$left = count( $collection );
-
-		$offsets = array(
-			'start' => $offset[2],
-			'left' => $left,
-			'total' => $total,
-		);
-
-		foreach ( $collection->keys() as $mkey => $title ) {
-			$documents[$mkey]['content'] = $messages[$mkey];
-			$handle = new MessageHandle( $title );
-			$documents[$mkey]['localid'] = $handle->getTitleForBase()->getPrefixedText();
-			$documents[$mkey]['language'] = $language;
-			$ret[] = $documents[$mkey];
-		}
-
-		return array( $ret, $offsets );
 	}
 
 	protected function getLanguages( array $facet ) {

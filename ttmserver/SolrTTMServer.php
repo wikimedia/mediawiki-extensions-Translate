@@ -349,8 +349,8 @@ class SolrTTMServer
 		$dismax = $query->getDisMax();
 		$dismax->setQueryParser( 'edismax' );
 		$query->setQuery( $queryString );
-		$query->setRows( $opts->getValue( 'limit' ) );
-		$query->setStart( $opts->getValue( 'offset' ) );
+		$query->setRows( $opts['limit'] );
+		$query->setStart( $opts['offset'] );
 
 		list( $pre, $post ) = $highlight;
 		$hl = $query->getHighlighting();
@@ -361,14 +361,14 @@ class SolrTTMServer
 		$hl->setFragSize( '5000' );
 		$hl->setSnippets( 1 );
 
-		$languageFilter = $opts->getValue( 'language' );
+		$languageFilter = $opts['language'];
 		if ( $languageFilter !== '' ) {
 			$query->createFilterQuery( 'languageFilter' )
 				->setQuery( 'language:%P1%', array( $languageFilter ) )
 				->addTag( 'filter' );
 		}
 
-		$groupFilter = $opts->getValue( 'group' );
+		$groupFilter = $opts['group'];
 		if ( $groupFilter !== '' ) {
 			$query->createFilterQuery( 'groupFilter' )
 				->setQuery( 'group:%P1%', array( $groupFilter ) )
