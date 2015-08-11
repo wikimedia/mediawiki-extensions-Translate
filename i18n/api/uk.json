@@ -1,11 +1,31 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ypryima"
+			"Ypryima",
+			"Base"
 		]
 	},
+	"apihelp-aggregategroups-description": "Керування агрегованими групами повідомлень.\n\nВи можете додавати або вилучати агреговані групи повідомлень та додавати чи вилучати повідомлення з них (одне за раз).",
+	"apihelp-aggregategroups-param-do": "Що робити з агрегованою групою повідомлень.",
+	"apihelp-aggregategroups-param-aggregategroup": "Ідентифікатор агрегованої групи повідомлень.",
+	"apihelp-aggregategroups-param-group": "Ідентифікатор групи повідомлень.",
+	"apihelp-aggregategroups-param-groupname": "Назва агрегованої групи повідомлень.",
+	"apihelp-aggregategroups-param-groupdescription": "Опис агрегованої групи повідомлень.",
+	"apihelp-aggregategroups-example-1": "Додати до групи",
+	"apihelp-groupreview-description": "Встановити повідомлення робочого процесу групи.",
+	"apihelp-groupreview-param-group": "Група повідомлень.",
 	"apihelp-groupreview-param-language": "Мовний код.",
+	"apihelp-groupreview-param-state": "Новий стан для групи",
+	"apihelp-groupreview-example-1": "Позначити групу «group-Example» як готову для німецької",
+	"apihelp-query+languagestats-description": "Запитати мовну статистику.",
+	"apihelp-query+languagestats-param-timelimit": "Максимальний час, який витратити на обчислення пропущеної статистики. Якщо нуль, лише кешовані результати з початку буде повернено.",
+	"apihelp-query+languagestats-param-language": "Код мови.",
+	"apihelp-query+languagestats-example-1": "Перелічити статистику завершеності перекладу фінською",
+	"apihelp-query+messagecollection-description": "Запитати MessageCollection про переклади.",
+	"apihelp-query+messagecollection-param-group": "Група повідомлень.",
+	"apihelp-query+messagecollection-param-language": "Код мови.",
 	"apihelp-query+messagecollection-param-limit": "Скільки повідомлень показувати (після фільтрації)",
+	"apihelp-query+messagecollection-param-offset": "Цілочислове зміщення або його ключ для початку.",
 	"apihelp-translatesandbox-param-username": "Ім'я користувача при створенні користувача.",
 	"apihelp-translationreview-example-1": "Перевірка версій",
 	"apihelp-translationstash-param-metadata": "JSON об'єкт"

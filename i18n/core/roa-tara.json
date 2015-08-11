@@ -216,6 +216,7 @@
 	"translate-js-save-failed": "Reggistrazione fallite. Pe piacere segnale st'errore.",
 	"translate-js-history": "Cunde d'a traduzione",
 	"translate-js-support": "Fà 'na domande",
+	"translate-js-support-unsaved-warning": "Tu è tradiziune non reggistrate.",
 	"translate-gs-pos": "Pos.",
 	"translate-gs-code": "Codece",
 	"translate-gs-continent": "Continende",

@@ -3,11 +3,13 @@
 		"authors": [
 			"Beta16",
 			"Pippinu",
-			"F. Cosoleto"
+			"F. Cosoleto",
+			"Statix64"
 		]
 	},
 	"searchtranslations": "Ricerca traduzioni",
 	"tux-sst-edit": "Modifica traduzione",
+	"tux-sst-view-foreign": "Visualizza su $1",
 	"tux-sst-search": "Cerca",
 	"tux-sst-search-ph": "Cerca traduzioni",
 	"tux-sst-count": "{{PLURAL:$1|Un risultato trovato|$1 risultati trovati}}",
