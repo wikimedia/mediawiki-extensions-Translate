@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ricordisamoa",
-			"F. Cosoleto"
+			"F. Cosoleto",
+			"Statix64"
 		]
 	},
 	"apihelp-query+languagestats-param-language": "Codice lingua.",
@@ -19,5 +20,8 @@
 	"apihelp-ttmserver-param-sourcelanguage": "Il codice della lingua del testo di partenza.",
 	"apihelp-ttmserver-param-targetlanguage": "Il codice della lingua del suggerimento.",
 	"apihelp-ttmserver-param-text": "Testo per il quale trovare suggerimenti.",
-	"apihelp-ttmserver-example-1": "Ottieni suggerimenti per la traduzione di \"help\" dall'inglese al finlandese"
+	"apihelp-ttmserver-example-1": "Ottieni suggerimenti per la traduzione di \"help\" dall'inglese al finlandese",
+	"apihelp-searchtranslations-description": "Cerca traduzioni.",
+	"apihelp-searchtranslations-param-limit": "Dimensione del risultato.",
+	"apihelp-searchtranslations-example-1": "Mostra le traduzioni per la lingua."
 }

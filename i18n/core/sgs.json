@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hugo.arg"
+		]
+	},
+	"translate-untranslated": "Napargoldītė",
+	"translate-percentage-fuzzy": "Vetošė",
+	"tux-tab-all": "Vėsė",
+	"tux-tab-untranslated": "Napargoldītė",
+	"tux-tab-outdated": "Vetošė",
+	"tux-tab-translated": "Pargoldītė",
+	"tux-status-fuzzy": "Vetošė",
+	"tux-editor-save-button-label": "Ėšsauguotė pargoldīma",
+	"tux-editor-skip-button-label": "Ētė ont kėta",
+	"tux-editor-clear-translated": "Kavuotė tous, katrėi pargoldītė īr"
+}
