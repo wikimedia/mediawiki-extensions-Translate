@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_14da9e78",
+        "filename": "ttmserver/CrossLanguageTranslationSearchQuery.php",
+        "patchSetId": 26
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-12T15:28:20Z",
+      "side": 1,
+      "message": "[6a9f8671] /wiki/Special:SearchTranslations?query\u003duser\u0026language\u003dfi\u0026filter\u003dfoo MWException from line 352 of /www/dev.translatewiki.net/docroot/w/extensions/Translate/MessageCollection.php: Unknown filter foo",
+      "revId": "8db2779d4a152198d91c75cb35ea0490f2912a14",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
