@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_4e27340e",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-12T08:32:57Z",
+      "side": 1,
+      "message": "Isn\u0027t $options a good array already?",
+      "revId": "61d329fe54a447edc12eae3f2b5f23c50e8a1f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_ee2380fe",
+        "filename": "ttmserver/CrossLanguageTranslationSearchQuery.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-12T08:32:57Z",
+      "side": 1,
+      "message": "array $params, SearchableTTMServer $server",
+      "revId": "61d329fe54a447edc12eae3f2b5f23c50e8a1f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_0e212cf6",
+        "filename": "ttmserver/CrossLanguageTranslationSearchQuery.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-12T08:32:57Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it be easier to change ElasticSearchTTMServer to take an array instead?",
+      "revId": "61d329fe54a447edc12eae3f2b5f23c50e8a1f78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
