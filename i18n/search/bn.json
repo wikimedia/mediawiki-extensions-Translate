@@ -8,6 +8,7 @@
 	},
 	"searchtranslations": "অনুবাদ অনুসন্ধান",
 	"tux-sst-edit": "অনুবাদ সম্পাদনা",
+	"tux-sst-view-foreign": "$1-এ দেখুন",
 	"tux-sst-search": "অনুসন্ধান",
 	"tux-sst-search-ph": "অনুবাদ অনুসন্ধান",
 	"tux-sst-count": "{{PLURAL:$1|একটি ফলাফল পাওয়া গিয়েছে|$1টি ফলাফল পাওয়া গিয়েছে}}",
