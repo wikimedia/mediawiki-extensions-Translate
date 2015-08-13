@@ -97,6 +97,7 @@
 				$messageDescViewer,
 				$messageDoc,
 				readMore,
+				langAttr,
 				$readMore = null;
 
 			if ( !mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
@@ -120,24 +121,23 @@
 				// lang and dir attributes.
 				// The message documentation is assumed to be written
 				// in the content language of the wiki.
+				langAttr = {
+					lang: documentation.language,
+					dir: documentationDir
+				};
+
 				// Possible classes:
 				// * mw-content-ltr
 				// * mw-content-rtl
 				// (The direction classes are needed, because the documentation
 				// is likely to be MediaWiki-formatted text.)
 				$messageDoc
-					.attr( {
-						lang: documentation.language,
-						dir: documentationDir
-					} )
+					.attr( langAttr )
 					.addClass( 'mw-content-' + documentationDir )
 					.html( documentation.html );
 
 				this.$editor.find( '.tux-textarea-documentation' )
-					.attr( {
-						lang: documentation.language,
-						dir: documentationDir
-					} )
+					.attr( langAttr )
 					.val( documentation.value );
 
 				$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
@@ -212,28 +212,24 @@
 			$translationTextarea = this.$editor.find( '.tux-textarea-translation' );
 
 			$.each( translations, function ( index ) {
-				var $otherLanguage,
-					translationDir,
+				var $otherLanguage, langAttr,
 					translation = translations[index];
 
-				translationDir = $.uls.data.getDir( translation.language );
+				langAttr = {
+					lang: translation.language,
+					dir: $.uls.data.getDir( translation.language )
+				};
 
 				$otherLanguage = $( '<div>' )
 					.addClass( 'row in-other-language' )
 					.append(
 						$( '<div>' )
 							.addClass( 'nine columns suggestiontext' )
-							.attr( {
-								lang: translation.language,
-								dir: translationDir
-							} )
+							.attr( langAttr )
 							.text( translation.value ),
 						$( '<div>' )
 							.addClass( 'three columns language text-right' )
-							.attr( {
-								lang: translation.language,
-								dir: translationDir
-							} )
+							.attr( langAttr )
 							.text( $.uls.data.getAutonym( translation.language ) )
 					);
 
@@ -250,7 +246,7 @@
 		 * @param {array} suggestions A ttmserver array as returned by API.
 		 */
 		showTranslationMemory: function ( suggestions ) {
-			var $heading, $tmSuggestions,
+			var $heading, $tmSuggestions, $messageList, translationLang, translationDir,
 				translateEditor = this;
 
 			if ( !suggestions.length ) {
@@ -262,6 +258,10 @@
 
 			$heading = this.$editor.find( '.tm-suggestions-title' );
 			$heading.after( $tmSuggestions );
+
+			$messageList = $( '.tux-messagelist' );
+			translationLang = $messageList.data( 'targetlangcode' );
+			translationDir = $messageList.data( 'targetlangdir' );
 
 			$.each( suggestions, function ( index, translation ) {
 				var $translation,
@@ -301,8 +301,8 @@
 						$( '<div>' )
 							.addClass( 'nine columns suggestiontext' )
 							.attr( {
-								lang: translation.language,
-								dir: $.uls.data.getDir( translation.language )
+								lang: translationLang,
+								dir: translationDir
 							} )
 							.text( translation.target ),
 						$( '<div>' )
@@ -334,7 +334,7 @@
 		 * @param {array} suggestions
 		 */
 		showMachineTranslations: function ( suggestions ) {
-			var $mtSuggestions,
+			var $mtSuggestions, $messageList, translationLang, translationDir,
 				translateEditor = this;
 
 			if ( !suggestions.length ) {
@@ -351,6 +351,10 @@
 				.removeClass( 'hide' )
 				.after( $mtSuggestions );
 
+			$messageList = $( '.tux-messagelist' );
+			translationLang = $messageList.data( 'targetlangcode' );
+			translationDir = $messageList.data( 'targetlangdir' );
+
 			$.each( suggestions, function ( index, translation ) {
 				var $translation;
 
@@ -360,8 +364,8 @@
 						$( '<div>' )
 							.addClass( 'nine columns suggestiontext' )
 							.attr( {
-								lang: translation.language,
-								dir: $.uls.data.getDir( translation.language )
+								lang: translationLang,
+								dir: translationDir
 							} )
 							.text( translation.target ),
 						$( '<div>' )
@@ -438,8 +442,8 @@
 				// on the wrong end.
 				$( '<button>' )
 					.prop( {
-						dir: $sourceMessage.prop( 'dir' ),
-						lang: $sourceMessage.prop( 'lang' )
+						lang: $sourceMessage.prop( 'lang' ),
+						dir: $sourceMessage.prop( 'dir' )
 					} )
 					.addClass( 'insertable shortcut-activated' )
 					.text( insertables[i].display )
