@@ -16,6 +16,24 @@
       "revId": "33bb339309ab84beeeb9db0f1b686dfdf4ff1f2b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_1477e8d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2015-08-14T17:31:38Z",
+      "side": 1,
+      "message": "IIUC, the translation object is for translations to assistant languages, and then it includes the language info for each. TM is by definition in the page\u0027s default target language.",
+      "parentUuid": "6ec1af18_14004869",
+      "revId": "33bb339309ab84beeeb9db0f1b686dfdf4ff1f2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
