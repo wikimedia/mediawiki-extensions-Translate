@@ -12,14 +12,9 @@ class ApiSearchTranslations extends ApiBase {
 		$config = $wgTranslateTranslationServices[$params['service']];
 		$server = TTMServer::factory( $config );
 
-		$opts = new FormOptions();
-		foreach ( $params as $param => $value ) {
-			$opts->add( $param, $value );
-		}
-
 		$searchResults = $server->search(
 			$params['query'],
-			$opts,
+			$params,
 			array( '', '' )
 		);
 
