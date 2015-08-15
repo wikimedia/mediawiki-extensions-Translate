@@ -190,6 +190,7 @@
 			grouppath;
 
 		level = level || 0;
+		groupList.sort( sortGroups );
 		if ( level === 0 ) {
 			groupList = groupList.splice( 0, maxListSize );
 		}
