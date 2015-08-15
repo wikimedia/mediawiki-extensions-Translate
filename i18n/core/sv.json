@@ -293,10 +293,7 @@
 	"action-translate-sandboxaction": "utför vitlistade åtgärder för sandlådeanvändare",
 	"translate-workflow-state-": "(inte inställd)",
 	"translate-workflowstatus": "Status: $1",
-	"translate-workflow-set-do": "Ställ in",
 	"translate-workflow-set-doing": "Ställer in...",
-	"translate-workflow-set-done": "Inställd!",
-	"translate-workflow-set-error-alreadyset": "Den begärda statusen är identisk med aktuell status.",
 	"translate-workflow-autocreated-summary": "Automatisk skapelse av sida för arbetsflödesstatus $1",
 	"translate-stats-workflow": "Status",
 	"translate-workflowgroup-label": "Arbetsflödesstatus",
@@ -305,10 +302,6 @@
 	"translate-dynagroup-recent-desc": "Denna meddelandegrupp visar alla de senaste översättningar på detta språk.\nFrämst användbar för granskningsuppgifter.",
 	"translate-dynagroup-additions-label": "Senaste tillägg",
 	"translate-dynagroup-additions-desc": "Denna meddelandegrupp visar nya och ändrade meddelanden.",
-	"translate-dynagroup-by": "Översatt av {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "Översatt av {{GENDER:$1|$1}} ($2)",
-	"translate-dynagroup-last": "Senaste ändring av {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Senaste ändring av {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Hjälp",
 	"translate-msggroupselector-projects": "Meddelandegrupp",
 	"translate-msggroupselector-search-placeholder": "Sök grupper",
@@ -400,5 +393,5 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|till grupp|fler grupper}}",
 	"translate-ulsdep-title": "Konfigurationsfel",
 	"translate-ulsdep-body": "Översättningstillägget är beroende av [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector]-tillägget.",
-	"tux-session-expired": "Du är inte längre inloggad. Vänligen logga in i en separat flik. Alternativt, gör en kopia av osparade översättningar, logga in och gå tillbaka till denna sida."
+	"tux-session-expired": "Du är inte längre inloggad. Vänligen logga in i en separat flik. Alternativt kan du göra en kopia av osparade översättningar, logga in, gå tillbaka till denna sida och klistra in din översättningar igen."
 }
