@@ -205,6 +205,7 @@ class CommandlineExport extends Maintenance {
 				foreach ( $langs as $index => $code ) {
 					if ( !isset( $stats[$code] ) ) {
 						unset( $langs[$index] );
+						continue;
 					}
 
 					$total = $stats[$code][MessageGroupStats::TOTAL];
