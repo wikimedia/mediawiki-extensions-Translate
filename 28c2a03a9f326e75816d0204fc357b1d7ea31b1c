@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_4dccfa8c",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-15T20:30:42Z",
+      "side": 1,
+      "message": "Catchable fatal error: Argument 2 passed to CrossLanguageTranslationSearchQuery::__construct() must implement interface SearchableTTMServer, RemoteTTMServer given in /www/dev.translatewiki.net/docroot/w/extensions/Translate/ttmserver/CrossLanguageTranslationSearchQuery.php on line 24",
+      "revId": "28c2a03a9f326e75816d0204fc357b1d7ea31b1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_6dc9b67a",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-15T20:30:42Z",
+      "side": 1,
+      "message": "This probably needs further filtering here based on type/class.",
+      "revId": "28c2a03a9f326e75816d0204fc357b1d7ea31b1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_adcf9e81",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-15T20:30:42Z",
+      "side": 1,
+      "message": "You could set the allowed values here.",
+      "revId": "28c2a03a9f326e75816d0204fc357b1d7ea31b1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_0da6f2be",
+        "filename": "i18n/api/en.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-15T20:30:42Z",
+      "side": 1,
+      "message": "Perhaps: Message translation status filter.",
+      "revId": "28c2a03a9f326e75816d0204fc357b1d7ea31b1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_2dabae87",
+        "filename": "i18n/api/en.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-15T20:30:42Z",
+      "side": 1,
+      "message": "maybe \"non-existing translations\" -\u003e \"untranslated messages matching the query in the source language\"",
+      "revId": "28c2a03a9f326e75816d0204fc357b1d7ea31b1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
