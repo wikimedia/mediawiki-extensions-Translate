@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_b2de1f6f",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-15T18:06:01Z",
+      "side": 1,
+      "message": "You need to check that title is valid.\n\nCatchable fatal error: Argument 1 passed to MessageHandle::__construct() must be an instance of Title, null given in /www/dev.translatewiki.net/docroot/w/extensions/Translate/utils/MessageHandle.php on line 28\n\nwhen searching for \"happy :]\"",
+      "revId": "d248296d57501474954924b49457fdcad000c8b4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
