@@ -34,6 +34,24 @@
       "revId": "33bb339309ab84beeeb9db0f1b686dfdf4ff1f2b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_52bd7b15",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-15T17:50:14Z",
+      "side": 1,
+      "message": "I don\u0027t feel comfortable with such assumptions. Think about TUXifying Special:Translations where each translation is in a different language.",
+      "parentUuid": "6ec1af18_1477e8d2",
+      "revId": "33bb339309ab84beeeb9db0f1b686dfdf4ff1f2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
