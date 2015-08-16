@@ -11,7 +11,8 @@
 			"아라",
 			"Priviet",
 			"Revi",
-			"Bluemersen"
+			"Bluemersen",
+			"Infinity"
 		]
 	},
 	"translate": "번역하기",
@@ -88,7 +89,7 @@
 	"translate-magic-saved": "바뀜을 성공적으로 저장했습니다.",
 	"translate-checks-parameters": "다음 {{PLURAL:$2|변수가}} 사용되지 않았습니다:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "다음 {{PLURAL:$2|변수를}} 알 수 없습니다:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-balance": "{{PLURAL:$2|괄호}}의 고르지 않은 개수가 있습니다:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-balance": "열고 닫는 {{PLURAL:$2|괄호}}의 수가 일치하지 않습니다:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "다음 {{PLURAL:$2|링크|링크 $2개}}에 문제가 있습니다:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "다음 {{PLURAL:$2|링크|링크 $2개}}가 없습니다:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "올바른 것과 함께 다음과 같은 {{PLURAL:$2|태그}}를 바꾸세요:\n<strong><nowiki>$1</nowiki></strong>",
