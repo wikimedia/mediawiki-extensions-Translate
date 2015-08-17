@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_6e81a64e",
+        "filename": "api/ApiSearchTranslations.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-17T19:31:55Z",
+      "side": 1,
+      "message": "I prefer \"TTMServer::factory( $config ) instanceof SearchableTTMServer\"",
+      "revId": "f4db5b6d26737d1592f31d70831ab458a2586acd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
