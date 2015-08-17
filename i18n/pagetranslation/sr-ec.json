@@ -41,6 +41,7 @@
 	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Почните превођења на овом језику",
 	"tpt-languages-nonzero": "$1 ($2% преведено)",
+	"tpt-tab-translate": "Преведи",
 	"tpt-discouraged-language-reason": "Разлог: $1",
 	"tpt-aggregategroup-add": "Додај",
 	"tpt-aggregategroup-save": "Сачувај",
@@ -55,6 +56,7 @@
 	"logentry-pagetranslation-mark": "$1 је {{GENDER:$2|означио|означила}} страницу $3 за превођење",
 	"logentry-pagetranslation-deletefok": "$1 је {{GENDER:$2|обрисао|обрисала}} преводиву страницу $3",
 	"logentry-pagetranslation-deletelok": "$1 је {{GENDER:$2|обрисао|обрисала}} преводиву страницу $3",
+	"logentry-pagetranslation-prioritylanguages": "$1 је {{GENDER:$2|одредио|одредила}} приоритетне језике за преводиву страницу $3: $5",
 	"pt-movepage-title": "Премештање преводиве странице $1",
 	"pt-movepage-block-base-exists": "Циљна основна страница [[:$1]] постоји.",
 	"pt-movepage-block-base-invalid": "Циљ преводиве странице не представља исправан назив.",
@@ -95,5 +97,6 @@
 	"pm-pagename-placeholder": "Унесите назив странице",
 	"pm-langcode-placeholder": "Код језика",
 	"pp-pagename-placeholder": "Унесите назив странице",
-	"pp-save-button-label": "Сачувај"
+	"pp-save-button-label": "Сачувај",
+	"pp-cancel-button-label": "Откажи"
 }
