@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ypryima",
-			"Base"
+			"Base",
+			"Ата"
 		]
 	},
 	"apihelp-aggregategroups-description": "Керування агрегованими групами повідомлень.\n\nВи можете додавати або вилучати агреговані групи повідомлень та додавати чи вилучати повідомлення з них (одне за раз).",
@@ -26,6 +27,16 @@
 	"apihelp-query+messagecollection-param-language": "Код мови.",
 	"apihelp-query+messagecollection-param-limit": "Скільки повідомлень показувати (після фільтрації)",
 	"apihelp-query+messagecollection-param-offset": "Цілочислове зміщення або його ключ для початку.",
+	"apihelp-query+messagecollection-param-filter": "Фільтри збірок повідомлень. Використовуйте <kbd>!</kbd>, щоб відкинути умову. Наприклад, <kbd>!fuzzy</kbd> означатиме виведення списку лише не застарілих повідомлень. Фільтри застосовуються у поданому порядку.\n;fuzzy:Повідомлення з міткою застарілості.\n;optional:Повідомлення, які треба перекладати, лише зміни необхідні.\n;ignored:Повідомлення, які не перекладаються.\n;hastranslation:Повідомлення, для яких є переклад не залежно від того, застарілий чи ні.\n;translated:Повідомлення, які мають актуальні переклади.\n;changed:Повідомлення, які було перекладено чи змінено з часу попереднього звіту.\n;reviewer&#58;N:Повідомлення, які перевіряв користувач номер <kbd>N</kbd>.\n;last-translator&#58;N:Повідомлення, для яких користувач номер <kbd>N</kbd> є останнім перекладачем.",
+	"apihelp-query+messagecollection-param-prop": "Які властивості отримати:\n;definition:Повідомлення.\n;translation:Поточний переклад (без рядка $1, якщо є, використати теґи для перевірки застарілих чи поламаних перекладів).\n;tags:Теґи повідомлення, наприклад optional, ignored чи fuzzy.\n;properties:Властивості повідомлення: status, revision, last-translator. Можуть відрізнятися у різних повідомлень.\n;revision:<span class=\"deprecated\">Застаріло!</span> Використати $2prop=properties.",
+	"apihelp-query+messagecollection-example-1": "Список підтримуваних мов",
+	"apihelp-query+messagecollection-example-2": "Список не додаткових повідомлень для групи «page-Example»",
+	"apihelp-query+messagecollection-example-3": "Список додаткових повідомлень фінською мовою з теґами для групи «page-Example»",
+	"apihelp-query+messagecollection-example-4": "Більше інформації про останні версії перекладів для групи «page-Example»",
+	"apihelp-query+messagegroups-description": "Видати інформацію про групи повідомлень.\n\nЗверніть увагу, що параметр uselang впливає на результати частин, що залежать від мови.",
+	"apihelp-query+messagegroups-param-depth": "При використанні формату дерева, обмежити глибину до такої кількості рівнів. Значення 0 означає, що жодні підгрупи не відображаються. Якщо ліміту досягнуто, результат включає значення «groupcount», яке містить кількість безпосередніх підгруп.",
+	"apihelp-query+messagegroups-param-filter": "Видавати лише повідомлення з ідентифікаторами, які відповідають одному або кільком поданим характеристикам (без урахування регістру, розділені вертикальною рискою, байдужий символ *).",
+	"apihelp-query+messagegroups-param-format": "У деревоподібному форматі групи повідомлень можуть існувати в декількох місцях дерева.",
 	"apihelp-translatesandbox-param-username": "Ім'я користувача при створенні користувача.",
 	"apihelp-translationreview-example-1": "Перевірка версій",
 	"apihelp-translationstash-param-metadata": "JSON об'єкт"
