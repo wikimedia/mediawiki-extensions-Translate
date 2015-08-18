@@ -56,13 +56,13 @@
 			$count,
 			result,
 			i,
-			selectedClasss = '',
 			docLanguageCode,
 			languageCode,
 			quickLanguageList = [],
 			unique = [],
 			regions,
-			$ulsTrigger;
+			$ulsTrigger,
+			languageLabel;
 
 		$languages = $( '.facet.languages' );
 		languages = $languages.data( 'facets' );
@@ -112,21 +112,20 @@
 			}
 
 			if ( currentLanguage === languageCode ) {
-				selectedClasss = 'selected';
-			} else {
-				selectedClasss = '';
+				languageLabel = mw.config.get( 'wgULSLanguages' )[languageCode] || languageCode;
+				addToSelectedBox( languageLabel, result.url );
 			}
 
 			$languages.append( $( '<div>')
 				.addClass( 'row facet-item' )
 				.append( $( '<span>')
-					.addClass('facet-name ' + selectedClasss )
+					.addClass( 'facet-name' )
 					.append( $('<a>')
 						.attr( 'href', result.url )
 						.text( mw.config.get( 'wgULSLanguages' )[languageCode] || languageCode )
 					),
 					$( '<span>')
-						.addClass('facet-count')
+						.addClass( 'facet-count' )
 						.text( result.count )
 				)
 			);
@@ -176,7 +175,6 @@
 	function listGroups( groupList, parentGrouppath, $parent, level ) {
 		var i,
 			$grouSelectorTrigger,
-			selectedClass = '',
 			group,
 			groupId,
 			$groupRow,
@@ -219,23 +217,22 @@
 			uri.extend( { 'group': groupId, 'grouppath': grouppath } );
 
 			if ( currentGroup === groupId ) {
-				selectedClass = 'selected';
 				uri.extend( { 'group': '', 'grouppath': '' } );
+				addToSelectedBox( group.label, uri.toString() );
 			} else {
-				selectedClass = '';
 				uri.extend( { 'group': groupId, 'grouppath': grouppath } );
 			}
 
 			$groupRow = $( '<div>' )
 				.addClass( 'row facet-item ' + ' facet-level-' + level )
 				.append( $( '<span>' )
-					.addClass( 'facet-name ' + selectedClass)
+					.addClass( 'facet-name' )
 					.append( $( '<a>' )
 						.attr( 'href', uri.toString() )
 						.text( group.label )
 					),
 					$( '<span>' )
-						.addClass( 'facet-count ' + selectedClass )
+						.addClass( 'facet-count' )
 						.text( mw.language.convertNumber( group.count ) )
 				);
 			$parent.append( $groupRow );
@@ -312,5 +309,21 @@
 	function getParameterByName( name ) {
 		var uri = new mw.Uri();
 		return uri.query[ name ] || '';
+	}
+
+	function addToSelectedBox( label, link ) {
+		$( '.tux-searchpage .selectedbox' ).append( $( '<div>' )
+			.addClass( 'row facet-item' )
+			.append( $( '<span>' )
+				.addClass( 'facet-name selected' )
+				.append( $( '<a>' )
+					.attr( 'href', link )
+					.text( label )
+				),
+				$( '<span>' )
+					.addClass( 'facet-count' )
+					.text( 'X' )
+			)
+		);
 	}
 }( jQuery, mediaWiki ) );

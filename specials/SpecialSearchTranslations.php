@@ -315,11 +315,12 @@ class SpecialSearchTranslations extends SpecialPage {
 	protected function showSearch( $search, $count, $facets, $results ) {
 		$this->getOutput()->addHtml( <<<HTML
 <div class="grid tux-searchpage">
-	<div class="row searchinput">
-		<div class="nine columns offset-by-three">$search</div>
-	</div>
-	<div class="row count">
-		<div class="nine columns offset-by-three">$count</div>
+	<div class="row">
+		<div class="three columns selectedbox"></div>
+		<div class="nine columns">
+			<div class="row searchinput">$search</div>
+			<div class="row count">$count</div>
+		</div>
 	</div>
 	<div class="row searchcontent">
 		<div class="three columns facets">$facets</div>
