@@ -335,11 +335,12 @@ class SpecialSearchTranslations extends SpecialPage {
 		$messageSelector = $this->messageSelector();
 		$this->getOutput()->addHtml( <<<HTML
 <div class="grid tux-searchpage">
-	<div class="row searchinput">
-		<div class="nine columns offset-by-three">$messageSelector $search</div>
-	</div>
-	<div class="row count">
-		<div class="nine columns offset-by-three">$count</div>
+	<div class="row tux-searchboxform">
+		<div class="tux-search-tabs offset-by-three">$messageSelector</div>
+		<div class="nine columns">
+			<div class="row searchinput">$search</div>
+			<div class="row count">$count</div>
+		</div>
 	</div>
 HTML
 		);
