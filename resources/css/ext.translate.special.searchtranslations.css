@@ -184,3 +184,8 @@ h1.firstHeading {
 .tux-searchpage .successbox {
 	margin-left: 25%;
 }
+
+.tux-searchpage .tux-selectedbox .facet-item {
+	background-color: #EDEDED;
+	margin-right: 5px;
+}
