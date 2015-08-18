@@ -167,3 +167,8 @@ h1.firstHeading {
 	font-size: 14px;
 	padding: 0 8px;
 }
+
+.tux-searchpage .tux-selectedbox .facet-item {
+	background-color: #EDEDED;
+	margin-right: 5px;
+}
