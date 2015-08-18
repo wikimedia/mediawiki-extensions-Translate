@@ -8,11 +8,6 @@
 
 		resultGroups = $( '.facet.groups' ).data( 'facets' );
 
-		// Make the whole rows clickable
-		$( '.facet-item' ).click( function () {
-			window.location = $( this ).find( 'a' ).attr( 'href' );
-		} );
-
 		$messages.each( function () {
 			var $this = $( this );
 
@@ -28,8 +23,14 @@
 
 		$messages.last().addClass( 'last-message' );
 
+		buildSelectedBox();
 		showLanguages();
 		showMessageGroups();
+
+		// Make the whole rows clickable
+		$( '.tux-searchpage .row .facet-item' ).click( function () {
+			location = $( this ).find( 'a' ).attr( 'href' );
+		} );
 	} );
 
 	// ES5-compatible Chrome, IE 9+, FF 4+, or Safari 5+ has Object.keys.
@@ -62,7 +63,8 @@
 			quickLanguageList = [],
 			unique = [],
 			regions,
-			$ulsTrigger;
+			$ulsTrigger,
+			languageLabel;
 
 		$languages = $( '.facet.languages' );
 		languages = $languages.data( 'facets' );
@@ -107,12 +109,14 @@
 		for ( i = 0; i <= quickLanguageList.length; i++ ) {
 			languageCode = quickLanguageList[i];
 			result = languages[languageCode];
+			languageLabel = mw.config.get( 'wgULSLanguages' )[languageCode] || languageCode;
 			if ( !result ) {
 				continue;
 			}
 
 			if ( currentLanguage === languageCode ) {
 				selectedClasss = 'selected';
+				addToSelectedBox( languageLabel, result.url );
 			} else {
 				selectedClasss = '';
 			}
@@ -120,13 +124,13 @@
 			$languages.append( $( '<div>')
 				.addClass( 'row facet-item' )
 				.append( $( '<span>')
-					.addClass('facet-name ' + selectedClasss )
+					.addClass( 'facet-name ' + selectedClasss )
 					.append( $('<a>')
 						.attr( 'href', result.url )
 						.text( mw.config.get( 'wgULSLanguages' )[languageCode] || languageCode )
 					),
 					$( '<span>')
-						.addClass('facet-count')
+						.addClass( 'facet-count' )
 						.text( result.count )
 				)
 			);
@@ -221,6 +225,7 @@
 			if ( currentGroup === groupId ) {
 				selectedClass = 'selected';
 				uri.extend( { 'group': '', 'grouppath': '' } );
+				addToSelectedBox( group.label, uri.toString() );
 			} else {
 				selectedClass = '';
 				uri.extend( { 'group': groupId, 'grouppath': grouppath } );
@@ -229,13 +234,13 @@
 			$groupRow = $( '<div>' )
 				.addClass( 'row facet-item ' + ' facet-level-' + level )
 				.append( $( '<span>' )
-					.addClass( 'facet-name ' + selectedClass)
+					.addClass( 'facet-name ' + selectedClass )
 					.append( $( '<a>' )
 						.attr( 'href', uri.toString() )
 						.text( group.label )
 					),
 					$( '<span>' )
-						.addClass( 'facet-count ' + selectedClass )
+						.addClass( 'facet-count' )
 						.text( mw.language.convertNumber( group.count ) )
 				);
 			$parent.append( $groupRow );
@@ -312,5 +317,29 @@
 	function getParameterByName( name ) {
 		var uri = new mw.Uri();
 		return uri.query[ name ] || '';
+	}
+
+	// Build a selected box to show the selected items
+	function buildSelectedBox() {
+		$( '.tux-searchpage .tux-searchboxform .tux-search-tabs' ).after(
+			$( '<div>' )
+			.addClass( 'three columns tux-selectedbox' )
+		);
+	}
+
+	function addToSelectedBox( label, url ) {
+		$( '.tux-searchpage .tux-selectedbox' ).append( $( '<div>' )
+			.addClass( 'row facet-item' )
+			.append( $( '<span>' )
+				.addClass( 'facet-name selected' )
+				.append( $( '<a>' )
+					.attr( 'href', url )
+					.text( label )
+				),
+				$( '<span>' )
+					.addClass( 'facet-count' )
+					.text( 'X' )
+			)
+		);
 	}
 }( jQuery, mediaWiki ) );
