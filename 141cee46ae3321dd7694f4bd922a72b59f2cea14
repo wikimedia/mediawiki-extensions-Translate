@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_07fb1c78",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-19T10:58:03Z",
+      "side": 1,
+      "message": "would overflow...",
+      "revId": "141cee46ae3321dd7694f4bd922a72b59f2cea14",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_a7a4889f",
+        "filename": "i18n/search/en.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-19T10:58:03Z",
+      "side": 1,
+      "message": "Don\u0027t forget message documentation.\n\nThis should probably be \"Translations containing\" or just \"Translations\"",
+      "revId": "141cee46ae3321dd7694f4bd922a72b59f2cea14",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_27e738e1",
+        "filename": "i18n/search/en.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-19T10:58:03Z",
+      "side": 1,
+      "message": "Better to avoid lego here and have messages for \"Translations from $1\" \"No translation from $1\" and \"Outdated translations from $1\" + separate messages for the items used in the \u0027...\u0027. The word \"of\" is imho not needed here.",
+      "revId": "141cee46ae3321dd7694f4bd922a72b59f2cea14",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
