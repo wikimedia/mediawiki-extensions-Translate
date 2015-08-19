@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_62376eac",
+        "filename": "i18n/search/qqq.json",
+        "patchSetId": 12
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-19T13:33:01Z",
+      "side": 1,
+      "message": "Should mention that parameter $1 is the message tux-sst-link-all-match.",
+      "revId": "c279c952800e49b17186a28d6e8182cf4b1003ca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_e2427e10",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-19T13:33:01Z",
+      "side": 1,
+      "message": "I would trim the query value just in case.\n\nvar_dump( preg_split( \u0027/\\s+/\u0027, \u0027  word  \u0027 ) );\narray(3) {\n  [0]\u003d\u003e\n  string(0) \"\"\n  [1]\u003d\u003e\n  string(4) \"word\"\n  [2]\u003d\u003e\n  string(0) \"\"\n}\n\nyou can also simplify by using preg_match( \u0027/\\s/\u0027, trimmed valued );",
+      "revId": "c279c952800e49b17186a28d6e8182cf4b1003ca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_82685a85",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-19T13:33:01Z",
+      "side": 1,
+      "message": "array $opts",
+      "revId": "c279c952800e49b17186a28d6e8182cf4b1003ca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
