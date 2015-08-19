@@ -6,7 +6,8 @@
 			"아라",
 			"Priviet",
 			"Revi",
-			"Hwangjy9"
+			"Hwangjy9",
+			"Kurousagi"
 		]
 	},
 	"managetranslatorsandbox": "번역자 연습장 관리",
@@ -34,7 +35,7 @@
 	"tsb-reminder-link-text": "이메일 알림 보내기",
 	"tsb-didnt-make-any-translations": "이 사용자는 번역한 적이 없습니다.",
 	"tsb-translations-source": "출처",
-	"tsb-translations-user": "{{GENDER:$1|사용자}} 번역",
+	"tsb-translations-user": "{{GENDER:$1|사용자}}의 번역",
 	"tsb-translations-current": "기존 번역",
 	"tsb-delete-userpage-summary": "연습 사용자의 사용자 문서 삭제",
 	"translationstash": "환영합니다",

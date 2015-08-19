@@ -80,9 +80,12 @@
 	"apihelp-searchtranslations-description": "חיפוש תרגומים.",
 	"apihelp-searchtranslations-param-service": "באילו משירותי התרגום הזמינים להשתמש.",
 	"apihelp-searchtranslations-param-query": "איזו מחרוזת לחפש.",
+	"apihelp-searchtranslations-param-sourcelanguage": "קוד השפה של טקסט המקור.",
 	"apihelp-searchtranslations-param-language": "קוד השפה לחיפוש מחרוזת.",
 	"apihelp-searchtranslations-param-group": "מזהה הקבוצה לחיפוש המחרוזת.",
+	"apihelp-searchtranslations-param-filter": "מסנן מצב תרגום הודעה.",
 	"apihelp-searchtranslations-param-offset": "היסט לתרגומים.",
 	"apihelp-searchtranslations-param-limit": "גודל התוצאה.",
-	"apihelp-searchtranslations-example-1": "הצגת תרגומים בשפה."
+	"apihelp-searchtranslations-example-1": "הצגת תרגומים בשפה.",
+	"apihelp-searchtranslations-example-2": "הצגת הודעות לא מתורגמות שמתאימות לשאילתה בשפת המקור."
 }

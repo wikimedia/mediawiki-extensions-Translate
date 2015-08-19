@@ -79,9 +79,12 @@
 	"apihelp-searchtranslations-description": "Пребарајте преводи.",
 	"apihelp-searchtranslations-param-service": "Која од расположивите преводни служби да се користи.",
 	"apihelp-searchtranslations-param-query": "Низата што треба да се побара.",
+	"apihelp-searchtranslations-param-sourcelanguage": "Јазичниот код на изворниот текст.",
 	"apihelp-searchtranslations-param-language": "На кој јазичен код се бара низата.",
 	"apihelp-searchtranslations-param-group": "Назнака на групата во која се бара низата.",
+	"apihelp-searchtranslations-param-filter": "Филтер за статус на преводи.",
 	"apihelp-searchtranslations-param-offset": "Отстап за преводите.",
 	"apihelp-searchtranslations-param-limit": "Големина на исходот.",
-	"apihelp-searchtranslations-example-1": "Прикажи преводи на овој јазик."
+	"apihelp-searchtranslations-example-1": "Прикажи преводи на овој јазик.",
+	"apihelp-searchtranslations-example-2": "Приказ на непреведени статии што одвораваат на бараното на изворниот јазик."
 }

@@ -73,5 +73,6 @@
 	"apihelp-searchtranslations-param-group": "El identificador de grupo en el que buscar la cadena.",
 	"apihelp-searchtranslations-param-offset": "\"Offset\" para las traducciones.",
 	"apihelp-searchtranslations-param-limit": "Tamaño del resultado.",
-	"apihelp-searchtranslations-example-1": "Mostrar las traducciones para el idioma."
+	"apihelp-searchtranslations-example-1": "Mostrar las traducciones para el idioma.",
+	"apihelp-searchtranslations-example-2": "Mostrar mensajes sin traducir que coincidan con la consulta en el idioma de origen."
 }

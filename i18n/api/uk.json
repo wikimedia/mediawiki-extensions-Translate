@@ -3,7 +3,8 @@
 		"authors": [
 			"Ypryima",
 			"Base",
-			"Ата"
+			"Ата",
+			"Dars"
 		]
 	},
 	"apihelp-aggregategroups-description": "Керування агрегованими групами повідомлень.\n\nВи можете додавати або вилучати агреговані групи повідомлень та додавати чи вилучати повідомлення з них (одне за раз).",
@@ -39,5 +40,6 @@
 	"apihelp-query+messagegroups-param-format": "У деревоподібному форматі групи повідомлень можуть існувати в декількох місцях дерева.",
 	"apihelp-translatesandbox-param-username": "Ім'я користувача при створенні користувача.",
 	"apihelp-translationreview-example-1": "Перевірка версій",
-	"apihelp-translationstash-param-metadata": "JSON об'єкт"
+	"apihelp-translationstash-param-metadata": "JSON об'єкт",
+	"apihelp-searchtranslations-example-2": "Показати запит на подібні неперекладені збіги мовою оригіналу."
 }
