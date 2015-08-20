@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_72f652c4",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-20T19:39:41Z",
+      "side": 1,
+      "message": "\"preg_match() returns 1 if the pattern matches given subject, 0 if it does not, or FALSE if an error occurred.\"\n\nI would rename it to $hasSpace and drop \"\u003e 0\".",
+      "revId": "b0e44cd6b431c24ea8917d0ef3d5bde57f3f24f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
