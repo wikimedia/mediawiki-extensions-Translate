@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_abee8aaf",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-20T09:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_e217def1",
+      "revId": "bee2a5e11aa943d363d0a8994dfe0aaaab18e1b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_62dbee54",
         "filename": "resources/js/ext.translate.special.searchtranslations.js",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-19T13:42:58Z",
       "side": 1,
       "message": "It might not be necessary to drop the selected highlighting in the list, even though it duplicated information.",
+      "revId": "bee2a5e11aa943d363d0a8994dfe0aaaab18e1b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_cbe996a8",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-20T09:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_62dbee54",
       "revId": "bee2a5e11aa943d363d0a8994dfe0aaaab18e1b2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_ebf49285",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-20T09:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_82f5bab7",
+      "revId": "bee2a5e11aa943d363d0a8994dfe0aaaab18e1b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_42bfd2cd",
         "filename": "resources/js/ext.translate.special.searchtranslations.js",
         "patchSetId": 1
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_0bf0fe8c",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-20T09:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_42bfd2cd",
+      "revId": "bee2a5e11aa943d363d0a8994dfe0aaaab18e1b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_c2d2e22b",
         "filename": "specials/SpecialSearchTranslations.php",
         "patchSetId": 1
@@ -81,6 +153,24 @@
       "writtenOn": "2015-08-19T13:42:58Z",
       "side": 1,
       "message": "It would be nice if you build the whole html for selectedbox either here or in JavaScript.",
+      "revId": "bee2a5e11aa943d363d0a8994dfe0aaaab18e1b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_4bfe0668",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-08-20T09:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_c2d2e22b",
       "revId": "bee2a5e11aa943d363d0a8994dfe0aaaab18e1b2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
