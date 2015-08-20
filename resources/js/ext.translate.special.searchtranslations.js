@@ -334,7 +334,7 @@
 		var matches,
 			counter = false,
 			// Add operators for different filters
-			operatorRegex = [ 'language' , 'group' ];
+			operatorRegex = [ 'language' , 'group', 'filter' ];
 
 		$.each( operatorRegex, function ( index, value ) {
 			var regex = new RegExp( value + ':(\\S+)', 'i' );
