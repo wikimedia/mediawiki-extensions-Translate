@@ -82,5 +82,6 @@
 	"apihelp-searchtranslations-param-group": "要搜索字符串的组id。",
 	"apihelp-searchtranslations-param-offset": "用于译文的抵消。",
 	"apihelp-searchtranslations-param-limit": "结果大小。",
-	"apihelp-searchtranslations-example-1": "显示用于语言的翻译。"
+	"apihelp-searchtranslations-example-1": "显示用于语言的翻译。",
+	"apihelp-searchtranslations-example-2": "显示在原始语言中匹配查询未翻译信息。"
 }

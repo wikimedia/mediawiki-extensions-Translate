@@ -85,9 +85,12 @@
 	"apihelp-searchtranslations-description": "Rechercher des traductions.",
 	"apihelp-searchtranslations-param-service": "Quels services de traduction disponibles utiliser.",
 	"apihelp-searchtranslations-param-query": "La chaîne à rechercher.",
+	"apihelp-searchtranslations-param-sourcelanguage": "Le code de langue du texte de la source.",
 	"apihelp-searchtranslations-param-language": "Le code de langue pour lequel rechercher la chaîne.",
 	"apihelp-searchtranslations-param-group": "L’id de groupe où rechercher la chaîne.",
+	"apihelp-searchtranslations-param-filter": "Filtre d’état de traduction de message.",
 	"apihelp-searchtranslations-param-offset": "Décalage pour les traductions.",
 	"apihelp-searchtranslations-param-limit": "Taille du résultat.",
-	"apihelp-searchtranslations-example-1": "Afficher les traductions pour la langue."
+	"apihelp-searchtranslations-example-1": "Afficher les traductions pour la langue.",
+	"apihelp-searchtranslations-example-2": "Afficher les messages non traduits correspondant à la demande dans la langue source."
 }
