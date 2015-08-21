@@ -18,5 +18,13 @@
 	"tux-sst-solr-offline-title": "Пребарувањето е недостапно",
 	"tux-sst-solr-offline-body": "Пребарувањето е привремено недостапно.",
 	"tux-sst-next": "Следно ›",
-	"tux-sst-prev": "‹ Претходно"
+	"tux-sst-prev": "‹ Претходно",
+	"tux-sst-default": "Преводи",
+	"tux-sst-translated": "Преводи од $1",
+	"tux-sst-untranslated": "Нема превод од $1",
+	"tux-sst-outdated": "Застарени преводи од $1",
+	"tux-sst-ellipsis-untranslated": "Нема превод",
+	"tux-sst-ellipsis-outdated": "Застарени преводи",
+	"tux-sst-link-all-match": "Да мора сите да се совпаднат.",
+	"tux-sst-match-message": "Прикажани се преводите што одговараат на било кој од пребараните зборови. $1"
 }

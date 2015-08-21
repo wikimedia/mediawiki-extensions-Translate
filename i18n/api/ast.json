@@ -79,9 +79,12 @@
 	"apihelp-searchtranslations-description": "Buscar traducciones.",
 	"apihelp-searchtranslations-param-service": "Que servicios de traducción usar d'ente los disponibles.",
 	"apihelp-searchtranslations-param-query": "La cadena que buscar.",
+	"apihelp-searchtranslations-param-sourcelanguage": "El códigu de llingua del testu fonte.",
 	"apihelp-searchtranslations-param-language": "El códigu de llingua pal que buscar la cadena.",
 	"apihelp-searchtranslations-param-group": "La id de grupu nel que buscar la cadena.",
+	"apihelp-searchtranslations-param-filter": "Filtru d'estáu de traducción del mensaxe",
 	"apihelp-searchtranslations-param-offset": "\"Offset\" pa les traducciones.",
 	"apihelp-searchtranslations-param-limit": "Tamañu del resultáu.",
-	"apihelp-searchtranslations-example-1": "Amosar les traducciones de la llingua."
+	"apihelp-searchtranslations-example-1": "Amosar les traducciones de la llingua.",
+	"apihelp-searchtranslations-example-2": "Amosar los mensaxes sin traducir que casen cola consulta na llingua orixinal"
 }

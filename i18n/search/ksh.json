@@ -18,5 +18,13 @@
 	"tux-sst-solr-offline-title": "Söhke es nit müjjelesch.",
 	"tux-sst-solr-offline-body": "Et Söhke es em Momang nit müjjelesch.",
 	"tux-sst-next": "De Nähkße ›",
-	"tux-sst-prev": "‹ De Förrėje"
+	"tux-sst-prev": "‹ De Förrėje",
+	"tux-sst-default": "Övversäzonge",
+	"tux-sst-translated": "Översäzonge us em $1 ",
+	"tux-sst-untranslated": "Kein Översäzonge us em $1 ",
+	"tux-sst-outdated": "Övverhollte Översäzonge us em $1 ",
+	"tux-sst-ellipsis-untranslated": "Kein Övversäzong",
+	"tux-sst-ellipsis-outdated": "Övverhollte Översäzonge",
+	"tux-sst-link-all-match": "Donn noh all dä Wööter soöhke.",
+	"tux-sst-match-message": "Mer zeije Översäzonge, di winneschsdens eij Woot vun all dä Wööter änthallde.\n$1"
 }

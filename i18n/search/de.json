@@ -18,5 +18,13 @@
 	"tux-sst-solr-offline-title": "Die Suche ist nicht verfügbar",
 	"tux-sst-solr-offline-body": "Der Suchdienst ist derzeit nicht verfügbar.",
 	"tux-sst-next": "Nächste ›",
-	"tux-sst-prev": "‹ Vorherige"
+	"tux-sst-prev": "‹ Vorherige",
+	"tux-sst-default": "Übersetzungen",
+	"tux-sst-translated": "Übersetzungen von $1",
+	"tux-sst-untranslated": "Keine Übersetzung von $1",
+	"tux-sst-outdated": "Veraltete Übersetzungen von $1",
+	"tux-sst-ellipsis-untranslated": "Keine Übersetzung",
+	"tux-sst-ellipsis-outdated": "Veraltete Übersetzungen",
+	"tux-sst-link-all-match": "Alle Suchwörter erforderlich machen.",
+	"tux-sst-match-message": "Es werden Übersetzungen angezeigt, die mit jedem Suchwort übereinstimmen. $1"
 }

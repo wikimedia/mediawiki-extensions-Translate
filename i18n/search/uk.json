@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Base",
-			"Ата"
+			"Ата",
+			"Dars"
 		]
 	},
 	"searchtranslations": "Пошук перекладів",
@@ -18,5 +19,11 @@
 	"tux-sst-solr-offline-title": "Пошук не доступний",
 	"tux-sst-solr-offline-body": "Сервіс пошуку тимчасово недоступний.",
 	"tux-sst-next": "Далі ›",
-	"tux-sst-prev": "‹ Назад"
+	"tux-sst-prev": "‹ Назад",
+	"tux-sst-default": "Переклади",
+	"tux-sst-untranslated": "Немає перекладу від $1",
+	"tux-sst-outdated": "Застарілі переклади від $1",
+	"tux-sst-ellipsis-outdated": "Застарілі переклади",
+	"tux-sst-link-all-match": "Потребуються всі слова пошуку.",
+	"tux-sst-match-message": "Показані переклади, в яких збігається хоча б одне із пошукових слів. $1"
 }

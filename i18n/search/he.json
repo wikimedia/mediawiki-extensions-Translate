@@ -18,5 +18,13 @@
 	"tux-sst-solr-offline-title": "החיפוש אינו זמין",
 	"tux-sst-solr-offline-body": "זמנית שירות החיפוש אינו זמין.",
 	"tux-sst-next": "הבאות ›",
-	"tux-sst-prev": "‹ הקודמות"
+	"tux-sst-prev": "‹ הקודמות",
+	"tux-sst-default": "תרגומים",
+	"tux-sst-translated": "תרגומים מ־$1",
+	"tux-sst-untranslated": "אין תרגומים מ־$1",
+	"tux-sst-outdated": "תרגומים מיושנים מ־$1",
+	"tux-sst-ellipsis-untranslated": "אין תרגום",
+	"tux-sst-ellipsis-outdated": "תרגומים מיושנים",
+	"tux-sst-link-all-match": "לדרוש את כל מילות החיפוש.",
+	"tux-sst-match-message": "הצגת תרגומים שמתאימים למילה כלשהי ממילות החיפוש. $1"
 }

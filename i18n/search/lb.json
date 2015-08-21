@@ -18,5 +18,11 @@
 	"tux-sst-solr-offline-title": "Sichen ass net disponibel",
 	"tux-sst-solr-offline-body": "D'Sichfonctioun ass temporär net disponibel.",
 	"tux-sst-next": "Nächst ›",
-	"tux-sst-prev": "‹ Vireg"
+	"tux-sst-prev": "‹ Vireg",
+	"tux-sst-default": "Iwwersetzungen",
+	"tux-sst-translated": "Iwwersetzunge vu(n) $1",
+	"tux-sst-untranslated": "Keng Iwwersetzung vu(n) $1",
+	"tux-sst-outdated": "Vereelst Iwwersetzung vu(n) $1",
+	"tux-sst-ellipsis-untranslated": "Keng Iwwersetzung",
+	"tux-sst-ellipsis-outdated": " Vereelst Iwwersetzungen"
 }

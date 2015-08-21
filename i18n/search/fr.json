@@ -4,7 +4,8 @@
 			"Gomoko",
 			"Crochet.david",
 			"TomT0m",
-			"Wladek92"
+			"Wladek92",
+			"Titip1995"
 		]
 	},
 	"searchtranslations": "Recherche de traductions",
@@ -21,5 +22,8 @@
 	"tux-sst-solr-offline-title": "Recherche indisponible",
 	"tux-sst-solr-offline-body": "Le service de recherche est temporairement indisponible.",
 	"tux-sst-next": "Suivant →",
-	"tux-sst-prev": "< Précédent"
+	"tux-sst-prev": "< Précédent",
+	"tux-sst-default": "Traductions",
+	"tux-sst-ellipsis-untranslated": "Non traduit",
+	"tux-sst-ellipsis-outdated": "Traductions obsolètes"
 }

@@ -18,5 +18,13 @@
 	"tux-sst-solr-offline-title": "La gueta nun ta disponible",
 	"tux-sst-solr-offline-body": "El serviciu de gueta nun ta disponible temporalmente.",
 	"tux-sst-next": "Siguiente ›",
-	"tux-sst-prev": "‹ Anterior"
+	"tux-sst-prev": "‹ Anterior",
+	"tux-sst-default": "Traducciones",
+	"tux-sst-translated": "Traducciones del $1",
+	"tux-sst-untranslated": "Nun hai traducción del $1",
+	"tux-sst-outdated": "Traducciones anticuaes del $1",
+	"tux-sst-ellipsis-untranslated": "Sin traducción",
+	"tux-sst-ellipsis-outdated": "Traducciones anticuaes",
+	"tux-sst-link-all-match": "Riquir toles palabres buscaes.",
+	"tux-sst-match-message": "Amosar les traducciones que casen con cualesquiera de les palabres buscaes. $1"
 }
