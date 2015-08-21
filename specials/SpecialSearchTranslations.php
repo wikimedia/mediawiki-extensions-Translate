@@ -63,6 +63,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.searchtranslations' );
 		$out->addModuleStyles( 'ext.translate.special.translate' );
+		$this->addHelpLink( 'Help:Extension:Translate#searching' );
 
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );
