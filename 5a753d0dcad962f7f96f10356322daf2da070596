@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_815a8120",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-21T20:12:01Z",
+      "side": 1,
+      "message": "You should use checkLabel or in other ways to make sure that the checkbox toggles when the user clicks the \"Case sensitive\" text.",
+      "revId": "5a753d0dcad962f7f96f10356322daf2da070596",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
