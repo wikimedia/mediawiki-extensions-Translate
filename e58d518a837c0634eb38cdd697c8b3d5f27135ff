@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_d73e0b87",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-22T09:11:36Z",
+      "side": 1,
+      "message": "Language doesn\u0027t need to be quoted.",
+      "revId": "e58d518a837c0634eb38cdd697c8b3d5f27135ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
