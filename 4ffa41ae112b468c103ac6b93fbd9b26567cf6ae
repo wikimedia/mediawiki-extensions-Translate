@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_775ab723",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-22T07:30:03Z",
+      "side": 1,
+      "message": "333:    public static function addSpecialHelpLink( OutputPage $out, $to, $overrideBaseUrl \u003d false ) {",
+      "revId": "4ffa41ae112b468c103ac6b93fbd9b26567cf6ae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
