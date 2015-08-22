@@ -65,13 +65,19 @@
 			unique = [],
 			regions,
 			$ulsTrigger,
-			languageLabel;
+			uri;
 
 		$languages = $( '.facet.languages' );
 		languages = $languages.data( 'facets' );
 		currentLanguage = $languages.data( 'language' );
 		if ( !languages ) {
 			return;
+		}
+
+		if ( currentLanguage !== '' ) {
+			uri = new mw.Uri( location.href );
+			uri.extend( { 'language': '' } );
+			addToSelectedBox( getLanguageLabel( currentLanguage ), uri.toString() );
 		}
 
 		resultCount = Object.keys( languages ).length;
@@ -110,14 +116,12 @@
 		for ( i = 0; i <= quickLanguageList.length; i++ ) {
 			languageCode = quickLanguageList[i];
 			result = languages[languageCode];
-			languageLabel = mw.config.get( 'wgULSLanguages' )[languageCode] || languageCode;
 			if ( !result ) {
 				continue;
 			}
 
 			if ( currentLanguage === languageCode ) {
 				selectedClasss = 'selected';
-				addToSelectedBox( languageLabel, result.url );
 			} else {
 				selectedClasss = '';
 			}
@@ -128,7 +132,7 @@
 					.addClass( 'facet-name ' + selectedClasss )
 					.append( $('<a>')
 						.attr( 'href', result.url )
-						.text( mw.config.get( 'wgULSLanguages' )[languageCode] || languageCode )
+						.text( getLanguageLabel( languageCode ) )
 					),
 					$( '<span>')
 						.addClass( 'facet-count' )
@@ -318,6 +322,10 @@
 	function getParameterByName( name ) {
 		var uri = new mw.Uri();
 		return uri.query[ name ] || '';
+	}
+
+	function getLanguageLabel( languageCode ) {
+		return mw.config.get( 'wgULSLanguages' )[languageCode] || languageCode;
 	}
 
 	// Build a selected box to show the selected items
