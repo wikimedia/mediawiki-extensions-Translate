@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Protnet"
+			"Protnet",
+			"Stam.nikos"
 		]
 	},
 	"searchtranslations": "Αναζήτηση στις μεταφράσεις",
@@ -17,5 +18,10 @@
 	"tux-sst-solr-offline-title": "Αναζήτηση μη διαθέσιμη",
 	"tux-sst-solr-offline-body": "Η υπηρεσία αναζήτησης είναι προσωρινά μη διαθέσιμη.",
 	"tux-sst-next": "Επόμενα αποτελέσματα",
-	"tux-sst-prev": "Προηγούμενα αποτελέσματα"
+	"tux-sst-prev": "Προηγούμενα αποτελέσματα",
+	"tux-sst-default": "Μεταφράσεις",
+	"tux-sst-untranslated": "Καμία μετάφραση από τα $1",
+	"tux-sst-outdated": "Παρωχημένες μεταφράσεις από τα $1",
+	"tux-sst-ellipsis-outdated": "Παρωχημένες μεταφράσεις",
+	"tux-sst-link-all-match": "Απαιτούνται όλες οι λέξεις αναζήτησης."
 }

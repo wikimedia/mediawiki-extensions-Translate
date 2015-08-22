@@ -24,6 +24,9 @@
 	"tux-sst-next": "Suivant →",
 	"tux-sst-prev": "< Précédent",
 	"tux-sst-default": "Traductions",
+	"tux-sst-translated": "Traductions à partir de $1",
+	"tux-sst-untranslated": "Pas de traduction à partir de $1",
+	"tux-sst-outdated": "Traductions périmées à partir de $1",
 	"tux-sst-ellipsis-untranslated": "Non traduit",
 	"tux-sst-ellipsis-outdated": "Traductions obsolètes"
 }

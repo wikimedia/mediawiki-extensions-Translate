@@ -18,5 +18,11 @@
 	"tux-sst-solr-offline-title": "Wyszukiwanie nie jest dostępne",
 	"tux-sst-solr-offline-body": "Wyszukiwanie jest chwilowo niedostępne",
 	"tux-sst-next": "Następne ›",
-	"tux-sst-prev": "‹ Poprzednie"
+	"tux-sst-prev": "‹ Poprzednie",
+	"tux-sst-default": "Tłumaczenia",
+	"tux-sst-translated": "Tłumaczenia z $1",
+	"tux-sst-untranslated": "Brak tłumaczeń z $1",
+	"tux-sst-outdated": "Przestarzałe tłumaczenia z $1",
+	"tux-sst-ellipsis-untranslated": "Brak tłumaczeń",
+	"tux-sst-ellipsis-outdated": "Przestarzałe tłumaczenia"
 }
