@@ -73,6 +73,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$opts->add( 'grouppath', '' );
 		$opts->add( 'filter', '' );
 		$opts->add( 'match', '' );
+		$opts->add( 'case', '' );
 		$opts->add( 'limit', $this->limit );
 		$opts->add( 'offset', 0 );
 
@@ -501,11 +502,23 @@ HTML
 		$title = Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$input = Xml::input( 'query', false, $query, $attribs );
 		$submit = Xml::submitButton( $this->msg( 'tux-sst-search' ), array( 'class' => 'button' ) );
+
+		$nondefaults = $this->opts->getChangedValues();
+		$checkLabel = Xml::checkLabel(
+			$this->msg( 'tux-sst-case-sensitive' )->text(),
+			'case',
+			'tux-case-sensitive',
+			isset( $nondefaults['case'] )
+		);
+		$checkLabel = Html::openElement( 'div', array( 'class' => 'tux-search-operators' ) ) .
+			$checkLabel .
+			Html::closeElement( 'div' );
+
 		$lang = $this->getRequest()->getVal( 'language' );
 		$language = is_null( $lang ) ? '' : Html::hidden( 'language', $lang );
 
 		$form = Html::rawElement( 'form', array( 'action' => wfScript() ),
-			$title . $input . $submit . $language
+			$title . $input . $submit . $checkLabel . $language
 		);
 
 		return $form;
