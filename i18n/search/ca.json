@@ -17,5 +17,10 @@
 	"tux-sst-solr-offline-title": "Cerca no disponible",
 	"tux-sst-solr-offline-body": "El servei de cerca no està disponible temporalment.",
 	"tux-sst-next": "Resultats següents",
-	"tux-sst-prev": "Resultats anteriors"
+	"tux-sst-prev": "Resultats anteriors",
+	"tux-sst-default": "Traduccions",
+	"tux-sst-translated": "Traduccions de $1",
+	"tux-sst-outdated": "Traduccions desactualitzades de $1",
+	"tux-sst-ellipsis-untranslated": "Sense traducció",
+	"tux-sst-ellipsis-outdated": "Traduccions desactualitzades"
 }

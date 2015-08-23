@@ -18,5 +18,10 @@
 	"tux-sst-solr-offline-title": "無法使用搜尋",
 	"tux-sst-solr-offline-body": "暫時無法使用搜尋。",
 	"tux-sst-next": "下一頁 ›",
-	"tux-sst-prev": "‹ 上一頁"
+	"tux-sst-prev": "‹ 上一頁",
+	"tux-sst-default": "翻譯",
+	"tux-sst-translated": "翻譯自 $1",
+	"tux-sst-ellipsis-untranslated": "無翻譯",
+	"tux-sst-ellipsis-outdated": "已過時的翻譯",
+	"tux-sst-match-message": "顯示符合任何搜尋關鍵字的翻譯。$1"
 }

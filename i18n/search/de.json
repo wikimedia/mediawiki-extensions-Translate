@@ -26,5 +26,6 @@
 	"tux-sst-ellipsis-untranslated": "Keine Übersetzung",
 	"tux-sst-ellipsis-outdated": "Veraltete Übersetzungen",
 	"tux-sst-link-all-match": "Alle Suchwörter erforderlich machen.",
-	"tux-sst-match-message": "Es werden Übersetzungen angezeigt, die mit jedem Suchwort übereinstimmen. $1"
+	"tux-sst-match-message": "Es werden Übersetzungen angezeigt, die mit jedem Suchwort übereinstimmen. $1",
+	"tux-sst-case-sensitive": "Groß-/Kleinschreibung"
 }
