@@ -83,6 +83,14 @@ class ApiSearchTranslations extends ApiBase {
 				ApiBase::PARAM_TYPE => $filters,
 				ApiBase::PARAM_DFLT => '',
 			),
+			'match' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_DFLT => '',
+			),
+			'case' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_DFLT => '0',
+			),
 			'offset' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_DFLT => 0,
