@@ -17,6 +17,7 @@
 	"apihelp-ttmserver-param-sourcelanguage": "Kod języka tekstu źródłowego.",
 	"apihelp-searchtranslations-description": "Wyszukiwanie tłumaczeń.",
 	"apihelp-searchtranslations-param-query": "Łańcuch znaków do wyszukania.",
+	"apihelp-searchtranslations-param-sourcelanguage": "Kod języka tekstu źródłowego.",
 	"apihelp-searchtranslations-param-language": "Kod języka do wyszukiwania ciąg znaków.",
 	"apihelp-searchtranslations-param-limit": "Rozmiar wyniku.",
 	"apihelp-searchtranslations-example-1": "Pokaż tłumaczenia dla języka."

@@ -28,5 +28,6 @@
 	"tux-sst-ellipsis-untranslated": "Sin traducción",
 	"tux-sst-ellipsis-outdated": "Traducciones desactualizadas",
 	"tux-sst-link-all-match": "Requerir todas las palabras que se buscan.",
-	"tux-sst-match-message": "Mostrar las traducciones que coinciden con cualesquiera de las palabras que se buscan. $1"
+	"tux-sst-match-message": "Mostrar las traducciones que coinciden con cualesquiera de las palabras que se buscan. $1",
+	"tux-sst-case-sensitive": "Distinguir mayúsculas de minúsculas"
 }

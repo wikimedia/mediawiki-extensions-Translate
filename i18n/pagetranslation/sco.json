@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"John Reid"
+			"John Reid",
+			"AmaryllisGardener"
 		]
 	},
 	"pagetranslation": "Page owersetin",
@@ -58,6 +59,7 @@
 	"tpt-translation-intro": "This page is aen <span class=\"plainlinks\">[$1 owerset version]</span> o the page [[$2]] n the owersetin is $3% compleate.",
 	"tpt-languages-legend": "Ither leids:",
 	"tpt-languages-zero": "Stairt owersetin fer this leid",
+	"tpt-languages-nonzero": "$1 ($2% translatit)",
 	"tpt-tab-translate": "Owerset",
 	"tpt-target-page": "This page canna be updated manuallie.\nThis page is aen owerset o the page [[$1]] n the owersetin can be updated uisin [$2 the owersetin tuil].",
 	"tpt-unknown-page": "This namespace is reserved fer content page owersets.\nThe page that ye'r ettlin tae eedit disna seem tae correspond wi onie page maurkt fer owersetin.",

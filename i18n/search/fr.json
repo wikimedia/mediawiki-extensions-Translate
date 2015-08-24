@@ -31,5 +31,6 @@
 	"tux-sst-ellipsis-untranslated": "Non traduit",
 	"tux-sst-ellipsis-outdated": "Traductions obsolètes",
 	"tux-sst-link-all-match": "Requiert tous les termes de recherche",
-	"tux-sst-match-message": "Montre les traductions qui correspondent à chacun des mots de la recherche. $1"
+	"tux-sst-match-message": "Montre les traductions qui correspondent à chacun des mots de la recherche. $1",
+	"tux-sst-case-sensitive": "Sensible à la casse"
 }

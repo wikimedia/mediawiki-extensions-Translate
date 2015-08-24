@@ -26,5 +26,6 @@
 	"tux-sst-ellipsis-untranslated": "Sin traducción",
 	"tux-sst-ellipsis-outdated": "Traducciones anticuaes",
 	"tux-sst-link-all-match": "Riquir toles palabres buscaes.",
-	"tux-sst-match-message": "Amosar les traducciones que casen con cualesquiera de les palabres buscaes. $1"
+	"tux-sst-match-message": "Amosar les traducciones que casen con cualesquiera de les palabres buscaes. $1",
+	"tux-sst-case-sensitive": "Sensible a mayúscules"
 }

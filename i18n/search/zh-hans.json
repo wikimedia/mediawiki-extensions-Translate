@@ -30,5 +30,6 @@
 	"tux-sst-ellipsis-untranslated": "无翻译",
 	"tux-sst-ellipsis-outdated": "已过时翻译",
 	"tux-sst-link-all-match": "需要所有搜索单词。",
-	"tux-sst-match-message": "显示匹配任何搜索单词的翻译。$1"
+	"tux-sst-match-message": "显示匹配任何搜索单词的翻译。$1",
+	"tux-sst-case-sensitive": "区分大小写"
 }

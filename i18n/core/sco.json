@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"John Reid"
+			"John Reid",
+			"AmaryllisGardener"
 		]
 	},
 	"translate": "Owerset",
@@ -207,6 +208,7 @@
 	"translate-js-support-unsaved-warning": "Ye hae onhained owersets.",
 	"translate-gs-continent": "Continant",
 	"translate-gs-count": "Coont",
+	"translate-documentation-language": "Message documentation",
 	"translate-searchprofile": "Owersets",
 	"translate-searchprofile-tooltip": "Rake fae aw owersets",
 	"translate-search-languagefilter": "Filter bi leid:",
@@ -236,7 +238,6 @@
 	"action-translate-sandboxaction": "execute actions whiteleetit for saundkistit uisers",
 	"translate-workflow-state-": "(onset)",
 	"translate-workflow-set-doing": "Settin...",
-	"translate-workflow-set-error-alreadyset": "The requested state is identeecal til the Nou state.",
 	"translate-workflow-autocreated-summary": "Autæmateec cræftin o page fer wairkflaw state $1",
 	"translate-workflowgroup-label": "Wairkflaw states",
 	"translate-workflowgroup-desc": "This message groop shaws the owersetin wairkflaw states.\nThe states ar defined in the confeeguration vareeable $wgTranslateWorkflowStates.",
@@ -244,10 +245,6 @@
 	"translate-dynagroup-recent-desc": "This message groop shaws aw recynt owersets intil this leid.\nMaist uissfu fer the luikower tasks.",
 	"translate-dynagroup-additions-label": "Recynt addeetions",
 	"translate-dynagroup-additions-desc": "This message groop shaws new n chynged messages.",
-	"translate-dynagroup-by": "Owerset dun bi {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "Owerset dun bi {{GENDER:$1|$1}} ($2)",
-	"translate-dynagroup-last": "Laitest chynge bi {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Laitest chynge bi {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Heelp",
 	"translate-msggroupselector-projects": "Message groop",
 	"translate-msggroupselector-search-placeholder": "Rake groops",

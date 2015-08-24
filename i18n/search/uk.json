@@ -8,6 +8,7 @@
 	},
 	"searchtranslations": "Пошук перекладів",
 	"tux-sst-edit": "Редагувати переклад",
+	"tux-sst-view-foreign": "Переглянути на $1",
 	"tux-sst-search": "Пошук",
 	"tux-sst-search-ph": "Пошук перекладів",
 	"tux-sst-count": "{{PLURAL:$1|Знайдено один результат|Знайдено $1 результати|Знайдено $1 результатів}}",
@@ -21,9 +22,12 @@
 	"tux-sst-next": "Далі ›",
 	"tux-sst-prev": "‹ Назад",
 	"tux-sst-default": "Переклади",
+	"tux-sst-translated": "Переклади із $1",
 	"tux-sst-untranslated": "Немає перекладу від $1",
 	"tux-sst-outdated": "Застарілі переклади від $1",
+	"tux-sst-ellipsis-untranslated": "Без перекладу",
 	"tux-sst-ellipsis-outdated": "Застарілі переклади",
 	"tux-sst-link-all-match": "Потребуються всі слова пошуку.",
-	"tux-sst-match-message": "Показані переклади, в яких збігається хоча б одне із пошукових слів. $1"
+	"tux-sst-match-message": "Показані переклади, в яких збігається хоча б одне із пошукових слів. $1",
+	"tux-sst-case-sensitive": "Чутливий до регістру"
 }
