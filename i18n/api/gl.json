@@ -81,9 +81,12 @@
 	"apihelp-searchtranslations-description": "Procurar nas traducións.",
 	"apihelp-searchtranslations-param-service": "O servizo de tradución a utilizar.",
 	"apihelp-searchtranslations-param-query": "A cadea que buscar.",
+	"apihelp-searchtranslations-param-sourcelanguage": "O código de lingua do texto fonte.",
 	"apihelp-searchtranslations-param-language": "O código da lingua na que procurar a cadea.",
 	"apihelp-searchtranslations-param-group": "O identificador do grupo no que procurar a cadea.",
+	"apihelp-searchtranslations-param-filter": "Filtro do estado de tradución das mensaxes.",
 	"apihelp-searchtranslations-param-offset": "Desprazamento para as traducións.",
 	"apihelp-searchtranslations-param-limit": "Tamaño do resultado.",
-	"apihelp-searchtranslations-example-1": "Mostrar as traducións para a lingua."
+	"apihelp-searchtranslations-example-1": "Mostrar as traducións para a lingua.",
+	"apihelp-searchtranslations-example-2": "Mostrar as mensaxes non traducidas que coincidan coa pescuda na lingua de orixe."
 }

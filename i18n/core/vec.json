@@ -85,5 +85,6 @@
 	"translate-untranslated": "Mia tradoti",
 	"translate-percentage-complete": "Conpletà",
 	"translate-percentage-fuzzy": "Da ajornar",
-	"translate-save": "Salva ($1)"
+	"translate-save": "Salva ($1)",
+	"translate-documentation-language": "Documentasion del messajo"
 }
