@@ -4,7 +4,8 @@
 			"Beta16",
 			"Pippinu",
 			"F. Cosoleto",
-			"Statix64"
+			"Statix64",
+			"Macofe"
 		]
 	},
 	"searchtranslations": "Ricerca traduzioni",
@@ -21,5 +22,6 @@
 	"tux-sst-solr-offline-title": "Ricerca non disponibile",
 	"tux-sst-solr-offline-body": "Il servizio di ricerca è temporaneamente non disponibile.",
 	"tux-sst-next": "Risultati successivi ›",
-	"tux-sst-prev": "‹ Risultati precedenti"
+	"tux-sst-prev": "‹ Risultati precedenti",
+	"tux-sst-default": "Traduzioni"
 }

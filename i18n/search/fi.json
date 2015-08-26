@@ -17,5 +17,12 @@
 	"tux-sst-facet-orphan": "(orpo)",
 	"tux-sst-nosolr-title": "Haku ei ole käytössä",
 	"tux-sst-nosolr-body": "Hakupalvelu ei ole käytössä tässä wikissä.",
-	"tux-sst-solr-offline-title": "Haku ei ole käytössä"
+	"tux-sst-solr-offline-title": "Haku ei ole käytössä",
+	"tux-sst-default": "Käännökset",
+	"tux-sst-translated": "Käännetty kielestä $1",
+	"tux-sst-untranslated": "Kääntämättä kielestä $1",
+	"tux-sst-ellipsis-untranslated": "Kääntämättömät",
+	"tux-sst-ellipsis-outdated": "Vanhentuneet käännökset",
+	"tux-sst-link-all-match": "Vaadi kaikkien hakusanojen täsmäys.",
+	"tux-sst-case-sensitive": "kirjainkoko on merkitsevä"
 }
