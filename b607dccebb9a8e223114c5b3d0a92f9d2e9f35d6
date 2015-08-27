@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_9fedd5f0",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-08-27T00:55:49Z",
+      "side": 1,
+      "message": "These comment are now obsolete.",
+      "revId": "b607dccebb9a8e223114c5b3d0a92f9d2e9f35d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
