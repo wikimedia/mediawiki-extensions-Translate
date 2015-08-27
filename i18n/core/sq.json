@@ -3,7 +3,8 @@
 		"authors": [
 			"Dori",
 			"Puntori",
-			"GretaDoci"
+			"GretaDoci",
+			"Liridon"
 		]
 	},
 	"translate": "Përkthime",
@@ -27,5 +28,6 @@
 	"translate-statsf-scale-hours": "Orë",
 	"translate-statsf-count-users": "Përkthyesit aktiv",
 	"translate-statsf-submit": "Parapamja",
+	"translate-documentation-language": "Dokumentimi i mesazhit",
 	"tux-editor-shortcut-info": "Shtypni \"<span class=\"notranslate\" translate=\"asnjë\">$1</span>\" për të shpëtuar ose \"<span class=\"notranslate\" translate=\"asnjë\">$2</span>\" për të kaluar tek tjetër mesazh, ose \"<span class=\"notranslate\" translate=\"asnjë\">$3</span>\"  për shortcut të tjera ."
 }
