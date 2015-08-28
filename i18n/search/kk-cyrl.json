@@ -8,7 +8,7 @@
 	"tux-sst-edit": "Аударумаларды өңдеу",
 	"tux-sst-search": "Іздеу",
 	"tux-sst-search-ph": "Аудармаларды іздеу",
-	"tux-sst-count": "{{PLURAL:$1|Бір нәтиже табылды|$1 нәтижк табылды}}",
+	"tux-sst-count": "{{PLURAL:$1|Бір нәтиже табылды|$1 нәтиже табылды}}",
 	"tux-sst-facet-language": "Тілдер",
 	"tux-sst-facet-group": "Хабарлама топтары",
 	"tux-sst-nosolr-title": "Іздеу қол жетімді емес",

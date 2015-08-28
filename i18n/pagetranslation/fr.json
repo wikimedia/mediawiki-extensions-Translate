@@ -21,7 +21,8 @@
 			"Brunoperel",
 			"Benjozork",
 			"Element303",
-			"TomT0m"
+			"TomT0m",
+			"Wladek92"
 		]
 	},
 	"pagetranslation": "Traduction de pages",
@@ -162,8 +163,8 @@
 	"pt-movepage-logreason": "Extrait de la page à traduire $1.",
 	"pt-movepage-started": "La page de base est à présent renommée.\nVeuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] pour repérer d’éventuelles erreurs et lire le message de complétion.",
 	"pt-locked-page": "Cette page est verrouillée parce que la page à traduire est en cours de renommage.",
-	"pt-deletepage-lang-title": "Suppression de la page de traduction $1.",
-	"pt-deletepage-full-title": "Suppression de la page à traduire $1.",
+	"pt-deletepage-lang-title": "Suppression de la page de traduction \"$1\"",
+	"pt-deletepage-full-title": "Suppression de la page à traduire \"$1\"",
 	"pt-deletepage-invalid-title": "La page spécifiée n'est pas valide.",
 	"pt-deletepage-invalid-text": "La page spécifiée n'est pas une page à traduire, ni une traduction de celle-ci.",
 	"pt-deletepage-action-check": "Lister les pages à supprimer",

@@ -187,9 +187,7 @@
 	"translate-workflow-set-doing": "পছন্দসমূহ . . .",
 	"translate-stats-workflow": "স্থিতি",
 	"translate-dynagroup-recent-label": "শেহতীয়া ভাঙনিসমূহ",
-	"translate-dynagroup-by": "ভাঙনিকৰ্তা {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "ভাঙনিকৰ্তা {{GENDER:$1|$1}}",
-	"translate-dynagroup-last": "শেহতীয়া সালসলনিকৰ্তা {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "শেহতীয়া সালসলনিকৰ্তা {{GENDER:$1|$1}} ($2)",
-	"translate-gethelp": "সহায়"
+	"translate-gethelp": "সহায়",
+	"tux-languageselector": "অনুবাদ কৰক:",
+	"tux-editor-proofreading-mode": "পুনঃৰীক্ষণ"
 }

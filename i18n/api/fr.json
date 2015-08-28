@@ -89,6 +89,8 @@
 	"apihelp-searchtranslations-param-language": "Le code de langue pour lequel rechercher la chaîne.",
 	"apihelp-searchtranslations-param-group": "L’id de groupe où rechercher la chaîne.",
 	"apihelp-searchtranslations-param-filter": "Filtre d’état de traduction de message.",
+	"apihelp-searchtranslations-param-match": "Correspondance avec n'importe quel ou tous les mots de la recherche.",
+	"apihelp-searchtranslations-param-case": "Cas de recherche insensible/sensible à la casse.",
 	"apihelp-searchtranslations-param-offset": "Décalage pour les traductions.",
 	"apihelp-searchtranslations-param-limit": "Taille du résultat.",
 	"apihelp-searchtranslations-example-1": "Afficher les traductions pour la langue.",

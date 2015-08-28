@@ -43,6 +43,7 @@
 	"apihelp-ttmserver-param-text": "Der Text, für den Vorschläge gefunden werden sollen.",
 	"apihelp-searchtranslations-description": "Übersetzungen suchen.",
 	"apihelp-searchtranslations-param-service": "Welcher der verfügbaren Übersetzungsdienste genutzt werden sollte.",
+	"apihelp-searchtranslations-param-query": "Die Zeichenfolge, nach der gesucht werden soll.",
 	"apihelp-searchtranslations-param-filter": "Nachrichtenübersetzungsstatusfilter.",
 	"apihelp-searchtranslations-param-limit": "Größe des Ergebnisses.",
 	"apihelp-searchtranslations-example-1": "Übersetzungen für die Sprache anzeigen."
