@@ -87,6 +87,8 @@
 	"apihelp-searchtranslations-param-language": "{{doc-apihelp-param|searchtranslations|language}}",
 	"apihelp-searchtranslations-param-group": "{{doc-apihelp-param|searchtranslations|group}}",
 	"apihelp-searchtranslations-param-filter": "{{doc-apihelp-param|searchtranslations|filter}}",
+	"apihelp-searchtranslations-param-match": "{{doc-apihelp-param|searchtranslations|match}}",
+	"apihelp-searchtranslations-param-case": "{{doc-apihelp-param|searchtranslations|case}}",
 	"apihelp-searchtranslations-param-offset": "{{doc-apihelp-param|searchtranslations|offset}}",
 	"apihelp-searchtranslations-param-limit": "{{doc-apihelp-param|searchtranslations|limit}}",
 	"apihelp-searchtranslations-example-1": "{{doc-apihelp-example|searchtranslations}}",
