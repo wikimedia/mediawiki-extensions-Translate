@@ -1,0 +1,13 @@
+== Translate 2015.08 ==
+Released at 2015-08-28.
+
+=== Noteworthy changes ===
+* Special:SearchTranslations has acquired lots of new features, such as cross language search. To take advantage of all the new features, you need to reindex the index with "php scripts/ttmserver-export.php --reindex". You also need to update ruflin/elastica to 2.2.0 or later, or recent version of CirrusSearch which bundles it.
+* Translatewiki.net specific message group descriptions have been removed.
+* ApiHardMessage has been removed.
+* The hidden, deprecated non-TUX translation view is being phased out and many non-essential features have been removed.
+* Web service queries to machine translation and remote translation memory services are now done parallel.
+* Some improvements to cache handling so that some caches are regenerated instead of just purged when content changes.
+* The appearance of workflow state selector on Special:Translate has been improved.
+* Breaking change: The output format of ApiQueryMessageGroups has changed regarding to workflow states.
+* The code no longer checks for the presence of the long deprecated "revtag_type" database table. Things like proofread messages might appear as unproofread. If this is the case, run "php scripts/migrate-schema2.php"
