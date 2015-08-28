@@ -57,15 +57,6 @@ $wgMessagesDirs['TranslateSandbox'] = __DIR__ . "/i18n/sandbox";
 $wgMessagesDirs['TranslateApi'] = __DIR__ . "/i18n/api";
 $wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
 $wgExtensionMessagesFiles['TranslateMagic'] = "$dir/Translate.i18n.magic.php";
-// Backwards compatibility:
-// If Special:MyLanguage is not in core, load translations of its name
-// from the Translate extension's code.
-// See https://phabricator.wikimedia.org/T71461
-// Can be removed when MW 1.23 is no longer supported
-if ( !isset( $wgAutoloadLocalClasses['SpecialMyLanguage'] ) ) {
-	$wgExtensionMessagesFiles['TranslateMyLanguageAlias'] =
-		"$dir/Translate.MyLanguage.alias.php";
-}
 
 // Register initialization code
 $wgExtensionFunctions[] = 'TranslateHooks::setupTranslate';
@@ -86,7 +77,6 @@ $wgSpecialPages['MessageGroupStats'] = 'SpecialMessageGroupStats';
 $wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
 $wgSpecialPages['ManageMessageGroups'] = 'SpecialManageGroups';
 $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
-$wgSpecialPages['MyLanguage'] = 'SpecialMyLanguage';
 $wgSpecialPages['AggregateGroups'] = 'SpecialAggregateGroups';
 $wgSpecialPages['SearchTranslations'] = 'SpecialSearchTranslations';
 $wgSpecialPages['ManageTranslatorSandbox'] = 'SpecialManageTranslatorSandbox';
