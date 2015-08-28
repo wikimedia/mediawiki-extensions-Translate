@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_2757ea5c",
+        "filename": ".jshintignore",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-28T13:09:09Z",
+      "side": 1,
+      "message": "Why?",
+      "revId": "5e96f72f292b1a70907a335fea3719e26aec2d27",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
