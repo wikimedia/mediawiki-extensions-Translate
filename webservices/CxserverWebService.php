@@ -28,7 +28,7 @@ class CxserverWebService extends TranslationWebService {
 
 		$pairs = array();
 
-		$url = $this->config['host'] . '/languagepairs';
+		$url = $this->config['host'] . '/v1/list/mt';
 		// BC for MW <= 1.24
 		$json = Http::request(
 			'GET',
@@ -42,7 +42,7 @@ class CxserverWebService extends TranslationWebService {
 			throw new TranslationWebServiceException( $exception );
 		}
 
-		foreach ( $response as $source => $targets ) {
+		foreach ( $response['Apertium'] as $source => $targets ) {
 			foreach ( $targets as $target ) {
 				$pairs[$source][$target] = true;
 			}
@@ -58,7 +58,7 @@ class CxserverWebService extends TranslationWebService {
 
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
-		$url = $this->config['host'] . "/mt/$from/$to";
+		$url = $this->config['host'] . "/v1/mt/$from/$to/Apertium";
 
 		return TranslationQuery::factory( $url )
 			->timeout( $this->config['timeout'] )
