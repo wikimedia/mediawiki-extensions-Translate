@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_a123cab3",
+        "filename": "Translate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-08-28T08:22:41Z",
+      "side": 1,
+      "message": "August!",
+      "revId": "7b6218cd084909054222eabd5aa8139972931b74",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
