@@ -5,7 +5,8 @@
 			"Fryed-peach",
 			"Shirayuki",
 			"Whym",
-			"青子守歌"
+			"青子守歌",
+			"Sujiniku"
 		]
 	},
 	"pagetranslation": "ページ翻訳",
@@ -141,7 +142,7 @@
 	"pt-movepage-started": "基底ページが移動されました。\n[[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認してください。",
 	"pt-locked-page": "翻訳対象ページが現在移動中のため、このページはロックされています。",
 	"pt-deletepage-lang-title": "翻訳ページ「$1」の削除",
-	"pt-deletepage-full-title": "翻訳対象ページ「$1」の削除",
+	"pt-deletepage-full-title": "翻訳可能ページ「$1」の削除",
 	"pt-deletepage-invalid-title": "指定したページは無効です。",
 	"pt-deletepage-invalid-text": "指定したページは、翻訳対象ページでも翻訳ページでもありません。",
 	"pt-deletepage-action-check": "削除するページを列挙",

@@ -3,7 +3,8 @@
 		"authors": [
 			"Kaganer",
 			"Lockal",
-			"Okras"
+			"Okras",
+			"Translatobecomer"
 		]
 	},
 	"searchtranslations": "Поиск переводов",
@@ -19,5 +20,6 @@
 	"tux-sst-solr-offline-title": "Поиск недоступен",
 	"tux-sst-solr-offline-body": "Служба поиска временно недоступна.",
 	"tux-sst-next": "Далее ›",
-	"tux-sst-prev": "‹ Назад"
+	"tux-sst-prev": "‹ Назад",
+	"tux-sst-case-sensitive": "с учётом регистра"
 }

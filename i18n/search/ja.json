@@ -18,5 +18,6 @@
 	"tux-sst-solr-offline-title": "検索は利用できません",
 	"tux-sst-solr-offline-body": "検索サービスは一時的に利用できません。",
 	"tux-sst-next": "次 ›",
-	"tux-sst-prev": "‹ 前"
+	"tux-sst-prev": "‹ 前",
+	"tux-sst-default": "翻訳"
 }

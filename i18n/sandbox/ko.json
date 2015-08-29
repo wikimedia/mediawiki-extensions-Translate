@@ -15,7 +15,7 @@
 	"tsb-reminder-title-generic": "검증된 번역자가 되려면 소개를 작성하세요",
 	"tsb-reminder-content-generic": "$1 님 안녕하세요.\n\n{{SITENAME}}에 등록해주셔서 감사합니다.\n테스트 번역을 완료하시면, 관리자가 곧 전체 번역 접근 권한을 부여할 것입니다.\n\n$2에 와서 조금 더 번역을 해주세요.\n\n{{SITENAME}} 직원, $3",
 	"tsb-reminder-sending": "알림 보내는 중...",
-	"tsb-reminder-sent": "{{PLURAL:$1|$2에 $1 알림 보냄|$2에 마지막으로 $1 알림 보냄}}",
+	"tsb-reminder-sent": "{{PLURAL:$1|알림 $1개를 보냈습니다. 시간: $2.|알림 $1개를 보냈습니다. 마지막으로 보낸 시간: $2.}}",
 	"tsb-reminder-sent-new": "알림을 보냄",
 	"tsb-reminder-failed": "알림 보내기를 실패했습니다",
 	"tsb-email-promoted-subject": "당신은 {{SITENAME}}의 번역가가 됐습니다.",

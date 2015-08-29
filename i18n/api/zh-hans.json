@@ -82,6 +82,8 @@
 	"apihelp-searchtranslations-param-language": "要搜索字符串的语言代码。",
 	"apihelp-searchtranslations-param-group": "要搜索字符串的组id。",
 	"apihelp-searchtranslations-param-filter": "信息翻译状态过滤器。",
+	"apihelp-searchtranslations-param-match": "匹配任何/所有搜索词。",
+	"apihelp-searchtranslations-param-case": "（不）区分大小写的搜索。",
 	"apihelp-searchtranslations-param-offset": "用于译文的抵消。",
 	"apihelp-searchtranslations-param-limit": "结果大小。",
 	"apihelp-searchtranslations-example-1": "显示用于语言的翻译。",

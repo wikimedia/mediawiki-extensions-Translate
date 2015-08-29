@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"LiteHell"
+			"LiteHell",
+			"아라"
 		]
 	},
+	"apihelp-aggregategroups-param-group": "메시지 그룹 ID.",
+	"apihelp-groupreview-param-group": "메시지 그룹.",
+	"apihelp-groupreview-param-language": "언어 코드.",
+	"apihelp-query+messagecollection-param-group": "메시지 그룹.",
+	"apihelp-query+messagecollection-param-language": "언어 코드.",
+	"apihelp-query+messagecollection-example-1": "지원하는 언어 목록",
 	"apihelp-ttmserver-param-targetlanguage": "제안의 언어 코드입니다."
 }

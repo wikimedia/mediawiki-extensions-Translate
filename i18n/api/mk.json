@@ -83,6 +83,8 @@
 	"apihelp-searchtranslations-param-language": "На кој јазичен код се бара низата.",
 	"apihelp-searchtranslations-param-group": "Назнака на групата во која се бара низата.",
 	"apihelp-searchtranslations-param-filter": "Филтер за статус на преводи.",
+	"apihelp-searchtranslations-param-match": "Најди соодветства на било кој/сите зборови",
+	"apihelp-searchtranslations-param-case": "Пребарување што разликува големи/мали букви",
 	"apihelp-searchtranslations-param-offset": "Отстап за преводите.",
 	"apihelp-searchtranslations-param-limit": "Големина на исходот.",
 	"apihelp-searchtranslations-example-1": "Прикажи преводи на овој јазик.",
