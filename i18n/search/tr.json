@@ -4,7 +4,8 @@
 			"Emperyan",
 			"Joseph",
 			"Meelo",
-			"Sayginer"
+			"Sayginer",
+			"McAang"
 		]
 	},
 	"searchtranslations": "Çevirileri ara",
@@ -20,5 +21,6 @@
 	"tux-sst-solr-offline-title": "Arama kullanılamıyor",
 	"tux-sst-solr-offline-body": "Arama hizmeti geçici olarak kullanılamıyor.",
 	"tux-sst-next": "Sonraki ›",
-	"tux-sst-prev": "‹ Önceki"
+	"tux-sst-prev": "‹ Önceki",
+	"tux-sst-match-message": "Aranan kelimelerin herhangi biriyle eşleşen çeviriler gösteriliyor. $1"
 }

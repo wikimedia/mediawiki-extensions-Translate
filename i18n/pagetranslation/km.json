@@ -25,5 +25,7 @@
 	"translate-tag-markthis": "សម្គាល់​ទំព័រ​​នេះ​សម្រាប់​ការបកប្រែ​",
 	"tpt-languages-legend": "ជាភាសាដទៃទៀត៖",
 	"tpt-languages-nonzero": "$1 ($2% បកប្រែរួច)",
-	"tpt-tab-translate": "បកប្រែ"
+	"tpt-tab-translate": "បកប្រែ",
+	"pm-langcode-placeholder": "កូដ​ភាសា",
+	"pm-langcode-missing": "សូមវាយបញ្ចូលកូដភាសា។"
 }

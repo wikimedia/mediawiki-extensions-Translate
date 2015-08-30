@@ -28,5 +28,5 @@
 	"tux-sst-ellipsis-outdated": "오래된 번역",
 	"tux-sst-link-all-match": "모든 검색 낱말이 필요합니다.",
 	"tux-sst-match-message": "검색 낱말과 일치하는 번역을 보여줍니다. $1",
-	"tux-sst-case-sensitive": "대소문자 구별"
+	"tux-sst-case-sensitive": "대소문자 구분"
 }
