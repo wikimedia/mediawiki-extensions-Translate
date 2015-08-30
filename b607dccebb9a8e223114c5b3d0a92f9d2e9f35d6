@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_be4e7c3b",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-08-30T05:53:19Z",
+      "side": 1,
+      "message": "If DB_MASTER, it should ignore the cache. It could also track where it came from and reload if needed (ala WikiPage), but that may be overkill and less correct than just reloading depending on usage.\n\nThis was pre-existing so I left it alone.",
+      "parentUuid": "6ec1af18_0782ee01",
+      "revId": "b607dccebb9a8e223114c5b3d0a92f9d2e9f35d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_9fedd5f0",
         "filename": "tag/TranslatablePage.php",
         "patchSetId": 2
