@@ -32,6 +32,11 @@ class ElasticSearchTTMServer
 	 */
 	protected $updateMapping = false;
 
+	/**
+	 * Use the wikimedia extra plugin
+	 */
+	private $useWikimediaExtraPlugin = false;
+
 	public function isLocalSuggestion( array $suggestion ) {
 		return $suggestion['wiki'] === wfWikiId();
 	}
@@ -61,18 +66,26 @@ class ElasticSearchTTMServer
 		$fuzzyQuery->setLikeText( $text );
 		$fuzzyQuery->addFields( array( 'content' ) );
 
-		$groovyScript =
+		$boostQuery = new \Elastica\Query\FunctionScore();
+		if ( $this->useWikimediaExtraPlugin ) {
+			$boostQuery->addFunction('levenshtein_distance_score',
+				array(
+					'text' => $text,
+					'field' => 'content'
+				));
+		} else {
+			$groovyScript =
 <<<GROOVY
 import org.apache.lucene.search.spell.*
 new LevensteinDistance().getDistance(srctxt, _source['content'])
 GROOVY;
-		$script = new \Elastica\Script(
-			$groovyScript,
-			array( 'srctxt' => $text ),
-			\Elastica\Script::LANG_GROOVY
-		);
-		$boostQuery = new \Elastica\Query\FunctionScore();
-		$boostQuery->addScriptScoreFunction( $script );
+			$script = new \Elastica\Script(
+				$groovyScript,
+				array( 'srctxt' => $text ),
+				\Elastica\Script::LANG_GROOVY
+			);
+			$boostQuery->addScriptScoreFunction( $script );
+		}
 		$boostQuery->setBoostMode( \Elastica\Query\FunctionScore::BOOST_MODE_REPLACE );
 
 		// Wrap the fuzzy query so it can be used as a filter.
