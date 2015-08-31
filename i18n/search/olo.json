@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mashoi7"
+		]
+	},
+	"tux-sst-default": "Kiännökset",
+	"tux-sst-translated": "Kiännökset kielespäi $1",
+	"tux-sst-untranslated": "Ei kiännösty kielespäi $1"
+}
