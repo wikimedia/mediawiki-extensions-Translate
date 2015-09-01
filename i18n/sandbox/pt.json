@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Hamilton Abreu",
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Fúlvio"
 		]
 	},
 	"managetranslatorsandbox": "Administrar a área de teste de tradutores",
@@ -10,7 +11,7 @@
 	"tsb-reminder-title-generic": "Conclua a introdução para se tornar tradutor",
 	"tsb-reminder-content-generic": "Olá $1,\n\nObrigado por se registar na wiki {{SITENAME}}.\n\nSe concluir as traduções de teste, pouco depois os administradores concedem-lhe todos os privilégios de tradução.\n\nVenha à wiki e faça algumas traduções aqui:\n$2\n\n$3,\nA equipa da wiki {{SITENAME}}",
 	"tsb-reminder-sending": "A enviar a lembrança...",
-	"tsb-reminder-sent": "Enviou {{PLURAL:$1|$1 lembrança $2|$1 lembranças, a última $2}}",
+	"tsb-reminder-sent": "{{PLURAL:$1|Enviou $1 lembrança. Hora: $2.|Enviou $1 lembranças. Hora da última: $2.}}",
 	"tsb-reminder-sent-new": "Enviou uma lembrança",
 	"tsb-reminder-failed": "O envio da lembrança falhou",
 	"tsb-email-promoted-subject": "É agora tradutor(a) na wiki {{SITENAME}}",

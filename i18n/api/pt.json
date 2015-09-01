@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Fúlvio"
 		]
 	},
 	"apihelp-groupreview-param-language": "Código de idioma.",
@@ -10,5 +11,5 @@
 	"apihelp-query+messagecollection-example-1": "Lista de idiomas suportados.",
 	"apihelp-translationstash-param-subaction": "Ação.",
 	"apihelp-translationstash-param-metadata": "Objeto JSON.",
-	"apihelp-ttmserver-param-targetlanguage": "Um código de idioma da sugestão."
+	"apihelp-ttmserver-param-targetlanguage": "O código de idioma da sugestão."
 }

@@ -23,5 +23,7 @@
 	"tux-sst-solr-offline-body": "Il servizio di ricerca è temporaneamente non disponibile.",
 	"tux-sst-next": "Risultati successivi ›",
 	"tux-sst-prev": "‹ Risultati precedenti",
-	"tux-sst-default": "Traduzioni"
+	"tux-sst-default": "Traduzioni",
+	"tux-sst-translated": "Traduzioni da $1",
+	"tux-sst-ellipsis-untranslated": "Nessuna traduzione"
 }
