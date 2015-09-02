@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liridon"
+			"Liridon",
+			"Ammartivari"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% i përkëthyer)"
+	"tpt-languages-nonzero": "$1 ($2% i përkëthyer)",
+	"pt-deletepage-reason": "Arsyeja:"
 }
