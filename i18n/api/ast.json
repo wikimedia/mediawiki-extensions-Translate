@@ -83,6 +83,8 @@
 	"apihelp-searchtranslations-param-language": "El códigu de llingua pal que buscar la cadena.",
 	"apihelp-searchtranslations-param-group": "La id de grupu nel que buscar la cadena.",
 	"apihelp-searchtranslations-param-filter": "Filtru d'estáu de traducción del mensaxe",
+	"apihelp-searchtranslations-param-match": "Coincide con cualquier/toles palabres de busca.",
+	"apihelp-searchtranslations-param-case": "Coincidir (o non) les mayúscules.",
 	"apihelp-searchtranslations-param-offset": "\"Offset\" pa les traducciones.",
 	"apihelp-searchtranslations-param-limit": "Tamañu del resultáu.",
 	"apihelp-searchtranslations-example-1": "Amosar les traducciones de la llingua.",

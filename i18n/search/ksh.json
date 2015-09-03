@@ -26,5 +26,6 @@
 	"tux-sst-ellipsis-untranslated": "Kein Övversäzong",
 	"tux-sst-ellipsis-outdated": "Övverhollte Översäzonge",
 	"tux-sst-link-all-match": "Donn noh all dä Wööter soöhke.",
-	"tux-sst-match-message": "Mer zeije Översäzonge, di winneschsdens eij Woot vun all dä Wööter änthallde.\n$1"
+	"tux-sst-match-message": "Mer zeije Översäzonge, di winneschsdens eij Woot vun all dä Wööter änthallde.\n$1",
+	"tux-sst-case-sensitive": "Jruhs- un Kleinschreff ongerscheijde"
 }

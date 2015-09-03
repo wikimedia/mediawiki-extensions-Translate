@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Shirayuki",
-			"Sujiniku"
+			"Sujiniku",
+			"Otokoume"
 		]
 	},
 	"searchtranslations": "翻訳の検索",
@@ -19,5 +20,12 @@
 	"tux-sst-solr-offline-body": "検索サービスは一時的に利用できません。",
 	"tux-sst-next": "次 ›",
 	"tux-sst-prev": "‹ 前",
-	"tux-sst-default": "翻訳"
+	"tux-sst-default": "翻訳",
+	"tux-sst-translated": "$1 から翻訳",
+	"tux-sst-untranslated": "$1 からの翻訳はありません。",
+	"tux-sst-outdated": "$1 からの翻訳が古くなっています",
+	"tux-sst-ellipsis-untranslated": "翻訳されていません",
+	"tux-sst-ellipsis-outdated": "更新されていない翻訳",
+	"tux-sst-match-message": "検索ワードのいずれかに一致する翻訳を表示しています。 $1",
+	"tux-sst-case-sensitive": "大文字・小文字を区別"
 }
