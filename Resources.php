@@ -156,6 +156,7 @@ $wgResourceModules['ext.translate.loader'] = array(
 $wgResourceModules['ext.translate.messagetable'] = array(
 	'scripts' => 'resources/js/ext.translate.messagetable.js',
 	'styles' => 'resources/css/ext.translate.messagetable.css',
+	'position' => 'bottom',
 	'dependencies' => array(
 		'ext.translate.base',
 		'ext.translate.hooks',
@@ -416,6 +417,7 @@ $wgResourceModules['ext.translate.special.searchtranslations'] = array(
 
 $wgResourceModules['ext.translate.special.searchtranslations.styles'] = array(
 	'styles' => 'resources/css/ext.translate.special.searchtranslations.css',
+	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.supportedlanguages'] = array(
@@ -450,6 +452,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 
 $wgResourceModules['ext.translate.special.translate.styles'] = array(
 	'styles' => 'resources/css/ext.translate.special.translate.css',
+	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.translationstash'] = array(

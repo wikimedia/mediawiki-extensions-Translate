@@ -63,8 +63,8 @@ class SpecialSearchTranslations extends SpecialPage {
 		$out = $this->getOutput();
 		$out->addModuleStyles( 'jquery.uls.grid' );
 		$out->addModuleStyles( 'ext.translate.special.searchtranslations.styles' );
+		$out->addModuleStyles( 'ext.translate.special.translate.styles' );
 		$out->addModules( 'ext.translate.special.searchtranslations' );
-		$out->addModuleStyles( 'ext.translate.special.translate' );
 		TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate#searching' );
 
 		$this->opts = $opts = new FormOptions();
@@ -148,7 +148,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			$text = TranslateUtils::convertWhiteSpaceToHTML( $text );
 
 			list( $pre, $post ) = $this->hl;
-			$text = str_replace( $pre, '<strong class="tux-highlight">', $text );
+			$text = str_replace( $pre, '<strong class="tux-search-highlight">', $text );
 			$text = str_replace( $post, '</strong>', $text );
 
 			$title = Title::newFromText( $document['localid'] . '/' . $document['language'] );
@@ -341,9 +341,11 @@ class SpecialSearchTranslations extends SpecialPage {
 <div class="grid tux-searchpage">
 	<div class="row tux-searchboxform">
 		<div class="tux-search-tabs offset-by-three">$messageSelector</div>
-		<div class="nine columns">
-			<div class="row searchinput">$search</div>
-			<div class="row count">$count</div>
+		<div class="row tux-search-options">
+			<div class="offset-by-three nine columns tux-search-inputs">
+				<div class="row searchinput">$search</div>
+				<div class="row count">$count</div>
+			</div>
 		</div>
 	</div>
 HTML
@@ -417,7 +419,7 @@ HTML
 	protected function messageSelector() {
 		$nondefaults = $this->opts->getChangedValues();
 		$output = Html::openElement( 'div', array( 'class' => 'row tux-messagetable-header' ) );
-		$output .= Html::openElement( 'div', array( 'class' => 'seven columns' ) );
+		$output .= Html::openElement( 'div', array( 'class' => 'nine columns' ) );
 		$output .= Html::openElement( 'ul', array( 'class' => 'row tux-message-selector' ) );
 		$tabs = array(
 			'default' => '',
