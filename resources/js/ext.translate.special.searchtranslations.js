@@ -393,10 +393,12 @@
 
 	// Build a selected box to show the selected items
 	function buildSelectedBox() {
-		$( '.tux-searchpage .tux-searchboxform .tux-search-tabs' ).after(
-			$( '<div>' )
-			.addClass( 'three columns tux-selectedbox' )
-		);
+		$( '.tux-search-inputs' )
+			.removeClass( 'offset-by-three' )
+			.before(
+				$( '<div>' )
+					.addClass( 'three columns tux-selectedbox' )
+			);
 	}
 
 	function addToSelectedBox( label, url ) {

@@ -4,15 +4,21 @@
  * @since 2013-01-10
  */
 
+.tux-searchpage .tux-selectedbox .facet-item {
+	background-color: #EDEDED;
+	margin-right: 5px;
+}
+
+.tux-searchpage .tux-searchboxform .tux-selectedbox,
+.tux-searchpage .searchcontent .facets {
+	padding: 0 15px 0 5px;
+}
+
 /* Facets */
 .tux-searchpage .facet {
 	font-size: 24px;
 	color: #252525;
 	padding: 20px 0 10px 0;
-}
-
-.tux-searchpage .searchcontent .facets {
-	padding: 0 15px 0 5px;
 }
 
 .tux-searchpage .facet-item {
@@ -25,7 +31,7 @@
 	cursor: pointer;
 }
 
-.tux-searchpage .facet-item:first-child {
+.grid.tux-searchpage .facet-item:first-child {
 	margin-top: 10px;
 }
 
@@ -185,7 +191,6 @@ h1.firstHeading {
 	margin-left: 25%;
 }
 
-.tux-searchpage .tux-selectedbox .facet-item {
-	background-color: #EDEDED;
-	margin-right: 5px;
+.tux-search-highlight {
+	background-color: #C9C9C9;
 }
