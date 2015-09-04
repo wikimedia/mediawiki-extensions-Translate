@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"apihelp-query+messagecollection-param-group": "Gruppe de messàgge.",
+	"apihelp-query+messagecollection-param-language": "Codece d'a Lènghe.",
+	"apihelp-query+messagecollection-param-limit": "Quanda messàgge da 'ndrucà (apprisse 'u filtre)."
+}

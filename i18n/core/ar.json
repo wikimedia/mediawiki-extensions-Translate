@@ -261,6 +261,8 @@
 	"log-name-translationreview": "سجل مراجعة الترجمة",
 	"log-description-translationreview": "سجل كل مراجعات الترجمة ورسائل المجموعات.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|قبلت}} الترجمة $3",
+	"group-translate-sandboxed": "مترجمون غير موافق عليهم",
+	"group-translate-sandboxed-member": "{{GENDER:$1|مترجم غير موافق عليه|مترجمة غير موافق عليها}}",
 	"translate-workflow-state-": "(إلغاء المحدد)",
 	"translate-workflowstatus": "الحالة: $1",
 	"translate-workflow-set-doing": "إعداد...",

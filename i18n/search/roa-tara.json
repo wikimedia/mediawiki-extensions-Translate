@@ -18,5 +18,14 @@
 	"tux-sst-solr-offline-title": "Ricerche non disponibbile",
 	"tux-sst-solr-offline-body": "'U servizie de ricerche jè temboraneamende indisponibbile.",
 	"tux-sst-next": "Prossime →",
-	"tux-sst-prev": "‹ Precedende"
+	"tux-sst-prev": "‹ Precedende",
+	"tux-sst-default": "Traduziune",
+	"tux-sst-translated": "Traduzione da $1",
+	"tux-sst-untranslated": "Nisciuna traduzione da $1",
+	"tux-sst-outdated": "Traduziune non aggiornate da $1",
+	"tux-sst-ellipsis-untranslated": "Nisciuna traduzione",
+	"tux-sst-ellipsis-outdated": "Traduziune non aggiornate",
+	"tux-sst-link-all-match": "Vole tutte le parole de ricerche.",
+	"tux-sst-match-message": "Fà 'ndrucà le traduziune ca s'accocchiane cu quacche parole de ricerche. $1",
+	"tux-sst-case-sensitive": "Sensibbile a le maiuscole/minuscole"
 }
