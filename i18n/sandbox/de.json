@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Metalhead64",
-			"Rillke"
+			"Rillke",
+			"J. 'mach' wust"
 		]
 	},
 	"managetranslatorsandbox": "Übersetzer-Spielwiese konfigurieren",
@@ -16,7 +17,7 @@
 	"tsb-email-promoted-subject": "Du bist jetzt ein Übersetzer auf {{SITENAME}}",
 	"tsb-email-promoted-body": "Hallo {{GENDER:$1|$1}},\n\nherzlichen Glückwunsch! Ich habe deine Testübersetzungen auf {{SITENAME}} überprüft und habe dir die vollen Übersetzerrechte gegeben.\n\nKomme auf {{SITENAME}}, um jetzt mit dem Übersetzen fortzufahren:\n$2\n\nWillkommen und vielen Dank für deine Beiträge!\n\n{{GENDER:$3|$3}},\nMitarbeiter von {{SITENAME}}",
 	"tsb-email-rejected-subject": "Dein Antrag auf Beförderung zum Übersetzer auf {{SITENAME}} wurde abgelehnt",
-	"tsb-email-rejected-body": "Hallo $1,\n\nvielen Dank für deinen Antrag auf Beförderung {{GENDER:$1|zum Übersetzer|zur Übersetzerin|zum Übersetzer}} auf {{SITENAME}}. Ich bedauere, dich informieren zu müssen, dass ich deinen Antrag abgelehnt habe, da die Qualität deiner Übersetzungen nicht den Anforderungen entspricht.\n\nFalls du denkst, dass dein Antrag durch einen Fehler abgelehnt wurde, versuche, deinen Übersetzerantrag auf {{SITENAME}} erneut einzureichen. Du kannst dich hier registrieren:\n$2\n\n$3,\n{{GENDER:$3|Mitarbeiter|Mitarbeiterin|Mitarbeiter}} von {{SITENAME}}",
+	"tsb-email-rejected-body": "Hallo $1,\n\nvielen Dank für deinen Antrag auf Beförderung {{GENDER:$1|zum Übersetzer|zur Übersetzerin}} auf {{SITENAME}}. Ich bedauere, dich informieren zu müssen, dass ich deinen Antrag abgelehnt habe, da die Qualität deiner Übersetzungen nicht den Anforderungen entspricht.\n\nFalls du denkst, dass dein Antrag durch einen Fehler abgelehnt wurde, versuche, deinen Übersetzerantrag auf {{SITENAME}} erneut einzureichen. Du kannst dich hier registrieren:\n$2\n\n$3,\n{{GENDER:$3|Mitarbeiter|Mitarbeiterin}} von {{SITENAME}}",
 	"tsb-request-count": "{{PLURAL:$1|Eine Anfrage|$1 Anfragen}}",
 	"tsb-all-languages-button-label": "Alle Sprachen",
 	"tsb-search-requests": "Anfragen durchsuchen",
@@ -45,7 +46,7 @@
 	"tsb-create-user-page": "Basis-Benutzerseite erstellt",
 	"log-name-translatorsandbox": "Übersetzungsspielwiesen-Logbuch",
 	"log-description-translatorsandbox": "Es folgt ein Logbuch von Aktionen auf Übersetzungsspielwiesenbenutzer.",
-	"logentry-translatorsandbox-promoted": "$1 hat $3 {{GENDER:$4|zum Übersetzer|zur Übersetzerin|zum Übersetzer}} {{GENDER:$2|befördert}}",
-	"logentry-translatorsandbox-rejected": "$1 hat die Anfrage von „$3“ zur Beförderung {{GENDER:$2|zum Übersetzer|zur Übersetzerin|zum Übersetzer}} abgelehnt",
+	"logentry-translatorsandbox-promoted": "$1 hat $3 {{GENDER:$4|zum Übersetzer|zur Übersetzerin}} {{GENDER:$2|befördert}}",
+	"logentry-translatorsandbox-rejected": "$1 hat die Anfrage von „$3“ zur Beförderung {{GENDER:$2|zum Übersetzer|zur Übersetzerin}} abgelehnt",
 	"logentry-newusers-tsbpromoted": "Das Benutzerkonto $3 wurde durch Beförderung von der Übersetzerspielwiese {{GENDER:$2|erstellt}}"
 }

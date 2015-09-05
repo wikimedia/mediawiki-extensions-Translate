@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"J. 'mach' wust"
+		]
+	},
+	"tsb-email-rejected-body": "Hallo $1\n\nVielen Dank für deinen Antrag auf Beförderung {{GENDER:$1|zum Übersetzer|zur Übersetzerin}} auf {{SITENAME}}. Ich bedauere, dich informieren zu müssen, dass ich deinen Antrag abgelehnt habe, da die Qualität deiner Übersetzungen nicht den Anforderungen entspricht.\n\nFalls du denkst, dass dein Antrag durch einen Fehler abgelehnt wurde, versuche, deinen Übersetzerantrag auf {{SITENAME}} erneut einzureichen. Du kannst dich hier registrieren:\n$2\n\n$3,\n{{GENDER:$3|Mitarbeiter|Mitarbeiterin}} von {{SITENAME}}"
+}
