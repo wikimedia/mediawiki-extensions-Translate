@@ -104,6 +104,24 @@
       "revId": "0e1a25d06306f55b21d0aba58bf19c560f3d40d5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_82b1ac8e",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T16:38:07Z",
+      "side": 1,
+      "message": "Does this help?\n\n// Preprocess params\n$params \u003d array();\nif ( isset( $config[\u0027params\u0027] ) ) {\n\tforeach ( $config[\u0027params\u0027] as $key \u003d\u003e $value ) {\n\t\t$params[$key] \u003d str_replace( \u0027%MESSAGE%\u0027, $title-\u003egetPrefixedText(), $value );\n\t}\n}\n\nif ( isset( $config[\u0027url\u0027] ) ) {\n  return  wfAppendQuery( $config[\u0027url\u0027], $params );\n} elseif ( isset( $config[\u0027page\u0027] ) {\n  $page \u003d Title::newFromText( $config[\u0027page\u0027] );\n\tif ( !$page ) {\n\t\tthrow new exception...\n\t}\n  return $page-\u003egetFullUrl( $params );\n} else {\n  throw new exception...\n}",
+      "parentUuid": "6ec1af18_02f7fc56",
+      "revId": "0e1a25d06306f55b21d0aba58bf19c560f3d40d5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
