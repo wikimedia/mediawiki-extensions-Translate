@@ -91,19 +91,10 @@ class TranslateEditAddons {
 			$buttons['save'] = Xml::element( 'input', $temp, '' );
 		}
 
-		global $wgTranslateSupportUrl;
-		if ( !$wgTranslateSupportUrl ) {
+		try {
+			$supportUrl = SupportAid::getSupportUrl( $handle->getTitle() );
+		} catch ( TranslationHelperException $e ) {
 			return true;
-		}
-
-		$supportTitle = Title::newFromText( $wgTranslateSupportUrl['page'] );
-		if ( !$supportTitle ) {
-			return true;
-		}
-
-		$supportParams = $wgTranslateSupportUrl['params'];
-		foreach ( $supportParams as &$value ) {
-			$value = str_replace( '%MESSAGE%', $handle->getTitle()->getPrefixedText(), $value );
 		}
 
 		$temp = array(
@@ -113,7 +104,7 @@ class TranslateEditAddons {
 			'tabindex' => ++$tabindex,
 			'value' => $context->msg( 'translate-js-support' )->text(),
 			'title' => $context->msg( 'translate-js-support-title' )->text(),
-			'data-load-url' => $supportTitle->getLocalUrl( $supportParams ),
+			'data-load-url' => $supportUrl,
 			'onclick' => "window.open( jQuery(this).attr('data-load-url') );",
 		);
 		$buttons['ask'] = Html::element( 'input', $temp, '' );

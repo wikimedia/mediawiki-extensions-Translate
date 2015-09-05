@@ -253,19 +253,10 @@ class TranslationEditPage {
 	}
 
 	protected function getSupportButton( $title ) {
-		global $wgTranslateSupportUrl;
-		if ( !$wgTranslateSupportUrl ) {
+		try {
+			$supportUrl = SupportAid::getSupportUrl( $title );
+		} catch ( TranslationHelperException $e ) {
 			return '';
-		}
-
-		$supportTitle = Title::newFromText( $wgTranslateSupportUrl['page'] );
-		if ( !$supportTitle ) {
-			return '';
-		}
-
-		$supportParams = $wgTranslateSupportUrl['params'];
-		foreach ( $supportParams as &$value ) {
-			$value = str_replace( '%MESSAGE%', $title->getPrefixedText(), $value );
 		}
 
 		$support = Html::element(
@@ -275,7 +266,7 @@ class TranslationEditPage {
 				'type' => 'button',
 				'value' => wfMessage( 'translate-js-support' )->text(),
 				'title' => wfMessage( 'translate-js-support-title' )->text(),
-				'data-load-url' => $supportTitle->getLocalUrl( $supportParams ),
+				'data-load-url' => $supportUrl,
 			)
 		);
 
