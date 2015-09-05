@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_e20750cb",
+        "filename": "Translate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:18:06Z",
+      "side": 1,
+      "message": "Could default to empty array, maybe?",
+      "revId": "5d3ed94df9f18895a06c013ccb58ef7f156e570f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_820a0cd3",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:18:06Z",
+      "side": 1,
+      "message": "Move these to top of the function.",
+      "revId": "5d3ed94df9f18895a06c013ccb58ef7f156e570f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_42f8a4bf",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:18:06Z",
+      "side": 1,
+      "message": "isset( $wgTranslateSupportUrlNamespace[$namespace] )",
+      "revId": "5d3ed94df9f18895a06c013ccb58ef7f156e570f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_62f360e3",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:18:06Z",
+      "side": 1,
+      "message": "Trailing space",
+      "revId": "5d3ed94df9f18895a06c013ccb58ef7f156e570f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_02fe1cab",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:18:06Z",
+      "side": 1,
+      "message": "use isset",
+      "revId": "5d3ed94df9f18895a06c013ccb58ef7f156e570f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_22f9d8c0",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:18:06Z",
+      "side": 1,
+      "message": "Use isset",
+      "revId": "5d3ed94df9f18895a06c013ccb58ef7f156e570f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_c22b342d",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:18:06Z",
+      "side": 1,
+      "message": "uset isset",
+      "revId": "5d3ed94df9f18895a06c013ccb58ef7f156e570f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_e22e703d",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:18:06Z",
+      "side": 1,
+      "message": "trailing space",
+      "revId": "5d3ed94df9f18895a06c013ccb58ef7f156e570f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_8221ac4c",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:18:06Z",
+      "side": 1,
+      "message": "Why do you check for supportParams? If you set it as an empty array you can just use it.",
+      "revId": "5d3ed94df9f18895a06c013ccb58ef7f156e570f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
