@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_6245a017",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:12:37Z",
+      "side": 1,
+      "message": "return \u0027\u0027 is incorrect.\n\nUse \u0027return true\u0027 for consistency.\n\nThere is a cleanup to be done that converts \u0027return true\u0027 to just \u0027return\u0027 on hook callbacks.",
+      "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_c25d74f1",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:12:37Z",
+      "side": 1,
+      "message": "Wow that\u0027s an old typo",
+      "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_42718471",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:12:37Z",
+      "side": 1,
+      "message": "Why would you call it without title here?",
+      "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_a25628cf",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:12:37Z",
+      "side": 1,
+      "message": "The new format is yyyy.dd to match MLEB releases.",
+      "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_e260b0a1",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:12:37Z",
+      "side": 1,
+      "message": "public static",
+      "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_626cc099",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:12:37Z",
+      "side": 1,
+      "message": "You cannot use $this in static method",
+      "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_226238a3",
+        "filename": "utils/TranslationEditPage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T14:12:37Z",
+      "side": 1,
+      "message": "I wouldn\u0027t mind if you removed support button completely from non-tux but this is fine.",
+      "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
