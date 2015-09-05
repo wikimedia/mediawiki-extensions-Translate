@@ -51,6 +51,23 @@
       "revId": "b607dccebb9a8e223114c5b3d0a92f9d2e9f35d6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_88ab0b6c",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-09-05T22:06:14Z",
+      "side": 1,
+      "message": "Rant / exercise: \n\nI\u0027ve seen this in a few places now, but I don\u0027t like this pattern of using wasPosted() to determine whether to use master. Rather, it should use master based on the actions being performed and then we make sure all those code paths are only triggered on POST (using best practices and logs in Jenkins/beta/production - which we have already).\n\nIt seems fragile and is virtually impossible to review with confidence. I challenge anyone claiming to know for sure, I doubt it. The fallback case can also be quite bad. Before it just meant extra DB overhead, but it would be logged and reported to developers (DBPerformance). Alternatively we could turn such warning into an exception if we really want. But making it silently change to slave with no warning or indication seems risky.\n\nIt seems more scalable to require this through injection. That way methods return predictable results when called. And indirect callers and users of data know what to expect. Right now, even if the callers in this class match this expectation, I have very little faith in the data not being used elsewhere for other purposes. If not in this extension, then in another case. This is more a general point than about Translate.\n\nThoughts? Please disagree if you feel so. My intent is to either end up understanding it better or inspire better solutions.",
+      "revId": "b607dccebb9a8e223114c5b3d0a92f9d2e9f35d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
