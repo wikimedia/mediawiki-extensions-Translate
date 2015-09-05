@@ -288,6 +288,6 @@ class SpecialTranslations extends SpecialAllpages {
 	private function includeAssets() {
 		$out = $this->getOutput();
 		TranslationHelpers::addModules( $out );
-		$out->addModules( 'ext.translate.messagetable' );
+		$out->addModuleStyles( 'ext.translate.legacy' );
 	}
 }
