@@ -335,16 +335,26 @@ $wgTranslateTasks = array(
 );
 
 /**
- * Experimental support for Ask help button.
- * Might change into hook later on.
- * This is an array with keys page and params.
+ * Experimental support for an "Ask" help button.
+ * Might change into a hook later on.
+ * This is an array with keys page, url and params.
  * - page is a title of a local wiki page
+ * - url is an URL to use as is (e.g. an issue tracker submission form)
+ *   which will override the page if set
  * - params is an array of key-value pairs of request params
- * -- param value can contain variable %MESSAGE% which will be replaced with
- *    full page name.
+ * -- each param value can contain the variable %MESSAGE%
+ *    which will be replaced with the full page name.
  * @since 2011-03-11
  */
 $wgTranslateSupportUrl = false;
+
+/**
+ * Like $wgTranslateSupportUrl, but for a specific namespace.
+ * Each $wgTranslateSupportUrl-like array needs to be the value
+ * assigned to the numerical ID of a namespace of the wiki.
+ * @since 2015-09
+ */
+$wgTranslateSupportUrlNamespace = false;
 
 /**
  * When unprivileged users open a translation editor, they will
