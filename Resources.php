@@ -146,6 +146,7 @@ $wgResourceModules['ext.translate.hooks'] = array(
 
 $wgResourceModules['ext.translate.legacy'] = array(
 	'styles' => 'resources/css/ext.translate.legacy.css',
+	'position' => 'top',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.loader'] = array(
