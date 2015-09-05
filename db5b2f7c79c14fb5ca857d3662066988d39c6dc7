@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_c2da5450",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2015-09-05T14:22:48Z",
+      "side": 1,
+      "message": "The cleanup on another patch though, right?",
+      "parentUuid": "6ec1af18_6245a017",
+      "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_c25d74f1",
         "filename": "translationaids/SupportAid.php",
         "patchSetId": 2
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_82e0ccf7",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2015-09-05T14:22:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_42718471",
+      "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_a25628cf",
         "filename": "translationaids/SupportAid.php",
         "patchSetId": 2
@@ -64,6 +100,24 @@
       "writtenOn": "2015-09-05T14:12:37Z",
       "side": 1,
       "message": "The new format is yyyy.dd to match MLEB releases.",
+      "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_a2e38801",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2015-09-05T14:22:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_a25628cf",
       "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_42ee64ec",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2015-09-05T14:22:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_e260b0a1",
+      "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_626cc099",
         "filename": "translationaids/SupportAid.php",
         "patchSetId": 2
@@ -98,6 +170,24 @@
       "writtenOn": "2015-09-05T14:12:37Z",
       "side": 1,
       "message": "You cannot use $this in static method",
+      "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_62e920e0",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2015-09-05T14:22:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_626cc099",
       "revId": "db5b2f7c79c14fb5ca857d3662066988d39c6dc7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
