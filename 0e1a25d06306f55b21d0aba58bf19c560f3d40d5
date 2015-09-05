@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_027a9ce6",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T15:48:56Z",
+      "side": 1,
+      "message": "Dunno who wrote this function in the first place, but prefixing every local variable with \"support\" does not add anything and the prefix can be removed.",
+      "revId": "0e1a25d06306f55b21d0aba58bf19c560f3d40d5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_a28948f0",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T15:48:56Z",
+      "side": 1,
+      "message": "Strictly speaking you do not need to set default value for this.",
+      "revId": "0e1a25d06306f55b21d0aba58bf19c560f3d40d5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_427424fb",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T15:48:56Z",
+      "side": 1,
+      "message": "I would rewrite this piece of code as\n\n// Preprocess params\n$params \u003d array();\nif ( isset( params ) {\n foreach ...\n}\n\nif ( isset url ) {\n  return  wfAppendQuery( $url, $params );\n} elseif ( isset page ) {\n  return $page-\u003egetFullUrl( $params );\n} else {\n  throw new exception...\n}",
+      "revId": "0e1a25d06306f55b21d0aba58bf19c560f3d40d5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
