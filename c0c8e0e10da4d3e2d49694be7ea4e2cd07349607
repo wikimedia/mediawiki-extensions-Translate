@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_62cb604e",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T15:07:51Z",
+      "side": 1,
+      "message": "Align the stars like above.",
+      "revId": "c0c8e0e10da4d3e2d49694be7ea4e2cd07349607",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_02d61cf6",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T15:07:51Z",
+      "side": 1,
+      "message": "More accurately it would be the title of the translation.",
+      "revId": "c0c8e0e10da4d3e2d49694be7ea4e2cd07349607",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_42d0a4fa",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T15:07:51Z",
+      "side": 1,
+      "message": "Now that everyone passes a title, You can make this \u0027Title $title\u0027.",
+      "revId": "c0c8e0e10da4d3e2d49694be7ea4e2cd07349607",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_22d1d8fb",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T15:07:51Z",
+      "side": 1,
+      "message": "You can drop the else here, \"throw\" stops execution so nothing else can get here.",
+      "revId": "c0c8e0e10da4d3e2d49694be7ea4e2cd07349607",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_c2033478",
+        "filename": "translationaids/SupportAid.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-05T15:07:51Z",
+      "side": 1,
+      "message": "Dunno why you changed this to else. if ( !foo ) { return early } is nice pattern.",
+      "revId": "c0c8e0e10da4d3e2d49694be7ea4e2cd07349607",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
