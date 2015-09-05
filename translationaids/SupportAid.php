@@ -28,19 +28,35 @@ class SupportAid extends TranslationAid {
 	 * @since 2015.09
 	 */
 	public static function getSupportUrl( Title $title ) {
-		global $wgTranslateSupportUrl;
-		if ( !$wgTranslateSupportUrl ) {
-			throw new TranslationHelperException( "Support page not configured" );
+		global $wgTranslateSupportUrl, $wgTranslateSupportUrlNamespace;
+		$namespace = $title->getNamespace();
+
+		// Fetch the configuration for this namespace if possible, or the default.
+		if ( isset( $wgTranslateSupportUrlNamespace[$namespace] ) ) {
+			$config = $wgTranslateSupportUrlNamespace[$namespace];
+		} elseif ( $wgTranslateSupportUrl ) {
+			$config = $wgTranslateSupportUrl;
 		} else {
-			$supportTitle = Title::newFromText( $wgTranslateSupportUrl['page'] );
-			$supportParams = $wgTranslateSupportUrl['params'];
+			throw new TranslationHelperException( "Support page not configured" );
 		}
 
-		if ( $supportTitle ) {
-			foreach ( $supportParams as &$value ) {
-				$value = str_replace( '%MESSAGE%', $title->getPrefixedText(), $value );
+		// Preprocess params
+		$params = array();
+		if ( isset( $config['params'] ) ) {
+			foreach ( $config['params'] as $key => $value ) {
+				$params[$key] = str_replace( '%MESSAGE%', $title->getPrefixedText(), $value );
 			}
-			return $supportTitle->getFullUrl( $supportParams );
+		}
+
+		// Return the URL or make one from the page
+		if ( isset( $config['url'] ) ) {
+			return  wfAppendQuery( $config['url'], $params );
+		} elseif ( isset( $config['page'] ) ) {
+			$page = Title::newFromText( $config['page'] );
+			if ( !$page ) {
+				throw new TranslationHelperException( "Support page not configured properly" );
+			}
+			return $page->getFullUrl( $params );
 		} else {
 			throw new TranslationHelperException( "Support page not configured properly" );
 		}
