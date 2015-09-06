@@ -143,6 +143,23 @@ class SpecialSearchTranslations extends SpecialPage {
 		// Part 2: results
 		$resultsHtml = '';
 
+		$title = Title::newFromText( $queryString );
+		if ( $title && !in_array( $filter, $translationSearch->getAvailableFilters() ) ) {
+			$handle = new MessageHandle( $title );
+			$code = $handle->getCode();
+			$language = $opts->getValue( 'language' );
+			if ( $handle->isValid() && $code !== '' && $code !== $language ) {
+				$groupId = $handle->getGroup()->getId();
+				$helpers = new TranslationHelpers( $title, $groupId );
+				$document['wiki'] = wfWikiId();
+				$document['localid'] = $handle->getTitleForBase()->getPrefixedText();
+				$document['content'] = $helpers->getTranslation();
+				$document['language'] = $handle->getCode();
+				$documents = array_merge( array( $document ), $documents );
+				$total++;
+			}
+		}
+
 		foreach ( $documents as $document ) {
 			$text = $document['content'];
 			$text = TranslateUtils::convertWhiteSpaceToHTML( $text );
