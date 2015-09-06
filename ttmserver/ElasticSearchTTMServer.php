@@ -558,9 +558,11 @@ GROOVY;
 					$messageId = new \Elastica\Query\Term();
 					$messageId->setTerm( 'localid', $localid );
 					$boolQuery->addMust( $messageId );
-					$language = new \Elastica\Query\Term();
-					$language->setTerm( 'language', $handle->getCode() );
-					$boolQuery->addMust( $language );
+					if ( $opts['language'] === '' ) {
+						$language = new \Elastica\Query\Term();
+						$language->setTerm( 'language', $handle->getCode() );
+						$boolQuery->addMust( $language );
+					}
 					$searchQuery->addShould( $boolQuery );
 				}
 			}
