@@ -92,7 +92,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$params = $opts->getAllValues();
 		$filter = $opts->getValue( 'filter' );
 		try {
-			if ( $filter !== '' ) {
+			if ( in_array( $filter, CrossLanguageTranslationSearchQuery::getAvailableFilters() ) ) {
 				if ( $opts->getValue( 'language' ) === '' ) {
 					$params['language'] = $this->getLanguage()->getCode();
 					$opts->setValue( 'language', $params['language'] );
@@ -432,6 +432,10 @@ HTML
 		);
 
 		$selected = $this->opts->getValue( 'filter' );
+		if ( !in_array( $selected, CrossLanguageTranslationSearchQuery::getAvailableFilters() ) ) {
+			$selected = '';
+		}
+
 		$keys = array_keys( $tabs );
 		if ( !in_array( $selected, array_values( $tabs ) ) ) {
 			$key = $keys[count( $keys ) - 1];

@@ -95,7 +95,7 @@ class CrossLanguageTranslationSearchQuery {
 		$filter = $this->params['filter'];
 		if ( $filter === 'untranslated' ) {
 			$collection->filter( 'hastranslation', true );
-		} elseif ( in_array( $filter, $this->getAvailableFilters() ) ) {
+		} elseif ( in_array( $filter, self::getAvailableFilters() ) ) {
 			$collection->filter( $filter, false );
 		}
 
@@ -127,7 +127,10 @@ class CrossLanguageTranslationSearchQuery {
 		return array( $ret, $offsets );
 	}
 
-	protected function getAvailableFilters() {
+	/**
+	 * @return array
+	 */
+	public static function getAvailableFilters() {
 		return array(
 			'translated',
 			'fuzzy',
