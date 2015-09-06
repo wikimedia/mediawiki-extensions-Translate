@@ -127,7 +127,10 @@ class CrossLanguageTranslationSearchQuery {
 		return array( $ret, $offsets );
 	}
 
-	protected function getAvailableFilters() {
+	/**
+	 * @return array
+	 */
+	public function getAvailableFilters() {
 		return array(
 			'translated',
 			'fuzzy',
