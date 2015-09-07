@@ -37,7 +37,7 @@
 	"tsb-delete-userpage-summary": "Deleting the user page of a sandbox user",
 	"translationstash": "Welcome",
 	"translate-translationstash-welcome": "Welcome {{GENDER:$1|$1}}, you are a new translator",
-	"translate-translationstash-welcome-note": "Become familiar with the translation tools. Translate some messages and get full-translator rights to participate in your favorite projects.",
+	"translate-translationstash-welcome-note": "Become familiar with the translation tools. Translate some messages and get full-translator rights to participate in your favourite projects.",
 	"translate-translationstash-initialtranslation": "Your initial translation",
 	"translate-translationstash-translations": "$1 completed {{PLURAL:$1|translation|translations}}",
 	"translate-translationstash-skip-button-label": "Try another",
