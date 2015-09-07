@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_0cb72636",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-07T19:41:10Z",
+      "side": 1,
+      "message": "You could keep `getAvailableFilters` non-static if you moved $translationSearch assignment line before the if",
+      "revId": "7511a914a0fbbfc9c1c3e416bff6075ad4bebe26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
