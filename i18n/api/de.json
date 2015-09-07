@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Metalhead64",
-			"Colfin 96"
+			"Colfin 96",
+			"Ljonka"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "Nachrichtengruppenkennung.",
@@ -45,6 +46,8 @@
 	"apihelp-searchtranslations-param-service": "Welcher der verfügbaren Übersetzungsdienste genutzt werden sollte.",
 	"apihelp-searchtranslations-param-query": "Die Zeichenfolge, nach der gesucht werden soll.",
 	"apihelp-searchtranslations-param-filter": "Nachrichtenübersetzungsstatusfilter.",
+	"apihelp-searchtranslations-param-match": "Nach allen Wörtern suchen.",
+	"apihelp-searchtranslations-param-case": "Suche (un)abhängig von Groß- und Kleinschreibung.",
 	"apihelp-searchtranslations-param-limit": "Größe des Ergebnisses.",
 	"apihelp-searchtranslations-example-1": "Übersetzungen für die Sprache anzeigen."
 }

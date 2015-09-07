@@ -71,7 +71,7 @@
 	"apihelp-translationstash-example-2": "befrohch the stash\n<!-- \nhttps://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Apihelp-translationstash-description/en_and_MediaWiki:Apihelp-translationstash-example-2/en_and_MediaWiki:Apihelp-translationstash-example-1/en_and_MediaWiki:Apihelp-translationstash-param-username/en\n-->",
 	"apihelp-ttmserver-description": "Frohch noh Vörschlähsch uß de Övversäzongsjedääschneße.",
 	"apihelp-ttmserver-param-service": "Wällsche Övversäzongsdeens jenumme wääde sull.",
-	"apihelp-ttmserver-param-sourcelanguage": "dat Schprohcheköözel vun dämm Quälltäx.",
+	"apihelp-ttmserver-param-sourcelanguage": "Dat Schprohcheköözel vun dämm Quälltäx.",
 	"apihelp-ttmserver-param-targetlanguage": "Dat Schprohcheköözel vun dämm Vörschlaach.",
 	"apihelp-ttmserver-param-text": "Dä Täx för Vörschlähsch för ze fenge.",
 	"apihelp-ttmserver-example-1": "Donn Vörschlähsch holle för „Hölp“ us em Änglesche en et Fennesche ze övversäze.",
