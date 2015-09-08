@@ -157,5 +157,6 @@
 	"translate-gs-multiple": "عديدة",
 	"translate-gs-count": "العدد",
 	"translate-gs-total": "المجموع",
-	"translate-gs-avgscore": "معدل الدرجات"
+	"translate-gs-avgscore": "معدل الدرجات",
+	"translate-documentation-language": "رسالة التوثيق"
 }

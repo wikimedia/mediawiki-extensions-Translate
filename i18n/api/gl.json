@@ -85,6 +85,8 @@
 	"apihelp-searchtranslations-param-language": "O código da lingua na que procurar a cadea.",
 	"apihelp-searchtranslations-param-group": "O identificador do grupo no que procurar a cadea.",
 	"apihelp-searchtranslations-param-filter": "Filtro do estado de tradución das mensaxes.",
+	"apihelp-searchtranslations-param-match": "Coincide con calquera/todas as palabras de busca.",
+	"apihelp-searchtranslations-param-case": "Busca sensible/non sensible a maiúsculas.",
 	"apihelp-searchtranslations-param-offset": "Desprazamento para as traducións.",
 	"apihelp-searchtranslations-param-limit": "Tamaño do resultado.",
 	"apihelp-searchtranslations-example-1": "Mostrar as traducións para a lingua.",
