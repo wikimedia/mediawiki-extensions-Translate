@@ -43,7 +43,6 @@ $al['SpecialLanguageStats'] = "$dir/specials/SpecialLanguageStats.php";
 $al['SpecialMagic'] = "$dir/specials/SpecialMagic.php";
 $al['SpecialManageGroups'] = "$dir/specials/SpecialManageGroups.php";
 $al['SpecialMessageGroupStats'] = "$dir/specials/SpecialMessageGroupStats.php";
-$al['SpecialMyLanguage'] = "$dir/specials/SpecialMyLanguage.php";
 $al['SpecialPageMigration'] = "$dir/specials/SpecialPageMigration.php";
 $al['SpecialPagePreparation'] = "$dir/specials/SpecialPagePreparation.php";
 $al['SpecialSearchTranslations'] = "$dir/specials/SpecialSearchTranslations.php";

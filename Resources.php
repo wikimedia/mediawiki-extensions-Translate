@@ -123,7 +123,7 @@ $wgResourceModules['ext.translate.groupselector'] = array(
 		'ext.translate.statsbar',
 		'mediawiki.jqueryMsg',
 		'ext.translate.loader',
-		'jquery.ui.position.custom',
+		'jquery.ui.position',
 	),
 	'messages' => array(
 		'translate-msggroupselector-projects',
@@ -535,12 +535,6 @@ $wgResourceModules['jquery.autosize'] = array(
 
 $wgResourceModules['jquery.textchange'] = array(
 	'scripts' => 'resources/js/jquery.textchange.js',
-) + $resourcePaths;
-
-// Use different name to not conflict with core.
-// MediaWiki <= 1.23 has 1.8.x, which is too old for us.
-$wgResourceModules['jquery.ui.position.custom'] = array(
-	'scripts' => 'resources/js/jquery.ui.position.js',
 ) + $resourcePaths;
 
 $wgHooks['ResourceLoaderTestModules'][] =
