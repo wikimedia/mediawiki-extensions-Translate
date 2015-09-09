@@ -16,6 +16,24 @@
       "revId": "2efeea5f613987f175f60ca9d4feb021f64dcd96",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_dfd9b4f8",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2015-09-09T08:44:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_a4a4dd47",
+      "revId": "2efeea5f613987f175f60ca9d4feb021f64dcd96",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
