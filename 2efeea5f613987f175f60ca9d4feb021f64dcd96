@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_a4a4dd47",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-09T05:45:13Z",
+      "side": 1,
+      "message": "Recommended format (with tabs):\n\n$boostQuery-\u003eaddFunction(\n  \u0027levenshtein_distance_score\u0027,\n  array(\n    \u0027text\u0027 \u003d\u003e $text,\n    \u0027field\u0027 \u003d\u003e \u0027content\u0027\n  )\n);",
+      "revId": "2efeea5f613987f175f60ca9d4feb021f64dcd96",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
