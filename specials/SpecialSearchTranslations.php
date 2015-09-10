@@ -92,12 +92,12 @@ class SpecialSearchTranslations extends SpecialPage {
 		$params = $opts->getAllValues();
 		$filter = $opts->getValue( 'filter' );
 		try {
-			if ( $filter !== '' ) {
+			$translationSearch = new CrossLanguageTranslationSearchQuery( $params, $server );
+			if ( in_array( $filter, $translationSearch->getAvailableFilters() ) ) {
 				if ( $opts->getValue( 'language' ) === '' ) {
 					$params['language'] = $this->getLanguage()->getCode();
 					$opts->setValue( 'language', $params['language'] );
 				}
-				$translationSearch = new CrossLanguageTranslationSearchQuery( $params, $server );
 				$documents = $translationSearch->getDocuments();
 				$total = $translationSearch->getTotalHits();
 				$resultset = $translationSearch->getResultSet();
@@ -433,13 +433,15 @@ HTML
 
 		$selected = $this->opts->getValue( 'filter' );
 		$keys = array_keys( $tabs );
-		if ( !in_array( $selected, array_values( $tabs ) ) ) {
+		if ( in_array( $selected, array_values( $ellipsisOptions ) ) ) {
 			$key = $keys[count( $keys ) - 1];
 			$ellipsisOptions = array( $key => $tabs[$key] );
 
 			// Remove the last tab
 			unset( $tabs[$key] );
 			$tabs = array_merge( $tabs, array( 'outdated' => $selected ) );
+		} else if ( !in_array( $selected, array_values( $tabs ) ) ) {
+			$selected = '';
 		}
 
 		$container = Html::openElement( 'ul', array( 'class' => 'column tux-message-selector' ) );
