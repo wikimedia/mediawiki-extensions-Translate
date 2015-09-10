@@ -61,18 +61,28 @@ class ElasticSearchTTMServer
 		$fuzzyQuery->setLikeText( $text );
 		$fuzzyQuery->addFields( array( 'content' ) );
 
-		$groovyScript =
+		$boostQuery = new \Elastica\Query\FunctionScore();
+		if ( $this->useWikimediaExtraPlugin() ) {
+			$boostQuery->addFunction(
+				'levenshtein_distance_score',
+				array(
+					'text' => $text,
+					'field' => 'content'
+				)
+			);
+		} else {
+			$groovyScript =
 <<<GROOVY
 import org.apache.lucene.search.spell.*
 new LevensteinDistance().getDistance(srctxt, _source['content'])
 GROOVY;
-		$script = new \Elastica\Script(
-			$groovyScript,
-			array( 'srctxt' => $text ),
-			\Elastica\Script::LANG_GROOVY
-		);
-		$boostQuery = new \Elastica\Query\FunctionScore();
-		$boostQuery->addScriptScoreFunction( $script );
+			$script = new \Elastica\Script(
+				$groovyScript,
+				array( 'srctxt' => $text ),
+				\Elastica\Script::LANG_GROOVY
+			);
+			$boostQuery->addScriptScoreFunction( $script );
+		}
 		$boostQuery->setBoostMode( \Elastica\Query\FunctionScore::BOOST_MODE_REPLACE );
 
 		// Wrap the fuzzy query so it can be used as a filter.
@@ -433,6 +443,13 @@ GROOVY;
 			}
 		}
 		return $this->client;
+	}
+
+	/**
+	 * @return true if the backend is configured with the wikimedia extra plugin
+	 */
+	public function useWikimediaExtraPlugin() {
+		return isset ( $this->config['use_wikimedia_extra'] ) && $this->config['use_wikimedia_extra'];
 	}
 
 	public function getType() {
