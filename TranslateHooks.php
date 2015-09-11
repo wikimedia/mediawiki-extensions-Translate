@@ -12,6 +12,25 @@
  * Some hooks for Translate extension.
  */
 class TranslateHooks {
+	public static function onResourceLoaderTestModules( array &$modules ) {
+
+		$modules['qunit']['ext.translate.parsers.test'] = array(
+			'scripts' => array( 'tests/qunit/ext.translate.parsers.test.js' ),
+			'dependencies' => array( 'ext.translate.parsers' ),
+			'localBasePath' => __DIR__,
+			'remoteExtPath' => 'Translate',
+		);
+
+		$modules['qunit']['ext.translate.special.pagemigration.test'] = array(
+			'scripts' => array( 'tests/qunit/ext.translate.special.pagemigration.test.js' ),
+			'dependencies' => array( 'ext.translate.special.pagemigration' ),
+			'localBasePath' => __DIR__,
+			'remoteExtPath' => 'Translate',
+		);
+
+		return true;
+	}
+
 	/**
 	 * Hook: CanonicalNamespaces
 	 * @param $list array
