@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_4425e2bb",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 904,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2015-09-11T13:03:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_e74c82cd",
+      "revId": "029abaddebc2ced81dc286ea52c39d37934613ab",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_a7cafa1b",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-28T13:11:21Z",
       "side": 1,
       "message": "Should we point the href to edit page of the base page?",
+      "revId": "029abaddebc2ced81dc286ea52c39d37934613ab",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_2428d695",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 913,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2015-09-11T13:03:13Z",
+      "side": 1,
+      "message": "No, that would be confusing. Instead, the user can see the \"view source\" button and get the source language plain text, which is often useful.",
+      "parentUuid": "6ec1af18_a7cafa1b",
       "revId": "029abaddebc2ced81dc286ea52c39d37934613ab",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
