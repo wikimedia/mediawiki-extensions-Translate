@@ -83,7 +83,6 @@ $wgSpecialPages['ManageTranslatorSandbox'] = 'SpecialManageTranslatorSandbox';
 $wgSpecialPages['TranslationStash'] = 'SpecialTranslationStash';
 
 // API
-$wgAPIGeneratorModules['messagecollection'] = 'ApiQueryMessageCollection';
 $wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
 $wgAPIMetaModules['languagestats'] = 'ApiQueryLanguageStats';
 $wgAPIMetaModules['messagegroups'] = 'ApiQueryMessageGroups';
