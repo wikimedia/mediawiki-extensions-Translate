@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ilja.mos"
+			"Ilja.mos",
+			"Mashoi7"
 		]
 	},
+	"translate-page-navigation-legend": "Navigacii",
 	"translate-documentation-language": "Viestien dokumentatsii"
 }

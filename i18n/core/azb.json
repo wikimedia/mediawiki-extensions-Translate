@@ -6,7 +6,8 @@
 			"Ebrahimi-amir",
 			"Mousa",
 			"Reza1615",
-			"Koroğlu"
+			"Koroğlu",
+			"Alp Er Tunqa"
 		]
 	},
 	"translate": "ترجومه ائت",
@@ -321,7 +322,7 @@
 	"tux-editor-proofreading-show-own-translations": "اؤز چئویرمه‌لرینیزی گؤستر",
 	"tux-proofread-action-tooltip": "چئویرمه‌نی قبول ائت",
 	"tux-proofread-edit-label": "دَییشدیر",
-	"tux-editor-page-mode": "صحیفه",
+	"tux-editor-page-mode": "صفحه",
 	"tux-editor-outdated-warning": "بو چئویرمه‌نی گونجل‌له‌مک گرکلی اولا بیلر.",
 	"tux-editor-outdated-warning-diff-link": "فرقلری گؤستر",
 	"tux-editor-doc-editor-placeholder": "مئساژ سندلندیرمه‌سی",

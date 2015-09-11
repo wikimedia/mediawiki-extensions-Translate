@@ -4,5 +4,7 @@
 			"Sujiniku"
 		]
 	},
+	"apihelp-aggregategroups-param-group": "メッセージグループID",
+	"apihelp-query+messagegroupstats-param-group": "メッセージグループID。",
 	"apihelp-searchtranslations-param-match": "任意/すべて の検索ワードのマッチ"
 }
