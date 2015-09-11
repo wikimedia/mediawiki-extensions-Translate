@@ -214,6 +214,9 @@ $wgJobClasses['TranslateSandboxEmailJob'] = 'TranslateSandboxEmailJob';
 $wgParserTestFiles[] = "$dir/tests/parser/translateParserTests.txt";
 
 require "$dir/Resources.php";
+
+$wgHooks['ResourceLoaderTestModules'][] = 'TranslateHooks::onResourceLoaderTestModules';
+
 /** @endcond */
 
 
