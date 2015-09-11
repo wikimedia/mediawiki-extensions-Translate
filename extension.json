@@ -1,0 +1,781 @@
+{
+	"name": "Translate",
+	"version": "2015-08-28",
+	"author": [
+		"Niklas Laxström",
+		"Santhosh Thottingal",
+		"Siebrand Mazeland"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:Translate",
+	"descriptionmsg": "translate-desc",
+	"license-name": "GPL-2.0+",
+	"type": "specialpage",
+	"callback": "TranslateHooks::registerExtension",
+	"DefaultUserOptions": {
+		"translate": 0,
+		"translate-editlangs": "default",
+		"translate-recent-groups": "",
+		"translate-sandbox": ""
+	},
+	"AvailableRights": [
+		"translate",
+		"translate-import",
+		"translate-manage",
+		"translate-messagereview",
+		"translate-groupreview",
+		"translate-sandboxmanage"
+	],
+	"ExtensionFunctions": [
+		"TranslateHooks::setupTranslate"
+	],
+	"SpecialPages": {
+		"Translate": "SpecialTranslate",
+		"Translations": "SpecialTranslations",
+		"TranslationStats": "SpecialTranslationStats",
+		"LanguageStats": "SpecialLanguageStats",
+		"MessageGroupStats": "SpecialMessageGroupStats",
+		"ImportTranslations": "SpecialImportTranslations",
+		"ManageMessageGroups": "SpecialManageGroups",
+		"SupportedLanguages": "SpecialSupportedLanguages",
+		"AggregateGroups": "SpecialAggregateGroups",
+		"SearchTranslations": "SpecialSearchTranslations",
+		"ManageTranslatorSandbox": "SpecialManageTranslatorSandbox",
+		"TranslationStash": "SpecialTranslationStash"
+	},
+	"JobClasses": {
+		"MessageIndexRebuildJob": "MessageIndexRebuildJob",
+		"MessageUpdateJob": "MessageUpdateJob",
+		"MessageGroupStatesUpdaterJob": "MessageGroupStatesUpdaterJob",
+		"TTMServerMessageUpdateJob": "TTMServerMessageUpdateJob",
+		"TranslateSandboxEmailJob": "TranslateSandboxEmailJob"
+	},
+	"LogTypes": [
+		"translationreview",
+		"translatorsandbox"
+	],
+	"LogActionsHandlers": {
+		"translationreview/message": "TranslateLogFormatter",
+		"translationreview/group": "TranslateLogFormatter",
+		"translatorsandbox/promoted": "TranslateLogFormatter",
+		"translatorsandbox/rejected": "TranslateLogFormatter",
+		"newusers/tsbpromoted": "LogFormatter"
+	},
+	"APIModules": {
+		"aggregategroups": "ApiAggregateGroups",
+		"groupreview": "ApiGroupReview",
+		"translatesandbox": "ApiTranslateSandbox",
+		"translateuser": "ApiTranslateUser",
+		"translationaids": "ApiTranslationAids",
+		"translationreview": "ApiTranslationReview",
+		"translationstash": "ApiTranslationStash",
+		"ttmserver": "ApiTTMServer",
+		"searchtranslations": "ApiSearchTranslations"
+	},
+	"APIMetaModules": {
+		"languagestats": "ApiQueryLanguageStats",
+		"messagegroups": "ApiQueryMessageGroups",
+		"messagegroupstats": "ApiQueryMessageGroupStats",
+		"messagetranslations": "ApiQueryMessageTranslations"
+	},
+	"APIListModules": {
+		"messagecollection": "ApiQueryMessageCollection"
+	},
+	"MessagesDirs": {
+		"PageTranslation": [
+			"i18n/pagetranslation"
+		],
+		"Translate": [
+			"i18n/core"
+		],
+		"TranslateGroupDescriptions": [
+			"i18n/groupdescriptions"
+		],
+		"TranslateSearch": [
+			"i18n/search"
+		],
+		"TranslateSandbox": [
+			"i18n/sandbox"
+		],
+		"TranslateApi": [
+			"i18n/api"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"TranslateAlias": "Translate.alias.php",
+		"TranslateMagic": "Translate.i18n.magic.php"
+	},
+	"ResourceModules": {
+		"ext.translate": {
+			"styles": "resources/css/ext.translate.css",
+			"position": "top"
+		},
+		"ext.translate.base": {
+			"scripts": "resources/js/ext.translate.base.js",
+			"dependencies": [
+				"mediawiki.util",
+				"mediawiki.api",
+				"ext.translate.hooks"
+			],
+			"messages": [
+				"translate-js-support-unsaved-warning"
+			]
+		},
+		"ext.translate.dropdownmenu": {
+			"styles": "resources/css/ext.translate.dropdownmenu.css",
+			"scripts": "resources/js/ext.translate.dropdownmenu.js"
+		},
+		"ext.translate.editor": {
+			"scripts": [
+				"resources/js/ext.translate.editor.js",
+				"resources/js/ext.translate.editor.helpers.js",
+				"resources/js/ext.translate.editor.shortcuts.js",
+				"resources/js/ext.translate.proofread.js",
+				"resources/js/ext.translate.pagemode.js"
+			],
+			"styles": [
+				"resources/css/ext.translate.editor.css",
+				"resources/css/ext.translate.proofread.css",
+				"resources/css/ext.translate.pagemode.css"
+			],
+			"dependencies": [
+				"ext.translate.base",
+				"ext.translate.storage",
+				"ext.translate.hooks",
+				"ext.translate.dropdownmenu",
+				"ext.uls.buttons",
+				"mediawiki.util",
+				"mediawiki.Uri",
+				"mediawiki.api",
+				"mediawiki.api.parse",
+				"mediawiki.user",
+				"mediawiki.jqueryMsg",
+				"jquery.makeCollapsible",
+				"jquery.tipsy",
+				"jquery.textchange",
+				"jquery.autosize",
+				"jquery.textSelection"
+			],
+			"messages": [
+				"tux-status-translated",
+				"tux-status-saving",
+				"tux-status-unsaved",
+				"tux-editor-placeholder",
+				"tux-editor-paste-original-button-label",
+				"tux-editor-discard-changes-button-label",
+				"tux-editor-save-button-label",
+				"tux-editor-skip-button-label",
+				"tux-editor-cancel-button-label",
+				"tux-editor-confirm-button-label",
+				"tux-editor-shortcut-info",
+				"tux-editor-edit-desc",
+				"tux-editor-add-desc",
+				"tux-editor-message-desc-more",
+				"tux-editor-message-desc-less",
+				"tux-editor-suggestions-title",
+				"tux-editor-in-other-languages",
+				"tux-editor-need-more-help",
+				"tux-editor-ask-help",
+				"tux-editor-tm-match",
+				"tux-warnings-more",
+				"tux-warnings-hide",
+				"tux-editor-save-failed",
+				"tux-editor-n-uses",
+				"tux-editor-doc-editor-placeholder",
+				"tux-editor-doc-editor-save",
+				"tux-editor-doc-editor-cancel",
+				"translate-edit-nopermission",
+				"translate-edit-askpermission",
+				"tux-editor-outdated-warning",
+				"tux-editor-outdated-warning-diff-link",
+				"tux-proofread-action-tooltip",
+				"tux-proofread-edit-label",
+				"tux-proofread-translated-by-self",
+				"tux-editor-close-tooltip",
+				"tux-editor-expand-tooltip",
+				"tux-editor-collapse-tooltip",
+				"tux-editor-message-tools-history",
+				"tux-editor-message-tools-delete",
+				"tux-editor-message-tools-translations",
+				"tux-editor-loading",
+				"tux-session-expired"
+			],
+			"position": "top"
+		},
+		"ext.translate.groupselector": {
+			"styles": "resources/css/ext.translate.groupselector.css",
+			"scripts": "resources/js/ext.translate.groupselector.js",
+			"position": "top",
+			"dependencies": [
+				"ext.translate.base",
+				"ext.translate.statsbar",
+				"mediawiki.jqueryMsg",
+				"ext.translate.loader",
+				"jquery.ui.position"
+			],
+			"messages": [
+				"translate-msggroupselector-projects",
+				"translate-msggroupselector-search-placeholder",
+				"translate-msggroupselector-search-all",
+				"translate-msggroupselector-search-recent",
+				"translate-msggroupselector-view-subprojects"
+			]
+		},
+		"ext.translate.helplink": {
+			"styles": "resources/css/ext.translate.helplink.css",
+			"position": "top"
+		},
+		"ext.translate.hooks": {
+			"scripts": "resources/js/ext.translate.hooks.js",
+			"position": "top"
+		},
+		"ext.translate.legacy": {
+			"styles": "resources/css/ext.translate.legacy.css",
+			"position": "top"
+		},
+		"ext.translate.loader": {
+			"styles": "resources/css/ext.translate.loader.css",
+			"position": "top"
+		},
+		"ext.translate.messagetable": {
+			"scripts": "resources/js/ext.translate.messagetable.js",
+			"styles": "resources/css/ext.translate.messagetable.css",
+			"position": "bottom",
+			"dependencies": [
+				"ext.translate.base",
+				"ext.translate.hooks",
+				"mediawiki.Uri",
+				"mediawiki.util",
+				"jquery.appear",
+				"mediawiki.jqueryMsg",
+				"ext.translate.parsers",
+				"ext.translate.loader",
+				"ext.uls.buttons",
+				"jquery.textchange"
+			],
+			"messages": [
+				"translate-messagereview-progress",
+				"translate-messagereview-failure",
+				"translate-messagereview-done",
+				"api-error-badtoken",
+				"api-error-emptypage",
+				"api-error-fuzzymessage",
+				"api-error-invalidrevision",
+				"api-error-owntranslation",
+				"api-error-unknownmessage",
+				"api-error-unknownerror",
+				"tpt-unknown-page",
+				"tux-edit",
+				"tux-status-fuzzy",
+				"tux-status-optional",
+				"tux-status-translated",
+				"tux-status-proofread",
+				"translate-edit-title",
+				"tux-messagetable-more-messages",
+				"tux-messagetable-loading-messages",
+				"tux-message-filter-result",
+				"tux-message-filter-advanced-button",
+				"tux-empty-list-all",
+				"tux-empty-list-all-guide",
+				"tux-empty-list-translated",
+				"tux-empty-list-translated-guide",
+				"tux-empty-list-translated-action",
+				"tux-empty-list-other",
+				"tux-empty-list-other-guide",
+				"tux-empty-list-other-action",
+				"tux-empty-list-other-link",
+				"tux-empty-no-messages-to-display",
+				"tux-empty-show-optional-messages",
+				"tux-message-filter-placeholder",
+				"translate-language-disabled",
+				"tux-empty-no-outdated-messages",
+				"tux-empty-nothing-new-to-proofread",
+				"tux-empty-you-can-help-providing",
+				"tux-empty-you-can-review-already-proofread",
+				"tux-empty-nothing-to-proofread",
+				"tux-empty-there-are-optional"
+			]
+		},
+		"ext.translate.messagewebimporter": {
+			"styles": "resources/css/ext.translate.messagewebimporter.css",
+			"position": "top"
+		},
+		"ext.translate.multiselectautocomplete": {
+			"scripts": "resources/js/ext.translate.multiselectautocomplete.js",
+			"dependencies": [
+				"jquery.ui.autocomplete"
+			],
+			"position": "top"
+		},
+		"ext.translate.navitoggle": {
+			"skinScripts": {
+				"vector": "resources/js/ext.translate.navitoggle.js"
+			},
+			"skinStyles": {
+				"vector": "resources/css/ext.translate.navitoggle.css"
+			}
+		},
+		"ext.translate.pagetranslation.uls": {
+			"scripts": "resources/js/ext.translate.pagetranslation.uls.js",
+			"dependencies": [
+				"ext.uls.mediawiki",
+				"mediawiki.Uri",
+				"mediawiki.util"
+			]
+		},
+		"ext.translate.parsers": {
+			"scripts": "resources/js/ext.translate.parsers.js",
+			"dependencies": [
+				"mediawiki.util"
+			]
+		},
+		"ext.translate.quickedit": {
+			"scripts": "resources/js/ext.translate.quickedit.js",
+			"styles": "resources/css/ext.translate.quickedit.css",
+			"messages": [
+				"translate-js-nonext",
+				"translate-js-save-failed"
+			],
+			"dependencies": [
+				"jquery.form",
+				"jquery.ui.dialog",
+				"jquery.autosize",
+				"mediawiki.util"
+			]
+		},
+		"ext.translate.selecttoinput": {
+			"scripts": "resources/js/ext.translate.selecttoinput.js"
+		},
+		"ext.translate.special.aggregategroups": {
+			"scripts": "resources/js/ext.translate.special.aggregategroups.js",
+			"styles": "resources/css/ext.translate.special.aggregategroups.css",
+			"position": "top",
+			"dependencies": [
+				"jquery.ui.autocomplete",
+				"mediawiki.api",
+				"mediawiki.util"
+			],
+			"messages": [
+				"tpt-aggregategroup-remove-confirm",
+				"tpt-aggregategroup-edit-name",
+				"tpt-aggregategroup-edit-description",
+				"tpt-aggregategroup-update",
+				"tpt-aggregategroup-update-cancel",
+				"tpt-invalid-group",
+				"tpt-aggregategroup-add"
+			]
+		},
+		"ext.translate.special.importtranslations": {
+			"scripts": "resources/js/ext.translate.special.importtranslations.js",
+			"dependencies": [
+				"jquery.ui.autocomplete"
+			]
+		},
+		"ext.translate.special.languagestats": {
+			"scripts": "resources/js/ext.translate.special.languagestats.js",
+			"styles": "resources/css/ext.translate.special.languagestats.css",
+			"messages": [
+				"translate-langstats-expandall",
+				"translate-langstats-collapseall",
+				"translate-langstats-expand",
+				"translate-langstats-collapse"
+			],
+			"dependencies": "jquery.tablesorter"
+		},
+		"ext.translate.special.managegroups": {
+			"styles": "resources/css/ext.translate.special.managegroups.css",
+			"position": "top"
+		},
+		"ext.translate.special.managetranslatorsandbox": {
+			"scripts": "resources/js/ext.translate.special.managetranslatorsandbox.js",
+			"styles": "resources/css/ext.translate.special.managetranslatorsandbox.css",
+			"position": "top",
+			"dependencies": [
+				"ext.translate.loader",
+				"ext.translate.translationstashstorage",
+				"ext.uls.buttons",
+				"ext.uls.mediawiki",
+				"mediawiki.api",
+				"mediawiki.jqueryMsg",
+				"mediawiki.language",
+				"jquery.ui.dialog"
+			],
+			"messages": [
+				"tsb-all-languages-button-label",
+				"tsb-accept-button-label",
+				"tsb-reject-button-label",
+				"tsb-selected-count",
+				"tsb-older-requests",
+				"tsb-accept-all-button-label",
+				"tsb-reject-all-button-label",
+				"tsb-user-posted-a-comment",
+				"tsb-reminder-link-text",
+				"tsb-reminder-sending",
+				"tsb-reminder-sent",
+				"tsb-reminder-sent-new",
+				"tsb-reminder-failed",
+				"tsb-didnt-make-any-translations",
+				"tsb-translations-source",
+				"tsb-translations-user",
+				"tsb-translations-current",
+				"tsb-request-count",
+				"tsb-no-requests-from-new-users"
+			]
+		},
+		"ext.translate.special.pagemigration": {
+			"styles": "resources/css/ext.translate.special.pagemigration.css",
+			"scripts": "resources/js/ext.translate.special.pagemigration.js",
+			"dependencies": [
+				"mediawiki.api",
+				"mediawiki.ui.button",
+				"jquery.ajaxdispatcher"
+			],
+			"messages": [
+				"pm-page-does-not-exist",
+				"pm-old-translations-missing",
+				"pm-extra-units-warning",
+				"pm-pagename-missing",
+				"pm-langcode-missing",
+				"pm-add-icon-hover-text",
+				"pm-swap-icon-hover-text",
+				"pm-delete-icon-hover-text",
+				"pm-pagetitle-invalid"
+			]
+		},
+		"ext.translate.special.pagepreparation": {
+			"scripts": "resources/js/ext.translate.special.pagepreparation.js",
+			"messages": [
+				"pp-save-message",
+				"pp-prepare-message",
+				"pp-already-prepared-message",
+				"pp-pagename-missing"
+			],
+			"dependencies": [
+				"jquery.mwExtension",
+				"mediawiki.Title",
+				"mediawiki.action.history.diff",
+				"mediawiki.api",
+				"mediawiki.jqueryMsg",
+				"mediawiki.ui"
+			]
+		},
+		"ext.translate.special.pagetranslation": {
+			"scripts": "resources/js/ext.translate.special.pagetranslation.js",
+			"styles": "resources/css/ext.translate.special.pagetranslation.css",
+			"dependencies": [
+				"ext.translate.multiselectautocomplete",
+				"mediawiki.ui.button"
+			],
+			"position": "top"
+		},
+		"ext.translate.special.searchtranslations": {
+			"scripts": "resources/js/ext.translate.special.searchtranslations.js",
+			"dependencies": [
+				"ext.translate.editor",
+				"ext.uls.mediawiki",
+				"ext.uls.geoclient",
+				"ext.translate.groupselector",
+				"mediawiki.Uri",
+				"mediawiki.language"
+			],
+			"messages": [
+				"translate-documentation-language",
+				"translate-search-more-languages-info",
+				"translate-search-more-groups-info"
+			],
+			"position": "top"
+		},
+		"ext.translate.special.searchtranslations.styles": {
+			"styles": "resources/css/ext.translate.special.searchtranslations.css",
+			"position": "top"
+		},
+		"ext.translate.special.supportedlanguages": {
+			"styles": "resources/css/ext.translate.special.supportedlanguages.css",
+			"position": "top"
+		},
+		"ext.translate.special.translate": {
+			"scripts": "resources/js/ext.translate.special.translate.js",
+			"dependencies": [
+				"mediawiki.jqueryMsg",
+				"mediawiki.Uri",
+				"mediawiki.api",
+				"mediawiki.api.parse",
+				"ext.translate.base",
+				"ext.translate.groupselector",
+				"ext.translate.messagetable",
+				"ext.translate.navitoggle",
+				"ext.translate.workflowselector",
+				"ext.uls.mediawiki"
+			],
+			"messages": [
+				"translate-documentation-language",
+				"tpt-discouraged-language-force-header",
+				"tpt-discouraged-language-force-content",
+				"tpt-discouraged-language-header",
+				"tpt-discouraged-language-content",
+				"tux-editor-proofreading-hide-own-translations",
+				"tux-editor-proofreading-show-own-translations"
+			]
+		},
+		"ext.translate.special.translate.styles": {
+			"styles": "resources/css/ext.translate.special.translate.css",
+			"position": "top"
+		},
+		"ext.translate.special.translationstash": {
+			"scripts": "resources/js/ext.translate.special.translationstash.js",
+			"styles": "resources/css/ext.translate.special.translationstash.css",
+			"position": "top",
+			"dependencies": [
+				"ext.translate.editor",
+				"ext.translate.messagetable",
+				"ext.translate.translationstashstorage",
+				"mediawiki.api",
+				"mediawiki.language",
+				"ext.uls.mediawiki"
+			],
+			"messages": [
+				"translate-translationstash-translations",
+				"translate-translationstash-skip-button-label",
+				"tsb-limit-reached-title",
+				"tsb-limit-reached-body"
+			]
+		},
+		"ext.translate.special.translationstats": {
+			"scripts": "resources/js/ext.translate.special.translationstats.js",
+			"dependencies": [
+				"jquery.ui.datepicker"
+			]
+		},
+		"ext.translate.statsbar": {
+			"styles": "resources/css/ext.translate.statsbar.css",
+			"scripts": "resources/js/ext.translate.statsbar.js",
+			"messages": [
+				"translate-statsbar-tooltip",
+				"translate-statsbar-tooltip-with-fuzzy"
+			],
+			"position": "top"
+		},
+		"ext.translate.storage": {
+			"scripts": "resources/js/ext.translate.storage.js"
+		},
+		"ext.translate.tabgroup": {
+			"styles": "resources/css/ext.translate.tabgroup.css",
+			"position": "top"
+		},
+		"ext.translate.translationstashstorage": {
+			"scripts": "resources/js/ext.translate.translationstashstorage.js",
+			"dependencies": [
+				"mediawiki.api"
+			]
+		},
+		"ext.translate.workflowselector": {
+			"styles": "resources/css/ext.translate.workflowselector.css",
+			"scripts": "resources/js/ext.translate.workflowselector.js",
+			"messages": [
+				"translate-workflow-set-doing",
+				"translate-workflow-state-",
+				"translate-workflowstatus"
+			],
+			"dependencies": [
+				"ext.translate.dropdownmenu",
+				"mediawiki.api"
+			]
+		},
+		"jquery.ajaxdispatcher": {
+			"scripts": "resources/js/jquery.ajaxdispatcher.js"
+		},
+		"jquery.autosize": {
+			"scripts": "resources/js/jquery.autosize.js"
+		},
+		"jquery.textchange": {
+			"scripts": "resources/js/jquery.textchange.js"
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "Translate"
+	},
+	"Hooks": {
+		"CanonicalNamespaces": [
+			"TranslateHooks::setupNamespaces"
+		],
+		"UnitTestsList": [
+			"TranslateHooks::setupUnitTests"
+		],
+		"LoadExtensionSchemaUpdates": [
+			"TranslateHooks::schemaUpdates"
+		],
+		"ParserTestTables": [
+			"TranslateHooks::parserTestTables"
+		],
+		"PageContentLanguage": [
+			"TranslateHooks::onPageContentLanguage"
+		],
+		"ApiTokensGetTokenTypes": [
+			"ApiTranslationReview::injectTokenFunction",
+			"ApiGroupReview::injectTokenFunction",
+			"ApiAggregateGroups::injectTokenFunction",
+			"ApiTranslateSandbox::injectTokenFunction",
+			"ApiTranslationStash::injectTokenFunction"
+		],
+		"EditPage::showEditForm:initial": [
+			"TranslateEditAddons::addTools"
+		],
+		"AlternateEdit": [
+			"TranslateEditAddons::intro"
+		],
+		"EditPageBeforeEditButtons": [
+			"TranslateEditAddons::buttonHack"
+		],
+		"LanguageGetTranslatedLanguageNames": [
+			"TranslateHooks::translateMessageDocumentationLanguage"
+		],
+		"TranslateSupportedLanguages": [
+			"TranslateHooks::translateMessageDocumentationLanguage"
+		],
+		"ArticlePrepareTextForEdit": [
+			"TranslateEditAddons::disablePreSaveTransform"
+		],
+		"ParserFirstCallInit": [
+			"TranslateHooks::setupTranslateParserFunction"
+		],
+		"UserGetReservedNames": [
+			"TranslateHooks::onUserGetReservedNames"
+		],
+		"LinksUpdate": [
+			"TranslateHooks::preventCategorization"
+		],
+		"PageContentSaveComplete": [
+			"TranslateEditAddons::onSave"
+		],
+		"Translate:newTranslation": [
+			"TranslateEditAddons::updateTransverTag"
+		],
+		"SkinTemplateNavigation::SpecialPage": [
+			"SpecialTranslate::tabify",
+			"SpecialManageGroups::tabify"
+		],
+		"GetPreferences": [
+			"TranslatePreferences::onGetPreferences",
+			"TranslatePreferences::translationAssistLanguages",
+			"TranslateSandbox::onGetPreferences"
+		],
+		"SpecialRecentChangesQuery": [
+			"TranslateRcFilter::translationFilter"
+		],
+		"SpecialRecentChangesPanel": [
+			"TranslateRcFilter::translationFilterForm"
+		],
+		"SkinTemplateToolboxEnd": [
+			"TranslateToolbox::toolboxAllTranslations"
+		],
+		"AbortEmailNotification": [
+			"TranslateHooks::onAbortEmailNotificationReview"
+		],
+		"ArticleDeleteComplete": [
+			"TTMServer::onDelete"
+		],
+		"TranslateEventMessageMembershipChange": [
+			"TTMServer::onGroupChange"
+		],
+		"ArticleContentOnDiff": [
+			"TranslateEditAddons::displayOnDiff"
+		],
+		"SpecialSearchProfiles": [
+			"TranslateHooks::searchProfile"
+		],
+		"SpecialSearchProfileForm": [
+			"TranslateHooks::searchProfileForm"
+		],
+		"SpecialSearchSetupEngine": [
+			"TranslateHooks::searchProfileSetupEngine"
+		],
+		"LinkBegin": [
+			"TranslateHooks::linkfix"
+		],
+		"Translate:MessageGroupStats:isIncluded": [
+			"TranslateHooks::hideDiscouragedFromStats",
+			"TranslateHooks::hideRestrictedFromStats"
+		],
+		"MakeGlobalVariablesScript": [
+			"TranslateHooks::addConfig"
+		],
+		"UserGetRights": [
+			"TranslateSandbox::enforcePermissions"
+		],
+		"ApiCheckCanExecute": [
+			"TranslateSandbox::onApiCheckCanExecute"
+		],
+		"TranslateEventTranslationEdit": [
+			"MessageGroupStats::clear",
+			"MessageGroupStatesUpdaterJob::onChange"
+		],
+		"TranslateEventTranslationReview": [
+			"MessageGroupStats::clear",
+			"MessageGroupStatesUpdaterJob::onChange"
+		],
+		"TranslatePostInitGroups": [
+			"MessageGroups::getCCGroups",
+			"MessageGroups::getTranslatablePages",
+			"MessageGroups::getConfiguredGroups",
+			"MessageGroups::getWorkflowGroups",
+			"MessageGroups::getAggregateGroups"
+		],
+		"AdminLinks": [
+			"TranslateHooks::onAdminLinks"
+		],
+		"MergeAccountFromTo": [
+			"TranslateHooks::onMergeAccountFromTo"
+		],
+		"DeleteAccount": [
+			"TranslateHooks::onDeleteAccount"
+		]
+	},
+	"ParserTestFiles": [
+		"tests/parser/translateParserTests.txt"
+	],
+	"config": {
+		"TranslateDocumentationLanguageCode": false,
+		"TranslateFuzzyBotName": "FuzzyBot",
+		"TranslateNewsletterPreference": false,
+		"TranslateLanguageFallbacks": [],
+		"TranslateTasks": {
+			"view": "ViewMessagesTask",
+			"untranslated": "ViewUntranslatedTask",
+			"optional": "ViewOptionalTask",
+			"acceptqueue": "AcceptQueueMessagesTask",
+			"reviewall": "ReviewAllMessagesTask",
+			"export-as-po": "ExportasPoMessagesTask",
+			"export-to-file": "ExportToFileMessagesTask",
+			"custom": "CustomFilteredMessagesTask"
+		},
+		"TranslateSupportUrl": false,
+		"TranslateSupportUrlNamespace": [],
+		"TranslatePermissionUrl": "Project:Translator",
+		"TranslateSecondaryPermissionUrl": "Project:Translator",
+		"EnablePageTranslation": true,
+		"PageTranslationNamespace": 1198,
+		"TranslatePageTranslationULS": false,
+		"TranslateBlacklist": [],
+		"TranslateCheckBlacklist": false,
+		"TranslateMessageNamespaces": [],
+		"TranslateCC": [],
+		"TranslateGroupFiles": [],
+		"TranslateWorkflowStates": false,
+		"TranslateCacheDirectory": false,
+		"TranslateMessageIndex": [
+			"DatabaseMessageIndex"
+		],
+		"TranslateDelayedMessageIndexRebuild": false,
+		"TranslatePHPlot": false,
+		"TranslateYamlLibrary": "spyc",
+		"TranslateUseSandbox": false,
+		"TranslateSandboxPromotedGroup": false,
+		"TranslateSandboxSuggestions": [],
+		"TranslateSandboxLimit": 20,
+		"TranslateUsePreSaveTransform": false,
+		"TranslateRcFilterDefault": "filter",
+		"TranslateTestTTMServer": null,
+		"TranslateTestUsers": []
+	},
+	"manifest_version": 1
+}
