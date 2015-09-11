@@ -13,6 +13,37 @@
  */
 class TranslateHooks {
 	/**
+	 * Helper function for adding namespace for message groups.
+	 *
+	 * It defines constants for the namespace (and talk namespace) and sets up
+	 * restrictions and some other configuration.
+	 * @param $id \int Namespace number
+	 * @param $name \string Name of the namespace
+	 */
+	function wfAddNamespace( $id, $name ) {
+		global $wgExtraNamespaces, $wgContentNamespaces, $wgTranslateMessageNamespaces,
+			$wgNamespaceProtection, $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault;
+
+		$constant = strtoupper( "NS_$name" );
+
+		define( $constant, $id );
+		define( $constant . '_TALK', $id + 1 );
+
+		$wgExtraNamespaces[$id] = $name;
+		$wgExtraNamespaces[$id + 1] = $name . '_talk';
+
+		$wgContentNamespaces[] = $id;
+		$wgTranslateMessageNamespaces[] = $id;
+
+		$wgNamespacesWithSubpages[$id] = true;
+		$wgNamespacesWithSubpages[$id + 1] = true;
+
+		$wgNamespaceProtection[$id] = array( 'translate' );
+
+		$wgNamespacesToBeSearchedDefault[$id] = true;
+	}
+
+	/**
 	 * Hook: CanonicalNamespaces
 	 * @param $list array
 	 * @return bool
