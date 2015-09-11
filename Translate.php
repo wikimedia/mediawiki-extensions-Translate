@@ -25,6 +25,7 @@ define( 'TRANSLATE_VERSION', '2015-08-28' );
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'Translate',
+	'namemsg' => 'extensionname-translate',
 	'version' => TRANSLATE_VERSION,
 	'author' => array(
 		'Niklas Laxström',
