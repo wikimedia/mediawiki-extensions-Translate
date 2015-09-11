@@ -61,6 +61,7 @@ $wgExtensionMessagesFiles['TranslateMagic'] = "$dir/Translate.i18n.magic.php";
 // Register initialization code
 $wgExtensionFunctions[] = 'TranslateHooks::setupTranslate';
 $wgHooks['CanonicalNamespaces'][] = 'TranslateHooks::setupNamespaces';
+$wgHooks['ResourceLoaderTestModules'][] = 'TranslateHooks::onResourceLoaderTestModules';
 $wgHooks['UnitTestsList'][] = 'TranslateHooks::setupUnitTests';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'TranslateHooks::schemaUpdates';
 $wgHooks['ParserTestTables'][] = 'TranslateHooks::parserTestTables';
@@ -213,6 +214,7 @@ $wgJobClasses['TranslateSandboxEmailJob'] = 'TranslateSandboxEmailJob';
 $wgParserTestFiles[] = "$dir/tests/parser/translateParserTests.txt";
 
 require "$dir/Resources.php";
+
 /** @endcond */
 
 
