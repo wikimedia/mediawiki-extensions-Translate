@@ -12,6 +12,92 @@
  * Some hooks for Translate extension.
  */
 class TranslateHooks {
+	public static function registerExtension() {
+		global $wgTranslateTranslationServices, $wgTranslateAuthorBlacklist, $wgTranslateGroupRoot, $wgTranslatePHPlotFont;
+		/**
+		 * Define various web services that provide translation suggestions.
+		 *
+		 * Translation memories are documented in our main documentation.
+		 * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories
+		 *
+		 * For Apertium, you should get an API key.
+		 * @see http://wiki.apertium.org/wiki/Apertium_web_service
+		 *
+		 * Yandex translation helper also provides langlimit option to limit total
+		 * number of suggestions (set to 0 to get all possible translations)
+		 * and langorder array to sort languages. Yandex translate engine is based on
+		 * wordnet, generated from search index, so number of indexed websites should be
+		 * a good heuristic to define the default language order.
+		 *
+		 * The machine translation services are provided with the following information:
+		 * - server ip address
+		 * - versions of MediaWiki and Translate extension
+		 * - clients ip address encrypted with $wgProxyKey
+		 * - source text to translate
+		 * - private API key if provided
+		 */
+		$wgTranslateTranslationServices = array();
+		$wgTranslateTranslationServices['TTMServer'] = array(
+			'database' => false, // Passed to wfGetDB
+			'cutoff' => 0.75,
+			'type' => 'ttmserver',
+			'public' => false,
+		);
+		$wgTranslateTranslationServices['Microsoft'] = array(
+			'url' => 'http://api.microsofttranslator.com/V2/Http.svc/Translate',
+			'key' => null,
+			'timeout' => 3,
+			'type' => 'microsoft',
+		);
+		$wgTranslateTranslationServices['Apertium'] = array(
+			'url' => 'http://api.apertium.org/json/translate',
+			'pairs' => 'http://api.apertium.org/json/listPairs',
+			'key' => null,
+			'timeout' => 3,
+			'type' => 'apertium',
+		);
+		$wgTranslateTranslationServices['Yandex'] = array(
+			'url' => 'https://translate.yandex.net/api/v1.5/tr.json/translate',
+			'key' => null,
+			'pairs' => 'https://translate.yandex.net/api/v1.5/tr.json/getLangs',
+			'timeout' => 3,
+			'langorder' => array( 'en', 'ru', 'uk', 'de', 'fr', 'pl', 'it', 'es', 'tr' ),
+			'langlimit' => 1,
+			'type' => 'yandex',
+		);
+
+		/**
+		 * Two-dimensional array of rules that blacklists certain authors from appearing
+		 * in the exports. This is useful for keeping bots and people doing maintenance
+		 * work in translations not to appear besides real translators everywhere.
+		 *
+		 * Rules are arrays, where first element is type: white or black. Whitelisting
+		 * always overrules blacklisting. Second element should be a valid pattern that
+		 * can be given a preg_match(). It will be matched against string of format
+		 * "group-id;language;author name", without quotes.
+		 * As an example by default we have rule that ignores all authors whose name
+		 * ends in a bot for all languages and all groups.
+		 */
+		$wgTranslateAuthorBlacklist = array();
+		$wgTranslateAuthorBlacklist[] = array( 'black', '/^.*;.*;.*Bot$/Ui' );
+
+		/**
+		 * Location in the filesystem to which paths are relative in custom groups.
+		 */
+		$wgTranslateGroupRoot = '/var/www/externals';
+
+
+		/**
+		 * The default font for PHPlot for drawing text. Only used if the automatic
+		 * best font selection fails. The automatic best font selector uses language
+		 * code to call fc-match program. If you have open_basedir restriction or
+		 * safe-mode, using the found font is likely to fail. In this case you need
+		 * to change the code to use hard-coded font, or copy fonts to location PHP
+		 * can access them, and make sure fc-match returns only those fonts.
+		 */
+		$wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
+	}
+
 	/**
 	 * Hook: CanonicalNamespaces
 	 * @param $list array
