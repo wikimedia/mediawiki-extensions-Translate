@@ -1,7 +1,5 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die();
-}
+
 /**
  * An extension to ease the translation of Mediawiki and other projects.
  *
@@ -13,6 +11,24 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @copyright Copyright © 2006-2015, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0+
  */
+
+if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'Translate' );
+	// Keep i18n globals so mergeMessageFileList.php doesn't break
+	$GLOBALS['wgMessagesDirs']['PageTranslation'] = __DIR__ . '/i18n/pagetranslation';
+	$GLOBALS['wgMessagesDirs']['Translate'] = __DIR__ . '/i18n/core';
+	$GLOBALS['wgMessagesDirs']['TranslateGroupDescriptions'] = __DIR__ . '/i18n/groupdescriptions';
+	$GLOBALS['wgMessagesDirs']['TranslateSearch'] = __DIR__ . '/i18n/search';
+	$GLOBALS['wgMessagesDirs'['TranslateSandbox'] = __DIR__ . '/i18n/sandbox';
+	$GLOBALS['wgMessagesDirs']['TranslateApi'] = __DIR__ . '/i18n/api';
+	$GLOBALS['wgExtensionMessagesFiles']['TranslateAlias'] = __DIR__ . '/Translate.alias.php';
+	$GLOBALS['wgExtensionMessagesFiles']['TranslateMagic'] = __DIR__ . '/Translate.i18n.magic.php';
+	/* wfWarn(
+		'Deprecated PHP entry point used for Translate extension. Please use wfLoadExtension instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	); */
+	return true;
+}
 
 /**
  * Version number used in extension credits and in other places where needed.
