@@ -342,7 +342,7 @@
 	"tux-editor-doc-editor-save": "Faßhallde",
 	"tux-editor-doc-editor-cancel": "Ophühre",
 	"tux-messagetable-more-messages": "{{PLURAL:$1|1=Noch ein Nohreesch|Noch $1 Nohreeschte|0=Kein Nohreeesch mih}}",
-	"tux-messagetable-loading-messages": "Ben {{PLURAL:$1|noch ein Nohreesch|noch $1 Nohreeschte|0=kein Nohreeesch mieh}} aam laade",
+	"tux-messagetable-loading-messages": "Ben {{PLURAL:$1|noch ein Nohreesch|noch $1 Nohreeschte|0=kein Nohreeesch mih}} aam lahde&nbsp;&hellip;",
 	"tux-message-filter-placeholder": "Donn de Leß beschrängke",
 	"tux-message-filter-result": "{{PLURAL:$1|Eine|$1|Keine}} Träffer för „$2“",
 	"tux-message-filter-advanced-button": "Lohß jonn!",

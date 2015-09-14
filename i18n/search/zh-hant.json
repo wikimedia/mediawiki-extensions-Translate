@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Cwlin0416",
-			"Simon Shek"
+			"Simon Shek",
+			"LNDDYL"
 		]
 	},
 	"searchtranslations": "搜尋翻譯",
@@ -21,7 +22,10 @@
 	"tux-sst-prev": "‹ 上一頁",
 	"tux-sst-default": "翻譯",
 	"tux-sst-translated": "翻譯自 $1",
+	"tux-sst-untranslated": "尚無來自於 $1 的翻譯",
+	"tux-sst-outdated": "來自於 $1 的過期翻譯",
 	"tux-sst-ellipsis-untranslated": "無翻譯",
 	"tux-sst-ellipsis-outdated": "已過時的翻譯",
-	"tux-sst-match-message": "顯示符合任何搜尋關鍵字的翻譯。$1"
+	"tux-sst-match-message": "顯示符合任何搜尋關鍵字的翻譯。$1",
+	"tux-sst-case-sensitive": "大小寫視為相異"
 }

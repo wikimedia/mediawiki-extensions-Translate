@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Iltever"
+			"Iltever",
+			"Ernác"
 		]
 	},
 	"translate-magic-notsaved": "Тюрлендириуюгюз сакъланмады!",
+	"translate-total": "Джазылгъанла",
 	"translate-mgs-column-language": "Тил",
 	"translate-documentation-language": "Билдириуню документациясы"
 }

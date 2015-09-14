@@ -1,9 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"LNDDYL"
 		]
 	},
 	"apihelp-groupreview-param-language": "語言代碼。",
-	"apihelp-query+messagecollection-param-language": "語言代碼。"
+	"apihelp-query+messagecollection-param-language": "語言代碼。",
+	"apihelp-searchtranslations-description": "搜尋翻譯。",
+	"apihelp-searchtranslations-param-query": "欲搜尋的字串。",
+	"apihelp-searchtranslations-param-sourcelanguage": "原始文字的語言碼。",
+	"apihelp-searchtranslations-param-filter": "訊息翻譯狀態篩選器。",
+	"apihelp-searchtranslations-param-match": "符合任何/所有搜尋文字。",
+	"apihelp-searchtranslations-param-limit": "結果的大小。"
 }
