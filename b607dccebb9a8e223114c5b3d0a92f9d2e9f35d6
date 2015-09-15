@@ -68,6 +68,24 @@
       "revId": "b607dccebb9a8e223114c5b3d0a92f9d2e9f35d6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_887adde5",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-09-15T20:35:42Z",
+      "side": 1,
+      "message": "Ideally these would use injection, but you end up having to trace down 100 callers and inject flags in the right places for extensions like this (or centralauth, which has a patch doing just that). It\u0027s much more practical when the extension started off with a master/slave distinction when written.\n\nUsing GET/POST is hacky, but:\na) It\u0027s not too much code\nb) I can check logstash to make sure no writes happen on GET to be more confident that such risky read\u003d\u003ewrites don\u0027t happen; the can happen on POST since it will use the master anway\n\nOf course in this case, there are still some GET writes to clean up, so this has to wait in any case.",
+      "parentUuid": "6ec1af18_88ab0b6c",
+      "revId": "b607dccebb9a8e223114c5b3d0a92f9d2e9f35d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
