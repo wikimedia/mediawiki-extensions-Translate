@@ -7,6 +7,7 @@
 	},
 	"searchtranslations": "Hledání v překladech",
 	"tux-sst-edit": "Editovat překlad",
+	"tux-sst-view-foreign": "Zobrazit na $1",
 	"tux-sst-search": "Hledat",
 	"tux-sst-search-ph": "Hledat v překladech",
 	"tux-sst-count": "{{PLURAL:$1|Nalezen jeden výsledek|Nalezeny $1 výsledky|Nalezeno $1 výsledků}}",
@@ -18,5 +19,14 @@
 	"tux-sst-solr-offline-title": "Hledání není dostupné",
 	"tux-sst-solr-offline-body": "Služba pro hledání je dočasně nedostupná.",
 	"tux-sst-next": "Další ›",
-	"tux-sst-prev": "‹ Předchozí"
+	"tux-sst-prev": "‹ Předchozí",
+	"tux-sst-default": "Překlady",
+	"tux-sst-translated": "Překlady z jazyka „$1“",
+	"tux-sst-untranslated": "Nepřeložené z jazyka $1",
+	"tux-sst-outdated": "Zastaralé překlady z jazyka $1",
+	"tux-sst-ellipsis-untranslated": "Nepřeložené",
+	"tux-sst-ellipsis-outdated": "Zastaralé překlady",
+	"tux-sst-link-all-match": "Vyžadovat všechna hledaná slova.",
+	"tux-sst-match-message": "Zobrazují se překlady, které odpovídají libovolnému z hledaných slov. $1",
+	"tux-sst-case-sensitive": "Rozlišovat velikost písmen"
 }

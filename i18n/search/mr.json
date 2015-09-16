@@ -6,6 +6,7 @@
 	},
 	"searchtranslations": "भाषांतर शोधा",
 	"tux-sst-edit": "भाषांतर संपादा",
+	"tux-sst-view-foreign": "$1 वर पहा",
 	"tux-sst-search": "शोधा",
 	"tux-sst-search-ph": "भाषांतर शोधा",
 	"tux-sst-count": "{{PLURAL:$1|एक निकाल सापडला|$1 निकाल सापडले}}",
@@ -16,6 +17,11 @@
 	"tux-sst-nosolr-body": "या विकिवर 'भाषांतर शोध सेवा' नाही.",
 	"tux-sst-solr-offline-title": "'शोध' उपलब्ध नाही",
 	"tux-sst-solr-offline-body": "'शोध' सेवा तात्पुरती अनुपलब्ध आहे.",
-	"tux-sst-next": "पुढील निकाल",
-	"tux-sst-prev": "मागील निकाल"
+	"tux-sst-next": "पुढील >",
+	"tux-sst-prev": "< मागील",
+	"tux-sst-default": "भाषांतरे",
+	"tux-sst-translated": "$1 पासुनची भाषांतरे",
+	"tux-sst-outdated": "$1 पासुनची कालबाह्य भाषांतरे",
+	"tux-sst-ellipsis-untranslated": "भाषांतर नाही",
+	"tux-sst-ellipsis-outdated": "कालाबाह्य भाषांतरे"
 }

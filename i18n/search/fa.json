@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ebraminio",
-			"Danialbehzadi"
+			"Danialbehzadi",
+			"Reza1615"
 		]
 	},
 	"searchtranslations": "جستجوی ترجمه‌ها",
@@ -18,5 +19,6 @@
 	"tux-sst-solr-offline-title": "جستجوی ناموجود است",
 	"tux-sst-solr-offline-body": "خدمت جستجو به‌صورت موقت ناموجود است.",
 	"tux-sst-next": "بعدی ←",
-	"tux-sst-prev": "→ پیشین"
+	"tux-sst-prev": "→ پیشین",
+	"tux-sst-default": "ترجمه‌ها"
 }
