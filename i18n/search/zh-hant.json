@@ -8,6 +8,7 @@
 	},
 	"searchtranslations": "搜尋翻譯",
 	"tux-sst-edit": "編輯翻譯",
+	"tux-sst-view-foreign": "在 $1 檢視",
 	"tux-sst-search": "搜尋",
 	"tux-sst-search-ph": "搜尋翻譯",
 	"tux-sst-count": "{{PLURAL:$1|找到 1 筆結果|找到 $1 筆結果}}",
