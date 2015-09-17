@@ -10,3 +10,5 @@
 *.bak
 tests/pagetranslation/*.fail
 composer.lock
+extensions/
+vendor/
