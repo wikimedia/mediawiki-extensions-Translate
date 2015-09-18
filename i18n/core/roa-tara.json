@@ -322,6 +322,7 @@
 	"tux-proofread-translated-by-self": "Tradotte da te",
 	"tux-empty-list-all": "Stu gruppe de messàgge jè vacande",
 	"tux-empty-list-all-guide": "Scacchie 'n'otre gruppe de messàgge da traducere",
+	"tux-translate-page-no-such-group": "<strong>'U gruppe scacchiate non g'esiste.</strong> Scacchie 'n'otre gruppe de messàgge.",
 	"tux-empty-list-translated": "Nisciune messàgge tradotte",
 	"tux-empty-list-translated-guide": "Ne puè dà 'na màne a traducere",
 	"tux-empty-list-translated-action": "Traduce",
