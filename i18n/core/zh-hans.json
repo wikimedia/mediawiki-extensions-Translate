@@ -28,7 +28,8 @@
 			"乌拉跨氪",
 			"Hudafu",
 			"Fengchao",
-			"Duolaimi"
+			"Duolaimi",
+			"LNDDYL"
 		]
 	},
 	"translate": "翻译",
@@ -36,7 +37,7 @@
 	"translate-taskui-view": "显示所有信息",
 	"translate-taskui-untranslated": "显示未翻译的信息",
 	"translate-taskui-optional": "显示可选信息",
-	"translate-taskui-acceptqueue": "仅我可以标记为已复核的信息",
+	"translate-taskui-acceptqueue": "仅显示我可以标记为已复核的消息",
 	"translate-taskui-reviewall": "复核所有译文",
 	"translate-taskui-export-to-file": "以原始格式导出",
 	"translate-taskui-export-as-po": "导出离线翻译文件",
@@ -288,7 +289,7 @@
 	"translate-messagereview-no-fuzzy": "模糊翻译不能标记为已复核。",
 	"translate-messagereview-no-own": "你不能标记自己的翻译为已复核。",
 	"translate-messagereview-doit": "标记该翻译为已复核。",
-	"group-translate-proofr.css": "/* 放置在这里的CSS仅会影响翻译复核者 */",
+	"group-translate-proofr.css": "/* 这里放置的CSS将只影响翻译复核者 */",
 	"group-translate-proofr.js": "/* 放置在这里的JS仅会影响翻译复核者 */",
 	"log-name-translationreview": "翻译复核日志",
 	"log-description-translationreview": "所有对翻译和信息组的复核的日志。",
