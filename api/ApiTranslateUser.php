@@ -79,7 +79,10 @@ class ApiTranslateUser extends ApiBase {
 		$groups = array_slice( $groups, 0, 5 );
 
 		$user->setOption( 'translate-recent-groups', implode( '|', $groups ) );
-		$user->saveSettings();
+		// Promise to persist the data post-send
+		DeferredUpdates::addCallableUpdate( function() use ( $user ) {
+			$user->saveSettings();
+		} );
 
 		return true;
 	}
