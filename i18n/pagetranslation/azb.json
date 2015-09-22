@@ -3,7 +3,8 @@
 		"authors": [
 			"Ebrahimi-amir",
 			"Mousa",
-			"Amir a57"
+			"Amir a57",
+			"Alp Er Tunqa"
 		]
 	},
 	"pagetranslation": "صحیفه چئویرمه‌سی",
@@ -101,7 +102,7 @@
 	"pt-movepage-block-subpage-exists": "«[[:$2]]» هدف آلت‌صحیفه‌سی یوخدور.",
 	"pt-movepage-block-subpage-invalid": "«[[:$1]]» اوچون هدف آلت‌صحیفه باشلیغی گئچرسیز اولار (چوخ اوزون؟).",
 	"pt-movepage-list-pages": "آدینی دَییشدیره‌جک صحیفه‌لرین لیستی",
-	"pt-movepage-list-translation": "چئویرمک {{PLURAL:$1|صحیفه‌سی|صحیفه‌لری}}",
+	"pt-movepage-list-translation": "چئویرمک {{PLURAL:$1|صفحه‌سی|صفحه‌لری}}",
 	"pt-movepage-list-section": "چئویرمک بیریم {{PLURAL:$1|صحیفه‌سی|صحیفه‌لری}}",
 	"pt-movepage-list-other": "آیری آلت‌{{PLURAL:$1|صحیفه|صحیفه‌لر}}",
 	"pt-movepage-list-count": "توپلام‌دا آدینی دَییشدیرمگه {{PLURAL:$1|بیر|$1}} صحیفه.",

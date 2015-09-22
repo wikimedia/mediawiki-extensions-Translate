@@ -96,7 +96,7 @@
 	"translate-magic-words": "Palabras mágicas",
 	"translate-magic-namespace": "Nombres de los espacios de nombres",
 	"translate-magic-notsaved": "No se guardó tu edición.",
-	"translate-magic-errors": "Por favor corrige {{PLURAL:$1|el siguiente error|los siguientes errores}} en la traducción:",
+	"translate-magic-errors": "Corrige {{PLURAL:$1|el siguiente error|los siguientes errores}} en la traducción:",
 	"translate-magic-saved": "Los cambios se guardaron correctamente.",
 	"translate-checks-parameters": "{{PLURAL:$2|El siguiente parámetro no se está|Los siguientes parámetros no se están}} usando:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|El siguiente parámetro es desconocido|Los siguientes parámetros son desconocidos}}:\n<strong><nowiki>$1</nowiki></strong>",

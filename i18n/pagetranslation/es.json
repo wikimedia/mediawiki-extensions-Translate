@@ -56,7 +56,7 @@
 	"tpt-other-pages-title": "Páginas rotas",
 	"tpt-discouraged-pages-title": "Páginas desaconsejadas",
 	"tpt-new-pages": "{{PLURAL:$1|Esta página contiene|Estas páginas contienen}} texto con etiquetas de traducción, pero ninguna versión de {{PLURAL:$1|esta página está|estas páginas están}} actualmente marcadas para traducción.",
-	"tpt-old-pages": "Alguna versión de {{PLURAL:$1|esta página ha|estas páginas han}} sido marcada para traducción.",
+	"tpt-old-pages": "Alguna versión de {{PLURAL:$1|esta página ha sido marcada|estas páginas han sido marcadas}} para traducción.",
 	"tpt-other-pages": "{{PLURAL:$1|Una versión antigua de esta página se marcó|Versiones antiguas de estas páginas se marcaron}} para traducirse,\npero {{PLURAL:$1|la última versión no se puede|las últimas versiones no se pueden}} marcar para traducirse.",
 	"tpt-discouraged-pages": "Se desaconseja continuar la traducción de {{PLURAL:$1|esta página|estas páginas}}.",
 	"tpt-select-prioritylangs": "Lista de códigos de idioma prioritarios separados por comas:",
