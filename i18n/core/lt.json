@@ -7,7 +7,8 @@
 			"Mantak111",
 			"Perkunas",
 			"Vpovilaitis",
-			"Hugo.arg"
+			"Hugo.arg",
+			"Zygimantus"
 		]
 	},
 	"translate": "Vertimas",
@@ -62,7 +63,7 @@
 	"translate-edit-tmmatch": "$1% atitinka",
 	"translate-use-suggestion": "Pakeisti dabartinį vertimą su šiuo pasiūlymu.",
 	"translate-edit-nopermission": "Jums reikia leidimo išversti pranešimus",
-	"translate-edit-askpermission": "Prašyti leidimo",
+	"translate-edit-askpermission": "Gauti leidimą",
 	"translate-magic-pagename": "MediaWiki išplėtimų vertimas",
 	"translate-magic-help": "Jūs galite versti specialių puslapių pseudonimus, magiškus žodžius ir vardų sričių pavadinimus.\n\nSpecialiojo puslapio pavadinimo ir magiško žodžio vertimai gali būti keli.\nVertimai yra atskiriami kableliu (,).\nVardų srities pavadinimas gali turėti tik vieną vertimą.\n\nVardų sričių vertimuose <code>$1 aptarimas</code> yra specialus. <code>$1</code> yra pakeičiamas svetainės pavadinimu (pavyzdžiui <code>{{ns:project_talk}}</code>).\nJei nėra įmanoma jūsų kalboje formuoti teisingą raiškumą be keisdami svetainės vardą, praneškite mums [[Support|palaikyme]].\n\nJūs turite priklausyti vertėjų grupei, kad galėtumėte įrašyti pakeitimus.\nPakeitimai nebus įrašyti iki Jūs nuspausite išsaugojimo mygtuką apačioje.",
 	"translate-magic-module": "Modulis:",
@@ -187,7 +188,7 @@
 	"translate-manage-action-fuzzy": "Importuoti ir naujinti vertimus",
 	"translate-manage-fuzzy-summary": "Pranešimo apibrėžimas pasikeitė",
 	"translate-manage-submit": "Vykdyti",
-	"translate-manage-import-done": "Viskas baigta!",
+	"translate-manage-import-done": "Importavimas užbaigtas!",
 	"importtranslations": "Importuoti vertimus",
 	"translate-import-from-local": "Vietinio failo įkėlimas:",
 	"translate-import-load": "Įkrauti failą",

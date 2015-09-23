@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Aushulz",
-			"Gmelfi"
+			"Gmelfi",
+			"Sarvaturi"
 		]
 	},
 	"translate-page-no-such-group": "Lu gruppu spicificatu nun èni vàliddu.",
@@ -10,7 +11,7 @@
 	"translate-edit-definition": "Difinizzioni dû missaggiu",
 	"translate-edit-contribute": "cuntribbuisci",
 	"translate-edit-information": "Nfurmazzioni supra lu missaggiu ($1)",
-	"translate-edit-in-other-languages": "Missaggiu 'n àutri lingui",
+	"translate-edit-in-other-languages": "Missaggiu n àutri lingui",
 	"translate-magic-cm-save": "Sarva",
 	"translate-statsf-scale-months": "Misi",
 	"translate-statsf-scale-weeks": "Simani",
@@ -18,6 +19,6 @@
 	"translate-statsf-scale-hours": "Ura",
 	"translate-sidebar-alltrans": "Nti àutri lìngui",
 	"translate-save": "Sarva ($1)",
-	"translate-js-support": "Addumanna 'na cosa",
+	"translate-js-support": "Addumanna na cosa",
 	"translate-documentation-language": "Ducumintazzione dû missaggiu"
 }
