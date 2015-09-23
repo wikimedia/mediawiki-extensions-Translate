@@ -69,6 +69,7 @@
 
 .tux-pagemode-status {
 	top: -10px;
+	height: 40px;
 }
 
 .tux-pagemode-status.fuzzy {
@@ -76,7 +77,6 @@
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/outdated-ltr.svg);
 	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/outdated-ltr.svg);
-	height: 40px;
 }
 
 .tux-pagemode-status.untranslated {
@@ -84,7 +84,6 @@
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/translate-ltr.svg);
 	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/translate-ltr.svg);
-	height: 40px;
 }
 
 .tux-pagemode-action {
