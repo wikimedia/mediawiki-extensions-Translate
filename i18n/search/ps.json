@@ -6,11 +6,18 @@
 	},
 	"searchtranslations": "ژباړې پلټل",
 	"tux-sst-edit": "ژباړه سمول",
+	"tux-sst-view-foreign": "په $1 باندې کتل",
 	"tux-sst-search": "پلټل",
 	"tux-sst-search-ph": "ژباړې پلټل",
 	"tux-sst-facet-language": "ژبې",
 	"tux-sst-facet-group": "پيغام ډلې",
 	"tux-sst-facet-orphan": "(یتیم)",
 	"tux-sst-next": "راتلونکی ›",
-	"tux-sst-prev": "‹ پخوانی"
+	"tux-sst-prev": "‹ پخوانی",
+	"tux-sst-default": "ژباړې",
+	"tux-sst-translated": "له $1 څخه ژباړې",
+	"tux-sst-untranslated": "له $1 څخه ژباړې نشته",
+	"tux-sst-outdated": "له $1 څخه نېټه اوښتې ژباړې",
+	"tux-sst-ellipsis-untranslated": "ژباړه نشته",
+	"tux-sst-ellipsis-outdated": "نېټه اوښتې ژباړې"
 }

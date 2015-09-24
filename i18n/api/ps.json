@@ -4,8 +4,11 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel"
 		]
 	},
-	"apihelp-aggregategroups-param-aggregategroup": "د راغونډونکي پيغام ډلې پېژند.",
+	"apihelp-aggregategroups-param-do": "د پيغام ډلې راغونډولو سره څه کولی شو.",
+	"apihelp-aggregategroups-param-aggregategroup": "د پيغام ډلې پېژند راغونډول.",
 	"apihelp-aggregategroups-param-group": "د پيغام ډلې پېژند.",
+	"apihelp-aggregategroups-param-groupname": "د پيغام ډلې نوم راغونډول.",
+	"apihelp-aggregategroups-param-groupdescription": "د پيغام ډلې څرگندونه راغونډول.",
 	"apihelp-aggregategroups-example-1": "يوه ډله اړوندول",
 	"apihelp-groupreview-param-group": "پيغام ډله.",
 	"apihelp-groupreview-param-language": "د ژبې کوډ.",
@@ -16,5 +19,8 @@
 	"apihelp-query+messagegroups-example-1": "پيغام ډلې ښکاره کول",
 	"apihelp-query+messagegroupstats-param-group": "د پيغام ډلې پېژند.",
 	"apihelp-translatesandbox-param-do": "څه کولی شم.",
-	"apihelp-translationstash-param-subaction": "کړنه."
+	"apihelp-translationstash-param-subaction": "کړنه.",
+	"apihelp-searchtranslations-description": "ژباړې پلټل.",
+	"apihelp-searchtranslations-param-limit": "د پايلې کچه.",
+	"apihelp-searchtranslations-example-1": "د ټاکلې ژبې ژباړې ښکاره کول."
 }

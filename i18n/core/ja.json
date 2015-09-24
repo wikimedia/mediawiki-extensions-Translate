@@ -20,6 +20,7 @@
 		]
 	},
 	"translate": "翻訳",
+	"extensionname-translate": "翻訳",
 	"translate-desc": "MediaWiki やその他のものを翻訳するための[[Special:Translate|特別ページ]]",
 	"translate-taskui-view": "全メッセージを表示",
 	"translate-taskui-untranslated": "未翻訳メッセージを表示",
@@ -302,10 +303,6 @@
 	"translate-dynagroup-recent-desc": "このメッセージ群ではこの言語への最近の翻訳をすべて表示します。\n査読作業に便利です。",
 	"translate-dynagroup-additions-label": "最近の追加",
 	"translate-dynagroup-additions-desc": "このメッセージ群では新たに追加または変更されたメッセージを表示します。",
-	"translate-dynagroup-by": "{{GENDER:$1|$1}}による翻訳",
-	"translate-dynagroup-byc": "{{GENDER:$1|$1}}による翻訳 ($2)",
-	"translate-dynagroup-last": "{{GENDER:$1|$1}}による最終更新",
-	"translate-dynagroup-lastc": "{{GENDER:$1|$1}}による最終更新 ($2)",
 	"translate-gethelp": "ヘルプ",
 	"translate-msggroupselector-projects": "メッセージ群",
 	"translate-msggroupselector-search-placeholder": "検索するメッセージ群",
