@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ecb373e_98055816",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-09-25T11:50:59Z",
+      "side": 1,
+      "message": "Could this be done for skins too please.",
+      "revId": "cc6376dc5819d42eff495a1de29fe28eea5d4e1d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
