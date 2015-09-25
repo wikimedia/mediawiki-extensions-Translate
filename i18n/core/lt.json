@@ -12,6 +12,7 @@
 		]
 	},
 	"translate": "Vertimas",
+	"translate-extensionname": "Versti",
 	"translate-desc": "[[Special:Translate|Specialus puslapis]] MediaWiki vertimui ir už jos ribų",
 	"translate-taskui-view": "Rodyti visus pranešimus",
 	"translate-taskui-untranslated": "Rodyti neišverstus pranešimus",
