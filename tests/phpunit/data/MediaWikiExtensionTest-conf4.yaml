@@ -24,3 +24,7 @@ CHECKER:
 
 INSERTABLES:
   class: MediaWikiInsertablesSuggester
+
+TAGS:
+  optional:
+    - *-extensionname
