@@ -309,6 +309,13 @@ class PremadeMediawikiExtensionGroups {
 				}
 			}
 
+			// Mark some fixed form optional messages automatically
+			if ( !isset( $newgroup['optional' ] ) ) {
+				$newgroup['optional'] = array();
+			}
+
+			$newgroup['optional'][] = '*-extensionname';
+
 			$fixedGroups[$id] = $newgroup;
 		}
 
