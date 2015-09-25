@@ -16,6 +16,24 @@
       "revId": "cc6376dc5819d42eff495a1de29fe28eea5d4e1d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_583610e6",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2015-09-25T11:54:46Z",
+      "side": 1,
+      "message": "It is being done, as skins are also extended from this class.",
+      "parentUuid": "2ecb373e_98055816",
+      "revId": "cc6376dc5819d42eff495a1de29fe28eea5d4e1d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
