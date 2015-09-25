@@ -8,7 +8,7 @@
 		]
 	},
 	"translate": "Translate",
-	"extensionname-translate": "Translate",
+	"translate-extensionname": "Translate",
 	"translate-desc": "[[Special:Translate|Special page]] for translating MediaWiki and beyond",
 	"translate-taskui-view": "Show all messages",
 	"translate-taskui-untranslated": "Show untranslated messages",

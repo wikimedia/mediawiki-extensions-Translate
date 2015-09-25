@@ -29,7 +29,7 @@
 		]
 	},
 	"translate": "Przetłumacz",
-	"extensionname-translate": "Przetłumacz",
+	"translate-extensionname": "Przetłumacz",
 	"translate-desc": "[[Special:Translate|Strona specjalna]] umożliwiająca tłumaczenie MediaWiki oraz innych programów",
 	"translate-taskui-view": "Pokaż wszystkie komunikaty",
 	"translate-taskui-untranslated": "Pokaż nieprzetłumaczone komunikaty",

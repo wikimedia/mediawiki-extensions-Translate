@@ -20,7 +20,7 @@
 		]
 	},
 	"translate": "翻訳",
-	"extensionname-translate": "翻訳",
+	"translate-extensionname": "翻訳",
 	"translate-desc": "MediaWiki やその他のものを翻訳するための[[Special:Translate|特別ページ]]",
 	"translate-taskui-view": "全メッセージを表示",
 	"translate-taskui-untranslated": "未翻訳メッセージを表示",
