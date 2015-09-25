@@ -39,6 +39,7 @@ MANGLER:
 
 TAGS:
   optional:
+    - "*-extensionname"
     - grouppage-recursive-export
   ignored:
     - wmf-sidebar
