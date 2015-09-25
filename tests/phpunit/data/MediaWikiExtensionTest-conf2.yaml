@@ -40,6 +40,7 @@ MANGLER:
 TAGS:
   optional:
     - grouppage-recursive-export
+    - "*-extensionname"
   ignored:
     - wmf-sidebar
     - robots.txt
