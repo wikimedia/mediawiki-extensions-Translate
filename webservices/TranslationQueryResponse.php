@@ -28,7 +28,7 @@ class TranslationQueryResponse {
 		$obj->reason = $response['reason'];
 		$obj->headers = $response['headers'];
 		$obj->body = $response['body'];
-		$obj->error = $response['body'];
+		$obj->error = $response['error'];
 		return $obj;
 	}
 
