@@ -314,7 +314,9 @@ class PremadeMediawikiExtensionGroups {
 				$newgroup['optional'] = array();
 			}
 
+			// Mark extension name and skin names optional.
 			$newgroup['optional'][] = '*-extensionname';
+			$newgroup['optional'][] = '*-skinname';
 
 			$fixedGroups[$id] = $newgroup;
 		}

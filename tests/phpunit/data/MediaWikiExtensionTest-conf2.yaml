@@ -41,6 +41,7 @@ TAGS:
   optional:
     - grouppage-recursive-export
     - "*-extensionname"
+    - "*-skinname"
   ignored:
     - wmf-sidebar
     - robots.txt
