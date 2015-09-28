@@ -33,6 +33,24 @@
       "revId": "03d601f35c221c79c126f8404741affa1527c710",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_acf1dfff",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-09-28T19:05:02Z",
+      "side": 1,
+      "message": "extension.json does not support file paths. you have to support it in the actual files in the main core which you carnt since this setting is for this extension only.",
+      "parentUuid": "2ecb373e_ccbd4b18",
+      "revId": "03d601f35c221c79c126f8404741affa1527c710",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
