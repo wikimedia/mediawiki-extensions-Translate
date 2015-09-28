@@ -76,8 +76,8 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				} else {
 					$messages->filter( $filter, false, $value );
 				}
-			} catch ( MWException $e) {
-				$this->dieUsage( $e->getMessage(), 'invalidfilter');
+			} catch ( MWException $e ) {
+				$this->dieUsage( $e->getMessage(), 'invalidfilter' );
 			}
 		}
 

@@ -89,7 +89,7 @@ JS;
 
 		$values[] = array(
 			array( 'word' => 'слово' ),
-			array( 'Matthias', 'Hannes'),
+			array( 'Matthias', 'Hannes' ),
 			$file2,
 		);
 

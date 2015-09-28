@@ -465,7 +465,6 @@ class SpecialTranslate extends SpecialPage {
 		$tabs = array(
 			'all' => '',
 			'untranslated' => '!translated',
-			//'Hardest',
 			'outdated' => 'fuzzy',
 			'translated' => 'translated',
 			'unproofread' => "translated|!reviewer:$userId|!last-translator:$userId",
@@ -525,7 +524,7 @@ class SpecialTranslate extends SpecialPage {
 			Html::closeElement( 'li' );
 
 		$output .= Html::closeElement( 'ul' );
-		$output .= Html::closeElement( 'div' ); //close nine columns
+		$output .= Html::closeElement( 'div' ); // close nine columns
 		$output .= Html::openElement( 'div', array( 'class' => 'three columns' ) );
 		$output .= Html::openElement( 'div', array( 'class' => 'two columns' ) );
 		$output .= Html::element( 'div', array( 'class' => 'tux-message-filter-box-icon' ) );

@@ -37,7 +37,7 @@ class TranslateGenerateRandomSandboxData extends Maintenance {
 
 			$language = $languages[rand( 0, count( $languages ) - 1 )];
 
-			$count = gauss_ms( $mean, $stddev );
+			$count = wfGaussMs( $mean, $stddev );
 			$count = min( 20, $count );
 			$count = max( 0, $count );
 
@@ -62,28 +62,25 @@ class TranslateGenerateRandomSandboxData extends Maintenance {
  * http://stackoverflow.com/questions/5188900/bell-curve-algorithm-with-php
  */
 
-function gauss() {
+function wfGauss() {
 	static $useExists = false;
 	static $useValue;
 
 	if ( $useExists ) {
 		// Use value from a previous call to this function
-		//
 		$useExists = false;
 		return $useValue;
 	} else {
 		// Polar form of the Box-Muller transformation
-		//
 		$w = 2.0;
 		while ( ( $w >= 1.0 ) || ( $w == 0.0 ) ) {
-				$x = random_PN();
-				$y = random_PN();
-				$w = ($x * $x) + ($y * $y);
+				$x = wfRandomPn();
+				$y = wfRandomPn();
+				$w = ( $x * $x ) + ( $y * $y );
 		}
 		$w = sqrt( ( -2.0 * log( $w ) ) / $w );
 
 		// Set value for next call to this function
-		//
 		$useValue = $y * $w;
 		$useExists = true;
 
@@ -91,21 +88,21 @@ function gauss() {
 	}
 }
 
-function gauss_ms( $mean, $stddev ) {
+function wfGaussMs( $mean, $stddev ) {
 	// Adjust our gaussian random to fit the mean and standard deviation.
 	// The division by 4 is an arbitrary value to help fit the distribution
 	// within our required range, and gives a best fit for $stddev = 1.0.
-	return gauss() * ( $stddev / 4 ) + $mean;
+	return wfGauss() * ( $stddev / 4 ) + $mean;
 }
 
-function random_0_1() {
+function wfRandom01() {
 	// Returns random number using mt_rand() with a flat distribution from 0 to 1 inclusive
 	return (float) mt_rand() / (float) mt_getrandmax();
 }
 
-function random_PN() {
+function wfRandomPn() {
 	// Returns random number using mt_rand() with a flat distribution from -1 to 1 inclusive
-	return (2.0 * random_0_1()) - 1.0;
+	return ( 2.0 * wfRandom01() ) - 1.0;
 }
 
 $maintClass = 'TranslateGenerateRandomSandboxData';

@@ -101,7 +101,7 @@ class GroupStatistics extends Maintenance {
 	 */
 	public $localisedWeights = array(
 		'wikimedia' => array(
-			//'core-0-mostused' => 40,
+			// 'core-0-mostused' => 40,
 			'core' => 50,
 			'ext-0-wikimedia' => 50
 		),
@@ -110,7 +110,7 @@ class GroupStatistics extends Maintenance {
 			'ext-di-pfpg' => 84,
 		),
 		'mediawiki' => array(
-			//'core-0-mostused' => 30,
+			// 'core-0-mostused' => 30,
 			'core' => 50,
 			'ext-0-wikimedia' => 25,
 			'ext-0-all' => 25
@@ -181,7 +181,7 @@ class GroupStatistics extends Maintenance {
 		'zh-cn' => '', // zh
 		'zh-sg' => '', // zh
 		'zh-hk' => '', // zh
-		'zh-min-nan' => '', //
+		'zh-min-nan' => '', // nan
 		'zh-mo' => '', // zh
 		'zh-my' => '', // zh
 		'zh-tw' => '', // zh

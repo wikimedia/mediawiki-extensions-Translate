@@ -18,9 +18,7 @@ class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		return array( '.php' );
 	}
 
-	//
 	// READ
-	//
 
 	/**
 	 * @param string $data
@@ -58,9 +56,8 @@ class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		);
 	}
 
-	//
 	// WRITE
-	//
+
 	protected function writeReal( MessageCollection $collection ) {
 		if ( isset( $this->extra['header'] ) ) {
 			$output = $this->extra['header'];

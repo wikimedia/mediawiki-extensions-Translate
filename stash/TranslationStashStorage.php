@@ -34,7 +34,7 @@ class TranslationStashStorage {
 		);
 
 		$indexes = array(
-			array( 'ts_user', 'ts_namespace', 'ts_title'  )
+			array( 'ts_user', 'ts_namespace', 'ts_title' )
 		);
 
 		$this->db->replace( $this->dbTable, $indexes, $row, __METHOD__ );

@@ -171,7 +171,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$link = "<span class='plainlinks'>[$target $revision]</span>";
 			$out->wrapWikiMsg(
 				'<div class="warningbox">$1</div>',
-				array( 'tpt-oldrevision', $title->getPrefixedText(), $link  )
+				array( 'tpt-oldrevision', $title->getPrefixedText(), $link )
 			);
 			$this->listPages();
 
@@ -182,7 +182,7 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( $lastrev !== false && $lastrev === $revision ) {
 			$out->wrapWikiMsg(
 				'<div class="warningbox">$1</div>',
-				array( 'tpt-already-marked'  )
+				array( 'tpt-already-marked' )
 			);
 			$this->listPages();
 
@@ -232,7 +232,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$this->getOutput()->wrapWikiMsg(
 			'<div class="successbox">$1</div>',
-			array( 'tpt-saveok', $titleText, $num, $link   )
+			array( 'tpt-saveok', $titleText, $num, $link )
 		);
 
 		// If TranslationNotifications is installed, and the user can notify
@@ -592,7 +592,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$s->type = $defaultChecked ? $s->type : 'new';
 
 				// Checkbox for page title optional translation
-				$this->getOutput()->addHTML ( Xml::checkLabel(
+				$this->getOutput()->addHTML( Xml::checkLabel(
 					$this->msg( 'tpt-translate-title' )->text(),
 					'translatetitle',
 					'mw-translate-title',

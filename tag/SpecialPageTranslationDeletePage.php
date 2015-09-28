@@ -131,7 +131,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	 */
 	protected function doBasicChecks() {
 		# Check rights
-		if (  !$this->userCanExecute( $this->getUser() )  ) {
+		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 		}
 

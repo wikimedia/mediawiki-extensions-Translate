@@ -357,8 +357,8 @@ class PageTranslationHooks {
 
 		if ( $e ) {
 			$msg = $e->getMsg();
-			//$msg is an array containing a message key followed by any parameters.
-			//todo: use Message object instead.
+			// $msg is an array containing a message key followed by any parameters.
+			// @todo Use Message object instead.
 
 			call_user_func_array( array( $status, 'fatal' ), $msg );
 		}
@@ -606,7 +606,7 @@ class PageTranslationHooks {
 	 * @return bool
 	 */
 	public static function preventPatrolling( Title $title, User $user, $action, &$result ) {
-		if ( $action !== 'patrol') {
+		if ( $action !== 'patrol' ) {
 			return true;
 		}
 
