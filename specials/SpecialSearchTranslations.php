@@ -440,7 +440,7 @@ HTML
 			// Remove the last tab
 			unset( $tabs[$key] );
 			$tabs = array_merge( $tabs, array( 'outdated' => $selected ) );
-		} else if ( !in_array( $selected, array_values( $tabs ) ) ) {
+		} elseif ( !in_array( $selected, array_values( $tabs ) ) ) {
 			$selected = '';
 		}
 

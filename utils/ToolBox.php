@@ -29,7 +29,7 @@ class TranslateToolbox {
 			$message = $title->getNsText() . ':' . $handle->getKey();
 			$desc = wfMessage( 'translate-sidebar-alltrans' )->escaped();
 			$url = htmlspecialchars( SpecialPage::getTitleFor( 'Translations' )
-				->getLocalURL( array ('message' => $message ) ) );
+				->getLocalURL( array( 'message' => $message ) ) );
 
 			// Add the actual toolbox entry.
 			// Add newlines and tabs for nicer HTML output.

@@ -50,7 +50,7 @@ class SupportAid extends TranslationAid {
 
 		// Return the URL or make one from the page
 		if ( isset( $config['url'] ) ) {
-			return  wfAppendQuery( $config['url'], $params );
+			return wfAppendQuery( $config['url'], $params );
 		} elseif ( isset( $config['page'] ) ) {
 			$page = Title::newFromText( $config['page'] );
 			if ( !$page ) {

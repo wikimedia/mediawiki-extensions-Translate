@@ -112,7 +112,7 @@ class MessageGroups {
 	 */
 	protected static function appendAutoloader( array &$additions, array &$to ) {
 		foreach ( $additions as $class => $file ) {
-			if ( isset( $to[$class] ) && $to[$class] !== $file  ) {
+			if ( isset( $to[$class] ) && $to[$class] !== $file ) {
 				$msg = "Autoload conflict for $class: {$to[$class]} !== $file";
 				trigger_error( $msg, E_USER_WARNING );
 				continue;
