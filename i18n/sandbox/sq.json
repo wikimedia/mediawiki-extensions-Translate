@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kosovastar"
+		]
+	},
+	"tsb-reminder-content-generic": "Përshëndetje $1,\n\nFaleminderit për regjistrimin tek {{SITENAME}}.\n\nNëse e plotëson testin tënd të përkthimeve, administratorët më pas do të japin qasje të plotë përkthimi.\n\nTë lutem eja dhe bëjë disa përkthime më shumë  këtu:\n$2\n\n$3,\nstafi i {{SITENAME}}"
+}

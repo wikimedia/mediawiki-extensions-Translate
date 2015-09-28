@@ -4,10 +4,13 @@
 			"Dori",
 			"Puntori",
 			"GretaDoci",
-			"Liridon"
+			"Liridon",
+			"Kosovastar"
 		]
 	},
 	"translate": "Përkthime",
+	"translate-extensionname": "Përkthe",
+	"translate-taction-lstats": "Statistikat gjuhësore",
 	"translate-page-group": "Grupi",
 	"translate-page-language": "Gjuha",
 	"translate-page-edit": "redakto",
@@ -18,6 +21,7 @@
 	"translate-magic-cm-comment": "Komenti:",
 	"translate-magic-cm-save": "Ruaje",
 	"translate-magic-cm-savefailed": "Ruajtja dështoi",
+	"prefs-translate": "Opsione përkthimi",
 	"translate-stats-edits": "Redaktime",
 	"translate-stats-users": "Përkthyes",
 	"translate-statsf-width": "Gjerësia në piksel:",
@@ -28,6 +32,9 @@
 	"translate-statsf-scale-hours": "Orë",
 	"translate-statsf-count-users": "Përkthyesit aktiv",
 	"translate-statsf-submit": "Parapamja",
+	"translate-mgs-pagename": "Statistikat e mesazhit të grupit",
+	"translate-js-history": "Historia e përkthimit",
 	"translate-documentation-language": "Dokumentimi i mesazhit",
+	"tux-editor-save-button-label": "Ruaj përkthimin",
 	"tux-editor-shortcut-info": "Shtypni \"<span class=\"notranslate\" translate=\"asnjë\">$1</span>\" për të shpëtuar ose \"<span class=\"notranslate\" translate=\"asnjë\">$2</span>\" për të kaluar tek tjetër mesazh, ose \"<span class=\"notranslate\" translate=\"asnjë\">$3</span>\"  për shortcut të tjera ."
 }
