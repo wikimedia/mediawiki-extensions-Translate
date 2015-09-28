@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2ecb373e_49f86de2",
+        "filename": "resources/js/ext.translate.special.operatorsuggest.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-09-28T17:48:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ecb373e_2d39a43e",
+      "revId": "520c12777d54c8043b575d45d9f0c92c59d3f3f2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ecb373e_6d2facf4",
         "filename": "resources/js/ext.translate.special.operatorsuggest.js",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-23T13:25:40Z",
       "side": 1,
       "message": "Use tabs instead of mixed spaces and tabs.",
+      "revId": "520c12777d54c8043b575d45d9f0c92c59d3f3f2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_69fbe9de",
+        "filename": "resources/js/ext.translate.special.operatorsuggest.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2164
+      },
+      "writtenOn": "2015-09-28T17:48:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ecb373e_6d2facf4",
       "revId": "520c12777d54c8043b575d45d9f0c92c59d3f3f2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
