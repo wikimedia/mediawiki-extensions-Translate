@@ -16,7 +16,7 @@
 		]
 	},
 	"translate": "번역하기",
-	"translate-desc": "미디어위키와 기타를 번역하기 위한 [[Special:Translate|특수 문서]]",
+	"translate-desc": "미디어위키와 다른 것들을 번역하기 위한 [[Special:Translate|특수 문서]]",
 	"translate-taskui-view": "모든 메시지 보기",
 	"translate-taskui-untranslated": "번역되지 않은 메시지 보기",
 	"translate-taskui-optional": "선택적 메시지 보기",
