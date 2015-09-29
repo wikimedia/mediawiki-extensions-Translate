@@ -87,6 +87,24 @@
       "revId": "03d601f35c221c79c126f8404741affa1527c710",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_fe38dbc8",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-29T18:20:51Z",
+      "side": 1,
+      "message": "Which bug?",
+      "parentUuid": "2ecb373e_551792a8",
+      "revId": "03d601f35c221c79c126f8404741affa1527c710",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
