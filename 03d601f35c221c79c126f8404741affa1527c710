@@ -123,6 +123,24 @@
       "revId": "03d601f35c221c79c126f8404741affa1527c710",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_69c2f75e",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-09-29T19:16:00Z",
+      "side": 1,
+      "message": "It only affects __DIR__ . We are not using that.",
+      "parentUuid": "2ecb373e_3ead03e8",
+      "revId": "03d601f35c221c79c126f8404741affa1527c710",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
