@@ -393,5 +393,6 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% 翻訳済み、$2% 査読済、$3% 要修正",
 	"translate-search-more-groups-info": "他 $1 {{PLURAL:$1|メッセージ群}}",
 	"translate-ulsdep-body": "Translate 拡張機能は [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector 拡張機能]を必要とします。",
-	"tux-session-expired": "ログインしていない状態になっています。別のタブでログインしてください。できない場合は、未保存の翻訳をコピーしておいて、ログインして、このページに戻ってきて、翻訳ページに入り直してください。"
+	"tux-session-expired": "ログインしていない状態になっています。別のタブでログインしてください。できない場合は、未保存の翻訳をコピーしておいて、ログインして、このページに戻ってきて、翻訳ページに入り直してください。",
+	"tux-nojs": "このページは JavaScript を要求しています。"
 }

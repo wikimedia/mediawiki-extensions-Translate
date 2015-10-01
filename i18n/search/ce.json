@@ -13,5 +13,6 @@
 	"tux-sst-facet-group": "Хаамийн тоба",
 	"tux-sst-solr-offline-body": "Лахар хана болхбеш дац.",
 	"tux-sst-next": "ТӀехьа догӀург",
-	"tux-sst-prev": "Хьалхо хиларг"
+	"tux-sst-prev": "Хьалхо хиларг",
+	"tux-sst-case-sensitive": "регистр лоруш"
 }
