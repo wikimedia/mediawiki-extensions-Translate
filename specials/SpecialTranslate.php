@@ -447,6 +447,12 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function tuxSettingsForm() {
+		$nojs = Html::element(
+			'noscript',
+			array( 'class' => 'tux-nojs errorbox' ),
+			$this->msg( 'tux-nojs' )->plain()
+		);
+
 		$attrs = array( 'class' => 'row tux-editor-header' );
 		$selectors = $this->tuxGroupSelector() .
 			$this->tuxLanguageSelector() .
@@ -454,7 +460,7 @@ class SpecialTranslate extends SpecialPage {
 			$this->tuxWorkflowSelector() .
 			$this->tuxGroupWarning();
 
-		return Html::rawElement( 'div', $attrs, $selectors );
+		return Html::rawElement( 'div', $attrs, $selectors ) . $nojs;
 	}
 
 	protected function messageSelector() {

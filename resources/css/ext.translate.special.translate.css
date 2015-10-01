@@ -217,3 +217,7 @@
 	background-size: 25px;
 	height: 28px;
 }
+
+.client-nojs .tux-messagetable-header {
+	display: none;
+}
