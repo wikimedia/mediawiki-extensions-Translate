@@ -391,5 +391,6 @@
 	"translate-search-more-groups-info": "Information shown as number of message groups matching the query using\n[[Special:SearchTranslations]]\n* $1 - number of groups\nSee also:\n* {{msg-mw|Translate-search-more-languages-info}}",
 	"translate-ulsdep-title": "Page title",
 	"translate-ulsdep-body": "Error message in page body",
-	"tux-session-expired": "Warning shown to the user in a popup when translation could not be saved because the session is expired."
+	"tux-session-expired": "Warning shown to the user in a popup when translation could not be saved because the session is expired.",
+	"tux-nojs": "An error shown in Special:Translate."
 }
