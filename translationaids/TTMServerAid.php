@@ -31,13 +31,18 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 		$from = $this->group->getSourceLanguage();
 		$to = $this->handle->getCode();
 
-		// "Local" queries using some client can't be run in parallel with web services
+		// "Local" queries using a client can't be run in parallel with web services
 		global $wgTranslateTranslationServices;
 		foreach ( $wgTranslateTranslationServices as $name => $config ) {
 			$server = TTMServer::factory( $config );
 
 			try {
 				if ( $server instanceof ReadableTTMServer ) {
+					// Except if they are public, we can call back via API
+					if ( isset( $config['public'] ) && $config['public'] === true ) {
+						continue;
+					}
+
 					$query = $server->query( $from, $to, $text );
 				} else {
 					continue;
