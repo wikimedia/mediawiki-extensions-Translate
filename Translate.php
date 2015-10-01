@@ -52,7 +52,6 @@ require_once "$dir/Autoload.php";
 
 $wgMessagesDirs['PageTranslation'] = __DIR__ . "/i18n/pagetranslation";
 $wgMessagesDirs['Translate'] = __DIR__ . "/i18n/core";
-$wgMessagesDirs['TranslateGroupDescriptions'] = __DIR__ . "/i18n/groupdescriptions";
 $wgMessagesDirs['TranslateSearch'] = __DIR__ . "/i18n/search";
 $wgMessagesDirs['TranslateSandbox'] = __DIR__ . "/i18n/sandbox";
 $wgMessagesDirs['TranslateApi'] = __DIR__ . "/i18n/api";
