@@ -67,29 +67,29 @@
 				$( '<div>' )
 					.addClass( 'row tux-message-item-compact message' )
 					.append(
-						$( '<div>' )
-							.addClass( 'one column tux-pagemode-status ' + this.message.properties.status ),
-						$( '<div>' )
-							.addClass( 'five columns tux-pagemode-source' )
-							.attr( {
-								lang: this.options.sourcelangcode,
-								dir: sourceLangDir
-							} )
-							.html( mw.translate.formatMessageGently( this.message.definition, this.message.key ) ),
-						$( '<div>' )
-							.addClass( 'five columns tux-pagemode-translation' )
-							.attr( {
-								lang: targetLangAttrib,
-								dir: targetLangDir
-							} )
-							.html( mw.translate.formatMessageGently( this.message.translation || '', this.message.key ) ),
-						$( '<div>' )
-							.attr( 'title', mw.msg( 'translate-edit-title', this.message.key ) )
-							.addClass( 'tux-pagemode-edit' )
-					)
+					$( '<div>' )
+						.addClass( 'one column tux-pagemode-status ' + this.message.properties.status ),
+					$( '<div>' )
+						.addClass( 'five columns tux-pagemode-source' )
+						.attr( {
+							lang: this.options.sourcelangcode,
+							dir: sourceLangDir
+						} )
+						.html( mw.translate.formatMessageGently( this.message.definition, this.message.key ) ),
+					$( '<div>' )
+						.addClass( 'five columns tux-pagemode-translation' )
+						.attr( {
+							lang: targetLangAttrib,
+							dir: targetLangDir
+						} )
+						.html( mw.translate.formatMessageGently( this.message.translation || '', this.message.key ) ),
+					$( '<div>' )
+						.attr( 'title', mw.msg( 'translate-edit-title', this.message.key ) )
+						.addClass( 'tux-pagemode-edit' )
+				)
 			)
 
-			.addClass( this.message.properties.status );
+				.addClass( this.message.properties.status );
 		},
 
 		/**

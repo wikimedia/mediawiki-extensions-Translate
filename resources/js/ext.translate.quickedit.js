@@ -13,11 +13,11 @@
  * * Instead of hc'd onscript, give them a class and use necessary triggers
  *
  * @author Niklas Laxström
- * @copyright Copyright © 2009-2012 Niklas Laxström
- * @license GPL-2.0+
+ * copyright Copyright © 2009-2012 Niklas Laxström
+ * license GPL-2.0+
  */
 
-(function ( $, mw, undefined ) {
+( function ( $, mw, undefined ) {
 	'use strict';
 	var dialogwidth = false,
 		preloads = {};
@@ -30,8 +30,10 @@
 		};
 
 		this.setup = function () {
+			var self;
+
 			this.cancel();
-			var self = this;
+			self = this;
 			this.timeoutID = window.setTimeout( self.act, 1000 );
 		};
 
@@ -139,7 +141,7 @@
 		textarea = form.find( '.mw-translate-edit-area' );
 		textarea.css( 'display', 'block' );
 		textarea.autosize();
-		textarea[0].focus();
+		textarea[ 0 ].focus();
 
 		if ( form.find( '.mw-translate-messagechecks' ) ) {
 			checker = new MessageCheckUpdater( function () {
@@ -235,12 +237,12 @@
 
 			// Try if it has been cached
 			id = 'preload-' + page.replace( /[^a-zA-Z0-9_]/g, '_' );
-			preload = preloads[id];
+			preload = preloads[ id ];
 
 			if ( preload !== undefined ) {
 				if ( $target ) {
-					$target.html( preloads[id] );
-					delete preloads[id];
+					$target.html( preloads[ id ] );
+					delete preloads[ id ];
 				}
 				callback();
 				return;
@@ -256,10 +258,10 @@
 			};
 			if ( $target ) {
 				$target.load( url, params, callback );
-				delete preloads[id];
+				delete preloads[ id ];
 			} else {
 				$.get( url, params, function ( data ) {
-					preloads[id] = data;
+					preloads[ id ] = data;
 				} );
 			}
 
@@ -272,11 +274,13 @@
 			$target.html( $( '<div>' ).attr( 'class', 'mw-ajax-dialog' ).html( spinner ) );
 
 			mw.translate.loadEditor( $target, page, group, function () {
+				var form;
+
 				if ( callbacks.load ) {
 					callbacks.load( $target );
 				}
 
-				var form = $target.find( 'form' );
+				form = $target.find( 'form' );
 				registerFeatures( callbacks, form, page, group );
 				form.on( 'submit', function () {
 					mw.translateHooks.run( 'beforeSubmit', form );
@@ -311,14 +315,15 @@
 
 		openNext: function ( title, group ) {
 			var messages = mw.config.get( 'trlKeys' ),
-				found = false, key, value;
+				found = false,
+				key, value;
 
 			for ( key in messages ) {
 				if ( !messages.hasOwnProperty( key ) ) {
 					continue;
 				}
 
-				value = messages[key];
+				value = messages[ key ];
 				if ( found ) {
 					return mw.translate.openDialog( value, group );
 				} else if ( value === title ) {
