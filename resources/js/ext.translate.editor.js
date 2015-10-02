@@ -19,6 +19,7 @@
 	 * mandatory, but if found, when editor is opened the message item will be hidden
 	 * and the editor will appear as if the message is replaced by the editor.
 	 * See the UI of Translate messagetable for demo.
+	 *
 	 * @param {HTMLElement} element
 	 * @param {Object} options
 	 * @param {Function} [options.beforeSave] Callback to call when translation is going to be saved.
@@ -91,6 +92,7 @@
 
 		/**
 		 * Mark the message as unsaved because of edits, can be resumed later
+		 *
 		 * @param {string} [highlightClass] Class for background highlighting
 		 */
 		markUnsaved: function ( highlightClass ) {
@@ -249,6 +251,7 @@
 
 		/**
 		 * Marks that there was a problem saving a translation.
+		 *
 		 * @param {string} error Strings of warnings to display.
 		 */
 		onSaveFail: function ( error ) {
@@ -531,7 +534,7 @@
 			// The extra newlines is supposed to leave enough space for the
 			// insertion buttons. Seems to work as long as all the buttons
 			// are only in one line.
-			$textarea.autosize( {append: '\n\n\n' } );
+			$textarea.autosize( { append: '\n\n\n' } );
 
 			// Shortcuts for various insertable things
 			$textarea.on( 'keyup keydown', function ( e ) {
@@ -565,7 +568,9 @@
 					e.stopPropagation();
 					translateEditor.$editor.find( '.shortcut-activated:visible' ).eq( index ).trigger( 'click' );
 					// Update numbers and locations after trigger should be completed
-					window.setTimeout( function() { translateEditor.showShortcuts(); }, 100 );
+					window.setTimeout( function () {
+						translateEditor.showShortcuts();
+					}, 100 );
 				}
 
 				if ( e.which === 18 && e.type === 'keyup' ) {
@@ -801,13 +806,14 @@
 				}
 
 				for ( warningIndex = 0; warningIndex < warnings.length; warningIndex++ ) {
-					translateEditor.addWarning( warnings[warningIndex], 'validation' );
+					translateEditor.addWarning( warnings[ warningIndex ], 'validation' );
 				}
 			} );
 		},
 
 		/**
 		 * Remove all warning of given type
+		 *
 		 * @param type
 		 */
 		removeWarning: function ( type ) {
@@ -822,8 +828,8 @@
 		/**
 		 * Displays the supplied warning from the bottom up near the translation edit area.
 		 *
-		 * @param {String} warning used as html for the warning display
-		 * @param {String} type used to group the warnings.eg: validation, diff, error
+		 * @param {string} warning used as html for the warning display
+		 * @param {string} type used to group the warnings.eg: validation, diff, error
 		 * @return {jQuery} the new warning element
 		 */
 		addWarning: function ( warning, type ) {
@@ -1000,7 +1006,7 @@
 			// layout of the text area after this function. Use very small
 			// delay to have it settle down and have correct results. Otherwise
 			// there will be a size change once the first letter is typed.
-			this.delayResize( function() {
+			this.delayResize( function () {
 				$textarea.trigger( 'autosize.resizeIncludeStyle' );
 			}, 1 );
 
@@ -1082,7 +1088,8 @@
 
 		/**
 		 * Adds the diff between old and current definitions to the view.
-		 * @param {object} definitiondiff A definitiondiff object as returned by API.
+		 *
+		 * @param {Object} definitiondiff A definitiondiff object as returned by API.
 		 */
 		addDefinitionDiff: function ( definitiondiff ) {
 			var $trigger;
@@ -1139,7 +1146,7 @@
 			}
 
 			if ( typeof options === 'string' ) {
-				data[options].call( $this );
+				data[ options ].call( $this );
 			}
 		} );
 	};
@@ -1147,13 +1154,13 @@
 	$.fn.translateeditor.Constructor = TranslateEditor;
 
 	function delayer() {
-		return (function () {
+		return ( function () {
 			var timer = 0;
 
 			return function ( callback, milliseconds ) {
 				clearTimeout( timer );
 				timer = setTimeout( callback, milliseconds );
 			};
-		} () );
+		}() );
 	}
 }( jQuery, mediaWiki ) );

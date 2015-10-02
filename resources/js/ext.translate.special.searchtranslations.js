@@ -29,18 +29,18 @@
 				$form = $( '.tux-searchpage form[name=searchform]' );
 
 			$.each( result, function ( index, value ) {
-				var $input = $( '<input>')
-					.prop( 'type', 'hidden' ),
+				var $input = $( '<input>' )
+						.prop( 'type', 'hidden' ),
 					$elem = $form.find( 'input[name=' + index + ']' );
 
 				if ( $elem.length ) {
 					$elem.val( value );
 				} else {
 					$form.append( $input
-						.prop( {
-							value: value,
-							name: index
-						} )
+							.prop( {
+								value: value,
+								name: index
+							} )
 					);
 				}
 			} );
@@ -108,10 +108,10 @@
 		// If a documentation pseudo-language is defined,
 		// add it to the language selector
 		docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
-		if ( languages[docLanguageCode] ) {
+		if ( languages[ docLanguageCode ] ) {
 			mw.translate.addDocumentationLanguage();
-			mw.config.get( 'wgULSLanguages' )[docLanguageCode] = mw.msg( 'translate-documentation-language' );
-			regions = ['WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA'];
+			mw.config.get( 'wgULSLanguages' )[ docLanguageCode ] = mw.msg( 'translate-documentation-language' );
+			regions = [ 'WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA' ];
 		}
 
 		quickLanguageList = quickLanguageList.concat( mw.uls.getFrequentLanguageList() )
@@ -119,7 +119,7 @@
 
 		// Remove duplicates from the language list
 		$.each( quickLanguageList, function ( i, v ) {
-			result = languages[v];
+			result = languages[ v ];
 			if ( result && $.inArray( v, unique ) === -1 ) {
 				unique.push( v );
 			}
@@ -137,8 +137,8 @@
 		quickLanguageList.sort( sortLanguages );
 
 		for ( i = 0; i <= quickLanguageList.length; i++ ) {
-			languageCode = quickLanguageList[i];
-			result = languages[languageCode];
+			languageCode = quickLanguageList[ i ];
+			result = languages[ languageCode ];
 			if ( !result ) {
 				continue;
 			}
@@ -149,15 +149,15 @@
 				selectedClasss = '';
 			}
 
-			$languages.append( $( '<div>')
-				.addClass( 'row facet-item' )
-				.append( $( '<span>')
-					.addClass( 'facet-name ' + selectedClasss )
-					.append( $('<a>')
-						.attr( 'href', result.url )
-						.text( getLanguageLabel( languageCode ) )
+			$languages.append( $( '<div>' )
+					.addClass( 'row facet-item' )
+					.append( $( '<span>' )
+						.addClass( 'facet-name ' + selectedClasss )
+						.append( $( '<a>' )
+							.attr( 'href', result.url )
+							.text( getLanguageLabel( languageCode ) )
 					),
-					$( '<span>')
+					$( '<span>' )
 						.addClass( 'facet-count' )
 						.text( result.count )
 				)
@@ -165,7 +165,7 @@
 		}
 
 		$.each( Object.keys( languages ), function ( index, languageCode ) {
-			ulslanguages[languageCode] = mw.config.get( 'wgULSLanguages' )[languageCode];
+			ulslanguages[ languageCode ] = mw.config.get( 'wgULSLanguages' )[ languageCode ];
 		} );
 
 		if ( resultCount > 6 ) {
@@ -179,7 +179,7 @@
 
 			$ulsTrigger.uls( {
 				onSelect: function ( language ) {
-					window.location = languages[language].url;
+					window.location = languages[ language ].url;
 				},
 				compact: true,
 				languages: ulslanguages,
@@ -207,7 +207,7 @@
 
 	function listGroups( groupList, parentGrouppath, $parent, level ) {
 		var i,
-			$grouSelectorTrigger,
+			$groupSelectorTrigger,
 			selectedClass = '',
 			group,
 			groupId,
@@ -226,9 +226,9 @@
 		if ( level === 0 ) {
 			groupList = groupList.splice( 0, maxListSize );
 		}
-		grouppath = getParameterByName( 'grouppath' ).split( '|' )[0];
+		grouppath = getParameterByName( 'grouppath' ).split( '|' )[ 0 ];
 		if ( currentGroup && resultGroups[ grouppath ] &&
-			$.inArray( grouppath, groupList) < 0 &&
+			$.inArray( grouppath, groupList ) < 0 &&
 			level === 0
 		) {
 			// Make sure current selected group is displayed always.
@@ -236,7 +236,7 @@
 		}
 		groupList.sort( sortGroups );
 		for ( i = 0; i < groupList.length; i++ ) {
-			groupId = groupList[i];
+			groupId = groupList[ i ];
 			group = mw.translate.findGroup( groupId, resultGroups );
 			if ( !group ) {
 				continue;
@@ -246,7 +246,7 @@
 			if ( parentGrouppath !== undefined ) {
 				grouppath = parentGrouppath + '|' + groupId;
 			} else {
-				grouppath =  groupId;
+				grouppath = groupId;
 			}
 			uri.extend( { 'group': groupId, 'grouppath': grouppath } );
 
@@ -266,11 +266,11 @@
 					.append( $( '<a>' )
 						.attr( 'href', uri.toString() )
 						.text( group.label )
-					),
-					$( '<span>' )
-						.addClass( 'facet-count' )
-						.text( mw.language.convertNumber( group.count ) )
-				);
+				),
+				$( '<span>' )
+					.addClass( 'facet-count' )
+					.text( mw.language.convertNumber( group.count ) )
+			);
 			$parent.append( $groupRow );
 			if ( group.groups && level < 2 ) {
 				listGroups( Object.keys( group.groups ), grouppath, $groupRow, level + 1 );
@@ -278,17 +278,17 @@
 		}
 
 		if ( resultCount > maxListSize && resultCount - groupList.length > 0 && level === 0 ) {
-			$grouSelectorTrigger = $( '<div>')
+			$groupSelectorTrigger = $( '<div>' )
 				.addClass( 'rowfacet-item ' )
 				.append( $( '<a>' )
 					.text( '...' )
 					.addClass( 'translate-search-more-groups' ),
-					$( '<span>' )
-						.addClass( 'translate-search-more-groups-info' )
-						.text( mw.msg( 'translate-search-more-groups-info',
-							resultCount - groupList.length ) )
-				);
-			$parent.append( $grouSelectorTrigger );
+				$( '<span>' )
+					.addClass( 'translate-search-more-groups-info' )
+					.text( mw.msg( 'translate-search-more-groups-info',
+						resultCount - groupList.length ) )
+			);
+			$parent.append( $groupSelectorTrigger );
 
 			if ( $( 'body' ).hasClass( 'rtl' ) ) {
 				position = {
@@ -315,7 +315,7 @@
 			groups = $.map( resultGroups, function ( value, index ) {
 				return index;
 			} );
-			$grouSelectorTrigger.msggroupselector(
+			$groupSelectorTrigger.msggroupselector(
 				options,
 				groups
 			);
@@ -324,11 +324,11 @@
 
 	function lexOperators( str ) {
 		var string = str.split( ' ' ),
-			result= {},
+			result = {},
 			query = '';
 
 		$.each( string, function ( index, value ) {
-			matchOperators( value, function( obj ) {
+			matchOperators( value, function ( obj ) {
 				if ( obj === false ) {
 					query = query + ' ' + value;
 				} else {
@@ -344,8 +344,8 @@
 	function matchOperators( str, callback ) {
 		var matches,
 			counter = false,
-			// Add operators for different filters
-			operatorRegex = [ 'language' , 'group', 'filter' ];
+		// Add operators for different filters
+			operatorRegex = [ 'language', 'group', 'filter' ];
 
 		$.each( operatorRegex, function ( index, value ) {
 			var regex = new RegExp( value + ':(\\S+)', 'i' );
@@ -353,7 +353,7 @@
 				counter = true;
 				callback( {
 					operator: value,
-					value: matches[1]
+					value: matches[ 1 ]
 				} );
 			}
 		} );
@@ -376,8 +376,8 @@
 	}
 
 	function sortLanguages( languageA, languageB ) {
-		var languageNameA = mw.config.get( 'wgULSLanguages' )[languageA] || languageA,
-			languageNameB = mw.config.get( 'wgULSLanguages' )[languageB] || languageB;
+		var languageNameA = mw.config.get( 'wgULSLanguages' )[ languageA ] || languageA,
+			languageNameB = mw.config.get( 'wgULSLanguages' )[ languageB ] || languageB;
 
 		return languageNameA.localeCompare( languageNameB );
 	}
@@ -388,7 +388,7 @@
 	}
 
 	function getLanguageLabel( languageCode ) {
-		return mw.config.get( 'wgULSLanguages' )[languageCode] || languageCode;
+		return mw.config.get( 'wgULSLanguages' )[ languageCode ] || languageCode;
 	}
 
 	// Build a selected box to show the selected items
@@ -396,19 +396,19 @@
 		$( '.tux-search-inputs' )
 			.removeClass( 'offset-by-three' )
 			.before(
-				$( '<div>' )
-					.addClass( 'three columns tux-selectedbox' )
-			);
+			$( '<div>' )
+				.addClass( 'three columns tux-selectedbox' )
+		);
 	}
 
 	function addToSelectedBox( label, url ) {
 		$( '.tux-searchpage .tux-selectedbox' ).append( $( '<div>' )
-			.addClass( 'row facet-item' )
-			.append( $( '<span>' )
-				.addClass( 'facet-name selected' )
-				.append( $( '<a>' )
-					.attr( 'href', url )
-					.text( label )
+				.addClass( 'row facet-item' )
+				.append( $( '<span>' )
+					.addClass( 'facet-name selected' )
+					.append( $( '<a>' )
+						.attr( 'href', url )
+						.text( label )
 				),
 				$( '<span>' )
 					.addClass( 'facet-count' )

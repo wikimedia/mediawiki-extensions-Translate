@@ -61,7 +61,7 @@
 
 		// Get the label for the value and make API request if valid
 		subgroupId = '';
-		$.each( resp, function( key, value ) {
+		$.each( resp, function ( key, value ) {
 			if ( subgroupName === value.label ) {
 				subgroupId = value.id;
 			}
@@ -102,7 +102,7 @@
 	function editGroup( event ) {
 		var $target = $( event.target ),
 			$parent = $target.closest( '.mw-tpa-group' ),
-			aggregateGroupId =  $parent.data( 'groupid' ),
+			aggregateGroupId = $parent.data( 'groupid' ),
 			$displayGroup = $parent.children( '.tp-display-group' ),
 			$editGroup = $parent.children( '.tp-edit-group' ),
 			successFunction,
@@ -115,7 +115,7 @@
 
 		successFunction = function () {
 			// Replace the text by the new text without altering the other 2 span tags
-			$displayGroup.children( '.tp-name' ).contents().filter( function() {
+			$displayGroup.children( '.tp-name' ).contents().filter( function () {
 				return this.nodeType === 3;
 			} ).replaceWith( aggregateGroupName );
 			$displayGroup.children( '.tp-desc' ).text( aggregateGroupDesc );
@@ -151,7 +151,7 @@
 			exclude = [], resp, groups = [],
 			$input = $( '.tp-group-input' );
 
-		excludeFunction = function( event ) {
+		excludeFunction = function ( event ) {
 			exclude = [];
 
 			if ( groups.length === 0 ) {
@@ -163,7 +163,7 @@
 					mgformat: 'tree',
 					mgroot: 'all',
 					mgprop: 'label|id'
-				} ).done( function( result ) {
+				} ).done( function ( result ) {
 					groups = result.query.messagegroups;
 				} );
 			}
@@ -180,7 +180,7 @@
 			);
 		};
 
-		autocompleteFunction = function( request, response ) {
+		autocompleteFunction = function ( request, response ) {
 			resp = [];
 
 			// Allow case insensitive search
@@ -203,7 +203,7 @@
 			$( this ).autocomplete( 'search', $( this ).val() );
 		} );
 
-		$( '.tp-aggregate-add-button' ).click( function( event ) {
+		$( '.tp-aggregate-add-button' ).click( function ( event ) {
 			associate( event, resp );
 		} );
 		$( '.tp-aggregate-remove-button' ).click( dissociate );
@@ -254,19 +254,19 @@
 					.append( $( '<p>' ).addClass( 'tp-desc' ).text( aggregateGroupDesc ) );
 
 				$saveButton = ( $( '<input>' )
-					.attr( {
-						'type': 'button',
-						'class': 'tp-aggregategroup-update'
-					} )
-					.val( mw.msg( 'tpt-aggregategroup-update' ) )
-					);
+						.attr( {
+							'type': 'button',
+							'class': 'tp-aggregategroup-update'
+						} )
+						.val( mw.msg( 'tpt-aggregategroup-update' ) )
+				);
 				$cancelButton = ( $( '<input>' )
-					.attr( {
-						'type': 'button',
-						'class': 'tp-aggregategroup-update-cancel'
-					} )
-					.val( mw.msg( 'tpt-aggregategroup-update-cancel' ) )
-					);
+						.attr( {
+							'type': 'button',
+							'class': 'tp-aggregategroup-update-cancel'
+						} )
+						.val( mw.msg( 'tpt-aggregategroup-update-cancel' ) )
+				);
 				$divEdit = $( '<div>' )
 					.addClass( 'tp-edit-group hidden' )
 					.append( $( '<label>' )
@@ -277,7 +277,7 @@
 							'id': 'tp-agg-name'
 						} )
 						.val( aggregateGroupName )
-					)
+				)
 					.append( $( '<br /><label>' )
 						.text( mw.msg( 'tpt-aggregategroup-edit-description' ) ) )
 					.append( $( '<input>' )
@@ -286,7 +286,7 @@
 							'id': 'tp-agg-desc'
 						} )
 						.val( aggregateGroupDesc )
-					)
+				)
 					.append( $saveButton, $cancelButton );
 
 				$div = $( '<div>' ).addClass( 'mw-tpa-group' )
@@ -297,7 +297,7 @@
 				$div.data( 'id', aggregateGroupId );
 
 				$groupSelector = $( '<input>' ).attr( {
-					'type': 'text'  ,
+					'type': 'text',
 					'class': 'tp-group-input'
 				} );
 				$groupSelector.focus( excludeFunction );
@@ -310,13 +310,13 @@
 				} );
 				$addButton = $( '<input>' )
 					.attr( {
-						'type': 'button'  ,
+						'type': 'button',
 						'class': 'tp-aggregate-add-button',
 						'id': aggregateGroupId
 					} )
 					.val( mw.msg( 'tpt-aggregategroup-add' ) );
 				$div.append( $groupSelector, $addButton );
-				$addButton.click( function( event ) {
+				$addButton.click( function ( event ) {
 					associate( event, resp );
 				} );
 				$editSpan.on( 'click', function ( event ) {
@@ -345,4 +345,4 @@
 			} );
 		} );
 	} );
-} ( jQuery, mediaWiki ) );
+}( jQuery, mediaWiki ) );

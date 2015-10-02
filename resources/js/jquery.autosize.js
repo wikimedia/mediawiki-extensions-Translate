@@ -57,7 +57,7 @@
 			$(document.body).append(mirror);
 		}
 
-		return this.each(function () {
+		return this.each( function () {
 			var
 				ta = this,
 				$ta = $(ta),

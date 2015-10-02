@@ -3,6 +3,7 @@
 
 	/**
 	 * Save the page with a given page name and given content to the wiki.
+	 *
 	 * @param {string} pageName Page title
 	 * @param {string} pageContent Content of the page to be saved
 	 * @return {jQuery.Promise}
@@ -20,7 +21,8 @@
 	}
 
 	/**
-	 * Get the diff between the current revision and the prepared page content
+	 * Get the diff between the current revision and the prepared page content.
+	 *
 	 * @param {string} pageName Page title
 	 * @param {string} pageContent Content of the page to be saved
 	 * @return {jQuery.Promise}
@@ -31,7 +33,7 @@
 		var api = new mw.Api();
 
 		return api.post( {
-			action:'query',
+			action: 'query',
 			prop: 'revisions',
 			format: 'json',
 			rvprop: 'content',
@@ -41,9 +43,9 @@
 		} ).then( function ( data ) {
 			var obj, diff;
 			for ( var page in data.query.pages ) {
-				obj = data.query.pages[page];
+				obj = data.query.pages[ page ];
 			}
-			diff = obj.revisions[0].diff['*'];
+			diff = obj.revisions[ 0 ].diff[ '*' ];
 			return diff;
 		} );
 	}
@@ -51,6 +53,7 @@
 	/**
 	 * Remove all the <translate> tags and {{translation}} templates before
 	 * preparing the page. The tool will add them back wherever needed.
+	 *
 	 * @param {string} pageContent
 	 * @return {string}
 	 */
@@ -61,7 +64,8 @@
 
 	/**
 	 * Add the <languages/> bar at the top of the page, if not present.
-	 * Remove the old {{languages}} template, if present
+	 * Remove the old {{languages}} template, if present.
+	 *
 	 * @param {string} pageContent
 	 * @return {string}
 	 */
@@ -76,6 +80,7 @@
 	/**
 	 * Add <translate> tags around Categories to make them a part of the page template
 	 * and tag them with the {{translation}} template.
+	 *
 	 * @param {string} pageContent
 	 * @return {jQuery.Promise}
 	 */
@@ -85,7 +90,7 @@
 
 			aliases.push( 'category' );
 			for ( var i = 0; i < aliases.length; i++ ) {
-				aliases[i] = $.escapeRE( aliases[i] );
+				aliases[ i ] = $.escapeRE( aliases[ i ] );
 			}
 
 			aliasList = aliases.join( '|' );
@@ -102,6 +107,7 @@
 	/**
 	 * Add the <translate> and </translate> tags at the start and end of the page.
 	 * The opening tag is added immediately after the <languages/> tag.
+	 *
 	 * @param {string} pageContent
 	 * @return {string}
 	 */
@@ -114,6 +120,7 @@
 	/**
 	 * Add newlines before and after section headers. Extra newlines resulting after
 	 * this operation are cleaned up in postPreparationCleanup() function.
+	 *
 	 * @param {string} pageContent
 	 * @return {string}
 	 */
@@ -126,6 +133,7 @@
 	 * Convert all the links into two-party form and add the 'Special:MyLanguage/' prefix
 	 * to links in valid namespaces for the wiki. For example, [[Example]] would be converted
 	 * to [[Special:MyLanguage/Example|Example]].
+	 *
 	 * @param {string} pageContent
 	 * @return {string}
 	 */
@@ -152,6 +160,7 @@
 
 	/**
 	 * Fetch all the aliases for a given namespace on the wiki.
+	 *
 	 * @param {integer} namespaceId
 	 * @return {jQuery.Promise}
 	 * @return {Function} return.done
@@ -161,14 +170,14 @@
 		var api = new mw.Api();
 
 		return api.get( {
-			action:'query',
+			action: 'query',
 			meta: 'siteinfo',
 			siprop: 'namespacealiases'
 		} ).then( function ( data ) {
 			var aliases = [];
 			for ( var alias in data.query.namespacealiases ) {
-				if ( data.query.namespacealiases[alias].id === namespaceID ) {
-					aliases.push( data.query.namespacealiases[alias]['*'] );
+				if ( data.query.namespacealiases[ alias ].id === namespaceID ) {
+					aliases.push( data.query.namespacealiases[ alias ][ '*' ] );
 				}
 			}
 			return aliases;
@@ -178,6 +187,7 @@
 	/**
 	 * Add translate tags around only translatable content for files and keep everything else
 	 * as a part of the page template.
+	 *
 	 * @param {string} pageContent
 	 * @return {jQuery.Promise}
 	 */
@@ -188,7 +198,7 @@
 			aliases.push( 'file' );
 
 			for ( var i = 0; i < aliases.length; i++ ) {
-				aliases[i] = $.escapeRE( aliases[i] );
+				aliases[ i ] = $.escapeRE( aliases[ i ] );
 			}
 
 			aliasList = aliases.join( '|' );
@@ -209,6 +219,7 @@
 	/**
 	 * Keep templates outside <translate>....</translate> tags
 	 * Does not deal with nested templates, needs manual changes.
+	 *
 	 * @param {string} pageContent
 	 * @return {string} pageContent
 	 */
@@ -223,6 +234,7 @@
 
 	/**
 	 * Cleanup done after the page is prepared for translation by the tool.
+	 *
 	 * @param {string} pageContent
 	 * @return {string}
 	 */
@@ -236,6 +248,7 @@
 
 	/**
 	 * Get the current revision for the given page.
+	 *
 	 * @param {string} pageName
 	 * @return {jQuery.Promise}
 	 * @return {Function} return.done
@@ -244,7 +257,7 @@
 	function getPageContent( pageName ) {
 		var api = new mw.Api(), obj;
 		return api.get( {
-			action:'query',
+			action: 'query',
 			prop: 'revisions',
 			format: 'json',
 			rvprop: 'content',
@@ -253,15 +266,16 @@
 		} ).then( function ( data ) {
 
 			for ( var page in data.query.pages ) {
-				obj = data.query.pages[page];
+				obj = data.query.pages[ page ];
 			}
-			return obj.revisions[0]['*'];
+			return obj.revisions[ 0 ][ '*' ];
 		} );
 	}
 
 	/**
 	 * Get the list of valid namespaces for the wiki and remove unwanted
 	 * ones from the list.
+	 *
 	 * @return {Array} Array of valid namespaces
 	 */
 	function getNamespaces() {
@@ -273,15 +287,15 @@
 		}
 
 		// Remove all what has been already handled somewhere else
-		namespaces.splice( $.inArray( '', namespaces), 1 );
-		namespaces.splice( $.inArray( 'category', namespaces), 1 );
-		namespaces.splice( $.inArray( 'category_talk', namespaces), 1 );
-		namespaces.splice( $.inArray( 'special', namespaces), 1 );
-		namespaces.splice( $.inArray( 'file', namespaces), 1 );
-		namespaces.splice( $.inArray( 'file_talk', namespaces), 1 );
+		namespaces.splice( $.inArray( '', namespaces ), 1 );
+		namespaces.splice( $.inArray( 'category', namespaces ), 1 );
+		namespaces.splice( $.inArray( 'category_talk', namespaces ), 1 );
+		namespaces.splice( $.inArray( 'special', namespaces ), 1 );
+		namespaces.splice( $.inArray( 'file', namespaces ), 1 );
+		namespaces.splice( $.inArray( 'file_talk', namespaces ), 1 );
 
 		for ( i = 0; i < namespaces.length; i++ ) {
-			namespaces[i] = $.escapeRE( namespaces[i] );
+			namespaces[ i ] = $.escapeRE( namespaces[ i ] );
 		}
 		return namespaces;
 	}
@@ -328,25 +342,24 @@
 				pageContent = fixInternalLinks( pageContent );
 				pageContent = doTemplates( pageContent );
 				doFiles( pageContent )
-				.then( doCategories )
-				.done( function( pageContent ) {
-					pageContent = postPreparationCleanup( pageContent );
-					pageContent = $.trim( pageContent );
-					getDiff( pageName, pageContent ).done( function ( diff ) {
-						$( '.diff tbody' ).append( diff );
-						$( '.divDiff' ).show( 'fast' );
-						if ( diff !== '' ) {
-							messageDiv.html( mw.msg( 'pp-prepare-message' ) ).show();
-							$( '#action-prepare' ).hide();
-							$( '#action-save' ).show();
-							$( '#action-cancel' ).show();
-						} else {
-							messageDiv.html( mw.msg( 'pp-already-prepared-message' ) ).show();
-						}
+					.then( doCategories )
+					.done( function ( pageContent ) {
+						pageContent = postPreparationCleanup( pageContent );
+						pageContent = $.trim( pageContent );
+						getDiff( pageName, pageContent ).done( function ( diff ) {
+							$( '.diff tbody' ).append( diff );
+							$( '.divDiff' ).show( 'fast' );
+							if ( diff !== '' ) {
+								messageDiv.html( mw.msg( 'pp-prepare-message' ) ).show();
+								$( '#action-prepare' ).hide();
+								$( '#action-save' ).show();
+								$( '#action-cancel' ).show();
+							} else {
+								messageDiv.html( mw.msg( 'pp-already-prepared-message' ) ).show();
+							}
+						} );
 					} );
-				} );
 			} );
 		} );
 	} );
-
-} ( jQuery, mediaWiki ) );
+}( jQuery, mediaWiki ) );
