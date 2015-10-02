@@ -565,7 +565,9 @@
 					e.stopPropagation();
 					translateEditor.$editor.find( '.shortcut-activated:visible' ).eq( index ).trigger( 'click' );
 					// Update numbers and locations after trigger should be completed
-					window.setTimeout( function() { translateEditor.showShortcuts(); }, 100 );
+					window.setTimeout( function () {
+						translateEditor.showShortcuts();
+					}, 100 );
 				}
 
 				if ( e.which === 18 && e.type === 'keyup' ) {
@@ -1000,7 +1002,7 @@
 			// layout of the text area after this function. Use very small
 			// delay to have it settle down and have correct results. Otherwise
 			// there will be a size change once the first letter is typed.
-			this.delayResize( function() {
+			this.delayResize( function () {
 				$textarea.trigger( 'autosize.resizeIncludeStyle' );
 			}, 1 );
 
@@ -1139,7 +1141,7 @@
 			}
 
 			if ( typeof options === 'string' ) {
-				data[options].call( $this );
+				data[ options ].call( $this );
 			}
 		} );
 	};

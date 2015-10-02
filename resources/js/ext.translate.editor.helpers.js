@@ -24,7 +24,7 @@
 			$messageDescEditor
 				.removeClass( 'hide' )
 				.find( '.tux-textarea-documentation' )
-					.focus();
+				.focus();
 
 			// So that the link won't be followed
 			return false;
@@ -67,11 +67,11 @@
 					api.parse(
 						newDocumentation
 					).done( function ( parsedDocumentation ) {
-						$messageDesc.html( parsedDocumentation );
-					} ).fail( function ( errorCode, results ) {
-						$messageDesc.html( newDocumentation );
-						mw.log( 'Error parsing documentation ' + errorCode + ' ' + results.error.info );
-					} );
+							$messageDesc.html( parsedDocumentation );
+						} ).fail( function ( errorCode, results ) {
+							$messageDesc.html( newDocumentation );
+							mw.log( 'Error parsing documentation ' + errorCode + ' ' + results.error.info );
+						} );
 					// A collapsible element may have been added
 					$( '.mw-identical-title' ).makeCollapsible();
 
@@ -213,7 +213,7 @@
 
 			$.each( translations, function ( index ) {
 				var $otherLanguage, langAttr,
-					translation = translations[index];
+					translation = translations[ index ];
 
 				langAttr = {
 					lang: translation.language,
@@ -223,15 +223,15 @@
 				$otherLanguage = $( '<div>' )
 					.addClass( 'row in-other-language' )
 					.append(
-						$( '<div>' )
-							.addClass( 'nine columns suggestiontext' )
-							.attr( langAttr )
-							.text( translation.value ),
-						$( '<div>' )
-							.addClass( 'three columns language text-right' )
-							.attr( langAttr )
-							.text( $.uls.data.getAutonym( translation.language ) )
-					);
+					$( '<div>' )
+						.addClass( 'nine columns suggestiontext' )
+						.attr( langAttr )
+						.text( translation.value ),
+					$( '<div>' )
+						.addClass( 'three columns language text-right' )
+						.attr( langAttr )
+						.text( $.uls.data.getAutonym( translation.language ) )
+				);
 
 				translateEditor.suggestionAdder( $otherLanguage, translation.value );
 
@@ -298,25 +298,25 @@
 				$translation = $( '<div>' )
 					.addClass( 'row tm-suggestion' )
 					.append(
-						$( '<div>' )
-							.addClass( 'nine columns suggestiontext' )
-							.attr( {
-								lang: translationLang,
-								dir: translationDir
-							} )
-							.text( translation.target ),
-						$( '<div>' )
-							.addClass( 'three columns quality text-right' )
-							.text( mw.msg( 'tux-editor-tm-match',
-								Math.floor( translation.quality * 100 ) ) ),
-						$( '<div>' )
-							.addClass( 'row text-right' )
-							.append(
-								$( '<a>' )
-									.addClass( 'n-uses' )
-									.data( 'n', 1 )
-							)
-					);
+					$( '<div>' )
+						.addClass( 'nine columns suggestiontext' )
+						.attr( {
+							lang: translationLang,
+							dir: translationDir
+						} )
+						.text( translation.target ),
+					$( '<div>' )
+						.addClass( 'three columns quality text-right' )
+						.text( mw.msg( 'tux-editor-tm-match',
+							Math.floor( translation.quality * 100 ) ) ),
+					$( '<div>' )
+						.addClass( 'row text-right' )
+						.append(
+						$( '<a>' )
+							.addClass( 'n-uses' )
+							.data( 'n', 1 )
+					)
+				);
 
 				translateEditor.suggestionAdder( $translation, translation.target );
 
@@ -361,17 +361,17 @@
 				$translation = $( '<div>' )
 					.addClass( 'row tm-suggestion' )
 					.append(
-						$( '<div>' )
-							.addClass( 'nine columns suggestiontext' )
-							.attr( {
-								lang: translationLang,
-								dir: translationDir
-							} )
-							.text( translation.target ),
-						$( '<div>' )
-							.addClass( 'three columns text-right service' )
-							.text( translation.service )
-					);
+					$( '<div>' )
+						.addClass( 'nine columns suggestiontext' )
+						.attr( {
+							lang: translationLang,
+							dir: translationDir
+						} )
+						.text( translation.target ),
+					$( '<div>' )
+						.addClass( 'three columns text-right service' )
+						.text( translation.service )
+				);
 
 				translateEditor.suggestionAdder( $translation, translation.target );
 
@@ -416,8 +416,8 @@
 			if ( support.url ) {
 				this.$editor.find( '.help' )
 					.find( 'a' )
-						.attr( 'href', support.url )
-						.end()
+					.attr( 'href', support.url )
+					.end()
 					.removeClass( 'hide' );
 			}
 		},
@@ -446,13 +446,13 @@
 						dir: $sourceMessage.prop( 'dir' )
 					} )
 					.addClass( 'insertable shortcut-activated' )
-					.text( insertables[i].display )
+					.text( insertables[ i ].display )
 					.data( 'iid', i )
 					.appendTo( $buttonArea );
 			}
 
 			$buttonArea.on( 'click', '.insertable', function () {
-				var data = insertables[$( this ).data( 'iid' )];
+				var data = insertables[ $( this ).data( 'iid' ) ];
 				$textarea.textSelection( 'encapsulateSelection', {
 					pre: data.pre,
 					post: data.post

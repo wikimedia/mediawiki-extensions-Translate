@@ -31,7 +31,7 @@
 		var api = new mw.Api();
 
 		return api.post( {
-			action:'query',
+			action: 'query',
 			prop: 'revisions',
 			format: 'json',
 			rvprop: 'content',
@@ -41,9 +41,9 @@
 		} ).then( function ( data ) {
 			var obj, diff;
 			for ( var page in data.query.pages ) {
-				obj = data.query.pages[page];
+				obj = data.query.pages[ page ];
 			}
-			diff = obj.revisions[0].diff['*'];
+			diff = obj.revisions[ 0 ].diff[ '*' ];
 			return diff;
 		} );
 	}
@@ -85,7 +85,7 @@
 
 			aliases.push( 'category' );
 			for ( var i = 0; i < aliases.length; i++ ) {
-				aliases[i] = $.escapeRE( aliases[i] );
+				aliases[ i ] = $.escapeRE( aliases[ i ] );
 			}
 
 			aliasList = aliases.join( '|' );
@@ -161,14 +161,14 @@
 		var api = new mw.Api();
 
 		return api.get( {
-			action:'query',
+			action: 'query',
 			meta: 'siteinfo',
 			siprop: 'namespacealiases'
 		} ).then( function ( data ) {
 			var aliases = [];
 			for ( var alias in data.query.namespacealiases ) {
-				if ( data.query.namespacealiases[alias].id === namespaceID ) {
-					aliases.push( data.query.namespacealiases[alias]['*'] );
+				if ( data.query.namespacealiases[ alias ].id === namespaceID ) {
+					aliases.push( data.query.namespacealiases[ alias ][ '*' ] );
 				}
 			}
 			return aliases;
@@ -188,7 +188,7 @@
 			aliases.push( 'file' );
 
 			for ( var i = 0; i < aliases.length; i++ ) {
-				aliases[i] = $.escapeRE( aliases[i] );
+				aliases[ i ] = $.escapeRE( aliases[ i ] );
 			}
 
 			aliasList = aliases.join( '|' );
@@ -244,7 +244,7 @@
 	function getPageContent( pageName ) {
 		var api = new mw.Api(), obj;
 		return api.get( {
-			action:'query',
+			action: 'query',
 			prop: 'revisions',
 			format: 'json',
 			rvprop: 'content',
@@ -253,9 +253,9 @@
 		} ).then( function ( data ) {
 
 			for ( var page in data.query.pages ) {
-				obj = data.query.pages[page];
+				obj = data.query.pages[ page ];
 			}
-			return obj.revisions[0]['*'];
+			return obj.revisions[ 0 ][ '*' ];
 		} );
 	}
 
@@ -273,15 +273,15 @@
 		}
 
 		// Remove all what has been already handled somewhere else
-		namespaces.splice( $.inArray( '', namespaces), 1 );
-		namespaces.splice( $.inArray( 'category', namespaces), 1 );
-		namespaces.splice( $.inArray( 'category_talk', namespaces), 1 );
-		namespaces.splice( $.inArray( 'special', namespaces), 1 );
-		namespaces.splice( $.inArray( 'file', namespaces), 1 );
-		namespaces.splice( $.inArray( 'file_talk', namespaces), 1 );
+		namespaces.splice( $.inArray( '', namespaces ), 1 );
+		namespaces.splice( $.inArray( 'category', namespaces ), 1 );
+		namespaces.splice( $.inArray( 'category_talk', namespaces ), 1 );
+		namespaces.splice( $.inArray( 'special', namespaces ), 1 );
+		namespaces.splice( $.inArray( 'file', namespaces ), 1 );
+		namespaces.splice( $.inArray( 'file_talk', namespaces ), 1 );
 
 		for ( i = 0; i < namespaces.length; i++ ) {
-			namespaces[i] = $.escapeRE( namespaces[i] );
+			namespaces[ i ] = $.escapeRE( namespaces[ i ] );
 		}
 		return namespaces;
 	}
@@ -328,25 +328,25 @@
 				pageContent = fixInternalLinks( pageContent );
 				pageContent = doTemplates( pageContent );
 				doFiles( pageContent )
-				.then( doCategories )
-				.done( function( pageContent ) {
-					pageContent = postPreparationCleanup( pageContent );
-					pageContent = $.trim( pageContent );
-					getDiff( pageName, pageContent ).done( function ( diff ) {
-						$( '.diff tbody' ).append( diff );
-						$( '.divDiff' ).show( 'fast' );
-						if ( diff !== '' ) {
-							messageDiv.html( mw.msg( 'pp-prepare-message' ) ).show();
-							$( '#action-prepare' ).hide();
-							$( '#action-save' ).show();
-							$( '#action-cancel' ).show();
-						} else {
-							messageDiv.html( mw.msg( 'pp-already-prepared-message' ) ).show();
-						}
+					.then( doCategories )
+					.done( function ( pageContent ) {
+						pageContent = postPreparationCleanup( pageContent );
+						pageContent = $.trim( pageContent );
+						getDiff( pageName, pageContent ).done( function ( diff ) {
+							$( '.diff tbody' ).append( diff );
+							$( '.divDiff' ).show( 'fast' );
+							if ( diff !== '' ) {
+								messageDiv.html( mw.msg( 'pp-prepare-message' ) ).show();
+								$( '#action-prepare' ).hide();
+								$( '#action-save' ).show();
+								$( '#action-cancel' ).show();
+							} else {
+								messageDiv.html( mw.msg( 'pp-already-prepared-message' ) ).show();
+							}
+						} );
 					} );
-				} );
 			} );
 		} );
 	} );
 
-} ( jQuery, mediaWiki ) );
+}( jQuery, mediaWiki ) );

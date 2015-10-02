@@ -44,8 +44,8 @@ jQuery( function ( $ ) {
 								label: text.replace(
 									new RegExp(
 										'(?![^&;]+;)(?!<[^<>]*)(' +
-											$.ui.autocomplete.escapeRegex( term ) +
-											')(?![^<>]*>)(?![^&;]+;)', 'gi'
+										$.ui.autocomplete.escapeRegex( term ) +
+										')(?![^<>]*>)(?![^&;]+;)', 'gi'
 									), '<strong>$1</strong>' ),
 								value: value,
 								option: this

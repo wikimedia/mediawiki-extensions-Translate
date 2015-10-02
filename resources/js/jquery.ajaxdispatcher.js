@@ -28,7 +28,7 @@
 			return deferred;
 		}
 
-		first = list.slice( 0, 1 )[0];
+		first = list.slice( 0, 1 )[ 0 ];
 		rest = list.slice( 1 );
 
 		retries = 0;

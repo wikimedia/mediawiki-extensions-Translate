@@ -15,7 +15,7 @@
 			var identifier, title, summary,
 				api = new mw.Api();
 
-			identifier = sourceUnits[i].identifier;
+			identifier = sourceUnits[ i ].identifier;
 			title = 'Translations:' + pageName + '/' + identifier + '/' + langCode;
 			summary = $( '#pm-summary' ).val();
 
@@ -52,7 +52,7 @@
 			var pageContent, oldTranslationUnits, obj, page,
 				errorBox = $( '.mw-tpm-sp-error__message' );
 			for ( page in data.query.pages ) {
-				obj = data.query.pages[page];
+				obj = data.query.pages[ page ];
 			}
 			if ( typeof obj === undefined ) {
 				// obj was not initialized
@@ -64,7 +64,7 @@
 				errorBox.text( mw.msg( 'pm-old-translations-missing', pageTitle ) ).show( 'fast' );
 				return $.Deferred().reject();
 			}
-			pageContent = obj.revisions[0]['*'];
+			pageContent = obj.revisions[ 0 ][ '*' ];
 			oldTranslationUnits = pageContent.split( '\n\n' );
 			return oldTranslationUnits;
 		} );
@@ -89,12 +89,12 @@
 			rvuser: 'FuzzyBot',
 			rvdir: 'newer',
 			titles: pageTitle
-		} ).then ( function ( data ) {
+		} ).then( function ( data ) {
 			var timestampFB, dateFB, timestampOld,
 				page, obj,
 				errorBox = $( '.mw-tpm-sp-error__message' );
 			for ( page in data.query.pages ) {
-				obj = data.query.pages[page];
+				obj = data.query.pages[ page ];
 			}
 			// Page does not exist if missing field is present
 			if ( obj.missing === '' ) {
@@ -107,7 +107,7 @@
 				return $.Deferred().reject();
 			} else {
 				// FB over here refers to FuzzyBot
-				timestampFB = obj.revisions[0].timestamp;
+				timestampFB = obj.revisions[ 0 ].timestamp;
 				dateFB = new Date( timestampFB );
 				dateFB.setSeconds( dateFB.getSeconds() - 1 );
 				timestampOld = dateFB.toISOString();
@@ -134,15 +134,15 @@
 			mcgroup: 'page-' + pageName,
 			mclanguage: 'en',
 			mcprop: 'definition'
-		} ).then ( function ( data ) {
+		} ).then( function ( data ) {
 			var result, i, sUnit, key;
 			sourceUnits = [];
 			result = data.query.messagecollection;
 			for ( i = 1; i < result.length; i++ ) {
 				sUnit = {};
-				key = result[i].key;
+				key = result[ i ].key;
 				sUnit.identifier = key.slice( key.lastIndexOf( '/' ) + 1 );
-				sUnit.definition = result[i].definition;
+				sUnit.definition = result[ i ].definition;
 				sourceUnits.push( sUnit );
 			}
 			return sourceUnits;
@@ -229,11 +229,11 @@
 		unitListing.html( '' );
 		for ( i = 0; i < totalUnits; i++ ) {
 			sourceText = targetText = '';
-			if ( sourceUnits[i] !== undefined ) {
-				sourceText = sourceUnits[i].definition;
+			if ( sourceUnits[ i ] !== undefined ) {
+				sourceText = sourceUnits[ i ].definition;
 			}
-			if ( translations[i] !== undefined ) {
-				targetText = translations[i];
+			if ( translations[ i ] !== undefined ) {
+				targetText = translations[ i ];
 			}
 			newUnit = createNewUnit( sourceText, targetText );
 			unitListing.append( newUnit );
@@ -261,7 +261,7 @@
 		var i, regex;
 		regex = new RegExp( /^==[^=]+==$/m );
 		for ( i = startIndex; i < translationUnits.length; i++ ) {
-			if ( regex.test( translationUnits[i] ) ) {
+			if ( regex.test( translationUnits[ i ] ) ) {
 				return i;
 			}
 		}
@@ -279,7 +279,7 @@
 
 		regex = new RegExp( /^==[^=]+==$/m );
 		for ( i = 0; i < sourceUnits.length; i++ ) {
-			if ( regex.test( sourceUnits[i].definition ) ) {
+			if ( regex.test( sourceUnits[ i ].definition ) ) {
 				tIndex = getHeaderUnit( tIndex, translationUnits );
 				mergeText = '';
 				// search is over
@@ -303,7 +303,7 @@
 						emptyCount += 1;
 					}
 					if ( i !== 0 ) {
-						translationUnits[i - 1] += '\n' + mergeText;
+						translationUnits[ i - 1 ] += '\n' + mergeText;
 					} else {
 						matchText = mergeText + matchText;
 					}
@@ -399,7 +399,7 @@
 		var rowUnit, tempText, nextVal;
 		rowUnit = $( event.target ).closest( '.mw-tpm-sp-unit' );
 		tempText = rowUnit.find( '.mw-tpm-sp-unit__target' ).val();
-		nextVal = rowUnit.next().find( '.mw-tpm-sp-unit__target').val();
+		nextVal = rowUnit.next().find( '.mw-tpm-sp-unit__target' ).val();
 		rowUnit.find( '.mw-tpm-sp-unit__target' ).val( nextVal );
 		rowUnit.next().find( '.mw-tpm-sp-unit__target' ).val( tempText );
 	}
@@ -430,16 +430,16 @@
 		}
 		$.when( getSourceUnits( pageName ), getFuzzyTimestamp( pageTitle ) )
 			.then( function ( sourceUnits, fuzzyTimestamp ) {
-			noOfSourceUnits = sourceUnits.length;
-			splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
-				var translationUnits = splitHeaders( translations );
-				translationUnits = alignHeaders( sourceUnits, translationUnits );
-				noOfTranslationUnits = translationUnits.length;
-				displayUnits( sourceUnits, translationUnits );
-				$( '#action-save, #action-cancel').removeClass( 'hide' );
-				$( '#action-import' ).addClass( 'hide' );
+				noOfSourceUnits = sourceUnits.length;
+				splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
+					var translationUnits = splitHeaders( translations );
+					translationUnits = alignHeaders( sourceUnits, translationUnits );
+					noOfTranslationUnits = translationUnits.length;
+					displayUnits( sourceUnits, translationUnits );
+					$( '#action-save, #action-cancel' ).removeClass( 'hide' );
+					$( '#action-import' ).addClass( 'hide' );
+				} );
 			} );
-		} );
 	}
 
 	/**
@@ -465,4 +465,4 @@
 		alignHeaders: alignHeaders
 	} );
 
-} ( jQuery, mediaWiki ) );
+}( jQuery, mediaWiki ) );

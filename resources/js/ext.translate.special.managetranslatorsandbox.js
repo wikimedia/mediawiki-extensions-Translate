@@ -219,7 +219,7 @@
 			);
 
 		translations.translationstash.translations.sort( sortTranslationsByLanguage );
-		$.each( translations.translationstash.translations, function( index, translation ) {
+		$.each( translations.translationstash.translations, function ( index, translation ) {
 			showTranslation( translation );
 		} );
 	}
@@ -431,7 +431,7 @@
 	 * @param {jQuery.Event} e
 	 */
 	function onSelectRequest( e ) {
-		var $requestRow = $( e.target ).closest( '.request'),
+		var $requestRow = $( e.target ).closest( '.request' ),
 			$requestRows = $( '.requests .request' ),
 			$selectAll = $( '.request-selector-all' );
 
@@ -441,7 +441,7 @@
 		$requestRows.each( function ( i, row ) {
 			var $row = $( row );
 
-			if ( row === $requestRow[0] ) {
+			if ( row === $requestRow[ 0 ] ) {
 				$row.addClass( 'selected' )
 					.find( '.request-selector' ).prop( {
 						checked: true,
@@ -535,7 +535,7 @@
 	function oldRequestSelector( e ) {
 		e.preventDefault();
 
-		getOlderRequests().each( function( index, request ) {
+		getOlderRequests().each( function ( index, request ) {
 			$( request ).find( '.request-selector' )
 				.prop( 'checked', true ) // Otherwise the state doesn't actually change
 				.change();
@@ -561,9 +561,9 @@
 		$requestCheckboxes.on( 'click change', requestSelectHandler );
 
 		// Handle clicks on request rows.
-		$requestRows.on( 'click',  onSelectRequest );
+		$requestRows.on( 'click', onSelectRequest );
 
-		$( '.older-requests-indicator' ).on( 'click',  oldRequestSelector );
+		$( '.older-requests-indicator' ).on( 'click', oldRequestSelector );
 
 		if ( $requestRows.length ) {
 			$requestRows.first().click();
@@ -608,7 +608,7 @@
 			quickList: mw.uls.getFrequentLanguageList
 		} );
 
-		$clearButton.on( 'click', function() {
+		$clearButton.on( 'click', function () {
 			var userLang = mw.config.get( 'wgUserLanguage' );
 
 			languageFilter.$selector
@@ -653,7 +653,7 @@
 
 	$.fn.languageFilter = function () {
 		return this.each( function () {
-			if ( !$.data( this, 'LanguageFilter' ) )  {
+			if ( !$.data( this, 'LanguageFilter' ) ) {
 				$.data( this, 'LanguageFilter', new LanguageFilter( this ) );
 			}
 		} );
@@ -671,7 +671,7 @@
 		this.$search.on( 'search keyup', $.proxy( this.keyup, this ) );
 	};
 
-	TranslatorSearch.prototype.keyup = function() {
+	TranslatorSearch.prototype.keyup = function () {
 		var query,
 			translatorSearch = this;
 
@@ -682,7 +682,7 @@
 		}, 300 );
 	};
 
-	TranslatorSearch.prototype.filter = function( query ) {
+	TranslatorSearch.prototype.filter = function ( query ) {
 		var $requests = $( '.request' );
 
 		$requests.each( function ( index, request ) {
@@ -725,7 +725,7 @@
 
 	$.fn.translatorSearch = function () {
 		return this.each( function () {
-			if ( !$.data( this, 'TranslatorSearch' ) )  {
+			if ( !$.data( this, 'TranslatorSearch' ) ) {
 				$.data( this, 'TranslatorSearch', new TranslatorSearch( this ) );
 			}
 		} );
