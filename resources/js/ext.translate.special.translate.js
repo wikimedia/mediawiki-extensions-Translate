@@ -27,13 +27,13 @@
 			api.parse(
 				group.description
 			).done( function ( parsedDescription ) {
-				// The parsed text is returned in a <p> tag,
-				// so it's removed here.
-				$description.html( $( parsedDescription ).html() );
-			} ).fail( function () {
-				$description.html( group.description );
-				mw.log( 'Error parsing description for group ' + group.id );
-			} );
+					// The parsed text is returned in a <p> tag,
+					// so it's removed here.
+					$description.html( $( parsedDescription ).html() );
+				} ).fail( function () {
+					$description.html( group.description );
+					mw.log( 'Error parsing description for group ' + group.id );
+				} );
 
 			mw.translate.changeUrl( changes );
 			mw.translate.updateTabLinks( changes );
@@ -180,14 +180,14 @@
 			} ).join( ', ' );
 
 			headerMessage = mw.message( group.priorityforce ?
-				'tpt-discouraged-language-force-header' :
-				'tpt-discouraged-language-header',
+					'tpt-discouraged-language-force-header' :
+					'tpt-discouraged-language-header',
 				$.uls.data.getAutonym( targetLanguage )
 			).parse();
 
 			languagesMessage = mw.message( group.priorityforce ?
-				'tpt-discouraged-language-force-content' :
-				'tpt-discouraged-language-content',
+					'tpt-discouraged-language-force-content' :
+					'tpt-discouraged-language-content',
 				preferredLanguages
 			).parse();
 
@@ -257,9 +257,9 @@
 		docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
 		if ( docLanguageCode ) {
 			docLanguageAutonym = mw.msg( 'translate-documentation-language' );
-			ulsOptions.languages[docLanguageCode] = docLanguageAutonym;
+			ulsOptions.languages[ docLanguageCode ] = docLanguageAutonym;
 			mw.translate.addDocumentationLanguage();
-			ulsOptions.showRegions = ['WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA'];
+			ulsOptions.showRegions = [ 'WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA' ];
 		}
 
 		$( '.ext-translate-language-selector .uls' ).uls( ulsOptions );

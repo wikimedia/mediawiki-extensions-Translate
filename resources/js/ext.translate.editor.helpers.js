@@ -5,7 +5,6 @@
 	'use strict';
 
 	var translateEditorHelpers = {
-
 		showDocumentationEditor: function () {
 			var $infoColumnBlock = this.$editor.find( '.infocolumn-block' ),
 				$editColumn = this.$editor.find( '.editcolumn' ),
@@ -24,7 +23,7 @@
 			$messageDescEditor
 				.removeClass( 'hide' )
 				.find( '.tux-textarea-documentation' )
-					.focus();
+				.focus();
 
 			// So that the link won't be followed
 			return false;
@@ -67,11 +66,11 @@
 					api.parse(
 						newDocumentation
 					).done( function ( parsedDocumentation ) {
-						$messageDesc.html( parsedDocumentation );
-					} ).fail( function ( errorCode, results ) {
-						$messageDesc.html( newDocumentation );
-						mw.log( 'Error parsing documentation ' + errorCode + ' ' + results.error.info );
-					} );
+							$messageDesc.html( parsedDocumentation );
+						} ).fail( function ( errorCode, results ) {
+							$messageDesc.html( newDocumentation );
+							mw.log( 'Error parsing documentation ' + errorCode + ' ' + results.error.info );
+						} );
 					// A collapsible element may have been added
 					$( '.mw-identical-title' ).makeCollapsible();
 
@@ -88,7 +87,8 @@
 
 		/**
 		 * Shows the message documentation.
-		 * @param {object} documentation A documentation object as returned by API.
+		 *
+		 * @param {Object} documentation A documentation object as returned by API.
 		 */
 		showMessageDocumentation: function ( documentation ) {
 			var $descEditLink,
@@ -203,6 +203,7 @@
 
 		/**
 		 * Shows the translations from other languages
+		 *
 		 * @param {array} translations An inotherlanguages array as returned by the translation helpers API.
 		 */
 		showAssistantLanguages: function ( translations ) {
@@ -213,7 +214,7 @@
 
 			$.each( translations, function ( index ) {
 				var $otherLanguage, langAttr,
-					translation = translations[index];
+					translation = translations[ index ];
 
 				langAttr = {
 					lang: translation.language,
@@ -223,15 +224,15 @@
 				$otherLanguage = $( '<div>' )
 					.addClass( 'row in-other-language' )
 					.append(
-						$( '<div>' )
-							.addClass( 'nine columns suggestiontext' )
-							.attr( langAttr )
-							.text( translation.value ),
-						$( '<div>' )
-							.addClass( 'three columns language text-right' )
-							.attr( langAttr )
-							.text( $.uls.data.getAutonym( translation.language ) )
-					);
+					$( '<div>' )
+						.addClass( 'nine columns suggestiontext' )
+						.attr( langAttr )
+						.text( translation.value ),
+					$( '<div>' )
+						.addClass( 'three columns language text-right' )
+						.attr( langAttr )
+						.text( $.uls.data.getAutonym( translation.language ) )
+				);
 
 				translateEditor.suggestionAdder( $otherLanguage, translation.value );
 
@@ -243,6 +244,7 @@
 
 		/**
 		 * Shows the translation suggestions from Translation Memory
+		 *
 		 * @param {array} suggestions A ttmserver array as returned by API.
 		 */
 		showTranslationMemory: function ( suggestions ) {
@@ -298,25 +300,25 @@
 				$translation = $( '<div>' )
 					.addClass( 'row tm-suggestion' )
 					.append(
-						$( '<div>' )
-							.addClass( 'nine columns suggestiontext' )
-							.attr( {
-								lang: translationLang,
-								dir: translationDir
-							} )
-							.text( translation.target ),
-						$( '<div>' )
-							.addClass( 'three columns quality text-right' )
-							.text( mw.msg( 'tux-editor-tm-match',
-								Math.floor( translation.quality * 100 ) ) ),
-						$( '<div>' )
-							.addClass( 'row text-right' )
-							.append(
-								$( '<a>' )
-									.addClass( 'n-uses' )
-									.data( 'n', 1 )
-							)
-					);
+					$( '<div>' )
+						.addClass( 'nine columns suggestiontext' )
+						.attr( {
+							lang: translationLang,
+							dir: translationDir
+						} )
+						.text( translation.target ),
+					$( '<div>' )
+						.addClass( 'three columns quality text-right' )
+						.text( mw.msg( 'tux-editor-tm-match',
+							Math.floor( translation.quality * 100 ) ) ),
+					$( '<div>' )
+						.addClass( 'row text-right' )
+						.append(
+						$( '<a>' )
+							.addClass( 'n-uses' )
+							.data( 'n', 1 )
+					)
+				);
 
 				translateEditor.suggestionAdder( $translation, translation.target );
 
@@ -331,6 +333,7 @@
 
 		/**
 		 * Shows the translation from machine translation systems
+		 *
 		 * @param {array} suggestions
 		 */
 		showMachineTranslations: function ( suggestions ) {
@@ -361,17 +364,17 @@
 				$translation = $( '<div>' )
 					.addClass( 'row tm-suggestion' )
 					.append(
-						$( '<div>' )
-							.addClass( 'nine columns suggestiontext' )
-							.attr( {
-								lang: translationLang,
-								dir: translationDir
-							} )
-							.text( translation.target ),
-						$( '<div>' )
-							.addClass( 'three columns text-right service' )
-							.text( translation.service )
-					);
+					$( '<div>' )
+						.addClass( 'nine columns suggestiontext' )
+						.attr( {
+							lang: translationLang,
+							dir: translationDir
+						} )
+						.text( translation.target ),
+					$( '<div>' )
+						.addClass( 'three columns text-right service' )
+						.text( translation.service )
+				);
 
 				translateEditor.suggestionAdder( $translation, translation.target );
 
@@ -384,7 +387,7 @@
 		 * transltion textarea with the given suggestion.
 		 *
 		 * @param {jQuery} $source
-		 * @param {String} suggestion Text to add
+		 * @param {string} suggestion Text to add
 		 */
 		suggestionAdder: function ( $source, suggestion ) {
 			var inserter,
@@ -409,22 +412,23 @@
 
 		/**
 		 * Shows the support options for the translator.
-		 * @param {object} support A support object as returned by API.
+		 * @param {Object} support A support object as returned by API.
 		 */
 		showSupportOptions: function ( support ) {
 			// Support URL
 			if ( support.url ) {
 				this.$editor.find( '.help' )
 					.find( 'a' )
-						.attr( 'href', support.url )
-						.end()
+					.attr( 'href', support.url )
+					.end()
 					.removeClass( 'hide' );
 			}
 		},
 
 		/**
 		 * Adds buttons for quickly inserting insertables.
-		 * @param {object} insertables A insertables object as returned by API.
+		 *
+		 * @param {Object} insertables A insertables object as returned by API.
 		 */
 		addInsertables: function ( insertables ) {
 			var i,
@@ -446,13 +450,13 @@
 						dir: $sourceMessage.prop( 'dir' )
 					} )
 					.addClass( 'insertable shortcut-activated' )
-					.text( insertables[i].display )
+					.text( insertables[ i ].display )
 					.data( 'iid', i )
 					.appendTo( $buttonArea );
 			}
 
 			$buttonArea.on( 'click', '.insertable', function () {
-				var data = insertables[$( this ).data( 'iid' )];
+				var data = insertables[ $( this ).data( 'iid' ) ];
 				$textarea.textSelection( 'encapsulateSelection', {
 					pre: data.pre,
 					post: data.post
@@ -515,8 +519,8 @@
 		/**
 		 * Get the documentation edit URL for a title
 		 *
-		 * @param {String} title Message title with namespace
-		 * @return {String} URL for editing the documentation
+		 * @param {string} title Message title with namespace
+		 * @return {string} URL for editing the documentation
 		 */
 		getDocumentationEditURL: function ( title ) {
 			var descUri = new mw.Uri( window.location.href );

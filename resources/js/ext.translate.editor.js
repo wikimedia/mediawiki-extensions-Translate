@@ -565,7 +565,9 @@
 					e.stopPropagation();
 					translateEditor.$editor.find( '.shortcut-activated:visible' ).eq( index ).trigger( 'click' );
 					// Update numbers and locations after trigger should be completed
-					window.setTimeout( function() { translateEditor.showShortcuts(); }, 100 );
+					window.setTimeout( function () {
+						translateEditor.showShortcuts();
+					}, 100 );
 				}
 
 				if ( e.which === 18 && e.type === 'keyup' ) {
@@ -822,8 +824,8 @@
 		/**
 		 * Displays the supplied warning from the bottom up near the translation edit area.
 		 *
-		 * @param {String} warning used as html for the warning display
-		 * @param {String} type used to group the warnings.eg: validation, diff, error
+		 * @param {string} warning used as html for the warning display
+		 * @param {string} type used to group the warnings.eg: validation, diff, error
 		 * @return {jQuery} the new warning element
 		 */
 		addWarning: function ( warning, type ) {
@@ -1000,7 +1002,7 @@
 			// layout of the text area after this function. Use very small
 			// delay to have it settle down and have correct results. Otherwise
 			// there will be a size change once the first letter is typed.
-			this.delayResize( function() {
+			this.delayResize( function () {
 				$textarea.trigger( 'autosize.resizeIncludeStyle' );
 			}, 1 );
 
@@ -1082,7 +1084,7 @@
 
 		/**
 		 * Adds the diff between old and current definitions to the view.
-		 * @param {object} definitiondiff A definitiondiff object as returned by API.
+		 * @param {Object} definitiondiff A definitiondiff object as returned by API.
 		 */
 		addDefinitionDiff: function ( definitiondiff ) {
 			var $trigger;
@@ -1139,7 +1141,7 @@
 			}
 
 			if ( typeof options === 'string' ) {
-				data[options].call( $this );
+				data[ options ].call( $this );
 			}
 		} );
 	};

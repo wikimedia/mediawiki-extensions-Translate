@@ -42,10 +42,10 @@
 			statusClass = 'tux-status-' + status,
 			statusMsg;
 
-			if ( status === 'translated' ) {
-				// tux-status-translated
-				statusMsg = 'tux-status-' + status;
-			}
+		if ( status === 'translated' ) {
+			// tux-status-translated
+			statusMsg = 'tux-status-' + status;
+		}
 
 		$messageWrapper = $( '<div>' )
 			.addClass( 'row tux-message' );
@@ -53,47 +53,47 @@
 		$message = $( '<div>' )
 			.addClass( 'row message tux-message-item ' + status )
 			.append(
-				$( '<div>' )
-					.addClass( 'eight columns tux-list-message' )
-					.append(
-						$( '<span>' )
-							.addClass( 'tux-list-source' )
-							.attr( {
-								lang: sourceLanguage,
-								dir: sourceLanguageDir
-							} )
-							.text( message.definition ),
-						// Bidirectional isolation.
-						// This should be removed some day when proper
-						// unicode-bidi: isolate
-						// is supported everywhere
-						$( '<span>' )
-							.html( $( 'body' ).hasClass( 'rtl' ) ? '&rlm;' : '&lrm;' ),
-						$( '<span>' )
-							.addClass( 'tux-list-translation' )
-							.attr( {
-								lang: targetLanguage,
-								dir: targetLanguageDir
-							} )
-							.text( message.translation || '' )
-						),
-				$( '<div>' )
-					.addClass( 'two columns tux-list-status text-center' )
-					.append(
-						$( '<span>' )
-							.addClass( statusClass )
-							.text( statusMsg ? mw.msg( statusMsg ) : '' )
-					),
-				$( '<div>' )
-					.addClass( 'two column tux-list-edit text-right' )
-					.append(
-						$( '<a>' )
-							.attr( {
-								title: mw.msg( 'translate-edit-title', message.key )
-							} )
-							.text( mw.msg( 'tux-edit' ) )
-					)
-			);
+			$( '<div>' )
+				.addClass( 'eight columns tux-list-message' )
+				.append(
+				$( '<span>' )
+					.addClass( 'tux-list-source' )
+					.attr( {
+						lang: sourceLanguage,
+						dir: sourceLanguageDir
+					} )
+					.text( message.definition ),
+				// Bidirectional isolation.
+				// This should be removed some day when proper
+				// unicode-bidi: isolate
+				// is supported everywhere
+				$( '<span>' )
+					.html( $( 'body' ).hasClass( 'rtl' ) ? '&rlm;' : '&lrm;' ),
+				$( '<span>' )
+					.addClass( 'tux-list-translation' )
+					.attr( {
+						lang: targetLanguage,
+						dir: targetLanguageDir
+					} )
+					.text( message.translation || '' )
+			),
+			$( '<div>' )
+				.addClass( 'two columns tux-list-status text-center' )
+				.append(
+				$( '<span>' )
+					.addClass( statusClass )
+					.text( statusMsg ? mw.msg( statusMsg ) : '' )
+			),
+			$( '<div>' )
+				.addClass( 'two column tux-list-edit text-right' )
+				.append(
+				$( '<a>' )
+					.attr( {
+						title: mw.msg( 'translate-edit-title', message.key )
+					} )
+					.text( mw.msg( 'tux-edit' ) )
+			)
+		);
 
 		$messageWrapper.append( $message );
 		$messageTable.append( $messageWrapper );
@@ -175,8 +175,8 @@
 					message.properties.status = 'untranslated';
 
 					message.group = messagegroup;
-					if ( userTranslations[message.title] ) {
-						message.translation = userTranslations[message.title].translation;
+					if ( userTranslations[ message.title ] ) {
+						message.translation = userTranslations[ message.title ].translation;
 						message.properties.status = 'translated';
 					}
 
@@ -195,8 +195,8 @@
 			} ).fail( function ( errorCode, response ) {
 				$messageTable.empty().addClass( 'error' )
 					.text( 'Error: ' + errorCode + ' - ' +
-						( response.error && response.error.info || 'Unknown error' )
-					);
+					( response.error && response.error.info || 'Unknown error' )
+				);
 			} );
 	}
 
@@ -236,12 +236,12 @@
 		// Get the user translations if any(possibly from an early attempt)
 		// and new messages to try.
 		translationStashStorage.getUserTranslations()
-			.done( function( translations ) {
+			.done( function ( translations ) {
 				if ( translations.translationstash.translations ) {
 					$.each( translations.translationstash.translations,
 						function ( index, translation ) {
-							userTranslations[translation.title] = translation;
-					} );
+							userTranslations[ translation.title ] = translation;
+						} );
 				}
 				loadMessages();
 			} );

@@ -58,11 +58,11 @@
 			$groupTitle = $( '<div>' )
 				.addClass( 'row' )
 				.append(
-					$( '<h3>' )
-						.addClass( 'tux-groupselector__title' )
-						.addClass( 'ten columns' )
-						.text( mw.msg( 'translate-msggroupselector-projects' ) )
-				);
+				$( '<h3>' )
+					.addClass( 'tux-groupselector__title' )
+					.addClass( 'ten columns' )
+					.text( mw.msg( 'translate-msggroupselector-projects' ) )
+			);
 
 			$searchIcon = $( '<div>' )
 				.addClass( 'two columns tux-groupselector__filter__search__icon' );
@@ -83,13 +83,13 @@
 				.addClass( 'tux-groupselector__filter__tabs' )
 				.addClass( 'six columns' )
 				.append(
-					$( '<div>' )
-						.addClass( 'tux-grouptab tux-grouptab--all tux-grouptab--selected' )
-						.text( mw.msg( 'translate-msggroupselector-search-all' ) ),
-					$( '<div>' )
-						.addClass( 'tux-grouptab tux-grouptab--recent' )
-						.text( mw.msg( 'translate-msggroupselector-search-recent' ) )
-				);
+				$( '<div>' )
+					.addClass( 'tux-grouptab tux-grouptab--all tux-grouptab--selected' )
+					.text( mw.msg( 'translate-msggroupselector-search-all' ) ),
+				$( '<div>' )
+					.addClass( 'tux-grouptab tux-grouptab--recent' )
+					.text( mw.msg( 'translate-msggroupselector-search-recent' ) )
+			);
 
 			$searchGroup = $( '<div>' )
 				.addClass( 'tux-groupselector__filter__search' )
@@ -293,7 +293,7 @@
 
 			this.$loader.show();
 
-			this.loadGroups().done( function( groups ) {
+			this.loadGroups().done( function ( groups ) {
 				var groupsToShow = mw.translate.findGroup( groupSelector.parentGroupId, groups );
 
 				// We do not want to display the group itself, only its subgroups
@@ -333,11 +333,11 @@
 					} );
 					return rows;
 				} )
-				.always( function() {
+				.always( function () {
 					groupSelector.$loader.hide();
 					groupSelector.$list.empty();
 				} )
-				.done( function( rows ) {
+				.done( function ( rows ) {
 					groupSelector.$list.append( rows );
 				} );
 		},
@@ -356,14 +356,14 @@
 
 			for ( i = 0; i < messageGroups.length; i++ ) {
 				// Avoid duplicate groups, and add the parent before subgroups
-				if ( !foundIDs[messageGroups[i].id] ) {
-					this.flatGroupList.push( messageGroups[i] );
-					foundIDs[messageGroups[i].id] = true;
+				if ( !foundIDs[ messageGroups[ i ].id ] ) {
+					this.flatGroupList.push( messageGroups[ i ] );
+					foundIDs[ messageGroups[ i ].id ] = true;
 				}
 
 				// In case there are subgroups, add them recursively
-				if ( messageGroups[i].groups ) {
-					this.flattenGroupList( messageGroups[i].groups, foundIDs );
+				if ( messageGroups[ i ].groups ) {
+					this.flattenGroupList( messageGroups[ i ].groups, foundIDs );
 				}
 			}
 		},
@@ -376,7 +376,7 @@
 		filter: function ( query ) {
 			var self = this;
 
-			this.loadGroups().done( function( groups ) {
+			this.loadGroups().done( function ( groups ) {
 				var currentGroup, index, matcher, foundGroups = [];
 
 				if ( !self.flatGroupList ) {
@@ -393,9 +393,9 @@
 				matcher = new RegExp( '\\b' + escapeRegex( query ), 'i' );
 
 				for ( index = 0; index < self.flatGroupList.length; index++ ) {
-					if ( matcher.test( self.flatGroupList[index].label ) ||
-						query === self.flatGroupList[index].id ) {
-						foundGroups.push( self.flatGroupList[index] );
+					if ( matcher.test( self.flatGroupList[ index ].label ) ||
+						query === self.flatGroupList[ index ].id ) {
+						foundGroups.push( self.flatGroupList[ index ] );
 					}
 				}
 
@@ -426,7 +426,7 @@
 
 			groupsLoader = new mw.Api()
 				.get( params )
-				.then( function( result ) {
+				.then( function ( result ) {
 					return result.query.messagegroups;
 				} )
 				.promise();
@@ -451,7 +451,7 @@
 
 			recentGroupsLoader = new mw.Api()
 				.get( params )
-				.then( function( result ) {
+				.then( function ( result ) {
 					return result.translateuser.recentgroups;
 				} )
 				.promise();
@@ -481,8 +481,8 @@
 				 */
 				if ( group.priority === 'discouraged' ||
 					( group.priorityforce &&
-						group.prioritylangs &&
-						$.inArray( targetLanguage, group.prioritylangs ) === -1 )
+					group.prioritylangs &&
+					$.inArray( targetLanguage, group.prioritylangs ) === -1 )
 				) {
 					return;
 				}
@@ -508,7 +508,7 @@
 		 * @param {Object} messagegroup object.
 		 * @returns {Object} a jQuery object with the groups selector row (<div>).
 		 */
-		prepareMessageGroupRow: function( messagegroup ) {
+		prepareMessageGroupRow: function ( messagegroup ) {
 			var $row,
 				$icon,
 				$label,
@@ -534,11 +534,11 @@
 				.addClass( 'tux-grouplist__item__label' )
 				.addClass( 'seven columns' )
 				.append(
-					$( '<span>' )
-						.prop( { dir: 'auto' } )
-						.text( messagegroup.label ),
-					$statsbar
-				);
+				$( '<span>' )
+					.prop( { dir: 'auto' } )
+					.text( messagegroup.label ),
+				$statsbar
+			);
 
 			if ( messagegroup.icon && messagegroup.icon.raster ) {
 				style += 'background-image: url(--);';
@@ -581,7 +581,7 @@
 
 			if ( !isSupported ) {
 				this.$element.setAttribute( eventName, 'return;' );
-				isSupported = typeof this.$element[eventName] === 'function';
+				isSupported = typeof this.$element[ eventName ] === 'function';
 			}
 
 			return isSupported;
@@ -604,7 +604,7 @@
 			}
 
 			if ( typeof options === 'string' ) {
-				data[options].call( $this );
+				data[ options ].call( $this );
 			}
 		} );
 	};
@@ -638,5 +638,5 @@
 			clearTimeout( timer );
 			timer = setTimeout( callback, milliseconds );
 		};
-	} () );
+	}() );
 }( jQuery, mediaWiki ) );

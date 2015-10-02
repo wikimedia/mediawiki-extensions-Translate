@@ -306,11 +306,15 @@
 			// Selectors are not cached in case the element no longer exists
 			setTimeout( function () {
 				var icon = $( '.autotipsy' );
-				if ( icon.length ) { icon.tipsy( 'show' ); }
+				if ( icon.length ) {
+					icon.tipsy( 'show' );
+				}
 			}, 1000 );
 			setTimeout( function () {
 				var icon = $( '.autotipsy' );
-				if ( icon.length ) { icon.tipsy( 'hide' ); }
+				if ( icon.length ) {
+					icon.tipsy( 'hide' );
+				}
 			}, 4000 );
 		},
 
@@ -331,7 +335,7 @@
 		/**
 		 * Search the message filter
 		 *
-		 * @param {String} query
+		 * @param {string} query
 		 */
 		search: function ( query ) {
 			var $note, $button, $result,
@@ -472,12 +476,12 @@
 						messageTable.search( query );
 					}
 
-					if ( result['query-continue'] === undefined ) {
+					if ( result[ 'query-continue' ] === undefined ) {
 						// End of messages
 						messageTable.$loader.data( 'offset', -1 )
 							.addClass( 'hide' );
 					} else {
-						messageTable.$loader.data( 'offset', result['query-continue'].messagecollection.mcoffset );
+						messageTable.$loader.data( 'offset', result[ 'query-continue' ].messagecollection.mcoffset );
 
 						remaining = result.query.metadata.remaining;
 
@@ -522,7 +526,7 @@
 		/**
 		 * Creates a uniformly styled button for different actions,
 		 * shown when there are no messages to display.
-		 * @param {String} labelMsg A message key for the button label.
+		 * @param {string} labelMsg A message key for the button label.
 		 * @param {Function} callback A callback for clicking the button.
 		 * @returns {jQuery} A button element.
 		 */
@@ -777,7 +781,7 @@
 			}
 
 			if ( typeof options === 'string' ) {
-				data[options].call( $this );
+				data[ options ].call( $this );
 			}
 		} );
 	};

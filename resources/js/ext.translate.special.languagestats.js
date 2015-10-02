@@ -58,7 +58,7 @@ jQuery( document ).ready( function ( $ ) {
 		$parent.on( 'hide show', function ( event ) {
 			// Reuse $toggle, $parent and $children from parent scope
 			if ( $toggler.hasClass( 'expanded' ) ) {
-				$children.trigger( event.type )[event.type]();
+				$children.trigger( event.type )[ event.type ]();
 			}
 		} );
 	} );
@@ -139,10 +139,10 @@ mw.loader.using( 'jquery.colorUtil', function () {
 			$tables = $( '.statstable' );
 
 		if ( match ) {
-			index = parseInt( match[1], 10 );
-			sort[index] = match[2];
+			index = parseInt( match[ 1 ], 10 );
+			sort[ index ] = match[ 2 ];
 		}
-		$tables.tablesorter( {sortList: [sort]} );
+		$tables.tablesorter( { sortList: [ sort ] } );
 
 		$tables.on( 'sortEnd.tablesorter', function () {
 			var $table = $( this );

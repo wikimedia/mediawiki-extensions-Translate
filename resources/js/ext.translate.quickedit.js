@@ -139,7 +139,7 @@
 		textarea = form.find( '.mw-translate-edit-area' );
 		textarea.css( 'display', 'block' );
 		textarea.autosize();
-		textarea[0].focus();
+		textarea[ 0 ].focus();
 
 		if ( form.find( '.mw-translate-messagechecks' ) ) {
 			checker = new MessageCheckUpdater( function () {
@@ -235,12 +235,12 @@
 
 			// Try if it has been cached
 			id = 'preload-' + page.replace( /[^a-zA-Z0-9_]/g, '_' );
-			preload = preloads[id];
+			preload = preloads[ id ];
 
 			if ( preload !== undefined ) {
 				if ( $target ) {
-					$target.html( preloads[id] );
-					delete preloads[id];
+					$target.html( preloads[ id ] );
+					delete preloads[ id ];
 				}
 				callback();
 				return;
@@ -256,10 +256,10 @@
 			};
 			if ( $target ) {
 				$target.load( url, params, callback );
-				delete preloads[id];
+				delete preloads[ id ];
 			} else {
 				$.get( url, params, function ( data ) {
-					preloads[id] = data;
+					preloads[ id ] = data;
 				} );
 			}
 
@@ -318,7 +318,7 @@
 					continue;
 				}
 
-				value = messages[key];
+				value = messages[ key ];
 				if ( found ) {
 					return mw.translate.openDialog( value, group );
 				} else if ( value === title ) {
@@ -391,4 +391,4 @@
 	} );
 
 	$( document ).ready( mw.translate.init );
-} )( jQuery, mediaWiki );
+})( jQuery, mediaWiki );

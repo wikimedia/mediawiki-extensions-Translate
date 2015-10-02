@@ -16,7 +16,7 @@
 		 * @return {boolean}
 		 */
 		isPlaceholderSupported: function ( element ) {
-			return ( 'placeholder' in element[0] );
+			return ( 'placeholder' in element[ 0 ] );
 		},
 
 		// Storage for language stats loader functions from API,
@@ -29,8 +29,8 @@
 		 * @return {deferred}
 		 */
 		loadLanguageStats: function ( language ) {
-			if ( !mw.translate.languageStatsLoader[language] ) {
-				mw.translate.languageStatsLoader[language] = new mw.Api().get( {
+			if ( !mw.translate.languageStatsLoader[ language ] ) {
+				mw.translate.languageStatsLoader[ language ] = new mw.Api().get( {
 					action: 'query',
 					format: 'json',
 					meta: 'languagestats',
@@ -38,11 +38,11 @@
 				} );
 			}
 
-			mw.translate.languageStatsLoader[language].done( function ( result ) {
-				mw.translate.languagestats[language] = result.query.languagestats;
+			mw.translate.languageStatsLoader[ language ].done( function ( result ) {
+				mw.translate.languagestats[ language ] = result.query.languagestats;
 			} );
 
-			return mw.translate.languageStatsLoader[language];
+			return mw.translate.languageStatsLoader[ language ];
 		},
 
 		/**
@@ -71,7 +71,7 @@
 			};
 
 			return (new mw.Api()).get( params ).then( function ( result ) {
-				return result.query.messagegroups[0];
+				return result.query.messagegroups[ 0 ];
 			} );
 		},
 
@@ -135,21 +135,21 @@
 
 		addDocumentationLanguage: function () {
 			var docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
-			if ( $.uls.data.languages[docLanguageCode] ) {
+			if ( $.uls.data.languages[ docLanguageCode ] ) {
 				return;
 			}
 			$.uls.data.addLanguage( docLanguageCode, {
 				script: $.uls.data.getScript( mw.config.get( 'wgContentLanguage' ) ),
-				regions: ['SP'],
+				regions: [ 'SP' ],
 				autonym: mw.msg( 'translate-documentation-language' )
 			} );
 		},
 
 		isDirty: function () {
-			return  $( '.mw-ajax-dialog:visible' ).length || // For old Translate
-				// For new Translate, something being typed in the current editor.
+			return $( '.mw-ajax-dialog:visible' ).length || // For old Translate
+					// For new Translate, something being typed in the current editor.
 				mw.translate.dirty ||
-				// For new translate, previous editors has some unsaved edits
+					// For new translate, previous editors has some unsaved edits
 				$( '.tux-status-unsaved' ).length;
 		}
 	} );
