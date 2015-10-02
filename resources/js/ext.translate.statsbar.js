@@ -2,7 +2,7 @@
  * Translate language statistics bar - jQuery plugin.
  * @author Niklas Laxström
  * @author Santhosh Thottingal
- * @license GPL-2.0+
+ * license GPL-2.0+
  * @since 2012-11-30
  */
 
@@ -17,10 +17,12 @@
 ( function ( mw, $ ) {
 	'use strict';
 
+	var LanguageStatsBar;
+
 	// Use mw.translate namespace for storing the language statistics.
 	mw.translate = mw.translate || {};
 
-	var LanguageStatsBar = function ( container, options ) {
+	LanguageStatsBar = function ( container, options ) {
 		this.$container = $( container );
 		this.group = options.group;
 		this.language = options.language;
@@ -30,7 +32,7 @@
 
 	LanguageStatsBar.prototype = {
 		init: function () {
-			if ( mw.translate.languagestats[this.language] ) {
+			if ( mw.translate.languagestats[ this.language ] ) {
 				this.render();
 			} else {
 				mw.translate.loadLanguageStats( this.language )
@@ -44,29 +46,29 @@
 		listen: function () {
 			var i,
 				statsbar = this,
-				languageStats = mw.translate.languagestats[this.language];
+				languageStats = mw.translate.languagestats[ this.language ];
 
 			statsbar.$statsBar.on( 'change', function ( event, to, from ) {
 				for ( i = 0; i < languageStats.length; i++ ) {
-					if ( languageStats[i].group === statsbar.group ) {
+					if ( languageStats[ i ].group === statsbar.group ) {
 						if ( to === 'translated' && from === 'untranslated' ) {
-							languageStats[i].translated++;
+							languageStats[ i ].translated++;
 						}
 						if ( to === 'proofread' ) {
-							languageStats[i].proofread++;
+							languageStats[ i ].proofread++;
 						}
 						if ( to === 'fuzzy' ) {
-							languageStats[i].fuzzy++;
+							languageStats[ i ].fuzzy++;
 						}
 
 						if ( from === 'fuzzy' ) {
-							languageStats[i].fuzzy--;
+							languageStats[ i ].fuzzy--;
 						}
 						if ( from === 'proofread' ) {
-							languageStats[i].proofread--;
+							languageStats[ i ].proofread--;
 						}
 						if ( from === 'translated' ) {
-							languageStats[i].translated--;
+							languageStats[ i ].translated--;
 						}
 						break;
 					}
@@ -148,11 +150,11 @@
 
 		getStatsForGroup: function ( group ) {
 			var i,
-				languageStats = mw.translate.languagestats[this.language];
+				languageStats = mw.translate.languagestats[ this.language ];
 
 			for ( i = 0; i < languageStats.length; i++ ) {
-				if ( languageStats[i].group === group ) {
-					return languageStats[i];
+				if ( languageStats[ i ].group === group ) {
+					return languageStats[ i ];
 				}
 			}
 
@@ -183,4 +185,4 @@
 	$.fn.languagestatsbar.Constructor = LanguageStatsBar;
 
 	mw.translate = mw.translate || {};
-} ( mediaWiki, jQuery ) );
+}( mediaWiki, jQuery ) );
