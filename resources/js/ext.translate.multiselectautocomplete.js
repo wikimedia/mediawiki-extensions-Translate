@@ -44,8 +44,8 @@ jQuery( function ( $ ) {
 								label: text.replace(
 									new RegExp(
 										'(?![^&;]+;)(?!<[^<>]*)(' +
-											$.ui.autocomplete.escapeRegex( term ) +
-											')(?![^<>]*>)(?![^&;]+;)', 'gi'
+										$.ui.autocomplete.escapeRegex( term ) +
+										')(?![^<>]*>)(?![^&;]+;)', 'gi'
 									), '<strong>$1</strong>' ),
 								value: value,
 								option: this
@@ -54,11 +54,13 @@ jQuery( function ( $ ) {
 					} ) );
 				},
 				select: function ( event, ui ) {
+					var terms;
+
 					ui.item.option.selected = true;
 					self._trigger( 'selected', event, {
 						item: ui.item.option
 					} );
-					var terms = split( $( this ).val() );
+					terms = split( $( this ).val() );
 					// remove the current input
 					terms.pop();
 					// add the selected item

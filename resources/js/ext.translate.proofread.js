@@ -57,9 +57,9 @@
 					// Update stats - to translated state from current state.
 					$( '.tux-action-bar .tux-statsbar' )
 						.trigger(
-							'change',
-							[ 'translated', proofread.message.properties.status ]
-						);
+						'change',
+						[ 'translated', proofread.message.properties.status ]
+					);
 				}
 			} );
 
@@ -74,24 +74,24 @@
 			// List of all reviewers
 			reviewers = $( this.message.properties.reviewers );
 			// The id of the current user, converted to string as the are in reviewers
-			userId = mw.config.get( 'wgUserId' ) + '';
+			userId = String( mw.config.get( 'wgUserId' ) );
 			// List of all reviewers excluding the current user.
-			otherReviewers = reviewers.not( [userId] );
+			otherReviewers = reviewers.not( [ userId ] );
 			/* Whether the current user if the last translator of this message.
 			 * Accepting own translations is prohibited. */
-			translatedBySelf = ( this.message.properties['last-translator-text'] === mw.user.getName() );
+			translatedBySelf = ( this.message.properties[ 'last-translator-text' ] === mw.user.getName() );
 			proofreadBySelf = $.inArray( userId, reviewers ) > -1;
 
 			sourceLangCode = this.options.sourcelangcode;
 			sourceLangDir = $.uls.data.getDir( sourceLangCode );
 			targetLangCode = this.options.targetlangcode;
-			targetLangDir = $.uls.data.getDir( targetLangCode );
+			targetLangDir = $.uls.data.getDir( targetLangCode ); // Never used?
 
 			$proofreadAction = $( '<div>' )
 				.attr( 'title', mw.msg( 'tux-proofread-action-tooltip' ) )
 				.addClass(
-					'tux-proofread-action ' + this.message.properties.status + ' ' + ( proofreadBySelf ? 'accepted' : '' )
-				)
+				'tux-proofread-action ' + this.message.properties.status + ' ' + ( proofreadBySelf ? 'accepted' : '' )
+			)
 				.tipsy( { gravity: 's', delayIn: 1000, className: 'translate-tipsy' } );
 
 			$proofreadEdit = $( '<div>' )
@@ -99,7 +99,7 @@
 				.append( $( '<span>' )
 					.addClass( 'tux-proofread-edit-label hide' )
 					.text( mw.msg( 'tux-proofread-edit-label' ) )
-				)
+			)
 				.on( 'mouseover', function () {
 					$( this ).find( '.tux-proofread-edit-label' ).removeClass( 'hide' );
 				} )
@@ -118,37 +118,37 @@
 				$( '<div>' )
 					.addClass( 'row tux-message-item-compact message' )
 					.append(
-						$( '<div>' )
-							.addClass( 'one column tux-proofread-status ' + this.message.properties.status ),
-						$( '<div>' )
-							.addClass( 'five columns tux-proofread-source' )
-							.attr( {
-								lang: sourceLangCode,
-								dir: sourceLangDir
-							} )
-							.text( this.message.definition ),
-						$( '<div>' )
-							.addClass( 'five columns tux-proofread-translation' )
-							.attr( {
-								lang: targetLangAttrib,
-								dir: targetLangDir
-							} )
-							.text( this.message.translation || '' ),
-						$( '<div>' )
-							.addClass( 'tux-proofread-action-block one column' )
-							.append(
-								$proofreadAction,
-								otherReviewers.length ?
-									$( '<div>' )
-										.addClass( 'tux-proofread-count' )
-										.data( 'reviewCount', reviewers.length ) // To update when accepting
-										.text( mw.language.convertNumber( reviewers.length ) ) :
-									$( [] ),
-								$proofreadEdit
-							)
+					$( '<div>' )
+						.addClass( 'one column tux-proofread-status ' + this.message.properties.status ),
+					$( '<div>' )
+						.addClass( 'five columns tux-proofread-source' )
+						.attr( {
+							lang: sourceLangCode,
+							dir: sourceLangDir
+						} )
+						.text( this.message.definition ),
+					$( '<div>' )
+						.addClass( 'five columns tux-proofread-translation' )
+						.attr( {
+							lang: targetLangAttrib,
+							dir: targetLangDir
+						} )
+						.text( this.message.translation || '' ),
+					$( '<div>' )
+						.addClass( 'tux-proofread-action-block one column' )
+						.append(
+						$proofreadAction,
+						otherReviewers.length ?
+							$( '<div>' )
+								.addClass( 'tux-proofread-count' )
+								.data( 'reviewCount', reviewers.length ) // To update when accepting
+								.text( mw.language.convertNumber( reviewers.length ) ) :
+							$( [] ),
+						$proofreadEdit
 					)
+				)
 			)
-			.addClass( this.message.properties.status );
+				.addClass( this.message.properties.status );
 
 			if ( translatedBySelf ) {
 				this.markSelfTranslation();
@@ -179,7 +179,7 @@
 						.addClass( 'translated-by-self' )
 						.attr( 'title', mw.msg( 'tux-proofread-translated-by-self' ) )
 						.tipsy( { gravity: 'e', className: 'translate-tipsy' } )
-					);
+				);
 			}
 		},
 		/**
@@ -192,7 +192,7 @@
 
 			params = {
 				action: 'translationreview',
-				revision: this.message.properties.revision,
+				revision: this.message.properties.revision
 			};
 
 			if ( !mw.user.isAnon() ) {
@@ -218,7 +218,7 @@
 			} ).fail( function ( errorCode ) {
 				$message.find( '.tux-proofread-action' ).addClass( 'tux-warning' );
 				// In MW 1.24 alpha postWithToken returns token-missing instead of assertuserfailed
-				if ( errorCode === 'assertuserfailed' || errorCode === 'token-missing'  ) {
+				if ( errorCode === 'assertuserfailed' || errorCode === 'token-missing' ) {
 					alert( mw.msg( 'tux-session-expired' ) );
 				}
 			} );
@@ -255,7 +255,7 @@
 
 			if ( !data ) {
 				$this.data( 'proofread',
-					( data = new Proofread( this, options ) )
+					( data = new Proofread( this, options ) ) // value assigned never used?
 				);
 			}
 
@@ -263,5 +263,4 @@
 	};
 
 	$.fn.proofread.Constructor = Proofread;
-
 }( jQuery, mediaWiki ) );
