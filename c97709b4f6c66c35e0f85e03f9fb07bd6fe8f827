@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ecb373e_53430643",
+        "filename": "Gruntfile.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-10-02T15:43:05Z",
+      "side": 1,
+      "message": "Should be \u0027*.js\u0027 to do all the js files.",
+      "revId": "c97709b4f6c66c35e0f85e03f9fb07bd6fe8f827",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_f371d2a7",
+        "filename": "Gruntfile.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-10-02T15:43:05Z",
+      "side": 1,
+      "message": "Remove this temporarily. including banana checker.",
+      "revId": "c97709b4f6c66c35e0f85e03f9fb07bd6fe8f827",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
