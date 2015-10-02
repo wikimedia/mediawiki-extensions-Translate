@@ -14,14 +14,15 @@
 
 	TranslationApiStorage.prototype = {
 		/**
-		 * Save the translation
+		 * Save the translation.
+		 *
 		 * @param {string} title The title of the page including language code
 		 *   to store the translation.
 		 * @param {string} translation The translation of the message
 		 * @return {jQuery.Promise}
 		 */
 		save: function ( title, translation ) {
-			return (new mw.Api()).postWithToken( 'edit', {
+			return ( new mw.Api() ).postWithToken( 'edit', {
 				action: 'edit',
 				title: title,
 				text: translation,

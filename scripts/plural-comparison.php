@@ -13,8 +13,7 @@
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
-	$dir = __DIR__;
-	$IP = "$dir/../../..";
+	$IP = __DIR__ . "/../../..";
 }
 require_once "$IP/maintenance/Maintenance.php";
 
@@ -129,13 +128,18 @@ class PluralCompare extends Maintenance {
 	}
 
 	public function loadCLDR() {
+		// @codingStandardsIgnoreStart Ignore MediaWiki.NamingConventions.ValidGlobalName.wgPrefix
 		global $IP;
+		// @codingStandardsIgnoreEnd
 
 		return $this->loadPluralFile( "$IP/languages/data/plurals.xml" );
 	}
 
 	public function loadMediaWiki() {
+		// @codingStandardsIgnoreStart Ignore MediaWiki.NamingConventions.ValidGlobalName.wgPrefix
 		global $IP;
+		// @codingStandardsIgnoreEnd
+
 		$rules = $this->loadPluralFile( "$IP/languages/data/plurals.xml" );
 		$rulesMW = $this->loadPluralFile( "$IP/languages/data/plurals-mediawiki.xml" );
 

@@ -3,7 +3,7 @@
  * workflow sates.
  *
  * @author Niklas Laxström
- * @license GPL-2.0+
+ * license GPL-2.0+
  */
 
 ( function ( $, mw ) {
@@ -25,9 +25,10 @@
 	WorkflowSelector.prototype = {
 		/**
 		 * Displays the current state and selector if relevant.
-		 * @param {String} groupId
-		 * @param {String} language
-		 * @param {String} state
+		 *
+		 * @param {string} groupId
+		 * @param {string} language
+		 * @param {string} state
 		 */
 		receiveState: function ( groupId, language, state ) {
 			var instance = this;
@@ -51,7 +52,8 @@
 
 		/**
 		 * Calls the WebApi to change the state to a new value.
-		 * @param {String} state
+		 *
+		 * @param {string} state
 		 * @return {jQuery.Promise}
 		 */
 		changeState: function ( state ) {
@@ -72,8 +74,9 @@
 
 		/**
 		 * Get the text which says that the current state is X.
-		 * @param {String} stateName
-		 * @return {String} Text which should be escaped.
+		 *
+		 * @param {string} stateName
+		 * @return {string} Text which should be escaped.
 		 */
 		getStateDisplay: function ( stateName ) {
 			return mw.msg( 'translate-workflowstatus', stateName );
@@ -159,5 +162,4 @@
 		} );
 	};
 	$.fn.workflowselector.Constructor = WorkflowSelector;
-
 }( jQuery, mediaWiki ) );
