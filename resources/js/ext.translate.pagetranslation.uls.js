@@ -18,4 +18,4 @@
 
 		location.href = uri.toString();
 	};
-} ( mediaWiki ) );
+}( mediaWiki ) );

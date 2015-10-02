@@ -10,9 +10,11 @@
 	 * @return {jQuery.Promise}
 	 */
 	function ajaxDispatcher( list, maxRetries ) {
+		var deferred;
+
 		maxRetries = maxRetries || 0;
 
-		var deferred = $.Deferred();
+		deferred = $.Deferred();
 		return $.when( helper( list, maxRetries ) )
 			.then( function ( promises ) {
 				return deferred.resolve( promises );
@@ -28,7 +30,7 @@
 			return deferred;
 		}
 
-		first = list.slice( 0, 1 )[0];
+		first = list.slice( 0, 1 )[ 0 ];
 		rest = list.slice( 1 );
 
 		retries = 0;

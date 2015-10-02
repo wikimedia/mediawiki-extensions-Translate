@@ -12,11 +12,12 @@
 		/**
 		 * Checks if the input placeholder attribute
 		 * is supported on this element in this browser.
+		 *
 		 * @param {jQuery} element
 		 * @return {boolean}
 		 */
 		isPlaceholderSupported: function ( element ) {
-			return ( 'placeholder' in element[0] );
+			return ( 'placeholder' in element[ 0 ] );
 		},
 
 		// Storage for language stats loader functions from API,
@@ -25,12 +26,13 @@
 
 		/**
 		 * Get language stats for a language from the API.
+		 *
 		 * @param {string} language Language code.
 		 * @return {deferred}
 		 */
 		loadLanguageStats: function ( language ) {
-			if ( !mw.translate.languageStatsLoader[language] ) {
-				mw.translate.languageStatsLoader[language] = new mw.Api().get( {
+			if ( !mw.translate.languageStatsLoader[ language ] ) {
+				mw.translate.languageStatsLoader[ language ] = new mw.Api().get( {
 					action: 'query',
 					format: 'json',
 					meta: 'languagestats',
@@ -38,18 +40,18 @@
 				} );
 			}
 
-			mw.translate.languageStatsLoader[language].done( function ( result ) {
-				mw.translate.languagestats[language] = result.query.languagestats;
+			mw.translate.languageStatsLoader[ language ].done( function ( result ) {
+				mw.translate.languagestats[ language ] = result.query.languagestats;
 			} );
 
-			return mw.translate.languageStatsLoader[language];
+			return mw.translate.languageStatsLoader[ language ];
 		},
 
 		/**
 		 * Load message group information asynchronously.
 		 *
 		 * @param {string} id Message group id
-		 * @param {string|array} [props] List of properties to load
+		 * @param {string|Array} [props] List of properties to load
 		 * @return {jQuery.Promise} Object containing the requested properties on success.
 		 */
 		getMessageGroup: function ( id, props ) {
@@ -70,8 +72,8 @@
 				mgroot: id
 			};
 
-			return (new mw.Api()).get( params ).then( function ( result ) {
-				return result.query.messagegroups[0];
+			return ( new mw.Api() ).get( params ).then( function ( result ) {
+				return result.query.messagegroups[ 0 ];
 			} );
 		},
 
@@ -111,6 +113,7 @@
 
 		/**
 		 * Check if the current user is allowed to translate on this wiki.
+		 *
 		 * @return {boolean}
 		 */
 		canTranslate: function () {
@@ -119,6 +122,7 @@
 
 		/**
 		 * Check if the current user is allowed to proofread on this wiki.
+		 *
 		 * @return {boolean}
 		 */
 		canProofread: function () {
@@ -127,6 +131,7 @@
 
 		/**
 		 * Check if the current user can delete translations on this wiki.
+		 *
 		 * @return {boolean}
 		 */
 		canDelete: function () {
@@ -135,21 +140,21 @@
 
 		addDocumentationLanguage: function () {
 			var docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
-			if ( $.uls.data.languages[docLanguageCode] ) {
+			if ( $.uls.data.languages[ docLanguageCode ] ) {
 				return;
 			}
 			$.uls.data.addLanguage( docLanguageCode, {
 				script: $.uls.data.getScript( mw.config.get( 'wgContentLanguage' ) ),
-				regions: ['SP'],
+				regions: [ 'SP' ],
 				autonym: mw.msg( 'translate-documentation-language' )
 			} );
 		},
 
 		isDirty: function () {
-			return  $( '.mw-ajax-dialog:visible' ).length || // For old Translate
-				// For new Translate, something being typed in the current editor.
+			return $( '.mw-ajax-dialog:visible' ).length || // For old Translate
+					// For new Translate, something being typed in the current editor.
 				mw.translate.dirty ||
-				// For new translate, previous editors has some unsaved edits
+					// For new translate, previous editors has some unsaved edits
 				$( '.tux-status-unsaved' ).length;
 		}
 	} );
