@@ -110,7 +110,9 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	 * @since 2014.02 Made public
 	 */
 	public function replaceVariables( $pattern, $code ) {
+		// @codingStandardsIgnoreStart Ignore MediaWiki.NamingConventions.ValidGlobalName.wgPrefix
 		global $IP, $wgTranslateGroupRoot;
+		// @codingStandardsIgnoreEnd
 
 		$variables = array(
 			'%CODE%' => $this->mapCode( $code ),
