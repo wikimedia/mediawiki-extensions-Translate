@@ -3,7 +3,7 @@
  * @author Krinkle <krinklemail (at) gmail (dot) com>
  * @author Niklas Laxström, 2012
  * @created January 3, 2011
- * @license GPL-2.0+, CC-BY-SA-3.0
+ * license GPL-2.0+, CC-BY-SA-3.0
  */
 /*global mw:false*/
 jQuery( document ).ready( function ( $ ) {
@@ -58,7 +58,7 @@ jQuery( document ).ready( function ( $ ) {
 		$parent.on( 'hide show', function ( event ) {
 			// Reuse $toggle, $parent and $children from parent scope
 			if ( $toggler.hasClass( 'expanded' ) ) {
-				$children.trigger( event.type )[event.type]();
+				$children.trigger( event.type )[ event.type ]();
 			}
 		} );
 	} );
@@ -129,7 +129,7 @@ mw.loader.using( 'jquery.colorUtil', function () {
 	} );
 } );
 
-(function ( mw, $ ) {
+( function ( mw, $ ) {
 	'use strict';
 	$( document ).ready( function () {
 		var index,
@@ -139,10 +139,10 @@ mw.loader.using( 'jquery.colorUtil', function () {
 			$tables = $( '.statstable' );
 
 		if ( match ) {
-			index = parseInt( match[1], 10 );
-			sort[index] = match[2];
+			index = parseInt( match[ 1 ], 10 );
+			sort[ index ] = match[ 2 ];
 		}
-		$tables.tablesorter( {sortList: [sort]} );
+		$tables.tablesorter( { sortList: [ sort ] } );
 
 		$tables.on( 'sortEnd.tablesorter', function () {
 			var $table = $( this );
