@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "2ecb373e_93a88e1e",
+        "filename": "Gruntfile.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-10-02T17:17:47Z",
+      "side": 1,
+      "message": "Well no but will be helpful if the files were in a different folder.",
+      "parentUuid": "2ecb373e_5349c6d1",
+      "revId": "c97709b4f6c66c35e0f85e03f9fb07bd6fe8f827",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ecb373e_f371d2a7",
         "filename": "Gruntfile.js",
         "patchSetId": 17
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Why?",
       "parentUuid": "2ecb373e_f371d2a7",
+      "revId": "c97709b4f6c66c35e0f85e03f9fb07bd6fe8f827",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_d3b61685",
+        "filename": "Gruntfile.js",
+        "patchSetId": 17
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-10-02T17:17:47Z",
+      "side": 1,
+      "message": "Since it is failing the jscs test. and to speed up the patch getting merged.",
+      "parentUuid": "2ecb373e_334e7ade",
       "revId": "c97709b4f6c66c35e0f85e03f9fb07bd6fe8f827",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
