@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ecb373e_c8098530",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 853
+      },
+      "writtenOn": "2015-10-02T14:13:24Z",
+      "side": 1,
+      "message": "to be ignoreD",
+      "revId": "ba34bfa8f5ebf5b7d0a0f10530ec2e2e19f76106",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
