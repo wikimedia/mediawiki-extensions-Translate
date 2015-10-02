@@ -1,9 +1,10 @@
 /**
  * Introduces a toggle icon than can be used to hide navigation menu in vector
+ *
  * @author Niklas Laxström
- * @license GPL-2.0+
+ * license GPL-2.0+
  */
-(function ( mw, $ ) {
+( function ( mw, $ ) {
 	'use strict';
 
 	var delay = ( function () {
@@ -13,7 +14,7 @@
 			clearTimeout( timer );
 			timer = setTimeout( callback, milliseconds );
 		};
-	} () );
+	}() );
 
 	$( document ).ready( function () {
 		var $miniLogo, $toggle, rtl, delim,
@@ -31,7 +32,7 @@
 
 		$toggle = $( '<div>' )
 			.addClass( 'tux-navitoggle' )
-			.css( rtl ? 'right' : 'left' , delim )
+			.css( rtl ? 'right' : 'left', delim )
 			.click( function () {
 				$body.toggleClass( 'tux-navi-collapsed' );
 				// Allow for animations etc to go
