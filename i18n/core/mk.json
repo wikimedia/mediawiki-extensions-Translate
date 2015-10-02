@@ -9,6 +9,7 @@
 		]
 	},
 	"translate": "Преведување",
+	"translate-extensionname": "Преведување",
 	"translate-desc": "[[Special:Translate|Службена страница]] за преведување на МедијаВики и други пораки",
 	"translate-taskui-view": "Сите пораки",
 	"translate-taskui-untranslated": "Непреведени пораки",
@@ -282,10 +283,7 @@
 	"action-translate-sandboxaction": "вршење на дејства на белиот список за корисници во песочникот",
 	"translate-workflow-state-": "(незададен)",
 	"translate-workflowstatus": "Статус: $1",
-	"translate-workflow-set-do": "Задај",
 	"translate-workflow-set-doing": "Задавам...",
-	"translate-workflow-set-done": "Зададено!",
-	"translate-workflow-set-error-alreadyset": "Бараната состојба не се разликува од моменталната.",
 	"translate-workflow-autocreated-summary": "Автоматско создавање на страница за работната состојба $1",
 	"translate-stats-workflow": "Статус",
 	"translate-workflowgroup-label": "Работни состојби",
@@ -294,10 +292,6 @@
 	"translate-dynagroup-recent-desc": "Оваа група пораки ги прикажува сите скорешни преводи на овој јазик.\nОва е најкорисно при вршењето на прегледи.",
 	"translate-dynagroup-additions-label": "Неодамна додадени",
 	"translate-dynagroup-additions-desc": "Оваа група пораки прикажува нови и изменети пораки",
-	"translate-dynagroup-by": "Преводот го изврши {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "Преводот го изврши {{GENDER:$1|$1}} ($2)",
-	"translate-dynagroup-last": "Последната промена ја изврши {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Последната промена ја изврши {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Помош",
 	"translate-msggroupselector-projects": "Група пораки",
 	"translate-msggroupselector-search-placeholder": "Пребарајте групи",
@@ -389,5 +383,6 @@
 	"translate-search-more-groups-info": "Уште {{PLURAL:$1|една група|$1 групи}}",
 	"translate-ulsdep-title": "Грешка во поставеноста",
 	"translate-ulsdep-body": "Додатокот за превод е зависен од додатокот „[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Универзален јазичен избирач]“.",
-	"tux-session-expired": "Повеќе не сте најавени. Најавете се во друго јазиче. Можете и некаде да ги прекопирате незачуваните преводи, па да се најавите и да се навратите на страницава, и потоа внесете ги преводите повторно."
+	"tux-session-expired": "Повеќе не сте најавени. Најавете се во друго јазиче. Можете и некаде да ги прекопирате незачуваните преводи, па да се најавите и да се навратите на страницава, и потоа внесете ги преводите повторно.",
+	"tux-nojs": "Оваа страница бара JavaScript."
 }

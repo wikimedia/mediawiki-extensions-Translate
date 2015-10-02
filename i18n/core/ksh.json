@@ -379,5 +379,6 @@
 	"translate-search-more-groups-info": "{{PLURAL:$1|Ein Jropp|$1 Jroppe|Kein Jropp}} mih",
 	"translate-ulsdep-title": "Fähler bei de Enschtällonge",
 	"translate-ulsdep-body": "Dat Zohsazprojramm <i lang=\"en\" xml:lang=\"en\">Translate</i> bruch dat Zohsazprojramm [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector <i lang=\"en\" xml:lang=\"en\">e-mail</i>Universal Language Selector</i>].",
-	"tux-session-expired": "Do bes nit mih ennjelogg.\nBes esu johd un donn en enem extra Brauserfinster widder enlogge.\nUdder donn Ding Övversäzonge woh anders faßhallde, di noch nit em Wiki jeseschert woodte, donn neu enlogge, un jangk dann retuur op heh di Sigg, un donn Ding Övversäzonge widder erövver koppeere!"
+	"tux-session-expired": "Do bes nit mih ennjelogg.\nBes esu johd un donn en enem extra Brauserfinster widder enlogge.\nUdder donn Ding Övversäzonge woh anders faßhallde, di noch nit em Wiki jeseschert woodte, donn neu enlogge, un jangk dann retuur op heh di Sigg, un donn Ding Övversäzonge widder erövver koppeere!",
+	"tux-nojs": "Heh di Sigg bruch JahvaSkrepp."
 }

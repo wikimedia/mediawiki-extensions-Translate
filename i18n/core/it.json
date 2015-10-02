@@ -288,10 +288,7 @@
 	"action-translate-sandboxaction": "eseguire azioni autorizzate per gli utenti in modalità sandbox",
 	"translate-workflow-state-": "(disattivato)",
 	"translate-workflowstatus": "Stato: $1",
-	"translate-workflow-set-do": "Modifica",
 	"translate-workflow-set-doing": "Modifica in corso",
-	"translate-workflow-set-done": "Modificato!",
-	"translate-workflow-set-error-alreadyset": "Lo stato richiesto è identico allo stato corrente.",
 	"translate-workflow-autocreated-summary": "Creazione automatica della pagina per lo stato del flusso di lavoro $1",
 	"translate-stats-workflow": "Stato",
 	"translate-workflowgroup-label": "Stati del flusso di lavoro",
@@ -300,10 +297,6 @@
 	"translate-dynagroup-recent-desc": "Questo gruppo messaggi mostra tutte le ultime traduzioni in questa lingua.\nUtile per l'attività di revisione.",
 	"translate-dynagroup-additions-label": "Aggiunte recenti",
 	"translate-dynagroup-additions-desc": "Questo gruppo messaggi mostra i messaggi nuovi o modificati.",
-	"translate-dynagroup-by": "Traduzione di {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "Traduzione di {{GENDER:$1|$1}} ($2)",
-	"translate-dynagroup-last": "Ultima modifica di {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Ultima modifica di {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Aiuto",
 	"translate-msggroupselector-projects": "Gruppo di messaggi",
 	"translate-msggroupselector-search-placeholder": "Ricerca gruppi",
@@ -395,5 +388,6 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|altro gruppo|altri gruppi}}",
 	"translate-ulsdep-title": "Errore di configurazione",
 	"translate-ulsdep-body": "L'estensione Translate dipende dall'[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector estensione Universal Language Selector].",
-	"tux-session-expired": "Non hai effettuato l'accesso. Accedi in una scheda separata; o in alternativa copia la traduzione non salvata, accedi, e ritorna in questa pagina."
+	"tux-session-expired": "Non hai effettuato l'accesso. Accedi in una scheda separata; o in alternativa copia la traduzione non salvata, accedi, e ritorna in questa pagina.",
+	"tux-nojs": "Questa pagina richiede JavaScript."
 }

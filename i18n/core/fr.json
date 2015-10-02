@@ -38,6 +38,7 @@
 		]
 	},
 	"translate": "Traduire",
+	"translate-extensionname": "Traduire",
 	"translate-desc": "[[Special:Translate|Page spéciale]] pour traduire MediaWiki et au-delà",
 	"translate-taskui-view": "Afficher tous les messages",
 	"translate-taskui-untranslated": "Afficher les messages non traduits",
@@ -311,10 +312,7 @@
 	"action-translate-sandboxaction": "exécuter des actions sur liste blanche pour les utilisateurs non-enregistrés",
 	"translate-workflow-state-": "(désactivé)",
 	"translate-workflowstatus": "Statut : $1",
-	"translate-workflow-set-do": "Activé",
 	"translate-workflow-set-doing": "Activation...",
-	"translate-workflow-set-done": "Activé !",
-	"translate-workflow-set-error-alreadyset": "L’état demandé est identique à l’état courant.",
 	"translate-workflow-autocreated-summary": "Création automatique de la page pour l’état du processus de travail $1",
 	"translate-stats-workflow": "Statut",
 	"translate-workflowgroup-label": "États du processus de travail",
@@ -323,10 +321,6 @@
 	"translate-dynagroup-recent-desc": "Ce groupe de messages montre toutes les traductions récentes faites dans cette langue.\nIl est surtout utilisé pour les tâches de relecture.",
 	"translate-dynagroup-additions-label": "Ajouts récents",
 	"translate-dynagroup-additions-desc": "Ce groupe de messages affiche les messages nouveaux et modifiés.",
-	"translate-dynagroup-by": "Traduction faite par  {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "Traduction faite par  {{GENDER:$1|$1}} ($2)",
-	"translate-dynagroup-last": "Dernière modification par  {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Dernière modification par  {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Aide",
 	"translate-msggroupselector-projects": "Groupe de messages",
 	"translate-msggroupselector-search-placeholder": "Rechercher des groupes",
@@ -418,5 +412,6 @@
 	"translate-search-more-groups-info": "$1 groupe{{PLURAL:$1||s}} de plus",
 	"translate-ulsdep-title": "Erreur de configuration",
 	"translate-ulsdep-body": "L’extension de traduction dépend de l’[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal extension Sélecteur de langue].",
-	"tux-session-expired": "Vous n’êtes plus connecté. Veuillez vous connecter dans un autre onglet. Sinon, faites une copie des traductions non enregistrées, connectez-vous et revenez sur cette page."
+	"tux-session-expired": "Vous n’êtes plus connecté. Veuillez vous connecter dans un autre onglet. Sinon, faites une copie des traductions non enregistrées, connectez-vous et revenez sur cette page.",
+	"tux-nojs": "Cette page nécessite JavaScript."
 }

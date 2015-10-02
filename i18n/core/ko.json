@@ -12,7 +12,8 @@
 			"Priviet",
 			"Revi",
 			"Bluemersen",
-			"Infinity"
+			"Infinity",
+			"Hwangjy9"
 		]
 	},
 	"translate": "번역하기",
@@ -386,5 +387,6 @@
 	"translate-search-more-groups-info": "{{PLURAL:$1|그룹}} $1개 더 보기",
 	"translate-ulsdep-title": "구성 오류",
 	"translate-ulsdep-body": "번역 확장 기능은 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector 일반 언어 선택기 확장 기능]을 필요로 합니다.",
-	"tux-session-expired": "로그인하고 있지 않습니다. 별도의 탭에서 로그인하세요. 대안으로, 저장하지 않은 번역을 복사하고, 로그인한 다음, 이 문서로 돌아와 다시 번역을 입력하세요."
+	"tux-session-expired": "로그인하고 있지 않습니다. 별도의 탭에서 로그인하세요. 대안으로, 저장하지 않은 번역을 복사하고, 로그인한 다음, 이 문서로 돌아와 다시 번역을 입력하세요.",
+	"tux-nojs": "이 문서는 자바스크립트가 필요합니다."
 }

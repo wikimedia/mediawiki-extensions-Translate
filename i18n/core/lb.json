@@ -7,6 +7,7 @@
 		]
 	},
 	"translate": "Iwwersetzt",
+	"translate-extensionname": "Iwwersetzen",
 	"translate-desc": "[[Special:Translate|Spezialsäit]] fir d'Iwwersetzung vu MediaWiki-Systemmessagen a fir Aneres",
 	"translate-taskui-view": "All Message weisen",
 	"translate-taskui-untranslated": "Net iwwersate Message weisen",
@@ -274,10 +275,7 @@
 	"right-translate-sandboxaction": "Aktiounen ausféieren déi fir Sandkëschtbenotzer autoriséiert sinn",
 	"translate-workflow-state-": "(net agestallt)",
 	"translate-workflowstatus": "Statut: $1",
-	"translate-workflow-set-do": "Astellen",
 	"translate-workflow-set-doing": "Astellen...",
-	"translate-workflow-set-done": "Agestallt!",
-	"translate-workflow-set-error-alreadyset": "Den ugefrote Status ass identesch mam aktuelle Status.",
 	"translate-workflow-autocreated-summary": "Automatescht Uleeë vun der Säit fir de Statut vum Workflow $1",
 	"translate-stats-workflow": "Statut",
 	"translate-workflowgroup-label": "Etappe vum Workflow",
@@ -286,10 +284,6 @@
 	"translate-dynagroup-recent-desc": "Dëse Grupp vu Message weist all rezent Iwwersetzungen an dës Sprooch.\nDëst ass ganz nëtzlech fir d'Aufgabe vum Nokucken.",
 	"translate-dynagroup-additions-label": "Rezent nei Message",
 	"translate-dynagroup-additions-desc": "Dëse Grupp vu Message weist nei oder geännert Messagen.",
-	"translate-dynagroup-by": "Iwwersetzung vum {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "Iwwersetzung vum {{GENDER:$1|$1}} ($2)",
-	"translate-dynagroup-last": "Lescht Ännerung vum {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Lescht Ännerung vum {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Hëllef",
 	"translate-msggroupselector-projects": "Grupp vu Messagen",
 	"translate-msggroupselector-search-placeholder": "An de Gruppe sichen",
@@ -381,5 +375,6 @@
 	"translate-search-more-groups-info": "$1 weider {{PLURAL:$1|Grupp|Gruppen}}",
 	"translate-ulsdep-title": "Astellungsfeeler",
 	"translate-ulsdep-body": "D'Iwwersetzungerweiderung hänkt vun der  [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universeller Sproochauswiel-Erweiderung] of.",
-	"tux-session-expired": "Dir sidd net méi ageloggt. Loggt Iech w.e.g. an engem separaten Tab an. Alternativ kënnt Dir och eng Kopie vun den net-gespäicherten Iwwersetzunge maachen, Iech aloggen op dës Säit zréckkommen an Är Iwwersetzungen nees aginn."
+	"tux-session-expired": "Dir sidd net méi ageloggt. Loggt Iech w.e.g. an engem separaten Tab an. Alternativ kënnt Dir och eng Kopie vun den net-gespäicherten Iwwersetzunge maachen, Iech aloggen op dës Säit zréckkommen an Är Iwwersetzungen nees aginn.",
+	"tux-nojs": "Dës Säit brauch JavaScript."
 }

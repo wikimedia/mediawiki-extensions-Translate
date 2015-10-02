@@ -386,5 +386,6 @@
 	"translate-search-more-groups-info": "עוד {{PLURAL:$1|קבוצה אחת|$1 קבוצות}}",
 	"translate-ulsdep-title": "שגיאת הגדרות",
 	"translate-ulsdep-body": "ההרחבה Translate משתמשת ב[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector הרחבה Universal Language Selector].",
-	"tux-session-expired": "אינך נמצא בחשבון עוד. נא להיכנס בלשונית אחרת. לחלופין, יש להעתיק תרגומים שלא נשמרו, להיכנס, לחזור לדף הזה, ולהזין שוב את התרגומים שלך."
+	"tux-session-expired": "אינך נמצא בחשבון עוד. נא להיכנס בלשונית אחרת. לחלופין, יש להעתיק תרגומים שלא נשמרו, להיכנס, לחזור לדף הזה, ולהזין שוב את התרגומים שלך.",
+	"tux-nojs": "הדף הזה דורש שימוש ב־JavaScript."
 }

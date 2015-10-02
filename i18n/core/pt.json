@@ -284,10 +284,7 @@
 	"action-translate-sandboxaction": "executar ações permitidas para utilizadores da área de testes",
 	"translate-workflow-state-": "(indefinido)",
 	"translate-workflowstatus": "Estado: $1",
-	"translate-workflow-set-do": "Ativar",
 	"translate-workflow-set-doing": "A ativar...",
-	"translate-workflow-set-done": "Terminado!",
-	"translate-workflow-set-error-alreadyset": "O estado solicitado é idêntico ao estado atual.",
 	"translate-workflow-autocreated-summary": "Criação automática de página para o estado \"$1\" do fluxo de trabalho",
 	"translate-stats-workflow": "Estado",
 	"translate-workflowgroup-label": "Estados do fluxo de trabalho",
@@ -296,10 +293,6 @@
 	"translate-dynagroup-recent-desc": "Este grupo de mensagens mostra todas as traduções recentes para esta língua.\nÉ útil sobretudo para as tarefas de revisão.",
 	"translate-dynagroup-additions-label": "Adições recentes",
 	"translate-dynagroup-additions-desc": "Este grupo de mensagens mostra as mensagens novas e modificadas.",
-	"translate-dynagroup-by": "Tradução feita por {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "Tradução feita por {{GENDER:$1|$1}} ($2)",
-	"translate-dynagroup-last": "Última modificação feita por {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Última modificação feita por {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Ajuda",
 	"translate-msggroupselector-projects": "Grupo de mensagens",
 	"translate-msggroupselector-search-placeholder": "Pesquisar grupos",
@@ -391,5 +384,6 @@
 	"translate-search-more-groups-info": "mais $1 {{PLURAL:$1|grupo|grupos}}",
 	"translate-ulsdep-title": "Erro de configuração",
 	"translate-ulsdep-body": "A tradução da extensão depende da [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector extensão Seletor Universal de Idiomas].",
-	"tux-session-expired": "Não está mais autenticado. Por favor, inicie a sessão num outro separador. Em alternativa, faça uma cópia das traduções que não foram gravadas, inicie sessão e regresse a esta página para inserir as suas traduções novamente."
+	"tux-session-expired": "Não está mais autenticado. Por favor, inicie a sessão num outro separador. Em alternativa, faça uma cópia das traduções que não foram gravadas, inicie sessão e regresse a esta página para inserir as suas traduções novamente.",
+	"tux-nojs": "Esta página requer JavaScript."
 }
