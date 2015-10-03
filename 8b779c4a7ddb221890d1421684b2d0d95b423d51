@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ecb373e_9bb3c095",
+        "filename": "Gruntfile.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-10-03T14:45:57Z",
+      "side": 1,
+      "message": "Dosent seem banana is running like this\n\nPlease do something like\n\ni18n/api/\n\nand so on with the rest of files like\n\ni18n/core/\n\nand so on.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
