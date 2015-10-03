@@ -3,7 +3,7 @@
  * Contains a class for querying external translation service.
  *
  * @file
- * @author Niklas Laxström
+ * @author Niklas Laxström, Ulrich Strauss
  * @license GPL-2.0+
  */
 
@@ -27,46 +27,83 @@ class MicrosoftWebService extends TranslationWebService {
 		return isset( $map[$code] ) ? $map[$code] : $code;
 	}
 
-	protected function doPairs() {
-		if ( !isset( $this->config['key'] ) ) {
-			throw new TranslationWebServiceException( 'API key is not set' );
-		}
+	protected function getMSTokens($clientID, $clientSecret)
+	{
 
-		$options = array();
-		$options['method'] = 'GET';
-		$options['timeout'] = $this->config['timeout'];
+		$authUrl = "https://datamarket.accesscontrol.windows.net/v2/OAuth2-13/";
 
 		$params = array(
-			'appId' => $this->config['key'],
+			'grant_type' => "client_credentials",
+			'scope' => "http://api.microsofttranslator.com",
+			'client_id' => $clientID,
+			'client_secret' => $clientSecret
 		);
 
-		$url = 'http://api.microsofttranslator.com/V2/Http.svc/GetLanguagesForTranslate?';
-		$url .= wfArrayToCgi( $params );
+		$params = wfArrayToCgi($params);
 
-		$req = MWHttpRequest::factory( $url, $options );
-		wfProfileIn( 'TranslateWebServiceRequest-' . $this->service . '-pairs' );
+		$options['method']   = 'POST';
+		$options['timeout']  = $this->config['timeout'];
+		$options['postData'] = $params;
+		
+		$req = MWHttpRequest::factory($authUrl, $options);
+
 		$status = $req->execute();
-		wfProfileOut( 'TranslateWebServiceRequest-' . $this->service . '-pairs' );
-
-		if ( !$status->isOK() ) {
+		if (!$status->isOK()) {
 			$error = $req->getContent();
 			// Most likely a timeout or other general error
-			$exception = 'Http request failed:' . serialize( $error ) . serialize( $status );
-			throw new TranslationWebServiceException( $exception );
+			throw new TranslationWebServiceException('Http::get failed: ' . $authUrl . serialize($error) . serialize($status));
 		}
+		$ret = $req->getContent();
 
-		$xml = simplexml_load_string( $req->getContent() );
+		$objResponse = json_decode($ret);
+		if ($objResponse->error) {
+			throw new TranslationWebServiceException($objResponse->error_description);
+		}
+		return $objResponse->access_token;
+		
+	}
+
+	protected function doPairs() {
+		if ( !isset($this->config['clientId']) || !isset($this->config['clientSecret'])) {
+			throw new TranslationWebServiceException('clientId or clientSecret is not set');
+		}
+		
+
+		$clientID = $this->config['clientId'];
+		$clientSecret = $this->config['clientSecret'];
+
+		$accessToken = $this->getMSTokens($clientID, $clientSecret); // get access token from service
+
+		$options = array();
+		$options['method']  = 'GET';
+		$options['timeout'] = $this->config['timeout'];
+
+		$url = 'http://api.microsofttranslator.com/V2/Http.svc/GetLanguagesForTranslate?';
+
+		$req = MWHttpRequest::factory($url, $options);
+
+		$req->setHeader("Authorization", "Bearer " . $accessToken);
+
+		wfProfileIn('TranslateWebServiceRequest-' . $this->service . '-pairs');
+		$status = $req->execute();
+		wfProfileOut('TranslateWebServiceRequest-' . $this->service . '-pairs');
+
+		if (!$status->isOK()) {
+			$error = $req->getContent();
+			// Most likely a timeout or other general error
+			throw new TranslationWebServiceException('Http::get failed:' . serialize($error) . serialize($status));
+		}
+		$xml = simplexml_load_string($req->getContent());
 
 		$languages = array();
-		foreach ( $xml->string as $language ) {
-			$languages[] = strval( $language );
+		foreach ($xml->string as $language) {
+			$languages[] = strval($language);
 		}
 
-		// Let's make a cartesian product, assuming we can translate from any
-		// language to any language
+		// Let's make a cartesian product, assuming we can translate from any language to any language
 		$pairs = array();
-		foreach ( $languages as $from ) {
-			foreach ( $languages as $to ) {
+		foreach ($languages as $from) {
+			foreach ($languages as $to) {
 				$pairs[$from][$to] = true;
 			}
 		}
@@ -75,24 +112,27 @@ class MicrosoftWebService extends TranslationWebService {
 	}
 
 	protected function getQuery( $text, $from, $to ) {
-		if ( !isset( $this->config['key'] ) ) {
-			throw new TranslationWebServiceException( 'API key is not set' );
+		if ( !isset($this->config['clientId']) || !isset($this->config['clientSecret'])) {
+			throw new TranslationWebServiceException('clientId or clientSecret is not set');
 		}
 
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
 
+		$accessToken = $this->getMSTokens($this->config['clientId'], $this->config['clientSecret']); // get access token from service
+
 		$params = array(
 			'text' => $text,
 			'from' => $from,
 			'to' => $to,
-			'appId' => $this->config['key'],
 		);
+		$headers = array(
+				'Authorization' => 'Bearer '.$accessToken,
+			);
 
-		$url = 'http://api.microsofttranslator.com/V2/Http.svc/Translate?';
 		return TranslationQuery::factory( $this->config['url'] )
 			->timeout( $this->config['timeout'] )
-			->queryParamaters( $params );
+			->queryParamaters( $params )->queryHeaders($headers);
 	}
 
 	protected function parseResponse( TranslationQueryResponse $reply ) {
@@ -100,6 +140,7 @@ class MicrosoftWebService extends TranslationWebService {
 
 		$text = preg_replace( '~<string.*>(.*)</string>~', '\\1', $body );
 		$text = Sanitizer::decodeCharReferences( $text );
+		$text = str_replace('! N!', '!N!', $text); // Cleanup MS specific newline
 		$text = $this->unwrapUntranslatable( $text );
 
 		return $text;

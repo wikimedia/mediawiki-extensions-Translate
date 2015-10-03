@@ -72,6 +72,7 @@ class QueryAggregator {
 				'method' => $q->getMethod(),
 				'query' => $q->getQueryParameters(),
 				'body' => $q->getBody(),
+				'headers' => $q->getHeaders(),
 			);
 		};
 

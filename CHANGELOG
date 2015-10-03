@@ -3,6 +3,10 @@ release announcements or the git log.
  https://www.mediawiki.org/wiki/MediaWiki_Language_Extension_Bundle
 
 == Change log ==
+* 2015-10-03
+- Updated Microsoft Translationservice to new accesstoken method (Fixes #T46679)
+  new configuration parameters 'clienId' and 'clientSecret' are needed
+- Added support for headers to TranslationQuery and QueryAggregator
 * 2012-11-11
 - Dynamic message groups are now shown in list=messagecollection WebAPI.
 * 2012-11-10
