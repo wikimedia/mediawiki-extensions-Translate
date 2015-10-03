@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"AlefZet"
+			"AlefZet",
+			"Arystanbek"
 		]
 	},
 	"translate": "Аудару",
@@ -18,7 +19,7 @@
 	"translate-magic-cm-to-be": "Болуға тиісті",
 	"translate-magic-cm-current": "Ағымдағы",
 	"translate-magic-cm-original": "Түпнұсқасы",
-	"translate-magic-cm-save": "Сақта!",
+	"translate-magic-cm-save": "Сақтау",
 	"translate-magic-cm-updatedusing": "[[Special:AdvancedTranslate|{{int:Translate-magic-pagename}}]] дегенді қолданып сақталған",
 	"translate-magic-cm-savefailed": "Сақтау сәтсіз болды",
 	"translate-magic-special": "Арнайы бет бүркемелері",
