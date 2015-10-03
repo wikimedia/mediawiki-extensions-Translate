@@ -16,6 +16,24 @@
       "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_3ba2cc3b",
+        "filename": "Gruntfile.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-10-03T14:48:09Z",
+      "side": 1,
+      "message": "Maybe it isent checking this since jscs still has some problems and banana checker is run after that sorry ignore my comments above.",
+      "parentUuid": "2ecb373e_9bb3c095",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
