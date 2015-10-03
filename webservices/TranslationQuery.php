@@ -18,6 +18,7 @@ class TranslationQuery {
 	protected $method = 'GET';
 	protected $params = array();
 	protected $body;
+	protected $headers = array();
 
 	// URL is mandatory, so using it here
 	public static function factory( $url ) {
@@ -40,6 +41,11 @@ class TranslationQuery {
 
 	public function queryParamaters( array $params ) {
 		$this->params = $params;
+		return $this;
+	}
+
+	public function queryHeaders( array $headers ) {
+		$this->headers = $headers;
 		return $this;
 	}
 
@@ -66,5 +72,9 @@ class TranslationQuery {
 
 	public function getBody() {
 		return $this->body;
+	}
+
+	public function getHeaders() {
+		return $this->headers;
 	}
 }
