@@ -4,6 +4,7 @@
  *
  * @file
  * @author Niklas Laxström
+ * @author Ulrich Strauss
  * @license GPL-2.0+
  */
 
@@ -27,32 +28,71 @@ class MicrosoftWebService extends TranslationWebService {
 		return isset( $map[$code] ) ? $map[$code] : $code;
 	}
 
-	protected function doPairs() {
-		if ( !isset( $this->config['key'] ) ) {
-			throw new TranslationWebServiceException( 'API key is not set' );
-		}
-
-		$options = array();
-		$options['method'] = 'GET';
-		$options['timeout'] = $this->config['timeout'];
+	protected function getMSTokens( $clientID, $clientSecret ) {
+		$authUrl = "https://datamarket.accesscontrol.windows.net/v2/OAuth2-13/";
 
 		$params = array(
-			'appId' => $this->config['key'],
+			'grant_type' => "client_credentials",
+			'scope' => "http://api.microsofttranslator.com",
+			'client_id' => $clientID,
+			'client_secret' => $clientSecret
 		);
 
-		$url = 'http://api.microsofttranslator.com/V2/Http.svc/GetLanguagesForTranslate?';
-		$url .= wfArrayToCgi( $params );
+		$params = wfArrayToCgi( $params );
 
-		$req = MWHttpRequest::factory( $url, $options );
+		$options['method']   = 'POST';
+		$options['timeout']  = $this->config['timeout'];
+		$options['postData'] = $params;
+
+		$req = MWHttpRequest::factory( $authUrl, $options );
+
 		$status = $req->execute();
 
 		if ( !$status->isOK() ) {
 			$error = $req->getContent();
 			// Most likely a timeout or other general error
-			$exception = 'Http request failed:' . serialize( $error ) . serialize( $status );
-			throw new TranslationWebServiceException( $exception );
+			throw new TranslationWebServiceException(
+				'Http::get failed: ' . $authUrl . serialize( $error ) . serialize( $status )
+			);
+		}
+		$ret = $req->getContent();
+
+		$response = json_decode( $ret, true );
+		if ( isset( $response['error'] ) ) {
+			throw new TranslationWebServiceException( $response['error_description'] );
 		}
 
+		return $response['access_token'];
+	}
+
+	protected function doPairs() {
+		if ( !isset( $this->config['clientId'] ) || !isset( $this->config['clientSecret'] ) ) {
+			throw new TranslationWebServiceException( 'clientId or clientSecret is not set' );
+		}
+
+		$clientID = $this->config['clientId'];
+		$clientSecret = $this->config['clientSecret'];
+
+		// get access token from service
+		$accessToken = $this->getMSTokens( $clientID, $clientSecret );
+
+		$options = array();
+		$options['method']  = 'GET';
+		$options['timeout'] = $this->config['timeout'];
+
+		$url = 'http://api.microsofttranslator.com/V2/Http.svc/GetLanguagesForTranslate?';
+
+		$req = MWHttpRequest::factory( $url, $options );
+		$req->setHeader( 'Authorization', "Bearer $accessToken" );
+
+		$status = $req->execute();
+		if ( !$status->isOK() ) {
+			$error = $req->getContent();
+			// Most likely a timeout or other general error
+			throw new TranslationWebServiceException(
+				'Http::get failed:' . serialize( $error ) . serialize( $status )
+			);
+		}
 		$xml = simplexml_load_string( $req->getContent() );
 
 		$languages = array();
@@ -60,8 +100,7 @@ class MicrosoftWebService extends TranslationWebService {
 			$languages[] = (string)$language;
 		}
 
-		// Let's make a cartesian product, assuming we can translate from any
-		// language to any language
+		// Let's make a cartesian product, assuming we can translate from any language to any language
 		$pairs = array();
 		foreach ( $languages as $from ) {
 			foreach ( $languages as $to ) {
@@ -73,32 +112,56 @@ class MicrosoftWebService extends TranslationWebService {
 	}
 
 	protected function getQuery( $text, $from, $to ) {
-		if ( !isset( $this->config['key'] ) ) {
-			throw new TranslationWebServiceException( 'API key is not set' );
+		if ( !isset( $this->config['clientId'] ) || !isset( $this->config['clientSecret'] ) ) {
+			throw new TranslationWebServiceException(
+				'clientId or clientSecret is not set'
+			);
 		}
 
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
 
+		// get access token from service
+		$accessToken = $this->getMSTokens(
+			$this->config['clientId'],
+			$this->config['clientSecret']
+		);
+
 		$params = array(
 			'text' => $text,
 			'from' => $from,
 			'to' => $to,
-			'appId' => $this->config['key'],
+		);
+		$headers = array(
+			'Authorization' => 'Bearer ' . $accessToken,
 		);
 
 		return TranslationQuery::factory( $this->config['url'] )
 			->timeout( $this->config['timeout'] )
-			->queryParamaters( $params );
+			->queryParamaters( $params )
+			->queryHeaders( $headers );
 	}
 
 	protected function parseResponse( TranslationQueryResponse $reply ) {
 		$body = $reply->getBody();
 
-		$text = preg_replace( '~<string.*>(.*)</string>~', '\\1', $body );
+		$text = preg_replace( '~<string.*>(.*)</string>~s', '\\1', $body );
 		$text = Sanitizer::decodeCharReferences( $text );
 		$text = $this->unwrapUntranslatable( $text );
 
 		return $text;
+	}
+
+	/// Override from parent
+	protected function wrapUntranslatable( $text ) {
+		$pattern = '~%[^% ]+%|\$\d|{VAR:[^}]+}|{?{(PLURAL|GRAMMAR|GENDER):[^|]+\||%(\d\$)?[sd]~';
+		$wrap = '<span translate="no">\0</span>';
+		return preg_replace( $pattern, $wrap, $text );
+	}
+
+	/// Override from parent
+	protected function unwrapUntranslatable( $text ) {
+		$pattern = '~<span translate="no">(.*?)</span>~';
+		return preg_replace( $pattern, '\1', $text );
 	}
 }
