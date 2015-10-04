@@ -285,10 +285,7 @@
 	"action-translate-sandboxaction": "handelingen uit te voeren die zijn toegestaan voor zandbakgebruikers",
 	"translate-workflow-state-": "(niet ingesteld)",
 	"translate-workflowstatus": "Status: $1",
-	"translate-workflow-set-do": "Instellen",
 	"translate-workflow-set-doing": "Bezig met instellen...",
-	"translate-workflow-set-done": "Ingesteld",
-	"translate-workflow-set-error-alreadyset": "De opgegeven status is identiek aan de huidige status.",
 	"translate-workflow-autocreated-summary": "Pagina voor workflowstatus $1 is automatisch aangemaakt",
 	"translate-stats-workflow": "Status",
 	"translate-workflowgroup-label": "Workflowstatussen",
@@ -297,10 +294,6 @@
 	"translate-dynagroup-recent-desc": "Deze berichtengroep geeft alle recente wijzigingen weer in deze taal.\nDit is vooral nuttig voor de controletaken.",
 	"translate-dynagroup-additions-label": "Recente toevoegingen",
 	"translate-dynagroup-additions-desc": "In deze berichtengroep worden nieuwe en gewijzigde berichten weergegeven.",
-	"translate-dynagroup-by": "Vertaling gemaakt door {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "Vertaling gemaakt door {{GENDER:$1|$1}} ($2)",
-	"translate-dynagroup-last": "Laatste wijziging door {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Laatste wijziging door {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Hulp",
 	"translate-msggroupselector-projects": "Berichtengroep",
 	"translate-msggroupselector-search-placeholder": "Groepen zoeken",
@@ -391,5 +384,6 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% vertaald, $2% gecontroleerd, $3% verouderd",
 	"translate-search-more-groups-info": "nog $1 groep{{PLURAL:$1||en}}",
 	"translate-ulsdep-title": "Fout in de instellingen",
-	"translate-ulsdep-body": "De uitbreiding Translate is afhankelijk van de [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector uitbreiding Universal Language Selector]."
+	"translate-ulsdep-body": "De uitbreiding Translate is afhankelijk van de [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector uitbreiding Universal Language Selector].",
+	"tux-nojs": "Deze pagina vereist JavaScript."
 }
