@@ -51,9 +51,9 @@ abstract class ComplexMessages {
 		return wfMessage( 'translate-magic-' . $this->id )->text();
 	}
 
-	#
-	# Data retrieval
-	#
+	/*
+	 * Data retrieval
+	 */
 	protected $init = false;
 
 	public function getGroups() {
@@ -250,13 +250,13 @@ abstract class ComplexMessages {
 		return $data;
 	}
 
-	#
-	# /Data retrieval
-	#
+	/*
+	 * /Data retrieval
+	 */
 
-	#
-	# Output
-	#
+	/*
+	 * Output
+	 */
 	public function header( $title ) {
 		$colspan = array( 'colspan' => 3 );
 		$header = Xml::element( 'th', $colspan, $this->getTitle() . ' - ' . $title );
@@ -365,13 +365,13 @@ abstract class ComplexMessages {
 		) );
 	}
 
-	#
-	# /Output
-	#
+	/*
+	 * /Output
+	 */
 
-	#
-	# Save to database
-	#
+	/*
+	 * Save to database
+	 */
 
 	function getKeyForSave() {
 		return $this->databaseMsg . '/' . $this->language;
@@ -436,13 +436,13 @@ abstract class ComplexMessages {
 		$this->init = false;
 	}
 
-	#
-	# !Save to database
-	#
+	/*
+	 * !Save to database
+	 */
 
-	#
-	# Export
-	#
+	/*
+	 * Export
+	 */
 	public function validate( &$errors = array(), $filter = false ) {
 		$used = array();
 		foreach ( array_keys( $this->data ) as $group ) {
@@ -587,9 +587,9 @@ abstract class ComplexMessages {
 		return "'$data'";
 	}
 
-	#
-	# /Export
-	#
+	/*
+	 * /Export
+	 */
 	public function highlight( $key, $values ) {
 		return $values;
 	}

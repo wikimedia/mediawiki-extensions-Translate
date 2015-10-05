@@ -23,7 +23,7 @@
 		},
 		{
 			"name": "Siebrand Mazeland",
-			"email": "s.mazeland@xs4all.nl",
+			"email": "siebrand@kitano.nl",
 			"role": "Developer"
 		}
 	],
@@ -36,7 +36,11 @@
 	"require": {
 		"php": ">=5.3.0",
 		"composer/installers": ">=1.0.1",
-		"mediawiki/universal-language-selector": "*"
+		"mediawiki/universal-language-selector": "dev-master"
+	},
+	"require-dev": {
+		"jakub-onderka/php-parallel-lint": "0.9",
+		"mediawiki/mediawiki-codesniffer": "0.4.0"
 	},
 	"suggest": {
 		"mediawiki/babel": "Users can easily indicate their language proficiency on their user page",
@@ -44,5 +48,11 @@
 		"mustangostang/spyc": "More recent version of the bundled spyc library",
 		"romaricdrigon/metayaml": "If you want to validate message group configurations",
 		"ruflin/elastica": "Support for translation memory and search in ElasticSearch"
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude vendor",
+			"phpcs -p -s"
+		]
 	}
 }
