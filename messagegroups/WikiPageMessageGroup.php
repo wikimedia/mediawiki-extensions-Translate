@@ -13,9 +13,15 @@
  * @ingroup PageTranslation MessageGroup
  */
 class WikiPageMessageGroup extends WikiMessageGroup {
-	/// @var string|Title
+	/**
+	 * @var Title|string
+	 */
 	protected $title;
 
+	/**
+	 * @param string $id
+	 * @param Title|string $source
+	 */
 	public function __construct( $id, $source ) {
 		$this->id = $id;
 		$this->title = $source;
