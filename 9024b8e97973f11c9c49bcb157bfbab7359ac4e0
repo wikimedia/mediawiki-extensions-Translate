@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ecb373e_9ef8897b",
+        "filename": "CHANGELOG",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T06:54:37Z",
+      "side": 1,
+      "message": "Like Reedy said, this file is for posterity. Release notes these days are done in https://www.mediawiki.org/wiki/MLEB releases.",
+      "revId": "9024b8e97973f11c9c49bcb157bfbab7359ac4e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_befd456b",
+        "filename": "webservices/MicrosoftWebService.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T06:54:37Z",
+      "side": 1,
+      "message": "Add separate @author line",
+      "revId": "9024b8e97973f11c9c49bcb157bfbab7359ac4e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_5ef6a18d",
+        "filename": "webservices/MicrosoftWebService.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T06:54:37Z",
+      "side": 1,
+      "message": "Aside from indentation, please also follow the other coding conventions used in this file and also explained at https://www.mediawiki.org/wiki/Manual:Coding_conventions",
+      "revId": "9024b8e97973f11c9c49bcb157bfbab7359ac4e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_7ef35d9b",
+        "filename": "webservices/MicrosoftWebService.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T06:54:37Z",
+      "side": 1,
+      "message": "Can you device something that works nicer by re-implementing wrapUntranslatable and unwrapUntranslatable from parent class?",
+      "revId": "9024b8e97973f11c9c49bcb157bfbab7359ac4e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
