@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ecb373e_21505a60",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T10:05:33Z",
+      "side": 1,
+      "message": "Why not add to type hint simultaneously?",
+      "revId": "9ff6c95dea940cb1aeac32376bfd9e8a72e1e58f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_414d66c6",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T10:05:33Z",
+      "side": 1,
+      "message": "I don\u0027t like /** comments inside functions. Is there no other way to stop the different IDEs complaining about this?",
+      "revId": "9ff6c95dea940cb1aeac32376bfd9e8a72e1e58f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_01f2fe6a",
+        "filename": "utils/MessageGroupStatesUpdaterJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T10:05:33Z",
+      "side": 1,
+      "message": "You missed string.",
+      "revId": "9ff6c95dea940cb1aeac32376bfd9e8a72e1e58f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_6100a239",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T10:05:33Z",
+      "side": 1,
+      "message": "Why not remove the \"\u003d null\"; instead?",
+      "revId": "9ff6c95dea940cb1aeac32376bfd9e8a72e1e58f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_41f32669",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T10:05:33Z",
+      "side": 1,
+      "message": "Same.",
+      "revId": "9ff6c95dea940cb1aeac32376bfd9e8a72e1e58f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_e1933202",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T10:05:33Z",
+      "side": 1,
+      "message": "Can also return nulls.",
+      "revId": "9ff6c95dea940cb1aeac32376bfd9e8a72e1e58f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_c19e360a",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T10:05:33Z",
+      "side": 1,
+      "message": "Can also return nulls",
+      "revId": "9ff6c95dea940cb1aeac32376bfd9e8a72e1e58f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_a199aa23",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T10:05:33Z",
+      "side": 1,
+      "message": "Why not add MessageGroup to type hint as well?",
+      "revId": "9ff6c95dea940cb1aeac32376bfd9e8a72e1e58f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_8184aeb5",
+        "filename": "utils/MessageHandle.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T10:05:33Z",
+      "side": 1,
+      "message": "Why not remove \u003d null instead?",
+      "revId": "9ff6c95dea940cb1aeac32376bfd9e8a72e1e58f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
