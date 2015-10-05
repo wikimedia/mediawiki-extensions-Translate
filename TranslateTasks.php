@@ -14,7 +14,9 @@
  * messages of given message group in given language.
  */
 abstract class TranslateTask {
-	/// @var string Task identifier.
+	/**
+	 * @var string Task identifier.
+	 */
 	protected $id = '__BUG__';
 
 	// We need $id here because staticness prevents subclass overriding.

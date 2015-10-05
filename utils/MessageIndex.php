@@ -17,11 +17,13 @@
  * to message groups.
  */
 abstract class MessageIndex {
-	/// @var MessageIndex
+	/**
+	 * @var self
+	 */
 	protected static $instance;
 
 	/**
-	 * @return MessageIndex
+	 * @return self
 	 */
 	public static function singleton() {
 		if ( self::$instance === null ) {
@@ -38,7 +40,7 @@ abstract class MessageIndex {
 	 * Override the global instance, for testing.
 	 * @since 2015.04
 	 */
-	public static function setInstance( MessageIndex $instance ) {
+	public static function setInstance( self $instance ) {
 		self::$instance = $instance;
 	}
 
@@ -271,7 +273,9 @@ abstract class MessageIndex {
  * which provides random access - this backend doesn't support that.
  */
 class SerializedMessageIndex extends MessageIndex {
-	/// @var array
+	/**
+	 * @var array|null
+	 */
 	protected $index;
 
 	protected $filename = 'translate_messageindex.ser';
@@ -315,7 +319,9 @@ class FileCachedMessageIndex extends SerializedMessageIndex {
  * @since 2012-04-12
  */
 class DatabaseMessageIndex extends MessageIndex {
-	/// @var array
+	/**
+	 * @var array|null
+	 */
 	protected $index;
 
 	/** @return array */
@@ -382,7 +388,9 @@ class CachedMessageIndex extends MessageIndex {
 	protected $key = 'translate-messageindex';
 	protected $cache;
 
-	/// @var array
+	/**
+	 * @var array|null
+	 */
 	protected $index;
 
 	protected function __construct( array $params ) {
@@ -428,13 +436,19 @@ class CachedMessageIndex extends MessageIndex {
  * @since 2012-04-10
  */
 class CDBMessageIndex extends MessageIndex {
-	/// @var array
+	/**
+	 * @var array|null
+	 */
 	protected $index;
 
-	/// @var CdbReader
+	/**
+	 * @var CdbReader|null
+	 */
 	protected $reader;
 
-	/// @var string
+	/**
+	 * @var string
+	 */
 	protected $filename = 'translate_messageindex.cdb';
 
 	/** @return array */
@@ -518,7 +532,9 @@ class CDBMessageIndex extends MessageIndex {
  * @since 2015.04
  */
 class HashMessageIndex extends MessageIndex {
-	/// @var array
+	/**
+	 * @var array
+	 */
 	protected $index = array();
 
 	/** @return array */
@@ -526,6 +542,11 @@ class HashMessageIndex extends MessageIndex {
 		return $this->index;
 	}
 
+	/**
+	 * @param string $key
+	 *
+	 * @return mixed
+	 */
 	protected function get( $key ) {
 		if ( isset( $this->index[$key] ) ) {
 			return $this->index[$key];

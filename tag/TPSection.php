@@ -14,15 +14,29 @@
  * @ingroup PageTranslation
  */
 class TPSection {
-	/// @var string Section name
+	/**
+	 * @var string Section name
+	 */
 	public $id;
-	/// @var string New name of the section, that will be saved to database.
+
+	/**
+	 * @var string New name of the section, that will be saved to database.
+	 */
 	public $name;
-	/// @var string Section text.
+
+	/**
+	 * @var string Section text.
+	 */
 	public $text;
-	/// @var string Is this new, existing, changed or deleted section.
+
+	/**
+	 * @var string Is this new, existing, changed or deleted section.
+	 */
 	public $type;
-	/// @var string Text of previous version of this section.
+
+	/**
+	 * @var string Text of previous version of this section.
+	 */
 	public $oldText;
 
 	/**

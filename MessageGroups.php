@@ -16,14 +16,18 @@
  */
 class MessageGroups {
 	/**
-	 * @var Array Cache for message group priorities
+	 * @var string[]|null Cache for message group priorities
 	 */
 	protected static $prioritycache = null;
 
-	/// @var array
+	/**
+	 * @var array|null
+	 */
 	protected $groups = null;
 
-	/// @var BagOStuff
+	/**
+	 * @var BagOStuff|null
+	 */
 	protected $cache = null;
 
 	/// Initialises the list of groups
@@ -49,6 +53,9 @@ class MessageGroups {
 		$this->postInit( $groups );
 	}
 
+	/**
+	 * @param array $groups
+	 */
 	protected function postInit( $groups ) {
 		// Expand groups to objects
 		foreach ( $groups as $id => $mixed ) {
@@ -98,7 +105,7 @@ class MessageGroups {
 	/**
 	 * Override cache, for example during tests.
 	 *
-	 * @param BagOStuff $cache
+	 * @param BagOStuff|null $cache
 	 */
 	public function setCache( BagOStuff $cache = null ) {
 		$this->cache = $cache;
