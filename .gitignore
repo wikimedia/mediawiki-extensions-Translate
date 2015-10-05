@@ -1,4 +1,7 @@
-.svn
+composer.lock
+extensions/
+node_modules/
+vendor/
 *~
 .*.swp
 *.kate-swp
@@ -9,6 +12,3 @@
 .settings
 *.bak
 tests/pagetranslation/*.fail
-composer.lock
-extensions/
-vendor/
