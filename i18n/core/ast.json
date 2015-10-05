@@ -276,10 +276,7 @@
 	"action-translate-sandboxaction": "executar aiciones de la llista blanca pa los usuarios de la zona de pruebes",
 	"translate-workflow-state-": "(desactiváu)",
 	"translate-workflowstatus": "Estáu: $1",
-	"translate-workflow-set-do": "Activar",
 	"translate-workflow-set-doing": "Activando...",
-	"translate-workflow-set-done": "¡Activáu!",
-	"translate-workflow-set-error-alreadyset": "L'estáu solicitáu ye idénticu al estáu actual.",
 	"translate-workflow-autocreated-summary": "Creación automática de la páxina pal estáu \"$1\" del fluxu de trabayu",
 	"translate-stats-workflow": "Estáu",
 	"translate-workflowgroup-label": "Estaos del fluxu de trabayu",
@@ -288,10 +285,6 @@
 	"translate-dynagroup-recent-desc": "Esti grupu de mensaxes amuesa toles traducciones más nueves nesta llingua.\nYe enforma afayadizo pa les xeres de revisión.",
 	"translate-dynagroup-additions-label": "Novedaes",
 	"translate-dynagroup-additions-desc": "Esti grupu de mensaxes amuesa los mensaxes nuevos y camudaos.",
-	"translate-dynagroup-by": "Traducción fecha por {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "Traducción fecha por {{GENDER:$1|$1}} ($2)",
-	"translate-dynagroup-last": "Caberu cambiu fechu por {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Caberu cambiu fechu por {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Ayuda",
 	"translate-msggroupselector-projects": "Grupu de mensaxes",
 	"translate-msggroupselector-search-placeholder": "Guetar nos grupos",
@@ -383,5 +376,6 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grupu|grupos}} más",
 	"translate-ulsdep-title": "Error de configuración",
 	"translate-ulsdep-body": "La estensión Translate depende de la [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector estensión Universal Language Selector].",
-	"tux-session-expired": "La sesión zarróse yá. Anicia sesión n'una llingüeta aparte. Alternativamente, copia les traducciones ensin guardar, anicia sesión, vuelvi a esta páxina y escribi les traducciones otra vuelta."
+	"tux-session-expired": "La sesión zarróse yá. Anicia sesión n'una llingüeta aparte. Alternativamente, copia les traducciones ensin guardar, anicia sesión, vuelvi a esta páxina y escribi les traducciones otra vuelta.",
+	"tux-nojs": "Esta páxina rique JavaScript."
 }

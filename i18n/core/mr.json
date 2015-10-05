@@ -262,17 +262,12 @@
 	"log-description-translationreview": "भाषांतरे व संदेश गटातील सर्व पुनरावलोककांच्या नोंदी.",
 	"group-translate-sandboxed": "अन-अनुमोदित भाषांतरकार",
 	"group-translate-sandboxed-member": "{{GENDER:$1|अन-अनुमोदित भाषांतरकार}}",
-	"translate-workflow-set-error-alreadyset": "विनंती केलेली स्थिती व सध्याची स्थिती सारखीच आहे.",
 	"translate-stats-workflow": "स्थिति",
 	"translate-workflowgroup-label": "कार्यओघ स्थिती",
 	"translate-dynagroup-recent-label": "अलीकडील भाषांतरे",
 	"translate-dynagroup-recent-desc": "हा संदेशगट या भाषेतील सर्व अलिकडील भाषांतरे दाखवितो.\n\nपुनर्विलोकन कार्यासाठी अधिक उपयोगी.",
 	"translate-dynagroup-additions-label": "अलीकडेच जोडलेले",
 	"translate-dynagroup-additions-desc": "या संदेशगटात नविन व बदललेले संदेश आहेत.",
-	"translate-dynagroup-by": "{{GENDER:$1|$1}} ने केलेली भाषांतरे",
-	"translate-dynagroup-byc": "{{GENDER:$1|$1}} ($2)ने केलेली भाषांतरे",
-	"translate-dynagroup-last": "{{GENDER:$1|$1}} ने केलेले शेवटचे बदल",
-	"translate-dynagroup-lastc": "{{GENDER:$1|$1}} ($2)ने केलेले शेवटचे बदल",
 	"translate-gethelp": "साहाय्य",
 	"translate-msggroupselector-projects": "संदेश गट",
 	"translate-msggroupselector-search-placeholder": "गट शोधा",
@@ -360,5 +355,6 @@
 	"translate-search-more-languages-info": "$1 अधिक{{PLURAL:$1|भाषा}}",
 	"translate-statsbar-tooltip": "$1% भाषांतरीत, $2% पुनर्विलोकित",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% भाषांतरीत, $2% पुनर्विलोकित, $3% कालबाह्य",
-	"translate-search-more-groups-info": "$1 अधिक{{PLURAL:$1|गट}}"
+	"translate-search-more-groups-info": "$1 अधिक{{PLURAL:$1|गट}}",
+	"tux-nojs": "यापानासाठी जावास्क्रिप्ट हवी."
 }
