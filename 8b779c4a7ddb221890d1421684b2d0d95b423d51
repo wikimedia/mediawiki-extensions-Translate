@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "2ecb373e_deba916c",
+        "filename": ".jshintrc",
+        "patchSetId": 20
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Isn\u0027t strict deprecated anyway? I have seen Krinkle replacing it with other stuff.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_7e84bdb4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "You might want to disambiguate this to mean coding convention tests rather than unit/system tests.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ecb373e_9bb3c095",
         "filename": "Gruntfile.js",
         "patchSetId": 20
@@ -31,6 +65,533 @@
       "side": 1,
       "message": "Maybe it isent checking this since jscs still has some problems and banana checker is run after that sorry ignore my comments above.",
       "parentUuid": "2ecb373e_9bb3c095",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_de6931f7",
+        "filename": "resources/js/ext.translate.base.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Meh",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_beb5457a",
+        "filename": "resources/js/ext.translate.editor.helpers.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "While technically correct, indenting by two tabs instead of one sounds excessive.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_5eaea12c",
+        "filename": "resources/js/ext.translate.editor.helpers.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "And at least it should also deindent by two tabs to match.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_7eab5d1a",
+        "filename": "resources/js/ext.translate.editor.helpers.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "This was correct, now incorrect.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_1ea49946",
+        "filename": "resources/js/ext.translate.editor.helpers.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_fe6e6dfd",
+        "filename": "resources/js/ext.translate.editor.helpers.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_9e6f29f9",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_be7465cd",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_fe550d27",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Borderline but I preferred original. Should be rewritten to simplify, at some point.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_be4b0587",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_5e646111",
+        "filename": "resources/js/ext.translate.hooks.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Which check complaints about this? Why?",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_7e611dff",
+        "filename": "resources/js/ext.translate.navitoggle.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "In addition to the earlier comment, you used License there.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_1e5a5953",
+        "filename": "resources/js/ext.translate.pagemode.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_3e57152b",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_be422561",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "1. I see it used below, what do you mean?",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_9e3de9dc",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_fe3c2de1",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_7e283d95",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "3. Perhaps the checker complains about this? The block could be moved here so it\u0027s all together.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_5e2b0193",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "2. Here.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_3e2e35a1",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "IE8 users will love you.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_fe23cdb2",
+        "filename": "resources/js/ext.translate.quickedit.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Uuuuuuuuuuuuugly. Feel free to remove this line. I am satisfied with git history.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_be19c58a",
+        "filename": "resources/js/ext.translate.quickedit.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Usually unset variable names go first. Some prefer to use the same order they are used in, though.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_5e122165",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be in the var as well?",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_1e08192f",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Extra () seems unnecessary here anyway..",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_c108762d",
+        "filename": "resources/js/ext.translate.special.pagepreparation.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Btw, the linter does not seem to catch Integer vs. integer.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_61118256",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Ugh, should probably be rewritten. Multi-line things on var statement is not good.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_2117fa4b",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Make it $input.prop( { for consistency?",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_41148644",
+        "filename": "resources/js/ext.translate.special.searchtranslations.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "This closes the append on line 266, not the one one line 264.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_a11a0a6d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "See my earlier comment on similar case.",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_c11f165d",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Ditto",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_212e1a8a",
+        "filename": "resources/js/ext.translate.special.translationstash.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:19:39Z",
+      "side": 1,
+      "message": "Ditto",
       "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
