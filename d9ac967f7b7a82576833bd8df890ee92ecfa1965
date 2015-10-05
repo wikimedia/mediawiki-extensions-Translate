@@ -16,6 +16,24 @@
       "revId": "d9ac967f7b7a82576833bd8df890ee92ecfa1965",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_8a98437c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-10-05T15:41:14Z",
+      "side": 1,
+      "message": "Hi well currently it is using the version from 2015.08 which includes the autoload code and is causing the problem.\n\nThis fixes it by using allways on master.",
+      "parentUuid": "2ecb373e_21bb7a24",
+      "revId": "d9ac967f7b7a82576833bd8df890ee92ecfa1965",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
