@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ecb373e_21bb7a24",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-05T08:27:37Z",
+      "side": 1,
+      "message": "It is not composer which is causing the issue.",
+      "revId": "d9ac967f7b7a82576833bd8df890ee92ecfa1965",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
