@@ -25,11 +25,19 @@ class MessageGroupStats {
 	const FUZZY = 2; ///< Array index
 	const PROOFREAD = 3; ///< Array index
 
-	/// @var float
+	/**
+	 * @var float|null
+	 */
 	protected static $timeStart = null;
-	/// @var float
+
+	/**
+	 * @var float|null
+	 */
 	protected static $limit = null;
-	/// @var array
+
+	/**
+	 * @var array[]
+	 */
 	protected static $updates = array();
 
 	/**
@@ -46,7 +54,7 @@ class MessageGroupStats {
 	/**
 	 * Returns empty stats array. Useful because the number of elements
 	 * may change.
-	 * @return array
+	 * @return int[]
 	 * @since 2012-09-21
 	 */
 	public static function getEmptyStats() {
@@ -56,7 +64,7 @@ class MessageGroupStats {
 	/**
 	 * Returns empty stats array that indicates stats are incomplete or
 	 * unknown.
-	 * @return array
+	 * @return null[]
 	 * @since 2013-01-02
 	 */
 	protected static function getUnknownStats() {
@@ -67,7 +75,7 @@ class MessageGroupStats {
 	 * Returns stats for given group in given language.
 	 * @param $id string Group id
 	 * @param $code string Language code
-	 * @return Array
+	 * @return int[]
 	 */
 	public static function forItem( $id, $code ) {
 		$res = self::selectRowsIdLang( $id, $code );
@@ -227,9 +235,9 @@ class MessageGroupStats {
 	}
 
 	/**
-	 * @param $code
-	 * @param array $stats
-	 * @return array
+	 * @param string $code Language code
+	 * @param array[] $stats
+	 * @return array[]
 	 */
 	protected static function forLanguageInternal( $code, $stats = array() ) {
 		$res = self::selectRowsIdLang( null, $code );
@@ -267,8 +275,8 @@ class MessageGroupStats {
 
 	/**
 	 * @param MessageGroup $group
-	 * @param array $stats
-	 * @return array
+	 * @param array[] $stats
+	 * @return array[]
 	 */
 	protected static function forGroupInternal( $group, $stats = array() ) {
 		$id = $group->getId();
@@ -310,6 +318,13 @@ class MessageGroupStats {
 		return $res;
 	}
 
+	/**
+	 * @param array[] $stats
+	 * @param MessageGroup $group
+	 * @param string $code Language code
+	 *
+	 * @return int[]
+	 */
 	protected static function forItemInternal( &$stats, $group, $code ) {
 		$id = $group->getId();
 
@@ -379,7 +394,7 @@ class MessageGroupStats {
 	/**
 	 * @param MessageGroup $group
 	 * @param string $code Language code
-	 * @return array ( total, translated, fuzzy, proofread )
+	 * @return int[] ( total, translated, fuzzy, proofread )
 	 */
 	protected static function calculateGroup( $group, $code ) {
 		global $wgTranslateDocumentationLanguageCode;

@@ -15,16 +15,27 @@
 class StatsBar {
 	/**
 	 * @see MessageGroupStats
-	 * @var array
+	 * @var int[]
 	 */
 	protected $stats;
 
-	/// @var string Message group id
+	/**
+	 * @var string Message group id
+	 */
 	protected $group;
 
-	/// @var string Language
+	/**
+	 * @var string Language
+	 */
 	protected $language;
 
+	/**
+	 * @param string $group
+	 * @param string $language
+	 * @param array[]|null $stats
+	 *
+	 * @return self
+	 */
 	public static function getNew( $group, $language, array $stats = null ) {
 		$self = new self();
 		$self->group = $group;
@@ -39,6 +50,11 @@ class StatsBar {
 		return $self;
 	}
 
+	/**
+	 * @param IContextSource $context
+	 *
+	 * @return string HTML
+	 */
 	public function getHtml( IContextSource $context ) {
 		$context->getOutput()->addModules( 'ext.translate.statsbar' );
 

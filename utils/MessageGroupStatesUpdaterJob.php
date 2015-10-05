@@ -114,6 +114,12 @@ class MessageGroupStatesUpdaterJob extends Job {
 		}
 	}
 
+	/**
+	 * @param int[] $stats
+	 * @param array[] $transitions
+	 *
+	 * @return bool
+	 */
 	public static function getNewState( $stats, $transitions ) {
 		foreach ( $transitions as $transition ) {
 			list( $newState, $conds ) = $transition;

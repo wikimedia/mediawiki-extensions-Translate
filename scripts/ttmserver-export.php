@@ -21,9 +21,9 @@ require_once "$IP/maintenance/Maintenance.php";
  * @since 2012-01-26
  */
 class TTMServerBootstrap extends Maintenance {
-	/// @var Array Configuration of requested TTMServer
-	protected $config;
-	// Option for reindexing
+	/**
+	 * @var bool Option for reindexing
+	 */
 	protected $reindex;
 
 	public function __construct() {

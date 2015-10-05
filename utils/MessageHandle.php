@@ -12,16 +12,25 @@
  * @since 2011-03-13
  */
 class MessageHandle {
-	/// @var Title
+	/**
+	 * @var Title|null
+	 */
 	protected $title = null;
-	/// @var String
+
+	/**
+	 * @var string|null
+	 */
 	protected $key = null;
-	/// @var String
+
+	/**
+	 * @var string|null Language code
+	 */
 	protected $code = null;
-	/// @var String
+
+	/**
+	 * @var string[]|null
+	 */
 	protected $groupIds = null;
-	/// @var MessageGroup
-	protected $group = false;
 
 	public function __construct( Title $title ) {
 		$this->title = $title;
@@ -40,7 +49,7 @@ class MessageHandle {
 
 	/**
 	 * Recommended to use getCode and getKey instead.
-	 * @return Array of the message key and the language code
+	 * @return string[] Array of the message key and the language code
 	 */
 	public function figureMessage() {
 		if ( $this->key === null ) {
@@ -123,7 +132,7 @@ class MessageHandle {
 	 * The primary message group id is always the first one.
 	 * If the handle does not correspond to any message, the returned array
 	 * is empty.
-	 * @return array
+	 * @return string[]
 	 */
 	public function getGroupIds() {
 		if ( $this->groupIds === null ) {
