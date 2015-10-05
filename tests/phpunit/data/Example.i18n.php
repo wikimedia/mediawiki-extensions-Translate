@@ -4,7 +4,8 @@
  *
  * @file
  * @ingroup Extensions
-*/
+ */
+// @codingStandardsIgnoreFile
 
 $messages = array();
 
