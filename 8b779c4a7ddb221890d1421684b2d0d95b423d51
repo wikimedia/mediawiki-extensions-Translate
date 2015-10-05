@@ -105,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "2ecb373e_646670ec",
+        "filename": "resources/js/ext.translate.editor.helpers.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2015-10-05T10:24:04Z",
+      "side": 1,
+      "message": "IntelliJ does not have a setting to fix this as far as I can tell. It will (and already does) require a lot of manual work to correct this. Ill just abandon this patch set. I put in too much time with not clear enough boundaries. I dont want to keep trying to improve consistency at little gain.",
+      "parentUuid": "2ecb373e_beb5457a",
+      "revId": "8b779c4a7ddb221890d1421684b2d0d95b423d51",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ecb373e_5eaea12c",
         "filename": "resources/js/ext.translate.editor.helpers.js",
         "patchSetId": 20
