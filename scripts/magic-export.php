@@ -11,10 +11,9 @@
 
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
-        $IP = getenv( 'MW_INSTALL_PATH' );
+	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
-        $dir = __DIR__;
-        $IP = "$dir/../../..";
+	$IP = dirname( __DIR__, 3 );
 }
 require_once "$IP/maintenance/Maintenance.php";
 
