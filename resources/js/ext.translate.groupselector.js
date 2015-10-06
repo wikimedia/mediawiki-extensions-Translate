@@ -24,6 +24,7 @@
 		this.customOptions = options;
 		this.flatGroupList = null;
 		this.groups = groups;
+		this.firstShow = true;
 
 		this.init();
 	}
@@ -127,15 +128,21 @@
 			this.$search.focus();
 			// Start loading the groups, but assess the situation again after
 			// they are loaded, in case user has made further interactions.
-			this.loadGroups().done( $.proxy( this.showList, this ) );
-			// Hide the selector panel when clicking outside of it
-			$( 'html' ).one( 'click', $.proxy( this.hide, this ) );
+			if ( this.firstShow ) {
+				this.loadGroups().done( $.proxy( this.showList, this ) );
+				this.firstShow = false;
+			}
 		},
 
 		/**
 		 * Hide the selector
 		 */
-		hide: function () {
+		hide: function ( e ) {
+			// Do not hide if the trigger is clicked
+			if ( e && this.$trigger.is( e.target ) ) {
+				return;
+			}
+
 			this.$menu.hide().removeClass( 'open' );
 		},
 
@@ -157,11 +164,11 @@
 			var $tabs,
 				groupSelector = this;
 
+			// Hide the selector panel when clicking outside of it
+			$( 'html' ).on( 'click', $.proxy( this.hide, this ) );
+
 			groupSelector.$trigger.on( 'click', function ( e ) {
 				groupSelector.toggle();
-
-				e.preventDefault();
-				e.stopPropagation();
 			} );
 
 			groupSelector.$menu.on( 'click', function ( e ) {
