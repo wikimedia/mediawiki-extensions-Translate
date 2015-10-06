@@ -52,6 +52,24 @@
       "revId": "08cf619c85fa48e389abffc5310bb865f77a44e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_139487ea",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-06T08:39:28Z",
+      "side": 1,
+      "message": "https://www.mediawiki.org/wiki/Gerrit/Commit_message_guidelines\n\n\"It describes the change briefly and helps reviewers to see at a glance what the commit is about.\"\n\nThe current wording does not describe the change (or any change, actually). It states a justification \"is the default\" which should go into the body.\n\nSomething like \"ApiTranslationStash: Remove ApiBase::PARAM_DFTL \u003d\u003e null\n\nIt\u0027s the default\"",
+      "parentUuid": "2ecb373e_d3e11fcc",
+      "revId": "08cf619c85fa48e389abffc5310bb865f77a44e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
