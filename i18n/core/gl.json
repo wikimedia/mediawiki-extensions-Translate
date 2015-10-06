@@ -280,10 +280,7 @@
 	"action-translate-sandboxaction": "executar accións da lista branca para os usuarios da zona de probas",
 	"translate-workflow-state-": "(desactivado)",
 	"translate-workflowstatus": "Estado: $1",
-	"translate-workflow-set-do": "Activar",
 	"translate-workflow-set-doing": "Activando...",
-	"translate-workflow-set-done": "Activado!",
-	"translate-workflow-set-error-alreadyset": "O estado solicitado é idéntico ao estado actual.",
 	"translate-workflow-autocreated-summary": "Creación automática da páxina para o estado \"$1\" do fluxo de traballo",
 	"translate-stats-workflow": "Estado",
 	"translate-workflowgroup-label": "Estados do fluxo de traballo",
@@ -292,10 +289,6 @@
 	"translate-dynagroup-recent-desc": "Este grupo de mensaxes mostra todas as traducións recentes feitas nesta lingua.\nÉ moi útil para as tarefas de revisión.",
 	"translate-dynagroup-additions-label": "Adicións recentes",
 	"translate-dynagroup-additions-desc": "Este grupo de mensaxes mostra as mensaxes novas e modificadas.",
-	"translate-dynagroup-by": "Tradución feita por {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "Tradución feita por {{GENDER:$1|$1}} ($2)",
-	"translate-dynagroup-last": "Última modificación feita por {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Última modificación feita por {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Axuda",
 	"translate-msggroupselector-projects": "Grupo de mensaxes",
 	"translate-msggroupselector-search-placeholder": "Procurar nos grupos",
@@ -387,5 +380,6 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grupo|grupos}} máis",
 	"translate-ulsdep-title": "Erro de configuración",
 	"translate-ulsdep-body": "A extensión de tradución depende da [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector extensión do selector universal de linguas].",
-	"tux-session-expired": "Pechouse a súa sesión. Por favor, acceda ao sistema noutra lapela. Como alternativa, copie as traducións non gardadas, acceda ao sistema, regrese a esta páxina e insira as súas traducións de novo."
+	"tux-session-expired": "Pechouse a súa sesión. Por favor, acceda ao sistema noutra lapela. Como alternativa, copie as traducións non gardadas, acceda ao sistema, regrese a esta páxina e insira as súas traducións de novo.",
+	"tux-nojs": "Esta páxina require JavaScript."
 }

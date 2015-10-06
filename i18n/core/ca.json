@@ -14,7 +14,8 @@
 			"Vriullop",
 			"XVEC",
 			"පසිඳු කාවින්ද",
-			"Jmarchn"
+			"Jmarchn",
+			"Macofe"
 		]
 	},
 	"translate": "Tradueix",
@@ -283,10 +284,7 @@
 	"action-translate-sandboxaction": "executa les accions específiques per els usuaris amb mode sandbox.",
 	"translate-workflow-state-": "(no especificat)",
 	"translate-workflowstatus": "Estat: $1",
-	"translate-workflow-set-do": "Especificar",
 	"translate-workflow-set-doing": "Especificant...",
-	"translate-workflow-set-done": "Especificat!",
-	"translate-workflow-set-error-alreadyset": "L'estat que demaneu és idèntic al estat actual.",
 	"translate-workflow-autocreated-summary": "Creació automàtica d'una pàgina per l'estat del flux de treball $1",
 	"translate-stats-workflow": "Estat",
 	"translate-workflowgroup-label": "Estats dels fluxs de treball",
@@ -294,10 +292,6 @@
 	"translate-dynagroup-recent-desc": "Aquest grup de missatges mostra totes les traduccions recents a aquest idioma.\nEl més útil per a les tasques de revisió.",
 	"translate-dynagroup-additions-label": "Adicions recents",
 	"translate-dynagroup-additions-desc": "Aquest grup de missatges mostra els missatges nous i els que han estat canviats",
-	"translate-dynagroup-by": "Traduït per {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "Traducció feta per {{GENDER:$1|$1}} ($2)",
-	"translate-dynagroup-last": "Últim canvi fet per {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Últim canvi per {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Ajuda",
 	"translate-msggroupselector-projects": "Grup de missatges",
 	"translate-msggroupselector-search-placeholder": "Cerca als grups",
@@ -387,5 +381,6 @@
 	"translate-statsbar-tooltip": "$1% traduït,  $2% revisat",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduït,  $2 % revisat,  $3% desfasat",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grup|grups}} més",
-	"translate-ulsdep-title": "Error de configuració"
+	"translate-ulsdep-title": "Error de configuració",
+	"tux-nojs": "Aquesta pàgina requereix JavaScript."
 }
