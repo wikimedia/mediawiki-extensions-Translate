@@ -25,6 +25,7 @@
 		this.group = options.group;
 		this.language = options.language;
 		this.$statsBar = null;
+		this.elements = null;
 		this.init();
 	};
 
@@ -77,9 +78,9 @@
 			} );
 
 			statsbar.$container.hover( function () {
-				statsbar.$statsBar.find( '.tux-statsbar-info' ).removeClass( 'hide' );
+				statsbar.elements.$info.removeClass( 'hide' );
 			}, function () {
-				statsbar.$statsBar.find( '.tux-statsbar-info' ).addClass( 'hide' );
+				statsbar.elements.$info.addClass( 'hide' );
 			} );
 		},
 
@@ -88,16 +89,17 @@
 				.addClass( 'tux-statsbar' )
 				.data( 'group', this.group );
 
-			this.$statsBar.append(
-				$( '<span>' ).addClass( 'tux-proofread' ),
-				$( '<span>' ).addClass( 'tux-translated' ),
-				$( '<span>' ).addClass( 'tux-fuzzy' ),
-				$( '<span>' ).addClass( 'tux-untranslated' ),
-				$( '<div>' ).addClass( 'tux-statsbar-info hide' )
-			);
+			this.elements = {
+				$proofread: $( '<span>' ).addClass( 'tux-proofread' ),
+				$translated: $( '<span>' ).addClass( 'tux-translated' ),
+				$fuzzy: $( '<span>' ).addClass( 'tux-fuzzy' ),
+				$untranslated: $( '<span>' ).addClass( 'tux-untranslated' ),
+				$info: $( '<div>' ).addClass( 'tux-statsbar-info hide' )
+			};
 
-			this.$container.append( this.$statsBar );
 			this.update();
+			this.$statsBar.append( this.elements );
+			this.$container.append( this.$statsBar );
 
 			this.listen();
 		},
@@ -118,16 +120,16 @@
 			// Again, proofread counts are subset of translated counts
 			untranslatedCount = stats.total - stats.translated - stats.fuzzy;
 
-			this.$statsBar.find( '.tux-proofread' )
+			this.elements.$proofread
 				.data( 'proofread', stats.proofread )
 				.css( 'width', proofread + '%' );
-			this.$statsBar.find( '.tux-translated' )
+			this.elements.$translated
 				.data( 'translated', stats.translated )
 				.css( 'width', translated + '%' );
-			this.$statsBar.find( '.tux-fuzzy' )
+			this.elements.$fuzzy
 				.data( 'fuzzy', stats.fuzzy )
 				.css( 'width', fuzzy + '%' );
-			this.$statsBar.find( '.tux-untranslated' )
+			this.elements.$untranslated
 				.data( 'untranslated', untranslatedCount )
 				.css( 'width', untranslated + '%' );
 
@@ -135,12 +137,12 @@
 			proofread = !proofread ? 0 : proofread;
 
 			if ( fuzzy ) {
-				this.$statsBar.find( '.tux-statsbar-info' )
+				this.elements.$info
 					.text( mw.msg( 'translate-statsbar-tooltip-with-fuzzy',
 						translated.toFixed(), proofread.toFixed(),
 						fuzzy.toFixed() ) );
 			} else {
-				this.$statsBar.find( '.tux-statsbar-info' )
+				this.elements.$info
 					.text( mw.msg( 'translate-statsbar-tooltip',
 						translated.toFixed(), proofread.toFixed() ) );
 			}
