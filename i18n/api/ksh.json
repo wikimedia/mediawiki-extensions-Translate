@@ -63,7 +63,7 @@
 	"apihelp-translationreview-example-1": "Lohr de Nommer 1 noh.",
 	"apihelp-translationstash-description": "Donn Övversäzonge en the stash\n<!-- \nhttps://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Apihelp-translationstash-description/en_and_MediaWiki:Apihelp-translationstash-example-2/en_and_MediaWiki:Apihelp-translationstash-example-1/en_and_MediaWiki:Apihelp-translationstash-param-username/en\n-->",
 	"apihelp-translationstash-param-subaction": "Vörjang udder Opdraacht.",
-	"apihelp-translationstash-param-title": "Övverschreff vun dä translation unit page.\n<!--\nhttps://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Apihelp-query%2Bgeosearch-example-1/ksh\n-->",
+	"apihelp-translationstash-param-title": "Övverschreff vun dä Sigg för de Övversäzongeijnheijd.",
 	"apihelp-translationstash-param-translation": "Övversäzonge vun däm Metmaacher.",
 	"apihelp-translationstash-param-metadata": "Et <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"JavaScript Object Notation\">JSON<i>-Objäk",
 	"apihelp-translationstash-param-username": "Optionally the user whose stash to get. Only privileged users can do this.\n<!-- \nhttps://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Apihelp-translationstash-description/en_and_MediaWiki:Apihelp-translationstash-example-2/en_and_MediaWiki:Apihelp-translationstash-example-1/en_and_MediaWiki:Apihelp-translationstash-param-username/en\n-->",

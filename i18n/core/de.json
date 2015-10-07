@@ -25,7 +25,7 @@
 	},
 	"translate": "Übersetzen",
 	"translate-extensionname": "Übersetzen",
-	"translate-desc": "Ergänzt eine [[Special:Translate|Spezialseite]] zum Übersetzen von MediaWiki und weiterem",
+	"translate-desc": "Erweitert das Wiki um eine [[Special:Translate|Spezialseite]] zum Übersetzen von MediaWiki und weiterem",
 	"translate-taskui-view": "Alle Nachrichten anzeigen",
 	"translate-taskui-untranslated": "Alle nicht übersetzten Nachrichten anzeigen",
 	"translate-taskui-optional": "Alle optionalen Nachrichten anzeigen",

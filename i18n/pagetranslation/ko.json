@@ -87,7 +87,7 @@
 	"tpt-aggregategroup-add-new": "새 집계 그룹 추가",
 	"tpt-aggregategroup-new-name": "이름:",
 	"tpt-aggregategroup-new-description": "설명 (선택):",
-	"tpt-aggregategroup-remove-confirm": "이 총 그룹을 삭제하겠습니까?",
+	"tpt-aggregategroup-remove-confirm": "이 집계 그룹을 정말 삭제하겠습니까?",
 	"tpt-aggregategroup-invalid-group": "그룹이 존재하지 않습니다",
 	"tpt-aggregategroup-edit-name": "이름:",
 	"tpt-aggregategroup-edit-description": "설명:",
