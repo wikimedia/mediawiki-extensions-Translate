@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_edc40197",
+        "filename": ".jshintignore",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-08T06:54:47Z",
+      "side": 1,
+      "message": "Even though it is named \"jquery\" it is a file developed by us, and should follow our coding conventions.",
+      "revId": "bc7524507d4c4bd28108f77731c7da3ee8fac908",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_8dc1c585",
+        "filename": ".jshintignore",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-08T06:54:47Z",
+      "side": 1,
+      "message": "Same for this.",
+      "revId": "bc7524507d4c4bd28108f77731c7da3ee8fac908",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
