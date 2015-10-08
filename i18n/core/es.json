@@ -103,7 +103,7 @@
 	"translate-checks-balance": "Hay algún signo de agrupación de {{PLURAL:$2|la siguiente clase|las siguientes clases}} sin emparejar:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|El siguiente enlace es problemático|Los siguientes $2 enlaces son problemáticos}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Falta el siguiente enlace|Faltan los siguientes $2 enlaces}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Por favor, sustituye {{PLURAL:$2|la siguiente etiqueta|las siguientes etiquetas}} por las correctas:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-xhtml": "Sustituye {{PLURAL:$2|la siguiente etiqueta|las siguientes etiquetas}} por las correctas:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "El mensaje original usa <nowiki>{{PLURAL:}}</nowiki> pero no así la traducción.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki>recibió {{PLURAL:$1|una forma|$1 formas}} pero únicamente {{PLURAL:$2|está soportada una forma|están soportadas $2 formas}} (excluyendo las formas 0= y 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> tiene formas duplicadas al final. <nowiki>{{PLURAL:$1|lunes|lunes}}</nowiki> debería escribirse así: <nowiki>{{PLURAL:$1|lunes}}</nowiki>.",
