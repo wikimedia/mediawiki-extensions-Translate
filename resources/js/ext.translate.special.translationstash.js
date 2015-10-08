@@ -42,10 +42,10 @@
 			statusClass = 'tux-status-' + status,
 			statusMsg;
 
-			if ( status === 'translated' ) {
-				// tux-status-translated
-				statusMsg = 'tux-status-' + status;
-			}
+		if ( status === 'translated' ) {
+			// tux-status-translated
+			statusMsg = 'tux-status-' + status;
+		}
 
 		$messageWrapper = $( '<div>' )
 			.addClass( 'row tux-message' );
@@ -236,7 +236,7 @@
 		// Get the user translations if any(possibly from an early attempt)
 		// and new messages to try.
 		translationStashStorage.getUserTranslations()
-			.done( function( translations ) {
+			.done( function ( translations ) {
 				if ( translations.translationstash.translations ) {
 					$.each( translations.translationstash.translations,
 						function ( index, translation ) {
