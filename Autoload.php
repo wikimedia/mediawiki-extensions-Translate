@@ -4,12 +4,11 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2014, Niklas Laxström
  * @license GPL-2.0+
  */
 
 /** @cond file_level_code */
-$dir = dirname( __FILE__ );
+$dir = __DIR__;
 /** @endcond */
 
 /**
