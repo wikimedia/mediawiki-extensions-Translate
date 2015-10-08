@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_6d38119c",
+        "filename": ".jshintignore",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-08T07:00:12Z",
+      "side": 1,
+      "message": "As I said in another patch, ajaxdispatcher and textchange are not upstream libs.",
+      "revId": "d93956704b199c24f28bc701aebe2c7bc83ec239",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_0d3dd58a",
+        "filename": "scripts/plural-comparison.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-08T07:00:12Z",
+      "side": 1,
+      "message": "Why is this changed? Given it is not changed in other similar files, it seems not needed.\n\nIf needed, those can all be changed to use dirname( __DIR__, 3 ).",
+      "revId": "d93956704b199c24f28bc701aebe2c7bc83ec239",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
