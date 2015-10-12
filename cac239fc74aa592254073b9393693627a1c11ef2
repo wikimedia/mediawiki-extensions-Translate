@@ -33,6 +33,24 @@
       "revId": "cac239fc74aa592254073b9393693627a1c11ef2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_9a96b94e",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-12T11:34:33Z",
+      "side": 1,
+      "message": "That is not the issue. Calling the slow showList unnecessarily causes an issue.\n\ngroupsLoader is global, but this needs to run per instance.",
+      "parentUuid": "0ebaf39b_9a19d929",
+      "revId": "cac239fc74aa592254073b9393693627a1c11ef2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
