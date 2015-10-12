@@ -20,5 +20,14 @@
 	"tux-sst-solr-offline-title": "অনুসন্ধান সক্রিয় নেই",
 	"tux-sst-solr-offline-body": "অনুসন্ধান পরিষেবাটি সাময়িকভাবে অনুপলব্ধ।",
 	"tux-sst-next": "পরবর্তী ›",
-	"tux-sst-prev": "‹ পূর্ববর্তী"
+	"tux-sst-prev": "‹ পূর্ববর্তী",
+	"tux-sst-default": "অনুবাদসমূহ",
+	"tux-sst-translated": "$1 থেকে অনুবাদ",
+	"tux-sst-untranslated": "$1 থেকে কোন অনুবাদ নেই",
+	"tux-sst-outdated": "$1 থেকে পুরাতন অনুবাদ",
+	"tux-sst-ellipsis-untranslated": "কোন অনুবাদ নেই",
+	"tux-sst-ellipsis-outdated": "পুরাতন অনুবাদ",
+	"tux-sst-link-all-match": "সমস্ত অনুসন্ধানের শব্দ দরকার।",
+	"tux-sst-match-message": "অনুবাদ দেখানো হচ্ছে যা যে কোন একটি অনুসন্ধানের শব্দের সাথে মিলেছে। $1",
+	"tux-sst-case-sensitive": "কেস সংবেদনশীল"
 }

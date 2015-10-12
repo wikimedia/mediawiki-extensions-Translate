@@ -79,6 +79,8 @@
 	"tpt-aggregategroup-new-description": "Kirjeldus (valikuline):",
 	"tpt-aggregategroup-remove-confirm": "Kas oled kindel, et soovid selle ühendrühma kustutada?",
 	"tpt-aggregategroup-invalid-group": "Rühma pole",
+	"tpt-aggregategroup-edit-name": "Nimi:",
+	"tpt-aggregategroup-edit-description": "Kirjeldus:",
 	"pt-parse-open": "Puudub sildile &lt;translate> vastav lõpusilt.\nTõlkemall: <pre>$1</pre>",
 	"pt-parse-close": "Puudub sildile &lt;/translate> vastav algussilt.\nTõlkemall: <pre>$1</pre>",
 	"pt-parse-nested": "Pesastatud &lt;translate>-tõlkeüksused pole lubatud.\nSildi tekst: <pre>$1</pre>",
