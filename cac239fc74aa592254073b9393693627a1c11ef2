@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_3a16adf7",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2015-10-12T11:03:22Z",
+      "side": 1,
+      "message": "The above code is now redundant, right?\n\nMoreover it is an antipattern to do something to other instances of group selector from one instance. They should not harm each other :)",
+      "revId": "cac239fc74aa592254073b9393693627a1c11ef2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_9a19d929",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2015-10-12T11:03:22Z",
+      "side": 1,
+      "message": "Please check the usage of groupsLoader variable. It make sure the api is called only once. The non-null value of that will have the promise. \n\nDid you observe the loadgroups api call really executed by checking at the network monitor of dev tools?",
+      "revId": "cac239fc74aa592254073b9393693627a1c11ef2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
