@@ -26,5 +26,9 @@
 	"tux-sst-prev": "‹ Risultati precedenti",
 	"tux-sst-default": "Traduzioni",
 	"tux-sst-translated": "Traduzioni da $1",
-	"tux-sst-ellipsis-untranslated": "Nessuna traduzione"
+	"tux-sst-untranslated": "Nessuna traduzione da $1",
+	"tux-sst-outdated": "Traduzioni non aggiornate da $1",
+	"tux-sst-ellipsis-untranslated": "Nessuna traduzione",
+	"tux-sst-ellipsis-outdated": "Traduzioni non aggiornate",
+	"tux-sst-case-sensitive": "Distingui maiuscole e minuscole"
 }

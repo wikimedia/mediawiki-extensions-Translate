@@ -3,7 +3,8 @@
 		"authors": [
 			"Bishnu Saikia",
 			"Chaipau",
-			"Gitartha.bordoloi"
+			"Gitartha.bordoloi",
+			"Dibya Dutta"
 		]
 	},
 	"pagetranslation": "পৃষ্ঠা ভাঙনি",
@@ -18,9 +19,11 @@
 	"tpt-rev-discourage": "নিৰুত্সাহ",
 	"tpt-rev-encourage": "পুনঃসংস্থাপন কৰক",
 	"translate-tag-translate-link-desc": "এই পৃষ্ঠা ভাঙনি কৰক",
+	"tpt-translation-intro": "এই পৃষ্ঠাখন [[$2]] পৃষ্ঠাখনৰ এক <span class=\"plainlinks\">[$1 অনুবাদিত সংস্কৰণ]</span> আৰু $3% অনুবাদ সম্পন্ন হৈছে।",
 	"tpt-languages-legend": "অন্য ভাষা:",
 	"tpt-languages-zero": "এই ভাষাৰ অনুবাদ আৰম্ভ কৰক",
 	"tpt-languages-nonzero": "$1 ($2% অনূদিত)",
+	"tpt-target-page": "এই পৃষ্ঠাখন সাধাৰণভাৱে নবীকৰণ কৰিব নোৱাৰি।\nএই পৃষ্ঠাখন [[$1]] পৃষ্ঠাৰ অনুবাদ আৰু [$2 অনুবাদ সজুলি] ব্যৱহাৰ কৰি এই অনুবাদ নবীকৰণ কৰিব পৰা যায়।",
 	"tpt-discouraged-language-reason": "কাৰণ: $1",
 	"tpt-aggregategroup-add": "যোগ কৰক",
 	"tpt-aggregategroup-save": "সাঁচি থওক",
