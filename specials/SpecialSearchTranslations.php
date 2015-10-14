@@ -90,15 +90,15 @@ class SpecialSearchTranslations extends SpecialPage {
 			return;
 		}
 
-		$params = $opts->getAllValues();
+		$options = $params = $opts->getAllValues();
 		$filter = $opts->getValue( 'filter' );
 		try {
-			$translationSearch = new CrossLanguageTranslationSearchQuery( $params, $server );
+			if ( $opts->getValue( 'language' ) === '' ) {
+				$options['language'] = $this->getLanguage()->getCode();
+			}
+			$translationSearch = new CrossLanguageTranslationSearchQuery( $options, $server );
 			if ( in_array( $filter, $translationSearch->getAvailableFilters() ) ) {
-				if ( $opts->getValue( 'language' ) === '' ) {
-					$params['language'] = $this->getLanguage()->getCode();
-					$opts->setValue( 'language', $params['language'] );
-				}
+				$opts->setValue( 'language', $options['language'] );
 				$documents = $translationSearch->getDocuments();
 				$total = $translationSearch->getTotalHits();
 				$resultset = $translationSearch->getResultSet();
