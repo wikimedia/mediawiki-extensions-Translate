@@ -278,10 +278,7 @@
 	"group-translate-sandboxed-member": "{{GENDER:$1|neschválený překladatel|neschválená překladatelka}}",
 	"translate-workflow-state-": "(nenastaven)",
 	"translate-workflowstatus": "Stav: $1",
-	"translate-workflow-set-do": "Nastavit",
 	"translate-workflow-set-doing": "Nastavuje se…",
-	"translate-workflow-set-done": "Nastaveno!",
-	"translate-workflow-set-error-alreadyset": "Požadovaný stav je roven aktuálnímu.",
 	"translate-stats-workflow": "Stav",
 	"translate-workflowgroup-label": "Stavy zpracování",
 	"translate-workflowgroup-desc": "Tato skupina zpráv obsahuje stavy zpracování překladů.\nStavy jsou definovány v konfigurační proměnné $wgTranslateWorkflowStates.",
@@ -289,10 +286,6 @@
 	"translate-dynagroup-recent-desc": "Tato skupina zpráv zobrazuje všechny nedávné překlady do tohoto jazyka.\nUžitečné hlavně pro korektury.",
 	"translate-dynagroup-additions-label": "Nedávné přírůstky",
 	"translate-dynagroup-additions-desc": "Tato skupina zpráv zobrazuje nové a změněné zprávy.",
-	"translate-dynagroup-by": "Překlad od {{GENDER:$1|uživatele|uživatelky|}} $1",
-	"translate-dynagroup-byc": "Překlad od {{GENDER:$1|uživatele|uživatelky|}} $1 ($2)",
-	"translate-dynagroup-last": "Poslední změna od {{GENDER:$1|uživatele|uživatelky|}} $1",
-	"translate-dynagroup-lastc": "Poslední změna od {{GENDER:$1|uživatele|uživatelky|}} $1 ($2)",
 	"translate-gethelp": "Nápověda",
 	"translate-msggroupselector-projects": "Skupina zpráv",
 	"translate-msggroupselector-search-placeholder": "Hledání skupiny",
@@ -384,5 +377,6 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|další skupina|další skupiny|dalších skupin}}",
 	"translate-ulsdep-title": "Chyba konfigurace",
 	"translate-ulsdep-body": "Rozšíření Translate závisí na [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector rozšíření Universal Language Selector].",
-	"tux-session-expired": "Již nejste přihlášen(a). Přihlaste se prosím v jiné záložce. Anebo si okopírujte neuložené překlady, přihlaste se, vraťte se na tuto stránku a zadejte je znovu."
+	"tux-session-expired": "Již nejste přihlášen(a). Přihlaste se prosím v jiné záložce. Anebo si okopírujte neuložené překlady, přihlaste se, vraťte se na tuto stránku a zadejte je znovu.",
+	"tux-nojs": "Tato stránka vyžaduje JavaScript."
 }

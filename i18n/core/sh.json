@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kolega2357"
+			"Kolega2357",
+			"OC Ripper"
 		]
 	},
-	"right-translate-manage": "Upravljanje grupama poruka"
+	"right-translate-manage": "Upravljanje grupama poruka",
+	"translate-documentation-language": "Dokumentacija poruke"
 }
