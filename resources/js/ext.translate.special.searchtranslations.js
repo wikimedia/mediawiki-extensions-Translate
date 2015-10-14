@@ -99,7 +99,7 @@
 
 		if ( currentLanguage !== '' ) {
 			uri = new mw.Uri( location.href );
-			uri.extend( { language: '' } );
+			uri.extend( { language: '', filter: '' } );
 			addToSelectedBox( getLanguageLabel( currentLanguage ), uri.toString() );
 		}
 
