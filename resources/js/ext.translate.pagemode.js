@@ -65,7 +65,7 @@
 
 			this.$message.append(
 				$( '<div>' )
-					.addClass( 'row tux-message-item-compact message' )
+					.addClass( 'row tux-message-item-compact message ' + this.message.properties.status )
 					.append(
 						$( '<div>' )
 							.addClass( 'one column tux-pagemode-status ' + this.message.properties.status ),
