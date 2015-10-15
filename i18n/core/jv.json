@@ -256,16 +256,9 @@
 	"logentry-translationreview-message": "$1 {{GENDER:$2|nampa}} terjemahan $3",
 	"translate-workflow-state-": "(durung disetel)",
 	"translate-workflowstatus": "Status: $1",
-	"translate-workflow-set-do": "Setèl",
 	"translate-workflow-set-doing": "Nyetèl...",
-	"translate-workflow-set-done": "Kasetèl!",
-	"translate-workflow-set-error-alreadyset": "Status sing dikarepaké padha plek karo status saiki.",
 	"translate-stats-workflow": "Status",
 	"translate-dynagroup-recent-label": "Terjemahan paling anyar",
 	"translate-dynagroup-recent-desc": "Klompok layang iki nuduhaké kabèh terjemahan paling anyar saka basa iki.\nPaling migunani kanggo tugas korèksi.",
-	"translate-dynagroup-by": "Terjemahan digawé déning {{GENDER:$1|$1}}",
-	"translate-dynagroup-byc": "Terjemahan digawé déning {{GENDER:$1|$1}} ($2)",
-	"translate-dynagroup-last": "Owahan pungkasan déning {{GENDER:$1|$1}}",
-	"translate-dynagroup-lastc": "Owahan pungkasan déning {{GENDER:$1|$1}} ($2)",
 	"translate-gethelp": "Pitulung"
 }

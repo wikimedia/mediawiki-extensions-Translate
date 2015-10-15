@@ -211,13 +211,7 @@
 	"translate-messagereview-doit": "He lehlin hi a dikah pawm rawh.",
 	"log-name-translationreview": "Lehlin ennawn chhinchhiahna",
 	"translate-workflowstatus": "Dinhmun: $1",
-	"translate-workflow-set-do": "Nung",
 	"translate-workflow-set-doing": "Tinung mék...",
-	"translate-workflow-set-done": "Nung ta!",
 	"translate-dynagroup-recent-label": "Lehlin tharte",
-	"translate-dynagroup-by": "{{GENDER:$1|$1}} lehlin",
-	"translate-dynagroup-byc": "{{GENDER:$1|$1}} lehlin ($2)",
-	"translate-dynagroup-last": "{{GENDER:$1|$1}} lehlin hnuhnùn ber",
-	"translate-dynagroup-lastc": "{{GENDER:$1|$1}} tihdanglam thar ($2)",
 	"translate-gethelp": "Ţanpuina"
 }

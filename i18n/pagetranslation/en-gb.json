@@ -3,13 +3,14 @@
 		"authors": [
 			"Shirayuki",
 			"Thehelpfulone",
-			"Captaindogfish"
+			"Captaindogfish",
+			"Chase me ladies, I'm the Cavalry"
 		]
 	},
 	"tpt-oldrevision": "$2 is not the latest version of the page [[:$1]].\nOnly latest versions can be marked for translation.",
 	"tpt-saveok": "The page [[:$1]] has been marked up for translation with $2 {{PLURAL:$2|translation unit|translation units}}.\nThe page can now be <span class=\"plainlinks\">[$3 translated]</span>.",
 	"tpt-showpage-intro": "Below new, existing and deleted translation units are listed.\nBefore marking this version for translation, check that the changes to translation units are minimised to avoid unnecessary work for translators.",
-	"tpt-mark-nochanges": "There is no difference between this revision and the last marked revision.",
+	"tpt-mark-nochanges": "No changes to review. Marking this page for translation will not edit the page nor any existing translation unit.",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|completed}} renaming of translatable page $3 to $4",
 	"logentry-pagetranslation-deletefnok": "$1 {{GENDER:$2|failed}} to delete $3 which belongs to translatable page $4",
 	"logentry-pagetranslation-prioritylanguages": "$1 {{GENDER:$2|set}} the priority languages for translatable page $3 to $5",

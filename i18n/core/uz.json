@@ -226,16 +226,10 @@
 	"logentry-translationreview-message": "$1 $3 sahifasi tarjimasini {{GENDER:$2|tekshirib chiqdi}}",
 	"translate-workflow-state-": "(o'rnatilmagan)",
 	"translate-workflowstatus": "Holat: $1",
-	"translate-workflow-set-do": "O'rnatish",
 	"translate-workflow-set-doing": "O'rnatilmoqda...",
-	"translate-workflow-set-done": "O'rnatildi!",
 	"translate-stats-workflow": "Holat",
 	"translate-workflowgroup-label": "Jarayon holati",
 	"translate-dynagroup-recent-label": "Yaqin oradagi tarjimalar",
 	"translate-dynagroup-recent-desc": "Ushbu xabarlar guruhida mazkur tilga yaqin orada qilingan barcha tarjimalar koʻrsatilgan.\nTarjimalarni koʻzdan kechirib chiqish uchun qulay.",
-	"translate-dynagroup-by": "Tarjima {{GENDER:$1|$1}} tomonidan bajarildi",
-	"translate-dynagroup-byc": "Tarjima {{GENDER:$1|$1}} ($2) tomonidan bajarildi",
-	"translate-dynagroup-last": "Oxirgi oʻzgarish {{GENDER:$1|$1}} tomonidan kiritilgan",
-	"translate-dynagroup-lastc": "Oxirgi oʻzgarish {{GENDER:$1|$1}} ($2) tomonidan kiritilgan",
 	"translate-gethelp": "Yordam"
 }

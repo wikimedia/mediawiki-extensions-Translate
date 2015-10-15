@@ -166,8 +166,6 @@
 	"translate-messagereview-no-own": "आप अपने स्वयं के अनुवाद को पुनरीक्षित चिह्नित नहीं कर सकते।",
 	"log-name-translationreview": "अनुवाद समीक्षा लॉग",
 	"translate-workflowstatus": "स्थिति: $1",
-	"translate-workflow-set-do": "स्थापित",
-	"translate-workflow-set-done": "स्थापित!",
 	"translate-stats-workflow": "स्थिति",
 	"translate-dynagroup-recent-label": "हाल ही में हुए अनुवाद",
 	"translate-gethelp": "सहायता",
