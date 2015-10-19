@@ -93,7 +93,7 @@
 	"translate-checks-balance": "Er wordt een oneven {{PLURAL:$2|aantal haakjes|aantal haakjes}} gebruikt:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "De volgende {{PLURAL:$2|koppeling is|koppelingen zijn}} problematisch:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "De volgende {{PLURAL:$2|koppeling ontbreekt|$2 koppelingen ontbreken}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Vervang de volgende {{PLURAL:$2|tag|tags}} door de juiste:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-xhtml": "Vervang {{PLURAL:$2|het volgende label|de volgende labels}} door de juiste:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "De definitie bevat <nowiki>{{PLURAL:}}</nowiki>, maar de vertaling niet.",
 	"translate-checks-plural-forms": "Via <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|is één vorm|zijn $1 vormen}} opgegeven, maar {{PLURAL:$2|slechts één vorm wordt|$2 worden}} ondersteund (exclusief de vormen 0= en 1=).",
 	"translate-checks-plural-dupe": "Er zijn duplicaatvormen aan het einde van <nowiki>{{PLURAL:}}</nowiki> aangetroffen. <nowiki>{{PLURAL:$1|hersenen|hersenen}}</nowiki> moet genoteerd worden als <nowiki>{{PLURAL:$1|hersenen}}</nowiki>.",

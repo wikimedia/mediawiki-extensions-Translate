@@ -82,7 +82,7 @@
 	"translate-checks-parameters-unknown": "Hee {{PLURAL:$2|dä Parrammeeter|di Parrammeetere|dat Jedrißße}} kënne mer nit:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "Do {{PLURAL:$2|jëijd_en Klammer nit op odder|jonn ongerscheedlish fill Klammere op un|eß Dreß}} zoh: <strong>$1</strong>",
 	"translate-checks-links": "Hee {{PLURAL:$2|dä Lengk eß|di Lengks senn|dat Jedrißße}} problemattesch: <strong>$1</strong>",
-	"translate-checks-links-missing": "Hee {{PLURAL:$2|dä Lengk fäählt:|di $2 Lenks fäähle:|fäähle kei Lengks.}} <strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-links-missing": "Hee {{PLURAL:$2|dä Lengk fäält:|di $2 Lenks fäähle:|fäähle kei Lengks.}} <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "Donn hee {{PLURAL:$2|dat Kommando|di Kommandose|dat Jedrißße}} ußtuusche, un schriif de reschtije do för hen: <strong>$1</strong>",
 	"translate-checks-plural": "De Ojjinaal-Nohreesch bruch <code><nowiki>{{PLURAL:}}</nowiki></code>, ävver de Övversäzong deijt dat nit?",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> es med {{PLURAL:$1|eine Form|$1 Forme|keine Form}} enjesaz, ävver {{PLURAL:$2|bloß ein Form weed|bloß $2 Forme wääde|kein Form weed heh}} ongerschtöz, ävver zohsäzlesch noch 0= un 1=",
