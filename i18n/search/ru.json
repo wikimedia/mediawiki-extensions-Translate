@@ -21,5 +21,8 @@
 	"tux-sst-solr-offline-body": "Служба поиска временно недоступна.",
 	"tux-sst-next": "Далее ›",
 	"tux-sst-prev": "‹ Назад",
+	"tux-sst-default": "Переводы",
+	"tux-sst-ellipsis-untranslated": "Нет перевода",
+	"tux-sst-ellipsis-outdated": "Устаревшие переводы",
 	"tux-sst-case-sensitive": "с учётом регистра"
 }

@@ -30,5 +30,8 @@
 	"apihelp-translationstash-param-subaction": "Действие.",
 	"apihelp-translationstash-param-translation": "Перевод, сделанный участником.",
 	"apihelp-translationstash-param-metadata": "Объект JSON.",
-	"apihelp-ttmserver-param-sourcelanguage": "Код языка исходного текста."
+	"apihelp-ttmserver-param-sourcelanguage": "Код языка исходного текста.",
+	"apihelp-searchtranslations-description": "Поиск переводов.",
+	"apihelp-searchtranslations-param-query": "Строка для поиска.",
+	"apihelp-searchtranslations-param-sourcelanguage": "Код языка исходного текста."
 }
