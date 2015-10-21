@@ -18,11 +18,11 @@ class YoudaoWebService extends TranslationWebService {
 	}
 	protected function mapCode( $code ) {
 		$map = array(
-			'zh-hant' => 'zh-CHT',
-			'zh-hans' => 'zh-CHS',
-			'zh-cn' => 'zh-CHS',
-			'zh-hk' => 'zh-CHT',
-			'zh-tw' => 'zh-CHT',
+			'zh-hant' => 'zh',
+			'zh-hans' => 'zh',
+			'zh-cn' => 'zh',
+			'zh-hk' => 'zh',
+			'zh-tw' => 'zh',
 		);
 		return isset( $map[$code] ) ? $map[$code] : $code;
 	}
@@ -30,37 +30,14 @@ class YoudaoWebService extends TranslationWebService {
 		if ( !isset( $this->config['key'] ) ) {
 			throw new TranslationWebServiceException( 'API key is not set' );
 		}
-		$options = array();
-		$options['method'] = 'GET';
-		$options['timeout'] = $this->config['timeout'];
-		$params = array(
-			'appId' => $this->config['key'],
-		);
-		$url = 'http://api.microsofttranslator.com/V2/Http.svc/GetLanguagesForTranslate?';
-		$url .= wfArrayToCgi( $params );
-		$req = MWHttpRequest::factory( $url, $options );
-		wfProfileIn( 'TranslateWebServiceRequest-' . $this->service . '-pairs' );
-		$status = $req->execute();
-		wfProfileOut( 'TranslateWebServiceRequest-' . $this->service . '-pairs' );
-		if ( !$status->isOK() ) {
-			$error = $req->getContent();
-			// Most likely a timeout or other general error
-			$exception = 'Http request failed:' . serialize( $error ) . serialize( $status );
-			throw new TranslationWebServiceException( $exception );
-		}
-		$xml = simplexml_load_string( $req->getContent() );
-		$languages = array();
-		foreach ( $xml->string as $language ) {
-			$languages[] = strval( $language );
-		}
-		// Let's make a cartesian product, assuming we can translate from any
-		// language to any language
-		$pairs = array();
-		foreach ( $languages as $from ) {
-			foreach ( $languages as $to ) {
-				$pairs[$from][$to] = true;
-			}
-		}
+		$pairs = array(
+			'en' => 'zh',
+			'jp' => 'zh',
+			'fr' => 'zh',
+			'kr' => 'zh',
+			'ru' => 'zh',
+			'es' => 'zh',
+			'zh' => 'en',
 		return $pairs;
 	}
 	protected function getQuery( $text, $from, $to ) {
@@ -70,19 +47,21 @@ class YoudaoWebService extends TranslationWebService {
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
 		$params = array(
-			'text' => $text,
-			'from' => $from,
-			'to' => $to,
-			'appId' => $this->config['key'],
+			'q' => $text,
+			'key' => $this->config['key'],
+			'keyfrom' => $this->config['keyfrom'],
+			'type' => 'data',
+			'doctype' => 'xml',
+			'version' => '1.1',
 		);
-		$url = 'http://api.microsofttranslator.com/V2/Http.svc/Translate?';
+		$url = 'http://fanyi.youdao.com/openapi.do?';
 		return TranslationQuery::factory( $this->config['url'] )
 			->timeout( $this->config['timeout'] )
 			->queryParamaters( $params );
 	}
 	protected function parseResponse( TranslationQueryResponse $reply ) {
 		$body = $reply->getBody();
-		$text = preg_replace( '~<string.*>(.*)</string>~', '\\1', $body );
+		$text = preg_replace( '~<paragraph>(.*)</paragraph>~', '\\1', $body );
 		$text = Sanitizer::decodeCharReferences( $text );
 		$text = $this->unwrapUntranslatable( $text );
 		return $text;
