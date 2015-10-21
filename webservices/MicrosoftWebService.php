@@ -25,6 +25,7 @@ class MicrosoftWebService extends TranslationWebService {
 			'zh-cn' => 'zh-CHS',
 			'zh-hk' => 'zh-CHT',
 			'zh-tw' => 'zh-CHT',
+			'zh' => 'zh-CHS',
 		);
 
 		return isset( $map[$code] ) ? $map[$code] : $code;
