@@ -30,15 +30,13 @@ class YoudaoWebService extends TranslationWebService {
 		if ( !isset( $this->config['key'] ) ) {
 			throw new TranslationWebServiceException( 'API key is not set' );
 		}
-		$pairs = array(
-			'en' => 'zh',
-			'jp' => 'zh',
-			'fr' => 'zh',
-			'kr' => 'zh',
-			'ru' => 'zh',
-			'es' => 'zh',
-			'zh' => 'en',
-		);
+		$pairs['en']['zh'] = true;
+		$pairs['es']['zh'] = true;
+		$pairs['fr']['zh'] = true;
+		$pairs['kr']['zh'] = true;
+		$pairs['jp']['zh'] = true;
+		$pairs['ru']['zh'] = true;
+		$pairs['zh']['en'] = true;
 		return $pairs;
 	}
 	protected function getQuery( $text, $from, $to ) {
