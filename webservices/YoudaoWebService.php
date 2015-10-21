@@ -38,6 +38,7 @@ class YoudaoWebService extends TranslationWebService {
 			'ru' => 'zh',
 			'es' => 'zh',
 			'zh' => 'en',
+		);
 		return $pairs;
 	}
 	protected function getQuery( $text, $from, $to ) {
