@@ -310,6 +310,7 @@ $al['TranslationWebServiceException'] =
 $al['QueryAggregator'] = "$dir/webservices/QueryAggregator.php";
 $al['QueryAggregatorAware'] = "$dir/webservices/QueryAggregatorAware.php";
 $al['YandexWebService'] = "$dir/webservices/YandexWebService.php";
+$al['YoudaoWebService'] = "$dir/webservices/YoudaoWebService.php";
 /**@}*/
 
 /**
