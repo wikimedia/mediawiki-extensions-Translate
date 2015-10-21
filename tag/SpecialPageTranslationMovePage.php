@@ -69,10 +69,14 @@ class SpecialPageTranslationMovePage extends SpecialPage {
 	/**
 	 * Partially copies from SpecialMovepage.php, because it cannot be
 	 * extended in other ways.
+	 *
+	 * @param string|null $par null if subpage not provided, string otherwise
 	 */
 	public function execute( $par ) {
 		$request = $this->getRequest();
 		$user = $this->getUser();
+
+		$par = is_null( $par ) ? '' : $par; // Title::newFromText expects strings only
 
 		// Yes, the use of getVal() and getText() is wanted, see bug T22365
 		$this->oldText = $request->getVal( 'wpOldTitle', $request->getVal( 'target', $par ) );
