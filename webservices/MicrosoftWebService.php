@@ -20,12 +20,12 @@ class MicrosoftWebService extends TranslationWebService {
 
 	protected function mapCode( $code ) {
 		$map = array(
-			'zh-hant' => 'zh-CHT',
-			'zh-hans' => 'zh-CHS',
+			'zh' => 'zh-CHS',
 			'zh-cn' => 'zh-CHS',
 			'zh-hk' => 'zh-CHT',
 			'zh-tw' => 'zh-CHT',
-			'zh' => 'zh-CHS',
+			'zh-hant' => 'zh-CHT',
+                        'zh-hans' => 'zh-CHS',
 		);
 
 		return isset( $map[$code] ) ? $map[$code] : $code;
@@ -74,7 +74,49 @@ class MicrosoftWebService extends TranslationWebService {
 				$pairs[$from][$to] = true;
 			}
 		}
-
+		// add a few more hacks 
+		$pairs['en']['zh-cn'] = true;
+		$pairs['en']['zh-tw'] = true;
+		$pairs['en']['zh-hk'] = true;
+		$pairs['en']['zh-hans'] = true;
+		$pairs['en']['zh-hant'] = true;
+		$pairs['en']['zh'] = true;
+                $pairs['es']['zh-cn'] = true;
+                $pairs['es']['zh-tw'] = true;
+                $pairs['es']['zh-hk'] = true;
+                $pairs['es']['zh-hans'] = true;
+                $pairs['es']['zh-hant'] = true;
+                $pairs['es']['zh'] = true;
+                $pairs['jp']['zh-cn'] = true;
+                $pairs['jp']['zh-tw'] = true;
+                $pairs['jp']['zh-hk'] = true;
+                $pairs['jp']['zh-hans'] = true;
+                $pairs['jp']['zh-hant'] = true;
+                $pairs['jp']['zh'] = true;
+                $pairs['kr']['zh-cn'] = true;
+                $pairs['kr']['zh-tw'] = true;
+                $pairs['kr']['zh-hk'] = true;
+                $pairs['kr']['zh-hans'] = true;
+                $pairs['kr']['zh-hant'] = true;
+                $pairs['kr']['zh'] = true;
+		$pairs['fr']['zh-cn'] = true;
+                $pairs['fr']['zh-tw'] = true;
+                $pairs['fr']['zh-hk'] = true;
+                $pairs['fr']['zh-hans'] = true;
+                $pairs['fr']['zh-hant'] = true;
+                $pairs['fr']['zh'] = true;
+                $pairs['ru']['zh-cn'] = true;
+                $pairs['ru']['zh-tw'] = true;
+                $pairs['ru']['zh-hk'] = true;
+                $pairs['ru']['zh-hans'] = true;
+                $pairs['ru']['zh-hant'] = true;
+                $pairs['ru']['zh'] = true;		
+                $pairs['zh-cn']['en'] = true;
+                $pairs['zh-tw']['en'] = true;
+                $pairs['zh-hk']['en'] = true;
+                $pairs['zh-hans']['en'] = true;
+                $pairs['zh-hant']['en'] = true;
+                $pairs['zh']['en'] = true;
 		return $pairs;
 	}
 
