@@ -59,8 +59,7 @@ class YoudaoWebService extends TranslationWebService {
 			->queryParamaters( $params );
 	}
 	protected function parseResponse( TranslationQueryResponse $reply ) {
-		$body = $reply->getBody();
-		$xml = new SimpleXMLElement($body);
+		$xml = simplexml_load_string( $reply->getContent() );
 		$text = Sanitizer::decodeCharReferences( $xml->{'youdao-fanyi'}->translation->paragraph );
 		$text = $this->unwrapUntranslatable( $text );
 		return $text;
