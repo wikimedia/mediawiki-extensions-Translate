@@ -22,7 +22,7 @@ class YoudaoWebService extends TranslationWebService {
          * or translate=no.
          */
         protected function wrapUntranslatable( $text ) {
-                $text = str_replace( "\n", "?~TN?~T", $text );
+                $text = str_replace( "\n", " ΔNΔ ", $text );
                 $pattern = '~%[^% ]+%|\$\d|{VAR:[^}]+}|{?{(PLURAL|GRAMMAR|GENDER):[^|]+\||%(\d\$)?[sd]~';
                 $wrap = '<span class="notranslate" translate="no">\0</span>';
                 $text = preg_replace( $pattern, $wrap, $text );
@@ -34,7 +34,7 @@ class YoudaoWebService extends TranslationWebService {
          * Undo the hopyfully untouched mangling done by wrapUntranslatable.
          */
         protected function unwrapUntranslatable( $text ) {
-                $text = str_replace( '?~TN?~T', "\n", $text );
+                $text = str_replace( 'ΔNΔ', "\n", $text );
                 $pattern = '~<span class="notranslate" translate="no">(.*?)</span>~';
                 $text = preg_replace( $pattern, '\1', $text );
 
