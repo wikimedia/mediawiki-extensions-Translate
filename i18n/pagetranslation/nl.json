@@ -176,7 +176,7 @@
 	"pm-page-does-not-exist": "$1 bestaat niet",
 	"pm-old-translations-missing": "$1 bevat geen oude vertalingen",
 	"pm-delete-icon-hover-text": "Eenheid verwijderen",
-	"pm-pagetitle-invalid": "Vul een geldige paginatitel in",
+	"pm-pagetitle-invalid": "Geef een geldige paginanaam op.",
 	"tpt-translate-title": "Vertaling van de paginanaam toestaan",
 	"pagepreparation": "Pagina voorbereiden voor vertaling",
 	"pp-prepare-button-label": "Voorbereiden",

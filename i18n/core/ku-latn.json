@@ -3,7 +3,8 @@
 		"authors": [
 			"George Animal",
 			"Ghybu",
-			"Gomada"
+			"Gomada",
+			"Bikarhêner"
 		]
 	},
 	"translate": "Wergerîne",
@@ -28,6 +29,7 @@
 	"translate-page-description-legend": "Agahiyên di derbarê komê de",
 	"translate-page-edit": "biguherîne",
 	"translate-ext-url": "<hr />Malper: $1",
+	"translate-optional": "(girêdayî daxwazê)",
 	"translate-edit-title": "Biguherîne \"$1\"",
 	"translate-edit-definition": "Peyama orjînal",
 	"translate-edit-translation": "Werger",
@@ -85,6 +87,8 @@
 	"languagestats-recenttranslations": "wergerên dawî",
 	"translate-langstats-expand": "veke",
 	"translate-langstats-collapse": "bigre",
+	"translate-langstats-expandall": "hemûyan veke",
+	"translate-langstats-collapseall": "hemûyan bigre",
 	"translate-language-code": "Koda ziman",
 	"translate-language-code-field-name": "Koda ziman:",
 	"translate-language": "Ziman",
@@ -123,6 +127,7 @@
 	"translate-gs-code": "Kod",
 	"translate-gs-continent": "Parzemîn",
 	"translate-gs-speakers": "Axaftvan",
+	"translate-gs-count": "Hejmar",
 	"translate-gs-total": "Hemû",
 	"translate-searchprofile": "Werger",
 	"translate-messagereview-submit": "Wek nirxandî nîşan bide",

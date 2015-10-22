@@ -3,14 +3,27 @@
 		"authors": [
 			"Ricordisamoa",
 			"F. Cosoleto",
-			"Statix64"
+			"Statix64",
+			"Beta16"
 		]
 	},
+	"apihelp-aggregategroups-param-do": "Cosa fare il gruppo messaggi aggregato.",
+	"apihelp-aggregategroups-param-aggregategroup": "ID gruppo messaggi aggregato.",
+	"apihelp-aggregategroups-param-group": "ID gruppo messaggi.",
+	"apihelp-aggregategroups-param-groupname": "Nome gruppo messaggi aggregato.",
+	"apihelp-aggregategroups-param-groupdescription": "Descrizione gruppo messaggi aggregato.",
+	"apihelp-aggregategroups-example-1": "Associa un gruppo",
+	"apihelp-groupreview-param-group": "Gruppo di messaggi.",
+	"apihelp-groupreview-param-language": "Codice lingua.",
+	"apihelp-groupreview-param-state": "Il nuovo stato per il gruppo.",
 	"apihelp-query+languagestats-param-language": "Codice lingua.",
 	"apihelp-query+languagestats-example-1": "Elenco delle statistiche di completamento traduzione per il finlandese",
+	"apihelp-query+messagecollection-param-group": "Gruppo di messaggi.",
 	"apihelp-query+messagecollection-param-language": "Codice lingua.",
 	"apihelp-query+messagecollection-param-limit": "Il numero di messaggi da visualizzare (dopo applicazione del filtro).",
 	"apihelp-query+messagecollection-example-1": "Elenco delle lingue supportate",
+	"apihelp-query+messagegroups-example-1": "Mostra gruppi di messaggi",
+	"apihelp-query+messagegroupstats-param-group": "ID gruppo messaggi.",
 	"apihelp-query+messagetranslations-param-title": "Titolo completo di un messaggio conosciuto.",
 	"apihelp-translatesandbox-param-do": "Che cosa fare.",
 	"apihelp-translationaids-param-title": "Titolo completo di un messaggio conosciuto.",
