@@ -42,6 +42,7 @@ class SpecialTranslate extends SpecialPage {
 		$out = $this->getOutput();
 		$out->addModuleStyles( array(
 			'ext.translate.special.translate.styles',
+			'jquery.uls.grid', 
 		) );
 		$out->addModules( 'ext.translate.special.translate' );
 
