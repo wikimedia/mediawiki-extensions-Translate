@@ -160,7 +160,7 @@
 	"translate-sidebar-alltrans": "На других языках",
 	"translations": "Все переводы",
 	"translations-summary": "Введите имя сообщения для показа всех доступных переводов.",
-	"translate-translations-no-message": "«$1» не является сообщением, доступным для перевода",
+	"translate-translations-no-message": "«$1» не относится к сообщениям, доступным для перевода",
 	"translate-translations-none": "Нет переводов для «$1»",
 	"translate-translations-count": "{{PLURAL:$1|Найден $1 перевод|Найдено $1 перевода|Найдены $1 переводов}}.",
 	"translate-translations-fieldset-title": "Сообщение",
