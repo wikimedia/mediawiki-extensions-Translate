@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Sasan700",
-			"Умар"
+			"Умар",
+			"Исмаил Садуев"
 		]
 	},
 	"translate": "Гоч",
@@ -74,6 +75,7 @@
 	"translate-checks-parameters": "{{PLURAL:$2|1=Параметр лелош яц|Параметраш лелош яц}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|1=Евзаш йоцу параметр|Евзаш йоцу параметраш}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "Елла а, дӀакъовла а {{PLURAL:$2|къовларш}} нийса яц:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-links": "{{PLURAL:$2|1=Хьалхара хьажорго халонаш йо|Хьалхара хьажоргаш халонаш йо}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|$2 хьажоргаш яц}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Оригинал чохь лелош ю <nowiki>{{PLURAL:}}</nowiki>, кхузахь — яц.",
 	"translate-checks-plural-dupe": "МогӀан юьхьигехь <nowiki>{{PLURAL:}}</nowiki> цхьатерра шиъ дош ду, <nowiki>{{PLURAL:$1|пальто|пальто}} меттан</nowiki> <nowiki>{{PLURAL:$1|пальто}} яздича дика ду</nowiki>.",
@@ -266,7 +268,7 @@
 	"tux-message-filter-advanced-button": "Шуьйра лахар",
 	"tux-message-filter-optional-messages-label": "Кхин тӀе хаамаш",
 	"tux-proofread-translated-by-self": "Ахьа гочйина",
-	"tux-empty-list-all": "ХӀара хаамийн тоба есса ю",
+	"tux-empty-list-all": "ХӀара хаамийн тоба яьсса ю",
 	"tux-empty-list-all-guide": "Гочян харжа кхин хаамийн тоба",
 	"tux-translate-page-no-such-group": "<strong>Билгалйина тоба яц.</strong> Харжа кхин хаамийн тоба.",
 	"tux-empty-list-translated": "Гочбина хаамаш бац",
