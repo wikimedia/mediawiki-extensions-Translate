@@ -135,7 +135,7 @@
 		 */
 		hide: function ( e ) {
 			// Do not hide if the trigger is clicked
-			if ( e && this.$trigger.is( e.target ) ) {
+			if ( e && ( this.$trigger.is( e.target ) || this.$trigger.has( e.target ).length ) ) {
 				return;
 			}
 
