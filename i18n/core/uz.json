@@ -165,7 +165,7 @@
 	"translate-mgs-submit": "Statistikani koʻrsat",
 	"translate-mgs-column-language": "Til",
 	"supportedlanguages": "Mavjud tillar",
-	"supportedlanguages-summary": "Ushbu sahifada {{SITENAME}} loyihasi tomonidan qoʻllaniladigan tillar roʻyxati va shu tillarga tarjima qilish ustida ishlayotganlar nomi keltirilgan.\nTarjimonning nomi u qancha koʻp tahrirlar qilgan boʻlsa, shuncha yirikroq tasvirlanadi.\nTagchiziqning rangiga qarab, tarjimon bu yerda qancha vaqt oldin oxirgi marta biror-bir harakatni amalga oshirganligini tushunsa boʻladi.",
+	"supportedlanguages-summary": "Ushbu sahifada {{SITENAME}} loyihasida qoʻllaniladigan tillar roʻyxati va shu tillarga tarjima qilish ustida ishlayotgan tarjimonlar ismi keltirilgan.\nTarjimonning ismi u qancha koʻp tahrirlar qilgan boʻlsa, shuncha yirikroq tasvirlanadi.\nTagchiziqning rangiga qarab, tarjimon bu yerda oxirgi marta qancha vaqt oldin biron-bir harakatni amalga oshirganligini tushunsa boʻladi.",
 	"supportedlanguages-colorlegend": "Rang sharhi: oxirgi tarjima $1 kun oldin bo'lgan.",
 	"supportedlanguages-translators": "{{PLURAL:$2|Tarjimon|Tarjimonlar}}: $1",
 	"supportedlanguages-recenttranslations": "yaqin oradagi tarjimalar",
