@@ -35,7 +35,7 @@ class MessageUpdateJob extends Job {
 		$title = $this->title;
 		$params = $this->params;
 		$user = FuzzyBot::getUser();
-		$flags = EDIT_DEFER_UPDATES | EDIT_FORCE_BOT;
+		$flags = EDIT_FORCE_BOT;
 
 		$wikiPage = WikiPage::factory( $title );
 		$summary = wfMessage( 'translate-manage-import-summary' )
