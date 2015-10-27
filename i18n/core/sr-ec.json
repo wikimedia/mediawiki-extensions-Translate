@@ -7,7 +7,8 @@
 			"Жељко Тодоровић",
 			"Милан Јелисавчић",
 			"Михајло Анђелковић",
-			"Srdjan m"
+			"Srdjan m",
+			"Сербијана"
 		]
 	},
 	"translate": "Превод",
@@ -373,5 +374,6 @@
 	"translate-search-more-languages-info": "још $1 {{PLURAL:$1|језик|језика}}",
 	"translate-statsbar-tooltip": "$1% преведено, $2% потврђено",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% преведено, $2% потврђено, $3% застарело",
-	"translate-search-more-groups-info": "још $1 {{PLURAL:$1|група}}"
+	"translate-search-more-groups-info": "још $1 {{PLURAL:$1|група}}",
+	"tux-nojs": "Ова страница захтјева JavaScript."
 }
