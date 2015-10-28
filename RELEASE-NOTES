@@ -1,0 +1,25 @@
+== Translate 2015.10 ==
+Released at 2015-10-28.
+
+=== Highlights ===
+* MediaWiki 1.23 is no longer supported. Extension is no longer automatically
+  loaded when installed via composer.
+* If local TTMServer translation memory is marked as public, it will not
+  automatically take advantage of TranslationWebServices query parallelization.
+* Allows a user to easily access search operators with autocompletion on
+  Special:SearchTranslations.
+* Language and group selectors now interact better on Special:Translate
+* Results are always shown when searching for a full page title on
+  Special:SearchTranslations for a known message.
+* Special:Translate now says explicitly that it needs JavaScript to function.
+* TranslationWebServices now display correct error message for query failures
+  in the logs.
+* Minor display fix on Special:Translate page mode that was caused by rounding
+  errors.
+* TTMServer translation memory can be used with wikimedia extra elasticsearch
+  plugin version 1.7.1 to avoid enabling scripting in ElasticSearch.
+* Flash of unstyle content no longer happens or is reduced on translatable
+  pages, on Special:SearchTranslations and on Special:Translate.
+* $wgTranslateSupportUrl can now contain a full URL ('url' key).
+  $wgTranslateSupportUrlNamespace is added to override the general
+  configuration for specific namespaces.
