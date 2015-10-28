@@ -1,11 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gleki"
+			"Gleki",
+			"Xbony2"
 		]
 	},
 	"translate-edit-in-other-languages": "lo notci poi se bangu lo drata",
+	"translate-magic-cm-save": "gau se vreji",
 	"translate-rc-translation-filter": "pagrygau lo xe fanva",
+	"translate-stats-edits": "stika",
+	"translate-stats-users": "le fanva",
 	"translate-sidebar-alltrans": "bau lo drata",
 	"translate-language": "lo bangu",
 	"translate-js-support": "ko retsku"

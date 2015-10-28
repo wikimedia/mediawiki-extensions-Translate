@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"VASANTH S.N."
+			"VASANTH S.N.",
+			"Soundarya shetty s"
 		]
 	},
 	"translate": "ಭಾಷಾಂತರ ಮಲ್ಪುಲೆ",
@@ -10,5 +11,6 @@
 	"translate-page-limit": "ಮಿತಿ",
 	"translate-next": "ಬೊಕ್ಕದ ಪುಟೊ",
 	"translate-prev": "ದುಂಬುದ ಪುಟೊ",
-	"translate-magic-module": "ಘಟಕ:"
+	"translate-magic-module": "ಘಟಕ:",
+	"translate-documentation-language": "ಸುದ್ದಿ ದಾಖಲೆ ಮಲ್ಪುನು"
 }
