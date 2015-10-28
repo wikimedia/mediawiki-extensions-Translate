@@ -20,6 +20,99 @@ class MessageIndexTest extends MediaWikiTestCase {
 		) );
 	}
 
+	/**
+	 * @dataProvider provideTestGetArrayDiff
+	 */
+	public function testGetArrayDiff( $expected, $old, $new ) {
+		$actual = MessageIndex::getArrayDiff( $old, $new );
+		$this->assertEquals( $expected['keys'], $actual['keys'], 'key diff' );
+		$this->assertEquals( $expected['values'], $actual['values'], 'value diff' );
+	}
+
+	public function provideTestGetArrayDiff() {
+		$tests = array();
+
+		// Addition
+		$old = array();
+		$new = array(
+			'label' => 'carpet',
+		);
+		$expected = array(
+			'keys' => array(
+				'add' => array(
+					'label' => array(
+						array(),
+						array( 'carpet' ),
+					),
+				),
+				'del' => array(),
+				'mod' => array(),
+			),
+			'values' => array( 'carpet' ),
+		);
+		$tests[] = array( $expected, $old, $new );
+
+		// Deletion
+		$old = array(
+			'bath' => array( 'goal', 'morals', 'coronation' ),
+		);
+		$new = array();
+		$expected = array(
+			'keys' => array(
+				'add' => array(),
+				'del' => array(
+					'bath' => array(
+						array( 'goal', 'morals', 'coronation' ),
+						array(),
+					),
+				),
+				'mod' => array(),
+			),
+			'values' => array( 'goal', 'morals', 'coronation' ),
+		);
+		$tests[] = array( $expected, $old, $new );
+
+		// No change
+		$old = $new = array(
+			'label' => 'carpet',
+			'salt' => array( 'morals' ),
+			'bath' => array( 'goal', 'morals', 'coronation' ),
+		);
+		$expected = array(
+			'keys' => array(
+				'add' => array(),
+				'del' => array(),
+				'mod' => array(),
+			),
+			'values' => array(),
+		);
+		$tests[] = array( $expected, $old, $new );
+
+		// Modification
+		$old = array(
+			'bath' => array( 'goal', 'morals', 'coronation' ),
+		);
+		$new = array(
+			'bath' => array( 'goal', 'beliefs', 'coronation', 'showcase' ),
+		);
+		$expected = array(
+			'keys' => array(
+				'add' => array(),
+				'del' => array(),
+				'mod' => array(
+					'bath' => array(
+						array( 'goal', 'morals', 'coronation' ),
+						array( 'goal', 'beliefs', 'coronation', 'showcase' ),
+					),
+				),
+			),
+			'values' => array( 'morals', 'beliefs', 'showcase' ),
+		);
+		$tests[] = array( $expected, $old, $new );
+
+		return $tests;
+	}
+
 	protected static function getTestData() {
 		static $data = null;
 		if ( $data === null ) {
@@ -35,7 +128,8 @@ class MessageIndexTest extends MediaWikiTestCase {
 	public function testMessageIndexImplementation( $mi ) {
 		$data = self::getTestData();
 		/** @var TestableDatabaseMessageIndex|TestableCDBMessageIndex|TestableSerializedMessageIndex */
-		$mi->store( $data );
+		$diff = MessageIndex::getArrayDiff( array(), $data );
+		$mi->store( $data, $diff );
 
 		$tests = array_rand( $data, 10 );
 		foreach ( $tests as $key ) {
@@ -79,8 +173,8 @@ class MessageIndexTest extends MediaWikiTestCase {
 class TestableDatabaseMessageIndex extends DatabaseMessageIndex {
 	// @codingStandardsIgnoreStart PHP CodeSniffer warns "Useless method overriding
 	// detected", but store() and get() are protected in parent.
-	public function store( array $a ) {
-		parent::store( $a );
+	public function store( array $a, array $diff ) {
+		parent::store( $a, $diff );
 	}
 
 	public function get( $a ) {
@@ -91,8 +185,8 @@ class TestableDatabaseMessageIndex extends DatabaseMessageIndex {
 class TestableCDBMessageIndex extends CDBMessageIndex {
 	// @codingStandardsIgnoreStart PHP CodeSniffer warns "Useless method overriding
 	// detected", but store() and get() are protected in parent.
-	public function store( array $a ) {
-		parent::store( $a );
+	public function store( array $a, array $diff ) {
+		parent::store( $a, $diff );
 	}
 
 	public function get( $a ) {
@@ -103,8 +197,8 @@ class TestableCDBMessageIndex extends CDBMessageIndex {
 class TestableSerializedMessageIndex extends SerializedMessageIndex {
 	// @codingStandardsIgnoreStart PHP CodeSniffer warns "Useless method overriding
 	// detected", but store() and get() are protected in parent.
-	public function store( array $a ) {
-		parent::store( $a );
+	public function store( array $a, array $diff ) {
+		parent::store( $a, $diff );
 	}
 
 	public function get( $a ) {
@@ -115,8 +209,8 @@ class TestableSerializedMessageIndex extends SerializedMessageIndex {
 class TestableHashMessageIndex extends HashMessageIndex {
 	// @codingStandardsIgnoreStart PHP CodeSniffer warns "Useless method overriding
 	// detected", but store() and get() are protected in parent.
-	public function store( array $a ) {
-		parent::store( $a );
+	public function store( array $a, array $diff ) {
+		parent::store( $a, $diff );
 	}
 
 	public function get( $a ) {
