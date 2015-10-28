@@ -925,8 +925,8 @@ class PageTranslationHooks {
 	 * Hook: TitleMoveComplete
 	 * @since 2014.08
 	 */
-	public static function onMoveTranslationUnits( Title &$ot, Title &$nt, User &$user,
-		$oldid, $newid, $reason
+	public static function onMoveTranslationUnits(
+		Title $ot, Title $nt, User $user, $oldid, $newid, $reason
 	) {
 		// Do the update only once. In case running by job queue, the update is not done here
 		if ( self::$jobQueueRunning ) {
