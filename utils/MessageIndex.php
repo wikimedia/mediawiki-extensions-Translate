@@ -91,9 +91,17 @@ abstract class MessageIndex {
 	}
 
 	/// @return array
-	abstract public function retrieve();
+	abstract public function retrieve( $forRebuild = false );
 
-	abstract protected function store( array $array );
+	abstract protected function store( array $array, array $diff );
+
+	protected function lock() {
+		return true;
+	}
+
+	protected function unlock() {
+		return true;
+	}
 
 	public function rebuild() {
 		static $recursion = 0;
@@ -109,8 +117,12 @@ abstract class MessageIndex {
 
 		$groups = MessageGroups::singleton()->getGroups();
 
+		if ( !$this->lock() ) {
+			throw new Exception( __CLASS__ . ': unable to acquire lock' );
+		}
+
 		$new = $old = array();
-		$old = $this->retrieve();
+		$old = $this->retrieve( 'rebuild' );
 		$postponed = array();
 
 		/**
@@ -134,56 +146,101 @@ abstract class MessageIndex {
 			$this->checkAndAdd( $new, $g, true );
 		}
 
-		$this->store( $new );
-		$this->clearMessageGroupStats( $old, $new );
+		$diff = self::getArrayDiff( $old, $new );
+		$this->store( $new, $diff['keys'] );
+		$this->unlock();
+		$this->clearMessageGroupStats( $diff );
+
 		$recursion--;
 
 		return $new;
 	}
 
 	/**
-	 * Purge message group stats when set of keys have changed.
+	 * Compares two associative arrays.
+	 *
+	 * Values must be a string or list of strings. Returns an array of added,
+	 * deleted and modified keys as well as value changes (think values as a
+	 * groups having keys as a member). Each of the keys ('add', 'del', 'mod'
+	 * respectively) maps to an array whose keys are the changed keys of the
+	 * original arrays and values are lists where first element contains the
+	 * old value and the second element the new value.
+	 *
+	 * @code
+	 * $a = [ 'a' => '1', 'b' => '2', 'c' => '3' ];
+	 * $b = [ 'b' => '2', 'c' => [ '3', '2' ], 'd' => '4' ];
+	 *
+	 * self::getArrayDiff( $a, $b ) ) === [
+	 *   'keys' => [
+	 *     'add' => [ 'd' => [ [], [ '4' ] ] ],
+	 *     'del' => [ 'a' => [ [ '1' ], [] ] ],
+	 *     'mod' => [ 'c' => [ [ '3' ], [ '3', '2' ] ] ],
+	 *   ],
+	 *   'values' => [ 2, 4, 1 ]
+	 * ];
+	 * @endcode
+	 *
 	 * @param array $old
 	 * @param array $new
+	 * @return array
 	 */
-	protected function clearMessageGroupStats( array $old, array $new ) {
-		$changes = array();
+	public static function getArrayDiff( array $old, array $new ) {
+		$values = array();
+		$record = function ( $groups ) use ( &$values ) {
+			foreach ( $groups as $group ) {
+				$values[$group] = true;
+			}
+		};
+
+		$keys = array(
+			'add' => array(),
+			'del' => array(),
+			'mod' => array(),
+		);
 
 		foreach ( $new as $key => $groups ) {
-			// Using != here on purpose to ignore order of items
 			if ( !isset( $old[$key] ) ) {
-				$changes[$key] = array( array(), (array)$groups );
+				$keys['add'][$key] = array( array(), (array)$groups );
+				$record( (array)$groups );
+			// Using != here on purpose to ignore the order of items
 			} elseif ( $groups != $old[$key] ) {
-				$changes[$key] = array( (array)$old[$key], (array)$groups );
+				$keys['mod'][$key] = array( (array)$old[$key], (array)$groups );
+				$record( array_diff( (array)$old[$key], (array)$groups ) );
+				$record( array_diff( (array)$groups, (array)$old[$key] ) );
 			}
 		}
 
 		foreach ( $old as $key => $groups ) {
 			if ( !isset( $new[$key] ) ) {
-				$changes[$key] = array( (array)$groups, array() );
+				$keys['del'][$key] = array( (array)$groups, array() );
+				$record( (array)$groups, array() );
 			}
 			// We already checked for diffs above
 		}
 
-		$changedGroups = array();
-		foreach ( $changes as $data ) {
-			foreach ( $data[0] as $group ) {
-				$changedGroups[$group] = true;
-			}
-			foreach ( $data[1] as $group ) {
-				$changedGroups[$group] = true;
-			}
-		}
+		return array(
+			'keys' => $keys,
+			'values' => array_keys( $values ),
+		);
+	}
 
-		MessageGroupStats::clearGroup( array_keys( $changedGroups ) );
+	/**
+	 * Purge stuff when set of keys have changed.
+	 *
+	 * @param array $diff
+	 */
+	protected function clearMessageGroupStats( array $diff ) {
+		MessageGroupStats::clearGroup( $diff['values'] );
 
-		foreach ( $changes as $key => $data ) {
-			list( $ns, $pagename ) = explode( ':', $key, 2 );
-			$title = Title::makeTitle( $ns, $pagename );
-			$handle = new MessageHandle( $title );
-			list ( $oldGroups, $newGroups ) = $data;
-			Hooks::run( 'TranslateEventMessageMembershipChange',
-				array( $handle, $oldGroups, $newGroups ) );
+		foreach ( $diff['keys'] as $keys ) {
+			foreach ( $keys as $key => $data ) {
+				list( $ns, $pagename ) = explode( ':', $key, 2 );
+				$title = Title::makeTitle( $ns, $pagename );
+				$handle = new MessageHandle( $title );
+				list ( $oldGroups, $newGroups ) = $data;
+				Hooks::run( 'TranslateEventMessageMembershipChange',
+					array( $handle, $oldGroups, $newGroups ) );
+			}
 		}
 	}
 
@@ -281,7 +338,7 @@ class SerializedMessageIndex extends MessageIndex {
 	protected $filename = 'translate_messageindex.ser';
 
 	/** @return array */
-	public function retrieve() {
+	public function retrieve( $forRebuild = false ) {
 		if ( $this->index !== null ) {
 			return $this->index;
 		}
@@ -296,7 +353,7 @@ class SerializedMessageIndex extends MessageIndex {
 		return $this->index;
 	}
 
-	protected function store( array $array ) {
+	protected function store( array $array, array $diff ) {
 		$file = TranslateUtils::cacheFile( $this->filename );
 		file_put_contents( $file, serialize( $array ) );
 		$this->index = $array;
@@ -324,13 +381,32 @@ class DatabaseMessageIndex extends MessageIndex {
 	 */
 	protected $index;
 
+	protected function lock() {
+		$db = wfGetDB( DB_MASTER );
+
+		// Any transaction should be flushed after getting the lock to avoid
+		// stale pre-lock REPEATABLE-READ snapshot data.
+		$ok = $db->lock( 'translate-messageindex', __METHOD__, 30 );
+		if ( $ok ) {
+			$db->commit( __METHOD__, 'flush' );
+		}
+
+		return $ok;
+	}
+
+	protected function unlock() {
+		$db = wfGetDB( DB_MASTER );
+
+		return $db->unlock( 'translate-messageindex', __METHOD__ );
+	}
+
 	/** @return array */
-	public function retrieve() {
-		if ( $this->index !== null ) {
+	public function retrieve( $forRebuild = false ) {
+		if ( $this->index !== null && !$forRebuild ) {
 			return $this->index;
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( $forRebuild ? DB_MASTER : DB_SLAVE );
 		$res = $dbr->select( 'translate_messageindex', '*', array(), __METHOD__ );
 		$this->index = array();
 		foreach ( $res as $row ) {
@@ -358,18 +434,33 @@ class DatabaseMessageIndex extends MessageIndex {
 		return $value;
 	}
 
-	protected function store( array $array ) {
-		$dbw = wfGetDB( DB_MASTER );
-		$rows = array();
+	protected function store( array $array, array $diff ) {
+		$updates = array();
 
-		foreach ( $array as $key => $value ) {
-			$value = $this->serialize( $value );
-			$rows[] = array( 'tmi_key' => $key, 'tmi_value' => $value );
+		foreach ( array( $diff['add'], $diff['mod'] ) as $changes ) {
+			foreach ( $changes as $key => $data ) {
+				list( $old, $new ) = $data;
+				$updates[] = array(
+					'tmi_key' => $key,
+					'tmi_value' => $this->serialize( $new ),
+				);
+			}
 		}
 
+		$index = array( 'tmi_key' );
+		$deletions = array_keys( $diff['del'] );
+
+		$dbw = wfGetDB( DB_MASTER );
 		$dbw->startAtomic( __METHOD__ );
-		$dbw->delete( 'translate_messageindex', '*', __METHOD__ );
-		$dbw->insert( 'translate_messageindex', $rows, __METHOD__ );
+
+		if ( $updates !== array() ) {
+			$dbw->replace( 'translate_messageindex', array( $index ), $updates, __METHOD__ );
+		}
+
+		if ( $deletions !== array() ) {
+			$dbw->delete( 'translate_messageindex', array( 'tmi_key' => $deletions ), __METHOD__ );
+		}
+
 		$dbw->endAtomic( __METHOD__ );
 
 		$this->index = $array;
@@ -398,7 +489,7 @@ class CachedMessageIndex extends MessageIndex {
 	}
 
 	/** @return array */
-	public function retrieve() {
+	public function retrieve( $forRebuild = false ) {
 		if ( $this->index !== null ) {
 			return $this->index;
 		}
@@ -414,7 +505,7 @@ class CachedMessageIndex extends MessageIndex {
 		return $this->index;
 	}
 
-	protected function store( array $array ) {
+	protected function store( array $array, array $diff ) {
 		$key = wfMemckey( $this->key );
 		$this->cache->set( $key, $array );
 
@@ -452,7 +543,7 @@ class CDBMessageIndex extends MessageIndex {
 	protected $filename = 'translate_messageindex.cdb';
 
 	/** @return array */
-	public function retrieve() {
+	public function retrieve( $forRebuild = false ) {
 		$reader = $this->getReader();
 		// This must be below the line above, which may fill the index
 		if ( $this->index !== null ) {
@@ -489,7 +580,7 @@ class CDBMessageIndex extends MessageIndex {
 		return $value;
 	}
 
-	protected function store( array $array ) {
+	protected function store( array $array, array $diff ) {
 		$this->reader = null;
 
 		$file = TranslateUtils::cacheFile( $this->filename );
@@ -538,7 +629,7 @@ class HashMessageIndex extends MessageIndex {
 	protected $index = array();
 
 	/** @return array */
-	public function retrieve() {
+	public function retrieve( $forRebuild = false ) {
 		return $this->index;
 	}
 
@@ -555,10 +646,10 @@ class HashMessageIndex extends MessageIndex {
 		}
 	}
 
-	protected function store( array $array ) {
+	protected function store( array $array, array $diff ) {
 		$this->index = $array;
 	}
 
-	protected function clearMessageGroupStats( array $old, array $new ) {
+	protected function clearMessageGroupStats( array $diff ) {
 	}
 }
