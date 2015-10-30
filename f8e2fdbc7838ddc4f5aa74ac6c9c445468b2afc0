@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_3ad614c8",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-10-30T04:42:08Z",
+      "side": 1,
+      "message": "Any transaction should be flushed after getting the lock to avoid stale pre-lock REPEATABLE-READ snapshot data.",
+      "range": {
+        "startLine": 363,
+        "startChar": 2,
+        "endLine": 363,
+        "endChar": 8
+      },
+      "revId": "f8e2fdbc7838ddc4f5aa74ac6c9c445468b2afc0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_1ad9d0f7",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-10-30T04:42:08Z",
+      "side": 1,
+      "message": "Where does $delConds come from?",
+      "revId": "f8e2fdbc7838ddc4f5aa74ac6c9c445468b2afc0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
