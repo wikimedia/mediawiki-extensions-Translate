@@ -25,7 +25,8 @@
 			"WTM",
 			"Woytecr",
 			"Wpedzich",
-			"Žekřil71pl"
+			"Žekřil71pl",
+			"The Polish"
 		]
 	},
 	"translate": "Przetłumacz",
@@ -333,7 +334,7 @@
 	"tux-editor-skip-button-label": "Przejdź do następnego",
 	"tux-editor-cancel-button-label": "Anuluj",
 	"tux-editor-confirm-button-label": "Potwierdź tłumaczenie",
-	"tux-editor-shortcut-info": "Naciśnij \"$1\", aby zapisać, lub \"$2\", aby przejść do następnego komunikatu",
+	"tux-editor-shortcut-info": "Naciśnij \"$1\", aby zapisać, \"$2\", aby przejść do następnego komunikatu lub \"$3\" dla innych skrótów.",
 	"tux-editor-edit-desc": "Edytuj dokumentację",
 	"tux-editor-add-desc": "Dodaj dokumentację",
 	"tux-editor-suggestions-title": "Sugestie",
