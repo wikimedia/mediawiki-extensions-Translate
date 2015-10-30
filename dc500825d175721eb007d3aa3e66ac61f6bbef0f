@@ -16,6 +16,24 @@
       "revId": "dc500825d175721eb007d3aa3e66ac61f6bbef0f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_05e72ca8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-10-30T18:08:33Z",
+      "side": 1,
+      "message": "I used the same commit message for all the extensions needing this update, that\u0027s what the \"when necessary\" refers to. Feel free to adjust here if you want.",
+      "parentUuid": "0ebaf39b_c5d03424",
+      "revId": "dc500825d175721eb007d3aa3e66ac61f6bbef0f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
