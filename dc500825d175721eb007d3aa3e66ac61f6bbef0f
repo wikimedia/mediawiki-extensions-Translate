@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_c5d03424",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-30T17:31:20Z",
+      "side": 1,
+      "message": "\"when necessary\"? The call is unconditional.",
+      "revId": "dc500825d175721eb007d3aa3e66ac61f6bbef0f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
