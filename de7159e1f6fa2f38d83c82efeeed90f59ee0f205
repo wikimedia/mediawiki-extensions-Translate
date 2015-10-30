@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_d08c77de",
+        "filename": "composer.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-30T15:05:34Z",
+      "side": 1,
+      "message": "This should no longer be needed.",
+      "revId": "de7159e1f6fa2f38d83c82efeeed90f59ee0f205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_b0bf835b",
+        "filename": "composer.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-30T15:05:34Z",
+      "side": 1,
+      "message": "They released 0.5.0 in the meantime.",
+      "revId": "de7159e1f6fa2f38d83c82efeeed90f59ee0f205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_f0a09b33",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-30T15:05:34Z",
+      "side": 1,
+      "message": "This is not a comment of the variable. If this absolutely must be changed, I would make it\n// Data retrieval -\u003e\n\nSame below",
+      "revId": "de7159e1f6fa2f38d83c82efeeed90f59ee0f205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_7074abcc",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-30T15:05:34Z",
+      "side": 1,
+      "message": "! should be / (unrelated to this change, but as you are changing it)",
+      "revId": "de7159e1f6fa2f38d83c82efeeed90f59ee0f205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_30615300",
+        "filename": "scripts/magic-export.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-30T15:05:34Z",
+      "side": 1,
+      "message": "Would $IP \u003d dirname( __DIR__, 3 ); be better? At least it is shorter.",
+      "revId": "de7159e1f6fa2f38d83c82efeeed90f59ee0f205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_d059d75e",
+        "filename": "scripts/plural-comparison.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-30T15:05:34Z",
+      "side": 1,
+      "message": "Would $IP \u003d dirname( __DIR__, 3 ); be better? At least it is shorter.",
+      "revId": "de7159e1f6fa2f38d83c82efeeed90f59ee0f205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_b03c63e0",
+        "filename": "scripts/plural-comparison.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-30T15:05:34Z",
+      "side": 1,
+      "message": "This rule seems to cause more false positives than actual mistakes, can we consider disabling it?",
+      "revId": "de7159e1f6fa2f38d83c82efeeed90f59ee0f205",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
