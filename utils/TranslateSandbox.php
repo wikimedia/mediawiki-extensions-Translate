@@ -26,12 +26,14 @@ class TranslateSandbox {
 		}
 
 		$user->setEmail( $email );
-		$user->setPassword( $password );
 		$status = $user->addToDatabase();
 
 		if ( !$status->isOK() ) {
 			throw new MWException( $status->getWikiText() );
 		}
+
+		$user->setPassword( $password );
+		$user->saveSettings();
 
 		// Need to have an id first
 		$user->addGroup( 'translate-sandboxed' );
