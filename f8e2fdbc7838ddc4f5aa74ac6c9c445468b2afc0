@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_fa04fc1b",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-30T06:58:12Z",
+      "side": 1,
+      "message": "And that can be done with $db-\u003eflush() or $db-\u003ecommit() or what?",
+      "parentUuid": "0ebaf39b_3ad614c8",
+      "revId": "f8e2fdbc7838ddc4f5aa74ac6c9c445468b2afc0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_1ad9d0f7",
         "filename": "utils/MessageIndex.php",
         "patchSetId": 4
@@ -36,6 +54,24 @@
       "writtenOn": "2015-10-30T04:42:08Z",
       "side": 1,
       "message": "Where does $delConds come from?",
+      "revId": "f8e2fdbc7838ddc4f5aa74ac6c9c445468b2afc0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_da07b81e",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-10-30T06:58:12Z",
+      "side": 1,
+      "message": "Typo that I thought I already fixed during testing, should be $deletions.",
+      "parentUuid": "0ebaf39b_1ad9d0f7",
       "revId": "f8e2fdbc7838ddc4f5aa74ac6c9c445468b2afc0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
