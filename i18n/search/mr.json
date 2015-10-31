@@ -24,5 +24,6 @@
 	"tux-sst-outdated": "$1 पासुनची कालबाह्य भाषांतरे",
 	"tux-sst-ellipsis-untranslated": "भाषांतर नाही",
 	"tux-sst-ellipsis-outdated": "कालाबाह्य भाषांतरे",
+	"tux-sst-link-all-match": "सर्व शोध-शब्द हवेत.",
 	"tux-sst-match-message": "कोणत्याही शोधशब्दाशी जुळणारी भाषांतरे दाखवित आहे. $1"
 }

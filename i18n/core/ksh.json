@@ -6,7 +6,7 @@
 		]
 	},
 	"translate": "Övversäze",
-	"translate-desc": "[[Special:Translate|Söndersigk]] för et Översäze fum MediaWiki sing Mäldonge un Nohreeschte, un mih",
+	"translate-desc": "[[Special:Translate|{{int:specialpage}}]] för et Översäze fum MediaWiki sing Mäldonge un Nohreeschte, un mih.",
 	"translate-taskui-view": "Alle Täxte udder Nohreeschte aanzeije",
 	"translate-taskui-untranslated": "Onövversaz Täxte udder Nohreeschte aanzeije",
 	"translate-taskui-optional": "'Nid esu nüüdeje' Täxte udder Nohreeschte aanzeije.",

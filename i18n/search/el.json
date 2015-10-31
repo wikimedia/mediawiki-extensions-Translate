@@ -7,6 +7,7 @@
 	},
 	"searchtranslations": "Αναζήτηση στις μεταφράσεις",
 	"tux-sst-edit": "Επεξεργασία μετάφρασης",
+	"tux-sst-view-foreign": "Προβολή στο $1",
 	"tux-sst-search": "Αναζήτηση",
 	"tux-sst-search-ph": "Αναζήτηση στις μεταφράσεις",
 	"tux-sst-count": "{{PLURAL:$1|Βρέθηκε ένα αποτέλεσμα|Βρέθηκαν $1 αποτελέσματα}}",
@@ -17,11 +18,15 @@
 	"tux-sst-nosolr-body": "Αυτό το wiki δεν έχει υπηρεσία αναζήτησης για μεταφράσεις.",
 	"tux-sst-solr-offline-title": "Αναζήτηση μη διαθέσιμη",
 	"tux-sst-solr-offline-body": "Η υπηρεσία αναζήτησης είναι προσωρινά μη διαθέσιμη.",
-	"tux-sst-next": "Επόμενα αποτελέσματα",
-	"tux-sst-prev": "Προηγούμενα αποτελέσματα",
+	"tux-sst-next": "Επόμενο >",
+	"tux-sst-prev": "< Προηγούμενο",
 	"tux-sst-default": "Μεταφράσεις",
+	"tux-sst-translated": "Μεταφράσεις από $1",
 	"tux-sst-untranslated": "Καμία μετάφραση από τα $1",
 	"tux-sst-outdated": "Παρωχημένες μεταφράσεις από τα $1",
+	"tux-sst-ellipsis-untranslated": "Καμία μετάφραση",
 	"tux-sst-ellipsis-outdated": "Παρωχημένες μεταφράσεις",
-	"tux-sst-link-all-match": "Απαιτούνται όλες οι λέξεις αναζήτησης."
+	"tux-sst-link-all-match": "Απαιτούνται όλες οι λέξεις αναζήτησης.",
+	"tux-sst-match-message": "Εμφανίζει μεταφράσεις που ταιριάζουν με οποιοαδήποτε από τις λέξεις αναζήτησης. $1",
+	"tux-sst-case-sensitive": "Διάκριση πεζών-κεφαλαίων"
 }
