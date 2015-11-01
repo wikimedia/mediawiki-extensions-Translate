@@ -13,7 +13,8 @@
 			"555",
 			"Caio1478",
 			"Fabsouza1",
-			"He7d3r"
+			"He7d3r",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"translate": "Traduzir",
@@ -284,6 +285,7 @@
 	"right-translate-sandboxmanage": "Gerenciar usuários em área restrita",
 	"action-translate-sandboxmanage": "gerenciar usuários em área restrita",
 	"right-translate-sandboxaction": "Executar ações da lista de permissões para usuários da área de testes",
+	"action-translate-sandboxaction": "Executar ações da lista de permissões para usuários da área de testes",
 	"translate-workflow-state-": "(indefinido)",
 	"translate-workflowstatus": "Status: $1",
 	"translate-workflow-set-doing": "Definindo...",
@@ -377,11 +379,15 @@
 	"tux-editor-expand-tooltip": "Expandir",
 	"tux-editor-collapse-tooltip": "Recolher",
 	"tux-editor-message-tools-history": "Histórico",
+	"tux-editor-message-tools-delete": "Apagar",
 	"tux-editor-message-tools-translations": "Todas as traduções",
 	"tux-editor-loading": "Carregando…",
 	"translate-search-more-languages-info": "mais $1 {{PLURAL:$1|idioma|idiomas}}",
 	"translate-statsbar-tooltip": "$1% traduzido, $2% revisado",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduzido, $2% revisado, $3% desatualizado",
 	"translate-search-more-groups-info": "mais $1 {{PLURAL:$1|grupo|grupos}}",
-	"translate-ulsdep-body": "A extensão Translate depende da extensão [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector]."
+	"translate-ulsdep-title": "erro de configuração",
+	"translate-ulsdep-body": "A extensão Translate depende da extensão [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector].",
+	"tux-session-expired": "Você não está logado. Por favor entre em uma aba separada. Alternativamente, faça uma cópia das traduções não salvos, faça o login, retorne a esta página e inserir as traduções novamente.",
+	"tux-nojs": "Esta página requer JavaScript."
 }
