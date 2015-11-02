@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"VASANTH S.N.",
-			"Soundarya shetty s"
+			"Soundarya shetty s",
+			"Vishwanatha Badikana"
 		]
 	},
 	"translate": "ಭಾಷಾಂತರ ಮಲ್ಪುಲೆ",
@@ -12,5 +13,5 @@
 	"translate-next": "ಬೊಕ್ಕದ ಪುಟೊ",
 	"translate-prev": "ದುಂಬುದ ಪುಟೊ",
 	"translate-magic-module": "ಘಟಕ:",
-	"translate-documentation-language": "ಸುದ್ದಿ ದಾಖಲೆ ಮಲ್ಪುನು"
+	"translate-documentation-language": "ಸುದ್ದಿ ದಾಕಲೆ ಮಲ್ಪುನು"
 }

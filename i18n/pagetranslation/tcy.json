@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"VASANTH S.N."
+			"VASANTH S.N.",
+			"Vishwanatha Badikana"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% ಅನುವಾದ ಪೂರ್ಣವಾತ್‍ಂಡ್)"
+	"tpt-languages-nonzero": "$1($2% ಅನುವಾದ ಪೂರ ಆತ್‍ಂಡ್)"
 }
