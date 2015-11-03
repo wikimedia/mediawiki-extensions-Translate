@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_f75639d0",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-11-03T15:10:11Z",
+      "side": 1,
+      "message": "Is there any need to even call .load? Couldn\u0027t we just skip all \"newLink\" code and go straight to onSelect when preventSelector is specified?",
+      "revId": "710fa512702a4059578f1bed9bccf3ad135327d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
