@@ -16,7 +16,7 @@
 	"bitwise": true,
 	"forin": false,
 	"regexp": false,
-	"strict": true,
+	"strict": false,
 	"laxbreak": true,
 	"smarttabs": true,
 	"multistr": true,
