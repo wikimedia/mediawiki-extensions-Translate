@@ -43,6 +43,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_b1af8226",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-11-03T09:02:03Z",
+      "side": 1,
+      "message": "$db-\u003ecommit( __METHOD__, \u0027flush\u0027 )\n\nAssuming your jobs don\u0027t already wrap everything in some explicit begin(), though there would be no need for that.",
+      "parentUuid": "0ebaf39b_fa04fc1b",
+      "revId": "f8e2fdbc7838ddc4f5aa74ac6c9c445468b2afc0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_1ad9d0f7",
         "filename": "utils/MessageIndex.php",
         "patchSetId": 4
