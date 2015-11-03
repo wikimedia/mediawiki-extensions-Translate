@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_97401d3a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-11-03T14:33:15Z",
+      "side": 1,
+      "message": "No longer true.",
+      "revId": "5d33832db4b929928801eec449b5a2eb7e8fecbb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_f755d9fc",
+        "filename": "scripts/plural-comparison.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-11-03T14:33:15Z",
+      "side": 1,
+      "message": "Unfortunately, I only now noticed that second parameter is only present in PHP 7.0, so we can\u0027t use it. :(",
+      "revId": "5d33832db4b929928801eec449b5a2eb7e8fecbb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
