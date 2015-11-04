@@ -164,7 +164,7 @@
 	"translate-translations-including-no-param": "請在子頁面參數指定一個有效的訊息關鍵字",
 	"translate-translations-history-short": "記錄",
 	"languagestats": "語言統計",
-	"languagestats-summary": "此頁面顯示了所有訊息群組語言翻譯的統計資訊。",
+	"languagestats-summary": "此頁面顯示了所有訊息群組語言翻譯的統計資料。",
 	"messagegroupstats-summary": "此頁顯示訊息組統計。",
 	"languagestats-stats-for": "$1 ($2) 的翻譯統計。",
 	"languagestats-recenttranslations": "最近的翻譯",

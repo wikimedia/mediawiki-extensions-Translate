@@ -260,6 +260,7 @@
 	"translate-messagereview-doit": "या भाषांतरावर पुनरावलोकित म्हणून खूण करा.",
 	"log-name-translationreview": "भाषांतर पुनरावलोकन नोंदी",
 	"log-description-translationreview": "भाषांतरे व संदेश गटातील सर्व पुनरावलोककांच्या नोंदी.",
+	"logentry-translationreview-message": "$1 ने $3 भाषांतर {{GENDER:$2|पुनर्विलोकित केले}}",
 	"group-translate-sandboxed": "अन-अनुमोदित भाषांतरकार",
 	"group-translate-sandboxed-member": "{{GENDER:$1|अन-अनुमोदित भाषांतरकार}}",
 	"translate-stats-workflow": "स्थिति",
