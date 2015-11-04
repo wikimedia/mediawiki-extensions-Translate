@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_01f4e0b7",
+        "filename": "tests/phpunit/MessageIndexTest.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2015-11-04T10:11:34Z",
+      "side": 1,
+      "message": "Now I\u0027m curious what is the reason for these examples.",
+      "revId": "73002f8011a88a856a2dba6fbd4d26049dbd9d26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_611a7c1d",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2015-11-04T10:11:34Z",
+      "side": 1,
+      "message": "Something is wrong with the grammar in this comment :)",
+      "revId": "73002f8011a88a856a2dba6fbd4d26049dbd9d26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_211004f7",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2015-11-04T10:11:34Z",
+      "side": 1,
+      "message": "Thanks for this comment!",
+      "revId": "73002f8011a88a856a2dba6fbd4d26049dbd9d26",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
