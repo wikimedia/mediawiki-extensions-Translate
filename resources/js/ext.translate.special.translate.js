@@ -189,7 +189,7 @@
 				'tpt-discouraged-language-force-content' :
 				'tpt-discouraged-language-content',
 				preferredLanguages
-			).parse();
+			).text();
 
 			$groupWarning.append(
 				$( '<p>' ).append( $( '<strong>' ).text( headerMessage ) ),
