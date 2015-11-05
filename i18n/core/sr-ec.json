@@ -99,7 +99,7 @@
 	"translate-checks-parametersnotequal": "Број коришћених параметара је {{PLURAL:$1|$1}}; требало би да је {{PLURAL:$2|$2}}.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> има погрешан формат.",
 	"translate-checks-fudforum-syntax": "Користи <nowiki>$1</nowiki> уместо <nowiki>$2</nowiki> у овом пројекту.",
-	"translate-pref-nonewsletter": "Не шаљи ми билтене преко е-поште",
+	"translate-pref-nonewsletter": "Не шаљи ми билтене преко имејла",
 	"translate-pref-editassistlang": "Помоћни језици:",
 	"prefs-translate": "Могућности превода",
 	"translate-pref-editassistlang-help": "Списак језичких кодова који су одвојени зарезом.\nПревод поруке у овим језицима приказан је у току превођења.\nПодразумевани списак језика зависи од вашег језика.",

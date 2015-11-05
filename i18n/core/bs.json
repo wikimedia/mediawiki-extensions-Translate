@@ -138,6 +138,7 @@
 	"messagegroupstats-summary": "Ova stranica prikazuje statistike o grupi poruka.",
 	"languagestats-stats-for": "Statistike prevoda za $1 ($2).",
 	"languagestats-recenttranslations": "nedavni prijevodi",
+	"translate-langstats-incomplete": "Neke statistike navedene na stranici su nepotpune. Ponovo učitajte stranicu da dobijete potpuni pregled.",
 	"translate-langstats-expand": "proširi",
 	"translate-langstats-collapse": "sakrij",
 	"translate-langstats-expandall": "raširi sve",
