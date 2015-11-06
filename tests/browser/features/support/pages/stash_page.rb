@@ -1,8 +1,7 @@
 class StashPage
 	include PageObject
 
-	include URL
-	page_url URL.url("Special:TranslationStash?<%=params[:extra]%>")
+	page_url "Special:TranslationStash?<%=params[:extra]%>"
 
 	a(:edit, text: "Edit")
 
@@ -21,7 +20,7 @@ class StashPage
 		save_button_element(index).click
 	end
 	def save_button_element(index = 0)
-		@browser.button(:class => "tux-editor-save-button", :index => index)
+		browser.button(:class => "tux-editor-save-button", :index => index)
 	end
 	def select_language(language)
 		self.language_selector_element.click
@@ -29,6 +28,6 @@ class StashPage
 		self.language_filter_element.send_keys :enter
 	end
 	def translation_element(index = 0)
-		@browser.text_field(:class => "tux-textarea-translation", :index => index)
+		browser.text_field(:class => "tux-textarea-translation", :index => index)
 	end
 end
