@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Милан Јелисавчић",
-			"Milicevic01"
+			"Milicevic01",
+			"Сербијана"
 		]
 	},
 	"searchtranslations": "Претрага превода",
@@ -17,6 +18,6 @@
 	"tux-sst-nosolr-body": "Овај вики нема сервис за претрагу превода.",
 	"tux-sst-solr-offline-title": "Претрага недоступна",
 	"tux-sst-solr-offline-body": "Сервис за претрагу је привремено недоступан.",
-	"tux-sst-next": "Следећи резултати",
-	"tux-sst-prev": "Претходни резултати"
+	"tux-sst-next": "Следећи ›",
+	"tux-sst-prev": "‹ Претходни"
 }
