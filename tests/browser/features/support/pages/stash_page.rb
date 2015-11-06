@@ -1,5 +1,5 @@
 class StashPage
-	include PageObject
+	 include PageObject
 
 	page_url "Special:TranslationStash?<%=params[:extra]%>"
 
@@ -16,21 +16,21 @@ class StashPage
 	div(:limit_message, class: "limit-reached")
 
 	def make_a_translation(index = 0)
-		translation_element(index).when_present.set "Pupu"
+		 translation_element(index).when_present.set "Pupu"
 		save_button_element(index).click
 	end
 
 	def save_button_element(index = 0)
-		browser.button(class: "tux-editor-save-button", index: index)
+		 browser.button(class: "tux-editor-save-button", index: index)
 	end
 
 	def select_language(language)
-		self.language_selector_element.click
+		 self.language_selector_element.click
 		self.language_filter = language
 		self.language_filter_element.send_keys :enter
 	end
 
 	def translation_element(index = 0)
-		browser.text_field(class: "tux-textarea-translation", index: index)
+		 browser.text_field(class: "tux-textarea-translation", index: index)
 	end
 end

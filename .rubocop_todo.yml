@@ -22,12 +22,6 @@ Style/GlobalVars:
   Exclude:
     - 'extensions/UniversalLanguageSelector/tests/browser/features/step_definitions/accept_language_steps.rb'
 
-# Offense count: 200
-# Cop supports --auto-correct.
-# Configuration parameters: Width.
-Style/IndentationWidth:
-  Enabled: false
-
 # Offense count: 2
 # Cop supports --auto-correct.
 Style/LeadingCommentSpace:

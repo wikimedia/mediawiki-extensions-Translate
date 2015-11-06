@@ -1,5 +1,5 @@
 class TranslatePage
-	include PageObject
+	 include PageObject
 
 	page_url "Special:Translate?<%=params[:extra]%>"
 
