@@ -1,5 +1,5 @@
 Given(/^I am logged in at sandbox$/) do
-  visit(LoginPage).login_with(ENV["MEDIAWIKI_USER"], ENV["MEDIAWIKI_PASSWORD"], false)
+  visit(LoginPage).login_with(user, password, false)
 end
 
 Given(/^I am a sandboxed user on the stash page$/) do
