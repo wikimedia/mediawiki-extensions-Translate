@@ -16,13 +16,6 @@ Lint/UselessAssignment:
 Metrics/LineLength:
   Max: 168
 
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: AllowAdjacentOneLineDefs.
-Style/EmptyLineBetweenDefs:
-  Exclude:
-    - 'tests/browser/features/support/pages/stash_page.rb'
-
 # Offense count: 1
 # Configuration parameters: AllowedVariables.
 Style/GlobalVars:
