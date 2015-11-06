@@ -1,3 +1,3 @@
-After("@stash") do |scenario|
+After("@stash")
 	visit(StashPage, :using_params => {:extra => "integrationtesting=deactivatestash"})
 end
