@@ -17,7 +17,6 @@
  */
 class ApiAggregateGroups extends ApiBase {
 	protected static $right = 'translate-manage';
-	protected static $salt = 'translate-manage';
 
 	public function execute() {
 		if ( !$this->getUser()->isAllowed( self::$right ) ) {
@@ -186,19 +185,8 @@ class ApiAggregateGroups extends ApiBase {
 		return true;
 	}
 
-	public function getTokenSalt() {
-		return self::$salt;
-	}
-
 	public function needsToken() {
 		return 'csrf';
-	}
-
-	// This function maintains backwards compatibility with self::getToken()
-	// below. If salt is removed from self::getToken() and nothing else (e.g.
-	// JS) generates the token directly, this could probably be removed.
-	protected function getWebUITokenSalt( array $params ) {
-		return self::$salt;
 	}
 
 	public function getAllowedParams() {
@@ -222,7 +210,7 @@ class ApiAggregateGroups extends ApiBase {
 			),
 			'token' => array(
 				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false,
+				ApiBase::PARAM_REQUIRED => true,
 			),
 		);
 	}
@@ -280,26 +268,5 @@ class ApiAggregateGroups extends ApiBase {
 		}
 
 		return $pages;
-	}
-
-	// These two functions implement pre-1.24 token fetching via the
-	// ApiTokensGetTokenTypes hook, kept for backwards compatibility.
-	public static function getToken() {
-		$user = RequestContext::getMain()->getUser();
-		if ( !$user->isAllowed( self::$right ) ) {
-			return false;
-		}
-
-		return $user->getEditToken( self::$salt );
-	}
-
-	public static function injectTokenFunction( &$list ) {
-		$list['aggregategroups'] = array( __CLASS__, 'getToken' );
-
-		return true; // Hooks must return bool
-	}
-
-	public static function getRight() {
-		return self::$right;
 	}
 }
