@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_d8cf8059",
+        "filename": "api/ApiAggregateGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-11-07T17:07:59Z",
+      "side": 0,
+      "message": "Did you mean to remove this last method as well?",
+      "revId": "938b00f26163674611f351286a2cae47aa7f76b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
