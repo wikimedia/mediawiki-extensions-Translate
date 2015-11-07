@@ -188,7 +188,8 @@
 		proofread: function () {
 			var reviews, counter, params,
 				message = this.message,
-				$message = this.$message;
+				$message = this.$message,
+				api = new mw.Api();
 
 			params = {
 				action: 'translationreview',
@@ -199,7 +200,8 @@
 				params.assert = 'user';
 			}
 
-			new mw.Api().postWithToken( 'translationreview', params ).done( function () {
+			// Change to csrf when support for MW 1.25 is dropped
+			api.postWithToken( 'edit', params ).done( function () {
 				$message.find( '.tux-proofread-action' ).addClass( 'accepted' );
 
 				counter = $message.find( '.tux-proofread-count' );
@@ -217,7 +219,7 @@
 				}
 			} ).fail( function ( errorCode ) {
 				$message.find( '.tux-proofread-action' ).addClass( 'tux-warning' );
-				// In MW 1.24 alpha postWithToken returns token-missing instead of assertuserfailed
+				// In MW 1.24 postWithToken returns token-missing instead of assertuserfailed
 				if ( errorCode === 'assertuserfailed' || errorCode === 'token-missing'  ) {
 					alert( mw.msg( 'tux-session-expired' ) );
 				}

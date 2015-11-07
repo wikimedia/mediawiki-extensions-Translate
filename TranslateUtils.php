@@ -368,7 +368,8 @@ class TranslateUtils {
 	 * @since 2012-05-03
 	 */
 	public static function getTokenAction( $token ) {
-		return "action=tokens&type=$token";
+		// Remove this function when support for MW 1.24 is dropped.
+		return "action=query&meta=tokens&type=csrf";
 	}
 
 	/**

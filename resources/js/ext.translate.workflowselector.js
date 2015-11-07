@@ -55,7 +55,7 @@
 		 * @return {jQuery.Promise}
 		 */
 		changeState: function ( state ) {
-			var token, params,
+			var params,
 				api = new mw.Api();
 
 			params = {
@@ -65,9 +65,9 @@
 				state: state,
 				format: 'json'
 			};
-			token = mw.config.get( 'wgTranslateSupportsCsrfToken' ) ? 'csrf' : 'groupreview';
 
-			return api.postWithToken( token, params );
+			// Change to csrf when support for MW 1.25 is dropped
+			return api.postWithToken( 'edit', params );
 		},
 
 		/**

@@ -178,11 +178,6 @@ class SpecialAggregateGroups extends SpecialPage {
 
 		// Add new group if user has permissions
 		if ( $this->hasPermission ) {
-			$out->addHtml( Html::element( 'input', array(
-				'type' => 'hidden',
-				'id' => 'token',
-				'value' => ApiAggregateGroups::getToken()
-			) ) );
 			$out->addHtml( "<br/><a class='tpt-add-new-group' href='#'>" .
 				$this->msg( 'tpt-aggregategroup-add-new' )->escaped() .
 				"</a>" );

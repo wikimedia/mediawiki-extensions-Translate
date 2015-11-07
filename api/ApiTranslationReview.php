@@ -3,7 +3,6 @@
  * API module for marking translations as reviewed
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2011-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -14,7 +13,6 @@
  */
 class ApiTranslationReview extends ApiBase {
 	protected static $right = 'translate-messagereview';
-	protected static $salt = 'translate-messagereview';
 
 	public function execute() {
 		if ( !$this->getUser()->isAllowed( self::$right ) ) {
@@ -148,19 +146,6 @@ class ApiTranslationReview extends ApiBase {
 		return 'csrf';
 	}
 
-	// This function exists for backwards compatibility with MediaWiki before
-	// 1.24
-	public function getTokenSalt() {
-		return self::$salt;
-	}
-
-	// This function maintains backwards compatibility with self::getToken()
-	// below. If salt is removed from self::getToken() and nothing else (e.g.
-	// JS) generates the token directly, this could probably be removed.
-	protected function getWebUITokenSalt( array $params ) {
-		return self::$salt;
-	}
-
 	public function getAllowedParams() {
 		return array(
 			'revision' => array(
@@ -210,26 +195,5 @@ class ApiTranslationReview extends ApiBase {
 			'action=translationreview&revision=1&token=foo'
 				=> 'apihelp-translationreview-example-1',
 		);
-	}
-
-	// These two functions implement pre-1.24 token fetching via the
-	// ApiTokensGetTokenTypes hook, kept for backwards compatibility.
-	public static function getToken() {
-		$user = RequestContext::getMain()->getUser();
-		if ( !$user->isAllowed( self::$right ) ) {
-			return false;
-		}
-
-		return $user->getEditToken( self::$salt );
-	}
-
-	public static function injectTokenFunction( &$list ) {
-		$list['translationreview'] = array( __CLASS__, 'getToken' );
-
-		return true; // Hooks must return bool
-	}
-
-	public static function getRight() {
-		return self::$right;
 	}
 }
