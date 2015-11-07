@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2010-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 

@@ -5,7 +5,6 @@
  * @file
  * @author Niklas Laxström
  * @author Harry Burt
- * @copyright Copyright © 2010-2013, Niklas Laxström
  * @copyright Copyright © 2012-2013, Harry Burt
  * @license GPL-2.0+
  */
