@@ -16,13 +16,6 @@ Lint/UselessAssignment:
 Metrics/LineLength:
   Max: 127
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Exclude:
-    - 'tests/browser/features/support/pages/manage_translator_sandbox_page.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
 Style/RedundantSelf:
