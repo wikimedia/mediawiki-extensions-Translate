@@ -87,6 +87,7 @@
 	"apihelp-searchtranslations-param-group": "ID групи, в якій шукати рядок.",
 	"apihelp-searchtranslations-param-filter": "Фільтр стану перекладу повідомлення.",
 	"apihelp-searchtranslations-param-match": "Відповідність одного із/всіх пошукових слів.",
+	"apihelp-searchtranslations-param-case": "Пошук (не)чутливий до регістру.",
 	"apihelp-searchtranslations-param-offset": "Зміщення для перекладів.",
 	"apihelp-searchtranslations-param-limit": "Розмір результату.",
 	"apihelp-searchtranslations-example-1": "Показати переклади для мови.",
