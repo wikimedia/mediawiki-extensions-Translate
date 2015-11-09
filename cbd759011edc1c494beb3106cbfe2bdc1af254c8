@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_748bf523",
+        "filename": "api/ApiAggregateGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-11-09T19:14:37Z",
+      "side": 1,
+      "message": "This is already added by ApiBase due to needsToken() existing, so these properties are effectively ignored (the base class wins the array-plus merge). Not sure if there\u0027s a convention for including this or not.",
+      "revId": "cbd759011edc1c494beb3106cbfe2bdc1af254c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
