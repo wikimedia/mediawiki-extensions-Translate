@@ -16,12 +16,6 @@ Lint/UselessAssignment:
 Metrics/LineLength:
   Max: 127
 
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/RedundantSelf:
-  Exclude:
-    - 'tests/browser/features/support/pages/stash_page.rb'
-
 # Offense count: 14
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyleForEmptyBraces, SupportedStyles.

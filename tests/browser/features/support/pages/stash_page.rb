@@ -25,9 +25,9 @@ class StashPage
   end
 
   def select_language(language)
-    self.language_selector_element.click
+    language_selector_element.click
     self.language_filter = language
-    self.language_filter_element.send_keys :enter
+    language_filter_element.send_keys :enter
   end
 
   def translation_element(index = 0)
