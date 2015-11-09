@@ -114,7 +114,7 @@ class ManageTranslatorSandboxPage
   end
 
   def translations_languages_are_sorted?
-    expected_langs = ['bn', 'fi', 'he', 'nl', 'uk']
+    expected_langs = %w(bn fi he nl uk)
     langs = translations_autonyms.collect { |element| element.attribute_value('lang') }
 
     expected_langs == langs

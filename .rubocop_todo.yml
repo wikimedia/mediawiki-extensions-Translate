@@ -15,9 +15,3 @@ Lint/UselessAssignment:
 # Configuration parameters: AllowURI, URISchemes.
 Metrics/LineLength:
   Max: 127
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: WordRegex.
-Style/WordArray:
-  MinSize: 5
