@@ -3,7 +3,7 @@ Given(/^I am logged in at sandbox$/) do
 end
 
 Given(/^I am a sandboxed user on the stash page$/) do
-	visit(StashPage, :using_params => {:extra => "integrationtesting=activatestash"})
+	visit(StashPage, using_params: {extra: "integrationtesting=activatestash"})
 end
 
 Then(/^I should see a language selector$/) do
