@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_1454f955",
+        "filename": "Gemfile",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-11-09T19:33:36Z",
+      "side": 1,
+      "message": "Why this line has different quotes from the line above?",
+      "revId": "a380913517969af055461f02a135b97cbc9f17e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
