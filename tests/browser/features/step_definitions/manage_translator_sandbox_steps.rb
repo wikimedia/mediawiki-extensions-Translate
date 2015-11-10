@@ -1,13 +1,13 @@
 Given(/^I am logged in as a translation administrator$/) do
-  step "I am logged in"
+  step 'I am logged in'
 end
 
 Given(/^I am on the Translator sandbox management page with no users in the sandbox$/) do
-  visit(ManageTranslatorSandboxPage, using_params: { extra: "integrationtesting=empty" })
+  visit(ManageTranslatorSandboxPage, using_params: { extra: 'integrationtesting=empty' })
 end
 
 Given(/^I am on the Translator sandbox management page with users in the sandbox$/) do
-  visit(ManageTranslatorSandboxPage, using_params: { extra: "integrationtesting=populate" })
+  visit(ManageTranslatorSandboxPage, using_params: { extra: 'integrationtesting=populate' })
 end
 
 When(/^I search for "(.*)" in the sandboxed users search field$/) do |string|
@@ -102,15 +102,15 @@ Then(/^I should see that (\d+) reminders were sent to the user$/) do |count|
 end
 
 Then(/^I should see that no reminders have been sent to the user$/) do
-  on(ManageTranslatorSandboxPage).reminder_status.should == ""
+  on(ManageTranslatorSandboxPage).reminder_status.should == ''
 end
 
 Then(/^the direction of the users language filter button is "(.+)"$/) do |dir_value|
-  on(ManageTranslatorSandboxPage).language_selector_button_element.attribute("dir").should == dir_value
+  on(ManageTranslatorSandboxPage).language_selector_button_element.attribute('dir').should == dir_value
 end
 
 Then(/^the language code of the users language filter button is "(.+)"$/) do |lang_value|
-  on(ManageTranslatorSandboxPage).language_selector_button_element.attribute("lang").should == lang_value
+  on(ManageTranslatorSandboxPage).language_selector_button_element.attribute('lang').should == lang_value
 end
 
 Then(/^usernames are visible in the first column$/) do

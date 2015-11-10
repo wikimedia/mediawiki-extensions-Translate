@@ -1,58 +1,58 @@
-require "json"
+require 'json'
 
 class ManageTranslatorSandboxPage
   include PageObject
 
-  page_url "Special:ManageTranslatorSandbox?<%=params[:extra]%>"
+  page_url 'Special:ManageTranslatorSandbox?<%=params[:extra]%>'
 
-  button(:clear_language_selector, class: "clear-language-selector")
+  button(:clear_language_selector, class: 'clear-language-selector')
 
-  div(:details, class: "details")
+  div(:details, class: 'details')
 
-  text_field(:language_filter, id: "languagefilter")
-  button(:language_selector_button, class: "language-selector")
+  text_field(:language_filter, id: 'languagefilter')
+  button(:language_selector_button, class: 'language-selector')
 
-  a(:older_requests_indicator, class: "older-requests-indicator")
+  a(:older_requests_indicator, class: 'older-requests-indicator')
 
-  div(:request_count, class: "request-count")
-  span(:reminder_status, class: "reminder-status")
+  div(:request_count, class: 'request-count')
+  span(:reminder_status, class: 'reminder-status')
 
-  span(:selected_counter, class: "selected-counter")
+  span(:selected_counter, class: 'selected-counter')
 
-  text_field(:search, class: "request-filter-box")
+  text_field(:search, class: 'request-filter-box')
 
-  checkbox(:select_all_checkbox, class: "request-selector-all")
+  checkbox(:select_all_checkbox, class: 'request-selector-all')
 
-  div(:signup_comment_text, class: "signup-comment-text")
+  div(:signup_comment_text, class: 'signup-comment-text')
 
   # This must be reloaded every time, because it may change during the test
   def details_header
-    browser.element(class: "tsb-header")
+    browser.element(class: 'tsb-header')
   end
 
   def details_button(label)
-    button_class = label.downcase.gsub(" ", "-")
+    button_class = label.downcase.gsub(' ', '-')
     browser.button(class: button_class)
   end
 
   def details_no_translations
-    browser.divs(class: "tsb-details-no-translations")
+    browser.divs(class: 'tsb-details-no-translations')
   end
 
   def visible_request_selectors_element
-    browser.elements(css: ".row.request:not(.hide) .request-selector")
+    browser.elements(css: '.row.request:not(.hide) .request-selector')
   end
 
   def visible_users_element
-    browser.elements(css: ".row.request:not(.hide) .username")
+    browser.elements(css: '.row.request:not(.hide) .username')
   end
 
   def visible_requests_element
-    browser.elements(css: ".row.request:not(.hide)")
+    browser.elements(css: '.row.request:not(.hide)')
   end
 
   def hidden_users_element
-    browser.elements(css: ".requests .request.hide")
+    browser.elements(css: '.requests .request.hide')
   end
 
   def request_with_username(username)
@@ -64,11 +64,11 @@ class ManageTranslatorSandboxPage
   end
 
   def translation_elements
-    browser.elements(css: ".details .translation")
+    browser.elements(css: '.details .translation')
   end
 
   def checkbox_for_request_with_username(username)
-    browser.div(id: "tsb-request-#{username}").checkbox(class: "request-selector")
+    browser.div(id: "tsb-request-#{username}").checkbox(class: 'request-selector')
   end
 
   def visible_users_start_with?(prefix)
@@ -87,8 +87,8 @@ class ManageTranslatorSandboxPage
   def all_visible_requests_translate_to?(language)
     Watir::Wait.until { hidden_users_element.size > 0 }
     visible_requests_element.all? do |element|
-      user_data = JSON.parse(element.attribute_value("data-data"))
-      user_data["languagepreferences"]["languages"].include?(language)
+      user_data = JSON.parse(element.attribute_value('data-data'))
+      user_data['languagepreferences']['languages'].include?(language)
     end
   end
 
@@ -103,25 +103,25 @@ class ManageTranslatorSandboxPage
         expected_usernames.unshift("#{name}#{num}")
       end
     end
-    expected_usernames.unshift("Kissa")
+    expected_usernames.unshift('Kissa')
     usernames = visible_users_element.collect { |element| element.text }
 
     expected_usernames == usernames
   end
 
   def details_autonym
-    browser.elements(css: ".details.pane .languages span")[0]
+    browser.elements(css: '.details.pane .languages span')[0]
   end
 
   def translations_languages_are_sorted?
-    expected_langs = ["bn", "fi", "he", "nl", "uk"]
-    langs = translations_autonyms.collect { |element| element.attribute_value("lang") }
+    expected_langs = ['bn', 'fi', 'he', 'nl', 'uk']
+    langs = translations_autonyms.collect { |element| element.attribute_value('lang') }
 
     expected_langs == langs
   end
 
   def translations_autonyms
-    browser.elements(css: ".details.pane .translations .info.autonym")
+    browser.elements(css: '.details.pane .translations .info.autonym')
   end
 
   def click_button(label)
@@ -132,12 +132,12 @@ class ManageTranslatorSandboxPage
     # It takes a few moments until Accept and Reject buttons
     # finish performing the action, and this action always
     # removes the currently displayed users and changes the header
-    Watir::Wait.while { browser.execute_script "return window.tsbUpdatingUsers" }
+    Watir::Wait.while { browser.execute_script 'return window.tsbUpdatingUsers' }
   end
 
   def only_request_with_username_is_selected?(username)
     requests_without_username(username).all? do |element|
-      !element.attribute_value("class").split(" ").include?("selected")
+      !element.attribute_value('class').split(' ').include?('selected')
     end
   end
 end
