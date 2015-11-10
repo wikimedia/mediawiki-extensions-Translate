@@ -137,7 +137,7 @@ class ManageTranslatorSandboxPage
 
   def only_request_with_username_is_selected?(username)
     requests_without_username(username).all? do |element|
-      not element.attribute_value("class").split(" ").include?("selected")
+      !element.attribute_value("class").split(" ").include?("selected")
     end
   end
 end

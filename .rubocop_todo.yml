@@ -18,12 +18,6 @@ Metrics/LineLength:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Style/Not:
-  Exclude:
-    - 'tests/browser/features/support/pages/manage_translator_sandbox_page.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
 # Configuration parameters: PreferredDelimiters.
 Style/PercentLiteralDelimiters:
   Exclude:
