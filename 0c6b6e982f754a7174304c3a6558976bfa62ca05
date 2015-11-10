@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_de22f7fb",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-11-10T18:42:41Z",
+      "side": 1,
+      "message": "I don\u0027t think this is related to parse() vs. text(). Rather, it is likely related to either the JS parser not supporting \u003cbidi\u003e, or the below code using it incorrectly.",
+      "revId": "0c6b6e982f754a7174304c3a6558976bfa62ca05",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_9e7c7fea",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-11-10T18:42:41Z",
+      "side": 1,
+      "message": "If this wasn\u0027t wrong already, it is certainly wrong now as it will be parsing text as HTML. Use text() here as well to avoid security and character integrity issues.",
+      "revId": "0c6b6e982f754a7174304c3a6558976bfa62ca05",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
