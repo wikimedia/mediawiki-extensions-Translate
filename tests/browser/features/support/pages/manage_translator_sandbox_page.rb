@@ -99,7 +99,7 @@ class ManageTranslatorSandboxPage
   def requests_are_sorted_by_translation_count_and_date?
     expected_usernames = []
     Array(0..4).each do |num|
-      %w{Pupu Orava}.each do |name|
+      %w(Pupu Orava).each do |name|
         expected_usernames.unshift("#{name}#{num}")
       end
     end
