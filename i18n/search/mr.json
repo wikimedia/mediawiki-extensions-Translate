@@ -21,6 +21,7 @@
 	"tux-sst-prev": "< मागील",
 	"tux-sst-default": "भाषांतरे",
 	"tux-sst-translated": "$1 पासुनची भाषांतरे",
+	"tux-sst-untranslated": "$1 पासूनची भाषांतरे नकोत",
 	"tux-sst-outdated": "$1 पासुनची कालबाह्य भाषांतरे",
 	"tux-sst-ellipsis-untranslated": "भाषांतर नाही",
 	"tux-sst-ellipsis-outdated": "कालाबाह्य भाषांतरे",
