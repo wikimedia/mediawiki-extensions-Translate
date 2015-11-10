@@ -16,20 +16,6 @@ Lint/UselessAssignment:
 Metrics/LineLength:
   Max: 127
 
-# Offense count: 117
-# Cop supports --auto-correct.
-# Configuration parameters: Width.
-Style/IndentationWidth:
-  Exclude:
-    - 'tests/browser/features/step_definitions/manage_translator_sandbox_steps.rb'
-    - 'tests/browser/features/step_definitions/special_translate_steps.rb'
-    - 'tests/browser/features/step_definitions/translation_stash_steps.rb'
-    - 'tests/browser/features/support/hooks.rb'
-    - 'tests/browser/features/support/pages/manage_translator_sandbox_page.rb'
-    - 'tests/browser/features/support/pages/stash_page.rb'
-    - 'tests/browser/features/support/pages/translate_page.rb'
-    - 'tests/browser/features/support/pages/user_page.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/Not:
@@ -60,19 +46,6 @@ Style/SpaceInsideHashLiteralBraces:
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/StringLiterals:
   Enabled: false
-
-# Offense count: 246
-# Cop supports --auto-correct.
-Style/Tab:
-  Exclude:
-    - 'tests/browser/features/step_definitions/manage_translator_sandbox_steps.rb'
-    - 'tests/browser/features/step_definitions/special_translate_steps.rb'
-    - 'tests/browser/features/step_definitions/translation_stash_steps.rb'
-    - 'tests/browser/features/support/hooks.rb'
-    - 'tests/browser/features/support/pages/manage_translator_sandbox_page.rb'
-    - 'tests/browser/features/support/pages/stash_page.rb'
-    - 'tests/browser/features/support/pages/translate_page.rb'
-    - 'tests/browser/features/support/pages/user_page.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
