@@ -125,8 +125,6 @@ class ManageTranslatorSandboxPage
   end
 
   def click_button(label)
-    initial_header_text = details_header.text
-
     details_button(label).click
 
     # It takes a few moments until Accept and Reject buttons
