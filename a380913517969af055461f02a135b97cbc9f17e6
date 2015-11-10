@@ -34,6 +34,24 @@
       "revId": "a380913517969af055461f02a135b97cbc9f17e6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_9b39f4f1",
+        "filename": "Gemfile",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-11-10T10:41:35Z",
+      "side": 1,
+      "message": "Ok. Thanks",
+      "parentUuid": "0ebaf39b_db48ccd1",
+      "revId": "a380913517969af055461f02a135b97cbc9f17e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
