@@ -3,11 +3,11 @@ Given(/^I am logged in as a translation administrator$/) do
 end
 
 Given(/^I am on the Translator sandbox management page with no users in the sandbox$/) do
-  visit(ManageTranslatorSandboxPage, using_params: {extra: "integrationtesting=empty"})
+  visit(ManageTranslatorSandboxPage, using_params: { extra: "integrationtesting=empty" })
 end
 
 Given(/^I am on the Translator sandbox management page with users in the sandbox$/) do
-  visit(ManageTranslatorSandboxPage, using_params: {extra: "integrationtesting=populate"})
+  visit(ManageTranslatorSandboxPage, using_params: { extra: "integrationtesting=populate" })
 end
 
 When(/^I search for "(.*)" in the sandboxed users search field$/) do |string|
@@ -53,7 +53,7 @@ When(/^I click on the link that says "\d+ older requests?" at the bottom of the 
 end
 
 When(/^I go to the userpage of user "(.*?)"$/) do |username|
-  visit(UserPage, using_params: {extra: username})
+  visit(UserPage, using_params: { extra: username })
 end
 
 Then(/^I should see a babel box with languages "(.*?)"$/) do |languages|

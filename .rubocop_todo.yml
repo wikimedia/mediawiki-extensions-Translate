@@ -16,12 +16,6 @@ Lint/UselessAssignment:
 Metrics/LineLength:
   Max: 127
 
-# Offense count: 14
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForEmptyBraces, SupportedStyles.
-Style/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space
-
 # Offense count: 73
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
