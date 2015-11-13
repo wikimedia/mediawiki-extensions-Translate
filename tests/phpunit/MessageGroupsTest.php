@@ -24,6 +24,7 @@ class MessageGroupsTest extends MediaWikiTestCase {
 			'wgHooks' => $wgHooks,
 			'wgTranslateGroupFiles' => $conf,
 			'wgTranslateTranslationServices' => array(),
+			'wgTranslateMessageNamespaces' => array( NS_MEDIAWIKI ),
 		) );
 		$wgHooks['TranslatePostInitGroups'] = array( 'MessageGroups::getConfiguredGroups' );
 
