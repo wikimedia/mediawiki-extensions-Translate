@@ -51,7 +51,15 @@ abstract class MessageIndex {
 	 * @return array
 	 */
 	public static function getGroupIds( MessageHandle $handle ) {
-		$namespace = $handle->getTitle()->getNamespace();
+		global $wgTranslateMessageNamespaces;
+
+		$title = $handle->getTitle();
+
+		if ( !$title->inNamespaces( $wgTranslateMessageNamespaces ) ) {
+			return array();
+		}
+
+		$namespace = $title->getNamespace();
 		$key = $handle->getKey();
 		$normkey = TranslateUtils::normaliseKey( $namespace, $key );
 
