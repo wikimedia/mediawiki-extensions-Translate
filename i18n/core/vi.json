@@ -6,6 +6,7 @@
 		]
 	},
 	"translate": "Biên dịch",
+	"translate-extensionname": "Biên dịch",
 	"translate-desc": "[[Special:Translate|Trang đặc biệt]] dùng để dịch MediaWiki và các thứ khác",
 	"translate-taskui-view": "Hiện tất cả các thông điệp",
 	"translate-taskui-untranslated": "Các thông điệp chưa dịch",
@@ -28,11 +29,11 @@
 	"translate-page-group": "Nhóm",
 	"translate-page-language": "Ngôn ngữ",
 	"translate-page-limit": "Giới hạn",
-	"translate-page-limit-option": "$1 {{PLURAL:$1|thông điệp|thông điệp}} mỗi trang",
+	"translate-page-limit-option": "$1 thông điệp mỗi trang",
 	"translate-submit": "Xem",
 	"translate-page-navigation-legend": "Điều khiển",
 	"translate-page-showing": "Đang hiển thị thông điệp có thứ tự từ $1 đến $2 trong tổng số $3 thông điệp.",
-	"translate-page-showing-all": "Đang hiển thị $1 {{PLURAL:$1|thông điệp|thông điệp}}.",
+	"translate-page-showing-all": "Đang hiển thị $1 thông điệp.",
 	"translate-page-showing-none": "Không có thông điệp nào.",
 	"translate-page-paging-links": "[ $1 ] [ $2 ]",
 	"translate-next": "Trang sau",
@@ -80,10 +81,10 @@
 	"translate-magic-saved": "Thay đổi của bạn đã được lưu.",
 	"translate-checks-parameters": "{{PLURAL:$2|Tham số|Những tham số}} sau không sử dụng:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Tham số|Các tham số}} sau không rõ:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-balance": "Số {{PLURAL:$2|dấu ngoặc|dấu ngoặc}} bị lẻ:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-balance": "Số {{PLURAL:$2}}dấu ngoặc bị lẻ:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Liên kết|Các liên kết}} sau có vấn đề:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Liên kết|Các liên kết}} sau đây bị thiếu:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-xhtml": "Xin thay thế{{PLURAL:$2|| các}} thẻ sau bằng thẻ đúng:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-xhtml": "Xin thay thế {{PLURAL:$2|thẻ|các thẻ}} sau bằng thẻ đúng:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Định nghĩa sử dụng <nowiki>{{PLURAL:}}</nowiki> nhưng bản dịch không có.",
 	"translate-checks-plural-forms": "{{PLURAL:$1|Một dạng|$1 dạng}} được cung cấp trong thẻ <nowiki>{{PLURAL:}}</nowiki> nhưng ngôn ngữ {{PLURAL:$2|không có phân biệt số ít với số nhiều|chỉ có phân biệt $2 dạng số}} (trừ các dạng 0= và 1=).",
 	"translate-checks-plural-dupe": "Đuôi của thẻ <nowiki>{{PLURAL:}}</nowiki> có dạng thừa. Ví dụ nên đổi <nowiki>{{PLURAL:$1|chó|chó}}</nowiki> thành <nowiki>{{PLURAL:$1|chó}}</nowiki>.",
@@ -378,5 +379,6 @@
 	"translate-search-more-groups-info": "$1 nhóm nữa",
 	"translate-ulsdep-title": "Lỗi cấu hình",
 	"translate-ulsdep-body": "Phần mở rộng Biên dịch cần [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector?uselang=vi phần mở rộng Lựa chọn Ngôn ngữ Toàn thể].",
-	"tux-session-expired": "Bạn không còn đăng nhập. Xin vui lòng đăng nhập trong thẻ riêng. Thay thế, hãy sao chép các bản dịch chưa lưu, đăng nhập, trở lại trang này, và nhập lại các bản dịch của bạn."
+	"tux-session-expired": "Bạn không còn đăng nhập. Xin vui lòng đăng nhập trong thẻ riêng. Thay thế, hãy sao chép các bản dịch chưa lưu, đăng nhập, trở lại trang này, và nhập lại các bản dịch của bạn.",
+	"tux-nojs": "Trang này cần JavaScript."
 }

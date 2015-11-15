@@ -104,6 +104,7 @@
 	"translate-statsf-count-reviewers": "Berrikusleak",
 	"translate-statsf-submit": "Aurreikuspena",
 	"translate-tag-category": "Orri itzulgarriak",
+	"translate-tag-page-desc": "[[$2|$1]] wiki orrialdearen itzulpena $3(e)tik ($4).",
 	"translate-sidebar-alltrans": "Erdaretan",
 	"translations": "Itzulpen guztiak",
 	"translate-translations-no-message": "\"$1\" itzulezina den mezua da. (ezin da euskaratu)",
