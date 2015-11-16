@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wizardist"
+			"Wizardist",
+			"Renessaince"
 		]
 	},
 	"searchtranslations": "Пошук перакладаў",
@@ -16,6 +17,6 @@
 	"tux-sst-nosolr-body": "Гэтая вікі ня мае службы пошуку перакладаў.",
 	"tux-sst-solr-offline-title": "Пошук недаступны",
 	"tux-sst-solr-offline-body": "Служба пошуку часова недаступная.",
-	"tux-sst-next": "Наступныя вынікі",
-	"tux-sst-prev": "Папярэднія вынікі"
+	"tux-sst-next": "Наступныя ›",
+	"tux-sst-prev": "‹ Папярэднія"
 }
