@@ -285,7 +285,6 @@ class MessageTable {
 		$attribs = array(
 			'type' => 'button',
 			'class' => 'mw-translate-messagereviewbutton',
-			'data-token' => ApiTranslationReview::getToken( 0, '' ),
 			'data-revision' => $revision,
 			'name' => 'acceptbutton-' . $revision, // Otherwise Firefox disables buttons on page load
 		);

@@ -19,6 +19,7 @@
 			title = 'Translations:' + pageName + '/' + identifier + '/' + langCode;
 			summary = $( '#pm-summary' ).val();
 
+			// Change to csrf when support for MW 1.25 is dropped
 			return api.postWithToken( 'edit', {
 				action: 'edit',
 				format: 'json',

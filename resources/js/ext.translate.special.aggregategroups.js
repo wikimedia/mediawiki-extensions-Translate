@@ -6,15 +6,14 @@
 	function getApiParams( $target ) {
 		return {
 			action: 'aggregategroups',
-			token: $( '#token' ).val(),
-			aggregategroup: $target.parents( '.mw-tpa-group' ).data( 'groupid' ),
-			format: 'json'
+			aggregategroup: $target.parents( '.mw-tpa-group' ).data( 'groupid' )
 		};
 	}
 
 	function dissociate( event ) {
 		var params,
-			$target = $( event.target );
+			$target = $( event.target ),
+			api = new mw.Api();
 
 		function successFunction() {
 			$target.parent( 'li' ).remove();
@@ -24,9 +23,13 @@
 			'do': 'dissociate',
 			group: $target.data( 'groupid' )
 		} );
-		new mw.Api().post( params ).done( successFunction ).fail( function ( code, data ) {
-			window.alert( data.error && data.error.info );
-		} );
+
+		// Change to csrf when support for MW 1.25 is dropped
+		api.postWithToken( 'edit', params )
+			.done( successFunction )
+			.fail( function ( code, data ) {
+				window.alert( data.error && data.error.info );
+			} );
 	}
 
 	function associate( event, resp ) {
@@ -34,7 +37,8 @@
 			$target = $( event.target ),
 			$parent = $target.parents( '.mw-tpa-group' ),
 			parentId = $parent.data( 'id' ),
-			subgroupName = $parent.children( '.tp-group-input' ).val();
+			subgroupName = $parent.children( '.tp-group-input' ).val(),
+			api = new mw.Api();
 
 		successFunction = function () {
 			var aAttr, $a, spanAttr, $span, $ol;
@@ -72,16 +76,22 @@
 				'do': 'associate',
 				group: subgroupId
 			} );
-			new mw.Api().post( params ).done( successFunction ).fail( function ( code, data ) {
-				window.alert( data.error && data.error.info );
-			} );
+
+			// Change to csrf when support for MW 1.25 is dropped
+			api.postWithToken( 'edit', params )
+				.done( successFunction )
+				.fail( function ( code, data ) {
+					window.alert( data.error && data.error.info );
+				} );
 		} else {
 			alert( mw.msg( 'tpt-invalid-group' ) );
 		}
 	}
 
 	function removeGroup( event ) {
-		var params, $target = $( event.target );
+		var params,
+			$target = $( event.target ),
+			api = new mw.Api();
 
 		function successFunction() {
 			$( event.target ).parents( '.mw-tpa-group' ).remove();
@@ -93,9 +103,13 @@
 			params = $.extend( getApiParams( $target ), {
 				'do': 'remove'
 			} );
-			new mw.Api().post( params ).done( successFunction ).fail( function ( code, data ) {
-				window.alert( data.error && data.error.info );
-			} );
+
+			// Change to csrf when support for MW 1.25 is dropped
+			api.postWithToken( 'edit', params )
+				.done( successFunction )
+				.fail( function ( code, data ) {
+					window.alert( data.error && data.error.info );
+				} );
 		}
 	}
 
@@ -126,16 +140,18 @@
 		params = {
 			action: 'aggregategroups',
 			'do': 'update',
-			token: $( '#token' ).val(),
 			groupname: aggregateGroupName,
 			groupdescription: aggregateGroupDesc,
 			aggregategroup: aggregateGroupId,
 			format: 'json'
 		};
 
-		api.post( params ).done( successFunction ).fail( function ( code, data ) {
-			window.alert( data.error.info );
-		} );
+		// Change to csrf when support for MW 1.25 is dropped
+		api.postWithToken( 'edit', params )
+			.done( successFunction )
+			.fail( function ( code, data ) {
+				window.alert( data.error.info );
+			} );
 	}
 
 	function cancelEditGroup( event ) {
@@ -229,7 +245,8 @@
 				aggGroupNameInputName = $( 'input.tp-aggregategroup-add-name' ),
 				aggGroupNameInputDesc = $( 'input.tp-aggregategroup-add-description' ),
 				aggregateGroupName = aggGroupNameInputName.val(),
-				aggregateGroupDesc = aggGroupNameInputDesc.val();
+				aggregateGroupDesc = aggGroupNameInputDesc.val(),
+				api = new mw.Api();
 
 			// Empty the fields. If they are not emptied, then when another group
 			// is added, the values will appear again.
@@ -335,14 +352,17 @@
 			params = {
 				action: 'aggregategroups',
 				'do': 'add',
-				token: $( '#token' ).val(),
 				groupname: aggregateGroupName,
 				groupdescription: aggregateGroupDesc,
 				format: 'json'
 			};
-			new mw.Api().post( params ).done( successFunction ).fail( function ( code, data ) {
-				window.alert( data.error && data.error.info );
-			} );
+
+			// Change to csrf when support for MW 1.25 is dropped
+			api.postWithToken( 'edit', params )
+				.done( successFunction )
+				.fail( function ( code, data ) {
+					window.alert( data.error && data.error.info );
+				} );
 		} );
 	} );
 } ( jQuery, mediaWiki ) );

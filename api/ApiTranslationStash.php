@@ -91,25 +91,12 @@ class ApiTranslationStash extends ApiBase {
 		);
 	}
 
-
 	public function isWriteMode() {
 		return true;
 	}
 
-	public function getTokenSalt() {
-		return 'translationstash';
-	}
-
-	public static function getToken() {
-		$user = RequestContext::getMain()->getUser();
-
-		return $user->getEditToken( 'translationstash' );
-	}
-
-	public static function injectTokenFunction( &$list ) {
-		$list['translationstash'] = array( __CLASS__, 'getToken' );
-
-		return true;
+	public function needsToken() {
+		return 'csrf';
 	}
 
 	public function getAllowedParams() {

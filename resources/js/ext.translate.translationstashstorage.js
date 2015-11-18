@@ -20,14 +20,15 @@
 		 * @return {jQuery.Promise}
 		 */
 		save: function ( title, translation ) {
-			var deferred = new mw.Api().postWithToken( 'translationstash', {
+			var api = new mw.Api();
+
+			// Change to csrf when support for MW 1.25 is dropped
+			return api.postWithToken( 'edit', {
 				action: 'translationstash',
 				subaction: 'add',
 				title: title,
 				translation: translation
-			} );
-
-			return deferred.promise();
+			} ).promise();
 		},
 
 		/**
@@ -35,13 +36,14 @@
 		 * @return {jQuery.Promise}
 		 */
 		getUserTranslations: function ( user ) {
-			var deferred = new mw.Api().postWithToken( 'translationstash', {
+			var api = new mw.Api();
+
+			// Change to csrf when support for MW 1.25 is dropped
+			return api.postWithToken( 'edit', {
 				action: 'translationstash',
 				subaction: 'query',
 				username: user
-			} );
-
-			return deferred.promise();
+			} ).promise();
 		}
 
 	};

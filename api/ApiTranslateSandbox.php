@@ -179,37 +179,12 @@ class ApiTranslateSandbox extends ApiBase {
 		return $editResult;
 	}
 
-	public function mustBePosted() {
-		return true;
-	}
-
 	public function isWriteMode() {
 		return true;
 	}
 
 	public function needsToken() {
 		return 'csrf';
-	}
-
-	// This function exists for backwards compatibility with MediaWiki before
-	// 1.24
-	public function getTokenSalt() {
-		return 'sandbox';
-	}
-
-	// This function maintains backwards compatibility with self::getToken()
-	// below. If salt is removed from self::getToken() and nothing else (e.g.
-	// JS) generates the token directly, this could probably be removed.
-	protected function getWebUITokenSalt( array $params ) {
-		return 'sandbox';
-	}
-
-	// This function implements pre-1.24 token fetching via the
-	// ApiTokensGetTokenTypes hook, kept for backwards compatibility.
-	public static function getToken() {
-		// Who designed this?!?!?!
-		$user = RequestContext::getMain()->getUser();
-		return $user->getEditToken( 'sandbox' );
 	}
 
 	public function getAllowedParams() {
@@ -254,13 +229,5 @@ class ApiTranslateSandbox extends ApiBase {
 	 */
 	public function getDescription() {
 		return 'Signup and manage sandboxed users';
-	}
-
-	// This function implements pre-1.24 token fetching via the
-	// ApiTokensGetTokenTypes hook, kept for backwards compatibility.
-	public static function injectTokenFunction( &$list ) {
-		$list['translatesandbox'] = array( __CLASS__, 'getToken' );
-
-		return true;
 	}
 }

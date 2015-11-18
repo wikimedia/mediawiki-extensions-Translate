@@ -98,11 +98,6 @@ $wgAPIModules['translationreview'] = 'ApiTranslationReview';
 $wgAPIModules['translationstash'] = 'ApiTranslationStash';
 $wgAPIModules['ttmserver'] = 'ApiTTMServer';
 $wgAPIModules['searchtranslations'] = 'ApiSearchTranslations';
-$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiTranslationReview::injectTokenFunction';
-$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiGroupReview::injectTokenFunction';
-$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiAggregateGroups::injectTokenFunction';
-$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiTranslateSandbox::injectTokenFunction';
-$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiTranslationStash::injectTokenFunction';
 
 // Register hooks.
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';

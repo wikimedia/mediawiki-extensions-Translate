@@ -21,7 +21,10 @@
 		 * @return {jQuery.Promise}
 		 */
 		save: function ( title, translation ) {
-			return (new mw.Api()).postWithToken( 'edit', {
+			var api = new mw.Api();
+
+			// Change to csrf when support for MW 1.25 is dropped
+			return api.postWithToken( 'edit', {
 				action: 'edit',
 				title: title,
 				text: translation,

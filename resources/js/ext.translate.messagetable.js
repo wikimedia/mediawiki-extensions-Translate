@@ -789,6 +789,8 @@
 	};
 
 	$( 'document' ).ready( function () {
+		var api = new mw.Api();
+
 		// Currently used only in the pre-TUX editor
 		$( '.mw-translate-messagereviewbutton' ).click( function () {
 			var $b, successFunction, failFunction, params;
@@ -812,13 +814,13 @@
 
 			params = {
 				action: 'translationreview',
-				token: $b.data( 'token' ),
 				revision: $b.data( 'revision' )
 			};
 			$b.val( mw.msg( 'translate-messagereview-progress' ) );
 			$b.prop( 'disabled', true );
 
-			new mw.Api().post( params ).done( successFunction ).fail( failFunction );
+			// Change to csrf when support for MW 1.25 is dropped
+			api.postWithToken( 'edit', params ).done( successFunction ).fail( failFunction );
 		} );
 	} );
 
