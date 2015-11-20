@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Flrn"
+			"Flrn",
+			"Mashoi7"
 		]
 	},
-	"translate-page-navigation-legend": "Valličy"
+	"translate": "Kiännä",
+	"translate-taction-translate": "Kiännä",
+	"translate-page-navigation-legend": "Valličy",
+	"tux-languageselector": "Kieli",
+	"tux-empty-list-translated-action": "Kiännä"
 }

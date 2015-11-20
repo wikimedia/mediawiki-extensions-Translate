@@ -4,7 +4,8 @@
 			"Ex13",
 			"Herr Mlinka",
 			"SpeedyGonsales",
-			"Roberta F."
+			"Roberta F.",
+			"MaGa"
 		]
 	},
 	"pagetranslation": "Prijevod stranice",
@@ -36,5 +37,8 @@
 	"pt-movepage-action-perform": "Premjesti",
 	"pt-movepage-action-other": "Promijeni cilj",
 	"pt-movepage-intro": "Ova posebna stranica omogućava vam premještanje stranica koje su označene za prijevod.\nPremještanje nije trenutačno, jer mnoge stranice treba premjestiti.\nRed poslova će se koristiti za premještanje stranica.\nDok se stranice premještaju, nije moguće raditi na stranicama u pitanju.\nKvarovi/pogreške biti će prijavljene u evidenciji prijevoda i trebaju se ručno popraviti.",
-	"pt-movepage-logreason": "Dio prevodive stranice $1."
+	"pt-movepage-logreason": "Dio prevodive stranice $1.",
+	"pm-savepages-button-label": "Spremi",
+	"pp-save-button-label": "Spremi",
+	"pp-save-message": "Stranica je spremljena. Možete je [$1 uređivati]."
 }
