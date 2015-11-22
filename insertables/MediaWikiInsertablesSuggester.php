@@ -22,6 +22,13 @@ class MediaWikiInsertablesSuggester {
 		$insertables = array_merge( $insertables, $new );
 
 		$matches = array();
+		preg_match_all( '/\$1[a-z0-9]+/', $text, $matches, PREG_SET_ORDER );
+		$new = array_map( function( $match ) {
+			return new Insertable( $match[0], $match[0] );
+		}, $matches );
+		$insertables = array_merge( $insertables, $new );
+
+		$matches = array();
 		preg_match_all(
 			'/({{((?:PLURAL|GENDER|GRAMMAR):[^|]*)\|).*?(}})/i',
 			$text,
