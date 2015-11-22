@@ -14,6 +14,49 @@
 class MediaWikiMessageCheckerTest extends MediaWikiTestCase {
 
 	/**
+	 * @dataProvider getInsertableMatchesProvider
+	 */
+	public function testInsertableMatches( $expected, $text, $comment ) {
+		$provided = MediaWikiInsertablesSuggester::getInsertables($text);
+		$this->assertEquals( $expected, $provided, $comment );
+	}
+
+	public function getInsertableMatchesProvider() {
+		return array(
+			array(
+				array(new Insertable('$34', '$34')),
+				'abc $34 def',
+				'$34 references a variable'
+			),
+			array(
+				array(new Insertable('$1username123', '$1username123')),
+				'Hello $1username123!',
+				'$1username123 references a user'
+			),
+			array(
+				array(new Insertable('$123', '$123')),
+				'abc $123 def',
+				'$123 shouldn\'t be matched twice even though it could be a user or a variable'
+			),
+			array(
+				array(new Insertable('plural:1', '{{plural:1|', '}}')),
+				'{{plural:1|is|are}}',
+				'Plural localization should be matched, but not the text in it'
+			),
+			array(
+				array(new Insertable('gender:username', '{{gender:username|', '}}')),
+				'{{gender:username|he|she|}}',
+				'Gender localization should be matched, but not the text in it'
+			),
+			array(
+				array(new Insertable('grammar:1', '{{grammar:1|', '}}')),
+				'{{grammar:1|apple}}',
+				'Grammar localization should be matched, but not the text in it'
+			)
+		);
+	}
+
+	/**
 	 * @dataProvider getPluralFormCountProvider
 	 */
 	public function testGetPluralFormCount( $expected, $code, $comment ) {
