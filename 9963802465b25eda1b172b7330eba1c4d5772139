@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_04e54306",
+        "filename": "insertables/MediaWikiInsertablesSuggester.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-11-24T07:50:35Z",
+      "side": 1,
+      "message": "It looks to me that currently neither matches $1.\n\nMaybe if you combine these to one, it would work nicely:\n\n/\\$[0-9]+|\\$1[a-z]+/\n\nIt should pick the longest match, so $1user will produce $1user.\n\nI am not aware of numbers needed in $1user case, are you?",
+      "revId": "9963802465b25eda1b172b7330eba1c4d5772139",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_e4226f4f",
+        "filename": "tests/phpunit/MediaWikiMessageCheckerTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-11-24T07:50:35Z",
+      "side": 1,
+      "message": "I think you got the wrong file, please see insertables/MediaWikiInsertablesSuggesterTest.php",
+      "revId": "9963802465b25eda1b172b7330eba1c4d5772139",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_a4eb17da",
+        "filename": "tests/phpunit/MediaWikiMessageCheckerTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-11-24T07:50:35Z",
+      "side": 1,
+      "message": "Please follow the coding conventions.\n\nReference: https://www.mediawiki.org/wiki/Manual:Coding_conventions/PHP#Spaces",
+      "revId": "9963802465b25eda1b172b7330eba1c4d5772139",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
