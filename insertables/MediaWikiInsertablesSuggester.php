@@ -15,7 +15,7 @@ class MediaWikiInsertablesSuggester {
 		$insertables = array();
 
 		$matches = array();
-		preg_match_all( '/\$[0-9]+/', $text, $matches, PREG_SET_ORDER );
+		preg_match_all( '/\$(1[a-z]+|[0-9]+)/', $text, $matches, PREG_SET_ORDER );
 		$new = array_map( function( $match ) {
 			return new Insertable( $match[0], $match[0] );
 		}, $matches );
