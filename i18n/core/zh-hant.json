@@ -324,7 +324,7 @@
 	"tux-editor-skip-button-label": "跳至下一筆",
 	"tux-editor-cancel-button-label": "取消",
 	"tux-editor-confirm-button-label": "確認翻譯",
-	"tux-editor-shortcut-info": "使用 \"$1\" 儲存，或 \"$2\" 跳至下一筆息或 \"$3\" 使用其他捷徑。",
+	"tux-editor-shortcut-info": "使用 \"$1\" 儲存，或 \"$2\" 跳至下一筆訊息或 \"$3\" 使用其他捷徑。",
 	"tux-editor-edit-desc": "編輯說明",
 	"tux-editor-add-desc": "新增說明",
 	"tux-editor-suggestions-title": "建議",
