@@ -6,7 +6,10 @@
 			"Ljonka"
 		]
 	},
+	"apihelp-aggregategroups-param-aggregategroup": "Kennung der zusammengefassten Nachrichtengruppe.",
 	"apihelp-aggregategroups-param-group": "Nachrichtengruppenkennung.",
+	"apihelp-aggregategroups-param-groupname": "Name der zusammengefassten Nachrichtengruppe.",
+	"apihelp-aggregategroups-param-groupdescription": "Beschreibung der zusammengefassten Nachrichtengruppe.",
 	"apihelp-aggregategroups-example-1": "Verknüpft eine Gruppe",
 	"apihelp-groupreview-param-group": "Nachrichtengruppe.",
 	"apihelp-groupreview-param-language": "Sprachcode.",
