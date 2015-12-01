@@ -543,36 +543,6 @@
 		} );
 	}
 
-	$( document ).ready( function () {
-		var $requestCheckboxes = $( '.request-selector' ),
-			$selectAll = $( '.request-selector-all' ),
-			$requestRows = $( '.requests .request' );
-
-		// Delay so we get the correct height on page load
-		window.setTimeout( setPanesHeight, 0 );
-		$( window ).on( 'resize', setPanesHeight );
-
-		$( '.request-filter-box' ).translatorSearch();
-		$( '.language-selector' ).languageFilter();
-
-		// Handle clicks for the 'Select all' checkbox
-		$selectAll.on( 'click', selectAllRequests );
-
-		// Handle clicks on request checkboxes.
-		$requestCheckboxes.on( 'click change', requestSelectHandler );
-
-		// Handle clicks on request rows.
-		$requestRows.on( 'click',  onSelectRequest );
-
-		$( '.older-requests-indicator' ).on( 'click',  oldRequestSelector );
-
-		if ( $requestRows.length ) {
-			$requestRows.first().click();
-		}
-
-		updateRequestCount();
-	} );
-
 	// ======================================
 	// LanguageFilter plugin
 	// ======================================
@@ -740,4 +710,34 @@
 			timer = setTimeout( callback, milliseconds );
 		};
 	} () );
+
+	$( document ).ready( function () {
+		var $requestCheckboxes = $( '.request-selector' ),
+			$selectAll = $( '.request-selector-all' ),
+			$requestRows = $( '.requests .request' );
+
+		// Delay so we get the correct height on page load
+		window.setTimeout( setPanesHeight, 0 );
+		$( window ).on( 'resize', setPanesHeight );
+
+		$( '.request-filter-box' ).translatorSearch();
+		$( '.language-selector' ).languageFilter();
+
+		// Handle clicks for the 'Select all' checkbox
+		$selectAll.on( 'click', selectAllRequests );
+
+		// Handle clicks on request checkboxes.
+		$requestCheckboxes.on( 'click change', requestSelectHandler );
+
+		// Handle clicks on request rows.
+		$requestRows.on( 'click',  onSelectRequest );
+
+		$( '.older-requests-indicator' ).on( 'click',  oldRequestSelector );
+
+		if ( $requestRows.length ) {
+			$requestRows.first().click();
+		}
+
+		updateRequestCount();
+	} );
 }( jQuery, mediaWiki ) );
