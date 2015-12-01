@@ -15,6 +15,7 @@
 	"tux-sst-nosolr-title": "Bilaketa ez dago erabilgarri",
 	"tux-sst-solr-offline-title": "Bilaketa ez dago erabilgarri",
 	"tux-sst-solr-offline-body": "Une honetan bilaketa zerbitzua ez dago erabilgarri.",
-	"tux-sst-next": "Hurrengo emaitzak",
-	"tux-sst-prev": "Aurreko emaitzak"
+	"tux-sst-next": "Hurrengoa >",
+	"tux-sst-prev": "< Aurrekoa",
+	"tux-sst-default": "Itzulpenak"
 }
