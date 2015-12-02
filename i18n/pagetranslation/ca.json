@@ -12,7 +12,8 @@
 			"Jmarchn",
 			"Macofe",
 			"Joan manel",
-			"Ssola"
+			"Ssola",
+			"Jaumeortola"
 		]
 	},
 	"pagetranslation": "Traducció d'una pàgina",
@@ -79,6 +80,6 @@
 	"pm-langcode-missing": "Introduïu el codi de l’idioma",
 	"pm-pagetitle-invalid": "Introduïu un títol vàlid per la pàgina",
 	"pp-save-button-label": "Desa",
-	"pp-cancel-button-label": "Canceŀla",
+	"pp-cancel-button-label": "Cancel·la",
 	"pp-pagename-missing": "Introduïu el nom de la pàgina."
 }

@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mashoi7"
+			"Mashoi7",
+			"Likopiän tyttö"
 		]
 	},
-	"tux-sst-default": "Kiännökset",
+	"tux-sst-default": "Kiännökšet",
 	"tux-sst-untranslated": "Kiändämättäh kielespäi $1"
 }
