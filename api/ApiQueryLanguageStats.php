@@ -3,7 +3,7 @@
  * Api module for language group stats.
  *
  * @file
- * @copyright Copyright © 2012-2013, Niklas Laxström
+ * @author Niklas Laxström
  * @license GPL-2.0+
  */
 

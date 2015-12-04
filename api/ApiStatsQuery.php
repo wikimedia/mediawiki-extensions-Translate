@@ -3,7 +3,7 @@
  * A base module for querying message group related stats.
  *
  * @file
- * @copyright Copyright © 2012-2013, Niklas Laxström
+ * @author Niklas Laxström
  * @license GPL-2.0+
  */
 
