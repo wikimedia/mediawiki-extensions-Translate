@@ -226,8 +226,9 @@ class PageTranslationHooks {
 		ksort( $status );
 
 		// This way the parser knows to fragment the parser cache by language code
-		$userLangCode = $parser->getOptions()->getUserLang();
-		$userLangDir = $parser->getOptions()->getUserLangObj()->getDir();
+		$userLang = $parser->getOptions()->getUserLangObj();
+		$userLangCode = $userLang->getCode();
+		$userLangDir = $userLang->getDir();
 		// Should call $page->getMessageGroup()->getSourceLanguage(), but
 		// group is sometimes null on WMF during page moves, reason unknown.
 		// This should do the same thing for now.
@@ -295,9 +296,8 @@ class PageTranslationHooks {
 
 		// dirmark (rlm/lrm) is added, because languages with RTL names can
 		// mess the display
-		$lang = Language::factory( $userLangCode );
-		$sep = wfMessage( 'tpt-languages-separator' )->inLanguage( $lang )->escaped();
-		$sep .= $lang->getDirMark();
+		$sep = wfMessage( 'tpt-languages-separator' )->inLanguage( $userLang )->escaped();
+		$sep .= $userLang->getDirMark();
 		$languages = implode( $sep, $languages );
 
 		$out = Html::openElement( 'div', array(
