@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ceb37bc7_9edc824d",
+        "filename": "tests/phpunit/insertables/MediaWikiInsertablesSuggesterTest.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2015-12-04T16:29:36Z",
+      "side": 1,
+      "message": "16:22:53  25 | WARNING | [x] Space found before opening parenthesis of function\n16:22:53     |         |     call\n16:22:53     |         |     (MediaWiki.WhiteSpace.SpaceyParenthesis.SpaceBeforeOpeningParenthesis)",
+      "revId": "e6b11bbdb41d7766d4d94ae53e09ebb13af6d0a6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
