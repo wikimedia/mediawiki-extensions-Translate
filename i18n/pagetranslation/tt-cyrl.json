@@ -7,7 +7,9 @@
 	},
 	"pagetranslation": "Битләр тәрҗемәсе",
 	"tpt-diff-new": "Яңа текст",
+	"tpt-sections-prioritylangs": "Төп телләр",
 	"translate-tag-translate-link-desc": "Бу битне тәрҗемә итү",
 	"tpt-translation-intro": "Әлеге бит [[$2]] сәхифәсенең <span class=\"plainlinks\">[$1 тәрҗемәсе булып тора]</span>. Тәрҗемә $3% башкарылган.",
+	"tpt-languages-legend": "Башка телләр:",
 	"tpt-languages-nonzero": "$1 ($2% тәрҗемә телгән)"
 }

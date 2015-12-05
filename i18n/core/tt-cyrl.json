@@ -53,6 +53,7 @@
 	"translate-checks-parameters": "{{PLURAL:$2|Әлеге параметрлар кулланылмый}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Билгесез параметрлар}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-pref-nonewsletter": "Минем электрон почтага мәгълүмати бюллетень җибәрмәскә",
+	"translate-pref-editassistlang": "Ярдәмчел телләр:",
 	"translate-sidebar-alltrans": "Башка телләрдә",
 	"translations": "Барлык тәрҗемәләр",
 	"translate-translations-fieldset-title": "Хәбәр",
@@ -78,6 +79,7 @@
 	"translate-percentage-complete": "Башкарылган эш",
 	"translate-percentage-fuzzy": "Искергән битләр",
 	"translate-languagestats-overall": "Барлык төркемнәрнең хәбәрләре",
+	"translate-mgs-totals": "Барлык телләр",
 	"supportedlanguages": "Кулланылучы телләр",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Тәрҗемәче}}|Тәрҗемәчеләр}}: $1",
 	"supportedlanguages-recenttranslations": "яңа тәрҗемәләр",
@@ -90,5 +92,6 @@
 	"translate-js-support": "Сорау бирү",
 	"translate-documentation-language": "Хат документациясе",
 	"translate-msggroupselector-search-all": "Барлык",
-	"tux-tab-all": "Барлык"
+	"tux-tab-all": "Барлык",
+	"tux-editor-in-other-languages": "Башка телләрдә"
 }
