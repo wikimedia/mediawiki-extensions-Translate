@@ -26,6 +26,7 @@
 	"tpt-aggregategroup-add": "ورگډول",
 	"tpt-aggregategroup-save": "خوندي کول",
 	"tpt-aggregategroup-new-name": "نوم:",
+	"tpt-aggregategroup-new-description": "څرگندونه (اختياري):",
 	"tpt-aggregategroup-invalid-group": "دا ډله نشته",
 	"tpt-aggregategroup-edit-name": "نوم:",
 	"tpt-aggregategroup-edit-description": "څرگندونه:",
