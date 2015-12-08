@@ -13,7 +13,7 @@
  *
  * @ingroup SpecialPage PageTranslation
  */
-class SpecialPageTranslationMovePage extends SpecialPage {
+class SpecialPageTranslationMovePage extends MovePageForm {
 	// Basic form parameters both as text and as titles
 	protected $newText, $oldText;
 
@@ -124,14 +124,14 @@ class SpecialPageTranslationMovePage extends SpecialPage {
 				$blockers = $this->checkMoveBlockers();
 				if ( count( $blockers ) ) {
 					$this->showErrors( $blockers );
-					$this->showForm();
+					$this->showForm( array() );
 				} else {
 					$this->showConfirmation();
 				}
 			} elseif ( $subaction === 'perform' && $this->checkToken() && $request->wasPosted() ) {
 				$this->performAction();
 			} else {
-				$this->showForm();
+				$this->showForm( array() );
 			}
 		} else {
 			// Delegate... don't want to reimplement this
@@ -206,7 +206,7 @@ class SpecialPageTranslationMovePage extends SpecialPage {
 	/**
 	 * The query form.
 	 */
-	protected function showForm() {
+	public function showForm( $par ) {
 		$this->getOutput()->addWikiMsg( 'pt-movepage-intro' );
 
 		$br = Html::element( 'br' );
