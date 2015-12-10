@@ -1,8 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hosseinblue"
+			"Hosseinblue",
+			"Lakzon"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% ترجمه‌شده)"
+	"tpt-other-pages-title": "وةڵگةل نادرست",
+	"tpt-translation-intro": "این صفحه <span class=\"plainlinks\">[$1 نسخهٔ ترجمه‌شدهٔ]</span> صفحهٔ [[$2]] است و ترجمهٔ آن $3٪ کامل شده‌است.",
+	"tpt-languages-nonzero": "$1 ($2% ترجمه‌شده)",
+	"tpt-aggregategroup-new-description": "توضیحات (اختیاری):",
+	"tpt-aggregategroup-edit-description": "شرح:",
+	"pt-deletepage-list-translation": "وةڵگةل تةرجؤمة"
 }

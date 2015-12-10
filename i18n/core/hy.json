@@ -3,13 +3,14 @@
 		"authors": [
 			"Chaojoker",
 			"Vadgt",
-			"Դավիթ Սարոյան"
+			"Դավիթ Սարոյան",
+			"Beko"
 		]
 	},
-	"translate": "Թագմանություն",
-	"translate-taction-translate": "Թագմանություն",
+	"translate": "Թարգմանություն",
+	"translate-taction-translate": "Թարգմանություն",
 	"translate-taction-proofread": "Սրբագրել",
-	"translate-edit-translation": "Թագմանություն",
+	"translate-edit-translation": "Թարգմանություն",
 	"translate-magic-module": "Մոդուլ:",
 	"translate-sidebar-alltrans": "Այլ լեզուներով",
 	"translate-manage-import-new": "Նոր Հաղորդագրություն $1",

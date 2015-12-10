@@ -24,5 +24,6 @@
 	"tux-sst-untranslated": "Brak tłumaczeń z $1",
 	"tux-sst-outdated": "Przestarzałe tłumaczenia z $1",
 	"tux-sst-ellipsis-untranslated": "Brak tłumaczeń",
-	"tux-sst-ellipsis-outdated": "Przestarzałe tłumaczenia"
+	"tux-sst-ellipsis-outdated": "Przestarzałe tłumaczenia",
+	"tux-sst-case-sensitive": "Rozróżniaj wielkość liter"
 }

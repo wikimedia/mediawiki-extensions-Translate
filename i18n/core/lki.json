@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hosseinblue"
+			"Hosseinblue",
+			"Lakzon"
 		]
 	},
 	"translate-taction-export": "در بِردن",
+	"translate-tag-category": "صفحه‌های قابل ترجمه",
+	"translate-manage-import-done": "وارد کردن تکمیل شد!",
 	"translate-documentation-language": "مستندات پیام"
 }

@@ -225,7 +225,7 @@
 	"translate-manage-toolong": "超出處理時間限制 $1 秒。\n請重新送出表單，以繼續進行處理。",
 	"translate-manage-import-summary": "正在從外部來源匯入新版",
 	"translate-manage-conflict-summary": "正在從外部來源匯入新版。\n請檢查。",
-	"translate-manage-fuzzy-summary": "訊息原文已更改",
+	"translate-manage-fuzzy-summary": "訊息定義已變更",
 	"translate-manage-submit": "執行",
 	"translate-manage-intro-other": "下列是在 $1 語言的翻譯變更清單。\n請檢查變更，並選擇每一個變更所要執行的動作。\n若您不想變更，您可以選擇忽略。",
 	"translate-manage-import-ok": "已匯入：$1",
