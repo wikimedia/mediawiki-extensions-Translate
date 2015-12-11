@@ -5,8 +5,16 @@
 			"Lakzon"
 		]
 	},
+	"translate": "چاوواشۀکِردن زوون",
+	"translate-extensionname": "چاوواشۀکِردن زوون",
+	"translate-taction-translate": "چاوواشۀکِردن زوون",
 	"translate-taction-export": "در بِردن",
+	"translate-edit-translation": "زوون چاوواشاکردن/تةرجؤمة",
+	"translate-edit-tmmatch-source": "متن منبع ترجمه: $1",
 	"translate-tag-category": "صفحه‌های قابل ترجمه",
+	"translate-mgs-fieldset": "تنظیمات نمایش",
 	"translate-manage-import-done": "وارد کردن تکمیل شد!",
-	"translate-documentation-language": "مستندات پیام"
+	"translate-documentation-language": "مستندات پیام",
+	"tux-languageselector": "چاوواشۀکِردن زوون ؤة",
+	"tux-empty-list-translated-action": "چاوواشۀکِردن زوون"
 }
