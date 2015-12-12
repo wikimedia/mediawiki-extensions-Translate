@@ -16,6 +16,24 @@
       "revId": "ca46aa002b97242842faf95aa570ab7c45b798eb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_dfe0c327",
+        "filename": "specials/SpecialTranslations.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2015-12-12T15:14:51Z",
+      "side": 1,
+      "message": "There is no issue looping over empty array.",
+      "parentUuid": "6eaa8f54_1ff73bf4",
+      "revId": "ca46aa002b97242842faf95aa570ab7c45b798eb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
