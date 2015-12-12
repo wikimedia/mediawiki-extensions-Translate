@@ -255,11 +255,21 @@ class SpecialTranslations extends SpecialAllpages {
 				$class = 'def';
 			}
 
+			$languageAttributes = array();
+			if ( Language::isKnownLanguageTag( $code ) ) {
+				$language = Language::factory( $code );
+				$languageAttributes = array(
+					'lang' => $language->getHtmlCode(),
+					'dir' => $language->getDir(),
+				);
+			}
+
+			$formattedContent = TranslateUtils::convertWhiteSpaceToHTML( $pageInfo[$key][0] );
+
 			$leftColumn = $tools['history'] . $tools['edit'];
 			$out .= Xml::tags( 'tr', array( 'class' => $class ),
 				Xml::tags( 'td', null, $leftColumn ) .
-					Xml::tags( 'td', array( 'lang' => $code, 'dir' => Language::factory( $code )->getDir() ),
-						TranslateUtils::convertWhiteSpaceToHTML( $pageInfo[$key][0] ) )
+					Xml::tags( 'td', $languageAttributes, $formattedContent )
 			);
 		}
 
