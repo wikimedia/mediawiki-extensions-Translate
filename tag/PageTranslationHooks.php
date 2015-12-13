@@ -227,6 +227,7 @@ class PageTranslationHooks {
 
 		// This way the parser knows to fragment the parser cache by language code
 		$userLangCode = $parser->getOptions()->getUserLang();
+		$lang = $parser->getOptions()->getUserLangObj();
 		$userLangDir = $parser->getOptions()->getUserLangObj()->getDir();
 		// Should call $page->getMessageGroup()->getSourceLanguage(), but
 		// group is sometimes null on WMF during page moves, reason unknown.
@@ -262,6 +263,7 @@ class PageTranslationHooks {
 				$classes = array_merge( $classes, self::tpProgressIcon( $percent ) );
 
 				$title = wfMessage( 'tpt-languages-nonzero' )
+					->inLanguage( $lang )
 					->params( $pagename )
 					->numParams( 100 * $percent )
 					->text();
@@ -284,7 +286,7 @@ class PageTranslationHooks {
 
 				$classes[] = 'new';  // For red link color
 				$attribs = array(
-					'title' => wfMessage( 'tpt-languages-zero' )->text(),
+					'title' => wfMessage( 'tpt-languages-zero' )->inLanguage->( $lang )->text(),
 					'class' => $classes,
 				);
 				$name = Linker::link( $specialTranslateTitle, $name, $attribs, $params );
@@ -295,7 +297,6 @@ class PageTranslationHooks {
 
 		// dirmark (rlm/lrm) is added, because languages with RTL names can
 		// mess the display
-		$lang = Language::factory( $userLangCode );
 		$sep = wfMessage( 'tpt-languages-separator' )->inLanguage( $lang )->escaped();
 		$sep .= $lang->getDirMark();
 		$languages = implode( $sep, $languages );
@@ -306,7 +307,7 @@ class PageTranslationHooks {
 			'dir' => $userLangDir
 		) );
 		$out .= Html::rawElement( 'div', array( 'class' => 'mw-pt-languages-label' ),
-			wfMessage( 'tpt-languages-legend' )->escaped()
+			wfMessage( 'tpt-languages-legend' )->inLanguage( $lang )->escaped()
 		);
 		$out .= Html::rawElement(
 			'div',
