@@ -1,6 +1,7 @@
-/*
+/*!
  * Trigger a textchange event on text change in input fields.
- * And make it cross browser compatible
+ * And make it cross browser compatible.
+ *
  * @author Santhosh Thottingal, 2013
  * @see https://gist.github.com/mkelly12/424774
  */

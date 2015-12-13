@@ -1,4 +1,4 @@
-/*
+/*!
  * Translate editor additional helper functionality
  */
 ( function ( $, mw ) {
@@ -89,7 +89,8 @@
 
 		/**
 		 * Shows the message documentation.
-		 * @param {object} documentation A documentation object as returned by API.
+		 *
+		 * @param {Object} documentation A documentation object as returned by API.
 		 */
 		showMessageDocumentation: function ( documentation ) {
 			var $descEditLink,
@@ -181,6 +182,7 @@
 
 		/**
 		 * Shows uneditable documentation.
+		 *
 		 * @param {Object} documentation A gettext object as returned by API.
 		 */
 		showUneditableDocumentation: function ( documentation ) {
@@ -204,7 +206,8 @@
 
 		/**
 		 * Shows the translations from other languages
-		 * @param {array} translations An inotherlanguages array as returned by the translation helpers API.
+		 *
+		 * @param {Array} translations An inotherlanguages array as returned by the translation helpers API.
 		 */
 		showAssistantLanguages: function ( translations ) {
 			var translateEditor = this,
@@ -214,7 +217,7 @@
 
 			$.each( translations, function ( index ) {
 				var $otherLanguage, langAttr,
-					translation = translations[index];
+					translation = translations[ index ];
 
 				langAttr = {
 					lang: translation.language,
@@ -244,7 +247,8 @@
 
 		/**
 		 * Shows the translation suggestions from Translation Memory
-		 * @param {array} suggestions A ttmserver array as returned by API.
+		 *
+		 * @param {Array} suggestions A ttmserver array as returned by API.
 		 */
 		showTranslationMemory: function ( suggestions ) {
 			var $heading, $tmSuggestions, $messageList, translationLang, translationDir,
@@ -332,7 +336,8 @@
 
 		/**
 		 * Shows the translation from machine translation systems
-		 * @param {array} suggestions
+		 *
+		 * @param {Array} suggestions
 		 */
 		showMachineTranslations: function ( suggestions ) {
 			var $mtSuggestions, $messageList, translationLang, translationDir,
@@ -385,7 +390,7 @@
 		 * transltion textarea with the given suggestion.
 		 *
 		 * @param {jQuery} $source
-		 * @param {String} suggestion Text to add
+		 * @param {string} suggestion Text to add
 		 */
 		suggestionAdder: function ( $source, suggestion ) {
 			var inserter,
@@ -410,7 +415,8 @@
 
 		/**
 		 * Shows the support options for the translator.
-		 * @param {object} support A support object as returned by API.
+		 *
+		 * @param {Object} support A support object as returned by API.
 		 */
 		showSupportOptions: function ( support ) {
 			// Support URL
@@ -425,7 +431,8 @@
 
 		/**
 		 * Adds buttons for quickly inserting insertables.
-		 * @param {object} insertables A insertables object as returned by API.
+		 *
+		 * @param {Object} insertables A insertables object as returned by API.
 		 */
 		addInsertables: function ( insertables ) {
 			var i,
@@ -447,13 +454,13 @@
 						dir: $sourceMessage.prop( 'dir' )
 					} )
 					.addClass( 'insertable shortcut-activated' )
-					.text( insertables[i].display )
+					.text( insertables[ i ].display )
 					.data( 'iid', i )
 					.appendTo( $buttonArea );
 			}
 
 			$buttonArea.on( 'click', '.insertable', function () {
-				var data = insertables[$( this ).data( 'iid' )];
+				var data = insertables[ $( this ).data( 'iid' ) ];
 				$textarea.textSelection( 'encapsulateSelection', {
 					pre: data.pre,
 					post: data.post
@@ -516,8 +523,8 @@
 		/**
 		 * Get the documentation edit URL for a title
 		 *
-		 * @param {String} title Message title with namespace
-		 * @return {String} URL for editing the documentation
+		 * @param {string} title Message title with namespace
+		 * @return {string} URL for editing the documentation
 		 */
 		getDocumentationEditURL: function ( title ) {
 			var descUri = new mw.Uri( window.location.href );

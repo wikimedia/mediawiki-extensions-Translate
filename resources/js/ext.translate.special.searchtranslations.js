@@ -29,7 +29,7 @@
 				$form = $( '.tux-searchpage form[name=searchform]' );
 
 			$.each( result, function ( index, value ) {
-				var $input = $( '<input>')
+				var $input = $( '<input>' )
 					.prop( 'type', 'hidden' ),
 					$elem = $form.find( 'input[name=' + index + ']' );
 
@@ -108,10 +108,10 @@
 		// If a documentation pseudo-language is defined,
 		// add it to the language selector
 		docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
-		if ( languages[docLanguageCode] ) {
+		if ( languages[ docLanguageCode ] ) {
 			mw.translate.addDocumentationLanguage();
-			mw.config.get( 'wgULSLanguages' )[docLanguageCode] = mw.msg( 'translate-documentation-language' );
-			regions = ['WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA'];
+			mw.config.get( 'wgULSLanguages' )[ docLanguageCode ] = mw.msg( 'translate-documentation-language' );
+			regions = [ 'WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA' ];
 		}
 
 		quickLanguageList = quickLanguageList.concat( mw.uls.getFrequentLanguageList() )
@@ -119,7 +119,7 @@
 
 		// Remove duplicates from the language list
 		$.each( quickLanguageList, function ( i, v ) {
-			result = languages[v];
+			result = languages[ v ];
 			if ( result && $.inArray( v, unique ) === -1 ) {
 				unique.push( v );
 			}
@@ -137,8 +137,8 @@
 		quickLanguageList.sort( sortLanguages );
 
 		for ( i = 0; i <= quickLanguageList.length; i++ ) {
-			languageCode = quickLanguageList[i];
-			result = languages[languageCode];
+			languageCode = quickLanguageList[ i ];
+			result = languages[ languageCode ];
 			if ( !result ) {
 				continue;
 			}
@@ -149,15 +149,15 @@
 				selectedClasss = '';
 			}
 
-			$languages.append( $( '<div>')
+			$languages.append( $( '<div>' )
 				.addClass( 'row facet-item' )
-				.append( $( '<span>')
+				.append( $( '<span>' )
 					.addClass( 'facet-name ' + selectedClasss )
-					.append( $('<a>')
+					.append( $( '<a>' )
 						.attr( 'href', result.url )
 						.text( getLanguageLabel( languageCode ) )
 					),
-					$( '<span>')
+					$( '<span>' )
 						.addClass( 'facet-count' )
 						.text( result.count )
 				)
@@ -165,7 +165,7 @@
 		}
 
 		$.each( Object.keys( languages ), function ( index, languageCode ) {
-			ulslanguages[languageCode] = mw.config.get( 'wgULSLanguages' )[languageCode];
+			ulslanguages[ languageCode ] = mw.config.get( 'wgULSLanguages' )[ languageCode ];
 		} );
 
 		if ( resultCount > 6 ) {
@@ -179,7 +179,7 @@
 
 			$ulsTrigger.uls( {
 				onSelect: function ( language ) {
-					window.location = languages[language].url;
+					window.location = languages[ language ].url;
 				},
 				compact: true,
 				languages: ulslanguages,
@@ -226,9 +226,9 @@
 		if ( level === 0 ) {
 			groupList = groupList.splice( 0, maxListSize );
 		}
-		grouppath = getParameterByName( 'grouppath' ).split( '|' )[0];
+		grouppath = getParameterByName( 'grouppath' ).split( '|' )[ 0 ];
 		if ( currentGroup && resultGroups[ grouppath ] &&
-			$.inArray( grouppath, groupList) < 0 &&
+			$.inArray( grouppath, groupList ) < 0 &&
 			level === 0
 		) {
 			// Make sure current selected group is displayed always.
@@ -236,7 +236,7 @@
 		}
 		groupList.sort( sortGroups );
 		for ( i = 0; i < groupList.length; i++ ) {
-			groupId = groupList[i];
+			groupId = groupList[ i ];
 			group = mw.translate.findGroup( groupId, resultGroups );
 			if ( !group ) {
 				continue;
@@ -248,15 +248,15 @@
 			} else {
 				grouppath =  groupId;
 			}
-			uri.extend( { 'group': groupId, 'grouppath': grouppath } );
+			uri.extend( { group: groupId, grouppath: grouppath } );
 
 			if ( currentGroup === groupId ) {
 				selectedClass = 'selected';
-				uri.extend( { 'group': '', 'grouppath': '' } );
+				uri.extend( { group: '', grouppath: '' } );
 				addToSelectedBox( group.label, uri.toString() );
 			} else {
 				selectedClass = '';
-				uri.extend( { 'group': groupId, 'grouppath': grouppath } );
+				uri.extend( { group: groupId, grouppath: grouppath } );
 			}
 
 			$groupRow = $( '<div>' )
@@ -278,7 +278,7 @@
 		}
 
 		if ( resultCount > maxListSize && resultCount - groupList.length > 0 && level === 0 ) {
-			$grouSelectorTrigger = $( '<div>')
+			$grouSelectorTrigger = $( '<div>' )
 				.addClass( 'rowfacet-item ' )
 				.append( $( '<a>' )
 					.text( '...' )
@@ -308,7 +308,7 @@
 				position: position,
 				onSelect: function ( group ) {
 					var uri = new mw.Uri( location.href );
-					uri.extend( { 'group': group.id, 'grouppath': group.id } );
+					uri.extend( { group: group.id, grouppath: group.id } );
 					location.href = uri.toString();
 				}
 			};
@@ -324,11 +324,11 @@
 
 	function lexOperators( str ) {
 		var string = str.split( ' ' ),
-			result= {},
+			result = {},
 			query = '';
 
 		$.each( string, function ( index, value ) {
-			matchOperators( value, function( obj ) {
+			matchOperators( value, function ( obj ) {
 				if ( obj === false ) {
 					query = query + ' ' + value;
 				} else {
@@ -345,7 +345,7 @@
 		var matches,
 			counter = false,
 			// Add operators for different filters
-			operatorRegex = [ 'language' , 'group', 'filter' ];
+			operatorRegex = [ 'language', 'group', 'filter' ];
 
 		$.each( operatorRegex, function ( index, value ) {
 			var regex = new RegExp( value + ':(\\S+)', 'i' );
@@ -353,7 +353,7 @@
 				counter = true;
 				callback( {
 					operator: value,
-					value: matches[1]
+					value: matches[ 1 ]
 				} );
 			}
 		} );
@@ -376,8 +376,8 @@
 	}
 
 	function sortLanguages( languageA, languageB ) {
-		var languageNameA = mw.config.get( 'wgULSLanguages' )[languageA] || languageA,
-			languageNameB = mw.config.get( 'wgULSLanguages' )[languageB] || languageB;
+		var languageNameA = mw.config.get( 'wgULSLanguages' )[ languageA ] || languageA,
+			languageNameB = mw.config.get( 'wgULSLanguages' )[ languageB ] || languageB;
 
 		return languageNameA.localeCompare( languageNameB );
 	}
@@ -388,7 +388,7 @@
 	}
 
 	function getLanguageLabel( languageCode ) {
-		return mw.config.get( 'wgULSLanguages' )[languageCode] || languageCode;
+		return mw.config.get( 'wgULSLanguages' )[ languageCode ] || languageCode;
 	}
 
 	// Build a selected box to show the selected items

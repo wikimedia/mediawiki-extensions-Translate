@@ -74,12 +74,12 @@
 			// List of all reviewers
 			reviewers = $( this.message.properties.reviewers );
 			// The id of the current user, converted to string as the are in reviewers
-			userId = mw.config.get( 'wgUserId' ) + '';
+			userId = String( mw.config.get( 'wgUserId' ) );
 			// List of all reviewers excluding the current user.
-			otherReviewers = reviewers.not( [userId] );
+			otherReviewers = reviewers.not( [ userId ] );
 			/* Whether the current user if the last translator of this message.
 			 * Accepting own translations is prohibited. */
-			translatedBySelf = ( this.message.properties['last-translator-text'] === mw.user.getName() );
+			translatedBySelf = ( this.message.properties[ 'last-translator-text' ] === mw.user.getName() );
 			proofreadBySelf = $.inArray( userId, reviewers ) > -1;
 
 			sourceLangCode = this.options.sourcelangcode;
@@ -193,7 +193,7 @@
 
 			params = {
 				action: 'translationreview',
-				revision: this.message.properties.revision,
+				revision: this.message.properties.revision
 			};
 
 			if ( !mw.user.isAnon() ) {

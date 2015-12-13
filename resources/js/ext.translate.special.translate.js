@@ -8,6 +8,7 @@
 		/**
 		 * Change the group that is currently displayed
 		 * in the TUX translation editor.
+		 *
 		 * @param {Object} group a message group object.
 		 */
 		changeGroup: function ( group ) {
@@ -121,6 +122,7 @@
 
 		/**
 		 * Updates the navigation tabs.
+		 *
 		 * @param {Object} params Url parameters to update.
 		 * @since 2013.05
 		 */
@@ -257,9 +259,9 @@
 		docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
 		if ( docLanguageCode ) {
 			docLanguageAutonym = mw.msg( 'translate-documentation-language' );
-			ulsOptions.languages[docLanguageCode] = docLanguageAutonym;
+			ulsOptions.languages[ docLanguageCode ] = docLanguageAutonym;
 			mw.translate.addDocumentationLanguage();
-			ulsOptions.showRegions = ['WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA'];
+			ulsOptions.showRegions = [ 'WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA' ];
 		}
 
 		$( '.ext-translate-language-selector .uls' ).uls( ulsOptions );

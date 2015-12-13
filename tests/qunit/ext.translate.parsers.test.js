@@ -1,7 +1,6 @@
-/**
+/*!
  * Tests for ext.translate.parsers.js.
  *
- * @file
  * @license GPL-2.0+
  */
 

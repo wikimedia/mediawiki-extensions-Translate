@@ -2,9 +2,10 @@
 module.exports = function ( grunt ) {
 	'use strict';
 
+	// grunt.loadNpmTasks( 'grunt-banana-checker' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+	grunt.loadNpmTasks( 'grunt-jscs' );
 	grunt.loadNpmTasks( 'grunt-jsonlint' );
-	/*grunt.loadNpmTasks( 'grunt-banana-checker' );*/
 
 	grunt.initConfig( {
 		jshint: {
@@ -13,9 +14,21 @@ module.exports = function ( grunt ) {
 			},
 			all: [
 				'**/*.js',
-				'!node_modules/**'
+				'!node_modules/**',
+				'!extensions/**',
+				'!resources/js/jquery.autosize.js'
 			]
 		},
+		jscs: {
+			src: '<%= jshint.all %>'
+		},
+		jsonlint: {
+			all: [
+				'**/*.json',
+				'!node_modules/**',
+				'!extensions/**'
+			]
+		}
 		/* banana: {
 			all: [
 				'i18n/api',
@@ -24,16 +37,10 @@ module.exports = function ( grunt ) {
 				'i18n/sandbox',
 				'i18n/search'
 			]
-		},
-		*/
-		jsonlint: {
-			all: [
-				'**/*.json',
-				'!node_modules/**'
-			]
 		}
+		*/
 	} );
 
-	grunt.registerTask( 'test', [ 'jshint', 'jsonlint' /*'banana'*/ ] );
+	grunt.registerTask( 'test', [ 'jshint', 'jscs', 'jsonlint' /*'banana'*/ ] );
 	grunt.registerTask( 'default', 'test' );
 };

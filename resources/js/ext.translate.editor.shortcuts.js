@@ -1,4 +1,4 @@
-/*
+/*!
  * Translate editor shortcuts
  */
 ( function ( $ ) {
