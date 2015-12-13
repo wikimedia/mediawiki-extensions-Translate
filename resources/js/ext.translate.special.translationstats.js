@@ -1,4 +1,4 @@
-/**
+/*!
  * JavaScript functions for embedding jQuery controls
  * into translation notification form.
  *

@@ -10,7 +10,7 @@ window.appendFromSelect = function ( selectid, targetid ) {
 		return;
 	}
 
-	atxt = select.options[select.selectedIndex].value;
+	atxt = select.options[ select.selectedIndex ].value;
 
 	if ( !atxt ) {
 		return;

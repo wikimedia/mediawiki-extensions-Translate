@@ -10,7 +10,7 @@
 			clearTimeout( timer );
 			timer = setTimeout( callback, milliseconds );
 		};
-	} () );
+	}() );
 
 	itemsClass = {
 		proofread: '.tux-message-proofread',
@@ -331,7 +331,7 @@
 		/**
 		 * Search the message filter
 		 *
-		 * @param {String} query
+		 * @param {string} query
 		 */
 		search: function ( query ) {
 			var $note, $button, $result,
@@ -472,12 +472,12 @@
 						messageTable.search( query );
 					}
 
-					if ( result['query-continue'] === undefined ) {
+					if ( result[ 'query-continue' ] === undefined ) {
 						// End of messages
 						messageTable.$loader.data( 'offset', -1 )
 							.addClass( 'hide' );
 					} else {
-						messageTable.$loader.data( 'offset', result['query-continue'].messagecollection.mcoffset );
+						messageTable.$loader.data( 'offset', result[ 'query-continue' ].messagecollection.mcoffset );
 
 						remaining = result.query.metadata.remaining;
 
@@ -522,9 +522,10 @@
 		/**
 		 * Creates a uniformly styled button for different actions,
 		 * shown when there are no messages to display.
-		 * @param {String} labelMsg A message key for the button label.
+		 *
+		 * @param {string} labelMsg A message key for the button label.
 		 * @param {Function} callback A callback for clicking the button.
-		 * @returns {jQuery} A button element.
+		 * @return {jQuery} A button element.
 		 */
 		otherActionButton: function ( labelMsg, callback ) {
 			return $( '<button>' )
@@ -777,7 +778,7 @@
 			}
 
 			if ( typeof options === 'string' ) {
-				data[options].call( $this );
+				data[ options ].call( $this );
 			}
 		} );
 	};
@@ -797,11 +798,13 @@
 			$b = $( this );
 
 			successFunction = function ( data ) {
+				var reason;
+
 				if ( data.error ) {
 					// Give grep a chance to find the usages:
 					// api-error-invalidrevision, api-error-unknownmessage,
 					// api-error-fuzzymessage, api-error-owntranslation
-					var reason = mw.msg( 'api-error-' + data.error.code );
+					reason = mw.msg( 'api-error-' + data.error.code );
 					$b.val( mw.msg( 'translate-messagereview-failure', reason ) );
 				} else {
 					$b.val( mw.msg( 'translate-messagereview-done' ) );
@@ -825,9 +828,10 @@
 	} );
 
 	/**
-	 * Escape the search query for regex match
+	 * Escape the search query for regex match.
+	 *
 	 * @param {string} value A search string to be escaped.
-	 * @returns {string} Escaped string that is safe to use for a search.
+	 * @return {string} Escaped string that is safe to use for a search.
 	 */
 	function escapeRegex( value ) {
 		return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, '\\$&' );

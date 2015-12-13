@@ -1,5 +1,6 @@
-/**
- * TranslationStash front-end logic
+/*!
+ * TranslationStash front-end logic.
+ *
  * @author Santhosh Thottingal
  * @license GPL-2.0+
  * @since 2013.10
@@ -8,13 +9,13 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	var userTranslations = {},
+		translationStashStorage = new mw.translate.TranslationStashStorage();
+
 	mw.translate.canTranslate = function () {
 		// At this page, the new translator can translate
 		return true;
 	};
-
-	var userTranslations = {},
-		translationStashStorage = new mw.translate.TranslationStashStorage();
 
 	function getMessages( messageGroup, language, offset, limit ) {
 		var deferred = new mw.Api().get( {
@@ -175,8 +176,8 @@
 					message.properties.status = 'untranslated';
 
 					message.group = messagegroup;
-					if ( userTranslations[message.title] ) {
-						message.translation = userTranslations[message.title].translation;
+					if ( userTranslations[ message.title ] ) {
+						message.translation = userTranslations[ message.title ].translation;
 						message.properties.status = 'translated';
 					}
 
@@ -240,8 +241,8 @@
 				if ( translations.translationstash.translations ) {
 					$.each( translations.translationstash.translations,
 						function ( index, translation ) {
-							userTranslations[translation.title] = translation;
-					} );
+							userTranslations[ translation.title ] = translation;
+						} );
 				}
 				loadMessages();
 			} );

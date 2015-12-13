@@ -296,7 +296,7 @@
 
 			this.$loader.show();
 
-			this.loadGroups().done( function( groups ) {
+			this.loadGroups().done( function ( groups ) {
 				var groupsToShow = mw.translate.findGroup( groupSelector.parentGroupId, groups );
 
 				// We do not want to display the group itself, only its subgroups
@@ -320,7 +320,8 @@
 
 		/**
 		 * Load message groups.
-		 * @param {Array} groups: List of the message group ids to show.
+		 *
+		 * @param {Array} groups List of the message group ids to show.
 		 */
 		showSelectedGroups: function ( groups ) {
 			var groupSelector = this;
@@ -336,17 +337,18 @@
 					} );
 					return rows;
 				} )
-				.always( function() {
+				.always( function () {
 					groupSelector.$loader.hide();
 					groupSelector.$list.empty();
 				} )
-				.done( function( rows ) {
+				.done( function ( rows ) {
 					groupSelector.$list.append( rows );
 				} );
 		},
 
 		/**
 		 * Flattens a message group tree.
+		 *
 		 * @param {Array} messageGroups An array or data object.
 		 * @param {Object} foundIDs The array in which the keys are IDs of message groups that were found already.
 		 */
@@ -359,14 +361,14 @@
 
 			for ( i = 0; i < messageGroups.length; i++ ) {
 				// Avoid duplicate groups, and add the parent before subgroups
-				if ( !foundIDs[messageGroups[i].id] ) {
-					this.flatGroupList.push( messageGroups[i] );
-					foundIDs[messageGroups[i].id] = true;
+				if ( !foundIDs[ messageGroups[ i ].id ] ) {
+					this.flatGroupList.push( messageGroups[ i ] );
+					foundIDs[ messageGroups[ i ].id ] = true;
 				}
 
 				// In case there are subgroups, add them recursively
-				if ( messageGroups[i].groups ) {
-					this.flattenGroupList( messageGroups[i].groups, foundIDs );
+				if ( messageGroups[ i ].groups ) {
+					this.flattenGroupList( messageGroups[ i ].groups, foundIDs );
 				}
 			}
 		},
@@ -374,12 +376,13 @@
 		/**
 		 * Search the message groups based on label or id.
 		 * Label match is prefix match, while id match is exact match.
+		 *
 		 * @param {string} query
 		 */
 		filter: function ( query ) {
 			var self = this;
 
-			this.loadGroups().done( function( groups ) {
+			this.loadGroups().done( function ( groups ) {
 				var currentGroup, index, matcher, foundGroups = [];
 
 				if ( !self.flatGroupList ) {
@@ -396,9 +399,9 @@
 				matcher = new RegExp( '\\b' + escapeRegex( query ), 'i' );
 
 				for ( index = 0; index < self.flatGroupList.length; index++ ) {
-					if ( matcher.test( self.flatGroupList[index].label ) ||
-						query === self.flatGroupList[index].id ) {
-						foundGroups.push( self.flatGroupList[index] );
+					if ( matcher.test( self.flatGroupList[ index ].label ) ||
+						query === self.flatGroupList[ index ].id ) {
+						foundGroups.push( self.flatGroupList[ index ] );
 					}
 				}
 
@@ -414,11 +417,13 @@
 		 * @return {jQuery.Promise}
 		 */
 		loadGroups: function () {
+			var params;
+
 			if ( groupsLoader !== undefined ) {
 				return groupsLoader;
 			}
 
-			var params = {
+			params = {
 				action: 'query',
 				format: 'json',
 				meta: 'messagegroups',
@@ -429,7 +434,7 @@
 
 			groupsLoader = new mw.Api()
 				.get( params )
-				.then( function( result ) {
+				.then( function ( result ) {
 					return result.query.messagegroups;
 				} )
 				.promise();
@@ -443,18 +448,20 @@
 		 * @return {jQuery.Promise}
 		 */
 		loadRecentGroups: function () {
+			var params;
+
 			if ( recentGroupsLoader !== undefined ) {
 				return recentGroupsLoader;
 			}
 
-			var params = {
+			params = {
 				action: 'translateuser',
 				format: 'json'
 			};
 
 			recentGroupsLoader = new mw.Api()
 				.get( params )
-				.then( function( result ) {
+				.then( function ( result ) {
 					return result.translateuser.recentgroups;
 				} )
 				.promise();
@@ -508,10 +515,11 @@
 
 		/**
 		 * Prepare a message group row in the selector.
+		 *
 		 * @param {Object} messagegroup object.
-		 * @returns {Object} a jQuery object with the groups selector row (<div>).
+		 * @return {Object} a jQuery object with the groups selector row (<div>).
 		 */
-		prepareMessageGroupRow: function( messagegroup ) {
+		prepareMessageGroupRow: function ( messagegroup ) {
 			var $row,
 				$icon,
 				$label,
@@ -575,8 +583,8 @@
 		/**
 		 * Check that a DOM event is supported by the $menu jQuery object.
 		 *
-		 * @param eventName
-		 * @returns {boolean}
+		 * @param {string} eventName
+		 * @return {boolean}
 		 */
 		eventSupported: function ( eventName ) {
 			var $search = this.$menu.find( '.tux-groupselector__filter__search__input' ),
@@ -584,7 +592,7 @@
 
 			if ( !isSupported ) {
 				this.$element.setAttribute( eventName, 'return;' );
-				isSupported = typeof this.$element[eventName] === 'function';
+				isSupported = typeof this.$element[ eventName ] === 'function';
 			}
 
 			return isSupported;
@@ -607,7 +615,7 @@
 			}
 
 			if ( typeof options === 'string' ) {
-				data[options].call( $this );
+				data[ options ].call( $this );
 			}
 		} );
 	};
@@ -625,10 +633,12 @@
 	/*
 	 * Private functions
 	 */
+
 	/**
 	 * Escape the search query for regex match
+	 *
 	 * @param {string} value A search string to be escaped.
-	 * @returns {string} Escaped string that is safe to use for a search.
+	 * @return {string} Escaped string that is safe to use for a search.
 	 */
 	function escapeRegex( value ) {
 		return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, '\\$&' );
@@ -641,5 +651,5 @@
 			clearTimeout( timer );
 			timer = setTimeout( callback, milliseconds );
 		};
-	} () );
+	}() );
 }( jQuery, mediaWiki ) );

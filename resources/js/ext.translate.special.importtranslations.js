@@ -1,7 +1,7 @@
 ( function ( $ ) {
 	'use strict';
 
-	function buttoner ( $input ) {
+	function buttoner( $input ) {
 		if ( $input.val ) {
 			$( 'input[type=submit]' ).prop( 'disabled', false );
 		} else {
@@ -17,4 +17,4 @@
 
 		buttoner( $input );
 	} );
-} ( jQuery ) );
+}( jQuery ) );

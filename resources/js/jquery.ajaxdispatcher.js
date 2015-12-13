@@ -4,15 +4,16 @@
 	/**
 	 * Call list of callbacks returning promises in serial order and returns a list of promises.
 	 *
-	 * @author Niklas Laxström, 2014
+	 * @author Niklas Laxström
 	 *
 	 * @param {callable[]} list List of callbacks returning promises.
 	 * @return {jQuery.Promise}
 	 */
 	function ajaxDispatcher( list, maxRetries ) {
+		var deferred = $.Deferred();
+
 		maxRetries = maxRetries || 0;
 
-		var deferred = $.Deferred();
 		return $.when( helper( list, maxRetries ) )
 			.then( function ( promises ) {
 				return deferred.resolve( promises );
@@ -28,7 +29,7 @@
 			return deferred;
 		}
 
-		first = list.slice( 0, 1 )[0];
+		first = list.slice( 0, 1 )[ 0 ];
 		rest = list.slice( 1 );
 
 		retries = 0;
