@@ -1,4 +1,4 @@
-/*
+/*!
  * @author Santhosh Thottingal
  * jQuery autocomplete based multiple selector for input box.
  * Autocompleted values will be available in input filed as comma separated values.
@@ -8,6 +8,8 @@
  */
 jQuery( function ( $ ) {
 	'use strict';
+
+	// jscs:disable disallowDanglingUnderscores
 
 	$.widget( 'ui.multiselectautocomplete', {
 		options: {
@@ -54,11 +56,13 @@ jQuery( function ( $ ) {
 					} ) );
 				},
 				select: function ( event, ui ) {
+					var terms;
+
 					ui.item.option.selected = true;
 					self._trigger( 'selected', event, {
 						item: ui.item.option
 					} );
-					var terms = split( $( this ).val() );
+					terms = split( $( this ).val() );
 					// remove the current input
 					terms.pop();
 					// add the selected item

@@ -1,4 +1,4 @@
-/**
+/*!
  * JS for special page.
  * @author Niklas Laxström
  * @author Sucheta Ghoshal
@@ -13,9 +13,10 @@
 	var delay;
 
 	/**
-	 * A callback for sorting translations
-	 * @param {object} translationA Object loaded from translation stash
-	 * @param {object} translationB Object loaded from translation stash
+	 * A callback for sorting translations.
+	 *
+	 * @param {Object} translationA Object loaded from translation stash
+	 * @param {Object} translationB Object loaded from translation stash
 	 * @return {number} String comparison of language codes
 	 */
 	function sortTranslationsByLanguage( translationA, translationB ) {
@@ -220,7 +221,7 @@
 			);
 
 		translations.translationstash.translations.sort( sortTranslationsByLanguage );
-		$.each( translations.translationstash.translations, function( index, translation ) {
+		$.each( translations.translationstash.translations, function ( index, translation ) {
 			showTranslation( translation );
 		} );
 	}
@@ -262,7 +263,7 @@
 	}
 
 	/**
-	 * Display when multiple requests are checked
+	 * Display when multiple requests are checked.
 	 */
 	function displayOnMultipleSelection() {
 		var selectedUserIDs = $( '.request-selector:checked' ).map( function ( i, checkedBox ) {
@@ -313,6 +314,7 @@
 
 	/**
 	 * Updates the counter of the selected users.
+	 *
 	 * @param {number} count The number of selected users
 	 */
 	function updateSelectedIndicator( count ) {
@@ -326,6 +328,7 @@
 
 	/**
 	 * Returns older requests with the same number of translations.
+	 *
 	 * @return {jQuery} Older requests
 	 */
 	function getOlderRequests() {
@@ -429,10 +432,11 @@
 
 	/**
 	 * Handle click on request row
+	 *
 	 * @param {jQuery.Event} e
 	 */
 	function onSelectRequest( e ) {
-		var $requestRow = $( e.target ).closest( '.request'),
+		var $requestRow = $( e.target ).closest( '.request' ),
 			$requestRows = $( '.requests .request' ),
 			$selectAll = $( '.request-selector-all' );
 
@@ -442,7 +446,7 @@
 		$requestRows.each( function ( i, row ) {
 			var $row = $( row );
 
-			if ( row === $requestRow[0] ) {
+			if ( row === $requestRow[ 0 ] ) {
 				$row.addClass( 'selected' )
 					.find( '.request-selector' ).prop( {
 						checked: true,
@@ -464,7 +468,8 @@
 	}
 
 	/**
-	 * Event handler for request checkbox selection
+	 * Event handler for request checkbox selection.
+	 *
 	 * @param {jQuery.Event} e
 	 */
 	function requestSelectHandler( e ) {
@@ -530,13 +535,14 @@
 	}
 
 	/**
-	 * Old request click handler
+	 * Old request click handler.
+	 *
 	 * @param {jQuery.Event} e
 	 */
 	function oldRequestSelector( e ) {
 		e.preventDefault();
 
-		getOlderRequests().each( function( index, request ) {
+		getOlderRequests().each( function ( index, request ) {
 			$( request ).find( '.request-selector' )
 				.prop( 'checked', true ) // Otherwise the state doesn't actually change
 				.change();
@@ -579,7 +585,7 @@
 			quickList: mw.uls.getFrequentLanguageList
 		} );
 
-		$clearButton.on( 'click', function() {
+		$clearButton.on( 'click', function () {
 			var userLang = mw.config.get( 'wgUserLanguage' );
 
 			languageFilter.$selector
@@ -598,6 +604,7 @@
 
 	/**
 	 * Filter the requests by language.
+	 *
 	 * @param {string} [language] Language code
 	 */
 	LanguageFilter.prototype.filter = function ( language ) {
@@ -642,7 +649,7 @@
 		this.$search.on( 'search keyup', $.proxy( this.keyup, this ) );
 	};
 
-	TranslatorSearch.prototype.keyup = function() {
+	TranslatorSearch.prototype.keyup = function () {
 		var query,
 			translatorSearch = this;
 
@@ -653,7 +660,7 @@
 		}, 300 );
 	};
 
-	TranslatorSearch.prototype.filter = function( query ) {
+	TranslatorSearch.prototype.filter = function ( query ) {
 		var $requests = $( '.request' );
 
 		$requests.each( function ( index, request ) {
@@ -709,7 +716,7 @@
 			clearTimeout( timer );
 			timer = setTimeout( callback, milliseconds );
 		};
-	} () );
+	}() );
 
 	$( document ).ready( function () {
 		var $requestCheckboxes = $( '.request-selector' ),
