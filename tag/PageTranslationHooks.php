@@ -263,6 +263,7 @@ class PageTranslationHooks {
 				$classes = array_merge( $classes, self::tpProgressIcon( $percent ) );
 
 				$title = wfMessage( 'tpt-languages-nonzero' )
+					->inLanguage( $userLang )
 					->params( $pagename )
 					->numParams( 100 * $percent )
 					->text();
@@ -285,7 +286,7 @@ class PageTranslationHooks {
 
 				$classes[] = 'new';  // For red link color
 				$attribs = array(
-					'title' => wfMessage( 'tpt-languages-zero' )->text(),
+					'title' => wfMessage( 'tpt-languages-zero' )->inLanguage->( $userLang )->text(),
 					'class' => $classes,
 				);
 				$name = Linker::link( $specialTranslateTitle, $name, $attribs, $params );
@@ -306,7 +307,7 @@ class PageTranslationHooks {
 			'dir' => $userLangDir
 		) );
 		$out .= Html::rawElement( 'div', array( 'class' => 'mw-pt-languages-label' ),
-			wfMessage( 'tpt-languages-legend' )->escaped()
+			wfMessage( 'tpt-languages-legend' )->inLanguage( $userLang )->escaped()
 		);
 		$out .= Html::rawElement(
 			'div',
