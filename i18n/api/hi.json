@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"NehalDaveND"
+			"NehalDaveND",
+			"Sfic"
 		]
 	},
 	"apihelp-groupreview-param-group": "संदेश-समूह",
@@ -10,5 +11,6 @@
 	"apihelp-query+messagecollection-param-group": "संदेश-समूह",
 	"apihelp-query+messagecollection-param-language": "भाषा कोड",
 	"apihelp-translationreview-example-1": "अवलोकन अवतरण 1",
-	"apihelp-translationstash-param-subaction": "क्रिया"
+	"apihelp-translationstash-param-subaction": "क्रिया",
+	"apihelp-searchtranslations-description": "अनुवाद खोजें।"
 }

@@ -9,7 +9,8 @@
 			"Knightsofdawn",
 			"Siddhartha Ghai",
 			"NehalDaveND",
-			"संजीव कुमार"
+			"संजीव कुमार",
+			"Sfic"
 		]
 	},
 	"translate": "अनुवाद",
@@ -54,6 +55,7 @@
 	"translate-magic-cm-comment": "टिप्पणी:",
 	"translate-magic-cm-save": "संजोयें",
 	"translate-magic-words": "जादूई शब्द",
+	"translate-magic-namespace": "नामस्थान नाम",
 	"translate-pref-editassistlang": "सहायक भाषा:",
 	"prefs-translate": "अनुवाद विकल्प",
 	"right-translate-messagereview": "अनुवाद समीक्षा",
@@ -126,6 +128,7 @@
 	"translate-manage-action-import": "आयात",
 	"translate-manage-action-conflict": "आयात और फजी",
 	"translate-manage-action-ignore": "उपेक्षा",
+	"translate-manage-import-done": "आयात पूर्ण!",
 	"importtranslations": "अनुवाद आयात करें",
 	"translate-import-from-local": "स्थानीय फ़ाइल अपलोड:",
 	"translate-import-load": "लोड़ फ़ाइल",
@@ -202,6 +205,8 @@
 	"tux-proofread-edit-label": "सम्पादन",
 	"tux-editor-page-mode": "पृष्ठ",
 	"tux-editor-doc-editor-cancel": "रद्द करें",
+	"tux-proofread-translated-by-self": "आपके द्वारा अनुवादित",
+	"tux-empty-list-translated-guide": "आप अनुवाद हेतु सहायता कर सकते हैं",
 	"tux-empty-list-translated-action": "अनुवाद करें",
 	"tux-editor-close-tooltip": "बंध करें",
 	"tux-editor-expand-tooltip": "बड़ा करें",
