@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -236,8 +235,8 @@ class PageTranslationHooks {
 
 		$languages = array();
 		foreach ( $status as $code => $percent ) {
-			// Get autonyms
-			$name = TranslateUtils::getLanguageName( $code, $code );
+			// Get autonyms (null)
+			$name = TranslateUtils::getLanguageName( $code, null );
 			$name = htmlspecialchars( $name ); // Unlikely, but better safe
 
 			// Add links to other languages

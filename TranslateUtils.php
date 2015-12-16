@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2007-2013 Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -145,7 +144,7 @@ class TranslateUtils {
 	/**
 	 * Returns a localised language name.
 	 * @param string $code Language code.
-	 * @param string $language Language code of language the the name should be in.
+	 * @param null|string $language Language code of language the the name should be in.
 	 * @return string Best-effort localisation of wanted language name.
 	 */
 	public static function getLanguageName( $code, $language = 'en' ) {
@@ -199,10 +198,10 @@ class TranslateUtils {
 	 * Get translated language names for the languages generally supported for
 	 * translation in the current wiki. Message groups can have further
 	 * exclusions.
-	 * @param string $code
+	 * @param null|string $code
 	 * @return array ( language code => language name )
 	 */
-	public static function getLanguageNames( /*string */$code ) {
+	public static function getLanguageNames( $code ) {
 		$languageNames = Language::fetchLanguageNames( $code );
 
 		// Remove languages with deprecated codes (bug T37475)

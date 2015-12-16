@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2011-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -361,8 +360,11 @@ class TranslateHooks {
 	public static function translateMessageDocumentationLanguage( &$names, $code ) {
 		global $wgTranslateDocumentationLanguageCode;
 		if ( $wgTranslateDocumentationLanguageCode ) {
-			// Special case the native name, assuming it is given as a string
-			if ( $wgTranslateDocumentationLanguageCode === $code ) {
+			// Special case the autonyms
+			if (
+				$wgTranslateDocumentationLanguageCode === $code ||
+				$code === null
+			) {
 				$code = 'en';
 			}
 
