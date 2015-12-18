@@ -349,7 +349,7 @@
 	"tux-editor-doc-editor-save": "ذخیره مستندات",
 	"tux-editor-doc-editor-cancel": "انصراف",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|پیام}} بیشتر",
-	"tux-messagetable-loading-messages": "نمایش $1 {{PLURAL:$1|پیام|پیام}}.",
+	"tux-messagetable-loading-messages": "نمایش {{PLURAL:$1|پیام|پیام‌ها}}...",
 	"tux-message-filter-placeholder": "پالایش فهرست",
 	"tux-message-filter-result": "$1 {{PLURAL:$1|نتیجه|نتیجه}} برای «$2» یافته شد.",
 	"tux-message-filter-advanced-button": "جستجوی پیشرفته",
