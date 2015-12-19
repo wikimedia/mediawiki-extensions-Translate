@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_8fd742c4",
+        "filename": "webservices/MicrosoftWebService.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2015-12-19T14:49:41Z",
+      "side": 1,
+      "message": "Can you device something that works nicer by re-implementing wrapUntranslatable and unwrapUntranslatable from parent class?",
+      "revId": "a9571c5cbb73c75206f7e5641aee816f7e2e7959",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
