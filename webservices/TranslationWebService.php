@@ -51,7 +51,7 @@ abstract class TranslationWebService {
 		) {
 			$config['type'] = 'remote-ttmserver';
 			$config['service'] = $name;
-			$config['url'] = wfExpandURl( wfScript( 'api' ), PROTO_CANONICAL );
+			$config['url'] = wfExpandUrl( wfScript( 'api' ), PROTO_CANONICAL );
 		}
 
 		if ( isset( $handlers[$config['type']] ) ) {
@@ -172,6 +172,11 @@ abstract class TranslationWebService {
 	 */
 	protected $config;
 
+	/**
+	 * TranslationWebService constructor.
+	 * @param string $service Name of the webservice
+	 * @param array $config
+	 */
 	protected function __construct( $service, $config ) {
 		$this->service = $service;
 		$this->config = $config;
@@ -194,7 +199,7 @@ abstract class TranslationWebService {
 	 * @see doPairs
 	 */
 	protected function getSupportedLanguagePairs() {
-		$key = wfMemckey( 'translate-tmsug-pairs-' . $this->service );
+		$key = wfMemcKey( 'translate-tmsug-pairs-' . $this->service );
 		$pairs = wfGetCache( CACHE_ANYTHING )->get( $key );
 		if ( !is_array( $pairs ) ) {
 			$pairs = $this->doPairs();
@@ -209,25 +214,25 @@ abstract class TranslationWebService {
 	 * Some mangling that tries to keep some parts of the message unmangled
 	 * by the translation service. Most of them support either class=notranslate
 	 * or translate=no.
+	 * @param string $text
+	 * @return string
 	 */
 	protected function wrapUntranslatable( $text ) {
 		$text = str_replace( "\n", "!N!", $text );
 		$pattern = '~%[^% ]+%|\$\d|{VAR:[^}]+}|{?{(PLURAL|GRAMMAR|GENDER):[^|]+\||%(\d\$)?[sd]~';
 		$wrap = '<span class="notranslate" translate="no">\0</span>';
-		$text = preg_replace( $pattern, $wrap, $text );
-
-		return $text;
+		return preg_replace( $pattern, $wrap, $text );
 	}
 
 	/**
 	 * Undo the hopyfully untouched mangling done by wrapUntranslatable.
+	 * @param string $text
+	 * @return string
 	 */
 	protected function unwrapUntranslatable( $text ) {
 		$text = str_replace( '!N!', "\n", $text );
 		$pattern = '~<span class="notranslate" translate="no">(.*?)</span>~';
-		$text = preg_replace( $pattern, '\1', $text );
-
-		return $text;
+		return preg_replace( $pattern, '\1', $text );
 	}
 
 	/* Failure handling and suspending */
@@ -249,7 +254,7 @@ abstract class TranslationWebService {
 	 */
 	public function checkTranslationServiceFailure() {
 		$service = $this->service;
-		$key = wfMemckey( "translate-service-$service" );
+		$key = wfMemcKey( "translate-service-$service" );
 		$value = wfGetCache( CACHE_ANYTHING )->get( $key );
 		if ( !is_string( $value ) ) {
 			return false;
@@ -277,12 +282,13 @@ abstract class TranslationWebService {
 
 	/**
 	 * Increases the failure count for this service
+	 * @param string $msg
 	 */
 	protected function reportTranslationServiceFailure( $msg ) {
 		$service = $this->service;
 		wfDebugLog( 'translationservices', "Translation service $service problem: $msg" );
 
-		$key = wfMemckey( "translate-service-$service" );
+		$key = wfMemcKey( "translate-service-$service" );
 		$value = wfGetCache( CACHE_ANYTHING )->get( $key );
 		if ( !is_string( $value ) ) {
 			$count = 0;
