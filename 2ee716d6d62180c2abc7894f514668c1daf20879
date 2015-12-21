@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_96299a38",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2015-12-21T10:34:20Z",
+      "side": 1,
+      "message": "This is so much nicer.",
+      "revId": "2ee716d6d62180c2abc7894f514668c1daf20879",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
