@@ -94,7 +94,7 @@
 
 			aliases.push( 'category' );
 			for ( i = 0; i < aliases.length; i++ ) {
-				aliases[ i ] = $.escapeRE( aliases[ i ] );
+				aliases[ i ] = mw.RegExp.escape( aliases[ i ] );
 			}
 
 			aliasList = aliases.join( '|' );
@@ -146,7 +146,7 @@
 
 		anchorID = headerText.replace( ' ', '-' ).toLowerCase();
 
-		headerText = $.escapeRE( headerText );
+		headerText = mw.RegExp.escape( headerText );
 		// Search for the header having text as headerText
 		// Regex: http://regex101.com/r/fD6iL1
 		headerSearchRegex = new RegExp( '(==+[ ]*' + headerText + '[ ]*==+)', 'gi' );
@@ -159,7 +159,7 @@
 
 		// This is to add back the tags which were removed in cleanupTags()
 		if ( pageContent.indexOf( '</translate>\n<span id="' + anchorID + '"' ) === -1 ) {
-			spanSearchRegex = new RegExp( '(<span id="' + $.escapeRE( anchorID ) + '"></span>)', 'gi' );
+			spanSearchRegex = new RegExp( '(<span id="' + mw.RegExp.escape( anchorID ) + '"></span>)', 'gi' );
 			pageContent = pageContent.replace( spanSearchRegex, '\n</translate>\n$1\n</translate>\n' );
 		}
 
@@ -254,7 +254,7 @@
 			aliases.push( 'file' );
 
 			for ( i = 0; i < aliases.length; i++ ) {
-				aliases[ i ] = $.escapeRE( aliases[ i ] );
+				aliases[ i ] = mw.RegExp.escape( aliases[ i ] );
 			}
 
 			aliasList = aliases.join( '|' );
@@ -358,7 +358,7 @@
 		namespaces.splice( $.inArray( 'file_talk', namespaces ), 1 );
 
 		for ( i = 0; i < namespaces.length; i++ ) {
-			namespaces[ i ] = $.escapeRE( namespaces[ i ] );
+			namespaces[ i ] = mw.RegExp.escape( namespaces[ i ] );
 		}
 		return namespaces;
 	}
