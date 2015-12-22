@@ -94,7 +94,7 @@
 
 			aliases.push( 'category' );
 			for ( i = 0; i < aliases.length; i++ ) {
-				aliases[ i ] = $.escapeRE( aliases[ i ] );
+				aliases[ i ] = mw.RegExp.escape( aliases[ i ] );
 			}
 
 			aliasList = aliases.join( '|' );
@@ -204,7 +204,7 @@
 			aliases.push( 'file' );
 
 			for ( i = 0; i < aliases.length; i++ ) {
-				aliases[ i ] = $.escapeRE( aliases[ i ] );
+				aliases[ i ] = mw.RegExp.escape( aliases[ i ] );
 			}
 
 			aliasList = aliases.join( '|' );
@@ -306,7 +306,7 @@
 		namespaces.splice( $.inArray( 'file_talk', namespaces ), 1 );
 
 		for ( i = 0; i < namespaces.length; i++ ) {
-			namespaces[ i ] = $.escapeRE( namespaces[ i ] );
+			namespaces[ i ] = mw.RegExp.escape( namespaces[ i ] );
 		}
 		return namespaces;
 	}
