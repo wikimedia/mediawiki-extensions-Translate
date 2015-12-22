@@ -382,7 +382,7 @@ $wgResourceModules['ext.translate.special.pagepreparation'] = array(
 	'styles' => 'resources/css/ext.translate.special.pagepreparation.css',
 	'scripts' => 'resources/js/ext.translate.special.pagepreparation.js',
 	'dependencies' => array(
-		'jquery.mwExtension',
+		'mediawiki.RegExp',
 		'mediawiki.Title',
 		'mediawiki.action.history.diff',
 		'mediawiki.api',
