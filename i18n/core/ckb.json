@@ -154,6 +154,7 @@
 	"tux-editor-translate-mode": "پێرست",
 	"tux-proofread-edit-label": "دەستکاری",
 	"tux-editor-page-mode": "پەڕە",
+	"tux-editor-outdated-warning-diff-link": "جیاوازییەکان نیشان بدە",
 	"tux-editor-doc-editor-cancel": "ھەڵیوەشێنەوە",
 	"tux-messagetable-loading-messages": "بارکردنی {{PLURAL:$1|پەیام|پەیامەکان}}...",
 	"tux-message-filter-result": "$1 {{PLURAL:$1|ئاکام}} دۆزرایەوە بۆ «$2»",
