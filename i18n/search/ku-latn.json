@@ -13,5 +13,11 @@
 	"tux-sst-facet-language": "Ziman",
 	"tux-sst-facet-group": "Komên peyaman",
 	"tux-sst-facet-orphan": "(sêwî)",
-	"tux-sst-next": "Pêşve›"
+	"tux-sst-nosolr-title": "Lêgerîn tune ye",
+	"tux-sst-solr-offline-title": "Lêgerîn tune ye",
+	"tux-sst-next": "Pêşve›",
+	"tux-sst-prev": "Paşve",
+	"tux-sst-default": "Werger",
+	"tux-sst-translated": "Wergerên ji $1",
+	"tux-sst-case-sensitive": "Nivîsîna biçûk û mezin"
 }
