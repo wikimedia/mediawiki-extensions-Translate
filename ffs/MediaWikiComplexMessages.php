@@ -77,10 +77,11 @@ abstract class ComplexMessages {
 				continue;
 			}
 
-			foreach ( $values as $index => $value )
+			foreach ( $values as $index => $value ) {
 				if ( in_array( $value, $defs[$item], true ) ) {
 					unset( $current[$item][$index] );
 				}
+			}
 		}
 
 		return $current;
@@ -471,7 +472,9 @@ abstract class ComplexMessages {
 		$text = '';
 		$errors = array();
 		$this->validate( $errors, $filter );
-		foreach ( $errors as $_ ) $text .= "#!!# $_\n";
+		foreach ( $errors as $_ ) {
+			$text .= "#!!# $_\n";
+		}
 
 		foreach ( $this->getGroups() as $group => $data ) {
 			if ( $filter !== false && !in_array( $group, (array)$filter, true ) ) {

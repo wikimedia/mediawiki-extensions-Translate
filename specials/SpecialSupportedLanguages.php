@@ -420,8 +420,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$keys = array_keys( $list );
 		shuffle( $keys );
 		$random = array();
-		foreach ( $keys as $key )
+		foreach ( $keys as $key ) {
 			$random[$key] = $list[$key];
+		}
 
 		return $random;
 	}

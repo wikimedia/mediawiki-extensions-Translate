@@ -98,10 +98,12 @@ class HookDocTest extends MediaWikiTestCase {
 		$hooks = array();
 		$dh = opendir( $path );
 		if ( $dh ) {
-			while ( ( $file = readdir( $dh ) ) !== false ) {
+			$file = readdir( $dh );
+			while ( $file !== false ) {
 				if ( filetype( $path . $file ) == 'file' ) {
 					$hooks = array_merge( $hooks, call_user_func( $callback, $path . $file ) );
 				}
+				$file = readdir( $dh );
 			}
 			closedir( $dh );
 		}

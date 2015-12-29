@@ -47,7 +47,12 @@ class TSP extends Maintenance {
 		fgets( $handle );
 
 		$data = array();
-		while ( ( $l = fgets( $handle ) ) !== false ) {
+		while ( true ) {
+			$l = fgets( $handle );
+			if ( $l === false ) {
+				break;
+			}
+
 			$fields = explode( "\t", trim( $l, "\n" ) );
 			list( $name, $reg, $edits, $translator, $promoted, $method ) = $fields;
 			$month = substr( $reg, 0, 4 ) . '-' . substr( $reg, 4, 2 ) . '-01';
