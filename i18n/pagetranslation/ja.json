@@ -181,6 +181,7 @@
 	"tpt-translate-title": "ページ名を翻訳できるようにする",
 	"pp-pagename-placeholder": "ページ名を入力",
 	"pp-save-button-label": "保存",
+	"pp-save-message": "ページは保存されました。[$1 編集]できます。",
 	"pp-pagename-missing": "ページ名を入力してください。",
 	"tpt-unlink-confirm": "このページを翻訳システムから本当に除去するかどうか確認してください。\n言語選択と、翻訳されたページ名が、動作しなくなります。\n翻訳ページが編集できる状態になります。",
 	"tpt-unlink-button": "翻訳対象から除去",
