@@ -236,7 +236,7 @@ GROOVY;
 		if ( $handle->getCode() !== $sourceLanguage ) {
 			$localid = $handle->getTitleForBase()->getPrefixedText();
 
-			$boolQuery = new \Elastica\Query\Bool();
+			$boolQuery = new \Elastica\Query\BoolQuery();
 			$boolQuery->addMust( new Elastica\Query\Term( array( 'wiki' => wfWikiId() ) ) );
 			$boolQuery->addMust( new Elastica\Query\Term( array( 'language' => $handle->getCode() ) ) );
 			$boolQuery->addMust( new Elastica\Query\Term( array( 'localid' => $localid ) ) );
@@ -540,10 +540,10 @@ GROOVY;
 
 		// Allow searching either by message content or message id (page name
 		// without language subpage) with exact match only.
-		$searchQuery = new \Elastica\Query\Bool();
+		$searchQuery = new \Elastica\Query\BoolQuery();
 		foreach ( $fields as $analyzer => $words ) {
 			foreach ( $words as $word ) {
-				$boolQuery = new \Elastica\Query\Bool();
+				$boolQuery = new \Elastica\Query\BoolQuery();
 				$contentQuery = new \Elastica\Query\Match();
 				$contentQuery->setFieldQuery( $analyzer, $word );
 				$boolQuery->addShould( $contentQuery );
@@ -571,7 +571,7 @@ GROOVY;
 				$handle = new MessageHandle( $title );
 				if ( $handle->isValid() && $handle->getCode() !== '' ) {
 					$localid = $handle->getTitleForBase()->getPrefixedText();
-					$boolQuery = new \Elastica\Query\Bool();
+					$boolQuery = new \Elastica\Query\BoolQuery();
 					$messageId = new \Elastica\Query\Term();
 					$messageId->setTerm( 'localid', $localid );
 					$boolQuery->addMust( $messageId );
