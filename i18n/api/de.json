@@ -48,6 +48,7 @@
 	"apihelp-translationstash-param-translation": "Übersetzung erstellt vom Benutzer.",
 	"apihelp-translationstash-param-metadata": "JSON-Objekt.",
 	"apihelp-translationstash-example-1": "Fügt eine Übersetzung zum Übersetzungsspeicher für [[MediaWiki:Jan/fi]] hinzu",
+	"apihelp-ttmserver-param-service": "Welche der verfügbaren Übersetzungsdienste verwendet werden sollen.",
 	"apihelp-ttmserver-param-sourcelanguage": "Der Sprachcode des Quelltextes.",
 	"apihelp-ttmserver-param-targetlanguage": "Der Sprachcode des Vorschlags.",
 	"apihelp-ttmserver-param-text": "Der Text, für den Vorschläge gefunden werden sollen.",
