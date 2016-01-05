@@ -5,7 +5,7 @@
 			"Lakzon"
 		]
 	},
-	"pagetranslation": "ترجمه /زوون چاوواشاکردن وةڵگة",
+	"pagetranslation": "چاوواشەکردن زوون وەڵگە",
 	"right-pagetranslation": "علامت‌گذاری نسخه‌های صفحه برای ترجمه",
 	"action-pagetranslation": "مدیریت صفحه‌های ترجمه‌پذیر",
 	"tpt-desc": "افزونه‌ای برای ترجمهٔ صفحه‌های محتوایی",
@@ -13,7 +13,7 @@
 	"tpt-section-new": "واحد جدید ترجمه.\nنام: $1",
 	"tpt-section-deleted": "واحد ترجمهٔ $1",
 	"tpt-template": "الگوی وةڵگة",
-	"tpt-templatediff": "الگوی وةڵگة تغییر کرده‌است.",
+	"tpt-templatediff": "الگوی وةڵگة گؤەڕیائە/تغییرکردە.",
 	"tpt-diff-old": "متن قبلی",
 	"tpt-diff-new": "متن تازه",
 	"tpt-submit": "علامت‌گذاری این نسخه برای ترجمه",
@@ -48,7 +48,7 @@
 	"tpt-languages-legend": "وۀ زوونۀلئ تر:",
 	"tpt-languages-zero": "شروع ترجمه برای این زبان",
 	"tpt-languages-nonzero": "$1 ($2% ترجمه‌شده)",
-	"tpt-tab-translate": "چاوواشۀکِردن زوون",
+	"tpt-tab-translate": "چاوواشەکِردن زوون",
 	"tpt-aggregategroup-add": "افزودن",
 	"tpt-aggregategroup-save": "ذخیرۀ",
 	"tpt-aggregategroup-add-new": "افزودن گروه تازه جمع‌شده",
