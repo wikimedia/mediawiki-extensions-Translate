@@ -39,7 +39,7 @@
 		"mediawiki/universal-language-selector": "*"
 	},
 	"require-dev": {
-		"jakub-onderka/php-parallel-lint": "0.9",
+		"jakub-onderka/php-parallel-lint": "0.9.2",
 		"mediawiki/mediawiki-codesniffer": "0.5.1"
 	},
 	"suggest": {
