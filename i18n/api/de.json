@@ -6,6 +6,7 @@
 			"Ljonka"
 		]
 	},
+	"apihelp-aggregategroups-param-do": "Was mit der zusammengefassten Nachrichtengruppe getan werden soll.",
 	"apihelp-aggregategroups-param-aggregategroup": "Kennung der zusammengefassten Nachrichtengruppe.",
 	"apihelp-aggregategroups-param-group": "Nachrichtengruppenkennung.",
 	"apihelp-aggregategroups-param-groupname": "Name der zusammengefassten Nachrichtengruppe.",
@@ -16,6 +17,7 @@
 	"apihelp-groupreview-param-state": "Der neue Status für die Gruppe.",
 	"apihelp-query+languagestats-description": "Ruft Sprachstatistiken ab.",
 	"apihelp-query+languagestats-param-language": "Sprachcode.",
+	"apihelp-query+messagecollection-description": "Ruft die Nachrichtensammlung über Übersetzungen ab.",
 	"apihelp-query+messagecollection-param-group": "Nachrichtengruppe.",
 	"apihelp-query+messagecollection-param-language": "Sprachcode.",
 	"apihelp-query+messagecollection-param-limit": "Wie viele Nachrichten angezeigt werden sollen (nach der Filterung).",
