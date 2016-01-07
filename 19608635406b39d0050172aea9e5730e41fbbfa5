@@ -19,6 +19,58 @@
     },
     {
       "key": {
+        "uuid": "6eaa8f54_cf82be01",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-01-07T16:37:11Z",
+      "side": 1,
+      "message": "makeSectionElement is called at 5 places with null or with $wgContLang for $lang.",
+      "parentUuid": "6eaa8f54_cfcabea2",
+      "revId": "19608635406b39d0050172aea9e5730e41fbbfa5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_0f85360b",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-01-07T16:37:11Z",
+      "side": 1,
+      "message": "adder",
+      "revId": "19608635406b39d0050172aea9e5730e41fbbfa5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_2f8a721c",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-01-07T16:37:11Z",
+      "side": 1,
+      "message": "adder",
+      "revId": "19608635406b39d0050172aea9e5730e41fbbfa5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6eaa8f54_cf495e37",
         "filename": "utils/TranslationHelpers.php",
         "patchSetId": 1
@@ -30,6 +82,24 @@
       "writtenOn": "2016-01-07T15:19:45Z",
       "side": 1,
       "message": "Did you check all the callers?",
+      "revId": "19608635406b39d0050172aea9e5730e41fbbfa5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_6f94ea42",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-01-07T16:37:11Z",
+      "side": 1,
+      "message": "adder is called at the two marked places.",
+      "parentUuid": "6eaa8f54_cf495e37",
       "revId": "19608635406b39d0050172aea9e5730e41fbbfa5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
