@@ -16,7 +16,8 @@
 			"درفش کاویانی",
 			"Armin1392",
 			"Alirezaaa",
-			"Hosseinblue"
+			"Hosseinblue",
+			"Calak"
 		]
 	},
 	"translate": "ترجمه",
@@ -28,7 +29,7 @@
 	"translate-taskui-reviewall": "بررسی تمام ترجمه‌ها",
 	"translate-taskui-export-to-file": "برون‌بری در قالب بومی",
 	"translate-taskui-export-as-po": "برون‌بری برای ترجمهٔ برون‌خط",
-	"translate-taction-translate": "چاوواشەکِردن زوون",
+	"translate-taction-translate": "ترجمه",
 	"translate-taction-proofread": "بازبینی ترجمه‌ها",
 	"translate-taction-lstats": "آمار زبان",
 	"translate-taction-mstats": "آمار گروه‌های پیغام",
@@ -59,7 +60,7 @@
 	"translate-ignored": "(نادیده گرفته شده)",
 	"translate-edit-title": "ویرایش «$1»",
 	"translate-edit-definition": "تعریف پیغام",
-	"translate-edit-translation": "چاوواشەکِردن زوون",
+	"translate-edit-translation": "ترجمه",
 	"translate-edit-contribute": "مشارکت",
 	"translate-edit-no-information": "<em>این پیغام دارای توضیحات نیست.\n''اگر می‌دانید که این پیغام چگونه یا در کجا استفاده می‌شود، می‌توانید با اضافه کردن توضیحات به دیگر ترجمه‌کنندگان کمک کنید.</em>",
 	"translate-edit-information": "اطلاعات در مورد این پیغام ($1)",
