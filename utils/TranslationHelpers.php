@@ -367,10 +367,11 @@ class TranslationHelpers {
 				continue;
 			}
 
+			$fbLanguage = Language::factory( $fbcode );
 			$context = RequestContext::getMain();
 			$label = TranslateUtils::getLanguageName( $fbcode, $context->getLanguage()->getCode() ) .
 				$context->msg( 'word-separator' )->text() .
-				$context->msg( 'parentheses', wfBCP47( $fbcode ) )->text();
+				$context->msg( 'parentheses', $fbLanguage->getHtmlCode() )->text();
 
 			$target = Title::makeTitleSafe( $ns, "$page/$fbcode" );
 			if ( $target ) {
@@ -385,11 +386,11 @@ class TranslationHelpers {
 			$display = TranslateUtils::convertWhiteSpaceToHTML( $text );
 			$display = Html::rawElement( 'div', array(
 					'lang' => $fbcode,
-					'dir' => Language::factory( $fbcode )->getDir() ),
+					'dir' => $fbLanguage->getDir() ),
 				$display
 			);
 
-			$contents = self::legend( $label ) . "\n" . $this->adder( $id, $fbcode ) .
+			$contents = self::legend( $label ) . "\n" . $this->adder( $id, $fbLanguage ) .
 				$display . self::clear();
 
 			$boxes[] = Html::rawElement( 'div', $params, $contents ) .
@@ -583,7 +584,7 @@ class TranslationHelpers {
 
 	/**
 	 * @param string $source jQuery selector for element containing the source
-	 * @param string|Language $lang Language code or object
+	 * @param Language $lang Language object
 	 * @return string
 	 */
 	public function adder( $source, $lang ) {
@@ -592,7 +593,7 @@ class TranslationHelpers {
 		}
 		$target = self::jQueryPathId( $this->getTextareaId() );
 		$source = self::jQueryPathId( $source );
-		$dir = wfGetLangObj( $lang )->getDir();
+		$dir = $lang->getDir();
 		$params = array(
 			'onclick' => "jQuery($target).val(jQuery($source).text()).focus(); return false;",
 			'href' => '#',
