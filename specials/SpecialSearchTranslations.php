@@ -218,10 +218,11 @@ class SpecialSearchTranslations extends SpecialPage {
 				'dir' => 'ltr',
 			);
 
+			$language = Language::factory( $document['language'] );
 			$textAttribs = array(
 				'class' => 'row tux-text',
-				'lang' => wfBCP47( $document['language'] ),
-				'dir' => Language::factory( $document['language'] )->getDir(),
+				'lang' => $language->getHtmlCode(),
+				'dir' => $language->getDir(),
 			);
 
 			$resultsHtml = $resultsHtml

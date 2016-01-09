@@ -526,8 +526,8 @@ class MessageWebImporter {
 		$legendParams = array( 'class' => 'mw-tpt-sp-legend' );
 		$contentParams = array( 'class' => 'mw-tpt-sp-content' );
 		if ( $lang ) {
-			$contentParams['dir'] = wfGetLangObj( $lang )->getDir();
-			$contentParams['lang'] = wfGetLangObj( $lang )->getCode();
+			$contentParams['dir'] = $lang->getDir();
+			$contentParams['lang'] = $lang->getCode();
 		}
 
 		$output = Html::rawElement( 'div', $containerParams,
