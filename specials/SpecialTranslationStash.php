@@ -154,7 +154,7 @@ HTML
 			'span',
 			array(
 				'class' => 'uls',
-				'lang' => $language->getCode(),
+				'lang' => $language->getHtmlCode(),
 				'dir' => $language->getDir(),
 			),
 			$targetLangName

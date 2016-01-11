@@ -224,6 +224,7 @@ class SpecialTranslations extends SpecialAllpages {
 			$tHandle = new MessageHandle( $tTitle );
 
 			$code = $tHandle->getCode();
+			$language = Language::factory( $code );
 
 			$text = TranslateUtils::getLanguageName( $code, $this->getLanguage()->getCode() );
 			$text .= $separator;
@@ -258,7 +259,7 @@ class SpecialTranslations extends SpecialAllpages {
 			$leftColumn = $tools['history'] . $tools['edit'];
 			$out .= Xml::tags( 'tr', array( 'class' => $class ),
 				Xml::tags( 'td', null, $leftColumn ) .
-					Xml::tags( 'td', array( 'lang' => $code, 'dir' => Language::factory( $code )->getDir() ),
+					Xml::tags( 'td', array( 'lang' => $language->getHtmlCode(), 'dir' => $language->getDir() ),
 						TranslateUtils::convertWhiteSpaceToHTML( $pageInfo[$key][0] ) )
 			);
 		}

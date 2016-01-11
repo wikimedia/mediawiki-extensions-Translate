@@ -20,6 +20,7 @@ abstract class ComplexMessages {
 	const PLACEHOLDER = 'languagecodeplaceholder';
 
 	protected $language = null;
+	protected $targetHtmlCode = null;
 	protected $targetDir = null;
 	protected $id = '__BUG__';
 	protected $variable = '__BUG__';
@@ -42,6 +43,7 @@ abstract class ComplexMessages {
 		$this->language = $langCode;
 
 		$language = Language::factory( $langCode );
+		$this->targetHtmlCode = $language->getHtmlCode();
 		$this->targetDir = $language->getDir();
 	}
 
@@ -355,7 +357,7 @@ abstract class ComplexMessages {
 
 	public function editElement( $key, $contents ) {
 		return Xml::input( $this->getKeyForEdit( $key ), 40, $contents, array(
-			'lang' => $this->language,
+			'lang' => $this->targetHtmlCode,
 			'dir' => $this->targetDir,
 		) );
 	}

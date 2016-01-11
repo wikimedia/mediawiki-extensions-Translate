@@ -98,7 +98,7 @@ class TranslationEditPage {
 			'id' => $id,
 			/* Target language might differ from interface language. Set
 			 * a suitable default direction */
-			'lang' => $targetLang->getCode(),
+			'lang' => $targetLang->getHtmlCode(),
 			'dir' => $targetLang->getDir(),
 		);
 

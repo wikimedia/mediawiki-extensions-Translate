@@ -258,7 +258,7 @@ class TranslationHelpers {
 			array(
 				'class' => 'mw-translate-edit-deftext',
 				'dir' => $sl->getDir(),
-				'lang' => $sl->getCode(),
+				'lang' => $sl->getHtmlCode(),
 			),
 			TranslateUtils::convertWhiteSpaceToHTML( $en )
 		);
@@ -385,7 +385,7 @@ class TranslationHelpers {
 
 			$display = TranslateUtils::convertWhiteSpaceToHTML( $text );
 			$display = Html::rawElement( 'div', array(
-					'lang' => $fbcode,
+					'lang' => $fbLanguage->getHtmlCode(),
 					'dir' => $fbLanguage->getDir() ),
 				$display
 			);
@@ -445,7 +445,7 @@ class TranslationHelpers {
 			$class = 'mw-sp-translate-edit-noinfo';
 			$lang = $context->getLanguage();
 			// The message saying that there's no info, should be translated
-			$divAttribs = array( 'dir' => $lang->getDir(), 'lang' => $lang->getCode() );
+			$divAttribs = array( 'dir' => $lang->getDir(), 'lang' => $lang->getHtmlCode() );
 		}
 		$class .= ' mw-sp-translate-message-documentation';
 

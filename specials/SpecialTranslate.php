@@ -181,7 +181,7 @@ class SpecialTranslate extends SpecialPage {
 						Xml::element( 'span',
 							// The reason is probably written in the content language
 							array(
-								'lang' => $wgContLang->getCode(),
+								'lang' => $wgContLang->getHtmlCode(),
 								'dir' => $wgContLang->getDir(),
 							),
 							$priorityReason
@@ -585,12 +585,10 @@ class SpecialTranslate extends SpecialPage {
 		if ( $this->options['language'] === $wgTranslateDocumentationLanguageCode ) {
 			// The name will be displayed in the UI language,
 			// so use for lang and dir
-			$targetLangCode = $this->getLanguage()->getCode();
-			$targetLangDir = $this->getLanguage()->getDir();
+			$targetLang = $this->getLanguage();
 			$targetLangName = $this->msg( 'translate-documentation-language' )->text();
 		} else {
-			$targetLangCode = $this->options['language'];
-			$targetLangDir = Language::factory( $this->options['language'] )->getDir();
+			$targetLang = Language::factory( $this->options['language'] );
 			$targetLangName = Language::fetchLanguageName( $this->options['language'] );
 		}
 
@@ -606,8 +604,8 @@ class SpecialTranslate extends SpecialPage {
 				Html::element( 'span',
 					array(
 						'class' => 'uls',
-						'lang' => $targetLangCode,
-						'dir' => $targetLangDir,
+						'lang' => $targetLang->getHtmlCode(),
+						'dir' => $targetLang->getDir(),
 					),
 					$targetLangName
 				)

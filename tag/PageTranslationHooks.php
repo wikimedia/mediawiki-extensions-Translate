@@ -227,7 +227,6 @@ class PageTranslationHooks {
 		// This way the parser knows to fragment the parser cache by language code
 		$userLang = $parser->getOptions()->getUserLangObj();
 		$userLangCode = $userLang->getCode();
-		$userLangDir = $userLang->getDir();
 		// Should call $page->getMessageGroup()->getSourceLanguage(), but
 		// group is sometimes null on WMF during page moves, reason unknown.
 		// This should do the same thing for now.
@@ -302,8 +301,8 @@ class PageTranslationHooks {
 
 		$out = Html::openElement( 'div', array(
 			'class' => 'mw-pt-languages noprint',
-			'lang' => $userLangCode,
-			'dir' => $userLangDir
+			'lang' => $userLang->getHtmlCode(),
+			'dir' => $userLang->getDir()
 		) );
 		$out .= Html::rawElement( 'div', array( 'class' => 'mw-pt-languages-label' ),
 			wfMessage( 'tpt-languages-legend' )->inLanguage( $userLang )->escaped()
@@ -728,7 +727,7 @@ class PageTranslationHooks {
 			array(
 				'class' => 'mw-pt-translate-header noprint nomobile',
 				'dir' => $language->getDir(),
-				'lang' => $language->getCode(),
+				'lang' => $language->getHtmlCode(),
 			),
 			$context->getLanguage()->semicolonList( $actions )
 		) . Html::element( 'hr' );
@@ -767,7 +766,7 @@ class PageTranslationHooks {
 			'div',
 			array(
 				'class' => 'mw-translate-page-info',
-				'lang' => $language->getCode(),
+				'lang' => $language->getHtmlCode(),
 				'dir' => $language->getDir(),
 			),
 			'$1'

@@ -263,10 +263,10 @@ class MessageTable {
 	protected static function getLanguageAttributes( Language $language ) {
 		global $wgTranslateDocumentationLanguageCode;
 
-		$code = $language->getCode();
+		$code = $language->getHtmlCode();
 		$dir = $language->getDir();
 
-		if ( $code === $wgTranslateDocumentationLanguageCode ) {
+		if ( $language->getCode() === $wgTranslateDocumentationLanguageCode ) {
 			// Should be good enough for now
 			$code = 'en';
 		}
