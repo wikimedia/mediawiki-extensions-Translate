@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_98a0809c",
+        "filename": "utils/MessageHandle.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-01-11T19:43:31Z",
+      "side": 1,
+      "message": "Update to \"@since 2016.01\" because it was renamed.",
+      "revId": "18a284c3b905a6a89bd87a96c406826d1215dbb5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
