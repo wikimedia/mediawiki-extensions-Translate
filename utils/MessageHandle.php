@@ -93,19 +93,19 @@ class MessageHandle {
 	}
 
 	/**
-	 * Return the code for the assumed language of the content, which might
+	 * Return the Language object for the assumed language of the content, which might
 	 * be different from the subpage code (qqq, no subpage).
-	 * @return String
+	 * @return Language
 	 * @since 2012-08-05
 	 */
-	public function getEffectiveLanguageCode() {
+	public function getEffectiveLanguage() {
 		global $wgContLang;
 		$code = $this->getCode();
 		if ( $code === '' || $this->isDoc() ) {
-			return $wgContLang->getCode();
+			return $wgContLang;
 		}
 
-		return $code;
+		return wfGetLangObj( $code );
 	}
 
 	/**
