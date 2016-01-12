@@ -210,7 +210,7 @@
 
 		newUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit row' );
 		sourceUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__source five columns' )
-			.prop( 'readonly', 'readonly' ).attr( 'tabindex', '-1' ).val( sourceText );
+			.prop( 'readonly', true ).attr( 'tabindex', '-1' ).val( sourceText );
 		targetUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__target five columns' )
 			.val( targetText );
 		actionUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit__actions two columns' );
@@ -342,7 +342,7 @@
 				.show( 'fast' );
 			return;
 		} else {
-			$( 'input' ).attr( 'disabled', 'disabled' );
+			$( 'input' ).prop( 'disabled', true );
 			for ( i = 0; i < noOfSourceUnits; i++ ) {
 				content = $( '.mw-tpm-sp-unit__target' ).eq( i ).val();
 				content = $.trim( content );
@@ -353,7 +353,7 @@
 
 			$.ajaxDispatcher( list, 1 ).done( function () {
 				$( '#action-import' ).removeClass( 'hide' );
-				$( 'input' ).removeAttr( 'disabled' );
+				$( 'input' ).prop( 'disabled', false );
 			} );
 		}
 	}

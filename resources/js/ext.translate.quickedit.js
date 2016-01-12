@@ -90,7 +90,7 @@
 
 		if ( mw.config.get( 'trlKeys' ) || $( '.tqe-inlineeditable' ).length ) {
 			if ( callbacks.next === undefined ) {
-				form.find( '.mw-translate-next, .mw-translate-skip' ).attr( 'disabled', 'disabled' );
+				form.find( '.mw-translate-next, .mw-translate-skip' ).prop( 'disabled', true );
 			} else {
 				form.find( '.mw-translate-next' ).click( function () {
 					if ( callbacks.next ) {
@@ -108,7 +108,7 @@
 			}
 		} else {
 			form.find( '.mw-translate-next, .mw-translate-skip' )
-				.attr( 'disabled', 'disabled' )
+				.prop( 'disabled', true )
 				.css( 'display', 'none' );
 		}
 		form.find( '.mw-translate-close' ).click( function () {
