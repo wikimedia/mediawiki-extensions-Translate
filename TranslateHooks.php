@@ -347,7 +347,7 @@ class TranslateHooks {
 	public static function onPageContentLanguage( Title $title, &$pageLang ) {
 		$handle = new MessageHandle( $title );
 		if ( $handle->isMessageNamespace() ) {
-			$pageLang = $handle->getEffectiveLanguageCode();
+			$pageLang = $handle->getEffectiveLanguage();
 		}
 
 		return true;
