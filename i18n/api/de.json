@@ -3,7 +3,8 @@
 		"authors": [
 			"Metalhead64",
 			"Colfin 96",
-			"Ljonka"
+			"Ljonka",
+			"Predatorix"
 		]
 	},
 	"apihelp-aggregategroups-param-do": "Was mit der zusammengefassten Nachrichtengruppe getan werden soll.",
@@ -32,10 +33,12 @@
 	"apihelp-query+messagetranslations-param-title": "Vollständiger Titel einer bekannten Nachricht.",
 	"apihelp-query+messagetranslations-example-1": "Liste der Übersetzungen im Wiki für „MediaWiki:January“",
 	"apihelp-translatesandbox-description": "Registriert und verwaltet Spielwiesenbenutzer.",
+	"apihelp-translatesandbox-param-do": "Was ist zu tun?",
 	"apihelp-translatesandbox-param-userid": "Kennungen der zu verwaltenden Benutzer. 0 für Erstellungen verwenden.",
 	"apihelp-translatesandbox-param-username": "Benutzername beim Erstellen des Benutzers.",
 	"apihelp-translatesandbox-param-password": "Passwort beim Erstellen des Benutzers.",
 	"apihelp-translatesandbox-param-email": "E-Mail beim Erstellen des Benutzers.",
+	"apihelp-translateuser-description": "Übersetzungsbezogene Informationen über den Benutzer.",
 	"apihelp-translateuser-example-1": "Zeigt Informationen über den Benutzer an",
 	"apihelp-translationaids-description": "Ruft alle Übersetzungshilfen ab.",
 	"apihelp-translationaids-param-title": "Vollständiger Titel einer bekannten Nachricht.",
@@ -50,10 +53,12 @@
 	"apihelp-translationstash-param-translation": "Übersetzung erstellt vom Benutzer.",
 	"apihelp-translationstash-param-metadata": "JSON-Objekt.",
 	"apihelp-translationstash-example-1": "Fügt eine Übersetzung zum Übersetzungsspeicher für [[MediaWiki:Jan/fi]] hinzu",
+	"apihelp-ttmserver-description": "Frage Vorschläge aus den gespeicherten Übersetzungen ab.",
 	"apihelp-ttmserver-param-service": "Welche der verfügbaren Übersetzungsdienste verwendet werden sollen.",
 	"apihelp-ttmserver-param-sourcelanguage": "Der Sprachcode des Quelltextes.",
 	"apihelp-ttmserver-param-targetlanguage": "Der Sprachcode des Vorschlags.",
 	"apihelp-ttmserver-param-text": "Der Text, für den Vorschläge gefunden werden sollen.",
+	"apihelp-ttmserver-example-1": "Erhalte Vorschläge für die Übersetzung von \"Help\" aus dem Englischen ins Finnische",
 	"apihelp-searchtranslations-description": "Übersetzungen suchen.",
 	"apihelp-searchtranslations-param-service": "Welcher der verfügbaren Übersetzungsdienste genutzt werden sollte.",
 	"apihelp-searchtranslations-param-query": "Die Zeichenfolge, nach der gesucht werden soll.",
