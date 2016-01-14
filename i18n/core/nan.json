@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ianbu"
+			"Ianbu",
+			"Luuva"
 		]
 	},
+	"translate-magic-module": "Module:",
 	"translate-documentation-language": "訊息說明書"
 }
