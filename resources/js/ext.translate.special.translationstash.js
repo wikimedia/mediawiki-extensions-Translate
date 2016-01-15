@@ -152,8 +152,8 @@
 			// Show a message telling that the limit was reached
 			$( '.limit-reached' )
 				.empty()
-				.append( $( '<h1>' ).text( mw.message( 'tsb-limit-reached-title' ) ) )
-				.append( $( '<p>' ).text( mw.message( 'tsb-limit-reached-body' ) ) )
+				.append( $( '<h1>' ).text( mw.msg( 'tsb-limit-reached-title' ) ) )
+				.append( $( '<p>' ).text( mw.msg( 'tsb-limit-reached-body' ) ) )
 				.removeClass( 'hide' );
 		}
 	}
