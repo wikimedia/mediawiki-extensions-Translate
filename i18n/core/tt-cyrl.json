@@ -93,5 +93,9 @@
 	"translate-documentation-language": "Хат документациясе",
 	"translate-msggroupselector-search-all": "Барлык",
 	"tux-tab-all": "Барлык",
-	"tux-editor-in-other-languages": "Башка телләрдә"
+	"tux-tab-untranslated": "Тәрҗемә ителмәгәннәре",
+	"tux-tab-outdated": "Искергәннәре",
+	"tux-tab-translated": "Тәрҗемә ителгәннәре",
+	"tux-editor-in-other-languages": "Башка телләрдә",
+	"tux-empty-list-other": "Тәрҗемәгә итәргә бернәрсә дә юк"
 }
