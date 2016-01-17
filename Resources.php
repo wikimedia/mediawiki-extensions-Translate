@@ -398,6 +398,11 @@ $wgResourceModules['ext.translate.special.pagetranslation'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.special.preferences'] = array(
+	'scripts' => 'resources/js/ext.translate.special.preferences.js',
+	'position' => 'top',
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.special.searchtranslations'] = array(
 	'scripts' => 'resources/js/ext.translate.special.searchtranslations.js',
 	'dependencies' => array(

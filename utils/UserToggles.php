@@ -23,6 +23,8 @@ class TranslatePreferences {
 	 * @return bool true
 	 */
 	public static function onGetPreferences( $user, &$preferences ) {
+		RequestContext::getMain()->getOutput()->addModules( 'ext.translate.special.preferences' );
+
 		global $wgTranslateNewsletterPreference;
 
 		if ( !$wgTranslateNewsletterPreference ) {
