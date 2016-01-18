@@ -33,5 +33,8 @@
 	"apihelp-ttmserver-param-sourcelanguage": "Код языка исходного текста.",
 	"apihelp-searchtranslations-description": "Поиск переводов.",
 	"apihelp-searchtranslations-param-query": "Строка для поиска.",
-	"apihelp-searchtranslations-param-sourcelanguage": "Код языка исходного текста."
+	"apihelp-searchtranslations-param-sourcelanguage": "Код языка исходного текста.",
+	"apihelp-searchtranslations-param-limit": "Размер результата.",
+	"apihelp-searchtranslations-example-1": "Показать переводы на язык.",
+	"apihelp-searchtranslations-example-2": "Показать непереведённые сообщения, соответствующие запросу на исходном языке."
 }
