@@ -19,12 +19,15 @@ class TranslateSandboxEmailJob extends Job {
 	}
 
 	public function run() {
+		global $wgVersion;
 		$status = UserMailer::send(
 			$this->params['to'],
 			$this->params['from'],
 			$this->params['subj'],
 			$this->params['body'],
-			$this->params['replyto']
+			version_compare( $wgVersion, '1.26.0', '<' )
+				? $this->params['replyto']
+				: array( 'replyTo' => $this->params['replyto'] )
 		);
 
 		$isOK = $status->isOK();
