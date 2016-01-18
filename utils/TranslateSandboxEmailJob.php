@@ -15,7 +15,7 @@ class TranslateSandboxEmailJob extends Job {
 			$this->params['from'],
 			$this->params['subj'],
 			$this->params['body'],
-			$this->params['replyto']
+			array( 'replyTo' => $this->params['replyto'] )
 		);
 
 		$isOK = $status->isOK();
