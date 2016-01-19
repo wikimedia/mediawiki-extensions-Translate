@@ -20,6 +20,10 @@ class SpecialTranslationStash extends SpecialPage {
 		parent::__construct( 'TranslationStash' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	protected function getGroupName() {
 		return 'wiki';
 	}

@@ -47,6 +47,10 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		parent::__construct( 'PageTranslationDeletePage', 'pagetranslation' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	public function isListed() {
 		return false;
 	}

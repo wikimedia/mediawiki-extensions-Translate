@@ -32,6 +32,10 @@ class SpecialManageGroups extends SpecialPage {
 		parent::__construct( 'ManageMessageGroups' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	protected function getGroupName() {
 		return 'wiki';
 	}

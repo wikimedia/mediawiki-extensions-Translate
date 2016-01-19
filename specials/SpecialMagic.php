@@ -39,6 +39,10 @@ class SpecialMagic extends SpecialPage {
 		parent::__construct( 'Magic' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	protected function getGroupName() {
 		return 'wiki';
 	}

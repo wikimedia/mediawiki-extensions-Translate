@@ -22,6 +22,10 @@ class SpecialPageTranslation extends SpecialPage {
 		parent::__construct( 'PageTranslation' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	protected function getGroupName() {
 		return 'pagetools';
 	}
