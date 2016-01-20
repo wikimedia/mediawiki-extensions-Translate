@@ -142,7 +142,7 @@ class TranslateEditAddons {
 	 * Hook: PageContentSaveComplete
 	 */
 	public static function onSave( WikiPage $wikiPage, $user, $content, $summary,
-		$minor, $_, $_, $flags, $revision
+		$minor, $_1, $_2, $flags, $revision
 	) {
 
 		if ( $content instanceof TextContent ) {
