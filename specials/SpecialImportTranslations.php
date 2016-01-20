@@ -22,6 +22,10 @@ class SpecialImportTranslations extends SpecialPage {
 		parent::__construct( 'ImportTranslations', 'translate-import' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	protected function getGroupName() {
 		return 'wiki';
 	}

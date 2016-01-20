@@ -29,6 +29,10 @@ class SpecialTranslate extends SpecialPage {
 		parent::__construct( 'Translate' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	protected function getGroupName() {
 		return 'wiki';
 	}

@@ -62,6 +62,10 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		parent::__construct( 'Movepage' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	public function isListed() {
 		return false;
 	}
