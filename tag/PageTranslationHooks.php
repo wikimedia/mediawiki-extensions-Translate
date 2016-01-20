@@ -100,7 +100,7 @@ class PageTranslationHooks {
 	 * Hook: PageContentSaveComplete
 	 */
 	public static function onSectionSave( WikiPage $wikiPage, User $user, $content, $summary,
-		$minor, $_, $_, $flags, $revision
+		$minor, $_1, $_2, $flags, $revision
 	) {
 		$title = $wikiPage->getTitle();
 
@@ -389,7 +389,7 @@ class PageTranslationHooks {
 	 * Hook: PageContentSave
 	 */
 	public static function tpSyntaxCheck( $wikiPage, $user, $content, $summary,
-		$minor, $_, $_, $flags, $status
+		$minor, $_1, $_2, $flags, $status
 	) {
 		if ( $content instanceof TextContent ) {
 			$text = $content->getNativeData();
@@ -419,7 +419,7 @@ class PageTranslationHooks {
 	 * Hook: PageContentSaveComplete
 	 */
 	public static function addTranstag( $wikiPage, $user, $content, $summary,
-		$minor, $_, $_, $flags, $revision
+		$minor, $_1, $_2, $flags, $revision
 	) {
 		// We are not interested in null revisions
 		if ( $revision === null ) {
