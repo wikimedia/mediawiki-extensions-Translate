@@ -220,7 +220,7 @@
 	"translate-manage-action-ignore": "忽略",
 	"translate-manage-action-fuzzy": "匯入並且模糊翻譯",
 	"translate-manage-nochanges": "此群組中的訊息原文並未做任何變更。",
-	"translate-manage-nochanges-other": "此語言並未做任何更改。\n使用下方連結返回群組的詳細訊息檢視頁面。",
+	"translate-manage-nochanges-other": "此語言並未做任何更改。\n使用下方連結返回群組的詳細資料檢視頁面。",
 	"translate-manage-inconsistent": "偵測不一致的請求。\n請檢查更動內容，然後再試。\n詳細資訊：$1。",
 	"translate-manage-toolong": "超出處理時間限制 $1 秒。\n請重新送出表單，以繼續進行處理。",
 	"translate-manage-import-summary": "正在從外部來源匯入新版",
