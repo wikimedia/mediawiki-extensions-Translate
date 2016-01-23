@@ -751,14 +751,26 @@
 			);
 
 			if ( canTranslate ) {
-				$editorColumn.append( $( '<div>' )
-					.addClass( 'row shortcutinfo' )
-					.text( mw.msg( 'tux-editor-shortcut-info',
-						( mw.util.tooltipAccessKeyPrefix + 's' ).toUpperCase(),
-						( mw.util.tooltipAccessKeyPrefix + 'd' ).toUpperCase(),
-						'ALT' )
-					)
-				);
+				// BC for MW <= 1.26
+
+				( function () {
+					if ( mw.loader.getState( 'jquery.accessKeyLabel' ) ) {
+						return mw.loader.using( 'jquery.accessKeyLabel' ).then( function () {
+							return $.fn.updateTooltipAccessKeys.getAccessKeyPrefix();
+						} );
+					}
+
+					return $.Deferred().resolve( mw.util.tooltipAccessKeyPrefix );
+				}() ).done( function ( prefix ) {
+					$editorColumn.append( $( '<div>' )
+						.addClass( 'row shortcutinfo' )
+						.text( mw.msg( 'tux-editor-shortcut-info',
+							( prefix + 's' ).toUpperCase(),
+							( prefix + 'd' ).toUpperCase(),
+							'ALT' )
+						)
+					);
+				} );
 			}
 
 			return $editorColumn;
