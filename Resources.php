@@ -510,6 +510,11 @@ $wgResourceModules['ext.translate.tabgroup'] = array(
 	'position' => 'top',
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.tag.languages'] = array(
+	'styles' => 'resources/css/ext.translate.tag.languages.css',
+	'position' => 'top',
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.translationstashstorage'] = array(
 	'scripts' => 'resources/js/ext.translate.translationstashstorage.js',
 	'dependencies' => array(

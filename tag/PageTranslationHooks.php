@@ -39,6 +39,8 @@ class PageTranslationHooks {
 			}
 		}
 
+		$parser->getOutput()->addModules( 'ext.translate' );
+
 		// Set display title
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( !$page ) {
@@ -83,14 +85,22 @@ class PageTranslationHooks {
 		$isTranslation = TranslatablePage::isTranslationPage( $title );
 
 		if ( $isSource || $isTranslation ) {
+			// Remove 30 days after merging this patch
+			$out->addModules( 'ext.translate.tag.languages' );
 			$out->addModuleStyles( 'ext.translate' );
+
 			if ( $wgTranslatePageTranslationULS ) {
 				$out->addModules( 'ext.translate.pagetranslation.uls' );
 			}
 
-			// Per bug T63331
-			$type =  $isSource ? 'source' : 'translation';
-			$out->addJsConfigVars( 'wgTranslatePageTranslation', $type );
+			if ( $isTranslation ) {
+				// Source pages get this module via <translate>, but for translation
+				// pages we need to add it manually.
+				$out->addModuleStyles( 'ext.translate' );
+				$out->addJsConfigVars( 'wgTranslatePageTranslation', 'translation' );
+			} else {
+				$out->addJsConfigVars( 'wgTranslatePageTranslation', 'source' );
+			}
 		}
 
 		return true;
@@ -313,6 +323,8 @@ class PageTranslationHooks {
 			$languages
 		);
 		$out .= Html::closeElement( 'div' );
+
+		$parser->getOutput()->addModuleStyles( 'ext.translate.tag.languages' );
 
 		return $out;
 	}
@@ -765,9 +777,9 @@ class PageTranslationHooks {
 		$wrap = Html::rawElement(
 			'div',
 			array(
-				'class' => 'mw-translate-page-info',
-				'lang' => $language->getHtmlCode(),
+				'class' => 'mw-pt-translate-header noprint',
 				'dir' => $language->getDir(),
+				'lang' => $language->getHtmlCode(),
 			),
 			'$1'
 		);
