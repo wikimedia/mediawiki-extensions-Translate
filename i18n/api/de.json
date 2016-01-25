@@ -63,6 +63,7 @@
 	"apihelp-searchtranslations-param-service": "Welcher der verfügbaren Übersetzungsdienste genutzt werden sollte.",
 	"apihelp-searchtranslations-param-query": "Die Zeichenfolge, nach der gesucht werden soll.",
 	"apihelp-searchtranslations-param-sourcelanguage": "Der Sprachcode des Quelltextes.",
+	"apihelp-searchtranslations-param-language": "Der Sprachcode, in dem die Zeichenfolge gesucht werden soll.",
 	"apihelp-searchtranslations-param-group": "Die Gruppenkennung, in der die Zeichenfolge gesucht werden soll.",
 	"apihelp-searchtranslations-param-filter": "Nachrichtenübersetzungsstatusfilter.",
 	"apihelp-searchtranslations-param-match": "Nach allen Wörtern suchen.",

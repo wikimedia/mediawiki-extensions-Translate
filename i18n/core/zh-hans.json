@@ -281,7 +281,7 @@
 	"translate-messagereview-failure": "标记为已复核失败：$1",
 	"translate-messagereview-done": "已复核",
 	"translate-messagereview-reviews": "已被{{PLURAL:$1|$1个用户}}复核",
-	"translate-messagereview-reviewswithyou": "已被{{PLURAL:$1|你|$1个用户（包括你）}}复核",
+	"translate-messagereview-reviewswithyou": "已被{{PLURAL:$1|您|$1个用户（包括您）}}复核",
 	"api-error-invalidrevision": "翻译未找到",
 	"api-error-unknownmessage": "信息未找到",
 	"api-error-fuzzymessage": "翻译被标记为模糊翻译",
