@@ -40,6 +40,10 @@ class SpecialManageGroups extends SpecialPage {
 		return 'wiki';
 	}
 
+	function getDescription() {
+		return $this->msg( 'managemessagegroups' )->text();
+	}
+
 	public function execute( $par ) {
 		$this->setHeaders();
 		$out = $this->getOutput();

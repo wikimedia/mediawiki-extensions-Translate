@@ -69,6 +69,7 @@ class TranslatePreferences {
 
 		$preferences['translate-editlangs'] = array(
 			'class' => 'HTMLJsSelectToInputField',
+			// prefs-translate
 			'section' => 'editing/translate',
 			'label-message' => 'translate-pref-editassistlang',
 			'help-message' => 'translate-pref-editassistlang-help',

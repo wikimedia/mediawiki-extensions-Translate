@@ -68,12 +68,21 @@ class TranslateHooks {
 			$wgSpecialPages['PageTranslation'] = 'SpecialPageTranslation';
 			$wgSpecialPages['PageTranslationDeletePage'] = 'SpecialPageTranslationDeletePage';
 
+			// right-pagetranslation action-pagetranslation
 			$wgAvailableRights[] = 'pagetranslation';
 
 			$wgSpecialPages['PageMigration'] = 'SpecialPageMigration';
 			$wgSpecialPages['PagePreparation'] = 'SpecialPagePreparation';
 
 			global $wgLogActionsHandlers, $wgLogTypes;
+
+			// log-description-pagetranslation log-name-pagetranslation logentry-pagetranslation-mark
+			// logentry-pagetranslation-unmark logentry-pagetranslation-moveok
+			// logentry-pagetranslation-movenok logentry-pagetranslation-deletefok
+			// logentry-pagetranslation-deletefnok logentry-pagetranslation-deletelok
+			// logentry-pagetranslation-deletelnok logentry-pagetranslation-encourage
+			// logentry-pagetranslation-discourage logentry-pagetranslation-prioritylanguages
+			// logentry-pagetranslation-associate logentry-pagetranslation-dissociate
 			$wgLogTypes[] = 'pagetranslation';
 			$wgLogActionsHandlers['pagetranslation/mark'] = 'PageTranslationLogFormatter';
 			$wgLogActionsHandlers['pagetranslation/unmark'] = 'PageTranslationLogFormatter';

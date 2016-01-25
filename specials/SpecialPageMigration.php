@@ -17,11 +17,16 @@ class SpecialPageMigration extends SpecialPage {
 		return 'wiki';
 	}
 
+	function getDescription() {
+		return $this->msg( 'pagemigration' )->text();
+	}
+
 	function execute( $par ) {
 		$request = $this->getRequest();
 		$output = $this->getOutput();
 		$this->setHeaders();
 		$this->checkPermissions();
+		$this->outputHeader( 'pagemigration-summary' );
 		$output->addModules( 'ext.translate.special.pagemigration' );
 		$output->addModuleStyles( 'jquery.uls.grid' );
 		# Get request data from, e.g.
