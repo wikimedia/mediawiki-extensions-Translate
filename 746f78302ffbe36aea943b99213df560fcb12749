@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_073cc4bb",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-01-26T06:10:19Z",
+      "side": 1,
+      "message": "This message should not be changed. translate-tag-translate-link-desc already exists.",
+      "revId": "746f78302ffbe36aea943b99213df560fcb12749",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_2739c0cb",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-01-26T06:10:19Z",
+      "side": 1,
+      "message": "This line should not be changed.",
+      "revId": "746f78302ffbe36aea943b99213df560fcb12749",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
