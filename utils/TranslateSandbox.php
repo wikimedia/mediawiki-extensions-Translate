@@ -36,6 +36,7 @@ class TranslateSandbox {
 		$user->saveSettings();
 
 		// Need to have an id first
+		// group-translate-sandboxed group-translate-sandboxed-member
 		$user->addGroup( 'translate-sandboxed' );
 		$user->clearInstanceCache( 'name' );
 		$user->sendConfirmationMail();
@@ -207,6 +208,7 @@ class TranslateSandbox {
 			return true;
 		}
 
+		// right-translate-sandboxaction action-translate-sandboxaction
 		$rights = array(
 			'editmyoptions',
 			'editmyprivateinfo',

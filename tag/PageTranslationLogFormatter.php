@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -81,6 +80,9 @@ class PageTranslationLogFormatter extends LogFormatter {
 	protected function getMessageKey() {
 		$key = parent::getMessageKey();
 		$type = $this->entry->getFullType();
+
+		// logentry-pagetranslation-prioritylanguages-unset
+		// logentry-pagetranslation-prioritylanguages-force
 		if ( $type === 'pagetranslation/prioritylanguages' ) {
 			$params = $this->getMessageParameters();
 			if ( !isset( $params[4] ) ) {

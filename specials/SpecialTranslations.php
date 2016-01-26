@@ -23,6 +23,10 @@ class SpecialTranslations extends SpecialAllpages {
 		return 'pages';
 	}
 
+	function getDescription() {
+		return $this->msg( 'translations' )->text();
+	}
+
 	/**
 	 * Entry point : initialise variables and call subfunctions.
 	 * @param string $par Message key. Becomes "MediaWiki:Allmessages" when called like

@@ -182,21 +182,32 @@ $wgHooks['MergeAccountFromTo'][] = 'TranslateHooks::onMergeAccountFromTo';
 $wgHooks['DeleteAccount'][] = 'TranslateHooks::onDeleteAccount';
 
 // New rights
+// right-translate
 $wgAvailableRights[] = 'translate';
+// right-translate-import action-translate-import
 $wgAvailableRights[] = 'translate-import';
+// right-translate-manage action-translate-manage
 $wgAvailableRights[] = 'translate-manage';
+// right-translate-messagereview
 $wgAvailableRights[] = 'translate-messagereview';
+// right-translate-groupreview
 $wgAvailableRights[] = 'translate-groupreview';
+// right-translate-sandboxmanage action-translate-sandboxmanage
 $wgAvailableRights[] = 'translate-sandboxmanage';
 
 // Logs. More logs are defined in TranslateHooks::setupTranslate
+// log-name-translationreview log-descriptionmsg-translationreview
 $wgLogTypes[] = 'translationreview';
+// logentry-translationreview-message logentry-translationreview-group
 $wgLogActionsHandlers['translationreview/message'] = 'TranslateLogFormatter';
 $wgLogActionsHandlers['translationreview/group'] = 'TranslateLogFormatter';
 
+// log-name-translatorsandbox log-description-translatorsandbox
 $wgLogTypes[] = 'translatorsandbox';
+// logentry-translatorsandbox-promoted logentry-translatorsandbox-rejected
 $wgLogActionsHandlers['translatorsandbox/promoted'] = 'TranslateLogFormatter';
 $wgLogActionsHandlers['translatorsandbox/rejected'] = 'TranslateLogFormatter';
+// logentry-newusers-tsbpromoted
 $wgLogActionsHandlers['newusers/tsbpromoted'] = 'LogFormatter';
 
 // New jobs

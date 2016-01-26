@@ -12,7 +12,6 @@
 	"tux-sst-count": "{{PLURAL:$1|One result found|$1 results found}}",
 	"tux-sst-facet-language": "Languages",
 	"tux-sst-facet-group": "Message groups",
-	"tux-sst-facet-orphan": "(orphan)",
 	"tux-sst-nosolr-title": "Search unavailable",
 	"tux-sst-nosolr-body": "This wiki does not have a translation search service.",
 	"tux-sst-solr-offline-title": "Search unavailable",
