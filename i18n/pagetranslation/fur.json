@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Klenje"
+			"Klenje",
+			"Tocaibon"
 		]
 	},
 	"pagetranslation": "Traduzion di une pagjine",
@@ -12,6 +13,7 @@
 	"translate-tag-translate-link-desc": "Tradûs cheste pagjine",
 	"tpt-languages-legend": "Altris lenghis:",
 	"tpt-languages-zero": "Scomence a tradusi in cheste lenghe",
+	"tpt-languages-nonzero": "$1 ($2% traduzude)",
 	"tpt-tab-translate": "Tradûs",
 	"tpt-discouraged-language-reason": "Reson: $1",
 	"tpt-aggregategroup-add": "Zonte",

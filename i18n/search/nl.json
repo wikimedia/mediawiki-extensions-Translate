@@ -2,21 +2,27 @@
 	"@metadata": {
 		"authors": [
 			"Siebrand",
-			"Robin0van0der0vliet"
+			"Robin0van0der0vliet",
+			"Robin van der Vliet",
+			"Sjoerddebruin"
 		]
 	},
 	"searchtranslations": "Vertalingen zoeken",
 	"tux-sst-edit": "Vertaling bewerken",
+	"tux-sst-view-foreign": "Op $1 bekijken",
 	"tux-sst-search": "Zoeken",
 	"tux-sst-search-ph": "Vertalingen zoeken",
 	"tux-sst-count": "{{PLURAL:$1|Eén resultaat|$1 resultaten}} gevonden",
 	"tux-sst-facet-language": "Talen",
 	"tux-sst-facet-group": "Berichtengroepen",
-	"tux-sst-facet-orphan": "(wees)",
 	"tux-sst-nosolr-title": "Zoeken is niet beschikbaar",
 	"tux-sst-nosolr-body": "Deze wiki heeft geen dienst om vertalingen te zoeken.",
 	"tux-sst-solr-offline-title": "Zoeken is niet beschikbaar",
 	"tux-sst-solr-offline-body": "De zoekdienst is tijdelijk niet beschikbaar.",
 	"tux-sst-next": "Volgende ›",
-	"tux-sst-prev": "‹ Vorige"
+	"tux-sst-prev": "‹ Vorige",
+	"tux-sst-default": "Vertalingen",
+	"tux-sst-ellipsis-untranslated": "Geen vertaling",
+	"tux-sst-ellipsis-outdated": "Verouderde vertalingen",
+	"tux-sst-case-sensitive": "Hoofdlettergevoelig"
 }

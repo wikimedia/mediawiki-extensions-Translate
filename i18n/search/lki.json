@@ -13,7 +13,6 @@
 	"tux-sst-count": "{{PLURAL:$1|0=هیچ نتیجه‌ای یافت نشد|یک نتیجه یافت شد|$1 نتیجه یافت شد}}",
 	"tux-sst-facet-language": "زوونەل",
 	"tux-sst-facet-group": "گروه‌های پیام",
-	"tux-sst-facet-orphan": "(یتیم)",
 	"tux-sst-nosolr-title": "جستجوی ناموجود است",
 	"tux-sst-nosolr-body": "این ویکی خدمات جستجوی ترجمه ندارد.",
 	"tux-sst-solr-offline-title": "جستجوی ناموجود است",
