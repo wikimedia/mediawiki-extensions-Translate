@@ -32,7 +32,7 @@
 	"tsb-reminder-link-text": "Herinnering per e-mail verzenden",
 	"tsb-didnt-make-any-translations": "Deze gebruiker heeft nog niets vertaald.",
 	"tsb-translations-source": "Bron",
-	"tsb-translations-user": "Gebruikersvertalingen",
+	"tsb-translations-user": "{{GENDER:$1|Gebruiker}}svertalingen",
 	"tsb-translations-current": "Bestaande vertalingen",
 	"tsb-delete-userpage-summary": "Gebruikerspagina van een zandbakgebruiker verwijderd",
 	"translationstash": "Welkomstpagina voor vertalers",

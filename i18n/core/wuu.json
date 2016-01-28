@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Poiuyt"
+			"Poiuyt",
+			"飞舞回堂前"
 		]
 	},
-	"translate-documentation-language": "信息说明文件"
+	"translate-documentation-language": "信息说明文件",
+	"tux-warnings-hide": "囥脱"
 }
