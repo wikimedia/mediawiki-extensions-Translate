@@ -1,0 +1,12 @@
+== Translate 2016.01 ==
+Released at 2016-01-29.
+
+=== Noteworthy changes ===
+* Old custom tokens were deprecated in favor of using regular "csrf" (previously known as "edit") token. If you are using Translate WebAPIs you might need to migrate.
+* Special:Translations no longer shows PHP notices for pages with invalid language codes
+* Special:Translate now longer shows deprecation warnings about access keys in the JavaScript console.
+* Translate is now syntactically compatible with PHP7.
+* Message group selector on Special:SearchTranslations no longer has glitchy behavior after selecting a group.
+* MessageIndex code was optimized. It now ignored messages not in $wgTranslateMessageNamespaces. By default this should be fine, but if you have translations in custom namespaces, check that they are included.
+* Pages with <languages /> now load faster with cold caches.
+* MachineTranslationAid no longer throws uncaught exceptions with default configuration that broke other translation aids.
