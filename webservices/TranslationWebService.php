@@ -202,7 +202,12 @@ abstract class TranslationWebService {
 		$key = wfMemcKey( 'translate-tmsug-pairs-' . $this->service );
 		$pairs = wfGetCache( CACHE_ANYTHING )->get( $key );
 		if ( !is_array( $pairs ) ) {
-			$pairs = $this->doPairs();
+			try {
+				$pairs = $this->doPairs();
+			} catch ( Exception $e ) {
+				$this->reportTranslationServiceFailure( $e->getMessage() );
+				return array();
+			}
 			// Cache the result for a day
 			wfGetCache( CACHE_ANYTHING )->set( $key, $pairs, 60 * 60 * 24 );
 		}
