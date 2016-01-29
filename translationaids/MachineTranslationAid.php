@@ -22,6 +22,10 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 		$to = $this->handle->getCode();
 
 		foreach ( $this->getWebServices( 'mt' ) as $service ) {
+			if ( $service->checkTranslationServiceFailure() ) {
+				continue;
+			}
+
 			if ( $service->isSupportedLanguagePair( $from, $to ) ) {
 				$this->storeQuery( $service, $from, $to, $definition );
 				continue;
@@ -34,12 +38,8 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 					continue;
 				}
 
-				try {
-					$this->storeQuery( $service, $from, $to, $text );
-					break;
-				} catch ( TranslationWebServiceException $e ) {
-					$this->reportTranslationServiceFailure( $e );
-				}
+				$this->storeQuery( $service, $from, $to, $text );
+				break;
 			}
 		}
 	}
