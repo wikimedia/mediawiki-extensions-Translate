@@ -112,7 +112,8 @@
 	overflow: auto;
 }
 
-.tux-message-editor .infocolumn-block {
+/* Temporary fix for T111685 */
+.grid .tux-message-editor .infocolumn-block {
 	font-size: 12pt;
 	background: #FCFCFC;
 	position: absolute;
