@@ -6,7 +6,8 @@
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-.tux-message-editor .close {
+/* Temporary fix for T111685 */
+.grid .tux-message-editor .close {
 	background: url('../images/close.png') no-repeat scroll center center transparent;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/close.svg);
 	/* @embed */
@@ -16,7 +17,8 @@
 	float: right;
 }
 
-.tux-message-editor .editor-info-toggle {
+/* Temporary fix for T111685 */
+.grid. tux-message-editor .editor-info-toggle {
 	padding: 15px;
 	cursor: pointer;
 	float: right;
@@ -57,7 +59,8 @@
 	position: relative;
 }
 
-.tux-message-editor .messagekey {
+/* Temporary fix for T111685 */
+.grid .tux-message-editor .messagekey {
 	color: #252525;
 	font-size: 13px;
 	font-weight: bold;
@@ -74,7 +77,8 @@
 	margin: 0 4px;
 }
 
-.tux-message-editor .sourcemessage {
+/* Temporary fix for T111685 */
+.grid .tux-message-editor .sourcemessage {
 	font-size: 18px;
 	line-height: 1.6em;
 	padding: 5px 0 10px 10px;
@@ -325,7 +329,8 @@
 	position: relative;
 }
 
-.tux-editor-actions-block .tux-editor-insert-buttons {
+/* Temporary fix for T111685 */
+.grid .tux-editor-actions-block .tux-editor-insert-buttons {
 	position: absolute;
 	top: -38px;
 	margin: 0 10px;
