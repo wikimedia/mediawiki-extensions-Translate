@@ -18,7 +18,7 @@
 }
 
 /* Temporary fix for T111685 */
-.grid. tux-message-editor .editor-info-toggle {
+.grid .tux-message-editor .editor-info-toggle {
 	padding: 15px;
 	cursor: pointer;
 	float: right;
