@@ -24,6 +24,7 @@
 	"tpt-translation-intro": "Ova stranica je <span class=\"plainlinks\">[$1 prevedeno izdanje]</span> stranice [[$2]]. Prevod je $3% završen.",
 	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-nonzero": "$1 ($2% prevedeno)",
+	"tpt-tab-translate": "Prevedi",
 	"tpt-aggregategroup-edit-name": "Naziv:",
 	"tpt-aggregategroup-edit-description": "Opis:",
 	"tpt-aggregategroup-update": "Sačuvaj",
@@ -32,6 +33,7 @@
 	"logentry-pagetranslation-mark": "$1 je {{GENDER:$2|označio|označila}} stranicu $3 za prevođenje",
 	"logentry-pagetranslation-deletefok": "$1 je {{GENDER:$2|obrisao|obrisala}} prevodivu stranicu $3",
 	"logentry-pagetranslation-deletelok": "$1 je {{GENDER:$2|obrisao|obrisala}} prevodivu stranicu $3",
+	"logentry-pagetranslation-prioritylanguages": "$1 je {{GENDER:$2|odredio|odredila}} prioritetne jezike za prevodivu stranicu $3: $5",
 	"pt-movepage-title": "Premeštanje prevodive stranice $1",
 	"pt-movepage-block-base-exists": "Ciljna osnovna stranica [[:$1]] postoji.",
 	"pt-movepage-block-base-invalid": "Cilj prevodive stranice ne predstavlja ispravan naziv.",
@@ -58,5 +60,6 @@
 	"pm-pagename-placeholder": "Unesite naziv stranice",
 	"pm-langcode-placeholder": "Kod jezika",
 	"pp-pagename-placeholder": "Unesite naziv stranice",
-	"pp-save-button-label": "Sačuvaj"
+	"pp-save-button-label": "Sačuvaj",
+	"pp-cancel-button-label": "Otkaži"
 }
