@@ -1,0 +1,61 @@
+.mw-pt-languages {
+	display: table;
+	border: 1px solid rgb(170, 170, 170);
+	background: rgb(246, 249, 237) none repeat scroll 0 0;
+	border-collapse: collapse;
+	line-height: 1.2;
+	width: 100%;
+	clear: both;
+	overflow: auto;
+}
+
+.mw-pt-languages-label {
+	display: table-cell;
+	border-right: 1px solid rgb(170, 170, 170);
+	padding: 0.5em;
+	background: rgb(238, 243, 226) none repeat scroll 0 0;
+	font-weight: bold;
+	width: 15%;
+}
+
+.mw-pt-languages-list {
+	padding-left: 0.5em;
+	padding-bottom: 0.7em;
+	display: table-cell;
+	width: 80%;
+}
+
+.mw-pt-languages-list a {
+	white-space: nowrap;
+}
+
+.mw-pt-languages-selected,
+.mw-pt-languages-ui {
+	font-weight: bold;
+}
+
+.mw-pt-progress {
+	padding-right: 11px;
+	background: transparent right center no-repeat;
+	background-size: 9px 9px;
+}
+
+.mw-pt-progress--stub {
+	background-image: url('../images/prog-1.png');
+}
+
+.mw-pt-progress--low {
+	background-image: url('../images/prog-2.png');
+}
+
+.mw-pt-progress--med {
+	background-image: url('../images/prog-3.png');
+}
+
+.mw-pt-progress--high {
+	background-image: url('../images/prog-4.png');
+}
+
+.mw-pt-progress--complete {
+	background-image: url('../images/prog-5.png');
+}
