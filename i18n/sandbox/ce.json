@@ -21,7 +21,7 @@
 	"tsb-accept-all-button-label": "ТӀеэца массо",
 	"tsb-reject-all-button-label": "Юхатоха массо",
 	"tsb-user-posted-a-comment": "Гочдархочун бакъо яц",
-	"tsb-reminder-link-text": "Электронан почте дагадаийтар дахьийта",
+	"tsb-reminder-link-text": "Электронан поште дагадаийтар дахьийта",
 	"tsb-didnt-make-any-translations": "ХӀокху декъашхочо цхьа гочдар дина дац.",
 	"tsb-translations-source": "Хьост",
 	"tsb-translations-user": "{{GENDER:$1|Декъашхочун}} гочдарш",

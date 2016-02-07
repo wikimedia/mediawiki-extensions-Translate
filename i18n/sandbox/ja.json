@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Shirayuki",
-			"Sujiniku"
+			"Sujiniku",
+			"Otokoume"
 		]
 	},
 	"managetranslatorsandbox": "翻訳者サンドボックスの管理",
@@ -13,7 +14,9 @@
 	"tsb-reminder-sent-new": "通知を送信しました",
 	"tsb-reminder-failed": "通知を送信できませんでした",
 	"tsb-email-promoted-subject": "あなたは{{SITENAME}}の翻訳者になりました",
+	"tsb-email-promoted-body": "こんにちは、{{GENDER:$1|$1}}さん\n\nおめでとうございます! {{SITENAME}} で行われたテスト翻訳の確認が終了し、あなたには正式な翻訳者としての権限が付与されました。\n\nこれからは自由に {{SITENAME}} での翻訳が行えます:\n$2\n\n改めまして、翻訳の寄与をありがとうございました!\n\n{{SITENAME}} スタッフ {{GENDER:$3|$3}} より",
 	"tsb-email-rejected-subject": "あなたへの{{SITENAME}}での翻訳者権限の付与申請は却下されました",
+	"tsb-email-rejected-body": "こんにちは、{{GENDER:$1|$1}}さん\n\n{{SITENAME}} の翻訳者としてお申込みいただきありがとうございます。あなたの翻訳が品質基準を満たしていなかったため、翻訳者として採用されなかったことをお知らせいたします。\n\nこの結果が間違っていると思われる場合は、{{SITENAME}} の翻訳者として再度お申し込みください。こちらからログインできます:\n$2\n\n{{SITENAME}} スタッフ {{GENDER:$3|$3}} より",
 	"tsb-request-count": "$1 {{PLURAL:$1|件の申請}}",
 	"tsb-all-languages-button-label": "すべての言語",
 	"tsb-search-requests": "申請の検索",
