@@ -24,7 +24,6 @@
 	"translate-page-navigation-legend": "Navigacija",
 	"translate-page-showing": "Prikazane poruke od $1 do $2 od ukupno $3.",
 	"translate-page-showing-all": "Prikazano: $1 {{PLURAL:$1|poruka|poruke|poruka}}.",
-	"translate-page-showing-none": "Nema traženih poruka.",
 	"translate-next": "Sljedeća stranica",
 	"translate-prev": "Prethodna stranica",
 	"translate-page-description-legend": "Podaci o grupi",
@@ -39,9 +38,7 @@
 	"translate-edit-no-information": "''Ova poruka nema dokumentacije. Ako znate gdje ili kako se koristi poruka, možete pomoći drugim prevoditeljima dodavajući dokumentaciju ovoj poruci.''",
 	"translate-edit-information": "Informacije o poruci ($1)",
 	"translate-edit-in-other-languages": "Poruka na ostalim jezicima",
-	"translate-edit-committed": "Trenutačni prijevod u softveru",
 	"translate-edit-warnings": "Upozorenja o nepotpunim prijevodima",
-	"translate-edit-tmsugs": "Prijedlozi iz spremnika prijevoda",
 	"translate-edit-tmmatch": "$1% podudarnosti",
 	"translate-magic-pagename": "Prošireni MediaWiki prijevod",
 	"translate-magic-module": "Modul:",
@@ -99,7 +96,6 @@
 	"translate-statsf-language": "Zarezom odvojen popis jezičnih kodova:",
 	"translate-statsf-group": "Zarezom odvojen popis skupine kodova:",
 	"translate-statsf-submit": "Prikaži",
-	"translate-tag-category": "Stranice koje je moguće lokalizirati",
 	"translate-tag-page-desc": "Prijevod wiki stranice [[$2|$1]].",
 	"translate-sidebar-alltrans": "Na drugim jezicima",
 	"translations": "Svi prijevodi",
@@ -158,5 +154,6 @@
 	"translate-gs-total": "Ukupno",
 	"translate-gs-avgscore": "Prosječno",
 	"translate-documentation-language": "Dokumentacija poruke",
+	"tux-editor-message-tools-delete": "Izbriši",
 	"translate-search-more-languages-info": "{{PLURAL:$1|Još jedan jezik|Još $1 druga jezika|Još $1 drugih jezika}}"
 }

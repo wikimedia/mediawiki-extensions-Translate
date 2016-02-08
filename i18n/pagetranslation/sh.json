@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"OC Ripper"
+			"OC Ripper",
+			"Conquistador"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% prevedeno)"
+	"tpt-languages-legend": "Drugi jezici:",
+	"tpt-languages-nonzero": "$1 ($2% prevedeno)",
+	"tpt-aggregategroup-update-cancel": "Otkaži",
+	"pm-cancel-button-label": "Otkaži",
+	"pp-cancel-button-label": "Otkaži"
 }
