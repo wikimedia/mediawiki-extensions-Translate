@@ -214,7 +214,6 @@
 	"translate-manage-toolong": "The maximum processing time of $1 {{PLURAL:$1|second|seconds}} exceeded.\nPlease resubmit the form to continue processing.",
 	"translate-manage-import-summary": "Importing a new version from external source",
 	"translate-manage-conflict-summary": "Importing a new version from external source.\nPlease check.",
-	"translate-manage-fuzzy-summary": "The message definition has changed",
 	"translate-manage-submit": "Execute",
 	"translate-manage-intro-other": "Below is list of translation changes in the language $1.\nPlease review the changes and choose an action you want to take for each update.\nIf you choose to ignore changes, this action is only temporary.",
 	"translate-manage-import-ok": "Imported: $1",
