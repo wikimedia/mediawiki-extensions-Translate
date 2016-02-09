@@ -2,10 +2,10 @@
 module.exports = function ( grunt ) {
 	'use strict';
 
-	// grunt.loadNpmTasks( 'grunt-banana-checker' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-jscs' );
 	grunt.loadNpmTasks( 'grunt-jsonlint' );
+	grunt.loadNpmTasks( 'grunt-banana-checker' );
 
 	grunt.initConfig( {
 		jshint: {
@@ -28,8 +28,8 @@ module.exports = function ( grunt ) {
 				'!node_modules/**',
 				'!extensions/**'
 			]
-		}
-		/* banana: {
+		},
+		banana: {
 			all: [
 				'i18n/api',
 				'i18n/core',
@@ -38,9 +38,8 @@ module.exports = function ( grunt ) {
 				'i18n/search'
 			]
 		}
-		*/
 	} );
 
-	grunt.registerTask( 'test', [ 'jshint', 'jscs', 'jsonlint' /*'banana'*/ ] );
+	grunt.registerTask( 'test', [ 'jshint', 'jscs', 'jsonlint', 'banana' ] );
 	grunt.registerTask( 'default', 'test' );
 };
