@@ -214,7 +214,6 @@
 	"translate-manage-toolong": "A maximális feldolgozási idő ({{PLURAL:$1|egy|$1}} másodperc) túl lett lépve.\nKüldd el újra az űrlapot a feldolgozás folytatásához.",
 	"translate-manage-import-summary": "Új változat importálása külső forrásból",
 	"translate-manage-conflict-summary": "Új változat importálása külső forrásból.\nEllenőrizd.",
-	"translate-manage-fuzzy-summary": "Az üzenet definíciója megváltozott",
 	"translate-manage-submit": "Végrehajtás",
 	"translate-manage-intro-other": "Alább látható a(z) $1 nyelv fordításaiban történt változtatások listája.\nEllenőrizd a változtatásokat, és válaszd ki azt a műveletet, amit alkalmazni szeretnél minden egyes frissítésre.\nHa figyelmen kívül hagyod a változtatásokat, az csak ideiglenes művelet.",
 	"translate-manage-import-ok": "Importálva: $1",

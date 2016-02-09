@@ -23,7 +23,7 @@
 	"translate-page-language": "زمان",
 	"translate-page-limit": "سنوور",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|پەیام|پەیام}} لەھەر پەڕەیکدا",
-	"translate-submit": "",
+	"translate-submit": "گەڕان",
 	"translate-page-navigation-legend": "ڕێدۆزی",
 	"translate-page-showing": "نیشاندانی پەیامەکانی $1 تا $2 لە کۆی $3.",
 	"translate-page-showing-all": "نیشاندانی $1 {{PLURAL:$1|پەیام|پەیام}}.",

@@ -5,7 +5,8 @@
 			"Armin1392",
 			"Ebraminio",
 			"Alirezaaa",
-			"Mjbmr"
+			"Mjbmr",
+			"Huji"
 		]
 	},
 	"managetranslatorsandbox": "مدیریت کاربران مترجم",
@@ -13,7 +14,7 @@
 	"tsb-reminder-title-generic": "معرفی‌نامهٔ خود را برای تبدیل شدن به یک مترجم کامل کنید",
 	"tsb-reminder-content-generic": "سلام $1،\n تشکر برای ثبت‌نام با {{SITENAME}}.\nاگر شما ترجمه‌های امتحانی خود را کامل کنید، سرپرستان به شما ترجمه کامل در دسترس را زود پس از آن به شما تعطا خواهند کرد.\nلطفاً بیایید و چند ترجمه بیشتر اینجا ایجاد کنیدː\n$2\n$3،\nکارکنان {{SITENAME}}",
 	"tsb-reminder-sending": "در حال فرستادن یادآوری...",
-	"tsb-reminder-sent": "{{PLURAL:$1|ارسال $1 یادآوری $2|ارسال $1 یادآوری‌ها, آخرین $2}}",
+	"tsb-reminder-sent": "{{PLURAL:$1|$1 یادآوری فرستاد. زمان: $2|$1 یادآوری‌ فرستاد. زمان آخرین مورد: $2}}",
 	"tsb-reminder-sent-new": "فرستادن یک یادآوری",
 	"tsb-reminder-failed": "عدم موفقیت در فرستادن یادآوری",
 	"tsb-email-promoted-subject": "شما در حال حاضر یک مترجم در {{SITENAME}} هستید",
@@ -33,7 +34,7 @@
 	"tsb-reminder-link-text": "ارسال ایمیل یادآور",
 	"tsb-didnt-make-any-translations": "این کاربر هیچ ترجمه‌ای انجام نداده.",
 	"tsb-translations-source": "منبع",
-	"tsb-translations-user": "ترجمه‌های کاربر",
+	"tsb-translations-user": "ترجمه‌های {{GENDER:$1|کاربر}}",
 	"tsb-translations-current": "ترجمه‌های موجود",
 	"tsb-delete-userpage-summary": "حذف صفحه کاربری کاربر جعبه شنی",
 	"translationstash": "خوش آمدید",

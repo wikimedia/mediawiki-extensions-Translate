@@ -3,22 +3,31 @@
 		"authors": [
 			"Ebraminio",
 			"Danialbehzadi",
-			"Reza1615"
+			"Reza1615",
+			"Huji"
 		]
 	},
 	"searchtranslations": "جستجوی ترجمه‌ها",
 	"tux-sst-edit": "ویرایش ترجمه",
+	"tux-sst-view-foreign": "نمایش در $1",
 	"tux-sst-search": "جستجو",
 	"tux-sst-search-ph": "جستجوی ترجمه‌ها",
 	"tux-sst-count": "{{PLURAL:$1|0=هیچ نتیجه‌ای یافت نشد|یک نتیجه یافت شد|$1 نتیجه یافت شد}}",
 	"tux-sst-facet-language": "زبان‌ها",
 	"tux-sst-facet-group": "گروه‌های پیام",
-	"tux-sst-facet-orphan": "(یتیم)",
 	"tux-sst-nosolr-title": "جستجوی ناموجود است",
 	"tux-sst-nosolr-body": "این ویکی خدمات جستجوی ترجمه ندارد.",
 	"tux-sst-solr-offline-title": "جستجوی ناموجود است",
 	"tux-sst-solr-offline-body": "خدمت جستجو به‌صورت موقت ناموجود است.",
 	"tux-sst-next": "بعدی ←",
 	"tux-sst-prev": "→ پیشین",
-	"tux-sst-default": "ترجمه‌ها"
+	"tux-sst-default": "ترجمه‌ها",
+	"tux-sst-translated": "ترجمه‌ها از $1",
+	"tux-sst-untranslated": "هیچ ترجمه‌ای از $1 موجود نیست",
+	"tux-sst-outdated": "ترجمه‌های تاریخ گذشته از $1",
+	"tux-sst-ellipsis-untranslated": "هیچ ترجمه‌ای موجود نیست",
+	"tux-sst-ellipsis-outdated": "ترجمه‌های تاریخ گذشته",
+	"tux-sst-link-all-match": "تمام واژه‌های جستجو شده لازمند.",
+	"tux-sst-match-message": "نمایش ترجمه‌هایی که با هر کدام از واژه‌های جستجو شده مطابقت دارند: $1",
+	"tux-sst-case-sensitive": "حساس به بزرگی و کوچکی حروف"
 }

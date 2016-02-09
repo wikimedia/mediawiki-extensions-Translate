@@ -131,7 +131,6 @@
 	"translate-manage-action-fuzzy": "Uvoz i ''fuzzy'' prijevodi",
 	"translate-manage-import-summary": "Uvoz nove inačice iz vanjskog izvora",
 	"translate-manage-conflict-summary": "Uvoz nove inačice iz vanjskog izvora.\nMolimo provjerite.",
-	"translate-manage-fuzzy-summary": "Definicija se promijenila",
 	"translate-manage-submit": "Izvrši",
 	"translate-manage-import-done": "Obavljeno je sve!",
 	"importtranslations": "Uvezi prijevode",
