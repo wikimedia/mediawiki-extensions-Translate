@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ea78b8a_0496c497",
+        "filename": "i18n/core/qqq.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-02-11T16:36:24Z",
+      "side": 1,
+      "message": "Incorrect indentation. Should use tab.",
+      "revId": "d2cf9e4c3121c5111cdc17c9020a4ce7541d4f2a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
