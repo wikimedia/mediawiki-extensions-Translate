@@ -62,7 +62,7 @@
 		}
 	};
 
-	// Extend the translate editor
-	$.extend( $.fn.translateeditor.Constructor.prototype, translateEditorShortcuts );
+	mw.translate.editor = mw.translate.editor || {};
+	$.extend( mw.translate.editor, translateEditorShortcuts );
 
 }( jQuery, mediaWiki ) );

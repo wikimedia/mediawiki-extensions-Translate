@@ -540,6 +540,7 @@
 	} );
 
 	// Extend the translate editor
-	$.extend( $.fn.translateeditor.Constructor.prototype, translateEditorHelpers );
+	mw.translate.editor = mw.translate.editor || {};
+	$.extend( mw.translate.editor, translateEditorHelpers );
 
 }( jQuery, mediaWiki ) );
