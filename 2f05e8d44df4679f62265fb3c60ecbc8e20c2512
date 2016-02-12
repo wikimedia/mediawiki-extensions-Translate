@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ea78b8a_be5ed415",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-12T14:33:00Z",
+      "side": 1,
+      "message": "I no longer know what the commit message means, feel free to abandon the patch if the original proposal was rejected.",
+      "revId": "2f05e8d44df4679f62265fb3c60ecbc8e20c2512",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
