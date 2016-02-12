@@ -172,6 +172,7 @@ $al['CrossLanguageTranslationSearchQuery'] =
  * @{
  */
 $al['AmdFFS'] = "$dir/ffs/AmdFFS.php";
+$al['ArrayFlattener'] = "$dir/ffs/ArrayFlattener.php";
 $al['AndroidXmlFFS'] = "$dir/ffs/AndroidXmlFFS.php";
 $al['AppleFFS'] = "$dir/ffs/AppleFFS.php";
 $al['DtdFFS'] = "$dir/ffs/DtdFFS.php";
