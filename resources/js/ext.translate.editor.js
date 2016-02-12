@@ -1161,7 +1161,8 @@
 		} );
 	};
 
-	$.fn.translateeditor.Constructor = TranslateEditor;
+	mw.translate.editor = mw.translate.editor || {};
+	mw.translate.editor = $.extend( TranslateEditor.prototype, mw.translate.editor );
 
 	function delayer() {
 		return ( function () {
