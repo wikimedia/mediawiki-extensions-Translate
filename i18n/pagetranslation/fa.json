@@ -11,7 +11,8 @@
 			"Omid.koli",
 			"Alirezaaa",
 			"Reza1615",
-			"Hosseinblue"
+			"Hosseinblue",
+			"Arian Ar"
 		]
 	},
 	"pagetranslation": "ترجمهٔ صفحه",
@@ -192,7 +193,7 @@
 	"pp-prepare-button-label": "آماده‌سازی",
 	"pp-save-button-label": "ذخیره",
 	"pp-cancel-button-label": "انصراف",
-	"pp-save-message": "صفحه ذخیره شد. شما می‌توان آن را [$1 ویرایش کنید].",
+	"pp-save-message": "صفحه ذخیره شد. شما می‌توانید آن را [$1 ویرایش کنید].",
 	"pp-prepare-message": "صفحه برای ترجمه آماده شد. تفاوت زیر را ببینید. اگر همه چیز درست است روی دکمهٔ «{{int:pp-save-button-label}}» در زیر کلیک کنید!",
 	"pp-already-prepared-message": "به نظر می‌رسد صفحه پیش از این برای ترجمه آماده شده باشد. هیچ تغییری نسبت به نسخهٔ قبلی وجود ندارد.",
 	"pp-pagename-missing": "لطفاً نام صفحه را وارد کنید.",
