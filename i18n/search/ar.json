@@ -16,9 +16,11 @@
 	"tux-sst-solr-offline-title": "البحث غير متوفر",
 	"tux-sst-next": "التالي »",
 	"tux-sst-prev": "« السابق",
+	"tux-sst-default": "الترجمات",
 	"tux-sst-translated": "الترجمات من $1",
 	"tux-sst-untranslated": "لا ترجمات من $1",
 	"tux-sst-outdated": "الترجمات غير المحدثة من $1",
 	"tux-sst-ellipsis-untranslated": "لا ترجمات",
-	"tux-sst-ellipsis-outdated": "ترجمات غير محدثة"
+	"tux-sst-ellipsis-outdated": "ترجمات غير محدثة",
+	"tux-sst-case-sensitive": "مراعاة حالة الأحرف"
 }
