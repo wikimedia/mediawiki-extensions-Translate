@@ -385,6 +385,7 @@ $wgResourceModules['ext.translate.special.pagepreparation'] = array(
 		'pp-already-prepared-message',
 		'pp-pagename-missing',
 		'pp-prepare-message',
+		'pp-save-button-label',
 		'pp-save-message',
 	),
 ) + $resourcePaths;
