@@ -58,6 +58,7 @@ $al['SpecialTranslationStash'] = "$dir/specials/SpecialTranslationStash.php";
  * @name   "Various utilities"
  * @{
  */
+$al['ArrayFlattener'] = "$dir/utils/ArrayFlattener.php";
 $al['CDBMessageIndex'] = "$dir/utils/MessageIndex.php";
 $al['CachedMessageIndex'] = "$dir/utils/MessageIndex.php";
 $al['DatabaseMessageIndex'] = "$dir/utils/MessageIndex.php";

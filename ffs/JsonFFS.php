@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -48,6 +47,11 @@ class JsonFFS extends SimpleFFS {
 		}
 
 		unset( $messages['@metadata'] );
+
+		if ( isset( $this->extra['nestingSeparator'] ) ) {
+			 $flattener = new ArrayFlattener( $this->extra['nestingSeparator'] );
+			 $messages = $flattener->flatten( $messages );
+		}
 
 		$messages = $this->group->getMangler()->mangle( $messages );
 
@@ -105,6 +109,31 @@ class JsonFFS extends SimpleFFS {
 			return '';
 		}
 
+		if ( isset( $this->extra['nestingSeparator'] ) ) {
+			 $flattener = new ArrayFlattener( $this->extra['nestingSeparator'] );
+			 $messages = $flattener->unflatten( $messages );
+		}
+
 		return FormatJson::encode( $messages, "\t", FormatJson::ALL_OK ) . "\n";
+	}
+
+	public static function getExtraSchema() {
+		$schema = array(
+			'root' => array(
+				'_type' => 'array',
+				'_children' => array(
+					'FILES' => array(
+						'_type' => 'array',
+						'_children' => array(
+							'nestingSeparator' => array(
+								'_type' => 'text',
+							),
+						)
+					)
+				)
+			)
+		);
+
+		return $schema;
 	}
 }
