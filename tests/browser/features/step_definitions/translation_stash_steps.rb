@@ -1,5 +1,5 @@
 Given(/^I am logged in at sandbox$/) do
-  visit(LoginPage).login_with(user, password, false)
+  log_in
 end
 
 Given(/^I am a sandboxed user on the stash page$/) do
