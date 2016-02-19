@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ea41786_97f474bb",
+        "filename": "utils/ExternalMessageSourceStateImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-02-19T20:55:34Z",
+      "side": 1,
+      "message": "Superfluous newline.",
+      "revId": "56f8946acc7bf1402215c407ccfd8078fb3c3bcc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
