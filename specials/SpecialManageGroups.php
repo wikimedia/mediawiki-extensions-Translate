@@ -19,13 +19,17 @@
  * Rewritten in 2012-04-23
  */
 class SpecialManageGroups extends SpecialPage {
-	const CHANGEFILE = 'translate_messagechanges.cdb';
 	const RIGHT = 'translate-manage';
 
 	/**
 	 * @var DifferenceEngine
 	 */
 	protected $diff;
+
+	/**
+	 * @var string Path to the change cdb file.
+	 */
+	protected $cdb;
 
 	public function __construct() {
 		// Anyone is allowed to see, but actions are restricted
@@ -50,8 +54,10 @@ class SpecialManageGroups extends SpecialPage {
 		$out->addModules( 'ext.translate.special.managegroups' );
 		TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Group_management' );
 
-		$changefile = TranslateUtils::cacheFile( self::CHANGEFILE );
-		if ( !file_exists( $changefile ) ) {
+		$name = $par ?: MessageChangeStorage::DEFAULT;
+
+		$this->cdb = MessageChangeStorage::getCdbPath( $name );
+		if ( !MessageChangeStorage::isValidCdbName( $name ) || !file_exists( $this->cdb ) ) {
 			// @todo Tell them when changes was last checked/process
 			// or how to initiate recheck.
 			$out->addWikiMsg( 'translate-smg-nochanges' );
@@ -123,8 +129,7 @@ class SpecialManageGroups extends SpecialPage {
 		// The above count as two
 		$limit = $limit - 2;
 
-		$changefile = TranslateUtils::cacheFile( self::CHANGEFILE );
-		$reader = CdbReader::open( $changefile );
+		$reader = CdbReader::open( $this->cdb );
 		$groups = unserialize( $reader->get( '#keys' ) );
 		foreach ( $groups as $id ) {
 			$group = MessageGroups::getGroup( $id );
@@ -267,8 +272,7 @@ class SpecialManageGroups extends SpecialPage {
 		$jobs = array();
 		$jobs[] = MessageIndexRebuildJob::newJob();
 
-		$changefile = TranslateUtils::cacheFile( self::CHANGEFILE );
-		$reader = CdbReader::open( $changefile );
+		$reader = CdbReader::open( $this->cdb );
 		$groups = unserialize( $reader->get( '#keys' ) );
 
 		$postponed = array();
@@ -308,17 +312,10 @@ class SpecialManageGroups extends SpecialPage {
 		JobQueueGroup::singleton()->push( $jobs );
 
 		$reader->close();
-		rename( $changefile, $changefile . '-' . wfTimestamp() );
+		rename( $this->cdb, $this->cdb . '-' . wfTimestamp() );
 
 		if ( count( $postponed ) ) {
-			$changefile = TranslateUtils::cacheFile( self::CHANGEFILE );
-			$writer = CdbWriter::open( $changefile );
-			$keys = array_keys( $postponed );
-			$writer->set( '#keys', serialize( $keys ) );
-			foreach ( $postponed as $groupId => $changes ) {
-				$writer->set( $groupId, serialize( $changes ) );
-			}
-			$writer->close();
+			MessageChangeStorage::writeChanges( $postponed, $this->cdb );
 			$this->showChanges( true, $this->getLimit() );
 		} else {
 			$out->addWikiMsg( 'translate-smg-submitted' );

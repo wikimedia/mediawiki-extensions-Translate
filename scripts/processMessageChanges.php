@@ -52,6 +52,13 @@ class ProcessMessageChanges extends Maintenance {
 			false, /*required*/
 			true /*has arg*/
 		);
+
+		$this->addOption(
+			'name',
+			'(optional) Unique name to avoid conflicts with multiple invocations of this script.',
+			false, /*required*/
+			true /*has arg*/
+		);
 	}
 
 	public function execute() {
@@ -69,8 +76,15 @@ class ProcessMessageChanges extends Maintenance {
 		$changes = array_filter( $changes );
 
 		if ( count( $changes ) ) {
-			ExternalMessageSourceStateComparator::writeChanges( $changes );
-			$url = SpecialPage::getTitleFor( 'ManageMessageGroups' )->getFullUrl();
+			$name = $this->getOption( 'name', MessageChangeStorage::DEFAULT );
+			if ( !MessageChangeStorage::isValidCdbName( $name ) ) {
+				$this->error( 'Invalid name', 1 );
+			}
+
+			$file = MessageChangeStorage::getCdbPath( $name );
+
+			MessageChangeStorage::writeChanges( $changes, $file );
+			$url = SpecialPage::getTitleFor( 'ManageMessageGroups', $name )->getFullUrl();
 			$this->output( "Process changes at $url\n" );
 		} else {
 			$this->output( "No changes found\n" );

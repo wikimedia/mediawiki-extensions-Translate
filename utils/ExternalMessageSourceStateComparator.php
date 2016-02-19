@@ -229,27 +229,4 @@ class ExternalMessageSourceStateComparator {
 	protected static function compareContent( $a, $b ) {
 		return $a === $b;
 	}
-
-	/**
-	 * Writes change array as a serialized file into a known place.
-	 * @param array $array Array of changes as returned by processGroup
-	 * indexed by message group id.
-	 * @todo does not belong to this class.
-	 */
-	public static function writeChanges( $array ) {
-		// This method is almost identical with MessageIndex::store
-		/* This will overwrite the previous cache file if any. Once the cache
-		 * file is processed with Special:ManageMessageGroups, it is
-		 * renamed so that it wont be processed again. */
-		$file = TranslateUtils::cacheFile( SpecialManageGroups::CHANGEFILE );
-		$cache = CdbWriter::open( $file );
-		$keys = array_keys( $array );
-		$cache->set( '#keys', serialize( $keys ) );
-
-		foreach ( $array as $key => $value ) {
-			$value = serialize( $value );
-			$cache->set( $key, $value );
-		}
-		$cache->close();
-	}
 }
