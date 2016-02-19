@@ -1,7 +1,9 @@
 ( function ( $, mw ) {
 	'use strict';
 	var noOfSourceUnits, noOfTranslationUnits,
-		pageName, langCode, sourceUnits = [];
+		pageName = '',
+		langCode = '',
+		sourceUnits = [];
 
 	/**
 	 * Create translation pages using content of right hand side blocks
@@ -421,27 +423,45 @@
 	/**
 	 * Handler for 'Import' button click event. Imports source and translation
 	 * units and displays them.
+	 *
+	 * @param {jQuery.event} e
 	 */
-	function importHandler() {
-		var pageTitle, titleObj, errorBox = $( '.mw-tpm-sp-error__message' );
-		pageName = $.trim( $( '#title' ).val() );
-		langCode = $.trim( $( '#language' ).val() );
-		pageTitle = pageName + '/' + langCode;
-		errorBox.hide( 'fast' );
+	function importHandler( e ) {
+		var pageTitle, slashPos, titleObj,
+			errorBox = $( '.mw-tpm-sp-error__message' );
+
+		e.preventDefault();
+
+		pageTitle = $.trim( $( '#title' ).val() );
+		if ( pageTitle === '' ) {
+			errorBox.text( mw.msg( 'pm-pagetitle-missing' ) ).show( 'fast' );
+			return;
+		}
+
 		titleObj = mw.Title.newFromText( pageTitle );
 		if ( titleObj === null ) {
 			errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).show( 'fast' );
 			return;
 		}
+
 		pageTitle = titleObj.getPrefixedDb();
-		if ( pageName === '' ) {
-			errorBox.text( mw.msg( 'pm-pagename-missing' ) ).show( 'fast' );
-			return;
-		}
-		if ( langCode === '' ) {
+		slashPos = pageTitle.lastIndexOf( '/' );
+
+		if ( slashPos === -1 ) {
 			errorBox.text( mw.msg( 'pm-langcode-missing' ) ).show( 'fast' );
 			return;
 		}
+
+		pageName = pageTitle.substring( 0, slashPos );
+		langCode = pageTitle.substring( slashPos + 1 );
+
+		if ( pageName === '' ) {
+			errorBox.text( mw.msg( 'pm-pagetitle-invalid' ) ).show( 'fast' );
+			return;
+		}
+
+		errorBox.hide( 'fast' );
+
 		$.when( getSourceUnits( pageName ), getFuzzyTimestamp( pageTitle ) )
 			.then( function ( sourceUnits, fuzzyTimestamp ) {
 			noOfSourceUnits = sourceUnits.length;
@@ -461,6 +481,8 @@
 	 */
 	function listen() {
 		var $listing = $( '.mw-tpm-sp-unit-listing' );
+
+		$( '#mw-tpm-sp-primary-form' ).submit( importHandler );
 		$( '#action-import' ).click( importHandler );
 		$( '#action-save' ).click( saveHandler );
 		$( '#action-cancel' ).click( cancelHandler );
