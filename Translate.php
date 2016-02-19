@@ -500,6 +500,12 @@ $wgTranslateGroupFiles = array();
  */
 $wgTranslateWorkflowStates = false;
 
+/**
+ * Map from deprecated group IDs to their current ID
+ * Example value: array( 'core' => 'mediawiki-core' )
+ */
+$wgTranslateGroupAliases = array();
+
 # </source>
 # === System setup related configuration ===
 # <source lang=php>
