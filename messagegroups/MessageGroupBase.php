@@ -169,7 +169,9 @@ abstract class MessageGroupBase implements MessageGroup {
 			throw new MWException( "InsertablesSuggester class $class does not exist." );
 		}
 
-		return new $class();
+		$conf = $this->getFromConf( 'INSERTABLES' );
+
+		return new $class( $conf );
 	}
 
 	/**
