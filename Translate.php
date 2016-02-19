@@ -80,8 +80,6 @@ $wgSpecialPages['ManageMessageGroups'] = 'SpecialManageGroups';
 $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
 $wgSpecialPages['AggregateGroups'] = 'SpecialAggregateGroups';
 $wgSpecialPages['SearchTranslations'] = 'SpecialSearchTranslations';
-$wgSpecialPages['ManageTranslatorSandbox'] = 'SpecialManageTranslatorSandbox';
-$wgSpecialPages['TranslationStash'] = 'SpecialTranslationStash';
 
 // API
 $wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
@@ -156,12 +154,6 @@ $wgHooks['Translate:MessageGroupStats:isIncluded'][] =
 
 $wgHooks['MakeGlobalVariablesScript'][] = 'TranslateHooks::addConfig';
 
-// Sandbox
-$wgDefaultUserOptions['translate-sandbox'] = '';
-$wgHooks['GetPreferences'][] = 'TranslateSandbox::onGetPreferences';
-$wgHooks['UserGetRights'][] = 'TranslateSandbox::enforcePermissions';
-$wgHooks['ApiCheckCanExecute'][] = 'TranslateSandbox::onApiCheckCanExecute';
-
 // Internal event listeners
 $wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupStats::clear';
 $wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStats::clear';
@@ -192,8 +184,6 @@ $wgAvailableRights[] = 'translate-manage';
 $wgAvailableRights[] = 'translate-messagereview';
 // right-translate-groupreview
 $wgAvailableRights[] = 'translate-groupreview';
-// right-translate-sandboxmanage action-translate-sandboxmanage
-$wgAvailableRights[] = 'translate-sandboxmanage';
 
 // Logs. More logs are defined in TranslateHooks::setupTranslate
 // log-name-translationreview log-descriptionmsg-translationreview
@@ -202,20 +192,11 @@ $wgLogTypes[] = 'translationreview';
 $wgLogActionsHandlers['translationreview/message'] = 'TranslateLogFormatter';
 $wgLogActionsHandlers['translationreview/group'] = 'TranslateLogFormatter';
 
-// log-name-translatorsandbox log-description-translatorsandbox
-$wgLogTypes[] = 'translatorsandbox';
-// logentry-translatorsandbox-promoted logentry-translatorsandbox-rejected
-$wgLogActionsHandlers['translatorsandbox/promoted'] = 'TranslateLogFormatter';
-$wgLogActionsHandlers['translatorsandbox/rejected'] = 'TranslateLogFormatter';
-// logentry-newusers-tsbpromoted
-$wgLogActionsHandlers['newusers/tsbpromoted'] = 'LogFormatter';
-
 // New jobs
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
 $wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
 $wgJobClasses['MessageGroupStatesUpdaterJob'] = 'MessageGroupStatesUpdaterJob';
 $wgJobClasses['TTMServerMessageUpdateJob'] = 'TTMServerMessageUpdateJob';
-$wgJobClasses['TranslateSandboxEmailJob'] = 'TranslateSandboxEmailJob';
 
 $wgParserTestFiles[] = "$dir/tests/parser/translateParserTests.txt";
 
