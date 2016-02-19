@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ea78b8a_fa83bf54",
+        "filename": "MessageGroups.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-02-19T08:53:22Z",
+      "side": 0,
+      "message": "Ideally this BC code would have been removed in a separate patch set, but alas.",
+      "revId": "5b5fa01dfcfc8a50371d5f26d05af3a3a530c36a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
