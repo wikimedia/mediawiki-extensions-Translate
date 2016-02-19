@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ea78b8a_1a4c9b79",
+        "filename": "Resources.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-02-19T08:32:56Z",
+      "side": 1,
+      "message": "This file wasn\u0027t added. See test result:\n\n resources/css/ext.translate.special.pagepreparation.css missing.",
+      "revId": "62e2994e02889420830a50a173bbec620b4648f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
