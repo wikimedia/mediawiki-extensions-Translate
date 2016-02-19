@@ -1,4 +1,4 @@
-@firefox @login @sandbox.translatewiki.net @stash
+@firefox @sandbox.translatewiki.net @stash
 Feature: Translation stash
 
   As a new translator, I can make translations in sandbox mode so that a translation administrator
