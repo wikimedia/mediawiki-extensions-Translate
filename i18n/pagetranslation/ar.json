@@ -94,8 +94,6 @@
 	"pm-import-button-label": "استورد",
 	"pm-savepages-button-label": "احفظ",
 	"pm-cancel-button-label": "ألغ",
-	"pm-pagename-placeholder": "أدخل اسم الصفحة",
-	"pm-langcode-placeholder": "رمز اللغة",
 	"pm-page-does-not-exist": "$1 غير موجودة",
 	"pm-old-translations-missing": "$1 لا يحتوي ترجمات قديمة.",
 	"pm-add-icon-hover-text": "أضف وحدة في الأسفل",

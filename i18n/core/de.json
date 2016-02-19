@@ -42,6 +42,7 @@
 	"translate-page-no-such-language": "Die angegebene Sprache ist ungültig.",
 	"translate-page-no-such-group": "Die angegebene Gruppe ist ungültig.",
 	"translate-page-disabled": "Übersetzungen in diese Sprache wurden für diese Gruppe deaktiviert.\nGrund:\n\n<em>$1</em>",
+	"translate-page-disabled-source": "$1 ist die Quellsprache dieser Seite.",
 	"translate-language-disabled": "Übersetzungen in diese Sprachen sind nicht möglich.",
 	"translate-page-settings-legend": "Einstellungen",
 	"translate-page-group": "Gruppe",

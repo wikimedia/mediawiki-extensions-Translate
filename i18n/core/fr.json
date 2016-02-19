@@ -57,6 +57,7 @@
 	"translate-page-no-such-language": "Le code langue indiqué est incorrect.",
 	"translate-page-no-such-group": "Le groupe spécifié est incorrect.",
 	"translate-page-disabled": "Les traductions dans cette langue ont été désactivées pour ce groupe.\nMotif :\n\n<em>$1</em>",
+	"translate-page-disabled-source": "$1 est la langue source de cette page.",
 	"translate-language-disabled": "La traduction dans cette langue est désactivée.",
 	"translate-page-settings-legend": "Configuration",
 	"translate-page-group": "Groupe",

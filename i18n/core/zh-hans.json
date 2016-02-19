@@ -50,6 +50,7 @@
 	"translate-page-no-such-language": "指定语言无效。",
 	"translate-page-no-such-group": "指定信息组无效。",
 	"translate-page-disabled": "本信息组该语言的翻译已经停用。原因：\n\n<em>$1</em>",
+	"translate-page-disabled-source": "$1是该页面的源语言。",
 	"translate-language-disabled": "至该语言的翻译已停用。",
 	"translate-page-settings-legend": "设置",
 	"translate-page-group": "信息组",

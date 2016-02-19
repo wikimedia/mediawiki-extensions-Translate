@@ -174,8 +174,6 @@
 	"pm-import-button-label": "درون‌ریزی شود",
 	"pm-savepages-button-label": "ذخیره",
 	"pm-cancel-button-label": "انصراف",
-	"pm-pagename-placeholder": "نام صفحه را وارد کنید",
-	"pm-langcode-placeholder": "کد زبان",
 	"pm-page-does-not-exist": "$1 وجود ندارد.",
 	"pm-old-translations-missing": "$1 دارای ترجمه‌های قدیمی نیست.",
 	"pm-extra-units-warning": "واحدهای بیشتری ممکن است موجود باشند. لطفاً واحدهای منبع و ترجمه را به درستی تطبیق بدهید.",
