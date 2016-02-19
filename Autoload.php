@@ -64,6 +64,8 @@ $al['CachedMessageIndex'] = "$dir/utils/MessageIndex.php";
 $al['DatabaseMessageIndex'] = "$dir/utils/MessageIndex.php";
 $al['ExternalMessageSourceStateComparator'] =
 	"$dir/utils/ExternalMessageSourceStateComparator.php";
+$al['ExternalMessageSourceStateImporter'] =
+	"$dir/utils/ExternalMessageSourceStateImporter.php";
 $al['FCFontFinder'] = "$dir/utils/Font.php";
 $al['FileCachedMessageIndex'] = "$dir/utils/MessageIndex.php";
 $al['FuzzyBot'] = "$dir/utils/FuzzyBot.php";

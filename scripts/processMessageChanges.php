@@ -52,12 +52,17 @@ class ProcessMessageChanges extends Maintenance {
 			false, /*required*/
 			true /*has arg*/
 		);
-
 		$this->addOption(
 			'name',
 			'(optional) Unique name to avoid conflicts with multiple invocations of this script.',
 			false, /*required*/
 			true /*has arg*/
+		);
+		$this->addOption(
+			'safe-import',
+			'(optional) Import "safe" changes: message additions when no other kind of changes.',
+			false, /*required*/
+			false /*has arg*/
 		);
 	}
 
@@ -66,29 +71,45 @@ class ProcessMessageChanges extends Maintenance {
 		$changes = array();
 		$comparator = new ExternalMessageSourceStateComparator();
 
+		$scripted = $this->hasOption( 'safe-import' );
+
 		/** @var FileBasedMessageGroup $group */
 		foreach ( $groups as $id => $group ) {
-			$this->output( "Processing $id\n" );
+			if ( !$scripted ) {
+				$this->output( "Processing $id\n" );
+			}
 			$changes[$id] = $comparator->processGroup( $group, $comparator::ALL_LANGUAGES );
 		}
 
 		// Remove all groups without changes
 		$changes = array_filter( $changes );
 
-		if ( count( $changes ) ) {
-			$name = $this->getOption( 'name', MessageChangeStorage::DEFAULT );
-			if ( !MessageChangeStorage::isValidCdbName( $name ) ) {
-				$this->error( 'Invalid name', 1 );
+		if ( $changes === array() ) {
+			if ( !$scripted ) {
+				$this->output( "No changes found\n" );
 			}
 
-			$file = MessageChangeStorage::getCdbPath( $name );
-
-			MessageChangeStorage::writeChanges( $changes, $file );
-			$url = SpecialPage::getTitleFor( 'ManageMessageGroups', $name )->getFullUrl();
-			$this->output( "Process changes at $url\n" );
-		} else {
-			$this->output( "No changes found\n" );
+			return;
 		}
+
+		if ( $this->hasOption( 'safe-import' ) ) {
+			$importer = new ExternalMessageSourceStateImporter();
+			$info = $importer->importSafe( $changes );
+			$this->printChangeInfo( $info );
+
+			return;
+		}
+
+		$name = $this->getOption( 'name', MessageChangeStorage::DEFAULT );
+		if ( !MessageChangeStorage::isValidCdbName( $name ) ) {
+			$this->error( 'Invalid name', 1 );
+		}
+
+		$file = MessageChangeStorage::getCdbPath( $name );
+
+		MessageChangeStorage::writeChanges( $changes, $file );
+		$url = SpecialPage::getTitleFor( 'ManageMessageGroups', $name )->getFullUrl();
+		$this->output( "Process changes at $url\n" );
 	}
 
 	/**
@@ -123,6 +144,19 @@ class ProcessMessageChanges extends Maintenance {
 		);
 
 		return $groups;
+	}
+
+	protected function printChangeInfo( array $info ) {
+		foreach ( $info['processed'] as $group => $count ) {
+			$this->output( "Imported $count new messages or translations for $group.\n" );
+		}
+
+		if ( $info['skipped'] !== array() ) {
+			$skipped = implode( ', ', array_keys( $info['skipped'] ) );
+			$this->output( "There are changes to check for groups $skipped.\n" );
+			$url = SpecialPage::getTitleFor( 'ManageMessageGroups', $info['name'] )->getFullUrl();
+			$this->output( "You can process them at $url\n" );
+		}
 	}
 }
 
