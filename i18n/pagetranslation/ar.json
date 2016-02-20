@@ -98,6 +98,7 @@
 	"pm-old-translations-missing": "$1 لا يحتوي ترجمات قديمة.",
 	"pm-add-icon-hover-text": "أضف وحدة في الأسفل",
 	"pm-delete-icon-hover-text": "حذف الوحدة",
+	"pm-pagetitle-placeholder": "أدخل اسم الصفحة",
 	"tpt-translate-title": "اسمح بترجمة عنوان الصفحة",
 	"pagepreparation": "تحضير الصفحة للترجمة",
 	"pp-pagename-placeholder": "أدخل اسم الصفحة",
