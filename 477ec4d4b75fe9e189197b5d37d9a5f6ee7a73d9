@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "2ea41786_4c218e99",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-20T18:43:40Z",
+      "side": 1,
+      "message": "Do you mean instead of \"translationSize\"? Also above?",
+      "parentUuid": "4ea78b8a_0f753fc8",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea78b8a_cf7ac7b7",
         "filename": "TranslateUtils.php",
         "patchSetId": 5
