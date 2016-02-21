@@ -318,6 +318,24 @@
     },
     {
       "key": {
+        "uuid": "2ea41786_11cf2784",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-02-21T17:28:25Z",
+      "side": 1,
+      "message": "Unless WMF has more indexes than the default, there is no index on namespace, only on timestamp.",
+      "parentUuid": "2ea41786_9100f705",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea78b8a_af642b12",
         "filename": "scripts/characterEditStats.php",
         "patchSetId": 5
