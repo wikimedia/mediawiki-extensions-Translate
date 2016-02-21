@@ -336,6 +336,24 @@
     },
     {
       "key": {
+        "uuid": "2ea41786_d1bc2fb4",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T18:30:17Z",
+      "side": 1,
+      "message": "Index by namespace is required for Special:Contributions to work reliably, I remember a bug was filed for it. Can\u0027t remember the resolution right now.",
+      "parentUuid": "2ea41786_11cf2784",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea78b8a_af642b12",
         "filename": "scripts/characterEditStats.php",
         "patchSetId": 5
