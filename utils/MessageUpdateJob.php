@@ -78,6 +78,10 @@ class MessageUpdateJob extends Job {
 				);
 			}
 
+			if ( $inserts === array() ) {
+				return true;
+			}
+
 			$dbw->replace(
 				'revtag',
 				array( array( 'rt_type', 'rt_page', 'rt_revision' ) ),
