@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2ea41786_561b5582",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T14:36:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ea78b8a_2f511b3b",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea78b8a_ef6f83f7",
         "filename": "TranslateUtils.php",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-19T07:45:53Z",
       "side": 1,
       "message": "Call it $table",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ea41786_d658a55b",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T14:36:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ea78b8a_ef6f83f7",
       "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "2ea41786_f60fe139",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T14:36:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ea41786_3687b9de",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea78b8a_cf7ac7b7",
         "filename": "TranslateUtils.php",
         "patchSetId": 5
@@ -100,6 +154,24 @@
       "writtenOn": "2016-02-19T07:45:53Z",
       "side": 1,
       "message": "\"{$t}_title\" is perhaps a bit longer but looks more readable to me.",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ea41786_160ddd41",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T14:36:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ea78b8a_cf7ac7b7",
       "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -123,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "2ea41786_b6096936",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T14:36:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ea78b8a_2f383beb",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea78b8a_6f83939c",
         "filename": "TranslateUtils.php",
         "patchSetId": 5
@@ -134,6 +224,24 @@
       "writtenOn": "2016-02-19T07:45:53Z",
       "side": 1,
       "message": "Especially here.",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ea41786_d6066523",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T14:36:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ea78b8a_6f83939c",
       "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -157,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "2ea41786_71fbfb11",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T14:36:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ea78b8a_8f804f8f",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea78b8a_cf288797",
         "filename": "TranslateUtils.php",
         "patchSetId": 5
@@ -168,6 +294,24 @@
       "writtenOn": "2016-02-19T07:45:53Z",
       "side": 1,
       "message": "I can only imagine how long scanning all revisions for last 365 days of commons for example would take.",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ea41786_9100f705",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T14:36:03Z",
+      "side": 1,
+      "message": "MariaDB ought to be smart enough with the filter by namespace. I\u0027ll make some test.",
+      "parentUuid": "4ea78b8a_cf288797",
       "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -191,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "2ea41786_d6818593",
+        "filename": "scripts/characterEditStats.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T14:36:03Z",
+      "side": 1,
+      "message": "Moved above, to the help, replacing \"characters\" with \"bytes\" etc.",
+      "parentUuid": "4ea78b8a_af642b12",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea78b8a_6f5ab354",
         "filename": "scripts/characterEditStats.php",
         "patchSetId": 5
@@ -202,6 +364,24 @@
       "writtenOn": "2016-02-19T07:45:53Z",
       "side": 1,
       "message": "There is no need to alter $days, if it is higher nothing bad will happen.",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ea41786_16787dbe",
+        "filename": "scripts/characterEditStats.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T14:36:03Z",
+      "side": 1,
+      "message": "Done\nAnd undone... this is cleaner than handling in TranslateUtils whether we really want to use the recentchanges table (if ( $hours * 3600 \u003c\u003d $wgRCMaxAge ) { etc.)",
+      "parentUuid": "4ea78b8a_6f5ab354",
       "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -225,6 +405,24 @@
     },
     {
       "key": {
+        "uuid": "2ea41786_564d959a",
+        "filename": "scripts/characterEditStats.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T14:36:03Z",
+      "side": 1,
+      "message": "Done by renaming the columns in TranslateUtils so that we don\u0027t need $t here. What other callers are there? Do we have to keep returning rc_ prefixed column names?",
+      "parentUuid": "4ea78b8a_8f57ef28",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea78b8a_ef46a37f",
         "filename": "scripts/characterEditStats.php",
         "patchSetId": 5
@@ -242,6 +440,24 @@
     },
     {
       "key": {
+        "uuid": "2ea41786_96530d43",
+        "filename": "scripts/characterEditStats.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T14:36:03Z",
+      "side": 1,
+      "message": "Fixed by renaming the column in TranslateUtils",
+      "parentUuid": "4ea78b8a_ef46a37f",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea78b8a_4f56d734",
         "filename": "scripts/characterEditStats.php",
         "patchSetId": 5
@@ -253,6 +469,24 @@
       "writtenOn": "2016-02-19T07:45:53Z",
       "side": 1,
       "message": "This does not look like valid php.",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ea41786_3648198c",
+        "filename": "scripts/characterEditStats.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T14:36:03Z",
+      "side": 1,
+      "message": "Fixed by renaming the column in TranslateUtils",
+      "parentUuid": "4ea78b8a_4f56d734",
       "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
