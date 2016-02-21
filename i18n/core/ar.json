@@ -151,6 +151,7 @@
 	"translate-translations-history-short": "ت",
 	"languagestats": "إحصاءات اللغة",
 	"languagestats-summary": "هذه الصفحة تعرض إحصاءات الترجمة لكل مجموعات الرسائل للغة.",
+	"messagegroupstats-summary": "تظهر هذه الصفحة إحصاءات مجموعة الرسائل.",
 	"languagestats-stats-for": "إحصاءات الترجمة للغة $1 ($2).",
 	"languagestats-recenttranslations": "ترجمات حديثة",
 	"translate-langstats-incomplete": "بعض الإحصاءات الموجودة على هذه الصفحة غير مكتملة. يرجى إعادة تحميل الصفحة للحصول على مزيد من الإحصاءات.",
@@ -348,5 +349,6 @@
 	"tux-editor-loading": "تحميل...",
 	"translate-statsbar-tooltip": "$1% مترجمة، $2% مراجعة",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% مترجمة، $2% مراجعة، $3% غير محدثة",
-	"translate-ulsdep-title": "خطأ في الضبط"
+	"translate-ulsdep-title": "خطأ في الضبط",
+	"tux-nojs": "هذه الصفحة تتطلب جافاسكربت."
 }

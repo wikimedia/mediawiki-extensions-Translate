@@ -319,7 +319,7 @@
 	"tux-editor-skip-button-label": "Hyppää seuraavaan",
 	"tux-editor-cancel-button-label": "Peru",
 	"tux-editor-confirm-button-label": "Hyväksy käännös",
-	"tux-editor-proofread-button-label": "Merkitse katsastetuksi",
+	"tux-editor-proofread-button-label": "Merkitse tarkastetuksi",
 	"tux-editor-shortcut-info": "$1 tallentaa, $2 siirty seuraavaan ja $3 näyttää muut näppäinyhdistelmät.",
 	"tux-editor-edit-desc": "Muokkaa ohjeistusta",
 	"tux-editor-add-desc": "Lisää ohjeistus",

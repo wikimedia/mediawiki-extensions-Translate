@@ -9,11 +9,12 @@
 			"Csega",
 			"Tacsipacsi",
 			"Tgr",
-			"Máté"
+			"Máté",
+			"R-Joe"
 		]
 	},
 	"pagetranslation": "Lap fordítása",
-	"right-pagetranslation": "lapok változatainak megjelölése fordítandónak",
+	"right-pagetranslation": "Lapok változatainak megjelölése fordítandónak",
 	"action-pagetranslation": "fordítható oldalak kezelése",
 	"tpt-section": "$1 fordítási egység",
 	"tpt-section-new": "Új fordítási egység.\nNév: $1",
