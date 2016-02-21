@@ -354,6 +354,24 @@
     },
     {
       "key": {
+        "uuid": "2ea41786_98d4974d",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-21T23:50:43Z",
+      "side": 1,
+      "message": "The query does not take especially long for Commons even on the poor man DB of the replicas: only 10 minutes for 3 months of data.\n\nMariaDB [commonswiki_p]\u003e SELECT page_title AS title, rev_timestamp AS timestamp, rev_user_text AS user_text, page_namespace AS namespace, substring_index(page_title, \u0027/\u0027, -1) as lang FROM revision JOIN page ON rev_page \u003d page_id AND page_namespace IN (\u00271198\u0027) HAVING timestamp \u003e\u003d \u002720151221000000\u0027 ORDER BY lang ASC, timestamp DESC;\n[...]\n8887 rows in set (10 min 24.64 sec)",
+      "parentUuid": "2ea41786_d1bc2fb4",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea78b8a_af642b12",
         "filename": "scripts/characterEditStats.php",
         "patchSetId": 5
