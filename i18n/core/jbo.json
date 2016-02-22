@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Gleki",
-			"Xbony2"
+			"Xbony2",
+			"Olwe519"
 		]
 	},
+	"translate-page-disabled-source": "la lu $1 li'u bangu le papri",
 	"translate-page-edit": "stika ti",
 	"translate-edit-title": "stika $1",
 	"translate-edit-in-other-languages": "lo notci poi se bangu lo drata",
