@@ -33,6 +33,24 @@
       "revId": "f737e4b454740143d6dd43ce85259245eea9c10e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ea41786_9b1c917e",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-22T14:55:46Z",
+      "side": 1,
+      "message": "Is that to reduce the verbosity/redundancy, or just for style?",
+      "parentUuid": "2ea41786_db8449a6",
+      "revId": "f737e4b454740143d6dd43ce85259245eea9c10e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
