@@ -193,5 +193,7 @@
 	"pp-diff-new-header": "Prepared text",
 	"tpt-unlink-confirm": "Please confirm that you really want to remove this page from the translation system.\nThe language selector and translated page names will stop working.\nThe translation pages will become editable.",
 	"tpt-unlink-button": "Remove from translation",
-	"tpt-unlink-summary": "Removed page from translation"
+	"tpt-unlink-summary": "Removed page from translation",
+	"tpt-generic-confirm": "Please confirm the action.",
+	"tpt-generic-button": "Confirm"
 }
