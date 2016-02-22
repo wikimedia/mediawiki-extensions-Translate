@@ -51,6 +51,24 @@
       "revId": "f737e4b454740143d6dd43ce85259245eea9c10e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ea41786_6976afd7",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-02-22T17:06:10Z",
+      "side": 1,
+      "message": "Easier to review, conforms to style and easier to construct dynamically.",
+      "parentUuid": "2ea41786_9b1c917e",
+      "revId": "f737e4b454740143d6dd43ce85259245eea9c10e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
