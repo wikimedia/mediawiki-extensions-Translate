@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ea41786_9ed9df2e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-22T15:53:00Z",
+      "side": 1,
+      "message": "s/Do not use/Use/ ?",
+      "revId": "9625f2bc925dfffcb612b88a4a5229a6919f8437",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ea41786_3ec30b3f",
+        "filename": "resources/js/ext.translate.special.pagetranslation.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-22T15:53:00Z",
+      "side": 1,
+      "message": "Hm",
+      "revId": "9625f2bc925dfffcb612b88a4a5229a6919f8437",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
