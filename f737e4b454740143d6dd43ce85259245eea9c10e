@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ea41786_5b7139dc",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-02-22T14:33:59Z",
+      "side": 1,
+      "message": "Please follow regular indentation.",
+      "revId": "f737e4b454740143d6dd43ce85259245eea9c10e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ea41786_db8449a6",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-02-22T14:33:59Z",
+      "side": 1,
+      "message": "Since we are now rewriting this query extensively, it would be good time to fix the todo above and use the Database class methods.",
+      "revId": "f737e4b454740143d6dd43ce85259245eea9c10e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
