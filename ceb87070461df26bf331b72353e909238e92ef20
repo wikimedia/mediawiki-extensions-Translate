@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ea41786_58485f8c",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-22T08:42:39Z",
+      "side": 1,
+      "message": "So that we restrict to new pages and not count the same translation multiple times: although it might be that every edit redoes the translation from scratch, that\u0027s not what happens in most cases.",
+      "revId": "ceb87070461df26bf331b72353e909238e92ef20",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
