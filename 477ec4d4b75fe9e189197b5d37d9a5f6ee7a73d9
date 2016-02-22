@@ -372,6 +372,24 @@
     },
     {
       "key": {
+        "uuid": "2ea41786_7842fb14",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-02-22T00:12:45Z",
+      "side": 1,
+      "message": "And 12 months take a similar time it seems (unless it\u0027s the query cache): 27251 rows in set (11 min 30.01 sec)",
+      "parentUuid": "2ea41786_98d4974d",
+      "revId": "477ec4d4b75fe9e189197b5d37d9a5f6ee7a73d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea78b8a_af642b12",
         "filename": "scripts/characterEditStats.php",
         "patchSetId": 5
