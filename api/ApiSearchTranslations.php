@@ -5,7 +5,6 @@
  * @license GPL-2.0+
  */
 class ApiSearchTranslations extends ApiBase {
-
 	public function execute() {
 		global $wgTranslateTranslationServices;
 		$params = $this->extractRequestParams();
@@ -106,15 +105,6 @@ class ApiSearchTranslations extends ApiBase {
 		);
 	}
 
-	// Get examples
-	public function getExamples() {
-		return array(
-			'api.php?action=searchtranslations&language=fr&query=aide',
-			'api.php?action=searchtranslations&language=fr&query=edit&filter=untranslated'
-		);
-	}
-
-	// Get examples messages
 	protected function getExamplesMessages() {
 		return array(
 			'action=searchtranslations&language=fr&query=aide'

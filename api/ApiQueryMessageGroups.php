@@ -99,11 +99,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			}
 		}
 
-		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$result->addIndexedTagName( array( 'query', $this->getModuleName() ), 'group' );
-		} else {
-			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'group' );
-		}
+		$result->addIndexedTagName( array( 'query', $this->getModuleName() ), 'group' );
 	}
 
 	/**
@@ -293,50 +289,6 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 	}
 
 	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		$depth = <<<TEXT
-When using the tree format, limit the depth to this many levels. Value 0 means
-that no subgroups are shown. If the limit is reached, a prop groupcount is
-added and it states the number of direct children.
-TEXT;
-		$root = <<<TEXT
-When using the tree format, instead of starting from top level start from the
-given message group, which must be an aggregate message group. When using flat
-format only the specified group is returned.
-TEXT;
-		$filter = <<<TEXT
-Only return messages with IDs that match one or more of the input(s) given
-(case-insensitive, separated by pipes, * wildcard).
-TEXT;
-
-		$propIntro = array( 'What translation-related information to get:' );
-
-		$paramDescs = array(
-			'depth' => $depth,
-			'format' => 'In a tree format message groups can exist multiple places in the tree.',
-			'iconsize' => 'Preferred size of rasterised group icon',
-			'root' => $root,
-			'filter' => $filter,
-			'prop' => array_merge( $propIntro, self::getPropertyList() ),
-		);
-
-		$p = $this->getModulePrefix(); // Can be useful for documentation
-		Hooks::run( 'TranslateGetAPIMessageGroupsParameterDescs', array( &$paramDescs, $p ) );
-
-		$indent = "\n" . str_repeat( ' ', 24 );
-		$wrapWidth = 104 - 24;
-		foreach ( $paramDescs as &$val ) {
-			if ( is_string( $val ) ) {
-				$val = wordwrap( str_replace( "\n", ' ', $val ), $wrapWidth, $indent );
-			}
-		}
-
-		return $paramDescs;
-	}
-
-	/**
 	 * Returns array of key value pairs of properties and their descriptions
 	 *
 	 * @return array
@@ -363,31 +315,12 @@ TEXT;
 				' workflowstates - Include the workflow states for the message group',
 		);
 
+		// TODO improve the hook
 		Hooks::run( 'TranslateGetAPIMessageGroupsPropertyDescs', array( &$properties ) );
 
 		return $properties;
 	}
 
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Return information about message groups. Note that uselang parameter ' .
-			'affects the output of language dependent parts.';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	protected function getExamples() {
-		return array(
-			'api.php?action=query&meta=messagegroups',
-		);
-	}
-
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
 	protected function getExamplesMessages() {
 		return array(
 			'action=query&meta=messagegroups'

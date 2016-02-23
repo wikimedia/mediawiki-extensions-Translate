@@ -207,27 +207,4 @@ class ApiTranslateSandbox extends ApiBase {
 			'email' => array( ApiBase::PARAM_TYPE => 'string' ),
 		);
 	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		$action = TranslateUtils::getTokenAction( 'translatesandbox' );
-
-		return array(
-			'do' => 'What to do',
-			'userid' => 'User ids of the users being managed. Use 0 for creations.',
-			'token' => "A token previously acquired with $action",
-			'username' => 'Username when creating user',
-			'password' => 'Password when creating user',
-			'email' => 'Email when creating user',
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Signup and manage sandboxed users';
-	}
 }

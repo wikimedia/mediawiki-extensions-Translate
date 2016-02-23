@@ -27,25 +27,6 @@ class ApiTranslateUser extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 	}
 
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Translation related information about the user. Experimental.';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=translateuser',
-		);
-	}
-
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
 	protected function getExamplesMessages() {
 		return array(
 			'action=translateuser'

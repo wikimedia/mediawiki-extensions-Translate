@@ -13,7 +13,6 @@
  * @ingroup API TranslateAPI
  */
 class ApiQueryMessageTranslations extends ApiQueryBase {
-
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'mt' );
 	}
@@ -104,11 +103,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 			}
 
 			$translation = str_replace( TRANSLATE_FUZZY, '', $info[0] );
-			if ( defined( 'ApiResult::META_CONTENT' ) ) {
-				ApiResult::setContentValue( $data, 'translation', $translation );
-			} else {
-				ApiResult::setContent( $data, $translation );
-			}
+			ApiResult::setContentValue( $data, 'translation', $translation );
 
 			$fit = $result->addValue( array( 'query', $this->getModuleName() ), null, $data );
 			if ( !$fit ) {
@@ -117,11 +112,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 			}
 		}
 
-		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$result->addIndexedTagName( array( 'query', $this->getModuleName() ), 'message' );
-		} else {
-			$result->setIndexedTagName_internal( array( 'query', $this->getModuleName() ), 'message' );
-		}
+		$result->addIndexedTagName( array( 'query', $this->getModuleName() ), 'message' );
 	}
 
 	public function getAllowedParams() {
@@ -133,44 +124,11 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 			'offset' => array(
 				ApiBase::PARAM_DFLT => 0,
 				ApiBase::PARAM_TYPE => 'integer',
-				/** @todo Once support for MediaWiki < 1.25 is dropped, just
-				 * use ApiBase::PARAM_HELP_MSG directly
-				 */
-				defined( 'ApiBase::PARAM_HELP_MSG' ) ? ApiBase::PARAM_HELP_MSG : '' =>
-					'api-help-param-continue',
+				ApiBase::PARAM_HELP_MSG => 'api-help-param-continue',
 			),
 		);
 	}
 
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'title' => 'Full title of a known message',
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Query all translations for a single message';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	protected function getExamples() {
-		return array(
-			"api.php?action=query&meta=messagetranslations&mttitle=MediaWiki:January " .
-				"List of translations in the wiki for MediaWiki:January",
-		);
-	}
-
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
 	protected function getExamplesMessages() {
 		return array(
 			'action=query&meta=messagetranslations&mttitle=MediaWiki:January'

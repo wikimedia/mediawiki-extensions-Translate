@@ -35,11 +35,7 @@ class ApiTTMServer extends ApiBase {
 			$result->addValue( $this->getModuleName(), null, $sug );
 		}
 
-		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$result->addIndexedTagName( $this->getModuleName(), 'suggestion' );
-		} else {
-			$result->setIndexedTagName_internal( $this->getModuleName(), 'suggestion' );
-		}
+		$result->addIndexedTagName( $this->getModuleName(), 'suggestion' );
 	}
 
 	protected function getAvailableTranslationServices() {
@@ -78,37 +74,6 @@ class ApiTTMServer extends ApiBase {
 		);
 	}
 
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'service' => 'Which of the available translation services to use.',
-			'sourcelanguage' => 'A language code of the source text',
-			'targetlanguage' => 'A language code of the suggestion',
-			'text' => 'The text to find suggestions for',
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Query suggestions from translation memories';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=ttmserver&sourcelanguage=en&targetlanguage=fi&text=Help',
-		);
-	}
-
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
 	protected function getExamplesMessages() {
 		return array(
 			'action=ttmserver&sourcelanguage=en&targetlanguage=fi&text=Help'
