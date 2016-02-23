@@ -40,37 +40,59 @@ class SpecialPageTranslation extends SpecialPage {
 		$revision = $request->getInt( 'revision', 0 );
 		$action = $request->getVal( 'do' );
 		$out = $this->getOutput();
+		$out->addModules( 'ext.translate.special.pagetranslation' );
 
 		TranslateUtils::addSpecialHelpLink(
 			$out,
 			'Help:Extension:Translate/Page_translation_example'
 		);
 
-		// No specific page or invalid input
-		$title = Title::newFromText( $target );
-		if ( !$title ) {
-			if ( $target !== '' ) {
-				$out->addWikiMsg( 'tpt-badtitle' );
-			} else {
-				$this->listPages();
-			}
+		if ( $target === '' ) {
+			$this->listPages();
 
 			return;
 		}
 
-		// Check permissions
+		// Anything else than listing the pages need permissions
 		if ( !$user->isAllowed( 'pagetranslation' ) ) {
 			throw new PermissionsError( 'pagetranslation' );
 		}
 
-		// Check permissions
+		$title = Title::newFromText( $target );
+		if ( !$title ) {
+			$out->addWikiMsg( 'tpt-badtitle' );
+
+			return;
+		} elseif ( !$title->exists() ) {
+			$out->addWikiMsg( 'tpt-nosuchpage', $title->getPrefixedText() );
+
+			return;
+		}
+
+		// Check token for all POST actions here
 		if ( $request->wasPosted() && !$user->matchEditToken( $request->getText( 'token' ) ) ) {
 			throw new PermissionsError( 'pagetranslation' );
 		}
 
-		// We are processing some specific page
-		if ( !$title->exists() ) {
-			$out->addWikiMsg( 'tpt-nosuchpage', $title->getPrefixedText() );
+		if ( $action === 'mark' ) {
+			// Has separate form
+			$this->onActionMark( $title, $revision );
+
+			return;
+		}
+
+		// On GET requests, show form which has token
+		if ( !$request->wasPosted() ) {
+			if ( $action === 'unlink' ) {
+				$this->showUnlinkConfirmation( $title, $target );
+			} else {
+				$params = array(
+					'do' => $action,
+					'target' => $title->getPrefixedText(),
+					'revision' => $revision
+				);
+				$this->showGenericConfirmation( $params );
+			}
 
 			return;
 		}
@@ -104,42 +126,36 @@ class SpecialPageTranslation extends SpecialPage {
 		}
 
 		if ( $action === 'unlink' ) {
-			if ( !$request->wasPosted() ) {
-				$this->showUnlinkConfirmation( $title );
+			$page = TranslatablePage::newFromTitle( $title );
+			$content = ContentHandler::makeContent(
+				self::getStrippedSourcePageText( $page->getParse() ),
+				$title
+			);
 
-				return;
-			} else {
-				$page = TranslatablePage::newFromTitle( $title );
-				$content = ContentHandler::makeContent(
-					self::getStrippedSourcePageText( $page->getParse() ),
-					$title
-				);
+			$status = WikiPage::factory( $title )->doEditContent(
+				$content,
+				$this->msg( 'tpt-unlink-summary' )->inContentLanguage()->text(),
+				EDIT_FORCE_BOT | EDIT_UPDATE
+			);
 
-				$status = WikiPage::factory( $title )->doEditContent(
-					$content,
-					$this->msg( 'tpt-unlink-summary' )->inContentLanguage()->text(),
-					EDIT_FORCE_BOT | EDIT_UPDATE
-				);
-
-				if ( !$status->isOK() ) {
-					$out->wrapWikiMsg(
-						'<div class="errorbox">$1</div>',
-						array( 'tpt-edit-failed', $status->getWikiText() )
-					);
-
-					return;
-				}
-
-				$page = TranslatablePage::newFromTitle( $title );
-				$this->unmarkPage( $page, $user );
+			if ( !$status->isOK() ) {
 				$out->wrapWikiMsg(
-					'<div class="successbox">$1</div>',
-					array( 'tpt-unmarked', $title->getPrefixedText() )
+					'<div class="errorbox">$1</div>',
+					array( 'tpt-edit-failed', $status->getWikiText() )
 				);
-				$this->listPages();
 
 				return;
 			}
+
+			$page = TranslatablePage::newFromTitle( $title );
+			$this->unmarkPage( $page, $user );
+			$out->wrapWikiMsg(
+				'<div class="successbox">$1</div>',
+				array( 'tpt-unmarked', $title->getPrefixedText() )
+			);
+			$this->listPages();
+
+			return;
 		}
 
 		if ( $action === 'unmark' ) {
@@ -153,6 +169,10 @@ class SpecialPageTranslation extends SpecialPage {
 
 			return;
 		}
+	}
+
+	protected function onActionMark( Title $title, $revision ) {
+		$request = $this->getRequest();
 
 		if ( $revision === 0 ) {
 			// Get the latest revision
@@ -248,6 +268,32 @@ class SpecialPageTranslation extends SpecialPage {
 				array( 'tpage' => $page->getTitle()->getArticleID() ) );
 			$this->getOutput()->addWikiMsg( 'tpt-offer-notify', $link );
 		}
+	}
+
+	protected function showGenericConfirmation( array $params ) {
+		$formParams = array(
+			'method' => 'post',
+			'action' => $this->getPageTitle()->getFullURL(),
+		);
+
+		$params['title'] = $this->getPageTitle()->getPrefixedText();
+		$params['token'] = $this->getUser()->getEditToken();
+
+		$hidden = '';
+		foreach ( $params as $key => $value ) {
+			$hidden .= Html::hidden( $key, $value );
+		}
+
+		$this->getOutput()->addHtml(
+			Html::openElement( 'form', $formParams ) .
+			$hidden .
+			$this->msg( 'tpt-generic-confirm' )->parseAsBlock() .
+			Xml::submitButton(
+				$this->msg( 'tpt-generic-button' )->text(),
+				array( 'class' => 'mw-ui-button mw-ui-primary' )
+			) .
+			Html::closeElement( 'form' )
+		);
 	}
 
 	protected function showUnlinkConfirmation( Title $target ) {
@@ -450,9 +496,10 @@ class SpecialPageTranslation extends SpecialPage {
 		$title = $page['title'];
 		$user = $this->getUser();
 
-		if ( $user->isAllowed( 'pagetranslation' ) ) {
-			$token = $user->getEditToken();
+		// Class to allow one-click POSTs
+		$js = array( 'class' => 'mw-translate-jspost' );
 
+		if ( $user->isAllowed( 'pagetranslation' ) ) {
 			$pending = $type === 'active' && $page['latest'] !== $page['tp:mark'];
 			if ( $type === 'proposed' || $pending ) {
 				$actions[] = Linker::link(
@@ -463,7 +510,6 @@ class SpecialPageTranslation extends SpecialPage {
 						'do' => 'mark',
 						'target' => $title->getPrefixedText(),
 						'revision' => $title->getLatestRevId(),
-						'token' => $token,
 					)
 				);
 			}
@@ -472,24 +518,22 @@ class SpecialPageTranslation extends SpecialPage {
 				$actions[] = Linker::link(
 					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-discourage' )->escaped(),
-					array( 'title' => $this->msg( 'tpt-rev-discourage-tooltip' )->text() ),
+					array( 'title' => $this->msg( 'tpt-rev-discourage-tooltip' )->text() ) + $js,
 					array(
 						'do' => 'discourage',
 						'target' => $title->getPrefixedText(),
 						'revision' => -1,
-						'token' => $token,
 					)
 				);
 			} elseif ( $type === 'discouraged' ) {
 				$actions[] = Linker::link(
 					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-encourage' )->escaped(),
-					array( 'title' => $this->msg( 'tpt-rev-encourage-tooltip' )->text() ),
+					array( 'title' => $this->msg( 'tpt-rev-encourage-tooltip' )->text() ) + $js,
 					array(
 						'do' => 'encourage',
 						'target' => $title->getPrefixedText(),
 						'revision' => -1,
-						'token' => $token,
 					)
 				);
 			}
@@ -503,7 +547,6 @@ class SpecialPageTranslation extends SpecialPage {
 						'do' => $type === 'broken' ? 'unmark' : 'unlink',
 						'target' => $title->getPrefixedText(),
 						'revision' => -1,
-						'token' => $token,
 					)
 				);
 			}
@@ -559,7 +602,6 @@ class SpecialPageTranslation extends SpecialPage {
 		$out = $this->getOutput();
 
 		$out->setSubtitle( Linker::link( $page->getTitle() ) );
-		$out->addModules( 'ext.translate.special.pagetranslation' );
 
 		$out->addWikiMsg( 'tpt-showpage-intro' );
 
@@ -571,6 +613,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$out->addHTML(
 			Xml::openElement( 'form', $formParams ) .
+			Html::hidden( 'do', 'mark' ) .
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'revision', $page->getRevision() ) .
 			Html::hidden( 'target', $page->getTitle()->getPrefixedtext() ) .

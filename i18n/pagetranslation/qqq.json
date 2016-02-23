@@ -207,5 +207,7 @@
 	"pp-diff-new-header": "Header text for new revision for the diff shown at Special:PagePreparation",
 	"tpt-unlink-confirm": "Confirmation message shown to user when unmarking page in active translation",
 	"tpt-unlink-button": "Button text",
-	"tpt-unlink-summary": "Edit summary"
+	"tpt-unlink-summary": "Edit summary",
+	"tpt-generic-confirm": "Confirmation message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.",
+	"tpt-generic-button": "Butten text message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript."
 }
