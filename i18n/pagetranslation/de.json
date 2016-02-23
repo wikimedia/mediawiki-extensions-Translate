@@ -201,5 +201,7 @@
 	"pp-diff-new-header": "Vorbereiteter Text",
 	"tpt-unlink-confirm": "Bitte bestätige, dass du wirklich diese Seite aus dem Übersetzungssystem entfernen möchtest.\nDie Sprachauswahl und übersetzte Seitennamen hören auf zu funktionieren.\nDie Übersetzungsseiten werden bearbeitbar.",
 	"tpt-unlink-button": "Von der Übersetzung entfernen",
-	"tpt-unlink-summary": "Seite von der Übersetzung entfernt"
+	"tpt-unlink-summary": "Seite von der Übersetzung entfernt",
+	"tpt-generic-confirm": "Bitte bestätige die Aktion.",
+	"tpt-generic-button": "Bestätigen"
 }

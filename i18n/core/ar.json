@@ -292,6 +292,7 @@
 	"tux-editor-skip-button-label": "تخط إلى التالية",
 	"tux-editor-cancel-button-label": "ألغ",
 	"tux-editor-confirm-button-label": "أكد الترجمة",
+	"tux-editor-proofread-button-label": "قبول الترجمة",
 	"tux-editor-edit-desc": "عدل التوثيق",
 	"tux-editor-add-desc": "إضافة توثيق",
 	"tux-editor-suggestions-title": "اقتراحات",
