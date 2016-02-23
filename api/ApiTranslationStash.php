@@ -124,44 +124,6 @@ class ApiTranslationStash extends ApiBase {
 		);
 	}
 
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		$action = TranslateUtils::getTokenAction( 'translationstash' );
-
-		return array(
-			'subaction' => 'Action',
-			'title' => 'Title of the translation unit page',
-			'translation' => 'Translation made by the user',
-			'metadata' => 'Json object',
-			'token' => "A token previously acquired with $action",
-			'username' => 'Optionally the user whose stash to get. '
-				. 'Only privileged users can do this',
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Add translations to stash';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			"api.php?action=translationstash&subaction=add&title=MediaWiki:Jan/fi&" .
-				"translation=tammikuu&metadata={}",
-			"api.php?action=translationstash&subaction=query",
-		);
-	}
-
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
 	protected function getExamplesMessages() {
 		return array(
 			'action=translationstash&subaction=add&title=MediaWiki:Jan/fi&translation=tammikuu&metadata={}'

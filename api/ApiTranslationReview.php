@@ -159,37 +159,6 @@ class ApiTranslationReview extends ApiBase {
 		);
 	}
 
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		$action = TranslateUtils::getTokenAction( 'translationreview' );
-
-		return array(
-			'revision' => 'The revision number to review',
-			'token' => "A token previously acquired with $action",
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Mark translations reviewed';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=translationreview&revision=1&token=foo',
-		);
-	}
-
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
 	protected function getExamplesMessages() {
 		return array(
 			'action=translationreview&revision=1&token=foo'

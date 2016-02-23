@@ -30,10 +30,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$this->run( $resultPageSet );
 	}
 
-	/**
-	 * @param $resultPageSet ApiPageSet
-	 */
-	private function run( $resultPageSet = null ) {
+	private function run( ApiPageSet $resultPageSet = null ) {
 		$params = $this->extractRequestParams();
 
 		$group = MessageGroups::getGroup( $params['group'] );
@@ -121,17 +118,10 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		}
 
 		if ( is_null( $resultPageSet ) ) {
-			if ( defined( 'ApiResult::META_CONTENT' ) ) {
-				$result->addIndexedTagName(
-					array( 'query', $this->getModuleName() ),
-					'message'
-				);
-			} else {
-				$result->setIndexedTagName_internal(
-					array( 'query', $this->getModuleName() ),
-					'message'
-				);
-			}
+			$result->addIndexedTagName(
+				array( 'query', $this->getModuleName() ),
+				'message'
+			);
 		} else {
 			$resultPageSet->populateFromTitles( $pages );
 		}
@@ -168,11 +158,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		if ( isset( $props['properties'] ) ) {
 			foreach ( $message->getPropertyNames() as $prop ) {
 				$data['properties'][$prop] = $message->getProperty( $prop );
-				if ( defined( 'ApiResult::META_CONTENT' ) ) {
-					ApiResult::setIndexedTagNameRecursive( $data['properties'], 'val' );
-				} else {
-					$result->setIndexedTagName_recursive( $data['properties'], 'val' );
-				}
+				ApiResult::setIndexedTagNameRecursive( $data['properties'], 'val' );
 			}
 		}
 
@@ -201,10 +187,6 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	}
 
 	public function getAllowedParams() {
-		/** @todo Once support for MediaWiki < 1.25 is dropped, just
-		 * use ApiBase::PARAM_HELP_MSG directly
-		 */
-		$helpmsg = defined( 'ApiBase::PARAM_HELP_MSG' ) ? ApiBase::PARAM_HELP_MSG : '';
 		return array(
 			'group' => array(
 				ApiBase::PARAM_TYPE => 'string',
@@ -224,7 +206,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			'offset' => array(
 				ApiBase::PARAM_DFLT => '',
 				ApiBase::PARAM_TYPE => 'string',
-				$helpmsg => 'api-help-param-continue',
+				ApiBase::PARAM_HELP_MSG => 'api-help-param-continue',
 			),
 			'filter' => array(
 				ApiBase::PARAM_TYPE => 'string',
@@ -241,78 +223,12 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				),
 				ApiBase::PARAM_DFLT => 'definition|translation',
 				ApiBase::PARAM_ISMULTI => true,
-				$helpmsg => array( 'apihelp-query+messagecollection-param-prop', '!!FUZZY!!' ),
+				ApiBase::PARAM_HELP_MSG =>
+					array( 'apihelp-query+messagecollection-param-prop', '!!FUZZY!!' ),
 			),
 		);
 	}
 
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'group' => 'Message group',
-			'language' => 'Language code',
-			'offset' => 'Integer or key offset for start',
-			'limit' => 'How many messages to show (after filtering)',
-			'prop' => array(
-				'Which properties to get',
-				'definition  - message definition',
-				'translation - current translation (without !!FUZZY!! string if any, ' .
-					'use the tags to check for outdated or broken translations)',
-				'tags        - message tags, like optional, ignored and fuzzy',
-				'properties  - message properties, like status, revision, ' .
-					'last-translator. Can vary between messages.',
-				'revision    - deprecated! use properties!',
-			),
-			'filter' => array(
-				'Message collection filters. Use ! to negate condition. For example ' .
-					'!fuzzy means list only all non-fuzzy messages. Filters are ' .
-					'applied in the order given.',
-				'fuzzy             - messages with fuzzy tag',
-				'optional          - messages which should be translated only if ' .
-					'changes are necessary',
-				'ignored           - messages which are never translated',
-				'hastranslation    - messages which have a translation regardless if it ' .
-					'is fuzzy or not',
-				'translated        - messages which have a translation which is not fuzzy',
-				'changed           - messages which has been translated or changed since ' .
-					'last export',
-				'reviewer:#        - messages where given userid # is among reviewers',
-				'last-translator:# - messages where given userid # is the last translator',
-			),
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Query MessageCollection about translations';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	protected function getExamples() {
-		$group = 'page-Example';
-
-		return array(
-			'api.php?action=query&meta=siteinfo&siprop=languages List of supported languages',
-			"api.php?action=query&list=messagecollection&mcgroup=$group " .
-				"List of non-optional message definitions for group $group",
-			"api.php?action=query&list=messagecollection&mcgroup=$group&mclanguage=fi&" .
-				"mcprop=definition|translation|tags&mcfilter=optional " .
-				"List of optional messages in Finnish with tags for group $group",
-			"api.php?action=query&generator=messagecollection&gmcgroup=$group" .
-				"&gmclanguage=nl&prop=revisions " .
-				"More information about latest translation revisions for group $group",
-		);
-	}
-
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
 	protected function getExamplesMessages() {
 		return array(
 			'action=query&meta=siteinfo&siprop=languages'
