@@ -8,18 +8,16 @@
 			"Michaelbrabec",
 			"Mormegil",
 			"Vks",
-			"H4nek"
+			"H4nek",
+			"Kvetoslav47"
 		]
 	},
 	"pagetranslation": "Překlad stránek",
 	"right-pagetranslation": "Označování verzí stránek pro překlad",
 	"action-pagetranslation": "spravovat přeložitelné stránky",
-	"tpt-desc": "Rozšíření pro překládání stránek s obsahem",
 	"tpt-section": "Část překladu $1",
 	"tpt-section-new": "Nová část překladu.\nNázev: $1",
 	"tpt-section-deleted": "Část překladu $1",
-	"tpt-template": "Šablona stránky",
-	"tpt-templatediff": "Šablona stránky se změnila.",
 	"tpt-diff-old": "Předchozí text",
 	"tpt-diff-new": "Nový text",
 	"tpt-submit": "Označit tuto verzi pro překlad",
@@ -32,7 +30,6 @@
 	"tpt-oldrevision": "$2 není nejnovější verze stránky [[:$1]].\nPro překlad je možné označit pouze nejnovější verze.",
 	"tpt-notsuitable": "Stránka $1 není vhodná pro překlad.\nUjistěte se, že obsahuje značky <code><nowiki><translate></nowiki></code> a má platnou syntaxi.",
 	"tpt-saveok": "Stránka [[:$1]] byla označena pro překlad {{PLURAL:$2|s $2 částí překladu|se $2 částmi překladu|s $2 částmi překladu}}.\nTato stránka může být nyní <span class=\"plainlinks\">[$3 přeložena]</span>.",
-	"tpt-badsect": "„$1“ není platný název části překladu $2.",
 	"tpt-showpage-intro": "Níže jsou uvedeny nové, současné a smazané části.\nNež tuto verzi označíte pro překlad, zkontrolujte, že změny částí jsou minimální, abyste zabránili zbytečné práci překladatelů.",
 	"tpt-mark-summary": "Tato verze je označená pro překlad",
 	"tpt-edit-failed": "Nelze aktualizovat stránku: $1",
@@ -80,7 +77,6 @@
 	"tpt-discouraged-language-reason": "Zdůvodnění: $1",
 	"tpt-priority-languages": "Správce překladů nastavil prioritní jazyky pro tuto skupinu na $1.",
 	"tpt-render-summary": "Stránka aktualizována, aby odpovídala nové verzi zdrojové stránky",
-	"tpt-download-page": "Exportovat stránky s překlady",
 	"tpt-aggregategroup-add": "Přidat",
 	"tpt-aggregategroup-save": "Uložit",
 	"tpt-aggregategroup-new-name": "Jméno:",
@@ -121,8 +117,6 @@
 	"pm-import-button-label": "Importovat",
 	"pm-savepages-button-label": "Uložit",
 	"pm-cancel-button-label": "Storno",
-	"pm-pagename-placeholder": "Zadejte název stránky",
-	"pm-langcode-placeholder": "Kód jazyka",
 	"pm-page-does-not-exist": "Stránka $1 neexistuje",
 	"pm-old-translations-missing": "Stránka $1 neobsahuje staré překlady",
 	"pm-extra-units-warning": "Mohou existovat přebytečné části překladu. Zarovnejte prosím správně zdrojové a cílové části",
@@ -136,5 +130,7 @@
 	"pp-save-button-label": "Uložit",
 	"pp-cancel-button-label": "Storno",
 	"pp-pagename-missing": "Zadejte prosím název stránky.",
-	"pp-diff-old-header": "Zdrojový text"
+	"pp-diff-old-header": "Zdrojový text",
+	"tpt-generic-confirm": "Prosím potvrďte akci.",
+	"tpt-generic-button": "Potvrdit"
 }

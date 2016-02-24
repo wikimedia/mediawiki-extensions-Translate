@@ -181,7 +181,9 @@
 	"pm-add-icon-hover-text": "Aggiungi un'unità sotto",
 	"pm-swap-icon-hover-text": "Scambia con l'unità sotto",
 	"pm-delete-icon-hover-text": "Cancella unità",
+	"pm-pagetitle-placeholder": "Inserisci il titolo della pagina",
 	"pm-pagetitle-invalid": "Inserisci un titolo di pagina valido. Dovrebbe essere nel formato <page-name>/<language-code>.",
+	"pm-pagetitle-missing": "Inserisci il titolo della pagina",
 	"pm-summary-import": "Traduzione importata usando la [[Special:PageMigration|migrazione di pagina]]",
 	"tpt-translate-title": "Permetti la traduzione del titolo della pagina",
 	"pp-save-summary": "Preparata la pagina per la traduzione",
@@ -198,5 +200,7 @@
 	"pp-diff-new-header": "Testo preparato",
 	"tpt-unlink-confirm": "Si prega di confermare che vuoi davvero togliere questa pagina dal sistema di traduzione.\nIl selettore di lingua e i nomi tradotti della pagina smetteranno di funzionare.\nLa pagine di traduzione diventeranno modificabile.",
 	"tpt-unlink-button": "Rimuovi dalla traduzione",
-	"tpt-unlink-summary": "Pagina rimossa dalla traduzione"
+	"tpt-unlink-summary": "Pagina rimossa dalla traduzione",
+	"tpt-generic-confirm": "Per favore, conferma l'azione.",
+	"tpt-generic-button": "Conferma"
 }

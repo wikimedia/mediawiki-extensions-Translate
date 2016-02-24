@@ -17,7 +17,8 @@
 			"Siebrand",
 			"Slboat",
 			"Umherirrender",
-			"Robby"
+			"Robby",
+			"Liuxinyu970226"
 		]
 	},
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view]]",
@@ -209,5 +210,5 @@
 	"tpt-unlink-button": "Button text",
 	"tpt-unlink-summary": "Edit summary",
 	"tpt-generic-confirm": "Confirmation message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.",
-	"tpt-generic-button": "Butten text message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript."
+	"tpt-generic-button": "Butten text message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.\n{{Identical|Confirm}}"
 }

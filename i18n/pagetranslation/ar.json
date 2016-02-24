@@ -107,5 +107,6 @@
 	"pp-cancel-button-label": "ألغ",
 	"pp-diff-old-header": "نص المصدر",
 	"tpt-unlink-button": "أزل من الترجمة",
-	"tpt-unlink-summary": "إزالة هذه الصفحة من الترجمة"
+	"tpt-unlink-summary": "إزالة هذه الصفحة من الترجمة",
+	"tpt-generic-button": "تأكيد"
 }
