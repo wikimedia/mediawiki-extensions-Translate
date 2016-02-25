@@ -178,5 +178,6 @@
 	"pp-pagename-missing": "Gitt w.e.g. den Numm vun der Säit an.",
 	"pp-diff-old-header": "Quelltext",
 	"pp-diff-new-header": "Preparéierten Text",
-	"tpt-unlink-button": "Vun der Iwwersetzung ewechhuelen"
+	"tpt-unlink-button": "Vun der Iwwersetzung ewechhuelen",
+	"tpt-generic-button": "Confirméieren"
 }

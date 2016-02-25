@@ -84,7 +84,9 @@
 	"pt-movepage-action-check": "تحقق اذا كان النقل ممكنا",
 	"pt-movepage-action-perform": "لا تنقل",
 	"pt-movepage-action-other": "تغيير الهدف",
+	"pt-deletepage-action-perform": "نفذ الحذف",
 	"pt-deletepage-action-other": "غيّر الهدف",
+	"pt-deletepage-lang-legend": "احذف صفحة الترجمة",
 	"pt-deletepage-current": "اسم الصفحة:",
 	"pt-deletepage-reason": "السبب:",
 	"pt-deletepage-subpages": "أحذف جميع الصفحات الفرعية",
@@ -108,5 +110,6 @@
 	"pp-diff-old-header": "نص المصدر",
 	"tpt-unlink-button": "أزل من الترجمة",
 	"tpt-unlink-summary": "إزالة هذه الصفحة من الترجمة",
+	"tpt-generic-confirm": "برجاء تأكيد الفعل",
 	"tpt-generic-button": "تأكيد"
 }

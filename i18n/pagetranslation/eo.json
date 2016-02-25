@@ -5,17 +5,15 @@
 			"ArnoLagrange",
 			"Blahma",
 			"Yekrats",
-			"KuboF"
+			"KuboF",
+			"Robin van der Vliet"
 		]
 	},
 	"pagetranslation": "Paĝa traduko",
 	"right-pagetranslation": "Marki versiojn de paĝoj por traduki",
-	"tpt-desc": "Kromprogramo por tradukado de enhavaj paĝoj",
 	"tpt-section": "Tradukada unuo $1",
 	"tpt-section-new": "Nova tradukada unuo.\nNomo: $1",
 	"tpt-section-deleted": "Tradukada unuo $1",
-	"tpt-template": "Paĝa ŝablono",
-	"tpt-templatediff": "La paĝa ŝablono estis ŝanĝita.",
 	"tpt-diff-old": "Antaŭa teksto",
 	"tpt-diff-new": "Nova teksto",
 	"tpt-submit": "Marki ĉi tiun version por traduki",
@@ -28,7 +26,6 @@
 	"tpt-oldrevision": "$2 ne estas la lasta versio de la paĝo [[:$1]].\nNur la lasta versio de la paĝo povas esti markita por esti tradukita.",
 	"tpt-notsuitable": "Paĝo $1 ne taŭgas por traduki.\nCertigu ke ĝi havas etikedojn <nowiki><translate></nowiki> kaj havas validan sintakson.",
 	"tpt-saveok": "La paĝo [[:$1]] estis markita por esti tradukita kun $2 traduk{{PLURAL:$2|ero|eroj}}.\nLa paĝo povas nun esti <span class=\"plainlinks\">[$3 tradukita]</span>.",
-	"tpt-badsect": "« $1 » ne estas valida nomo por tradukero $2.",
 	"tpt-mark-summary": "Markis ĉi tiun version por traduki.",
 	"tpt-edit-failed": "Ne eblis ĝisdatigi la paĝon: $1",
 	"tpt-old-pages-title": "Paĝoj en traduko",
@@ -46,7 +43,6 @@
 	"tpt-languages-zero": "Ektraduki por ĉi tiu lingvo",
 	"tpt-languages-nonzero": "$1 ($2% {{PLURAL:$2|tradukita|tradukitaj}})",
 	"tpt-discouraged-language-reason": "Kialo: $1",
-	"tpt-download-page": "Eksporti paĝon kun tradukoj",
 	"tpt-aggregategroup-add": "Aldoni",
 	"tpt-aggregategroup-save": "Konservi",
 	"tpt-aggregategroup-new-name": "Nomo:",
@@ -101,5 +97,6 @@
 	"pt-deletepage-full-logreason": "Pato de la tradukebla paĝo \"$1\".",
 	"pt-deletepage-lang-logreason": "Pato de la tradukpaĝo \"$1\".",
 	"pt-deletepage-started": "Bonvolu rekontroli la [[Special:Log/pagetranslation|protokolon pri paĝotradukado]] por eraroj kaj mesaĝo pri kompletiĝo.",
-	"pt-deletepage-intro": "En tiu ĉi speciala paĝo vi povas forigi tutan tradukeblan paĝon aŭ individuan tradukpaĝon en iu lingvo.\nLa forigo ne efektiviĝos tuj, ĉar ĉiuj dependaj paĝoj estos ankaŭ forigitaj.\nFiaskoj estos protokolitaj en la [[Special:Log/pagetranslation|protokolo pri paĝotradukado]] kaj ilin necesos ripari permane."
+	"pt-deletepage-intro": "En tiu ĉi speciala paĝo vi povas forigi tutan tradukeblan paĝon aŭ individuan tradukpaĝon en iu lingvo.\nLa forigo ne efektiviĝos tuj, ĉar ĉiuj dependaj paĝoj estos ankaŭ forigitaj.\nFiaskoj estos protokolitaj en la [[Special:Log/pagetranslation|protokolo pri paĝotradukado]] kaj ilin necesos ripari permane.",
+	"tpt-generic-button": "Konfirmi"
 }

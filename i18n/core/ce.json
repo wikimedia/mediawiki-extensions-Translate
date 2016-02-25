@@ -76,6 +76,8 @@
 	"translate-checks-links-missing": "{{PLURAL:$2|$2 хьажоргаш яц}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Оригинал чохь лелош ю <nowiki>{{PLURAL:}}</nowiki>, кхузахь — яц.",
 	"translate-checks-plural-dupe": "МогӀан юьхьигехь <nowiki>{{PLURAL:}}</nowiki> цхьатерра шиъ дош ду, <nowiki>{{PLURAL:$1|пальто|пальто}} меттан</nowiki> <nowiki>{{PLURAL:$1|пальто}} яздича дика ду</nowiki>.",
+	"translate-pref-editassistlang": "ГӀоьнан меттанаш:",
+	"prefs-translate": "Гочдаран нисдар",
 	"action-translate-manage": "хаамийн тобанийн урхалладар",
 	"translate-rc-translation-filter": "Литта гочдарш:",
 	"translate-rc-translation-filter-no": "Доза доцуш",
