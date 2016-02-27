@@ -118,7 +118,7 @@
 	"translate-rc-translation-filter": "Filtra le traduzioni:",
 	"translate-rc-translation-filter-no": "Non fare niente",
 	"translate-rc-translation-filter-only": "Mostra solo le traduzioni",
-	"translate-rc-translation-filter-filter": "Elimina le traduzioni",
+	"translate-rc-translation-filter-filter": "Non mostrare le traduzioni",
 	"translate-rc-translation-filter-site": "Solo i cambiamenti ai messaggi del sito",
 	"translationstats": "Statistiche di traduzione",
 	"translate-stats-edits": "Modifiche",

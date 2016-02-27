@@ -12,7 +12,8 @@
 			"Alirezaaa",
 			"Reza1615",
 			"Hosseinblue",
-			"Arian Ar"
+			"Arian Ar",
+			"Ladsgroup"
 		]
 	},
 	"pagetranslation": "ترجمهٔ صفحه",
@@ -199,5 +200,7 @@
 	"pp-diff-new-header": "متن آماده‌شده",
 	"tpt-unlink-confirm": "لطفاً تایید کنید که واقعاً می‌خواهید این صفحه را از سامانهٔ ترجمه حذف کنید.\nانتخابگر زبان و عنوان‌های ترجمه شده از کار خواهند افتاد.\nصفحه‌های ترجمه قابل ویرایش خواهند شد.",
 	"tpt-unlink-button": "حذف از ترجمه",
-	"tpt-unlink-summary": "حذف صفحه از ترجمه"
+	"tpt-unlink-summary": "حذف صفحه از ترجمه",
+	"tpt-generic-confirm": "لطفا این اقدام را تایید کنید.",
+	"tpt-generic-button": "تأیید"
 }
