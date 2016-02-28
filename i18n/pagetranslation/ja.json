@@ -6,18 +6,16 @@
 			"Shirayuki",
 			"Whym",
 			"青子守歌",
-			"Sujiniku"
+			"Sujiniku",
+			"Otokoume"
 		]
 	},
 	"pagetranslation": "ページ翻訳",
 	"right-pagetranslation": "ページの版を翻訳対象に指定",
 	"action-pagetranslation": "翻訳対象ページの管理",
-	"tpt-desc": "通常ページの本文を翻訳するための拡張機能",
 	"tpt-section": "翻訳単位 $1",
 	"tpt-section-new": "新しい翻訳単位。\n名前: $1",
 	"tpt-section-deleted": "翻訳単位 $1",
-	"tpt-template": "ページの雛型",
-	"tpt-templatediff": "ページの雛型が変更されました。",
 	"tpt-diff-old": "前のテキスト",
 	"tpt-diff-new": "新しいテキスト",
 	"tpt-submit": "この版を翻訳対象に指定",
@@ -31,7 +29,6 @@
 	"tpt-notsuitable": "ページ $1 は翻訳に対応していません。\n<nowiki><translate></nowiki> タグが含まれていて、かつ文法的に正しいことをを確認してください。",
 	"tpt-saveok": "ページ [[:$1]] は翻訳対象に指定されており、$2 {{PLURAL:$2|個の翻訳単位}}を含んでいます。\nこのページを<span class=\"plainlinks\">[$3 翻訳]</span>できます。",
 	"tpt-offer-notify": "このページについて<span class=\"plainlinks\">[$1 翻訳者に通知]</span>できます。",
-	"tpt-badsect": "「$1」は翻訳単位$2の名前として有効ではありません。",
 	"tpt-showpage-intro": "以下は、新規・既存の、または削除された翻訳単位の一覧です。\nこの版を翻訳対象に指定する前に、翻訳単位の変更を最小限にすることで不要な翻訳作業を回避できないか確認してください。",
 	"tpt-mark-summary": "この版を翻訳対象に指定しました",
 	"tpt-edit-failed": "ページを更新できませんでした: $1",
@@ -77,7 +74,6 @@
 	"tpt-discouraged-language-reason": "理由: $1",
 	"tpt-priority-languages": "翻訳管理者が、このメッセージ群の優先言語を $1 に設定しました。",
 	"tpt-render-summary": "翻訳元ページの新版に適合するように更新",
-	"tpt-download-page": "翻訳付きでページを書き出し",
 	"aggregategroups": "集約群",
 	"tpt-aggregategroup-add": "追加",
 	"tpt-aggregategroup-save": "保存",
@@ -167,8 +163,6 @@
 	"pm-import-button-label": "取り込む",
 	"pm-savepages-button-label": "保存",
 	"pm-cancel-button-label": "キャンセル",
-	"pm-pagename-placeholder": "ページ名を入力",
-	"pm-langcode-placeholder": "言語コード",
 	"pm-page-does-not-exist": "$1 は存在しません",
 	"pm-old-translations-missing": "$1 は古い翻訳を含んでいません",
 	"pm-pagename-missing": "ページ名を入力してください",
@@ -185,5 +179,6 @@
 	"pp-pagename-missing": "ページ名を入力してください。",
 	"tpt-unlink-confirm": "このページを翻訳システムから本当に除去するかどうか確認してください。\n言語選択と、翻訳されたページ名が、動作しなくなります。\n翻訳ページが編集できる状態になります。",
 	"tpt-unlink-button": "翻訳対象から除去",
-	"tpt-unlink-summary": "ページを翻訳対象から除去"
+	"tpt-unlink-summary": "ページを翻訳対象から除去",
+	"tpt-generic-button": "確認"
 }

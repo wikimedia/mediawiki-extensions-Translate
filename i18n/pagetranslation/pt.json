@@ -194,5 +194,7 @@
 	"pp-already-prepared-message": "Parece que a página já foi preparada para tradução. Não há alterações em relação à versão anterior.",
 	"pp-pagename-missing": "Por favor, introduza o nome da página.",
 	"pp-diff-old-header": "Texto-fonte",
-	"pp-diff-new-header": "Texto preparado"
+	"pp-diff-new-header": "Texto preparado",
+	"tpt-generic-confirm": "Por favor, confirme a ação.",
+	"tpt-generic-button": "Confirmar"
 }
