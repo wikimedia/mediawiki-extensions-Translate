@@ -273,7 +273,7 @@ HTML;
 	protected function makeRequestItem( $request ) {
 		$requestdataEnc = htmlspecialchars( FormatJson::encode( $request ) );
 		$nameEnc = htmlspecialchars( $request['username'] );
-		$nameEncForId = htmlspecialchars( Sanitizer::escapeId( $request['username'] ) );
+		$nameEncForId = htmlspecialchars( Sanitizer::escapeId( $request['username'], 'noninitial' ) );
 		$emailEnc = htmlspecialchars( $request['email'] );
 		$countEnc = htmlspecialchars( $request['translations'] );
 		$timestamp = new MWTimestamp( $request['registrationdate'] );
