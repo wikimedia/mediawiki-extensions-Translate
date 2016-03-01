@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ea41786_793e4289",
+        "filename": "webservices/MicrosoftWebService.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-01T08:31:10Z",
+      "side": 1,
+      "message": "json_decode can return false.",
+      "revId": "fa826cbad559930625f528c267ee9b94a4acef03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ea41786_3948ca31",
+        "filename": "webservices/MicrosoftWebService.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-01T08:31:10Z",
+      "side": 1,
+      "message": "The !N! is added by parent class (un)wrapTranslatable. Better to change it by re-implementing that function than trying to handle it here.",
+      "revId": "fa826cbad559930625f528c267ee9b94a4acef03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
