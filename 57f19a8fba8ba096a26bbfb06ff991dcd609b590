@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ea41786_d9d89681",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-01T08:12:30Z",
+      "side": 1,
+      "message": "\"Div\" should not be in the name. Maybe mw-tpm-sp-instructions?",
+      "revId": "57f19a8fba8ba096a26bbfb06ff991dcd609b590",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
