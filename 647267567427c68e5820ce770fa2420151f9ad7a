@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ea41786_f994728f",
+        "filename": "specials/SpecialManageTranslatorSandbox.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-01T08:00:16Z",
+      "side": 1,
+      "message": "Line is too long.",
+      "revId": "647267567427c68e5820ce770fa2420151f9ad7a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
