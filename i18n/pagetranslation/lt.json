@@ -3,13 +3,12 @@
 		"authors": [
 			"Eitvys200",
 			"Mantak111",
-			"Hugo.arg"
+			"Hugo.arg",
+			"Zygimantus"
 		]
 	},
 	"pagetranslation": "Puslapio vertimas",
 	"action-pagetranslation": "valdyti išverstus puslapius",
-	"tpt-template": "Puslapio šablonas",
-	"tpt-templatediff": "Pasikeitė puslapio šablonas.",
 	"tpt-diff-old": "Ankstesnis tekstas",
 	"tpt-diff-new": "Naujas tekstas",
 	"tpt-sections-deleted": "Ištrinti vertimo vienetai",
@@ -33,7 +32,6 @@
 	"tpt-languages-zero": "Pradėti šios kalbos vertimą",
 	"tpt-languages-nonzero": "$1 ($2% išversta)",
 	"tpt-discouraged-language-reason": "Priežastis: $1",
-	"tpt-download-page": "Puslapyje eksportuojamas su vertimais",
 	"aggregategroups": "Bendros grupės",
 	"tpt-aggregategroup-add": "Pridėti",
 	"tpt-aggregategroup-save": "Išsaugoti",
@@ -66,5 +64,6 @@
 	"pt-deletepage-list-section": "Vertimo vieneto puslapiai",
 	"pt-deletepage-list-other": "Kiti subpuslapiai",
 	"pt-deletepage-full-logreason": "Dalis išverčiamo puslapio $1.",
-	"pt-deletepage-lang-logreason": "Dalis vertimo puslapio $1."
+	"pt-deletepage-lang-logreason": "Dalis vertimo puslapio $1.",
+	"tpt-generic-button": "Patvirtinti"
 }

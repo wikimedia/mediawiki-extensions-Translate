@@ -14,7 +14,8 @@
 			"لطرش أحمد الهاشمي",
 			"لطرش احمد الهاشمي",
 			"Gagnabil",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Maroen1990"
 		]
 	},
 	"translate": "ترجمة",
@@ -254,7 +255,7 @@
 	"api-error-owntranslation": "لا يمكنك قبول الترجمات الخاصة بك",
 	"translate-messagereview-no-fuzzy": "الترجمات الغامضة لا يمكن قبولها.",
 	"translate-messagereview-no-own": "لا يجوز لك قبول ترجماتك الشخصية.",
-	"translate-messagereview-doit": "قبول هذه الترجمة بوصفها ترجمة صحيحة.",
+	"translate-messagereview-doit": "علم هذه الترجمة بوصفها مراجعة.",
 	"log-name-translationreview": "سجل مراجعة الترجمة",
 	"log-description-translationreview": "سجل كل مراجعات الترجمة ورسائل المجموعات.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|قبلت}} الترجمة $3",

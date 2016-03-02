@@ -28,6 +28,7 @@
 	"translate-page-no-such-language": "O código de lingua especificado non é válido.",
 	"translate-page-no-such-group": "O grupo especificado non é válido.",
 	"translate-page-disabled": "As traducións a esta lingua neste grupo están desactivadas.\nMotivo:\n\n<em>$1</em>",
+	"translate-page-disabled-source": "$1 é a lingua orixen desta páxina.",
 	"translate-language-disabled": "As traducións nesta lingua están desactivadas.",
 	"translate-page-settings-legend": "Configuracións",
 	"translate-page-group": "Grupo",
