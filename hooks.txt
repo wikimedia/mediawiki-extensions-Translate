@@ -88,15 +88,11 @@ Post processing step to format in wiki
  MessageHandle   $handle: An object representing the translation page (e.g. 'MediaWiki:Example/qqq')
  array          &$boxes: An associative array to be appended to (format: 'name' => 'some HTML string')
 
-;TranslateGetAPIMessageGroupsParameterDescs: Provides an opportunity to document any parameters added with 'TranslateGetAPIMessageGroupsParameterList'.
- array          &$paramDescs: An associative array of parameters, name => description.
- string          $p: The prefix for action=query&meta=messagegroups (currently mg, but could change), useful for documentation
-
 ;TranslateGetAPIMessageGroupsParameterList: Allows extra parameters to be added to the action=query&meta=messagegroups module
  array          &$params: An associative array of possible parameters (name => details; see ApiQueryMessageGroups.php for correct spacing)
 
 ;TranslateGetAPIMessageGroupsPropertyDescs: Allows extra properties to be added to captured by action=query&meta=messagegroups&mgprop=foo|bar|bat module
- array          &$properties: An associative array of properties, name => description.
+ array          &$properties: An associative array of properties, name => description (which is ignored).
 
 ;TranslateGetExtraInputs: Provides an opportunity to add extra form inputs to to the default translation editor
  string         &$translation: The translation as it stands

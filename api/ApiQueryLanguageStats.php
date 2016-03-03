@@ -41,36 +41,6 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 		return $params;
 	}
 
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		$desc = parent::getParamDescription();
-		$desc['language'] = 'Language code';
-
-		return $desc;
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Query language stats';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	protected function getExamples() {
-		return array(
-			"api.php?action=query&meta=languagestats&lslanguage=fi List of translation " .
-				"completion statistics for language fi",
-		);
-	}
-
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
 	protected function getExamplesMessages() {
 		return array(
 			'action=query&meta=languagestats&lslanguage=fi'

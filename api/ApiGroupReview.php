@@ -147,41 +147,6 @@ class ApiGroupReview extends ApiBase {
 		);
 	}
 
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		$action = TranslateUtils::getTokenAction( 'groupreview' );
-
-		return array(
-			'group' => 'Message group',
-			'language' => 'Language code',
-			'state' => 'The new state for the group',
-			'token' => "A token previously acquired with $action",
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Set message group workflow states';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		$group = 'page-Example';
-
-		return array(
-			"api.php?action=groupreview&group=$group&language=de&state=ready&token=foo",
-		);
-	}
-
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
 	protected function getExamplesMessages() {
 		return array(
 			'action=groupreview&group=page-Example&language=de&state=ready&token=foo'
