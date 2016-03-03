@@ -711,7 +711,7 @@ class PageTranslationHooks {
 
 		if ( $canmark ) {
 			$diffUrl = $title->getFullUrl( array( 'oldid' => $marked, 'diff' => $latest ) );
-			$par = array( 'target' => $title->getPrefixedText() );
+			$par = array( 'target' => $title->getPrefixedText(), 'do' => 'mark' );
 			$translate = SpecialPage::getTitleFor( 'PageTranslation' );
 
 			if ( $context->getUser()->isAllowed( 'pagetranslation' ) ) {
