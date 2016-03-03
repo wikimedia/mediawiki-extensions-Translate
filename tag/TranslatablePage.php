@@ -576,6 +576,7 @@ class TranslatablePage {
 
 		$aid = $this->getTitle()->getArticleID();
 
+		// @TODO: cache ignores DB_SLAVE/DB_MASTER distinction
 		if ( isset( self::$tagCache[$aid][$tag] ) ) {
 			return self::$tagCache[$aid][$tag];
 		}
@@ -617,8 +618,7 @@ class TranslatablePage {
 	}
 
 	public function getMarkedRevs() {
-		// Avoid replication lag issues
-		$db = wfGetDB( DB_MASTER );
+		$db = self::getSafeReadDB();
 
 		$fields = array( 'rt_revision', 'rt_value' );
 		$conds = array(
@@ -635,8 +635,8 @@ class TranslatablePage {
 	 * @return Title[]
 	 */
 	public function getTranslationPages() {
-		// Avoid replication lag issues
-		$dbr = wfGetDB( DB_MASTER );
+		$dbr = self::getSafeReadDB();
+
 		$prefix = $this->getTitle()->getDBkey() . '/';
 		$likePattern = $dbr->buildLike( $prefix, $dbr->anyString() );
 		$res = $dbr->select(
@@ -673,9 +673,10 @@ class TranslatablePage {
 	 * @since 2012-08-06
 	 */
 	protected function getSections() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbr = self::getSafeReadDB();
+
 		$conds = array( 'trs_page' => $this->getTitle()->getArticleID() );
-		$res = $dbw->select( 'translate_sections', 'trs_key', $conds, __METHOD__ );
+		$res = $dbr->select( 'translate_sections', 'trs_key', $conds, __METHOD__ );
 
 		$sections = array();
 		foreach ( $res as $row ) {
@@ -694,6 +695,7 @@ class TranslatablePage {
 	 */
 	public function getTranslationUnitPages( $set = 'active', $code = false ) {
 		$dbw = wfGetDB( DB_MASTER );
+
 		$base = $this->getTitle()->getPrefixedDBKey();
 		// Including the / used as separator
 		$baseLength = strlen( $base ) + 1;
@@ -780,8 +782,7 @@ class TranslatablePage {
 	public function getTransRev( $suffix ) {
 		$title = Title::makeTitle( NS_TRANSLATIONS, $suffix );
 
-		// Avoid replication lag issues
-		$db = wfGetDB( DB_MASTER );
+		$db = self::getSafeReadDB();
 		$fields = 'rt_value';
 		$conds = array(
 			'rt_page' => $title->getArticleID(),
@@ -857,8 +858,7 @@ class TranslatablePage {
 	 * Get a list of page ids where the latest revision is either tagged or marked
 	 */
 	public static function getTranslatablePages() {
-		// Avoid replication lag issues
-		$dbr = wfGetDB( DB_MASTER );
+		$dbr = self::getSafeReadDB();
 
 		$tables = array( 'revtag', 'page' );
 		$fields = 'rt_page';
@@ -876,5 +876,20 @@ class TranslatablePage {
 		}
 
 		return $results;
+	}
+
+	/**
+	 * Get a DB handle suitable for read and read-for-write cases
+	 *
+	 * @return DatabaseBase Master for HTTP POST, CLI, DB already changed; slave otherwise
+	 */
+	protected static function getSafeReadDB() {
+		$index = (
+			PHP_SAPI === 'cli' ||
+			RequestContext::getMain()->getRequest()->wasPosted() ||
+			wfGetLB()->hasOrMadeRecentMasterChanges()
+		) ? DB_MASTER : DB_SLAVE;
+
+		return wfGetDB( $index );
 	}
 }
