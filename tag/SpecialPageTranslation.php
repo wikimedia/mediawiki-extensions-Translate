@@ -176,7 +176,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		if ( $revision === 0 ) {
 			// Get the latest revision
-			$revision = intval( $title->getLatestRevID() );
+			$revision = (int)$title->getLatestRevID();
 		}
 
 		$page = TranslatablePage::newFromRevision( $title, $revision );
@@ -189,7 +189,7 @@ class SpecialPageTranslation extends SpecialPage {
 			return;
 		}
 
-		if ( $revision !== intval( $title->getLatestRevID() ) ) {
+		if ( $revision !== (int)$title->getLatestRevID() ) {
 			// We do want to notify the reviewer if the underlying page changes during review
 			$target = $title->getFullURL( array( 'oldid' => $revision ) );
 			$link = "<span class='plainlinks'>[$target $revision]</span>";
@@ -360,11 +360,11 @@ class SpecialPageTranslation extends SpecialPage {
 				$pages[$r->page_id] = array();
 				$title = Title::newFromRow( $r );
 				$pages[$r->page_id]['title'] = $title;
-				$pages[$r->page_id]['latest'] = intval( $title->getLatestRevID() );
+				$pages[$r->page_id]['latest'] = (int)$title->getLatestRevID();
 			}
 
 			$tag = RevTag::typeToTag( $r->rt_type );
-			$pages[$r->page_id][$tag] = intval( $r->rt_revision );
+			$pages[$r->page_id][$tag] = (int)$r->rt_revision;
 		}
 
 		return $pages;
@@ -572,7 +572,7 @@ class SpecialPageTranslation extends SpecialPage {
 	 */
 	public function checkInput( TranslatablePage $page, &$error = false ) {
 		$usedNames = array();
-		$highest = intval( TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' ) );
+		$highest = (int)TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' );
 		$parse = $page->getParse();
 		$sections = $parse->getSectionsForSave( $highest );
 
@@ -857,14 +857,14 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$inserts = array();
 		$changed = array();
-		$maxid = intval( TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' ) );
+		$maxid = (int)TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' );
 
 		$pageId = $page->getTitle()->getArticleID();
 		/**
 		 * @var TPSection $s
 		 */
 		foreach ( array_values( $sections ) as $index => $s ) {
-			$maxid = max( $maxid, intval( $s->name ) );
+			$maxid = max( $maxid, (int)$s->name );
 			$changed[] = $s->name;
 
 			if ( $this->getRequest()->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {

@@ -307,7 +307,7 @@ class TranslationHelpers {
 		$code = $this->handle->getCode();
 		$en = $this->getDefinition();
 
-		if ( strval( $translation ) === '' ) {
+		if ( (string)$translation === '' ) {
 			return $formattedChecks;
 		}
 
@@ -440,7 +440,7 @@ class TranslationHelpers {
 		// The information is most likely in English
 		$divAttribs = array( 'dir' => 'ltr', 'lang' => 'en', 'class' => 'mw-content-ltr' );
 
-		if ( strval( $info ) === '' ) {
+		if ( (string)$info === '' ) {
 			$info = $context->msg( 'translate-edit-no-information' )->text();
 			$class = 'mw-sp-translate-edit-noinfo';
 			$lang = $context->getLanguage();
@@ -663,7 +663,7 @@ class TranslationHelpers {
 
 	/// @since 2012-01-04
 	protected function mustHaveDefinition() {
-		if ( strval( $this->getDefinition() ) === '' ) {
+		if ( (string)$this->getDefinition() === '' ) {
 			throw new TranslationHelperException( 'message does not have definition' );
 		}
 	}

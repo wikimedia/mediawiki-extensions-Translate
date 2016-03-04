@@ -63,7 +63,7 @@ class MessageHandle {
 				$this->code = '';
 			} else {
 				// For keys like Foo/, substr returns false instead of ''
-				$this->code = strval( substr( $this->key, $pos + 1 ) );
+				$this->code = (string)( substr( $this->key, $pos + 1 ) );
 				$this->key = substr( $this->key, 0, $pos );
 			}
 		}

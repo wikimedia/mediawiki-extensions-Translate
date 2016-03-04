@@ -29,7 +29,7 @@ class ApiTranslationAids extends ApiBase {
 			);
 		}
 
-		if ( strval( $params['group'] ) !== '' ) {
+		if ( (string)$params['group'] !== '' ) {
 			$group = MessageGroups::getGroup( $params['group'] );
 		} else {
 			$group = $handle->getGroup();

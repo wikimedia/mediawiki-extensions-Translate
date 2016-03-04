@@ -33,7 +33,7 @@ class ApertiumWebService extends TranslationWebService {
 		$response = FormatJson::decode( $json );
 
 		if ( !is_object( $response ) ) {
-			$error = 'Malformed reply from remote server: ' . strval( $json );
+			$error = 'Malformed reply from remote server: ' . (string)$json;
 			throw new TranslationWebServiceException( $error );
 		}
 
