@@ -184,7 +184,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	public function getDefinitions() {
 		$defs = $this->load( $this->getSourceLanguage() );
 		if ( !is_array( $defs ) ) {
-			throw new MWException( "Unable to load definitions for " . $this->getLabel() );
+			throw new MWException( 'Unable to load definitions for ' . $this->getLabel() );
 		}
 
 		return $defs;

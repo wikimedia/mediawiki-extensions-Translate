@@ -99,7 +99,7 @@ class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 		if ( $wgTranslateDocumentationLanguageCode ) {
 			$docu = "\n * See the $wgTranslateDocumentationLanguageCode 'language' for " .
-				"message documentation incl. usage of parameters";
+				'message documentation incl. usage of parameters';
 		} else {
 			$docu = '';
 		}

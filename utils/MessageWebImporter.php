@@ -491,7 +491,7 @@ class MessageWebImporter {
 		$text = '';
 		foreach ( $changed as $c ) {
 			$key = array_shift( $c );
-			$text .= "* " . $context->msg( $key, $c )->plain() . "\n";
+			$text .= '* ' . $context->msg( $key, $c )->plain() . "\n";
 		}
 
 		return array( 'translate-manage-import-fuzzy', "\n" . $text );
@@ -559,14 +559,14 @@ class MessageWebImporter {
 	 */
 	public static function escapeNameForPHP( $name ) {
 		$replacements = array(
-			"(" => '(OP)',
-			" " => '(SP)',
+			'(' => '(OP)',
+			' ' => '(SP)',
 			"\t" => '(TAB)',
-			"." => '(DOT)',
+			'.' => '(DOT)',
 			"'" => '(SQ)',
 			"\"" => '(DQ)',
-			"%" => '(PC)',
-			"&" => '(AMP)',
+			'%' => '(PC)',
+			'&' => '(AMP)',
 		);
 
 		/* How nice of you PHP. No way to split array into keys and values in one

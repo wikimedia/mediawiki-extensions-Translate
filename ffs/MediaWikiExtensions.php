@@ -181,7 +181,7 @@ class PremadeMediawikiExtensionGroups {
 					if ( empty( $newgroup['name'] ) ) {
 						$newgroup['name'] = $line;
 					} else {
-						throw new MWException( "Trying to define name twice: " . $line );
+						throw new MWException( 'Trying to define name twice: ' . $line );
 					}
 				} else {
 					list( $key, $value ) = array_map( 'trim', explode( '=', $line, 2 ) );
@@ -224,7 +224,7 @@ class PremadeMediawikiExtensionGroups {
 							$newgroup['mangle'] = array_merge( $newgroup['mangle'], $messages );
 							break;
 						default:
-							throw new MWException( "Unknown key:" . $key );
+							throw new MWException( 'Unknown key:' . $key );
 					}
 				}
 			}

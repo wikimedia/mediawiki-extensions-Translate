@@ -47,7 +47,7 @@ class TranslateYaml {
 				$ret = yaml_parse( $text );
 				if ( $ret === false ) {
 					// Convert failures to exceptions
-					throw new InvalidArgumentException( "Invalid Yaml string" );
+					throw new InvalidArgumentException( 'Invalid Yaml string' );
 				}
 
 				return $ret;
@@ -65,7 +65,7 @@ class TranslateYaml {
 
 				return self::fixSyckBooleans( $yaml );
 			default:
-				throw new MWException( "Unknown Yaml library" );
+				throw new MWException( 'Unknown Yaml library' );
 		}
 	}
 
@@ -121,7 +121,7 @@ class TranslateYaml {
 			case 'syck':
 				return self::syckDump( $text );
 			default:
-				throw new MWException( "Unknown Yaml library" );
+				throw new MWException( 'Unknown Yaml library' );
 		}
 	}
 

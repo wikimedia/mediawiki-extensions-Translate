@@ -546,9 +546,9 @@ abstract class ComplexMessages {
 
 			$normalized = array_map( array( $this, 'normalize' ), $val );
 			if ( $this->elementsInArray ) {
-				$temp .= "=> array( " . implode( ', ', $normalized ) . " ),";
+				$temp .= '=> array( ' . implode( ', ', $normalized ) . ' ),';
 			} else {
-				$temp .= "=> " . implode( ', ', $normalized ) . ",";
+				$temp .= '=> ' . implode( ', ', $normalized ) . ',';
 			}
 			$out .= $temp . "\n";
 		}
@@ -627,7 +627,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 	public function highlight( $key, $values ) {
 		if ( count( $values ) ) {
 			if ( !isset( $values[0] ) ) {
-				throw new MWException( "Something missing from values: " .
+				throw new MWException( 'Something missing from values: ' .
 					print_r( $values, true ) );
 			}
 
@@ -762,7 +762,7 @@ class NamespaceCM extends ComplexMessages {
 			if ( count( $values ) > 1 ) {
 				$link = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$key" ), $key );
 				$errors[] = "Namespace $link can have only one translation. Replace the " .
-					"translation with a new one, and notify staff about the change.";
+					'translation with a new one, and notify staff about the change.';
 			}
 		}
 	}

@@ -234,7 +234,7 @@ class TranslationEditPage {
 	 *   where embedded editor is no applicable.
 	 * @return \array
 	 */
-	public static function jsEdit( Title $title, $group = "", $type = 'default' ) {
+	public static function jsEdit( Title $title, $group = '', $type = 'default' ) {
 		$context = RequestContext::getMain();
 
 		if ( $type === 'default' ) {

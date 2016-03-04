@@ -257,13 +257,13 @@ class WikiWriter {
 	 */
 	public function execute() {
 		if ( !$this->group ) {
-			$this->reportProgress( "Given group does not exist.", 'groupId', 'error' );
+			$this->reportProgress( 'Given group does not exist.', 'groupId', 'error' );
 
 			return;
 		}
 
 		if ( !$this->user->idForName() ) {
-			$this->reportProgress( "Given user does not exist.", 'user', 'error' );
+			$this->reportProgress( 'Given user does not exist.', 'user', 'error' );
 
 			return;
 		}

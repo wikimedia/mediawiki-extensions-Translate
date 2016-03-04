@@ -34,7 +34,7 @@ class SpecialPagePreparation extends SpecialPage {
 
 		$out = '';
 		$diff = new DifferenceEngine( $this->getContext() );
-		$diffHeader = $diff->addHeader( " ", $this->msg( 'pp-diff-old-header' )->escaped(),
+		$diffHeader = $diff->addHeader( ' ', $this->msg( 'pp-diff-old-header' )->escaped(),
 			$this->msg( 'pp-diff-new-header' )->escaped() );
 
 		$out = <<<HTML

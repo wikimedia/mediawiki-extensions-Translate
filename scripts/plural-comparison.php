@@ -110,12 +110,12 @@ class PluralCompare extends Maintenance {
 	protected function loadPluralFile( $fileName ) {
 		$doc = new DOMDocument;
 		$doc->load( $fileName );
-		$rulesets = $doc->getElementsByTagName( "pluralRules" );
+		$rulesets = $doc->getElementsByTagName( 'pluralRules' );
 		$plurals = array();
 		foreach ( $rulesets as $ruleset ) {
 			$codes = $ruleset->getAttribute( 'locales' );
 			$rules = array();
-			$ruleElements = $ruleset->getElementsByTagName( "pluralRule" );
+			$ruleElements = $ruleset->getElementsByTagName( 'pluralRule' );
 			foreach ( $ruleElements as $elt ) {
 				$rules[] = $elt->nodeValue;
 			}

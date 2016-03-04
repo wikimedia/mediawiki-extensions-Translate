@@ -395,7 +395,7 @@ abstract class MessageGroupBase implements MessageGroup {
 		$whitelist = array();
 		if ( isset( $lists['whitelist'] ) ) {
 			$whitelist = $lists['whitelist'];
-			if ( $whitelist === "*" ) {
+			if ( $whitelist === '*' ) {
 				// All languages whitelisted
 				return null;
 			}

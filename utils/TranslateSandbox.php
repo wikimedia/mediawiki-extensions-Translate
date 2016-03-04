@@ -22,7 +22,7 @@ class TranslateSandbox {
 	public static function addUser( $name, $email, $password ) {
 		$user = User::newFromName( $name, 'creatable' );
 		if ( !$user instanceof User ) {
-			throw new MWException( "Invalid user name" );
+			throw new MWException( 'Invalid user name' );
 		}
 
 		$user->setEmail( $email );
@@ -55,7 +55,7 @@ class TranslateSandbox {
 		$uid = $user->getId();
 
 		if ( $force !== 'force' && !self::isSandboxed( $user ) ) {
-			throw new MWException( "Not a sandboxed user" );
+			throw new MWException( 'Not a sandboxed user' );
 		}
 
 		// Delete from database
@@ -109,7 +109,7 @@ class TranslateSandbox {
 		global $wgTranslateSandboxPromotedGroup;
 
 		if ( !self::isSandboxed( $user ) ) {
-			throw new MWException( "Not a sandboxed user" );
+			throw new MWException( 'Not a sandboxed user' );
 		}
 
 		$user->removeGroup( 'translate-sandboxed' );

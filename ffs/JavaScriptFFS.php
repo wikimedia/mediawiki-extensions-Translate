@@ -203,11 +203,11 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		"\r" => "\\r",
 
 		// To avoid closing the element or CDATA section.
-		"<" => "\\x3c",
-		">" => "\\x3e",
+		'<' => "\\x3c",
+		'>' => "\\x3e",
 
 		// To avoid any complaints about bad entity refs.
-		"&" => "\\x26",
+		'&' => "\\x26",
 
 		/*
 		 * Work around https://bugzilla.mozilla.org/show_bug.cgi?id=274152
