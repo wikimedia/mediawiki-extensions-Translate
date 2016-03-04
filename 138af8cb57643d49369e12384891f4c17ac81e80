@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e2f53b6_a52528bf",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T13:04:48Z",
+      "side": 1,
+      "message": "Lol this must have been written by me.",
+      "revId": "138af8cb57643d49369e12384891f4c17ac81e80",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_0533340b",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T13:04:48Z",
+      "side": 1,
+      "message": "Hmm, this could even have relevance outside microbenchmarks.",
+      "revId": "138af8cb57643d49369e12384891f4c17ac81e80",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
