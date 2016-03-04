@@ -152,6 +152,9 @@ class SpecialMagic extends SpecialPage {
 
 	/**
 	 * The special page running code
+	 *
+	 * @param null|string $parameters
+	 * @throws MWException|PermissionsError
 	 */
 	public function execute( $parameters ) {
 		$this->setup( $parameters );

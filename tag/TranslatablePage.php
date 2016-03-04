@@ -138,9 +138,9 @@ class TranslatablePage {
 			switch ( $this->source ) {
 				case 'text':
 					break;
+				/** @noinspection PhpMissingBreakStatementInspection */
 				case 'title':
 					$this->revision = $this->getMarkedTag();
-				// There is no break statement here on purpose
 				case 'revision':
 					$rev = Revision::newFromTitle( $this->getTitle(), $this->revision );
 					$this->text = ContentHandler::getContentText( $rev->getContent() );

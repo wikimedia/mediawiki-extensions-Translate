@@ -222,8 +222,8 @@ class TranslateEditAddons {
 	/**
 	 * @param Title $title
 	 * @param int $revision
-	 * @param bool $fuzzy
-	 * @param bool Whether status changed
+	 * @param bool $fuzzy Whether to fuzzy or not
+	 * @return bool Whether status changed
 	 */
 	protected static function updateFuzzyTag( Title $title, $revision, $fuzzy ) {
 		$dbw = wfGetDB( DB_MASTER );

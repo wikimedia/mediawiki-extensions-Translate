@@ -23,6 +23,8 @@ class TranslationStashStorage {
 	/**
 	 * Adds a new translation to the stash. If the same key already exists, the
 	 * previous translation and metadata will be replaced with the new one.
+	 *
+	 * @param StashedTranslation $item
 	 */
 	public function addTranslation( StashedTranslation $item ) {
 		$row = array(

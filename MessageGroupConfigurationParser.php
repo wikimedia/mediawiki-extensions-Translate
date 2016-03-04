@@ -76,7 +76,7 @@ class MessageGroupConfigurationParser {
 	 * Returns group configurations from YAML documents. If there is document containing template,
 	 * it will be merged with other configurations.
 	 *
-	 * @param string $data
+	 * @param array $documents
 	 * @return array Unvalidated group configurations
 	 */
 	public function parseDocuments( array $documents ) {

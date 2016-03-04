@@ -36,10 +36,13 @@ class ApiTranslateUser extends ApiBase {
 
 	/**
 	 * Keeps track of recently used message groups per user.
+	 *
+	 * @param MessageGroup $group
+	 * @param User $user
 	 */
 	public static function trackGroup( MessageGroup $group, User $user ) {
 		if ( $user->isAnon() ) {
-			return true;
+			return;
 		}
 
 		$groups = $user->getOption( 'translate-recent-groups', '' );
@@ -51,7 +54,7 @@ class ApiTranslateUser extends ApiBase {
 		}
 
 		if ( isset( $groups[0] ) && $groups[0] === $group->getId() ) {
-			return true;
+			return;
 		}
 
 		array_unshift( $groups, $group->getId() );
@@ -63,7 +66,5 @@ class ApiTranslateUser extends ApiBase {
 		DeferredUpdates::addCallableUpdate( function() use ( $user ) {
 			$user->saveSettings();
 		} );
-
-		return true;
 	}
 }

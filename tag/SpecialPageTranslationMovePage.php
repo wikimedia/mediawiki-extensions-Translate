@@ -75,6 +75,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	 * extended in other ways.
 	 *
 	 * @param string|null $par null if subpage not provided, string otherwise
+	 * @throws PermissionsError
 	 */
 	public function execute( $par ) {
 		$request = $this->getRequest();
@@ -209,6 +210,8 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 
 	/**
 	 * The query form.
+	 *
+	 * @param array $par
 	 */
 	public function showForm( $par ) {
 		$this->getOutput()->addWikiMsg( 'pt-movepage-intro' );
