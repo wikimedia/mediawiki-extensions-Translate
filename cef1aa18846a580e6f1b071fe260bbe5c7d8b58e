@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e2f53b6_8239fa40",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T09:24:22Z",
+      "side": 1,
+      "message": "I thought this was removed?!?! Well, follow-up for you I guess.",
+      "revId": "cef1aa18846a580e6f1b071fe260bbe5c7d8b58e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_a23fde1f",
+        "filename": "ffs/GettextFFS.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T09:24:22Z",
+      "side": 1,
+      "message": "Extra space sneaked in?",
+      "revId": "cef1aa18846a580e6f1b071fe260bbe5c7d8b58e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_427d32e4",
+        "filename": "translationaids/UpdatedDefinitionAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T09:24:22Z",
+      "side": 1,
+      "message": "Cheating :D",
+      "revId": "cef1aa18846a580e6f1b071fe260bbe5c7d8b58e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
