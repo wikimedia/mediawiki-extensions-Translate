@@ -27,7 +27,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	 * @return StringMatcher
 	 */
 	public static function EmptyMatcher() {
-		return new StringMatcher;
+		return new StringMatcher();
 	}
 
 	/**
@@ -36,7 +36,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	 * @param string $prefix
 	 * @param array $patterns
 	 */
-	public function __construct( $prefix = '', $patterns = array() ) {
+	public function __construct( $prefix = '', array $patterns = array() ) {
 		$this->sPrefix = $prefix;
 		$this->init( $patterns );
 	}
