@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e2f53b6_8853db19",
+        "filename": "webservices/YandexWebService.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T13:22:27Z",
+      "side": 1,
+      "message": "Why comment instead of removal?",
+      "revId": "2f76f40c3435a1a4400cadda8e5dbcc03ec6c7c1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
