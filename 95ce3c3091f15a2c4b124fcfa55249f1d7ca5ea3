@@ -34,6 +34,24 @@
       "revId": "95ce3c3091f15a2c4b124fcfa55249f1d7ca5ea3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_25ef5884",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T12:25:47Z",
+      "side": 1,
+      "message": "Sorry, the above conclusion is wrong. SpecialPage::__construct() is marked public, so all special page constructors in Translate are going to be public, too.",
+      "parentUuid": "0e2f53b6_45c37c0a",
+      "revId": "95ce3c3091f15a2c4b124fcfa55249f1d7ca5ea3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
