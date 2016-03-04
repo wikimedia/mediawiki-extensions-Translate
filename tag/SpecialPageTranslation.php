@@ -173,6 +173,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 	protected function onActionMark( Title $title, $revision ) {
 		$request = $this->getRequest();
+		$out = $this->getOutput();
 
 		if ( $revision === 0 ) {
 			// Get the latest revision
