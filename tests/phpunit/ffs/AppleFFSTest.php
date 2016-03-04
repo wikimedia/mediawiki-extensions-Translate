@@ -74,6 +74,7 @@ STRINGS;
 
 	public function testFileRoundtrip() {
 		$infile = file_get_contents( __DIR__ . '/../data/AppleFFSTest1.strings' );
+		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new AppleFFS( $group );
 		$parsed = $ffs->readFromVariable( $infile );

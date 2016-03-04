@@ -81,7 +81,8 @@ class MessageGroupConfigurationParser {
 	 */
 	public function parseDocuments( array $documents ) {
 		$groups = array();
-		$template = false;
+		$template = array();
+
 		foreach ( $documents as $document ) {
 			$document = TranslateYaml::loadString( $document );
 

@@ -10,6 +10,7 @@ class ApiSearchTranslations extends ApiBase {
 		$params = $this->extractRequestParams();
 
 		$config = $wgTranslateTranslationServices[$params['service']];
+		/** @var SearchableTTMServer $server */
 		$server = TTMServer::factory( $config );
 
 		$result = $this->getResult();
