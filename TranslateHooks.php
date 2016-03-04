@@ -609,7 +609,7 @@ class TranslateHooks {
 	 * @param User $newUser
 	 * @return bool
 	 */
-	public static function onMergeAccountFromTo( User &$oldUser, User &$newUser ) {
+	public static function onMergeAccountFromTo( User $oldUser, User $newUser ) {
 		$dbw = wfGetDB( DB_MASTER );
 
 		// Update the non-duplicate rows, we'll just delete
@@ -635,7 +635,7 @@ class TranslateHooks {
 	 * @param User $oldUser
 	 * @return bool
 	 */
-	public static function onDeleteAccount( User &$oldUser ) {
+	public static function onDeleteAccount( User $oldUser ) {
 		$dbw = wfGetDB( DB_MASTER );
 
 		// Delete any remaining rows that didn't get merged
