@@ -23,6 +23,7 @@ class XliffFFSTest extends MediaWikiTestCase {
 	);
 
 	public function testParsing() {
+		/** @var FileBasedMessageGroup $group */
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new XliffFFS( $group );
 

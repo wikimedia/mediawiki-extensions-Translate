@@ -14,6 +14,11 @@
  * @ingroup JobQueue
  */
 class MessageGroupStatesUpdaterJob extends Job {
+	/**
+	 * @param Title $title
+	 * @param array $params
+	 * @param int $id
+	 */
 	public function __construct( $title, $params = array() ) {
 		parent::__construct( __CLASS__, $title, $params );
 		$this->removeDuplicates = true;

@@ -233,7 +233,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 	/**
 	 * Fetch the translators for a language
 	 *
-	 * @param type $code
+	 * @param string $code
 	 * @return array Map of (user name => page count)
 	 */
 	public function loadTranslators( $code ) {

@@ -57,7 +57,7 @@ class SpecialAggregateGroups extends SpecialPage {
 	}
 
 	/**
-	 * @param MessageGroup $group
+	 * @param AggregateMessageGroup $group
 	 * @param array $pages
 	 * @return string
 	 */
