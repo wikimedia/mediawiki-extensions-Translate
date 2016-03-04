@@ -303,8 +303,6 @@ class SpecialLanguageStats extends SpecialPage {
 			// An array where keys are state names and values are numbers
 			$this->table->addExtraColumn( $this->msg( 'translate-stats-workflow' ) );
 		}
-
-		return;
 	}
 
 	protected function getWorkflowStateValue( $target ) {
