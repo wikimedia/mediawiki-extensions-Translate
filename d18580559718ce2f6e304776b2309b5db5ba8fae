@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e2f53b6_850bc4d8",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T11:47:34Z",
+      "side": 1,
+      "message": "The desc belongs to the return value.\n\nThe $fuzzy param is whether to fuzzy or not.",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_c5f4acce",
+        "filename": "api/ApiTranslateUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T11:47:34Z",
+      "side": 1,
+      "message": "I would drop the return values from this function, the true does not tell anything here.",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_45289c32",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T11:47:34Z",
+      "side": 1,
+      "message": "bool",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_8522a44e",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T11:47:34Z",
+      "side": 1,
+      "message": "array is wrong here, it should be MessageGroup or similar.",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_a5188824",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T11:47:34Z",
+      "side": 1,
+      "message": "Does it need /** or does // or /* suffice?",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_25dc784b",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T11:47:34Z",
+      "side": 1,
+      "message": "Same Q.",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_85e104fe",
+        "filename": "ttmserver/DatabaseTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T11:47:34Z",
+      "side": 1,
+      "message": "Would you prefer sausage with your langage ;)",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_65e68015",
+        "filename": "ttmserver/DatabaseTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T11:47:34Z",
+      "side": 1,
+      "message": "As far as I can see it must be string.",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_c5eaecd6",
+        "filename": "ttmserver/Interfaces.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T11:47:34Z",
+      "side": 1,
+      "message": "Same type as what search returns, which seems to be mixed currently.",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_659a0068",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T11:47:34Z",
+      "side": 1,
+      "message": "callable per https://secure.php.net/manual/en/language.types.callable.php",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_e5a5709c",
+        "filename": "webservices/TranslationQuery.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T11:47:34Z",
+      "side": 1,
+      "message": "Well $this is not very useful :D TranslationQuery.",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
