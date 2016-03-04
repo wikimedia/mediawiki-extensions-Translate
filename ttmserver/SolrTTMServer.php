@@ -214,7 +214,7 @@ class SolrTTMServer
 					$targetTitle->getNamespace(),
 					$handle->getKey() . '/' . $sourceLanguage
 				);
-				$revId = intval( $sourceTitle->getLatestRevID() );
+				$revId = (int)$sourceTitle->getLatestRevID();
 				/* Note: in some cases the source page might not exist, in this case
 				 * we use 0 as message version identifier, to differentiate them from
 				 * orphan messages */

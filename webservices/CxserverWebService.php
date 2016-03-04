@@ -38,7 +38,7 @@ class CxserverWebService extends TranslationWebService {
 		$response = FormatJson::decode( $json, true );
 
 		if ( !is_array( $response ) ) {
-			$exception = 'Malformed reply from remote server: ' . strval( $json );
+			$exception = 'Malformed reply from remote server: ' . (string)$json;
 			throw new TranslationWebServiceException( $exception );
 		}
 

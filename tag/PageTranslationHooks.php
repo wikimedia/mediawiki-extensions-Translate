@@ -492,7 +492,7 @@ class PageTranslationHooks {
 		// FIXME: optimize away this query. Bug T38588.
 		$oldTextId = $dbw->selectField( $table, $field, $conds, __METHOD__ );
 
-		if ( strval( $newTextId ) !== strval( $oldTextId ) ) {
+		if ( (string)$newTextId !== (string)$oldTextId ) {
 			// Not a null revision, bail out.
 			return true;
 		}
@@ -964,7 +964,7 @@ class PageTranslationHooks {
 			$language = $handle->getCode();
 
 			// Ignore pages such as Translations:Page/unit without language code
-			if ( strval( $code ) === '' ) {
+			if ( (string)$code === '' ) {
 				continue;
 			}
 

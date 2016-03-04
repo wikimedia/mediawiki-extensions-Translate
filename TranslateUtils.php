@@ -112,7 +112,7 @@ class TranslateUtils {
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$recentchanges = $dbr->tableName( 'recentchanges' );
-		$hours = intval( $hours );
+		$hours = (int)$hours;
 		$cutoff_unixtime = time() - ( $hours * 3600 );
 		$cutoff = $dbr->timestamp( $cutoff_unixtime );
 

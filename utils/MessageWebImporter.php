@@ -203,7 +203,7 @@ class MessageWebImporter {
 			}
 
 			// No changes at all, ignore
-			if ( strval( $old ) === strval( $value ) ) {
+			if ( (string)$old === (string)$value ) {
 				continue;
 			}
 

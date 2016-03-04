@@ -59,7 +59,7 @@ class MicrosoftWebService extends TranslationWebService {
 
 		$languages = array();
 		foreach ( $xml->string as $language ) {
-			$languages[] = strval( $language );
+			$languages[] = (string)$language;
 		}
 
 		// Let's make a cartesian product, assuming we can translate from any
