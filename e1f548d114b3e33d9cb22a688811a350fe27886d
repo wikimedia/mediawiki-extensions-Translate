@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e2f53b6_0b47c551",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T14:49:21Z",
+      "side": 1,
+      "message": "I don\u0027t think that is true. Do you have source for this?\n\nhttps://secure.php.net/manual/en/language.oop5.references.php\n\nThe \"object variable\" is passed as a value. But there is no need to replace the value of the \"object variable\" in these hooks, so the reference can be removed and the code change is okay.",
+      "revId": "e1f548d114b3e33d9cb22a688811a350fe27886d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
