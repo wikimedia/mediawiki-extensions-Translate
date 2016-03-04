@@ -606,6 +606,7 @@ class MessageGroups {
 	 * other code might not handle more than two (or even one) nesting levels.
 	 * One group can exist multiple times in differents parts of the tree.
 	 * In other words: [Group1, Group2, [AggGroup, Group3, Group4]]
+	 *
 	 * @throws MWException If cyclic structure is detected.
 	 * @return array
 	 */
@@ -673,6 +674,7 @@ class MessageGroups {
 
 	/// See getGroupStructure, just collects ids into array
 	public static function collectGroupIds( $value, $key, $used ) {
+		/** @var MessageGroup $value */
 		$used[0][$value->getId()] = true;
 	}
 
