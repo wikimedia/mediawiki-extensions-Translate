@@ -503,7 +503,7 @@ class SpecialTranslationStats extends SpecialPage {
 			}
 		}
 
-		if ( $end == null ) {
+		if ( $end === null ) {
 			$last = array_splice( $data, -1, 1 );
 			// Indicator that the last value is not full
 			$data[key( $last ) . '*'] = current( $last );

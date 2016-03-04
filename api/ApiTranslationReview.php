@@ -127,7 +127,7 @@ class ApiTranslationReview extends ApiBase {
 			return 'unknownmessage';
 		}
 
-		if ( $revision->getUser() == $user->getId() ) {
+		if ( $revision->getUser() === $user->getId() ) {
 			return 'owntranslation';
 		}
 

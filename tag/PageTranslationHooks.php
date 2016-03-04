@@ -807,14 +807,14 @@ class PageTranslationHooks {
 
 	/// Hook: getUserPermissionsErrorsExpensive
 	public static function lockedPagesCheck( Title $title, User $user, $action, &$result ) {
-		if ( $action == 'read' ) {
+		if ( $action === 'read' ) {
 			return true;
 		}
 
 		$cache = wfGetCache( CACHE_ANYTHING );
 		$key = wfMemcKey( 'pt-lock', sha1( $title->getPrefixedText() ) );
 		// At least memcached mangles true to "1"
-		if ( $cache->get( $key ) == true ) {
+		if ( $cache->get( $key ) !== false ) {
 			$result = array( 'pt-locked-page' );
 
 			return false;
