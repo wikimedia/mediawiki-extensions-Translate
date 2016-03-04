@@ -213,7 +213,7 @@ class TranslationHelpers {
 	 * @param array $params
 	 * @return mixed
 	 */
-	public function callBox( $type, $cb, $params = array() ) {
+	public function callBox( $type, $cb, array $params ) {
 		try {
 			return call_user_func_array( $cb, $params );
 		} catch ( TranslationHelperException $e ) {

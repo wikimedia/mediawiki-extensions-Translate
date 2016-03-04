@@ -194,7 +194,7 @@ class MessageGroupStats {
 		wfDebugLog( 'messagegroupstats', 'Cleared everything :(' );
 	}
 
-	protected static function extractResults( $res, $stats = array() ) {
+	protected static function extractResults( $res, array $stats ) {
 		foreach ( $res as $row ) {
 			$stats[$row->tgs_group][$row->tgs_lang] = self::extractNumbers( $row );
 		}
@@ -202,7 +202,7 @@ class MessageGroupStats {
 		return $stats;
 	}
 
-	public static function update( MessageHandle $handle, $changes = array() ) {
+	public static function update( MessageHandle $handle, array $changes ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = array(
 			'tgs_group' => $handle->getGroupIds(),
@@ -239,7 +239,7 @@ class MessageGroupStats {
 	 * @param array[] $stats
 	 * @return array[]
 	 */
-	protected static function forLanguageInternal( $code, $stats = array() ) {
+	protected static function forLanguageInternal( $code, array $stats ) {
 		$res = self::selectRowsIdLang( null, $code );
 		$stats = self::extractResults( $res, $stats );
 
@@ -278,7 +278,7 @@ class MessageGroupStats {
 	 * @param array[] $stats
 	 * @return array[]
 	 */
-	protected static function forGroupInternal( $group, $stats = array() ) {
+	protected static function forGroupInternal( $group, array $stats ) {
 		$id = $group->getId();
 		$res = self::selectRowsIdLang( $id, null );
 		$stats = self::extractResults( $res, $stats );

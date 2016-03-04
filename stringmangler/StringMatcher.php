@@ -36,7 +36,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	 * @param string $prefix
 	 * @param array $patterns
 	 */
-	public function __construct( $prefix = '', $patterns = array() ) {
+	public function __construct( $prefix = '', array $patterns ) {
 		$this->sPrefix = $prefix;
 		$this->init( $patterns );
 	}
