@@ -378,7 +378,7 @@ HTML
 			$params = $this->opts->getChangedValues();
 			$params = array( 'match' => 'all' ) + $params;
 			$linkText = $this->msg( 'tux-sst-link-all-match' )->text();
-			$link = $this->getTitle()->getFullURL( $params );
+			$link = $this->getPageTitle()->getFullURL( $params );
 			$link = "<span class='plainlinks'>[$link $linkText]</span>";
 
 			$this->getOutput()->wrapWikiMsg(
@@ -414,7 +414,7 @@ HTML
 		$nondefaults = $this->opts->getChangedValues();
 		$taskParams = array( 'filter' => $value ) + $nondefaults;
 		ksort( $taskParams );
-		$href = $this->getTitle()->getLocalURL( $taskParams );
+		$href = $this->getPageTitle()->getLocalURL( $taskParams );
 		$link = Html::element( 'a',
 			array( 'href' => $href ),
 			// Messages for grepping:
@@ -479,7 +479,7 @@ HTML
 			$tabClass = "tux-sst-$tab";
 			$taskParams = array( 'filter' => $filter ) + $nondefaults;
 			ksort( $taskParams );
-			$href = $this->getTitle()->getLocalURL( $taskParams );
+			$href = $this->getPageTitle()->getLocalURL( $taskParams );
 			if ( $tab === 'default' ) {
 				$link = Html::element(
 					'a',
