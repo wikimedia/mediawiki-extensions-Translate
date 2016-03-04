@@ -14,7 +14,7 @@
  * @ingroup PageTranslation
  */
 class TPException extends MWException {
-	protected $msg = null;
+	protected $msg;
 
 	/**
 	 * @todo Pass around Messages when Status class doesn't suck

@@ -19,9 +19,9 @@ abstract class ComplexMessages {
 	const LANG_CURRENT = 2;
 	const PLACEHOLDER = 'languagecodeplaceholder';
 
-	protected $language = null;
-	protected $targetHtmlCode = null;
-	protected $targetDir = null;
+	protected $language;
+	protected $targetHtmlCode;
+	protected $targetDir;
 	protected $id = '__BUG__';
 	protected $variable = '__BUG__';
 	protected $data = array();
