@@ -571,7 +571,7 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param bool $error
 	 * @return array
 	 */
-	public function checkInput( TranslatablePage $page, &$error = false ) {
+	public function checkInput( TranslatablePage $page, &$error ) {
 		$usedNames = array();
 		$highest = (int)TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' );
 		$parse = $page->getParse();
