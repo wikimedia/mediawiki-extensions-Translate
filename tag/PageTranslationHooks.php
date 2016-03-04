@@ -964,7 +964,7 @@ class PageTranslationHooks {
 			$language = $handle->getCode();
 
 			// Ignore pages such as Translations:Page/unit without language code
-			if ( (string)$code === '' ) {
+			if ( (string)$language === '' ) {
 				continue;
 			}
 
