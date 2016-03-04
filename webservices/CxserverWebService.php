@@ -29,9 +29,7 @@ class CxserverWebService extends TranslationWebService {
 		$pairs = array();
 
 		$url = $this->config['host'] . '/v1/list/mt';
-		// BC for MW <= 1.24
-		$json = Http::request(
-			'GET',
+		$json = Http::get(
 			$url,
 			array( $this->config['timeout'] )
 		);
