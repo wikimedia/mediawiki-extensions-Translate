@@ -118,7 +118,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		} elseif ( $data === null ) {
 			return $data;
 		} else {
-			throw new MWException( __METHOD__ . ": Unsupported datatype" );
+			throw new MWException( __METHOD__ . ': Unsupported datatype' );
 		}
 	}
 
@@ -130,7 +130,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		} elseif ( $data === null ) {
 			return $data;
 		} else {
-			throw new MWException( __METHOD__ . ": Unsupported datatype" );
+			throw new MWException( __METHOD__ . ': Unsupported datatype' );
 		}
 	}
 

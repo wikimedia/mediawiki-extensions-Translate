@@ -630,9 +630,9 @@ class GroupStatistics extends Maintenance {
 
 			$out->blockstart();
 
-			$out->element( $l10n ? "{{int:translate-gs-continent}}" : 'Continent', true );
-			$out->element( $l10n ? "{{int:translate-gs-count}}" : 'Count', true );
-			$out->element( $l10n ? "{{int:translate-gs-avgscore}}" : 'Avg. score', true );
+			$out->element( $l10n ? '{{int:translate-gs-continent}}' : 'Continent', true );
+			$out->element( $l10n ? '{{int:translate-gs-count}}' : 'Count', true );
+			$out->element( $l10n ? '{{int:translate-gs-avgscore}}' : 'Avg. score', true );
 
 			$out->blockend();
 
@@ -644,9 +644,9 @@ class GroupStatistics extends Maintenance {
 				$out->blockstart();
 
 				if ( $key == 'multiple' ) {
-					$out->element( $l10n ? "{{int:translate-gs-multiple}}" : 'Multiple' );
+					$out->element( $l10n ? '{{int:translate-gs-multiple}}' : 'Multiple' );
 				} else {
-					$out->element( $l10n ? "{{int:timezoneregion-" . $key . "}}" : ucfirst( $key ) );
+					$out->element( $l10n ? '{{int:timezoneregion-' . $key . '}}' : ucfirst( $key ) );
 				}
 				$out->element( $values[0] );
 				$out->element( number_format( $values[1] / $values[0] ) );
@@ -658,7 +658,7 @@ class GroupStatistics extends Maintenance {
 			}
 
 			$out->blockstart();
-			$out->element( $l10n ? "{{int:translate-gs-total}}" : 'Total' );
+			$out->element( $l10n ? '{{int:translate-gs-total}}' : 'Total' );
 			$out->element( $totals[0] );
 			$out->element( number_format( $totals[1] / $totals[0] ) );
 			$out->blockend();

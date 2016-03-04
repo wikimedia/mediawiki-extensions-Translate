@@ -31,7 +31,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 		$this->assertEquals(
 			$this->groupConfiguration,
 			$this->group->getConfiguration(),
-			"configuration should not change."
+			'configuration should not change.'
 		);
 	}
 
@@ -39,7 +39,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 		$this->assertEquals(
 			$this->groupConfiguration['BASIC']['id'],
 			$this->group->getId(),
-			"id comes from config."
+			'id comes from config.'
 		);
 	}
 
@@ -47,7 +47,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 		$this->assertEquals(
 			'en',
 			$this->group->getSourceLanguage(),
-			"source language defaults to en."
+			'source language defaults to en.'
 		);
 	}
 
@@ -55,7 +55,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 		$this->assertEquals(
 			NS_MEDIAWIKI,
 			$this->group->getNamespace(),
-			"should parse string namespace contant."
+			'should parse string namespace contant.'
 		);
 	}
 
@@ -67,7 +67,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 		$this->assertEquals(
 			NS_IMAGE,
 			$this->group->getNamespace(),
-			"should parse integer namespace number."
+			'should parse integer namespace number.'
 		);
 	}
 
@@ -79,7 +79,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 		$this->assertEquals(
 			NS_IMAGE,
 			$this->group->getNamespace(),
-			"should parse string namespace name."
+			'should parse string namespace name.'
 		);
 	}
 

@@ -120,8 +120,8 @@ class SpecialTranslations extends SpecialAllpages {
 				<td class='mw-input'>" .
 			$namespaces->getHTML() . ' ' .
 			Xml::submitButton( $this->msg( 'allpagessubmit' )->text() ) .
-			"</td>
-				</tr>";
+			'</td>
+				</tr>';
 		$out .= Xml::closeElement( 'table' );
 		$out .= Xml::closeElement( 'fieldset' );
 		$out .= Xml::closeElement( 'form' );

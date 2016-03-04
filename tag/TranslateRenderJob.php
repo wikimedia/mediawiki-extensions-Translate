@@ -43,7 +43,7 @@ class TranslateRenderJob extends Job {
 		if ( !$page ) {
 			var_dump( $this->params );
 			var_dump( $title );
-			throw new MWException( "Oops, this should not happen!" );
+			throw new MWException( 'Oops, this should not happen!' );
 		}
 
 		$group = $page->getMessageGroup();

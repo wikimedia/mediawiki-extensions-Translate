@@ -37,7 +37,7 @@ class SupportAid extends TranslationAid {
 		} elseif ( $wgTranslateSupportUrl ) {
 			$config = $wgTranslateSupportUrl;
 		} else {
-			throw new TranslationHelperException( "Support page not configured" );
+			throw new TranslationHelperException( 'Support page not configured' );
 		}
 
 		// Preprocess params
@@ -54,12 +54,11 @@ class SupportAid extends TranslationAid {
 		} elseif ( isset( $config['page'] ) ) {
 			$page = Title::newFromText( $config['page'] );
 			if ( !$page ) {
-				throw new TranslationHelperException( "Support page not configured properly" );
+				throw new TranslationHelperException( 'Support page not configured properly' );
 			}
 			return $page->getFullUrl( $params );
 		} else {
-			throw new TranslationHelperException( "Support page not configured properly" );
+			throw new TranslationHelperException( 'Support page not configured properly' );
 		}
 	}
-
 }

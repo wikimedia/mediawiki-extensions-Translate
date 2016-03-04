@@ -23,7 +23,7 @@ class ResourcesOrderTest extends MediaWikiTestCase {
 		$this->assertEquals(
 			array_keys( $sorted ),
 			array_keys( $wgResourceModules ),
-			"Modules are defined in alphabetical order."
+			'Modules are defined in alphabetical order.'
 		);
 	}
 }
