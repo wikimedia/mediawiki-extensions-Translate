@@ -16,6 +16,24 @@
       "revId": "55ae036c93630814eda440bc456c983ceeea8974",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_e890a79a",
+        "filename": "MessageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T13:26:41Z",
+      "side": 1,
+      "message": "I\u0027m still a bit scared of doing that, as it can cause hard exceptions. I guess I should. You\u0027ll code review -1 me, or slap me if merged to carelessly, I hope...\n\nWill fix.",
+      "parentUuid": "0e2f53b6_e85a6721",
+      "revId": "55ae036c93630814eda440bc456c983ceeea8974",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
