@@ -298,13 +298,13 @@ class MediaWikiMessageChecker extends MessageChecker {
 			$subcheck = 'namespace';
 			$namespaces = 'help|project|\{\{ns:project}}|mediawiki';
 			$matches = array();
-			if ( preg_match( "/^($namespaces):[\w\s]+$/ui", $definition, $matches ) ) {
-				if ( !preg_match( "/^{$matches[1]}:.+$/u", $translation ) ) {
-					$warnings[$key][] = array(
-						array( 'pagename', $subcheck, $key, $code ),
-						'translate-checks-pagename',
-					);
-				}
+			if ( preg_match( "/^($namespaces):[\w\s]+$/ui", $definition, $matches ) &&
+				!preg_match( "/^{$matches[1]}:.+$/u", $translation )
+			) {
+				$warnings[$key][] = array(
+					array( 'pagename', $subcheck, $key, $code ),
+					'translate-checks-pagename',
+				);
 			}
 		}
 	}
