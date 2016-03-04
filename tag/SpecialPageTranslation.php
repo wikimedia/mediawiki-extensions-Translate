@@ -568,7 +568,7 @@ class SpecialPageTranslation extends SpecialPage {
 	/**
 	 * @param TranslatablePage $page
 	 * @param bool $error
-	 * @return array
+	 * @return TPSection[]
 	 */
 	public function checkInput( TranslatablePage $page, &$error ) {
 		$usedNames = array();
@@ -594,7 +594,7 @@ class SpecialPageTranslation extends SpecialPage {
 	/**
 	 * Displays the sections and changes for the user to review
 	 * @param TranslatablePage $page
-	 * @param array $sections
+	 * @param TPSection[] $sections
 	 */
 	public function showPage( TranslatablePage $page, array $sections ) {
 		global $wgContLang;
@@ -630,9 +630,6 @@ class SpecialPageTranslation extends SpecialPage {
 		// If the page is marked for translation the first time, default to checked.
 		$defaultChecked = $page->hasPageDisplayTitle();
 
-		/**
-		 * @var TPSection $s
-		 */
 		foreach ( $sections as $s ) {
 			if ( $s->name === 'Page display title' ) {
 				// Set section type as new if title previously unchecked
@@ -820,7 +817,7 @@ class SpecialPageTranslation extends SpecialPage {
 	 * - Setups renderjobs to update the translation pages
 	 * - Invalidates caches
 	 * @param TranslatablePage $page
-	 * @param array $sections
+	 * @param TPSection[] $sections
 	 * @return array|bool
 	 */
 	public function markForTranslation( TranslatablePage $page, array $sections ) {
@@ -992,7 +989,7 @@ class SpecialPageTranslation extends SpecialPage {
 	/**
 	 * Creates jobs needed to create or update all translation page definitions.
 	 * @param TranslatablePage $page
-	 * @param array $sections
+	 * @param TPSection[] $sections
 	 * @return Job[]
 	 * @since 2013-01-28
 	 */
