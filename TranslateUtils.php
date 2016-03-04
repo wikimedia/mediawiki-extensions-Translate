@@ -361,17 +361,6 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Convenience function to get API query string for retrieving a token.
-	 * @param string $token
-	 * @return string
-	 * @since 2012-05-03
-	 */
-	public static function getTokenAction( $token ) {
-		// Remove this function when support for MW 1.24 is dropped.
-		return 'action=query&meta=tokens&type=csrf';
-	}
-
-	/**
 	 * Returns a random string that can be used as placeholder in strings.
 	 * @return string
 	 * @since 2012-07-31
