@@ -121,13 +121,10 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			$subgroups = $mixed;
 		}
 
-		wfProfileIn( __METHOD__ . '-' . get_class( $g ) );
-
 		$a = array();
 
 		$groupId = $g->getId();
 
-		wfProfileIn( __METHOD__ . '-basic' );
 		if ( isset( $props['id'] ) ) {
 			$a['id'] = $groupId;
 		}
@@ -147,24 +144,18 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		if ( isset( $props['namespace'] ) ) {
 			$a['namespace'] = $g->getNamespace();
 		}
-		wfProfileOut( __METHOD__ . '-basic' );
 
-		wfProfileIn( __METHOD__ . '-exists' );
 		if ( isset( $props['exists'] ) ) {
 			$a['exists'] = $g->exists();
 		}
-		wfProfileOut( __METHOD__ . '-exists' );
 
-		wfProfileIn( __METHOD__ . '-icon' );
 		if ( isset( $props['icon'] ) ) {
 			$formats = TranslateUtils::getIcon( $g, $params['iconsize'] );
 			if ( $formats ) {
 				$a['icon'] = $formats;
 			}
 		}
-		wfProfileOut( __METHOD__ . '-icon' );
 
-		wfProfileIn( __METHOD__ . '-priority' );
 		if ( isset( $props['priority'] ) ) {
 			$priority = MessageGroups::getPriority( $g );
 			$a['priority'] = $priority ?: 'default';
@@ -178,20 +169,15 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		if ( isset( $props['priorityforce'] ) ) {
 			$a['priorityforce'] = ( TranslateMetadata::get( $groupId, 'priorityforce' ) === 'on' );
 		}
-		wfProfileOut( __METHOD__ . '-priority' );
 
-		wfProfileIn( __METHOD__ . '-workflowstates' );
 		if ( isset( $props['workflowstates'] ) ) {
 			$a['workflowstates'] = $this->getWorkflowStates( $g );
 		}
-		wfProfileOut( __METHOD__ . '-workflowstates' );
 
 		Hooks::run(
 			'TranslateProcessAPIMessageGroupsProperties',
 			array( &$a, $props, $params, $g )
 		);
-
-		wfProfileOut( __METHOD__ . '-' . get_class( $g ) );
 
 		// Depth only applies to tree format
 		if ( $depth >= $params['depth'] && $params['format'] === 'tree' ) {

@@ -44,9 +44,7 @@ class MicrosoftWebService extends TranslationWebService {
 		$url .= wfArrayToCgi( $params );
 
 		$req = MWHttpRequest::factory( $url, $options );
-		wfProfileIn( 'TranslateWebServiceRequest-' . $this->service . '-pairs' );
 		$status = $req->execute();
-		wfProfileOut( 'TranslateWebServiceRequest-' . $this->service . '-pairs' );
 
 		if ( !$status->isOK() ) {
 			$error = $req->getContent();
