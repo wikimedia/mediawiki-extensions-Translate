@@ -166,11 +166,11 @@
 	"pm-page-does-not-exist": "$1 は存在しません",
 	"pm-old-translations-missing": "$1 は古い翻訳を含んでいません",
 	"pm-pagename-missing": "ページ名を入力してください",
-	"pm-langcode-missing": "言語コードを入力してください",
 	"pm-add-icon-hover-text": "単位を下に追加",
 	"pm-swap-icon-hover-text": "下の単位と入れ替える",
 	"pm-delete-icon-hover-text": "単位を削除",
 	"pm-pagetitle-invalid": "有効なページ名を入力してください",
+	"pm-langcode-missing": "言語コードを入力してください",
 	"pm-summary-import": "[[Special:PageMigration|ページ移行]]を使用して翻訳を取り込み",
 	"tpt-translate-title": "ページ名を翻訳できるようにする",
 	"pp-pagename-placeholder": "ページ名を入力",
@@ -180,5 +180,6 @@
 	"tpt-unlink-confirm": "このページを翻訳システムから本当に除去するかどうか確認してください。\n言語選択と、翻訳されたページ名が、動作しなくなります。\n翻訳ページが編集できる状態になります。",
 	"tpt-unlink-button": "翻訳対象から除去",
 	"tpt-unlink-summary": "ページを翻訳対象から除去",
+	"tpt-generic-confirm": "操作を確認してください。",
 	"tpt-generic-button": "確認"
 }
