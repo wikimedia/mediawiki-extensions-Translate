@@ -66,7 +66,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
 		$defs = array();
-		$prefix = $this->getTitle()->getPrefixedDBKey() . '/';
+		$prefix = $this->getTitle()->getPrefixedDBkey() . '/';
 
 		foreach ( $res as $r ) {
 			$section = new TPSection();
@@ -105,7 +105,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 
 			$title = Title::newFromText( $key );
 			if ( $title ) {
-				$key = $title->getPrefixedDBKey();
+				$key = $title->getPrefixedDBkey();
 			}
 
 			return isset( $stuff[$key] ) ? $stuff[$key] : null;

@@ -108,7 +108,7 @@ class ProcessMessageChanges extends Maintenance {
 		$file = MessageChangeStorage::getCdbPath( $name );
 
 		MessageChangeStorage::writeChanges( $changes, $file );
-		$url = SpecialPage::getTitleFor( 'ManageMessageGroups', $name )->getFullUrl();
+		$url = SpecialPage::getTitleFor( 'ManageMessageGroups', $name )->getFullURL();
 		$this->output( "Process changes at $url\n" );
 	}
 
@@ -154,7 +154,7 @@ class ProcessMessageChanges extends Maintenance {
 		if ( $info['skipped'] !== array() ) {
 			$skipped = implode( ', ', array_keys( $info['skipped'] ) );
 			$this->output( "There are changes to check for groups $skipped.\n" );
-			$url = SpecialPage::getTitleFor( 'ManageMessageGroups', $info['name'] )->getFullUrl();
+			$url = SpecialPage::getTitleFor( 'ManageMessageGroups', $info['name'] )->getFullURL();
 			$this->output( "You can process them at $url\n" );
 		}
 	}

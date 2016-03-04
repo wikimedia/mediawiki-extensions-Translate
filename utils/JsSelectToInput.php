@@ -91,7 +91,7 @@ class JsSelectToInput {
 		}
 
 		self::injectJs();
-		$html = $this->select->getHtml();
+		$html = $this->select->getHTML();
 		$html .= $this->getButton( $this->msg, $this->sourceId, $this->targetId );
 
 		return $html;

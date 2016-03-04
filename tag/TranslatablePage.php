@@ -248,7 +248,7 @@ class TranslatablePage {
 
 		// Display title from DB
 		$section = str_replace( ' ', '_', $this->displayTitle );
-		$page = $this->getTitle()->getPrefixedDBKey();
+		$page = $this->getTitle()->getPrefixedDBkey();
 
 		$group = $this->getMessageGroup();
 		// Sanity check, seems to happen during moves
@@ -696,7 +696,7 @@ class TranslatablePage {
 	public function getTranslationUnitPages( $set = 'active', $code = false ) {
 		$dbw = wfGetDB( DB_MASTER );
 
-		$base = $this->getTitle()->getPrefixedDBKey();
+		$base = $this->getTitle()->getPrefixedDBkey();
 		// Including the / used as separator
 		$baseLength = strlen( $base ) + 1;
 

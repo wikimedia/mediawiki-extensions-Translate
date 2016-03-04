@@ -122,7 +122,7 @@ class CreateCheckIndex extends Maintenance {
 		$db = wfGetDB( DB_MASTER );
 		foreach ( $problematic as $p ) {
 			$title = Title::makeTitleSafe( $p[0], $p[1] );
-			$titleText = $title->getDBKey();
+			$titleText = $title->getDBkey();
 			$res = $db->select( 'page', array( 'page_id', 'page_latest' ),
 				array( 'page_namespace' => $p[0], 'page_title' => $titleText ), __METHOD__ );
 

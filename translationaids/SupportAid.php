@@ -56,7 +56,7 @@ class SupportAid extends TranslationAid {
 			if ( !$page ) {
 				throw new TranslationHelperException( 'Support page not configured properly' );
 			}
-			return $page->getFullUrl( $params );
+			return $page->getFullURL( $params );
 		} else {
 			throw new TranslationHelperException( 'Support page not configured properly' );
 		}

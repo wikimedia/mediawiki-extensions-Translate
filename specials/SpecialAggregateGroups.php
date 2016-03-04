@@ -178,7 +178,7 @@ class SpecialAggregateGroups extends SpecialPage {
 
 		// Add new group if user has permissions
 		if ( $this->hasPermission ) {
-			$out->addHtml( "<br/><a class='tpt-add-new-group' href='#'>" .
+			$out->addHTML( "<br/><a class='tpt-add-new-group' href='#'>" .
 				$this->msg( 'tpt-aggregategroup-add-new' )->escaped() .
 				'</a>' );
 			$newGroupNameLabel = $this->msg( 'tpt-aggregategroup-new-name' )->escaped();
@@ -202,7 +202,7 @@ class SpecialAggregateGroups extends SpecialPage {
 				"$newGroupNameLabel $newGroupName<br />" .
 				"$newGroupDescriptionLabel $newGroupDescription<br />$saveButton"
 			);
-			$out->addHtml( $newGroupDiv );
+			$out->addHTML( $newGroupDiv );
 		}
 	}
 

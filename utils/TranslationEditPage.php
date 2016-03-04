@@ -112,7 +112,7 @@ class TranslationEditPage {
 		$textarea = Html::element( 'textarea', $textareaParams, $translation );
 
 		$hidden = array();
-		$hidden[] = Html::hidden( 'title', $this->getTitle()->getPrefixedDbKey() );
+		$hidden[] = Html::hidden( 'title', $this->getTitle()->getPrefixedDBkey() );
 
 		if ( isset( $data['revisions'][0]['timestamp'] ) ) {
 			$hidden[] = Html::hidden( 'basetimestamp', $data['revisions'][0]['timestamp'] );
@@ -242,7 +242,7 @@ class TranslationEditPage {
 			$onclick = "jQuery( '#$text' ).dblclick(); return false;";
 		} else {
 			$onclick = Xml::encodeJsCall(
-				'return mw.translate.openDialog', array( $title->getPrefixedDbKey(), $group )
+				'return mw.translate.openDialog', array( $title->getPrefixedDBkey(), $group )
 			);
 		}
 
@@ -290,7 +290,7 @@ class TranslationEditPage {
 				'class' => 'mw-translate-askpermission',
 				'type' => 'button',
 				'value' => wfMessage( 'translate-edit-askpermission' )->text(),
-				'data-load-url' => $title->getLocalUrl(),
+				'data-load-url' => $title->getLocalURL(),
 			)
 		);
 

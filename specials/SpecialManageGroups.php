@@ -118,7 +118,7 @@ class SpecialManageGroups extends SpecialPage {
 		$this->diff = $diff;
 
 		$out = $this->getOutput();
-		$out->addHtml(
+		$out->addHTML(
 			'' .
 				Html::openElement( 'form', array( 'method' => 'post' ) ) .
 				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
@@ -138,7 +138,7 @@ class SpecialManageGroups extends SpecialPage {
 			}
 
 			$changes = unserialize( $reader->get( $id ) );
-			$out->addHtml( Html::element( 'h2', array(), $group->getLabel() ) );
+			$out->addHTML( Html::element( 'h2', array(), $group->getLabel() ) );
 
 			// Reduce page existance queries to one per group
 			$lb = new LinkBatch();
@@ -162,7 +162,7 @@ class SpecialManageGroups extends SpecialPage {
 				foreach ( $subchanges as $type => $messages ) {
 					foreach ( $messages as $params ) {
 						$change = $this->formatChange( $group, $code, $type, $params, $limit );
-						$out->addHtml( $change );
+						$out->addHTML( $change );
 
 						if ( $limit <= 0 ) {
 							// We need to restrict the changes per page per form submission
@@ -181,8 +181,8 @@ class SpecialManageGroups extends SpecialPage {
 			$attribs['title'] = $this->msg( 'translate-smg-notallowed' )->text();
 		}
 		$button = Html::element( 'button', $attribs, $this->msg( 'translate-smg-submit' )->text() );
-		$out->addHtml( $button );
-		$out->addHtml( Html::closeElement( 'form' ) );
+		$out->addHTML( $button );
+		$out->addHTML( Html::closeElement( 'form' ) );
 	}
 
 	/**
@@ -357,7 +357,7 @@ class SpecialManageGroups extends SpecialPage {
 
 			$tabs[$section][strtolower( $spName )] = array(
 				'text' => $spClass->getDescription(),
-				'href' => $spTitle->getLocalUrl(),
+				'href' => $spTitle->getLocalURL(),
 				'class' => $alias === $spName ? 'selected' : '',
 			);
 		}

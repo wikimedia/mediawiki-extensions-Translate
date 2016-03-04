@@ -98,7 +98,7 @@ class MessageTable {
 		$pages = array();
 
 		foreach ( $this->collection->getTitles() as $title ) {
-			$pages[] = $title->getPrefixedDBKey();
+			$pages[] = $title->getPrefixedDBkey();
 		}
 
 		$vars = array( 'trlKeys' => $pages );
@@ -181,7 +181,7 @@ class MessageTable {
 				-35
 			) );
 			$linkAttribs = array(
-				'href' => $title->getLocalUrl( array( 'action' => 'edit' ) ),
+				'href' => $title->getLocalURL( array( 'action' => 'edit' ) ),
 			);
 			$linkAttribs += TranslationEditPage::jsEdit( $title, $this->group->getId() );
 

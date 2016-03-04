@@ -15,7 +15,7 @@ class StringMatcherTest extends MediaWikiTestCase {
 		$mangled = $matcher->mangle( $key );
 		$title = Title::makeTitleSafe( NS_MEDIAWIKI, $mangled );
 		$this->assertInstanceOf( 'Title', $title, "Key '$mangled' did not produce valid title" );
-		$unmangled = $matcher->unMangle( $mangled );
+		$unmangled = $matcher->unmangle( $mangled );
 		$this->assertEquals( $key, $unmangled, 'Mangling is reversable' );
 		$this->assertEquals( $expected, $mangled, 'Message is prefixed correctly' );
 	}
@@ -51,12 +51,12 @@ class StringMatcherTest extends MediaWikiTestCase {
 	 * @dataProvider problematicMessageKeyProvider
 	 */
 	public function testKeyMangling( $key, $comment ) {
-		$matcher = StringMatcher::emptyMatcher();
+		$matcher = StringMatcher::EmptyMatcher();
 		$mangled = $matcher->mangle( $key );
 
 		$title = Title::makeTitleSafe( NS_MEDIAWIKI, $mangled );
 		$this->assertInstanceOf( 'Title', $title, "Key '$mangled' did not produce a valid title" );
-		$unmangled = $matcher->unMangle( $mangled );
+		$unmangled = $matcher->unmangle( $mangled );
 		$this->assertEquals( $key, $unmangled, 'Mangling is reversible' );
 	}
 
@@ -69,7 +69,7 @@ class StringMatcherTest extends MediaWikiTestCase {
 		$title = Title::makeTitleSafe( NS_MEDIAWIKI, $mangled );
 		$this->assertInstanceOf( 'Title', $title, "Key '$mangled' did not produce a valid title" );
 
-		$unmangled = $matcher->unMangle( $mangled );
+		$unmangled = $matcher->unmangle( $mangled );
 		$this->assertEquals( $key, $unmangled, 'Mangling is reversible' );
 	}
 

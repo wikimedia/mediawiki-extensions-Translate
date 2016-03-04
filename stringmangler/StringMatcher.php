@@ -122,7 +122,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		}
 	}
 
-	public function unMangle( $data ) {
+	public function unmangle( $data ) {
 		if ( is_array( $data ) ) {
 			return $this->mangleArray( $data, true );
 		} elseif ( is_string( $data ) ) {

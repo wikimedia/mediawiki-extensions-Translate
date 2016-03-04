@@ -152,7 +152,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			if ( $handle->isValid() && $code !== '' && $code !== $language ) {
 				$groupId = $handle->getGroup()->getId();
 				$helpers = new TranslationHelpers( $title, $groupId );
-				$document['wiki'] = wfWikiId();
+				$document['wiki'] = wfWikiID();
 				$document['localid'] = $handle->getTitleForBase()->getPrefixedText();
 				$document['content'] = $helpers->getTranslation();
 				$document['language'] = $handle->getCode();
@@ -190,7 +190,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				$resultAttribs['data-translation'] = $helpers->getTranslation();
 				$resultAttribs['data-group'] = $groupId;
 
-				$uri = $title->getLocalUrl( array( 'action' => 'edit' ) );
+				$uri = $title->getLocalURL( array( 'action' => 'edit' ) );
 				$link = Html::element(
 					'a',
 					array( 'href' => $uri ),
@@ -243,7 +243,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			$newParams = array( 'offset' => $offset + $this->limit ) + $params;
 			$attribs = array(
 				'class' => 'mw-ui-button pager-next',
-				'href' => $this->getPageTitle()->getLocalUrl( $newParams ),
+				'href' => $this->getPageTitle()->getLocalURL( $newParams ),
 			);
 			$next = Html::element( 'a', $attribs, $this->msg( 'tux-sst-next' )->text() );
 		}
@@ -251,7 +251,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			$newParams = array( 'offset' => max( 0, $offset - $this->limit ) ) + $params;
 			$attribs = array(
 				'class' => 'mw-ui-button pager-prev',
-				'href' => $this->getPageTitle()->getLocalUrl( $newParams ),
+				'href' => $this->getPageTitle()->getLocalURL( $newParams ),
 			);
 			$prev = Html::element( 'a', $attribs, $this->msg( 'tux-sst-prev' )->text() );
 		}
@@ -286,7 +286,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				$nondefaults['language'] = $key;
 			}
 
-			$url = $this->getPageTitle()->getLocalUrl( $nondefaults );
+			$url = $this->getPageTitle()->getLocalURL( $nondefaults );
 			$value = $this->getLanguage()->formatNum( $value );
 
 			$output[$key] = array(
@@ -356,7 +356,7 @@ class SpecialSearchTranslations extends SpecialPage {
 
 	protected function showSearch( $search, $count, $facets, $results, $total ) {
 		$messageSelector = $this->messageSelector();
-		$this->getOutput()->addHtml( <<<HTML
+		$this->getOutput()->addHTML( <<<HTML
 <div class="grid tux-searchpage">
 	<div class="row tux-searchboxform">
 		<div class="tux-search-tabs offset-by-three">$messageSelector</div>
@@ -378,7 +378,7 @@ HTML
 			$params = $this->opts->getChangedValues();
 			$params = array( 'match' => 'all' ) + $params;
 			$linkText = $this->msg( 'tux-sst-link-all-match' )->text();
-			$link = $this->getTitle()->getFullUrl( $params );
+			$link = $this->getTitle()->getFullURL( $params );
 			$link = "<span class='plainlinks'>[$link $linkText]</span>";
 
 			$this->getOutput()->wrapWikiMsg(
@@ -387,7 +387,7 @@ HTML
 			);
 		}
 
-		$this->getOutput()->addHtml( <<<HTML
+		$this->getOutput()->addHTML( <<<HTML
 	<div class="row searchcontent">
 		<div class="three columns facets">$facets</div>
 		<div class="nine columns results">$results</div>
@@ -399,7 +399,7 @@ HTML
 
 	protected function showEmptySearch() {
 		$search = $this->getSearchInput( '' );
-		$this->getOutput()->addHtml( <<<HTML
+		$this->getOutput()->addHTML( <<<HTML
 <div class="grid tux-searchpage">
 	<div class="row searchinput">
 		<div class="nine columns offset-by-three">$search</div>
@@ -414,7 +414,7 @@ HTML
 		$nondefaults = $this->opts->getChangedValues();
 		$taskParams = array( 'filter' => $value ) + $nondefaults;
 		ksort( $taskParams );
-		$href = $this->getTitle()->getLocalUrl( $taskParams );
+		$href = $this->getTitle()->getLocalURL( $taskParams );
 		$link = Html::element( 'a',
 			array( 'href' => $href ),
 			// Messages for grepping:
@@ -479,7 +479,7 @@ HTML
 			$tabClass = "tux-sst-$tab";
 			$taskParams = array( 'filter' => $filter ) + $nondefaults;
 			ksort( $taskParams );
-			$href = $this->getTitle()->getLocalUrl( $taskParams );
+			$href = $this->getTitle()->getLocalURL( $taskParams );
 			if ( $tab === 'default' ) {
 				$link = Html::element(
 					'a',

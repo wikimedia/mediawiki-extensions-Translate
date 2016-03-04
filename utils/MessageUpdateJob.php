@@ -59,9 +59,9 @@ class MessageUpdateJob extends Job {
 			$pages = array();
 			foreach ( $languages as $code ) {
 				$otherTitle = Title::makeTitleSafe( $title->getNamespace(), "$key/$code" );
-				$pages[$otherTitle->getDBKey()] = true;
+				$pages[$otherTitle->getDBkey()] = true;
 			}
-			unset( $pages[$title->getDBKey()] );
+			unset( $pages[$title->getDBkey()] );
 			if ( count( $pages ) === 0 ) {
 				return true;
 			}
