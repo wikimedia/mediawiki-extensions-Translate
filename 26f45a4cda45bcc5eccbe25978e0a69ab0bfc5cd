@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e2f53b6_8b8755dc",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T15:52:35Z",
+      "side": 1,
+      "message": "From here on $out is undefined.",
+      "revId": "26f45a4cda45bcc5eccbe25978e0a69ab0bfc5cd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
