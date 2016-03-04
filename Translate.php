@@ -167,7 +167,6 @@ $wgHooks['TranslatePostInitGroups'][] = 'MessageGroups::getConfiguredGroups';
 $wgHooks['TranslatePostInitGroups'][] = 'MessageGroups::getWorkflowGroups';
 $wgHooks['TranslatePostInitGroups'][] = 'MessageGroups::getAggregateGroups';
 
-
 // Other extensions
 $wgHooks['AdminLinks'][] = 'TranslateHooks::onAdminLinks';
 $wgHooks['MergeAccountFromTo'][] = 'TranslateHooks::onMergeAccountFromTo';
@@ -203,7 +202,6 @@ $wgParserTestFiles[] = "$dir/tests/parser/translateParserTests.txt";
 require "$dir/Resources.php";
 
 /** @endcond */
-
 
 # == Configuration variables ==
 

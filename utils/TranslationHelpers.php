@@ -613,7 +613,6 @@ class TranslationHelpers {
 		return Html::element( 'pre', array( 'id' => $id, 'style' => 'display: none;' ), $text );
 	}
 
-
 	/**
 	 * Ajax-enabled message editing link.
 	 * @param $target Title: Title of the target message.

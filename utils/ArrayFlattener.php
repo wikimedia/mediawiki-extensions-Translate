@@ -46,7 +46,6 @@ class ArrayFlattener {
 		return $flat;
 	}
 
-
 	/**
 	 * Performs the reverse operation of flatten.
 	 *

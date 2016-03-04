@@ -40,7 +40,6 @@ class TranslationStashStorage {
 		$this->db->replace( $this->dbTable, $indexes, $row, __METHOD__ );
 	}
 
-
 	/**
 	 * Gets all stashed translations for the given user.
 	 * @param User $user

@@ -622,7 +622,6 @@ class CDBMessageIndex extends MessageIndex {
 	}
 }
 
-
 /**
  * Storage on hash.
  *

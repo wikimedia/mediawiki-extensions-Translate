@@ -67,7 +67,6 @@ class MessageGroups {
 		$this->groups = $groups;
 	}
 
-
 	/**
 	 * Immediately update the cache.
 	 *
@@ -292,7 +291,6 @@ class MessageGroups {
 	public static function exists( $id ) {
 		return (bool)self::getGroup( $id );
 	}
-
 
 	/**
 	 * Check if a particular aggregate group label exists

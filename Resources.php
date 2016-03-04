@@ -512,7 +512,6 @@ $wgResourceModules['ext.translate.storage'] = array(
 	'scripts' => 'resources/js/ext.translate.storage.js',
 ) + $resourcePaths;
 
-
 $wgResourceModules['ext.translate.tabgroup'] = array(
 	'styles' => 'resources/css/ext.translate.tabgroup.css',
 	'position' => 'top',
