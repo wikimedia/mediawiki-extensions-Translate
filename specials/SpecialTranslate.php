@@ -39,6 +39,9 @@ class SpecialTranslate extends SpecialPage {
 
 	/**
 	 * Access point for this special page.
+	 *
+	 * @param null|string $parameters
+	 * @throws ErrorPageError
 	 */
 	public function execute( $parameters ) {
 		global $wgTranslateBlacklist, $wgContLang;
@@ -395,6 +398,7 @@ class SpecialTranslate extends SpecialPage {
 
 			// Optional does not directly map to the new UI.
 			// Handle it as untranslated with optional filter.
+			/** @noinspection PhpMissingBreakStatementInspection */
 			case 'optional':
 				$params['optional'] = 1;
 			case 'untranslated':

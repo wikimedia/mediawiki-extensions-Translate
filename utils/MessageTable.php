@@ -45,6 +45,10 @@ class MessageTable {
 	 * to allow alternative implementations.
 	 *
 	 * @since 2012-11-29
+	 * @param IContextSource $context
+	 * @param MessageCollection $collection
+	 * @param MessageGroup $group
+	 * @return MessageTable
 	 */
 	public static function newFromContext(
 		IContextSource $context,
@@ -66,6 +70,9 @@ class MessageTable {
 	/**
 	 * Use the newFromContext() function rather than the constructor directly
 	 * to construct the object to allow alternative implementations.
+	 *
+	 * @param MessageCollection $collection
+	 * @param MessageGroup $group
 	 */
 	public function __construct( MessageCollection $collection, MessageGroup $group ) {
 		$this->collection = $collection;

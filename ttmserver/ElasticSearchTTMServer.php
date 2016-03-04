@@ -274,6 +274,9 @@ GROOVY;
 	}
 
 	/**
+	 * @param MessageHandle $handle
+	 * @param string $text
+	 * @param int $revId
 	 * @return \Elastica\Document
 	 */
 	protected function createDocument( MessageHandle $handle, $text, $revId ) {

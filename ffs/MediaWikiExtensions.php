@@ -12,8 +12,13 @@
  * Class which handles special definition format for %MediaWiki extensions.
  */
 class PremadeMediawikiExtensionGroups {
+	/** @var bool */
 	protected $useConfigure = true;
+
+	/** @var string */
 	protected $idPrefix = 'ext-';
+
+	/** @var int */
 	protected $namespace = NS_MEDIAWIKI;
 
 	/**
@@ -43,7 +48,9 @@ class PremadeMediawikiExtensionGroups {
 
 	/**
 	 * Whether to use the Configure extension to load extension home pages.
+	 *
 	 * @since 2012-03-22
+	 * @param bool $value Whether Configure should be used.
 	 */
 	public function setUseConfigure( $value ) {
 		$this->useConfigure = $value;
@@ -51,15 +58,19 @@ class PremadeMediawikiExtensionGroups {
 
 	/**
 	 * How to prefix message group ids.
+	 *
 	 * @since 2012-03-22
+	 * @param string $value
 	 */
 	public function setGroupPrefix( $value ) {
 		$this->idPrefix = $value;
 	}
 
 	/**
-	 * What namespace holds the messages.
+	 * Which namespace holds the messages.
+	 *
 	 * @since 2012-03-22
+	 * @param int $value
 	 */
 	public function setNamespace( $value ) {
 		$this->namespace = $value;
