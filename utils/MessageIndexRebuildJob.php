@@ -28,7 +28,7 @@ class MessageIndexRebuildJob extends Job {
 		parent::__construct( __CLASS__, $title, $params, $id );
 	}
 
-	function run() {
+	public function run() {
 		MessageIndex::singleton()->rebuild();
 
 		return true;

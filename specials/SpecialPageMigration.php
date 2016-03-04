@@ -9,7 +9,7 @@
  */
 
 class SpecialPageMigration extends SpecialPage {
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'PageMigration', 'pagetranslation' );
 	}
 
@@ -21,7 +21,7 @@ class SpecialPageMigration extends SpecialPage {
 		return $this->msg( 'pagemigration' )->text();
 	}
 
-	function execute( $par ) {
+	public function execute( $par ) {
 		$request = $this->getRequest();
 		$output = $this->getOutput();
 		$this->setHeaders();

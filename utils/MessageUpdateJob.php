@@ -29,7 +29,7 @@ class MessageUpdateJob extends Job {
 		$this->params = $params;
 	}
 
-	function run() {
+	public function run() {
 		global $wgTranslateDocumentationLanguageCode;
 
 		$title = $this->title;

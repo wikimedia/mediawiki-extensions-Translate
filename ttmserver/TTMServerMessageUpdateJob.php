@@ -31,7 +31,7 @@ class TTMServerMessageUpdateJob extends Job {
 	/**
 	 * Fetch all the translations and update them.
 	 */
-	function run() {
+	public function run() {
 		$handle = new MessageHandle( $this->title );
 		$translations = ApiQueryMessageTranslations::getTranslations( $handle );
 		foreach ( $translations as $page => $data ) {

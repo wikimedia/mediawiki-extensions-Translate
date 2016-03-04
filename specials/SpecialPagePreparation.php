@@ -17,7 +17,7 @@ class SpecialPagePreparation extends SpecialPage {
 		return 'wiki';
 	}
 
-	function execute( $par ) {
+	public function execute( $par ) {
 		$request = $this->getRequest();
 		$output = $this->getOutput();
 		$this->setHeaders();

@@ -351,7 +351,7 @@ abstract class ComplexMessages {
 		return trim( $element );
 	}
 
-	function getKeyForEdit( $key ) {
+	protected function getKeyForEdit( $key ) {
 		return Sanitizer::escapeId( 'sp-translate-magic-cm-' . $this->id . $key );
 	}
 
@@ -367,7 +367,7 @@ abstract class ComplexMessages {
 	// Save to database
 
 
-	function getKeyForSave() {
+	protected function getKeyForSave() {
 		return $this->databaseMsg . '/' . $this->language;
 	}
 
@@ -375,7 +375,7 @@ abstract class ComplexMessages {
 	 * @param WebRequest $request
 	 * @return string
 	 */
-	function formatForSave( WebRequest $request ) {
+	protected function formatForSave( WebRequest $request ) {
 		$text = '';
 
 		// Do not replace spaces by underscores for magic words. See bug T48613
