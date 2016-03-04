@@ -16,6 +16,24 @@
       "revId": "e1f548d114b3e33d9cb22a688811a350fe27886d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_6b85b15a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T14:55:16Z",
+      "side": 1,
+      "message": "I\u0027ve updated the commit summary. I used the simplification from https://stackoverflow.com/questions/2715026/are-php5-objects-passed-by-reference and the actual warning from IDEA: \"Objects are always passed by reference; please correct \u0027\u0026 $oldUser\u0027 (at line 612)\" from the EA Extended PHP inspections.",
+      "parentUuid": "0e2f53b6_0b47c551",
+      "revId": "e1f548d114b3e33d9cb22a688811a350fe27886d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
