@@ -650,7 +650,7 @@ class PageTranslationHooks {
 				'PageTranslationDeletePage',
 				$title->getPrefixedText()
 			);
-			$out->redirect( $new->getFullUrl() );
+			$out->redirect( $new->getFullURL() );
 		}
 
 		return true;
@@ -691,7 +691,7 @@ class PageTranslationHooks {
 
 		$title = $page->getTitle();
 
-		$latest = $title->getLatestRevId();
+		$latest = $title->getLatestRevID();
 		$canmark = $ready === $latest && $marked !== $latest;
 
 		$actions = array();
@@ -710,7 +710,7 @@ class PageTranslationHooks {
 		}
 
 		if ( $canmark ) {
-			$diffUrl = $title->getFullUrl( array( 'oldid' => $marked, 'diff' => $latest ) );
+			$diffUrl = $title->getFullURL( array( 'oldid' => $marked, 'diff' => $latest ) );
 			$par = array( 'target' => $title->getPrefixedText(), 'do' => 'mark' );
 			$translate = SpecialPage::getTitleFor( 'PageTranslation' );
 
@@ -720,7 +720,7 @@ class PageTranslationHooks {
 					$linkDesc = $context->msg( 'translate-tag-markthis' )->escaped();
 					$actions[] = Linker::link( $translate, $linkDesc, array(), $par );
 				} else {
-					$markUrl = $translate->getFullUrl( $par );
+					$markUrl = $translate->getFullURL( $par );
 					$actions[] = $context->msg( 'translate-tag-markthisagain', $diffUrl, $markUrl )
 						->parse();
 				}
@@ -900,7 +900,7 @@ class PageTranslationHooks {
 			$text = "{{DISPLAYTITLE:$display}}$text";
 		}
 		$output = Html::element( 'textarea', array( 'rows' => 25 ), $text );
-		$context->getOutput()->addHtml( $output );
+		$context->getOutput()->addHTML( $output );
 
 		return false;
 	}

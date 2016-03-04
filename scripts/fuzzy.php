@@ -159,7 +159,7 @@ class FuzzyScript {
 			if ( !isset( $search[$ns] ) ) {
 				$search[$ns] = array();
 			}
-			$search[$ns][] = 'page_title' . $dbr->buildLike( $title->getDBKey(), $dbr->anyString() );
+			$search[$ns][] = 'page_title' . $dbr->buildLike( $title->getDBkey(), $dbr->anyString() );
 		}
 
 		$title_conds = array();

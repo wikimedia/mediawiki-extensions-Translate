@@ -43,7 +43,7 @@ TXT;
 
 		$languages = TranslateUtils::getLanguageNames( 'en' );
 		$cache = wfGetCache( CACHE_DB );
-		$key = wfMemckey( __METHOD__, $messages );
+		$key = wfMemcKey( __METHOD__, $messages );
 
 		$pages = $cache->get( $key );
 		if ( !is_array( $pages ) ) {
@@ -174,7 +174,7 @@ TXT;
 
 	protected function cacheSourceText( $code, $ids ) {
 		$cache = wfGetCache( CACHE_DB );
-		$key = wfMemckey( __CLASS__, 'cc', $code );
+		$key = wfMemcKey( __CLASS__, 'cc', $code );
 		$text = $cache->get( $key );
 		if ( !is_string( $text ) ) {
 

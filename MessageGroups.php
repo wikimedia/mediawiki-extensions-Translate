@@ -84,7 +84,7 @@ class MessageGroups {
 	 */
 	public static function clearCache() {
 		$self = self::singleton();
-		$self->getCache()->delete( wfMemckey( 'translate-groups' ) );
+		$self->getCache()->delete( wfMemcKey( 'translate-groups' ) );
 		$self->groups = null;
 	}
 
@@ -143,7 +143,7 @@ class MessageGroups {
 		// Register autoloaders for this request, both values modified by reference
 		self::appendAutoloader( $autoload, $wgAutoloadClasses );
 
-		$key = wfMemckey( 'translate-groups' );
+		$key = wfMemcKey( 'translate-groups' );
 		$value = array(
 			'cc' => $groups,
 			'autoload' => $autoload,

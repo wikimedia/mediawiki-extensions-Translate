@@ -169,7 +169,7 @@ class TranslateUtils {
 		$selector->setAttribute( 'id', 'language' );
 		$selector->setAttribute( 'name', 'language' );
 
-		return $selector->getHtml();
+		return $selector->getHTML();
 	}
 
 	/**
@@ -357,7 +357,7 @@ class TranslateUtils {
 
 		$out->addModuleStyles( 'ext.translate.helplink' );
 		$wrapper = Html::rawElement( 'div', array( 'class' => 'mw-translate-helplink-wrapper' ), $link );
-		$out->addHtml( $wrapper );
+		$out->addHTML( $wrapper );
 	}
 
 	/**

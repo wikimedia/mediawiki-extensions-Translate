@@ -85,7 +85,7 @@ class CrossLanguageTranslationSearchQuery {
 				continue;
 			}
 
-			$key = $title->getNamespace() . ':' . $title->getDBKey();
+			$key = $title->getNamespace() . ':' . $title->getDBkey();
 			$messages[$key] = $data['content'];
 		}
 

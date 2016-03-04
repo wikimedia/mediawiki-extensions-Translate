@@ -23,7 +23,7 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 			 * @var JsSelectToInput $select
 			 */
 			$select = $this->mParams['select'];
-			$input = $select->getHtmlAndPrepareJs() . '<br />' . $input;
+			$input = $select->getHtmlAndPrepareJS() . '<br />' . $input;
 		}
 
 		return $input;

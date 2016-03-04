@@ -13,7 +13,7 @@
  *   with multiple message groups.
  *
  * The operations have to be reversible so that
- * x equals unMangle( mangle( x ) ).
+ * x equals unmangle( mangle( x ) ).
  *
  */
 interface StringMangler {
@@ -46,5 +46,5 @@ interface StringMangler {
 	 * @param string|string[] $data Mangled message keys.
 	 * @return string|string[] Umangled message keys.
 	 */
-	public function unMangle( $data );
+	public function unmangle( $data );
 }

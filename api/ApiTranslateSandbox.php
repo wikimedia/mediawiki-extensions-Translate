@@ -51,7 +51,7 @@ class ApiTranslateSandbox extends ApiBase {
 		}
 
 		$user = User::newFromName( $username );
-		if ( $user->getID() !== 0 ) {
+		if ( $user->getId() !== 0 ) {
 			$this->dieUsage( 'User name is in use', 'nonfreeusername' );
 		}
 

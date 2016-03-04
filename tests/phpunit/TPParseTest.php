@@ -18,7 +18,7 @@ class TPParseTest extends MediaWikiTestCase {
 			$title,
 			'<translate>Hello <tvar|abc>peter!</></translate>'
 		);
-		$prefix = $title->getPrefixedDBKey() . '/';
+		$prefix = $title->getPrefixedDBkey() . '/';
 		$parse = $page->getParse();
 
 		$collection = array();

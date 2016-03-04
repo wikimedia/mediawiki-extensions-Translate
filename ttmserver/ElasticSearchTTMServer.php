@@ -33,7 +33,7 @@ class ElasticSearchTTMServer
 	protected $updateMapping = false;
 
 	public function isLocalSuggestion( array $suggestion ) {
-		return $suggestion['wiki'] === wfWikiId();
+		return $suggestion['wiki'] === wfWikiID();
 	}
 
 	public function expandLocation( array $suggestion ) {
@@ -237,7 +237,7 @@ GROOVY;
 			$localid = $handle->getTitleForBase()->getPrefixedText();
 
 			$boolQuery = new \Elastica\Query\BoolQuery();
-			$boolQuery->addMust( new Elastica\Query\Term( array( 'wiki' => wfWikiId() ) ) );
+			$boolQuery->addMust( new Elastica\Query\Term( array( 'wiki' => wfWikiID() ) ) );
 			$boolQuery->addMust( new Elastica\Query\Term( array( 'language' => $handle->getCode() ) ) );
 			$boolQuery->addMust( new Elastica\Query\Term( array( 'localid' => $localid ) ) );
 
@@ -280,12 +280,12 @@ GROOVY;
 		$language = $handle->getCode();
 
 		$localid = $handle->getTitleForBase()->getPrefixedText();
-		$wiki = wfWikiId();
+		$wiki = wfWikiID();
 		$globalid = "$wiki-$localid-$revId/$language";
 
 		$data = array(
 			'wiki' => $wiki,
-			'uri' => $handle->getTitle()->getCanonicalUrl(),
+			'uri' => $handle->getTitle()->getCanonicalURL(),
 			'localid' => $localid,
 			'language' => $language,
 			'content' => $text,
@@ -343,7 +343,7 @@ GROOVY;
 		$settings->setRefreshInterval( -1 );
 
 		$term = new Elastica\Query\Term();
-		$term->setTerm( 'wiki', wfWikiId() );
+		$term->setTerm( 'wiki', wfWikiID() );
 		$query = new \Elastica\Query( $term );
 		$type->deleteByQuery( $query );
 

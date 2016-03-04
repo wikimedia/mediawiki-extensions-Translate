@@ -174,7 +174,7 @@ class TPParse {
 		$text = $this->template; // The source
 
 		// For finding the messages
-		$prefix = $this->title->getPrefixedDBKey() . '/';
+		$prefix = $this->title->getPrefixedDBkey() . '/';
 
 		if ( $collection instanceof MessageCollection ) {
 			$collection->loadTranslations( DB_MASTER );

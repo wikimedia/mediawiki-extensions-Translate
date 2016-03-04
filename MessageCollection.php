@@ -121,7 +121,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param array $messages \arrayof{String,String} Array of translations indexed
 	 * by display key.
 	 */
-	public function setInfile( array $messages ) {
+	public function setInFile( array $messages ) {
 		$this->infile = $messages;
 	}
 
@@ -728,7 +728,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$byNamespace = array();
 		foreach ( $this->getTitles() as $title ) {
 			$namespace = $title->getNamespace();
-			$pagename = $title->getDBKey();
+			$pagename = $title->getDBkey();
 			$byNamespace[$namespace][] = $pagename;
 		}
 
@@ -776,7 +776,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		 * @var Title $title
 		 */
 		foreach ( $this->keys as $mkey => $title ) {
-			$map[$title->getNamespace()][$title->getDBKey()] = $mkey;
+			$map[$title->getNamespace()][$title->getDBkey()] = $mkey;
 		}
 
 		return $this->reverseMap = $map;

@@ -161,7 +161,7 @@ class TranslateEditAddons {
 
 		// Update it.
 		if ( $revision === null ) {
-			$rev = $wikiPage->getTitle()->getLatestRevId();
+			$rev = $wikiPage->getTitle()->getLatestRevID();
 		} else {
 			$rev = $revision->getID();
 		}
@@ -341,7 +341,7 @@ class TranslateEditAddons {
 			array( 'class' => 'mw-sp-translate-edit-fields' ),
 			$output
 		);
-		$out->addHtml( $output );
+		$out->addHTML( $output );
 
 		return true;
 	}

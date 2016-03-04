@@ -17,7 +17,7 @@ class MediaWikiMessageCheckerTest extends MediaWikiTestCase {
 	 * @dataProvider getPluralFormCountProvider
 	 */
 	public function testGetPluralFormCount( $expected, $code, $comment ) {
-		$provided = MediaWikiMessageChecker::GetPluralFormCount( $code );
+		$provided = MediaWikiMessageChecker::getPluralFormCount( $code );
 		$this->assertEquals( $expected, $provided, $comment );
 	}
 
