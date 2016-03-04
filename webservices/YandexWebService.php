@@ -46,7 +46,7 @@ class YandexWebService extends TranslationWebService {
 		$response = FormatJson::decode( $json );
 
 		if ( !is_object( $response ) ) {
-			$exception = 'Malformed reply from remote server: ' . strval( $json );
+			$exception = 'Malformed reply from remote server: ' . (string)$json;
 			throw new TranslationWebServiceException( $exception );
 		}
 

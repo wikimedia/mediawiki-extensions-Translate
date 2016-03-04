@@ -502,7 +502,7 @@ class GroupStatistics extends Maintenance {
 
 			$allZero = true;
 			foreach ( $columns as $fields ) {
-				if ( intval( $fields[1] ) !== 0 ) {
+				if ( (int)$fields[1] !== 0 ) {
 					$allZero = false;
 				}
 			}

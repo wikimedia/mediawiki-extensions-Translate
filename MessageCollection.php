@@ -279,7 +279,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		}
 
 		// Handle string offsets
-		if ( !ctype_digit( strval( $offset ) ) ) {
+		if ( !ctype_digit( (string)$offset ) ) {
 			$count = 0;
 			foreach ( array_keys( $this->keys ) as $index ) {
 				if ( $index === $offset ) {
@@ -302,7 +302,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		// max(). And finally make the offsets to be strings even if
 		// they are numbers in this case.
 		if ( $offset > 0 ) {
-			$backwardsOffset = strval( max( 0, $offset - $limit ) );
+			$backwardsOffset = (string)( max( 0, $offset - $limit ) );
 		}
 
 		// Forwards paging uses keys. If user opens view Untranslated,
@@ -556,9 +556,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		/* This removes messages from the list which have certain
 		 * reviewer (among others) */
-		$userId = intval( $user );
+		$userId = (int)$user;
 		foreach ( $this->dbReviewData as $row ) {
-			if ( $user === null || intval( $row->trr_user ) === $userId ) {
+			if ( $user === null || (int)$row->trr_user === $userId ) {
 				unset( $keys[$this->rowToKey( $row )] );
 			}
 		}
@@ -581,9 +581,9 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->loadData( $keys );
 		$origKeys = $keys;
 
-		$user = intval( $user );
+		$user = (int)$user;
 		foreach ( $this->dbData as $row ) {
-			if ( intval( $row->rev_user ) === $user ) {
+			if ( (int)$row->rev_user === $user ) {
 				unset( $keys[$this->rowToKey( $row )] );
 			}
 		}

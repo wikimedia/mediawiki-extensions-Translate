@@ -118,7 +118,7 @@ class CharacterEditStats extends Maintenance {
 				continue;
 			}
 			$charRatio = mb_strlen( $language, 'UTF-8' ) / strlen( $language );
-			$num = intval( $num * $charRatio );
+			$num = (int)( $num * $charRatio );
 			$total += $num;
 			$this->output( "$code\t$language\t$num\n" );
 		}
