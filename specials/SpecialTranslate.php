@@ -260,7 +260,7 @@ class SpecialTranslate extends SpecialPage {
 		} else {
 			$languages = $this->group->getTranslatableLanguages();
 
-			if ( $languages !== null && !isset( $languages[$this->options['language']] ) ) {
+			if ( !isset( $languages[$this->options['language']] ) ) {
 				$errors['language'] = $this->msg( 'translate-language-disabled' )->text();
 			}
 		}

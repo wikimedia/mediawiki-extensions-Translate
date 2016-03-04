@@ -340,7 +340,7 @@ class StatsTable {
 
 		$group = MessageGroups::getGroup( $groupId );
 		$languages = $group->getTranslatableLanguages();
-		if ( $languages !== null && !isset( $languages[$code] ) ) {
+		if ( !isset( $languages[$code] ) ) {
 			$blacklisted = true;
 		}
 

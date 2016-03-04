@@ -157,7 +157,7 @@ interface MessageGroup {
 	/**
 	 * Get all the translatable languages for a group, considering the whitelisting
 	 * and blacklisting.
-	 * @return array|null The language codes as array keys.
+	 * @return array The language codes as array keys.
 	 */
 	public function getTranslatableLanguages();
 

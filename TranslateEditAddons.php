@@ -25,7 +25,7 @@ class TranslateEditAddons {
 			$editpage->suppressIntro = true;
 			$group = $handle->getGroup();
 			$languages = $group->getTranslatableLanguages();
-			if ( $handle->getCode() && $languages !== null && !isset( $languages[$handle->getCode()] ) ) {
+			if ( $handle->getCode() && !isset( $languages[$handle->getCode()] ) ) {
 				$editpage->getArticle()->getContext()->getOutput()->wrapWikiMsg(
 					"<div class='error'>$1</div>", 'translate-language-disabled'
 				);

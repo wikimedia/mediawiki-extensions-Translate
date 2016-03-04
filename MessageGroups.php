@@ -806,7 +806,7 @@ class MessageGroups {
 			$discouraged = false;
 
 			$whitelist = $group->getTranslatableLanguages();
-			if ( is_array( $whitelist ) && !isset( $whitelist[$language] ) ) {
+			if ( !isset( $whitelist[$language] ) ) {
 				$allowed = false;
 			}
 

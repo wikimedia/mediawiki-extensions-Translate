@@ -39,7 +39,7 @@ class ExternalMessageSourceStateComparator {
 			$languages = $group->getTranslatableLanguages();
 
 			// This means all languages
-			if ( $languages === null ) {
+			if ( count( $languages ) === 0 ) {
 				$languages = TranslateUtils::getLanguageNames( 'en' );
 			}
 
