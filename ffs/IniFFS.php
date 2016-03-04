@@ -28,7 +28,7 @@ class IniFFS extends SimpleFFS {
 		$parsed = $ffs->readFromVariable( $data );
 		wfRestoreWarnings();
 
-		return !!count( $parsed['MESSAGES'] );
+		return (bool)count( $parsed['MESSAGES'] );
 	}
 
 	public function supportsFuzzy() {
