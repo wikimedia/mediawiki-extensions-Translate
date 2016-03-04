@@ -198,7 +198,7 @@ class SpecialManageGroups extends SpecialPage {
 		$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$code" );
 		$id = self::changeId( $group->getId(), $code, $type, $key );
 
-		if ( $title && $title->exists() && $type === 'addition' ) {
+		if ( $title && $type === 'addition' && $title->exists() ) {
 			// The message has for some reason dropped out from cache
 			// or perhaps it is being reused. In any case treat it
 			// as a change for display, so the admin can see if
@@ -207,7 +207,7 @@ class SpecialManageGroups extends SpecialPage {
 			// forever and will prevent rebuilding the cache, which
 			// leads to many other annoying problems.
 			$type = 'change';
-		} elseif ( $title && !$title->exists() && ( $type === 'deletion' || $type === 'change' ) ) {
+		} elseif ( $title && ( $type === 'deletion' || $type === 'change' ) && !$title->exists() ) {
 			return '';
 		}
 

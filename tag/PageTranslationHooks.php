@@ -513,7 +513,7 @@ class PageTranslationHooks {
 		$action, &$result
 	) {
 		$handle = new MessageHandle( $title );
-		if ( $handle->isPageTranslation() && $action === 'edit' ) {
+		if ( $action === 'edit' && $handle->isPageTranslation() ) {
 			if ( !$handle->isValid() ) {
 				$result = array( 'tpt-unknown-page' );
 

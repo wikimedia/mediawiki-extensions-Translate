@@ -149,7 +149,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			$handle = new MessageHandle( $title );
 			$code = $handle->getCode();
 			$language = $opts->getValue( 'language' );
-			if ( $handle->isValid() && $code !== '' && $code !== $language ) {
+			if ( $code !== '' && $code !== $language && $handle->isValid() ) {
 				$groupId = $handle->getGroup()->getId();
 				$helpers = new TranslationHelpers( $title, $groupId );
 				$document['wiki'] = wfWikiID();
