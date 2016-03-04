@@ -614,7 +614,7 @@ class CDBMessageIndex extends MessageIndex {
 		$file = TranslateUtils::cacheFile( $this->filename );
 		if ( !file_exists( $file ) ) {
 			// Create an empty index to allow rebuild
-			$this->store( array() );
+			$this->store( array(), array() );
 			$this->index = $this->rebuild();
 		}
 
