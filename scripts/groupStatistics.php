@@ -364,7 +364,7 @@ class GroupStatistics extends Maintenance {
 		ksort( $languages );
 
 		if ( $this->hasOption( 'legenddetail' ) ) {
-			$out->addFreeText( "{{" . $this->getOption( 'legenddetail' ) . "}}\n" );
+			$out->addFreeText( '{{' . $this->getOption( 'legenddetail' ) . "}}\n" );
 		}
 
 		$totalWeight = 0;
@@ -388,22 +388,22 @@ class GroupStatistics extends Maintenance {
 			$out->blockstart();
 
 			if ( $most ) {
-				$out->element( ( $l10n ? "{{int:translate-gs-pos}}" : 'Pos.' ), true );
+				$out->element( ( $l10n ? '{{int:translate-gs-pos}}' : 'Pos.' ), true );
 			}
 
-			$out->element( ( $l10n ? "{{int:translate-gs-code}}" : 'Code' ), true );
-			$out->element( ( $l10n ? "{{int:translate-page-language}}" : 'Language' ), true );
+			$out->element( ( $l10n ? '{{int:translate-gs-code}}' : 'Code' ), true );
+			$out->element( ( $l10n ? '{{int:translate-page-language}}' : 'Language' ), true );
 			if ( $showContinent ) {
-				$out->element( ( $l10n ? "{{int:translate-gs-continent}}" : 'Continent' ), true );
+				$out->element( ( $l10n ? '{{int:translate-gs-continent}}' : 'Continent' ), true );
 			}
 
 			if ( $most && $this->hasOption( 'speakers' ) ) {
-				$out->element( ( $l10n ? "{{int:translate-gs-speakers}}" : 'Speakers' ), true );
+				$out->element( ( $l10n ? '{{int:translate-gs-speakers}}' : 'Speakers' ), true );
 			}
 
 			if ( $reportScore ) {
 				$out->element(
-					( $l10n ? "{{int:translate-gs-score}}" : 'Score' ) . ' (' . $totalWeight . ')',
+					( $l10n ? '{{int:translate-gs-score}}' : 'Score' ) . ' (' . $totalWeight . ')',
 					true
 				);
 			}
@@ -415,13 +415,13 @@ class GroupStatistics extends Maintenance {
 				// Add unprocessed description of group as heading
 				if ( $reportScore ) {
 					$gid = $g->getId();
-					$heading = $g->getLabel() . " (" . $this->localisedWeights[$most][$gid] . ")";
+					$heading = $g->getLabel() . ' (' . $this->localisedWeights[$most][$gid] . ')';
 				} else {
 					$heading = $g->getLabel();
 				}
 				$out->element( $heading, true );
 				if ( !$reportScore && $this->hasOption( 'fuzzy' ) ) {
-					$out->element( ( $l10n ? "{{int:translate-percentage-fuzzy}}" : 'Fuzzy' ), true );
+					$out->element( ( $l10n ? '{{int:translate-percentage-fuzzy}}' : 'Fuzzy' ), true );
 				}
 			}
 
@@ -528,7 +528,7 @@ class GroupStatistics extends Maintenance {
 				$out->element( $code );
 
 				if ( $l10n && function_exists( 'efI18nTagsInit' ) ) {
-					$out->element( "{{#languagename:" . $code . "}}" );
+					$out->element( '{{#languagename:' . $code . '}}' );
 				} else {
 					$out->element( $name );
 				}
@@ -537,10 +537,10 @@ class GroupStatistics extends Maintenance {
 			// Fill continent field
 			if ( $showContinent ) {
 				if ( $this->mostSpokenLanguages[$code][2] == 'multiple' ) {
-					$continent = ( $l10n ? "{{int:translate-gs-multiple}}" : 'Multiple' );
+					$continent = ( $l10n ? '{{int:translate-gs-multiple}}' : 'Multiple' );
 				} else {
 					$continent = $l10n ?
-						"{{int:timezoneregion-" . $this->mostSpokenLanguages[$code][2] . "}}" :
+						'{{int:timezoneregion-' . $this->mostSpokenLanguages[$code][2] . '}}' :
 						ucfirst( $this->mostSpokenLanguages[$code][2] );
 				}
 
@@ -623,16 +623,16 @@ class GroupStatistics extends Maintenance {
 
 		if ( $reportScore && $this->hasOption( 'summary' ) ) {
 			if ( $reportScore && $this->hasOption( 'legendsummary' ) ) {
-				$out->addFreeText( "{{" . $this->getOption( 'legendsummary' ) . "}}\n" );
+				$out->addFreeText( '{{' . $this->getOption( 'legendsummary' ) . "}}\n" );
 			}
 
 			$out->summaryheading();
 
 			$out->blockstart();
 
-			$out->element( $l10n ? "{{int:translate-gs-continent}}" : 'Continent', true );
-			$out->element( $l10n ? "{{int:translate-gs-count}}" : 'Count', true );
-			$out->element( $l10n ? "{{int:translate-gs-avgscore}}" : 'Avg. score', true );
+			$out->element( $l10n ? '{{int:translate-gs-continent}}' : 'Continent', true );
+			$out->element( $l10n ? '{{int:translate-gs-count}}' : 'Count', true );
+			$out->element( $l10n ? '{{int:translate-gs-avgscore}}' : 'Avg. score', true );
 
 			$out->blockend();
 
@@ -644,9 +644,9 @@ class GroupStatistics extends Maintenance {
 				$out->blockstart();
 
 				if ( $key == 'multiple' ) {
-					$out->element( $l10n ? "{{int:translate-gs-multiple}}" : 'Multiple' );
+					$out->element( $l10n ? '{{int:translate-gs-multiple}}' : 'Multiple' );
 				} else {
-					$out->element( $l10n ? "{{int:timezoneregion-" . $key . "}}" : ucfirst( $key ) );
+					$out->element( $l10n ? '{{int:timezoneregion-' . $key . '}}' : ucfirst( $key ) );
 				}
 				$out->element( $values[0] );
 				$out->element( number_format( $values[1] / $values[0] ) );
@@ -658,7 +658,7 @@ class GroupStatistics extends Maintenance {
 			}
 
 			$out->blockstart();
-			$out->element( $l10n ? "{{int:translate-gs-total}}" : 'Total' );
+			$out->element( $l10n ? '{{int:translate-gs-total}}' : 'Total' );
 			$out->element( $totals[0] );
 			$out->element( number_format( $totals[1] / $totals[0] ) );
 			$out->blockend();

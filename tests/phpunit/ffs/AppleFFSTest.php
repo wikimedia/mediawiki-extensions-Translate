@@ -85,7 +85,7 @@ STRINGS;
 		$reparsed = $ffs->readFromVariable( $outfile );
 
 		$this->assertSame( $parsed['MESSAGES'], $reparsed['MESSAGES'],
-			"Messages survive roundtrip through write and read" );
+			'Messages survive roundtrip through write and read' );
 	}
 
 	public function rowValuesProvider() {

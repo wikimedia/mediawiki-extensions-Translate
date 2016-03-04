@@ -147,7 +147,7 @@ XML;
 			$pls .= "|$key=$value";
 		}
 
-		$pls .= "}}";
+		$pls .= '}}';
 		return $pls;
 	}
 

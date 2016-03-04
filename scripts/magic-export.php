@@ -276,7 +276,7 @@ PHP
 								break;
 						}
 					}
-					$out .= ");";
+					$out .= ');';
 					fwrite( $handle, $out );
 				}
 			}
@@ -301,5 +301,5 @@ PHP
 	}
 }
 
-$maintClass = "MagicExport";
+$maintClass = 'MagicExport';
 require_once DO_MAINTENANCE;

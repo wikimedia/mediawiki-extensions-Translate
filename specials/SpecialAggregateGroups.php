@@ -156,7 +156,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		$out .= $editGroup;
 		$out .= $this->listSubgroups( $group );
 		$out .= $select . $addButton;
-		$out .= "</div>";
+		$out .= '</div>';
 
 		return $out;
 	}
@@ -180,7 +180,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		if ( $this->hasPermission ) {
 			$out->addHtml( "<br/><a class='tpt-add-new-group' href='#'>" .
 				$this->msg( 'tpt-aggregategroup-add-new' )->escaped() .
-				"</a>" );
+				'</a>' );
 			$newGroupNameLabel = $this->msg( 'tpt-aggregategroup-new-name' )->escaped();
 			$newGroupName = Html::element(
 				'input',

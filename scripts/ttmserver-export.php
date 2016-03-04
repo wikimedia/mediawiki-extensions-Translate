@@ -51,9 +51,9 @@ class TTMServerBootstrap extends Maintenance {
 	}
 
 	public function statusLine( $text, $channel = null ) {
-		$pid = sprintf( "%5s", getmypid() );
-		$prefix = sprintf( "%6.2f", microtime( true ) - $this->start );
-		$mem = sprintf( "%5.1fM", ( memory_get_usage( true ) / ( 1024 * 1024 ) ) );
+		$pid = sprintf( '%5s', getmypid() );
+		$prefix = sprintf( '%6.2f', microtime( true ) - $this->start );
+		$mem = sprintf( '%5.1fM', ( memory_get_usage( true ) / ( 1024 * 1024 ) ) );
 		$this->output( "$pid $prefix $mem  $text", $channel );
 	}
 
@@ -63,7 +63,7 @@ class TTMServerBootstrap extends Maintenance {
 		// TTMServer is the id of the enabled-by-default instance
 		$configKey = $this->getOption( 'ttmserver', 'TTMServer' );
 		if ( !isset( $wgTranslateTranslationServices[$configKey] ) ) {
-			$this->error( "Translation memory is not configured properly", 1 );
+			$this->error( 'Translation memory is not configured properly', 1 );
 		}
 
 		$config = $wgTranslateTranslationServices[$configKey];

@@ -212,20 +212,20 @@ class FuzzyScript {
 
 		$this->reportProgress( "Updating {$title->getPrefixedText()}... ", $title );
 		if ( !$title instanceof Title ) {
-			$this->reportProgress( "INVALID TITLE!", $title );
+			$this->reportProgress( 'INVALID TITLE!', $title );
 
 			return;
 		}
 
 		$items = explode( '/', $title->getText(), 2 );
 		if ( isset( $items[1] ) && $items[1] === $wgTranslateDocumentationLanguageCode ) {
-			$this->reportProgress( "IGNORED!", $title );
+			$this->reportProgress( 'IGNORED!', $title );
 
 			return;
 		}
 
 		if ( $dryrun ) {
-			$this->reportProgress( "DRY RUN!", $title );
+			$this->reportProgress( 'DRY RUN!', $title );
 
 			return;
 		}

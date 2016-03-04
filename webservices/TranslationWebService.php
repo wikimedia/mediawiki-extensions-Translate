@@ -223,7 +223,7 @@ abstract class TranslationWebService {
 	 * @return string
 	 */
 	protected function wrapUntranslatable( $text ) {
-		$text = str_replace( "\n", "!N!", $text );
+		$text = str_replace( "\n", '!N!', $text );
 		$pattern = '~%[^% ]+%|\$\d|{VAR:[^}]+}|{?{(PLURAL|GRAMMAR|GENDER):[^|]+\||%(\d\$)?[sd]~';
 		$wrap = '<span class="notranslate" translate="no">\0</span>';
 		return preg_replace( $pattern, $wrap, $text );

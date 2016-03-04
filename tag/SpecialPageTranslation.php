@@ -798,17 +798,17 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 
 		$this->getOutput()->addHTML(
-			"<table>" .
-			"<tr>" .
+			'<table>' .
+			'<tr>' .
 			"<td class='mw-label'>$hLangs[0]</td>" .
 			"<td class='mw-input'>$hLangs[1]$langSelector[1]</td>" .
-			"</tr>" .
+			'</tr>' .
 			"<tr><td></td><td class='mw-inout'>$hForce</td></tr>" .
-			"<tr>" .
+			'<tr>' .
 			"<td class='mw-label'>$hReason[0]</td>" .
 			"<td class='mw-input'>$hReason[1]</td>" .
-			"</tr>" .
-			"</table>"
+			'</tr>' .
+			'</table>'
 		);
 	}
 

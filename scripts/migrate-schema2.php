@@ -40,7 +40,7 @@ class TSchema2 extends Maintenance {
 		}
 
 		if ( $dbw->getType() !== 'mysql' ) {
-			$this->error( "This migration script only supports mysql. Please help " .
+			$this->error( 'This migration script only supports mysql. Please help ' .
 				"us to write routine for {$dbw->getType()}.", 1 );
 		}
 

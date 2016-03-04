@@ -131,7 +131,7 @@ class TranslateUtils {
 			"WHERE rc_timestamp >= '{$cutoff}' " .
 			( $bots ? '' : 'AND rc_bot = 0 ' ) .
 			"AND rc_namespace in ($namespaces) " .
-			"ORDER BY lang ASC, rc_timestamp DESC";
+			'ORDER BY lang ASC, rc_timestamp DESC';
 
 		$res = $dbr->query( $sql, __METHOD__ );
 		$rows = iterator_to_array( $res );
@@ -254,7 +254,7 @@ class TranslateUtils {
 	public static function normaliseKey( $namespace, $key ) {
 		$key = lcfirst( $key );
 
-		return strtr( "$namespace:$key", " ", "_" );
+		return strtr( "$namespace:$key", ' ', '_' );
 	}
 
 	/**
@@ -368,7 +368,7 @@ class TranslateUtils {
 	 */
 	public static function getTokenAction( $token ) {
 		// Remove this function when support for MW 1.24 is dropped.
-		return "action=query&meta=tokens&type=csrf";
+		return 'action=query&meta=tokens&type=csrf';
 	}
 
 	/**

@@ -256,7 +256,7 @@ HTML;
 <div class="row request-header">
 	<div class="four columns">
 		<button class="language-selector unselected">
-			{$this->msg( "tsb-all-languages-button-label" )->escaped()}
+			{$this->msg( 'tsb-all-languages-button-label' )->escaped()}
 		</button>
 	</div>
 	<div class="five columns request-count"></div>

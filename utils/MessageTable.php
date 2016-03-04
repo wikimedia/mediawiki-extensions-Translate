@@ -188,7 +188,7 @@ class MessageTable {
 			$tools['edit'] = Html::element( 'a', $linkAttribs, $niceTitle );
 
 			$anchor = 'msg_' . $key;
-			$anchor = Xml::element( 'a', array( 'id' => $anchor, 'href' => "#$anchor" ), "↓" );
+			$anchor = Xml::element( 'a', array( 'id' => $anchor, 'href' => "#$anchor" ), '↓' );
 
 			$extra = '';
 			if ( $m->hasTag( 'optional' ) ) {

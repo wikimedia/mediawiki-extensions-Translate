@@ -47,22 +47,22 @@ class ApiTranslateSandbox extends ApiBase {
 
 		$username = $params['username'];
 		if ( User::getCanonicalName( $username, 'creatable' ) === false ) {
-			$this->dieUsage( "User name is not acceptable", 'invalidusername' );
+			$this->dieUsage( 'User name is not acceptable', 'invalidusername' );
 		}
 
 		$user = User::newFromName( $username );
 		if ( $user->getID() !== 0 ) {
-			$this->dieUsage( "User name is in use", 'nonfreeusername' );
+			$this->dieUsage( 'User name is in use', 'nonfreeusername' );
 		}
 
 		$password = $params['password'];
 		if ( !$user->isValidPassword( $password ) ) {
-			$this->dieUsage( "Password is not acceptable", 'invalidpassword' );
+			$this->dieUsage( 'Password is not acceptable', 'invalidpassword' );
 		}
 
 		$email = $params['email'];
 		if ( !Sanitizer::validateEmail( $email ) ) {
-			$this->dieUsage( "Email is not acceptable", 'invalidemail' );
+			$this->dieUsage( 'Email is not acceptable', 'invalidemail' );
 		}
 
 		$user = TranslateSandbox::addUser( $username, $email, $password );

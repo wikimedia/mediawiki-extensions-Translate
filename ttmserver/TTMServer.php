@@ -39,7 +39,7 @@ class TTMServer {
 			}
 		}
 
-		throw new MWEXception( "TTMServer with no type" );
+		throw new MWEXception( 'TTMServer with no type' );
 	}
 
 	/**

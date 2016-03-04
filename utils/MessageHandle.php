@@ -176,7 +176,7 @@ class MessageHandle {
 		$group = $this->getGroup();
 		if ( !$group ) {
 			$warning = "MessageIndex is out of date – refers to unknown group {$groups[0]}. ";
-			$warning .= "Doing a rebuild.";
+			$warning .= 'Doing a rebuild.';
 			wfWarn( $warning );
 			MessageIndexRebuildJob::newJob()->run();
 
