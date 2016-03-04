@@ -44,7 +44,7 @@ class BlackListTest extends MediaWikiTestCase {
 
 	public function testNoLanguageConf() {
 		$translatableLanguages = $this->group->getTranslatableLanguages();
-		$this->assertNull( $translatableLanguages );
+		$this->assertEquals( count( $translatableLanguages ), 0 );
 	}
 
 	public function testAllBlackList() {

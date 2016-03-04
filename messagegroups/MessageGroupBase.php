@@ -367,13 +367,13 @@ abstract class MessageGroupBase implements MessageGroup {
 	/**
 	 * Get all the translatable languages for a group, considering the whitelisting
 	 * and blacklisting.
-	 * @return array|null The language codes as array keys.
+	 * @return array The language codes as array keys.
 	 */
 	public function getTranslatableLanguages() {
 		$groupConfiguration = $this->getConfiguration();
 		if ( !isset( $groupConfiguration['LANGUAGES'] ) ) {
 			// No LANGUAGES section in the configuration.
-			return null;
+			return array();
 		}
 
 		$lists = $groupConfiguration['LANGUAGES'];
@@ -397,7 +397,7 @@ abstract class MessageGroupBase implements MessageGroup {
 			$whitelist = $lists['whitelist'];
 			if ( $whitelist === '*' ) {
 				// All languages whitelisted
-				return null;
+				return array();
 			}
 		}
 
