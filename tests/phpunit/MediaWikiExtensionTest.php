@@ -18,8 +18,8 @@ class MediaWikiExtensionTest extends MediaWikiTestCase {
 		$list = $deps = $autoload = array();
 		$foo->register( $list, $deps, $autoload );
 
-		$this->assertEquals( 1, count( $deps ), 'A dependency to definition file was added' );
-		$this->assertEquals( 4, count( $list ), 'Four groups were created' );
+		$this->assertCount( 1, count( $deps ), 'A dependency to definition file was added' );
+		$this->assertCount( 4, count( $list ), 'Four groups were created' );
 
 		$this->assertArrayHasKey( 'ext-exampleextension', $list );
 		$expected = TranslateYaml::load( __DIR__ . '/data/MediaWikiExtensionTest-conf1.yaml' );

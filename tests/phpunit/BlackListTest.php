@@ -54,7 +54,7 @@ class BlackListTest extends MediaWikiTestCase {
 		);
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
-		$this->assertEquals( count( $translatableLanguages ), 0 );
+		$this->assertCount( count( $translatableLanguages ), 0 );
 	}
 
 	public function testAllWhiteList() {
