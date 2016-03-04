@@ -147,7 +147,7 @@ class TTMServer {
 		}
 
 		$job = TTMServerMessageUpdateJob::newJob( $handle );
-		$job->insert();
+		JobQueueGroup::singleton()->push( $job );
 
 		return true;
 	}

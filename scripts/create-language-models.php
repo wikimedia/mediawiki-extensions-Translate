@@ -204,13 +204,11 @@ TXT;
 				$api = new ApiMain( $params );
 				$api->execute();
 
-				if ( defined( 'ApiResult::META_CONTENT' ) ) {
-					$result = $api->getResult()->getResultData( null, array(
-						'BC' => array(),
-					) );
-				} else {
-					$result = $api->getResultData();
-				}
+				$result = $api->getResult()->getResultData(
+					null,
+					array( 'BC' => array() )
+				);
+
 				$text = $result['parse']['text']['*'];
 				$text = strip_tags( $text );
 				$text = str_replace( '!!FUZZY!!', '', $text );

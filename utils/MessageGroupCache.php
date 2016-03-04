@@ -127,7 +127,7 @@ class MessageGroupCache {
 		$hash = md5( file_get_contents( $this->group->getSourceFilePath( $this->code ) ) );
 
 		wfMkdirParents( dirname( $this->getCacheFileName() ) );
-		$cache = CdbWriter::open( $this->getCacheFileName() );
+		$cache = \Cdb\Writer::open( $this->getCacheFileName() );
 		$keys = array_keys( $messages );
 		$cache->set( '#keys', serialize( $keys ) );
 
@@ -234,7 +234,7 @@ class MessageGroupCache {
 	 */
 	protected function open() {
 		if ( $this->cache === null ) {
-			$this->cache = CdbReader::open( $this->getCacheFileName() );
+			$this->cache = \Cdb\Reader::open( $this->getCacheFileName() );
 			if ( $this->cache->get( '#version' ) !== '3' ) {
 				$this->close();
 				unlink( $this->getCacheFileName() );
