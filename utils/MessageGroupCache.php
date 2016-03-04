@@ -152,7 +152,7 @@ class MessageGroupCache {
 	 * @param int $reason
 	 * @return bool Whether the cache is up to date.
 	 */
-	public function isValid( &$reason = 0 ) {
+	public function isValid( &$reason ) {
 		$group = $this->group;
 		$groupId = $group->getId();
 
