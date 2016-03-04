@@ -89,7 +89,6 @@ class MicrosoftWebService extends TranslationWebService {
 			'appId' => $this->config['key'],
 		);
 
-		$url = 'http://api.microsofttranslator.com/V2/Http.svc/Translate?';
 		return TranslationQuery::factory( $this->config['url'] )
 			->timeout( $this->config['timeout'] )
 			->queryParamaters( $params );
