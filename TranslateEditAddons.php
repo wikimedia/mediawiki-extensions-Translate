@@ -51,7 +51,7 @@ class TranslateEditAddons {
 	 * Adds the translation aids and navigation to the normal edit page.
 	 * Hook: EditPage::showEditForm:initial
 	 */
-	static function addTools( EditPage $object ) {
+	public static function addTools( EditPage $object ) {
 		$handle = new MessageHandle( $object->getTitle() );
 		if ( !$handle->isValid() ) {
 			return true;
@@ -67,7 +67,7 @@ class TranslateEditAddons {
 	 * message documentation to try to avoid accidents.
 	 * Hook: EditPageBeforeEditButtons
 	 */
-	static function buttonHack( EditPage $editpage, &$buttons, $tabindex ) {
+	public static function buttonHack( EditPage $editpage, &$buttons, $tabindex ) {
 		$handle = new MessageHandle( $editpage->getTitle() );
 		if ( !$handle->isValid() ) {
 			return true;

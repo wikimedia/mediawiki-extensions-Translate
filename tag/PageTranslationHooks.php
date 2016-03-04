@@ -910,7 +910,7 @@ class PageTranslationHooks {
 	 * Hook: SkinTemplateNavigation
 	 * @since 2013.06
 	 */
-	static function translateTab( Skin $skin, array &$tabs ) {
+	public static function translateTab( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
 		$handle = new MessageHandle( $title );
 		$code = $handle->getCode();

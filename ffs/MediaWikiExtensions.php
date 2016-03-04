@@ -77,7 +77,7 @@ class PremadeMediawikiExtensionGroups {
 	}
 
 	/// Makes an group id from extension name
-	static function foldId( $name ) {
+	public static function foldId( $name ) {
 		return preg_replace( '/\s+/', '', strtolower( $name ) );
 	}
 

@@ -114,7 +114,7 @@ class CreateCheckIndex extends Maintenance {
 		}
 	}
 
-	static function tagFuzzy( $problematic ) {
+	public static function tagFuzzy( $problematic ) {
 		if ( !count( $problematic ) ) {
 			return;
 		}

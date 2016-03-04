@@ -18,7 +18,7 @@
  * @ingroup SpecialPage PageTranslation
  */
 class SpecialPageTranslation extends SpecialPage {
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'PageTranslation' );
 	}
 
