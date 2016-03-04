@@ -13,6 +13,7 @@
  * TTMServer backed based on Solr instance. Depends on Solarium.
  * @since 2012-06-27
  * @ingroup TTMServer
+ * @deprecated 1.27. Will be removed in 1.29.
  */
 class SolrTTMServer
 	extends TTMServer
