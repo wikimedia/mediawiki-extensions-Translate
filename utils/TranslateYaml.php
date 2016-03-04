@@ -143,7 +143,7 @@ class TranslateYaml {
 
 		$out = wfShellExec( $cmd, $ret );
 
-		if ( $ret != 0 ) {
+		if ( (int)$ret !== 0 ) {
 			throw new MWException( "The command '$cmd' died in execution with exit code '$ret': $out" );
 		}
 
@@ -186,7 +186,7 @@ class TranslateYaml {
 			'}' .
 			"' 2>&1";
 		$out = wfShellExec( $cmd, $ret );
-		if ( $ret != 0 ) {
+		if ( (int)$ret !== 0 ) {
 			throw new MWException( "The command '$cmd' died in execution with exit code '$ret': $out" );
 		}
 

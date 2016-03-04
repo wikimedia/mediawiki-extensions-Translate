@@ -81,17 +81,17 @@ class TTMServer {
 	 * Uses the native PHP implementation when possible for speed.
 	 * The native levenshtein is limited to 255 bytes.
 	 *
-	 * @param $str1
-	 * @param $str2
-	 * @param $length1
-	 * @param $length2
+	 * @param string $str1
+	 * @param string $str2
+	 * @param int $length1
+	 * @param int $length2
 	 * @return int
 	 */
 	public static function levenshtein( $str1, $str2, $length1, $length2 ) {
-		if ( $length1 == 0 ) {
+		if ( $length1 === 0 ) {
 			return $length2;
 		}
-		if ( $length2 == 0 ) {
+		if ( $length2 === 0 ) {
 			return $length1;
 		}
 		if ( $str1 === $str2 ) {
@@ -115,7 +115,7 @@ class TTMServer {
 				$c2 = mb_substr( $str2, $j, 1 );
 				$insertions = $prevRow[$j + 1] + 1;
 				$deletions = $currentRow[$j] + 1;
-				$substitutions = $prevRow[$j] + ( ( $c1 != $c2 ) ? 1 : 0 );
+				$substitutions = $prevRow[$j] + ( ( $c1 !== $c2 ) ? 1 : 0 );
 				$currentRow[] = min( $insertions, $deletions, $substitutions );
 			}
 			$prevRow = $currentRow;
