@@ -592,7 +592,7 @@ class CDBMessageIndex extends MessageIndex {
 		$this->reader = null;
 
 		$file = TranslateUtils::cacheFile( $this->filename );
-		$cache = CdbWriter::open( $file );
+		$cache = \Cdb\Writer::open( $file );
 		$keys = array_keys( $array );
 		$cache->set( '#keys', $this->serialize( $keys ) );
 
@@ -618,7 +618,7 @@ class CDBMessageIndex extends MessageIndex {
 			$this->index = $this->rebuild();
 		}
 
-		return $this->reader = CdbReader::open( $file );
+		return $this->reader = \Cdb\Reader::open( $file );
 	}
 }
 

@@ -76,7 +76,7 @@ class YamlTests extends Maintenance {
 		}
 
 		foreach ( $groups as $i => $group ) {
-			$groups[$i] = TranslateYaml::mergeTemplate( $template, $group );
+			$groups[$i] = MessageGroupConfigurationParser::mergeTemplate( $template, $group );
 		}
 
 		return $groups;

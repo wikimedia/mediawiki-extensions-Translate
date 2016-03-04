@@ -209,7 +209,7 @@ TXT;
 						'BC' => array(),
 					) );
 				} else {
-					$result = $api->getResultData();
+					$result = $api->getResult()->getData();
 				}
 				$text = $result['parse']['text']['*'];
 				$text = strip_tags( $text );
