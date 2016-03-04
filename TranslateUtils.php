@@ -106,7 +106,7 @@ class TranslateUtils {
 	 * @return array List of recent changes.
 	 */
 	public static function translationChanges(
-		$hours = 24, $bots = false, $ns = null, $extraFields = array()
+		$hours = 24, $bots = false, $ns = null, array $extraFields = array()
 	) {
 		global $wgTranslateMessageNamespaces;
 
@@ -264,7 +264,7 @@ class TranslateUtils {
 	 * @param array $attributes Html attributes for the fieldset.
 	 * @return string Html.
 	 */
-	public static function fieldset( $legend, $contents, $attributes = array() ) {
+	public static function fieldset( $legend, $contents, array $attributes = array() ) {
 		return Xml::openElement( 'fieldset', $attributes ) .
 			Xml::tags( 'legend', null, $legend ) . $contents .
 			Xml::closeElement( 'fieldset' );

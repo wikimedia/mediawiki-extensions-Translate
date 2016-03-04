@@ -433,7 +433,7 @@ abstract class ComplexMessages {
 	// /Save to database
 
 	// Export
-	public function validate( &$errors = array(), $filter = false ) {
+	public function validate( array &$errors, $filter = false ) {
 		$used = array();
 		foreach ( array_keys( $this->data ) as $group ) {
 			if ( $filter !== false && !in_array( $group, (array)$filter, true ) ) {
@@ -444,7 +444,7 @@ abstract class ComplexMessages {
 		}
 	}
 
-	protected function validateEach( &$errors = array(), $group, &$used ) {
+	protected function validateEach( array &$errors, $group, &$used ) {
 		foreach ( $this->getIterator( $group ) as $key ) {
 			$values = $this->val( $group, self::LANG_CURRENT, $key );
 			$link = Xml::element( 'a', array( 'href' => "#mw-sp-magic-$key" ), $key );
