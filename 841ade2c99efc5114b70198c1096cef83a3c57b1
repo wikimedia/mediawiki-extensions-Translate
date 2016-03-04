@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0e2f53b6_6244b66f",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T10:12:24Z",
+      "side": 1,
+      "message": "I didn\u0027t come up with those function names, my friend :).\n\nI\u0027ve changed the name in the updated patch set.",
+      "parentUuid": "0e2f53b6_628cb600",
+      "revId": "841ade2c99efc5114b70198c1096cef83a3c57b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e2f53b6_a26d1e30",
         "filename": "utils/MessageGroupStats.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-03-04T09:29:09Z",
       "side": 1,
       "message": "Hmm not sure about this.",
+      "revId": "841ade2c99efc5114b70198c1096cef83a3c57b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_22210ead",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T10:12:24Z",
+      "side": 1,
+      "message": "I will renamed the method in an amended patch set.",
+      "parentUuid": "0e2f53b6_a26d1e30",
       "revId": "841ade2c99efc5114b70198c1096cef83a3c57b1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
