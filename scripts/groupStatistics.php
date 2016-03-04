@@ -449,7 +449,7 @@ class GroupStatistics extends Maintenance {
 
 				// Do not calculate if we do not need it for anything.
 				if ( $wmfscore && isset( $this->wikimediaCodeMap[$code] )
-					&& $this->wikimediaCodeMap[$code] == ''
+					&& $this->wikimediaCodeMap[$code] === ''
 				) {
 					continue;
 				}
@@ -488,7 +488,7 @@ class GroupStatistics extends Maintenance {
 
 			// Skip unneeded
 			if ( $wmfscore && isset( $this->wikimediaCodeMap[$code] )
-				&& $this->wikimediaCodeMap[$code] == ''
+				&& $this->wikimediaCodeMap[$code] === ''
 			) {
 				continue;
 			}
@@ -536,7 +536,7 @@ class GroupStatistics extends Maintenance {
 
 			// Fill continent field
 			if ( $showContinent ) {
-				if ( $this->mostSpokenLanguages[$code][2] == 'multiple' ) {
+				if ( $this->mostSpokenLanguages[$code][2] === 'multiple' ) {
 					$continent = ( $l10n ? '{{int:translate-gs-multiple}}' : 'Multiple' );
 				} else {
 					$continent = $l10n ?
@@ -643,7 +643,7 @@ class GroupStatistics extends Maintenance {
 			foreach ( $summary as $key => $values ) {
 				$out->blockstart();
 
-				if ( $key == 'multiple' ) {
+				if ( $key === 'multiple' ) {
 					$out->element( $l10n ? '{{int:translate-gs-multiple}}' : 'Multiple' );
 				} else {
 					$out->element( $l10n ? '{{int:timezoneregion-' . $key . '}}' : ucfirst( $key ) );

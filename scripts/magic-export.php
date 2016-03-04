@@ -258,7 +258,7 @@ PHP
 					foreach ( $messagesOut as $key => $translations ) {
 						foreach ( $translations as $id => $translation ) {
 							$translations[$id] = addslashes( $translation );
-							if ( $this->type === 'magic' && $translation == '0' ) {
+							if ( $this->type === 'magic' && $translation === '0' ) {
 								unset( $translations[$id] );
 							}
 						}
