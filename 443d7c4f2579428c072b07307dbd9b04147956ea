@@ -52,6 +52,24 @@
       "revId": "443d7c4f2579428c072b07307dbd9b04147956ea",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_855e247a",
+        "filename": "resources/css/ext.translate.special.managetranslatorsandbox.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T12:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e2f53b6_65ffa063",
+      "revId": "443d7c4f2579428c072b07307dbd9b04147956ea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
