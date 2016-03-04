@@ -209,7 +209,7 @@ class SpecialTranslate extends SpecialPage {
 					)->parse();
 				}
 
-				$description .= Html::RawElement( 'div',
+				$description .= Html::rawElement( 'div',
 					array( 'class' => $priorityMessageClass ),
 					$this->msg(
 						$priorityMessageKey,
@@ -384,13 +384,13 @@ class SpecialTranslate extends SpecialPage {
 				// @todo handle these two separately
 				unset( $params['task'] );
 				$params['action'] = 'proofread';
-				$out->redirect( $this->getPageTitle()->getLocalUrl( $params ) );
+				$out->redirect( $this->getPageTitle()->getLocalURL( $params ) );
 				break;
 
 			case 'view':
 				unset( $params['task'] );
 				$params['filter'] = '';
-				$out->redirect( $this->getPageTitle()->getLocalUrl( $params ) );
+				$out->redirect( $this->getPageTitle()->getLocalURL( $params ) );
 				break;
 
 			// Optional does not directly map to the new UI.
@@ -400,7 +400,7 @@ class SpecialTranslate extends SpecialPage {
 			case 'untranslated':
 				unset( $params['task'] );
 				$params['filter'] = '!translated';
-				$out->redirect( $this->getPageTitle()->getLocalUrl( $params ) );
+				$out->redirect( $this->getPageTitle()->getLocalURL( $params ) );
 				break;
 		}
 	}
@@ -509,7 +509,7 @@ class SpecialTranslate extends SpecialPage {
 			$tabClass = "tux-tab-$tab";
 			$taskParams = array( 'filter' => $filter ) + $params;
 			ksort( $taskParams );
-			$href = $this->getPageTitle()->getLocalUrl( $taskParams );
+			$href = $this->getPageTitle()->getLocalURL( $taskParams );
 			$link = Html::element( 'a', array( 'href' => $href ), $this->msg( $tabClass )->text() );
 			$output .= Html::rawElement( 'li', array(
 				'class' => 'column ' . $tabClass,
@@ -787,14 +787,14 @@ class SpecialTranslate extends SpecialPage {
 		// If we get here in the TUX mode, it means that invalid group
 		// was requested. There is default group for no params case.
 		if ( self::isBeta( $this->getRequest() ) ) {
-			$output->addHtml( Html::rawElement(
+			$output->addHTML( Html::rawElement(
 				'div',
 				array( 'class' => 'twelve columns group-warning' ),
 				$this->msg( 'tux-translate-page-no-such-group' )->parse()
 			) );
 		}
 
-		$output->addHtml(
+		$output->addHTML(
 			Html::openElement( 'div', array(
 				'class' => 'eight columns tux-breadcrumb',
 				'data-language' => $this->options['language'],
@@ -856,7 +856,7 @@ class SpecialTranslate extends SpecialPage {
 
 		$tabs['namespaces']['translate'] = array(
 			'text' => wfMessage( 'translate-taction-translate' )->text(),
-			'href' => $translate->getLocalUrl( $params ),
+			'href' => $translate->getLocalURL( $params ),
 			'class' => 'tux-tab',
 		);
 
@@ -867,7 +867,7 @@ class SpecialTranslate extends SpecialPage {
 		if ( !self::isBeta( $request ) ) {
 			$tabs['namespaces']['proofread'] = array(
 				'text' => wfMessage( 'translate-taction-proofread' )->text(),
-				'href' => $translate->getLocalUrl( array( 'taction' => 'proofread' ) + $params ),
+				'href' => $translate->getLocalURL( array( 'taction' => 'proofread' ) + $params ),
 				'class' => 'tux-tab',
 			);
 
@@ -878,7 +878,7 @@ class SpecialTranslate extends SpecialPage {
 
 		$tabs['views']['lstats'] = array(
 			'text' => wfMessage( 'translate-taction-lstats' )->text(),
-			'href' => $languagestats->getLocalUrl( $params ),
+			'href' => $languagestats->getLocalURL( $params ),
 			'class' => 'tux-tab',
 		);
 		if ( $alias === 'LanguageStats' ) {
@@ -887,7 +887,7 @@ class SpecialTranslate extends SpecialPage {
 
 		$tabs['views']['mstats'] = array(
 			'text' => wfMessage( 'translate-taction-mstats' )->text(),
-			'href' => $messagegroupstats->getLocalUrl( $params ),
+			'href' => $messagegroupstats->getLocalURL( $params ),
 			'class' => 'tux-tab',
 		);
 
@@ -904,7 +904,7 @@ class SpecialTranslate extends SpecialPage {
 
 			$tabs['views']['export'] = array(
 				'text' => wfMessage( 'translate-taction-export' )->text(),
-				'href' => $translate->getLocalUrl( array( 'taction' => 'export' ) + $params ),
+				'href' => $translate->getLocalURL( array( 'taction' => 'export' ) + $params ),
 				'class' => 'tux-tab',
 			);
 

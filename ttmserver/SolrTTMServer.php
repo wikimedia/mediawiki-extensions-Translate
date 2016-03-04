@@ -41,7 +41,7 @@ class SolrTTMServer
 	}
 
 	public function isLocalSuggestion( array $suggestion ) {
-		return $suggestion['wiki'] === wfWikiId();
+		return $suggestion['wiki'] === wfWikiID();
 	}
 
 	public function expandLocation( array $suggestion ) {
@@ -196,7 +196,7 @@ class SolrTTMServer
 		if ( $doDelete ) {
 			$base = Title::makeTitle( $title->getNamespace(), $handle->getKey() );
 			$conds = array(
-				'wiki' => wfWikiId(),
+				'wiki' => wfWikiID(),
 				'language' => $handle->getCode(),
 				'messageid' => $base->getPrefixedText(),
 			);
@@ -246,13 +246,13 @@ class SolrTTMServer
 		$translationTitle = $handle->getTitle();
 
 		$title = Title::makeTitle( $handle->getTitle()->getNamespace(), $handle->getKey() );
-		$wiki = wfWikiId();
+		$wiki = wfWikiID();
 		$messageid = $title->getPrefixedText();
 		$globalid = "$wiki-$messageid-$revId/$language";
 
 		$doc = new Solarium_Document_ReadWrite();
 		$doc->wiki = $wiki;
-		$doc->uri = $translationTitle->getCanonicalUrl();
+		$doc->uri = $translationTitle->getCanonicalURL();
 		$doc->messageid = $messageid;
 		$doc->globalid = $globalid;
 
@@ -265,7 +265,7 @@ class SolrTTMServer
 
 	public function beginBootstrap() {
 		$update = $this->client->createUpdate();
-		$query = 'wiki:' . $update->getHelper()->escapePhrase( wfWikiId() );
+		$query = 'wiki:' . $update->getHelper()->escapePhrase( wfWikiID() );
 		$update->addDeleteQuery( $query );
 		$update->addCommit();
 		$this->client->update( $update );
@@ -379,12 +379,12 @@ class SolrTTMServer
 
 		$language = $facetSet->createFacetField( 'language' );
 		$language->setField( 'language' );
-		$language->setMincount( 1 );
+		$language->setMinCount( 1 );
 		$language->addExclude( 'filter' );
 
 		$group = $facetSet->createFacetField( 'group' );
 		$group->setField( 'group' );
-		$group->setMincount( 1 );
+		$group->setMinCount( 1 );
 		$group->setMissing( true );
 		$group->addExclude( 'filter' );
 

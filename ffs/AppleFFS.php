@@ -123,7 +123,7 @@ class AppleFFS extends SimpleFFS {
 				$output .= "// Fuzzy\n";
 			}
 
-			$key = $mangler->unmangle( $key );
+			$key = $mangler->unMangle( $key );
 			$output .= self::writeRow( $key, $value );
 		}
 

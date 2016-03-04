@@ -236,7 +236,7 @@ class SimpleFFS implements FFS {
 
 		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
-			$key = $mangler->unmangle( $key );
+			$key = $mangler->unMangle( $key );
 			$trans = $m->translation();
 			$output .= "$key=$trans" . self::RECORD_SEPARATOR;
 		}

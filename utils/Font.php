@@ -54,7 +54,7 @@ class FCFontFinder {
 		}
 
 		$cache = self::getCache();
-		$cachekey = wfMemckey( 'fcfont', $code );
+		$cachekey = wfMemcKey( 'fcfont', $code );
 		$timeout = 60 * 60 * 12;
 
 		$cached = $cache->get( $cachekey );

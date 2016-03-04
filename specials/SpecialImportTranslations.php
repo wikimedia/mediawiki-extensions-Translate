@@ -142,7 +142,7 @@ class SpecialImportTranslations extends SpecialPage {
 		 */
 		$this->getOutput()->addHTML(
 			Xml::openElement( 'form', array(
-				'action' => $this->getPageTitle()->getLocalUrl(),
+				'action' => $this->getPageTitle()->getLocalURL(),
 				'method' => 'post',
 				'enctype' => 'multipart/form-data',
 				'id' => 'mw-translate-import',

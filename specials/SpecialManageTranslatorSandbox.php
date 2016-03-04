@@ -175,7 +175,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 	 */
 	protected function showPage() {
 		$out = $this->getOutput();
-		$out->addHtml( <<<HTML
+		$out->addHTML( <<<HTML
 <div class="grid">
 	<div class="row">
 		<div class="nine columns pane filter">{$this->makeFilter()}</div>

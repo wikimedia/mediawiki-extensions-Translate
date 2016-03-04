@@ -191,7 +191,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		if ( $revision !== intval( $title->getLatestRevID() ) ) {
 			// We do want to notify the reviewer if the underlying page changes during review
-			$target = $title->getFullUrl( array( 'oldid' => $revision ) );
+			$target = $title->getFullURL( array( 'oldid' => $revision ) );
 			$link = "<span class='plainlinks'>[$target $revision]</span>";
 			$out->wrapWikiMsg(
 				'<div class="warningbox">$1</div>',
@@ -248,7 +248,7 @@ class SpecialPageTranslation extends SpecialPage {
 	public function showSuccess( TranslatablePage $page ) {
 		$titleText = $page->getTitle()->getPrefixedText();
 		$num = $this->getLanguage()->formatNum( $page->getParse()->countSections() );
-		$link = SpecialPage::getTitleFor( 'Translate' )->getFullUrl( array(
+		$link = SpecialPage::getTitleFor( 'Translate' )->getFullURL( array(
 			'group' => $page->getMessageGroupId(),
 			'action' => 'page',
 			'filter' => '',
@@ -264,7 +264,7 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( method_exists( 'SpecialNotifyTranslators', 'execute' ) &&
 			$this->getUser()->isAllowed( SpecialNotifyTranslators::$right )
 		) {
-			$link = SpecialPage::getTitleFor( 'NotifyTranslators' )->getFullUrl(
+			$link = SpecialPage::getTitleFor( 'NotifyTranslators' )->getFullURL(
 				array( 'tpage' => $page->getTitle()->getArticleID() ) );
 			$this->getOutput()->addWikiMsg( 'tpt-offer-notify', $link );
 		}
@@ -284,7 +284,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$hidden .= Html::hidden( $key, $value );
 		}
 
-		$this->getOutput()->addHtml(
+		$this->getOutput()->addHTML(
 			Html::openElement( 'form', $formParams ) .
 			$hidden .
 			$this->msg( 'tpt-generic-confirm' )->parseAsBlock() .
@@ -302,13 +302,13 @@ class SpecialPageTranslation extends SpecialPage {
 			'action' => $this->getPageTitle()->getFullURL(),
 		);
 
-		$this->getOutput()->addHtml(
+		$this->getOutput()->addHTML(
 			Html::openElement( 'form', $formParams ) .
 			Html::hidden( 'do', 'unlink' ) .
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'target', $target->getPrefixedText() ) .
 			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
-			$this->msg( 'tpt-unlink-confirm', $target->getPrefixedtext() )->parseAsBlock() .
+			$this->msg( 'tpt-unlink-confirm', $target->getPrefixedText() )->parseAsBlock() .
 			Xml::submitButton(
 				$this->msg( 'tpt-unlink-button' )->text(),
 				array( 'class' => 'mw-ui-button mw-ui-destructive' )
@@ -426,20 +426,20 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( count( $pages ) ) {
 			$out->wrapWikiMsg( '== $1 ==', 'tpt-new-pages-title' );
 			$out->addWikiMsg( 'tpt-new-pages', count( $pages ) );
-			$out->addHtml( '<ol>' );
+			$out->addHTML( '<ol>' );
 			foreach ( $pages as $page ) {
 				$link = Linker::link( $page['title'] );
 				$acts = $this->actionLinks( $page, 'proposed' );
-				$out->addHtml( "<li>$link $acts</li>" );
+				$out->addHTML( "<li>$link $acts</li>" );
 			}
-			$out->addHtml( '</ol>' );
+			$out->addHTML( '</ol>' );
 		}
 
 		$pages = $types['active'];
 		if ( count( $pages ) ) {
 			$out->wrapWikiMsg( '== $1 ==', 'tpt-old-pages-title' );
 			$out->addWikiMsg( 'tpt-old-pages', count( $pages ) );
-			$out->addHtml( '<ol>' );
+			$out->addHTML( '<ol>' );
 			foreach ( $pages as $page ) {
 				$link = Linker::link( $page['title'] );
 				if ( $page['tp:mark'] !== $page['tp:tag'] ) {
@@ -447,29 +447,29 @@ class SpecialPageTranslation extends SpecialPage {
 				}
 
 				$acts = $this->actionLinks( $page, 'active' );
-				$out->addHtml( "<li>$link $acts</li>" );
+				$out->addHTML( "<li>$link $acts</li>" );
 			}
-			$out->addHtml( '</ol>' );
+			$out->addHTML( '</ol>' );
 		}
 
 		$pages = $types['broken'];
 		if ( count( $pages ) ) {
 			$out->wrapWikiMsg( '== $1 ==', 'tpt-other-pages-title' );
 			$out->addWikiMsg( 'tpt-other-pages', count( $pages ) );
-			$out->addHtml( '<ol>' );
+			$out->addHTML( '<ol>' );
 			foreach ( $pages as $page ) {
 				$link = Linker::link( $page['title'] );
 				$acts = $this->actionLinks( $page, 'broken' );
-				$out->addHtml( "<li>$link $acts</li>" );
+				$out->addHTML( "<li>$link $acts</li>" );
 			}
-			$out->addHtml( '</ol>' );
+			$out->addHTML( '</ol>' );
 		}
 
 		$pages = $types['discouraged'];
 		if ( count( $pages ) ) {
 			$out->wrapWikiMsg( '== $1 ==', 'tpt-discouraged-pages-title' );
 			$out->addWikiMsg( 'tpt-discouraged-pages', count( $pages ) );
-			$out->addHtml( '<ol>' );
+			$out->addHTML( '<ol>' );
 			foreach ( $pages as $page ) {
 				$link = Linker::link( $page['title'] );
 				if ( $page['tp:mark'] !== $page['tp:tag'] ) {
@@ -477,9 +477,9 @@ class SpecialPageTranslation extends SpecialPage {
 				}
 
 				$acts = $this->actionLinks( $page, 'discouraged' );
-				$out->addHtml( "<li>$link $acts</li>" );
+				$out->addHTML( "<li>$link $acts</li>" );
 			}
-			$out->addHtml( '</ol>' );
+			$out->addHTML( '</ol>' );
 		}
 	}
 
@@ -509,7 +509,7 @@ class SpecialPageTranslation extends SpecialPage {
 					array(
 						'do' => 'mark',
 						'target' => $title->getPrefixedText(),
-						'revision' => $title->getLatestRevId(),
+						'revision' => $title->getLatestRevID(),
 					)
 				);
 			}
@@ -616,7 +616,7 @@ class SpecialPageTranslation extends SpecialPage {
 			Html::hidden( 'do', 'mark' ) .
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 			Html::hidden( 'revision', $page->getRevision() ) .
-			Html::hidden( 'target', $page->getTitle()->getPrefixedtext() ) .
+			Html::hidden( 'target', $page->getTitle()->getPrefixedText() ) .
 			Html::hidden( 'token', $this->getUser()->getEditToken() )
 		);
 
@@ -852,7 +852,7 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( $newrevision === null ) {
 			// Probably a no-change edit, so no new revision was assigned.
 			// Get the latest revision manually
-			$newrevision = $page->getTitle()->getLatestRevId();
+			$newrevision = $page->getTitle()->getLatestRevID();
 		}
 
 		$inserts = array();

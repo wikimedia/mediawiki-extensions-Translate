@@ -69,7 +69,7 @@ class XliffFFS extends SimpleFFS {
 			/* In case there are tags inside the element, preserve
 			 * them. */
 			$dom = new DOMDocument( '1.0' );
-			$dom->loadXML( $source->asXml() );
+			$dom->loadXML( $source->asXML() );
 			$value = self::getInnerXml( $dom->documentElement );
 
 			/* This might not be 100% according to the spec, but
@@ -146,7 +146,7 @@ class XliffFFS extends SimpleFFS {
 
 		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
-			$key = $mangler->unmangle( $key );
+			$key = $mangler->unMangle( $key );
 
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );

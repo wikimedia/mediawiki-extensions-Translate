@@ -502,7 +502,7 @@ class CachedMessageIndex extends MessageIndex {
 			return $this->index;
 		}
 
-		$key = wfMemckey( $this->key );
+		$key = wfMemcKey( $this->key );
 		$data = $this->cache->get( $key );
 		if ( is_array( $data ) ) {
 			$this->index = $data;
@@ -514,7 +514,7 @@ class CachedMessageIndex extends MessageIndex {
 	}
 
 	protected function store( array $array, array $diff ) {
-		$key = wfMemckey( $this->key );
+		$key = wfMemcKey( $this->key );
 		$this->cache->set( $key, $array );
 
 		$this->index = $array;

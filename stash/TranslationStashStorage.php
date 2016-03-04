@@ -27,7 +27,7 @@ class TranslationStashStorage {
 	public function addTranslation( StashedTranslation $item ) {
 		$row = array(
 			'ts_user' => $item->getUser()->getId(),
-			'ts_title' => $item->getTitle()->getDBKey(),
+			'ts_title' => $item->getTitle()->getDBkey(),
 			'ts_namespace' => $item->getTitle()->getNamespace(),
 			'ts_value' => $item->getValue(),
 			'ts_metadata' => serialize( $item->getMetadata() ),

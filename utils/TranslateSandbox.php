@@ -165,7 +165,7 @@ class TranslateSandbox {
 		$body = wfMessage(
 			$bodyMsg,
 			$target->getName(),
-			SpecialPage::getTitleFor( $targetSpecialPage )->getCanonicalUrl(),
+			SpecialPage::getTitleFor( $targetSpecialPage )->getCanonicalURL(),
 			$sender->getName()
 		)->inLanguage( $targetLang )->text();
 

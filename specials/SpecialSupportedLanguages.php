@@ -115,7 +115,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 				->params( $code, $native )->escaped();
 		}
 
-		$out->addHtml( Html::rawElement( 'h2', array( 'id' => $code ), $headerText ) );
+		$out->addHTML( Html::rawElement( 'h2', array( 'id' => $code ), $headerText ) );
 
 		// Add useful links for language stats and recent changes for the language.
 		$links = array();
@@ -162,7 +162,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$dbr = wfGetDB( DB_SLAVE );
 		$tables = array( 'recentchanges' );
 		$fields = array( 'substring_index(rc_title, \'/\', -1) as lang', 'count(*) as count' );
-		$timestamp = $dbr->timestamp( wfTimeStamp( TS_UNIX ) - 60 * 60 * 24 * $this->period );
+		$timestamp = $dbr->timestamp( wfTimestamp( TS_UNIX ) - 60 * 60 * 24 * $this->period );
 		$conds = array(
 			# Without the quotes the rc_timestamp index isn't used and this query is much slower
 			"rc_timestamp > '$timestamp'",
@@ -292,23 +292,23 @@ class SpecialSupportedLanguages extends SpecialPage {
 	protected function outputLanguageCloud( array $languages, array $names ) {
 		$out = $this->getOutput();
 
-		$out->addHtml( '<div class="tagcloud autonym">' );
+		$out->addHTML( '<div class="tagcloud autonym">' );
 		$langs = $this->shuffle_assoc( $languages );
 		foreach ( $languages as $k => $v ) {
 			$name = $names[$k];
 			$size = round( log( $v ) * 20 ) + 10;
 
 			$params = array(
-				'href' => $this->getPageTitle( $k )->getLocalUrl(),
+				'href' => $this->getPageTitle( $k )->getLocalURL(),
 				'class' => 'tag',
 				'style' => "font-size:$size%",
 				'lang' => $k,
 			);
 
 			$tag = Html::element( 'a', $params, $name );
-			$out->addHtml( $tag . "\n" );
+			$out->addHTML( $tag . "\n" );
 		}
-		$out->addHtml( '</div>' );
+		$out->addHTML( '</div>' );
 	}
 
 	protected function makeUserList( $users, $stats ) {
@@ -334,7 +334,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 				$styles['font-size'] = round( log( $count, 10 ) * 30 ) + 70 . '%';
 
-				$last = wfTimestamp( TS_UNIX ) - wfTimeStamp( TS_UNIX, $stats[$username][1] );
+				$last = wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $stats[$username][1] );
 				$last = round( $last / $day );
 				$attribs['title'] = $this->msg( 'supportedlanguages-activity', $username )
 					->numParams( $count, $last )->text();

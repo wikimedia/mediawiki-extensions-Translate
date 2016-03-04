@@ -411,7 +411,7 @@ class MessageGroupStats {
 						$infile[$key] = '1';
 					}
 				}
-				$collection->setInFile( $infile );
+				$collection->setInfile( $infile );
 			}
 		}
 

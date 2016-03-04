@@ -102,7 +102,7 @@ class AmdFFS extends SimpleFFS {
 				$value = str_replace( TRANSLATE_FUZZY, '', $value );
 			}
 
-			$key = $mangler->unmangle( $key );
+			$key = $mangler->unMangle( $key );
 			$messages[$key] = $value;
 		}
 

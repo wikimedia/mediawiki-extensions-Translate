@@ -76,7 +76,7 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		foreach ( $result as $doc ) {
 			// @todo FIXME Empty foreach statement.
 		}
-		$this->assertEquals( wfWikiId(), $doc->wiki );
+		$this->assertEquals( wfWikiID(), $doc->wiki );
 		$this->assertEquals( 'en', $doc->language );
 		$this->assertEquals( '1', $doc->content );
 		$this->assertEquals( array( 'ttmserver-test' ), $doc->group );

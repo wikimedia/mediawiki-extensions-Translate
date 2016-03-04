@@ -73,7 +73,7 @@ class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		 * @var TMessage $item
 		 */
 		foreach ( $collection as $item ) {
-			$key = $mangler->unmangle( $item->key() );
+			$key = $mangler->unMangle( $item->key() );
 			$key = stripcslashes( $key );
 
 			$value = $item->translation();

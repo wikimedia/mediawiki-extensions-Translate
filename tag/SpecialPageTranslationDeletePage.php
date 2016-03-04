@@ -78,7 +78,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		// Real stuff starts here
 		if ( TranslatablePage::isSourcePage( $this->title ) ) {
 			$title = $this->msg( 'pt-deletepage-full-title', $this->title->getPrefixedText() );
-			$out->setPagetitle( $title );
+			$out->setPageTitle( $title );
 
 			$this->code = '';
 			$this->page = TranslatablePage::newFromTitle( $this->title );
@@ -86,7 +86,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 			$page = TranslatablePage::isTranslationPage( $this->title );
 			if ( $page ) {
 				$title = $this->msg( 'pt-deletepage-lang-title', $this->title->getPrefixedText() );
-				$out->setPagetitle( $title );
+				$out->setPageTitle( $title );
 
 				list( , $this->code ) = TranslateUtils::figureMessage( $this->title->getText() );
 				$this->page = $page;

@@ -88,7 +88,7 @@ class IniFFS extends SimpleFFS {
 				$comment = "; Fuzzy\n";
 			}
 
-			$key = $mangler->unmangle( $key );
+			$key = $mangler->unMangle( $key );
 			$output .= "$comment$key = $value\n";
 		}
 

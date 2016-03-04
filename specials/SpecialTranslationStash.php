@@ -39,13 +39,13 @@ class SpecialTranslationStash extends SpecialPage {
 		if ( !$this->hasPermissionToUse() ) {
 			if ( $this->getUser()->isLoggedIn() && $wgTranslateSecondaryPermissionUrl ) {
 				$out->redirect(
-					Title::newFromText( $wgTranslateSecondaryPermissionUrl )->getLocalUrl()
+					Title::newFromText( $wgTranslateSecondaryPermissionUrl )->getLocalURL()
 				);
 
 				return;
 			}
 
-			$out->redirect( Title::newMainPage()->getLocalUrl() );
+			$out->redirect( Title::newMainPage()->getLocalURL() );
 
 			return;
 		}
@@ -102,7 +102,7 @@ class SpecialTranslationStash extends SpecialPage {
 				->numParams( $count )->parse();
 		}
 
-		$out->addHtml( <<<HTML
+		$out->addHTML( <<<HTML
 <div class="grid">
 	<div class="row translate-welcome-header">
 		<h1>

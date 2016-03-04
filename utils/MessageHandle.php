@@ -55,7 +55,7 @@ class MessageHandle {
 		if ( $this->key === null ) {
 			$title = $this->getTitle();
 			// Check if this is a valid message first
-			$this->key = $title->getDBKey();
+			$this->key = $title->getDBkey();
 			$known = MessageIndex::singleton()->getGroupIds( $this ) !== array();
 
 			$pos = strrpos( $this->key, '/' );

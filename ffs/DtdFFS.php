@@ -71,7 +71,7 @@ class DtdFFS extends SimpleFFS {
 		 * @var TMessage $m
 		 */
 		foreach ( $collection as $key => $m ) {
-			$key = $mangler->unmangle( $key );
+			$key = $mangler->unMangle( $key );
 			$trans = $m->translation();
 			$trans = str_replace( TRANSLATE_FUZZY, '', $trans );
 

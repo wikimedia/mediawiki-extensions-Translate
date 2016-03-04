@@ -102,7 +102,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		if ( $page->getMarkedTag() !== false ) {
 			$this->page = $page;
 
-			$this->getOutput()->setPagetitle( $this->msg( 'pt-movepage-title', $this->oldText ) );
+			$this->getOutput()->setPageTitle( $this->msg( 'pt-movepage-title', $this->oldText ) );
 
 			if ( !$user->isAllowed( 'pagetranslation' ) ) {
 				throw new PermissionsError( 'pagetranslation' );
@@ -407,7 +407,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		$user = $this->getUser();
 		$target = $this->newTitle;
 		$base = $this->oldTitle->getPrefixedText();
-		$oldLatest = $this->oldTitle->getLatestRevId();
+		$oldLatest = $this->oldTitle->getLatestRevID();
 
 		$params = array(
 			'base-source' => $this->oldTitle->getPrefixedText(),
@@ -457,10 +457,10 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		TranslateMoveJob::forceRedirects( true );
 
 		$newTpage = TranslatablePage::newFromTitle( $this->newTitle );
-		$newTpage->addReadyTag( $this->newTitle->getLatestRevId( Title::GAID_FOR_UPDATE ) );
+		$newTpage->addReadyTag( $this->newTitle->getLatestRevID( Title::GAID_FOR_UPDATE ) );
 
 		if ( $newTpage->getMarkedTag() === $oldLatest ) {
-			$newTpage->addMarkedTag( $this->newTitle->getLatestRevId( Title::GAID_FOR_UPDATE ) );
+			$newTpage->addMarkedTag( $this->newTitle->getLatestRevID( Title::GAID_FOR_UPDATE ) );
 		}
 
 		// remove the entries from metadata table.

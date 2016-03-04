@@ -577,7 +577,7 @@ class TranslationHelpers {
 	 * @return string
 	 */
 	public function dialogID() {
-		$hash = sha1( $this->handle->getTitle()->getPrefixedDbKey() );
+		$hash = sha1( $this->handle->getTitle()->getPrefixedDBkey() );
 
 		return substr( $hash, 0, 4 );
 	}

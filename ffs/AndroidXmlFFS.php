@@ -103,7 +103,7 @@ XML;
 		 * @var $m TMessage
 		 */
 		foreach ( $collection as $key => $m ) {
-			$key = $mangler->unmangle( $key );
+			$key = $mangler->unMangle( $key );
 
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );

@@ -125,7 +125,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 				$output .= "# Fuzzy\n";
 			}
 
-			$key = $mangler->unmangle( $key );
+			$key = $mangler->unMangle( $key );
 			$output .= self::writeRow( $key, $this->keySeparator, $value );
 		}
 

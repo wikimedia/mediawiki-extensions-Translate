@@ -287,7 +287,7 @@ class StatsTable {
 		$code = $this->lang->getCode();
 
 		$cache = wfGetCache( CACHE_ANYTHING );
-		$key = wfMemckey( "translate-groupdesc-$code-" . $group->getId() );
+		$key = wfMemcKey( "translate-groupdesc-$code-" . $group->getId() );
 		$desc = $cache->get( $key );
 
 		if ( is_string( $desc ) ) {

@@ -295,7 +295,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		return
 			'<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
-			$select->getHtmlAndPrepareJs() . '<br />' .
+			$select->getHtmlAndPrepareJS() . '<br />' .
 			Xml::input( $name, 20, $value, array( 'id' => $name ) ) .
 			'</td></tr>' . "\n";
 	}
@@ -341,7 +341,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		return
 			'<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
-			$select->getHtmlAndPrepareJs() . '<br />' .
+			$select->getHtmlAndPrepareJS() . '<br />' .
 			Xml::input( $name, 20, $value, array( 'id' => $name ) ) .
 			'</td></tr>' . "\n";
 	}
@@ -386,7 +386,7 @@ class SpecialTranslationStats extends SpecialPage {
 	protected function image( FormOptions $opts ) {
 		$title = $this->getPageTitle();
 		$cgiparams = wfArrayToCgi( array( 'graphit' => true ), $opts->getAllValues() );
-		$href = $title->getLocalUrl( $cgiparams );
+		$href = $title->getLocalURL( $cgiparams );
 
 		return Xml::element( 'img',
 			array(

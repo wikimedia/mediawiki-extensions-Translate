@@ -218,7 +218,7 @@ PHP;
 				continue;
 			}
 
-			$key = $mangler->unmangle( $key );
+			$key = $mangler->unMangle( $key );
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 			$fuzzy = $m->hasTag( 'fuzzy' ) ? ' # Fuzzy' : '';
 
