@@ -45,7 +45,7 @@ class MessageGroupStatesUpdaterJob extends Job {
 		$handle = new MessageHandle( $title );
 		$code = $handle->getCode();
 
-		if ( !$handle->isValid() && !$code ) {
+		if ( !$code && !$handle->isValid() ) {
 			return true;
 		}
 
