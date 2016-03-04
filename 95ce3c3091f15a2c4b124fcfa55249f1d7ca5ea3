@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e2f53b6_e5d3b003",
+        "filename": "specials/SpecialPagePreparation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T11:57:58Z",
+      "side": 1,
+      "message": "Just curious, why did you make the constructor in previous file public but not this one?",
+      "revId": "95ce3c3091f15a2c4b124fcfa55249f1d7ca5ea3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
