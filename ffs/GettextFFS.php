@@ -506,13 +506,13 @@ PHP;
 
 		if ( preg_match( '/{{PLURAL:GETTEXT/i', $msgid ) ) {
 			$forms = $this->splitPlural( $msgid, 2 );
-			$content .= 'msgid ' . $this->escape( $forms[0] ) . "\n";
-			$content .= 'msgid_plural ' . $this->escape( $forms[1] ) . "\n";
+			$content .= 'msgid ' . self::escape( $forms[0] ) . "\n";
+			$content .= 'msgid_plural ' . self::escape( $forms[1] ) . "\n";
 
 			try {
 				$forms = $this->splitPlural( $msgstr, $pluralCount );
 				foreach ( $forms as $index => $form ) {
-					$content .= "msgstr[$index] " . $this->escape( $form ) . "\n";
+					$content .= "msgstr[$index] " . self::escape( $form ) . "\n";
 				}
 			} catch ( GettextPluralException $e ) {
 				$flags[] = 'invalid-plural';
