@@ -293,7 +293,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$out = $this->getOutput();
 
 		$out->addHtml( '<div class="tagcloud autonym">' );
-		$langs = $this->shuffle_assoc( $languages );
+		$languages = $this->shuffle_assoc( $languages );
 		foreach ( $languages as $k => $v ) {
 			$name = $names[$k];
 			$size = round( log( $v ) * 20 ) + 10;
