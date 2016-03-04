@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e2f53b6_429ff2b9",
+        "filename": "scripts/create-language-models.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T07:26:01Z",
+      "side": 1,
+      "message": "Only keep the code inside in if-branch, see what I did to api code.",
+      "revId": "1b97c6439a782b4e09014ccd99f0ff9906291a2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_22a46e04",
+        "filename": "utils/TranslationEditPage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T07:26:01Z",
+      "side": 1,
+      "message": "Same as first comment.",
+      "revId": "1b97c6439a782b4e09014ccd99f0ff9906291a2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
