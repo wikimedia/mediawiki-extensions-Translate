@@ -62,7 +62,7 @@ class StatsTable {
 		}
 
 		if ( $bgcolor ) {
-			$attributes['style'] = "background-color: #" . $bgcolor;
+			$attributes['style'] = 'background-color: #' . $bgcolor;
 			$attributes['class'] = 'hover-color';
 		}
 
@@ -147,7 +147,7 @@ class StatsTable {
 		// Create table header
 		$out = Html::openElement(
 			'table',
-			array( 'class' => "statstable wikitable mw-sp-translate-table" )
+			array( 'class' => 'statstable wikitable mw-sp-translate-table' )
 		);
 
 		$out .= "\n\t" . Html::openElement( 'thead' );

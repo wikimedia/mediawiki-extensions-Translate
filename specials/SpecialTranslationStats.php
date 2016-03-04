@@ -124,8 +124,8 @@ class SpecialTranslationStats extends SpecialPage {
 		} elseif ( $opts['graphit'] ) {
 
 			if ( !class_exists( 'PHPlot' ) ) {
-				header( "HTTP/1.0 500 Multi fail" );
-				echo "PHPlot not found";
+				header( 'HTTP/1.0 500 Multi fail' );
+				echo 'PHPlot not found';
 			}
 
 			if ( !$this->getRequest()->getBool( 'debug' ) ) {
@@ -532,14 +532,14 @@ class SpecialTranslationStats extends SpecialPage {
 		} elseif ( $scale === 'weeks' ) {
 			/* Here we assume that week starts on monday, which does not
 			* always hold true. Go Xwards day by day until we are on monday */
-			while ( date( 'D', $cutoff ) !== "Mon" ) {
+			while ( date( 'D', $cutoff ) !== 'Mon' ) {
 				$cutoff += $dir * 86400;
 			}
 			// Round to nearest day
 			$cutoff -= ( $cutoff % 86400 );
 		} elseif ( $scale === 'months' ) {
 			// Go Xwards/ day by day until we are on the first day of the month
-			while ( date( 'j', $cutoff ) !== "1" ) {
+			while ( date( 'j', $cutoff ) !== '1' ) {
 				$cutoff += $dir * 86400;
 			}
 			// Round to nearest day

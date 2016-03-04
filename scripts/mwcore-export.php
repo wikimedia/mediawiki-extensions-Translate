@@ -114,9 +114,9 @@ class MwCoreExport extends Maintenance {
 				file_put_contents( $outFile, $data );
 			} else {
 				$this->error( "Adding new entry to $outFile, please double check location." );
-				$pos = strpos( $data, "*/" );
+				$pos = strpos( $data, '*/' );
 				if ( $pos === false ) {
-					$this->error( ". FAILED! Totally new file? No header?" );
+					$this->error( '. FAILED! Totally new file? No header?' );
 				} else {
 					$pos += 3;
 				}

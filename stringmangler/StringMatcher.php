@@ -118,7 +118,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		} elseif ( $data === null ) {
 			return $data;
 		} else {
-			throw new MWException( __METHOD__ . ": Unsupported datatype" );
+			throw new MWException( __METHOD__ . ': Unsupported datatype' );
 		}
 	}
 
@@ -130,7 +130,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		} elseif ( $data === null ) {
 			return $data;
 		} else {
-			throw new MWException( __METHOD__ . ": Unsupported datatype" );
+			throw new MWException( __METHOD__ . ': Unsupported datatype' );
 		}
 	}
 
@@ -169,7 +169,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	protected function unMangleString( $string ) {
 		// Unescape the "quoted-printable"-like escaping,
 		// which is applied in mangleString.
-		$unescapedString = preg_replace_callback( "/=([A-F0-9]{2})/",
+		$unescapedString = preg_replace_callback( '/=([A-F0-9]{2})/',
 			function ( $match ) {
 				return chr( hexdec( $match[0] ) );
 			},

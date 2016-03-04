@@ -444,7 +444,7 @@ class SpecialTranslate extends SpecialPage {
 		$nonEssential = Html::rawElement(
 			'span',
 			array( 'class' => 'mw-sp-translate-nonessential' ),
-			implode( "", $options )
+			implode( '', $options )
 		);
 
 		$button = Xml::submitButton( $this->msg( 'translate-submit' )->text() );

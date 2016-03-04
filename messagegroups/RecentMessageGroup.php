@@ -87,7 +87,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 
 	public function getDefinitions() {
 		if ( !$this->language ) {
-			throw new MWException( "Language not set" );
+				throw new MWException( 'Language not set' );
 		}
 
 		$db = wfGetDB( DB_SLAVE );

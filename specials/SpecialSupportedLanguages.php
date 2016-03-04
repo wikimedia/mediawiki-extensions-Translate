@@ -135,13 +135,13 @@ class SpecialSupportedLanguages extends SpecialPage {
 			array(),
 			array(
 				'translations' => 'only',
-				'trailer' => "/" . $code
+				'trailer' => '/' . $code
 			),
 			array( 'known', 'noclasses' )
 		);
 		$linkList = $lang->listToText( $links );
 
-		$out->addHTML( "<p>" . $linkList . "</p>\n" );
+		$out->addHTML( '<p>' . $linkList . "</p>\n" );
 		$this->makeUserList( $users, $userStats );
 	}
 

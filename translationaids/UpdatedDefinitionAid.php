@@ -28,7 +28,7 @@ class UpdatedDefinitionAid extends TranslationAid {
 
 		$translationRevision = $db->selectField( 'revtag', 'rt_value', $conds, __METHOD__, $options );
 		if ( $translationRevision === false ) {
-			throw new TranslationHelperException( "No definition revision recorded" );
+			throw new TranslationHelperException( 'No definition revision recorded' );
 		}
 
 		$definitionTitle = Title::makeTitleSafe(
@@ -37,20 +37,20 @@ class UpdatedDefinitionAid extends TranslationAid {
 		);
 
 		if ( !$definitionTitle || !$definitionTitle->exists() ) {
-			throw new TranslationHelperException( "Definition page doesn't exist" );
+			throw new TranslationHelperException( 'Definition page does not exist' );
 		}
 
 		// Using newFromId instead of newFromTitle, because the page might have been renamed
 		$oldrev = Revision::newFromId( $translationRevision );
 		if ( !$oldrev ) {
-			throw new TranslationHelperException( "Old definition version doesn't exist anymore" );
+			throw new TranslationHelperException( 'Old definition version does not exist anymore' );
 		}
 
 		$oldContent = $oldrev->getContent();
 		$newContent = $this->getDefinitionContent();
 
 		if ( !$oldContent ) {
-			throw new TranslationHelperException( "Old definition version doesn't exist anymore" );
+			throw new TranslationHelperException( 'Old definition version does not exist anymore' );
 		}
 
 		if ( !$oldContent instanceof WikitextContent || !$newContent instanceof WikitextContent ) {

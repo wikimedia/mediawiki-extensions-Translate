@@ -141,7 +141,7 @@ class CommandlineExport extends Maintenance {
 		}
 
 		if ( !count( $groups ) ) {
-			$this->error( "EE1: No valid message groups identified.", 1 );
+			$this->error( 'EE1: No valid message groups identified.', 1 );
 		}
 
 		$changeFilter = false;
@@ -279,8 +279,8 @@ class CommandlineExport extends Maintenance {
 				if ( $definitionFile ) {
 					if ( is_file( $definitionFile ) ) {
 						$targetFileName = $ffs->getWritePath() .
-							"/" . $group->getTargetFilename( $collection->code );
-						$cmd = "msgmerge --quiet " . $noLocation . "--output-file=" .
+							'/' . $group->getTargetFilename( $collection->code );
+						$cmd = 'msgmerge --quiet ' . $noLocation . '--output-file=' .
 							$targetFileName . ' ' . $targetFileName . ' ' . $definitionFile;
 						wfShellExec( $cmd, $ret );
 

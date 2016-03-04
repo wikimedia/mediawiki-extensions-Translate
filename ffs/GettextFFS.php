@@ -317,7 +317,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			$snippet = $item['id'];
 			$snippet = preg_replace( "/[^$wgLegalTitleChars]/", ' ', $snippet );
 			$snippet = preg_replace( "/[:&%\/_]/", ' ', $snippet );
-			$snippet = preg_replace( "/ {2,}/", ' ', $snippet );
+			$snippet = preg_replace( '/ {2,}/', ' ', $snippet );
 			$snippet = $lang->truncate( $snippet, 30, '' );
 			$snippet = str_replace( ' ', '_', trim( $snippet ) );
 		}
@@ -527,7 +527,7 @@ PHP;
 
 		if ( $flags ) {
 			sort( $flags );
-			$header .= "#, " . implode( ', ', array_unique( $flags ) ) . "\n";
+			$header .=  '#,  ' . implode( ', ', array_unique( $flags ) ) . "\n";
 		}
 
 		$output = $header ? $header : "#\n";
@@ -567,7 +567,7 @@ PHP;
 
 	protected function getGenerator() {
 		return 'MediaWiki ' . SpecialVersion::getVersion() .
-			"; Translate " . TRANSLATE_VERSION;
+			'; Translate ' . TRANSLATE_VERSION;
 	}
 
 	protected function formatDocumentation( $key ) {

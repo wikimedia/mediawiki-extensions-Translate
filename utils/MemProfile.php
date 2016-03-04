@@ -31,7 +31,7 @@ function wfMemIn( $a ) {
 	$memF = $wgLang->formatNum( $mem );
 	$memRF = $wgLang->formatNum( $memR );
 
-	$pad = str_repeat( ".", $wgMemStack );
+	$pad = str_repeat( '.', $wgMemStack );
 	wfDebug( "$pad$a-IN: \t$memF\t\t$memRF\n" );
 	$wgMemStack++;
 }
@@ -57,7 +57,7 @@ function wfMemOut( $a ) {
 	$memDF = $wgLang->formatNum( $memD );
 	$memRDF = $wgLang->formatNum( $memRD );
 
-	$pad = str_repeat( ".", $wgMemStack - 1 );
+	$pad = str_repeat( '.', $wgMemStack - 1 );
 	wfDebug( "$pad$a-OUT:\t$memF ($memDF)\t$memRF ($memRDF)\n" );
 	$wgMemStack--;
 }

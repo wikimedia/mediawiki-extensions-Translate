@@ -86,7 +86,7 @@ class JsSelectToInput {
 			}
 
 			if ( !$this->sourceId ) {
-				throw new MWException( "ID needs to be specified for the selector" );
+				throw new MWException( 'ID needs to be specified for the selector' );
 			}
 		}
 

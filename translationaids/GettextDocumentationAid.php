@@ -21,12 +21,12 @@ class GettextDocumentationAid extends TranslationAid {
 		// So $group can be different from $this->group
 		$group = $this->handle->getGroup();
 		if ( !$group instanceof FileBasedMessageGroup ) {
-			throw new TranslationHelperException( "Not a Gettext group" );
+			throw new TranslationHelperException( 'Not a Gettext group' );
 		}
 
 		$ffs = $group->getFFS();
 		if ( !$ffs instanceof GettextFFS ) {
-			throw new TranslationHelperException( "Not a Gettext group" );
+			throw new TranslationHelperException( 'Not a Gettext group' );
 		}
 
 		global $wgContLang;

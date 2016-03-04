@@ -85,13 +85,13 @@ class SyncGroup extends Maintenance {
 		$groups = MessageGroups::getGroupsById( $groupIds );
 
 		if ( !count( $groups ) ) {
-			$this->error( "ESG2: No valid message groups identified.", 1 );
+			$this->error( 'ESG2: No valid message groups identified.', 1 );
 		}
 
 		$start = $this->getOption( 'start' ) ? strtotime( $this->getOption( 'start' ) ) : false;
 		$end = $this->getOption( 'end' ) ? strtotime( $this->getOption( 'end' ) ) : false;
 
-		$this->output( "Conflict times: " . wfTimestamp( TS_ISO_8601, $start ) . " - " .
+		$this->output( 'Conflict times: ' . wfTimestamp( TS_ISO_8601, $start ) . ' - ' .
 			wfTimestamp( TS_ISO_8601, $end ) . "\n" );
 
 		$codes = array_filter( array_map( 'trim', explode( ',', $this->getOption( 'lang' ) ) ) );
@@ -115,7 +115,7 @@ class SyncGroup extends Maintenance {
 			foreach ( $codes as $code ) {
 				// No sync possible for unsupported language codes.
 				if ( !in_array( $code, $supportedCodes ) ) {
-					$this->output( "Unsupported code " . $code . ": skipping.\n" );
+					$this->output( 'Unsupported code ' . $code . ": skipping.\n" );
 					continue;
 				}
 
@@ -319,7 +319,7 @@ class ChangeSyncer {
 				continue;
 			}
 
-			$this->reportProgress( "Conflict in " . $this->color( 'bold', $page ) . "!", $page );
+			$this->reportProgress( 'Conflict in ' . $this->color( 'bold', $page ) . '!', $page );
 
 			$iso = 'xnY-xnm-xnd"T"xnH:xni:xns';
 			$lang = RequestContext::getMain()->getLanguage();
@@ -350,10 +350,10 @@ class ChangeSyncer {
 
 			if ( $changeTs ) {
 				if ( $wikiTs > $startTs && $changeTs <= $endTs ) {
-					$this->reportProgress( " →Changed in wiki after export: IGNORE", $page );
+					$this->reportProgress( ' →Changed in wiki after export: IGNORE', $page );
 					continue;
 				} elseif ( !$wikiTs || ( $changeTs > $endTs && $wikiTs < $startTs ) ) {
-					$this->reportProgress( " →Changed in source after export: IMPORT", $page );
+					$this->reportProgress( ' →Changed in source after export: IMPORT', $page );
 					$this->import(
 						$title,
 						$translation,
@@ -367,14 +367,14 @@ class ChangeSyncer {
 				continue;
 			}
 
-			$this->reportProgress( " →Needs manual resolution", $page );
+			$this->reportProgress( ' →Needs manual resolution', $page );
 			$this->reportProgress( "Source translation at $changeDate:", 'source' );
 			$this->reportProgress( $this->color( 'blue', $translation ), 'source' );
 			$this->reportProgress( "Wiki translation at $wikiDate:", 'translation' );
 			$this->reportProgress( $this->color( 'green', $current ), 'translation' );
 
 			do {
-				$this->reportProgress( "Resolution: [S]kip [I]mport [C]onflict: ", 'foo' );
+				$this->reportProgress( 'Resolution: [S]kip [I]mport [C]onflict: ', 'foo' );
 				// @todo Find an elegant way to use Maintenance::readconsole().
 				$action = fgets( STDIN );
 				$action = strtoupper( trim( $action ) );

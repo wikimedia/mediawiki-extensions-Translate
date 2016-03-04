@@ -106,7 +106,7 @@ class SpecialManageGroups extends SpecialPage {
 			$this->msg( 'translate-smg-right' )->escaped()
 		);
 
-		return Html::rawElement( 'div', array( 'class' => "mw-translate-smg-header" ), $text );
+		return Html::rawElement( 'div', array( 'class' => 'mw-translate-smg-header' ), $text );
 	}
 
 	protected function showChanges( $allowed, $limit ) {

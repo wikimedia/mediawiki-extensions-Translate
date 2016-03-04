@@ -137,7 +137,7 @@ TXT;
 		$this->output( "Combining languages\n" );
 
 		$huge = array();
-		foreach ( glob( "temp-*.json" ) as $file ) {
+		foreach ( glob( 'temp-*.json' ) as $file ) {
 			$contents = file_get_contents( $file );
 			$json = FormatJson::decode( $contents, true );
 
@@ -220,7 +220,7 @@ TXT;
 				$snippets[] = $text;
 			}
 
-			$text = implode( "   ", $snippets );
+			$text = implode( '   ', $snippets );
 			$cache->set( $key, $text, 3600*24 );
 
 			$delta = microtime( true ) - $time;

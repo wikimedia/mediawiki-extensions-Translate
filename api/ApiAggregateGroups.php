@@ -121,7 +121,7 @@ class ApiAggregateGroups extends ApiBase {
 			if ( $idExists ) {
 				$i = 1;
 				while ( $idExists ) {
-					$tempId = $aggregateGroupId . "-" . $i;
+					$tempId = $aggregateGroupId . '-' . $i;
 					$idExists = MessageGroups::getGroup( $tempId );
 					$i++;
 				}
@@ -171,7 +171,7 @@ class ApiAggregateGroups extends ApiBase {
 		MessageIndexRebuildJob::newJob()->insert();
 	}
 
-	protected function generateAggregateGroupId( $aggregateGroupName, $prefix = "agg-" ) {
+	protected function generateAggregateGroupId( $aggregateGroupName, $prefix = 'agg-' ) {
 		// The database field has maximum limit of 200 bytes
 		if ( strlen( $aggregateGroupName ) + strlen( $prefix ) >= 200 ) {
 			return $prefix . substr( sha1( $aggregateGroupName ), 0, 5 );

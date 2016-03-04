@@ -230,7 +230,7 @@ class SolrTTMServer
 		try {
 			$this->client->update( $update );
 		} catch ( Solarium_Exception $e ) {
-			error_log( "SolrTTMServer update-write failed" );
+			error_log( 'SolrTTMServer update-write failed' );
 
 			return false;
 		}

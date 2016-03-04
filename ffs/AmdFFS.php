@@ -167,7 +167,7 @@ EOT;
 			return '';
 		}
 
-		$prefix = " *  - ";
+		$prefix = ' *  - ';
 		$authorList = implode( "\n$prefix", $authors );
 		return " * Translators:\n$prefix$authorList";
 	}
