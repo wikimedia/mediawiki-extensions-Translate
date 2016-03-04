@@ -43,7 +43,7 @@ class TranslateMoveJob extends Job {
 	 * @param array $params
 	 * @param int $id
 	 */
-	function __construct( $title, $params = array(), $id = 0 ) {
+	public function __construct( $title, $params = array(), $id = 0 ) {
 		parent::__construct( __CLASS__, $title, $params, $id );
 	}
 
