@@ -229,7 +229,6 @@ GROOVY;
 		 * These only apply to known messages.
 		 */
 
-		$title = $handle->getTitle();
 		$sourceLanguage = $handle->getGroup()->getSourceLanguage();
 
 		// Do not delete definitions, because the translations are attached to that

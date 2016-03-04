@@ -67,8 +67,6 @@ class YandexWebService extends TranslationWebService {
 			throw new TranslationWebServiceException( 'Source text too long' );
 		}
 
-		$service = $this->service;
-
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
 

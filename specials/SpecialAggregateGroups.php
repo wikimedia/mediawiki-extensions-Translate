@@ -211,8 +211,6 @@ class SpecialAggregateGroups extends SpecialPage {
 	 * @return string
 	 */
 	protected function listSubgroups( AggregateMessageGroup $parent ) {
-		$out = '';
-
 		$id = $this->htmlIdForGroup( $parent, 'mw-tpa-grouplist-' );
 		$out = Html::openElement( 'ol', array( 'id' => $id ) );
 
