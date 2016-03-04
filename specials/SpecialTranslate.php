@@ -25,7 +25,7 @@ class SpecialTranslate extends SpecialPage {
 	protected $nondefaults = array();
 	protected $options = null;
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'Translate' );
 	}
 
@@ -822,7 +822,7 @@ class SpecialTranslate extends SpecialPage {
 	 * Hook: SkinTemplateNavigation::SpecialPage
 	 * @since 2012-02-10
 	 */
-	static function tabify( Skin $skin, array &$tabs ) {
+	public static function tabify( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
 		list( $alias, $sub ) = SpecialPageFactory::resolveAlias( $title->getText() );
 

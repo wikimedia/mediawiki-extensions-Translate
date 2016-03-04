@@ -33,7 +33,7 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 	 * @param $value
 	 * @return array
 	 */
-	function tidy( $value ) {
+	protected function tidy( $value ) {
 		$value = array_map( 'trim', explode( ',', $value ) );
 		$value = array_unique( array_filter( $value ) );
 

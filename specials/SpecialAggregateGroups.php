@@ -13,7 +13,7 @@
 class SpecialAggregateGroups extends SpecialPage {
 	protected $hasPermission = false;
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'AggregateGroups', 'translate-manage' );
 	}
 

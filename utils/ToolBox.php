@@ -22,7 +22,7 @@ class TranslateToolbox {
 	 *
 	 * @return bool
 	 */
-	static function toolboxAllTranslations( &$quickTemplate ) {
+	public static function toolboxAllTranslations( &$quickTemplate ) {
 		$title = $quickTemplate->getSkin()->getTitle();
 		$handle = new MessageHandle( $title );
 		if ( $handle->isValid() ) {

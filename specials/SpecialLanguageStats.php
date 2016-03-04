@@ -106,7 +106,7 @@ class SpecialLanguageStats extends SpecialPage {
 		return 'wiki';
 	}
 
-	function execute( $par ) {
+	public function execute( $par ) {
 		$request = $this->getRequest();
 
 		$this->purge = $request->getVal( 'action' ) === 'purge';
@@ -294,7 +294,7 @@ class SpecialLanguageStats extends SpecialPage {
 	/**
 	 * If workflow states are configured, adds a workflow states column
 	 */
-	function addWorkflowStatesColumn() {
+	protected function addWorkflowStatesColumn() {
 		global $wgTranslateWorkflowStates;
 
 		if ( $wgTranslateWorkflowStates ) {
@@ -365,7 +365,7 @@ class SpecialLanguageStats extends SpecialPage {
 	 * Returns the table itself.
 	 * @return \string HTML
 	 */
-	function getTable() {
+	protected function getTable() {
 		$table = $this->table;
 
 		$this->addWorkflowStatesColumn();

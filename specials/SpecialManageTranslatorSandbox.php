@@ -17,7 +17,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 	/** @var TranslationStashStorage */
 	protected $stash;
 
-	function __construct() {
+	public function __construct() {
 		global $wgTranslateUseSandbox;
 		parent::__construct(
 			'ManageTranslatorSandbox',

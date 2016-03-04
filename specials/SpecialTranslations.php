@@ -15,7 +15,7 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslations extends SpecialAllpages {
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'Translations' );
 	}
 
@@ -32,7 +32,7 @@ class SpecialTranslations extends SpecialAllpages {
 	 * @param string $par Message key. Becomes "MediaWiki:Allmessages" when called like
 	 *             Special:Translations/MediaWiki:Allmessages (default null)
 	 */
-	function execute( $par ) {
+	public function execute( $par ) {
 		$this->setHeaders();
 		$this->outputHeader();
 		$this->includeAssets();
@@ -85,7 +85,7 @@ class SpecialTranslations extends SpecialAllpages {
 	 * @param Title $title (default: null)
 	 * @return string HTML for fieldset.
 	 */
-	function namespaceMessageForm( Title $title = null ) {
+	protected function namespaceMessageForm( Title $title = null ) {
 		global $wgScript;
 
 		$namespaces = new XmlSelect( 'namespace', 'namespace' );
@@ -152,7 +152,7 @@ class SpecialTranslations extends SpecialAllpages {
 	 *
 	 * @param Title $title (default: null)
 	 */
-	function showTranslations( Title $title ) {
+	protected function showTranslations( Title $title ) {
 		$handle = new MessageHandle( $title );
 		$namespace = $title->getNamespace();
 		$message = $handle->getKey();

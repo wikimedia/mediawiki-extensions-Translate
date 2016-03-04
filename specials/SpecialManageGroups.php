@@ -331,7 +331,7 @@ class SpecialManageGroups extends SpecialPage {
 	 * Hook: SkinTemplateNavigation::SpecialPage
 	 * @since 2012-05-14
 	 */
-	static function tabify( Skin $skin, array &$tabs ) {
+	public static function tabify( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
 		list( $alias, ) = SpecialPageFactory::resolveAlias( $title->getText() );
 
