@@ -34,12 +34,13 @@ class PopulateFuzzy extends Maintenance {
 		global $wgTranslateMessageNamespaces;
 
 		$namespace = $this->getOption( 'namespace', $wgTranslateMessageNamespaces );
-		if ( is_string( $namespace ) ) {
-			if ( !MWNamespace::exists( $namespace ) ) {
-				$namespace = MWNamespace::getCanonicalIndex( $namespace );
-				if ( $namespace === null ) {
-					$this->error( 'Bad namespace', true );
-				}
+		if ( is_string( $namespace ) &&
+			!MWNamespace::exists( $namespace )
+		) {
+			$namespace = MWNamespace::getCanonicalIndex( $namespace );
+
+			if ( $namespace === null ) {
+				$this->error( 'Bad namespace', true );
 			}
 		}
 

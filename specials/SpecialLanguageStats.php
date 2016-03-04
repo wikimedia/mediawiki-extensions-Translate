@@ -468,11 +468,11 @@ class SpecialLanguageStats extends SpecialPage {
 		}
 
 		// Calculation of summary row values
-		if ( !$group instanceof AggregateMessageGroup ) {
-			if ( !isset( $this->statsCounted[$groupId] ) ) {
-				$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
-				$this->statsCounted[$groupId] = true;
-			}
+		if ( !$group instanceof AggregateMessageGroup &&
+			!isset( $this->statsCounted[$groupId] )
+		) {
+			$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
+			$this->statsCounted[$groupId] = true;
 		}
 
 		$state = $this->getWorkflowStateValue( $groupId );

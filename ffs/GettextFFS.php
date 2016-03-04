@@ -127,10 +127,10 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		/* At this stage we are only interested how many plurals forms we should
 		 * be expecting when parsing the rest of this file. */
 		$pluralCount = false;
-		if ( isset( $headers['Plural-Forms'] ) ) {
-			if ( preg_match( '/nplurals=([0-9]+).*;/', $headers['Plural-Forms'], $matches ) ) {
-				$pluralCount = $metadata['plural'] = $matches[1];
-			}
+		if ( isset( $headers['Plural-Forms'] ) &&
+			preg_match( '/nplurals=([0-9]+).*;/', $headers['Plural-Forms'], $matches )
+		) {
+			$pluralCount = $metadata['plural'] = $matches[1];
 		}
 
 		// Then parse the messages

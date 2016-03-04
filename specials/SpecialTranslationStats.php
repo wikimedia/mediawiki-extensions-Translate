@@ -582,10 +582,10 @@ class SpecialTranslationStats extends SpecialPage {
 		$data = array();
 
 		foreach ( $resData as $date => $edits ) {
-			if ( $skip > 0 ) {
-				if ( ( $count - $i ) % $skip !== 0 ) {
+			if ( $skip > 0 &&
+				( $count - $i ) % $skip !== 0
+			) {
 					$date = '';
-				}
 			}
 
 			if ( strpos( $date, ';' ) !== false ) {
