@@ -32,6 +32,8 @@ class SpecialImportTranslations extends SpecialPage {
 
 	/**
 	 * Special page entry point.
+	 * @param null|string $parameters
+	 * @throws PermissionsError
 	 */
 	public function execute( $parameters ) {
 		$this->setHeaders();

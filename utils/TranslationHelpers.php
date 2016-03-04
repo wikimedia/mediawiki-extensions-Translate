@@ -206,7 +206,12 @@ class TranslationHelpers {
 
 	/**
 	 * Public since 2012-06-26
+	 *
 	 * @since 2012-01-04
+	 * @param string $type
+	 * @param callback $cb
+	 * @param array $params
+	 * @return mixed
 	 */
 	public function callBox( $type, $cb, $params = array() ) {
 		try {

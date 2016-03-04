@@ -36,6 +36,10 @@ class ApiTranslateUser extends ApiBase {
 
 	/**
 	 * Keeps track of recently used message groups per user.
+	 *
+	 * @param MessageGroup $group
+	 * @param User $user
+	 * @return bool
 	 */
 	public static function trackGroup( MessageGroup $group, User $user ) {
 		if ( $user->isAnon() ) {

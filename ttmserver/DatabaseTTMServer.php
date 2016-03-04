@@ -110,6 +110,10 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 	/**
 	 * Tokenizes the text for fulltext search.
 	 * Tries to find the most useful tokens.
+	 *
+	 * @param string $language Langage code
+	 * @param mixed $input
+	 * @return array
 	 */
 	protected function filterForFulltext( $language, $input ) {
 		$lang = Language::factory( $language );
