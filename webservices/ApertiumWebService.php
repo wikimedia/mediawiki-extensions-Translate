@@ -24,9 +24,7 @@ class ApertiumWebService extends TranslationWebService {
 
 	protected function doPairs() {
 		$pairs = array();
-		// BC for MW <= 1.24
-		$json = Http::request(
-			'GET',
+		$json = Http::get(
 			$this->config['pairs'],
 			array( 'timeout' => $this->config['timeout'] )
 		);
