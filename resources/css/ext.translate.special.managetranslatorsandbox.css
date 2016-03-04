@@ -98,7 +98,7 @@
 	height: 30px;
 	line-height: 30px;
 	font-size: 16px;
-	text-wrap: nowrap;
+	white-space: nowrap;
 }
 
 .request .email,
@@ -107,14 +107,14 @@
 	line-height: 20px;
 	font-size: 12px;
 	color: #6c6d70;
-	text-wrap: nowrap;
+	white-space: nowrap;
 }
 
 .request .tsb-header,
 .request .username,
 .request .email {
 	padding-left: 10px;
-	overflow: ellipsis;
+	text-overflow: ellipsis;
 }
 
 .request .signup-age {
