@@ -114,6 +114,9 @@ class XliffFFS extends SimpleFFS {
 
 	/**
 	 * Gets the html inside en element without the element itself.
+	 *
+	 * @param DomElement $node
+	 * @return string
 	 */
 	public static function getInnerXml( DomElement $node ) {
 		$text = '';

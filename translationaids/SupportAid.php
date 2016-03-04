@@ -26,6 +26,8 @@ class SupportAid extends TranslationAid {
 	 *
 	 * @param $title Title Title object for the translation message.
 	 * @since 2015.09
+	 * @return string
+	 * @throws TranslationHelperException
 	 */
 	public static function getSupportUrl( Title $title ) {
 		global $wgTranslateSupportUrl, $wgTranslateSupportUrlNamespace;

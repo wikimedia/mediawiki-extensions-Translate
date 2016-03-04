@@ -147,7 +147,10 @@ class AppleFFS extends SimpleFFS {
 	}
 
 	/**
-	 * Quote and escape Obj-C-style strings for .strings format
+	 * Quote and escape Obj-C-style strings for .strings format.
+	 *
+	 * @param string $str
+	 * @return string
 	 */
 	protected static function quoteString( $str ) {
 		return '"' . self::escapeString( $str ) . '"';

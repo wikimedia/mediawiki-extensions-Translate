@@ -240,6 +240,10 @@ class SolrTTMServer
 
 	/**
 	 * @see schema.xml
+	 * @param MessageHandle $handle
+	 * @param string $text
+	 * @param int $revId
+	 * @return Solarium_Document_ReadWrite
 	 */
 	protected function createDocument( MessageHandle $handle, $text, $revId ) {
 		$language = $handle->getCode();

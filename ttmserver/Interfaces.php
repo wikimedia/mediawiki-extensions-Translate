@@ -77,11 +77,15 @@ interface WritableTTMServer {
 
 	/**
 	 * Called multiple times per batch if necessary.
+	 *
+	 * @param array $batch
 	 */
 	public function batchInsertDefinitions( array $batch );
 
 	/**
 	 * Called multiple times per batch if necessary.
+	 *
+	 * @param array $batch
 	 */
 	public function batchInsertTranslations( array $batch );
 
@@ -118,11 +122,13 @@ interface SearchableTTMServer {
 	public function getFacets( $resultset );
 
 	/**
+	 * @param $resultset
 	 * @return int
 	 */
 	public function getTotalHits( $resultset );
 
 	/**
+	 * @param $resultset
 	 * @return array[]
 	 */
 	public function getDocuments( $resultset );

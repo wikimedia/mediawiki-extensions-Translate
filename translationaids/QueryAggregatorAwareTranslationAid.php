@@ -62,6 +62,7 @@ abstract class QueryAggregatorAwareTranslationAid
 
 	/**
 	 * Returns all web services of given type.
+	 * @param string $type
 	 * @return TranslationWebService[]
 	 */
 	protected function getWebServices( $type ) {

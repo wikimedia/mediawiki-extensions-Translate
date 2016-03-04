@@ -33,7 +33,7 @@ class MessageChangeStorage {
 	/**
 	 * Validate a name.
 	 *
-	 * @param string $file Which file to use.
+	 * @param string $name Which file to use.
 	 * @return bool
 	 */
 	public static function isValidCdbName( $name ) {
@@ -43,7 +43,7 @@ class MessageChangeStorage {
 	/**
 	 * Get a full path to file in a known location.
 	 *
-	 * @param string $file Which file to use.
+	 * @param string $name Which file to use.
 	 * @return string
 	 */
 	public static function getCdbPath( $name ) {

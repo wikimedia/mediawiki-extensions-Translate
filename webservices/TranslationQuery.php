@@ -28,6 +28,9 @@ class TranslationQuery {
 
 	/**
 	 * Make this a POST request with given data.
+	 *
+	 * @param string $data
+	 * @return $this
 	 */
 	public function postWithData( $data ) {
 		$this->method = 'POST';

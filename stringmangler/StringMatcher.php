@@ -23,6 +23,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 
 	/**
 	 * Alias for making NO-OP string mangler.
+	 *
 	 * @return StringMatcher
 	 */
 	public static function EmptyMatcher() {
@@ -31,6 +32,9 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 
 	/**
 	 * Constructor, see EmptyMatcher();
+	 *
+	 * @param string $prefix
+	 * @param array $patterns
 	 */
 	public function __construct( $prefix = '', $patterns = array() ) {
 		$this->sPrefix = $prefix;

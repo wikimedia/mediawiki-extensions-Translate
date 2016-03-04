@@ -38,7 +38,9 @@ abstract class MessageIndex {
 
 	/**
 	 * Override the global instance, for testing.
+	 *
 	 * @since 2015.04
+	 * @param MessageIndex $instance
 	 */
 	public static function setInstance( self $instance ) {
 		self::$instance = $instance;
@@ -345,7 +347,10 @@ class SerializedMessageIndex extends MessageIndex {
 
 	protected $filename = 'translate_messageindex.ser';
 
-	/** @return array */
+	/**
+	 * @param bool $forRebuild
+	 * @return array
+	 */
 	public function retrieve( $forRebuild = false ) {
 		if ( $this->index !== null ) {
 			return $this->index;
@@ -408,7 +413,10 @@ class DatabaseMessageIndex extends MessageIndex {
 		return $db->unlock( 'translate-messageindex', __METHOD__ );
 	}
 
-	/** @return array */
+	/**
+	 * @param bool $forRebuild
+	 * @return array
+	 */
 	public function retrieve( $forRebuild = false ) {
 		if ( $this->index !== null && !$forRebuild ) {
 			return $this->index;
@@ -496,7 +504,10 @@ class CachedMessageIndex extends MessageIndex {
 		$this->cache = wfGetCache( CACHE_ANYTHING );
 	}
 
-	/** @return array */
+	/**
+	 * @param bool $forRebuild
+	 * @return array
+	 */
 	public function retrieve( $forRebuild = false ) {
 		if ( $this->index !== null ) {
 			return $this->index;
@@ -550,7 +561,10 @@ class CDBMessageIndex extends MessageIndex {
 	 */
 	protected $filename = 'translate_messageindex.cdb';
 
-	/** @return array */
+	/**
+	 * @param bool $forRebuild
+	 * @return array
+	 */
 	public function retrieve( $forRebuild = false ) {
 		$reader = $this->getReader();
 		// This must be below the line above, which may fill the index
@@ -635,7 +649,10 @@ class HashMessageIndex extends MessageIndex {
 	 */
 	protected $index = array();
 
-	/** @return array */
+	/**
+	 * @param bool $forRebuild
+	 * @return array
+	 */
 	public function retrieve( $forRebuild = false ) {
 		return $this->index;
 	}
