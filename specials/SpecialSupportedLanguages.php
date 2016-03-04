@@ -293,7 +293,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$out = $this->getOutput();
 
 		$out->addHtml( '<div class="tagcloud autonym">' );
-		$languages = $this->shuffle_assoc( $languages );
+
 		foreach ( $languages as $k => $v ) {
 			$name = $names[$k];
 			$size = round( log( $v ) * 20 ) + 10;
@@ -414,21 +414,6 @@ class SpecialSupportedLanguages extends SpecialPage {
 		}
 
 		return $stylestr;
-	}
-
-	function shuffle_assoc( $list ) {
-		if ( !is_array( $list ) ) {
-			return $list;
-		}
-
-		$keys = array_keys( $list );
-		shuffle( $keys );
-		$random = array();
-		foreach ( $keys as $key ) {
-			$random[$key] = $list[$key];
-		}
-
-		return $random;
 	}
 
 	protected function preQueryUsers( $users ) {
