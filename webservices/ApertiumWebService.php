@@ -26,7 +26,8 @@ class ApertiumWebService extends TranslationWebService {
 		$pairs = array();
 		$json = Http::get(
 			$this->config['pairs'],
-			array( 'timeout' => $this->config['timeout'] )
+			array( 'timeout' => $this->config['timeout'] ),
+			__METHOD__
 		);
 		$response = FormatJson::decode( $json );
 

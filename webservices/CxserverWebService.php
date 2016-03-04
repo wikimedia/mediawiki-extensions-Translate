@@ -31,7 +31,8 @@ class CxserverWebService extends TranslationWebService {
 		$url = $this->config['host'] . '/v1/list/mt';
 		$json = Http::get(
 			$url,
-			array( $this->config['timeout'] )
+			array( $this->config['timeout'] ),
+			__METHOD__
 		);
 		$response = FormatJson::decode( $json, true );
 
