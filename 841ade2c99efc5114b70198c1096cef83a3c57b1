@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e2f53b6_628cb600",
+        "filename": "ffs/AmdFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T09:29:09Z",
+      "side": 1,
+      "message": "Are you sure you do not want to change the definition instead? unmangle sounds like one word to me.",
+      "revId": "841ade2c99efc5114b70198c1096cef83a3c57b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_a26d1e30",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-04T09:29:09Z",
+      "side": 1,
+      "message": "Hmm not sure about this.",
+      "revId": "841ade2c99efc5114b70198c1096cef83a3c57b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
