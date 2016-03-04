@@ -16,7 +16,7 @@ class SpecialTranslationStash extends SpecialPage {
 	/** @var TranslationStashStorage */
 	protected $stash;
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'TranslationStash' );
 	}
 

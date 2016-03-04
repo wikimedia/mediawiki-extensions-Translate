@@ -14,11 +14,11 @@ class TranslateSandboxEmailJob extends Job {
 	 * @param array $params
 	 * @param int $id
 	 */
-	function __construct( $title, $params, $id = 0 ) {
+	public function __construct( $title, $params, $id = 0 ) {
 		parent::__construct( __CLASS__, $title, $params, $id );
 	}
 
-	function run() {
+	public function run() {
 		$status = UserMailer::send(
 			$this->params['to'],
 			$this->params['from'],

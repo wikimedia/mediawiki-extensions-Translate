@@ -77,7 +77,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	}
 
 	/// Overwriten from SpecialLanguageStats
-	function getform() {
+	protected function getform() {
 		global $wgScript;
 
 		$out = Html::openElement( 'div' );
@@ -145,7 +145,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	 *
 	 * @return string
 	 */
-	function getTable() {
+	protected function getTable() {
 		$table = $this->table;
 
 		$this->addWorkflowStatesColumn();

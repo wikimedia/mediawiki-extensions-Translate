@@ -38,7 +38,7 @@ class TranslateRenderJob extends Job {
 		$this->removeDuplicates = true;
 	}
 
-	function run() {
+	public function run() {
 		// Initialization
 		$title = $this->title;
 		list( , $code ) = TranslateUtils::figureMessage( $title->getPrefixedText() );
