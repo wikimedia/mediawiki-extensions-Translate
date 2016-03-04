@@ -290,7 +290,7 @@ class SolrTTMServer
 		foreach ( $batch as $key => $data ) {
 			list( $handle, $sourceLanguage, $text ) = $data;
 			$revId = $handle->getTitleForLanguage( $sourceLanguage )->getLatestRevID();
-			$doc = $this->createDocument( $handle, $text, $id );
+			$doc = $this->createDocument( $handle, $text, $revId );
 			// Add document and commit within X seconds.
 			$update->addDocument( $doc, null, self::COMMIT_WITHIN );
 		}
