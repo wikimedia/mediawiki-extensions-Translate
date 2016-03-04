@@ -285,18 +285,6 @@ class SpecialTranslations extends SpecialAllpages {
 	}
 
 	/**
-	 * Get code for a page name
-	 *
-	 * @param string $name Page title (f.e. "MediaWiki:Main_page/nl").
-	 * @return string Language code
-	 */
-	private function getCode( $name ) {
-		$from = strrpos( $name, '/' );
-
-		return substr( $name, $from + 1 );
-	}
-
-	/**
 	 * Add JavaScript assets
 	 */
 	private function includeAssets() {
