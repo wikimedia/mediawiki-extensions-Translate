@@ -252,7 +252,7 @@ class MessageGroups {
 			return $groups[$id];
 		}
 
-		if ( strval( $id ) !== '' && $id[0] === '!' ) {
+		if ( (string)$id !== '' && $id[0] === '!' ) {
 			$dynamic = self::getDynamicGroups();
 			if ( isset( $dynamic[$id] ) ) {
 				return new $dynamic[$id];
@@ -383,7 +383,7 @@ class MessageGroups {
 	public static function isDynamic( MessageGroup $group ) {
 		$id = $group->getId();
 
-		return strval( $id ) !== '' && $id[0] === '!';
+		return (string)$id !== '' && $id[0] === '!';
 	}
 
 	/**

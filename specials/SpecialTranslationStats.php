@@ -92,7 +92,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$opts->validateIntBounds( 'height', 200, 1000 );
 
 		if ( $opts['start'] !== '' ) {
-			$opts['start'] = strval( wfTimestamp( TS_MW, $opts['start'] ) );
+			$opts['start'] = (string)( wfTimestamp( TS_MW, $opts['start'] ) );
 		}
 
 		$validScales = array( 'months', 'weeks', 'days', 'hours' );
@@ -577,7 +577,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		list( $legend, $resData ) = $this->getData( $opts );
 		$count = count( $resData );
-		$skip = intval( $count / ( $width / 60 ) - 1 );
+		$skip = (int)( $count / ( $width / 60 ) - 1 );
 		$i = $count;
 		$data = array();
 
@@ -627,7 +627,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$max = max( array_map( 'max', $resData ) );
 		$max = self::roundToSignificant( $max, 1 );
-		$max = round( $max, intval( -log( $max, 10 ) ) );
+		$max = round( $max, (int)( -log( $max, 10 ) ) );
 
 		$yTick = 10;
 		while ( $max / $yTick > $height / 20 ) {
@@ -664,7 +664,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$nonSignificant = max( 0, $log - $significant + 1 );
 		$factor = pow( 10, $nonSignificant );
 
-		return intval( ceil( $number / $factor ) * $factor );
+		return (int)( ceil( $number / $factor ) * $factor );
 	}
 
 	/**

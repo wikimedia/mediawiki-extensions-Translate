@@ -206,7 +206,7 @@ class MessageGroupCache {
 		// Message count check
 		$messages = $group->load( $this->code );
 		// CDB converts numbers to strings
-		$count = intval( $this->get( '#msgcount' ) );
+		$count = (int)( $this->get( '#msgcount' ) );
 		if ( $count !== count( $messages ) ) {
 			// Number of messsages has changed
 			$reason = self::CHANGED;

@@ -447,7 +447,7 @@ class MessageGroupStats {
 	 * @return string
 	 */
 	protected static function stringifyNumber( $number ) {
-		$number = intval( $number );
+		$number = (int)$number;
 
 		return $number < 0 ? "$number" : "+$number";
 	}

@@ -593,7 +593,7 @@ class TranslatablePage {
 		// Tag values are not stored, only the associated revision
 		$tagRevision = $db->selectField( 'revtag', 'rt_revision', $conds, __METHOD__, $options );
 		if ( $tagRevision !== false ) {
-			return self::$tagCache[$aid][$tag] = intval( $tagRevision );
+			return self::$tagCache[$aid][$tag] = (int)$tagRevision;
 		} else {
 			return self::$tagCache[$aid][$tag] = false;
 		}

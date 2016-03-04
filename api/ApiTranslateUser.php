@@ -20,7 +20,7 @@ class ApiTranslateUser extends ApiBase {
 		$user = $this->getUser();
 		$groups = $user->getOption( 'translate-recent-groups', '' );
 		$output['recentgroups'] = array();
-		if ( strval( $groups ) !== '' ) {
+		if ( (string)$groups !== '' ) {
 			$output['recentgroups'] = explode( '|', $groups );
 			$this->getResult()->setIndexedTagName( $output['recentgroups'], 'group' );
 		}

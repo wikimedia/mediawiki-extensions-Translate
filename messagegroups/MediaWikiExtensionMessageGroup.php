@@ -30,12 +30,12 @@ class MediaWikiExtensionMessageGroup extends FileBasedMessageGroup {
 		$desc = '';
 		if ( $msgkey ) {
 			$desc = $this->getMessage( $msgkey, $language );
-			if ( strval( $desc ) === '' ) {
+			if ( (string)$desc === '' ) {
 				$desc = $this->getMessage( $msgkey, $this->getSourceLanguage() );
 			}
 		}
 
-		if ( strval( $desc ) === '' ) {
+		if ( (string)$desc === '' ) {
 			// That failed, default to 'description'
 			$desc = parent::getDescription( $context );
 		}
