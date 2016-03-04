@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0e2f53b6_6515e09c",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T12:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e2f53b6_850bc4d8",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e2f53b6_c5f4acce",
         "filename": "api/ApiTranslateUser.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-03-04T11:47:34Z",
       "side": 1,
       "message": "I would drop the return values from this function, the true does not tell anything here.",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_a526c80f",
+        "filename": "api/ApiTranslateUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T12:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e2f53b6_c5f4acce",
       "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "0e2f53b6_e520d0f4",
+        "filename": "ffs/MediaWikiExtensions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T12:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e2f53b6_45289c32",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e2f53b6_8522a44e",
         "filename": "specials/SpecialAggregateGroups.php",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2016-03-04T11:47:34Z",
       "side": 1,
       "message": "array is wrong here, it should be MessageGroup or similar.",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_457d3ce4",
+        "filename": "specials/SpecialAggregateGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T12:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e2f53b6_8522a44e",
       "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "0e2f53b6_2582b8cd",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T12:17:03Z",
+      "side": 1,
+      "message": "This is how JetBrain IntelliJ IDEA adds it, so let\u0027s leave it like that.",
+      "parentUuid": "0e2f53b6_a5188824",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e2f53b6_25dc784b",
         "filename": "tag/TranslatablePage.php",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2016-03-04T11:47:34Z",
       "side": 1,
       "message": "Same Q.",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_858744dc",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T12:17:03Z",
+      "side": 1,
+      "message": "Same answer.",
+      "parentUuid": "0e2f53b6_25dc784b",
       "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "0e2f53b6_658cc000",
+        "filename": "ttmserver/DatabaseTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T12:17:03Z",
+      "side": 1,
+      "message": "Yes, please.",
+      "parentUuid": "0e2f53b6_85e104fe",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e2f53b6_65e68015",
         "filename": "ttmserver/DatabaseTTMServer.php",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2016-03-04T11:47:34Z",
       "side": 1,
       "message": "As far as I can see it must be string.",
+      "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2f53b6_c5702c0a",
+        "filename": "ttmserver/DatabaseTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-03-04T12:17:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e2f53b6_65e68015",
       "revId": "d18580559718ce2f6e304776b2309b5db5ba8fae",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
