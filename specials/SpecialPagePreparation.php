@@ -9,7 +9,7 @@
  */
 
 class SpecialPagePreparation extends SpecialPage {
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'PagePreparation', 'pagetranslation' );
 	}
 
@@ -17,7 +17,7 @@ class SpecialPagePreparation extends SpecialPage {
 		return 'wiki';
 	}
 
-	function execute( $par ) {
+	public function execute( $par ) {
 		$request = $this->getRequest();
 		$output = $this->getOutput();
 		$this->setHeaders();

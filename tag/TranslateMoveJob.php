@@ -47,7 +47,7 @@ class TranslateMoveJob extends Job {
 		parent::__construct( __CLASS__, $title, $params, $id );
 	}
 
-	function run() {
+	public function run() {
 		// Unfortunately the global is needed until bug is fixed:
 		// https://phabricator.wikimedia.org/T51086
 		// Once MW >= 1.24 is supported, can use MovePage class.

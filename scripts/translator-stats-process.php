@@ -27,7 +27,7 @@ class TSP extends Maintenance {
 		);
 	}
 
-	function median( $a ) {
+	protected function median( $a ) {
 		sort( $a );
 		$len = count( $a );
 		if ( $len === 0 ) {

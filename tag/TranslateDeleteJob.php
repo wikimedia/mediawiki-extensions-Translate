@@ -42,7 +42,7 @@ class TranslateDeleteJob extends Job {
 		parent::__construct( __CLASS__, $title, $params, $id );
 	}
 
-	function run() {
+	public function run() {
 		// Initialization
 		$title = $this->title;
 		// Other stuff
