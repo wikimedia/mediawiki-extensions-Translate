@@ -191,7 +191,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 			foreach ( $plurals as $keyPlural => $valuePlural ) {
 				$path = explode( '.', $keyPlural );
-				if ( count( $path ) == 1 ) {
+				if ( count( $path ) === 1 ) {
 					$array[$keyPlural] = $valuePlural;
 					continue;
 				}

@@ -527,8 +527,8 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			return $blockers;
 		}
 
-		if ( $target->getNamespace() == NS_MEDIAWIKI ||
-			$target->getNamespace() == NS_TRANSLATIONS
+		if ( $target->getNamespace() === NS_MEDIAWIKI ||
+			$target->getNamespace() === NS_TRANSLATIONS
 		) {
 			$blockers[] = array( 'immobile-target-namespace', $target->getNsText() );
 
@@ -645,7 +645,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	protected function newPageTitle( $base, Title $old, Title $target ) {
 		$search = preg_quote( $base, '~' );
 
-		if ( $old->getNamespace() == NS_TRANSLATIONS ) {
+		if ( $old->getNamespace() === NS_TRANSLATIONS ) {
 			$new = $old->getText();
 			$new = preg_replace( "~^$search~", $target->getPrefixedText(), $new, 1 );
 

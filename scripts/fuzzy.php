@@ -164,7 +164,7 @@ class FuzzyScript {
 
 		$title_conds = array();
 		foreach ( $search as $ns => $names ) {
-			if ( $ns == NS_MAIN ) {
+			if ( $ns === NS_MAIN ) {
 				$ns = $wgTranslateMessageNamespaces;
 			}
 			$titles = $dbr->makeList( $names, LIST_OR );

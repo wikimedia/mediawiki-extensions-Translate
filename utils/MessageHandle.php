@@ -124,7 +124,7 @@ class MessageHandle {
 	 * @return bool
 	 */
 	public function isPageTranslation() {
-		return $this->getTitle()->getNamespace() == NS_TRANSLATIONS;
+		return $this->getTitle()->getNamespace() === NS_TRANSLATIONS;
 	}
 
 	/**

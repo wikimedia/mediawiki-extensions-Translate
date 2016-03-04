@@ -213,7 +213,7 @@ abstract class MessageIndex {
 				$keys['add'][$key] = array( array(), (array)$groups );
 				$record( (array)$groups );
 			// Using != here on purpose to ignore the order of items
-			} elseif ( $groups != $old[$key] ) {
+			} elseif ( $groups !== $old[$key] ) {
 				$keys['mod'][$key] = array( (array)$old[$key], (array)$groups );
 				$record( array_diff( (array)$old[$key], (array)$groups ) );
 				$record( array_diff( (array)$groups, (array)$old[$key] ) );
