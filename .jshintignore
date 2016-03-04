@@ -4,4 +4,3 @@ vendor/
 
 # upstream libs
 resources/js/jquery.autosize.js
-resources/js/jquery.ui.position.js
