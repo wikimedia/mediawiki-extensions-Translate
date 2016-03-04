@@ -16,7 +16,7 @@
  */
 class TPParse {
 	/// \type{Title} Title of the page.
-	protected $title = null;
+	protected $title;
 
 	/** \arrayof{String,TPSection} Parsed sections indexed with placeholder.
 	 * @todo Encapsulate

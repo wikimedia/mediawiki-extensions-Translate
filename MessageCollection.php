@@ -52,10 +52,10 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	// Database resources
 
 	/// \type{Database Result Resource} Stored message existence and fuzzy state.
-	protected $dbInfo = null;
+	protected $dbInfo;
 
 	/// \type{Database Result Resource} Stored translations in database.
-	protected $dbData = null;
+	protected $dbData;
 
 	/// \type{Database Result Resource} Stored reviews in database.
 	protected $dbReviewData = array();

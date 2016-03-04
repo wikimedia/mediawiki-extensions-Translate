@@ -11,7 +11,7 @@
  */
 
 class TranslateMetadata {
-	protected static $cache = null;
+	protected static $cache;
 
 	/**
 	 * Get a metadata value for the given group and key.

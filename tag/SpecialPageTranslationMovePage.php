@@ -51,12 +51,12 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	/**
 	 * @var Title[] Cached list of translation pages. Not yet loaded if null.
 	 */
-	protected $translationPages = null;
+	protected $translationPages;
 
 	/**
 	 * @var Title[] Cached list of section pages. Not yet loaded if null.
 	 */
-	protected $sectionPages = null;
+	protected $sectionPages;
 
 	public function __construct() {
 		parent::__construct( 'Movepage' );

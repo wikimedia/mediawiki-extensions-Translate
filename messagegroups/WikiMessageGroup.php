@@ -19,7 +19,7 @@
  * @ingroup MessageGroup
  */
 class WikiMessageGroup extends MessageGroupOld {
-	protected $source = null;
+	protected $source;
 
 	/**
 	 * Constructor.

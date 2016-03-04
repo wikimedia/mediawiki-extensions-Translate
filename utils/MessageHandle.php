@@ -20,17 +20,17 @@ class MessageHandle {
 	/**
 	 * @var string|null
 	 */
-	protected $key = null;
+	protected $key;
 
 	/**
 	 * @var string|null Language code
 	 */
-	protected $code = null;
+	protected $code;
 
 	/**
 	 * @var string[]|null
 	 */
-	protected $groupIds = null;
+	protected $groupIds;
 
 	public function __construct( Title $title ) {
 		$this->title = $title;
