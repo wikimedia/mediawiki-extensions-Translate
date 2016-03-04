@@ -129,7 +129,7 @@ class SpecialManageGroups extends SpecialPage {
 		// The above count as two
 		$limit = $limit - 2;
 
-		$reader = CdbReader::open( $this->cdb );
+		$reader = \Cdb\Reader::open( $this->cdb );
 		$groups = unserialize( $reader->get( '#keys' ) );
 		foreach ( $groups as $id ) {
 			$group = MessageGroups::getGroup( $id );
@@ -272,7 +272,7 @@ class SpecialManageGroups extends SpecialPage {
 		$jobs = array();
 		$jobs[] = MessageIndexRebuildJob::newJob();
 
-		$reader = CdbReader::open( $this->cdb );
+		$reader = \Cdb\Reader::open( $this->cdb );
 		$groups = unserialize( $reader->get( '#keys' ) );
 
 		$postponed = array();

@@ -205,11 +205,8 @@ class TranslationEditPage {
 
 		$api = new ApiMain( $params );
 		$api->execute();
-		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$data = $api->getResult()->getResultData();
-		} else {
-			$data = $api->getResultData();
-		}
+
+		$data = $api->getResult()->getResultData();
 
 		if ( !isset( $data['query']['pages'] ) ) {
 			throw new MWException( 'Api query failed' );

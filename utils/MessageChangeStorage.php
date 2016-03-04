@@ -19,7 +19,7 @@ class MessageChangeStorage {
 	 * @param string $file Which file to use.
 	 */
 	public static function writeChanges( $array, $file ) {
-		$cache = CdbWriter::open( $file );
+		$cache = \Cdb\Writer::open( $file );
 		$keys = array_keys( $array );
 		$cache->set( '#keys', serialize( $keys ) );
 
