@@ -254,7 +254,7 @@ class CommandlineExport extends Maintenance {
 				// Do not export languges that are blacklisted (or not whitelisted).
 				// Also check that whitelist is not null, which means that all
 				// languages are allowed for translation and export.
-				if ( is_array( $whitelist ) && !isset( $whitelist[$lang] ) ) {
+				if ( !isset( $whitelist[$lang] ) ) {
 					continue;
 				}
 
