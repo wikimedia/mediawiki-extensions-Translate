@@ -71,7 +71,6 @@ class TSP extends Maintenance {
 			$promoted = 0;
 			$good = 0;
 			$delay = array();
-			$median = 0;
 			$avg = 'N/A';
 			$sbar = array();
 
