@@ -47,7 +47,8 @@
 .tux-message-editor textarea {
 	border: 1px solid #555;
 	font-size: 16px;
-	padding: 5px 5px 30px 5px;
+	/* The (30px + 5px paddings) 40px for bottom is for the insertables */
+	padding: 5px 5px 40px 5px;
 	height: 100px;
 	min-height: 150px;
 	overflow-y: auto;
@@ -332,7 +333,8 @@
 /* Temporary fix for T111685 */
 .grid .tux-editor-actions-block .tux-editor-insert-buttons {
 	position: absolute;
-	top: -38px;
+	/* 30px + 5px padding on bottom */
+	top: -35px;
 	margin: 0 10px;
 	z-index: 110;
 }
@@ -343,6 +345,7 @@
 	background: #FBFBFB;
 	color: #252525;
 	font-size: 13px;
+	height: 30px;
 }
 
 .tux-editor-insert-buttons .tux-editor-paste-original-button {

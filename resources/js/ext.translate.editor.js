@@ -1,4 +1,4 @@
-( function ( $, mw ) {
+( function ( $, mw, autosize ) {
 	'use strict';
 
 	/**
@@ -43,7 +43,6 @@
 		this.storage = this.options.storage || new mw.translate.TranslationApiStorage();
 		this.canDelete = mw.translate.canDelete();
 		this.delayValidation = delayer();
-		this.delayResize = delayer();
 	}
 
 	TranslateEditor.prototype = {
@@ -530,11 +529,6 @@
 			if ( mw.translate.isPlaceholderSupported( $textarea ) ) {
 				$textarea.prop( 'placeholder', mw.msg( 'tux-editor-placeholder' ) );
 			}
-
-			// The extra newlines is supposed to leave enough space for the
-			// insertion buttons. Seems to work as long as all the buttons
-			// are only in one line.
-			$textarea.autosize( { append: '\n\n\n' } );
 
 			// Shortcuts for various insertable things
 			$textarea.on( 'keyup keydown', function ( e ) {
@@ -1056,13 +1050,7 @@
 			this.$editor.removeClass( 'hide' );
 			$textarea.focus();
 
-			// Apparently there is still something going on that affects the
-			// layout of the text area after this function. Use very small
-			// delay to have it settle down and have correct results. Otherwise
-			// there will be a size change once the first letter is typed.
-			this.delayResize( function () {
-				$textarea.trigger( 'autosize.resizeIncludeStyle' );
-			}, 1 );
+			autosize( $textarea );
 
 			this.shown = true;
 			this.$editTrigger.addClass( 'open' );
@@ -1220,4 +1208,4 @@
 			};
 		}() );
 	}
-}( jQuery, mediaWiki ) );
+}( jQuery, mediaWiki, autosize ) );
