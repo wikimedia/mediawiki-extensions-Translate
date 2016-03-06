@@ -65,5 +65,6 @@
 	"pt-deletepage-list-other": "Kiti subpuslapiai",
 	"pt-deletepage-full-logreason": "Dalis išverčiamo puslapio $1.",
 	"pt-deletepage-lang-logreason": "Dalis vertimo puslapio $1.",
+	"tpt-generic-confirm": "Prašome patvirtinti šį veiksmą.",
 	"tpt-generic-button": "Patvirtinti"
 }
