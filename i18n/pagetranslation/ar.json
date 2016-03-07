@@ -107,6 +107,7 @@
 	"pp-prepare-button-label": "جهز",
 	"pp-save-button-label": "احفظ",
 	"pp-cancel-button-label": "ألغ",
+	"pp-pagename-missing": "من فضلك أدخل اسم الصفحة.",
 	"pp-diff-old-header": "نص المصدر",
 	"tpt-unlink-button": "أزل من الترجمة",
 	"tpt-unlink-summary": "إزالة هذه الصفحة من الترجمة",

@@ -17,7 +17,8 @@
 			"아라",
 			"Rxy",
 			"Sujiniku",
-			"Otokoume"
+			"Otokoume",
+			"2nd-player"
 		]
 	},
 	"translate": "翻訳",
@@ -391,5 +392,5 @@
 	"translate-ulsdep-title": "設定エラー",
 	"translate-ulsdep-body": "Translate 拡張機能は [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector 拡張機能]を必要とします。",
 	"tux-session-expired": "ログインしていない状態になっています。別のタブでログインしてください。できない場合は、未保存の翻訳をコピーしておいて、ログインして、このページに戻ってきて、翻訳ページに入り直してください。",
-	"tux-nojs": "このページは JavaScript を要求しています。"
+	"tux-nojs": "このページは JavaScript を必要としています。"
 }
