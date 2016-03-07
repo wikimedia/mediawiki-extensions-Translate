@@ -1,0 +1,8 @@
+Verified+2: jenkins-bot
+Code-Review+1: Siebrand <siebrand@kitano.nl>
+Code-Review+2: Thcipriani <tcipriani@wikimedia.org>
+Submitted-by: jenkins-bot
+Submitted-at: Mon, 07 Mar 2016 16:25:10 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/275366
+Project: mediawiki/extensions/Translate
+Branch: refs/heads/wmf/1.27.0-wmf.15
