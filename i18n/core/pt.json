@@ -84,7 +84,7 @@
 	"translate-magic-namespace": "Nomes de domínios",
 	"translate-magic-notsaved": "A sua edição não foi gravada!",
 	"translate-magic-errors": "Por favor, corrija {{PLURAL:$1|o seguinte erro|os seguintes erros}} na tradução:",
-	"translate-magic-saved": "As suas alterações foram gravadas com sucesso.",
+	"translate-magic-saved": "As suas alterações foram gravadas.",
 	"translate-checks-parameters": "{{PLURAL:$2|O seguinte parâmetro não é usado|Os seguintes parâmetros não são usados}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|O seguinte parâmetro é desconhecido|Os seguintes parâmetros são desconhecidos}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "Há {{PLURAL:$2|um parênteses irregular|$2 parênteses irregulares}}: <strong><nowiki>$1</nowiki></strong>",
