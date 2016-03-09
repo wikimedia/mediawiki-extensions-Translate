@@ -101,7 +101,7 @@
 	"translate-magic-namespace": "名字空间名称",
 	"translate-magic-notsaved": "你的编辑还没有保存！",
 	"translate-magic-errors": "请修正翻译中的以下$1处错误：",
-	"translate-magic-saved": "你的更改已成功保存。",
+	"translate-magic-saved": "您的更改已保存。",
 	"translate-checks-parameters": "以下$2个参数未使用：<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "以下$2个参数未知：<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "有一组数目不均等的{{PLURAL:$2|括号}}：<strong><nowiki>$1</nowiki></strong>",

@@ -319,7 +319,7 @@
 	"tux-editor-skip-button-label": "پرش به بعدی",
 	"tux-editor-cancel-button-label": "لغو",
 	"tux-editor-confirm-button-label": "تأیید ترجمه",
-	"tux-editor-shortcut-info": "برای ذخیره‌ «$1» یا برای پرش به پیام بعدی «$2» یا برای دیگر میانبرها $3 را فشار دهید.",
+	"tux-editor-shortcut-info": "برای ذخیره‌ «$1» یا برای پرش به پیام بعدی «$2» یا برای دیگر میانبرها «$3» را فشار دهید.",
 	"tux-editor-edit-desc": "ذخیره مستندات",
 	"tux-editor-add-desc": "افزودن مستندات",
 	"tux-editor-suggestions-title": "پیشنهادها",
