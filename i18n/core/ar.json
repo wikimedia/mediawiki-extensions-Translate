@@ -213,7 +213,7 @@
 	"translate-import-from-local": "رفع ملف محلي:",
 	"translate-import-load": "حمّل الملف",
 	"translate-import-err-dl-failed": "تعذّر جلب الملف:\n$1",
-	"translate-import-err-ul-failed": "لم ينجح رفع الملف",
+	"translate-import-err-ul-failed": "فشل رفع الملف",
 	"translate-import-err-invalid-title": "اسم الملف المعطى <nowiki>$1</nowiki> غير صالح.",
 	"translate-import-err-no-such-file": "الملف <nowiki>$1</nowiki> غير موجود أو لم يرفع محليًا.",
 	"translate-import-err-stale-group": "مجموعة الرسائل المنتمية إلى هذا الملف غير موجود.",
