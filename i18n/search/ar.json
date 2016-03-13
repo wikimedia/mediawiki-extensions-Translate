@@ -22,5 +22,6 @@
 	"tux-sst-outdated": "الترجمات غير المحدثة من $1",
 	"tux-sst-ellipsis-untranslated": "لا ترجمات",
 	"tux-sst-ellipsis-outdated": "ترجمات غير محدثة",
+	"tux-sst-match-message": "إظهار الترجمات التي تطابق أي من كلمات البحث. $1",
 	"tux-sst-case-sensitive": "مراعاة حالة الأحرف"
 }

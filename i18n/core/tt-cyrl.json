@@ -9,6 +9,7 @@
 	},
 	"translate": "Тәрҗемә",
 	"translate-desc": "[[Special:Translate|Махсус бит]] MediaWiki һәм башка программлар тәрҗемә итү өчен",
+	"translate-taction-mstats": "Хәбәрләр төркеме хисапнамәсе",
 	"translate-page-no-such-group": "Төркем дөрес күрсәтелмәгән",
 	"translate-page-disabled": "Әлеге бүлектә бу тел буенча тәрҗемәләр ябылган. Сәбәбе:\n\n<em>$1</em>",
 	"translate-page-settings-legend": "Көйләнмәләр",
@@ -51,6 +52,7 @@
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Билгесез параметрлар}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-pref-nonewsletter": "Минем электрон почтага мәгълүмати бюллетень җибәрмәскә",
 	"translate-pref-editassistlang": "Ярдәмчел телләр:",
+	"translate-rc-translation-filter": "Тәрҗемәләрне сайлау:",
 	"translate-sidebar-alltrans": "Башка телләрдә",
 	"translations": "Барлык тәрҗемәләр",
 	"translate-translations-fieldset-title": "Хәбәр",
@@ -95,5 +97,6 @@
 	"tux-tab-outdated": "Искергәннәре",
 	"tux-tab-translated": "Тәрҗемә ителгәннәре",
 	"tux-editor-in-other-languages": "Башка телләрдә",
+	"tux-editor-clear-translated": "Тәрҗемәләрне яшерү",
 	"tux-empty-list-other": "Тәрҗемәгә итәргә бернәрсә дә юк"
 }
