@@ -4,10 +4,17 @@
 			"Jagwar"
 		]
 	},
+	"translate-taskui-view": "Aseho avokoa ny hafatra",
+	"translate-taskui-optional": "Aseho ny hafatra tsy voatery",
+	"translate-page-showing": "Aseho ny hafatra avy amin'i $1 hatramin'i $2 amin'ny $3",
+	"translate-page-description-hasoptional-open": "Aseho ny hafatra tsy voatery",
 	"right-translate": "Manova ny interface fandikana",
 	"right-translate-manage": "Hitantana vondron-kafatra",
 	"right-translate-import": "Mampiditra ny fandikana na offline aza",
+	"translate-rc-translation-filter-only": "Dikanteny ihany no aseho",
 	"translate-sidebar-alltrans": "Amin'ny teny vahiny",
+	"translate-ls-submit": "Aseho ny statistika",
+	"translate-mgs-submit": "Aseho ny statistika",
 	"translate-documentation-language": "Valan-draki-kafatra",
 	"tux-edit": "Hanova"
 }
