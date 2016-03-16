@@ -196,9 +196,10 @@ class MessageWebImporter {
 		$changed = array();
 
 		foreach ( $messages as $key => $value ) {
-			$fuzzy = $old = false;
+			$fuzzy = $old = null;
 
 			if ( isset( $collection[$key] ) ) {
+				// This returns null for if no existing translation
 				$old = $collection[$key]->translation();
 			}
 
@@ -207,7 +208,7 @@ class MessageWebImporter {
 				continue;
 			}
 
-			if ( $old === false ) {
+			if ( $old === null ) {
 				$para = '<code class="mw-tmi-new">' . htmlspecialchars( $key ) . '</code>';
 				$name = $context->msg( 'translate-manage-import-new' )->rawParams( $para )
 					->escaped();
