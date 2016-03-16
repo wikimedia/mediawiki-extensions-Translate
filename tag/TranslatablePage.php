@@ -883,7 +883,7 @@ class TranslatablePage {
 	 *
 	 * @return DatabaseBase Master for HTTP POST, CLI, DB already changed; slave otherwise
 	 */
-	protected static function getSafeReadDB() {
+	public static function getSafeReadDB() {
 		$index = (
 			PHP_SAPI === 'cli' ||
 			RequestContext::getMain()->getRequest()->wasPosted() ||

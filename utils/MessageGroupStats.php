@@ -312,7 +312,7 @@ class MessageGroupStats {
 			$conds['tgs_lang'] = $codes;
 		}
 
-		$dbr = wfGetDB( DB_MASTER );
+		$dbr = TranslatablePage::getSafeReadDB();
 		$res = $dbr->select( self::TABLE, '*', $conds, __METHOD__ );
 
 		return $res;
