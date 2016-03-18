@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_3ab583e1",
+        "filename": "ttmserver/SolrTTMServer.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:50:25Z",
+      "side": 1,
+      "message": "Add wfDeprecated() here?",
+      "revId": "ae467600896e5d41ce03372e9f585983660a1669",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
