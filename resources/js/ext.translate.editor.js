@@ -581,6 +581,7 @@
 
 				if ( original !== '' ) {
 					$discardChangesButton.removeClass( 'hide' );
+					translateEditor.resizeInsertables( $textarea );
 				}
 
 				/* Avoid Unsaved marking when translated message is not changed in content.
@@ -656,6 +657,7 @@
 							translateEditor.makeSaveButtonContextSensitive( $saveButton );
 
 							translateEditor.markUnunsaved();
+							translateEditor.resizeInsertables( $textarea );
 						} );
 				}
 
@@ -1171,6 +1173,19 @@
 
 				return false;
 			} );
+		},
+
+		/**
+		 * Makes the textare large enough for insertables and positions the insertables.
+		 */
+		resizeInsertables: function ( $textarea ) {
+			var $buttonArea, buttonAreaHeight;
+
+			$buttonArea = $( '.tux-editor-insert-buttons' );
+			buttonAreaHeight = $buttonArea.height();
+			$textarea.css( 'padding-bottom', buttonAreaHeight + 10 );
+			$buttonArea.css( 'top', -buttonAreaHeight - 5 );
+			autosize.update( $textarea );
 		}
 	};
 

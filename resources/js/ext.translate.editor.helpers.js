@@ -472,6 +472,8 @@
 				} );
 				$textarea.focus().trigger( 'input' );
 			} );
+
+			this.resizeInsertables( $textarea );
 		},
 
 		/**
