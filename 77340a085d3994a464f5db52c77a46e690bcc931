@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_1aa6bfbe",
+        "filename": "specials/SpecialTranslationStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T14:20:08Z",
+      "side": 1,
+      "message": "Fix indent.",
+      "revId": "77340a085d3994a464f5db52c77a46e690bcc931",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
