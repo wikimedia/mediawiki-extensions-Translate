@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_94ebc3da",
+        "filename": "resources/css/ext.translate.helplink.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T16:49:13Z",
+      "side": 0,
+      "message": "I can\u0027t find any other uses of these images. They should be removed as well.",
+      "revId": "df01bb0acc70bda41621fff1037fc462679f7766",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

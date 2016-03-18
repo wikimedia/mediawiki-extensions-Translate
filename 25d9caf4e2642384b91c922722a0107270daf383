@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_f4dccf4d",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T16:49:13Z",
+      "side": 1,
+      "message": "You could also remove this function and update callers. For special pages they can call $this-\u003eaddHelpLink() and rest $out-\u003eaddHelpLink().",
+      "revId": "25d9caf4e2642384b91c922722a0107270daf383",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
