@@ -274,7 +274,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	 * @param array $attribs Extra attributes. Default empty array.
 	 */
 	protected function addInputLabel( &$form, $label, $name, $size = false, $text = false,
-		$attribs = array()
+		array $attribs = array()
 	) {
 		$br = Html::element( 'br' );
 		list( $label, $input ) = Xml::inputLabelSep(
