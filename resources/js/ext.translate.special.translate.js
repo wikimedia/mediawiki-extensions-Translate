@@ -248,7 +248,7 @@
 				mw.translate.changeLanguage( language );
 			},
 			languages: mw.config.get( 'wgULSLanguages' ),
-			searchAPI: mw.util.wikiScript( 'api' ) + '?action=languagesearch',
+			searchAPI: mw.util.wikiScript( 'api' ) + '?action=languagesearch&format=json',
 			quickList: function () {
 				return mw.uls.getFrequentLanguageList();
 			}
