@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_25360401",
+        "filename": "scripts/magic-export.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T14:27:29Z",
+      "side": 1,
+      "message": "Okay but in MessagesFi.php and other files it is \u00270\u0027 :(\n\nEither the check needs to cast to string or int, or someone normalizes the magic word stuff in the files.",
+      "revId": "a0af90d2a48161bf6af38e231866b812a8175311",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
