@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_3abe23cf",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:46:09Z",
+      "side": 1,
+      "message": "The array has string keys, so this is kind of subset of the actual value.",
+      "revId": "8284551462eabd66cf0db793af788770114b1194",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_9ad2cf2a",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:46:09Z",
+      "side": 1,
+      "message": "Nothing reads the keys so this is okay.",
+      "revId": "8284551462eabd66cf0db793af788770114b1194",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_7acf0b83",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:46:09Z",
+      "side": 1,
+      "message": "Nothing reads the keys so this is okay.",
+      "revId": "8284551462eabd66cf0db793af788770114b1194",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_dacc578f",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 992,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:46:09Z",
+      "side": 1,
+      "message": "Nothing reads the keys so this is okay.",
+      "revId": "8284551462eabd66cf0db793af788770114b1194",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
