@@ -13,6 +13,7 @@
  * TTMServer backed based on Solr instance. Depends on Solarium.
  * @since 2012-06-27
  * @ingroup TTMServer
+ * @deprecated 1.27. Will be removed in 1.29.
  */
 class SolrTTMServer
 	extends TTMServer
@@ -32,7 +33,10 @@ class SolrTTMServer
 	protected $logger;
 
 	public function __construct( $config ) {
+		wfDeprecated( __METHOD__, '1.24' );
+
 		parent::__construct( $config );
+
 		if ( isset( $config['config'] ) ) {
 			$this->client = new Solarium_Client( $config['config'] );
 		} else {
