@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_85c55093",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T12:16:50Z",
+      "side": 1,
+      "message": "This BC code can also be removed.",
+      "revId": "cd001ad79e5feb7d8da559f7983979659c0376cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
