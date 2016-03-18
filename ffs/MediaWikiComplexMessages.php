@@ -637,7 +637,7 @@ class SpecialPageAliasesCM extends ComplexMessages {
 		return $values;
 	}
 
-	protected function validateEach( &$errors = array(), $group, &$used ) {
+	protected function validateEach( array &$errors, $group, &$used ) {
 		parent::validateEach( $errors, $group, $used );
 		foreach ( $this->getIterator( $group ) as $key ) {
 			$values = $this->val( $group, self::LANG_CURRENT, $key );
@@ -754,7 +754,7 @@ class NamespaceCM extends ComplexMessages {
 		15 => 'NS_CATEGORY_TALK',
 	);
 
-	protected function validateEach( &$errors = array(), $group, &$used ) {
+	protected function validateEach( array &$errors, $group, &$used ) {
 		parent::validateEach( $errors, $group, $used );
 		foreach ( $this->getIterator( $group ) as $key ) {
 			$values = $this->val( $group, self::LANG_CURRENT, $key );
