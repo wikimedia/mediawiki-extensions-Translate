@@ -342,7 +342,7 @@ class TranslateUtils {
 		if ( $overrideBaseUrl ) {
 			$helpUrl = $to;
 		} else {
-			$helpUrl = "//www.mediawiki.org/wiki/Special:MyLanguage/$to";
+			$helpUrl = "https://www.mediawiki.org/wiki/Special:MyLanguage/$to";
 		}
 
 		$link = Html::rawElement(
