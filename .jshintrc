@@ -15,6 +15,7 @@
 	"predef": [
 		"mediaWiki",
 		"jQuery",
-		"QUnit"
+		"QUnit",
+		"autosize"
 	]
 }

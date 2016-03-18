@@ -16,7 +16,7 @@
  * @license GPL-2.0+
  */
 
-( function ( $, mw, undefined ) {
+( function ( $, mw, autosize ) {
 	'use strict';
 	var dialogwidth = false,
 		preloads = {};
@@ -138,7 +138,7 @@
 
 		textarea = form.find( '.mw-translate-edit-area' );
 		textarea.css( 'display', 'block' );
-		textarea.autosize();
+		autosize( textarea );
 		textarea[ 0 ].focus();
 
 		if ( form.find( '.mw-translate-messagechecks' ) ) {
@@ -394,4 +394,4 @@
 	} );
 
 	$( document ).ready( mw.translate.init );
-} )( jQuery, mediaWiki );
+} )( jQuery, mediaWiki, autosize );
