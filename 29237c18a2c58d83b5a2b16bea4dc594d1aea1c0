@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_5af847e2",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T07:58:50Z",
+      "side": 1,
+      "message": "You made this parameter mandatory. Did you check the callers?",
+      "revId": "29237c18a2c58d83b5a2b16bea4dc594d1aea1c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_7adeeb71",
+        "filename": "stringmangler/StringMatcher.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T07:58:50Z",
+      "side": 1,
+      "message": "Not mentioned in commit message but okay.",
+      "revId": "29237c18a2c58d83b5a2b16bea4dc594d1aea1c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_daebb707",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T07:58:50Z",
+      "side": 1,
+      "message": "Interestingly I do not see any callers inside Translate for this function.",
+      "revId": "29237c18a2c58d83b5a2b16bea4dc594d1aea1c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
