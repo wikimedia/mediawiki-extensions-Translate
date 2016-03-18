@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_fadcbb4d",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:41:50Z",
+      "side": 1,
+      "message": "Found only one caller in Translate, and it passes this variable.",
+      "revId": "340b62dfd13ac550c5be4e292837a26a23b30f8a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_3ae74311",
+        "filename": "utils/MessageGroupCache.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:41:50Z",
+      "side": 1,
+      "message": "Found only one caller:\nutils/ExternalMessageSourceStateComparator.php\n69:             if ( !$cache-\u003eisValid( $reason ) ) {",
+      "revId": "340b62dfd13ac550c5be4e292837a26a23b30f8a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_9aebefda",
+        "filename": "webservices/TranslationWebService.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:41:50Z",
+      "side": 1,
+      "message": "$count++ is more common. Not mentioned in the commit message.",
+      "revId": "340b62dfd13ac550c5be4e292837a26a23b30f8a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
