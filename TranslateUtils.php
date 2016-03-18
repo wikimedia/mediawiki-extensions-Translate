@@ -323,44 +323,6 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Adds help link with an icon to upper right corner.
-	 * @param OutputPage $out
-	 * @param string $to
-	 * @param bool $overrideBaseUrl
-	 * @since 2012-01-12
-	 */
-	public static function addSpecialHelpLink( OutputPage $out, $to, $overrideBaseUrl = false ) {
-		if ( method_exists( $out, 'addHelpLink' ) ) {
-			$out->addHelpLink( $to, $overrideBaseUrl );
-
-			return;
-		}
-
-		// BC for MW <= 1.24
-		$text = wfMessage( 'translate-gethelp' )->escaped();
-
-		if ( $overrideBaseUrl ) {
-			$helpUrl = $to;
-		} else {
-			$helpUrl = "https://www.mediawiki.org/wiki/Special:MyLanguage/$to";
-		}
-
-		$link = Html::rawElement(
-			'a',
-			array(
-				'href' => $helpUrl,
-				'target' => '_blank',
-				'class' => 'mw-translate-helplink',
-			),
-			$text
-		);
-
-		$out->addModuleStyles( 'ext.translate.helplink' );
-		$wrapper = Html::rawElement( 'div', array( 'class' => 'mw-translate-helplink-wrapper' ), $link );
-		$out->addHTML( $wrapper );
-	}
-
-	/**
 	 * Returns a random string that can be used as placeholder in strings.
 	 * @return string
 	 * @since 2012-07-31

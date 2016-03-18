@@ -135,11 +135,6 @@ $wgResourceModules['ext.translate.groupselector'] = array(
 	),
 ) + $resourcePaths;
 
-$wgResourceModules['ext.translate.helplink'] = array(
-	'styles' => 'resources/css/ext.translate.helplink.css',
-	'position' => 'top',
-) + $resourcePaths;
-
 $wgResourceModules['ext.translate.hooks'] = array(
 	'scripts' => 'resources/js/ext.translate.hooks.js',
 	'position' => 'top',

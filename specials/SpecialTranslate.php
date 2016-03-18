@@ -94,7 +94,7 @@ class SpecialTranslate extends SpecialPage {
 			$out->addHTML( $this->messageSelector() );
 		} else {
 			$out->addModuleStyles( 'ext.translate.legacy' );
-			TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Translation_example' );
+			$out->addHelpLink( 'Help:Extension:Translate/Translation_example' );
 			// Show errors nicely.
 			$out->addHTML( $this->settingsForm( $errors ) );
 		}

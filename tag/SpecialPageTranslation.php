@@ -41,11 +41,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$action = $request->getVal( 'do' );
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.pagetranslation' );
-
-		TranslateUtils::addSpecialHelpLink(
-			$out,
-			'Help:Extension:Translate/Page_translation_example'
-		);
+		$out->addHelpLink( 'Help:Extension:Translate/Page_translation_example' );
 
 		if ( $target === '' ) {
 			$this->listPages();

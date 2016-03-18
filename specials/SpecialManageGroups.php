@@ -52,7 +52,7 @@ class SpecialManageGroups extends SpecialPage {
 		$this->setHeaders();
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.managegroups' );
-		TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Group_management' );
+		$out->addHelpLink( 'Help:Extension:Translate/Group_management' );
 
 		$name = $par ?: MessageChangeStorage::DEFAULT_NAME;
 

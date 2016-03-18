@@ -47,8 +47,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$this->setHeaders();
 		$out->addModules( 'ext.translate.special.supportedlanguages' );
 
-		TranslateUtils::addSpecialHelpLink(
-			$out,
+		$out->addHelpLink(
 			'Help:Extension:Translate/Statistics_and_reporting#List_of_languages_and_translators'
 		);
 

@@ -135,10 +135,7 @@ class SpecialImportTranslations extends SpecialPage {
 	 */
 	protected function outputForm() {
 		$this->getOutput()->addModules( 'ext.translate.special.importtranslations' );
-		TranslateUtils::addSpecialHelpLink(
-			$this->getOutput(),
-			'Help:Extension:Translate/Off-line_translation'
-		);
+		$this->getOutput()->addHelpLink( 'Help:Extension:Translate/Off-line_translation' );
 		/**
 		 * Ugly but necessary form building ahead, ohoy
 		 */

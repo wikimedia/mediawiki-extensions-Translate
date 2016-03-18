@@ -148,10 +148,7 @@ class SpecialLanguageStats extends SpecialPage {
 		$this->noEmpty = $request->getBool( 'suppressempty', $this->noEmpty && !$submitted );
 
 		if ( !$this->including() ) {
-			TranslateUtils::addSpecialHelpLink(
-				$out,
-				'Help:Extension:Translate/Statistics_and_reporting'
-			);
+			$out->addHelpLink( 'Help:Extension:Translate/Statistics_and_reporting' );
 			$out->addHTML( $this->getForm() );
 		}
 
