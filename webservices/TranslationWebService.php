@@ -301,7 +301,7 @@ abstract class TranslationWebService {
 			list( $count, ) = explode( '|', $value, 2 );
 		}
 
-		$count += 1;
+		$count++;
 		$failed = wfTimestamp();
 		wfGetCache( CACHE_ANYTHING )->set(
 			$key,
