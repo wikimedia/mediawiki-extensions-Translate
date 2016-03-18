@@ -18,17 +18,17 @@ class MessageGroups {
 	/**
 	 * @var string[]|null Cache for message group priorities
 	 */
-	protected static $prioritycache = null;
+	protected static $prioritycache;
 
 	/**
 	 * @var array|null
 	 */
-	protected $groups = null;
+	protected $groups;
 
 	/**
 	 * @var BagOStuff|null
 	 */
-	protected $cache = null;
+	protected $cache;
 
 	/// Initialises the list of groups
 	protected function init() {

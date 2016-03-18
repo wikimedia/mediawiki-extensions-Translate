@@ -16,14 +16,14 @@
  */
 class SpecialTranslate extends SpecialPage {
 	/** @var TranslateTask */
-	protected $task = null;
+	protected $task;
 
 	/** @var MessageGroup */
-	protected $group = null;
+	protected $group;
 
-	protected $defaults = null;
+	protected $defaults;
 	protected $nondefaults = array();
-	protected $options = null;
+	protected $options;
 
 	public function __construct() {
 		parent::__construct( 'Translate' );

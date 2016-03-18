@@ -17,7 +17,7 @@ class TranslationQuery {
 	protected $timeout = 0;
 	protected $method = 'GET';
 	protected $params = array();
-	protected $body = null;
+	protected $body;
 
 	// URL is mandatory, so using it here
 	public static function factory( $url ) {

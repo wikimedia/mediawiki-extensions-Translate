@@ -16,25 +16,25 @@ class TranslatablePage {
 	/**
 	 * Title of the page.
 	 */
-	protected $title = null;
+	protected $title;
 
 	/**
 	 * Text contents of the page.
 	 */
-	protected $text = null;
+	protected $text;
 
 	/**
 	 * Revision of the page, if applicaple.
 	 *
 	 * @var int
 	 */
-	protected $revision = null;
+	protected $revision;
 
 	/**
 	 * From which source this object was constructed.
 	 * Can be: text, revision, title
 	 */
-	protected $source = null;
+	protected $source;
 
 	/**
 	 * Whether the page contents is already loaded.
@@ -50,7 +50,7 @@ class TranslatablePage {
 	 * Whether the title should be translated
 	 * @var bool
 	 */
-	protected $pageDisplayTitle = null;
+	protected $pageDisplayTitle;
 
 	protected $cachedParse;
 

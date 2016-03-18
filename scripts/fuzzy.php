@@ -104,7 +104,7 @@ class FuzzyScript {
 	/**
 	 * @var string Edit summary.
 	 */
-	public $comment = null;
+	public $comment;
 
 	/**
 	 * string[] List of language codes to skip.
