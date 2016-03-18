@@ -170,12 +170,12 @@
 	"pm-page-does-not-exist": "Sivua $1 ei ole olemassa.",
 	"pm-old-translations-missing": "Sivulla $1 ei ole vanhoja käännöksiä.",
 	"pm-pagename-missing": "Anna sivun nimi.",
-	"pm-langcode-missing": "Anna kielikoodi.",
 	"pm-add-icon-hover-text": "Lisää yksikkö alle",
 	"pm-swap-icon-hover-text": "Vaihda paikkaa alla olevan yksikön kanssa",
 	"pm-delete-icon-hover-text": "Poista yksikkö",
 	"pm-pagetitle-placeholder": "Anna sivun nimi",
 	"pm-pagetitle-invalid": "Anna kelvollinen sivun otsikko",
+	"pm-langcode-missing": "Anna kielikoodi.",
 	"tpt-translate-title": "Salli sivun otsikon käännös",
 	"pp-save-summary": "Valmisteli sivun kääntämistä varten.",
 	"pagepreparation": "Valmista sivu kääntämistä varten",
@@ -184,6 +184,6 @@
 	"pp-save-button-label": "Tallenna",
 	"pp-diff-old-header": "Lähdeteksti",
 	"pp-diff-new-header": "Valmisteltu teksti",
-	"tpt-unlink-button": "poista käännettävistä sivuista",
+	"tpt-unlink-button": "Poista käännettävistä sivuista",
 	"tpt-unlink-summary": "Poistettu käännettävistä sivuista"
 }
