@@ -1,0 +1,327 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_1a5b5ffe",
+        "filename": "api/ApiTranslationReview.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "User::getId is documented to return int, but I see many code paths where there is high risk this is not actually the case. Suggesting an explicit cast in core getId() to make this safe.\n\nRevision::getUser is always int.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_da68d786",
+        "filename": "ffs/YamlFFS.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "Obviously safe.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_3a5aa3f6",
+        "filename": "scripts/fuzzy.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "Title::getNamespace seems safe.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_9a6e4f92",
+        "filename": "scripts/groupStatistics.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "Defined in this file, safe.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_ba6513ad",
+        "filename": "scripts/groupStatistics.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "String comparison obviously safe.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_1a023fbe",
+        "filename": "scripts/magic-export.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "$translation seems to come from message files directly.\n\nJust looking at MessagesEn.php I can see it is int(0) not \u00270\u0027.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_fa067bd0",
+        "filename": "scripts/sync-group.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "String comparison obviously safe.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_5a0cc7f0",
+        "filename": "specials/SpecialTranslationStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "Looks safe.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_3a110309",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "Safe.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_9af5afca",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 817,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "Seems safe. Some time ago these were returning nulls too.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_7af26be0",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "Seems safe per earlier comment, but we should use $target-\u003einNamespaces()",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_daff37a6",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "$old-\u003einNamespace( NS_TRANSLATIONS )",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_bafcf3b2",
+        "filename": "tests/phpunit/HookDocTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "Safe.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_1a299f36",
+        "filename": "ttmserver/TTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "If we take this as a reference to the function, that has lowercase as the canonical form.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_fa2ddb42",
+        "filename": "utils/MessageHandle.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "inNamespace",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_5a232754",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "Well, the comment on the above line says it all.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_3a28e32e",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "Safe.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_9a1c8f1a",
+        "filename": "utils/TranslateYaml.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "Looks safe.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_7a19cb26",
+        "filename": "webservices/TranslationWebService.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-18T08:30:05Z",
+      "side": 1,
+      "message": "Safe since line 305 casts this to an int.",
+      "revId": "17c46038aae79ea9a5ca96610406cb48c7717a64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
