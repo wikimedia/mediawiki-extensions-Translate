@@ -56,8 +56,6 @@
 	"apihelp-translatesandbox-param-username": "{{doc-apihelp-param|translatesandbox|username}}",
 	"apihelp-translatesandbox-param-password": "{{doc-apihelp-param|translatesandbox|password}}",
 	"apihelp-translatesandbox-param-email": "{{doc-apihelp-param|translatesandbox|email}}",
-	"apihelp-translateuser-description": "{{doc-apihelp-description|translateuser}}",
-	"apihelp-translateuser-example-1": "{{doc-apihelp-example|translateuser}}",
 	"apihelp-translationaids-description": "{{doc-apihelp-description|translationaids}}",
 	"apihelp-translationaids-param-title": "{{doc-apihelp-param|translationaids|title}}",
 	"apihelp-translationaids-param-group": "{{doc-apihelp-param|translationaids|group}}\n\nThe term \"primary group\" is explained at https://www.mediawiki.org/wiki/Help:Extension:Translate/Glossary\nas \"primary message group\".",
