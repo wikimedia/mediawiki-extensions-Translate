@@ -265,6 +265,10 @@ $wgResourceModules['ext.translate.quickedit'] = array(
 	),
 ) + $resourcePaths;
 
+$wgResourceModules['ext.translate.recentgroups'] = array(
+	'scripts' => 'resources/js/ext.translate.recentgroups.js',
+) + $resourcePaths;
+
 $wgResourceModules['ext.translate.selecttoinput'] = array(
 	'scripts' => 'resources/js/ext.translate.selecttoinput.js',
 ) + $resourcePaths;
@@ -448,6 +452,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'ext.translate.groupselector',
 		'ext.translate.messagetable',
 		'ext.translate.navitoggle',
+		'ext.translate.recentgroups',
 		'ext.translate.workflowselector',
 		'ext.uls.mediawiki',
 		'mediawiki.Uri',

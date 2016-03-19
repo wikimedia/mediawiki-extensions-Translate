@@ -90,7 +90,6 @@ $wgAPIMetaModules['messagetranslations'] = 'ApiQueryMessageTranslations';
 $wgAPIModules['aggregategroups'] = 'ApiAggregateGroups';
 $wgAPIModules['groupreview'] = 'ApiGroupReview';
 $wgAPIModules['translatesandbox'] = 'ApiTranslateSandbox';
-$wgAPIModules['translateuser'] = 'ApiTranslateUser';
 $wgAPIModules['translationaids'] = 'ApiTranslationAids';
 $wgAPIModules['translationreview'] = 'ApiTranslationReview';
 $wgAPIModules['translationstash'] = 'ApiTranslationStash';
