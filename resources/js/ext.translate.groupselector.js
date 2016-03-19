@@ -1,7 +1,7 @@
 ( function ( $, mw ) {
 	'use strict';
 
-	var groupsLoader, recentGroupsLoader, delay;
+	var groupsLoader, delay;
 
 	/**
 	 * options
@@ -9,6 +9,7 @@
 	 *  - onSelect: callback with message group id when selected
 	 *  - language: language for statistics.
 	 *  - preventSelector: boolean to load but not show the group selector.
+	 *  - recent: list of recent group ids
 	 * groups: list of message group ids
 	 */
 	function TranslateMessageGroupSelector( element, options, groups ) {
@@ -87,11 +88,16 @@
 				.append(
 					$( '<div>' )
 						.addClass( 'tux-grouptab tux-grouptab--all tux-grouptab--selected' )
-						.text( mw.msg( 'translate-msggroupselector-search-all' ) ),
+						.text( mw.msg( 'translate-msggroupselector-search-all' ) )
+				);
+
+			if ( ( this.options.recent || [] ).length ) {
+				$listFilters.append(
 					$( '<div>' )
 						.addClass( 'tux-grouptab tux-grouptab--recent' )
 						.text( mw.msg( 'translate-msggroupselector-search-recent' ) )
 				);
+			}
 
 			$searchGroup = $( '<div>' )
 				.addClass( 'tux-groupselector__filter__search' )
@@ -317,8 +323,9 @@
 		 * Show recent message groups.
 		 */
 		showRecentGroups: function () {
-			$.when( this.loadRecentGroups(), this.loadGroups() )
-				.done( $.proxy( this.showSelectedGroups, this ) );
+			var recent = this.options.recent || [];
+
+			this.showSelectedGroups( recent );
 		},
 
 		/**
@@ -443,33 +450,6 @@
 				.promise();
 
 			return groupsLoader;
-		},
-
-		/**
-		 * Returns list of recently used message groups by the user.
-		 *
-		 * @return {jQuery.Promise}
-		 */
-		loadRecentGroups: function () {
-			var params;
-
-			if ( recentGroupsLoader !== undefined ) {
-				return recentGroupsLoader;
-			}
-
-			params = {
-				action: 'translateuser',
-				format: 'json'
-			};
-
-			recentGroupsLoader = new mw.Api()
-				.get( params )
-				.then( function ( result ) {
-					return result.translateuser.recentgroups;
-				} )
-				.promise();
-
-			return recentGroupsLoader;
 		},
 
 		/**

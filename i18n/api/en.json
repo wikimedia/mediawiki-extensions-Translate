@@ -51,8 +51,6 @@
 	"apihelp-translatesandbox-param-username": "Username when creating user.",
 	"apihelp-translatesandbox-param-password": "Password when creating user.",
 	"apihelp-translatesandbox-param-email": "Email when creating user.",
-	"apihelp-translateuser-description": "Translation related information about the user.",
-	"apihelp-translateuser-example-1": "Show information about the user",
 	"apihelp-translationaids-description": "Query all translations aids.",
 	"apihelp-translationaids-param-title": "Full title of a known message.",
 	"apihelp-translationaids-param-group": "Message group the message belongs to. If empty then primary group is used.",
