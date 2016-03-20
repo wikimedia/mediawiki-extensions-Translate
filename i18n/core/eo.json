@@ -12,7 +12,8 @@
 			"Tlustulimu",
 			"Yekrats",
 			"Remux",
-			"KuboF"
+			"KuboF",
+			"Robin van der Vliet"
 		]
 	},
 	"translate": "Tradukado",
@@ -299,6 +300,7 @@
 	"tux-editor-placeholder": "Via traduko",
 	"tux-editor-save-button-label": "Konservi tradukon",
 	"tux-editor-skip-button-label": "Salti al la sekva",
+	"tux-editor-cancel-button-label": "Nuligi",
 	"tux-editor-shortcut-info": "Premu \"$1\" por konservi aŭ \"$2\" por salti al la sekva mesaĝo",
 	"tux-editor-edit-desc": "Redakti priskribon",
 	"tux-editor-suggestions-title": "Sugestoj",
@@ -308,5 +310,6 @@
 	"tux-editor-tm-match": "$1%-a kongruo",
 	"tux-warnings-more": "{{PLURAL:$1|$1 pli}}",
 	"tux-warnings-hide": "kaŝi",
-	"tux-editor-save-failed": "Ne sukcesis konservi la tradukon: $1"
+	"tux-editor-save-failed": "Ne sukcesis konservi la tradukon: $1",
+	"tux-editor-doc-editor-cancel": "Nuligi"
 }
