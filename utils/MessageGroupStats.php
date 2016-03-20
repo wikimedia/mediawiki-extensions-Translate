@@ -453,6 +453,10 @@ class MessageGroupStats {
 	}
 
 	protected static function queueUpdates() {
+		if ( wfReadOnly() ) {
+			return;
+		}
+
 		if ( !count( self::$updates ) ) {
 			return;
 		}
