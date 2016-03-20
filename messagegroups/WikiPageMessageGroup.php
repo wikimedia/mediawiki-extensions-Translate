@@ -112,7 +112,11 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		}
 
 		$title = Title::makeTitleSafe( $this->getNamespace(), "$key/$code" );
-		$rev = Revision::newFromTitle( $title, false, Revision::READ_LATEST );
+		$method = RequestContext::getMain()->getRequest()->getMethod();
+		$flags = ( $method === 'GET' || $method === 'HEAD' )
+			? 0 // bug T95753
+			: Revision::READ_LATEST;
+		$rev = Revision::newFromTitle( $title, false, $flags );
 
 		if ( !$rev ) {
 			return null;
