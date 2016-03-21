@@ -311,5 +311,6 @@
 	"tux-warnings-more": "{{PLURAL:$1|$1 pli}}",
 	"tux-warnings-hide": "kaŝi",
 	"tux-editor-save-failed": "Ne sukcesis konservi la tradukon: $1",
-	"tux-editor-doc-editor-cancel": "Nuligi"
+	"tux-editor-doc-editor-cancel": "Nuligi",
+	"tux-empty-list-translated-action": "Traduki"
 }
