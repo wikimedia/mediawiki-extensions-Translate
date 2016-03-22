@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Sasan700",
-			"Умар"
+			"Умар",
+			"Исмаил Садуев"
 		]
 	},
 	"pagetranslation": "АгӀонаш гочяр",
@@ -30,18 +31,16 @@
 	"pt-deletepage-invalid-text": "Билгалйина агӀо гоч я луш йолу агӀонийн юкъа йогӀуш яц.",
 	"pt-deletepage-action-perform": "Кхочушдé дӀаяккхар",
 	"pt-deletepage-action-other": "Хийца Ӏалашо",
-	"pt-deletepage-current": "АгӀона цӀе:",
+	"pt-deletepage-current": "АгӀонан цӀе:",
 	"pagemigration": "АгӀонийн миграци",
 	"pm-import-button-label": "Импорт ян",
 	"pm-savepages-button-label": "Ӏалашдан",
 	"pm-cancel-button-label": "Цаоьшу",
-	"pm-pagename-placeholder": "Язъе агӀона цӀе",
-	"pm-langcode-placeholder": "Метта код",
 	"pm-page-does-not-exist": "«$1» яц",
 	"pm-old-translations-missing": "$1 шира гочдарш чохь дац",
 	"pm-pagename-missing": "Дехар до, дӀаязъе агӀона цӀе:",
-	"pm-langcode-missing": "Дехар до, меттан код язъе",
 	"pm-pagetitle-invalid": "Дехар до, дӀаязеъе агӀона нийса цӀе.",
+	"pm-langcode-missing": "Дехар до, меттан код язъе",
 	"pp-save-summary": "АгӀо гочян кечяр",
 	"pagepreparation": "АгӀо гочян кечяр",
 	"pp-pagename-placeholder": "Язъе агӀона цӀе",
