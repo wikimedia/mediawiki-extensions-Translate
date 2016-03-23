@@ -221,7 +221,6 @@
 	"logentry-translationreview-message": "$1 {{GENDER:$2|potvrdio|potvrdila}} je prijevod $3",
 	"translate-stats-workflow": "Stanje",
 	"translate-dynagroup-additions-desc": "Ova grupa poruka prikazuje nove i izmijenjene poruke.",
-	"translate-gethelp": "Pomoć",
 	"translate-msggroupselector-projects": "Grupa poruka",
 	"translate-msggroupselector-search-all": "Sve",
 	"translate-msggroupselector-search-recent": "Nedavne",

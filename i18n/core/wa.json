@@ -237,6 +237,5 @@
 	"translate-workflowgroup-label": "Estats d' ovrance",
 	"translate-workflowgroup-desc": "Ci groupe ci mostere l' estat d' ovrance des ratournaedjes.\nLes estats sont definis dins l' variåve d' apontiaedje  $wgTranslateWorkflowStates.",
 	"translate-dynagroup-recent-label": "Dierins ratournaedjes",
-	"translate-dynagroup-recent-desc": "Ci groupe ci mostere les ratournaedjes fwaits dierinnmint dins l' lingaedje.\nIl est eployî copurade po les bouyes di verifiaedje.",
-	"translate-gethelp": "Aidance"
+	"translate-dynagroup-recent-desc": "Ci groupe ci mostere les ratournaedjes fwaits dierinnmint dins l' lingaedje.\nIl est eployî copurade po les bouyes di verifiaedje."
 }
