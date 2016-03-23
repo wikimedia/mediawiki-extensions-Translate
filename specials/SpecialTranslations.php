@@ -65,8 +65,7 @@ class SpecialTranslations extends SpecialAllPages {
 			$title = Title::newFromText( $par, $namespace );
 		}
 
-		TranslateUtils::addSpecialHelpLink(
-			$out,
+		$out->addHelpLink(
 			'Help:Extension:Translate/Statistics_and_reporting#Translations_in_all_languages'
 		);
 

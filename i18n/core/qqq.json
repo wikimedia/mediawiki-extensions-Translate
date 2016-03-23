@@ -318,7 +318,6 @@
 	"translate-dynagroup-recent-desc": "Description of a message group.",
 	"translate-dynagroup-additions-label": "Label of a message group",
 	"translate-dynagroup-additions-desc": "Description of a message group.",
-	"translate-gethelp": "Link to some Translate help page or tutorial.\n{{Identical|Help}}",
 	"translate-msggroupselector-projects": "Title text for the message group breadcrumb.\n{{Identical|Message group}}",
 	"translate-msggroupselector-search-placeholder": "Place holder text for the search box in message group selector. It's supposed to tell the user that the box is for a search for a name of a group.",
 	"translate-msggroupselector-search-all": "Label to display all projects.\n{{Identical|All}}",

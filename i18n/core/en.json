@@ -287,7 +287,6 @@
 	"translate-dynagroup-recent-desc": "This message group shows all recent translations into this language.\nMost useful for the review tasks.",
 	"translate-dynagroup-additions-label": "Recent additions",
 	"translate-dynagroup-additions-desc": "This message group shows new and changed messages.",
-	"translate-gethelp": "Help",
 	"translate-msggroupselector-projects": "Message group",
 	"translate-msggroupselector-search-placeholder": "Search groups",
 	"translate-msggroupselector-search-all": "All",

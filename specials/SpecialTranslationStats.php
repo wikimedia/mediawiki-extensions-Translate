@@ -149,7 +149,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$this->setHeaders();
 		$out = $this->getOutput();
-		TranslateUtils::addSpecialHelpLink( $out, 'Help:Extension:Translate/Statistics_and_reporting' );
+		$out->addHelpLink( 'Help:Extension:Translate/Statistics_and_reporting' );
 		$out->addWikiMsg( 'translate-statsf-intro' );
 
 		$out->addHTML(
