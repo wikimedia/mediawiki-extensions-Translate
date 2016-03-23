@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_909f2f06",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2016-03-23T22:19:02Z",
+      "side": 1,
+      "message": "It might make more sense to use:\n\n if ( this.options.recent \u0026\u0026 this.options.recent.length ) {\n\nor\n\n var recent \u003d this.options.recent;\n if ( recent \u0026\u0026 recent.length ) {",
+      "revId": "f8b41ded78483ffde3dac23aabe4ddb2a5d86d76",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
