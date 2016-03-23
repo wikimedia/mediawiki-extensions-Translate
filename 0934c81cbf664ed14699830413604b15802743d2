@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee33df1d_0da78b4d",
+        "filename": "specials/SpecialImportTranslations.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-03-23T12:05:37Z",
+      "side": 1,
+      "message": "This would be a functional change for MW 1.25+. I think this should be done in a separate change.",
+      "parentUuid": "ee33df1d_0a25b103",
+      "revId": "0934c81cbf664ed14699830413604b15802743d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee33df1d_ea1fadb8",
         "filename": "specials/SpecialLanguageStats.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-03-23T06:22:34Z",
       "side": 1,
       "message": "Why not $this-\u003eaddHelpLink?",
+      "revId": "0934c81cbf664ed14699830413604b15802743d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_eda18737",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-03-23T12:05:37Z",
+      "side": 1,
+      "message": "This would be a functional change for MW 1.25+. I think this should be done in a separate change.",
+      "parentUuid": "ee33df1d_ea1fadb8",
       "revId": "0934c81cbf664ed14699830413604b15802743d2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ee33df1d_4d6873f2",
+        "filename": "specials/SpecialMagic.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-03-23T12:05:37Z",
+      "side": 1,
+      "message": "This would be a functional change for MW 1.25+. I think this should be done in a separate change.",
+      "parentUuid": "ee33df1d_4a7e99e2",
+      "revId": "0934c81cbf664ed14699830413604b15802743d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee33df1d_2a8195c8",
         "filename": "specials/SpecialManageGroups.php",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2016-03-23T06:22:34Z",
       "side": 1,
       "message": "Why not $this-\u003eaddHelpLink?",
+      "revId": "0934c81cbf664ed14699830413604b15802743d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_2d6b6fef",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-03-23T12:05:37Z",
+      "side": 1,
+      "message": "This would be a functional change for MW 1.25+. I think this should be done in a separate change.",
+      "parentUuid": "ee33df1d_2a8195c8",
       "revId": "0934c81cbf664ed14699830413604b15802743d2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ee33df1d_8d727be0",
+        "filename": "specials/SpecialSearchTranslations.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-03-23T12:05:37Z",
+      "side": 1,
+      "message": "This would be a functional change for MW 1.25+. I think this should be done in a separate change.",
+      "parentUuid": "ee33df1d_8a88a1ed",
+      "revId": "0934c81cbf664ed14699830413604b15802743d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee33df1d_6a8b9de8",
         "filename": "specials/SpecialSupportedLanguages.php",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2016-03-23T06:22:34Z",
       "side": 1,
       "message": "Why not $this-\u003eaddHelpLink?",
+      "revId": "0934c81cbf664ed14699830413604b15802743d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_6d7577c8",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-03-23T12:05:37Z",
+      "side": 1,
+      "message": "This would be a functional change for MW 1.25+. I think this should be done in a separate change.",
+      "parentUuid": "ee33df1d_6a8b9de8",
       "revId": "0934c81cbf664ed14699830413604b15802743d2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ee33df1d_cd7be3bb",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-03-23T12:05:37Z",
+      "side": 1,
+      "message": "This would be a functional change for MW 1.25+. I think this should be done in a separate change.",
+      "parentUuid": "ee33df1d_ca71090d",
+      "revId": "0934c81cbf664ed14699830413604b15802743d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee33df1d_aa6c8532",
         "filename": "specials/SpecialTranslationStats.php",
         "patchSetId": 2
@@ -132,6 +258,24 @@
       "writtenOn": "2016-03-23T06:22:34Z",
       "side": 1,
       "message": "Why not $this-\u003eaddHelpLink?",
+      "revId": "0934c81cbf664ed14699830413604b15802743d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_ad765fd1",
+        "filename": "specials/SpecialTranslationStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-03-23T12:05:37Z",
+      "side": 1,
+      "message": "This would be a functional change for MW 1.25+. I think this should be done in a separate change.",
+      "parentUuid": "ee33df1d_aa6c8532",
       "revId": "0934c81cbf664ed14699830413604b15802743d2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "ee33df1d_0d866bac",
+        "filename": "specials/SpecialTranslations.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-03-23T12:05:37Z",
+      "side": 1,
+      "message": "This would be a functional change for MW 1.25+. I think this should be done in a separate change.",
+      "parentUuid": "ee33df1d_0a7c91e1",
+      "revId": "0934c81cbf664ed14699830413604b15802743d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee33df1d_ea768d00",
         "filename": "tag/SpecialPageTranslation.php",
         "patchSetId": 2
@@ -166,6 +328,24 @@
       "writtenOn": "2016-03-23T06:22:34Z",
       "side": 1,
       "message": "Why not $this-\u003eaddHelpLink?",
+      "revId": "0934c81cbf664ed14699830413604b15802743d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_ed806790",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2016-03-23T12:05:37Z",
+      "side": 1,
+      "message": "This would be a functional change for MW 1.25+. I think this should be done in a separate change.",
+      "parentUuid": "ee33df1d_ea768d00",
       "revId": "0934c81cbf664ed14699830413604b15802743d2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
