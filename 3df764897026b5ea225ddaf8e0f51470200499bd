@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_aa25a506",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-23T06:22:34Z",
+      "side": 0,
+      "message": "Should also remove the message.",
+      "revId": "3df764897026b5ea225ddaf8e0f51470200499bd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
