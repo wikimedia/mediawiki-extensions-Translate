@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_2d37efac",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-23T09:58:46Z",
+      "side": 1,
+      "message": "Use array syntax for options.",
+      "revId": "a2b04f4169a138d75d1ea0a4a35304964f9cecc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_8d3efb85",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-23T09:58:46Z",
+      "side": 1,
+      "message": "Use single quotes.",
+      "revId": "a2b04f4169a138d75d1ea0a4a35304964f9cecc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_ed4ce745",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-23T09:58:46Z",
+      "side": 1,
+      "message": "Why so much code repeated?",
+      "revId": "a2b04f4169a138d75d1ea0a4a35304964f9cecc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
