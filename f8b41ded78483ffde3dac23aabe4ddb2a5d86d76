@@ -16,6 +16,40 @@
       "revId": "f8b41ded78483ffde3dac23aabe4ddb2a5d86d76",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_70b9cb77",
+        "filename": "resources/js/ext.translate.recentgroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2016-03-23T22:25:43Z",
+      "side": 1,
+      "message": "Avoid \u0027window.\u0027 prefix so that this is detected as global, not a window property. Makes linting easier, less likely to misspell things (since jshint would throw a warning if it sees an unknown global). It also saves one extra property lookup.",
+      "revId": "f8b41ded78483ffde3dac23aabe4ddb2a5d86d76",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_d0a7f74b",
+        "filename": "resources/js/ext.translate.recentgroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2016-03-23T22:25:43Z",
+      "side": 1,
+      "message": "This is an internal jQuery method for sorting and de-duplicating an array of DOM Elements. Do not use it for anything else. This runs slower than a simple unique filter. Aside from being slower, it might produce unexpected results as it isn\u0027t meant for arbitrary values.",
+      "revId": "f8b41ded78483ffde3dac23aabe4ddb2a5d86d76",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
