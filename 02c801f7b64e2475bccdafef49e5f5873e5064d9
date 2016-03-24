@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_35f1edfe",
+        "filename": "resources/js/ext.translate.recentgroups.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2016-03-24T19:00:44Z",
+      "side": 1,
+      "message": "Beware that Array#filter is new in ES5. Be sure to add a dependency on \u0027es5-shim\u0027 (only loaded in older browsers, don\u0027t worry).",
+      "revId": "02c801f7b64e2475bccdafef49e5f5873e5064d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
