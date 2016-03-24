@@ -16,6 +16,24 @@
       "revId": "02c801f7b64e2475bccdafef49e5f5873e5064d9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_555bd1fc",
+        "filename": "resources/js/ext.translate.recentgroups.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-24T19:05:04Z",
+      "side": 1,
+      "message": "Per https://kangax.github.io/compat-table/es5/ I thought it is safe.",
+      "parentUuid": "ee33df1d_35f1edfe",
+      "revId": "02c801f7b64e2475bccdafef49e5f5873e5064d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
