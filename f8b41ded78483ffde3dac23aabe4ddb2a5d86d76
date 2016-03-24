@@ -50,6 +50,24 @@
       "revId": "f8b41ded78483ffde3dac23aabe4ddb2a5d86d76",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_46684d19",
+        "filename": "resources/js/ext.translate.recentgroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-24T06:33:15Z",
+      "side": 1,
+      "message": "Which \"simple unique filter\" do you recommend? There are dozens out there.",
+      "parentUuid": "ee33df1d_d0a7f74b",
+      "revId": "f8b41ded78483ffde3dac23aabe4ddb2a5d86d76",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
