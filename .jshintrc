@@ -4,7 +4,7 @@
 	"eqeqeq": true,
 	"forin": false,
 	"freeze": true,
-	"latedef": true,
+	"latedef": "nofunc",
 	"noarg": true,
 	"nonew": true,
 	"onevar": true,
