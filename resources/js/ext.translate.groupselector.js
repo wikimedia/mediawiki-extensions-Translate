@@ -549,7 +549,8 @@
 				.addClass( 'seven columns' )
 				.append(
 					$( '<span>' )
-						.prop( { dir: 'auto' } )
+						// T130390: must be attr for IE/Edge.
+						.attr( { dir: 'auto' } )
 						.text( messagegroup.label ),
 					$statsbar
 				);
