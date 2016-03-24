@@ -64,8 +64,6 @@
 			}
 
 			params = {
-				action: 'query',
-				format: 'json',
 				meta: 'messagegroups',
 				mgformat: 'flat',
 				mgprop: props,

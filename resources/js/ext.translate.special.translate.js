@@ -1,6 +1,11 @@
 ( function ( $, mw ) {
 	'use strict';
 
+	var state = {
+		group: null,
+		language: null
+	};
+
 	mw.translate = mw.translate || {};
 
 	mw.translate = $.extend( mw.translate, {
@@ -12,34 +17,22 @@
 		 * @param {Object} group a message group object.
 		 */
 		changeGroup: function ( group ) {
-			var changes,
-				api = new mw.Api(),
-				$description = $( '.tux-editor-header .description' );
+			var changes;
 
 			if ( !checkDirty() ) {
 				return;
 			}
 
+			state.group = group.id;
+
 			changes = {
 				group: group.id
 			};
 
-			// Update the group description in the header
-			api.parse(
-				group.description
-			).done( function ( parsedDescription ) {
-				// The parsed text is returned in a <p> tag,
-				// so it's removed here.
-				$description.html( $( parsedDescription ).html() );
-			} ).fail( function () {
-				$description.html( group.description );
-				mw.log( 'Error parsing description for group ' + group.id );
-			} );
-
 			mw.translate.changeUrl( changes );
 			mw.translate.updateTabLinks( changes );
 			mw.translate.loadMessages( changes );
-			updateGroupWarning();
+			updateGroupInformation( state );
 		},
 
 		changeLanguage: function ( language ) {
@@ -49,6 +42,8 @@
 			if ( !checkDirty() ) {
 				return;
 			}
+
+			state.language = language;
 
 			changes = {
 				language: language
@@ -78,7 +73,7 @@
 			mw.translate.changeUrl( changes );
 			mw.translate.updateTabLinks( changes );
 			mw.translate.loadMessages();
-			updateGroupWarning();
+			updateGroupInformation( state );
 		},
 
 		changeFilter: function ( filter ) {
@@ -154,56 +149,77 @@
 			.filter( '.translated, .proofread' );
 	}
 
-	function updateGroupWarning() {
-		var $groupWarning = $( '.tux-editor-header .group-warning' ),
-			id = $( '.tux-messagetable-loader' ).data( 'messagegroup' ),
-			props = 'priority|prioritylangs|priorityforce';
+	/**
+	 * Updates all group specific stuff on the page.
+	 */
+	function updateGroupInformation( state ) {
+		var props = 'id|priority|prioritylangs|priorityforce|description';
+
+		mw.translate.getMessageGroup( state.group, props ).done( function ( group ) {
+			updateDescription( group );
+			updateGroupWarning( group, state.language );
+		} );
+	}
+
+	function updateDescription( group ) {
+		var
+			api = new mw.Api(),
+			$description = $( '.tux-editor-header .description' );
+
+		api.parse( group.description ).done( function ( parsedDescription ) {
+			// The parsed text is returned in a <p> tag,
+			// so it's removed here.
+			$description.html( $( parsedDescription ).html() );
+		} ).fail( function () {
+			$description.empty();
+			mw.log( 'Error parsing description for group ' + group.id );
+		} );
+	}
+
+	function updateGroupWarning( group, language ) {
+		var preferredLanguages, headerMessage, languagesMessage,
+			$groupWarning = $( '.tux-editor-header .group-warning' );
 
 		$groupWarning.empty();
 
-		mw.translate.getMessageGroup( id, props ).done( function ( group ) {
-			var preferredLanguages, headerMessage, languagesMessage,
-				targetLanguage = $( '.tux-messagelist' ).data( 'targetlangcode' );
+		// Check whether the group has priority languages
+		if ( !group.prioritylangs ) {
+			return;
+		}
 
-			// Check whether the group has priority languages
-			if ( !group.prioritylangs ) {
-				return;
-			}
+		// And if the current language is among them, we can return early
+		if ( $.inArray( language, group.prioritylangs ) !== -1 ) {
+			return;
+		}
 
-			// And if the current language is among them, we can return early
-			if ( $.inArray( targetLanguage, group.prioritylangs ) !== -1 ) {
-				return;
-			}
+		// Make a comma-separated list of preferred languages
+		preferredLanguages = $.map( group.prioritylangs, function ( lang ) {
+			// bidi isolation for language names
+			return '<bdi>' + $.uls.data.getAutonym( lang ) + '</bdi>';
+		} ).join( ', ' );
 
-			// Make a comma-separated list of preferred languages
-			preferredLanguages = $.map( group.prioritylangs, function ( lang ) {
-				// bidi isolation for language names
-				return '<bdi>' + $.uls.data.getAutonym( lang ) + '</bdi>';
-			} ).join( ', ' );
+		headerMessage = mw.message( group.priorityforce ?
+			'tpt-discouraged-language-force-header' :
+			'tpt-discouraged-language-header',
+			$.uls.data.getAutonym( language )
+		).parse();
 
-			headerMessage = mw.message( group.priorityforce ?
-				'tpt-discouraged-language-force-header' :
-				'tpt-discouraged-language-header',
-				$.uls.data.getAutonym( targetLanguage )
-			).parse();
+		languagesMessage = mw.message( group.priorityforce ?
+			'tpt-discouraged-language-force-content' :
+			'tpt-discouraged-language-content',
+			preferredLanguages
+		).parse();
 
-			languagesMessage = mw.message( group.priorityforce ?
-				'tpt-discouraged-language-force-content' :
-				'tpt-discouraged-language-content',
-				preferredLanguages
-			).parse();
-
-			$groupWarning.append(
-				$( '<p>' ).append( $( '<strong>' ).text( headerMessage ) ),
-				// html because of the <bdi> and because it's parsed
-				$( '<p>' ).html( languagesMessage )
-			);
-		} );
+		$groupWarning.append(
+			$( '<p>' ).append( $( '<strong>' ).text( headerMessage ) ),
+			// html because of the <bdi> and because it's parsed
+			$( '<p>' ).html( languagesMessage )
+		);
 	}
 
 	$( document ).ready( function () {
 		var $translateContainer, $hideTranslatedButton, $controlOwnButton, $messageList,
-			targetLanguage, docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri, position;
+			docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri, position;
 
 		$messageList = $( '.tux-messagelist' );
 		if ( $messageList.length ) {
@@ -224,7 +240,8 @@
 			} );
 		}
 
-		targetLanguage = $messageList.data( 'targetlangcode' ) || // for tux=1
+		state.group = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
+		state.language = $messageList.data( 'targetlangcode' ) || // for tux=1
 			mw.config.get( 'wgUserLanguage' ); // for tux=0
 
 		if ( $( 'body' ).hasClass( 'rtl' ) ) {
@@ -235,11 +252,11 @@
 		}
 		$( '.tux-breadcrumb .grouplink' ).msggroupselector( {
 			onSelect: mw.translate.changeGroup,
-			language: targetLanguage,
+			language: state.language,
 			position: position
 		} );
 
-		updateGroupWarning();
+		updateGroupInformation( state );
 
 		$( '.tux-messagelist' ).messagetable();
 		// Use ULS for language selection if it's available
