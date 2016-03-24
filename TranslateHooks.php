@@ -11,7 +11,9 @@
  * Some hooks for Translate extension.
  */
 class TranslateHooks {
-	// Hook: ResourceLoaderTestModules
+	/**
+	 * Hook: ResourceLoaderTestModules
+	 */
 	public static function onResourceLoaderTestModules( array &$modules ) {
 		$modules['qunit']['ext.translate.parsers.test'] = array(
 			'scripts' => array( 'tests/qunit/ext.translate.parsers.test.js' ),
@@ -30,7 +32,8 @@ class TranslateHooks {
 
 	/**
 	 * Hook: CanonicalNamespaces
-	 * @param $list array
+	 *
+	 * @param array $list
 	 */
 	public static function setupNamespaces( &$list ) {
 		global $wgPageTranslationNamespace, $wgNamespaceRobotPolicies;
@@ -215,6 +218,7 @@ class TranslateHooks {
 	/**
 	 * Hook: UserGetReservedNames
 	 * Prevents anyone from registering or logging in as FuzzyBot
+	 *
 	 * @param array $names
 	 */
 	public static function onUserGetReservedNames( &$names ) {
@@ -226,7 +230,7 @@ class TranslateHooks {
 	 * Hook: ParserFirstCallInit
 	 * Registers \<languages> tag with the parser.
 	 *
-	 * @param $parser Parser
+	 * @param Parser $parser
 	 */
 	public static function setupParserHooks( $parser ) {
 		// For nice language list in-page
@@ -235,7 +239,8 @@ class TranslateHooks {
 
 	/**
 	 * Hook: UnitTestsList
-	 * @param $files array
+	 *
+	 * @param array $files
 	 */
 	public static function setupUnitTests( array &$files ) {
 		$dir = __DIR__ . '/tests/phpunit';
@@ -252,7 +257,8 @@ class TranslateHooks {
 
 	/**
 	 * Hook: LoadExtensionSchemaUpdates
-	 * @param $updater DatabaseUpdater
+	 *
+	 * @param DatabaseUpdater $updater
 	 */
 	public static function schemaUpdates( DatabaseUpdater $updater ) {
 		$dir = __DIR__ . '/sql';
@@ -357,10 +363,11 @@ class TranslateHooks {
 	}
 
 	/**
-	 * Set the correct page content language for translation units.
 	 * Hook: PageContentLanguage
-	 * @param $title Title
-	 * @param $pageLang
+	 * Set the correct page content language for translation units.
+	 *
+	 * @param Title $title
+	 * @param string $pageLang
 	 */
 	public static function onPageContentLanguage( Title $title, &$pageLang ) {
 		$handle = new MessageHandle( $title );
@@ -473,7 +480,9 @@ class TranslateHooks {
 		return false;
 	}
 
-	/// Hook: SpecialSearchSetupEngine
+	/**
+	 * Hook: SpecialSearchSetupEngine
+	 */
 	public static function searchProfileSetupEngine( SpecialSearch $search,
 		/*string*/$profile, SearchEngine $engine
 	) {
@@ -489,13 +498,17 @@ class TranslateHooks {
 		}
 	}
 
-	/// Hook: Translate:MessageGroupStats:isIncluded
+	/**
+	 * Hook: Translate:MessageGroupStats:isIncluded
+	 */
 	public static function hideDiscouragedFromStats( $id, $code ) {
 		// Return true to keep, false to exclude
 		return MessageGroups::getPriority( $id ) !== 'discouraged';
 	}
 
-	/// Hook: Translate:MessageGroupStats:isIncluded
+	/**
+	 * Hook: Translate:MessageGroupStats:isIncluded
+	 */
 	public static function hideRestrictedFromStats( $id, $code ) {
 		$filterLangs = TranslateMetadata::get( $id, 'prioritylangs' );
 		if ( strlen( $filterLangs ) === 0 ) {
@@ -509,7 +522,9 @@ class TranslateHooks {
 		return isset( $filter[$code] );
 	}
 
-	/// Hook LinksUpdate
+	/**
+	 * Hook: LinksUpdate
+	 */
 	public static function preventCategorization( LinksUpdate $updater ) {
 		$handle = new MessageHandle( $updater->getTitle() );
 		if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
@@ -571,7 +586,8 @@ class TranslateHooks {
 	);
 
 	/**
-	 * Handler for E:UserMerge's MergeAccountFromTo hook
+	 * Hook: MergeAccountFromTo
+	 * For UserMerge extension.
 	 *
 	 * @param User $oldUser
 	 * @param User $newUser
@@ -595,7 +611,8 @@ class TranslateHooks {
 	}
 
 	/**
-	 * Handler for E:UserMerge's DeleteAccount hook
+	 * Hook: DeleteAccount
+	 * For UserMerge extension.
 	 *
 	 * @param User $oldUser
 	 */
@@ -633,10 +650,9 @@ class TranslateHooks {
 	}
 
 	/**
+	 * Hook: LinkBegin
 	 * Make Special:MyLanguage links red if the target page doesn't exists.
 	 * A bit hacky because the core code is not so flexible.
-	 *
-	 * Hook: LinkBegin
 	 *
 	 * @param $dummy
 	 * @param Title $target
@@ -677,6 +693,9 @@ class TranslateHooks {
 		}
 	}
 
+	/**
+	 * Hook: ParserFirstCallInit
+	 */
 	public static function setupTranslateParserFunction( &$parser ) {
 		$parser->setFunctionHook( 'translation', 'TranslateHooks::translateRenderParserFunction' );
 	}
