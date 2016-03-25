@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_cfd3c503",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 890,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-25T17:56:43Z",
+      "side": 1,
+      "message": "Serializing the whole page objects sounds a bit scary and error prone. There doesn\u0027t seem to be any state apart from sections that cannot be reconstructed from the title: source language, list of translation pages",
+      "revId": "f89d694bf23cbb787ae09b05f1d9f91a3943e47e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_8fc25d37",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-25T17:56:43Z",
+      "side": 1,
+      "message": "\"a translatable page\" if you wish to be precise.",
+      "revId": "f89d694bf23cbb787ae09b05f1d9f91a3943e47e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_2fb4f1ce",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-25T17:56:43Z",
+      "side": 1,
+      "message": "For now it is not obvious where the MessageUpdateJobs come from (getTranslationUnitJobs).",
+      "revId": "f89d694bf23cbb787ae09b05f1d9f91a3943e47e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_8f9b7d67",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-25T17:56:43Z",
+      "side": 1,
+      "message": "I think you mean \"translation pages\".\n\nYou can add @since 2016.03",
+      "revId": "f89d694bf23cbb787ae09b05f1d9f91a3943e47e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_efaa096c",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-25T17:56:43Z",
+      "side": 1,
+      "message": "I think it makes sense to move these static functions to this class. What do you think?",
+      "revId": "f89d694bf23cbb787ae09b05f1d9f91a3943e47e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
