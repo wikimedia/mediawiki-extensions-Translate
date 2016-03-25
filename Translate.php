@@ -196,6 +196,7 @@ $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
 $wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
 $wgJobClasses['MessageGroupStatesUpdaterJob'] = 'MessageGroupStatesUpdaterJob';
 $wgJobClasses['TTMServerMessageUpdateJob'] = 'TTMServerMessageUpdateJob';
+$wgJobClasses['TranslationsUpdateJob'] = 'TranslationsUpdateJob';
 
 $wgParserTestFiles[] = "$dir/tests/parser/translateParserTests.txt";
 
