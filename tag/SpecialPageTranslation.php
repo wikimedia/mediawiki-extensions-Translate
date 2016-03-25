@@ -886,11 +886,12 @@ class SpecialPageTranslation extends SpecialPage {
 		$page->addMarkedTag( $newrevision );
 		MessageGroups::singleton()->recache();
 
-		$jobs = self::getRenderJobs( $page );
-		JobQueueGroup::singleton()->push( $jobs );
-
-		$jobs = self::getTranslationUnitJobs( $page, $sections );
-		JobQueueGroup::singleton()->push( $jobs );
+		$jobParams = array(
+			'page' => $page,
+			'sections' => $sections
+		);
+		$job = new TranslationsUpdateJob( $page->getTitle(), $jobParams );
+		JobQueueGroup::singleton()->push( $job );
 
 		// Logging
 		$this->handlePriorityLanguages( $this->getRequest(), $page );
