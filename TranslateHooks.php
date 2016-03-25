@@ -26,14 +26,11 @@ class TranslateHooks {
 			'localBasePath' => __DIR__,
 			'remoteExtPath' => 'Translate',
 		);
-
-		return true;
 	}
 
 	/**
 	 * Hook: CanonicalNamespaces
 	 * @param $list array
-	 * @return bool
 	 */
 	public static function setupNamespaces( &$list ) {
 		global $wgPageTranslationNamespace, $wgNamespaceRobotPolicies;
@@ -44,8 +41,6 @@ class TranslateHooks {
 		$list[NS_TRANSLATIONS] = 'Translations';
 		$list[NS_TRANSLATIONS_TALK] = 'Translations_talk';
 		$wgNamespaceRobotPolicies[NS_TRANSLATIONS] = 'noindex';
-
-		return true;
 	}
 
 	/**
@@ -232,20 +227,15 @@ class TranslateHooks {
 	 * Registers \<languages> tag with the parser.
 	 *
 	 * @param $parser Parser
-	 *
-	 * @return bool
 	 */
 	public static function setupParserHooks( $parser ) {
 		// For nice language list in-page
 		$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
-
-		return true;
 	}
 
 	/**
 	 * Hook: UnitTestsList
 	 * @param $files array
-	 * @return bool
 	 */
 	public static function setupUnitTests( array &$files ) {
 		$dir = __DIR__ . '/tests/phpunit';
@@ -258,14 +248,11 @@ class TranslateHooks {
 				$files[] = $fileInfo->getPathname();
 			}
 		}
-
-		return true;
 	}
 
 	/**
 	 * Hook: LoadExtensionSchemaUpdates
 	 * @param $updater DatabaseUpdater
-	 * @return bool
 	 */
 	public static function schemaUpdates( DatabaseUpdater $updater ) {
 		$dir = __DIR__ . '/sql';
@@ -357,8 +344,6 @@ class TranslateHooks {
 			"$dir/translate_stash.sql",
 			true
 		) );
-
-		return true;
 	}
 
 	/**
@@ -369,8 +354,6 @@ class TranslateHooks {
 		$tables[] = 'translate_groupstats';
 		$tables[] = 'translate_messageindex';
 		$tables[] = 'translate_stash';
-
-		return true;
 	}
 
 	/**
@@ -378,15 +361,12 @@ class TranslateHooks {
 	 * Hook: PageContentLanguage
 	 * @param $title Title
 	 * @param $pageLang
-	 * @return bool
 	 */
 	public static function onPageContentLanguage( Title $title, &$pageLang ) {
 		$handle = new MessageHandle( $title );
 		if ( $handle->isMessageNamespace() ) {
 			$pageLang = $handle->getEffectiveLanguage();
 		}
-
-		return true;
 	}
 
 	/**
@@ -407,8 +387,6 @@ class TranslateHooks {
 			$names[$wgTranslateDocumentationLanguageCode] =
 				wfMessage( 'translate-documentation-language' )->inLanguage( $code )->plain();
 		}
-
-		return true;
 	}
 
 	/**
@@ -437,8 +415,6 @@ class TranslateHooks {
 			$insert,
 			array_slice( $profiles, $index )
 		);
-
-		return true;
 	}
 
 	/**
@@ -502,7 +478,7 @@ class TranslateHooks {
 		/*string*/$profile, SearchEngine $engine
 	) {
 		if ( $profile !== 'translation' ) {
-			return true;
+			return;
 		}
 
 		$context = $search->getContext();
@@ -511,8 +487,6 @@ class TranslateHooks {
 			$engine->setFeatureData( 'title-suffix-filter', "/$selected" );
 			$search->setExtraParam( 'languagefilter', $selected );
 		}
-
-		return true;
 	}
 
 	/// Hook: Translate:MessageGroupStats:isIncluded
@@ -541,8 +515,6 @@ class TranslateHooks {
 		if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
 			$updater->mCategories = array();
 		}
-
-		return true;
 	}
 
 	/**
@@ -572,8 +544,6 @@ class TranslateHooks {
 			$vars['wgTranslatePermissionUrl'] = $wgTranslatePermissionUrl;
 			$vars['wgTranslateUseSandbox'] = $wgTranslateUseSandbox;
 		}
-
-		return true;
 	}
 
 	/**
@@ -587,8 +557,6 @@ class TranslateHooks {
 			$row = $tree->getSection( $sectionLabel )->getRow( 'main' );
 			$row->addItem( ALItem::newFromSpecialPage( 'TranslateSandbox' ) );
 		}
-
-		return true;
 	}
 
 	/**
@@ -607,7 +575,6 @@ class TranslateHooks {
 	 *
 	 * @param User $oldUser
 	 * @param User $newUser
-	 * @return bool
 	 */
 	public static function onMergeAccountFromTo( User $oldUser, User $newUser ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -625,15 +592,12 @@ class TranslateHooks {
 				);
 			}
 		}
-
-		return true;
 	}
 
 	/**
 	 * Handler for E:UserMerge's DeleteAccount hook
 	 *
 	 * @param User $oldUser
-	 * @return bool
 	 */
 	public static function onDeleteAccount( User $oldUser ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -648,8 +612,6 @@ class TranslateHooks {
 				);
 			}
 		}
-
-		return true;
 	}
 
 	/**
@@ -717,8 +679,6 @@ class TranslateHooks {
 
 	public static function setupTranslateParserFunction( &$parser ) {
 		$parser->setFunctionHook( 'translation', 'TranslateHooks::translateRenderParserFunction' );
-
-		return true;
 	}
 
 	public static function translateRenderParserFunction( $parser ) {
