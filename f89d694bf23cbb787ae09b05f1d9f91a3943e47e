@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee33df1d_b469758a",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 890,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-03-26T09:55:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee33df1d_cfd3c503",
+      "revId": "f89d694bf23cbb787ae09b05f1d9f91a3943e47e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee33df1d_8fc25d37",
         "filename": "utils/TranslationsUpdateJob.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-03-25T17:56:43Z",
       "side": 1,
       "message": "\"a translatable page\" if you wish to be precise.",
+      "revId": "f89d694bf23cbb787ae09b05f1d9f91a3943e47e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_f45bfdfa",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-03-26T09:55:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee33df1d_8fc25d37",
       "revId": "f89d694bf23cbb787ae09b05f1d9f91a3943e47e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ee33df1d_14594101",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-03-26T09:55:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee33df1d_2fb4f1ce",
+      "revId": "f89d694bf23cbb787ae09b05f1d9f91a3943e47e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee33df1d_8f9b7d67",
         "filename": "utils/TranslationsUpdateJob.php",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ee33df1d_345605d3",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-03-26T09:55:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee33df1d_8f9b7d67",
+      "revId": "f89d694bf23cbb787ae09b05f1d9f91a3943e47e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee33df1d_efaa096c",
         "filename": "utils/TranslationsUpdateJob.php",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2016-03-25T17:56:43Z",
       "side": 1,
       "message": "I think it makes sense to move these static functions to this class. What do you think?",
+      "revId": "f89d694bf23cbb787ae09b05f1d9f91a3943e47e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee33df1d_d45eb9eb",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-03-26T09:55:03Z",
+      "side": 1,
+      "message": "Yep, I didn\u0027t move it right away because I wasn\u0027t sure there were any other callers. Now checked and moved them to this class.",
+      "parentUuid": "ee33df1d_efaa096c",
       "revId": "f89d694bf23cbb787ae09b05f1d9f91a3943e47e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
