@@ -787,7 +787,7 @@ class MessageGroups {
 	 * conditions.
 	 *
 	 * @param MessageHandle $handle Handle for the translation target.
-	 * @return boolean
+	 * @return bool
 	 * @since 2013.10
 	 */
 	public static function isTranslatableMessage( MessageHandle $handle ) {
