@@ -329,6 +329,7 @@
 	"tux-proofread-translated-by-self": "ترجمتها أنت",
 	"tux-empty-list-all": "مجموعة الرسائل هذه فارغة",
 	"tux-empty-list-all-guide": "اختر مجموعة رسائل أخرى للترجمة",
+	"tux-translate-page-no-such-group": "<strong>المجموعة المختارة غير موجودة.</strong> اختر مجموعة رسائل أخرى.",
 	"tux-empty-list-translated": "لا رسائل مترجمة",
 	"tux-empty-list-translated-guide": "يمكنك المساعدة في الترجمة",
 	"tux-empty-list-translated-action": "ترجم",
