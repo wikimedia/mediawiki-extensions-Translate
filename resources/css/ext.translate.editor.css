@@ -54,6 +54,8 @@
 	overflow-y: auto;
 	position: relative;
 	z-index: 100;
+	/* We have automatic resizing for height, and horizontal makes no sense */
+	resize: none;
 }
 
 .tux-message-editor .editarea {
