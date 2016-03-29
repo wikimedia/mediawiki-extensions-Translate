@@ -208,7 +208,9 @@
 				} );
 				$td
 					.html( convertWhiteSpaceToHTML( text ) )
-					.attr( 'dir', 'auto' ) // (bug T31233) hacky, but better than nothing
+					// T41233: hacky, but better than nothing.
+					// T130390: must be attr for IE/Edge.
+					.attr( 'dir', 'auto' )
 					.removeClass( 'untranslated' )
 					.addClass( 'justtranslated' );
 			};
@@ -352,7 +354,9 @@
 				// Update the cell value with the new translation
 				$this
 					.html( convertWhiteSpaceToHTML( text ) )
-					.attr( 'dir', 'auto' ) // (bug T31233) hacky, but better than nothing
+					// T41233: hacky, but better than nothing.
+					// T130390: must be attr for IE/Edge.
+					.attr( 'dir', 'auto' )
 					.removeClass( 'untranslated' )
 					.addClass( 'justtranslated' );
 			};
