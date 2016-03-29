@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee33df1d_98a457b1",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-03-29T06:34:59Z",
+      "side": 1,
+      "message": "Why are you doing it this way instead of using wasPosted();",
+      "revId": "cbd82257bf69100ff4fe571792c290a994c478d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
