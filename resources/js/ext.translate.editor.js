@@ -581,7 +581,6 @@
 
 				if ( original !== '' ) {
 					$discardChangesButton.removeClass( 'hide' );
-					translateEditor.resizeInsertables( $textarea );
 				}
 
 				/* Avoid Unsaved marking when translated message is not changed in content.
@@ -606,6 +605,8 @@
 					$saveButton.prop( 'disabled', true );
 					$pasteSourceButton.removeClass( 'hide' );
 				}
+
+				translateEditor.resizeInsertables( $textarea );
 
 				translateEditor.delayValidation( function () {
 					translateEditor.validateTranslation();
@@ -1053,6 +1054,7 @@
 			$textarea.focus();
 
 			autosize( $textarea );
+			this.resizeInsertables( $textarea );
 
 			this.shown = true;
 			this.$editTrigger.addClass( 'open' );
@@ -1181,7 +1183,7 @@
 		resizeInsertables: function ( $textarea ) {
 			var $buttonArea, buttonAreaHeight;
 
-			$buttonArea = $( '.tux-editor-insert-buttons' );
+			$buttonArea = this.$editor.find( '.tux-editor-insert-buttons' );
 			buttonAreaHeight = $buttonArea.height();
 			$textarea.css( 'padding-bottom', buttonAreaHeight + 10 );
 			$buttonArea.css( 'top', -buttonAreaHeight - 5 );
