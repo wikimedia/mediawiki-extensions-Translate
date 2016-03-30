@@ -862,7 +862,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$changed[] = $s->name;
 
 			if ( $this->getRequest()->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {
-				// This will be checked by getTranslationUnitJobs
+				// This will be checked by TranslationsUpdateJob::getTranslationUnitJobs()
 				$s->type = 'old';
 			}
 
@@ -886,11 +886,11 @@ class SpecialPageTranslation extends SpecialPage {
 		$page->addMarkedTag( $newrevision );
 		MessageGroups::singleton()->recache();
 
-		$jobs = self::getRenderJobs( $page );
-		JobQueueGroup::singleton()->push( $jobs );
-
-		$jobs = self::getTranslationUnitJobs( $page, $sections );
-		JobQueueGroup::singleton()->push( $jobs );
+		$job = new TranslationsUpdateJob(
+			$page->getTitle(),
+			array( 'sections' => $sections )
+		);
+		JobQueueGroup::singleton()->push( $job );
 
 		// Logging
 		$this->handlePriorityLanguages( $this->getRequest(), $page );
@@ -964,47 +964,6 @@ class SpecialPageTranslation extends SpecialPage {
 			$logid = $entry->insert();
 			$entry->publish( $logid );
 		}
-	}
-
-	/**
-	 * Creates jobs needed to create or update all translation pages.
-	 * @param TranslatablePage $page
-	 * @return Job[]
-	 * @since 2013-01-28
-	 */
-	public static function getRenderJobs( TranslatablePage $page ) {
-		$jobs = array();
-
-		$titles = $page->getTranslationPages();
-		foreach ( $titles as $t ) {
-			$jobs[] = TranslateRenderJob::newJob( $t );
-		}
-
-		return $jobs;
-	}
-
-	/**
-	 * Creates jobs needed to create or update all translation page definitions.
-	 * @param TranslatablePage $page
-	 * @param TPSection[] $sections
-	 * @return Job[]
-	 * @since 2013-01-28
-	 */
-	public static function getTranslationUnitJobs( TranslatablePage $page, array $sections ) {
-		$jobs = array();
-
-		$code = $page->getSourceLanguageCode();
-		$prefix = $page->getTitle()->getPrefixedText();
-
-		foreach ( $sections as $s ) {
-			$unit = $s->name;
-			$title = Title::makeTitle( NS_TRANSLATIONS, "$prefix/$unit/$code" );
-
-			$fuzzy = $s->type === 'changed';
-			$jobs[] = MessageUpdateJob::newJob( $title, $s->getTextWithVariables(), $fuzzy );
-		}
-
-		return $jobs;
 	}
 
 	/**

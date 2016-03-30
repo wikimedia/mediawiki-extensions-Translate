@@ -107,6 +107,7 @@ $al['TranslationHelpers'] = "$dir/utils/TranslationHelpers.php";
 $al['TranslationStats'] = "$dir/utils/TranslationStats.php";
 $al['TranslationStatsBase'] = "$dir/specials/SpecialTranslationStats.php";
 $al['TranslationStatsInterface'] = "$dir/specials/SpecialTranslationStats.php";
+$al['TranslationsUpdateJob']= "$dir/utils/TranslationsUpdateJob.php";
 $al['TuxMessageTable'] = "$dir/utils/TuxMessageTable.php";
 /**@}*/
 
