@@ -4,5 +4,20 @@
 			"Nike"
 		]
 	},
+	"apihelp-aggregategroups-param-group": "Viestiryhmän tunnus.",
+	"apihelp-aggregategroups-param-groupname": "Kokoelmaviestiryhmän nimi.",
+	"apihelp-aggregategroups-param-groupdescription": "Kokoelmaviestiryhmän kuvaus.",
+	"apihelp-aggregategroups-example-1": "Liitä ryhmä",
+	"apihelp-groupreview-description": "Asettaa viestiryhmien työnkulkutilan.",
+	"apihelp-groupreview-param-group": "Viestiryhmä.",
+	"apihelp-groupreview-param-language": "Kielikoodi.",
+	"apihelp-groupreview-param-state": "Viestiryhmän uusi tila.",
+	"apihelp-groupreview-example-1": "Merkitsee ryhmän \"group-Example\" saksankielisen käännöksen tilan valmiiksi",
+	"apihelp-query+languagestats-description": "Hakee kielitilastoja.",
+	"apihelp-query+languagestats-param-language": "Kielikoodi.",
+	"apihelp-query+messagecollection-param-group": "Viestiryhmä.",
+	"apihelp-query+messagecollection-param-language": "Kielikoodi.",
+	"apihelp-query+messagecollection-param-limit": "Kuinka monta viestiä näytetään (suotimien jälkeen).",
+	"apihelp-query+messagecollection-example-1": "Palauttaa luettelon tuetuista kielistä",
 	"apihelp-searchtranslations-description": "Etsi käännöksiä."
 }
