@@ -570,7 +570,7 @@ class TranslateHooks {
 	/**
 	 * Hook: AdminLinks
 	 */
-	public static function onAdminLinks( ALTree &$tree ) {
+	public static function onAdminLinks( ALTree $tree ) {
 		global $wgTranslateUseSandbox;
 
 		if ( $wgTranslateUseSandbox ) {
@@ -675,11 +675,11 @@ class TranslateHooks {
 	public static function linkfix(
 		/*unused*/$dummy,
 		Title $target,
-		/*string*/&$html,
-		/*array*/&$customAttribs,
-		array &$query,
+		/*string*/$html,
+		/*array*/$customAttribs,
+		array $query,
 		array &$options,
-		&$ret
+		$ret
 	) {
 		if ( !$target->inNamespace( NS_SPECIAL ) ) {
 			return;
@@ -712,7 +712,7 @@ class TranslateHooks {
 	/**
 	 * Hook: ParserFirstCallInit
 	 */
-	public static function setupTranslateParserFunction( Parser &$parser ) {
+	public static function setupTranslateParserFunction( Parser $parser ) {
 		$parser->setFunctionHook( 'translation', 'TranslateHooks::translateRenderParserFunction' );
 	}
 
