@@ -645,18 +645,11 @@ class TranslateHooks {
 	public static function onAbortEmailNotificationReview(
 		User $editor,
 		Title $title,
-		RecentChange $rc = null
+		RecentChange $rc
 	) {
-		# In MediaWiki 1.20–23 we don't have the third parameter.
-		if ( $rc === null ) {
-			return true;
-		}
-
 		if ( $rc->mAttribs['rc_log_type'] === 'translationreview' ) {
 			return false;
 		}
-
-		return true;
 	}
 
 	/**
