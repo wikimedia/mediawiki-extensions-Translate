@@ -35,7 +35,7 @@ class TranslateHooks {
 	 *
 	 * @param array $list
 	 */
-	public static function setupNamespaces( &$list ) {
+	public static function setupNamespaces( array &$list ) {
 		global $wgPageTranslationNamespace, $wgNamespaceRobotPolicies;
 		if ( !defined( 'NS_TRANSLATIONS' ) ) {
 			define( 'NS_TRANSLATIONS', $wgPageTranslationNamespace );
@@ -221,7 +221,7 @@ class TranslateHooks {
 	 *
 	 * @param array $names
 	 */
-	public static function onUserGetReservedNames( &$names ) {
+	public static function onUserGetReservedNames( array &$names ) {
 		global $wgTranslateFuzzyBotName;
 		$names[] = $wgTranslateFuzzyBotName;
 	}
@@ -232,7 +232,7 @@ class TranslateHooks {
 	 *
 	 * @param Parser $parser
 	 */
-	public static function setupParserHooks( $parser ) {
+	public static function setupParserHooks( Parser $parser ) {
 		// For nice language list in-page
 		$parser->setHook( 'languages', array( 'PageTranslationHooks', 'languages' ) );
 	}
@@ -380,7 +380,7 @@ class TranslateHooks {
 	 * Hook: LanguageGetTranslatedLanguageNames
 	 * Hook: TranslateSupportedLanguages
 	 */
-	public static function translateMessageDocumentationLanguage( &$names, $code ) {
+	public static function translateMessageDocumentationLanguage( array &$names, $code ) {
 		global $wgTranslateDocumentationLanguageCode;
 		if ( $wgTranslateDocumentationLanguageCode ) {
 			// Special case the autonyms
@@ -427,8 +427,12 @@ class TranslateHooks {
 	/**
 	 * Hook: SpecialSearchProfileForm
 	 */
-	public static function searchProfileForm( SpecialSearch $search, &$form,
-		/*string*/$profile, $term, array $opts
+	public static function searchProfileForm(
+		SpecialSearch $search,
+		/*string*/&$form,
+		/*string*/$profile,
+		/*string*/$term,
+		array $opts
 	) {
 		if ( $profile !== 'translation' ) {
 			return true;
@@ -483,8 +487,10 @@ class TranslateHooks {
 	/**
 	 * Hook: SpecialSearchSetupEngine
 	 */
-	public static function searchProfileSetupEngine( SpecialSearch $search,
-		/*string*/$profile, SearchEngine $engine
+	public static function searchProfileSetupEngine(
+		SpecialSearch $search,
+		/*string*/$profile,
+		SearchEngine $engine
 	) {
 		if ( $profile !== 'translation' ) {
 			return;
@@ -538,7 +544,7 @@ class TranslateHooks {
 	 * Adds $wgTranslateDocumentationLanguageCode to ResourceLoader configuration
 	 * when Special:Translate is shown.
 	 */
-	public static function addConfig( &$vars, OutputPage $out ) {
+	public static function addConfig( array &$vars, OutputPage $out ) {
 		$request = $out->getRequest();
 		$title = $out->getTitle();
 		list( $alias, ) = SpecialPageFactory::resolveAlias( $title->getText() );
@@ -564,7 +570,7 @@ class TranslateHooks {
 	/**
 	 * Hook: AdminLinks
 	 */
-	public static function onAdminLinks( &$tree ) {
+	public static function onAdminLinks( ALTree &$tree ) {
 		global $wgTranslateUseSandbox;
 
 		if ( $wgTranslateUseSandbox ) {
@@ -636,7 +642,11 @@ class TranslateHooks {
 	 *
 	 * False aborts the email.
 	 */
-	public static function onAbortEmailNotificationReview( $editor, $title, $rc = null ) {
+	public static function onAbortEmailNotificationReview(
+		User $editor,
+		Title $title,
+		RecentChange $rc = null
+	) {
 		# In MediaWiki 1.20–23 we don't have the third parameter.
 		if ( $rc === null ) {
 			return true;
@@ -662,8 +672,14 @@ class TranslateHooks {
 	 * @param array $options
 	 * @param string|null $ret
 	 */
-	public static function linkfix( $dummy, $target, &$html, &$customAttribs,
-		&$query, &$options, &$ret
+	public static function linkfix(
+		/*unused*/$dummy,
+		Title $target,
+		/*string*/&$html,
+		/*array*/&$customAttribs,
+		array &$query,
+		array &$options,
+		&$ret
 	) {
 		if ( !$target->inNamespace( NS_SPECIAL ) ) {
 			return;
@@ -696,11 +712,11 @@ class TranslateHooks {
 	/**
 	 * Hook: ParserFirstCallInit
 	 */
-	public static function setupTranslateParserFunction( &$parser ) {
+	public static function setupTranslateParserFunction( Parser &$parser ) {
 		$parser->setFunctionHook( 'translation', 'TranslateHooks::translateRenderParserFunction' );
 	}
 
-	public static function translateRenderParserFunction( $parser ) {
+	public static function translateRenderParserFunction( Parser $parser ) {
 		$pageTitle = $parser->getTitle();
 
 		$handle = new MessageHandle( $pageTitle );
