@@ -383,7 +383,7 @@ class MessageWebImporter {
 			$message = self::makeTextFuzzy( $message );
 
 			return self::doImport( $title, $message, $comment, $user, $editFlags );
-		} elseif ( $action === 'fuzzy' && $code == 'en' ) {
+		} elseif ( $action === 'fuzzy' && $code === 'en' ) {
 			return self::doFuzzy( $title, $message, $comment, $user, $editFlags );
 		} else {
 			throw new MWException( "Unhandled action $action" );

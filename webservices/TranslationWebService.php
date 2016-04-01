@@ -243,12 +243,13 @@ abstract class TranslationWebService {
 	/* Failure handling and suspending */
 
 	/**
-	 * How many failures during failure period need to happen to consider
-	 * the service being temporarily off-line.
+	 * @var int How many failures during failure period need to happen to
+	 * consider the service being temporarily off-line.
 	 */
 	protected $serviceFailureCount = 5;
+
 	/**
-	 * How long after the last detected failure we clear the status and
+	 * @var int How long after the last detected failure we clear the status and
 	 * try again.
 	 */
 	protected $serviceFailurePeriod = 900;
@@ -309,7 +310,7 @@ abstract class TranslationWebService {
 			$this->serviceFailurePeriod * 5
 		);
 
-		if ( $count == $this->serviceFailureCount ) {
+		if ( $count === $this->serviceFailureCount ) {
 			wfDebugLog( 'translationservices', "Translation service $service suspended" );
 		} elseif ( $count > $this->serviceFailureCount ) {
 			wfDebugLog( 'translationservices', "Translation service $service still suspended" );
