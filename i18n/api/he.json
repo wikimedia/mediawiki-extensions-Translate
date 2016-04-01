@@ -16,7 +16,7 @@
 	"apihelp-groupreview-param-group": "קבוצת הודעות.",
 	"apihelp-groupreview-param-language": "קוד השפה.",
 	"apihelp-groupreview-param-state": "המצב החדש עבור הקבוצה.",
-	"apihelp-groupreview-example-1": "לסמן את הקבוצה \"group-Example\" בתור ready עבור גרמנית",
+	"apihelp-groupreview-example-1": "לסמן את המצב של התרגום לגרמנית של קבוצת ההודעות \"group-Example\" כמוכן",
 	"apihelp-query+languagestats-description": "לעשות שאילתה על סטטיסטיקות של שפה.",
 	"apihelp-query+languagestats-param-timelimit": "הזמן המרבי שיוקדש לחישוב סטטיסטיקות חסרות. אם זה אפס, מוחזרות רק תוצאות מוטמנות מההתחלה.",
 	"apihelp-query+languagestats-param-language": "קוד השפה.",

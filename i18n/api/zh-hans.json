@@ -18,7 +18,7 @@
 	"apihelp-groupreview-param-group": "信息组。",
 	"apihelp-groupreview-param-language": "语言代码。",
 	"apihelp-groupreview-param-state": "组的新状态。",
-	"apihelp-groupreview-example-1": "标记组“group-Example”为对德语就绪",
+	"apihelp-groupreview-example-1": "将用于消息组“group-Example”的德语翻译状态标记为已就绪",
 	"apihelp-query+languagestats-description": "查询语言状态。",
 	"apihelp-query+languagestats-param-timelimit": "花费在统计缺失信息上的最长时间。如果为零，立即返回缓存的结果。",
 	"apihelp-query+languagestats-param-language": "语言代码。",
