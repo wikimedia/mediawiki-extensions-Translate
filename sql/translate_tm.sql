@@ -13,7 +13,7 @@ CREATE TABLE /*_*/translate_tms (
 	-- The actual text
 	tms_text mediumblob NOT NULL,
 	-- Identifier where this text came from
-	tms_context mediumblob NOT NULL default ''
+	tms_context mediumblob NOT NULL
 ) /*$wgDBTableOptions*/;
 
 CREATE INDEX /*i*/tms_lang_len ON /*_*/translate_tms (tms_lang, tms_len);
