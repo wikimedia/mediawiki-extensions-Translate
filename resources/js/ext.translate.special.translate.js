@@ -159,6 +159,8 @@
 			id = $( '.tux-messagetable-loader' ).data( 'messagegroup' ),
 			props = 'priority|prioritylangs|priorityforce';
 
+		mw.translate.recentGroups.append( id );
+
 		$groupWarning.empty();
 
 		mw.translate.getMessageGroup( id, props ).done( function ( group ) {
@@ -236,12 +238,13 @@
 		$( '.tux-breadcrumb .grouplink' ).msggroupselector( {
 			onSelect: mw.translate.changeGroup,
 			language: targetLanguage,
-			position: position
+			position: position,
+			recent: mw.translate.recentGroups.get()
 		} );
 
 		updateGroupWarning();
 
-		$( '.tux-messagelist' ).messagetable();
+		$messageList.messagetable();
 		// Use ULS for language selection if it's available
 		ulsOptions = {
 			onSelect: function ( language ) {

@@ -211,7 +211,6 @@ $al['ApiStatsQuery'] = "$dir/api/ApiStatsQuery.php";
 $al['ApiTTMServer'] = "$dir/api/ApiTTMServer.php";
 $al['ApiSearchTranslations'] = "$dir/api/ApiSearchTranslations.php";
 $al['ApiTranslateSandbox'] = "$dir/api/ApiTranslateSandbox.php";
-$al['ApiTranslateUser'] = "$dir/api/ApiTranslateUser.php";
 $al['ApiTranslationAids'] = "$dir/api/ApiQueryTranslationAids.php";
 $al['ApiTranslationReview'] = "$dir/api/ApiTranslationReview.php";
 $al['ApiTranslationStash'] = "$dir/api/ApiTranslationStash.php";

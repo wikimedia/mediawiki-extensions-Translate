@@ -236,8 +236,6 @@ class SpecialTranslate extends SpecialPage {
 			} else {
 				$out->addHTML( $description . $output );
 			}
-
-			ApiTranslateUser::trackGroup( $this->group, $this->getUser() );
 		}
 
 		if ( $isBeta ) {
