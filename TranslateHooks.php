@@ -212,6 +212,10 @@ class TranslateHooks {
 
 			global $wgJobClasses;
 			$wgJobClasses['TranslateSandboxEmailJob'] = 'TranslateSandboxEmailJob';
+
+			// Bug T102922. Special:Translate requires JavaScript.
+			global $wgMFNoMobilePages;
+			$wgMFNoMobilePages[] = 'Special:Translate';
 		}
 	}
 
