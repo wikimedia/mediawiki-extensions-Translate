@@ -55,8 +55,6 @@
 	"apihelp-translatesandbox-param-username": "创建用户时的用户名。",
 	"apihelp-translatesandbox-param-password": "创建用户时的密码。",
 	"apihelp-translatesandbox-param-email": "创建用户时发送电子邮件。",
-	"apihelp-translateuser-description": "与该用户相关的翻译信息",
-	"apihelp-translateuser-example-1": "显示有关用户的信息",
 	"apihelp-translationaids-description": "查询所有翻译帮助。",
 	"apihelp-translationaids-param-title": "已知消息的完整标题。",
 	"apihelp-translationaids-param-group": "信息属于哪个信息组。如果为空则使用首要组。",

@@ -7,7 +7,8 @@
 			"Gomoko",
 			"Wladek92",
 			"Sacamol",
-			"Hpetit"
+			"Hpetit",
+			"Verdy p"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gérer les groupes d'agrégation de messages.\n\nVous pouvez ajouter et supprimer des agrégats de  groupes de messages et les associer ou de les dissocier les uns des autres (un à la fois).",
@@ -21,7 +22,7 @@
 	"apihelp-groupreview-param-group": "Groupe de messages.",
 	"apihelp-groupreview-param-language": "Code de langue",
 	"apihelp-groupreview-param-state": "Le nouvel état pour le groupe.",
-	"apihelp-groupreview-example-1": "Marquer le groupe « group-Example » comme prêt pour l’allemand",
+	"apihelp-groupreview-example-1": "Marquer l’état de la traduction allemande du groupe de messages « group-Example » comme prêt",
 	"apihelp-query+languagestats-description": "Demande les statistiques de langue.",
 	"apihelp-query+languagestats-param-timelimit": "Temps Maximum pour calculer les statistiques manquantes. S'il vaut zéro, seuls les résultats mis en cache depuis le début sont retournés.",
 	"apihelp-query+languagestats-param-language": "Code de langue.",
@@ -58,8 +59,6 @@
 	"apihelp-translatesandbox-param-username": "Nom d'utilisateur lors de la création d'un utilisateur.",
 	"apihelp-translatesandbox-param-password": "Mot de passe lors de la création d'un utilisateur.",
 	"apihelp-translatesandbox-param-email": "E-mail lors de la création d'un utilisateur.",
-	"apihelp-translateuser-description": "Informations relatives a la traduction et concernant l'utilisateur.",
-	"apihelp-translateuser-example-1": "Afficher les informations à propos de l'utilisateur",
 	"apihelp-translationaids-description": "Recherche toutes les aides à la traduction.",
 	"apihelp-translationaids-param-title": "Titre complet d'un message connu.",
 	"apihelp-translationaids-param-group": "Le groupe de messages auquel appartient le message. S'il est vide, alors le groupe principal est utilisé.",

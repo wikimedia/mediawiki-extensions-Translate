@@ -16,6 +16,7 @@
 	"apihelp-groupreview-param-group": "Gruppo di messaggi.",
 	"apihelp-groupreview-param-language": "Codice lingua.",
 	"apihelp-groupreview-param-state": "Il nuovo stato per il gruppo.",
+	"apihelp-groupreview-example-1": "Imposta lo stato della traduzione in tedesco per il gruppo messaggi \"group-Example\" come pronto",
 	"apihelp-query+languagestats-param-language": "Codice lingua.",
 	"apihelp-query+languagestats-example-1": "Elenco delle statistiche di completamento traduzione per il finlandese",
 	"apihelp-query+messagecollection-param-group": "Gruppo di messaggi.",
