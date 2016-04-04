@@ -13,7 +13,6 @@
 	"translate-taction-mstats": "Fariinta Tirakoobka Kooxda",
 	"translate-submit": "Qaado",
 	"translate-page-showing": "Soo bandhigista ka bilaabata $1 ilaa $2 of $3.",
-	"translate-page-showing-none": "Wax qoraal ah lama soo bandhigin.",
 	"translate-page-description-legend": "Macluumaad kusaabsan qaybta",
 	"translate-edit-nopermission": "Waxaad ubaahantahay ruqsad si aad u turjunto fariimaha.",
 	"translate-magic-submit": "Qaado",
@@ -29,5 +28,6 @@
 	"translate-mgs-pagename": "Fariinta Tirakoobka Kooxda",
 	"translate-mgs-submit": "Itus tirakoobka",
 	"translate-mgs-column-language": "Luqada",
+	"supportedlanguages-count": "Wadarta ku jirta waa $1 {{PLURAL:$1|luqad|luqadood}}.",
 	"translate-dynagroup-recent-desc": "Qaybtaan waxa ay ku tusaysaa dhamaan turjumiddii ugu dambaysay ee luqadaan.\nEe faaiidada badan leh saxidda luqada."
 }
