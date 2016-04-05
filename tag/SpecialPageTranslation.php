@@ -885,6 +885,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$page->addMarkedTag( $newrevision );
 		MessageGroups::singleton()->recache();
+		MessageIndexRebuildJob::newJob()->insert();
 
 		$job = new TranslationsUpdateJob(
 			$page->getTitle(),
@@ -907,7 +908,6 @@ class SpecialPageTranslation extends SpecialPage {
 
 		// Clear more caches
 		$page->getTitle()->invalidateCache();
-		MessageIndexRebuildJob::newJob()->insert();
 
 		return false;
 	}
