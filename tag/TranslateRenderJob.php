@@ -67,7 +67,6 @@ class TranslateRenderJob extends Job {
 		PageTranslationHooks::$allowTargetEdit = true;
 		$content = ContentHandler::makeContent( $text, $page->getTitle() );
 		$page->doEditContent( $content, $summary, $flags, false, $user );
-
 		PageTranslationHooks::$allowTargetEdit = false;
 
 		return true;
