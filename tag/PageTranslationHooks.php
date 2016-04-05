@@ -121,6 +121,11 @@ class PageTranslationHooks {
 			return true;
 		}
 
+		// FuzzyBot may do some duplicate work already worked on by other jobs
+		if ( FuzzyBot::getName() === $user->getName() ) {
+			return true;
+		}
+
 		// Some checks
 		$handle = new MessageHandle( $title );
 
@@ -170,14 +175,7 @@ class PageTranslationHooks {
 		// Regenerate translation caches
 		$page->getTranslationPercentages( 'force' );
 
-		// Invalidate caches
-		$pages = $page->getTranslationPages();
-		foreach ( $pages as $title ) {
-			$wikiPage = WikiPage::factory( $title );
-			$wikiPage->doPurge();
-		}
-
-		// And the source page itself too
+		// Invalidate cache for the source page
 		$wikiPage = WikiPage::factory( $page->getTitle() );
 		$wikiPage->doPurge();
 	}
@@ -579,6 +577,7 @@ class PageTranslationHooks {
 	public static function preventDirectEditing( Title $title, User $user, $action, &$result ) {
 		$page = TranslatablePage::isTranslationPage( $title );
 		$whitelist = array(
+			'purge' => true,
 			'read' => true,
 			'delete' => true,
 			'review' => true, // FlaggedRevs
