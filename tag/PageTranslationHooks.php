@@ -121,6 +121,11 @@ class PageTranslationHooks {
 			return true;
 		}
 
+		// FuzzyBot may do some duplicate work already worked on by other jobs
+		if ( FuzzyBot::getName() === $user->getName() ) {
+			return true;
+		}
+
 		// Some checks
 		$handle = new MessageHandle( $title );
 
@@ -168,7 +173,7 @@ class PageTranslationHooks {
 		$job->run();
 
 		// Regenerate translation caches
-		$page->getTranslationPercentages( 'force' );
+		$page->getTranslationPercentages();
 
 		// Invalidate caches
 		$pages = $page->getTranslationPages();
