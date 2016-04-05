@@ -85,8 +85,6 @@ class PageTranslationHooks {
 		$isTranslation = TranslatablePage::isTranslationPage( $title );
 
 		if ( $isSource || $isTranslation ) {
-			// Remove 30 days after merging this patch
-			$out->addModules( 'ext.translate.tag.languages' );
 			$out->addModuleStyles( 'ext.translate' );
 
 			if ( $wgTranslatePageTranslationULS ) {
