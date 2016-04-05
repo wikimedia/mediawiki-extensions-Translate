@@ -121,6 +121,11 @@ class PageTranslationHooks {
 			return true;
 		}
 
+		// FuzzyBot may do some duplicate work already worked on by other jobs
+		if ( FuzzyBot::getName() === $user->getName() ) {
+			return true;
+		}
+
 		// Some checks
 		$handle = new MessageHandle( $title );
 
