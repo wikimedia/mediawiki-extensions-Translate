@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"AnakngAraw",
-			"Jewel457"
+			"Jewel457",
+			"Jojit fb"
 		]
 	},
 	"translate": "Isalinwika",
@@ -33,7 +34,6 @@
 	"translate-page-navigation-legend": "Paglilibot (nabigasyon)",
 	"translate-page-showing": "Nagpapakita ng mga mensahe mula $1 hanggang $2 ng $3.",
 	"translate-page-showing-all": "Nagpapakita ng $1 {{PLURAL:$1|mensahe|mga mensahe}}.",
-	"translate-page-showing-none": "Walang maipapakitang mga mensahe.",
 	"translate-page-paging-links": "[ $1 ] [ $2 ]",
 	"translate-next": "Susunod na pahina",
 	"translate-prev": "Sinundang pahina",
@@ -51,9 +51,7 @@
 	"translate-edit-no-information": "''Walang kasulatan ang mensaheng ito.\nKung alam mo kung saan o paano ginagamit ang mensaheng ito, makakatulong ka sa iba pang mga tagapagsalinwika sa pamamagitan ng pagdaragdag ng kasulatan sa mensaheng ito.''",
 	"translate-edit-information": "Kabatiran hinggil sa mensahe ($1)",
 	"translate-edit-in-other-languages": "Mensahe na nasa ibang mga wika",
-	"translate-edit-committed": "Pangkasalukuyang salinwikang nasa sopwer",
 	"translate-edit-warnings": "Mga babala hinggil sa hindi pa ganap na mga salinwika",
-	"translate-edit-tmsugs": "Mga mungkahi mula sa alaala ng salinwika",
 	"translate-edit-tmmatch-source": "Teksto ng pinagmulan ng salinwika: $1",
 	"translate-edit-tmmatch": "$1% tumugma",
 	"translate-use-suggestion": "Palitan ang kasulukuyang salinwika ng ganitong mungkahi.",
@@ -134,7 +132,6 @@
 	"translate-statsf-language": "Talaan ng kodigo ng mga wikang pinaghihiwahiwalay ng mga kuwit:",
 	"translate-statsf-group": "Talaan ng kodigo ng mga pangkat na pinaghiwahiwalay ng mga kuwit:",
 	"translate-statsf-submit": "Paunang tingin",
-	"translate-tag-category": "Maisasalinwikang mga pahina",
 	"translate-tag-page-desc": "Salinwika ng pahina ng wiking [[$2|$1]].",
 	"translate-sidebar-alltrans": "Sa iba pang mga wika",
 	"translations": "Lahat ng mga salinwika",
@@ -209,14 +206,13 @@
 	"translate-manage-toolong": "Lumampas na sa pinakamataas na panahon ng pagsasagawa na $1 {{PLURAL:$1|segundo|mga segundo}}.\nMangyaring ipasang muli ang pormularyo upang magpatuloy sa pagsasagawa.",
 	"translate-manage-import-summary": "Nag-aangkat ng isang bagong bersyon mula sa pinagmumulang nasa labas",
 	"translate-manage-conflict-summary": "Nag-aangkat ng isang bagong bersyon mula sa pinagmumulang nasa labas.\nPakisuri.",
-	"translate-manage-fuzzy-summary": "Nabago na ang kahulugan ng mensahe",
 	"translate-manage-submit": "Isakatuparan",
 	"translate-manage-intro-other": "Nasa ibaba ang talaan ng mga pagbabago sa salinwika sa wikang $1.\nPakisuri ang mga pagbabago at pumili ng galaw na nais mong gawin para sa bawat salinwika.\nKung pinili mong huwag pansinin ang mga pagbabago, pangingibabawan sila sa susunod na pagluluwas.",
 	"translate-manage-import-ok": "Inangkat na bagong bersyon ng pahinang $1.",
 	"translate-manage-import-done": "Lahat nagawa na!",
 	"importtranslations": "Mag-angkat ng mga salinwika",
-	"translate-import-from-local": "Karga ng katutubong talaksan:",
-	"translate-import-load": "Ikarga ang talaksan",
+	"translate-import-from-local": "Lokal na file na i-upload",
+	"translate-import-load": "Ikarga ang file",
 	"translate-import-err-dl-failed": "Hindi nasalok ang talaksang: $1",
 	"translate-import-err-ul-failed": "Hindi matagumpay ang pagkarga ng talaksan",
 	"translate-import-err-invalid-title": "Hindi tanggap ang ibinigay na pangalan ng talaksang <nowiki>$1</nowiki>.",
@@ -261,8 +257,6 @@
 	"translate-messagereview-no-fuzzy": "Hindi maaaring tanggapin ang mga salinwikang malabo.",
 	"translate-messagereview-no-own": "Hindi mo maaaring tanggapin ang sarili mong mga pagsasalinwika.",
 	"translate-messagereview-doit": "Tanggapin ang salinwikang ito bilang isang wastong pagsasalinwika.",
-	"group-translate-proofr.css": "/* Ang inilagay na Mga Pilas ng Estilong Lumalagaslas (Cascading Style Sheets o CSS) dito ay makakaapekto lamang sa mga manunuri ng salinwika */",
-	"group-translate-proofr.js": "/* Ang JavaScript o JS na inilagay dito ay makakaapekto lamang sa mga manunuri ng salinwika */",
 	"log-name-translationreview": "Tala ng pagsuri ng salinwika",
 	"log-description-translationreview": "Tala ng lahat ng mga pagsusuri ng mga salinwika at mga pangkat ng mensahe.",
 	"logentry-translationreview-message": "{{GENDER:$2|Tinanggap}} ni $1 ang salinwika ng $3",
@@ -275,6 +269,5 @@
 	"translate-workflowgroup-desc": "Ipinapakita ng pangkat ng mensaheng ito ang mga katayuan ng paggawa ng salinwika.\nAng mga katayuan ay inilalarawan sa kaayusan ng pagkakaiba na $wgTranslateWorkflowStates.",
 	"translate-dynagroup-recent-label": "Kamakailang mga salinwika",
 	"translate-dynagroup-recent-desc": "Nagpapakita ang pangkat na ito ng mensahe ng lahat ng kamakailang mga pagsasalinwika papunta sa wikang ito.\nPinaka nakakatulong para sa mga gawain ng pagwawasto.",
-	"translate-gethelp": "Tulong",
 	"tux-editor-message-tools-delete": "Burahin"
 }

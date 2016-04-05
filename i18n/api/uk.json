@@ -4,7 +4,8 @@
 			"Ypryima",
 			"Base",
 			"Ата",
-			"Dars"
+			"Dars",
+			"Piramidion"
 		]
 	},
 	"apihelp-aggregategroups-description": "Керування агрегованими групами повідомлень.\n\nВи можете додавати або вилучати агреговані групи повідомлень та додавати чи вилучати повідомлення з них (одне за раз).",
@@ -18,7 +19,7 @@
 	"apihelp-groupreview-param-group": "Група повідомлень.",
 	"apihelp-groupreview-param-language": "Мовний код.",
 	"apihelp-groupreview-param-state": "Новий стан для групи",
-	"apihelp-groupreview-example-1": "Позначити групу «group-Example» як готову для німецької",
+	"apihelp-groupreview-example-1": "Позначити стан німецького перекладу групи повідомлень «group-Example» як «готово»",
 	"apihelp-query+languagestats-description": "Запитати мовну статистику.",
 	"apihelp-query+languagestats-param-timelimit": "Максимальний час, який витратити на обчислення пропущеної статистики. Якщо нуль, лише кешовані результати з початку буде повернено.",
 	"apihelp-query+languagestats-param-language": "Код мови.",
@@ -55,8 +56,6 @@
 	"apihelp-translatesandbox-param-username": "Ім'я користувача при створенні користувача.",
 	"apihelp-translatesandbox-param-password": "Пароль при створенні користувача.",
 	"apihelp-translatesandbox-param-email": "Електронна пошта при створенні користувача.",
-	"apihelp-translateuser-description": "Інформація про користувача, пов'язана з перекладами.",
-	"apihelp-translateuser-example-1": "Показати інформацію про користувача",
 	"apihelp-translationaids-description": "Зробити запит на усі підказки перекладу.",
 	"apihelp-translationaids-param-title": "Повна назва відомого повідомлення.",
 	"apihelp-translationaids-param-group": "Група повідомлень, до якої належить повідомлення. Якщо порожня, то буде використано первинну групу.",

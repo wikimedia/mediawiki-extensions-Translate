@@ -40,8 +40,6 @@
 	"apihelp-translatesandbox-param-username": "Benutzername beim Erstellen des Benutzers.",
 	"apihelp-translatesandbox-param-password": "Passwort beim Erstellen des Benutzers.",
 	"apihelp-translatesandbox-param-email": "E-Mail beim Erstellen des Benutzers.",
-	"apihelp-translateuser-description": "Übersetzungsbezogene Informationen über den Benutzer.",
-	"apihelp-translateuser-example-1": "Zeigt Informationen über den Benutzer an",
 	"apihelp-translationaids-description": "Ruft alle Übersetzungshilfen ab.",
 	"apihelp-translationaids-param-title": "Vollständiger Titel einer bekannten Nachricht.",
 	"apihelp-translationaids-param-prop": "Die einzuschließenden Übersetzungshelfer.",
@@ -70,6 +68,7 @@
 	"apihelp-searchtranslations-param-filter": "Nachrichtenübersetzungsstatusfilter.",
 	"apihelp-searchtranslations-param-match": "Nach allen Wörtern suchen.",
 	"apihelp-searchtranslations-param-case": "Suche (un)abhängig von Groß- und Kleinschreibung.",
+	"apihelp-searchtranslations-param-offset": "Versatz für die Übersetzungen.",
 	"apihelp-searchtranslations-param-limit": "Größe des Ergebnisses.",
 	"apihelp-searchtranslations-example-1": "Übersetzungen für die Sprache anzeigen."
 }
