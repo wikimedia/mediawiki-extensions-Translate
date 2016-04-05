@@ -30,6 +30,9 @@ class TranslationsUpdateJob extends Job {
 			$job->run();
 		}
 
+		$wikiPage = WikiPage::factory( $this->page->getTitle() );
+		$wikiPage->doPurge();
+
 		$renderJobs = self::getRenderJobs( $this->page );
 		JobQueueGroup::singleton()->push( $renderJobs );
 		return true;
@@ -68,8 +71,13 @@ class TranslationsUpdateJob extends Job {
 	public static function getRenderJobs( TranslatablePage $page ) {
 		$jobs = array();
 
-		$titles = $page->getTranslationPages();
-		foreach ( $titles as $t ) {
+		$jobTitles = $page->getTranslationPages();
+		// $jobTitles may have the source language title already but duplicate TranslateRenderJobs
+		// are not executed so it's not run twice for the source language page present. This is
+		// added to ensure that we create the source language page from the very beginning.
+		$sourceLangTitle = $page->getTitle()->getSubpage( $page->getSourceLanguageCode() );
+		$jobTitles[] = $sourceLangTitle;
+		foreach ( $jobTitles as $t ) {
 			$jobs[] = TranslateRenderJob::newJob( $t );
 		}
 
