@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce38dbff_5d6b21b5",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-04-06T06:21:01Z",
+      "side": 1,
+      "message": "This can be written as\n $page-\u003egetTitle()-\u003egetSubpage( $page-\u003egetSourceLanguageCode() );",
+      "revId": "07f87be7ba06f8a450f31fb2e45ec425893a24e1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
