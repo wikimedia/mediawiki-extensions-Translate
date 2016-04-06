@@ -16,6 +16,24 @@
       "revId": "07f87be7ba06f8a450f31fb2e45ec425893a24e1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce38dbff_1da079f0",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-04-06T06:32:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce38dbff_5d6b21b5",
+      "revId": "07f87be7ba06f8a450f31fb2e45ec425893a24e1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
