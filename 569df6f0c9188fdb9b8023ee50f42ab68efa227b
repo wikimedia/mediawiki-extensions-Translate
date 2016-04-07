@@ -16,6 +16,24 @@
       "revId": "569df6f0c9188fdb9b8023ee50f42ab68efa227b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce38dbff_fafb100f",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-04-07T13:50:23Z",
+      "side": 1,
+      "message": "I just checked myself and this indeed fixes the stats updating on all pages when page is re-marked for translation.\n\nThere is small risk that MessageIndexJob is not completed first, especially if there are multiple JobRunner threads.\n\nI would consider adding \"MessageIndex::singleton()-\u003erebuild();\" before the cache updating lines here and remove the job insertion from the special page.",
+      "parentUuid": "ce38dbff_9fde36dd",
+      "revId": "569df6f0c9188fdb9b8023ee50f42ab68efa227b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
