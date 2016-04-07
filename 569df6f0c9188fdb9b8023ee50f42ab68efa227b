@@ -70,6 +70,24 @@
       "revId": "569df6f0c9188fdb9b8023ee50f42ab68efa227b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce38dbff_b87231e0",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-04-07T17:39:09Z",
+      "side": 1,
+      "message": "Render jobs are important, but I think the gains for skipping the stats update is not very big. If we did render jobs first, we would need to purge the pages very soon after again for updated stats.",
+      "parentUuid": "ce38dbff_f88039fb",
+      "revId": "569df6f0c9188fdb9b8023ee50f42ab68efa227b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
