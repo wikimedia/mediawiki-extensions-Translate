@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce38dbff_9fde36dd",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-04-07T13:23:01Z",
+      "side": 1,
+      "message": "Can you try replacing this line with:\n\n$id \u003d $this-\u003epage-\u003egetMessageGroupId()\nMessageGroupStats::clearGroup( $id );\nMessageGroupStats::forGroup( $id );\n\nThis should effectively immediately recalculate the statistics.",
+      "revId": "569df6f0c9188fdb9b8023ee50f42ab68efa227b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
