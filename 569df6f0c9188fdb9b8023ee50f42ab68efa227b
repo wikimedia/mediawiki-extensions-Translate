@@ -34,6 +34,24 @@
       "revId": "569df6f0c9188fdb9b8023ee50f42ab68efa227b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce38dbff_18c87d76",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-04-07T16:23:54Z",
+      "side": 1,
+      "message": "Yeah, this does fix it (thanks) but will probably make the job slow. So the render jobs would also be blocked by this thus making it appear for the user that the updates might not happen (again). I don\u0027t know how much time it takes to rebuild the index on large wikis and also there is the risk of the job getting killed due to max execution time.",
+      "parentUuid": "ce38dbff_fafb100f",
+      "revId": "569df6f0c9188fdb9b8023ee50f42ab68efa227b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
