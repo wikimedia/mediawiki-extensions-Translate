@@ -124,6 +124,24 @@
       "revId": "569df6f0c9188fdb9b8023ee50f42ab68efa227b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce38dbff_1806bd23",
+        "filename": "utils/TranslationsUpdateJob.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-04-07T17:56:14Z",
+      "side": 1,
+      "message": "Hmm, that\u0027s acceptable then. I suppose we can now remove the $sourceLangTitle job in getRenderJobs().",
+      "parentUuid": "ce38dbff_383461f1",
+      "revId": "569df6f0c9188fdb9b8023ee50f42ab68efa227b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
