@@ -154,7 +154,6 @@ $wgHooks['Translate:MessageGroupStats:isIncluded'][] =
 $wgHooks['MakeGlobalVariablesScript'][] = 'TranslateHooks::addConfig';
 
 // Internal event listeners
-$wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupStats::clear';
 $wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStats::clear';
 $wgHooks['TranslateEventTranslationEdit'][] = 'MessageGroupStatesUpdaterJob::onChange';
 $wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStatesUpdaterJob::onChange';

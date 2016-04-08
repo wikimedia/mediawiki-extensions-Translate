@@ -121,11 +121,22 @@ class PageTranslationHooks {
 			return true;
 		}
 
+		// FuzzyBot may do some duplicate work already worked on by other jobs
+		if ( FuzzyBot::getName() === $user->getName() ) {
+			return true;
+		}
+
 		// Some checks
 		$handle = new MessageHandle( $title );
 
 		// We are only interested in the translations namespace
-		if ( !$handle->isPageTranslation() || !$handle->isValid() ) {
+		if ( !$handle->isValid() ) {
+			return true;
+		}
+
+		MessageGroupStats::clear( $handle );
+
+		if ( !$handle->isPageTranslation() ) {
 			return true;
 		}
 
@@ -142,6 +153,9 @@ class PageTranslationHooks {
 		// Finally we know the title and can construct a Translatable page
 		$page = TranslatablePage::newFromTitle( $group->getTitle() );
 
+		// Update translation stats
+		MessageGroupStats::forGroup( $page->getMessageGroupId() );
+
 		// Update the target translation page
 		if ( !$handle->isDoc() ) {
 			$code = $handle->getCode();
@@ -155,7 +169,7 @@ class PageTranslationHooks {
 		$code, $user, $flags, $summary
 	) {
 		$source = $page->getTitle();
-		$target = Title::makeTitle( $source->getNamespace(), $source->getDBkey() . "/$code" );
+		$target = $source->getSubpage( $code );
 
 		// We don't know and don't care
 		$flags &= ~EDIT_NEW & ~EDIT_UPDATE;
@@ -167,19 +181,14 @@ class PageTranslationHooks {
 		$job->setFlags( $flags );
 		$job->run();
 
-		// Regenerate translation caches
-		$page->getTranslationPercentages( 'force' );
-
-		// Invalidate caches
+		// Invalidate caches so that language bar is up-to-date
 		$pages = $page->getTranslationPages();
 		foreach ( $pages as $title ) {
 			$wikiPage = WikiPage::factory( $title );
 			$wikiPage->doPurge();
 		}
-
-		// And the source page itself too
-		$wikiPage = WikiPage::factory( $page->getTitle() );
-		$wikiPage->doPurge();
+		$sourceWikiPage = WikiPage::factory( $source );
+		$sourceWikiPage->doPurge();
 	}
 
 	/**

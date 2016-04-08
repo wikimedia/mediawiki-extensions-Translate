@@ -30,6 +30,13 @@ class TranslationsUpdateJob extends Job {
 			$job->run();
 		}
 
+		MessageIndex::singleton()->rebuild();
+
+		// Refresh language statistics
+		$id = $this->page->getMessageGroupId();
+		MessageGroupStats::clearGroup( $id );
+		MessageGroupStats::forGroup( $id );
+
 		$wikiPage = WikiPage::factory( $this->page->getTitle() );
 		$wikiPage->doPurge();
 
