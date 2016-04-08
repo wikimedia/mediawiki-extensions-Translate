@@ -19,9 +19,10 @@ class TranslateDeleteJob extends Job {
 	 * @param $base
 	 * @param $full
 	 * @param $performer
+	 * @param $reason
 	 * @return TranslateDeleteJob
 	 */
-	public static function newJob( Title $target, $base, $full, /*User*/$performer ) {
+	public static function newJob( Title $target, $base, $full, /*User*/$performer, $reason ) {
 		$job = new self( $target );
 		$job->setUser( FuzzyBot::getUser() );
 		$job->setFull( $full );
@@ -29,6 +30,7 @@ class TranslateDeleteJob extends Job {
 		$msg = $job->getFull() ? 'pt-deletepage-full-logreason' : 'pt-deletepage-lang-logreason';
 		$job->setSummary( wfMessage( $msg, $base )->inContentLanguage()->text() );
 		$job->setPerformer( $performer );
+		$job->setReason( $reason );
 
 		return $job;
 	}
@@ -50,12 +52,13 @@ class TranslateDeleteJob extends Job {
 		$summary = $this->getSummary();
 		$base = $this->getBase();
 		$doer = User::newFromName( $this->getPerformer() );
+		$reason = $this->getReason();
 
 		PageTranslationHooks::$allowTargetEdit = true;
 
 		$error = '';
 		$wikipage = new WikiPage( $title );
-		$ok = $wikipage->doDeleteArticle( $summary, false, 0, true, $error, $user );
+		$ok = $wikipage->doDeleteArticle( "{$summary}: $reason", false, 0, true, $error, $user );
 		if ( !$ok ) {
 			$params = array(
 				'target' => $base,
@@ -65,6 +68,7 @@ class TranslateDeleteJob extends Job {
 			$type = $this->getFull() ? 'deletefnok' : 'deletelnok';
 			$entry = new ManualLogEntry( 'pagetranslation', $type );
 			$entry->setPerformer( $doer );
+			$entry->setComment( $reason );
 			$entry->setTarget( $title );
 			$entry->setParameters( $params );
 			$logid = $entry->insert();
@@ -82,6 +86,7 @@ class TranslateDeleteJob extends Job {
 			$type = $this->getFull() ? 'deletefok' : 'deletelok';
 			$entry = new ManualLogEntry( 'pagetranslation', $type );
 			$entry->setPerformer( $doer );
+			$entry->setComment( $reason );
 			$entry->setTarget( Title::newFromText( $base ) );
 			$logid = $entry->insert();
 			$entry->publish( $logid );
@@ -103,6 +108,14 @@ class TranslateDeleteJob extends Job {
 
 	public function getSummary() {
 		return $this->params['summary'];
+	}
+
+	public function setReason( $reason ) {
+		$this->params['reason'] = $reason;
+	}
+
+	public function getReason() {
+		return $this->params['reason'];
 	}
 
 	public function setFull( $full ) {

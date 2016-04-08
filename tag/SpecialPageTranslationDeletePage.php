@@ -349,7 +349,8 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 				$old,
 				$base,
 				!$this->singleLanguage(),
-				$user
+				$user,
+				$this->reason
 			);
 		}
 
@@ -359,7 +360,8 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 				$old,
 				$base,
 				!$this->singleLanguage(),
-				$user
+				$user,
+				$this->reason
 			);
 		}
 
@@ -374,7 +376,8 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 					$old,
 					$base,
 					!$this->singleLanguage(),
-					$user
+					$user,
+					$this->reason
 				);
 			}
 		}
