@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Умар"
+			"Умар",
+			"Adam-Yourist"
 		]
 	},
-	"translate-gethelp": "ГӀо"
+	"translate-documentation-language": "Хоаман документаци"
 }
