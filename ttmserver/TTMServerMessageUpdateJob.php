@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -38,13 +37,44 @@ class TTMServerMessageUpdateJob extends Job {
 	 */
 	public function run() {
 		$handle = new MessageHandle( $this->title );
+
+		// JobQueue will catch exceptions and retry the job few times,
+		// after which it will be abandoned.
+		if ( !$handle->getTitle()->exists() ) {
+			$this->updateItem( $handle, null, false );
+		} elseif ( $handle->getCode() === '' ) {
+			$this->updateMessage( $handle );
+		} else {
+			$this->updateTranslation( $handle );
+		}
+
+		return true;
+	}
+
+	private function updateMessage( MessageHandle $handle ) {
+		// Base page update, e.g. group change. Update everything.
 		$translations = ApiQueryMessageTranslations::getTranslations( $handle );
 		foreach ( $translations as $page => $data ) {
 			$tTitle = Title::makeTitle( $this->title->getNamespace(), $page );
 			$tHandle = new MessageHandle( $tTitle );
-			TTMServer::onChange( $tHandle, $data[0], $tHandle->isFuzzy() );
+			$this->updateItem( $tHandle, $data[0], $tHandle->isFuzzy() );
 		}
+	}
 
-		return true;
+	private function updateTranslation( MessageHandle $handle ) {
+		// Update only this translation
+		$translation = TranslateUtils::getMessageContent(
+			$handle->getKey(),
+			$handle->getCode(),
+			$handle->getTitle()->getNamespace()
+		);
+		$this->updateItem( $handle, $translation, $handle->isFuzzy() );
+	}
+
+	private function updateItem( MessageHandle $handle, $text, $fuzzy ) {
+		if ( $fuzzy ) {
+			$text = null;
+		}
+		TTMServer::primary()->update( $handle, $text );
 	}
 }
