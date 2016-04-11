@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce38dbff_0a7bf523",
+        "filename": "Translate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-04-11T13:41:37Z",
+      "side": 0,
+      "message": "This is also used for groups which are not translatable pages. I ask to restore it for now to not break those with the caveat that we are doing extra work for translatable pages.",
+      "revId": "c3dfc61a316eae753db1463a83ab146b5a4d8165",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
