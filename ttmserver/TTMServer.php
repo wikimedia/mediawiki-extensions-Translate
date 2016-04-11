@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0+
  * @defgroup TTMServer The Translate extension translation memory interface
  */
@@ -127,28 +126,23 @@ class TTMServer {
 	/// Hook: ArticleDeleteComplete
 	public static function onDelete( WikiPage $wikipage ) {
 		$handle = new MessageHandle( $wikipage->getTitle() );
-		TTMServer::primary()->update( $handle, null );
-
-		return true;
+		$job = TTMServerMessageUpdateJob::newJob( $handle, 'delete' );
+		JobQueueGroup::singleton()->push( $job );
 	}
 
 	/// Called from TranslateEditAddons::onSave
 	public static function onChange( MessageHandle $handle, $text, $fuzzy ) {
-		if ( $fuzzy ) {
-			$text = null;
-		}
-		TTMServer::primary()->update( $handle, $text );
+		$job = TTMServerMessageUpdateJob::newJob( $handle, 'refresh' );
+		JobQueueGroup::singleton()->push( $job );
 	}
 
 	public static function onGroupChange( MessageHandle $handle, $old, $new ) {
 		if ( $old === array() ) {
 			// Don't bother for newly added messages
-			return true;
+			return;
 		}
 
-		$job = TTMServerMessageUpdateJob::newJob( $handle );
+		$job = TTMServerMessageUpdateJob::newJob( $handle, 'rebuild' );
 		JobQueueGroup::singleton()->push( $job );
-
-		return true;
 	}
 }
