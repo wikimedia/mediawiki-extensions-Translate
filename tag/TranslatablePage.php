@@ -576,7 +576,7 @@ class TranslatablePage {
 
 		$aid = $this->getTitle()->getArticleID();
 
-		// @TODO: cache ignores DB_SLAVE/DB_MASTER distinction
+		// OBS! Cache should only be updated on POST requests.
 		if ( isset( self::$tagCache[$aid][$tag] ) ) {
 			return self::$tagCache[$aid][$tag];
 		}
@@ -590,13 +590,7 @@ class TranslatablePage {
 
 		$options = array( 'ORDER BY' => 'rt_revision DESC' );
 
-		// Tag values are not stored, only the associated revision
-		$tagRevision = $db->selectField( 'revtag', 'rt_revision', $conds, __METHOD__, $options );
-		if ( $tagRevision !== false ) {
-			return self::$tagCache[$aid][$tag] = (int)$tagRevision;
-		} else {
-			return self::$tagCache[$aid][$tag] = false;
-		}
+		return $db->selectField( 'revtag', 'rt_revision', $conds, __METHOD__, $options );
 	}
 
 	/**
