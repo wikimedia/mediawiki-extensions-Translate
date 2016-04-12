@@ -25,8 +25,8 @@ class MessageGroupStatesUpdaterJob extends Job {
 	}
 
 	/**
-	 * Hook: TranslateEventTranslationEdit
 	 * Hook: TranslateEventTranslationReview
+	 * and also on translation changes
 	 */
 	public static function onChange( MessageHandle $handle ) {
 		$job = self::newJob( $handle->getTitle() );
