@@ -153,7 +153,6 @@ class MessageGroupStats {
 	/**
 	 * Clears the cache for all groups associated with the message.
 	 *
-	 * Hook: TranslateEventTranslationEdit
 	 * Hook: TranslateEventTranslationReview
 	 */
 	public static function clear( MessageHandle $handle ) {

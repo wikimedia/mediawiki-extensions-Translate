@@ -144,14 +144,14 @@ class TranslateEditAddons {
 	public static function onSave( WikiPage $wikiPage, $user, $content, $summary,
 		$minor, $_1, $_2, $flags, $revision
 	) {
+		global $wgEnablePageTranslation;
 
-		if ( $content instanceof TextContent ) {
-			$text = $content->getNativeData();
-		} else {
+		if ( !$content instanceof TextContent ) {
 			// Screw it, not interested
 			return true;
 		}
 
+		$text = $content->getNativeData();
 		$title = $wikiPage->getTitle();
 		$handle = new MessageHandle( $title );
 
@@ -167,18 +167,28 @@ class TranslateEditAddons {
 		}
 
 		$fuzzy = self::checkNeedsFuzzy( $handle, $text );
-		$fuzzyOp = self::updateFuzzyTag( $title, $rev, $fuzzy );
+		self::updateFuzzyTag( $title, $rev, $fuzzy );
 
-		// Skip the hook if no change in status or content
-		if ( $revision || $fuzzyOp ) {
-			Hooks::run( 'TranslateEventTranslationEdit', array( $handle ) );
+		$group = $handle->getGroup();
+		// Update translation stats - source language should always be update
+		if ( $handle->getCode() !== $group->getSourceLanguage() ) {
+			MessageGroupStats::clear( $handle );
+			MessageGroupStats::forItem( $group->getId(), $handle->getCode() );
 		}
+
+		MessageGroupStatesUpdaterJob::onChange( $handle );
 
 		if ( $fuzzy === false ) {
 			Hooks::run( 'Translate:newTranslation', array( $handle, $rev, $text, $user ) );
 		}
 
 		TTMServer::onChange( $handle, $text, $fuzzy );
+
+		if ( $wgEnablePageTranslation && $handle->isPageTranslation() ) {
+			// Updates for translatable pages only
+			PageTranslationHooks::onSectionSave( $wikiPage, $user, $content,
+				$summary, $minor, $flags, $revision, $handle );
+		}
 
 		return true;
 	}
