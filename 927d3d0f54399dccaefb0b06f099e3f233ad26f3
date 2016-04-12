@@ -34,6 +34,24 @@
       "revId": "927d3d0f54399dccaefb0b06f099e3f233ad26f3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce38dbff_916e11c3",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-04-12T07:22:32Z",
+      "side": 1,
+      "message": "will be good to have that clarified in the comment for people like me. :P",
+      "parentUuid": "ce38dbff_f13dddb9",
+      "revId": "927d3d0f54399dccaefb0b06f099e3f233ad26f3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
