@@ -34,6 +34,24 @@
       "revId": "c3dfc61a316eae753db1463a83ab146b5a4d8165",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce38dbff_51a3e9fc",
+        "filename": "Translate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-04-12T07:27:00Z",
+      "side": 0,
+      "message": "onSectionSave is only called for translatable pages, so I cannot merge this patch when it breaks for other types of message groups.\n\nDoing clear followed by recache is less bad, as it should not cause all the servers to compete trying to recache the value.\n\nWe can in a follow-up refactor the code to address T102229 by doing recache instead of clear only and have the onSectionSave be executed after that, avoiding doing it twice.",
+      "parentUuid": "ce38dbff_71238da6",
+      "revId": "c3dfc61a316eae753db1463a83ab146b5a4d8165",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
