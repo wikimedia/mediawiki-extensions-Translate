@@ -24,7 +24,7 @@
 		]
 	},
 	"translate": "Übersetzen",
-	"translate-extensionname": "Übersetzen",
+	"translate-extensionname": "Translate",
 	"translate-desc": "Erweitert das Wiki um eine [[Special:Translate|Spezialseite]] zum Übersetzen von MediaWiki und weiterem",
 	"translate-taskui-view": "Alle Nachrichten anzeigen",
 	"translate-taskui-untranslated": "Alle nicht übersetzten Nachrichten anzeigen",
@@ -298,7 +298,6 @@
 	"translate-dynagroup-recent-desc": "Diese Nachrichtengruppe zeigt alle aktuellen Übersetzungen in diese Sprache an.\nAm nützlichsten ist sie für die Aufgaben des Überprüfens.",
 	"translate-dynagroup-additions-label": "Aktuelle Ergänzungen",
 	"translate-dynagroup-additions-desc": "Diese Nachrichtengruppe zeigt neue und geänderte Nachrichten an.",
-	"translate-gethelp": "Hilfe",
 	"translate-msggroupselector-projects": "Nachrichtengruppe",
 	"translate-msggroupselector-search-placeholder": "Gruppen durchsuchen",
 	"translate-msggroupselector-search-all": "Alle",
