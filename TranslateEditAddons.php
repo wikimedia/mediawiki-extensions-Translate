@@ -144,14 +144,14 @@ class TranslateEditAddons {
 	public static function onSave( WikiPage $wikiPage, $user, $content, $summary,
 		$minor, $_1, $_2, $flags, $revision
 	) {
+		global $wgEnablePageTranslation;
 
-		if ( $content instanceof TextContent ) {
-			$text = $content->getNativeData();
-		} else {
+		if ( !$content instanceof TextContent ) {
 			// Screw it, not interested
 			return true;
 		}
 
+		$text = $content->getNativeData();
 		$title = $wikiPage->getTitle();
 		$handle = new MessageHandle( $title );
 
@@ -169,8 +169,13 @@ class TranslateEditAddons {
 		$fuzzy = self::checkNeedsFuzzy( $handle, $text );
 		$fuzzyOp = self::updateFuzzyTag( $title, $rev, $fuzzy );
 
+		if ( FuzzyBot::getName() !== $user->getName() ) {
+			MessageGroupStats::clear( $handle );
+		}
+		
 		// Skip the hook if no change in status or content
 		if ( $revision || $fuzzyOp ) {
+			MessageGroupStatesUpdaterJob::onChange( $handle );
 			Hooks::run( 'TranslateEventTranslationEdit', array( $handle ) );
 		}
 
@@ -179,6 +184,12 @@ class TranslateEditAddons {
 		}
 
 		TTMServer::onChange( $handle, $text, $fuzzy );
+
+		if ( $wgEnablePageTranslation ) {
+			// Updates for translatable pages only
+			PageTranslationHooks::onSectionSave( $wikiPage, $user, $content,
+				$summary, $minor, $flags, $revision, $handle );
+		}
 
 		return true;
 	}

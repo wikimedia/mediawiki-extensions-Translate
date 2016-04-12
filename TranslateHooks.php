@@ -128,9 +128,6 @@ class TranslateHooks {
 			/// @todo Register our css, is there a better place for this?
 			$wgHooks['OutputPageBeforeHTML'][] = 'PageTranslationHooks::injectCss';
 
-			// Add transver tags and update translation target pages
-			$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::onSectionSave';
-
 			// Check syntax for \<translate>
 			$wgHooks['PageContentSave'][] = 'PageTranslationHooks::tpSyntaxCheck';
 			$wgHooks['EditFilterMergedContent'][] =
