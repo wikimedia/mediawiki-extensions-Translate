@@ -105,34 +105,18 @@ class PageTranslationHooks {
 	}
 
 	/**
-	 * Hook: PageContentSaveComplete
+	 * This is triggered after saves to translation unit pages
 	 */
-	public static function onSectionSave( WikiPage $wikiPage, User $user, $content, $summary,
-		$minor, $_1, $_2, $flags, $revision
+	public static function onSectionSave( WikiPage $wikiPage, User $user, TextContent $content,
+		$summary, $minor, $flags, $revision, MessageHandle $handle
 	) {
-		$title = $wikiPage->getTitle();
-
-		if ( $content instanceof TextContent ) {
-			$text = $content->getNativeData();
-		} else {
-			// Screw it, not interested
-			return true;
-		}
-
 		// FuzzyBot may do some duplicate work already worked on by other jobs
 		if ( FuzzyBot::getName() === $user->getName() ) {
 			return true;
 		}
 
-		// Some checks
-		$handle = new MessageHandle( $title );
-
-		// We are only interested in the translations namespace
-		if ( !$handle->isPageTranslation() || !$handle->isValid() ) {
-			return true;
-		}
-
 		// Do not trigger renders for fuzzy
+		$text = $content->getNativeData();
 		if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) {
 			return true;
 		}
@@ -158,7 +142,7 @@ class PageTranslationHooks {
 		$code, $user, $flags, $summary
 	) {
 		$source = $page->getTitle();
-		$target = Title::makeTitle( $source->getNamespace(), $source->getDBkey() . "/$code" );
+		$target = $source->getSubpage( $code );
 
 		// We don't know and don't care
 		$flags &= ~EDIT_NEW & ~EDIT_UPDATE;
@@ -170,19 +154,14 @@ class PageTranslationHooks {
 		$job->setFlags( $flags );
 		$job->run();
 
-		// Regenerate translation caches
-		$page->getTranslationPercentages( 'force' );
-
-		// Invalidate caches
+		// Invalidate caches so that language bar is up-to-date
 		$pages = $page->getTranslationPages();
 		foreach ( $pages as $title ) {
 			$wikiPage = WikiPage::factory( $title );
 			$wikiPage->doPurge();
 		}
-
-		// And the source page itself too
-		$wikiPage = WikiPage::factory( $page->getTitle() );
-		$wikiPage->doPurge();
+		$sourceWikiPage = WikiPage::factory( $source );
+		$sourceWikiPage->doPurge();
 	}
 
 	/**
