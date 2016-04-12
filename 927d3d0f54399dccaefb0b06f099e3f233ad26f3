@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce38dbff_7f49998f",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-04-12T06:54:03Z",
+      "side": 1,
+      "message": "OBS?",
+      "revId": "927d3d0f54399dccaefb0b06f099e3f233ad26f3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
