@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce38dbff_74da5b22",
+        "filename": "ttmserver/TTMServerMessageUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-04-12T12:08:07Z",
+      "side": 1,
+      "message": "Maybe you need to handle existing jobs that have been generated before this patch and handle the case where \u0027command\u0027 is not set? Which seems to be \u0027rebuild\u0027 if I understood correctly.",
+      "revId": "faacc8bdb6fe4c35d0cb1a6fa12b8c4a54eaa322",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
