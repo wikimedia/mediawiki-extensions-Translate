@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ce38dbff_e35fc811",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-04-13T16:17:09Z",
+      "side": 1,
+      "message": "I was hoping we could resolve T102229 by ignoring FuzzyBot when pages are marked for translation. Is it not possible to clear stats once after all the jobs are run (like what we do in TranslationsUpdateJob) for imports like that? If that is not possible, we would probably have to have do something like $allowTargetEdit in PageTranslationHooks when normal pages are marked for translation. Thoughts?",
+      "parentUuid": "ce38dbff_7d3997ca",
+      "revId": "05f74ebff3c11e1ccb8a09c29749274e39d84c81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce38dbff_dd5f0312",
         "filename": "TranslateEditAddons.php",
         "patchSetId": 5
