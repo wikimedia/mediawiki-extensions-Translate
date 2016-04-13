@@ -2,7 +2,7 @@
 	'use strict';
 
 	mw.uls.changeLanguage = function ( language ) {
-		var page, uri;
+		var page;
 
 		page = 'Special:MyLanguage/' + mw.config.get( 'wgPageName' );
 
@@ -10,12 +10,6 @@
 			page = page.replace( /\/[^\/]+$/, '' );
 		}
 
-		uri = new mw.Uri( mw.util.getUrl( page ) );
-
-		uri.extend( {
-			setlang: language
-		} );
-
-		location.href = uri.toString();
+		location.href = mw.util.getUrl( page, { setlang: language } );
 	};
 }( mediaWiki ) );
