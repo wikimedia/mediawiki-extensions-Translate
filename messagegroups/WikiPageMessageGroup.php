@@ -83,6 +83,18 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		return $this->definitions = $new_defs;
 	}
 
+	/**
+	 * Clear caches to avoid stale data.
+	 *
+	 * For example JobQueue can run for a longer time, and stale definitions would
+	 * cause the total number of messages to be incorrect.
+	 *
+	 * @since 2016.04
+	 */
+	public function clearCaches() {
+		$this->definitions = null;
+	}
+
 	public function load( $code ) {
 		if ( $this->isSourceLanguage( $code ) ) {
 			return $this->getDefinitions();
