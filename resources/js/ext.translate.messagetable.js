@@ -259,8 +259,7 @@
 							$( '<a>' )
 								.attr( {
 									title: mw.msg( 'translate-edit-title', message.key ),
-									href: ( new mw.Uri( mw.util.getUrl( message.title ) ) )
-										.extend( { action: 'edit' } )
+									href: mw.util.getUrl( message.title, { action: 'edit' } )
 								} )
 								.text( mw.msg( 'tux-edit' ) )
 						)
@@ -378,8 +377,7 @@
 					.find( '.advanced-search' )
 					.text( mw.msg( 'tux-message-filter-result', resultCount, query ) );
 				$result.find( 'button' ).on( 'click', function () {
-					window.location.href = new mw.Uri( mw.util.getUrl( 'Special:SearchTranslations' ) )
-						.extend( { query: query } );
+					window.location.href = mw.util.getUrl( 'Special:SearchTranslations', { query: query } ) );
 				} );
 			}
 
