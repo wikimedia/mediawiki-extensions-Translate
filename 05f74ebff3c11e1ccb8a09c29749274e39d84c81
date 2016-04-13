@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce38dbff_7d3997ca",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-04-13T13:13:20Z",
+      "side": 1,
+      "message": "FuzzyBot does do updates for imports at translatewiki.net. As those are only bunch of MessageUpdateJobs, it is not possible to just do one clearing once in the end.\n\nWould it be enough to keep this check only in PageTranslationHooks::onSectionSave?\n\nAlso, why not recache the stats immediately as well here?",
+      "revId": "05f74ebff3c11e1ccb8a09c29749274e39d84c81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce38dbff_dd5f0312",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-04-13T13:13:20Z",
+      "side": 1,
+      "message": "The hook is now unused in Translate and I pretty sure it is not used outside of Translate, so it could be removed.",
+      "revId": "05f74ebff3c11e1ccb8a09c29749274e39d84c81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
