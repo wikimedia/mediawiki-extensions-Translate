@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce38dbff_8e6d4330",
+        "filename": "resources/js/ext.translate.pagetranslation.uls.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-04-13T18:40:32Z",
+      "side": 1,
+      "message": "This reminds me, this should use the options api (no need to do that in this commit).",
+      "revId": "3102f8df20579a2a56fdbac85388056f9eec2b87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce38dbff_0e69331d",
+        "filename": "resources/js/ext.translate.quickedit.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-04-13T18:40:32Z",
+      "side": 1,
+      "message": "params is undefined, is that intentional?",
+      "revId": "3102f8df20579a2a56fdbac85388056f9eec2b87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
