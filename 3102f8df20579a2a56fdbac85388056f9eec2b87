@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ce38dbff_0e3ad3e3",
+        "filename": "resources/js/ext.translate.quickedit.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-04-13T19:05:54Z",
+      "side": 1,
+      "message": "Umm this is deprecated feature, but I believe GET is fine.",
+      "parentUuid": "ce38dbff_0e9653f3",
+      "revId": "3102f8df20579a2a56fdbac85388056f9eec2b87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce38dbff_4ea05b3e",
         "filename": "resources/js/ext.translate.quickedit.js",
         "patchSetId": 2
