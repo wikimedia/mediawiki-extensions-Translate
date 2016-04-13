@@ -823,18 +823,17 @@
 		 */
 		validateTranslation: function () {
 			var translateEditor = this,
-				url = new mw.Uri( mw.config.get( 'wgScript' ) ),
+				url,
 				$textarea = translateEditor.$editor.find( '.tux-textarea-translation' );
 
 			// TODO: We need a better API for this
-			url.extend( {
-				title: 'Special:Translate/editpage',
+			url = mw.util.getUrl( 'Special:Translate/editpage', {
 				suggestions: 'checks',
 				page: translateEditor.message.title,
 				loadgroup: translateEditor.message.group
 			} );
 
-			$.post( url.toString(), {
+			$.post( url, {
 				translation: $textarea.val()
 			}, function ( data ) {
 				var warningIndex,

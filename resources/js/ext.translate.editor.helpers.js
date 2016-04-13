@@ -534,15 +534,10 @@
 		 * @return {string} URL for editing the documentation
 		 */
 		getDocumentationEditURL: function ( title ) {
-			var descUri = new mw.Uri( window.location.href );
-
-			descUri.path = mw.config.get( 'wgScript' );
-			descUri.query = {
-				action: 'edit',
-				title: title + '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' )
-			};
-
-			return descUri.toString();
+			return mw.util.getUrl(
+				title + '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' ),
+				{ action: 'edit' }
+			);
 		}
 	} );
 
