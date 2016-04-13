@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ce38dbff_a3f5c081",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-04-13T17:03:42Z",
+      "side": 1,
+      "message": "I made it to ignore on source language updates since that is what\u0027s mostly triggering the bug.",
+      "parentUuid": "ce38dbff_e3ece822",
+      "revId": "05f74ebff3c11e1ccb8a09c29749274e39d84c81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce38dbff_dd5f0312",
         "filename": "TranslateEditAddons.php",
         "patchSetId": 5
@@ -66,6 +84,24 @@
       "writtenOn": "2016-04-13T13:13:20Z",
       "side": 1,
       "message": "The hook is now unused in Translate and I pretty sure it is not used outside of Translate, so it could be removed.",
+      "revId": "05f74ebff3c11e1ccb8a09c29749274e39d84c81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce38dbff_23025076",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-04-13T17:03:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce38dbff_dd5f0312",
       "revId": "05f74ebff3c11e1ccb8a09c29749274e39d84c81",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
