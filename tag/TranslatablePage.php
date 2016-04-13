@@ -567,7 +567,7 @@ class TranslatablePage {
 	/**
 	 * @param $tag
 	 * @param int $dbt
-	 * @return array|bool False if tag is not found
+	 * @return int|bool False if tag is not found, else revision id
 	 */
 	protected function getTag( $tag, $dbt = DB_SLAVE ) {
 		if ( !$this->getTitle()->exists() ) {
@@ -590,7 +590,8 @@ class TranslatablePage {
 
 		$options = array( 'ORDER BY' => 'rt_revision DESC' );
 
-		return $db->selectField( 'revtag', 'rt_revision', $conds, __METHOD__, $options );
+		$value = $db->selectField( 'revtag', 'rt_revision', $conds, __METHOD__, $options );
+		return $value === false ? $value : (int)$value;
 	}
 
 	/**
