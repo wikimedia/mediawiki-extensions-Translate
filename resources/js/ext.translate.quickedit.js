@@ -118,7 +118,7 @@
 		} );
 
 		form.find( '.mw-translate-history' ).click( function () {
-			window.open( mw.util.wikiScript( 'index' ) + '?action=history&title=' + form.find( 'input[name=title]' ).val() );
+			window.open( mw.util.getUrl( form.find( 'input[name=title]' ).val(), { action: 'history' } ) );
 			return false;
 		} );
 
@@ -143,8 +143,11 @@
 
 		if ( form.find( '.mw-translate-messagechecks' ) ) {
 			checker = new MessageCheckUpdater( function () {
-				var url = mw.config.get( 'wgScript' ) + '?title=Special:Translate/editpage&suggestions=checks&page=$1&loadgroup=$2';
-				url = url.replace( '$1', encodeURIComponent( page ) ).replace( '$2', encodeURIComponent( group ) );
+				var url = mw.util.getUrl( 'Special:Translate/editpage', {
+					suggestions: 'checks',
+					page: page,
+					loadgroup: group
+				} );
 				$.post( url, { translation: textarea.val() }, function ( mydata ) {
 					form.find( '.mw-translate-messagechecks' ).replaceWith( mydata );
 				} );
@@ -233,7 +236,7 @@
 		},
 
 		loadEditor: function ( $target, page, group, callback ) {
-			var id, preload, url, params;
+			var id, preload, url;
 
 			// Try if it has been cached
 			id = 'preload-' + page.replace( /[^a-zA-Z0-9_]/g, '_' );
@@ -249,18 +252,16 @@
 			}
 
 			// Load the editor into provided target or cache it locally
-			url = mw.util.wikiScript( 'index' );
-			params = {
-				title: 'Special:Translate/editpage',
+			url = mw.util.getUrl( 'Special:Translate/editpage', {
 				suggestions: 'sync',
 				page: page,
 				loadgroup: group
-			};
+			} );
 			if ( $target ) {
-				$target.load( url, params, callback );
+				$target.load( url, callback );
 				delete preloads[ id ];
 			} else {
-				$.get( url, params, function ( data ) {
+				$.get( url, function ( data ) {
 					preloads[ id ] = data;
 				} );
 			}
