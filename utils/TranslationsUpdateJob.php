@@ -30,6 +30,9 @@ class TranslationsUpdateJob extends Job {
 			$job->run();
 		}
 
+		// Ensure fresh definitions for MessageIndex and stats
+		$this->page->getMessageGroup()->clearCaches();
+
 		MessageIndex::singleton()->rebuild();
 
 		// Refresh translations statistics
