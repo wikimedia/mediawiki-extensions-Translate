@@ -1,0 +1,21 @@
+== Translate 2016.04 ==
+Released at 2016-04-13.
+
+=== Noteworthy changes ===
+* (T130390) Message group selector now works in Internet Explorer and Edge browsers.
+* Changing message group on Special:Translate now correctly updates the shown message group description.
+* (T53731) A bug was fixed that sometimes caused translation pages not to update changes to the source page after marking it for translation. After upgrading it is recommended to run scripts/refresh-translatable-pages.php to ensure no pages contain outdated content.
+* (T78538) Insertables (buttons to quickly insert untranslatable parts such as variables) are now displayed better and should no longer overlap the translation or the buttons below.
+* Solr backend for translation memory and translation search is deprecated in will be removed in some future release. Please start planning migration to ElasticSearch backend instead.
+* (T122702) Translate no longer triggers bocus "you have unsaved changes" warning on Special:Preferences with some versions of MediaWiki.
+* Fixed minor style issue of the message shown top of the page after adding translate tags but before marking it for translation.
+* (T111685) A graphical glitch that broke display of translation aids have been fixed.
+* (T50100) In the review mode the save button can be used to mark the translation as reviewed unless the translation is edited.
+* (T89813) There is now configuration variable to define aliases for message group IDs. Mostly intended for migration if you need to change IDs.
+* JsonFFS now supports nested objects. Refer to the Translate documentation [1] how to use this feature.
+* (T89637) Translation of translatable pages to their source language is now automatically prevented.
+* A couple of issues that only happened when running Translate in MySQL strict mode have been fixed.
+* Images were further compressed with Zopflipng.
+* Translate now uses less master database server if a slave server is available.
+
+[1] https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration
