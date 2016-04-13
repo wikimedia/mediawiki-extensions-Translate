@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ce38dbff_e3ece822",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-04-13T16:29:57Z",
+      "side": 1,
+      "message": "Not really, because they are separate jobs, not one job.\n\nMy unconfirmed suspicion is that the issue is caused by multiple servers noticing simultaneously that the value is missing. For that the fix would be to just to refresh the number immediately rather than just clearing it.\n\nWe could also think about ignoring changes to the message group source language, since those can be assumed to be always 100% up to date.",
+      "parentUuid": "ce38dbff_e35fc811",
+      "revId": "05f74ebff3c11e1ccb8a09c29749274e39d84c81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce38dbff_dd5f0312",
         "filename": "TranslateEditAddons.php",
         "patchSetId": 5
