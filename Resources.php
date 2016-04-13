@@ -236,7 +236,6 @@ $wgResourceModules['ext.translate.pagetranslation.uls'] = array(
 	'scripts' => 'resources/js/ext.translate.pagetranslation.uls.js',
 	'dependencies' => array(
 		'ext.uls.mediawiki',
-		'mediawiki.Uri',
 		'mediawiki.util',
 	),
 ) + $resourcePaths;

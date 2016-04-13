@@ -10,12 +10,8 @@
 			page = page.replace( /\/[^\/]+$/, '' );
 		}
 
-		uri = new mw.Uri( mw.util.getUrl( page ) );
+		uri = mw.util.getUrl( page, { setlang: language } );
 
-		uri.extend( {
-			setlang: language
-		} );
-
-		location.href = uri.toString();
+		location.href = uri;
 	};
 }( mediaWiki ) );
