@@ -397,7 +397,7 @@ class MessageGroupStats {
 	 */
 	protected static function calculateGroup( $group, $code ) {
 		global $wgTranslateDocumentationLanguageCode;
-		# Calculate if missing and store in the db
+		// Calculate if missing and store in the db
 		$collection = $group->initCollection( $code );
 
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {

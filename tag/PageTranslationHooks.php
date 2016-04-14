@@ -875,7 +875,7 @@ class PageTranslationHooks {
 
 		$page = TranslatablePage::newFromTitle( $group->getTitle() );
 		$collection = $group->initCollection( $options['language'] );
-		$collection->loadTranslations( DB_MASTER );
+		$collection->loadTranslations();
 		$text = $page->getParse()->getTranslationPageText( $collection );
 		$display = $page->getPageDisplayTitle( $options['language'] );
 		if ( $display ) {
