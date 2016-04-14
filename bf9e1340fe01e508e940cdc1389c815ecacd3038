@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce38dbff_71f6dbd5",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 935,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-04-14T06:52:46Z",
+      "side": 1,
+      "message": "update?",
+      "revId": "bf9e1340fe01e508e940cdc1389c815ecacd3038",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce38dbff_51f117d9",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 941,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-04-14T06:52:46Z",
+      "side": 1,
+      "message": "In one request, if job A starts running and then job B sets it to false before job A is complete, won\u0027t this be false? Not sure if this can actually happen, but wouldn\u0027t it be safer if FuzzyBot deletions are ignored instead to avoid race conditions like that?",
+      "revId": "bf9e1340fe01e508e940cdc1389c815ecacd3038",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
