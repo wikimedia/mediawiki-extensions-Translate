@@ -173,7 +173,9 @@ class TranslateEditAddons {
 		// Update translation stats - source language should always be update
 		if ( $handle->getCode() !== $group->getSourceLanguage() ) {
 			MessageGroupStats::clear( $handle );
+			MessageGroupStats::setUpdating( true );
 			MessageGroupStats::forItem( $group->getId(), $handle->getCode() );
+			MessageGroupStats::setUpdating( false );
 		}
 
 		MessageGroupStatesUpdaterJob::onChange( $handle );

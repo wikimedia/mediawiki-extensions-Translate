@@ -41,6 +41,11 @@ class MessageGroupStats {
 	protected static $updates = array();
 
 	/**
+	 * @var bool
+	 */
+	protected static $forUpdates = false;
+
+	/**
 	 * Set the maximum time statistics are calculated.
 	 * If the time limit is exceeded, the missing
 	 * entries will be null.
@@ -49,6 +54,17 @@ class MessageGroupStats {
 	public static function setTimeLimit( $limit ) {
 		self::$timeStart = microtime( true );
 		self::$limit = $limit;
+	}
+
+	/**
+	 * This should be called before updating statistics if the
+	 * most up-to-date statistics should be calculated.
+	 * NOTE: Make sure to set to false after updates are done.
+	 *
+	 * @param bool $state true when starting update, false after doing update
+	 */
+	public static function setUpdating( $state ) {
+		self::$forUpdates = $state;
 	}
 
 	/**
@@ -397,8 +413,13 @@ class MessageGroupStats {
 	 */
 	protected static function calculateGroup( $group, $code ) {
 		global $wgTranslateDocumentationLanguageCode;
-		# Calculate if missing and store in the db
+		// Calculate if missing and store in the db
 		$collection = $group->initCollection( $code );
+		if ( self::$forUpdates ) {
+			// Make sure we calculate from latest changes if requested just after
+			// translation update
+			$collection->loadTranslations( DB_MASTER );
+		}
 
 		if ( $code === $wgTranslateDocumentationLanguageCode ) {
 			$ffs = $group->getFFS();

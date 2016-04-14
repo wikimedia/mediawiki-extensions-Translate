@@ -57,7 +57,9 @@ class MessageGroupStatesUpdaterJob extends Job {
 		$groups = self::getGroupsWithTransitions( $handle );
 		foreach ( $groups as $id => $transitions ) {
 			$group = MessageGroups::getGroup( $id );
+			MessageGroupStats::setUpdating( true );
 			$stats = MessageGroupStats::forItem( $id, $code );
+			MessageGroupStats::setUpdating( false );
 			$state = self::getNewState( $stats, $transitions );
 			if ( $state ) {
 				ApiGroupReview::changeState( $group, $code, $state, FuzzyBot::getUser() );
