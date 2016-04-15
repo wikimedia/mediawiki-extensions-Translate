@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e58336e_035e9417",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-04-15T12:28:03Z",
+      "side": 1,
+      "message": "I just noticed that this does one extra query than needed (calls loadData()). Should I instead make others needed public and call them separately?",
+      "revId": "95a8531d39f8671b8806472a66715c0e471e5436",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
