@@ -3,7 +3,8 @@
 		"authors": [
 			"Macofe",
 			"Fitoschido",
-			"Csbotero"
+			"Csbotero",
+			"Lemondoge"
 		]
 	},
 	"apihelp-aggregategroups-description": "Administrar grupos de mensajes agregados.\n\nPuedes agregar y quitar grupos de mensajes agregados, y asociar o disociar a ellos grupos de mensajes (uno a la vez).",
@@ -31,6 +32,7 @@
 	"apihelp-query+messagecollection-example-4": "Más información acerca de las últimas revisiones de traducción para el grupo \"page-Example\"",
 	"apihelp-query+messagegroups-description": "Devolver información sobre grupos de mensajes.\n\nNota que el parámetro \"uselang\" afecta la salida de las partes dependientes del idioma.",
 	"apihelp-query+messagegroups-param-depth": "Cuando se utiliza el formato de árbol, limitar la profundidad a esta cantidad de niveles. El valor 0 significa que no se muestran subgrupos. Si se alcanza el límite, el resultado incluye un valor de \"cuenta de grupal\", que indica el número de hijos directos.",
+	"apihelp-query+messagegroups-param-root": "Cuando se utiliza el formato de árbol, en lugar de partir de nivel superior empezar desde el mensaje del grupo, que debe ser un agregado de mensaje de grupo. Cuando se utiliza plano formato de sólo el grupo especificado se devuelve.",
 	"apihelp-query+messagegroups-example-1": "Mostrar grupos de mensajes",
 	"apihelp-query+messagegroupstats-description": "Consultar estadísticas del grupo de mensajes.",
 	"apihelp-query+messagegroupstats-param-group": "Identificador del grupo de mensajes.",
