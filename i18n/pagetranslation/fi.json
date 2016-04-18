@@ -182,8 +182,13 @@
 	"pp-pagename-placeholder": "Anna sivun nimi",
 	"pp-prepare-button-label": "Valmistele",
 	"pp-save-button-label": "Tallenna",
+	"pp-cancel-button-label": "Peru",
+	"pp-save-message": "Sivu on tallennettu. Voit [$1 muokata sivua].",
+	"pp-pagename-missing": "Anna sivun nimi.",
 	"pp-diff-old-header": "Lähdeteksti",
 	"pp-diff-new-header": "Valmisteltu teksti",
 	"tpt-unlink-button": "Poista käännettävistä sivuista",
-	"tpt-unlink-summary": "Poistettu käännettävistä sivuista"
+	"tpt-unlink-summary": "Poistettu käännettävistä sivuista",
+	"tpt-generic-confirm": "Vahvista toiminto.",
+	"tpt-generic-button": "Vahvista"
 }

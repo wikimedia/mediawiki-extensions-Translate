@@ -19,5 +19,7 @@
 	"apihelp-query+messagecollection-param-language": "Kielikoodi.",
 	"apihelp-query+messagecollection-param-limit": "Kuinka monta viestiä näytetään (suotimien jälkeen).",
 	"apihelp-query+messagecollection-example-1": "Palauttaa luettelon tuetuista kielistä",
+	"apihelp-translationstash-param-metadata": "JSON-objekti.",
+	"apihelp-translationstash-param-username": "Käyttäjä, jonka kätkö ladataan. Vain erioikeutetut käyttäjät voivat lukea toisten kätköjä.",
 	"apihelp-searchtranslations-description": "Etsi käännöksiä."
 }

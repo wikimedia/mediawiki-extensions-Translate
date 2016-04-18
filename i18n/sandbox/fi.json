@@ -9,6 +9,7 @@
 	"tsb-filter-pending": "Avoimet hakemukset",
 	"tsb-reminder-title-generic": "Suorita harjoitus loppuun, jotta sinut voidaan hyväksyä kääntäjäksi",
 	"tsb-reminder-sending": "Lähetetään muistutusta...",
+	"tsb-reminder-sent": "{{PLURAL:$1|$1 muistutus lähetetty $2.|$1 muistutusta lähetetty. Viimeisin $2.}}",
 	"tsb-reminder-sent-new": "Muistutus lähetetty",
 	"tsb-reminder-failed": "Muistutuksen lähettäminen epäonnistui",
 	"tsb-email-promoted-subject": "{{SITENAME}}: Sinut on hyväksytty kääntäjäksi",
@@ -25,13 +26,16 @@
 	"tsb-reminder-link-text": "Lähetä muistutus",
 	"tsb-didnt-make-any-translations": "Käyttäjä ei ole tehnyt käännöksiä.",
 	"tsb-translations-source": "Lähde",
-	"tsb-translations-user": "Käyttäjän käännös",
+	"tsb-translations-user": "{{GENDER:$1|Käyttäjän käännökset}}",
 	"tsb-translations-current": "Nykyinen käännös",
+	"tsb-delete-userpage-summary": "Hiekkalaatikkokäyttäjän käyttäsivun poisto.",
 	"translationstash": "Tervetuloa",
 	"translate-translationstash-welcome": "Tervetuloa {{GENDER:$1|$1}}. Olet uusi kääntäjä.",
 	"translate-translationstash-welcome-note": "Tutustu käännöstyökaluihin. Käännä muutamia viestejä, niin saat täydet käännösoikeudet lempiprojektiesi kääntämiseen.",
 	"translate-translationstash-initialtranslation": "Ensimmäinen käännös",
 	"translate-translationstash-translations": "$1 {{PLURAL:$1|valmis käännös|valmista käännöstä}}",
 	"translate-translationstash-skip-button-label": "Ohita",
-	"tsb-limit-reached-title": "Kiitos käännöksistäsi"
+	"tsb-limit-reached-title": "Kiitos käännöksistäsi",
+	"tsb-no-requests-from-new-users": "Ei uusia hakemuksia.",
+	"tsb-create-user-page": "Luo yksinkertainen käyttäjäsivu"
 }
