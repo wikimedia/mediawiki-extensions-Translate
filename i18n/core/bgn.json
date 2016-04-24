@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Baloch Afghanistan"
+			"Baloch Afghanistan",
+			"Ibrahim khashrowdi"
 		]
 	},
+	"translate-sidebar-alltrans": "بِه دیگه زباناني تا",
 	"translate-documentation-language": "پیامی مستندان"
 }

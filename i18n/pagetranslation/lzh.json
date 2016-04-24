@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Yanteng3",
-			"StephDC"
+			"StephDC",
+			"SolidBlock"
 		]
 	},
+	"tpt-languages-nonzero": "$1（$2%已翻譯）",
 	"tpt-aggregategroup-save": "存",
 	"pm-old-translations-missing": "$1 不含旧譯。"
 }
