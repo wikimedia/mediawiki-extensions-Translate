@@ -311,7 +311,7 @@ class MessageGroupStats {
 			$conds['tgs_lang'] = $codes;
 		}
 
-		$dbr = TranslatablePage::getSafeReadDB();
+		$dbr = TranslateUtils::getSafeReadDB();
 		$res = $dbr->select( self::TABLE, '*', $conds, __METHOD__ );
 
 		return $res;

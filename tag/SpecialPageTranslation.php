@@ -326,7 +326,7 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	public function loadPagesFromDB() {
-		$dbr = wfGetDB( DB_MASTER );
+		$dbr = TranslateUtils::getSafeReadDB();
 		$tables = array( 'page', 'revtag' );
 		$vars = array(
 			'page_id',

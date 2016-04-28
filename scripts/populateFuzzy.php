@@ -44,7 +44,7 @@ class PopulateFuzzy extends Maintenance {
 			}
 		}
 
-		$db = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_MASTER );
 		$tables = array( 'page', 'text', 'revision' );
 		$fields = array( 'page_id', 'page_title', 'page_namespace', 'rev_id', 'old_text', 'old_flags' );
 		$conds = array(
@@ -59,7 +59,7 @@ class PopulateFuzzy extends Maintenance {
 			$inserts = array();
 			$this->output( '.', 0 );
 			$options = array( 'LIMIT' => $limit, 'OFFSET' => $offset );
-			$res = $db->select( $tables, $fields, $conds, __METHOD__, $options );
+			$res = $dbw->select( $tables, $fields, $conds, __METHOD__, $options );
 
 			if ( !$res->numRows() ) {
 				break;
@@ -78,7 +78,7 @@ class PopulateFuzzy extends Maintenance {
 
 			$offset += $limit;
 
-			$db->replace( 'revtag', 'rt_type_page_revision', $inserts, __METHOD__ );
+			$dbw->replace( 'revtag', 'rt_type_page_revision', $inserts, __METHOD__ );
 		}
 	}
 }
