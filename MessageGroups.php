@@ -165,7 +165,7 @@ class MessageGroups {
 			return;
 		}
 
-		$db = wfGetDB( DB_MASTER );
+		$db = TranslateUtils::getSafeReadDB();
 
 		$tables = array( 'page', 'revtag' );
 		$vars = array( 'page_id', 'page_namespace', 'page_title' );
