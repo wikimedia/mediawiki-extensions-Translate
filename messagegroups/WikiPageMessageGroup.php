@@ -57,8 +57,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 			return $this->definitions;
 		}
 
-		// Avoid replication issues
-		$dbr = wfGetDB( DB_MASTER );
+		$dbr = TranslateUtils::getSafeReadDB();
 		$tables = 'translate_sections';
 		$vars = array( 'trs_key', 'trs_text' );
 		$conds = array( 'trs_page' => $this->getTitle()->getArticleID() );

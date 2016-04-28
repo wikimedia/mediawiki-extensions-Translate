@@ -613,7 +613,7 @@ class TranslatablePage {
 	}
 
 	public function getMarkedRevs() {
-		$db = self::getSafeReadDB();
+		$db = TranslateUtils::getSafeReadDB();
 
 		$fields = array( 'rt_revision', 'rt_value' );
 		$conds = array(
@@ -630,7 +630,7 @@ class TranslatablePage {
 	 * @return Title[]
 	 */
 	public function getTranslationPages() {
-		$dbr = self::getSafeReadDB();
+		$dbr = TranslateUtils::getSafeReadDB();
 
 		$prefix = $this->getTitle()->getDBkey() . '/';
 		$likePattern = $dbr->buildLike( $prefix, $dbr->anyString() );
@@ -668,7 +668,7 @@ class TranslatablePage {
 	 * @since 2012-08-06
 	 */
 	protected function getSections() {
-		$dbr = self::getSafeReadDB();
+		$dbr = TranslateUtils::getSafeReadDB();
 
 		$conds = array( 'trs_page' => $this->getTitle()->getArticleID() );
 		$res = $dbr->select( 'translate_sections', 'trs_key', $conds, __METHOD__ );
@@ -777,7 +777,7 @@ class TranslatablePage {
 	public function getTransRev( $suffix ) {
 		$title = Title::makeTitle( NS_TRANSLATIONS, $suffix );
 
-		$db = self::getSafeReadDB();
+		$db = TranslateUtils::getSafeReadDB();
 		$fields = 'rt_value';
 		$conds = array(
 			'rt_page' => $title->getArticleID(),
@@ -853,7 +853,7 @@ class TranslatablePage {
 	 * Get a list of page ids where the latest revision is either tagged or marked
 	 */
 	public static function getTranslatablePages() {
-		$dbr = self::getSafeReadDB();
+		$dbr = TranslateUtils::getSafeReadDB();
 
 		$tables = array( 'revtag', 'page' );
 		$fields = 'rt_page';
@@ -871,20 +871,5 @@ class TranslatablePage {
 		}
 
 		return $results;
-	}
-
-	/**
-	 * Get a DB handle suitable for read and read-for-write cases
-	 *
-	 * @return DatabaseBase Master for HTTP POST, CLI, DB already changed; slave otherwise
-	 */
-	public static function getSafeReadDB() {
-		$index = (
-			PHP_SAPI === 'cli' ||
-			RequestContext::getMain()->getRequest()->wasPosted() ||
-			wfGetLB()->hasOrMadeRecentMasterChanges()
-		) ? DB_MASTER : DB_SLAVE;
-
-		return wfGetDB( $index );
 	}
 }
