@@ -24,15 +24,22 @@ class RefreshTranslatablePages extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = 'Ensure all translation pages are up to date.';
+		$this->setBatchSize( 300 );
 	}
 
 	public function execute() {
 		$groups = MessageGroups::singleton()->getGroups();
+		$counter = 0;
 
 		/** @var MessageGroup $group */
 		foreach ( $groups as $group ) {
 			if ( !$group instanceof WikiPageMessageGroup ) {
 				continue;
+			}
+
+			$counter++;
+			if ( ( $counter % $this->mBatchSize ) === 0 ) {
+				wfWaitForSlaves();
 			}
 
 			// Get all translation subpages and refresh each one of them
@@ -44,6 +51,8 @@ class RefreshTranslatablePages extends Maintenance {
 				$job->run();
 			}
 		}
+
+		$this->output( "Refreshed $counter translatable pages.\n" );
 	}
 }
 
