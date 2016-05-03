@@ -17,7 +17,7 @@
  */
 class UpdatedDefinitionAid extends TranslationAid {
 	public function getData() {
-		$db = wfGetDB( DB_MASTER );
+		$db = TranslateUtils::getSafeReadDB();
 		$conds = array(
 			'rt_page' => $this->handle->getTitle()->getArticleID(),
 			'rt_type' => RevTag::getType( 'tp:transver' ),

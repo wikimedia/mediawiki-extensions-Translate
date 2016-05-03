@@ -479,7 +479,7 @@ class TranslationHelpers {
 			return null;
 		}
 
-		$db = wfGetDB( DB_MASTER );
+		$db = TranslateUtils::getSafeReadDB();
 		$conds = array(
 			'rt_page' => $title->getArticleID(),
 			'rt_type' => RevTag::getType( 'tp:transver' ),

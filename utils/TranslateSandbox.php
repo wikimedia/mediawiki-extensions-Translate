@@ -87,7 +87,7 @@ class TranslateSandbox {
 	 * @return UserArray List of users.
 	 */
 	public static function getUsers() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = TranslateUtils::getSafeReadDB();
 		$tables = array( 'user', 'user_groups' );
 		$fields = User::selectFields();
 		$conds = array(

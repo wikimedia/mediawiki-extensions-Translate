@@ -381,4 +381,19 @@ class TranslateUtils {
 
 		return $langs;
 	}
+
+	/**
+	 * Get a DB handle suitable for read and read-for-write cases
+	 *
+	 * @return DatabaseBase Master for HTTP POST, CLI, DB already changed; slave otherwise
+	 */
+	public static function getSafeReadDB() {
+		$index = (
+			PHP_SAPI === 'cli' ||
+			RequestContext::getMain()->getRequest()->wasPosted() ||
+			wfGetLB()->hasOrMadeRecentMasterChanges()
+		) ? DB_MASTER : DB_SLAVE;
+
+		return wfGetDB( $index );
+	}
 }

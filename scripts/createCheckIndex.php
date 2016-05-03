@@ -119,11 +119,11 @@ class CreateCheckIndex extends Maintenance {
 			return;
 		}
 
-		$db = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_MASTER );
 		foreach ( $problematic as $p ) {
 			$title = Title::makeTitleSafe( $p[0], $p[1] );
 			$titleText = $title->getDBkey();
-			$res = $db->select( 'page', array( 'page_id', 'page_latest' ),
+			$res = $dbw->select( 'page', array( 'page_id', 'page_latest' ),
 				array( 'page_namespace' => $p[0], 'page_title' => $titleText ), __METHOD__ );
 
 			$inserts = array();
@@ -134,7 +134,7 @@ class CreateCheckIndex extends Maintenance {
 					'rt_type' => RevTag::getType( 'fuzzy' )
 				);
 			}
-			$db->replace( 'revtag', 'rt_type_page_revision', $inserts, __METHOD__ );
+			$dbw->replace( 'revtag', 'rt_type_page_revision', $inserts, __METHOD__ );
 		}
 	}
 }

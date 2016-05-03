@@ -395,23 +395,23 @@ class DatabaseMessageIndex extends MessageIndex {
 	protected $index;
 
 	protected function lock() {
-		$db = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_MASTER );
 
 		// Any transaction should be flushed after getting the lock to avoid
 		// stale pre-lock REPEATABLE-READ snapshot data.
-		$ok = $db->lock( 'translate-messageindex', __METHOD__, 30 );
+		$ok = $dbw->lock( 'translate-messageindex', __METHOD__, 30 );
 		if ( $ok ) {
-			$db->commit( __METHOD__, 'flush' );
+			$dbw->commit( __METHOD__, 'flush' );
 		}
 
 		return $ok;
 	}
 
 	protected function unlock() {
-		$db = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_MASTER );
 		// Unlock once the rows are actually unlocked to avoid deadlocks
-		$db->onTransactionIdle( function () use ( $db ) {
-			$db->unlock( 'translate-messageindex', __METHOD__ );
+		$dbw->onTransactionIdle( function () use ( $dbw ) {
+			$dbw->unlock( 'translate-messageindex', __METHOD__ );
 		} );
 
 		return true;
