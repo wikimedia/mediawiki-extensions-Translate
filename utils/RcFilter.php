@@ -15,18 +15,27 @@
  */
 class TranslateRcFilter {
 	/**
-	 * Hooks SpecialRecentChangesQuery. See the hook documentation for
+	 * Hooks ChangesListSpecialPageQuery. See the hook documentation for
 	 * documentation of the function parameters.
 	 *
 	 * Appends SQL filter conditions into $conds.
+	 * @param string $pageName
+	 * @param array $tables
+	 * @param array $fields
 	 * @param array $conds
-	 * @param array|string $tables
+	 * @param array $query_options
 	 * @param array $join_conds
 	 * @param FormOptions $opts
 	 * @return bool true
 	 */
-	public static function translationFilter( &$conds, &$tables, &$join_conds, $opts ) {
+	public static function translationFilter( $pageName, &$tables, &$fields, &$conds, &$query_options,
+		&$join_conds, FormOptions $opts
+	) {
 		global $wgTranslateMessageNamespaces, $wgTranslateRcFilterDefault;
+
+		if ( $pageName !== 'Recentchanges' ) {
+			return true;
+		}
 
 		$request = RequestContext::getMain()->getRequest();
 		$translations = $request->getVal( 'translations', $wgTranslateRcFilterDefault );

@@ -126,7 +126,7 @@ $wgHooks['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
 $wgHooks['GetPreferences'][] = 'TranslatePreferences::translationAssistLanguages';
 
 // Recent changes filters
-$wgHooks['SpecialRecentChangesQuery'][] = 'TranslateRcFilter::translationFilter';
+$wgHooks['ChangesListSpecialPageQuery'][] = 'TranslateRcFilter::translationFilter';
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
 $wgHooks['AbortEmailNotification'][] = 'TranslateHooks::onAbortEmailNotificationReview';
