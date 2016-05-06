@@ -17,38 +17,27 @@ class TranslatePreferences {
 	 * Add 'translate-pref-nonewsletter' preference.
 	 * This is most probably specific to translatewiki.net. Can be enabled
 	 * with $wgTranslateNewsletterPreference.
-	 *
-	 * @param $user User
-	 * @param $preferences array
-	 * @return bool true
 	 */
-	public static function onGetPreferences( $user, &$preferences ) {
+	public static function onGetPreferences( User $user, array &$preferences ) {
 		global $wgTranslateNewsletterPreference;
 
 		if ( !$wgTranslateNewsletterPreference ) {
 			return true;
 		}
 
-		global $wgEnableEmail, $wgEnotifRevealEditorAddress;
+		global $wgEnableEmail;
 
 		// Only show if email is enabled and user has a confirmed email address.
 		if ( $wgEnableEmail && $user->isEmailConfirmed() ) {
 			// 'translate-pref-nonewsletter' is used as opt-out for
 			// users with a confirmed email address
-			$prefs = array(
-				'translate-nonewsletter' => array(
-					'type' => 'toggle',
-					'section' => 'personal/email',
-					'label-message' => 'translate-pref-nonewsletter'
-				)
+			$preferences['translate-nonewsletter'] = array(
+				'type' => 'toggle',
+				'section' => 'personal/email',
+				'label-message' => 'translate-pref-nonewsletter'
 			);
 
-			// Add setting after 'enotifrevealaddr'.
-			$preferences = wfArrayInsertAfter( $preferences, $prefs,
-				$wgEnotifRevealEditorAddress ? 'enotifrevealaddr' : 'enotifminoredits' );
 		}
-
-		return true;
 	}
 
 	/**
