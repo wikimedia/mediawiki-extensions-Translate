@@ -13,7 +13,8 @@
 			"WTM",
 			"Woytecr",
 			"Matik7",
-			"Py64"
+			"Py64",
+			"Jdx"
 		]
 	},
 	"pagetranslation": "Tłumaczenie stron",
@@ -57,7 +58,7 @@
 	"tpt-sections-prioritylangs": "Języki priorytetowe",
 	"tpt-rev-mark": "oznacz do tłumaczenia",
 	"tpt-rev-unmark": "usuń z tłumaczenia",
-	"tpt-rev-discourage": "zniechęcić",
+	"tpt-rev-discourage": "zniechęć",
 	"tpt-rev-encourage": "Przywracanie",
 	"tpt-rev-mark-tooltip": "Oznacz najnowszą wersję tej strony do tłumaczenia.",
 	"tpt-rev-unmark-tooltip": "Usuń tę stronę z tłumaczenia.",
@@ -175,13 +176,13 @@
 	"pm-old-translations-missing": "$1 nie zawiera starego tłumaczenia",
 	"pm-extra-units-warning": "Mogą występować dodatkowe jednostki. Proszę odpowiednio dopasować jednostki źródła i tłumaczenia.",
 	"pm-pagename-missing": "Podaj nazwę strony",
-	"pm-langcode-missing": "Proszę podać kod języka",
 	"pm-add-icon-hover-text": "Dodaj jednostkę poniżej",
 	"pm-swap-icon-hover-text": "Zamień z jednostką poniżej",
 	"pm-delete-icon-hover-text": "Usuń jednostkę",
 	"pm-pagetitle-placeholder": "Podaj tytuł strony",
 	"pm-pagetitle-invalid": "Podaj poprawny tytuł strony. Powinien być w formacie <page-name>/<language-code>.",
 	"pm-pagetitle-missing": "Podaj tytuł strony.",
+	"pm-langcode-missing": "Proszę podać kod języka",
 	"pm-summary-import": "Importowane tłumaczenie za pomocą [[Special:PageMigration|migracji strony]]",
 	"tpt-translate-title": "Umożliwienie tłumaczenia tytułu strony",
 	"pp-save-summary": "Przygotowano stronę do tłumaczenia",
