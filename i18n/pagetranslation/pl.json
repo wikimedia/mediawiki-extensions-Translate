@@ -66,7 +66,7 @@
 	"tpt-rev-encourage-tooltip": "Przywrócić tę stronę do zwykłego tłumaczenia.",
 	"translate-tag-translate-link-desc": "Przetłumacz tę stronę",
 	"translate-tag-markthis": "Oznacz tę stronę do tłumaczenia",
-	"translate-tag-markthisagain": "Ta strona została zmieniona <span class=\"plainlinks\">[$1 razy]</span>, od kiedy ostatnio była <span class=\"plainlinks\">[$2 oznaczona do tłumaczenia]</span>.",
+	"translate-tag-markthisagain": "Ta strona została <span class=\"plainlinks\">[$1 zmieniona]</span>, od kiedy po raz ostatni była <span class=\"plainlinks\">[$2 oznaczona do tłumaczenia]</span>.",
 	"translate-tag-hasnew": "Ta strona zawiera <span class=\"plainlinks\">[$1 zmiany]</span>, które nie zostały oznaczone do tłumaczenia.",
 	"tpt-translation-intro": "Ta strona to <span class=\"plainlinks\">[$1 przetłumaczona wersja]</span> strony [[$2]], a tłumaczenie jest ukończone w $3%.",
 	"tpt-languages-legend": "Inne języki:",
