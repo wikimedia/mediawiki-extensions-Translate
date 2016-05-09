@@ -107,7 +107,6 @@ $al['TranslationHelpers'] = "$dir/utils/TranslationHelpers.php";
 $al['TranslationStats'] = "$dir/utils/TranslationStats.php";
 $al['TranslationStatsBase'] = "$dir/specials/SpecialTranslationStats.php";
 $al['TranslationStatsInterface'] = "$dir/specials/SpecialTranslationStats.php";
-$al['TranslationsUpdateJob']= "$dir/utils/TranslationsUpdateJob.php";
 $al['TuxMessageTable'] = "$dir/utils/TuxMessageTable.php";
 /**@}*/
 
@@ -139,6 +138,7 @@ $al['TranslateMoveJob'] = "$dir/tag/TranslateMoveJob.php";
 $al['PageTranslationHooks'] = "$dir/tag/PageTranslationHooks.php";
 $al['PageTranslationLogFormatter'] = "$dir/tag/PageTranslationLogFormatter.php";
 $al['TranslateRenderJob'] = "$dir/tag/TranslateRenderJob.php";
+$al['TranslationsUpdateJob']= "$dir/tag/TranslationsUpdateJob.php";
 $al['SpecialPageTranslation'] = "$dir/tag/SpecialPageTranslation.php";
 $al['SpecialPageTranslationDeletePage'] =
 	"$dir/tag/SpecialPageTranslationDeletePage.php";
