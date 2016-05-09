@@ -104,6 +104,7 @@ class TranslateHooks {
 			$wgJobClasses['MoveJob'] = 'TranslateMoveJob';
 			$wgJobClasses['TranslateDeleteJob'] = 'TranslateDeleteJob';
 			$wgJobClasses['DeleteJob'] = 'TranslateDeleteJob';
+			$wgJobClasses['TranslationsUpdateJob'] = 'TranslationsUpdateJob';
 
 			// Namespaces
 			global $wgPageTranslationNamespace;
