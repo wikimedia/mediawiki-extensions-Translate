@@ -308,6 +308,9 @@ class MessageChecker {
 	/**
 	 * Checks if the translation has even number of opening and closing
 	 * parentheses. {, [ and ( are checked.
+	 * Note that this will not add a warning if the message definition
+	 * has an unbalanced amount of braces.
+	 *
 	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
 	 * @param array $warnings Array where warnings are appended to.
@@ -331,16 +334,18 @@ class MessageChecker {
 				$counts[$char]++;
 			}
 
+			$definition = $message->translation();
+
 			$balance = array();
-			if ( $counts['['] !== $counts[']'] ) {
+			if ( $counts['['] !== $counts[']'] && self::checkStringCountEqual( $definition, '[', ']' ) ) {
 				$balance[] = '[]: ' . ( $counts['['] - $counts[']'] );
 			}
 
-			if ( $counts['{'] !== $counts['}'] ) {
+			if ( $counts['{'] !== $counts['}'] && self::checkStringCountEqual( $definition, '{', '}' ) ) {
 				$balance[] = '{}: ' . ( $counts['{'] - $counts['}'] );
 			}
 
-			if ( $counts['('] !== $counts[')'] ) {
+			if ( $counts['('] !== $counts[')'] && self::checkStringCountEqual( $definition, '(', ')' ) ) {
 				$balance[] = '(): ' . ( $counts['('] - $counts[')'] );
 			}
 
@@ -353,6 +358,16 @@ class MessageChecker {
 				);
 			}
 		}
+	}
+
+	/**
+	 * @param string $source
+	 * @param string $str1
+	 * @param string $str2
+	 * @return bool whether $source has an equal number of occurences of $str1 and $str2
+	 */
+	protected static function checkStringCountEqual( $source, $str1, $str2 ) {
+		return substr_count( $source, $str1 ) === substr_count( $source, $str2 );
 	}
 
 	/**
