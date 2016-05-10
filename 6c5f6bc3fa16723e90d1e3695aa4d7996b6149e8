@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_36739615",
+        "filename": "MediaWikiMessageChecker.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-10T11:49:36Z",
+      "side": 1,
+      "message": "did you mean definition?",
+      "revId": "6c5f6bc3fa16723e90d1e3695aa4d7996b6149e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_76798ef1",
+        "filename": "MessageChecks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-10T11:49:36Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "6c5f6bc3fa16723e90d1e3695aa4d7996b6149e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
