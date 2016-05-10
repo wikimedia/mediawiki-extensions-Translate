@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ae564743_81785e27",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-10T13:07:43Z",
+      "side": 1,
+      "message": "Variables are not expanded in single quotes.",
+      "revId": "a2b04f4169a138d75d1ea0a4a35304964f9cecc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee33df1d_2d37efac",
         "filename": "TranslateUtils.php",
         "patchSetId": 12
@@ -65,6 +82,24 @@
       "side": 1,
       "message": "What would you remove exactly? This seemed the most compact way to me.",
       "parentUuid": "ee33df1d_ed4ce745",
+      "revId": "a2b04f4169a138d75d1ea0a4a35304964f9cecc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_81be9ea9",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-10T13:07:43Z",
+      "side": 1,
+      "message": "Seems so. It seems that this approach is only leading to messy code. After all, two separate functions should produce code that is easier to review.\n\nI recommend encapsulating the logic of which table to use into a third function that produces consistent output. One thing that makes this more difficult to review is to check that all callers would work with the renamed field names (appearing as different keys in the array).",
+      "parentUuid": "ee33df1d_869ff505",
       "revId": "a2b04f4169a138d75d1ea0a4a35304964f9cecc9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
