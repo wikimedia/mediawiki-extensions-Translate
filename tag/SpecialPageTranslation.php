@@ -411,13 +411,21 @@ class SpecialPageTranslation extends SpecialPage {
 		$out = $this->getOutput();
 
 		$res = $this->loadPagesFromDB();
-		$allpages = $this->buildPageArray( $res );
-		if ( !count( $allpages ) ) {
+		$allPages = $this->buildPageArray( $res );
+		if ( !count( $allPages ) ) {
 			$out->addWikiMsg( 'tpt-list-nopages' );
 
 			return;
 		}
-		$types = $this->classifyPages( $allpages );
+
+		$lb = new LinkBatch();
+		$lb->setCaller( __METHOD__ );
+		foreach ( $allPages as $page ) {
+			$lb->addObj( $page['title'] );
+		}
+		$lb->execute();
+
+		$types = $this->classifyPages( $allPages );
 
 		$pages = $types['proposed'];
 		if ( count( $pages ) ) {
@@ -499,7 +507,7 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( $user->isAllowed( 'pagetranslation' ) ) {
 			$pending = $type === 'active' && $page['latest'] !== $page['tp:mark'];
 			if ( $type === 'proposed' || $pending ) {
-				$actions[] = Linker::link(
+				$actions[] = Linker::linkKnown(
 					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-mark' )->escaped(),
 					array( 'title' => $this->msg( 'tpt-rev-mark-tooltip' )->text() ),
@@ -512,7 +520,7 @@ class SpecialPageTranslation extends SpecialPage {
 			}
 
 			if ( $type === 'active' ) {
-				$actions[] = Linker::link(
+				$actions[] = Linker::linkKnown(
 					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-discourage' )->escaped(),
 					array( 'title' => $this->msg( 'tpt-rev-discourage-tooltip' )->text() ) + $js,
@@ -523,7 +531,7 @@ class SpecialPageTranslation extends SpecialPage {
 					)
 				);
 			} elseif ( $type === 'discouraged' ) {
-				$actions[] = Linker::link(
+				$actions[] = Linker::linkKnown(
 					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-encourage' )->escaped(),
 					array( 'title' => $this->msg( 'tpt-rev-encourage-tooltip' )->text() ) + $js,
@@ -536,7 +544,7 @@ class SpecialPageTranslation extends SpecialPage {
 			}
 
 			if ( $type !== 'proposed' ) {
-				$actions[] = Linker::link(
+				$actions[] = Linker::linkKnown(
 					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-unmark' )->escaped(),
 					array( 'title' => $this->msg( 'tpt-rev-unmark-tooltip' )->text() ),
