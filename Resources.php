@@ -12,6 +12,7 @@ global $wgResourceModules;
 $resourcePaths = array(
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'Translate',
+	'targets' => array( 'desktop', 'mobile' ),
 );
 
 $wgResourceModules['ext.translate'] = array(
@@ -219,6 +220,7 @@ $wgResourceModules['ext.translate.multiselectautocomplete'] = array(
 		'jquery.ui.autocomplete',
 	),
 	'position' => 'top',
+	'targets' => array( 'desktop' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.navitoggle'] = array(
@@ -257,6 +259,7 @@ $wgResourceModules['ext.translate.quickedit'] = array(
 		'jquery.ui.dialog',
 		'mediawiki.util',
 	),
+	'targets' => array( 'desktop' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.recentgroups'] = array(
@@ -289,6 +292,7 @@ $wgResourceModules['ext.translate.special.aggregategroups'] = array(
 		'tpt-aggregategroup-update-cancel',
 		'tpt-invalid-group',
 	),
+	'targets' => array( 'desktop' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.importtranslations'] = array(
@@ -296,6 +300,7 @@ $wgResourceModules['ext.translate.special.importtranslations'] = array(
 	'dependencies' => array(
 		'jquery.ui.autocomplete',
 	),
+	'targets' => array( 'desktop' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.languagestats'] = array(
@@ -308,6 +313,7 @@ $wgResourceModules['ext.translate.special.languagestats'] = array(
 		'translate-langstats-expandall',
 	),
 	'dependencies' => 'jquery.tablesorter',
+	'targets' => array( 'desktop' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.managegroups'] = array(
@@ -347,6 +353,7 @@ $wgResourceModules['ext.translate.special.managetranslatorsandbox'] = array(
 		'tsb-translations-user',
 		'tsb-user-posted-a-comment',
 	),
+	'targets' => array( 'desktop' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.managetranslatorsandbox.styles'] = array(
@@ -410,6 +417,7 @@ $wgResourceModules['ext.translate.special.pagetranslation'] = array(
 		'user.tokens',
 	),
 	'position' => 'top',
+	'targets' => array( 'desktop' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.pagetranslation.styles'] = array(
@@ -439,6 +447,7 @@ $wgResourceModules['ext.translate.special.searchtranslations.operatorsuggest'] =
 	'dependencies' => array(
 		'jquery.ui.autocomplete',
 	),
+	'targets' => array( 'desktop' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.searchtranslations.styles'] = array(
