@@ -93,7 +93,10 @@ class SpecialTranslate extends SpecialPage {
 			$out->addHTML( $this->tuxSettingsForm( $errors ) );
 			$out->addHTML( $this->messageSelector() );
 		} else {
-			$out->addModuleStyles( 'ext.translate.legacy' );
+			$out->addModuleStyles( [
+				'ext.uls.buttons',
+				'ext.translate.legacy'
+			] );
 			$out->addHelpLink( 'Help:Extension:Translate/Translation_example' );
 			// Show errors nicely.
 			$out->addHTML( $this->settingsForm( $errors ) );
