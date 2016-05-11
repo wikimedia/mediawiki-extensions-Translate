@@ -12,6 +12,7 @@ global $wgResourceModules;
 $resourcePaths = array(
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'Translate',
+	'targets' => array( 'desktop', 'mobile' ),
 );
 
 $wgResourceModules['ext.translate'] = array(
