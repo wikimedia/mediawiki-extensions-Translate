@@ -12,6 +12,7 @@ global $wgResourceModules;
 $resourcePaths = array(
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'Translate',
+	'targets' => array( 'desktop', 'mobile' ),
 );
 
 $wgResourceModules['ext.translate'] = array(
@@ -219,6 +220,7 @@ $wgResourceModules['ext.translate.multiselectautocomplete'] = array(
 		'jquery.ui.autocomplete',
 	),
 	'position' => 'top',
+	'targets' => array( 'desktop' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.navitoggle'] = array(
