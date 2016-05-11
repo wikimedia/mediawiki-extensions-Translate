@@ -12,11 +12,14 @@ global $wgResourceModules;
 $resourcePaths = array(
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'Translate',
+	'targets' => [ 'desktop', 'mobile' ],
 );
 
 $wgResourceModules['ext.translate'] = array(
 	'styles' => 'resources/css/ext.translate.css',
 	'position' => 'top',
+	// FIXME: ext.translate loads by default on all page views. Is this necessary?
+	'targets' => [ 'desktop' ],
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.base'] = array(
