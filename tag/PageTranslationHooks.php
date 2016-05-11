@@ -990,6 +990,10 @@ class PageTranslationHooks {
 		MessageGroupStats::clearGroup( $id );
 		MessageGroupStats::forGroup( $id );
 
+		if ( $handle->isDoc() ) {
+			return true;
+		}
+
 		self::updateTranslationPage( $page, $handle->getCode(), $user, 0, $reason );
 	}
 }
