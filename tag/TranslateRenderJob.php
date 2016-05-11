@@ -46,9 +46,7 @@ class TranslateRenderJob extends Job {
 		// Return the actual translation page...
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( !$page ) {
-			var_dump( $this->params );
-			var_dump( $title );
-			throw new MWException( 'Oops, this should not happen!' );
+			throw new MWException( "Cannot render translation page for {$title->getPrefixedText()}!" );
 		}
 
 		$group = $page->getMessageGroup();
