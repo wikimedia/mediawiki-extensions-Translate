@@ -117,11 +117,18 @@ class MediaWikiMessageChecker extends MessageChecker {
 				'~<(BR|Br|bR) />~su' => '<br />',
 			);
 
+			$definition = $message->definition();
+
 			$wrongTags = array();
 			foreach ( $tags as $wrong => $correct ) {
 				$matches = array();
 				preg_match_all( $wrong, $translation, $matches, PREG_PATTERN_ORDER );
 				foreach ( $matches[0] as $wrongMatch ) {
+					if ( strpos( $definition, $wrongMatch ) !== false ) {
+						// If the message definition contains a
+						// non-strict string, do not enforce it
+						continue;
+					}
 					$wrongTags[$wrongMatch] = "$wrongMatch → $correct";
 				}
 			}
