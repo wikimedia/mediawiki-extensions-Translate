@@ -984,6 +984,10 @@ class PageTranslationHooks {
 			return true;
 		}
 
+		if ( $handle->isDoc() ) {
+			return true;
+		}
+
 		$page = TranslatablePage::newFromTitle( $group->getTitle() );
 		$id = $page->getMessageGroupId();
 
