@@ -57,7 +57,6 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'ext.translate.dropdownmenu',
 		'ext.translate.hooks',
 		'ext.translate.storage',
-		'ext.uls.buttons',
 		'jquery.autosize',
 		'jquery.makeCollapsible',
 		'jquery.textSelection',
@@ -162,7 +161,6 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'ext.translate.hooks',
 		'ext.translate.loader',
 		'ext.translate.parsers',
-		'ext.uls.buttons',
 		'jquery.appear',
 		'jquery.textchange',
 		'mediawiki.Uri',
@@ -324,7 +322,6 @@ $wgResourceModules['ext.translate.special.managetranslatorsandbox'] = array(
 	'dependencies' => array(
 		'ext.translate.loader',
 		'ext.translate.translationstashstorage',
-		'ext.uls.buttons',
 		'ext.uls.mediawiki',
 		'jquery.ui.dialog',
 		'mediawiki.api',
