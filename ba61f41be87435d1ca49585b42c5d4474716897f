@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_b5de7342",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-11T09:20:47Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it make sense to place the qqq exclusion after updating stats?",
+      "revId": "ba61f41be87435d1ca49585b42c5d4474716897f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
