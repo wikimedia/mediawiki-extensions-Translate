@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Octahedron80"
+		]
+	},
+	"apihelp-aggregategroups-param-group": "ไอดีกลุ่มข้อความ",
+	"apihelp-groupreview-param-group": "กลุ่มข้อความ",
+	"apihelp-groupreview-param-language": "รหัสภาษา",
+	"apihelp-query+languagestats-param-language": "รหัสภาษา",
+	"apihelp-query+messagecollection-param-group": "กลุ่มข้อความ",
+	"apihelp-query+messagecollection-param-language": "รหัสภาษา",
+	"apihelp-query+messagecollection-example-1": "รายชื่อภาษาที่รองรับ",
+	"apihelp-query+messagegroups-example-1": "แสดงกลุ่มข้อความ",
+	"apihelp-query+messagegroupstats-param-group": "ไอดีกลุ่มข้อความ",
+	"apihelp-searchtranslations-description": "ค้นหาการแปล"
+}

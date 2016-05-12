@@ -9,7 +9,8 @@
 			"Mar(c)",
 			"Sjoerddebruin",
 			"Robin0van0der0vliet",
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Servien"
 		]
 	},
 	"pagetranslation": "Paginavertaling",
@@ -167,8 +168,6 @@
 	"pm-import-button-label": "Importeren",
 	"pm-savepages-button-label": "Opslaan",
 	"pm-cancel-button-label": "Annuleren",
-	"pm-pagename-placeholder": "Geef de paginanaam op",
-	"pm-langcode-placeholder": "Taalcode",
 	"pm-page-does-not-exist": "$1 bestaat niet",
 	"pm-old-translations-missing": "$1 bevat geen oude vertalingen",
 	"pm-delete-icon-hover-text": "Eenheid verwijderen",

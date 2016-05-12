@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kingu"
+		]
+	},
+	"apihelp-query+messagecollection-param-language": "Språkkode.",
+	"apihelp-translationstash-param-subaction": "Handling."
+}
