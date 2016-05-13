@@ -62,6 +62,11 @@ class ElasticSearchTTMServer
 	}
 
 	protected function doQuery( $sourceLanguage, $targetLanguage, $text ) {
+		if ( !$this->useWikimediaExtraPlugin() ) {
+			// ElasticTTM is currently not compatible with elasticsearch 2.x
+			// It needs FuzzyLikeThis ported via the wmf extra plugin
+			throw new \RuntimeException( 'The wikimedia extra plugin is mandatory.' );
+		}
 		/* Two query system:
 		 * 1) Find all strings in source language that match text
 		 * 2) Do another query for translations for those strings
@@ -70,7 +75,8 @@ class ElasticSearchTTMServer
 		$oldTimeout = $connection->getTimeout();
 		$connection->setTimeout( 10 );
 
-		$fuzzyQuery = new \Elastica\Query\FuzzyLikeThis();
+		$fuzzyQuery = new FuzzyLikeThis();
+		$fuzzyQuery->setMinSimilarity( 2 );
 		$fuzzyQuery->setLikeText( $text );
 		$fuzzyQuery->addFields( array( 'content' ) );
 
@@ -100,22 +106,18 @@ GROOVY;
 
 		// Wrap the fuzzy query so it can be used as a filter.
 		// This is slightly faster, as ES can throw away the scores by this query.
-		$fuzzyFilter = new \Elastica\Filter\Query();
-		$fuzzyFilter->setQuery( $fuzzyQuery );
-		$boostQuery->setFilter( $fuzzyFilter );
+		$bool = new \Elastica\Query\BoolQuery();
+		$bool->addFilter( $fuzzyQuery );
+		$bool->addMust( $boostQuery );
 
-		// Use filtered query to wrap function score and language filter
-		$filteredQuery = new \Elastica\Query\Filtered();
-
-		$languageFilter = new \Elastica\Filter\Term();
+		$languageFilter = new \Elastica\Query\Term();
 		$languageFilter->setTerm( 'language', $sourceLanguage );
+		$bool->addFilter( $languageFilter );
 
-		$filteredQuery->setFilter( $languageFilter );
-		$filteredQuery->setQuery( $boostQuery );
 
 		// The whole query
 		$query = new \Elastica\Query();
-		$query->setQuery( $filteredQuery );
+		$query->setQuery( $bool );
 
 		// The interface usually displays three best candidates. These might
 		// come from more than three source things, if the translations are
@@ -249,9 +251,9 @@ GROOVY;
 			$localid = $handle->getTitleForBase()->getPrefixedText();
 
 			$boolQuery = new \Elastica\Query\BoolQuery();
-			$boolQuery->addMust( new Elastica\Query\Term( array( 'wiki' => wfWikiID() ) ) );
-			$boolQuery->addMust( new Elastica\Query\Term( array( 'language' => $handle->getCode() ) ) );
-			$boolQuery->addMust( new Elastica\Query\Term( array( 'localid' => $localid ) ) );
+			$boolQuery->addFilter( new Elastica\Query\Term( array( 'wiki' => wfWikiID() ) ) );
+			$boolQuery->addFilter( new Elastica\Query\Term( array( 'language' => $handle->getCode() ) ) );
+			$boolQuery->addFilter( new Elastica\Query\Term( array( 'localid' => $localid ) ) );
 
 			$query = new \Elastica\Query( $boolQuery );
 			$this->deleteByQuery( $this->type, $query );
@@ -355,7 +357,7 @@ GROOVY;
 		}
 
 		$settings = $type->getIndex()->getSettings();
-		$settings->setRefreshInterval( -1 );
+		$settings->setRefreshInterval( "-1" );
 
 		$term = new Elastica\Query\Term();
 		$term->setTerm( 'wiki', wfWikiID() );
@@ -380,7 +382,7 @@ GROOVY;
 					),
 					'prefix_complete' => array(
 						'type' => 'string',
-						'index_analyzer' => 'prefix',
+						'analyzer' => 'prefix',
 						'search_analyzer' => 'standard',
 						'term_vector' => 'yes'
 					),
@@ -446,7 +448,7 @@ GROOVY;
 		$index = $this->getType()->getIndex();
 		$index->refresh();
 		$index->optimize();
-		$index->getSettings()->setRefreshInterval( 5 );
+		$index->getSettings()->setRefreshInterval( "5s" );
 	}
 
 	public function getClient() {
@@ -605,17 +607,17 @@ GROOVY;
 		list( $searchQuery, $highlights ) = $this->parseQueryString( $queryString, $opts );
 		$query->setQuery( $searchQuery );
 
-		$language = new \Elastica\Facet\Terms( 'language' );
+		$language = new \Elastica\Aggregation\Terms( 'language' );
 		$language->setField( 'language' );
 		$language->setSize( 500 );
-		$query->addFacet( $language );
+		$query->addAggregation( $language );
 
-		$group = new \Elastica\Facet\Terms( 'group' );
+		$group = new \Elastica\Aggregation\Terms( 'group' );
 		$group->setField( 'group' );
 		// Would like to prioritize the top level groups and not show subgroups
 		// if the top group has only few hits, but that doesn't seem to be possile.
 		$group->setSize( 500 );
-		$query->addFacet( $group );
+		$query->addAggregation( $group );
 
 		$query->setSize( $opts['limit'] );
 		$query->setFrom( $opts['offset'] );
@@ -624,20 +626,20 @@ GROOVY;
 		// multiple must clauses are executed by converting each filter into a bit
 		// field then anding them together. The latter is normally faster if either
 		// of the subfilters are reused. May not make a difference in this context.
-		$filters = new \Elastica\Filter\BoolFilter();
+		$filters = new \Elastica\Query\BoolQuery();
 
 		$language = $opts['language'];
 		if ( $language !== '' ) {
-			$languageFilter = new \Elastica\Filter\Term();
+			$languageFilter = new \Elastica\Query\Term();
 			$languageFilter->setTerm( 'language', $language );
-			$filters->addMust( $languageFilter );
+			$filters->addFilter( $languageFilter );
 		}
 
 		$group = $opts['group'];
 		if ( $group !== '' ) {
-			$groupFilter = new \Elastica\Filter\Term();
+			$groupFilter = new \Elastica\Query\Term();
 			$groupFilter->setTerm( 'group', $group );
-			$filters->addMust( $groupFilter );
+			$filters->addFilter( $groupFilter );
 		}
 
 		// Check that we have at least one filter to avoid invalid query errors.
@@ -661,16 +663,16 @@ GROOVY;
 	}
 
 	public function getFacets( $resultset ) {
-		$facets = $resultset->getFacets();
+		$aggs = $resultset->getAggregations();
 
 		$ret = array(
 			'language' => array(),
 			'group' => array()
 		);
 
-		foreach ( $facets as $type => $facetInfo ) {
-			foreach ( $facetInfo['terms'] as $facetRow ) {
-				$ret[$type][$facetRow['term']] = $facetRow['count'];
+		foreach ( $aggs as $type => $info ) {
+			foreach ( $info['buckets'] as $row ) {
+				$ret[$type][$row['key']] = $row['doc_count'];
 			}
 		}
 
@@ -830,4 +832,209 @@ GROOVY;
 		return rand( 1, (int) pow( 2, 3 + $errorCount ) );
 	}
 
+}
+
+/**
+ * Fuzzy Like This query.
+ *
+ * @author Raul Martinez, Jr <juneym@gmail.com>
+ *
+ * @link http://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-flt-query.html
+ */
+class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
+    /**
+     * Field names.
+     *
+     * @var array Field names
+     */
+    protected $_fields = array();
+
+    /**
+     * Like text.
+     *
+     * @var string Like text
+     */
+    protected $_likeText = '';
+
+    /**
+     * Ignore term frequency.
+     *
+     * @var bool ignore term frequency
+     */
+    protected $_ignoreTF = false;
+
+    /**
+     * Max query terms value.
+     *
+     * @var int Max query terms value
+     */
+    protected $_maxQueryTerms = 25;
+
+    /**
+     * minimum similarity.
+     *
+     * @var int minimum similarity
+     */
+    protected $_minSimilarity = 0.5;
+
+    /**
+     * Prefix Length.
+     *
+     * @var int Prefix Length
+     */
+    protected $_prefixLength = 0;
+
+    /**
+     * Boost.
+     *
+     * @var float Boost
+     */
+    protected $_boost = 1.0;
+
+    /**
+     * Analyzer.
+     *
+     * @var sting Analyzer
+     */
+    protected $_analyzer;
+
+    /**
+     * Adds field to flt query.
+     *
+     * @param array $fields Field names
+     *
+     * @return $this
+     */
+    public function addFields( array $fields ) {
+        $this->_fields = $fields;
+
+        return $this;
+    }
+
+    /**
+     * Set the "like_text" value.
+     *
+     * @param string $text
+     *
+     * @return $this
+     */
+    public function setLikeText( $text ) {
+        $text = trim ( $text );
+        $this->_likeText = $text;
+
+        return $this;
+    }
+
+    /**
+     * Set the "ignore_tf" value (ignore term frequency).
+     *
+     * @param bool $ignoreTF
+     *
+     * @return $this
+     */
+    public function setIgnoreTF( $ignoreTF ) {
+        $this->_ignoreTF = (bool) $ignoreTF;
+
+        return $this;
+    }
+
+    /**
+     * Set the minimum similarity.
+     *
+     * @param int $value
+     *
+     * @return $this
+     */
+    public function setMinSimilarity( $value ) {
+        $value = (float) $value;
+        $this->_minSimilarity = $value;
+
+        return $this;
+    }
+
+    /**
+     * Set boost.
+     *
+     * @param float $value Boost value
+     *
+     * @return $this
+     */
+    public function setBoost( $value ) {
+        $this->_boost = (float) $value;
+
+        return $this;
+    }
+
+    /**
+     * Set Prefix Length.
+     *
+     * @param int $value Prefix length
+     *
+     * @return $this
+     */
+    public function setPrefixLength( $value ) {
+        $this->_prefixLength = (int) $value;
+
+        return $this;
+    }
+
+    /**
+     * Set max_query_terms.
+     *
+     * @param int $value Max query terms value
+     *
+     * @return $this
+     */
+    public function setMaxQueryTerms( $value ) {
+        $this->_maxQueryTerms = (int) $value;
+
+        return $this;
+    }
+
+    /**
+     * Set analyzer.
+     *
+     * @param string $text Analyzer text
+     *
+     * @return $this
+     */
+    public function setAnalyzer( $text ) {
+        $text = trim( $text );
+        $this->_analyzer = $text;
+
+        return $this;
+    }
+
+    /**
+     * Converts fuzzy like this query to array.
+     *
+     * @return array Query array
+     *
+     * @see \Elastica\Query\AbstractQuery::toArray()
+     */
+    public function toArray() {
+        if ( !empty( $this->_fields ) ) {
+            $args['fields'] = $this->_fields;
+        }
+
+        if ( !empty( $this->_boost ) ) {
+            $args['boost'] = $this->_boost;
+        }
+
+        if ( !empty( $this->_analyzer ) ) {
+            $args['analyzer'] = $this->_analyzer;
+        }
+
+        $args['min_similarity'] = ( $this->_minSimilarity > 0 ) ? $this->_minSimilarity : 0;
+
+        $args['like_text'] = $this->_likeText;
+        $args['prefix_length'] = $this->_prefixLength;
+        $args['ignore_tf'] = $this->_ignoreTF;
+        $args['max_query_terms'] = $this->_maxQueryTerms;
+
+        $data = parent::toArray();
+        $args = array_merge( $args, $data['fuzzy_like_this'] );
+
+        return array( 'fuzzy_like_this' => $args );
+    }
 }
