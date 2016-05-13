@@ -241,7 +241,7 @@ GROOVY;
 			$boolQuery->addMust( new Elastica\Query\Term( array( 'localid' => $localid ) ) );
 
 			$query = new \Elastica\Query( $boolQuery );
-			$this->getType()->deleteByQuery( $query );
+			$this->deleteByQuery( $this->type, $query );
 		}
 
 		// If translation was made fuzzy, we do not need to add anything
@@ -347,7 +347,7 @@ GROOVY;
 		$term = new Elastica\Query\Term();
 		$term->setTerm( 'wiki', wfWikiID() );
 		$query = new \Elastica\Query( $term );
-		$type->deleteByQuery( $query );
+		$this->deleteByQuery( $type, $query );
 
 		$mapping = new \Elastica\Type\Mapping();
 		$mapping->setType( $type );
@@ -685,4 +685,141 @@ GROOVY;
 
 		return $ret;
 	}
+
+	/**
+	 * Delete docs by query by using the scroll API.
+	 *
+	 * @param \Elastica\Type $type the source index
+	 * @param \Elastica\Query $query the query
+	 */
+	private function deleteByQuery( \Elastica\Type $type, \Elastica\Query $query ) {
+		$chunkSize = 100;
+		$retryAttempts = 3;
+		if ( isset( $this->settings['scroll-chunksize'] ) ) {
+			$chunksize = $this->settings['scroll-chunksize'];
+		}
+		if ( isset( $this->settings['batch-index-retry-attemtps'] ) ) {
+			$retryAttempts = $this->settings['batch-index-retry-attempts'];
+		}
+		$scrollOptions = array(
+			'search_type' => 'scan',
+			'scroll' => "15m",
+			'size' => $chunkSize,
+		);
+
+		$result = $type->search( $query, $scrollOptions );
+		static::iterateOverScroll( $type, $result->getResponse()->getScrollId(), '15m',
+			function( $results ) use( $retryAttempts ) {
+				$ids = array();
+				foreach ( $results as $result ) {
+					$ids[] = $result->getId();
+				}
+				static::withRetry ( $retryAttempts,
+					function() use ( $ids ) {
+						$this->getType()->deleteIds( $ids );
+					}
+				);
+			}, 0, $retryAttempts );
+	}
+
+	/**
+	 * Iterate over a scroll.
+	 *
+	 * @param \Elastica\Type $type
+	 * @param string $scrollId the initial $scrollId
+	 * @param string $scrollTime the scroll timeout
+	 * @param callable $consumer function that receives the results
+	 * @param int $limit the max number of results to fetch (0: no limit)
+	 * @param int $retryAttempts the number of times we retry
+	 * @param callable $retryErrorCallback function called before each retries
+	 */
+	public static function iterateOverScroll( \Elastica\Type $type, $scrollId, $scrollTime,
+			$consumer, $limit = 0, $retryAttempts = 0, $retryErrorCallback = null ) {
+		$clearScroll = true;
+		$fetched = 0;
+
+		while ( true ) {
+			$result = static::withRetry( $retryAttempts,
+				function() use ( $type, $scrollId, $scrollTime ) {
+					return $type->search( array(), array(
+						'scroll_id' => $scrollId,
+						'scroll' => $scrollTime
+					) );
+				}, $retryErrorCallback );
+
+			$scrollId = $result->getResponse()->getScrollId();
+
+			if ( !$result->count() ) {
+				// No need to clear scroll on the last call
+				$clearScroll = false;
+				break;
+			}
+
+			$fetched += $result->count();
+			$results =  $result->getResults();
+
+			if ( $limit > 0 && $fetched > $limit ) {
+				$results = array_slice( $results, 0, count( $results ) - ( $fetched - $limit ) );
+			}
+			$consumer( $results );
+
+			if ( $limit > 0 && $fetched >= $limit ) {
+				break;
+			}
+		}
+		// @todo: catch errors and clear the scroll, it'd be easy with a finally block ...
+
+		if ( $clearScroll ) {
+			try {
+				$type->getIndex()->getClient()->request( "_search/scroll/".$scrollId, \Elastica\Request::DELETE );
+			} catch ( Exception $e ) {
+			}
+		}
+	}
+
+	/**
+	 * A function that retries callback $func if it throws an exception.
+	 * The $beforeRetry is called before a retry and receives the underlying
+	 * ExceptionInterface object and the number of failed attempts.
+	 * It's generally used to log and sleep between retries. Default behaviour
+	 * is to sleep with a random backoff.
+	 * @see Util::backoffDelay
+	 *
+	 * @param int $attempts the number of times we retry
+	 * @param callable $func
+	 * @param callable $beforeRetry function called before each retry
+	 * @return mixed
+	 */
+	public static function withRetry( $attempts, $func, $beforeRetry = null ) {
+		$errors = 0;
+		while ( true ) {
+			if ( $errors < $attempts ) {
+				try {
+					return $func();
+				} catch ( Exception $e ) {
+					$errors += 1;
+					if ( $beforeRetry ) {
+						$beforeRetry( $e, $errors );
+					} else {
+						$seconds = static::backoffDelay( $errors );
+						sleep( $seconds );
+					}
+				}
+			} else {
+				return $func();
+			}
+		}
+	}
+
+	/**
+	 * Backoff with lowest possible upper bound as 16 seconds.
+	 * With the default maximum number of errors (5) this maxes out at 256 seconds.
+	 *
+	 * @param int $errorCount
+	 * @return int
+	 */
+	public static function backoffDelay( $errorCount ) {
+		return rand( 1, (int) pow( 2, 3 + $errorCount ) );
+	}
+
 }
