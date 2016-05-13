@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_09ec59b7",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 698,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-05-13T12:36:50Z",
+      "side": 1,
+      "message": "I would be very surprised that someone need to customize such values... but who knows?\nHonestly with cirrus we use these default values and we never had to tune them.\nWould you prefer that I remove access to settings and use some constants in the code?\nI don\u0027t have any strong opinion here.",
+      "parentUuid": "ae564743_e9a3e594",
+      "revId": "c93eb69cfb03479d95157b27468262700cc5ddf8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_49b491cf",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-13T12:17:43Z",
       "side": 1,
       "message": "Does _search depend on something else or should it be something like _ttmserver?",
+      "revId": "c93eb69cfb03479d95157b27468262700cc5ddf8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_89f8697b",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-05-13T12:36:50Z",
+      "side": 1,
+      "message": "a scroll is server side state and it must be accessed without any index specific path, see https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-scroll.html#_clear_scroll_api",
+      "parentUuid": "ae564743_49b491cf",
       "revId": "c93eb69cfb03479d95157b27468262700cc5ddf8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
