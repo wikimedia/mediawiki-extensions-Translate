@@ -62,6 +62,11 @@ class ElasticSearchTTMServer
 	}
 
 	protected function doQuery( $sourceLanguage, $targetLanguage, $text ) {
+		if ( !$this->useWikimediaExtraPlugin() ) {
+			// ElasticTTM is currently not compatible with elasticsearch 2.x
+			// It needs FuzzyLikeThis ported via the wmf extra plugin
+			throw new \RuntimeException( 'The wikimedia extra plugin is mandatory.' );
+		}
 		/* Two query system:
 		 * 1) Find all strings in source language that match text
 		 * 2) Do another query for translations for those strings
@@ -70,7 +75,8 @@ class ElasticSearchTTMServer
 		$oldTimeout = $connection->getTimeout();
 		$connection->setTimeout( 10 );
 
-		$fuzzyQuery = new \Elastica\Query\FuzzyLikeThis();
+		$fuzzyQuery = new FuzzyLikeThis();
+		$fuzzyQuery->setMinSimilarity( 2 );
 		$fuzzyQuery->setLikeText( $text );
 		$fuzzyQuery->addFields( array( 'content' ) );
 
@@ -100,22 +106,17 @@ GROOVY;
 
 		// Wrap the fuzzy query so it can be used as a filter.
 		// This is slightly faster, as ES can throw away the scores by this query.
-		$fuzzyFilter = new \Elastica\Filter\Query();
-		$fuzzyFilter->setQuery( $fuzzyQuery );
-		$boostQuery->setFilter( $fuzzyFilter );
+		$bool = new \Elastica\Query\BoolQuery();
+		$bool->addFilter( $fuzzyQuery );
+		$bool->addMust( $boostQuery );
 
-		// Use filtered query to wrap function score and language filter
-		$filteredQuery = new \Elastica\Query\Filtered();
-
-		$languageFilter = new \Elastica\Filter\Term();
+		$languageFilter = new \Elastica\Query\Term();
 		$languageFilter->setTerm( 'language', $sourceLanguage );
-
-		$filteredQuery->setFilter( $languageFilter );
-		$filteredQuery->setQuery( $boostQuery );
+		$bool->addFilter( $languageFilter );
 
 		// The whole query
 		$query = new \Elastica\Query();
-		$query->setQuery( $filteredQuery );
+		$query->setQuery( $bool );
 
 		// The interface usually displays three best candidates. These might
 		// come from more than three source things, if the translations are
@@ -249,9 +250,9 @@ GROOVY;
 			$localid = $handle->getTitleForBase()->getPrefixedText();
 
 			$boolQuery = new \Elastica\Query\BoolQuery();
-			$boolQuery->addMust( new Elastica\Query\Term( array( 'wiki' => wfWikiID() ) ) );
-			$boolQuery->addMust( new Elastica\Query\Term( array( 'language' => $handle->getCode() ) ) );
-			$boolQuery->addMust( new Elastica\Query\Term( array( 'localid' => $localid ) ) );
+			$boolQuery->addFilter( new Elastica\Query\Term( array( 'wiki' => wfWikiID() ) ) );
+			$boolQuery->addFilter( new Elastica\Query\Term( array( 'language' => $handle->getCode() ) ) );
+			$boolQuery->addFilter( new Elastica\Query\Term( array( 'localid' => $localid ) ) );
 
 			$query = new \Elastica\Query( $boolQuery );
 			$this->deleteByQuery( $this->getType(), $query );
@@ -350,7 +351,7 @@ GROOVY;
 		}
 
 		$settings = $type->getIndex()->getSettings();
-		$settings->setRefreshInterval( -1 );
+		$settings->setRefreshInterval( '-1' );
 
 		$term = new Elastica\Query\Term();
 		$term->setTerm( 'wiki', wfWikiID() );
@@ -375,7 +376,7 @@ GROOVY;
 					),
 					'prefix_complete' => array(
 						'type' => 'string',
-						'index_analyzer' => 'prefix',
+						'analyzer' => 'prefix',
 						'search_analyzer' => 'standard',
 						'term_vector' => 'yes'
 					),
@@ -436,7 +437,7 @@ GROOVY;
 		$index = $this->getType()->getIndex();
 		$index->refresh();
 		$index->optimize();
-		$index->getSettings()->setRefreshInterval( 5 );
+		$index->getSettings()->setRefreshInterval( '5s' );
 	}
 
 	public function getClient() {
@@ -595,17 +596,17 @@ GROOVY;
 		list( $searchQuery, $highlights ) = $this->parseQueryString( $queryString, $opts );
 		$query->setQuery( $searchQuery );
 
-		$language = new \Elastica\Facet\Terms( 'language' );
+		$language = new \Elastica\Aggregation\Terms( 'language' );
 		$language->setField( 'language' );
 		$language->setSize( 500 );
-		$query->addFacet( $language );
+		$query->addAggregation( $language );
 
-		$group = new \Elastica\Facet\Terms( 'group' );
+		$group = new \Elastica\Aggregation\Terms( 'group' );
 		$group->setField( 'group' );
 		// Would like to prioritize the top level groups and not show subgroups
 		// if the top group has only few hits, but that doesn't seem to be possile.
 		$group->setSize( 500 );
-		$query->addFacet( $group );
+		$query->addAggregation( $group );
 
 		$query->setSize( $opts['limit'] );
 		$query->setFrom( $opts['offset'] );
@@ -614,20 +615,20 @@ GROOVY;
 		// multiple must clauses are executed by converting each filter into a bit
 		// field then anding them together. The latter is normally faster if either
 		// of the subfilters are reused. May not make a difference in this context.
-		$filters = new \Elastica\Filter\BoolFilter();
+		$filters = new \Elastica\Query\BoolQuery();
 
 		$language = $opts['language'];
 		if ( $language !== '' ) {
-			$languageFilter = new \Elastica\Filter\Term();
+			$languageFilter = new \Elastica\Query\Term();
 			$languageFilter->setTerm( 'language', $language );
-			$filters->addMust( $languageFilter );
+			$filters->addFilter( $languageFilter );
 		}
 
 		$group = $opts['group'];
 		if ( $group !== '' ) {
-			$groupFilter = new \Elastica\Filter\Term();
+			$groupFilter = new \Elastica\Query\Term();
 			$groupFilter->setTerm( 'group', $group );
-			$filters->addMust( $groupFilter );
+			$filters->addFilter( $groupFilter );
 		}
 
 		// Check that we have at least one filter to avoid invalid query errors.
@@ -651,16 +652,16 @@ GROOVY;
 	}
 
 	public function getFacets( $resultset ) {
-		$facets = $resultset->getFacets();
+		$aggs = $resultset->getAggregations();
 
 		$ret = array(
 			'language' => array(),
 			'group' => array()
 		);
 
-		foreach ( $facets as $type => $facetInfo ) {
-			foreach ( $facetInfo['terms'] as $facetRow ) {
-				$ret[$type][$facetRow['term']] = $facetRow['count'];
+		foreach ( $aggs as $type => $info ) {
+			foreach ( $info['buckets'] as $row ) {
+				$ret[$type][$row['key']] = $row['doc_count'];
 			}
 		}
 
