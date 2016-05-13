@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_e9a3e594",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 698,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-13T12:17:43Z",
+      "side": 1,
+      "message": "Do you think there will be need to change these settings in the config and hence have them documented?",
+      "revId": "c93eb69cfb03479d95157b27468262700cc5ddf8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_49b491cf",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-13T12:17:43Z",
+      "side": 1,
+      "message": "Does _search depend on something else or should it be something like _ttmserver?",
+      "revId": "c93eb69cfb03479d95157b27468262700cc5ddf8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
