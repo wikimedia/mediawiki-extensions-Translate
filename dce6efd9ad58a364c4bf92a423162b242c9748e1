@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_e9e805a5",
+        "filename": "Resources.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-13T12:37:13Z",
+      "side": 1,
+      "message": "This extension has not yet migrated to short array syntax.",
+      "revId": "dce6efd9ad58a364c4bf92a423162b242c9748e1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_a9f28d94",
+        "filename": "Resources.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-13T12:37:13Z",
+      "side": 1,
+      "message": "Are you sure about this? As far as I can see it is only loaded for translatable pages and the size is minimal.",
+      "revId": "dce6efd9ad58a364c4bf92a423162b242c9748e1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
