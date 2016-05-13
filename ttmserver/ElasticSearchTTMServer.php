@@ -18,6 +18,19 @@ class ElasticSearchTTMServer
 	implements ReadableTTMServer, WritableTTMServer, SearchableTTMserver
 {
 	/**
+	 * @const int number of documents that will be loaded and deleted in a
+	 * single operation
+	 */
+	const BULK_DELETE_CHUNK_SIZE = 100;
+
+	/**
+	 * @const int in case a write operation fails during a batch process
+	 * this constant controls the number of times we will retry the same
+	 * operation.
+	 */
+	const BULK_INDEX_RETRY_ATTEMPTS = 3;
+
+	/**
 	 * @var \Elastica\Client
 	 */
 	protected $client;
@@ -241,7 +254,7 @@ GROOVY;
 			$boolQuery->addMust( new Elastica\Query\Term( array( 'localid' => $localid ) ) );
 
 			$query = new \Elastica\Query( $boolQuery );
-			$this->getType()->deleteByQuery( $query );
+			$this->deleteByQuery( $this->type, $query );
 		}
 
 		// If translation was made fuzzy, we do not need to add anything
@@ -347,7 +360,7 @@ GROOVY;
 		$term = new Elastica\Query\Term();
 		$term->setTerm( 'wiki', wfWikiID() );
 		$query = new \Elastica\Query( $term );
-		$type->deleteByQuery( $query );
+		$this->deleteByQuery( $type, $query );
 
 		$mapping = new \Elastica\Type\Mapping();
 		$mapping->setType( $type );
@@ -684,5 +697,35 @@ GROOVY;
 		}
 
 		return $ret;
+	}
+
+	/**
+	 * Delete docs by query by using the scroll API.
+	 *
+	 * @param \Elastica\Type $type the source index
+	 * @param \Elastica\Query $query the query
+	 */
+	private function deleteByQuery( \Elastica\Type $type, \Elastica\Query $query ) {
+		$retryAttempts = self::BULK_INDEX_RETRY_ATTEMPTS;
+		$scrollOptions = array(
+			'search_type' => 'scan',
+			'scroll' => "15m",
+			'size' => self::BULK_DELETE_CHUNK_SIZE,
+		);
+
+		$result = $type->search( $query, $scrollOptions );
+		MWElasticUtils::iterateOverScroll( $type->getIndex(),
+			$result->getResponse()->getScrollId(), '15m',
+			function( $results ) use( $retryAttempts, $type ) {
+				$ids = array();
+				foreach ( $results as $result ) {
+					$ids[] = $result->getId();
+				}
+				MWElasticUtils::withRetry( $retryAttempts,
+					function() use ( $ids, $type ) {
+						$type->deleteIds( $ids );
+					}
+				);
+			}, 0, $retryAttempts );
 	}
 }
