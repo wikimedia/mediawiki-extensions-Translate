@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_493771fc",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 698,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-13T14:02:31Z",
+      "side": 1,
+      "message": "I would be happy with constants because otherwise I should be documenting these somewhere :)",
+      "parentUuid": "ae564743_09ec59b7",
+      "revId": "c93eb69cfb03479d95157b27468262700cc5ddf8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_49b491cf",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "a scroll is server side state and it must be accessed without any index specific path, see https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-scroll.html#_clear_scroll_api",
       "parentUuid": "ae564743_49b491cf",
+      "revId": "c93eb69cfb03479d95157b27468262700cc5ddf8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_293cbdde",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-13T14:02:31Z",
+      "side": 1,
+      "message": "Okay. I thought _search is somehow related to CirrusSearch.",
+      "parentUuid": "ae564743_89f8697b",
       "revId": "c93eb69cfb03479d95157b27468262700cc5ddf8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
