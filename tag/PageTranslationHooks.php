@@ -85,8 +85,6 @@ class PageTranslationHooks {
 		$isTranslation = TranslatablePage::isTranslationPage( $title );
 
 		if ( $isSource || $isTranslation ) {
-			$out->addModuleStyles( 'ext.translate' );
-
 			if ( $wgTranslatePageTranslationULS ) {
 				$out->addModules( 'ext.translate.pagetranslation.uls' );
 			}
