@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_18781d25",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 776
+      },
+      "writtenOn": "2016-05-13T21:39:25Z",
+      "side": 1,
+      "message": "minor quibble, but this is the only use of $chunkSize can just set to the constant directly",
+      "revId": "00b4f6826a626c027e04dd14987f115c41c54184",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_f8ba89b4",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 776
+      },
+      "writtenOn": "2016-05-13T21:39:25Z",
+      "side": 1,
+      "message": "I was going to suggest shifting this to the Elastica extension and sharing the code, but it seems ttmserver doesn\u0027t use ElasticaConnection. It\u0027s a relatively simple class, would it be worthwhile porting this over, or shifting the withRetry / iterateOverScroll code into a util class in the Elastica extension instead?",
+      "revId": "00b4f6826a626c027e04dd14987f115c41c54184",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
