@@ -72,7 +72,7 @@ class TranslateHooks {
 			$wgSpecialPages['PageMigration'] = 'SpecialPageMigration';
 			$wgSpecialPages['PagePreparation'] = 'SpecialPagePreparation';
 
-			global $wgLogActionsHandlers, $wgLogTypes;
+			global $wgActionFilteredLogs, $wgLogActionsHandlers, $wgLogTypes;
 
 			// log-description-pagetranslation log-name-pagetranslation logentry-pagetranslation-mark
 			// logentry-pagetranslation-unmark logentry-pagetranslation-moveok
@@ -96,6 +96,16 @@ class TranslateHooks {
 				'PageTranslationLogFormatter';
 			$wgLogActionsHandlers['pagetranslation/associate'] = 'PageTranslationLogFormatter';
 			$wgLogActionsHandlers['pagetranslation/dissociate'] = 'PageTranslationLogFormatter';
+			$wgActionFilteredLogs['pagetranslation'] = array(
+				'mark' => array( 'mark' ),
+				'unmark' => array( 'unmark' ),
+				'move' => array( 'moveok', 'movenok' ),
+				'delete' => array( 'deletefok', 'deletefnok', 'deletelok', 'deletelnok' ),
+				'encourage' => array( 'encourage' ),
+				'discourage' => array( 'discourage' ),
+				'prioritylanguages' => array( 'prioritylanguages' ),
+				'aggregategroups' => array( 'associate', 'dissociate' ),
+			);
 
 			global $wgJobClasses;
 			$wgJobClasses['TranslateRenderJob'] = 'TranslateRenderJob';
