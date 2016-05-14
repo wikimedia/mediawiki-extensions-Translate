@@ -464,11 +464,11 @@ class MessageGroupStats {
 		$table = self::TABLE;
 		$updates = &self::$updates;
 
-		self::runWithLock(
+		self::queueWithLock(
 			$dbw,
 			'updates',
 			__METHOD__,
-			function ( $dbw, $method ) use( $table, &$updates ) {
+			function ( IDatabase $dbw, $method ) use( $table, &$updates ) {
 				$dbw->insert(
 					$table,
 					$updates,
@@ -481,17 +481,18 @@ class MessageGroupStats {
 		);
 	}
 
-	protected static function runWithLock( $dbw, $key, $method, $callback ) {
-		$dbw->onTransactionIdle( function () use ( $dbw, $key, $method, $callback ) {
-			$key = 'MessageGroupStats:' . $key;
-			$locked = $dbw->lock( $key, $method, 1 );
-			if ( !$locked ) {
-				return; // Raced out
+	protected static function queueWithLock( IDatabase $dbw, $key, $method, $callback ) {
+		DeferredUpdates::addCallableUpdate( function () use ( $dbw, $key, $method, $callback ) {
+			$lockName = 'MessageGroupStats:' . $key;
+			if ( !$dbw->lock( $lockName, __METHOD__, 1 ) ) {
+				return; // raced out
 			}
 
+			$dbw->commit( __METHOD__, 'flush' );
 			call_user_func( $callback, $dbw, $method );
+			$dbw->commit( __METHOD__, 'flush' );
 
-			$dbw->unlock( $key, $method );
+			$dbw->unlock( $lockName, __METHOD__ );
 		} );
 	}
 }
