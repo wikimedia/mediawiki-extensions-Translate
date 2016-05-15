@@ -75,7 +75,7 @@
 	"translate-magic-namespace": "Nummraum Nimm",
 	"translate-magic-notsaved": "Är Ännerung gouf net gespäichert!",
 	"translate-magic-errors": "Verbessert w.e.g. {{PLURAL:$1|dëse|dës}} Feeler an den Iwwersetzungen:",
-	"translate-magic-saved": "Är Ännerunge goufe gespäichert",
+	"translate-magic-saved": "Är Ännerunge goufe gespäichert.",
 	"translate-checks-parameters": "{{PLURAL:$2|Dëse Parameter gëtt|Dës Parameter ginn}} net benotzt:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Dëse Parameter ass|Dës Parameter sinn }} onbekannt:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "Et gëtt eng ongerued Zuel vu {{PLURAL:$2|Klammere|Klammere}} benotzt:\n<strong><nowiki>$1</nowiki></strong>",

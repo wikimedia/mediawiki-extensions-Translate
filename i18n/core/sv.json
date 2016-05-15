@@ -92,7 +92,7 @@
 	"translate-magic-namespace": "Namnrymdsnamn",
 	"translate-magic-notsaved": "Din redigering sparades inte!",
 	"translate-magic-errors": "Vänligen rätta följande {{PLURAL:$1|fel|fel}} i översättningen:",
-	"translate-magic-saved": "Dina ändringar har sparats",
+	"translate-magic-saved": "Dina ändringar har sparats.",
 	"translate-checks-parameters": "Följande {{PLURAL:$2|parameter|parametrar}} används inte:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "Följande {{PLURAL:$2|parameter är okänd|parametrar är okända}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "Det är ett ojämnt antal {{PLURAL:$2|paranteser|paranteser}}:\n<strong><nowiki>$1</nowiki></strong>",
