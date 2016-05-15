@@ -33,13 +33,12 @@ class PageTranslationHooks {
 			try {
 				$parse = TranslatablePage::newFromText( $parser->getTitle(), $text )->getParse();
 				$text = $parse->getTranslationPageText( null );
+				$parser->getOutput()->addModuleStyles( 'ext.translate' );
 			} catch ( TPException $e ) {
 				// Show ugly preview without processed <translate> tags
 				wfDebug( 'TPException caught; expected' );
 			}
 		}
-
-		$parser->getOutput()->addModules( 'ext.translate' );
 
 		// Set display title
 		$page = TranslatablePage::isTranslationPage( $title );
