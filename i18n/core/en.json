@@ -306,6 +306,7 @@
 	"tux-status-saving": "Saving...",
 	"tux-status-unsaved": "Unsaved",
 	"tux-editor-placeholder": "Your translation",
+	"tux-editor-editsummary-placeholder": "Provide edit summary",
 	"tux-editor-paste-original-button-label": "Paste source text",
 	"tux-editor-discard-changes-button-label": "Discard changes",
 	"tux-editor-save-button-label": "Save translation",
