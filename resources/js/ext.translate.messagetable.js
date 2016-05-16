@@ -57,7 +57,10 @@
 			}
 
 			// Reset the number of messages remaining
-			$loader.find( '.tux-messagetable-loader-count' ).text( '' );
+			$loader.find( '.tux-messagetable-loader-info' ).text(
+				mw.msg( 'tux-messagetable-loading-messages', $loader.data( 'pagesize' ) )
+			);
+
 
 			// Reset the statsbar
 			$statsbar
@@ -90,6 +93,8 @@
 		this.$header = this.$container.siblings( '.tux-messagetable-header' );
 		// Container is between these in the dom.
 		this.$loader = this.$container.siblings( '.tux-messagetable-loader' );
+		this.$loaderIcon = this.$loader.find( '.tux-loading-indicator' );
+		this.$loaderInfo = this.$loader.find( '.tux-messagetable-loader-info' );
 		this.$actionBar = this.$container.siblings( '.tux-action-bar' );
 		this.messages = [];
 		this.loading = false;
@@ -430,6 +435,7 @@
 			}
 
 			messageTable.loading = true;
+			this.$loaderIcon.removeClass( 'tux-loading-indicator--stopped' );
 
 			mw.translate.getMessages( messagegroup, targetLangCode, offset, pageSize, filter )
 				.done( function ( result ) {
@@ -440,8 +446,6 @@
 						// reject. This was cancelled.
 						return;
 					}
-
-					messageTable.loading = false;
 
 					if ( messages.length === 0 ) {
 						// And this is the first load for the filter...
@@ -479,12 +483,8 @@
 
 						remaining = result.query.metadata.remaining;
 
-						$( '.tux-messagetable-loader-count' ).text(
+						messageTable.$loaderInfo.text(
 							mw.msg( 'tux-messagetable-more-messages', remaining )
-						);
-
-						$( '.tux-messagetable-loader-more' ).text(
-							mw.msg( 'tux-messagetable-loading-messages', Math.min( remaining, pageSize ) )
 						);
 
 						// Make sure the floating toolbars are visible without the need for scroll
@@ -500,6 +500,9 @@
 							.show();
 					}
 					messageTable.$loader.data( 'offset', -1 ).addClass( 'hide' );
+				} )
+				.always( function () {
+					messageTable.$loaderIcon.addClass( 'tux-loading-indicator--stopped' );
 					messageTable.loading = false;
 				} );
 		},
@@ -707,6 +710,10 @@
 			} else if ( messageTable.initialized ) {
 				messageTable.displayEmptyListHelp();
 			}
+
+			this.$loaderInfo.text(
+				mw.msg( 'tux-messagetable-loading-messages', this.$loader.data( 'pagesize' ) )
+			);
 
 			messageTable.updateLastMessage();
 		},
