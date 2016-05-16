@@ -58,6 +58,19 @@
 	resize: none;
 }
 
+.tux-editor-editsummary-block input {
+	border: 1px solid #C0C0C0;
+	font-size: 14px;
+	width: 100%;
+	height: 30px;
+	margin: 5px 0 0;
+	padding: 1px 4px;
+}
+
+.tux-editor-editsummary-block input:disabled {
+	background-color: #F8F8F8;
+}
+
 .tux-message-editor .editarea {
 	position: relative;
 }
@@ -325,6 +338,10 @@
 }
 
 .tux-editor-editarea-block {
+	padding: 0 5px;
+}
+
+.tux-editor-editsummary-block {
 	padding: 0 5px;
 }
 

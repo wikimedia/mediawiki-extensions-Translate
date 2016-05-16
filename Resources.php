@@ -95,6 +95,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-editor-outdated-warning-diff-link',
 		'tux-editor-paste-original-button-label',
 		'tux-editor-placeholder',
+		'tux-editor-editsummary-placeholder',
 		'tux-editor-proofread-button-label',
 		'tux-editor-save-button-label',
 		'tux-editor-save-failed',

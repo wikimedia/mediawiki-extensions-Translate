@@ -175,11 +175,13 @@
 		 * Save the translation
 		 */
 		save: function () {
-			var translation,
+			var translation, editSummary,
 				translateEditor = this;
 
 			mw.translateHooks.run( 'beforeSubmit', translateEditor.$editor );
 			translation = translateEditor.$editor.find( '.editcolumn textarea' ).val();
+			editSummary = translateEditor.$editor.find( '.tux-input-editsummary' ).val() || '';
+
 			translateEditor.saving = true;
 
 			// beforeSave callback
@@ -204,7 +206,8 @@
 
 			this.storage.save(
 				translateEditor.message.title,
-				translation
+				translation,
+				editSummary
 			).done( function () {
 				// Update the translation
 				translateEditor.message.translation = translation;
@@ -234,6 +237,10 @@
 			$( '.tux-editor-clear-translated' )
 				.removeClass( 'hide' )
 				.prop( 'disabled', false );
+
+			this.$editor.find( '.tux-input-editsummary' )
+				.val( '' )
+				.attr( 'disabled', true );
 
 			// Save callback
 			if ( this.options.onSave ) {
@@ -392,6 +399,8 @@
 				$controlButtonBlock,
 				$editingButtonBlock,
 				$pasteOriginalButton,
+				$editSummary,
+				$editSummaryBlock,
 				$discardChangesButton = $( [] ),
 				$saveButton,
 				$requestRight,
@@ -639,6 +648,26 @@
 						$pasteOriginalButton.addClass( 'hide' );
 					} );
 
+				$editSummary = $( '<input>' )
+					.addClass( 'tux-input-editsummary' )
+					.attr( {
+						maxlength: 255,
+						disabled: true,
+						placeholder: mw.msg( 'tux-editor-editsummary-placeholder' )
+					} )
+					.val( '' );
+
+				// Enable edit summary if there was a change to translation area
+				// or disable if there is no text in translation area
+				$textarea.on( 'textchange', function () {
+					if ( $editSummary.attr( 'disabled' ) ) {
+						$editSummary.attr( 'disabled', false );
+					}
+					if ( $textarea.val().trim() === '' ) {
+						$editSummary.attr( 'disabled', true );
+					}
+				} );
+
 				if ( originalTranslation !== null ) {
 					$discardChangesButton = $( '<button>' )
 						.addClass( 'tux-editor-discard-changes-button hide' ) // Initially hidden
@@ -653,6 +682,7 @@
 							$discardChangesButton.addClass( 'hide' );
 
 							// There's nothing new to save...
+							$editSummary.val( '' ).attr( 'disabled', true );
 							$saveButton.prop( 'disabled', true );
 							// ...unless there is other action
 							translateEditor.makeSaveButtonContextSensitive( $saveButton );
@@ -673,6 +703,14 @@
 						$discardChangesButton
 					);
 
+				$editSummaryBlock = $( '<div>' )
+					.addClass( 'row tux-editor-editsummary-block' )
+					.append(
+						$( '<div>' )
+							.addClass( 'eleven columns' )
+							.append( $editSummary )
+					);
+
 				$requestRight = $( [] );
 
 				$saveButton = $( '<button>' )
@@ -687,6 +725,8 @@
 				this.makeSaveButtonContextSensitive( $saveButton, this.$messageItem );
 			} else {
 				$editingButtonBlock = $( [] );
+
+				$editSummaryBlock = $( [] );
 
 				$requestRight = $( '<span>' )
 					.addClass( 'tux-editor-request-right' )
@@ -741,7 +781,14 @@
 
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row tux-editor-actions-block' )
-				.append( $editingButtonBlock, $controlButtonBlock )
+				.append( $editingButtonBlock )
+			);
+
+			$editorColumn.append( $editSummaryBlock );
+
+			$editorColumn.append( $( '<div>' )
+				.addClass( 'row tux-editor-actions-block' )
+				.append( $controlButtonBlock )
 			);
 
 			if ( canTranslate ) {
@@ -758,11 +805,13 @@
 				}() ).done( function ( prefix ) {
 					$editorColumn.append( $( '<div>' )
 						.addClass( 'row shortcutinfo' )
-						.text( mw.msg( 'tux-editor-shortcut-info',
+						.text( mw.msg(
+							'tux-editor-shortcut-info',
 							( prefix + 's' ).toUpperCase(),
 							( prefix + 'd' ).toUpperCase(),
-							'ALT' )
-						)
+							'ALT',
+							( prefix + 'b' ).toUpperCase()
+						) )
 					);
 				} );
 			}
@@ -1046,6 +1095,7 @@
 			$( '.tux-editor-save-button, .tux-editor-save-button' ).removeAttr( 'accesskey' );
 			this.$editor.find( '.tux-editor-save-button' ).attr( 'accesskey', 's' );
 			this.$editor.find( '.tux-editor-skip-button' ).attr( 'accesskey', 'd' );
+			this.$editor.find( '.tux-input-editsummary' ).attr( 'accesskey', 'b' );
 			// @todo access key for the cancel button
 
 			this.$messageItem.addClass( 'hide' );
