@@ -121,7 +121,7 @@
 				.addClass( 'actions row' )
 				.append(
 					$( '<button>' )
-						.addClass( 'accept primary green button' )
+						.addClass( 'accept mw-ui-button mw-ui-progressive' )
 						.text( mw.msg( 'tsb-accept-button-label' ) )
 						.on( 'click', function () {
 							window.tsbUpdatingUsers = true;
@@ -136,7 +136,7 @@
 							} );
 						} ),
 					$( '<button>' )
-						.addClass( 'reject destructive button' )
+						.addClass( 'reject mw-ui-button mw-ui-destructive' )
 						.text( mw.msg( 'tsb-reject-button-label' ) )
 						.on( 'click', function () {
 							window.tsbUpdatingUsers = true;
@@ -279,7 +279,7 @@
 				.addClass( 'actions row' )
 				.append(
 					$( '<button>' )
-						.addClass( 'accept-all primary green button' )
+						.addClass( 'accept-all mw-ui-button mw-ui-progressive' )
 						.text( mw.msg( 'tsb-accept-all-button-label' ) )
 						.on( 'click', function () {
 							window.tsbUpdatingUsers = true;
@@ -294,7 +294,7 @@
 							} );
 						} ),
 					$( '<button>' )
-						.addClass( 'reject-all destructive button' )
+						.addClass( 'reject-all mw-ui-button mw-ui-destructive' )
 						.text( mw.msg( 'tsb-reject-all-button-label' ) )
 						.on( 'click', function () {
 							window.tsbUpdatingUsers = true;
