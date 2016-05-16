@@ -96,13 +96,6 @@
 	font-size: 14px;
 }
 
-.tux-message-editor .button {
-	text-overflow: ellipsis;
-	font-size: 16px;
-	height: 35px;
-	margin: 10px 5px;
-}
-
 .tux-message-editor .shortcutinfo {
 	font-size: 13px;
 	color: #555;
@@ -357,6 +350,11 @@
 	background-image: linear-gradient(transparent, transparent), url(../images/paste.svg);
 	background-size: 16px 16px;
 	padding-left: 18px;
+}
+
+.message-desc-editor .mw-ui-button,
+.tux-editor-control-buttons .mw-ui-button {
+	margin: 10px 5px;
 }
 
 .sourcemessage,
