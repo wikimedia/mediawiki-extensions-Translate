@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_407f3bdd",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-16T06:09:50Z",
+      "side": 1,
+      "message": "getScopedLockAndFlush is 1.27+. I cannot use it unconditionally.\n\nIs there alternative for older versions?",
+      "revId": "4a06762fe60c04a418fe23245d3c415bf7d7f54d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
