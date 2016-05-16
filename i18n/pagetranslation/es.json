@@ -18,7 +18,8 @@
 			"Fitoschido",
 			"Macofe",
 			"JasterTDC",
-			"Mgpena"
+			"Mgpena",
+			"GamemOfAnime"
 		]
 	},
 	"pagetranslation": "Traducción de página",
@@ -126,6 +127,10 @@
 	"logentry-pagetranslation-prioritylanguages-force": "$1 {{GENDER:$2|limitó}} los idiomas para la página traducible $3 a $5",
 	"logentry-pagetranslation-associate": "$1 {{GENDER:$2|agregó}} la página traducible $3 al grupo agregado $4",
 	"logentry-pagetranslation-dissociate": "$1 {{GENDER:$2|eliminó}} la página traducible $3 del grupo agregado $4",
+	"log-action-filter-pagetranslation": "tipo de acción:",
+	"log-action-filter-pagetranslation-delete": "eleminación de páginas",
+	"log-action-filter-pagetranslation-prioritylanguages": "Modificación de lenguas de la prioridad",
+	"log-action-filter-pagetranslation-aggregategroups": "Modificación de grupos del agregado",
 	"pt-movepage-title": "Trasladar la página traducible $1",
 	"pt-movepage-blockers": "La página traducible no puede ser movida a un nuevo nombre por {{PLURAL:$1|el siguiente error|los siguientes errores}}:",
 	"pt-movepage-block-base-exists": "Existe la página traducible de destino \"[[:$1]]\".",
