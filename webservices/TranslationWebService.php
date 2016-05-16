@@ -34,6 +34,7 @@ abstract class TranslationWebService {
 			'yandex' => 'YandexWebService',
 			'remote-ttmserver' => 'RemoteTTMServerWebService',
 			'cxserver' => 'CxserverWebService',
+			'youdao' => 'YoudaoWebService',
 		);
 
 		if ( !isset( $config['timeout'] ) ) {
