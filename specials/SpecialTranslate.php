@@ -50,6 +50,7 @@ class SpecialTranslate extends SpecialPage {
 		$out->addModuleStyles( array(
 			'ext.translate.special.translate.styles',
 			'jquery.uls.grid',
+			'mediawiki.ui.button'
 		) );
 		$out->addModules( 'ext.translate.special.translate' );
 

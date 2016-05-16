@@ -54,7 +54,6 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'ext.translate.dropdownmenu',
 		'ext.translate.hooks',
 		'ext.translate.storage',
-		'ext.uls.buttons',
 		'jquery.autosize',
 		'jquery.makeCollapsible',
 		'jquery.textSelection',
