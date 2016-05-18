@@ -359,7 +359,7 @@
 				$button = $( '<div>' )
 					.addClass( 'three columns' )
 					.append( $( '<button>' )
-						.addClass( 'button' )
+						.addClass( 'mw-ui-button' )
 						.text( mw.msg( 'tux-message-filter-advanced-button' ) )
 					);
 
