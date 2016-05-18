@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_af5b9155",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-18T12:51:01Z",
+      "side": 1,
+      "message": "I am not sure it is appropriate to assume the summary will be in the target language.",
+      "revId": "aba3ca0923d0086ef56bbe3f46ddd536838346a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
