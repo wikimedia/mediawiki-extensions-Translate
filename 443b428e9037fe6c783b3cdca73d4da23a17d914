@@ -16,6 +16,24 @@
       "revId": "443b428e9037fe6c783b3cdca73d4da23a17d914",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_efc62919",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-18T12:19:14Z",
+      "side": 1,
+      "message": "Yes that is this part from the commit message:\n* Use one info element only instead of two\n\nWhen switching filters/languages/groups we will show the generic \"Loading messages...\", otherwise just \"X more messages\", both with spinner to indicate more is coming.",
+      "parentUuid": "ae564743_6f1fb90d",
+      "revId": "443b428e9037fe6c783b3cdca73d4da23a17d914",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
