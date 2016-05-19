@@ -16,6 +16,24 @@
       "revId": "aba3ca0923d0086ef56bbe3f46ddd536838346a2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_b1580b2a",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-05-19T15:19:13Z",
+      "side": 1,
+      "message": "I\u0027m not sure either, will ask about this in the task.",
+      "parentUuid": "ae564743_af5b9155",
+      "revId": "aba3ca0923d0086ef56bbe3f46ddd536838346a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
