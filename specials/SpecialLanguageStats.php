@@ -118,7 +118,6 @@ class SpecialLanguageStats extends SpecialPage {
 		$out = $this->getOutput();
 
 		$out->addModules( 'ext.translate.special.languagestats' );
-		$out->addModuleStyles( 'ext.translate.messagetable' );
 
 		$params = explode( '/', $par );
 
