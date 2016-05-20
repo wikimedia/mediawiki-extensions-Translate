@@ -141,6 +141,7 @@
 	"log-action-filter-pagetranslation-encourage": "Incitation à traduire",
 	"log-action-filter-pagetranslation-discourage": "Traduction non recomandée",
 	"log-action-filter-pagetranslation-prioritylanguages": "Modification de la priorité des langues",
+	"log-action-filter-pagetranslation-aggregategroups": "Agréger la modification des groupes",
 	"pt-movepage-title": "Déplacer la page à traduire $1",
 	"pt-movepage-blockers": "La page à traduire ne peut pas être renommée à cause {{PLURAL:$1|de l’erreur suivante|des erreurs suivantes}} :",
 	"pt-movepage-block-base-exists": "La page traduisible cible \"[[:$1]]\" existe.",
