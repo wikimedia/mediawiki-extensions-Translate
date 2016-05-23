@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_b40747cc",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-23T14:05:55Z",
+      "side": 1,
+      "message": "Notice: Undefined property: ElasticSearchTTMServer::$type in /www/dev.translatewiki.net/docroot/w/extensions/Translate/ttmserver/ElasticSearchTTMServer.php on line 257\n[Mon May 23 16:04:19 2016] [hphp] [3483:7f054a015e40:0:000043] [] \nCatchable fatal error: Argument 1 passed to ElasticSearchTTMServer::deleteByQuery() must be an instance of Elastica\\Type, null given in /www/dev.translatewiki.net/docroot/w/extensions/Translate/ttmserver/ElasticSearchTTMServer.php on line 730",
+      "revId": "bfe949f28f2171307c276dd891b6f6187ddeba64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
