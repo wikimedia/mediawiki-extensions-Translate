@@ -38,7 +38,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 		$this->setHeaders();
 		$this->checkPermissions();
 		$out = $this->getOutput();
-		$out->addModuleStyles( 'ext.uls.buttons' );
+		$out->addModuleStyles( 'mediawiki.ui.button' );
 		$out->addModules( 'ext.translate.special.managetranslatorsandbox' );
 		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 
