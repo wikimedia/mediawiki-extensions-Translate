@@ -52,6 +52,24 @@
       "revId": "443b428e9037fe6c783b3cdca73d4da23a17d914",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_436f1726",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-23T05:20:39Z",
+      "side": 1,
+      "message": "It is used. These two messages alternate depending on whether we know how many messages more there is or not.",
+      "parentUuid": "ae564743_a32393fe",
+      "revId": "443b428e9037fe6c783b3cdca73d4da23a17d914",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
