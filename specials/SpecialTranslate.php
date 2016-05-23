@@ -87,8 +87,6 @@ class SpecialTranslate extends SpecialPage {
 		$errors = $this->getFormErrors();
 
 		if ( $isBeta && $this->options['taction'] !== 'export' ) {
-			$out->addModuleStyles( 'ext.uls.buttons' );
-
 			$out->addHTML( Html::openElement( 'div', array(
 				'class' => 'grid ext-translate-container',
 			) ) );
