@@ -36,8 +36,7 @@ class TuxMessageTable extends ContextSource {
 		$loader = <<<HTML
 <div class="tux-messagetable-loader hide" data-messagegroup="$groupId" data-pagesize="$batchSize">
 	<span class="tux-loading-indicator"></span>
-	<div class="tux-messagetable-loader-count"></div>
-	<div class="tux-messagetable-loader-more">$msg</div>
+	<div class="tux-messagetable-loader-info">$msg</div>
 </div>
 HTML;
 

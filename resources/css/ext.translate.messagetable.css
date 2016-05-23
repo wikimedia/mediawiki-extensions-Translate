@@ -110,7 +110,6 @@
 }
 
 .tux-messagetable-loader {
-	height: 75px;
 	color: #565656;
 	padding: 15px;
 	top: 0;
@@ -119,15 +118,11 @@
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
 }
 
-.tux-messagetable-loader-count {
-	padding: 0 0 5px 46px;
+.tux-messagetable-loader-info {
+	padding-left: 46px;
 	font-size: 25px;
 }
 
-.tux-messagetable-loader-more {
-	padding-left: 46px;
-	font-size: 15px;
-}
 
 .tux-action-bar {
 	background-color: #F0F0F0;

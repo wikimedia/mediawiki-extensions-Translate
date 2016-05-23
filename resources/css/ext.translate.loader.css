@@ -43,3 +43,8 @@
 	left: 50%;
 	position: absolute;
 }
+
+.tux-loading-indicator--stopped {
+	-webkit-animation: none;
+	animation: none;
+}
