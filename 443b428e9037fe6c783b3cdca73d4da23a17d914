@@ -34,6 +34,24 @@
       "revId": "443b428e9037fe6c783b3cdca73d4da23a17d914",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_a32393fe",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2016-05-23T04:29:41Z",
+      "side": 1,
+      "message": "So, can we remove that message, if not used now?",
+      "parentUuid": "ae564743_efc62919",
+      "revId": "443b428e9037fe6c783b3cdca73d4da23a17d914",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
