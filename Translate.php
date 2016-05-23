@@ -143,7 +143,7 @@ $wgHooks['SpecialSearchProfiles'][] = 'TranslateHooks::searchProfile';
 $wgHooks['SpecialSearchProfileForm'][] = 'TranslateHooks::searchProfileForm';
 $wgHooks['SpecialSearchSetupEngine'][] = 'TranslateHooks::searchProfileSetupEngine';
 
-$wgHooks['LinkBegin'][] = 'TranslateHooks::linkfix';
+$wgHooks['TitleIsAlwaysKnown'][] = 'TranslateHooks::onTitleIsAlwaysKnown';
 
 // Stats table manipulation
 $wgHooks['Translate:MessageGroupStats:isIncluded'][] =

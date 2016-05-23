@@ -664,53 +664,39 @@ class TranslateHooks {
 	}
 
 	/**
-	 * Hook: LinkBegin
-	 * Make Special:MyLanguage links red if the target page doesn't exists.
+	 * Hook: TitleIsAlwaysKnown
+	 * Make Special:MyLanguage links red if the target page doesn't exist.
 	 * A bit hacky because the core code is not so flexible.
 	 *
-	 * @param $dummy
 	 * @param Title $target
-	 * @param string $html
-	 * @param array $customAttribs
-	 * @param array $query
-	 * @param array $options
-	 * @param string|null $ret
+	 * @param bool &$isKnown
+	 * @return bool
 	 */
-	public static function linkfix(
-		/*unused*/$dummy,
+	public static function onTitleIsAlwaysKnown(
 		Title $target,
-		/*string*/$html,
-		/*array*/$customAttribs,
-		array $query,
-		array &$options,
-		$ret
+		&$isKnown
 	) {
 		if ( !$target->inNamespace( NS_SPECIAL ) ) {
-			return;
+			return true;
 		}
 
 		list( $name, $subpage ) = SpecialPageFactory::resolveAlias( $target->getDBkey() );
 		if ( $name !== 'MyLanguage' ) {
-			return;
+			return true;
 		}
 
 		if ( (string)$subpage === '' ) {
-			return;
+			return true;
 		}
 
 		$realTarget = Title::newFromText( $subpage );
 		if ( !$realTarget || !$realTarget->exists() ) {
-			$options[] = 'broken';
-			$index = array_search( 'known', $options, true );
-			if ( $index !== false ) {
-				unset( $options[$index] );
-			}
+			$isKnown = false;
 
-			$index = array_search( 'noclasses', $options, true );
-			if ( $index !== false ) {
-				unset( $options[$index] );
-			}
+			return false;
 		}
+
+		return true;
 	}
 
 	/**
