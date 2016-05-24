@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_37a5ef43",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-05-24T16:37:44Z",
+      "side": 1,
+      "message": "Done. I always seem to have trouble in choosing which to use..",
+      "parentUuid": "ae564743_45c6f26b",
+      "revId": "3335e6f5bac4c9c314a549ed172ab4ac6a4d3238",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_a5a8ae8a",
         "filename": "resources/js/ext.translate.editor.js",
         "patchSetId": 6
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_6afe5e02",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-05-24T16:37:44Z",
+      "side": 1,
+      "message": "This page doesn\u0027t seem to be using MediaWiki UI anywhere so it would look rather weird if we have it only for just this element. I think it would be better if a separate change was created to switch the whole interface to mw.ui.",
+      "parentUuid": "ae564743_a5a8ae8a",
+      "revId": "3335e6f5bac4c9c314a549ed172ab4ac6a4d3238",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_85abea84",
         "filename": "resources/js/ext.translate.editor.js",
         "patchSetId": 6
@@ -64,6 +100,24 @@
       "writtenOn": "2016-05-24T07:37:53Z",
       "side": 1,
       "message": "prop is better...",
+      "revId": "3335e6f5bac4c9c314a549ed172ab4ac6a4d3238",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_17a0ab30",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-05-24T16:37:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_85abea84",
       "revId": "3335e6f5bac4c9c314a549ed172ab4ac6a4d3238",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
