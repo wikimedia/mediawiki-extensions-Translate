@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_65c17682",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-24T06:41:07Z",
+      "side": 1,
+      "message": "Can be on one line now.",
+      "revId": "bbd75df1b7539b873e93c7acc745160c3078bc87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
