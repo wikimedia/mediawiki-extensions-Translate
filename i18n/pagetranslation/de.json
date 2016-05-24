@@ -195,6 +195,8 @@
 	"pm-pagetitle-missing": "Bitte gib den Seitentitel ein.",
 	"pm-langcode-missing": "Es scheint, als ob der Sprachcode im Titel fehlt. Bitte gib den Seitentitel im Format <Seitenname>/<Sprachcode> ein.",
 	"pm-summary-import": "Übersetzung importiert mithilfe der [[Special:PageMigration|Seitenmigration]]",
+	"pm-on-import-message-text": "Die alten Übersetzungen wurden importiert. Verwende die Hinzufügungs-, Tausch- und Löschoptionen, um die Übersetzungseinheiten anzupassen und klicke auf die Schaltfläche „{{int:pm-savepages-button-label}}“, um sie zu speichern oder zum Verwerfen auf die Schaltfläche „{{int:pm-cancel-button-label}}“.",
+	"pm-on-save-message-text": "Die Übersetzungseinheiten wurden gespeichert. Du kannst jetzt zur Migration den Titel einer neuen Übersetzungsseite eingeben oder unten Änderungen an den Einheiten durchführen und eine neue Version speichern.",
 	"tpt-translate-title": "Übersetzung eines Seitentitels erlauben",
 	"pp-save-summary": "Bereitete die Seite zur Übersetzung vor",
 	"pagepreparation": "Seite zur Übersetzung vorbereiten",

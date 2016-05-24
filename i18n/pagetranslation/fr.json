@@ -208,6 +208,7 @@
 	"pm-pagetitle-missing": "Veuillez entrer le titre de la page.",
 	"pm-langcode-missing": "Le code de langue semble manquer dans le titre. Veuillez entrer le titre de la page au format <nom-page>/<code-langue>.",
 	"pm-summary-import": "Traduction importée en utilisant [[Special:PageMigration|la migration de page]]",
+	"pm-on-save-message-text": "Les unités de traduction ont été enregistrés. Vous pouvez maintenant entrer le titre d'une nouvelle page de traduction pour la migrer, ou modifier les unités ci-dessous et enregistrer une nouvelle révision.",
 	"tpt-translate-title": "Autoriser la traduction du titre de la page",
 	"pp-save-summary": "Page préparée pour la traduction",
 	"pagepreparation": "Préparer la page pour sa traduction",
