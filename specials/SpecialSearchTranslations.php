@@ -64,7 +64,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$out->addModuleStyles( 'jquery.uls.grid' );
 		$out->addModuleStyles( 'ext.translate.special.searchtranslations.styles' );
 		$out->addModuleStyles( 'ext.translate.special.translate.styles' );
-		$out->addModuleStyles( 'mediawiki.ui.button' );
+		$out->addModuleStyles( [ 'mediawiki.ui.button', 'mediawiki.ui.input', 'mediawiki.ui.checkbox' ] );
 		$out->addModules( 'ext.translate.special.searchtranslations' );
 		$out->addModules( 'ext.translate.special.searchtranslations.operatorsuggest' );
 		$out->addHelpLink( 'Help:Extension:Translate#searching' );
@@ -521,13 +521,16 @@ HTML
 	protected function getSearchInput( $query ) {
 		$attribs = array(
 			'placeholder' => $this->msg( 'tux-sst-search-ph' ),
-			'class' => 'searchinputbox',
+			'class' => 'searchinputbox mw-ui-input',
 			'dir' => $this->getLanguage()->getDir(),
 		);
 
 		$title = Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$input = Xml::input( 'query', false, $query, $attribs );
-		$submit = Xml::submitButton( $this->msg( 'tux-sst-search' ), array( 'class' => 'button' ) );
+		$submit = Xml::submitButton(
+			$this->msg( 'tux-sst-search' ),
+			array( 'class' => 'mw-ui-button' )
+		);
 
 		$nondefaults = $this->opts->getChangedValues();
 		$checkLabel = Xml::checkLabel(
@@ -536,7 +539,10 @@ HTML
 			'tux-case-sensitive',
 			isset( $nondefaults['case'] )
 		);
-		$checkLabel = Html::openElement( 'div', array( 'class' => 'tux-search-operators' ) ) .
+		$checkLabel = Html::openElement(
+			'div',
+			array( 'class' => 'tux-search-operators mw-ui-checkbox' )
+		) .
 			$checkLabel .
 			Html::closeElement( 'div' );
 
