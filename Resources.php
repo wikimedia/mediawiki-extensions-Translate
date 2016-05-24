@@ -151,7 +151,7 @@ $wgResourceModules['ext.translate.loader'] = array(
 
 $wgResourceModules['ext.translate.messagetable'] = array(
 	'scripts' => 'resources/js/ext.translate.messagetable.js',
-	'styles' => 'resources/css/ext.translate.messagetable.css',
+	'styles' => 'resources/css/ext.translate.messagetable.less',
 	'position' => 'bottom',
 	'dependencies' => array(
 		'ext.translate.base',
