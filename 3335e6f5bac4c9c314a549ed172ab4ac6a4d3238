@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_65cb3675",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-24T07:37:53Z",
+      "side": 1,
+      "message": "Some of these styles could be provided by mw-ui-input.",
+      "revId": "3335e6f5bac4c9c314a549ed172ab4ac6a4d3238",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_45c6f26b",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-24T07:37:53Z",
+      "side": 1,
+      "message": "prop is better if it works here.",
+      "revId": "3335e6f5bac4c9c314a549ed172ab4ac6a4d3238",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_a5a8ae8a",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-24T07:37:53Z",
+      "side": 1,
+      "message": "You could add mw-ui-input here.",
+      "revId": "3335e6f5bac4c9c314a549ed172ab4ac6a4d3238",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_85abea84",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-24T07:37:53Z",
+      "side": 1,
+      "message": "prop is better...",
+      "revId": "3335e6f5bac4c9c314a549ed172ab4ac6a4d3238",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
