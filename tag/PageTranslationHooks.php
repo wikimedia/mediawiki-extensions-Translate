@@ -981,16 +981,17 @@ class PageTranslationHooks {
 			return true;
 		}
 
-		$page = TranslatablePage::newFromTitle( $group->getTitle() );
-		$id = $page->getMessageGroupId();
+		$langCode = $handle->getCode();
+		$id = $group->getId();
 
-		MessageGroupStats::clearGroup( $id );
-		MessageGroupStats::forGroup( $id );
+		MessageGroupStats::clear( $handle );
+		MessageGroupStats::forItem( $id, $langCode );
 
 		if ( $handle->isDoc() ) {
 			return true;
 		}
 
-		self::updateTranslationPage( $page, $handle->getCode(), $user, 0, $reason );
+		$page = TranslatablePage::newFromTitle( $group->getTitle() );
+		self::updateTranslationPage( $page, $langCode, $user, 0, $reason );
 	}
 }
