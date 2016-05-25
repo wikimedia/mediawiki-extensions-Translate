@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_a07ff261",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-05-25T08:41:16Z",
+      "side": 1,
+      "message": "I don\u0027t think so, I think I\u0027ve tested it but I need to double check: \n- create the index on 1.7\n- install 2.3\n- run queries with no rebuild\n\nunless you have a process that verifies that the mapping is up to date with the code I think it\u0027ll be ok.",
+      "parentUuid": "ae564743_205da21a",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_00585e27",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 8
@@ -64,6 +82,24 @@
       "writtenOn": "2016-05-25T07:50:06Z",
       "side": 1,
       "message": "Separate file is okay.",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_8082ae50",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-05-25T08:41:16Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "ae564743_00417e39",
       "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_60f03afb",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-05-25T08:41:16Z",
+      "side": 1,
+      "message": "Unfortunately I don\u0027t know... if it\u0027s possible it\u0027s not obvious.\nI\u0027ll double check, in the worst case I suppose I can disable coding standard only for lines which declare fields. I fixed all other violations already.",
+      "parentUuid": "ae564743_806c6ecc",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_a069b2bd",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 8
@@ -115,6 +169,24 @@
       "writtenOn": "2016-05-25T07:50:06Z",
       "side": 1,
       "message": "This version you use actually looks more readable than what I usually use: max( 0, $this-\u003e_minSimilarity );",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_40da5678",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 918,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-05-25T08:41:16Z",
+      "side": 1,
+      "message": "I just copied this class from Elastica, fixed all phpcs warnings I could (except member names problem).",
+      "parentUuid": "ae564743_a069b2bd",
       "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
