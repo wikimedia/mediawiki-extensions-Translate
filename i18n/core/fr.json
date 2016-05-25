@@ -35,7 +35,8 @@
 			"Linedwell",
 			"Orikrin1998",
 			"Dr Brains",
-			"Wladek92"
+			"Wladek92",
+			"Yasten"
 		]
 	},
 	"translate": "Traduire",
@@ -316,7 +317,6 @@
 	"translate-dynagroup-recent-desc": "Ce groupe de messages montre toutes les traductions récentes faites dans cette langue.\nIl est surtout utilisé pour les tâches de relecture.",
 	"translate-dynagroup-additions-label": "Ajouts récents",
 	"translate-dynagroup-additions-desc": "Ce groupe de messages affiche les messages nouveaux et modifiés.",
-	"translate-gethelp": "Aide",
 	"translate-msggroupselector-projects": "Groupe de messages",
 	"translate-msggroupselector-search-placeholder": "Rechercher des groupes",
 	"translate-msggroupselector-search-all": "Tous",
@@ -336,6 +336,7 @@
 	"tux-status-saving": "Enregistrement en cours…",
 	"tux-status-unsaved": "Non enregistrée",
 	"tux-editor-placeholder": "Votre traduction",
+	"tux-editor-editsummary-placeholder": "Résumé (facultatif)",
 	"tux-editor-paste-original-button-label": "Coller le texte source",
 	"tux-editor-discard-changes-button-label": "Annuler les modifications",
 	"tux-editor-save-button-label": "Enregistrer la traduction",
@@ -343,7 +344,7 @@
 	"tux-editor-cancel-button-label": "Annuler",
 	"tux-editor-confirm-button-label": "Confirmer la traduction",
 	"tux-editor-proofread-button-label": "Marquer comme relu",
-	"tux-editor-shortcut-info": "Appuyez sur « $1 » pour enregistrer ou « $2 » pour passer au message suivant ou « $3 » pour d’autres raccourcis.",
+	"tux-editor-shortcut-info": "Appuyez sur « $1 » pour enregistrer ou « $2 » pour passer au message suivant ou « $4 » pour fournir un résumé ou « $3 » pour d’autres raccourcis.",
 	"tux-editor-edit-desc": "Modifier la documentation",
 	"tux-editor-add-desc": "Ajouter une documentation",
 	"tux-editor-suggestions-title": "Suggestions",

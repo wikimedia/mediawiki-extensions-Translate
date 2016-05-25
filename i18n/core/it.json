@@ -16,7 +16,8 @@
 			"Pietrodn",
 			"Shirayuki",
 			"VittGam",
-			"Vituzzu"
+			"Vituzzu",
+			"Matteocng"
 		]
 	},
 	"translate": "Traduzione",
@@ -293,7 +294,6 @@
 	"translate-dynagroup-recent-desc": "Questo gruppo messaggi mostra tutte le ultime traduzioni in questa lingua.\nUtile per l'attività di revisione.",
 	"translate-dynagroup-additions-label": "Aggiunte recenti",
 	"translate-dynagroup-additions-desc": "Questo gruppo messaggi mostra i messaggi nuovi o modificati.",
-	"translate-gethelp": "Aiuto",
 	"translate-msggroupselector-projects": "Gruppo di messaggi",
 	"translate-msggroupselector-search-placeholder": "Ricerca gruppi",
 	"translate-msggroupselector-search-all": "Tutti",
@@ -320,7 +320,7 @@
 	"tux-editor-cancel-button-label": "Annulla",
 	"tux-editor-confirm-button-label": "Conferma traduzione",
 	"tux-editor-proofread-button-label": "Contrassegna come revisionata",
-	"tux-editor-shortcut-info": "Premi \"$1\" per salvare, \"$2\" per passare al messaggio successivo o \"$3\" per altre scorciatoie.",
+	"tux-editor-shortcut-info": "Premi \"$1\" per salvare, \"$2\" per passare al messaggio successivo o \"$4\" per fornire un riassunto o \"$3\" per altre scorciatoie.",
 	"tux-editor-edit-desc": "Modifica documentazione",
 	"tux-editor-add-desc": "Aggiungi documentazione",
 	"tux-editor-suggestions-title": "Suggerimenti",

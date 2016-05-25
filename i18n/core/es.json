@@ -23,7 +23,8 @@
 			"Vivaelcelta",
 			"Ciencia Al Poder",
 			"Wifidel",
-			"Macofe"
+			"Macofe",
+			"Indiralena"
 		]
 	},
 	"translate": "Traducir",
@@ -300,7 +301,6 @@
 	"translate-dynagroup-recent-desc": "Este grupo de mensajes muestra todas las traducciones recientes en este idioma.\nEs especialmente útil para tareas de revisión.",
 	"translate-dynagroup-additions-label": "Adiciones recientes",
 	"translate-dynagroup-additions-desc": "Este grupo de mensajes muestra mensajes nuevos y cambiados.",
-	"translate-gethelp": "Ayuda",
 	"translate-msggroupselector-projects": "Grupo de mensajes",
 	"translate-msggroupselector-search-placeholder": "Buscar grupos",
 	"translate-msggroupselector-search-all": "Todos",
@@ -320,6 +320,7 @@
 	"tux-status-saving": "Guardando...",
 	"tux-status-unsaved": "Sin guardar",
 	"tux-editor-placeholder": "Tu traducción",
+	"tux-editor-editsummary-placeholder": "Resumen opcional",
 	"tux-editor-paste-original-button-label": "Pegar texto de origen",
 	"tux-editor-discard-changes-button-label": "Descartar los cambios",
 	"tux-editor-save-button-label": "Guardar la traducción",
@@ -327,7 +328,7 @@
 	"tux-editor-cancel-button-label": "Cancelar",
 	"tux-editor-confirm-button-label": "Confirmar la traducción",
 	"tux-editor-proofread-button-label": "Marcar como revisada",
-	"tux-editor-shortcut-info": "Pulsa «$1» para guardar, «$2» para ir al siguiente mensaje o «$3» para más atajos.",
+	"tux-editor-shortcut-info": "Pulsa «$1» para guardar, «$2» para ir al siguiente mensaje, «$4» para proporcionar un resumen o «$3» para más atajos.",
 	"tux-editor-edit-desc": "Editar la documentación",
 	"tux-editor-add-desc": "Añadir documentación",
 	"tux-editor-suggestions-title": "Sugerencias",
