@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_11a8ae72",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-05-25T17:40:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_c06146d1",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_205da21a",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 8
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_f1a25a91",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-05-25T17:40:59Z",
+      "side": 1,
+      "message": "I\u0027ll do a full test tomorrow and then we\u0027ll test on beta.",
+      "parentUuid": "ae564743_c06b0680",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_00585e27",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 8
@@ -83,6 +119,24 @@
       "writtenOn": "2016-05-25T07:52:27Z",
       "side": 1,
       "message": "single quotes preferred.",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_f1b9bac1",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-05-25T17:40:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_00585e27",
       "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -124,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_51b506ca",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-05-25T17:40:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_8082ae50",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_60731ab0",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 8
@@ -135,6 +207,24 @@
       "writtenOn": "2016-05-25T07:50:06Z",
       "side": 1,
       "message": "Needs tabs.",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_31b852c2",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 733,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-05-25T17:40:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_60731ab0",
       "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -206,6 +296,24 @@
       "side": 1,
       "message": "Grep found:\n\nLocalisationUpdate/update.php\n27:             // @codingStandardsIgnoreStart Ignore MediaWiki.NamingConventions.ValidGlobalName.wgPrefix",
       "parentUuid": "ae564743_6004bac9",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_91ab1e6c",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-05-25T17:40:59Z",
+      "side": 1,
+      "message": "nice! Thanks!",
+      "parentUuid": "ae564743_40c41668",
       "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
