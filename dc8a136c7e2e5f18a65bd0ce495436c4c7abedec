@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_00417e39",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-25T07:50:06Z",
+      "side": 1,
+      "message": "Separate file is okay.",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_60731ab0",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 733,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-25T07:50:06Z",
+      "side": 1,
+      "message": "Needs tabs.",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_806c6ecc",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-25T07:50:06Z",
+      "side": 1,
+      "message": "Hmm phpcs did not have way to disable particular rules?",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_a069b2bd",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 918,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-25T07:50:06Z",
+      "side": 1,
+      "message": "This version you use actually looks more readable than what I usually use: max( 0, $this-\u003e_minSimilarity );",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
