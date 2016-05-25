@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_c06b0680",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-25T08:59:38Z",
+      "side": 1,
+      "message": "No we don\u0027t have anything like that.",
+      "parentUuid": "ae564743_a07ff261",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_00585e27",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 8
@@ -152,6 +170,24 @@
       "side": 1,
       "message": "Unfortunately I don\u0027t know... if it\u0027s possible it\u0027s not obvious.\nI\u0027ll double check, in the worst case I suppose I can disable coding standard only for lines which declare fields. I fixed all other violations already.",
       "parentUuid": "ae564743_806c6ecc",
+      "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_6004bac9",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-25T08:59:38Z",
+      "side": 1,
+      "message": "I\u0027ll check, but this is fine for me as well.",
+      "parentUuid": "ae564743_60f03afb",
       "revId": "dc8a136c7e2e5f18a65bd0ce495436c4c7abedec",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
