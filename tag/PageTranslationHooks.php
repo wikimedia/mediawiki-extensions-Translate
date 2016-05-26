@@ -981,17 +981,32 @@ class PageTranslationHooks {
 			return true;
 		}
 
+		// There could be interfaces which may allow mass deletion (eg. Nuke). Since they
+		// could delete many units in one request, it may do several unnecessary edits
+		// and cause several other unnecessary updates to be done slowing down the user.
+		// To avoid that, we push this to a separate transaction so that we can see the
+		// version that is after all the deletions has been done and we so we can do just one
+		// edit per translatable page after the current deletions has been done. This is sort
+		// of hackish but this is better user experience and is also more efficent.
+		static $queuedPages = array();
+		$target = $group->getTitle();
 		$langCode = $handle->getCode();
-		$id = $group->getId();
+		$targetPage = $target->getSubpage( $langCode )->getPrefixedText();
 
-		MessageGroupStats::clear( $handle );
-		MessageGroupStats::forItem( $id, $langCode );
+		if ( !in_array( $targetPage, $queuedPages ) ) {
+			$queuedPages[] = $targetPage;
 
-		if ( $handle->isDoc() ) {
-			return true;
+			$dbw = wfGetDB( DB_MASTER );
+			$dbw->onTransactionIdle( function () use ( $target, $handle, $langCode, $user, $reason ) {
+				$page = TranslatablePage::newFromTitle( $target );
+
+				MessageGroupStats::clear( $handle );
+				MessageGroupStats::forItem( $page->getMessageGroupId(), $langCode );
+
+				if ( !$handle->isDoc() ) {
+					self::updateTranslationPage( $page, $langCode, $user, 0, $reason );
+				}
+			} );
 		}
-
-		$page = TranslatablePage::newFromTitle( $group->getTitle() );
-		self::updateTranslationPage( $page, $langCode, $user, 0, $reason );
 	}
 }
