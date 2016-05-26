@@ -981,17 +981,43 @@ class PageTranslationHooks {
 			return true;
 		}
 
+		// There could be interfaces which may allow mass deletion (eg. Nuke). Since they could
+		// delete many units in one request, it may do several unnecessary edits and cause several
+		// other unnecessary updates to be done slowing down the user. To avoid that, we push this
+		// to a queue that is run after the current transaction is committed so that we can see the
+		// version that is after all the deletions has been done. This allows us to do just one edit
+		// per translation page after the current deletions has been done. This is sort of hackish
+		// but this is better user experience and is also more efficent.
+		static $queuedPages = array();
+		$target = $group->getTitle();
 		$langCode = $handle->getCode();
-		$id = $group->getId();
+		$targetPage = $target->getSubpage( $langCode )->getPrefixedText();
 
-		MessageGroupStats::clear( $handle );
-		MessageGroupStats::forItem( $id, $langCode );
+		if ( !isset( $queuedPages[ $targetPage ] ) ) {
+			$queuedPages[ $targetPage ] = true;
 
-		if ( $handle->isDoc() ) {
-			return true;
+			$dbw = wfGetDB( DB_MASTER );
+			$dbw->onTransactionIdle( function () use ( $dbw, $queuedPages, $targetPage,
+				$target, $handle, $langCode, $user, $reason
+			) {
+				// For atomicity
+				$dbw->setFlag( DBO_TRX );
+
+				$page = TranslatablePage::newFromTitle( $target );
+
+				MessageGroupStats::clear( $handle );
+				MessageGroupStats::forItem( $page->getMessageGroupId(), $langCode );
+
+				if ( !$handle->isDoc() ) {
+					// Assume that $user and $reason for the first deletion is the same for all
+					self::updateTranslationPage( $page, $langCode, $user, 0, $reason );
+				}
+
+				// If a unit was deleted after the edit here is done, this allows us
+				// to add the page back to the queue again and so we can make another
+				// edit here with the latest changes.
+				unset( $queuedPages[ $targetPage ] );
+			} );
 		}
-
-		$page = TranslatablePage::newFromTitle( $group->getTitle() );
-		self::updateTranslationPage( $page, $langCode, $user, 0, $reason );
 	}
 }
