@@ -313,6 +313,7 @@
 	"tux-status-saving": "Salvataggio...",
 	"tux-status-unsaved": "Non salvate",
 	"tux-editor-placeholder": "La tua traduzione",
+	"tux-editor-editsummary-placeholder": "Oggetto facoltativo",
 	"tux-editor-paste-original-button-label": "Incolla il testo sorgente",
 	"tux-editor-discard-changes-button-label": "Annulla modifiche",
 	"tux-editor-save-button-label": "Salva traduzione",
