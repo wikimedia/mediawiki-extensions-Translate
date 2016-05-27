@@ -23,6 +23,11 @@ abstract class MessageIndex {
 	protected static $instance;
 
 	/**
+	 * @var array
+	 */
+	protected static $keysCache = array();
+
+	/**
 	 * @return self
 	 */
 	public static function singleton() {
@@ -65,12 +70,16 @@ abstract class MessageIndex {
 		$key = $handle->getKey();
 		$normkey = TranslateUtils::normaliseKey( $namespace, $key );
 
-		$value = self::singleton()->get( $normkey );
-		if ( $value !== null ) {
-			return (array)$value;
-		} else {
-			return array();
+		if ( !isset( self::$keysCache[ $normkey ] ) ) {
+			$value = self::singleton()->get( $normkey );
+			$value = $value !== null
+				? $value = (array)$value
+				: $value = array();
+
+			self::$keysCache[ $normkey ] = $value;
 		}
+
+		return self::$keysCache[ $normkey ];
 	}
 
 	/**
@@ -131,7 +140,7 @@ abstract class MessageIndex {
 			throw new Exception( __CLASS__ . ': unable to acquire lock' );
 		}
 
-		$new = $old = array();
+		self::$keysCache = $new = $old = array();
 		$old = $this->retrieve( 'rebuild' );
 		$postponed = array();
 
