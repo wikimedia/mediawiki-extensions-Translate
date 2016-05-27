@@ -16,6 +16,24 @@
       "revId": "6dac93e81e1a38d922c1aaa7749cd597aa2d9da9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_80261762",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 991,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-05-27T16:44:35Z",
+      "side": 1,
+      "message": "It isn\u0027t emptied. What problems can it cause in jobs? I\u0027m not sure how it can be emptied anyway.",
+      "parentUuid": "ae564743_c6aaec16",
+      "revId": "6dac93e81e1a38d922c1aaa7749cd597aa2d9da9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
