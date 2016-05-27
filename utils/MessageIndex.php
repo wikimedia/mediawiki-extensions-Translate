@@ -23,6 +23,11 @@ abstract class MessageIndex {
 	protected static $instance;
 
 	/**
+	 * @var MapCacheLRU|null
+	 */
+	private static $keysCache;
+
+	/**
 	 * @return self
 	 */
 	public static function singleton() {
@@ -65,12 +70,27 @@ abstract class MessageIndex {
 		$key = $handle->getKey();
 		$normkey = TranslateUtils::normaliseKey( $namespace, $key );
 
-		$value = self::singleton()->get( $normkey );
-		if ( $value !== null ) {
-			return (array)$value;
-		} else {
-			return array();
+		$cache = self::getCache();
+		$value = $cache->get( $normkey );
+		if ( $value === null ) {
+			$value = self::singleton()->get( $normkey );
+			$value = $value !== null
+				? (array)$value
+				: array();
+			$cache->set( $normkey, $value );
 		}
+
+		return $value;
+	}
+
+	/**
+	 * @return MapCacheLRU
+	 */
+	private static function getCache() {
+		if ( self::$keysCache === null ) {
+			self::$keysCache = new MapCacheLRU( 30 );
+		}
+		return self::$keysCache;
 	}
 
 	/**
@@ -130,6 +150,8 @@ abstract class MessageIndex {
 		if ( !$this->lock() ) {
 			throw new Exception( __CLASS__ . ': unable to acquire lock' );
 		}
+
+		self::getCache()->clear();
 
 		$new = $old = array();
 		$old = $this->retrieve( 'rebuild' );
