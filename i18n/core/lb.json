@@ -298,6 +298,7 @@
 	"tux-status-saving": "Späicheren...",
 	"tux-status-unsaved": "Net gespäichert",
 	"tux-editor-placeholder": "Är Iwwersetzung",
+	"tux-editor-editsummary-placeholder": "Resumé (fakultativ)",
 	"tux-editor-paste-original-button-label": "Quelltext drasetzen",
 	"tux-editor-discard-changes-button-label": "Ännerungen annuléieren",
 	"tux-editor-save-button-label": "Iwwersetzung späicheren",
