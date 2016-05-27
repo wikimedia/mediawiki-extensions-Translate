@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_c6aaec16",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 991,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-27T11:04:21Z",
+      "side": 1,
+      "message": "This is never emptied? This can cause problems in long running processed like the job runner.",
+      "revId": "6dac93e81e1a38d922c1aaa7749cd597aa2d9da9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
