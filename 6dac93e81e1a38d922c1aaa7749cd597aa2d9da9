@@ -34,6 +34,24 @@
       "revId": "6dac93e81e1a38d922c1aaa7749cd597aa2d9da9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_c37bf922",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 991,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-27T18:28:25Z",
+      "side": 1,
+      "message": "just unset it on the callback? You might further delay the processing by using DeferredUpdates. That should make it so that this is processed after the page is send to the user but before processing server side ends.",
+      "parentUuid": "ae564743_80261762",
+      "revId": "6dac93e81e1a38d922c1aaa7749cd597aa2d9da9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
