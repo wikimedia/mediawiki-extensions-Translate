@@ -52,6 +52,24 @@
       "revId": "6dac93e81e1a38d922c1aaa7749cd597aa2d9da9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_ca3e6624",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 991,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-05-28T10:06:07Z",
+      "side": 1,
+      "message": "It\u0027s ugly but I\u0027ve added it anyway since that\u0027ll make sure that the edit is done even if something does a deletion after the callback is executed. I didn\u0027t change it to use DeferredUpdates (after output send) because that would no longer show exceptions to the user in case an error occurs and it may also not be expected by other systems (and that may cause weird stuff to happen).",
+      "parentUuid": "ae564743_c37bf922",
+      "revId": "6dac93e81e1a38d922c1aaa7749cd597aa2d9da9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
