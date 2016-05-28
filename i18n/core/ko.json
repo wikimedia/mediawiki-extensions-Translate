@@ -310,6 +310,7 @@
 	"tux-status-saving": "저장 중...",
 	"tux-status-unsaved": "저장하지 않음",
 	"tux-editor-placeholder": "내 번역",
+	"tux-editor-editsummary-placeholder": "요약 (선택 사항)",
 	"tux-editor-paste-original-button-label": "원본 텍스트 붙여넣기",
 	"tux-editor-discard-changes-button-label": "바뀜 버리기",
 	"tux-editor-save-button-label": "번역 저장",
