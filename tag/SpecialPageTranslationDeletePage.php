@@ -235,13 +235,13 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	 */
 	protected function showConfirmation() {
 		$out = $this->getOutput();
+		$count = 0;
 
 		$out->addWikiMsg( 'pt-deletepage-intro' );
 
-		$count = 1; // Base page
-
 		$out->wrapWikiMsg( '== $1 ==', 'pt-deletepage-list-pages' );
 		if ( !$this->singleLanguage() ) {
+			$count++;
 			$this->printChangeLine( $this->title );
 		}
 
