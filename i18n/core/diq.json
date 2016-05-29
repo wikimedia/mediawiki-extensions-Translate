@@ -4,7 +4,8 @@
 			"Erdemaslancan",
 			"Gorizon",
 			"Marmase",
-			"Mirzali"
+			"Mirzali",
+			"Kumkumuk"
 		]
 	},
 	"translate": "Açarnayış",
@@ -153,7 +154,7 @@
 	"translate-search-nofilter": "Bê filtre",
 	"translate-messagereview-submit": "Qebul bıkê",
 	"translate-messagereview-progress": "Oyo qebul beno",
-	"translate-messagereview-done": "Qebuliya",
+	"translate-messagereview-done": "Bariya",
 	"translate-workflowstatus": "Weziyet: $1",
 	"translate-workflow-set-doing": "Sazêno...",
 	"translate-stats-workflow": "Weziyet",

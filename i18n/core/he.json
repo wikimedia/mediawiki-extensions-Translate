@@ -308,7 +308,7 @@
 	"tux-status-saving": "מתבצעת שמירה...",
 	"tux-status-unsaved": "לא שמורה",
 	"tux-editor-placeholder": "התרגום שלך",
-	"tux-editor-editsummary-placeholder": "תקציר עריכה, לא חובה",
+	"tux-editor-editsummary-placeholder": "תקציר עריכה (לא חובה)",
 	"tux-editor-paste-original-button-label": "הדבקת טקסט המקור",
 	"tux-editor-discard-changes-button-label": "ביטול שינויים",
 	"tux-editor-save-button-label": "שמירת תרגום",

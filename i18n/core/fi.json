@@ -312,6 +312,7 @@
 	"tux-status-saving": "Tallennetaan...",
 	"tux-status-unsaved": "Tallentamaton",
 	"tux-editor-placeholder": "Käännös",
+	"tux-editor-editsummary-placeholder": "Valinnainen yhteenveto",
 	"tux-editor-paste-original-button-label": "Liitä lähdeteksti",
 	"tux-editor-discard-changes-button-label": "Hylkää muutokset",
 	"tux-editor-save-button-label": "Tallenna käännös",
@@ -319,7 +320,7 @@
 	"tux-editor-cancel-button-label": "Peru",
 	"tux-editor-confirm-button-label": "Hyväksy käännös",
 	"tux-editor-proofread-button-label": "Merkitse tarkastetuksi",
-	"tux-editor-shortcut-info": "$1 tallentaa, $2 siirty seuraavaan ja $3 näyttää muut näppäinyhdistelmät.",
+	"tux-editor-shortcut-info": "$1 tallentaa, $2 siirty seuraavaan, $4 siirtyy yhteenvtoon ja $3 näyttää muut näppäinyhdistelmät.",
 	"tux-editor-edit-desc": "Muokkaa ohjeistusta",
 	"tux-editor-add-desc": "Lisää ohjeistus",
 	"tux-editor-suggestions-title": "Ehdotukset",
@@ -384,5 +385,6 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|muu ryhmä|muuta ryhmää}}",
 	"translate-ulsdep-title": "Asennusvirhe",
 	"translate-ulsdep-body": "Translate-laajennos vaati [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector -laajennoksen].",
-	"tux-session-expired": "Et ole enää kirjautunut sisään. Kirjaudu sisään toisessä välilehdessä. Vaihtoehtoisesti voit kopioida tallentamattomat käännökset, kirjautua sisään ja palata tälle sivulle."
+	"tux-session-expired": "Et ole enää kirjautunut sisään. Kirjaudu sisään toisessä välilehdessä. Vaihtoehtoisesti voit kopioida tallentamattomat käännökset, kirjautua sisään ja palata tälle sivulle tallentamaan käännökset uudestaan.",
+	"tux-nojs": "Tämä sivu ei toimi ilman JavaScriptiä."
 }

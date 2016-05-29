@@ -305,6 +305,7 @@
 	"tux-status-saving": "Зачувувам...",
 	"tux-status-unsaved": "Незачувано",
 	"tux-editor-placeholder": "Ваш превод",
+	"tux-editor-editsummary-placeholder": "Опис (по желба)",
 	"tux-editor-paste-original-button-label": "Вметни изворен текст",
 	"tux-editor-discard-changes-button-label": "Отфрли промени",
 	"tux-editor-save-button-label": "Зачувај превод",
