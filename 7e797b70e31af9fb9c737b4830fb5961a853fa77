@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_758e11d7",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-05-30T17:44:00Z",
+      "side": 1,
+      "message": "Unless this applies a style to something here shouldn\u0027t this be in showPage()?",
+      "revId": "7e797b70e31af9fb9c737b4830fb5961a853fa77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
