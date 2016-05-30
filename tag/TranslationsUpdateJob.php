@@ -30,6 +30,11 @@ class TranslationsUpdateJob extends Job {
 			$job->run();
 		}
 
+		// Ensure we are using the latest group definitions. This is needed so
+		// that in long running scripts we do see the page which was just
+		// marked for translation. Otherwise getMessageGroup in the next line
+		// returns null. There is no need to regenerate the global cache.
+		MessageGroups::singleton()->clearProcessCache();
 		// Ensure fresh definitions for MessageIndex and stats
 		$this->page->getMessageGroup()->clearCaches();
 

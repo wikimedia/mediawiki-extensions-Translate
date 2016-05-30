@@ -85,7 +85,18 @@ class MessageGroups {
 	public static function clearCache() {
 		$self = self::singleton();
 		$self->getCache()->delete( wfMemcKey( 'translate-groups' ) );
-		$self->groups = null;
+		$self->clearProcessCache();
+	}
+
+	/**
+	 * Manually reset the process cache.
+	 *
+	 * This is helpful for long running scripts where the process cache might get stale
+	 * even though the global cache is updated.
+	 * @since 2016.05
+	 */
+	public function clearProcessCache() {
+		$this->groups = null;
 	}
 
 	/**
@@ -145,6 +156,7 @@ class MessageGroups {
 
 		$key = wfMemcKey( 'translate-groups' );
 		$value = array(
+			'ts' => wfTimestamp( TS_MW ),
 			'cc' => $groups,
 			'autoload' => $autoload,
 		);
