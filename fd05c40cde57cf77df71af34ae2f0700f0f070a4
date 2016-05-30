@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_9e5827ff",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-05-30T17:06:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_83661425",
+      "revId": "fd05c40cde57cf77df71af34ae2f0700f0f070a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_636b00ef",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-30T12:00:12Z",
       "side": 1,
       "message": "Why do you think it\u0027s ugly? Just defensive programming.",
+      "revId": "fd05c40cde57cf77df71af34ae2f0700f0f070a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_5e2ccf45",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1012,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-05-30T17:06:18Z",
+      "side": 1,
+      "message": "Well TBH, this whole thing is rather ugly so I will just remove that part since the comment above already mentions that this is hackish.",
+      "parentUuid": "ae564743_636b00ef",
       "revId": "fd05c40cde57cf77df71af34ae2f0700f0f070a4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
