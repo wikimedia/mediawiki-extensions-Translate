@@ -16,6 +16,24 @@
       "revId": "7e797b70e31af9fb9c737b4830fb5961a853fa77",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_c8e784de",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-30T19:35:26Z",
+      "side": 1,
+      "message": "I only saw styles related to this form. Did you spot styles used somewhere else?\n\nI guess one could argue they could be added all the time for this page to avoid surprised for future additions, but that should be quite obvious when adding when they don\u0027t work ;)",
+      "parentUuid": "ae564743_758e11d7",
+      "revId": "7e797b70e31af9fb9c737b4830fb5961a853fa77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
