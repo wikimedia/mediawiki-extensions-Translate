@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_438ebcd6",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-30T11:41:45Z",
+      "side": 1,
+      "message": "I am not sure what you want to say with this comment. You are clearly converting nulls from ::get to an array to provide negative caching, so null from here would only come from non-existent or invalid values.",
+      "revId": "fba9df50db42375be3478eae9bad2418638e6e73",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_e380b0a2",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-30T11:41:45Z",
+      "side": 1,
+      "message": "There seems to be too many assignments happening here.",
+      "revId": "fba9df50db42375be3478eae9bad2418638e6e73",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
