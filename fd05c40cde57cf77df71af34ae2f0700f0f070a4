@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_83661425",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-30T12:00:12Z",
+      "side": 1,
+      "message": "One non-obvious thing here is that we will use the $reason of first deletion and $user. Both are likely to be the same for all, but that is an assumption that could be spelled out.",
+      "revId": "fd05c40cde57cf77df71af34ae2f0700f0f070a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_636b00ef",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1012,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-05-30T12:00:12Z",
+      "side": 1,
+      "message": "Why do you think it\u0027s ugly? Just defensive programming.",
+      "revId": "fd05c40cde57cf77df71af34ae2f0700f0f070a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
