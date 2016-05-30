@@ -602,8 +602,6 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param TPSection[] $sections
 	 */
 	public function showPage( TranslatablePage $page, array $sections ) {
-		global $wgContLang;
-
 		$out = $this->getOutput();
 
 		$out->setSubtitle( Linker::link( $page->getTitle() ) );
@@ -635,6 +633,8 @@ class SpecialPageTranslation extends SpecialPage {
 		// If the page is marked for translation the first time, default to checked.
 		$defaultChecked = $page->hasPageDisplayTitle();
 
+		$sourceLanguage = Language::factory( $page->getSourceLanguageCode() );
+
 		foreach ( $sections as $s ) {
 			if ( $s->name === 'Page display title' ) {
 				// Set section type as new if title previously unchecked
@@ -659,9 +659,7 @@ class SpecialPageTranslation extends SpecialPage {
 			if ( $s->type === 'changed' ) {
 				$hasChanges = true;
 				$diff = new DifferenceEngine;
-				if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
-					$diff->setTextLanguage( $wgContLang );
-				}
+				$diff->setTextLanguage( $sourceLanguage );
 				$diff->setReducedLineNumbers();
 
 				$oldContent = ContentHandler::makeContent( $s->getOldText(), $diff->getTitle() );
@@ -686,11 +684,12 @@ class SpecialPageTranslation extends SpecialPage {
 			}
 
 			# For changed text, the language is set by $diff->setTextLanguage()
-			$lang = $s->type === 'changed' ? null : $wgContLang;
+			$lang = $s->type === 'changed' ? null : $sourceLanguage;
 			$out->addHTML( MessageWebImporter::makeSectionElement(
 				$name,
 				$s->type,
-				$text, $lang
+				$text,
+				$lang
 			) );
 		}
 
@@ -709,7 +708,7 @@ class SpecialPageTranslation extends SpecialPage {
 					$name,
 					$s->type,
 					$text,
-					$wgContLang
+					$sourceLanguage
 				) );
 			}
 		}
@@ -728,9 +727,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$out->wrapWikiMsg( '==$1==', 'tpt-sections-template' );
 
 				$diff = new DifferenceEngine;
-				if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
-					$diff->setTextLanguage( $wgContLang );
-				}
+				$diff->setTextLanguage( $sourceLanguage );
 
 				$oldContent = ContentHandler::makeContent( $oldTemplate, $diff->getTitle() );
 				$newContent = ContentHandler::makeContent( $newTemplate, $diff->getTitle() );
