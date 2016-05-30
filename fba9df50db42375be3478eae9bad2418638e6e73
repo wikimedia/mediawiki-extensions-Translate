@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_7e59d303",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-05-30T12:38:26Z",
+      "side": 1,
+      "message": "Oh, yes indeed. We are caching it after making it an array so this makes no sense, actually.",
+      "parentUuid": "ae564743_438ebcd6",
+      "revId": "fba9df50db42375be3478eae9bad2418638e6e73",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_e380b0a2",
         "filename": "utils/MessageIndex.php",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-30T11:41:45Z",
       "side": 1,
       "message": "There seems to be too many assignments happening here.",
+      "revId": "fba9df50db42375be3478eae9bad2418638e6e73",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_9e414711",
+        "filename": "utils/MessageIndex.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-05-30T12:38:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_e380b0a2",
       "revId": "fba9df50db42375be3478eae9bad2418638e6e73",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
