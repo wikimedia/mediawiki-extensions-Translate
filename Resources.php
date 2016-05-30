@@ -399,13 +399,17 @@ $wgResourceModules['ext.translate.special.pagepreparation'] = array(
 
 $wgResourceModules['ext.translate.special.pagetranslation'] = array(
 	'scripts' => 'resources/js/ext.translate.special.pagetranslation.js',
-	'styles' => 'resources/css/ext.translate.special.pagetranslation.css',
 	'dependencies' => array(
 		'ext.translate.multiselectautocomplete',
 		'mediawiki.ui.button',
 		'mediawiki.Uri',
 		'user.tokens',
 	),
+	'position' => 'top',
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.pagetranslation.styles'] = array(
+	'styles' => 'resources/css/ext.translate.special.pagetranslation.css',
 	'position' => 'top',
 ) + $resourcePaths;
 
