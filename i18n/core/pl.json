@@ -26,7 +26,8 @@
 			"Woytecr",
 			"Wpedzich",
 			"Žekřil71pl",
-			"The Polish"
+			"The Polish",
+			"Tsca"
 		]
 	},
 	"translate": "Przetłumacz",
@@ -363,7 +364,7 @@
 	"tux-message-filter-result": "Znaleziono $1 {{PLURAL:$1|wynik|wyników}}, dla \"$2\"",
 	"tux-message-filter-advanced-button": "Zaawansowane wyszukiwanie",
 	"tux-message-filter-optional-messages-label": "Komunikaty opcjonalne",
-	"tux-proofread-translated-by-self": "Przetłumaczone przez ciebie",
+	"tux-proofread-translated-by-self": "Przetłumaczone przez Ciebie",
 	"tux-empty-list-all": "Ta grupa komunikatów jest pusta",
 	"tux-empty-list-all-guide": "Wybierz inną grupę komunikatów do przetłumaczenia",
 	"tux-translate-page-no-such-group": "<strong>Ta grupa nie istnieje.</strong> Wybierz inną grupę komunikatów.",

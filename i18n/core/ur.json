@@ -5,7 +5,8 @@
 			"Tahir mq",
 			"පසිඳු කාවින්ද",
 			"عثمان خان شاہ",
-			"Muhammad Shuaib"
+			"Muhammad Shuaib",
+			"Hindustanilanguage"
 		]
 	},
 	"translate": "ترجمہ",
@@ -23,7 +24,6 @@
 	"translate-page-group": "گروپ",
 	"translate-page-language": "زبان",
 	"translate-page-navigation-legend": "نیوی گیشن",
-	"translate-page-showing-none": "کو دکھانے کے لئے کوئی پیغامات ۔",
 	"translate-next": "اگلا صفحہ",
 	"translate-prev": "سابق صفحہ",
 	"translate-page-description-hasoptional-open": "کچھ اختیاری پیغامات دکھائیں ۔",
@@ -51,7 +51,6 @@
 	"translate-statsf-count-reviews": "ترجمہ کا جائزہ",
 	"translate-statsf-count-reviewers": "مبصرین",
 	"translate-statsf-submit": "نمائش",
-	"translate-tag-category": "قابل ترجمہ صفحات",
 	"translate-sidebar-alltrans": "دیگر زبانوں میں",
 	"translations": "جملہ تراجم",
 	"translate-translations-fieldset-title": "پیغام",
@@ -95,7 +94,6 @@
 	"translate-searchprofile": "ترجمہ",
 	"translate-messagereview-submit": "قبول",
 	"translate-stats-workflow": "حیثیت",
-	"translate-gethelp": "مدد",
 	"translate-msggroupselector-projects": "گروہ پیغامات",
 	"translate-msggroupselector-search-all": "تمام",
 	"tux-languageselector": "ترجمہ در",
@@ -105,6 +103,7 @@
 	"tux-tab-translated": "ترجمہ شدہ",
 	"tux-edit": "ترمیم",
 	"tux-status-translated": "ترجمہ مکمل",
+	"tux-editor-editsummary-placeholder": "اختیاری خلاصہ",
 	"tux-editor-discard-changes-button-label": "تبدیلیاں مسترد کریں",
 	"tux-editor-save-button-label": "ترجمہ محفوظ کریں",
 	"tux-editor-skip-button-label": "آگے بڑھیں",
