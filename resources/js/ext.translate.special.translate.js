@@ -293,6 +293,8 @@
 		updateGroupInformation( state );
 
 		$messageList.messagetable();
+		// Force the first set of messages to load
+		$messageList.data( 'messagetable' ).load();
 
 		$( '.ext-translate-language-selector .uls' ).one( 'click', function () {
 			var $target = $( this );
