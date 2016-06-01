@@ -262,6 +262,9 @@
 		updateGroupInformation( state );
 
 		$messageList.messagetable();
+		// Force the first ste of messages to load immediately
+		$messageList.data( 'messagetable' ).load();
+
 		// Use ULS for language selection if it's available
 		ulsOptions = {
 			onSelect: function ( language ) {
