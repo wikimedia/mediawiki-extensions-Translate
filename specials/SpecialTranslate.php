@@ -52,7 +52,6 @@ class SpecialTranslate extends SpecialPage {
 			'jquery.uls.grid',
 			'mediawiki.ui.button'
 		) );
-		$out->addModules( 'ext.translate.special.translate' );
 
 		$this->setHeaders();
 
@@ -87,6 +86,8 @@ class SpecialTranslate extends SpecialPage {
 		$errors = $this->getFormErrors();
 
 		if ( $isBeta && $this->options['taction'] !== 'export' ) {
+			$out->addModules( 'ext.translate.special.translate' );
+
 			$out->addHTML( Html::openElement( 'div', array(
 				'class' => 'grid ext-translate-container',
 			) ) );
@@ -94,6 +95,7 @@ class SpecialTranslate extends SpecialPage {
 			$out->addHTML( $this->tuxSettingsForm( $errors ) );
 			$out->addHTML( $this->messageSelector() );
 		} else {
+			$out->addModules( 'ext.translate.special.translate.legacy' );
 			$out->addModuleStyles( 'ext.translate.legacy' );
 			$out->addHelpLink( 'Help:Extension:Translate/Translation_example' );
 			// Show errors nicely.

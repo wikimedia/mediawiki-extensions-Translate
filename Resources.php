@@ -176,9 +176,6 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'tpt-unknown-page',
 		'translate-edit-title',
 		'translate-language-disabled',
-		'translate-messagereview-done',
-		'translate-messagereview-failure',
-		'translate-messagereview-progress',
 		'tux-edit',
 		'tux-empty-list-all',
 		'tux-empty-list-all-guide',
@@ -467,6 +464,18 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'translate-documentation-language',
 		'tux-editor-proofreading-hide-own-translations',
 		'tux-editor-proofreading-show-own-translations',
+	),
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.translate.legacy'] = array(
+	'scripts' => 'resources/js/ext.translate.special.translate.legacy.js',
+	'dependencies' => array(
+		'mediawiki.api',
+	),
+	'messages' => array(
+		'translate-messagereview-done',
+		'translate-messagereview-failure',
+		'translate-messagereview-progress',
 	),
 ) + $resourcePaths;
 
