@@ -1,18 +1,7 @@
 ( function ( $, mw ) {
 	'use strict';
 
-	var delay, itemsClass;
-
-	delay = ( function () {
-		var timer = 0;
-
-		return function ( callback, milliseconds ) {
-			clearTimeout( timer );
-			timer = setTimeout( callback, milliseconds );
-		};
-	}() );
-
-	itemsClass = {
+	var itemsClass = {
 		proofread: '.tux-message-proofread',
 		page: '.tux-message-pagemode',
 		translate: '.tux-message'
@@ -69,33 +58,24 @@
 				$filterInput = this.$container.parent().find( '.tux-message-filter-box' );
 
 			// Vector has transitions of 250ms which affect layout. Let those finish.
-			$( window ).on( 'scroll resize', function () {
-				delay( function () {
-					messageTable.scroll();
-				}, 250 );
-			} ).resize( function () {
+			$( window ).on( 'scroll', $.debounce( 250, function () {
+				messageTable.scroll();
+
+				if ( isLoaderVisible( messageTable.$loader ) ) {
+					messageTable.load();
+				}
+			} ) ).on( 'resize', $.throttle( 250, function () {
 				messageTable.resize();
-			} );
+				messageTable.scroll();
+			} ) );
 
 			if ( mw.translate.isPlaceholderSupported( $filterInput ) ) {
 				$filterInput.prop( 'placeholder', mw.msg( 'tux-message-filter-placeholder' ) );
 			}
 
-			$filterInput.on( 'textchange', function () {
-				delay( function () {
-					messageTable.search( $filterInput.val() );
-				}, 300 );
-			} );
-
-			this.$loader.appear( function () {
-				// Avoid the overlap calls to load()
-				setTimeout( function () {
-					messageTable.load();
-				}, 250 );
-			}, {
-				// Appear callback need to be called more than once.
-				one: false
-			} );
+			$filterInput.on( 'textchange', $.debounce( 250, function () {
+				messageTable.search( $filterInput.val() );
+			} ) );
 
 			this.$actionBar.find( 'button.proofread-mode-button' ).on( 'click', function () {
 				messageTable.switchMode( 'proofread' );
@@ -339,7 +319,6 @@
 				} );
 			}
 
-			this.$loader.trigger( 'appear' );
 			this.updateLastMessage();
 
 			// Trigger a scroll event for the window to make sure all floating toolbars
@@ -401,9 +380,10 @@
 			this.$loader
 				.removeData( 'offset' )
 				.removeAttr( 'data-offset' )
-				.removeClass( 'hide' )
-				// And start loading
-				.trigger( 'appear' );
+				.removeClass( 'hide' );
+
+			// Start loading messages
+			this.load();
 		},
 
 		load: function () {
@@ -801,4 +781,18 @@
 	function escapeRegex( value ) {
 		return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, '\\$&' );
 	}
+
+	function isLoaderVisible( $loader ) {
+		var viewportBottom, elementTop,
+			$window = $( window );
+
+		viewportBottom = ( window.innerHeight ? window.innerHeight : $window.height() ) +
+			$window.scrollTop();
+
+		elementTop = $loader.offset().top;
+
+		// Start already if user is reaching close to the bottom
+		return elementTop - viewportBottom < 200;
+	}
+
 }( jQuery, mediaWiki ) );
