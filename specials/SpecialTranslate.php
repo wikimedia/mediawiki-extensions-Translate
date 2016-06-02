@@ -555,15 +555,12 @@ class SpecialTranslate extends SpecialPage {
 		$output .= Html::closeElement( 'ul' );
 		$output .= Html::closeElement( 'div' ); // close nine columns
 		$output .= Html::openElement( 'div', array( 'class' => 'three columns' ) );
-		$output .= Html::openElement( 'div', array( 'class' => 'two columns' ) );
-		$output .= Html::element( 'div', array( 'class' => 'tux-message-filter-box-icon' ) );
-		$output .= Html::closeElement( 'div' ); // close two columns
-		$output .= Html::openElement( 'div', array( 'class' => 'ten columns' ) );
+		$output .= Html::openElement( 'div', array( 'class' => 'tux-message-filter-wrapper' ) );
 		$output .= Html::element( 'input', array(
 			'class' => 'tux-message-filter-box',
 			'type' => 'search',
 		) );
-		$output .= Html::closeElement( 'div' ); // close ten columns
+		$output .= Html::closeElement( 'div' ); // close tux-message-filter-wrapper
 
 		$output .= Html::closeElement( 'div' ); // close three columns
 
