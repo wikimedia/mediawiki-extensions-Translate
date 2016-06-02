@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_cc0fa33a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-06-02T13:39:27Z",
+      "side": 1,
+      "message": "typos \"already did not happen then\", unsure about meaning",
+      "revId": "5f6c1fed828191a6655f61aff05c69c287a06b11",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
