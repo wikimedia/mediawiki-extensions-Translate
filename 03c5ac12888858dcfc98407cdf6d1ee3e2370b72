@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_613e8028",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-06-02T05:22:06Z",
+      "side": 1,
+      "message": "I\u0027ll try.",
+      "parentUuid": "0efd9372_2682cecd",
+      "revId": "03c5ac12888858dcfc98407cdf6d1ee3e2370b72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_86873adc",
         "filename": "resources/js/ext.translate.messagetable.js",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_c142ccb1",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-06-02T05:22:06Z",
+      "side": 1,
+      "message": "Please read the commit message.",
+      "parentUuid": "0efd9372_86873adc",
+      "revId": "03c5ac12888858dcfc98407cdf6d1ee3e2370b72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_e620c6f4",
         "filename": "resources/js/ext.translate.special.translate.js",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2016-06-01T23:30:23Z",
       "side": 1,
       "message": "ste ?\nIs this a typo?",
+      "revId": "03c5ac12888858dcfc98407cdf6d1ee3e2370b72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_a13fc81f",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-06-02T05:22:06Z",
+      "side": 1,
+      "message": "yes.",
+      "parentUuid": "0efd9372_e620c6f4",
       "revId": "03c5ac12888858dcfc98407cdf6d1ee3e2370b72",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
