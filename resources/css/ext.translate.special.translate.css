@@ -3,8 +3,12 @@
  */
 .tux-breadcrumb {
 	margin-bottom: 10px;
+	color: #555555;
+	font-size: 14pt;
+	line-height: 1.25em;
 }
 
+/* Arrow between breadcrumb items */
 .tux-breadcrumb .grouplink + .grouplink:before {
 	border-left: 4px solid #777;
 	border-top: 4px solid transparent;
@@ -16,26 +20,22 @@
 	left: -5px;
 }
 
-.tux-breadcrumb span {
-	border: medium none;
-	color: #555555;
-	font-size: 14pt;
-	font-weight: normal;
-	line-height: 1.25em;
-}
-
-.tux-breadcrumb span.grouptitle {
+/* This applies to all items in the breadcrumb */
+.tux-breadcrumb .grouptitle {
 	float: left;
 	padding: 0 6px 0 0;
 }
 
-.tux-breadcrumb span.grouplink {
-	color: #0645AD;
-	cursor: pointer;
-	float: left;
-	min-height: 1px;
+/* Not all of these are links, so name is wrong besides being too generic.
+ * This excludes the first item which says "message group". */
+.tux-breadcrumb .grouplink {
 	padding: 0 6px;
-	position: relative;
+}
+
+/* Color clickable groups to look as links */
+.tux-breadcrumb__item--aggregate {
+	cursor: pointer;
+	color: #0645AD;
 }
 
 /* Language selector */

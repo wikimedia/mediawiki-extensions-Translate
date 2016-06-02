@@ -575,6 +575,11 @@ class SpecialTranslate extends SpecialPage {
 	protected function tuxGroupSelector() {
 		$group = MessageGroups::getGroup( $this->options['group'] );
 
+		$groupClass = array( 'grouptitle', 'grouplink' );
+		if ( $group instanceof AggregateMessageGroup ) {
+			$groupClass[] = 'tux-breadcrumb__item--aggregate';
+		}
+
 		// @todo FIXME The selector should have expanded parent-child lists
 		$output = Html::openElement( 'div', array(
 			'class' => 'eight columns tux-breadcrumb',
@@ -585,12 +590,12 @@ class SpecialTranslate extends SpecialPage {
 				$this->msg( 'translate-msggroupselector-projects' )->text()
 			) .
 			Html::element( 'span',
-				array( 'class' => 'grouptitle grouplink expanded' ),
+				array( 'class' => 'grouptitle grouplink expanded tux-breadcrumb__item--aggregate' ),
 				$this->msg( 'translate-msggroupselector-search-all' )->text()
 			) .
 			Html::element( 'span',
 				array(
-					'class' => 'grouptitle grouplink',
+					'class' => $groupClass,
 					'data-msggroupid' => $this->options['group'],
 				),
 				$group->getLabel()

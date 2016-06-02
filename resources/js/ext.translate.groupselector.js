@@ -194,17 +194,20 @@
 				if ( !groupSelector.options.preventSelector ) {
 					$newLink = $( '<span>' )
 						.addClass( 'grouptitle grouplink' )
-						.text( messageGroup.label );
+						.text( messageGroup.label )
+						.data( 'msggroupid', messageGroup.id );
+
 					groupSelector.$trigger.after( $newLink );
-					$newLink.data( 'msggroupid', messageGroup.id );
 
 					if ( messageGroup.groups && messageGroup.groups.length > 0 ) {
+						// Show the new menu immediately.
 						// Pass options for callbacks, language etc. but ignore the position
 						// option unless explicitly given to allow automatic recalculation
 						// of the position compared to the new trigger.
-						$newLink.msggroupselector( groupSelector.customOptions );
-						// Show the new menu immediately
-						$newLink.data( 'msggroupselector' ).show();
+						$newLink
+							.addClass( 'tux-breadcrumb__item--aggregate' )
+							.msggroupselector( groupSelector.customOptions )
+							.data( 'msggroupselector' ).show();
 					}
 				}
 
