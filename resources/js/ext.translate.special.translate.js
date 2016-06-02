@@ -252,7 +252,7 @@
 				at: 'right+80 bottom+5'
 			};
 		}
-		$( '.tux-breadcrumb .grouplink' ).msggroupselector( {
+		$( '.tux-breadcrumb__item--aggregate' ).msggroupselector( {
 			onSelect: mw.translate.changeGroup,
 			language: state.language,
 			position: position,
