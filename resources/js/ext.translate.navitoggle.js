@@ -43,5 +43,8 @@
 
 		$( 'body' ).append( $miniLogo, $toggle );
 
+		if ( $body.width() < 1000 ) {
+			$body.addClass( 'tux-navi-collapsed' );
+		}
 	} );
 }( mediaWiki, jQuery ) );
