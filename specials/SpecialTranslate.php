@@ -590,7 +590,7 @@ class SpecialTranslate extends SpecialPage {
 				$this->msg( 'translate-msggroupselector-projects' )->text()
 			) .
 			Html::element( 'span',
-				array( 'class' => 'grouptitle grouplink expanded tux-breadcrumb__item--aggregate' ),
+				array( 'class' => 'grouptitle grouplink tux-breadcrumb__item--aggregate' ),
 				$this->msg( 'translate-msggroupselector-search-all' )->text()
 			) .
 			Html::element( 'span',
