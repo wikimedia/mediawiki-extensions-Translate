@@ -590,7 +590,7 @@ class SpecialTranslate extends SpecialPage {
 			) .
 			Html::element( 'span',
 				array(
-					'class' => 'grouptitle grouplink tail',
+					'class' => 'grouptitle grouplink',
 					'data-msggroupid' => $this->options['group'],
 				),
 				$group->getLabel()
