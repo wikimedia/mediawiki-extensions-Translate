@@ -168,6 +168,11 @@
 			api = new mw.Api(),
 			$description = $( '.tux-editor-header .description' );
 
+		if ( group.description === null ) {
+			$description.empty();
+			return;
+		}
+
 		api.parse( group.description ).done( function ( parsedDescription ) {
 			// The parsed text is returned in a <p> tag,
 			// so it's removed here.
