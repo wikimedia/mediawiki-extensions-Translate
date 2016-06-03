@@ -311,7 +311,7 @@
 	"tux-editor-cancel-button-label": "Cancelar",
 	"tux-editor-confirm-button-label": "Confirmar a tradución",
 	"tux-editor-proofread-button-label": "Marcar como revisada",
-	"tux-editor-shortcut-info": "Prema en \"$1\" para gardar, en \"$2\" para pasar á seguinte mensaxe ou en \"$3\" para ver outros atallos.",
+	"tux-editor-shortcut-info": "Prema en \"$1\" para gardar, en \"$2\" para pasar á seguinte mensaxe, en \"$4\" para proporcionar un resumo ou en \"$3\" para ver outros atallos.",
 	"tux-editor-edit-desc": "Editar a documentación",
 	"tux-editor-add-desc": "Engadir a documentación",
 	"tux-editor-suggestions-title": "Suxestións",

@@ -9,6 +9,6 @@
 	"tux-sst-search": "Recercar",
 	"tux-sst-facet-language": "Lengas",
 	"tux-sst-facet-group": "Gropes de messatge",
-	"tux-sst-facet-orphan": "(orfanèl)",
-	"tux-sst-nosolr-title": "Recèrca indisponibla"
+	"tux-sst-nosolr-title": "Recèrca indisponibla",
+	"tux-sst-default": "Traduccions"
 }
