@@ -31,6 +31,13 @@ class ElasticSearchTTMServer
 	const BULK_INDEX_RETRY_ATTEMPTS = 5;
 
 	/**
+	 * @const int time (seconds) to wait for the index to ready before
+	 * starting to index. Since we wait for index status it can be relatively
+	 * long especially if some nodes are restarted.
+	 */
+	const WAIT_UNTIL_READY_TIMEOUT = 3600;
+
+	/**
 	 * @var \Elastica\Client
 	 */
 	protected $client;
@@ -475,32 +482,57 @@ GROOVY;
 		return isset( $this->config['replicas'] ) ? $this->config['replicas'] : 0;
 	}
 
-	protected function waitUntilReady() {
-		$expectedActive = $this->getShardCount() * ( 1 + $this->getReplicaCount() );
-		$indexName = $this->getType()->getIndex()->getName();
+	/**
+	 * Get index health
+	 *
+	 * @param string $indexName
+	 * @return array the index health status
+	 */
+	protected function getIndexHealth( $indexName ) {
 		$path = "_cluster/health/$indexName";
+		$response = $this->getClient()->request( $path );
+		if ( $response->hasError() ) {
+			throw new \Exception( "Error while fetching index health status: ". $response->getError() );
+		}
+		return $response->getData();
+	}
 
-		while ( true ) {
-			$response = $this->getClient()->request( $path );
-			if ( $response->hasError() ) {
-				$this->logOutput( 'Error fetching index health. Retrying.' );
-				$this->logOutput( 'Message: ' + $response->getError() );
-			} else {
-				$health = $response->getData();
-				$active = $health['active_shards'];
-				$this->logOutput(
-					"active:$active/$expectedActive ".
-					"relocating:{$health['relocating_shards']} " .
-					"initializing:{$health['initializing_shards']} ".
-					"unassigned:{$health['unassigned_shards']}"
-				);
+	/**
+	 * Wait for the index to go green
+	 *
+	 * NOTE: This method has been copied and adjusted from
+	 * CirrusSearch/includes/Maintenance/ConfigUtils.php.  Ideally we'd
+	 * like to make these utility methods available in the Elastica
+	 * extension, but this one requires some refactoring in cirrus first.
+	 *
+	 * @param string $indexName
+	 * @param int $timeout
+	 * @return boolean true if the index is green false otherwise.
+	 */
+	protected function waitForGreen( $indexName, $timeout ) {
+		$startTime = time();
+		while ( ( $startTime + $timeout ) > time() ) {
+			try {
+				$response = $this->getIndexHealth( $indexName );
+				$status = isset ( $response['status'] ) ? $response['status'] : 'unknown';
+				if ( $status === 'green' ) {
+					$this->logOutput( "\tGreen!" );
+					return true;
+				}
+				$this->logOutput( "\tIndex is $status retrying..." );
+				sleep( 5 );
+			} catch ( \Exception $e ) {
+				$this->logOutput( "Error while waiting for green ({$e->getMessage()}), retrying..." );
 			}
+		}
+		return false;
+	}
 
-			if ( $active === $expectedActive ) {
-				break;
-			}
-
-			sleep( 10 );
+	protected function waitUntilReady() {
+		$indexName = $this->getType()->getIndex()->getName();
+		$this->logOutput( "Waiting for the index to go green..." );
+		if ( !$this->waitForGreen( $indexName, self::WAIT_UNTIL_READY_TIMEOUT ) ) {
+			die( "Timeout! Please check server logs for {$this->getIndex()->getName()}." );
 		}
 	}
 
