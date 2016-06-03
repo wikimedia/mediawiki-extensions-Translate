@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_08ba301e",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-06-03T10:37:40Z",
+      "side": 1,
+      "message": "\u003d\u003d\u003d",
+      "revId": "0274f90580f0f6b9290db00b83b96c5219c2ec32",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_68865c6c",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-06-03T10:37:40Z",
+      "side": 1,
+      "message": "No space after !",
+      "revId": "0274f90580f0f6b9290db00b83b96c5219c2ec32",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
