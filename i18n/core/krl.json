@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Flrn",
-			"Mashoi7"
+			"Mashoi7",
+			"Varvana"
 		]
 	},
 	"translate": "Kiännä",
 	"translate-taction-translate": "Kiännä",
 	"translate-page-navigation-legend": "Valličy",
+	"translate-documentation-language": "Viestin dokumentacija",
 	"tux-languageselector": "Kieli",
 	"tux-empty-list-translated-action": "Kiännä"
 }
