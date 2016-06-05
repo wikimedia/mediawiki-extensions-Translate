@@ -731,12 +731,6 @@ class PageTranslationHooks {
 			return;
 		}
 
-		// Check if applicable
-		$page = TranslatablePage::isTranslationPage( $title );
-		if ( $page === false ) {
-			return;
-		}
-
 		list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 
 		// Get the translation percentage
