@@ -649,9 +649,9 @@ class PageTranslationHooks {
 		}
 
 		$title = $article->getTitle();
-
-		if ( TranslatablePage::isTranslationPage( $title ) ) {
-			self::translationPageHeader( $title );
+		$transPage = TranslatablePage::isTranslationPage( $title );
+		if ( $transPage ) {
+			self::translationPageHeader( $title, $transPage );
 		} else {
 			// Check for pages that are tagged or marked
 			self::sourcePageHeader( $title );
@@ -726,14 +726,8 @@ class PageTranslationHooks {
 		$context->getOutput()->addHTML( $legend );
 	}
 
-	protected static function translationPageHeader( Title $title ) {
+	protected static function translationPageHeader( Title $title, TranslatablePage $page ) {
 		if ( !$title->exists() ) {
-			return;
-		}
-
-		// Check if applicable
-		$page = TranslatablePage::isTranslationPage( $title );
-		if ( $page === false ) {
 			return;
 		}
 
