@@ -276,7 +276,7 @@ class PageTranslationHooks {
 					'title' => wfMessage( 'tpt-languages-zero' )->inLanguage( $userLang )->text(),
 					'class' => $classes,
 				);
-				$name = Linker::link( $specialTranslateTitle, $name, $attribs, $params );
+				$name = Linker::linkKnown( $specialTranslateTitle, $name, $attribs, $params );
 			}
 
 			$languages[] = $name;
@@ -685,7 +685,7 @@ class PageTranslationHooks {
 
 			$translate = SpecialPage::getTitleFor( 'Translate' );
 			$linkDesc = $context->msg( 'translate-tag-translate-link-desc' )->escaped();
-			$actions[] = Linker::link( $translate, $linkDesc, array(), $par );
+			$actions[] = Linker::linkKnown( $translate, $linkDesc, array(), $par );
 		}
 
 		if ( $canmark ) {
@@ -697,7 +697,7 @@ class PageTranslationHooks {
 				// This page has never been marked
 				if ( $marked === false ) {
 					$linkDesc = $context->msg( 'translate-tag-markthis' )->escaped();
-					$actions[] = Linker::link( $translate, $linkDesc, array(), $par );
+					$actions[] = Linker::linkKnown( $translate, $linkDesc, array(), $par );
 				} else {
 					$markUrl = $translate->getFullURL( $par );
 					$actions[] = $context->msg( 'translate-tag-markthisagain', $diffUrl, $markUrl )

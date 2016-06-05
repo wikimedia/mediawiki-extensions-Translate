@@ -284,7 +284,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		} else {
 			$text = htmlspecialchars( $code );
 		}
-		$link = Linker::link( $this->translate, $text, array(), $queryParameters );
+		$link = Linker::linkKnown( $this->translate, $text, array(), $queryParameters );
 
 		return Html::rawElement( 'td', array(), $link );
 	}
