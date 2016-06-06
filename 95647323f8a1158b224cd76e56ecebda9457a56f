@@ -16,6 +16,24 @@
       "revId": "95647323f8a1158b224cd76e56ecebda9457a56f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_c763eb39",
+        "filename": "utils/FuzzyBot.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-06-06T16:31:14Z",
+      "side": 1,
+      "message": "Of course!",
+      "parentUuid": "0efd9372_474a5bc9",
+      "revId": "95647323f8a1158b224cd76e56ecebda9457a56f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
