@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_8fb73f81",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2016-06-06T08:52:19Z",
+      "side": 1,
+      "message": "should we keep this outside the \"else\" block?",
+      "revId": "84185bbb01612aad12fc03d6cb3a74018037e13e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
