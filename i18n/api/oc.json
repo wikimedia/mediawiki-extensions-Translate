@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cedric31"
+		]
+	},
+	"apihelp-query+messagecollection-description": "Requèsta MessageCollection sus las traduccions.",
+	"apihelp-translationaids-description": "Recèrca totas las ajudas a la traduccion.",
+	"apihelp-translationreview-description": "Marcar las traduccions coma repassadas.",
+	"apihelp-translationstash-description": "Apondre de traduccions a la resèrva.",
+	"apihelp-searchtranslations-description": "Recercar de traduccions.",
+	"apihelp-searchtranslations-param-offset": "Decalatge per las traduccions.",
+	"apihelp-searchtranslations-example-1": "Afichar las traduccions per la lenga."
+}

@@ -106,7 +106,7 @@
 	"translate-rc-translation-filter": "Filtrar las traduccions :",
 	"translate-rc-translation-filter-no": "Far pas res",
 	"translate-rc-translation-filter-only": "Afichar unicament las traduccions",
-	"translate-rc-translation-filter-filter": "Eliminar las traduccions",
+	"translate-rc-translation-filter-filter": "Exclure las traduccions",
 	"translate-rc-translation-filter-site": "Solament los cambiaments de messatges del site",
 	"translationstats": "Estatisticas de traduccion",
 	"translate-stats-edits": "Edicions",
@@ -209,6 +209,7 @@
 	"translate-js-save-failed": "L'enregistrament a fracassat. Senhalatz aquela error.",
 	"translate-js-history": "Istoric de traduccion",
 	"translate-js-support": "Pausar una question",
+	"translate-js-support-unsaved-warning": "Avètz de traduccions pas enregistradas.",
 	"translate-gs-pos": "Pos.",
 	"translate-gs-code": "Còdi",
 	"translate-gs-continent": "Continent",
@@ -270,6 +271,8 @@
 	"tux-editor-message-desc-more": "Veire mai",
 	"tux-editor-message-desc-less": "Afichar mens",
 	"tux-editor-clear-translated": "Amagar la traduccion",
+	"tux-editor-proofreading-hide-own-translations": "Amagar vòstras traduccions",
+	"tux-editor-proofreading-show-own-translations": "Afichar vòstras traduccions",
 	"tux-editor-outdated-warning": "Aquesta traduccion pòt necessitar una mesa a jorn.",
 	"tux-editor-outdated-warning-diff-link": "Afichar las diferéncias",
 	"tux-editor-doc-editor-save": "Enregistrar la documentacion",
@@ -284,5 +287,6 @@
 	"tux-empty-list-other": "Pas res a traduire",
 	"tux-empty-list-other-guide": "Podètz ajudar a repassar las traduccions existentas",
 	"tux-empty-list-other-action": "Repassar las traduccions",
-	"tux-empty-list-other-link": "Afichar totes los messatges"
+	"tux-empty-list-other-link": "Afichar totes los messatges",
+	"tux-editor-message-tools-translations": "Totas las traduccions"
 }

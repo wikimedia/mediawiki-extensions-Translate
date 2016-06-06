@@ -7,8 +7,12 @@
 	"searchtranslations": "Recèrca de traduccions",
 	"tux-sst-edit": "Modificar la traduccion",
 	"tux-sst-search": "Recercar",
+	"tux-sst-search-ph": "Recèrca de traduccions",
 	"tux-sst-facet-language": "Lengas",
 	"tux-sst-facet-group": "Gropes de messatge",
 	"tux-sst-nosolr-title": "Recèrca indisponibla",
-	"tux-sst-default": "Traduccions"
+	"tux-sst-default": "Traduccions",
+	"tux-sst-translated": "Traduccions de $1",
+	"tux-sst-outdated": "Traduccions perimidas a partir de $1",
+	"tux-sst-ellipsis-outdated": "Traduccions obsolètas"
 }
