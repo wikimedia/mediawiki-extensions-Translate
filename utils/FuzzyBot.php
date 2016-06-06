@@ -14,6 +14,11 @@
  */
 class FuzzyBot {
 	public static function getUser() {
+		if ( method_exists( 'User', 'newSystemUser' ) ) {
+			return User::newSystemUser( self::getName(), array( 'steal' => true ) );
+		}
+
+		// BC for MW < 1.27
 		$bot = User::newFromName( self::getName() );
 		if ( $bot->isAnon() ) {
 			$bot->addToDatabase();
