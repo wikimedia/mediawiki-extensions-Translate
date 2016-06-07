@@ -272,8 +272,6 @@
 			onSelect: function ( language ) {
 				mw.translate.changeLanguage( language );
 			},
-			languages: mw.config.get( 'wgULSLanguages' ),
-			searchAPI: mw.util.wikiScript( 'api' ) + '?action=languagesearch&format=json',
 			quickList: function () {
 				return mw.uls.getFrequentLanguageList();
 			}
@@ -284,6 +282,7 @@
 		docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
 		if ( docLanguageCode ) {
 			docLanguageAutonym = mw.msg( 'translate-documentation-language' );
+			ulsOptions.languages = mw.config.get( 'wgULSLanguages' );
 			ulsOptions.languages[ docLanguageCode ] = docLanguageAutonym;
 			mw.translate.addDocumentationLanguage();
 			ulsOptions.showRegions = [ 'WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA' ];
