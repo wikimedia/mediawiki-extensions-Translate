@@ -529,7 +529,7 @@
 		 */
 		otherActionButton: function ( labelMsg, callback ) {
 			return $( '<button>' )
-				.addClass( 'green button' )
+				.addClass( 'mw-ui-button mw-ui-progressive mw-ui-big' )
 				.text( mw.msg( labelMsg ) )
 				.on( 'click', callback );
 		},
