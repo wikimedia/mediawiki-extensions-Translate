@@ -27,12 +27,14 @@
 	"tpt-list-nopages": "Cap de pagina es pas estada marcada per èsser traduita o prèsta per l'èsser.",
 	"tpt-new-pages": "{{PLURAL:$1|Aquesta pagina conten|Aquestas paginas contenon}} de tèxte amb de balisas de traduccion, mas cap de version d'{{PLURAL:$1|aquesta pagina es pas marcada per èsser traduita|aquestas paginas son pas marcadas per èsser traduitas}}.",
 	"tpt-old-pages": "De versions d'{{PLURAL:$1|aquesta pagina|aquestas paginas}} son estadas marcadas per èsser traduitas.",
+	"tpt-select-prioritylangs-force": "Empachar las traduccions dins de lengas autras que las lengas prioritàrias",
 	"tpt-select-prioritylangs-reason": "Motiu :",
 	"tpt-sections-prioritylangs": "Lengas prioritàrias",
 	"tpt-rev-mark": "marcar per traduccion",
 	"tpt-rev-unmark": "suprimir de la traduccion",
 	"tpt-rev-discourage": "descoratjar",
 	"tpt-rev-encourage": "restablir",
+	"tpt-rev-discourage-tooltip": "Dissuadir las futuras traduccions sus aquesta pagina.",
 	"translate-tag-translate-link-desc": "Traduire aquesta pagina",
 	"translate-tag-markthis": "Marcar aquesta pagina per èsser traduita",
 	"translate-tag-markthisagain": "Aquesta pagina a agut <span class=\"plainlinks\">[$1 de modificacions]</span> dempuèi qu’es estada darrièrament <span class=\"plainlinks\">[$2 marcada per èsser traduita]</span>.",
@@ -53,5 +55,6 @@
 	"pt-movepage-action-other": "Cambiar la cibla",
 	"pt-deletepage-current": "Nom de la pagina :",
 	"pt-deletepage-reason": "Motiu :",
+	"pm-old-translations-missing": "$1 conten pas d’ancianas traduccions",
 	"pm-pagetitle-placeholder": "Entrar lo títol de la pagina"
 }

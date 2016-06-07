@@ -8,7 +8,9 @@
 	"tsb-filter-pending": "Requèstas en espèra",
 	"tsb-reminder-title-generic": "Completatz vòstra presentacion per venir un traductor",
 	"tsb-reminder-content-generic": "Bonjorn $1,\n\nMercé de vos èsser inscrich sus {{SITENAME}}. Se acabatz vòstras traduccions de tèst, los administrators poiràn lèu vos acordar un plen accès a las traduccions.\n\nVenètz sus $2 e fasètz qualques traduccions mai.",
+	"tsb-didnt-make-any-translations": "Aqueste utilizaire a pas fait cap de traduccion.",
 	"tsb-translations-user": "Traduccions {{GENDER:$1|de l’utilizaire|de l’utilizaira}}",
 	"tsb-translations-current": "Traduccions existentas",
+	"translate-translationstash-translations": "Avètz acabat $1 {{PLURAL:$1|traduccion|traduccions}}.",
 	"tsb-limit-reached-title": "Mercé per vòstras traduccions"
 }
