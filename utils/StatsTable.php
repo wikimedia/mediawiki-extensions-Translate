@@ -294,16 +294,7 @@ class StatsTable {
 			return $desc;
 		}
 
-		$realFunction = array( 'MessageCache', 'singleton' );
-
-		if ( is_callable( $realFunction ) ) {
-			$mc = MessageCache::singleton();
-		} else {
-			global $wgMessageCache;
-
-			$mc = $wgMessageCache;
-		}
-
+		$mc = MessageCache::singleton();
 		$desc = $mc->transform( $group->getDescription(), true, $this->lang );
 		$cache->set( $key, $desc );
 
