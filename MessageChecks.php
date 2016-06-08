@@ -5,7 +5,6 @@
  * @file
  * @defgroup MessageCheckers Message Checkers
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -46,8 +45,8 @@
  */
 class MessageChecker {
 	protected $checks = array();
-	protected $group = null;
-	private static $globalBlacklist = null;
+	protected $group;
+	private static $globalBlacklist;
 
 	/**
 	 * Constructs a suitable checker for given message group.
@@ -95,7 +94,7 @@ class MessageChecker {
 	 * Set the tests for this checker. Array of callables with descriptive keys.
 	 * @param array $checks List of checks (suitable methods in this class)
 	 */
-	public function setChecks( $checks ) {
+	public function setChecks( array $checks ) {
 		foreach ( $checks as $k => $c ) {
 			if ( !is_callable( $c ) ) {
 				unset( $checks[$k] );
@@ -166,7 +165,7 @@ class MessageChecker {
 	 * @param array $warningsArray List of warnings produces by checkMessage().
 	 * @return array List of filtered warnings.
 	 */
-	protected function filterWarnings( $warningsArray ) {
+	protected function filterWarnings( array $warningsArray ) {
 		$groupId = $this->group->getId();
 
 		// There is an array of messages...
@@ -224,7 +223,7 @@ class MessageChecker {
 	 * @throws MWException
 	 * @return array List of warning messages with parameters.
 	 */
-	protected function fixMessageParams( $warnings ) {
+	protected function fixMessageParams( array $warnings ) {
 		$lang = RequestContext::getMain()->getLanguage();
 
 		foreach ( $warnings as $wkey => $warning ) {
@@ -257,7 +256,7 @@ class MessageChecker {
 	 * @param array $trans
 	 * @return array Items of $defs that are not in $trans.
 	 */
-	protected static function compareArrays( $defs, $trans ) {
+	protected static function compareArrays( array $defs, array $trans ) {
 		$missing = array();
 
 		foreach ( $defs as $defVar ) {
