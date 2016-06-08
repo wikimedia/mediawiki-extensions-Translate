@@ -265,39 +265,13 @@ class StatsTable {
 			'language' => $code
 		);
 
-		$attributes = array(
-			'title' => $this->getGroupDescription( $group )
-		);
+		$attributes = array();
 
 		$translateGroupLink = Linker::link(
 			$this->translate, $this->getGroupLabel( $group ), $attributes, $queryParameters
 		);
 
 		return $translateGroupLink;
-	}
-
-	/**
-	 * Gets the description of a group. This is a bit slow thing to do for
-	 * thousand+ groups, so some caching is involved.
-	 * @param MessageGroup $group
-	 * @return string Plain text
-	 */
-	public function getGroupDescription( MessageGroup $group ) {
-		$code = $this->lang->getCode();
-
-		$cache = wfGetCache( CACHE_ANYTHING );
-		$key = wfMemcKey( "translate-groupdesc-$code-" . $group->getId() );
-		$desc = $cache->get( $key );
-
-		if ( is_string( $desc ) ) {
-			return $desc;
-		}
-
-		$mc = MessageCache::singleton();
-		$desc = $mc->transform( $group->getDescription(), true, $this->lang );
-		$cache->set( $key, $desc );
-
-		return $desc;
 	}
 
 	/**
