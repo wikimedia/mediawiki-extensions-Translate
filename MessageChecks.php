@@ -110,10 +110,8 @@ class MessageChecker {
 	 * @see setChecks()
 	 * @param callable $check
 	 */
-	public function addCheck( $check ) {
-		if ( is_callable( $check ) ) {
-			$this->checks[] = $check;
-		}
+	public function addCheck( callable $check ) {
+		$this->checks[] = $check;
 	}
 
 	/**
