@@ -449,6 +449,18 @@ class TranslateHooks {
 			return true;
 		}
 
+		$server = TTMServer::primary();
+		if ( TTMServer::primary() instanceof SearchableTTMServer ) {
+			$href = SpecialPage::getTitleFor( 'SearchTranslations' )
+				->getFullUrl( array( 'query' => $term ) );
+			$wrapper = new RawMessage( '<div class="successbox plainlinks">$1</div>' );
+			$form = $wrapper
+				->params( $search->msg( 'translate-searchprofile-note', $href )->plain() )
+				->parse();
+
+			return false;
+		}
+
 		if ( !$search->getSearchEngine()->supports( 'title-suffix-filter' ) ) {
 			return false;
 		}
