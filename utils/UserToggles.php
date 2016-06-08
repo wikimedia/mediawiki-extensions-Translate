@@ -92,7 +92,6 @@ class TranslatePreferences {
 		}
 
 		$jsSelect = new JsSelectToInput( $selector );
-		$jsSelect->setSourceId( 'mw-language-selector' );
 
 		return $jsSelect;
 	}
