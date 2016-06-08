@@ -305,14 +305,7 @@ class SpecialTranslationStats extends SpecialPage {
 	 * @return JsSelectToInput
 	 */
 	protected function languageSelector() {
-		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
-			$languages = LanguageNames::getNames( $this->getLanguage()->getCode(),
-				LanguageNames::FALLBACK_NORMAL,
-				LanguageNames::LIST_MW_AND_CLDR
-			);
-		} else {
-			$languages = Language::fetchLanguageNames();
-		}
+		$languages = TranslateUtils::getLanguageNames( $this->getLanguage()->getCode() );
 
 		ksort( $languages );
 
