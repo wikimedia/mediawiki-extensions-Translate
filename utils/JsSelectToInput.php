@@ -33,14 +33,6 @@ class JsSelectToInput {
 		$this->select = $select;
 	}
 
-	/**
-	 * Set the source id of the selector
-	 * @param string $id
-	 */
-	public function setSourceId( $id ) {
-		$this->sourceId = $id;
-	}
-
 	/// @return string
 	public function getSourceId() {
 		return $this->sourceId;
@@ -80,14 +72,10 @@ class JsSelectToInput {
 	 * @return string Html code.
 	 */
 	public function getHtmlAndPrepareJS() {
-		if ( $this->sourceId === false ) {
-			if ( is_callable( array( $this->select, 'getAttribute' ) ) ) {
-				$this->sourceId = $this->select->getAttribute['id'];
-			}
+		$this->sourceId = $this->select->getAttribute( 'id' );
 
-			if ( !$this->sourceId ) {
-				throw new MWException( 'ID needs to be specified for the selector' );
-			}
+		if ( !is_string( $this->sourceId ) ) {
+			throw new MWException( 'ID needs to be specified for the selector' );
 		}
 
 		self::injectJs();
