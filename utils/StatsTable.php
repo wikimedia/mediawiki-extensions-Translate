@@ -49,10 +49,10 @@ class StatsTable {
 	/**
 	 * Statistics table element (heading or regular cell)
 	 *
-	 * @param $in \string Element contents.
-	 * @param $bgcolor \string Backround color in ABABAB format.
-	 * @param $sort \string Value used for sorting.
-	 * @return \string Html td element.
+	 * @param string $in Element contents.
+	 * @param string $bgcolor Backround color in ABABAB format.
+	 * @param string $sort Value used for sorting.
+	 * @return string Html td element.
 	 */
 	public function element( $in, $bgcolor = '', $sort = '' ) {
 		$attributes = array();
@@ -117,7 +117,6 @@ class StatsTable {
 
 	/**
 	 * @param Message $msg
-	 *
 	 * @return string HTML
 	 */
 	public function createColumnHeader( Message $msg ) {
@@ -226,8 +225,8 @@ class StatsTable {
 
 	/**
 	 * Makes a nice print from plain float.
-	 * @param $num float
-	 * @param $to string floor or ceil
+	 * @param number $num
+	 * @param string  $to floor or ceil
 	 * @return string Plain text
 	 */
 	public function formatPercentage( $num, $to = 'floor' ) {
@@ -239,7 +238,7 @@ class StatsTable {
 
 	/**
 	 * Gets the name of group with some extra formatting.
-	 * @param $group MessageGroup
+	 * @param MessageGroup $group
 	 * @return string Html
 	 */
 	public function getGroupLabel( MessageGroup $group ) {
@@ -255,9 +254,9 @@ class StatsTable {
 
 	/**
 	 * Gets the name of group linked to translation tool.
-	 * @param $group MessageGroup
-	 * @param $code string Language code
-	 * @param $params array Any extra query parameters.
+	 * @param MessageGroup $group
+	 * @param string $code Language code
+	 * @param array $params Any extra query parameters.
 	 * @return string Html
 	 */
 	public function makeGroupLink( MessageGroup $group, $code, $params ) {
@@ -280,7 +279,7 @@ class StatsTable {
 	/**
 	 * Gets the description of a group. This is a bit slow thing to do for
 	 * thousand+ groups, so some caching is involved.
-	 * @param $group MessageGroup
+	 * @param MessageGroup $group
 	 * @return string Plain text
 	 */
 	public function getGroupDescription( MessageGroup $group ) {
@@ -304,8 +303,8 @@ class StatsTable {
 	/**
 	 * Check whether translations in given group in given language
 	 * has been disabled.
-	 * @param $groupId string Message group id
-	 * @param $code string Language code
+	 * @param string $groupId Message group id
+	 * @param string $code Language code
 	 * @return bool
 	 */
 	public function isBlacklisted( $groupId, $code ) {
@@ -346,7 +345,7 @@ class StatsTable {
 	/**
 	 * Used to circumvent ugly tooltips when newlines are used in the
 	 * message content ("x\ny" becomes "x y").
-	 * @param $text
+	 * @param string $text
 	 * @return string
 	 */
 	public static function formatTooltip( $text ) {
