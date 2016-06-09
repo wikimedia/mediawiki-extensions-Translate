@@ -195,6 +195,7 @@
 	"pm-pagetitle-missing": "Inserisci il titolo della pagina",
 	"pm-langcode-missing": "Il codice della lingua sembra essere mancante nel titolo. Inserisci il titolo della pagina nel formato <page-name>/<language-code>.",
 	"pm-summary-import": "Traduzione importata usando la [[Special:PageMigration|migrazione di pagina]]",
+	"pm-on-import-message-text": "Le vecchie traduzioni sono state importate. Utilizza le opzioni aggiungi, scambia e cancella per regolare le unità di traduzione e clicca il bottone \"{{int:pm-savepages-button-label}}\" per salvarle. Clicca il bottone \"{{int:pm-cancel-button-label}}\" per scartare le modifiche.",
 	"pm-on-save-message-text": "Le unità di traduzione sono state salvate. È ora possibile inserire il titolo di una nuova pagina di traduzione per migrarla, o apportare modifiche alle unità sottostanti e salvare una nuova versione.",
 	"tpt-translate-title": "Permetti la traduzione del titolo della pagina",
 	"pp-save-summary": "Preparata la pagina per la traduzione",
