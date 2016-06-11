@@ -7,7 +7,8 @@
 			"Priviet",
 			"Revi",
 			"Hwangjy9",
-			"Kurousagi"
+			"Kurousagi",
+			"Ykhwong"
 		]
 	},
 	"managetranslatorsandbox": "번역자 연습장 관리",
@@ -40,7 +41,7 @@
 	"tsb-delete-userpage-summary": "연습 사용자의 사용자 문서 삭제",
 	"translationstash": "환영합니다",
 	"translate-translationstash-welcome": "$1님 환영합니다, 당신은 이제 번역자입니다.",
-	"translate-translationstash-welcome-note": "번역 도구에 익숙해지세요. 몇개의 메시지를 번역하고, 당신이 좋아하는 위키에서 번역자 권한을 얻어 위키에 기여하세요.",
+	"translate-translationstash-welcome-note": "번역 도구에 익숙해지세요. 몇 개의 메시지를 번역하시고 완전한 번역자 권한을 얻어 좋아하는 프로젝트에 참여하세요.",
 	"translate-translationstash-initialtranslation": "내 초기 번역",
 	"translate-translationstash-translations": "완성한 {{PLURAL:$1|번역}} $1개",
 	"translate-translationstash-skip-button-label": "다른 문서",
