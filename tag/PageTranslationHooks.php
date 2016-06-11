@@ -561,6 +561,9 @@ class PageTranslationHooks {
 			'read' => true,
 			'delete' => true,
 			'review' => true, // FlaggedRevs
+			'undelete' => true,
+			'deletedtext' => true,
+			'deletedhistory' => true,
 		);
 
 		if ( $page !== false && !isset( $whitelist[$action] ) ) {
