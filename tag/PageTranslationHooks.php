@@ -675,17 +675,7 @@ class PageTranslationHooks {
 
 		$actions = array();
 		if ( $marked && $context->getUser()->isAllowed( 'translate' ) ) {
-			$actions[] = Linker::linkKnown(
-				SpecialPage::getTitleFor( 'Translate' ),
-				$context->msg( 'translate-tag-translate-link-desc' )->escaped(),
-				array(),
-				array(
-					'group' => $page->getMessageGroupId(),
-					'language' => $language->getCode(),
-					'action' => 'page',
-					'filter' => '',
-				)
-			);
+			$actions[] =  self::getTranslateLink( $context, $page, $language->getCode() );
 		}
 
 		$hasChanges = $ready === $latest && $marked !== $latest;
@@ -727,6 +717,22 @@ class PageTranslationHooks {
 		$context->getOutput()->addHTML( $header );
 	}
 
+	private static function getTranslateLink( IContextSource $context,
+		TranslatablePage $page, $langCode
+	) {
+		return Linker::linkKnown(
+				SpecialPage::getTitleFor( 'Translate' ),
+				$context->msg( 'translate-tag-translate-link-desc' )->escaped(),
+				array(),
+				array(
+					'group' => $page->getMessageGroupId(),
+					'language' => $langCode,
+					'action' => 'page',
+					'filter' => '',
+				)
+			);
+	}
+
 	protected static function translationPageHeader( Title $title, TranslatablePage $page ) {
 		if ( !$title->exists() ) {
 			return;
@@ -744,12 +750,17 @@ class PageTranslationHooks {
 		$context = RequestContext::getMain();
 		$language = $context->getLanguage();
 
-		$url = wfExpandUrl( $page->getTranslationUrl( $code ), PROTO_RELATIVE );
-		$msg = $context->msg( 'tpt-translation-intro',
-			$url,
-			':' . $page->getTitle()->getPrefixedText(),
-			$language->formatNum( $per )
-		)->parse();
+		if ( $page->getSourceLanguageCode() === $code ) {
+			// If we are on the source language page, link to translate for user's language
+			$msg = self::getTranslateLink( $context, $page, $language->getCode() );
+		} else {
+			$url = wfExpandUrl( $page->getTranslationUrl( $code ), PROTO_RELATIVE );
+			$msg = $context->msg( 'tpt-translation-intro',
+				$url,
+				':' . $page->getTitle()->getPrefixedText(),
+				$language->formatNum( $per )
+			)->parse();
+		}
 
 		$header = Html::rawElement(
 			'div',
