@@ -3,7 +3,8 @@
 		"authors": [
 			"DCLXVI",
 			"පසිඳු කාවින්ද",
-			"StanProg"
+			"StanProg",
+			"Termininja"
 		]
 	},
 	"tpt-diff-old": "Предишен текст",
@@ -15,12 +16,12 @@
 	"tpt-languages-legend": "Други езици:",
 	"tpt-languages-nonzero": "$1 ($2% преведено)",
 	"tpt-discouraged-language-reason": "Причина: $1",
-	"tpt-download-page": "Изнасяне на страница с преводите",
 	"tpt-aggregategroup-add": "Добавяне",
 	"tpt-aggregategroup-save": "Съхраняване",
 	"tpt-aggregategroup-new-name": "Име:",
 	"tpt-aggregategroup-new-description": "Описание (незадължително):",
 	"tpt-aggregategroup-invalid-group": "Групата не съществува",
+	"log-action-filter-pagetranslation-delete": "Изтриване на страници",
 	"pt-movepage-list-other": "{{PLURAL:$1|Друга подстраница|Други подстраници}}",
 	"pt-movepage-current": "Текущо име:",
 	"pt-movepage-new": "Ново име:",

@@ -31,7 +31,7 @@
 	"translate-page-disabled": "بو دیل‌ده بو گروپون چئویرمه‌سی باغلانیب‌دیر.\nدلیل:\n\n<em>$1</em>",
 	"translate-language-disabled": "بو دیله چئویرمک باغلانیب‌دیر.",
 	"translate-page-settings-legend": "تنظیملر",
-	"translate-page-group": "قروپ",
+	"translate-page-group": "گروه",
 	"translate-page-language": "دیل",
 	"translate-page-limit": "سینیر",
 	"translate-page-limit-option": "صحیفه‌ده {{PLURAL:$1|بیر|$1}} مئساژ",
