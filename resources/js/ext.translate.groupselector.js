@@ -188,19 +188,14 @@
 				groupSelector.hide();
 
 				groupSelector.$trigger
-					.removeClass( 'tail' )
+					.addClass( 'expanded' )
 					.nextAll().remove();
-
-				groupSelector.$trigger.addClass( 'expanded' );
-				// FIXME In future, if we are going to have multiple groupselectors per page
-				// this will fail.
-				$( '.tux-breadcrumb .tail' ).remove();
 
 				if ( !groupSelector.options.preventSelector ) {
 					$newLink = $( '<span>' )
-						.addClass( 'grouptitle grouplink tail' )
+						.addClass( 'grouptitle grouplink' )
 						.text( messageGroup.label );
-					$( '.tux-breadcrumb .grouplink:last' ).after( $newLink );
+					groupSelector.$trigger.after( $newLink );
 					$newLink.data( 'msggroupid', messageGroup.id );
 
 					if ( messageGroup.groups && messageGroup.groups.length > 0 ) {
