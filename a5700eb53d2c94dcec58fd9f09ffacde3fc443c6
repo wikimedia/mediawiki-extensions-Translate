@@ -52,6 +52,24 @@
       "revId": "a5700eb53d2c94dcec58fd9f09ffacde3fc443c6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_1c16c8a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-06-13T12:36:07Z",
+      "side": 1,
+      "message": "Maybe I misunderstood your comment but it works as I expect with this patch.\n\n- With this patch:\n   On RL/T and RL/T/es: \u003c RL\n- Without this patch:\n    On RL/T and RL/T/es: RL",
+      "parentUuid": "0efd9372_dc05607e",
+      "revId": "a5700eb53d2c94dcec58fd9f09ffacde3fc443c6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
