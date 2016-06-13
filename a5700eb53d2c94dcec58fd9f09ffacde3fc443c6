@@ -34,6 +34,24 @@
       "revId": "a5700eb53d2c94dcec58fd9f09ffacde3fc443c6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_dc05607e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-06-13T12:28:09Z",
+      "side": 1,
+      "message": "I have no strong opinion about this, but I think what I just said is likely the original thought for not displaying the subtitle.\n\nIt is a bit unclear to me whether this is something you would like to change, or changed already.",
+      "parentUuid": "0efd9372_dc91e053",
+      "revId": "a5700eb53d2c94dcec58fd9f09ffacde3fc443c6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
