@@ -184,16 +184,18 @@
 	transition: width 250ms;
 }
 
-.tux-messagetable-header.floating {
-	background: white;
-	position: fixed;
-	padding-top: 5px;
-	top: 0;
-	z-index: 200;
-}
+@media screen and ( min-height: 600px ) {
+	.tux-messagetable-header.floating {
+		background: white;
+		position: fixed;
+		padding-top: 5px;
+		top: 0;
+		z-index: 200;
+	}
 
-.tux-messagetable-header.floating+.tux-messagelist {
-	margin-top: 50px;
+	.tux-messagetable-header.floating+.tux-messagelist {
+		margin-top: 50px;
+	}
 }
 
 .tux-message-filter-box {
