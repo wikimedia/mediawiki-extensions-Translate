@@ -450,7 +450,7 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'ext.translate.navitoggle',
 		'ext.translate.recentgroups',
 		'ext.translate.workflowselector',
-		'ext.uls.mediawiki',
+		'jquery.uls.data',
 		'mediawiki.Uri',
 		'mediawiki.api',
 		'mediawiki.api.parse',

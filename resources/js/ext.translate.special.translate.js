@@ -224,9 +224,35 @@
 		);
 	}
 
+	function setupLanguageSelector( $element ) {
+		var docLanguageCode, docLanguageAutonym, ulsOptions;
+
+		ulsOptions = {
+			onSelect: function ( language ) {
+				mw.translate.changeLanguage( language );
+			},
+			quickList: function () {
+				return mw.uls.getFrequentLanguageList();
+			}
+		};
+
+		// If a documentation pseudo-language is defined,
+		// add it to the language selector
+		docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
+		if ( docLanguageCode ) {
+			docLanguageAutonym = mw.msg( 'translate-documentation-language' );
+			ulsOptions.languages = mw.config.get( 'wgULSLanguages' );
+			ulsOptions.languages[ docLanguageCode ] = docLanguageAutonym;
+			mw.translate.addDocumentationLanguage();
+			ulsOptions.showRegions = [ 'WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA' ];
+		}
+
+		$element.uls( ulsOptions );
+	}
+
 	$( document ).ready( function () {
 		var $translateContainer, $hideTranslatedButton, $controlOwnButton, $messageList,
-			docLanguageAutonym, docLanguageCode, ulsOptions, filter, uri, position;
+			filter, uri, position;
 
 		$messageList = $( '.tux-messagelist' );
 		if ( $messageList.length ) {
@@ -267,29 +293,14 @@
 		updateGroupInformation( state );
 
 		$messageList.messagetable();
-		// Use ULS for language selection if it's available
-		ulsOptions = {
-			onSelect: function ( language ) {
-				mw.translate.changeLanguage( language );
-			},
-			languages: mw.config.get( 'wgULSLanguages' ),
-			searchAPI: mw.util.wikiScript( 'api' ) + '?action=languagesearch&format=json',
-			quickList: function () {
-				return mw.uls.getFrequentLanguageList();
-			}
-		};
 
-		// If a documentation pseudo-language is defined,
-		// add it to the language selector
-		docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
-		if ( docLanguageCode ) {
-			docLanguageAutonym = mw.msg( 'translate-documentation-language' );
-			ulsOptions.languages[ docLanguageCode ] = docLanguageAutonym;
-			mw.translate.addDocumentationLanguage();
-			ulsOptions.showRegions = [ 'WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA' ];
-		}
-
-		$( '.ext-translate-language-selector .uls' ).uls( ulsOptions );
+		$( '.ext-translate-language-selector .uls' ).one( 'click', function () {
+			var $target = $( this );
+			mw.loader.using( 'ext.uls.mediawiki' ).done( function () {
+				setupLanguageSelector( $target );
+				$target.click();
+			} );
+		} );
 
 		if ( $.fn.translateeditor ) {
 			// New translation editor
