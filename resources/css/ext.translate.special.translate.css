@@ -196,7 +196,7 @@
 	margin-top: 50px;
 }
 
-.tux-messagetable-header .tux-message-filter-box {
+.tux-message-filter-box {
 	font-size: 14px;
 	height: 28px;
 	border: 1px solid #C9C9C9;
@@ -204,13 +204,13 @@
 	padding: 0 5px;
 }
 
-.tux-messagetable-header .tux-message-filter-box-icon {
-	background: url('../images/search.png') no-repeat scroll right center transparent;
+.tux-message-filter-wrapper {
+	background: url('../images/search.png') no-repeat scroll left center transparent;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/search.svg);
 	/* @embed */
 	background-image: linear-gradient(transparent, transparent), url(../images/search.svg);
 	background-size: 25px;
-	height: 28px;
+	padding-left: 30px;
 }
 
 .client-nojs .tux-messagetable-header {
