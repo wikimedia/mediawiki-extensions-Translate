@@ -665,44 +665,43 @@ class PageTranslationHooks {
 
 	protected static function sourcePageHeader( Title $title ) {
 		$context = RequestContext::getMain();
+		$language = $context->getLanguage();
 
 		$page = TranslatablePage::newFromTitle( $title );
 
 		$marked = $page->getMarkedTag();
 		$ready = $page->getReadyTag();
-
-		$title = $page->getTitle();
-
 		$latest = $title->getLatestRevID();
-		$canmark = $ready === $latest && $marked !== $latest;
 
 		$actions = array();
-
 		if ( $marked && $context->getUser()->isAllowed( 'translate' ) ) {
-			$par = array(
-				'group' => $page->getMessageGroupId(),
-				'language' => $context->getLanguage()->getCode(),
-				'action' => 'page',
-				'filter' => '',
+			$actions[] = Linker::linkKnown(
+				SpecialPage::getTitleFor( 'Translate' ),
+				$context->msg( 'translate-tag-translate-link-desc' )->escaped(),
+				array(),
+				array(
+					'group' => $page->getMessageGroupId(),
+					'language' => $language->getCode(),
+					'action' => 'page',
+					'filter' => '',
+				)
 			);
-
-			$translate = SpecialPage::getTitleFor( 'Translate' );
-			$linkDesc = $context->msg( 'translate-tag-translate-link-desc' )->escaped();
-			$actions[] = Linker::linkKnown( $translate, $linkDesc, array(), $par );
 		}
 
-		if ( $canmark ) {
+		$hasChanges = $ready === $latest && $marked !== $latest;
+		if ( $hasChanges ) {
 			$diffUrl = $title->getFullURL( array( 'oldid' => $marked, 'diff' => $latest ) );
-			$par = array( 'target' => $title->getPrefixedText(), 'do' => 'mark' );
-			$translate = SpecialPage::getTitleFor( 'PageTranslation' );
 
 			if ( $context->getUser()->isAllowed( 'pagetranslation' ) ) {
-				// This page has never been marked
+				$pageTranslation = SpecialPage::getTitleFor( 'PageTranslation' );
+				$params = array( 'target' => $title->getPrefixedText(), 'do' => 'mark' );
+
 				if ( $marked === false ) {
+					// This page has never been marked
 					$linkDesc = $context->msg( 'translate-tag-markthis' )->escaped();
-					$actions[] = Linker::linkKnown( $translate, $linkDesc, array(), $par );
+					$actions[] = Linker::linkKnown( $pageTranslation, $linkDesc, array(), $params );
 				} else {
-					$markUrl = $translate->getFullURL( $par );
+					$markUrl = $pageTranslation->getFullURL( $params );
 					$actions[] = $context->msg( 'translate-tag-markthisagain', $diffUrl, $markUrl )
 						->parse();
 				}
@@ -715,18 +714,17 @@ class PageTranslationHooks {
 			return;
 		}
 
-		$language = $context->getLanguage();
-		$legend = Html::rawElement(
+		$header = Html::rawElement(
 			'div',
 			array(
 				'class' => 'mw-pt-translate-header noprint nomobile',
 				'dir' => $language->getDir(),
 				'lang' => $language->getHtmlCode(),
 			),
-			$context->getLanguage()->semicolonList( $actions )
+			$language->semicolonList( $actions )
 		) . Html::element( 'hr' );
 
-		$context->getOutput()->addHTML( $legend );
+		$context->getOutput()->addHTML( $header );
 	}
 
 	protected static function translationPageHeader( Title $title, TranslatablePage $page ) {
@@ -742,36 +740,28 @@ class PageTranslationHooks {
 		if ( isset( $pers[$code] ) ) {
 			$per = $pers[$code] * 100;
 		}
-		$titleText = $page->getTitle()->getPrefixedText();
 
-		// This url might get cached
-		$url = wfExpandUrl( $page->getTranslationUrl( $code ), PROTO_RELATIVE );
-
-		// Output
 		$context = RequestContext::getMain();
 		$language = $context->getLanguage();
-		$wrap = Html::rawElement(
+
+		$url = wfExpandUrl( $page->getTranslationUrl( $code ), PROTO_RELATIVE );
+		$msg = $context->msg( 'tpt-translation-intro',
+			$url,
+			':' . $page->getTitle()->getPrefixedText(),
+			$language->formatNum( $per )
+		)->parse();
+
+		$header = Html::rawElement(
 			'div',
 			array(
 				'class' => 'mw-pt-translate-header noprint',
 				'dir' => $language->getDir(),
 				'lang' => $language->getHtmlCode(),
 			),
-			'$1'
-		);
+			$msg
+		) . Html::element( 'hr' );
 
-		$out = $context->getOutput();
-
-		$out->wrapWikiMsg(
-			$wrap,
-			array(
-				'tpt-translation-intro',
-				$url,
-				':' . $titleText,
-				$language->formatNum( $per )
-			)
-		);
-		$out->addHTML( '<hr />' );
+		$context->getOutput()->addHTML( $header );
 	}
 
 	/// Hook: SpecialPage_initList
