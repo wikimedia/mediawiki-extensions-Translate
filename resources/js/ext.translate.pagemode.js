@@ -44,6 +44,10 @@
 					pagemode.$message.find( '.tux-pagemode-translation' )
 						.removeClass( 'highlight' );
 					pagemode.message.translation = translation;
+
+					pagemode.$message.find( '.tux-pagemode-status' )
+						.removeClass( 'translated fuzzy proofread untranslated' )
+						.addClass( pagemode.message.properties.status );
 				}
 			} );
 

@@ -157,8 +157,8 @@
 				);
 
 			this.$messageItem
-				.addClass( 'translated' )
-				.removeClass( 'untranslated' );
+				.removeClass( 'untranslated translated fuzzy proofread' )
+				.addClass( 'translated' );
 
 			this.dirty = false;
 
@@ -167,6 +167,8 @@
 					'change',
 					[ 'translated', this.message.properties.status ]
 				);
+
+				this.message.properties.status = 'translated';
 				// TODO: Update any other statsbar for the same group in the page.
 			}
 		},
