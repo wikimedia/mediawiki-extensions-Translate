@@ -16,6 +16,24 @@
       "revId": "a5700eb53d2c94dcec58fd9f09ffacde3fc443c6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_dc91e053",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-06-13T12:12:33Z",
+      "side": 1,
+      "message": "I don\u0027t see it even when it\u0027s translated.",
+      "parentUuid": "0efd9372_f90156ba",
+      "revId": "a5700eb53d2c94dcec58fd9f09ffacde3fc443c6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
