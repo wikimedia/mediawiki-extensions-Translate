@@ -2,11 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"පසිඳු කාවින්ද",
-			"عثمان خان شاہ"
+			"عثمان خان شاہ",
+			"Obaid Raza"
 		]
 	},
 	"pagetranslation": "صفحہ ترجمہ",
-	"tpt-template": "صفحہ کے سانچے",
 	"tpt-diff-old": "پچھلے ٹیکسٹ",
 	"tpt-diff-new": "نئے متن",
 	"tpt-sections-template": "ترجمہ صفحہ سانچے",
@@ -24,18 +24,26 @@
 	"tpt-rev-encourage-tooltip": "عمومی ترجمہ کرنے کے لئے اس صفحے کو بحال.",
 	"translate-tag-translate-link-desc": "اس صفحہ کا ترجمہ",
 	"translate-tag-markthis": "ترجمہ کے لئے اس صفحے نشان زد کریں",
+	"tpt-languages-legend": "دیگر زبانیں:",
 	"tpt-languages-zero": "اس زبان کے لئے ترجمہ شروع",
 	"tpt-languages-nonzero": "$1 ($2% ترجمہ ہوا)",
-	"tpt-download-page": "ترجمے کے ساتھ اس صفحے کی برآمد",
+	"tpt-tab-translate": "ترجمہ کریں",
+	"tpt-discouraged-language-reason": "وجہ:  $1",
 	"tpt-aggregategroup-add": "شامل کریں",
 	"tpt-aggregategroup-save": "محفوظ کریں",
 	"tpt-aggregategroup-add-new": "ایک نیا میرا گروپ شامل کریں",
 	"tpt-aggregategroup-new-name": "نام:",
 	"tpt-aggregategroup-invalid-group": "گروپ موجود نہیں",
+	"tpt-aggregategroup-edit-name": "نام:",
+	"tpt-aggregategroup-edit-description": "تفصیل:",
+	"tpt-aggregategroup-update": "محفوظ کریں",
+	"tpt-aggregategroup-update-cancel": "منسوخ",
 	"log-name-pagetranslation": "صفحہ ترجمہ لاگ ان کریں",
+	"log-action-filter-pagetranslation-move": "منتقل کردہ صفحات",
 	"pt-movepage-list-pages": "منتقل کرنے کے لئے صفحات کی فہرست",
-	"pt-movepage-list-translation": "ترجمہ صفحات",
-	"pt-movepage-list-section": "سیکشن کے صفحات",
+	"pt-movepage-list-translation": "ترجمہ {{PLURAL:$1|صفحہ|صفحات}}",
+	"pt-movepage-list-section": "ترجمہ اکائی {{PLURAL:$1|صفحہ|صفحات}}",
+	"pt-movepage-list-other": "دیگر ذیلی {{PLURAL:$1|صفحہ|صفحات}}",
 	"pt-movepage-legend": "ترجمہ صفحہ منتقل",
 	"pt-movepage-current": "موجودہ نام:",
 	"pt-movepage-new": "نیا نام:",
@@ -51,5 +59,12 @@
 	"pt-deletepage-reason": "وجہ:",
 	"pt-deletepage-list-pages": "خارج کرنے کے لئے صفحات کی فہرست",
 	"pt-deletepage-list-translation": "ترجمہ صفحات",
-	"pt-deletepage-list-section": "سیکشن کے صفحات"
+	"pt-deletepage-list-section": "اکائی کے صفحات",
+	"pt-deletepage-list-other": "دیگر ذیلی صفحات",
+	"pm-savepages-button-label": "محفوظ کریں",
+	"pm-cancel-button-label": "منسوخ",
+	"pm-page-does-not-exist": "$1 موجود نہیں ہے۔",
+	"pp-save-button-label": "محفوظ کریں",
+	"pp-cancel-button-label": "منسوخ",
+	"tpt-generic-button": "تصدیق"
 }
