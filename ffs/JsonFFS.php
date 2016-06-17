@@ -70,6 +70,7 @@ class JsonFFS extends SimpleFFS {
 		$messages = array();
 		$template = $this->read( $collection->getLanguage() );
 
+		$messages['@metadata'] = array();
 		if ( isset( $template['METADATA'] ) ) {
 			$messages['@metadata'] = $template['METADATA'];
 		}
