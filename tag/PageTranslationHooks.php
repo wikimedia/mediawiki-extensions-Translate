@@ -802,7 +802,8 @@ class PageTranslationHooks {
 
 	/// Hook: SkinSubPageSubtitle
 	public static function replaceSubtitle( &$subpages, $skin = null, OutputPage $out ) {
-		if ( !TranslatablePage::isTranslationPage( $out->getTitle() )
+		$isTranslationPage = TranslatablePage::isTranslationPage( $out->getTitle() );
+		if ( !$isTranslationPage
 			&& !TranslatablePage::isSourcePage( $out->getTitle() )
 		) {
 			return true;
@@ -811,23 +812,24 @@ class PageTranslationHooks {
 		// Copied from Skin::subPageSubtitle()
 		if ( $out->isArticle() && MWNamespace::hasSubpages( $out->getTitle()->getNamespace() ) ) {
 			$ptext = $out->getTitle()->getPrefixedText();
-			if ( preg_match( '/\//', $ptext ) ) {
+			if ( strpos( $ptext, '/' ) !== false ) {
 				$links = explode( '/', $ptext );
 				array_pop( $links );
-				// Also pop of one extra for language code is needed
-				if ( TranslatablePage::isTranslationPage( $out->getTitle() ) ) {
+				if ( $isTranslationPage ) {
+					// Also remove language code page
 					array_pop( $links );
 				}
 				$c = 0;
 				$growinglink = '';
 				$display = '';
+				$lang = $skin->getLanguage();
 
 				foreach ( $links as $link ) {
 					$growinglink .= $link;
 					$display .= $link;
 					$linkObj = Title::newFromText( $growinglink );
 
-					if ( is_object( $linkObj ) && $linkObj->exists() ) {
+					if ( is_object( $linkObj ) && $linkObj->isKnown() ) {
 						$getlink = Linker::linkKnown(
 							SpecialPage::getTitleFor( 'MyLanguage', $growinglink ),
 							htmlspecialchars( $display )
@@ -836,10 +838,9 @@ class PageTranslationHooks {
 						$c++;
 
 						if ( $c > 1 ) {
-							$subpages .= wfMessage( 'pipe-separator' )->plain();
+							$subpages .= $lang->getDirMarkEntity() . $skin->msg( 'pipe-separator' )->escaped();
 						} else {
-							// This one is stupid imho, doesn't work with chihuahua
-							// $subpages .= '&lt; ';
+							$subpages .= '&lt; ';
 						}
 
 						$subpages .= $getlink;
