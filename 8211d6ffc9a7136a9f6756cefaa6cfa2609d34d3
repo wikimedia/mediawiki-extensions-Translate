@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_52581efd",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 840,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-06-17T07:48:08Z",
+      "side": 0,
+      "message": "chihuaha btw refers to skin used in the past by KDE wikis.",
+      "revId": "8211d6ffc9a7136a9f6756cefaa6cfa2609d34d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
