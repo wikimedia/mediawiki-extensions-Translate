@@ -18,12 +18,13 @@
 			"Slboat",
 			"Umherirrender",
 			"Robby",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Guycn2"
 		]
 	},
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view]]",
 	"right-pagetranslation": "{{doc-right|pagetranslation}}",
-	"action-pagetranslation": "{{doc-action|pagetranslation}})",
+	"action-pagetranslation": "{{doc-action|pagetranslation}}",
 	"tpt-section": "[[File:Page_translation_mark_view.png|thumb|Page translation]]\nA screenshot of the translation administration page is available.\n\nParameters:\n* $1 - the identifier of the unit, or the string \"Page display title\" (special unit identifier for page title; hard-coded)",
 	"tpt-section-new": "[[File:Page_translation_mark_view.png|thumb|Page translation]]\nA screenshot of the translation administration page is available.\n\nParameters:\n* $1 - the identifier of the unit, or the string \"Page display title\" (special unit identifier for page title; hard-coded)",
 	"tpt-section-deleted": "See definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - the identifier of the unit, or the string \"Page display title\" (special unit identifier for page title; hard-coded)",
