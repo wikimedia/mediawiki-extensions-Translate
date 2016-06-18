@@ -68,6 +68,7 @@
 	"translate-page-navigation-legend": "{{Identical|Navigation}}",
 	"translate-page-showing": "Information in the page navigation box of the translate special page, [{{canonicalurl:Special:Translate|taction=translate&limit=100&language=en-gb&group=ext-translate-core}} for example].\n*$1 is the number of the first message displayed on the page\n*$2 is the number of the last message displayed on the page\n*$3 is the total number of messages fetched by the program",
 	"translate-page-showing-all": "Information in the page navigation box of the translate special page, [{{canonicalurl:Special:Translate|taction=translate&limit=5000&language=en-gb&group=ext-translate-core}} for example].\n*$1 is the total number of messages fetched by the program",
+	"translate-page-showing-none": "Used in query result page.\n\nSee also:\n* {{msg-mw|Translate-page-showing-all}}\n* {{msg-mw|Translate-page-showing}}\n* {{msg-mw|Translate-page-paging-links}}, {{msg-mw|Translate-prev}} and {{msg-mw|Translate-next}}"
 	"translate-page-paging-links": "{{optional}}\nParameters:\n* $1 - a link which points to the previous page\n* $2 - a link which points to the next page",
 	"translate-next": "{{Identical|Next page}}",
 	"translate-prev": "{{Identical|Previous page}}",
