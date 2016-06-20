@@ -44,6 +44,7 @@
 	"translate-page-navigation-legend": "Navegação",
 	"translate-page-showing": "A apresentar as mensagens $1 a $2 de $3.",
 	"translate-page-showing-all": "A apresentar $1 {{PLURAL:$1|mensagem|mensagens}}.",
+	"translate-page-showing-none": "Não há mensagens para apresentar.",
 	"translate-next": "Página seguinte",
 	"translate-prev": "Página anterior",
 	"translate-page-description-legend": "Informação sobre o grupo",

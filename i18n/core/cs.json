@@ -42,6 +42,7 @@
 	"translate-page-navigation-legend": "Navigace",
 	"translate-page-showing": "Zobrazeny zprávy $1 až $2 z $3.",
 	"translate-page-showing-all": "{{PLURAL:$1|Zobrazena $1 zpráva|Zobrazeny $1 zprávy|Zobrazeno $1 zpráv}}.",
+	"translate-page-showing-none": "Požadavku neodpovídají žádné zprávy.",
 	"translate-next": "Další stránka",
 	"translate-prev": "Předchozí stránka",
 	"translate-page-description-legend": "Informace o skupině",

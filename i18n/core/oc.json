@@ -35,6 +35,7 @@
 	"translate-page-navigation-legend": "Navigacion",
 	"translate-page-showing": "Visualizacion dels messatges de $1 a $2 sus $3.",
 	"translate-page-showing-all": "Visualizacion {{PLURAL:$1|d'$1 messatge|de $1 messatges}}.",
+	"translate-page-showing-none": "Cap de messatge de visualizar.",
 	"translate-next": "Pagina seguenta",
 	"translate-prev": "Pagina precedenta",
 	"translate-page-description-legend": "Entresenha a prepaus del grop",

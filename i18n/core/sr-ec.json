@@ -39,6 +39,7 @@
 	"translate-page-navigation-legend": "Навигација",
 	"translate-page-showing": "Приказ порука од $1 до $2, од $3.",
 	"translate-page-showing-all": "Приказ $1 {{PLURAL:$1|поруке|порука}}.",
+	"translate-page-showing-none": "Нема порука.",
 	"translate-page-paging-links": "[ $1 ] [ $2 ]",
 	"translate-next": "Следећа страница",
 	"translate-prev": "Претходна страница",

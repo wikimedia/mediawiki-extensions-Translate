@@ -39,6 +39,7 @@
 	"translate-page-navigation-legend": "सुचालन",
 	"translate-page-showing": "$3चे $1पासून $2पर्यंत संदेश दाखवत आहे.",
 	"translate-page-showing-all": "$1 {{PLURAL:$1|संदेश|संदेश}} दाखवत आहे .",
+	"translate-page-showing-none": "दाखविण्यासाठी संदेश नाहीत.",
 	"translate-next": "पुढील पान",
 	"translate-prev": "मागील पान",
 	"translate-page-description-legend": "गटाबद्दल माहिती",
