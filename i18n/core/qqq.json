@@ -283,6 +283,7 @@
 	"translate-documentation-language": "This is the name of the message documentation language code (qqq). Follow the rules of your languages and use small first letter if it doesn't capitalize language names always. It might be easier to translate it as \"translation guidelines\" or \"translation help\".\n{{Identical|Message documentation}}",
 	"translate-searchprofile": "Tab in [[Special:Search]]\n{{Identical|Translation}}",
 	"translate-searchprofile-tooltip": "Tooltip for a tab in [[Special:Search]]",
+	"translate-searchprofile-note": "A message shown in [[Special:Search]]. $1 is the url to a special page.",
 	"translate-search-languagefilter": "Label for a language dropdown in Special:Search (when ElasticSearch is not in use?).",
 	"translate-search-nofilter": "First option in language dropdown in Special:Search to not limit by language.",
 	"translate-messagereview-submit": "Button label in [[Special:Translate]] review mode.\n\nThis should be consistent with the following messages:\n* {{msg-mw|Translate-messagereview-progress}}\n* {{msg-mw|Translate-messagereview-failure}}\n* {{msg-mw|Translate-messagereview-done}}",

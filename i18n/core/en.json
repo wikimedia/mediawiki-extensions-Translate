@@ -252,6 +252,7 @@
 	"translate-documentation-language": "Message documentation",
 	"translate-searchprofile": "Translations",
 	"translate-searchprofile-tooltip": "Search from all translations",
+	"translate-searchprofile-note": "More search options are available with [$1 translation search].",
 	"translate-search-languagefilter": "Filter by language:",
 	"translate-search-nofilter": "No filtering",
 	"translate-messagereview-submit": "Mark reviewed",
