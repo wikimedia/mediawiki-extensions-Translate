@@ -315,7 +315,6 @@ class SpecialTranslationStats extends SpecialPage {
 		}
 
 		$jsSelect = new JsSelectToInput( $selector );
-		$jsSelect->setSourceId( 'mw-language-selector' );
 
 		return $jsSelect;
 	}
@@ -366,7 +365,6 @@ class SpecialTranslationStats extends SpecialPage {
 		}
 
 		$jsSelect = new JsSelectToInput( $selector );
-		$jsSelect->setSourceId( 'mw-group-selector' );
 
 		return $jsSelect;
 	}
