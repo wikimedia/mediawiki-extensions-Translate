@@ -30,18 +30,9 @@ class CharacterEditStats extends Maintenance {
 		);
 		$this->addOption(
 			'days',
-			'(optional) Calculate for given number of days (default: 30) ' .
-			'(capped by the max age of recent changes on the wiki)',
+			'(optional) Calculate for given number of days (default: 30)',
 			false, /*required*/
 			true /*has arg*/
-		);
-		$this->addOption(
-			'bots',
-			'(optional) Include bot edits'
-		);
-		$this->addOption(
-			'diff',
-			'(optional) Count the edit diffs alone'
 		);
 		$this->addOption(
 			'ns',
@@ -52,14 +43,10 @@ class CharacterEditStats extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgTranslateFuzzyBotName, $wgSitename;
+		global $wgTranslateFuzzyBotName, $wgSitename, $wgTranslateMessageNamespaces;
 
 		$days = (int)$this->getOption( 'days', 30 );
-		$hours = $days * 24;
-
 		$top = (int)$this->getOption( 'top', -1 );
-
-		$bots = $this->hasOption( 'bots' );
 
 		$namespaces = array();
 		if ( $this->hasOption( 'ns' ) ) {
@@ -70,35 +57,30 @@ class CharacterEditStats extends Maintenance {
 					$namespaces[] = $namespace;
 				}
 			}
+		} else {
+			$namespaces = $wgTranslateMessageNamespaces;
 		}
 
 		// Select set of edits to report on
+		$rows = self::getRevisionsFromHistory( $days, $namespaces );
 
-		// Fetch some extrac fields that normally TranslateUtils::translationChanges wont
-		$extraFields = array( 'rc_old_len', 'rc_new_len' );
-		$rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces, $extraFields );
 		// Get counts for edits per language code after filtering out edits by FuzzyBot
 		$codes = array();
 
 		foreach ( $rows as $_ ) {
 			// Filter out edits by $wgTranslateFuzzyBotName
-			if ( $_->rc_user_text === $wgTranslateFuzzyBotName ) {
+			if ( $_->user_text === $wgTranslateFuzzyBotName ) {
 				continue;
 			}
 
-			$handle = new MessageHandle( Title::newFromText( $_->rc_title ) );
+			$handle = new MessageHandle( Title::newFromText( $_->title ) );
 			$code = $handle->getCode();
 
 			if ( !isset( $codes[$code] ) ) {
 				$codes[$code] = 0;
 			}
 
-			if ( $this->hasOption( 'diff' ) ) {
-				$diff = abs( $_->rc_new_len - $_->rc_old_len );
-			} else {
-				$diff = $_->rc_new_len;
-			}
-			$codes[$code] += $diff;
+			$codes[$code] += $_->length;
 		}
 
 		// Sort counts and report descending up to $top rows.
@@ -124,6 +106,27 @@ class CharacterEditStats extends Maintenance {
 		}
 		$this->output( "-----------------------\n" );
 		$this->output( "Total\t\t$total\n" );
+	}
+
+	private function getRevisionsFromHistory( $days, array $namespaces ) {
+		$dbr = wfGetDB( DB_SLAVE );
+		$cutoff = $dbr->addQuotes( $dbr->timestamp( time() - $days * 24 * 3600 ) );
+
+		// The field renames are to be compatible with recentchanges table query
+		$fields = array(
+			'page_title as title',
+			'rev_user_text as user_text',
+			'rev_len as length',
+		);
+		$tables = array( 'revision', 'page' );
+		$conds = array(
+			"rev_timestamp > $cutoff",
+			'rev_page = page_id',
+			'page_namespace' => $namespaces,
+		);
+
+		$res = $dbr->select( $tables, $fields, $conds, __METHOD__ );
+		return iterator_to_array( $res );
 	}
 }
 
