@@ -462,15 +462,7 @@ class TranslateHooks {
 		$code = $context->getLanguage()->getCode();
 		$selected = $context->getRequest()->getVal( 'languagefilter' );
 
-		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
-			$languages = LanguageNames::getNames( $code,
-				LanguageNames::FALLBACK_NORMAL,
-				LanguageNames::LIST_MW
-			);
-		} else {
-			$languages = Language::fetchLanguageNames();
-		}
-
+		$languages = TranslateUtils::getLanguageNames( $code );
 		ksort( $languages );
 
 		$selector = new XmlSelect( 'languagefilter', 'languagefilter' );
