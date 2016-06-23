@@ -52,7 +52,7 @@ class CharacterEditStats extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgTranslateFuzzyBotName, $wgSitename;
+		global $wgTranslateFuzzyBotName, $wgSitename, $wgRCMaxAge;
 
 		$days = (int)$this->getOption( 'days', 30 );
 		$hours = $days * 24;
@@ -74,9 +74,43 @@ class CharacterEditStats extends Maintenance {
 
 		// Select set of edits to report on
 
-		// Fetch some extrac fields that normally TranslateUtils::translationChanges wont
-		$extraFields = array( 'rc_old_len', 'rc_new_len' );
-		$rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces, $extraFields );
+		if ( $hours * 3600 <= $wgRCMaxAge ) {
+			// Fetch some extract fields that normally TranslateUtils::translationChanges won't
+			$extraFields = array( 'rc_old_len', 'rc_new_len' );
+			$rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces, $extraFields );
+		} else {
+			// Fetch some extract fields that normally TranslateUtils::translationChanges won't
+			$extraFields = array( 'rev_len AS rc_new_len', 'rc_new_len' );
+			$dbr = wfGetDB( DB_SLAVE );
+			$recentchanges = $dbr->tableName( 'revision' );
+			$hours = (int)$hours;
+			$cutoff_unixtime = time() - ( $hours * 3600 );
+			$cutoff = $dbr->timestamp( $cutoff_unixtime );
+
+			$namespaces = $dbr->makeList( $wgTranslateMessageNamespaces );
+			if ( $ns ) {
+				$namespaces = $dbr->makeList( $ns );
+			}
+
+			$fields = array_merge(
+				array( 'page_title AS rc_title', 'rev_timestamp AS rc_timestamp', 'rev_user_text AS rc_user_text', 'rev_namespace AS rc_namespace' ),
+				$extraFields
+			);
+			$fields = implode( ',', $fields );
+			// @todo Raw SQL
+			$sql = "SELECT $fields, substring_index(page_title, '/', -1) as lang FROM $recentchanges " .
+				"JOIN page ON rev_page = page_id" .
+				"AND rev_namespace in ($namespaces) " .
+				"AND rev_parent_id = 0" .
+				"HAVING rc_timestamp >= '{$cutoff}' " .
+				( $bots ? '' : 'AND rc_bot = 0 ' ) .
+				"AND rc_namespace in ($namespaces) " .
+				'ORDER BY lang ASC, rc_timestamp DESC';
+
+			$res = $dbr->query( $sql, __METHOD__ );
+			$rows = iterator_to_array( $res );
+		}
+
 		// Get counts for edits per language code after filtering out edits by FuzzyBot
 		$codes = array();
 
