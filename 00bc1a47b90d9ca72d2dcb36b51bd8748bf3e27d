@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_17ab0cd6",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-06-23T14:42:22Z",
+      "side": 1,
+      "message": "$conds is not defined at all, but I am trying to think what actually makes sense here. At this point I am leaning to just make a separate query in charactereditstats.php and keeping this as-is. Thoughts?",
+      "revId": "00bc1a47b90d9ca72d2dcb36b51bd8748bf3e27d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
