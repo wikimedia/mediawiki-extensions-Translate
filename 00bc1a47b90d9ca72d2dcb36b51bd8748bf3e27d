@@ -16,6 +16,24 @@
       "revId": "00bc1a47b90d9ca72d2dcb36b51bd8748bf3e27d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_dafc0b0b",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-06-23T16:03:40Z",
+      "side": 1,
+      "message": "I can submit a separate patch for that...",
+      "parentUuid": "0efd9372_17ab0cd6",
+      "revId": "00bc1a47b90d9ca72d2dcb36b51bd8748bf3e27d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
