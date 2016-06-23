@@ -187,9 +187,7 @@
 
 				groupSelector.hide();
 
-				groupSelector.$trigger
-					.addClass( 'expanded' )
-					.nextAll().remove();
+				groupSelector.$trigger.nextAll().remove();
 
 				if ( !groupSelector.options.preventSelector ) {
 					$newLink = $( '<span>' )
