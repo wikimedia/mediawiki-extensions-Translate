@@ -44,6 +44,7 @@
 	"translate-page-navigation-legend": "Navigatie",
 	"translate-page-showing": "De berichten $1 tot $2 van $3 worden weergegeven.",
 	"translate-page-showing-all": "Er {{PLURAL:$1|wordt 1 bericht|worden $1 berichten}} weergegeven.",
+	"translate-page-showing-none": "Er zijn geen berichten in deze selectie.",
 	"translate-next": "Volgende pagina",
 	"translate-prev": "Vorige pagina",
 	"translate-page-description-legend": "Informatie over de groep",

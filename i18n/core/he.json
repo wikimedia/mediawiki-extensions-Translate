@@ -254,6 +254,7 @@
 	"translate-documentation-language": "תיעוד הודעות",
 	"translate-searchprofile": "תרגומים",
 	"translate-searchprofile-tooltip": "חיפוש בכל התרגומים",
+	"translate-searchprofile-note": "ניתן למצוא תוצאות נוספות באמצעות [$1 חיפוש תרגומים].",
 	"translate-search-languagefilter": "סינון לפי שפה:",
 	"translate-search-nofilter": "ללא סינון",
 	"translate-messagereview-submit": "לסמן שההודעה נסקרה",
