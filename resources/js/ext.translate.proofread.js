@@ -55,12 +55,10 @@
 						.text( translation );
 					proofread.message.translation = translation;
 					proofread.markSelfTranslation();
-					// Update stats - to translated state from current state.
-					$( '.tux-action-bar .tux-statsbar' )
-						.trigger(
-							'change',
-							[ 'translated', proofread.message.properties.status ]
-						);
+
+					proofread.$message.find( '.tux-proofread-status' )
+						.removeClass( 'translated fuzzy proofread untranslated' )
+						.addClass( proofread.message.properties.status );
 				}
 			} );
 
@@ -221,6 +219,8 @@
 					'change',
 					[ 'proofread', message.properties.status ]
 				);
+
+				message.properties.status = 'proofread';
 
 				if ( mw.track ) {
 					mw.track( 'ext.translate.event.proofread', message );
