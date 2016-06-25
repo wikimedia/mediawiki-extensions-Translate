@@ -3,7 +3,8 @@
 		"authors": [
 			"Metalhead64",
 			"Rillke",
-			"J. 'mach' wust"
+			"J. 'mach' wust",
+			"Kghbln"
 		]
 	},
 	"managetranslatorsandbox": "Übersetzer-Spielwiese konfigurieren",
@@ -48,5 +49,5 @@
 	"log-description-translatorsandbox": "Es folgt ein Logbuch von Aktionen auf Übersetzungsspielwiesenbenutzer.",
 	"logentry-translatorsandbox-promoted": "$1 hat $3 {{GENDER:$4|zum Übersetzer|zur Übersetzerin}} {{GENDER:$2|befördert}}",
 	"logentry-translatorsandbox-rejected": "$1 hat die Anfrage von „$3“ zur Beförderung {{GENDER:$2|zum Übersetzer|zur Übersetzerin}} abgelehnt",
-	"logentry-newusers-tsbpromoted": "Das Benutzerkonto $3 wurde durch Beförderung von der Übersetzerspielwiese {{GENDER:$2|erstellt}}"
+	"logentry-newusers-tsbpromoted": "Das Benutzerkonto $3 wurde aufgrund weiterer Berechtigungen auf der Übersetzerspielwiese {{GENDER:$2|erstellt}}"
 }
