@@ -312,8 +312,6 @@ $wgResourceModules['ext.translate.special.managegroups'] = array(
 
 $wgResourceModules['ext.translate.special.managetranslatorsandbox'] = array(
 	'scripts' => 'resources/js/ext.translate.special.managetranslatorsandbox.js',
-	'styles' => 'resources/css/ext.translate.special.managetranslatorsandbox.css',
-	'position' => 'top',
 	'dependencies' => array(
 		'ext.translate.loader',
 		'ext.translate.translationstashstorage',
@@ -344,6 +342,10 @@ $wgResourceModules['ext.translate.special.managetranslatorsandbox'] = array(
 		'tsb-translations-user',
 		'tsb-user-posted-a-comment',
 	),
+) + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.managetranslatorsandbox.styles'] = array(
+	'styles' => 'resources/css/ext.translate.special.managetranslatorsandbox.css',
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.pagemigration'] = array(

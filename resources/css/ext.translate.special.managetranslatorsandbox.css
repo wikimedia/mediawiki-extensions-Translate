@@ -20,7 +20,7 @@
 	font-size: 24px;
 }
 
-.search.pane {
+.grid .search.pane {
 	background: url('../images/search.png') no-repeat scroll left top transparent;
 	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/search.svg);
 	/* @embed */
@@ -52,16 +52,16 @@
 	overflow: auto;
 }
 
-.details.pane {
+.grid .details.pane {
 	border-left: 1px solid #DDDDDD;
 	left: -1px;
 	padding: 5px 20px 10px 20px;
 }
 
 /* Requests pane */
-.requests.pane,
-.requests.pane .request,
-.requests.pane .request-header {
+.grid .requests.pane,
+.grid .requests.pane .request,
+.grid .requests.pane .request-header {
 	margin: 0;
 	padding: 0;
 }
@@ -84,7 +84,7 @@
 	background-color: #f0f0f0;
 }
 
-.request .amount {
+.grid .request .amount {
 	height: 100%;
 	font-size: 3em;
 	color: #96989A;
@@ -122,8 +122,8 @@
 	overflow: hidden;
 }
 
-.request .request-info,
-.request .approval {
+.grid .request .request-info,
+.grid .request .approval {
 	padding-top: 5px;
 }
 
