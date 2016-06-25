@@ -59,11 +59,11 @@ class TranslateDeleteJob extends Job {
 
 		$error = '';
 		$wikipage = new WikiPage( $title );
-		$ok = $wikipage->doDeleteArticle( "{$summary}: $reason", false, 0, true, $error, $user );
-		if ( !$ok ) {
+		$status = $wikipage->doDeleteArticleReal( "{$summary}: $reason", false, 0, true, $error, $user );
+		if ( !$status->isGood() ) {
 			$params = array(
 				'target' => $base,
-				'error' => $ok,
+				'errors' => $status->getErrorsArray(),
 			);
 
 			$type = $this->getFull() ? 'deletefnok' : 'deletelnok';
