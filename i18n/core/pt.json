@@ -254,6 +254,7 @@
 	"translate-documentation-language": "ajuda de tradução",
 	"translate-searchprofile": "Traduções",
 	"translate-searchprofile-tooltip": "Pesquisar todas as traduções",
+	"translate-searchprofile-note": "Mais opções de procura estão disponíveis através da [$1 pesquisa de traduções].",
 	"translate-search-languagefilter": "Filtrar por língua:",
 	"translate-search-nofilter": "Não filtrar",
 	"translate-messagereview-submit": "Marcar como revista",
