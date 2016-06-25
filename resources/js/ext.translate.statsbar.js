@@ -48,7 +48,8 @@
 			statsbar.$statsBar.on( 'change', function ( event, to, from ) {
 				for ( i = 0; i < languageStats.length; i++ ) {
 					if ( languageStats[ i ].group === statsbar.group ) {
-						if ( to === 'translated' && from === 'untranslated' ) {
+						// Changing a proofread message does not create a new translation
+						if ( to === 'translated' && from !== 'proofread' ) {
 							languageStats[ i ].translated++;
 						}
 						if ( to === 'proofread' ) {
@@ -64,7 +65,8 @@
 						if ( from === 'proofread' ) {
 							languageStats[ i ].proofread--;
 						}
-						if ( from === 'translated' ) {
+						// Proofreading a message does not remove translation
+						if ( from === 'translated' && to !== 'proofread' ) {
 							languageStats[ i ].translated--;
 						}
 						break;
