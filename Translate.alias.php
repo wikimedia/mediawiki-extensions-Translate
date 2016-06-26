@@ -13,6 +13,7 @@ $specialPageAliases = array();
 $specialPageAliases['en'] = array(
 	'AggregateGroups' => array( 'AggregateGroups' ),
 	'ImportTranslations' => array( 'ImportTranslations' ),
+	'ExportTranslations' => array( 'ExportTranslations' ),
 	'LanguageStats' => array( 'LanguageStats' ),
 	'Magic' => array( 'AdvancedTranslate', 'Magic' ),
 	'ManageMessageGroups' => array( 'ManageMessageGroups' ),
