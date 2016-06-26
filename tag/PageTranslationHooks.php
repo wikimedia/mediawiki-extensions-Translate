@@ -859,30 +859,6 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	/// Hook: SpecialTranslate::executeTask
-	public static function sourceExport( RequestContext $context,
-		TranslateTask $task = null, MessageGroup $group, array $options
-	) {
-		if ( $task || $options['taction'] !== 'export'
-			|| !$group instanceof WikiPageMessageGroup
-		) {
-			return true;
-		}
-
-		$page = TranslatablePage::newFromTitle( $group->getTitle() );
-		$collection = $group->initCollection( $options['language'] );
-		$collection->loadTranslations();
-		$text = $page->getParse()->getTranslationPageText( $collection );
-		$display = $page->getPageDisplayTitle( $options['language'] );
-		if ( $display ) {
-			$text = "{{DISPLAYTITLE:$display}}$text";
-		}
-		$output = Html::element( 'textarea', array( 'rows' => 25 ), $text );
-		$context->getOutput()->addHTML( $output );
-
-		return false;
-	}
-
 	/**
 	 * Converts the edit tab (if exists) for translation pages to translate tab.
 	 * Hook: SkinTemplateNavigation
