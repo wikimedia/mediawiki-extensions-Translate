@@ -38,6 +38,7 @@ $al['TranslateUtils'] = "$dir/TranslateUtils.php";
  */
 $al['SpecialAggregateGroups'] = "$dir/specials/SpecialAggregateGroups.php";
 $al['SpecialImportTranslations'] = "$dir/specials/SpecialImportTranslations.php";
+$al['SpecialExportTranslations'] = "$dir/specials/SpecialExportTranslations.php";
 $al['SpecialLanguageStats'] = "$dir/specials/SpecialLanguageStats.php";
 $al['SpecialMagic'] = "$dir/specials/SpecialMagic.php";
 $al['SpecialManageGroups'] = "$dir/specials/SpecialManageGroups.php";
@@ -223,9 +224,6 @@ $al['ApiTranslationStash'] = "$dir/api/ApiTranslationStash.php";
  */
 $al['AcceptQueueMessagesTask'] = "$dir/TranslateTasks.php";
 $al['CustomFilteredMessagesTask'] = "$dir/TranslateTasks.php";
-$al['ExportAsPoMessagesTask'] = "$dir/TranslateTasks.php";
-$al['ExportMessagesTask'] = "$dir/TranslateTasks.php";
-$al['ExportToFileMessagesTask'] = "$dir/TranslateTasks.php";
 $al['ReviewAllMessagesTask'] = "$dir/TranslateTasks.php";
 $al['ReviewMessagesTask'] = "$dir/TranslateTasks.php";
 $al['TranslateTask'] = "$dir/TranslateTasks.php";
