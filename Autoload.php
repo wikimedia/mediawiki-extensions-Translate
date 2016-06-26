@@ -38,6 +38,7 @@ $al['TranslateUtils'] = "$dir/TranslateUtils.php";
  */
 $al['SpecialAggregateGroups'] = "$dir/specials/SpecialAggregateGroups.php";
 $al['SpecialImportTranslations'] = "$dir/specials/SpecialImportTranslations.php";
+$al['SpecialExportTranslations'] = "$dir/specials/SpecialExportTranslations.php";
 $al['SpecialLanguageStats'] = "$dir/specials/SpecialLanguageStats.php";
 $al['SpecialMagic'] = "$dir/specials/SpecialMagic.php";
 $al['SpecialManageGroups'] = "$dir/specials/SpecialManageGroups.php";
