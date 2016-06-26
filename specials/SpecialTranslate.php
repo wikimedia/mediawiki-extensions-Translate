@@ -85,7 +85,7 @@ class SpecialTranslate extends SpecialPage {
 
 		$errors = $this->getFormErrors();
 
-		if ( $isBeta && $this->options['taction'] !== 'export' ) {
+		if ( $isBeta ) {
 			$out->addModules( 'ext.translate.special.translate' );
 
 			$out->addHTML( Html::openElement( 'div', array(
@@ -335,7 +335,14 @@ class SpecialTranslate extends SpecialPage {
 					$defaults['task'] = 'reviewall';
 				}
 			} elseif ( $nondefaults['taction'] === 'export' ) {
-				$defaults['task'] = '';
+				// Redirect old export URLs to Special:ExportTranslations
+				$params = array(
+				 'group' => $nondefaults['group'],
+				 'language' => $nondefaults['language'],
+				 'format' => $nondefaults['task'],
+				);
+				$export = SpecialPage::getTitleFor( 'ExportTranslations' )->getLocalURL( $params );
+				$this->getOutput()->redirect( $export );
 			}
 		}
 
@@ -421,10 +428,6 @@ class SpecialTranslate extends SpecialPage {
 			'limit' => $this->limitSelector(),
 		);
 
-		if ( $taction === 'export' ) {
-			unset( $selectors['limit'] );
-		}
-
 		$options = array();
 		foreach ( $selectors as $g => $selector ) {
 			// Give grep a chance to find the usages:
@@ -440,8 +443,6 @@ class SpecialTranslate extends SpecialPage {
 			$extra = $this->taskLinks( array( 'acceptqueue', 'reviewall' ) );
 		} elseif ( $taction === 'translate' ) {
 			$extra = $this->taskLinks( array( 'view', 'untranslated', 'optional' ) );
-		} elseif ( $taction === 'export' ) {
-			$extra = $this->taskLinks( array( 'export-as-po', 'export-to-file' ) );
 		} else {
 			$extra = '';
 		}
@@ -705,7 +706,6 @@ class SpecialTranslate extends SpecialPage {
 			// Give grep a chance to find the usages:
 			// translate-taskui-view, translate-taskui-untranslated, translate-taskui-optional,
 			// translate-taskui-acceptqueue, translate-taskui-reviewall,
-			// translate-taskui-export-to-file, translate-taskui-export-as-po
 			return $sep . Html::rawElement( 'label', array(),
 				Xml::radio( 'task', $id, true ) . ' ' .
 					$this->msg( "translate-taskui-$id" )->escaped()
@@ -717,7 +717,6 @@ class SpecialTranslate extends SpecialPage {
 				// Give grep a chance to find the usages:
 				// translate-taskui-view, translate-taskui-untranslated, translate-taskui-optional,
 				// translate-taskui-acceptqueue, translate-taskui-reviewall,
-				// translate-taskui-export-to-file, translate-taskui-export-as-po
 				$output .= Html::rawElement( 'label', array(),
 					Xml::radio( 'task', $id, $this->options['task'] === $id ) . ' ' .
 						$this->msg( "translate-taskui-$id" )->escaped()
@@ -902,26 +901,11 @@ class SpecialTranslate extends SpecialPage {
 			$tabs['views']['mstats']['class'] .= ' selected';
 		}
 
-		// Kind of hackish, but works for now
-		global $wgTranslateTasks;
-		foreach ( array_keys( $wgTranslateTasks ) as $taskname ) {
-			if ( !preg_match( '/^export-/', $taskname ) ) {
-				continue;
-			}
-
-			$tabs['views']['export'] = array(
-				'text' => wfMessage( 'translate-taction-export' )->text(),
-				'href' => $translate->getLocalURL( array( 'taction' => 'export' ) + $params ),
-				'class' => 'tux-tab',
-			);
-
-			if ( $alias === 'Translate' && $taction === 'export' ) {
-				$tabs['views']['export']['class'] .= ' selected';
-			}
-
-			// We only need the tab to apper once ;)
-			break;
-		}
+		$tabs['views']['export'] = array(
+			'text' => wfMessage( 'translate-taction-export' )->text(),
+			'href' => SpecialPage::getTitleFor( 'ExportTranslations' )->getLocalURL( $params ),
+			'class' => 'tux-tab',
+		);
 
 		return true;
 	}
