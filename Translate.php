@@ -76,6 +76,7 @@ $wgSpecialPages['TranslationStats'] = 'SpecialTranslationStats';
 $wgSpecialPages['LanguageStats'] = 'SpecialLanguageStats';
 $wgSpecialPages['MessageGroupStats'] = 'SpecialMessageGroupStats';
 $wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
+$wgSpecialPages['ExportTranslations'] = 'SpecialExportTranslations';
 $wgSpecialPages['ManageMessageGroups'] = 'SpecialManageGroups';
 $wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
 $wgSpecialPages['AggregateGroups'] = 'SpecialAggregateGroups';
@@ -302,8 +303,6 @@ $wgTranslateTasks = array(
 	'optional' => 'ViewOptionalTask',
 	'acceptqueue' => 'AcceptQueueMessagesTask',
 	'reviewall' => 'ReviewAllMessagesTask',
-	'export-as-po' => 'ExportasPoMessagesTask',
-	'export-to-file' => 'ExportToFileMessagesTask',
 	'custom' => 'CustomFilteredMessagesTask',
 );
 
