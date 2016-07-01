@@ -222,7 +222,7 @@
 	"translate-import-err-no-headers": "فایلین ترجومه اوزانتی فورمتینده دوزگون Gettext فورمو یوخدور.\nفایل باشلیقلاریندان دیل و مئساژ گروپونو بیلمک اولمور.",
 	"translate-import-err-warnings": "فایلین دوزگون فورمو یوخدور.\nآرخایین اولون سیزین دَییشدیرَنیز msgctxt‌ فیلدلرینی سیلمیر.\nبیلگیلر: $1",
 	"translate-js-summary": "آچیقلاما:",
-	"translate-js-save": "قئید ائت",
+	"translate-js-save": "ذخیره ائت",
 	"translate-js-next": "قئید ائت و سونراکینی آچ",
 	"translate-js-nonext": "بو صحیفه‌ده سون مئساژ ایدی.",
 	"translate-js-skip": "سونراکینا آتلان",
