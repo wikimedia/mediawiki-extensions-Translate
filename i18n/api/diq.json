@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kumkumuk"
+		]
+	},
+	"apihelp-aggregategroups-param-group": "Kamiya Gruba mesacan",
+	"apihelp-aggregategroups-param-groupname": "Namey gruba mesacê aredi.",
+	"apihelp-aggregategroups-param-groupdescription": "Akerdena gruba mesacê aredi",
+	"apihelp-aggregategroups-example-1": "Gruba Verlisansi",
+	"apihelp-groupreview-param-group": "Gruba mesaca.",
+	"apihelp-groupreview-param-language": "Kodê zıwani.",
+	"apihelp-groupreview-param-state": "Qandê gruber dewleta newi.",
+	"apihelp-query+languagestats-description": "Perseya istatistikanê zıwani.",
+	"apihelp-query+languagestats-param-language": "Kodê zıwani.",
+	"apihelp-query+languagestats-example-1": "Lisya temam biyayışê istatistikané açarnayışanê Finki",
+	"apihelp-query+messagecollection-description": "Heqdê MessagesCollection i persi",
+	"apihelp-query+messagecollection-param-group": "Gruba mesaca.",
+	"apihelp-query+messagecollection-param-language": "Kodê zıwani.",
+	"apihelp-translatesandbox-param-do": "Çıçi.",
+	"apihelp-translationstash-param-subaction": "Kerdış."
+}

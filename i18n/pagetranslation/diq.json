@@ -3,7 +3,8 @@
 		"authors": [
 			"Erdemaslancan",
 			"Mirzali",
-			"Marmase"
+			"Marmase",
+			"Kumkumuk"
 		]
 	},
 	"pagetranslation": "Pela açarnayışi",
@@ -24,6 +25,11 @@
 	"tpt-aggregategroup-add": "Cı ke",
 	"tpt-aggregategroup-save": "Qeyd ke",
 	"tpt-aggregategroup-new-name": "Name:",
+	"tpt-aggregategroup-edit-name": "Name:",
+	"tpt-aggregategroup-edit-description": "Şınasiyen:",
+	"tpt-aggregategroup-update": "Qeyd ke",
+	"tpt-aggregategroup-update-cancel": "Peyd ke",
+	"tpt-invalid-group": "Nêraverdi grub",
 	"log-name-pagetranslation": "Qeydê açarnayışê pele",
 	"pt-movepage-list-translation": "{{PLURAL:$1|Pera|Perê}} açarnayışi",
 	"pt-movepage-list-other": "{{PLURAL:$1|Pera bin|Perê bini}}",

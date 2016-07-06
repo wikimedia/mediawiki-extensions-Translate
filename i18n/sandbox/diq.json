@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Marmase"
+			"Marmase",
+			"Kumkumuk"
 		]
 	},
 	"tsb-request-count": "$1 {{PLURAL:$1|waştış|waştışi}}",
@@ -10,7 +11,10 @@
 	"tsb-accept-button-label": "Qebul",
 	"tsb-reject-button-label": "Red ke",
 	"tsb-selected-count": "{{PLURAL:$1|$1 kerber weçineya|$1 karberi weçineyay}}",
+	"tsb-accept-all-button-label": "Hemın qebul ke",
+	"tsb-reject-all-button-label": "Hemın red ke",
+	"tsb-user-posted-a-comment": "Açarnayış niyo",
 	"tsb-translations-source": "Çıme",
-	"tsb-translations-user": "Açarnayışa karberi",
+	"tsb-translations-user": "Açarnayışa {{GENDER:$1|karberi}}",
 	"translationstash": "Xeyr amey"
 }
