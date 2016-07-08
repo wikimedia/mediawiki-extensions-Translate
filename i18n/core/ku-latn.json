@@ -11,7 +11,7 @@
 	"translate-taskui-view": "Hemû peyaman nîşan bide",
 	"translate-taskui-untranslated": "Mesajên newergerandî nîşan bide",
 	"translate-taskui-acceptqueue": "Tenê peyamên ku ez dikarim wek nirxandî nîşan bidim",
-	"translate-taskui-reviewall": "Hemû wergera binirxîne",
+	"translate-taskui-reviewall": "Hemû wergeran binirxîne",
 	"translate-taction-translate": "Wergerîne",
 	"translate-taction-proofread": "Nirxandin",
 	"translate-taction-lstats": "Statîstîkên ziman",
@@ -46,6 +46,7 @@
 	"translate-magic-cm-original": "Orjînal",
 	"translate-magic-cm-comment": "Şîrove:",
 	"translate-magic-cm-save": "Tomar bike",
+	"translate-magic-cm-savefailed": "Tomarkirin têkçû",
 	"translate-magic-notsaved": "Guherandina te nehate tomarkirin!",
 	"translate-magic-saved": "Guherandinên te hatin tomarkirin.",
 	"translate-pref-editassistlang": "Zimanên alîkar:",
@@ -70,6 +71,7 @@
 	"translate-statsf-count-users": "Wergêrên çalak",
 	"translate-statsf-count-registrations": "Bikarhênerên nû",
 	"translate-statsf-count-reviews": "Nirxandinên wergerê",
+	"translate-statsf-count-reviewers": "Nirxandêr",
 	"translate-statsf-submit": "Pêşdîtin",
 	"translate-sidebar-alltrans": "Bi zimanên din",
 	"translations": "Hemû werger",
@@ -116,6 +118,7 @@
 	"translate-manage-import-new": "Mesaja nû $1",
 	"translate-manage-import-deleted": "Peyama jêbirî $1",
 	"translate-manage-action-import": "Tevlî bike",
+	"translate-manage-action-ignore": "Paşguh bike",
 	"translate-import-load": "Dosyeyê bar bike",
 	"translate-js-summary": "Kurte:",
 	"translate-js-save": "Tomar bike",
@@ -211,6 +214,8 @@
 	"tux-editor-message-tools-delete": "Jê bibe",
 	"tux-editor-message-tools-translations": "Hemû werger",
 	"tux-editor-loading": "Tê barkirin...",
+	"translate-search-more-languages-info": "{{PLURAL:$1|Zimanekî din|$1 zimanên din}}",
 	"translate-statsbar-tooltip": "$1% wergerandî, $2% nirxandî",
-	"translate-statsbar-tooltip-with-fuzzy": "$1% wergerandî, $2% nirxandî, $3% kevnbûyî"
+	"translate-statsbar-tooltip-with-fuzzy": "$1% wergerandî, $2% nirxandî, $3% kevnbûyî",
+	"translate-search-more-groups-info": "{{PLURAL:$1|Komeka din|$1 komên din}}"
 }

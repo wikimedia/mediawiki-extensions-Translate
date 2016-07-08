@@ -6,6 +6,8 @@
 		]
 	},
 	"apihelp-groupreview-param-language": "Koda ziman.",
+	"apihelp-query+languagestats-param-language": "Koda ziman.",
 	"apihelp-query+messagecollection-param-group": "Koma peyamê.",
-	"apihelp-query+messagecollection-param-language": "Koda zimanê."
+	"apihelp-query+messagecollection-param-language": "Koda zimanê.",
+	"apihelp-searchtranslations-description": "Li wergeran bigere."
 }
