@@ -105,8 +105,8 @@ class JsonFFS extends SimpleFFS {
 			$messages[$key] = $value;
 		}
 
-		// Do not create empty files
-		if ( !count( $messages ) ) {
+		// Do not create empty files. Check that something besides @metadata is present.
+		if ( count( $messages ) < 2 ) {
 			return '';
 		}
 
