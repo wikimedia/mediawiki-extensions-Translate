@@ -16,9 +16,9 @@
 	 * internally contain the editor's generated UI. So it is going to have the same width
 	 * and inherited properies of the container.
 	 * The container can mark the message item with class 'message'. This is not
-	 * mandatory, but if found, when editor is opened the message item will be hidden
+	 * mandatory, but if found, when the editor is opened, the message item will be hidden
 	 * and the editor will appear as if the message is replaced by the editor.
-	 * See the UI of Translate messagetable for demo.
+	 * See the UI of Translate messagetable for a demo.
 	 *
 	 * @param {HTMLElement} element
 	 * @param {Object} options
