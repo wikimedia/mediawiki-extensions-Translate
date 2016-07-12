@@ -134,6 +134,7 @@ $al['SpecialPageAliasesCM'] = "$dir/ffs/MediaWikiComplexMessages.php";
  * @ingroup PageTranslation
  * @{
  */
+$al['TranslatablePageMoveJob'] = "$dir/tag/TranslatablePageMoveJob.php";
 $al['TranslateDeleteJob'] = "$dir/tag/TranslateDeleteJob.php";
 $al['TranslateMoveJob'] = "$dir/tag/TranslateMoveJob.php";
 $al['PageTranslationHooks'] = "$dir/tag/PageTranslationHooks.php";
