@@ -782,24 +782,6 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	/// Hook: getUserPermissionsErrorsExpensive
-	public static function lockedPagesCheck( Title $title, User $user, $action, &$result ) {
-		if ( $action === 'read' ) {
-			return true;
-		}
-
-		$cache = wfGetCache( CACHE_ANYTHING );
-		$key = wfMemcKey( 'pt-lock', sha1( $title->getPrefixedText() ) );
-		// At least memcached mangles true to "1"
-		if ( $cache->get( $key ) !== false ) {
-			$result = array( 'pt-locked-page' );
-
-			return false;
-		}
-
-		return true;
-	}
-
 	/// Hook: SkinSubPageSubtitle
 	public static function replaceSubtitle( &$subpages, $skin = null, OutputPage $out ) {
 		$isTranslationPage = TranslatablePage::isTranslationPage( $out->getTitle() );

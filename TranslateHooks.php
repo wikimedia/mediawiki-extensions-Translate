@@ -176,9 +176,6 @@ class TranslateHooks {
 
 			// Custom move page that can move all the associated pages too
 			$wgHooks['SpecialPage_initList'][] = 'PageTranslationHooks::replaceMovePage';
-			// Locking during page moves
-			$wgHooks['getUserPermissionsErrorsExpensive'][] =
-				'PageTranslationHooks::lockedPagesCheck';
 			// Disable action=delete
 			$wgHooks['ArticleConfirmDelete'][] = 'PageTranslationHooks::disableDelete';
 

@@ -4,216 +4,133 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license GPL-2.0+
  */
 
 /**
  * Contains class with job for moving translation pages. Used together with
- * PageTranslationMovePage class.
+ * SpecialPageTranslationMovePage class.
  *
  * @ingroup PageTranslation JobQueue
  */
 class TranslateMoveJob extends Job {
 	/**
-	 * @param $source Title
 	 * @param $target Title
 	 * @param $params array, should include base-source and base-target
 	 * @param $performer
 	 * @return TranslateMoveJob
 	 */
-	public static function newJob( Title $source, Title $target, array $params,
-		/*User*/$performer
+	public static function newJob(
+		Title $source, Title $target, array $moves, $summary, User $performer
 	) {
-		$job = new self( $source );
-		$job->setUser( FuzzyBot::getUser() );
-		$job->setTarget( $target->getPrefixedText() );
-		$summary = wfMessage( 'pt-movepage-logreason', $params['base-source'] );
-		$summary = $summary->inContentLanguage()->text();
-		$job->setSummary( $summary );
-		$job->setParams( $params );
-		$job->setPerformer( $performer );
-		$job->lock();
+		$params = array(
+			'source' => $source->getPrefixedText(),
+			'target' => $target->getPrefixedText(),
+			'moves' => $moves,
+			'summary' => $summary,
+			'performer' => $performer->getName(),
+		);
 
-		return $job;
+		return new self( $target, $params );
 	}
 
-	/**
-	 * @param Title $title
-	 * @param array $params
-	 * @param int $id
-	 */
 	public function __construct( $title, $params = array(), $id = 0 ) {
 		parent::__construct( __CLASS__, $title, $params, $id );
+		$this->params = $params;
 	}
 
 	public function run() {
-		// Unfortunately the global is needed until bug is fixed:
-		// https://phabricator.wikimedia.org/T51086
-		// Once MW >= 1.24 is supported, can use MovePage class.
-		global $wgUser;
+		$sourceTitle = Title::newFromText( $this->params['source'] );
+		$targetTitle = Title::newFromText( $this->params['target'] );
 
-		// Initialization
-		$title = $this->title;
-		// Other stuff
-		$user = $this->getUser();
-		$summary = $this->getSummary();
-		$target = $this->getTarget();
-		$base = $this->params['base-source'];
-		$doer = User::newFromName( $this->getPerformer() );
+		$this->doMoves( $this->params['moves'] );
 
-		PageTranslationHooks::$allowTargetEdit = true;
-		PageTranslationHooks::$jobQueueRunning = true;
-		$oldUser = $wgUser;
-		$wgUser = $user;
-		self::forceRedirects( false );
+		$this->moveMetadata(
+			TranslatablePage::newFromTitle( $sourceTitle )->getMessageGroupId(),
+			TranslatablePage::newFromTitle( $targetTitle )->getMessageGroupId()
+		);
 
-		// Don't check perms, don't leave a redirect
-		$ok = $title->moveTo( $target, false, $summary, false );
-		if ( !$ok ) {
-			$params = array(
-				'target' => $target->getPrefixedText(),
-				'error' => $ok,
-			);
+		$entry = new ManualLogEntry( 'pagetranslation', 'moveok' );
+		$entry->setPerformer( User::newFromName( $this->params['performer'] ) );
+		$entry->setParameters( array( 'target' => $this->params['target'] ) );
+		$entry->setTarget( $sourceTitle );
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 
-			$entry = new ManualLogEntry( 'pagetranslation', 'movenok' );
-			$entry->setPerformer( $doer );
-			$entry->setTarget( $title );
-			$entry->setParameters( $params );
-			$logid = $entry->insert();
-			$entry->publish( $logid );
-		}
+		// Re-render the pages to get everything in sync
+		MessageGroups::singleton()->recache();
 
-		self::forceRedirects( true );
-		PageTranslationHooks::$allowTargetEdit = false;
-
-		$this->unlock();
-
-		$cache = wfGetCache( CACHE_ANYTHING );
-		$key = wfMemcKey( 'translate-pt-move', $base );
-
-		$count = $cache->decr( $key );
-		$last = (string)$count === '0';
-
-		if ( $last ) {
-			$cache->delete( $key );
-
-			$params = array(
-				'target' => $this->params['base-target'],
-			);
-
-			$entry = new ManualLogEntry( 'pagetranslation', 'moveok' );
-			$entry->setPerformer( $doer );
-			$entry->setParameters( $params );
-			$entry->setTarget( Title::newFromText( $base ) );
-			$logid = $entry->insert();
-			$entry->publish( $logid );
-
-			PageTranslationHooks::$jobQueueRunning = false;
-		}
-
-		$wgUser = $oldUser;
+		$job = new TranslationsUpdateJob( $targetTitle, array( 'sections' => array() ) );
+		JobQueueGroup::singleton()->push( $job );
 
 		return true;
 	}
 
-	public function setSummary( $summary ) {
-		$this->params['summary'] = $summary;
-	}
+	protected function doMoves( array $moves ) {
+		$user = FuzzyBot::getUser();
+		$performer = User::newFromName( $this->params['performer'] );
 
-	public function getSummary() {
-		return $this->params['summary'];
-	}
+		PageTranslationHooks::$allowTargetEdit = true;
+		PageTranslationHooks::$jobQueueRunning = true;
 
-	public function setPerformer( $performer ) {
-		if ( is_object( $performer ) ) {
-			$this->params['performer'] = $performer->getName();
-		} else {
-			$this->params['performer'] = $performer;
-		}
-	}
+		foreach ( $this->params['moves'] as $source => $target ) {
+			$sourceTitle = Title::newFromText( $source );
+			$targetTitle = Title::newFromText( $target );
 
-	public function getPerformer() {
-		return $this->params['performer'];
-	}
-
-	public function setTarget( $target ) {
-		if ( $target instanceof Title ) {
-			$this->params['target'] = $target->getPrefixedText();
-		} else {
-			$this->params['target'] = $target;
-		}
-	}
-
-	public function getTarget() {
-		return Title::newFromText( $this->params['target'] );
-	}
-
-	public function setUser( $user ) {
-		if ( is_object( $user ) ) {
-			$this->params['user'] = $user->getName();
-		} else {
-			$this->params['user'] = $user;
-		}
-	}
-
-	/**
-	 * Get a user object for doing edits.
-	 * @return User
-	 */
-	public function getUser() {
-		return User::newFromName( $this->params['user'], false );
-	}
-
-	public function setParams( array $params ) {
-		foreach ( $params as $k => $v ) {
-			$this->params[$k] = $v;
-		}
-	}
-
-	public function lock() {
-		$cache = wfGetCache( CACHE_ANYTHING );
-		$cache->set( wfMemcKey( 'pt-lock', sha1( $this->title->getPrefixedText() ) ), true );
-		$cache->set( wfMemcKey( 'pt-lock', sha1( $this->getTarget()->getPrefixedText() ) ), true );
-	}
-
-	public function unlock() {
-		$cache = wfGetCache( CACHE_ANYTHING );
-		$cache->delete( wfMemcKey( 'pt-lock', sha1( $this->title->getPrefixedText() ) ) );
-		$cache->delete( wfMemcKey( 'pt-lock', sha1( $this->getTarget()->getPrefixedText() ) ) );
-	}
-
-	/**
-	 * Adapted from wfSuppressWarnings to allow not leaving redirects.
-	 * @param $end bool
-	 */
-	public static function forceRedirects( $end = false ) {
-		static $suppressCount = 0;
-		static $originalLevel = null;
-
-		global $wgGroupPermissions;
-		global $wgUser;
-
-		if ( $end ) {
-			if ( $suppressCount ) {
-				--$suppressCount;
-				if ( !$suppressCount ) {
-					if ( $originalLevel === null ) {
-						unset( $wgGroupPermissions['*']['suppressredirect'] );
-					} else {
-						$wgGroupPermissions['*']['suppressredirect'] = $originalLevel;
-					}
-				}
+			$mover = new MovePage( $sourceTitle, $targetTitle );
+			$status = $mover->move( $user, $this->params['summary'], false );
+			if ( !$status->isOK() ) {
+				$entry = new ManualLogEntry( 'pagetranslation', 'movenok' );
+				$entry->setPerformer( $performer );
+				$entry->setTarget( $sourceTitle );
+				$entry->setParameters( array(
+					'target' => $target,
+					'error' => $status->getErrorsArray(),
+				) );
+				$logid = $entry->insert();
+				$entry->publish( $logid );
 			}
-		} else {
-			if ( !$suppressCount ) {
-				$originalLevel = isset( $wgGroupPermissions['*']['suppressredirect'] ) ?
-					$wgGroupPermissions['*']['suppressredirect'] :
-					null;
-				$wgGroupPermissions['*']['suppressredirect'] = true;
-			}
-			++$suppressCount;
 		}
-		$wgUser->clearInstanceCache();
+
+		PageTranslationHooks::$allowTargetEdit = false;
+		PageTranslationHooks::$jobQueueRunning = false;
+	}
+
+	protected function moveMetadata( $oldGroupId, $newGroupId ) {
+		$types = array( 'prioritylangs', 'priorityforce', 'priorityreason' );
+
+		foreach ( $types as $type ) {
+			$value = TranslateMetadata::get( $oldGroupId, $type );
+			if ( $value !== false ) {
+				TranslateMetadata::set( $oldGroupId, $type, false );
+				TranslateMetadata::set( $newGroupId, $type, $value );
+			}
+		}
+
+		// Make the changes in aggregate groups metadata, if present in any of them.
+		$groups = MessageGroups::getAllGroups();
+		foreach ( $groups as $group ) {
+			if ( !$group instanceof AggregateMessageGroup ) {
+				continue;
+			}
+
+			$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' );
+			if ( $subgroups === false ) {
+				continue;
+			}
+
+			$subgroups = explode( ',', $subgroups );
+			$subgroups = array_flip( $subgroups );
+			if ( isset( $subgroups[$oldGroupId] ) ) {
+				$subgroups[$newGroupId] = $subgroups[$oldGroupId];
+				unset( $subgroups[$oldGroupId] );
+				$subgroups = array_flip( $subgroups );
+				TranslateMetadata::set(
+					$group->getId(),
+					'subgroups',
+					implode( ',', $subgroups )
+				);
+			}
+		}
 	}
 }
