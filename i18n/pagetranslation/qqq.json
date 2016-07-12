@@ -163,7 +163,6 @@
 	"pt-movepage-intro": "See definitions on [[mw:Help:Extension:Translate/Glossary]].",
 	"pt-movepage-logreason": "Used as summary.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translatable-page title",
 	"pt-movepage-started": "Confirmation message after a move of a translatable page has been started.",
-	"pt-locked-page": "See definition on [[mw:Help:Extension:Translate/Glossary]].",
 	"pt-deletepage-lang-title": "Used as page title. Parameters:\n* $1 - page title\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nSee also:\n* {{msg-mw|Pt-deletepage-full-title}}",
 	"pt-deletepage-full-title": "Used as page title. Parameters:\n* $1 - page title\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nSee also:\n* {{msg-mw|Pt-deletepage-lang-title}}",
 	"pt-deletepage-invalid-title": "Error message when trying to delete a translation page or translatable page.",
