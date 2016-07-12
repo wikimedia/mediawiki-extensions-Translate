@@ -110,6 +110,7 @@ class TranslateHooks {
 			global $wgJobClasses;
 			$wgJobClasses['TranslateRenderJob'] = 'TranslateRenderJob';
 			$wgJobClasses['RenderJob'] = 'TranslateRenderJob';
+			$wgJobClasses['TranslatablePageMoveJob'] = 'TranslatePageMoveJob';
 			$wgJobClasses['TranslateMoveJob'] = 'TranslateMoveJob';
 			$wgJobClasses['MoveJob'] = 'TranslateMoveJob';
 			$wgJobClasses['TranslateDeleteJob'] = 'TranslateDeleteJob';
@@ -176,9 +177,6 @@ class TranslateHooks {
 
 			// Custom move page that can move all the associated pages too
 			$wgHooks['SpecialPage_initList'][] = 'PageTranslationHooks::replaceMovePage';
-			// Locking during page moves
-			$wgHooks['getUserPermissionsErrorsExpensive'][] =
-				'PageTranslationHooks::lockedPagesCheck';
 			// Disable action=delete
 			$wgHooks['ArticleConfirmDelete'][] = 'PageTranslationHooks::disableDelete';
 
