@@ -402,114 +402,42 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	}
 
 	protected function performAction() {
-		$jobs = [];
-		$user = $this->getUser();
 		$target = $this->newTitle;
 		$base = $this->oldTitle->getPrefixedText();
-		$oldLatest = $this->oldTitle->getLatestRevID();
 
-		$params = [
-			'base-source' => $this->oldTitle->getPrefixedText(),
-			'base-target' => $this->newTitle->getPrefixedText(),
-		];
+		$moves = [];
+		$moves[$base] = $target->getPrefixedText();
 
-		$translationPages = $this->getTranslationPages();
-		foreach ( $translationPages as $old ) {
-			$to = $this->newPageTitle( $base, $old, $target );
-			$jobs[$old->getPrefixedText()] = TranslateMoveJob::newJob( $old, $to, $params, $user );
+		foreach ( $this->getTranslationPages() as $from ) {
+			$to = $this->newPageTitle( $base, $from, $target );
+			$moves[$from->getPrefixedText()] = $to->getPrefixedText();
 		}
 
-		$sectionPages = $this->getSectionPages();
-		foreach ( $sectionPages as $old ) {
-			$to = $this->newPageTitle( $base, $old, $target );
-			$jobs[$old->getPrefixedText()] = TranslateMoveJob::newJob( $old, $to, $params, $user );
+		foreach ( $this->getSectionPages() as $from ) {
+			$to = $this->newPageTitle( $base, $from, $target );
+			$moves[$from->getPrefixedText()] = $to->getPrefixedText();
 		}
 
 		if ( $this->moveSubpages ) {
 			$subpages = $this->getSubpages();
-			foreach ( $subpages as $old ) {
-				if ( TranslatablePage::isTranslationPage( $old ) ) {
+			foreach ( $subpages as $from ) {
+				if ( TranslatablePage::isTranslationPage( $from ) ) {
 					continue;
 				}
 
-				$to = $this->newPageTitle( $base, $old, $target );
-				$jobs[$old->getPrefixedText()] = TranslateMoveJob::newJob(
-					$old,
-					$to,
-					$params,
-					$user
-				);
+				$to = $this->newPageTitle( $base, $from, $target );
+				$moves[$from->getPrefixedText()] = $to->getPrefixedText();
 			}
 		}
 
-		// This is used by TranslateMoveJob
-		wfGetCache( CACHE_ANYTHING )->set( wfMemcKey( 'translate-pt-move', $base ), count( $jobs ) );
-		JobQueueGroup::singleton()->push( $jobs );
+		$summary = $this->msg( 'pt-movepage-logreason', $base )->inContentLanguage()->text();
+		$job = TranslatablePageMoveJob::newJob(
+			$this->oldTitle, $this->newTitle, $moves, $summary, $this->getUser()
+		);
 
-		TranslateMoveJob::forceRedirects( false );
-
-		$errors = $this->oldTitle->moveTo( $this->newTitle, true, $this->reason, false );
-		if ( is_array( $errors ) ) {
-			$this->showErrors( $errors );
-		}
-
-		TranslateMoveJob::forceRedirects( true );
-
-		$newTpage = TranslatablePage::newFromTitle( $this->newTitle );
-		$newTpage->addReadyTag( $this->newTitle->getLatestRevID( Title::GAID_FOR_UPDATE ) );
-
-		if ( $newTpage->getMarkedTag() === $oldLatest ) {
-			$newTpage->addMarkedTag( $this->newTitle->getLatestRevID( Title::GAID_FOR_UPDATE ) );
-		}
-
-		// remove the entries from metadata table.
-		$oldGroupId = $this->page->getMessageGroupId();
-		$newGroupId = $newTpage->getMessageGroupId();
-		$this->moveMetadata( $oldGroupId, $newGroupId );
-
-		MessageGroups::singleton()->recache();
-		MessageIndexRebuildJob::newJob()->insert();
+		JobQueueGroup::singleton()->push( $job );
 
 		$this->getOutput()->addWikiMsg( 'pt-movepage-started' );
-	}
-
-	protected function moveMetadata( $oldGroupId, $newGroupId ) {
-		$prioritylangs = TranslateMetadata::get( $oldGroupId, 'prioritylangs' );
-		$priorityforce = TranslateMetadata::get( $oldGroupId, 'priorityforce' );
-		$priorityreason = TranslateMetadata::get( $oldGroupId, 'priorityreason' );
-		TranslateMetadata::set( $oldGroupId, 'prioritylangs', false );
-		TranslateMetadata::set( $oldGroupId, 'priorityforce', false );
-		TranslateMetadata::set( $oldGroupId, 'priorityreason', false );
-		if ( $prioritylangs ) {
-			TranslateMetadata::set( $newGroupId, 'prioritylangs', $prioritylangs );
-		}
-		if ( $priorityforce ) {
-			TranslateMetadata::set( $newGroupId, 'priorityforce', $priorityforce );
-		}
-		if ( $priorityreason !== false ) {
-			TranslateMetadata::set( $newGroupId, 'priorityreason', $priorityreason );
-		}
-		// make the changes in aggregate groups metadata, if present in any of them.
-		$groups = MessageGroups::getAllGroups();
-		foreach ( $groups as $group ) {
-			if ( $group instanceof AggregateMessageGroup ) {
-				$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' );
-				if ( $subgroups !== false ) {
-					$subgroups = explode( ',', $subgroups );
-					$subgroups = array_flip( $subgroups );
-					if ( isset( $subgroups[$oldGroupId] ) ) {
-						$subgroups[$newGroupId] = $subgroups[$oldGroupId];
-						unset( $subgroups[$oldGroupId] );
-						$subgroups = array_flip( $subgroups );
-						TranslateMetadata::set(
-							$group->getId(),
-							'subgroups',
-							implode( ',', $subgroups )
-						);
-					}
-				}
-			}
-		}
 	}
 
 	protected function checkMoveBlockers() {
