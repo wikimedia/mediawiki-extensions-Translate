@@ -42,12 +42,9 @@ class RefreshTranslatablePages extends Maintenance {
 				wfWaitForSlaves();
 			}
 
-			// Get all translation subpages and refresh each one of them
 			$page = TranslatablePage::newFromTitle( $group->getTitle() );
-			$translationPages = $page->getTranslationPages();
-
-			foreach ( $translationPages as $subpage ) {
-				$job = TranslateRenderJob::newJob( $subpage );
+			$jobs = TranslationsUpdateJob::getRenderJobs( $page );
+			foreach ( $jobs as $job ) {
 				$job->run();
 			}
 		}
