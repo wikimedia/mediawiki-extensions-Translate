@@ -12,6 +12,7 @@
 		]
 	},
 	"translate": "অনুবাদ",
+	"translate-extensionname": "অনুবাদ",
 	"translate-taskui-view": "সব বার্তা দেখাও",
 	"translate-taskui-untranslated": "অনুবাদ হয়নি এমন বার্তা দেখাও",
 	"translate-taskui-optional": "ঐচ্ছিক বার্তা দেখাও",
@@ -37,6 +38,7 @@
 	"translate-page-navigation-legend": "পরিভ্রমণ",
 	"translate-page-showing": "$3 বার্তার মধ্যে $1 থেকে $2 বার্তা দেখাও",
 	"translate-page-showing-all": "$1টি {{PLURAL:$1|বার্তা}} দেখাচ্ছে।",
+	"translate-page-showing-none": "প্রদর্শনের জন্য কোন বার্তা নাই।",
 	"translate-next": "পরবর্তী পাতা",
 	"translate-prev": "পূর্ববর্তী পাতা",
 	"translate-page-description-legend": "দলের তথ্য",

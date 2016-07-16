@@ -6,7 +6,8 @@
 			"TomT0m",
 			"Wladek92",
 			"Titip1995",
-			"Bluenaranja"
+			"Bluenaranja",
+			"Verdy p"
 		]
 	},
 	"searchtranslations": "Recherche de traductions",
@@ -14,10 +15,9 @@
 	"tux-sst-view-foreign": "Voir sur $1",
 	"tux-sst-search": "Rechercher",
 	"tux-sst-search-ph": "Recherche de traductions",
-	"tux-sst-count": "{{PLURAL:$1|Un résultat trouvé|$1 résultats trouvés}}",
+	"tux-sst-count": "{{PLURAL:$1|0=Aucun résultat trouvé|1=Un résultat trouvé|$1 résultats trouvés}}",
 	"tux-sst-facet-language": "Langues",
 	"tux-sst-facet-group": "Groupes de message",
-	"tux-sst-facet-orphan": "(orphelin)",
 	"tux-sst-nosolr-title": "Recherche indisponible",
 	"tux-sst-nosolr-body": "Ce wiki n’a pas de service de recherche de traduction.",
 	"tux-sst-solr-offline-title": "Recherche indisponible",
