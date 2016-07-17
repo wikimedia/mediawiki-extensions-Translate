@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bikarhêner"
+			"Bikarhêner",
+			"George Animal"
 		]
 	},
 	"tsb-all-languages-button-label": "Hemû ziman",
-	"tsb-accept-button-label": "Bipejirîne"
+	"tsb-search-requests": "Lê daxwaziyan bigere",
+	"tsb-accept-button-label": "Bipejirîne",
+	"tsb-translations-source": "Çavkanî"
 }
