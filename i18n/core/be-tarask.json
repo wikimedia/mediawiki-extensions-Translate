@@ -218,7 +218,7 @@
 	"translate-import-from-local": "Загрузіць лякальны файл:",
 	"translate-import-load": "Загрузіць файл",
 	"translate-import-err-dl-failed": "Немагчыма загрузіць файл:\n$1",
-	"translate-import-err-ul-failed": "Загрузка файла не атрымалася",
+	"translate-import-err-ul-failed": "Не атрымалася загрузіць файл",
 	"translate-import-err-invalid-title": "Пададзеная назва файла <nowiki>$1</nowiki> — няслушная.",
 	"translate-import-err-no-such-file": "Файл <nowiki>$1</nowiki> не існуе альбо не загружаны лякальна.",
 	"translate-import-err-stale-group": "Група паведамленьняў, да якой належыць гэты файл, не існуе.",
