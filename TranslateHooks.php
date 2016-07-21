@@ -211,6 +211,7 @@ class TranslateHooks {
 			$wgHooks['GetPreferences'][] = 'TranslateSandbox::onGetPreferences';
 			$wgHooks['UserGetRights'][] = 'TranslateSandbox::enforcePermissions';
 			$wgHooks['ApiCheckCanExecute'][] = 'TranslateSandbox::onApiCheckCanExecute';
+			$wgHooks['UserGetRights'][] = 'TranslateSandbox::allowAccountCreation';
 
 			global $wgLogTypes, $wgLogActionsHandlers;
 			// log-name-translatorsandbox log-description-translatorsandbox
@@ -218,6 +219,8 @@ class TranslateHooks {
 			// logentry-translatorsandbox-promoted logentry-translatorsandbox-rejected
 			$wgLogActionsHandlers['translatorsandbox/promoted'] = 'TranslateLogFormatter';
 			$wgLogActionsHandlers['translatorsandbox/rejected'] = 'TranslateLogFormatter';
+
+			// This is no longer used for new entries since 2016.07.
 			// logentry-newusers-tsbpromoted
 			$wgLogActionsHandlers['newusers/tsbpromoted'] = 'LogFormatter';
 
