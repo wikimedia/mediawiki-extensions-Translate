@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce1ffb9f_eb46cd53",
+        "filename": "utils/TranslateSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-07-21T15:48:12Z",
+      "side": 1,
+      "message": "The conditional shouldn\u0027t be necessary anymore. At one point during development $res-\u003emessage could have been a MessageSpecifier, but we dropped that and apparently forgot to simplify AuthManagerAuthPlugin.\n\nOTOH, it doesn\u0027t hurt anything to keep it.",
+      "revId": "88437f37c9a807a02dabfbb5fa8cfc20db76bf71",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce1ffb9f_8b3911ce",
+        "filename": "utils/TranslateSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-07-21T15:48:12Z",
+      "side": 1,
+      "message": "Technically, this should probably do $msg-\u003einLanguage( \u0027en\u0027 )-\u003euseDatabase( false )-\u003etext() since exceptions are normally in English rather than the user\u0027s language. But I\u0027ll leave that up to you if you want to care about that.",
+      "revId": "88437f37c9a807a02dabfbb5fa8cfc20db76bf71",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce1ffb9f_ab6335d9",
+        "filename": "utils/TranslateSandbox.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-07-21T15:48:12Z",
+      "side": 1,
+      "message": "For maximum safety, you might want to throw in a\n\n $user-\u003eclearInstanceCache( \u0027name\u0027 );\n if ( $user-\u003egetId() ) {\n     self::deleteUser( $user, \u0027force\u0027 );\n }\n\nbefore throwing here, just in case it was a Secondary that got you here.",
+      "revId": "88437f37c9a807a02dabfbb5fa8cfc20db76bf71",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
