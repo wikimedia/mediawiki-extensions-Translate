@@ -561,7 +561,10 @@ $wgTranslateYamlLibrary = 'spyc';
 
 /**
  * Whether to allow users to sign up via a sandbox. Sandboxed users cannot do
- * much until approved and thus they can be get rid of easily.
+ * much until approved and thus they can be get rid of easily. This only works
+ * with MediaWiki 1.27 and newer, and only if registration is configured to not
+ * use account creation providers which give REDIRECT or UI responses or
+ * require any other field than the default username/password/email.
  * @since 2013.04
  */
 $wgTranslateUseSandbox = false;
