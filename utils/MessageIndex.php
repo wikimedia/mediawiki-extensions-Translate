@@ -432,7 +432,7 @@ class DatabaseMessageIndex extends MessageIndex {
 	protected function unlock() {
 		$dbw = wfGetDB( DB_MASTER );
 		// Unlock once the rows are actually unlocked to avoid deadlocks
-		$dbw->onTransactionIdle( function () use ( $dbw ) {
+		$dbw->onTransactionResolution( function () use ( $dbw ) {
 			$dbw->unlock( 'translate-messageindex', __METHOD__ );
 		} );
 
