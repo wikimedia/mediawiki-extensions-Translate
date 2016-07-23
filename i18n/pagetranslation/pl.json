@@ -197,6 +197,7 @@
 	"pp-save-button-label": "Zapisz",
 	"pp-cancel-button-label": "Anuluj",
 	"pp-save-message": "Strona została zapisana. Możesz ją [$1 edytować].",
+	"pp-prepare-message": "Strona została przygotowana do tłumaczenia. Przejrzyj poniższy diff. Jeśli wszystko jest porządku, kliknij przycisk „{{int:pp-save-button-label}}”!",
 	"pp-already-prepared-message": "Wydaje się, że ta strona została już przygotowana do tłumaczenia. Nie ma żadnych zmian w porównaniu z poprzednią wersją.",
 	"pp-pagename-missing": "Podaj nazwę strony.",
 	"pp-diff-old-header": "Tekst źródłowy",
