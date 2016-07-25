@@ -112,12 +112,6 @@ class PageTranslationHooks {
 			return true;
 		}
 
-		// Do not trigger renders for fuzzy
-		$text = $content->getNativeData();
-		if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) {
-			return true;
-		}
-
 		$group = $handle->getGroup();
 		if ( !$group instanceof WikiPageMessageGroup ) {
 			return true;
