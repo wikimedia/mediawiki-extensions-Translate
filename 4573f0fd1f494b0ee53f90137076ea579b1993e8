@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "aed9e73f_d2464526",
+        "filename": "ffs/GettextFFS.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-07-26T17:09:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aed9e73f_41b269e5",
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aed9e73f_01d781f3",
         "filename": "specials/SpecialExportTranslations.php",
         "patchSetId": 7
@@ -42,6 +60,24 @@
     },
     {
       "key": {
+        "uuid": "aed9e73f_d770f709",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-07-26T17:09:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aed9e73f_01d781f3",
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aed9e73f_81ac7186",
         "filename": "specials/SpecialExportTranslations.php",
         "patchSetId": 7
@@ -53,6 +89,24 @@
       "writtenOn": "2016-07-26T11:51:55Z",
       "side": 1,
       "message": "Why don\u0027t you just rewrite task to format when redirecting?",
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_f7541b59",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-07-26T17:09:09Z",
+      "side": 1,
+      "message": "It does that already (see SpecialTranslate.php) but I thought this might be kept as well since there\u0027s no harm. Do you think this should be removed?",
+      "parentUuid": "aed9e73f_81ac7186",
       "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -99,6 +153,24 @@
     },
     {
       "key": {
+        "uuid": "aed9e73f_b7d293d3",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-07-26T17:09:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aed9e73f_81e391d3",
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aed9e73f_a1e895b0",
         "filename": "specials/SpecialExportTranslations.php",
         "patchSetId": 7
@@ -116,6 +188,24 @@
         "endLine": 124,
         "endChar": 38
       },
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_f7d33bd5",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-07-26T17:09:09Z",
+      "side": 1,
+      "message": "Added @todo.",
+      "parentUuid": "aed9e73f_a1e895b0",
       "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -145,6 +235,24 @@
     },
     {
       "key": {
+        "uuid": "aed9e73f_d7fd573a",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-07-26T17:09:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aed9e73f_4100a96d",
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aed9e73f_81fab171",
         "filename": "specials/SpecialExportTranslations.php",
         "patchSetId": 7
@@ -156,6 +264,24 @@
       "writtenOn": "2016-07-26T11:51:55Z",
       "side": 1,
       "message": "Comment is bit confusing. I believe it means to say that format is irrelevant for translatable pages?",
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_d77ab7b8",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-07-26T17:09:09Z",
+      "side": 1,
+      "message": "We can show the textarea with translation page text for translatable page groups only (even if it\u0027s an invalid format) so we shouldn\u0027t show this error when no format or an invalid format is specified. I changed the wording for elucidation.",
+      "parentUuid": "aed9e73f_81fab171",
       "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -185,6 +311,24 @@
     },
     {
       "key": {
+        "uuid": "aed9e73f_1785ff9f",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-07-26T17:09:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aed9e73f_21eba5a1",
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aed9e73f_c1f3d99a",
         "filename": "specials/SpecialExportTranslations.php",
         "patchSetId": 7
@@ -202,6 +346,24 @@
         "endLine": 211,
         "endChar": 13
       },
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_7753ab43",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-07-26T17:09:09Z",
+      "side": 1,
+      "message": "Maybe there are some external scripts checking for \u0027Not supported\u0027 and this would change that behavior. As this a major change with other validation changes, I guess I will just move it now.",
+      "parentUuid": "aed9e73f_c1f3d99a",
       "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -231,6 +393,24 @@
     },
     {
       "key": {
+        "uuid": "aed9e73f_f23269ee",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-07-26T17:09:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aed9e73f_412fc9f3",
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aed9e73f_6134cd47",
         "filename": "specials/SpecialExportTranslations.php",
         "patchSetId": 7
@@ -254,6 +434,24 @@
     },
     {
       "key": {
+        "uuid": "aed9e73f_d299e5c9",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-07-26T17:09:09Z",
+      "side": 1,
+      "message": "Yes. It\u0027s been available since 1.24 onwards. \u003chttps://doc.wikimedia.org/mediawiki-core/master/php/classSpecialPage.html#a7d0a166e9ae5016fff4bd10f727d6f11\u003e",
+      "parentUuid": "aed9e73f_6134cd47",
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aed9e73f_8139d140",
         "filename": "specials/SpecialExportTranslations.php",
         "patchSetId": 7
@@ -271,6 +469,24 @@
         "endLine": 254,
         "endChar": 60
       },
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_52d4f54b",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-07-26T17:09:09Z",
+      "side": 1,
+      "message": "I was planning to ask you about this. This was copied from previous code and previously it failed at validation stage if source language is selected. So this was not necessary back then but it can be enabled now since source language exports are allowed.",
+      "parentUuid": "aed9e73f_8139d140",
       "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
