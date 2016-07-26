@@ -1,0 +1,279 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aed9e73f_41b269e5",
+        "filename": "ffs/GettextFFS.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:51:55Z",
+      "side": 1,
+      "message": "This would be better in a separate commit.",
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_01d781f3",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:51:55Z",
+      "side": 1,
+      "message": "$groupId would be less confusing.",
+      "range": {
+        "startLine": 14,
+        "startChar": 12,
+        "endLine": 14,
+        "endChar": 17
+      },
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_81ac7186",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:51:55Z",
+      "side": 1,
+      "message": "Why don\u0027t you just rewrite task to format when redirecting?",
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_21bd65ae",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:51:55Z",
+      "side": 1,
+      "message": "As future work, could consider refactoring StatsTable::isBlacklisted",
+      "range": {
+        "startLine": 109,
+        "startChar": 10,
+        "endLine": 109,
+        "endChar": 15
+      },
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_81e391d3",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:51:55Z",
+      "side": 1,
+      "message": "Inconsistent usage of spaces within []. MediaWiki codesniffer will fix these in the future, but I am waiting for the patch review backlog to go close to zero before updating it.",
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_a1e895b0",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:51:55Z",
+      "side": 1,
+      "message": "As future work, could consider applying ULS to the selector.",
+      "range": {
+        "startLine": 124,
+        "startChar": 20,
+        "endLine": 124,
+        "endChar": 38
+      },
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_4100a96d",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:51:55Z",
+      "side": 1,
+      "message": "I don\u0027t remember why this was disabled, but we could just allow it.",
+      "range": {
+        "startLine": 167,
+        "startChar": 30,
+        "endLine": 167,
+        "endChar": 34
+      },
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_81fab171",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:51:55Z",
+      "side": 1,
+      "message": "Comment is bit confusing. I believe it means to say that format is irrelevant for translatable pages?",
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_21eba5a1",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:51:55Z",
+      "side": 1,
+      "message": "getId",
+      "range": {
+        "startLine": 201,
+        "startChar": 26,
+        "endLine": 201,
+        "endChar": 31
+      },
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_c1f3d99a",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:51:55Z",
+      "side": 1,
+      "message": "Seems easy thing to do, why not done yet?",
+      "range": {
+        "startLine": 211,
+        "startChar": 9,
+        "endLine": 211,
+        "endChar": 13
+      },
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_412fc9f3",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:51:55Z",
+      "side": 1,
+      "message": "Did you mean -\u003e?",
+      "range": {
+        "startLine": 216,
+        "startChar": 28,
+        "endLine": 216,
+        "endChar": 29
+      },
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_6134cd47",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:51:55Z",
+      "side": 1,
+      "message": "getConfig is available in 1.26, right?",
+      "range": {
+        "startLine": 225,
+        "startChar": 30,
+        "endLine": 225,
+        "endChar": 39
+      },
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_8139d140",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:51:55Z",
+      "side": 1,
+      "message": "Why would it be unnecessary?",
+      "range": {
+        "startLine": 254,
+        "startChar": 59,
+        "endLine": 254,
+        "endChar": 60
+      },
+      "revId": "4573f0fd1f494b0ee53f90137076ea579b1993e8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
