@@ -131,9 +131,7 @@ class ApiTranslateSandbox extends ApiBase {
 			$logid = $logEntry->insert();
 			$logEntry->publish( $logid );
 
-			$user->addNewUserLogEntry( 'tsbpromoted' );
 			$this->createUserPage( $user );
-			Hooks::run( 'AddNewAccount', array( $user, false ) );
 		}
 	}
 

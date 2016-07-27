@@ -7,12 +7,20 @@
  * @license GPL-2.0+
  */
 
+use MediaWiki\Auth\AuthManager;
+use MediaWiki\Auth\AuthenticationRequest;
+use MediaWiki\Auth\AuthenticationResponse;
+
 /**
- * Utility class for the sandbox feature of Translate.
+ * Utility class for the sandbox feature of Translate. Do not try this yourself. This code makes a
+ * lot of assumptions about what happens to the user account.
  */
 class TranslateSandbox {
+	public static $userToCreate = null;
+
 	/**
 	 * Adds a new user without doing much validation.
+	 *
 	 * @param string $name User name.
 	 * @param string $email Email address.
 	 * @param string $password User provided password.
@@ -21,24 +29,50 @@ class TranslateSandbox {
 	 */
 	public static function addUser( $name, $email, $password ) {
 		$user = User::newFromName( $name, 'creatable' );
+
 		if ( !$user instanceof User ) {
 			throw new MWException( 'Invalid user name' );
 		}
 
-		$user->setEmail( $email );
-		$status = $user->addToDatabase();
+		$data = array(
+			'username' => $user->getName(),
+			'password' => $password,
+			'retype' => $password,
+			'email' => $email
+		);
 
-		if ( !$status->isOK() ) {
-			throw new MWException( $status->getWikiText() );
+		self::$userToCreate = $user;
+		$reqs = AuthManager::singleton()->getAuthenticationRequests( AuthManager::ACTION_CREATE );
+		$reqs = AuthenticationRequest::loadRequestsFromSubmission( $reqs, $data );
+		$res = AuthManager::singleton()->beginAccountCreation( $user, $reqs, 'null:' );
+		self::$userToCreate = null;
+
+		switch ( $res->status ) {
+		case AuthenticationResponse::PASS:
+			break;
+		case AuthenticationResponse::FAIL:
+			// Unless things are misconfigured, this will handle errors such as username taken,
+			// invalid user name or too short password. The WebAPI is prechecking these to
+			// provide nicer error messages.
+			$reason = $res->message->inLanguage( 'en' )->useDatabase( false )->text();
+			throw new MWException( "Account creation failed: $reason" );
+		default:
+			// Just in case it was a Secondary that failed
+			$user->clearInstanceCache( 'name' );
+			if ( $user->getId() ) {
+				self::deleteUser( $user, 'force' );
+			}
+			throw new MWException(
+				'AuthManager does not support such simplified account creation'
+			);
 		}
 
-		$user->setPassword( $password );
-		$user->saveSettings();
+		// User now has an id, but we must clear the cache to see it. Without this the group
+		// addition below would not be saved in the database.
+		$user->clearInstanceCache( 'name' );
 
-		// Need to have an id first
 		// group-translate-sandboxed group-translate-sandboxed-member
 		$user->addGroup( 'translate-sandboxed' );
-		$user->clearInstanceCache( 'name' );
 		$user->sendConfirmationMail();
 
 		return $user;
@@ -62,6 +96,7 @@ class TranslateSandbox {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete( 'user', array( 'user_id' => $uid ), __METHOD__ );
 		$dbw->delete( 'user_groups', array( 'ug_user' => $uid ), __METHOD__ );
+		$dbw->delete( 'user_properties', array( 'up_user' => $uid ), __METHOD__ );
 
 		// If someone tries to access still object still, they will get anon user
 		// data.
@@ -221,6 +256,13 @@ class TranslateSandbox {
 
 		// Do not let other hooks add more actions
 		return false;
+	}
+
+	/// Hook: UserGetRights
+	public static function allowAccountCreation( $user, &$rights ) {
+		if ( self::$userToCreate && $user->equals( self::$userToCreate ) ) {
+			$rights[] = 'createaccount';
+		}
 	}
 
 	/// Hook: onGetPreferences
