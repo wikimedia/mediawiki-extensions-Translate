@@ -275,7 +275,7 @@
 	"log-name-translationreview": "번역 검토 기록",
 	"log-description-translationreview": "번역과 메시지 그룹에 대한 모든 검토 기록입니다.",
 	"logentry-translationreview-message": "$1님이 $3 번역을 {{GENDER:$2|검토했습니다}}",
-	"logentry-translationreview-group": "$1님이 $3의 $4 번역의 상태를 $6에서 $7로 {{GENDER:$2|바꾸었습니다}}",
+	"logentry-translationreview-group": "$1님이 $3의 $4 번역의 상태를 $6에서 $7(으)로 {{GENDER:$2|바꾸었습니다}}",
 	"group-translate-sandboxed": "승인하지 않은 번역자",
 	"group-translate-sandboxed-member": "{{GENDER:$1|승인하지 않은 번역자}}",
 	"right-translate-sandboxmanage": "연습장 사용자 관리",
