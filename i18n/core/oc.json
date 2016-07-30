@@ -287,6 +287,7 @@
 	"tux-editor-doc-editor-cancel": "Anullar",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|messatge|messatges}} mai",
 	"tux-messagetable-loading-messages": "Cargament {{PLURAL:$1|del messatge|dels messatges}}…",
+	"tux-message-filter-result": "{{PLURAL:$1|0=Cap de resultat pas trobat|1=Un resultat trobat|$1 resultats trobats}} per « $2 »",
 	"tux-message-filter-advanced-button": "Recèrca avançada",
 	"tux-empty-list-all": "Aqueste grop de messatges es void",
 	"tux-empty-list-all-guide": "Seleccionar un grop de messatge diferent de traduire",

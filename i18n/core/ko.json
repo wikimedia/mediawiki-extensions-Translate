@@ -32,7 +32,7 @@
 	"translate-taction-lstats": "언어 통계",
 	"translate-taction-mstats": "메시지 그룹 통계",
 	"translate-taction-export": "내보내기",
-	"translate-taction-disabled": "이 행동은 이 위키에서 비활성화되어 있습니다.",
+	"translate-taction-disabled": "이 동작은 이 위키에서 비활성화되어 있습니다.",
 	"translate-page-no-such-language": "지정한 언어가 잘못되었습니다.",
 	"translate-page-no-such-group": "지정한 그룹이 잘못되었습니다.",
 	"translate-page-disabled": "이 그룹에서 이 언어로의 번역이 비활성화되어 있습니다.\n이유:\n\n<em>$1</em>",

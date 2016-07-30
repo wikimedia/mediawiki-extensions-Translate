@@ -21,7 +21,7 @@
 	"tpt-diff-old": "이전 텍스트",
 	"tpt-diff-new": "새 텍스트",
 	"tpt-submit": "이 판을 번역하도록 표시",
-	"tpt-sections-oldnew": "기존 및 신규 번역 단위",
+	"tpt-sections-oldnew": "신규 및 기존 번역 단위",
 	"tpt-sections-deleted": "삭제된 번역 단위",
 	"tpt-sections-template": "번역 문서 틀",
 	"tpt-action-nofuzzy": "번역을 무효화하지 마세요",

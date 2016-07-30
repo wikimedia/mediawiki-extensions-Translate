@@ -8,12 +8,16 @@
 	"tux-sst-edit": "Modificar la traduccion",
 	"tux-sst-search": "Recercar",
 	"tux-sst-search-ph": "Recèrca de traduccions",
+	"tux-sst-count": "{{PLURAL:$1|0=Cap de resultat pas trobat|1=Un resultat trobat|$1 resultats trobats}}",
 	"tux-sst-facet-language": "Lengas",
 	"tux-sst-facet-group": "Gropes de messatge",
 	"tux-sst-nosolr-title": "Recèrca indisponibla",
+	"tux-sst-prev": "< Precedent",
 	"tux-sst-default": "Traduccions",
 	"tux-sst-translated": "Traduccions de $1",
 	"tux-sst-outdated": "Traduccions perimidas a partir de $1",
 	"tux-sst-ellipsis-outdated": "Traduccions obsolètas",
-	"tux-sst-match-message": "Fa veire las traduccions que correspondon a cadun dels mots de la recèrca. $1"
+	"tux-sst-link-all-match": "Requerís totes los tèrmes de recèrca",
+	"tux-sst-match-message": "Fa veire las traduccions que correspondon a cadun dels mots de la recèrca. $1",
+	"tux-sst-case-sensitive": "Sensible a la cassa"
 }
