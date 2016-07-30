@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aeb2c7f3_9af3099c",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-07-30T09:37:06Z",
+      "side": 0,
+      "message": "Are the tags not added anymore?",
+      "range": {
+        "startLine": 463,
+        "startChar": 0,
+        "endLine": 467,
+        "endChar": 3
+      },
+      "revId": "fb3431984033007974d7deb359447cfc7ba05d29",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
