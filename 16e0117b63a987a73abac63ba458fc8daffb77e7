@@ -16,6 +16,24 @@
       "revId": "16e0117b63a987a73abac63ba458fc8daffb77e7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aeb2c7f3_9d35c3da",
+        "filename": "tag/TranslateMoveJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-30T19:33:43Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "aeb2c7f3_7aff1563",
+      "revId": "16e0117b63a987a73abac63ba458fc8daffb77e7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }

@@ -22,6 +22,30 @@
       "revId": "fb3431984033007974d7deb359447cfc7ba05d29",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aeb2c7f3_7d21cf99",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-30T19:33:43Z",
+      "side": 0,
+      "message": "Tags do not need copying because they are on page_id. I removed this code because I think that allowing people to re-mark the page for translation to allow fuzzy for the title change.",
+      "parentUuid": "aeb2c7f3_9af3099c",
+      "range": {
+        "startLine": 463,
+        "startChar": 0,
+        "endLine": 467,
+        "endChar": 3
+      },
+      "revId": "fb3431984033007974d7deb359447cfc7ba05d29",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
