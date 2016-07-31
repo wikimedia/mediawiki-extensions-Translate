@@ -145,7 +145,7 @@
 	"translations-summary": "أدخل اسم رسالة أسفله لعرض كل الترجمات المتوفرة.",
 	"translate-translations-no-message": "\"$1\" ليست رسالة قابلة للترجمة",
 	"translate-translations-none": "لا يوجد ترجمات ل\"$1\"",
-	"translate-translations-count": "عثر {{PLURAL:$1|one translation|$1 translations}}.",
+	"translate-translations-count": "عثر {{PLURAL:$1|ترجمة واحدة|$1 ترجمة}}.",
 	"translate-translations-fieldset-title": "الرسالة",
 	"translate-translations-messagename": "الاسم:",
 	"translate-translations-project": "المشروع:",

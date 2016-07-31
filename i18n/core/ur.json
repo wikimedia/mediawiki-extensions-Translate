@@ -6,7 +6,8 @@
 			"පසිඳු කාවින්ද",
 			"عثمان خان شاہ",
 			"Muhammad Shuaib",
-			"Hindustanilanguage"
+			"Hindustanilanguage",
+			"Obaid Raza"
 		]
 	},
 	"translate": "ترجمہ",
@@ -61,7 +62,7 @@
 	"languagestats-summary": "اس صفحہ میں متعلقہ زبان کے تمام گروہان پیغامات کی ترجماتی شماریات درج ہیں۔",
 	"languagestats-recenttranslations": "حالیہ تراجم",
 	"translate-langstats-expand": "وسیع کریں",
-	"translate-langstats-collapse": "خاتمے",
+	"translate-langstats-collapse": "چھپائیں",
 	"translate-langstats-expandall": "تمام وسیع کریں",
 	"translate-langstats-collapseall": "تمام کو مختصر کریں",
 	"translate-language-code": "رمز زبان",
@@ -118,6 +119,7 @@
 	"tux-empty-you-can-help-providing": "آپ نئے ترجمے فراہم کرنے میں مدد کر سکتے ہیں",
 	"tux-empty-nothing-new-to-proofread": "کوئی اصلاح کے لئے نیا کام نہیں ہے",
 	"tux-empty-you-can-review-already-proofread": "آپ پہلے سے ہی دوسروں کی طرف سے علیحدہ تصحیح املاء ترجمے کا جائزہ لے سکتے ہیں ۔",
+	"tux-editor-collapse-tooltip": "چھپائیں",
 	"tux-editor-message-tools-history": "تاریخچہ",
 	"tux-editor-message-tools-translations": "جملہ تراجم"
 }
