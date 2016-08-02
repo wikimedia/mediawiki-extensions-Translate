@@ -28,7 +28,7 @@
 	"tpt-aggregategroup-edit-name": "Name:",
 	"tpt-aggregategroup-edit-description": "Şınasiyen:",
 	"tpt-aggregategroup-update": "Qeyd ke",
-	"tpt-aggregategroup-update-cancel": "Peyd ke",
+	"tpt-aggregategroup-update-cancel": "Bıtexelne",
 	"tpt-invalid-group": "Nêraverdi grub",
 	"log-name-pagetranslation": "Qeydê açarnayışê pele",
 	"pt-movepage-list-translation": "{{PLURAL:$1|Pera|Perê}} açarnayışi",
@@ -41,6 +41,8 @@
 	"pt-deletepage-reason": "Sebeb:",
 	"pt-deletepage-list-translation": "Pelê açarnayışi",
 	"pt-deletepage-list-other": "Bınpelê bini",
+	"pm-cancel-button-label": "Bıtexelne",
 	"pp-save-button-label": "Qeyd ke",
+	"pp-cancel-button-label": "Bıtexelne",
 	"pp-diff-old-header": "Metnê çımey"
 }
