@@ -15,26 +15,6 @@
  */
 class TranslateYaml {
 	/**
-	 * @deprecated in 2014.01
-	 */
-	public static function parseGroupFile( $filename ) {
-		$data = file_get_contents( $filename );
-		wfDeprecated( 'Use MessageGroupConfigurationParser' );
-		$parser = new MessageGroupConfigurationParser();
-
-		return $parser->getHopefullyValidConfigurations( $data );
-	}
-
-	/**
-	 * @deprecated in 2014.01
-	 */
-	public static function mergeTemplate( $base, $specific ) {
-		wfDeprecated( 'Use MessageGroupConfigurationParser' );
-
-		return MessageGroupConfigurationParser::mergeTemplate( $base, $specific );
-	}
-
-	/**
 	 * @param $text string
 	 * @return array
 	 * @throws MWException
