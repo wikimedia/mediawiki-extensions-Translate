@@ -94,9 +94,8 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		// Checkboxes that default being checked are tricky
 		$this->moveSubpages = $request->getBool( 'subpages', !$request->wasPosted() );
 
-		if ( $this->doBasicChecks() !== true ) {
-			return;
-		}
+		// This will throw exceptions if there is an error.
+		$this->doBasicChecks();
 
 		// Real stuff starts here
 		$page = TranslatablePage::newFromTitle( $this->oldTitle );
@@ -148,14 +147,10 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	/**
 	 * Do the basic checks whether moving is possible and whether
 	 * the input looks anywhere near sane.
-	 * @throws PermissionsError|ErrorPageError|ReadOnlyError
-	 * @return bool
+	 * @throws PermissionsError|ErrorPageError|ReadOnlyError|ThrottledError
 	 */
 	protected function doBasicChecks() {
-		# Check for database lock
-		if ( wfReadOnly() ) {
-			throw new ReadOnlyError;
-		}
+		$this->checkReadOnly();
 
 		if ( $this->oldTitle === null ) {
 			throw new ErrorPageError( 'notargettitle', 'notargettext' );
@@ -165,14 +160,15 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			throw new ErrorPageError( 'nopagetitle', 'nopagetext' );
 		}
 
-		# Check rights
-		$permErrors = $this->oldTitle->getUserPermissionsErrors( 'move', $this->getUser() );
-		if ( !empty( $permErrors ) ) {
-			throw new PermissionsError( 'move', $permErrors );
+		if ( $this->getUser()->pingLimiter( 'move' ) ) {
+			throw new ThrottledError;
 		}
 
-		// Let the caller know it's safe to continue
-		return true;
+		// Check rights
+		$permErrors = $this->oldTitle->getUserPermissionsErrors( 'move', $this->getUser() );
+		if ( count( $permErrors ) ) {
+			throw new PermissionsError( 'move', $permErrors );
+		}
 	}
 
 	/**
