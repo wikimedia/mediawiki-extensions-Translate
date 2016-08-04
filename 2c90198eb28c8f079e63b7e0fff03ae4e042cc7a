@@ -22,6 +22,30 @@
       "revId": "2c90198eb28c8f079e63b7e0fff03ae4e042cc7a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec44f61_d8f4b1bc",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-04T08:43:00Z",
+      "side": 1,
+      "message": "Weird. I\u0027m pretty sure I did fix it locally but somehow it got lost..",
+      "parentUuid": "6ec44f61_58226151",
+      "range": {
+        "startLine": 215,
+        "startChar": 31,
+        "endLine": 215,
+        "endChar": 48
+      },
+      "revId": "2c90198eb28c8f079e63b7e0fff03ae4e042cc7a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
