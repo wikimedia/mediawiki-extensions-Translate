@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec44f61_58226151",
+        "filename": "specials/SpecialExportTranslations.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-04T08:05:11Z",
+      "side": 1,
+      "message": "Did you not fix this yet?\n\n[Thu Aug  4 09:54:49 2016] [hphp] [20838:7f9fd63ff700:104:000001] [] \\nFatal error: Call to undefined function writeIntoVariable() in /www/dev.translatewiki.net/docroot/w/extensions/Translate/specials/SpecialExportTranslations.php on line 215",
+      "range": {
+        "startLine": 215,
+        "startChar": 31,
+        "endLine": 215,
+        "endChar": 48
+      },
+      "revId": "2c90198eb28c8f079e63b7e0fff03ae4e042cc7a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
