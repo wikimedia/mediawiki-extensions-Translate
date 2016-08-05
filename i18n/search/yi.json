@@ -11,11 +11,13 @@
 	"tux-sst-count": "{{PLURAL:$1|איין רעזולטאט געטראפן|$1 רעזולטאטן געטראפן}}",
 	"tux-sst-facet-language": "שפּראַכן",
 	"tux-sst-facet-group": "מעלדונג גרופעס",
-	"tux-sst-facet-orphan": "(יתום)",
 	"tux-sst-nosolr-title": "זוך נישט פאראן",
 	"tux-sst-nosolr-body": "די וויקי האט נישט קיין איבערזעצונג זוך דינסט.",
 	"tux-sst-solr-offline-title": "זוך נישט פאראן",
 	"tux-sst-solr-offline-body": "די זוכדינסט איז צײַטווײַליק נישט פאראן.",
 	"tux-sst-next": "נעקסטע",
-	"tux-sst-prev": "פֿריערדיקע"
+	"tux-sst-prev": "פֿריערדיקע",
+	"tux-sst-default": "איבערזעצונגען",
+	"tux-sst-untranslated": "קיין איבערזעצונג נישט פון $1",
+	"tux-sst-ellipsis-untranslated": "קיין איבערזעצונג"
 }
