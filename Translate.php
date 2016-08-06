@@ -168,6 +168,9 @@ $wgHooks['TranslatePostInitGroups'][] = 'MessageGroups::getAggregateGroups';
 $wgHooks['AdminLinks'][] = 'TranslateHooks::onAdminLinks';
 $wgHooks['MergeAccountFromTo'][] = 'TranslateHooks::onMergeAccountFromTo';
 $wgHooks['DeleteAccount'][] = 'TranslateHooks::onDeleteAccount';
+$wgHooks['AbuseFilter-filterAction'][] = 'TranslateHooks::onAbuseFilterFilterAction';
+$wgHooks['AbuseFilter-computeVariable'][] = 'TranslateHooks::onAbuseFilterComputeVariable';
+$wgHooks['AbuseFilter-builder'][] = 'TranslateHooks::onAbuseFilterBuilder';
 
 // New rights
 // right-translate

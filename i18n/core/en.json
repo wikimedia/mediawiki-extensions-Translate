@@ -193,6 +193,7 @@
 	"supportedlanguages-recenttranslations": "recent translations",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|language|languages}} in total.",
 	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|edit|edits}} - last edit $3 {{PLURAL:$3|day|days}} ago",
+	"abusefilter-edit-builder-vars-translate-source-text": "Source text of translation unit",
 	"translate-save": "Save ($1)",
 	"translate-jssti-add": "Add to list",
 	"managemessagegroups": "Message group management",
