@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee9d9f70_3a75a593",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-06T19:07:23Z",
+      "side": 1,
+      "message": "Boolean return from hooks is optional, isn\u0027t it?",
+      "range": {
+        "startLine": 263,
+        "startChar": 9,
+        "endLine": 263,
+        "endChar": 13
+      },
+      "revId": "2f7aacbbe0bfdf3f5430460333b2163f16fe801e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_5a6a69b2",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-06T19:07:23Z",
+      "side": 1,
+      "message": "It\u0027s common to do early returns and reduce indentation for the main body.",
+      "revId": "2f7aacbbe0bfdf3f5430460333b2163f16fe801e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_7a6f2dc1",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-06T19:07:23Z",
+      "side": 1,
+      "message": "Like first comment.",
+      "revId": "2f7aacbbe0bfdf3f5430460333b2163f16fe801e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
