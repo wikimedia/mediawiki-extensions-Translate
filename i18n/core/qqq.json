@@ -224,6 +224,7 @@
 	"supportedlanguages-recenttranslations": "Link on [[Special:SupportedLanguages]] to [[Special:RecentChanges]].",
 	"supportedlanguages-count": "On [[Special:SupportedLanguages]]\n*$1 is the total number of supported languages.",
 	"supportedlanguages-activity": "Used as tooltip text for username in users list, to show user's activity.\n\nSee [{{canonicalurl:Special:SupportedLanguages}}#fr example].\n\nParameters:\n* $1 - username\n* $2 - number of edits the user made\n* $3 - number of days",
+	"abusefilter-edit-builder-vars-translate-source-text": "Description for an [[mw:Extension:AbuseFilter|AbuseFilter]] variable. Used as an abuse filter syntax option in a dropdown from the group {{msg-mw|abusefilter-edit-builder-group-vars}}.",
 	"translate-save": "Used as label for the Submit button. Parameters:\n* $1 - language name, or {{msg-mw|Translate-documentation-language}}\n{{Identical|Save}}",
 	"translate-jssti-add": "Name of button in [[Special:Preferences]], tab Editing.",
 	"managemessagegroups": "{{doc-special|ManageMessageGroups}}",

@@ -241,6 +241,66 @@ class TranslateHooks {
 	}
 
 	/**
+	 * Used for setting an AbuseFilter variable.
+	 *
+	 * @param AbuseFilterVariableHolder &$vars
+	 * @param Title $title
+	 * @return bool
+	 */
+	public static function onAbuseFilterFilterAction( &$vars, $title ) {
+		$handle = new MessageHandle( $title );
+
+		// Only set this variable if we are in a proper namespace to avoid
+		// unnecessary overhead in non-translation pages
+		if ( $handle->isMessageNamespace() ) {
+			$vars->setLazyLoadVar(
+				'translate_source_text',
+				'translate-get-source',
+				array( 'handle' => $handle )
+			);
+		}
+
+		return true;
+	}
+
+	/**
+	 * Computes the translate_source_text AbuseFilter variable
+	 * @param string $method
+	 * @param AbuseFilterVariableHolder $vars
+	 * @param array $parameters
+	 * @param null &$result
+	 * @return bool
+	 */
+	public static function onAbuseFilterComputeVariable( $method, $vars, $parameters, &$result ) {
+		if ( $method === 'translate-get-source' ) {
+			$handle = $parameters['handle'];
+
+			$source = '';
+			if ( $handle->isValid() ) {
+				$group = $handle->getGroup();
+				$source = $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
+			}
+
+			$result = $source;
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	/**
+	 * Register AbuseFilter variables provided by Translate.
+	 * @param array &$builderValues
+	 * @return bool
+	 */
+	public static function onAbuseFilterBuilder( &$builderValues ) {
+		// Uses: 'abusefilter-edit-builder-vars-translate-source-text'
+		$builderValues['vars']['translate_source_text'] = 'translate-source-text';
+		return true;
+	}
+
+
+	/**
 	 * Hook: ParserFirstCallInit
 	 * Registers \<languages> tag with the parser.
 	 *
