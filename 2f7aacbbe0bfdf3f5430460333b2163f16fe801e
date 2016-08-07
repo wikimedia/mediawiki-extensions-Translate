@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ee9d9f70_45f28a04",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-07T04:34:51Z",
+      "side": 1,
+      "message": "I suppose so. I have seen people doing both (adding it or omitting it) where it\u0027s not actually necessary so I don\u0027t know what the actual convention is.",
+      "parentUuid": "ee9d9f70_3a75a593",
+      "range": {
+        "startLine": 263,
+        "startChar": 9,
+        "endLine": 263,
+        "endChar": 13
+      },
+      "revId": "2f7aacbbe0bfdf3f5430460333b2163f16fe801e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee9d9f70_5a6a69b2",
         "filename": "TranslateHooks.php",
         "patchSetId": 2
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "ee9d9f70_85fc72d7",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-07T04:34:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee9d9f70_5a6a69b2",
+      "revId": "2f7aacbbe0bfdf3f5430460333b2163f16fe801e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee9d9f70_7a6f2dc1",
         "filename": "TranslateHooks.php",
         "patchSetId": 2
@@ -53,6 +95,24 @@
       "writtenOn": "2016-08-06T19:07:23Z",
       "side": 1,
       "message": "Like first comment.",
+      "revId": "2f7aacbbe0bfdf3f5430460333b2163f16fe801e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_a5e09626",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-07T04:34:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee9d9f70_7a6f2dc1",
       "revId": "2f7aacbbe0bfdf3f5430460333b2163f16fe801e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
