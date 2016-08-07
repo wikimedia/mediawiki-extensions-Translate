@@ -210,10 +210,23 @@
 				translateEditor.message.title,
 				translation,
 				editSummary
-			).done( function () {
-				// Update the translation
-				translateEditor.message.translation = translation;
-				translateEditor.onSaveSuccess();
+			).done( function ( response, xhr ) {
+				var editResp = response.edit;
+				if ( editResp.result === 'Success' ) {
+					translateEditor.message.translation = translation;
+					translateEditor.onSaveSuccess();
+				// Handle errors
+				} else if ( editResp.spamblacklist ) {
+					// @todo Show exactly which blacklisted URL triggered it
+					translateEditor.onSaveFail( mw.msg( 'spamprotectiontext' ) );
+				} else if ( editResp.info &&
+					editResp.info.indexOf( 'Hit AbuseFilter:' ) === 0 && editResp.warning
+				) {
+					translateEditor.onSaveFail( editResp.warning );
+				} else {
+					translateEditor.onSaveFail( 'Unknown error occured.' );
+					mw.log( response, xhr );
+				}
 			} ).fail( function ( errorCode, response ) {
 				translateEditor.onSaveFail( response.error && response.error.info || 'Unknown error' );
 				if ( errorCode === 'assertuserfailed' ) {
