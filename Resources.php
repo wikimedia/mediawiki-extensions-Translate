@@ -111,6 +111,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-status-unsaved',
 		'tux-warnings-hide',
 		'tux-warnings-more',
+		'spamprotectiontext',
 	),
 	'position' => 'top',
 ) + $resourcePaths;
