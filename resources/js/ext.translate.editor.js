@@ -236,6 +236,9 @@
 			this.removeWarning( 'fuzzy' );
 			this.removeWarning( 'validation' );
 
+			this.$editor.find( '.tux-warning' ).empty();
+			this.$editor.find( '.tux-more-warnings' ).empty();
+
 			$( '.tux-editor-clear-translated' )
 				.removeClass( 'hide' )
 				.prop( 'disabled', false );
@@ -494,7 +497,7 @@
 						$moreWarnings = $warnings.children(),
 						lastWarningIndex = $moreWarnings.length - 1;
 
-					// If the warning list is not open only one warning is shown
+					// If the warning list is not open, only one warning is shown
 					if ( $this.hasClass( 'open' ) ) {
 						$moreWarnings.each( function ( index, element ) {
 							// The first element must always be shown
@@ -927,7 +930,10 @@
 		},
 
 		/**
-		 * Displays the supplied warning from the bottom up near the translation edit area.
+		 * Displays the supplied warning above the translation edit area.
+		 * Newer warnings are added to the top while older warnings are
+		 * added to the bottom. This also means that older warnings will
+		 * not be shown by default unless the user clicks "more warnings" tab.
 		 *
 		 * @param {string} warning used as html for the warning display
 		 * @param {string} type used to group the warnings.eg: validation, diff, error
@@ -938,21 +944,21 @@
 				$warnings = this.$editor.find( '.tux-warning' ),
 				$moreWarningsTab = this.$editor.find( '.tux-more-warnings' ),
 				$newWarning = $( '<div>' )
-					.addClass( 'tux-warning-message hide ' + type )
+					.addClass( 'tux-warning-message ' + type )
 					.html( warning );
+
+			this.$editor.find( '.tux-warning-message' ).addClass( 'hide' );
 
 			$warnings
 				.removeClass( 'hide' )
-				.append( $newWarning );
+				.prepend( $newWarning );
 
 			warningCount = $warnings.find( '.tux-warning-message' ).length;
-
-			$warnings.find( '.tux-warning-message:first' ).removeClass( 'hide' );
 
 			if ( warningCount > 1 ) {
 				$moreWarningsTab
 					.text( mw.msg( 'tux-warnings-more', warningCount - 1 ) )
-					.removeClass( 'hide' );
+					.removeClass( 'hide open' );
 			} else {
 				$moreWarningsTab.addClass( 'hide' );
 			}
