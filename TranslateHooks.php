@@ -185,9 +185,6 @@ class TranslateHooks {
 			// Replace subpage logic behavior
 			$wgHooks['SkinSubPageSubtitle'][] = 'PageTranslationHooks::replaceSubtitle';
 
-			// Show page source code when export tab is opened
-			$wgHooks['SpecialTranslate::executeTask'][] = 'PageTranslationHooks::sourceExport';
-
 			// Replaced edit tab with translation tab for translation pages
 			$wgHooks['SkinTemplateNavigation'][] = 'PageTranslationHooks::translateTab';
 

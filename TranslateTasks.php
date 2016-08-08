@@ -286,101 +286,6 @@ class AcceptQueueMessagesTask extends ReviewMessagesTask {
 }
 
 /**
- * Exports messages to their native format with embedded textarea.
- */
-class ExportMessagesTask extends ViewMessagesTask {
-	protected $id = 'export';
-
-	protected function preinit() {
-		$code = $this->options['language'];
-		$this->collection = $this->group->initCollection( $code );
-		// Don't export ignored, unless it is the source language
-		// or message documentation
-		global $wgTranslateDocumentationLanguageCode;
-		if ( $code !== $wgTranslateDocumentationLanguageCode
-			&& $code !== $this->group->getSourceLanguage()
-		) {
-			$this->collection->filter( 'ignored' );
-		}
-	}
-
-	// No paging should be done.
-	protected function doPaging() {
-	}
-
-	public function output() {
-		return Html::element(
-			'textarea',
-			array( 'id' => 'wpTextbox1', 'rows' => '50' ),
-			$this->group->getFFS()->writeIntoVariable( $this->collection )
-		);
-	}
-}
-
-/**
- * Exports messages to their native format as whole page.
- */
-class ExportToFileMessagesTask extends ExportMessagesTask {
-	protected $id = 'export-to-file';
-
-	public function plainOutput() {
-		return true;
-	}
-
-	public function output() {
-		if ( !$this->group instanceof FileBasedMessageGroup ) {
-			return 'Not supported';
-		}
-
-		$ffs = $this->group->getFFS();
-		$data = $ffs->writeIntoVariable( $this->collection );
-
-		$filename = basename( $this->group->getSourceFilePath( $this->collection->getLanguage() ) );
-		header( "Content-Disposition: attachment; filename=\"$filename\"" );
-
-		return $data;
-	}
-}
-
-/**
- * Exports messages as special Gettext format that is suitable for off-line
- * translation with tools that support Gettext. These files can later be
- * imported back to the wiki.
- */
-class ExportAsPoMessagesTask extends ExportMessagesTask {
-	protected $id = 'export-as-po';
-
-	public function plainOutput() {
-		return true;
-	}
-
-	public function output() {
-		if ( MessageGroups::isDynamic( $this->group ) ) {
-			return 'Not supported';
-		}
-
-		$ffs = null;
-		if ( $this->group instanceof FileBasedMessageGroup ) {
-			$ffs = $this->group->getFFS();
-		}
-
-		if ( !$ffs instanceof GettextFFS ) {
-			$group = FileBasedMessageGroup::newFromMessageGroup( $this->group );
-			$ffs = new GettextFFS( $group );
-		}
-
-		$ffs->setOfflineMode( 'true' );
-
-		$code = $this->options['language'];
-		$id = $this->group->getID();
-		$filename = "${id}_$code.po";
-		header( "Content-Disposition: attachment; filename=\"$filename\"" );
-
-		return $ffs->writeIntoVariable( $this->collection );
-	}
-}
-
-/**
  * Collection of functions to get tasks.
  */
 class TranslateTasks {
@@ -394,10 +299,7 @@ class TranslateTasks {
 		global $wgTranslateTasks;
 
 		// Tasks not to be available in page translation.
-		$filterTasks = array(
-			'optional',
-			'export-to-file',
-		);
+		$filterTasks = array( 'optional', );
 
 		$allTasks = array_keys( $wgTranslateTasks );
 
