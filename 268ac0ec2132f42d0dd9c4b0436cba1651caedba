@@ -22,6 +22,30 @@
       "revId": "268ac0ec2132f42d0dd9c4b0436cba1651caedba",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_906f4dc0",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-08T16:08:59Z",
+      "side": 1,
+      "message": "It is supposed to be null when passed in here (although it can change after this code is run). See \u003chttps://github.com/wikimedia/mediawiki-extensions-AbuseFilter/blob/master/AbuseFilterVariableHolder.php#L367\u003e\n\nI copied the whole param doc from another extension as it was. I don\u0027t know what the \"proper\" way is because I have seen it being used in both ways (in core as well as extensions).",
+      "parentUuid": "ee9d9f70_da7c941e",
+      "range": {
+        "startLine": 268,
+        "startChar": 15,
+        "endLine": 268,
+        "endChar": 16
+      },
+      "revId": "268ac0ec2132f42d0dd9c4b0436cba1651caedba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
