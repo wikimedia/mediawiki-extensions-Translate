@@ -208,7 +208,9 @@
 
 			// Change to csrf when support for MW 1.25 is dropped
 			api.postWithToken( 'edit', params ).done( function () {
-				$message.find( '.tux-proofread-action' ).addClass( 'accepted' );
+				$message.find( '.tux-proofread-action' )
+					.removeClass( 'tux-warning' ) // in case, it failed previously
+					.addClass( 'accepted' );
 
 				counter = $message.find( '.tux-proofread-count' );
 				reviews = counter.data( 'reviewCount' );
