@@ -46,6 +46,30 @@
       "revId": "268ac0ec2132f42d0dd9c4b0436cba1651caedba",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_d0dd5575",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-08T16:12:52Z",
+      "side": 1,
+      "message": "Doxygen also seems to work fine for those (eg. \u003chttps://doc.wikimedia.org/mediawiki-core/1.27.0/php/classUser.html#ab5f966898ab75327a211cbadbf099d96\u003e) and it also makes it clear in the documentation itself that it should be passed by reference so personally, I think including it is better.",
+      "parentUuid": "ee9d9f70_906f4dc0",
+      "range": {
+        "startLine": 268,
+        "startChar": 15,
+        "endLine": 268,
+        "endChar": 16
+      },
+      "revId": "268ac0ec2132f42d0dd9c4b0436cba1651caedba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
