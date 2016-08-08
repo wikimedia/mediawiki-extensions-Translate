@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ee9d9f70_300141ba",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-08T16:22:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee9d9f70_faf79854",
+      "range": {
+        "startLine": 223,
+        "startChar": 57,
+        "endLine": 223,
+        "endChar": 58
+      },
+      "revId": "1bb0b5771770a98c8d136abfdadb7ff238ff211c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee9d9f70_1af53c4d",
         "filename": "resources/js/ext.translate.editor.js",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-08-08T14:03:02Z",
       "side": 1,
       "message": "Missing i18n?",
+      "range": {
+        "startLine": 227,
+        "startChar": 34,
+        "endLine": 227,
+        "endChar": 41
+      },
+      "revId": "1bb0b5771770a98c8d136abfdadb7ff238ff211c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_10651dab",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-08T16:22:08Z",
+      "side": 1,
+      "message": "The one below has also been without i18n for a long time which is why I used it without i18n here too. I can fix it separately for both of these.",
+      "parentUuid": "ee9d9f70_1af53c4d",
       "range": {
         "startLine": 227,
         "startChar": 34,
