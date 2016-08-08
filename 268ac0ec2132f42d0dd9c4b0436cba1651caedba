@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee9d9f70_da7c941e",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-08T12:44:09Z",
+      "side": 1,
+      "message": "Null does not sound correct here. Do you mean \"mixed\" which is sometimes used to mean various types.\n\nAlso, I haven\u0027t seen the \u0026 used in the param documentation before. Is this an established practice elsewhere?",
+      "range": {
+        "startLine": 268,
+        "startChar": 15,
+        "endLine": 268,
+        "endChar": 16
+      },
+      "revId": "268ac0ec2132f42d0dd9c4b0436cba1651caedba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
