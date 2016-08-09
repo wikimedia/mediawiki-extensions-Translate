@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Ganesh Paudel",
-			"NehalDaveND"
+			"NehalDaveND",
+			"राम प्रसाद जोशी"
 		]
 	},
 	"tpt-rev-encourage": "पूर्वावस्थामा ल्याउनुहोस्",
+	"tpt-languages-nonzero": "$1 ($2% अनुवादित)",
 	"tpt-tab-translate": "अनुवाद गर्नु",
 	"tpt-aggregategroup-add": "थप्न",
 	"tpt-aggregategroup-save": "संग्रह गर्ने",
@@ -19,8 +21,6 @@
 	"pm-import-button-label": "आयात",
 	"pm-savepages-button-label": "संग्रह गर्ने",
 	"pm-cancel-button-label": "रद्द",
-	"pm-pagename-placeholder": "पृष्ठको नाम लेख्नुहोस्",
-	"pm-langcode-placeholder": "भाषा कोड",
 	"pp-save-button-label": "संग्रह गर्नु",
 	"pp-cancel-button-label": "रद्द गर्नु"
 }

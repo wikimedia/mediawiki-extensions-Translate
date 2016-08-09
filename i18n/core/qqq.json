@@ -94,7 +94,7 @@
 	"translate-edit-askpermission": "Used as link text.\n\nPreceded by {{msg-mw|Translate-edit-nopermission}}.",
 	"translate-edit-tag-warning": "{{notranslate}}\nShown when editing translatable pages. Default is empty.",
 	"exporttranslations": "Title of [[Special:ExportTranslations]]",
-	"translate-export-form-format": "Label of form field on [[Special:ExportTranslations]].",
+	"translate-export-form-format": "Label of form field on [[Special:ExportTranslations]].\n{{Identical|Format}}",
 	"translate-export-invalid-format": "Validation error shown on [[Special:ExportTranslations]].",
 	"translate-export-not-supported": "Validation error shown on [[Special:ExportTranslations]]",
 	"translate-export-format-notsupported": "Validation error shown on [[Special:ExportTranslations]]",
