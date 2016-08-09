@@ -225,11 +225,13 @@
 				) {
 					translateEditor.onSaveFail( editResp.warning );
 				} else {
-					translateEditor.onSaveFail( 'Unknown error occured.' );
+					translateEditor.onSaveFail( mw.msg( 'tux-save-unknown-error' ) );
 					mw.log( response, xhr );
 				}
 			} ).fail( function ( errorCode, response ) {
-				translateEditor.onSaveFail( response.error && response.error.info || 'Unknown error' );
+				translateEditor.onSaveFail(
+					response.error && response.error.info || mw.msg( 'tux-save-unknown-error' )
+				);
 				if ( errorCode === 'assertuserfailed' ) {
 					window.alert( mw.msg( 'tux-session-expired' ) );
 				}

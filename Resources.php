@@ -109,6 +109,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-status-saving',
 		'tux-status-translated',
 		'tux-status-unsaved',
+		'tux-save-unknown-error',
 		'tux-warnings-hide',
 		'tux-warnings-more',
 		'spamprotectiontext',

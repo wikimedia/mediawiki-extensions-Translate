@@ -344,6 +344,7 @@
 	"tux-status-translated": "Status label in [[Special:Translate]] indicating that a message is translated. An adjective that refers to a message.\n{{Identical|Translated}}",
 	"tux-status-saving": "Status label in [[Special:Translate]] indicating that the translation is being saved.\n{{Identical|Saving}}",
 	"tux-status-unsaved": "Status label in [[Special:Translate]] indicating that the translation is not saved yet.",
+	"tux-save-unknown-error": "Error message shown on [[Special:Translate]] when an unknown error occurs while attempting to save the translation.",
 	"tux-editor-placeholder": "Placeholder text for the translation editor textbox",
 	"tux-editor-editsummary-placeholder": "Placeholder text for the translation editor's edit summary box",
 	"tux-editor-paste-original-button-label": "Label for a button that pastes the text in the source language to the translation editor.",

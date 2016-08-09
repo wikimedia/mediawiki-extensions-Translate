@@ -313,6 +313,7 @@
 	"tux-status-translated": "Translated",
 	"tux-status-saving": "Saving...",
 	"tux-status-unsaved": "Unsaved",
+	"tux-save-unknown-error": "Unknown error occurred.",
 	"tux-editor-placeholder": "Your translation",
 	"tux-editor-editsummary-placeholder": "Optional summary",
 	"tux-editor-paste-original-button-label": "Paste source text",
