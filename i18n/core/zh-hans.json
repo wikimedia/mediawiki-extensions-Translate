@@ -332,6 +332,7 @@
 	"tux-status-translated": "已翻译",
 	"tux-status-saving": "正在保存...",
 	"tux-status-unsaved": "未保存",
+	"tux-save-unknown-error": "发生未知错误。",
 	"tux-editor-placeholder": "您的翻译",
 	"tux-editor-editsummary-placeholder": "可选摘要",
 	"tux-editor-paste-original-button-label": "粘贴源文本",

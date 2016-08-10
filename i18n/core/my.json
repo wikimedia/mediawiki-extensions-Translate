@@ -13,9 +13,11 @@
 	"translate-submit": "ရှာဖွေပါ",
 	"translate-page-navigation-legend": "အ​ညွှန်း​",
 	"translate-page-showing-all": "{{PLURAL:$1|စာလုံး|စာလုံးပေါင်း}} $1 လုံး ရှာဖွေတွေ့ရှိသည်။",
+	"translate-page-showing-none": "ဖေါ်ပြရန် စကားလုံး မရှိပါ",
 	"translate-next": "နောက်စာမျက်နှာ",
 	"translate-prev": "ပြီးခဲ့သော စာမျက်နှာ",
 	"translate-page-edit": "ပြင်ရန်",
 	"translate-gs-score": "ရမှတ်",
-	"translate-documentation-language": "စာလွှာ စာရွက်စာတမ်း"
+	"translate-documentation-language": "စာလွှာ စာရွက်စာတမ်း",
+	"tux-save-unknown-error": "အကြောင်းရင်းမသိရှိရသော အမှားတစ်ခု ဖြစ်ပေါ်နေသည်။"
 }
