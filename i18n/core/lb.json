@@ -303,6 +303,7 @@
 	"tux-status-translated": "Iwwersat",
 	"tux-status-saving": "Späicheren...",
 	"tux-status-unsaved": "Net gespäichert",
+	"tux-save-unknown-error": "En onbekannte Feeler ass geschitt.",
 	"tux-editor-placeholder": "Är Iwwersetzung",
 	"tux-editor-editsummary-placeholder": "Resumé (fakultativ)",
 	"tux-editor-paste-original-button-label": "Quelltext drasetzen",

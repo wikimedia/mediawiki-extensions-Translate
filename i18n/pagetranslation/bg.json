@@ -7,10 +7,14 @@
 			"Termininja"
 		]
 	},
+	"pagetranslation": "Превод на страници",
 	"tpt-diff-old": "Предишен текст",
 	"tpt-diff-new": "Нов текст",
 	"tpt-nosuchpage": "Страницата „$1“ не съществува",
+	"tpt-new-pages-title": "Страници предложени за превод",
 	"tpt-other-pages-title": "Счупени страници",
+	"tpt-discouraged-pages-title": "Непрепоръчителни страници",
+	"tpt-discouraged-pages": "Препоръчва се {{PLURAL:$1|тази страница да не се превежда|тези страници да не се превеждат}} повече.",
 	"tpt-select-prioritylangs-reason": "Причина:",
 	"translate-tag-translate-link-desc": "Превеждане на тази страница",
 	"tpt-languages-legend": "Други езици:",
@@ -21,6 +25,7 @@
 	"tpt-aggregategroup-new-name": "Име:",
 	"tpt-aggregategroup-new-description": "Описание (незадължително):",
 	"tpt-aggregategroup-invalid-group": "Групата не съществува",
+	"tpt-aggregategroup-update": "Съхраняване",
 	"log-action-filter-pagetranslation-delete": "Изтриване на страници",
 	"pt-movepage-list-other": "{{PLURAL:$1|Друга подстраница|Други подстраници}}",
 	"pt-movepage-current": "Текущо име:",
@@ -30,5 +35,7 @@
 	"pt-deletepage-action-perform": "Извършване на изтриването",
 	"pt-deletepage-reason": "Причина:",
 	"pt-deletepage-subpages": "Изтриване на всички подстраници",
-	"pt-deletepage-list-other": "Други подстраници"
+	"pt-deletepage-list-other": "Други подстраници",
+	"pm-savepages-button-label": "Съхраняване",
+	"pp-save-button-label": "Съхраняване"
 }

@@ -7,7 +7,8 @@
 			"Sopho",
 			"Temuri rajavi",
 			"გიორგიმელა",
-			"Otogi"
+			"Otogi",
+			"MIKHEIL"
 		]
 	},
 	"translate": "თარგმნა",
@@ -93,7 +94,6 @@
 	"translate-statsf-count-reviews": "თარგმანის რეცენზენტები",
 	"translate-statsf-count-reviewers": "შემმოწმებლები",
 	"translate-statsf-submit": "წინასწარი გადახედვა",
-	"translate-tag-category": "თარგმნადი გვერდები",
 	"translate-sidebar-alltrans": "სხვა ენებზე",
 	"translations": "ყველა თარგმანი",
 	"translate-translations-no-message": "შეტყობინება \"$1\" არ ითარგმნება",
@@ -179,7 +179,6 @@
 	"translate-workflow-set-doing": "ყენდება...",
 	"translate-stats-workflow": "სტატუსი",
 	"translate-dynagroup-recent-label": "ბოლო თარგმანები",
-	"translate-gethelp": "დახმარება",
 	"translate-msggroupselector-projects": "შეტყობინების ჯგუფი",
 	"translate-msggroupselector-search-placeholder": "ჯგუფების ძიება",
 	"translate-msggroupselector-search-all": "ყველა",
@@ -198,6 +197,7 @@
 	"tux-status-translated": "ნათარგმნი",
 	"tux-status-saving": "ინახება...",
 	"tux-status-unsaved": "არ შეინახა",
+	"tux-save-unknown-error": "დაფიქსირდა უცნობი შეცდომა.",
 	"tux-editor-placeholder": "თქვენი თარგმანები",
 	"tux-editor-paste-original-button-label": "საწყისი ტექსტის ჩასმა",
 	"tux-editor-discard-changes-button-label": "ცვლილებების გაუქმება",
