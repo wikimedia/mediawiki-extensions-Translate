@@ -339,8 +339,12 @@ class SpecialTranslate extends SpecialPage {
 				$params = array(
 				 'group' => $nondefaults['group'],
 				 'language' => $nondefaults['language'],
-				 'format' => $nondefaults['task'],
 				);
+
+				if ( isset( $nondefaults['task'] ) ) {
+					$params['format'] = $nondefaults['task'];
+				}
+
 				$export = SpecialPage::getTitleFor( 'ExportTranslations' )->getLocalURL( $params );
 				$this->getOutput()->redirect( $export );
 			}
