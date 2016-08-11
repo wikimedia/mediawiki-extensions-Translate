@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ee9d9f70_8b2f0ef3",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-11T06:36:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee9d9f70_53d4064c",
+      "range": {
+        "startLine": 405,
+        "startChar": 2,
+        "endLine": 405,
+        "endChar": 18
+      },
+      "revId": "93873927df1de04af9a438cecf0a543d9738ea4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee9d9f70_13eb5e0a",
         "filename": "tag/SpecialPageTranslationMovePage.php",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2016-08-09T17:02:32Z",
       "side": 1,
       "message": "* $this-\u003emsg() instead of wfMessage().\n* $base can be used instead of $this-\u003eoldTitle-\u003egetPrefixedText()",
+      "range": {
+        "startLine": 434,
+        "startChar": 12,
+        "endLine": 434,
+        "endChar": 85
+      },
+      "revId": "93873927df1de04af9a438cecf0a543d9738ea4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_cb391640",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-11T06:36:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee9d9f70_13eb5e0a",
       "range": {
         "startLine": 434,
         "startChar": 12,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "ee9d9f70_eb3eda25",
+        "filename": "tag/TranslatablePageMoveJob.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-11T06:36:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee9d9f70_73a4aa05",
+      "range": {
+        "startLine": 69,
+        "startChar": 29,
+        "endLine": 69,
+        "endChar": 42
+      },
+      "revId": "93873927df1de04af9a438cecf0a543d9738ea4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee9d9f70_1368be83",
         "filename": "tag/TranslatablePageMoveJob.php",
         "patchSetId": 4
@@ -82,6 +154,24 @@
       "writtenOn": "2016-08-09T17:02:32Z",
       "side": 1,
       "message": "This changes the behavior for the base page. Previously, in the move log, the performer was logged as the actual user who submitted the form, not FuzzyBot. Is that intended? I think the previous behavior is more useful and made more sense.",
+      "revId": "93873927df1de04af9a438cecf0a543d9738ea4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_6b4aeac9",
+        "filename": "tag/TranslatablePageMoveJob.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-11T06:36:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee9d9f70_1368be83",
       "revId": "93873927df1de04af9a438cecf0a543d9738ea4d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
