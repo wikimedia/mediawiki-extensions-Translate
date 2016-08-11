@@ -16,6 +16,24 @@
       "revId": "e2846a4a1a72560bbfc339070c48ff2ca32766bd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_708f32d2",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-11T06:36:29Z",
+      "side": 0,
+      "message": "My thinking was that moving will happen relatively quickly now that it is not broken down to multiple jobs. Locking adds quite a lot of complexity.",
+      "parentUuid": "ee9d9f70_d0effe80",
+      "revId": "e2846a4a1a72560bbfc339070c48ff2ca32766bd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
