@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee9d9f70_7cc2a989",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-11T16:43:34Z",
+      "side": 1,
+      "message": "Previously, messageTable.scroll() was called for \u0027resize\u0027 too but not anymore. Is that intended? (Note: I have no idea what it actually does so this is just a question for confirmation).",
+      "revId": "f35bdcb5e3a371488cd0cdecf50aaf4c80fc0abf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
