@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee9d9f70_d0effe80",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-11T06:04:09Z",
+      "side": 0,
+      "message": "Why is locking not applied anymore? Might something not go wrong when someone edits a page during a move?",
+      "revId": "e2846a4a1a72560bbfc339070c48ff2ca32766bd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
