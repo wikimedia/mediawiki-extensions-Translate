@@ -153,92 +153,86 @@ class SpecialTranslate extends SpecialPage {
 		$this->task->init( $this->group, $this->options, $this->nondefaults, $this->getContext() );
 		$output = $this->task->execute();
 
-		if ( $this->task->plainOutput() ) {
-			$out->disable();
-			header( 'Content-type: text/plain; charset=UTF-8' );
-			echo $output;
-		} else {
-			$description = $this->getGroupDescription( $this->group );
+		$description = $this->getGroupDescription( $this->group );
 
-			$taskid = $this->options['task'];
-			if ( in_array( $taskid, array( 'untranslated', 'reviewall' ), true ) ) {
-				$hasOptional = count( $this->group->getTags( 'optional' ) );
-				if ( $hasOptional ) {
-					$linktext = $this->msg( 'translate-page-description-hasoptional-open' )->escaped();
-					$params = array( 'task' => 'optional' ) + $this->nondefaults;
-					$link = Linker::linkKnown( $this->getPageTitle(), $linktext, array(), $params );
-					$note = $this->msg( 'translate-page-description-hasoptional' )
-						->rawParams( $link )->parseAsBlock();
+		$taskid = $this->options['task'];
+		if ( in_array( $taskid, array( 'untranslated', 'reviewall' ), true ) ) {
+			$hasOptional = count( $this->group->getTags( 'optional' ) );
+			if ( $hasOptional ) {
+				$linktext = $this->msg( 'translate-page-description-hasoptional-open' )->escaped();
+				$params = array( 'task' => 'optional' ) + $this->nondefaults;
+				$link = Linker::linkKnown( $this->getPageTitle(), $linktext, array(), $params );
+				$note = $this->msg( 'translate-page-description-hasoptional' )
+					->rawParams( $link )->parseAsBlock();
 
-					if ( $description ) {
-						$description .= '<br />' . $note;
-					} else {
-						$description = $note;
-					}
-				}
-			}
-
-			$groupId = $this->group->getId();
-			// PHP is such an awesome language
-			$priorityLangs = TranslateMetadata::get( $groupId, 'prioritylangs' );
-			$priorityLangs = array_flip( array_filter( explode( ',', $priorityLangs ) ) );
-			$priorityLangsCount = count( $priorityLangs );
-			if ( $priorityLangsCount && !isset( $priorityLangs[$this->options['language']] ) ) {
-				$priorityForce = TranslateMetadata::get( $groupId, 'priorityforce' );
-				if ( $priorityForce === 'on' ) {
-					// Hide table
-					$priorityMessageClass = 'errorbox';
-					$priorityMessageKey = 'tpt-discouraged-language-force';
+				if ( $description ) {
+					$description .= '<br />' . $note;
 				} else {
-					$priorityMessageClass = 'warningbox';
-					$priorityMessageKey = 'tpt-discouraged-language';
+					$description = $note;
 				}
-
-				$priorityLanguageNames = array();
-				$languageNames = TranslateUtils::getLanguageNames( $this->getLanguage()->getCode() );
-				foreach ( array_keys( $priorityLangs ) as $langCode ) {
-					$priorityLanguageNames[] = $languageNames[$langCode];
-				}
-
-				$priorityReason = TranslateMetadata::get( $groupId, 'priorityreason' );
-				if ( $priorityReason !== '' ) {
-					$priorityReason = "\n\n" . $this->msg(
-						'tpt-discouraged-language-reason',
-						Xml::element( 'span',
-							// The reason is probably written in the content language
-							array(
-								'lang' => $wgContLang->getHtmlCode(),
-								'dir' => $wgContLang->getDir(),
-							),
-							$priorityReason
-						)
-					)->parse();
-				}
-
-				$description .= Html::rawElement( 'div',
-					array( 'class' => $priorityMessageClass ),
-					$this->msg(
-						$priorityMessageKey,
-						'', // param formerly used for reason, now empty
-						$languageNames[$this->options['language']],
-						$this->getLanguage()->listToText( $priorityLanguageNames )
-					)->parseAsBlock() . $priorityReason
-				);
 			}
+		}
 
-			if ( $description ) {
-				$description = Xml::fieldset(
-					$this->msg( 'translate-page-description-legend' )->text(),
-					$description,
-					array( 'class' => 'mw-sp-translate-description' )
-				);
-			}
-
-			if ( $isBeta ) {
-				$out->addHTML( $output );
+		$groupId = $this->group->getId();
+		// PHP is such an awesome language
+		$priorityLangs = TranslateMetadata::get( $groupId, 'prioritylangs' );
+		$priorityLangs = array_flip( array_filter( explode( ',', $priorityLangs ) ) );
+		$priorityLangsCount = count( $priorityLangs );
+		if ( $priorityLangsCount && !isset( $priorityLangs[$this->options['language']] ) ) {
+			$priorityForce = TranslateMetadata::get( $groupId, 'priorityforce' );
+			if ( $priorityForce === 'on' ) {
+				// Hide table
+				$priorityMessageClass = 'errorbox';
+				$priorityMessageKey = 'tpt-discouraged-language-force';
 			} else {
-				$out->addHTML( $description . $output );
+				$priorityMessageClass = 'warningbox';
+				$priorityMessageKey = 'tpt-discouraged-language';
 			}
+
+			$priorityLanguageNames = array();
+			$languageNames = TranslateUtils::getLanguageNames( $this->getLanguage()->getCode() );
+			foreach ( array_keys( $priorityLangs ) as $langCode ) {
+				$priorityLanguageNames[] = $languageNames[$langCode];
+			}
+
+			$priorityReason = TranslateMetadata::get( $groupId, 'priorityreason' );
+			if ( $priorityReason !== '' ) {
+				$priorityReason = "\n\n" . $this->msg(
+					'tpt-discouraged-language-reason',
+					Xml::element( 'span',
+						// The reason is probably written in the content language
+						array(
+							'lang' => $wgContLang->getHtmlCode(),
+							'dir' => $wgContLang->getDir(),
+						),
+						$priorityReason
+					)
+				)->parse();
+			}
+
+			$description .= Html::rawElement( 'div',
+				array( 'class' => $priorityMessageClass ),
+				$this->msg(
+					$priorityMessageKey,
+					'', // param formerly used for reason, now empty
+					$languageNames[$this->options['language']],
+					$this->getLanguage()->listToText( $priorityLanguageNames )
+				)->parseAsBlock() . $priorityReason
+			);
+		}
+
+		if ( $description ) {
+			$description = Xml::fieldset(
+				$this->msg( 'translate-page-description-legend' )->text(),
+				$description,
+				array( 'class' => 'mw-sp-translate-description' )
+			);
+		}
+
+		if ( $isBeta ) {
+			$out->addHTML( $output );
+		} else {
+			$out->addHTML( $description . $output );
 		}
 
 		if ( $isBeta ) {
