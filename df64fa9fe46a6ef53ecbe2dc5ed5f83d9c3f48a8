@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cea29bae_99421fb1",
+        "filename": "TranslateTasks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-12T18:27:53Z",
+      "side": 1,
+      "message": "This could just say HTML now?",
+      "range": {
+        "startLine": 100,
+        "startChar": 19,
+        "endLine": 100,
+        "endChar": 26
+      },
+      "revId": "df64fa9fe46a6ef53ecbe2dc5ed5f83d9c3f48a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
