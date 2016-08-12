@@ -5,12 +5,11 @@
 			"Calak",
 			"Marmzok",
 			"Muhammed taha",
-			"رزگار"
+			"رزگار",
+			"Sarchia"
 		]
 	},
 	"pagetranslation": "وەرگێڕانی پەڕە",
-	"tpt-template": "داڕێژەی پەڕە",
-	"tpt-templatediff": "داڕێژەی لاپەڕەکە گۆڕاوە.",
 	"tpt-diff-old": "دەقی پێشوو",
 	"tpt-diff-new": "دەقی نوێ",
 	"tpt-submit": "نیشان‌کردنی ئەم وەشانە بۆ وەرگێڕان",
@@ -27,8 +26,10 @@
 	"tpt-aggregategroup-add": "زێدەبکە",
 	"tpt-aggregategroup-save": "پاشەکەوتی بکە",
 	"tpt-aggregategroup-new-name": "ناو:",
+	"tpt-aggregategroup-update-cancel": "ھەڵوەشاندنەوە",
 	"pt-movepage-new": "ناوی نوێ:",
 	"pt-movepage-reason": "هۆکار:",
 	"pt-deletepage-current": "ناوی پەڕە:",
-	"pt-deletepage-reason": "هۆکار:"
+	"pt-deletepage-reason": "هۆکار:",
+	"pm-cancel-button-label": "ھەڵوەشاندنەوە"
 }
