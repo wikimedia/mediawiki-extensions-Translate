@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_c5614aa5",
+        "filename": "resources/js/ext.translate.pagepreparation.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-12T07:55:57Z",
+      "side": 1,
+      "message": "Forgot to submit my followup question in PS5: What prevents anchorID from having \" inside it?",
+      "revId": "7e10441b898563348f5cdc5379125ac054613ab4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
