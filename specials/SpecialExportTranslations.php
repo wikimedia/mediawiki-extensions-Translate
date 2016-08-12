@@ -192,7 +192,7 @@ class SpecialExportTranslations extends SpecialPage {
 				$ffs->setOfflineMode( true );
 
 				$filename = "{$group->getId()}_{$this->language}.po";
-				header( "Content-Disposition: attachment; filename=\"$filename\"" );
+				$this->sendExportHeaders( $filename );
 
 				echo $ffs->writeIntoVariable( $collection );
 				break;
@@ -200,11 +200,10 @@ class SpecialExportTranslations extends SpecialPage {
 			case 'export-to-file':
 				$out->disable();
 
-				$data = $group->getFFS()->writeIntoVariable( $collection );
 				$filename = basename( $group->getSourceFilePath( $collection->getLanguage() ) );
-				header( "Content-Disposition: attachment; filename=\"$filename\"" );
+				$this->sendExportHeaders( $filename );
 
-				echo $data;
+				echo $group->getFFS()->writeIntoVariable( $collection );
 				break;
 
 			default:
@@ -244,6 +243,17 @@ class SpecialExportTranslations extends SpecialPage {
 		}
 
 		return $collection;
+	}
+
+	/**
+	 * Send the appropriate response headers for the export
+	 *
+	 * @param string $fileName
+	 */
+	protected function sendExportHeaders( $fileName ) {
+		$response = $this->getRequest()->response();
+		$response->header( 'Content-Type: text/plain; charset=UTF-8' );
+		$response->header( "Content-Disposition: attachment; filename=\"$fileName\"" );
 	}
 
 	protected function getGroupName() {
