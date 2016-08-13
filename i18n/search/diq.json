@@ -2,21 +2,31 @@
 	"@metadata": {
 		"authors": [
 			"Mirzali",
-			"Marmase"
+			"Marmase",
+			"Kumkumuk"
 		]
 	},
 	"searchtranslations": "Bı geyr açarnayışa",
 	"tux-sst-edit": "Açarnayışi bıvurne",
+	"tux-sst-view-foreign": "$1 de bıvêne",
 	"tux-sst-search": "Cı geyre",
 	"tux-sst-search-ph": "Bı geyr açarnayışa",
 	"tux-sst-count": "{{PLURAL:$1|Jew netice vineya|$1 neticey vineyay|0=teba nêvineya}}",
 	"tux-sst-facet-language": "Zıwani",
 	"tux-sst-facet-group": "Gruba mesacan",
-	"tux-sst-facet-orphan": "(seyqur)",
 	"tux-sst-nosolr-title": "Cı geyrayışo nêgurweyêno",
 	"tux-sst-nosolr-body": "Na wiki de xızmeta açarnayışi çıniya",
 	"tux-sst-solr-offline-title": "Cı geyrayışo nêgurweyêno",
 	"tux-sst-solr-offline-body": "Xızmeta cı geyrayışi ya enewke nêgurweyêna.",
-	"tux-sst-next": "Neticeyo bahdoyên",
-	"tux-sst-prev": "Neticeyê verêni"
+	"tux-sst-next": "Bahdoyên>",
+	"tux-sst-prev": "<Verêni",
+	"tux-sst-default": "Açarnayışi",
+	"tux-sst-translated": "$1 ra açarnayış",
+	"tux-sst-untranslated": "$1 ra nêaçarneya",
+	"tux-sst-outdated": "$1 ra vêrde açarnayışo",
+	"tux-sst-ellipsis-untranslated": "Açarnayış çınyo",
+	"tux-sst-ellipsis-outdated": "Açarnayışo vêrde",
+	"tux-sst-link-all-match": "Hemi rê çeku geyrayış gereko.",
+	"tux-sst-match-message": "Herhangi yew açarnayışi ra takêşen çekuyê asenênê. $1",
+	"tux-sst-case-sensitive": "Herfannrê hassas o"
 }

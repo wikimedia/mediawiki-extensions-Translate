@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Shinjiman",
-			"Yueman"
+			"Yueman",
+			"Ktchankt"
 		]
 	},
 	"translate": "翻譯",
@@ -29,7 +30,6 @@
 	"translate-edit-no-information": "''呢句信息無註解。\n如果你知道呢句信息響邊同埋點用，你可以加註解去呢個信息去幫其他嘅翻譯者。''",
 	"translate-edit-information": "呢句信息嘅資料 ($1)",
 	"translate-edit-in-other-languages": "其它語言嘅信息",
-	"translate-edit-committed": "而家響軟件嘅翻譯",
 	"translate-edit-warnings": "有關未譯好嘅警告",
 	"translate-magic-pagename": "延伸MediaWiki翻譯",
 	"translate-magic-help": "你可以翻譯特別頁替身、魔術字、皮名同埋名空間嘅名。\n\n響魔術字度你係要同時包括英文嘅翻譯，唔係嘅話就會唔能夠運作。\n同時保持第一個項目 (0或1) 不變。\n\n特別頁替身同埋魔術字可以有多個翻譯。\n翻譯係以逗號 (,) 分隔。\n皮名同埋空間名只可以有一項翻譯。\n\n響空間名翻譯度， <code>$1 talk</code> 係特別嘅。 <code>$1</code> 會由網名代替咗（例如<code>{{ns:project_talk}}</code>）。\n如果你嘅語言組合唔能夠響網站名唔改嘅情況之下去組合成你嘅意思，請聯絡技術員。\n\n你需要係翻譯組嘅組員去儲存嘅啲信息。\n響你撳下面嘅儲存擊之前，啲改動唔會儲存落來。",
@@ -50,5 +50,7 @@
 	"translate-checks-links": "下面嘅連結有問題: <strong>$1</strong>",
 	"translate-checks-xhtml": "請改下面嘅標籤去正確嘅: <strong>$1</strong>",
 	"translate-checks-plural": "用 <nowiki>{{PLURAL:}}</nowiki> 嘅解解釋但係翻譯無用到。",
-	"translate-documentation-language": "訊息說明文檔"
+	"translate-gs-multiple": "多種語言",
+	"translate-documentation-language": "訊息說明文檔",
+	"translate-search-more-languages-info": "重有 $1 種{{PLURAL:$1|語言|語言}}"
 }
