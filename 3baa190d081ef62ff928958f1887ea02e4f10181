@@ -22,6 +22,30 @@
       "revId": "3baa190d081ef62ff928958f1887ea02e4f10181",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aea727be_72d2f6d6",
+        "filename": "tag/TranslationsUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-15T19:32:39Z",
+      "side": 1,
+      "message": "Global cache is already up to date. The issue here is that when jobrunner stats, it loads a current message groups to process cache, but after a while when jobs are running global cache is updated, but the jobrunner does not know that the process cache is now out of date.",
+      "parentUuid": "aea727be_7221169a",
+      "range": {
+        "startLine": 36,
+        "startChar": 66,
+        "endLine": 36,
+        "endChar": 67
+      },
+      "revId": "3baa190d081ef62ff928958f1887ea02e4f10181",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
