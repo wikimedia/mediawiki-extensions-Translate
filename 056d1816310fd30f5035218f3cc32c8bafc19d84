@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aea727be_4fe46da4",
+        "filename": "tag/TranslatablePageMoveJob.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-15T16:56:42Z",
+      "side": 1,
+      "message": "Instead of locking at job insertion time, I think it would be better if you did it just before the actual job is started? There could be a significant delay in between the time at which it\u0027s inserted and when it\u0027s run.",
+      "revId": "056d1816310fd30f5035218f3cc32c8bafc19d84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
