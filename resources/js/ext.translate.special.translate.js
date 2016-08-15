@@ -3,7 +3,8 @@
 
 	var state = {
 		group: null,
-		language: null
+		language: null,
+		messageList: null
 	};
 
 	mw.translate = mw.translate || {};
@@ -31,7 +32,7 @@
 
 			mw.translate.changeUrl( changes );
 			mw.translate.updateTabLinks( changes );
-			mw.translate.loadMessages( changes );
+			state.messageList.changeSettings( changes );
 			updateGroupInformation( state );
 		},
 
@@ -72,28 +73,17 @@
 
 			mw.translate.changeUrl( changes );
 			mw.translate.updateTabLinks( changes );
-			mw.translate.loadMessages();
+			state.messageList.changeSettings();
 			updateGroupInformation( state );
 		},
 
 		changeFilter: function ( filter ) {
-			var realFilters, uri;
-
 			if ( !checkDirty() ) {
 				return;
 			}
 
-			realFilters = [ '!ignored' ];
-			uri = new mw.Uri( window.location.href );
-			if ( uri.query.optional !== '1' ) {
-				realFilters.push( '!optional' );
-			}
-			if ( filter ) {
-				realFilters.push( filter );
-			}
-
 			mw.translate.changeUrl( { filter: filter } );
-			mw.translate.loadMessages( { filter: realFilters.join( '|' ) } );
+			state.messageList.changeSettings( { filter: getActualFilter( filter ) } );
 		},
 
 		changeUrl: function ( params ) {
@@ -132,6 +122,21 @@
 			} );
 		}
 	} );
+
+	function getActualFilter( filter ) {
+		var realFilters, uri;
+
+		realFilters = [ '!ignored' ];
+		uri = new mw.Uri( window.location.href );
+		if ( uri.query.optional !== '1' ) {
+			realFilters.push( '!optional' );
+		}
+		if ( filter ) {
+			realFilters.push( filter );
+		}
+
+		return realFilters.join( '|'  );
+	}
 
 	function checkDirty() {
 		if ( mw.translate.isDirty() ) {
@@ -255,7 +260,14 @@
 			filter, uri, position;
 
 		$messageList = $( '.tux-messagelist' );
+		state.group = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
+		state.language = $messageList.data( 'targetlangcode' ) || // for tux=1
+			mw.config.get( 'wgUserLanguage' ); // for tux=0
+
 		if ( $messageList.length ) {
+			$messageList.messagetable();
+			state.messageList = $messageList.data( 'messagetable' );
+
 			uri = new mw.Uri( window.location.href );
 			filter = uri.query.filter;
 
@@ -263,7 +275,6 @@
 				filter = '!translated';
 			}
 
-			mw.translate.changeFilter( filter );
 			$( '.tux-message-selector li' ).each( function () {
 				var $this = $( this );
 
@@ -271,11 +282,20 @@
 					$this.addClass( 'selected' );
 				}
 			} );
-		}
 
-		state.group = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
-		state.language = $messageList.data( 'targetlangcode' ) || // for tux=1
-			mw.config.get( 'wgUserLanguage' ); // for tux=0
+			mw.translate.changeUrl( {
+				messagegroup: state.group,
+				language: state.language,
+				filter: filter
+			} );
+
+			// Start loading messages
+			state.messageList.changeSettings( {
+				filter: getActualFilter( filter ),
+				group: state.group,
+				language: state.language
+			} );
+		}
 
 		if ( $( 'body' ).hasClass( 'rtl' ) ) {
 			position = {
@@ -291,8 +311,6 @@
 		} );
 
 		updateGroupInformation( state );
-
-		$messageList.messagetable();
 
 		$( '.ext-translate-language-selector .uls' ).one( 'click', function () {
 			var $target = $( this );
