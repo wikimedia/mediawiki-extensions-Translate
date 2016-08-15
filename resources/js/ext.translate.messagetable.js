@@ -35,56 +35,14 @@
 				mcprop: 'definition|translation|tags|properties',
 				rawcontinue: 1
 			} );
-		},
-
-		loadMessages: function ( changes ) {
-			// FIXME: this should be member method
-			var $container = $( '.tux-messagelist' ),
-				$loader = $( '.tux-messagetable-loader' ),
-				$statsbar = $( '.tux-message-list-statsbar' );
-
-			changes = changes || {};
-
-			// Clear current messages
-			$container.trigger( 'clear' );
-
-			// Change the properties that are provided
-			if ( changes.filter !== undefined ) {
-				$loader.data( 'filter', changes.filter );
-			}
-			if ( changes.group !== undefined ) {
-				$loader.data( 'messagegroup', changes.group );
-			}
-
-			// Reset the number of messages remaining
-			$loader.find( '.tux-messagetable-loader-info' ).text(
-				mw.msg( 'tux-messagetable-loading-messages', $loader.data( 'pagesize' ) )
-			);
-
-			// Reset the statsbar
-			$statsbar
-				.empty()
-				.removeData()
-				.languagestatsbar( {
-					language: $container.data( 'targetlangcode' ),
-					group: $loader.data( 'messagegroup' )
-				} );
-
-			// Reset other info and make visible
-			$loader
-				.removeData( 'offset' )
-				.removeAttr( 'data-offset' )
-				.removeClass( 'hide' );
-
-			// And start loading
-			$loader.trigger( 'appear' );
 		}
 	} );
 
-	function MessageTable( container, options ) {
+	function MessageTable( container, options, settings ) {
 		this.$container = $( container );
 		this.options = options;
 		this.options = $.extend( {}, $.fn.messagetable.defaults, options );
+		this.settings = settings;
 		// mode can be proofread, page or translate
 		this.mode = this.options.mode;
 		this.firstProofreadTipShown = false;
@@ -103,8 +61,6 @@
 
 	MessageTable.prototype = {
 		init: function () {
-			this.switchMode( this.mode );
-			this.initialized = true;
 			this.$actionBar.removeClass( 'hide' );
 		},
 
@@ -130,8 +86,6 @@
 					messageTable.search( $filterInput.val() );
 				}, 300 );
 			} );
-
-			this.$container.on( 'clear', $.proxy( messageTable.clear, messageTable ) );
 
 			this.$loader.appear( function () {
 				// Avoid the overlap calls to load()
@@ -412,98 +366,143 @@
 			}
 		},
 
+		/**
+		 * Start loading messages again with new settings.
+		 *
+		 * @param {Object} changes
+		 */
+		changeSettings: function ( changes ) {
+			var $statsbar = $( '.tux-message-list-statsbar' );
+
+			// Clear current messages
+			this.clear();
+			this.settings = $.extend( this.settings, changes );
+
+			if ( this.initialized === false ) {
+				this.switchMode( this.mode );
+			}
+
+			// Reset the number of messages remaining
+			this.$loaderInfo.text(
+				mw.msg( 'tux-messagetable-loading-messages', this.$loader.data( 'pagesize' ) )
+			);
+
+			// Reset the statsbar
+			$statsbar
+				.empty()
+				.removeData()
+				.languagestatsbar( {
+					language: this.settings.language,
+					group: this.settings.group
+				} );
+
+			this.initialized = true;
+			// Reset other info and make visible
+			this.$loader
+				.removeData( 'offset' )
+				.removeAttr( 'data-offset' )
+				.removeClass( 'hide' )
+				// And start loading
+				.trigger( 'appear' );
+		},
+
 		load: function () {
 			var remaining,
 				query,
-				messageTable = this,
-				$messageList = $( '.tux-messagelist' ),
+				self = this,
 				offset = this.$loader.data( 'offset' ),
-				filter = messageTable.$loader.data( 'filter' ),
-				targetLangCode = $messageList.data( 'targetlangcode' ),
-				messagegroup = messageTable.$loader.data( 'messagegroup' ),
-				pageSize = messageTable.$loader.data( 'pagesize' );
+				pageSize = this.$loader.data( 'pagesize' );
 
 			if ( offset === -1 ) {
 				return;
 			}
 
-			if ( messageTable.loading ) {
+			if ( this.loading ) {
 				// Avoid duplicate loading - the offset will be wrong and it will result
 				// in duplicate messages shown in the page
 				return;
 			}
 
-			messageTable.loading = true;
+			this.loading = true;
 			this.$loaderIcon.removeClass( 'tux-loading-indicator--stopped' );
 
-			mw.translate.getMessages( messagegroup, targetLangCode, offset, pageSize, filter )
-				.done( function ( result ) {
-					var messages = result.query.messagecollection,
-						state;
+			mw.translate.getMessages(
+				this.settings.group,
+				this.settings.language,
+				offset,
+				pageSize,
+				this.settings.filter
+			).done( function ( result ) {
+				var messages = result.query.messagecollection,
+					state;
 
-					if ( !messageTable.loading ) {
-						// reject. This was cancelled.
-						return;
+				if ( !self.loading ) {
+					// reject. This was cancelled.
+					return;
+				}
+
+				if ( messages.length === 0 ) {
+					// And this is the first load for the filter...
+					if ( self.$container.children().length === 0 ) {
+						self.displayEmptyListHelp();
 					}
+				}
 
-					if ( messages.length === 0 ) {
-						// And this is the first load for the filter...
-						if ( messageTable.$container.children().length === 0 ) {
-							messageTable.displayEmptyListHelp();
-						}
+				$.each( messages, function ( index, message ) {
+					message.group = self.settings.group;
+					self.add( message );
+					self.messages.push( message );
+
+					if ( index === 0 && self.mode === 'translate' ) {
+						$( '.tux-message:first' ).data( 'translateeditor' ).init();
 					}
-
-					$.each( messages, function ( index, message ) {
-						message.group = messagegroup;
-						messageTable.add( message );
-						messageTable.messages.push( message );
-
-						if ( index === 0 && messageTable.mode === 'translate' ) {
-							$( '.tux-message:first' ).data( 'translateeditor' ).init();
-						}
-					} );
-
-					state = result.query.metadata && result.query.metadata.state;
-					$( '.tux-workflow' ).workflowselector( messagegroup, targetLangCode, state );
-
-					// Dynamically loaded messages should pass the search filter if present.
-					query = $( '.tux-message-filter-box' ).val();
-
-					if ( query ) {
-						messageTable.search( query );
-					}
-
-					if ( result[ 'query-continue' ] === undefined ) {
-						// End of messages
-						messageTable.$loader.data( 'offset', -1 )
-							.addClass( 'hide' );
-					} else {
-						messageTable.$loader.data( 'offset', result[ 'query-continue' ].messagecollection.mcoffset );
-
-						remaining = result.query.metadata.remaining;
-
-						messageTable.$loaderInfo.text(
-							mw.msg( 'tux-messagetable-more-messages', remaining )
-						);
-
-						// Make sure the floating toolbars are visible without the need for scroll
-						$( window ).trigger( 'scroll' );
-					}
-
-					messageTable.updateLastMessage();
-				} )
-				.fail( function ( errorCode, response ) {
-					if ( response.error && response.error.code === 'mctranslate-language-disabled' ) {
-						$( '.tux-editor-header .group-warning' )
-							.text( mw.msg( 'translate-language-disabled' ) )
-							.show();
-					}
-					messageTable.$loader.data( 'offset', -1 ).addClass( 'hide' );
-				} )
-				.always( function () {
-					messageTable.$loaderIcon.addClass( 'tux-loading-indicator--stopped' );
-					messageTable.loading = false;
 				} );
+
+				state = result.query.metadata && result.query.metadata.state;
+				$( '.tux-workflow' ).workflowselector(
+					self.settings.group,
+					self.settings.language,
+					state
+				);
+
+				// Dynamically loaded messages should pass the search filter if present.
+				query = $( '.tux-message-filter-box' ).val();
+
+				if ( query ) {
+					self.search( query );
+				}
+
+				if ( result[ 'query-continue' ] === undefined ) {
+					// End of messages
+					self.$loader.data( 'offset', -1 )
+						.addClass( 'hide' );
+				} else {
+					self.$loader.data( 'offset', result[ 'query-continue' ].messagecollection.mcoffset );
+
+					remaining = result.query.metadata.remaining;
+
+					self.$loaderInfo.text(
+						mw.msg( 'tux-messagetable-more-messages', remaining )
+					);
+
+					// Make sure the floating toolbars are visible without the need for scroll
+					$( window ).trigger( 'scroll' );
+				}
+
+				self.updateLastMessage();
+			} )
+			.fail( function ( errorCode, response ) {
+				if ( response.error && response.error.code === 'mctranslate-language-disabled' ) {
+					$( '.tux-editor-header .group-warning' )
+						.text( mw.msg( 'translate-language-disabled' ) )
+						.show();
+				}
+				self.$loader.data( 'offset', -1 ).addClass( 'hide' );
+			} )
+			.always( function () {
+				self.$loaderIcon.addClass( 'tux-loading-indicator--stopped' );
+				self.loading = false;
+			} );
 		},
 
 		updateLastMessage: function () {
@@ -637,7 +636,7 @@
 		 */
 		switchMode: function ( mode ) {
 			var messageTable = this,
-				filter = messageTable.$loader.data( 'filter' ),
+				filter = this.settings.filter,
 				userId = mw.config.get( 'wgUserId' ),
 				$tuxTabUntranslated,
 				$tuxTabUnproofread,
@@ -683,14 +682,13 @@
 					$tuxTabUnproofread.addClass( 'selected' );
 				}
 
-				$controlOwnButton.removeClass( 'hide' );
 				$hideTranslatedButton.addClass( 'hide' );
 			} else {
 				$tuxTabUntranslated.removeClass( 'hide' );
 				$tuxTabUnproofread.addClass( 'hide' );
 				$controlOwnButton.addClass( 'hide' );
 
-				if ( messageTable.$loader.data( 'filter' ).indexOf( '!translated' ) > -1 ) {
+				if ( filter.indexOf( '!translated' ) > -1 ) {
 					$hideTranslatedButton.removeClass( 'hide' );
 				}
 
