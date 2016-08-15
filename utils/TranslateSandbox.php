@@ -97,6 +97,7 @@ class TranslateSandbox {
 		$dbw->delete( 'user', array( 'user_id' => $uid ), __METHOD__ );
 		$dbw->delete( 'user_groups', array( 'ug_user' => $uid ), __METHOD__ );
 		$dbw->delete( 'user_properties', array( 'up_user' => $uid ), __METHOD__ );
+		$dbw->delete( 'logging', array( 'log_user' => $uid ), __METHOD__ );
 
 		// If someone tries to access still object still, they will get anon user
 		// data.
