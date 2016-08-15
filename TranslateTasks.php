@@ -38,16 +38,6 @@ abstract class TranslateTask {
 	}
 
 	/**
-	 * Indicates whether the task itself will hand the full output page,
-	 * including headers. If false, the resulting html should be embedded
-	 * to the page of calling context.
-	 * @return bool
-	 */
-	public function plainOutput() {
-		return false;
-	}
-
-	/**
 	 * @var MessageGroup
 	 */
 	protected $group;
@@ -107,8 +97,7 @@ abstract class TranslateTask {
 
 	/**
 	 * Executes the task with given options and outputs the results.
-	 * @return string Partial or full html.
-	 * @see plainOutput()
+	 * @return string HTML
 	 */
 	final public function execute() {
 		$this->preinit();
