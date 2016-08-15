@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aea727be_7221169a",
+        "filename": "tag/TranslationsUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-15T17:25:52Z",
+      "side": 1,
+      "message": "Why is global cache not invalidated? If APC is not shared, then doesn\u0027t that mean MessageGroups::init() would still try to retrieve from it first before setting process cache causing stale values to be retrieved in runJobs.php still? Might that not cause other issues?",
+      "range": {
+        "startLine": 36,
+        "startChar": 66,
+        "endLine": 36,
+        "endChar": 67
+      },
+      "revId": "3baa190d081ef62ff928958f1887ea02e4f10181",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
