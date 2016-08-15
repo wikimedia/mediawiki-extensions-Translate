@@ -28,7 +28,10 @@
 				subaction: 'add',
 				title: title,
 				translation: translation
-			} ).promise();
+			} ).then( function () {
+				// Fake normal save API
+				return { edit: { result: 'Success' } };
+			} );
 		},
 
 		/**
