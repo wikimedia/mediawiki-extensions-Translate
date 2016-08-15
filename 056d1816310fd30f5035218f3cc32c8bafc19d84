@@ -16,6 +16,24 @@
       "revId": "056d1816310fd30f5035218f3cc32c8bafc19d84",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aea727be_92575a5c",
+        "filename": "tag/TranslatablePageMoveJob.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-15T19:28:24Z",
+      "side": 1,
+      "message": "That would amount to pretty much no locking at all. The important thing is to prevent deleting/moving pages to be moved or anyone creating pages in the way.\n\nEdits do not really matter, with the exception that someone might accidentally re-create a page that was already moved.",
+      "parentUuid": "aea727be_4fe46da4",
+      "revId": "056d1816310fd30f5035218f3cc32c8bafc19d84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
