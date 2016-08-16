@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e89af39_cd15c9eb",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-16T06:18:49Z",
+      "side": 1,
+      "message": "Can you log the backtrace here, so we can file a bug \"upstream\" then? I can abandon my patch then.",
+      "revId": "cb54c4b54a48647e1ca04fe7b0d265ef5cc85eab",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
