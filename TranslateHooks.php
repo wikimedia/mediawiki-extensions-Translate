@@ -241,9 +241,13 @@ class TranslateHooks {
 	 * Used for setting an AbuseFilter variable.
 	 *
 	 * @param AbuseFilterVariableHolder &$vars
-	 * @param Title $title
+	 * @param Title|null $title
 	 */
 	public static function onAbuseFilterFilterAction( &$vars, $title ) {
+		if ( !$title instanceof Title ) {
+			return;
+		}
+
 		$handle = new MessageHandle( $title );
 
 		// Only set this variable if we are in a proper namespace to avoid
