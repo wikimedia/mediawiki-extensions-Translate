@@ -10,7 +10,8 @@
 			"Vks",
 			"Matěj Suchánek",
 			"Utar",
-			"Clon"
+			"Clon",
+			"Marek Pavlica"
 		]
 	},
 	"translate": "Překládání",
@@ -194,6 +195,7 @@
 	"supportedlanguages-recenttranslations": "nedávné překlady",
 	"supportedlanguages-count": "Celkem $1 {{PLURAL:$1|jazyk|jazyky|jazyků}}.",
 	"supportedlanguages-activity": "$1: $2 editace – poslední editace před $3 {{PLURAL:$3|dnem|dny}}",
+	"abusefilter-edit-builder-vars-translate-source-text": "Zdrojový text překladové jednotky",
 	"translate-save": "Uložit ($1)",
 	"translate-jssti-add": "Přidat do seznamu",
 	"managemessagegroups": "Správa skupin zpráv",
@@ -302,6 +304,7 @@
 	"tux-status-translated": "Přeložená",
 	"tux-status-saving": "Ukládá se…",
 	"tux-status-unsaved": "Neuloženo",
+	"tux-save-unknown-error": "Došlo k neznámé chybě.",
 	"tux-editor-placeholder": "Váš překlad",
 	"tux-editor-editsummary-placeholder": "Nepovinné shrnutí",
 	"tux-editor-paste-original-button-label": "Vložit zdrojový text",
