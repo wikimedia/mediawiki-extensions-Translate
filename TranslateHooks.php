@@ -241,9 +241,14 @@ class TranslateHooks {
 	 * Used for setting an AbuseFilter variable.
 	 *
 	 * @param AbuseFilterVariableHolder &$vars
-	 * @param Title $title
+	 * @param Title|null $title
 	 */
 	public static function onAbuseFilterFilterAction( &$vars, $title ) {
+		if ( !$title instanceof Title ) {
+			wfDebugLog( 'T143073', 'Got non-Title in ' . wfGetAllCallers( 5 ) );
+			return;
+		}
+
 		$handle = new MessageHandle( $title );
 
 		// Only set this variable if we are in a proper namespace to avoid
