@@ -32,7 +32,11 @@ class MessageHandle {
 	 */
 	protected $groupIds;
 
-	public function __construct( Title $title ) {
+	public function __construct( Title $title = null ) {
+		if ( !$title instanceof Title ) {
+			throw new MWException( 'Title object expected' );
+		}
+
 		$this->title = $title;
 	}
 
