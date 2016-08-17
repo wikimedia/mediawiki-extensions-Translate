@@ -7,7 +7,8 @@
 			"Wladek92",
 			"Titip1995",
 			"Bluenaranja",
-			"Verdy p"
+			"Verdy p",
+			"Pols12"
 		]
 	},
 	"searchtranslations": "Recherche de traductions",
@@ -23,10 +24,10 @@
 	"tux-sst-solr-offline-title": "Recherche indisponible",
 	"tux-sst-solr-offline-body": "Le service de recherche est temporairement indisponible.",
 	"tux-sst-next": "Suivant →",
-	"tux-sst-prev": "< Précédent",
+	"tux-sst-prev": "← Précédent",
 	"tux-sst-default": "Traductions",
-	"tux-sst-translated": "Traductions à partir de $1",
-	"tux-sst-untranslated": "Pas de traduction à partir de $1",
+	"tux-sst-translated": "Déjà traduits à partir de $1",
+	"tux-sst-untranslated": "Pas encore traduits de $1",
 	"tux-sst-outdated": "Traductions périmées à partir de $1",
 	"tux-sst-ellipsis-untranslated": "Non traduit",
 	"tux-sst-ellipsis-outdated": "Traductions obsolètes",
