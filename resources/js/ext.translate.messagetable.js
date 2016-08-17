@@ -161,7 +161,7 @@
 		 */
 		clear: function () {
 			this.$container.empty();
-			$( '.translate-tipsy' ).remove();
+			$( '.translate-tooltip' ).remove();
 			this.messages = [];
 			// Any ongoing loading process will notice this and will reject results.
 			this.loading = false;
@@ -282,7 +282,7 @@
 		 * Add a message to the message table for proofreading.
 		 */
 		addProofread: function ( message ) {
-			var icon, $message;
+			var $message, $icon, module;
 
 			$message = $( '<div>' ).addClass( 'row tux-message-proofread' );
 
@@ -293,28 +293,47 @@
 				targetlangcode: this.$container.data( 'targetlangcode' )
 			} );
 
-			// Add autotipsy to first available proofread action icon
+			$icon = $message.find( '.tux-proofread-action' );
+			if ( $icon.length === 0 ) {
+				return;
+			}
+
+			// Add autotooltip to first available proofread action icon
 			if ( this.firstProofreadTipShown ) {
 				return;
 			}
-
-			icon = $message.find( '.tux-proofread-action' );
-			if ( icon.length === 0 ) {
-				return;
-			}
-
 			this.firstProofreadTipShown = true;
-			icon.addClass( 'autotipsy' );
+			$icon.addClass( 'autotooltip' );
 
-			// Selectors are not cached in case the element no longer exists
-			setTimeout( function () {
-				var icon = $( '.autotipsy' );
-				if ( icon.length ) { icon.tipsy( 'show' ); }
-			}, 1000 );
-			setTimeout( function () {
-				var icon = $( '.autotipsy' );
-				if ( icon.length ) { icon.tipsy( 'hide' ); }
-			}, 4000 );
+			// Use oojs-ui-core only after MediaWiki 1.26 is no longer supported
+			module = mw.loader.getState( 'oojs-ui-core' ) === null ? 'oojs-ui' : 'oojs-ui-core';
+			mw.loader.using( module ).done( function () {
+				var tooltip = new OO.ui.PopupWidget( {
+					padded: true,
+					align: 'center',
+					width: 250,
+					classes: [ 'translate-tooltip' ],
+					$content: $( '<p>' ).text( $icon.prop( 'title' ) )
+				} );
+
+				setTimeout( function () {
+					var offset, $icon = $( '.autotooltip:visible' );
+					if ( !$icon.length ) {
+						return;
+					}
+
+					offset = $icon.offset();
+					tooltip.$element.css( {
+						top: offset.top + $icon.outerHeight() + 5,
+						left: offset.left + $icon.outerWidth() - 20
+					} ).appendTo( 'body' );
+					tooltip.toggleClipping( false ).toggle( true );
+
+					setTimeout( function () {
+						tooltip.$element.remove();
+					}, 4000 );
+				}, 1000 );
+			} );
 		},
 
 		addPageModeMessage: function ( message ) {
@@ -662,7 +681,7 @@
 
 			// Emulate clear without clearing loaded messages
 			messageTable.$container.empty();
-			$( '.translate-tipsy' ).remove();
+			$( '.translate-tooltip' ).remove();
 
 			$tuxTabUntranslated = $( '.tux-message-selector > .tux-tab-untranslated' );
 			$tuxTabUnproofread = $( '.tux-message-selector > .tux-tab-unproofread' );
