@@ -16,6 +16,7 @@
 		"mediaWiki",
 		"jQuery",
 		"QUnit",
-		"autosize"
+		"autosize",
+		"OO"
 	]
 }
