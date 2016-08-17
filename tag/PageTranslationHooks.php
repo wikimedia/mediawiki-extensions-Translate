@@ -645,21 +645,21 @@ class PageTranslationHooks {
 			return true;
 		}
 
-		$title = $article->getTitle();
-		$transPage = TranslatablePage::isTranslationPage( $title );
+		$transPage = TranslatablePage::isTranslationPage( $article->getTitle() );
+		$context = $article->getContext();
 		if ( $transPage ) {
-			self::translationPageHeader( $title, $transPage );
+			self::translationPageHeader( $context, $transPage );
 		} else {
 			// Check for pages that are tagged or marked
-			self::sourcePageHeader( $title );
+			self::sourcePageHeader( $context );
 		}
 
 		return true;
 	}
 
-	protected static function sourcePageHeader( Title $title ) {
-		$context = RequestContext::getMain();
+	protected static function sourcePageHeader( IContextSource $context ) {
 		$language = $context->getLanguage();
+		$title = $context->getTitle();
 
 		$page = TranslatablePage::newFromTitle( $title );
 
@@ -727,7 +727,8 @@ class PageTranslationHooks {
 			);
 	}
 
-	protected static function translationPageHeader( Title $title, TranslatablePage $page ) {
+	protected static function translationPageHeader( IContextSource $context, TranslatablePage $page ) {
+		$title = $context->getTitle();
 		if ( !$title->exists() ) {
 			return;
 		}
@@ -741,7 +742,6 @@ class PageTranslationHooks {
 			$per = $pers[$code] * 100;
 		}
 
-		$context = RequestContext::getMain();
 		$language = $context->getLanguage();
 
 		if ( $page->getSourceLanguageCode() === $code ) {
