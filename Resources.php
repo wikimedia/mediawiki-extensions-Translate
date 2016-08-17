@@ -58,7 +58,6 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'jquery.makeCollapsible',
 		'jquery.textSelection',
 		'jquery.textchange',
-		'jquery.tipsy',
 		'mediawiki.Uri',
 		'mediawiki.api',
 		'mediawiki.api.parse',
