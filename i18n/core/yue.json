@@ -3,7 +3,8 @@
 		"authors": [
 			"Shinjiman",
 			"Yueman",
-			"Ktchankt"
+			"Ktchankt",
+			"Obonggi"
 		]
 	},
 	"translate": "翻譯",
@@ -52,5 +53,6 @@
 	"translate-checks-plural": "用 <nowiki>{{PLURAL:}}</nowiki> 嘅解解釋但係翻譯無用到。",
 	"translate-gs-multiple": "多種語言",
 	"translate-documentation-language": "訊息說明文檔",
+	"tux-save-unknown-error": "發生未知嘅錯誤。",
 	"translate-search-more-languages-info": "重有 $1 種{{PLURAL:$1|語言|語言}}"
 }
