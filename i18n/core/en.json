@@ -61,7 +61,6 @@
 	"translate-use-suggestion": "Replace current translation with this suggestion.",
 	"translate-edit-nopermission": "You need translation rights to translate messages.",
 	"translate-edit-askpermission": "Get permission",
-	"translate-edit-tag-warning": "",
 	"exporttranslations": "Export translations",
 	"translate-export-form-format": "Format",
 	"translate-export-invalid-format": "Please specify a valid format.",

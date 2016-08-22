@@ -52,6 +52,7 @@
 	"tpt-rev-unmark-tooltip": "Remove this page from translation.",
 	"tpt-rev-discourage-tooltip": "Discourage further translations on this page.",
 	"tpt-rev-encourage-tooltip": "Restore this page to normal translation.",
+	"translate-edit-tag-warning": "",
 	"translate-tag-translate-link-desc": "Translate this page",
 	"translate-tag-markthis": "Mark this page for translation",
 	"translate-tag-markthisagain": "This page has <span class=\"plainlinks\">[$1 changes]</span> since it was last <span class=\"plainlinks\">[$2 marked for translation]</span>.",

@@ -32,16 +32,6 @@ class TranslateEditAddons {
 
 				return false;
 			}
-
-			return true;
-		}
-		$msg = wfMessage( 'translate-edit-tag-warning' )->inContentLanguage();
-
-		if ( !$msg->isDisabled() &&
-			TranslatablePage::isSourcePage( $editpage->getTitle() )
-		) {
-			$editpage->editFormTextTop .= $editpage->getArticle()->getContext()
-				->getOutput()->parse( $msg->plain() );
 		}
 
 		return true;
