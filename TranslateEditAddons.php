@@ -16,22 +16,26 @@
  */
 class TranslateEditAddons {
 	/**
-	 * Keep the usual diiba daaba hidden from translators.
+	 * Prevent translations to non-translatable languages for the group
 	 * Hook: AlternateEdit
 	 */
-	public static function intro( EditPage $editpage ) {
-		$handle = new MessageHandle( $editpage->getTitle() );
-		if ( $handle->isValid() ) {
-			$editpage->suppressIntro = true;
-			$group = $handle->getGroup();
-			$languages = $group->getTranslatableLanguages();
-			if ( $languages !== null && $handle->getCode() && !isset( $languages[$handle->getCode()] ) ) {
-				$editpage->getArticle()->getContext()->getOutput()->wrapWikiMsg(
-					"<div class='error'>$1</div>", 'translate-language-disabled'
-				);
+	public static function disallowLangTranslations( Title $title, User $user,
+		$action, &$result
+	) {
+		if ( $action !== 'edit' ) {
+			return true;
+		}
 
-				return false;
-			}
+		$handle = new MessageHandle( $title );
+		if ( !$handle->isValid() ) {
+			return true;
+		}
+
+		$group = $handle->getGroup();
+		$languages = $group->getTranslatableLanguages();
+		if ( $languages !== null && $handle->getCode() && !isset( $languages[$handle->getCode()] ) ) {
+			$result = array( 'translate-language-disabled' );
+			return false;
 		}
 
 		return true;
