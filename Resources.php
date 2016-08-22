@@ -250,6 +250,7 @@ $wgResourceModules['ext.translate.quickedit'] = array(
 	'styles' => 'resources/css/ext.translate.quickedit.css',
 	'messages' => array( 'translate-js-nonext', 'translate-js-save-failed' ),
 	'dependencies' => array(
+		'ext.translate.hooks',
 		'jquery.autosize',
 		'jquery.form',
 		'jquery.ui.dialog',
