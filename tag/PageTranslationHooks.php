@@ -495,18 +495,34 @@ class PageTranslationHooks {
 	}
 
 	/**
-	 * Prevent editing of unknown pages in Translations namespace.
+	 * Prevent editing of certain pages in Translations namespace.
 	 * Hook: getUserPermissionsErrorsExpensive
+	 *
+	 * @param Title $title
+	 * @param User $user
+	 * @param string $action
+	 * @param mixed $result
+	 * @return bool
 	 */
-	public static function preventUnknownTranslations( Title $title, User $user,
+	public static function onGetUserPermissionsErrorsExpensive( Title $title, User $user,
 		$action, &$result
 	) {
 		$handle = new MessageHandle( $title );
-		if ( $action === 'edit' && $handle->isPageTranslation() &&
-			!$handle->isValid()
-		) {
-			$result = array( 'tpt-unknown-page' );
 
+		// Check only when someone tries to edit (or create) page translation messages
+		if ( $action !== 'edit' || !$handle->isPageTranslation() ) {
+			return true;
+		}
+
+		if ( !$handle->isValid() ) {
+			// Don't allow editing invalid messages that do not belong to any translatable page
+			$result = array( 'tpt-unknown-page' );
+			return false;
+		}
+
+		$error = self::getTranslationRestrictions( $handle );
+		if ( count( $error ) ) {
+			$result = $error;
 			return false;
 		}
 
@@ -514,22 +530,17 @@ class PageTranslationHooks {
 	}
 
 	/**
-	 * Prevent editing of restricted languages.
-	 * Hook: getUserPermissionsErrorsExpensive
-	 * @since 2012-03-01
+	 * Prevent editing of restricted languages when prioritized.
+	 *
+	 * @param MessageHandle $handle
+	 * @return array array containing error message if restricted, empty otherwise
 	 */
-	public static function preventRestrictedTranslations( Title $title, User $user,
-		$action, &$result
-	) {
+	private static function getTranslationRestrictions( MessageHandle $handle ) {
 		global $wgTranslateDocumentationLanguageCode;
-		// Preventing editing (includes creation) should be enough
-		if ( $action !== 'edit' ) {
-			return true;
-		}
 
-		$handle = new MessageHandle( $title );
-		if ( !$handle->isValid() ) {
-			return true;
+		// Allow adding message documentation even when translation is restricted
+		if ( $handle->getCode() === $wgTranslateDocumentationLanguageCode ) {
+			return array();
 		}
 
 		// Get the primary group id
@@ -539,12 +550,7 @@ class PageTranslationHooks {
 		// Check if anything is prevented for the group in the first place
 		$force = TranslateMetadata::get( $groupId, 'priorityforce' );
 		if ( $force !== 'on' ) {
-			return true;
-		}
-
-		// Allow adding message documentation even when translation is restricted
-		if ( $handle->getCode() === $wgTranslateDocumentationLanguageCode ) {
-			return true;
+			return array();
 		}
 
 		// And finally check whether the language is not included in whitelist
@@ -553,12 +559,10 @@ class PageTranslationHooks {
 		if ( !isset( $filter[$handle->getCode()] ) ) {
 			// @todo Default reason if none provided
 			$reason = TranslateMetadata::get( $groupId, 'priorityreason' );
-			$result = array( 'tpt-translation-restricted', $reason );
-
-			return false;
+			return array( 'tpt-translation-restricted', $reason );
 		}
 
-		return true;
+		return array();
 	}
 
 	/**
@@ -566,32 +570,29 @@ class PageTranslationHooks {
 	 * Hook: getUserPermissionsErrorsExpensive
 	 */
 	public static function preventDirectEditing( Title $title, User $user, $action, &$result ) {
-		$page = TranslatablePage::isTranslationPage( $title );
+		if ( self::$allowTargetEdit ) {
+			return true;
+		}
+
 		$whitelist = array(
-			'read' => true,
-			'delete' => true,
-			'review' => true, // FlaggedRevs
-			'undelete' => true,
-			'deletedtext' => true,
-			'deletedhistory' => true,
+			'read', 'delete', 'undelete', 'deletedtext', 'deletedhistory',
+			'review', // FlaggedRevs
 		);
+		if ( in_array( $action, $whitelist ) ) {
+			return true;
+		}
 
-		if ( $page !== false && !isset( $whitelist[$action] ) ) {
-			if ( self::$allowTargetEdit ) {
-				return true;
-			}
+		$page = TranslatablePage::isTranslationPage( $title );
+		if ( $page !== false && $page->getMarkedTag() ) {
+			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
+			$result = array(
+				'tpt-target-page',
+				':' . $page->getTitle()->getPrefixedText(),
+				// This url shouldn't get cached
+				wfExpandUrl( $page->getTranslationUrl( $code ) )
+			);
 
-			if ( $page->getMarkedTag() ) {
-				list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
-				$result = array(
-					'tpt-target-page',
-					':' . $page->getTitle()->getPrefixedText(),
-					// This url shouldn't get cached
-					wfExpandUrl( $page->getTranslationUrl( $code ) )
-				);
-
-				return false;
-			}
+			return false;
 		}
 
 		return true;

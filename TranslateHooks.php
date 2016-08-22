@@ -158,12 +158,9 @@ class TranslateHooks {
 			// Set the page content language
 			$wgHooks['PageContentLanguage'][] = 'PageTranslationHooks::onPageContentLanguage';
 
-			// Prevent editing of unknown pages in Translations namespace
+			// Prevent editing of certain pages in translations namespace
 			$wgHooks['getUserPermissionsErrorsExpensive'][] =
-				'PageTranslationHooks::preventUnknownTranslations';
-			// Prevent editing of translation in restricted languages
-			$wgHooks['getUserPermissionsErrorsExpensive'][] =
-				'PageTranslationHooks::preventRestrictedTranslations';
+				'PageTranslationHooks::onGetUserPermissionsErrorsExpensive';
 			// Prevent editing of translation pages directly
 			$wgHooks['getUserPermissionsErrorsExpensive'][] =
 				'PageTranslationHooks::preventDirectEditing';
