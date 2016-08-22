@@ -75,6 +75,21 @@ class PageTranslationHooks {
 		return true;
 	}
 
+	/**
+	 * Display an edit notice for translatable source pages if it's enabled
+	 *
+	 * @param Title $title
+	 * @param int $oldid
+	 * @param array &$notices
+	 */
+	public static function onTitleGetEditNotices( Title $title, $oldid, array &$notices ) {
+		$msg = wfMessage( 'translate-edit-tag-warning' )->inContentLanguage();
+
+		if ( !$msg->isDisabled() && TranslatablePage::isSourcePage( $title ) ) {
+			$notices['translate-tag'] = $msg->parseAsBlock();
+		}
+	}
+
 	/// Hook: OutputPageBeforeHTML
 	public static function injectCss( OutputPage $out, /*string*/$text ) {
 		global $wgTranslatePageTranslationULS;
