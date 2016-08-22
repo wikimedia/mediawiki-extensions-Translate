@@ -330,11 +330,13 @@ class SpecialTranslate extends SpecialPage {
 				}
 			} elseif ( $nondefaults['taction'] === 'export' ) {
 				// Redirect old export URLs to Special:ExportTranslations
-				$params = array(
-				 'group' => $nondefaults['group'],
-				 'language' => $nondefaults['language'],
-				);
-
+				$params = array();
+				if ( isset( $nondefaults['group'] ) ) {
+					$params['group'] = $nondefaults['group'];
+				}
+				if ( isset( $nondefaults['language'] ) ) {
+					$params['language'] = $nondefaults['language'];
+				}
 				if ( isset( $nondefaults['task'] ) ) {
 					$params['format'] = $nondefaults['task'];
 				}
