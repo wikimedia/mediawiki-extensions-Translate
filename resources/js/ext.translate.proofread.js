@@ -229,8 +229,7 @@
 				}
 			} ).fail( function ( errorCode ) {
 				$message.find( '.tux-proofread-action' ).addClass( 'tux-warning' );
-				// In MW 1.24 postWithToken returns token-missing instead of assertuserfailed
-				if ( errorCode === 'assertuserfailed' || errorCode === 'token-missing'  ) {
+				if ( errorCode === 'assertuserfailed' ) {
 					alert( mw.msg( 'tux-session-expired' ) );
 				}
 			} );
