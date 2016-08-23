@@ -24,8 +24,7 @@
 			group: $target.data( 'groupid' )
 		} );
 
-		// Change to csrf when support for MW 1.25 is dropped
-		api.postWithToken( 'edit', params )
+		api.postWithToken( 'csrf', params )
 			.done( successFunction )
 			.fail( function ( code, data ) {
 				window.alert( data.error && data.error.info );
@@ -77,8 +76,7 @@
 				group: subgroupId
 			} );
 
-			// Change to csrf when support for MW 1.25 is dropped
-			api.postWithToken( 'edit', params )
+			api.postWithToken( 'csrf', params )
 				.done( successFunction )
 				.fail( function ( code, data ) {
 					window.alert( data.error && data.error.info );
@@ -104,8 +102,7 @@
 				'do': 'remove'
 			} );
 
-			// Change to csrf when support for MW 1.25 is dropped
-			api.postWithToken( 'edit', params )
+			api.postWithToken( 'csrf', params )
 				.done( successFunction )
 				.fail( function ( code, data ) {
 					window.alert( data.error && data.error.info );
@@ -146,8 +143,7 @@
 			format: 'json'
 		};
 
-		// Change to csrf when support for MW 1.25 is dropped
-		api.postWithToken( 'edit', params )
+		api.postWithToken( 'csrf', params )
 			.done( successFunction )
 			.fail( function ( code, data ) {
 				window.alert( data.error.info );
@@ -358,8 +354,7 @@
 				format: 'json'
 			};
 
-			// Change to csrf when support for MW 1.25 is dropped
-			api.postWithToken( 'edit', params )
+			api.postWithToken( 'csrf', params )
 				.done( successFunction )
 				.fail( function ( code, data ) {
 					window.alert( data.error && data.error.info );
