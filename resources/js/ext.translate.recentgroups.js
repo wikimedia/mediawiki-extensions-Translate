@@ -12,16 +12,12 @@
 	 */
 
 	mw.translate.recentGroups = {
-		// TODO: Use mw.storage when MW >= 1.26
 		get: function () {
-			try {
-				return JSON.parse( localStorage.getItem( 'translate-recentgroups' ) ) || [];
-			} catch ( e ) {}
-			return [];
+			return JSON.parse( mw.storage.get( 'translate-recentgroups' ) ) || [];
 		},
 
 		append: function ( value ) {
-			var items = this.get() || [];
+			var items = this.get();
 
 			items.unshift( value );
 			items = items.filter( function ( item, index, array ) {
@@ -29,11 +25,7 @@
 			} );
 			items = items.slice( 0, 5 );
 
-			try {
-				localStorage.setItem( 'translate-recentgroups', JSON.stringify( items ) );
-				return true;
-			} catch ( e ) {}
-			return false;
+			mw.storage.set( 'translate-recentgroups', JSON.stringify( items ) );
 		}
 	};
 }( jQuery, mediaWiki ) );
