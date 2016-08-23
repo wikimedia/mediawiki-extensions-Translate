@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e89af39_e2f5024e",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-23T11:32:07Z",
+      "side": 0,
+      "message": "I would consider this line to be the most important thing of this hook and it should not be removed.",
+      "range": {
+        "startLine": 25,
+        "startChar": 14,
+        "endLine": 25,
+        "endChar": 27
+      },
+      "revId": "635ea814ac5ec6d83b6d0731cfb8a96db9297959",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
