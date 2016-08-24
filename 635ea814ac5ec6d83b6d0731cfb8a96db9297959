@@ -22,6 +22,30 @@
       "revId": "635ea814ac5ec6d83b6d0731cfb8a96db9297959",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e96ab59_20ead273",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-24T17:19:44Z",
+      "side": 0,
+      "message": "Can you expand on why? I personally don\u0027t see a reason for a special case here considering that in other extensions alsom it\u0027s not done and I haven\u0027t seen any problem with that.",
+      "parentUuid": "6e89af39_e2f5024e",
+      "range": {
+        "startLine": 25,
+        "startChar": 14,
+        "endLine": 25,
+        "endChar": 27
+      },
+      "revId": "635ea814ac5ec6d83b6d0731cfb8a96db9297959",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
