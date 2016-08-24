@@ -46,6 +46,30 @@
       "revId": "635ea814ac5ec6d83b6d0731cfb8a96db9297959",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e96ab59_7b580b36",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-24T17:53:56Z",
+      "side": 0,
+      "message": "Hmm, I just looked at EditPage::showIntro() and it looks like we will have an unpleasant UI if we change this now with all the translation boxes along with stuff such as \u003chttps://meta.wikimedia.org/wiki/MediaWiki:Newarticletext\u003e. Will leave it in a new patch.",
+      "parentUuid": "4e96ab59_20ead273",
+      "range": {
+        "startLine": 25,
+        "startChar": 14,
+        "endLine": 25,
+        "endChar": 27
+      },
+      "revId": "635ea814ac5ec6d83b6d0731cfb8a96db9297959",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
