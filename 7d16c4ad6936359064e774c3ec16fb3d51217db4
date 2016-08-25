@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e96ab59_82862317",
+        "filename": "resources/js/ext.translate.recentgroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-25T16:24:40Z",
+      "side": 1,
+      "message": "This doesn\u0027t return a bool anymore. The only caller I found is in updateGroupInformation() which does not make use of the return value. Just for confirmation, are there other callers?",
+      "revId": "7d16c4ad6936359064e774c3ec16fb3d51217db4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
