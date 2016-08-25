@@ -99,7 +99,8 @@ $wgAPIModules['searchtranslations'] = 'ApiSearchTranslations';
 
 // Register hooks.
 $wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
-$wgHooks['AlternateEdit'][] = 'TranslateEditAddons::intro';
+$wgHooks['AlternateEdit'][] = 'TranslateEditAddons::suppressIntro';
+$wgHooks['getUserPermissionsErrorsExpensive'][] = 'TranslateEditAddons::disallowLangTranslations';
 $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 $wgHooks['LanguageGetTranslatedLanguageNames'][] =
 	'TranslateHooks::translateMessageDocumentationLanguage';
