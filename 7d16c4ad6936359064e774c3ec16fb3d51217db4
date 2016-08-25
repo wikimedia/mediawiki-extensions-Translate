@@ -16,6 +16,24 @@
       "revId": "7d16c4ad6936359064e774c3ec16fb3d51217db4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e96ab59_02a95378",
+        "filename": "resources/js/ext.translate.recentgroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-25T16:28:33Z",
+      "side": 1,
+      "message": "Only the group selector on Special:Translate itself uses this module.",
+      "parentUuid": "4e96ab59_82862317",
+      "revId": "7d16c4ad6936359064e774c3ec16fb3d51217db4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
