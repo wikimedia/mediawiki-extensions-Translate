@@ -1,0 +1,20 @@
+== Translate 2016.08 ==
+Released at 2016-08-25.
+
+=== Noteworthy changes ===
+* Kunal Grover's patch to update translation pages upon deletion of translation units was merged with the help of Glaisher.
+* David Causse made translation memory and translation search work with new ElasticSearch version.
+* Pratik Lahoti's improvements to the user interface of Special:PageMigration was merged with help of Federico Leva.
+* Glaisher fulfilled a long requested feature to have summary field on Special:Translate.
+* Glaisher fixed bugs and improved stability of the page translation feature.
+* Glaisher added a log subtype selector for the page translation log on Special:Log.
+* Glaisher fixed false warnings about bad translation in Special:Translate when the source text contained discouraged html or had smileys.
+* Glaisher moved export functionality from Special:Translate to Special:ExportTranslations.
+* Niklas Laxström improved message group selector on Special:Translate.
+* Niklas Laxström improved display of Special:Translate for small screens.
+* Niklas Laxström fixed flash of unstyled content on many of Translate's special pages.
+* Niklas Laxström changed JSON file format handler to always output a metadata section. T118205
+* Niklas Laxström fixed multiple issues related to statsbar updates on Special:Translate. T62949
+* Niklas Laxström improved the refresh-translatable-pages.php maintenance script so that it creates missing source language pages.
+* Niklas Laxström updated Translate's sandbox feature to use AuthManager. T111486
+* Federico Leva made characterEditStats.php to able to scan history further than the recent changes table. T64833
