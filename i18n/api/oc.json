@@ -4,7 +4,10 @@
 			"Cedric31"
 		]
 	},
+	"apihelp-groupreview-param-language": "Còdi de lenga.",
+	"apihelp-query+languagestats-param-language": "Còdi de lenga.",
 	"apihelp-query+messagecollection-description": "Requèsta MessageCollection sus las traduccions.",
+	"apihelp-query+messagecollection-param-language": "Còdi de lenga.",
 	"apihelp-query+messagetranslations-description": "Demanda l'ensemble de las traduccions per un sol messatge.",
 	"apihelp-query+messagetranslations-example-1": "Lista de las traduccions del wiki per «MediaWiki:genièr»",
 	"apihelp-translationaids-description": "Recèrca totas las ajudas a la traduccion.",
