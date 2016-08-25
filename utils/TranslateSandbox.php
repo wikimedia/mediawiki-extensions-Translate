@@ -38,7 +38,8 @@ class TranslateSandbox {
 			'username' => $user->getName(),
 			'password' => $password,
 			'retype' => $password,
-			'email' => $email
+			'email' => $email,
+			'realname' => '',
 		);
 
 		self::$userToCreate = $user;
