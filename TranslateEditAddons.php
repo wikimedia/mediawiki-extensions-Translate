@@ -16,22 +16,43 @@
  */
 class TranslateEditAddons {
 	/**
-	 * Keep the usual diiba daaba hidden from translators.
+	 * Do not show the usual introductory messages on edit page for messages.
 	 * Hook: AlternateEdit
 	 */
-	public static function intro( EditPage $editpage ) {
-		$handle = new MessageHandle( $editpage->getTitle() );
+	public static function suppressIntro( EditPage $editPage ) {
+		$handle = new MessageHandle( $editPage->getTitle() );
 		if ( $handle->isValid() ) {
-			$editpage->suppressIntro = true;
-			$group = $handle->getGroup();
-			$languages = $group->getTranslatableLanguages();
-			if ( $languages !== null && $handle->getCode() && !isset( $languages[$handle->getCode()] ) ) {
-				$editpage->getArticle()->getContext()->getOutput()->wrapWikiMsg(
-					"<div class='error'>$1</div>", 'translate-language-disabled'
-				);
+			$editPage->suppressIntro = true;
+		}
+	}
 
-				return false;
-			}
+	/**
+	 * Prevent translations to non-translatable languages for the group
+	 * Hook: getUserPermissionsErrorsExpensive
+	 *
+	 * @param Title $title
+	 * @param User $user
+	 * @param string $action
+	 * @param mixed &$result
+	 * @return bool
+	 */
+	public static function disallowLangTranslations( Title $title, User $user,
+		$action, &$result
+	) {
+		if ( $action !== 'edit' ) {
+			return true;
+		}
+
+		$handle = new MessageHandle( $title );
+		if ( !$handle->isValid() ) {
+			return true;
+		}
+
+		$group = $handle->getGroup();
+		$languages = $group->getTranslatableLanguages();
+		if ( $languages !== null && $handle->getCode() && !isset( $languages[$handle->getCode()] ) ) {
+			$result = array( 'translate-language-disabled' );
+			return false;
 		}
 
 		return true;
