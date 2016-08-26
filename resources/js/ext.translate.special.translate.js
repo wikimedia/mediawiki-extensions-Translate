@@ -36,44 +36,13 @@
 		},
 
 		changeLanguage: function ( language ) {
-			var changes, targetDir, targetLangAttrib,
-				userLanguageCode = mw.config.get( 'wgUserLanguage' );
-
-			if ( !checkDirty() ) {
-				return;
-			}
-
-			state.language = language;
-
-			changes = {
+			var changes = {
 				language: language
 			};
 
-			if ( language === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
-				targetLangAttrib = userLanguageCode;
-				targetDir = $.uls.data.getDir( userLanguageCode );
-			} else {
-				targetLangAttrib = language;
-				targetDir = $.uls.data.getDir( language );
-			}
-
-			// Changes to attributes must also be reflected
-			// when the element is created on the server side
-			$( '.ext-translate-language-selector > .uls' )
-				.text( $.uls.data.getAutonym( language ) )
-				.attr( {
-					lang: targetLangAttrib,
-					dir: targetDir
-				} );
-			$( '.tux-messagelist' ).data( {
-				targetlangcode: language,
-				targetlangdir: targetDir
-			} );
-
-			mw.translate.changeUrl( changes );
-			mw.translate.updateTabLinks( changes );
-			mw.translate.loadMessages();
-			updateGroupInformation( state );
+			// Force a URL change (no AJAX) until client-side language changing
+			// is stable enough. This doesn't do checks for some restrictions atm. 
+			mw.translate.changeUrl( changes, true );
 		},
 
 		changeFilter: function ( filter ) {
@@ -96,7 +65,7 @@
 			mw.translate.loadMessages( { filter: realFilters.join( '|' ) } );
 		},
 
-		changeUrl: function ( params ) {
+		changeUrl: function ( params, forceChange ) {
 			var uri = new mw.Uri( window.location.href );
 
 			uri.extend( params );
@@ -105,9 +74,9 @@
 				return;
 			}
 
-			// Change the URL with this URI, but don't leave the page.
-			if ( history.pushState && $( '.tux-messagelist' ).length ) {
-				// IE<10 does not support pushState. Never mind.
+			// If supported by the browser and requested, change the URL with
+			// this URI but try not to leave the page.
+			if ( !forceChange && history.pushState && $( '.tux-messagelist' ).length ) {
 				history.pushState( uri, null, uri.toString() );
 			} else {
 				// For old browsers, just reload
