@@ -54,6 +54,7 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'ext.translate.dropdownmenu',
 		'ext.translate.hooks',
 		'ext.translate.storage',
+		'jquery.accessKeyLabel',
 		'jquery.autosize',
 		'jquery.makeCollapsible',
 		'jquery.textSelection',
@@ -251,6 +252,7 @@ $wgResourceModules['ext.translate.quickedit'] = array(
 	'messages' => array( 'translate-js-nonext', 'translate-js-save-failed' ),
 	'dependencies' => array(
 		'ext.translate.hooks',
+		'jquery.accessKeyLabel',
 		'jquery.autosize',
 		'jquery.form',
 		'jquery.ui.dialog',
