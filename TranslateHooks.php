@@ -154,6 +154,7 @@ class TranslateHooks {
 
 			// Strip \<translate> tags etc. from source pages when rendering
 			$wgHooks['ParserBeforeStrip'][] = 'PageTranslationHooks::renderTagPage';
+			$wgHooks['ParserFetchTemplate'][] = 'PageTranslationHooks::fetchTranslatableTemplate';
 
 			// Set the page content language
 			$wgHooks['PageContentLanguage'][] = 'PageTranslationHooks::onPageContentLanguage';
