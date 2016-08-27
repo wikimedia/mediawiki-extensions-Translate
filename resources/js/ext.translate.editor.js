@@ -434,7 +434,7 @@
 				$layoutActions,
 				$infoToggleIcon,
 				$messageList,
-				targetLangAttrib, targetLangDir, targetLangCode,
+				targetLangAttrib, targetLangDir, targetLangCode, prefix,
 				$messageTools = translateEditor.createMessageTools(),
 				canTranslate = mw.translate.canTranslate();
 
@@ -815,28 +815,17 @@
 			);
 
 			if ( canTranslate ) {
-				// BC for MW <= 1.26
-
-				( function () {
-					if ( mw.loader.getState( 'jquery.accessKeyLabel' ) ) {
-						return mw.loader.using( 'jquery.accessKeyLabel' ).then( function () {
-							return $.fn.updateTooltipAccessKeys.getAccessKeyPrefix();
-						} );
-					}
-
-					return $.Deferred().resolve( mw.util.tooltipAccessKeyPrefix );
-				}() ).done( function ( prefix ) {
-					$editorColumn.append( $( '<div>' )
-						.addClass( 'row shortcutinfo' )
-						.text( mw.msg(
-							'tux-editor-shortcut-info',
-							( prefix + 's' ).toUpperCase(),
-							( prefix + 'd' ).toUpperCase(),
-							'ALT',
-							( prefix + 'b' ).toUpperCase()
-						) )
-					);
-				} );
+				prefix = $.fn.updateTooltipAccessKeys.getAccessKeyPrefix();
+				$editorColumn.append( $( '<div>' )
+					.addClass( 'row shortcutinfo' )
+					.text( mw.msg(
+						'tux-editor-shortcut-info',
+						( prefix + 's' ).toUpperCase(),
+						( prefix + 'd' ).toUpperCase(),
+						'ALT',
+						( prefix + 'b' ).toUpperCase()
+					) )
+				);
 			}
 
 			return $editorColumn;

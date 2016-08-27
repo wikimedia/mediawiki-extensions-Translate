@@ -75,7 +75,8 @@
 					return b + ' (_)'.replace( '_', key );
 				} )
 				.attr( 'accesskey', key )
-				.attr( 'title', '[' + mw.util.tooltipAccessKeyPrefix + key + ']' );
+				.attr( 'title', '[' + key + ']' )
+				.updateTooltipAccessKeys();
 		} );
 	}
 
