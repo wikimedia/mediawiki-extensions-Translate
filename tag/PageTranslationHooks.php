@@ -61,6 +61,44 @@ class PageTranslationHooks {
 	}
 
 	/**
+	 * Do Translate's parsing on transcluded translatable pages so that translate
+	 * tags and other page translation stuff do not appear when translatable
+	 * pages are transcluded. Similar to PageTranslationHooks::renderTagPage().
+	 * Hook: ParserFetchTemplate
+	 *
+	 * @param Parser|bool $parser Parser object or false
+	 * @param Title $title
+	 * @param Revision $rev
+	 * @param string|bool|null &$text
+	 * @param array &$deps
+	 */
+	public static function fetchTranslatableTemplate( $parser, $title, $rev, &$text, &$deps ) {
+		if ( !TranslatablePage::isSourcePage( $title ) ) {
+			return;
+		}
+
+		$page = TranslatablePage::newFromRevision( $title, $rev->getId() );
+		$group = $page->getMessageGroup();
+		$collection = $langCode = null;
+		if ( $parser ) {
+			$langCode = $parser->getTargetLanguage()->getCode();
+			$collection = $group->initCollection( $langCode );
+		}
+		// If we don't have access to the content language through $parser
+		// fallback to source language of the translatable page
+		$text = $page->getParse()->getTranslationPageText( $collection ?: null );
+
+		// Register template dependency for the translation page
+		// because we fetch the transclusion text from there now
+		$translation = $page->getTitle()->getSubpage( $langCode ?: $group->getSourceLanguageCode() );
+		$deps[] = array(
+			'title' => $translation,
+			'page_id' => $translation->getArticleID(),
+			'rev_id' => $translation->getLatestRevID()
+		);
+	}
+
+	/**
 	 * Set the right page content language for translated pages ("Page/xx").
 	 * Hook: PageContentLanguage
 	 */
