@@ -101,7 +101,7 @@ class MessageGroupStats {
 	/**
 	 * Returns stats for all groups in given language.
 	 * @param $code string Language code
-	 * @return Array
+	 * @return array
 	 */
 	public static function forLanguage( $code ) {
 		$stats = self::forLanguageInternal( $code );
@@ -460,7 +460,7 @@ class MessageGroupStats {
 			return;
 		}
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetLB()->getLazyDBConnectionRef( DB_MASTER ); // avoid connecting yet
 		$table = self::TABLE;
 		$updates = &self::$updates;
 
