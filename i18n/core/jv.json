@@ -313,7 +313,7 @@
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|nawala}} liyané",
 	"tux-messagetable-loading-messages": "Ngamot {{PLURAL:$1|nawala}}...",
 	"tux-message-filter-placeholder": "Saring pratélan",
-	"tux-message-filter-result": "Ditemokaké $1 {{PLURAL:$1|kasil}} ngenani \"$2\"",
+	"tux-message-filter-result": "Tinemu $1 {{PLURAL:$1|kasil}} ngenani \"$2\"",
 	"tux-message-filter-advanced-button": "Panggolèk linuwih",
 	"tux-message-filter-optional-messages-label": "Nawala manasuka",
 	"tux-proofread-translated-by-self": "Sing mertal sampéyan",
