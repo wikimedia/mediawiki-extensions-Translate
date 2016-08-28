@@ -19,6 +19,9 @@ class PageTranslationHooks {
 	// Check if job queue is running
 	public static $jobQueueRunning = false;
 
+	// Check if we are just rendering tags or such
+	public static $renderingContext = false;
+
 	/**
 	 * Hook: ParserBeforeStrip
 	 * @param $parser Parser
@@ -46,13 +49,14 @@ class PageTranslationHooks {
 			return true;
 		}
 
+		self::$renderingContext = true;
 		list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
 		$name = $page->getPageDisplayTitle( $code );
-
 		if ( $name ) {
 			$name = $parser->recursivePreprocess( $name );
 			$parser->getOutput()->setDisplayTitle( $name );
 		}
+		self::$renderingContext = false;
 
 		// Disable edit section links
 		$parser->getOptions()->setEditSection( false );
