@@ -101,7 +101,7 @@ class MessageGroupStats {
 	/**
 	 * Returns stats for all groups in given language.
 	 * @param $code string Language code
-	 * @return Array
+	 * @return array
 	 */
 	public static function forLanguage( $code ) {
 		$stats = self::forLanguageInternal( $code );
@@ -110,7 +110,11 @@ class MessageGroupStats {
 			$flattened[$group] = $languages[$code];
 		}
 
-		self::queueUpdates();
+		$cache = ObjectCache::getLocalClusterInstance();
+		$key = $cache->makeKey( 'messagegroupstats', 'updates', $code );
+		if ( $cache->add( $key, 1, $cache::TTL_MINUTE ) ) {
+			DeferredUpdates::addCallableUpdate( [ __CLASS__, 'queueUpdates' ] );
+		}
 
 		return $flattened;
 	}
