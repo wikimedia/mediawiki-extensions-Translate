@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "4e96ab59_7901deb8",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-28T10:13:59Z",
+      "side": 1,
+      "message": "You should set a custom width here, imo. The default is way too wide and when the UI is in English, there\u0027s a lot of unnecessary whitespace after the text. About 250px would be fine, I think.",
+      "revId": "2b69aaaec0c419cc0bee24fe2e1a4c26c90cf9ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e96ab59_c09bce66",
         "filename": "resources/js/ext.translate.proofread.js",
         "patchSetId": 1
