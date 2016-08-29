@@ -22,6 +22,30 @@
       "revId": "9d43d750bc67aeff1ef1b803f4b98e992c1e798d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e96ab59_9f7823ef",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 818,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2016-08-29T20:49:36Z",
+      "side": 1,
+      "message": "A couple of options:\n\n* Use getAccessKeyModifiers() directly as specified in the deprecation note. This would also give you the option to style them better. E.g. wrap each key in a \u003ccode\u003e or \u003cspan\u003e element or some such. Similar to the \"?\" Keyboard shortcut panel in Gerrit and GMail, or like the Help\u003eKeyboard shortcuts menu in VisualEditor.\n\n* Get a reference to the real buttons and call $.fn.updateTooltipAccessKeys.getAccessKeyLabel( element ). The return value of that will include prefix + the letter.\n\nEither way, the current code is fine as it is. It was already calling this method before as well.\n\nMy main goal here is to remove use of the deprecated mw.util methods. One of them was unconditional (in the other file) which is the priority. This one is conditional I see now, so if we want to figure this out later I\u0027m also okay with leaving this code as it was for now.",
+      "parentUuid": "4e96ab59_50e870dd",
+      "range": {
+        "startLine": 818,
+        "startChar": 42,
+        "endLine": 818,
+        "endChar": 60
+      },
+      "revId": "9d43d750bc67aeff1ef1b803f4b98e992c1e798d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
