@@ -9,7 +9,12 @@
 	"tux-sst-search": "Търсене",
 	"tux-sst-search-ph": "Търсене на преводи",
 	"tux-sst-facet-language": "Езици",
+	"tux-sst-facet-group": "Групи съобщения",
 	"tux-sst-solr-offline-body": "Услугата за търсене е временно недостъпна.",
 	"tux-sst-next": "Следващи ›",
-	"tux-sst-prev": "‹ Предишни"
+	"tux-sst-prev": "‹ Предишни",
+	"tux-sst-default": "Преводи",
+	"tux-sst-translated": "Преводи от $1",
+	"tux-sst-untranslated": "Без превод от $1",
+	"tux-sst-case-sensitive": "Чувствително към регистъра на буквите"
 }

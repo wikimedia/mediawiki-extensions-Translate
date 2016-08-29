@@ -16,6 +16,7 @@
 	"tpt-discouraged-pages-title": "Непрепоръчителни страници",
 	"tpt-discouraged-pages": "Препоръчва се {{PLURAL:$1|тази страница да не се превежда|тези страници да не се превеждат}} повече.",
 	"tpt-select-prioritylangs-reason": "Причина:",
+	"tpt-sections-prioritylangs": "Приоритетни езици",
 	"translate-tag-translate-link-desc": "Превеждане на тази страница",
 	"tpt-languages-legend": "Други езици:",
 	"tpt-languages-nonzero": "$1 ($2% преведено)",
