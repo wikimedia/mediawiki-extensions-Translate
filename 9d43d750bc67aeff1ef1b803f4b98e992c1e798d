@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e96ab59_50e870dd",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 818,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-29T10:12:28Z",
+      "side": 1,
+      "message": "So in 1.26 getAccessKeyPrefix is marked as private, in 1.27 as deprecated. What will need to be done to this code in the future?",
+      "range": {
+        "startLine": 818,
+        "startChar": 42,
+        "endLine": 818,
+        "endChar": 60
+      },
+      "revId": "9d43d750bc67aeff1ef1b803f4b98e992c1e798d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
