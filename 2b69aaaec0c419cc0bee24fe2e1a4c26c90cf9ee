@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "4e96ab59_7f8ff7d1",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 94
+      },
+      "writtenOn": "2016-08-29T21:18:53Z",
+      "side": 1,
+      "message": "If you do this you may also want to only do that when screen width is \u003e 320px.\n\nOn mobile I suspect you want this larger (320px covers most mobile devices).",
+      "parentUuid": "4e96ab59_7901deb8",
+      "revId": "2b69aaaec0c419cc0bee24fe2e1a4c26c90cf9ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e96ab59_c09bce66",
         "filename": "resources/js/ext.translate.proofread.js",
         "patchSetId": 1
