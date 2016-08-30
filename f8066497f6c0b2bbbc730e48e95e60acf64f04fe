@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4e96ab59_ad4e9670",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-30T13:12:35Z",
+      "side": 1,
+      "message": "Yes, this was a reminder for me. :)",
+      "parentUuid": "4e96ab59_8dfb9a10",
+      "revId": "f8066497f6c0b2bbbc730e48e95e60acf64f04fe",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e96ab59_0d0faa34",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-30T12:41:45Z",
       "side": 1,
       "message": "Is it the case that $parser cannot ever be \u0027true\u0027?",
+      "revId": "f8066497f6c0b2bbbc730e48e95e60acf64f04fe",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e96ab59_0d640ae1",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-30T13:12:35Z",
+      "side": 1,
+      "message": "AFAICT, Parser always provides this with a Parser object (see Parser::fetchTemplateAndTitle) even though statelessFetchTemplate has false as the default argument for it. Also the code in statelessFetchTemplate contains\n\n elseif ( $parser ) { $rev \u003d $parser-\u003efetchCurrentRevisionOfTitle( $title ); }\n\nso I think we can assume the same here.",
+      "parentUuid": "4e96ab59_0d0faa34",
       "revId": "f8066497f6c0b2bbbc730e48e95e60acf64f04fe",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -71,6 +107,24 @@
       "side": 1,
       "message": "Well, passing 0 isn\u0027t AFAIS. The only thing that uses revision ID is FlaggedRevs, but since the dependency thing is core functionality, it should work. Besides, won\u0027t $translation-\u003egetLatestRevID() work properly here? It should already be in LinkCache too.",
       "parentUuid": "4e96ab59_fb2946e3",
+      "revId": "f8066497f6c0b2bbbc730e48e95e60acf64f04fe",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e96ab59_4d5e1219",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-30T13:12:35Z",
+      "side": 1,
+      "message": "Changed to getLatestRevID()",
+      "parentUuid": "4e96ab59_b75fc3e7",
       "revId": "f8066497f6c0b2bbbc730e48e95e60acf64f04fe",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
