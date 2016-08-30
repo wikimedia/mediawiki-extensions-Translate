@@ -22,6 +22,24 @@
       "revId": "f8066497f6c0b2bbbc730e48e95e60acf64f04fe",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e96ab59_b75fc3e7",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-08-30T05:25:11Z",
+      "side": 1,
+      "message": "Well, passing 0 isn\u0027t AFAIS. The only thing that uses revision ID is FlaggedRevs, but since the dependency thing is core functionality, it should work. Besides, won\u0027t $translation-\u003egetLatestRevID() work properly here? It should already be in LinkCache too.",
+      "parentUuid": "4e96ab59_fb2946e3",
+      "revId": "f8066497f6c0b2bbbc730e48e95e60acf64f04fe",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
