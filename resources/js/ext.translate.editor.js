@@ -363,7 +363,20 @@
 		 * @return {jQuery} The new message tools menu element
 		 */
 		createMessageTools: function () {
-			var $historyItem, $deleteItem, $translationsItem;
+			var $editItem, $historyItem, $deleteItem, $translationsItem;
+
+			$editItem = this.createMessageToolsItem(
+				'message-tools-edit',
+				{
+					title: this.message.title,
+					action: 'edit'
+				},
+				'tux-editor-message-tools-show-editor'
+			);
+
+			if ( !mw.translate.canTranslate() ) {
+				$editItem.addClass( 'hide' );
+			}
 
 			$historyItem = this.createMessageToolsItem(
 				'message-tools-history',
@@ -405,7 +418,7 @@
 
 			return $( '<ul>' )
 				.addClass( 'tux-dropdown-menu tux-message-tools-menu hide' )
-				.append( $historyItem, $deleteItem, $translationsItem );
+				.append( $editItem, $historyItem, $deleteItem, $translationsItem );
 		},
 
 		prepareEditorColumn: function () {
