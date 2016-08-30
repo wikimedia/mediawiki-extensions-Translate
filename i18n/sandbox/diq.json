@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Marmase",
-			"Kumkumuk"
+			"Kumkumuk",
+			"Mirzali"
 		]
 	},
 	"tsb-request-count": "$1 {{PLURAL:$1|waştış|waştışi}}",
@@ -16,5 +17,8 @@
 	"tsb-user-posted-a-comment": "Açarnayış niyo",
 	"tsb-translations-source": "Çıme",
 	"tsb-translations-user": "Açarnayışa {{GENDER:$1|karberi}}",
-	"translationstash": "Xeyr amey"
+	"translationstash": "Xeyr amey",
+	"translate-translationstash-skip-button-label": "Yewbina bıcerrebne",
+	"tsb-limit-reached-title": "Çarnayışê to rê teşekur kenime",
+	"log-name-translatorsandbox": "Qumdora açarnayışi"
 }

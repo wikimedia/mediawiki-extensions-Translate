@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kumkumuk"
+			"Kumkumuk",
+			"Mirzali"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "Kamiya Gruba mesacan",
@@ -19,8 +20,8 @@
 	"apihelp-query+messagecollection-param-language": "Kodê zıwani.",
 	"apihelp-translatesandbox-param-do": "Çıçi.",
 	"apihelp-translationstash-param-subaction": "Kerdış.",
-	"apihelp-translationstash-param-metadata": "JSON nesne.",
-	"apihelp-searchtranslations-description": "Bı geyr açarnayışi.",
-	"apihelp-searchtranslations-param-limit": "Neticey ebadi.",
-	"apihelp-searchtranslations-example-1": "Qandë zıeani açarnayışa bıvëne"
+	"apihelp-translationstash-param-metadata": "JSON çi.",
+	"apihelp-searchtranslations-description": "Açarnayışan cı geyre.",
+	"apihelp-searchtranslations-param-limit": "Ebadê neticeyi.",
+	"apihelp-searchtranslations-example-1": "Qandê zıwani açarnayışan bımocne."
 }
