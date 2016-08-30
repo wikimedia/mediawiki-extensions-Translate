@@ -408,6 +408,7 @@
 	"tux-editor-close-tooltip": "Tooltip for close icon of translate editor.\n{{Identical|Close}}",
 	"tux-editor-expand-tooltip": "Tooltip for an icon (rectangle with an arrow) in the new translation editor which increases size of the main text area by closing the translation aids area on the screen's side.\n\nSee also:\n* {{msg-mw|Tux-editor-collapse-tooltip}}\n{{Identical|Expand}}",
 	"tux-editor-collapse-tooltip": "Tooltip for an icon (rectangle with an arrow) in the new translation editor which reduces size of the main text area to uncover the translation aids area on the screen's side.\n\nSee also:\n* {{msg-mw|Tux-editor-expand-tooltip}}\n{{Identical|Collapse}}",
+	"tux-editor-message-tools-show-wiki": "A link to the message edit page. An item in a menu that appears when clicking on the message title.",
 	"tux-editor-message-tools-history": "A link to the message history. An item in a menu that appears when clicking on the message title.\n{{Identical|History}}",
 	"tux-editor-message-tools-delete": "A link to delete the message. An item in a menu that appears when clicking on the message title.\n{{Identical|Delete}}",
 	"tux-editor-message-tools-translations": "A link to translations of a message to all languages. An item in a menu that appears when clicking on message title.\n{{Identical|All translations}}",
