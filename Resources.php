@@ -85,6 +85,8 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-editor-loading',
 		'tux-editor-message-desc-less',
 		'tux-editor-message-desc-more',
+		'tux-editor-message-tools-create',
+		'tux-editor-message-tools-edit',
 		'tux-editor-message-tools-delete',
 		'tux-editor-message-tools-history',
 		'tux-editor-message-tools-translations',

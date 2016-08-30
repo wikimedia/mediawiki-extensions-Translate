@@ -377,6 +377,8 @@
 	"tux-editor-close-tooltip": "Close",
 	"tux-editor-expand-tooltip": "Expand",
 	"tux-editor-collapse-tooltip": "Collapse",
+	"tux-editor-message-tools-create": "Create",
+	"tux-editor-message-tools-edit": "Edit",
 	"tux-editor-message-tools-history": "History",
 	"tux-editor-message-tools-delete": "Delete",
 	"tux-editor-message-tools-translations": "All translations",
