@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e96ab59_ad2db643",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-30T13:29:19Z",
+      "side": 1,
+      "message": "I don\u0027t see hook like this. Should it be BeforeParserFetchTemplateAndtitle?",
+      "range": {
+        "startLine": 157,
+        "startChar": 13,
+        "endLine": 157,
+        "endChar": 32
+      },
+      "revId": "f3e6ebb75ddb9d0f7767bdfea96f346b2688da42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
