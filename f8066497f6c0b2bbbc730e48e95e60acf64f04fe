@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "4e96ab59_8dfb9a10",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-30T12:41:45Z",
+      "side": 1,
+      "message": "Is something planned to be written here? :)",
+      "revId": "f8066497f6c0b2bbbc730e48e95e60acf64f04fe",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e96ab59_0d0faa34",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-30T12:41:45Z",
+      "side": 1,
+      "message": "Is it the case that $parser cannot ever be \u0027true\u0027?",
+      "revId": "f8066497f6c0b2bbbc730e48e95e60acf64f04fe",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e96ab59_fb2946e3",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 1
