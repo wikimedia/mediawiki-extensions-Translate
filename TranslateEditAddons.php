@@ -39,6 +39,8 @@ class TranslateEditAddons {
 	public static function disallowLangTranslations( Title $title, User $user,
 		$action, &$result
 	) {
+		global $wgTranslateBlacklist;
+
 		if ( $action !== 'edit' ) {
 			return true;
 		}
@@ -50,9 +52,25 @@ class TranslateEditAddons {
 
 		$group = $handle->getGroup();
 		$languages = $group->getTranslatableLanguages();
-		if ( $languages !== null && $handle->getCode() && !isset( $languages[$handle->getCode()] ) ) {
+		$langCode = $handle->getCode();
+		if ( $languages !== null && $langCode && !isset( $languages[$langCode] ) ) {
 			$result = array( 'translate-language-disabled' );
 			return false;
+		}
+
+		$groupId = $group->getId();
+		$checks = array(
+			$groupId,
+			strtok( $groupId, '-' ),
+			'*'
+		);
+
+		foreach ( $checks as $check ) {
+			if ( isset( $wgTranslateBlacklist[$check][$langCode] ) ) {
+				$reason = $wgTranslateBlacklist[$check][$langCode];
+				$result = array( 'translate-page-disabled', $reason );
+				return false;
+			}
 		}
 
 		return true;
