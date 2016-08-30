@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e96ab59_7a30e2fc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-30T12:36:02Z",
+      "side": 1,
+      "message": "As I understand, you only removed this for language change, not for other actions, right? Might want to clarify that.",
+      "revId": "5df7fa1bbeb8d7cba42829c2752da8f793e3e83a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e96ab59_5a33260a",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-30T12:36:02Z",
+      "side": 1,
+      "message": "Might want to elaborate what is \"this\".",
+      "revId": "5df7fa1bbeb8d7cba42829c2752da8f793e3e83a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
