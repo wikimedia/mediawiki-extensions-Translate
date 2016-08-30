@@ -388,11 +388,17 @@ class TranslateUtils {
 	 * @return DatabaseBase Master for HTTP POST, CLI, DB already changed; slave otherwise
 	 */
 	public static function getSafeReadDB() {
-		$index = (
-			PHP_SAPI === 'cli' ||
-			RequestContext::getMain()->getRequest()->wasPosted() ||
-			wfGetLB()->hasOrMadeRecentMasterChanges()
-		) ? DB_MASTER : DB_SLAVE;
+		// Parsing APIs need POST for payloads but are read-only, so avoid spamming
+		// the master then. No good way to check this at the moment...
+		if ( PageTranslationHooks::$renderingContext ) {
+			$index = DB_SLAVE;
+		} else {
+			$index = (
+				PHP_SAPI === 'cli' ||
+				RequestContext::getMain()->getRequest()->wasPosted() ||
+				wfGetLB()->hasOrMadeRecentMasterChanges()
+			) ? DB_MASTER : DB_SLAVE;
+		}
 
 		return wfGetDB( $index );
 	}
