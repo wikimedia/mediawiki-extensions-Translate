@@ -32,7 +32,7 @@
 			$b.val( mw.msg( 'translate-messagereview-progress' ) );
 			$b.prop( 'disabled', true );
 
-			// Change to csrf when support for MW 1.25 is dropped
+			// Change to csrf when support for MW 1.26 is dropped
 			api.postWithToken( 'edit', params ).done( successFunction ).fail( failFunction );
 		} );
 	} );
