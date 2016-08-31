@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "2e93376b_4ece33bb",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-31T06:12:18Z",
+      "side": 1,
+      "message": "Isn\u0027t the default 300px? Or does mobile change the default?",
+      "parentUuid": "4e96ab59_7f8ff7d1",
+      "revId": "2b69aaaec0c419cc0bee24fe2e1a4c26c90cf9ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e96ab59_c09bce66",
         "filename": "resources/js/ext.translate.proofread.js",
         "patchSetId": 1
