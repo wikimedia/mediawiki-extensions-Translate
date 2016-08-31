@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "2e93376b_dafe59ab",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 94
+      },
+      "writtenOn": "2016-08-31T16:58:56Z",
+      "side": 1,
+      "message": "On mobile everything is big - you are restricted to 320px on most devices. Even if you made it 100px it would be highly noticeable (and you\u0027d be hard pushed to do that without text overflow issues) You should not show it at that dimension if you do not expect the user to interact with it.\n\nAn iPhone has a screen width of 320px, but  when you take into account the mobile site layout you have around 300px.\n\nAll I meant by my comment is think about mobile devices. If you are going less than 320px with anything you are doing something wrong.",
+      "parentUuid": "2e93376b_6e420f15",
+      "revId": "2b69aaaec0c419cc0bee24fe2e1a4c26c90cf9ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e96ab59_c09bce66",
         "filename": "resources/js/ext.translate.proofread.js",
         "patchSetId": 1
