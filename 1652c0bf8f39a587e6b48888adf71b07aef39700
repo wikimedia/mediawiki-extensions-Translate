@@ -16,6 +16,24 @@
       "revId": "1652c0bf8f39a587e6b48888adf71b07aef39700",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_2e6c8705",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-08-31T08:51:16Z",
+      "side": 0,
+      "message": "I bet it was incorrect rebase or clean-up as I was playing with the other patch with this simultaneously.",
+      "parentUuid": "2e93376b_8eabbb1a",
+      "revId": "1652c0bf8f39a587e6b48888adf71b07aef39700",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
