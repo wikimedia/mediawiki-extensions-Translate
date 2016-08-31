@@ -27,6 +27,7 @@
 	"tpt-aggregategroup-new-description": "Описание (незадължително):",
 	"tpt-aggregategroup-invalid-group": "Групата не съществува",
 	"tpt-aggregategroup-update": "Съхраняване",
+	"log-action-filter-pagetranslation": "Тип на действието:",
 	"log-action-filter-pagetranslation-delete": "Изтриване на страници",
 	"pt-movepage-list-other": "{{PLURAL:$1|Друга подстраница|Други подстраници}}",
 	"pt-movepage-current": "Текущо име:",
@@ -38,5 +39,6 @@
 	"pt-deletepage-subpages": "Изтриване на всички подстраници",
 	"pt-deletepage-list-other": "Други подстраници",
 	"pm-savepages-button-label": "Съхраняване",
-	"pp-save-button-label": "Съхраняване"
+	"pp-save-button-label": "Съхраняване",
+	"tpt-generic-confirm": "Моля, потвърдете действието."
 }

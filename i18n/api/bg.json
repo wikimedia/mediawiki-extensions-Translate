@@ -4,6 +4,19 @@
 			"StanProg"
 		]
 	},
+	"apihelp-aggregategroups-param-group": "ID на група съобщения.",
+	"apihelp-groupreview-param-group": "Група съобщения.",
+	"apihelp-groupreview-param-language": "Езиков код.",
+	"apihelp-query+languagestats-param-language": "Езиков код.",
+	"apihelp-query+messagecollection-param-group": "Група съобщения.",
+	"apihelp-query+messagecollection-param-language": "Езиков код.",
+	"apihelp-query+messagecollection-param-limit": "Колко съобщения да бъдат показани (след филтриране).",
 	"apihelp-query+messagecollection-example-1": "Списък на поддържаните езици",
-	"apihelp-searchtranslations-description": "Търсене на преводи."
+	"apihelp-query+messagegroups-example-1": "Показване на групите съобщения",
+	"apihelp-query+messagegroupstats-param-group": "ID на група съобщения.",
+	"apihelp-translationstash-param-subaction": "Действие.",
+	"apihelp-translationstash-param-metadata": "JSON-обект.",
+	"apihelp-searchtranslations-description": "Търсене на преводи.",
+	"apihelp-searchtranslations-param-limit": "Размер на резултата.",
+	"apihelp-searchtranslations-example-1": "Показване на преводи на този език."
 }
