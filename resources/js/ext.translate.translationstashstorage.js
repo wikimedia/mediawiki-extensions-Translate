@@ -22,7 +22,8 @@
 		save: function ( title, translation ) {
 			var api = new mw.Api();
 
-			return api.postWithToken( 'csrf', {
+			// Change to csrf when support for MW 1.25 is dropped
+			return api.postWithToken( 'edit', {
 				action: 'translationstash',
 				subaction: 'add',
 				title: title,
@@ -41,7 +42,8 @@
 		getUserTranslations: function ( user ) {
 			var api = new mw.Api();
 
-			return api.postWithToken( 'csrf', {
+			// Change to csrf when support for MW 1.25 is dropped
+			return api.postWithToken( 'edit', {
 				action: 'translationstash',
 				subaction: 'query',
 				username: user

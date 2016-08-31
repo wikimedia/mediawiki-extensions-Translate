@@ -55,7 +55,8 @@
 				api = new mw.Api(),
 				newDocumentation = translateEditor.$editor.find( '.tux-textarea-documentation' ).val();
 
-			return api.postWithToken( 'csrf', {
+			// Change to csrf when support for MW 1.25 is dropped
+			return api.postWithToken( 'edit', {
 				action: 'edit',
 				title: translateEditor.message.title
 					.replace( /\/[a-z\-]+$/, '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ),
