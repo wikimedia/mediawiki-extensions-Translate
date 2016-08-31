@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e93376b_ee58bf5b",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-08-31T09:01:39Z",
+      "side": 1,
+      "message": "messagegroup -\u003e group",
+      "range": {
+        "startLine": 256,
+        "startChar": 4,
+        "endLine": 256,
+        "endChar": 16
+      },
+      "revId": "c0958ad2fbaf314f559ace6e6b212dc893d2d623",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
