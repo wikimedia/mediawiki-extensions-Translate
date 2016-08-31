@@ -15,7 +15,8 @@
 				uri = new mw.Uri( e.target.href );
 
 			params = uri.query;
-			params.token = mw.user.tokens.get( 'csrfToken' );
+			// Change to csrf when support for MW 1.26 is dropped
+			params.token = mw.user.tokens.get( 'editToken' );
 			$.post( uri.path, params ).done( function () {
 				location.reload();
 			} );
