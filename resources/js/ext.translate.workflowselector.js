@@ -69,7 +69,8 @@
 				format: 'json'
 			};
 
-			return api.postWithToken( 'csrf', params );
+			// Change to csrf when support for MW 1.25 is dropped
+			return api.postWithToken( 'edit', params );
 		},
 
 		/**

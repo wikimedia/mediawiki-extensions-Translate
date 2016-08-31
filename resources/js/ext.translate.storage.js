@@ -24,7 +24,8 @@
 		save: function ( title, translation, editSummary ) {
 			var api = new mw.Api();
 
-			return api.postWithToken( 'csrf', {
+			// Change to csrf when support for MW 1.25 is dropped
+			return api.postWithToken( 'edit', {
 				action: 'edit',
 				title: title,
 				text: translation,

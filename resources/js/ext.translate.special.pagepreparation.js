@@ -11,7 +11,8 @@
 	function savePage( pageName, pageContent ) {
 		var api = new mw.Api();
 
-		return api.postWithToken( 'csrf', {
+		// Change to csrf when support for MW 1.25 is dropped
+		return api.postWithToken( 'edit', {
 			action: 'edit',
 			format: 'json',
 			title: pageName,
