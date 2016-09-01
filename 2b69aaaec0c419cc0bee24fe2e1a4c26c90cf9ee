@@ -126,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "2e93376b_6dfa0c75",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-09-01T12:48:40Z",
+      "side": 1,
+      "message": "It was just a question for clarification - I didn\u0027t want to block your suggestion (or anything like that) as I am not experienced with designing UIs for mobile. Sorry if it appeared that way. I\u0027m fine with whatever is better for both mobile and desktop users. (Note that tux isn\u0027t responsive so it might not work exactly as expected.)",
+      "parentUuid": "2e93376b_dafe59ab",
+      "revId": "2b69aaaec0c419cc0bee24fe2e1a4c26c90cf9ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e96ab59_c09bce66",
         "filename": "resources/js/ext.translate.proofread.js",
         "patchSetId": 1
