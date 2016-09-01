@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Erdemaslancan"
+			"Erdemaslancan",
+			"Kumkumuk"
 		]
 	},
-	"translate-tag-page-desc": "Açarnayışê pela da [[$2|$1]] wiki"
+	"translate-tag-page-desc": "Açarnayışê pela da [[$2|$1]] wiki",
+	"translate-ls-submit": "İstatistikan bımocne"
 }
