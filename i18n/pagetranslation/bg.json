@@ -27,6 +27,7 @@
 	"tpt-aggregategroup-new-description": "Описание (незадължително):",
 	"tpt-aggregategroup-invalid-group": "Групата не съществува",
 	"tpt-aggregategroup-update": "Съхраняване",
+	"tpt-aggregategroup-update-cancel": "Отказ",
 	"log-action-filter-pagetranslation": "Тип на действието:",
 	"log-action-filter-pagetranslation-delete": "Изтриване на страници",
 	"pt-movepage-list-other": "{{PLURAL:$1|Друга подстраница|Други подстраници}}",
@@ -39,6 +40,11 @@
 	"pt-deletepage-subpages": "Изтриване на всички подстраници",
 	"pt-deletepage-list-other": "Други подстраници",
 	"pm-savepages-button-label": "Съхраняване",
+	"pm-cancel-button-label": "Отказ",
+	"tpt-translate-title": "Позволяване превод на заглавието на страницата",
 	"pp-save-button-label": "Съхраняване",
+	"pp-cancel-button-label": "Отказ",
+	"pp-diff-old-header": "Изходен текст",
+	"pp-diff-new-header": "Подготвен текст",
 	"tpt-generic-confirm": "Моля, потвърдете действието."
 }

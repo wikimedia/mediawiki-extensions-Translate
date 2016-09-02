@@ -11,6 +11,7 @@
 	"tsb-reject-all-button-label": "Отхвърляне на всички",
 	"tsb-translations-source": "Източник",
 	"tsb-translations-current": "Съществуващи преводи",
+	"translationstash": "Добре дошли",
 	"tsb-limit-reached-title": "Благодарности за направените преводи",
 	"logentry-translatorsandbox-promoted": "\n$1 {{GENDER:$2|повиши}} $3 на {{GENDER:$4|преводач}}"
 }
