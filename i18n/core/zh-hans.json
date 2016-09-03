@@ -242,7 +242,7 @@
 	"translate-manage-import-summary": "导入新版本自外部来源",
 	"translate-manage-conflict-summary": "导入新版本自外部来源。请检查。",
 	"translate-manage-submit": "执行",
-	"translate-manage-intro-other": "下面是$1翻译更改列表。请复查更改并选择你想要为每个更新执行的操作。如果你选择忽略更改，该操作只是暂时的。",
+	"translate-manage-intro-other": "下面是$1翻译更改列表。请复查更改并选择您想要为每个更新执行的操作。如果您选择忽略更改，该操作只是暂时的。",
 	"translate-manage-import-ok": "已导入：$1",
 	"translate-manage-import-done": "导入完成！",
 	"importtranslations": "导入翻译",
