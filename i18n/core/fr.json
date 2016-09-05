@@ -124,7 +124,7 @@
 	"translate-checks-links-missing": "{{PLURAL:$2|Le lien suivant est manquant|Les $2 liens suivants sont manquants}} :\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "Veuillez corriger {{PLURAL:$2|la balise suivante|les balises suivantes}} :\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "La définition utilise <nowiki>{{PLURAL:}}</nowiki> mais pas sa traduction.",
-	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> a reçu {{PLURAL:$1|une forme|$1 formes}} mais {{PLURAL:$2|une seule est supportée|seules $2 sont supportées}} (hors les formes 0= et 1=).",
+	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> a reçu {{PLURAL:$1|une forme|$1 formes}} mais {{PLURAL:$2|une seule est prise|seules $2 sont prises}} en charge (hors les formes 0= et 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> a des formes dupliquées au final. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> devrait être écrit ainsi: <nowiki>{{PLURAL:$1|sheep}}</nowiki>.",
 	"translate-checks-pagename": "Espace de noms modifié depuis la définition",
 	"translate-checks-format": "Cette traduction ne suit pas la définition ou a une syntaxe incorrecte : $1",
