@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e93376b_58ffb0a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-09-06T14:13:00Z",
+      "side": 1,
+      "message": "I wish they didn\u0027t, but I can understand.",
+      "range": {
+        "startLine": 9,
+        "startChar": 12,
+        "endLine": 9,
+        "endChar": 21
+      },
+      "revId": "f5ac3e439e666f31aafc7273b056e4915f7fe568",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_181c4818",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-09-06T14:13:00Z",
+      "side": 1,
+      "message": "These could be confusing to a regular user.\n\nWhat would you think of a wording such as \"Show in wiki editor\"?",
+      "range": {
+        "startLine": 380,
+        "startChar": 38,
+        "endLine": 380,
+        "endChar": 39
+      },
+      "revId": "f5ac3e439e666f31aafc7273b056e4915f7fe568",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
