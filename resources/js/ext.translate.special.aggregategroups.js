@@ -142,8 +142,7 @@
 			'do': 'update',
 			groupname: aggregateGroupName,
 			groupdescription: aggregateGroupDesc,
-			aggregategroup: aggregateGroupId,
-			format: 'json'
+			aggregategroup: aggregateGroupId
 		};
 
 		// Change to csrf when support for MW 1.26 is dropped
@@ -175,7 +174,6 @@
 				// Get list of subgroups using API
 				api.get( {
 					action: 'query',
-					format: 'json',
 					meta: 'messagegroups',
 					mgformat: 'tree',
 					mgroot: 'all',
@@ -354,8 +352,7 @@
 				action: 'aggregategroups',
 				'do': 'add',
 				groupname: aggregateGroupName,
-				groupdescription: aggregateGroupDesc,
-				format: 'json'
+				groupdescription: aggregateGroupDesc
 			};
 
 			// Change to csrf when support for MW 1.26 is dropped

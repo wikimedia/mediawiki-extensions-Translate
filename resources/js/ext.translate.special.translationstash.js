@@ -22,7 +22,6 @@
 			action: 'query',
 			list: 'messagecollection',
 			mcgroup: messageGroup,
-			format: 'json',
 			mclanguage: language,
 			mcoffset: offset,
 			mclimit: limit,

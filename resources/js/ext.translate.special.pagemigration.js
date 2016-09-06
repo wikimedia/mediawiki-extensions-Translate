@@ -25,7 +25,6 @@
 			// Change to csrf when support for MW 1.26 is dropped
 			return api.postWithToken( 'edit', {
 				action: 'edit',
-				format: 'json',
 				watchlist: 'nochange',
 				title: title,
 				text: content,
@@ -49,7 +48,6 @@
 		return api.get( {
 			action: 'query',
 			prop: 'revisions',
-			format: 'json',
 			rvprop: 'content',
 			rvstart: fuzzyTimestamp,
 			titles: pageTitle
@@ -90,7 +88,6 @@
 		return api.get( {
 			action: 'query',
 			prop: 'revisions',
-			format: 'json',
 			rvprop: 'timestamp',
 			rvuser: 'FuzzyBot',
 			rvdir: 'newer',
@@ -137,7 +134,6 @@
 		return api.get( {
 			action: 'query',
 			list: 'messagecollection',
-			format: 'json',
 			mcgroup: 'page-' + pageName,
 			mclanguage: 'en',
 			mcprop: 'definition'

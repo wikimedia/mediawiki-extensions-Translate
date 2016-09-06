@@ -65,8 +65,7 @@
 				action: 'groupreview',
 				group: this.groupId,
 				language: this.language,
-				state: state,
-				format: 'json'
+				state: state
 			};
 
 			// Change to csrf when support for MW 1.26 is dropped

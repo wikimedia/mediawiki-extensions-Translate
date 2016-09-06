@@ -34,7 +34,6 @@
 			if ( !mw.translate.languageStatsLoader[ language ] ) {
 				mw.translate.languageStatsLoader[ language ] = new mw.Api().get( {
 					action: 'query',
-					format: 'json',
 					meta: 'languagestats',
 					lslanguage: language
 				} );
