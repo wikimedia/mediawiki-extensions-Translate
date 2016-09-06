@@ -431,7 +431,6 @@
 
 			params = {
 				action: 'query',
-				format: 'json',
 				meta: 'messagegroups',
 				mgformat: 'tree',
 				mgprop: 'id|label|icon|priority|prioritylangs|priorityforce',

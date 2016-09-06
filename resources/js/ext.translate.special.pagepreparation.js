@@ -14,7 +14,6 @@
 		// Change to csrf when support for MW 1.26 is dropped
 		return api.postWithToken( 'edit', {
 			action: 'edit',
-			format: 'json',
 			title: pageName,
 			text: pageContent,
 			summary: $( '#pp-summary' ).val()
@@ -36,7 +35,6 @@
 		return api.post( {
 			action: 'query',
 			prop: 'revisions',
-			format: 'json',
 			rvprop: 'content',
 			rvlimit: '1',
 			titles: pageName,
@@ -319,7 +317,6 @@
 		return api.get( {
 			action: 'query',
 			prop: 'revisions',
-			format: 'json',
 			rvprop: 'content',
 			rvlimit: '1',
 			titles: pageName

@@ -487,8 +487,7 @@
 
 			api.get( {
 				action: 'translationaids',
-				title: this.message.title,
-				format: 'json'
+				title: this.message.title
 			} ).done( function ( result ) {
 				translateEditor.$editor.find( '.infocolumn .loading' ).remove();
 
