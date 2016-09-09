@@ -123,9 +123,9 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		}
 
 		$title = Title::makeTitleSafe( $this->getNamespace(), "$key/$code" );
-		$flags = RequestContext::getMain()->getRequest()->wasPosted()
-			? Revision::READ_LATEST
-			: 0; // bug T95753
+		$flags = PageTranslationHooks::$renderingContext
+			? Revision::READ_NORMAL // bug T95753
+			: Revision::READ_LATEST;
 		$rev = Revision::newFromTitle( $title, false, $flags );
 
 		if ( !$rev ) {
