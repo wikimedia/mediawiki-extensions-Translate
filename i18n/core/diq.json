@@ -5,7 +5,8 @@
 			"Gorizon",
 			"Marmase",
 			"Mirzali",
-			"Kumkumuk"
+			"Kumkumuk",
+			"Asmen"
 		]
 	},
 	"translate": "Açarnayış",
@@ -164,7 +165,7 @@
 	"translate-search-nofilter": "Bê filtre",
 	"translate-messagereview-submit": "Qebul bıkê",
 	"translate-messagereview-progress": "Oyo qebul beno",
-	"translate-messagereview-done": "Bariya",
+	"translate-messagereview-done": "Vêniya",
 	"log-name-translationreview": "Qeydê çımra ravyarnışê açarnayışa",
 	"translate-workflowstatus": "Weziyet: $1",
 	"translate-workflow-set-doing": "Sazêno...",
@@ -177,6 +178,7 @@
 	"tux-tab-outdated": "Vêrde",
 	"tux-tab-translated": "Açarniyaye",
 	"tux-status-fuzzy": "Vêrde",
+	"tux-status-proofread": "Vêniya",
 	"tux-status-translated": "Açarniyaye",
 	"tux-editor-editsummary-placeholder": "Xulasaya hesabiyayiye",
 	"tux-editor-paste-original-button-label": "Çıme meyini pronı",
