@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Meno25"
 		]
 	},
 	"searchtranslations": "ابحث في الترجمات",
@@ -9,11 +10,13 @@
 	"tux-sst-view-foreign": "اعرض في $1",
 	"tux-sst-search": "ابحث",
 	"tux-sst-search-ph": "ابحث في الترجمات",
+	"tux-sst-count": "{{PLURAL:$1|نتيجة واحدة تم العثور عليها|$1 نتائج تم العثور عليها}}",
 	"tux-sst-facet-language": "اللغات",
 	"tux-sst-facet-group": "مجموعات الرسائل",
 	"tux-sst-nosolr-title": "البحث غير متوفر",
 	"tux-sst-nosolr-body": "هذا الويكي لا يوفر خدمة البحث في الترجمات.",
 	"tux-sst-solr-offline-title": "البحث غير متوفر",
+	"tux-sst-solr-offline-body": "خدمة البحث غير متوفرة مؤقتا.",
 	"tux-sst-next": "التالي »",
 	"tux-sst-prev": "« السابق",
 	"tux-sst-default": "الترجمات",
@@ -22,6 +25,7 @@
 	"tux-sst-outdated": "الترجمات غير المحدثة من $1",
 	"tux-sst-ellipsis-untranslated": "لا ترجمات",
 	"tux-sst-ellipsis-outdated": "ترجمات غير محدثة",
+	"tux-sst-link-all-match": "تتطلب كل كلمات البحث.",
 	"tux-sst-match-message": "إظهار الترجمات التي تطابق أي من كلمات البحث. $1",
 	"tux-sst-case-sensitive": "مراعاة حالة الأحرف"
 }

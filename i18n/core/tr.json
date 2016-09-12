@@ -14,7 +14,8 @@
 			"Suelnur",
 			"Vito Genovese",
 			"Sayginer",
-			"McAang"
+			"McAang",
+			"Kumkumuk"
 		]
 	},
 	"translate": "Çevir",
@@ -45,6 +46,7 @@
 	"translate-page-navigation-legend": "Gezinti",
 	"translate-page-showing": "$3 iletiden $1 ile $2 arasında olanlar gösteriliyor.",
 	"translate-page-showing-all": "$1 adet {{PLURAL:$1|ileti|ileti}} gösteriliyor.",
+	"translate-page-showing-none": "Gösterecek ileti yok.",
 	"translate-page-paging-links": "[ $1 ] [ $2 ]",
 	"translate-next": "İleri",
 	"translate-prev": "Geri",
@@ -68,6 +70,7 @@
 	"translate-use-suggestion": "Mevcut çeviriyi bu öneri ile değiştirin.",
 	"translate-edit-nopermission": "İletileri çevirmek için çeviri hakkınız olmalı.",
 	"translate-edit-askpermission": "İzin al",
+	"exporttranslations": "Çeviriyi dışa aktar",
 	"translate-magic-pagename": "Genişletilmiş MedyaViki çevirisi",
 	"translate-magic-module": "Modül:",
 	"translate-magic-submit": "Getir",
