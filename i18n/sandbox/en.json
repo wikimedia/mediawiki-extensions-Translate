@@ -16,7 +16,7 @@
 	"tsb-reminder-sent-new": "Sent a reminder",
 	"tsb-reminder-failed": "Sending the reminder failed",
 	"tsb-email-promoted-subject": "You are now a translator at {{SITENAME}}",
-	"tsb-email-promoted-body": "Hi {{GENDER:$1|$1}},\n\nCongratulations! I checked the test translations that you made at {{SITENAME}} and gave you full translator rights.\n\nCome to {{SITENAME}} to continue translating now, and every day:\n$2\n\nWelcome, and thank you for you contributions!\n\n{{GENDER:$3|$3}},\n{{SITENAME}} staff",
+	"tsb-email-promoted-body": "Hi {{GENDER:$1|$1}},\n\nCongratulations! I checked the test translations that you made at {{SITENAME}} and gave you full translator rights.\n\nCome to {{SITENAME}} to continue translating now, and every day:\n$2\n\nWelcome, and thank you for your contributions!\n\n{{GENDER:$3|$3}},\n{{SITENAME}} staff",
 	"tsb-email-rejected-subject": "Your application to be a translator at {{SITENAME}} was rejected",
 	"tsb-email-rejected-body": "Hi {{GENDER:$1|$1}},\n\nThank you for applying as a translator at {{SITENAME}}. I regret to inform you that I have rejected your application, because the quality of your translations did not meet the requirements.\n\nIf you think that your application was rejected by mistake, please try to apply again as a translator at {{SITENAME}}. You can sign up here:\n$2\n\n{{GENDER:$3|$3}},\n{{SITENAME}} staff",
 	"tsb-request-count": "$1 {{PLURAL:$1|request|requests}}",
