@@ -325,17 +325,14 @@
 			$result = this.$container.find( '.tux-message-filter-result' );
 			if ( !$result.length ) {
 				$note = $( '<div>' )
-					.addClass( 'nine columns advanced-search' );
+					.addClass( 'advanced-search' );
 
-				$button = $( '<div>' )
-					.addClass( 'three columns' )
-					.append( $( '<button>' )
-						.addClass( 'mw-ui-button' )
-						.text( mw.msg( 'tux-message-filter-advanced-button' ) )
-					);
+				$button = $( '<button>' )
+					.addClass( 'mw-ui-button' )
+					.text( mw.msg( 'tux-message-filter-advanced-button' ) );
 
 				$result = $( '<div>' )
-					.addClass( 'row highlight tux-message-filter-result' )
+					.addClass( 'tux-message-filter-result' )
 					.append( $note, $button );
 
 				this.$container.prepend( $result );
