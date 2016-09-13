@@ -3,7 +3,7 @@
 		"authors": [
 		]
 	},
-	"apihelp-aggregategroups-description": "Manage aggregate message groups.\n\nYou can add and remove aggregate messagegroups and associate or dissociate message groups from them (one at a time).",
+	"apihelp-aggregategroups-description": "Manage aggregate message groups.\n\nYou can add and remove aggregate message groups and associate or dissociate message groups from them (one at a time).",
 	"apihelp-aggregategroups-param-do": "What to do with aggregate message group.",
 	"apihelp-aggregategroups-param-aggregategroup": "Aggregate message group ID.",
 	"apihelp-aggregategroups-param-group": "Message group ID.",
