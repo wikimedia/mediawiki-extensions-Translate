@@ -227,26 +227,18 @@
 	.background-image-svg( '../images/view-proofread-hi.svg', '../images/view-proofread-hi.png' );
 }
 
-.ext-translate-container .tux-messagelist .tux-message-filter-result {
+.tux-message-filter-result  {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	color: #252525;
-	line-height: 35px;
-	font-size: 15px;
-	vertical-align: middle;
 	border-bottom: 1px solid #C9C9C9;
-	margin: 0;
-	padding: 0 5px;
-}
-
-.tux-message-filter-result.highlight {
 	background: #FFF5AA;
-}
-
-.tux-message-filter-result button {
-	float: right;
 	padding: 5px;
-	margin: 5px 0;
-	font-size: 15px;
-	vertical-align: middle;
+
+	& button {
+		background: inherit;
+	}
 }
 
 .tux-empty-list {
