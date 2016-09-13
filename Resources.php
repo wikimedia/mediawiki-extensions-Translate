@@ -526,10 +526,6 @@ $wgResourceModules['ext.translate.special.translationstash'] = array(
 
 $wgResourceModules['ext.translate.special.translationstats'] = array(
 	'scripts' => 'resources/js/ext.translate.special.translationstats.js',
-	'dependencies' => array(
-		'jquery.ui.datepicker',
-	),
-	'targets' => array( 'desktop' ),
 ) + $resourcePaths;
 
 $wgResourceModules['ext.translate.statsbar'] = array(
