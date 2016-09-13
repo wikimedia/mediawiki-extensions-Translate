@@ -422,7 +422,6 @@ $wgResourceModules['ext.translate.special.searchtranslations'] = array(
 	'dependencies' => array(
 		'ext.translate.editor',
 		'ext.translate.groupselector',
-		'ext.uls.geoclient',
 		'ext.uls.mediawiki',
 		'mediawiki.Uri',
 		'mediawiki.language',
