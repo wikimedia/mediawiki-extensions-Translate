@@ -84,7 +84,7 @@
 	list-style: none;
 }
 
-.tux-message-selector li {
+.tux-message-selector .column {
 	border: medium none;
 	font-size: 14pt;
 	cursor: pointer;
