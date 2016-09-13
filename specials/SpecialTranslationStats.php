@@ -92,7 +92,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$opts->validateIntBounds( 'height', 200, 1000 );
 
 		if ( $opts['start'] !== '' ) {
-			$opts['start'] = (string)( wfTimestamp( TS_MW, $opts['start'] ) );
+			$opts['start'] = rtrim( wfTimestamp( TS_ISO_8601, $opts['start'] ), 'Z' );
 		}
 
 		$validScales = array( 'months', 'weeks', 'days', 'hours' );
@@ -166,7 +166,7 @@ class SpecialTranslationStats extends SpecialPage {
 			$this->eInput( 'width', $opts ) .
 				$this->eInput( 'height', $opts ) .
 				'<tr><td colspan="2"><hr /></td></tr>' .
-				$this->eInput( 'start', $opts, 16 ) . // Should fit yyyymmddhhmmss
+				$this->eInput( 'start', $opts, 24 ) .
 				$this->eInput( 'days', $opts ) .
 				$this->eRadio( 'scale', $opts, array( 'months', 'weeks', 'days', 'hours' ) ) .
 				$this->eRadio( 'count', $opts, $this->getGraphTypes() ) .
