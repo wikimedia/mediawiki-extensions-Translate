@@ -4,9 +4,11 @@
 			"Ricordisamoa",
 			"F. Cosoleto",
 			"Statix64",
-			"Beta16"
+			"Beta16",
+			"Anto"
 		]
 	},
+	"apihelp-aggregategroups-description": "Gestire  gruppi aggregati di messaggi.\n\nÈ possibile aggiungere e rimuovere gruppi aggregati di messaggi e associare o dissociare i gruppi di messaggi l'uno dall' altro (uno alla volta).",
 	"apihelp-aggregategroups-param-do": "Cosa fare il gruppo messaggi aggregato.",
 	"apihelp-aggregategroups-param-aggregategroup": "ID gruppo messaggi aggregato.",
 	"apihelp-aggregategroups-param-group": "ID gruppo messaggi.",

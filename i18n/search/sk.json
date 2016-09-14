@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Sudo77(new)",
-			"Kusavica"
+			"Kusavica",
+			"Helix84"
 		]
 	},
+	"tux-sst-edit": "Upraviť preklad",
 	"tux-sst-search": "Hľadať",
 	"tux-sst-facet-language": "Jazyky",
 	"tux-sst-next": "Ďalej ›",

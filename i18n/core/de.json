@@ -389,6 +389,7 @@
 	"tux-editor-close-tooltip": "Schließen",
 	"tux-editor-expand-tooltip": "Ausklappen",
 	"tux-editor-collapse-tooltip": "Einklappen",
+	"tux-editor-message-tools-show-editor": "Im Wiki-Editor anzeigen",
 	"tux-editor-message-tools-history": "Versionsgeschichte",
 	"tux-editor-message-tools-delete": "Löschen",
 	"tux-editor-message-tools-translations": "Alle Übersetzungen",

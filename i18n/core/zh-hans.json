@@ -397,6 +397,7 @@
 	"tux-editor-close-tooltip": "关闭",
 	"tux-editor-expand-tooltip": "展开",
 	"tux-editor-collapse-tooltip": "折叠",
+	"tux-editor-message-tools-show-editor": "在wiki编辑器中显示",
 	"tux-editor-message-tools-history": "历史",
 	"tux-editor-message-tools-delete": "删除",
 	"tux-editor-message-tools-translations": "所有翻译",
