@@ -100,6 +100,7 @@
 	"pt-deletepage-lang-logreason": "Pato de la tradukpaĝo \"$1\".",
 	"pt-deletepage-started": "Bonvolu rekontroli la [[Special:Log/pagetranslation|protokolon pri paĝotradukado]] por eraroj kaj mesaĝo pri kompletiĝo.",
 	"pt-deletepage-intro": "En tiu ĉi speciala paĝo vi povas forigi tutan tradukeblan paĝon aŭ individuan tradukpaĝon en iu lingvo.\nLa forigo ne efektiviĝos tuj, ĉar ĉiuj dependaj paĝoj estos ankaŭ forigitaj.\nFiaskoj estos protokolitaj en la [[Special:Log/pagetranslation|protokolo pri paĝotradukado]] kaj ilin necesos ripari permane.",
+	"pm-import-button-label": "Enporti",
 	"pm-cancel-button-label": "Nuligi",
 	"pp-cancel-button-label": "Nuligi",
 	"tpt-generic-button": "Konfirmi"

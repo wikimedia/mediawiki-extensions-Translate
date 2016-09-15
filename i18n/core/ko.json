@@ -381,6 +381,7 @@
 	"tux-editor-close-tooltip": "닫기",
 	"tux-editor-expand-tooltip": "펼치기",
 	"tux-editor-collapse-tooltip": "접기",
+	"tux-editor-message-tools-show-editor": "위키 편집기에서 보기",
 	"tux-editor-message-tools-history": "역사",
 	"tux-editor-message-tools-delete": "삭제",
 	"tux-editor-message-tools-translations": "모든 번역",
