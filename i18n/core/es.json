@@ -392,6 +392,7 @@
 	"tux-editor-close-tooltip": "Cerrar",
 	"tux-editor-expand-tooltip": "Expandir",
 	"tux-editor-collapse-tooltip": "Contraer",
+	"tux-editor-message-tools-show-editor": "Mostrar en el editor de wiki",
 	"tux-editor-message-tools-history": "Historial",
 	"tux-editor-message-tools-delete": "Eliminar",
 	"tux-editor-message-tools-translations": "Todas las traducciones",
