@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eitvys200"
+		]
+	},
+	"tsb-email-promoted-body": "Sveiki, {{GENDER:$1|$1}},\n\nSveikinu! Aš patikrinau jūsų bandomuosius vertimus, kuriuos jūs atlikote {{SITENAME}} ir suteikiau jums visas vertėjo teises.\n\nEikite į {{SITENAME}}, kad galėtumėte versti dabar ir kiekvieną dieną:\n$2\n\nSveiki atvykę ir ačiū už jūsų įnašą!\n\n{{GENDER:$3|$3}},\n{{SITENAME}} darbuotojas"
+}

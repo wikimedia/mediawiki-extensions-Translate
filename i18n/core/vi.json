@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Minh Nguyen",
-			"Vinhtantran"
+			"Vinhtantran",
+			"Thin"
 		]
 	},
 	"translate": "Biên dịch",
@@ -373,6 +374,7 @@
 	"tux-editor-close-tooltip": "Đóng",
 	"tux-editor-expand-tooltip": "Mở rộng",
 	"tux-editor-collapse-tooltip": "Thu gọn",
+	"tux-editor-message-tools-show-editor": "Hiện trong trình chỉnh sửa của Wiki",
 	"tux-editor-message-tools-history": "Lịch sử",
 	"tux-editor-message-tools-delete": "Xóa",
 	"tux-editor-message-tools-translations": "Tất cả các bản dịch",

@@ -312,6 +312,7 @@
 	"tux-editor-close-tooltip": "Uždaryti",
 	"tux-editor-expand-tooltip": "Išplėsti",
 	"tux-editor-collapse-tooltip": "Suskleisti",
+	"tux-editor-message-tools-show-editor": "Rodyti viki redaktoriuje",
 	"tux-editor-message-tools-history": "Istorija",
 	"tux-editor-message-tools-translations": "Visi vertimai",
 	"tux-editor-loading": "Įkraunama...",

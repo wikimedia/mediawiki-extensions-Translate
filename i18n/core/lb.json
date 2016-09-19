@@ -25,6 +25,7 @@
 	"translate-page-no-such-language": "Ongëltege Sproochcode benotzt",
 	"translate-page-no-such-group": "Déi Gefrote Grupp gëtt et net.",
 	"translate-page-disabled": "Iwwersetzungen an dës Sprooch goufen an dëser Grupp ausgeschalt. Grond:\n\n<em>$1</em>",
+	"translate-page-disabled-source": "$1 ass d'Quellsprooch vun dëser Säit.",
 	"translate-language-disabled": "D'Iwwersetzung an dës Sprooch ass ausgeschalt.",
 	"translate-page-settings-legend": "Astellungen",
 	"translate-page-group": "Grupp",

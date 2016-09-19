@@ -104,6 +104,7 @@
 	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|huet}} d'Iwwersetzung vun $3 recommandéiert",
 	"log-action-filter-pagetranslation": "Typ vun Aktioun:",
 	"log-action-filter-pagetranslation-mark": "Markéiere fir z'iwwersetzen",
+	"log-action-filter-pagetranslation-unmark": "Ewechhuele vun der Iwwersetzung",
 	"log-action-filter-pagetranslation-move": "Geréckelt Säiten",
 	"log-action-filter-pagetranslation-delete": "Geläscht Säiten",
 	"pt-movepage-title": "Déi iwwersetzbar Säit $1 réckelen",
@@ -167,6 +168,7 @@
 	"pm-delete-icon-hover-text": "Eenheet läschen",
 	"pm-pagetitle-placeholder": "Gitt de Säitentitel an",
 	"pm-pagetitle-invalid": "Gitt w.e.g. e valabelen Titel fir d'Säit an. Et muss am <page-name>/<language-code> Format sinn.",
+	"pm-pagetitle-missing": "Gitt w.e.g. den Titel vun der Säit an.",
 	"pm-langcode-missing": "Gitt w.e.g. de Sproochcode an. Gitt w.e.g. de Säitentitel am <page-name>/<language-code> Format an.",
 	"pm-summary-import": "Iwwersetzung importéiert mat Hëllef vun [[Special:PageMigration|Säitemigratioun]]",
 	"tpt-translate-title": "Iwwersetzung vum Titel vun der Säit erlaben",
@@ -183,6 +185,7 @@
 	"pp-diff-old-header": "Quelltext",
 	"pp-diff-new-header": "Preparéierten Text",
 	"tpt-unlink-button": "Vun der Iwwersetzung ewechhuelen",
+	"tpt-unlink-summary": "D'Säit gouf vun der Iwwersetzung ewechgeholl",
 	"tpt-generic-confirm": "Confirméiert dës Aktioun w.e.g..",
 	"tpt-generic-button": "Confirméieren"
 }
