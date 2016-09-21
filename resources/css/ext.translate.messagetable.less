@@ -122,11 +122,13 @@
 	transition: width 250ms;
 }
 
-.tux-action-bar.floating {
-	border-top: 1px solid #DDD;
-	position: fixed;
-	bottom: 0;
-	z-index: 200;
+@media screen and (min-height: 500px) {
+	.tux-action-bar.floating {
+		border-top: 1px solid #DDD;
+		position: fixed;
+		bottom: 0;
+		z-index: 200;
+	}
 }
 
 .tux-action-bar .tux-statsbar {
