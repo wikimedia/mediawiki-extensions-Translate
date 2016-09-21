@@ -366,11 +366,15 @@
 }
 
 .tux-editor-insert-buttons button {
-	padding: 4px;
+	padding: 0 5px;
+	min-width: 30px;
+	margin-right: 5px;
+	margin-bottom: 5px;
 	border: 1px solid #DDD;
 	background: #FBFBFB;
 	color: #252525;
 	font-size: 13px;
+	line-height: 30px;
 	height: 30px;
 }
 
