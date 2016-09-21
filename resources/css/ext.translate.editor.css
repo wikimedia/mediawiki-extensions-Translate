@@ -42,6 +42,13 @@
 	border-right: 1px solid #AAA;
 	-webkit-transition: width 0.5s;
 	transition: width 0.5s;
+	/* Padding to have space for the arrow indicating split section */
+	padding-right: 40px;
+}
+
+.grid .tux-message-editor .tux-editor-titletools {
+	/* Ignore the padding added for the arrow */
+	margin-right: -40px;
 }
 
 .tux-message-editor textarea {

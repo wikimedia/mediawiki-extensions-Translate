@@ -489,7 +489,7 @@
 				.append( $closeIcon, $infoToggleIcon );
 
 			$editorColumn.append( $( '<div>' )
-				.addClass( 'row' )
+				.addClass( 'row tux-editor-titletools' )
 				.append( $messageKeyLabel, $layoutActions )
 			);
 
@@ -497,7 +497,7 @@
 			originalTranslation = this.message.translation;
 			sourceString = this.message.definition;
 			$sourceString = $( '<span>' )
-				.addClass( 'eleven column sourcemessage' )
+				.addClass( 'twelve columns sourcemessage' )
 				.attr( {
 					lang: $messageList.data( 'sourcelangcode' ),
 					dir: $messageList.data( 'sourcelangdir' )
@@ -665,7 +665,7 @@
 			$editAreaBlock = $( '<div>' )
 				.addClass( 'row tux-editor-editarea-block' )
 				.append( $( '<div>' )
-					.addClass( 'editarea eleven columns' )
+					.addClass( 'editarea twelve columns' )
 					.append( $warningsBlock, $textarea )
 				);
 
@@ -733,7 +733,7 @@
 				}
 
 				$editingButtonBlock = $( '<div>' )
-					.addClass( 'ten columns tux-editor-insert-buttons' )
+					.addClass( 'twelve columns tux-editor-insert-buttons' )
 					.append(
 						$pasteOriginalButton,
 						$discardChangesButton
@@ -743,7 +743,7 @@
 					.addClass( 'row tux-editor-editsummary-block' )
 					.append(
 						$( '<div>' )
-							.addClass( 'eleven columns' )
+							.addClass( 'twelve columns' )
 							.append( $editSummary )
 					);
 
