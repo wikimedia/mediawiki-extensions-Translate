@@ -113,6 +113,13 @@
 	font-size: 13px;
 	color: #555;
 	padding: 0 5px 5px 10px;
+	display: none;
+}
+
+@media screen and (min-width: 980px) {
+	.tux-message-editor .shortcutinfo {
+		display: block;
+	}
 }
 
 .tux-message-editor .infocolumn-block .infocolumn {
