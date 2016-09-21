@@ -1262,8 +1262,8 @@
 
 			$buttonArea = this.$editor.find( '.tux-editor-insert-buttons' );
 			buttonAreaHeight = $buttonArea.height();
-			$textarea.css( 'padding-bottom', buttonAreaHeight + 10 );
-			$buttonArea.css( 'top', -buttonAreaHeight - 5 );
+			$textarea.css( 'padding-bottom', buttonAreaHeight + 5 );
+			$buttonArea.css( 'top', -buttonAreaHeight );
 			autosize.update( $textarea );
 		}
 	};
