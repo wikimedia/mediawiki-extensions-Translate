@@ -1101,7 +1101,7 @@
 			return $( '<div>' )
 				.addClass( 'five columns infocolumn-block' )
 				.append(
-					$( '<span>' ).addClass( 'caret' ),
+					$( '<span>' ).addClass( 'tux-message-editor--caret' ),
 					$infoColumn
 				);
 		},
@@ -1186,12 +1186,7 @@
 				.addClass( 'editor-expand' )
 				.attr( 'title', mw.msg( 'tux-editor-expand-tooltip' ) );
 
-			this.$editor.find( '.infocolumn-block' )
-				.removeClass( 'hide' );
-			this.$editor.find( '.editcolumn' )
-				.removeClass( 'twelve' )
-				.addClass( 'seven' );
-
+			this.$editor.removeClass( 'tux-message-editor__expanded' );
 			this.expanded = false;
 		},
 
@@ -1202,12 +1197,7 @@
 				.addClass( 'editor-contract' )
 				.attr( 'title', mw.msg( 'tux-editor-collapse-tooltip' ) );
 
-			this.$editor.find( '.infocolumn-block' )
-				.addClass( 'hide' );
-			this.$editor.find( '.editcolumn' )
-				.removeClass( 'seven' )
-				.addClass( 'twelve' );
-
+			this.$editor.addClass( 'tux-message-editor__expanded' );
 			this.expanded = true;
 		},
 

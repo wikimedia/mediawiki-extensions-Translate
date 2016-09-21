@@ -42,13 +42,24 @@
 	border-right: 1px solid #AAA;
 	-webkit-transition: width 0.5s;
 	transition: width 0.5s;
+	background-color: white;
+	z-index: 1;
 	/* Padding to have space for the arrow indicating split section */
 	padding-right: 40px;
+}
+
+.grid .tux-message-editor__expanded .editcolumn {
+	width: 100%;
+	padding-right: 5px;
 }
 
 .grid .tux-message-editor .tux-editor-titletools {
 	/* Ignore the padding added for the arrow */
 	margin-right: -40px;
+}
+
+.grid .tux-message-editor__expanded .tux-editor-titletools {
+	margin-right: -5px;
 }
 
 .tux-message-editor textarea {
@@ -152,7 +163,8 @@
 	transition: width 0.5s;
 }
 
-.tux-message-editor .infocolumn-block .caret:before {
+.tux-message-editor--caret:before,
+.tux-message-editor--caret:after {
 	border-top: 20px solid transparent;
 	border-right: 20px solid #AAA;
 	border-bottom: 20px solid transparent;
@@ -161,17 +173,19 @@
 	left: -21px;
 	position: absolute;
 	bottom: 50%;
+	z-index: 2;
+	transition: visibility 0s 0.5s;
 }
 
-.tux-message-editor .infocolumn-block .caret:after {
-	border-top: 20px solid transparent;
+.tux-message-editor--caret:after {
 	border-right: 20px solid #FCFCFC;
-	border-bottom: 20px solid transparent;
-	content: "";
-	display: inline-block;
 	left: -20px;
-	position: absolute;
-	bottom: 50%;
+}
+
+.tux-message-editor__expanded .tux-message-editor--caret:before,
+.tux-message-editor__expanded .tux-message-editor--caret:after {
+	visibility: hidden;
+	transition: visibility 0s 0s;
 }
 
 .infocolumn-block .infocolumn .message-desc-editor {
