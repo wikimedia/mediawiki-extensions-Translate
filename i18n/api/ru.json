@@ -3,9 +3,11 @@
 		"authors": [
 			"Okras",
 			"Kaganer",
-			"Дмитрий"
+			"Дмитрий",
+			"Туллук"
 		]
 	},
+	"apihelp-aggregategroups-description": "Вы можете добавлять и удалять агрегированные группы сообщений, группировывать и разгруппировывать сообщения в них ( по одному за раз ) .",
 	"apihelp-aggregategroups-param-aggregategroup": "ID агрегированной группы сообщений",
 	"apihelp-aggregategroups-param-group": "ID группы сообщений",
 	"apihelp-groupreview-param-group": "Группа сообщений.",
@@ -24,7 +26,6 @@
 	"apihelp-query+messagetranslations-param-title": "Полный заголовок известного сообщения.",
 	"apihelp-query+messagetranslations-example-1": "Список переводов в вики для «MediaWiki:January»",
 	"apihelp-translatesandbox-param-do": "Что делать.",
-	"apihelp-translateuser-example-1": "Показать информацию об участнике",
 	"apihelp-translationaids-param-title": "Полный заголовок известного сообщения.",
 	"apihelp-translationreview-description": "Пометить переводы как проверенные.",
 	"apihelp-translationstash-param-subaction": "Действие.",

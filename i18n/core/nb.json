@@ -9,7 +9,8 @@
 			"Njardarlogar",
 			"Simny",
 			"Danmichaelo",
-			"Kingu"
+			"Kingu",
+			"Jon Harald Søby"
 		]
 	},
 	"translate": "Oversett",
@@ -268,7 +269,7 @@
 	"log-name-translationreview": "Logg for oversettelsesrevidering",
 	"log-description-translationreview": "Logg over alle revideringer av oversettelser og meldingsgrupper.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|godtok}} oversettelsen $3",
-	"logentry-translationreview-group": "$1 {{GENDER:$2|endret}} statusen på $4 oversettelser av $3 fra $6 til $7",
+	"logentry-translationreview-group": "$1 {{GENDER:$2|endret}} statusen på oversettelser til $4 av $3 fra $6 til $7",
 	"group-translate-sandboxed": "Ikke-godtatte oversettere",
 	"group-translate-sandboxed-member": "{{GENDER:$1|ikke-godkjent oversetter}}",
 	"right-translate-sandboxmanage": "Behandle sandkassebrukere",

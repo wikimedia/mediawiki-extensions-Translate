@@ -22,7 +22,8 @@
 			"Rubin",
 			"Tempodivalse",
 			"Volkov",
-			"Александр Сигачёв"
+			"Александр Сигачёв",
+			"Туллук"
 		]
 	},
 	"translate": "Перевод",
@@ -54,6 +55,7 @@
 	"translate-page-navigation-legend": "Навигация",
 	"translate-page-showing": "Показаны сообщения с $1 по $2 (из $3).",
 	"translate-page-showing-all": "Показано $1 {{PLURAL:$1|сообщение|сообщения|сообщений}}.",
+	"translate-page-showing-none": "Нет сообщений для показа.",
 	"translate-next": "следующая страница",
 	"translate-prev": "предыдущая страница",
 	"translate-page-description-legend": "Информация о группе",
@@ -382,6 +384,7 @@
 	"tux-editor-close-tooltip": "Закрыть",
 	"tux-editor-expand-tooltip": "Развернуть",
 	"tux-editor-collapse-tooltip": "Свернуть",
+	"tux-editor-message-tools-show-editor": "Просмотреть редактор вики",
 	"tux-editor-message-tools-history": "История",
 	"tux-editor-message-tools-delete": "Удалить",
 	"tux-editor-message-tools-translations": "Все переводы",

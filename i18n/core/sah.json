@@ -3,7 +3,8 @@
 		"authors": [
 			"Amire80",
 			"Bert Jickty",
-			"HalanTul"
+			"HalanTul",
+			"Туллук"
 		]
 	},
 	"translate": "Тылбаас",
@@ -51,9 +52,7 @@
 	"translate-edit-no-information": "''Бу этии туһунан туох да суох. Ханна, хаһан бу этии туттулларын билэр буоллаххына, атын тылбаасчыттарга көмөлөһөн, ол туһунан суруйуоххун сөп.''",
 	"translate-edit-information": "Бу туһунан ($1)",
 	"translate-edit-in-other-languages": "Атын тылынан",
-	"translate-edit-committed": "Билигин баар тылбаас",
 	"translate-edit-warnings": "Ситэтэ суох тылбаас туһунан сэрэтии",
-	"translate-edit-tmsugs": "Урукку тылбаастартан",
 	"translate-edit-tmmatch-source": "Тылбаастаныахтаах этии: $1",
 	"translate-edit-tmmatch": "$1% сөп түбэһэр",
 	"translate-use-suggestion": "Баар тиэкиһи бу этэн биэриинэн солбуй.",
@@ -133,7 +132,6 @@
 	"translate-statsf-language": "Соппутуойунан арахсыбыт тыллар куодтарын тиһигэ:",
 	"translate-statsf-group": "Соппутуойунан арахсыбыт бөлөхтөр куодтарын тиһигэ:",
 	"translate-statsf-submit": "Бигэргэтиэх иннинэ көрүү",
-	"translate-tag-category": "Тылбаастанар сирэйдэр",
 	"translate-tag-page-desc": "Биики-сирэй тылбааһа [[$2|$1]].",
 	"translate-sidebar-alltrans": "Атын тылларынан",
 	"translations": "Бары тылбаастар",
@@ -199,5 +197,6 @@
 	"translate-gs-avgscore": "Ортотунан",
 	"translate-documentation-language": "Биллэрии документацията",
 	"tux-editor-proofreading-hide-own-translations": "Бэйэ тылбааһын көрдөрүмэ",
-	"tux-empty-nothing-new-to-proofread": "Тургутуллуохтаах саҥа тылбаас суох"
+	"tux-empty-nothing-new-to-proofread": "Тургутуллуохтаах саҥа тылбаас суох",
+	"tux-editor-message-tools-show-editor": "Вики редакторын көр"
 }
