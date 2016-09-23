@@ -182,6 +182,11 @@ class PageTranslationHooks {
 	 * @return string
 	 */
 	public static function languages( $data, $params, $parser ) {
+		self::$renderingContext = true;
+		$context = new ScopedCallback( function () {
+			self::$renderingContext = false;
+		} );
+
 		$currentTitle = $parser->getTitle();
 
 		// Check if this is a source page or a translation page
