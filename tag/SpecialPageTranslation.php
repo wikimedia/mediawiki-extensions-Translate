@@ -289,7 +289,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$this->msg( 'tpt-generic-confirm' )->parseAsBlock() .
 			Xml::submitButton(
 				$this->msg( 'tpt-generic-button' )->text(),
-				array( 'class' => 'mw-ui-button mw-ui-primary' )
+				array( 'class' => 'mw-ui-button mw-ui-progressive' )
 			) .
 			Html::closeElement( 'form' )
 		);

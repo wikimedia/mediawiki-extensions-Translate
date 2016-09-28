@@ -49,11 +49,11 @@ class SpecialPageMigration extends SpecialPage {
 			'placeholder' => $this->msg( 'pm-pagetitle-placeholder' )->text() ) );
 		$out .= "\n";
 		$out .= Html::element( 'input', array( 'id' => 'action-import',
-			'class' => 'mw-ui-button mw-ui-primary', 'type' => 'button',
+			'class' => 'mw-ui-button mw-ui-progressive', 'type' => 'button',
 			'value' => $this->msg( 'pm-import-button-label' )->text() ) );
 		$out .= "\n";
 		$out .= Html::element( 'input', array( 'id' => 'action-save',
-			'class' => 'mw-ui-button mw-ui-constructive hide', 'type' => 'button',
+			'class' => 'mw-ui-button mw-ui-progressive hide', 'type' => 'button',
 			'value' => $this->msg( 'pm-savepages-button-label' )->text() ) );
 		$out .= "\n";
 		$out .= Html::element( 'input', array( 'id' => 'action-cancel',

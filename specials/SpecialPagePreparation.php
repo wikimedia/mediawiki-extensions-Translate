@@ -43,9 +43,9 @@ class SpecialPagePreparation extends SpecialPage {
 		<input id="pp-summary" type="hidden" value="{$summaryValue}" />
 		<input name="page" id="page" class="mw-searchInput mw-ui-input"
 			placeholder="{$pagenamePlaceholder}" value="{$inputValue}"/>
-		<button id="action-prepare" class="mw-ui-button mw-ui-primary" type="button">
+		<button id="action-prepare" class="mw-ui-button mw-ui-progressive" type="button">
 			{$prepareButtonValue}</button>
-		<button id="action-save" class="mw-ui-button mw-ui-constructive hide" type="button">
+		<button id="action-save" class="mw-ui-button mw-ui-progressive hide" type="button">
 			{$saveButtonValue}</button>
 		<button id="action-cancel" class="mw-ui-button mw-ui-quiet hide" type="button">
 			{$cancelButtonValue}</button>
