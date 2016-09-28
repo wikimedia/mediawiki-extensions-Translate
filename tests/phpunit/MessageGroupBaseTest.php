@@ -61,11 +61,11 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 
 	public function testGetNamespaceNumber() {
 		$conf = $this->groupConfiguration;
-		$conf['BASIC']['namespace'] = NS_IMAGE;
+		$conf['BASIC']['namespace'] = NS_FILE;
 		$this->group = MessageGroupBase::factory( $conf );
 
 		$this->assertEquals(
-			NS_IMAGE,
+			NS_FILE,
 			$this->group->getNamespace(),
 			'should parse integer namespace number.'
 		);
@@ -77,7 +77,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 		$this->group = MessageGroupBase::factory( $conf );
 
 		$this->assertEquals(
-			NS_IMAGE,
+			NS_FILE,
 			$this->group->getNamespace(),
 			'should parse string namespace name.'
 		);
