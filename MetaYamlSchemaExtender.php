@@ -5,7 +5,7 @@
  * because they are parsed to PHP arrays anyway. The configuration consists of sections, and in some
  * section there is key 'class' which defines the class implementing that part of behavior. These
  * classes can take custom parameters, so in essense our configuration format is open-ended. To
- * implement proper validation, those classes can extend the schema runtime by implemeting this
+ * implement proper validation, those classes can extend the schema runtime by implementing this
  * interface. Validation is implemented with the MetaYaml library.
  *
  * Because neither is_a nor instanceof accept class names, validation code will check directly
