@@ -394,6 +394,7 @@
 	"tux-editor-close-tooltip": "Zamknij",
 	"tux-editor-expand-tooltip": "Rozwiń",
 	"tux-editor-collapse-tooltip": "Zwiń",
+	"tux-editor-message-tools-show-editor": "Pokaż w zwykłym edytorze wiki",
 	"tux-editor-message-tools-history": "Historia",
 	"tux-editor-message-tools-delete": "Usuń",
 	"tux-editor-message-tools-translations": "Wszystkie tłumaczenia",
