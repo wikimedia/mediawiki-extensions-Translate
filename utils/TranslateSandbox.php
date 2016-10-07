@@ -74,7 +74,6 @@ class TranslateSandbox {
 
 		// group-translate-sandboxed group-translate-sandboxed-member
 		$user->addGroup( 'translate-sandboxed' );
-		$user->sendConfirmationMail();
 
 		return $user;
 	}
