@@ -49,8 +49,11 @@ class JsonFFS extends SimpleFFS {
 		unset( $messages['@metadata'] );
 
 		if ( isset( $this->extra['nestingSeparator'] ) ) {
-			 $flattener = new ArrayFlattener( $this->extra['nestingSeparator'] );
-			 $messages = $flattener->flatten( $messages );
+			$parseCLDRPlurals = isset( $this->extra['parseCLDRPlurals'] ) ?
+				$this->extra['parseCLDRPlurals'] : false;
+			$flattener = new ArrayFlattener( $this->extra['nestingSeparator'],
+				$parseCLDRPlurals );
+			$messages = $flattener->flatten( $messages );
 		}
 
 		$messages = $this->group->getMangler()->mangle( $messages );
@@ -111,8 +114,11 @@ class JsonFFS extends SimpleFFS {
 		}
 
 		if ( isset( $this->extra['nestingSeparator'] ) ) {
-			 $flattener = new ArrayFlattener( $this->extra['nestingSeparator'] );
-			 $messages = $flattener->unflatten( $messages );
+			$parseCLDRPlurals = isset( $this->extra['parseCLDRPlurals'] ) ?
+				$this->extra['parseCLDRPlurals'] : false;
+			$flattener = new ArrayFlattener( $this->extra['nestingSeparator'],
+				$parseCLDRPlurals );
+			$messages = $flattener->unflatten( $messages );
 		}
 
 		return FormatJson::encode( $messages, "\t", FormatJson::ALL_OK ) . "\n";
@@ -129,6 +135,9 @@ class JsonFFS extends SimpleFFS {
 							'nestingSeparator' => array(
 								'_type' => 'text',
 							),
+							'parseCLDRPlurals' => array(
+								'_type' => 'boolean',
+							)
 						)
 					)
 				)
