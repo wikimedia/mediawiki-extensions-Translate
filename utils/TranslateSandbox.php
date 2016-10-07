@@ -208,8 +208,8 @@ class TranslateSandbox {
 
 		$params = array(
 			'user' => $target->getId(),
-			'to' => new MailAddress( $target ),
-			'from' => new MailAddress( $sender ),
+			'to' => MailAddress::newFromUser( $target ),
+			'from' => MailAddress::newFromUser( $sender ),
 			'replyto' => new MailAddress( $wgNoReplyAddress ),
 			'subj' => $subject,
 			'body' => $body,
