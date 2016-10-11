@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e6f8b3b_b00e0d36",
+        "filename": "utils/ArrayFlattener.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-10-11T12:00:52Z",
+      "side": 1,
+      "message": "I suggest separate @author tag for each author.",
+      "revId": "38a7465093fa5a4aee16eb3015d1df8c6b79903c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
