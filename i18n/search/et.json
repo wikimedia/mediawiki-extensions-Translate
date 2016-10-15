@@ -11,11 +11,11 @@
 	"tux-sst-count": "{{PLURAL:$1|Üks tulemus leitud|$1 tulemust leitud}}",
 	"tux-sst-facet-language": "Keeled",
 	"tux-sst-facet-group": "Sõnumirühmad",
-	"tux-sst-facet-orphan": "(orb)",
 	"tux-sst-nosolr-title": "Otsing pole saadaval",
 	"tux-sst-nosolr-body": "Sellel vikil pole tõlkeotsimisteenust.",
 	"tux-sst-solr-offline-title": "Otsing pole saadaval",
 	"tux-sst-solr-offline-body": "Otsimisteenus pole ajutiselt saadaval.",
 	"tux-sst-next": "Järgmised ›",
-	"tux-sst-prev": "‹ Eelmised"
+	"tux-sst-prev": "‹ Eelmised",
+	"tux-sst-case-sensitive": "Tõstutundlik"
 }
