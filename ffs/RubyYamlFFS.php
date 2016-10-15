@@ -20,6 +20,116 @@ class RubyYamlFFS extends YamlFFS {
 		return array( '.yml', '.yaml' );
 	}
 
+	protected function getFlattener() {
+		return $this;
+	}
+
+	/**
+	 * Flattens multidimensional array by using the path to the value as key
+	 * with each individual key separated by a dot.
+	 *
+	 * @param $messages array
+	 *
+	 * @return array
+	 */
+	protected function flatten( $messages ) {
+		$flat = true;
+
+		foreach ( $messages as $v ) {
+			if ( !is_array( $v ) ) {
+				continue;
+			}
+
+			$flat = false;
+			break;
+		}
+
+		if ( $flat ) {
+			return $messages;
+		}
+
+		$array = array();
+		foreach ( $messages as $key => $value ) {
+			if ( !is_array( $value ) ) {
+				$array[$key] = $value;
+			} else {
+				$plural = $this->flattenPlural( $value );
+				if ( $plural ) {
+					$array[$key] = $plural;
+				} else {
+					$newArray = array();
+					foreach ( $value as $newKey => $newValue ) {
+						$newArray["$key.$newKey"] = $newValue;
+					}
+					$array += $this->flatten( $newArray );
+				}
+			}
+
+			/**
+			 * Can as well keep only one copy around.
+			 */
+			unset( $messages[$key] );
+		}
+
+		return $array;
+	}
+
+	/**
+	 * Performs the reverse operation of flatten. Each dot in the key starts a
+	 * new subarray in the final array.
+	 *
+	 * @param $messages array
+	 *
+	 * @return array
+	 */
+	protected function unflatten( $messages ) {
+		$array = array();
+		foreach ( $messages as $key => $value ) {
+			$plurals = $this->unflattenPlural( $key, $value );
+
+			if ( $plurals === false ) {
+				continue;
+			}
+
+			foreach ( $plurals as $keyPlural => $valuePlural ) {
+				$path = explode( '.', $keyPlural );
+				if ( count( $path ) === 1 ) {
+					$array[$keyPlural] = $valuePlural;
+					continue;
+				}
+
+				$pointer = &$array;
+				do {
+					/**
+					 * Extract the level and make sure it exists.
+					 */
+					$level = array_shift( $path );
+					if ( !isset( $pointer[$level] ) ) {
+						$pointer[$level] = array();
+					}
+
+					/**
+					 * Update the pointer to the new reference.
+					 */
+					$tmpPointer = &$pointer[$level];
+					unset( $pointer );
+					$pointer = &$tmpPointer;
+					unset( $tmpPointer );
+
+					/**
+					 * If next level is the last, add it into the array.
+					 */
+					if ( count( $path ) === 1 ) {
+						$lastKey = array_shift( $path );
+						$pointer[$lastKey] = $valuePlural;
+					}
+				} while ( count( $path ) );
+			}
+		}
+
+		return $array;
+	}
+
 	/**
 	 * Flattens ruby plural arrays into special plural syntax.
 	 *
