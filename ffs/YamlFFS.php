@@ -8,6 +8,15 @@
  * @ingroup FFS
  */
 class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
+
+	/**
+   * @param $group FileBasedMessageGroup
+   */
+  public function __construct( FileBasedMessageGroup $group ) {
+	  parent::__construct( $group );
+		$this->flattener = $this->getFlattener();
+	}
+
 	public function getFileExtensions() {
 		return array( '.yaml', '.yml' );
 	}
@@ -123,6 +132,22 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	/**
+	 * Obtains object used to flatten and unflatten arrays. In this implementation
+	 * we use the ArrayFlattener class which also supports CLDR pluralization rules.
+	 *
+	 * @return object with flatten, unflatten methods
+	 */
+	protected function getFlattener() {
+		$nestingSeparator = isset( $this->extra['nestingSeparator'] ) ?
+			$this->extra['nestingSeparator'] : '.';
+		$parseCLDRPlurals = isset( $this->extra['parseCLDRPlurals'] ) ?
+			$this->extra['parseCLDRPlurals'] : false;
+
+		// Instantiate helper class for flattening and unflattening nested arrays
+		return new ArrayFlattener( $nestingSeparator, $parseCLDRPlurals );
+	}
+
+	/**
 	 * Flattens multidimensional array by using the path to the value as key
 	 * with each individual key separated by a dot.
 	 *
@@ -131,121 +156,20 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * @return array
 	 */
 	protected function flatten( $messages ) {
-		$flat = true;
-
-		foreach ( $messages as $v ) {
-			if ( !is_array( $v ) ) {
-				continue;
-			}
-
-			$flat = false;
-			break;
-		}
-
-		if ( $flat ) {
-			return $messages;
-		}
-
-		$array = array();
-		foreach ( $messages as $key => $value ) {
-			if ( !is_array( $value ) ) {
-				$array[$key] = $value;
-			} else {
-				$plural = $this->flattenPlural( $value );
-				if ( $plural ) {
-					$array[$key] = $plural;
-				} else {
-					$newArray = array();
-					foreach ( $value as $newKey => $newValue ) {
-						$newArray["$key.$newKey"] = $newValue;
-					}
-					$array += $this->flatten( $newArray );
-				}
-			}
-
-			/**
-			 * Can as well keep only one copy around.
-			 */
-			unset( $messages[$key] );
-		}
-
-		return $array;
+		return $this->flattener->flatten( $messages );
 	}
 
+
 	/**
-	 * Performs the reverse operation of flatten. Each dot in the key starts a
-	 * new subarray in the final array.
+	 * Performs the reverse operation of flatten. Each dot (or custom separator)
+	 * in the key starts a new subarray in the final array.
 	 *
 	 * @param $messages array
 	 *
 	 * @return array
 	 */
 	protected function unflatten( $messages ) {
-		$array = array();
-		foreach ( $messages as $key => $value ) {
-			$plurals = $this->unflattenPlural( $key, $value );
-
-			if ( $plurals === false ) {
-				continue;
-			}
-
-			foreach ( $plurals as $keyPlural => $valuePlural ) {
-				$path = explode( '.', $keyPlural );
-				if ( count( $path ) === 1 ) {
-					$array[$keyPlural] = $valuePlural;
-					continue;
-				}
-
-				$pointer = &$array;
-				do {
-					/**
-					 * Extract the level and make sure it exists.
-					 */
-					$level = array_shift( $path );
-					if ( !isset( $pointer[$level] ) ) {
-						$pointer[$level] = array();
-					}
-
-					/**
-					 * Update the pointer to the new reference.
-					 */
-					$tmpPointer = &$pointer[$level];
-					unset( $pointer );
-					$pointer = &$tmpPointer;
-					unset( $tmpPointer );
-
-					/**
-					 * If next level is the last, add it into the array.
-					 */
-					if ( count( $path ) === 1 ) {
-						$lastKey = array_shift( $path );
-						$pointer[$lastKey] = $valuePlural;
-					}
-				} while ( count( $path ) );
-			}
-		}
-
-		return $array;
-	}
-
-	/**
-	 * @param $value
-	 * @return bool
-	 */
-	public function flattenPlural( $value ) {
-		return false;
-	}
-
-	/**
-	 * Override this. Return false to skip processing this value. Otherwise
-	 *
-	 * @param $key string
-	 * @param $value string
-	 *
-	 * @return array with keys and values.
-	 */
-	public function unflattenPlural( $key, $value ) {
-		return array( $key => $value );
+		return $this->flattener->unflatten( $messages );
 	}
 
 	public static function getExtraSchema() {
@@ -259,6 +183,12 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 							'codeAsRoot' => array(
 								'_type' => 'boolean',
 							),
+							'nestingSeparator' => array(
+								'_type' => 'text',
+							),
+							'parseCLDRPlurals' => array(
+								'_type' => 'boolean',
+							)
 						)
 					)
 				)
