@@ -116,6 +116,9 @@
 	"logentry-pagetranslation-prioritylanguages-force": "$1 {{GENDER:$2|restringiu}} as línguas para a página traduzível $3 a $5",
 	"logentry-pagetranslation-associate": "$1 {{GENDER:$2|adicionou}} a página traduzível $3 ao grupo agregador $4",
 	"logentry-pagetranslation-dissociate": "$1 {{GENDER:$2|removeu}} a página traduzível $3 do grupo agregador $4",
+	"log-action-filter-pagetranslation": "Tipo de ação:",
+	"log-action-filter-pagetranslation-mark": "Marcar para tradução",
+	"log-action-filter-pagetranslation-unmark": "Remover das páginas para tradução",
 	"pt-movepage-title": "Mover a página traduzível $1",
 	"pt-movepage-blockers": "A página traduzível não pode ser movida para outro nome devido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:",
 	"pt-movepage-block-base-exists": "A página traduzível de destino \"[[:$1]]\" já existe.",
@@ -195,6 +198,8 @@
 	"pp-pagename-missing": "Por favor, introduza o nome da página.",
 	"pp-diff-old-header": "Texto-fonte",
 	"pp-diff-new-header": "Texto preparado",
+	"tpt-unlink-button": "Remover da tradução",
+	"tpt-unlink-summary": "Remover das páginas para tradução",
 	"tpt-generic-confirm": "Por favor, confirme a ação.",
 	"tpt-generic-button": "Confirmar"
 }
