@@ -751,7 +751,7 @@
 
 				$saveButton = $( '<button>' )
 					.prop( 'disabled', true )
-					.addClass( 'tux-editor-save-button mw-ui-button mw-ui-progressive mw-ui-big' )
+					.addClass( 'tux-editor-save-button mw-ui-button mw-ui-progressive' )
 					.text( mw.msg( 'tux-editor-save-button-label' ) )
 					.on( 'click', function ( e ) {
 						translateEditor.save();
@@ -787,7 +787,7 @@
 			}
 
 			$skipButton = $( '<button>' )
-				.addClass( 'tux-editor-skip-button mw-ui-button mw-ui-quiet mw-ui-big' )
+				.addClass( 'tux-editor-skip-button mw-ui-button mw-ui-quiet' )
 				.text( mw.msg( 'tux-editor-skip-button-label' ) )
 				.on( 'click', function ( e ) {
 					translateEditor.skip();
@@ -802,7 +802,7 @@
 
 			// This appears instead of "Skip" on the last message on the page
 			$cancelButton = $( '<button>' )
-				.addClass( 'tux-editor-cancel-button mw-ui-button mw-ui-quiet mw-ui-big' )
+				.addClass( 'tux-editor-cancel-button mw-ui-button mw-ui-quiet' )
 				.text( mw.msg( 'tux-editor-cancel-button-label' ) )
 				.on( 'click', function ( e ) {
 					translateEditor.skip();
