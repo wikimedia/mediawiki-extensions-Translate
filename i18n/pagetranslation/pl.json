@@ -187,7 +187,7 @@
 	"pm-pagetitle-placeholder": "Podaj tytuł strony",
 	"pm-pagetitle-invalid": "Podaj poprawny tytuł strony. Powinien być w formacie <page-name>/<language-code>.",
 	"pm-pagetitle-missing": "Podaj tytuł strony.",
-	"pm-langcode-missing": "Proszę podać kod języka",
+	"pm-langcode-missing": "Wydaje się, że w tytule brakuje kodu języka. Wprowadź tytuł strony w formacie <nazwa strony>/<kod języka>.",
 	"pm-summary-import": "Importowane tłumaczenie za pomocą [[Special:PageMigration|migracji strony]]",
 	"tpt-translate-title": "Umożliwienie tłumaczenia tytułu strony",
 	"pp-save-summary": "Przygotowano stronę do tłumaczenia",
