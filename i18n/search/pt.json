@@ -16,7 +16,6 @@
 	"tux-sst-count": "{{PLURAL:$1|Foi encontrado um resultado|Foram encontrados $1 resultados}}",
 	"tux-sst-facet-language": "Idiomas",
 	"tux-sst-facet-group": "Grupos de mensagens",
-	"tux-sst-facet-orphan": "(orfãs)",
 	"tux-sst-nosolr-title": "Pesquisa indisponível",
 	"tux-sst-nosolr-body": "Esta wiki não tem um serviço de pesquisa de traduções.",
 	"tux-sst-solr-offline-title": "Pesquisa indisponível",
@@ -29,7 +28,7 @@
 	"tux-sst-outdated": "Traduções desatualizadas de $1",
 	"tux-sst-ellipsis-untranslated": "Nenhuma tradução",
 	"tux-sst-ellipsis-outdated": "Traduções desatualizadas",
-	"tux-sst-link-all-match": "Solicitar todas as palavras.",
-	"tux-sst-match-message": "Mostrar as traduções que correspondam a nenhuma das palavras pesquisadas. $1",
+	"tux-sst-link-all-match": "Traduções com todas as palavras pesquisadas.",
+	"tux-sst-match-message": "A mostrar as traduções que contêm qualquer das palavras pesquisadas. $1",
 	"tux-sst-case-sensitive": "Maiúsculas e minúsculas"
 }
