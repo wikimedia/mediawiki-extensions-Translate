@@ -30,7 +30,7 @@
 	"translate-page-no-such-group": "Наведена група није исправна.",
 	"translate-page-disabled": "Преводи на овом језику у овој групи су онемогућени. Разлог:\n\n<em>$1</em>",
 	"translate-language-disabled": "Превођење на овај језик је онемогућено.",
-	"translate-page-settings-legend": "Поставке",
+	"translate-page-settings-legend": "Подешавања",
 	"translate-page-group": "Група:",
 	"translate-page-language": "Језик:",
 	"translate-page-limit": "Ограничење:",
