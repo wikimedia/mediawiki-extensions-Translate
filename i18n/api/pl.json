@@ -9,6 +9,7 @@
 	"apihelp-query+languagestats-param-language": "Kod języka.",
 	"apihelp-query+messagecollection-param-group": "Grupa komunikatów.",
 	"apihelp-query+messagecollection-param-language": "Kod języka.",
+	"apihelp-query+messagecollection-param-limit": "Liczba komunikatów do pokazania (po filtrowaniu).",
 	"apihelp-query+messagecollection-example-1": "Lista obsługiwanych języków",
 	"apihelp-query+messagegroups-param-iconsize": "Preferowany rozmiar zrasteryzowanej grupy ikon.",
 	"apihelp-query+messagegroups-example-1": "Pokaż grupy komunikatów",
