@@ -17,7 +17,7 @@ class TranslateMetadata {
 	 * Get a metadata value for the given group and key.
 	 * @param $group string The group name
 	 * @param $key string Metadata key
-	 * @return String
+	 * @return string|bool
 	 */
 	public static function get( $group, $key ) {
 		if ( self::$cache === null ) {
@@ -63,9 +63,8 @@ class TranslateMetadata {
 	/**
 	 * Wrapper for getting subgroups.
 	 * @param string $groupId
-	 * @return array|String
+	 * @return array|bool
 	 * @since 2012-05-09
-	 * return array|false
 	 */
 	public static function getSubgroups( $groupId ) {
 		$groups = self::get( $groupId, 'subgroups' );
