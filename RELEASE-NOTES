@@ -1,0 +1,14 @@
+== Translate 2016.10 ==
+Released at 2016-10-28.
+
+=== Noteworthy changes ===
+* Glaisher improved how Translate checks and enforces restrictions for non-translatable languages.
+* C0nnex taught Translate to support new authentication method for Microsoft Translate API. T46679
+* Niklas Laxström removed the broken new line handling from Microsoft Translate API support. T60121
+* Jon Robson and Niklas Laxström made Special:Translate work with Mobile Frontend. T102922
+* Niklas Laxström polished Special:Translate to work better in mobile devices. T146134
+* Glaisher added way to access wikitext editor from Special:Translate. T48955
+* Federico Leva and Niklas Laxström made "hide own translations" button in Special:Translate only appear when relevant. T50972
+* Erik Moeller added support for explicitly chosen namespace constant in wfAddNamespace.
+* Niklas Laxström fixed an issue causing email confirmation emails to be sent twice for sandbox users. T147570
+* Erik Moeller added support for CLDR-style plural keywords to JSON file format support.
