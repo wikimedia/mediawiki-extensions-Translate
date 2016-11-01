@@ -89,7 +89,7 @@
 	"translate-checks-plural": "Крынічны тэкст выкарыстоўвае <nowiki>{{PLURAL:}}</nowiki>, а пераклад — не.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> быў выкарыстаны {{PLURAL:$1|1=з адной формай|з $1 формамі}}, але {{PLURAL:$2|падтрымліваецца $2 форма|падтрымліваюцца $2 формы|падтрымліваюцца $2 формаў}} (за выняткам формаў 0= і 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> мае аднолькавыя формы на канцы. <nowiki>{{PLURAL:$1|мэтро|мэтро}}</nowiki> мусіць быць замененае на <nowiki>{{PLURAL:$1|мэтро}}</nowiki>.",
-	"translate-checks-pagename": "Прастора назваў зьменена ў крынічным тэксьце",
+	"translate-checks-pagename": "Прастора назваў зьмененая ў крынічным тэксьце",
 	"translate-checks-format": "Гэты пераклад няслушна перакладае крынічны тэкст альбо ўтрымлівае сынтаксычныя памылкі: $1",
 	"translate-checks-escape": "Наступнае выдзяленьне можа быць выпадковым: <strong>$1</strong>",
 	"translate-checks-parametersnotequal": "Колькасьць парамэтраў — {{PLURAL:$1|$1}}, а мусіць быць — $2.",

@@ -131,7 +131,7 @@
 	"pt-movepage-block-subpage-invalid": "O título da subpágina de destino para [[:$1]] seria inválido (talvez demasiado longo).",
 	"pt-movepage-list-pages": "Lista de páginas para serem movidas",
 	"pt-movepage-list-translation": "{{PLURAL:$1|Página|Páginas}} de tradução",
-	"pt-movepage-list-section": "{{PLURAL:$1|Página|Páginas}} de seção",
+	"pt-movepage-list-section": "{{PLURAL:$1|Página|Páginas}} de secção",
 	"pt-movepage-list-other": "{{PLURAL:$1|Outra subpágina|Outras subpáginas}}",
 	"pt-movepage-list-count": "No total, $1 {{PLURAL:$1|página para ser movida|páginas para serem movidas}}.",
 	"pt-movepage-legend": "Mover página traduzível",

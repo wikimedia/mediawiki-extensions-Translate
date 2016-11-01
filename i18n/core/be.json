@@ -4,7 +4,8 @@
 			"Nemo bis",
 			"Чаховіч Уладзіслаў",
 			"Дзяніс Тутэйшы",
-			"Mikalai Udodau"
+			"Mikalai Udodau",
+			"Irus"
 		]
 	},
 	"translate": "Пераклад",
@@ -52,9 +53,7 @@
 	"translate-edit-no-information": "''Гэта паведамленне не мае апісанні. Калі вы ведаеце, дзе ці як гэта паведамленне выкарыстоўваецца, то можаце дапамагчы іншым перакладчыкам, дадаўшы да яго апісанне.''",
 	"translate-edit-information": "Інфармацыя пра паведамленне ($1)",
 	"translate-edit-in-other-languages": "Паведамленне на іншых мовах",
-	"translate-edit-committed": "Бягучы пераклад у праграме",
 	"translate-edit-warnings": "Папярэджанні пра няпоўныя пераклады",
-	"translate-edit-tmsugs": "Прапановы з памяці перакладаў",
 	"translate-edit-tmmatch-source": "Тэкст зыходнага паведамлення для перакладу: $1",
 	"translate-edit-tmmatch": "$1% адпаведнасць",
 	"translate-use-suggestion": "Замяніць бягучы тэкст перакладу на гэту падказку.",
@@ -132,6 +131,9 @@
 	"translate-statsf-count-registrations": "Новыя ўдзельнікі",
 	"translate-statsf-count-reviews": "Рэцэнзенты перакладу",
 	"translate-statsf-count-reviewers": "Рэцэнзенты",
+	"supportedlanguages": "Падтрымліваюцца мовы",
+	"supportedlanguages-summary": "На гэтай старонцы прыведзены спіс падтрымоўваных праектам {{SITENAME}} моў\nразам з імёнамі тых, хто тут працуе над перакладамі на гэтыя мовы.\nІмя перакладчыка адлюстроўваецца тым буйней, чым больш правак ён зрабіў.\nПа колер падкрэслення можна зразумець, наколькі даўно перакладчык апошні раз здзяйсняў тут якое-небудзь дзеянне.",
+	"supportedlanguages-count": "Усяго $1 {{PLURAL:$1|мова|мовы|моў}}.",
 	"translate-js-support": "Задаць пытанне",
 	"translate-documentation-language": "Дакументацыя паведамлення"
 }
