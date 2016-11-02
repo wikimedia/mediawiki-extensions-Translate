@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4eb4ebfb_879129fe",
+        "filename": "ffs/YamlFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-11-02T07:54:48Z",
+      "side": 1,
+      "message": "Doesn\u0027t take param.",
+      "revId": "f5c7f1f961c523ced75560da5adf0e529840f390",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
