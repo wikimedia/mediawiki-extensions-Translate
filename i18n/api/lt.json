@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eitvys200"
+		]
+	},
+	"apihelp-translationstash-param-subaction": "Veiksmas.",
+	"apihelp-translationstash-param-metadata": "JSON objektas.",
+	"apihelp-searchtranslations-description": "Ieškoti vertimų.",
+	"apihelp-searchtranslations-param-limit": "Rezultato dydis.",
+	"apihelp-searchtranslations-example-1": "Rodyti kalbos vertimus."
+}
