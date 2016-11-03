@@ -351,4 +351,8 @@ class SimpleFFS implements FFS {
 
 		return $data;
 	}
+
+	public function isContentEqual( $a, $b ) {
+		return $a === $b;
+	}
 }

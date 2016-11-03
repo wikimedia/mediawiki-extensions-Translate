@@ -171,6 +171,10 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		return $this->flattener->unflatten( $messages );
 	}
 
+	public function isContentEqual( $a, $b ) {
+		return $this->flattener->compareContent( $a, $b );
+	}
+
 	public static function getExtraSchema() {
 		$schema = array(
 			'root' => array(
