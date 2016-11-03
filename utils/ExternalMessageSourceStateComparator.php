@@ -149,6 +149,7 @@ class ExternalMessageSourceStateComparator {
 			$wikiMessage = $wiki[$key];
 			$wikiContent = $wikiMessage->translation();
 
+			// @todo: Fuzzy checking can also be moved to $ffs->isContentEqual();
 			// If FFS doesn't support it, ignore fuzziness as difference
 			$wikiContent = str_replace( TRANSLATE_FUZZY, '', $wikiContent );
 
@@ -157,7 +158,7 @@ class ExternalMessageSourceStateComparator {
 				$wikiContent = TRANSLATE_FUZZY . $wikiContent;
 			}
 
-			if ( self::compareContent( $sourceContent, $wikiContent ) ) {
+			if ( $ffs->isContentEqual( $sourceContent, $wikiContent ) ) {
 				// File and wiki stage agree, nothing to do
 				continue;
 			}
@@ -173,8 +174,8 @@ class ExternalMessageSourceStateComparator {
 				 * Hence we check that source === cache && cache !== wiki
 				 * and if so we skip this string. */
 				if (
-					!self::compareContent( $wikiContent, $cacheContent ) &&
-					self::compareContent( $sourceContent, $cacheContent )
+					!$ffs->isContentEqual( $wikiContent, $cacheContent ) &&
+					$ffs->isContentEqual( $sourceContent, $cacheContent )
 				) {
 					continue;
 				}
@@ -215,18 +216,5 @@ class ExternalMessageSourceStateComparator {
 			'key' => $key,
 			'content' => $content,
 		);
-	}
-
-	/**
-	 * Compares two strings.
-	 * @todo Ignore changes in different way inlined plurals.
-	 * @todo Handle fuzzy state changes if FFS supports it.
-	 *
-	 * @param string $a
-	 * @param string $b
-	 * @return bool Whether two strings are equal
-	 */
-	protected static function compareContent( $a, $b ) {
-		return $a === $b;
 	}
 }

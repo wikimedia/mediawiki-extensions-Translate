@@ -76,6 +76,16 @@ interface FFS {
 	public function supportsFuzzy();
 
 	/**
+	 * Checks whether two strings are equal. Sometimes same content might
+	 * have multiple representations. The main case are inline plurals,
+	 * which in some formats require expansion at export time.
+	 *
+	 * @return bool
+	 * @since 2016.11
+	 */
+	public function isContentEqual();
+
+	/**
 	 * Return the commonly used file extensions for these formats.
 	 * Include the dot.
 	 * @return string[]

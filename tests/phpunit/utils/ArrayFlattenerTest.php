@@ -7,7 +7,7 @@
  * @license GPL-2.0+
  */
 
-class ArrayFlattenerTest extends MediaWikiTestCase {
+class ArrayFlattenerTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider provideTestFlatten
 	 */
@@ -163,4 +163,87 @@ class ArrayFlattenerTest extends MediaWikiTestCase {
 		return $cases;
 	}
 
+	/**
+	 * @dataProvider provideMatchingValues
+	 */
+	public function testCompareTrue( $input1, $input2 ) {
+		$flattener = new ArrayFlattener( '.', true );
+
+		$this->assertTrue(
+			$flattener->compareContent( $input1, $input2, $flattener )
+		);
+	}
+
+	/**
+	 * @dataProvider provideNonMatchingValues
+	 */
+	public function testCompareFalse( $input1, $input2 ) {
+		$flattener = new ArrayFlattener( '.', true );
+
+		$this->assertfalse(
+			$flattener->compareContent( $input1, $input2, $flattener )
+		);
+	}
+
+	public static function provideMatchingValues() {
+		$cases = array();
+
+		// We include some non-plural data to ensure it is processed correctly
+		$cases[] = array(
+			'a',
+			'a'
+		);
+
+		$cases[] = array(
+			'{{PLURAL|one=cat|cats}}',
+			'{{PLURAL|one=cat|cats}}',
+		);
+
+		$cases[] = array(
+			'Give me {{PLURAL|one=a cat|cats}}',
+			'{{PLURAL|one=Give me a cat|Give me cats}}',
+		);
+
+		// Order should not matter
+		$cases[] = array(
+			'{{PLURAL|one=Give me a cat|Give me cats}}',
+			'Give me {{PLURAL|one=a cat|cats}}',
+		);
+
+		// Multiple inlines
+		$cases[] = array(
+			'Test {{PLURAL|one=one|other}} and {{PLURAL|one=one|other}} and {{PLURAL|one=one|other}}!',
+			'{{PLURAL|one=Test one and one and one|Test other and other and other}}!',
+		);
+
+		// Lots of keys
+		$cases[] = array(
+			'Is {{PLURAL|zero=zero|one=one|two=two|few=few|many=many|other}}',
+			'{{PLURAL|zero=Is zero|one=Is one|two=Is two|few=Is few|many=Is many|Is other}}',
+		);
+
+		return $cases;
+	}
+
+	public static function provideNonMatchingValues() {
+		$cases = array();
+
+		$cases[] = array(
+			'a',
+			'b'
+		);
+
+		$cases[] = array(
+			'{{PLURAL|one=cat|cats}}',
+			'{{PLURAL|one=dog|dogs}}',
+		);
+
+		// Different set of keys
+		$cases[] = array(
+			'Is {{PLURAL|zero=zero|one=one|two=two|few=few|other}}',
+			'{{PLURAL|zero=Is zero|two=Is two|few=Is few|many=Is many|Is other}}',
+		);
+
+		return $cases;
+	}
 }
