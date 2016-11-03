@@ -24,6 +24,14 @@ class JsonFFS extends SimpleFFS {
 		return is_array( FormatJson::decode( $data, /*as array*/true ) );
 	}
 
+	/**
+	 * @param $group FileBasedMessageGroup
+	 */
+	public function __construct( FileBasedMessageGroup $group ) {
+		parent::__construct( $group );
+		$this->flattener = $this->getFlattener();
+	}
+
 	public function getFileExtensions() {
 		return array( '.json' );
 	}
@@ -48,12 +56,8 @@ class JsonFFS extends SimpleFFS {
 
 		unset( $messages['@metadata'] );
 
-		if ( isset( $this->extra['nestingSeparator'] ) ) {
-			$parseCLDRPlurals = isset( $this->extra['parseCLDRPlurals'] ) ?
-				$this->extra['parseCLDRPlurals'] : false;
-			$flattener = new ArrayFlattener( $this->extra['nestingSeparator'],
-				$parseCLDRPlurals );
-			$messages = $flattener->flatten( $messages );
+		if ( $this->flattener ) {
+			$messages = $this->flattener->flatten( $messages );
 		}
 
 		$messages = $this->group->getMangler()->mangle( $messages );
@@ -113,15 +117,31 @@ class JsonFFS extends SimpleFFS {
 			return '';
 		}
 
-		if ( isset( $this->extra['nestingSeparator'] ) ) {
-			$parseCLDRPlurals = isset( $this->extra['parseCLDRPlurals'] ) ?
-				$this->extra['parseCLDRPlurals'] : false;
-			$flattener = new ArrayFlattener( $this->extra['nestingSeparator'],
-				$parseCLDRPlurals );
-			$messages = $flattener->unflatten( $messages );
+		if ( $this->flattener ) {
+			$messages = $this->flattener->unflatten( $messages );
 		}
 
 		return FormatJson::encode( $messages, "\t", FormatJson::ALL_OK ) . "\n";
+	}
+
+	protected function getFlattener() {
+		if ( !isset( $this->extra['nestingSeparator'] ) ) {
+			return null;
+		}
+
+		$parseCLDRPlurals = isset( $this->extra['parseCLDRPlurals'] ) ?
+			$this->extra['parseCLDRPlurals'] : false;
+		$flattener = new ArrayFlattener( $this->extra['nestingSeparator'], $parseCLDRPlurals );
+
+		return $flattener;
+	}
+
+	public function isContentEqual( $a, $b ) {
+		if ( $this->flattener ) {
+			return $this->flattener->compareContent( $a, $b );
+		} else {
+			return parent::isContentEqual( $a, $b );
+		}
 	}
 
 	public static function getExtraSchema() {
