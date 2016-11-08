@@ -24,7 +24,8 @@
 			"Volkov",
 			"Александр Сигачёв",
 			"Туллук",
-			"Irus"
+			"Irus",
+			"Kareyac"
 		]
 	},
 	"translate": "Перевод",
@@ -194,7 +195,7 @@
 	"translate-mgs-fieldset": "Показать настройки",
 	"translate-mgs-group": "Группа сообщений:",
 	"translate-mgs-nocomplete": "Не показывать языки, перевод на которые полностью завершён",
-	"translate-mgs-noempty": "Не показывать языки, перевод на которые еще на начинался",
+	"translate-mgs-noempty": "Не показывать языки, перевод на которые еще не начинался",
 	"translate-mgs-submit": "Показать статистику",
 	"translate-mgs-column-language": "Язык",
 	"translate-mgs-totals": "Все языки",
