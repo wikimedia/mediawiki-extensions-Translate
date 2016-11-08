@@ -23,10 +23,18 @@ class ApiTranslationStash extends ApiBase {
 			if ( $this->getUser()->isAllowed( 'translate-sandboxmanage' ) ) {
 				$user = User::newFromName( $params['username'] );
 				if ( !$user ) {
-					$this->dieUsageMsg( array( 'invalidparam', 'username' ) );
+					if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+						$this->dieWithError( array( 'apierror-badparameter', 'username' ), 'invalidparam' );
+					} else {
+						$this->dieUsageMsg( array( 'invalidparam', 'username' ) );
+					}
 				}
 			} else {
-				$this->dieUsageMsg( array( 'invalidparam', 'username' ) );
+				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+					$this->dieWithError( array( 'apierror-badparameter', 'username' ), 'invalidparam' );
+				} else {
+					$this->dieUsageMsg( array( 'invalidparam', 'username' ) );
+				}
 			}
 		}
 
@@ -35,10 +43,18 @@ class ApiTranslationStash extends ApiBase {
 
 		if ( $action === 'add' ) {
 			if ( !isset( $params['title'] ) ) {
-				$this->dieUsageMsg( array( 'missingparam', 'title' ) );
+				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+					$this->dieWithError( array( 'apierror-missingparam', 'title' ) );
+				} else {
+					$this->dieUsageMsg( array( 'missingparam', 'title' ) );
+				}
 			}
 			if ( !isset( $params['translation'] ) ) {
-				$this->dieUsageMsg( array( 'missingparam', 'translation' ) );
+				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+					$this->dieWithError( array( 'apierror-missingparam', 'translation' ) );
+				} else {
+					$this->dieUsageMsg( array( 'missingparam', 'translation' ) );
+				}
 			}
 
 			// @todo: Return value of Title::newFromText not checked

@@ -65,15 +65,23 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 
 		$title = Title::newFromText( $params['title'] );
 		if ( !$title ) {
-			$this->dieUsage( 'Invalid title', 'invalidtitle' );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( [ 'apierror-invalidtitle', wfEscapeWikiText( $params['title'] ) ] );
+			} else {
+				$this->dieUsage( 'Invalid title', 'invalidtitle' );
+			}
 		}
 
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
-			$this->dieUsage(
-				'Title does not correspond to a translatable message',
-				'nomessagefortitle'
-			);
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( 'apierror-translate-nomessagefortitle', 'nomessagefortitle' );
+			} else {
+				$this->dieUsage(
+					'Title does not correspond to a translatable message',
+					'nomessagefortitle'
+				);
+			}
 		}
 
 		$namespace = $title->getNamespace();

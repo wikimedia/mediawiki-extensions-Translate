@@ -15,15 +15,23 @@ class ApiTranslationReview extends ApiBase {
 	protected static $right = 'translate-messagereview';
 
 	public function execute() {
-		if ( !$this->getUser()->isAllowed( self::$right ) ) {
-			$this->dieUsage( 'Permission denied', 'permissiondenied' );
+		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
+			$this->checkUserRightsAny( self::$right );
+		} else {
+			if ( !$this->getUser()->isAllowed( self::$right ) ) {
+				$this->dieUsage( 'Permission denied', 'permissiondenied' );
+			}
 		}
 
 		$params = $this->extractRequestParams();
 
 		$revision = Revision::newFromId( $params['revision'] );
 		if ( !$revision ) {
-			$this->dieUsage( 'Invalid revision', 'invalidrevision' );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( [ 'apierror-nosuchrevid', $params['revision'] ], 'invalidrevision' );
+			} else {
+				$this->dieUsage( 'Invalid revision', 'invalidrevision' );
+			}
 		}
 
 		$error = self::getReviewBlockers( $this->getUser(), $revision );
@@ -32,27 +40,55 @@ class ApiTranslationReview extends ApiBase {
 				// Everything is okay
 				break;
 			case 'permissiondenied':
-				$this->dieUsage( 'Permission denied', $error );
+				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+					$this->dieWithError( 'apierror-permissiondenied-generic', 'permissiondenied' );
+				} else {
+					$this->dieUsage( 'Permission denied', $error );
+				}
 				break; // Unreachable, but throws off code analyzer.
 			case 'blocked':
-				$this->dieUsage( 'You have been blocked', $error );
+				if ( is_callable( [ $this, 'dieBlocked' ] ) ) {
+					$this->dieBlocked( $this->getUser()->getBlock() );
+				} else {
+					$this->dieUsage( 'You have been blocked', $error );
+				}
 				break; // Unreachable, but throws off code analyzer.
 			case 'unknownmessage':
-				$this->dieUsage( 'Unknown message', $error );
+				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+					$this->dieWithError( 'apierror-translate-unknownmessage', $error );
+				} else {
+					$this->dieUsage( 'Unknown message', $error );
+				}
 				break; // Unreachable, but throws off code analyzer.
 			case 'owntranslation':
-				$this->dieUsage( 'Cannot review own translations', $error );
+				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+					$this->dieWithError( 'apierror-translate-owntranslation', $error );
+				} else {
+					$this->dieUsage( 'Cannot review own translations', $error );
+				}
 				break; // Unreachable, but throws off code analyzer.
 			case 'fuzzymessage':
-				$this->dieUsage( 'Cannot review fuzzy translations', $error );
+				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+					$this->dieWithError( 'apierror-translate-fuzzymessage', $error );
+				} else {
+					$this->dieUsage( 'Cannot review fuzzy translations', $error );
+				}
 				break; // Unreachable, but throws off code analyzer.
 			default:
-				$this->dieUsage( 'Unknown error', $error );
+				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+					$this->dieWithError( [ 'apierror-unknownerror', $error ], $error );
+				} else {
+					$this->dieUsage( 'Unknown error', $error );
+				}
 		}
 
 		$ok = self::doReview( $this->getUser(), $revision );
 		if ( !$ok ) {
-			$this->setWarning( 'Already marked as reviewed by you' );
+			if ( is_callable( [ $this, 'addWarning' ] ) ) {
+				$this->addWarning( 'apiwarn-translate-alreadyreviewedbyyou' );
+			} else {
+				$this->setWarning( 'Already marked as reviewed by you' );
+			}
 		}
 
 		$output = array( 'review' => array(

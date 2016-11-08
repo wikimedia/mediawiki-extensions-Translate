@@ -85,5 +85,22 @@
 	"apihelp-searchtranslations-param-offset": "Offset for the translations.",
 	"apihelp-searchtranslations-param-limit": "Size of the result.",
 	"apihelp-searchtranslations-example-1": "Show translations for the language.",
-	"apihelp-searchtranslations-example-2": "Show untranslated messages matching the query in the source language."
+	"apihelp-searchtranslations-example-2": "Show untranslated messages matching the query in the source language.",
+	"apierror-translate-duplicateaggregategroup": "Message group already exists",
+	"apierror-translate-fuzzymessage": "Cannot review fuzzy translations",
+	"apierror-translate-groupreviewdisabled": "Message group review not in use.",
+	"apierror-translate-invalidaggregategroup": "Invalid aggregate message group",
+	"apierror-translate-invalidaggregategroupname": "Invalid aggregate message group name",
+	"apierror-translate-invalidfilter": "$1",
+	"apierror-translate-invalidgroup": "Group does not exist or invalid",
+	"apierror-translate-invalidstate": "The requested state is invalid.",
+	"apierror-translate-invalidupdate": "Invalid update",
+	"apierror-translate-language-disabled": "Translation to this language is disabled",
+	"apierror-translate-nodynamicgroups": "Dynamic message groups are not supported here",
+	"apierror-translate-nomessagefortitle": "Title does not correspond to a translatable message",
+	"apierror-translate-owntranslation": "Cannot review own translations",
+	"apierror-translate-sandboxdisabled": "Sandbox feature is not in use",
+	"apierror-translate-sandbox-invalidparam": "$1",
+	"apierror-translate-unknownmessage": "Unknown message",
+	"apiwarn-translate-alreadyreviewedbyyou": "Already marked as reviewed by you"
 }
