@@ -18,15 +18,23 @@ class ApiTranslationAids extends ApiBase {
 
 		$title = Title::newFromText( $params['title'] );
 		if ( !$title ) {
-			$this->dieUsage( 'Invalid title', 'invalidtitle' );
+			if ( method_exists( $this, 'dieWithError' ) ) {
+				$this->dieWithError( array( 'apierror-invalidtitle', wfEscapeWikiText( $params['title'] ) ) );
+			} else {
+				$this->dieUsage( 'Invalid title', 'invalidtitle' );
+			}
 		}
 
 		$handle = new MessageHandle( $title );
 		if ( !$handle->isValid() ) {
-			$this->dieUsage(
-				'Title does not correspond to a translatable message',
-				'nomessagefortitle'
-			);
+			if ( method_exists( $this, 'dieWithError' ) ) {
+				$this->dieWithError( 'apierror-translate-nomessagefortitle', 'nomessagefortitle' );
+			} else {
+				$this->dieUsage(
+					'Title does not correspond to a translatable message',
+					'nomessagefortitle'
+				);
+			}
 		}
 
 		if ( (string)$params['group'] !== '' ) {
@@ -36,7 +44,11 @@ class ApiTranslationAids extends ApiBase {
 		}
 
 		if ( !$group ) {
-			$this->dieUsage( 'Invalid group', 'invalidgroup' );
+			if ( method_exists( $this, 'dieWithError' ) ) {
+				$this->dieWithError( 'apierror-translate-invalidgroup', 'invalidgroup' );
+			} else {
+				$this->dieUsage( 'Invalid group', 'invalidgroup' );
+			}
 		}
 
 		$data = array();

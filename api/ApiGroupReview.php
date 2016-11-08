@@ -22,38 +22,67 @@ class ApiGroupReview extends ApiBase {
 		$code = $requestParams['language'];
 
 		if ( !$group || MessageGroups::isDynamic( $group ) ) {
-			$this->dieUsageMsg( array( 'missingparam', 'group' ) );
+			if ( method_exists( $this, 'dieWithError' ) ) {
+				$this->dieWithError( array( 'apierror-missingparam', 'group' ) );
+			} else {
+				$this->dieUsageMsg( array( 'missingparam', 'group' ) );
+			}
 		}
 		$stateConfig = $group->getMessageGroupStates()->getStates();
 		if ( !$stateConfig ) {
-			$this->dieUsage( 'Message group review not in use', 'disabled' );
+			if ( method_exists( $this, 'dieWithError' ) ) {
+				$this->dieWithError( 'apierror-translate-groupreviewdisabled', 'disabled' );
+			} else {
+				$this->dieUsage( 'Message group review not in use', 'disabled' );
+			}
 		}
 
-		if ( !$user->isAllowed( self::$right ) ) {
-			$this->dieUsage( 'Permission denied', 'permissiondenied' );
+		if ( method_exists( $this, 'checkUserRightsAny' ) ) {
+			$this->checkUserRightsAny( self::$right );
+		} else {
+			if ( !$user->isAllowed( self::$right ) ) {
+				$this->dieUsage( 'Permission denied', 'permissiondenied' );
+			}
 		}
 
 		if ( $user->isBlocked() ) {
-			$this->dieUsage( 'You have been blocked', 'blocked' );
+			if ( method_exists( $this, 'dieBlocked' ) ) {
+				$this->dieBlocked( $user->getBlock() );
+			} else {
+				$this->dieUsage( 'You have been blocked', 'blocked' );
+			}
 		}
 
 		$requestParams = $this->extractRequestParams();
 
 		$languages = Language::fetchLanguageNames();
 		if ( !isset( $languages[$code] ) ) {
-			$this->dieUsageMsg( array( 'missingparam', 'language' ) );
+			if ( method_exists( $this, 'dieWithError' ) ) {
+				$this->dieWithError( array( 'apierror-missingparam', 'language' ) );
+			} else {
+				$this->dieUsageMsg( array( 'missingparam', 'language' ) );
+			}
 		}
 
 		$targetState = $requestParams['state'];
 		if ( !isset( $stateConfig[$targetState] ) ) {
-			$this->dieUsage( 'The requested state is invalid', 'invalidstate' );
+			if ( method_exists( $this, 'dieWithError' ) ) {
+				$this->dieWithError( 'apierror-translate-invalidstate', 'invalidstate' );
+			} else {
+				$this->dieUsage( 'The requested state is invalid', 'invalidstate' );
+			}
 		}
 
 		if ( is_array( $stateConfig[$targetState] )
 			&& isset( $stateConfig[$targetState]['right'] )
-			&& !$user->isAllowed( $stateConfig[$targetState]['right'] )
 		) {
-			$this->dieUsage( 'Permission denied', 'permissiondenied' );
+			if ( method_exists( $this, 'checkUserRightsAny' ) ) {
+				$this->checkUserRightsAny( $stateConfig[$targetState]['right'] );
+			} else {
+				if ( !$user->isAllowed( $stateConfig[$targetState]['right'] ) ) {
+					$this->dieUsage( 'Permission denied', 'permissiondenied' );
+				}
+			}
 		}
 
 		self::changeState( $group, $code, $targetState, $user );

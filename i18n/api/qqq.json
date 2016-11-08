@@ -90,5 +90,22 @@
 	"apihelp-searchtranslations-param-offset": "{{doc-apihelp-param|searchtranslations|offset}}",
 	"apihelp-searchtranslations-param-limit": "{{doc-apihelp-param|searchtranslations|limit}}",
 	"apihelp-searchtranslations-example-1": "{{doc-apihelp-example|searchtranslations}}",
-	"apihelp-searchtranslations-example-2": "{{doc-apihelp-example|searchtranslations}}"
+	"apihelp-searchtranslations-example-2": "{{doc-apihelp-example|searchtranslations}}",
+	"apierror-translate-duplicateaggregategroup": "{{doc-apierror}}",
+	"apierror-translate-fuzzymessage": "{{doc-apierror}}",
+	"apierror-translate-groupreviewdisabled": "{{doc-apierror}}",
+	"apierror-translate-invalidaggregategroup": "{{doc-apierror}}",
+	"apierror-translate-invalidaggregategroupname": "{{doc-apierror}}",
+	"apierror-translate-invalidfilter": "{{doc-apierror}}\n\nParameters:\n* $1 - Filter provided",
+	"apierror-translate-invalidgroup": "{{doc-apierror}}",
+	"apierror-translate-invalidstate": "{{doc-apierror}}",
+	"apierror-translate-invalidupdate": "{{doc-apierror}}",
+	"apierror-translate-language-disabled": "{{doc-apierror}}",
+	"apierror-translate-nodynamicgroups": "{{doc-apierror}}",
+	"apierror-translate-nomessagefortitle": "{{doc-apierror}}",
+	"apierror-translate-owntranslation": "{{doc-apierror}}",
+	"apierror-translate-sandbox-invalidparam": "{{doc-apierror}}\n\nParameters:\n* $1 - Exception message, probably in English",
+	"apierror-translate-sandboxdisabled": "{{doc-apierror}}",
+	"apierror-translate-unknownmessage": "{{doc-apierror}}",
+	"apiwarn-translate-alreadyreviewedbyyou": "{{doc-apierror}}"
 }
