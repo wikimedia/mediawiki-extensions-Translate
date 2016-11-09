@@ -286,7 +286,7 @@ class TranslatablePage {
 		$tagPlaceHolders = array();
 
 		while ( true ) {
-			$re = '~(<translate>)\s*(.*?)(</translate>)~s';
+			$re = '~(<translate>)(.*?)(</translate>)~s';
 			$matches = array();
 			$ok = preg_match_all( $re, $text, $matches, PREG_OFFSET_CAPTURE );
 
@@ -316,10 +316,11 @@ class TranslatablePage {
 
 			$sectiontext = self::unArmourNowiki( $nowiki, $sectiontext );
 
-			$ret = $this->sectionise( $sections, $sectiontext );
+			$parse = self::sectionise( $sectiontext );
+			$sections += $parse['sections'];
 
 			$tagPlaceHolders[$ph] =
-				self::index_replace( $contents, $ret, $start, $end );
+				self::index_replace( $contents, $parse['template'], $start, $end );
 		}
 
 		$prettyTemplate = $text;
@@ -400,27 +401,36 @@ class TranslatablePage {
 	/**
 	 * Splits the content marked with \<translate> tags into sections, which
 	 * are separated with with two or more newlines. Extra whitespace is captured
-	 * in the template and not included in the sections.
-	 * @param array $sections Array of placeholder => TPSection.
+	 * in the template and is not included in the sections.
+	 *
 	 * @param string $text Contents of one pair of \<translate> tags.
-	 * @return string Template with placeholders for sections, which itself are added to $sections.
+	 * @return array Contains a template and array of unparsed sections.
 	 */
-	protected function sectionise( &$sections, $text ) {
+	public static function sectionise( $text ) {
 		$flags = PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE;
-		$parts = preg_split( '~(\s*\n\n\s*|\s*$)~', $text, -1, $flags );
+		$parts = preg_split( '~(^\s*|\s*\n\n\s*|\s*$)~', $text, -1, $flags );
+
+		$inline = preg_match( '~\n~', $text ) === 0;
 
 		$template = '';
+		$sections = [];
+
 		foreach ( $parts as $_ ) {
 			if ( trim( $_ ) === '' ) {
 				$template .= $_;
 			} else {
 				$ph = TranslateUtils::getPlaceholder();
-				$sections[$ph] = $this->shakeSection( $_ );
+				$tpsection = self::shakeSection( $_ );
+				$tpsection->setIsInline( $inline );
+				$sections[$ph] = $tpsection;
 				$template .= $ph;
 			}
 		}
 
-		return $template;
+		return array(
+			'template' => $template,
+			'sections' => $sections,
+		);
 	}
 
 	/**
@@ -435,7 +445,7 @@ class TranslatablePage {
 	 * @throws TPException
 	 * @return TPSection
 	 */
-	protected function shakeSection( $content ) {
+	public static function shakeSection( $content ) {
 		$re = '~<!--T:(.*?)-->~';
 		$matches = array();
 		$count = preg_match_all( $re, $content, $matches, PREG_SET_ORDER );
@@ -452,7 +462,7 @@ class TranslatablePage {
 
 				// Currently handle only these two standard places.
 				// Is this too strict?
-				$rer1 = '~^<!--T:(.*?)-->\n~'; // Normal sections
+				$rer1 = '~^<!--T:(.*?)-->( |\n)~'; // Normal sections
 				$rer2 = '~\s*<!--T:(.*?)-->$~m'; // Sections with title
 				$content = preg_replace( $rer1, '', $content );
 				$content = preg_replace( $rer2, '', $content );
