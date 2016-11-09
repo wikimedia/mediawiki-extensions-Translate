@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "4eb4ebfb_43064324",
+        "filename": "tag/TPSection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2016-11-09T20:42:56Z",
+      "side": 1,
+      "message": "Wondering why you added it, but looking at the examples in other files, I see you added it for separating the comment from the translatable text. So, sounds good.",
+      "parentUuid": "4eb4ebfb_6386dfad",
+      "revId": "9a800677e8a2a92ca6eba54dd77f766d7c178382",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4eb4ebfb_83c20b38",
         "filename": "tests/phpunit/TranslatablePageTest.php",
         "patchSetId": 1
