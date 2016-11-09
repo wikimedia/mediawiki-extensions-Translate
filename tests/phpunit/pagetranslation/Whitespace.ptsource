@@ -15,7 +15,5 @@ There is three spaces trailing on this line:   <translate>
  <!--T:-1-->
 This line is prefixed with a space, with two trailing spaces </translate> 
 
-<translate><!--T:-1-->
-line1</translate>
-<translate><!--T:-1-->
-line2</translate>
+<translate><!--T:-1--> line1</translate>
+<translate><!--T:-1--> line2</translate>
