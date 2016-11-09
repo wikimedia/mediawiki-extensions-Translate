@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4eb4ebfb_6386dfad",
+        "filename": "tag/TPSection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-11-09T20:26:38Z",
+      "side": 1,
+      "message": "Probably not, but is it harmful or why would you want to remove it?",
+      "parentUuid": "4eb4ebfb_43bc03b1",
+      "revId": "9a800677e8a2a92ca6eba54dd77f766d7c178382",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4eb4ebfb_83c20b38",
         "filename": "tests/phpunit/TranslatablePageTest.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-11-09T19:55:00Z",
       "side": 1,
       "message": "Remove these whitespace chars here and elsewhere below.",
+      "revId": "9a800677e8a2a92ca6eba54dd77f766d7c178382",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_a37ce7b4",
+        "filename": "tests/phpunit/TranslatablePageTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-11-09T20:26:38Z",
+      "side": 1,
+      "message": "Hah, I had to disable automatic removal of spaces when editing one of the test files :)",
+      "parentUuid": "4eb4ebfb_83c20b38",
       "revId": "9a800677e8a2a92ca6eba54dd77f766d7c178382",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
