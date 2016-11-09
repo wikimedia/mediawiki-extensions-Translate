@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2009-2013 Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -40,6 +39,19 @@ class TPSection {
 	public $oldText;
 
 	/**
+	 * @var bool Whether this section is inline section. E.g. "Something <translate>foo</translate> bar".
+	 */
+	protected $inline = false;
+
+	public function setIsInline( $value ) {
+		$this->inline = (bool)$value;
+	}
+
+	public function isInline( $value ) {
+		return $this->inline;
+	}
+
+	/**
 	 * Returns section text unmodified.
 	 * @return string Wikitext.
 	 */
@@ -70,6 +82,7 @@ class TPSection {
 
 	/**
 	 * Returns the section text with updated or added section marker.
+	 *
 	 * @return string Wikitext.
 	 */
 	public function getMarkedText() {
@@ -82,7 +95,11 @@ class TPSection {
 		$text = preg_replace( $re, $rep, $this->text, 1, $count );
 
 		if ( $count === 0 ) {
-			$text = $header . "\n" . $this->text;
+			if ( $this->inline ) {
+				$text = $header . ' ' . $this->text;
+			} else {
+				$text = $header . "\n" . $this->text;
+			}
 		}
 
 		return $text;
