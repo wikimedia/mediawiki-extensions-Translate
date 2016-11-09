@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4eb4ebfb_43bc03b1",
+        "filename": "tag/TPSection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2016-11-09T19:55:00Z",
+      "side": 1,
+      "message": "Is the \u0027 \u0027 necessary?",
+      "revId": "9a800677e8a2a92ca6eba54dd77f766d7c178382",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_83c20b38",
+        "filename": "tests/phpunit/TranslatablePageTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2016-11-09T19:55:00Z",
+      "side": 1,
+      "message": "Remove these whitespace chars here and elsewhere below.",
+      "revId": "9a800677e8a2a92ca6eba54dd77f766d7c178382",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
