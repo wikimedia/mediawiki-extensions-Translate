@@ -1,10 +1,9 @@
 window.appendFromSelect = function ( selectid, targetid ) {
 	'use strict';
 
-	var select, target, atxt;
-
-	select = document.getElementById( selectid );
-	target = document.getElementById( targetid );
+	var select = document.getElementById( selectid ),
+		target = document.getElementById( targetid ),
+		atxt;
 
 	if ( !target || !select ) {
 		return;
@@ -16,12 +15,13 @@ window.appendFromSelect = function ( selectid, targetid ) {
 		return;
 	}
 
-	/* Ugly hack */
-
-	target.value = target.value.replace( /default/, '' );
-
-	if ( target.value.replace( /[\s\t\n]/ig, '' ) !== '' ) {
+	if ( target.value.replace( /\s+/g, '' ) !== '' ) {
 		atxt = ', ' + atxt;
 	}
-	target.value += atxt;
+
+	atxt = target.value + atxt;
+
+	atxt = atxt.replace( /\bdefault\b[,\s]*/i, '' );
+
+	target.value = atxt;
 };
