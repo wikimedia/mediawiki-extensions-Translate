@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eitvys200"
+		]
+	},
+	"searchtranslations": "Ieškoti vertimų",
+	"tux-sst-edit": "Redaguoti vertimą",
+	"tux-sst-view-foreign": "Žiūrėti $1",
+	"tux-sst-search": "Ieškoti",
+	"tux-sst-search-ph": "Ieškoti vertimų",
+	"tux-sst-count": "{{PLURAL:$1|Rastas vienas rezultatas|Rasta $1 rezultatų}}",
+	"tux-sst-facet-language": "Kalbos",
+	"tux-sst-facet-group": "Pranešimo grupės",
+	"tux-sst-nosolr-title": "Paieška nepasiekiama",
+	"tux-sst-nosolr-body": "Ši viki neturi vertimų paieškos paslaugos.",
+	"tux-sst-solr-offline-title": "Paieška nepasiekiama",
+	"tux-sst-solr-offline-body": "Paieškos paslauga laikinai neprieinama.",
+	"tux-sst-next": "Kitas ›",
+	"tux-sst-prev": "‹ Ankstesnis",
+	"tux-sst-default": "Vertimai",
+	"tux-sst-translated": "Vertimai iš $1",
+	"tux-sst-untranslated": "nėra vertimų iš $1",
+	"tux-sst-outdated": "Pasenę vertimai iš $1",
+	"tux-sst-ellipsis-untranslated": "Nėra vertimų",
+	"tux-sst-ellipsis-outdated": "Pasenę vertimai",
+	"tux-sst-link-all-match": "Reikalauti visų paieškos žodžių."
+}
