@@ -368,7 +368,7 @@
 	"tux-editor-doc-editor-cancel": "Anuluj",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|kolejny komunikat|kolejne komunikaty|kolejnych komunikatów}}",
 	"tux-messagetable-loading-messages": "Ładowanie {{PLURAL:$1|komunikatu|komunikatów}}...",
-	"tux-message-filter-placeholder": "Lista filtrów",
+	"tux-message-filter-placeholder": "Filtruj listę",
 	"tux-message-filter-result": "Znaleziono $1 {{PLURAL:$1|wynik|wyników}}, dla \"$2\"",
 	"tux-message-filter-advanced-button": "Zaawansowane wyszukiwanie",
 	"tux-message-filter-optional-messages-label": "Komunikaty opcjonalne",
