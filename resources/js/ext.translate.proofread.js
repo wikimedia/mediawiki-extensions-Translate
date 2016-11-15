@@ -1,4 +1,3 @@
-/*global alert: false*/
 ( function ( $, mw ) {
 	'use strict';
 
@@ -15,6 +14,12 @@
 	 *	sourcelangcode: 'en', // Mandatory source language code
 	 *	targetlangcode: 'hi' // Mandatory target language code
 	 * } );
+	 *
+	 * @param {Element} element
+	 * @param {Object} options
+	 * @param {Object} options.message
+	 * @param {string} options.sourcelangcode Language code.
+	 * @param {string} options.targetlangcode Language code.
 	 */
 	function Proofread( element, options ) {
 		this.$message = $( element );
@@ -228,6 +233,7 @@
 			} ).fail( function ( errorCode ) {
 				$message.find( '.tux-proofread-action' ).addClass( 'tux-warning' );
 				if ( errorCode === 'assertuserfailed' ) {
+					/* eslint-disable-next-line no-alert */
 					alert( mw.msg( 'tux-session-expired' ) );
 				}
 			} );

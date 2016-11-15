@@ -70,11 +70,9 @@
 	 * @param {Object} request The request data set from backend on request items
 	 */
 	function displayRequestDetails( request ) {
-		var storage, reminders,
+		var storage,
 			$reminderStatus = $( '<span>' ).addClass( 'reminder-status' ),
 			$detailsPane = $( '.details.pane' );
-
-		reminders = request.reminders ? request.reminders.split( '|' ) : [];
 
 		if ( request.reminderscount ) {
 			$reminderStatus.text( mw.msg(
@@ -631,7 +629,7 @@
 
 	$.fn.languageFilter = function () {
 		return this.each( function () {
-			if ( !$.data( this, 'LanguageFilter' ) )  {
+			if ( !$.data( this, 'LanguageFilter' ) ) {
 				$.data( this, 'LanguageFilter', new LanguageFilter( this ) );
 			}
 		} );
@@ -703,7 +701,7 @@
 
 	$.fn.translatorSearch = function () {
 		return this.each( function () {
-			if ( !$.data( this, 'TranslatorSearch' ) )  {
+			if ( !$.data( this, 'TranslatorSearch' ) ) {
 				$.data( this, 'TranslatorSearch', new TranslatorSearch( this ) );
 			}
 		} );
@@ -737,9 +735,9 @@
 		$requestCheckboxes.on( 'click change', requestSelectHandler );
 
 		// Handle clicks on request rows.
-		$requestRows.on( 'click',  onSelectRequest );
+		$requestRows.on( 'click', onSelectRequest );
 
-		$( '.older-requests-indicator' ).on( 'click',  oldRequestSelector );
+		$( '.older-requests-indicator' ).on( 'click', oldRequestSelector );
 
 		if ( $requestRows.length ) {
 			$requestRows.first().click();

@@ -72,7 +72,7 @@
 			.append( ']' )
 			.click( function ( e ) {
 				var $el = $( this ),
-					$allToggles = !!$allTogglesCache ? $allTogglesCache : $( '.groupexpander', $translateTable );
+					$allToggles = $allTogglesCache ? $allTogglesCache : $( '.groupexpander', $translateTable );
 
 				// Switch the state and toggle the rows
 				// and update the local toggles too
