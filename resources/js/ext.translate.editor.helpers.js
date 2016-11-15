@@ -49,6 +49,8 @@
 
 		/**
 		 * Save the documentation
+		 *
+		 * @return {jQuery.Promise}
 		 */
 		saveDocumentation: function () {
 			var translateEditor = this,
@@ -210,15 +212,12 @@
 		 * @param {Array} translations An inotherlanguages array as returned by the translation helpers API.
 		 */
 		showAssistantLanguages: function ( translations ) {
-			var translateEditor = this,
-				$translationTextarea;
+			var translateEditor = this;
 
 			if ( translations.error ) {
 				// Do not proceed if errored/unsupported
 				return;
 			}
-
-			$translationTextarea = this.$editor.find( '.tux-textarea-translation' );
 
 			$.each( translations, function ( index ) {
 				var $otherLanguage, langAttr,

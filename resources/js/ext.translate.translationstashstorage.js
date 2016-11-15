@@ -37,6 +37,7 @@
 		/**
 		 * Get the current users translations.
 		 *
+		 * @param {string} user User name
 		 * @return {jQuery.Promise}
 		 */
 		getUserTranslations: function ( user ) {

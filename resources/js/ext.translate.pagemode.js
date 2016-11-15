@@ -14,6 +14,12 @@
 	 *	sourcelangcode: 'en', // Mandatory source language code
 	 *	targetlangcode: 'hi' // Mandatory target language code
 	 * } );
+	 *
+	 * @param {Element} element
+	 * @param {Object} options
+	 * @param {Object} options.message
+	 * @param {string} options.sourcelangcode Language code.
+	 * @param {string} options.targetlangcode Language code.
 	 */
 	function PageMode( element, options ) {
 		this.$message = $( element );

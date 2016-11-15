@@ -1,3 +1,5 @@
+/* global autosize */
+
 ( function ( $, mw, autosize ) {
 	'use strict';
 
@@ -309,7 +311,9 @@
 			// Skip if the message is hidden. For example in a filter result.
 			if ( $next.length && $next.hasClass( 'hide' ) ) {
 				this.$editTrigger = $next;
-				return this.next();
+				this.next();
+
+				return;
 			}
 
 			// If this is the last message, just hide it
@@ -1246,6 +1250,8 @@
 
 		/**
 		 * Makes the textare large enough for insertables and positions the insertables.
+		 *
+		 * @param {jQuery} $textarea Text area.
 		 */
 		resizeInsertables: function ( $textarea ) {
 			var $buttonArea, buttonAreaHeight;

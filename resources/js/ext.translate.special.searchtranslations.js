@@ -246,7 +246,7 @@
 			if ( parentGrouppath !== undefined ) {
 				grouppath = parentGrouppath + '|' + groupId;
 			} else {
-				grouppath =  groupId;
+				grouppath = groupId;
 			}
 			uri.extend( { group: groupId, grouppath: grouppath } );
 
