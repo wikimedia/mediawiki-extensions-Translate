@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2eb1770d_f3432666",
+        "filename": "api/ApiAggregateGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-11-15T15:05:09Z",
+      "side": 1,
+      "message": "Did you consider using method_exists instead of is_callable?\n\nIt has perhaps a little bit cleaner syntax.\n\nYou are also using short array syntax here, but not elsewhere with the additions. Not a problem, but I\u0027d rather convert whole extension at once when the code review backlog is done.",
+      "revId": "abe13e9cc724afe3fa651944210167270de27f64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
