@@ -1,4 +1,4 @@
-/*global alert:false */
+/* global alert:false */
 
 ( function ( $, mw ) {
 	'use strict';
@@ -116,7 +116,7 @@
 	function editGroup( event ) {
 		var $target = $( event.target ),
 			$parent = $target.closest( '.mw-tpa-group' ),
-			aggregateGroupId =  $parent.data( 'groupid' ),
+			aggregateGroupId = $parent.data( 'groupid' ),
 			$displayGroup = $parent.children( '.tp-display-group' ),
 			$editGroup = $parent.children( '.tp-edit-group' ),
 			successFunction,

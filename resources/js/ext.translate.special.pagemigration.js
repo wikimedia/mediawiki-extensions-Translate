@@ -10,6 +10,8 @@
 	 * and identifiers from left hand side blocks. Create pages only if
 	 * content is not empty.
 	 *
+	 * @param {number} i Array index to sourceUnits.
+	 * @param {string} content
 	 * @return {Function} Returns a function which returns a jQuery.Promise
 	 */
 	function createTranslationPage( i, content ) {
@@ -254,7 +256,7 @@
 	 * Split headers from remaining text in each translation unit if present.
 	 *
 	 * @param {Array} translations Array of initial units obtained on splitting
-	 * @return {string[]} translationUnits Array having the headers split into new unit
+	 * @return {string[]} Array having the headers split into new unit
 	 */
 	function splitHeaders( translations ) {
 		return $.map( translations, function ( elem ) {
@@ -267,7 +269,8 @@
 	 * Get the index of next translation unit containing h2 header.
 	 *
 	 * @param {number} startIndex Index to start the scan from
-	 * @return {number} i Index of the next unit found, -1 if not
+	 * @param {string[]} translationUnits Segmented units.
+	 * @return {number} Index of the next unit found, -1 if not.
 	 */
 	function getHeaderUnit( startIndex, translationUnits ) {
 		var i, regex;
@@ -284,6 +287,10 @@
 	 * Align h2 headers in the order they appear.
 	 * Assumption: The source headers and translation headers appear in
 	 * the same order.
+	 *
+	 * @param {Object[]} sourceUnits
+	 * @param {string[]} translationUnits
+	 * @return {string[]}
 	 */
 	function alignHeaders( sourceUnits, translationUnits ) {
 		var i, regex, tIndex = 0,
@@ -372,6 +379,8 @@
 	/**
 	 * Handler for add new unit icon ('+') click event. Adds a translation unit
 	 * below the current unit.
+	 *
+	 * @param {Event} event
 	 */
 	function addHandler( event ) {
 		var nextRow, text, newUnit, targetUnit;
@@ -392,6 +401,8 @@
 	/**
 	 * Handler for delete icon ('-') click event. Deletes the unit and shifts
 	 * the units up by one.
+	 *
+	 * @param {Event} event
 	 */
 	function deleteHandler( event ) {
 		var sourceText, rowUnit;
@@ -409,6 +420,8 @@
 	/**
 	 * Handler for swap icon click event. Swaps the text in the current unit
 	 * with the text in the unit below.
+	 *
+	 * @param {Event} event
 	 */
 	function swapHandler( event ) {
 		var rowUnit, tempText, nextVal;
@@ -423,7 +436,7 @@
 	 * Handler for 'Import' button click event. Imports source and translation
 	 * units and displays them.
 	 *
-	 * @param {jQuery.event} e
+	 * @param {Event} e
 	 */
 	function importHandler( e ) {
 		var pageTitle, slashPos, titleObj,
@@ -465,17 +478,17 @@
 
 		$.when( getSourceUnits( pageName ), getFuzzyTimestamp( pageTitle ) )
 			.then( function ( sourceUnits, fuzzyTimestamp ) {
-			noOfSourceUnits = sourceUnits.length;
-			splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
-				var translationUnits = splitHeaders( translations );
-				translationUnits = alignHeaders( sourceUnits, translationUnits );
-				noOfTranslationUnits = translationUnits.length;
-				displayUnits( sourceUnits, translationUnits );
-				$( '#action-save, #action-cancel' ).removeClass( 'hide' );
-				$( '#action-import' ).addClass( 'hide' );
-				messageBox.text( mw.msg( 'pm-on-import-message-text' ) ).show( 'fast' );
+				noOfSourceUnits = sourceUnits.length;
+				splitTranslationPage( fuzzyTimestamp, pageTitle ).done( function ( translations ) {
+					var translationUnits = splitHeaders( translations );
+					translationUnits = alignHeaders( sourceUnits, translationUnits );
+					noOfTranslationUnits = translationUnits.length;
+					displayUnits( sourceUnits, translationUnits );
+					$( '#action-save, #action-cancel' ).removeClass( 'hide' );
+					$( '#action-import' ).addClass( 'hide' );
+					messageBox.text( mw.msg( 'pm-on-import-message-text' ) ).show( 'fast' );
+				} );
 			} );
-		} );
 	}
 
 	/**
