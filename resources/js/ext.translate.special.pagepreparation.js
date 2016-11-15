@@ -369,11 +369,10 @@
 		} );
 
 		$( '#action-save' ).click( function () {
-			var serverName, pageName,
+			var pageName,
 				pageUrl = '';
 
 			pageName = $.trim( $input.val() );
-			serverName = mw.config.get( 'wgServerName' );
 			savePage( pageName, pageContent ).done( function () {
 				pageUrl = mw.Title.newFromText( pageName ).getUrl( { action: 'edit' } );
 				$( '.messageDiv' ).html( mw.message( 'pp-save-message', pageUrl ).parse() ).show();

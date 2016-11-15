@@ -16,6 +16,8 @@
  * @license GPL-2.0+
  */
 
+/* global autosize */
+
 ( function ( $, mw, autosize ) {
 	'use strict';
 	var dialogwidth = false,
@@ -45,6 +47,9 @@
 
 	/**
 	 * This is JS port same method of TranslateUtils.php
+	 *
+	 * @param {string} text
+	 * @return {string} Safe HTML.
 	 */
 	function convertWhiteSpaceToHTML( text ) {
 		return mw.html.escape( text )
@@ -54,7 +59,12 @@
 			.replace( /\n/g, '<br />' );
 	}
 
-	function addAccessKeys( dialog ) {
+	/**
+	 * Adds access keys to some buttons.
+	 *
+	 * @param {jQuery} $dialog
+	 */
+	function addAccessKeys( $dialog ) {
 		var buttons = {
 			a: '.mw-translate-save',
 			s: '.mw-translate-next',
@@ -70,7 +80,7 @@
 				.removeAttr( 'accesskey' )
 				.attr( 'title', '' );
 
-			dialog.find( selector )
+			$dialog.find( selector )
 				.val( function ( i, b ) {
 					return b + ' (_)'.replace( '_', key );
 				} )
@@ -400,4 +410,4 @@
 	} );
 
 	$( document ).ready( mw.translate.init );
-} )( jQuery, mediaWiki, autosize );
+}( jQuery, mediaWiki, autosize ) );

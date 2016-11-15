@@ -6,11 +6,20 @@
 	/**
 	 * options
 	 *  - position: accepts same values as jquery.ui.position
-	 *  - onSelect: callback with message group id when selected
-	 *  - language: language for statistics.
+	 *  - onSelect:
+	 *  - language:
 	 *  - preventSelector: boolean to load but not show the group selector.
 	 *  - recent: list of recent group ids
 	 * groups: list of message group ids
+	 *
+	 * @param {Element} element
+	 * @param {Object} options
+	 * @param {Object} [options.position] Accepts same values as jquery.ui.position.
+	 * @param {Function} [options.onSelect] Callback with message group id when selected.
+	 * @param {string} options.language Language code for statistics.
+	 * @param {boolean} [options.preventSelector] Whether not to show the group selector.
+	 * @param {string[]} [options.recent] List of recent message group ids.
+	 * @param {string[]} [groups] List of message group ids to show.
 	 */
 	function TranslateMessageGroupSelector( element, options, groups ) {
 		this.$trigger = $( element );
@@ -139,6 +148,8 @@
 
 		/**
 		 * Hide the selector
+		 *
+		 * @param {jQuery.Event} e
 		 */
 		hide: function ( e ) {
 			// Do not hide if the trigger is clicked

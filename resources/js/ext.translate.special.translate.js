@@ -104,7 +104,7 @@
 			realFilters.push( filter );
 		}
 
-		return realFilters.join( '|'  );
+		return realFilters.join( '|' );
 	}
 
 	function checkDirty() {
@@ -125,6 +125,10 @@
 
 	/**
 	 * Updates all group specific stuff on the page.
+	 *
+	 * @param {Object} state Information about current group and language.
+	 * @param {string} state.group Message group id.
+	 * @param {string} state.language Language.
 	 */
 	function updateGroupInformation( state ) {
 		var props = 'id|priority|prioritylangs|priorityforce|description';
