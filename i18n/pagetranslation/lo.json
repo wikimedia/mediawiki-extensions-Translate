@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aefgh39622"
+		]
+	},
+	"pt-movepage-logreason": "ສ່ວນຂອງໜ້າ \"$1\" ທີ່ສາມາດແປໄດ້",
+	"pt-deletepage-full-logreason": "ສ່ວນຂອງໜ້າ \"$1\" ທີ່ສາມາດແປໄດ້",
+	"pt-deletepage-lang-logreason": "ສ່ວນຂອງໜ້າແປຂອງ \"$1\""
+}
