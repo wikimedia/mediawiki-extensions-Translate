@@ -79,6 +79,9 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 			$wgUser
 		);
 
+		error_log( 'M#)AAF' );
+		error_log( $page->getId() );
+
 		$newLatest = $latest + 1;
 		$this->assertSame(
 			$newLatest,
