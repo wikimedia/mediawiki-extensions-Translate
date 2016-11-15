@@ -16,6 +16,24 @@
       "revId": "f7dbf4070ab384ded17200463f5fe15b60b30f6b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2eb1770d_7659445d",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-11-15T16:44:45Z",
+      "side": 0,
+      "message": "It\u0027s deprecated in favor of addWarning(). In this case, I just removed the warning since $result-\u003eaddValue() already adds \"This result was truncated because it would otherwise be larger than the limit of $1 bytes.\" when it returns false (and has since 1.16).\n\nIf you want to keep this warning too that\u0027s fine, you\u0027d add an appropriate i18n message then do something like\n\n $this-\u003eaddWarning( \u0027apiwarn-translate-groups-truncated\u0027 );",
+      "parentUuid": "2eb1770d_d3102a5e",
+      "revId": "f7dbf4070ab384ded17200463f5fe15b60b30f6b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }

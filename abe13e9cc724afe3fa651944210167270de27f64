@@ -16,6 +16,24 @@
       "revId": "abe13e9cc724afe3fa651944210167270de27f64",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2eb1770d_56676822",
+        "filename": "api/ApiAggregateGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-11-15T16:44:45Z",
+      "side": 1,
+      "message": "I usually use is_callable() when I\u0027m making BC checks, since the semantics are a bit more straightforward.\n\nI tried to follow the style of the existing extension whether to use short or long syntax when making all these patches. In this case, it looks like one instance of short syntax slipped through code review at some point in ./specials/SpecialSearchTranslations.php. The mixed syntax in my changes comes from pasting the \"is_callable\" line, while copying the existing dieUsage() and using a search-and-replace to change it.",
+      "parentUuid": "2eb1770d_f3432666",
+      "revId": "abe13e9cc724afe3fa651944210167270de27f64",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
