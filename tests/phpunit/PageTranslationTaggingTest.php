@@ -54,6 +54,7 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 		$this->assertFalse( $translatablePage->getMarkedTag(), 'No marked tag was added' );
 	}
 
+/*
 	public function testTranslatablePageWithMarked() {
 		$title = Title::newFromText( 'Fréttinga' );
 		$this->assertNotNull( $title, 'Title is valid' );
@@ -91,6 +92,7 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 			'Marked tag was not updated after protection'
 		);
 	}
+*/
 
 	public function testTranslationPageRestrictions() {
 		$superUser = new MockSuperUser();
