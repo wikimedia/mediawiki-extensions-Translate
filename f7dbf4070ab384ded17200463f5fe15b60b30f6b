@@ -34,6 +34,24 @@
       "revId": "f7dbf4070ab384ded17200463f5fe15b60b30f6b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2eb1770d_c13614e4",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-11-15T16:56:53Z",
+      "side": 0,
+      "message": "It\u0027s fine as-is given your explanation.",
+      "parentUuid": "2eb1770d_7659445d",
+      "revId": "f7dbf4070ab384ded17200463f5fe15b60b30f6b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
