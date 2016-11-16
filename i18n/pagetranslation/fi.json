@@ -11,7 +11,8 @@
 			"Silvonen",
 			"VezonThunder",
 			"ZeiP",
-			"Pxos"
+			"Pxos",
+			"Valtlait"
 		]
 	},
 	"pagetranslation": "Sivujen kääntäminen",
@@ -142,7 +143,7 @@
 	"pt-movepage-action-perform": "Tee siirto",
 	"pt-movepage-action-other": "Vaihda kohde",
 	"pt-movepage-intro": "Tällä toimintosivulla voit siirtää käännettäväksi merkittyjä sivuja.\nSiirto ei tapahdu heti, koska useita sivuja täytyy siirtää.\nSivut ovat lukittuna siirron ajan.\nEpäonnistuneet siirrot tallennetaan [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne täytyy korjata käsin.",
-	"pt-movepage-logreason": "Osa käännettävää sivua $1.",
+	"pt-movepage-logreason": "Osa käännettävää sivua ”$1”",
 	"pt-movepage-started": "Käännettävän sivun perussivu on siirretty.\nTarkista mahdolliset virheet ja valmistumisviestit [[Special:Log/pagetranslation|sivunkääntölokista]].",
 	"pt-locked-page": "Tämä sivu on lukittu, koska käännettävän sivun siirtäminen on kesken.",
 	"pt-deletepage-lang-title": "Käännössivun $1 poisto",
@@ -163,8 +164,8 @@
 	"pt-deletepage-list-section": "Käännösosiosivut",
 	"pt-deletepage-list-other": "Muut alasivut",
 	"pt-deletepage-list-count": "Yhteensä $1 {{PLURAL:$1|poistettava sivu|poistettavaa sivua}}.",
-	"pt-deletepage-full-logreason": "Osa käännettävää sivua $1.",
-	"pt-deletepage-lang-logreason": "Osa käännössivua $1.",
+	"pt-deletepage-full-logreason": "Osa käännettävää sivua ”$1”",
+	"pt-deletepage-lang-logreason": "Osa käännössivua ”$1”",
 	"pt-deletepage-started": "Virheet ja valmistusviesti löytyvät [[Special:Log/pagetranslation|sivunkääntölokista]].",
 	"pt-deletepage-intro": "Tämän toimintosivun avulla voit poistaa koko käännettävän sivun tai tietynkieliset käännökset.\nPoisto ei tapahdu välittömästi, sillä useita sivuja täytyy poistaa.\nVirheet merkitään [[Special:Log/pagetranslation|sivunkääntölokiin]] ja ne täytyy korjata käsin.",
 	"pagemigration": "Käännössivumigraatio",
