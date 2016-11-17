@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eec4bf7e_259159fc",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2016-11-17T01:37:44Z",
+      "side": 1,
+      "message": "Is the language code always going to be the same for all users viewing/editing a given page? I know the special page to change it purges the cache, but I\u0027m worried about fragmentation were not all dependencies are tracked due to this variance.",
+      "revId": "7c33914a03bf09c5a2f2324a5af2bfe9ae948768",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
