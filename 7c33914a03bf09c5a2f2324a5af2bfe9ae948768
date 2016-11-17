@@ -16,6 +16,41 @@
       "revId": "7c33914a03bf09c5a2f2324a5af2bfe9ae948768",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eec4bf7e_b8b350fd",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-11-17T07:41:48Z",
+      "side": 1,
+      "message": "By my reading of the core source, only cases where getTargetLanguage varies by the user are interface messages (aka things parsed via Message class) and special pages.",
+      "parentUuid": "eec4bf7e_259159fc",
+      "revId": "7c33914a03bf09c5a2f2324a5af2bfe9ae948768",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eec4bf7e_58a314a9",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-11-17T07:41:48Z",
+      "side": 1,
+      "message": "The translation might not exist. I guess that means it won\u0027t be shown until manual trigger. Should we check for that and then store dependency on fallback or source language instead?",
+      "revId": "7c33914a03bf09c5a2f2324a5af2bfe9ae948768",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
