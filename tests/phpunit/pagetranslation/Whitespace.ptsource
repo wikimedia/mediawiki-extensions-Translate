@@ -1,0 +1,21 @@
+There is a two new lines after this line.
+
+<translate>
+
+<!--T:-1-->
+There is a two new lines before and after this line.
+
+</translate>
+
+There is a two new lines before and after this line also.
+
+
+There is three spaces trailing on this line:   <translate>
+
+ <!--T:-1-->
+This line is prefixed with a space, with two trailing spaces </translate> 
+
+<translate><!--T:-1-->
+line1</translate>
+<translate><!--T:-1-->
+line2</translate>

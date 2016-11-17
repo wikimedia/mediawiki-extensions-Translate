@@ -34,7 +34,7 @@ class PageTranslationParserTest extends MediaWikiTestCase {
 		$title = Title::newFromText( $pagename );
 		$translatablePage = TranslatablePage::newFromText( $title, file_get_contents( $file ) );
 
-		$pattern = $file;
+		$pattern = dirname( $file ) . "/$pagename";
 
 		if ( $filename === 'FailNotAtomic.ptfile' ) {
 			$this->markTestSkipped( 'Extended validation not yet implemented' );
@@ -51,12 +51,12 @@ class PageTranslationParserTest extends MediaWikiTestCase {
 
 		if ( file_exists( "$pattern.ptsource" ) ) {
 			$source = $parse->getSourcePageText();
-			$this->assertEquals( $source, file_get_contents( "$pattern.ptsource" ) );
+			$this->assertEquals( file_get_contents( "$pattern.ptsource" ), $source );
 		}
 
 		if ( file_exists( "$pattern.pttarget" ) ) {
 			$target = $parse->getTranslationPageText( MessageCollection::newEmpty( 'foo' ) );
-			$this->assertEquals( $target, file_get_contents( "$pattern.pttarget" ) );
+			$this->assertEquals( file_get_contents( "$pattern.pttarget" ), $target );
 		}
 
 		// Custom tests written in php
