@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eec4bf7e_71c03330",
+        "filename": "package.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 658
+      },
+      "writtenOn": "2016-11-17T17:24:18Z",
+      "side": 1,
+      "message": "you can use 0.3.0 now",
+      "revId": "982b630e19560160d9ebee745354a0d2f8b3edf2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eec4bf7e_b1cdab64",
+        "filename": "resources/js/ext.translate.multiselectautocomplete.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 658
+      },
+      "writtenOn": "2016-11-17T17:24:18Z",
+      "side": 1,
+      "message": "/* eslint-disable no-underscore-dangle */",
+      "range": {
+        "startLine": 12,
+        "startChar": 11,
+        "endLine": 12,
+        "endChar": 13
+      },
+      "revId": "982b630e19560160d9ebee745354a0d2f8b3edf2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eec4bf7e_31007b6d",
+        "filename": "resources/js/ext.translate.proofread.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 658
+      },
+      "writtenOn": "2016-11-17T17:24:18Z",
+      "side": 1,
+      "message": "Use\n\n eslint-disable no-alert\n\nAlthough better\n\n eslint-disable-next-line no-alert\n\nnext to where the alert is.",
+      "revId": "982b630e19560160d9ebee745354a0d2f8b3edf2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eec4bf7e_11345745",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 658
+      },
+      "writtenOn": "2016-11-17T17:24:18Z",
+      "side": 1,
+      "message": "same as before",
+      "range": {
+        "startLine": 1,
+        "startChar": 15,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "982b630e19560160d9ebee745354a0d2f8b3edf2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eec4bf7e_b1436bb6",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 658
+      },
+      "writtenOn": "2016-11-17T17:24:18Z",
+      "side": 1,
+      "message": "If these are bound with jQuery then they are {jQuery.Event} wrapped events.",
+      "range": {
+        "startLine": 424,
+        "startChar": 12,
+        "endLine": 424,
+        "endChar": 17
+      },
+      "revId": "982b630e19560160d9ebee745354a0d2f8b3edf2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
