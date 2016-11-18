@@ -1,6 +1,0 @@
-extensions/
-node_modules/
-vendor/
-
-# upstream libs
-resources/js/jquery.autosize.js

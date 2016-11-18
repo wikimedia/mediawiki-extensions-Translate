@@ -9,7 +9,7 @@
 jQuery( function ( $ ) {
 	'use strict';
 
-	// jscs:disable disallowDanglingUnderscores
+	/* eslint-disable no-underscore-dangle */
 
 	$.widget( 'ui.multiselectautocomplete', {
 		options: {

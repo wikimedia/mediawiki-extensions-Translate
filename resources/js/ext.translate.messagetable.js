@@ -115,6 +115,11 @@
 			this.loading = false;
 		},
 
+		/**
+		 * Adds a new message using current mode.
+		 *
+		 * @param {Object} message
+		 */
 		add: function ( message ) {
 			// Prepare the message for display
 			mw.translateHooks.run( 'formatMessageBeforeTable', message );
@@ -130,6 +135,8 @@
 
 		/**
 		 * Add a message to the message table for translation.
+		 *
+		 * @param {Object} message
 		 */
 		addTranslate: function ( message ) {
 			var $message,
@@ -228,6 +235,8 @@
 
 		/**
 		 * Add a message to the message table for proofreading.
+		 *
+		 * @param {Object} message
 		 */
 		addProofread: function ( message ) {
 			var $message, $icon, module;
@@ -284,6 +293,11 @@
 			} );
 		},
 
+		/**
+		 * Add a message to the message table for wiki page mode.
+		 *
+		 * @param {Object} message
+		 */
 		addPageModeMessage: function ( message ) {
 			var $message;
 
@@ -546,6 +560,8 @@
 
 		/**
 		 * Enables own message hiding in proofread mode.
+		 *
+		 * @param {boolean} enabled
 		 */
 		setHideOwnInProofreading: function ( enabled ) {
 			if ( enabled ) {
