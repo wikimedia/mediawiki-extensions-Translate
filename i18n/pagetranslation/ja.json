@@ -7,7 +7,8 @@
 			"Whym",
 			"青子守歌",
 			"Sujiniku",
-			"Otokoume"
+			"Otokoume",
+			"ネイ"
 		]
 	},
 	"pagetranslation": "ページ翻訳",
@@ -134,7 +135,7 @@
 	"pt-movepage-action-perform": "移動を実行",
 	"pt-movepage-action-other": "対象を変更",
 	"pt-movepage-intro": "この特別ページでは、翻訳対象に指定されているページを移動できます。\n多くのページを移動する必要があるため、移動操作はすぐには完了しません。\nページの移動中は、そのページの操作はできません。\n失敗した場合は、その[[Special:Log/pagetranslation|ページの翻訳記録]]に記録されるため、手動で修正する必要があります。",
-	"pt-movepage-logreason": "翻訳対象ページ「$1」の一部。",
+	"pt-movepage-logreason": "翻訳対象ページ「$1」の一部",
 	"pt-movepage-started": "基底ページが移動されました。\n[[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認してください。",
 	"pt-locked-page": "翻訳対象ページが現在移動中のため、このページはロックされています。",
 	"pt-deletepage-lang-title": "翻訳ページ「$1」の削除",
@@ -155,8 +156,8 @@
 	"pt-deletepage-list-section": "翻訳単位ページ",
 	"pt-deletepage-list-other": "その他の下位ページ",
 	"pt-deletepage-list-count": "合計 $1 ページを削除",
-	"pt-deletepage-full-logreason": "翻訳対象ページ「$1」の一部。",
-	"pt-deletepage-lang-logreason": "翻訳ページ「$1」の一部。",
+	"pt-deletepage-full-logreason": "翻訳対象ページ「$1」の一部",
+	"pt-deletepage-lang-logreason": "翻訳ページ「$1」の一部",
 	"pt-deletepage-started": "[[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認してください。",
 	"pt-deletepage-intro": "この特別ページでは、翻訳対象ページ全体、または指定した言語への翻訳ページを個別に削除できます。\n依存関係があるページもすべて削除するため、削除操作はすぐには完了しません。\n失敗した場合は[[Special:Log/pagetranslation|ページの翻訳記録]]に記録されるので、手動で修正する必要があります。",
 	"pagemigration": "翻訳ページの移行",
