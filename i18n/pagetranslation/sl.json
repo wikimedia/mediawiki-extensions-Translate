@@ -4,7 +4,8 @@
 			"Dbc334",
 			"Eleassar",
 			"Irena Plahuta",
-			"Smihael"
+			"Smihael",
+			"Janezdrilc"
 		]
 	},
 	"pagetranslation": "Prevajanje strani",
@@ -69,6 +70,7 @@
 	"tpt-aggregategroup-new-name": "Ime:",
 	"tpt-aggregategroup-new-description": "Opis (izbirno):",
 	"tpt-aggregategroup-invalid-group": "Skupina ne obstaja",
+	"tpt-aggregategroup-edit-description": "Opis:",
 	"pt-parse-open": "Neizenačena etiketa &lt;translate>.\nPrevajalna predloga: <pre>$1</pre>",
 	"pt-parse-close": "Neizenačena etiketa &lt;/translate>.\nPrevajalna predloga: <pre>$1</pre>",
 	"pt-parse-nested": "Gnezdene prevajalne enote &lt;translate> niso dovoljene.\nBesedilo etikete: <pre>$1</pre>",
