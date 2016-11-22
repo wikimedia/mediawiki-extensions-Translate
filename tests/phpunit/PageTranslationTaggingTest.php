@@ -90,6 +90,9 @@ class PageTranslationTaggingText extends MediaWikiTestCase {
 			$translatablePage->getMarkedTag(),
 			'Marked tag was not updated after protection'
 		);
+
+		// Cached restrictions might leak to other tests if not manually purged
+		$page->getTitle()->flushRestrictions();
 	}
 
 	public function testTranslationPageRestrictions() {
