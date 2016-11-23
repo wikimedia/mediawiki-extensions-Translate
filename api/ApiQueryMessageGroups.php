@@ -92,7 +92,6 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			// @todo Add a continue?
 			$fit = $result->addValue( array( 'query', $this->getModuleName() ), null, $a );
 			if ( !$fit ) {
-				$this->setWarning( 'Could not fit all groups in the resultset.' );
 				// Even if we're not going to give a continue, no point carrying on
 				// if the result is full
 				break;

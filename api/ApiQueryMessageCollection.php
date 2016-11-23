@@ -35,7 +35,11 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 
 		$group = MessageGroups::getGroup( $params['group'] );
 		if ( !$group ) {
-			$this->dieUsageMsg( array( 'missingparam', 'mcgroup' ) );
+			if ( method_exists( $this, 'dieWithError' ) ) {
+				$this->dieWithError( array( 'apierror-missingparam', 'mcgroup' ) );
+			} else {
+				$this->dieUsageMsg( array( 'missingparam', 'mcgroup' ) );
+			}
 		}
 
 		if ( MessageGroups::isDynamic( $group ) ) {
@@ -50,10 +54,14 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$languages = $group->getTranslatableLanguages();
 
 		if ( $languages !== null && !isset( $languages[$params['language']] ) ) {
-			$this->dieUsage(
-				'Translation to this language is disabled',
-				'translate-language-disabled'
-			);
+			if ( method_exists( $this, 'dieWithError' ) ) {
+				$this->dieWithError( 'apierror-translate-language-disabled' );
+			} else {
+				$this->dieUsage(
+					'Translation to this language is disabled',
+					'translate-language-disabled'
+				);
+			}
 		}
 
 		$messages = $group->initCollection( $params['language'] );
@@ -73,7 +81,14 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 					$messages->filter( $filter, false, $value );
 				}
 			} catch ( MWException $e ) {
-				$this->dieUsage( $e->getMessage(), 'invalidfilter' );
+				if ( method_exists( $this, 'dieWithError' ) ) {
+					$this->dieWithError(
+						array( 'apierror-translate-invalidfilter', wfEscapeWikiText( $e->getMessage() ) ),
+						'invalidfilter'
+					);
+				} else {
+					$this->dieUsage( $e->getMessage(), 'invalidfilter' );
+				}
 			}
 		}
 
