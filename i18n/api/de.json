@@ -70,5 +70,6 @@
 	"apihelp-searchtranslations-param-case": "Suche (un)abhängig von Groß- und Kleinschreibung.",
 	"apihelp-searchtranslations-param-offset": "Versatz für die Übersetzungen.",
 	"apihelp-searchtranslations-param-limit": "Größe des Ergebnisses.",
-	"apihelp-searchtranslations-example-1": "Übersetzungen für die Sprache anzeigen."
+	"apihelp-searchtranslations-example-1": "Übersetzungen für die Sprache anzeigen.",
+	"apiwarn-translate-alreadyreviewedbyyou": "Von dir bereits als überprüft markiert"
 }
