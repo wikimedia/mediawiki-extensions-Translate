@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"LiteHell",
-			"아라"
+			"아라",
+			"Ykhwong"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "메시지 그룹 ID.",
@@ -11,5 +12,11 @@
 	"apihelp-query+messagecollection-param-group": "메시지 그룹.",
 	"apihelp-query+messagecollection-param-language": "언어 코드.",
 	"apihelp-query+messagecollection-example-1": "지원하는 언어 목록",
-	"apihelp-ttmserver-param-targetlanguage": "제안의 언어 코드입니다."
+	"apihelp-ttmserver-param-targetlanguage": "제안의 언어 코드입니다.",
+	"apierror-translate-duplicateaggregategroup": "메시지 그룹이 이미 존재합니다",
+	"apierror-translate-invalidgroup": "그룹이 존재하지 않거나 잘못되었습니다",
+	"apierror-translate-language-disabled": "이 언어로의 번역이 비활성화되어 있습니다",
+	"apierror-translate-nomessagefortitle": "제목이 번역 가능한 메시지와 일치하지 않습니다",
+	"apierror-translate-sandboxdisabled": "연습장 기능을 사용하고 있지 않습니다",
+	"apierror-translate-unknownmessage": "알 수 없는 메시지"
 }

@@ -39,5 +39,20 @@
 	"apihelp-ttmserver-example-1": "Ottieni suggerimenti per la traduzione di \"help\" dall'inglese al finlandese",
 	"apihelp-searchtranslations-description": "Cerca traduzioni.",
 	"apihelp-searchtranslations-param-limit": "Dimensione del risultato.",
-	"apihelp-searchtranslations-example-1": "Mostra le traduzioni per la lingua."
+	"apihelp-searchtranslations-example-1": "Mostra le traduzioni per la lingua.",
+	"apierror-translate-duplicateaggregategroup": "Il gruppo messaggi esiste già.",
+	"apierror-translate-fuzzymessage": "Non puoi revisionare traduzioni da aggiornare",
+	"apierror-translate-groupreviewdisabled": "Revisione gruppo messaggi non in uso.",
+	"apierror-translate-invalidaggregategroup": "Gruppo messaggi aggregati non valido",
+	"apierror-translate-invalidaggregategroupname": "Nome del gruppo messaggi aggregati non valido",
+	"apierror-translate-invalidgroup": "Gruppo non esistente o non valido",
+	"apierror-translate-invalidstate": "Lo stato richiesto non è valido.",
+	"apierror-translate-invalidupdate": "Aggiornamento non valido",
+	"apierror-translate-language-disabled": "Le traduzioni verso questa lingua sono disabilitate",
+	"apierror-translate-nodynamicgroups": "I gruppi messaggi dinamici non sono supportati qui",
+	"apierror-translate-nomessagefortitle": "Il titolo non corrisponde a un messaggio traducibile",
+	"apierror-translate-owntranslation": "Non puoi revisionare le tue traduzioni",
+	"apierror-translate-sandboxdisabled": "La funzione Sandbox non è in uso",
+	"apierror-translate-unknownmessage": "Messaggio sconosciuto",
+	"apiwarn-translate-alreadyreviewedbyyou": "Già contrassegnata come revisionata da te"
 }

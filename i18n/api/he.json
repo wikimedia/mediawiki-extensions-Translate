@@ -87,5 +87,20 @@
 	"apihelp-searchtranslations-param-offset": "היסט לתרגומים.",
 	"apihelp-searchtranslations-param-limit": "גודל התוצאה.",
 	"apihelp-searchtranslations-example-1": "הצגת תרגומים בשפה.",
-	"apihelp-searchtranslations-example-2": "הצגת הודעות לא מתורגמות שמתאימות לשאילתה בשפת המקור."
+	"apihelp-searchtranslations-example-2": "הצגת הודעות לא מתורגמות שמתאימות לשאילתה בשפת המקור.",
+	"apierror-translate-duplicateaggregategroup": "קבוצת ההודעות כבר קיימת",
+	"apierror-translate-fuzzymessage": "אל ניתן לסקור תרגומים שאינם מעודכנים",
+	"apierror-translate-groupreviewdisabled": "סקירת קבוצת ההודעות אינה בשימוש.",
+	"apierror-translate-invalidaggregategroup": "קבוצת הודעות משולבת בלתי־תקינה",
+	"apierror-translate-invalidaggregategroupname": "שם קבוצת הודעות משולבת בלתי־תקין",
+	"apierror-translate-invalidgroup": "הקבוצה אינה קיימת או בלתי־תקינה",
+	"apierror-translate-invalidstate": "השם המבוקש אינו תקין.",
+	"apierror-translate-invalidupdate": "עדכון בלתי־תקין",
+	"apierror-translate-language-disabled": "התרגום לשפה הזאת כבוי",
+	"apierror-translate-nodynamicgroups": "קבוצת הודעות דינמיות אינן נתמכות כאן",
+	"apierror-translate-nomessagefortitle": "הכותרת אינה מתאימה לשום הודעה בת־תרגום",
+	"apierror-translate-owntranslation": "לא ניתן לסקור את ההודעות של עצמך",
+	"apierror-translate-sandboxdisabled": "ארגז החול אינו בשימוש",
+	"apierror-translate-unknownmessage": "הודעה בלתי־ידועה",
+	"apiwarn-translate-alreadyreviewedbyyou": "כבר סומנה בתור הודעה הודעה שנסקרה על־ידיך"
 }

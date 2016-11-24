@@ -8,7 +8,8 @@
 			"Wladek92",
 			"Sacamol",
 			"Hpetit",
-			"Verdy p"
+			"Verdy p",
+			"Derugon"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gérer les groupes d'agrégation de messages.\n\nVous pouvez ajouter et supprimer des agrégats de  groupes de messages et les associer ou de les dissocier les uns des autres (un à la fois).",
@@ -93,5 +94,20 @@
 	"apihelp-searchtranslations-param-offset": "Décalage pour les traductions.",
 	"apihelp-searchtranslations-param-limit": "Taille du résultat.",
 	"apihelp-searchtranslations-example-1": "Afficher les traductions pour la langue.",
-	"apihelp-searchtranslations-example-2": "Afficher les messages non traduits correspondant à la demande dans la langue source."
+	"apihelp-searchtranslations-example-2": "Afficher les messages non traduits correspondant à la demande dans la langue source.",
+	"apierror-translate-duplicateaggregategroup": "Le groupe de messages existe déjà",
+	"apierror-translate-fuzzymessage": "Impossible de relire des traductions trop vagues",
+	"apierror-translate-groupreviewdisabled": "La revue du groupe de message n'est pas utilisée.",
+	"apierror-translate-invalidaggregategroup": "Groupe de messages aggrégés invalide",
+	"apierror-translate-invalidaggregategroupname": "Nom du groupe de messages aggrégés invalide",
+	"apierror-translate-invalidgroup": "Le groupe n'existe pas ou n'est pas valide",
+	"apierror-translate-invalidstate": "L'état demandé n'est pas valide.",
+	"apierror-translate-invalidupdate": "Correction invalide",
+	"apierror-translate-language-disabled": "La traduction dans cette langue est désactivée",
+	"apierror-translate-nodynamicgroups": "Les groupes de messages dynamiques ne sont pas pris en charge ici",
+	"apierror-translate-nomessagefortitle": "Le titre ne correspond pas à un message traductible",
+	"apierror-translate-owntranslation": "Impossible de relire ses propres traductions",
+	"apierror-translate-sandboxdisabled": "Les fonctions du bac à sable ne sont pas utilisées",
+	"apierror-translate-unknownmessage": "Message inconnu",
+	"apiwarn-translate-alreadyreviewedbyyou": "Déjà marqué comme ayant été relu par vous"
 }

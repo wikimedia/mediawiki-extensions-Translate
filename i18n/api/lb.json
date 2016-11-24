@@ -27,5 +27,7 @@
 	"apihelp-searchtranslations-param-service": "Wat fir ee vun den disponibelen Iwwersetzungsservicer benotzt gi soll.",
 	"apihelp-searchtranslations-param-query": "D'Zeechen no deene gesicht gi soll.",
 	"apihelp-searchtranslations-param-limit": "Gréisst vum Resultat",
-	"apihelp-searchtranslations-example-1": "Iwwersetzunge fir d'Sprooch weisen."
+	"apihelp-searchtranslations-example-1": "Iwwersetzunge fir d'Sprooch weisen.",
+	"apierror-translate-invalidupdate": "Net valabel Datum",
+	"apiwarn-translate-alreadyreviewedbyyou": "Scho markéiert wéi wann et vun Iech nogekuckt ass"
 }

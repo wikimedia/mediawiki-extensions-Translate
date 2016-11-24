@@ -24,5 +24,16 @@
 	"apihelp-searchtranslations-param-sourcelanguage": "Kod języka tekstu źródłowego.",
 	"apihelp-searchtranslations-param-language": "Kod języka do wyszukiwania ciąg znaków.",
 	"apihelp-searchtranslations-param-limit": "Rozmiar wyniku.",
-	"apihelp-searchtranslations-example-1": "Pokaż tłumaczenia dla języka."
+	"apihelp-searchtranslations-example-1": "Pokaż tłumaczenia dla języka.",
+	"apierror-translate-duplicateaggregategroup": "Grupa komunikatów już istnieje",
+	"apierror-translate-groupreviewdisabled": "Przeglądanie grup komunikatów nie jest używane.",
+	"apierror-translate-invalidaggregategroup": "Nieprawidłowa zbiorcza grupa komunikatów",
+	"apierror-translate-invalidaggregategroupname": "Nieprawidłowa nazwa zbiorczej grupy komunikatów",
+	"apierror-translate-invalidgroup": "Grupa nie istnieje lub jest nieprawidłowa",
+	"apierror-translate-invalidupdate": "Nieprawidłowa aktualizacja",
+	"apierror-translate-language-disabled": "Tłumaczenie na ten język jest wyłączone.",
+	"apierror-translate-nomessagefortitle": "Tytuł nie odpowiada komunikatowi do tłumaczenia",
+	"apierror-translate-sandboxdisabled": "Funkcja brudnopisu nie jest używana",
+	"apierror-translate-unknownmessage": "Nieznany komunikat",
+	"apiwarn-translate-alreadyreviewedbyyou": "Już oznaczono jako przejrzane przez ciebie"
 }

@@ -89,5 +89,20 @@
 	"apihelp-searchtranslations-param-offset": "用于译文的偏移。",
 	"apihelp-searchtranslations-param-limit": "结果的大小。",
 	"apihelp-searchtranslations-example-1": "显示用于语言的翻译。",
-	"apihelp-searchtranslations-example-2": "显示在原始语言中匹配查询未翻译信息。"
+	"apihelp-searchtranslations-example-2": "显示在原始语言中匹配查询未翻译信息。",
+	"apierror-translate-duplicateaggregategroup": "消息组已存在",
+	"apierror-translate-fuzzymessage": "不能复核模糊翻译",
+	"apierror-translate-groupreviewdisabled": "未使用消息组复核。",
+	"apierror-translate-invalidaggregategroup": "无效的聚合消息组",
+	"apierror-translate-invalidaggregategroupname": "无效的聚合消息组名称",
+	"apierror-translate-invalidgroup": "组不存在或无效",
+	"apierror-translate-invalidstate": "请求的状态无效。",
+	"apierror-translate-invalidupdate": "无效更新",
+	"apierror-translate-language-disabled": "至该语言的翻译已停用",
+	"apierror-translate-nodynamicgroups": "动态消息组在此不支持",
+	"apierror-translate-nomessagefortitle": "标题与可翻译消息不一致",
+	"apierror-translate-owntranslation": "不能复核自己的翻译",
+	"apierror-translate-sandboxdisabled": "未使用沙盒功能",
+	"apierror-translate-unknownmessage": "未知消息",
+	"apiwarn-translate-alreadyreviewedbyyou": "已被您标记为已复核"
 }
