@@ -14,7 +14,6 @@
  *
  * The operations have to be reversible so that
  * x equals unmangle( mangle( x ) ).
- *
  */
 interface StringMangler {
 	/// @todo Does this really need to be in the interface???
