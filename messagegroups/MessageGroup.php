@@ -48,7 +48,6 @@ interface MessageGroup {
 	 * @param IContextSource $context Context can be used by subclasses to provide
 	 *   translated descriptions, for example.
 	 * @return string
-	 *
 	 */
 	public function getDescription( IContextSource $context = null );
 

@@ -24,7 +24,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * @var MessageDefinitions
-	 * */
+	 */
 	protected $definitions = null;
 
 	/**
