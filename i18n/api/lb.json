@@ -28,6 +28,12 @@
 	"apihelp-searchtranslations-param-query": "D'Zeechen no deene gesicht gi soll.",
 	"apihelp-searchtranslations-param-limit": "Gréisst vum Resultat",
 	"apihelp-searchtranslations-example-1": "Iwwersetzunge fir d'Sprooch weisen.",
+	"apierror-translate-duplicateaggregategroup": "De Grupp vu Message gëtt et schonn",
+	"apierror-translate-fuzzymessage": "Fuzzy Iwwersetzunge kënnen net nogekuckt ginn",
 	"apierror-translate-invalidupdate": "Net valabel Datum",
+	"apierror-translate-language-disabled": "Iwwersetzung an dës Sprooch ass ausgeschalt",
+	"apierror-translate-owntranslation": "Eegen Iwwersetzunge kënnen net nogekuckt ginn",
+	"apierror-translate-sandboxdisabled": "Sandkëscht-Funktioun gëtt net benotzt",
+	"apierror-translate-unknownmessage": "Onbekannte Message",
 	"apiwarn-translate-alreadyreviewedbyyou": "Scho markéiert wéi wann et vun Iech nogekuckt ass"
 }

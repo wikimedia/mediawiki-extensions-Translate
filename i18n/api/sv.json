@@ -47,6 +47,7 @@
 	"apihelp-searchtranslations-example-1": "Visa översättningar för språket.",
 	"apihelp-searchtranslations-example-2": "Visa oöversatta meddelanden som överensstämmer förfrågan i källkoden.",
 	"apierror-translate-duplicateaggregategroup": "Meddelandegruppen finns redan",
+	"apierror-translate-fuzzymessage": "Kan inte granska föråldrade översättningar",
 	"apierror-translate-invalidupdate": "Ogiltig uppdatering",
 	"apierror-translate-language-disabled": "Översättning till detta språk är inaktiverad",
 	"apierror-translate-owntranslation": "Kan inte granska egna översättningar",

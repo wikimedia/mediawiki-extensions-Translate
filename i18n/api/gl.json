@@ -90,5 +90,17 @@
 	"apihelp-searchtranslations-example-1": "Mostrar as traducións para a lingua.",
 	"apihelp-searchtranslations-example-2": "Mostrar as mensaxes non traducidas que coincidan coa pescuda na lingua de orixe.",
 	"apierror-translate-duplicateaggregategroup": "O grupo de mensaxes xa existe",
-	"apierror-translate-groupreviewdisabled": "A revisión do grupo de mensaxes non está en uso."
+	"apierror-translate-groupreviewdisabled": "A revisión do grupo de mensaxes non está en uso.",
+	"apierror-translate-invalidaggregategroup": "Grupo de mensaxes agregadas non válido",
+	"apierror-translate-invalidaggregategroupname": "Nome do grupo de mensaxes agregadas non válido",
+	"apierror-translate-invalidgroup": "O grupo non existe ou non é válido",
+	"apierror-translate-invalidstate": "O estado solicitado non é válido.",
+	"apierror-translate-invalidupdate": "Actualización non válida",
+	"apierror-translate-language-disabled": "A tradución a esta lingua está desactivada",
+	"apierror-translate-nodynamicgroups": "Aquí non están admitidos os grupos de mensaxes dinámicas",
+	"apierror-translate-nomessagefortitle": "O título non se corresponde cunha mensaxe traducible",
+	"apierror-translate-owntranslation": "Non pode revisar as súas traducións",
+	"apierror-translate-sandboxdisabled": "A función de zona de probas non está en uso",
+	"apierror-translate-unknownmessage": "Mensaxe descoñecida",
+	"apiwarn-translate-alreadyreviewedbyyou": "Xa marcada como revisada por vostede"
 }
