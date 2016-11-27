@@ -109,7 +109,7 @@
 	"logentry-pagetranslation-deletefnok": "$1 {{GENDER:$2|não conseguiu}} eliminar $3, que pertence à página traduzível $4",
 	"logentry-pagetranslation-deletelok": "$1 {{GENDER:$2|concluiu}} a eliminação da página traduzível $3",
 	"logentry-pagetranslation-deletelnok": "$1 {{GENDER:$2|não conseguiu}} eliminar $3, que pertence à página de tradução $4",
-	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|restaurou}} a tradução de $3",
+	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|encorajou}} a tradução de $3",
 	"logentry-pagetranslation-discourage": "$1 {{GENDER:$2|desencorajou}} a tradução de $3",
 	"logentry-pagetranslation-prioritylanguages-unset": "$1 {{GENDER:$2|removeu}} as línguas prioritárias da página traduzível $3",
 	"logentry-pagetranslation-prioritylanguages": "$1 {{GENDER:$2|definiu}} como línguas prioritárias da página traduzível $3 as línguas $5",
