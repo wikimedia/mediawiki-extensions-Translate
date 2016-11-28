@@ -129,6 +129,7 @@
 	"right-translate-import": "Importar traducciones sin conexión",
 	"action-translate-import": "importar traducciones sin conexión",
 	"right-translate-messagereview": "Revisar traducciones",
+	"action-translate-messagereview": "revisar traducciones",
 	"right-translate-groupreview": "Modificar el estado del flujo de trabajo de los grupos de mensajes",
 	"translate-rc-translation-filter": "Filtrar traducciones:",
 	"translate-rc-translation-filter-no": "No hacer nada",

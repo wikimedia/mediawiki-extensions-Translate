@@ -79,5 +79,13 @@
 	"apihelp-searchtranslations-param-offset": "\"Offset\" para las traducciones.",
 	"apihelp-searchtranslations-param-limit": "Tamaño del resultado.",
 	"apihelp-searchtranslations-example-1": "Mostrar las traducciones para el idioma.",
-	"apihelp-searchtranslations-example-2": "Mostrar mensajes sin traducir que coincidan con la consulta en el idioma de origen."
+	"apihelp-searchtranslations-example-2": "Mostrar mensajes sin traducir que coincidan con la consulta en el idioma de origen.",
+	"apierror-translate-invalidgroup": "El grupo no existe o no es válido",
+	"apierror-translate-invalidstate": "El estado solicitado no es válido.",
+	"apierror-translate-invalidupdate": "Actualización no válida",
+	"apierror-translate-language-disabled": "Se ha desactivado la traducción a este idioma",
+	"apierror-translate-nodynamicgroups": "No se admiten aquí los grupos de mensajes dinámicos",
+	"apierror-translate-nomessagefortitle": "El título no se corresponde con un mensaje traducible",
+	"apierror-translate-owntranslation": "No se pueden revisar las traducciones propias",
+	"apierror-translate-unknownmessage": "Mensaje desconocido"
 }

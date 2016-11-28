@@ -4,7 +4,8 @@
 			"Okras",
 			"Kaganer",
 			"Дмитрий",
-			"Туллук"
+			"Туллук",
+			"Kareyac"
 		]
 	},
 	"apihelp-aggregategroups-description": "Вы можете добавлять и удалять агрегированные группы сообщений, группировывать и разгруппировывать сообщения в них ( по одному за раз ) .",
@@ -37,5 +38,8 @@
 	"apihelp-searchtranslations-param-sourcelanguage": "Код языка исходного текста.",
 	"apihelp-searchtranslations-param-limit": "Размер результата.",
 	"apihelp-searchtranslations-example-1": "Показать переводы на язык.",
-	"apihelp-searchtranslations-example-2": "Показать непереведённые сообщения, соответствующие запросу на исходном языке."
+	"apihelp-searchtranslations-example-2": "Показать непереведённые сообщения, соответствующие запросу на исходном языке.",
+	"apierror-translate-language-disabled": "Перевод на этот язык отключен",
+	"apierror-translate-owntranslation": "Не может проверять собственные переводы",
+	"apiwarn-translate-alreadyreviewedbyyou": "Уже отмечены как просмотренные Вами"
 }
