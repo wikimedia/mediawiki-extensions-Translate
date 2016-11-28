@@ -1078,19 +1078,19 @@ $specialPageAliases['tyv'] = array(
 
 /** Ukrainian (українська) */
 $specialPageAliases['uk'] = array(
-	'AggregateGroups' => array( 'Агреговані_групи' ),
-	'ImportTranslations' => array( 'Імпорт_перекладів' ),
-	'LanguageStats' => array( 'Статистика_мови' ),
-	'Magic' => array( 'Поглиблений_переклад' ),
-	'ManageMessageGroups' => array( 'Керування_групами_повідомлень' ),
-	'MessageGroupStats' => array( 'Статистика_групи_повідомлень' ),
-	'PageTranslation' => array( 'Переклад' ),
-	'PageTranslationDeletePage' => array( 'Вилучення_перекладабельної_сторінки' ),
-	'SearchTranslations' => array( 'Пошук_перекладів' ),
-	'SupportedLanguages' => array( 'Підтримувані_мови' ),
-	'Translate' => array( 'Перекласти' ),
-	'TranslationStats' => array( 'Статистика_перекладів' ),
-	'Translations' => array( 'Переклади' ),
+	'AggregateGroups' => array( 'Агреговані_групи', 'Агрегированные_группы' ),
+	'ImportTranslations' => array( 'Імпорт_перекладів', 'Импорт_переводов' ),
+	'LanguageStats' => array( 'Статистика_мови', 'Статистика_языка' ),
+	'Magic' => array( 'Поглиблений_переклад', 'Расширенный_перевод' ),
+	'ManageMessageGroups' => array( 'Керування_групами_повідомлень', 'Управление_группами_сообщений' ),
+	'MessageGroupStats' => array( 'Статистика_групи_повідомлень', 'Статистика_группы_сообщений' ),
+	'PageTranslation' => array( 'Переклад', 'Перевод_страниц' ),
+	'PageTranslationDeletePage' => array( 'Вилучення_перекладабельної_сторінки', 'Удаление_переводимой_страницы' ),
+	'SearchTranslations' => array( 'Пошук_перекладів', 'Поиск_переводов' ),
+	'SupportedLanguages' => array( 'Підтримувані_мови', 'Поддерживаемые_языки' ),
+	'Translate' => array( 'Перекласти', 'Перевести' ),
+	'TranslationStats' => array( 'Статистика_перекладів', 'Статистика_переводов' ),
+	'Translations' => array( 'Переклади', 'Переводы' ),
 );
 
 /** Venetian (vèneto) */
