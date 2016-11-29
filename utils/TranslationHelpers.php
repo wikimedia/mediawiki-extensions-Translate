@@ -250,9 +250,9 @@ class TranslationHelpers {
 		);
 
 		$label =
-			wfMessage( 'translate-edit-definition' )->text() .
-				wfMessage( 'word-separator' )->text() .
-				wfMessage( 'parentheses', $title )->text();
+			wfMessage( 'translate-edit-definition' )->escaped() .
+				wfMessage( 'word-separator' )->escaped() .
+				wfMessage( 'parentheses' )->rawParams( $title )->escaped();
 
 		// Source language object
 		$sl = Language::factory( $this->group->getSourceLanguage() );
@@ -280,7 +280,7 @@ class TranslationHelpers {
 		if ( $en === null ) {
 			return null;
 		}
-		$label = wfMessage( 'translate-edit-translation' )->text();
+		$label = wfMessage( 'translate-edit-translation' )->escaped();
 		$class = array( 'class' => 'mw-translate-edit-translation' );
 		$msg = Html::rawElement( 'span',
 			array( 'class' => 'mw-translate-edit-translationtext' ),
