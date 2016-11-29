@@ -43,8 +43,6 @@ $al['SpecialLanguageStats'] = "$dir/specials/SpecialLanguageStats.php";
 $al['SpecialMagic'] = "$dir/specials/SpecialMagic.php";
 $al['SpecialManageGroups'] = "$dir/specials/SpecialManageGroups.php";
 $al['SpecialMessageGroupStats'] = "$dir/specials/SpecialMessageGroupStats.php";
-$al['SpecialPageMigration'] = "$dir/specials/SpecialPageMigration.php";
-$al['SpecialPagePreparation'] = "$dir/specials/SpecialPagePreparation.php";
 $al['SpecialSearchTranslations'] = "$dir/specials/SpecialSearchTranslations.php";
 $al['SpecialSupportedLanguages'] = "$dir/specials/SpecialSupportedLanguages.php";
 $al['SpecialTranslate'] = "$dir/specials/SpecialTranslate.php";
@@ -136,6 +134,8 @@ $al['SpecialPageAliasesCM'] = "$dir/ffs/MediaWikiComplexMessages.php";
  */
 $al['TranslateDeleteJob'] = "$dir/tag/TranslateDeleteJob.php";
 $al['TranslateMoveJob'] = "$dir/tag/TranslateMoveJob.php";
+$al['SpecialPageMigration'] = "$dir/tag/SpecialPageMigration.php";
+$al['SpecialPagePreparation'] = "$dir/tag/SpecialPagePreparation.php";
 $al['PageTranslationHooks'] = "$dir/tag/PageTranslationHooks.php";
 $al['PageTranslationLogFormatter'] = "$dir/tag/PageTranslationLogFormatter.php";
 $al['TranslateRenderJob'] = "$dir/tag/TranslateRenderJob.php";
