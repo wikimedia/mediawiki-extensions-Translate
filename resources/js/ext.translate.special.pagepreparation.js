@@ -375,6 +375,7 @@
 			pageName = $.trim( $input.val() );
 			savePage( pageName, pageContent ).done( function () {
 				pageUrl = mw.Title.newFromText( pageName ).getUrl( { action: 'edit' } );
+				// TODO: user mw.message.parseDom with MW 1.27
 				$( '.messageDiv' ).html( mw.message( 'pp-save-message', pageUrl ).parse() ).show();
 				$( '.divDiff' ).hide( 'fast' );
 				$( '#action-prepare' ).show();
@@ -412,12 +413,12 @@
 						$( '.diff tbody' ).append( diff );
 						$( '.divDiff' ).show( 'fast' );
 						if ( diff !== '' ) {
-							messageDiv.html( mw.msg( 'pp-prepare-message' ) ).show();
+							messageDiv.text( mw.msg( 'pp-prepare-message' ) ).show();
 							$( '#action-prepare' ).hide();
 							$( '#action-save' ).show();
 							$( '#action-cancel' ).show();
 						} else {
-							messageDiv.html( mw.msg( 'pp-already-prepared-message' ) ).show();
+							messageDiv.text( mw.msg( 'pp-already-prepared-message' ) ).show();
 						}
 					} );
 				} );
