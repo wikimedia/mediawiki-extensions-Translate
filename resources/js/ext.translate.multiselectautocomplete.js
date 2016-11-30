@@ -37,18 +37,22 @@ jQuery( function ( $ ) {
 					matcher = new RegExp( $.ui.autocomplete.escapeRegex( term ), 'i' );
 
 					response( select.children( 'option' ).map( function () {
-						var text = $( this ).text(),
+						var text = $( this ).html(),
 							value = $( this ).val(),
 							term = split( request.term ).pop();
 
 						if ( this.value && ( !request.term || matcher.test( text ) ) ) {
-							return {
-								label: text.replace(
+							if ( term.trim() !== '' ) {
+								text = text.replace(
 									new RegExp(
 										'(?![^&;]+;)(?!<[^<>]*)(' +
 											$.ui.autocomplete.escapeRegex( term ) +
 											')(?![^<>]*>)(?![^&;]+;)', 'gi'
-									), '<strong>$1</strong>' ),
+									), '<strong>$1</strong>' );
+							}
+
+							return {
+								label: text,
 								value: value,
 								option: this
 							};
