@@ -186,6 +186,28 @@ $specialPageAliases['bjn'] = array(
 	'Translations' => array( 'Tarjamahan' ),
 );
 
+/** Bengali (বাংলা) */
+$specialPageAliases['bn'] = array(
+	'AggregateGroups' => array( 'সমষ্টিগত_গোষ্ঠীসমূহ' ),
+	'ImportTranslations' => array( 'অনুবাদ_আমদানি' ),
+	'ExportTranslations' => array( 'অনুবাদ_রপ্তানি' ),
+	'LanguageStats' => array( 'ভাষার_পরিসংখ্যান' ),
+	'Magic' => array( 'উন্নত_অনুবাদ', 'জাদু' ),
+	'ManageMessageGroups' => array( 'বার্তার_গোষ্ঠী_পরিচালনা' ),
+	'ManageTranslatorSandbox' => array( 'অনুবাদকের_খেলাঘর_পরিচালনা', 'অনুবাদের_খেলাঘর' ),
+	'MessageGroupStats' => array( 'বার্তা_দলের_পরিসংখ্যান' ),
+	'PageTranslation' => array( 'পাতা_অনুবাদ' ),
+	'PageTranslationDeletePage' => array( 'পাতা_অনুবাদের_পাতা_অপসারণ' ),
+	'SearchTranslations' => array( 'অনুবাদ_অনুসন্ধান' ),
+	'SupportedLanguages' => array( 'সমর্থিত_ভাষা' ),
+	'Translate' => array( 'অনুবাদ' ),
+	'TranslationStash' => array( 'অনুবাদের_স্টাশ' ),
+	'TranslationStats' => array( 'অনুবাদের_পরিসংখ্যান' ),
+	'Translations' => array( 'অনুবাদসমূহ' ),
+	'PageMigration' => array( 'পাতা_অভিপ্রায়ণ', 'পৃষ্ঠা_অভিপ্রায়ণ' ),
+	'PagePreparation' => array( 'পাতা_প্রস্তুতি', 'পৃষ্ঠা_প্রস্তুতি' ),
+);
+
 /** Breton (brezhoneg) */
 $specialPageAliases['br'] = array(
 	'ImportTranslations' => array( 'EnporzhiañTroidigezhioù' ),
