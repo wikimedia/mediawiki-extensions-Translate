@@ -72,7 +72,7 @@ class ApiTranslateSandbox extends ApiBase {
 		}
 
 		$password = $params['password'];
-		$status = $user->checkPasswordValidity( $password, 'login' );
+		$status = $user->checkPasswordValidity( $password );
 		if ( !$status->isGood() ) {
 			$this->dieStatus( $status );
 		}
