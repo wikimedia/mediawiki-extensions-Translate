@@ -86,5 +86,20 @@
 	"apihelp-searchtranslations-param-offset": "Отстап за преводите.",
 	"apihelp-searchtranslations-param-limit": "Големина на исходот.",
 	"apihelp-searchtranslations-example-1": "Прикажи преводи на овој јазик.",
-	"apihelp-searchtranslations-example-2": "Приказ на непреведени статии што одвораваат на бараното на изворниот јазик."
+	"apihelp-searchtranslations-example-2": "Приказ на непреведени статии што одвораваат на бараното на изворниот јазик.",
+	"apierror-translate-duplicateaggregategroup": "Групата пораки веќе постои",
+	"apierror-translate-fuzzymessage": "Не можете да проверувате застарени пораки",
+	"apierror-translate-groupreviewdisabled": "Проверката на групи пораки не е во употреба.",
+	"apierror-translate-invalidaggregategroup": "Неважечка група збирни пораки",
+	"apierror-translate-invalidaggregategroupname": "Неважечки назив за групата збирни пораки",
+	"apierror-translate-invalidgroup": "Групата не постои или е неважечка",
+	"apierror-translate-invalidstate": "Побараната состојба е неважечка.",
+	"apierror-translate-invalidupdate": "Неважечка поднова",
+	"apierror-translate-language-disabled": "Преведувањето на овој јазик е оневозможено",
+	"apierror-translate-nodynamicgroups": "Динамичките групи пораки не се поддржани овде",
+	"apierror-translate-nomessagefortitle": "Насловот не соодветствува на преводлива порака",
+	"apierror-translate-owntranslation": "Не можете да проверувате свои преводи",
+	"apierror-translate-sandboxdisabled": "Песочничката функција не е во употреба",
+	"apierror-translate-unknownmessage": "Непозната порака",
+	"apiwarn-translate-alreadyreviewedbyyou": "Веќе ја имате означено како проверена"
 }
