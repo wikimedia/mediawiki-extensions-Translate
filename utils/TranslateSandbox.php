@@ -87,6 +87,7 @@ class TranslateSandbox {
 	 */
 	public static function deleteUser( User $user, $force = '' ) {
 		$uid = $user->getId();
+		$username = $user->getName();
 
 		if ( $force !== 'force' && !self::isSandboxed( $user ) ) {
 			throw new MWException( 'Not a sandboxed user' );
@@ -98,7 +99,11 @@ class TranslateSandbox {
 		$dbw->delete( 'user_groups', array( 'ug_user' => $uid ), __METHOD__ );
 		$dbw->delete( 'user_properties', array( 'up_user' => $uid ), __METHOD__ );
 		$dbw->delete( 'logging', array( 'log_user' => $uid ), __METHOD__ );
-		$dbw->delete( 'recentchanges', array( 'rc_user' => $uid ), __METHOD__ );
+		$dbw->delete(
+			'recentchanges',
+			array( 'rc_user' => $uid, 'rc_user_text' => $username ),
+			__METHOD__
+		);
 
 		// If someone tries to access still object still, they will get anon user
 		// data.
