@@ -191,7 +191,6 @@ $al['JavaFFS'] = "$dir/ffs/JavaFFS.php";
 $al['JavaScriptFFS'] = "$dir/ffs/JavaScriptFFS.php";
 $al['JsonFFS'] = "$dir/ffs/JsonFFS.php";
 $al['MediaWikiExtensionFFS'] = "$dir/ffs/MediaWikiExtensionFFS.php";
-$al['RubyYamlFFS'] = "$dir/ffs/RubyYamlFFS.php";
 $al['ShapadoJsFFS'] = "$dir/ffs/JavaScriptFFS.php";
 $al['SimpleFFS'] = "$dir/ffs/SimpleFFS.php";
 $al['XliffFFS'] = "$dir/ffs/XliffFFS.php";
