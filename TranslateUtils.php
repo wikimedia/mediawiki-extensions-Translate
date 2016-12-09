@@ -385,7 +385,7 @@ class TranslateUtils {
 	/**
 	 * Get a DB handle suitable for read and read-for-write cases
 	 *
-	 * @return DatabaseBase Master for HTTP POST, CLI, DB already changed; slave otherwise
+	 * @return IDatabase Master for HTTP POST, CLI, DB already changed; slave otherwise
 	 */
 	public static function getSafeReadDB() {
 		// Parsing APIs need POST for payloads but are read-only, so avoid spamming
