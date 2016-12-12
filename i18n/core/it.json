@@ -18,7 +18,8 @@
 			"VittGam",
 			"Vituzzu",
 			"Matteocng",
-			"Anto"
+			"Anto",
+			"Fringio"
 		]
 	},
 	"translate": "Traduzione",
@@ -99,7 +100,7 @@
 	"translate-magic-saved": "Le modifiche sono state salvate.",
 	"translate-checks-parameters": "{{PLURAL:$2|Il seguente parametro non è stato usato|I seguenti parametri non sono stati usati}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Il seguente parametro è sconosciuto|I seguenti parametri sono sconosciuti}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-balance": "C'è un numero di {{PLURAL:$2|parentesi|parentesi}} dispari: <strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-balance": "C'è un numero di {{PLURAL:$2|parentesi|parentesi}} ineguale: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Il seguente collegamento è problematico|I seguenti $2 collegamenti sono problematici}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Il seguente collegamento è mancante|I seguenti $2 collegamenti sono mancanti}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "Sostituire {{PLURAL:$2|il marcatore seguente|i marcatori seguenti}} con quelli corretti: <strong><nowiki>$1</nowiki></strong>",
