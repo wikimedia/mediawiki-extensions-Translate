@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2edfb757_e6feb665",
+        "filename": "resources/js/ext.translate.special.translationstats.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2016-12-13T09:36:39Z",
+      "side": 1,
+      "message": "You could probably add your name here :)",
+      "revId": "fcf36ba16262dd17261680d132cb5a84aa125bc1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2edfb757_66ebe6a1",
+        "filename": "resources/js/ext.translate.special.translationstats.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2016-12-13T09:36:39Z",
+      "side": 1,
+      "message": "... And when the old datepicker support is removed will this move to Resources.php?",
+      "revId": "fcf36ba16262dd17261680d132cb5a84aa125bc1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
