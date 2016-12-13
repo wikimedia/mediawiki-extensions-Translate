@@ -204,7 +204,7 @@ $specialPageAliases['bn'] = array(
 	'TranslationStash' => array( 'অনুবাদের_স্টাশ' ),
 	'TranslationStats' => array( 'অনুবাদের_পরিসংখ্যান' ),
 	'Translations' => array( 'অনুবাদসমূহ' ),
-	'PageMigration' => array( 'পাতা_অভিপ্রায়ণ', 'পৃষ্ঠা_অভিপ্রায়ণ' ),
+	'PageMigration' => array( 'পাতা_অভিপ্রায়ণ', 'পৃষ্ঠা_অভিপ্রায়ণ' ),
 	'PagePreparation' => array( 'পাতা_প্রস্তুতি', 'পৃষ্ঠা_প্রস্তুতি' ),
 );
 
