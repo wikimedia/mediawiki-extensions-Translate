@@ -121,6 +121,10 @@ class JsonFFS extends SimpleFFS {
 			$messages = $flattener->unflatten( $messages );
 		}
 
+		if ( isset( $this->extra['includeMetadata'] ) && !$this->extra['includeMetadata'] ) {
+			unset( $messages['@metadata'] );
+		}
+
 		return FormatJson::encode( $messages, "\t", FormatJson::ALL_OK ) . "\n";
 	}
 
@@ -136,6 +140,9 @@ class JsonFFS extends SimpleFFS {
 								'_type' => 'text',
 							),
 							'parseCLDRPlurals' => array(
+								'_type' => 'boolean',
+							),
+							'includeMetadata' => array(
 								'_type' => 'boolean',
 							)
 						)
