@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e0e73b5_c084b760",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-12-15T12:50:10Z",
+      "side": 1,
+      "message": "makeKey seems to be available since 1.27",
+      "revId": "80622fe0af72b27c53ae8f70084e6782c4a75091",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e0e73b5_8097df92",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-12-15T12:50:10Z",
+      "side": 1,
+      "message": "pcGroup is available since 1.28",
+      "revId": "80622fe0af72b27c53ae8f70084e6782c4a75091",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
