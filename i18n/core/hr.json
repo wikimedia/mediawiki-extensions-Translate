@@ -160,6 +160,11 @@
 	"translate-gs-avgscore": "Prosječno",
 	"translate-documentation-language": "Dokumentacija poruke",
 	"translate-searchprofile": "Prijevodi",
+	"tux-editor-editsummary-placeholder": "Neobvezan sažetak",
+	"tux-editor-discard-changes-button-label": "Zanemari izmjene",
+	"tux-editor-save-button-label": "Spremi prijevod",
+	"tux-editor-skip-button-label": "Preskoči na sljedeću poruku",
+	"tux-editor-shortcut-info": "Za spremanje pritisnite \"$1\"; za preskok na sljedeću poruku pritisnite \"$2\"; za sažetak pritisnite \"$4\", a za ostale prečace pritisnite \"$3\".",
 	"tux-editor-message-tools-delete": "Izbriši",
 	"translate-search-more-languages-info": "{{PLURAL:$1|Još jedan jezik|Još $1 druga jezika|Još $1 drugih jezika}}"
 }
