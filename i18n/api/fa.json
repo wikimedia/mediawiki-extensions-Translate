@@ -13,7 +13,7 @@
 	"apihelp-aggregategroups-param-groupdescription": "توصیف گروه پیغام دسته‌جمعی.",
 	"apihelp-aggregategroups-example-1": "متصل کردن یک گروه",
 	"apihelp-groupreview-description": "مشخص کردن حالت‌های روند کار گروه پیغام.",
-	"apihelp-groupreview-param-group": "گروه پیغام‌ها.",
+	"apihelp-groupreview-param-group": "گروه پیغام.",
 	"apihelp-groupreview-param-language": "کد زبان.",
 	"apihelp-groupreview-param-state": "حالت تازه برای گروه.",
 	"apihelp-query+languagestats-param-language": "کد زبان.",

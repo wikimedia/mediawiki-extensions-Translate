@@ -39,7 +39,7 @@
 	"tsb-delete-userpage-summary": "حذف صفحه کاربری کاربر جعبه شنی",
 	"translationstash": "خوش آمدید",
 	"translate-translationstash-welcome": "خوش آمدید {{GENDER:$1|$1}}، شما یک مترجم تازه هستید",
-	"translate-translationstash-welcome-note": "آشنا شدن با ابزارهای ترجمه. چند پیام را ترجمه کنید و تمام حقوق مترجم را برای شرکت در پروژه‌های مورد علاقه خود بدست آورید.",
+	"translate-translationstash-welcome-note": "با ابزارهای ترجمه آشنا شوید. چند پیام را ترجمه کنید و اختیارات کامل ترجمه را به دست بیاورید تا در پروژه‌های مورد علاقهٔ خود شرکت کنید.",
 	"translate-translationstash-initialtranslation": "ترجمه‌های اولیهٔ شما",
 	"translate-translationstash-translations": "$1تکمیل شده {{PLURAL:$1|ترجمه|ترجمه‌ها}}",
 	"translate-translationstash-skip-button-label": "امتحان دیگری",
