@@ -109,6 +109,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 	 */
 	protected function formatGroup( $mixed, $props, $depth = 0 ) {
 		$params = $this->extractRequestParams();
+		$context = $this->getContext();
 
 		// Default
 		$g = $mixed;
@@ -129,11 +130,11 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		}
 
 		if ( isset( $props['label'] ) ) {
-			$a['label'] = $g->getLabel();
+			$a['label'] = $g->getLabel( $context );
 		}
 
 		if ( isset( $props['description'] ) ) {
-			$a['description'] = $g->getDescription();
+			$a['description'] = $g->getDescription( $context );
 		}
 
 		if ( isset( $props['class'] ) ) {
