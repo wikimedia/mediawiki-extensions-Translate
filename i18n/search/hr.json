@@ -5,6 +5,26 @@
 		]
 	},
 	"searchtranslations": "Pretraga prijevoda",
+	"tux-sst-edit": "Uredi prijevod",
+	"tux-sst-view-foreign": "Vidi na $1",
+	"tux-sst-search": "Pretraži",
+	"tux-sst-search-ph": "Pretraga prijevoda",
+	"tux-sst-count": "{{PLURAL:$1|Pronađen jedan rezultat|Pronađena $1 rezultata|Pronađeno $1 rezultata}}",
+	"tux-sst-facet-language": "Jezici",
+	"tux-sst-facet-group": "Grupe poruka",
+	"tux-sst-nosolr-title": "Pretraživanje nije dostupno",
+	"tux-sst-nosolr-body": "Ovaj wiki nema uslugu pretrage prijevoda.",
+	"tux-sst-solr-offline-title": "Pretraživanje nije dostupno",
+	"tux-sst-solr-offline-body": "Tražilica je privremeno nedostupna.",
+	"tux-sst-next": "Sljedeće ›",
+	"tux-sst-prev": "‹ Prethodno",
 	"tux-sst-default": "Prijevodi",
-	"tux-sst-ellipsis-outdated": "Zastarjeli prijevodi"
+	"tux-sst-translated": "Prijevodi s $1",
+	"tux-sst-untranslated": "Nema prijevoda s $1",
+	"tux-sst-outdated": "Zastarjeli prijevodi s $1",
+	"tux-sst-ellipsis-untranslated": "Nema prijevoda",
+	"tux-sst-ellipsis-outdated": "Zastarjeli prijevodi",
+	"tux-sst-link-all-match": "Pretraga prema cijelom izrazu.",
+	"tux-sst-match-message": "Prikazuju se prijevodi koji odgovaraju svim riječima iz pretrage. $1",
+	"tux-sst-case-sensitive": "Razlikuj velika i mala slova"
 }

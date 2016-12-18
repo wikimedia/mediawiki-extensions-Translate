@@ -4,9 +4,32 @@
 			"Eitvys200"
 		]
 	},
+	"apihelp-translatesandbox-param-do": "Ką daryti.",
+	"apihelp-translatesandbox-param-username": "Vartotojo vardas, kai kuriamas vartotojas.",
+	"apihelp-translatesandbox-param-password": "Slaptažodis, kai kuriamas vartotojas.",
+	"apihelp-translatesandbox-param-email": "El. paštas, kai kuriamas vartotojas.",
+	"apihelp-translationaids-param-title": "Pilnas žinomos žinutės pavadinimas.",
+	"apihelp-translationaids-param-prop": "Kuriuos vertimo pagalbininkus įtraukti.",
+	"apihelp-translationreview-description": "Pažymėti vertimus peržiūrėtais.",
 	"apihelp-translationstash-param-subaction": "Veiksmas.",
+	"apihelp-translationstash-param-translation": "Vertimas atliktas vartotojo.",
 	"apihelp-translationstash-param-metadata": "JSON objektas.",
+	"apihelp-ttmserver-param-service": "Kurią iš galimų vertimų paslaugų naudoti.",
+	"apihelp-ttmserver-param-sourcelanguage": "Šaltinio teksto kalbos kodas.",
+	"apihelp-ttmserver-param-targetlanguage": "Siūlymo kalbos kodas.",
+	"apihelp-ttmserver-param-text": "Tekstas, kuriam rasti pasiūlymus.",
+	"apihelp-ttmserver-example-1": "Gauti pasiūlymus verčiant „Help“ iš anglų k. į suomių k.",
 	"apihelp-searchtranslations-description": "Ieškoti vertimų.",
+	"apihelp-searchtranslations-param-service": "Kurią iš galimų vertimų paslaugų naudoti.",
+	"apihelp-searchtranslations-param-sourcelanguage": "Šaltinio teksto kalbos kodas.",
+	"apihelp-searchtranslations-param-filter": "Pranešimo vertimo būsenos filtras.",
 	"apihelp-searchtranslations-param-limit": "Rezultato dydis.",
-	"apihelp-searchtranslations-example-1": "Rodyti kalbos vertimus."
+	"apihelp-searchtranslations-example-1": "Rodyti kalbos vertimus.",
+	"apierror-translate-duplicateaggregategroup": "Pranešimo grupė jau egzistuoja",
+	"apierror-translate-invalidupdate": "Negalimas atnaujinimas",
+	"apierror-translate-language-disabled": "Vertimai į šią kalbą yra išjungtas",
+	"apierror-translate-owntranslation": "Negalima peržiūrėti savo paties vertimų",
+	"apierror-translate-sandboxdisabled": "Smėlio dėžės funkcija nenaudojama",
+	"apierror-translate-unknownmessage": "Nežinomas pranešimas",
+	"apiwarn-translate-alreadyreviewedbyyou": "Jau pažymėtas kaip peržiūrėtas jūsų"
 }
