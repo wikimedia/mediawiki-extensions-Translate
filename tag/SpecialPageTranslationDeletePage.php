@@ -63,7 +63,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		// Yes, the use of getVal() and getText() is wanted, see bug T22365
 		$this->text = $request->getVal( 'wpTitle', $par );
 		$this->title = Title::newFromText( $this->text );
-		$this->reason = $request->getText( 'reason' );
+		$this->reason = $request->getText( 'wpReason' );
 		// Checkboxes that default being checked are tricky
 		$this->doSubpages = $request->getBool( 'subpages', !$request->wasPosted() );
 
@@ -196,7 +196,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		$this->addInputLabel(
 			$form,
 			$this->msg( 'pt-deletepage-reason' )->text(),
-			'reason',
+			'wpReason', // For consistency with ?action=delete
 			60,
 			$this->reason
 		);
@@ -302,7 +302,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		$this->addInputLabel(
 			$form,
 			$this->msg( 'pt-deletepage-reason' )->text(),
-			'reason',
+			'wpReason',
 			60,
 			$this->reason );
 		$form[] = Xml::checkLabel(
