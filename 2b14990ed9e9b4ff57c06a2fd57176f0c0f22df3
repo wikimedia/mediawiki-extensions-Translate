@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e0e73b5_9ab299e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2016-12-19T09:58:25Z",
+      "side": 1,
+      "message": "You probably meant to write \"in a message\".",
+      "revId": "2b14990ed9e9b4ff57c06a2fd57176f0c0f22df3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e0e73b5_5aac2184",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2016-12-19T09:58:25Z",
+      "side": 1,
+      "message": "\"uses a CLDR format\"? \"uses the CLDR format\"?",
+      "revId": "2b14990ed9e9b4ff57c06a2fd57176f0c0f22df3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e0e73b5_3ab16ddd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2016-12-19T09:58:25Z",
+      "side": 1,
+      "message": "\"the next\"?",
+      "revId": "2b14990ed9e9b4ff57c06a2fd57176f0c0f22df3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e0e73b5_babd5daf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2016-12-19T09:58:25Z",
+      "side": 1,
+      "message": "You possibly meant to write \"a few\" (though maybe not). Also, the word \"that\" seems out of place.",
+      "revId": "2b14990ed9e9b4ff57c06a2fd57176f0c0f22df3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
