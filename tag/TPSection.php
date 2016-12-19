@@ -48,7 +48,7 @@ class TPSection {
 		$this->inline = (bool)$value;
 	}
 
-	public function isInline( $value ) {
+	public function isInline() {
 		return $this->inline;
 	}
 
