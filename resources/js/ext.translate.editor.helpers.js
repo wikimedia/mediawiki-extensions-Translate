@@ -317,7 +317,7 @@
 						$( '<div>' )
 							.addClass( 'three columns quality text-right' )
 							.text( mw.msg( 'tux-editor-tm-match',
-								Math.floor( translation.quality * 100 ) ) ),
+								Math.floor( translation.quality * 100 ).toLocaleString( translation.language ) ) ),
 						$( '<div>' )
 							.addClass( 'row text-right' )
 							.append(
