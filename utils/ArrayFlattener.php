@@ -274,4 +274,27 @@ class ArrayFlattener {
 		return $alts;
 	}
 
+	/**
+	 * Compares two strings for equal content, taking PLURAL expansion into account.
+	 *
+	 * @param string $a
+	 * @param string $b
+	 * @return bool Whether two strings are equal
+	 */
+	public function compareContent( $a, $b ) {
+		if ( !$this->parseCLDRPlurals ) {
+			return $a === $b;
+		}
+
+		$a2 = $this->unflattenCLDRPlurals( 'prefix', $a );
+		$b2 = $this->unflattenCLDRPlurals( 'prefix', $b );
+
+		// Fall back to regular comparison if parsing fails.
+		if ( $a2 === false || $b2 === false ) {
+			return $a === $b;
+		}
+
+		// Require key-value pairs to match, but ignore order and types (all should be strings).
+		return $a2 == $b2;
+	}
 }
