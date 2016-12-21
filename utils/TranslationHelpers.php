@@ -511,9 +511,7 @@ class TranslationHelpers {
 		}
 
 		$diff = new DifferenceEngine;
-		if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
-			$diff->setTextLanguage( $this->group->getSourceLanguage() );
-		}
+		$diff->setTextLanguage( $this->group->getSourceLanguage() );
 
 		$oldContent = ContentHandler::makeContent( $oldtext, $diff->getTitle() );
 		$newContent = ContentHandler::makeContent( $newtext, $diff->getTitle() );

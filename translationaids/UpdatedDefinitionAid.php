@@ -62,9 +62,7 @@ class UpdatedDefinitionAid extends TranslationAid {
 		}
 
 		$diff = new DifferenceEngine( $this->context );
-		if ( method_exists( 'DifferenceEngine', 'setTextLanguage' ) ) {
-			$diff->setTextLanguage( $this->group->getSourceLanguage() );
-		}
+		$diff->setTextLanguage( $this->group->getSourceLanguage() );
 		$diff->setContent( $oldContent, $newContent );
 		$diff->setReducedLineNumbers();
 		$diff->showDiffStyle();
