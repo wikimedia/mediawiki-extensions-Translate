@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e0e73b5_7a4d979a",
+        "filename": "resources/js/ext.translate.editor.helpers.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-12-21T07:58:13Z",
+      "side": 1,
+      "message": "We don\u0027t use toLocaleString in MediaWiki, but mw.language.convertNumber.",
+      "revId": "fa40917948423bc128da23a1d8f2b4b35d94dde6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
