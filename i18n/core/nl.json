@@ -144,7 +144,7 @@
 	"translate-statsf-language": "Kommagescheiden lijst van taalcodes:",
 	"translate-statsf-group": "Kommagescheiden lijst van groepscodes:",
 	"translate-statsf-submit": "Voorvertoning",
-	"translate-tag-page-desc": "Vertaling van de wikipagina [[$2|$1]] van $3 ($4).",
+	"translate-tag-page-desc": "Vertaling van de wikipagina [[$2|$1]] uit het $3 ($4).",
 	"translate-sidebar-alltrans": "In andere talen",
 	"translations": "Alle vertalingen",
 	"translations-summary": "Voer de naam van een bericht in om alle beschikbare vertalingen weer te geven.",

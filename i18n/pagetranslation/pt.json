@@ -64,6 +64,7 @@
 	"translate-tag-markthisagain": "Esta página tem <span class=\"plainlinks\">[$1 alterações]</span> desde a última vez que foi <span class=\"plainlinks\">[$2 marcada para tradução]</span>.",
 	"translate-tag-hasnew": "Esta página contém <span class=\"plainlinks\">[$1 alterações]</span> que não estão marcadas para tradução.",
 	"tpt-translation-intro": "Esta página é uma <span class=\"plainlinks\">[$1 versão traduzida]</span> da página [[$2]] e a tradução está $3% completa.",
+	"tpt-translation-intro-fuzzy": "As traduções desatualizadas estão marcadas desta forma.",
 	"tpt-languages-legend": "Outras línguas:",
 	"tpt-languages-zero": "Iniciar a tradução para esta língua",
 	"tpt-languages-nonzero": "$1 ($2% traduzida)",

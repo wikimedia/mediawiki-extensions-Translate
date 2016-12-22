@@ -53,7 +53,7 @@
 	"translate-page-disabled-source": "$1是该页面的源语言。",
 	"translate-language-disabled": "至该语言的翻译已停用。",
 	"translate-page-settings-legend": "设置",
-	"translate-page-group": "信息组",
+	"translate-page-group": "组",
 	"translate-page-language": "语言",
 	"translate-page-limit": "限制",
 	"translate-page-limit-option": "每页$1个信息",

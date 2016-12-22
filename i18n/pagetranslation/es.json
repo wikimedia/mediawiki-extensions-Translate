@@ -19,7 +19,8 @@
 			"Macofe",
 			"JasterTDC",
 			"Mgpena",
-			"GamemOfAnime"
+			"GamemOfAnime",
+			"Dgstranz"
 		]
 	},
 	"pagetranslation": "Traducción de página",
@@ -74,6 +75,7 @@
 	"translate-tag-markthisagain": "Esta página tiene <span class=\"plainlinks\">[$1 cambios]</span> desde la última vez que fue <span class=\"plainlinks\">[$2 marcada para traducción]</span>.",
 	"translate-tag-hasnew": "Esta página contiene <span class=\"plainlinks\">[$1 cambios]</span> que no se han marcado para su traducción.",
 	"tpt-translation-intro": "Esta página es una <span class=\"plainlinks\">[$1 versión traducida]</span> de la página [[$2]]. La traducción está completa al $3 %.",
+	"tpt-translation-intro-fuzzy": "Las traducciones desactualizadas están marcadas así.",
 	"tpt-languages-legend": "Otros idiomas:",
 	"tpt-languages-zero": "Iniciar la traducción para este idioma",
 	"tpt-languages-nonzero": "$1 ($2% traducido)",
