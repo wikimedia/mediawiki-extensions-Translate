@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e0e73b5_158f7e27",
+        "filename": "utils/MessageGroupCache.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 776
+      },
+      "writtenOn": "2016-12-23T02:41:01Z",
+      "side": 1,
+      "message": "not set by the constructor, so the should probably be |null?",
+      "revId": "379c3a7bff53cbdca4fcad9aec8aed659ecea62a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
