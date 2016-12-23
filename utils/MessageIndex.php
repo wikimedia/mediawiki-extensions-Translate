@@ -586,7 +586,7 @@ class CDBMessageIndex extends MessageIndex {
 	protected $index;
 
 	/**
-	 * @var CdbReader|null
+	 * @var \Cdb\Reader|null
 	 */
 	protected $reader;
 
