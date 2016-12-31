@@ -320,6 +320,8 @@ $al['YandexWebService'] = "$dir/webservices/YandexWebService.php";
  */
 $al['Insertable'] = "$dir/insertables/Insertable.php";
 $al['InsertablesSuggester'] = "$dir/insertables/InsertablesSuggester.php";
+$al['NumericalParameterInsertablesSuggester'] =
+	"$dir/insertables/NumericalParameterInsertablesSuggester.php";
 $al['MediaWikiInsertablesSuggester'] =
 	"$dir/insertables/MediaWikiInsertablesSuggester.php";
 $al['TranslatablePageInsertablesSuggester'] =
