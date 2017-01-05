@@ -272,6 +272,8 @@ $al['MockSuperUser'] = "$dir/tests/phpunit/MockSuperUser.php";
 $al['MockWikiMessageGroup'] = "$dir/tests/phpunit/MockWikiMessageGroup.php";
 $al['MediaWikiInsertablesSuggesterTest'] =
 	"$dir/tests/phpunit/insertables/MediaWikiInsertablesSuggesterTest.php";
+$al['NumericalParameterInsertablesSuggesterTest'] =
+	"$dir/tests/phpunit/insertables/NumericalParameterInsertablesSuggesterTest.php";
 
 /**@}*/
 
@@ -320,8 +322,11 @@ $al['YandexWebService'] = "$dir/webservices/YandexWebService.php";
  */
 $al['Insertable'] = "$dir/insertables/Insertable.php";
 $al['InsertablesSuggester'] = "$dir/insertables/InsertablesSuggester.php";
+$al['CombinedInsertablesSuggester'] = "$dir/insertables/CombinedInsertablesSuggester.php";
 $al['MediaWikiInsertablesSuggester'] =
 	"$dir/insertables/MediaWikiInsertablesSuggester.php";
+$al['NumericalParameterInsertablesSuggester.php'] =
+	"$dir/insertables/NumericalParameterInsertablesSuggester.php";
 $al['TranslatablePageInsertablesSuggester'] =
 	"$dir/insertables/TranslatablePageInsertablesSuggester.php";
 /**@}*/
