@@ -13,7 +13,8 @@
 			"Wiki13",
 			"Mar(c)",
 			"Southparkfan",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Mainframe98"
 		]
 	},
 	"translate": "Vertalen",
@@ -34,6 +35,7 @@
 	"translate-page-no-such-language": "Er is een ongeldige taalcode opgegeven",
 	"translate-page-no-such-group": "De opgegeven groep bestaat niet.",
 	"translate-page-disabled": "Vertalingen in deze taal voor deze groep zijn uitgeschakeld. Reden:\n\n<em>$1</em>",
+	"translate-page-disabled-source": "$1 is de brontaal van deze pagina.",
 	"translate-language-disabled": "Vertalen in deze taal is uitgeschakeld.",
 	"translate-page-settings-legend": "Instellingen",
 	"translate-page-group": "Groep",
@@ -67,6 +69,7 @@
 	"translate-use-suggestion": "Huidige vertaling door deze suggestie vervangen.",
 	"translate-edit-nopermission": "U hebt vertaalrechten nodig om te kunnen vertalen.",
 	"translate-edit-askpermission": "Vertaalrechten aanvragen",
+	"exporttranslations": "Vertalingen exporteren",
 	"translate-magic-pagename": "Uitgebreide MediaWiki-vertaling",
 	"translate-magic-help": "U kunt alternatieven voor speciale pagina's, magische woorden en naamruimtebenamingen vertalen.\n\nAlternatieven voor speciale pagina's en magische woorden kunnen meerdere vertalingen hebben.\nScheid vertalingen met een komma (,).\nNaamruimtebenamingen kunnen slechts één vertaling hebben.\n\nHet vertalen van naamruimte voor projectoverleg <code>$1 talk</code> kan lastig zijn.\n<code>$1</code> wordt vervangen door de projectsitenaam (bijvoorbeeld <code>{{ns:project_talk}}</code>).\nAls het in uw taal niet mogelijk is een geldige uitdrukking te vormen zonder de sitenaam te wijzigen, neem dan contact op met ons op via de [[Support|pagina voor ondersteuning]].\n\nU moet vertaler zijn om wijzigingen op te kunnen slaan.\nWijzigingen worden niet bewaard totdat u op \"Pagina opslaan\" hebt geklikt.",
 	"translate-magic-module": "Module:",
@@ -308,6 +311,7 @@
 	"tux-status-translated": "Vertaald",
 	"tux-status-saving": "Opslaan...",
 	"tux-status-unsaved": "Niet-opgeslagen",
+	"tux-save-unknown-error": "Er is een onbekende fout opgetreden.",
 	"tux-editor-placeholder": "Uw vertaling",
 	"tux-editor-editsummary-placeholder": "Optionele bewerkingssamenvatting",
 	"tux-editor-paste-original-button-label": "Brontekst invoegen",
@@ -317,7 +321,7 @@
 	"tux-editor-cancel-button-label": "Annuleren",
 	"tux-editor-confirm-button-label": "Vertaling bevestigen",
 	"tux-editor-proofread-button-label": "Als gecontroleerd markeren",
-	"tux-editor-shortcut-info": "Druk op \"$1\" om op te slaan of druk op \"$2\" om naar het volgende bericht te gaan of \"$3\" voor andere snelkoppelingen.",
+	"tux-editor-shortcut-info": "Druk op \"$1\" om op te slaan of druk op \"$2\" om naar het volgende bericht te gaan of druk op \"$4\" om een bewerkingssamenvatting op te geven of \"$3\" voor andere snelkoppelingen.",
 	"tux-editor-edit-desc": "Documentatie bewerken",
 	"tux-editor-add-desc": "Documentatie toevoegen",
 	"tux-editor-suggestions-title": "Suggesties",
