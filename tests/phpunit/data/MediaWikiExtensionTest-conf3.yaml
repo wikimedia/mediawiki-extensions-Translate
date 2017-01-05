@@ -23,7 +23,8 @@ CHECKER:
    - miscMWChecks
 
 INSERTABLES:
-  class: MediaWikiInsertablesSuggester
+  class:
+   - MediaWikiInsertablesSuggester
 
 TAGS:
   optional:
