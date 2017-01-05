@@ -46,9 +46,12 @@ root:
     INSERTABLES:
       _type: array
       _children:
-        class:
+        class: # for supplying one class
           _type: text
-          _not_empty: true
+        classes: # for supplying multiple
+          _type: prototype
+          _prototype:
+            _type: text
     TAGS:
       _type: prototype
       _prototype:
