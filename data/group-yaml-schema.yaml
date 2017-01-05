@@ -47,8 +47,9 @@ root:
       _type: array
       _children:
         class:
-          _type: text
-          _not_empty: true
+          _type: prototype
+          _prototype:
+            _type: text
     TAGS:
       _type: prototype
       _prototype:
