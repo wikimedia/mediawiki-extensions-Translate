@@ -7,7 +7,7 @@
  * @license GPL-2.0+
  */
 
-class TranslatablePageInsertablesSuggesterTest extends MediaWikiInsertablesSuggesterTest {
+class TranslatablePageInsertablesSuggesterTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider getInsertablesProvider
 	 */
