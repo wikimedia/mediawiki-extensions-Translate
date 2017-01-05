@@ -26,7 +26,8 @@ CHECKER:
    - miscMWChecks
 
 INSERTABLES:
-  class: MediaWikiInsertablesSuggester
+  class:
+   - MediaWikiInsertablesSuggester
 
 MANGLER:
   class: StringMatcher
