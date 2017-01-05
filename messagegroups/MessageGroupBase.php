@@ -159,17 +159,18 @@ abstract class MessageGroupBase implements MessageGroup {
 	 * @since 2013.09
 	 */
 	public function getInsertablesSuggester() {
-		$class = $this->getFromConf( 'INSERTABLES', 'class' );
+		$classes = $this->getFromConf( 'INSERTABLES', 'class' );
+		$suggesters = array();
 
-		if ( !$class ) {
-			return null;
+		foreach ( $classes as $class ) {
+			if ( !class_exists( $class ) ) {
+				throw new MWException( "InsertablesSuggester class $class does not exist." );
+			}
+
+			$suggesters[] = new $class();
 		}
 
-		if ( !class_exists( $class ) ) {
-			throw new MWException( "InsertablesSuggester class $class does not exist." );
-		}
-
-		return new $class();
+		return new CombinedInsertablesSuggester( $suggesters );
 	}
 
 	/**
