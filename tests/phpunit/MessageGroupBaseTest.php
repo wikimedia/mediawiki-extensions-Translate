@@ -83,6 +83,66 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 		);
 	}
 
+	public function testInsertablesSuggesterClass() {
+		$conf = $this->groupConfiguration;
+		$conf['INSERTABLES']['class'] = 'FakeInsertablesSuggester';
+		$this->group = MessageGroupBase::factory( $conf );
+
+		$this->assertArrayEquals(
+			array( new Insertable( 'Fake', 'Insertables', 'Suggester' ) ),
+			$this->group->getInsertablesSuggester()->getInsertables( '' ),
+			'should correctly get an InsertablesSuggester using \'class\' option.'
+		);
+	}
+
+	public function testInsertablesSuggesterClasses() {
+		$conf = $this->groupConfiguration;
+		$conf['INSERTABLES']['classes'] = array(
+			'FakeInsertablesSuggester',
+			'AnotherFakeInsertablesSuggester',
+		);
+		$this->group = MessageGroupBase::factory( $conf );
+
+		$this->assertArrayEquals(
+			array(
+				new Insertable( 'Fake', 'Insertables', 'Suggester' ),
+				new Insertable( 'AnotherFake', 'Insertables', 'Suggester' ),
+			),
+			$this->group->getInsertablesSuggester()->getInsertables( '' ),
+			'should correctly get InsertablesSuggesters using \'classes\' option.'
+		);
+	}
+
+	public function testInsertablesSuggesterClassAndClasses() {
+		$conf = $this->groupConfiguration;
+		$conf['INSERTABLES']['class'] = 'FakeInsertablesSuggester';
+		$conf['INSERTABLES']['classes'] = array( 'AnotherFakeInsertablesSuggester' );
+		$this->group = MessageGroupBase::factory( $conf );
+
+		$this->assertArrayEquals(
+			array(
+				new Insertable( 'Fake', 'Insertables', 'Suggester' ),
+				new Insertable( 'AnotherFake', 'Insertables', 'Suggester' ),
+			),
+			$this->group->getInsertablesSuggester()->getInsertables( '' ),
+			'should correctly get InsertablesSuggesters using both \'class\' and \'classes\' options.'
+		);
+
+		$conf['INSERTABLES']['classes'][] = 'FakeInsertablesSuggester';
+		$conf['INSERTABLES']['classes'][] = 'AnotherFakeInsertablesSuggester';
+		$this->group = MessageGroupBase::factory( $conf );
+
+		$this->assertArrayEquals(
+			array(
+				new Insertable( 'Fake', 'Insertables', 'Suggester' ),
+				new Insertable( 'AnotherFake', 'Insertables', 'Suggester' ),
+			),
+			$this->group->getInsertablesSuggester()->getInsertables( '' ),
+			'should correctly get InsertablesSuggesters using ' .
+			'both \'class\' and \'classes\' options and removing duplicates.'
+		);
+	}
+
 	/**
 	 * @expectedException MWException
 	 * @expectedExceptionMessage No valid namespace defined
@@ -91,5 +151,17 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 		$conf = $this->groupConfiguration;
 		$conf['BASIC']['namespace'] = 'ergweofijwef';
 		MessageGroupBase::factory( $conf );
+	}
+}
+
+class FakeInsertablesSuggester implements InsertablesSuggester {
+	public function getInsertables( $text ) {
+		return array( new Insertable( 'Fake', 'Insertables', 'Suggester' ) );
+	}
+}
+
+class AnotherFakeInsertablesSuggester implements InsertablesSuggester {
+	public function getInsertables( $text ) {
+		return array( new Insertable( 'AnotherFake', 'Insertables', 'Suggester' ) );
 	}
 }
