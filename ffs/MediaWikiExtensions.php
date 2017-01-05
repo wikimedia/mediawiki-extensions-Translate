@@ -158,7 +158,7 @@ class PremadeMediawikiExtensionGroups {
 			'miscMWChecks',
 		);
 
-		$conf['INSERTABLES']['class'] = 'MediaWikiInsertablesSuggester';
+		$conf['INSERTABLES']['class'] = array( 'MediaWikiInsertablesSuggester' );
 
 		if ( isset( $info['optional'] ) ) {
 			$conf['TAGS']['optional'] = $info['optional'];

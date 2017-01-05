@@ -100,6 +100,13 @@ class MessageGroupConfigurationParser {
 				if ( $groups[$i]['BASIC']['class'] === 'AggregateMessageGroup' ) {
 					unset( $groups[$i]['FILES'] );
 				}
+
+				// Backwards compatibility for INSERTABLES class
+				// (should be an array but can also be a string which should be wrapped into an array)
+				if ( isset( $groups[$i]['INSERTABLES']['class'] ) &&
+					is_array( $groups[$i]['INSERTABLES']['class'] ) ) {
+					$groups[$i]['INSERTABLES']['class'] = array( $groups[$i]['INSERTABLES']['class'] );
+				}
 			}
 		}
 
