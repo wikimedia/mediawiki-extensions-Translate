@@ -1,9 +1,33 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kingu"
+			"Kingu",
+			"Jon Harald Søby"
 		]
 	},
+	"apihelp-groupreview-param-group": "Beskjedgruppe.",
+	"apihelp-groupreview-param-language": "Språkkode.",
+	"apihelp-query+languagestats-param-language": "Språkkode.",
+	"apihelp-query+messagecollection-param-group": "Beskjedgruppe.",
 	"apihelp-query+messagecollection-param-language": "Språkkode.",
-	"apihelp-translationstash-param-subaction": "Handling."
+	"apihelp-query+messagecollection-param-limit": "Hvor mange beskjeder som skal vises (etter filtrering).",
+	"apihelp-query+messagecollection-example-1": "Liste over støttede språk",
+	"apihelp-query+messagecollection-example-2": "Liste over ikke-valgfrie beskjeddefinisjoner for gruppa «page-Example»",
+	"apihelp-query+messagecollection-example-3": "Liste over valgfrie beskjeder på finsk med tagger for gruppa «page-Example»",
+	"apihelp-query+messagegroups-example-1": "Vis beskjedgrupper",
+	"apihelp-translatesandbox-param-do": "Hva som skal gjøres.",
+	"apihelp-translatesandbox-param-username": "Brukernavn når ny bruker opprettes.",
+	"apihelp-translatesandbox-param-password": "Passord når ny bruker opprettes.",
+	"apihelp-translatesandbox-param-email": "Epost når ny bruker opprettes.",
+	"apihelp-translationaids-example-1": "Vis hjelp for [[MediaWiki:January/fi]]",
+	"apihelp-translationstash-param-subaction": "Handling.",
+	"apihelp-translationstash-param-metadata": "JSON-objekt.",
+	"apihelp-searchtranslations-description": "Søk i oversettelser.",
+	"apihelp-searchtranslations-param-query": "Strengen det skal søkes etter.",
+	"apihelp-searchtranslations-param-sourcelanguage": "Språkkoden til kildeteksten.",
+	"apihelp-searchtranslations-param-language": "Språkkoden strengen skal søkes etter i.",
+	"apihelp-searchtranslations-param-group": "Gruppe-ID-en strengen skal søkes etter i.",
+	"apierror-translate-invalidupdate": "Ugyldig oppdatering",
+	"apierror-translate-language-disabled": "Oversettelse til dette språket er slått av",
+	"apierror-translate-nodynamicgroups": "Dynamiske beskjedgrupper støttes ikke her"
 }

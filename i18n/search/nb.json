@@ -1,8 +1,30 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kingu"
+			"Kingu",
+			"Jon Harald Søby"
 		]
 	},
-	"tux-sst-next": "Neste >"
+	"searchtranslations": "Søk i oversettelser",
+	"tux-sst-edit": "Rediger oversettelse",
+	"tux-sst-view-foreign": "Vis på $1",
+	"tux-sst-search": "Søk",
+	"tux-sst-search-ph": "Søk i oversettelser",
+	"tux-sst-count": "{{PLURAL:$1|Ett resultat|$1 resultater}} funnet",
+	"tux-sst-facet-language": "Språk",
+	"tux-sst-facet-group": "Beskjedgrupper",
+	"tux-sst-nosolr-title": "Søk utilgjengelig",
+	"tux-sst-nosolr-body": "Denne wikien har ikke tjenesten for oversettelsessøk.",
+	"tux-sst-solr-offline-title": "Søk utilgjengelig",
+	"tux-sst-solr-offline-body": "Søketjenesten er midlertidig utilgjengelig.",
+	"tux-sst-next": "Neste >",
+	"tux-sst-prev": "‹ Forrige",
+	"tux-sst-default": "Oversettelser",
+	"tux-sst-translated": "Oversettelser fra $1",
+	"tux-sst-untranslated": "Ingen oversettelse fra $1",
+	"tux-sst-outdated": "Utdaterte oversettelser fra $1",
+	"tux-sst-ellipsis-untranslated": "Ingen oversettelse",
+	"tux-sst-ellipsis-outdated": "Utdaterte oversettelser",
+	"tux-sst-link-all-match": "Krev alle søkeord.",
+	"tux-sst-match-message": "Viser oversettelser som matcher noen søkeord. $1"
 }
