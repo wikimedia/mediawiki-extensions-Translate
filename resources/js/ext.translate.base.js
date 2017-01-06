@@ -176,7 +176,7 @@
 		$( window ).on( 'pageshow.translate', pageShowHandler );
 	}
 
-	$( document ).ready( function () {
+	$( function () {
 		translateOnBeforeUnloadRegister();
 	} );
 }( jQuery, mediaWiki ) );

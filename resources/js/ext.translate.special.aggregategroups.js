@@ -160,7 +160,7 @@
 		$parent.children( '.tp-edit-group' ).addClass( 'hidden' );
 	}
 
-	$( document ).ready( function () {
+	$( function () {
 		var excludeFunction, autocompleteFunction, resp,
 			api = new mw.Api(),
 			exclude = [],

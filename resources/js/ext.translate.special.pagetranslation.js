@@ -7,7 +7,7 @@
 ( function ( $, mw ) {
 	'use strict';
 
-	$( document ).ready( function () {
+	$( function () {
 		$( '#wpUserLanguage' ).multiselectautocomplete( { inputbox: '#tpt-prioritylangs' } );
 
 		$( '#mw-content-text' ).on( 'click', '.mw-translate-jspost', function ( e ) {

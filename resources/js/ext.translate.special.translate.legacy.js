@@ -1,6 +1,6 @@
 ( function ( $, mw ) {
 	'use strict';
-	$( 'document' ).ready( function () {
+	$( function () {
 		var api = new mw.Api();
 
 		$( '.mw-translate-messagereviewbutton' ).click( function () {

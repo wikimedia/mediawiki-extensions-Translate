@@ -360,7 +360,7 @@
 		return namespaces;
 	}
 
-	$( document ).ready( function () {
+	$( function () {
 		var pageContent,
 			$input = $( '#page' );
 

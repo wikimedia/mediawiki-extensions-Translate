@@ -3,7 +3,7 @@
 
 	var resultGroups;
 
-	$( document ).ready( function () {
+	$( function () {
 		var $messages = $( '.tux-message' );
 
 		resultGroups = $( '.facet.groups' ).data( 'facets' );

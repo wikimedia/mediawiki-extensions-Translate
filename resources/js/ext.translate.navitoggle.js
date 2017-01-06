@@ -15,7 +15,7 @@
 		};
 	}() );
 
-	$( document ).ready( function () {
+	$( function () {
 		var $miniLogo, $toggle, rtl, delim,
 			$body = $( 'body' );
 

@@ -716,7 +716,7 @@
 		};
 	}() );
 
-	$( document ).ready( function () {
+	$( function () {
 		var $requestCheckboxes = $( '.request-selector' ),
 			$selectAll = $( '.request-selector-all' ),
 			$requestRows = $( '.requests .request' );

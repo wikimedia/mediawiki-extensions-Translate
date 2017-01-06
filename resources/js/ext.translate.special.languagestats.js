@@ -8,7 +8,7 @@
 ( function ( mw, $ ) {
 	'use strict';
 
-	$( document ).ready( function () {
+	$( function () {
 		var $allChildRows, $allTogglesCache, $toggleAllButton,
 			$translateTable = $( '.mw-sp-translate-table' ),
 			$metaRows = $( 'tr.AggregateMessageGroup', $translateTable );
@@ -101,7 +101,7 @@
 	// When hovering a row, adjust brightness of the last two custom-colored cells as well
 	// See also translate.langstats.css for the highlighting for the other normal rows
 	mw.loader.using( 'jquery.colorUtil', function () {
-		$( document ).ready( function () {
+		$( function () {
 			// It is possible that the first event we get is hover-out, in
 			// which case the colors will get stuck wrong. Ignore it.
 			var seenHoverIn = false;
@@ -128,7 +128,7 @@
 		} );
 	} );
 
-	$( document ).ready( function () {
+	$( function () {
 		var index,
 			sort = {},
 			re = /#sortable:(\d+)=(asc|desc)/,

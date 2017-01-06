@@ -506,7 +506,7 @@
 		$listing.on( 'click', '.mw-tpm-sp-action--add', addHandler );
 	}
 
-	$( document ).ready( listen );
+	$( listen );
 
 	mw.translate = mw.translate || {};
 	mw.translate = $.extend( mw.translate, {

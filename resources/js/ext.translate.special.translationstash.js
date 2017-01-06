@@ -200,7 +200,7 @@
 			} );
 	}
 
-	$( 'document' ).ready( function () {
+	$( function () {
 		var $messageTable = $( '.tux-messagelist' ),
 			$ulsTrigger = $( '.ext-translate-language-selector > .uls' );
 

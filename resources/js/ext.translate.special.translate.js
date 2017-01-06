@@ -228,7 +228,7 @@
 		$element.uls( ulsOptions );
 	}
 
-	$( document ).ready( function () {
+	$( function () {
 		var $translateContainer, $hideTranslatedButton, $messageList,
 			filter, uri, position;
 

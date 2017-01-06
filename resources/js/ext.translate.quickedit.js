@@ -409,5 +409,5 @@
 		}
 	} );
 
-	$( document ).ready( mw.translate.init );
+	$( mw.translate.init );
 }( jQuery, mediaWiki, autosize ) );

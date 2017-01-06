@@ -9,7 +9,7 @@
 		}
 	}
 
-	$( document ).ready( function () {
+	$( function () {
 		var $input = $( '#mw-translate-up-local-input' );
 		$input.on( 'change', function () {
 			buttoner( $input );
