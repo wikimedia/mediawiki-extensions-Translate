@@ -12,6 +12,9 @@
  * Other FFS classes can extend SimpleFFS and override suitable methods.
  * @ingroup FFS
  */
+
+use UtfNormal\Validator;
+
 class SimpleFFS implements FFS {
 	public function supportsFuzzy() {
 		return 'no';
@@ -117,7 +120,7 @@ class SimpleFFS implements FFS {
 			throw new MWException( "Contents of $filename are not valid utf-8." );
 		}
 
-		$input = UtfNormal::cleanUp( $input );
+		$input = Validator::cleanUp( $input );
 
 		try {
 			return $this->readFromVariable( $input );
