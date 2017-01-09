@@ -40,7 +40,7 @@
 	"translate-page-no-such-language": "言語の指定が正しくありません。",
 	"translate-page-no-such-group": "群の指定が正しくありません。",
 	"translate-page-disabled": "この群では、この言語への翻訳は停止されています。\n理由:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1は、このページの元々の言語です。",
+	"translate-page-disabled-source": "$1は、このページの翻訳元言語です。",
 	"translate-language-disabled": "この言語への翻訳は無効になっています。",
 	"translate-page-settings-legend": "設定",
 	"translate-page-group": "群",
