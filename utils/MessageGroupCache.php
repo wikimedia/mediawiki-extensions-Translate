@@ -26,7 +26,7 @@ class MessageGroupCache {
 	protected $group;
 
 	/**
-	 * @var CdbReader
+	 * @var \Cdb\Reader
 	 */
 	protected $cache;
 
