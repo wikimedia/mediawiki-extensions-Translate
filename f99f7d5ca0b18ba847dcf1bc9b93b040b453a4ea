@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4efb0bce_6e5f4045",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2426
+      },
+      "writtenOn": "2017-01-11T23:53:03Z",
+      "side": 1,
+      "message": "Is this a TWN format change? We still use the other string in Android XML: https://phabricator.wikimedia.org/diffusion/APAW/browse/master/app/src/main/res/values/strings.xml;d81f33497eba9f8aab1020856b7ba36d16e7e648$341",
+      "revId": "f99f7d5ca0b18ba847dcf1bc9b93b040b453a4ea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
