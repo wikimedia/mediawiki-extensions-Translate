@@ -86,5 +86,20 @@
 	"apihelp-searchtranslations-param-offset": "\"Offset\" pa les traducciones.",
 	"apihelp-searchtranslations-param-limit": "Tamañu del resultáu.",
 	"apihelp-searchtranslations-example-1": "Amosar les traducciones de la llingua.",
-	"apihelp-searchtranslations-example-2": "Amosar los mensaxes sin traducir que casen cola consulta na llingua orixinal"
+	"apihelp-searchtranslations-example-2": "Amosar los mensaxes sin traducir que casen cola consulta na llingua orixinal",
+	"apierror-translate-duplicateaggregategroup": "El grupu de mensaxes yá existe",
+	"apierror-translate-fuzzymessage": "Nun pueden revisase les traducciones aproximaes",
+	"apierror-translate-groupreviewdisabled": "La revisión del grupu de mensaxes nun ta n'usu.",
+	"apierror-translate-invalidaggregategroup": "Grupu de mensaxes agregaos inválidu",
+	"apierror-translate-invalidaggregategroupname": "Nome de grupu de mensaxes agregaos inválidu",
+	"apierror-translate-invalidgroup": "El grupu nun esiste o nun ye válidu",
+	"apierror-translate-invalidstate": "L'estáu solicitáu nun ye válidu.",
+	"apierror-translate-invalidupdate": "Anovamientu inválidu",
+	"apierror-translate-language-disabled": "La traducción a esta llingua ta desactivada",
+	"apierror-translate-nodynamicgroups": "Nun s'almiten equí los grupos de mensaxes dinámicos",
+	"apierror-translate-nomessagefortitle": "El títulu nun casa con un mensaxe traducible",
+	"apierror-translate-owntranslation": "Nun pueden revisase les traducciones propies",
+	"apierror-translate-sandboxdisabled": "La función de zona de pruebes nun ta n'usu",
+	"apierror-translate-unknownmessage": "Mensaxe desconocíu",
+	"apiwarn-translate-alreadyreviewedbyyou": "Yá ta marcada como revisada por ti"
 }
