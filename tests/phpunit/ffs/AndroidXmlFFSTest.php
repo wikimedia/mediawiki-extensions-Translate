@@ -36,6 +36,7 @@ class AndroidXmlFFSTest extends MediaWikiTestCase {
 	</plurals>
 	<string name="has_quotes">Go to \"Wikipedia\"</string>
 	<string name="starts_with_at">\@Wikipedia</string>
+	<string name="has_ampersand">1&amp;nbsp;000</string>
 </resources>
 XML;
 
@@ -51,6 +52,7 @@ XML;
 			'alot' => '{{PLURAL|one=bunny|bunnies}}',
 			'has_quotes' => 'Go to "Wikipedia"',
 			'starts_with_at' => '@Wikipedia',
+			'has_ampersand' => '1&nbsp;000',
 		);
 		$expected = array( 'MESSAGES' => $expected, 'AUTHORS' => array() );
 		$this->assertEquals( $expected, $parsed );
@@ -67,6 +69,7 @@ XML;
 			'ko=26ra' => 'wawe',
 			'foobar' => '!!FUZZY!!Kissa kala <koira> "a\'b',
 			'amuch' => '{{PLURAL|one=bunny|bunnies}}',
+			'ampersand' => '&nbsp; &foo',
 		);
 		$collection = new MockMessageCollection( $messages );
 
