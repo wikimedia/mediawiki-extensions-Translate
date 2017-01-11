@@ -48,7 +48,7 @@ XML;
 		$expected = array(
 			'wpt_voicerec' => 'Voice recording',
 			'wpt_stillimage' => '!!FUZZY!!Picture',
-			'alot' => '{{PLURAL|one=bunny|other=bunnies}}',
+			'alot' => '{{PLURAL|one=bunny|bunnies}}',
 			'has_quotes' => 'Go to "Wikipedia"',
 			'starts_with_at' => '@Wikipedia',
 		);
@@ -66,7 +66,7 @@ XML;
 		$messages = array(
 			'ko=26ra' => 'wawe',
 			'foobar' => '!!FUZZY!!Kissa kala <koira> "a\'b',
-			'amuch' => '{{PLURAL|one=bunny|other=bunnies}}',
+			'amuch' => '{{PLURAL|one=bunny|bunnies}}',
 		);
 		$collection = new MockMessageCollection( $messages );
 

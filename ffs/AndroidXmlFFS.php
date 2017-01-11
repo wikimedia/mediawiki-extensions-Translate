@@ -13,14 +13,10 @@
  * @ingroup FFS
  */
 class AndroidXmlFFS extends SimpleFFS {
-	protected static $pluralWords = array(
-		'zero' => 1,
-		'one' => 1,
-		'two' => 1,
-		'few' => 1,
-		'many' => 1,
-		'other' => 1,
-	);
+	public function __construct( FileBasedMessageGroup $group ) {
+		parent::__construct( $group );
+		$this->flattener = $this->getFlattener();
+	}
 
 	public function supportsFuzzy() {
 		return 'yes';
@@ -51,7 +47,7 @@ class AndroidXmlFFS extends SimpleFFS {
 				foreach ( $element as $item ) {
 					$forms[(string)$item['quantity']] = $this->readElementContents( $item );
 				}
-				$value = $this->flattenPlural( $forms );
+				$value = $this->flattener->flattenCLDRPlurals( $forms );
 			} else {
 				wfDebug( __METHOD__ . ': Unknown XML element name.' );
 				continue;
@@ -108,13 +104,13 @@ XML;
 			$value = $m->translation();
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
 
-			// Handle plurals
-			if ( strpos( $value, '{{PLURAL' ) === false ) {
+			$plurals = $this->flattener->unflattenCLDRPlurals( '', $value );
+
+			if ( $plurals === false ) {
 				$element = $writer->addChild( 'string', $this->formatElementContents( $value ) );
 			} else {
 				$element = $writer->addChild( 'plurals' );
-				$forms = $this->unflattenPlural( $value );
-				foreach ( $forms as $quantity => $content ) {
+				foreach ( $plurals as $quantity => $content ) {
 					$item = $element->addChild( 'item', $this->formatElementContents( $content ) );
 					$item->addAttribute( 'quantity', $quantity );
 				}
@@ -135,80 +131,12 @@ XML;
 		return $dom->saveXML();
 	}
 
-	/**
-	 * Flattens array of plurals into string.
-	 *
-	 * @param array $forms array
-	 * @return string
-	 */
-	protected function flattenPlural( array $forms ) {
-		$pls = '{{PLURAL';
-		foreach ( $forms as $key => $value ) {
-			$pls .= "|$key=$value";
-		}
-
-		$pls .= '}}';
-		return $pls;
+	protected function getFlattener() {
+		$flattener = new ArrayFlattener( '', true );
+		return $flattener;
 	}
 
-	/**
-	 * Converts the flattened plural into messages
-	 *
-	 * @param string $message
-	 * @return array
-	 */
-	protected function unflattenPlural( $message ) {
-		$regex = '~\{\{PLURAL\|(.*?)}}~s';
-		$matches = array();
-		$match = array();
-
-		while ( preg_match( $regex, $message, $match ) ) {
-			$uniqkey = TranslateUtils::getPlaceholder();
-			$matches[$uniqkey] = $match;
-			$message = preg_replace( $regex, $uniqkey, $message, 1 );
-		}
-
-		// No plurals, should not happen.
-		if ( !count( $matches ) ) {
-			return array();
-		}
-
-		// The final array of alternative plurals forms.
-		$alts = array();
-
-		/*
-		 * Then loop trough each plural block and replacing the placeholders
-		 * to construct the alternatives. Produces invalid output if there is
-		 * multiple plural bocks which don't have the same set of keys.
-		 */
-		$pluralChoice = implode( '|', array_keys( self::$pluralWords ) );
-		$regex = "~($pluralChoice)\s*=\s*(.+)~s";
-		foreach ( $matches as $ph => $plu ) {
-			$forms = explode( '|', $plu[1] );
-
-			foreach ( $forms as $form ) {
-				if ( $form === '' ) {
-					continue;
-				}
-
-				$match = array();
-				if ( !preg_match( $regex, $form, $match ) ) {
-					// No quantity key was provided
-					continue;
-				}
-
-				$formWord = $match[1];
-				$value = $match[2];
-				if ( !isset( $alts[$formWord] ) ) {
-					$alts[$formWord] = $message;
-				}
-
-				$string = $alts[$formWord];
-
-				$alts[$formWord] = str_replace( $ph, $value, $string );
-			}
-		}
-
-		return $alts;
+	public function isContentEqual( $a, $b ) {
+		return $this->flattener->compareContent( $a, $b );
 	}
 }
