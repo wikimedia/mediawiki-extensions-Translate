@@ -78,6 +78,9 @@ class AndroidXmlFFS extends SimpleFFS {
 			// Add backslash to escape it too.
 			$escaped = '\\' . $escaped;
 		}
+		// All html entities seen would be inserted by translators themselves.
+		// Treat them as plain text.
+		$escaped = str_replace( '&', '&amp;', $escaped );
 		return $escaped;
 	}
 
