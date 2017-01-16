@@ -18,6 +18,7 @@
 	"tsb-email-rejected-body": "Hei {{GENDER:$1|$1}}\n\nTakk for at du søkte om å bli oversetter på {{SITENAME}}. Jeg må dessverre meddele at jeg har avvist søknaden din, fordi kvaliteten på oversettelsene dine ikke oppfylte kravene.\n\nOm du mener at dette er en feil, søk om å bli oversetter på {{SITENAME}} igjen. Du kan melde deg på her:\n$2\n\n{{GENDER:$3|$3}},\nPersonalet på {{SITENAME}}",
 	"tsb-request-count": "$1 {{PLURAL:$1|forespørsel|forespørsler}}",
 	"tsb-all-languages-button-label": "Alle språk",
+	"tsb-search-requests": "Søk i forespørsler",
 	"tsb-accept-button-label": "Godkjenn",
 	"tsb-reject-button-label": "Avslå",
 	"tsb-selected-count": "{{PLURAL:$1|$1 bruker|$1 brukere}} valgt",

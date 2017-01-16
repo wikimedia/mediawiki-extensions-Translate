@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gazimagomedov"
+			"Gazimagomedov",
+			"Аль-Гимравий"
 		]
 	},
 	"translate-total": "Кагътал",
 	"translate-untranslated": "Таржама гьабичӀел",
 	"translate-mgs-group": "Кагътазул дандбакӀари:",
+	"translate-manage-submit": "ТІубазабизе",
 	"translate-msggroupselector-projects": "Кагътазул сияхӀ"
 }

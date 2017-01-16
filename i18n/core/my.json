@@ -17,8 +17,12 @@
 	"translate-next": "နောက်စာမျက်နှာ",
 	"translate-prev": "ပြီးခဲ့သော စာမျက်နှာ",
 	"translate-page-edit": "ပြင်ရန်",
+	"translate-magic-module": "မော်ဂျူး:",
+	"translate-magic-namespace": "အမည်ညွှန်း အမည်များ",
+	"translate-js-summary": "အကျဉ်းချုပ်:",
 	"translate-gs-score": "ရမှတ်",
 	"translate-documentation-language": "စာလွှာ စာရွက်စာတမ်း",
 	"translate-msggroupselector-search-all": "အားလုံး",
-	"tux-save-unknown-error": "အကြောင်းရင်းမသိရှိရသော အမှားတစ်ခု ဖြစ်ပေါ်နေသည်။"
+	"tux-save-unknown-error": "အကြောင်းရင်းမသိရှိရသော အမှားတစ်ခု ဖြစ်ပေါ်နေသည်။",
+	"tux-editor-page-mode": "စာမျက်နှာ"
 }
