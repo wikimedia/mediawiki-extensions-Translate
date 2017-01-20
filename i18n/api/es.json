@@ -4,7 +4,8 @@
 			"Macofe",
 			"Fitoschido",
 			"Csbotero",
-			"Lemondoge"
+			"Lemondoge",
+			"Dgstranz"
 		]
 	},
 	"apihelp-aggregategroups-description": "Administrar grupos de mensajes agregados.\n\nPuedes agregar y quitar grupos de mensajes agregados, y asociar o disociar a ellos grupos de mensajes (uno a la vez).",
@@ -76,6 +77,7 @@
 	"apihelp-searchtranslations-param-group": "El identificador de grupo en el que buscar la cadena.",
 	"apihelp-searchtranslations-param-filter": "Filtro de estado de traducción de mensajes.",
 	"apihelp-searchtranslations-param-match": "Coincide con cualquier/todas las palabras de búsqueda.",
+	"apihelp-searchtranslations-param-case": "Búsqueda (no) sensible a las mayúsculas.",
 	"apihelp-searchtranslations-param-offset": "\"Offset\" para las traducciones.",
 	"apihelp-searchtranslations-param-limit": "Tamaño del resultado.",
 	"apihelp-searchtranslations-example-1": "Mostrar las traducciones para el idioma.",
