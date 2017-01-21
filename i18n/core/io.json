@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Malafaya",
-			"Wyvernoid"
+			"Wyvernoid",
+			"Lakaoso"
 		]
 	},
 	"translate": "Traduko",
@@ -13,8 +14,8 @@
 	"translate-prev": "Antea pagino",
 	"translate-page-edit": "redaktar",
 	"translate-edit-contribute": "kontributez",
-	"translate-edit-information": "Informo pri mesajo \"$2\" ($1)",
-	"translate-edit-in-other-languages": "Mesajo \"$1\" en altra lingui",
+	"translate-edit-information": "Informo pri mesajo ($1)",
+	"translate-edit-in-other-languages": "Mesajo en altra lingui",
 	"translate-magic-cm-current": "Aktuala",
 	"translate-magic-cm-comment": "Komento:",
 	"translate-magic-cm-save": "Registragar",
