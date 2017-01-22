@@ -13,7 +13,8 @@
 			"Yekrats",
 			"Remux",
 			"KuboF",
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Psychoslave"
 		]
 	},
 	"translate": "Tradukado",
@@ -23,7 +24,7 @@
 	"translate-taskui-optional": "Montru opciajn mesaĝojn",
 	"translate-taskui-acceptqueue": "Nur mesaĝoj kiujn mi povas marki reviziitaj",
 	"translate-taskui-reviewall": "Revizii ĉiujn tradukojn",
-	"translate-taskui-export-to-file": "Eksportu en fonta formato",
+	"translate-taskui-export-to-file": "Elportu en fonta formato",
 	"translate-taskui-export-as-po": "Eksportu por eksterkonekta traduko",
 	"translate-taction-translate": "Traduki",
 	"translate-taction-proofread": "Revizii",
