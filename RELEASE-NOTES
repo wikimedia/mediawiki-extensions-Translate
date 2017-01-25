@@ -1,0 +1,10 @@
+== Translate 2017.01 ==
+Released at 2017-01-25.
+
+=== Noteworthy changes ===
+* Niklas Laxström made insertables more touch friendly.
+* Niklas Laxström made several improvements for MessageTable.
+* Niklas Laxström moved SpecialPage(Preparation|Migration) to tag, as they are related to page translation.
+* Niklas Laxström made several improvements in Special:TranslationStats.
+* Niklas Laxström implemented plural aware message content comparison.
+* Federico Leva added option to keep outdated page translation without removing them. T60429
