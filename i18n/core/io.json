@@ -3,7 +3,8 @@
 		"authors": [
 			"Malafaya",
 			"Wyvernoid",
-			"Lakaoso"
+			"Lakaoso",
+			"Joao Xavier"
 		]
 	},
 	"translate": "Traduko",
@@ -31,5 +32,6 @@
 	"translate-translations-messagename": "Nomo:",
 	"translate-language": "Linguo",
 	"translate-total": "Mesaji",
-	"translate-save": "Registragar ($1)"
+	"translate-save": "Registragar ($1)",
+	"translate-documentation-language": "Dokumentado pri la mesajo"
 }
