@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Malafaya"
+			"Malafaya",
+			"Joao Xavier"
 		]
 	},
-	"tpt-languages-legend": "Altra lingui:"
+	"tpt-languages-legend": "Altra lingui:",
+	"tpt-languages-nonzero": "$1 ($2% tradukita)"
 }
