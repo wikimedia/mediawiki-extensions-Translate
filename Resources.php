@@ -333,10 +333,15 @@ $wgResourceModules['ext.translate.special.managetranslatorsandbox'] = array(
 		'mediawiki.api',
 		'mediawiki.jqueryMsg',
 		'mediawiki.language',
+
 	),
 	'messages' => array(
 		'tsb-accept-all-button-label',
 		'tsb-accept-button-label',
+		'tsb-reject-confirmation-singular',
+		'tsb-accept-confirmation-singular',
+		'tsb-reject-confirmation-plural',
+		'tsb-accept-confirmation-plural',
 		'tsb-all-languages-button-label',
 		'tsb-didnt-make-any-translations',
 		'tsb-no-requests-from-new-users',
