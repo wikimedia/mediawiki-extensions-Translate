@@ -122,6 +122,8 @@
 						.addClass( 'accept mw-ui-button mw-ui-progressive' )
 						.text( mw.msg( 'tsb-accept-button-label' ) )
 						.on( 'click', function () {
+							mw.notify( mw.msg( 'tsb-accept-confirmation', 1 ) );
+
 							window.tsbUpdatingUsers = true;
 
 							doApiAction( {
@@ -137,6 +139,8 @@
 						.addClass( 'reject mw-ui-button mw-ui-destructive' )
 						.text( mw.msg( 'tsb-reject-button-label' ) )
 						.on( 'click', function () {
+							mw.notify( mw.msg( 'tsb-reject-confirmation', 1 ) );
+
 							window.tsbUpdatingUsers = true;
 
 							doApiAction( {
@@ -268,7 +272,7 @@
 			return $( checkedBox ).parents( 'div.request' ).data( 'data' ).userid;
 		} );
 
-		selectedUserIDs = selectedUserIDs.toArray().join( '|' );
+		selectedUserIDs = selectedUserIDs.toArray();
 
 		$( '.details.pane' ).empty().append(
 			$( '<div>' )
@@ -280,6 +284,8 @@
 						.addClass( 'accept-all mw-ui-button mw-ui-progressive' )
 						.text( mw.msg( 'tsb-accept-all-button-label' ) )
 						.on( 'click', function () {
+							mw.notify( mw.msg( 'tsb-accept-confirmation', selectedUserIDs.length() ) );
+
 							window.tsbUpdatingUsers = true;
 
 							doApiAction( {
@@ -295,6 +301,8 @@
 						.addClass( 'reject-all mw-ui-button mw-ui-destructive' )
 						.text( mw.msg( 'tsb-reject-all-button-label' ) )
 						.on( 'click', function () {
+							mw.notify( mw.msg( 'tsb-reject-confirmation', selectedUserIDs.length() ) );
+
 							window.tsbUpdatingUsers = true;
 
 							doApiAction( {
