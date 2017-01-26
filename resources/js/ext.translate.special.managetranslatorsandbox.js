@@ -122,6 +122,12 @@
 						.addClass( 'accept mw-ui-button mw-ui-progressive' )
 						.text( mw.msg( 'tsb-accept-button-label' ) )
 						.on( 'click', function () {
+							if ( window.confirm( 'Are you sure?' ) === true ) {
+								null;
+							} else {
+								return;
+							}
+
 							window.tsbUpdatingUsers = true;
 
 							doApiAction( {
@@ -137,6 +143,12 @@
 						.addClass( 'reject mw-ui-button mw-ui-destructive' )
 						.text( mw.msg( 'tsb-reject-button-label' ) )
 						.on( 'click', function () {
+							if ( window.confirm( 'Are you sure?' ) === true ) {
+								null;
+							} else {
+								return;
+							}
+
 							window.tsbUpdatingUsers = true;
 
 							doApiAction( {
@@ -280,6 +292,12 @@
 						.addClass( 'accept-all mw-ui-button mw-ui-progressive' )
 						.text( mw.msg( 'tsb-accept-all-button-label' ) )
 						.on( 'click', function () {
+							if ( window.confirm( 'Are you sure?' ) === true ) {
+								null;
+							} else {
+								return;
+							}
+
 							window.tsbUpdatingUsers = true;
 
 							doApiAction( {
@@ -295,6 +313,12 @@
 						.addClass( 'reject-all mw-ui-button mw-ui-destructive' )
 						.text( mw.msg( 'tsb-reject-all-button-label' ) )
 						.on( 'click', function () {
+							if ( window.confirm( 'Are you sure?' ) === true ) {
+								null;
+							} else {
+								return;
+							}
+
 							window.tsbUpdatingUsers = true;
 
 							doApiAction( {
