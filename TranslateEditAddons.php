@@ -50,6 +50,10 @@ class TranslateEditAddons {
 			return true;
 		}
 
+		if ( $user->isAllowed( 'translate-manage' ) ) {
+			return true;
+		}
+
 		$group = $handle->getGroup();
 		$languages = $group->getTranslatableLanguages();
 		$langCode = $handle->getCode();
