@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Yanteng3",
-			"Jason924tw"
+			"Jason924tw",
+			"Davidzdh"
 		]
 	},
 	"translate": "譯",
@@ -41,7 +42,6 @@
 	"translate-edit-contribute": "功績",
 	"translate-edit-information": "述該訊息（$1）",
 	"translate-edit-in-other-languages": "他語之訊",
-	"translate-edit-committed": "今譯",
 	"translate-edit-warnings": "未譯之警",
 	"translate-edit-tmmatch": "$1%符",
 	"translate-edit-nopermission": "汝須獲權方可譯訊。",
@@ -72,7 +72,7 @@
 	"translate-statsf-count-registrations": "新簿",
 	"translate-statsf-count-reviews": "校譯",
 	"translate-statsf-submit": "草覽",
-	"translate-sidebar-alltrans": "他語之譯",
+	"translate-sidebar-alltrans": "他山",
 	"translations": "全譯",
 	"translate-translations-fieldset-title": "訊",
 	"translate-translations-messagename": "名：",
@@ -103,7 +103,6 @@
 	"translate-save": "存 （$1）",
 	"translate-manage-import-deleted": "已刪訊  $1",
 	"translate-manage-action-import": "入匯",
-	"translate-manage-fuzzy-summary": "訊已易",
 	"translate-import-load": "載檔",
 	"translate-js-save": "存",
 	"translate-js-skip": "次譯",
