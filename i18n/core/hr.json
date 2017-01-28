@@ -7,7 +7,8 @@
 			"MaGa",
 			"Roberta F.",
 			"SpeedyGonsales",
-			"Tivek"
+			"Tivek",
+			"Bugoslav"
 		]
 	},
 	"translate": "Prijevodi sistemskih poruka",
@@ -241,5 +242,6 @@
 	"tux-editor-message-tools-history": "Stare izmjene",
 	"tux-editor-message-tools-delete": "Izbriši",
 	"tux-editor-message-tools-translations": "Svi prijevodi",
-	"translate-search-more-languages-info": "{{PLURAL:$1|Još jedan jezik|Još $1 druga jezika|Još $1 drugih jezika}}"
+	"translate-search-more-languages-info": "{{PLURAL:$1|Još jedan jezik|Još $1 druga jezika|Još $1 drugih jezika}}",
+	"translate-statsbar-tooltip": "$1 % prevedeno, $2 % pregledano"
 }
