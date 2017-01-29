@@ -191,15 +191,17 @@ class MessageWebImporter {
 
 		$this->out->addHTML( $this->doHeader() );
 
-		// Determine changes
+		// If we are allowed to process messages, potentially return true
 		$alldone = $process;
+
+		// Determine changes for each message.
 		$changed = array();
 
 		foreach ( $messages as $key => $value ) {
 			$fuzzy = $old = null;
 
 			if ( isset( $collection[$key] ) ) {
-				// This returns null for if no existing translation
+				// This returns null if no existing translation is found
 				$old = $collection[$key]->translation();
 			}
 
@@ -209,34 +211,53 @@ class MessageWebImporter {
 			}
 
 			if ( $old === null ) {
+				// The translation is new (and hopefully for an existing
+				// message key): import it
+				$message = self::doAction(
+					'import',
+					$group,
+					$key,
+					$code,
+					$value
+				);
+
+				// Show the user that we imported the new translation
 				$para = '<code class="mw-tmi-new">' . htmlspecialchars( $key ) . '</code>';
 				$name = $context->msg( 'translate-manage-import-new' )->rawParams( $para )
 					->escaped();
 				$text = TranslateUtils::convertWhiteSpaceToHTML( $value );
 				$changed[] = self::makeSectionElement( $name, 'new', $text );
 			} else {
+				// Prepare the presentation of the changed translation
 				$oldContent = ContentHandler::makeContent( $old, $diff->getTitle() );
 				$newContent = ContentHandler::makeContent( $value, $diff->getTitle() );
-
 				$diff->setContent( $oldContent, $newContent );
-
 				$text = $diff->getDiff( '', '' );
+
+				// This is a changed translation. Note it for the next steps.
 				$type = 'changed';
 
+				// Get the user instructions for the current message,
+				// submitted together with the form
 				$action = $context->getRequest()
 					->getVal( self::escapeNameForPHP( "action-$type-$key" ) );
 
 				if ( $process ) {
 					if ( !count( $changed ) ) {
+						// Initialise the HTML list showing the changes performed
 						$changed[] = '<ul>';
 					}
 
 					if ( $action === null ) {
+						// We have been told to process the messages, but not
+						// what to do with this one. Tell the user.
 						$message = $context->msg(
 							'translate-manage-inconsistent',
 							wfEscapeWikiText( "action-$type-$key" )
 						)->parse();
 						$changed[] = "<li>$message</li></ul>";
+
+						// Also stop any further processing for the other messages.
 						$process = false;
 					} else {
 						// Check processing time
@@ -244,6 +265,8 @@ class MessageWebImporter {
 							$this->time = wfTimestamp();
 						}
 
+						// We have all the necessary information on this changed
+						// translation: actually process the message
 						$message = self::doAction(
 							$action,
 							$group,
@@ -252,23 +275,29 @@ class MessageWebImporter {
 							$value
 						);
 
+						// Show what we just did, adding to the list of changes
 						$key = array_shift( $message );
 						$params = $message;
 						$message = $context->msg( $key, $params )->parse();
 						$changed[] = "<li>$message</li>";
 
+						// Stop processing further messages if it's taking too long
 						if ( $this->checkProcessTime() ) {
 							$process = false;
 							$message = $context->msg( 'translate-manage-toolong' )
 								->numParams( $this->processingTime )->parse();
 							$changed[] = "<li>$message</li></ul>";
 						}
+
 						continue;
 					}
 				}
 
+				// We are not processing messages, or no longer, or this was an
+				// unactionable translation. We will eventually return false
 				$alldone = false;
 
+				// Prepare to ask the user what to do with this message
 				$actions = $this->getActions();
 				$defaction = $this->getDefaultAction( $fuzzy, $action );
 
