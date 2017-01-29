@@ -5,6 +5,7 @@
 			"Jon Harald Søby"
 		]
 	},
+	"apihelp-aggregategroups-param-group": "Meldingsgruppe-ID.",
 	"apihelp-groupreview-param-group": "Beskjedgruppe.",
 	"apihelp-groupreview-param-language": "Språkkode.",
 	"apihelp-query+languagestats-param-language": "Språkkode.",

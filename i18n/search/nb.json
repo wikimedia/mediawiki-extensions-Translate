@@ -26,5 +26,6 @@
 	"tux-sst-ellipsis-untranslated": "Ingen oversettelse",
 	"tux-sst-ellipsis-outdated": "Utdaterte oversettelser",
 	"tux-sst-link-all-match": "Krev alle søkeord.",
-	"tux-sst-match-message": "Viser oversettelser som matcher noen søkeord. $1"
+	"tux-sst-match-message": "Viser oversettelser som matcher noen søkeord. $1",
+	"tux-sst-case-sensitive": "Skill mellom store og små bokstaver"
 }
