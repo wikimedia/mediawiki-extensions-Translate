@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "2ef897d1_c3cdd763",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-30T14:47:35Z",
+      "side": 1,
+      "message": "Please amend the current comment to reflect this understanding.",
+      "parentUuid": "2ef897d1_a319bb29",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ef897d1_e30fb3e2",
         "filename": "utils/MessageWebImporter.php",
         "patchSetId": 2
@@ -107,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "2ef897d1_a3f1bb94",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-30T14:47:35Z",
+      "side": 1,
+      "message": "Specifically I mean $action \u003d $context-\u003egetRequest()-\u003egetVal( self::escapeNameForPHP( \"action-$type-$key\" ) );\n\nbut type would be \"new\" here. I am not sure whether we output anything currently. I would appreciate if you would inspect the current html to check if there are any (radio) inputs.",
+      "parentUuid": "2ef897d1_03b88fe1",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ef897d1_e3d2135d",
         "filename": "utils/MessageWebImporter.php",
         "patchSetId": 2
@@ -136,6 +172,24 @@
       "side": 1,
       "message": "Is that wrong?",
       "parentUuid": "2ef897d1_e3d2135d",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_63ebc3a1",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-30T14:47:35Z",
+      "side": 1,
+      "message": "I would just say: prepare to update an existing translation",
+      "parentUuid": "2ef897d1_6313c306",
       "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -194,6 +248,30 @@
       "side": 1,
       "message": "If you\u0027re implying there is a difference in meaning, I don\u0027t get what the difference is. Otherwise, ok.",
       "parentUuid": "2ef897d1_a3441b1d",
+      "range": {
+        "startLine": 284,
+        "startChar": 45,
+        "endLine": 284,
+        "endChar": 47
+      },
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_432fa7f3",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-30T14:47:35Z",
+      "side": 1,
+      "message": "\"it\u0027s taking\" could also imply that we would know that the next (future) action would take too long.\n\nMy point is, that the check only tells whether it *has* taken too long already (where \"too\" is defined by the developer, with some safety margin that we can actually report back to the user).",
+      "parentUuid": "2ef897d1_c3eb97da",
       "range": {
         "startLine": 284,
         "startChar": 45,
