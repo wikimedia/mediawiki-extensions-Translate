@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ef897d1_23f26b04",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-30T14:16:29Z",
+      "side": 1,
+      "message": "I don\u0027t find this comment helpful. This is just a variable that keeps track whether all changes were imported or not.\n\nAlso, if you write \"return xxx\" I expect it to return immediately, not later.",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_e30fb3e2",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-30T14:16:29Z",
+      "side": 1,
+      "message": "If I am not mistaken, $fuzzy is unconditionally set to null, and never written or read again, except for -\u003egetDefaultAction(). It seems our fuzzy handling is also broken....",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_23d94b84",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-30T14:16:29Z",
+      "side": 1,
+      "message": "It cannot be non-existing.\n\nWe iterate on the actual set of keys in the message group. Anything that does not match is ignored completely.\n\nAlso, if we are outputting the action field for this message, one should check that the value exists, as is done for other changes.",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_e3d2135d",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-30T14:16:29Z",
+      "side": 1,
+      "message": "presentation? The first thing I thought was the html code for the diff.",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_033d2f8a",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-30T14:16:29Z",
+      "side": 1,
+      "message": "Technical note: this check was added because the form could contain more fields that some PHP limitations allow (1000). It could also happen if there is an issue with escaping of field names, or partial form being delivered to the user.",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_a3441b1d",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-30T14:16:29Z",
+      "side": 1,
+      "message": "\"if we have spent too much time already\"",
+      "range": {
+        "startLine": 284,
+        "startChar": 45,
+        "endLine": 284,
+        "endChar": 47
+      },
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
