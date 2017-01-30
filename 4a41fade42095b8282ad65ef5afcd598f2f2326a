@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2ef897d1_a319bb29",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-01-30T14:27:07Z",
+      "side": 1,
+      "message": "Well, I had no idea that it \"keeps track whether all changes were imported or not\" nor why it\u0027s initialised here. Can we add a comment to that purpose?",
+      "parentUuid": "2ef897d1_23f26b04",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ef897d1_e30fb3e2",
         "filename": "utils/MessageWebImporter.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2017-01-30T14:16:29Z",
       "side": 1,
       "message": "If I am not mistaken, $fuzzy is unconditionally set to null, and never written or read again, except for -\u003egetDefaultAction(). It seems our fuzzy handling is also broken....",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_8316bff4",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-01-30T14:27:07Z",
+      "side": 1,
+      "message": "Yeah, I wondered about changing this definition but I\u0027m not sure how.",
+      "parentUuid": "2ef897d1_e30fb3e2",
       "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "2ef897d1_03b88fe1",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-01-30T14:27:07Z",
+      "side": 1,
+      "message": "I don\u0027t know what the action field is or where that would be output, will check later.",
+      "parentUuid": "2ef897d1_23d94b84",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ef897d1_e3d2135d",
         "filename": "utils/MessageWebImporter.php",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2017-01-30T14:16:29Z",
       "side": 1,
       "message": "presentation? The first thing I thought was the html code for the diff.",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_6313c306",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-01-30T14:27:07Z",
+      "side": 1,
+      "message": "Is that wrong?",
+      "parentUuid": "2ef897d1_e3d2135d",
       "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -98,6 +170,30 @@
       "writtenOn": "2017-01-30T14:16:29Z",
       "side": 1,
       "message": "\"if we have spent too much time already\"",
+      "range": {
+        "startLine": 284,
+        "startChar": 45,
+        "endLine": 284,
+        "endChar": 47
+      },
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_c3eb97da",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-01-30T14:27:07Z",
+      "side": 1,
+      "message": "If you\u0027re implying there is a difference in meaning, I don\u0027t get what the difference is. Otherwise, ok.",
+      "parentUuid": "2ef897d1_a3441b1d",
       "range": {
         "startLine": 284,
         "startChar": 45,
