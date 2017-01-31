@@ -843,20 +843,20 @@ class TranslatablePage {
 	 * @return bool
 	 */
 	public static function isSourcePage( Title $title ) {
-		static $cache = null;
+		$cache = ObjectCache::getMainWANInstance();
+		$translatablePageIds = $cache->getWithSetCallback(
+			$cache->makeKey( 'pagetranslation', 'sourcepages' ),
+			$cache::TTL_MINUTE * 5,
+			function ( $oldValue, &$ttl, array &$setOpts ) {
+				$dbr = TranslateUtils::getSafeReadDB();
+				$setOpts += Database::getCacheSetOptions( $dbr );
 
-		$cacheObj = wfGetCache( CACHE_ANYTHING );
-		$cacheKey = wfMemcKey( 'pagetranslation', 'sourcepages' );
+				return TranslatablePage::getTranslatablePages();
+			},
+			[ 'pcTTL' => $cache::TTL_PROC_LONG, 'pcGroup' => __CLASS__ . ':30' ]
+		);
 
-		if ( $cache === null ) {
-			$cache = $cacheObj->get( $cacheKey );
-		}
-		if ( !is_array( $cache ) ) {
-			$cache = self::getTranslatablePages();
-			$cacheObj->set( $cacheKey, $cache, 60 * 5 );
-		}
-
-		return in_array( $title->getArticleID(), $cache );
+		return in_array( $title->getArticleID(), $translatablePageIds );
 	}
 
 	/**
