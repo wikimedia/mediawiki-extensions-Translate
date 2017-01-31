@@ -16,6 +16,7 @@
 	"apihelp-translatesandbox-param-username": "Nazwa użytkownika podczas tworzenia użytkownika.",
 	"apihelp-translatesandbox-param-password": "Hasło podczas tworzenia użytkownika.",
 	"apihelp-translatesandbox-param-email": "E-mail podczas tworzenia użytkownika.",
+	"apihelp-translationstash-param-subaction": "Działanie.",
 	"apihelp-translationstash-param-translation": "Tłumaczenia wykonane przez użytkownika.",
 	"apihelp-translationstash-param-metadata": "Obiekt JSON.",
 	"apihelp-ttmserver-param-sourcelanguage": "Kod języka tekstu źródłowego.",
