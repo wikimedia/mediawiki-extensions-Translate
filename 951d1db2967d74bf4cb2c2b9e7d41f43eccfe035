@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ef897d1_21637e0c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-31T14:35:44Z",
+      "side": 1,
+      "message": "typo: multiple",
+      "revId": "951d1db2967d74bf4cb2c2b9e7d41f43eccfe035",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_813a32e3",
+        "filename": "MessageGroupConfigurationParser.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-31T14:35:44Z",
+      "side": 1,
+      "message": "Did you mean is_string()? Otherwise you are wrapping arrays in another array.\n\nFor long conditions I find this style more readable:\nif (\n    A \u0026\u0026\n    B\n) {\n    ...\n}",
+      "revId": "951d1db2967d74bf4cb2c2b9e7d41f43eccfe035",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_c1302aff",
+        "filename": "data/group-yaml-schema.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-31T14:35:44Z",
+      "side": 1,
+      "message": "I was wondering, to make the file more readable, should we perhaps allow new key \"classes\" that is an array, and keep \"class\" as BC. I guess in that case both keys would be optional.",
+      "revId": "951d1db2967d74bf4cb2c2b9e7d41f43eccfe035",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_012762c6",
+        "filename": "insertables/CombinedInsertablesSuggester.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-31T14:35:44Z",
+      "side": 1,
+      "message": "Missing spaces around \u0027\u003d\u0027 (MediaWiki code style conventions).",
+      "revId": "951d1db2967d74bf4cb2c2b9e7d41f43eccfe035",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_e1332609",
+        "filename": "insertables/CombinedInsertablesSuggester.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-01-31T14:35:44Z",
+      "side": 1,
+      "message": "It would be nice to add a test case demonstrating how duplicates are merged by this code.",
+      "revId": "951d1db2967d74bf4cb2c2b9e7d41f43eccfe035",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
