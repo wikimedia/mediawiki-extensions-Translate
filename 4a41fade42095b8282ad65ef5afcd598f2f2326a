@@ -143,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "2ef897d1_1fbd72d1",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-02-01T09:46:02Z",
+      "side": 1,
+      "message": "I don\u0027t see any usage of $type or $action except in the else block of lines 232–323. Would you prefer them to be defined here anyway?\n\nSince Phabricator is down, I can\u0027t access my test case now to check what HTML is currently output by the special page. Will try at some point later.",
+      "parentUuid": "2ef897d1_a3f1bb94",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ef897d1_e3d2135d",
         "filename": "utils/MessageWebImporter.php",
         "patchSetId": 2
@@ -190,6 +208,24 @@
       "side": 1,
       "message": "I would just say: prepare to update an existing translation",
       "parentUuid": "2ef897d1_6313c306",
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_1f10d203",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-02-01T09:46:02Z",
+      "side": 1,
+      "message": "Really? As far as I can see these variables are only used in line 321. Removing the comment, since I have no idea how to rephrase it.",
+      "parentUuid": "2ef897d1_63ebc3a1",
       "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -272,6 +308,30 @@
       "side": 1,
       "message": "\"it\u0027s taking\" could also imply that we would know that the next (future) action would take too long.\n\nMy point is, that the check only tells whether it *has* taken too long already (where \"too\" is defined by the developer, with some safety margin that we can actually report back to the user).",
       "parentUuid": "2ef897d1_c3eb97da",
+      "range": {
+        "startLine": 284,
+        "startChar": 45,
+        "endLine": 284,
+        "endChar": 47
+      },
+      "revId": "4a41fade42095b8282ad65ef5afcd598f2f2326a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_bfff7ea6",
+        "filename": "utils/MessageWebImporter.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-02-01T09:46:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ef897d1_432fa7f3",
       "range": {
         "startLine": 284,
         "startChar": 45,
