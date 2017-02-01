@@ -17,7 +17,8 @@
 			"Wrightbus",
 			"Liuxinyu970226",
 			"LNDDYL",
-			"EagerLin"
+			"EagerLin",
+			"Wehwei"
 		]
 	},
 	"translate": "翻譯",
@@ -122,7 +123,9 @@
 	"right-translate-import": "匯入離線翻譯",
 	"action-translate-import": "匯入離線翻譯",
 	"right-translate-messagereview": "審查翻譯",
+	"action-translate-messagereview": "檢閱翻譯",
 	"right-translate-groupreview": "變更訊息群組的工作流程狀態",
+	"action-translate-groupreview": "變更訊息群組的工作流程狀態",
 	"translate-rc-translation-filter": "搜尋翻譯：",
 	"translate-rc-translation-filter-no": "無",
 	"translate-rc-translation-filter-only": "只顯示翻譯",
