@@ -98,6 +98,14 @@ interface WritableTTMServer {
 	 * Do any cleanup, optimizing etc.
 	 */
 	public function endBootstrap();
+
+	/**
+	 * Get the list of services to duplicate writes to make them "mirrors"
+	 * of this service.
+	 *
+	 * @return string[]
+	 */
+	public function getMirrors();
 }
 
 /**
