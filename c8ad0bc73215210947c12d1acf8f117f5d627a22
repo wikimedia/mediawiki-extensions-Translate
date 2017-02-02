@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ef897d1_0e4e5ddd",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-02T17:41:50Z",
+      "side": 1,
+      "message": "The comment is obsolete now, isn\u0027t it?",
+      "revId": "c8ad0bc73215210947c12d1acf8f117f5d627a22",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
