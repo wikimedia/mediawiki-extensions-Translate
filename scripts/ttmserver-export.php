@@ -58,10 +58,10 @@ class TTMServerBootstrap extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgTranslateTranslationServices;
+		global $wgTranslateTranslationServices,
+			$wgTranslateTranslationDefaultService;
 
-		// TTMServer is the id of the enabled-by-default instance
-		$configKey = $this->getOption( 'ttmserver', 'TTMServer' );
+		$configKey = $this->getOption( 'ttmserver', $wgTranslateTranslationDefaultService );
 		if ( !isset( $wgTranslateTranslationServices[$configKey] ) ) {
 			$this->error( 'Translation memory is not configured properly', 1 );
 		}

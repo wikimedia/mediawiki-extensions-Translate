@@ -55,14 +55,15 @@ class ApiSearchTranslations extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		global $wgLanguageCode;
+		global $wgLanguageCode,
+			$wgTranslateTranslationDefaultService;
 		$available = $this->getAvailableTranslationServices();
 		$filters = $this->getAllowedFilters();
 
 		return array(
 			'service' => array(
 				ApiBase::PARAM_TYPE => $available,
-				ApiBase::PARAM_DFLT => 'TTMServer',
+				ApiBase::PARAM_DFLT => $wgTranslateTranslationDefaultService,
 			),
 			'query' => array(
 				ApiBase::PARAM_TYPE => 'string',

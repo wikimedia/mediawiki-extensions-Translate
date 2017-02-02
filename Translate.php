@@ -266,6 +266,7 @@ if ( !defined( 'TRANSLATE_FUZZY' ) ) {
  * - source text to translate
  * - private API key if provided
  */
+$wgTranslateTranslationDefaultService = 'TTMServer';
 $wgTranslateTranslationServices = array();
 $wgTranslateTranslationServices['TTMServer'] = array(
 	'database' => false, // Passed to wfGetDB

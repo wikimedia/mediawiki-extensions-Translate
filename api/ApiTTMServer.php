@@ -52,12 +52,13 @@ class ApiTTMServer extends ApiBase {
 	}
 
 	public function getAllowedParams() {
+		global $wgTranslateTranslationDefaultService;
 		$available = $this->getAvailableTranslationServices();
 
 		return array(
 			'service' => array(
 				ApiBase::PARAM_TYPE => $available,
-				ApiBase::PARAM_DFLT => 'TTMServer',
+				ApiBase::PARAM_DFLT => $wgTranslateTranslationDefaultService,
 			),
 			'sourcelanguage' => array(
 				ApiBase::PARAM_TYPE => 'string',

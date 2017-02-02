@@ -48,8 +48,9 @@ class TTMServerTest extends MediaWikiTestCase {
 			get_class( $server ),
 			'Fake server given when default server is disabled'
 		);
-		global $wgTranslateTranslationServices;
-		$wgTranslateTranslationServices['TTMServer'] = array(
+		global $wgTranslateTranslationServices,
+			$wgTranslateTranslationDefaultService;
+		$wgTranslateTranslationServices[$wgTranslateTranslationDefaultService] = array(
 			'database' => false, // Passed to wfGetDB
 			'cutoff' => 0.75,
 			'type' => 'ttmserver',
@@ -61,7 +62,7 @@ class TTMServerTest extends MediaWikiTestCase {
 			get_class( $server ),
 			'Real server given when default server is enabled'
 		);
-		unset( $wgTranslateTranslationServices['TTMServer'] );
+		unset( $wgTranslateTranslationServices[$wgTranslateTranslationDefaultService] );
 	}
 
 	public function testFakeTTMServer() {
