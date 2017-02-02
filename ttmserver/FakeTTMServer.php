@@ -49,4 +49,8 @@ class FakeTTMServer implements ReadableTTMServer, WritableTTMServer {
 
 	public function endBootstrap() {
 	}
+
+	public function getMirrors() {
+		return [];
+	}
 }
