@@ -15,12 +15,15 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 
-		global $wgHooks, $wgTranslateTranslationServices, $wgTranslateTestTTMServer;
+		global $wgHooks,
+			 $wgTranslateTranslationServices,
+			 $wgTranslateTranslationDefaultService,
+			 $wgTranslateTestTTMServer;
 		$this->setMwGlobals( array(
 			'wgHooks' => $wgHooks,
 			'wgTranslateTranslationServices' => array(),
 		) );
-		$wgTranslateTranslationServices['TTMServer'] = $wgTranslateTestTTMServer;
+		$wgTranslateTranslationServices[$wgTranslateTranslationDefaultService] = $wgTranslateTestTTMServer;
 
 		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'addGroups' ) );
 

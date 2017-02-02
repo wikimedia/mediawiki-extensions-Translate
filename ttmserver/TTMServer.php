@@ -48,9 +48,10 @@ class TTMServer {
 	 * @return WritableTTMServer
 	 */
 	public static function primary() {
-		global $wgTranslateTranslationServices;
-		if ( isset( $wgTranslateTranslationServices['TTMServer'] ) ) {
-			$obj = self::factory( $wgTranslateTranslationServices['TTMServer'] );
+		global $wgTranslateTranslationServices,
+			$wgTranslateTranslationDefaultService;
+		if ( isset( $wgTranslateTranslationServices[$wgTranslateTranslationDefaultService] ) ) {
+			$obj = self::factory( $wgTranslateTranslationServices[$wgTranslateTranslationDefaultService] );
 			if ( $obj instanceof WritableTTMServer ) {
 				return $obj;
 			}
