@@ -146,4 +146,27 @@ class TTMServer {
 		$job = TTMServerMessageUpdateJob::newJob( $handle, 'rebuild' );
 		JobQueueGroup::singleton()->push( $job );
 	}
+
+	/**
+	 * @return string[]
+	 */
+	public function getMirrors() {
+		global $wgTranslateTranslationServices;
+		if ( isset( $this->config['mirrors'] ) ) {
+			$mirrors = [];
+			foreach ( $this->config['mirrors'] as $name ) {
+				if ( !is_string( $name ) ) {
+					throw new TTMServerException( "Invalid configuration set in " .
+						"mirrors, expected an array of strings" );
+				}
+				if ( !isset( $wgTranslateTranslationServices[$name] ) ) {
+					throw new TTMServerException( "Invalid configuration in " .
+						"mirrors, unknown service $name" );
+				}
+				$mirrors[$name] = true;
+			}
+			return array_keys( $mirrors );
+		}
+		return [];
+	}
 }
