@@ -1,0 +1,163 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ef897d1_96913f55",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-03T12:56:51Z",
+      "side": 1,
+      "message": "abandoned",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_f67ab31e",
+        "filename": "tests/phpunit/TTMServerMessageUpdateJobTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-03T12:56:51Z",
+      "side": 1,
+      "message": "I was expecting NS_MAIN here, but I don\u0027t consider that as blocker for +2.",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_d677b733",
+        "filename": "tests/phpunit/TTMServerMessageUpdateJobTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-03T12:56:51Z",
+      "side": 1,
+      "message": "I was expecting spaces inside brackets (to be consistent with array( ... ))",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_b68b1b1b",
+        "filename": "tests/phpunit/TTMServerMessageUpdateJobTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-03T12:56:51Z",
+      "side": 1,
+      "message": "Abandoned",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_96901f48",
+        "filename": "tests/phpunit/TTMServerMessageUpdateJobTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-03T12:56:51Z",
+      "side": 1,
+      "message": "No other place in this file uses \\, so for consistency this should be removed.",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_36a04b8d",
+        "filename": "ttmserver/Interfaces.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-03T12:56:51Z",
+      "side": 1,
+      "message": "I would add @since 2016.04 (next planned MLEB release).",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_76ac8384",
+        "filename": "ttmserver/TTMServerMessageUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-03T12:56:51Z",
+      "side": 1,
+      "message": "Extra space after !",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_36f5eb7f",
+        "filename": "ttmserver/TTMServerMessageUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-03T12:56:51Z",
+      "side": 1,
+      "message": "Is !\u003d intentional here (as opposed to !\u003d\u003d)?",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_96349f47",
+        "filename": "ttmserver/TTMServerMessageUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-03T12:56:51Z",
+      "side": 1,
+      "message": "Double space. The cumulative delay for all delays combined would be around 33 minutes, after which the job is dropped, am I right?",
+      "range": {
+        "startLine": 283,
+        "startChar": 41,
+        "endLine": 283,
+        "endChar": 42
+      },
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
