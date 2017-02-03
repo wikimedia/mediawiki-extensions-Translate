@@ -332,7 +332,7 @@
 	"tux-editor-doc-editor-cancel": "Cancellar",
 	"tux-messagetable-more-messages": "$1 altere {{PLURAL:$1|message|messages}}",
 	"tux-messagetable-loading-messages": "Carga $1 {{PLURAL:$1|message|messages}}...",
-	"tux-message-filter-placeholder": "Lista de filtros",
+	"tux-message-filter-placeholder": "Filtrar le lista",
 	"tux-message-filter-result": "$1 {{PLURAL:$1|resultato|resultatos}} trovate pro \"$2\"",
 	"tux-message-filter-advanced-button": "Recerca avantiate",
 	"tux-message-filter-optional-messages-label": "Messages optional",

@@ -384,7 +384,7 @@
 	"tux-editor-doc-editor-cancel": "Annuler",
 	"tux-messagetable-more-messages": "$1 {{PLURAL:$1|message|messages}} de plus",
 	"tux-messagetable-loading-messages": "Chargement {{PLURAL:$1|du message|des messages}}…",
-	"tux-message-filter-placeholder": "Liste de filtres",
+	"tux-message-filter-placeholder": "Filtrer la liste",
 	"tux-message-filter-result": "{{PLURAL:$1|0=Aucun résultat trouvé|1=Un résultat trouvé|$1 résultats trouvés}} pour « $2 »",
 	"tux-message-filter-advanced-button": "Recherche avancée",
 	"tux-message-filter-optional-messages-label": "Messages facultatifs",
