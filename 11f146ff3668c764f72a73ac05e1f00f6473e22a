@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ef897d1_369a8b76",
+        "filename": "ttmserver/TTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-03T12:31:43Z",
+      "side": 1,
+      "message": "I assume this is supposed to be $wgTranslateTranslationDefaultService, right?",
+      "revId": "11f146ff3668c764f72a73ac05e1f00f6473e22a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
