@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2ef897d1_36728b11",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2017-02-03T14:24:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ef897d1_96913f55",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ef897d1_f67ab31e",
         "filename": "tests/phpunit/TTMServerMessageUpdateJobTest.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2017-02-03T12:56:51Z",
       "side": 1,
       "message": "I was expecting NS_MAIN here, but I don\u0027t consider that as blocker for +2.",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_166f8f27",
+        "filename": "tests/phpunit/TTMServerMessageUpdateJobTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2017-02-03T14:24:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ef897d1_f67ab31e",
       "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "2ef897d1_f67bd3e9",
+        "filename": "tests/phpunit/TTMServerMessageUpdateJobTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2017-02-03T14:24:30Z",
+      "side": 1,
+      "message": "makes sense will add spaces.\nI was not sure if using the [] syntax was ok in this repo, please let me know what you prefer I can switch to the old array() syntax if better.",
+      "parentUuid": "2ef897d1_d677b733",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ef897d1_b68b1b1b",
         "filename": "tests/phpunit/TTMServerMessageUpdateJobTest.php",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2017-02-03T12:56:51Z",
       "side": 1,
       "message": "Abandoned",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_d678d7ef",
+        "filename": "tests/phpunit/TTMServerMessageUpdateJobTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2017-02-03T14:24:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ef897d1_b68b1b1b",
       "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "2ef897d1_96693f20",
+        "filename": "tests/phpunit/TTMServerMessageUpdateJobTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2017-02-03T14:24:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ef897d1_96901f48",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ef897d1_36a04b8d",
         "filename": "ttmserver/Interfaces.php",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2017-02-03T12:56:51Z",
       "side": 1,
       "message": "I would add @since 2016.04 (next planned MLEB release).",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_36116b60",
+        "filename": "ttmserver/Interfaces.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2017-02-03T14:24:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ef897d1_36a04b8d",
       "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "2ef897d1_d64fb7be",
+        "filename": "ttmserver/TTMServerMessageUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2017-02-03T14:24:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ef897d1_76ac8384",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ef897d1_36f5eb7f",
         "filename": "ttmserver/TTMServerMessageUpdateJob.php",
         "patchSetId": 2
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "2ef897d1_d6de97dd",
+        "filename": "ttmserver/TTMServerMessageUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2017-02-03T14:24:30Z",
+      "side": 1,
+      "message": "hm.. I copied the method from cirrus which was written a long time ago by nik I suppose.\nI looked at Job::getReleaseTimestamp() and the method explicitly return null, so I think it\u0027d be more correct to use !\u003d\u003d",
+      "parentUuid": "2ef897d1_36f5eb7f",
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ef897d1_96349f47",
         "filename": "ttmserver/TTMServerMessageUpdateJob.php",
         "patchSetId": 2
@@ -149,6 +293,30 @@
       "writtenOn": "2017-02-03T12:56:51Z",
       "side": 1,
       "message": "Double space. The cumulative delay for all delays combined would be around 33 minutes, after which the job is dropped, am I right?",
+      "range": {
+        "startLine": 283,
+        "startChar": 41,
+        "endLine": 283,
+        "endChar": 42
+      },
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_767123dd",
+        "filename": "ttmserver/TTMServerMessageUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2017-02-03T14:24:30Z",
+      "side": 1,
+      "message": "given this is random the cumulative delay between the first failure and last attempt would be (assuming random returns always the max):\n2^(6+0) \u003d 64,\n2^(6+1) \u003d 128,\n2^(6+2) \u003d 256,\n2^(6+3) \u003d 512\n\nso around 16 minutes I think. This because the error count is incremented after we compute the delay.\nThe minimal cumulative delay would be 4 minutes.\n\nIt\u0027s unclear to me if it\u0027s right, it works for cirrus but the update rate on cirrus is certainly way higher.\nWe could set WRITE_BACKOFF_EXPONENT to 7 and the max cumulative delay would be 33mins with a minimal delay of 8 minutes.",
+      "parentUuid": "2ef897d1_96349f47",
       "range": {
         "startLine": 283,
         "startChar": 41,
