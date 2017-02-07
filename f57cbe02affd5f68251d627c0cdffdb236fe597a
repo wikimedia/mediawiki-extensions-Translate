@@ -368,6 +368,30 @@
       "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_5dfab141",
+        "filename": "ttmserver/TTMServerMessageUpdateJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 776
+      },
+      "writtenOn": "2017-02-07T19:24:55Z",
+      "side": 1,
+      "message": "We may be able to get away with longer waits (w/ more retries) here, but at least for article search backing up more than an hour or so of updates into the redis job queue leads to a fairly significant increase in memory used for those queues. The general course of action is to allow this code to handle minor hiccups like a failed network switch or a server rebooting, and use manual reindexing for any significant outage.",
+      "parentUuid": "2ef897d1_b149e56c",
+      "range": {
+        "startLine": 283,
+        "startChar": 41,
+        "endLine": 283,
+        "endChar": 42
+      },
+      "revId": "f57cbe02affd5f68251d627c0cdffdb236fe597a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
