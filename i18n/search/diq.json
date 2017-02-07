@@ -3,7 +3,8 @@
 		"authors": [
 			"Mirzali",
 			"Marmase",
-			"Kumkumuk"
+			"Kumkumuk",
+			"Gırd"
 		]
 	},
 	"searchtranslations": "Bı geyr açarnayışa",
@@ -28,5 +29,5 @@
 	"tux-sst-ellipsis-outdated": "Açarnayışo vêrde",
 	"tux-sst-link-all-match": "Hemi rê çeku geyrayış gereko.",
 	"tux-sst-match-message": "Herhangi yew açarnayışi ra takêşen çekuyê asenênê. $1",
-	"tux-sst-case-sensitive": "Herfan rê hassas o"
+	"tux-sst-case-sensitive": "Herfan rê hassaso"
 }

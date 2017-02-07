@@ -15,6 +15,7 @@
 	"tux-sst-prev": "< Precedent",
 	"tux-sst-default": "Traduccions",
 	"tux-sst-translated": "Traduccions de $1",
+	"tux-sst-untranslated": "Pas encara traduits de $1",
 	"tux-sst-outdated": "Traduccions perimidas a partir de $1",
 	"tux-sst-ellipsis-outdated": "Traduccions obsolètas",
 	"tux-sst-link-all-match": "Requerís totes los tèrmes de recèrca",

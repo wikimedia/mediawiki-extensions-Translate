@@ -40,6 +40,7 @@
 	"translate-tag-markthisagain": "Aquesta pagina a agut <span class=\"plainlinks\">[$1 de modificacions]</span> dempuèi qu’es estada darrièrament <span class=\"plainlinks\">[$2 marcada per èsser traduita]</span>.",
 	"translate-tag-hasnew": "Aquesta pagina conten <span class=\"plainlinks\">[$1 de modificacions]</span> que son pas marcadas per la traduccion.",
 	"tpt-translation-intro": "Aquesta pagina es una <span class=\"plainlinks\">[$1 version traduita]</span> de la pagina [[$2]] e la traduccion es completada a $3 %.",
+	"tpt-translation-intro-fuzzy": "Las traduccions obsolètas son indentificadas atal.",
 	"tpt-languages-legend": "Autras lengas :",
 	"tpt-languages-nonzero": "$1 ($2% traduit)",
 	"tpt-target-page": "Aquesta pagina pòt pas èsser mesa a jorn manualament.\nEs una version traduita de [[$1]] e la traduccion pòt èsser mesa a jorn en utilizant [$2 l'aisina de traduccion].",
@@ -47,6 +48,7 @@
 	"tpt-render-summary": "Mesa a jorn per èsser en acòrd amb la version novèla de la font de la pagina",
 	"tpt-aggregategroup-add": "Apondre",
 	"tpt-aggregategroup-save": "Enregistrar",
+	"tpt-aggregategroup-add-new": "Apondre un novèl grop d'agregacion",
 	"tpt-aggregategroup-new-name": "Nom :",
 	"pt-movepage-list-translation": "{{PLURAL:$1|pagina|paginas}} de traduccion",
 	"pt-movepage-new": "Nom novèl :",
@@ -56,5 +58,6 @@
 	"pt-deletepage-current": "Nom de la pagina :",
 	"pt-deletepage-reason": "Motiu :",
 	"pm-old-translations-missing": "$1 conten pas d’ancianas traduccions",
+	"pm-add-icon-hover-text": "Apondre una unitat çaijós",
 	"pm-pagetitle-placeholder": "Entrar lo títol de la pagina"
 }

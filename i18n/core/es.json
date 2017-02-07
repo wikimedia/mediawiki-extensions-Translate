@@ -24,7 +24,8 @@
 			"Ciencia Al Poder",
 			"Wifidel",
 			"Macofe",
-			"Indiralena"
+			"Indiralena",
+			"Dgstranz"
 		]
 	},
 	"translate": "Traducir",
@@ -45,7 +46,7 @@
 	"translate-page-no-such-language": "No se especificó un idioma válido.",
 	"translate-page-no-such-group": "El grupo especificado no es válido.",
 	"translate-page-disabled": "Se han desactivado las traducciones a este idioma en este grupo.\nMotivo:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 es el idioma origen de esta página.",
+	"translate-page-disabled-source": "El $1 es el idioma de origen de esta página.",
 	"translate-language-disabled": "Se desactivó la traducción a este idioma.",
 	"translate-page-settings-legend": "Preferencias",
 	"translate-page-group": "Grupo",
