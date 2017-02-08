@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ef897d1_ec01adba",
+        "filename": "resources/js/ext.translate.special.managetranslatorsandbox.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-08T08:51:07Z",
+      "side": 1,
+      "message": "Here you can hardcode number as 1",
+      "revId": "072fa20ab9d91310c5e1089e4bf9ca314fb96c37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_cc04b1ca",
+        "filename": "resources/js/ext.translate.special.managetranslatorsandbox.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-08T08:51:07Z",
+      "side": 1,
+      "message": "Here too.",
+      "revId": "072fa20ab9d91310c5e1089e4bf9ca314fb96c37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_ac0bb5d8",
+        "filename": "resources/js/ext.translate.special.managetranslatorsandbox.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-08T08:51:07Z",
+      "side": 1,
+      "message": "Make this selectedUserIDs \u003d selectedUserIDs.toArray();",
+      "revId": "072fa20ab9d91310c5e1089e4bf9ca314fb96c37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_8c0eb9e6",
+        "filename": "resources/js/ext.translate.special.managetranslatorsandbox.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-08T08:51:07Z",
+      "side": 1,
+      "message": "mw.msg( \u0027tsb-accept-confirmation-singular\u0027, selectedUserIDs.length )",
+      "revId": "072fa20ab9d91310c5e1089e4bf9ca314fb96c37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_6cf6ddd5",
+        "filename": "resources/js/ext.translate.special.managetranslatorsandbox.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-08T08:51:07Z",
+      "side": 1,
+      "message": "And in similar way here",
+      "range": {
+        "startLine": 304,
+        "startChar": 45,
+        "endLine": 304,
+        "endChar": 46
+      },
+      "revId": "072fa20ab9d91310c5e1089e4bf9ca314fb96c37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
