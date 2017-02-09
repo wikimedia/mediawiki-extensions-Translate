@@ -316,9 +316,9 @@ class MessageWebImporter {
 				}
 
 				$param = '<code class="mw-tmi-diff">' . htmlspecialchars( $key ) . '</code>';
-				$name = $context->msg( 'translate-manage-import-diff', $param,
-					implode( ' ', $act )
-				)->text();
+				$name = $context->msg( 'translate-manage-import-diff' )
+					->rawParams( $param, implode( ' ', $act ) )
+					->escaped();
 
 				$changed[] = self::makeSectionElement( $name, $type, $text );
 			}
