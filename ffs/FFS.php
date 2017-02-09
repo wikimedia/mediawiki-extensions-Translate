@@ -92,4 +92,16 @@ interface FFS {
 	 * @since 2013-04
 	 */
 	public function getFileExtensions();
+
+	/**
+	 * Allows to skip writing the export output into a file. This is useful
+	 * to skip updates that would only update irrelevant parts, such as the
+	 * timestamp of the export.
+	 *
+	 * @param string $a The existing content.
+	 * @param string $b The new export content.
+	 * @return bool
+	 * @since 2017.04
+	 */
+	public function shouldOverwrite( $a, $b );
 }
