@@ -665,6 +665,15 @@ PHP;
 		return $splitPlurals;
 	}
 
+	public function shouldOverwrite( $a, $b ) {
+		$regex = '/^"(.+)-Date: \d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d\+\d\d\d\d\\\\n"$/m';
+
+		$a = preg_replace( $regex, '', $a );
+		$b = preg_replace( $regex, '', $b );
+
+		return $a !== $b;
+	}
+
 	public static function getExtraSchema() {
 		$schema = array(
 			'root' => array(
