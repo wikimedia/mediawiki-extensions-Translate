@@ -16,5 +16,8 @@
 	"tux-sst-solr-offline-title": "Søket er ikkje tilgjengeleg",
 	"tux-sst-solr-offline-body": "Søket er mellombels utilgjengeleg",
 	"tux-sst-next": "Dei neste resultata",
-	"tux-sst-prev": "Dei førre resultata"
+	"tux-sst-prev": "Dei førre resultata",
+	"tux-sst-link-all-match": "Krev alle søkjeord.",
+	"tux-sst-match-message": "Viser omsetjingar som passar med eitt eller fleire av søkjeorda. $1",
+	"tux-sst-case-sensitive": "Skil mellom store og små bokstavar"
 }

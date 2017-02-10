@@ -53,7 +53,7 @@
 	"pt-movepage-list-translation": "{{PLURAL:$1|pagina|paginas}} de traduccion",
 	"pt-movepage-new": "Nom novèl :",
 	"pt-movepage-reason": "Motiu :",
-	"pt-movepage-action-perform": "Tornar nomenar",
+	"pt-movepage-action-perform": "Renomenar",
 	"pt-movepage-action-other": "Cambiar la cibla",
 	"pt-deletepage-current": "Nom de la pagina :",
 	"pt-deletepage-reason": "Motiu :",
