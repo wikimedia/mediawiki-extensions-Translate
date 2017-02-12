@@ -4,7 +4,8 @@
 			"Mirzali",
 			"Marmase",
 			"Kumkumuk",
-			"Gırd"
+			"Gırd",
+			"Asmen"
 		]
 	},
 	"searchtranslations": "Bı geyr açarnayışa",
@@ -27,7 +28,7 @@
 	"tux-sst-outdated": "$1 ra vêrde açarnayışo",
 	"tux-sst-ellipsis-untranslated": "Açarnayış çıniyo",
 	"tux-sst-ellipsis-outdated": "Açarnayışo vêrde",
-	"tux-sst-link-all-match": "Hemi rê çeku geyrayış gereko.",
-	"tux-sst-match-message": "Herhangi yew açarnayışi ra takêşen çekuyê asenênê. $1",
-	"tux-sst-case-sensitive": "Herfan rê hassaso"
+	"tux-sst-link-all-match": "Qıseyê ke geyrenê cı, pêro lazımê.",
+	"tux-sst-match-message": "Motena çarnayışanê ke pê qısanê cıgeyrayan kewnê tê. $1",
+	"tux-sst-case-sensitive": "Herfan rê hessas"
 }
