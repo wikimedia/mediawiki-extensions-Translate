@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nike"
+			"Nike",
+			"Pyscowicz"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "Viestiryhmän tunnus.",
@@ -19,7 +20,23 @@
 	"apihelp-query+messagecollection-param-language": "Kielikoodi.",
 	"apihelp-query+messagecollection-param-limit": "Kuinka monta viestiä näytetään (suotimien jälkeen).",
 	"apihelp-query+messagecollection-example-1": "Palauttaa luettelon tuetuista kielistä",
+	"apihelp-query+messagegroups-example-1": "Näytä viestiryhmät",
+	"apihelp-query+messagegroupstats-param-group": "Viestiryhmän tunnus.",
+	"apihelp-translatesandbox-param-do": "Mitä tehdä.",
+	"apihelp-translationreview-description": "Merkitse käännökset tarkastetuiksi.",
 	"apihelp-translationstash-param-metadata": "JSON-objekti.",
 	"apihelp-translationstash-param-username": "Käyttäjä, jonka kätkö ladataan. Vain erioikeutetut käyttäjät voivat lukea toisten kätköjä.",
-	"apihelp-searchtranslations-description": "Etsi käännöksiä."
+	"apihelp-ttmserver-param-sourcelanguage": "Lähdetekstin kielikoodi.",
+	"apihelp-ttmserver-param-targetlanguage": "Ehdotuksen kielikoodi.",
+	"apihelp-searchtranslations-description": "Etsi käännöksiä.",
+	"apihelp-searchtranslations-param-limit": "Tuloksen koko.",
+	"apierror-translate-duplicateaggregategroup": "Viestiryhmä on jo olemassa",
+	"apierror-translate-invalidgroup": "Ryhmä ei ole olemassa tai se on virheellinen",
+	"apierror-translate-invalidupdate": "Virheellinen päivitys",
+	"apierror-translate-language-disabled": "Kääntäminen tälle kielelle ei ole mahdollista.",
+	"apierror-translate-nodynamicgroups": "Dynaamisiä viestiryhmiä ei tueta täällä",
+	"apierror-translate-nomessagefortitle": "Otsikko ei vastaa käännettävää viesti",
+	"apierror-translate-owntranslation": "Ei voida tarkistaa omia käännöksiä",
+	"apierror-translate-sandboxdisabled": "Hiekkalaatikko-ominaisuus ei ole käytössä",
+	"apierror-translate-unknownmessage": "Tuntematon viesti"
 }
