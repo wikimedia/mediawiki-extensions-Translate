@@ -90,13 +90,6 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	protected $_prefixLength = 0;
 
 	/**
-	 * Boost.
-	 *
-	 * @var float Boost
-	 */
-	protected $_boost = 1.0;
-
-	/**
 	 * Analyzer.
 	 *
 	 * @var sting Analyzer
@@ -159,19 +152,6 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	}
 
 	/**
-	 * Set boost.
-	 *
-	 * @param float $value Boost value
-	 *
-	 * @return $this
-	 */
-	public function setBoost( $value ) {
-		$this->_boost = (float) $value;
-
-		return $this;
-	}
-
-	/**
 	 * Set Prefix Length.
 	 *
 	 * @param int $value Prefix length
@@ -221,10 +201,6 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	public function toArray() {
 		if ( !empty( $this->_fields ) ) {
 			$args['fields'] = $this->_fields;
-		}
-
-		if ( !empty( $this->_boost ) ) {
-			$args['boost'] = $this->_boost;
 		}
 
 		if ( !empty( $this->_analyzer ) ) {
