@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ee375f69_7eeb48a1",
+        "filename": "ttmserver/TTMServerMessageUpdateJob.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2017-02-14T10:45:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ef897d1_bdcd2536",
+      "revId": "00a3470d97359cc5a532753e76dcf18e367547c4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ef897d1_fdc39d08",
         "filename": "ttmserver/TTMServerMessageUpdateJob.php",
         "patchSetId": 3
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "ee375f69_5e4d24df",
+        "filename": "ttmserver/TTMServerMessageUpdateJob.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2017-02-14T10:45:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ef897d1_fdc39d08",
+      "revId": "00a3470d97359cc5a532753e76dcf18e367547c4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ef897d1_5dd3d1d7",
         "filename": "ttmserver/TTMServerMessageUpdateJob.php",
         "patchSetId": 3
@@ -64,6 +100,24 @@
       "writtenOn": "2017-02-07T18:40:16Z",
       "side": 1,
       "message": "the $serviceName \u003d\u003d\u003d null check feels odd here, is that a viable case we should expect? If so should be it checked above along with the isset( $wgTranslateTranslationServices[$serviceName] ) ?",
+      "revId": "00a3470d97359cc5a532753e76dcf18e367547c4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee375f69_9e43acb6",
+        "filename": "ttmserver/TTMServerMessageUpdateJob.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2017-02-14T10:45:43Z",
+      "side": 1,
+      "message": "This is only valid in case the service is misconfigured with an unknown type: https://github.com/wikimedia/mediawiki-extensions-Translate/blob/master/ttmserver/TTMServer.php#L37\n\nOther cases should throw an exception",
+      "parentUuid": "2ef897d1_5dd3d1d7",
       "revId": "00a3470d97359cc5a532753e76dcf18e367547c4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
