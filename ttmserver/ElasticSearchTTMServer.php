@@ -200,6 +200,9 @@ GROOVY;
 			$query->setSize( $sizeSecond );
 
 			// Break if we already got all hits
+			// FIXME: we should set a hard limit that can be lower
+			// than getTotalHits(), we may encounter the 10000
+			// offset+size hard limit by elasticsearch.
 		} while ( $resultset->getTotalHits() > count( $contents ) );
 
 		$suggestions = array();
@@ -382,27 +385,27 @@ GROOVY;
 		$mapping = new \Elastica\Type\Mapping();
 		$mapping->setType( $type );
 		$mapping->setProperties( array(
-			'wiki'     => array( 'type' => 'string', 'index' => 'not_analyzed' ),
-			'localid'  => array( 'type' => 'string', 'index' => 'not_analyzed' ),
-			'uri'      => array( 'type' => 'string', 'index' => 'not_analyzed' ),
-			'language' => array( 'type' => 'string', 'index' => 'not_analyzed' ),
-			'group'    => array( 'type' => 'string', 'index' => 'not_analyzed' ),
+			'wiki'     => array( 'type' => 'keyword' ),
+			'localid'  => array( 'type' => 'keyword' ),
+			'uri'      => array( 'type' => 'keyword' ),
+			'language' => array( 'type' => 'keyword' ),
+			'group'    => array( 'type' => 'keyword' ),
 			'content'  => array(
-				'type' => 'string',
+				'type' => 'text',
 				'fields' => array(
 					'content' => array(
-						'type' => 'string',
+						'type' => 'text',
 						'index' => 'analyzed',
 						'term_vector' => 'yes'
 					),
 					'prefix_complete' => array(
-						'type' => 'string',
+						'type' => 'text',
 						'analyzer' => 'prefix',
 						'search_analyzer' => 'standard',
 						'term_vector' => 'yes'
 					),
 					'case_sensitive' => array(
-						'type' => 'string',
+						'type' => 'text',
 						'index' => 'analyzed',
 						'analyzer' => 'casesensitive',
 						'term_vector' => 'yes'
@@ -457,7 +460,7 @@ GROOVY;
 	public function endBootstrap() {
 		$index = $this->getType()->getIndex();
 		$index->refresh();
-		$index->optimize();
+		$index->forcemerge();
 		$index->getSettings()->setRefreshInterval( '5s' );
 	}
 
@@ -752,26 +755,23 @@ GROOVY;
 	 */
 	private function deleteByQuery( \Elastica\Type $type, \Elastica\Query $query ) {
 		$retryAttempts = self::BULK_INDEX_RETRY_ATTEMPTS;
-		$scrollOptions = array(
-			'search_type' => 'scan',
-			'scroll' => '15m',
-			'size' => self::BULK_DELETE_CHUNK_SIZE,
-		);
 
-		$result = $type->search( $query, $scrollOptions );
-		MWElasticUtils::iterateOverScroll( $type->getIndex(),
-			$result->getResponse()->getScrollId(), '15m',
-			function( $results ) use( $retryAttempts, $type ) {
-				$ids = array();
-				foreach ( $results as $result ) {
-					$ids[] = $result->getId();
+		$search = new \Elastica\Search( $this->getClient() );
+		$search->setQuery( $query );
+		$search->addType( $type );
+		$scroll = new \Elastica\Scroll( $search, '15m' );
+
+		foreach ( $scroll as $results ) {
+			$ids = array();
+			foreach ( $results as $result ) {
+				$ids[] = $result->getId();
+			}
+			MWElasticUtils::withRetry( $retryAttempts,
+				function() use ( $ids, $type ) {
+					$type->deleteIds( $ids );
 				}
-				MWElasticUtils::withRetry( $retryAttempts,
-					function() use ( $ids, $type ) {
-						$type->deleteIds( $ids );
-					}
-				);
-			}, 0, $retryAttempts );
+			);
+		}
 	}
 
 	/**
