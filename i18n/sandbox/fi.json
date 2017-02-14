@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Crt",
-			"Nike"
+			"Nike",
+			"Pyscowicz"
 		]
 	},
 	"managetranslatorsandbox": "Kääntäjähakemusten hallinta",
@@ -13,6 +14,7 @@
 	"tsb-reminder-sent-new": "Muistutus lähetetty",
 	"tsb-reminder-failed": "Muistutuksen lähettäminen epäonnistui",
 	"tsb-email-promoted-subject": "{{SITENAME}}: Sinut on hyväksytty kääntäjäksi",
+	"tsb-email-promoted-body": "Hei {{GENDER:$1|$1}},\n\nOnneksi olkoon! Tarkistin testikäännöksesi jotka teit {{SITENAME}}ssa ja annoin sinulle täydet käännösoikeudet.\n\nTule {{SITENAME}}en jatkaaksesi kääntämistä nyt, ja joka päivä:\n$2\n\nTervetuloa, ja kiitos osallistumisestasi!\n\n{{GENDER:$3|$3}},\n{{SITENAME}}n henkilökunta",
 	"tsb-request-count": "$1 {{PLURAL:$1|hakemus|hakemusta}}",
 	"tsb-all-languages-button-label": "Kaikki kielet",
 	"tsb-search-requests": "Hae hakemuksista",
@@ -37,5 +39,6 @@
 	"translate-translationstash-skip-button-label": "Ohita",
 	"tsb-limit-reached-title": "Kiitos käännöksistäsi",
 	"tsb-no-requests-from-new-users": "Ei uusia hakemuksia.",
-	"tsb-create-user-page": "Luo yksinkertainen käyttäjäsivu"
+	"tsb-create-user-page": "Luo yksinkertainen käyttäjäsivu",
+	"log-name-translatorsandbox": "Käännöshiekkalaatikko"
 }
