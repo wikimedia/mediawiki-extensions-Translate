@@ -67,6 +67,10 @@ class TTMServerBootstrap extends Maintenance {
 		}
 
 		$config = $wgTranslateTranslationServices[$configKey];
+		$server = TTMServer::factory( $config );
+		if ( $server->isFrozen() ) {
+			$this->error( "The service $configKey is frozen.", 1 );
+		}
 		$this->reindex = $this->getOption( 'reindex', false );
 
 		// Do as little as possible in the main thread, to not clobber forked processes.
