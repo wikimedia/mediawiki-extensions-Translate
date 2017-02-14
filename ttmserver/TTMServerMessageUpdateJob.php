@@ -44,6 +44,12 @@ class TTMServerMessageUpdateJob extends Job {
 	const WRITE_BACKOFF_EXPONENT = 7;
 
 	/**
+	 * The maximum amount of time jobs delayed due to frozen services can remain
+	 * in the job queue.
+	 */
+	const DROP_DELAYED_JOBS_AFTER = 86400; // 60 * 60 * 24 * 1;
+
+	/**
 	 * @param MessageHandle $handle
 	 * @return TTMServerMessageUpdateJob
 	 */
@@ -66,6 +72,8 @@ class TTMServerMessageUpdateJob extends Job {
 				'command' => 'rebuild',
 				'service' => null,
 				'errorCount' => 0,
+				'createdAt' => time(),
+				'retryCount' => 0,
 			]
 		);
 	}
@@ -142,7 +150,11 @@ class TTMServerMessageUpdateJob extends Job {
 		}
 
 		try {
-			$this->runCommand( $ttmserver );
+			if ( $ttmserver->isFrozen() ) {
+				$this->requeueRetry( $serviceName );
+			} else {
+				$this->runCommand( $ttmserver );
+			}
 		} catch ( \Exception $e ) {
 			$this->requeueError( $serviceName, $e );
 		}
@@ -189,6 +201,43 @@ class TTMServerMessageUpdateJob extends Job {
 			]
 		);
 		$this->resend( $job );
+	}
+
+	/**
+	 * Re-queue job that is frozen, or drop the job if it has
+	 * been frozen for too long.
+	 *
+	 * @param string $serviceName
+	 */
+	private function requeueRetry( $serviceName ) {
+		$diff = time() - $this->params['createdAt'];
+		$dropTimeout = self::DROP_DELAYED_JOBS_AFTER;
+		if ( $diff > $dropTimeout ) {
+			LoggerFactory::getInstance( 'TTMServerUpdates' )->warning(
+				'Dropping delayed job {command} for service {service} ' .
+				'after waiting {diff}s',
+				[
+					'command' => $this->params['command'],
+					'service' => $serviceName,
+					'diff' => $diff,
+				]
+			);
+		} else {
+			$delay = self::backoffDelay( $this->params['retryCount'] );
+			$job = clone $this;
+			$job->params['retryCount']++;
+			$job->params['service'] = $serviceName;
+			$job->setDelay( $delay );
+			LoggerFactory::getInstance( 'TTMServerUpdates' )->debug(
+				'Service {service} reported frozen. ' .
+				'Requeueing job with delay of {delay}s',
+				[
+					'service' => $serviceName,
+					'delay' => $delay
+				]
+			);
+			$this->resend( $job );
+		}
 	}
 
 	/**

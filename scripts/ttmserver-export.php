@@ -84,6 +84,10 @@ class TTMServerBootstrap extends Maintenance {
 			$this->statusLine( "Forked thread $pid to handle bootstrapping\n" );
 			$status = 0;
 			pcntl_waitpid( $pid, $status );
+			// beginBootStrap probably failed, give up.
+			if ( $status !== 0 ) {
+				$this->error( 'Boostrap failed.', 1 );
+			}
 		}
 
 		$threads = $this->getOption( 'threads', 1 );
@@ -131,9 +135,12 @@ class TTMServerBootstrap extends Maintenance {
 	}
 
 	protected function beginBootStrap( $config ) {
-		$this->statusLine( "Cleaning up old entries...\n" );
 		$server = TTMServer::factory( $config );
 		$server->setLogger( $this );
+		if ( $server->isFrozen() ) {
+			$this->error( "The service is frozen, giving up.", 1 );
+		}
+		$this->statusLine( "Cleaning up old entries...\n" );
 		if ( $this->reindex ) {
 			$server->doMappingUpdate();
 		}

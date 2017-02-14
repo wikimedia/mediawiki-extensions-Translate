@@ -169,4 +169,11 @@ class TTMServer {
 		}
 		return [];
 	}
+
+	/**
+	 * @return bool
+	 */
+	public function isFrozen() {
+		return false;
+	}
 }
