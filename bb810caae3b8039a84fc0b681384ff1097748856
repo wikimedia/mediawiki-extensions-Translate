@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ce3c5b53_35ff22a9",
+        "filename": "ttmserver/TTMServerMessageUpdateJob.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-15T09:49:39Z",
+      "side": 1,
+      "message": "It used to take $id.... in 1.22. It can safely be removed now, or it can be left as-is and I can do a general clean-up later to remove it from all Job class instances in Translate.\n\nhttps://github.com/wikimedia/mediawiki/blob/REL1_22/includes/job/Job.php#L142",
+      "parentUuid": "ce3c5b53_69f5ddc6",
+      "revId": "bb810caae3b8039a84fc0b681384ff1097748856",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce3c5b53_29ffd5a8",
         "filename": "ttmserver/TTMServerMessageUpdateJob.php",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2017-02-14T19:51:56Z",
       "side": 1,
       "message": "phan claims this method doesn\u0027t exist. Should this function (or class really) be tied to the WritableTTMServer interface that does have the update function?",
+      "revId": "bb810caae3b8039a84fc0b681384ff1097748856",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce3c5b53_95194e2a",
+        "filename": "ttmserver/TTMServerMessageUpdateJob.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-15T09:49:39Z",
+      "side": 1,
+      "message": "Yeah, WritableTTMServer would be more accurate as type-hint in this class.",
+      "parentUuid": "ce3c5b53_a921a54d",
       "revId": "bb810caae3b8039a84fc0b681384ff1097748856",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
