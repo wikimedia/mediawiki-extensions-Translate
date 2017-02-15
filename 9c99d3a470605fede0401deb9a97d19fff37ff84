@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ce3c5b53_7607ed1f",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 776
+      },
+      "writtenOn": "2017-02-15T21:55:10Z",
+      "side": 1,
+      "message": "it\u0027s a somewhat common problem with forking, basically after the fork multiple processes will have a handle to the same socket. If they both try and use that socket there will be problems.\n\nThe solution is generally to make sure all sockets are closed before/immediately after forking, or not even opening sockets in the parent and only in the child.",
+      "parentUuid": "ce3c5b53_95f2aede",
+      "revId": "9c99d3a470605fede0401deb9a97d19fff37ff84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce3c5b53_29ccb58b",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 1
