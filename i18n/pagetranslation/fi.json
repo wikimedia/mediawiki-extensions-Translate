@@ -12,7 +12,8 @@
 			"VezonThunder",
 			"ZeiP",
 			"Pxos",
-			"Valtlait"
+			"Valtlait",
+			"Pyscowicz"
 		]
 	},
 	"pagetranslation": "Sivujen kääntäminen",
@@ -67,6 +68,7 @@
 	"translate-tag-markthisagain": "Tähän sivuun on tehty <span class=\"plainlinks\">[$1 muutoksia]</span> sen jälkeen kun se viimeksi <span class=\"plainlinks\">[$2 merkittiin käännettäväksi]</span>.",
 	"translate-tag-hasnew": "Tämä sivu sisältää <span class=\"plainlinks\">[$1 muutoksia],</span> joita ei ole merkitty käännettäväksi.",
 	"tpt-translation-intro": "Tämä on <span class=\"plainlinks\">[$1 käännetty versio]</span> sivusta [[$2]], ja käännös on $3 % valmis.",
+	"tpt-translation-intro-fuzzy": "Vanhentuneet käännökset on merkitty näin.",
 	"tpt-languages-legend": "Muut kielet:",
 	"tpt-languages-zero": "Aloita käännös tälle kielelle",
 	"tpt-languages-nonzero": "$1 ($2 % käännetty)",
@@ -114,6 +116,7 @@
 	"logentry-pagetranslation-deletelnok": "$1 {{GENDER:$2|epäonnistui}} käännössivuun $4 liittyvän sivun $3 poistamisessa",
 	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|kumosi}} sivun $3 käännösrajoituksen",
 	"logentry-pagetranslation-discourage": "$1 {{GENDER:$2|rajoitti}} sivun $3 kääntämistä",
+	"logentry-pagetranslation-prioritylanguages-unset": "$1 {{GENDER:$2|poisti}} ensisijaiset kielet käännettävästä sivusta $3",
 	"log-action-filter-pagetranslation": "Toiminnon tyyppi:",
 	"log-action-filter-pagetranslation-mark": "Merkitty käännettäväksi",
 	"log-action-filter-pagetranslation-unmark": "Poistettu käännettävistä sivuista",

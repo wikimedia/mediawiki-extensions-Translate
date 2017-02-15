@@ -119,7 +119,7 @@
 	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|zachęcił|zachęciła}} do tłumaczenia $3",
 	"logentry-pagetranslation-discourage": "$1 {{GENDER:$2|zniechęcił|zniechęciła}} do tłumaczenia $3",
 	"logentry-pagetranslation-prioritylanguages-unset": "$1 {{GENDER:$2|usunął|usunęła}} języki priorytetowe ze strony przeznaczonej do tłumaczenia $3",
-	"logentry-pagetranslation-prioritylanguages": "$1 {{GENDER:$2|ustawił|ustawiła}} języki priorytetowe dla strony przeznaczonej do tłumaczenia $3 do $5",
+	"logentry-pagetranslation-prioritylanguages": "$1 {{GENDER:$2|ustawił|ustawiła}} języki priorytetowe dla strony przeznaczonej do tłumaczenia $3 na $5",
 	"logentry-pagetranslation-prioritylanguages-force": "$1 {{GENDER:$2|ograniczył|ograniczyła}} języki dla strony przeznaczonej do tłumaczenia $3 do $5",
 	"logentry-pagetranslation-associate": "$1 {{GENDER:$2|dodał|dodała}} stronę przeznaczoną do tłumaczenia $3 do grupy zbiorczej $4",
 	"logentry-pagetranslation-dissociate": "$1 {{GENDER:$2|usunął|usunęła}} stronę przeznaczoną do tłumaczenia $3 z grupy zbiorczej $4",
