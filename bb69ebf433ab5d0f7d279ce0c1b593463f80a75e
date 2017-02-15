@@ -16,6 +16,23 @@
       "revId": "bb69ebf433ab5d0f7d279ce0c1b593463f80a75e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce3c5b53_da438566",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-15T06:47:13Z",
+      "side": 1,
+      "message": "I don\u0027t think this is actually a problem. The way this loop is written (which isn\u0027t very obvious, I give that) means that it will first fetch 100 items, then it may fetch 500 more with from \u003d 100, and then it will always stop.",
+      "revId": "bb69ebf433ab5d0f7d279ce0c1b593463f80a75e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
