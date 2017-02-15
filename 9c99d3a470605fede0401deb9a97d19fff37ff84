@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ce3c5b53_35eba20b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-15T09:28:10Z",
+      "side": 1,
+      "message": "useful",
+      "revId": "9c99d3a470605fede0401deb9a97d19fff37ff84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce3c5b53_f5321abc",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-15T09:28:10Z",
+      "side": 1,
+      "message": "This opens a connection. In the past we had hard to track corruption issues with connections, and that was solved by only opening connections after working, or closing them explicitly.\n\nIs there such risk here?",
+      "revId": "9c99d3a470605fede0401deb9a97d19fff37ff84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce3c5b53_29ccb58b",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 1
