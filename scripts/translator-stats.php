@@ -94,9 +94,9 @@ class TS extends Maintenance {
 					$method = 'sandbox';
 					break;
 				} elseif ( $log->log_action === 'rights' ) {
-					wfSuppressWarnings();
+					MediaWiki\suppressWarnings();
 					$data = unserialize( $log->log_params );
-					wfRestoreWarnings();
+					MediaWiki\restoreWarnings();
 					if ( $data === false ) {
 						$lines = explode( "\n", $log->log_params );
 						if ( strpos( $lines[1], 'translator' ) !== false ) {

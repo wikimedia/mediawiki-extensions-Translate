@@ -49,9 +49,9 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 
 			// Not sorted by default, so do it now
 			// Work around php bug: https://bugs.php.net/bug.php?id=50688
-			wfSuppressWarnings();
+			MediaWiki\suppressWarnings();
 			usort( $groups, array( 'MessageGroups', 'groupLabelSort' ) );
-			wfRestoreWarnings();
+			MediaWiki\restoreWarnings();
 		} elseif ( $params['root'] !== '' ) {
 			// format=tree from now on, as it is the only other valid option
 			$group = MessageGroups::getGroup( $params['root'] );

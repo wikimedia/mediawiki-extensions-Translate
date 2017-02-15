@@ -23,10 +23,10 @@ class IniFFS extends SimpleFFS {
 		 */
 		$group = MessageGroupBase::factory( $conf );
 
-		wfSuppressWarnings();
+		MediaWiki\suppressWarnings();
 		$ffs = new IniFFS( $group );
 		$parsed = $ffs->readFromVariable( $data );
-		wfRestoreWarnings();
+		MediaWiki\restoreWarnings();
 
 		return (bool)count( $parsed['MESSAGES'] );
 	}

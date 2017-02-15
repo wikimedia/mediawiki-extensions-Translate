@@ -72,9 +72,9 @@ class StatsTable {
 	}
 
 	public function getBackgroundColor( $subset, $total, $fuzzy = false ) {
-		wfSuppressWarnings();
+		MediaWiki\suppressWarnings();
 		$v = round( 255 * $subset / $total );
-		wfRestoreWarnings();
+		MediaWiki\restoreWarnings();
 
 		if ( $fuzzy ) {
 			// Weigh fuzzy with factor 20.
