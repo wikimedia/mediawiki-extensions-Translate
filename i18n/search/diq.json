@@ -8,12 +8,12 @@
 			"Asmen"
 		]
 	},
-	"searchtranslations": "Bı geyr açarnayışa",
+	"searchtranslations": "Şıma tadayışan (çarnayışan) bıgeyrê",
 	"tux-sst-edit": "Açarnayışi bıvurne",
 	"tux-sst-view-foreign": "$1 de bıvêne",
 	"tux-sst-search": "Cı geyre",
-	"tux-sst-search-ph": "Bı geyr açarnayışa",
-	"tux-sst-count": "{{PLURAL:$1|Jew netice vineya|$1 neticey vineyay|0=teba nêvineya}}",
+	"tux-sst-search-ph": "Şıma tadayışan (çarnayışan) bıgeyrê",
+	"tux-sst-count": "{{PLURAL:$1|Yew peyni vêniya|$1 peyniy vêniyay|0=teba nêvêniya}}",
 	"tux-sst-facet-language": "Zıwani",
 	"tux-sst-facet-group": "Gruba mesacan",
 	"tux-sst-nosolr-title": "Cı geyrayışo nêgurweyêno",

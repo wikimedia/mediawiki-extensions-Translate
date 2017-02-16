@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Veeven"
+		]
+	},
+	"tux-sst-facet-language": "భాషలు",
+	"tux-sst-facet-group": "సందేశాల సమూహాలు",
+	"tux-sst-default": "అనువాదాలు",
+	"tux-sst-ellipsis-untranslated": "అనువాదం లేదు",
+	"tux-sst-ellipsis-outdated": "పాతబడిన అనువాదాలు"
+}
