@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "ce3c5b53_72a376a9",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-16T07:35:42Z",
+      "side": 1,
+      "message": "1) If we see corruption thing again, we know where to look.\n2) It\u0027s easy to test by running ttmserver-export with multiple threads. But different versions of Elastica and PHP/HHVM could behave differently.",
+      "parentUuid": "ce3c5b53_7607ed1f",
+      "revId": "9c99d3a470605fede0401deb9a97d19fff37ff84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce3c5b53_29ccb58b",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 1
