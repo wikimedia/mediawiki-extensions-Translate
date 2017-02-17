@@ -303,5 +303,7 @@
 	"tux-empty-list-other-guide": "Podètz ajudar a repassar las traduccions existentas",
 	"tux-empty-list-other-action": "Repassar las traduccions",
 	"tux-empty-list-other-link": "Afichar totes los messatges",
+	"tux-editor-close-tooltip": "Tampar",
+	"tux-editor-collapse-tooltip": "Replegar",
 	"tux-editor-message-tools-translations": "Totas las traduccions"
 }
