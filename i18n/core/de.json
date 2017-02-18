@@ -342,7 +342,7 @@
 	"tux-editor-suggestions-title": "Vorschläge",
 	"tux-editor-in-other-languages": "In anderen Sprachen",
 	"tux-editor-need-more-help": "Wird weitere Hilfe benötigt?",
-	"tux-editor-ask-help": "Nach zusätzlichen Informationen fragen ...",
+	"tux-editor-ask-help": "Nach zusätzlichen Informationen fragen",
 	"tux-editor-tm-match": "$1 % Übereinstimmung",
 	"tux-warnings-more": "{{PLURAL:$1|Eine weitere|$1 weitere}}",
 	"tux-warnings-hide": "verstecken",
