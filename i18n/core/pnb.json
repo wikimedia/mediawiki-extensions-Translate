@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Khalid Mahmood"
+			"Khalid Mahmood",
+			"Abbas dhothar"
 		]
 	},
 	"translate": "ترجمعہ",
@@ -13,5 +14,5 @@
 	"translate-page-showing-none": "وکھانے آسطے کوئی سنیعا نئیں۔",
 	"translate-next": "اگلا صفحہ",
 	"translate-page-description-legend": "ٹولی دے بارے چ معلومات",
-	"translate-documentation-language": "سنیعہ لکھت"
+	"translate-documentation-language": "سنیہہ دستاویز"
 }
