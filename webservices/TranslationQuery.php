@@ -20,6 +20,11 @@ class TranslationQuery {
 	protected $body;
 	protected $headers = [];
 
+	/**
+	 * @var mixed Arbitrary data that is returned with TranslationQueryResponse
+	 */
+	protected $instructions;
+
 	// URL is mandatory, so using it here
 	public static function factory( $url ) {
 		$obj = new TranslationQuery();
@@ -54,6 +59,17 @@ class TranslationQuery {
 		return $this;
 	}
 
+	/**
+	 * Attach arbitrary data that is necessary to process the results.
+	 * @param mixed $data
+	 * @return self
+	 * @since 2017.04
+	 */
+	public function attachProcessingInstructions( $data ) {
+		$this->instructions = $data;
+		return $this;
+	}
+
 	public function getTimeout() {
 		return $this->timeout;
 	}
@@ -76,5 +92,14 @@ class TranslationQuery {
 
 	public function getHeaders() {
 		return $this->headers;
+	}
+
+	/**
+	 * Get previously attached result processing instructions.
+	 * @return mixed
+	 * @since 2017.04
+	 */
+	public function getProcessingInstructions() {
+		return $this->instructions;
 	}
 }
