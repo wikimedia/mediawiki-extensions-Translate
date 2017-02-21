@@ -84,7 +84,7 @@ class ElasticSearchTTMServer
 
 	protected function doQuery( $sourceLanguage, $targetLanguage, $text ) {
 		if ( !$this->useWikimediaExtraPlugin() ) {
-			// ElasticTTM is currently not compatible with elasticsearch 2.x
+			// ElasticTTM is currently not compatible with elasticsearch 2.x/5.x
 			// It needs FuzzyLikeThis ported via the wmf extra plugin
 			throw new \RuntimeException( 'The wikimedia extra plugin is mandatory.' );
 		}
@@ -111,15 +111,24 @@ class ElasticSearchTTMServer
 				)
 			);
 		} else {
+			// TODO: should we remove this code block the extra
+			// plugin is now mandatory and we will never use the
+			// groovy script.
+			if ( $this->isElastica5() ) {
+				$scriptClass = \Elastica\Script\Script::class;
+			} else {
+				$scriptClass = \Elastica\Script::class;
+			}
+
 			$groovyScript =
 <<<GROOVY
 import org.apache.lucene.search.spell.*
 new LevensteinDistance().getDistance(srctxt, _source['content'])
 GROOVY;
-			$script = new \Elastica\Script(
+			$script = new $scriptClass(
 				$groovyScript,
 				array( 'srctxt' => $text ),
-				\Elastica\Script::LANG_GROOVY
+				$scriptClass::LANG_GROOVY
 			);
 			$boostQuery->addScriptScoreFunction( $script );
 		}
@@ -381,28 +390,35 @@ GROOVY;
 
 		$mapping = new \Elastica\Type\Mapping();
 		$mapping->setType( $type );
+
+		$keywordType = array( 'type' => 'string', 'index' => 'not_analyzed' );
+		$textType = 'string';
+		if ( $this->isElastica5() ) {
+			$keywordType = array( 'type' => 'keyword' );
+			$textType = 'text';
+		}
 		$mapping->setProperties( array(
-			'wiki'     => array( 'type' => 'string', 'index' => 'not_analyzed' ),
-			'localid'  => array( 'type' => 'string', 'index' => 'not_analyzed' ),
-			'uri'      => array( 'type' => 'string', 'index' => 'not_analyzed' ),
-			'language' => array( 'type' => 'string', 'index' => 'not_analyzed' ),
-			'group'    => array( 'type' => 'string', 'index' => 'not_analyzed' ),
+			'wiki'     => $keywordType,
+			'localid'  => $keywordType,
+			'uri'      => $keywordType,
+			'language' => $keywordType,
+			'group'    => $keywordType,
 			'content'  => array(
-				'type' => 'string',
+				'type' => $textType,
 				'fields' => array(
 					'content' => array(
-						'type' => 'string',
+						'type' => $textType,
 						'index' => 'analyzed',
 						'term_vector' => 'yes'
 					),
 					'prefix_complete' => array(
-						'type' => 'string',
+						'type' => $textType,
 						'analyzer' => 'prefix',
 						'search_analyzer' => 'standard',
 						'term_vector' => 'yes'
 					),
 					'case_sensitive' => array(
-						'type' => 'string',
+						'type' => $textType,
 						'index' => 'analyzed',
 						'analyzer' => 'casesensitive',
 						'term_vector' => 'yes'
@@ -457,7 +473,11 @@ GROOVY;
 	public function endBootstrap() {
 		$index = $this->getType()->getIndex();
 		$index->refresh();
-		$index->optimize();
+		if ( $this->isElastica5() ) {
+			$index->forcemerge();
+		} else {
+			$index->optimize();
+		}
 		$index->getSettings()->setRefreshInterval( '5s' );
 	}
 
@@ -752,26 +772,23 @@ GROOVY;
 	 */
 	private function deleteByQuery( \Elastica\Type $type, \Elastica\Query $query ) {
 		$retryAttempts = self::BULK_INDEX_RETRY_ATTEMPTS;
-		$scrollOptions = array(
-			'search_type' => 'scan',
-			'scroll' => '15m',
-			'size' => self::BULK_DELETE_CHUNK_SIZE,
-		);
 
-		$result = $type->search( $query, $scrollOptions );
-		MWElasticUtils::iterateOverScroll( $type->getIndex(),
-			$result->getResponse()->getScrollId(), '15m',
-			function( $results ) use( $retryAttempts, $type ) {
-				$ids = array();
-				foreach ( $results as $result ) {
-					$ids[] = $result->getId();
+		$search = new \Elastica\Search( $this->getClient() );
+		$search->setQuery( $query );
+		$search->addType( $type );
+		$scroll = new \Elastica\Scroll( $search, '15m' );
+
+		foreach ( $scroll as $results ) {
+			$ids = array();
+			foreach ( $results as $result ) {
+				$ids[] = $result->getId();
+			}
+			MWElasticUtils::withRetry( $retryAttempts,
+				function() use ( $ids, $type ) {
+					$type->deleteIds( $ids );
 				}
-				MWElasticUtils::withRetry( $retryAttempts,
-					function() use ( $ids, $type ) {
-						$type->deleteIds( $ids );
-					}
-				);
-			}, 0, $retryAttempts );
+			);
+		}
 	}
 
 	/**
@@ -803,5 +820,15 @@ GROOVY;
 			);
 			return false;
 		}
+	}
+
+	/**
+	 * @return bool true if running with Elastica 5+
+	 */
+	private function isElastica5() {
+		// Sadly Elastica does not seem to expose its version so we
+		// check the inexistence of a class that was removed in the
+		// version 5
+		return !class_exists( \Elastica\Script::class );
 	}
 }
