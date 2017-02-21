@@ -27,7 +27,7 @@ class YandexWebService extends TranslationWebService {
 
 	protected function doPairs() {
 		if ( !isset( $this->config['key'] ) ) {
-			throw new TranslationWebServiceException( 'API key is not set' );
+			throw new TranslationWebServiceConfigurationException( 'API key is not set' );
 		}
 
 		$pairs = array();
@@ -59,12 +59,12 @@ class YandexWebService extends TranslationWebService {
 
 	protected function getQuery( $text, $from, $to ) {
 		if ( !isset( $this->config['key'] ) ) {
-			throw new TranslationWebServiceException( 'API key is not set' );
+			throw new TranslationWebServiceConfigurationException( 'API key is not set' );
 		}
 
 		# http://api.yandex.com/translate/doc/dg/reference/translate.xml
 		if ( strlen( $text ) > 10000 ) {
-			throw new TranslationWebServiceException( 'Source text too long' );
+			throw new TranslationWebServiceInvalidInputException( 'Source text too long' );
 		}
 
 		$text = trim( $text );

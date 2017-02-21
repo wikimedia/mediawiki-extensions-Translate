@@ -23,7 +23,7 @@ class CxserverWebService extends TranslationWebService {
 
 	protected function doPairs() {
 		if ( !isset( $this->config['host'] ) ) {
-			throw new TranslationWebServiceException( 'Cxserver host not set' );
+			throw new TranslationWebServiceConfigurationException( 'Cxserver host not set' );
 		}
 
 		$pairs = array();
@@ -52,7 +52,7 @@ class CxserverWebService extends TranslationWebService {
 
 	protected function getQuery( $text, $from, $to ) {
 		if ( !isset( $this->config['host'] ) ) {
-			throw new TranslationWebServiceException( 'Cxserver host not set' );
+			throw new TranslationWebServiceConfigurationException( 'Cxserver host not set' );
 		}
 
 		$text = trim( $text );
