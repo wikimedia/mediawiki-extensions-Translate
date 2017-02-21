@@ -107,6 +107,15 @@ interface WritableTTMServer {
 	 * @return string[]
 	 */
 	public function getMirrors();
+
+	/**
+	 * Check if the service is frozen, attempting to write to
+	 * a frozen service may lead to errors or unexpected behaviors.
+	 *
+	 * @since 2017.04
+	 * @return boolean true if the service is frozen
+	 */
+	public function isFrozen();
 }
 
 /**

@@ -221,6 +221,147 @@ class TTMServerMessageUpdateJobTest extends MediaWikiTestCase {
 		$job->run();
 		$this->assertEmpty( $job->getResentJobs() );
 	}
+
+	/**
+	 * One service is frozen
+	 */
+	public function testOneServiceFrozen() {
+		$mock = $this->getMockBuilder( WritableTTMServer::class )
+			->getMock();
+		$mock->expects( $this->atLeastOnce() )
+			->method( 'update' );
+		static::$mockups['primary'] = $mock;
+		$mock = $this->getMockBuilder( WritableTTMServer::class )
+			->getMock();
+		$mock->expects( $this->never() )
+			->method( 'update' );
+		$mock->expects( $this->atLeastOnce() )
+			->method( 'isFrozen' )
+			->willReturn( true );
+		static::$mockups['secondary'] = $mock;
+
+		$now = time();
+		$job = new TestableTTMServerMessageUpdateJob(
+			Title::makeTitle( NS_MAIN, 'Main Page' ),
+			[
+				'command' => 'refresh',
+				'createdAt' => $now
+			],
+			$this->getMockBuilder( MessageHandle::class )
+				->disableOriginalConstructor()
+				->getMock()
+		);
+		$job->run();
+		$this->assertEquals( 1, count( $job->getResentJobs() ) );
+		$expectedParams = [
+			'errorCount' => 0,
+			'retryCount' => 1,
+			'createdAt' => $now,
+			'service' => 'secondary',
+			'command' => 'refresh'
+		];
+		$actualParams = array_intersect_key(
+			$job->getResentJobs()[0]->getParams(),
+			$expectedParams
+		);
+		$this->assertEquals( $expectedParams, $actualParams );
+	}
+
+	/**
+	 * One is broken
+	 * One is frozen
+	 */
+	public function testOneBrokenOneFrozen() {
+		$mock = $this->getMockBuilder( WritableTTMServer::class )
+			->getMock();
+		$mock->expects( $this->atLeastOnce() )
+			->method( 'update' )
+			->will( $this->throwException( new TTMServerException ) );
+		static::$mockups['primary'] = $mock;
+		$mock = $this->getMockBuilder( WritableTTMServer::class )
+			->getMock();
+		$mock->expects( $this->never() )
+			->method( 'update' );
+		$mock->expects( $this->atLeastOnce() )
+			->method( 'isFrozen' )
+			->willReturn( true );
+		static::$mockups['secondary'] = $mock;
+
+		$now = time();
+		$job = new TestableTTMServerMessageUpdateJob(
+			Title::makeTitle( NS_MAIN, 'Main Page' ),
+			[
+				'command' => 'refresh',
+				'createdAt' => $now
+			],
+			$this->getMockBuilder( MessageHandle::class )
+				->disableOriginalConstructor()
+				->getMock()
+		);
+		$job->run();
+		$this->assertEquals( 2, count( $job->getResentJobs() ) );
+		$expectedParams = [
+			'errorCount' => 1,
+			'retryCount' => 0,
+			'createdAt' => $now,
+			'service' => 'primary',
+			'command' => 'refresh'
+		];
+		$actualParams = array_intersect_key(
+			$job->getResentJobs()[0]->getParams(),
+			$expectedParams
+		);
+		$this->assertEquals( $expectedParams, $actualParams );
+
+		$expectedParams = [
+			'errorCount' => 0,
+			'retryCount' => 1,
+			'createdAt' => $now,
+			'service' => 'secondary',
+			'command' => 'refresh'
+		];
+		$actualParams = array_intersect_key(
+			$job->getResentJobs()[1]->getParams(),
+			$expectedParams
+		);
+		$this->assertEquals( $expectedParams, $actualParams );
+	}
+
+	/**
+	 * Old jobs are abandoned
+	 */
+	public function testAbandonedOldJob() {
+		$mock = $this->getMockBuilder( WritableTTMServer::class )
+			->getMock();
+		$mock->expects( $this->never() )
+			->method( 'update' );
+		$mock->expects( $this->never() )
+			->method( 'isFrozen' );
+		static::$mockups['primary'] = $mock;
+		$mock = $this->getMockBuilder( WritableTTMServer::class )
+			->getMock();
+		$mock->expects( $this->never() )
+			->method( 'update' );
+		$mock->expects( $this->atLeastOnce() )
+			->method( 'isFrozen' )
+			->willReturn( true );
+		static::$mockups['secondary'] = $mock;
+
+		$job = new TestableTTMServerMessageUpdateJob(
+			Title::makeTitle( NS_MAIN, 'Main Page' ),
+			[
+				'command' => 'refresh',
+				'retryCount' => 10,
+				'service' => 'secondary',
+				'createdAt' => time() - TTMServerMessageUpdateJob::DROP_DELAYED_JOBS_AFTER - 1,
+			],
+			$this->getMockBuilder( MessageHandle::class )
+				->disableOriginalConstructor()
+				->getMock()
+		);
+		$job->run();
+		$this->assertEquals( 0, count( $job->getResentJobs() ) );
+	}
 }
 
 /**
@@ -292,5 +433,9 @@ class TestableTTMServer extends TTMServer implements WritableTTMServer {
 
 	public function endBootstrap() {
 		$this->delegate->endBootstrap();
+	}
+
+	public function isFrozen() {
+		return $this->delegate->isFrozen();
 	}
 }

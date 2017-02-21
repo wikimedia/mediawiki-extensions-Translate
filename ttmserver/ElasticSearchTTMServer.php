@@ -8,6 +8,8 @@
  * @ingroup TTMServer
  */
 
+use MediaWiki\Logger\LoggerFactory;
+
 /**
  * TTMServer backed based on ElasticSearch. Depends on Elastica.
  * @since 2014.04
@@ -36,6 +38,18 @@ class ElasticSearchTTMServer
 	 * long especially if some nodes are restarted.
 	 */
 	const WAIT_UNTIL_READY_TIMEOUT = 3600;
+
+	/**
+	 * Flag in the frozen index that indicates that all indices
+	 * are frozen (useful only when this service shares the cluster with
+	 * CirrusSearch)
+	 */
+	const ALL_INDEXES_FROZEN_NAME = 'freeze_everything';
+
+	/**
+	 * Type used in the frozen index
+	 */
+	const FROZEN_TYPE = 'frozen';
 
 	/**
 	 * @var \Elastica\Client
@@ -465,13 +479,21 @@ GROOVY;
 		return isset ( $this->config['use_wikimedia_extra'] ) && $this->config['use_wikimedia_extra'];
 	}
 
-	public function getType() {
+	/**
+	 * @return string
+	 */
+	private function getIndexName() {
 		if ( isset( $this->config['index'] ) ) {
-			$index = $this->config['index'];
+			return $this->config['index'];
 		} else {
-			$index = 'ttmserver';
+			return 'ttmserver';
 		}
-		return $this->getClient()->getIndex( $index )->getType( 'message' );
+	}
+
+	public function getType() {
+		return $this->getClient()
+			->getIndex( $this->getIndexName() )
+			->getType( 'message' );
 	}
 
 	protected function getShardCount() {
@@ -750,5 +772,36 @@ GROOVY;
 					}
 				);
 			}, 0, $retryAttempts );
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function isFrozen() {
+		if ( !isset( $this->config['frozen_index'] ) ) {
+			return false;
+		}
+		$frozenIndex = $this->config['frozen_index'];
+		$indices = [ static::ALL_INDEXES_FROZEN_NAME, $this->getIndexName() ];
+		$ids = new \Elastica\Query\Ids( null, $indices );
+
+		try {
+			$resp = $this->getClient()
+				->getIndex( $frozenIndex )
+				->getType( static::FROZEN_TYPE )
+				->search( \Elastica\Query::create( $ids ) );
+
+			if ( $resp->count() === 0 ) {
+				return false;
+			} else {
+				return true;
+			}
+		} catch ( Exception $e ) {
+			LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->warning(
+				'Problem encountered while checking the frozen index.',
+				[ 'exception' => $e ]
+			);
+			return false;
+		}
 	}
 }
