@@ -301,14 +301,19 @@ $al['UpdatedDefinitionAid'] = "$dir/translationaids/UpdatedDefinitionAid.php";
  * @{
  */
 $al['ApertiumWebService'] = "$dir/webservices/ApertiumWebService.php";
+$al['CaighdeanWebService'] = "$dir/webservices/CaighdeanWebService.php";
 $al['CxserverWebService'] = "$dir/webservices/CxserverWebService.php";
 $al['MicrosoftWebService'] = "$dir/webservices/MicrosoftWebService.php";
 $al['RemoteTTMServerWebService'] = "$dir/webservices/RemoteTTMServerWebService.php";
 $al['TranslationQuery'] = "$dir/webservices/TranslationQuery.php";
 $al['TranslationQueryResponse'] = "$dir/webservices/TranslationQueryResponse.php";
 $al['TranslationWebService'] = "$dir/webservices/TranslationWebService.php";
+$al['TranslationWebServiceConfigurationException'] =
+	"$dir/webservices/TranslationWebServiceConfigurationException.php";
 $al['TranslationWebServiceException'] =
 	"$dir/webservices/TranslationWebServiceException.php";
+$al['TranslationWebServiceInvalidInputException'] =
+	"$dir/webservices/TranslationWebServiceInvalidInputException.php";
 $al['QueryAggregator'] = "$dir/webservices/QueryAggregator.php";
 $al['QueryAggregatorAware'] = "$dir/webservices/QueryAggregatorAware.php";
 $al['YandexWebService'] = "$dir/webservices/YandexWebService.php";

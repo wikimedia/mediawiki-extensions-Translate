@@ -47,7 +47,7 @@ class ApertiumWebService extends TranslationWebService {
 
 	protected function getQuery( $text, $from, $to ) {
 		if ( !isset( $this->config['key'] ) ) {
-			throw new TranslationWebServiceException( 'API key is not set' );
+			throw new TranslationWebServiceConfigurationException( 'API key is not set' );
 		}
 
 		$text = trim( $text );
@@ -56,7 +56,7 @@ class ApertiumWebService extends TranslationWebService {
 		$params = array(
 			'q' => $text,
 			'langpair' => "$from|$to",
-			'x-application' => 'Translate ' . TRANSLATE_VERSION . ')',
+			'x-application' => 'MediaWiki Translate extension ' . TRANSLATE_VERSION,
 		);
 
 		return TranslationQuery::factory( $this->config['url'] )

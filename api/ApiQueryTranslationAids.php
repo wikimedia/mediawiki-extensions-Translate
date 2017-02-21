@@ -76,7 +76,13 @@ class ApiTranslationAids extends ApiBase {
 
 			if ( $obj instanceof QueryAggregatorAware ) {
 				$obj->setQueryAggregator( $aggregator );
-				$obj->populateQueries();
+				try {
+					$obj->populateQueries();
+				} catch ( TranslationHelperException $e ) {
+					$data[$type] = [ 'error' => $e->getMessage() ];
+					// Prevent processing this aids and thus overwriting our error
+					continue;
+				}
 			}
 
 			$aids[$type] = $obj;
@@ -108,6 +114,7 @@ class ApiTranslationAids extends ApiBase {
 
 		$result->addValue( null, 'helpers', $data );
 		$result->addValue( null, 'times', $times );
+
 	}
 
 	public function getAllowedParams() {
