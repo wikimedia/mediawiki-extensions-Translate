@@ -81,4 +81,21 @@ class TTMServerTest extends MediaWikiTestCase {
 			'FakeTTMServer returns null on update'
 		);
 	}
+
+	public function testMirrorsConfig() {
+		global $wgTranslateTranslationServices;
+		$wgTranslateTranslationServices['primary'] = array(
+			'class' => 'ElasticSearchTTMServer',
+			'mirrors' => ['secondary']
+		);
+		$wgTranslateTranslationServices['secondary'] = array(
+			'class' => 'ElasticSearchTTMServer',
+			'mirrors' => ['primary', 'unknown']
+		);
+		$primary = TTMServer::factory( $wgTranslateTranslationServices['primary'] );
+		$this->assertEquals( ['secondary'], $primary->getMirrors() );
+		$secondary = TTMServer::factory( $wgTranslateTranslationServices['secondary'] );
+		$this->setExpectedException( TTMServerException::class );
+		$secondary->getMirrors();
+	}
 }
