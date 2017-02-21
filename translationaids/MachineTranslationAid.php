@@ -26,20 +26,24 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 				continue;
 			}
 
-			if ( $service->isSupportedLanguagePair( $from, $to ) ) {
-				$this->storeQuery( $service, $from, $to, $definition );
-				continue;
-			}
-
-			// Loop of the the translations we have to see which can be used as source
-			// @todo: Support setting priority of languages like Yandex used to have
-			foreach ( $translations as $from => $text ) {
-				if ( !$service->isSupportedLanguagePair( $from, $to ) ) {
+			try {
+				if ( $service->isSupportedLanguagePair( $from, $to ) ) {
+					$this->storeQuery( $service, $from, $to, $definition );
 					continue;
 				}
 
-				$this->storeQuery( $service, $from, $to, $text );
-				break;
+				// Loop of the the translations we have to see which can be used as source
+				// @todo: Support setting priority of languages like Yandex used to have
+				foreach ( $translations as $from => $text ) {
+					if ( !$service->isSupportedLanguagePair( $from, $to ) ) {
+						continue;
+					}
+
+					$this->storeQuery( $service, $from, $to, $text );
+					break;
+				}
+			} catch ( TranslationWebServiceConfigurationException $e ) {
+				throw new TranslationHelperException( $service->getName() . ': ' . $e->getMessage() );
 			}
 		}
 	}
@@ -51,17 +55,26 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 			$suggestions[] = $this->formatSuggestion( $queryData );
 		}
 
-		return $suggestions;
+		return array_filter( $suggestions );
 	}
 
+	/**
+	 * @param array $queryData
+	 * @return array|null
+	 */
 	protected function formatSuggestion( array $queryData ) {
 		$service = $queryData['service'];
 		$response = $queryData['response'];
 		$sourceLanguage = $queryData['language'];
 		$sourceText = $queryData['text'];
 
+		$result = $service->getResultData( $response );
+		if ( $result === null ) {
+			return null;
+		}
+
 		return [
-			'target' => $service->getResultData( $response ),
+			'target' => $result,
 			'service' => $service->getName(),
 			'source_language' => $sourceLanguage,
 			'source' => $sourceText,

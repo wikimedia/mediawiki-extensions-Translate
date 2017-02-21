@@ -67,7 +67,7 @@ class MicrosoftWebService extends TranslationWebService {
 
 	protected function doPairs() {
 		if ( !isset( $this->config['clientId'] ) || !isset( $this->config['clientSecret'] ) ) {
-			throw new TranslationWebServiceException( 'clientId or clientSecret is not set' );
+			throw new TranslationWebServiceConfigurationException( 'clientId or clientSecret is not set' );
 		}
 
 		$clientID = $this->config['clientId'];
@@ -113,7 +113,7 @@ class MicrosoftWebService extends TranslationWebService {
 
 	protected function getQuery( $text, $from, $to ) {
 		if ( !isset( $this->config['clientId'] ) || !isset( $this->config['clientSecret'] ) ) {
-			throw new TranslationWebServiceException(
+			throw new TranslationWebServiceConfigurationException(
 				'clientId or clientSecret is not set'
 			);
 		}
