@@ -9,7 +9,7 @@
 
 	QUnit.module( 'ext.translate.parsers', QUnit.newMwEnvironment() );
 
-	QUnit.test( '-- External links', 3, function ( assert ) {
+	QUnit.test( '-- External links', function ( assert ) {
 		mw.config.set( 'wgArticlePath', '/wiki/$1' );
 
 		assert.strictEqual(
