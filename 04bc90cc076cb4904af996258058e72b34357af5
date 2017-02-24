@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce3c5b53_82aa336c",
+        "filename": "tests/qunit/ext.translate.special.pagemigration.test.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2017-02-24T22:32:05Z",
+      "side": 0,
+      "message": "This test used to be async compatible, but is now assuming that the test happens synchronously. I would expect it to fail right now considering that it used to be async.. But I guess getSourceUnits is either mocked, pre-cached, or actually resolves synchronously.\n\nEither way, since it uses a promise, before jQuery 3.0 it will have to be async again.\n\nEither bring back the old code, or bring it back in migrated QUnit 2.x form. See http://qunitjs.com/upgrade-guide-2.x/#replace-asynctest-with-qunit-test-and-assert-async\n\nBasically:\n\n QUnit.test( .., function ( assert ) {\n   var done \u003d assert.async();\n   mw.translate.getSourceUnits().done( function ( .. ) {\n     ..\n     done();\n   } );\n } );",
+      "range": {
+        "startLine": 16,
+        "startChar": 6,
+        "endLine": 26,
+        "endChar": 6
+      },
+      "revId": "04bc90cc076cb4904af996258058e72b34357af5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
