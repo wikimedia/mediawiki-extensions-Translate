@@ -29,7 +29,8 @@
 			"Hudafu",
 			"Fengchao",
 			"Duolaimi",
-			"LNDDYL"
+			"LNDDYL",
+			"Wmr"
 		]
 	},
 	"translate": "翻译",
@@ -75,7 +76,7 @@
 	"translate-edit-definition": "信息定义",
 	"translate-edit-translation": "翻译",
 	"translate-edit-contribute": "贡献",
-	"translate-edit-no-information": "<em>这条消息没有文档。\n如果您知道这条消息用于何处或如何使用，您可以通过添加文档至这条消息以帮助其他译者。</em>",
+	"translate-edit-no-information": "<em>这条消息没有文档。如果您知道这条消息用于何处或如何使用，您可以通过添加文档至这条消息以帮助其他译者。</em>",
 	"translate-edit-information": "关于信息的资料（$1）",
 	"translate-edit-in-other-languages": "其他语言的信息",
 	"translate-edit-warnings": "关于不完整翻译的警告",
