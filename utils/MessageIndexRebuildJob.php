@@ -27,10 +27,9 @@ class MessageIndexRebuildJob extends Job {
 	/**
 	 * @param Title $title
 	 * @param array $params
-	 * @param int $id
 	 */
-	public function __construct( $title, $params = array(), $id = 0 ) {
-		parent::__construct( __CLASS__, $title, $params, $id );
+	public function __construct( $title, $params = array() ) {
+		parent::__construct( __CLASS__, $title, $params );
 	}
 
 	public function run() {
