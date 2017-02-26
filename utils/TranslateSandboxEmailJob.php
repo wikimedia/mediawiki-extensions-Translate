@@ -12,10 +12,9 @@ class TranslateSandboxEmailJob extends Job {
 	/**
 	 * @param Title $title
 	 * @param array $params
-	 * @param int $id
 	 */
-	public function __construct( $title, $params, $id = 0 ) {
-		parent::__construct( __CLASS__, $title, $params, $id );
+	public function __construct( $title, $params ) {
+		parent::__construct( __CLASS__, $title, $params );
 	}
 
 	public function run() {

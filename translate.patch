@@ -1,0 +1,131 @@
+diff --git a/tag/TranslateDeleteJob.php b/tag/TranslateDeleteJob.php
+index a5e6827c..81943ae7 100644
+--- a/tag/TranslateDeleteJob.php
++++ b/tag/TranslateDeleteJob.php
+@@ -38,10 +38,9 @@ class TranslateDeleteJob extends Job {
+ 	/**
+ 	 * @param Title $title
+ 	 * @param array $params
+-	 * @param int $id
+ 	 */
+-	public function __construct( $title, $params = array(), $id = 0 ) {
+-		parent::__construct( __CLASS__, $title, $params, $id );
++	public function __construct( $title, $params = array() ) {
++		parent::__construct( __CLASS__, $title, $params );
+ 	}
+ 
+ 	public function run() {
+diff --git a/tag/TranslateMoveJob.php b/tag/TranslateMoveJob.php
+index 0e429cb2..792cff8c 100644
+--- a/tag/TranslateMoveJob.php
++++ b/tag/TranslateMoveJob.php
+@@ -41,10 +41,9 @@ class TranslateMoveJob extends Job {
+ 	/**
+ 	 * @param Title $title
+ 	 * @param array $params
+-	 * @param int $id
+ 	 */
+-	public function __construct( $title, $params = array(), $id = 0 ) {
+-		parent::__construct( __CLASS__, $title, $params, $id );
++	public function __construct( $title, $params = array() ) {
++		parent::__construct( __CLASS__, $title, $params );
+ 	}
+ 
+ 	public function run() {
+diff --git a/tag/TranslateRenderJob.php b/tag/TranslateRenderJob.php
+index ecd11d0e..4fcdef6c 100644
+--- a/tag/TranslateRenderJob.php
++++ b/tag/TranslateRenderJob.php
+@@ -30,10 +30,9 @@ class TranslateRenderJob extends Job {
+ 	/**
+ 	 * @param Title $title
+ 	 * @param array $params
+-	 * @param int $id
+ 	 */
+-	public function __construct( $title, $params = array(), $id = 0 ) {
+-		parent::__construct( __CLASS__, $title, $params, $id );
++	public function __construct( $title, $params = array() ) {
++		parent::__construct( __CLASS__, $title, $params );
+ 		$this->params = $params;
+ 		$this->removeDuplicates = true;
+ 	}
+diff --git a/tag/TranslationsUpdateJob.php b/tag/TranslationsUpdateJob.php
+index 1ba961a2..a730c5cf 100644
+--- a/tag/TranslationsUpdateJob.php
++++ b/tag/TranslationsUpdateJob.php
+@@ -14,10 +14,9 @@ class TranslationsUpdateJob extends Job {
+ 	/**
+ 	 * @param Title $title
+ 	 * @param array $params
+-	 * @param int $id
+ 	 */
+-	public function __construct( Title $title, array $params, $id = 0 ) {
+-		parent::__construct( __CLASS__, $title, $params, $id );
++	public function __construct( Title $title, array $params ) {
++		parent::__construct( __CLASS__, $title, $params );
+ 
+ 		$this->page = TranslatablePage::newFromTitle( $title );
+ 		$this->sections = $params['sections'];
+diff --git a/utils/MessageGroupStatesUpdaterJob.php b/utils/MessageGroupStatesUpdaterJob.php
+index a788bb54..db3943c3 100644
+--- a/utils/MessageGroupStatesUpdaterJob.php
++++ b/utils/MessageGroupStatesUpdaterJob.php
+@@ -17,7 +17,6 @@ class MessageGroupStatesUpdaterJob extends Job {
+ 	/**
+ 	 * @param Title $title
+ 	 * @param array $params
+-	 * @param int $id
+ 	 */
+ 	public function __construct( $title, $params = array() ) {
+ 		parent::__construct( __CLASS__, $title, $params );
+diff --git a/utils/MessageIndexRebuildJob.php b/utils/MessageIndexRebuildJob.php
+index c1ecb0b7..c4d0f2cd 100644
+--- a/utils/MessageIndexRebuildJob.php
++++ b/utils/MessageIndexRebuildJob.php
+@@ -27,10 +27,9 @@ class MessageIndexRebuildJob extends Job {
+ 	/**
+ 	 * @param Title $title
+ 	 * @param array $params
+-	 * @param int $id
+ 	 */
+-	public function __construct( $title, $params = array(), $id = 0 ) {
+-		parent::__construct( __CLASS__, $title, $params, $id );
++	public function __construct( $title, $params = array() ) {
++		parent::__construct( __CLASS__, $title, $params );
+ 	}
+ 
+ 	public function run() {
+diff --git a/utils/MessageUpdateJob.php b/utils/MessageUpdateJob.php
+index 4d7cb550..d2b2c7d7 100644
+--- a/utils/MessageUpdateJob.php
++++ b/utils/MessageUpdateJob.php
+@@ -27,10 +27,9 @@ class MessageUpdateJob extends Job {
+ 	/**
+ 	 * @param Title $title
+ 	 * @param array $params
+-	 * @param int $id
+ 	 */
+-	public function __construct( $title, $params = array(), $id = 0 ) {
+-		parent::__construct( __CLASS__, $title, $params, $id );
++	public function __construct( $title, $params = array() ) {
++		parent::__construct( __CLASS__, $title, $params );
+ 		$this->params = $params;
+ 	}
+ 
+diff --git a/utils/TranslateSandboxEmailJob.php b/utils/TranslateSandboxEmailJob.php
+index d7a8af9f..18c0b6f9 100644
+--- a/utils/TranslateSandboxEmailJob.php
++++ b/utils/TranslateSandboxEmailJob.php
+@@ -12,10 +12,9 @@ class TranslateSandboxEmailJob extends Job {
+ 	/**
+ 	 * @param Title $title
+ 	 * @param array $params
+-	 * @param int $id
+ 	 */
+-	public function __construct( $title, $params, $id = 0 ) {
+-		parent::__construct( __CLASS__, $title, $params, $id );
++	public function __construct( $title, $params ) {
++		parent::__construct( __CLASS__, $title, $params );
+ 	}
+ 
+ 	public function run() {
