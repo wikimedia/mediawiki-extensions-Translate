@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce3c5b53_93c91c58",
+        "filename": "Resources.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-27T17:15:46Z",
+      "side": 1,
+      "message": "This line shouldn\u0027t be added.",
+      "revId": "e7e3c5f38526c0da3a7ac112d1f7615a2db0db45",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
