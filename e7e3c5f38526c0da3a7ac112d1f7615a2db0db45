@@ -16,6 +16,23 @@
       "revId": "e7e3c5f38526c0da3a7ac112d1f7615a2db0db45",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce3c5b53_8a48fa33",
+        "filename": "resources/js/ext.translate.special.managetranslatorsandbox.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-02-28T15:36:21Z",
+      "side": 1,
+      "message": "Ah, length is not a method, so it should not have ().",
+      "revId": "e7e3c5f38526c0da3a7ac112d1f7615a2db0db45",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
