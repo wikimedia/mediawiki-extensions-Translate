@@ -14,12 +14,14 @@
 	} ) );
 
 	QUnit.test( '-- Source units', function ( assert ) {
-		var data = '{ "query": { "messagecollection": [ { "key": "key_",' +
+		var done, data = '{ "query": { "messagecollection": [ { "key": "key_",' +
 			' "definition": "definition_", "title": "title_" }, { "key": "key_1",' +
 			' "definition": "definition_1", "title": "title_1" } ] } }';
 
+		done = assert.async();
 		mw.translate.getSourceUnits( 'Help:Special pages' ).done( function ( sourceUnits ) {
 			assert.strictEqual( 1, sourceUnits.length, 'Source units retrieved' );
+			done();
 		} );
 
 		this.server.respond( function ( request ) {
@@ -28,10 +30,12 @@
 	} );
 
 	QUnit.test( '-- Page does not exist', function ( assert ) {
-		var data = '{ "query": { "pages": { "-1": { "missing": "" } } } }';
+		var done, data = '{ "query": { "pages": { "-1": { "missing": "" } } } }';
 
+		done = assert.async();
 		mw.translate.getFuzzyTimestamp( 'ugagagagagaga/uga' ).fail( function ( timestamp ) {
 			assert.strictEqual( undefined, timestamp, 'Page does not exist' );
+			done();
 		} );
 
 		this.server.respond( function ( request ) {
@@ -40,11 +44,13 @@
 	} );
 
 	QUnit.test( '-- Fuzzy timestamp', function ( assert ) {
-		var data = '{ "query": { "pages": { "19563": {"revisions": ' +
+		var done, data = '{ "query": { "pages": { "19563": {"revisions": ' +
 			'[ {"timestamp": "2014-02-18T20:59:58Z" }, { "timestamp": "t2" } ] } } } }';
 
+		done = assert.async();
 		mw.translate.getFuzzyTimestamp( 'Help:Special pages/fr' ).done( function ( timestamp ) {
 			assert.strictEqual( '2014-02-18T20:59:57.000Z', timestamp, 'Fuzzy timestamp retrieved' );
+			done();
 		} );
 
 		this.server.respond( function ( request ) {
@@ -53,12 +59,14 @@
 	} );
 
 	QUnit.test( '-- Split translation page', function ( assert ) {
-		var data = '{ "query": { "pages": { "19563": { "revisions": ' +
+		var done, data = '{ "query": { "pages": { "19563": { "revisions": ' +
 			'[ { "*": "unit1\\n\\nunit2\\n\\nunit3" } ] } } } }';
 
+		done = assert.async();
 		mw.translate.splitTranslationPage( '2014-02-18T20:59:57.000Z', 'Help:Special pages/fr' )
 			.done( function ( translationUnits ) {
 				assert.strictEqual( 3, translationUnits.length, 'Translation page split into units' );
+				done();
 			} );
 
 		this.server.respond( function ( request ) {
