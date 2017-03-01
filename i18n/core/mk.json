@@ -354,7 +354,7 @@
 	"tux-messagetable-more-messages": "уште {{PLURAL:$1|една порака|$1 пораки}}",
 	"tux-messagetable-loading-messages": "{{PLURAL:$1|Ја вчитувам пораката|Ги вчитувам пораките}}...",
 	"tux-message-filter-placeholder": "Филтрирај список",
-	"tux-message-filter-result": "Пронајдов $1 {{PLURAL:$1|резултат|резултати}} за „$2“",
+	"tux-message-filter-result": "Пронајдов $1 {{PLURAL:$1|ставка|ставки}} за „$2“",
 	"tux-message-filter-advanced-button": "Напредно пребарување",
 	"tux-message-filter-optional-messages-label": "Незадолжителни пораки",
 	"tux-proofread-translated-by-self": "Преведено од Вас",

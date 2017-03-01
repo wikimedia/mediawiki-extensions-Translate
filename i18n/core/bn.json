@@ -191,6 +191,7 @@
 	"translate-documentation-language": "বার্তার নথি",
 	"translate-searchprofile": "অনুবাদসমূহ",
 	"translate-searchprofile-tooltip": "সকল অনুবাদে অনুসন্ধান",
+	"translate-searchprofile-note": "[$1 অনুবাদ অনুসন্ধানে] আরও অনুসন্ধান বিকল্প পাওয়া যাবে।",
 	"translate-search-languagefilter": "ভাষা অনুযায়ী ফিল্টার:",
 	"translate-messagereview-submit": "পর্যালোচিত হিসেবে চিহ্নিত করুন",
 	"translate-messagereview-progress": "পর্যালোচিত হিসেবে চিহ্নিত করা হচ্ছে...",
