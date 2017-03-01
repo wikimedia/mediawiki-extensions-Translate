@@ -109,7 +109,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				$total = $server->getTotalHits( $resultset );
 			}
 		} catch ( TTMServerException $e ) {
-			error_log( 'Translation search server unavailable:' . $e->getMessage() );
+			error_log( 'Translation search server unavailable: ' . $e->getMessage() );
 			throw new ErrorPageError( 'tux-sst-solr-offline-title', 'tux-sst-solr-offline-body' );
 		}
 
