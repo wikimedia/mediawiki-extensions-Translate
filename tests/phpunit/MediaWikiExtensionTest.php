@@ -15,7 +15,7 @@ class MediaWikiExtensionTest extends MediaWikiTestCase {
 		$defs = __DIR__ . '/data/mediawiki-extensions.txt';
 		$path = '%GROUPROOT%/mediawiki-extensions/extensions';
 		$foo = new PremadeMediawikiExtensionGroups( $defs, $path );
-		$list = $deps = $autoload = array();
+		$list = $deps = $autoload = [];
 		$foo->register( $list, $deps, $autoload );
 
 		$this->assertEquals( 1, count( $deps ), 'A dependency to definition file was added' );

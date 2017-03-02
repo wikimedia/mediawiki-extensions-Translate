@@ -58,21 +58,21 @@ class TranslateEditAddons {
 		$languages = $group->getTranslatableLanguages();
 		$langCode = $handle->getCode();
 		if ( $languages !== null && $langCode && !isset( $languages[$langCode] ) ) {
-			$result = array( 'translate-language-disabled' );
+			$result = [ 'translate-language-disabled' ];
 			return false;
 		}
 
 		$groupId = $group->getId();
-		$checks = array(
+		$checks = [
 			$groupId,
 			strtok( $groupId, '-' ),
 			'*'
-		);
+		];
 
 		foreach ( $checks as $check ) {
 			if ( isset( $wgTranslateBlacklist[$check][$langCode] ) ) {
 				$reason = $wgTranslateBlacklist[$check][$langCode];
-				$result = array( 'translate-page-disabled', $reason );
+				$result = [ 'translate-page-disabled', $reason ];
 				return false;
 			}
 		}
@@ -112,7 +112,7 @@ class TranslateEditAddons {
 			$langCode = $context->getLanguage()->getCode();
 			$name = TranslateUtils::getLanguageName( $handle->getCode(), $langCode );
 			$accessKey = $context->msg( 'accesskey-save' )->plain();
-			$temp = array(
+			$temp = [
 				'id' => 'wpSave',
 				'name' => 'wpSave',
 				'type' => 'submit',
@@ -120,7 +120,7 @@ class TranslateEditAddons {
 				'value' => $context->msg( 'translate-save', $name )->text(),
 				'accesskey' => $accessKey,
 				'title' => $context->msg( 'tooltip-save' )->text() . ' [' . $accessKey . ']',
-			);
+			];
 			$buttons['save'] = Xml::element( 'input', $temp, '' );
 		}
 
@@ -130,7 +130,7 @@ class TranslateEditAddons {
 			return true;
 		}
 
-		$temp = array(
+		$temp = [
 			'id' => 'wpSupport',
 			'name' => 'wpSupport',
 			'type' => 'button',
@@ -139,7 +139,7 @@ class TranslateEditAddons {
 			'title' => $context->msg( 'translate-js-support-title' )->text(),
 			'data-load-url' => $supportUrl,
 			'onclick' => "window.open( jQuery(this).attr('data-load-url') );",
-		);
+		];
 		$buttons['ask'] = Html::element( 'input', $temp, '' );
 
 		return true;
@@ -212,7 +212,7 @@ class TranslateEditAddons {
 		MessageGroupStatesUpdaterJob::onChange( $handle );
 
 		if ( $fuzzy === false ) {
-			Hooks::run( 'Translate:newTranslation', array( $handle, $rev, $text, $user ) );
+			Hooks::run( 'Translate:newTranslation', [ $handle, $rev, $text, $user ] );
 		}
 
 		TTMServer::onChange( $handle, $text, $fuzzy );
@@ -271,16 +271,16 @@ class TranslateEditAddons {
 	protected static function updateFuzzyTag( Title $title, $revision, $fuzzy ) {
 		$dbw = wfGetDB( DB_MASTER );
 
-		$conds = array(
+		$conds = [
 			'rt_page' => $title->getArticleID(),
 			'rt_type' => RevTag::getType( 'fuzzy' ),
 			'rt_revision' => $revision
-		);
+		];
 
 		// Replace the existing fuzzy tag, if any
 		if ( $fuzzy !== false ) {
 			$index = array_keys( $conds );
-			$dbw->replace( 'revtag', array( $index ), $conds, __METHOD__ );
+			$dbw->replace( 'revtag', [ $index ], $conds, __METHOD__ );
 		} else {
 			$dbw->delete( 'revtag', $conds, __METHOD__ );
 		}
@@ -319,14 +319,14 @@ class TranslateEditAddons {
 
 		$dbw = wfGetDB( DB_MASTER );
 
-		$conds = array(
+		$conds = [
 			'rt_page' => $title->getArticleID(),
 			'rt_type' => RevTag::getType( 'tp:transver' ),
 			'rt_revision' => $revision,
 			'rt_value' => $definitionRevision,
-		);
-		$index = array( 'rt_type', 'rt_page', 'rt_revision' );
-		$dbw->replace( 'revtag', array( $index ), $conds, __METHOD__ );
+		];
+		$index = [ 'rt_type', 'rt_page', 'rt_revision' ];
+		$dbw->replace( 'revtag', [ $index ], $conds, __METHOD__ );
 
 		return true;
 	}
@@ -373,15 +373,15 @@ class TranslateEditAddons {
 		}
 		TranslationHelpers::addModules( $out );
 
-		$boxes = array();
-		$boxes[] = $th->callBox( 'documentation', array( $th, 'getDocumentationBox' ) );
-		$boxes[] = $th->callBox( 'definition', array( $th, 'getDefinitionBox' ) );
-		$boxes[] = $th->callBox( 'translation', array( $th, 'getTranslationDisplayBox' ) );
+		$boxes = [];
+		$boxes[] = $th->callBox( 'documentation', [ $th, 'getDocumentationBox' ] );
+		$boxes[] = $th->callBox( 'definition', [ $th, 'getDefinitionBox' ] );
+		$boxes[] = $th->callBox( 'translation', [ $th, 'getTranslationDisplayBox' ] );
 
 		$output = implode( "\n", $boxes );
 		$output = Html::rawElement(
 			'div',
-			array( 'class' => 'mw-sp-translate-edit-fields' ),
+			[ 'class' => 'mw-sp-translate-edit-fields' ],
 			$output
 		);
 		$out->addHTML( $output );

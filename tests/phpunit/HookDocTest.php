@@ -9,10 +9,10 @@
  */
 
 class HookDocTest extends MediaWikiTestCase {
-	protected $documented = array();
-	protected $used = array();
-	protected $paths = array(
-		'php' => array(
+	protected $documented = [];
+	protected $used = [];
+	protected $paths = [
+		'php' => [
 			'',
 			'api',
 			'ffs',
@@ -23,11 +23,11 @@ class HookDocTest extends MediaWikiTestCase {
 			'ttmserver',
 			'utils',
 			'webservices',
-		),
-		'js' => array(
+		],
+		'js' => [
 			'resources/js',
-		),
-	);
+		],
+	];
 
 	protected function setUp() {
 		parent::setUp();
@@ -72,11 +72,11 @@ class HookDocTest extends MediaWikiTestCase {
 
 	protected static function getJSHooksFromFile( $file ) {
 		$content = file_get_contents( $file );
-		$m = array();
+		$m = [];
 		preg_match_all( '/(?:mw\.translateHooks\.run)\(\s*([\'"])(.*?)\1/', $content, $m );
-		$hooks = array();
+		$hooks = [];
 		foreach ( $m[2] as $hook ) {
-			$hooks[$hook] = array();
+			$hooks[$hook] = [];
 		}
 
 		return $hooks;
@@ -84,18 +84,18 @@ class HookDocTest extends MediaWikiTestCase {
 
 	protected static function getPHPHooksFromFile( $file ) {
 		$content = file_get_contents( $file );
-		$m = array();
+		$m = [];
 		preg_match_all( '/(?:wfRunHooks|Hooks\:\:run)\(\s*([\'"])(.*?)\1/', $content, $m );
-		$hooks = array();
+		$hooks = [];
 		foreach ( $m[2] as $hook ) {
-			$hooks[$hook] = array();
+			$hooks[$hook] = [];
 		}
 
 		return $hooks;
 	}
 
 	protected static function getHooksFromPath( $path, $callback ) {
-		$hooks = array();
+		$hooks = [];
 		$dh = opendir( $path );
 		if ( $dh ) {
 			$file = readdir( $dh );
@@ -115,12 +115,12 @@ class HookDocTest extends MediaWikiTestCase {
 		preg_match( '/^;([^ ]+):/', $block, $match );
 		$name = $match[1];
 		preg_match_all( '/^ ([^ ]+)\s+([ ^])/', $block, $matches, PREG_SET_ORDER );
-		$params = array();
+		$params = [];
 		foreach ( $matches as $match ) {
 			$params[$match[2]] = $match[1];
 		}
 
-		return array( $name, $params );
+		return [ $name, $params ];
 	}
 
 	public function testHookIsDocumentedPHP() {

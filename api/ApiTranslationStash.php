@@ -24,16 +24,16 @@ class ApiTranslationStash extends ApiBase {
 				$user = User::newFromName( $params['username'] );
 				if ( !$user ) {
 					if ( method_exists( $this, 'dieWithError' ) ) {
-						$this->dieWithError( array( 'apierror-badparameter', 'username' ), 'invalidparam' );
+						$this->dieWithError( [ 'apierror-badparameter', 'username' ], 'invalidparam' );
 					} else {
-						$this->dieUsageMsg( array( 'invalidparam', 'username' ) );
+						$this->dieUsageMsg( [ 'invalidparam', 'username' ] );
 					}
 				}
 			} else {
 				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( array( 'apierror-badparameter', 'username' ), 'invalidparam' );
+					$this->dieWithError( [ 'apierror-badparameter', 'username' ], 'invalidparam' );
 				} else {
-					$this->dieUsageMsg( array( 'invalidparam', 'username' ) );
+					$this->dieUsageMsg( [ 'invalidparam', 'username' ] );
 				}
 			}
 		}
@@ -44,16 +44,16 @@ class ApiTranslationStash extends ApiBase {
 		if ( $action === 'add' ) {
 			if ( !isset( $params['title'] ) ) {
 				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( array( 'apierror-missingparam', 'title' ) );
+					$this->dieWithError( [ 'apierror-missingparam', 'title' ] );
 				} else {
-					$this->dieUsageMsg( array( 'missingparam', 'title' ) );
+					$this->dieUsageMsg( [ 'missingparam', 'title' ] );
 				}
 			}
 			if ( !isset( $params['translation'] ) ) {
 				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( array( 'apierror-missingparam', 'translation' ) );
+					$this->dieWithError( [ 'apierror-missingparam', 'translation' ] );
 				} else {
-					$this->dieUsageMsg( array( 'missingparam', 'translation' ) );
+					$this->dieUsageMsg( [ 'missingparam', 'translation' ] );
 				}
 			}
 
@@ -68,7 +68,7 @@ class ApiTranslationStash extends ApiBase {
 		}
 
 		if ( $action === 'query' ) {
-			$output['translations'] = array();
+			$output['translations'] = [];
 
 			$translations = $stash->getTranslations( $user );
 			foreach ( $translations as $translation ) {
@@ -98,13 +98,13 @@ class ApiTranslationStash extends ApiBase {
 			$comparison = $group->getMessage( $key, $handle->getCode() );
 		}
 
-		return array(
+		return [
 			'title' => $title->getPrefixedText(),
 			'definition' => $definition,
 			'translation' => $translation->getValue(),
 			'comparison' => $comparison,
 			'metadata' => $translation->getMetadata(),
-		);
+		];
 	}
 
 	public function isWriteMode() {
@@ -116,36 +116,36 @@ class ApiTranslationStash extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'subaction' => array(
-				ApiBase::PARAM_TYPE => array( 'add', 'query' ),
+		return [
+			'subaction' => [
+				ApiBase::PARAM_TYPE => [ 'add', 'query' ],
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'title' => array(
+			],
+			'title' => [
 				ApiBase::PARAM_TYPE => 'string',
-			),
-			'translation' => array(
+			],
+			'translation' => [
 				ApiBase::PARAM_TYPE => 'string',
-			),
-			'metadata' => array(
+			],
+			'metadata' => [
 				ApiBase::PARAM_TYPE => 'string',
-			),
-			'token' => array(
+			],
+			'token' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'username' => array(
+			],
+			'username' => [
 				ApiBase::PARAM_TYPE => 'string',
-			),
-		);
+			],
+		];
 	}
 
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=translationstash&subaction=add&title=MediaWiki:Jan/fi&translation=tammikuu&metadata={}'
 				=> 'apihelp-translationstash-example-1',
 			'action=translationstash&subaction=query'
 				=> 'apihelp-translationstash-example-2',
-		);
+		];
 	}
 }

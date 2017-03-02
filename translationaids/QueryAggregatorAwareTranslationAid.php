@@ -17,7 +17,7 @@ abstract class QueryAggregatorAwareTranslationAid
 	extends TranslationAid
 	implements QueryAggregatorAware
 {
-	private $queries = array();
+	private $queries = [];
 	private $aggregator;
 
 	// Interface: QueryAggregatorAware
@@ -35,12 +35,12 @@ abstract class QueryAggregatorAwareTranslationAid
 	protected function storeQuery( TranslationWebService $service, $from, $to, $text ) {
 		$queries = $service->getQueries( $text, $from, $to );
 		foreach ( $queries as $query ) {
-			$this->queries[] = array(
+			$this->queries[] = [
 				'id' => $this->aggregator->addQuery( $query ),
 				'language' => $from,
 				'text' => $text,
 				'service' => $service,
-			);
+			];
 		}
 	}
 
@@ -68,7 +68,7 @@ abstract class QueryAggregatorAwareTranslationAid
 	protected function getWebServices( $type ) {
 		global $wgTranslateTranslationServices;
 
-		$services = array();
+		$services = [];
 		foreach ( $wgTranslateTranslationServices as $name => $config ) {
 			$service = TranslationWebService::factory( $name, $config );
 			if ( !$service || $service->getType() !== $type ) {

@@ -15,11 +15,11 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	/// Prefix for mangled message keys
 	protected $sPrefix = '';
 	/// Exact message keys
-	protected $aExact = array();
+	protected $aExact = [];
 	/// Patterns of type foo*
-	protected $aPrefix = array();
+	protected $aPrefix = [];
 	/// Patterns that contain wildcard anywhere else than in the end
-	protected $aRegex = array();
+	protected $aRegex = [];
 
 	/**
 	 * Alias for making NO-OP string mangler.
@@ -36,7 +36,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	 * @param string $prefix
 	 * @param array $patterns
 	 */
-	public function __construct( $prefix = '', array $patterns = array() ) {
+	public function __construct( $prefix = '', array $patterns = [] ) {
 		$this->sPrefix = $prefix;
 		$this->init( $patterns );
 	}
@@ -45,11 +45,11 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 		static $valid = null;
 		if ( $valid === null ) {
 			global $wgLegalTitleChars;
-			$valid = strtr( $wgLegalTitleChars, array(
+			$valid = strtr( $wgLegalTitleChars, [
 				'=' => '', // equals sign, which is itself usef for escaping
 				'&' => '', // ampersand, for entities
 				'%' => '', // percent sign, which is used in URL encoding
-			) );
+			] );
 		}
 
 		return $valid;
@@ -196,7 +196,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	 * @return string[]|array (Un)mangled strings.
 	 */
 	protected function mangleArray( array $array, $reverse = false ) {
-		$temp = array();
+		$temp = [];
 
 		if ( !$this->isAssoc( $array ) ) {
 			foreach ( $array as $key => &$value ) {
@@ -224,28 +224,28 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	}
 
 	public static function getExtraSchema() {
-		$schema = array(
-			'root' => array(
+		$schema = [
+			'root' => [
 				'_type' => 'array',
-				'_children' => array(
-					'MANGLER' => array(
+				'_children' => [
+					'MANGLER' => [
 						'_type' => 'array',
-						'_children' => array(
-							'prefix' => array(
+						'_children' => [
+							'prefix' => [
 								'_type' => 'text',
 								'_not_empty' => true
-							),
-							'patterns' => array(
+							],
+							'patterns' => [
 								'_type' => 'array',
 								'_required' => true,
 								'_ignore_extra_keys' => true,
-								'_children' => array(),
-							),
-						)
-					)
-				)
-			)
-		);
+								'_children' => [],
+							],
+						]
+					]
+				]
+			]
+		];
 
 		return $schema;
 	}

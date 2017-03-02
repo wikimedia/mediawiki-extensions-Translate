@@ -26,17 +26,17 @@ class YamlTests extends Maintenance {
 
 	public function execute() {
 		global $wgTranslateGroupFiles, $wgTranslateYamlLibrary;
-		$documents = array();
-		$times = array();
-		$mems = array();
-		$mempeaks = array();
+		$documents = [];
+		$times = [];
+		$mems = [];
+		$mempeaks = [];
 
-		foreach ( array( 'syck', 'spyc', 'phpyaml' ) as $driver ) {
+		foreach ( [ 'syck', 'spyc', 'phpyaml' ] as $driver ) {
 			$mempeaks[$driver] = -memory_get_peak_usage( true );
 			$mems[$driver] = -memory_get_usage( true );
 			$times[$driver] = -microtime( true );
 			$wgTranslateYamlLibrary = $driver;
-			$documents[$driver] = array();
+			$documents[$driver] = [];
 			foreach ( $wgTranslateGroupFiles as $file ) {
 				foreach ( self::parseGroupFile( $file ) as $id => $docu ) {
 					$documents[$driver]["$file-$id"] = $docu;
@@ -59,7 +59,7 @@ class YamlTests extends Maintenance {
 	public static function parseGroupFile( $filename ) {
 		$data = file_get_contents( $filename );
 		$documents = preg_split( "/^---$/m", $data, -1, PREG_SPLIT_NO_EMPTY );
-		$groups = array();
+		$groups = [];
 		$template = false;
 		foreach ( $documents as $document ) {
 			$document = TranslateYaml::loadString( $document );

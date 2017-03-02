@@ -26,40 +26,40 @@ class TS extends Maintenance {
 	public function execute() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$users = $dbr->select(
-			array( 'user', 'user_groups' ),
-			array(
+			[ 'user', 'user_groups' ],
+			[
 				'user_name',
 				'user_registration',
 				'user_editcount',
 				'ug_group',
-			),
-			array(
+			],
+			[
 				'user_registration is not null'
-			),
+			],
 			__METHOD__,
-			array(
+			[
 				'ORDER BY' => 'user_id ASC',
-			),
-			array(
-				'user_groups' => array(
+			],
+			[
+				'user_groups' => [
 					'LEFT JOIN',
-					array( 'user_id=ug_user', 'ug_group' => 'translator' )
-				)
-			)
+					[ 'user_id=ug_user', 'ug_group' => 'translator' ]
+				]
+			]
 		);
 
 		echo "username\tregistration ts\tedit count\tis translator?\tpromoted ts\tmethod\n";
 
 		$rejected = $dbr->select(
-			array( 'logging' ),
-			array(
+			[ 'logging' ],
+			[
 				'log_title',
 				'log_timestamp',
-			),
-			array(
+			],
+			[
 				'log_type' => 'translatorsandbox',
 				'log_action' => 'rejected',
-			),
+			],
 			__METHOD__
 		);
 
@@ -70,20 +70,20 @@ class TS extends Maintenance {
 		foreach ( $users as $u ) {
 			$logs = $dbr->select(
 				'logging',
-				array(
+				[
 					'log_type',
 					'log_action',
 					'log_timestamp',
 					'log_params',
-				),
-				array(
+				],
+				[
 					'log_title' => $u->user_name,
-					'log_type' => array( 'rights', 'translatorsandbox' ),
-				),
+					'log_type' => [ 'rights', 'translatorsandbox' ],
+				],
 				__METHOD__,
-				array(
+				[
 					'ORDER BY' => 'log_id ASC',
-				)
+				]
 			);
 
 			$promoted = null;

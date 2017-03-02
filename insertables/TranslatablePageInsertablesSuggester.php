@@ -16,7 +16,7 @@ class TranslatablePageInsertablesSuggester extends MediaWikiInsertablesSuggester
 		// Translatable pages allow naming the variables. Basically anything is
 		// allowed in a variable name, but here we are stricter to avoid too many
 		// false positives.
-		$matches = array();
+		$matches = [];
 		preg_match_all( '/\$([a-zA-Z0-9-_]+)/', $text, $matches, PREG_SET_ORDER );
 
 		$new = array_map( function ( $match ) {

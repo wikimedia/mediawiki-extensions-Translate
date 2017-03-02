@@ -21,7 +21,7 @@ class TranslateLogFormatter extends LogFormatter {
 		if ( $type === 'translationreview/message' ) {
 			$targetPage = $this->makePageLink(
 				$this->entry->getTarget(),
-				array( 'oldid' => $params[3] )
+				[ 'oldid' => $params[3] ]
 			);
 
 			$params[2] = Message::rawParam( $targetPage );
@@ -39,7 +39,7 @@ class TranslateLogFormatter extends LogFormatter {
 			$targetPage = $this->makePageLinkWithText(
 				$this->entry->getTarget(),
 				$params[4],
-				array( 'language' => $language )
+				[ 'language' => $language ]
 			);
 
 			$params[2] = Message::rawParam( $targetPage );
@@ -64,10 +64,10 @@ class TranslateLogFormatter extends LogFormatter {
 	}
 
 	protected function makePageLinkWithText(
-		Title $title = null, $text, array $parameters = array()
+		Title $title = null, $text, array $parameters = []
 	) {
 		if ( !$this->plaintext ) {
-			$link = Linker::link( $title, htmlspecialchars( $text ), array(), $parameters );
+			$link = Linker::link( $title, htmlspecialchars( $text ), [], $parameters );
 		} else {
 			$target = '***';
 			if ( $title instanceof Title ) {

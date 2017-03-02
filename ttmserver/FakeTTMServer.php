@@ -18,7 +18,7 @@
  */
 class FakeTTMServer implements ReadableTTMServer, WritableTTMServer {
 	public function query( $sourceLanguage, $targetLanguage, $text ) {
-		return array();
+		return [];
 	}
 
 	public function isLocalSuggestion( array $suggestion ) {

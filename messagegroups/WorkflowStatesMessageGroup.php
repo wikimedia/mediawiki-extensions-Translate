@@ -37,7 +37,7 @@ class WorkflowStatesMessageGroup extends WikiMessageGroup {
 
 	public function getDefinitions() {
 		$groups = MessageGroups::getAllGroups();
-		$keys = array();
+		$keys = [];
 
 		/**
 		 * @var $g MessageGroup

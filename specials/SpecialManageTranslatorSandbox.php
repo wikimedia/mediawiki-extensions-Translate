@@ -38,7 +38,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 		$this->setHeaders();
 		$this->checkPermissions();
 		$out = $this->getOutput();
-		$out->addModuleStyles( array( 'mediawiki.ui.button', 'jquery.uls.grid' ) );
+		$out->addModuleStyles( [ 'mediawiki.ui.button', 'jquery.uls.grid' ] );
 		$out->addModuleStyles( 'ext.translate.special.managetranslatorsandbox.styles' );
 		$out->addModules( 'ext.translate.special.managetranslatorsandbox' );
 		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
@@ -87,8 +87,8 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 			// to ensure the number of users is what the tests expect
 			$this->emptySandbox();
 
-			$textUsernamePrefixes = array( 'Pupu', 'Orava' );
-			$testLanguages = array( 'fi', 'uk', 'nl', 'he', 'bn' );
+			$textUsernamePrefixes = [ 'Pupu', 'Orava' ];
+			$testLanguages = [ 'fi', 'uk', 'nl', 'he', 'bn' ];
 			$testLanguagesCount = count( $testLanguages );
 
 			foreach ( $textUsernamePrefixes as $prefix ) {
@@ -103,13 +103,13 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 					$user = TranslateSandbox::addUser( $name, "$name@blackhole.io", 'porkkana' );
 					$user->setOption(
 						'translate-sandbox',
-						FormatJson::encode( array(
-							'languages' => array( $testLanguages[$i] ),
+						FormatJson::encode( [
+							'languages' => [ $testLanguages[$i] ],
 							'comment' => '',
-						) )
+						] )
 					);
 
-					$reminders = array();
+					$reminders = [];
 					for ( $reminderIndex = 0; $reminderIndex < $i; $reminderIndex++ ) {
 						$reminders[] = wfTimestamp() - $reminderIndex * $i * 10000;
 					}
@@ -140,10 +140,10 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 			$polyglotUser = TranslateSandbox::addUser( 'Kissa', 'kissa@blackhole.io', 'porkkana' );
 			$polyglotUser->setOption(
 				'translate-sandbox',
-				FormatJson::encode( array(
+				FormatJson::encode( [
 					'languages' => $testLanguages,
 					'comment' => "I know some languages, and I'm a developer.",
-				) )
+				] )
 			);
 			$polyglotUser->saveSettings();
 			for ( $polyglotLang = 0; $polyglotLang < $testLanguagesCount; $polyglotLang++ ) {
@@ -214,14 +214,14 @@ HTML;
 	}
 
 	protected function makeList() {
-		$items = array();
-		$requests = array();
+		$items = [];
+		$requests = [];
 		$users = TranslateSandbox::getUsers();
 
 		/** @var User $user */
 		foreach ( $users as $user ) {
 			$reminders = $user->getOption( 'translate-sandbox-reminders' );
-			$reminders = $reminders ? explode( '|', $reminders ) : array();
+			$reminders = $reminders ? explode( '|', $reminders ) : [];
 			$remindersCount = count( $reminders );
 			if ( $remindersCount ) {
 				$lastReminderTimestamp = new MWTimestamp( end( $reminders ) );
@@ -232,7 +232,7 @@ HTML;
 				$lastReminderAgo = '';
 			}
 
-			$requests[] = array(
+			$requests[] = [
 				'username' => $user->getName(),
 				'email' => $user->getEmail(),
 				'gender' => $user->getOption( 'gender' ),
@@ -242,11 +242,11 @@ HTML;
 				'userid' => $user->getId(),
 				'reminderscount' => $remindersCount,
 				'lastreminder' => $lastReminderAgo,
-			);
+			];
 		}
 
 		// Sort the requests based on translations and registration date
-		usort( $requests, array( __CLASS__, 'translatorRequestSort' ) );
+		usort( $requests, [ __CLASS__, 'translatorRequestSort' ] );
 
 		foreach ( $requests as $request ) {
 			$items[] = $this->makeRequestItem( $request );

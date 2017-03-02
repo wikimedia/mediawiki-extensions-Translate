@@ -56,7 +56,7 @@ class LanguageEditStats extends Maintenance {
 
 		$bots = $this->hasOption( 'bots' );
 
-		$namespaces = array();
+		$namespaces = [];
 		if ( $this->hasOption( 'ns' ) ) {
 			$input = explode( ',', $this->getOption( 'ns' ) );
 
@@ -75,7 +75,7 @@ class LanguageEditStats extends Maintenance {
 		/**
 		 * Get counts for edits per language code after filtering out edits by FuzzyBot
 		 */
-		$codes = array();
+		$codes = [];
 		global $wgTranslateFuzzyBotName;
 		foreach ( $rows as $_ ) {
 			// Filter out edits by $wgTranslateFuzzyBotName

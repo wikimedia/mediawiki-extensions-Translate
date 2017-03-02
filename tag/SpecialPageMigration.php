@@ -34,34 +34,34 @@ class SpecialPageMigration extends SpecialPage {
 		# Do stuff
 		# ...
 		$out = '';
-		$out .= Html::openElement( 'div', array( 'class' => 'grid' ) );
-		$out .= Html::openElement( 'div', array( 'class' => 'mw-tpm-sp-error row',
-			'id' => 'mw-tpm-sp-error-div' ) );
+		$out .= Html::openElement( 'div', [ 'class' => 'grid' ] );
+		$out .= Html::openElement( 'div', [ 'class' => 'mw-tpm-sp-error row',
+			'id' => 'mw-tpm-sp-error-div' ] );
 		$out .= Html::element( 'div',
-			array( 'class' => 'mw-tpm-sp-error__message five columns hide' ) );
+			[ 'class' => 'mw-tpm-sp-error__message five columns hide' ] );
 		$out .= Html::closeElement( 'div' );
-		$out .= Html::openElement( 'form', array( 'class' => 'mw-tpm-sp-form row',
-			'id' => 'mw-tpm-sp-primary-form' ) );
-		$out .= Html::element( 'input', array( 'id' => 'pm-summary', 'type' => 'hidden',
-			'value' => $this->msg( 'pm-summary-import' )->inContentLanguage()->text() ) );
+		$out .= Html::openElement( 'form', [ 'class' => 'mw-tpm-sp-form row',
+			'id' => 'mw-tpm-sp-primary-form' ] );
+		$out .= Html::element( 'input', [ 'id' => 'pm-summary', 'type' => 'hidden',
+			'value' => $this->msg( 'pm-summary-import' )->inContentLanguage()->text() ] );
 		$out .= "\n";
-		$out .= Html::element( 'input', array( 'id' => 'title', 'class' => 'mw-searchInput mw-ui-input',
-			'placeholder' => $this->msg( 'pm-pagetitle-placeholder' )->text() ) );
+		$out .= Html::element( 'input', [ 'id' => 'title', 'class' => 'mw-searchInput mw-ui-input',
+			'placeholder' => $this->msg( 'pm-pagetitle-placeholder' )->text() ] );
 		$out .= "\n";
-		$out .= Html::element( 'input', array( 'id' => 'action-import',
+		$out .= Html::element( 'input', [ 'id' => 'action-import',
 			'class' => 'mw-ui-button mw-ui-progressive', 'type' => 'button',
-			'value' => $this->msg( 'pm-import-button-label' )->text() ) );
+			'value' => $this->msg( 'pm-import-button-label' )->text() ] );
 		$out .= "\n";
-		$out .= Html::element( 'input', array( 'id' => 'action-save',
+		$out .= Html::element( 'input', [ 'id' => 'action-save',
 			'class' => 'mw-ui-button mw-ui-progressive hide', 'type' => 'button',
-			'value' => $this->msg( 'pm-savepages-button-label' )->text() ) );
+			'value' => $this->msg( 'pm-savepages-button-label' )->text() ] );
 		$out .= "\n";
-		$out .= Html::element( 'input', array( 'id' => 'action-cancel',
+		$out .= Html::element( 'input', [ 'id' => 'action-cancel',
 			'class' => 'mw-ui-button mw-ui-quiet hide', 'type' => 'button',
-			'value' => $this->msg( 'pm-cancel-button-label' )->text() ) );
+			'value' => $this->msg( 'pm-cancel-button-label' )->text() ] );
 		$out .= Html::closeElement( 'form' );
-		$out .= Html::element( 'div', array( 'class' => 'mw-tpm-sp-instructions hide' ) );
-		$out .= Html::openElement( 'div', array( 'class' => 'mw-tpm-sp-unit-listing' ) );
+		$out .= Html::element( 'div', [ 'class' => 'mw-tpm-sp-instructions hide' ] );
+		$out .= Html::openElement( 'div', [ 'class' => 'mw-tpm-sp-unit-listing' ] );
 		$out .= Html::closeElement( 'div' );
 		$out .= Html::closeElement( 'div' );
 

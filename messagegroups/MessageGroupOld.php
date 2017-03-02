@@ -78,7 +78,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * List of messages that are hidden by default, but can still be translated if
 	 * needed.
 	 */
-	protected $optional = array();
+	protected $optional = [];
 
 	/**
 	 * @return array
@@ -97,7 +97,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * List of messages that are always hidden and cannot be translated.
 	 */
-	protected $ignored = array();
+	protected $ignored = [];
 
 	/**
 	 * @return array
@@ -171,7 +171,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	public function load( $code ) {
-		return array();
+		return [];
 	}
 
 	/**
@@ -197,7 +197,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * @return array
 	 */
 	public function getUniqueDefinitions() {
-		return $this->meta ? array() : $this->getDefinitions();
+		return $this->meta ? [] : $this->getDefinitions();
 	}
 
 	/**
@@ -222,7 +222,7 @@ abstract class MessageGroupOld implements MessageGroup {
 			return null;
 		}
 
-		$new = array();
+		$new = [];
 		foreach ( $array as $key => $v ) {
 			$key = strtolower( str_replace( ' ', '_', $key ) );
 			$new[$key] = $v;
@@ -234,7 +234,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * All the messages for this group, by language code.
 	 */
-	protected $messages = array();
+	protected $messages = [];
 
 	/**
 	 * Returns path to the file where translation of language code $code are.
@@ -310,16 +310,16 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	public function getTags( $type = null ) {
-		$tags = array(
+		$tags = [
 			'optional' => $this->optional,
 			'ignored' => $this->ignored,
-		);
+		];
 
 		if ( !$type ) {
 			return $tags;
 		}
 
-		return isset( $tags[$type] ) ? $tags[$type] : array();
+		return isset( $tags[$type] ) ? $tags[$type] : [];
 	}
 
 	/**
@@ -348,7 +348,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		global $wgTranslateWorkflowStates;
 		if ( !$wgTranslateWorkflowStates ) {
 			// Not configured
-			$conf = array();
+			$conf = [];
 		} else {
 			$conf = $wgTranslateWorkflowStates;
 		}

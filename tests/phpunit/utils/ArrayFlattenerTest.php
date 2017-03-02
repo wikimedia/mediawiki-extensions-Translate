@@ -55,111 +55,111 @@ class ArrayFlattenerTest extends PHPUnit_Framework_TestCase {
 	}
 
 	public static function provideTestFlatten() {
-		$cases = array();
-		$cases[] = array(
+		$cases = [];
+		$cases[] = [
 			'.',
-			array( 'a' => 1 ),
-			array( 'a' => 1 ),
-		);
+			[ 'a' => 1 ],
+			[ 'a' => 1 ],
+		];
 
-		$cases[] = array(
+		$cases[] = [
 			'.',
-			array( 'a' => array( 'b' => array( 'c' => 1, 'd' => 2 ) ) ),
-			array( 'a.b.c' => 1, 'a.b.d' => 2 ),
-		);
+			[ 'a' => [ 'b' => [ 'c' => 1, 'd' => 2 ] ] ],
+			[ 'a.b.c' => 1, 'a.b.d' => 2 ],
+		];
 
 		// By default, CLDR plural keywords should be treated like any other key
-		$cases[] = array(
+		$cases[] = [
 			'/',
-			array( 'number' => array( 'one' => '1', 'other' => '999' ) ),
-			array( 'number/one' => '1', 'number/other' => '999' )
-		);
+			[ 'number' => [ 'one' => '1', 'other' => '999' ] ],
+			[ 'number/one' => '1', 'number/other' => '999' ]
+		];
 
 		return $cases;
 	}
 
 	public static function provideTestCLDRPlurals() {
-		$cases = array();
+		$cases = [];
 
 		// We include some non-plural data to ensure it is processed correctly
-		$cases[] = array(
+		$cases[] = [
 			'/',
-			array(
+			[
 				'cat' => 'An amount of cats',
-				'mice' => array(
+				'mice' => [
 					'Frankie',
 					'Benjy'
-				),
-				'dog or dogs' => array(
+				],
+				'dog or dogs' => [
 					'one' => 'One dog',
 					'two' => 'Two doggies',
 					'other' => 'Some dogs'
-				)
-			),
-			array(
+				]
+			],
+			[
 				'cat' => 'An amount of cats',
 				'mice/0' => 'Frankie',
 				'mice/1' => 'Benjy',
 				'dog or dogs' => '{{PLURAL|one=One dog|two=Two doggies|Some dogs}}'
-			),
-		);
+			],
+		];
 
-		$cases[] = array(
+		$cases[] = [
 			'/',
-			array(
-				'dog or dogs' => array(
+			[
+				'dog or dogs' => [
 					'zero' => 'No dogs',
 					'one' => 'One dog',
 					'two' => 'A couple doggies',
 					'few' => 'A few dogs',
 					'many' => '%1 dogs',
 					'other' => 'Some dogs'
-				)
-			),
-			array(
+				]
+			],
+			[
 				'dog or dogs' => '{{PLURAL|zero=No dogs|one=One dog|two=A couple doggies|' .
 					'few=A few dogs|many=%1 dogs|Some dogs}}'
-			),
-		);
+			],
+		];
 
-		$cases[] = array(
+		$cases[] = [
 			'/',
-			array(
-				'math is hard' => array(
+			[
+				'math is hard' => [
 					'one' => 'a=400',
 					'other' => 'a=999'
-				)
-			),
-			array( 'math is hard' => '{{PLURAL|one=a=400|a=999}}' ),
-		);
+				]
+			],
+			[ 'math is hard' => '{{PLURAL|one=a=400|a=999}}' ],
+		];
 
 		return $cases;
 	}
 
 	// Separate provider because the input throws an exception
 	public static function provideTestMixedCLDRPlurals() {
-		$cases = array();
-		$cases[] = array(
-			array(
-				'dog or dogs' => array(
+		$cases = [];
+		$cases[] = [
+			[
+				'dog or dogs' => [
 					'one' => 'One dog',
 					'two' => 'Two doggies',
 					'other' => 'Some dogs',
 					'Pluto' => 'A specific dog'
-				)
-			)
-		);
+				]
+			]
+		];
 
-		$cases[] = array(
-			array(
-				'dog or dogs' => array(
+		$cases[] = [
+			[
+				'dog or dogs' => [
 					'Pluto' => 'A specific dog',
 					'one' => 'One dog',
 					'two' => 'Two doggies',
 					'other' => 'Some dogs',
-				)
-			)
-		);
+				]
+			]
+		];
 		return $cases;
 	}
 
@@ -186,63 +186,63 @@ class ArrayFlattenerTest extends PHPUnit_Framework_TestCase {
 	}
 
 	public static function provideMatchingValues() {
-		$cases = array();
+		$cases = [];
 
 		// We include some non-plural data to ensure it is processed correctly
-		$cases[] = array(
+		$cases[] = [
 			'a',
 			'a'
-		);
+		];
 
-		$cases[] = array(
+		$cases[] = [
 			'{{PLURAL|one=cat|cats}}',
 			'{{PLURAL|one=cat|cats}}',
-		);
+		];
 
-		$cases[] = array(
+		$cases[] = [
 			'Give me {{PLURAL|one=a cat|cats}}',
 			'{{PLURAL|one=Give me a cat|Give me cats}}',
-		);
+		];
 
 		// Order should not matter
-		$cases[] = array(
+		$cases[] = [
 			'{{PLURAL|one=Give me a cat|Give me cats}}',
 			'Give me {{PLURAL|one=a cat|cats}}',
-		);
+		];
 
 		// Multiple inlines
-		$cases[] = array(
+		$cases[] = [
 			'Test {{PLURAL|one=one|other}} and {{PLURAL|one=one|other}} and {{PLURAL|one=one|other}}!',
 			'{{PLURAL|one=Test one and one and one|Test other and other and other}}!',
-		);
+		];
 
 		// Lots of keys
-		$cases[] = array(
+		$cases[] = [
 			'Is {{PLURAL|zero=zero|one=one|two=two|few=few|many=many|other}}',
 			'{{PLURAL|zero=Is zero|one=Is one|two=Is two|few=Is few|many=Is many|Is other}}',
-		);
+		];
 
 		return $cases;
 	}
 
 	public static function provideNonMatchingValues() {
-		$cases = array();
+		$cases = [];
 
-		$cases[] = array(
+		$cases[] = [
 			'a',
 			'b'
-		);
+		];
 
-		$cases[] = array(
+		$cases[] = [
 			'{{PLURAL|one=cat|cats}}',
 			'{{PLURAL|one=dog|dogs}}',
-		);
+		];
 
 		// Different set of keys
-		$cases[] = array(
+		$cases[] = [
 			'Is {{PLURAL|zero=zero|one=one|two=two|few=few|other}}',
 			'{{PLURAL|zero=Is zero|two=Is two|few=Is few|many=Is many|Is other}}',
-		);
+		];
 
 		return $cases;
 	}

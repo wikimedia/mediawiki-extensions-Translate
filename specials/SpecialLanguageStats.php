@@ -28,7 +28,7 @@ class SpecialLanguageStats extends SpecialPage {
 	/**
 	 * @var Array
 	 */
-	protected $targetValueName = array( 'code', 'language' );
+	protected $targetValueName = [ 'code', 'language' ];
 
 	/**
 	 * Most of the displayed numbers added together at the bottom of the table.
@@ -84,7 +84,7 @@ class SpecialLanguageStats extends SpecialPage {
 	 *
 	 * @var array
 	 */
-	protected $statsCounted = array();
+	protected $statsCounted = [];
 
 	/**
 	 * @var array
@@ -197,31 +197,31 @@ class SpecialLanguageStats extends SpecialPage {
 		global $wgScript;
 
 		$out = Html::openElement( 'div' );
-		$out .= Html::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
+		$out .= Html::openElement( 'form', [ 'method' => 'get', 'action' => $wgScript ] );
 		$out .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$out .= Html::hidden( 'x', 'D' ); // To detect submission
 		$out .= Html::openElement( 'fieldset' );
 		$out .= Html::element(
 			'legend',
-			array(),
+			[],
 			$this->msg( 'translate-language-code' )->text()
 		);
 		$out .= Html::openElement( 'table' );
 
 		$out .= Html::openElement( 'tr' );
-		$out .= Html::openElement( 'td', array( 'class' => 'mw-label' ) );
+		$out .= Html::openElement( 'td', [ 'class' => 'mw-label' ] );
 		$out .= Xml::label(
 			$this->msg( 'translate-language-code-field-name' )->text(),
 			'language'
 		);
 		$out .= Html::closeElement( 'td' );
-		$out .= Html::openElement( 'td', array( 'class' => 'mw-input' ) );
-		$out .= Xml::input( 'language', 10, $this->target, array( 'id' => 'language' ) );
+		$out .= Html::openElement( 'td', [ 'class' => 'mw-input' ] );
+		$out .= Xml::input( 'language', 10, $this->target, [ 'id' => 'language' ] );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::closeElement( 'tr' );
 
 		$out .= Html::openElement( 'tr' );
-		$out .= Html::openElement( 'td', array( 'colspan' => 2 ) );
+		$out .= Html::openElement( 'td', [ 'colspan' => 2 ] );
 		$out .= Xml::checkLabel(
 			$this->msg( 'translate-suppress-complete' )->text(),
 			'suppresscomplete',
@@ -232,7 +232,7 @@ class SpecialLanguageStats extends SpecialPage {
 		$out .= Html::closeElement( 'tr' );
 
 		$out .= Html::openElement( 'tr' );
-		$out .= Html::openElement( 'td', array( 'colspan' => 2 ) );
+		$out .= Html::openElement( 'td', [ 'colspan' => 2 ] );
 		$out .= Xml::checkLabel(
 			$this->msg( 'translate-ls-noempty' )->text(),
 			'suppressempty',
@@ -243,7 +243,7 @@ class SpecialLanguageStats extends SpecialPage {
 		$out .= Html::closeElement( 'tr' );
 
 		$out .= Html::openElement( 'tr' );
-		$out .= Html::openElement( 'td', array( 'class' => 'mw-input', 'colspan' => 2 ) );
+		$out .= Html::openElement( 'td', [ 'class' => 'mw-input', 'colspan' => 2 ] );
 		$out .= Xml::submitButton( $this->msg( 'translate-ls-submit' )->text() );
 		$out .= Html::closeElement( 'td' );
 		$out .= Html::closeElement( 'tr' );
@@ -275,11 +275,11 @@ class SpecialLanguageStats extends SpecialPage {
 		$rcInLangLink = Linker::linkKnown(
 			SpecialPage::getTitleFor( 'Translate', '!recent' ),
 			$this->msg( 'languagestats-recenttranslations' )->escaped(),
-			array(),
-			array(
+			[],
+			[
 				'action' => 'proofread',
 				'language' => $this->target
-			)
+			]
 		);
 
 		$out = $this->msg( 'languagestats-stats-for', $languageName )->rawParams( $rcInLangLink )
@@ -484,14 +484,14 @@ class SpecialLanguageStats extends SpecialPage {
 			return $cacheval;
 		}
 
-		$extra = array();
+		$extra = [];
 		if ( $total === null ) {
 			$this->incomplete = true;
 		} elseif ( $translated === $total ) {
-			$extra = array( 'action' => 'proofread' );
+			$extra = [ 'action' => 'proofread' ];
 		}
 
-		$rowParams = array();
+		$rowParams = [];
 		$rowParams['data-groupid'] = $groupId;
 		$rowParams['class'] = get_class( $group );
 		if ( $parent ) {
@@ -499,7 +499,7 @@ class SpecialLanguageStats extends SpecialPage {
 		}
 
 		$out = "\t" . Html::openElement( 'tr', $rowParams );
-		$out .= "\n\t\t" . Html::rawElement( 'td', array(),
+		$out .= "\n\t\t" . Html::rawElement( 'td', [],
 			$this->table->makeGroupLink( $group, $this->target, $extra ) );
 		$out .= $this->table->makeNumberColumns( $stats );
 		$out .= $this->getWorkflowStateCell( $groupId, $state );
@@ -514,12 +514,12 @@ class SpecialLanguageStats extends SpecialPage {
 		$db = wfGetDB( DB_SLAVE );
 		$res = $db->select(
 			'translate_groupreviews',
-			array( 'tgr_state', $field ),
-			array( $filter => $this->target ),
+			[ 'tgr_state', $field ],
+			[ $filter => $this->target ],
 			__METHOD__
 		);
 
-		$states = array();
+		$states = [];
 		foreach ( $res as $row ) {
 			$states[$row->$field] = $row->tgr_state;
 		}

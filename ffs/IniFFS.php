@@ -17,7 +17,7 @@
  */
 class IniFFS extends SimpleFFS {
 	public static function isValid( $data ) {
-		$conf = array( 'BASIC' => array( 'class' => 'FileBasedMessageGroup', 'namespace' => 8 ) );
+		$conf = [ 'BASIC' => [ 'class' => 'FileBasedMessageGroup', 'namespace' => 8 ] ];
 		/**
 		 * @var FileBasedMessageGroup $group
 		 */
@@ -36,7 +36,7 @@ class IniFFS extends SimpleFFS {
 	}
 
 	public function getFileExtensions() {
-		return array( '.ini' );
+		return [ '.ini' ];
 	}
 
 	/**
@@ -44,7 +44,7 @@ class IniFFS extends SimpleFFS {
 	 * @return array Parsed data.
 	 */
 	public function readFromVariable( $data ) {
-		$authors = array();
+		$authors = [];
 		preg_match_all( '/^; Author: (.*)$/m', $data, $matches, PREG_SET_ORDER );
 		foreach ( $matches as $match ) {
 			$authors[] = $match[1];
@@ -62,10 +62,10 @@ class IniFFS extends SimpleFFS {
 			$messages = null;
 		}
 
-		return array(
+		return [
 			'MESSAGES' => $messages,
 			'AUTHORS' => $authors,
-		);
+		];
 	}
 
 	protected function writeReal( MessageCollection $collection ) {

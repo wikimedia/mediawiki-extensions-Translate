@@ -9,48 +9,48 @@
 
 global $wgResourceModules;
 
-$resourcePaths = array(
+$resourcePaths = [
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'Translate',
-	'targets' => array( 'desktop', 'mobile' ),
-);
+	'targets' => [ 'desktop', 'mobile' ],
+];
 
-$wgResourceModules['ext.translate'] = array(
+$wgResourceModules['ext.translate'] = [
 	'styles' => 'resources/css/ext.translate.css',
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.base'] = array(
+$wgResourceModules['ext.translate.base'] = [
 	'scripts' => 'resources/js/ext.translate.base.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'ext.translate.hooks',
 		'mediawiki.api',
 		'mediawiki.util',
-	),
-	'messages' => array(
+	],
+	'messages' => [
 		'translate-js-support-unsaved-warning',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.dropdownmenu'] = array(
+$wgResourceModules['ext.translate.dropdownmenu'] = [
 	'styles' => 'resources/css/ext.translate.dropdownmenu.css',
 	'scripts' => 'resources/js/ext.translate.dropdownmenu.js',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.editor'] = array(
-	'scripts' => array(
+$wgResourceModules['ext.translate.editor'] = [
+	'scripts' => [
 		'resources/js/ext.translate.editor.helpers.js',
 		'resources/js/ext.translate.editor.js',
 		'resources/js/ext.translate.editor.shortcuts.js',
 		'resources/js/ext.translate.pagemode.js',
 		'resources/js/ext.translate.proofread.js',
-	),
-	'styles' => array(
+	],
+	'styles' => [
 		'resources/css/ext.translate.editor.css',
 		'resources/css/ext.translate.pagemode.css',
 		'resources/css/ext.translate.proofread.css',
-	),
-	'dependencies' => array(
+	],
+	'dependencies' => [
 		'ext.translate.base',
 		'ext.translate.dropdownmenu',
 		'ext.translate.hooks',
@@ -67,8 +67,8 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'mediawiki.language',
 		'mediawiki.user',
 		'mediawiki.util',
-	),
-	'messages' => array(
+	],
+	'messages' => [
 		'translate-edit-askpermission',
 		'translate-edit-nopermission',
 		'tux-editor-add-desc',
@@ -116,50 +116,50 @@ $wgResourceModules['ext.translate.editor'] = array(
 		'tux-warnings-hide',
 		'tux-warnings-more',
 		'spamprotectiontext',
-	),
+	],
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.groupselector'] = array(
+$wgResourceModules['ext.translate.groupselector'] = [
 	'styles' => 'resources/css/ext.translate.groupselector.css',
 	'scripts' => 'resources/js/ext.translate.groupselector.js',
 	'position' => 'top',
-	'dependencies' => array(
+	'dependencies' => [
 		'ext.translate.base',
 		'ext.translate.loader',
 		'ext.translate.statsbar',
 		'jquery.ui.position',
 		'mediawiki.jqueryMsg',
-	),
-	'messages' => array(
+	],
+	'messages' => [
 		'translate-msggroupselector-projects',
 		'translate-msggroupselector-search-all',
 		'translate-msggroupselector-search-placeholder',
 		'translate-msggroupselector-search-recent',
 		'translate-msggroupselector-view-subprojects',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.hooks'] = array(
+$wgResourceModules['ext.translate.hooks'] = [
 	'scripts' => 'resources/js/ext.translate.hooks.js',
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.legacy'] = array(
+$wgResourceModules['ext.translate.legacy'] = [
 	'styles' => 'resources/css/ext.translate.legacy.css',
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.loader'] = array(
+$wgResourceModules['ext.translate.loader'] = [
 	'styles' => 'resources/css/ext.translate.loader.css',
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.messagetable'] = array(
+$wgResourceModules['ext.translate.messagetable'] = [
 	'scripts' => 'resources/js/ext.translate.messagetable.js',
 	'styles' => 'resources/css/ext.translate.messagetable.less',
 	'position' => 'bottom',
-	'dependencies' => array(
+	'dependencies' => [
 		'ext.translate.base',
 		'ext.translate.hooks',
 		'ext.translate.loader',
@@ -169,8 +169,8 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'mediawiki.Uri',
 		'mediawiki.jqueryMsg',
 		'mediawiki.util',
-	),
-	'messages' => array(
+	],
+	'messages' => [
 		'api-error-badtoken',
 		'api-error-emptypage',
 		'api-error-fuzzymessage',
@@ -208,84 +208,84 @@ $wgResourceModules['ext.translate.messagetable'] = array(
 		'tux-status-optional',
 		'tux-status-proofread',
 		'tux-status-translated',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.messagewebimporter'] = array(
+$wgResourceModules['ext.translate.messagewebimporter'] = [
 	'styles' => 'resources/css/ext.translate.messagewebimporter.css',
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.multiselectautocomplete'] = array(
+$wgResourceModules['ext.translate.multiselectautocomplete'] = [
 	'scripts' => 'resources/js/ext.translate.multiselectautocomplete.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'jquery.ui.autocomplete',
-	),
+	],
 	'position' => 'top',
-	'targets' => array( 'desktop' ),
-) + $resourcePaths;
+	'targets' => [ 'desktop' ],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.navitoggle'] = array(
-	'skinScripts' => array(
+$wgResourceModules['ext.translate.navitoggle'] = [
+	'skinScripts' => [
 		'vector' => 'resources/js/ext.translate.navitoggle.js',
-	),
-	'skinStyles' => array(
+	],
+	'skinStyles' => [
 		'vector' => 'resources/css/ext.translate.navitoggle.css',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.pagetranslation.uls'] = array(
+$wgResourceModules['ext.translate.pagetranslation.uls'] = [
 	'scripts' => 'resources/js/ext.translate.pagetranslation.uls.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'ext.uls.mediawiki',
 		'mediawiki.util',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.parsers'] = array(
+$wgResourceModules['ext.translate.parsers'] = [
 	'scripts' => 'resources/js/ext.translate.parsers.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'mediawiki.util',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.quickedit'] = array(
+$wgResourceModules['ext.translate.quickedit'] = [
 	'scripts' => 'resources/js/ext.translate.quickedit.js',
 	'styles' => 'resources/css/ext.translate.quickedit.css',
-	'messages' => array( 'translate-js-nonext', 'translate-js-save-failed' ),
-	'dependencies' => array(
+	'messages' => [ 'translate-js-nonext', 'translate-js-save-failed' ],
+	'dependencies' => [
 		'ext.translate.hooks',
 		'jquery.accessKeyLabel',
 		'jquery.autosize',
 		'jquery.form',
 		'jquery.ui.dialog',
 		'mediawiki.util',
-	),
-	'targets' => array( 'desktop' ),
-) + $resourcePaths;
+	],
+	'targets' => [ 'desktop' ],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.recentgroups'] = array(
+$wgResourceModules['ext.translate.recentgroups'] = [
 	'scripts' => 'resources/js/ext.translate.recentgroups.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'es5-shim',
 		'mediawiki.storage',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.selecttoinput'] = array(
+$wgResourceModules['ext.translate.selecttoinput'] = [
 	'scripts' => 'resources/js/ext.translate.selecttoinput.js',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.aggregategroups'] = array(
+$wgResourceModules['ext.translate.special.aggregategroups'] = [
 	'scripts' => 'resources/js/ext.translate.special.aggregategroups.js',
 	'styles' => 'resources/css/ext.translate.special.aggregategroups.css',
 	'position' => 'top',
-	'dependencies' => array(
+	'dependencies' => [
 		'jquery.ui.autocomplete',
 		'mediawiki.api',
 		'mediawiki.util',
-	),
-	'messages' => array(
+	],
+	'messages' => [
 		'tpt-aggregategroup-add',
 		'tpt-aggregategroup-edit-description',
 		'tpt-aggregategroup-edit-name',
@@ -293,39 +293,39 @@ $wgResourceModules['ext.translate.special.aggregategroups'] = array(
 		'tpt-aggregategroup-update',
 		'tpt-aggregategroup-update-cancel',
 		'tpt-invalid-group',
-	),
-	'targets' => array( 'desktop' ),
-) + $resourcePaths;
+	],
+	'targets' => [ 'desktop' ],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.importtranslations'] = array(
+$wgResourceModules['ext.translate.special.importtranslations'] = [
 	'scripts' => 'resources/js/ext.translate.special.importtranslations.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'jquery.ui.autocomplete',
-	),
-	'targets' => array( 'desktop' ),
-) + $resourcePaths;
+	],
+	'targets' => [ 'desktop' ],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.languagestats'] = array(
+$wgResourceModules['ext.translate.special.languagestats'] = [
 	'scripts' => 'resources/js/ext.translate.special.languagestats.js',
 	'styles' => 'resources/css/ext.translate.special.languagestats.css',
-	'messages' => array(
+	'messages' => [
 		'translate-langstats-collapse',
 		'translate-langstats-collapseall',
 		'translate-langstats-expand',
 		'translate-langstats-expandall',
-	),
+	],
 	'dependencies' => 'jquery.tablesorter',
-	'targets' => array( 'desktop' ),
-) + $resourcePaths;
+	'targets' => [ 'desktop' ],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.managegroups'] = array(
+$wgResourceModules['ext.translate.special.managegroups'] = [
 	'styles' => 'resources/css/ext.translate.special.managegroups.css',
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.managetranslatorsandbox'] = array(
+$wgResourceModules['ext.translate.special.managetranslatorsandbox'] = [
 	'scripts' => 'resources/js/ext.translate.special.managetranslatorsandbox.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'ext.translate.loader',
 		'ext.translate.translationstashstorage',
 		'ext.uls.mediawiki',
@@ -333,8 +333,8 @@ $wgResourceModules['ext.translate.special.managetranslatorsandbox'] = array(
 		'mediawiki.api',
 		'mediawiki.jqueryMsg',
 		'mediawiki.language',
-	),
-	'messages' => array(
+	],
+	'messages' => [
 		'tsb-accept-all-button-label',
 		'tsb-accept-button-label',
 		'tsb-all-languages-button-label',
@@ -354,25 +354,25 @@ $wgResourceModules['ext.translate.special.managetranslatorsandbox'] = array(
 		'tsb-translations-source',
 		'tsb-translations-user',
 		'tsb-user-posted-a-comment',
-	),
-	'targets' => array( 'desktop' ),
-) + $resourcePaths;
+	],
+	'targets' => [ 'desktop' ],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.managetranslatorsandbox.styles'] = array(
+$wgResourceModules['ext.translate.special.managetranslatorsandbox.styles'] = [
 	'styles' => 'resources/css/ext.translate.special.managetranslatorsandbox.css',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.pagemigration'] = array(
+$wgResourceModules['ext.translate.special.pagemigration'] = [
 	'styles' => 'resources/css/ext.translate.special.pagemigration.css',
 	'scripts' => 'resources/js/ext.translate.special.pagemigration.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'jquery.ajaxdispatcher',
 		'mediawiki.api',
 		'mediawiki.api.edit',
 		'mediawiki.ui',
 		'mediawiki.ui.button',
-	),
-	'messages' => array(
+	],
+	'messages' => [
 		'pm-add-icon-hover-text',
 		'pm-delete-icon-hover-text',
 		'pm-extra-units-warning',
@@ -387,84 +387,84 @@ $wgResourceModules['ext.translate.special.pagemigration'] = array(
 		'pm-on-save-message-text',
 		'pm-savepages-button-label',
 		'pm-cancel-button-label',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.pagepreparation'] = array(
+$wgResourceModules['ext.translate.special.pagepreparation'] = [
 	'styles' => 'resources/css/ext.translate.special.pagepreparation.css',
 	'scripts' => 'resources/js/ext.translate.special.pagepreparation.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'mediawiki.RegExp',
 		'mediawiki.Title',
 		'mediawiki.action.history.diff',
 		'mediawiki.api',
 		'mediawiki.jqueryMsg',
 		'mediawiki.ui',
-	),
-	'messages' => array(
+	],
+	'messages' => [
 		'pp-already-prepared-message',
 		'pp-pagename-missing',
 		'pp-prepare-message',
 		'pp-save-button-label',
 		'pp-save-message',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.pagetranslation'] = array(
+$wgResourceModules['ext.translate.special.pagetranslation'] = [
 	'scripts' => 'resources/js/ext.translate.special.pagetranslation.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'ext.translate.multiselectautocomplete',
 		'mediawiki.ui.button',
 		'mediawiki.Uri',
 		'user.tokens',
-	),
+	],
 	'position' => 'top',
-	'targets' => array( 'desktop' ),
-) + $resourcePaths;
+	'targets' => [ 'desktop' ],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.pagetranslation.styles'] = array(
+$wgResourceModules['ext.translate.special.pagetranslation.styles'] = [
 	'styles' => 'resources/css/ext.translate.special.pagetranslation.css',
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.searchtranslations'] = array(
+$wgResourceModules['ext.translate.special.searchtranslations'] = [
 	'scripts' => 'resources/js/ext.translate.special.searchtranslations.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'ext.translate.editor',
 		'ext.translate.groupselector',
 		'ext.uls.mediawiki',
 		'mediawiki.Uri',
 		'mediawiki.language',
-	),
-	'messages' => array(
+	],
+	'messages' => [
 		'translate-documentation-language',
 		'translate-search-more-groups-info',
 		'translate-search-more-languages-info',
-	),
+	],
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.searchtranslations.operatorsuggest'] = array(
+$wgResourceModules['ext.translate.special.searchtranslations.operatorsuggest'] = [
 	'scripts' => 'resources/js/ext.translate.special.operatorsuggest.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'jquery.ui.autocomplete',
-	),
-	'targets' => array( 'desktop' ),
-) + $resourcePaths;
+	],
+	'targets' => [ 'desktop' ],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.searchtranslations.styles'] = array(
+$wgResourceModules['ext.translate.special.searchtranslations.styles'] = [
 	'styles' => 'resources/css/ext.translate.special.searchtranslations.css',
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.supportedlanguages'] = array(
+$wgResourceModules['ext.translate.special.supportedlanguages'] = [
 	'styles' => 'resources/css/ext.translate.special.supportedlanguages.css',
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.translate'] = array(
+$wgResourceModules['ext.translate.special.translate'] = [
 	'scripts' => 'resources/js/ext.translate.special.translate.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'ext.translate.base',
 		'ext.translate.groupselector',
 		'ext.translate.messagetable',
@@ -476,8 +476,8 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'mediawiki.api',
 		'mediawiki.api.parse',
 		'mediawiki.jqueryMsg',
-	),
-	'messages' => array(
+	],
+	'messages' => [
 		'tpt-discouraged-language-content',
 		'tpt-discouraged-language-force-content',
 		'tpt-discouraged-language-force-header',
@@ -485,104 +485,104 @@ $wgResourceModules['ext.translate.special.translate'] = array(
 		'translate-documentation-language',
 		'tux-editor-proofreading-hide-own-translations',
 		'tux-editor-proofreading-show-own-translations',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.translate.legacy'] = array(
+$wgResourceModules['ext.translate.special.translate.legacy'] = [
 	'scripts' => 'resources/js/ext.translate.special.translate.legacy.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'mediawiki.api',
-	),
-	'messages' => array(
+	],
+	'messages' => [
 		'translate-messagereview-done',
 		'translate-messagereview-failure',
 		'translate-messagereview-progress',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.translate.styles'] = array(
+$wgResourceModules['ext.translate.special.translate.styles'] = [
 	'styles' => 'resources/css/ext.translate.special.translate.css',
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.translationstash'] = array(
+$wgResourceModules['ext.translate.special.translationstash'] = [
 	'scripts' => 'resources/js/ext.translate.special.translationstash.js',
 	'styles' => 'resources/css/ext.translate.special.translationstash.css',
 	'position' => 'top',
-	'dependencies' => array(
+	'dependencies' => [
 		'ext.translate.editor',
 		'ext.translate.messagetable',
 		'ext.translate.translationstashstorage',
 		'ext.uls.mediawiki',
 		'mediawiki.api',
 		'mediawiki.language',
-	),
-	'messages' => array(
+	],
+	'messages' => [
 		'translate-translationstash-skip-button-label',
 		'translate-translationstash-translations',
 		'tsb-limit-reached-body',
 		'tsb-limit-reached-title',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.special.translationstats'] = array(
+$wgResourceModules['ext.translate.special.translationstats'] = [
 	'scripts' => 'resources/js/ext.translate.special.translationstats.js',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.statsbar'] = array(
+$wgResourceModules['ext.translate.statsbar'] = [
 	'styles' => 'resources/css/ext.translate.statsbar.css',
 	'scripts' => 'resources/js/ext.translate.statsbar.js',
-	'messages' => array(
+	'messages' => [
 		'translate-statsbar-tooltip',
 		'translate-statsbar-tooltip-with-fuzzy',
-	),
+	],
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.storage'] = array(
+$wgResourceModules['ext.translate.storage'] = [
 	'scripts' => 'resources/js/ext.translate.storage.js',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.tabgroup'] = array(
+$wgResourceModules['ext.translate.tabgroup'] = [
 	'styles' => 'resources/css/ext.translate.tabgroup.css',
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.tag.languages'] = array(
+$wgResourceModules['ext.translate.tag.languages'] = [
 	'styles' => 'resources/css/ext.translate.tag.languages.css',
 	'position' => 'top',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.translationstashstorage'] = array(
+$wgResourceModules['ext.translate.translationstashstorage'] = [
 	'scripts' => 'resources/js/ext.translate.translationstashstorage.js',
-	'dependencies' => array(
+	'dependencies' => [
 		'mediawiki.api',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
-$wgResourceModules['ext.translate.workflowselector'] = array(
+$wgResourceModules['ext.translate.workflowselector'] = [
 	'styles' => 'resources/css/ext.translate.workflowselector.css',
 	'scripts' => 'resources/js/ext.translate.workflowselector.js',
-	'messages' => array(
+	'messages' => [
 		'translate-workflow-set-doing',
 		'translate-workflow-state-',
 		'translate-workflowstatus',
-	),
-	'dependencies' => array(
+	],
+	'dependencies' => [
 		'ext.translate.dropdownmenu',
 		'mediawiki.api',
-	),
-) + $resourcePaths;
+	],
+] + $resourcePaths;
 
 // Third party module
-$wgResourceModules['jquery.ajaxdispatcher'] = array(
+$wgResourceModules['jquery.ajaxdispatcher'] = [
 	'scripts' => 'resources/js/jquery.ajaxdispatcher.js',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['jquery.autosize'] = array(
+$wgResourceModules['jquery.autosize'] = [
 	'scripts' => 'resources/js/jquery.autosize.js',
-) + $resourcePaths;
+] + $resourcePaths;
 
-$wgResourceModules['jquery.textchange'] = array(
+$wgResourceModules['jquery.textchange'] = [
 	'scripts' => 'resources/js/jquery.textchange.js',
-) + $resourcePaths;
+] + $resourcePaths;

@@ -140,12 +140,12 @@ class SpecialImportTranslations extends SpecialPage {
 		 * Ugly but necessary form building ahead, ohoy
 		 */
 		$this->getOutput()->addHTML(
-			Xml::openElement( 'form', array(
+			Xml::openElement( 'form', [
 				'action' => $this->getPageTitle()->getLocalURL(),
 				'method' => 'post',
 				'enctype' => 'multipart/form-data',
 				'id' => 'mw-translate-import',
-			) ) .
+			] ) .
 				Html::hidden( 'token', $this->getUser()->getEditToken() ) .
 				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Xml::inputLabel(
@@ -154,7 +154,7 @@ class SpecialImportTranslations extends SpecialPage {
 					'mw-translate-up-local-input', // id
 					50, // size
 					$this->getRequest()->getText( 'upload-local' ),
-					array( 'type' => 'file' )
+					[ 'type' => 'file' ]
 				) .
 				Xml::submitButton( $this->msg( 'translate-import-load' )->text() ) .
 				Xml::closeElement( 'form' )
@@ -170,12 +170,12 @@ class SpecialImportTranslations extends SpecialPage {
 		$filename = $this->getRequest()->getFileTempname( 'upload-local' );
 
 		if ( !is_uploaded_file( $filename ) ) {
-			return array( 'ul-failed' );
+			return [ 'ul-failed' ];
 		}
 
 		$filedata = file_get_contents( $filename );
 
-		return array( 'ok' );
+		return [ 'ok' ];
 	}
 
 	/**
@@ -188,16 +188,16 @@ class SpecialImportTranslations extends SpecialPage {
 		 * @todo Time to rethink the interface again?
 		 * @var FileBasedMessageGroup $group
 		 */
-		$group = MessageGroupBase::factory( array(
-			'FILES' => array(
+		$group = MessageGroupBase::factory( [
+			'FILES' => [
 				'class' => 'GettextFFS',
 				'CtxtAsKey' => true,
-			),
-			'BASIC' => array(
+			],
+			'BASIC' => [
 				'class' => 'FileBasedMessageGroup',
 				'namespace' => -1,
-			)
-		) );
+			]
+		] );
 
 		$ffs = new GettextFFS( $group );
 		$data = $ffs->readFromVariable( $data );
@@ -211,7 +211,7 @@ class SpecialImportTranslations extends SpecialPage {
 		 * This should catch everything that is not a gettext file exported from us
 		 */
 		if ( !isset( $metadata['code'] ) || !isset( $metadata['group'] ) ) {
-			return array( 'no-headers' );
+			return [ 'no-headers' ];
 		}
 
 		/**
@@ -219,10 +219,10 @@ class SpecialImportTranslations extends SpecialPage {
 		 * unfortunately breaks submission.
 		 */
 		if ( isset( $metadata['warnings'] ) ) {
-			return array( 'warnings', $this->getLanguage()->commaList( $metadata['warnings'] ) );
+			return [ 'warnings', $this->getLanguage()->commaList( $metadata['warnings'] ) ];
 		}
 
-		return array( 'ok', $data );
+		return [ 'ok', $data ];
 	}
 
 	protected function setCachedData( $data ) {

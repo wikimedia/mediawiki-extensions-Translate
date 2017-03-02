@@ -20,10 +20,10 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 	protected $namespace = NS_INTUITION;
 
 	protected function processGroups( $groups ) {
-		$fixedGroups = array();
+		$fixedGroups = [];
 		foreach ( $groups as $g ) {
 			if ( !is_array( $g ) ) {
-				$g = array( $g );
+				$g = [ $g ];
 			}
 
 			$name = $g['name'];
@@ -55,12 +55,12 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 				$url = false;
 			}
 
-			$newgroup = array(
+			$newgroup = [
 				'name' => 'Intuition - ' . $name,
 				'file' => $file,
 				'descmsg' => $descmsg,
 				'url' => $url,
-			);
+			];
 
 			// Prefix is required, if not customized use the sanitized name
 			if ( !isset( $g['prefix'] ) ) {
@@ -68,21 +68,21 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 			}
 
 			// All messages are prefixed with their groupname
-			$g['mangle'] = array( '*' );
+			$g['mangle'] = [ '*' ];
 
 			// Prevent E_NOTICE undefined index.
 			// PremadeMediawikiExtensionGroups::factory should probably check this better instead
 			if ( !isset( $g['ignored'] ) ) {
-				$g['ignored'] = array();
+				$g['ignored'] = [];
 			}
 
 			if ( !isset( $g['optional'] ) ) {
-				$g['optional'] = array();
+				$g['optional'] = [];
 			}
 
 			$g['format'] = 'json';
 
-			$copyvars = array(
+			$copyvars = [
 				'aliasfile',
 				'desc',
 				'format',
@@ -92,7 +92,7 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 				'optional',
 				'prefix',
 				'var',
-			);
+			];
 
 			foreach ( $copyvars as $var ) {
 				if ( isset( $g[$var] ) ) {

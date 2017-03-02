@@ -11,7 +11,7 @@
 class ResourcesOrderTest extends MediaWikiTestCase {
 	public function setUp() {
 		parent::setUp();
-		$this->setMwGlobals( 'wgResourceModules', array() );
+		$this->setMwGlobals( 'wgResourceModules', [] );
 	}
 
 	public function testAlphabeticalOrder() {

@@ -22,27 +22,27 @@ class StringMatcherTest extends MediaWikiTestCase {
 
 	public function messageKeyProvider() {
 		// The fourth parameter causes the key to be prefixed or unprefixed
-		$keys = array(
-			array( 'key', 'p-key', 'p-', array( 'key' ), 'Exact match' ),
-			array( 'key', 'key', 'p-', array( 'bar' ), 'Exact not match' ),
-			array( 'key', 'p-key', 'p-', array( 'k*' ), 'Prefix match' ),
-			array( 'key', 'key', 'p-', array( 'b*' ), 'Prefix not match' ),
-			array( 'key', 'p-key', 'p-', array( '*y' ), 'Suffix match' ),
-			array( 'key', 'key', 'p-', array( '*r' ), 'Suffix not match' ),
-			array( 'key', 'p-key', 'p-', array( 'k*y' ), 'Wildcard match' ),
-			array( 'key', 'key', 'p-', array( '*a*' ), 'Wildcard not match' ),
-			array( 'key', 'p-key', 'p-', array( 'key', '*ey', 'ke*' ), 'Multiple rules match' ),
-			array( 'key', 'key', 'p-', array( '*a*', '*ar', 'ba*' ), 'Multiple rules not match' ),
-			array( 'key', 'p-key', 'p-', array( '*' ), 'All match' ),
-			array(
-				'[k.ssa]', 'p-=5Bk.ssa=5D', 'p-', array( '[k.s*' ),
+		$keys = [
+			[ 'key', 'p-key', 'p-', [ 'key' ], 'Exact match' ],
+			[ 'key', 'key', 'p-', [ 'bar' ], 'Exact not match' ],
+			[ 'key', 'p-key', 'p-', [ 'k*' ], 'Prefix match' ],
+			[ 'key', 'key', 'p-', [ 'b*' ], 'Prefix not match' ],
+			[ 'key', 'p-key', 'p-', [ '*y' ], 'Suffix match' ],
+			[ 'key', 'key', 'p-', [ '*r' ], 'Suffix not match' ],
+			[ 'key', 'p-key', 'p-', [ 'k*y' ], 'Wildcard match' ],
+			[ 'key', 'key', 'p-', [ '*a*' ], 'Wildcard not match' ],
+			[ 'key', 'p-key', 'p-', [ 'key', '*ey', 'ke*' ], 'Multiple rules match' ],
+			[ 'key', 'key', 'p-', [ '*a*', '*ar', 'ba*' ], 'Multiple rules not match' ],
+			[ 'key', 'p-key', 'p-', [ '*' ], 'All match' ],
+			[
+				'[k.ssa]', 'p-=5Bk.ssa=5D', 'p-', [ '[k.s*' ],
 				'Message key with special chars'
-			),
-			array(
-				'[kissa]', '=5Bkissa=5D', 'p-', array( '[k.s*' ),
+			],
+			[
+				'[kissa]', '=5Bkissa=5D', 'p-', [ '[k.s*' ],
 				'Message key with special chars'
-			),
-		);
+			],
+		];
 
 		return $keys;
 	}
@@ -64,7 +64,7 @@ class StringMatcherTest extends MediaWikiTestCase {
 	 * @dataProvider problematicMessageKeyProvider
 	 */
 	public function testKeyManglingWithPrefixing( $key, $comment ) {
-		$matcher = new StringMatcher( 'prefix', array( '*' ) );
+		$matcher = new StringMatcher( 'prefix', [ '*' ] );
 		$mangled = $matcher->mangle( $key );
 		$title = Title::makeTitleSafe( NS_MEDIAWIKI, $mangled );
 		$this->assertInstanceOf( 'Title', $title, "Key '$mangled' did not produce a valid title" );
@@ -74,15 +74,15 @@ class StringMatcherTest extends MediaWikiTestCase {
 	}
 
 	public function problematicMessageKeyProvider() {
-		$keys = array(
-			array( 'key', 'simple string' ),
-			array( 'key[]', 'string with brackets' ),
-			array( 'key%AB', 'string with invalid url encoding' ),
-			array( 'key&amp;', 'string with html entity' ),
-			array( 'key=2A', 'string with fake escaping' ),
-			array( 'abcdefgh', 'string with fake escaping' ),
-			array( 'общегосударственные', 'Unicode string' ),
-		);
+		$keys = [
+			[ 'key', 'simple string' ],
+			[ 'key[]', 'string with brackets' ],
+			[ 'key%AB', 'string with invalid url encoding' ],
+			[ 'key&amp;', 'string with html entity' ],
+			[ 'key=2A', 'string with fake escaping' ],
+			[ 'abcdefgh', 'string with fake escaping' ],
+			[ 'общегосударственные', 'Unicode string' ],
+		];
 
 		// Add tests for ranges of exotic ASCII characters
 		foreach ( range( 0, 7 ) as $k ) {
@@ -93,7 +93,7 @@ class StringMatcherTest extends MediaWikiTestCase {
 
 			$start = $k * 16;
 			$end = $start + 16;
-			$keys[] = array( $key, "ASCII range $start..$end" );
+			$keys[] = [ $key, "ASCII range $start..$end" ];
 		}
 
 		return $keys;

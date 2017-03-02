@@ -22,7 +22,7 @@ class PageTranslationLogFormatter extends LogFormatter {
 
 				$targetPage = $this->makePageLink(
 					$this->entry->getTarget(),
-					array( 'oldid' => $revision )
+					[ 'oldid' => $revision ]
 				);
 
 				$params[2] = Message::rawParam( $targetPage );

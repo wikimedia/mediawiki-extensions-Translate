@@ -15,14 +15,14 @@ class ArrayFlattener {
 	protected $sep;
 
 	// For CLDR pluralization rules
-	protected static $pluralWords = array(
+	protected static $pluralWords = [
 		'zero' => 1,
 		'one' => 1,
 		'many' => 1,
 		'few' => 1,
 		'other' => 1,
 		'two' => 1
-	);
+	];
 
 	public function __construct( $sep = '.', $parseCLDRPlurals = false ) {
 		$this->sep = $sep;
@@ -36,7 +36,7 @@ class ArrayFlattener {
 	 * @return array
 	 */
 	public function flatten( array $unflat ) {
-		$flat = array();
+		$flat = [];
 
 		foreach ( $unflat as $key => $value ) {
 			if ( !is_array( $value ) ) {
@@ -52,7 +52,7 @@ class ArrayFlattener {
 			if ( $this->parseCLDRPlurals && $plurals ) {
 				$flat[$key] = $plurals;
 			} else {
-				$temp = array();
+				$temp = [];
 				foreach ( $value as $subKey => $subValue ) {
 					$newKey = "$key{$this->sep}$subKey";
 					$temp[$newKey] = $subValue;
@@ -129,10 +129,10 @@ class ArrayFlattener {
 	 */
 	public function unflatten( $flat ) {
 
-		$unflat = array();
+		$unflat = [];
 
 		if ( $this->parseCLDRPlurals ) {
-			$unflattenedPlurals = array();
+			$unflattenedPlurals = [];
 			foreach ( $flat as $key => $value ) {
 				$plurals = false;
 				if ( !is_array( $value ) ) {
@@ -160,7 +160,7 @@ class ArrayFlattener {
 				/// Extract the level and make sure it exists.
 				$level = array_shift( $path );
 				if ( !isset( $pointer[$level] ) ) {
-					$pointer[$level] = array();
+					$pointer[$level] = [];
 				}
 
 				/// Update the pointer to the new reference.
@@ -200,8 +200,8 @@ class ArrayFlattener {
 		 * if other characters that given below are used.
 		 */
 		$regex = '~\{[a-zA-Z_-]+}~';
-		$placeholders = array();
-		$match = array();
+		$placeholders = [];
+		$match = [];
 
 		while ( preg_match( $regex, $message, $match ) ) {
 			$uniqkey = TranslateUtils::getPlaceholder();
@@ -212,8 +212,8 @@ class ArrayFlattener {
 
 		// Then replace (possible multiple) plural instances into placeholders.
 		$regex = '~\{\{PLURAL\|(.*?)}}~s';
-		$matches = array();
-		$match = array();
+		$matches = [];
+		$match = [];
 
 		while ( preg_match( $regex, $message, $match ) ) {
 			$uniqkey = TranslateUtils::getPlaceholder();
@@ -227,7 +227,7 @@ class ArrayFlattener {
 		}
 
 		// The final array of alternative plurals forms.
-		$alts = array();
+		$alts = [];
 
 		/*
 		 * Then loop trough each plural block and replacing the placeholders
@@ -244,7 +244,7 @@ class ArrayFlattener {
 					continue;
 				}
 
-				$match = array();
+				$match = [];
 				if ( preg_match( $regex, $form, $match ) ) {
 					$formWord = "$key{$this->sep}{$match[1]}";
 					$value = $match[2];

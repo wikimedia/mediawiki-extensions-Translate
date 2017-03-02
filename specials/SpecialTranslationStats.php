@@ -20,13 +20,13 @@
  */
 class SpecialTranslationStats extends SpecialPage {
 	/// @since 2012-03-05
-	protected static $graphs = array(
+	protected static $graphs = [
 		'edits' => 'TranslatePerLanguageStats',
 		'users' => 'TranslatePerLanguageStats',
 		'registrations' => 'TranslateRegistrationStats',
 		'reviews' => 'ReviewPerLanguageStats',
 		'reviewers' => 'ReviewPerLanguageStats',
-	);
+	];
 
 	public function __construct() {
 		parent::__construct( 'TranslationStats' );
@@ -95,7 +95,7 @@ class SpecialTranslationStats extends SpecialPage {
 			$opts['start'] = rtrim( wfTimestamp( TS_ISO_8601, $opts['start'] ), 'Z' );
 		}
 
-		$validScales = array( 'months', 'weeks', 'days', 'hours' );
+		$validScales = [ 'months', 'weeks', 'days', 'hours' ];
 		if ( !in_array( $opts['scale'], $validScales ) ) {
 			$opts['scale'] = 'days';
 		}
@@ -109,7 +109,7 @@ class SpecialTranslationStats extends SpecialPage {
 			$opts['count'] = 'edits';
 		}
 
-		foreach ( array( 'group', 'language' ) as $t ) {
+		foreach ( [ 'group', 'language' ] as $t ) {
 			$values = array_map( 'trim', explode( ',', $opts[$t] ) );
 			$values = array_splice( $values, 0, 4 );
 			if ( $t === 'group' ) {
@@ -154,7 +154,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$out->addHTML(
 			Xml::fieldset( $this->msg( 'translate-statsf-options' )->text() ) .
-				Html::openElement( 'form', array( 'action' => $wgScript ) ) .
+				Html::openElement( 'form', [ 'action' => $wgScript ] ) .
 				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Html::hidden( 'preview', 1 ) .
 				'<table>'
@@ -168,7 +168,7 @@ class SpecialTranslationStats extends SpecialPage {
 				'<tr><td colspan="2"><hr /></td></tr>' .
 				$this->eInput( 'start', $opts, 24 ) .
 				$this->eInput( 'days', $opts ) .
-				$this->eRadio( 'scale', $opts, array( 'months', 'weeks', 'days', 'hours' ) ) .
+				$this->eRadio( 'scale', $opts, [ 'months', 'weeks', 'days', 'hours' ] ) .
 				$this->eRadio( 'count', $opts, $this->getGraphTypes() ) .
 				'<tr><td colspan="2"><hr /></td></tr>' .
 				$this->eLanguage( 'language', $opts ) .
@@ -208,14 +208,14 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$out->addHTML(
 			Html::element( 'hr' ) .
-				Html::element( 'pre', array(), "{{{$titleText}{$spiParams}}}" )
+				Html::element( 'pre', [], "{{{$titleText}{$spiParams}}}" )
 		);
 
 		$out->addHTML(
 			Html::element( 'hr' ) .
 				Html::rawElement(
 					'div',
-					array( 'style' => 'margin: 1em auto; text-align: center;' ),
+					[ 'style' => 'margin: 1em auto; text-align: center;' ],
 					$this->image( $opts )
 				)
 		);
@@ -233,7 +233,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		return
 			'<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
-			Xml::input( $name, $width, $value, array( 'id' => $name ) ) .
+			Xml::input( $name, $width, $value, [ 'id' => $name ] ) .
 			'</td></tr>' . "\n";
 	}
 
@@ -250,7 +250,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$label = 'translate-statsf-' . $name;
 		$label = $this->msg( $label )->escaped();
 
-		return Xml::tags( 'label', array( 'for' => $name ), $label );
+		return Xml::tags( 'label', [ 'for' => $name ], $label );
 	}
 
 	/**
@@ -267,11 +267,11 @@ class SpecialTranslationStats extends SpecialPage {
 		$label = $this->msg( $label )->escaped();
 		$s = '<tr><td>' . $label . '</td><td>';
 
-		$options = array();
+		$options = [];
 		foreach ( $alts as $alt ) {
 			$id = "$name-$alt";
 			$radio = Xml::radio( $name, $alt, $alt === $opts[$name],
-				array( 'id' => $id ) ) . ' ';
+				[ 'id' => $id ] ) . ' ';
 			$options[] = $radio . ' ' . $this->eLabel( $id );
 		}
 
@@ -296,7 +296,7 @@ class SpecialTranslationStats extends SpecialPage {
 		return
 			'<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
 			$select->getHtmlAndPrepareJS() . '<br />' .
-			Xml::input( $name, 20, $value, array( 'id' => $name ) ) .
+			Xml::input( $name, 20, $value, [ 'id' => $name ] ) .
 			'</td></tr>' . "\n";
 	}
 
@@ -334,7 +334,7 @@ class SpecialTranslationStats extends SpecialPage {
 		return
 			'<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
 			$select->getHtmlAndPrepareJS() . '<br />' .
-			Xml::input( $name, 20, $value, array( 'id' => $name ) ) .
+			Xml::input( $name, 20, $value, [ 'id' => $name ] ) .
 			'</td></tr>' . "\n";
 	}
 
@@ -376,15 +376,15 @@ class SpecialTranslationStats extends SpecialPage {
 	 */
 	protected function image( FormOptions $opts ) {
 		$title = $this->getPageTitle();
-		$cgiparams = wfArrayToCgi( array( 'graphit' => true ), $opts->getAllValues() );
+		$cgiparams = wfArrayToCgi( [ 'graphit' => true ], $opts->getAllValues() );
 		$href = $title->getLocalURL( $cgiparams );
 
 		return Xml::element( 'img',
-			array(
+			[
 				'src' => $href,
 				'width' => $opts['width'],
 				'height' => $opts['height'],
-			)
+			]
 		);
 	}
 
@@ -419,11 +419,11 @@ class SpecialTranslationStats extends SpecialPage {
 			$end = null;
 		}
 
-		$tables = array();
-		$fields = array();
-		$conds = array();
+		$tables = [];
+		$fields = [];
+		$conds = [];
 		$type = __METHOD__;
-		$options = array();
+		$options = [];
 
 		$so->preQuery( $tables, $fields, $conds, $type, $options, $start, $end );
 		$res = $dbr->select( $tables, $fields, $conds, $type, $options );
@@ -435,10 +435,10 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$labels = $so->labels();
 		$keys = array_keys( $labels );
-		$values = array_pad( array(), count( $labels ), 0 );
+		$values = array_pad( [], count( $labels ), 0 );
 		$defaults = array_combine( $keys, $values );
 
-		$data = array();
+		$data = [];
 		// Allow 10 seconds in the future for processing time
 		$lastValue = $end !== null ? $end : $now + 10;
 		$lang = $this->getLanguage();
@@ -473,7 +473,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		// Don't display dummy label
 		if ( count( $labels ) === 1 && $labels[0] === 'all' ) {
-			$labels = array();
+			$labels = [];
 		}
 
 		foreach ( $labels as &$label ) {
@@ -500,7 +500,7 @@ class SpecialTranslationStats extends SpecialPage {
 			$data[key( $last ) . '*'] = current( $last );
 		}
 
-		return array( $labels, $data );
+		return [ $labels, $data ];
 	}
 
 	/**
@@ -570,7 +570,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$count = count( $resData );
 		$skip = (int)( $count / ( $width / 60 ) - 1 );
 		$i = $count;
-		$data = array();
+		$data = [];
 
 		foreach ( $resData as $date => $edits ) {
 			if ( $skip > 0 &&
@@ -752,11 +752,11 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 	}
 
 	public function indexOf( $row ) {
-		return array( 'all' );
+		return [ 'all' ];
 	}
 
 	public function labels() {
-		return array( 'all' );
+		return [ 'all' ];
 	}
 
 	public function getDateFormat() {
@@ -775,7 +775,7 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 	protected static function makeTimeCondition( $field, $start, $end ) {
 		$db = wfGetDB( DB_SLAVE );
 
-		$conds = array();
+		$conds = [];
 		if ( $start !== null ) {
 			$conds[] = "$field >= '{$db->timestamp( $start )}'";
 		}
@@ -788,7 +788,7 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 
 	/// @since 2012-03-05
 	protected static function namespacesFromGroups( $groupIds ) {
-		$namespaces = array();
+		$namespaces = [];
 		foreach ( $groupIds as $id ) {
 			$group = MessageGroups::getGroup( $id );
 			if ( $group ) {
@@ -822,19 +822,19 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 
 		$db = wfGetDB( DB_SLAVE );
 
-		$tables = array( 'recentchanges' );
-		$fields = array( 'rc_timestamp' );
+		$tables = [ 'recentchanges' ];
+		$fields = [ 'rc_timestamp' ];
 
-		$conds = array(
+		$conds = [
 			'rc_namespace' => $wgTranslateMessageNamespaces,
 			'rc_bot' => 0,
 			'rc_type != ' . RC_LOG,
-		);
+		];
 
 		$timeConds = self::makeTimeCondition( 'rc_timestamp', $start, $end );
 		$conds = array_merge( $conds, $timeConds );
 
-		$options = array( 'ORDER BY' => 'rc_timestamp' );
+		$options = [ 'ORDER BY' => 'rc_timestamp' ];
 
 		$this->groups = array_filter( array_map( 'trim', explode( ',', $this->opts['group'] ) ) );
 		$this->groups = array_map( 'MessageGroups::normalizeId', $this->groups );
@@ -845,7 +845,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			$conds['rc_namespace'] = $namespaces;
 		}
 
-		$languages = array();
+		$languages = [];
 		foreach ( $this->codes as $code ) {
 			$languages[] = 'rc_title ' . $db->buildLike( $db->anyString(), "/$code" );
 		}
@@ -891,8 +891,8 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		// The key-building needs to be in sync with ::labels().
 		list( $key, $code ) = TranslateUtils::figureMessage( $row->rc_title );
 
-		$groups = array();
-		$codes = array();
+		$groups = [];
+		$codes = [];
 
 		if ( $this->groups ) {
 			/*
@@ -904,7 +904,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		}
 
 		if ( $this->codes ) {
-			$codes = array( $code );
+			$codes = [ $code ];
 		}
 
 		return $this->combineTwoArrays( $groups, $codes );
@@ -949,7 +949,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			$codes[] = false;
 		}
 
-		$items = array();
+		$items = [];
 		foreach ( $groups as $group ) {
 			foreach ( $codes as $code ) {
 				$items[] = $this->makeLabel( $group, $code );
@@ -996,7 +996,7 @@ class TranslateRegistrationStats extends TranslationStatsBase {
 		$fields = 'user_registration';
 		$conds = self::makeTimeCondition( 'user_registration', $start, $end );
 		$type .= '-registration';
-		$options = array();
+		$options = [];
 	}
 
 	public function getTimestamp( $row ) {
@@ -1015,18 +1015,18 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 
 		$db = wfGetDB( DB_SLAVE );
 
-		$tables = array( 'logging' );
-		$fields = array( 'log_timestamp' );
+		$tables = [ 'logging' ];
+		$fields = [ 'log_timestamp' ];
 
-		$conds = array(
+		$conds = [
 			'log_namespace' => $wgTranslateMessageNamespaces,
 			'log_action' => 'message',
-		);
+		];
 
 		$timeConds = self::makeTimeCondition( 'log_timestamp', $start, $end );
 		$conds = array_merge( $conds, $timeConds );
 
-		$options = array( 'ORDER BY' => 'log_timestamp' );
+		$options = [ 'ORDER BY' => 'log_timestamp' ];
 
 		$this->groups = array_filter( array_map( 'trim', explode( ',', $this->opts['group'] ) ) );
 		$this->codes = array_filter( array_map( 'trim', explode( ',', $this->opts['language'] ) ) );
@@ -1036,7 +1036,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 			$conds['log_namespace'] = $namespaces;
 		}
 
-		$languages = array();
+		$languages = [];
 		foreach ( $this->codes as $code ) {
 			$languages[] = 'log_title ' . $db->buildLike( $db->anyString(), "/$code" );
 		}
@@ -1082,8 +1082,8 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		// The key-building needs to be in sync with ::labels().
 		list( $key, $code ) = TranslateUtils::figureMessage( $row->log_title );
 
-		$groups = array();
-		$codes = array();
+		$groups = [];
+		$codes = [];
 
 		if ( $this->groups ) {
 			/* Get list of keys that the message belongs to, and filter
@@ -1093,7 +1093,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		}
 
 		if ( $this->codes ) {
-			$codes = array( $code );
+			$codes = [ $code ];
 		}
 
 		return $this->combineTwoArrays( $groups, $codes );

@@ -14,8 +14,8 @@
  * @since 2015.02
  */
 class QueryAggregator {
-	protected $queries = array();
-	protected $responses = array();
+	protected $queries = [];
+	protected $responses = [];
 	protected $timeout = 0;
 	protected $hasRun = false;
 
@@ -49,10 +49,10 @@ class QueryAggregator {
 	 * Runs all the queries.
 	 */
 	public function run() {
-		$http = new MultiHttpClient( array(
+		$http = new MultiHttpClient( [
 			'reqTimeout' => $this->timeout,
 			'connTimeout' => 3
-		) );
+		] );
 		$responses = $http->runMulti( $this->getMultiHttpQueries( $this->queries ) );
 		foreach ( $responses as $index => $response ) {
 			$this->responses[$index] = $response;
@@ -67,13 +67,13 @@ class QueryAggregator {
 	 */
 	protected function getMultiHttpQueries( $queries ) {
 		$converter = function( TranslationQuery $q ) {
-			return array(
+			return [
 				'url' => $q->getUrl(),
 				'method' => $q->getMethod(),
 				'query' => $q->getQueryParameters(),
 				'body' => $q->getBody(),
 				'headers' => $q->getHeaders(),
-			);
+			];
 		};
 
 		return array_map( $converter, $queries );

@@ -18,18 +18,18 @@ class BlackListTest extends MediaWikiTestCase {
 	 */
 	protected $group;
 	protected $codes;
-	protected $groupConfiguration = array(
-		'BASIC' => array(
+	protected $groupConfiguration = [
+		'BASIC' => [
 			'class' => 'FileBasedMessageGroup',
 			'id' => 'test-id',
 			'label' => 'Test Label',
 			'namespace' => 'NS_MEDIAWIKI',
 			'description' => 'Test description',
-		),
-		'FILES' => array(
+		],
+		'FILES' => [
 			'class' => 'TestFFS',
-		),
-	);
+		],
+	];
 
 	protected function setUp() {
 		parent::setUp();
@@ -49,9 +49,9 @@ class BlackListTest extends MediaWikiTestCase {
 
 	public function testAllBlackList() {
 		$conf = $this->groupConfiguration;
-		$conf['LANGUAGES'] = array(
+		$conf['LANGUAGES'] = [
 			'blacklist' => '*',
-		);
+		];
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
 		$this->assertEquals( count( $translatableLanguages ), 0 );
@@ -59,9 +59,9 @@ class BlackListTest extends MediaWikiTestCase {
 
 	public function testAllWhiteList() {
 		$conf = $this->groupConfiguration;
-		$conf['LANGUAGES'] = array(
+		$conf['LANGUAGES'] = [
 			'whitelist' => '*',
-		);
+		];
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
 		$this->assertNull( $translatableLanguages );
@@ -69,10 +69,10 @@ class BlackListTest extends MediaWikiTestCase {
 
 	public function testWhiteListOverrideBlackList() {
 		$conf = $this->groupConfiguration;
-		$conf['LANGUAGES'] = array(
-			'whitelist' => array( 'en', 'hi', 'ta' ),
-			'blacklist' => array( 'ta' ),
-		);
+		$conf['LANGUAGES'] = [
+			'whitelist' => [ 'en', 'hi', 'ta' ],
+			'blacklist' => [ 'ta' ],
+		];
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
 		$this->assertTrue( isset( $translatableLanguages['ta'] ) );
@@ -81,9 +81,9 @@ class BlackListTest extends MediaWikiTestCase {
 
 	public function testSomeBlackList() {
 		$conf = $this->groupConfiguration;
-		$conf['LANGUAGES'] = array(
-			'blacklist' => array( 'or', 'hi' ),
-		);
+		$conf['LANGUAGES'] = [
+			'blacklist' => [ 'or', 'hi' ],
+		];
 		$group = MessageGroupBase::factory( $conf );
 		$translatableLanguages = $group->getTranslatableLanguages();
 		$this->assertTrue( !isset( $translatableLanguages['hi'] ) );

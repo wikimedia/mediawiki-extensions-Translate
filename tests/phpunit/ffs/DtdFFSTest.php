@@ -11,18 +11,18 @@
 
 class DtdFFSTest extends MediaWikiTestCase {
 
-	protected $groupConfiguration = array(
-		'BASIC' => array(
+	protected $groupConfiguration = [
+		'BASIC' => [
 			'class' => 'FileBasedMessageGroup',
 			'id' => 'test-id',
 			'label' => 'Test Label',
 			'namespace' => 'NS_MEDIAWIKI',
 			'description' => 'Test description',
-		),
-		'FILES' => array(
+		],
+		'FILES' => [
 			'class' => 'DtdFFS',
-		),
-	);
+		],
+	];
 
 	public function testParsing() {
 		$file =
@@ -44,11 +44,11 @@ DTD;
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new DtdFFS( $group );
 		$parsed = $ffs->readFromVariable( $file );
-		$expected = array(
+		$expected = [
 			'okawix.title' => 'Okawix &okawix.vernum; - Navigator de Wikipedia',
 			'okawix.back' => 'Retro',
-		);
-		$expected = array( 'MESSAGES' => $expected, 'AUTHORS' => array( 'McDutchie' ) );
+		];
+		$expected = [ 'MESSAGES' => $expected, 'AUTHORS' => [ 'McDutchie' ] ];
 		$this->assertEquals( $expected, $parsed );
 	}
 }

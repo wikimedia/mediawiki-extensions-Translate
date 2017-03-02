@@ -17,7 +17,7 @@ class AppleFFS extends SimpleFFS {
 	}
 
 	public function getFileExtensions() {
-		return array( '.strings' );
+		return [ '.strings' ];
 	}
 
 	// READ
@@ -29,7 +29,7 @@ class AppleFFS extends SimpleFFS {
 	 */
 	public function readFromVariable( $data ) {
 		$lines = explode( "\n", $data );
-		$authors = $messages = array();
+		$authors = $messages = [];
 		$linecontinuation = false;
 
 		$value = '';
@@ -45,7 +45,7 @@ class AppleFFS extends SimpleFFS {
 
 				if ( substr( $line, 0, 2 ) === '//' ) {
 					// Single-line comment
-					$match = array();
+					$match = [];
 					$ok = preg_match( '~//\s*Author:\s*(.*)~', $line, $match );
 					if ( $ok ) {
 						$authors[] = $match[1];
@@ -67,10 +67,10 @@ class AppleFFS extends SimpleFFS {
 
 		$messages = $this->group->getMangler()->mangle( $messages );
 
-		return array(
+		return [
 			'AUTHORS' => $authors,
 			'MESSAGES' => $messages,
-		);
+		];
 	}
 
 	/**
@@ -80,14 +80,14 @@ class AppleFFS extends SimpleFFS {
 	 * @return array( string $key, string $val )
 	 */
 	public static function readRow( $line ) {
-		$match = array();
+		$match = [];
 		if ( preg_match( '/^"((?:\\\"|[^"])*)"\s*=\s*"((?:\\\"|[^"])*)"\s*;\s*$/', $line, $match ) ) {
 			$key = self::unescapeString( $match[1] );
 			$value = self::unescapeString( $match[2] );
 			if ( $key === '' ) {
 				throw new MWException( "Empty key in line $line" );
 			}
-			return array( $key, $value );
+			return [ $key, $value ];
 		} else {
 			throw new MWException( "Unrecognized line format: $line" );
 		}

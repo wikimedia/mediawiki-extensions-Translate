@@ -21,7 +21,7 @@ class SimpleFFS implements FFS {
 	}
 
 	public function getFileExtensions() {
-		return array();
+		return [];
 	}
 
 	/**
@@ -146,7 +146,7 @@ class SimpleFFS implements FFS {
 
 		list( $authorsPart, $messagesPart ) = $parts;
 		$authors = explode( self::RECORD_SEPARATOR, $authorsPart );
-		$messages = array();
+		$messages = [];
 
 		foreach ( explode( self::RECORD_SEPARATOR, $messagesPart ) as $line ) {
 			if ( $line === '' ) {
@@ -166,10 +166,10 @@ class SimpleFFS implements FFS {
 
 		$messages = $this->group->getMangler()->mangle( $messages );
 
-		return array(
+		return [
 			'AUTHORS' => $authors,
 			'MESSAGES' => $messages,
-		);
+		];
 	}
 
 	/**

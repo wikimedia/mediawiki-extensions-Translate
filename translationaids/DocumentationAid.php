@@ -26,10 +26,10 @@ class DocumentationAid extends TranslationAid {
 
 		$info = TranslateUtils::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns );
 
-		return array(
+		return [
 			'language' => $wgContLang->getCode(),
 			'value' => $info,
 			'html' => $this->context->getOutput()->parse( $info ),
-		);
+		];
 	}
 }

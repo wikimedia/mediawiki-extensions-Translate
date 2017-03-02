@@ -130,7 +130,7 @@ class SyncGroup extends Maintenance {
 				}
 
 				$cs = new ChangeSyncer( $group, $this );
-				$cs->setProgressCallback( array( $this, 'myOutput' ) );
+				$cs->setProgressCallback( [ $this, 'myOutput' ] );
 				$cs->interactive = !$this->hasOption( 'noask' );
 				$cs->nocolor = $this->hasOption( 'nocolor' );
 				$cs->norc = $this->hasOption( 'norc' );
@@ -227,7 +227,7 @@ class ChangeSyncer {
 			return false;
 		}
 
-		$matches = array();
+		$matches = [];
 		// PHP doesn't allow foo || return false;
 		// Thank
 		// you

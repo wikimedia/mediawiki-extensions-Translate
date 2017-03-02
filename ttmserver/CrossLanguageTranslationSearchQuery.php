@@ -16,7 +16,7 @@ class CrossLanguageTranslationSearchQuery {
 	/** @var int */
 	protected $total = 0;
 
-	protected $hl = array( '', '' );
+	protected $hl = [ '', '' ];
 
 	public function __construct( array $params, SearchableTTMServer $server ) {
 		$this->params = $params;
@@ -24,7 +24,7 @@ class CrossLanguageTranslationSearchQuery {
 	}
 
 	public function getDocuments() {
-		$documents = array();
+		$documents = [];
 		$total = $start = 0;
 		$queryString = $this->params['query'];
 		$offset = $this->params['offset'];
@@ -65,7 +65,7 @@ class CrossLanguageTranslationSearchQuery {
 	 * Slice messages according to limit and offset given.
 	 */
 	protected function extractMessages( $resultset, $offset, $limit ) {
-		$messages = $documents = $ret = array();
+		$messages = $documents = $ret = [];
 
 		$language = $this->params['language'];
 		foreach ( $resultset->getResults() as $document ) {
@@ -103,11 +103,11 @@ class CrossLanguageTranslationSearchQuery {
 		$offset = $collection->slice( $offset, $limit );
 		$left = count( $collection );
 
-		$offsets = array(
+		$offsets = [
 			'start' => $offset[2],
 			'left' => $left,
 			'total' => $total,
-		);
+		];
 
 		if ( $filter === 'translated' || $filter === 'fuzzy' ) {
 			$collection->loadTranslations();
@@ -124,18 +124,18 @@ class CrossLanguageTranslationSearchQuery {
 			$ret[] = $documents[$mkey];
 		}
 
-		return array( $ret, $offsets );
+		return [ $ret, $offsets ];
 	}
 
 	/**
 	 * @return array
 	 */
 	public function getAvailableFilters() {
-		return array(
+		return [
 			'translated',
 			'fuzzy',
 			'untranslated'
-		);
+		];
 	}
 
 	public function getTotalHits() {

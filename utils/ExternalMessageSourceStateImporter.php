@@ -10,9 +10,9 @@
 class ExternalMessageSourceStateImporter {
 
 	public function importSafe( $changeData ) {
-		$processed = array();
-		$skipped = array();
-		$jobs = array();
+		$processed = [];
+		$skipped = [];
+		$jobs = [];
 		$jobs[] = MessageIndexRebuildJob::newJob();
 
 		foreach ( $changeData as $groupId => $changesForGroup ) {
@@ -65,11 +65,11 @@ class ExternalMessageSourceStateImporter {
 		MessageChangeStorage::writeChanges( $changeData, $file );
 		JobQueueGroup::singleton()->push( $jobs );
 
-		return array(
+		return [
 			'processed' => $processed,
 			'skipped' => $skipped,
 			'name' => $name,
-		);
+		];
 	}
 
 	protected static function isSafe( array $changesForLanguage ) {

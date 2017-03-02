@@ -15,20 +15,20 @@ class AmdFFSTest extends MediaWikiTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->groupConfiguration = array(
-			'BASIC' => array(
+		$this->groupConfiguration = [
+			'BASIC' => [
 				'class' => 'FileBasedMessageGroup',
 				'id' => 'test-id',
 				'label' => 'Test Label',
 				'namespace' => 'NS_MEDIAWIKI',
 				'description' => 'Test description',
-			),
-			'FILES' => array(
+			],
+			'FILES' => [
 				'class' => 'AmdFFS',
 				'sourcePattern' => 'fake_reference_not_used_in_practise',
 				'targetPattern' => 'fake_reference_not_used_in_practise',
-			),
-		);
+			],
+		];
 	}
 
 	protected $groupConfiguration;
@@ -43,16 +43,16 @@ class AmdFFSTest extends MediaWikiTestCase {
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new AmdFFS( $group );
 		$parsed = $ffs->readFromVariable( $file );
-		$expected = array(
+		$expected = [
 			'MESSAGES' => $messages,
 			'AUTHORS' =>  $authors,
-			'METADATA' => array(),
-		);
+			'METADATA' => [],
+		];
 		$this->assertEquals( $parsed, $expected );
 	}
 
 	public function amdProvider() {
-		$values = array();
+		$values = [];
 
 		$file1 =
 			<<<JS
@@ -63,15 +63,15 @@ define({
 });
 JS;
 
-		$values[] = array(
-			array(
+		$values[] = [
+			[
 				'one' => 'jeden',
 				'two' => 'dwa',
 				'three' => 'trzy',
-			),
-			array(),
+			],
+			[],
 			$file1,
-		);
+		];
 
 		$file2 =
 			<<<JS
@@ -87,11 +87,11 @@ define({
 });
 JS;
 
-		$values[] = array(
-			array( 'word' => 'слово' ),
-			array( 'Matthias', 'Hannes' ),
+		$values[] = [
+			[ 'word' => 'слово' ],
+			[ 'Matthias', 'Hannes' ],
 			$file2,
-		);
+		];
 
 		return $values;
 	}
@@ -107,7 +107,7 @@ JS;
 		$parsed = $ffs->readFromVariable( $data );
 
 		$this->assertEquals(
-			array( 'Nike the bunny' ),
+			[ 'Nike the bunny' ],
 			$parsed['AUTHORS'],
 			'Authors are exported'
 		);

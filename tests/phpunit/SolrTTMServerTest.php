@@ -19,15 +19,15 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 			 $wgTranslateTranslationServices,
 			 $wgTranslateTranslationDefaultService,
 			 $wgTranslateTestTTMServer;
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgHooks' => $wgHooks,
-			'wgTranslateTranslationServices' => array(),
-		) );
+			'wgTranslateTranslationServices' => [],
+		] );
 		// because var names are too long...
 		$default = $wgTranslateTranslationDefaultService;
 		$wgTranslateTranslationServices[$default] = $wgTranslateTestTTMServer;
 
-		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'addGroups' ) );
+		$wgHooks['TranslatePostInitGroups'] = [ [ $this, 'addGroups' ] ];
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( wfGetCache( 'hash' ) );
@@ -38,8 +38,8 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 	}
 
 	public function addGroups( &$list ) {
-		$list['ttmserver-test'] = new MockWikiMessageGroup( 'ttmserver-test', array(
-			'one' => '1', 'two' => 'kaksi', 'three' => '3' ) );
+		$list['ttmserver-test'] = new MockWikiMessageGroup( 'ttmserver-test', [
+			'one' => '1', 'two' => 'kaksi', 'three' => '3' ] );
 
 		return true;
 	}
@@ -84,7 +84,7 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 		$this->assertEquals( wfWikiID(), $doc->wiki );
 		$this->assertEquals( 'en', $doc->language );
 		$this->assertEquals( '1', $doc->content );
-		$this->assertEquals( array( 'ttmserver-test' ), $doc->group );
+		$this->assertEquals( [ 'ttmserver-test' ], $doc->group );
 
 		// Add one translation
 		$title = Title::newFromText( 'MediaWiki:one/fi' );
@@ -102,7 +102,7 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 			// @todo FIXME Empty foreach statement.
 		}
 		$this->assertEquals( 'yksi', $doc->content );
-		$this->assertEquals( array( 'ttmserver-test' ), $doc->group );
+		$this->assertEquals( [ 'ttmserver-test' ], $doc->group );
 
 		// Update definition
 		$title = Title::newFromText( 'MediaWiki:one/en' );
@@ -144,7 +144,7 @@ class SolrTTMServerTest extends MediaWikiTestCase {
 
 		// And now the messages should be orphaned
 		global $wgHooks;
-		$wgHooks['TranslatePostInitGroups'] = array();
+		$wgHooks['TranslatePostInitGroups'] = [];
 		MessageGroups::singleton()->recache();
 		MessageIndex::singleton()->rebuild();
 		self::runJobs();

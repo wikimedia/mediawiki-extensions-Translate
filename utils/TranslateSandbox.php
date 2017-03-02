@@ -34,13 +34,13 @@ class TranslateSandbox {
 			throw new MWException( 'Invalid user name' );
 		}
 
-		$data = array(
+		$data = [
 			'username' => $user->getName(),
 			'password' => $password,
 			'retype' => $password,
 			'email' => $email,
 			'realname' => '',
-		);
+		];
 
 		self::$userToCreate = $user;
 		$reqs = AuthManager::singleton()->getAuthenticationRequests( AuthManager::ACTION_CREATE );
@@ -95,13 +95,13 @@ class TranslateSandbox {
 
 		// Delete from database
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->delete( 'user', array( 'user_id' => $uid ), __METHOD__ );
-		$dbw->delete( 'user_groups', array( 'ug_user' => $uid ), __METHOD__ );
-		$dbw->delete( 'user_properties', array( 'up_user' => $uid ), __METHOD__ );
-		$dbw->delete( 'logging', array( 'log_user' => $uid ), __METHOD__ );
+		$dbw->delete( 'user', [ 'user_id' => $uid ], __METHOD__ );
+		$dbw->delete( 'user_groups', [ 'ug_user' => $uid ], __METHOD__ );
+		$dbw->delete( 'user_properties', [ 'up_user' => $uid ], __METHOD__ );
+		$dbw->delete( 'logging', [ 'log_user' => $uid ], __METHOD__ );
 		$dbw->delete(
 			'recentchanges',
-			array( 'rc_user' => $uid, 'rc_user_text' => $username ),
+			[ 'rc_user' => $uid, 'rc_user_text' => $username ],
 			__METHOD__
 		);
 
@@ -130,12 +130,12 @@ class TranslateSandbox {
 	 */
 	public static function getUsers() {
 		$dbw = TranslateUtils::getSafeReadDB();
-		$tables = array( 'user', 'user_groups' );
+		$tables = [ 'user', 'user_groups' ];
 		$fields = User::selectFields();
-		$conds = array(
+		$conds = [
 			'ug_group' => 'translate-sandboxed',
 			'ug_user = user_id',
-		);
+		];
 
 		$res = $dbw->select( $tables, $fields, $conds, __METHOD__ );
 
@@ -211,7 +211,7 @@ class TranslateSandbox {
 			$sender->getName()
 		)->inLanguage( $targetLang )->text();
 
-		$params = array(
+		$params = [
 			'user' => $target->getId(),
 			'to' => MailAddress::newFromUser( $target ),
 			'from' => MailAddress::newFromUser( $sender ),
@@ -219,7 +219,7 @@ class TranslateSandbox {
 			'subj' => $subject,
 			'body' => $body,
 			'emailType' => $type,
-		);
+		];
 
 		JobQueueGroup::singleton()->push( TranslateSandboxEmailJob::newJob( $params ) );
 	}
@@ -251,7 +251,7 @@ class TranslateSandbox {
 		}
 
 		// right-translate-sandboxaction action-translate-sandboxaction
-		$rights = array(
+		$rights = [
 			'editmyoptions',
 			'editmyprivateinfo',
 			'read',
@@ -259,7 +259,7 @@ class TranslateSandbox {
 			'translate-sandboxaction',
 			'viewmyprivateinfo',
 			'writeapi',
-		);
+		];
 
 		// Do not let other hooks add more actions
 		return false;
@@ -275,7 +275,7 @@ class TranslateSandbox {
 	/// Hook: onGetPreferences
 	public static function onGetPreferences( $user, &$preferences ) {
 		$preferences['translate-sandbox'] = $preferences['translate-sandbox-reminders'] =
-			array( 'type' => 'api' );
+			[ 'type' => 'api' ];
 
 		return true;
 	}
@@ -285,12 +285,12 @@ class TranslateSandbox {
 	 * Hook: ApiCheckCanExecute
 	 */
 	public static function onApiCheckCanExecute( ApiBase $module, User $user, &$message ) {
-		$whitelist = array(
+		$whitelist = [
 			// Obviously this is needed to get out of the sandbox
 			'ApiTranslationStash',
 			// Used by UniversalLanguageSelector for example
 			'ApiOptions'
-		);
+		];
 
 		if ( TranslateSandbox::isSandboxed( $user ) ) {
 			$class = get_class( $module );

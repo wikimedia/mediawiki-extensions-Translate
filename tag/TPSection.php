@@ -121,9 +121,9 @@ class TPSection {
 	 */
 	public function getVariables() {
 		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
-		$matches = array();
+		$matches = [];
 		preg_match_all( $re, $this->text, $matches, PREG_SET_ORDER );
-		$vars = array();
+		$vars = [];
 
 		foreach ( $matches as $m ) {
 			$vars['$' . $m[1]] = $m[2];

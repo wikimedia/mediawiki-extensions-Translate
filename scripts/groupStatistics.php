@@ -32,62 +32,62 @@ class GroupStatistics extends Maintenance {
 	 *    [continent where localisation is spoken]
 	 * )
 	 */
-	public $mostSpokenLanguages = array(
-		'en' => array( 1, 1500, 'multiple' ),
-		'zh-hans' => array( 2, 1300, 'asia' ),
-		'zh-hant' => array( 2, 1300, 'asia' ),
-		'hi' => array( 3, 550, 'asia' ),
-		'ar' => array( 4, 530, 'multiple' ),
-		'es' => array( 5, 500, 'multiple' ),
-		'ms' => array( 6, 300, 'asia' ),
-		'pt' => array( 7, 290, 'multiple' ),
-		'pt-br' => array( 7, 290, 'america' ),
-		'ru' => array( 8, 278, 'multiple' ),
-		'id' => array( 9, 250, 'asia' ),
-		'bn' => array( 10, 230, 'asia' ),
-		'fr' => array( 11, 200, 'multiple' ),
-		'de' => array( 12, 185, 'europe' ),
-		'ja' => array( 13, 132, 'asia' ),
-		'fa' => array( 14, 107, 'asia' ),
-		'pnb' => array( 15, 104, 'asia' ), // Most spoken variant
-		'tl' => array( 16, 90, 'asia' ),
-		'mr' => array( 17, 90, 'asia' ),
-		'vi' => array( 18, 80, 'asia' ),
-		'jv' => array( 19, 80, 'asia' ),
-		'te' => array( 20, 80, 'asia' ),
-		'ko' => array( 21, 78, 'asia' ),
-		'wuu' => array( 22, 77, 'asia' ),
-		'arz' => array( 23, 76, 'africa' ),
-		'th' => array( 24, 73, 'asia' ),
-		'yue' => array( 25, 71, 'asia' ),
-		'tr' => array( 26, 70, 'multiple' ),
-		'it' => array( 27, 70, 'europe' ),
-		'ta' => array( 28, 66, 'asia' ),
-		'ur' => array( 29, 60, 'asia' ),
-		'my' => array( 30, 52, 'asia' ),
-		'sw' => array( 31, 50, 'africa' ),
-		'nan' => array( 32, 49, 'asia' ),
-		'kn' => array( 33, 47, 'asia' ),
-		'gu' => array( 34, 46, 'asia' ),
-		'uk' => array( 35, 45, 'europe' ),
-		'pl' => array( 36, 43, 'europe' ),
-		'sd' => array( 37, 41, 'asia' ),
-		'ha' => array( 38, 39, 'africa' ),
-		'ml' => array( 39, 37, 'asia' ),
-		'gan-hans' => array( 40, 35, 'asia' ),
-		'gan-hant' => array( 40, 35, 'asia' ),
-		'hak' => array( 41, 34, 'asia' ),
-		'or' => array( 42, 31, 'asia' ),
-		'ne' => array( 43, 30, 'asia' ),
-		'ro' => array( 44, 28, 'europe' ),
-		'su' => array( 45, 27, 'asia' ),
-		'az' => array( 46, 27, 'asia' ),
-		'nl' => array( 47, 27, 'europe' ),
-		'zu' => array( 48, 26, 'africa' ),
-		'ps' => array( 49, 26, 'asia' ),
-		'ckb' => array( 50, 26, 'asia' ),
-		'ku-latn' => array( 50, 26, 'asia' ),
-	);
+	public $mostSpokenLanguages = [
+		'en' => [ 1, 1500, 'multiple' ],
+		'zh-hans' => [ 2, 1300, 'asia' ],
+		'zh-hant' => [ 2, 1300, 'asia' ],
+		'hi' => [ 3, 550, 'asia' ],
+		'ar' => [ 4, 530, 'multiple' ],
+		'es' => [ 5, 500, 'multiple' ],
+		'ms' => [ 6, 300, 'asia' ],
+		'pt' => [ 7, 290, 'multiple' ],
+		'pt-br' => [ 7, 290, 'america' ],
+		'ru' => [ 8, 278, 'multiple' ],
+		'id' => [ 9, 250, 'asia' ],
+		'bn' => [ 10, 230, 'asia' ],
+		'fr' => [ 11, 200, 'multiple' ],
+		'de' => [ 12, 185, 'europe' ],
+		'ja' => [ 13, 132, 'asia' ],
+		'fa' => [ 14, 107, 'asia' ],
+		'pnb' => [ 15, 104, 'asia' ], // Most spoken variant
+		'tl' => [ 16, 90, 'asia' ],
+		'mr' => [ 17, 90, 'asia' ],
+		'vi' => [ 18, 80, 'asia' ],
+		'jv' => [ 19, 80, 'asia' ],
+		'te' => [ 20, 80, 'asia' ],
+		'ko' => [ 21, 78, 'asia' ],
+		'wuu' => [ 22, 77, 'asia' ],
+		'arz' => [ 23, 76, 'africa' ],
+		'th' => [ 24, 73, 'asia' ],
+		'yue' => [ 25, 71, 'asia' ],
+		'tr' => [ 26, 70, 'multiple' ],
+		'it' => [ 27, 70, 'europe' ],
+		'ta' => [ 28, 66, 'asia' ],
+		'ur' => [ 29, 60, 'asia' ],
+		'my' => [ 30, 52, 'asia' ],
+		'sw' => [ 31, 50, 'africa' ],
+		'nan' => [ 32, 49, 'asia' ],
+		'kn' => [ 33, 47, 'asia' ],
+		'gu' => [ 34, 46, 'asia' ],
+		'uk' => [ 35, 45, 'europe' ],
+		'pl' => [ 36, 43, 'europe' ],
+		'sd' => [ 37, 41, 'asia' ],
+		'ha' => [ 38, 39, 'africa' ],
+		'ml' => [ 39, 37, 'asia' ],
+		'gan-hans' => [ 40, 35, 'asia' ],
+		'gan-hant' => [ 40, 35, 'asia' ],
+		'hak' => [ 41, 34, 'asia' ],
+		'or' => [ 42, 31, 'asia' ],
+		'ne' => [ 43, 30, 'asia' ],
+		'ro' => [ 44, 28, 'europe' ],
+		'su' => [ 45, 27, 'asia' ],
+		'az' => [ 46, 27, 'asia' ],
+		'nl' => [ 47, 27, 'europe' ],
+		'zu' => [ 48, 26, 'africa' ],
+		'ps' => [ 49, 26, 'asia' ],
+		'ckb' => [ 50, 26, 'asia' ],
+		'ku-latn' => [ 50, 26, 'asia' ],
+	];
 
 	/**
 	 * Variable with key-value pairs with a named index and an array of key-value
@@ -99,30 +99,30 @@ class GroupStatistics extends Maintenance {
 	 *
 	 * @todo Allow weighted reporting for all available languges.
 	 */
-	public $localisedWeights = array(
-		'wikimedia' => array(
+	public $localisedWeights = [
+		'wikimedia' => [
 			// 'core-0-mostused' => 40,
 			'core' => 50,
 			'ext-0-wikimedia' => 50
-		),
-		'fundraiser' => array(
+		],
+		'fundraiser' => [
 			'ext-di-di' => 16,
 			'ext-di-pfpg' => 84,
-		),
-		'mediawiki' => array(
+		],
+		'mediawiki' => [
 			// 'core-0-mostused' => 30,
 			'core' => 50,
 			'ext-0-wikimedia' => 25,
 			'ext-0-all' => 25
-		)
-	);
+		]
+	];
 
 	/**
 	 * Code map to map localisation codes to Wikimedia project codes. Only
 	 * exclusion and remapping is defined here. It is assumed that the first part
 	 * of the localisation code is the WMF project name otherwise (zh-hans -> zh).
 	 */
-	public $wikimediaCodeMap = array(
+	public $wikimediaCodeMap = [
 		// Codes containing a dash
 		'bat-smg' => 'bat-smg',
 		'cbk-zam' => 'cbk-zam',
@@ -186,7 +186,7 @@ class GroupStatistics extends Maintenance {
 		'zh-my' => '', // zh
 		'zh-tw' => '', // zh
 		'zh-yue' => '', // yue
-	);
+	];
 
 	public function __construct() {
 		parent::__construct();
@@ -288,7 +288,7 @@ class GroupStatistics extends Maintenance {
 				$out = new TranslateStatsOutput();
 		}
 
-		$skipLanguages = array();
+		$skipLanguages = [];
 		if ( $this->hasOption( 'skiplanguages' ) ) {
 			$skipLanguages = array_map(
 				'trim',
@@ -299,7 +299,7 @@ class GroupStatistics extends Maintenance {
 		$reportScore = false;
 		// Check if score should be reported and prepare weights
 		$most = $this->getOption( 'most' );
-		$weights = array();
+		$weights = [];
 		if ( $most && isset( $this->localisedWeights[$most] ) ) {
 			$reportScore = true;
 
@@ -319,7 +319,7 @@ class GroupStatistics extends Maintenance {
 		$wmfscore = $this->hasOption( 'wmfscore' );
 
 		// Get groups from input
-		$groups = array();
+		$groups = [];
 		if ( $reportScore ) {
 			$reqGroups = array_keys( $this->localisedWeights[$most] );
 		} elseif ( $wmfscore ) {
@@ -347,11 +347,11 @@ class GroupStatistics extends Maintenance {
 			$out = new CsvStatsOutput();
 			$reportScore = true;
 
-			$weights = array();
+			$weights = [];
 			foreach ( $this->localisedWeights['wikimedia'] as $weight ) {
 				$weights[] = $weight;
 			}
-			$wmfscores = array();
+			$wmfscores = [];
 		}
 
 		if ( !count( $groups ) ) {
@@ -428,13 +428,13 @@ class GroupStatistics extends Maintenance {
 			$out->blockend();
 		}
 
-		$rows = array();
+		$rows = [];
 		foreach ( $languages as $code => $name ) {
 			// Skip list
 			if ( in_array( $code, $skipLanguages ) ) {
 				continue;
 			}
-			$rows[$code] = array();
+			$rows[$code] = [];
 		}
 
 		foreach ( $groups as $groupName => $g ) {
@@ -463,10 +463,10 @@ class GroupStatistics extends Maintenance {
 				$translated = $stats[$code][MessageGroupStats::TRANSLATED];
 				$fuzzy = $stats[$code][MessageGroupStats::FUZZY];
 
-				$rows[$code][] = array( false, $translated, $total );
+				$rows[$code][] = [ false, $translated, $total ];
 
 				if ( $this->hasOption( 'fuzzy' ) ) {
-					$rows[$code][] = array( true, $fuzzy, $total );
+					$rows[$code][] = [ true, $fuzzy, $total ];
 				}
 			}
 
@@ -477,7 +477,7 @@ class GroupStatistics extends Maintenance {
 		$summarise = false;
 		if ( $this->hasOption( 'summary' ) ) {
 			$summarise = true;
-			$summary = array();
+			$summary = [];
 		}
 
 		foreach ( $languages as $code => $name ) {
@@ -579,7 +579,7 @@ class GroupStatistics extends Maintenance {
 						$newscore = $score;
 					}
 
-					$summary[$continent] = array( $newcount, $newscore );
+					$summary[$continent] = [ $newcount, $newscore ];
 				}
 
 				if ( $wmfscore ) {
@@ -598,9 +598,9 @@ class GroupStatistics extends Maintenance {
 						$tmpWmfScore = (int)$wmfscores[$wmfcode]['score'];
 						$tmpWmfCount = (int)$wmfscores[$wmfcode]['count'];
 						$score = ( ( $tmpWmfCount * $tmpWmfScore ) + (int)$score ) / $count;
-						$wmfscores[$wmfcode] = array( 'score' => $score, 'count' => $count );
+						$wmfscores[$wmfcode] = [ 'score' => $score, 'count' => $count ];
 					} else {
-						$wmfscores[$wmfcode] = array( 'score' => $score, 'count' => 1 );
+						$wmfscores[$wmfcode] = [ 'score' => $score, 'count' => 1 ];
 					}
 				} else {
 					$out->element( $score );
@@ -638,7 +638,7 @@ class GroupStatistics extends Maintenance {
 
 			ksort( $summary );
 
-			$totals = array( 0, 0 );
+			$totals = [ 0, 0 ];
 
 			foreach ( $summary as $key => $values ) {
 				$out->blockstart();

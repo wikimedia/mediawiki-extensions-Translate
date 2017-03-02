@@ -11,7 +11,7 @@ class ExternalMessageSourceStateComparator {
 	/** Process all languages supported by the message group */
 	const ALL_LANGUAGES = 'all languages';
 
-	protected $changes = array();
+	protected $changes = [];
 
 	/**
 	 * Finds changes in external sources compared to wiki state.
@@ -33,7 +33,7 @@ class ExternalMessageSourceStateComparator {
 	 * @return array array[language code][change type] = change.
 	 */
 	public function processGroup( FileBasedMessageGroup $group, $languages ) {
-		$this->changes = array();
+		$this->changes = [];
 
 		if ( $languages === self::ALL_LANGUAGES ) {
 			$languages = $group->getTranslatableLanguages();
@@ -212,9 +212,9 @@ class ExternalMessageSourceStateComparator {
 	}
 
 	protected function addChange( $type, $language, $key, $content ) {
-		$this->changes[$language][$type][] = array(
+		$this->changes[$language][$type][] = [
 			'key' => $key,
 			'content' => $content,
-		);
+		];
 	}
 }

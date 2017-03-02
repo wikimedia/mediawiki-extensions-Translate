@@ -19,7 +19,7 @@ class ApiTranslationAids extends ApiBase {
 		$title = Title::newFromText( $params['title'] );
 		if ( !$title ) {
 			if ( method_exists( $this, 'dieWithError' ) ) {
-				$this->dieWithError( array( 'apierror-invalidtitle', wfEscapeWikiText( $params['title'] ) ) );
+				$this->dieWithError( [ 'apierror-invalidtitle', wfEscapeWikiText( $params['title'] ) ] );
 			} else {
 				$this->dieUsage( 'Invalid title', 'invalidtitle' );
 			}
@@ -51,8 +51,8 @@ class ApiTranslationAids extends ApiBase {
 			}
 		}
 
-		$data = array();
-		$times = array();
+		$data = [];
+		$times = [];
 
 		$props = $params['prop'];
 		$aggregator = new QueryAggregator();
@@ -64,7 +64,7 @@ class ApiTranslationAids extends ApiBase {
 		$result = $this->getResult();
 
 		// Create list of aids, populate web services queries
-		$aids = array();
+		$aids = [];
 		foreach ( $props as $type ) {
 			// Do not proceed if translation aid is not supported for this message group
 			if ( !isset( $types[$type] ) ) {
@@ -94,7 +94,7 @@ class ApiTranslationAids extends ApiBase {
 			try {
 				$aid = $obj->getData();
 			} catch ( TranslationHelperException $e ) {
-				$aid = array( 'error' => $e->getMessage() );
+				$aid = [ 'error' => $e->getMessage() ];
 			}
 
 			if ( isset( $aid['**'] ) ) {
@@ -112,28 +112,28 @@ class ApiTranslationAids extends ApiBase {
 
 	public function getAllowedParams() {
 		$props = array_keys( TranslationAid::getTypes() );
-		Hooks::run( 'TranslateTranslationAids', array( &$props ) );
+		Hooks::run( 'TranslateTranslationAids', [ &$props ] );
 
-		return array(
-			'title' => array(
+		return [
+			'title' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'group' => array(
+			],
+			'group' => [
 				ApiBase::PARAM_TYPE => 'string',
-			),
-			'prop' => array(
+			],
+			'prop' => [
 				ApiBase::PARAM_DFLT => implode( '|', $props ),
 				ApiBase::PARAM_TYPE => $props,
 				ApiBase::PARAM_ISMULTI => true,
-			),
-		);
+			],
+		];
 	}
 
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=translationaids&title=MediaWiki:January/fi'
 				=> 'apihelp-translationaids-example-1',
-		);
+		];
 	}
 }

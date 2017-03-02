@@ -79,7 +79,7 @@ class FCFontFinder {
 		}
 
 		$pattern = '/^(.*?): "(.*)" "(.*)"$/';
-		$matches = array();
+		$matches = [];
 
 		if ( !preg_match( $pattern, $suggestion, $matches ) ) {
 			wfDebugLog( 'fcfont', "fc-match: return format not understood: $suggestion" );
@@ -119,11 +119,11 @@ class FCFontFinder {
 
 		wfDebugLog( 'fcfont', "fc-list got $count candidates; using $chosen" );
 
-		$data = array(
+		$data = [
 			'family' => $family,
 			'type' => $type,
 			'file' => $chosen,
-		);
+		];
 
 		$cache->set( $cachekey, $data, $timeout );
 

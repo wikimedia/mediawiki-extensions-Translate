@@ -11,24 +11,24 @@
  * @see MediaWikiExtensionFFS
  */
 class MediaWikiExtensionFFSTest extends MediaWikiTestCase {
-	protected $conf = array(
-		'BASIC' => array(
+	protected $conf = [
+		'BASIC' => [
 			'class' => 'MediaWikiExtensionMessageGroup',
 			'id' => 'test-id',
 			'label' => 'Test Label',
 			'namespace' => 'NS_MEDIAWIKI',
 			'description' => 'Test description',
-		),
-		'FILES' => array(
+		],
+		'FILES' => [
 			'class' => 'MediaWikiExtensionFFS',
-		),
-	);
+		],
+	];
 
 	protected function setUp() {
 		parent::setUp();
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgTranslateDocumentationLanguageCode' => 'qqq',
-		) );
+		] );
 	}
 
 	public function testWriteReal() {
@@ -74,13 +74,13 @@ class MediaWikiExtensionFFSTest extends MediaWikiTestCase {
 	}
 
 	public static function provideQuotableStrings() {
-		return array(
-			array( 'key', "'key'" ),
-			array( 'normal $1 variable', "'normal $1 variable'" ),
-			array( 'abnormal $foo variable', "'abnormal \$foo variable'" ),
-			array( 'quote " and quote \'', "'quote \" and quote \\''" ),
-			array( 'quote " and quote \' twice \'', "\"quote \\\" and quote ' twice '\"" ),
-		);
+		return [
+			[ 'key', "'key'" ],
+			[ 'normal $1 variable', "'normal $1 variable'" ],
+			[ 'abnormal $foo variable', "'abnormal \$foo variable'" ],
+			[ 'quote " and quote \'', "'quote \" and quote \\''" ],
+			[ 'quote " and quote \' twice \'', "\"quote \\\" and quote ' twice '\"" ],
+		];
 	}
 
 	/**
@@ -103,8 +103,8 @@ class MediaWikiExtensionFFSTest extends MediaWikiTestCase {
  */
 PHP;
 
-		return array(
-			array( $comment, array( 'Purodha', 'The Evil IP address' ) ),
-		);
+		return [
+			[ $comment, [ 'Purodha', 'The Evil IP address' ] ],
+		];
 	}
 }

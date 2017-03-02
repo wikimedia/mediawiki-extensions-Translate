@@ -44,11 +44,11 @@ $1
 XML;
 
 		$langs = Language::fetchLanguageNames( null, 'mw' );
-		$nodes = $edges = array();
+		$nodes = $edges = [];
 		foreach ( $langs as $code => $name ) {
 
 			$fallbacks = Language::getFallbacksFor( $code );
-			if ( $fallbacks === array( 'en' ) ) {
+			if ( $fallbacks === [ 'en' ] ) {
 				continue;
 			}
 
@@ -57,7 +57,7 @@ XML;
 			$prev = $code;
 			foreach ( $fallbacks as $fb ) {
 				$nodes[$fb] = $this->createNode( $fb );
-				$edges[$fb . $prev] = Xml::element( 'edge', array( 'source' => $prev, 'target' => $fb ) );
+				$edges[$fb . $prev] = Xml::element( 'edge', [ 'source' => $prev, 'target' => $fb ] );
 				$prev = $fb;
 			}
 		}
@@ -69,10 +69,10 @@ XML;
 
 	protected function createNode( $code ) {
 		return
-			Xml::openElement( 'node', array( 'id' => $code ) )
-			. Xml::openElement( 'data', array( 'key' => 'code' ) )
+			Xml::openElement( 'node', [ 'id' => $code ] )
+			. Xml::openElement( 'data', [ 'key' => 'code' ] )
 			. Xml::openElement( 'y:Shpapenode' )
-			. Xml::element( 'y:NodeLabel', array(), $code )
+			. Xml::element( 'y:NodeLabel', [], $code )
 			. Xml::closeElement( 'y:Shpapenode' )
 			. Xml::closeElement( 'data' )
 			. Xml::closeElement( 'node' );

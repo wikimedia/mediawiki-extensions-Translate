@@ -19,11 +19,11 @@ abstract class TMessage {
 	/// \string Committed in-file translation.
 	protected $infile;
 	/// \list{String} Message tags.
-	protected $tags = array();
+	protected $tags = [];
 	/// \array Message properties.
-	protected $props = array();
+	protected $props = [];
 	/// \list{String} Message reviewers.
-	protected $reviewers = array();
+	protected $reviewers = [];
 
 	/**
 	 * Creates new message object.
@@ -105,7 +105,7 @@ abstract class TMessage {
 
 	public function appendProperty( $key, $value ) {
 		if ( !isset( $this->props[$key] ) ) {
-			$this->props[$key] = array();
+			$this->props[$key] = [];
 		}
 		$this->props[$key][] = $value;
 	}
@@ -131,10 +131,10 @@ abstract class TMessage {
  */
 class ThinMessage extends TMessage {
 	// This maps properties to fields in the database result row
-	protected static $propertyMap = array(
+	protected static $propertyMap = [
 		'last-translator-text' => 'rev_user_text',
 		'last-translator-id' => 'rev_user',
-	);
+	];
 
 	/**
 	 * @var stdClass Database Result Row

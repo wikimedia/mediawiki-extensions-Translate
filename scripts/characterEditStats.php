@@ -48,7 +48,7 @@ class CharacterEditStats extends Maintenance {
 		$days = (int)$this->getOption( 'days', 30 );
 		$top = (int)$this->getOption( 'top', -1 );
 
-		$namespaces = array();
+		$namespaces = [];
 		if ( $this->hasOption( 'ns' ) ) {
 			$input = explode( ',', $this->getOption( 'ns' ) );
 
@@ -65,7 +65,7 @@ class CharacterEditStats extends Maintenance {
 		$rows = self::getRevisionsFromHistory( $days, $namespaces );
 
 		// Get counts for edits per language code after filtering out edits by FuzzyBot
-		$codes = array();
+		$codes = [];
 
 		foreach ( $rows as $_ ) {
 			// Filter out edits by $wgTranslateFuzzyBotName
@@ -113,17 +113,17 @@ class CharacterEditStats extends Maintenance {
 		$cutoff = $dbr->addQuotes( $dbr->timestamp( time() - $days * 24 * 3600 ) );
 
 		// The field renames are to be compatible with recentchanges table query
-		$fields = array(
+		$fields = [
 			'page_title as title',
 			'rev_user_text as user_text',
 			'rev_len as length',
-		);
-		$tables = array( 'revision', 'page' );
-		$conds = array(
+		];
+		$tables = [ 'revision', 'page' ];
+		$conds = [
 			"rev_timestamp > $cutoff",
 			'rev_page = page_id',
 			'page_namespace' => $namespaces,
-		);
+		];
 
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__ );
 		return iterator_to_array( $res );

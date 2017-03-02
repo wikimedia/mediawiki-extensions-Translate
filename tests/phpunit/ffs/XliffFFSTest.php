@@ -8,19 +8,19 @@
  */
 
 class XliffFFSTest extends MediaWikiTestCase {
-	protected $groupConfiguration = array(
-		'BASIC' => array(
+	protected $groupConfiguration = [
+		'BASIC' => [
 			'class' => 'FileBasedMessageGroup',
 			'id' => 'test-id',
 			'label' => 'Test Label',
 			'namespace' => 'NS_MEDIAWIKI',
 			'description' => 'Test description',
-		),
-		'FILES' => array(
+		],
+		'FILES' => [
 			'class' => 'XliffFFS',
 			'sourcePattern' => '',
-		),
-	);
+		],
+	];
 
 	public function testParsing() {
 		/** @var FileBasedMessageGroup $group */
@@ -29,21 +29,21 @@ class XliffFFSTest extends MediaWikiTestCase {
 
 		$file = file_get_contents( __DIR__ . '/../data/minimal.xlf' );
 		$parsed = $ffs->readFromVariable( $file, 'target' );
-		$expected = array(
+		$expected = [
 			'1' => 'Hei maailma',
 			'2' => TRANSLATE_FUZZY . 'Fuzzy translation',
 			'3' => 'Tämä on <g id="1" ctype="bold">paksu</g>.',
-		);
-		$expected = array( 'MESSAGES' => $expected );
+		];
+		$expected = [ 'MESSAGES' => $expected ];
 		$this->assertEquals( $expected, $parsed );
 
 		$parsed = $ffs->readFromVariable( $file, 'source' );
-		$expected = array(
+		$expected = [
 			'1' => 'Hello world',
 			'2' => 'Fuzzy message',
 			'3' => 'This is <g id="1" ctype="bold">bold</g>.',
-		);
-		$expected = array( 'MESSAGES' => $expected );
+		];
+		$expected = [ 'MESSAGES' => $expected ];
 		$this->assertEquals( $expected, $parsed );
 	}
 }

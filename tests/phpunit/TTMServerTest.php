@@ -16,15 +16,15 @@ class TTMServerTest extends MediaWikiTestCase {
 		$this->config = $wgTranslateTranslationServices;
 		parent::setUp();
 
-		$wgTranslateTranslationServices = array();
-		$wgTranslateTranslationServices['localtm'] = array(
+		$wgTranslateTranslationServices = [];
+		$wgTranslateTranslationServices['localtm'] = [
 			'url' => 'http://example.com/sandwiki/api.php',
 			'displayname' => 'example.com',
 			'cutoff' => 0.75,
 			'type' => 'ttmserver',
-		);
+		];
 
-		$wgTranslateTranslationServices['apitm'] = array(
+		$wgTranslateTranslationServices['apitm'] = [
 			'url' => 'http://example.com/w/api.php',
 			'displayname' => 'example.com',
 			'cutoff' => 0.75,
@@ -32,7 +32,7 @@ class TTMServerTest extends MediaWikiTestCase {
 			'timeout-async' => 4,
 			'type' => 'ttmserver',
 			'class' => 'RemoteTTMServer',
-		);
+		];
 	}
 
 	protected function tearDown() {
@@ -50,12 +50,12 @@ class TTMServerTest extends MediaWikiTestCase {
 		);
 		global $wgTranslateTranslationServices,
 			$wgTranslateTranslationDefaultService;
-		$wgTranslateTranslationServices[$wgTranslateTranslationDefaultService] = array(
+		$wgTranslateTranslationServices[$wgTranslateTranslationDefaultService] = [
 			'database' => false, // Passed to wfGetDB
 			'cutoff' => 0.75,
 			'type' => 'ttmserver',
 			'public' => false,
-		);
+		];
 		$server = TTMServer::primary();
 		$this->assertEquals(
 			'DatabaseTTMServer',
@@ -68,7 +68,7 @@ class TTMServerTest extends MediaWikiTestCase {
 	public function testFakeTTMServer() {
 		$server = new FakeTTMServer();
 		$this->assertEquals(
-			array(),
+			[],
 			$server->query( 'en', 'fi', 'daa' ),
 			'FakeTTMServer returns no suggestions for all queries'
 		);
@@ -84,16 +84,16 @@ class TTMServerTest extends MediaWikiTestCase {
 
 	public function testMirrorsConfig() {
 		global $wgTranslateTranslationServices;
-		$wgTranslateTranslationServices['primary'] = array(
+		$wgTranslateTranslationServices['primary'] = [
 			'class' => 'ElasticSearchTTMServer',
-			'mirrors' => ['secondary']
-		);
-		$wgTranslateTranslationServices['secondary'] = array(
+			'mirrors' => [ 'secondary' ]
+		];
+		$wgTranslateTranslationServices['secondary'] = [
 			'class' => 'ElasticSearchTTMServer',
-			'mirrors' => ['primary', 'unknown']
-		);
+			'mirrors' => [ 'primary', 'unknown' ]
+		];
 		$primary = TTMServer::factory( $wgTranslateTranslationServices['primary'] );
-		$this->assertEquals( ['secondary'], $primary->getMirrors() );
+		$this->assertEquals( [ 'secondary' ], $primary->getMirrors() );
 		$secondary = TTMServer::factory( $wgTranslateTranslationServices['secondary'] );
 		$this->setExpectedException( TTMServerException::class );
 		$secondary->getMirrors();

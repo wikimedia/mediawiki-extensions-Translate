@@ -56,7 +56,7 @@ class AmdFFS extends SimpleFFS {
 	}
 
 	public function getFileExtensions() {
-		return array( '.js' );
+		return [ '.js' ];
 	}
 
 	/**
@@ -67,7 +67,7 @@ class AmdFFS extends SimpleFFS {
 		$authors = AmdFFS::extractAuthors( $data );
 		$data = AmdFFS::extractMessagePart( $data );
 		$messages = (array) FormatJson::decode( $data, /*as array*/true );
-		$metadata = array();
+		$metadata = [];
 
 		// Take care of regular language bundles, as well as the root bundle.
 		if ( isset( $messages['root'] ) ) {
@@ -76,11 +76,11 @@ class AmdFFS extends SimpleFFS {
 			$messages = $this->group->getMangler()->mangle( $messages );
 		}
 
-		return array(
+		return [
 			'MESSAGES' => $messages,
 			'AUTHORS' => $authors,
 			'METADATA' => $metadata,
-		);
+		];
 	}
 
 	/**
@@ -88,7 +88,7 @@ class AmdFFS extends SimpleFFS {
 	 * @return string
 	 */
 	protected function writeReal( MessageCollection $collection ) {
-		$messages = array();
+		$messages = [];
 		$mangler = $this->group->getMangler();
 
 		/** @var ThinMessage $m */

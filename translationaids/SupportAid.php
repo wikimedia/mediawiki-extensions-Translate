@@ -16,9 +16,9 @@
  */
 class SupportAid extends TranslationAid {
 	public function getData() {
-		return array(
+		return [
 			'url' => SupportAid::getSupportUrl( $this->handle->getTitle() ),
-		);
+		];
 	}
 
 	/**
@@ -43,7 +43,7 @@ class SupportAid extends TranslationAid {
 		}
 
 		// Preprocess params
-		$params = array();
+		$params = [];
 		if ( isset( $config['params'] ) ) {
 			foreach ( $config['params'] as $key => $value ) {
 				$params[$key] = str_replace( '%MESSAGE%', $title->getPrefixedText(), $value );

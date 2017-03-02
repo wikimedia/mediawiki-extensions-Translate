@@ -16,13 +16,13 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		parent::setUp();
 
 		global $wgHooks;
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgHooks' => $wgHooks,
 			'wgTranslateDocumentationLanguageCode' => 'qqq',
-			'wgTranslateTranslationServices' => array(),
-			'wgTranslateMessageNamespaces' => array( NS_MEDIAWIKI ),
-		) );
-		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
+			'wgTranslateTranslationServices' => [],
+			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+		] );
+		$wgHooks['TranslatePostInitGroups'] = [ [ $this, 'getTestGroups' ] ];
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( wfGetCache( 'hash' ) );
@@ -33,10 +33,10 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 	}
 
 	public function getTestGroups( &$list ) {
-		$messages = array(
+		$messages = [
 			'ugakey1' => 'value1',
 			'ugakey2' => 'value2',
-		);
+		];
 
 		$list['testgroup'] = new MockWikiMessageGroup( 'testgroup', $messages );
 
@@ -51,7 +51,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 
 		$wikipage->doEditContent( $content, __METHOD__, 0, false, $user );
 		$this->assertEquals(
-			array(),
+			[],
 			$title->getParentCategories(),
 			'translation of known message'
 		);
@@ -62,7 +62,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 
 		$wikipage->doEditContent( $content, __METHOD__, 0, false, $user );
 		$this->assertEquals(
-			array( 'Category:Shouldbe' => 'MediaWiki:ugakey2/qqq' ),
+			[ 'Category:Shouldbe' => 'MediaWiki:ugakey2/qqq' ],
 			$title->getParentCategories(),
 			'message docs'
 		);
@@ -72,17 +72,17 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$content = ContentHandler::makeContent( '[[Category:Shouldbealso]]', $title );
 
 		$wikipage->doEditContent( $content, __METHOD__, 0, false, $user );
-		$this->assertEquals( array(), $title->getParentCategories(), 'unknown message' );
+		$this->assertEquals( [], $title->getParentCategories(), 'unknown message' );
 	}
 
 	public function testSearchProfile() {
-		$profiles = array(
-			'files' => array(),
-			'all' => array(),
-			'advanced' => array()
-		);
+		$profiles = [
+			'files' => [],
+			'all' => [],
+			'advanced' => []
+		];
 
-		$expected = array( 'files', 'translation', 'all', 'advanced' );
+		$expected = [ 'files', 'translation', 'all', 'advanced' ];
 
 		TranslateHooks::searchProfile( $profiles );
 

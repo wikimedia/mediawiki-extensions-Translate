@@ -28,13 +28,13 @@ class RemoteTTMServerWebService extends TranslationWebService {
 	}
 
 	protected function getQuery( $text, $from, $to ) {
-		$params = array(
+		$params = [
 			'format' => 'json',
 			'action' => 'ttmserver',
 			'sourcelanguage' => $from,
 			'targetlanguage' => $to,
 			'text' => $text
-		);
+		];
 
 		if ( isset( $this->config['service'] ) ) {
 			$params['service'] = $this->config['service'];

@@ -23,7 +23,7 @@ class AndroidXmlFFS extends SimpleFFS {
 	}
 
 	public function getFileExtensions() {
-		return array( '.xml' );
+		return [ '.xml' ];
 	}
 
 	/**
@@ -33,7 +33,7 @@ class AndroidXmlFFS extends SimpleFFS {
 	public function readFromVariable( $data ) {
 		$reader = new SimpleXMLElement( $data );
 
-		$messages = array();
+		$messages = [];
 		$mangler = $this->group->getMangler();
 
 		/** @var SimpleXMLElement $element */
@@ -43,7 +43,7 @@ class AndroidXmlFFS extends SimpleFFS {
 			if ( $element->getName() === 'string' ) {
 				$value = $this->readElementContents( $element );
 			} elseif ( $element->getName() === 'plurals' ) {
-				$forms = array();
+				$forms = [];
 				foreach ( $element as $item ) {
 					$forms[(string)$item['quantity']] = $this->readElementContents( $item );
 				}
@@ -60,10 +60,10 @@ class AndroidXmlFFS extends SimpleFFS {
 			$messages[$key] = $value;
 		}
 
-		return array(
-			'AUTHORS' => array(), // @todo
+		return [
+			'AUTHORS' => [], // @todo
 			'MESSAGES' => $mangler->mangle( $messages ),
-		);
+		];
 	}
 
 	protected function readElementContents( $element ) {

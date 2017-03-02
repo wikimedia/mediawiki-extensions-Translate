@@ -240,7 +240,7 @@ class PageTranslationHooks {
 		// This should do the same thing for now.
 		$sourceLanguage = $pageTitle->getPageLanguage()->getCode();
 
-		$languages = array();
+		$languages = [];
 		foreach ( $status as $code => $percent ) {
 			// Get autonyms (null)
 			$name = TranslateUtils::getLanguageName( $code, null );
@@ -251,7 +251,7 @@ class PageTranslationHooks {
 			$targetTitleString = $pageTitle->getDBkey() . $suffix;
 			$subpage = Title::makeTitle( $pageTitle->getNamespace(), $targetTitleString );
 
-			$classes = array();
+			$classes = [];
 			if ( $code === $userLangCode ) {
 				$classes[] = 'mw-pt-languages-ui';
 			}
@@ -259,7 +259,7 @@ class PageTranslationHooks {
 			if ( $currentTitle->equals( $subpage ) ) {
 				$classes[] = 'mw-pt-languages-selected';
 				$classes = array_merge( $classes, self::tpProgressIcon( $percent ) );
-				$name = Html::rawElement( 'span', array( 'class' => $classes ), $name );
+				$name = Html::rawElement( 'span', [ 'class' => $classes ], $name );
 			} elseif ( $subpage->isKnown() ) {
 				$pagename = $page->getPageDisplayTitle( $code );
 				if ( !is_string( $pagename ) ) {
@@ -273,10 +273,10 @@ class PageTranslationHooks {
 					->params( $pagename )
 					->numParams( 100 * $percent )
 					->text();
-				$attribs = array(
+				$attribs = [
 					'title' => $title,
 					'class' => $classes,
-				);
+				];
 
 				$name = Linker::linkKnown( $subpage, $name, $attribs );
 			} else {
@@ -284,17 +284,17 @@ class PageTranslationHooks {
 				 * but translation does not yet exists, link directly to the
 				 * translation view. */
 				$specialTranslateTitle = SpecialPage::getTitleFor( 'Translate' );
-				$params = array(
+				$params = [
 					'group' => $page->getMessageGroupId(),
 					'language' => $code,
 					'task' => 'view'
-				);
+				];
 
 				$classes[] = 'new';  // For red link color
-				$attribs = array(
+				$attribs = [
 					'title' => wfMessage( 'tpt-languages-zero' )->inLanguage( $userLang )->text(),
 					'class' => $classes,
-				);
+				];
 				$name = Linker::linkKnown( $specialTranslateTitle, $name, $attribs, $params );
 			}
 
@@ -307,17 +307,17 @@ class PageTranslationHooks {
 		$sep .= $userLang->getDirMark();
 		$languages = implode( $sep, $languages );
 
-		$out = Html::openElement( 'div', array(
+		$out = Html::openElement( 'div', [
 			'class' => 'mw-pt-languages noprint',
 			'lang' => $userLang->getHtmlCode(),
 			'dir' => $userLang->getDir()
-		) );
-		$out .= Html::rawElement( 'div', array( 'class' => 'mw-pt-languages-label' ),
+		] );
+		$out .= Html::rawElement( 'div', [ 'class' => 'mw-pt-languages-label' ],
 			wfMessage( 'tpt-languages-legend' )->inLanguage( $userLang )->escaped()
 		);
 		$out .= Html::rawElement(
 			'div',
-			array( 'class' => 'mw-pt-languages-list autonym' ),
+			[ 'class' => 'mw-pt-languages-list autonym' ],
 			$languages
 		);
 		$out .= Html::closeElement( 'div' );
@@ -334,7 +334,7 @@ class PageTranslationHooks {
 	 * @return string[]
 	 */
 	protected static function tpProgressIcon( $percent ) {
-		$classes = array( 'mw-pt-progress' );
+		$classes = [ 'mw-pt-progress' ];
 		$percent *= 100;
 		if ( $percent < 20 ) {
 			$classes[] = 'mw-pt-progress--stub';
@@ -369,7 +369,7 @@ class PageTranslationHooks {
 			// $msg is an array containing a message key followed by any parameters.
 			// @todo Use Message object instead.
 
-			call_user_func_array( array( $status, 'fatal' ), $msg );
+			call_user_func_array( [ $status, 'fatal' ], $msg );
 		}
 
 		return true;
@@ -417,7 +417,7 @@ class PageTranslationHooks {
 		try {
 			$page->getParse();
 		} catch ( TPException $e ) {
-			call_user_func_array( array( $status, 'fatal' ), $e->getMsg() );
+			call_user_func_array( [ $status, 'fatal' ], $e->getMsg() );
 
 			return false;
 		}
@@ -483,10 +483,10 @@ class PageTranslationHooks {
 		$dbw = wfGetDB( DB_MASTER );
 		$table = 'revision';
 		$field = 'rev_text_id';
-		$conds = array(
+		$conds = [
 			'rev_page' => $rev->getPage(),
 			'rev_id' => $oldRevId,
-		);
+		];
 		// FIXME: optimize away this query. Bug T38588.
 		$oldTextId = $dbw->selectField( $table, $field, $conds, __METHOD__ );
 
@@ -525,7 +525,7 @@ class PageTranslationHooks {
 
 		if ( !$handle->isValid() ) {
 			// Don't allow editing invalid messages that do not belong to any translatable page
-			$result = array( 'tpt-unknown-page' );
+			$result = [ 'tpt-unknown-page' ];
 			return false;
 		}
 
@@ -549,7 +549,7 @@ class PageTranslationHooks {
 
 		// Allow adding message documentation even when translation is restricted
 		if ( $handle->getCode() === $wgTranslateDocumentationLanguageCode ) {
-			return array();
+			return [];
 		}
 
 		// Get the primary group id
@@ -559,7 +559,7 @@ class PageTranslationHooks {
 		// Check if anything is prevented for the group in the first place
 		$force = TranslateMetadata::get( $groupId, 'priorityforce' );
 		if ( $force !== 'on' ) {
-			return array();
+			return [];
 		}
 
 		// And finally check whether the language is not included in whitelist
@@ -568,10 +568,10 @@ class PageTranslationHooks {
 		if ( !isset( $filter[$handle->getCode()] ) ) {
 			// @todo Default reason if none provided
 			$reason = TranslateMetadata::get( $groupId, 'priorityreason' );
-			return array( 'tpt-translation-restricted', $reason );
+			return [ 'tpt-translation-restricted', $reason ];
 		}
 
-		return array();
+		return [];
 	}
 
 	/**
@@ -583,10 +583,10 @@ class PageTranslationHooks {
 			return true;
 		}
 
-		$whitelist = array(
+		$whitelist = [
 			'read', 'delete', 'undelete', 'deletedtext', 'deletedhistory',
 			'review', // FlaggedRevs
-		);
+		];
 		if ( in_array( $action, $whitelist ) ) {
 			return true;
 		}
@@ -594,12 +594,12 @@ class PageTranslationHooks {
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( $page !== false && $page->getMarkedTag() ) {
 			list( , $code ) = TranslateUtils::figureMessage( $title->getText() );
-			$result = array(
+			$result = [
 				'tpt-target-page',
 				':' . $page->getTitle()->getPrefixedText(),
 				// This url shouldn't get cached
 				wfExpandUrl( $page->getTranslationUrl( $code ) )
-			);
+			];
 
 			return false;
 		}
@@ -693,23 +693,23 @@ class PageTranslationHooks {
 		$ready = $page->getReadyTag();
 		$latest = $title->getLatestRevID();
 
-		$actions = array();
+		$actions = [];
 		if ( $marked && $context->getUser()->isAllowed( 'translate' ) ) {
 			$actions[] =  self::getTranslateLink( $context, $page, $language->getCode() );
 		}
 
 		$hasChanges = $ready === $latest && $marked !== $latest;
 		if ( $hasChanges ) {
-			$diffUrl = $title->getFullURL( array( 'oldid' => $marked, 'diff' => $latest ) );
+			$diffUrl = $title->getFullURL( [ 'oldid' => $marked, 'diff' => $latest ] );
 
 			if ( $context->getUser()->isAllowed( 'pagetranslation' ) ) {
 				$pageTranslation = SpecialPage::getTitleFor( 'PageTranslation' );
-				$params = array( 'target' => $title->getPrefixedText(), 'do' => 'mark' );
+				$params = [ 'target' => $title->getPrefixedText(), 'do' => 'mark' ];
 
 				if ( $marked === false ) {
 					// This page has never been marked
 					$linkDesc = $context->msg( 'translate-tag-markthis' )->escaped();
-					$actions[] = Linker::linkKnown( $pageTranslation, $linkDesc, array(), $params );
+					$actions[] = Linker::linkKnown( $pageTranslation, $linkDesc, [], $params );
 				} else {
 					$markUrl = $pageTranslation->getFullURL( $params );
 					$actions[] = $context->msg( 'translate-tag-markthisagain', $diffUrl, $markUrl )
@@ -726,11 +726,11 @@ class PageTranslationHooks {
 
 		$header = Html::rawElement(
 			'div',
-			array(
+			[
 				'class' => 'mw-pt-translate-header noprint nomobile',
 				'dir' => $language->getDir(),
 				'lang' => $language->getHtmlCode(),
-			),
+			],
 			$language->semicolonList( $actions )
 		) . Html::element( 'hr' );
 
@@ -743,13 +743,13 @@ class PageTranslationHooks {
 		return Linker::linkKnown(
 				SpecialPage::getTitleFor( 'Translate' ),
 				$context->msg( 'translate-tag-translate-link-desc' )->escaped(),
-				array(),
-				array(
+				[],
+				[
 					'group' => $page->getMessageGroupId(),
 					'language' => $langCode,
 					'action' => 'page',
 					'filter' => '',
-				)
+				]
 			);
 	}
 
@@ -789,11 +789,11 @@ class PageTranslationHooks {
 
 		$header = Html::rawElement(
 			'div',
-			array(
+			[
 				'class' => 'mw-pt-translate-header noprint',
 				'dir' => $language->getDir(),
 				'lang' => $language->getHtmlCode(),
-			),
+			],
 			$msg
 		) . Html::element( 'hr' );
 
@@ -806,7 +806,7 @@ class PageTranslationHooks {
 			if ( $stats[MessageGroupStats::FUZZY] ) {
 				// Only show if there is fuzzy messages
 				$wrap = '<div class="mw-pt-translate-header"><span class="mw-translate-fuzzy">$1</span></div>';
-				$output->wrapWikiMsg( $wrap, array( 'tpt-translation-intro-fuzzy' ) );
+				$output->wrapWikiMsg( $wrap, [ 'tpt-translation-intro-fuzzy' ] );
 			}
 		}
 	}
@@ -828,7 +828,7 @@ class PageTranslationHooks {
 		$key = wfMemcKey( 'pt-lock', sha1( $title->getPrefixedText() ) );
 		// At least memcached mangles true to "1"
 		if ( $cache->get( $key ) !== false ) {
-			$result = array( 'pt-locked-page' );
+			$result = [ 'pt-locked-page' ];
 
 			return false;
 		}
@@ -935,7 +935,7 @@ class PageTranslationHooks {
 		}
 
 		$groupLast = null;
-		foreach ( array( $ot, $nt ) as $title ) {
+		foreach ( [ $ot, $nt ] as $title ) {
 			$handle = new MessageHandle( $title );
 			if ( !$handle->isValid() ) {
 				continue;
@@ -999,7 +999,7 @@ class PageTranslationHooks {
 		// version that is after all the deletions has been done. This allows us to do just one edit
 		// per translation page after the current deletions has been done. This is sort of hackish
 		// but this is better user experience and is also more efficent.
-		static $queuedPages = array();
+		static $queuedPages = [];
 		$target = $group->getTitle();
 		$langCode = $handle->getCode();
 		$targetPage = $target->getSubpage( $langCode )->getPrefixedText();

@@ -18,7 +18,7 @@ class PageTranslationParserTest extends MediaWikiTestCase {
 		$dir = __DIR__;
 		$testFiles = glob( "$dir/pagetranslation/*.ptfile" );
 		foreach ( $testFiles as $i => $file ) {
-			$testFiles[$i] = array( $file );
+			$testFiles[$i] = [ $file ];
 		}
 
 		return $testFiles;
@@ -55,7 +55,7 @@ class PageTranslationParserTest extends MediaWikiTestCase {
 		}
 
 		if ( file_exists( "$pattern.pttarget" ) ) {
-			$target = $parse->getTranslationPageText( array() );
+			$target = $parse->getTranslationPageText( [] );
 			$this->assertEquals( file_get_contents( "$pattern.pttarget" ), $target );
 		}
 

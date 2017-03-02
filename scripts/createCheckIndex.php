@@ -87,7 +87,7 @@ class CreateCheckIndex extends Maintenance {
 			foreach ( $langCodes as $code ) {
 				$this->output( "$code ", $id );
 
-				$problematic = array();
+				$problematic = [];
 
 				$collection->resetForNewLanguage( $code );
 				$collection->loadTranslations();
@@ -105,7 +105,7 @@ class CreateCheckIndex extends Maintenance {
 						}
 
 						// Add it to the array
-						$problematic[] = array( $g->namespaces[0], "$key/$code" );
+						$problematic[] = [ $g->namespaces[0], "$key/$code" ];
 					}
 				}
 
@@ -123,16 +123,16 @@ class CreateCheckIndex extends Maintenance {
 		foreach ( $problematic as $p ) {
 			$title = Title::makeTitleSafe( $p[0], $p[1] );
 			$titleText = $title->getDBkey();
-			$res = $dbw->select( 'page', array( 'page_id', 'page_latest' ),
-				array( 'page_namespace' => $p[0], 'page_title' => $titleText ), __METHOD__ );
+			$res = $dbw->select( 'page', [ 'page_id', 'page_latest' ],
+				[ 'page_namespace' => $p[0], 'page_title' => $titleText ], __METHOD__ );
 
-			$inserts = array();
+			$inserts = [];
 			foreach ( $res as $r ) {
-				$inserts = array(
+				$inserts = [
 					'rt_page' => $r->page_id,
 					'rt_revision' => $r->page_latest,
 					'rt_type' => RevTag::getType( 'fuzzy' )
-				);
+				];
 			}
 			$dbw->replace( 'revtag', 'rt_type_page_revision', $inserts, __METHOD__ );
 		}

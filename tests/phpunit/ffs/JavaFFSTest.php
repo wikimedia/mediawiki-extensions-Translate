@@ -10,18 +10,18 @@
 
 class JavaFFSTest extends MediaWikiTestCase {
 
-	protected $groupConfiguration = array(
-		'BASIC' => array(
+	protected $groupConfiguration = [
+		'BASIC' => [
 			'class' => 'FileBasedMessageGroup',
 			'id' => 'test-id',
 			'label' => 'Test Label',
 			'namespace' => 'NS_MEDIAWIKI',
 			'description' => 'Test description',
-		),
-		'FILES' => array(
+		],
+		'FILES' => [
 			'class' => 'JavaFFS',
-		),
-	);
+		],
+	];
 
 	public function testParsing() {
 		$file =
@@ -45,15 +45,15 @@ PROPERTIES;
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new JavaFFS( $group );
 		$parsed = $ffs->readFromVariable( $file );
-		$expected = array(
+		$expected = [
 			'website' => '<nowiki>http://en.wikipedia.org/</nowiki>',
 			'language' => 'English',
 			'message' => 'Welcome to Wikipedia!',
 			'key with spaces' => 'Value that can be looked up with "key with spaces".',
 			// We expect this one to be mangled for storage
 			'key-with-=7Bcurlies=7D' => 'Value that can be looked up with "key-with-{curlies}".',
-		);
-		$expected = array( 'MESSAGES' => $expected, 'AUTHORS' => array() );
+		];
+		$expected = [ 'MESSAGES' => $expected, 'AUTHORS' => [] ];
 		$this->assertEquals( $expected, $parsed );
 	}
 
@@ -71,21 +71,21 @@ PROPERTIES;
 	}
 
 	public function rowValuesProvider() {
-		return array(
-			array( 'key', '=', 'value', 'simple row' ),
-			array( 'key', ':', 'value', 'row with different sep' ),
-			array( 'key', '=', 'val=ue', 'row with sep inside value' ),
-			array( 'k=ey', '=', 'value', 'row with sep inside key' ),
-			array( '!key', '=', 'value', 'row with ! at the beginning of key' ),
-			array( 'k!ey', '=', 'value', 'row with ! inside key' ),
-			array( '#key', '=', 'value', 'row with # at the beginning of key' ),
-			array( 'k#ey', '=', 'value', 'row with # inside key' ),
-			array( 'k{ey}', '=', 'value', 'row with { and } inside key' ),
-			array( 'k\\tey', '=', 'value\\', 'row with escapes' ),
-			array( '01234', '=', '13.34', 'row with numbers' ),
-			array( '\\n\\tкая', '=', 'кая', 'row with annoying characteres' ),
-			array( '=', '=', '', 'row with empty value' ),
-			array( '#k   e\\=y#', '=', '=v!\\=alue\\ \\\\', 'complex row' ),
-		);
+		return [
+			[ 'key', '=', 'value', 'simple row' ],
+			[ 'key', ':', 'value', 'row with different sep' ],
+			[ 'key', '=', 'val=ue', 'row with sep inside value' ],
+			[ 'k=ey', '=', 'value', 'row with sep inside key' ],
+			[ '!key', '=', 'value', 'row with ! at the beginning of key' ],
+			[ 'k!ey', '=', 'value', 'row with ! inside key' ],
+			[ '#key', '=', 'value', 'row with # at the beginning of key' ],
+			[ 'k#ey', '=', 'value', 'row with # inside key' ],
+			[ 'k{ey}', '=', 'value', 'row with { and } inside key' ],
+			[ 'k\\tey', '=', 'value\\', 'row with escapes' ],
+			[ '01234', '=', '13.34', 'row with numbers' ],
+			[ '\\n\\tкая', '=', 'кая', 'row with annoying characteres' ],
+			[ '=', '=', '', 'row with empty value' ],
+			[ '#k   e\\=y#', '=', '=v!\\=alue\\ \\\\', 'complex row' ],
+		];
 	}
 }

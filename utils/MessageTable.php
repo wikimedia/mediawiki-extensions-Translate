@@ -34,11 +34,11 @@ class MessageTable {
 	/**
 	 * @var array
 	 */
-	protected $headers = array(
-		'table' => array( 'msg', 'allmessagesname' ),
-		'current' => array( 'msg', 'allmessagescurrent' ),
-		'default' => array( 'msg', 'allmessagesdefault' ),
-	);
+	protected $headers = [
+		'table' => [ 'msg', 'allmessagesname' ],
+		'current' => [ 'msg', 'allmessagescurrent' ],
+		'default' => [ 'msg', 'allmessagesdefault' ],
+	];
 
 	/**
 	 * Use this rather than the constructor directly
@@ -58,7 +58,7 @@ class MessageTable {
 		$table = new self( $collection, $group );
 		$table->setContext( $context );
 
-		Hooks::run( 'TranslateMessageTableInit', array( &$table, $context, $collection, $group ) );
+		Hooks::run( 'TranslateMessageTableInit', [ &$table, $context, $collection, $group ] );
 
 		return $table;
 	}
@@ -89,7 +89,7 @@ class MessageTable {
 			throw new MWException( "Unexpected type $type" );
 		}
 
-		$this->headers[$type] = array( 'msg', $value );
+		$this->headers[$type] = [ 'msg', $value ];
 	}
 
 	public function setHeaderText( $type, $value ) {
@@ -97,30 +97,30 @@ class MessageTable {
 			throw new MWException( "Unexpected type $type" );
 		}
 
-		$this->headers[$type] = array( 'raw', htmlspecialchars( $value ) );
+		$this->headers[$type] = [ 'raw', htmlspecialchars( $value ) ];
 	}
 
 	public function includeAssets() {
 		TranslationHelpers::addModules( $this->context->getOutput() );
-		$pages = array();
+		$pages = [];
 
 		foreach ( $this->collection->getTitles() as $title ) {
 			$pages[] = $title->getPrefixedDBkey();
 		}
 
-		$vars = array( 'trlKeys' => $pages );
+		$vars = [ 'trlKeys' => $pages ];
 		$this->context->getOutput()->addScript( Skin::makeVariablesScript( $vars ) );
 	}
 
 	public function header() {
-		$tableheader = Xml::openElement( 'table', array(
+		$tableheader = Xml::openElement( 'table', [
 			'class' => 'mw-sp-translate-table'
-		) );
+		] );
 
 		if ( $this->reviewMode ) {
 			$tableheader .= Xml::openElement( 'tr' );
 			$tableheader .= Xml::element( 'th',
-				array( 'rowspan' => '2' ),
+				[ 'rowspan' => '2' ],
 				$this->headerText( 'table' )
 			);
 			$tableheader .= Xml::tags( 'th', null, $this->headerText( 'default' ) );
@@ -156,7 +156,7 @@ class MessageTable {
 		 * @var TMessage $m
 		 */
 		foreach ( $this->collection as $key => $m ) {
-			$tools = array();
+			$tools = [];
 			/**
 			 * @var Title $title
 			 */
@@ -177,7 +177,7 @@ class MessageTable {
 
 			Hooks::run(
 				'TranslateFormatMessageBeforeTable',
-				array( &$message, $m, $this->group, $targetLang, &$extraAttribs )
+				[ &$message, $m, $this->group, $targetLang, &$extraAttribs ]
 			);
 
 			// Using Html::element( a ) because Linker::link is memory hog.
@@ -187,35 +187,35 @@ class MessageTable {
 				$title->getPrefixedText(),
 				-35
 			) );
-			$linkAttribs = array(
-				'href' => $title->getLocalURL( array( 'action' => 'edit' ) ),
-			);
+			$linkAttribs = [
+				'href' => $title->getLocalURL( [ 'action' => 'edit' ] ),
+			];
 			$linkAttribs += TranslationEditPage::jsEdit( $title, $this->group->getId() );
 
 			$tools['edit'] = Html::element( 'a', $linkAttribs, $niceTitle );
 
 			$anchor = 'msg_' . $key;
-			$anchor = Xml::element( 'a', array( 'id' => $anchor, 'href' => "#$anchor" ), '↓' );
+			$anchor = Xml::element( 'a', [ 'id' => $anchor, 'href' => "#$anchor" ], '↓' );
 
 			$extra = '';
 			if ( $m->hasTag( 'optional' ) ) {
 				$extra = '<br />' . $optional;
 			}
 
-			$tqeData = $extraAttribs + array(
+			$tqeData = $extraAttribs + [
 				'data-title' => $title->getPrefixedText(),
 				'data-group' => $this->group->getId(),
 				'id' => 'tqe-anchor-' . substr( sha1( $title->getPrefixedText() ), 0, 12 ),
 				'class' => 'tqe-inlineeditable ' . ( $hasTranslation ? 'translated' : 'untranslated' )
-			);
+			];
 
 			$button = $this->getReviewButton( $m );
 			$status = $this->getReviewStatus( $m );
 			$leftColumn = $button . $anchor . $tools['edit'] . $extra . $status;
 
 			if ( $this->reviewMode ) {
-				$output .= Xml::tags( 'tr', array( 'class' => 'orig' ),
-					Xml::tags( 'td', array( 'rowspan' => '2' ), $leftColumn ) .
+				$output .= Xml::tags( 'tr', [ 'class' => 'orig' ],
+					Xml::tags( 'td', [ 'rowspan' => '2' ], $leftColumn ) .
 						Xml::tags( 'td', self::getLanguageAttributes( $sourceLang ),
 							TranslateUtils::convertWhiteSpaceToHTML( $original )
 						)
@@ -225,7 +225,7 @@ class MessageTable {
 					Xml::tags( 'td', $tqeData, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
 			} else {
-				$output .= Xml::tags( 'tr', array( 'class' => 'def' ),
+				$output .= Xml::tags( 'tr', [ 'class' => 'def' ],
 					Xml::tags( 'td', null, $leftColumn ) .
 						Xml::tags( 'td', $tqeData, TranslateUtils::convertWhiteSpaceToHTML( $message ) )
 				);
@@ -278,7 +278,7 @@ class MessageTable {
 			$code = 'en';
 		}
 
-		return array( 'lang' => $code, 'dir' => $dir );
+		return [ 'lang' => $code, 'dir' => $dir ];
 	}
 
 	protected function getReviewButton( TMessage $message ) {
@@ -289,12 +289,12 @@ class MessageTable {
 			return '';
 		}
 
-		$attribs = array(
+		$attribs = [
 			'type' => 'button',
 			'class' => 'mw-translate-messagereviewbutton',
 			'data-revision' => $revision,
 			'name' => 'acceptbutton-' . $revision, // Otherwise Firefox disables buttons on page load
-		);
+		];
 
 		$reviewers = (array)$message->getProperty( 'reviewers' );
 		if ( in_array( $user->getId(), $reviewers ) ) {
@@ -319,7 +319,7 @@ class MessageTable {
 	}
 
 	/// For optimization
-	protected $reviewStatusCache = array();
+	protected $reviewStatusCache = [];
 
 	protected function getReviewStatus( TMessage $message ) {
 		if ( !$this->reviewMode ) {
@@ -348,7 +348,7 @@ class MessageTable {
 			$msg = wfMessage( 'translate-messagereview-reviews' )->numParams( $count )->text();
 		}
 
-		$wrap = Html::rawElement( 'div', array( 'class' => 'mw-translate-messagereviewstatus' ), $msg );
+		$wrap = Html::rawElement( 'div', [ 'class' => 'mw-translate-messagereviewstatus' ], $msg );
 		$this->reviewStatusCache[$key] = $wrap;
 
 		return $wrap;
@@ -401,7 +401,7 @@ class MessageTable {
 		}
 
 		return Html::openElement( 'fieldset' ) .
-			Html::element( 'legend', array(), wfMessage( 'translate-page-navigation-legend' )->text() ) .
+			Html::element( 'legend', [], wfMessage( 'translate-page-navigation-legend' )->text() ) .
 			$navigation .
 			Html::closeElement( 'fieldset' );
 	}
@@ -409,13 +409,13 @@ class MessageTable {
 	protected function makeOffsetLink( $label, $offset, $nondefaults ) {
 		$query = array_merge(
 			$nondefaults,
-			array( 'offset' => $offset )
+			[ 'offset' => $offset ]
 		);
 
 		$link = Linker::link(
 			$this->context->getTitle(),
 			$label,
-			array(),
+			[],
 			$query
 		);
 

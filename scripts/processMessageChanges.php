@@ -28,7 +28,7 @@ require_once "$IP/maintenance/Maintenance.php";
  * @since 2012-04-23
  */
 class ProcessMessageChanges extends Maintenance {
-	protected $changes = array();
+	protected $changes = [];
 
 	/**
 	 * @var int
@@ -68,7 +68,7 @@ class ProcessMessageChanges extends Maintenance {
 
 	public function execute() {
 		$groups = $this->getGroups();
-		$changes = array();
+		$changes = [];
 		$comparator = new ExternalMessageSourceStateComparator();
 
 		$scripted = $this->hasOption( 'safe-import' );
@@ -84,7 +84,7 @@ class ProcessMessageChanges extends Maintenance {
 		// Remove all groups without changes
 		$changes = array_filter( $changes );
 
-		if ( $changes === array() ) {
+		if ( $changes === [] ) {
 			if ( !$scripted ) {
 				$this->output( "No changes found\n" );
 			}
@@ -151,7 +151,7 @@ class ProcessMessageChanges extends Maintenance {
 			$this->output( "Imported $count new messages or translations for $group.\n" );
 		}
 
-		if ( $info['skipped'] !== array() ) {
+		if ( $info['skipped'] !== [] ) {
 			$skipped = implode( ', ', array_keys( $info['skipped'] ) );
 			$this->output( "There are changes to check for groups $skipped.\n" );
 			$url = SpecialPage::getTitleFor( 'ManageMessageGroups', $info['name'] )->getFullURL();

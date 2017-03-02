@@ -15,7 +15,7 @@
  */
 class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	public function getFileExtensions() {
-		return array( '.php' );
+		return [ '.php' ];
 	}
 
 	// READ
@@ -26,15 +26,15 @@ class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 */
 	public function readFromVariable( $data ) {
 		# Authors first
-		$matches = array();
+		$matches = [];
 		preg_match_all( '/^ \* @author\s+(.+)$/m', $data, $matches );
 		$authors = $matches[1];
 
 		# Then messages
-		$matches = array();
+		$matches = [];
 		$regex = '/^\$(.*?)\s*=\s*[\'"](.*?)[\'"];.*?$/mus';
 		preg_match_all( $regex, $data, $matches, PREG_SET_ORDER );
-		$messages = array();
+		$messages = [];
 
 		foreach ( $matches as $_ ) {
 			$legal = Title::legalChars();
@@ -44,16 +44,16 @@ class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 				},
 				$_[1]
 			);
-			$value = str_replace( array( "\'", "\\\\" ), array( "'", "\\" ), $_[2] );
+			$value = str_replace( [ "\'", "\\\\" ], [ "'", "\\" ], $_[2] );
 			$messages[$key] = $value;
 		}
 
 		$messages = $this->group->getMangler()->mangle( $messages );
 
-		return array(
+		return [
 			'AUTHORS' => $authors,
 			'MESSAGES' => $messages,
-		);
+		];
 	}
 
 	// WRITE
@@ -135,21 +135,21 @@ PHP;
 	}
 
 	public static function getExtraSchema() {
-		$schema = array(
-			'root' => array(
+		$schema = [
+			'root' => [
 				'_type' => 'array',
-				'_children' => array(
-					'FILES' => array(
+				'_children' => [
+					'FILES' => [
 						'_type' => 'array',
-						'_children' => array(
-							'header' => array(
+						'_children' => [
+							'header' => [
 								'_type' => 'text',
-							),
-						)
-					)
-				)
-			)
-		);
+							],
+						]
+					]
+				]
+			]
+		];
 
 		return $schema;
 	}

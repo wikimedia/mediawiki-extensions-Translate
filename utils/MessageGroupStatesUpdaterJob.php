@@ -18,7 +18,7 @@ class MessageGroupStatesUpdaterJob extends Job {
 	 * @param Title $title
 	 * @param array $params
 	 */
-	public function __construct( $title, $params = array() ) {
+	public function __construct( $title, $params = [] ) {
 		parent::__construct( __CLASS__, $title, $params );
 		$this->removeDuplicates = true;
 	}
@@ -67,7 +67,7 @@ class MessageGroupStatesUpdaterJob extends Job {
 	}
 
 	public static function getGroupsWithTransitions( MessageHandle $handle ) {
-		$listeners = array();
+		$listeners = [];
 		foreach ( $handle->getGroupIds() as $id ) {
 			$group = MessageGroups::getGroup( $id );
 

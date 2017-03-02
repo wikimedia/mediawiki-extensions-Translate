@@ -61,13 +61,13 @@ class TTMServer {
 	}
 
 	public static function sortSuggestions( array $suggestions ) {
-		usort( $suggestions, array( __CLASS__, 'qualitySort' ) );
+		usort( $suggestions, [ __CLASS__, 'qualitySort' ] );
 
 		return $suggestions;
 	}
 
 	protected static function qualitySort( $a, $b ) {
-		list( $c, $d ) = array( $a['quality'], $b['quality'] );
+		list( $c, $d ) = [ $a['quality'], $b['quality'] ];
 		if ( $c === $d ) {
 			return 0;
 		}
@@ -108,7 +108,7 @@ class TTMServer {
 
 		$prevRow = range( 0, $length2 );
 		for ( $i = 0; $i < $length1; $i++ ) {
-			$currentRow = array();
+			$currentRow = [];
 			$currentRow[0] = $i + 1;
 			$c1 = mb_substr( $str1, $i, 1 );
 			for ( $j = 0; $j < $length2; $j++ ) {
@@ -138,7 +138,7 @@ class TTMServer {
 	}
 
 	public static function onGroupChange( MessageHandle $handle, $old, $new ) {
-		if ( $old === array() ) {
+		if ( $old === [] ) {
 			// Don't bother for newly added messages
 			return;
 		}

@@ -30,16 +30,16 @@ class YandexWebService extends TranslationWebService {
 			throw new TranslationWebServiceException( 'API key is not set' );
 		}
 
-		$pairs = array();
+		$pairs = [];
 
-		$params = array(
+		$params = [
 			'key' => $this->config['key'],
-		);
+		];
 
 		$url = $this->config['pairs'] . '?' . wfArrayToCgi( $params );
 		$json = Http::get(
 			$url,
-			array( 'timeout' => $this->config['timeout'] ),
+			[ 'timeout' => $this->config['timeout'] ],
 			__METHOD__
 		);
 		$response = FormatJson::decode( $json );
@@ -73,12 +73,12 @@ class YandexWebService extends TranslationWebService {
 		return TranslationQuery::factory( $this->config['url'] )
 			->timeout( $this->config['timeout'] )
 			->postWithData(
-				array(
+				[
 					'key' => $this->config['key'],
 					'text' => $text,
 					'lang' => "$from-$to",
 					'format' => 'html',
-				)
+				]
 			);
 	}
 

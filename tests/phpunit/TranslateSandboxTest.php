@@ -13,10 +13,10 @@
 class TranslateSandboxTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgTranslateUseSandbox' => true,
 			'wgTranslateSandboxPromotedGroup' => 'translator',
-		) );
+		] );
 
 		// Make sure the hooks are installed even if $wgTranslateUseSandbox is false.
 		TranslateHooks::setupTranslate();
@@ -28,7 +28,7 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 
 		$groups = array_unique( $user->getGroups() );
 
-		$this->assertSame( array( 'translate-sandboxed' ), $groups, 'User is in the sandboxed group' );
+		$this->assertSame( [ 'translate-sandboxed' ], $groups, 'User is in the sandboxed group' );
 	}
 
 	public function testDeleteUser() {

@@ -49,16 +49,16 @@ class TSchema2 extends Maintenance {
 
 		$res = $dbw->select(
 			'revtag_type',
-			array( 'rtt_id', 'rtt_name' ),
-			array(),
+			[ 'rtt_id', 'rtt_name' ],
+			[],
 			__METHOD__
 		);
 
 		foreach ( $res as $row ) {
 			$dbw->update(
 				'revtag',
-				array( 'rt_type' => $row->rtt_name ),
-				array( 'rt_type' => (string)$row->rtt_id ),
+				[ 'rt_type' => $row->rtt_name ],
+				[ 'rt_type' => (string)$row->rtt_id ],
 				__METHOD__
 			);
 		}

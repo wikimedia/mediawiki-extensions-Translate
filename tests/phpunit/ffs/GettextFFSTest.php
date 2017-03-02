@@ -16,19 +16,19 @@ class GettextFFSTest extends MediaWikiTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->groupConfiguration = array(
-			'BASIC' => array(
+		$this->groupConfiguration = [
+			'BASIC' => [
 				'class' => 'FileBasedMessageGroup',
 				'id' => 'test-id',
 				'label' => 'Test Label',
 				'namespace' => 'NS_MEDIAWIKI',
 				'description' => 'Test description',
-			),
-			'FILES' => array(
+			],
+			'FILES' => [
 				'class' => 'GettextFFS',
 				'sourcePattern' => __DIR__ . '/../data/gettext.po',
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -39,44 +39,44 @@ class GettextFFSTest extends MediaWikiTestCase {
 	}
 
 	public static function provideMangling() {
-		return array(
-			array(
+		return [
+			[
 				'3f9999051ce0bc6e98f43224fe6ee1c220e34e49-Hello!_world_loooooooooooooooo',
-				array( 'id' => 'Hello! world loooooooooooooooooooooooooooooooooooooooooong', 'ctxt' => 'baa' ),
+				[ 'id' => 'Hello! world loooooooooooooooooooooooooooooooooooooooooong', 'ctxt' => 'baa' ],
 				'legacy'
-			),
-			array(
+			],
+			[
 				'3f9999-Hello!_world_loooooooooooooooo',
-				array( 'id' => 'Hello! world loooooooooooooooooooooooooooooooooooooooooong', 'ctxt' => 'baa' ),
+				[ 'id' => 'Hello! world loooooooooooooooooooooooooooooooooooooooooong', 'ctxt' => 'baa' ],
 				'simple'
-			),
+			],
 
-			array(
+			[
 				'1437e478b59e220640bf530f7e3bac93950eb8ae-"¤_=FJQ"_¤r_£_ab',
-				array( 'id' => '"¤#=FJQ"<>¤r £}[]}%ab', 'ctxt' => false ),
+				[ 'id' => '"¤#=FJQ"<>¤r £}[]}%ab', 'ctxt' => false ],
 				'legacy'
-			),
-			array(
+			],
+			[
 				'1437e4-"¤#=FJQ"<>¤r_£}[]}%ab',
-				array( 'id' => '"¤#=FJQ"<>¤r £}[]}%ab', 'ctxt' => false ),
+				[ 'id' => '"¤#=FJQ"<>¤r £}[]}%ab', 'ctxt' => false ],
 				'simple'
-			),
+			],
 
-		);
+		];
 	}
 
 	public function testHashing() {
-		$item1 = array(
+		$item1 = [
 			'id' => 'a',
 			'str' => 'b',
 			'ctxt' => false,
-		);
+		];
 
-		$item2 = array(
+		$item2 = [
 			'id' => 'a',
 			'str' => 'b',
 			'ctxt' => '',
-		);
+		];
 
 		$this->assertNotEquals(
 			GettextFFS::generateKeyFromItem( $item1, 'legacy' ),
@@ -113,8 +113,8 @@ class GettextFFSTest extends MediaWikiTestCase {
 		$key = 'key';
 		$m = new FatMessage( 'key', 'definition' );
 		$m->setTranslation( 'translation' );
-		$trans = array();
-		$pot = array();
+		$trans = [];
+		$pot = [];
 		$pluralCount = 0;
 
 		$results = <<<GETTEXT
@@ -167,9 +167,9 @@ GETTEXT;
 	}
 
 	public function provideShouldOverwrite() {
-		$cases = array();
+		$cases = [];
 
-		$cases[] = array(
+		$cases[] = [
 <<<GETTEXT
 #
 msgid ""
@@ -208,9 +208,9 @@ GETTEXT
 			,
 			false,
 			"Only date has changed"
-		);
+		];
 
-		$cases[] = array(
+		$cases[] = [
 <<<GETTEXT
 #
 msgid ""
@@ -249,7 +249,7 @@ GETTEXT
 			,
 			true,
 			"Content has changed"
-		);
+		];
 
 		return $cases;
 	}

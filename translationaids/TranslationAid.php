@@ -62,7 +62,7 @@ abstract class TranslationAid {
 	 * @return string
 	 */
 	public function getDefinition() {
-		static $cache = array();
+		static $cache = [];
 
 		$key = $this->handle->getTitle()->getPrefixedText();
 
@@ -98,7 +98,7 @@ abstract class TranslationAid {
 	 * @return array Language code => Translation
 	 */
 	public function getTranslations() {
-		static $cache = array();
+		static $cache = [];
 
 		$key = $this->handle->getTitle()->getPrefixedText();
 
@@ -109,7 +109,7 @@ abstract class TranslationAid {
 		$data = ApiQueryMessageTranslations::getTranslations( $this->handle );
 		$namespace = $this->handle->getTitle()->getNamespace();
 
-		$cache[$key] = array();
+		$cache[$key] = [];
 
 		foreach ( $data as $page => $info ) {
 			$tTitle = Title::makeTitle( $namespace, $page );
@@ -134,7 +134,7 @@ abstract class TranslationAid {
 	 * @return array
 	 */
 	public static function getTypes() {
-		$types = array(
+		$types = [
 			'definition' => 'MessageDefinitionAid',
 			'translation' => 'CurrentTranslationAid',
 			'inotherlanguages' => 'InOtherLanguagesAid',
@@ -145,7 +145,7 @@ abstract class TranslationAid {
 			'support' => 'SupportAid',
 			'gettext' => 'GettextDocumentationAid',
 			'insertables' => 'InsertablesAid',
-		);
+		];
 
 		return $types;
 	}

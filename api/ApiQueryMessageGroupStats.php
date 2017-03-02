@@ -24,9 +24,9 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 		$group = MessageGroups::getGroup( $params['group'] );
 		if ( !$group ) {
 			if ( method_exists( $this, 'dieWithError' ) ) {
-				$this->dieWithError( array( 'apierror-missingparam', 'mgsgroup' ) );
+				$this->dieWithError( [ 'apierror-missingparam', 'mgsgroup' ] );
 			} else {
-				$this->dieUsageMsg( array( 'missingparam', 'mgsgroup' ) );
+				$this->dieUsageMsg( [ 'missingparam', 'mgsgroup' ] );
 			}
 		} elseif ( MessageGroups::isDynamic( $group ) ) {
 			if ( method_exists( $this, 'dieWithError' ) ) {
@@ -49,18 +49,18 @@ class ApiQueryMessageGroupStats extends ApiStatsQuery {
 
 	public function getAllowedParams() {
 		$params = parent::getAllowedParams();
-		$params['group'] = array(
+		$params['group'] = [
 			ApiBase::PARAM_TYPE => 'string',
 			ApiBase::PARAM_REQUIRED => true,
-		);
+		];
 
 		return $params;
 	}
 
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=query&meta=messagegroupstats&mgsgroup=page-Example'
 				=> 'apihelp-query+messagegroupstats-example-1',
-		);
+		];
 	}
 }

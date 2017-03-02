@@ -14,10 +14,10 @@
 class MessageIndexTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
-			'wgTranslateTranslationServices' => array(),
-		) );
+			'wgTranslateTranslationServices' => [],
+		] );
 	}
 
 	/**
@@ -30,85 +30,85 @@ class MessageIndexTest extends MediaWikiTestCase {
 	}
 
 	public function provideTestGetArrayDiff() {
-		$tests = array();
+		$tests = [];
 
 		// Addition
-		$old = array();
-		$new = array(
+		$old = [];
+		$new = [
 			'label' => 'carpet',
-		);
-		$expected = array(
-			'keys' => array(
-				'add' => array(
-					'label' => array(
-						array(),
-						array( 'carpet' ),
-					),
-				),
-				'del' => array(),
-				'mod' => array(),
-			),
-			'values' => array( 'carpet' ),
-		);
-		$tests[] = array( $expected, $old, $new );
+		];
+		$expected = [
+			'keys' => [
+				'add' => [
+					'label' => [
+						[],
+						[ 'carpet' ],
+					],
+				],
+				'del' => [],
+				'mod' => [],
+			],
+			'values' => [ 'carpet' ],
+		];
+		$tests[] = [ $expected, $old, $new ];
 
 		// Deletion
-		$old = array(
-			'bath' => array( 'goal', 'morals', 'coronation' ),
-		);
-		$new = array();
-		$expected = array(
-			'keys' => array(
-				'add' => array(),
-				'del' => array(
-					'bath' => array(
-						array( 'goal', 'morals', 'coronation' ),
-						array(),
-					),
-				),
-				'mod' => array(),
-			),
-			'values' => array( 'goal', 'morals', 'coronation' ),
-		);
-		$tests[] = array( $expected, $old, $new );
+		$old = [
+			'bath' => [ 'goal', 'morals', 'coronation' ],
+		];
+		$new = [];
+		$expected = [
+			'keys' => [
+				'add' => [],
+				'del' => [
+					'bath' => [
+						[ 'goal', 'morals', 'coronation' ],
+						[],
+					],
+				],
+				'mod' => [],
+			],
+			'values' => [ 'goal', 'morals', 'coronation' ],
+		];
+		$tests[] = [ $expected, $old, $new ];
 
 		// No change
-		$old = $new = array(
+		$old = $new = [
 			'label' => 'carpet',
-			'salt' => array( 'morals' ),
-			'bath' => array( 'goal', 'morals', 'coronation' ),
-		);
-		$expected = array(
-			'keys' => array(
-				'add' => array(),
-				'del' => array(),
-				'mod' => array(),
-			),
-			'values' => array(),
-		);
-		$tests[] = array( $expected, $old, $new );
+			'salt' => [ 'morals' ],
+			'bath' => [ 'goal', 'morals', 'coronation' ],
+		];
+		$expected = [
+			'keys' => [
+				'add' => [],
+				'del' => [],
+				'mod' => [],
+			],
+			'values' => [],
+		];
+		$tests[] = [ $expected, $old, $new ];
 
 		// Modification
-		$old = array(
-			'bath' => array( 'goal', 'morals', 'coronation' ),
-		);
-		$new = array(
-			'bath' => array( 'goal', 'beliefs', 'coronation', 'showcase' ),
-		);
-		$expected = array(
-			'keys' => array(
-				'add' => array(),
-				'del' => array(),
-				'mod' => array(
-					'bath' => array(
-						array( 'goal', 'morals', 'coronation' ),
-						array( 'goal', 'beliefs', 'coronation', 'showcase' ),
-					),
-				),
-			),
-			'values' => array( 'morals', 'beliefs', 'showcase' ),
-		);
-		$tests[] = array( $expected, $old, $new );
+		$old = [
+			'bath' => [ 'goal', 'morals', 'coronation' ],
+		];
+		$new = [
+			'bath' => [ 'goal', 'beliefs', 'coronation', 'showcase' ],
+		];
+		$expected = [
+			'keys' => [
+				'add' => [],
+				'del' => [],
+				'mod' => [
+					'bath' => [
+						[ 'goal', 'morals', 'coronation' ],
+						[ 'goal', 'beliefs', 'coronation', 'showcase' ],
+					],
+				],
+			],
+			'values' => [ 'morals', 'beliefs', 'showcase' ],
+		];
+		$tests[] = [ $expected, $old, $new ];
 
 		return $tests;
 	}
@@ -128,7 +128,7 @@ class MessageIndexTest extends MediaWikiTestCase {
 	public function testMessageIndexImplementation( $mi ) {
 		$data = self::getTestData();
 		/** @var TestableDatabaseMessageIndex|TestableCDBMessageIndex|TestableSerializedMessageIndex */
-		$diff = MessageIndex::getArrayDiff( array(), $data );
+		$diff = MessageIndex::getArrayDiff( [], $data );
 		$mi->store( $data, $diff['keys'] );
 
 		$tests = array_rand( $data, 10 );
@@ -160,13 +160,13 @@ class MessageIndexTest extends MediaWikiTestCase {
 	}
 
 	public static function provideMessageIndexImplementation() {
-		return array(
-			array( new TestableDatabaseMessageIndex() ),
-			array( new TestableCDBMessageIndex() ),
-			array( new TestableSerializedMessageIndex() ),
-			array( new TestableHashMessageIndex() ),
+		return [
+			[ new TestableDatabaseMessageIndex() ],
+			[ new TestableCDBMessageIndex() ],
+			[ new TestableSerializedMessageIndex() ],
+			[ new TestableHashMessageIndex() ],
 			// Not testing CachedMessageIndex because there is no easy way to mockup those.
-		);
+		];
 	}
 }
 

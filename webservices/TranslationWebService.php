@@ -28,13 +28,13 @@ abstract class TranslationWebService {
 	 * @return TranslationWebService|null
 	 */
 	public static function factory( $name, $config ) {
-		$handlers = array(
+		$handlers = [
 			'microsoft' => 'MicrosoftWebService',
 			'apertium' => 'ApertiumWebService',
 			'yandex' => 'YandexWebService',
 			'remote-ttmserver' => 'RemoteTTMServerWebService',
 			'cxserver' => 'CxserverWebService',
-		);
+		];
 
 		if ( !isset( $config['timeout'] ) ) {
 			$config['timeout'] = 3;
@@ -85,10 +85,10 @@ abstract class TranslationWebService {
 	 */
 	public function getQueries( $text, $from, $to ) {
 		try {
-			return array( $this->getQuery( $text, $from, $to ) );
+			return [ $this->getQuery( $text, $from, $to ) ];
 		} catch ( Exception $e ) {
 			$this->reportTranslationServiceFailure( $e->getMessage() );
-			return array();
+			return [];
 		}
 	}
 
@@ -102,14 +102,14 @@ abstract class TranslationWebService {
 	public function getResultData( TranslationQueryResponse $response ) {
 		if ( $response->getStatusCode() !== 200 ) {
 			$this->reportTranslationServiceFailure( $response->getStatusMessage() );
-			return array();
+			return [];
 		}
 
 		try {
 			return $this->parseResponse( $response );
 		} catch ( Exception $e ) {
 			$this->reportTranslationServiceFailure( $e->getMessage() );
-			return array();
+			return [];
 		}
 	}
 
@@ -206,7 +206,7 @@ abstract class TranslationWebService {
 				$pairs = $this->doPairs();
 			} catch ( Exception $e ) {
 				$this->reportTranslationServiceFailure( $e->getMessage() );
-				return array();
+				return [];
 			}
 			// Cache the result for a day
 			wfGetCache( CACHE_ANYTHING )->set( $key, $pairs, 60 * 60 * 24 );

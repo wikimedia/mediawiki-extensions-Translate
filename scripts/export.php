@@ -107,7 +107,7 @@ class CommandlineExport extends Maintenance {
 			$noLocation = '--no-location ';
 		};
 
-		$skip = array();
+		$skip = [];
 		if ( $this->hasOption( 'skip' ) ) {
 			$skip = array_map( 'trim', explode( ',', $this->getOption( 'skip' ) ) );
 		}
@@ -147,7 +147,7 @@ class CommandlineExport extends Maintenance {
 		$changeFilter = false;
 		$hours = $this->getOption( 'hours' );
 		if ( $hours ) {
-			$namespaces = array();
+			$namespaces = [];
 
 			/** @var FileBasedMessageGroup $group */
 			foreach ( $groups as $group ) {
@@ -157,7 +157,7 @@ class CommandlineExport extends Maintenance {
 			$namespaces = array_keys( $namespaces );
 			$bots = true;
 
-			$changeFilter = array();
+			$changeFilter = [];
 			$rows = TranslateUtils::translationChanges( $hours, $bots, $namespaces );
 			foreach ( $rows as $row ) {
 				$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
@@ -173,7 +173,7 @@ class CommandlineExport extends Maintenance {
 			}
 		}
 
-		$skipGroups = array();
+		$skipGroups = [];
 		if ( $this->hasOption( 'skipgroup' ) ) {
 			$skipGroups = array_map( 'trim', explode( ',', $this->getOption( 'skipgroup' ) ) );
 		}

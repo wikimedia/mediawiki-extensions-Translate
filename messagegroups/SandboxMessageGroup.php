@@ -48,7 +48,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 		global $wgTranslateSandboxSuggestions, $wgTranslateSandboxLimit;
 
 		// This will contain the list of messages shown to the user
-		$list = array();
+		$list = [];
 
 		// Ugly
 		$store = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
@@ -82,7 +82,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 		// Get some random keys
 		$all = array_keys( $mi->retrieve() );
 		// In case there aren't any messages
-		if ( $all === array() ) {
+		if ( $all === [] ) {
 			return $list;
 		}
 		$min = 0;

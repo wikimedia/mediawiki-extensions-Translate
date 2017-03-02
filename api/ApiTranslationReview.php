@@ -28,7 +28,7 @@ class ApiTranslationReview extends ApiBase {
 		$revision = Revision::newFromId( $params['revision'] );
 		if ( !$revision ) {
 			if ( method_exists( $this, 'dieWithError' ) ) {
-				$this->dieWithError( array( 'apierror-nosuchrevid', $params['revision'] ), 'invalidrevision' );
+				$this->dieWithError( [ 'apierror-nosuchrevid', $params['revision'] ], 'invalidrevision' );
 			} else {
 				$this->dieUsage( 'Invalid revision', 'invalidrevision' );
 			}
@@ -76,7 +76,7 @@ class ApiTranslationReview extends ApiBase {
 				break; // Unreachable, but throws off code analyzer.
 			default:
 				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( array( 'apierror-unknownerror', $error ), $error );
+					$this->dieWithError( [ 'apierror-unknownerror', $error ], $error );
 				} else {
 					$this->dieUsage( 'Unknown error', $error );
 				}
@@ -91,11 +91,11 @@ class ApiTranslationReview extends ApiBase {
 			}
 		}
 
-		$output = array( 'review' => array(
+		$output = [ 'review' => [
 			'title' => $revision->getTitle()->getPrefixedText(),
 			'pageid' => $revision->getPage(),
 			'revision' => $revision->getId()
-		) );
+		] ];
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 	}
@@ -110,12 +110,12 @@ class ApiTranslationReview extends ApiBase {
 	public static function doReview( User $user, Revision $revision, $comment = null ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$table = 'translate_reviews';
-		$row = array(
+		$row = [
 			'trr_user' => $user->getId(),
 			'trr_page' => $revision->getPage(),
 			'trr_revision' => $revision->getId(),
-		);
-		$options = array( 'IGNORE' );
+		];
+		$options = [ 'IGNORE' ];
 		$dbw->insert( $table, $row, __METHOD__, $options );
 
 		if ( !$dbw->affectedRows() ) {
@@ -128,15 +128,15 @@ class ApiTranslationReview extends ApiBase {
 		$entry->setPerformer( $user );
 		$entry->setTarget( $title );
 		$entry->setComment( $comment );
-		$entry->setParameters( array(
+		$entry->setParameters( [
 			'4::revision' => $revision->getId(),
-		) );
+		] );
 
 		$logid = $entry->insert();
 		$entry->publish( $logid );
 
 		$handle = new MessageHandle( $title );
-		Hooks::run( 'TranslateEventTranslationReview', array( $handle ) );
+		Hooks::run( 'TranslateEventTranslationReview', [ $handle ] );
 
 		return true;
 	}
@@ -183,22 +183,22 @@ class ApiTranslationReview extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'revision' => array(
+		return [
+			'revision' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'token' => array(
+			],
+			'token' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-		);
+			],
+		];
 	}
 
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=translationreview&revision=1&token=foo'
 				=> 'apihelp-translationreview-example-1',
-		);
+		];
 	}
 }

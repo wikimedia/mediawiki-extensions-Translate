@@ -18,13 +18,13 @@
 class UpdatedDefinitionAid extends TranslationAid {
 	public function getData() {
 		$db = TranslateUtils::getSafeReadDB();
-		$conds = array(
+		$conds = [
 			'rt_page' => $this->handle->getTitle()->getArticleID(),
 			'rt_type' => RevTag::getType( 'tp:transver' ),
-		);
-		$options = array(
+		];
+		$options = [
 			'ORDER BY' => 'rt_revision DESC',
-		);
+		];
 
 		$translationRevision = $db->selectField( 'revtag', 'rt_value', $conds, __METHOD__, $options );
 		if ( $translationRevision === false ) {
@@ -72,13 +72,13 @@ class UpdatedDefinitionAid extends TranslationAid {
 			$this->context->msg( 'tpt-diff-new' )->escaped()
 		);
 
-		return array(
+		return [
 			'value_old' => $oldContent->getNativeData(),
 			'value_new' => $newContent->getNativeData(),
 			'revisionid_old' => $oldrev->getId(),
 			'revisionid_new' => $definitionTitle->getLatestRevID(),
 			'language' => $this->group->getSourceLanguage(),
 			'html' => $html,
-		);
+		];
 	}
 }

@@ -120,13 +120,13 @@ abstract class TranslateTask {
 		);
 		$left = count( $this->collection );
 
-		$this->offsets = array(
+		$this->offsets = [
 			'backwardsOffset' => $offsets[0],
 			'forwardsOffset' => $offsets[1],
 			'start' => $offsets[2],
 			'count' => $left,
 			'total' => $total,
-		);
+		];
 	}
 
 	/**
@@ -288,7 +288,7 @@ class TranslateTasks {
 		global $wgTranslateTasks;
 
 		// Tasks not to be available in page translation.
-		$filterTasks = array( 'optional', );
+		$filterTasks = [ 'optional', ];
 
 		$allTasks = array_keys( $wgTranslateTasks );
 

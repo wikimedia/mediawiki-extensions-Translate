@@ -16,11 +16,11 @@ class MessageCollectionTest extends MediaWikiTestCase {
 		parent::setUp();
 
 		global $wgHooks;
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgHooks' => $wgHooks,
-			'wgTranslateTranslationServices' => array(),
-		) );
-		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
+			'wgTranslateTranslationServices' => [],
+		] );
+		$wgHooks['TranslatePostInitGroups'] = [ [ $this, 'getTestGroups' ] ];
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( wfGetCache( 'hash' ) );
@@ -31,10 +31,10 @@ class MessageCollectionTest extends MediaWikiTestCase {
 	}
 
 	public function getTestGroups( &$list ) {
-		$messages = array(
+		$messages = [
 			'translated' => 'bunny',
 			'untranslated' => 'fanny',
-		);
+		];
 		$list['test-group'] = new MockWikiMessageGroup( 'test-group', $messages );
 
 		return false;

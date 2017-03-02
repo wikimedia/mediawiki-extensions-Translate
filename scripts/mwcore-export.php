@@ -73,7 +73,7 @@ class MwCoreExport extends Maintenance {
 				continue;
 			}
 
-			$matches = array();
+			$matches = [];
 			preg_match( '~^(\$[a-zA-Z]+)\s*=~m', $export, $matches );
 
 			if ( !isset( $matches[1] ) ) {

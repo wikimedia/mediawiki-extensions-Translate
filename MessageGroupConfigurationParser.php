@@ -38,7 +38,7 @@ class MessageGroupConfigurationParser {
 
 		$documents = self::getDocumentsFromYaml( $data );
 		$configurations = self::parseDocuments( $documents );
-		$groups = array();
+		$groups = [];
 
 		if ( is_array( $this->baseSchema ) ) {
 			foreach ( $configurations as $index => $config ) {
@@ -80,8 +80,8 @@ class MessageGroupConfigurationParser {
 	 * @return array Unvalidated group configurations
 	 */
 	public function parseDocuments( array $documents ) {
-		$groups = array();
-		$template = array();
+		$groups = [];
+		$template = [];
 
 		foreach ( $documents as $document ) {
 			$document = TranslateYaml::loadString( $document );
@@ -130,7 +130,7 @@ class MessageGroupConfigurationParser {
 				continue;
 			}
 
-			$extra = call_user_func( array( $class, 'getExtraSchema' ) );
+			$extra = call_user_func( [ $class, 'getExtraSchema' ] );
 			$schema = array_replace_recursive( $schema, $extra );
 		}
 

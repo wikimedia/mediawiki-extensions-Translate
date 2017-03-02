@@ -20,10 +20,10 @@ class MicrosoftWebService extends TranslationWebService {
 	}
 
 	protected function mapCode( $code ) {
-		$map = array(
+		$map = [
 			'zh-hant' => 'zh-CHT',
 			'zh-hans' => 'zh-CHS',
-		);
+		];
 
 		return isset( $map[$code] ) ? $map[$code] : $code;
 	}
@@ -31,12 +31,12 @@ class MicrosoftWebService extends TranslationWebService {
 	protected function getMSTokens( $clientID, $clientSecret ) {
 		$authUrl = "https://datamarket.accesscontrol.windows.net/v2/OAuth2-13/";
 
-		$params = array(
+		$params = [
 			'grant_type' => "client_credentials",
 			'scope' => "http://api.microsofttranslator.com",
 			'client_id' => $clientID,
 			'client_secret' => $clientSecret
-		);
+		];
 
 		$params = wfArrayToCgi( $params );
 
@@ -76,7 +76,7 @@ class MicrosoftWebService extends TranslationWebService {
 		// get access token from service
 		$accessToken = $this->getMSTokens( $clientID, $clientSecret );
 
-		$options = array();
+		$options = [];
 		$options['method']  = 'GET';
 		$options['timeout'] = $this->config['timeout'];
 
@@ -95,13 +95,13 @@ class MicrosoftWebService extends TranslationWebService {
 		}
 		$xml = simplexml_load_string( $req->getContent() );
 
-		$languages = array();
+		$languages = [];
 		foreach ( $xml->string as $language ) {
 			$languages[] = (string)$language;
 		}
 
 		// Let's make a cartesian product, assuming we can translate from any language to any language
-		$pairs = array();
+		$pairs = [];
 		foreach ( $languages as $from ) {
 			foreach ( $languages as $to ) {
 				$pairs[$from][$to] = true;
@@ -127,14 +127,14 @@ class MicrosoftWebService extends TranslationWebService {
 			$this->config['clientSecret']
 		);
 
-		$params = array(
+		$params = [
 			'text' => $text,
 			'from' => $from,
 			'to' => $to,
-		);
-		$headers = array(
+		];
+		$headers = [
 			'Authorization' => 'Bearer ' . $accessToken,
-		);
+		];
 
 		return TranslationQuery::factory( $this->config['url'] )
 			->timeout( $this->config['timeout'] )

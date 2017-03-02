@@ -19,7 +19,7 @@
 class RemoteTTMServer extends TTMServer implements ReadableTTMServer {
 	public function query( $sourceLanguage, $targetLanguage, $text ) {
 		// @todo Implement some day perhaps?
-		return array();
+		return [];
 	}
 
 	public function isLocalSuggestion( array $suggestion ) {

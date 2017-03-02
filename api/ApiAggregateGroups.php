@@ -29,21 +29,21 @@ class ApiAggregateGroups extends ApiBase {
 
 		$params = $this->extractRequestParams();
 		$action = $params['do'];
-		$output = array();
+		$output = [];
 		if ( $action === 'associate' || $action === 'dissociate' ) {
 			// Group is mandatory only for these two actions
 			if ( !isset( $params['group'] ) ) {
 				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( array( 'apierror-missingparam', 'group' ) );
+					$this->dieWithError( [ 'apierror-missingparam', 'group' ] );
 				} else {
-					$this->dieUsageMsg( array( 'missingparam', 'group' ) );
+					$this->dieUsageMsg( [ 'missingparam', 'group' ] );
 				}
 			}
 			if ( !isset( $params['aggregategroup'] ) ) {
 				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( array( 'apierror-missingparam', 'aggregategroup' ) );
+					$this->dieWithError( [ 'apierror-missingparam', 'aggregategroup' ] );
 				} else {
-					$this->dieUsageMsg( array( 'missingparam', 'aggregategroup' ) );
+					$this->dieUsageMsg( [ 'missingparam', 'aggregategroup' ] );
 				}
 			}
 			$aggregateGroup = $params['aggregategroup'];
@@ -58,7 +58,7 @@ class ApiAggregateGroups extends ApiBase {
 						$this->dieUsage( 'Invalid aggregate message group', 'invalidaggregategroup' );
 					}
 				}
-				$subgroups = array();
+				$subgroups = [];
 			}
 
 			$subgroupId = $params['group'];
@@ -85,10 +85,10 @@ class ApiAggregateGroups extends ApiBase {
 
 			TranslateMetadata::setSubgroups( $aggregateGroup, $subgroups );
 
-			$logParams = array(
+			$logParams = [
 				'aggregategroup' => TranslateMetadata::get( $aggregateGroup, 'name' ),
 				'aggregategroup-id' => $aggregateGroup,
-			);
+			];
 
 			/* Note that to allow removing no longer existing groups from
 			 * aggregate message groups, the message group object $group
@@ -110,9 +110,9 @@ class ApiAggregateGroups extends ApiBase {
 		} elseif ( $action === 'remove' ) {
 			if ( !isset( $params['aggregategroup'] ) ) {
 				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( array( 'apierror-missingparam', 'aggregategroup' ) );
+					$this->dieWithError( [ 'apierror-missingparam', 'aggregategroup' ] );
 				} else {
-					$this->dieUsageMsg( array( 'missingparam', 'aggregategroup' ) );
+					$this->dieUsageMsg( [ 'missingparam', 'aggregategroup' ] );
 				}
 			}
 			TranslateMetadata::deleteGroup( $params['aggregategroup'] );
@@ -121,9 +121,9 @@ class ApiAggregateGroups extends ApiBase {
 		} elseif ( $action === 'add' ) {
 			if ( !isset( $params['groupname'] ) ) {
 				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( array( 'apierror-missingparam', 'groupname' ) );
+					$this->dieWithError( [ 'apierror-missingparam', 'groupname' ] );
 				} else {
-					$this->dieUsageMsg( array( 'missingparam', 'groupname' ) );
+					$this->dieUsageMsg( [ 'missingparam', 'groupname' ] );
 				}
 			}
 			$name = trim( $params['groupname'] );
@@ -139,9 +139,9 @@ class ApiAggregateGroups extends ApiBase {
 
 			if ( !isset( $params['groupdescription'] ) ) {
 				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( array( 'apierror-missingparam', 'groupdescription' ) );
+					$this->dieWithError( [ 'apierror-missingparam', 'groupdescription' ] );
 				} else {
-					$this->dieUsageMsg( array( 'missingparam', 'groupdescription' ) );
+					$this->dieUsageMsg( [ 'missingparam', 'groupdescription' ] );
 				}
 			}
 			$desc = trim( $params['groupdescription'] );
@@ -172,7 +172,7 @@ class ApiAggregateGroups extends ApiBase {
 
 			TranslateMetadata::set( $aggregateGroupId, 'name', $name );
 			TranslateMetadata::set( $aggregateGroupId, 'description', $desc );
-			TranslateMetadata::setSubgroups( $aggregateGroupId, array() );
+			TranslateMetadata::setSubgroups( $aggregateGroupId, [] );
 
 			// Once new aggregate group added, we need to show all the pages that can be added to that.
 			$output['groups'] = self::getAllPages();
@@ -181,9 +181,9 @@ class ApiAggregateGroups extends ApiBase {
 		} elseif ( $action === 'update' ) {
 			if ( !isset( $params['groupname'] ) ) {
 				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( array( 'apierror-missingparam', 'groupname' ) );
+					$this->dieWithError( [ 'apierror-missingparam', 'groupname' ] );
 				} else {
-					$this->dieUsageMsg( array( 'missingparam', 'groupname' ) );
+					$this->dieUsageMsg( [ 'missingparam', 'groupname' ] );
 				}
 			}
 			$name = trim( $params['groupname'] );
@@ -250,41 +250,41 @@ class ApiAggregateGroups extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'do' => array(
-				ApiBase::PARAM_TYPE => array( 'associate', 'dissociate', 'remove', 'add', 'update' ),
+		return [
+			'do' => [
+				ApiBase::PARAM_TYPE => [ 'associate', 'dissociate', 'remove', 'add', 'update' ],
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'aggregategroup' => array(
+			],
+			'aggregategroup' => [
 				ApiBase::PARAM_TYPE => 'string',
-			),
-			'group' => array(
+			],
+			'group' => [
 				// Not providing list of values, to allow dissociation of unknown groups
 				ApiBase::PARAM_TYPE => 'string',
-			),
-			'groupname' => array(
+			],
+			'groupname' => [
 				ApiBase::PARAM_TYPE => 'string',
-			),
-			'groupdescription' => array(
+			],
+			'groupdescription' => [
 				ApiBase::PARAM_TYPE => 'string',
-			),
-			'token' => array(
+			],
+			'token' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-		);
+			],
+		];
 	}
 
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=aggregategroups&do=associate&group=groupId&aggregategroup=aggregateGroupId'
 				=> 'apihelp-aggregategroups-example-1',
-		);
+		];
 	}
 
 	public static function getAllPages() {
 		$groups = MessageGroups::getAllGroups();
-		$pages = array();
+		$pages = [];
 		foreach ( $groups as $group ) {
 			if ( $group instanceof WikiPageMessageGroup ) {
 				$pages[$group->getId()] = $group->getTitle()->getPrefixedText();

@@ -116,7 +116,7 @@ class MessageGroupCache {
 		$this->close(); // Close the reader instance just to be sure
 
 		$messages = $this->group->load( $this->code );
-		if ( $messages === array() ) {
+		if ( $messages === [] ) {
 			if ( $this->exists() ) {
 				// Delete stale cache files
 				unlink( $this->getCacheFileName() );

@@ -17,11 +17,11 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		parent::setUp();
 
 		global $wgHooks;
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgHooks' => $wgHooks,
-			'wgTranslateTranslationServices' => array(),
-		) );
-		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
+			'wgTranslateTranslationServices' => [],
+		] );
+		$wgHooks['TranslatePostInitGroups'] = [ [ $this, 'getTestGroups' ] ];
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( wfGetCache( 'hash' ) );
@@ -44,13 +44,13 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 
 	public function testAPIAccuracy() {
 		list( $data ) = $this->doApiRequest(
-			array(
+			[
 				'action' => 'query',
 				'meta' => 'messagegroups',
 				'mgprop' => 'id|label|class|namespace|exists',
 				// @see https://gerrit.wikimedia.org/r/#/c/160222/
 				'continue' => ''
-			)
+			]
 		);
 
 		// Check structure
@@ -86,19 +86,19 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 	}
 
 	public function testAPIFilterAccuracy() {
-		$ids = array( 'MadeUpGroup' );
+		$ids = [ 'MadeUpGroup' ];
 		$ids += array_keys( MessageGroups::getAllGroups() );
 
 		foreach ( $ids as $id ) {
 			list( $data ) = $this->doApiRequest(
-				array(
+				[
 					'action' => 'query',
 					'meta' => 'messagegroups',
 					'mgprop' => 'id|label|class|namespace|exists',
 					'mgfilter' => $id,
 					// @see https://gerrit.wikimedia.org/r/#/c/160222/
 					'continue' => ''
-				)
+				]
 			);
 
 			if ( $id === 'MadeUpGroup' ) {
@@ -133,13 +133,13 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 
 	public function testBadProperty() {
 		list( $data ) = $this->doApiRequest(
-			array(
+			[
 				'action' => 'query',
 				'meta' => 'messagegroups',
 				'mgprop' => 'madeupproperty',
 				// @see https://gerrit.wikimedia.org/r/#/c/160222/
 				'continue' => ''
-			)
+			]
 		);
 
 		$this->assertArrayHasKey( 'query', $data );

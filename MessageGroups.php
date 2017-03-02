@@ -147,19 +147,19 @@ class MessageGroups {
 	protected function loadGroupDefinitions() {
 		global $wgAutoloadClasses;
 
-		$groups = $deps = $autoload = array();
+		$groups = $deps = $autoload = [];
 
-		Hooks::run( 'TranslatePostInitGroups', array( &$groups, &$deps, &$autoload ) );
+		Hooks::run( 'TranslatePostInitGroups', [ &$groups, &$deps, &$autoload ] );
 
 		// Register autoloaders for this request, both values modified by reference
 		self::appendAutoloader( $autoload, $wgAutoloadClasses );
 
 		$key = wfMemcKey( 'translate-groups' );
-		$value = array(
+		$value = [
 			'ts' => wfTimestamp( TS_MW ),
 			'cc' => $groups,
 			'autoload' => $autoload,
-		);
+		];
 
 		$wrapper = new DependencyWrapper( $value, $deps );
 		$wrapper->storeToCache( $this->getCache(), $key, 60 * 60 * 2 );
@@ -179,10 +179,10 @@ class MessageGroups {
 
 		$db = TranslateUtils::getSafeReadDB();
 
-		$tables = array( 'page', 'revtag' );
-		$vars = array( 'page_id', 'page_namespace', 'page_title' );
-		$conds = array( 'page_id=rt_page', 'rt_type' => RevTag::getType( 'tp:mark' ) );
-		$options = array( 'GROUP BY' => 'rt_page' );
+		$tables = [ 'page', 'revtag' ];
+		$vars = [ 'page_id', 'page_namespace', 'page_title' ];
+		$conds = [ 'page_id=rt_page', 'rt_type' => RevTag::getType( 'tp:mark' ) ];
+		$options = [ 'GROUP BY' => 'rt_page' ];
 		$res = $db->select( $tables, $vars, $conds, __METHOD__, $options );
 
 		foreach ( $res as $r ) {
@@ -336,12 +336,12 @@ class MessageGroups {
 	 */
 	public static function getPriority( $group ) {
 		if ( !isset( self::$prioritycache ) ) {
-			self::$prioritycache = array();
+			self::$prioritycache = [];
 			// Abusing this table originally intented for other purposes
 			$db = wfGetDB( DB_SLAVE );
 			$table = 'translate_groupreviews';
-			$fields = array( 'tgr_group', 'tgr_state' );
-			$conds = array( 'tgr_lang' => '*priority' );
+			$fields = [ 'tgr_group', 'tgr_state' ];
+			$conds = [ 'tgr_lang' => '*priority' ];
 			$res = $db->select( $table, $fields, $conds, __METHOD__ );
 			foreach ( $res as $row ) {
 				self::$prioritycache[$row->tgr_group] = $row->tgr_state;
@@ -376,18 +376,18 @@ class MessageGroups {
 
 		$dbw = wfGetDB( DB_MASTER );
 		$table = 'translate_groupreviews';
-		$row = array(
+		$row = [
 			'tgr_group' => $id,
 			'tgr_lang' => '*priority',
 			'tgr_state' => $priority,
-		);
+		];
 
 		if ( $priority === '' ) {
 			unset( $row['tgr_state'] );
 			$dbw->delete( $table, $row, __METHOD__ );
 		} else {
-			$index = array( 'tgr_group', 'tgr_lang' );
-			$dbw->replace( $table, array( $index ), $row, __METHOD__ );
+			$index = [ 'tgr_group', 'tgr_lang' ];
+			$dbw->replace( $table, [ $index ], $row, __METHOD__ );
 		}
 	}
 
@@ -432,8 +432,8 @@ class MessageGroups {
 	 */
 	public static function getParentGroups( MessageGroup $targetGroup ) {
 		$ids = self::getSharedGroups( $targetGroup );
-		if ( $ids === array() ) {
-			return array();
+		if ( $ids === [] ) {
+			return [];
 		}
 
 		$targetId = $targetGroup->getId();
@@ -453,7 +453,7 @@ class MessageGroups {
 		/* Now that we have all related groups, use them to find all paths
 		 * from top-level groups to target group with any number of subgroups
 		 * in between. */
-		$paths = array();
+		$paths = [];
 
 		/* This function recursively finds paths to the target group */
 		$pathFinder = function ( &$paths, $group, $targetId, $prefix = '' )
@@ -537,7 +537,7 @@ class MessageGroups {
 	 * @since 2012-02-13
 	 */
 	public static function getGroupsById( array $ids, $skipMeta = false ) {
-		$groups = array();
+		$groups = [];
 		foreach ( $ids as $id ) {
 			$group = self::getGroup( $id );
 
@@ -564,7 +564,7 @@ class MessageGroups {
 	 * @since 2012-02-13
 	 */
 	public static function expandWildcards( $ids ) {
-		$all = array();
+		$all = [];
 
 		$ids = (array)$ids;
 		foreach ( $ids as $index => $id ) {
@@ -586,11 +586,11 @@ class MessageGroups {
 	 * @since 2011-12-28
 	 */
 	public static function getDynamicGroups() {
-		return array(
+		return [
 			'!recent' => 'RecentMessageGroup',
 			'!additions' => 'RecentAdditionsMessageGroup',
 			'!sandbox' => 'SandboxMessageGroup',
-		);
+		];
 	}
 
 	/**
@@ -647,7 +647,7 @@ class MessageGroups {
 		// Work around php bug: https://bugs.php.net/bug.php?id=50688
 		// Triggered by ApiQueryMessageGroups for example
 		MediaWiki\suppressWarnings();
-		usort( $tree, array( __CLASS__, 'groupLabelSort' ) );
+		usort( $tree, [ __CLASS__, 'groupLabelSort' ] );
 		MediaWiki\restoreWarnings();
 
 		/* Now we have two things left in $tree array:
@@ -663,9 +663,9 @@ class MessageGroups {
 		 * groups not be included at all, because they have all unset each
 		 * other in the first loop. So now we check if there are groups left
 		 * over. */
-		$used = array();
+		$used = [];
 		// Hack to allow passing by reference
-		array_walk_recursive( $tree, array( __CLASS__, 'collectGroupIds' ), array( &$used ) );
+		array_walk_recursive( $tree, [ __CLASS__, 'collectGroupIds' ], [ &$used ] );
 		$unused = array_diff( array_keys( $groups ), array_keys( $used ) );
 		if ( count( $unused ) ) {
 			foreach ( $unused as $index => $id ) {
@@ -705,12 +705,12 @@ class MessageGroups {
 	 * @since Public since 2012-11-29
 	 */
 	public static function subGroups( AggregateMessageGroup $parent ) {
-		static $recursionGuard = array();
+		static $recursionGuard = [];
 
 		$pid = $parent->getId();
 		if ( isset( $recursionGuard[$pid] ) ) {
 			$tid = $pid;
-			$path = array( $tid );
+			$path = [ $tid ];
 			do {
 				$tid = $recursionGuard[$tid];
 				$path[] = $tid;
@@ -722,7 +722,7 @@ class MessageGroups {
 
 		// We don't care about the ids.
 		$tree = array_values( $parent->getGroups() );
-		usort( $tree, array( __CLASS__, 'groupLabelSort' ) );
+		usort( $tree, [ __CLASS__, 'groupLabelSort' ] );
 		// Expand aggregate groups (if any left) after sorting to form a tree
 		foreach ( $tree as $index => $group ) {
 			if ( $group instanceof AggregateMessageGroup ) {
@@ -767,24 +767,24 @@ class MessageGroups {
 	 */
 	protected static function loadAggregateGroups() {
 		$dbw = wfGetDB( DB_MASTER );
-		$tables = array( 'translate_metadata' );
-		$fields = array( 'tmd_group', 'tmd_value' );
-		$conds = array( 'tmd_key' => 'subgroups' );
+		$tables = [ 'translate_metadata' ];
+		$fields = [ 'tmd_group', 'tmd_value' ];
+		$conds = [ 'tmd_key' => 'subgroups' ];
 		$res = $dbw->select( $tables, $fields, $conds, __METHOD__ );
 
-		$groups = array();
+		$groups = [];
 		foreach ( $res as $row ) {
 			$id = $row->tmd_group;
 
-			$conf = array();
-			$conf['BASIC'] = array(
+			$conf = [];
+			$conf['BASIC'] = [
 				'id' => $id,
 				'label' => TranslateMetadata::get( $id, 'name' ),
 				'description' => TranslateMetadata::get( $id, 'description' ),
 				'meta' => 1,
 				'class' => 'AggregateMessageGroup',
 				'namespace' => NS_TRANSLATIONS,
-			);
+			];
 			$conf['GROUPS'] = TranslateMetadata::getSubgroups( $id );
 			$group = MessageGroupBase::factory( $conf );
 
@@ -803,7 +803,7 @@ class MessageGroups {
 	 * @since 2013.10
 	 */
 	public static function isTranslatableMessage( MessageHandle $handle ) {
-		static $cache = array();
+		static $cache = [];
 
 		if ( !$handle->isValid() ) {
 			return false;
@@ -835,13 +835,13 @@ class MessageGroups {
 				}
 			}
 
-			$cache[$cacheKey] = array(
+			$cache[$cacheKey] = [
 				'relevant' => $allowed && !$discouraged,
-				'tags' => array(),
-			);
+				'tags' => [],
+			];
 
 			$groupTags = $group->getTags();
-			foreach ( array( 'ignored', 'optional' ) as $tag ) {
+			foreach ( [ 'ignored', 'optional' ] as $tag ) {
 				if ( isset( $groupTags[$tag] ) ) {
 					foreach ( $groupTags[$tag] as $key ) {
 						// TODO: ucfirst should not be here

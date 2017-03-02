@@ -16,9 +16,9 @@
  */
 class InOtherLanguagesAid extends TranslationAid {
 	public function getData() {
-		$suggestions = array(
+		$suggestions = [
 			'**' => 'suggestion',
-		);
+		];
 
 		// Fuzzy translations are not included in these
 		$translations = $this->getTranslations();
@@ -35,10 +35,10 @@ class InOtherLanguagesAid extends TranslationAid {
 				continue;
 			}
 
-			$suggestions[] = array(
+			$suggestions[] = [
 				'language' => $fbcode,
 				'value' => $translations[$fbcode],
-			);
+			];
 		}
 
 		return $suggestions;
@@ -67,7 +67,7 @@ class InOtherLanguagesAid extends TranslationAid {
 		}
 
 		// Global configuration settings
-		$fallbacks = array();
+		$fallbacks = [];
 		if ( isset( $wgTranslateLanguageFallbacks[$code] ) ) {
 			$fallbacks = (array)$wgTranslateLanguageFallbacks[$code];
 		}

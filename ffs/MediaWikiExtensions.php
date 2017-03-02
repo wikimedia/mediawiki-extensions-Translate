@@ -101,7 +101,7 @@ class PremadeMediawikiExtensionGroups {
 	 * @return MediaWikiExtensionMessageGroup
 	 */
 	protected function createMessageGroup( $id, $info ) {
-		$conf = array();
+		$conf = [];
 		$conf['BASIC']['class'] = 'MediaWikiExtensionMessageGroup';
 		$conf['BASIC']['id'] = $id;
 		$conf['BASIC']['namespace'] = $this->namespace;
@@ -147,7 +147,7 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		$conf['CHECKER']['class'] = 'MediaWikiMessageChecker';
-		$conf['CHECKER']['checks'] = array(
+		$conf['CHECKER']['checks'] = [
 			'pluralCheck',
 			'pluralFormsCheck',
 			'wikiParameterCheck',
@@ -156,7 +156,7 @@ class PremadeMediawikiExtensionGroups {
 			'braceBalanceCheck',
 			'pagenameMessagesCheck',
 			'miscMWChecks',
-		);
+		];
 
 		$conf['INSERTABLES']['class'] = 'MediaWikiInsertablesSuggester';
 
@@ -177,11 +177,11 @@ class PremadeMediawikiExtensionGroups {
 			'trim',
 			preg_split( "/$linefeed{2,}/", $defines, -1, PREG_SPLIT_NO_EMPTY )
 		);
-		$groups = array();
+		$groups = [];
 
 		foreach ( $sections as $section ) {
 			$lines = array_map( 'trim', preg_split( "/$linefeed/", $section ) );
-			$newgroup = array();
+			$newgroup = [];
 
 			foreach ( $lines as $line ) {
 				if ( $line === '' || $line[0] === '#' ) {
@@ -211,7 +211,7 @@ class PremadeMediawikiExtensionGroups {
 						case 'ignored':
 							$values = array_map( 'trim', explode( ',', $value ) );
 							if ( !isset( $newgroup[$key] ) ) {
-								$newgroup[$key] = array();
+								$newgroup[$key] = [];
 							}
 							$newgroup[$key] = array_merge( $newgroup[$key], $values );
 							break;
@@ -228,7 +228,7 @@ class PremadeMediawikiExtensionGroups {
 							$newgroup['prefix'] = $prefix;
 
 							if ( !isset( $newgroup['mangle'] ) ) {
-								$newgroup['mangle'] = array();
+								$newgroup['mangle'] = [];
 							}
 
 							$messages = array_map( 'trim', explode( ',', $messages ) );
@@ -253,10 +253,10 @@ class PremadeMediawikiExtensionGroups {
 
 	protected function processGroups( $groups ) {
 		$configureData = $this->loadConfigureExtensionData();
-		$fixedGroups = array();
+		$fixedGroups = [];
 		foreach ( $groups as $g ) {
 			if ( !is_array( $g ) ) {
-				$g = array( $g );
+				$g = [ $g ];
 			}
 
 			$name = $g['name'];
@@ -295,14 +295,14 @@ class PremadeMediawikiExtensionGroups {
 				$url = false;
 			}
 
-			$newgroup = array(
+			$newgroup = [
 				'name' => $name,
 				'file' => $file,
 				'descmsg' => $descmsg,
 				'url' => $url,
-			);
+			];
 
-			$copyvars = array(
+			$copyvars = [
 				'aliasfile',
 				'desc',
 				'format',
@@ -312,7 +312,7 @@ class PremadeMediawikiExtensionGroups {
 				'optional',
 				'prefix',
 				'var',
-			);
+			];
 
 			foreach ( $copyvars as $var ) {
 				if ( isset( $g[$var] ) ) {
@@ -322,7 +322,7 @@ class PremadeMediawikiExtensionGroups {
 
 			// Mark some fixed form optional messages automatically
 			if ( !isset( $newgroup['optional' ] ) ) {
-				$newgroup['optional'] = array();
+				$newgroup['optional'] = [];
 			}
 
 			// Mark extension name and skin names optional.
@@ -337,21 +337,21 @@ class PremadeMediawikiExtensionGroups {
 
 	protected function loadConfigureExtensionData() {
 		if ( !$this->useConfigure ) {
-			return array();
+			return [];
 		}
 
 		global $wgAutoloadClasses;
 
 		$postfix = 'Configure/load_txt_def/TxtDef.php';
 		if ( !file_exists( "{$this->path}/$postfix" ) ) {
-			return array();
+			return [];
 		}
 
 		$wgAutoloadClasses['TxtDef'] = "{$this->path}/$postfix";
 		$tmp = TxtDef::loadFromFile( "{$this->path}/Configure/settings/Settings-ext.txt" );
 
 		return array_combine(
-			array_map( array( __CLASS__, 'foldId' ), array_keys( $tmp ) ),
+			array_map( [ __CLASS__, 'foldId' ], array_keys( $tmp ) ),
 			array_values( $tmp )
 		);
 	}
