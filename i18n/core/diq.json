@@ -83,7 +83,7 @@
 	"translate-magic-namespace": "Nameyê heruna nameyan",
 	"translate-magic-notsaved": "Vurnayışê şıma qeyd nêbi!",
 	"translate-magic-errors": "Reca kem wexteyo ke açarnayış ken ê se {{PLURAL:$1|xetaya|xeteyabê}} cêri bıvurne:",
-	"translate-magic-saved": "Vırnayışê to qeyd bi.",
+	"translate-magic-saved": "Vırnayışê şıma qeyd bi.",
 	"translate-checks-parameters": "{{PLURAL:$2|Parametreyê cêrêni nêgureniyayê|Parametreyo cêrên nêgureniyayo}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Gıra|$2 Gırey}} ceri berbata: <strong><nowiki>$1</nowiki></strong>",
 	"translate-pref-editassistlang": "Zıwanê peşti:",
