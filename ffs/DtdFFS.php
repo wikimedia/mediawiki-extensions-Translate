@@ -17,7 +17,7 @@
  */
 class DtdFFS extends SimpleFFS {
 	public function getFileExtensions() {
-		return array( '.dtd' );
+		return [ '.dtd' ];
 	}
 
 	/**
@@ -26,7 +26,7 @@ class DtdFFS extends SimpleFFS {
 	 */
 	public function readFromVariable( $data ) {
 		preg_match_all( ',# Author: ([^\n]+)\n,', $data, $matches );
-		$authors = array();
+		$authors = [];
 
 		$count = count( $matches[1] );
 		for ( $i = 0; $i < $count; $i++ ) {
@@ -38,22 +38,22 @@ class DtdFFS extends SimpleFFS {
 		$keys = $matches[1];
 		$values = $matches[2];
 
-		$messages = array();
+		$messages = [];
 
 		$count = count( $matches[1] );
 		for ( $i = 0; $i < $count; $i++ ) {
 			$messages[$keys[$i]] = str_replace(
-				array( '&quot;', '&#34;', '&#39;' ),
-				array( '"', '"', "'" ),
+				[ '&quot;', '&#34;', '&#39;' ],
+				[ '"', '"', "'" ],
 				$values[$i] );
 		}
 
 		$messages = $this->group->getMangler()->mangle( $messages );
 
-		return array(
+		return [
 			'AUTHORS' => $authors,
 			'MESSAGES' => $messages,
-		);
+		];
 	}
 
 	protected function writeReal( MessageCollection $collection ) {

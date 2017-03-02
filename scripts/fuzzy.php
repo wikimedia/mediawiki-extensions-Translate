@@ -59,7 +59,7 @@ class Fuzzy extends Maintenance {
 
 		$bot->comment = $this->getOption( 'comment' );
 		$bot->dryrun = !$this->hasOption( 'really' );
-		$bot->setProgressCallback( array( $this, 'myOutput' ) );
+		$bot->setProgressCallback( [ $this, 'myOutput' ] );
 		$bot->execute();
 	}
 
@@ -86,7 +86,7 @@ class FuzzyScript {
 	/**
 	/* @var string[] List of patterns to mark.
 	 */
-	private $titles = array();
+	private $titles = [];
 
 	/**
 	 * @var bool Check for configuration problems.
@@ -109,7 +109,7 @@ class FuzzyScript {
 	/**
 	 * string[] List of language codes to skip.
 	 */
-	public $skipLanguages = array();
+	public $skipLanguages = [];
 
 	/**
 	 * @param string[] $titles
@@ -152,30 +152,30 @@ class FuzzyScript {
 		global $wgTranslateMessageNamespaces;
 		$dbr = wfGetDB( DB_SLAVE );
 
-		$search = array();
+		$search = [];
 		foreach ( $this->titles as $title ) {
 			$title = Title::newFromText( $title );
 			$ns = $title->getNamespace();
 			if ( !isset( $search[$ns] ) ) {
-				$search[$ns] = array();
+				$search[$ns] = [];
 			}
 			$search[$ns][] = 'page_title' . $dbr->buildLike( $title->getDBkey(), $dbr->anyString() );
 		}
 
-		$title_conds = array();
+		$title_conds = [];
 		foreach ( $search as $ns => $names ) {
 			if ( $ns === NS_MAIN ) {
 				$ns = $wgTranslateMessageNamespaces;
 			}
 			$titles = $dbr->makeList( $names, LIST_OR );
-			$title_conds[] = $dbr->makeList( array( 'page_namespace' => $ns, $titles ), LIST_AND );
+			$title_conds[] = $dbr->makeList( [ 'page_namespace' => $ns, $titles ], LIST_AND );
 		}
 
-		$conds = array(
+		$conds = [
 			'page_latest=rev_id',
 			'rev_text_id=old_id',
 			$dbr->makeList( $title_conds, LIST_OR ),
-		);
+		];
 
 		if ( count( $this->skipLanguages ) ) {
 			$skiplist = $dbr->makeList( $this->skipLanguages );
@@ -183,16 +183,16 @@ class FuzzyScript {
 		}
 
 		$rows = $dbr->select(
-			array( 'page', 'revision', 'text' ),
-			array( 'page_title', 'page_namespace', 'old_text', 'old_flags' ),
+			[ 'page', 'revision', 'text' ],
+			[ 'page_title', 'page_namespace', 'old_text', 'old_flags' ],
 			$conds,
 			__METHOD__
 		);
 
-		$messagesContents = array();
+		$messagesContents = [];
 		foreach ( $rows as $row ) {
 			$title = Title::makeTitle( $row->page_namespace, $row->page_title );
-			$messagesContents[] = array( $title, Revision::getRevisionText( $row ) );
+			$messagesContents[] = [ $title, Revision::getRevisionText( $row ) ];
 		}
 
 		$rows->free();

@@ -13,7 +13,7 @@
  * @ingroup MessageGroup
  */
 class RecentAdditionsMessageGroup extends RecentMessageGroup {
-	protected $groupInfoCache = array();
+	protected $groupInfoCache = [];
 
 	public function getId() {
 		return '!additions';
@@ -36,13 +36,13 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 	protected function getQueryConditions() {
 		global $wgTranslateMessageNamespaces;
 		$db = wfGetDB( DB_SLAVE );
-		$conds = array(
+		$conds = [
 			'rc_title ' . $db->buildLike( $db->anyString(), '/en' ),
 			'rc_namespace' => $wgTranslateMessageNamespaces,
 			'rc_type != ' . RC_LOG,
 			'rc_id > ' . $this->getRCCutoff(),
 			'rc_user' => FuzzyBot::getUser()->getId(),
-		);
+		];
 
 		return $conds;
 	}

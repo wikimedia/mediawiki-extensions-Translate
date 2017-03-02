@@ -56,7 +56,7 @@ class MessageHandle {
 			$title = $this->getTitle();
 			// Check if this is a valid message first
 			$this->key = $title->getDBkey();
-			$known = MessageIndex::singleton()->getGroupIds( $this ) !== array();
+			$known = MessageIndex::singleton()->getGroupIds( $this ) !== [];
 
 			$pos = strrpos( $this->key, '/' );
 			if ( $known || $pos === false ) {
@@ -68,7 +68,7 @@ class MessageHandle {
 			}
 		}
 
-		return array( $this->key, $this->code );
+		return [ $this->key, $this->code ];
 	}
 
 	/**
@@ -236,15 +236,15 @@ class MessageHandle {
 	public function isFuzzy() {
 		$dbr = wfGetDB( DB_SLAVE );
 
-		$tables = array( 'page', 'revtag' );
+		$tables = [ 'page', 'revtag' ];
 		$field = 'rt_type';
-		$conds = array(
+		$conds = [
 			'page_namespace' => $this->title->getNamespace(),
 			'page_title' => $this->title->getDBkey(),
 			'rt_type' => RevTag::getType( 'fuzzy' ),
 			'page_id=rt_page',
 			'page_latest=rt_revision'
-		);
+		];
 
 		$res = $dbr->selectField( $tables, $field, $conds, __METHOD__ );
 

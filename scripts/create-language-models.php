@@ -20,7 +20,7 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class LanguageModelCreator extends Maintenance {
-	protected $changes = array();
+	protected $changes = [];
 
 	public function __construct() {
 		parent::__construct();
@@ -48,14 +48,14 @@ TXT;
 		$pages = $cache->get( $key );
 		if ( !is_array( $pages ) ) {
 			$dbr = wfGetDB( DB_SLAVE );
-			$conds = array();
+			$conds = [];
 			$conds[] = 'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() );
 			$conds['page_namespace'] = $wgTranslateMessageNamespaces;
 
 			echo "Before query\n";
 			$res = $dbr->select(
-				array( 'page' ),
-				array( 'page_title, page_id' ),
+				[ 'page' ],
+				[ 'page_title, page_id' ],
 				$conds,
 				__METHOD__
 			);
@@ -102,7 +102,7 @@ TXT;
 		unset( $pages['nl-informal'] );
 		unset( $pages['en-gb'] );
 
-		$pids = array();
+		$pids = [];
 		$threads = 2;
 		foreach ( $pages as $code => $pageids ) {
 			$pid = ( $threads > 1 ) ? pcntl_fork() : -1;
@@ -136,7 +136,7 @@ TXT;
 
 		$this->output( "Combining languages\n" );
 
-		$huge = array();
+		$huge = [];
 		foreach ( glob( 'temp-*.json' ) as $file ) {
 			$contents = file_get_contents( $file );
 			$json = FormatJson::decode( $contents, true );
@@ -178,7 +178,7 @@ TXT;
 		$text = $cache->get( $key );
 		if ( !is_string( $text ) ) {
 
-			$snippets = array();
+			$snippets = [];
 
 			$ids = explode( '|', $ids );
 
@@ -194,19 +194,19 @@ TXT;
 			$time = microtime( true );
 
 			foreach ( $ids as $id ) {
-				$params = new FauxRequest( array(
+				$params = new FauxRequest( [
 					'pageid' => $id,
 					'action' => 'parse',
 					'prop' => 'text',
 					'disablepp' => 'true',
-				) );
+				] );
 
 				$api = new ApiMain( $params );
 				$api->execute();
 
 				$result = $api->getResult()->getResultData(
 					null,
-					array( 'BC' => array() )
+					[ 'BC' => [] ]
 				);
 
 				$text = $result['parse']['text']['*'];

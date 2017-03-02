@@ -82,11 +82,11 @@ class SpecialPageTranslation extends SpecialPage {
 			if ( $action === 'unlink' ) {
 				$this->showUnlinkConfirmation( $title, $target );
 			} else {
-				$params = array(
+				$params = [
 					'do' => $action,
 					'target' => $title->getPrefixedText(),
 					'revision' => $revision
-				);
+				];
 				$this->showGenericConfirmation( $params );
 			}
 
@@ -137,7 +137,7 @@ class SpecialPageTranslation extends SpecialPage {
 			if ( !$status->isOK() ) {
 				$out->wrapWikiMsg(
 					'<div class="errorbox">$1</div>',
-					array( 'tpt-edit-failed', $status->getWikiText() )
+					[ 'tpt-edit-failed', $status->getWikiText() ]
 				);
 
 				return;
@@ -147,7 +147,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$this->unmarkPage( $page, $user );
 			$out->wrapWikiMsg(
 				'<div class="successbox">$1</div>',
-				array( 'tpt-unmarked', $title->getPrefixedText() )
+				[ 'tpt-unmarked', $title->getPrefixedText() ]
 			);
 			$this->listPages();
 
@@ -159,7 +159,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$this->unmarkPage( $page, $user );
 			$out->wrapWikiMsg(
 				'<div class="successbox">$1</div>',
-				array( 'tpt-unmarked', $title->getPrefixedText() )
+				[ 'tpt-unmarked', $title->getPrefixedText() ]
 			);
 			$this->listPages();
 
@@ -182,7 +182,7 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( !$page instanceof TranslatablePage ) {
 			$out->wrapWikiMsg(
 				'<div class="errorbox">$1</div>',
-				array( 'tpt-notsuitable', $title->getPrefixedText(), $revision )
+				[ 'tpt-notsuitable', $title->getPrefixedText(), $revision ]
 			);
 
 			return;
@@ -190,11 +190,11 @@ class SpecialPageTranslation extends SpecialPage {
 
 		if ( $revision !== (int)$title->getLatestRevID() ) {
 			// We do want to notify the reviewer if the underlying page changes during review
-			$target = $title->getFullURL( array( 'oldid' => $revision ) );
+			$target = $title->getFullURL( [ 'oldid' => $revision ] );
 			$link = "<span class='plainlinks'>[$target $revision]</span>";
 			$out->wrapWikiMsg(
 				'<div class="warningbox">$1</div>',
-				array( 'tpt-oldrevision', $title->getPrefixedText(), $link )
+				[ 'tpt-oldrevision', $title->getPrefixedText(), $link ]
 			);
 			$this->listPages();
 
@@ -205,7 +205,7 @@ class SpecialPageTranslation extends SpecialPage {
 		if ( $lastrev !== false && $lastrev === $revision ) {
 			$out->wrapWikiMsg(
 				'<div class="warningbox">$1</div>',
-				array( 'tpt-already-marked' )
+				[ 'tpt-already-marked' ]
 			);
 			$this->listPages();
 
@@ -229,7 +229,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$err = $this->markForTranslation( $page, $sections );
 
 			if ( $err ) {
-				call_user_func_array( array( $out, 'addWikiMsg' ), $err );
+				call_user_func_array( [ $out, 'addWikiMsg' ], $err );
 			} else {
 				$this->showSuccess( $page );
 				$this->listPages();
@@ -247,15 +247,15 @@ class SpecialPageTranslation extends SpecialPage {
 	public function showSuccess( TranslatablePage $page ) {
 		$titleText = $page->getTitle()->getPrefixedText();
 		$num = $this->getLanguage()->formatNum( $page->getParse()->countSections() );
-		$link = SpecialPage::getTitleFor( 'Translate' )->getFullURL( array(
+		$link = SpecialPage::getTitleFor( 'Translate' )->getFullURL( [
 			'group' => $page->getMessageGroupId(),
 			'action' => 'page',
 			'filter' => '',
-		) );
+		] );
 
 		$this->getOutput()->wrapWikiMsg(
 			'<div class="successbox">$1</div>',
-			array( 'tpt-saveok', $titleText, $num, $link )
+			[ 'tpt-saveok', $titleText, $num, $link ]
 		);
 
 		// If TranslationNotifications is installed, and the user can notify
@@ -264,16 +264,16 @@ class SpecialPageTranslation extends SpecialPage {
 			$this->getUser()->isAllowed( SpecialNotifyTranslators::$right )
 		) {
 			$link = SpecialPage::getTitleFor( 'NotifyTranslators' )->getFullURL(
-				array( 'tpage' => $page->getTitle()->getArticleID() ) );
+				[ 'tpage' => $page->getTitle()->getArticleID() ] );
 			$this->getOutput()->addWikiMsg( 'tpt-offer-notify', $link );
 		}
 	}
 
 	protected function showGenericConfirmation( array $params ) {
-		$formParams = array(
+		$formParams = [
 			'method' => 'post',
 			'action' => $this->getPageTitle()->getFullURL(),
-		);
+		];
 
 		$params['title'] = $this->getPageTitle()->getPrefixedText();
 		$params['token'] = $this->getUser()->getEditToken();
@@ -289,17 +289,17 @@ class SpecialPageTranslation extends SpecialPage {
 			$this->msg( 'tpt-generic-confirm' )->parseAsBlock() .
 			Xml::submitButton(
 				$this->msg( 'tpt-generic-button' )->text(),
-				array( 'class' => 'mw-ui-button mw-ui-progressive' )
+				[ 'class' => 'mw-ui-button mw-ui-progressive' ]
 			) .
 			Html::closeElement( 'form' )
 		);
 	}
 
 	protected function showUnlinkConfirmation( Title $target ) {
-		$formParams = array(
+		$formParams = [
 			'method' => 'post',
 			'action' => $this->getPageTitle()->getFullURL(),
-		);
+		];
 
 		$this->getOutput()->addHTML(
 			Html::openElement( 'form', $formParams ) .
@@ -310,7 +310,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$this->msg( 'tpt-unlink-confirm', $target->getPrefixedText() )->parseAsBlock() .
 			Xml::submitButton(
 				$this->msg( 'tpt-unlink-button' )->text(),
-				array( 'class' => 'mw-ui-button mw-ui-destructive' )
+				[ 'class' => 'mw-ui-button mw-ui-destructive' ]
 			) .
 			Html::closeElement( 'form' )
 		);
@@ -329,34 +329,34 @@ class SpecialPageTranslation extends SpecialPage {
 
 	public function loadPagesFromDB() {
 		$dbr = TranslateUtils::getSafeReadDB();
-		$tables = array( 'page', 'revtag' );
-		$vars = array(
+		$tables = [ 'page', 'revtag' ];
+		$vars = [
 			'page_id',
 			'page_title',
 			'page_namespace',
 			'page_latest',
 			'MAX(rt_revision) AS rt_revision',
 			'rt_type'
-		);
-		$conds = array(
+		];
+		$conds = [
 			'page_id=rt_page',
-			'rt_type' => array( RevTag::getType( 'tp:mark' ), RevTag::getType( 'tp:tag' ) ),
-		);
-		$options = array(
+			'rt_type' => [ RevTag::getType( 'tp:mark' ), RevTag::getType( 'tp:tag' ) ],
+		];
+		$options = [
 			'ORDER BY' => 'page_namespace, page_title',
 			'GROUP BY' => 'page_id, rt_type',
-		);
+		];
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
 		return $res;
 	}
 
 	protected function buildPageArray( /*db result*/$res ) {
-		$pages = array();
+		$pages = [];
 		foreach ( $res as $r ) {
 			// We have multiple rows for same page, because of different tags
 			if ( !isset( $pages[$r->page_id] ) ) {
-				$pages[$r->page_id] = array();
+				$pages[$r->page_id] = [];
 				$title = Title::newFromRow( $r );
 				$pages[$r->page_id]['title'] = $title;
 				$pages[$r->page_id]['latest'] = (int)$title->getLatestRevID();
@@ -374,12 +374,12 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @return array
 	 */
 	protected function classifyPages( array $in ) {
-		$out = array(
-			'proposed' => array(),
-			'active' => array(),
-			'broken' => array(),
-			'discouraged' => array(),
-		);
+		$out = [
+			'proposed' => [],
+			'active' => [],
+			'broken' => [],
+			'discouraged' => [],
+		];
 
 		foreach ( $in as $index => $page ) {
 			if ( !isset( $page['tp:mark'] ) ) {
@@ -496,7 +496,7 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @return string
 	 */
 	protected function actionLinks( array $page, $type ) {
-		$actions = array();
+		$actions = [];
 		/**
 		 * @var Title $title
 		 */
@@ -504,7 +504,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$user = $this->getUser();
 
 		// Class to allow one-click POSTs
-		$js = array( 'class' => 'mw-translate-jspost' );
+		$js = [ 'class' => 'mw-translate-jspost' ];
 
 		if ( $user->isAllowed( 'pagetranslation' ) ) {
 			$pending = $type === 'active' && $page['latest'] !== $page['tp:mark'];
@@ -512,12 +512,12 @@ class SpecialPageTranslation extends SpecialPage {
 				$actions[] = Linker::linkKnown(
 					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-mark' )->escaped(),
-					array( 'title' => $this->msg( 'tpt-rev-mark-tooltip' )->text() ),
-					array(
+					[ 'title' => $this->msg( 'tpt-rev-mark-tooltip' )->text() ],
+					[
 						'do' => 'mark',
 						'target' => $title->getPrefixedText(),
 						'revision' => $title->getLatestRevID(),
-					)
+					]
 				);
 			}
 
@@ -525,23 +525,23 @@ class SpecialPageTranslation extends SpecialPage {
 				$actions[] = Linker::linkKnown(
 					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-discourage' )->escaped(),
-					array( 'title' => $this->msg( 'tpt-rev-discourage-tooltip' )->text() ) + $js,
-					array(
+					[ 'title' => $this->msg( 'tpt-rev-discourage-tooltip' )->text() ] + $js,
+					[
 						'do' => 'discourage',
 						'target' => $title->getPrefixedText(),
 						'revision' => -1,
-					)
+					]
 				);
 			} elseif ( $type === 'discouraged' ) {
 				$actions[] = Linker::linkKnown(
 					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-encourage' )->escaped(),
-					array( 'title' => $this->msg( 'tpt-rev-encourage-tooltip' )->text() ) + $js,
-					array(
+					[ 'title' => $this->msg( 'tpt-rev-encourage-tooltip' )->text() ] + $js,
+					[
 						'do' => 'encourage',
 						'target' => $title->getPrefixedText(),
 						'revision' => -1,
-					)
+					]
 				);
 			}
 
@@ -549,12 +549,12 @@ class SpecialPageTranslation extends SpecialPage {
 				$actions[] = Linker::linkKnown(
 					$this->getPageTitle(),
 					$this->msg( 'tpt-rev-unmark' )->escaped(),
-					array( 'title' => $this->msg( 'tpt-rev-unmark-tooltip' )->text() ),
-					array(
+					[ 'title' => $this->msg( 'tpt-rev-unmark-tooltip' )->text() ],
+					[
 						'do' => $type === 'broken' ? 'unmark' : 'unlink',
 						'target' => $title->getPrefixedText(),
 						'revision' => -1,
-					)
+					]
 				);
 			}
 		}
@@ -567,7 +567,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		return Html::rawElement(
 			'span',
-			array( 'class' => 'mw-tpt-actions' ),
+			[ 'class' => 'mw-tpt-actions' ],
 			$this->msg( 'parentheses' )->rawParams( $flattened )->escaped()
 		);
 	}
@@ -578,7 +578,7 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @return TPSection[] The array has string keys.
 	 */
 	public function checkInput( TranslatablePage $page, &$error ) {
-		$usedNames = array();
+		$usedNames = [];
 		$highest = (int)TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' );
 		$parse = $page->getParse();
 		$sections = $parse->getSectionsForSave( $highest );
@@ -610,11 +610,11 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$out->addWikiMsg( 'tpt-showpage-intro' );
 
-		$formParams = array(
+		$formParams = [
 			'method' => 'post',
 			'action' => $this->getPageTitle()->getFullURL(),
 			'class' => 'mw-tpt-sp-markform',
-		);
+		];
 
 		$out->addHTML(
 			Xml::openElement( 'form', $formParams ) .
@@ -743,7 +743,7 @@ class SpecialPageTranslation extends SpecialPage {
 				$diff->showDiffStyle();
 				$diff->setReducedLineNumbers();
 
-				$contentParams = array( 'class' => 'mw-tpt-sp-content' );
+				$contentParams = [ 'class' => 'mw-tpt-sp-content' ];
 				$out->addHTML( Xml::tags( 'div', $contentParams, $text ) );
 			}
 		}
@@ -839,7 +839,7 @@ class SpecialPageTranslation extends SpecialPage {
 		);
 
 		if ( !$status->isOK() ) {
-			return array( 'tpt-edit-failed', $status->getWikiText() );
+			return [ 'tpt-edit-failed', $status->getWikiText() ];
 		}
 
 		$newrevision = $status->value['revision'];
@@ -856,8 +856,8 @@ class SpecialPageTranslation extends SpecialPage {
 			$newrevision = $page->getTitle()->getLatestRevID();
 		}
 
-		$inserts = array();
-		$changed = array();
+		$inserts = [];
+		$changed = [];
 		$maxid = (int)TranslateMetadata::get( $page->getMessageGroupId(), 'maxid' );
 
 		$pageId = $page->getTitle()->getArticleID();
@@ -873,18 +873,18 @@ class SpecialPageTranslation extends SpecialPage {
 				$s->type = 'old';
 			}
 
-			$inserts[] = array(
+			$inserts[] = [
 				'trs_page' => $pageId,
 				'trs_key' => $s->name,
 				'trs_text' => $s->getText(),
 				'trs_order' => $index
-			);
+			];
 		}
 
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete(
 			'translate_sections',
-			array( 'trs_page' => $page->getTitle()->getArticleID() ),
+			[ 'trs_page' => $page->getTitle()->getArticleID() ],
 			__METHOD__
 		);
 		$dbw->insert( 'translate_sections', $inserts, __METHOD__ );
@@ -895,7 +895,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		$job = new TranslationsUpdateJob(
 			$page->getTitle(),
-			array( 'sections' => $sections )
+			[ 'sections' => $sections ]
 		);
 		JobQueueGroup::singleton()->push( $job );
 
@@ -905,10 +905,10 @@ class SpecialPageTranslation extends SpecialPage {
 		$entry = new ManualLogEntry( 'pagetranslation', 'mark' );
 		$entry->setPerformer( $this->getUser() );
 		$entry->setTarget( $page->getTitle() );
-		$entry->setParameters( array(
+		$entry->setParameters( [
 			'revision' => $newrevision,
 			'changed' => count( $changed ),
-		) );
+		] );
 		$logid = $entry->insert();
 		$entry->publish( $logid );
 
@@ -956,11 +956,11 @@ class SpecialPageTranslation extends SpecialPage {
 		TranslateMetadata::set( $groupId, 'priorityreason', $npReason );
 
 		if ( $opLangs !== $npLangs || $opForce !== $npForce || $opReason !== $npReason ) {
-			$params = array(
+			$params = [
 				'languages' => $npLangs,
 				'force' => $npForce,
 				'reason' => $npReason,
-			);
+			];
 
 			$entry = new ManualLogEntry( 'pagetranslation', 'prioritylanguages' );
 			$entry->setPerformer( $this->getUser() );
@@ -980,7 +980,7 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @since 2014.09
 	 */
 	public static function getStrippedSourcePageText( TPParse $parse ) {
-		$text = $parse->getTranslationPageText( array() );
+		$text = $parse->getTranslationPageText( [] );
 		$text = preg_replace( '~<languages\s*/>\n?~s', '', $text );
 		return $text;
 	}

@@ -10,19 +10,19 @@
 
 class IniFFSTest extends MediaWikiTestCase {
 
-	protected $groupConfiguration = array(
-		'BASIC' => array(
+	protected $groupConfiguration = [
+		'BASIC' => [
 			'class' => 'FileBasedMessageGroup',
 			'id' => 'test-id',
 			'label' => 'Test Label',
 			'namespace' => 'NS_MEDIAWIKI',
 			'description' => 'Test description',
-		),
-		'FILES' => array(
+		],
+		'FILES' => [
 			'class' => 'IniFFS',
 			'sourcePattern' => 'ignored',
-		),
-	);
+		],
+	];
 
 	public function testParsing() {
 		$file = file_get_contents( __DIR__ . '/../data/IniFFSTest1.ini' );
@@ -36,17 +36,17 @@ class IniFFSTest extends MediaWikiTestCase {
 		$this->assertTrue( IniFFS::isValid( $file ) );
 
 		$parsed = $ffs->readFromVariable( $file );
-		$expected = array(
+		$expected = [
 			'hello' => 'Hello',
 			'world' => 'World!',
 			'all' => 'all = all',
 			'foo.bar' => 'bar',
 			'quote' => "We're having fun?",
-		);
-		$expected = array(
+		];
+		$expected = [
 			'MESSAGES' => $expected,
-			'AUTHORS' => array( 'The king of very small kingdom' )
-		);
+			'AUTHORS' => [ 'The king of very small kingdom' ]
+		];
 		$this->assertEquals( $expected, $parsed );
 	}
 

@@ -36,16 +36,16 @@ class InsertablesAid extends TranslationAid {
 		}
 
 		$insertables = $suggester->getInsertables( $this->getDefinition() );
-		$blob = array();
+		$blob = [];
 		foreach ( $insertables as $insertable ) {
 			$displayText = $insertable->getDisplayText();
 
 			// The keys are used for de-duplication
-			$blob[$displayText] = array(
+			$blob[$displayText] = [
 				'display' => $displayText,
 				'pre' => $insertable->getPreText(),
 				'post' => $insertable->getPostText(),
-			);
+			];
 		}
 
 		$blob = array_values( $blob );

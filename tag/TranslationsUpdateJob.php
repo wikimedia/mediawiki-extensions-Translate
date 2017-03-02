@@ -60,7 +60,7 @@ class TranslationsUpdateJob extends Job {
 	 * @since 2013-01-28
 	 */
 	public static function getTranslationUnitJobs( TranslatablePage $page, array $sections ) {
-		$jobs = array();
+		$jobs = [];
 
 		$code = $page->getSourceLanguageCode();
 		$prefix = $page->getTitle()->getPrefixedText();
@@ -83,7 +83,7 @@ class TranslationsUpdateJob extends Job {
 	 * @since 2013-01-28
 	 */
 	public static function getRenderJobs( TranslatablePage $page ) {
-		$jobs = array();
+		$jobs = [];
 
 		$jobTitles = $page->getTranslationPages();
 		// $jobTitles may have the source language title already but duplicate TranslateRenderJobs

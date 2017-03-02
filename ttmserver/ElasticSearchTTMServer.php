@@ -99,16 +99,16 @@ class ElasticSearchTTMServer
 		$fuzzyQuery = new FuzzyLikeThis();
 		$fuzzyQuery->setMinSimilarity( 2 );
 		$fuzzyQuery->setLikeText( $text );
-		$fuzzyQuery->addFields( array( 'content' ) );
+		$fuzzyQuery->addFields( [ 'content' ] );
 
 		$boostQuery = new \Elastica\Query\FunctionScore();
 		if ( $this->useWikimediaExtraPlugin() ) {
 			$boostQuery->addFunction(
 				'levenshtein_distance_score',
-				array(
+				[
 					'text' => $text,
 					'field' => 'content'
-				)
+				]
 			);
 		} else {
 			// TODO: should we remove this code block the extra
@@ -127,7 +127,7 @@ new LevensteinDistance().getDistance(srctxt, _source['content'])
 GROOVY;
 			$script = new $scriptClass(
 				$groovyScript,
-				array( 'srctxt' => $text ),
+				[ 'srctxt' => $text ],
 				$scriptClass::LANG_GROOVY
 			);
 			$boostQuery->addScriptScoreFunction( $script );
@@ -161,16 +161,16 @@ GROOVY;
 
 		$query->setFrom( 0 );
 		$query->setSize( $sizeFirst );
-		$query->setParam( '_source', array( 'content' ) );
+		$query->setParam( '_source', [ 'content' ] );
 		$cutoff = isset( $this->config['cutoff'] ) ? $this->config['cutoff'] : 0.65;
 		$query->setParam( 'min_score', $cutoff );
-		$query->setSort( array( '_score', '_uid' ) );
+		$query->setSort( [ '_score', '_uid' ] );
 
 		// This query is doing two unrelated things:
 		// 1) Collect the message contents and scores so that they can
 		//    be accessed later for the translations we found.
 		// 2) Build the query string for the query that fetches the translations.
-		$contents = $scores = $terms = array();
+		$contents = $scores = $terms = [];
 		do {
 			$resultset = $this->getType()->search( $query );
 
@@ -211,17 +211,17 @@ GROOVY;
 			// Break if we already got all hits
 		} while ( $resultset->getTotalHits() > count( $contents ) );
 
-		$suggestions = array();
+		$suggestions = [];
 
 		// Skip second query if first query found nothing. Keeping only one return
 		// statement in this method to avoid forgetting to reset connection timeout
-		if ( $terms !== array() ) {
+		if ( $terms !== [] ) {
 			$idQuery = new \Elastica\Query\Terms();
 			$idQuery->setTerms( '_id', $terms );
 
 			$query = new \Elastica\Query( $idQuery );
 			$query->setSize( 25 );
-			$query->setParam( '_source', array( 'wiki', 'uri', 'content', 'localid' ) );
+			$query->setParam( '_source', [ 'wiki', 'uri', 'content', 'localid' ] );
 			$resultset = $this->getType()->search( $query );
 
 			foreach ( $resultset->getResults() as $result ) {
@@ -230,7 +230,7 @@ GROOVY;
 				// Construct the matching source id
 				$sourceId = preg_replace( '~/[^/]+$~', '', $result->getId() );
 
-				$suggestions[] = array(
+				$suggestions[] = [
 					'source' => $contents[$sourceId],
 					'target' => $data['content'],
 					'context' => $data['localid'],
@@ -238,7 +238,7 @@ GROOVY;
 					'wiki' => $data['wiki'],
 					'location' => $data['localid'] . '/' . $targetLanguage,
 					'uri' => $data['uri'],
-				);
+				];
 			}
 
 			// Ensure reults are in quality order
@@ -280,9 +280,9 @@ GROOVY;
 			$localid = $handle->getTitleForBase()->getPrefixedText();
 
 			$boolQuery = new \Elastica\Query\BoolQuery();
-			$boolQuery->addFilter( new Elastica\Query\Term( array( 'wiki' => wfWikiID() ) ) );
-			$boolQuery->addFilter( new Elastica\Query\Term( array( 'language' => $handle->getCode() ) ) );
-			$boolQuery->addFilter( new Elastica\Query\Term( array( 'localid' => $localid ) ) );
+			$boolQuery->addFilter( new Elastica\Query\Term( [ 'wiki' => wfWikiID() ] ) );
+			$boolQuery->addFilter( new Elastica\Query\Term( [ 'language' => $handle->getCode() ] ) );
+			$boolQuery->addFilter( new Elastica\Query\Term( [ 'localid' => $localid ] ) );
 
 			$query = new \Elastica\Query( $boolQuery );
 			$this->deleteByQuery( $this->getType(), $query );
@@ -324,14 +324,14 @@ GROOVY;
 		$wiki = wfWikiID();
 		$globalid = "$wiki-$localid-$revId/$language";
 
-		$data = array(
+		$data = [
 			'wiki' => $wiki,
 			'uri' => $handle->getTitle()->getCanonicalURL(),
 			'localid' => $localid,
 			'language' => $language,
 			'content' => $text,
 			'group' => $handle->getGroupIds(),
-		);
+		];
 
 		return new \Elastica\Document( $globalid, $data );
 	}
@@ -343,30 +343,30 @@ GROOVY;
 	public function createIndex( $rebuild ) {
 		$type = $this->getType();
 		$type->getIndex()->create(
-			array(
+			[
 				'number_of_shards' => $this->getShardCount(),
 				'number_of_replicas' => $this->getReplicaCount(),
-				'analysis' => array(
-					'filter' => array(
-						'prefix_filter' => array(
+				'analysis' => [
+					'filter' => [
+						'prefix_filter' => [
 							'type' => 'edge_ngram',
 							'min_gram'=> 2,
 							'max_gram'=> 20
-						)
-					),
-					'analyzer' => array(
-						'prefix' => array(
+						]
+					],
+					'analyzer' => [
+						'prefix' => [
 							'type' => 'custom',
 							'tokenizer' => 'standard',
-							'filter' => array( 'standard', 'lowercase', 'prefix_filter' )
-						),
-						'casesensitive' => array(
+							'filter' => [ 'standard', 'lowercase', 'prefix_filter' ]
+						],
+						'casesensitive' => [
 							'tokenizer' => 'standard',
-							'filter' => array( 'standard' )
-						)
-					)
-				)
-			),
+							'filter' => [ 'standard' ]
+						]
+					]
+				]
+			],
 			$rebuild
 		);
 	}
@@ -391,41 +391,41 @@ GROOVY;
 		$mapping = new \Elastica\Type\Mapping();
 		$mapping->setType( $type );
 
-		$keywordType = array( 'type' => 'string', 'index' => 'not_analyzed' );
+		$keywordType = [ 'type' => 'string', 'index' => 'not_analyzed' ];
 		$textType = 'string';
 		if ( $this->isElastica5() ) {
-			$keywordType = array( 'type' => 'keyword' );
+			$keywordType = [ 'type' => 'keyword' ];
 			$textType = 'text';
 		}
-		$mapping->setProperties( array(
+		$mapping->setProperties( [
 			'wiki'     => $keywordType,
 			'localid'  => $keywordType,
 			'uri'      => $keywordType,
 			'language' => $keywordType,
 			'group'    => $keywordType,
-			'content'  => array(
+			'content'  => [
 				'type' => $textType,
-				'fields' => array(
-					'content' => array(
+				'fields' => [
+					'content' => [
 						'type' => $textType,
 						'index' => 'analyzed',
 						'term_vector' => 'yes'
-					),
-					'prefix_complete' => array(
+					],
+					'prefix_complete' => [
 						'type' => $textType,
 						'analyzer' => 'prefix',
 						'search_analyzer' => 'standard',
 						'term_vector' => 'yes'
-					),
-					'case_sensitive' => array(
+					],
+					'case_sensitive' => [
 						'type' => $textType,
 						'index' => 'analyzed',
 						'analyzer' => 'casesensitive',
 						'term_vector' => 'yes'
-					)
-				)
-			),
-		) );
+					]
+				]
+			],
+		] );
 		$mapping->send();
 
 		$this->waitUntilReady();
@@ -446,7 +446,7 @@ GROOVY;
 	}
 
 	public function batchInsertTranslations( array $batch ) {
-		$docs = array();
+		$docs = [];
 		foreach ( $batch as $data ) {
 			list( $handle, $sourceLanguage, $text ) = $data;
 			$revId = $handle->getTitleForLanguage( $sourceLanguage )->getLatestRevID();
@@ -599,7 +599,7 @@ GROOVY;
 
 	// Parse query string and build the search query
 	protected function parseQueryString( $queryString, array $opts ) {
-		$fields = $highlights = array();
+		$fields = $highlights = [];
 		$terms = preg_split( '/\s+/', $queryString );
 		$match = $opts['match'];
 		$case = $opts['case'];
@@ -638,9 +638,9 @@ GROOVY;
 				}
 
 				// Fields for highlighting
-				$highlights[$analyzer] =  array(
+				$highlights[$analyzer] =  [
 					'number_of_fragments' => 0
-				);
+				];
 
 				// Allow searching by exact message title (page name with
 				// language subpage).
@@ -660,7 +660,7 @@ GROOVY;
 			}
 		}
 
-		return array( $searchQuery, $highlights );
+		return [ $searchQuery, $highlights ];
 	}
 
 	// Search interface
@@ -711,12 +711,12 @@ GROOVY;
 		}
 
 		list( $pre, $post ) = $highlight;
-		$query->setHighlight( array(
+		$query->setHighlight( [
 			// The value must be an object
-			'pre_tags' => array( $pre ),
-			'post_tags' => array( $post ),
+			'pre_tags' => [ $pre ],
+			'post_tags' => [ $post ],
 			'fields' => $highlights,
-		) );
+		] );
 
 		try {
 			return $this->getType()->getIndex()->search( $query );
@@ -728,10 +728,10 @@ GROOVY;
 	public function getFacets( $resultset ) {
 		$aggs = $resultset->getAggregations();
 
-		$ret = array(
-			'language' => array(),
-			'group' => array()
-		);
+		$ret = [
+			'language' => [],
+			'group' => []
+		];
 
 		foreach ( $aggs as $type => $info ) {
 			foreach ( $info['buckets'] as $row ) {
@@ -747,7 +747,7 @@ GROOVY;
 	}
 
 	public function getDocuments( $resultset ) {
-		$ret = array();
+		$ret = [];
 		foreach ( $resultset->getResults() as $document ) {
 			$data = $document->getData();
 			$hl = $document->getHighlights();
@@ -779,7 +779,7 @@ GROOVY;
 		$scroll = new \Elastica\Scroll( $search, '15m' );
 
 		foreach ( $scroll as $results ) {
-			$ids = array();
+			$ids = [];
 			foreach ( $results as $result ) {
 				$ids[] = $result->getId();
 			}

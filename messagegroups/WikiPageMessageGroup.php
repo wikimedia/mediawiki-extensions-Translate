@@ -59,12 +59,12 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 
 		$dbr = TranslateUtils::getSafeReadDB();
 		$tables = 'translate_sections';
-		$vars = array( 'trs_key', 'trs_text' );
-		$conds = array( 'trs_page' => $this->getTitle()->getArticleID() );
-		$options = array( 'ORDER BY' => 'trs_order' );
+		$vars = [ 'trs_key', 'trs_text' ];
+		$conds = [ 'trs_page' => $this->getTitle()->getArticleID() ];
+		$options = [ 'ORDER BY' => 'trs_order' ];
 		$res = $dbr->select( $tables, $vars, $conds, __METHOD__, $options );
 
-		$defs = array();
+		$defs = [];
 		$prefix = $this->getTitle()->getPrefixedDBkey() . '/';
 
 		foreach ( $res as $r ) {
@@ -73,7 +73,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 			$defs[$r->trs_key] = $section->getTextWithVariables();
 		}
 
-		$new_defs = array();
+		$new_defs = [];
 		foreach ( $defs as $k => $v ) {
 			$k = str_replace( ' ', '_', $k );
 			$new_defs[$prefix . $k] = $v;
@@ -99,7 +99,7 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 			return $this->getDefinitions();
 		}
 
-		return array();
+		return [];
 	}
 
 	/**
@@ -140,13 +140,13 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	 */
 	public function getChecker() {
 		$checker = new MediaWikiMessageChecker( $this );
-		$checker->setChecks( array(
-			array( $checker, 'pluralCheck' ),
-			array( $checker, 'XhtmlCheck' ),
-			array( $checker, 'braceBalanceCheck' ),
-			array( $checker, 'pagenameMessagesCheck' ),
-			array( $checker, 'miscMWChecks' )
-		) );
+		$checker->setChecks( [
+			[ $checker, 'pluralCheck' ],
+			[ $checker, 'XhtmlCheck' ],
+			[ $checker, 'braceBalanceCheck' ],
+			[ $checker, 'pagenameMessagesCheck' ],
+			[ $checker, 'miscMWChecks' ]
+		] );
 
 		return $checker;
 	}

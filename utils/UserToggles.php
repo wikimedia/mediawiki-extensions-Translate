@@ -31,11 +31,11 @@ class TranslatePreferences {
 		if ( $wgEnableEmail && $user->isEmailConfirmed() ) {
 			// 'translate-pref-nonewsletter' is used as opt-out for
 			// users with a confirmed email address
-			$preferences['translate-nonewsletter'] = array(
+			$preferences['translate-nonewsletter'] = [
 				'type' => 'toggle',
 				'section' => 'personal/email',
 				'label-message' => 'translate-pref-nonewsletter'
-			);
+			];
 
 		}
 	}
@@ -56,7 +56,7 @@ class TranslatePreferences {
 		// Get available languages.
 		$languages = Language::fetchLanguageNames();
 
-		$preferences['translate-editlangs'] = array(
+		$preferences['translate-editlangs'] = [
 			'class' => 'HTMLJsSelectToInputField',
 			// prefs-translate
 			'section' => 'editing/translate',
@@ -65,7 +65,7 @@ class TranslatePreferences {
 			'select' => $select,
 			'valid-values' => array_keys( $languages ),
 			'name' => 'translate-editlangs',
-		);
+		];
 
 		return true;
 	}
@@ -75,7 +75,7 @@ class TranslatePreferences {
 	 * @return JsSelectToInput
 	 */
 	protected static function languageSelector() {
-		if ( is_callable( array( 'LanguageNames', 'getNames' ) ) ) {
+		if ( is_callable( [ 'LanguageNames', 'getNames' ] ) ) {
 			$lang = RequestContext::getMain()->getLanguage();
 			$languages = LanguageNames::getNames( $lang->getCode(),
 				LanguageNames::FALLBACK_NORMAL

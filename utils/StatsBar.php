@@ -76,29 +76,29 @@ class StatsBar {
 			$wuntranslated = round( 100 - $wproofread - $wtranslated - $wfuzzy, 2 );
 		}
 
-		return Html::rawElement( 'div', array(
+		return Html::rawElement( 'div', [
 				'class' => 'tux-statsbar',
 				'data-total' => $total,
 				'data-group' => $this->group,
 				'data-language' => $this->language,
-			),
-			Html::element( 'span', array(
+			],
+			Html::element( 'span', [
 				'class' => 'tux-proofread',
 				'style' => "width: $wproofread%",
 				'data-proofread' => $proofread,
-			) ) . Html::element( 'span', array(
+			] ) . Html::element( 'span', [
 				'class' => 'tux-translated',
 				'style' => "width: $wtranslated%",
 				'data-translated' => $translated,
-			) ) . Html::element( 'span', array(
+			] ) . Html::element( 'span', [
 				'class' => 'tux-fuzzy',
 				'style' => "width: $wfuzzy%",
 				'data-fuzzy' => $fuzzy,
-			) ) . Html::element( 'span', array(
+			] ) . Html::element( 'span', [
 				'class' => 'tux-untranslated',
 				'style' => "width: $wuntranslated%",
 				'data-untranslated' => $untranslated,
-			) )
+			] )
 		);
 	}
 }

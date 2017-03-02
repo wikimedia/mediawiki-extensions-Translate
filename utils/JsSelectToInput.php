@@ -93,11 +93,11 @@ class JsSelectToInput {
 	 * @return string
 	 */
 	protected function getButton( $msg, $source, $target ) {
-		$html = Xml::element( 'input', array(
+		$html = Xml::element( 'input', [
 			'type' => 'button',
 			'value' => wfMessage( $msg )->text(),
-			'onclick' => Xml::encodeJsCall( 'appendFromSelect', array( $source, $target ) )
-		) );
+			'onclick' => Xml::encodeJsCall( 'appendFromSelect', [ $source, $target ] )
+		] );
 
 		return $html;
 	}

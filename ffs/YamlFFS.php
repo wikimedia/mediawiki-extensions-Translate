@@ -17,7 +17,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	public function getFileExtensions() {
-		return array( '.yaml', '.yml' );
+		return [ '.yaml', '.yml' ];
 	}
 
 	/**
@@ -26,7 +26,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 */
 	public function readFromVariable( $data ) {
 		// Authors first.
-		$matches = array();
+		$matches = [];
 		preg_match_all( '/^#\s*Author:\s*(.*)$/m', $data, $matches );
 		$authors = $matches[1];
 
@@ -44,10 +44,10 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			$value = rtrim( $value, "\n" );
 		}
 
-		return array(
+		return [
 			'AUTHORS' => $authors,
 			'MESSAGES' => $messages,
-		);
+		];
 	}
 
 	/**
@@ -60,7 +60,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 		$mangler = $this->group->getMangler();
 
-		$messages = array();
+		$messages = [];
 		/**
 		 * @var $m TMessage
 		 */
@@ -85,7 +85,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		// Some groups have messages under language code.
 		if ( isset( $this->extra['codeAsRoot'] ) ) {
 			$code = $this->group->mapCode( $collection->code );
-			$messages = array( $code => $messages );
+			$messages = [ $code => $messages ];
 		}
 
 		$output .= TranslateYaml::dump( $messages );
@@ -158,7 +158,6 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		return $this->flattener->flatten( $messages );
 	}
 
-
 	/**
 	 * Performs the reverse operation of flatten. Each dot (or custom separator)
 	 * in the key starts a new subarray in the final array.
@@ -176,27 +175,27 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	public static function getExtraSchema() {
-		$schema = array(
-			'root' => array(
+		$schema = [
+			'root' => [
 				'_type' => 'array',
-				'_children' => array(
-					'FILES' => array(
+				'_children' => [
+					'FILES' => [
 						'_type' => 'array',
-						'_children' => array(
-							'codeAsRoot' => array(
+						'_children' => [
+							'codeAsRoot' => [
 								'_type' => 'boolean',
-							),
-							'nestingSeparator' => array(
+							],
+							'nestingSeparator' => [
 								'_type' => 'text',
-							),
-							'parseCLDRPlurals' => array(
+							],
+							'parseCLDRPlurals' => [
 								'_type' => 'boolean',
-							)
-						)
-					)
-				)
-			)
-		);
+							]
+						]
+					]
+				]
+			]
+		];
 
 		return $schema;
 	}

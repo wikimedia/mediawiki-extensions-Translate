@@ -45,7 +45,7 @@ class PoImport extends Maintenance {
 	public function execute() {
 		// Parse the po file.
 		$p = new PoImporter( $this->getOption( 'file' ) );
-		$p->setProgressCallback( array( $this, 'myOutput' ) );
+		$p->setProgressCallback( [ $this, 'myOutput' ] );
 		list( $changes, $group ) = $p->parse();
 
 		if ( !count( $changes ) ) {
@@ -61,7 +61,7 @@ class PoImport extends Maintenance {
 			!$this->hasOption( 'really' )
 		);
 
-		$w->setProgressCallback( array( $this, 'myOutput' ) );
+		$w->setProgressCallback( [ $this, 'myOutput' ] );
 		$w->execute();
 	}
 
@@ -138,7 +138,7 @@ class PoImporter {
 		$data = file_get_contents( $this->file );
 		$data = str_replace( "\r\n", "\n", $data );
 
-		$matches = array();
+		$matches = [];
 		if ( preg_match( '/X-Language-Code:\s+(.*)\\\n/', $data, $matches ) ) {
 			$code = $matches[1];
 			$this->reportProgress( "Detected language as $code", 'code' );
@@ -165,9 +165,9 @@ class PoImporter {
 		$quotePattern = '/(^"|"$\n?)/m';
 
 		$sections = preg_split( '/\n{2,}/', $data );
-		$changes = array();
+		$changes = [];
 		foreach ( $sections as $section ) {
-			$matches = array();
+			$matches = [];
 			if ( preg_match( "/^msgctxt\s($poformat)/mx", $section, $matches ) ) {
 				// Remove quoting
 				$key = preg_replace( $quotePattern, '', $matches[1] );
@@ -179,7 +179,7 @@ class PoImporter {
 			} else {
 				continue;
 			}
-			$matches = array();
+			$matches = [];
 			if ( preg_match( "/^msgstr\s($poformat)/mx", $section, $matches ) ) {
 				// Remove quoting
 				$translation = preg_replace( $quotePattern, '', $matches[1] );
@@ -210,7 +210,7 @@ class PoImporter {
 			}
 		}
 
-		return array( $changes, $groupId );
+		return [ $changes, $groupId ];
 	}
 }
 
@@ -223,7 +223,7 @@ class WikiWriter {
 
 	protected $user;
 
-	private $changes = array();
+	private $changes = [];
 	private $dryrun = true;
 	private $group = null;
 

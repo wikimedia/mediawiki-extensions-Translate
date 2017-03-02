@@ -34,25 +34,25 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$res = $dbr->select( 'page',
-			array( 'page_namespace', 'page_title' ),
-			array(
+			[ 'page_namespace', 'page_title' ],
+			[
 				'page_namespace' => $namespace,
 				'page_title ' . $dbr->buildLike( "$base/", $dbr->anyString() ),
-			),
+			],
 			__METHOD__,
-			array(
+			[
 				'ORDER BY' => 'page_title',
 				'USE INDEX' => 'name_title',
-			)
+			]
 		);
 
-		$titles = array();
+		$titles = [];
 		foreach ( $res as $row ) {
 			$titles[] = $row->page_title;
 		}
 
-		if ( $titles === array() ) {
-			return array();
+		if ( $titles === [] ) {
+			return [];
 		}
 
 		$pageInfo = TranslateUtils::getContents( $titles, $namespace );
@@ -66,7 +66,7 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 		$title = Title::newFromText( $params['title'] );
 		if ( !$title ) {
 			if ( method_exists( $this, 'dieWithError' ) ) {
-				$this->dieWithError( array( 'apierror-invalidtitle', wfEscapeWikiText( $params['title'] ) ) );
+				$this->dieWithError( [ 'apierror-invalidtitle', wfEscapeWikiText( $params['title'] ) ] );
 			} else {
 				$this->dieUsage( 'Invalid title', 'invalidtitle' );
 			}
@@ -98,11 +98,11 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 			$tTitle = Title::makeTitle( $namespace, $key );
 			$tHandle = new MessageHandle( $tTitle );
 
-			$data = array(
+			$data = [
 				'title' => $tTitle->getPrefixedText(),
 				'language' => $tHandle->getCode(),
 				'lasttranslator' => $info[1],
-			);
+			];
 
 			$fuzzy = MessageHandle::hasFuzzyString( $info[0] ) || $tHandle->isFuzzy();
 
@@ -113,34 +113,34 @@ class ApiQueryMessageTranslations extends ApiQueryBase {
 			$translation = str_replace( TRANSLATE_FUZZY, '', $info[0] );
 			ApiResult::setContentValue( $data, 'translation', $translation );
 
-			$fit = $result->addValue( array( 'query', $this->getModuleName() ), null, $data );
+			$fit = $result->addValue( [ 'query', $this->getModuleName() ], null, $data );
 			if ( !$fit ) {
 				$this->setContinueEnumParameter( 'offset', $count );
 				break;
 			}
 		}
 
-		$result->addIndexedTagName( array( 'query', $this->getModuleName() ), 'message' );
+		$result->addIndexedTagName( [ 'query', $this->getModuleName() ], 'message' );
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'title' => array(
+		return [
+			'title' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'offset' => array(
+			],
+			'offset' => [
 				ApiBase::PARAM_DFLT => 0,
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_HELP_MSG => 'api-help-param-continue',
-			),
-		);
+			],
+		];
 	}
 
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=query&meta=messagetranslations&mttitle=MediaWiki:January'
 				=> 'apihelp-query+messagetranslations-example-1',
-		);
+		];
 	}
 }

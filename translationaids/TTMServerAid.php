@@ -25,7 +25,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 	}
 
 	public function getData() {
-		$suggestions = array();
+		$suggestions = [];
 
 		$text = $this->getDefinition();
 		$from = $this->group->getSourceLanguage();
@@ -82,11 +82,11 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 
 		$sugs = $service->getResultData( $response );
 		foreach ( $sugs as &$sug ) {
-			$sug += array(
+			$sug += [
 				'service' => $service->getName(),
 				'source_language' => $sourceLanguage,
 				'source' => $sourceText,
-			);
+			];
 		}
 		return $sugs;
 	}

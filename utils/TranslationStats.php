@@ -31,7 +31,7 @@ class TranslationStats {
 	public static function getPercentageTranslated( $group, $languages, $threshold = false,
 		$simple = false
 	) {
-		$stats = array();
+		$stats = [];
 
 		$g = MessageGroups::singleton()->getGroup( $group );
 

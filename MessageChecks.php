@@ -44,7 +44,7 @@
  * @ingroup MessageCheckers
  */
 class MessageChecker {
-	protected $checks = array();
+	protected $checks = [];
 	protected $group;
 	private static $globalBlacklist;
 
@@ -56,11 +56,11 @@ class MessageChecker {
 		global $wgTranslateCheckBlacklist;
 
 		if ( $wgTranslateCheckBlacklist === false ) {
-			self::$globalBlacklist = array();
+			self::$globalBlacklist = [];
 		} elseif ( self::$globalBlacklist === null ) {
 			$file = $wgTranslateCheckBlacklist;
 			$list = PHPVariableLoader::loadVariableFromPHPFile( $file, 'checkBlacklist' );
-			$keys = array( 'group', 'check', 'subcheck', 'code', 'message' );
+			$keys = [ 'group', 'check', 'subcheck', 'code', 'message' ];
 
 			foreach ( $list as $key => $pattern ) {
 				foreach ( $keys as $checkKey ) {
@@ -68,7 +68,7 @@ class MessageChecker {
 						$list[$key][$checkKey] = '#';
 					} elseif ( is_array( $pattern[$checkKey] ) ) {
 						$list[$key][$checkKey] =
-							array_map( array( $this, 'foldValue' ), $pattern[$checkKey] );
+							array_map( [ $this, 'foldValue' ], $pattern[$checkKey] );
 					} else {
 						$list[$key][$checkKey] = $this->foldValue( $pattern[$checkKey] );
 					}
@@ -122,16 +122,16 @@ class MessageChecker {
 	 * @return array
 	 */
 	public function checkMessage( TMessage $message, $code ) {
-		$warningsArray = array();
-		$messages = array( $message );
+		$warningsArray = [];
+		$messages = [ $message ];
 
 		foreach ( $this->checks as $check ) {
-			call_user_func_array( $check, array( $messages, $code, &$warningsArray ) );
+			call_user_func_array( $check, [ $messages, $code, &$warningsArray ] );
 		}
 
 		$warningsArray = $this->filterWarnings( $warningsArray );
 		if ( !count( $warningsArray ) ) {
-			return array();
+			return [];
 		}
 
 		$warnings = $warningsArray[$message->key()];
@@ -147,11 +147,11 @@ class MessageChecker {
 	 * @return bool True if there is a problem, false otherwise.
 	 */
 	public function checkMessageFast( TMessage $message, $code ) {
-		$warningsArray = array();
-		$messages = array( $message );
+		$warningsArray = [];
+		$messages = [ $message ];
 
 		foreach ( $this->checks as $check ) {
-			call_user_func_array( $check, array( $messages, $code, &$warningsArray ) );
+			call_user_func_array( $check, [ $messages, $code, &$warningsArray ] );
 			if ( count( $warningsArray ) ) {
 				return true;
 			}
@@ -228,7 +228,7 @@ class MessageChecker {
 
 		foreach ( $warnings as $wkey => $warning ) {
 			array_shift( $warning );
-			$message = array( array_shift( $warning ) );
+			$message = [ array_shift( $warning ) ];
 
 			foreach ( $warning as $param ) {
 				if ( !is_array( $param ) ) {
@@ -257,7 +257,7 @@ class MessageChecker {
 	 * @return array Items of $defs that are not in $trans.
 	 */
 	protected static function compareArrays( array $defs, array $trans ) {
-		$missing = array();
+		$missing = [];
 
 		foreach ( $defs as $defVar ) {
 			if ( !in_array( $defVar, $trans ) ) {
@@ -319,11 +319,11 @@ class MessageChecker {
 			$translation = preg_replace( '/[^{}[\]()]/u', '', $translation );
 
 			$subcheck = 'brace';
-			$counts = array(
+			$counts = [
 				'{' => 0, '}' => 0,
 				'[' => 0, ']' => 0,
 				'(' => 0, ')' => 0,
-			);
+			];
 
 			$len = strlen( $translation );
 			for ( $i = 0; $i < $len; $i++ ) {
@@ -333,7 +333,7 @@ class MessageChecker {
 
 			$definition = $message->definition();
 
-			$balance = array();
+			$balance = [];
 			if ( $counts['['] !== $counts[']'] && self::checkStringCountEqual( $definition, '[', ']' ) ) {
 				$balance[] = '[]: ' . ( $counts['['] - $counts[']'] );
 			}
@@ -347,12 +347,12 @@ class MessageChecker {
 			}
 
 			if ( count( $balance ) ) {
-				$warnings[$key][] = array(
-					array( 'balance', $subcheck, $key, $code ),
+				$warnings[$key][] = [
+					[ 'balance', $subcheck, $key, $code ],
 					'translate-checks-balance',
-					array( 'PARAMS', $balance ),
-					array( 'COUNT', count( $balance ) ),
-				);
+					[ 'PARAMS', $balance ],
+					[ 'COUNT', count( $balance ) ],
+				];
 			}
 		}
 	}
@@ -389,12 +389,12 @@ class MessageChecker {
 			$params = self::compareArrays( $defVars[0], $transVars[0] );
 
 			if ( count( $params ) ) {
-				$warnings[$key][] = array(
-					array( 'variable', $subcheck, $key, $code ),
+				$warnings[$key][] = [
+					[ 'variable', $subcheck, $key, $code ],
 					'translate-checks-parameters',
-					array( 'PARAMS', $params ),
-					array( 'COUNT', count( $params ) ),
-				);
+					[ 'PARAMS', $params ],
+					[ 'COUNT', count( $params ) ],
+				];
 			}
 
 			// Check for unknown variables in the translatio
@@ -402,12 +402,12 @@ class MessageChecker {
 			$params = self::compareArrays( $transVars[0], $defVars[0] );
 
 			if ( count( $params ) ) {
-				$warnings[$key][] = array(
-					array( 'variable', $subcheck, $key, $code ),
+				$warnings[$key][] = [
+					[ 'variable', $subcheck, $key, $code ],
 					'translate-checks-parameters-unknown',
-					array( 'PARAMS', $params ),
-					array( 'COUNT', count( $params ) ),
-				);
+					[ 'PARAMS', $params ],
+					[ 'COUNT', count( $params ) ],
+				];
 			}
 		}
 	}
@@ -430,7 +430,7 @@ class MessageChecker {
 			}
 
 			$errors = libxml_get_errors();
-			$params = array();
+			$params = [];
 			foreach ( $errors as $error ) {
 				if ( $error->code !== 76 && $error->code !== 73 ) {
 					continue;
@@ -442,12 +442,12 @@ class MessageChecker {
 				continue;
 			}
 
-			$warnings[$key][] = array(
-				array( 'tags', 'balance', $key, $code ),
+			$warnings[$key][] = [
+				[ 'tags', 'balance', $key, $code ],
 				'translate-checks-format',
-				array( 'PARAMS', $params ),
-				array( 'COUNT', count( $params ) ),
-			);
+				[ 'PARAMS', $params ],
+				[ 'COUNT', count( $params ) ],
+			];
 		}
 
 		libxml_clear_errors();

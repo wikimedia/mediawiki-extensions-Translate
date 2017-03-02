@@ -176,13 +176,13 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	protected function showForm() {
 		$this->getOutput()->addWikiMsg( 'pt-deletepage-intro' );
 
-		$subaction = array( 'name' => 'subaction' );
-		$formParams = array(
+		$subaction = [ 'name' => 'subaction' ];
+		$formParams = [
 			'method' => 'post',
 			'action' => $this->getPageTitle( $this->text )->getLocalURL()
-		);
+		];
 
-		$form = array();
+		$form = [];
 		$form[] = Xml::fieldset( $this->msg( 'pt-deletepage-any-legend' )->text() );
 		$form[] = Html::openElement( 'form', $formParams );
 		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
@@ -221,7 +221,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	 * @param array $attribs Extra attributes. Default empty array.
 	 */
 	protected function addInputLabel( &$form, $label, $name, $size = false, $text = false,
-		array $attribs = array()
+		array $attribs = []
 	) {
 		$br = Html::element( 'br' );
 		list( $label, $input ) = Xml::inputLabelSep( $label, $name, $name, $size, $text, $attribs );
@@ -277,15 +277,15 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		$out->addWikiMsg( 'pt-deletepage-list-count', $this->getLanguage()->formatNum( $count ) );
 
 		$br = Html::element( 'br' );
-		$readonly = array( 'readonly' => 'readonly' );
+		$readonly = [ 'readonly' => 'readonly' ];
 
-		$subaction = array( 'name' => 'subaction' );
-		$formParams = array(
+		$subaction = [ 'name' => 'subaction' ];
+		$formParams = [
 			'method' => 'post',
 			'action' => $this->getPageTitle( $this->text )->getLocalURL()
-		);
+		];
 
-		$form = array();
+		$form = [];
 		if ( $this->singleLanguage() ) {
 			$form[] = Xml::fieldset( $this->msg( 'pt-deletepage-lang-legend' )->text() );
 		} else {
@@ -338,7 +338,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	}
 
 	protected function performAction() {
-		$jobs = array();
+		$jobs = [];
 		$target = $this->title;
 		$base = $this->title->getPrefixedText();
 
@@ -446,7 +446,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	 */
 	protected function getTranslationPages() {
 		if ( $this->singleLanguage() ) {
-			return array( $this->title );
+			return [ $this->title ];
 		}
 
 		if ( !isset( $this->translationPages ) ) {

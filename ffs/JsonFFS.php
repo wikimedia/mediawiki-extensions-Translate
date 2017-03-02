@@ -33,7 +33,7 @@ class JsonFFS extends SimpleFFS {
 	}
 
 	public function getFileExtensions() {
-		return array( '.json' );
+		return [ '.json' ];
 	}
 
 	/**
@@ -42,8 +42,8 @@ class JsonFFS extends SimpleFFS {
 	 */
 	public function readFromVariable( $data ) {
 		$messages = (array) FormatJson::decode( $data, /*as array*/true );
-		$authors = array();
-		$metadata = array();
+		$authors = [];
+		$metadata = [];
 
 		if ( isset( $messages['@metadata']['authors'] ) ) {
 			$authors = (array)$messages['@metadata']['authors'];
@@ -62,11 +62,11 @@ class JsonFFS extends SimpleFFS {
 
 		$messages = $this->group->getMangler()->mangle( $messages );
 
-		return array(
+		return [
 			'MESSAGES' => $messages,
 			'AUTHORS' => $authors,
 			'METADATA' => $metadata,
-		);
+		];
 	}
 
 	/**
@@ -74,10 +74,10 @@ class JsonFFS extends SimpleFFS {
 	 * @return string
 	 */
 	protected function writeReal( MessageCollection $collection ) {
-		$messages = array();
+		$messages = [];
 		$template = $this->read( $collection->getLanguage() );
 
-		$messages['@metadata'] = array();
+		$messages['@metadata'] = [];
 		if ( isset( $template['METADATA'] ) ) {
 			$messages['@metadata'] = $template['METADATA'];
 		}
@@ -89,7 +89,7 @@ class JsonFFS extends SimpleFFS {
 			$authors = array_unique( array_merge( $template['AUTHORS'], $authors ) );
 		}
 
-		if ( $authors !== array() ) {
+		if ( $authors !== [] ) {
 			$messages['@metadata']['authors'] = array_values( $authors );
 		}
 
@@ -149,27 +149,27 @@ class JsonFFS extends SimpleFFS {
 	}
 
 	public static function getExtraSchema() {
-		$schema = array(
-			'root' => array(
+		$schema = [
+			'root' => [
 				'_type' => 'array',
-				'_children' => array(
-					'FILES' => array(
+				'_children' => [
+					'FILES' => [
 						'_type' => 'array',
-						'_children' => array(
-							'nestingSeparator' => array(
+						'_children' => [
+							'nestingSeparator' => [
 								'_type' => 'text',
-							),
-							'parseCLDRPlurals' => array(
+							],
+							'parseCLDRPlurals' => [
 								'_type' => 'boolean',
-							),
-							'includeMetadata' => array(
+							],
+							'includeMetadata' => [
 								'_type' => 'boolean',
-							)
-						)
-					)
-				)
-			)
-		);
+							]
+						]
+					]
+				]
+			]
+		];
 
 		return $schema;
 	}

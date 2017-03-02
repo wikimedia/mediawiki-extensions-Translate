@@ -22,18 +22,18 @@ class SpecialMagic extends SpecialPage {
 	/**
 	 * List of supported modules
 	 */
-	private $aModules = array(
+	private $aModules = [
 		self::MODULE_SPECIAL,
 		self::MODULE_NAMESPACE,
 		self::MODULE_MAGIC
-	);
+	];
 
 	/**
 	 * Page options
 	 */
-	private $options = array();
-	private $defaults = array();
-	private $nondefaults = array();
+	private $options = [];
+	private $defaults = [];
+	private $nondefaults = [];
 
 	public function __construct() {
 		parent::__construct( 'Magic' );
@@ -65,10 +65,10 @@ class SpecialMagic extends SpecialPage {
 		global $wgScript;
 
 		$form = Xml::tags( 'form',
-			array(
+			[
 				'action' => $wgScript,
 				'method' => 'get'
-			),
+			],
 
 			'<table><tr><td>' .
 				$this->msg( 'translate-page-language' )->escaped() .
@@ -85,7 +85,7 @@ class SpecialMagic extends SpecialPage {
 				Xml::submitButton( $this->msg( 'translate-magic-submit' )->text() ) . ' ' .
 				Xml::submitButton(
 					$this->msg( 'translate-magic-cm-export' )->text(),
-					array( 'name' => 'export' )
+					[ 'name' => 'export' ]
 				) .
 				'</td></tr></table>' .
 				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() )
@@ -112,17 +112,17 @@ class SpecialMagic extends SpecialPage {
 	}
 
 	protected function setup( $parameters ) {
-		$defaults = array(
+		$defaults = [
 			/* str  */'module'   => '',
 			/* str  */'language' => $this->getUser()->getOption( 'language' ),
 			/* bool */'export'   => false,
 			/* bool */'savetodb' => false,
-		);
+		];
 
 		/**
 		 * Place where all non default variables will end.
 		 */
-		$nondefaults = array();
+		$nondefaults = [];
 
 		/**
 		 * Temporary store possible values parsed from parameters.
@@ -189,7 +189,7 @@ class SpecialMagic extends SpecialPage {
 				throw new PermissionsError( 'translate' );
 			}
 
-			$errors = array();
+			$errors = [];
 			$o->loadFromRequest( $request );
 			$o->validate( $errors );
 			if ( $errors ) {
@@ -215,14 +215,14 @@ class SpecialMagic extends SpecialPage {
 
 				return;
 			}
-			$result = Xml::element( 'textarea', array( 'rows' => '30' ), $output );
+			$result = Xml::element( 'textarea', [ 'rows' => '30' ], $output );
 			$out->addHTML( $result );
 
 			return;
 		}
 
 		$out->addWikiMsg( 'translate-magic-help' );
-		$errors = array();
+		$errors = [];
 		$o->validate( $errors );
 		if ( $errors ) {
 			$this->outputErrors( $errors );

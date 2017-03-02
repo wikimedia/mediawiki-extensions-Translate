@@ -69,11 +69,11 @@ class SolrTTMServer
 		// For now impose a length limit on query string to avoid doing
 		// very slow queries. Magic number.
 		if ( strlen( $text ) > 789 ) {
-			return array();
+			return [];
 		}
 
 		$query = $this->client->createSelect();
-		$query->setFields( array( 'globalid', 'content', 'score' ) );
+		$query->setFields( [ 'globalid', 'content', 'score' ] );
 
 		/* The interface usually displays three best candidates. These might
 		 * come from more than three matches, if the translation is the same.
@@ -92,12 +92,12 @@ class SolrTTMServer
 		/* Note how we need to escape twice here, first the string for strdist
 		 * and then the strdist call itself for the query. And of course every-
 		 * thing will be URL encoded once sent over the line. */
-		$query->setQuery( '_val_:%P1%', array( $dist ) );
+		$query->setQuery( '_val_:%P1%', [ $dist ] );
 
 		/* Filter queries are supposed to be efficient as they are separately
 		 * cached, but I haven't done any benchmarks. */
 		$query->createFilterQuery( 'lang' )
-			->setQuery( 'language:%P1%', array( $sourceLanguage ) );
+			->setQuery( 'language:%P1%', [ $sourceLanguage ] );
 
 		$resultset = $this->client->select( $query );
 
@@ -109,7 +109,7 @@ class SolrTTMServer
 		 * This code is a bit uglier than I'd like it to be, since there
 		 * there is no field that globally identifies a message (message
 		 * definition and translations). */
-		$contents = $scores = array();
+		$contents = $scores = [];
 		$queryString = '';
 		foreach ( $resultset as $doc ) {
 			$sourceId = preg_replace( '~/[^/]+$~', '', $doc->globalid );
@@ -122,7 +122,7 @@ class SolrTTMServer
 
 		// Second query to fetch available translations
 		$fetchQuery = $this->client->createSelect();
-		$fetchQuery->setFields( array( 'wiki', 'uri', 'content', 'messageid', 'globalid' ) );
+		$fetchQuery->setFields( [ 'wiki', 'uri', 'content', 'messageid', 'globalid' ] );
 		// This come in random order, so have to fetch all and sort
 		$fetchQuery->setRows( 25 );
 		$fetchQuery->setQuery( $queryString );
@@ -131,7 +131,7 @@ class SolrTTMServer
 
 		$translations = $this->client->select( $fetchQuery );
 
-		$suggestions = array();
+		$suggestions = [];
 		foreach ( $translations as $doc ) {
 			/* Construct the matching source id */
 			$sourceId = preg_replace( '~/[^/]+$~', '', $doc->globalid );
@@ -144,7 +144,7 @@ class SolrTTMServer
 				continue;
 			}
 
-			$suggestions[] = array(
+			$suggestions[] = [
 				'source' => $contents[$sourceId],
 				'target' => $doc->content,
 				'context' => $doc->messageid,
@@ -152,7 +152,7 @@ class SolrTTMServer
 				'wiki' => $doc->wiki,
 				'location' => $doc->messageid . '/' . $targetLanguage,
 				'uri' => $doc->uri,
-			);
+			];
 		}
 
 		/* Like mentioned above, we get results in random order. Sort them
@@ -199,11 +199,11 @@ class SolrTTMServer
 
 		if ( $doDelete ) {
 			$base = Title::makeTitle( $title->getNamespace(), $handle->getKey() );
-			$conds = array(
+			$conds = [
 				'wiki' => wfWikiID(),
 				'language' => $handle->getCode(),
 				'messageid' => $base->getPrefixedText(),
-			);
+			];
 			foreach ( $conds as $key => &$value ) {
 				$value = "$key:" . $update->getHelper()->escapePhrase( $value );
 			}
@@ -372,14 +372,14 @@ class SolrTTMServer
 		$languageFilter = $opts['language'];
 		if ( $languageFilter !== '' ) {
 			$query->createFilterQuery( 'languageFilter' )
-				->setQuery( 'language:%P1%', array( $languageFilter ) )
+				->setQuery( 'language:%P1%', [ $languageFilter ] )
 				->addTag( 'filter' );
 		}
 
 		$groupFilter = $opts['group'];
 		if ( $groupFilter !== '' ) {
 			$query->createFilterQuery( 'groupFilter' )
-				->setQuery( 'group:%P1%', array( $groupFilter ) )
+				->setQuery( 'group:%P1%', [ $groupFilter ] )
 				->addTag( 'filter' );
 		}
 
@@ -404,10 +404,10 @@ class SolrTTMServer
 	}
 
 	public function getFacets( $resultset ) {
-		return array(
+		return [
 			'language' => iterator_to_array( $resultset->getFacetSet()->getFacet( 'language' ) ),
 			'group' => iterator_to_array( $resultset->getFacetSet()->getFacet( 'group' ) ),
-		);
+		];
 	}
 
 	public function getTotalHits( $resultset ) {
@@ -416,7 +416,7 @@ class SolrTTMServer
 
 	public function getDocuments( $resultset ) {
 		$highlighting = $resultset->getHighlighting();
-		$ret = array();
+		$ret = [];
 		foreach ( $resultset as $document ) {
 			$fields = iterator_to_array( $document );
 			// Compatibility mapping
@@ -424,7 +424,7 @@ class SolrTTMServer
 
 			$hdoc = $highlighting->getResult( $document->globalid );
 			$text = $hdoc->getField( 'text' );
-			if ( $text === array() ) {
+			if ( $text === [] ) {
 				$text = $document->text;
 			} else {
 				$text = $text[0];

@@ -24,8 +24,8 @@ class MagicExport extends Maintenance {
 	protected $type;
 	protected $target;
 
-	protected $handles = array();
-	protected $messagesOld = array();
+	protected $handles = [];
+	protected $messagesOld = [];
 
 	public function __construct() {
 		parent::__construct();
@@ -182,7 +182,7 @@ PHP
 	protected function writeFiles() {
 		$langs = TranslateUtils::parseLanguageCodes( '*' );
 		unset( $langs[array_search( 'en', $langs )] );
-		$langs = array_merge( array( 'en' ), $langs );
+		$langs = array_merge( [ 'en' ], $langs );
 		foreach ( $langs as $l ) {
 			// Load message page.
 			switch ( $this->type ) {
@@ -200,7 +200,7 @@ PHP
 			if ( !$title || !$title->exists() ) {
 				$this->output( "Skiping $l...\n" );
 
-				$messagesNew = array();
+				$messagesNew = [];
 			} else {
 				$this->output( "Processing $l...\n" );
 
@@ -214,7 +214,7 @@ PHP
 				array_shift( $segments );
 				unset( $segments[count( $segments ) - 1] );
 				unset( $segments[count( $segments ) - 1] );
-				$messagesNew = array();
+				$messagesNew = [];
 				foreach ( $segments as $segment ) {
 					$parts = explode( ' = ', $segment );
 					$key = array_shift( $parts );
@@ -229,7 +229,7 @@ PHP
 
 			foreach ( $this->handles as $group => $handle ) {
 				// Find messages to write to this handle.
-				$messagesOut = array();
+				$messagesOut = [];
 				if ( !isset( $this->messagesOld[$group] ) ) {
 					continue;
 				}

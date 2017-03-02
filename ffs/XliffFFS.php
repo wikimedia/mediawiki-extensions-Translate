@@ -33,7 +33,7 @@ class XliffFFS extends SimpleFFS {
 	}
 
 	public function getFileExtensions() {
-		return array( '.xlf', '.xliff', '.xml' );
+		return [ '.xlf', '.xliff', '.xml' ];
 	}
 
 	/**
@@ -42,7 +42,7 @@ class XliffFFS extends SimpleFFS {
 	 * @return array Parsed data.
 	 */
 	public function readFromVariable( $data, $element = 'target' ) {
-		$messages = array();
+		$messages = [];
 		$mangler = $this->group->getMangler();
 
 		$reader = new SimpleXMLElement( $data );
@@ -86,9 +86,9 @@ class XliffFFS extends SimpleFFS {
 			$messages[$key] = $value;
 		}
 
-		return array(
+		return [
 			'MESSAGES' => $mangler->mangle( $messages ),
-		);
+		];
 	}
 
 	/**

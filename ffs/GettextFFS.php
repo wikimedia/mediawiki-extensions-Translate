@@ -25,7 +25,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	public function getFileExtensions() {
-		return array( '.pot', '.po' );
+		return [ '.pot', '.po' ];
 	}
 
 	protected $offlineMode = false;
@@ -43,7 +43,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 */
 	public function readFromVariable( $data ) {
 		# Authors first
-		$matches = array();
+		$matches = [];
 		preg_match_all( '/^#\s*Author:\s*(.*)$/m', $data, $matches );
 		$authors = $matches[1];
 
@@ -111,11 +111,11 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			throw new MWException( "Gettext file header was not found:\n\n$data" );
 		}
 
-		$template = array();
-		$messages = array();
+		$template = [];
+		$messages = [];
 
 		// Extract some metadata from headers for easier use
-		$metadata = array();
+		$metadata = [];
 		if ( isset( $headers['X-Language-Code'] ) ) {
 			$metadata['code'] = $headers['X-Language-Code'];
 		}
@@ -156,12 +156,12 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			$template[$key] = $item;
 		}
 
-		return array(
+		return [
 			'MESSAGES' => $messages,
 			'TEMPLATE' => $template,
 			'METADATA' => $metadata,
 			'HEADERS' => $headers
-		);
+		];
 	}
 
 	public static function parseGettextSection( $section, $pluralCount, &$metadata ) {
@@ -178,13 +178,13 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			return false;
 		}
 
-		$item = array(
+		$item = [
 			'ctxt' => false,
 			'id' => '',
 			'str' => '',
-			'flags' => array(),
-			'comments' => array(),
-		);
+			'flags' => [],
+			'comments' => [],
+		];
 
 		$match = self::expectKeyword( 'msgid', $section );
 		if ( $match !== null ) {
@@ -233,7 +233,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		$item['flags'] = $flags;
 
 		// Rest of the comments
-		$matches = array();
+		$matches = [];
 		if ( preg_match_all( '/^#(.?) (.*)$/m', $section, $matches, PREG_SET_ORDER ) ) {
 			foreach ( $matches as $match ) {
 				if ( $match[1] !== ',' && strpos( $match[1], '[Wiki]' ) !== 0 ) {
@@ -246,7 +246,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	public static function processGettextPluralMessage( $pluralCount, $section ) {
-		$actualForms = array();
+		$actualForms = [];
 
 		for ( $i = 0; $i < $pluralCount; $i++ ) {
 			$match = self::expectKeyword( "msgstr\\[$i\\]", $section );
@@ -267,11 +267,11 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	public static function parseFlags( $section ) {
-		$matches = array();
+		$matches = [];
 		if ( preg_match( '/^#,(.*)$/mu', $section, $matches ) ) {
 			return array_map( 'trim', explode( ',', $matches[1] ) );
 		} else {
-			return array();
+			return [];
 		}
 	}
 
@@ -281,7 +281,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		 */
 		$poformat = '".*"\n?(^".*"$\n?)*';
 
-		$matches = array();
+		$matches = [];
 		if ( preg_match( "/^$name\s($poformat)/mx", $section, $matches ) ) {
 			return $matches[1];
 		} else {
@@ -355,7 +355,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	public static function parseHeaderTags( $headers ) {
-		$tags = array();
+		$tags = [];
 		foreach ( explode( "\n", $headers ) as $line ) {
 			if ( strpos( $line, ':' ) === false ) {
 				error_log( __METHOD__ . ": $line" );
@@ -376,9 +376,9 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
 			$transTemplate = isset( $template['TEMPLATE'][$key] ) ?
-				$template['TEMPLATE'][$key] : array();
+				$template['TEMPLATE'][$key] : [];
 			$potTemplate = isset( $pot['TEMPLATE'][$key] ) ?
-				$pot['TEMPLATE'][$key] : array();
+				$pot['TEMPLATE'][$key] : [];
 
 			$output .= $this->formatMessageBlock( $key, $m, $transTemplate, $potTemplate, $pluralCount );
 		}
@@ -409,7 +409,7 @@ PHP;
 		// Make sure there is no empty line before msgid
 		$output = trim( $output ) . "\n";
 
-		$specs = isset( $template['HEADERS'] ) ? $template['HEADERS'] : array();
+		$specs = isset( $template['HEADERS'] ) ? $template['HEADERS'] : [];
 
 		$timestamp = wfTimestampNow();
 		$specs['PO-Revision-Date'] = self::formatTime( $timestamp );
@@ -421,7 +421,7 @@ PHP;
 		$specs['Content-Type'] = 'text/plain; charset=UTF-8';
 		$specs['Content-Transfer-Encoding'] = '8bit';
 		$specs['Language'] = wfBCP47( $this->group->mapCode( $code ) );
-		Hooks::run( 'Translate:GettextFFS:headerFields', array( &$specs, $this->group, $code ) );
+		Hooks::run( 'Translate:GettextFFS:headerFields', [ &$specs, $this->group, $code ] );
 		$specs['X-Generator'] = $this->getGenerator();
 
 		if ( $this->offlineMode ) {
@@ -436,7 +436,7 @@ PHP;
 			$specs['Plural-Forms'] = 'nplurals=2; plural=(n != 1);';
 		}
 
-		$match = array();
+		$match = [];
 		preg_match( '/nplurals=(\d+);/', $specs['Plural-Forms'], $match );
 		$pluralCount = $match[1];
 
@@ -477,14 +477,14 @@ PHP;
 		$header = $this->formatDocumentation( $key );
 		$content = '';
 
-		$comments = self::chainGetter( 'comments', $pot, $trans, array() );
+		$comments = self::chainGetter( 'comments', $pot, $trans, [] );
 		foreach ( $comments as $type => $typecomments ) {
 			foreach ( $typecomments as $comment ) {
 				$header .= "#$type $comment\n";
 			}
 		}
 
-		$flags = self::chainGetter( 'flags', $pot, $trans, array() );
+		$flags = self::chainGetter( 'flags', $pot, $trans, [] );
 		$flags = array_merge( $m->getTags(), $flags );
 
 		if ( $this->offlineMode ) {
@@ -636,13 +636,13 @@ PHP;
 		# |/| is commonly used in KDE to support inflections
 		$text = str_replace( '|/|', $placeholder, $text );
 
-		$plurals = array();
+		$plurals = [];
 		$match = preg_match_all( '/{{PLURAL:GETTEXT\|(.*)}}/iUs', $text, $plurals );
 		if ( !$match ) {
 			throw new GettextPluralException( "Failed to find plural in: $text" );
 		}
 
-		$splitPlurals = array();
+		$splitPlurals = [];
 		for ( $i = 0; $i < $forms; $i++ ) {
 			# Start with the hole string
 			$pluralForm = $text;
@@ -675,28 +675,28 @@ PHP;
 	}
 
 	public static function getExtraSchema() {
-		$schema = array(
-			'root' => array(
+		$schema = [
+			'root' => [
 				'_type' => 'array',
-				'_children' => array(
-					'FILES' => array(
+				'_children' => [
+					'FILES' => [
 						'_type' => 'array',
-						'_children' => array(
-							'header' => array(
+						'_children' => [
+							'header' => [
 								'_type' => 'text',
-							),
-							'keyAlgorithm' => array(
+							],
+							'keyAlgorithm' => [
 								'_type' => 'enum',
-								'_values' => array( 'simple', 'legacy' ),
-							),
-							'CtxtAsKey' => array(
+								'_values' => [ 'simple', 'legacy' ],
+							],
+							'CtxtAsKey' => [
 								'_type' => 'boolean',
-							),
-						)
-					)
-				)
-			)
-		);
+							],
+						]
+					]
+				]
+			]
+		];
 
 		return $schema;
 	}

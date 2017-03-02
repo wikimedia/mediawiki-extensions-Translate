@@ -92,7 +92,7 @@ class TranslationEditPage {
 		}
 
 		$targetLang = Language::factory( $helpers->getTargetLanguage() );
-		$textareaParams = array(
+		$textareaParams = [
 			'name' => 'text',
 			'class' => 'mw-translate-edit-area',
 			'id' => $id,
@@ -100,18 +100,18 @@ class TranslationEditPage {
 			 * a suitable default direction */
 			'lang' => $targetLang->getHtmlCode(),
 			'dir' => $targetLang->getDir(),
-		);
+		];
 
 		if ( !$groupId || !$context->getUser()->isAllowed( 'translate' ) ) {
 			$textareaParams['readonly'] = 'readonly';
 		}
 
 		$extraInputs = '';
-		Hooks::run( 'TranslateGetExtraInputs', array( &$translation, &$extraInputs ) );
+		Hooks::run( 'TranslateGetExtraInputs', [ &$translation, &$extraInputs ] );
 
 		$textarea = Html::element( 'textarea', $textareaParams, $translation );
 
-		$hidden = array();
+		$hidden = [];
 		$hidden[] = Html::hidden( 'title', $this->getTitle()->getPrefixedDBkey() );
 
 		if ( isset( $data['revisions'][0]['timestamp'] ) ) {
@@ -133,26 +133,26 @@ class TranslationEditPage {
 		);
 		$save = Xml::submitButton(
 			$context->msg( 'translate-js-save' )->text(),
-			array( 'class' => 'mw-translate-save' )
+			[ 'class' => 'mw-translate-save' ]
 		);
 		$saveAndNext = Xml::submitButton(
 			$context->msg( 'translate-js-next' )->text(),
-			array( 'class' => 'mw-translate-next' )
+			[ 'class' => 'mw-translate-next' ]
 		);
-		$skip = Html::element( 'input', array(
+		$skip = Html::element( 'input', [
 			'class' => 'mw-translate-skip',
 			'type' => 'button',
 			'value' => $context->msg( 'translate-js-skip' )->text()
-		) );
+		] );
 
 		if ( $this->getTitle()->exists() ) {
 			$history = Html::element(
 				'input',
-				array(
+				[
 					'class' => 'mw-translate-history',
 					'type' => 'button',
 					'value' => $context->msg( 'translate-js-history' )->text()
-				)
+				]
 			);
 		} else {
 			$history = '';
@@ -169,23 +169,23 @@ class TranslationEditPage {
 		}
 
 		// Use the api to submit edits
-		$formParams = array(
+		$formParams = [
 			'action' => "{$wgServer}{$wgScriptPath}/api.php",
 			'method' => 'post',
-		);
+		];
 
 		$form = Html::rawElement( 'form', $formParams,
 			implode( "\n", $hidden ) . "\n" .
 				$helpers->getBoxes( $this->suggestions ) . "\n" .
 				Html::rawElement(
 					'div',
-					array( 'class' => 'mw-translate-inputs' ),
+					[ 'class' => 'mw-translate-inputs' ],
 					"$textarea\n$extraInputs"
 				) . "\n" .
-				Html::rawElement( 'div', array( 'class' => 'mw-translate-bottom' ), $bottom )
+				Html::rawElement( 'div', [ 'class' => 'mw-translate-bottom' ], $bottom )
 		);
 
-		echo Html::rawElement( 'div', array( 'class' => 'mw-ajax-dialog' ), $form );
+		echo Html::rawElement( 'div', [ 'class' => 'mw-ajax-dialog' ], $form );
 	}
 
 	/**
@@ -195,13 +195,13 @@ class TranslationEditPage {
 	 * @return \array
 	 */
 	protected function getEditInfo() {
-		$params = new FauxRequest( array(
+		$params = new FauxRequest( [
 			'action' => 'query',
 			'prop' => 'info|revisions',
 			'intoken' => 'edit',
 			'titles' => $this->getTitle(),
 			'rvprop' => 'timestamp',
-		) );
+		] );
 
 		$api = new ApiMain( $params );
 		$api->execute();
@@ -239,14 +239,14 @@ class TranslationEditPage {
 			$onclick = "jQuery( '#$text' ).dblclick(); return false;";
 		} else {
 			$onclick = Xml::encodeJsCall(
-				'return mw.translate.openDialog', array( $title->getPrefixedDBkey(), $group )
+				'return mw.translate.openDialog', [ $title->getPrefixedDBkey(), $group ]
 			);
 		}
 
-		return array(
+		return [
 			'onclick' => $onclick,
 			'title' => $context->msg( 'translate-edit-title', $title->getPrefixedText() )->text()
-		);
+		];
 	}
 
 	protected function getSupportButton( $title ) {
@@ -258,13 +258,13 @@ class TranslationEditPage {
 
 		$support = Html::element(
 			'input',
-			array(
+			[
 				'class' => 'mw-translate-support',
 				'type' => 'button',
 				'value' => wfMessage( 'translate-js-support' )->text(),
 				'title' => wfMessage( 'translate-js-support-title' )->text(),
 				'data-load-url' => $supportUrl,
-			)
+			]
 		);
 
 		return $support;
@@ -283,12 +283,12 @@ class TranslationEditPage {
 
 		$button = Html::element(
 			'input',
-			array(
+			[
 				'class' => 'mw-translate-askpermission',
 				'type' => 'button',
 				'value' => wfMessage( 'translate-edit-askpermission' )->text(),
 				'data-load-url' => $title->getLocalURL(),
-			)
+			]
 		);
 
 		return $button;

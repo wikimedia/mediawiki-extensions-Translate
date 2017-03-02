@@ -45,20 +45,20 @@ class PopulateFuzzy extends Maintenance {
 		}
 
 		$dbw = wfGetDB( DB_MASTER );
-		$tables = array( 'page', 'text', 'revision' );
-		$fields = array( 'page_id', 'page_title', 'page_namespace', 'rev_id', 'old_text', 'old_flags' );
-		$conds = array(
+		$tables = [ 'page', 'text', 'revision' ];
+		$fields = [ 'page_id', 'page_title', 'page_namespace', 'rev_id', 'old_text', 'old_flags' ];
+		$conds = [
 			'page_latest = rev_id',
 			'old_id = rev_text_id',
 			'page_namespace' => $namespace,
-		);
+		];
 
 		$limit = 100;
 		$offset = 0;
 		while ( true ) {
-			$inserts = array();
+			$inserts = [];
 			$this->output( '.', 0 );
-			$options = array( 'LIMIT' => $limit, 'OFFSET' => $offset );
+			$options = [ 'LIMIT' => $limit, 'OFFSET' => $offset ];
 			$res = $dbw->select( $tables, $fields, $conds, __METHOD__, $options );
 
 			if ( !$res->numRows() ) {
@@ -68,11 +68,11 @@ class PopulateFuzzy extends Maintenance {
 			foreach ( $res as $r ) {
 				$text = Revision::getRevisionText( $r );
 				if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) {
-					$inserts[] = array(
+					$inserts[] = [
 						'rt_page' => $r->page_id,
 						'rt_revision' => $r->rev_id,
 						'rt_type' => RevTag::getType( 'fuzzy' ),
-					);
+					];
 				}
 			}
 

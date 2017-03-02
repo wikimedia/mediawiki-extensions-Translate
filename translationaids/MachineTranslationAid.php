@@ -45,7 +45,7 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 	}
 
 	public function getData() {
-		$suggestions = array( '**' => 'suggestion' );
+		$suggestions = [ '**' => 'suggestion' ];
 
 		foreach ( $this->getQueryData() as $queryData ) {
 			$suggestions[] = $this->formatSuggestion( $queryData );
@@ -60,11 +60,11 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 		$sourceLanguage = $queryData['language'];
 		$sourceText = $queryData['text'];
 
-		return array(
+		return [
 			'target' => $service->getResultData( $response ),
 			'service' => $service->getName(),
 			'source_language' => $sourceLanguage,
 			'source' => $sourceText,
-		);
+		];
 	}
 }

@@ -54,7 +54,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 	protected function getRCCutoff() {
 		$db = wfGetDB( DB_SLAVE );
 		$tables = 'recentchanges';
-		$max = $db->selectField( $tables, 'MAX(rc_id)', array(), __METHOD__ );
+		$max = $db->selectField( $tables, 'MAX(rc_id)', [], __METHOD__ );
 
 		return max( 0, $max - 50000 );
 	}
@@ -65,12 +65,12 @@ class RecentMessageGroup extends WikiMessageGroup {
 	protected function getQueryConditions() {
 		global $wgTranslateMessageNamespaces;
 		$db = wfGetDB( DB_SLAVE );
-		$conds = array(
+		$conds = [
 			'rc_title ' . $db->buildLike( $db->anyString(), '/' . $this->language ),
 			'rc_namespace' => $wgTranslateMessageNamespaces,
 			'rc_type != ' . RC_LOG,
 			'rc_id > ' . $this->getRCCutoff(),
-		);
+		];
 
 		return $conds;
 	}
@@ -92,15 +92,15 @@ class RecentMessageGroup extends WikiMessageGroup {
 
 		$db = wfGetDB( DB_SLAVE );
 		$tables = 'recentchanges';
-		$fields = array( 'rc_namespace', 'rc_title' );
+		$fields = [ 'rc_namespace', 'rc_title' ];
 		$conds = $this->getQueryConditions();
-		$options = array(
+		$options = [
 			'ORDER BY' => 'rc_id DESC',
 			'LIMIT' => 5000
-		);
+		];
 		$res = $db->select( $tables, $fields, $conds, __METHOD__, $options );
 
-		$defs = array();
+		$defs = [];
 		foreach ( $res as $row ) {
 			$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
 			$handle = new MessageHandle( $title );

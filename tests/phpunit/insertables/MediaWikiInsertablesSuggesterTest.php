@@ -18,21 +18,21 @@ class MediaWikiInsertablesSuggesterTest extends MediaWikiTestCase {
 	}
 
 	public function getInsertablesProvider() {
-		return array(
-			array( 'Hi $1', array(
+		return [
+			[ 'Hi $1', [
 				new Insertable( '$1', '$1', '' )
-			) ),
-			array( 'Hello $1user', array(
+			] ],
+			[ 'Hello $1user', [
 				new Insertable( '$1user', '$1user', '' ),
-			) ),
-			array( '{{GENDER:$1|he|she}}', array(
+			] ],
+			[ '{{GENDER:$1|he|she}}', [
 				new Insertable( '$1', '$1', '' ),
 				new Insertable( 'GENDER:$1', '{{GENDER:$1|', '}}' ),
-			) ),
+			] ],
 			// Parameterless gender
-			array( '{{GENDER:|he|she}}', array(
+			[ '{{GENDER:|he|she}}', [
 				new Insertable( 'GENDER:', '{{GENDER:|', '}}' ),
-			) ),
-		);
+			] ],
+		];
 	}
 }

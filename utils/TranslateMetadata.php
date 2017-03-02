@@ -22,7 +22,7 @@ class TranslateMetadata {
 	public static function get( $group, $key ) {
 		if ( self::$cache === null ) {
 			$dbr = wfGetDB( DB_SLAVE );
-			$res = $dbr->select( 'translate_metadata', '*', array(), __METHOD__ );
+			$res = $dbr->select( 'translate_metadata', '*', [], __METHOD__ );
 			foreach ( $res as $row ) {
 				self::$cache[$row->tmd_group][$row->tmd_key] = $row->tmd_value;
 			}
@@ -44,14 +44,14 @@ class TranslateMetadata {
 	 */
 	public static function set( $group, $key, $value ) {
 		$dbw = wfGetDB( DB_MASTER );
-		$data = array( 'tmd_group' => $group, 'tmd_key' => $key, 'tmd_value' => $value );
+		$data = [ 'tmd_group' => $group, 'tmd_key' => $key, 'tmd_value' => $value ];
 		if ( $value === false ) {
 			unset( $data['tmd_value'] );
 			$dbw->delete( 'translate_metadata', $data );
 		} else {
 			$dbw->replace(
 				'translate_metadata',
-				array( array( 'tmd_group', 'tmd_key' ) ),
+				[ [ 'tmd_group', 'tmd_key' ] ],
 				$data,
 				__METHOD__
 			);
@@ -103,7 +103,7 @@ class TranslateMetadata {
 	 */
 	public static function deleteGroup( $groupId ) {
 		$dbw = wfGetDB( DB_MASTER );
-		$conds = array( 'tmd_group' => $groupId );
+		$conds = [ 'tmd_group' => $groupId ];
 		$dbw->delete( 'translate_metadata', $conds );
 	}
 }

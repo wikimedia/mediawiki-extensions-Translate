@@ -23,7 +23,7 @@ class TranslateSandboxEmailJob extends Job {
 			$this->params['from'],
 			$this->params['subj'],
 			$this->params['body'],
-			array( 'replyTo' => $this->params['replyto'] )
+			[ 'replyTo' => $this->params['replyto'] ]
 		);
 
 		$isOK = $status->isOK();
@@ -32,7 +32,7 @@ class TranslateSandboxEmailJob extends Job {
 			$user = User::newFromId( $this->params['user'] );
 
 			$reminders = $user->getOption( 'translate-sandbox-reminders' );
-			$reminders = $reminders ? explode( '|', $reminders ) : array();
+			$reminders = $reminders ? explode( '|', $reminders ) : [];
 			$reminders[] = wfTimestamp();
 			$user->setOption( 'translate-sandbox-reminders', implode( '|', $reminders ) );
 

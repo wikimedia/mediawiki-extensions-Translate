@@ -91,7 +91,7 @@ class TTMServerBootstrap extends Maintenance {
 		}
 
 		$threads = $this->getOption( 'threads', 1 );
-		$pids = array();
+		$pids = [];
 
 		$groups = MessageGroups::singleton()->getGroups();
 		foreach ( $groups as $id => $group ) {
@@ -169,18 +169,18 @@ class TTMServerBootstrap extends Maintenance {
 
 		$server->beginBatch();
 
-		$inserts = array();
+		$inserts = [];
 		foreach ( $collection->keys() as $mkey => $title ) {
 			$handle = new MessageHandle( $title );
-			$inserts[] = array( $handle, $sourceLanguage, $collection[$mkey]->definition() );
+			$inserts[] = [ $handle, $sourceLanguage, $collection[$mkey]->definition() ];
 		}
 
-		while ( $inserts !== array() ) {
+		while ( $inserts !== [] ) {
 			$batch = array_splice( $inserts, 0, $this->mBatchSize );
 			$server->batchInsertDefinitions( $batch );
 		}
 
-		$inserts = array();
+		$inserts = [];
 		foreach ( $stats as $targetLanguage => $numbers ) {
 			if ( $targetLanguage === $sourceLanguage ) {
 				continue;
@@ -196,7 +196,7 @@ class TTMServerBootstrap extends Maintenance {
 
 			foreach ( $collection->keys() as $mkey => $title ) {
 				$handle = new MessageHandle( $title );
-				$inserts[] = array( $handle, $sourceLanguage, $collection[$mkey]->translation() );
+				$inserts[] = [ $handle, $sourceLanguage, $collection[$mkey]->translation() ];
 			}
 
 			while ( count( $inserts ) >= $this->mBatchSize ) {
@@ -205,7 +205,7 @@ class TTMServerBootstrap extends Maintenance {
 			}
 		}
 
-		while ( $inserts !== array() ) {
+		while ( $inserts !== [] ) {
 			$batch = array_splice( $inserts, 0, $this->mBatchSize );
 			$server->batchInsertTranslations( $batch );
 		}

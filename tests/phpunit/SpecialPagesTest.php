@@ -18,12 +18,12 @@ class SpecialPagesTest extends MediaWikiTestCase {
 		parent::setUp();
 
 		global $wgHooks;
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgHooks' => $wgHooks,
-			'wgTranslateTranslationServices' => array(),
+			'wgTranslateTranslationServices' => [],
 			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
-		) );
-		$wgHooks['TranslatePostInitGroups'] = array();
+		] );
+		$wgHooks['TranslatePostInitGroups'] = [];
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( wfGetCache( 'hash' ) );
@@ -37,10 +37,10 @@ class SpecialPagesTest extends MediaWikiTestCase {
 		require __DIR__ . '/../../Autoload.php';
 		global $wgSpecialPages;
 
-		$pages = array();
+		$pages = [];
 		foreach ( $wgSpecialPages as $name => $class ) {
 			if ( is_string( $class ) && isset( $al[$class] ) ) {
-				$pages[] = array( $name );
+				$pages[] = [ $name ];
 			}
 		}
 

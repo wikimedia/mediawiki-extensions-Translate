@@ -42,7 +42,7 @@ class TranslateMoveJob extends Job {
 	 * @param Title $title
 	 * @param array $params
 	 */
-	public function __construct( $title, $params = array() ) {
+	public function __construct( $title, $params = [] ) {
 		parent::__construct( __CLASS__, $title, $params );
 	}
 
@@ -70,10 +70,10 @@ class TranslateMoveJob extends Job {
 		// Don't check perms, don't leave a redirect
 		$ok = $title->moveTo( $target, false, $summary, false );
 		if ( !$ok ) {
-			$params = array(
+			$params = [
 				'target' => $target->getPrefixedText(),
 				'error' => $ok,
-			);
+			];
 
 			$entry = new ManualLogEntry( 'pagetranslation', 'movenok' );
 			$entry->setPerformer( $doer );
@@ -97,9 +97,9 @@ class TranslateMoveJob extends Job {
 		if ( $last ) {
 			$cache->delete( $key );
 
-			$params = array(
+			$params = [
 				'target' => $this->params['base-target'],
-			);
+			];
 
 			$entry = new ManualLogEntry( 'pagetranslation', 'moveok' );
 			$entry->setPerformer( $doer );

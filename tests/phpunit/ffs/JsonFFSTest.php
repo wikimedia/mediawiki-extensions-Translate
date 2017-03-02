@@ -15,20 +15,20 @@ class JsonFFSTest extends MediaWikiTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->groupConfiguration = array(
-			'BASIC' => array(
+		$this->groupConfiguration = [
+			'BASIC' => [
 				'class' => 'FileBasedMessageGroup',
 				'id' => 'test-id',
 				'label' => 'Test Label',
 				'namespace' => 'NS_MEDIAWIKI',
 				'description' => 'Test description',
-			),
-			'FILES' => array(
+			],
+			'FILES' => [
 				'class' => 'JsonFFS',
 				'sourcePattern' => __DIR__ . '/../data/jsontest_%CODE%.json',
 				'targetPattern' => 'jsontest_%CODE%.json',
-			),
-		);
+			],
+		];
 	}
 
 	protected $groupConfiguration;
@@ -43,14 +43,14 @@ class JsonFFSTest extends MediaWikiTestCase {
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new JsonFFS( $group );
 		$parsed = $ffs->readFromVariable( $file );
-		$expected = array(
+		$expected = [
 			'MESSAGES' => $messages,
 			'AUTHORS' => $authors,
-			'METADATA' => array(),
-		);
+			'METADATA' => [],
+		];
 		$this->assertEquals( $expected, $parsed );
 
-		if ( $messages === array() ) {
+		if ( $messages === [] ) {
 			$this->assertFalse( JsonFFS::isValid( $file ) );
 		} else {
 			$this->assertTrue( JsonFFS::isValid( $file ) );
@@ -58,7 +58,7 @@ class JsonFFSTest extends MediaWikiTestCase {
 	}
 
 	public function jsonProvider() {
-		$values = array();
+		$values = [];
 
 		$file1 =
 			<<<JSON
@@ -69,15 +69,15 @@ class JsonFFSTest extends MediaWikiTestCase {
 }
 JSON;
 
-		$values[] = array(
-			array(
+		$values[] = [
+			[
 				'one' => 'jeden',
 				'two' => 'dwa',
 				'three' => 'trzy',
-			),
-			array(),
+			],
+			[],
 			$file1,
-		);
+		];
 
 		$file2 =
 			<<<JSON
@@ -89,11 +89,11 @@ JSON;
 }
 JSON;
 
-		$values[] = array(
-			array( 'word' => 'слово' ),
-			array( 'Niklas', 'Amir' ),
+		$values[] = [
+			[ 'word' => 'слово' ],
+			[ 'Niklas', 'Amir' ],
 			$file2,
-		);
+		];
 
 		$file3 =
 			<<<JSON
@@ -101,11 +101,11 @@ JSON;
 Json!>@£0 file
 JSON;
 
-		$values[] = array(
-			array(),
-			array(),
+		$values[] = [
+			[],
+			[],
 			$file3,
-		);
+		];
 
 		return $values;
 	}
@@ -121,7 +121,7 @@ JSON;
 		$parsed = $ffs->readFromVariable( $data );
 
 		$this->assertEquals(
-			array( 'Nike the bunny' ),
+			[ 'Nike the bunny' ],
 			$parsed['AUTHORS'],
 			'Authors are exported'
 		);

@@ -23,10 +23,10 @@ class ApertiumWebService extends TranslationWebService {
 	}
 
 	protected function doPairs() {
-		$pairs = array();
+		$pairs = [];
 		$json = Http::get(
 			$this->config['pairs'],
-			array( 'timeout' => $this->config['timeout'] ),
+			[ 'timeout' => $this->config['timeout'] ],
 			__METHOD__
 		);
 		$response = FormatJson::decode( $json );
@@ -53,11 +53,11 @@ class ApertiumWebService extends TranslationWebService {
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
 
-		$params = array(
+		$params = [
 			'q' => $text,
 			'langpair' => "$from|$to",
 			'x-application' => 'Translate ' . TRANSLATE_VERSION . ')',
-		);
+		];
 
 		return TranslationQuery::factory( $this->config['url'] )
 			->timeout( $this->config['timeout'] )

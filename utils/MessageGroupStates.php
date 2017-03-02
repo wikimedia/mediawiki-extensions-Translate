@@ -34,7 +34,7 @@ class MessageGroupStates {
 		if ( isset( $conf[self::CONDKEY] ) ) {
 			return $conf[self::CONDKEY];
 		} else {
-			return array();
+			return [];
 		}
 	}
 }

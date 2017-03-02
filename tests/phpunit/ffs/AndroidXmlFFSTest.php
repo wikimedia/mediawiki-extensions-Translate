@@ -9,19 +9,19 @@
 
 class AndroidXmlFFSTest extends MediaWikiTestCase {
 
-	protected $groupConfiguration = array(
-		'BASIC' => array(
+	protected $groupConfiguration = [
+		'BASIC' => [
 			'class' => 'FileBasedMessageGroup',
 			'id' => 'test-id',
 			'label' => 'Test Label',
 			'namespace' => 'NS_MEDIAWIKI',
 			'description' => 'Test description',
-		),
-		'FILES' => array(
+		],
+		'FILES' => [
 			'class' => 'AndroidXmlFFS',
 			'sourcePattern' => '',
-		),
-	);
+		],
+	];
 
 	public function testParsing() {
 		$file =
@@ -46,15 +46,15 @@ XML;
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new AndroidXmlFFS( $group );
 		$parsed = $ffs->readFromVariable( $file );
-		$expected = array(
+		$expected = [
 			'wpt_voicerec' => 'Voice recording',
 			'wpt_stillimage' => '!!FUZZY!!Picture',
 			'alot' => '{{PLURAL|one=bunny|bunnies}}',
 			'has_quotes' => 'Go to "Wikipedia"',
 			'starts_with_at' => '@Wikipedia',
 			'has_ampersand' => '1&nbsp;000',
-		);
-		$expected = array( 'MESSAGES' => $expected, 'AUTHORS' => array() );
+		];
+		$expected = [ 'MESSAGES' => $expected, 'AUTHORS' => [] ];
 		$this->assertEquals( $expected, $parsed );
 	}
 
@@ -65,17 +65,17 @@ XML;
 		$group = MessageGroupBase::factory( $this->groupConfiguration );
 		$ffs = new AndroidXmlFFS( $group );
 
-		$messages = array(
+		$messages = [
 			'ko=26ra' => 'wawe',
 			'foobar' => '!!FUZZY!!Kissa kala <koira> "a\'b',
 			'amuch' => '{{PLURAL|one=bunny|bunnies}}',
 			'ampersand' => '&nbsp; &foo',
-		);
+		];
 		$collection = new MockMessageCollection( $messages );
 
 		$xml = $ffs->writeIntoVariable( $collection );
 		$parsed = $ffs->readFromVariable( $xml );
-		$expected = array( 'MESSAGES' => $messages, 'AUTHORS' => array() );
+		$expected = [ 'MESSAGES' => $messages, 'AUTHORS' => [] ];
 		$this->assertEquals( $expected, $parsed );
 	}
 }

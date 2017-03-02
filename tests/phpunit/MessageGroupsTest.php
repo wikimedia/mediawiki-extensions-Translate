@@ -15,18 +15,18 @@ class MessageGroupsTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 
-		$conf = array(
+		$conf = [
 			__DIR__ . '/data/ParentGroups.yaml',
-		);
+		];
 
 		global $wgHooks;
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgHooks' => $wgHooks,
 			'wgTranslateGroupFiles' => $conf,
-			'wgTranslateTranslationServices' => array(),
-			'wgTranslateMessageNamespaces' => array( NS_MEDIAWIKI ),
-		) );
-		$wgHooks['TranslatePostInitGroups'] = array( 'MessageGroups::getConfiguredGroups' );
+			'wgTranslateTranslationServices' => [],
+			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+		] );
+		$wgHooks['TranslatePostInitGroups'] = [ 'MessageGroups::getConfiguredGroups' ];
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( wfGetCache( 'hash' ) );
@@ -46,34 +46,34 @@ class MessageGroupsTest extends MediaWikiTestCase {
 	}
 
 	public static function provideGroups() {
-		$cases = array();
-		$cases[] = array(
-			array( array( 'root1' ), array( 'root2' ) ),
+		$cases = [];
+		$cases[] = [
+			[ [ 'root1' ], [ 'root2' ] ],
 			'twoparents'
-		);
+		];
 
-		$cases[] = array(
-			array( array( 'root3', 'sub1' ), array( 'root3', 'sub2' ) ),
+		$cases[] = [
+			[ [ 'root3', 'sub1' ], [ 'root3', 'sub2' ] ],
 			'oneparent-twopaths'
-		);
+		];
 
-		$cases[] = array(
-			array(
-				array( 'root4' ),
-				array( 'root4', 'nested1' ),
-				array( 'root4', 'nested1', 'nested2' ),
-				array( 'root4', 'nested2' ),
-			),
+		$cases[] = [
+			[
+				[ 'root4' ],
+				[ 'root4', 'nested1' ],
+				[ 'root4', 'nested1', 'nested2' ],
+				[ 'root4', 'nested2' ],
+			],
 			'multilevelnested'
-		);
+		];
 
 		return $cases;
 	}
 
 	public function testHaveSingleSourceLanguage() {
-		$this->setMwGlobals( array(
-			'wgTranslateGroupFiles' => array( __DIR__ . '/data/MixedSourceLanguageGroups.yaml' ),
-		) );
+		$this->setMwGlobals( [
+			'wgTranslateGroupFiles' => [ __DIR__ . '/data/MixedSourceLanguageGroups.yaml' ],
+		] );
 		MessageGroups::singleton()->recache();
 
 		$enGroup1 = MessageGroups::getGroup( 'EnglishGroup1' );
@@ -81,10 +81,10 @@ class MessageGroupsTest extends MediaWikiTestCase {
 		$teGroup1 = MessageGroups::getGroup( 'TeluguGroup1' );
 
 		$this->assertEquals( 'en', MessageGroups::haveSingleSourceLanguage(
-			array( $enGroup1, $enGroup2 ) )
+			[ $enGroup1, $enGroup2 ] )
 		);
 		$this->assertEquals( '', MessageGroups::haveSingleSourceLanguage(
-			array( $enGroup1, $enGroup2, $teGroup1 ) )
+			[ $enGroup1, $enGroup2, $teGroup1 ] )
 		);
 	}
 }

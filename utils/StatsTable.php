@@ -39,7 +39,7 @@ class StatsTable {
 	/**
 	 * @var Message[]
 	 */
-	protected $extraColumns = array();
+	protected $extraColumns = [];
 
 	public function __construct() {
 		$this->lang = RequestContext::getMain()->getLanguage();
@@ -55,7 +55,7 @@ class StatsTable {
 	 * @return string Html td element.
 	 */
 	public function element( $in, $bgcolor = '', $sort = '' ) {
-		$attributes = array();
+		$attributes = [];
 
 		if ( $sort ) {
 			$attributes['data-sort-value'] = $sort;
@@ -120,7 +120,7 @@ class StatsTable {
 	 * @return string HTML
 	 */
 	public function createColumnHeader( Message $msg ) {
-		return Html::element( 'th', array(), $msg->text() );
+		return Html::element( 'th', [], $msg->text() );
 	}
 
 	public function addExtraColumn( Message $column ) {
@@ -131,12 +131,12 @@ class StatsTable {
 	 * @return Message[]
 	 */
 	public function getOtherColumnHeaders() {
-		return array_merge( array(
+		return array_merge( [
 			wfMessage( 'translate-total' ),
 			wfMessage( 'translate-untranslated' ),
 			wfMessage( 'translate-percentage-complete' ),
 			wfMessage( 'translate-percentage-fuzzy' ),
-		), $this->extraColumns );
+		], $this->extraColumns );
 	}
 
 	/**
@@ -146,7 +146,7 @@ class StatsTable {
 		// Create table header
 		$out = Html::openElement(
 			'table',
-			array( 'class' => 'statstable wikitable mw-sp-translate-table' )
+			[ 'class' => 'statstable wikitable mw-sp-translate-table' ]
 		);
 
 		$out .= "\n\t" . Html::openElement( 'thead' );
@@ -171,7 +171,7 @@ class StatsTable {
 	 */
 	public function makeTotalRow( Message $message, $stats ) {
 		$out = "\t" . Html::openElement( 'tr' );
-		$out .= "\n\t\t" . Html::element( 'td', array(), $message->text() );
+		$out .= "\n\t\t" . Html::element( 'td', [], $message->text() );
 		$out .= $this->makeNumberColumns( $stats );
 		$out .= "\n\t" . Xml::closeElement( 'tr' ) . "\n";
 
@@ -189,7 +189,7 @@ class StatsTable {
 		$fuzzy = $stats[MessageGroupStats::FUZZY];
 
 		if ( $total === null ) {
-			$na = "\n\t\t" . Html::element( 'td', array( 'data-sort-value' => -1 ), '...' );
+			$na = "\n\t\t" . Html::element( 'td', [ 'data-sort-value' => -1 ], '...' );
 			$nap = "\n\t\t" . $this->element( '...', 'AFAFAF', -1 );
 			$out = $na . $na . $nap . $nap;
 
@@ -197,11 +197,11 @@ class StatsTable {
 		}
 
 		$out = "\n\t\t" . Html::element( 'td',
-			array( 'data-sort-value' => $total ),
+			[ 'data-sort-value' => $total ],
 			$this->lang->formatNum( $total ) );
 
 		$out .= "\n\t\t" . Html::element( 'td',
-			array( 'data-sort-value' => $total - $translated ),
+			[ 'data-sort-value' => $total - $translated ],
 			$this->lang->formatNum( $total - $translated ) );
 
 		if ( $total === 0 ) {
@@ -246,7 +246,7 @@ class StatsTable {
 
 		// Bold for meta groups.
 		if ( $group->isMeta() ) {
-			$groupLabel = Html::rawElement( 'b', array(), $groupLabel );
+			$groupLabel = Html::rawElement( 'b', [], $groupLabel );
 		}
 
 		return $groupLabel;
@@ -260,12 +260,12 @@ class StatsTable {
 	 * @return string Html
 	 */
 	public function makeGroupLink( MessageGroup $group, $code, $params ) {
-		$queryParameters = $params + array(
+		$queryParameters = $params + [
 			'group' => $group->getId(),
 			'language' => $code
-		);
+		];
 
-		$attributes = array();
+		$attributes = [];
 
 		$translateGroupLink = Linker::link(
 			$this->translate, $this->getGroupLabel( $group ), $attributes, $queryParameters
@@ -286,11 +286,11 @@ class StatsTable {
 
 		$blacklisted = null;
 
-		$checks = array(
+		$checks = [
 			$groupId,
 			strtok( $groupId, '-' ),
 			'*'
-		);
+		];
 
 		foreach ( $checks as $check ) {
 			if ( isset( $wgTranslateBlacklist[$check] ) && isset( $wgTranslateBlacklist[$check][$code] ) ) {
@@ -308,7 +308,7 @@ class StatsTable {
 			$blacklisted = true;
 		}
 
-		$include = Hooks::run( 'Translate:MessageGroupStats:isIncluded', array( $groupId, $code ) );
+		$include = Hooks::run( 'Translate:MessageGroupStats:isIncluded', [ $groupId, $code ] );
 		if ( !$include ) {
 			$blacklisted = true;
 		}
@@ -325,11 +325,11 @@ class StatsTable {
 	public static function formatTooltip( $text ) {
 		$wordSeparator = wfMessage( 'word-separator' )->text();
 
-		$text = strtr( $text, array(
+		$text = strtr( $text, [
 			"\n" => $wordSeparator,
 			"\r" => $wordSeparator,
 			"\t" => $wordSeparator,
-		) );
+		] );
 
 		return $text;
 	}

@@ -38,7 +38,7 @@ class MessageGroupStats {
 	/**
 	 * @var array[]
 	 */
-	protected static $updates = array();
+	protected static $updates = [];
 
 	/**
 	 * Set the maximum time statistics are calculated.
@@ -58,7 +58,7 @@ class MessageGroupStats {
 	 * @since 2012-09-21
 	 */
 	public static function getEmptyStats() {
-		return array( 0, 0, 0, 0 );
+		return [ 0, 0, 0, 0 ];
 	}
 
 	/**
@@ -68,7 +68,7 @@ class MessageGroupStats {
 	 * @since 2013-01-02
 	 */
 	protected static function getUnknownStats() {
-		return array( null, null, null, null );
+		return [ null, null, null, null ];
 	}
 
 	/**
@@ -105,7 +105,7 @@ class MessageGroupStats {
 	 */
 	public static function forLanguage( $code ) {
 		$stats = self::forLanguageInternal( $code );
-		$flattened = array();
+		$flattened = [];
 		foreach ( $stats as $group => $languages ) {
 			$flattened[$group] = $languages[$code];
 		}
@@ -123,7 +123,7 @@ class MessageGroupStats {
 	public static function forGroup( $id ) {
 		$group = MessageGroups::getGroup( $id );
 		if ( $group === null ) {
-			return array();
+			return [];
 		}
 		$stats = self::forGroupInternal( $group );
 
@@ -140,7 +140,7 @@ class MessageGroupStats {
 	 */
 	public static function forEverything() {
 		$groups = MessageGroups::singleton()->getGroups();
-		$stats = array();
+		$stats = [];
 		foreach ( $groups as $g ) {
 			$stats = self::forGroupInternal( $g, $stats );
 		}
@@ -159,7 +159,7 @@ class MessageGroupStats {
 		$code = $handle->getCode();
 		$ids = $handle->getGroupIds();
 		$dbw = wfGetDB( DB_MASTER );
-		$conds = array( 'tgs_group' => $ids, 'tgs_lang' => $code );
+		$conds = [ 'tgs_group' => $ids, 'tgs_lang' => $code ];
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
 		wfDebugLog( 'messagegroupstats', 'Cleared ' . serialize( $conds ) );
 	}
@@ -169,7 +169,7 @@ class MessageGroupStats {
 			return;
 		}
 		$dbw = wfGetDB( DB_MASTER );
-		$conds = array( 'tgs_group' => $id );
+		$conds = [ 'tgs_group' => $id ];
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
 		wfDebugLog( 'messagegroupstats', 'Cleared ' . serialize( $conds ) );
 	}
@@ -179,7 +179,7 @@ class MessageGroupStats {
 			return;
 		}
 		$dbw = wfGetDB( DB_MASTER );
-		$conds = array( 'tgs_lang' => $code );
+		$conds = [ 'tgs_lang' => $code ];
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
 		wfDebugLog( 'messagegroupstats', 'Cleared ' . serialize( $conds ) );
 	}
@@ -193,7 +193,7 @@ class MessageGroupStats {
 		wfDebugLog( 'messagegroupstats', 'Cleared everything :(' );
 	}
 
-	protected static function extractResults( $res, array $stats = array() ) {
+	protected static function extractResults( $res, array $stats = [] ) {
 		foreach ( $res as $row ) {
 			$stats[$row->tgs_group][$row->tgs_lang] = self::extractNumbers( $row );
 		}
@@ -201,15 +201,15 @@ class MessageGroupStats {
 		return $stats;
 	}
 
-	public static function update( MessageHandle $handle, array $changes = array() ) {
+	public static function update( MessageHandle $handle, array $changes = [] ) {
 		$dbw = wfGetDB( DB_MASTER );
-		$conds = array(
+		$conds = [
 			'tgs_group' => $handle->getGroupIds(),
 			'tgs_lang' => $handle->getCode(),
-		);
+		];
 
-		$values = array();
-		foreach ( array( 'total', 'translated', 'fuzzy', 'proofread' ) as $type ) {
+		$values = [];
+		foreach ( [ 'total', 'translated', 'fuzzy', 'proofread' ] as $type ) {
 			if ( isset( $changes[$type] ) ) {
 				$values[] = "tgs_$type=tgs_$type" .
 					self::stringifyNumber( $changes[$type] );
@@ -225,12 +225,12 @@ class MessageGroupStats {
 	 * @return array
 	 */
 	protected static function extractNumbers( $row ) {
-		return array(
+		return [
 			self::TOTAL => (int)$row->tgs_total,
 			self::TRANSLATED => (int)$row->tgs_translated,
 			self::FUZZY => (int)$row->tgs_fuzzy,
 			self::PROOFREAD => (int)$row->tgs_proofread,
-		);
+		];
 	}
 
 	/**
@@ -238,7 +238,7 @@ class MessageGroupStats {
 	 * @param array[] $stats
 	 * @return array[]
 	 */
-	protected static function forLanguageInternal( $code, array $stats = array() ) {
+	protected static function forLanguageInternal( $code, array $stats = [] ) {
 		$res = self::selectRowsIdLang( null, $code );
 		$stats = self::extractResults( $res, $stats );
 
@@ -258,7 +258,7 @@ class MessageGroupStats {
 	 * @return mixed
 	 */
 	protected static function expandAggregates( AggregateMessageGroup $agg ) {
-		$flattened = array();
+		$flattened = [];
 
 		/** @var MessageGroup|AggregateMessageGroup $group */
 		foreach ( $agg->getGroups() as $group ) {
@@ -277,7 +277,7 @@ class MessageGroupStats {
 	 * @param array[] $stats
 	 * @return array[]
 	 */
-	protected static function forGroupInternal( $group, array $stats = array() ) {
+	protected static function forGroupInternal( $group, array $stats = [] ) {
 		$id = $group->getId();
 		$res = self::selectRowsIdLang( $id, null );
 		$stats = self::extractResults( $res, $stats );
@@ -302,7 +302,7 @@ class MessageGroupStats {
 	}
 
 	protected static function selectRowsIdLang( $ids = null, $codes = null ) {
-		$conds = array();
+		$conds = [];
 		if ( $ids !== null ) {
 			$conds['tgs_group'] = $ids;
 		}
@@ -335,7 +335,7 @@ class MessageGroupStats {
 			$aggregates = self::getEmptyStats();
 
 			$expanded = self::expandAggregates( $group );
-			if ( $expanded === array() ) {
+			if ( $expanded === [] ) {
 				return $aggregates;
 			}
 			$res = self::selectRowsIdLang( array_keys( $expanded ), $code );
@@ -352,7 +352,7 @@ class MessageGroupStats {
 					$stats[$sid][$code] = self::forItemInternal( $stats, $subgroup, $code );
 				}
 
-				$include = Hooks::run( 'Translate:MessageGroupStats:isIncluded', array( $sid, $code ) );
+				$include = Hooks::run( 'Translate:MessageGroupStats:isIncluded', [ $sid, $code ] );
 				if ( $include ) {
 					$aggregates = self::multiAdd( $aggregates, $stats[$sid][$code] );
 				}
@@ -367,14 +367,14 @@ class MessageGroupStats {
 			return $aggregates;
 		}
 
-		self::$updates[] = array(
+		self::$updates[] = [
 			'tgs_group' => $id,
 			'tgs_lang' => $code,
 			'tgs_total' => $aggregates[self::TOTAL],
 			'tgs_translated' => $aggregates[self::TRANSLATED],
 			'tgs_fuzzy' => $aggregates[self::FUZZY],
 			'tgs_proofread' => $aggregates[self::PROOFREAD],
-		);
+		];
 
 		return $aggregates;
 	}
@@ -404,7 +404,7 @@ class MessageGroupStats {
 			$ffs = $group->getFFS();
 			if ( $ffs instanceof GettextFFS ) {
 				$template = $ffs->read( 'en' );
-				$infile = array();
+				$infile = [];
 				foreach ( $template['TEMPLATE'] as $key => $data ) {
 					if ( isset( $data['comments']['.'] ) ) {
 						$infile[$key] = '1';
@@ -432,12 +432,12 @@ class MessageGroupStats {
 		$collection->filter( 'reviewer', false );
 		$proofread = count( $collection );
 
-		return array(
+		return [
 			self::TOTAL => $total,
 			self::TRANSLATED => $translated,
 			self::FUZZY => $fuzzy,
 			self::PROOFREAD => $proofread,
-		);
+		];
 	}
 
 	/**
@@ -473,10 +473,10 @@ class MessageGroupStats {
 					$table,
 					$updates,
 					$method,
-					array( 'IGNORE' )
+					[ 'IGNORE' ]
 				);
 
-				$updates = array();
+				$updates = [];
 			}
 		);
 	}

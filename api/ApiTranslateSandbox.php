@@ -46,7 +46,7 @@ class ApiTranslateSandbox extends ApiBase {
 		foreach ( explode( '|', 'username|password|email' ) as $field ) {
 			if ( !isset( $params[$field] ) ) {
 				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( array( 'apierror-missingparam', $field ), 'missingparam' );
+					$this->dieWithError( [ 'apierror-missingparam', $field ], 'missingparam' );
 				} else {
 					$this->dieUsage( "Missing parameter $field", 'missingparam' );
 				}
@@ -87,10 +87,10 @@ class ApiTranslateSandbox extends ApiBase {
 		}
 
 		$user = TranslateSandbox::addUser( $username, $email, $password );
-		$output = array( 'user' => array(
+		$output = [ 'user' => [
 			'name' => $user->getName(),
 			'id' => $user->getId(),
-		) );
+		] ];
 
 		$user->setOption( 'language', $this->getContext()->getLanguage()->getCode() );
 		$user->saveSettings();
@@ -120,7 +120,7 @@ class ApiTranslateSandbox extends ApiBase {
 			} catch ( MWException $e ) {
 				if ( method_exists( $this, 'dieWithError' ) ) {
 					$this->dieWithError(
-						array( 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ),
+						[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
 						'invalidparam'
 					);
 				} else {
@@ -155,7 +155,7 @@ class ApiTranslateSandbox extends ApiBase {
 			} catch ( MWException $e ) {
 				if ( method_exists( $this, 'dieWithError' ) ) {
 					$this->dieWithError(
-						array( 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ),
+						[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
 						'invalidparam'
 					);
 				} else {
@@ -168,9 +168,9 @@ class ApiTranslateSandbox extends ApiBase {
 			$logEntry = new ManualLogEntry( 'translatorsandbox', 'promoted' );
 			$logEntry->setPerformer( $this->getUser() );
 			$logEntry->setTarget( $user->getUserPage() );
-			$logEntry->setParameters( array(
+			$logEntry->setParameters( [
 				'4::userid' => $user->getId(),
-			) );
+			] );
 			$logid = $logEntry->insert();
 			$logEntry->publish( $logid );
 
@@ -189,7 +189,7 @@ class ApiTranslateSandbox extends ApiBase {
 			} catch ( MWException $e ) {
 				if ( method_exists( $this, 'dieWithError' ) ) {
 					$this->dieWithError(
-						array( 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ),
+						[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
 						'invalidparam'
 					);
 				} else {
@@ -236,23 +236,23 @@ class ApiTranslateSandbox extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'do' => array(
-				ApiBase::PARAM_TYPE => array( 'create', 'delete', 'promote', 'remind' ),
+		return [
+			'do' => [
+				ApiBase::PARAM_TYPE => [ 'create', 'delete', 'promote', 'remind' ],
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'userid' => array(
+			],
+			'userid' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_DFLT => 0,
 				ApiBase::PARAM_ISMULTI => true,
-			),
-			'token' => array(
+			],
+			'token' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'username' => array( ApiBase::PARAM_TYPE => 'string' ),
-			'password' => array( ApiBase::PARAM_TYPE => 'string' ),
-			'email' => array( ApiBase::PARAM_TYPE => 'string' ),
-		);
+			],
+			'username' => [ ApiBase::PARAM_TYPE => 'string' ],
+			'password' => [ ApiBase::PARAM_TYPE => 'string' ],
+			'email' => [ ApiBase::PARAM_TYPE => 'string' ],
+		];
 	}
 }

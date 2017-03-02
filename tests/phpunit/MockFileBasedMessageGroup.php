@@ -10,7 +10,7 @@
 
 class MockFileBasedMessageGroup extends FileBasedMessageGroup {
 	public function load( $code ) {
-		return array( $this->getId() . '-messagekey' => 'üga' );
+		return [ $this->getId() . '-messagekey' => 'üga' ];
 	}
 
 	public function exists() {

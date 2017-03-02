@@ -9,12 +9,12 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 		parent::setUp();
 
 		global $wgHooks;
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgHooks' => $wgHooks,
-			'wgTranslateTranslationServices' => array(),
-			'wgTranslateMessageNamespaces' => array( NS_MEDIAWIKI ),
-		) );
-		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
+			'wgTranslateTranslationServices' => [],
+			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+		] );
+		$wgHooks['TranslatePostInitGroups'] = [ [ $this, 'getTestGroups' ] ];
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( wfGetCache( 'hash' ) );
@@ -22,9 +22,9 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 	}
 
 	public function getTestGroups( &$list ) {
-		$messages = array( 'key1' => 'msg1', 'key2' => 'msg2' );
+		$messages = [ 'key1' => 'msg1', 'key2' => 'msg2' ];
 		$list['group-trans'] = new MessageGroupWithTransitions( 'group-trans', $messages );
-		$list['group-notrans'] = new MessageGroupWithoutTransitions( 'group-notrans', array() );
+		$list['group-notrans'] = new MessageGroupWithoutTransitions( 'group-notrans', [] );
 
 		return false;
 	}
@@ -41,23 +41,23 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 	 * @dataProvider provideStatValues
 	 */
 	public function testGetStatValue( $type, $expected ) {
-		$stats = array(
+		$stats = [
 			MessageGroupStats::TOTAL => 666,
 			MessageGroupStats::FUZZY => 111,
 			MessageGroupStats::TRANSLATED => 222,
 			MessageGroupStats::PROOFREAD => 111,
-		);
+		];
 		$actual = MessageGroupStatesUpdaterJob::getStatValue( $stats, $type );
 		$this->assertEquals( $expected, $actual );
 	}
 
 	public static function provideStatValues() {
-		return array(
-			array( 'UNTRANSLATED', 333 ),
-			array( 'OUTDATED', 111 ),
-			array( 'TRANSLATED', 222 ),
-			array( 'PROOFREAD', 111 ),
-		);
+		return [
+			[ 'UNTRANSLATED', 333 ],
+			[ 'OUTDATED', 111 ],
+			[ 'TRANSLATED', 222 ],
+			[ 'PROOFREAD', 111 ],
+		];
 	}
 
 	/**
@@ -69,38 +69,38 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 	}
 
 	public static function provideMatchCondition() {
-		return array(
-			array( true, 0, 'ZERO', 666 ),
-			array( false, 1, 'ZERO', 666 ),
-			array( true, 1, 'NONZERO', 666 ),
-			array( false, 0, 'NONZERO', 666 ),
-			array( true, 666, 'MAX', 666 ),
-			array( false, 0, 'MAX', 666 ),
-			array( false, 12, 'MAX', 666 ),
-		);
+		return [
+			[ true, 0, 'ZERO', 666 ],
+			[ false, 1, 'ZERO', 666 ],
+			[ true, 1, 'NONZERO', 666 ],
+			[ false, 0, 'NONZERO', 666 ],
+			[ true, 666, 'MAX', 666 ],
+			[ false, 0, 'MAX', 666 ],
+			[ false, 12, 'MAX', 666 ],
+		];
 	}
 
 	public function testGetNewState() {
 		$group = MessageGroups::getGroup( 'group-trans' );
 		$transitions = $group->getMessageGroupStates()->getConditions();
 
-		$stats = array( 5, 0, 0, 0 );
+		$stats = [ 5, 0, 0, 0 ];
 		$newstate = MessageGroupStatesUpdaterJob::getNewState( $stats, $transitions );
 		$this->assertEquals( 'unset', $newstate, 'all zero, should be unset' );
 
-		$stats = array( 5, 1, 0, 0 );
+		$stats = [ 5, 1, 0, 0 ];
 		$newstate = MessageGroupStatesUpdaterJob::getNewState( $stats, $transitions );
 		$this->assertEquals( 'inprogress', $newstate, 'one translated message' );
 
-		$stats = array( 5, 0, 1, 0 );
+		$stats = [ 5, 0, 1, 0 ];
 		$newstate = MessageGroupStatesUpdaterJob::getNewState( $stats, $transitions );
 		$this->assertEquals( 'inprogress', $newstate, 'one outdated message' );
 
-		$stats = array( 5, 1, 1, 0 );
+		$stats = [ 5, 1, 1, 0 ];
 		$newstate = MessageGroupStatesUpdaterJob::getNewState( $stats, $transitions );
 		$this->assertEquals( 'inprogress', $newstate, 'one translated and one outdated message' );
 
-		$stats = array( 5, 5, 0, 0 );
+		$stats = [ 5, 5, 0, 0 ];
 		$newstate = MessageGroupStatesUpdaterJob::getNewState( $stats, $transitions );
 		$this->assertEquals( 'proofreading', $newstate, 'all translated' );
 	}
@@ -189,7 +189,7 @@ class MockMessageHandle extends MessageHandle {
 	}
 
 	public function getGroupIds() {
-		return array( 'group-trans', 'group-notrans' );
+		return [ 'group-trans', 'group-notrans' ];
 	}
 }
 
@@ -201,20 +201,20 @@ class MessageGroupWithoutTransitions extends MockWikiMessageGroup {
 
 class MessageGroupWithTransitions extends MockWikiMessageGroup {
 	public function getMessageGroupStates() {
-		return new MessageGroupStates( array(
-			'state conditions' => array(
-				array( 'ready', array( 'PROOFREAD' => 'MAX' ) ),
-				array( 'proofreading', array( 'TRANSLATED' => 'MAX' ) ),
-				array(
+		return new MessageGroupStates( [
+			'state conditions' => [
+				[ 'ready', [ 'PROOFREAD' => 'MAX' ] ],
+				[ 'proofreading', [ 'TRANSLATED' => 'MAX' ] ],
+				[
 					'unset',
-					array(
+					[
 						'UNTRANSLATED' => 'MAX',
 						'OUTDATED' => 'ZERO',
 						'TRANSLATED' => 'ZERO'
-					)
-				),
-				array( 'inprogress', array( 'UNTRANSLATED' => 'NONZERO' ) ),
-			)
-		) );
+					]
+				],
+				[ 'inprogress', [ 'UNTRANSLATED' => 'NONZERO' ] ],
+			]
+		] );
 	}
 }

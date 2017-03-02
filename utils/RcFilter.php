@@ -44,7 +44,7 @@ class TranslateRcFilter {
 
 		$dbr = wfGetDB( DB_SLAVE );
 
-		$namespaces = array();
+		$namespaces = [];
 
 		foreach ( $wgTranslateMessageNamespaces as $index ) {
 			$namespaces[] = $index;
@@ -93,7 +93,7 @@ class TranslateRcFilter {
 		);
 		$select->addOption( wfMessage( 'translate-rc-translation-filter-site' )->text(), 'site' );
 
-		$items['translations'] = array( $label, $select->getHTML() );
+		$items['translations'] = [ $label, $select->getHTML() ];
 
 		return true;
 	}

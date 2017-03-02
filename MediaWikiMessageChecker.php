@@ -45,7 +45,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 			$translation = $message->translation();
 
 			$subcheck = 'extra';
-			$matches = $links = array();
+			$matches = $links = [];
 			preg_match_all( "/\[\[([{$tc}]+)(\\|(.+?))?]]/sDu", $translation, $matches );
 			$count = count( $matches[0] );
 			for ( $i = 0; $i < $count; $i++ ) {
@@ -59,16 +59,16 @@ class MediaWikiMessageChecker extends MessageChecker {
 			}
 
 			if ( count( $links ) ) {
-				$warnings[$key][] = array(
-					array( 'links', $subcheck, $key, $code ),
+				$warnings[$key][] = [
+					[ 'links', $subcheck, $key, $code ],
 					'translate-checks-links',
-					array( 'PARAMS', $links ),
-					array( 'COUNT', count( $links ) ),
-				);
+					[ 'PARAMS', $links ],
+					[ 'COUNT', count( $links ) ],
+				];
 			}
 
 			$subcheck = 'missing';
-			$matches = $links = array();
+			$matches = $links = [];
 			preg_match_all( "/\[\[([{$tc}]+)(\\|(.+?))?]]/sDu", $definition, $matches );
 			$count = count( $matches[0] );
 			for ( $i = 0; $i < $count; $i++ ) {
@@ -82,12 +82,12 @@ class MediaWikiMessageChecker extends MessageChecker {
 			}
 
 			if ( count( $links ) ) {
-				$warnings[$key][] = array(
-					array( 'links', $subcheck, $key, $code ),
+				$warnings[$key][] = [
+					[ 'links', $subcheck, $key, $code ],
 					'translate-checks-links-missing',
-					array( 'PARAMS', $links ),
-					array( 'COUNT', count( $links ) ),
-				);
+					[ 'PARAMS', $links ],
+					[ 'COUNT', count( $links ) ],
+				];
 			}
 		}
 	}
@@ -108,20 +108,20 @@ class MediaWikiMessageChecker extends MessageChecker {
 			}
 
 			$subcheck = 'invalid';
-			$tags = array(
+			$tags = [
 				'~<hr *(\\\\)?>~suDi' => '<hr />', // Wrong syntax
 				'~<br *(\\\\)?>~suDi' => '<br />',
 				'~<hr/>~suDi' => '<hr />', // Wrong syntax
 				'~<br/>~suDi' => '<br />',
 				'~<(HR|Hr|hR) />~su' => '<hr />', // Case
 				'~<(BR|Br|bR) />~su' => '<br />',
-			);
+			];
 
 			$definition = $message->definition();
 
-			$wrongTags = array();
+			$wrongTags = [];
 			foreach ( $tags as $wrong => $correct ) {
-				$matches = array();
+				$matches = [];
 				preg_match_all( $wrong, $translation, $matches, PREG_PATTERN_ORDER );
 				foreach ( $matches[0] as $wrongMatch ) {
 					if ( strpos( $definition, $wrongMatch ) !== false ) {
@@ -134,12 +134,12 @@ class MediaWikiMessageChecker extends MessageChecker {
 			}
 
 			if ( count( $wrongTags ) ) {
-				$warnings[$key][] = array(
-					array( 'xhtml', $subcheck, $key, $code ),
+				$warnings[$key][] = [
+					[ 'xhtml', $subcheck, $key, $code ],
 					'translate-checks-xhtml',
-					array( 'PARAMS', $wrongTags ),
-					array( 'COUNT', count( $wrongTags ) ),
-				);
+					[ 'PARAMS', $wrongTags ],
+					[ 'COUNT', count( $wrongTags ) ],
+				];
 			}
 		}
 	}
@@ -162,10 +162,10 @@ class MediaWikiMessageChecker extends MessageChecker {
 				stripos( $definition, '{{plural:' ) !== false &&
 				stripos( $translation, '{{plural:' ) === false
 			) {
-				$warnings[$key][] = array(
-					array( 'plural', $subcheck, $key, $code ),
+				$warnings[$key][] = [
+					[ 'plural', $subcheck, $key, $code ],
 					'translate-checks-plural',
-				);
+				];
 			}
 		}
 	}
@@ -195,18 +195,18 @@ class MediaWikiMessageChecker extends MessageChecker {
 				$provided = count( $forms );
 
 				if ( $provided > $allowed ) {
-					$warnings[$key][] = array(
-						array( 'plural', 'forms', $key, $code ),
+					$warnings[$key][] = [
+						[ 'plural', 'forms', $key, $code ],
 						'translate-checks-plural-forms', $provided, $allowed
-					);
+					];
 				}
 
 				// Are the last two forms identical?
 				if ( $provided > 1 && $forms[$provided - 1] === $forms[$provided - 2] ) {
-					$warnings[$key][] = array(
-						array( 'plural', 'dupe', $key, $code ),
+					$warnings[$key][] = [
+						[ 'plural', 'dupe', $key, $code ],
 						'translate-checks-plural-dupe'
-					);
+					];
 				}
 			}
 		}
@@ -236,10 +236,10 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 */
 	public static function getPluralForms( $translation ) {
 		// Stores the forms from plural invocations
-		$plurals = array();
+		$plurals = [];
 
 		$cb = function ( $parser, $frame, $args ) use ( &$plurals ) {
-			$forms = array();
+			$forms = [];
 
 			foreach ( $args as $index => $form ) {
 				// The first arg is the number, we skip it
@@ -304,14 +304,14 @@ class MediaWikiMessageChecker extends MessageChecker {
 
 			$subcheck = 'namespace';
 			$namespaces = 'help|project|\{\{ns:project}}|mediawiki';
-			$matches = array();
+			$matches = [];
 			if ( preg_match( "/^($namespaces):[\w\s]+$/ui", $definition, $matches ) &&
 				!preg_match( "/^{$matches[1]}:.+$/u", $translation )
 			) {
-				$warnings[$key][] = array(
-					array( 'pagename', $subcheck, $key, $code ),
+				$warnings[$key][] = [
+					[ 'pagename', $subcheck, $key, $code ],
 					'translate-checks-pagename',
-				);
+				];
 			}
 		}
 	}
@@ -324,7 +324,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * @param array $warnings Array where warnings are appended to.
 	 */
 	protected function miscMWChecks( $messages, $code, &$warnings ) {
-		$timeList = array( 'protect-expiry-options', 'ipboptions' );
+		$timeList = [ 'protect-expiry-options', 'ipboptions' ];
 
 		foreach ( $messages as $message ) {
 			$key = $message->key();
@@ -339,12 +339,12 @@ class MediaWikiMessageChecker extends MessageChecker {
 				$defCount = count( $defArray );
 				$traCount = count( $traArray );
 				if ( $defCount !== $traCount ) {
-					$warnings[$key][] = array(
-						array( 'miscmw', $subcheck, $key, $code ),
+					$warnings[$key][] = [
+						[ 'miscmw', $subcheck, $key, $code ],
 						'translate-checks-format',
 						wfMessage( 'translate-checks-parametersnotequal' )
 							->numParams( $traCount, $defCount )->text()
-					);
+					];
 
 					continue;
 				}
@@ -355,24 +355,24 @@ class MediaWikiMessageChecker extends MessageChecker {
 
 					$subcheck = 'timelist-format';
 					if ( count( $traItems ) !== 2 ) {
-						$warnings[$key][] = array(
-							array( 'miscmw', $subcheck, $key, $code ),
+						$warnings[$key][] = [
+							[ 'miscmw', $subcheck, $key, $code ],
 							'translate-checks-format',
 							wfMessage(
 								'translate-checks-malformed',
 								$traArray[$i]
 							)->text()
-						);
+						];
 						continue;
 					}
 
 					$subcheck = 'timelist-format-value';
 					if ( $traItems[1] !== $defItems[1] ) {
-						$warnings[$key][] = array(
-							array( 'miscmw', $subcheck, $key, $code ),
+						$warnings[$key][] = [
+							[ 'miscmw', $subcheck, $key, $code ],
 							'translate-checks-format',
 							"<samp><nowiki>$traItems[1] !== $defItems[1]</nowiki></samp>", // @todo FIXME: i18n missing.
-						);
+						];
 						continue;
 					}
 				}

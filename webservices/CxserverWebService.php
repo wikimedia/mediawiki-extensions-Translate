@@ -26,12 +26,12 @@ class CxserverWebService extends TranslationWebService {
 			throw new TranslationWebServiceException( 'Cxserver host not set' );
 		}
 
-		$pairs = array();
+		$pairs = [];
 
 		$url = $this->config['host'] . '/v1/list/mt';
 		$json = Http::get(
 			$url,
-			array( $this->config['timeout'] ),
+			[ $this->config['timeout'] ],
 			__METHOD__
 		);
 		$response = FormatJson::decode( $json, true );
@@ -61,7 +61,7 @@ class CxserverWebService extends TranslationWebService {
 
 		return TranslationQuery::factory( $url )
 			->timeout( $this->config['timeout'] )
-			->postWithData( array( 'html' => $text ) );
+			->postWithData( [ 'html' => $text ] );
 	}
 
 	protected function parseResponse( TranslationQueryResponse $reply ) {

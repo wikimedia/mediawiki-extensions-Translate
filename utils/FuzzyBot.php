@@ -15,7 +15,7 @@
 class FuzzyBot {
 	public static function getUser() {
 		if ( method_exists( 'User', 'newSystemUser' ) ) {
-			return User::newSystemUser( self::getName(), array( 'steal' => true ) );
+			return User::newSystemUser( self::getName(), [ 'steal' => true ] );
 		}
 
 		// BC for MW < 1.27

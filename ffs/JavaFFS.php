@@ -15,7 +15,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	public function getFileExtensions() {
-		return array( '.properties' );
+		return [ '.properties' ];
 	}
 
 	protected $keySeparator = '=';
@@ -41,7 +41,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	public function readFromVariable( $data ) {
 		$data = self::fixNewLines( $data );
 		$lines = array_map( 'ltrim', explode( "\n", $data ) );
-		$authors = $messages = array();
+		$authors = $messages = [];
 		$linecontinuation = false;
 
 		$key = '';
@@ -58,7 +58,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 				}
 
 				if ( $line[0] === '#' || $line[0] === '!' ) {
-					$match = array();
+					$match = [];
 					$ok = preg_match( '/#\s*Author:\s*(.*)/', $line, $match );
 
 					if ( $ok ) {
@@ -89,10 +89,10 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 		$messages = $this->group->getMangler()->mangle( $messages );
 
-		return array(
+		return [
 			'AUTHORS' => $authors,
 			'MESSAGES' => $messages,
-		);
+		];
 	}
 
 	// Write
@@ -212,7 +212,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		$value = ltrim( $value );
 		$value = str_replace( '\n', "\n", $value );
 
-		return array( $key, $value );
+		return [ $key, $value ];
 	}
 
 	/**
@@ -252,24 +252,24 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	public static function getExtraSchema() {
-		$schema = array(
-			'root' => array(
+		$schema = [
+			'root' => [
 				'_type' => 'array',
-				'_children' => array(
-					'FILES' => array(
+				'_children' => [
+					'FILES' => [
 						'_type' => 'array',
-						'_children' => array(
-							'header' => array(
+						'_children' => [
+							'header' => [
 								'_type' => 'text',
-							),
-							'keySeparator' => array(
+							],
+							'keySeparator' => [
 								'_type' => 'text',
-							),
-						)
-					)
-				)
-			)
-		);
+							],
+						]
+					]
+				]
+			]
+		];
 
 		return $schema;
 	}

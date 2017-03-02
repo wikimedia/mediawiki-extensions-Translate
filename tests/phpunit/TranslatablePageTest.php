@@ -25,31 +25,31 @@ class TranslatablePageTest extends PHPUnit_Framework_TestCase {
 		// Ugly implicit assumption
 		$ph = "\x7fUNIQ[a-z0-9]{8,16}-\d+";
 
-		$cases = array();
+		$cases = [];
 
-		$cases[] = array(
+		$cases[] = [
 			'Hello',
 			"$ph",
 			'No surrounding whitespace',
-		);
+		];
 
-		$cases[] = array(
+		$cases[] = [
 			"\nHello",
 			"\n$ph",
 			'With surrounding whitespace',
-		);
+		];
 
-		$cases[] = array(
+		$cases[] = [
 			"\nHello world\n\nBunny\n",
 			"\n$ph\n\n$ph\n",
 			'Splitting at one empty line',
-		);
+		];
 
-		$cases[] = array(
+		$cases[] = [
 			"First\n\n\n\n\nSecond\n\nThird",
 			"$ph\n\n\n\n\n$ph\n\n$ph",
 			'Splitting with multiple empty lines',
-		);
+		];
 
 		return $cases;
 	}

@@ -13,18 +13,18 @@
  * @group medium
  */
 class MessageIndexRebuildJobTest extends MediaWikiTestCase {
-	protected $config = array();
+	protected $config = [];
 
 	public function setUp() {
 		parent::setUp();
 
 		global $wgHooks;
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgHooks' => $wgHooks,
-			'wgTranslateTranslationServices' => array(),
+			'wgTranslateTranslationServices' => [],
 			'wgTranslateDelayedMessageIndexRebuild' => false
-		) );
-		$wgHooks['TranslatePostInitGroups'] = array();
+		] );
+		$wgHooks['TranslatePostInitGroups'] = [];
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( wfGetCache( 'hash' ) );

@@ -7,15 +7,15 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 	 */
 	protected $group;
 
-	protected $groupConfiguration = array(
-		'BASIC' => array(
+	protected $groupConfiguration = [
+		'BASIC' => [
 			'class' => 'FileBasedMessageGroup',
 			'id' => 'test-id',
 			'label' => 'Test Label',
 			'namespace' => 'NS_MEDIAWIKI',
 			'description' => 'Test description',
-		),
-	);
+		],
+	];
 
 	protected function setUp() {
 		parent::setUp();

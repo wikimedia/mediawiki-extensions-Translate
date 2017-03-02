@@ -110,11 +110,11 @@ class MessageWebImporter {
 	 * @return string
 	 */
 	protected function doHeader() {
-		$formParams = array(
+		$formParams = [
 			'method' => 'post',
 			'action' => $this->getAction(),
 			'class' => 'mw-translate-manage'
-		);
+		];
 
 		return
 			Xml::openElement( 'form', $formParams ) .
@@ -152,9 +152,9 @@ class MessageWebImporter {
 	 */
 	protected function getActions() {
 		if ( $this->code === 'en' ) {
-			return array( 'import', 'fuzzy', 'ignore' );
+			return [ 'import', 'fuzzy', 'ignore' ];
 		} else {
-			return array( 'import', 'conflict', 'ignore' );
+			return [ 'import', 'conflict', 'ignore' ];
 		}
 	}
 
@@ -196,7 +196,7 @@ class MessageWebImporter {
 		$alldone = $process;
 
 		// Determine changes for each message.
-		$changed = array();
+		$changed = [];
 
 		foreach ( $messages as $key => $value ) {
 			$fuzzy = $old = null;
@@ -303,7 +303,7 @@ class MessageWebImporter {
 				$actions = $this->getActions();
 				$defaction = $this->getDefaultAction( $fuzzy, $action );
 
-				$act = array();
+				$act = [];
 
 				// Give grep a chance to find the usages:
 				// translate-manage-action-import, translate-manage-action-conflict,
@@ -407,7 +407,7 @@ class MessageWebImporter {
 
 			return self::doImport( $title, $message, $comment, $user, $editFlags );
 		} elseif ( $action === 'ignore' ) {
-			return array( 'translate-manage-import-ignore', $key );
+			return [ 'translate-manage-import-ignore', $key ];
 		} elseif ( $action === 'fuzzy' && $code !== 'en' &&
 			$code !== $wgTranslateDocumentationLanguageCode
 		) {
@@ -441,9 +441,9 @@ class MessageWebImporter {
 		$success = $status->isOK();
 
 		if ( $success ) {
-			return array( 'translate-manage-import-ok',
+			return [ 'translate-manage-import-ok',
 				wfEscapeWikiText( $title->getPrefixedText() )
-			);
+			];
 		} else {
 			$text = "Failed to import new version of page {$title->getPrefixedText()}\n";
 			$text .= "{$status->getWikiText()}";
@@ -472,16 +472,16 @@ class MessageWebImporter {
 		$handle = new MessageHandle( $title );
 		$titleText = $handle->getKey();
 
-		$conds = array(
+		$conds = [
 			'page_namespace' => $title->getNamespace(),
 			'page_latest=rev_id',
 			'rev_text_id=old_id',
 			'page_title' . $dbw->buildLike( "$titleText/", $dbw->anyString() ),
-		);
+		];
 
 		$rows = $dbw->select(
-			array( 'page', 'revision', 'text' ),
-			array( 'page_title', 'page_namespace', 'old_text', 'old_flags' ),
+			[ 'page', 'revision', 'text' ],
+			[ 'page_title', 'page_namespace', 'old_text', 'old_flags' ],
 			$conds,
 			__METHOD__
 		);
@@ -492,7 +492,7 @@ class MessageWebImporter {
 		}
 
 		// Process all rows.
-		$changed = array();
+		$changed = [];
 		foreach ( $rows as $row ) {
 			global $wgTranslateDocumentationLanguageCode;
 
@@ -526,7 +526,7 @@ class MessageWebImporter {
 			$text .= '* ' . $context->msg( $key, $c )->plain() . "\n";
 		}
 
-		return array( 'translate-manage-import-fuzzy', "\n" . $text );
+		return [ 'translate-manage-import-fuzzy', "\n" . $text ];
 	}
 
 	/**
@@ -554,9 +554,9 @@ class MessageWebImporter {
 	 * @return string Section element as html.
 	 */
 	public static function makeSectionElement( $legend, $type, $content, $lang = null ) {
-		$containerParams = array( 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" );
-		$legendParams = array( 'class' => 'mw-tpt-sp-legend' );
-		$contentParams = array( 'class' => 'mw-tpt-sp-content' );
+		$containerParams = [ 'class' => "mw-tpt-sp-section mw-tpt-sp-section-type-{$type}" ];
+		$legendParams = [ 'class' => 'mw-tpt-sp-legend' ];
+		$contentParams = [ 'class' => 'mw-tpt-sp-content' ];
 		if ( $lang ) {
 			$contentParams['dir'] = $lang->getDir();
 			$contentParams['lang'] = $lang->getCode();
@@ -590,7 +590,7 @@ class MessageWebImporter {
 	 * @return string
 	 */
 	public static function escapeNameForPHP( $name ) {
-		$replacements = array(
+		$replacements = [
 			'(' => '(OP)',
 			' ' => '(SP)',
 			"\t" => '(TAB)',
@@ -599,7 +599,7 @@ class MessageWebImporter {
 			"\"" => '(DQ)',
 			'%' => '(PC)',
 			'&' => '(AMP)',
-		);
+		];
 
 		/* How nice of you PHP. No way to split array into keys and values in one
 		 * function or have str_replace which takes one array? */

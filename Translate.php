@@ -22,20 +22,20 @@ define( 'TRANSLATE_VERSION', '2017-01-24' );
 /**
  * Extension credits properties.
  */
-$wgExtensionCredits['specialpage'][] = array(
+$wgExtensionCredits['specialpage'][] = [
 	'path' => __FILE__,
 	'name' => 'Translate',
 	'namemsg' => 'translate-extensionname',
 	'version' => TRANSLATE_VERSION,
-	'author' => array(
+	'author' => [
 		'Niklas Laxström',
 		'Santhosh Thottingal',
 		'Siebrand Mazeland'
-	),
+	],
 	'descriptionmsg' => 'translate-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Translate',
 	'license-name' => 'GPL-2.0+',
-);
+];
 
 /**
  * @cond file_level_code
@@ -234,7 +234,7 @@ $wgTranslateNewsletterPreference = false;
  *  $wgTranslateLanguageFallbacks['fi'] = 'sv';
  *  $wgTranslateLanguageFallbacks['sv'] = array( 'da', 'no', 'nn' );
  */
-$wgTranslateLanguageFallbacks = array();
+$wgTranslateLanguageFallbacks = [];
 
 /**
  * Text that will be shown in translations if the translation is outdated.
@@ -267,49 +267,49 @@ if ( !defined( 'TRANSLATE_FUZZY' ) ) {
  * - private API key if provided
  */
 $wgTranslateTranslationDefaultService = 'TTMServer';
-$wgTranslateTranslationServices = array();
-$wgTranslateTranslationServices['TTMServer'] = array(
+$wgTranslateTranslationServices = [];
+$wgTranslateTranslationServices['TTMServer'] = [
 	'database' => false, // Passed to wfGetDB
 	'cutoff' => 0.75,
 	'type' => 'ttmserver',
 	'public' => false,
-);
-$wgTranslateTranslationServices['Microsoft'] = array(
+];
+$wgTranslateTranslationServices['Microsoft'] = [
 	'url' => 'http://api.microsofttranslator.com/V2/Http.svc/Translate',
 	'key' => null,
 	'timeout' => 3,
 	'type' => 'microsoft',
-);
-$wgTranslateTranslationServices['Apertium'] = array(
+];
+$wgTranslateTranslationServices['Apertium'] = [
 	'url' => 'http://api.apertium.org/json/translate',
 	'pairs' => 'http://api.apertium.org/json/listPairs',
 	'key' => null,
 	'timeout' => 3,
 	'type' => 'apertium',
-);
-$wgTranslateTranslationServices['Yandex'] = array(
+];
+$wgTranslateTranslationServices['Yandex'] = [
 	'url' => 'https://translate.yandex.net/api/v1.5/tr.json/translate',
 	'key' => null,
 	'pairs' => 'https://translate.yandex.net/api/v1.5/tr.json/getLangs',
 	'timeout' => 3,
-	'langorder' => array( 'en', 'ru', 'uk', 'de', 'fr', 'pl', 'it', 'es', 'tr' ),
+	'langorder' => [ 'en', 'ru', 'uk', 'de', 'fr', 'pl', 'it', 'es', 'tr' ],
 	'langlimit' => 1,
 	'type' => 'yandex',
-);
+];
 
 /**
  * List of tasks in Special:Translate. If you are only using page translation
  * feature, you might want to disable 'optional' task. Example:
  *  unset($wgTranslateTasks['optional']);
  */
-$wgTranslateTasks = array(
+$wgTranslateTasks = [
 	'view' => 'ViewMessagesTask',
 	'untranslated' => 'ViewUntranslatedTask',
 	'optional' => 'ViewOptionalTask',
 	'acceptqueue' => 'AcceptQueueMessagesTask',
 	'reviewall' => 'ReviewAllMessagesTask',
 	'custom' => 'CustomFilteredMessagesTask',
-);
+];
 
 /**
  * Experimental support for an "Ask" help button.
@@ -331,7 +331,7 @@ $wgTranslateSupportUrl = false;
  * assigned to the numerical ID of a namespace of the wiki.
  * @since 2015.09
  */
-$wgTranslateSupportUrlNamespace = array();
+$wgTranslateSupportUrlNamespace = [];
 
 /**
  * When unprivileged users open a translation editor, they will
@@ -377,7 +377,6 @@ $wgPageTranslationNamespace = 1198;
  */
 $wgTranslatePageTranslationULS = false;
 
-
 /**
  * If set to true, when a translated page has some units marked as outdated, the
  * outdated translation will be shown. If set to false, the original updated unit
@@ -413,7 +412,7 @@ $wgTranslateKeepOutdatedTranslations = true;
  * );
  */
 
-$wgTranslateBlacklist = array();
+$wgTranslateBlacklist = [];
 
 /**
  * File containing checks that are to be skipped. See
@@ -436,14 +435,14 @@ $wgTranslateCheckBlacklist = false;
  * As an example by default we have rule that ignores all authors whose name
  * ends in a bot for all languages and all groups.
  */
-$wgTranslateAuthorBlacklist = array();
-$wgTranslateAuthorBlacklist[] = array( 'black', '/^.*;.*;.*Bot$/Ui' );
+$wgTranslateAuthorBlacklist = [];
+$wgTranslateAuthorBlacklist[] = [ 'black', '/^.*;.*;.*Bot$/Ui' ];
 
 /**
  * List of namespace that contain messages. No talk namespaces.
  * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration
  */
-$wgTranslateMessageNamespaces = array();
+$wgTranslateMessageNamespaces = [];
 
 /**
  * CC = Custom classes.
@@ -452,7 +451,7 @@ $wgTranslateMessageNamespaces = array();
  * or callable function.
  * @deprecated Use TranslatePostInitGroups hook instead.
  */
-$wgTranslateCC = array();
+$wgTranslateCC = [];
 
 /**
  * Location in the filesystem to which paths are relative in custom groups.
@@ -465,7 +464,7 @@ $wgTranslateGroupRoot = '/var/www/externals';
  * Usage example:
  *  $wgTranslateGroupFiles[] = "$IP/extensions/Translate/groups/Shapado/Shapado.yml";
  */
-$wgTranslateGroupFiles = array();
+$wgTranslateGroupFiles = [];
 
 /**
  * List of possible message group review workflow states and properties
@@ -496,7 +495,7 @@ $wgTranslateWorkflowStates = false;
  * Map from deprecated group IDs to their current ID
  * Example value: array( 'core' => 'mediawiki-core' )
  */
-$wgTranslateGroupAliases = array();
+$wgTranslateGroupAliases = [];
 
 # </source>
 # === System setup related configuration ===
@@ -510,7 +509,7 @@ $wgTranslateCacheDirectory = false;
  * Configures how the message index is stored.
  * The other backends need $wgCacheDirectory to be functional.
  */
-$wgTranslateMessageIndex = array( 'DatabaseMessageIndex' );
+$wgTranslateMessageIndex = [ 'DatabaseMessageIndex' ];
 // $wgTranslateMessageIndex = array( 'SerializedMessageIndex' );
 // $wgTranslateMessageIndex = array( 'CDBMessageIndex' );
 
@@ -596,7 +595,7 @@ $wgTranslateSandboxPromotedGroup = false;
  * List of page names to always suggest for sandboxed users.
  * @since 2013.10
  */
-$wgTranslateSandboxSuggestions = array();
+$wgTranslateSandboxSuggestions = [];
 
 /**
  * Maximum number of translations a user can make in the sandbox.
@@ -634,7 +633,7 @@ $wgTranslateTestTTMServer = null;
  * things. Used for supporting integration testing.
  * @since 2013.10
  */
-$wgTranslateTestUsers = array();
+$wgTranslateTestUsers = [];
 
 # </source>
 
@@ -668,7 +667,7 @@ function wfAddNamespace( $id, $name, $constant = null ) {
 	$wgNamespacesWithSubpages[$id] = true;
 	$wgNamespacesWithSubpages[$id + 1] = true;
 
-	$wgNamespaceProtection[$id] = array( 'translate' );
+	$wgNamespaceProtection[$id] = [ 'translate' ];
 
 	$wgNamespacesToBeSearchedDefault[$id] = true;
 }

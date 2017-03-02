@@ -14,7 +14,7 @@ class SpecialExportTranslations extends SpecialPage {
 	protected $groupId;
 
 	/** @var string[] */
-	public static $validFormats = array( 'export-as-po', 'export-to-file' );
+	public static $validFormats = [ 'export-as-po', 'export-to-file' ];
 
 	public function __construct() {
 		parent::__construct( 'ExportTranslations' );
@@ -40,7 +40,7 @@ class SpecialExportTranslations extends SpecialPage {
 			$status = $this->checkInput();
 			if ( !$status->isGood() ) {
 				$errors = $out->parse( $status->getWikiText( false, false, $lang ) );
-				$out->addHTML( Html::rawElement( 'div', array( 'class' => 'error' ), $errors ) );
+				$out->addHTML( Html::rawElement( 'div', [ 'class' => 'error' ], $errors ) );
 				return;
 			}
 
@@ -50,16 +50,16 @@ class SpecialExportTranslations extends SpecialPage {
 	}
 
 	protected function outputForm() {
-		$fields = array(
-			'group' => array(
+		$fields = [
+			'group' => [
 				'type' => 'select',
 				'name' => 'group',
 				'id' => 'group',
 				'label-message' => 'translate-page-group',
 				'options' => $this->getGroupOptions(),
 				'default' => $this->groupId,
-			),
-			'language' => array(
+			],
+			'language' => [
 				// @todo Apply ULS to this field
 				'type' => 'select',
 				'name' => 'language',
@@ -67,8 +67,8 @@ class SpecialExportTranslations extends SpecialPage {
 				'label-message' => 'translate-page-language',
 				'options' => $this->getLanguageOptions(),
 				'default' => $this->language,
-			),
-			'format' => array(
+			],
+			'format' => [
 				'type' => 'radio',
 				'name' => 'format',
 				'id' => 'format',
@@ -76,8 +76,8 @@ class SpecialExportTranslations extends SpecialPage {
 				'flatlist' => true,
 				'options' => $this->getFormatOptions(),
 				'default' => $this->format,
-			),
-		);
+			],
+		];
 		$form = HTMLForm::factory( 'table', $fields, $this->getContext() );
 		$form
 			->setMethod( 'get' )
@@ -93,9 +93,9 @@ class SpecialExportTranslations extends SpecialPage {
 	protected function getGroupOptions() {
 		$selected = $this->groupId;
 		$groups = MessageGroups::getAllGroups();
-		uasort( $groups, array( 'MessageGroups', 'groupLabelSort' ) );
+		uasort( $groups, [ 'MessageGroups', 'groupLabelSort' ] );
 
-		$options = array();
+		$options = [];
 		foreach ( $groups as $id => $group ) {
 			if ( !$group->exists()
 				|| ( MessageGroups::getPriority( $group ) === 'discouraged' && $id !== $selected )
@@ -114,7 +114,7 @@ class SpecialExportTranslations extends SpecialPage {
 	 */
 	protected function getLanguageOptions() {
 		$languages = TranslateUtils::getLanguageNames( 'en' );
-		$options = array();
+		$options = [];
 		foreach ( $languages as $code => $name ) {
 			$options["$code - $name"] = $code;
 		}
@@ -126,7 +126,7 @@ class SpecialExportTranslations extends SpecialPage {
 	 * @return array
 	 */
 	protected function getFormatOptions() {
-		$options = array();
+		$options = [];
 		foreach ( self::$validFormats as $format ) {
 			// translate-taskui-export-to-file, translate-taskui-export-as-po
 			$options[ $this->msg( "translate-taskui-$format" )->escaped() ] = $format;
@@ -219,7 +219,7 @@ class SpecialExportTranslations extends SpecialPage {
 					}
 					$box = Html::element(
 						'textarea',
-						array( 'id' => 'wpTextbox', 'rows' => 40, ),
+						[ 'id' => 'wpTextbox', 'rows' => 40, ],
 						$text
 					);
 					$out->addHTML( $box );

@@ -21,7 +21,7 @@ class TPParse {
 	/** \arrayof{String,TPSection} Parsed sections indexed with placeholder.
 	 * @todo Encapsulate
 	 */
-	public $sections = array();
+	public $sections = [];
 	/** \string Page source with content replaced with placeholders.
 	 * @todo Encapsulate
 	 */
@@ -131,12 +131,12 @@ class TPParse {
 			return;
 		}
 
-		$this->dbSections = array();
+		$this->dbSections = [];
 
 		$db = TranslateUtils::getSafeReadDB();
 		$tables = 'translate_sections';
-		$vars = array( 'trs_key', 'trs_text' );
-		$conds = array( 'trs_page' => $this->title->getArticleID() );
+		$vars = [ 'trs_key', 'trs_text' ];
+		$conds = [ 'trs_page' => $this->title->getArticleID() ];
 
 		$res = $db->select( $tables, $vars, $conds, __METHOD__ );
 		foreach ( $res as $r ) {
@@ -227,11 +227,11 @@ class TPParse {
 			$text = str_replace( $ph, $sectiontext, $text );
 		}
 
-		$nph = array();
+		$nph = [];
 		$text = TranslatablePage::armourNowiki( $nph, $text );
 
 		// Remove translation markup from the template to produce final text
-		$cb = array( __CLASS__, 'replaceTagCb' );
+		$cb = [ __CLASS__, 'replaceTagCb' ];
 		$text = preg_replace_callback( '~(<translate>)(.*)(</translate>)~sU', $cb, $text );
 		$text = TranslatablePage::unArmourNowiki( $nph, $text );
 

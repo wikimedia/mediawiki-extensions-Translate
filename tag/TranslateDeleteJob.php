@@ -39,7 +39,7 @@ class TranslateDeleteJob extends Job {
 	 * @param Title $title
 	 * @param array $params
 	 */
-	public function __construct( $title, $params = array() ) {
+	public function __construct( $title, $params = [] ) {
 		parent::__construct( __CLASS__, $title, $params );
 	}
 
@@ -60,10 +60,10 @@ class TranslateDeleteJob extends Job {
 		$wikipage = new WikiPage( $title );
 		$status = $wikipage->doDeleteArticleReal( "{$summary}: $reason", false, 0, true, $error, $user );
 		if ( !$status->isGood() ) {
-			$params = array(
+			$params = [
 				'target' => $base,
 				'errors' => $status->getErrorsArray(),
-			);
+			];
 
 			$type = $this->getFull() ? 'deletefnok' : 'deletelnok';
 			$entry = new ManualLogEntry( 'pagetranslation', $type );

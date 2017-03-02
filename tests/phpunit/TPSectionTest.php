@@ -27,38 +27,38 @@ class TPSectionTest extends PHPUnit_Framework_TestCase {
 	}
 
 	public static function providerTestGetMarkedText() {
-		$cases = array();
+		$cases = [];
 
 		// Inline syntaxs
-		$cases[] = array(
+		$cases[] = [
 			'name',
 			'Hello',
 			true,
 			'<!--T:name--> Hello',
-		);
+		];
 
 		// Normal syntax
-		$cases[] = array(
+		$cases[] = [
 			'name',
 			'Hello',
 			false,
 			"<!--T:name-->\nHello",
-		);
+		];
 
 		// Inline should not matter for headings, which have special syntax, but test both values
-		$cases[] = array(
+		$cases[] = [
 			'name',
 			'== Hello ==',
 			true,
 			'== Hello == <!--T:name-->',
-		);
+		];
 
-		$cases[] = array(
+		$cases[] = [
 			'name',
 			'====== Hello ======',
 			false,
 			'====== Hello ====== <!--T:name-->',
-		);
+		];
 
 		return $cases;
 	}

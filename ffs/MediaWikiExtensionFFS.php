@@ -20,7 +20,7 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 	}
 
 	public function getFileExtensions() {
-		return array( '.i18n.php' );
+		return [ '.i18n.php' ];
 	}
 
 	/**
@@ -28,7 +28,7 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 	 * multiple languages, keep cache of the sections of the latest active file.
 	 * @var array
 	 */
-	protected static $cache = array();
+	protected static $cache = [];
 
 	/**
 	 * @param string $data Full file contents
@@ -51,16 +51,16 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 
 		$pattern = '(?: /\*\* .*? \*/ \n )? (?: \\$.*?  \n\);(?:\n\n|\s+\z) )';
 		$regexp = "~$pattern~xsu";
-		$matches = array();
+		$matches = [];
 		preg_match_all( $regexp, $data, $matches, PREG_SET_ORDER, $offset );
 
-		$sections = array();
+		$sections = [];
 		$sections[] = $header;
 
 		foreach ( $matches as $data ) {
 			$pattern = "\\\$messages\['([a-z-]+)'\]";
 			$regexp = "~$pattern~su";
-			$matches = array();
+			$matches = [];
 			if ( !preg_match( $regexp, $data[0], $matches ) ) {
 				throw new MWException( "MWEFFS2: File $filename: malformed section: {$data[0]}" );
 			}
@@ -88,7 +88,7 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 
 		if ( !isset( self::$cache[$filename] ) ) {
 			// Clear the cache if the filename changes to reduce memory use
-			self::$cache = array();
+			self::$cache = [];
 
 			$contents = file_get_contents( $filename );
 			self::$cache[$filename]['sections'] =
@@ -114,7 +114,7 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 	 * @throws MWException
 	 */
 	public function readFromVariable( $data ) {
-		$messages = array();
+		$messages = [];
 		eval( $data );
 
 		$c = count( $messages );
@@ -126,9 +126,9 @@ class MediaWikiExtensionFFS extends SimpleFFS {
 		$mangler = $this->group->getMangler();
 		$messages = $mangler->mangle( $messages );
 
-		return array(
+		return [
 			'MESSAGES' => $messages,
-		);
+		];
 	}
 
 	// Handled in writeReal
@@ -186,14 +186,14 @@ PHP;
 
 		// Make a copy we can alter
 		$sections = $cache['sections'];
-		$priority = array();
+		$priority = [];
 
 		global $wgTranslateDocumentationLanguageCode;
-		$codes = array(
+		$codes = [
 			0, // File header
 			$this->group->getSourceLanguage(),
 			$wgTranslateDocumentationLanguageCode,
-		);
+		];
 		foreach ( $codes as $pcode ) {
 			if ( isset( $sections[$pcode] ) ) {
 				$priority[] = $sections[$pcode];

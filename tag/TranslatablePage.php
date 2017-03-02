@@ -272,10 +272,10 @@ class TranslatablePage {
 
 		$text = $this->getText();
 
-		$nowiki = array();
+		$nowiki = [];
 		$text = self::armourNowiki( $nowiki, $text );
 
-		$sections = array();
+		$sections = [];
 
 		// Add section to allow translating the page name
 		$displaytitle = new TPSection;
@@ -283,11 +283,11 @@ class TranslatablePage {
 		$displaytitle->text = $this->getTitle()->getPrefixedText();
 		$sections[TranslateUtils::getPlaceholder()] = $displaytitle;
 
-		$tagPlaceHolders = array();
+		$tagPlaceHolders = [];
 
 		while ( true ) {
 			$re = '~(<translate>)(.*?)(</translate>)~s';
-			$matches = array();
+			$matches = [];
 			$ok = preg_match_all( $re, $text, $matches, PREG_OFFSET_CAPTURE );
 
 			if ( $ok === 0 ) {
@@ -311,7 +311,7 @@ class TranslatablePage {
 			$sectiontext = substr( $contents, $start, $len );
 
 			if ( strpos( $sectiontext, '<translate>' ) !== false ) {
-				throw new TPException( array( 'pt-parse-nested', $sectiontext ) );
+				throw new TPException( [ 'pt-parse-nested', $sectiontext ] );
 			}
 
 			$sectiontext = self::unArmourNowiki( $nowiki, $sectiontext );
@@ -329,9 +329,9 @@ class TranslatablePage {
 		}
 
 		if ( strpos( $text, '<translate>' ) !== false ) {
-			throw new TPException( array( 'pt-parse-open', $prettyTemplate ) );
+			throw new TPException( [ 'pt-parse-open', $prettyTemplate ] );
 		} elseif ( strpos( $text, '</translate>' ) !== false ) {
-			throw new TPException( array( 'pt-parse-close', $prettyTemplate ) );
+			throw new TPException( [ 'pt-parse-close', $prettyTemplate ] );
 		}
 
 		foreach ( $tagPlaceHolders as $ph => $value ) {
@@ -340,7 +340,7 @@ class TranslatablePage {
 
 		if ( count( $sections ) === 1 ) {
 			// Don't return display title for pages which have no sections
-			$sections = array();
+			$sections = [];
 		}
 
 		$text = self::unArmourNowiki( $nowiki, $text );
@@ -427,10 +427,10 @@ class TranslatablePage {
 			}
 		}
 
-		return array(
+		return [
 			'template' => $template,
 			'sections' => $sections,
-		);
+		];
 	}
 
 	/**
@@ -447,11 +447,11 @@ class TranslatablePage {
 	 */
 	public static function shakeSection( $content ) {
 		$re = '~<!--T:(.*?)-->~';
-		$matches = array();
+		$matches = [];
 		$count = preg_match_all( $re, $content, $matches, PREG_SET_ORDER );
 
 		if ( $count > 1 ) {
-			throw new TPException( array( 'pt-shake-multiple', $content ) );
+			throw new TPException( [ 'pt-shake-multiple', $content ] );
 		}
 
 		$section = new TPSection;
@@ -468,9 +468,9 @@ class TranslatablePage {
 				$content = preg_replace( $rer2, '', $content );
 
 				if ( preg_match( $re, $content ) === 1 ) {
-					throw new TPException( array( 'pt-shake-position', $content ) );
+					throw new TPException( [ 'pt-shake-position', $content ] );
 				} elseif ( trim( $content ) === '' ) {
-					throw new TPException( array( 'pt-shake-empty', $id ) );
+					throw new TPException( [ 'pt-shake-empty', $id ] );
 				}
 			}
 		} else {
@@ -485,7 +485,7 @@ class TranslatablePage {
 
 	// Tag methods //
 
-	protected static $tagCache = array();
+	protected static $tagCache = [];
 
 	/**
 	 * Adds a tag which indicates that this page is
@@ -521,11 +521,11 @@ class TranslatablePage {
 			throw new MWException( 'Got object, expected id' );
 		}
 
-		$conds = array(
+		$conds = [
 			'rt_page' => $aid,
 			'rt_type' => RevTag::getType( $tag ),
 			'rt_revision' => $revision
-		);
+		];
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
 
 		if ( $value !== null ) {
@@ -561,16 +561,16 @@ class TranslatablePage {
 		$aid = $this->getTitle()->getArticleID();
 
 		$dbw = wfGetDB( DB_MASTER );
-		$conds = array(
+		$conds = [
 			'rt_page' => $aid,
-			'rt_type' => array(
+			'rt_type' => [
 				RevTag::getType( 'tp:mark' ),
 				RevTag::getType( 'tp:tag' ),
-			),
-		);
+			],
+		];
 
 		$dbw->delete( 'revtag', $conds, __METHOD__ );
-		$dbw->delete( 'translate_sections', array( 'trs_page' => $aid ), __METHOD__ );
+		$dbw->delete( 'translate_sections', [ 'trs_page' => $aid ], __METHOD__ );
 		unset( self::$tagCache[$aid] );
 	}
 
@@ -593,12 +593,12 @@ class TranslatablePage {
 
 		$db = wfGetDB( $dbt );
 
-		$conds = array(
+		$conds = [
 			'rt_page' => $aid,
 			'rt_type' => RevTag::getType( $tag ),
-		);
+		];
 
-		$options = array( 'ORDER BY' => 'rt_revision DESC' );
+		$options = [ 'ORDER BY' => 'rt_revision DESC' ];
 
 		$value = $db->selectField( 'revtag', 'rt_revision', $conds, __METHOD__, $options );
 		return $value === false ? $value : (int)$value;
@@ -610,12 +610,12 @@ class TranslatablePage {
 	 * @return string Relative url
 	 */
 	public function getTranslationUrl( $code = false ) {
-		$params = array(
+		$params = [
 			'group' => $this->getMessageGroupId(),
 			'action' => 'page',
 			'filter' => '',
 			'language' => $code,
-		);
+		];
 
 		$translate = SpecialPage::getTitleFor( 'Translate' );
 
@@ -625,12 +625,12 @@ class TranslatablePage {
 	public function getMarkedRevs() {
 		$db = TranslateUtils::getSafeReadDB();
 
-		$fields = array( 'rt_revision', 'rt_value' );
-		$conds = array(
+		$fields = [ 'rt_revision', 'rt_value' ];
+		$conds = [
 			'rt_page' => $this->getTitle()->getArticleID(),
 			'rt_type' => RevTag::getType( 'tp:mark' ),
-		);
-		$options = array( 'ORDER BY' => 'rt_revision DESC' );
+		];
+		$options = [ 'ORDER BY' => 'rt_revision DESC' ];
 
 		return $db->select( 'revtag', $fields, $conds, __METHOD__, $options );
 	}
@@ -646,16 +646,16 @@ class TranslatablePage {
 		$likePattern = $dbr->buildLike( $prefix, $dbr->anyString() );
 		$res = $dbr->select(
 			'page',
-			array( 'page_namespace', 'page_title' ),
-			array(
+			[ 'page_namespace', 'page_title' ],
+			[
 				'page_namespace' => $this->getTitle()->getNamespace(),
 				"page_title $likePattern"
-			),
+			],
 			__METHOD__
 		);
 
 		$titles = TitleArray::newFromResult( $res );
-		$filtered = array();
+		$filtered = [];
 
 		// Make sure we only get translation subpages while ignoring others
 		$codes = Language::fetchLanguageNames();
@@ -680,10 +680,10 @@ class TranslatablePage {
 	protected function getSections() {
 		$dbr = TranslateUtils::getSafeReadDB();
 
-		$conds = array( 'trs_page' => $this->getTitle()->getArticleID() );
+		$conds = [ 'trs_page' => $this->getTitle()->getArticleID() ];
 		$res = $dbr->select( 'translate_sections', 'trs_key', $conds, __METHOD__ );
 
-		$sections = array();
+		$sections = [];
 		foreach ( $res as $row ) {
 			$sections[] = $row->trs_key;
 		}
@@ -711,11 +711,11 @@ class TranslatablePage {
 			$like = $dbw->buildLike( "$base/", $dbw->anyString() );
 		}
 
-		$fields = array( 'page_namespace', 'page_title' );
-		$conds = array(
+		$fields = [ 'page_namespace', 'page_title' ];
+		$conds = [
 			'page_namespace' => NS_TRANSLATIONS,
 			'page_title ' . $like
-		);
+		];
 		$res = $dbw->select( 'page', $fields, $conds, __METHOD__ );
 
 		// Only include pages which belong to this translatable page.
@@ -723,7 +723,7 @@ class TranslatablePage {
 		// translatable. Then when querying for Foo, we also get units
 		// belonging to Foo/bar.
 		$sections = array_flip( $this->getSections() );
-		$units = array();
+		$units = [];
 		foreach ( $res as $row ) {
 			$title = Title::newFromRow( $row );
 
@@ -756,12 +756,12 @@ class TranslatablePage {
 		// Calculate percentages for the available translations
 		$group = $this->getMessageGroup();
 		if ( !$group instanceof WikiPageMessageGroup ) {
-			return array();
+			return [];
 		}
 
 		$titles = $this->getTranslationPages();
 		$temp = MessageGroupStats::forGroup( $this->getMessageGroupId() );
-		$stats = array();
+		$stats = [];
 
 		foreach ( $titles as $t ) {
 			$handle = new MessageHandle( $t );
@@ -789,11 +789,11 @@ class TranslatablePage {
 
 		$db = TranslateUtils::getSafeReadDB();
 		$fields = 'rt_value';
-		$conds = array(
+		$conds = [
 			'rt_page' => $title->getArticleID(),
 			'rt_type' => RevTag::getType( 'tp:transver' ),
-		);
-		$options = array( 'ORDER BY' => 'rt_revision DESC' );
+		];
+		$options = [ 'ORDER BY' => 'rt_revision DESC' ];
 
 		return $db->selectField( 'revtag', $fields, $conds, __METHOD__, $options );
 	}
@@ -865,17 +865,17 @@ class TranslatablePage {
 	public static function getTranslatablePages() {
 		$dbr = TranslateUtils::getSafeReadDB();
 
-		$tables = array( 'revtag', 'page' );
+		$tables = [ 'revtag', 'page' ];
 		$fields = 'rt_page';
-		$conds = array(
+		$conds = [
 			'rt_page = page_id',
 			'rt_revision = page_latest',
-			'rt_type' => array( RevTag::getType( 'tp:mark' ), RevTag::getType( 'tp:tag' ) ),
-		);
-		$options = array( 'GROUP BY' => 'rt_page' );
+			'rt_type' => [ RevTag::getType( 'tp:mark' ), RevTag::getType( 'tp:tag' ) ],
+		];
+		$options = [ 'GROUP BY' => 'rt_page' ];
 
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
-		$results = array();
+		$results = [];
 		foreach ( $res as $row ) {
 			$results[] = $row->rt_page;
 		}

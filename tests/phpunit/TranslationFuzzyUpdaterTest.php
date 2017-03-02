@@ -16,12 +16,12 @@ class TranslationFuzzyUpdaterTest extends MediaWikiTestCase {
 		parent::setUp();
 
 		global $wgHooks;
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgHooks' => $wgHooks,
-			'wgTranslateTranslationServices' => array(),
-			'wgTranslateMessageNamespaces' => array( NS_MEDIAWIKI ),
-		) );
-		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
+			'wgTranslateTranslationServices' => [],
+			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+		] );
+		$wgHooks['TranslatePostInitGroups'] = [ [ $this, 'getTestGroups' ] ];
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( wfGetCache( 'hash' ) );
@@ -32,7 +32,7 @@ class TranslationFuzzyUpdaterTest extends MediaWikiTestCase {
 	}
 
 	public function getTestGroups( &$list ) {
-		$messages = array( 'ugakey' => '$1 of $2', );
+		$messages = [ 'ugakey' => '$1 of $2', ];
 		$list['test-group'] = new MockWikiMessageGroup( 'test-group', $messages );
 
 		return false;
@@ -51,14 +51,14 @@ class TranslationFuzzyUpdaterTest extends MediaWikiTestCase {
 		$revision = $rev->getId();
 
 		$dbw = wfGetDB( DB_MASTER );
-		$conds = array(
+		$conds = [
 			'rt_page' => $title->getArticleID(),
 			'rt_type' => RevTag::getType( 'fuzzy' ),
 			'rt_revision' => $revision
-		);
+		];
 
 		$index = array_keys( $conds );
-		$dbw->replace( 'revtag', array( $index ), $conds, __METHOD__ );
+		$dbw->replace( 'revtag', [ $index ], $conds, __METHOD__ );
 
 		$handle = new MessageHandle( $title );
 		$this->assertTrue( $handle->isValid(), 'Message is known' );

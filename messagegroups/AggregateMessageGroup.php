@@ -24,7 +24,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 	}
 
 	public function load( $code ) {
-		$messages = array();
+		$messages = [];
 
 		/**
 		 * @var $group MessageGroup
@@ -46,7 +46,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 
 	public function getGroups() {
 		if ( !isset( $this->groups ) ) {
-			$groups = array();
+			$groups = [];
 			$ids = (array)$this->conf['GROUPS'];
 			$ids = MessageGroups::expandWildcards( $ids );
 
@@ -76,7 +76,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 	}
 
 	protected function loadMessagesFromCache( $groups ) {
-		$messages = array();
+		$messages = [];
 		foreach ( $groups as $group ) {
 			if ( $group instanceof MessageGroupOld ) {
 				$messages += $group->getDefinitions();
@@ -143,7 +143,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 	}
 
 	public function getTags( $type = null ) {
-		$tags = array();
+		$tags = [];
 
 		/**
 		 * @var $group MessageGroup
@@ -156,7 +156,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 	}
 
 	public function getKeys() {
-		$keys = array();
+		$keys = [];
 		/**
 		 * @var $group MessageGroup
 		 */

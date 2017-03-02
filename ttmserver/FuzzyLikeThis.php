@@ -217,6 +217,6 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 		$data = parent::toArray();
 		$args = array_merge( $args, $data['fuzzy_like_this'] );
 
-		return array( 'fuzzy_like_this' => $args );
+		return [ 'fuzzy_like_this' => $args ];
 	}
 }

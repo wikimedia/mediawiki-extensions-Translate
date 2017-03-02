@@ -14,12 +14,12 @@ class ApiTranslationReviewTest extends MediaWikiTestCase {
 		parent::setUp();
 
 		global $wgHooks;
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgHooks' => $wgHooks,
-			'wgGroupPermissions' => array(),
-			'wgTranslateMessageNamespaces' => array( NS_MEDIAWIKI ),
-		) );
-		$wgHooks['TranslatePostInitGroups'] = array( array( $this, 'getTestGroups' ) );
+			'wgGroupPermissions' => [],
+			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+		] );
+		$wgHooks['TranslatePostInitGroups'] = [ [ $this, 'getTestGroups' ] ];
 		$mg = MessageGroups::singleton();
 		$mg->setCache( wfGetCache( 'hash' ) );
 		$mg->recache();
@@ -29,10 +29,10 @@ class ApiTranslationReviewTest extends MediaWikiTestCase {
 	}
 
 	public function getTestGroups( &$list ) {
-		$messages = array(
+		$messages = [
 			'ugakey1' => 'value1',
 			'ugakey2' => 'value2',
-		);
+		];
 
 		$list['testgroup'] = new MockWikiMessageGroup( 'testgroup', $messages );
 
@@ -60,38 +60,38 @@ class ApiTranslationReviewTest extends MediaWikiTestCase {
 		$content = ContentHandler::makeContent( 'unknown message', $title );
 		WikiPage::factory( $title )->doEditContent( $content, __METHOD__, 0, false, $superUser1 );
 
-		$testcases = array(
-			array(
+		$testcases = [
+			[
 				'permissiondenied',
 				$plainUser,
 				'Ugakey1/fi',
 				'Unpriviledged user is not allowed to change state'
-			),
-			array(
+			],
+			[
 				'owntranslation',
 				$superUser1,
 				'Ugakey1/fi',
 				'Cannot approve own translation'
-			),
-			array(
+			],
+			[
 				'fuzzymessage',
 				$superUser1,
 				'Ugakey2/fi',
 				'Cannot approve fuzzy translation'
-			),
-			array(
+			],
+			[
 				'unknownmessage',
 				$superUser1,
 				'Ugakey3/fi',
 				'Cannot approve unknown translation'
-			),
-			array(
+			],
+			[
 				'',
 				$superUser2,
 				'Ugakey1/fi',
 				'Can approve non-fuzzy known non-own translation'
-			),
-		);
+			],
+		];
 
 		foreach ( $testcases as $case ) {
 			list( $expected, $user, $page, $comment ) = $case;

@@ -44,7 +44,7 @@ class TranslateGenerateRandomSandboxData extends Maintenance {
 			for ( $j = 0; $j < $count; $j++ ) {
 				$title = Title::makeTitle( NS_MEDIAWIKI, wfRandomString( 24 ) . '/' . $language );
 
-				$value = array( 'Pupu söi' );
+				$value = [ 'Pupu söi' ];
 				for ( $k = rand( 0, 20 ); $k > 0; $k-- ) {
 					$value[] = wfRandomString( rand( 1, 28 ) );
 				}

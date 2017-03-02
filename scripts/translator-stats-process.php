@@ -32,7 +32,7 @@ class TSP extends Maintenance {
 		$len = count( $a );
 		if ( $len === 0 ) {
 			return 0;
-		} elseif( $len === 1 ) {
+		} elseif ( $len === 1 ) {
 			return $a[0];
 		} elseif ( $len % 2 === 0 ) {
 			return $a[$len/2];
@@ -46,7 +46,7 @@ class TSP extends Maintenance {
 		// remove heading
 		fgets( $handle );
 
-		$data = array();
+		$data = [];
 		while ( true ) {
 			$l = fgets( $handle );
 			if ( $l === false ) {
@@ -70,9 +70,9 @@ class TSP extends Maintenance {
 			$total = 0;
 			$promoted = 0;
 			$good = 0;
-			$delay = array();
+			$delay = [];
 			$avg = 'N/A';
-			$sbar = array();
+			$sbar = [];
 
 			foreach ( $period as $p ) {
 				list( $name, $reg, $edits, $translator, $promtime, $method ) = $p;
@@ -104,7 +104,7 @@ class TSP extends Maintenance {
 				$avg = round( array_sum( $delay ) / count( $delay ) / 3600 );
 			}
 
-			if ( $sbar === array() ) {
+			if ( $sbar === [] ) {
 				$sbar = 'N/A';
 			} else {
 				$sbar = count( array_filter( $sbar ) ) / count( $sbar );

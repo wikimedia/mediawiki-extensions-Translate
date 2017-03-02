@@ -33,18 +33,18 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 
 	public function getAllowedParams() {
 		$params = parent::getAllowedParams();
-		$params['language'] = array(
+		$params['language'] = [
 			ApiBase::PARAM_TYPE => 'string',
 			ApiBase::PARAM_REQUIRED => true,
-		);
+		];
 
 		return $params;
 	}
 
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=query&meta=languagestats&lslanguage=fi'
 				=> 'apihelp-query+languagestats-example-1',
-		);
+		];
 	}
 }

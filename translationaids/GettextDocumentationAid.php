@@ -60,11 +60,11 @@ class GettextDocumentationAid extends TranslationAid {
 			}
 		}
 
-		return array(
+		return [
 			'language' => $wgContLang->getCode(),
 			// @todo Provide raw data when possible
 			// 'value' => $help,
 			'html' => $this->context->getOutput()->parse( $out ),
-		);
+		];
 	}
 }

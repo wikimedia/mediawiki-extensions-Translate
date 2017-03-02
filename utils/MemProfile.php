@@ -12,7 +12,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  */
 
 /// Memory usage at checkpoints
-$wgMemUse = array();
+$wgMemUse = [];
 /// Tracks the deepness of the stack
 $wgMemStack = 0;
 
@@ -26,7 +26,7 @@ function wfMemIn( $a ) {
 	$mem = memory_get_usage();
 	$memR = memory_get_usage();
 
-	$wgMemUse[$a][] = array( $mem, $memR );
+	$wgMemUse[$a][] = [ $mem, $memR ];
 
 	$memF = $wgLang->formatNum( $mem );
 	$memRF = $wgLang->formatNum( $memR );
