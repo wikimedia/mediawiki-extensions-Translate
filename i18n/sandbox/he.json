@@ -42,7 +42,7 @@
 	"tsb-limit-reached-body": "הגעת למגבלת התרגומים למתרגמים חדשים.\nהסגל שלנו יבדוק וישדרג את החשבון שלך בקרוב.\nאחרי־כן תהיה לך אפשרות לתרגם בלי הגבלה.",
 	"tsb-no-requests-from-new-users": "אין בקשות ממשתמשים חדשים",
 	"tsb-create-user-page": "יצירת דף משתמש בסיסי",
-	"log-name-translatorsandbox": "ארגז חול של תרגומים",
+	"log-name-translatorsandbox": "יומן ארגז חול של תרגומים",
 	"log-description-translatorsandbox": "יומן פעולות על משתמשים בארגז חול של תרגומים",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|קידם|קידמה}} את $3 לתפקיד {{GENDER:$4|מתרגם|מתרגמת}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|דחה|דחתה}} את הבקשה של \"$3\" לקבל הרשאת מתרגם",
