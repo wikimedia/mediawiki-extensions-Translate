@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kaganer",
-			"Okras"
+			"Okras",
+			"Redredsonia"
 		]
 	},
 	"managetranslatorsandbox": "Управление песочницей переводчика",
@@ -43,7 +44,7 @@
 	"tsb-limit-reached-body": "Вы достигли предела переводов для новых переводчиков.\nНаша команда проверит и обновит вашу учётную запись в ближайшее время.\nПосле этого вы сможете переводить без ограничений.",
 	"tsb-no-requests-from-new-users": "Нет запросов от новых участников",
 	"tsb-create-user-page": "Создал простую страницу участника",
-	"log-name-translatorsandbox": "Песочница для переводов",
+	"log-name-translatorsandbox": "Журнал песочницы для переводов",
 	"log-description-translatorsandbox": "Журнал действий с участниками песочницы переводов",
 	"logentry-translatorsandbox-promoted": "$1 сделал{{GENDER:$2||а}}$3 {{GENDER:$4|переводчиком}}.",
 	"logentry-translatorsandbox-rejected": "$1 отклонил{{GENDER:$2||а}} запрос от «$3» на получение статуса переводчика.",

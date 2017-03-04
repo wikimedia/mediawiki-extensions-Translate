@@ -43,7 +43,7 @@
 	"tsb-limit-reached-body": "Alcanzaste el límite de traducción para nuevos traductores.\nNuestro equipo verificará y actualizará tu cuenta pronto.\nLuego serás capaz de traducir sin límites.",
 	"tsb-no-requests-from-new-users": "No hay solicitudes de usuarios nuevos",
 	"tsb-create-user-page": "Crear página de usuario básica",
-	"log-name-translatorsandbox": "Zona de pruebas de traducción",
+	"log-name-translatorsandbox": "Registro de la zona de pruebas de traducción",
 	"log-description-translatorsandbox": "Un registro de acciones de usuarios en zona de pruebas de traducción",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|promovió}} $3 a {{GENDER:$4|traductor|traductora}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|rechazó}} la solicitud de «$3» para convertirse en traductor",
