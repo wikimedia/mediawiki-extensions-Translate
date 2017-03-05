@@ -30,7 +30,7 @@
 	"tsb-limit-reached-title": "Dziękuję za Twoje tłumaczenia",
 	"tsb-no-requests-from-new-users": "Brak wniosków od nowych użytkowników",
 	"tsb-create-user-page": "Utwórz prostą stronę użytkownika",
-	"log-name-translatorsandbox": "Brudnopis tłumaczeń",
+	"log-name-translatorsandbox": "Rejestr brudnopisu tłumaczeń",
 	"log-description-translatorsandbox": "To jest rejestr działań użytkowników brudnopisu tłumaczeń",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|awansował|awansowała}} $3 na {{GENDER:$4|tłumacza|tłumaczkę}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|odrzucił|odrzuciła}} wniosek „$3”, aby przyznać uprawnienia tłumacza"
