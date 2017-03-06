@@ -337,6 +337,8 @@ $wgResourceModules['ext.translate.special.managetranslatorsandbox'] = [
 	'messages' => [
 		'tsb-accept-all-button-label',
 		'tsb-accept-button-label',
+		'tsb-reject-confirmation',
+		'tsb-accept-confirmation',
 		'tsb-all-languages-button-label',
 		'tsb-didnt-make-any-translations',
 		'tsb-no-requests-from-new-users',

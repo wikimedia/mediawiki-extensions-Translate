@@ -39,6 +39,8 @@
 	"tsb-translations-user": "Table header label for user translations in [[Special:TranslateSandbox]].\n\nParameters:\n* $1 - user, can be used for GENDER",
 	"tsb-translations-current": "Table header label for existing translations in [[Special:TranslateSandbox]].",
 	"tsb-delete-userpage-summary": "Edit summary for deleting the user page of a sandboxed user.",
+	"tsb-reject-confirmation": "Bubble notification confirming user(s) has been rejected",
+	"tsb-accept-confirmation": "Bubble notification confirming user(s) has been accepted",
 	"translationstash": "Page title for [[Special:TranslationStash]].\n{{Identical|Welcome}}",
 	"translate-translationstash-welcome": "Title text shown for the [[Special:TranslationStash]]. Parameters:\n* $1 - user name of the new translator",
 	"translate-translationstash-welcome-note": "Title note for the [[Special:TranslationStash]].",
