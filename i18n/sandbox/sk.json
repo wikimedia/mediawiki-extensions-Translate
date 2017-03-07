@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"LacoR"
+			"LacoR",
+			"Lexected"
 		]
 	},
-	"tsb-limit-reached-title": "Ďakujeme za vaše preklady"
+	"tsb-reject-confirmation": "{{PLURAL:$1|User|Users}} úspešne zamietnutý",
+	"tsb-accept-confirmation": "{{PLURAL:$1|User|Users}} úspešne prijatý",
+	"tsb-limit-reached-title": "Ďakujeme za vaše preklady",
+	"log-name-translatorsandbox": "Záznam z pieskoviska prekladov"
 }

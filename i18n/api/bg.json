@@ -18,5 +18,6 @@
 	"apihelp-translationstash-param-metadata": "JSON-обект.",
 	"apihelp-searchtranslations-description": "Търсене на преводи.",
 	"apihelp-searchtranslations-param-limit": "Размер на резултата.",
-	"apihelp-searchtranslations-example-1": "Показване на преводи на този език."
+	"apihelp-searchtranslations-example-1": "Показване на преводи на този език.",
+	"apierror-translate-duplicateaggregategroup": "Групата съобщения вече съществува"
 }
