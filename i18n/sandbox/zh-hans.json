@@ -38,7 +38,7 @@
 	"tsb-translations-current": "现有翻译",
 	"tsb-delete-userpage-summary": "删除沙盒用户的用户页面",
 	"tsb-reject-confirmation": "{{PLURAL:$1|用户}}已成功被拒绝",
-	"tsb-accept-confirmation": "{{PLURAL:$1|用户}}已成功接受",
+	"tsb-accept-confirmation": "{{PLURAL:$1|用户}}已成功被接受",
 	"translationstash": "欢迎",
 	"translate-translationstash-welcome": "欢迎您{{GENDER:$1|$1}}，您已成为新的译者",
 	"translate-translationstash-welcome-note": "逐渐熟悉翻译工具。翻译一些信息，获得完整的译者权限去参与你喜欢的项目。",

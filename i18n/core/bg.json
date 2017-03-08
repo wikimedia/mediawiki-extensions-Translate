@@ -149,8 +149,8 @@
 	"translate-ls-column-group": "Група съобщения",
 	"translate-mgs-pagename": "Статистика за групата съобщения",
 	"translate-mgs-group": "Група съобщения:",
-	"translate-mgs-nocomplete": "Не показвай езици с напълно завършен превод",
-	"translate-mgs-noempty": "Не показвай езици, които нямат започнат превод",
+	"translate-mgs-nocomplete": "Скриване на езици с напълно завършен превод",
+	"translate-mgs-noempty": "Скриване на езици без започнат превод",
 	"translate-mgs-submit": "Показване на статистики",
 	"translate-mgs-column-language": "Език",
 	"translate-mgs-totals": "Всички езици заедно",
@@ -224,5 +224,7 @@
 	"tux-editor-collapse-tooltip": "Свиване",
 	"tux-editor-message-tools-history": "История",
 	"tux-editor-message-tools-translations": "Всички преводи",
-	"tux-editor-loading": "Зареждане..."
+	"tux-editor-loading": "Зареждане...",
+	"translate-search-more-languages-info": "още $1 {{PLURAL:$1|езика|езика}}",
+	"translate-search-more-groups-info": "още $1 {{PLURAL:$1|група|групи}}"
 }
