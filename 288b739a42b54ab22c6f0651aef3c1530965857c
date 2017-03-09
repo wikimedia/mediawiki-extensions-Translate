@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e46e3ee_39de3815",
+        "filename": "data/group-yaml-schema.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-03-09T15:39:41Z",
+      "side": 1,
+      "message": "I would remove the not_empty requirement from here.\n\nOtherwise, if one wants to use multiple, one would need to define one in \u0027class\u0027 and rest in \u0027classes\u0027.",
+      "revId": "288b739a42b54ab22c6f0651aef3c1530965857c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
