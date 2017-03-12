@@ -22,6 +22,8 @@
 	"tsb-translations-source": "Źródło",
 	"tsb-translations-user": "Tłumaczenia {{GENDER:$1|użytkownika|użytkowniczki}}",
 	"tsb-translations-current": "Istniejące tłumaczenia",
+	"tsb-reject-confirmation": "{{PLURAL:$1|Użytkownik odrzucony|Użytkownicy odrzuceni}}",
+	"tsb-accept-confirmation": "{{PLURAL:$1|Użytkownik zaakceptowany|Użytkownicy zaakceptowani}}",
 	"translationstash": "Powitanie",
 	"translate-translationstash-welcome": "Witaj $1, jesteś {{GENDER:$1|nowym tłumaczem|nową tłumaczką}}",
 	"translate-translationstash-initialtranslation": "Twoje pierwotne tłumaczenie",

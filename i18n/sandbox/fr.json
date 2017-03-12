@@ -11,7 +11,8 @@
 			"McDutchie",
 			"Framafan",
 			"Pathe",
-			"TomT0m"
+			"TomT0m",
+			"Derugon"
 		]
 	},
 	"managetranslatorsandbox": "Gérer le bac à sable de traduction",
@@ -42,8 +43,8 @@
 	"tsb-translations-user": "Traductions {{GENDER:$1|de l’utilisateur|de l’utilisatrice}}",
 	"tsb-translations-current": "Traductions existantes",
 	"tsb-delete-userpage-summary": "Suppression de la page utilisateur d’un utilisateur du bac à sable",
-	"tsb-reject-confirmation": "{{PLURAL:$1|Utilisateur bien rejeté|Utilisateurs bien rejetés}}",
-	"tsb-accept-confirmation": "{{PLURAL:$1|Utilisateur bien accepté|Utilisateurs bien acceptés}}",
+	"tsb-reject-confirmation": "{{PLURAL:$1|Utilisateur rejeté|Utilisateurs rejetés}}",
+	"tsb-accept-confirmation": "{{PLURAL:$1|Utilisateur accepté|Utilisateurs acceptés}}",
 	"translationstash": "Bienvenue",
 	"translate-translationstash-welcome": "Bienvenue {{GENDER:$1|$1}}, vous êtes un nouveau traducteur",
 	"translate-translationstash-welcome-note": "Familiarisez-vous avec les outils de traduction. Traduisez quelques messages et obtenez les droits complets de traducteur pour participer à vos projets favoris.",

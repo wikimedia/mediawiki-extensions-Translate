@@ -9,7 +9,8 @@
 			"Tyey",
 			"Revi",
 			"Hwangjy9",
-			"Ykhwong"
+			"Ykhwong",
+			"Jerrykim306"
 		]
 	},
 	"pagetranslation": "문서 번역",
@@ -63,6 +64,7 @@
 	"translate-tag-markthisagain": "이 문서에는 최근 <span class=\"plainlinks\">[$2 번역 대상으로 표시]</span>한 이후 <span class=\"plainlinks\">[$1 바뀜]</span>이 있습니다.",
 	"translate-tag-hasnew": "이 문서는 번역 대상으로 표시하지 않은 <span class=\"plainlinks\">[$1 바뀜]</span>을 포함합니다.",
 	"tpt-translation-intro": "이 문서는 [[$2]] 문서를 <span class=\"plainlinks\">[$1 번역한 것]</span>이며 번역은 $3% 완료했습니다.",
+	"tpt-translation-intro-fuzzy": "오래된 번역은 이렇게 표시됩니다.",
 	"tpt-languages-legend": "다른 언어:",
 	"tpt-languages-zero": "이 언어에 대한 번역 시작",
 	"tpt-languages-nonzero": "$1 ($2% 번역함)",

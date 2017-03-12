@@ -30,6 +30,8 @@
 	"tsb-translations-user": "{{GENDER:$1|Benotzer}} Iwwersetzungen",
 	"tsb-translations-current": "Iwwersetzungen déi et gëtt",
 	"tsb-delete-userpage-summary": "Benotzersäit vun engem Sandbox-Benotzer läschen",
+	"tsb-reject-confirmation": "{{PLURAL:$1|Benotzer}} refuséiert",
+	"tsb-accept-confirmation": "{{PLURAL:$1|Benotzer}} akzeptéiert",
 	"translationstash": "Wëllkomm",
 	"translate-translationstash-welcome": "Wëllkomm {{GENDER:$1|$1}}, Dir sidd en neien Iwwersetzer",
 	"translate-translationstash-initialtranslation": "Är éischt Iwwersetzung",
