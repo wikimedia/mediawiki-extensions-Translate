@@ -130,7 +130,7 @@
 	"translations-summary": "Unesite naziv poruke da biste vidjeli sve prijevode.",
 	"translate-translations-no-message": "\"$1\" nije poruka koja se prevodi",
 	"translate-translations-none": "Ne postoje prijevodi za \"$1\"",
-	"translate-translations-count": "{{PLURAL:$1|Pronađen jedan prijevod|Pronađena $1 prijevoda|Pronađeno $1 prijevoda}}.",
+	"translate-translations-count": "Pronađeno prijevoda: {{PLURAL:$1|jedan|$1}}.",
 	"translate-translations-fieldset-title": "Poruka",
 	"translate-translations-messagename": "Ime:",
 	"translate-translations-project": "Projekt:",
