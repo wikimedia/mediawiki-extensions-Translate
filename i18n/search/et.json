@@ -17,5 +17,11 @@
 	"tux-sst-solr-offline-body": "Otsimisteenus pole ajutiselt saadaval.",
 	"tux-sst-next": "Järgmised ›",
 	"tux-sst-prev": "‹ Eelmised",
+	"tux-sst-default": "Tõlked",
+	"tux-sst-translated": "Tõlgitud lähtekeelest \"$1\"",
+	"tux-sst-untranslated": "Tõlkimata lähtekeelest \"$1\"",
+	"tux-sst-ellipsis-outdated": "Iganenud tõlked",
+	"tux-sst-link-all-match": "Nõua kõiki otsisõnu.",
+	"tux-sst-match-message": "Näidatakse tõlkeid, mis vastavad vähemalt ühele otsisõnale. $1",
 	"tux-sst-case-sensitive": "Tõstutundlik"
 }
