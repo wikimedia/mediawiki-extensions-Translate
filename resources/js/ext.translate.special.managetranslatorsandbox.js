@@ -31,9 +31,7 @@
 
 		options = $.extend( {}, { action: 'translatesandbox' }, options );
 
-		// Change to csrf when support for MW 1.26 is dropped
-		return api.postWithToken( 'edit', options )
-			.promise();
+		return api.postWithToken( 'csrf', options ).promise();
 	}
 
 	function removeSelectedRequests() {

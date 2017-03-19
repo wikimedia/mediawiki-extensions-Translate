@@ -209,8 +209,7 @@
 				params.assert = 'user';
 			}
 
-			// Change to csrf when support for MW 1.26 is dropped
-			api.postWithToken( 'edit', params ).done( function () {
+			api.postWithToken( 'csrf', params ).done( function () {
 				$message.find( '.tux-proofread-action' )
 					.removeClass( 'tux-warning' ) // in case, it failed previously
 					.addClass( 'accepted' );
