@@ -239,7 +239,7 @@
 		 * @param {Object} message
 		 */
 		addProofread: function ( message ) {
-			var $message, $icon, module;
+			var $message, $icon;
 
 			$message = $( '<div>' ).addClass( 'row tux-message-proofread' );
 
@@ -262,9 +262,7 @@
 			this.firstProofreadTipShown = true;
 			$icon.addClass( 'autotooltip' );
 
-			// Use oojs-ui-core only after MediaWiki 1.26 is no longer supported
-			module = mw.loader.getState( 'oojs-ui-core' ) === null ? 'oojs-ui' : 'oojs-ui-core';
-			mw.loader.using( module ).done( function () {
+			mw.loader.using( 'oojs-ui-core' ).done( function () {
 				var tooltip = new OO.ui.PopupWidget( {
 					padded: true,
 					align: 'center',
