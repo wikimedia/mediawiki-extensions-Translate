@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e46e3ee_aaeceff2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2017-03-19T19:52:33Z",
+      "side": 1,
+      "message": "The module is now named mediawiki.diff.styles.",
+      "range": {
+        "startLine": 7,
+        "startChar": 40,
+        "endLine": 7,
+        "endChar": 76
+      },
+      "revId": "82a373d4d146749f81982717f838b82eb9ad6ff8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e46e3ee_eae197fc",
+        "filename": "Resources.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2017-03-19T19:52:33Z",
+      "side": 1,
+      "message": "The module is now named mediawiki.diff.styles.",
+      "range": {
+        "startLine": 391,
+        "startChar": 3,
+        "endLine": 391,
+        "endChar": 39
+      },
+      "revId": "82a373d4d146749f81982717f838b82eb9ad6ff8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e46e3ee_0ae5e305",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1215,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2017-03-19T19:52:33Z",
+      "side": 1,
+      "message": "The module is now named mediawiki.diff.styles.",
+      "range": {
+        "startLine": 1215,
+        "startChar": 20,
+        "endLine": 1215,
+        "endChar": 56
+      },
+      "revId": "82a373d4d146749f81982717f838b82eb9ad6ff8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
