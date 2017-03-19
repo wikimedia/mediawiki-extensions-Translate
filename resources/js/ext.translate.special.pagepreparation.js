@@ -374,8 +374,10 @@
 			pageName = $.trim( $input.val() );
 			savePage( pageName, pageContent ).done( function () {
 				pageUrl = mw.Title.newFromText( pageName ).getUrl( { action: 'edit' } );
-				// TODO: user mw.message.parseDom with MW 1.27
-				$( '.messageDiv' ).html( mw.message( 'pp-save-message', pageUrl ).parse() ).show();
+				$( '.messageDiv' )
+				.empty()
+				.append( mw.message( 'pp-save-message', pageUrl ).parseDom() )
+				.show();
 				$( '.divDiff' ).hide( 'fast' );
 				$( '#action-prepare' ).show();
 				$input.val( '' );
