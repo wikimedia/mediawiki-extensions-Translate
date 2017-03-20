@@ -78,8 +78,8 @@ class MessageGroupStats {
 	 * @return null[]|int[]
 	 */
 	public static function forItem( $id, $code ) {
-		$res = self::selectRowsIdLang( $id, $code );
-		$stats = self::extractResults( $res );
+		$res = self::selectRowsIdLang( [ $id ], $code );
+		$stats = self::extractResults( $res, [ $id ] );
 
 		/* In case some code calls this for dynamic groups, return the default
 		 * values for unknown/incomplete stats. Calculating these numbers don't
@@ -157,9 +157,10 @@ class MessageGroupStats {
 	 */
 	public static function clear( MessageHandle $handle ) {
 		$code = $handle->getCode();
-		$ids = $handle->getGroupIds();
+		$dbids = array_map( 'self::getDatabaseIdForGroupId', $handle->getGroupIds() );
+
 		$dbw = wfGetDB( DB_MASTER );
-		$conds = [ 'tgs_group' => $ids, 'tgs_lang' => $code ];
+		$conds = [ 'tgs_group' => $dbids, 'tgs_lang' => $code ];
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
 		wfDebugLog( 'messagegroupstats', 'Cleared ' . serialize( $conds ) );
 	}
@@ -168,8 +169,10 @@ class MessageGroupStats {
 		if ( !count( $id ) ) {
 			return;
 		}
+		$dbids = array_map( 'self::getDatabaseIdForGroupId', (array)$id );
+
 		$dbw = wfGetDB( DB_MASTER );
-		$conds = [ 'tgs_group' => $id ];
+		$conds = [ 'tgs_group' => $dbids ];
 		$dbw->delete( self::TABLE, $conds, __METHOD__ );
 		wfDebugLog( 'messagegroupstats', 'Cleared ' . serialize( $conds ) );
 	}
@@ -193,18 +196,39 @@ class MessageGroupStats {
 		wfDebugLog( 'messagegroupstats', 'Cleared everything :(' );
 	}
 
-	protected static function extractResults( $res, array $stats = [] ) {
+	/**
+	 * Use this to extract results returned from selectRowsIdLang. You must pass the
+	 * message group ids you want to retrieve. Entries that do not match are not returned.
+	 *
+	 * @param Traversable $res Database result object
+	 * @param string[] $ids List of message group ids
+	 * @param array[] $stats Optional array to append results to.
+	 * @return array[]s
+	 */
+	protected static function extractResults( $res, array $ids, array $stats = [] ) {
+		// Map the internal ids back to real ids
+		$idmap = array_combine( array_map( 'self::getDatabaseIdForGroupId', $ids ), $ids );
+
 		foreach ( $res as $row ) {
-			$stats[$row->tgs_group][$row->tgs_lang] = self::extractNumbers( $row );
+			if ( !isset( $idmap[$row->tgs_group] ) ) {
+				// Stale entry, ignore for now
+				// TODO: Schedule for purge
+				continue;
+			}
+
+			$realId = $idmap[$row->tgs_group];
+			$stats[$realId][$row->tgs_lang] = self::extractNumbers( $row );
 		}
 
 		return $stats;
 	}
 
 	public static function update( MessageHandle $handle, array $changes = [] ) {
+		$dbids = array_map( 'self::getDatabaseIdForGroupId', $handle->getGroupIds() );
+
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = [
-			'tgs_group' => $handle->getGroupIds(),
+			'tgs_group' => $dbids,
 			'tgs_lang' => $handle->getCode(),
 		];
 
@@ -239,10 +263,12 @@ class MessageGroupStats {
 	 * @return array[]
 	 */
 	protected static function forLanguageInternal( $code, array $stats = [] ) {
-		$res = self::selectRowsIdLang( null, $code );
-		$stats = self::extractResults( $res, $stats );
-
 		$groups = MessageGroups::singleton()->getGroups();
+
+		$ids = array_keys( $groups );
+		$res = self::selectRowsIdLang( null, $code );
+		$stats = self::extractResults( $res, $ids, $stats );
+
 		foreach ( $groups as $id => $group ) {
 			if ( isset( $stats[$id][$code] ) ) {
 				continue;
@@ -279,8 +305,8 @@ class MessageGroupStats {
 	 */
 	protected static function forGroupInternal( $group, array $stats = [] ) {
 		$id = $group->getId();
-		$res = self::selectRowsIdLang( $id, null );
-		$stats = self::extractResults( $res, $stats );
+		$res = self::selectRowsIdLang( [ $id ], null );
+		$stats = self::extractResults( $res, [ $id ], $stats );
 
 		# Go over each language filling missing entries
 		$languages = array_keys( TranslateUtils::getLanguageNames( 'en' ) );
@@ -301,10 +327,18 @@ class MessageGroupStats {
 		return $stats;
 	}
 
+	/**
+	 * Fetch rows from the database. Use extractResults to process this value.
+	 *
+	 * @param null|string[] List of message group ids
+	 * @param null|string[] List of language codes
+	 * @return Traversable Database result object
+	 */
 	protected static function selectRowsIdLang( $ids = null, $codes = null ) {
 		$conds = [];
 		if ( $ids !== null ) {
-			$conds['tgs_group'] = $ids;
+			$dbids = array_map( 'self::getDatabaseIdForGroupId', $ids );
+			$conds['tgs_group'] = $dbids;
 		}
 
 		if ( $codes !== null ) {
@@ -338,8 +372,10 @@ class MessageGroupStats {
 			if ( $expanded === [] ) {
 				return $aggregates;
 			}
-			$res = self::selectRowsIdLang( array_keys( $expanded ), $code );
-			$stats = self::extractResults( $res, $stats );
+
+			$subGroupIds = array_keys( $expanded );
+			$res = self::selectRowsIdLang( $subGroupIds, $code );
+			$stats = self::extractResults( $res, $subGroupIds, $stats );
 
 			foreach ( $expanded as $sid => $subgroup ) {
 				# Discouraged groups may belong to another group, usually if there
@@ -368,7 +404,7 @@ class MessageGroupStats {
 		}
 
 		self::$updates[] = [
-			'tgs_group' => $id,
+			'tgs_group' => self::getDatabaseIdForGroupId( $id ),
 			'tgs_lang' => $code,
 			'tgs_total' => $aggregates[self::TOTAL],
 			'tgs_translated' => $aggregates[self::TRANSLATED],
@@ -494,5 +530,16 @@ class MessageGroupStats {
 
 			$dbw->unlock( $lockName, __METHOD__ );
 		} );
+	}
+
+	public static function getDatabaseIdForGroupId( $id ) {
+		// The column is 100 bytes long, but we don't need to use it all
+		if ( strlen( $id ) <= 72 ) {
+			return $id;
+		}
+
+		$hash = hash( 'sha256', $id, /*asHex*/false );
+		$dbid = substr( $id, 0, 50 ) . '||' . substr( $hash, 0, 20 );
+		return $dbid;
 	}
 }
