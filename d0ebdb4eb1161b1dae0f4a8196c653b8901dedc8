@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e46e3ee_e586a817",
+        "filename": "resources/js/ext.translate.special.pagepreparation.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-03-20T08:31:28Z",
+      "side": 1,
+      "message": "Should indent these one line more.",
+      "revId": "d0ebdb4eb1161b1dae0f4a8196c653b8901dedc8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
