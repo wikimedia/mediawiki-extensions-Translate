@@ -776,6 +776,7 @@ GROOVY;
 		$search = new \Elastica\Search( $this->getClient() );
 		$search->setQuery( $query );
 		$search->addType( $type );
+		$search->addIndex( $type->getIndex() );
 		$scroll = new \Elastica\Scroll( $search, '15m' );
 
 		foreach ( $scroll as $results ) {
