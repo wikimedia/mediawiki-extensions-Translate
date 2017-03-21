@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e46e3ee_6205a3c3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-03-21T07:41:26Z",
+      "side": 1,
+      "message": "Thanks, much clearer",
+      "revId": "e1663375bb183da117dbe6b5d61bc11a3150d74a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e46e3ee_020cdfee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-03-21T07:41:26Z",
+      "side": 1,
+      "message": "Thanks for avoiding \"now\"",
+      "revId": "e1663375bb183da117dbe6b5d61bc11a3150d74a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
