@@ -234,6 +234,7 @@
 	"translate-documentation-language": "Sõnumi dokumentatsioon",
 	"translate-searchprofile": "Tõlked",
 	"translate-searchprofile-tooltip": "Otsi kõigist tõlgetest",
+	"translate-searchprofile-note": "Rohkem otsivalikuid on saadaval [$1 tõlkeotsingus].",
 	"translate-search-languagefilter": "Keelefilter:",
 	"translate-search-nofilter": "Filtrita",
 	"translate-messagereview-submit": "Märgi ülevaadatuks",
