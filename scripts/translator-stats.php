@@ -24,6 +24,8 @@ class TS extends Maintenance {
 	}
 
 	public function execute() {
+		global $wgDisableUserGroupExpiry;
+
 		$dbr = wfGetDB( DB_SLAVE );
 		$users = $dbr->select(
 			[ 'user', 'user_groups' ],
@@ -43,7 +45,13 @@ class TS extends Maintenance {
 			[
 				'user_groups' => [
 					'LEFT JOIN',
-					[ 'user_id=ug_user', 'ug_group' => 'translator' ]
+					[
+						'user_id=ug_user',
+						'ug_group' => 'translator',
+						( isset( $wgDisableUserGroupExpiry ) && !$wgDisableUserGroupExpiry ) ?
+							'ug_expiry IS NULL OR ug_expiry >= ' . $dbr->addQuotes( $dbr->timestamp() ) :
+							''
+					]
 				]
 			]
 		);
