@@ -52,9 +52,14 @@ class QueryAggregator {
 	 * Runs all the queries.
 	 */
 	public function run() {
+		global $wgSitename;
+
+		$version = TRANSLATE_VERSION;
+
 		$http = new MultiHttpClient( [
 			'reqTimeout' => $this->timeout,
-			'connTimeout' => 3
+			'connTimeout' => 3,
+			'userAgent' => "MediaWiki Translate extension $version for $wgSitename"
 		] );
 		$responses = $http->runMulti( $this->getMultiHttpQueries( $this->queries ) );
 		foreach ( $responses as $index => $response ) {
