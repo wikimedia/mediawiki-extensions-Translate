@@ -18,7 +18,7 @@
 		},
 
 		teardown: function () {
-			$( this ).unbind( '.textchange' );
+			$( this ).off( '.textchange' );
 		},
 
 		handler: function () {
