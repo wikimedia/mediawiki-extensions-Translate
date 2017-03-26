@@ -235,6 +235,6 @@
 	"tux-editor-message-tools-history": "История",
 	"tux-editor-message-tools-translations": "Всички преводи",
 	"tux-editor-loading": "Зареждане...",
-	"translate-search-more-languages-info": "още $1 {{PLURAL:$1|езика|езика}}",
+	"translate-search-more-languages-info": "още $1 {{PLURAL:$1|език|езика}}",
 	"translate-search-more-groups-info": "още $1 {{PLURAL:$1|група|групи}}"
 }
