@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "6e436fe2_23e833af",
+        "filename": "api/ApiQueryTranslationAids.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2017-03-28T08:53:13Z",
+      "side": 1,
+      "message": "Superfluous newline",
+      "revId": "9d4092546d322477f1f1aede8599f76343061c6d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce3c5b53_570275bf",
         "filename": "webservices/CaighdeanWebService.php",
         "patchSetId": 3
@@ -31,6 +48,41 @@
       "side": 1,
       "message": "On another thought, I\u0027ll do it globally for all services.",
       "parentUuid": "ce3c5b53_570275bf",
+      "revId": "9d4092546d322477f1f1aede8599f76343061c6d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e436fe2_c3cdcf63",
+        "filename": "webservices/CaighdeanWebService.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2017-03-28T08:53:13Z",
+      "side": 1,
+      "message": "Done in https://gerrit.wikimedia.org/r/338983",
+      "parentUuid": "8e46e3ee_e73542f4",
+      "revId": "9d4092546d322477f1f1aede8599f76343061c6d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e436fe2_4300df6d",
+        "filename": "webservices/TranslationWebService.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2017-03-28T08:53:13Z",
+      "side": 1,
+      "message": "This configuration might grow a lot. Consider \"auto registration\" as a future improvement?",
       "revId": "9d4092546d322477f1f1aede8599f76343061c6d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
