@@ -142,7 +142,6 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		$checker = new MediaWikiMessageChecker( $this );
 		$checker->setChecks( [
 			[ $checker, 'pluralCheck' ],
-			[ $checker, 'XhtmlCheck' ],
 			[ $checker, 'braceBalanceCheck' ],
 			[ $checker, 'pagenameMessagesCheck' ],
 			[ $checker, 'miscMWChecks' ]
