@@ -152,7 +152,6 @@ class PremadeMediawikiExtensionGroups {
 			'pluralFormsCheck',
 			'wikiParameterCheck',
 			'wikiLinksCheck',
-			'XhtmlCheck',
 			'braceBalanceCheck',
 			'pagenameMessagesCheck',
 			'miscMWChecks',
