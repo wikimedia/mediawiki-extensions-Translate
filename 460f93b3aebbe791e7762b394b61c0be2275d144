@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e436fe2_9ee867b1",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-03-30T23:45:41Z",
+      "side": 1,
+      "message": "Should the tuxGroupSelector() in SpecialTranslate be made reusable?",
+      "revId": "460f93b3aebbe791e7762b394b61c0be2275d144",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e436fe2_3ef5937f",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-03-30T23:45:41Z",
+      "side": 1,
+      "message": "PoolCounterWork asks for a \"queue\". Even if this were named \"TranslateFetchTranslators-\" (with empty $code), does anything change?",
+      "revId": "460f93b3aebbe791e7762b394b61c0be2275d144",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e436fe2_1ed537e8",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-03-30T23:45:41Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to be used in an especially meaningful way which would be affected by a more specific count.",
+      "revId": "460f93b3aebbe791e7762b394b61c0be2275d144",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e436fe2_be00c36e",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2017-03-30T23:45:41Z",
+      "side": 1,
+      "message": "I\u0027m not sure what statistics this is supposed to merge, but we can probably count just once in loadTranslators() in most cases?",
+      "revId": "460f93b3aebbe791e7762b394b61c0be2275d144",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
