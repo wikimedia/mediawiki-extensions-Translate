@@ -41,10 +41,10 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 					$groups[$params['root']] = $group;
 				}
 			} else {
-				$groups = MessageGroups::getAllGroups();
 				foreach ( MessageGroups::getDynamicGroups() as $id => $unused ) {
 					$groups[$id] = MessageGroups::getGroup( $id );
 				}
+				$groups = MessageGroups::getAllGroups();
 			}
 
 			// Not sorted by default, so do it now
@@ -61,10 +61,10 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				array_shift( $groups );
 			}
 		} else {
-			$groups = MessageGroups::getGroupStructure();
 			foreach ( MessageGroups::getDynamicGroups() as $id => $unused ) {
 				$groups[$id] = MessageGroups::getGroup( $id );
 			}
+			$groups[] = MessageGroups::getGroupStructure();
 		}
 
 		// Do not list the sandbox group. The code that knows it
