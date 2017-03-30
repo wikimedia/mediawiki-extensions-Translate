@@ -140,10 +140,11 @@ class SpecialManageGroups extends SpecialPage {
 			$changes = unserialize( $reader->get( $id ) );
 			$out->addHTML( Html::element( 'h2', [], $group->getLabel() ) );
 
-			// Reduce page existance queries to one per group
+			// Reduce page existence queries to one per group
 			$lb = new LinkBatch();
 			$ns = $group->getNamespace();
 			$isCap = MWNamespace::isCapitalized( $ns );
+
 			foreach ( $changes as $code => $subchanges ) {
 				foreach ( $subchanges as $messages ) {
 					foreach ( $messages as $params ) {
@@ -158,6 +159,20 @@ class SpecialManageGroups extends SpecialPage {
 			}
 			$lb->execute();
 
+			// Sort the changes to the source language first
+			$sourceCode = $group->getSourceLanguage();
+			$sourceChanges = [ $sourceCode => $changes[$sourceCode] ];
+			unset( $changes[$sourceCode] );
+			foreach ( $sourceChanges as $code => $subchanges ) {
+				foreach ( $subchanges as $type => $messages ) {
+					if ( $type == 'addition' || $type == 'change' ) {
+						uasort( $messages, 'sortChangesMessages' );
+						$sourceChanges[$code][$type] = $messages;
+					}
+				}
+			}
+			$changes = array_merge( $sourceChanges, $changes );
+
 			foreach ( $changes as $code => $subchanges ) {
 				foreach ( $subchanges as $type => $messages ) {
 					foreach ( $messages as $params ) {
@@ -165,8 +180,8 @@ class SpecialManageGroups extends SpecialPage {
 						$out->addHTML( $change );
 
 						if ( $limit <= 0 ) {
-							// We need to restrict the changes per page per form submission
-							// limitations as well as performance.
+							// We need to restrict the changes per page, for form
+							// submission limitations and performance reasons.
 							$out->wrapWikiMsg( "<div class=warning>\n$1\n</div>", 'translate-smg-more' );
 							break 4;
 						}
@@ -183,6 +198,16 @@ class SpecialManageGroups extends SpecialPage {
 		$button = Html::element( 'button', $attribs, $this->msg( 'translate-smg-submit' )->text() );
 		$out->addHTML( $button );
 		$out->addHTML( Html::closeElement( 'form' ) );
+	}
+
+	/**
+	* Comparison function to sort a list of message changes contained in an
+	* array which follows the same format as that of $params in showChanges().
+	* @param array $a, $b
+	* @return int
+	*/
+	static function sortChangesMessages( $a, $b ) {
+		return strcasecmp( $a['content'], $b['content'] );
 	}
 
 	/**
