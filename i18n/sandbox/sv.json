@@ -34,6 +34,8 @@
 	"tsb-translations-user": "{{GENDER:$1|Användar}}översättningar",
 	"tsb-translations-current": "Befintliga översättningar",
 	"tsb-delete-userpage-summary": "Tar bort användarsidan för en sandlådeanvändare",
+	"tsb-reject-confirmation": "{{PLURAL:$1|Användare nekad|Användare nekade}}",
+	"tsb-accept-confirmation": "{{PLURAL:$1|Användare accepterad|Användare accepterade}}",
 	"translationstash": "Välkommen",
 	"translate-translationstash-welcome": "Välkommen {{GENDER:$1|$1}}, du är en ny översättare",
 	"translate-translationstash-welcome-note": "Bekanta dig med översättningsverktygen. Översätt några meddelanden och få fullständiga översättningsrättigheter för att delta i dina favoritprojekt.",
