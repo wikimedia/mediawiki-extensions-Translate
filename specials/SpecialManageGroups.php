@@ -235,13 +235,16 @@ class SpecialManageGroups extends SpecialPage {
 				$wiki = '!!FUZZY!!' . str_replace( TRANSLATE_FUZZY, '', $wiki );
 			}
 
-			$label = $this->msg( 'translate-manage-action-ignore' )->text();
-			$actions = Xml::checkLabel( $label, "i/$id", "i/$id" );
-			$limit--;
-
+			$ignore = $this->msg( 'translate-manage-action-ignore' )->text();
+			$fuzzy = $this->msg( 'translate-manage-action-fuzzy' )->text();
 			if ( $group->getSourceLanguage() === $code ) {
-				$label = $this->msg( 'translate-manage-action-fuzzy' )->text();
-				$actions .= ' ' . Xml::checkLabel( $label, "f/$id", "f/$id", true );
+				$actions = Xml::radioLabel( $ignore, "i/$id", "i/$id", "i/$id" );
+				$limit--;
+				$actions .= ' ' . Xml::radioLabel( $fuzzy, "f/$id", "f/$id", "f/$id", true );
+				$limit--;
+				$actions .= ' ' . Xml::radio( "$id", "$id" );
+			} else {
+				$actions = Xml::checkLabel( $ignore, "i/$id", "i/$id" );
 				$limit--;
 			}
 
