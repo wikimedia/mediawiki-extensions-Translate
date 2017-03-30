@@ -306,7 +306,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	 * @param string|bool $default Group id of the group chosen by default. Optional.
 	 * @return XmlSelect
 	 */
-	protected function getGroupSelector( $default = false ) {
+	static function getGroupSelector( $default = false ) {
 		$groups = MessageGroups::getAllGroups();
 		$selector = new XmlSelect( 'group', 'group', $default );
 

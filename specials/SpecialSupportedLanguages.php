@@ -41,7 +41,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$out = $this->getOutput();
 		$lang = $this->getLanguage();
 
-		// Only for manual debugging nowdays
+		// Only for manual debugging nowadays
 		$this->purge = false;
 
 		$this->setHeaders();
@@ -69,31 +69,58 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$this->outputLanguageCloud( $languages, $names );
 		$out->addWikiMsg( 'supportedlanguages-count', $lang->formatNum( count( $languages ) ) );
 
+		$out .= Html::openElement( 'div' );
+		$out .= Html::openElement( 'form', [ 'method' => 'get', 'action' => $wgScript ] );
+		$out .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
+		$out->addHTML( SpecialMessageGroupStats::getGroupSelector() );
+		$out .= Xml::submitButton( $this->msg( 'translate-mgs-submit' )->text() );
+		$out .= Html::closeElement( 'form' );
+		$out .= Html::closeElement( 'div' );
+		
 		if ( $par && Language::isKnownLanguageTag( $par ) ) {
 			$code = $par;
+			$request = $this->getRequest();
+			$group = $request->getText( 'group' );
 
 			$out->addWikiMsg( 'supportedlanguages-colorlegend', $this->getColorLegend() );
 
-			$users = $this->fetchTranslators( $code );
-			if ( $users === false ) {
-				// generic-pool-error is from MW core
-				$out->wrapWikiMsg( '<div class="warningbox">$1</div>', 'generic-pool-error' );
-				return;
-			}
+			if ( $group === '' ) {
+				$users = $this->fetchTranslators( $code );
+				if ( $users === false ) {
+					// generic-pool-error is from MW core
+					$out->wrapWikiMsg( '<div class="warningbox">$1</div>', 'generic-pool-error' );
+					return;
+				}
 
-			global $wgTranslateAuthorBlacklist;
-			$users = $this->filterUsers( $users, $code, $wgTranslateAuthorBlacklist );
-			$this->preQueryUsers( $users );
-			$this->showLanguage( $code, $users );
+				$this->showLanguage( $code, $users );
+			} else {
+				foreach ( $languages as $code ) {
+					$users = $this->fetchTranslators( $code, $group );
+					if ( $users === false ) {
+						// generic-pool-error is from MW core
+						$out->wrapWikiMsg( '<div class="warningbox">$1</div>', 'generic-pool-error' );
+						return;
+					}
+					$this->showLanguage( $code, $users, $group );
+				}
+			}
 		}
 	}
 
-	protected function showLanguage( $code, $users ) {
+	protected function showLanguage( $code, $users, $group = '' ) {
 		$out = $this->getOutput();
 		$lang = $this->getLanguage();
 
+		global $wgTranslateAuthorBlacklist;
+		$users = $this->filterUsers( $users, $code, $wgTranslateAuthorBlacklist );
+		$this->preQueryUsers( $users );
 		$usernames = array_keys( $users );
-		$userStats = $this->getUserStats( $usernames );
+		if ( $group === '' ) {
+			$userStats = $this->getUserStats( $usernames );
+		} else {
+		// Use the numbers from fetchTranslators() for this group
+			$userStats = $users;
+		}
 
 		// Information to be used inside the foreach loop.
 		$linkInfo = [];
@@ -186,11 +213,12 @@ class SpecialSupportedLanguages extends SpecialPage {
 	 * Fetch the translators for a language with caching
 	 *
 	 * @param string $code
+	 * @param string $group
 	 * @return array|bool Map of (user name => page count) or false on failure
 	 */
-	public function fetchTranslators( $code ) {
+	public function fetchTranslators( $code = '', $group = '' ) {
 		$cache = wfGetCache( CACHE_ANYTHING );
-		$cachekey = wfMemcKey( 'translate-supportedlanguages-translator-list-v1', $code );
+		$cachekey = wfMemcKey( 'translate-supportedlanguages-translator-list-v1', $code, $group );
 
 		if ( $this->purge ) {
 			$cache->delete( $cachekey );
@@ -208,8 +236,8 @@ class SpecialSupportedLanguages extends SpecialPage {
 			'TranslateFetchTranslators',
 			"TranslateFetchTranslators-$code",
 			[
-				'doWork' => function () use ( $that, $code, $cache, $cachekey ) {
-					$users = $that->loadTranslators( $code );
+				'doWork' => function () use ( $that, $code, $group, $cache, $cachekey ) {
+					$users = $that->loadTranslators( $code, $group );
 					$newData = [ 'users' => $users, 'asOfTime' => time() ];
 					$cache->set( $cachekey, $newData, 86400 );
 					return $users;
@@ -230,25 +258,46 @@ class SpecialSupportedLanguages extends SpecialPage {
 	}
 
 	/**
-	 * Fetch the translators for a language
+	 * Fetch the translators for a language and/or group
 	 *
 	 * @param string $code
+	 * @param string $group
 	 * @return array Map of (user name => page count)
 	 */
-	public function loadTranslators( $code ) {
+	public function loadTranslators( $code = '', $group = '' ) {
 		global $wgTranslateMessageNamespaces;
 
 		$dbr = wfGetDB( DB_SLAVE, 'vslow' );
+		if ( $code == '' ) {
+			$suffix = '/' . $dbr->anyString();
+		} else {
+			$suffix = '/' . $code;
+		}
+		if ( $group == '' ) {
+			$condsTitle = [ 'page_title' . $dbr->buildLike( $dbr->anyString(), $suffix ) ];
+		} else {
+			$groupObj = MessageGroups::getGroup( $group );
+			$keys = $groupObj->getKeys();
+			$namespace = $wgContLang->getNsText( $groupObj->getNamespace() );
+			$condsTitle = [];
+			foreach ( $keys as $title ) {
+				$condsTitle[] = 'OR page_title' . $dbr->buildLike(
+					$namespace . $title . $suffix
+				);
+			}
+			$condsTitle[0] = substr_replace( $condsTitle[0], '(', 0, 2 );
+		}
+		
+
 		$tables = [ 'page', 'revision' ];
 		$fields = [
 			'rev_user_text',
-			'count(page_id) as count'
+			'count(rev_id) as count'
 		];
-		$conds = [
-			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $code ),
+		$conds = array_merge( [
 			'page_namespace' => $wgTranslateMessageNamespaces,
 			'page_id=rev_page',
-		];
+		], $condsTitle );
 		$options = [ 'GROUP BY' => 'rev_user_text', 'ORDER BY' => 'NULL' ];
 
 		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
