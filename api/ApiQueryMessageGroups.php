@@ -42,16 +42,12 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				}
 			} else {
 				$groups = MessageGroups::getAllGroups();
-				foreach ( MessageGroups::getDynamicGroups() as $id => $unused ) {
-					$groups[$id] = MessageGroups::getGroup( $id );
-				}
+				// Not sorted by default, so do it now
+				// Work around php bug: https://bugs.php.net/bug.php?id=50688
+				MediaWiki\suppressWarnings();
+				usort( $groups, [ 'MessageGroups', 'groupLabelSort' ] );
+				MediaWiki\restoreWarnings();
 			}
-
-			// Not sorted by default, so do it now
-			// Work around php bug: https://bugs.php.net/bug.php?id=50688
-			MediaWiki\suppressWarnings();
-			usort( $groups, [ 'MessageGroups', 'groupLabelSort' ] );
-			MediaWiki\restoreWarnings();
 		} elseif ( $params['root'] !== '' ) {
 			// format=tree from now on, as it is the only other valid option
 			$group = MessageGroups::getGroup( $params['root'] );
@@ -62,9 +58,15 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			}
 		} else {
 			$groups = MessageGroups::getGroupStructure();
-			foreach ( MessageGroups::getDynamicGroups() as $id => $unused ) {
-				$groups[$id] = MessageGroups::getGroup( $id );
+		}
+
+		if ( $params['root'] === '' ) {
+			$dynamicGroups = [];
+			foreach ( array_keys( MessageGroups::getDynamicGroups() ) as $id ) {
+				$dynamicGroups[$id] = MessageGroups::getGroup( $id );
 			}
+			// Have dynamic groups appear first in the list
+			$groups = $dynamicGroups + $groups;
 		}
 
 		// Do not list the sandbox group. The code that knows it
