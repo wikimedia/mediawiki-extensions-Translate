@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e436fe2_a47672d3",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-03-31T11:20:17Z",
+      "side": 1,
+      "message": "I guess you did not test this. This will discard the dynamic groups completely.\n\nSuggested code:\n$dynamicGroups \u003d [];\nforeach ( ... ) { ... };\n$groups \u003d MessageGroups::getAllGroups();\n...\nusort( $groups, [ \u0027MessageGroups\u0027, \u0027groupLabelSort\u0027 ] );\n...\n\n$groups \u003d $dynamicGroups + $groups;",
+      "revId": "6ab7de60f1119de13fddfd2c15911711d04a2f25",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e436fe2_64794ac3",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-03-31T11:20:17Z",
+      "side": 1,
+      "message": "This will undo any sorting you did beforehand.",
+      "revId": "6ab7de60f1119de13fddfd2c15911711d04a2f25",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e436fe2_447c4eb4",
+        "filename": "api/ApiQueryMessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-03-31T11:20:17Z",
+      "side": 1,
+      "message": "This will produce incorrect structure.\n\nSimilar as above, collect dynamic groups to separate variable and then do array plus.",
+      "revId": "6ab7de60f1119de13fddfd2c15911711d04a2f25",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
