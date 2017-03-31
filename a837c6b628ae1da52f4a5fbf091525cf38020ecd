@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e436fe2_78532e1b",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-03-31T12:10:58Z",
+      "side": 1,
+      "message": "Few issues:\nThe radio buttons are not connected, so they act more as checkboxes that cannot be unchecked.\n\nThe way radio buttons work are that they all share the same name (first parameter for ::radio(), second parameter for ::radioLabel()).\n\nThen you determine which one was chosen (if any) by comparing $request-\u003egetVal( name ) to the values (e.g. ignore, import, importfuzzy).\n\nAlso, you only need to decrement $limit only once for one set of radio buttons.\n\nPlease also add label to the third option while you are at it.\n\nA good re-naming for the options would be something like:\n* Import and mark translations outdated\n* Import\n* Don\u0027t import\n\nI also suggest we make one of the radio buttons be checked by default (import with fuzzy maybe?)",
+      "revId": "a837c6b628ae1da52f4a5fbf091525cf38020ecd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e436fe2_98587a37",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-03-31T12:10:58Z",
+      "side": 1,
+      "message": "This would change $req-\u003egetVal( \"a/$id\" ) \u003d\u003d\u003d \u0027ignore\u0027;",
+      "revId": "a837c6b628ae1da52f4a5fbf091525cf38020ecd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e436fe2_583bd2c4",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-03-31T12:10:58Z",
+      "side": 1,
+      "message": "This would change $fuzzy \u003d $req-\u003egetCheck( \"a/$id\" ) \u003d\u003d\u003d \u0027importandfuzzy\u0027;",
+      "revId": "a837c6b628ae1da52f4a5fbf091525cf38020ecd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
