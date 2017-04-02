@@ -87,7 +87,7 @@
 	"translate-checks-parameters": "{{PLURAL:$2|Parametreyê cêrêni nêgureniyayê|Parametreyo cêrên nêgureniyayo}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Gıra|$2 Gırey}} ceri berbata: <strong><nowiki>$1</nowiki></strong>",
 	"translate-pref-editassistlang": "Zıwanê peşti:",
-	"prefs-translate": "Weçenegê açarnayışi",
+	"prefs-translate": "Opsiyonê çarnayışi",
 	"right-translate-manage": "İdareyê grubanê mesacan",
 	"action-translate-manage": "idareyê grubanê mesacan",
 	"right-translate-import": "Şıma tadayışanê (çarnayışanê) teberê çerxi bıgêrê zerre (import kerê)",
