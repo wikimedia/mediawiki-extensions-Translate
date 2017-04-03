@@ -278,11 +278,13 @@
 					}
 
 					offset = $icon.offset();
+					tooltip.$element.appendTo( 'body' );
+					tooltip.toggle( true ).toggleClipping( false ).togglePositioning( false );
 					tooltip.$element.css( {
 						top: offset.top + $icon.outerHeight() + 5,
-						left: offset.left + $icon.outerWidth() - 20
-					} ).appendTo( 'body' );
-					tooltip.toggleClipping( false ).toggle( true );
+						left: offset.left + $icon.outerWidth() - tooltip.$element.width() / 2
+					} );
+					tooltip.$anchor.css( 'margin-left', '50%' );
 
 					setTimeout( function () {
 						tooltip.$element.remove();
