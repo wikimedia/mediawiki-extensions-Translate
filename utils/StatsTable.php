@@ -89,14 +89,15 @@ class StatsTable {
 
 		if ( $v < 128 ) {
 			// Red to Yellow
-			$red = 'FF';
-			$green = sprintf( '%02X', 2 * $v );
+			$red = 'dd';
+			$blue = '33';
+			$green = sprintf( '%02X', ( 2 * $v ) + 33 );
 		} else {
 			// Yellow to Green
 			$red = sprintf( '%02X', 2 * ( 255 - $v ) );
-			$green = 'FF';
+			$green = 'af';
+			$blue = '89';
 		}
-		$blue = '00';
 
 		return $red . $green . $blue;
 	}
