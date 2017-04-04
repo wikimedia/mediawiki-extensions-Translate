@@ -33,10 +33,6 @@ class TranslateYaml {
 				return $ret;
 
 			case 'spyc':
-				// Load the bundled version if not otherwise available
-				if ( !class_exists( 'Spyc' ) ) {
-					require_once __DIR__ . '/../libs/spyc/spyc.php';
-				}
 				$yaml = spyc_load( $text );
 
 				return self::fixSpycSpaces( $yaml );
@@ -95,8 +91,6 @@ class TranslateYaml {
 				return yaml_emit( $text, YAML_UTF8_ENCODING );
 
 			case 'spyc':
-				require_once __DIR__ . '/../libs/spyc/spyc.php';
-
 				return Spyc::YAMLDump( $text );
 			case 'syck':
 				return self::syckDump( $text );
