@@ -568,10 +568,22 @@ class MessageGroups {
 
 		$ids = (array)$ids;
 		foreach ( $ids as $index => $id ) {
-			$ids[$index] = self::normalizeId( $id );
+			// Fast path, no wildcards
+			if ( strcspn( $id, '*?' ) === strlen( $id ) ) {
+				$g = self::getGroup( $id );
+				if ( $g ) {
+					$all[] = $g->getId();
+				}
+				unset( $ids[$index] );
+			}
 		}
 
-		$matcher = new StringMatcher( '', (array)$ids );
+		if ( $ids === [] ) {
+			return $all;
+		}
+
+		// Slow path for the ones with wildcards
+		$matcher = new StringMatcher( '', $ids );
 		foreach ( self::getAllGroups() as $id => $_ ) {
 			if ( $matcher->match( $id ) ) {
 				$all[] = $id;
