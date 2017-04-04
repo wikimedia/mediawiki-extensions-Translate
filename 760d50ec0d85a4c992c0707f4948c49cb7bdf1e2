@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e436fe2_2fb9cd78",
+        "filename": "Translate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-04-04T09:40:56Z",
+      "side": 1,
+      "message": "Is there are a reason for this?",
+      "revId": "760d50ec0d85a4c992c0707f4948c49cb7bdf1e2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e436fe2_4fbc5967",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-04-04T09:40:56Z",
+      "side": 1,
+      "message": "Missing one }",
+      "revId": "760d50ec0d85a4c992c0707f4948c49cb7bdf1e2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
