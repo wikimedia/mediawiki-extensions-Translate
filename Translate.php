@@ -471,6 +471,7 @@ $wgTranslateGroupFiles = [];
  * for each state.
  * The currently supported properties are:
  * * color: the color that is used for displaying the state in the tables.
+ * * textColor: Color of text when you want to change it. Only works if color is set
  * * right: additional right that is needed to set the state.
  * Users who have the translate-groupreview right can set this in
  * Special:Translate.
@@ -479,15 +480,15 @@ $wgTranslateGroupFiles = [];
  * If the value is false, the workflow states feature is disabled.
  * State name can be up to 32 characters maximum.
  * Example:
- * $wgTranslateWorkflowStates = array(
- *      'new' => array( 'color' => 'FF0000' ), // red
- *      'needs_proofreading' => array( 'color' => '0000FF' ), // blue
- *      'ready' => array( 'color' => 'FFFF00' ), // yellow
- *      'published' => array(
+ * $wgTranslateWorkflowStates = [
+ *      'new' => [ 'color' => 'FF0000', 'textColor' => 'FFFFFF' ], // red with white text
+ *      'needs_proofreading' => [ 'color' => '0000FF' ], // blue
+ *      'ready' => [ 'color' => 'FFFF00' ], // yellow
+ *      'published' => [
  *          'color' => '00FF00', // green
  *          'right' => 'centralnotice-admin',
- *      ),
- * );
+ *      ],
+ * ];
  */
 $wgTranslateWorkflowStates = false;
 

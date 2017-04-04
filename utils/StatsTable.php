@@ -52,9 +52,10 @@ class StatsTable {
 	 * @param string $in Element contents.
 	 * @param string $bgcolor Backround color in ABABAB format.
 	 * @param string $sort Value used for sorting.
+	 * @param string $textColor Color of text in ABABAB format.
 	 * @return string Html td element.
 	 */
-	public function element( $in, $bgcolor = '', $sort = '' ) {
+	public function element( $in, $bgcolor = '', $sort = '', $textColor = '' ) {
 		$attributes = [];
 
 		if ( $sort ) {
@@ -64,7 +65,12 @@ class StatsTable {
 		if ( $bgcolor ) {
 			$attributes['style'] = 'background-color: #' . $bgcolor;
 			$attributes['class'] = 'hover-color';
+
+			if ( $textColor ) {
+				$attributes['style'] .= '; color: #' . $textColor;
+			}
 		}
+
 
 		$element = Html::element( 'td', $attributes, $in );
 

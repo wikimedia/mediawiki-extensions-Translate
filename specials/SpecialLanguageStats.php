@@ -333,6 +333,7 @@ class SpecialLanguageStats extends SpecialPage {
 
 		$sortValue = -1;
 		$stateColor = '';
+		$textColor = '';
 		if ( isset( $stateConfig[$state] ) ) {
 			$sortIndex = array_flip( array_keys( $stateConfig ) );
 			$sortValue = $sortIndex[$state] + 1;
@@ -342,7 +343,10 @@ class SpecialLanguageStats extends SpecialPage {
 				$stateColor = $stateConfig[$state];
 			} elseif ( isset( $stateConfig[$state]['color'] ) ) {
 				$stateColor = $stateConfig[$state]['color'];
+				if ( isset( $stateConfig[$state]['textColor'] ) ) {
+					$textColor = $stateConfig[$state]['textColor'];
 			}
+
 		}
 
 		$stateMessage = $this->msg( "translate-workflow-state-$state" );
@@ -351,7 +355,8 @@ class SpecialLanguageStats extends SpecialPage {
 		return "\n\t\t" . $this->table->element(
 			$stateText,
 			$stateColor,
-			$sortValue
+			$sortValue,
+			$textColor
 		);
 	}
 
