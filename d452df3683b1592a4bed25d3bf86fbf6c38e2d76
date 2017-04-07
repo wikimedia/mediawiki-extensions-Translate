@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e506ba4_990d0c44",
+        "filename": "Translate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-04-07T10:57:22Z",
+      "side": 1,
+      "message": "Default could be changed to\n function_exists( \u0027yaml_parse\u0027 ) ? \u0027phpyaml\u0027 : \u0027spyc\u0027;\n\nThis would make phpyaml (provided by hhvm in php compatibility mode) to be automatically picked up if available. This would cause less issues for installations where phpyaml is supported by not configured and if they have not updated composer properly.",
+      "revId": "d452df3683b1592a4bed25d3bf86fbf6c38e2d76",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
