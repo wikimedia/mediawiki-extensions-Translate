@@ -16,6 +16,24 @@
       "revId": "d452df3683b1592a4bed25d3bf86fbf6c38e2d76",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e506ba4_3c7aa620",
+        "filename": "Translate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2017-04-07T12:51:00Z",
+      "side": 1,
+      "message": "I think this is a sane change, and tries to use php yaml by default where possible, whether or not they\u0027ve run composer",
+      "parentUuid": "4e506ba4_990d0c44",
+      "revId": "d452df3683b1592a4bed25d3bf86fbf6c38e2d76",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
