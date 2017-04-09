@@ -4,7 +4,8 @@
 			"Kaganer",
 			"Lockal",
 			"Okras",
-			"Translatobecomer"
+			"Translatobecomer",
+			"Mailman"
 		]
 	},
 	"searchtranslations": "Поиск переводов",
@@ -22,6 +23,8 @@
 	"tux-sst-next": "Далее ›",
 	"tux-sst-prev": "‹ Назад",
 	"tux-sst-default": "Переводы",
+	"tux-sst-translated": "Переводы с $1",
+	"tux-sst-untranslated": "Нет переводов с $1",
 	"tux-sst-ellipsis-untranslated": "Нет перевода",
 	"tux-sst-ellipsis-outdated": "Устаревшие переводы",
 	"tux-sst-case-sensitive": "с учётом регистра"

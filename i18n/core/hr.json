@@ -202,7 +202,7 @@
 	"translate-gs-avgscore": "Prosječno",
 	"translate-documentation-language": "Dokumentacija poruke",
 	"translate-searchprofile": "Prijevodi",
-	"log-name-translationreview": "Evidencija provjera prijevoda",
+	"log-name-translationreview": "Evidencija pregleda prijevoda",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|provjerio|provjerila}} je prijevod $3",
 	"translate-dynagroup-additions-desc": "Ova grupa poruka prikazuje nove i promijenjene poruke.",
 	"translate-msggroupselector-projects": "Grupa poruka",

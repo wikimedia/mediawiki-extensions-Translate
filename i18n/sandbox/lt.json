@@ -29,6 +29,8 @@
 	"tsb-translations-source": "Šaltinis",
 	"tsb-translations-user": "{{GENDER:$1|Vartotojo|Vartotojos}} vertimai",
 	"tsb-translations-current": "Egzistuojantys vertimai",
+	"tsb-reject-confirmation": "{{PLURAL:$1|Vartotojas atmestas|Vartotojai atmesti}}",
+	"tsb-accept-confirmation": "{{PLURAL:$1|Vartotojas priimtas|Vartotojai priimti}}",
 	"translationstash": "Sveiki atvykę",
 	"translate-translationstash-welcome": "Sveiki atvykę, {{GENDER:$1|$1}}, esate {{GENDER:$1|naujas vertėjas|nauja vertėja}}",
 	"translate-translationstash-welcome-note": "Susipažinkite su vertimo įrankiais. Išverskite kelis pranešimus ir gaukite pilnas vertėjo teises, kad galėtumėte dalyvauti savo mėgstamiausiuose projektuose.",
