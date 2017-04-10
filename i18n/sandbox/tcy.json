@@ -10,6 +10,7 @@
 	"tsb-search-requests": "ನಾಡ್‍ಪತ್ತ್‌ನೆದ ಪಲಿತಾಂಸೊಲು",
 	"tsb-accept-button-label": "ಒತ್ತೋನಿ",
 	"tsb-reject-button-label": "ತಿರಸ್ಕಾರ ಮಲ್ಪುಲೆ",
+	"tsb-accept-confirmation": "{{PLURAL:$1|User|ಸದಸ್ಯೆರ್}} ಒಪ್ಪಿಯೇರ್",
 	"translationstash": "ಸೊಲ್ಮೆಲೋ",
 	"translate-translationstash-skip-button-label": "ನನೊಂಜಿ ಪ್ರಯತ್ನ ಮಾಂಪಿ",
 	"tsb-limit-reached-title": "ಈರೆನ ಅನುವಾದಾಗ್ ಉಡಲ್ ದಿಂಜಿ ಸೊಲ್ಮೆಲೋ"
