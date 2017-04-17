@@ -15,11 +15,11 @@ table .tqe-inlineeditable .mw-ajax-dialog {
 }
 
 .tqe-editor-loaded {
-	background-color: #FFF !important;
+	background-color: #fff !important;
 }
 
 .mw-sp-translate-edit-fields a {
-	color: blue;
+	color: #00f;
 }
 
 .mw-translate-tmsug {
@@ -29,7 +29,7 @@ table .tqe-inlineeditable .mw-ajax-dialog {
 .mw-sp-translate-edit-fields fieldset {
 	line-height: normal;
 	margin: 0;
-	border: 1px solid #DBDBDB;
+	border: 1px solid #dbdbdb;
 	/* Browsers suck
 	max-height: 250px; */
 	overflow: auto;
@@ -40,7 +40,7 @@ table .tqe-inlineeditable .mw-ajax-dialog {
 }
 
 .mw-translate-edit-extra {
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #000;
 }
 
 .mw-translate-legend {
@@ -48,7 +48,7 @@ table .tqe-inlineeditable .mw-ajax-dialog {
 }
 
 .mw-translate-legend {
-	border-left: 1px solid black;
+	border-left: 1px solid #000;
 	float: right;
 	margin-left: 1em;
 	padding-left: 5pt;
@@ -101,32 +101,32 @@ table .tqe-inlineeditable .mw-ajax-dialog {
 
 /* Blue tints for translate fieldsets */
 .mw-sp-translate-edit-inother {
-	background-color: #F8F8FF;
+	background-color: #f8f8ff;
 }
 
 .mw-sp-translate-in-other-small {
-	background-color: #F0F8FF;
+	background-color: #f0f8ff;
 }
 
 .mw-sp-translate-in-other-big {
-	background-color: #F0F8FF;
+	background-color: #f0f8ff;
 }
 
 .mw-sp-translate-message-documentation {
-	background-color: #EBEBEB;
+	background-color: #ebebeb;
 }
 
 .mw-sp-translate-edit-definition {
-	background-color: #EAF3FC;
+	background-color: #eaf3fc;
 }
 
 .mw-sp-translate-edit-warnings {
-	background-color: #FFDBDB;
+	background-color: #ffdbdb;
 }
 
 .tqe-fakeheader {
-	border: 1px solid #CCC;
-	padding: .75em;
+	border: 1px solid #ccc;
+	padding: 0.75em;
 	font-weight: bold;
 	line-height: 2em;
 }

@@ -2,7 +2,7 @@
 	min-height: 50px;
 	margin: 0 auto;
 	vertical-align: middle;
-	background: #F8F8F8;
+	background: #f8f8f8;
 }
 
 .ext-translate-container .tux-messagelist .tux-message-pagemode .tux-message-item-compact {
@@ -13,26 +13,26 @@
 	margin-left: auto;
 	vertical-align: middle;
 	border-bottom: 1px solid #f0f0f0;
-	border-left: 1px solid #DDDDDD;
-	border-right: 1px solid #DDDDDD;
-	background: #FFFFFF;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	background: #fff;
 	max-width: 900px;
 }
 
 .ext-translate-container .tux-messagelist .tux-message-pagemode .tux-message-item-compact:hover {
-	background: #FCFCFC;
+	background: #fcfcfc;
 }
 
 .ext-translate-container .tux-messagelist .tux-message-pagemode:first-child .tux-message-item-compact {
 	margin-top: 10px;
 	padding-top: 60px;
-	border-top: 1px solid #DDDDDD;
+	border-top: 1px solid #ddd;
 }
 
 .ext-translate-container .tux-messagelist .tux-message-pagemode:last-child .tux-message-item-compact {
 	margin-bottom: 10px;
 	padding-bottom: 60px;
-	border-bottom: 1px solid #DDDDDD;
+	border-bottom: 1px solid #ddd;
 }
 
 .tux-pagemode-source,
@@ -73,24 +73,24 @@
 }
 
 .tux-pagemode-status.fuzzy {
-	background: url(../images/outdated-ltr.png) left center no-repeat;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/outdated-ltr.svg);
+	background: url( ../images/outdated-ltr.png ) left center no-repeat;
+	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/outdated-ltr.svg );
 	/* @embed */
-	background-image: linear-gradient(transparent, transparent), url(../images/outdated-ltr.svg);
+	background-image: linear-gradient( transparent, transparent ), url( ../images/outdated-ltr.svg );
 }
 
 .tux-pagemode-status.untranslated {
-	background: url(../images/translate-ltr.png) left center no-repeat;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/translate-ltr.svg);
+	background: url( ../images/translate-ltr.png ) left center no-repeat;
+	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/translate-ltr.svg );
 	/* @embed */
-	background-image: linear-gradient(transparent, transparent), url(../images/translate-ltr.svg);
+	background-image: linear-gradient( transparent, transparent ), url( ../images/translate-ltr.svg );
 }
 
 .tux-pagemode-action {
-	background: url(../images/check-sprite-ltr.png) right top no-repeat;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/check-sprite-ltr.svg);
+	background: url( ../images/check-sprite-ltr.png ) right top no-repeat;
+	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/check-sprite-ltr.svg );
 	/* @embed */
-	background-image: linear-gradient(transparent, transparent), url(../images/check-sprite-ltr.svg);
+	background-image: linear-gradient( transparent, transparent ), url( ../images/check-sprite-ltr.svg );
 	height: 31px;
 	cursor: pointer;
 }
@@ -100,10 +100,10 @@
 }
 
 .tux-pagemode-edit {
-	background-image: url(../images/edit-mark.png);
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/edit-mark.svg);
+	background-image: url( ../images/edit-mark.png );
+	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/edit-mark.svg );
 	/* @embed */
-	background-image: linear-gradient(transparent, transparent), url(../images/edit-mark.svg);
+	background-image: linear-gradient( transparent, transparent ), url( ../images/edit-mark.svg );
 	background-repeat: no-repeat;
 	background-position: right center;
 	height: 40px;
