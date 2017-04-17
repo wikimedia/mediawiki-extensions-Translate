@@ -1,11 +1,11 @@
 /* Form at Special:Translate */
 .mw-sp-translate-error {
 	font-style: italic;
-	background-color: yellow;
+	background-color: #ff0;
 }
 
 /* This gets pretty far on wide screens... */
-.mw-sp-translate-settings input[type=submit] {
+.mw-sp-translate-settings input[type='submit'] {
 	float: right;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .mw-sp-translate-table tr.opt {
-	background-color: #F2F200;
+	background-color: #f2f200;
 }
 
 .mw-sp-translate-table .untranslated {

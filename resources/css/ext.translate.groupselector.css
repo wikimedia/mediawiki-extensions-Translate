@@ -13,9 +13,9 @@
 	width: 600px;
 	padding: 0;
 	border: 1px solid #888;
-	background-color: #F0F0F0;
+	background-color: #f0f0f0;
 	border-radius: 5px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba( 0, 0, 0, 0.2 );
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding;
 	background-clip: padding-box;
@@ -27,7 +27,7 @@
 	border-bottom: 7px solid #888;
 	border-left: 7px solid transparent;
 	border-right: 7px solid transparent;
-	content: "";
+	content: '';
 	display: inline-block;
 	left: 99px;
 	position: absolute;
@@ -35,10 +35,10 @@
 }
 
 .tux-groupselector:after {
-	border-bottom: 6px solid #F0F0F0;
+	border-bottom: 6px solid #f0f0f0;
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
-	content: "";
+	content: '';
 	display: inline-block;
 	left: 100px;
 	position: absolute;
@@ -52,8 +52,8 @@
 }
 
 .grid .row .tux-groupselector__title {
-	border: none;
-	color: #555555;
+	border: 0;
+	color: #555;
 	font-size: 14pt;
 	font-weight: normal;
 	line-height: 1.25em;
@@ -70,14 +70,14 @@
 	font-size: 14px;
 	width: 100%;
 	height: 28px;
-	border: 1px solid #C9C9C9;
+	border: 1px solid #c9c9c9;
 }
 
 .tux-groupselector__filter__search__icon {
-	background: url(../images/search.png) no-repeat scroll right center transparent;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/search.svg);
+	background: url( ../images/search.png ) no-repeat scroll right center transparent;
+	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/search.svg );
 	/* @embed */
-	background-image: linear-gradient(transparent, transparent), url(../images/search.svg);
+	background-image: linear-gradient( transparent, transparent ), url( ../images/search.svg );
 	background-size: 25px;
 	height: 28px;
 	width: 28px;
@@ -104,7 +104,7 @@
 }
 
 .tux-grouptab--selected {
-	border-bottom: 2px solid #0645AD;
+	border-bottom: 2px solid #0645ad;
 }
 
 /*
@@ -114,14 +114,14 @@
 	max-height: 400px;
 	overflow-y: auto;
 	overflow-x: hidden;
-	background-color: #FFFFFF;
+	background-color: #fff;
 	min-height: 200px;
 	border-radius: 0 0 5px 5px;
 }
 
 .tux-grouplist__item {
 	position: relative;
-	border-bottom: 1px solid #EEEEEE;
+	border-bottom: 1px solid #eee;
 	height: 50px;
 	cursor: pointer;
 }
@@ -142,10 +142,10 @@
 }
 
 .tux-grouplist__item__icon {
-	background: url(../images/project.png) no-repeat scroll right center transparent;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/project.svg);
+	background: url( ../images/project.png ) no-repeat scroll right center transparent;
+	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/project.svg );
 	/* @embed */
-	background-image: linear-gradient(transparent, transparent), url(../images/project.svg);
+	background-image: linear-gradient( transparent, transparent ), url( ../images/project.svg );
 	/* Keep this in sync with js! */
 	background-size: 32px;
 	height: 50px;
