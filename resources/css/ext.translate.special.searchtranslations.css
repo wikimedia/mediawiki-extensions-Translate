@@ -5,7 +5,7 @@
  */
 
 .tux-searchpage .tux-selectedbox .facet-item {
-	background-color: #EDEDED;
+	background-color: #ededed;
 	margin-right: 5px;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .tux-searchpage .facet-item .facet-count {
-	color: #AAA;
+	color: #aaa;
 	float: right;
 	margin-right: 5%;
 }
@@ -63,7 +63,7 @@
 
 .tux-searchpage .facet-item a:visited,
 .tux-searchpage .facet-item a:link {
-	color: #0645AD;
+	color: #0645ad;
 }
 
 /* Results */
@@ -122,17 +122,17 @@ h1.firstHeading {
 
 .translate-search-more-groups,
 .translate-search-more-languages {
-	background-color: #F0F0F0;
+	background-color: #f0f0f0;
 	font-size: 16px;
 	cursor: pointer;
 	padding: 0 6px;
 	border-radius: 2px;
-	border: 1px solid #EEE;
+	border: 1px solid #eee;
 }
 
 .translate-search-more-groups:hover,
 .translate-search-more-languages:hover {
-	border: 1px solid #CCC;
+	border: 1px solid #ccc;
 	text-decoration: none;
 }
 
@@ -161,5 +161,5 @@ h1.firstHeading {
 }
 
 .tux-search-highlight {
-	background-color: #C9C9C9;
+	background-color: #c9c9c9;
 }

@@ -16,5 +16,5 @@
 .tagcloud .tag {
 	white-space: nowrap;
 	margin: 0.5ex;
-	color: black;
+	color: #000;
 }

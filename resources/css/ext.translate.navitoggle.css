@@ -14,17 +14,17 @@
 }
 
 .tux-navitoggle {
-	background: url('../images/expand-rtl.png') no-repeat scroll right center transparent;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/expand-rtl.svg);
+	background: url( ../images/expand-rtl.png ) no-repeat scroll right center transparent;
+	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/expand-rtl.svg );
 	/* @embed */
-	background-image: linear-gradient(transparent, transparent), url(../images/expand-rtl.svg);
+	background-image: linear-gradient( transparent, transparent ), url( ../images/expand-rtl.svg );
 }
 
 .tux-navi-collapsed .tux-navitoggle {
-	background: url('../images/expand-ltr.png') no-repeat scroll right center transparent;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/expand-ltr.svg);
+	background: url( ../images/expand-ltr.png ) no-repeat scroll right center transparent;
+	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/expand-ltr.svg );
 	/* @embed */
-	background-image: linear-gradient(transparent, transparent), url(../images/expand-ltr.svg);
+	background-image: linear-gradient( transparent, transparent ), url( ../images/expand-ltr.svg );
 }
 
 .tux-navi-collapsed #mw-panel {

@@ -14,13 +14,13 @@ h1 {
 }
 
 .translate-welcome-header > p {
-	color: #555555;
+	color: #555;
 	font-size: 1.2em;
 }
 
 .translate-welcome-header {
-	background-color: #F8F8F8;
-	background-image: linear-gradient(#fAFAFA, #f8f8f8);
+	background-color: #f8f8f8;
+	background-image: linear-gradient( #fafafa, #f8f8f8 );
 	border-bottom: 1px solid #eee;
 	padding: 10px;
 }
@@ -38,12 +38,12 @@ h1 {
 
 .translate-stash-control {
 	font-size: 1.5em;
-	color: #555555;
+	color: #555;
 	padding: 35px 10px 20px 5px;
 }
 
 .ext-translate-language-selector-label {
-	color: #555555;
+	color: #555;
 }
 
 .ext-translate-language-selector {
@@ -59,7 +59,7 @@ h1 {
 	border-left: 4px solid transparent;
 	border-right: 4px solid transparent;
 	border-top: 4px solid #0645AD;
-	content: "";
+	content: '';
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -87,7 +87,7 @@ h1 {
 }
 
 .tux-message:first-child .tux-message-item {
-	border-top: 1px solid #C9C9C9;
+	border-top: 1px solid #c9c9c9;
 }
 
 .tux-message-item.translated {
