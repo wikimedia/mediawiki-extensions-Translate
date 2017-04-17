@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Mordecool",
-			"Dianakc"
+			"Dianakc",
+			"Felipe L. Ewald"
 		]
 	},
 	"apihelp-groupreview-param-language": "Código do idioma.",
 	"apihelp-query+languagestats-param-language": "Código da linguagem",
+	"apihelp-query+messagecollection-param-limit": "Quantas mensagem mostrar (após a filtragem).",
 	"apihelp-translatesandbox-param-do": "O que fazer.",
 	"apihelp-translationstash-param-subaction": "Ação."
 }

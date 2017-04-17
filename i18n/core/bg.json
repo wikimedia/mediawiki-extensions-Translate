@@ -87,6 +87,7 @@
 	"translate-pref-editassistlang": "Помощни езици:",
 	"prefs-translate": "Настройки на превеждането",
 	"right-translate": "Редактиране чрез интерфейса за превод",
+	"right-translate-import": "Импортиране на офлайн превод",
 	"action-translate-import": "импортиране на офлайн превод",
 	"translate-rc-translation-filter": "Филтриране на преводите:",
 	"translate-rc-translation-filter-no": "Без действие",
