@@ -41,21 +41,21 @@
 }
 
 .mw-pt-progress--stub {
-	background-image: url('../images/prog-1.png');
+	background-image: url( ../images/prog-1.png );
 }
 
 .mw-pt-progress--low {
-	background-image: url('../images/prog-2.png');
+	background-image: url( ../images/prog-2.png );
 }
 
 .mw-pt-progress--med {
-	background-image: url('../images/prog-3.png');
+	background-image: url( ../images/prog-3.png );
 }
 
 .mw-pt-progress--high {
-	background-image: url('../images/prog-4.png');
+	background-image: url( ../images/prog-4.png );
 }
 
 .mw-pt-progress--complete {
-	background-image: url('../images/prog-5.png');
+	background-image: url( ../images/prog-5.png );
 }
