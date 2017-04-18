@@ -22,6 +22,30 @@
       "revId": "3af934ec7cd6b9e4b8e0ad0814f72da9b62729d5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e506ba4_71a7b74c",
+        "filename": "tests/phpunit/ffs/AndroidXmlFFSTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-04-18T16:25:28Z",
+      "side": 1,
+      "message": "I am keeping the functionality that displays a real new line to the translator. I believe that part has not been problematic, just the way it is exported.\n\nFor this reason, I need to use double quotes so that \\n is treated as a new line.",
+      "parentUuid": "4e506ba4_71e2579e",
+      "range": {
+        "startLine": 57,
+        "startChar": 20,
+        "endLine": 57,
+        "endChar": 35
+      },
+      "revId": "3af934ec7cd6b9e4b8e0ad0814f72da9b62729d5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
