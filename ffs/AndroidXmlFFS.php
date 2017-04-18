@@ -81,6 +81,9 @@ class AndroidXmlFFS extends SimpleFFS {
 		// All html entities seen would be inserted by translators themselves.
 		// Treat them as plain text.
 		$escaped = str_replace( '&', '&amp;', $escaped );
+
+		// Newlines must be escaped
+		$escaped = str_replace( "\n", '\n', $escaped );
 		return $escaped;
 	}
 
