@@ -2,7 +2,7 @@
 	max-width: 400px;
 	padding: 0;
 	height: 5px;
-	background-color: #BBB;
+	background-color: #bbb;
 }
 
 .tux-statsbar span {
@@ -16,15 +16,15 @@
 }
 
 .tux-statsbar .tux-proofread {
-	background-color: #23567F;
+	background-color: #23567f;
 }
 
 .tux-statsbar .tux-translated {
-	background-color: #3A89C9;
+	background-color: #3a89c9;
 }
 
 .tux-statsbar .tux-fuzzy {
-	background-color: #EBCC6E;
+	background-color: #ebcc6e;
 }
 
 .tux-statsbar .tux-untranslated {

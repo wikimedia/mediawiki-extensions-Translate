@@ -3,7 +3,7 @@
  */
 .tux-breadcrumb {
 	margin-bottom: 10px;
-	color: #555555;
+	color: #555;
 	font-size: 14pt;
 	line-height: 1.25em;
 }
@@ -13,7 +13,7 @@
 	border-left: 4px solid #777;
 	border-top: 4px solid transparent;
 	border-bottom: 4px solid transparent;
-	content: "";
+	content: '';
 	display: inline-block;
 	vertical-align: middle;
 	position: relative;
@@ -35,12 +35,12 @@
 /* Color clickable groups to look as links */
 .tux-breadcrumb__item--aggregate {
 	cursor: pointer;
-	color: #0645AD;
+	color: #0645ad;
 }
 
 /* Language selector */
 .ext-translate-language-selector-label {
-	color: #555555;
+	color: #555;
 }
 
 .ext-translate-language-selector {
@@ -62,14 +62,14 @@
 	margin-left: 4px;
 	border-left: 4px solid transparent;
 	border-right: 4px solid transparent;
-	border-top: 4px solid #0645AD;
-	content: "";
+	border-top: 4px solid #0645ad;
+	content: '';
 	display: inline-block;
 	vertical-align: middle;
 }
 
 .ext-translate-language-selector .uls {
-	color: #0645AD;
+	color: #0645ad;
 	cursor: pointer;
 	min-height: 1px;
 	position: relative;
@@ -131,15 +131,15 @@
 }
 
 .tux-message-selector li.selected {
-	border-bottom: 2px solid #3366BB;
+	border-bottom: 2px solid #36b;
 }
 
 .tux-message-selector li.selected a {
-	color: #3366BB;
+	color: #36b;
 }
 
 .tux-message-selector li a {
-	color: #555555;
+	color: #555;
 	text-decoration: none;
 	white-space: nowrap;
 	margin-left: 1px;
@@ -147,7 +147,7 @@
 
 .tux-message-selector label {
 	font-size: 12pt;
-	color: #555555;
+	color: #555;
 	top: 1px;
 }
 
@@ -162,7 +162,7 @@
 }
 
 .group-warning {
-	background: #FFF5AA;
+	background: #fff5aa;
 	padding: 5px;
 	margin: 5px 0;
 }
@@ -175,7 +175,7 @@
 	padding-top: 5px;
 	border-bottom: 1px solid #777;
 	/* @noflip */
-	box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 3px 3px -3px rgba( 0, 0, 0, 0.5 );
 	font-size: 14px;
 	margin: 0;
 	list-style: none;
@@ -184,14 +184,14 @@
 
 @media screen and ( min-height: 600px ) {
 	.tux-messagetable-header.floating {
-		background: white;
+		background: #fff;
 		position: fixed;
 		padding-top: 5px;
 		top: 0;
 		z-index: 200;
 	}
 
-	.tux-messagetable-header.floating+.tux-messagelist {
+	.tux-messagetable-header.floating + .tux-messagelist {
 		margin-top: 50px;
 	}
 }
@@ -199,16 +199,16 @@
 .tux-message-filter-box {
 	font-size: 14px;
 	height: 28px;
-	border: 1px solid #C9C9C9;
+	border: 1px solid #c9c9c9;
 	width: 100%;
 	padding: 0 5px;
 }
 
 .tux-message-filter-wrapper {
-	background: url('../images/search.png') no-repeat scroll left center transparent;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/search.svg);
+	background: url( ../images/search.png ) no-repeat scroll left center transparent;
+	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/search.svg );
 	/* @embed */
-	background-image: linear-gradient(transparent, transparent), url(../images/search.svg);
+	background-image: linear-gradient( transparent, transparent ), url( ../images/search.svg );
 	background-size: 25px;
 	padding-left: 30px;
 }

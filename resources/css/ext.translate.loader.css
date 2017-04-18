@@ -2,28 +2,28 @@
 
 @-webkit-keyframes tux-loading-indicator-spin {
 	from {
-		-webkit-transform: rotate(0deg);
+		-webkit-transform: rotate( 0deg );
 	}
 	to {
-		-webkit-transform: rotate(360deg);
+		-webkit-transform: rotate( 360deg );
 	}
 }
 
 @keyframes tux-loading-indicator-spin {
 	from {
-		transform: rotate(0deg);
+		transform: rotate( 0deg );
 	}
 	to {
-		transform: rotate(360deg);
+		transform: rotate( 360deg );
 	}
 }
 
 .tux-loading-indicator {
 	float: left;
-	background: transparent url(../images/loading.gif) right bottom no-repeat;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/loading.svg);
+	background: transparent url( ../images/loading.gif ) right bottom no-repeat;
+	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/loading.svg );
 	/* @embed */
-	background-image: linear-gradient(transparent, transparent), url(../images/loading.svg);
+	background-image: linear-gradient( transparent, transparent ), url( ../images/loading.svg );
 	background-size: 100%;
 	-webkit-animation-name: tux-loading-indicator-spin;
 	-webkit-animation-duration: 1.5s;

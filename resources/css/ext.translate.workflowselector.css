@@ -22,7 +22,7 @@
 	border-left: 3px solid transparent;
 	border-right: 3px solid transparent;
 	border-top: 3px solid #555;
-	content: "";
+	content: '';
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -33,7 +33,7 @@ ul.tux-workflow-status-selector {
 }
 
 .tux-workflow-status-selector li {
-	color: #555555;
+	color: #555;
 	display: block;
 	font-size: 14px;
 	padding: 0 2px;
@@ -46,9 +46,9 @@ ul.tux-workflow-status-selector {
 }
 
 .tux-workflow-status-selector li.selected {
-	background: url(../images/label-tick.png) right no-repeat;
-	background-image: -webkit-linear-gradient(transparent, transparent), url(../images/label-tick.svg);
+	background: url( ../images/label-tick.png ) right no-repeat;
+	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/label-tick.svg );
 	/* @embed */
-	background-image: linear-gradient(transparent, transparent), url(../images/label-tick.svg);
+	background-image: linear-gradient( transparent, transparent ), url( ../images/label-tick.svg );
 	color: #252525;
 }
