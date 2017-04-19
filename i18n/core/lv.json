@@ -189,6 +189,7 @@
 	"tux-message-filter-optional-messages-label": "Papildu ziņas",
 	"tux-empty-list-translated-action": "Tulkot",
 	"tux-empty-no-messages-to-display": "Nav ziņu, ko parādīt.",
+	"tux-empty-list-other": "Nav nekā tulkojama",
 	"tux-empty-list-other-link": "Rādīt visus ziņojumus",
 	"tux-editor-close-tooltip": "Aizvērt",
 	"tux-editor-expand-tooltip": "Izvērst",
