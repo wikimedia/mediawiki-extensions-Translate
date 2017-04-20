@@ -76,11 +76,11 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	protected $_maxQueryTerms = 25;
 
 	/**
-	 * minimum similarity.
+	 * fuzziness.
 	 *
-	 * @var int minimum similarity
+	 * @var int fuzziness
 	 */
-	protected $_minSimilarity = 0.5;
+	protected $_fuzziness = 2;
 
 	/**
 	 * Prefix Length.
@@ -144,9 +144,9 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	 *
 	 * @return $this
 	 */
-	public function setMinSimilarity( $value ) {
-		$value = (float) $value;
-		$this->_minSimilarity = $value;
+	public function setFuzziness( $value ) {
+		$value = (int) $value;
+		$this->_fuzziness = $value;
 
 		return $this;
 	}
@@ -207,7 +207,7 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 			$args['analyzer'] = $this->_analyzer;
 		}
 
-		$args['min_similarity'] = ( $this->_minSimilarity > 0 ) ? $this->_minSimilarity : 0;
+		$args['fuzziness'] = ( $this->_fuzziness > 0 ) ? $this->_fuzziness : 0;
 
 		$args['like_text'] = $this->_likeText;
 		$args['prefix_length'] = $this->_prefixLength;

@@ -97,7 +97,6 @@ class ElasticSearchTTMServer
 		$connection->setTimeout( 10 );
 
 		$fuzzyQuery = new FuzzyLikeThis();
-		$fuzzyQuery->setMinSimilarity( 2 );
 		$fuzzyQuery->setLikeText( $text );
 		$fuzzyQuery->addFields( [ 'content' ] );
 
