@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Luckas"
+			"Luckas",
+			"Felipe L. Ewald"
 		]
 	},
-	"tux-sst-edit": "Editar tradução"
+	"tux-sst-edit": "Editar tradução",
+	"tux-sst-nosolr-title": "Pesquisa indisponível",
+	"tux-sst-solr-offline-title": "Pesquisa indisponível"
 }

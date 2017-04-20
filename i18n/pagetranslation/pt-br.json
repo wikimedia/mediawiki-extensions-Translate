@@ -87,6 +87,7 @@
 	"tpt-aggregategroup-new-description": "Descrição (opcional):",
 	"tpt-aggregategroup-remove-confirm": "Tem certeza que deseja remover este grupo agregador?",
 	"tpt-aggregategroup-invalid-group": "Grupo inexistente",
+	"tpt-aggregategroup-edit-name": "Nome:",
 	"tpt-aggregategroup-edit-description": "Descrição:",
 	"pt-parse-open": "O elemento &lt;translate> está desequilibrado.\nModelo de tradução: <pre>$1</pre>",
 	"pt-parse-close": "O elemento &lt;/translate> está desequilibrado.\nModelo de tradução: <pre>$1</pre>",
@@ -156,5 +157,7 @@
 	"pm-add-icon-hover-text": "Adicione uma unidade abaixo",
 	"pm-delete-icon-hover-text": "Excluir unidade",
 	"pm-pagetitle-invalid": "Por favor, forneça um título válido para á página.",
-	"pm-langcode-missing": "Por favor, insira o código de idioma"
+	"pm-langcode-missing": "Por favor, insira o código de idioma",
+	"pp-save-button-label": "Salvar",
+	"pp-cancel-button-label": "Cancelar"
 }
