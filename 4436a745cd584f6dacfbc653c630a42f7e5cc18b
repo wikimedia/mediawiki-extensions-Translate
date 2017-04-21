@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e506ba4_7e9c4d12",
+        "filename": "utils/StatsTable.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-04-21T10:49:52Z",
+      "side": 1,
+      "message": "Please move this down so all code uses RGB order.",
+      "range": {
+        "startLine": 93,
+        "startChar": 3,
+        "endLine": 93,
+        "endChar": 8
+      },
+      "revId": "4436a745cd584f6dacfbc653c630a42f7e5cc18b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e506ba4_5e82b1aa",
+        "filename": "utils/StatsTable.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-04-21T10:49:52Z",
+      "side": 1,
+      "message": "It appears there is a mistake in this formula. The blue gradient stays at 33 for the first half, but with this formula the second half starts at 51, creating a sharp edge, and then goes down to negative values. This is not much of an issue because nothing of this is visible to the eye.",
+      "range": {
+        "startLine": 99,
+        "startChar": 28,
+        "endLine": 99,
+        "endChar": 46
+      },
+      "revId": "4436a745cd584f6dacfbc653c630a42f7e5cc18b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
