@@ -84,7 +84,7 @@ class Fuzzy extends Maintenance {
  */
 class FuzzyScript {
 	/**
-	/* @var string[] List of patterns to mark.
+	 * @var string[] List of patterns to mark.
 	 */
 	private $titles = [];
 
