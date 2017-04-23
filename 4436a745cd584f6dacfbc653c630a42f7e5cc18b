@@ -93,6 +93,30 @@
       "revId": "4436a745cd584f6dacfbc653c630a42f7e5cc18b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e506ba4_e9697e89",
+        "filename": "utils/StatsTable.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-04-23T15:09:31Z",
+      "side": 1,
+      "message": "Oh. I confused the 33 above with a dec number. Not sure what I did to get negative values. o_O All good here.",
+      "parentUuid": "4e506ba4_8e1a407d",
+      "range": {
+        "startLine": 99,
+        "startChar": 28,
+        "endLine": 99,
+        "endChar": 46
+      },
+      "revId": "4436a745cd584f6dacfbc653c630a42f7e5cc18b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
