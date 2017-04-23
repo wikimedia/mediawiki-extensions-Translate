@@ -89,17 +89,17 @@ class StatsTable {
 
 		if ( $v < 128 ) {
 			// Red to Yellow
-			$red = sprintf( '%02X', ( 0.26 * $v ) + 221 );
-			$green = sprintf( '%02X', ( 1.33 * $v ) + 33 );
-			$blue = '33';
+			$red = 0.26 * $v + 221;
+			$green = 1.33 * $v + 33;
+			$blue = 51;
 		} else {
 			// Yellow to Green
-			$red = sprintf( '%02X', 2 * ( 255 - $v ) );
-			$green = sprintf( '%02X', ( 0.22 * ( 255 - $v ) ) + 175 );
-			$blue = sprintf( '%02X', ( 0.67 * $v ) - 34 );
+			$red = 2 * ( 255 - $v );
+			$green = 0.22 * ( 255 - $v ) + 175;
+			$blue = 0.67 * $v - 34;
 		}
 
-		return $red . $green . $blue;
+		return sprintf( '%02X%02X%02X', $red, $green, $blue );
 	}
 
 	/**
