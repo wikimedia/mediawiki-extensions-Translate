@@ -4,7 +4,8 @@
 			"SPQRobin",
 			"Siebrand",
 			"Sjoerddebruin",
-			"Arent"
+			"Arent",
+			"Mainframe98"
 		]
 	},
 	"managetranslatorsandbox": "Vertalersszandbak beheren",
@@ -35,6 +36,8 @@
 	"tsb-translations-user": "{{GENDER:$1|Gebruikersvertalingen}}",
 	"tsb-translations-current": "Bestaande vertalingen",
 	"tsb-delete-userpage-summary": "Gebruikerspagina van een zandbakgebruiker verwijderd",
+	"tsb-reject-confirmation": "{{PLURAL:$1|Gebruiker|Gebruikers}} afgewezen",
+	"tsb-accept-confirmation": "{{PLURAL:$1|Gebruiker|Gebruikers}} toegelaten",
 	"translationstash": "Welkomstpagina voor vertalers",
 	"translate-translationstash-welcome": "Welkom {{GENDER:$1|$1}}, u bent nu vertaler",
 	"translate-translationstash-welcome-note": "Raak vertrouwd met de vertaalhulpmiddelen. Vertaal een aantal willekeurig geselecteerde berichten en krijg volledige vertaalrechten voor uw favoriete projecten.",
@@ -45,7 +48,7 @@
 	"tsb-limit-reached-body": "U hebt de limiet voor het aantal vertalingen voor nieuwe vertalers bereikt.\nOns team gaat ze snel controleren en promoveert uw gebruiker snel, zodat u zonder beperkingen kunt gaan vertalen.",
 	"tsb-no-requests-from-new-users": "Geen verzoeken van nieuwe gebruikers",
 	"tsb-create-user-page": "Eenvoudige gebruikerspagina aangemaakt",
-	"log-name-translatorsandbox": "Vertalingenzandbak",
+	"log-name-translatorsandbox": "Vertalingenzandbaklogboek",
 	"log-description-translatorsandbox": "Een logboek van de handelingen van gebruikers in de vertalingenzandbak.",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|heeft}} $3 gepromoveerd tot {{GENDER:$4|vertaler}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|heeft}} het verzoek van \"$3\" om vertaler te worden geweigerd",

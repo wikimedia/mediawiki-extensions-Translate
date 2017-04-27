@@ -199,5 +199,6 @@
 	"pp-diff-old-header": "Brontekst",
 	"pp-diff-new-header": "Voorbereide tekst",
 	"tpt-unlink-button": "Verwijderen uit vertaling",
+	"tpt-generic-confirm": "Bevestig de handeling.",
 	"tpt-generic-button": "Bevestigen"
 }

@@ -1,19 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kandar"
+			"Kandar",
+			"Uchup19"
 		]
 	},
 	"pagetranslation": "Alihbasa kaca",
 	"tpt-diff-old": "Téks saméméhna",
 	"tpt-diff-new": "Téks anyar",
 	"tpt-nosuchpage": "Kaca $1 euweuh.",
+	"tpt-select-prioritylangs-reason": "Alesan:",
 	"tpt-languages-nonzero": "$1 ($2% tarjamah)",
+	"tpt-translation-restricted": "Alesan: $1",
+	"tpt-discouraged-language-reason": "Alesan: $1",
+	"tpt-aggregategroup-update-cancel": "Bolay",
 	"pt-movepage-current": "Ngaran ayeuna:",
 	"pt-movepage-new": "Ngaran anyar:",
 	"pt-movepage-reason": "Alesan:",
 	"pt-movepage-subpages": "Pindahkeun sakabéh subkaca",
 	"pt-movepage-action-check": "Pariksa susuganan bisa dipindahkeun",
 	"pt-movepage-action-perform": "Pindahkeun",
-	"pt-movepage-action-other": "Ganti tujul"
+	"pt-movepage-action-other": "Ganti tujul",
+	"pt-deletepage-reason": "Alesan:",
+	"pm-cancel-button-label": "Bolay",
+	"pp-cancel-button-label": "Bolay"
 }

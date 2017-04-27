@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Irwangatot",
-			"Kandar"
+			"Kandar",
+			"Uchup19"
 		]
 	},
 	"translate": "Alih basakeun",
@@ -70,5 +71,7 @@
 	"translate-save": "Simpen ($1)",
 	"translate-gs-code": "Sandi",
 	"translate-gs-continent": "Buana",
-	"translate-documentation-language": "Dokuméntasi talatah"
+	"translate-documentation-language": "Dokuméntasi talatah",
+	"tux-editor-cancel-button-label": "Bolay",
+	"tux-editor-doc-editor-cancel": "Bolay"
 }

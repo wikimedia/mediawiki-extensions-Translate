@@ -3,7 +3,9 @@
 		"authors": [
 			"Sjoerddebruin",
 			"Siebrand",
-			"Robin0van0der0vliet"
+			"Robin0van0der0vliet",
+			"Mainframe98",
+			"Robin van der Vliet"
 		]
 	},
 	"apihelp-groupreview-param-group": "Berichtgroep.",
@@ -11,6 +13,7 @@
 	"apihelp-query+languagestats-param-language": "Taalcode.",
 	"apihelp-query+messagecollection-param-group": "Berichtgroep.",
 	"apihelp-query+messagecollection-param-language": "Taalcode.",
+	"apihelp-query+messagecollection-example-1": "Lijst van ondersteunde talen",
 	"apihelp-query+messagecollection-example-2": "Lijst met niet-optionele berichtdefinities voor de groep \"page-Example\"",
 	"apihelp-query+messagecollection-example-3": "Lijst met optionele berichten in het Fins met labels voor de groep \"page-Example\"",
 	"apihelp-query+messagecollection-example-4": "Meer informatie over de nieuwste vertaalde versies voor de groep \"page-Example\"",
