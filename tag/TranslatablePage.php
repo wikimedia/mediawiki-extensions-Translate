@@ -844,6 +844,9 @@ class TranslatablePage {
 	 */
 	public static function isSourcePage( Title $title ) {
 		$cache = ObjectCache::getMainWANInstance();
+		// BC for MediaWiki 1.27
+		$pcTTL = defined( 'WANObjectCache::TTL_PROC_LONG' ) ? $cache::TTL_PROC_LONG : 30;
+
 		$translatablePageIds = $cache->getWithSetCallback(
 			$cache->makeKey( 'pagetranslation', 'sourcepages' ),
 			$cache::TTL_MINUTE * 5,
@@ -853,7 +856,7 @@ class TranslatablePage {
 
 				return TranslatablePage::getTranslatablePages();
 			},
-			[ 'pcTTL' => $cache::TTL_PROC_LONG, 'pcGroup' => __CLASS__ . ':30' ]
+			[ 'pcTTL' => $pcTTL, 'pcGroup' => __CLASS__ . ':30' ]
 		);
 
 		return in_array( $title->getArticleID(), $translatablePageIds );
