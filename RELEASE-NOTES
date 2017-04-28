@@ -1,0 +1,18 @@
+== Translate 2017.04 ==
+Released at 2017-04-28.
+
+=== Noteworthy changes ===
+* Bartosz Dziewoński fixed "Mark as reviewed" tooltip positioning.
+* David Causse added support for Elastic5, Multi-DC for TTMServices,
+freezing writes.
+* Federico Leva fixed import of the new translations in
+Special:ImportTranslations.
+* Geoffrey Mon added insertables suggester class for $1, $2 and allow multiple
+suggesters.
+* MarcoAurelio modified log message to match with all other logs listed in
+Special:Log.
+* Niklas Laxström added support to allow moving all pages for translation
+admins (translate-manage).
+* TTO updated translator-stats to account for expiring user groups.
+* datguy added confirmation box in Special:ManageTranslatorSandbox when
+approving or rejecting a translator. (T60706)
