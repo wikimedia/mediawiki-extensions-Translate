@@ -192,7 +192,7 @@
 	"translate-mgs-totals": "Tots els idiomes junts",
 	"translate-mgs-invalid-group": "El grup $1 especificat no existeix.",
 	"translate-mgs-nothing": "Res a mostrar per l'estadística soŀlicitada.",
-	"supportedlanguages": "Idiomes compatibles",
+	"supportedlanguages": "Llengües admeses",
 	"supportedlanguages-summary": "Aquesta pàgina mostra una llista de tots els idiomes que es poden utilitzar a {{SITENAME}} juntament amb els noms dels traductors que treballen en cadascun d'ells.\nEl nom del traductor apareix més gran com més traduccions hagi contribuït a fer.\nEl color del subratllat indica si el traductor ha estat actiu recentment.",
 	"supportedlanguages-colorlegend": "Llegenda per al color: La darrera traducció va ser fa $1 dies.",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Traductor}}|Traductors}}: $1",

@@ -190,7 +190,7 @@
 	"translate-mgs-totals": "Todas as linguas xuntas",
 	"translate-mgs-invalid-group": "O grupo especificado, \"$1\", non existe.",
 	"translate-mgs-nothing": "Non hai nada que mostrar para as estatísticas solicitadas.",
-	"supportedlanguages": "Linguas soportadas",
+	"supportedlanguages": "Linguas admitidas",
 	"supportedlanguages-summary": "Esta páxina mostra unha lista de todas as linguas soportadas por {{SITENAME}},\nasí como os nomes dos tradutores que traballan nelas.\nCantas máis contribucións fixese un usuario, máis grande aparecerá o seu nome.\nA cor do suliñado indica como de activo estivo o tradutor recentemente.",
 	"supportedlanguages-colorlegend": "Lenda das cores: Última tradución hai $1 días.",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Tradutor|Tradutora}}|Tradutores}}: $1",
