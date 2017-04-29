@@ -232,7 +232,7 @@
 	"translate-import-err-invalid-title": "El nom del fitxer <nowiki>$1</nowiki> no és vàlid.",
 	"translate-import-err-no-such-file": "El fitxer <nowiki>$1</nowiki>no existeix o no s'ha carregat localment.",
 	"translate-import-err-stale-group": "El grup de missatges al qual aquest fitxer pertany no existeix.",
-	"translate-import-err-no-headers": "El fitxer no és un arxiu Gettext ben formatejat en el format de l'extensió de traducció:\n\nImpossible determinar el grup de missatges i l'idioma des dels encapçalaments.",
+	"translate-import-err-no-headers": "Aquest no és un fitxer Gettext ben formatat en el format d’extensió del Translate:\n\nNo s’ha pogut determinar el grup de missatges i l’idioma des dels encapçalaments.",
 	"translate-import-err-warnings": "El fitxer no està correctament formatejat.\nAssegureu-vos que el vostre editor no elimini els camps msgctxt.\nDetalls: $1",
 	"translate-js-summary": "Resum:",
 	"translate-js-save": "Desa",

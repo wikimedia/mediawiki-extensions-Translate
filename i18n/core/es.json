@@ -250,7 +250,7 @@
 	"translate-import-err-invalid-title": "El nombre de archivo <nowiki>$1</nowiki> no es válido.",
 	"translate-import-err-no-such-file": "El archivo <nowiki>$1</nowiki> no existe o no ha sido subido localmente.",
 	"translate-import-err-stale-group": "El grupo de mensajes al que pertenece este archivo no existe.",
-	"translate-import-err-no-headers": "El archivo no es un archivo Gettext bien formado en formato de extensión Translate:\nNo se puede determinar el grupo y el idioma a partir de los encabezados de archivo.",
+	"translate-import-err-no-headers": "Este no es un archivo Gettext bien formado en el formato de extensión Translate:\nNo se puede determinar el grupo y el idioma a partir de las cabeceras del archivo.",
 	"translate-import-err-warnings": "El archivo no está bien constituído.\nAsegúrese de que su editor no quita los campos msgctxt.\nDetalles: $1",
 	"translate-js-summary": "Resumen:",
 	"translate-js-save": "Guardar",

@@ -99,6 +99,7 @@
 	"log-name-pagetranslation": "Registro de tradução de páginas",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|marcou}} $3 para tradução",
 	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|removeu}} $3 das páginas para tradução",
+	"log-action-filter-pagetranslation": "Tipo de ação:",
 	"pt-movepage-title": "Mover a página traduzível $1",
 	"pt-movepage-blockers": "A página traduzível não pode ser movida para outro nome devido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:",
 	"pt-movepage-block-base-exists": "Existe a página traduzível de destino \"[[:$1]]\".",
