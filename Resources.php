@@ -267,7 +267,6 @@ $wgResourceModules['ext.translate.quickedit'] = [
 $wgResourceModules['ext.translate.recentgroups'] = [
 	'scripts' => 'resources/js/ext.translate.recentgroups.js',
 	'dependencies' => [
-		'es5-shim',
 		'mediawiki.storage',
 	],
 ] + $resourcePaths;
