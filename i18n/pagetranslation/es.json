@@ -131,6 +131,7 @@
 	"logentry-pagetranslation-dissociate": "$1 {{GENDER:$2|eliminó}} la página traducible $3 del grupo agregado $4",
 	"log-action-filter-pagetranslation": "Tipo de acción:",
 	"log-action-filter-pagetranslation-mark": "Marcar para su traducción",
+	"log-action-filter-pagetranslation-move": "Traslados de página",
 	"log-action-filter-pagetranslation-delete": "Eliminación de páginas",
 	"log-action-filter-pagetranslation-prioritylanguages": "Modificación de idiomas prioritarios",
 	"log-action-filter-pagetranslation-aggregategroups": "Modificación de grupos del agregado",

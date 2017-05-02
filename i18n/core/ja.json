@@ -320,6 +320,7 @@
 	"tux-status-saving": "保存中...",
 	"tux-status-unsaved": "未保存",
 	"tux-editor-placeholder": "あなたの翻訳を入力",
+	"tux-editor-editsummary-placeholder": "要約 (省略可能)",
 	"tux-editor-paste-original-button-label": "原文を貼り付け",
 	"tux-editor-discard-changes-button-label": "変更内容を破棄",
 	"tux-editor-save-button-label": "翻訳を保存",
