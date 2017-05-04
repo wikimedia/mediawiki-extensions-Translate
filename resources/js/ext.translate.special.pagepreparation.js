@@ -392,7 +392,8 @@
 			pageName = $.trim( $input.val() );
 			messageDiv.hide();
 			if ( pageName === '' ) {
-				window.alert( mw.msg( 'pp-pagename-missing' ) );
+				// eslint-disable-next-line no-alert
+				alert( mw.msg( 'pp-pagename-missing' ) );
 				return;
 			}
 

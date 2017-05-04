@@ -142,7 +142,8 @@
 						instance.receiveState( instance.groupId, instance.language, state );
 					} )
 					.fail( function () {
-						window.alert( 'Change of state failed' );
+						// eslint-disable-next-line no-alert
+						alert( 'Change of state failed' );
 					} );
 			} );
 			instance.$container.append( $display, $list );

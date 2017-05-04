@@ -109,7 +109,8 @@
 
 	function checkDirty() {
 		if ( mw.translate.isDirty() ) {
-			return window.confirm( mw.msg( 'translate-js-support-unsaved-warning' ) );
+			// eslint-disable-next-line no-alert
+			return confirm( mw.msg( 'translate-js-support-unsaved-warning' ) );
 		}
 		return true;
 	}

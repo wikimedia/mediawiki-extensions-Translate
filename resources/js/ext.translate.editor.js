@@ -235,6 +235,7 @@
 					response.error && response.error.info || mw.msg( 'tux-save-unknown-error' )
 				);
 				if ( errorCode === 'assertuserfailed' ) {
+					// eslint-disable-next-line no-alert
 					window.alert( mw.msg( 'tux-session-expired' ) );
 				}
 			} );
