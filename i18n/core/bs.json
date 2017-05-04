@@ -382,7 +382,7 @@
 	"tux-editor-message-tools-history": "Historija",
 	"tux-editor-message-tools-delete": "Obriši",
 	"tux-editor-message-tools-translations": "Svi prijevodi",
-	"tux-editor-loading": "Učitavanje...",
+	"tux-editor-loading": "Učitavam...",
 	"translate-search-more-languages-info": "još $1 {{PLURAL:$1|jezik|jezika}}",
 	"translate-statsbar-tooltip": "$1% prevedeno, $2% pregledano",
 	"translate-statsbar-tooltip-with-fuzzy": "‎$1% prevedeno, $2% pregledano, $3% zastareno",

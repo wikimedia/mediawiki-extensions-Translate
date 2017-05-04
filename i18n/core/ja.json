@@ -75,6 +75,7 @@
 	"translate-use-suggestion": "この現在の翻訳を、この翻訳提案に置き換えます。",
 	"translate-edit-nopermission": "メッセージを翻訳する権限が必要です。",
 	"translate-edit-askpermission": "権限を取得",
+	"exporttranslations": "翻訳の書き出し",
 	"translate-export-form-format": "形式",
 	"translate-magic-pagename": "拡張MediaWiki翻訳",
 	"translate-magic-help": "特別ページへのエイリアス、マジックワード、名前空間名を翻訳できます。\n\n特別ページへのエイリアスとマジックワードには複数の翻訳を当てられます。\n複数の翻訳がある場合はカンマ (,) で区切ってください。\n名前空間名には 1 つの翻訳のみを当てられます。\n\nプロジェクトのトーク名前空間 <code>$1 talk</code> の翻訳は複雑かもしれません。\n<code>$1</code> はプロジェクトのサイト名に置換されます (例: <code>{{ns:project_talk}}</code>)。\nあなたの言語において、サイト名の変更なしでは正しく表現できない場合は、[[Support]] にお問い合わせください。\n\nあなたが翻訳者であれば、変更を保存できます。\n下の保存ボタンをクリックするまで、変更内容は保存されません。",

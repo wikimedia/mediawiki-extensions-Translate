@@ -14,7 +14,8 @@
 			"Rex",
 			"William Surya Permana",
 			"පසිඳු කාවින්ද",
-			"NoiX180"
+			"NoiX180",
+			"Uchup19"
 		]
 	},
 	"translate": "Terjemahkan",
@@ -330,7 +331,7 @@
 	"tux-editor-cancel-button-label": "Batal",
 	"tux-editor-confirm-button-label": "Konfirmasikan terjemahan",
 	"tux-editor-proofread-button-label": "Tengeri yèn wis ditinjo",
-	"tux-editor-shortcut-info": "Pencèta \"$1\" yèn arep nyimpen utawa \"$2\" yèn arep nglangkahi nyang layang sabanjuré utawa \"$4\" yèn arep ngisi ringkesan utawa \"$3\" ngenani sidhatan liyané.",
+	"tux-editor-shortcut-info": "Tekan \"$1\" untuk menyimpan atau \"$2\" untuk lanjut ke pesan selanjutnya atau \"$4\" untuk menyediakan ringkasan atau \"$3\" untuk pintasan lainnya.",
 	"tux-editor-edit-desc": "Sunting dokumentasi",
 	"tux-editor-add-desc": "Tambah dokumentasi",
 	"tux-editor-suggestions-title": "Saran",
