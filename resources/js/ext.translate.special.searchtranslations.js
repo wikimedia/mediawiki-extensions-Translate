@@ -260,7 +260,7 @@
 			}
 
 			$groupRow = $( '<div>' )
-				.addClass( 'row facet-item ' + ' facet-level-' + level )
+				.addClass( 'row facet-item facet-level-' + level )
 				.append( $( '<span>' )
 					.addClass( 'facet-name ' + selectedClass )
 					.append( $( '<a>' )

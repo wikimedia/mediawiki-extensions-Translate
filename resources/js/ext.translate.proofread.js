@@ -232,7 +232,7 @@
 			} ).fail( function ( errorCode ) {
 				$message.find( '.tux-proofread-action' ).addClass( 'tux-warning' );
 				if ( errorCode === 'assertuserfailed' ) {
-					/* eslint-disable-next-line no-alert */
+					// eslint-disable-next-line no-alert
 					alert( mw.msg( 'tux-session-expired' ) );
 				}
 			} );
