@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e1cb3f9_c60abfd5",
+        "filename": "resources/js/ext.translate.special.aggregategroups.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2017-05-05T15:31:42Z",
+      "side": 1,
+      "message": "Also this one…",
+      "range": {
+        "startLine": 101,
+        "startChar": 7,
+        "endLine": 101,
+        "endChar": 16
+      },
+      "revId": "7e9f46d1d8993433b889151b1bd42ee04bca3ddf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
