@@ -41,5 +41,6 @@
 	"apihelp-searchtranslations-example-2": "Показать непереведённые сообщения, соответствующие запросу на исходном языке.",
 	"apierror-translate-language-disabled": "Перевод на этот язык отключен",
 	"apierror-translate-owntranslation": "Не может проверять собственные переводы",
+	"apierror-translate-unknownmessage": "Неизвестное сообщение",
 	"apiwarn-translate-alreadyreviewedbyyou": "Уже отмечены как просмотренные Вами"
 }
