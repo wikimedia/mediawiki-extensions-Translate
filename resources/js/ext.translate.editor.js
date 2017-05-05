@@ -236,7 +236,7 @@
 				);
 				if ( errorCode === 'assertuserfailed' ) {
 					// eslint-disable-next-line no-alert
-					window.alert( mw.msg( 'tux-session-expired' ) );
+					alert( mw.msg( 'tux-session-expired' ) );
 				}
 			} );
 		},
