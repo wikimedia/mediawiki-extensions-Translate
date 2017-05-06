@@ -111,17 +111,28 @@ class TranslateEditAddons {
 		if ( $handle->isDoc() ) {
 			$langCode = $context->getLanguage()->getCode();
 			$name = TranslateUtils::getLanguageName( $handle->getCode(), $langCode );
-			$accessKey = $context->msg( 'accesskey-save' )->plain();
-			$temp = [
+			$attribs = [
 				'id' => 'wpSave',
 				'name' => 'wpSave',
-				'type' => 'submit',
 				'tabindex' => ++$tabindex,
-				'value' => $context->msg( 'translate-save', $name )->text(),
-				'accesskey' => $accessKey,
-				'title' => $context->msg( 'tooltip-save' )->text() . ' [' . $accessKey . ']',
-			];
-			$buttons['save'] = Xml::element( 'input', $temp, '' );
+			] + Linker::tooltipAndAccesskeyAttribs( 'save' );
+
+			if ( method_exists( $editpage, 'isOouiEnabled' ) && $editpage->isOouiEnabled() ) {
+				$saveConfig = OOUI\Element::configFromHtmlAttributes( $attribs );
+				$buttons['save'] = new OOUI\ButtonInputWidget( [
+					// Support: IE 6 – Use <input>, otherwise it can't distinguish which button was clicked
+					'useInputTag' => true,
+					'flags' => [ 'constructive', 'primary' ],
+					'label' => $context->msg( 'translate-save', $name )->text(),
+					'type' => 'submit',
+				] + $saveConfig );
+			} else {
+				$buttons['save'] = Html::submitButton(
+					$context->msg( 'translate-save', $name )->text(),
+					$attribs,
+					[ 'mw-ui-progressive' ]
+				);
+			}
 		}
 
 		try {
@@ -130,17 +141,30 @@ class TranslateEditAddons {
 			return true;
 		}
 
-		$temp = [
+		$attribs = [
 			'id' => 'wpSupport',
 			'name' => 'wpSupport',
 			'type' => 'button',
 			'tabindex' => ++$tabindex,
-			'value' => $context->msg( 'translate-js-support' )->text(),
 			'title' => $context->msg( 'translate-js-support-title' )->text(),
-			'data-load-url' => $supportUrl,
-			'onclick' => "window.open( jQuery(this).attr('data-load-url') );",
 		];
-		$buttons['ask'] = Html::element( 'input', $temp, '' );
+
+		if ( $editpage->isOouiEnabled() ) {
+			$attribs += [
+				'label' => $context->msg( 'translate-js-support' )->text(),
+				'href' => $supportUrl,
+				'target' => '_blank',
+			];
+			$saveConfig = OOUI\Element::configFromHtmlAttributes( $attribs );
+			$buttons['ask'] = new OOUI\ButtonWidget( $saveConfig );
+		} else {
+			$attribs += [
+				'value' => $context->msg( 'translate-js-support' )->text(),
+				'data-load-url' => $supportUrl,
+				'onclick' => "window.open( $( this ).data( 'load-url' ) );",
+			];
+			$buttons['ask'] = Html::element( 'input', $attribs );
+		}
 
 		return true;
 	}
