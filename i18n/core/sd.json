@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Aursani"
+			"Aursani",
+			"Mehtab ahmed"
 		]
 	},
-	"translate-documentation-language": "نياپاتي دستاويزسازي"
+	"translate-documentation-language": "نياپاتي دستاويزسازي",
+	"tux-editor-cancel-button-label": "رد",
+	"tux-editor-doc-editor-cancel": "رد"
 }

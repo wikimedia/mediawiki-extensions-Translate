@@ -19,5 +19,7 @@
 	"tsb-translations-user": "{{GENDER:$1|Lankidearen}} itzulpen",
 	"translationstash": "Ongi etorri",
 	"translate-translationstash-welcome": "Ongi etorri {{GENDER:$1|$1}}, itzultzaile berria zara",
-	"translate-translationstash-skip-button-label": "Probatu beste bat"
+	"translate-translationstash-initialtranslation": "Zure hasierako itzulpena",
+	"translate-translationstash-skip-button-label": "Probatu beste bat",
+	"tsb-limit-reached-title": "Eskerrik asko zure itzulpenengatik"
 }

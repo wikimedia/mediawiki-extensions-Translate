@@ -8,7 +8,8 @@
 			"Жељко Тодоровић",
 			"Edinwiki",
 			"Srdjan m",
-			"Сербијана"
+			"Сербијана",
+			"Obsuser"
 		]
 	},
 	"translate": "Prevod",
@@ -346,7 +347,7 @@
 	"tux-empty-nothing-to-proofread": "Ništa za proveru",
 	"tux-empty-you-can-help-providing": "Možete da pomognete pružanjem novih prevoda",
 	"tux-empty-nothing-new-to-proofread": "Ništa novo za proveru",
-	"tux-empty-you-can-review-already-proofread": "Pregledaj te prevode već potvrđene od strane drugih.",
+	"tux-empty-you-can-review-already-proofread": "Pregledajte prevode već potvrđene od strane drugih.",
 	"tux-empty-list-other": "Ništa za prevođenje",
 	"tux-empty-list-other-guide": "Možete pomoći proverom postojećih prevoda",
 	"tux-empty-list-other-action": "Potvrđeni prevodi",

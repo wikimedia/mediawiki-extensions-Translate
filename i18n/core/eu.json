@@ -70,7 +70,7 @@
 	"translate-magic-namespace": "Izen-tarteen izenak",
 	"translate-magic-notsaved": "Zure edizioa ez da gorde!",
 	"translate-magic-errors": "Mesedez zuzendu ondorengo {{PLURAL:$1|akatsa|akatsak}} itzulpenetan:",
-	"translate-magic-saved": "Zure aldaketak ongi gorde dira.",
+	"translate-magic-saved": "Zure aldaketak gorde dira.",
 	"translate-checks-fudforum-syntax": "Proiektu honetan erabili <nowiki>$1</nowiki>, <nowiki>$2</nowiki>-ren ordez.",
 	"translate-pref-nonewsletter": "Ez iezadazu posta elektronikoaren bidezko berripaperik bidal",
 	"translate-pref-editassistlang": "Hizkuntza laguntzaileak:",

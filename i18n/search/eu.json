@@ -11,7 +11,7 @@
 	"tux-sst-search-ph": "Itzulpenak bilatu",
 	"tux-sst-count": "{{PLURAL:$1|Emaitza bat aurkitu da|$1 emaitza aurkitu dira}}",
 	"tux-sst-facet-language": "Hizkuntzak",
-	"tux-sst-facet-orphan": "(umezurtza)",
+	"tux-sst-facet-group": "Mezu-taldeak",
 	"tux-sst-nosolr-title": "Bilaketa ez dago erabilgarri",
 	"tux-sst-solr-offline-title": "Bilaketa ez dago erabilgarri",
 	"tux-sst-solr-offline-body": "Une honetan bilaketa zerbitzua ez dago erabilgarri.",

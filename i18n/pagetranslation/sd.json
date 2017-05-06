@@ -7,5 +7,8 @@
 		]
 	},
 	"tpt-mark-nochanges": "تبديلين جي ڪا به نظرثاني نه. ترجمي لاءِ هي صفحو نشاني بڻائڻ صفحي کي ترميم نه ڪندو، نه ئي اڳ موجود ترجمي جي يونٽ کي ترميم ڪندو",
-	"tpt-languages-nonzero": "$1 ($2% ترجمو ٿيل)"
+	"tpt-languages-nonzero": "$1 ($2% ترجمو ٿيل)",
+	"tpt-aggregategroup-update-cancel": "رد",
+	"pm-cancel-button-label": "رد",
+	"pp-cancel-button-label": "رد"
 }
