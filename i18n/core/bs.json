@@ -296,7 +296,7 @@
 	"translate-dynagroup-additions-label": "Nedavna dodavanja",
 	"translate-dynagroup-additions-desc": "Ova grupa poruka prikazuje nove i izmijenjene poruke.",
 	"translate-msggroupselector-projects": "Grupa poruka",
-	"translate-msggroupselector-search-placeholder": "Pretražite grupe",
+	"translate-msggroupselector-search-placeholder": "Pretraži grupe",
 	"translate-msggroupselector-search-all": "Sve",
 	"translate-msggroupselector-search-recent": "Nedavne",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|podgrupa|podgrupe}}",

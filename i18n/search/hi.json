@@ -1,14 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"NehalDaveND"
+			"NehalDaveND",
+			"Sfic"
 		]
 	},
 	"tux-sst-edit": "अनुवाद सम्पादित करें",
+	"tux-sst-view-foreign": "$1 में देखें",
 	"tux-sst-search": "खोजें",
 	"tux-sst-search-ph": "अनुवाद ढूँढे",
 	"tux-sst-facet-language": "भाषाएँ",
 	"tux-sst-facet-group": "संदेश-समूह",
 	"tux-sst-next": "अग्रिम ›",
-	"tux-sst-prev": "‹ पिछला"
+	"tux-sst-prev": "‹ पिछला",
+	"tux-sst-ellipsis-outdated": "पुराने अनुवाद"
 }

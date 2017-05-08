@@ -10,7 +10,15 @@
 	"apihelp-query+languagestats-param-language": "भाषा कोड",
 	"apihelp-query+messagecollection-param-group": "संदेश-समूह",
 	"apihelp-query+messagecollection-param-language": "भाषा कोड",
+	"apihelp-translatesandbox-param-do": "क्या करें",
 	"apihelp-translationreview-example-1": "अवलोकन अवतरण 1",
 	"apihelp-translationstash-param-subaction": "क्रिया",
-	"apihelp-searchtranslations-description": "अनुवाद खोजें।"
+	"apihelp-ttmserver-param-sourcelanguage": "स्रोत पाठ का भाषा कोड",
+	"apihelp-ttmserver-param-targetlanguage": "सुझाव का भाषा कोड",
+	"apihelp-ttmserver-param-text": "जिसके लिए सुझाव ढूँढना है, वह पाठ",
+	"apihelp-searchtranslations-description": "अनुवाद खोजें।",
+	"apihelp-searchtranslations-param-limit": "परिणाम का आकार",
+	"apihelp-searchtranslations-example-1": "भाषा का अनुवाद दिखाएँ",
+	"apierror-translate-invalidupdate": "अमान्य अद्यतन",
+	"apierror-translate-unknownmessage": "अज्ञात संदेश"
 }

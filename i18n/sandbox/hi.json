@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"NehalDaveND"
+			"NehalDaveND",
+			"Sfic"
 		]
 	},
 	"tsb-all-languages-button-label": "सभी भाषाएँ",
@@ -9,6 +10,8 @@
 	"tsb-reject-button-label": "अस्वीकृत",
 	"tsb-accept-all-button-label": "सभी स्वीकृत",
 	"tsb-reject-all-button-label": "सभी अस्वीकृत",
+	"tsb-user-posted-a-comment": "अनुवादक नहीं है",
 	"tsb-translations-source": "मूल",
-	"translationstash": "स्वागत"
+	"translationstash": "स्वागत",
+	"translate-translationstash-welcome": "स्वागत है {{GENDER:$1|$1}} जी, आप नए अनुवादक हैं"
 }
