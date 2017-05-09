@@ -12,7 +12,7 @@
  * Wraps the translatable page sections into a message group.
  * @ingroup PageTranslation MessageGroup
  */
-class WikiPageMessageGroup extends WikiMessageGroup {
+class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
 	/**
 	 * @var Title|string
 	 */
@@ -108,9 +108,10 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 	 *
 	 * @param string $key Message key
 	 * @param string $code Language code
+	 * @param integer $flags READ_* class constant bitfield
 	 * @return string|null Stored translation or null.
 	 */
-	public function getMessage( $key, $code ) {
+	public function getMessage( $key, $code, $flags = 0 ) {
 		if ( $this->isSourceLanguage( $code ) ) {
 			$stuff = $this->load( $code );
 
@@ -123,10 +124,14 @@ class WikiPageMessageGroup extends WikiMessageGroup {
 		}
 
 		$title = Title::makeTitleSafe( $this->getNamespace(), "$key/$code" );
-		$flags = PageTranslationHooks::$renderingContext
-			? Revision::READ_NORMAL // bug T95753
-			: Revision::READ_LATEST;
-		$rev = Revision::newFromTitle( $title, false, $flags );
+		if ( PageTranslationHooks::$renderingContext ) {
+			$revFlags = Revision::READ_NORMAL; // bug T95753
+		} else {
+			$revFlags = ( $flags & self::READ_LATEST ) == self::READ_LATEST
+				? Revision::READ_LATEST
+				: Revision::READ_NORMAL;
+		}
+		$rev = Revision::newFromTitle( $title, false, $revFlags );
 
 		if ( !$rev ) {
 			return null;
