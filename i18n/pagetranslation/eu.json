@@ -10,7 +10,6 @@
 	"pagetranslation": "Orrialdearen itzulpena",
 	"tpt-section-new": "Itzulpen unitate berria.\nIzena: $1",
 	"tpt-section-deleted": "$1 itzulpen unitatea",
-	"tpt-template": "Orrialde txantiloia",
 	"tpt-diff-old": "Aurreko testua",
 	"tpt-diff-new": "Testu berria",
 	"tpt-edit-failed": "Ezin izan da orrialdea eguneratu: $1",
@@ -20,6 +19,7 @@
 	"translate-tag-translate-link-desc": "Itzuli orri hau",
 	"tpt-languages-legend": "Beste hizkuntzak:",
 	"tpt-languages-nonzero": "$1 (%$2 itzulita)",
+	"tpt-tab-translate": "Itzuli",
 	"tpt-discouraged-language-reason": "Arrazoia: $1",
 	"tpt-aggregategroup-add": "Gehitu",
 	"tpt-aggregategroup-save": "Gorde",
@@ -39,9 +39,9 @@
 	"pt-movepage-subpages": "Azpiorrialde guztiak mugitu",
 	"pt-deletepage-current": "Orriaren izena:",
 	"pt-deletepage-reason": "Arrazoia:",
+	"pm-import-button-label": "Inportatu",
 	"pm-savepages-button-label": "Gorde",
 	"pm-cancel-button-label": "Utzi",
-	"pm-langcode-placeholder": "Hizkuntza-kodea",
 	"pm-page-does-not-exist": "$1 ez da existitzen.",
 	"pp-save-button-label": "Gorde"
 }

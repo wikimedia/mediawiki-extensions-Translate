@@ -7,6 +7,7 @@
 	},
 	"tsb-reminder-sent": "{{PLURAL:$1|Sent $1 reminder. Time: $2.|Sent $1 reminders. Time of the last one: $2.}}",
 	"tsb-reminder-sent-new": "Gogorarazpena bidali",
+	"tsb-request-count": "{{PLURAL:$1|Eskaera bat|$1 eskaera}}",
 	"tsb-all-languages-button-label": "Hizkuntza guztiak",
 	"tsb-accept-button-label": "Onartu",
 	"tsb-reject-button-label": "Ukatu",

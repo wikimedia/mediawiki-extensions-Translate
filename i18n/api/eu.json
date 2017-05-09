@@ -10,9 +10,11 @@
 	"apihelp-query+languagestats-param-language": "Hizkuntza-kodea.",
 	"apihelp-query+messagecollection-param-language": "Hizkuntza-kodea.",
 	"apihelp-query+messagecollection-example-1": "Onartutako hizkuntzen zerrenda",
+	"apihelp-query+messagegroups-example-1": "Erakutsi mezu-taldeak",
 	"apihelp-translatesandbox-param-do": "Egin beharrekoa.",
 	"apihelp-translationstash-param-subaction": "Ekintza.",
 	"apihelp-translationstash-param-translation": "Erabiltzaileak egindako itzulpena.",
 	"apihelp-translationstash-param-metadata": "JSON objektua.",
-	"apihelp-searchtranslations-description": "Itzulpenak bilatu"
+	"apihelp-searchtranslations-description": "Itzulpenak bilatu",
+	"apierror-translate-unknownmessage": "Mezu ezezaguna"
 }
