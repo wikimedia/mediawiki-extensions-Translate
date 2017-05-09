@@ -256,7 +256,7 @@ class TranslatablePage {
 			return null;
 		}
 
-		return $group->getMessage( "$page/$section", $code );
+		return $group->getMessage( "$page/$section", $code, $group::READ_NORMAL );
 	}
 
 	/**
