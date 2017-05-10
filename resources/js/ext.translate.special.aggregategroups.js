@@ -1,5 +1,3 @@
-/* eslint-disable no-alert */
-
 ( function ( $, mw ) {
 	'use strict';
 
@@ -27,7 +25,8 @@
 		api.postWithToken( 'csrf', params )
 			.done( successFunction )
 			.fail( function ( code, data ) {
-				window.alert( data.error && data.error.info );
+				// eslint-disable-next-line no-alert
+				alert( data.error && data.error.info );
 			} );
 	}
 
@@ -79,9 +78,11 @@
 			api.postWithToken( 'csrf', params )
 				.done( successFunction )
 				.fail( function ( code, data ) {
-					window.alert( data.error && data.error.info );
+					// eslint-disable-next-line no-alert
+					alert( data.error && data.error.info );
 				} );
 		} else {
+			// eslint-disable-next-line no-alert
 			alert( mw.msg( 'tpt-invalid-group' ) );
 		}
 	}
@@ -97,6 +98,7 @@
 
 		// XXX: 'confirm' is nonstandard.
 		if ( $.isFunction( window.confirm ) &&
+			// eslint-disable-next-line no-alert
 			window.confirm( mw.msg( 'tpt-aggregategroup-remove-confirm' ) ) ) {
 			params = $.extend( getApiParams( $target ), {
 				'do': 'remove'
@@ -105,7 +107,8 @@
 			api.postWithToken( 'csrf', params )
 				.done( successFunction )
 				.fail( function ( code, data ) {
-					window.alert( data.error && data.error.info );
+					// eslint-disable-next-line no-alert
+					alert( data.error && data.error.info );
 				} );
 		}
 	}
@@ -145,7 +148,8 @@
 		api.postWithToken( 'csrf', params )
 			.done( successFunction )
 			.fail( function ( code, data ) {
-				window.alert( data.error.info );
+				// eslint-disable-next-line no-alert
+				alert( data.error.info );
 			} );
 	}
 
@@ -354,7 +358,8 @@
 			api.postWithToken( 'csrf', params )
 				.done( successFunction )
 				.fail( function ( code, data ) {
-					window.alert( data.error && data.error.info );
+					// eslint-disable-next-line no-alert
+					alert( data.error && data.error.info );
 				} );
 		} );
 	} );
