@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e1cb3f9_d6e1f52a",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-05-10T14:09:17Z",
+      "side": 1,
+      "message": "You didn\u0027t change any callers in this patch, so I wonder why is all this code, that just defaults to READ_NORMAL, necessary?",
+      "revId": "1cb62892e4ef73e40784f87088c1fdba012f50f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
