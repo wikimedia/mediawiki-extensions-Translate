@@ -6,7 +6,8 @@
 			"Marmzok",
 			"Muhammed taha",
 			"رزگار",
-			"Sarchia"
+			"Sarchia",
+			"Lost Whispers"
 		]
 	},
 	"translate": "وەرگێڕان",
@@ -135,12 +136,14 @@
 	"translate-msggroupselector-projects": "پەیامی گرووپ",
 	"translate-msggroupselector-search-all": "ھەموو",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|ژێرگرووپ|ژێرگرووپەکان}}",
+	"tux-languageselector": "وەرگێڕان بۆ",
 	"tux-tab-all": "ھەموو",
 	"tux-tab-untranslated": "وەرنەگێڕراو",
 	"tux-tab-translated": "وەرگێڕراو",
 	"tux-edit": "دەستکاری",
 	"tux-status-translated": "وەرگێڕراو",
 	"tux-status-saving": "دەپارێزرێت...",
+	"tux-editor-placeholder": "وەرگێڕانەکانت",
 	"tux-editor-paste-original-button-label": "دەقی بنەڕەتی دابنێ",
 	"tux-editor-save-button-label": "وەرگێڕان بپارێزە",
 	"tux-editor-skip-button-label": "باز ببە بۆ دواتر",

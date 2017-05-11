@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Obsuser"
+		]
+	},
+	"tux-sst-count": "{{PLURAL:$1|Jedan rezultat pronađen|$1 rezultata pronađena|$1 rezultata pronađeno}}",
+	"tux-sst-case-sensitive": "Uvažavanje verzala"
+}

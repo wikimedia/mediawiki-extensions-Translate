@@ -160,7 +160,7 @@
 	"translate-searchprofile-tooltip": "सभी अनुवादों से खोज",
 	"translate-search-languagefilter": "निस्पंदन (छानना)  - भाषा के आधार पर",
 	"translate-search-nofilter": "निःनिस्पंदन (बिना छननी)",
-	"translate-messagereview-submit": "स्वीकारें",
+	"translate-messagereview-submit": "पुनरीक्षित चिन्हित करें",
 	"translate-messagereview-progress": "पुनरीक्षित कर रहे हैं...",
 	"translate-messagereview-failure": "पुनरीक्षण विफल हुआ... : $1",
 	"translate-messagereview-done": "पुनरीक्षित",

@@ -7,5 +7,6 @@
 	},
 	"translate-documentation-language": "نياپاتي دستاويزسازي",
 	"tux-editor-cancel-button-label": "رد",
-	"tux-editor-doc-editor-cancel": "رد"
+	"tux-editor-doc-editor-cancel": "رد",
+	"tux-editor-close-tooltip": "بند ڪريو"
 }

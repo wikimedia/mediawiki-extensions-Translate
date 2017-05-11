@@ -36,7 +36,8 @@
 			"Orikrin1998",
 			"Dr Brains",
 			"Wladek92",
-			"Yasten"
+			"Yasten",
+			"Thibaut120094"
 		]
 	},
 	"translate": "Traduire",
@@ -361,7 +362,7 @@
 	"tux-editor-suggestions-title": "Suggestions",
 	"tux-editor-in-other-languages": "En d’autres langues",
 	"tux-editor-need-more-help": "Besoin d’aide ?",
-	"tux-editor-ask-help": "Demander plus d’information",
+	"tux-editor-ask-help": "Demander plus d’informations",
 	"tux-editor-tm-match": "$1% correspond",
 	"tux-warnings-more": "{{PLURAL:$1|$1 de plus}}",
 	"tux-warnings-hide": "masquer",

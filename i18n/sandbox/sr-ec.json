@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Obsuser"
 		]
 	},
 	"tsb-accept-all-button-label": "Прихвати све",
-	"tsb-reject-all-button-label": "Одбији све"
+	"tsb-reject-all-button-label": "Одбији све",
+	"tsb-translations-source": "Извор"
 }

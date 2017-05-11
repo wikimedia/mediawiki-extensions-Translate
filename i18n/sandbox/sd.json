@@ -29,7 +29,7 @@
 	"tsb-limit-reached-title": "توھان جي ترجمن لاءِ مھرباني",
 	"tsb-no-requests-from-new-users": "نون رڪنن مان ڪي بہ درخواستون نہ آھن",
 	"tsb-create-user-page": "بنيادي يوزر صفحو تخليق ڪريو",
-	"log-name-translatorsandbox": "ترجمي جو مشقي تختو",
+	"log-name-translatorsandbox": "ترجمي جي مشق پٽيءَ جو لاگ",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|ترقي ڏن}} $3 ڏانھن {{GENDER:$4|ترجميڪار}}",
 	"logentry-newusers-tsbpromoted": "رڪن کاتو $3 {{GENDER:$2|تخليق ڪيو}} ويو مشقي تختي جي ترقيءَ  سان"
 }

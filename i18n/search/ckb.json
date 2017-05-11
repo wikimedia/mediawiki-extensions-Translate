@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sarchia"
+			"Sarchia",
+			"Lost Whispers"
 		]
 	},
-	"tux-sst-search": "گەڕان"
+	"tux-sst-search": "گەڕان",
+	"tux-sst-translated": "وەرگێڕانەکان لە $1ەوە"
 }
