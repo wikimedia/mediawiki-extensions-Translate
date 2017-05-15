@@ -63,7 +63,7 @@
 
 .tux-groupselector__filter {
 	height: 30px;
-	border-bottom: solid 1px #c9c9c9;
+	padding-top: 10px;
 }
 
 .tux-groupselector__filter__search__input {
