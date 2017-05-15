@@ -56,8 +56,7 @@
 		 * Prepare the selector menu rendering
 		 */
 		prepareSelectorMenu: function () {
-			var $groupTitle,
-				$listFilters,
+			var $listFilters,
 				$listFiltersGroup,
 				$search,
 				$searchIcon,
@@ -66,15 +65,6 @@
 			this.$menu = $( '<div>' )
 				.addClass( 'tux-groupselector' )
 				.addClass( 'grid' );
-
-			$groupTitle = $( '<div>' )
-				.addClass( 'row' )
-				.append(
-					$( '<h3>' )
-						.addClass( 'tux-groupselector__title' )
-						.addClass( 'ten columns' )
-						.text( mw.msg( 'translate-msggroupselector-projects' ) )
-				);
 
 			$searchIcon = $( '<div>' )
 				.addClass( 'two columns tux-groupselector__filter__search__icon' );
@@ -125,7 +115,7 @@
 			this.$loader = $( '<div>' )
 				.addClass( 'tux-loading-indicator tux-loading-indicator--centered' );
 
-			this.$menu.append( $groupTitle, $listFiltersGroup, this.$loader, this.$list );
+			this.$menu.append( $listFiltersGroup, this.$loader, this.$list );
 
 			$( 'body' ).append( this.$menu );
 		},
