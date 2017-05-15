@@ -132,7 +132,6 @@ $wgResourceModules['ext.translate.groupselector'] = [
 		'mediawiki.jqueryMsg',
 	],
 	'messages' => [
-		'translate-msggroupselector-projects',
 		'translate-msggroupselector-search-all',
 		'translate-msggroupselector-search-placeholder',
 		'translate-msggroupselector-search-recent',
