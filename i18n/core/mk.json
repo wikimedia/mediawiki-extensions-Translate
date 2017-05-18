@@ -35,7 +35,7 @@
 	"translate-page-limit": "Највеќе до",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|порака|пораки}} по страница",
 	"translate-submit": "Филтрирај",
-	"translate-page-navigation-legend": "Навигација",
+	"translate-page-navigation-legend": "Прегледник",
 	"translate-page-showing": "Прикажани се пораки од $1 до $2 од вкупно $3",
 	"translate-page-showing-all": "Приказ на $1 {{PLURAL:$1|порака|пораки}}.",
 	"translate-page-showing-none": "Нема пораки за прикажување",

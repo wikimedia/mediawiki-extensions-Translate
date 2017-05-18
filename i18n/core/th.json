@@ -31,6 +31,7 @@
 	"translate-page-navigation-legend": "แถบนำทาง",
 	"translate-page-showing": "แสดงตั้งแต่ข้อความที่ $1 ถึง $2 จากทั้งหมด $3 ข้อความ",
 	"translate-page-showing-all": "แสดง $1 {{PLURAL:$1|ข้อความ|ข้อความ}}",
+	"translate-page-showing-none": "ไม่มีข้อความแสดง",
 	"translate-next": "หน้าถัดไป",
 	"translate-prev": "หน้าก่อน",
 	"translate-page-description-legend": "ข้อมูลเกี่ยวกับกลุ่มข้อความ",
@@ -105,7 +106,7 @@
 	"translate-statsf-submit": "แสดงตัวอย่าง",
 	"translate-tag-page-desc": "คำแปลของหน้าวิกิ [[$2|$1]].",
 	"translate-sidebar-alltrans": "ในภาษาอื่น ๆ",
-	"translations": "คำแปลทั้งหมด",
+	"translations": "คำแปลทุกภาษา",
 	"translations-summary": "ใส่ชื่อของข้อความลงด้านล่างนี้ เพื่อแสดงคำแปลที่มีทั้งหมด",
 	"translate-translations-no-message": "\"$1\" เป็นข้อความที่ไม่สามารถแปลได้",
 	"translate-translations-none": "ไม่มีคำแปลสำหรับ \"$1\"",
@@ -215,5 +216,5 @@
 	"tux-editor-collapse-tooltip": "ยุบ",
 	"tux-editor-message-tools-history": "ประวัติ",
 	"tux-editor-message-tools-delete": "ลบ",
-	"tux-editor-message-tools-translations": "การแปลทั้งหมด"
+	"tux-editor-message-tools-translations": "คำแปลทุกภาษา"
 }
