@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e1cb3f9_57c3758c",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2017-05-18T23:47:56Z",
+      "side": 1,
+      "message": "Should be `flags: [ \u0027primary\u0027, \u0027progressive\u0027 ]`, \u0027constructive\u0027 is deprecated and it\u0027s better to call it primary first",
+      "revId": "d977be3e12567e1c720bf8942f6fd8cc0aa8623d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e1cb3f9_77beb9fb",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2017-05-18T23:47:56Z",
+      "side": 1,
+      "message": "I know that\u0027s EditPage.php inspired, but I\u0027m not sure, if only `.mw-ui-progressive` is sufficient?",
+      "revId": "d977be3e12567e1c720bf8942f6fd8cc0aa8623d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
