@@ -87,11 +87,24 @@ class AndroidXmlFFS extends SimpleFFS {
 		return $escaped;
 	}
 
+	protected function doAuthors( MessageCollection $collection ) {
+		$output = "\n<!--\nAuthors:\n";
+		$authors = $collection->getAuthors();
+		$authors = $this->filterAuthors( $authors, $collection->code );
+
+		foreach ( $authors as $author ) {
+			$output .= "- $author\n";
+		}
+
+		$output .= "-->\n";
+
+		return $output;
+	}
+
 	protected function writeReal( MessageCollection $collection ) {
-		$template = <<<XML
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
-XML;
+		$template  = '<?xml version="1.0" encoding="utf-8"?>';
+		$template .= doAuthors( $collection );
+		$template .= '<resources></resources>';
 
 		$writer = new SimpleXMLElement( $template );
 		$mangler = $this->group->getMangler();

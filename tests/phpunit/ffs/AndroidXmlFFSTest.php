@@ -27,6 +27,10 @@ class AndroidXmlFFSTest extends MediaWikiTestCase {
 		$file =
 <<<XML
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+Authors:
+- Some Author
+-->
 <resources>
 	<string name="wpt_voicerec">Voice recording</string>
 	<string name="wpt_stillimage" fuzzy="true">Picture</string>
@@ -78,7 +82,7 @@ XML;
 
 		$xml = $ffs->writeIntoVariable( $collection );
 		$parsed = $ffs->readFromVariable( $xml );
-		$expected = [ 'MESSAGES' => $messages, 'AUTHORS' => [] ];
+		$expected = [ 'MESSAGES' => $messages, 'AUTHORS' => [ 'Some Author' ] ];
 		$this->assertEquals( $expected, $parsed );
 	}
 }
@@ -92,7 +96,7 @@ class MockMessageCollection extends MessageCollection {
 			$m->setTranslation( $value );
 			$this->messages[$key] = $m;
 		}
-
+		$this->authors['Some Author'] = 1;
 		$this->messages['foobar']->addTag( 'fuzzy' );
 	}
 
