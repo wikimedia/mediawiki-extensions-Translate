@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e1cb3f9_a643bd14",
+        "filename": "ffs/AndroidXmlFFS.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-05-19T15:59:22Z",
+      "side": 1,
+      "message": "We might produce broken files if the username contains \"--\" which is not allowed in XML comments. Those should be handled in some way (mangled, or dropped altogether).",
+      "revId": "6c57f782de7642728fe84cc264b38c69738d1f96",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e1cb3f9_46be6114",
+        "filename": "ffs/AndroidXmlFFS.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-05-19T15:59:22Z",
+      "side": 1,
+      "message": "I think you meant to use $this-\u003edoAuthors here",
+      "range": {
+        "startLine": 106,
+        "startChar": 15,
+        "endLine": 106,
+        "endChar": 24
+      },
+      "revId": "6c57f782de7642728fe84cc264b38c69738d1f96",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e1cb3f9_06d5c946",
+        "filename": "ffs/AndroidXmlFFS.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-05-19T15:59:22Z",
+      "side": 1,
+      "message": "If the comment does not end up in the right place with this method, there is a workaround documented in http://stackoverflow.com/questions/2139012/is-it-possible-to-insert-a-comment-tag-into-an-xml-using-simplexml",
+      "revId": "6c57f782de7642728fe84cc264b38c69738d1f96",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
