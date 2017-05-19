@@ -61,9 +61,25 @@ class AndroidXmlFFS extends SimpleFFS {
 		}
 
 		return [
-			'AUTHORS' => [], // @todo
+			'AUTHORS' => $this->scrapeAuthors( $data ),
 			'MESSAGES' => $mangler->mangle( $messages ),
 		];
+	}
+
+	protected function scrapeAuthors( $string ) {
+		$match = [];
+		preg_match( '~<!-- Authors:\n((?:\* .*\n)*)-->~', $string, $match );
+		if ( !$match ) {
+			return [];
+		}
+
+		$authors = $matches = [];
+		preg_match_all( '~\* (.*)~', $match[ 1 ], $matches );
+		foreach ( $matches[1] as $author ) {
+			// PHP7: \u{2011}
+			$authors[] = str_replace( "\xE2\x80\x91\xE2\x80\x91", '--', $author );
+		}
+		return $authors;
 	}
 
 	protected function readElementContents( $element ) {
@@ -87,11 +103,32 @@ class AndroidXmlFFS extends SimpleFFS {
 		return $escaped;
 	}
 
+	protected function doAuthors( MessageCollection $collection ) {
+		$authors = $collection->getAuthors();
+		$authors = $this->filterAuthors( $authors, $collection->code );
+
+		if ( !$authors ) {
+			return '';
+		}
+
+		$output = "\n<!-- Authors:\n";
+
+		foreach ( $authors as $author ) {
+			// Since -- is not allowed in XML comments, we rewrite them to
+			// U+2011 (non-breaking hyphen). PHP7: \u{2011}
+			$author = str_replace( '--', "\xE2\x80\x91\xE2\x80\x91", $author );
+			$output .= "* $author\n";
+		}
+
+		$output .= "-->\n";
+
+		return $output;
+	}
+
 	protected function writeReal( MessageCollection $collection ) {
-		$template = <<<XML
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
-XML;
+		$template  = '<?xml version="1.0" encoding="utf-8"?>';
+		$template .= $this->doAuthors( $collection );
+		$template .= '<resources></resources>';
 
 		$writer = new SimpleXMLElement( $template );
 		$mangler = $this->group->getMangler();
