@@ -27,6 +27,9 @@ class AndroidXmlFFSTest extends MediaWikiTestCase {
 		$file =
 <<<XML
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Authors:
+* Imaginary translator
+-->
 <resources>
 	<string name="wpt_voicerec">Voice recording</string>
 	<string name="wpt_stillimage" fuzzy="true">Picture</string>
@@ -48,15 +51,20 @@ XML;
 		$ffs = new AndroidXmlFFS( $group );
 		$parsed = $ffs->readFromVariable( $file );
 		$expected = [
-			'wpt_voicerec' => 'Voice recording',
-			'wpt_stillimage' => '!!FUZZY!!Picture',
-			'alot' => '{{PLURAL|one=bunny|bunnies}}',
-			'has_quotes' => 'Go to "Wikipedia"',
-			'starts_with_at' => '@Wikipedia',
-			'has_ampersand' => '1&nbsp;000',
-			'has_newline' => "first\nsecond",
+			'MESSAGES' => [
+				'wpt_voicerec' => 'Voice recording',
+				'wpt_stillimage' => '!!FUZZY!!Picture',
+				'alot' => '{{PLURAL|one=bunny|bunnies}}',
+				'has_quotes' => 'Go to "Wikipedia"',
+				'starts_with_at' => '@Wikipedia',
+				'has_ampersand' => '1&nbsp;000',
+				'has_newline' => "first\nsecond",
+			],
+			'AUTHORS' => [
+				'Imaginary translator',
+			]
 		];
-		$expected = [ 'MESSAGES' => $expected, 'AUTHORS' => [] ];
+
 		$this->assertEquals( $expected, $parsed );
 	}
 
@@ -74,11 +82,21 @@ XML;
 			'ampersand' => '&nbsp; &foo',
 			'newlines' => "first\nsecond",
 		];
+		$authors = [
+			'1 Hyphen-Fan',
+			'2 Hyphen--Lover',
+			'3 Hyphen---Fanatic-',
+		];
+
 		$collection = new MockMessageCollection( $messages );
+		$collection->addCollectionAuthors( $authors, 'set' );
 
 		$xml = $ffs->writeIntoVariable( $collection );
 		$parsed = $ffs->readFromVariable( $xml );
-		$expected = [ 'MESSAGES' => $messages, 'AUTHORS' => [] ];
+		$expected = [
+			'MESSAGES' => $messages,
+			'AUTHORS' => $authors,
+		];
 		$this->assertEquals( $expected, $parsed );
 	}
 }
@@ -97,5 +115,8 @@ class MockMessageCollection extends MessageCollection {
 	}
 
 	public function filter( $type, $condition = true, $value = null ) {
+	}
+
+	public function loadTranslations() {
 	}
 }

@@ -27,6 +27,12 @@ root:
         sourcelanguage:
           _type: text
           _description: defaults to "en"
+        projectPage:
+          _type: text
+          _description: Title of the page that explains the group
+        translatorCategory:
+          _type: text
+          _description: Name of the category for translators of this group
     MANGLER:
       _type: array
       _children:
