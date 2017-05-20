@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e1cb3f9_a19f2405",
+        "filename": "resources/css/ext.translate.groupselector.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-05-20T10:17:23Z",
+      "side": 1,
+      "message": "This code should also be removed, as tux-groupselector__title no longer exists.",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 1
+      },
+      "revId": "11cfbf1a08e6dff43fad071bd5ebece9337d57e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
