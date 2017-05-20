@@ -51,19 +51,9 @@
 	content: none;
 }
 
-.grid .row .tux-groupselector__title {
-	border: 0;
-	color: #555;
-	font-size: 14pt;
-	font-weight: normal;
-	line-height: 1.25em;
-	padding: 5px 0 0 10px; /* grid override */
-	margin: 0;
-}
-
 .tux-groupselector__filter {
 	height: 30px;
-	border-bottom: solid 1px #c9c9c9;
+	padding-top: 10px;
 }
 
 .tux-groupselector__filter__search__input {
