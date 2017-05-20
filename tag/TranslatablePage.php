@@ -851,7 +851,7 @@ class TranslatablePage {
 			$cache->makeKey( 'pagetranslation', 'sourcepages' ),
 			$cache::TTL_MINUTE * 5,
 			function ( $oldValue, &$ttl, array &$setOpts ) {
-				$dbr = TranslateUtils::getSafeReadDB();
+				$dbr = wfGetDB( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				return TranslatablePage::getTranslatablePages();
