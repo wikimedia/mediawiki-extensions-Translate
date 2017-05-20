@@ -101,6 +101,7 @@
 	"apierror-translate-owntranslation": "Cannot review own translations",
 	"apierror-translate-sandboxdisabled": "Sandbox feature is not in use",
 	"apierror-translate-sandbox-invalidparam": "$1",
+	"apierror-translate-sandbox-invalidppassword": "Invalid password",
 	"apierror-translate-unknownmessage": "Unknown message",
 	"apiwarn-translate-alreadyreviewedbyyou": "Already marked as reviewed by you"
 }

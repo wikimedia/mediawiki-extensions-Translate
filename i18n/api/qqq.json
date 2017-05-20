@@ -106,6 +106,7 @@
 	"apierror-translate-owntranslation": "{{doc-apierror}}",
 	"apierror-translate-sandboxdisabled": "{{doc-apierror}}",
 	"apierror-translate-sandbox-invalidparam": "{{doc-apierror}}\n\nParameters:\n* $1 - Exception message, probably in English",
+	"apierror-translate-sandbox-invalidppassword": "{{doc-apierror}}",
 	"apierror-translate-unknownmessage": "{{doc-apierror}}",
 	"apiwarn-translate-alreadyreviewedbyyou": "{{doc-apierror}}"
 }
