@@ -567,8 +567,10 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
  * phpyaml is the fastest and based on libyaml so the output should be most
  * compatible. spyc output format is least compatible. syck is slowest but
  * almost as good as phpyaml.
+ *
+ * spyc needs to be installed using composer. See https://www.mediawiki.org/wiki/Composer
  */
-$wgTranslateYamlLibrary = 'spyc';
+$wgTranslateYamlLibrary = function_exists( 'yaml_parse' ) ? 'phpyaml' : 'spyc';
 
 # </source>
 # ==== Sandbox ====
@@ -673,3 +675,7 @@ function wfAddNamespace( $id, $name, $constant = null ) {
 }
 
 /** @defgroup TranslateSpecialPage Special pages of Translate extension */
+
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require_once __DIR__ . '/vendor/autoload.php';
+}
