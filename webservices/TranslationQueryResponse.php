@@ -18,10 +18,15 @@ class TranslationQueryResponse {
 	protected $body;
 	protected $error;
 
+	/**
+	 * @var TranslationQuery
+	 */
+	protected $query;
+
 	protected function __construct() {
 	}
 
-	public static function newFromMultiHttp( array $data ) {
+	public static function newFromMultiHttp( array $data, TranslationQuery $query ) {
 		$response = $data['response'];
 		$obj = new TranslationQueryResponse();
 		$obj->code = (int) $response['code'];
@@ -29,6 +34,7 @@ class TranslationQueryResponse {
 		$obj->headers = $response['headers'];
 		$obj->body = $response['body'];
 		$obj->error = $response['error'];
+		$obj->query = $query;
 		return $obj;
 	}
 
@@ -46,5 +52,14 @@ class TranslationQueryResponse {
 
 	public function getBody() {
 		return $this->body;
+	}
+
+	/**
+	 * Get the TranslationQuery that was made for this request.
+	 * @return TranslationQuery
+	 * @since 2017.04
+	 */
+	public function getQuery() {
+		return $this->query;
 	}
 }
