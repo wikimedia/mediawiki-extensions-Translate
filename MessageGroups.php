@@ -778,7 +778,7 @@ class MessageGroups {
 	 * @return array
 	 */
 	protected static function loadAggregateGroups() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = TranslateUtils::getSafeReadDB();
 		$tables = [ 'translate_metadata' ];
 		$fields = [ 'tmd_group', 'tmd_value' ];
 		$conds = [ 'tmd_key' => 'subgroups' ];
