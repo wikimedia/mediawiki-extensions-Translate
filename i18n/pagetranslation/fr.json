@@ -169,7 +169,7 @@
 	"pt-movepage-action-other": "Changer la cible",
 	"pt-movepage-intro": "Cette page spéciale vous permet de renommer des pages qui sont marquées pour être traduites.\nL’action de renommage ne sera pas immédiate, car de nombreuses pages devront être déplacées.\nPendant que les pages sont déplacées, il n'est pas possible d’interagir avec elles.\nLes échecs seront enregistrés dans le [[Special:Log/pagetranslation|journal de traduction]] et devront être corrigés manuellement.",
 	"pt-movepage-logreason": "Extrait de la page à traduire « $1 ».",
-	"pt-movepage-started": "La page de base est à présent renommée.\nVeuillez vérifier le [[Special:Log/pagetranslation|journal des traductions]] pour repérer d’éventuelles erreurs et lire le message de complétion.",
+	"pt-movepage-started": "Veuillez ouvrir le [[Special:Log/pagetranslation|journal des traductions de pages]] dans quelques instants pour vérifier les erreurs éventuelles et lire le message de complétion.",
 	"pt-locked-page": "Cette page est verrouillée parce que la page à traduire est en cours de renommage.",
 	"pt-deletepage-lang-title": "Suppression de la page de traduction \"$1\"",
 	"pt-deletepage-full-title": "Suppression de la page à traduire \"$1\"",

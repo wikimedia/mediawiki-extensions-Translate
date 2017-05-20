@@ -5,7 +5,8 @@
 			"Rancher",
 			"Милан Јелисавчић",
 			"Михајло Анђелковић",
-			"Сербијана"
+			"Сербијана",
+			"Obsuser"
 		]
 	},
 	"pagetranslation": "Превод странице",
@@ -82,6 +83,7 @@
 	"pt-movepage-action-check": "Провери да ли је премештање изводљиво",
 	"pt-movepage-action-perform": "Премести",
 	"pt-movepage-action-other": "Промени циљ",
+	"pt-movepage-started": "Проверите [[Special:Log/pagetranslation|дневник превођења странице]] у међувремену да би се пронашле евентуалне грешке и поруке завршетка.",
 	"pt-deletepage-action-check": "Наведи странице за брисање",
 	"pt-deletepage-action-perform": "Изврши брисање",
 	"pt-deletepage-action-other": "Промени циљ",

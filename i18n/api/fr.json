@@ -108,6 +108,7 @@
 	"apierror-translate-nomessagefortitle": "Le titre ne correspond pas à un message traductible",
 	"apierror-translate-owntranslation": "Impossible de relire ses propres traductions",
 	"apierror-translate-sandboxdisabled": "Les fonctions du bac à sable ne sont pas utilisées",
+	"apierror-translate-sandbox-invalidppassword": "Mot de passe invalide",
 	"apierror-translate-unknownmessage": "Message inconnu",
 	"apiwarn-translate-alreadyreviewedbyyou": "Déjà marqué comme ayant été relu par vous"
 }

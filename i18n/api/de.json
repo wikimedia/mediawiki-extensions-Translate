@@ -86,6 +86,7 @@
 	"apierror-translate-nomessagefortitle": "Der Titel entspricht nicht einer übersetzbaren Nachricht",
 	"apierror-translate-owntranslation": "Eigene Übersetzungen können nicht überprüft werden",
 	"apierror-translate-sandboxdisabled": "Die Spielwiesenfunktion ist nicht in Verwendung",
+	"apierror-translate-sandbox-invalidppassword": "Ungültiges Passwort",
 	"apierror-translate-unknownmessage": "Unbekannte Nachricht",
 	"apiwarn-translate-alreadyreviewedbyyou": "Von dir bereits als überprüft markiert"
 }
