@@ -34,6 +34,7 @@
 	"apierror-translate-language-disabled": "Iwwersetzung an dës Sprooch ass ausgeschalt",
 	"apierror-translate-owntranslation": "Eegen Iwwersetzunge kënnen net nogekuckt ginn",
 	"apierror-translate-sandboxdisabled": "Sandkëscht-Funktioun gëtt net benotzt",
+	"apierror-translate-sandbox-invalidppassword": "Net valabelt Passwuert",
 	"apierror-translate-unknownmessage": "Onbekannte Message",
 	"apiwarn-translate-alreadyreviewedbyyou": "Scho markéiert wéi wann et vun Iech nogekuckt ass"
 }

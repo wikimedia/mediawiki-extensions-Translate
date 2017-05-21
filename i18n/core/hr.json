@@ -93,7 +93,7 @@
 	"translate-pref-nonewsletter": "Ne šalji mi e-poštom obavijesti translatewiki.net projekta",
 	"translate-pref-editassistlang": "Pomoćni jezici:",
 	"prefs-translate": "Mogućnosti prijevoda",
-	"translate-pref-editassistlang-help": "Popis jezičnih kodova odjeljen zarezima.\nPrijevod poruke na tim jezicima bit će prikazani dok prevodite.\nZadani popis jezika ovisi o vašem jeziku.",
+	"translate-pref-editassistlang-help": "Popis jezičnih kodova odijeljen zarezima.\nPrijevod poruke na tim jezicima bit će prikazani dok prevodite.\nZadani popis jezika ovisi o vašem jeziku.",
 	"right-translate": "Uređivanje koristeći sučelje za prevođenje",
 	"right-translate-manage": "Upravljanje grupama poruka",
 	"right-translate-import": "Uvoz izvanmrežnih prijevoda",

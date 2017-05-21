@@ -103,6 +103,7 @@
 	"apierror-translate-nomessagefortitle": "标题与可翻译消息不一致",
 	"apierror-translate-owntranslation": "不能复核自己的翻译",
 	"apierror-translate-sandboxdisabled": "未使用沙盒功能",
+	"apierror-translate-sandbox-invalidppassword": "无效密码",
 	"apierror-translate-unknownmessage": "未知消息",
 	"apiwarn-translate-alreadyreviewedbyyou": "已被您标记为已复核"
 }
