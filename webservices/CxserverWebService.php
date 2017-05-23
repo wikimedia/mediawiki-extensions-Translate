@@ -61,7 +61,7 @@ class CxserverWebService extends TranslationWebService {
 
 		return TranslationQuery::factory( $url )
 			->timeout( $this->config['timeout'] )
-			->postWithData( [ 'html' => $text ] );
+			->postWithData( wfArrayToCgi( [ 'html' => $text ] ) );
 	}
 
 	protected function parseResponse( TranslationQueryResponse $reply ) {
