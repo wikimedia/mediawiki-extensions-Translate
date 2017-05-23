@@ -53,6 +53,7 @@
 	"apierror-translate-nomessagefortitle": "Il titolo non corrisponde a un messaggio traducibile",
 	"apierror-translate-owntranslation": "Non puoi revisionare le tue traduzioni",
 	"apierror-translate-sandboxdisabled": "La funzione Sandbox non è in uso",
+	"apierror-translate-sandbox-invalidppassword": "Password non valida",
 	"apierror-translate-unknownmessage": "Messaggio sconosciuto",
 	"apiwarn-translate-alreadyreviewedbyyou": "Già contrassegnata come revisionata da te"
 }

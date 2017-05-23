@@ -35,6 +35,7 @@
 	"apierror-translate-language-disabled": "Tłumaczenie na ten język jest wyłączone.",
 	"apierror-translate-nomessagefortitle": "Tytuł nie odpowiada komunikatowi do tłumaczenia",
 	"apierror-translate-sandboxdisabled": "Funkcja brudnopisu nie jest używana",
+	"apierror-translate-sandbox-invalidppassword": "Nieprawidłowe hasło",
 	"apierror-translate-unknownmessage": "Nieznany komunikat",
 	"apiwarn-translate-alreadyreviewedbyyou": "Już oznaczono jako przejrzane przez ciebie"
 }

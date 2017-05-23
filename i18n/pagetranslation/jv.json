@@ -48,7 +48,7 @@
 	"translate-tag-hasnew": "Kaca iki kaisi <span class=\"plainlinks\">[$1 owahan]</span> sing ora ditandhai kanggo terjemahan.",
 	"tpt-translation-intro": "Kaca iki <span class=\"plainlinks\">[$1 vèrsi sing wis diterjemahaké]</span> saka kaca [[$2]] lan terjemahan wis rampung $3%.",
 	"tpt-translation-intro-fuzzy": "Terjemahan lawas ditandhai kaya iki.",
-	"tpt-languages-legend": "Basa liya:",
+	"tpt-languages-legend": "Basa liyané:",
 	"tpt-languages-zero": "Lekasi terjemahan kanggo basa iki",
 	"tpt-languages-nonzero": "$1 ($2% kajarwa)",
 	"tpt-target-page": "Kaca iki ora bisa dianyari manual.\nKaca iki kaca terjemahan [[$1]] lan terjemahan bisa dianyari nganggo [$2 prangkat terjemahan].",
