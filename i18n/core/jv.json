@@ -172,10 +172,10 @@
 	"translate-percentage-fuzzy": "Lawas",
 	"translate-languagestats-overall": "Kabèh klompok layang bebarengan",
 	"translate-ls-submit": "Tuduhaké statistik",
-	"translate-ls-column-group": "Klompok layang",
+	"translate-ls-column-group": "Golongan layang",
 	"translate-mgs-pagename": "Statistik klompok layang",
 	"translate-mgs-fieldset": "Tampilaké préferensi",
-	"translate-mgs-group": "Klompok layang:",
+	"translate-mgs-group": "Golongan layang:",
 	"translate-mgs-nocomplete": "Aja tampulaké basa sing wis diterjemahaké",
 	"translate-mgs-noempty": "Aja tampilaké basa sing durung diterjemahaké",
 	"translate-mgs-submit": "Tuduhaké statistik",
@@ -369,7 +369,7 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% wis dipertal, $2% wis dipriksa, $3% wis lawas",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|golongan}} liyané",
 	"translate-ulsdep-title": "Cacad konfigurasi",
-	"translate-ulsdep-body": "Èkstènsi Pertalan gumantung [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector èkstènsi Sèlèktor Basa Sajagat].",
+	"translate-ulsdep-body": "Èkstènsi pertalan gumantung [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector èkstènsi Sèlèktor Basa Global].",
 	"tux-session-expired": "Panjenengan wis ora mlebu log manèh. Mlebua log lumantar tab liyané. Utawa, turuna pertalan sing durung kasimpen, mlebua log, balia nyang kaca iki banjur isènana manèh pertalané panjenengan.",
 	"tux-nojs": "Kaca iki butuh JavaScript."
 }

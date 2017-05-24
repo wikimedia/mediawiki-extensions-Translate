@@ -104,7 +104,7 @@
 	"translate-statsf-language": "รายการรหัสภาษา ใช้เครื่องหมายลูกน้ำ (comma) เป็นตัวคั่น:",
 	"translate-statsf-group": "รายการรหัสของกลุ่ม ใช้เครื่องหมายลูกน้ำ (comma) เป็นตัวคั่น:",
 	"translate-statsf-submit": "แสดงตัวอย่าง",
-	"translate-tag-page-desc": "คำแปลของหน้าวิกิ [[$2|$1]].",
+	"translate-tag-page-desc": "คำแปลจากภาษา$3 ($4) ของหน้าวิกิ [[$2|$1]].",
 	"translate-sidebar-alltrans": "ในภาษาอื่น ๆ",
 	"translations": "คำแปลทุกภาษา",
 	"translations-summary": "ใส่ชื่อของข้อความลงด้านล่างนี้ เพื่อแสดงคำแปลที่มีทั้งหมด",
