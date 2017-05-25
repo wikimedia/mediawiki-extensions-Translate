@@ -15,7 +15,8 @@
 			"Vito Genovese",
 			"Sayginer",
 			"McAang",
-			"Kumkumuk"
+			"Kumkumuk",
+			"Bulgu"
 		]
 	},
 	"translate": "Çevir",
@@ -113,7 +114,9 @@
 	"right-translate-import": "Çevrimdışı çevirileri içe aktarır",
 	"action-translate-import": "çevrim dışı çevirileri içe aktar",
 	"right-translate-messagereview": "Çevirileri incele",
+	"action-translate-messagereview": "çeviri inceleme",
 	"right-translate-groupreview": "İleti gruplarının iş akışı durumunu değiştir",
+	"action-translate-groupreview": "ileti gruplarının iş akışı durumunu değiştirme",
 	"translate-rc-translation-filter": "Çevirileri filtrele:",
 	"translate-rc-translation-filter-no": "Hiçbir şey yapma",
 	"translate-rc-translation-filter-only": "Yalnızca çevirileri göster",
@@ -145,7 +148,7 @@
 	"translate-statsf-language": "Dil kodlarının virgül ile ayrılmış listesi:",
 	"translate-statsf-group": "Grup kodlarının virgül ile ayrılmış listesi:",
 	"translate-statsf-submit": "Ön izleme",
-	"translate-tag-page-desc": "[[$2|$1]] viki sayfasının çevirisi.",
+	"translate-tag-page-desc": "[[$2|$1]] viki sayfasının $3 ($4) dilinden çevirisi.",
 	"translate-sidebar-alltrans": "Diğer dillerde",
 	"translations": "Tüm çeviriler",
 	"translations-summary": "Tüm mevcut çevirilerin gösterilmesi için aşağıya bir ileti adı giriniz.",
@@ -159,6 +162,7 @@
 	"translate-translations-history-short": "t",
 	"languagestats": "Dil istatistikleri",
 	"languagestats-summary": "Bu sayfa tüm ileti grupları için dil çeviri istatistiklerini gösterir.",
+	"messagegroupstats-summary": "Bu sayfa, mesaj grup istatistiklerini göstermektedir.",
 	"languagestats-stats-for": "$1 için çeviri istatistikleri ($2).",
 	"languagestats-recenttranslations": "son çeviriler",
 	"translate-langstats-incomplete": "Bu sayfadaki bazı istatistikler eksik. Daha fazla istatistik almak için lütfen yeniden yükleyin.",
@@ -192,7 +196,7 @@
 	"supportedlanguages-colorlegend": "Renk göstergesi: Son çeviri $1 gün önce yapıldı",
 	"supportedlanguages-portallink": "[$1] $2 - $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
-	"supportedlanguages-translators": "{{PLURAL:$2|Çevirmen|Çevirmenler}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Çevirmen}}|Çevirmenler}}: $1",
 	"supportedlanguages-recenttranslations": "son çeviriler",
 	"supportedlanguages-count": "Toplamda $1 {{PLURAL:$1|dil|dil}}",
 	"supportedlanguages-activity": "$1: toplam $2 {{PLURAL:$2|değişiklik|değişiklik}} - son değişiklik $3 {{PLURAL:$3|gün|gün}} önce yapıldı",
@@ -304,7 +308,8 @@
 	"tux-editor-skip-button-label": "Sonrakine geç",
 	"tux-editor-cancel-button-label": "İptal",
 	"tux-editor-confirm-button-label": "Çeviriyi onayla",
-	"tux-editor-shortcut-info": "Kaydetmek için \"$1\"; bir sonraki iletiye geçmek için \"$2\" yapın",
+	"tux-editor-proofread-button-label": "İncelendi olarak işaretle",
+	"tux-editor-shortcut-info": "Kaydetmek için \"$1\"; bir sonraki iletiye geçmek için \"$2\"; özet girmek için \"$4\" tuşlarına basın. Diğer kısayollar için \"$3\" tuşuna basın.",
 	"tux-editor-edit-desc": "Belgelemeyi düzenle",
 	"tux-editor-add-desc": "Belgeleme ekle",
 	"tux-editor-suggestions-title": "Öneriler",
@@ -345,6 +350,7 @@
 	"tux-empty-list-translated-action": "Çevir",
 	"tux-empty-show-optional-messages": "İsteğe bağlı iletileri göster",
 	"tux-empty-no-outdated-messages": "Eski tarihli ileti yok",
+	"tux-empty-nothing-to-proofread": "İncelemek için yeni bir şey yok",
 	"tux-empty-you-can-help-providing": "Yeni çeviriler sağlayarak yardımcı olabilirsiniz",
 	"tux-empty-nothing-new-to-proofread": "İncelemek için yeni bir şey yok",
 	"tux-empty-you-can-review-already-proofread": "Başkaları tarafından incelenen çevirileri inceleyebilirsiniz.",
@@ -362,5 +368,7 @@
 	"translate-search-more-languages-info": "$1 tane daha {{PLURAL:$1|dil|dil}}",
 	"translate-statsbar-tooltip": "%$1 çevrildi, %$2 incelendi",
 	"translate-statsbar-tooltip-with-fuzzy": "%$1 çevrildi, %$2 incelendi, %$3 eski",
-	"translate-search-more-groups-info": "$1 tane daha {{PLURAL:$1|grup|grup}}"
+	"translate-search-more-groups-info": "$1 tane daha {{PLURAL:$1|grup|grup}}",
+	"translate-ulsdep-title": "Yapılandırma hatası",
+	"tux-nojs": "Bu sayfa için JavaScript gerekmektedir."
 }

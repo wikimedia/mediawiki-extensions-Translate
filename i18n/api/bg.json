@@ -21,5 +21,6 @@
 	"apihelp-searchtranslations-description": "Търсене на преводи.",
 	"apihelp-searchtranslations-param-limit": "Размер на резултата.",
 	"apihelp-searchtranslations-example-1": "Показване на преводи на този език.",
-	"apierror-translate-duplicateaggregategroup": "Групата съобщения вече съществува"
+	"apierror-translate-duplicateaggregategroup": "Групата съобщения вече съществува",
+	"apierror-translate-sandbox-invalidppassword": "Невалидна парола"
 }

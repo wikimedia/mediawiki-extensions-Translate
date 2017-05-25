@@ -51,6 +51,7 @@
 	"apierror-translate-invalidupdate": "Ogiltig uppdatering",
 	"apierror-translate-language-disabled": "Översättning till detta språk är inaktiverad",
 	"apierror-translate-owntranslation": "Kan inte granska egna översättningar",
+	"apierror-translate-sandbox-invalidppassword": "Ogiltigt lösenord",
 	"apierror-translate-unknownmessage": "Okänt meddelande",
 	"apiwarn-translate-alreadyreviewedbyyou": "Har redan markerats som granskad av dig"
 }

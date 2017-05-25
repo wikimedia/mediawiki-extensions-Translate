@@ -89,5 +89,6 @@
 	"apierror-translate-nodynamicgroups": "No se admiten aquí los grupos de mensajes dinámicos",
 	"apierror-translate-nomessagefortitle": "El título no se corresponde con un mensaje traducible",
 	"apierror-translate-owntranslation": "No se pueden revisar las traducciones propias",
+	"apierror-translate-sandbox-invalidppassword": "La contraseña no es válida",
 	"apierror-translate-unknownmessage": "Mensaje desconocido"
 }
