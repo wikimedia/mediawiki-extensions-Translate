@@ -101,6 +101,7 @@
 	"apierror-translate-nomessagefortitle": "הכותרת אינה מתאימה לשום הודעה בת־תרגום",
 	"apierror-translate-owntranslation": "לא ניתן לסקור את ההודעות של עצמך",
 	"apierror-translate-sandboxdisabled": "ארגז החול אינו בשימוש",
+	"apierror-translate-sandbox-invalidppassword": "ססמה בלתי־תקינה",
 	"apierror-translate-unknownmessage": "הודעה בלתי־ידועה",
 	"apiwarn-translate-alreadyreviewedbyyou": "כבר סומנה בתור הודעה הודעה שנסקרה על־ידיך"
 }
