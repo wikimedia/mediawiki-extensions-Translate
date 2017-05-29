@@ -335,7 +335,7 @@
 	"tux-warnings-hide": "sakrij",
 	"tux-editor-save-failed": "Čuvanje prijevoda nije uspjelo: $1",
 	"tux-editor-n-uses": "korišteno $1 {{PLURAL:$1|put|puta}}",
-	"tux-editor-message-desc-more": "Prikaži još",
+	"tux-editor-message-desc-more": "Prikaži više",
 	"tux-editor-message-desc-less": "Prikaži manje",
 	"tux-editor-clear-translated": "Sakrij prevedeno",
 	"tux-editor-proofreading-mode": "Pregledaj",

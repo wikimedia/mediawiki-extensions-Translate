@@ -100,6 +100,7 @@
 	"apierror-translate-nomessagefortitle": "Naslov ne odgovara prevodivoj poruci",
 	"apierror-translate-owntranslation": "Ne možete pregledati vlastite prijevode",
 	"apierror-translate-sandboxdisabled": "Funkcija pijeska nije u upotrebi",
+	"apierror-translate-sandbox-invalidppassword": "Neispravna lozinka",
 	"apierror-translate-unknownmessage": "Nepoznata poruka",
 	"apiwarn-translate-alreadyreviewedbyyou": "Već ste je označili pregledanom"
 }

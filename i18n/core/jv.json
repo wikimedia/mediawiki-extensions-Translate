@@ -62,7 +62,7 @@
 	"translate-edit-askpermission": "Nyuwun palilah",
 	"exporttranslations": "Èkspor pertalan",
 	"translate-export-form-format": "Format",
-	"translate-export-invalid-format": "Isènana format ing sah.",
+	"translate-export-invalid-format": "Mangga isinen format ing trep.",
 	"translate-export-not-supported": "Èkspor pertalan ora kasengkuyung.",
 	"translate-export-format-notsupported": "Format èkspor sing diisèkaké ora disengkuyung déning golongan layangé.",
 	"translate-magic-pagename": "Pertalan MediaWiki mirunggan",
@@ -208,7 +208,7 @@
 	"translate-manage-action-ignore": "Jarna",
 	"translate-manage-action-fuzzy": "Impor lan tandhai terjemahan ora cetha",
 	"translate-manage-nochanges": "Ora ana owah-owahan nèng definisi layang kanggo klompok iki.",
-	"translate-manage-nochanges-other": "Ora ana owah-owahan kanggo basa iki,\nAnggo pranala nèng ngisor kanggo mbalikaké tampilan rincian klompok.",
+	"translate-manage-nochanges-other": "Ora ana owah-owahan tumrap basa iki.\nAnggonen pranala ngisor iki kanggo bali nyang sesawangan rerincèn golongan.",
 	"translate-manage-import-summary": "Ngimpor vèrsi anyar saka sumber njaba",
 	"translate-manage-conflict-summary": "Ngimpor vèrsi anyar saka sumber njaba.\nMangga ditiliki.",
 	"translate-manage-submit": "Ayahi",
@@ -370,6 +370,6 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|golongan}} liyané",
 	"translate-ulsdep-title": "Cacad konfigurasi",
 	"translate-ulsdep-body": "Èkstènsi pertalan gumantung [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector èkstènsi Sèlèktor Basa Global].",
-	"tux-session-expired": "Panjenengan wis ora mlebu log manèh. Mlebua log lumantar tab liyané. Utawa, turuna pertalan sing durung kasimpen, mlebua log, balia nyang kaca iki banjur isènana manèh pertalané panjenengan.",
+	"tux-session-expired": "Panjenengan wis ora mlebu log manèh. Mlebua log lumantar tab liyané. Utawa, turuna pertalan sing durung kasimpen, mlebua log, balia nyang kaca iki banjur isinen manèh pertalané panjenengan.",
 	"tux-nojs": "Kaca iki butuh JavaScript."
 }
