@@ -160,7 +160,7 @@
 	"pt-movepage-action-other": "Cambiar destino",
 	"pt-movepage-intro": "Esta página especial permite trasladar páginas que están marcadas para su traducción.\nLa acción de traslado no será instantánea, porque necesitarán trasladarse muchas páginas.\nMientras las páginas estén siendo trasladadas, no es posible interactuar con las páginas en cuestión.\nLos fallos serán registrados en el [[Special:Log/pagetranslation|registro de traducción de páginas]] y necesitarán ser reparados manualmente.",
 	"pt-movepage-logreason": "Parte de la página traducible «$1»",
-	"pt-movepage-started": "La página base se ha trasladado.\nPor favor verifica el [[Special:Log/pagetranslation|registro de traducción de página]] para errores y mensaje de conclusión.",
+	"pt-movepage-started": "Verifica el [[Special:Log/pagetranslation|registro de traducción de página]] en un momento en busca de errores y mensaje de conclusión.",
 	"pt-locked-page": "Esta página está bloqueada porque la página traducible está siendo trasladada actualmente.",
 	"pt-deletepage-lang-title": "Eliminación de la página de traducción \"$1\"",
 	"pt-deletepage-full-title": "Eliminación de la página traducible \"$1\"",

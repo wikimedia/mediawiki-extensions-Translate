@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Saimawnkham"
+			"Saimawnkham",
+			"Saosukham"
 		]
 	},
-	"tpt-languages-nonzero": "$1 (ပိၼ်ၽႃႇသႃႇယဝ်ႉ $2%)"
+	"tpt-languages-nonzero": "$1 (ပိၼ်ႇၽႃႇသႃႇယဝ်ႉ $2%)"
 }

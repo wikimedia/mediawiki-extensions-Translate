@@ -9,7 +9,8 @@
 			"Sacamol",
 			"Hpetit",
 			"Verdy p",
-			"Derugon"
+			"Derugon",
+			"Urhixidur"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gérer les groupes d'agrégation de messages.\n\nVous pouvez ajouter et supprimer des agrégats de  groupes de messages et les associer ou de les dissocier les uns des autres (un à la fois).",
@@ -34,7 +35,7 @@
 	"apihelp-query+messagecollection-param-limit": "Combien de messages à afficher (après filtrage).",
 	"apihelp-query+messagecollection-param-offset": "Entier ou clé de décalage pour le début.",
 	"apihelp-query+messagecollection-param-filter": "Filtres sur les collections de messages. Utilisez <kbd>! </kbd> pour nier la condition. Par exemple <kbd>!floue</kbd> signifie uniquement la liste de tous les messages non-floue . Les filtres sont appliqués dans l'ordre indiqué.\n;floue: messages avec étiquette fuzzy.\n;optionnel: messages qui doivent être traduits que si des changements sont nécessaires.\n;ignoré: messages qui ne sont jamais traduits.\n;possède  traduction: messages qui ont une traduction peu importe si elle est floue ou pas.\n;traduit: messages qui ont une traduction qui n'est pas floue.\n;changé: messages qui ont été traduits ou changé depuis la dernière exportation.\n;examinateur&#58;N: messages dont le numéro d'utilisateur <kbd>N</kbd> figure parmi les examinateurs.\n;dernier traducteur&#58;N: messages dont le numéro d'utilisateur <kbd>N</kbd> est celui de la dernière personne qui a traduit.",
-	"apihelp-query+messagecollection-param-prop": "Quelles sont les propriétés à obtenir:\n;definition: la définition du message.\n;translation: traduction actuelle (sans la chaîne $1 si elle est présente, utiliser les étiquettes pour vérifier les traductions obsolètes ou cassées).\n;tags: balises de message, comme optionel, ignoré et floue.\n;properties: les propriétés d'un message, comme le status, la révision, le dernier traducteur. Peut varier entre les messages.\n;revision:<span class=\"deprecated\">Obsolète! </span> Utiliser $2prop=propriétés.",
+	"apihelp-query+messagecollection-param-prop": "Quelles sont les propriétés à obtenir :\n;definition : la définition du message.\n;translation : traduction actuelle (sans la chaîne $1 si elle est présente, utiliser les étiquettes pour vérifier les traductions désuètes ou cassées).\n;tags : balises de message, comme optionnel, ignoré et flou.\n;properties : les propriétés d’un message, comme son état, la révision, le dernier traducteur. Peut varier entre les messages.\n;revision :<span class=\"deprecated\">Désuet !</span> Utiliser $2prop=propriétés.",
 	"apihelp-query+messagecollection-example-1": "Liste des langues prises en charge",
 	"apihelp-query+messagecollection-example-2": "Liste des définitions de messages non-facultatifs pour le groupe \"Exemple-de-page\"",
 	"apihelp-query+messagecollection-example-3": "Liste des messages facultatifs en finnois, avec les balises pour le groupe de la \"page d'exemple\"",

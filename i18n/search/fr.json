@@ -8,7 +8,8 @@
 			"Titip1995",
 			"Bluenaranja",
 			"Verdy p",
-			"Pols12"
+			"Pols12",
+			"Urhixidur"
 		]
 	},
 	"searchtranslations": "Recherche de traductions",
@@ -30,7 +31,7 @@
 	"tux-sst-untranslated": "Pas encore traduits de $1",
 	"tux-sst-outdated": "Traductions périmées à partir de $1",
 	"tux-sst-ellipsis-untranslated": "Non traduit",
-	"tux-sst-ellipsis-outdated": "Traductions obsolètes",
+	"tux-sst-ellipsis-outdated": "Traductions désuètes",
 	"tux-sst-link-all-match": "Requiert tous les termes de recherche",
 	"tux-sst-match-message": "Montre les traductions qui correspondent à chacun des mots de la recherche. $1",
 	"tux-sst-case-sensitive": "Sensible à la casse"

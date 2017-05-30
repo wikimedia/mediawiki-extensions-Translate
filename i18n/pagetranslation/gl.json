@@ -147,7 +147,7 @@
 	"pt-movepage-action-other": "Cambiar o destino",
 	"pt-movepage-intro": "Esta páxina especial permite mover páxinas que están marcadas para a súa tradución.\nA acción de traslado non será inmediata porque é necesario mover moitas outras páxinas.\nMentres as páxinas son trasladadas, non é posible traballar nelas.\nOs erros quedarán rexistrados no [[Special:Log/pagetranslation|rexistro de páxinas de tradución]] e deberán ser reparados manualmente.",
 	"pt-movepage-logreason": "Parte da páxina traducible \"$1\"",
-	"pt-movepage-started": "Estase a mover a páxina base.\nComprobe o [[Special:Log/pagetranslation|rexistro de páxinas de tradución]] por se houbese algún erro e para ler as mensaxes de conclusión.",
+	"pt-movepage-started": "Por favor, comprobe o [[Special:Log/pagetranslation|rexistro de páxinas de tradución]] nun momento por se houbese algún erro e para ler as mensaxes de conclusión.",
 	"pt-locked-page": "Esta páxina está bloqueada porque se está a mover a páxina traducible.",
 	"pt-deletepage-lang-title": "Borrar a páxina de tradución \"$1\"",
 	"pt-deletepage-full-title": "Borrar a páxina traducible \"$1\"",

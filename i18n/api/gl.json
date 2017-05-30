@@ -101,6 +101,7 @@
 	"apierror-translate-nomessagefortitle": "O título non se corresponde cunha mensaxe traducible",
 	"apierror-translate-owntranslation": "Non pode revisar as súas traducións",
 	"apierror-translate-sandboxdisabled": "A función de zona de probas non está en uso",
+	"apierror-translate-sandbox-invalidppassword": "O contrasinal non é válido",
 	"apierror-translate-unknownmessage": "Mensaxe descoñecida",
 	"apiwarn-translate-alreadyreviewedbyyou": "Xa marcada como revisada por vostede"
 }
