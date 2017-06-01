@@ -13,7 +13,8 @@
 			"LNDDYL",
 			"Zhxy 519",
 			"Bowleerin",
-			"Alexsh"
+			"Alexsh",
+			"Wwycheuk"
 		]
 	},
 	"pagetranslation": "頁面翻譯",
@@ -68,6 +69,7 @@
 	"translate-tag-markthisagain": "此頁面在 <span class=\"plainlinks\">[$2 標記需要翻譯]</span> 之後，已有 <span class=\"plainlinks\">[$1 變更]</span>。",
 	"translate-tag-hasnew": "此頁面包含未被標記用來翻譯的 <span class=\"plainlinks\">[$1 變更]</span>。",
 	"tpt-translation-intro": "此頁面為頁面 [[$2]] <span class=\"plainlinks\">[$1 翻譯後的版本]</span> 且翻譯完成進度為 $3%。",
+	"tpt-translation-intro-fuzzy": "已過時的翻譯標記為這樣。",
 	"tpt-languages-legend": "其他語言：",
 	"tpt-languages-zero": "開始翻譯此語言",
 	"tpt-languages-nonzero": "$1 ($2% 未翻譯)",
@@ -155,7 +157,7 @@
 	"pt-movepage-action-other": "變更目標",
 	"pt-movepage-intro": "此特殊頁面允許您移動已標記需要翻譯的頁面，\n由於有許多頁面要移動，移動的操作不是即時的。\n在移動頁面的過程無法即時處理有問題的的頁面，\n任何移動失敗會記錄在 [[Special:Log/pagetranslation|頁面翻譯日誌]]，並需要手動修復。",
 	"pt-movepage-logreason": "可翻譯頁面 \"$1\" 的部分",
-	"pt-movepage-started": "基礎頁面已移動。\n請檢查 [[Special:Log/pagetranslation|頁面翻譯日誌]] 是否有錯誤與完成訊息。",
+	"pt-movepage-started": "請檢查 [[Special:Log/pagetranslation|頁面翻譯日誌]] 內的錯誤和完成訊息。",
 	"pt-locked-page": "因可翻譯頁面正在移動，此頁面已鎖定。",
 	"pt-deletepage-lang-title": "刪除翻譯頁面 \"$1\"",
 	"pt-deletepage-full-title": "刪除可翻譯頁面 \"$1\"",
