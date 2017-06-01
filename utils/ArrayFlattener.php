@@ -77,7 +77,6 @@ class ArrayFlattener {
 	 * @return bool|string
 	 */
 	public function flattenCLDRPlurals( $messages ) {
-
 		$pluralKeys = false;
 		$nonPluralKeys = false;
 		foreach ( $messages as $key => $value ) {
@@ -128,7 +127,6 @@ class ArrayFlattener {
 	 * @return array
 	 */
 	public function unflatten( $flat ) {
-
 		$unflat = [];
 
 		if ( $this->parseCLDRPlurals ) {
@@ -189,7 +187,6 @@ class ArrayFlattener {
 	 * @return bool|array
 	 */
 	public function unflattenCLDRPlurals( $key, $message ) {
-
 		// Quick escape.
 		if ( strpos( $message, '{{PLURAL' ) === false ) {
 			return false;
