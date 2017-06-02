@@ -2,18 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"Anakmalaysia",
-			"Pizza1016"
+			"Pizza1016",
+			"Muhdnurhidayat"
 		]
 	},
 	"pagetranslation": "Penterjemahan laman",
 	"right-pagetranslation": "Menandai versi-versi laman untuk diterjemah",
 	"action-pagetranslation": "menguruskan halaman-halaman yang boleh diterjemah",
-	"tpt-desc": "Sambungan untuk menterjemah laman-laman kandungan",
 	"tpt-section": "Unit penterjemahan $1",
 	"tpt-section-new": "Unit penterjemahan baru.\nNama: $1",
 	"tpt-section-deleted": "Unit penterjemahan $1",
-	"tpt-template": "Templat laman",
-	"tpt-templatediff": "Templat laman telah berubah.",
 	"tpt-diff-old": "Teks sebelumnya",
 	"tpt-diff-new": "Teks baru",
 	"tpt-submit": "Tandai versi ini untuk diterjemah",
@@ -27,7 +25,6 @@
 	"tpt-notsuitable": "Laman $1 tidak sesuai untuk diterjemah.\nPastikan ia ada tag <nowiki><translate></nowiki> dan sintaks yang sah.",
 	"tpt-saveok": "Laman [[:$1]] telah ditandai untuk penterjemahan dengan $2 unit penterjemahan.\nLaman ini kini boleh <span class=\"plainlinks\">[$3 diterjemah]</span>.",
 	"tpt-offer-notify": "Anda boleh <span class=\"plainlinks\">[$1 memaklumkan para penterjemah]</span> tentang halaman ini.",
-	"tpt-badsect": "\"$1\" bukan nama yang sah untuk unit penterjemahan $2.",
 	"tpt-showpage-intro": "Di bawah tersenarainya unit-unit terjemahan yang baru, sedia ada dan terhapus.\nSebelum menandai versi ini untuk diterjemah, pastikan supaya perubahan kepada unit terjemahan diminimumkan untuk mengelakkan beban yang tidak perlu untuk penterjemah.",
 	"tpt-mark-summary": "Menandakan versi ini untuk diterjemah",
 	"tpt-mark-nochanges": "Tiada perbezaan antara semakan ini dengan semakan tertanda yang terdahulu.",
@@ -61,6 +58,7 @@
 	"translate-tag-markthisagain": "Laman ini mengalami <span class=\"plainlinks\">[$1 perubahan]</span> sejak kali terakhir <span class=\"plainlinks\">[$2 ditandai untuk diterjemah]</span>.",
 	"translate-tag-hasnew": "Laman ini mengalami <span class=\"plainlinks\">[$1 perubahan]</span> yang belum ditandai untuk diterjemah.",
 	"tpt-translation-intro": "Laman ini merupakan <span class=\"plainlinks\">[$1 versi terjemahan]</span> laman [[$2]] dan penterjemahannya $3% siap.",
+	"tpt-translation-intro-fuzzy": "Terjemahan yang lapuk ditandai sebegini.",
 	"tpt-languages-legend": "Bahasa lain:",
 	"tpt-languages-separator": "&#160;•&#32;",
 	"tpt-languages-zero": "Mulakan terjemahan dalam bahasa ini",
@@ -78,7 +76,6 @@
 	"tpt-discouraged-language-reason": "Sebab: $1",
 	"tpt-priority-languages": "Seorang penyelia penterjemahan telah menetapkan bahasa-bahasa utama kumpulan ini kepada: $1",
 	"tpt-render-summary": "Mengemas kini agar sepadan dengan versi baru laman sumber",
-	"tpt-download-page": "Eksport laman dengan terjemahan",
 	"aggregategroups": "Kumpulan agregat",
 	"tpt-aggregategroup-add": "Tambahkan",
 	"tpt-aggregategroup-save": "Simpan",
@@ -135,7 +132,7 @@
 	"pt-movepage-action-other": "Tukar sasaran",
 	"pt-movepage-intro": "Laman khas ini membolehkan anda untuk memindahkan laman-laman yang ditandai untuk diterjemah.\nTindakan pemindahan itu tidak meninggalkan kesan segera, kerana banyak laman yang perlu dipindahkan.\nSementara laman-laman berkenaan dipindahkan, anda tidak boleh berinteraksi dengan laman-laman yang terlibat.\nKegagalan akan dilogkan dalam [[Special:Log/pagetranslation|log penterjemahan laman]] dan perlu dibaiki dengan tangan.",
 	"pt-movepage-logreason": "Sebahagian laman boleh terjemah $1.",
-	"pt-movepage-started": "Laman asas kini telah dipindahkan.\nSila periksa [[Special:Log/pagetranslation|log penterjemahan laman]] untuk ralat dan mesej penyiapan.",
+	"pt-movepage-started": "Sila periksa [[Special:Log/pagetranslation|log penterjemahan laman]] sekali-sekala untuk ralat dan mesej penyiapan.",
 	"pt-locked-page": "Laman ini dikunci kerana laman boleh terjemah yang terlibat kini sedang dipindahkan.",
 	"pt-deletepage-lang-title": "Menghapuskan laman penterjemahan $1.",
 	"pt-deletepage-full-title": "Menghapuskan laman boleh terjemah $1.",
