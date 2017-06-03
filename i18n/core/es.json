@@ -308,7 +308,7 @@
 	"translate-workflowgroup-label": "Estados del flujo de trabajo",
 	"translate-workflowgroup-desc": "Este grupo de mensajes muestra los estados del flujo de trabajo de traducción.\nLos estados están definidos en la variable de configuración $wgTranslateWorkflowStates.",
 	"translate-dynagroup-recent-label": "Traducciones recientes",
-	"translate-dynagroup-recent-desc": "Este grupo de mensajes muestra todas las traducciones recientes en este idioma.\nEs especialmente útil para tareas de revisión.",
+	"translate-dynagroup-recent-desc": "Este grupo de mensajes muestra todas las traducciones recientes en este idioma.\nResulta muy útil para tareas de revisión.",
 	"translate-dynagroup-additions-label": "Adiciones recientes",
 	"translate-dynagroup-additions-desc": "Este grupo de mensajes muestra mensajes nuevos y cambiados.",
 	"translate-msggroupselector-projects": "Grupo de mensajes",

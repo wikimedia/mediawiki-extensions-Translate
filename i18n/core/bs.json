@@ -88,7 +88,7 @@
 	"translate-magic-saved": "Vaše izmjene su sačuvane.",
 	"translate-checks-parameters": "Sljedeći {{PLURAL:$2|parametar nije iskorišten|parametri nisu iskorišteni}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "Sljedeći {{PLURAL:$2|parametar je nepoznat|parametri su nepoznati}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-balance": "Postoji nejednak broj vrsta {{PLURAL:$2|zagrade|zagrada}}:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-balance": "Neparan broj {{PLURAL:$2|zagrada}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Sljedeći link je problematičan|Sljedeća $2 linka su problematični|Sljedećih $2 linkova je problematično}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Sljedeći link|Sljedeća $2 linka|Sljedeći $2 linkova}} nedostaje:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "Molimo Vas da zamijenite {{PLURAL:$2|slijedeću oznaku|slijedeće oznake}} sa ispravnim:\n<strong><nowiki>$1</nowiki></strong>",
