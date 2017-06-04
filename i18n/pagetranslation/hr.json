@@ -5,7 +5,8 @@
 			"Herr Mlinka",
 			"SpeedyGonsales",
 			"Roberta F.",
-			"MaGa"
+			"MaGa",
+			"Bugoslav"
 		]
 	},
 	"pagetranslation": "Prijevod stranice",
@@ -24,6 +25,7 @@
 	"translate-tag-markthis": "Označi ovu stranicu za prijevod",
 	"tpt-languages-legend": "Drugi jezici:",
 	"tpt-languages-nonzero": "$1 ($2 % prevedeno)",
+	"log-name-pagetranslation": "Evidencija prevođenja stranica",
 	"pt-movepage-list-pages": "Popis stranica za premještanje",
 	"pt-movepage-list-other": "{{PLURAL:$1|Druga podstranica|Druge podstranice}}",
 	"pt-movepage-current": "Trenutačni naziv:",
