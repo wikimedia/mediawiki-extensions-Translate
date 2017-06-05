@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Alvaro Vidal-Abarca"
+			"Alvaro Vidal-Abarca",
+			"Fitoschido"
 		]
 	},
 	"apihelp-aggregategroups-example-1": "Associar un grup",
@@ -19,5 +20,6 @@
 	"apihelp-translationstash-param-metadata": "Objecte JSON.",
 	"apihelp-ttmserver-param-targetlanguage": "Un codi d'idioma de la proposta.",
 	"apihelp-ttmserver-param-text": "El text per trobar suggeriments.",
-	"apihelp-ttmserver-example-1": "Obtenir suggeriments per a la traducció de \"Ajuda\" de l'anglès al finès"
+	"apihelp-ttmserver-example-1": "Obtenir suggeriments per a la traducció de \"Ajuda\" de l'anglès al finès",
+	"apierror-translate-sandbox-invalidppassword": "La contrasenya no és vàlida"
 }
