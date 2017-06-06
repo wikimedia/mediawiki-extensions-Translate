@@ -179,6 +179,7 @@
 	"supportedlanguages-count": "Ukupno $1 {{PLURAL:$1|jezik|jezika}}.",
 	"translate-save": "Sačuvaj ($1)",
 	"translate-jssti-add": "Dodaj na popis",
+	"managemessagegroups": "Upravljanje skupinama poruka",
 	"translate-manage-import-new": "Nova poruka $1",
 	"translate-manage-import-deleted": "Obrisana poruka $1",
 	"translate-manage-action-import": "Uvezi",

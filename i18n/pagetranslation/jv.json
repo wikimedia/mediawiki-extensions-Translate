@@ -95,7 +95,7 @@
 	"pt-movepage-action-other": "Ganti patujon",
 	"pt-movepage-intro": "Kaca astamiwa iki nglilakaké Sampéyan mindhahaké kaca sing ditandhai kanggo terjemahan.\nPamidhahan ora bakal gelis, amarga akèh kaca sing kudu dipindhahaké.\nNalika kaca dipindhahaké, ora bisa interaksi karo kaca sing dimaksud.\nKagagalan bakal dilebokaké nèng [[Special:Log/pagetranslation|log terjemahan kaca]] lan ora perlu dibenahi manual.",
 	"pt-movepage-logreason": "Bagéyan kaca \"$1\" sing bisa diterhemahaké.",
-	"pt-movepage-started": "Kaca dhasar saiki wis dipindhah.\nMangga priksa [[Special:Log/pagetranslation|log pamindhahan kaca]] kanggo layang kasalahan lan parampungan.",
+	"pt-movepage-started": "Mangga priksanen [[Special:Log/pagetranslation|log pertalan kaca]] sadhéla bokmanawa ana masalah lan layang rampungan.",
 	"pt-locked-page": "Kaca iki digembok amarga kaca sing bisa diterjemahaké saiki wis dipindhah.",
 	"pt-deletepage-lang-title": "Mbusak kaca \"$1\" sing bisa diterjemahaké.",
 	"pt-deletepage-full-title": "Mbusak kaca \"$1\" sing bisa diterjemahaké.",
