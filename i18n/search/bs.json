@@ -9,7 +9,7 @@
 	"tux-sst-view-foreign": "Pogledaj na $1",
 	"tux-sst-search": "Pretraži",
 	"tux-sst-search-ph": "Pretraži prijevode",
-	"tux-sst-count": "{{PLURAL:$1|0=Nije pronađen nijedan rezultat|Pronađen jedan rezultat|Pronađena $1 rezultata|Pronađeno $1 rezultata}}",
+	"tux-sst-count": "{{PLURAL:$1|Pronađen jedan rezultat|Pronađena $1 rezultata|Pronađeno $1 rezultata}}",
 	"tux-sst-facet-language": "Jezici",
 	"tux-sst-facet-group": "Grupe poruka",
 	"tux-sst-nosolr-title": "Pretraga nije dostupna",
