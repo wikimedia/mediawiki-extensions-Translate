@@ -220,7 +220,7 @@
 	"translate-manage-action-fuzzy": "Importar e marcar para revisão",
 	"translate-manage-nochanges": "Não há alterações nas definições das mensagens deste grupo.",
 	"translate-manage-nochanges-other": "Não houve alterações para esta língua.\nUse a ligação abaixo para voltar aos detalhes do grupo.",
-	"translate-manage-inconsistent": "Foi detectada uma inconsistência no pedido.\nPor favor, verifique se houve alterações e tente novamente.\nDetalhes: $1.",
+	"translate-manage-inconsistent": "Foi detetada uma inconsistência no pedido.\nPor favor, verifique se houve alterações e tente novamente.\nDetalhes: $1.",
 	"translate-manage-toolong": "O tempo máximo de $1 {{PLURAL:$1|segundo|segundos}} de processamento foi excedido.\nPor favor, reenvie o formulário para continuar o processamento.",
 	"translate-manage-import-summary": "Importando uma nova versão de fonte externa",
 	"translate-manage-conflict-summary": "Importando uma nova versão de fonte externa.\nVerifique-a, por favor.",
