@@ -105,7 +105,7 @@
 	"tpt-aggregategroup-edit-description": "Descripción:",
 	"tpt-aggregategroup-update": "Guardar",
 	"tpt-aggregategroup-update-cancel": "Cancelar",
-	"tpt-invalid-group": "Grupo inválido",
+	"tpt-invalid-group": "El grupo no es válido",
 	"pt-parse-open": "Etiqueta &lt;translate> desequilibrada.\nPlantilla de traducción: <pre>$1</pre>",
 	"pt-parse-close": "Etiqueta &lt;/translate> desequilibrada.\nPlantilla de traducción: <pre>$1</pre>",
 	"pt-parse-nested": "No se permiten unidades de traducción &lt;translate> anidadas.\nTexto de etiqueta: <pre>$1</pre>",
