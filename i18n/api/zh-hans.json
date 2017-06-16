@@ -8,6 +8,7 @@
 		]
 	},
 	"apihelp-aggregategroups-description": "管理聚合消息组。\n\n您可以添加和移除聚合消息组，以及从组中关联或分离消息（一次一个）。",
+	"apihelp-aggregategroups-summary": "管理聚合消息组。",
 	"apihelp-aggregategroups-param-do": "想要操作哪个聚合消息组。",
 	"apihelp-aggregategroups-param-aggregategroup": "聚合消息组ID。",
 	"apihelp-aggregategroups-param-group": "消息组ID。",
@@ -78,6 +79,7 @@
 	"apihelp-ttmserver-param-text": "用于寻找建议的文本。",
 	"apihelp-ttmserver-example-1": "获取有关将“Help”从英语翻译成芬兰语的建议",
 	"apihelp-searchtranslations-description": "搜索译文。",
+	"apihelp-searchtranslations-summary": "搜索译文。",
 	"apihelp-searchtranslations-param-service": "哪些翻译服务可供使用。",
 	"apihelp-searchtranslations-param-query": "要搜索的字符串。",
 	"apihelp-searchtranslations-param-sourcelanguage": "原始文本的语言代码。",

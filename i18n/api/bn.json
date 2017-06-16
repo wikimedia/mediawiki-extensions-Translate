@@ -4,6 +4,7 @@
 			"Aftabuzzaman"
 		]
 	},
+	"apihelp-searchtranslations-summary": "অনুবাদ অনুসন্ধান করে।",
 	"apierror-translate-sandbox-invalidppassword": "পাসওয়ার্ড সঠিক নয়",
 	"apierror-translate-unknownmessage": "অজানা বার্তা"
 }

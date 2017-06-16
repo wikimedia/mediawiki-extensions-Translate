@@ -35,7 +35,7 @@
 	"translate-page-language": "Jezik",
 	"translate-page-limit": "Ograničenja",
 	"translate-page-limit-option": "$1 {{PLURAL:$1|poruka|poruke|poruka}} po stranici",
-	"translate-submit": "Pronađi",
+	"translate-submit": "Dobavi",
 	"translate-page-navigation-legend": "Navigacija",
 	"translate-page-showing": "Prikazane su poruke od $1 do $2 iz $3.",
 	"translate-page-showing-all": "Prikaz $1 {{PLURAL:$1|poruke|poruke|poruka}}.",
