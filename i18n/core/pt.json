@@ -33,7 +33,7 @@
 	"translate-page-no-such-language": "A língua especificada é inválida.",
 	"translate-page-no-such-group": "O grupo especificado é inválido.",
 	"translate-page-disabled": "As traduções para esta língua, neste grupo, foram impossibilitadas. Motivo:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 é o idioma original desta página.",
+	"translate-page-disabled-source": "$1 é a língua original desta página.",
 	"translate-language-disabled": "A tradução para esta língua foi impossibilitada.",
 	"translate-page-settings-legend": "Configurações",
 	"translate-page-group": "Grupo",
@@ -390,7 +390,7 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduzidas, $2% revistas, $3% desatualizadas",
 	"translate-search-more-groups-info": "mais $1 {{PLURAL:$1|grupo|grupos}}",
 	"translate-ulsdep-title": "Erro de configuração",
-	"translate-ulsdep-body": "A tradução da extensão depende da [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector extensão Seletor Universal de Idiomas].",
+	"translate-ulsdep-body": "A extensão de tradução depende da [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector extensão Universal Language Selector].",
 	"tux-session-expired": "Não está mais autenticado. Por favor, inicie a sessão num outro separador. Em alternativa, faça uma cópia das traduções que não foram gravadas, inicie sessão e regresse a esta página para inserir as suas traduções novamente.",
 	"tux-nojs": "Esta página requer JavaScript."
 }
