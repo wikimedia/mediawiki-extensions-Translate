@@ -240,7 +240,7 @@ class SpecialAggregateGroups extends SpecialPage {
 			}
 
 			if ( $group ) {
-				$text = Linker::linkKnown( $group->getTitle() );
+				$text = $this->getLinkRenderer()->makeKnownLink( $group->getTitle() );
 				$note = MessageGroups::getPriority( $id );
 			} else {
 				$text = htmlspecialchars( $id );

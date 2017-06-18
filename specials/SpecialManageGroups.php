@@ -219,14 +219,14 @@ class SpecialManageGroups extends SpecialPage {
 
 			$this->diff->setContent( $oldContent, $newContent );
 
-			$text = $this->diff->getDiff( Linker::link( $title ), '' );
+			$text = $this->diff->getDiff( $this->getLinkRenderer()->makeLink( $title ), '' );
 		} elseif ( $type === 'addition' ) {
 			$oldContent = ContentHandler::makeContent( '', $title );
 			$newContent = ContentHandler::makeContent( $params['content'], $title );
 
 			$this->diff->setContent( $oldContent, $newContent );
 
-			$text = $this->diff->getDiff( '', Linker::link( $title ) );
+			$text = $this->diff->getDiff( '', $this->getLinkRenderer()->makeLink( $title ) );
 		} elseif ( $type === 'change' ) {
 			$wiki = ContentHandler::getContentText( Revision::newFromTitle( $title )->getContent() );
 
@@ -249,7 +249,7 @@ class SpecialManageGroups extends SpecialPage {
 			$newContent = ContentHandler::makeContent( $params['content'], $title );
 
 			$this->diff->setContent( $oldContent, $newContent );
-			$text .= $this->diff->getDiff( Linker::link( $title ), $actions );
+			$text .= $this->diff->getDiff( $this->getLinkRenderer()->makeLink( $title ), $actions );
 		}
 
 		$hidden = Html::hidden( $id, 1 );

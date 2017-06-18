@@ -98,9 +98,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 		// Information to be used inside the foreach loop.
 		$linkInfo = [];
 		$linkInfo['rc']['title'] = SpecialPage::getTitleFor( 'Recentchanges' );
-		$linkInfo['rc']['msg'] = $this->msg( 'supportedlanguages-recenttranslations' )->escaped();
+		$linkInfo['rc']['msg'] = $this->msg( 'supportedlanguages-recenttranslations' )->text();
 		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
-		$linkInfo['stats']['msg'] = $this->msg( 'languagestats' )->escaped();
+		$linkInfo['stats']['msg'] = $this->msg( 'languagestats' )->text();
 
 		$local = Language::fetchLanguageName( $code, $lang->getCode(), 'all' );
 		$native = Language::fetchLanguageName( $code, null, 'all' );
@@ -118,25 +118,23 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		// Add useful links for language stats and recent changes for the language.
 		$links = [];
-		$links[] = Linker::link(
+		$links[] = $this->getLinkRenderer()->makeKnownLink(
 			$linkInfo['stats']['title'],
 			$linkInfo['stats']['msg'],
 			[],
 			[
 				'code' => $code,
 				'suppresscomplete' => '1'
-			],
-			[ 'known', 'noclasses' ]
+			]
 		);
-		$links[] = Linker::link(
+		$links[] = $this->getLinkRenderer()->makeKnownLink(
 			$linkInfo['rc']['title'],
 			$linkInfo['rc']['msg'],
 			[],
 			[
 				'translations' => 'only',
 				'trailer' => '/' . $code
-			],
-			[ 'known', 'noclasses' ]
+			]
 		);
 		$linkList = $lang->listToText( $links );
 
@@ -322,7 +320,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		foreach ( $users as $username => $count ) {
 			$title = Title::makeTitleSafe( NS_USER, $username );
-			$enc = htmlspecialchars( $username );
+			$enc = $username;
 
 			$attribs = [];
 			$styles = [];
@@ -341,7 +339,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 				$styles['border-bottom'] = '3px solid #' .
 					$statsTable->getBackgroundColor( $period - $last, $period );
 			} else {
-				$enc = "<del>$enc</del>";
+				$enc = new HtmlArmor( "<del>$enc</del>" );
 			}
 
 			$stylestr = $this->formatStyle( $styles );
@@ -349,7 +347,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 				$attribs['style'] = $stylestr;
 			}
 
-			$links[] = Linker::link( $title, $enc, $attribs );
+			$links[] = $this->getLinkRenderer()->makeLink( $title, $enc, $attribs );
 		}
 
 		// for GENDER support

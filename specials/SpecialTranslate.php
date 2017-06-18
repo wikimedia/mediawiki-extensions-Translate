@@ -159,9 +159,10 @@ class SpecialTranslate extends SpecialPage {
 		if ( in_array( $taskid, [ 'untranslated', 'reviewall' ], true ) ) {
 			$hasOptional = count( $this->group->getTags( 'optional' ) );
 			if ( $hasOptional ) {
-				$linktext = $this->msg( 'translate-page-description-hasoptional-open' )->escaped();
+				$linktext = $this->msg( 'translate-page-description-hasoptional-open' )->text();
 				$params = [ 'task' => 'optional' ] + $this->nondefaults;
-				$link = Linker::linkKnown( $this->getPageTitle(), $linktext, [], $params );
+				$link = $this->getLinkRenderer()->makeKnownLink(
+					$this->getPageTitle(), $linktext, [], $params );
 				$note = $this->msg( 'translate-page-description-hasoptional' )
 					->rawParams( $link )->parseAsBlock();
 

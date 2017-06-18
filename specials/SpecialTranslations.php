@@ -231,20 +231,19 @@ class SpecialTranslations extends SpecialAllPages {
 			$text = TranslateUtils::getLanguageName( $code, $this->getLanguage()->getCode() );
 			$text .= $separator;
 			$text .= $this->msg( 'parentheses' )->params( $code )->plain();
-			$text = htmlspecialchars( $text );
 
 			if ( $canTranslate ) {
 				$tools['edit'] = TranslationHelpers::ajaxEditLink(
 					$tTitle,
-					$text
+					htmlspecialchars( $text )
 				);
 			} else {
-				$tools['edit'] = Linker::link( $tTitle, $text );
+				$tools['edit'] = $this->getLinkRenderer()->makeLink( $tTitle, $text );
 			}
 
-			$tools['history'] = Linker::link(
+			$tools['history'] = $this->getLinkRenderer()->makeLink(
 				$tTitle,
-				$historyText,
+				new HtmlArmor( $historyText ),
 				[
 					'action',
 					'title' => $this->msg( 'history-title', $tTitle->getPrefixedDBkey() )->text()

@@ -272,9 +272,9 @@ class SpecialLanguageStats extends SpecialPage {
 			$this->getLanguage()->getCode()
 		);
 
-		$rcInLangLink = Linker::linkKnown(
+		$rcInLangLink = $this->getLinkRenderer()->makeKnownLink(
 			SpecialPage::getTitleFor( 'Translate', '!recent' ),
-			$this->msg( 'languagestats-recenttranslations' )->escaped(),
+			$this->msg( 'languagestats-recenttranslations' )->text(),
 			[],
 			[
 				'action' => 'proofread',

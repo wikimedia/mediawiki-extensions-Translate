@@ -280,11 +280,12 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		];
 
 		if ( isset( $this->names[$code] ) ) {
-			$text = htmlspecialchars( "$code: {$this->names[$code]}" );
+			$text = "$code: {$this->names[$code]}";
 		} else {
-			$text = htmlspecialchars( $code );
+			$text = $code;
 		}
-		$link = Linker::linkKnown( $this->translate, $text, [], $queryParameters );
+		$link = $this->getLinkRenderer()->makeKnownLink(
+			$this->translate, $text, [], $queryParameters );
 
 		return Html::rawElement( 'td', [], $link );
 	}
