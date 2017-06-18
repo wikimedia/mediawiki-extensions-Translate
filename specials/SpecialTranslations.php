@@ -15,6 +15,8 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslations extends SpecialAllPages {
+	use CompatibleLinkRenderer;
+
 	public function __construct() {
 		parent::__construct( 'Translations' );
 	}
@@ -239,10 +241,10 @@ class SpecialTranslations extends SpecialAllPages {
 					$text
 				);
 			} else {
-				$tools['edit'] = Linker::link( $tTitle, $text );
+				$tools['edit'] = $this->makeLink( $tTitle, $text );
 			}
 
-			$tools['history'] = Linker::link(
+			$tools['history'] = $this->makeLink(
 				$tTitle,
 				$historyText,
 				[
