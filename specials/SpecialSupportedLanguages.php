@@ -19,6 +19,8 @@
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialSupportedLanguages extends SpecialPage {
+	use CompatibleLinkRenderer;
+
 	/// Whether to skip and regenerate caches
 	protected $purge = false;
 
@@ -118,25 +120,23 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		// Add useful links for language stats and recent changes for the language.
 		$links = [];
-		$links[] = Linker::link(
+		$links[] = $this->makeKnownLink(
 			$linkInfo['stats']['title'],
 			$linkInfo['stats']['msg'],
 			[],
 			[
 				'code' => $code,
 				'suppresscomplete' => '1'
-			],
-			[ 'known', 'noclasses' ]
+			]
 		);
-		$links[] = Linker::link(
+		$links[] = $this->makeKnownLink(
 			$linkInfo['rc']['title'],
 			$linkInfo['rc']['msg'],
 			[],
 			[
 				'translations' => 'only',
 				'trailer' => '/' . $code
-			],
-			[ 'known', 'noclasses' ]
+			]
 		);
 		$linkList = $lang->listToText( $links );
 
@@ -349,7 +349,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 				$attribs['style'] = $stylestr;
 			}
 
-			$links[] = Linker::link( $title, $enc, $attribs );
+			$links[] = $this->makeLink( $title, $enc, $attribs );
 		}
 
 		// for GENDER support

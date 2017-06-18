@@ -11,6 +11,8 @@
  */
 
 class SpecialAggregateGroups extends SpecialPage {
+	use CompatibleLinkRenderer;
+
 	protected $hasPermission = false;
 
 	public function __construct() {
@@ -240,7 +242,7 @@ class SpecialAggregateGroups extends SpecialPage {
 			}
 
 			if ( $group ) {
-				$text = Linker::linkKnown( $group->getTitle() );
+				$text = $this->makeKnownLink( $group->getTitle() );
 				$note = MessageGroups::getPriority( $id );
 			} else {
 				$text = htmlspecialchars( $id );
