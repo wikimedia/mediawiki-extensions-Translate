@@ -24,6 +24,7 @@
 	"apihelp-ttmserver-param-sourcelanguage": "De Sproochcode vum Quelltext.",
 	"apihelp-ttmserver-param-targetlanguage": "De Sproochcode vum Virschlag.",
 	"apihelp-searchtranslations-description": "Iwwersetzunge sichen.",
+	"apihelp-searchtranslations-summary": "Iwwersetzunge sichen.",
 	"apihelp-searchtranslations-param-service": "Wat fir ee vun den disponibelen Iwwersetzungsservicer benotzt gi soll.",
 	"apihelp-searchtranslations-param-query": "D'Zeechen no deene gesicht gi soll.",
 	"apihelp-searchtranslations-param-limit": "Gréisst vum Resultat",
