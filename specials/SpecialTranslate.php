@@ -15,6 +15,8 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslate extends SpecialPage {
+	use CompatibleLinkRenderer;
+
 	/** @var TranslateTask */
 	protected $task;
 
@@ -161,7 +163,7 @@ class SpecialTranslate extends SpecialPage {
 			if ( $hasOptional ) {
 				$linktext = $this->msg( 'translate-page-description-hasoptional-open' )->escaped();
 				$params = [ 'task' => 'optional' ] + $this->nondefaults;
-				$link = Linker::linkKnown( $this->getPageTitle(), $linktext, [], $params );
+				$link = $this->makeKnownLink( $this->getPageTitle(), $linktext, [], $params );
 				$note = $this->msg( 'translate-page-description-hasoptional' )
 					->rawParams( $link )->parseAsBlock();
 
