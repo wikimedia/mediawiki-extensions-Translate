@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Guycn2"
+			"Guycn2",
+			"המקיסט"
 		]
 	},
 	"apihelp-aggregategroups-description": "ניהול קבוצות הודעות משולבות.\n\nאפשר להוסיף ולהסיר קבוצות משולבות ולשייך אליהן קבוצות הודעות או להסיר אותן (אחת‏־אחת).",
@@ -76,6 +77,7 @@
 	"apihelp-ttmserver-param-text": "עבור איזה טקסט למצוא הצעות.",
 	"apihelp-ttmserver-example-1": "קבלת הצעות לתרגום המחרוזת \"Help\" מאנגלית לפינית",
 	"apihelp-searchtranslations-description": "חיפוש תרגומים.",
+	"apihelp-searchtranslations-summary": "חפש תרגומים",
 	"apihelp-searchtranslations-param-service": "באילו משירותי התרגום הזמינים להשתמש.",
 	"apihelp-searchtranslations-param-query": "איזו מחרוזת לחפש.",
 	"apihelp-searchtranslations-param-sourcelanguage": "קוד השפה של טקסט המקור.",

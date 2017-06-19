@@ -16,6 +16,7 @@
 	"apihelp-translationaids-description": "All Iwwersetzungshëllefen ofruffen.",
 	"apihelp-translationaids-param-title": "Kompletten Titel vun engem bekannte Message.",
 	"apihelp-translationreview-description": "Iwwersetzungen als nogekuckt markéieren.",
+	"apihelp-translationreview-summary": "Nogekuckt Iwwersetzunge markéieren.",
 	"apihelp-translationreview-param-revision": "D'Nummer vun der Versioun fir nozekucken.",
 	"apihelp-translationreview-example-1": "Versioun 1 nokucken",
 	"apihelp-translationstash-param-subaction": "Aktioun.",

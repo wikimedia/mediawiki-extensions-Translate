@@ -4,7 +4,8 @@
 			"Lokal Profil",
 			"WikiPhoenix",
 			"Dan Koehl",
-			"Victorsa"
+			"Victorsa",
+			"Josve05a"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "Meddelandegrupp-ID.",
@@ -38,6 +39,7 @@
 	"apihelp-ttmserver-param-text": "Texten att hitta förslag på.",
 	"apihelp-ttmserver-example-1": "Få förslag för att översätta \"Hjälp\" från engelska till finska",
 	"apihelp-searchtranslations-description": "Sök översättningar.",
+	"apihelp-searchtranslations-summary": "Sök översättningar.",
 	"apihelp-searchtranslations-param-service": "Vilka tillgängliga översättningstjänster att använda.",
 	"apihelp-searchtranslations-param-query": "Strängen att söka efter.",
 	"apihelp-searchtranslations-param-sourcelanguage": "Språkkoden för källtexten.",

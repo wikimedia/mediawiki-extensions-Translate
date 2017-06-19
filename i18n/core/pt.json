@@ -238,7 +238,7 @@
 	"translate-import-err-stale-group": "O grupo de mensagens a que este ficheiro pertence não existe.",
 	"translate-import-err-no-headers": "O ficheiro não é um ficheiro Gettext válido, com o formato da extensão Translate:\nNão foi possível determinar o grupo e a língua a partir dos cabeçalhos.",
 	"translate-import-err-warnings": "Este ficheiro não é válido.\nCertifique-se de que o seu editor não remove os campos msgctxt.\nDetalhes: $1",
-	"translate-js-summary": "Sumário:",
+	"translate-js-summary": "Resumo:",
 	"translate-js-save": "Gravar",
 	"translate-js-next": "Gravar e abrir a seguinte",
 	"translate-js-nonext": "Esta foi a última mensagem nesta página.",
