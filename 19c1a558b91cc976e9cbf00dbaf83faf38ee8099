@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee859f59_076506dd",
+        "filename": "scripts/magic-export.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-06-19T20:40:09Z",
+      "side": 1,
+      "message": "This should avoid errors like https://gerrit.wikimedia.org/r/#/c/335074/1/SmiteSpam.alias.php",
+      "range": {
+        "startLine": 154,
+        "startChar": 2,
+        "endLine": 158,
+        "endChar": 3
+      },
+      "revId": "19c1a558b91cc976e9cbf00dbaf83faf38ee8099",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
