@@ -9,6 +9,8 @@
 		]
 	},
 	"translate": "ಭಾಷಾಂತರ ಮಲ್ಪುಲೆ",
+	"translate-taction-translate": "ತರ್ಜುಮೆ ಮಲ್ಪುಲೆ",
+	"translate-taction-lstats": "ಬಾಸೆ ಅಂಕಿಅಂಶೊಲು",
 	"translate-page-group": "ಗುಂಪು",
 	"translate-page-language": "ಭಾಸೆ",
 	"translate-page-limit": "ಮಿತಿ",
@@ -43,5 +45,6 @@
 	"translate-total": "ಸಂದೇಶಲು",
 	"translate-gs-total": "ಒಟ್ಟು",
 	"translate-documentation-language": "ಸುದ್ದಿ ದಾಕಲೆ ಮಲ್ಪುನು",
+	"tux-languageselector": "ತರ್ಜುಮೆ ಮಲ್ಪೊಡಾಯಿನ ಬಾಸೆ",
 	"tux-editor-message-tools-show-editor": "wiki editor ಡ್ ತೋಜಾಲೆ"
 }
