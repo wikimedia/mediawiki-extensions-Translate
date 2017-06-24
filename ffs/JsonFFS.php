@@ -108,6 +108,11 @@ class JsonFFS extends SimpleFFS {
 				$value = str_replace( TRANSLATE_FUZZY, '', $value );
 			}
 
+			// Skip blank translation - T155182
+			if ( $value === '' ) {
+				continue;
+			}
+
 			$key = $mangler->unmangle( $key );
 			$messages[$key] = $value;
 		}

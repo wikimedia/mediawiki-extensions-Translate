@@ -219,6 +219,12 @@ PHP;
 
 			$key = $mangler->unmangle( $key );
 			$value = str_replace( TRANSLATE_FUZZY, '', $value );
+
+			// Skip blank translation - T155182
+			if ( $value === '' ) {
+				continue;
+			}
+
 			$fuzzy = $m->hasTag( 'fuzzy' ) ? ' # Fuzzy' : '';
 
 			$key = self::quote( $key );
