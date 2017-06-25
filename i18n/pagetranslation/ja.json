@@ -62,6 +62,7 @@
 	"translate-tag-markthisagain": "このページには、最後に<span class=\"plainlinks\">[$2 翻訳対象に指定]</span>された時点以降の<span class=\"plainlinks\">[$1 変更]</span>があります。",
 	"translate-tag-hasnew": "このページには翻訳対象に指定されていない<span class=\"plainlinks\">[$1 変更]</span>があります。",
 	"tpt-translation-intro": "このページはページ [[$2]] を「<span class=\"plainlinks\">[$1 翻訳]</span>」したものです。翻訳は $3% 完了しています。",
+	"tpt-translation-intro-fuzzy": "修正が必要な翻訳にはこのような印が付いています。",
 	"tpt-languages-legend": "他言語での翻訳:",
 	"tpt-languages-zero": "この言語への翻訳を開始",
 	"tpt-languages-nonzero": "$1 ($2% 翻訳済み)",
