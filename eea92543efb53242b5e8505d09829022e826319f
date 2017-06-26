@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e742343_3c05d37c",
+        "filename": "Autoload.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-06-26T19:29:33Z",
+      "side": 1,
+      "message": "What rule is this? I\u0027m afraid it might break Doxygen docs. But then again I don\u0027t think anyone is generating or using those, in which case the comments should just be replaced with something simpler altogether.",
+      "range": {
+        "startLine": 319,
+        "startChar": 0,
+        "endLine": 319,
+        "endChar": 6
+      },
+      "revId": "eea92543efb53242b5e8505d09829022e826319f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_5cee9fb2",
+        "filename": "translationaids/QueryAggregatorAwareTranslationAid.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-06-26T19:29:33Z",
+      "side": 1,
+      "message": "I don\u0027t agree with this rule, but not going to block on it either.\n\nTo me this is direct equivalent for functions where I sometimes doo\n\n function bar (\n   par1,\n   par2,\n ) {\n   ...\n }",
+      "revId": "eea92543efb53242b5e8505d09829022e826319f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
