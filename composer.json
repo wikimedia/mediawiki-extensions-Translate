@@ -41,7 +41,7 @@
 	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "0.9.2",
-		"mediawiki/mediawiki-codesniffer": "~0.7.2",
+		"mediawiki/mediawiki-codesniffer": "0.10.0",
 		"jakub-onderka/php-console-highlighter": "0.3.2"
 	},
 	"suggest": {
@@ -52,7 +52,7 @@
 	"scripts": {
 		"fix": "phpcbf",
 		"test": [
-			"parallel-lint . --exclude vendor --exclude extensions",
+			"parallel-lint . --exclude vendor --exclude node_modules --exclude extensions",
 			"phpcs -p -s"
 		]
 	}

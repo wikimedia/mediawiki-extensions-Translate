@@ -123,7 +123,6 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		$text = $lang->lc( $text );
 		$segments = preg_split( '/\s+/', $text, -1, PREG_SPLIT_NO_EMPTY );
 		if ( count( $segments ) < 4 ) {
-
 			return [];
 		}
 

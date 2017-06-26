@@ -122,7 +122,6 @@ class SpecialTranslationStats extends SpecialPage {
 		if ( $this->including() ) {
 			$this->getOutput()->addHTML( $this->image( $opts ) );
 		} elseif ( $opts['graphit'] ) {
-
 			if ( !class_exists( 'PHPlot' ) ) {
 				header( 'HTTP/1.0 500 Multi fail' );
 				echo 'PHPlot not found';

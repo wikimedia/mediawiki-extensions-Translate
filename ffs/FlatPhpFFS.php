@@ -39,7 +39,7 @@ class FlatPhpFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		foreach ( $matches as $_ ) {
 			$legal = Title::legalChars();
 			$key = preg_replace_callback( "/([^$legal]|\\\\)/u",
-				function( $m ) {
+				function ( $m ) {
 					return '\x' . dechex( ord( $m[0] ) );
 				},
 				$_[1]

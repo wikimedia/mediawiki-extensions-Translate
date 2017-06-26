@@ -66,7 +66,7 @@ class AmdFFS extends SimpleFFS {
 	public function readFromVariable( $data ) {
 		$authors = AmdFFS::extractAuthors( $data );
 		$data = AmdFFS::extractMessagePart( $data );
-		$messages = (array) FormatJson::decode( $data, /*as array*/true );
+		$messages = (array)FormatJson::decode( $data, /*as array*/true );
 		$metadata = [];
 
 		// Take care of regular language bundles, as well as the root bundle.

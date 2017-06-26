@@ -28,7 +28,6 @@ class PageTranslationParserTest extends MediaWikiTestCase {
 	 * @dataProvider provideTestFiles
 	 */
 	public function testParsing( $file ) {
-
 		$filename = basename( $file );
 		list( $pagename, ) = explode( '.', $filename, 2 );
 		$title = Title::newFromText( $pagename );

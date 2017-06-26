@@ -135,7 +135,6 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 		// Then parse the messages
 		foreach ( $sections as $section ) {
-
 			$item = self::parseGettextSection( $section, $pluralCount, $metadata );
 			if ( $item === false ) {
 				continue;
@@ -165,7 +164,6 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	public static function parseGettextSection( $section, $pluralCount, &$metadata ) {
-
 		if ( trim( $section ) === '' ) {
 			return false;
 		}
