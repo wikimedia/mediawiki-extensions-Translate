@@ -46,7 +46,6 @@ XML;
 		$langs = Language::fetchLanguageNames( null, 'mw' );
 		$nodes = $edges = [];
 		foreach ( $langs as $code => $name ) {
-
 			$fallbacks = Language::getFallbacksFor( $code );
 			if ( $fallbacks === [ 'en' ] ) {
 				continue;

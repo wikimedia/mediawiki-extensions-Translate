@@ -227,7 +227,7 @@ class StatsTable {
 	/**
 	 * Makes a nice print from plain float.
 	 * @param number $num
-	 * @param string  $to floor or ceil
+	 * @param string $to floor or ceil
 	 * @return string Plain text
 	 */
 	public function formatPercentage( $num, $to = 'floor' ) {
