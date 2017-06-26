@@ -19,7 +19,7 @@ class ApiTranslationStash extends ApiBase {
 		// The user we are operating on, not necessarly the user making the request
 		$user = $this->getUser();
 
-		if ( isset( $params['username'] ) ){
+		if ( isset( $params['username'] ) ) {
 			if ( $this->getUser()->isAllowed( 'translate-sandboxmanage' ) ) {
 				$user = User::newFromName( $params['username'] );
 				if ( !$user ) {

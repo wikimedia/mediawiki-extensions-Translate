@@ -62,7 +62,6 @@ class TTMServerMessageUpdateJob extends Job {
 	/**
 	 * @param Title $title
 	 * @param array $params
-	 * @param int $id
 	 */
 	public function __construct( $title, $params = [] ) {
 		parent::__construct(

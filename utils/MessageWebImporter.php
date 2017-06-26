@@ -140,7 +140,6 @@ class MessageWebImporter {
 			$request->getBool( 'process', false ) &&
 			$this->getUser()->matchEditToken( $request->getVal( 'token' ) )
 		) {
-
 			return true;
 		}
 

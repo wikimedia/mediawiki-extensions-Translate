@@ -230,7 +230,7 @@ abstract class ComplexMessages {
 
 		if ( $group['code'] ) {
 			MediaWiki\suppressWarnings();
-			$data = (array) ${$group['var']} [$code];
+			$data = (array)${$group['var']} [$code];
 			MediaWiki\restoreWarnings();
 		} else {
 			$data = ${$group['var']};

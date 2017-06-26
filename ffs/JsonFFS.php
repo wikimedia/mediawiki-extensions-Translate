@@ -41,7 +41,7 @@ class JsonFFS extends SimpleFFS {
 	 * @return array Parsed data.
 	 */
 	public function readFromVariable( $data ) {
-		$messages = (array) FormatJson::decode( $data, /*as array*/true );
+		$messages = (array)FormatJson::decode( $data, /*as array*/true );
 		$authors = [];
 		$metadata = [];
 

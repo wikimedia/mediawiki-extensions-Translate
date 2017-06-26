@@ -132,7 +132,7 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	 * @return $this
 	 */
 	public function setIgnoreTF( $ignoreTF ) {
-		$this->_ignoreTF = (bool) $ignoreTF;
+		$this->_ignoreTF = (bool)$ignoreTF;
 
 		return $this;
 	}
@@ -145,7 +145,7 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	 * @return $this
 	 */
 	public function setFuzziness( $value ) {
-		$value = (int) $value;
+		$value = (int)$value;
 		$this->_fuzziness = $value;
 
 		return $this;
@@ -159,7 +159,7 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	 * @return $this
 	 */
 	public function setPrefixLength( $value ) {
-		$this->_prefixLength = (int) $value;
+		$this->_prefixLength = (int)$value;
 
 		return $this;
 	}
@@ -172,7 +172,7 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	 * @return $this
 	 */
 	public function setMaxQueryTerms( $value ) {
-		$this->_maxQueryTerms = (int) $value;
+		$this->_maxQueryTerms = (int)$value;
 
 		return $this;
 	}
