@@ -308,7 +308,7 @@ class SpecialLanguageStats extends SpecialPage {
 	/**
 	 * If workflow states are configured, adds a cell with the workflow state to the row,
 	 * @param String $target Whose workflow state do we want, such as language code or group id.
-	 * @param String $state  The workflow state id
+	 * @param String $state The workflow state id
 	 * @return string Html
 	 */
 	protected function getWorkflowStateCell( $target, $state ) {

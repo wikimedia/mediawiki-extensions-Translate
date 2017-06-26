@@ -123,7 +123,6 @@ class ExternalMessageSourceStateComparator {
 
 		// Does not exist
 		if ( $file === false ) {
-
 			return;
 		}
 
@@ -208,7 +207,6 @@ class ExternalMessageSourceStateComparator {
 				$this->addChange( 'deletion', $code, $key, null );
 			}
 		}
-
 	}
 
 	protected function addChange( $type, $language, $key, $content ) {

@@ -16,7 +16,6 @@
  */
 class GettextDocumentationAid extends TranslationAid {
 	public function getData() {
-
 		// We need to get the primary group to get the correct file
 		// So $group can be different from $this->group
 		$group = $this->handle->getGroup();

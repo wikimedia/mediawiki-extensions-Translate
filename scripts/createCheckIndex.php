@@ -97,7 +97,6 @@ class CreateCheckIndex extends Maintenance {
 				foreach ( $collection as $key => $message ) {
 					$prob = $checker->checkMessageFast( $message, $code );
 					if ( $prob ) {
-
 						if ( $verbose ) {
 							// Print it
 							$nsText = $wgContLang->getNsText( $g->namespaces[0] );

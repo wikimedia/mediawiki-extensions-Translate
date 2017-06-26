@@ -12,4 +12,3 @@ $magicWords = [];
 $magicWords['en'] = [
 	'translation' => [ 0, 'translation' ],
 ];
-

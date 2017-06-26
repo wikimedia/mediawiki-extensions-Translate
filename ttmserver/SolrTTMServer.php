@@ -17,8 +17,8 @@
  */
 class SolrTTMServer
 	extends TTMServer
-	implements ReadableTTMServer, SearchableTTMServer, WritableTTMServer
-{
+	implements ReadableTTMServer, SearchableTTMServer, WritableTTMServer {
+
 	/**
 	 * In case auto-commit is not enabled, or even if it is, tell solr to
 	 * commit before this time has passed, in milliseconds.

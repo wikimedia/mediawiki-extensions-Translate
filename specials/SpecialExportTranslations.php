@@ -46,7 +46,6 @@ class SpecialExportTranslations extends SpecialPage {
 
 			$this->doExport();
 		}
-
 	}
 
 	protected function outputForm() {

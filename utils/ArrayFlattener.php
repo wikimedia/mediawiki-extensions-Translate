@@ -147,7 +147,6 @@ class ArrayFlattener {
 		}
 
 		foreach ( $flat as $key => $value ) {
-
 			$path = explode( $this->sep, $key );
 			if ( count( $path ) === 1 ) {
 				$unflat[$key] = $value;

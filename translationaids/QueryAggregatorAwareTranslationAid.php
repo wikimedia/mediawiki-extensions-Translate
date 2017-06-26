@@ -15,8 +15,8 @@
  */
 abstract class QueryAggregatorAwareTranslationAid
 	extends TranslationAid
-	implements QueryAggregatorAware
-{
+	implements QueryAggregatorAware {
+
 	private $queries = [];
 	private $aggregator;
 
