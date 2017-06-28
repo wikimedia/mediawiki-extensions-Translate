@@ -174,6 +174,7 @@
 	"translate-mgs-totals": "Svi jezici zajedno",
 	"translate-mgs-invalid-group": "Navedena skupina $1 ne postoji.",
 	"supportedlanguages": "Podržani jezici",
+	"supportedlanguages-summary": "Ova stranica prikazuje popis svih podržanih jezika na ovome wikiju, {{SITENAME}}, zajedno s imenima prevoditelja koji rade na tim jezicima.\nVeličina suradničkih imena prevoditelja, tj. veličina slova, ovisi od toga koliko je tko poruka preveo.\nBoja podcrtavanja ovdje označuje kolika je aktivnost prevoditeljā – prevoditeljicā.",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Prevoditelj}}|Prevoditelji}}: $1",
 	"supportedlanguages-recenttranslations": "nedavni prijevodi",
 	"supportedlanguages-count": "Ukupno $1 {{PLURAL:$1|jezik|jezika}}.",
