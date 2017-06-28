@@ -53,4 +53,54 @@ class TranslatablePageTest extends PHPUnit_Framework_TestCase {
 
 		return $cases;
 	}
+
+	/**
+	 * @dataProvider provideTestCleanupTags
+	 */
+	public function testCleanupTags( $input, $expected, $comment ) {
+		$output = TranslatablePage::cleanupTags( $input );
+		$this->assertEquals( $expected, $output, $comment );
+	}
+
+	public static function provideTestCleanupTags() {
+		$cases = [];
+
+		$cases[] = [
+			"== Hello ==\n</translate>",
+			'== Hello ==',
+			'Unbalanced tag in a section preview',
+		];
+
+		$cases[] = [
+			"</translate><translate>",
+			'',
+			'Unbalanced tags, no whitespace',
+		];
+
+		$cases[] = [
+			"1\n2<translate>3\n4</translate>5\n6",
+			"1\n23\n45\n6",
+			'Unbalanced tags, non-removable whitespace',
+		];
+
+		$cases[] = [
+			"1<translate>\n\n</translate>2",
+			'12',
+			'Unbalanced tags, removable whitespace',
+		];
+
+		$cases[] = [
+			'You can use the <nowiki><translate></nowiki> tag.',
+			'You can use the <nowiki><translate></nowiki> tag.',
+			'Tag inside a nowiki is retained',
+		];
+
+		$cases[] = [
+			'What if I <translate and </translate>.',
+			'What if I <translate and .',
+			'Broken tag is retained',
+		];
+
+		return $cases;
+	}
 }

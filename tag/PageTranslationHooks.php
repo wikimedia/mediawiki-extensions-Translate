@@ -38,9 +38,14 @@ class PageTranslationHooks {
 				$text = $parse->getTranslationPageText( null );
 				$parser->getOutput()->addModuleStyles( 'ext.translate' );
 			} catch ( TPException $e ) {
-				// Show ugly preview without processed <translate> tags
 				wfDebug( 'TPException caught; expected' );
 			}
+		}
+
+		// For section previews, perform additional clean-up, given tags are often
+		// unbalanced when we preview one section only.
+		if ( $parser->getOptions()->getIsSectionPreview() ) {
+			$text = TranslatablePage::cleanupTags( $text );
 		}
 
 		// Set display title

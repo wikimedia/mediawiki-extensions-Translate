@@ -355,6 +355,23 @@ class TranslatablePage {
 		return $parse;
 	}
 
+	/**
+	 * Remove all opening and closing translate tags following the same whitespace rules
+	 * as the regular parsing. The difference is that this doesn't try to parse the page,
+	 * so it can handle unbalanced tags.
+	 *
+	 * @param string $text Wikitext
+	 * @return string Wikitext without translate tags.
+	 */
+	public static function cleanupTags( $text ) {
+		$nowiki = [];
+		$text = self::armourNowiki( $nowiki, $text );
+		$text = preg_replace( '~<translate>\n?~s', '', $text );
+		$text = preg_replace( '~\n?</translate>~s', '', $text );
+		$text = self::unArmourNowiki( $nowiki, $text );
+		return $text;
+	}
+
 	// Inner functionality //
 
 	/**
