@@ -90,6 +90,12 @@ class TranslatablePageTest extends PHPUnit_Framework_TestCase {
 		];
 
 		$cases[] = [
+			'[[<tvar|wmf>Special:MyLanguage/Wikimedia Foundation</>|Wikimedia Foundation]].',
+			'[[Special:MyLanguage/Wikimedia Foundation|Wikimedia Foundation]].',
+			'TVAR tag is collapsed',
+		];
+
+		$cases[] = [
 			'You can use the <nowiki><translate></nowiki> tag.',
 			'You can use the <nowiki><translate></nowiki> tag.',
 			'Tag inside a nowiki is retained',
