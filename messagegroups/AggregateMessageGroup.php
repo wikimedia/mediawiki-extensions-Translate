@@ -163,10 +163,12 @@ class AggregateMessageGroup extends MessageGroupBase {
 		foreach ( $this->getGroups() as $group ) {
 			// @todo Not all oldstyle groups have getKeys yet
 			if ( method_exists( $group, 'getKeys' ) ) {
-				$keys = array_merge( $keys, $group->getKeys() );
+				$moreKeys = $group->getKeys();
 			} else {
-				$keys = array_keys( $group->getDefinitions() );
+				$moreKeys = array_keys( $group->getDefinitions() );
 			}
+
+			$keys = array_merge( $keys, $moreKeys );
 		}
 
 		/* In case some groups are included directly and indirectly
