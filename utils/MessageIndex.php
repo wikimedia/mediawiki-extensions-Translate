@@ -162,6 +162,8 @@ abstract class MessageIndex {
 		 */
 		foreach ( $groups as $g ) {
 			if ( !$g->exists() ) {
+				$id = $g->getId();
+				wfWarn( __METHOD__ . ": group '$id' is registered but does not exist" );
 				continue;
 			}
 
