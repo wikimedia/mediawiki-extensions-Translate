@@ -368,6 +368,9 @@ class TranslatablePage {
 		$text = self::armourNowiki( $nowiki, $text );
 		$text = preg_replace( '~<translate>\n?~s', '', $text );
 		$text = preg_replace( '~\n?</translate>~s', '', $text );
+		// Mirroring what TPSection::getTextForTrans does
+		$text = preg_replace( '~<tvar\|([^>]+)>(.*?)</>~u', '\2', $text );
+
 		$text = self::unArmourNowiki( $nowiki, $text );
 		return $text;
 	}
