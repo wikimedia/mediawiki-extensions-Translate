@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8e742343_40a0d08d",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-06-30T14:19:56Z",
+      "side": 0,
+      "message": "There is a sniff for this and it is the two places in the repo. Aligned comments looks not beter than not aligned comments.",
+      "parentUuid": "8e742343_8806e4cf",
+      "range": {
+        "startLine": 311,
+        "startChar": 25,
+        "endLine": 311,
+        "endChar": 26
+      },
+      "revId": "bb79de98708f9e61a175087e3f40b21ed867c380",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e742343_c8fcecb3",
         "filename": "utils/StatsTable.php",
         "patchSetId": 2

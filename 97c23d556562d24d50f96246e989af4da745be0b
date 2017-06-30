@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e742343_60c4ec44",
+        "filename": "phpcs.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-06-30T14:19:56Z",
+      "side": 1,
+      "message": "\u003e MediaWiki.FunctionComment.Missing.Public\n\nis a copy from the phpcs output and it works. The problem may is that the sniff message has 5 parts and only 4 are shown in the sniff output.",
+      "parentUuid": "8e742343_e81c481a",
+      "revId": "97c23d556562d24d50f96246e989af4da745be0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e742343_4810fc04",
         "filename": "tag/TranslatablePage.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2017-06-30T08:27:49Z",
       "side": 1,
       "message": "What is this for? I would remove this entirely.",
+      "revId": "97c23d556562d24d50f96246e989af4da745be0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_20a7c4a4",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-06-30T14:19:56Z",
+      "side": 1,
+      "message": "I leave this for Nikerabbit. New public functions in classes can have since tags.",
+      "parentUuid": "8e742343_4810fc04",
       "revId": "97c23d556562d24d50f96246e989af4da745be0b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
