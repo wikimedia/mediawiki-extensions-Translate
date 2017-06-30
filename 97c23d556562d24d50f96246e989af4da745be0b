@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e742343_e81c481a",
+        "filename": "phpcs.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-06-30T08:27:49Z",
+      "side": 1,
+      "message": "As argued in other patches I disagree with this way of excluding stuff. This does not disable sniffs, but suppresses messages. The sniffs still run, but can not output anything any more. Instead entire sniffs should be disabled (\"A.B.C\" addresses entire sniffs, \"A.B.C.D\" addresses individual messages).\n\nAlso note that the two \"MediaWiki.FunctionComment.Missing.…\" messages are broken. The package name \"….Commenting.…\" is missing. This appears to be an actual bug in the sniff.\n\nThis is also not in alphabetical order. Because it is so much I think it would actually help to order this alphabetically.",
+      "revId": "97c23d556562d24d50f96246e989af4da745be0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_4810fc04",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-06-30T08:27:49Z",
+      "side": 1,
+      "message": "What is this for? I would remove this entirely.",
+      "revId": "97c23d556562d24d50f96246e989af4da745be0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

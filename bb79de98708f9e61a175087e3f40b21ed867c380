@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e742343_8806e4cf",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-06-30T08:27:49Z",
+      "side": 0,
+      "message": "Can we please avoid such absurd changes? How does removing this space make the comment better readable?",
+      "range": {
+        "startLine": 311,
+        "startChar": 25,
+        "endLine": 311,
+        "endChar": 26
+      },
+      "revId": "bb79de98708f9e61a175087e3f40b21ed867c380",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_c8fcecb3",
+        "filename": "utils/StatsTable.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-06-30T08:27:49Z",
+      "side": 0,
+      "message": "As said before.",
+      "range": {
+        "startLine": 230,
+        "startChar": 18,
+        "endLine": 230,
+        "endChar": 19
+      },
+      "revId": "bb79de98708f9e61a175087e3f40b21ed867c380",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
