@@ -40,7 +40,7 @@
  *
  * @author Raul Martinez, Jr <juneym@gmail.com>
  *
- * @link http://www.elastic.co/guide/en/elasticsearch/reference/1.7/query-dsl-flt-query.html
+ * @link https://www.elastic.co/guide/en/elasticsearch/reference/1.7/query-dsl-flt-query.html
  *
  * @since 2016.05
  * @ingroup TTMServer

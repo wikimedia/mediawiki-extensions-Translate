@@ -59,7 +59,7 @@ class TranslateGenerateRandomSandboxData extends Maintenance {
 
 /*
  * Gauss functions are based on Mark Baker's code from
- * http://stackoverflow.com/questions/5188900/bell-curve-algorithm-with-php
+ * https://stackoverflow.com/questions/5188900/bell-curve-algorithm-with-php
  */
 
 function wfGauss() {

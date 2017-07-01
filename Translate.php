@@ -547,7 +547,7 @@ $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
 /**
  * Currently supported YAML drivers are phpyaml, spyc and syck.
  *
- * For phpyaml see http://php.net/manual/en/book.yaml.php.
+ * For phpyaml see https://secure.php.net/manual/en/book.yaml.php.
  *
  * For syck we're shelling out to perl. So you need:
  *

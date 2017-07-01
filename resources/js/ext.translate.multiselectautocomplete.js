@@ -4,7 +4,7 @@
  * Autocompleted values will be available in input filed as comma separated values.
  * The values for autocompletion is from the language selector in this case.
  * The input field is created in PHP code.
- * Credits: http://jqueryui.com/demos/autocomplete/#multiple
+ * Credits: https://jqueryui.com/autocomplete/#multiple
  */
 jQuery( function ( $ ) {
 	'use strict';

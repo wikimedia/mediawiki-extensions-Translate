@@ -223,7 +223,7 @@ class TTMServerBootstrap extends Maintenance {
 			LBFactory::destroyInstance();
 
 			// Child, reseed because there is no bug in PHP:
-			// http://bugs.php.net/bug.php?id=42465
+			// https://bugs.php.net/bug.php?id=42465
 			mt_srand( getmypid() );
 		}
 	}

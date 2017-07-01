@@ -10,7 +10,7 @@
 
 /**
  * Implements support for Microsoft translation api v2.
- * @see http://msdn.microsoft.com/en-us/library/ff512421.aspx
+ * @see https://msdn.microsoft.com/en-us/library/ff512421.aspx
  * @ingroup TranslationWebService
  * @since 2013-01-01
  */

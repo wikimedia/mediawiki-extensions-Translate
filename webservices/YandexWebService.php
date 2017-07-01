@@ -9,7 +9,7 @@
 
 /**
  * Implements support for Yandex translation api v1.
- * @see http://api.yandex.com/translate/
+ * @see https://tech.yandex.com/translate/
  * @ingroup TranslationWebService
  * @since 2013-01-01
  */
@@ -62,7 +62,7 @@ class YandexWebService extends TranslationWebService {
 			throw new TranslationWebServiceConfigurationException( 'API key is not set' );
 		}
 
-		# http://api.yandex.com/translate/doc/dg/reference/translate.xml
+		# https://tech.yandex.com/translate/doc/dg/reference/translate-docpage/
 		if ( strlen( $text ) > 10000 ) {
 			throw new TranslationWebServiceInvalidInputException( 'Source text too long' );
 		}

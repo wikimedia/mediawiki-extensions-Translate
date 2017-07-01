@@ -109,7 +109,7 @@ TXT;
 
 			if ( $pid === 0 ) {
 				// Child, reseed because there is no bug in PHP:
-				// http://bugs.php.net/bug.php?id=42465
+				// https://bugs.php.net/bug.php?id=42465
 				mt_srand( getmypid() );
 				$this->analyzeLanguage( $code, $pageids );
 				exit();

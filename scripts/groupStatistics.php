@@ -23,7 +23,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class GroupStatistics extends Maintenance {
 	/**
 	 * Array of the most spoken languages in the world.
-	 * Source: http://stats.wikimedia.org/EN/Sitemap.htm.
+	 * Source: https://stats.wikimedia.org/EN/Sitemap.htm.
 	 *
 	 * Key value pairs of:
 	 * [MediaWiki localisation code] => array(

@@ -259,7 +259,7 @@
 	 */
 	function splitHeaders( translations ) {
 		return $.map( translations, function ( elem ) {
-			// Check http://regex101.com/r/oT7fZ2 for details
+			// Check https://regex101.com/r/oT7fZ2 for details
 			return elem.match( /(^==.+$|(?:(?!^==).+\n?)+)/gm );
 		} );
 	}

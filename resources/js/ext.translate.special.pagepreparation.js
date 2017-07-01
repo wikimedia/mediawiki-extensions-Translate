@@ -95,7 +95,7 @@
 			}
 
 			aliasList = aliases.join( '|' );
-			// Regex: http://regex101.com/r/sJ3gZ4/2
+			// Regex: https://regex101.com/r/sJ3gZ4/2
 			categoryRegex = new RegExp( '\\[\\[((' + aliasList + ')' +
 				':[^\\|]+)(\\|[^\\|]*?)?\\]\\]', 'gi' );
 			pageContent = pageContent.replace( categoryRegex, '\n</translate>\n' +
@@ -145,7 +145,7 @@
 
 		headerText = mw.RegExp.escape( headerText );
 		// Search for the header having text as headerText
-		// Regex: http://regex101.com/r/fD6iL1
+		// Regex: https://regex101.com/r/fD6iL1
 		headerSearchRegex = new RegExp( '(==+[ ]*' + headerText + '[ ]*==+)', 'gi' );
 		// This is to ensure the tags and the anchor are added only once
 
@@ -161,7 +161,7 @@
 		}
 
 		// Replace the link text with the anchorID defined above
-		// Regex: http://regex101.com/r/kB5bK3
+		// Regex: https://regex101.com/r/kB5bK3
 		replaceAnchorRegex = new RegExp( '(\\[\\[#)' + headerText + '(.*\\]\\])', 'gi' );
 		pageContent = pageContent.replace( replaceAnchorRegex, '$1' +
 			anchorID.replace( '$', '$$$' ) + '$2' );
@@ -186,13 +186,13 @@
 		normalizeRegex = new RegExp( /\[\[(?!Category)([^|]*?)\]\]/gi );
 		// First convert all links into two-party form. If a link is not having a pipe,
 		// add a pipe and duplicate the link text
-		// Regex : http://regex101.com/r/pO9nN2
+		// Regex: https://regex101.com/r/pO9nN2
 		pageContent = pageContent.replace( normalizeRegex, '[[$1|$1]]' );
 
 		namespaces = getNamespaces();
 		nsString = namespaces.join( '|' );
 		// Finds all the links to sections on the same page.
-		// Regex: http://regex101.com/r/cX6jT3
+		// Regex: https://regex101.com/r/cX6jT3
 		sectionLinksRegex = new RegExp( /\[\[#(.*?)(\|(.*?))?\]\]/gi );
 		match = sectionLinksRegex.exec( searchText );
 		while ( match !== null ) {
@@ -204,7 +204,7 @@
 			'):)?[^:]*?)\\]\\]', 'gi' );
 		// Add the 'Special:MyLanguage/' prefix for all internal links of valid namespaces and
 		// mainspace.
-		// Regex : http://regex101.com/r/zZ9jH9
+		// Regex: https://regex101.com/r/zZ9jH9
 		pageContent = pageContent.replace( linkPrefixRegex, '[[Special:MyLanguage/$1]]' );
 		return pageContent;
 	}
@@ -278,7 +278,7 @@
 	 */
 	function doTemplates( pageContent ) {
 		var templateRegex;
-		// Regex: http://regex101.com/r/wA3iX0
+		// Regex: https://regex101.com/r/wA3iX0
 		templateRegex = new RegExp( /^({{[\s\S]*?}})/gm );
 
 		pageContent = pageContent.replace( templateRegex, '</translate>\n$1\n<translate>' );
