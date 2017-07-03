@@ -87,6 +87,24 @@
       "revId": "97c23d556562d24d50f96246e989af4da745be0b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_71103505",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-07-03T09:05:31Z",
+      "side": 1,
+      "message": "@since YYYY.MM is what I have been using recently to align with the MLEB release numbers.",
+      "parentUuid": "8e742343_569baf1b",
+      "revId": "97c23d556562d24d50f96246e989af4da745be0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
