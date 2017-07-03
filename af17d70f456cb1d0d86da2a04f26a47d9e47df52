@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e742343_168687be",
+        "filename": "phpcs.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-07-03T07:24:01Z",
+      "side": 1,
+      "message": "This is already excluded in version 0.10.0 of the MediaWiki rule set, isn\u0027t it?",
+      "range": {
+        "startLine": 24,
+        "startChar": 35,
+        "endLine": 25,
+        "endChar": 47
+      },
+      "revId": "af17d70f456cb1d0d86da2a04f26a47d9e47df52",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
