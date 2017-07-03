@@ -69,6 +69,24 @@
       "revId": "97c23d556562d24d50f96246e989af4da745be0b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_569baf1b",
+        "filename": "tag/TranslatablePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-07-03T07:24:01Z",
+      "side": 1,
+      "message": "I did a full-text search and it appears the Translate extension uses \"@since YYYY-MM-DD\" as well as \"@since YYYY.MM\" (I guess it refers to the month) in about 100 places each. So this is ok.",
+      "parentUuid": "8e742343_20a7c4a4",
+      "revId": "97c23d556562d24d50f96246e989af4da745be0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
