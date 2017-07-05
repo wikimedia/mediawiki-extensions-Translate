@@ -69,7 +69,7 @@
 	"pt-movepage-intro": "Aquesta pàgina especial permet desplaçar pàgines que estan marcades per a la traducció.\nEl trasllat no serà instantani, perquè moltes pàgines hauran de ser mogudes.\nMentre s'estiguin traslladant les pàgines no serà possible interaccionar amb les pàgines en qüestió.\nEls errors sortiran indicats al [[Special:Log/pagetranslation|registre de traducció de pàgines]] i hauran d'ésser reparats a mà.",
 	"pt-movepage-logreason": "Part de la pàgina a traduir $1.",
 	"pt-movepage-started": "La pàgina base està traslladada.\nComproveu el [[Special:Log/pagetranslation|registre de traducció de pàgines]] pels errors i el missatge de finalització.",
-	"pt-locked-page": "Aquesta pàgina està bloquejada perquè la pàgina a traduir està en un procés de trasllat.",
+	"pt-locked-page": "Aquesta pàgina està blocada perquè la pàgina a traduir està en un procés de trasllat.",
 	"pt-deletepage-reason": "Raó:",
 	"pt-deletepage-list-other": "Altres subpàgines",
 	"pm-import-button-label": "Importa",

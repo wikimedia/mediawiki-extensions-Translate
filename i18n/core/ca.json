@@ -98,6 +98,7 @@
 	"translate-checks-xhtml": "{{PLURAL:$2|Reemplaceu l'etiqueta següent per la correcta|Reemplaceu les etiquetes següents per les correctes}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "La definició utilitza <nowiki>{{PLURAL:}}</nowiki> i en canvi la traducció no.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> es va donar {{PLURAL:$1|una forma|$1 formes}} però {{PLURAL:$2|només una forma és|$2 formes són}} compatible/s (excloent les formes 0= i 1=)",
+	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> conté una forma duplicada al final. <nowiki>{{PLURAL:$1|atles|atles}}</nowiki> s'hauria d'escriure <nowiki>{{PLURAL:$1|atles}}</nowiki>.",
 	"translate-checks-pagename": "S’ha canviat l’espai de noms de la definició",
 	"translate-checks-format": "Aquesta traducció no segueix la definició o té una sintaxi invàlida: $1",
 	"translate-checks-escape": "Les següents seqüències d'escapament poden ser accidentals: <strong>$1</strong>",
