@@ -22,6 +22,30 @@
       "revId": "af17d70f456cb1d0d86da2a04f26a47d9e47df52",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_058f0b27",
+        "filename": "phpcs.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-07-07T14:38:31Z",
+      "side": 1,
+      "message": "The exclude does not work from 0.10.0",
+      "parentUuid": "8e742343_168687be",
+      "range": {
+        "startLine": 24,
+        "startChar": 35,
+        "endLine": 25,
+        "endChar": 47
+      },
+      "revId": "af17d70f456cb1d0d86da2a04f26a47d9e47df52",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
