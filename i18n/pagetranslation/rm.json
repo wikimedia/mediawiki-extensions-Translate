@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Gion-andri",
-			"Minisarm"
+			"Minisarm",
+			"Terfili"
 		]
 	},
 	"pagetranslation": "Translaziun da paginas",
 	"tpt-diff-old": "Text precedent",
 	"tpt-diff-new": "Nov text",
-	"tpt-languages-legend": "Autras linguas:"
+	"tpt-languages-legend": "Autras linguas:",
+	"tpt-languages-nonzero": "$1 ($2% translatà)"
 }
