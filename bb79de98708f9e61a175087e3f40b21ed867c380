@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "8e742343_257b2725",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-07-07T14:38:31Z",
+      "side": 0,
+      "message": "With or without space it is not better readable. For my eyes it is easier to read, when there is the same gap between the words",
+      "parentUuid": "8e742343_b69693f1",
+      "range": {
+        "startLine": 311,
+        "startChar": 25,
+        "endLine": 311,
+        "endChar": 26
+      },
+      "revId": "bb79de98708f9e61a175087e3f40b21ed867c380",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e742343_c8fcecb3",
         "filename": "utils/StatsTable.php",
         "patchSetId": 2
