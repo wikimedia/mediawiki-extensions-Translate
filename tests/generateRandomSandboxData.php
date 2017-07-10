@@ -97,7 +97,7 @@ function wfGaussMs( $mean, $stddev ) {
 
 function wfRandom01() {
 	// Returns random number using mt_rand() with a flat distribution from 0 to 1 inclusive
-	return (float) mt_rand() / (float) mt_getrandmax();
+	return (float)mt_rand() / (float)mt_getrandmax();
 }
 
 function wfRandomPn() {

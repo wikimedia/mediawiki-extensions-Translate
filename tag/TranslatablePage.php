@@ -216,7 +216,7 @@ class TranslatablePage {
 	/**
 	 * Check whether title is marked for translation
 	 * @return bool
-	 * @return 2014.06
+	 * @since 2014.06
 	 */
 	public function hasPageDisplayTitle() {
 		// Cached value

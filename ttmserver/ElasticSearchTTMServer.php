@@ -165,10 +165,11 @@ GROOVY;
 		$query->setParam( 'min_score', $cutoff );
 		$query->setSort( [ '_score', '_uid' ] );
 
-		// This query is doing two unrelated things:
-		// 1) Collect the message contents and scores so that they can
-		//    be accessed later for the translations we found.
-		// 2) Build the query string for the query that fetches the translations.
+		/* This query is doing two unrelated things:
+		 * 1) Collect the message contents and scores so that they can
+		 *    be accessed later for the translations we found.
+		 * 2) Build the query string for the query that fetches the translations.
+		 */
 		$contents = $scores = $terms = [];
 		do {
 			$resultset = $this->getType()->search( $query );
@@ -296,10 +297,10 @@ GROOVY;
 		$doc = $this->createDocument( $handle, $targetText, $revId );
 
 		MWElasticUtils::withRetry( self::BULK_INDEX_RETRY_ATTEMPTS,
-			function() use ( $doc ) {
+			function () use ( $doc ) {
 				$this->getType()->addDocument( $doc );
 			},
-			function( $e, $errors ) {
+			function ( $e, $errors ) {
 				$c = get_class( $e );
 				$msg = $e->getMessage();
 				error_log( __METHOD__ . ": update failed ($c: $msg); retrying." );
@@ -453,10 +454,10 @@ GROOVY;
 		}
 
 		MWElasticUtils::withRetry( self::BULK_INDEX_RETRY_ATTEMPTS,
-			function() use ( $docs ) {
+			function () use ( $docs ) {
 				$this->getType()->addDocuments( $docs );
 			},
-			function( $e, $errors ) {
+			function ( $e, $errors ) {
 				$c = get_class( $e );
 				$msg = $e->getMessage();
 				$this->logOutput( "Batch failed ($c: $msg), trying again in 10 seconds" );
@@ -784,7 +785,7 @@ GROOVY;
 				$ids[] = $result->getId();
 			}
 			MWElasticUtils::withRetry( $retryAttempts,
-				function() use ( $ids, $type ) {
+				function () use ( $ids, $type ) {
 					$type->deleteIds( $ids );
 				}
 			);

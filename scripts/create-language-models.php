@@ -164,7 +164,7 @@ TXT;
 		$config->useMb( true );
 		$c = new LanguageDetector\Learn( $config );
 		$c->addSample( $code, $text );
-		$c->addStepCallback( function( $lang, $status ) {
+		$c->addStepCallback( function ( $lang, $status ) {
 				echo "Learning {$lang}: $status\n";
 		} );
 
@@ -177,7 +177,6 @@ TXT;
 		$key = wfMemcKey( __CLASS__, 'cc', $code );
 		$text = $cache->get( $key );
 		if ( !is_string( $text ) ) {
-
 			$snippets = [];
 
 			$ids = explode( '|', $ids );
