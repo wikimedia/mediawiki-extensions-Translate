@@ -188,7 +188,7 @@
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Pamertal}}|Pamertal}}: $1",
 	"supportedlanguages-recenttranslations": "pertalan mentas waé",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|basa}} kabèhé.",
-	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|suntingan|suntingan}} - disunting pungkasan $3 {{PLURAL:$3|dina|dina}} kapungkur",
+	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|besutan}} - dibesut pungkasan $3 {{PLURAL:$3|dina}} kapungkur",
 	"abusefilter-edit-builder-vars-translate-source-text": "Tèks sumberé unit pertalan",
 	"translate-save": "Simpen ($1)",
 	"translate-jssti-add": "Tambah ing pratélan",
