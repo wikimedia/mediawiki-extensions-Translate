@@ -89,6 +89,8 @@
 	"tpt-aggregategroup-invalid-group": "Grupo inexistente",
 	"tpt-aggregategroup-edit-name": "Nome:",
 	"tpt-aggregategroup-edit-description": "Descrição:",
+	"tpt-aggregategroup-update": "Salvar",
+	"tpt-aggregategroup-update-cancel": "Cancelar",
 	"pt-parse-open": "O elemento &lt;translate> está desequilibrado.\nModelo de tradução: <pre>$1</pre>",
 	"pt-parse-close": "O elemento &lt;/translate> está desequilibrado.\nModelo de tradução: <pre>$1</pre>",
 	"pt-parse-nested": "Não são permitidas unidades de tradução &lt;translate> cruzadas.\nTexto do elemento: <pre>$1</pre>",
@@ -150,6 +152,7 @@
 	"pt-deletepage-started": "Verifique no [[Special:Log/pagetranslation|registro de tradução de páginas]] eventuais mensagens de erro e/ou de atividade concluída.",
 	"pt-deletepage-intro": "Esta página especial permite eliminar todas as páginas de uma página traduzível ou apenas as traduções de um idioma.\nA eliminação não será instantânea por serem muitas as páginas integrantes de cada conjunto.\nOs erros serão reportados no [[Special:Log/pagetranslation|registro de tradução de páginas]] e precisarão ser corrigidos manualmente.",
 	"pagemigration": "Migração de página de tradução",
+	"pm-import-button-label": "Importar",
 	"pm-savepages-button-label": "Salvar",
 	"pm-cancel-button-label": "Cancelar",
 	"pm-page-does-not-exist": "$1 não existe",
@@ -160,5 +163,7 @@
 	"pm-pagetitle-invalid": "Por favor, forneça um título válido para á página.",
 	"pm-langcode-missing": "Por favor, insira o código de idioma",
 	"pp-save-button-label": "Salvar",
-	"pp-cancel-button-label": "Cancelar"
+	"pp-cancel-button-label": "Cancelar",
+	"pp-pagename-missing": "Por favor, insira o nome da página.",
+	"tpt-generic-button": "Confirmar"
 }

@@ -6,9 +6,18 @@
 			"Felipe L. Ewald"
 		]
 	},
+	"apihelp-aggregategroups-param-group": "ID do grupo de mensagens.",
+	"apihelp-groupreview-param-group": "Grupo de mensagens.",
 	"apihelp-groupreview-param-language": "Código do idioma.",
 	"apihelp-query+languagestats-param-language": "Código da linguagem",
+	"apihelp-query+messagecollection-param-group": "Grupo de mensagens.",
+	"apihelp-query+messagecollection-param-language": "Código do idioma.",
 	"apihelp-query+messagecollection-param-limit": "Quantas mensagem mostrar (após a filtragem).",
+	"apihelp-query+messagegroupstats-param-group": "ID do grupo de mensagens.",
+	"apihelp-query+messagetranslations-param-title": "Título completo de uma mensagem conhecida.",
 	"apihelp-translatesandbox-param-do": "O que fazer.",
-	"apihelp-translationstash-param-subaction": "Ação."
+	"apihelp-translationaids-param-title": "Título completo de uma mensagem conhecida.",
+	"apihelp-translationstash-param-subaction": "Ação.",
+	"apihelp-searchtranslations-description": "Pesquisa traduções.",
+	"apihelp-searchtranslations-summary": "Pesquisa traduções."
 }

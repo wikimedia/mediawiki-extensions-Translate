@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fabsouza1"
+			"Fabsouza1",
+			"Felipe L. Ewald"
 		]
 	},
-	"tsb-reminder-title-generic": "Complete a sua apresentação para tornar-se um tradutor"
+	"tsb-reminder-title-generic": "Complete a sua apresentação para tornar-se um tradutor",
+	"tsb-all-languages-button-label": "Todos os idiomas",
+	"tsb-translations-source": "Fonte",
+	"translationstash": "Bem-vindo(a)"
 }
