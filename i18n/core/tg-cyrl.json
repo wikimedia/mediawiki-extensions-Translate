@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ibrahim"
+			"Ibrahim",
+			"ToJack"
 		]
 	},
 	"translate": "Тарҷума",
@@ -28,7 +29,6 @@
 	"translate-edit-no-information": "''Ин пайғом дорои тавзеҳот нест.\nАгар шумо медонед ин пағом чигуна ё дар куҷо истифода мешавад, шумо метавонед бо изофа кардани тавзеҳот ба ин пайғом ба дигар тарҷумакунандагон кӯмак кунед.''",
 	"translate-edit-information": "Иттилоот дар мавриди ин пайғом ($1)",
 	"translate-edit-in-other-languages": "Ҳамин пайғом дар дигар забонҳо",
-	"translate-edit-committed": "Тарҷумаи феълӣ дар нармафзор",
 	"translate-edit-warnings": "Ҳушдор дар мавриди тарҷумаҳои нокомил",
 	"translate-magic-pagename": "Тарҷумаи густаришёфтаи МедиаВики",
 	"translate-magic-submit": "Вокашидан",
@@ -42,5 +42,7 @@
 	"translate-magic-cm-savefailed": "Шикаст дар захира кардан",
 	"translate-magic-words": "Калимаҳои ҷодуӣ",
 	"translate-magic-namespace": "Исми фазоҳои ном",
-	"translate-checks-parameters": "Параметрҳои зерин истифода нашудаанд: <strong>$1</strong>"
+	"translate-checks-parameters": "Параметрҳои зерин истифода нашудаанд: <strong>$1</strong>",
+	"translate-sidebar-alltrans": "Бо забонҳои дигар",
+	"tux-editor-in-other-languages": "Бо забонҳои дигар"
 }

@@ -27,7 +27,7 @@
 	"tsb-accept-button-label": "接受",
 	"tsb-reject-button-label": "拒绝",
 	"tsb-selected-count": "{{PLURAL:$1|$1位已选定用户}}",
-	"tsb-older-requests": "$1个旧有申请",
+	"tsb-older-requests": "$1个旧有{{PLURAL:$1|申请}}",
 	"tsb-accept-all-button-label": "接受所有",
 	"tsb-reject-all-button-label": "拒绝所有",
 	"tsb-user-posted-a-comment": "不是一位译者",
