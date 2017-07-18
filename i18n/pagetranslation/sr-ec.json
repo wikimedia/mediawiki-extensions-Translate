@@ -72,7 +72,7 @@
 	"pt-movepage-block-subpage-invalid": "Наслов циљне подстранице за [[:$1]] био би неисправан (предугачак?).",
 	"pt-movepage-list-pages": "Списак страница за премештање",
 	"pt-movepage-list-translation": "{{PLURAL:$1|Странице}} за превод",
-	"pt-movepage-list-section": "Странице за поднаслове",
+	"pt-movepage-list-section": "Преводна јединица {{PLURAL:$1|странице|страница}}",
 	"pt-movepage-list-other": "{{PLURAL:$1|Друге}} подстранице",
 	"pt-movepage-list-count": "Укупно $1 {{PLURAL:$1|страница|странице|страница}} за премештање.",
 	"pt-movepage-legend": "Премести преводиву страницу",
