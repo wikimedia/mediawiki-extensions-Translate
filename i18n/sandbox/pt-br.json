@@ -9,6 +9,9 @@
 	"tsb-all-languages-button-label": "Todos os idiomas",
 	"tsb-accept-button-label": "Aceitar",
 	"tsb-reject-button-label": "Rejeitar",
+	"tsb-accept-all-button-label": "Aceitar todos",
+	"tsb-reject-all-button-label": "Rejeitar todas",
 	"tsb-translations-source": "Fonte",
-	"translationstash": "Bem-vindo(a)"
+	"translationstash": "Bem-vindo(a)",
+	"translate-translationstash-skip-button-label": "Tentar outro"
 }

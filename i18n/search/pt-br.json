@@ -7,11 +7,14 @@
 	},
 	"searchtranslations": "Pesquisa traduções",
 	"tux-sst-edit": "Editar tradução",
+	"tux-sst-view-foreign": "Ver em $1",
 	"tux-sst-search": "Pesquisar",
 	"tux-sst-search-ph": "Pesquisa traduções",
 	"tux-sst-facet-language": "Idiomas",
 	"tux-sst-nosolr-title": "Pesquisa indisponível",
 	"tux-sst-solr-offline-title": "Pesquisa indisponível",
 	"tux-sst-next": "Próximo »",
-	"tux-sst-default": "Traduções"
+	"tux-sst-prev": "‹ Anterior",
+	"tux-sst-default": "Traduções",
+	"tux-sst-case-sensitive": "Maiúsculas e Minúsculas"
 }

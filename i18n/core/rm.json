@@ -3,7 +3,8 @@
 		"authors": [
 			"Gion",
 			"Gion-andri",
-			"Kazu89"
+			"Kazu89",
+			"Terfili"
 		]
 	},
 	"translate-page-settings-legend": "Parameters",
@@ -27,7 +28,7 @@
 	"translate-edit-no-information": "''Tar quai messadi na datti nagina documentaziun.\nSche vus savais nua e co che quai messadi vegn duvrà, pudais vus gidar auters translaturs cun agiuntar ina documentaziun tar quai messadi.''",
 	"translate-edit-information": "Infurmaziuns davart il messadi \"$2\" ($1)",
 	"translate-edit-in-other-languages": "Messadis \"$1\" en autras linguas",
-	"translate-edit-committed": "Translaziun actuala da la software",
 	"translate-edit-warnings": "Avertiment davart translaziuns nuncumplettas",
+	"translate-documentation-language": "Documentaziun da messadi",
 	"tux-warnings-hide": "zuppentar"
 }

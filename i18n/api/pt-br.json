@@ -28,6 +28,8 @@
 	"apihelp-translationstash-description": "Adicione traduções para o stash.",
 	"apihelp-translationstash-summary": "Adicione traduções para o stash.",
 	"apihelp-translationstash-param-subaction": "Ação.",
+	"apihelp-translationstash-param-metadata": "Objeto JSON.",
 	"apihelp-searchtranslations-description": "Pesquisa traduções.",
-	"apihelp-searchtranslations-summary": "Pesquisa traduções."
+	"apihelp-searchtranslations-summary": "Pesquisa traduções.",
+	"apierror-translate-invalidupdate": "Atualização inválida"
 }
