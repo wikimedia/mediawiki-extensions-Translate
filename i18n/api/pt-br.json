@@ -7,6 +7,7 @@
 		]
 	},
 	"apihelp-aggregategroups-param-group": "ID do grupo de mensagens.",
+	"apihelp-aggregategroups-example-1": "Associar um grupo",
 	"apihelp-groupreview-param-group": "Grupo de mensagens.",
 	"apihelp-groupreview-param-language": "Código da linguagem",
 	"apihelp-query+languagestats-description": "Consultar estatísticas de idioma.",
@@ -15,6 +16,7 @@
 	"apihelp-query+messagecollection-param-group": "Grupo de mensagens.",
 	"apihelp-query+messagecollection-param-language": "Código da linguagem",
 	"apihelp-query+messagecollection-param-limit": "Quantas mensagem mostrar (após a filtragem).",
+	"apihelp-query+messagegroups-example-1": "Mostrar grupos de mensagens",
 	"apihelp-query+messagegroupstats-description": "Consultar estatísticas do grupo de mensagens.",
 	"apihelp-query+messagegroupstats-summary": "Consultar estatísticas do grupo de mensagens.",
 	"apihelp-query+messagegroupstats-param-group": "ID do grupo de mensagens.",
@@ -25,11 +27,17 @@
 	"apihelp-translationaids-param-title": "Título completo de uma mensagem conhecida.",
 	"apihelp-translationreview-description": "Marcar traduções revisadas.",
 	"apihelp-translationreview-summary": "Marcar traduções revisadas.",
+	"apihelp-translationreview-example-1": "Revisar revisão 1",
 	"apihelp-translationstash-description": "Adicione traduções para o stash.",
 	"apihelp-translationstash-summary": "Adicione traduções para o stash.",
 	"apihelp-translationstash-param-subaction": "Ação.",
 	"apihelp-translationstash-param-metadata": "Objeto JSON.",
+	"apihelp-translationstash-example-2": "Consulta o stash",
 	"apihelp-searchtranslations-description": "Pesquisa traduções.",
 	"apihelp-searchtranslations-summary": "Pesquisa traduções.",
-	"apierror-translate-invalidupdate": "Atualização inválida"
+	"apihelp-searchtranslations-param-limit": "Tamanho do resultado.",
+	"apihelp-searchtranslations-example-2": "Mostre mensagens não traduzidas correspondentes à consulta no idioma de origem.",
+	"apierror-translate-invalidupdate": "Atualização inválida",
+	"apierror-translate-sandbox-invalidppassword": "Senha inválida",
+	"apierror-translate-unknownmessage": "Mensagem desconhecida"
 }

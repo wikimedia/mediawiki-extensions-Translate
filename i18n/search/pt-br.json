@@ -11,10 +11,15 @@
 	"tux-sst-search": "Pesquisar",
 	"tux-sst-search-ph": "Pesquisa traduções",
 	"tux-sst-facet-language": "Idiomas",
+	"tux-sst-facet-group": "Grupos de mensagens",
 	"tux-sst-nosolr-title": "Pesquisa indisponível",
 	"tux-sst-solr-offline-title": "Pesquisa indisponível",
 	"tux-sst-next": "Próximo »",
 	"tux-sst-prev": "‹ Anterior",
 	"tux-sst-default": "Traduções",
+	"tux-sst-translated": "Traduções de $1",
+	"tux-sst-untranslated": "Sem tradução de $1",
+	"tux-sst-ellipsis-untranslated": "Sem tradução",
+	"tux-sst-ellipsis-outdated": "Traduções desatualizadas",
 	"tux-sst-case-sensitive": "Maiúsculas e Minúsculas"
 }

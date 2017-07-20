@@ -5,13 +5,23 @@
 			"Felipe L. Ewald"
 		]
 	},
+	"tsb-filter-pending": "Solicitações pendentes",
 	"tsb-reminder-title-generic": "Complete a sua apresentação para tornar-se um tradutor",
+	"tsb-reminder-sending": "Enviando o lembrete ...",
+	"tsb-reminder-sent-new": "Enviar um lembrete",
 	"tsb-all-languages-button-label": "Todos os idiomas",
+	"tsb-search-requests": "Buscar pedidos",
 	"tsb-accept-button-label": "Aceitar",
 	"tsb-reject-button-label": "Rejeitar",
 	"tsb-accept-all-button-label": "Aceitar todos",
 	"tsb-reject-all-button-label": "Rejeitar todas",
+	"tsb-user-posted-a-comment": "Não é um tradutor",
+	"tsb-reminder-link-text": "Enviar lembrete de e-mail",
 	"tsb-translations-source": "Fonte",
+	"tsb-translations-current": "Traduções existentes",
 	"translationstash": "Bem-vindo(a)",
-	"translate-translationstash-skip-button-label": "Tentar outro"
+	"translate-translationstash-welcome-note": "Familiarize-se com as ferramentas de tradução. Traduza algumas mensagens e obtenha direitos de tradutor completos para participar dos seus projetos favoritos.",
+	"translate-translationstash-skip-button-label": "Tentar outro",
+	"tsb-limit-reached-body": "Você alcançou o limite de tradução para novos tradutores.\nO nosso time verificará e atualizará sua conta em breve.\nEntão você poderá traduzir sem limites.",
+	"tsb-create-user-page": "Criar página de usuário básica"
 }
