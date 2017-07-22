@@ -106,8 +106,10 @@
 	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|removeu}} $3 das páginas para tradução",
 	"log-action-filter-pagetranslation": "Tipo de ação:",
 	"log-action-filter-pagetranslation-mark": "Marcar para tradução",
+	"log-action-filter-pagetranslation-unmark": "Remoção da tradução",
 	"log-action-filter-pagetranslation-move": "Páginas movidas",
 	"log-action-filter-pagetranslation-delete": "Exclusões de página",
+	"log-action-filter-pagetranslation-encourage": "Encorajamento de tradução",
 	"pt-movepage-title": "Mover a página traduzível \"$1\"",
 	"pt-movepage-blockers": "A página traduzível não pode ser movida para outro nome devido {{PLURAL:$1|ao seguinte erro|aos seguintes erros}}:",
 	"pt-movepage-block-base-exists": "Existe a página traduzível de destino \"[[:$1]]\".",
@@ -180,5 +182,6 @@
 	"pp-diff-new-header": "Texto preparado",
 	"tpt-unlink-confirm": "Por favor, confirme que deseja realmente remover esta página do sistema de tradução.\nO seletor de idioma e os nomes das páginas traduzidas deixarão de funcionar.\nAs páginas de tradução se tornarão editáveis.",
 	"tpt-unlink-button": "Remover da tradução",
+	"tpt-generic-confirm": "Por favor, confirme a ação.",
 	"tpt-generic-button": "Confirmar"
 }

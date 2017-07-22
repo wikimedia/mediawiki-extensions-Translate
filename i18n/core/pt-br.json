@@ -317,6 +317,7 @@
 	"tux-status-translated": "Traduzido",
 	"tux-status-saving": "Salvando…",
 	"tux-status-unsaved": "Não salvo",
+	"tux-save-unknown-error": "Ocorreu um erro desconhecido.",
 	"tux-editor-placeholder": "Sua tradução",
 	"tux-editor-editsummary-placeholder": "Resumo opcional",
 	"tux-editor-paste-original-button-label": "Colar texto da fonte",

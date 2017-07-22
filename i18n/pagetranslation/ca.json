@@ -34,6 +34,7 @@
 	"tpt-notsuitable": "La pàgina $1 no està preparada per a la seva traducció.\nAssegureu-vos que té les etiquetes <nowiki><translate></nowiki> i una sintaxi vàlida.",
 	"tpt-rev-encourage": "restaura",
 	"translate-tag-translate-link-desc": "Traduïu aquesta pàgina",
+	"translate-tag-hasnew": "Aquesta pàgina conté <span class=\"plainlinks\">[$1 modificacions]</span> que no estan marcats per la traducció.",
 	"tpt-translation-intro": "Aquesta pàgina és una <span class=\"plainlinks\">[$1 versió traduïda]</span> de la pàgina [[$2]] i la traducció és completada al $3&nbsp;%.",
 	"tpt-translation-intro-fuzzy": "Les traduccions obsoletes es marquen així.",
 	"tpt-languages-legend": "Altres idiomes:",

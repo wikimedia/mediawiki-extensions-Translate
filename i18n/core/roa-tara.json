@@ -209,6 +209,7 @@
 	"translate-manage-nochanges": "Non ge stonne cangiaminde jndr'à le definiziune de le messàgge jndr'à stu gruppe.",
 	"translate-manage-nochanges-other": "Non ge stonne cangiaminde pe sta lénghe.\nAuse 'u collegamende aqquà sotte pe 'ndrucà le dettaglie d'u gruppe.",
 	"translate-manage-import-summary": "Stoche a 'mborte 'na versiona nove da 'na sorgende de fore",
+	"translate-manage-conflict-summary": "Stoche a 'mborte 'na versiona nove da 'na fonde de fore.\nPe piacere condrolle.",
 	"translate-manage-submit": "Esegue",
 	"translate-manage-import-ok": "'Mbortate: $1",
 	"translate-manage-import-done": "'Mbortazione combletate!",

@@ -21,5 +21,6 @@
 	"tux-sst-untranslated": "Sem tradução de $1",
 	"tux-sst-ellipsis-untranslated": "Sem tradução",
 	"tux-sst-ellipsis-outdated": "Traduções desatualizadas",
+	"tux-sst-link-all-match": "Exigir todas as palavras de pesquisa.",
 	"tux-sst-case-sensitive": "Maiúsculas e Minúsculas"
 }
