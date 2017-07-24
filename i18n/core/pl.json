@@ -114,7 +114,7 @@
 	"translate-checks-xhtml": "Zastąp {{PLURAL:$2|następujący znacznik prawidłowym|następujące znaczniki prawidłowymi}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Tekst źródłowy wykorzystuje funkcję <nowiki>{{PLURAL:}}</nowiki>, lecz w tłumaczeniu nie została ona użyta.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> posiada {{PLURAL:$1|jedną formę|$1 formy|$1 form}} ale {{PLURAL:$2|tylko jedna forma jest obsługiwana|$2 formy są obsługiwane|$2 form jest obsługiwanych}} (z wyłączeniem form 0= i 1= ).",
-	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> posiada w końcu formy wielokrotne. <nowiki>{{PLURAL:$1|ojca|ojców|ojców}}</nowiki> powinien być pisany jako <nowiki>{{PLURAL:$1|ojca|ojców}}</nowiki>.",
+	"translate-checks-plural-dupe": "W <nowiki>{{PLURAL:}}</nowiki> podano pod koniec powtarzające się formy. <nowiki>{{PLURAL:$1|ojca|ojców|ojców}}</nowiki> powinno zapisać się jako <nowiki>{{PLURAL:$1|ojca|ojców}}</nowiki>.",
 	"translate-checks-pagename": "Przestrzeń nazw różni się od tekstu źródłowego",
 	"translate-checks-format": "To tłumaczenie jest niezgodne z tekstem źródłowym lub ma nieprawidłową składnię: $1",
 	"translate-checks-escape": "Następujące sekwencje mogą być niezamierzone: <strong>$1</strong>",
