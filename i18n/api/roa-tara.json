@@ -4,10 +4,16 @@
 			"Joetaras"
 		]
 	},
+	"apihelp-aggregategroups-description": "Gestisce gruppe de messàgge aggregate.\n\nPuè aggiungere e luà gruppe de messàgge aggregate e associà o luà le gruppe de messàgge l'une da l'otre (une a vote).",
+	"apihelp-aggregategroups-summary": "Gestisce gruppe de messàgge aggregate.",
+	"apihelp-aggregategroups-extended-description": "Puè aggiungere e luà gruppe de messàgge aggregate e associà o luà le gruppe de messàgge l'une da l'otre (une a vote).",
 	"apihelp-groupreview-param-group": "Gruppe de messàgge.",
 	"apihelp-groupreview-param-language": "Codece d'a Lènghe.",
 	"apihelp-query+languagestats-param-language": "Codece d'a Lènghe.",
 	"apihelp-query+messagecollection-param-group": "Gruppe de messàgge.",
 	"apihelp-query+messagecollection-param-language": "Codece d'a Lènghe.",
-	"apihelp-query+messagecollection-param-limit": "Quanda messàgge da 'ndrucà (apprisse 'u filtre)."
+	"apihelp-query+messagecollection-param-limit": "Quanda messàgge da 'ndrucà (apprisse 'u filtre).",
+	"apihelp-translationstash-param-subaction": "Azione.",
+	"apihelp-searchtranslations-param-limit": "Dimenzione d'u resultate.",
+	"apihelp-searchtranslations-example-1": "Fà 'ndrucà le traduziune pa lènghe."
 }

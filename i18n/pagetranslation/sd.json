@@ -8,7 +8,11 @@
 	},
 	"tpt-mark-nochanges": "تبديلين جي ڪا به نظرثاني نه. ترجمي لاءِ هي صفحو نشاني بڻائڻ صفحي کي ترميم نه ڪندو، نه ئي اڳ موجود ترجمي جي يونٽ کي ترميم ڪندو",
 	"tpt-languages-nonzero": "$1 ($2% ترجمو ٿيل)",
+	"tpt-aggregategroup-save": "سانڍيو",
+	"tpt-aggregategroup-update": "سانڍيو",
 	"tpt-aggregategroup-update-cancel": "رد",
+	"pm-savepages-button-label": "سانڍيو",
 	"pm-cancel-button-label": "رد",
+	"pp-save-button-label": "سانڍيو",
 	"pp-cancel-button-label": "رد"
 }
