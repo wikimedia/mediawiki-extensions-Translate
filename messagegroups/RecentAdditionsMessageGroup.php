@@ -52,7 +52,7 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 	 * as they are not displayed in other places.
 	 *
 	 * @param MessageHandle $handle
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function matchingMessage( MessageHandle $handle ) {
 		return MessageGroups::isTranslatableMessage( $handle );

@@ -51,7 +51,7 @@ class AmdFFS extends SimpleFFS {
 	 * @return bool
 	 */
 	public static function isValid( $data ) {
-		$data = AmdFFS::extractMessagePart( $data );
+		$data = self::extractMessagePart( $data );
 		return is_array( FormatJson::decode( $data, /*as array*/true ) );
 	}
 
@@ -64,8 +64,8 @@ class AmdFFS extends SimpleFFS {
 	 * @return array Parsed data.
 	 */
 	public function readFromVariable( $data ) {
-		$authors = AmdFFS::extractAuthors( $data );
-		$data = AmdFFS::extractMessagePart( $data );
+		$authors = self::extractAuthors( $data );
+		$data = self::extractMessagePart( $data );
 		$messages = (array)FormatJson::decode( $data, /*as array*/true );
 		$metadata = [];
 

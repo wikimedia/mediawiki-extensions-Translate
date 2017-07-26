@@ -79,7 +79,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 	 * Allows subclasses to filter out more unwanted messages.
 	 *
 	 * @param MessageHandle $msg
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function matchingMessage( MessageHandle $msg ) {
 		return true;
