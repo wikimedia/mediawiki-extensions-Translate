@@ -26,7 +26,7 @@ $wgExtensionCredits['specialpage'][] = [
 	'path' => __FILE__,
 	'name' => 'Translate',
 	'namemsg' => 'translate-extensionname',
-	'version' => TRANSLATE_VERSION,
+	'version' => '[https://www.mediawiki.org/wiki/MLEB MLEB 2017.07]',
 	'author' => [
 		'Niklas Laxström',
 		'Santhosh Thottingal',

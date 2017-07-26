@@ -1,0 +1,17 @@
+== Translate 2017.07 ==
+Released at 2017-07-26.
+
+=== Noteworthy changes ===
+* Translate extension no longer bundles spyc library. If you need support for
+parsing and generating YAML files, and you don't have phpyaml extensions
+installed (HHVM provides it in PHP compatibility mode), then you can install
+spyc using composer update. (T75945)
+* Niklas Laxström fixed a broken error propagation in translator sandbox user
+creation in case of an invalid password. (T164912)
+* User TerraCodes removed redundant dialog title from the message group
+selector. (T165241)
+* Niklas Laxström added informative warning message that warns about
+non-existent message groups.
+* Niklas Laxström fixed a bug that could cause translation completion
+statistics to not update in some situations (e.g. translatable pages within an
+aggregate message group).
