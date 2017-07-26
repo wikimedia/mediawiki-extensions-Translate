@@ -3,7 +3,8 @@
 		"authors": [
 			"Anakmalaysia",
 			"Pizza1016",
-			"Muhdnurhidayat"
+			"Muhdnurhidayat",
+			"Jeluang Terluang"
 		]
 	},
 	"pagetranslation": "Penterjemahan laman",
@@ -114,7 +115,7 @@
 	"pt-movepage-block-tp-exists": "Laman penterjemahan sasaran [[:$2]] wujud.",
 	"pt-movepage-block-tp-invalid": "Tajuk laman penterjemahan sasaran untuk [[:$1]] adalah tidak sah (terlalu panjang?).",
 	"pt-movepage-block-section-exists": "Halaman sasaran \"[[:$2]]\" untuk unit terjemahan itu wujud.",
-	"pt-movepage-block-section-invalid": "Tajuk halaman sasaran \"[[:$1]]\" untuk unit terjemahan adalah itu tidak sah (terlalu panjang?).",
+	"pt-movepage-block-section-invalid": "Tajuk halaman sasaran \"[[:$1]]\" untuk unit terjemahan itu adalah tidak sah (terlalu panjang?).",
 	"pt-movepage-block-subpage-exists": "Sublaman sasaran [[:$2]] wujud.",
 	"pt-movepage-block-subpage-invalid": "Tajuk sublaman sasaran untuk [[:$1]] adalah tidak sah (terlalu panjang?).",
 	"pt-movepage-list-pages": "Senarai laman untuk dipindahkan",

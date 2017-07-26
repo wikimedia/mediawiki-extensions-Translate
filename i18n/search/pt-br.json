@@ -16,6 +16,7 @@
 	"tux-sst-nosolr-title": "Pesquisa indisponível",
 	"tux-sst-nosolr-body": "Esta wiki não possui um serviço de pesquisa de tradução.",
 	"tux-sst-solr-offline-title": "Pesquisa indisponível",
+	"tux-sst-solr-offline-body": "O serviço de pesquisa está temporariamente indisponível.",
 	"tux-sst-next": "Próximo »",
 	"tux-sst-prev": "‹ Anterior",
 	"tux-sst-default": "Traduções",

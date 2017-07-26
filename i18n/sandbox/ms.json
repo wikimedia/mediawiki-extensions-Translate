@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Anakmalaysia"
+			"Anakmalaysia",
+			"Jeluang Terluang"
 		]
 	},
 	"managetranslatorsandbox": "Uruskan kotak pasir penterjemah",
@@ -15,7 +16,7 @@
 	"tsb-email-promoted-subject": "Anda kini seorang penterjemah di {{SITENAME}}",
 	"tsb-email-promoted-body": "{{GENDER:$1|$1}},\n\nTahniah! Saya telah memeriksa terjemahan ujian yang telah anda lakukan di {{SITENAME}}, dan ole itu memberi anda hak penterjemah sepenuhnya.\n\nDatanglah ke {{SITENAME}} untuk terus menterjemah sekarang dan setiap hari:\n$2\n\nSelamat datang dan terima kasih atas sumbangan anda!\n\n{{GENDER:$3|$3}},\nKakitangan {{SITENAME}}",
 	"tsb-email-rejected-subject": "Permohonan anda untuk menjadi penterjemah di {{SITENAME}} telah ditolak",
-	"tsb-email-rejected-body": "{{GENDER:$1|$1}},\n\nTerima kasih kerana memohon untuk menjadi penterjemah di {{SITENAME}}. Dengan dukacitanya ingin saya maklumkan bahawa saya telah menolak permohonan anda kerana mutu penterjemahan anda tidak memenuhi syarat.\n\nJika anda berpendapat bahawa penolakan permohonan anda adalah kesilapan, sila cuba untuk memohon semula sebagai penterjemah di {{SITENAME}}. Anda boleh mendaftar di sini:\n$2\n\n{{GENDER:$3|$3}},\nKakitangan {{SITENAME}}",
+	"tsb-email-rejected-body": "{{GENDER:$1|$1}},\n\nTerima kasih kerana memohon untuk menjadi penterjemah di {{SITENAME}}. Dengan dukacitanya ingin saya maklumkan bahawa saya telah menolak permohonan anda kerana mutu penterjemahan anda tidak memenuhi syarat.\n\nJika anda berpendapat bahawa penolakan permohonan anda ialah kesilapan, sila cuba untuk memohon semula sebagai penterjemah di {{SITENAME}}. Anda boleh mendaftar di sini:\n$2\n\n{{GENDER:$3|$3}},\nKakitangan {{SITENAME}}",
 	"tsb-request-count": "$1 {{PLURAL:$1|permintaan}}",
 	"tsb-all-languages-button-label": "Semua bahasa",
 	"tsb-search-requests": "Permohonan carian",
