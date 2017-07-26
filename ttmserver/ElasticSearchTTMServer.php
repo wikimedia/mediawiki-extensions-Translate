@@ -549,7 +549,7 @@ GROOVY;
 	 *
 	 * @param string $indexName
 	 * @param int $timeout
-	 * @return boolean true if the index is green false otherwise.
+	 * @return bool true if the index is green false otherwise.
 	 */
 	protected function waitForGreen( $indexName, $timeout ) {
 		$startTime = time();

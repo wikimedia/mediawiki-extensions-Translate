@@ -845,7 +845,7 @@ class TranslatablePage {
 			return false;
 		}
 
-		$page = TranslatablePage::newFromTitle( $newtitle );
+		$page = self::newFromTitle( $newtitle );
 
 		if ( $page->getMarkedTag() === false ) {
 			return false;

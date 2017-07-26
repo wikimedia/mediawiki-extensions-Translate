@@ -292,7 +292,7 @@ class TranslateSandbox {
 			'ApiOptions'
 		];
 
-		if ( TranslateSandbox::isSandboxed( $user ) ) {
+		if ( self::isSandboxed( $user ) ) {
 			$class = get_class( $module );
 			if ( $module->isWriteMode() && !in_array( $class, $whitelist, true ) ) {
 				$message = ApiMessage::create( 'apierror-writeapidenied' );

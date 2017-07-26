@@ -15,12 +15,10 @@
 		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment"/>
 	</rule>
 	<rule ref="Generic.Files.LineLength">
-		<exclude-pattern>Translate.alias.php</exclude-pattern>
+		<exclude-pattern>Translate\.alias\.php</exclude-pattern>
 	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php,php5,inc"/>
 	<arg name="encoding" value="UTF-8"/>
 	<exclude-pattern type="relative">^extensions</exclude-pattern>
-	<exclude-pattern type="relative">^vendor</exclude-pattern>
-	<exclude-pattern type="relative">^node_modules</exclude-pattern>
 </ruleset>

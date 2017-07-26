@@ -148,7 +148,7 @@ class TranslateUtils {
 	 * @return string Best-effort localisation of wanted language name.
 	 */
 	public static function getLanguageName( $code, $language = 'en' ) {
-		$languages = TranslateUtils::getLanguageNames( $language );
+		$languages = self::getLanguageNames( $language );
 
 		if ( isset( $languages[$code] ) ) {
 			return $languages[$code];
