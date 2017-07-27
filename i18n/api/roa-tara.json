@@ -9,6 +9,8 @@
 	"apihelp-aggregategroups-extended-description": "Puè aggiungere e luà gruppe de messàgge aggregate e associà o luà le gruppe de messàgge l'une da l'otre (une a vote).",
 	"apihelp-groupreview-param-group": "Gruppe de messàgge.",
 	"apihelp-groupreview-param-language": "Codece d'a Lènghe.",
+	"apihelp-query+languagestats-description": "Statisteche de le 'nderrogaziune d'a lènghe.",
+	"apihelp-query+languagestats-summary": "Statisteche de le 'nderrogaziune d'a lènghe.",
 	"apihelp-query+languagestats-param-language": "Codece d'a Lènghe.",
 	"apihelp-query+messagecollection-param-group": "Gruppe de messàgge.",
 	"apihelp-query+messagecollection-param-language": "Codece d'a Lènghe.",

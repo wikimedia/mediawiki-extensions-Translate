@@ -218,7 +218,7 @@
 	"translate-manage-import-deleted": "הודעה שנמחקה $1",
 	"translate-manage-action-import": "יבוא",
 	"translate-manage-action-conflict": "לייבא ולטשטש",
-	"translate-manage-action-ignore": "התעלמות",
+	"translate-manage-action-ignore": "להתעלם",
 	"translate-manage-action-fuzzy": "לייבא ולטשטש תרגומים",
 	"translate-manage-nochanges": "אין שינויים להגדרות ההודעות עבור קבוצה זו.",
 	"translate-manage-nochanges-other": "אין שינויים עבור השפה הזאת.\nהשתמשו בקישור למטה כדי לחוזר לתצוגת פרטי קבוצה.",
