@@ -59,6 +59,11 @@
 	"log-name-pagetranslation": "Archivije de le traduziune de le pàggene",
 	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|'ngoragge}} 'a traduzione de $3",
 	"logentry-pagetranslation-discourage": "$1 {{GENDER:$2|scoragge}} 'a traduzione de $3",
+	"log-action-filter-pagetranslation": "Tipe de azione:",
+	"log-action-filter-pagetranslation-mark": "Signe da traducere",
+	"log-action-filter-pagetranslation-unmark": "Live da 'a traduzione",
+	"log-action-filter-pagetranslation-move": "Spustaminde d'a pàgene",
+	"log-action-filter-pagetranslation-delete": "Scangellazziune d'a pàgene",
 	"pt-movepage-title": "Spuèste 'a pàgene traducibbile \"$1\"",
 	"pt-movepage-list-pages": "Elenghe de le pàggene da spustà",
 	"pt-movepage-list-count": "In totale $1 {{PLURAL:$1|pàgene|pàggene}} da spustà.",
@@ -76,5 +81,13 @@
 	"pt-deletepage-subpages": "Scangille tutte le sottopàggene",
 	"pt-deletepage-list-pages": "Elenghe de le pàggene da scangellà",
 	"pt-deletepage-list-translation": "Pàggene de traduzione",
-	"pt-deletepage-list-other": "Otre sottopàggene"
+	"pt-deletepage-list-other": "Otre sottopàggene",
+	"pm-import-button-label": "'Mborte",
+	"pm-savepages-button-label": "Reggìstre",
+	"pm-cancel-button-label": "Annulle",
+	"pm-page-does-not-exist": "$1 non g'esiste.",
+	"pm-old-translations-missing": "$1 non ge tène traduziune vicchie.",
+	"pp-save-button-label": "Reggìstre",
+	"pp-cancel-button-label": "Annulle",
+	"pp-save-message": "'A pàgene ha state reggistrate. Puè [$1 cangiarle]."
 }
