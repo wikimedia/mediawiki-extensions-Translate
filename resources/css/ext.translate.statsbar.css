@@ -9,9 +9,6 @@
 	height: 5px;
 	float: left;
 	padding: 0;
-	-webkit-transition: width 1s;
-	-moz-transition: width 1s;
-	-o-transition: width 1s;
 	transition: width 1s;
 }
 
