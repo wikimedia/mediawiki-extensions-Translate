@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mmistmurt"
+			"Mmistmurt",
+			"Belkacem77"
 		]
 	},
 	"translate-page-settings-legend": "Iɣewwaren",
 	"translate-page-group": "Agraw",
 	"translate-page-language": "Tutlayt",
-	"translate-submit": "Umuɣ"
+	"translate-submit": "Umuɣ",
+	"translate-documentation-language": "Tasemlit n yizen"
 }
