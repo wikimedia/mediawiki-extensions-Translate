@@ -203,7 +203,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 	 * Get the workflow states applicable to the given message group
 	 *
 	 * @param MessageGroup $group
-	 * @return boolean|array Associative array with states as key and localized state
+	 * @return bool|array Associative array with states as key and localized state
 	 * labels as values
 	 */
 	protected function getWorkflowStates( MessageGroup $group ) {
