@@ -108,7 +108,7 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
 	 *
 	 * @param string $key Message key
 	 * @param string $code Language code
-	 * @param integer $flags READ_* class constant bitfield
+	 * @param int $flags READ_* class constant bitfield
 	 * @return string|null Stored translation or null.
 	 */
 	public function getMessage( $key, $code, $flags = self::READ_LATEST ) {

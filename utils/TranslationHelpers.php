@@ -82,7 +82,7 @@ class TranslationHelpers {
 
 	/**
 	 * Sets the HTML id of the text area that contains the translation.
-	 * @param $id String
+	 * @param String $id
 	 */
 	public function setTextareaId( $id ) {
 		$this->textareaId = $id;
@@ -90,7 +90,7 @@ class TranslationHelpers {
 
 	/**
 	 * Enable or disable extra help for editing.
-	 * @param $mode Boolean
+	 * @param bool $mode
 	 */
 	public function setEditMode( $mode = true ) {
 		$this->editMode = $mode;
@@ -169,8 +169,8 @@ class TranslationHelpers {
 	 * Returns block element HTML snippet that contains the translation aids.
 	 * Not all boxes are shown all the time depending on whether they have
 	 * any information to show and on configuration variables.
-	 * @param $suggestions string
-	 * @return String. Block level HTML snippet or empty string.
+	 * @param string $suggestions
+	 * @return String Block level HTML snippet or empty string.
 	 */
 	public function getBoxes( $suggestions = 'sync' ) {
 		// Box filter
@@ -527,7 +527,7 @@ class TranslationHelpers {
 	}
 
 	/**
-	 * @param $label string
+	 * @param string $label
 	 * @return string
 	 */
 	protected static function legend( $label ) {
@@ -543,7 +543,7 @@ class TranslationHelpers {
 	}
 
 	/**
-	 * @param $code string
+	 * @param string $code
 	 * @return array
 	 */
 	protected static function getFallbacks( $code ) {
@@ -608,8 +608,8 @@ class TranslationHelpers {
 	}
 
 	/**
-	 * @param $id string|int
-	 * @param $text string
+	 * @param string|int $id
+	 * @param string $text
 	 * @return string
 	 */
 	public function wrapInsert( $id, $text ) {
@@ -618,8 +618,8 @@ class TranslationHelpers {
 
 	/**
 	 * Ajax-enabled message editing link.
-	 * @param $target Title: Title of the target message.
-	 * @param $text String: Link text for Linker::link()
+	 * @param Title $target Title of the target message.
+	 * @param string $text Link text for Linker::link()
 	 * @return string HTML link
 	 */
 	public static function ajaxEditLink( $target, $text ) {
@@ -637,7 +637,7 @@ class TranslationHelpers {
 
 	/**
 	 * Escapes $id such that it can be used in jQuery selector.
-	 * @param $id string
+	 * @param string $id
 	 * @return string
 	 */
 	public static function jQueryPathId( $id ) {

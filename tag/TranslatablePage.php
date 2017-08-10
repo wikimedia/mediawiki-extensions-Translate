@@ -87,7 +87,7 @@ class TranslatablePage {
 	 * behavior will happen.
 	 *
 	 * @param Title $title
-	 * @param integer $revision Revision number
+	 * @param int $revision Revision number
 	 * @throws MWException
 	 * @return TranslatablePage
 	 */
@@ -159,7 +159,7 @@ class TranslatablePage {
 
 	/**
 	 * Revision is null if object was constructed using newFromText.
-	 * @return null or integer
+	 * @return null|int
 	 */
 	public function getRevision() {
 		return $this->revision;
@@ -167,7 +167,7 @@ class TranslatablePage {
 
 	/**
 	 * Manually set a revision number to use loading page text.
-	 * @param integer $revision
+	 * @param int $revision
 	 */
 	public function setRevision( $revision ) {
 		$this->revision = $revision;
@@ -510,7 +510,7 @@ class TranslatablePage {
 	/**
 	 * Adds a tag which indicates that this page is
 	 * suitable for translation.
-	 * @param integer $revision
+	 * @param int $revision
 	 * @param null|string $value
 	 */
 	public function addMarkedTag( $revision, $value = null ) {
@@ -520,7 +520,7 @@ class TranslatablePage {
 	/**
 	 * Adds a tag which indicates that this page source is
 	 * ready for marking for translation.
-	 * @param integer $revision
+	 * @param int $revision
 	 */
 	public function addReadyTag( $revision ) {
 		$this->addTag( 'tp:tag', $revision );
@@ -559,7 +559,7 @@ class TranslatablePage {
 
 	/**
 	 * Returns the latest revision which has marked tag, if any.
-	 * @return integer|bool false
+	 * @return int|bool false
 	 */
 	public function getMarkedTag() {
 		return $this->getTag( 'tp:mark' );
