@@ -14,7 +14,7 @@
 			$metaRows = $( 'tr.AggregateMessageGroup', $translateTable );
 
 		// Quick return
-		if ( !$metaRows.size() ) {
+		if ( !$metaRows.length ) {
 			return;
 		}
 
@@ -25,7 +25,7 @@
 				$children = $( 'tr[data-parentgroup="' + thisGroupId + '"]', $translateTable );
 
 			// Only do the collapse stuff if this Meta-group actually has children on this page
-			if ( !$children.size() ) {
+			if ( !$children.length ) {
 				return;
 			}
 
