@@ -201,7 +201,7 @@
 			id = 'jsedit' + page.replace( /[^a-zA-Z0-9_]/g, '_' );
 			dialogElement = $( '#' + id );
 
-			if ( dialogElement.size() > 0 ) {
+			if ( dialogElement.length > 0 ) {
 				dialogElement.dialog( 'option', 'position', 'top' );
 				dialogElement.dialog( 'open' );
 				return false;
