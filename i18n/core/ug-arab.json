@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Alfredie",
-			"Sahran"
+			"Sahran",
+			"Uzdil"
 		]
 	},
 	"translate": "تەرجىمە",
@@ -15,7 +16,7 @@
 	"translate-taskui-export-to-file": "ئەسلى پىچىمىدا چىقار",
 	"translate-taskui-export-as-po": "تورسىز تەرجىمە ئۈچۈن چىقار",
 	"translate-taction-translate": "تەرجىمە",
-	"translate-taction-proofread": "تۈزەت",
+	"translate-taction-proofread": "تۈزىتىلدى",
 	"translate-taction-lstats": "تىل سىتاتىستىكىسى",
 	"translate-taction-mstats": "ئۇچۇر گۇرۇپپا سىتاتىستىكىسى",
 	"translate-taction-export": "چىقار",
@@ -50,9 +51,7 @@
 	"translate-edit-no-information": "''بۇ ئۇچۇرنىڭ چۈشەندۈرۈشى يوق.''\n''ئەگەر سىز بۇ ئۇچۇرنىڭ قەيەردە ياكى قانداق ئىشلىتىلىدىغانلىقىنى بىلسىڭىز، بۇ ئۇچۇرنىڭ چۈشەندۈرۈشىنى قوشۇپ باشقا تەرجىمانلارغا ياردەم قىلالايسىز.''",
 	"translate-edit-information": "ئۇچۇر ھەققىدىكى ئۇچۇر ($1)",
 	"translate-edit-in-other-languages": "باشقا تىللاردىكى ئۇچۇرى",
-	"translate-edit-committed": "يۇمشاق دېتالنىڭ نۆۋەتتىكى تەرجىمىسى",
 	"translate-edit-warnings": "تولۇق بولمىغان تەرجىمە ھەققىدىكى ئاگاھلاندۇرۇش",
-	"translate-edit-tmsugs": "تەرجىمە خاتىرىسىنىڭ تەۋسىيىسى",
 	"translate-edit-tmmatch-source": "تەرجىمە ئەسلى تېكىستى: $1",
 	"translate-edit-tmmatch": "$1% ماس كېلىدۇ",
 	"translate-use-suggestion": "نۆۋەتتىكى تەرجىمىنى بۇ تەكلىپ بىلەن ئالماشتۇر",
@@ -131,7 +130,6 @@
 	"translate-statsf-language": "پەش بىلەن ئايرىلغان تىل تىزىملىك كودى:",
 	"translate-statsf-group": "پەش بىلەن ئايرىلغان گۇرۇپپا تىزىملىك كودى:",
 	"translate-statsf-submit": "ئالدىن كۆزەت",
-	"translate-tag-category": "تەرجىمە قىلىشقا بولىدىغان بەتلەر",
 	"translate-tag-page-desc": "تەرجىمە قىلغان wiki بەت [[$2|$1]].",
 	"translate-sidebar-alltrans": "باشقا تىلاردا",
 	"translations": "ھەممە تەرجىمە",
@@ -204,7 +202,6 @@
 	"translate-manage-toolong": "ئەڭ ئۇزۇن بىر تەرەپ قىلىش ۋاقتى $1 {{PLURAL:$1|سېكۇنت|سېكۇنت}} توشتى.\nداۋاملىق بىر تەرەپ قىلىش ئۈچۈن بۇ كۆزنەكنى قايتا تاپشۇرۇڭ.",
 	"translate-manage-import-summary": "سىرتتىن يېڭى بىر نەشرىنى ئەكىرىۋاتىدۇ",
 	"translate-manage-conflict-summary": "سىرتقى مەنبەدىن يېڭى بىر نەشرىنى ئەكىرىۋاتىدۇ.\nتەڭشۈرۈڭ.",
-	"translate-manage-fuzzy-summary": "ئۇچۇر ئېنىقلىمىسى ئۆزگەردى",
 	"translate-manage-submit": "ئىجراچان",
 	"importtranslations": "تەرجىمىلەرنى ئەكىر",
 	"translate-import-from-local": "يەرلىك ھۆججەت يۈكلەش:",
@@ -265,7 +262,6 @@
 	"translate-workflowgroup-desc": "بۇ ئۇچۇر گۇرۇپپىسى تەرجىمە خىزمىتىنىڭ ئېقىم ھالىتىنى كۆرسىتىدۇ.\nبۇ ھالەتنى $wgTranslateWorkflowStates سەپلىمە ئۆزگەرگۈچىسىدە بەلگىلىگەن.",
 	"translate-dynagroup-recent-label": "يېقىنقى تەرجىمىلەر",
 	"translate-dynagroup-recent-desc": "بۇ ئۇچۇر گۇرۇپپىسى مەزكۇر تىلنىڭ يېقىنقى ھەممە تەرجىمىلىرىنى كۆرسىتىدۇ.\nئىملا تۈزەتكەندە ناھايىتى كېرەكلىك.",
-	"translate-gethelp": "ياردەم",
 	"translate-msggroupselector-search-all": "ھەممىسى",
 	"translate-msggroupselector-search-recent": "يېقىنقى",
 	"tux-languageselector": "تىل",
@@ -276,7 +272,7 @@
 	"tux-edit": "تەھرىر",
 	"tux-status-optional": "تاللاشچان",
 	"tux-status-fuzzy": "زاماندىن قالغان",
-	"tux-status-proofread": "تۈزەت",
+	"tux-status-proofread": "قايتا تەستىقلاندى",
 	"tux-status-translated": "تەرجىمە قىلىنغان",
 	"tux-editor-skip-button-label": "كېيىنكىگە ئاتلا",
 	"tux-editor-suggestions-title": "نامزاتلار",
