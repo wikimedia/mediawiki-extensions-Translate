@@ -3,7 +3,8 @@
 		"authors": [
 			"محمد أحمد عبد الفتاح",
 			"Meno25",
-			"Mido"
+			"Mido",
+			"ديفيد"
 		]
 	},
 	"managetranslatorsandbox": "إدارة ملعب المترجم",
@@ -44,7 +45,7 @@
 	"tsb-limit-reached-body": "أنت وصلت لحد الترجمة للمترجمين الجدد.\nفريقنا سيتحقق ويرقي حسابك قريبا.\nثم ستصبح قادرا على الترجمة بدون حدود.",
 	"tsb-no-requests-from-new-users": "لا طلبات من المستخدمين الجدد",
 	"tsb-create-user-page": "إنشاء صفحة مستخدم أساسية",
-	"log-name-translatorsandbox": "ملعب الترجمة",
+	"log-name-translatorsandbox": "سجل ملعب الترجمة",
 	"log-description-translatorsandbox": "سجل بالأفعال على مستخدمي ملعب الترجمة",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|رقى|رقت}} $3 ليكون {{GENDER:$4|مترجم|مترجمة}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|رفض|رفضت}} الطلب من \"$3\" ليكون مترجما",

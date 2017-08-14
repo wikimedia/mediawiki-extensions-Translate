@@ -7,5 +7,9 @@
 	"pagetranslation": "Asebter n tsuqilt",
 	"right-pagetranslation": "Creḍ ileqman n isebtar ara ttwasuqlen",
 	"action-pagetranslation": "Sefrek isebtar izmren ad ttwasuqlen",
-	"tpt-section": "Tayunt n tsuqilt: $1"
+	"tpt-section": "Tayunt n tsuqilt: $1",
+	"tpt-languages-legend": "Tutlayin-nniḍen:",
+	"pm-import-button-label": "Kter",
+	"pm-summary-import": "Tasuqlit tettwakter s useqdec n [[Special:PageMigration|n usgaǧi n usebter]]",
+	"pp-save-message": "Asebter yettwasekles. Tzemreḍ ad tt-[$1 ẓergeḍ]."
 }

@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Belkacem77"
+		]
+	},
+	"apihelp-groupreview-param-group": "Agraw n yiznan.",
+	"apihelp-groupreview-param-language": "Tangalt n tutlayt.",
+	"apihelp-query+languagestats-description": "Asuter n tidaddanin n tutlayt.",
+	"apihelp-query+languagestats-summary": "Asuter n tidaddanin n tutlayt.",
+	"apihelp-query+languagestats-param-language": "Tangalt n tutlayt.",
+	"apihelp-query+messagecollection-param-group": "Agraw n yiznan.",
+	"apihelp-query+messagecollection-param-language": "Tangalt n tutlayt.",
+	"apihelp-query+messagecollection-example-1": "Tabdart n tutlayin yettwasefraken",
+	"apihelp-query+messagegroups-example-1": "Sken igrawen n yiznan",
+	"apihelp-ttmserver-param-sourcelanguage": "Tangalt n tutlayt n uḍris n uɣbalu.",
+	"apihelp-searchtranslations-description": "Nadi tisuqilin.",
+	"apihelp-searchtranslations-param-service": "Anwa imeẓla n tsuqilt yellan ara tesqedceḍ.",
+	"apihelp-searchtranslations-param-sourcelanguage": "Tangalt n tutlayt n uḍris n uɣbalu.",
+	"apihelp-searchtranslations-param-filter": "Imzizdeg n waddad n tsuqilt n yizen.",
+	"apihelp-searchtranslations-example-1": "Sken tisuqilin i tutlayt.",
+	"apierror-translate-fuzzymessage": "Ur tezmireḍ ara ad alseḍ taɣuri n tsuqilt ur yemmiden ara",
+	"apierror-translate-language-disabled": "Tasuqilt ar tutlayt-agi tensa",
+	"apierror-translate-owntranslation": "Ur tezmireḍ ara ad alseḍ taɣuri n tsuqilt i teggid"
+}
