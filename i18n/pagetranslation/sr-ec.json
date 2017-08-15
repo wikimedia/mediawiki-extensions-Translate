@@ -56,6 +56,8 @@
 	"tpt-aggregategroup-edit-description": "Опис:",
 	"tpt-aggregategroup-update": "Сачувај",
 	"tpt-aggregategroup-update-cancel": "Откажи",
+	"pt-shake-multiple": "Више маркера јединице превода за једну јединицу превода.\nТекст јединице превода: <pre>$1</pre>",
+	"pt-shake-position": "Маркери јединице превода у неочекиваној позицији.\nТекст јединице превода: <pre>$1</pre>",
 	"log-name-pagetranslation": "Дневник превода страница",
 	"logentry-pagetranslation-mark": "$1 је {{GENDER:$2|означио|означила}} страницу $3 за превођење",
 	"logentry-pagetranslation-deletefok": "$1 је {{GENDER:$2|обрисао|обрисала}} преводиву страницу $3",
