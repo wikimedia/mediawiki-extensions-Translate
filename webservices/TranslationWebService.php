@@ -34,6 +34,7 @@ abstract class TranslationWebService {
 			'yandex' => 'YandexWebService',
 			'remote-ttmserver' => 'RemoteTTMServerWebService',
 			'cxserver' => 'CxserverWebService',
+			'restbase' => 'RESTBaseWebService',
 			'caighdean' => 'CaighdeanWebService',
 		];
 
