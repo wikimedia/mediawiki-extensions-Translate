@@ -93,7 +93,7 @@ TXT;
 
 			echo "After sort map\n";
 
-			$cache->set( $key, $pages, 3600*24 );
+			$cache->set( $key, $pages, 3600 * 24 );
 			echo "After set map\n";
 		}
 
@@ -218,7 +218,7 @@ TXT;
 			}
 
 			$text = implode( '   ', $snippets );
-			$cache->set( $key, $text, 3600*24 );
+			$cache->set( $key, $text, 3600 * 24 );
 
 			$delta = microtime( true ) - $time;
 			$this->output( "$code TOOK $delta\n" );

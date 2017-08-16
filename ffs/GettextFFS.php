@@ -525,7 +525,7 @@ PHP;
 
 		if ( $flags ) {
 			sort( $flags );
-			$header .=  '#, ' . implode( ', ', array_unique( $flags ) ) . "\n";
+			$header .= '#, ' . implode( ', ', array_unique( $flags ) ) . "\n";
 		}
 
 		$output = $header ? $header : "#\n";

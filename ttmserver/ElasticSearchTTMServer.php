@@ -350,8 +350,8 @@ GROOVY;
 					'filter' => [
 						'prefix_filter' => [
 							'type' => 'edge_ngram',
-							'min_gram'=> 2,
-							'max_gram'=> 20
+							'min_gram' => 2,
+							'max_gram' => 20
 						]
 					],
 					'analyzer' => [
@@ -496,7 +496,7 @@ GROOVY;
 	 * @return true if the backend is configured with the wikimedia extra plugin
 	 */
 	public function useWikimediaExtraPlugin() {
-		return isset ( $this->config['use_wikimedia_extra'] ) && $this->config['use_wikimedia_extra'];
+		return isset( $this->config['use_wikimedia_extra'] ) && $this->config['use_wikimedia_extra'];
 	}
 
 	/**
@@ -556,7 +556,7 @@ GROOVY;
 		while ( ( $startTime + $timeout ) > time() ) {
 			try {
 				$response = $this->getIndexHealth( $indexName );
-				$status = isset ( $response['status'] ) ? $response['status'] : 'unknown';
+				$status = isset( $response['status'] ) ? $response['status'] : 'unknown';
 				if ( $status === 'green' ) {
 					$this->logOutput( "\tGreen!" );
 					return true;
@@ -638,7 +638,7 @@ GROOVY;
 				}
 
 				// Fields for highlighting
-				$highlights[$analyzer] =  [
+				$highlights[$analyzer] = [
 					'number_of_fragments' => 0
 				];
 

@@ -700,7 +700,7 @@ class PageTranslationHooks {
 
 		$actions = [];
 		if ( $marked && $context->getUser()->isAllowed( 'translate' ) ) {
-			$actions[] =  self::getTranslateLink( $context, $page, $language->getCode() );
+			$actions[] = self::getTranslateLink( $context, $page, $language->getCode() );
 		}
 
 		$hasChanges = $ready === $latest && $marked !== $latest;

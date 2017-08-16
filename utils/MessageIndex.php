@@ -271,7 +271,7 @@ abstract class MessageIndex {
 				list( $ns, $pagename ) = explode( ':', $key, 2 );
 				$title = Title::makeTitle( $ns, $pagename );
 				$handle = new MessageHandle( $title );
-				list ( $oldGroups, $newGroups ) = $data;
+				list( $oldGroups, $newGroups ) = $data;
 				Hooks::run( 'TranslateEventMessageMembershipChange',
 					[ $handle, $oldGroups, $newGroups ] );
 			}

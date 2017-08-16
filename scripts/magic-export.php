@@ -100,7 +100,7 @@ class MagicExport extends Maintenance {
 			}
 
 			$inFile = $group->replaceVariables( $inFile, 'en' );
-			$outFile =  $this->target . '/' . $outFile;
+			$outFile = $this->target . '/' . $outFile;
 			$varName = null;
 
 			if ( !is_readable( $inFile ) ) {

@@ -35,9 +35,9 @@ class TSP extends Maintenance {
 		} elseif ( $len === 1 ) {
 			return $a[0];
 		} elseif ( $len % 2 === 0 ) {
-			return $a[$len/2];
+			return $a[$len / 2];
 		} else {
-			return ( $a[floor( $len/2 )] + $a[ceil( $len/2 )] ) / 2;
+			return ( $a[floor( $len / 2 )] + $a[ceil( $len / 2 )] ) / 2;
 		}
 	}
 

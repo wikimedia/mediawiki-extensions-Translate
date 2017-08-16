@@ -604,7 +604,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$code = $this->code;
 
 		foreach ( $pages as $key => $page ) {
-			list ( $namespace, $pagename ) = $page;
+			list( $namespace, $pagename ) = $page;
 			$title = Title::makeTitleSafe( $namespace, "$pagename/$code" );
 			if ( !$title ) {
 				wfWarn( "Invalid title $namespace:$pagename/$code" );

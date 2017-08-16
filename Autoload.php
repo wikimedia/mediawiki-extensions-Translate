@@ -141,7 +141,7 @@ $al['SpecialPagePreparation'] = "$dir/tag/SpecialPagePreparation.php";
 $al['PageTranslationHooks'] = "$dir/tag/PageTranslationHooks.php";
 $al['PageTranslationLogFormatter'] = "$dir/tag/PageTranslationLogFormatter.php";
 $al['TranslateRenderJob'] = "$dir/tag/TranslateRenderJob.php";
-$al['TranslationsUpdateJob']= "$dir/tag/TranslationsUpdateJob.php";
+$al['TranslationsUpdateJob'] = "$dir/tag/TranslationsUpdateJob.php";
 $al['SpecialPageTranslation'] = "$dir/tag/SpecialPageTranslation.php";
 $al['SpecialPageTranslationDeletePage'] =
 	"$dir/tag/SpecialPageTranslationDeletePage.php";

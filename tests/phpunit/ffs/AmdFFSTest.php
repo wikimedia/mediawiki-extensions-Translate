@@ -45,7 +45,7 @@ class AmdFFSTest extends MediaWikiTestCase {
 		$parsed = $ffs->readFromVariable( $file );
 		$expected = [
 			'MESSAGES' => $messages,
-			'AUTHORS' =>  $authors,
+			'AUTHORS' => $authors,
 			'METADATA' => [],
 		];
 		$this->assertEquals( $parsed, $expected );
