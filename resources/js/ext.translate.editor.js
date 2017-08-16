@@ -771,18 +771,7 @@
 
 				$requestRight = $( '<span>' )
 					.addClass( 'tux-editor-request-right' )
-					.text( mw.msg( 'translate-edit-nopermission' ) )
-					.append( $( '<a>' )
-						.text( mw.msg( 'translate-edit-askpermission' ) )
-						.addClass( 'tux-editor-ask-permission' )
-						.attr( {
-							href: mw.util.getUrl(
-								mw.config.get( 'wgTranslateUseSandbox' ) ?
-								'Special:TranslationStash' :
-								mw.config.get( 'wgTranslatePermissionUrl' )
-							)
-						} )
-					);
+					.text( mw.msg( 'translate-edit-nopermission' ) );
 
 				// Disable the text area if user has no translation rights.
 				// Use readonly to allow copy-pasting (except for placeholders)
