@@ -40,7 +40,6 @@
 
 .tux-message-editor .editcolumn {
 	border-right: 1px solid #aaa;
-	-webkit-transition: width 0.5s;
 	transition: width 0.5s;
 	background-color: #fff;
 	z-index: 1;
@@ -163,7 +162,6 @@
 	right: 0;
 	bottom: 0;
 	padding: 0;
-	-webkit-transition: width 0.5s;
 	transition: width 0.5s;
 }
 
