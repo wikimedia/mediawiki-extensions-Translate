@@ -27,7 +27,9 @@
 			state.group = group.id;
 
 			changes = {
-				group: group.id
+				group: group.id,
+				showMessage: null
+
 			};
 
 			mw.translate.changeUrl( changes );
@@ -38,7 +40,8 @@
 
 		changeLanguage: function ( language ) {
 			var changes = {
-				language: language
+				language: language,
+				showMessage: null
 			};
 
 			// Force a URL change (no AJAX) until client-side language changing
@@ -51,7 +54,7 @@
 				return;
 			}
 
-			mw.translate.changeUrl( { filter: filter } );
+			mw.translate.changeUrl( { filter: filter, showMessage: null } );
 			state.messageList.changeSettings( { filter: getActualFilter( filter ) } );
 		},
 
@@ -59,6 +62,13 @@
 			var uri = new mw.Uri( window.location.href );
 
 			uri.extend( params );
+
+			// Support removing keys from the query
+			$.each( params, function ( key, val ) {
+				if ( val === null ) {
+					delete uri.query[ key ];
+				}
+			} );
 
 			if ( uri.toString() === window.location.href ) {
 				return;
@@ -231,7 +241,7 @@
 
 	$( function () {
 		var $translateContainer, $hideTranslatedButton, $messageList,
-			filter, uri, position;
+			filter, uri, position, offset, limit;
 
 		$messageList = $( '.tux-messagelist' );
 		state.group = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
@@ -244,6 +254,12 @@
 
 			uri = new mw.Uri( window.location.href );
 			filter = uri.query.filter;
+			offset = uri.query.showMessage;
+			if ( offset ) {
+				limit = uri.query.limit || 1;
+				// Default to no filters
+				filter = filter || '';
+			}
 
 			if ( filter === undefined ) {
 				filter = '!translated';
@@ -260,13 +276,16 @@
 			mw.translate.changeUrl( {
 				group: state.group,
 				language: state.language,
-				filter: filter
+				filter: filter,
+				showMessage: offset
 			} );
 
 			// Start loading messages
 			state.messageList.changeSettings( {
 				group: state.group,
 				language: state.language,
+				offset: offset,
+				limit: limit,
 				filter: getActualFilter( filter )
 			} );
 		}
