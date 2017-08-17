@@ -169,19 +169,11 @@ class TranslationHelpers {
 	 * Returns block element HTML snippet that contains the translation aids.
 	 * Not all boxes are shown all the time depending on whether they have
 	 * any information to show and on configuration variables.
-	 * @param string $suggestions
 	 * @return String Block level HTML snippet or empty string.
 	 */
-	public function getBoxes( $suggestions = 'sync' ) {
+	public function getBoxes() {
 		// Box filter
 		$all = $this->getBoxNames();
-
-		if ( $suggestions === 'checks' ) {
-			$request = RequestContext::getMain()->getRequest();
-			$this->translation = $request->getText( 'translation' );
-
-			return (string)$this->callBox( 'check', $all['check'] );
-		}
 
 		$boxes = [];
 		foreach ( $all as $type => $cb ) {
@@ -227,11 +219,9 @@ class TranslationHelpers {
 	public function getBoxNames() {
 		return [
 			'other-languages' => [ $this, 'getOtherLanguagesBox' ],
-			'translation-diff' => [ $this, 'getPageDiff' ],
 			'separator' => [ $this, 'getSeparatorBox' ],
 			'documentation' => [ $this, 'getDocumentationBox' ],
 			'definition' => [ $this, 'getDefinitionBox' ],
-			'check' => [ $this, 'getCheckBox' ],
 		];
 	}
 
@@ -290,76 +280,6 @@ class TranslationHelpers {
 		return TranslateUtils::fieldset( $label, $msg, $class );
 	}
 
-	public function getCheckBox() {
-		$this->mustBeKnownMessage();
-
-		global $wgTranslateDocumentationLanguageCode;
-
-		$context = RequestContext::getMain();
-		$title = $context->getOutput()->getTitle();
-		list( $alias, ) = SpecialPageFactory::resolveAlias( $title->getText() );
-
-		$tux = SpecialTranslate::isBeta( $context->getRequest() )
-			&& $title->isSpecialPage()
-			&& ( $alias === 'Translate' );
-
-		$formattedChecks = $tux ?
-			FormatJson::encode( [] ) :
-			Html::element( 'div', [ 'class' => 'mw-translate-messagechecks' ] );
-
-		$page = $this->handle->getKey();
-		$translation = $this->getTranslation();
-		$code = $this->handle->getCode();
-		$en = $this->getDefinition();
-
-		if ( (string)$translation === '' ) {
-			return $formattedChecks;
-		}
-
-		if ( $code === $wgTranslateDocumentationLanguageCode ) {
-			return $formattedChecks;
-		}
-
-		// We need to get the primary group of the message. It may differ from
-		// the supplied group (aggregate groups, dynamic groups).
-		$checker = $this->handle->getGroup()->getChecker();
-		if ( !$checker ) {
-			return $formattedChecks;
-		}
-
-		$message = new FatMessage( $page, $en );
-		// Take the contents from edit field as a translation
-		$message->setTranslation( $translation );
-
-		$checks = $checker->checkMessage( $message, $code );
-		if ( !count( $checks ) ) {
-			return $formattedChecks;
-		}
-
-		$checkMessages = [];
-
-		foreach ( $checks as $checkParams ) {
-			$key = array_shift( $checkParams );
-			$checkMessages[] = $context->msg( $key, $checkParams )->parse();
-		}
-
-		if ( $tux ) {
-			$formattedChecks = FormatJson::encode( $checkMessages );
-		} else {
-			$formattedChecks = Html::rawElement(
-				'div',
-				[ 'class' => 'mw-translate-messagechecks' ],
-				TranslateUtils::fieldset(
-					$context->msg( 'translate-edit-warnings' )->escaped(),
-					implode( '<hr />', $checkMessages ),
-					[ 'class' => 'mw-sp-translate-edit-warnings' ]
-				)
-			);
-		}
-
-		return $formattedChecks;
-	}
-
 	public function getOtherLanguagesBox() {
 		$code = $this->handle->getCode();
 		$page = $this->handle->getKey();
@@ -378,9 +298,10 @@ class TranslationHelpers {
 				$context->msg( 'word-separator' )->text() .
 				$context->msg( 'parentheses', $fbLanguage->getHtmlCode() )->text();
 
-			$target = Title::makeTitleSafe( $ns, "$page/$fbcode" );
+			$target = $this->handle->getTitleForLanguage( $fbcode );
+
 			if ( $target ) {
-				$label = self::ajaxEditLink( $target, htmlspecialchars( $label ) );
+				$label = self::ajaxEditLink( $target, $label );
 			}
 
 			$dialogID = $this->dialogID();
@@ -433,10 +354,10 @@ class TranslationHelpers {
 		$page = $this->handle->getKey();
 		$ns = $this->handle->getTitle()->getNamespace();
 
-		$title = Title::makeTitle( $ns, $page . '/' . $wgTranslateDocumentationLanguageCode );
+		$title = $this->handle->getTitleForLanguage( $wgTranslateDocumentationLanguageCode );
 		$edit = self::ajaxEditLink(
 			$title,
-			$context->msg( 'translate-edit-contribute' )->escaped()
+			$context->msg( 'translate-edit-contribute' )->text()
 		);
 		$info = TranslateUtils::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns );
 
@@ -461,68 +382,6 @@ class TranslationHelpers {
 		return TranslateUtils::fieldset(
 			$context->msg( 'translate-edit-information' )->rawParams( $edit )->escaped(),
 			Html::rawElement( 'div', $divAttribs, $contents ), [ 'class' => $class ]
-		);
-	}
-
-	protected function getPageDiff() {
-		$this->mustBeKnownMessage();
-
-		$title = $this->handle->getTitle();
-		$key = $this->handle->getKey();
-
-		if ( !$title->exists() ) {
-			return null;
-		}
-
-		$definitionTitle = Title::makeTitleSafe( $title->getNamespace(), "$key/en" );
-		if ( !$definitionTitle || !$definitionTitle->exists() ) {
-			return null;
-		}
-
-		$db = TranslateUtils::getSafeReadDB();
-		$conds = [
-			'rt_page' => $title->getArticleID(),
-			'rt_type' => RevTag::getType( 'tp:transver' ),
-		];
-		$options = [
-			'ORDER BY' => 'rt_revision DESC',
-		];
-
-		$latestRevision = $definitionTitle->getLatestRevID();
-
-		$translationRevision = $db->selectField( 'revtag', 'rt_value', $conds, __METHOD__, $options );
-		if ( $translationRevision === false ) {
-			return null;
-		}
-
-		// Using newFromId instead of newFromTitle, because the page might have been renamed
-		$oldrev = Revision::newFromId( $translationRevision );
-		if ( !$oldrev ) {
-			// And someone might still have deleted it
-			return null;
-		}
-
-		$oldtext = ContentHandler::getContentText( $oldrev->getContent() );
-		$newContent = Revision::newFromTitle( $definitionTitle, $latestRevision )->getContent();
-		$newtext = ContentHandler::getContentText( $newContent );
-
-		if ( $oldtext === $newtext ) {
-			return null;
-		}
-
-		$diff = new DifferenceEngine;
-		$diff->setTextLanguage( $this->group->getSourceLanguage() );
-
-		$oldContent = ContentHandler::makeContent( $oldtext, $diff->getTitle() );
-		$newContent = ContentHandler::makeContent( $newtext, $diff->getTitle() );
-
-		$diff->setContent( $oldContent, $newContent );
-		$diff->setReducedLineNumbers();
-		$diff->showDiffStyle();
-
-		return $diff->getDiff(
-			wfMessage( 'tpt-diff-old' )->escaped(),
-			wfMessage( 'tpt-diff-new' )->escaped()
 		);
 	}
 
@@ -622,17 +481,16 @@ class TranslationHelpers {
 	 * @param string $text Link text for Linker::link()
 	 * @return string HTML link
 	 */
-	public static function ajaxEditLink( $target, $text ) {
+	public static function ajaxEditLink( Title $target, $text ) {
 		$handle = new MessageHandle( $target );
-		$groupId = MessageIndex::getPrimaryGroupId( $handle );
+		$uri = TranslateUtils::getEditorUrl( $handle );
+		$link = Html::element(
+			'a',
+			[ 'href' => $uri ],
+			$text
+		);
 
-		$params = [];
-		$params['action'] = 'edit';
-		$params['loadgroup'] = $groupId;
-
-		$jsEdit = TranslationEditPage::jsEdit( $target, $groupId, 'dialog' );
-
-		return Linker::link( $target, $text, $jsEdit, $params );
+		return $link;
 	}
 
 	/**
@@ -647,9 +505,7 @@ class TranslationHelpers {
 	}
 
 	public static function addModules( OutputPage $out ) {
-		$modules = [ 'ext.translate.quickedit' ];
-		Hooks::run( 'TranslateBeforeAddModules', [ &$modules ] );
-		$out->addModules( $modules );
+		$out->addModuleStyles( 'ext.translate.quickedit' );
 
 		// Might be needed, but ajax doesn't load it
 		// Globals :(
