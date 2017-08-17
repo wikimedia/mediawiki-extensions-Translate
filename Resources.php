@@ -172,11 +172,7 @@ $wgResourceModules['ext.translate.messagetable'] = [
 	'messages' => [
 		'api-error-badtoken',
 		'api-error-emptypage',
-		'api-error-fuzzymessage',
-		'api-error-invalidrevision',
-		'api-error-owntranslation',
 		'api-error-unknownerror',
-		'api-error-unknownmessage',
 		'tpt-unknown-page',
 		'translate-edit-title',
 		'translate-language-disabled',
@@ -249,18 +245,7 @@ $wgResourceModules['ext.translate.parsers'] = [
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.quickedit'] = [
-	'scripts' => 'resources/js/ext.translate.quickedit.js',
 	'styles' => 'resources/css/ext.translate.quickedit.css',
-	'messages' => [ 'translate-js-nonext', 'translate-js-save-failed' ],
-	'dependencies' => [
-		'ext.translate.hooks',
-		'jquery.accessKeyLabel',
-		'jquery.autosize',
-		'jquery.form',
-		'jquery.ui.dialog',
-		'mediawiki.util',
-	],
-	'targets' => [ 'desktop' ],
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.selecttoinput'] = [
@@ -478,18 +463,6 @@ $wgResourceModules['ext.translate.special.translate'] = [
 		'translate-documentation-language',
 		'tux-editor-proofreading-hide-own-translations',
 		'tux-editor-proofreading-show-own-translations',
-	],
-] + $resourcePaths;
-
-$wgResourceModules['ext.translate.special.translate.legacy'] = [
-	'scripts' => 'resources/js/ext.translate.special.translate.legacy.js',
-	'dependencies' => [
-		'mediawiki.api',
-	],
-	'messages' => [
-		'translate-messagereview-done',
-		'translate-messagereview-failure',
-		'translate-messagereview-progress',
 	],
 ] + $resourcePaths;
 

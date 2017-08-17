@@ -95,6 +95,7 @@ $wgAPIModules['translatesandbox'] = 'ApiTranslateSandbox';
 $wgAPIModules['translationaids'] = 'ApiTranslationAids';
 $wgAPIModules['translationreview'] = 'ApiTranslationReview';
 $wgAPIModules['translationstash'] = 'ApiTranslationStash';
+$wgAPIModules['translationcheck'] = 'ApiTranslationCheck';
 $wgAPIModules['ttmserver'] = 'ApiTTMServer';
 $wgAPIModules['searchtranslations'] = 'ApiSearchTranslations';
 
@@ -296,20 +297,6 @@ $wgTranslateTranslationServices['Yandex'] = [
 	'langorder' => [ 'en', 'ru', 'uk', 'de', 'fr', 'pl', 'it', 'es', 'tr' ],
 	'langlimit' => 1,
 	'type' => 'yandex',
-];
-
-/**
- * List of tasks in Special:Translate. If you are only using page translation
- * feature, you might want to disable 'optional' task. Example:
- *  unset($wgTranslateTasks['optional']);
- */
-$wgTranslateTasks = [
-	'view' => 'ViewMessagesTask',
-	'untranslated' => 'ViewUntranslatedTask',
-	'optional' => 'ViewOptionalTask',
-	'acceptqueue' => 'AcceptQueueMessagesTask',
-	'reviewall' => 'ReviewAllMessagesTask',
-	'custom' => 'CustomFilteredMessagesTask',
 ];
 
 /**
