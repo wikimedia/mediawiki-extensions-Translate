@@ -905,21 +905,18 @@
 		 */
 		validateTranslation: function () {
 			var translateEditor = this,
-				url,
+				api,
 				$textarea = translateEditor.$editor.find( '.tux-textarea-translation' );
 
-			// TODO: We need a better API for this
-			url = mw.util.getUrl( 'Special:Translate/editpage', {
-				suggestions: 'checks',
-				page: translateEditor.message.title,
-				loadgroup: translateEditor.message.group
-			} );
+			api = new mw.Api();
 
-			$.post( url, {
+			api.post( {
+				action: 'translationcheck',
+				title: this.message.title,
 				translation: $textarea.val()
-			}, function ( data ) {
+			} ).done( function ( data ) {
 				var warningIndex,
-					warnings = JSON.parse( data );
+					warnings = data.warnings;
 
 				translateEditor.removeWarning( 'validation' );
 				if ( !warnings || !warnings.length ) {
