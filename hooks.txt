@@ -46,12 +46,6 @@ Post processing step to format in wiki
 
 === PHP events ===
 
-;SpecialTranslate::executeTask: You can output the default task output
- RequestContext  $context: For adding output, accessing current interface language etc.
- TranslateTask   $task = null: Current task if any
- MessageGroup    $group
- array           $options: Active options
-
 ;Translate:MessageGroupStats:isIncluded: Controls whether message group is shown for a given language in language or message group statistics. Mostly used internally by Translate to hide discouraged groups and groups restricted to certain languages.
  string          $groupId: Message group id
  string          $code: Language code
@@ -73,13 +67,6 @@ Post processing step to format in wiki
 ;TranslateEventTranslationReview: Event triggered when a translation is proofread
  MessageHandle   $handle
 
-;TranslateFormatMessageBeforeTable: Provides an opportunity to manipulate the display of translation strings (messages) in the main table
- string         &$message: The message that will be displayed
- TMessage        $m: Object representing the source object, useful for $m->original() and $m->translation()
- MessageGroup    $group: The source message group
- string          $targetLanguage: The language for which translations are being shown
- array          &$extraAttribs: An array of attributes that will be added to the table row
-
 ;TranslateGetBoxes: Provides an opportunity to add or remove "boxes" (translation helpers) from the translation interface
  MessageGroup    $group: The message group being worked on
  MessageHandle   $handle: An object representing the translation page (e.g. 'MediaWiki:Example/qqq')
@@ -90,10 +77,6 @@ Post processing step to format in wiki
 
 ;TranslateGetAPIMessageGroupsPropertyDescs: Allows extra properties to be added to captured by action=query&meta=messagegroups&mgprop=foo|bar|bat module
  array          &$properties: An associative array of properties, name => description (which is ignored).
-
-;TranslateGetExtraInputs: Provides an opportunity to add extra form inputs to to the default translation editor
- string         &$translation: The translation as it stands
- string         &$extraInputs: The extra input space, ready for HTML to be appended
 
 ;TranslateGetSpecialTranslateOptions: Provides an opportunity for overriding task values
  array          &$defaults: Associative array of default values
@@ -107,12 +90,6 @@ Post processing step to format in wiki
 ;TranslateMessageGroupPathVariables: Allows to manipulate the list of variables for message group path patterns.
  MessageGroup    $group
  array          &$variables: Variable name => replacement
-
-;TranslateMessageTableInit: When creating new MessageTable
- MessageTable   &$table: Default implementation that can be accessed or even replaced
- IContextSource  $context:
- MessageCollection $collection
- MessageGroup    $group
 
 ;Translate:newTranslation: Event triggered when non-fuzzy translation has been made
  MessageHandle   $handle
