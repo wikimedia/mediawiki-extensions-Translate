@@ -245,8 +245,7 @@
 
 		$messageList = $( '.tux-messagelist' );
 		state.group = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
-		state.language = $messageList.data( 'targetlangcode' ) || // for tux=1
-			mw.config.get( 'wgUserLanguage' ); // for tux=0
+		state.language = $messageList.data( 'targetlangcode' );
 
 		if ( $messageList.length ) {
 			$messageList.messagetable();

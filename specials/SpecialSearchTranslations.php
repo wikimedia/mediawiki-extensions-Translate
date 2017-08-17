@@ -151,11 +151,10 @@ class SpecialSearchTranslations extends SpecialPage {
 			$code = $handle->getCode();
 			$language = $opts->getValue( 'language' );
 			if ( $code !== '' && $code !== $language && $handle->isValid() ) {
-				$groupId = $handle->getGroup()->getId();
-				$helpers = new TranslationHelpers( $title, $groupId );
+				$aid = new CurrentTranslationAid( $handle->getGroup(), $handle, $this->getContext() );
 				$document['wiki'] = wfWikiID();
 				$document['localid'] = $handle->getTitleForBase()->getPrefixedText();
-				$document['content'] = $helpers->getTranslation();
+				$document['content'] = $aid->getData['value'];
 				$document['language'] = $handle->getCode();
 				array_unshift( $documents, $document );
 				$total++;
@@ -185,12 +184,6 @@ class SpecialSearchTranslations extends SpecialPage {
 			$handle = new MessageHandle( $title );
 
 			if ( $handle->isValid() ) {
-				$groupId = $handle->getGroup()->getId();
-				$helpers = new TranslationHelpers( $title, $groupId );
-				$resultAttribs['data-definition'] = $helpers->getDefinition();
-				$resultAttribs['data-translation'] = $helpers->getTranslation();
-				$resultAttribs['data-group'] = $groupId;
-
 				$uri = TranslateUtils::getEditorUrl( $handle );
 				$link = Html::element(
 					'a',
