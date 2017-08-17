@@ -402,4 +402,17 @@ class TranslateUtils {
 
 		return wfGetDB( $index );
 	}
+
+	public static function getEditorUrl( MessageHandle $handle ) {
+		if ( !$handle->isValid() ) {
+			return $handle->getTitle()->getLocalURL( [ 'action' => 'edit' ] );
+		}
+
+		$title = SpecialPageFactory::getPage( 'Translate' )->getPageTitle();
+		return $title->getLocalURL( [
+			'showMessage' => $handle->getInternalKey(),
+			'group' => $handle->getGroup()->getId(),
+			'language' => $handle->getCode(),
+		] );
+	}
 }

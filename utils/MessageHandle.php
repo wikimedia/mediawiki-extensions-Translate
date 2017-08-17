@@ -250,4 +250,36 @@ class MessageHandle {
 
 		return $res !== false;
 	}
+
+	public function getInternalKey() {
+		global $wgContLang;
+
+		$key = $this->getKey();
+
+		if ( !MWNamespace::isCapitalized( $this->getTitle()->getNamespace() ) ) {
+			return $key;
+		}
+
+
+		$group = $this->getGroup();
+		$keys = [];
+		// We cannot reliably map from database key to if capital titles is enabled
+		// for the namespace
+		if ( method_exists( $group, 'getKeys' ) ) {
+			$keys = $group->getKeys();
+		} else {
+			$keys = array_keys( $group->getDefinitions() );
+		}
+
+		if ( in_array( $key, $keys, true ) ) {
+			return $key;
+		}
+
+		$lcKey = $wgContLang->lcfirst( $key );
+		if ( in_array( $lcKey, $keys, true ) ) {
+			return $lcKey;
+		}
+
+		return "BUG:$key";
+	}
 }
