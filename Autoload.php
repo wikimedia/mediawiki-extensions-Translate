@@ -27,7 +27,6 @@ $al['TMessage'] = "$dir/Message.php";
 $al['ThinMessage'] = "$dir/Message.php";
 $al['TranslateEditAddons'] = "$dir/TranslateEditAddons.php";
 $al['TranslateHooks'] = "$dir/TranslateHooks.php";
-$al['TranslateTasks'] = "$dir/TranslateTasks.php";
 $al['TranslateUtils'] = "$dir/TranslateUtils.php";
 /**@}*/
 
@@ -101,7 +100,6 @@ $al['TranslateSandboxEmailJob'] = "$dir/utils/TranslateSandboxEmailJob.php";
 $al['TranslateStatsOutput'] = "$dir/scripts/TranslateStatsOutput.php";
 $al['TranslateToolbox'] = "$dir/utils/ToolBox.php";
 $al['TranslateYaml'] = "$dir/utils/TranslateYaml.php";
-$al['TranslationEditPage'] = "$dir/utils/TranslationEditPage.php";
 $al['TranslationHelperException'] = "$dir/utils/TranslationHelpers.php";
 $al['TranslationHelpers'] = "$dir/utils/TranslationHelpers.php";
 $al['TranslationStats'] = "$dir/utils/TranslationStats.php";
@@ -217,20 +215,6 @@ $al['ApiTranslateSandbox'] = "$dir/api/ApiTranslateSandbox.php";
 $al['ApiTranslationAids'] = "$dir/api/ApiQueryTranslationAids.php";
 $al['ApiTranslationReview'] = "$dir/api/ApiTranslationReview.php";
 $al['ApiTranslationStash'] = "$dir/api/ApiTranslationStash.php";
-/**@}*/
-
-/**
- * @name   "Task classes"
- * @{
- */
-$al['AcceptQueueMessagesTask'] = "$dir/TranslateTasks.php";
-$al['CustomFilteredMessagesTask'] = "$dir/TranslateTasks.php";
-$al['ReviewAllMessagesTask'] = "$dir/TranslateTasks.php";
-$al['ReviewMessagesTask'] = "$dir/TranslateTasks.php";
-$al['TranslateTask'] = "$dir/TranslateTasks.php";
-$al['ViewMessagesTask'] = "$dir/TranslateTasks.php";
-$al['ViewOptionalTask'] = "$dir/TranslateTasks.php";
-$al['ViewUntranslatedTask'] = "$dir/TranslateTasks.php";
 /**@}*/
 
 /**

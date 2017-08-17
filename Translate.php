@@ -298,20 +298,6 @@ $wgTranslateTranslationServices['Yandex'] = [
 ];
 
 /**
- * List of tasks in Special:Translate. If you are only using page translation
- * feature, you might want to disable 'optional' task. Example:
- *  unset($wgTranslateTasks['optional']);
- */
-$wgTranslateTasks = [
-	'view' => 'ViewMessagesTask',
-	'untranslated' => 'ViewUntranslatedTask',
-	'optional' => 'ViewOptionalTask',
-	'acceptqueue' => 'AcceptQueueMessagesTask',
-	'reviewall' => 'ReviewAllMessagesTask',
-	'custom' => 'CustomFilteredMessagesTask',
-];
-
-/**
  * Experimental support for an "Ask" help button.
  * Might change into a hook later on.
  * This is an array with keys page, url and params.

@@ -624,8 +624,7 @@ class TranslateHooks {
 		$title = $out->getTitle();
 		list( $alias, ) = SpecialPageFactory::resolveAlias( $title->getText() );
 
-		if ( SpecialTranslate::isBeta( $request )
-			&& $title->isSpecialPage()
+		if ( $title->isSpecialPage()
 			&& ( $alias === 'Translate'
 				|| $alias === 'TranslationStash'
 				|| $alias === 'SearchTranslations' )
