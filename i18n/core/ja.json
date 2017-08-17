@@ -18,7 +18,8 @@
 			"Rxy",
 			"Sujiniku",
 			"Otokoume",
-			"2nd-player"
+			"2nd-player",
+			"Gminky"
 		]
 	},
 	"translate": "翻訳",
@@ -266,6 +267,7 @@
 	"translate-documentation-language": "メッセージについての説明文",
 	"translate-searchprofile": "訳文",
 	"translate-searchprofile-tooltip": "すべての翻訳から検索",
+	"translate-searchprofile-note": "より多くの検索設定は、[$1 翻訳検索]を通して利用することができます。",
 	"translate-search-languagefilter": "言語で絞り込み:",
 	"translate-search-nofilter": "すべて表示",
 	"translate-messagereview-submit": "査読済にする",
