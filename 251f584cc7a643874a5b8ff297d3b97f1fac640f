@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4e7eab26_dc4d32c8",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-08-18T08:34:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e7eab26_315ca281",
+      "range": {
+        "startLine": 407,
+        "startChar": 34,
+        "endLine": 407,
+        "endChar": 40
+      },
+      "revId": "251f584cc7a643874a5b8ff297d3b97f1fac640f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e7eab26_1158868a",
         "filename": "utils/MessageHandle.php",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2017-08-17T17:55:31Z",
       "side": 1,
       "message": "missing word after \"to\"?",
+      "range": {
+        "startLine": 272,
+        "startChar": 46,
+        "endLine": 272,
+        "endChar": 51
+      },
+      "revId": "251f584cc7a643874a5b8ff297d3b97f1fac640f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e7eab26_bc506662",
+        "filename": "utils/MessageHandle.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-08-18T08:34:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e7eab26_1158868a",
       "range": {
         "startLine": 272,
         "startChar": 46,
