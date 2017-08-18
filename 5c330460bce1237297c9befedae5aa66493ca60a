@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e7eab26_174ab32b",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 775,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2017-08-18T10:49:45Z",
+      "side": 1,
+      "message": "Check here. There is a trailing space",
+      "range": {
+        "startLine": 775,
+        "startChar": 0,
+        "endLine": 775,
+        "endChar": 20
+      },
+      "revId": "5c330460bce1237297c9befedae5aa66493ca60a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e7eab26_3747af22",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 791,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2017-08-18T10:49:45Z",
+      "side": 1,
+      "message": "Trailing space here too. Check please.",
+      "range": {
+        "startLine": 791,
+        "startChar": 0,
+        "endLine": 791,
+        "endChar": 5
+      },
+      "revId": "5c330460bce1237297c9befedae5aa66493ca60a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
