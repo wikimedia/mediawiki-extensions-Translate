@@ -13,15 +13,16 @@ module.exports = function ( grunt ) {
 				'**/*.js',
 				'!node_modules/**',
 				'!extensions/**',
-				'!resources/js/jquery.autosize.js'
+				'!resources/js/jquery.autosize.js',
+				'!vendor/**'
 			]
 		},
 		jsonlint: {
 			all: [
 				'**/*.json',
-				'.stylelintrc',
 				'!node_modules/**',
-				'!extensions/**'
+				'!extensions/**',
+				'!vendor/**'
 			]
 		},
 		stylelint: {
@@ -29,7 +30,8 @@ module.exports = function ( grunt ) {
 				'**/*.css',
 				'**/*.less',
 				'!node_modules/**',
-				'!extensions/**'
+				'!extensions/**',
+				'!vendor/**'
 			]
 		},
 		banana: {
