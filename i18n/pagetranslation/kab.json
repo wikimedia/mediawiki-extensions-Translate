@@ -9,6 +9,7 @@
 	"action-pagetranslation": "Sefrek isebtar izmren ad ttwasuqlen",
 	"tpt-section": "Tayunt n tsuqilt: $1",
 	"tpt-languages-legend": "Tutlayin-nniḍen:",
+	"tpt-languages-nonzero": "$1 ($2% yettwasuqel)",
 	"pm-import-button-label": "Kter",
 	"pm-summary-import": "Tasuqlit tettwakter s useqdec n [[Special:PageMigration|n usgaǧi n usebter]]",
 	"pp-save-message": "Asebter yettwasekles. Tzemreḍ ad tt-[$1 ẓergeḍ]."
