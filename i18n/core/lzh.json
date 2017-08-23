@@ -3,7 +3,8 @@
 		"authors": [
 			"Yanteng3",
 			"Jason924tw",
-			"Davidzdh"
+			"Davidzdh",
+			"Itsmine"
 		]
 	},
 	"translate": "譯",
@@ -172,6 +173,7 @@
 	"tux-editor-collapse-tooltip": "摺",
 	"tux-editor-message-tools-history": "誌",
 	"tux-editor-loading": "載之……",
+	"translate-search-more-languages-info": "尚有{{PLURAL:$1|語文|語文}}$1",
 	"translate-statsbar-tooltip": "已譯$1%，已檢校$2%",
 	"translate-statsbar-tooltip-with-fuzzy": "$1%已翻，$2%檢校，$3%過時"
 }
