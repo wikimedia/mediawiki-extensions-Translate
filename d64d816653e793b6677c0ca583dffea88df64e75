@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e7eab26_7abd05fc",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 775,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2017-08-23T15:29:34Z",
+      "side": 1,
+      "message": "You need to use tabs to indent here",
+      "range": {
+        "startLine": 775,
+        "startChar": 0,
+        "endLine": 775,
+        "endChar": 16
+      },
+      "revId": "d64d816653e793b6677c0ca583dffea88df64e75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e7eab26_da5199da",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2017-08-23T15:29:34Z",
+      "side": 1,
+      "message": "In this case you should use !\u003d\u003d as the operator and not put the ! at the beginning (The code currently as written says negate mw.config.get( \u0027wgTranslatePermissionUrl\u0027 ), and then see if the negation is false. Which works most of the time, but is not considered the most proper way of checking if its false.",
+      "range": {
+        "startLine": 776,
+        "startChar": 9,
+        "endLine": 776,
+        "endChar": 64
+      },
+      "revId": "d64d816653e793b6677c0ca583dffea88df64e75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
