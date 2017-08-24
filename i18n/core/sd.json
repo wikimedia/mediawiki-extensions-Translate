@@ -5,10 +5,15 @@
 			"Mehtab ahmed"
 		]
 	},
+	"translate-edit-in-other-languages": "ٻين ٻولين ۾ پيغام",
 	"translate-magic-cm-save": "سانڍيو",
 	"translate-js-save": "سانڍيو",
+	"translate-js-support": "سوال پڇو",
 	"translate-documentation-language": "نياپاتي دستاويزسازي",
+	"translate-msggroupselector-search-all": "سڀ",
+	"tux-tab-all": "سڀ",
 	"tux-editor-cancel-button-label": "رد",
+	"tux-editor-in-other-languages": "ٻيون ٻوليون",
 	"tux-editor-doc-editor-cancel": "رد",
 	"tux-editor-close-tooltip": "بند ڪريو"
 }
