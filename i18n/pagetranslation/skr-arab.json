@@ -4,5 +4,22 @@
 			"Saraiki"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% ترجمہ تھی ڳیا)"
+	"tpt-select-prioritylangs-reason": "سبب:",
+	"tpt-languages-legend": "ٻیاں زباناں:",
+	"tpt-languages-nonzero": "$1 ($2% ترجمہ تھی ڳیا)",
+	"tpt-aggregategroup-save": "بچاؤ",
+	"tpt-aggregategroup-new-name": "ناں:",
+	"tpt-aggregategroup-edit-name": "ناں:",
+	"tpt-aggregategroup-edit-description": "تفصیل:",
+	"tpt-aggregategroup-update-cancel": "منسوخ",
+	"pt-movepage-new": "نواں ناں:",
+	"pt-movepage-reason": "سبب:",
+	"pt-deletepage-reason": "سبب:",
+	"pm-import-button-label": "اندر گھن آؤ",
+	"pm-savepages-button-label": "بچاؤ",
+	"pm-cancel-button-label": "منسوخ",
+	"pp-prepare-button-label": "تیار کرو",
+	"pp-save-button-label": "بچاؤ",
+	"pp-cancel-button-label": "منسوخ",
+	"tpt-generic-button": "تصدیق"
 }

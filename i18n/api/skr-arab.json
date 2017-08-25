@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saraiki"
+		]
+	},
+	"apihelp-query+languagestats-param-language": "زبان دا کوڈ۔",
+	"apihelp-query+messagecollection-param-language": "زبان دا کوڈ۔"
+}
