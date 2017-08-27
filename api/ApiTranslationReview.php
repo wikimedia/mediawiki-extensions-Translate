@@ -105,7 +105,7 @@ class ApiTranslationReview extends ApiBase {
 	 * @param User $user
 	 * @param Revision $revision
 	 * @param null|string $comment
-	 * @return Bool, whether the action was recorded.
+	 * @return bool whether the action was recorded.
 	 */
 	public static function doReview( User $user, Revision $revision, $comment = null ) {
 		$dbw = wfGetDB( DB_MASTER );

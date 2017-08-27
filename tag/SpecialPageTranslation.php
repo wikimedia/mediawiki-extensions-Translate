@@ -574,7 +574,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 	/**
 	 * @param TranslatablePage $page
-	 * @param bool $error
+	 * @param bool &$error
 	 * @return TPSection[] The array has string keys.
 	 */
 	public function checkInput( TranslatablePage $page, &$error ) {

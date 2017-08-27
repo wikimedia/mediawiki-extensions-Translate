@@ -11,7 +11,7 @@
  * Pretty formatter for MessageCollection objects.
  */
 class MessageTable {
-	/*
+	/**
 	 * @var bool
 	 */
 	protected $reviewMode = false;

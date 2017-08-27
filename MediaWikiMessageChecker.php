@@ -20,7 +20,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 *
 	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code of the translations.
-	 * @param array $warnings Array where warnings are appended to.
+	 * @param array &$warnings Array where warnings are appended to.
 	 */
 	protected function wikiParameterCheck( $messages, $code, &$warnings ) {
 		parent::parameterCheck( $messages, $code, $warnings, '/\$[1-9]/' );
@@ -34,7 +34,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 *
 	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code of the translations.
-	 * @param array $warnings Array where warnings are appended to.
+	 * @param array &$warnings Array where warnings are appended to.
 	 */
 	protected function wikiLinksCheck( $messages, $code, &$warnings ) {
 		$tc = Title::legalChars() . '#%{}';
@@ -97,7 +97,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 *
 	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code of the translations.
-	 * @param array $warnings Array where warnings are appended to.
+	 * @param array &$warnings Array where warnings are appended to.
 	 */
 	protected function XhtmlCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -149,7 +149,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 *
 	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code of the translations.
-	 * @param array $warnings Array where warnings are appended to.
+	 * @param array &$warnings Array where warnings are appended to.
 	 */
 	protected function pluralCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -174,7 +174,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * Checks if the translation uses too many plural forms
 	 * @param TMessage[] $messages
 	 * @param string $code
-	 * @param array $warnings
+	 * @param array &$warnings
 	 * @since 2012-09-19
 	 */
 	protected function pluralFormsCheck( $messages, $code, &$warnings ) {
@@ -294,7 +294,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 *
 	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code of the translations.
-	 * @param array $warnings Array where warnings are appended to.
+	 * @param array &$warnings Array where warnings are appended to.
 	 */
 	protected function pagenameMessagesCheck( $messages, $code, &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -321,7 +321,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 *
 	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code of the translations.
-	 * @param array $warnings Array where warnings are appended to.
+	 * @param array &$warnings Array where warnings are appended to.
 	 */
 	protected function miscMWChecks( $messages, $code, &$warnings ) {
 		$timeList = [ 'protect-expiry-options', 'ipboptions' ];

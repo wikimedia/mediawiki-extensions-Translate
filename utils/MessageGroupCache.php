@@ -149,7 +149,7 @@ class MessageGroupCache {
 	 * Checks whether the cache still reflects the source file.
 	 * It uses multiple conditions to speed up the checking from file
 	 * modification timestamps to hashing.
-	 * @param int $reason
+	 * @param int &$reason
 	 * @return bool Whether the cache is up to date.
 	 */
 	public function isValid( &$reason ) {

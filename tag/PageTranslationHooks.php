@@ -24,9 +24,9 @@ class PageTranslationHooks {
 
 	/**
 	 * Hook: ParserBeforeStrip
-	 * @param $parser Parser
-	 * @param $text
-	 * @param $state
+	 * @param Parser $parser
+	 * @param string &$text
+	 * @param string $state
 	 * @return bool
 	 */
 	public static function renderTagPage( $parser, &$text, $state ) {
@@ -181,9 +181,9 @@ class PageTranslationHooks {
 	}
 
 	/**
-	 * @param $data
-	 * @param $params
-	 * @param $parser Parser
+	 * @param string $data
+	 * @param array $params
+	 * @param Parser $parser
 	 * @return string
 	 */
 	public static function languages( $data, $params, $parser ) {
@@ -335,7 +335,7 @@ class PageTranslationHooks {
 	/**
 	 * Return icon CSS class for given progress status: percentages
 	 * are too accurate and take more space than simple images.
-	 * @param $percent float
+	 * @param float $percent
 	 * @return string[]
 	 */
 	protected static function tpProgressIcon( $percent ) {
@@ -515,7 +515,7 @@ class PageTranslationHooks {
 	 * @param Title $title
 	 * @param User $user
 	 * @param string $action
-	 * @param mixed $result
+	 * @param mixed &$result
 	 * @return bool
 	 */
 	public static function onGetUserPermissionsErrorsExpensive( Title $title, User $user,
@@ -619,7 +619,7 @@ class PageTranslationHooks {
 	 * @param Title $title
 	 * @param User $user
 	 * @param string $action
-	 * @param mixed $result
+	 * @param mixed &$result
 	 *
 	 * @return bool
 	 */
@@ -642,9 +642,9 @@ class PageTranslationHooks {
 	 * Redirects the delete action to our own for translatable pages.
 	 * Hook: ArticleConfirmDelete
 	 *
-	 * @param $article Article
-	 * @param $out OutputPage
-	 * @param $reason
+	 * @param Article $article
+	 * @param OutputPage $out
+	 * @param string &$reason
 	 *
 	 * @return bool
 	 */
@@ -666,9 +666,9 @@ class PageTranslationHooks {
 	/**
 	 * Hook: ArticleViewHeader
 	 *
-	 * @param $article Article
-	 * @param $outputDone
-	 * @param $pcache
+	 * @param Article &$article
+	 * @param bool &$outputDone
+	 * @param bool &$pcache
 	 * @return bool
 	 */
 	public static function translatablePageHeader( &$article, &$outputDone, &$pcache ) {

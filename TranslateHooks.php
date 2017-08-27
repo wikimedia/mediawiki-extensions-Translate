@@ -33,7 +33,7 @@ class TranslateHooks {
 	/**
 	 * Hook: CanonicalNamespaces
 	 *
-	 * @param array $list
+	 * @param array &$list
 	 */
 	public static function setupNamespaces( array &$list ) {
 		global $wgPageTranslationNamespace, $wgNamespaceRobotPolicies;
@@ -231,7 +231,7 @@ class TranslateHooks {
 	 * Hook: UserGetReservedNames
 	 * Prevents anyone from registering or logging in as FuzzyBot
 	 *
-	 * @param array $names
+	 * @param array &$names
 	 */
 	public static function onUserGetReservedNames( array &$names ) {
 		global $wgTranslateFuzzyBotName;
@@ -311,7 +311,7 @@ class TranslateHooks {
 	/**
 	 * Hook: UnitTestsList
 	 *
-	 * @param array $files
+	 * @param array &$files
 	 */
 	public static function setupUnitTests( array &$files ) {
 		$dir = __DIR__ . '/tests/phpunit';
@@ -438,7 +438,7 @@ class TranslateHooks {
 	 * Set the correct page content language for translation units.
 	 *
 	 * @param Title $title
-	 * @param string $pageLang
+	 * @param string &$pageLang
 	 */
 	public static function onPageContentLanguage( Title $title, &$pageLang ) {
 		$handle = new MessageHandle( $title );

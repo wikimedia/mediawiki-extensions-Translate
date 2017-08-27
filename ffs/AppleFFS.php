@@ -77,7 +77,7 @@ class AppleFFS extends SimpleFFS {
 	 * Parses non-empty strings file row to key and value.
 	 * @param string $line
 	 * @throws MWException
-	 * @return array( string $key, string $val )
+	 * @return array array( string $key, string $val )
 	 */
 	public static function readRow( $line ) {
 		$match = [];

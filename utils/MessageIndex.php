@@ -279,7 +279,7 @@ abstract class MessageIndex {
 	}
 
 	/**
-	 * @param array $hugearray
+	 * @param array &$hugearray
 	 * @param MessageGroup $g
 	 * @param bool $ignore
 	 */

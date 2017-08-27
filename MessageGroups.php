@@ -124,8 +124,8 @@ class MessageGroups {
 	/**
 	 * Safely merges first array to second array, throwing warning on duplicates and removing
 	 * duplicates from the first array.
-	 * @param array $additions Things to append
-	 * @param array $to Where to append
+	 * @param array &$additions Things to append
+	 * @param array &$to Where to append
 	 */
 	protected static function appendAutoloader( array &$additions, array &$to ) {
 		foreach ( $additions as $class => $file ) {

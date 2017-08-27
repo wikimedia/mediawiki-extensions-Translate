@@ -378,7 +378,7 @@ class TranslatablePage {
 	// Inner functionality //
 
 	/**
-	 * @param array $holders
+	 * @param array &$holders
 	 * @param string $text
 	 * @return string
 	 */
@@ -395,7 +395,7 @@ class TranslatablePage {
 	}
 
 	/**
-	 * @param $holders
+	 * @param array $holders
 	 * @param string $text
 	 * @return mixed
 	 */
@@ -595,7 +595,7 @@ class TranslatablePage {
 	}
 
 	/**
-	 * @param $tag
+	 * @param string $tag
 	 * @param int $dbt
 	 * @return int|bool False if tag is not found, else revision id
 	 */

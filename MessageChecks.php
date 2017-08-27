@@ -50,7 +50,7 @@ class MessageChecker {
 
 	/**
 	 * Constructs a suitable checker for given message group.
-	 * @param $group MessageGroup
+	 * @param MessageGroup $group
 	 */
 	public function __construct( MessageGroup $group ) {
 		global $wgTranslateCheckBlacklist;
@@ -273,7 +273,7 @@ class MessageChecker {
 	 * translations.
 	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
-	 * @param array $warnings Array where warnings are appended to.
+	 * @param array &$warnings Array where warnings are appended to.
 	 */
 	protected function printfCheck( $messages, $code, array &$warnings ) {
 		$this->parameterCheck( $messages, $code, $warnings, '/%(\d+\$)?[sduf]/U' );
@@ -284,7 +284,7 @@ class MessageChecker {
 	 * translations.
 	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
-	 * @param array $warnings Array where warnings are appended to.
+	 * @param array &$warnings Array where warnings are appended to.
 	 */
 	protected function rubyVariableCheck( $messages, $code, array &$warnings ) {
 		$this->parameterCheck( $messages, $code, $warnings, '/%{[a-zA-Z_]+}/' );
@@ -295,7 +295,7 @@ class MessageChecker {
 	 * translations.
 	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
-	 * @param array $warnings Array where warnings are appended to.
+	 * @param array &$warnings Array where warnings are appended to.
 	 */
 	protected function pythonInterpolationCheck( $messages, $code, array &$warnings ) {
 		$pattern = '/\%\([a-zA-Z0-9]*?\)[diouxXeEfFgGcrs]/U';
@@ -310,7 +310,7 @@ class MessageChecker {
 	 *
 	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
-	 * @param array $warnings Array where warnings are appended to.
+	 * @param array &$warnings Array where warnings are appended to.
 	 */
 	protected function braceBalanceCheck( $messages, $code, array &$warnings ) {
 		foreach ( $messages as $message ) {
@@ -372,7 +372,7 @@ class MessageChecker {
 	 * translations.
 	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
-	 * @param array $warnings Array where warnings are appended to.
+	 * @param array &$warnings Array where warnings are appended to.
 	 * @param string $pattern Regular expression for matching variables.
 	 */
 	protected function parameterCheck( $messages, $code, array &$warnings, $pattern ) {
@@ -415,7 +415,7 @@ class MessageChecker {
 	/**
 	 * @param TMessage[] $messages Iterable list of TMessage objects.
 	 * @param string $code Language code
-	 * @param array $warnings Array where warnings are appended to.
+	 * @param array &$warnings Array where warnings are appended to.
 	 */
 	protected function balancedTagsCheck( $messages, $code, array &$warnings ) {
 		foreach ( $messages as $message ) {

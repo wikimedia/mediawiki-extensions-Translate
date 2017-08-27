@@ -262,7 +262,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	 * Shortcut for keeping the code at least a bit readable. Adds label and
 	 * input into $form array.
 	 *
-	 * @param string[] $form Array where input element and label is appended.
+	 * @param string[] &$form Array where input element and label is appended.
 	 * @param string $label Label text.
 	 * @param string $name Name attribute.
 	 * @param bool|int $size Size attribute of the input element. Default false.
@@ -582,7 +582,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 
 	/**
 	 * Returns all section pages, including those which are currently not active.
-	 * @return TitleArray.
+	 * @return TitleArray
 	 */
 	protected function getSectionPages() {
 		if ( !isset( $this->sectionPages ) ) {

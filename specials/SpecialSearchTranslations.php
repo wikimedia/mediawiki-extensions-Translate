@@ -433,7 +433,7 @@ HTML
 		return $container;
 	}
 
-	/*
+	/**
 	 * Design the tabs
 	 */
 	protected function messageSelector() {

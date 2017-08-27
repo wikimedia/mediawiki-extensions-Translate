@@ -44,7 +44,7 @@ class MessageGroupStats {
 	 * Set the maximum time statistics are calculated.
 	 * If the time limit is exceeded, the missing
 	 * entries will be null.
-	 * @param $limit float time in seconds
+	 * @param float $limit time in seconds
 	 */
 	public static function setTimeLimit( $limit ) {
 		self::$timeStart = microtime( true );
@@ -73,8 +73,8 @@ class MessageGroupStats {
 
 	/**
 	 * Returns stats for given group in given language.
-	 * @param $id string Group id
-	 * @param $code string Language code
+	 * @param string $id Group id
+	 * @param string $code Language code
 	 * @return null[]|int[]
 	 */
 	public static function forItem( $id, $code ) {
@@ -100,7 +100,7 @@ class MessageGroupStats {
 
 	/**
 	 * Returns stats for all groups in given language.
-	 * @param $code string Language code
+	 * @param string $code Language code
 	 * @return array
 	 */
 	public static function forLanguage( $code ) {
@@ -117,7 +117,7 @@ class MessageGroupStats {
 
 	/**
 	 * Returns stats for all languages in given group.
-	 * @param $id string Group id
+	 * @param string $id Group id
 	 * @return Array
 	 */
 	public static function forGroup( $id ) {
@@ -245,7 +245,7 @@ class MessageGroupStats {
 
 	/**
 	 * Returns an array of needed database fields.
-	 * @param $row
+	 * @param stdClass $row
 	 * @return array
 	 */
 	protected static function extractNumbers( $row ) {
@@ -352,7 +352,7 @@ class MessageGroupStats {
 	}
 
 	/**
-	 * @param array[] $stats
+	 * @param array[] &$stats
 	 * @param MessageGroup $group
 	 * @param string $code Language code
 	 *
@@ -478,7 +478,7 @@ class MessageGroupStats {
 
 	/**
 	 * Converts input to "+2" "-4" type of string.
-	 * @param $number int
+	 * @param int $number
 	 * @return string
 	 */
 	protected static function stringifyNumber( $number ) {

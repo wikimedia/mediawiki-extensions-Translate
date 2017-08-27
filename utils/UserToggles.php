@@ -45,7 +45,7 @@ class TranslatePreferences {
 	 * These are the languages also shown when translating.
 	 *
 	 * @param User $user
-	 * @param array $preferences
+	 * @param array &$preferences
 	 * @return bool true
 	 */
 	public static function translationAssistLanguages( User $user, &$preferences ) {

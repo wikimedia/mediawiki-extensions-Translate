@@ -8,7 +8,6 @@
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingParamName"/>
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingParamTag"/>
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingReturn"/>
-		<exclude name="MediaWiki.Commenting.FunctionComment.ParamNameNoMatch"/>
 		<exclude name="MediaWiki.Commenting.FunctionComment.WrongStyle"/>
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName"/>
 		<exclude name="MediaWiki.Usage.DbrQueryUsage"/>

@@ -696,11 +696,11 @@ interface TranslationStatsInterface {
 
 	/**
 	 * Query details that the graph must fill.
-	 * @param array $tables Empty list. Append table names.
-	 * @param array $fields Empty list. Append field names.
-	 * @param array $conds Empty array. Append select conditions.
-	 * @param string $type Append graph type (used to identify queries).
-	 * @param array $options Empty array. Append extra query options.
+	 * @param array &$tables Empty list. Append table names.
+	 * @param array &$fields Empty list. Append field names.
+	 * @param array &$conds Empty array. Append select conditions.
+	 * @param string &$type Append graph type (used to identify queries).
+	 * @param array &$options Empty array. Append extra query options.
 	 * @param string $start Precalculated start cutoff timestamp
 	 * @param string $end Precalculated end cutoff timestamp
 	 */

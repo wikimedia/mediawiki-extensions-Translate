@@ -213,7 +213,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	 * Shortcut for keeping the code at least a bit readable. Adds label and
 	 * input into $form array.
 	 *
-	 * @param array $form \list{String} Array where input element and label is appended.
+	 * @param array &$form \list{String} Array where input element and label is appended.
 	 * @param string $label Label text.
 	 * @param string $name Name attribute.
 	 * @param int|bool $size Size attribute of the input element. Default false.
@@ -326,8 +326,8 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	}
 
 	/**
-	 * @param $title Title
-	 * @param $enabled bool
+	 * @param Title $title
+	 * @param bool $enabled
 	 */
 	protected function printChangeLine( $title, $enabled = true ) {
 		if ( $enabled ) {
