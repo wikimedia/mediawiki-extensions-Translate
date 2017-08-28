@@ -37,7 +37,8 @@
 			"Dr Brains",
 			"Wladek92",
 			"Yasten",
-			"Thibaut120094"
+			"Thibaut120094",
+			"Epok"
 		]
 	},
 	"translate": "Traduire",
@@ -202,8 +203,8 @@
 	"translate-langstats-collapseall": "Tout replier",
 	"translate-language-code": "Code de langue",
 	"translate-language-code-field-name": "Code de langue :",
-	"translate-suppress-complete": "Ne pas afficher les groupes de messages entièrement traduits",
-	"translate-ls-noempty": "Supprimer complètement les groupes de message non traduits",
+	"translate-suppress-complete": "Masquer les groupes de messages entièrement traduits",
+	"translate-ls-noempty": "Masquer les groupes de message sans aucune traduction",
 	"translate-language": "Langue",
 	"translate-total": "Messages",
 	"translate-untranslated": "Non traduits",
@@ -363,7 +364,7 @@
 	"tux-editor-in-other-languages": "En d’autres langues",
 	"tux-editor-need-more-help": "Besoin d’aide ?",
 	"tux-editor-ask-help": "Demander plus d’informations",
-	"tux-editor-tm-match": "$1% correspond",
+	"tux-editor-tm-match": "$1 % de correspondance",
 	"tux-warnings-more": "{{PLURAL:$1|$1 de plus}}",
 	"tux-warnings-hide": "masquer",
 	"tux-editor-save-failed": "Échec de l’enregistrement de la traduction : $1",

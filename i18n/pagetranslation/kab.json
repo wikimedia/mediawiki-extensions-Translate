@@ -10,6 +10,8 @@
 	"tpt-section": "Tayunt n tsuqilt: $1",
 	"tpt-languages-legend": "Tutlayin-nniḍen:",
 	"tpt-languages-nonzero": "$1 ($2% yettwasuqel)",
+	"pt-deletepage-subpages": "Kkes akk isebtar isnawanen",
+	"pt-deletepage-list-other": "Isebtar-nniḍen isnawanen",
 	"pm-import-button-label": "Kter",
 	"pm-summary-import": "Tasuqlit tettwakter s useqdec n [[Special:PageMigration|n usgaǧi n usebter]]",
 	"pp-save-message": "Asebter yettwasekles. Tzemreḍ ad tt-[$1 ẓergeḍ]."
