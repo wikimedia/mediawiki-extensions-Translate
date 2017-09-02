@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e7eab26_24671b4b",
+        "filename": "Autoload.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-09-02T10:25:15Z",
+      "side": 0,
+      "message": "I am not sure, if this should be done and if the @} still works after this change",
+      "range": {
+        "startLine": 32,
+        "startChar": 2,
+        "endLine": 32,
+        "endChar": 3
+      },
+      "revId": "8c0f1f4a050d6011ecee2e6c8473734bf0400ed7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

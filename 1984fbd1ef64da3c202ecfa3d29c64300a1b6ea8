@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e7eab26_446a6713",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-09-02T10:25:15Z",
+      "side": 1,
+      "message": "This does not pass, it just the whole sniff and not the single error code",
+      "range": {
+        "startLine": 18,
+        "startChar": 2,
+        "endLine": 18,
+        "endChar": 53
+      },
+      "revId": "1984fbd1ef64da3c202ecfa3d29c64300a1b6ea8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
