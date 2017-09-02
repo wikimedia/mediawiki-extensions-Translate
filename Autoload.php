@@ -13,7 +13,6 @@ $dir = __DIR__;
 
 /**
  * @name   "Core Translate classes"
- * @{
  */
 $al['FatMessage'] = "$dir/Message.php";
 $al['MediaWikiMessageChecker'] = "$dir/MediaWikiMessageChecker.php";
@@ -29,12 +28,10 @@ $al['TranslateEditAddons'] = "$dir/TranslateEditAddons.php";
 $al['TranslateHooks'] = "$dir/TranslateHooks.php";
 $al['TranslateTasks'] = "$dir/TranslateTasks.php";
 $al['TranslateUtils'] = "$dir/TranslateUtils.php";
-/**@}*/
 
 /**
  * @name   "Special pages"
  * There are few more special pages in page translation section.
- * @{
  */
 $al['CompatibleLinkRenderer'] = "$dir/specials/CompatibleLinkRenderer.php";
 $al['SpecialAggregateGroups'] = "$dir/specials/SpecialAggregateGroups.php";
@@ -52,11 +49,9 @@ $al['SpecialManageTranslatorSandbox'] =
 $al['SpecialTranslationStats'] = "$dir/specials/SpecialTranslationStats.php";
 $al['SpecialTranslations'] = "$dir/specials/SpecialTranslations.php";
 $al['SpecialTranslationStash'] = "$dir/specials/SpecialTranslationStash.php";
-/**@}*/
 
 /**
  * @name   "Various utilities"
- * @{
  */
 $al['ArrayFlattener'] = "$dir/utils/ArrayFlattener.php";
 $al['CDBMessageIndex'] = "$dir/utils/MessageIndex.php";
@@ -108,30 +103,24 @@ $al['TranslationStats'] = "$dir/utils/TranslationStats.php";
 $al['TranslationStatsBase'] = "$dir/specials/SpecialTranslationStats.php";
 $al['TranslationStatsInterface'] = "$dir/specials/SpecialTranslationStats.php";
 $al['TuxMessageTable'] = "$dir/utils/TuxMessageTable.php";
-/**@}*/
 
 /**
  * @name   "Classes for predefined non-managed message groups"
- * @{
  */
 $al['PremadeMediawikiExtensionGroups'] = "$dir/ffs/MediaWikiExtensions.php";
 $al['PremadeIntuitionTextdomains'] = "$dir/ffs/IntuitionTextdomains.php";
-/**@}*/
 
 /**
  * @name   "Support for MediaWiki non-message features"
- * @{
  */
 $al['ComplexMessages'] = "$dir/ffs/MediaWikiComplexMessages.php";
 $al['MagicWordsCM'] = "$dir/ffs/MediaWikiComplexMessages.php";
 $al['NamespaceCM'] = "$dir/ffs/MediaWikiComplexMessages.php";
 $al['SpecialPageAliasesCM'] = "$dir/ffs/MediaWikiComplexMessages.php";
-/**@}*/
 
 /**
  * @name   "Classes for page translation feature"
  * @ingroup PageTranslation
- * @{
  */
 $al['TranslatablePageMoveJob'] = "$dir/tag/TranslatablePageMoveJob.php";
 $al['TranslateDeleteJob'] = "$dir/tag/TranslateDeleteJob.php";
@@ -151,12 +140,10 @@ $al['TPException'] = "$dir/tag/TPException.php";
 $al['TPParse'] = "$dir/tag/TPParse.php";
 $al['TPSection'] = "$dir/tag/TPSection.php";
 $al['TranslatablePage'] = "$dir/tag/TranslatablePage.php";
-/**@}*/
 
 /**
  * @name   "Classes for TTMServer"
  * @ingroup TTMServer
- * @{
  */
 $al['ReadableTTMServer'] = "$dir/ttmserver/Interfaces.php";
 $al['SearchableTTMServer'] = "$dir/ttmserver/Interfaces.php";
@@ -174,11 +161,9 @@ $al['TTMServer'] = "$dir/ttmserver/TTMServer.php";
 $al['TTMServerMessageUpdateJob'] = "$dir/ttmserver/TTMServerMessageUpdateJob.php";
 $al['CrossLanguageTranslationSearchQuery'] =
 	"$dir/ttmserver/CrossLanguageTranslationSearchQuery.php";
-/**@}*/
 
 /**
  * @name   "Classes for file format support (FFS)"
- * @{
  */
 $al['AmdFFS'] = "$dir/ffs/AmdFFS.php";
 $al['AndroidXmlFFS'] = "$dir/ffs/AndroidXmlFFS.php";
@@ -197,11 +182,9 @@ $al['ShapadoJsFFS'] = "$dir/ffs/JavaScriptFFS.php";
 $al['SimpleFFS'] = "$dir/ffs/SimpleFFS.php";
 $al['XliffFFS'] = "$dir/ffs/XliffFFS.php";
 $al['YamlFFS'] = "$dir/ffs/YamlFFS.php";
-/**@}*/
 
 /**
  * @name   "API modules"
- * @{
  */
 $al['ApiAggregateGroups'] = "$dir/api/ApiAggregateGroups.php";
 $al['ApiGroupReview'] = "$dir/api/ApiGroupReview.php";
@@ -217,11 +200,9 @@ $al['ApiTranslateSandbox'] = "$dir/api/ApiTranslateSandbox.php";
 $al['ApiTranslationAids'] = "$dir/api/ApiQueryTranslationAids.php";
 $al['ApiTranslationReview'] = "$dir/api/ApiTranslationReview.php";
 $al['ApiTranslationStash'] = "$dir/api/ApiTranslationStash.php";
-/**@}*/
 
 /**
  * @name   "Task classes"
- * @{
  */
 $al['AcceptQueueMessagesTask'] = "$dir/TranslateTasks.php";
 $al['CustomFilteredMessagesTask'] = "$dir/TranslateTasks.php";
@@ -231,11 +212,9 @@ $al['TranslateTask'] = "$dir/TranslateTasks.php";
 $al['ViewMessagesTask'] = "$dir/TranslateTasks.php";
 $al['ViewOptionalTask'] = "$dir/TranslateTasks.php";
 $al['ViewUntranslatedTask'] = "$dir/TranslateTasks.php";
-/**@}*/
 
 /**
  * @name   "Message group classes"
- * @{
  */
 $al['AggregateMessageGroup'] = "$dir/messagegroups/AggregateMessageGroup.php";
 $al['FileBasedMessageGroup'] = "$dir/messagegroups/FileBasedMessageGroup.php";
@@ -252,19 +231,15 @@ $al['WikiMessageGroup'] = "$dir/messagegroups/WikiMessageGroup.php";
 $al['WikiPageMessageGroup'] = "$dir/messagegroups/WikiPageMessageGroup.php";
 $al['WorkflowStatesMessageGroup'] =
 	"$dir/messagegroups/WorkflowStatesMessageGroup.php";
-/**@}*/
 
 /**
  * @name   "Stash"
- * @{
  */
 $al['StashedTranslation'] = "$dir/stash/StashedTranslation.php";
 $al['TranslationStashStorage'] = "$dir/stash/TranslationStashStorage.php";
-/**@}*/
 
 /**
  * @name   "Test classes"
- * @{
  */
 $al['MockFileBasedMessageGroup'] =
 	"$dir/tests/phpunit/MockFileBasedMessageGroup.php";
@@ -273,11 +248,8 @@ $al['MockMessageCollectionForExport'] =
 $al['MockSuperUser'] = "$dir/tests/phpunit/MockSuperUser.php";
 $al['MockWikiMessageGroup'] = "$dir/tests/phpunit/MockWikiMessageGroup.php";
 
-/**@}*/
-
 /**
  * @name   "Translation aids"
- * @{
  */
 $al['CurrentTranslationAid'] = "$dir/translationaids/CurrentTranslationAid.php";
 $al['DocumentationAid'] = "$dir/translationaids/DocumentationAid.php";
@@ -294,11 +266,9 @@ $al['TranslationAid'] = "$dir/translationaids/TranslationAid.php";
 $al['UnsupportedTranslationAid'] =
 	"$dir/translationaids/UnsupportedTranslationAid.php";
 $al['UpdatedDefinitionAid'] = "$dir/translationaids/UpdatedDefinitionAid.php";
-/**@}*/
 
 /**
  * @name   "Translation web services"
- * @{
  */
 $al['ApertiumWebService'] = "$dir/webservices/ApertiumWebService.php";
 $al['CaighdeanWebService'] = "$dir/webservices/CaighdeanWebService.php";
@@ -317,11 +287,9 @@ $al['TranslationWebServiceInvalidInputException'] =
 $al['QueryAggregator'] = "$dir/webservices/QueryAggregator.php";
 $al['QueryAggregatorAware'] = "$dir/webservices/QueryAggregatorAware.php";
 $al['YandexWebService'] = "$dir/webservices/YandexWebService.php";
-/**@}*/
 
 /**
  * @name   "Insertables"
- * @{
  */
 $al['Insertable'] = "$dir/insertables/Insertable.php";
 $al['InsertablesSuggester'] = "$dir/insertables/InsertablesSuggester.php";
@@ -332,15 +300,12 @@ $al['NumericalParameterInsertablesSuggester'] =
 	"$dir/insertables/NumericalParameterInsertablesSuggester.php";
 $al['TranslatablePageInsertablesSuggester'] =
 	"$dir/insertables/TranslatablePageInsertablesSuggester.php";
-/**@}*/
 
 /**
  * @name   "StringMangler"
- * @{
  */
 $al['StringMangler'] = "$dir/stringmangler/StringMangler.php";
 $al['StringMatcher'] = "$dir/stringmangler/StringMatcher.php";
-/**@}*/
 
 global $wgAutoloadClasses;
 $wgAutoloadClasses = array_merge( $wgAutoloadClasses, $al );
