@@ -4,7 +4,26 @@
 			"Belkacem77"
 		]
 	},
+	"searchtranslations": "Nadi tisuqilin",
 	"tux-sst-edit": "Ẓreg tasuqilt",
+	"tux-sst-view-foreign": "Sken di $1",
+	"tux-sst-search": "Nadi",
+	"tux-sst-search-ph": "Nadi tisuqilin",
+	"tux-sst-count": "{{PLURAL:$1|0=Ulac agmuḍ|1=yiwen n ugmuḍ|$1 n igmaḍ}} yettwafen",
 	"tux-sst-facet-language": "Tutlayin",
-	"tux-sst-facet-group": "Igrawen n yiznan"
+	"tux-sst-facet-group": "Igrawen n yiznan",
+	"tux-sst-nosolr-title": "Ulac anadi",
+	"tux-sst-nosolr-body": "Awiki-agi ur ɣur-s ara amezlu n unadi n tsuqilt.",
+	"tux-sst-solr-offline-title": "Ulac anadi",
+	"tux-sst-solr-offline-body": "Ameẓlu n unadi ulac-it akka tura.",
+	"tux-sst-next": "Ar zdat ›",
+	"tux-sst-prev": "‹ ar deffir",
+	"tux-sst-default": "Tisuqilin",
+	"tux-sst-translated": "Tisuqilin si $1",
+	"tux-sst-untranslated": "Ur yettwasuqel ara si $1",
+	"tux-sst-outdated": "Tisuqilin ifaten si $1",
+	"tux-sst-ellipsis-untranslated": "Ur yettwasuqel ara",
+	"tux-sst-ellipsis-outdated": "Tisuqilin ifaten",
+	"tux-sst-link-all-match": "Yesra akk awalen n unadi.",
+	"tux-sst-case-sensitive": "Yettqadaṛ taruẓi n usekkil"
 }
