@@ -134,6 +134,7 @@
 	"translate-gs-total": "Kopā",
 	"translate-documentation-language": "Paziņojuma dokumentācija",
 	"translate-search-languagefilter": "Filtrēt pēc valodas:",
+	"logentry-translationreview-message": "$1 {{GENDER:$2|pārskatīja}} $3 tulkojumu",
 	"translate-workflow-state-": "(nav uzstādīts)",
 	"translate-stats-workflow": "Statuss",
 	"translate-dynagroup-recent-desc": "Šī ziņojumu grupa parāda visus nesenos tulkojumus šajā valodā.\nTā ir visnoderīgākā pārskatīšanas uzdevumiem.",
