@@ -1223,7 +1223,7 @@
 			}
 
 			// Load the diff styles
-			mw.loader.load( 'mediawiki.action.history.diff', undefined, true );
+			mw.loader.load( 'mediawiki.action.history.diff' );
 
 			$trigger = $( '<span>' )
 				.addClass( 'show-diff-link' )
