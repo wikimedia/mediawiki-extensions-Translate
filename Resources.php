@@ -397,7 +397,7 @@ $wgResourceModules['ext.translate.special.pagepreparation'] = [
 	'dependencies' => [
 		'mediawiki.RegExp',
 		'mediawiki.Title',
-		'mediawiki.action.history.diff',
+		'mediawiki.diff.styles',
 		'mediawiki.api',
 		'mediawiki.jqueryMsg',
 		'mediawiki.ui',
