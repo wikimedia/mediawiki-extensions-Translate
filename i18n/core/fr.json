@@ -204,7 +204,7 @@
 	"translate-language-code": "Code de langue",
 	"translate-language-code-field-name": "Code de langue :",
 	"translate-suppress-complete": "Masquer les groupes de messages entièrement traduits",
-	"translate-ls-noempty": "Masquer les groupes de message sans aucune traduction",
+	"translate-ls-noempty": "Masquer les groupes de messages sans aucune traduction",
 	"translate-language": "Langue",
 	"translate-total": "Messages",
 	"translate-untranslated": "Non traduits",
