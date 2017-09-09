@@ -8,31 +8,31 @@
 
 /* Temporary fix for T111685 */
 .grid .tux-message-editor .close {
-	background: url( ../images/close.png ) no-repeat scroll center center transparent;
+	background: url( ../images/close.png ) no-repeat center center;
 	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/close.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/close.svg );
-	padding: 15px;
+	padding: 16px;
 	cursor: pointer;
 	float: right;
 }
 
 /* Temporary fix for T111685 */
 .grid .tux-message-editor .editor-info-toggle {
-	padding: 15px;
+	padding: 16px;
 	cursor: pointer;
 	float: right;
 }
 
 .tux-message-editor .editor-contract {
-	background: url( ../images/contract-ltr.png ) no-repeat scroll center center transparent;
+	background: url( ../images/contract-ltr.png ) no-repeat center center;
 	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/contract-ltr.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/contract-ltr.svg );
 }
 
 .tux-message-editor .editor-expand {
-	background: url( ../images/expand-ltr.png ) no-repeat scroll center center transparent;
+	background: url( ../images/expand-ltr.png ) no-repeat center center;
 	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/expand-ltr.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/expand-ltr.svg );
@@ -230,7 +230,7 @@
 }
 
 .message-desc-edit {
-	background: transparent url( ../images/action-edit.png ) left center no-repeat;
+	background: url( ../images/action-edit.png ) left center no-repeat;
 	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/action-edit.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/action-edit.svg );
