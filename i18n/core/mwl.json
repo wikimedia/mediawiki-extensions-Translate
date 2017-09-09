@@ -4,5 +4,11 @@
 			"MokaAkashiyaPT"
 		]
 	},
-	"translate-searchprofile": "Traduçones"
+	"translate-edit-translation": "Traduçon",
+	"translate-import-load": "Cargar fexeiro",
+	"translate-searchprofile": "Traduçones",
+	"tux-editor-edit-desc": "Eiditar la decumentaçon",
+	"tux-editor-add-desc": "Poner decumentaçon",
+	"tux-editor-doc-editor-placeholder": "Decumentaçon de la mensaige",
+	"tux-editor-doc-editor-save": "Grabar decumentaçon"
 }
