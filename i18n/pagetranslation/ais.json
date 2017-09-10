@@ -4,5 +4,6 @@
 			"Benel"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% mabelih tuway)"
+	"tpt-languages-nonzero": "$1 ($2% mabelih tuway)",
+	"tpt-aggregategroup-add": "cunus"
 }

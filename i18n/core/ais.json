@@ -1,8 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bunukwiki"
+			"Bunukwiki",
+			"Benel"
 		]
 	},
-	"tux-warnings-hide": "midimut"
+	"translate-export-form-format": "kese",
+	"translate-statsf-count-registrations": "baluhay misaungayay",
+	"translations": "sacahamin a belih nu kamu",
+	"tux-editor-discard-changes-button-label": "miales tu masumaday",
+	"tux-warnings-hide": "midimut",
+	"tux-editor-translate-mode": "piazihan tu sulit",
+	"tux-editor-message-tools-translations": "sacahamin a belih nu kamu",
+	"tux-editor-loading": "miasip henay ayza..."
 }
