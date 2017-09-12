@@ -2,15 +2,22 @@
 	"@metadata": {
 		"authors": [
 			"Bunukwiki",
-			"Benel"
+			"Benel",
+			"Tokoabibi"
 		]
 	},
+	"translate-edit-translation": "mibelih",
 	"translate-export-form-format": "kese",
 	"translate-statsf-count-registrations": "baluhay misaungayay",
 	"translations": "sacahamin a belih nu kamu",
+	"translate-langstats-collapse": "piked",
+	"translate-searchprofile": "mibelih",
 	"tux-editor-discard-changes-button-label": "miales tu masumaday",
 	"tux-warnings-hide": "midimut",
+	"tux-editor-message-desc-less": "mikabu",
 	"tux-editor-translate-mode": "piazihan tu sulit",
+	"tux-editor-close-tooltip": "edeben",
+	"tux-editor-collapse-tooltip": "piked",
 	"tux-editor-message-tools-translations": "sacahamin a belih nu kamu",
 	"tux-editor-loading": "miasip henay ayza..."
 }

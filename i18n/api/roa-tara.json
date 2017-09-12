@@ -21,9 +21,11 @@
 	"apihelp-query+languagestats-description": "Statisteche de le 'nderrogaziune d'a lènghe.",
 	"apihelp-query+languagestats-summary": "Statisteche de le 'nderrogaziune d'a lènghe.",
 	"apihelp-query+languagestats-param-language": "Codece d'a Lènghe.",
+	"apihelp-query+languagestats-example-1": "Elenghe de le statisteche de combletamende d'a traduzione pu finlandese",
 	"apihelp-query+messagecollection-param-group": "Gruppe de messàgge.",
 	"apihelp-query+messagecollection-param-language": "Codece d'a Lènghe.",
 	"apihelp-query+messagecollection-param-limit": "Quanda messàgge da 'ndrucà (apprisse 'u filtre).",
+	"apihelp-query+messagegroups-summary": "Torne le 'mbormaziune sus a le gruppe de messàgge.",
 	"apihelp-translationstash-param-subaction": "Azione.",
 	"apihelp-searchtranslations-param-limit": "Dimenzione d'u resultate.",
 	"apihelp-searchtranslations-example-1": "Fà 'ndrucà le traduziune pa lènghe."

@@ -4,8 +4,11 @@
 			"MokaAkashiyaPT"
 		]
 	},
+	"translate-taction-export": "Sportar",
 	"translate-edit-translation": "Traduçon",
+	"translate-magic-cm-export": "Sportar",
 	"translate-import-load": "Cargar fexeiro",
+	"translate-documentation-language": "Decumentaçon de la mensaige",
 	"translate-searchprofile": "Traduçones",
 	"tux-editor-edit-desc": "Eiditar la decumentaçon",
 	"tux-editor-add-desc": "Poner decumentaçon",

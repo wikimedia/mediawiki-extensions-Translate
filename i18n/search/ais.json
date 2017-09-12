@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bunukwiki"
+			"Bunukwiki",
+			"Tokoabibi"
 		]
 	},
-	"tux-sst-search": "kilim"
+	"tux-sst-search": "kilim",
+	"tux-sst-next": "zikuzan a cacay ›",
+	"tux-sst-default": "mibelih"
 }
