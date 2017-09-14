@@ -425,16 +425,23 @@
 				.removeAttr( 'data-offset' )
 				.removeClass( 'hide' );
 
+			if ( changes.offset ) {
+				this.$loader.data( 'offset', changes.offset );
+			}
+
 			// Start loading messages
-			this.load();
+			this.load( changes.limit );
 		},
 
-		load: function () {
+		/**
+		 * @param {number} [limit] Only load this many messages and then stop even if there is more.
+		 */
+		load: function ( limit ) {
 			var remaining,
 				query,
 				self = this,
 				offset = this.$loader.data( 'offset' ),
-				pageSize = this.$loader.data( 'pagesize' );
+				pageSize = limit || this.$loader.data( 'pagesize' );
 
 			if ( offset === -1 ) {
 				return;
@@ -495,10 +502,14 @@
 					self.search( query );
 				}
 
-				if ( result[ 'query-continue' ] === undefined ) {
+				if ( result[ 'query-continue' ] === undefined || limit ) {
 					// End of messages
 					self.$loader.data( 'offset', -1 )
 						.addClass( 'hide' );
+
+					// Helpfully open the first message in show mode
+					// TODO: Refactor to avoid direct DOM access
+					$( '.tux-message-item' ).first().click();
 				} else {
 					self.$loader.data( 'offset', result[ 'query-continue' ].messagecollection.mcoffset );
 
