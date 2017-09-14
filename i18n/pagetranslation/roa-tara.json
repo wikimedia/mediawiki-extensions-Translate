@@ -56,6 +56,7 @@
 	"tpt-aggregategroup-update": "Reggìstre",
 	"tpt-aggregategroup-update-cancel": "Annulle",
 	"tpt-invalid-group": "Gruppe invalide",
+	"log-description-pagetranslation": "Archivije pe le aziune collegate a 'u sisteme de traduzione d'a pàgene",
 	"log-name-pagetranslation": "Archivije de le traduziune de le pàggene",
 	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|'ngoragge}} 'a traduzione de $3",
 	"logentry-pagetranslation-discourage": "$1 {{GENDER:$2|scoragge}} 'a traduzione de $3",
