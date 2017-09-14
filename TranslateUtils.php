@@ -402,4 +402,23 @@ class TranslateUtils {
 
 		return wfGetDB( $index );
 	}
+
+	/**
+	 * Get an URL that points to an editor for this message handle.
+	 * @param MessageHandle $handle
+	 * @return string Domain relative URL
+	 * @since 2017.10
+	 */
+	public static function getEditorUrl( MessageHandle $handle ) {
+		if ( !$handle->isValid() ) {
+			return $handle->getTitle()->getLocalURL( [ 'action' => 'edit' ] );
+		}
+
+		$title = SpecialPageFactory::getPage( 'Translate' )->getPageTitle();
+		return $title->getLocalURL( [
+			'showMessage' => $handle->getInternalKey(),
+			'group' => $handle->getGroup()->getId(),
+			'language' => $handle->getCode(),
+		] );
+	}
 }

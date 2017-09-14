@@ -37,9 +37,9 @@ class SpecialTranslations extends SpecialAllPages {
 	public function execute( $par ) {
 		$this->setHeaders();
 		$this->outputHeader();
-		$this->includeAssets();
 
 		$out = $this->getOutput();
+		$out->addModuleStyles( 'ext.translate.legacy' );
 
 		$par = (string)$par;
 
@@ -216,7 +216,6 @@ class SpecialTranslations extends SpecialAllPages {
 
 		$canTranslate = $this->getUser()->isAllowed( 'translate' );
 
-		$ajaxPageList = [];
 		$historyText = '&#160;<sup>' .
 			$this->msg( 'translate-translations-history-short' )->escaped() .
 			'</sup>&#160;';
@@ -225,7 +224,6 @@ class SpecialTranslations extends SpecialAllPages {
 		foreach ( $res as $s ) {
 			$key = $s->page_title;
 			$tTitle = Title::makeTitle( $s->page_namespace, $key );
-			$ajaxPageList[] = $tTitle->getPrefixedDBkey();
 			$tHandle = new MessageHandle( $tTitle );
 
 			$code = $tHandle->getCode();
@@ -233,16 +231,11 @@ class SpecialTranslations extends SpecialAllPages {
 			$text = TranslateUtils::getLanguageName( $code, $this->getLanguage()->getCode() );
 			$text .= $separator;
 			$text .= $this->msg( 'parentheses' )->params( $code )->plain();
-			$text = htmlspecialchars( $text );
-
-			if ( $canTranslate ) {
-				$tools['edit'] = TranslationHelpers::ajaxEditLink(
-					$tTitle,
-					$text
-				);
-			} else {
-				$tools['edit'] = $this->makeLink( $tTitle, $text );
-			}
+			$tools['edit'] = Html::element(
+				'a',
+				[ 'href' => TranslateUtils::getEditorUrl( $tHandle ) ],
+				$text
+			);
 
 			$tools['history'] = $this->makeLink(
 				$tTitle,
@@ -280,17 +273,5 @@ class SpecialTranslations extends SpecialAllPages {
 
 		$out .= Xml::closeElement( 'table' );
 		$this->getOutput()->addHTML( $out );
-
-		$vars = [ 'trlKeys' => $ajaxPageList ];
-		$this->getOutput()->addScript( Skin::makeVariablesScript( $vars ) );
-	}
-
-	/**
-	 * Add JavaScript assets
-	 */
-	private function includeAssets() {
-		$out = $this->getOutput();
-		TranslationHelpers::addModules( $out );
-		$out->addModuleStyles( 'ext.translate.legacy' );
 	}
 }

@@ -250,4 +250,42 @@ class MessageHandle {
 
 		return $res !== false;
 	}
+
+	/**
+	 * This returns the key that can be used for showMessage parameter for Special:Translate
+	 * for regular message groups. It is not possible to automatically determine this key
+	 * from the title alone.
+	 * @return string
+	 * @since 2017.10
+	 */
+	public function getInternalKey() {
+		global $wgContLang;
+
+		$key = $this->getKey();
+
+		if ( !MWNamespace::isCapitalized( $this->getTitle()->getNamespace() ) ) {
+			return $key;
+		}
+
+		$group = $this->getGroup();
+		$keys = [];
+		// We cannot reliably map from the database key to the internal key if
+		// capital links setting is enabled for the namespace.
+		if ( method_exists( $group, 'getKeys' ) ) {
+			$keys = $group->getKeys();
+		} else {
+			$keys = array_keys( $group->getDefinitions() );
+		}
+
+		if ( in_array( $key, $keys, true ) ) {
+			return $key;
+		}
+
+		$lcKey = $wgContLang->lcfirst( $key );
+		if ( in_array( $lcKey, $keys, true ) ) {
+			return $lcKey;
+		}
+
+		return "BUG:$key";
+	}
 }

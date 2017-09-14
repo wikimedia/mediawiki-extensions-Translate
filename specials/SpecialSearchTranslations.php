@@ -191,7 +191,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				$resultAttribs['data-translation'] = $helpers->getTranslation();
 				$resultAttribs['data-group'] = $groupId;
 
-				$uri = $title->getLocalURL( [ 'action' => 'edit' ] );
+				$uri = TranslateUtils::getEditorUrl( $handle );
 				$link = Html::element(
 					'a',
 					[ 'href' => $uri ],
