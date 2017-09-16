@@ -35,7 +35,8 @@
 			"아라",
 			"555",
 			"Liuxinyu970226",
-			"Tacsipacsi"
+			"Tacsipacsi",
+			"Matma Rex"
 		]
 	},
 	"translate": "{{doc-special|Translate}}\nIt is the verb \"to translate\".\n{{Identical|Translate}}",
@@ -133,7 +134,7 @@
 	"translate-checks-fudforum-syntax": "Unused at this time.\n\nWarning message from automated syntax check for translators.\n\n<code>$1</code> and <code>$2</code> are not parameters.\n{{Related|Translate-checks}}",
 	"translate-pref-nonewsletter": "Option in [[Special:Preferences]], 'Misc' tab.",
 	"translate-pref-editassistlang": "Used in [[Special:Preferences]] under the {{msg-mw|prefs-editing}} tab.\n{{Identical|Assistant language}}",
-	"prefs-translate": "Caption of a section at [[Special:Preferences#prefsection-3|Special:Preferences]]",
+	"prefs-translate": "Caption of a section at [[Special:Preferences#mw-prefsection-editing|Special:Preferences]] in the tab \"{{int:prefs-editing}}\"",
 	"translate-pref-editassistlang-help": "Used in [[Special:Preferences]], tab Editing.",
 	"translate-pref-editassistlang-bad": "Used as validation result.\n\nParameters:\n* $1 - a language code, not list of codes",
 	"right-translate": "{{doc-right|translate}}",
