@@ -224,7 +224,7 @@
 
 .message-desc-control .read-more {
 	font-size: 14px;
-	color: #36b;
+	color: #36c;
 	cursor: pointer;
 	margin-right: 5px;
 }
@@ -249,7 +249,7 @@
 .in-other-language {
 	font-size: 14px;
 	border: 1px solid #ddd;
-	border-left: 2px solid #36b;
+	border-left: 2px solid #36c;
 	padding: 5px 5px 5px 10px;
 	background-color: #f5f5f5;
 }
@@ -333,7 +333,7 @@
 }
 
 .tux-warning-message .show-diff-link {
-	color: #36b;
+	color: #36c;
 	cursor: pointer;
 	padding-left: 5px;
 }

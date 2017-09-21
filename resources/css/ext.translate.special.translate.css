@@ -131,11 +131,11 @@
 }
 
 .tux-message-selector li.selected {
-	border-bottom: 2px solid #36b;
+	border-bottom: 2px solid #36c;
 }
 
 .tux-message-selector li.selected a {
-	color: #36b;
+	color: #36c;
 }
 
 .tux-message-selector li a {
