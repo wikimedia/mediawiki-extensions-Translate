@@ -6,7 +6,8 @@
 			"Theklan",
 			"Xabier Armendaritz",
 			"Subi",
-			"Sator"
+			"Sator",
+			"Mikel Ibaiba"
 		]
 	},
 	"translate": "Itzuli",
@@ -142,7 +143,7 @@
 	"translate-mgs-column-language": "Hizkuntza",
 	"translate-mgs-totals": "Hizkuntza guztiak batera",
 	"supportedlanguages": "Laguntza duten hizkuntzak",
-	"supportedlanguages-translators": "{{PLURAL:$2|Itzultzailea|Itzultzaileak}}: $1",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Translator}}|Itzultzaileak}}: $1",
 	"supportedlanguages-recenttranslations": "azken itzulpenak",
 	"supportedlanguages-count": "{{PLURAL:$1|Hizkutza bat|$1 hizkuntza}} guztira.",
 	"translate-save": "Gorde ($1)",
