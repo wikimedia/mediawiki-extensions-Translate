@@ -21,7 +21,7 @@ class TranslateMetadata {
 	 */
 	public static function get( $group, $key ) {
 		if ( self::$cache === null ) {
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 			$res = $dbr->select( 'translate_metadata', '*', [], __METHOD__ );
 			foreach ( $res as $row ) {
 				self::$cache[$row->tmd_group][$row->tmd_key] = $row->tmd_value;

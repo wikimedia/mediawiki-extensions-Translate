@@ -21,7 +21,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 	 * @param $mode int DB_SLAVE|DB_MASTER
 	 * @return DatabaseBase
 	 */
-	protected function getDB( $mode = DB_SLAVE ) {
+	protected function getDB( $mode = DB_REPLICA ) {
 		return wfGetDB( $mode, 'ttmserver', $this->config['database'] );
 	}
 
@@ -213,7 +213,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		$max = floor( $len / $this->config['cutoff'] );
 
 		// We could use fulltext index to narrow the results further
-		$dbr = $this->getDB( DB_SLAVE );
+		$dbr = $this->getDB( DB_REPLICA );
 		$tables = [ 'translate_tmt', 'translate_tms' ];
 		$fields = [ 'tms_context', 'tms_text', 'tmt_lang', 'tmt_text' ];
 

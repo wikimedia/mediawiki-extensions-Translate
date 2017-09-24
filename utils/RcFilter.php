@@ -42,7 +42,7 @@ class TranslateRcFilter {
 		$opts->add( 'translations', $wgTranslateRcFilterDefault );
 		$opts->setValue( 'translations', $translations );
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$namespaces = [];
 

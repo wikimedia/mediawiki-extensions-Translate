@@ -458,7 +458,7 @@ class DatabaseMessageIndex extends MessageIndex {
 			return $this->index;
 		}
 
-		$dbr = wfGetDB( $forRebuild ? DB_MASTER : DB_SLAVE );
+		$dbr = wfGetDB( $forRebuild ? DB_MASTER : DB_REPLICA );
 		$res = $dbr->select( 'translate_messageindex', '*', [], __METHOD__ );
 		$this->index = [];
 		foreach ( $res as $row ) {
@@ -469,7 +469,7 @@ class DatabaseMessageIndex extends MessageIndex {
 	}
 
 	protected function get( $key ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$value = $dbr->selectField(
 			'translate_messageindex',
 			'tmi_value',

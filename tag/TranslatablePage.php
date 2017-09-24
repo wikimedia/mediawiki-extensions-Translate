@@ -599,7 +599,7 @@ class TranslatablePage {
 	 * @param int $dbt
 	 * @return int|bool False if tag is not found, else revision id
 	 */
-	protected function getTag( $tag, $dbt = DB_SLAVE ) {
+	protected function getTag( $tag, $dbt = DB_REPLICA ) {
 		if ( !$this->getTitle()->exists() ) {
 			return false;
 		}

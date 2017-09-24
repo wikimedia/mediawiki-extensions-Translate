@@ -234,7 +234,7 @@ class MessageHandle {
 	 * @return bool If title is marked fuzzy.
 	 */
 	public function isFuzzy() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$tables = [ 'page', 'revtag' ];
 		$field = 'rt_type';

@@ -164,7 +164,7 @@ class SpecialTranslations extends SpecialAllPages {
 			return;
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$res = $dbr->select( 'page',
 			[ 'page_namespace', 'page_title' ],

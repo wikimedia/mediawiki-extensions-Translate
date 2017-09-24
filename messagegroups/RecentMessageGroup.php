@@ -52,7 +52,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 	}
 
 	protected function getRCCutoff() {
-		$db = wfGetDB( DB_SLAVE );
+		$db = wfGetDB( DB_REPLICA );
 		$tables = 'recentchanges';
 		$max = $db->selectField( $tables, 'MAX(rc_id)', [], __METHOD__ );
 
@@ -64,7 +64,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 	 */
 	protected function getQueryConditions() {
 		global $wgTranslateMessageNamespaces;
-		$db = wfGetDB( DB_SLAVE );
+		$db = wfGetDB( DB_REPLICA );
 		$conds = [
 			'rc_title ' . $db->buildLike( $db->anyString(), '/' . $this->language ),
 			'rc_namespace' => $wgTranslateMessageNamespaces,
@@ -90,7 +90,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 				throw new MWException( 'Language not set' );
 		}
 
-		$db = wfGetDB( DB_SLAVE );
+		$db = wfGetDB( DB_REPLICA );
 		$tables = 'recentchanges';
 		$fields = [ 'rc_namespace', 'rc_title' ];
 		$conds = $this->getQueryConditions();

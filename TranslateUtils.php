@@ -72,7 +72,7 @@ class TranslateUtils {
 	 * text and last author indexed by page name.
 	 */
 	public static function getContents( $titles, $namespace ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$rows = $dbr->select( [ 'page', 'revision', 'text' ],
 			[ 'page_title', 'old_text', 'old_flags', 'rev_user_text' ],
 			[
@@ -110,7 +110,7 @@ class TranslateUtils {
 	) {
 		global $wgTranslateMessageNamespaces;
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$recentchanges = $dbr->tableName( 'recentchanges' );
 		$hours = (int)$hours;
 		$cutoff_unixtime = time() - ( $hours * 3600 );
@@ -391,13 +391,13 @@ class TranslateUtils {
 		// Parsing APIs need POST for payloads but are read-only, so avoid spamming
 		// the master then. No good way to check this at the moment...
 		if ( PageTranslationHooks::$renderingContext ) {
-			$index = DB_SLAVE;
+			$index = DB_REPLICA;
 		} else {
 			$index = (
 				PHP_SAPI === 'cli' ||
 				RequestContext::getMain()->getRequest()->wasPosted() ||
 				wfGetLB()->hasOrMadeRecentMasterChanges()
-			) ? DB_MASTER : DB_SLAVE;
+			) ? DB_MASTER : DB_REPLICA;
 		}
 
 		return wfGetDB( $index );

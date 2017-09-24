@@ -393,7 +393,7 @@ class SpecialTranslationStats extends SpecialPage {
 	 * @return array ( string => array ) Data indexed by their date labels.
 	 */
 	protected function getData( FormOptions $opts ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$class = $this->getGraphClass( $opts['count'] );
 		$so = new $class( $opts );
@@ -772,7 +772,7 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 	}
 
 	protected static function makeTimeCondition( $field, $start, $end ) {
-		$db = wfGetDB( DB_SLAVE );
+		$db = wfGetDB( DB_REPLICA );
 
 		$conds = [];
 		if ( $start !== null ) {
@@ -819,7 +819,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $start, $end ) {
 		global $wgTranslateMessageNamespaces;
 
-		$db = wfGetDB( DB_SLAVE );
+		$db = wfGetDB( DB_REPLICA );
 
 		$tables = [ 'recentchanges' ];
 		$fields = [ 'rc_timestamp' ];
@@ -1012,7 +1012,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $start, $end ) {
 		global $wgTranslateMessageNamespaces;
 
-		$db = wfGetDB( DB_SLAVE );
+		$db = wfGetDB( DB_REPLICA );
 
 		$tables = [ 'logging' ];
 		$fields = [ 'log_timestamp' ];

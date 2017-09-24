@@ -150,7 +150,7 @@ class FuzzyScript {
 	/// Searches pages that match given patterns
 	private function getPages() {
 		global $wgTranslateMessageNamespaces;
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$search = [];
 		foreach ( $this->titles as $title ) {

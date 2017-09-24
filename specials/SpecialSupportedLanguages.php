@@ -54,7 +54,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		);
 
 		$this->outputHeader( 'supportedlanguages-summary' );
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		if ( $dbr->getType() === 'sqlite' ) {
 			$out->addWikiText( '<div class=errorbox>SQLite is not supported.</div>' );
 
@@ -158,7 +158,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 			}
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$tables = [ 'recentchanges' ];
 		$fields = [ 'substring_index(rc_title, \'/\', -1) as lang', 'count(*) as count' ];
 		$timestamp = $dbr->timestamp( wfTimestamp( TS_UNIX ) - 60 * 60 * 24 * $this->period );
@@ -238,7 +238,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 	public function loadTranslators( $code ) {
 		global $wgTranslateMessageNamespaces;
 
-		$dbr = wfGetDB( DB_SLAVE, 'vslow' );
+		$dbr = wfGetDB( DB_REPLICA, 'vslow' );
 		$tables = [ 'page', 'revision' ];
 		$fields = [
 			'rev_user_text',
@@ -372,7 +372,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 	protected function getUserStats( $users ) {
 		$cache = wfGetCache( CACHE_ANYTHING );
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$keys = [];
 
 		foreach ( $users as $username ) {
