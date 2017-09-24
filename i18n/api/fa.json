@@ -20,5 +20,6 @@
 	"apihelp-query+messagecollection-param-group": "گروه پیغام‌ها.",
 	"apihelp-query+messagecollection-param-language": "کد زبان.",
 	"apihelp-translationstash-param-subaction": "فعالیت.",
-	"apihelp-searchtranslations-description": "جستجوی ترجمه‌ها."
+	"apihelp-searchtranslations-description": "جستجوی ترجمه‌ها.",
+	"apihelp-searchtranslations-summary": "جستجوی ترجمه‌ها."
 }

@@ -150,7 +150,7 @@
 	"pt-movepage-action-other": "Endre mål",
 	"pt-movepage-intro": "Denne spesialsiden tillater deg å flytte sider som er markert for oversettelse.\nFlyttehandlingen vil ikke skje umiddelbart fordi mange sider må flyttes.\nMens sidene flyttes er det ikke mulig å samhandle med gjeldende sider.\nFeil vil bli logget i [[Special:Log/pagetranslation|sideoversettelsesloggen]] og de må repareres for hånd.",
 	"pt-movepage-logreason": "Del av oversettbar side «$1»",
-	"pt-movepage-started": "Basesiden har nå blitt flyttet.\nKontroller [[Special:Log/pagetranslation|sideoversettelsesloggen]] for feil- og fullføringsmeldinger.",
+	"pt-movepage-started": "Kontroller [[Special:Log/pagetranslation|sideoversettelsesloggen]] for feil- og fullføringsmeldinger.",
 	"pt-locked-page": "Denne siden er låst fordi oversettelsessiden blir flyttet nå.",
 	"pt-deletepage-lang-title": "Sletter den oversettbare siden «$1»",
 	"pt-deletepage-full-title": "Sletter den oversettbare siden «$1»",
