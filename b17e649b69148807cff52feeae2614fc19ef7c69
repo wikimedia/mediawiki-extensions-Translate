@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e7b3738_07698088",
+        "filename": "resources/images/check-small.svg",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-09-25T07:23:44Z",
+      "side": 1,
+      "message": "There is a very small difference in the position of the top-most corner (few pixels in 500% zoom). I am wondering whether that is intentional or expected change?",
+      "revId": "b17e649b69148807cff52feeae2614fc19ef7c69",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e7b3738_8722504f",
+        "filename": "resources/images/label-page-tick.svg",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-09-25T07:23:44Z",
+      "side": 1,
+      "message": "This file seems to be currently unused.",
+      "revId": "b17e649b69148807cff52feeae2614fc19ef7c69",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e7b3738_a7274c5e",
+        "filename": "resources/images/label-page.svg",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-09-25T07:23:44Z",
+      "side": 1,
+      "message": "This file seems currently unused.",
+      "revId": "b17e649b69148807cff52feeae2614fc19ef7c69",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e7b3738_471d4813",
+        "filename": "resources/images/project.svg",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-09-25T07:23:44Z",
+      "side": 1,
+      "message": "A white pixel appears in the top-left corner. Is that intentional or expected?",
+      "revId": "b17e649b69148807cff52feeae2614fc19ef7c69",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
