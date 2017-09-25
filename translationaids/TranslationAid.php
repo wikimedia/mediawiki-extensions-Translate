@@ -50,7 +50,7 @@ abstract class TranslationAid {
 	 * to 'suggestion' and then list of arrays, each containing fields for the
 	 * information of the suggestions. See InOtherLanguagesAid for example.
 	 *
-	 * @throw TranslationHelperException Used to signal unexpected errors to aid
+	 * @throws TranslationHelperException Used to signal unexpected errors to aid
 	 *  debugging
 	 * @return array
 	 */

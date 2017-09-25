@@ -47,7 +47,7 @@ TXT;
 
 		$pages = $cache->get( $key );
 		if ( !is_array( $pages ) ) {
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 			$conds = [];
 			$conds[] = 'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() );
 			$conds['page_namespace'] = $wgTranslateMessageNamespaces;

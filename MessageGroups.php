@@ -338,7 +338,7 @@ class MessageGroups {
 		if ( !isset( self::$prioritycache ) ) {
 			self::$prioritycache = [];
 			// Abusing this table originally intented for other purposes
-			$db = wfGetDB( DB_SLAVE );
+			$db = wfGetDB( DB_REPLICA );
 			$table = 'translate_groupreviews';
 			$fields = [ 'tgr_group', 'tgr_state' ];
 			$conds = [ 'tgr_lang' => '*priority' ];

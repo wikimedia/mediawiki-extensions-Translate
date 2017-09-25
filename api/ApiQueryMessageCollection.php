@@ -188,7 +188,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	 * @return string|bool State id or false.
 	 */
 	protected static function getWorkflowState( $groupId, $language ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		return $dbr->selectField(
 			'translate_groupreviews',

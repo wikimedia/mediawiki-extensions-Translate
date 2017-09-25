@@ -109,7 +109,7 @@ class CharacterEditStats extends Maintenance {
 	}
 
 	private function getRevisionsFromHistory( $days, array $namespaces ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$cutoff = $dbr->addQuotes( $dbr->timestamp( time() - $days * 24 * 3600 ) );
 
 		// The field renames are to be compatible with recentchanges table query

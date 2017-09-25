@@ -513,7 +513,7 @@ class SpecialLanguageStats extends SpecialPage {
 	}
 
 	protected function getWorkflowStates( $field = 'tgr_group', $filter = 'tgr_lang' ) {
-		$db = wfGetDB( DB_SLAVE );
+		$db = wfGetDB( DB_REPLICA );
 		$res = $db->select(
 			'translate_groupreviews',
 			[ 'tgr_state', $field ],

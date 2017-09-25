@@ -35,7 +35,7 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 
 	protected function getQueryConditions() {
 		global $wgTranslateMessageNamespaces;
-		$db = wfGetDB( DB_SLAVE );
+		$db = wfGetDB( DB_REPLICA );
 		$conds = [
 			'rc_title ' . $db->buildLike( $db->anyString(), '/en' ),
 			'rc_namespace' => $wgTranslateMessageNamespaces,
