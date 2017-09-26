@@ -218,7 +218,7 @@
 	"translate-mgs-noempty": "Option in [[Special:MessageGroupStats]]",
 	"translate-mgs-submit": "Submit button text",
 	"translate-mgs-column-language": "{{Identical|Language}}",
-	"translate-mgs-totals": "This is used in [[Special:MessageGroupStats]]",
+	"translate-mgs-totals": "This is used in [[Special:MessageGroupStats]]. Parameters: \n* $1 - total number of shown languages",
 	"translate-mgs-invalid-group": "Used as error message. Parameters:\n* $1 - target message group name",
 	"translate-mgs-nothing": "Error message shown on Special:LanguageStats and Special:MessageGroupStats.",
 	"supportedlanguages": "{{doc-special|SupportedLanguages}}\n{{Identical|Supported language}}",
