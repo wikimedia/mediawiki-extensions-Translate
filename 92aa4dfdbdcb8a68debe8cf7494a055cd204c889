@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e7b3738_79bd7cd0",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-09-26T09:02:12Z",
+      "side": 1,
+      "message": "Please indent with tabs to maintain consistent style.\n\nhttps://www.mediawiki.org/wiki/Manual:Coding_conventions has lots of details what is expected, but most of the time you can easily look at the context above and below to infer what is expected.",
+      "revId": "92aa4dfdbdcb8a68debe8cf7494a055cd204c889",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e7b3738_f9c96c7c",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-09-26T09:02:12Z",
+      "side": 1,
+      "message": "You should use -\u003enumParams( $this-\u003enumberOfShownLanguages ) to ensure the number is formatted properly in different languages. The line is also getting very long, so do split it over multiple lines.",
+      "revId": "92aa4dfdbdcb8a68debe8cf7494a055cd204c889",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
