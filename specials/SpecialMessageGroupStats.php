@@ -143,7 +143,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	}
 
 	/**
-	 * Overwriten from SpecialLanguageStats
+	 * Overwritten from SpecialLanguageStats
 	 *
 	 * @return string
 	 */
@@ -160,6 +160,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		MessageGroupStats::setTimeLimit( $this->timelimit );
 		$cache = MessageGroupStats::forGroup( $this->target );
 
+                $this->numberOfShownLanguages = 0;
 		$languages = array_keys(
 			TranslateUtils::getLanguageNames( $this->getLanguage()->getCode() )
 		);
@@ -178,7 +179,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 			$out .= Html::closeElement( 'tbody' );
 
 			$out .= Html::openElement( 'tfoot' );
-			$out .= $table->makeTotalRow( $this->msg( 'translate-mgs-totals' ), $this->totals );
+			$out .= $table->makeTotalRow( $this->msg( 'translate-mgs-totals' , $this->numberOfShownLanguages), $this->totals );
 			$out .= Html::closeElement( 'tfoot' );
 
 			$out .= Html::closeElement( 'table' );
@@ -251,7 +252,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 				$extra = [];
 			}
 		}
-
+                $this->numberOfShownLanguages += 1;
 		$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
 
 		$out = "\t" . Html::openElement( 'tr' );
