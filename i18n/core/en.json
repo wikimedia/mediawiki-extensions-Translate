@@ -391,5 +391,5 @@
 	"translate-ulsdep-title": "Configuration error",
 	"translate-ulsdep-body": "The Translate extension depends on the [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector extension].",
 	"tux-session-expired": "You are no longer logged in. Please log in in a separate tab. Alternatively, make a copy of unsaved translations, log in, return to this page and enter your translations again.",
-	"tux-nojs": "This page requires JavaScript."
+	"tux-nojs": "This tool does not work without JavaScript. JavaScript is disabled, failed to work, or this browser is unsupported."
 }

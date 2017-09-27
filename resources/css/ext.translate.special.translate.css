@@ -216,3 +216,7 @@
 .client-nojs .tux-messagetable-header {
 	display: none;
 }
+
+.client-js .tux-nojs {
+	display: none;
+}
