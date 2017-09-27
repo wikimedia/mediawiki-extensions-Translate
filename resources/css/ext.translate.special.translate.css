@@ -216,3 +216,11 @@
 .client-nojs .tux-messagetable-header {
 	display: none;
 }
+
+.tux-nojs {
+	display: none;
+}
+
+.client-nojs .tux-nojs {
+	display: block;
+}
