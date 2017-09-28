@@ -153,7 +153,6 @@ $al['TTMServerException'] = "$dir/ttmserver/Exceptions.php";
 
 $al['DatabaseTTMServer'] = "$dir/ttmserver/DatabaseTTMServer.php";
 $al['ElasticSearchTTMServer'] = "$dir/ttmserver/ElasticSearchTTMServer.php";
-$al['FuzzyLikeThis'] = "$dir/ttmserver/FuzzyLikeThis.php";
 $al['FakeTTMServer'] = "$dir/ttmserver/FakeTTMServer.php";
 $al['RemoteTTMServer'] = "$dir/ttmserver/RemoteTTMServer.php";
 $al['SolrTTMServer'] = "$dir/ttmserver/SolrTTMServer.php";
