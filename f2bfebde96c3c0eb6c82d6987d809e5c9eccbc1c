@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6af365_d2cca63a",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-09-29T19:04:38Z",
+      "side": 1,
+      "message": "Please add one more tab to this line to make it clear it\u0027s a continuation.",
+      "revId": "f2bfebde96c3c0eb6c82d6987d809e5c9eccbc1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6af365_5252f66b",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-09-29T19:04:38Z",
+      "side": 1,
+      "message": "This line still has spaces instead of tabs.",
+      "revId": "f2bfebde96c3c0eb6c82d6987d809e5c9eccbc1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
