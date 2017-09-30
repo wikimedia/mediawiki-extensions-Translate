@@ -27,14 +27,14 @@
 			$( '<div>' )
 				.text( '↑' )
 				.offset( { top: middle - 10, left: maxLeft } )
-				.addClass( 'shortcut-popup' )
-				.appendTo( 'body' );
+				.appendTo( 'body' )
+				.addClass( 'shortcut-popup' );
 
 			$( '<div>' )
 				.text( '↓' )
 				.offset( { top: middle + 10, left: maxLeft } )
-				.addClass( 'shortcut-popup' )
-				.appendTo( 'body' );
+				.appendTo( 'body' )
+				.addClass( 'shortcut-popup' );
 
 			this.$editor.find( '.shortcut-activated:visible' ).each( function ( index ) {
 				var $this = $( this ),
@@ -52,8 +52,8 @@
 				$( '<div>' )
 					.text( index + 1 )
 					.offset( offset )
-					.addClass( 'shortcut-popup' )
-					.appendTo( 'body' );
+					.appendTo( 'body' )
+					.addClass( 'shortcut-popup' );
 			} );
 		},
 
