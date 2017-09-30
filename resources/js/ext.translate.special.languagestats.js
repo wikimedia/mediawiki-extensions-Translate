@@ -145,7 +145,7 @@
 			var $table = $( this );
 			$table.find( '.headerSortDown, .headerSortUp' ).each( function () {
 				var index = $table.find( 'th' ).index( $( this ) ),
-					dir = $( this ).hasClass( 'headerSortUp' ) ? 'desc' : 'asc';
+					dir = $( this ).hasClass( 'headerSortUp' ) ? 'asc' : 'desc';
 				window.location.hash = 'sortable:' + index + '=' + dir;
 			} );
 		} );
