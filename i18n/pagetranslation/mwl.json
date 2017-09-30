@@ -4,5 +4,6 @@
 			"MokaAkashiyaPT"
 		]
 	},
-	"translate-tag-translate-link-desc": "Traduzir esta páigina"
+	"translate-tag-translate-link-desc": "Traduzir esta páigina",
+	"tpt-languages-nonzero": "$1 ($2% traduzida)"
 }
