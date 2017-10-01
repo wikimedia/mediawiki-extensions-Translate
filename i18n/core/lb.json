@@ -182,7 +182,7 @@
 	"translate-mgs-noempty": "Déi Sprooche fir déi et keng Iwwersetzung gëtt net weisen",
 	"translate-mgs-submit": "Statistike weisen",
 	"translate-mgs-column-language": "Sprooch",
-	"translate-mgs-totals": "All Sproochen zesummen",
+	"translate-mgs-totals": "All $1 Sproochen zesummen",
 	"translate-mgs-invalid-group": "De spezifizéierte Grupp $1 gëtt et net.",
 	"translate-mgs-nothing": "Fir déi gefrote Statistike gëtt et näischt fir ze weisen.",
 	"supportedlanguages": "Ënnerstëtzt Sproochen",

@@ -201,7 +201,7 @@
 	"translate-mgs-noempty": "Nicht die Sprachen anzeigen, zu denen noch keine Übersetzungen fertiggestellt wurden",
 	"translate-mgs-submit": "Statistiken anzeigen",
 	"translate-mgs-column-language": "Sprache",
-	"translate-mgs-totals": "Alle Sprachen zusammen",
+	"translate-mgs-totals": "Alle $1 Sprachen zusammen",
 	"translate-mgs-invalid-group": "Die angegebene Nachrichtengruppe $1 ist nicht vorhanden.",
 	"translate-mgs-nothing": "Zu den angeforderten Statistiken gibt es keine anzuzeigenden Daten.",
 	"supportedlanguages": "Unterstützte Sprachen",

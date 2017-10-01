@@ -210,7 +210,7 @@
 	"translate-mgs-noempty": "不显示没有任何翻译的语言",
 	"translate-mgs-submit": "显示统计",
 	"translate-mgs-column-language": "语言",
-	"translate-mgs-totals": "所有语言总计",
+	"translate-mgs-totals": "所有$1种语言总计",
 	"translate-mgs-invalid-group": "指定的组$1不存在。",
 	"translate-mgs-nothing": "请求的统计没有内容显示。",
 	"supportedlanguages": "支持的语言",
