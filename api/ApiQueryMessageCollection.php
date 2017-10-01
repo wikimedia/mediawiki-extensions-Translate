@@ -30,8 +30,21 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$this->run( $resultPageSet );
 	}
 
+        private function validateLanguageCode( $code ) {
+		$validLanguageCodes = Language::fetchLanguageNames();
+		if ( !isset( $validLanguageCodes[$code] ) ) {
+			if ( method_exists( $this, 'dieWithError' ) ) {
+				$this->dieWithError( [ 'apierror-missingparam', 'language' ] );
+			} else {
+				$this->dieUsageMsg( [ 'missingparam', 'language' ] );
+			}
+		}
+	}
+
 	private function run( ApiPageSet $resultPageSet = null ) {
 		$params = $this->extractRequestParams();
+		$languageCode = $params['language'];
+		$this->validateLanguageCode($languageCode);
 
 		$group = MessageGroups::getGroup( $params['group'] );
 		if ( !$group ) {
