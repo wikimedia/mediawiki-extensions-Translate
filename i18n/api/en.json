@@ -109,6 +109,7 @@
 	"apierror-translate-invalidfilter": "$1",
 	"apierror-translate-invalidgroup": "Group does not exist or invalid",
 	"apierror-translate-invalidstate": "The requested state is invalid.",
+	"apierror-translate-invalidlanguage": "The requested language is invalid.",
 	"apierror-translate-invalidupdate": "Invalid update",
 	"apierror-translate-language-disabled": "Translation to this language is disabled",
 	"apierror-translate-nodynamicgroups": "Dynamic message groups are not supported here",
