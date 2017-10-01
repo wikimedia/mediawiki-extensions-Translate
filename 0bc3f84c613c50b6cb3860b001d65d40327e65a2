@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6af365_35be49d2",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 121
+      },
+      "writtenOn": "2017-10-01T07:12:20Z",
+      "side": 1,
+      "message": "{{PLURAL:$1...}} is needed here now.",
+      "revId": "0bc3f84c613c50b6cb3860b001d65d40327e65a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
