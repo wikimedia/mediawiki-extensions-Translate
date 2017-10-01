@@ -115,6 +115,7 @@
 	"apierror-translate-invalidgroup": "{{doc-apierror}}",
 	"apierror-translate-invalidstate": "{{doc-apierror}}",
 	"apierror-translate-invalidupdate": "{{doc-apierror}}",
+	"apierror-translate-invalidlanguage": "{{doc-apierror}}",
 	"apierror-translate-language-disabled": "{{doc-apierror}}",
 	"apierror-translate-nodynamicgroups": "{{doc-apierror}}",
 	"apierror-translate-nomessagefortitle": "{{doc-apierror}}",
