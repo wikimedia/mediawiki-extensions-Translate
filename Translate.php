@@ -66,6 +66,7 @@ $wgHooks['UnitTestsList'][] = 'TranslateHooks::setupUnitTests';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'TranslateHooks::schemaUpdates';
 $wgHooks['ParserTestTables'][] = 'TranslateHooks::parserTestTables';
 $wgHooks['PageContentLanguage'][] = 'TranslateHooks::onPageContentLanguage';
+$wgHooks['ResourceLoaderRegisterModules'][] = 'TranslateHooks::onResourceLoaderRegisterModules';
 
 // Register special pages into MediaWiki
 $wgSpecialPages['Translate'] = 'SpecialTranslate';
