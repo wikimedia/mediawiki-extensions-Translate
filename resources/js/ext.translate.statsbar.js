@@ -77,9 +77,9 @@
 				statsbar.update();
 			} );
 
-			statsbar.$container.hover( function () {
+			statsbar.$container.mouseenter( function () {
 				statsbar.elements.$info.removeClass( 'hide' );
-			}, function () {
+			} ).mouseleave( function () {
 				statsbar.elements.$info.addClass( 'hide' );
 			} );
 		},
