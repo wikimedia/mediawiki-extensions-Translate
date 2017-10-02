@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6af365_2e64b644",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-10-02T10:20:12Z",
+      "side": 1,
+      "message": "Tabs for indentation.",
+      "revId": "87734dba61e387a7d98602da308ee5f1f05aa090",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6af365_8e4fe2bf",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-10-02T10:20:12Z",
+      "side": 1,
+      "message": "I recommend to use Language::isValidBuiltInCode() or TranslateUtils::getLanguageNames().",
+      "range": {
+        "startLine": 35,
+        "startChar": 2,
+        "endLine": 35,
+        "endChar": 47
+      },
+      "revId": "87734dba61e387a7d98602da308ee5f1f05aa090",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6af365_0ea0d23d",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-10-02T10:20:12Z",
+      "side": 1,
+      "message": "missingparam doesn\u0027t look right. Please create apierror-translate-invalidlanguage",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 57
+      },
+      "revId": "87734dba61e387a7d98602da308ee5f1f05aa090",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
