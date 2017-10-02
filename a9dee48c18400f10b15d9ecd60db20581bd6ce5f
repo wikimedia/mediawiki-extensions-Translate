@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6af365_e629e29b",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2017-10-02T17:17:50Z",
+      "side": 1,
+      "message": "A few comma\u0027s would make this easier to read:\n\n\n\u003e JavaScript is disabled, failed to load, or this browser is unsupported.",
+      "range": {
+        "startLine": 394,
+        "startChar": 79,
+        "endLine": 394,
+        "endChar": 85
+      },
+      "revId": "a9dee48c18400f10b15d9ecd60db20581bd6ce5f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
