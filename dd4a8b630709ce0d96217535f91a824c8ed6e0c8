@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6af365_e6f48285",
+        "filename": "resources/js/ext.translate.statsbar.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2017-10-02T16:28:19Z",
+      "side": 1,
+      "message": "I\u0027d recommend using on() instead, since these methods will soon be deprecated as well.\n\ne.g.\n\n $container.on(\u0027mouseenter\u0027, fn)\n   .on(\u0027mouseleave\u0027, fn)\n\nor\n\n $container.on({\n   mouseenter: fn,\n   mouseleave: fn\n })",
+      "range": {
+        "startLine": 80,
+        "startChar": 23,
+        "endLine": 80,
+        "endChar": 33
+      },
+      "revId": "dd4a8b630709ce0d96217535f91a824c8ed6e0c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
