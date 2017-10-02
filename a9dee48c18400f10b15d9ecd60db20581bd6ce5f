@@ -22,6 +22,52 @@
       "revId": "a9dee48c18400f10b15d9ecd60db20581bd6ce5f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6af365_a633ea09",
+        "filename": "resources/css/ext.translate.special.translate.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2017-10-02T17:19:32Z",
+      "side": 1,
+      "message": "Redundant \u0027body\u0027 specifier.",
+      "range": {
+        "startLine": 220,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 4
+      },
+      "revId": "a9dee48c18400f10b15d9ecd60db20581bd6ce5f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6af365_c6305eff",
+        "filename": "resources/css/ext.translate.special.translate.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2017-10-02T17:19:32Z",
+      "side": 1,
+      "message": "Alternatively, instead of hardcoding the default \u0027block\u0027 (which is generally considered an anti-pattern), it may be easier to use a single rule instead of two, targeting the hidden condition only, given it will be visible by default regardless.\n\n .client-js .tux-nojs {\n  display: none;\n }\n\nThe rule will naturally not apply in nojs mode.",
+      "range": {
+        "startLine": 224,
+        "startChar": 1,
+        "endLine": 226,
+        "endChar": 1
+      },
+      "revId": "a9dee48c18400f10b15d9ecd60db20581bd6ce5f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
