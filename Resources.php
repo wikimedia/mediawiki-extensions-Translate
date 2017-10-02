@@ -263,14 +263,6 @@ $wgResourceModules['ext.translate.quickedit'] = [
 	'targets' => [ 'desktop' ],
 ] + $resourcePaths;
 
-$wgResourceModules['ext.translate.recentgroups'] = [
-	'scripts' => 'resources/js/ext.translate.recentgroups.js',
-	'dependencies' => [
-		'es5-shim',
-		'mediawiki.storage',
-	],
-] + $resourcePaths;
-
 $wgResourceModules['ext.translate.selecttoinput'] = [
 	'scripts' => 'resources/js/ext.translate.selecttoinput.js',
 ] + $resourcePaths;
