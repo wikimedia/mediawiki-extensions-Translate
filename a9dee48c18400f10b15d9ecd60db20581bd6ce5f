@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "0e6af365_8927d9b0",
+        "filename": "resources/css/ext.translate.special.translate.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-10-02T17:27:41Z",
+      "side": 1,
+      "message": "errorbox has `display: inline-block` that competes with this one. But I like your suggestion below.",
+      "parentUuid": "0e6af365_a633ea09",
+      "range": {
+        "startLine": 220,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 4
+      },
+      "revId": "a9dee48c18400f10b15d9ecd60db20581bd6ce5f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e6af365_c6305eff",
         "filename": "resources/css/ext.translate.special.translate.css",
         "patchSetId": 3
