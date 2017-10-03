@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6af365_955feae7",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-10-03T06:47:50Z",
+      "side": 1,
+      "message": "This one should be removed, as it is unused.",
+      "revId": "afa296d2a4a8fe5ed361c25cdc2d7649e9fe9259",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
