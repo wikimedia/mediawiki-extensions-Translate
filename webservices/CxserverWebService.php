@@ -71,7 +71,10 @@ class CxserverWebService extends TranslationWebService {
 			throw new TranslationWebServiceException( 'Invalid json: ' . serialize( $body ) );
 		}
 
-		$text = preg_replace( '~^<div>(.*)</div>$~', '\1', $response->contents );
+		$text = $response->contents;
+		if ( preg_match( '~^<div>(.*)</div>$~', $text ) ) {
+			$text = preg_replace( '~^<div>(.*)</div>$~', '\1', $text );
+		}
 		$text = $this->unwrapUntranslatable( $text );
 
 		return trim( $text );
