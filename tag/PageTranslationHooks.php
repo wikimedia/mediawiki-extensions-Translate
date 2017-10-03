@@ -76,7 +76,7 @@ class PageTranslationHooks {
 	 * @param Title $title
 	 * @param Language &$pageLang
 	 */
-	public static function onPageContentLanguage( Title $title, Language &$pageLang ) {
+	public static function onPageContentLanguage( Title $title, &$pageLang ) {
 		// For translation pages, parse plural, grammar etc with correct language,
 		// and set the right direction
 		if ( TranslatablePage::isTranslationPage( $title ) ) {
