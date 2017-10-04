@@ -184,7 +184,7 @@
 	"translate-mgs-noempty": "Nezobrazovat jazyky neobsahující žádný překlad",
 	"translate-mgs-submit": "Zobrazit statistiky",
 	"translate-mgs-column-language": "Jazyk",
-	"translate-mgs-totals": "Všechny jazyky dohromady",
+	"translate-mgs-totals": "{{PLURAL:$1|Celkem jediný jazyk|Všechny $1 jazyky dohromady|Všech $1 jazyků dohromady|2=Oba dva jazyky dohromady}}",
 	"translate-mgs-invalid-group": "Zadaná skupina $1 neexistuje.",
 	"translate-mgs-nothing": "U požadovaných statistik není co zobrazit.",
 	"supportedlanguages": "Podporované jazyky",

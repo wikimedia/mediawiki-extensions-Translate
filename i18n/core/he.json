@@ -192,7 +192,7 @@
 	"translate-mgs-noempty": "לא להציג שפות ללא שום תרגום",
 	"translate-mgs-submit": "הצגת סטטיסטיקות",
 	"translate-mgs-column-language": "שפה",
-	"translate-mgs-totals": "כל השפות ביחד",
+	"translate-mgs-totals": "{{PLURAL:$1|שפה אחת|כל $1 השפות ביחד}}",
 	"translate-mgs-invalid-group": "הקבוצה $1 אינה קיימת.",
 	"translate-mgs-nothing": "אין מה להראות עבור הסטטיסטיקות המבוקשות.",
 	"supportedlanguages": "שפות נתמכות",

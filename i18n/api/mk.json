@@ -109,6 +109,7 @@
 	"apierror-translate-invalidaggregategroupname": "Неважечки назив за групата збирни пораки",
 	"apierror-translate-invalidgroup": "Групата не постои или е неважечка",
 	"apierror-translate-invalidstate": "Побараната состојба е неважечка.",
+	"apierror-translate-invalidlanguage": "Бараниот јазик е неважечки.",
 	"apierror-translate-invalidupdate": "Неважечка поднова",
 	"apierror-translate-language-disabled": "Преведувањето на овој јазик е оневозможено",
 	"apierror-translate-nodynamicgroups": "Динамичките групи пораки не се поддржани овде",

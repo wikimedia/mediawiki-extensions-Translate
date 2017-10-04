@@ -201,7 +201,7 @@
 	"translate-mgs-noempty": "Nicht die Sprachen anzeigen, zu denen noch keine Übersetzungen fertiggestellt wurden",
 	"translate-mgs-submit": "Statistiken anzeigen",
 	"translate-mgs-column-language": "Sprache",
-	"translate-mgs-totals": "Alle $1 Sprachen zusammen",
+	"translate-mgs-totals": "{{PLURAL:$1|Die gesamte Sprache|Alle $1 Sprachen zusammen}}",
 	"translate-mgs-invalid-group": "Die angegebene Nachrichtengruppe $1 ist nicht vorhanden.",
 	"translate-mgs-nothing": "Zu den angeforderten Statistiken gibt es keine anzuzeigenden Daten.",
 	"supportedlanguages": "Unterstützte Sprachen",
@@ -403,5 +403,5 @@
 	"translate-ulsdep-title": "Konfigurationsfehler",
 	"translate-ulsdep-body": "Die Übersetzungserweiterung hängt von der [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Erweiterung für die universelle Sprachauswahl] ab.",
 	"tux-session-expired": "Du bist nicht mehr angemeldet. Bitte melde dich auf einer getrennten Registerkarte an. Alternativ kannst du eine Kopie deiner ungespeicherten Übersetzungen machen, dich anmelden, zu dieser Seite zurückkehren und deine Übersetzungen erneut eingeben.",
-	"tux-nojs": "Diese Seite erfordert JavaScript."
+	"tux-nojs": "Dieses Werkzeug funktioniert ohne JavaScript nicht. Es ist deaktiviert, funktioniert nicht oder dieser Browser wird nicht unterstützt."
 }

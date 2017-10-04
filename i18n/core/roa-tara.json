@@ -182,7 +182,7 @@
 	"translate-mgs-noempty": "No fà 'ndrucà le lènghe ca no tènene nisciuna traduzione",
 	"translate-mgs-submit": "Fà vedè le statisteche",
 	"translate-mgs-column-language": "Lènghe",
-	"translate-mgs-totals": "Tutte le lènghe 'nzieme",
+	"translate-mgs-totals": "Tutte le $1 lènghe 'nzieme",
 	"translate-mgs-invalid-group": "'U gruppe specifiche $1 non g'esiste.",
 	"translate-mgs-nothing": "Ninde da fà vedè pe le statisteche cercate.",
 	"supportedlanguages": "Lènghe supportate",

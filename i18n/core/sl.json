@@ -184,7 +184,7 @@
 	"translate-mgs-noempty": "Ne prikaži jezikov, ki nimajo nobenega prevoda",
 	"translate-mgs-submit": "Prikaži statistiko",
 	"translate-mgs-column-language": "Jezik",
-	"translate-mgs-totals": "Vsi jeziki skupaj",
+	"translate-mgs-totals": "{{PLURAL:$1|2=Oba jezika|Vsi jeziki}} skupaj",
 	"translate-mgs-invalid-group": "Izbrana skupina $1 ne obstaja.",
 	"translate-mgs-nothing": "Pri izbrani statistiki ni ničesar za prikazati.",
 	"supportedlanguages": "Podprti jeziki",
@@ -384,5 +384,5 @@
 	"translate-ulsdep-title": "Napaka pri konfiguraciji",
 	"translate-ulsdep-body": "Razširitev Translate je odvisna od [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector razširitve Universal Language Selector].",
 	"tux-session-expired": "Niste več prijavljeni. Prosimo, prijavite se v ločenem zavihku. Druga možnost je, da naredite kopijo neshranjenega prevoda, se prijavite, se vrnete na to stran in ponovno vnesete vaš prevod.",
-	"tux-nojs": "Stran zahteva JavaScript."
+	"tux-nojs": "Orodje ne deluje brez JavaScripta. JavaScript je onemogočen, ne deluje ali pa brskalnik ni podprt."
 }

@@ -112,6 +112,7 @@
 	"apierror-translate-invalidaggregategroupname": "无效的聚合消息组名称",
 	"apierror-translate-invalidgroup": "组不存在或无效",
 	"apierror-translate-invalidstate": "请求的状态无效。",
+	"apierror-translate-invalidlanguage": "请求的语言无效。",
 	"apierror-translate-invalidupdate": "无效更新",
 	"apierror-translate-language-disabled": "至该语言的翻译已停用",
 	"apierror-translate-nodynamicgroups": "动态消息组在此不支持",

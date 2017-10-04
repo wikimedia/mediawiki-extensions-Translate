@@ -206,7 +206,7 @@
 	"translate-mgs-noempty": "Nie wyświetlaj języków, dla których nie rozpoczęto tłumaczenia",
 	"translate-mgs-submit": "Pokaż statystyki",
 	"translate-mgs-column-language": "Język",
-	"translate-mgs-totals": "Wszystkie języki razem",
+	"translate-mgs-totals": "Wszystkie $1 języki razem",
 	"translate-mgs-invalid-group": "Nie istnieje grupa „$1“.",
 	"translate-mgs-nothing": "Brak czegokolwiek do wyświetlenia dla żądanych statystyk.",
 	"supportedlanguages": "Obsługiwane języki",

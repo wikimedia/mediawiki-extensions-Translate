@@ -178,7 +178,7 @@
 	"translate-mgs-noempty": "Не паказваць мовы, для якіх няма ніякіх перакладаў",
 	"translate-mgs-submit": "Паказаць статыстыку",
 	"translate-mgs-column-language": "Мова",
-	"translate-mgs-totals": "Усе $1 моваў разам",
+	"translate-mgs-totals": "Усе $1 {{PLURAL:$1|мова|мовы|моваў}} разам",
 	"translate-mgs-invalid-group": "Пазначаная група «$1» не існуе.",
 	"translate-mgs-nothing": "Па вашым запыце статыстыка адсутнічае.",
 	"supportedlanguages": "Мовы перакладу",

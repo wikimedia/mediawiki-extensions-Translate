@@ -192,7 +192,7 @@
 	"translate-mgs-noempty": "번역이 전혀 되지 않은 언어를 표시하지 않기",
 	"translate-mgs-submit": "통계 보기",
 	"translate-mgs-column-language": "언어",
-	"translate-mgs-totals": "모든 언어",
+	"translate-mgs-totals": "$1개의 모든 {{PLURAL:$1|언어}}",
 	"translate-mgs-invalid-group": "지정한 $1 그룹이 존재하지 않습니다.",
 	"translate-mgs-nothing": "요청된 통계에 대해 보여줄 것이 없습니다.",
 	"supportedlanguages": "지원하는 언어",
@@ -393,5 +393,5 @@
 	"translate-ulsdep-title": "구성 오류",
 	"translate-ulsdep-body": "번역 확장 기능은 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector 일반 언어 선택기 확장 기능]을 필요로 합니다.",
 	"tux-session-expired": "로그인하고 있지 않습니다. 별도의 탭에서 로그인하세요. 대안으로, 저장하지 않은 번역을 복사하고, 로그인한 다음, 이 문서로 돌아와 다시 번역을 입력하세요.",
-	"tux-nojs": "이 문서는 자바스크립트가 필요합니다."
+	"tux-nojs": "이 도구는 자바스크립트 없이 동작하지 않습니다. 자바스크립트를 사용하지 않아 동작하지 않거나 이 브라우저가 지원되지 않습니다."
 }

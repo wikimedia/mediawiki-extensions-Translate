@@ -4,7 +4,8 @@
 			"Shinjiman",
 			"Yueman",
 			"Ktchankt",
-			"Obonggi"
+			"Obonggi",
+			"Hello903hello"
 		]
 	},
 	"translate": "翻譯",
@@ -51,6 +52,7 @@
 	"translate-checks-links": "下面嘅連結有問題: <strong>$1</strong>",
 	"translate-checks-xhtml": "請改下面嘅標籤去正確嘅: <strong>$1</strong>",
 	"translate-checks-plural": "用 <nowiki>{{PLURAL:}}</nowiki> 嘅解解釋但係翻譯無用到。",
+	"translate-mgs-totals": "總共有$1個文",
 	"translate-gs-multiple": "多種語言",
 	"translate-documentation-language": "訊息說明文檔",
 	"tux-save-unknown-error": "發生未知嘅錯誤。",

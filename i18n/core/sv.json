@@ -21,7 +21,8 @@
 			"WikiPhoenix",
 			"Lokal Profil",
 			"Marfuas",
-			"Stryn"
+			"Stryn",
+			"Bengtsson96"
 		]
 	},
 	"translate": "Översätt",
@@ -201,7 +202,7 @@
 	"translate-mgs-noempty": "Visa inte språk som inte har några översättningar",
 	"translate-mgs-submit": "Visa statistik",
 	"translate-mgs-column-language": "Språk",
-	"translate-mgs-totals": "Alla språk tillsammans",
+	"translate-mgs-totals": "Alla $1 {{PLURAL:$1|språk}} tillsammans",
 	"translate-mgs-invalid-group": "Den angivna gruppen $1 finns inte.",
 	"translate-mgs-nothing": "Inget att visa för begärd statistik.",
 	"supportedlanguages": "Språk som stöds",
@@ -403,5 +404,5 @@
 	"translate-ulsdep-title": "Konfigurationsfel",
 	"translate-ulsdep-body": "Översättningstillägget är beroende av [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector]-tillägget.",
 	"tux-session-expired": "Du är inte längre inloggad. Vänligen logga in i en separat flik. Alternativt kan du göra en kopia av osparade översättningar, logga in, gå tillbaka till denna sida och klistra in din översättningar igen.",
-	"tux-nojs": "Denna sida kräver JavaScript."
+	"tux-nojs": "Detta verktyg fungerar inte utan JavaScript. JavaScript är inaktiverat, fungerar inte eller stöds inte denna webbläsare."
 }

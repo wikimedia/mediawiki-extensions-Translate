@@ -6,10 +6,11 @@
 			"Дмитрий",
 			"Туллук",
 			"Kareyac",
-			"ЛосЯш"
+			"ЛосЯш",
+			"Putnik"
 		]
 	},
-	"apihelp-aggregategroups-description": "Вы можете добавлять и удалять агрегированные группы сообщений, группировывать и разгруппировывать сообщения в них ( по одному за раз ) .",
+	"apihelp-aggregategroups-description": "Вы можете добавлять и удалять агрегированные группы сообщений, группировать и разгруппировывать сообщения в них (по одному за раз) .",
 	"apihelp-aggregategroups-param-aggregategroup": "ID агрегированной группы сообщений",
 	"apihelp-aggregategroups-param-group": "ID группы сообщений",
 	"apihelp-groupreview-param-group": "Группа сообщений.",
