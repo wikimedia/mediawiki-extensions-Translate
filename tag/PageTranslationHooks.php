@@ -267,7 +267,11 @@ class PageTranslationHooks {
 			if ( $currentTitle->equals( $subpage ) ) {
 				$classes[] = 'mw-pt-languages-selected';
 				$classes = array_merge( $classes, self::tpProgressIcon( $percent ) );
-				$name = Html::rawElement( 'span', [ 'class' => $classes ], $name );
+				$name = Html::rawElement(
+					'span',
+					[ 'class' => $classes , 'lang' => wfBCP47( $code ) ],
+					$name
+				);
 			} elseif ( $subpage->isKnown() ) {
 				$pagename = $page->getPageDisplayTitle( $code );
 				if ( !is_string( $pagename ) ) {
@@ -284,6 +288,7 @@ class PageTranslationHooks {
 				$attribs = [
 					'title' => $title,
 					'class' => $classes,
+					'lang' => wfBCP47( $code ),
 				];
 
 				$name = Linker::linkKnown( $subpage, $name, $attribs );
