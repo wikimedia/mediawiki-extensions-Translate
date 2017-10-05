@@ -35,6 +35,7 @@
 	"apihelp-searchtranslations-param-limit": "Tuloksen koko.",
 	"apierror-translate-duplicateaggregategroup": "Viestiryhmä on jo olemassa",
 	"apierror-translate-invalidgroup": "Ryhmä ei ole olemassa tai se on virheellinen",
+	"apierror-translate-invalidlanguage": "Pyydetty kieli ei kelpaa.",
 	"apierror-translate-invalidupdate": "Virheellinen päivitys",
 	"apierror-translate-language-disabled": "Kääntäminen tälle kielelle ei ole mahdollista.",
 	"apierror-translate-nodynamicgroups": "Dynaamisiä viestiryhmiä ei tueta täällä",
