@@ -26,15 +26,15 @@
 			// For scrolling up and down
 			$( '<div>' )
 				.text( '↑' )
-				.offset( { top: middle - 10, left: maxLeft } )
 				.addClass( 'shortcut-popup' )
-				.appendTo( 'body' );
+				.appendTo( 'body' )
+				.offset( { top: middle - 10, left: maxLeft - 10 } );
 
 			$( '<div>' )
 				.text( '↓' )
-				.offset( { top: middle + 10, left: maxLeft } )
 				.addClass( 'shortcut-popup' )
-				.appendTo( 'body' );
+				.appendTo( 'body' )
+				.offset( { top: middle + 10, left: maxLeft - 10 } );
 
 			this.$editor.find( '.shortcut-activated:visible' ).each( function ( index ) {
 				var $this = $( this ),
@@ -51,9 +51,9 @@
 
 				$( '<div>' )
 					.text( index + 1 )
-					.offset( offset )
 					.addClass( 'shortcut-popup' )
-					.appendTo( 'body' );
+					.appendTo( 'body' )
+					.offset( { top: offset.top - 10, left: offset.left - 10 } );
 			} );
 		},
 
