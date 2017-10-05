@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6af365_7be9f67a",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-10-05T15:00:04Z",
+      "side": 1,
+      "message": "Both instances should use wfBCP47( $code ).",
+      "range": {
+        "startLine": 287,
+        "startChar": 15,
+        "endLine": 287,
+        "endChar": 20
+      },
+      "revId": "d60fe5e4eb0d3ce8a747cd1e9ae4865a807fb8b9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
