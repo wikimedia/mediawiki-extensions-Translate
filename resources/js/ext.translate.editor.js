@@ -368,7 +368,7 @@
 		 * @return {jQuery} The new message tools menu element
 		 */
 		createMessageTools: function () {
-			var $editItem, $historyItem, $deleteItem, $translationsItem;
+			var $editItem, $historyItem, $deleteItem, $translationsItem, $linkToThisItem;
 
 			$editItem = this.createMessageToolsItem(
 				'message-tools-edit',
@@ -421,9 +421,19 @@
 				'tux-editor-message-tools-translations'
 			);
 
+			$linkToThisItem = this.createMessageToolsItem(
+				'message-tools-linktothis',
+				{
+					title: 'Special:Translate',
+					showMessage: this.message.key,
+					group: this.message.primaryGroup
+				},
+				'tux-editor-message-tools-linktothis'
+			);
+
 			return $( '<ul>' )
 				.addClass( 'tux-dropdown-menu tux-message-tools-menu hide' )
-				.append( $editItem, $historyItem, $deleteItem, $translationsItem );
+				.append( $editItem, $historyItem, $deleteItem, $translationsItem, $linkToThisItem );
 		},
 
 		prepareEditorColumn: function () {

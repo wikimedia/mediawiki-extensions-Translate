@@ -140,6 +140,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			if ( is_null( $resultPageSet ) ) {
 				$data = $this->extractMessageData( $result, $props, $messages[$mkey] );
 				$data['title'] = $title->getPrefixedText();
+				$data['primaryGroup'] = ( new MessageHandle( $title ) )->getGroup()->getId();
 
 				$result->addValue( [ 'query', $this->getModuleName() ], null, $data );
 			} else {

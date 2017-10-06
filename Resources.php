@@ -91,6 +91,7 @@ $wgResourceModules['ext.translate.editor'] = [
 		'tux-editor-message-tools-delete',
 		'tux-editor-message-tools-history',
 		'tux-editor-message-tools-translations',
+		'tux-editor-message-tools-linktothis',
 		'tux-editor-n-uses',
 		'tux-editor-need-more-help',
 		'tux-editor-outdated-warning',
