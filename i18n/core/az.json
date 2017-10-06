@@ -122,6 +122,7 @@
 	"translate-translations-project": "Layihə:",
 	"translate-translations-history-short": "t",
 	"languagestats": "Dil statistikaları",
+	"languagestats-stats-for": "$1 üçün tərcümə statistikası ($2).",
 	"languagestats-recenttranslations": "son tərcümələr",
 	"translate-langstats-expand": "genişləndir",
 	"translate-langstats-collapse": "gizlə",

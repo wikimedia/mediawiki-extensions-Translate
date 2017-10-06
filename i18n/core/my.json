@@ -24,5 +24,6 @@
 	"translate-documentation-language": "စာလွှာ စာရွက်စာတမ်း",
 	"translate-msggroupselector-search-all": "အားလုံး",
 	"tux-save-unknown-error": "အကြောင်းရင်းမသိရှိရသော အမှားတစ်ခု ဖြစ်ပေါ်နေသည်။",
-	"tux-editor-page-mode": "စာမျက်နှာ"
+	"tux-editor-page-mode": "စာမျက်နှာ",
+	"translate-search-more-languages-info": "နောက်ထပ် {{PLURAL:$1|ဘာသာစကား|ဘာသာစကားများ}} $1 ခု"
 }
