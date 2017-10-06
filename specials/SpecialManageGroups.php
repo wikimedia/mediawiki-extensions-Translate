@@ -213,6 +213,9 @@ class SpecialManageGroups extends SpecialPage {
 			return '';
 		}
 
+		$handle = new MessageHandle( $title );
+		$url = TranslateUtils::getEditorUrl( $handle );
+		$headerLink = Html::element( 'a', [ 'href' => $url ], $title->getPrefixedText() );
 		$text = '';
 		if ( $type === 'deletion' ) {
 			$wiki = ContentHandler::getContentText( Revision::newFromTitle( $title )->getContent() );
@@ -221,14 +224,14 @@ class SpecialManageGroups extends SpecialPage {
 
 			$this->diff->setContent( $oldContent, $newContent );
 
-			$text = $this->diff->getDiff( $this->makeLink( $title ), '' );
+			$text = $this->diff->getDiff( $headerLink, '' );
 		} elseif ( $type === 'addition' ) {
 			$oldContent = ContentHandler::makeContent( '', $title );
 			$newContent = ContentHandler::makeContent( $params['content'], $title );
 
 			$this->diff->setContent( $oldContent, $newContent );
 
-			$text = $this->diff->getDiff( '', $this->makeLink( $title ) );
+			$text = $this->diff->getDiff( '', $headerLink );
 		} elseif ( $type === 'change' ) {
 			$wiki = ContentHandler::getContentText( Revision::newFromTitle( $title )->getContent() );
 
@@ -251,7 +254,7 @@ class SpecialManageGroups extends SpecialPage {
 			$newContent = ContentHandler::makeContent( $params['content'], $title );
 
 			$this->diff->setContent( $oldContent, $newContent );
-			$text .= $this->diff->getDiff( $this->makeLink( $title ), $actions );
+			$text .= $this->diff->getDiff( $headerLink, $actions );
 		}
 
 		$hidden = Html::hidden( $id, 1 );
