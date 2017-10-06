@@ -626,7 +626,7 @@ class PageTranslationHooks {
 		$page = TranslatablePage::isTranslationPage( $title );
 
 		if ( $page !== false ) {
-			$result[] = 'tpt-patrolling-blocked';
+			$result = [ 'tpt-patrolling-blocked' ];
 			return false;
 		}
 
