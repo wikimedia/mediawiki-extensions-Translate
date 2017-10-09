@@ -32,6 +32,7 @@
 	"apihelp-searchtranslations-example-1": "Iwwersetzunge fir d'Sprooch weisen.",
 	"apierror-translate-duplicateaggregategroup": "De Grupp vu Message gëtt et schonn",
 	"apierror-translate-fuzzymessage": "Fuzzy Iwwersetzunge kënnen net nogekuckt ginn",
+	"apierror-translate-invalidlanguage": "Déi gefrot Sprooch ass net valabel.",
 	"apierror-translate-invalidupdate": "Net valabel Datum",
 	"apierror-translate-language-disabled": "Iwwersetzung an dës Sprooch ass ausgeschalt",
 	"apierror-translate-owntranslation": "Eegen Iwwersetzunge kënnen net nogekuckt ginn",

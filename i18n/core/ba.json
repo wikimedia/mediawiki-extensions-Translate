@@ -6,7 +6,8 @@
 			"Roustammr",
 			"Рустам Нурыев",
 			"Вильданова Гюзель",
-			"Ләйсән"
+			"Ләйсән",
+			"Ансар"
 		]
 	},
 	"translate": "Тәржемә",
@@ -187,5 +188,6 @@
 	"translate-search-nofilter": "Фильтрһыҙ",
 	"translate-messagereview-submit": "Ҡабул итергә",
 	"translate-messagereview-progress": "Ҡабул итеү...",
-	"translate-messagereview-done": "Ҡабул ителде"
+	"translate-messagereview-done": "Ҡабул ителде",
+	"tux-nojs": "Был ҡорал JavaScript-һыҙ эшләмәй."
 }
