@@ -83,6 +83,11 @@ class ElasticSearchTTMServer
 	}
 
 	protected function doQuery( $sourceLanguage, $targetLanguage, $text ) {
+		if ( !$this->useWikimediaExtraPlugin() ) {
+			// ElasticTTM is currently not compatible with elasticsearch 2.x/5.x
+			// It needs FuzzyLikeThis ported via the wmf extra plugin
+			throw new \RuntimeException( 'The wikimedia extra plugin is mandatory.' );
+		}
 		/* Two query system:
 		 * 1) Find all strings in source language that match text
 		 * 2) Do another query for translations for those strings
@@ -91,11 +96,9 @@ class ElasticSearchTTMServer
 		$oldTimeout = $connection->getTimeout();
 		$connection->setTimeout( 10 );
 
-		$fuzzyQuery = new \Elastica\Query\Match();
-		$fuzzyQuery->setFieldQuery( 'content', $text );
-		$fuzzyQuery->setFieldFuzziness( 'content', 'AUTO' );
-		$fuzzyQuery->setFieldPrefixLength( 'content', 0 );
-		$fuzzyQuery->setFieldMaxExpansions( 'content', 50 );
+		$fuzzyQuery = new FuzzyLikeThis();
+		$fuzzyQuery->setLikeText( $text );
+		$fuzzyQuery->addFields( [ 'content' ] );
 
 		$boostQuery = new \Elastica\Query\FunctionScore();
 		if ( $this->useWikimediaExtraPlugin() ) {
@@ -107,6 +110,9 @@ class ElasticSearchTTMServer
 				]
 			);
 		} else {
+			// TODO: should we remove this code block the extra
+			// plugin is now mandatory and we will never use the
+			// groovy script.
 			if ( $this->isElastica5() ) {
 				$scriptClass = \Elastica\Script\Script::class;
 			} else {
