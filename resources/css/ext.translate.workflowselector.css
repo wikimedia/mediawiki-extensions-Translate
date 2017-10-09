@@ -1,7 +1,7 @@
 .tux-workflow-status {
 	background: #eee;
+	color: #222;
 	border: 1px solid #ddd;
-	color: #252525;
 	cursor: pointer;
 	display: inline-block;
 	padding: 2px 4px;
@@ -40,9 +40,9 @@ ul.tux-workflow-status-selector {
 }
 
 .tux-workflow-status-selector li.changeable:hover {
-	cursor: pointer;
 	background-color: #f0f0f0;
-	color: #252525;
+	color: #222;
+	cursor: pointer;
 }
 
 .tux-workflow-status-selector li.selected {
@@ -50,5 +50,5 @@ ul.tux-workflow-status-selector {
 	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/label-tick.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/label-tick.svg );
-	color: #252525;
+	color: #222;
 }
