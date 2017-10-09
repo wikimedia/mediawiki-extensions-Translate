@@ -48,7 +48,7 @@
 }
 
 .tux-messagelist .tux-message-proofread .tux-proofread-source {
-	color: #555;
+	color: #54595d;
 	font-size: 16px;
 	line-height: 1.5em;
 	padding-right: 25px;
@@ -77,7 +77,7 @@
 }
 
 .translated-by-self {
-	color: #777;
+	color: #72777d;
 	text-align: right;
 	font-size: 12px;
 	margin-right: 5px;
@@ -162,8 +162,8 @@
 }
 
 .tux-proofread-edit-label {
+	color: #72777d;
 	position: relative;
-	color: #777;
 	display: inline-block;
 	font-size: 13px;
 	padding-top: 30px;
@@ -171,7 +171,7 @@
 }
 
 .tux-proofread-count {
-	color: #777;
+	color: #72777d;
 	font-size: 15px;
 	padding-right: 5px;
 	text-align: right;

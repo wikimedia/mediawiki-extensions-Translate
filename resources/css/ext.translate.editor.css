@@ -130,8 +130,8 @@
 }
 
 .tux-message-editor .shortcutinfo {
+	color: #54595d;
 	font-size: 13px;
-	color: #555;
 	padding: 0 5px 5px 10px;
 	display: none;
 }
@@ -265,7 +265,7 @@
 }
 
 .in-other-language .language {
-	color: #565656;
+	color: #54595d;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
@@ -352,7 +352,7 @@
 .tux-editor-request-right {
 	font-size: 13px;
 	padding: 0 5px;
-	color: #555;
+	color: #54595d;
 }
 
 .tux-editor-ask-permission {
@@ -413,13 +413,13 @@
 }
 
 .infocolumn .loading {
+	color: #54595d;
 	padding: 10px;
 	font-size: 14px;
-	color: #565656;
 }
 
 .tux-message-tools-menu li a {
-	color: #555;
+	color: #54595d;
 	display: block;
 	font-size: 14px;
 	padding: 0 2px;

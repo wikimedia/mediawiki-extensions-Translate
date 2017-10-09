@@ -130,7 +130,7 @@
 /* Details pane */
 
 .tsb-details-no-translations {
-	color: #999;
+	color: #72777d;
 }
 .signup-comment-label {
 	color: #e85355;
@@ -138,7 +138,7 @@
 }
 
 .signup-comment-text {
-	color: #333;
+	color: #222;
 	font-size: 16px;
 	line-height: 1.5em;
 	padding: 5px 0;
@@ -184,17 +184,17 @@
 }
 
 .request-header {
+	color: #72777d;
 	border-right: 1px solid #c9c9c9;
 	border-bottom: 1px solid #aaa;
 	line-height: 40px;
-	color: #969696;
 	background-color: #f8f8f8;
 }
 
 .request-footer {
+	color: #72777d;
 	border-right: 1px solid #c9c9c9;
 	border-top: 1px solid #aaa;
-	color: #969696;
 	line-height: 40px;
 	padding: 0 5px;
 	background-color: #f8f8f8;
