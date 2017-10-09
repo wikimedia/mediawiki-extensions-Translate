@@ -97,7 +97,7 @@
 
 /* Temporary fix for T111685 */
 .grid .tux-message-editor .messagekey {
-	color: #252525;
+	color: #222;
 	font-size: 13px;
 	font-weight: bold;
 	padding: 5px 0 5px 10px;
@@ -105,7 +105,7 @@
 }
 
 .tux-message-editor .messagekey .caret {
-	border-top: 4px solid #252525;
+	border-top: 4px solid #222;
 	border-left: 4px solid transparent;
 	border-right: 4px solid transparent;
 	display: inline-block;
@@ -387,7 +387,7 @@
 	margin-bottom: 5px;
 	border: 1px solid #ddd;
 	background: #fbfbfb;
-	color: #252525;
+	color: #222;
 	font-size: 13px;
 	line-height: 30px;
 	height: 30px;
@@ -429,7 +429,7 @@
 .tux-message-tools-menu li a:hover {
 	cursor: pointer;
 	background-color: #f0f0f0;
-	color: #252525;
+	color: #222;
 }
 
 .tux-message-tools-menu li.selected {
@@ -437,7 +437,7 @@
 	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/label-tick.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/label-tick.svg );
-	color: #252525;
+	color: #222;
 }
 
 /*
