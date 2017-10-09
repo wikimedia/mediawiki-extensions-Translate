@@ -2,8 +2,8 @@
  * Breadcrumb for message group selector
  */
 .tux-breadcrumb {
+	color: #54595d;
 	margin-bottom: 10px;
-	color: #555;
 	font-size: 14pt;
 	line-height: 1.25em;
 }
@@ -40,7 +40,7 @@
 
 /* Language selector */
 .ext-translate-language-selector-label {
-	color: #555;
+	color: #54595d;
 }
 
 .ext-translate-language-selector {
@@ -139,15 +139,15 @@
 }
 
 .tux-message-selector li a {
-	color: #555;
+	color: #54595d;
 	text-decoration: none;
 	white-space: nowrap;
 	margin-left: 1px;
 }
 
 .tux-message-selector label {
+	color: #54595d;
 	font-size: 12pt;
-	color: #555;
 	top: 1px;
 }
 

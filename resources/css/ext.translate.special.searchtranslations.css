@@ -68,7 +68,7 @@
 
 /* Results */
 .tux-searchpage .count {
-	color: #555;
+	color: #54595d;
 	font-size: 16px;
 	padding-bottom: 10px;
 }
@@ -86,7 +86,7 @@
 
 .tux-searchpage .results .tux-title {
 	text-align: left;
-	color: #555;
+	color: #54595d;
 }
 
 /* Pagination links */
@@ -138,7 +138,7 @@ h1.firstHeading {
 
 .translate-search-more-groups-info,
 .translate-search-more-languages-info {
-	color: #888;
+	color: #72777d;
 	font-size: 14px;
 	padding: 0 8px;
 }

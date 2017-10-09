@@ -14,7 +14,7 @@ h1 {
 }
 
 .translate-welcome-header > p {
-	color: #555;
+	color: #54595d;
 	font-size: 1.2em;
 }
 
@@ -37,13 +37,13 @@ h1 {
 }
 
 .translate-stash-control {
+	color: #54595d;
 	font-size: 1.5em;
-	color: #555;
 	padding: 35px 10px 20px 5px;
 }
 
 .ext-translate-language-selector-label {
-	color: #555;
+	color: #54595d;
 }
 
 .ext-translate-language-selector {
