@@ -12,7 +12,7 @@
 /**
  * Identifies Gettext plural exceptions.
  */
-class GettextPluralException extends MwException {
+class GettextPluralException extends MWException {
 }
 
 /**
