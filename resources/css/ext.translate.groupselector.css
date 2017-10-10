@@ -83,10 +83,10 @@
  * Group tab
  */
 .tux-grouptab {
+	color: #222;
 	box-sizing: border-box;
 	line-height: 30px;
 	height: 30px;
-	color: #252525;
 	cursor: pointer;
 	padding: 2px 5px;
 	margin: 0 4px;

@@ -16,8 +16,8 @@
 
 /* Facets */
 .tux-searchpage .facet {
+	color: #222;
 	font-size: 24px;
-	color: #252525;
 	padding: 20px 0 10px 0;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .tux-searchpage .searchcontent .results {
-	color: #252525;
+	color: #222;
 	padding-left: 10px;
 }
 
