@@ -148,7 +148,6 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
 		$checker->setChecks( [
 			[ $checker, 'pluralCheck' ],
 			[ $checker, 'braceBalanceCheck' ],
-			[ $checker, 'pagenameMessagesCheck' ],
 			[ $checker, 'miscMWChecks' ]
 		] );
 
