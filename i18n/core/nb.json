@@ -190,7 +190,7 @@
 	"translate-mgs-noempty": "Ikke vis språk som ikke har noen oversettelser",
 	"translate-mgs-submit": "Vis statistikk",
 	"translate-mgs-column-language": "Språk",
-	"translate-mgs-totals": "Alle språk sammen",
+	"translate-mgs-totals": "Alle {{PLURAL:$1|språk}} sammen",
 	"translate-mgs-invalid-group": "Den angitte gruppen $1 finnes ikke.",
 	"translate-mgs-nothing": "Ingen av den ønskede statistikken kan vises.",
 	"supportedlanguages": "Støttede språk",
@@ -392,5 +392,5 @@
 	"translate-ulsdep-title": "Konfigrasjonsfeil",
 	"translate-ulsdep-body": "Oversettelsesutvidelsen er avhengig av [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector utvidelsen Universal Language Selector].",
 	"tux-session-expired": "Du er ikke lenger logget inn. Logg inn i en annen fane, eller kopier ulagrede oversettelser, logg inn og kom tilbake til denne siden og lim inn oversettelsen(e).",
-	"tux-nojs": "Denne siden krever JavaScript."
+	"tux-nojs": "Dette verktøyet virker ikke uten JavaScript. JavaScript er slått av eller virket ikke, eller nettleseren din støttes ikke."
 }

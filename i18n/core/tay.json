@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Akamycoco"
+			"Akamycoco",
+			"Hitaypayan"
 		]
 	},
 	"translate-page-edit": "smr’zyut miru’",
 	"translate-edit-title": "Smr’zyut miru’ \"$1\"",
+	"translate-documentation-language": "Minblaq kmal biru’ na pintkaykay’",
 	"tux-edit": "Smr’zyut miru’",
 	"tux-proofread-edit-label": "Smr’zyut miru’"
 }

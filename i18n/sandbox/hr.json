@@ -4,6 +4,11 @@
 			"Bugoslav"
 		]
 	},
+	"managetranslatorsandbox": "Upravljanje prevoditeljskim pješčanikom",
+	"tsb-filter-pending": "Zahtjevi na čekanju",
+	"tsb-reminder-title-generic": "Dovršite Vaše predstavljanje da bi ste postali prevoditelj/ica",
 	"translationstash": "Dobro došli",
-	"log-name-translatorsandbox": "Evidencija prijevoda u pješčaniku"
+	"log-name-translatorsandbox": "Evidencija prijevoda u pješčaniku",
+	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|promovirao|promovirala}} je $3 u {{GENDER:$4|prevoditelja|prevoditeljicu}}",
+	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|odbacio|odbacila}} je zahtjev suradnika/suradnice »$3« da postane prevoditelj/ica"
 }

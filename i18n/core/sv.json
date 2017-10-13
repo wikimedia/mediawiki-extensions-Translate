@@ -272,7 +272,7 @@
 	"translate-documentation-language": "Meddelandedokumentation",
 	"translate-searchprofile": "Översättningar",
 	"translate-searchprofile-tooltip": "Sök från alla översättningar",
-	"translate-searchprofile-note": "Fler sökalternativ finns i [$1 översättningsökningen].",
+	"translate-searchprofile-note": "Fler sökalternativ finns i [$1 översättningssökningen].",
 	"translate-search-languagefilter": "Filtrera efter språk:",
 	"translate-search-nofilter": "Ingen filtrering",
 	"translate-messagereview-submit": "Markera som granskad",
