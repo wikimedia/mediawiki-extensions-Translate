@@ -406,9 +406,7 @@
 				pageContent = addNewLines( pageContent );
 				pageContent = fixInternalLinks( pageContent );
 				pageContent = doTemplates( pageContent );
-				doFiles( pageContent )
-				.then( doCategories )
-				.done( function ( pageContent ) {
+				doFiles( pageContent ).then( doCategories ).done( function ( pageContent ) {
 					pageContent = postPreparationCleanup( pageContent );
 					pageContent = $.trim( pageContent );
 					getDiff( pageName, pageContent ).done( function ( diff ) {

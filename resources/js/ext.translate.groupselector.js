@@ -621,7 +621,7 @@
 	 * @return {string} Escaped string that is safe to use for a search.
 	 */
 	function escapeRegex( value ) {
-		return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, '\\$&' );
+		return value.replace( /[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&' );
 	}
 
 	delay = ( function () {

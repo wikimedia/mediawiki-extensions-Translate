@@ -194,15 +194,17 @@
 			return '<bdi>' + $.uls.data.getAutonym( lang ) + '</bdi>';
 		} ).join( ', ' );
 
-		headerMessage = mw.message( group.priorityforce ?
-			'tpt-discouraged-language-force-header' :
-			'tpt-discouraged-language-header',
+		headerMessage = mw.message(
+			group.priorityforce ?
+				'tpt-discouraged-language-force-header' :
+				'tpt-discouraged-language-header',
 			$.uls.data.getAutonym( language )
 		).parse();
 
-		languagesMessage = mw.message( group.priorityforce ?
-			'tpt-discouraged-language-force-content' :
-			'tpt-discouraged-language-content',
+		languagesMessage = mw.message(
+			group.priorityforce ?
+				'tpt-discouraged-language-force-content' :
+				'tpt-discouraged-language-content',
 			preferredLanguages
 		).parse();
 

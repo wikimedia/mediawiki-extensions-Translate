@@ -29,8 +29,7 @@
 				$form = $( '.tux-searchpage form[name=searchform]' );
 
 			$.each( result, function ( index, value ) {
-				var $input = $( '<input>' )
-					.prop( 'type', 'hidden' ),
+				var $input = $( '<input>' ).prop( 'type', 'hidden' ),
 					$elem = $form.find( 'input[name=' + index + ']' );
 
 				if ( $elem.length ) {
@@ -151,12 +150,13 @@
 
 			$languages.append( $( '<div>' )
 				.addClass( 'row facet-item' )
-				.append( $( '<span>' )
-					.addClass( 'facet-name ' + selectedClasss )
-					.append( $( '<a>' )
-						.attr( 'href', result.url )
-						.text( getLanguageLabel( languageCode ) )
-					),
+				.append(
+					$( '<span>' )
+						.addClass( 'facet-name ' + selectedClasss )
+						.append( $( '<a>' )
+							.attr( 'href', result.url )
+							.text( getLanguageLabel( languageCode ) )
+						),
 					$( '<span>' )
 						.addClass( 'facet-count' )
 						.text( result.count )
@@ -261,12 +261,13 @@
 
 			$groupRow = $( '<div>' )
 				.addClass( 'row facet-item facet-level-' + level )
-				.append( $( '<span>' )
-					.addClass( 'facet-name ' + selectedClass )
-					.append( $( '<a>' )
-						.attr( 'href', uri.toString() )
-						.text( group.label )
-					),
+				.append(
+					$( '<span>' )
+						.addClass( 'facet-name ' + selectedClass )
+						.append( $( '<a>' )
+							.attr( 'href', uri.toString() )
+							.text( group.label )
+						),
 					$( '<span>' )
 						.addClass( 'facet-count' )
 						.text( mw.language.convertNumber( group.count ) )
@@ -280,9 +281,10 @@
 		if ( resultCount > maxListSize && resultCount - groupList.length > 0 && level === 0 ) {
 			$grouSelectorTrigger = $( '<div>' )
 				.addClass( 'rowfacet-item ' )
-				.append( $( '<a>' )
-					.text( '...' )
-					.addClass( 'translate-search-more-groups' ),
+				.append(
+					$( '<a>' )
+						.text( '...' )
+						.addClass( 'translate-search-more-groups' ),
 					$( '<span>' )
 						.addClass( 'translate-search-more-groups-info' )
 						.text( mw.msg( 'translate-search-more-groups-info',
@@ -405,12 +407,13 @@
 	function addToSelectedBox( label, url ) {
 		$( '.tux-searchpage .tux-selectedbox' ).append( $( '<div>' )
 			.addClass( 'row facet-item' )
-			.append( $( '<span>' )
-				.addClass( 'facet-name selected' )
-				.append( $( '<a>' )
-					.attr( 'href', url )
-					.text( label )
-				),
+			.append(
+				$( '<span>' )
+					.addClass( 'facet-name selected' )
+					.append( $( '<a>' )
+						.attr( 'href', url )
+						.text( label )
+					),
 				$( '<span>' )
 					.addClass( 'facet-count' )
 					.text( 'X' )

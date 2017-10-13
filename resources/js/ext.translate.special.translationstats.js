@@ -28,8 +28,7 @@
 					showAnim: false,
 					showButtonPanel: true,
 					maxDate: new Date()
-				} )
-				.attr( 'autocomplete', 'off' );
+				} ).attr( 'autocomplete', 'off' );
 			} );
 		} else {
 			mw.loader.using( 'mediawiki.widgets.datetime' ).done( function () {

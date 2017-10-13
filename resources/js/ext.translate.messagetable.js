@@ -204,7 +204,7 @@
 									dir: targetLangDir
 								} )
 								.text( message.translation || '' )
-							),
+						),
 					$( '<div>' )
 						.addClass( 'two columns tux-list-status text-center' )
 						.append(
@@ -525,16 +525,14 @@
 
 				self.updateHideOwnInProofreadingToggleVisibility();
 				self.updateLastMessage();
-			} )
-			.fail( function ( errorCode, response ) {
+			} ).fail( function ( errorCode, response ) {
 				if ( response.error && response.error.code === 'mctranslate-language-disabled' ) {
 					$( '.tux-editor-header .group-warning' )
 						.text( mw.msg( 'translate-language-disabled' ) )
 						.show();
 				}
 				self.$loader.data( 'offset', -1 ).addClass( 'hide' );
-			} )
-			.always( function () {
+			} ).always( function () {
 				self.$loaderIcon.addClass( 'tux-loading-indicator--stopped' );
 				self.loading = false;
 			} );
@@ -853,7 +851,7 @@
 	 * @return {string} Escaped string that is safe to use for a search.
 	 */
 	function escapeRegex( value ) {
-		return value.replace( /[\-\[\]{}()*+?.,\\\^$\|#\s]/g, '\\$&' );
+		return value.replace( /[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&' );
 	}
 
 	function isLoaderVisible( $loader ) {

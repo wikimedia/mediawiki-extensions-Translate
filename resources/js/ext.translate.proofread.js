@@ -150,8 +150,7 @@
 								$proofreadEdit
 							)
 					)
-			)
-			.addClass( this.message.properties.status );
+			).addClass( this.message.properties.status );
 
 			if ( !translatedBySelf && !proofreadBySelf ) {
 				// This will get removed later if any of various other reasons prevent it

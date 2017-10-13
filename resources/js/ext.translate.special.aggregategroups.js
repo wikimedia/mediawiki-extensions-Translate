@@ -269,20 +269,18 @@
 					.append( $displayHeader )
 					.append( $( '<p>' ).addClass( 'tp-desc' ).text( aggregateGroupDesc ) );
 
-				$saveButton = ( $( '<input>' )
+				$saveButton = $( '<input>' )
 					.attr( {
 						type: 'button',
 						'class': 'tp-aggregategroup-update'
 					} )
-					.val( mw.msg( 'tpt-aggregategroup-update' ) )
-					);
-				$cancelButton = ( $( '<input>' )
+					.val( mw.msg( 'tpt-aggregategroup-update' ) );
+				$cancelButton = $( '<input>' )
 					.attr( {
 						type: 'button',
 						'class': 'tp-aggregategroup-update-cancel'
 					} )
-					.val( mw.msg( 'tpt-aggregategroup-update-cancel' ) )
-					);
+					.val( mw.msg( 'tpt-aggregategroup-update-cancel' ) );
 				$divEdit = $( '<div>' )
 					.addClass( 'tp-edit-group hidden' )
 					.append( $( '<label>' )

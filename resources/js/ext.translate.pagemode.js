@@ -97,9 +97,7 @@
 							.attr( 'title', mw.msg( 'translate-edit-title', this.message.key ) )
 							.addClass( 'tux-pagemode-edit' )
 					)
-			)
-
-			.addClass( this.message.properties.status );
+			).addClass( this.message.properties.status );
 		},
 
 		/**

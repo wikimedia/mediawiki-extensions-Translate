@@ -76,7 +76,7 @@
 								dir: targetLanguageDir
 							} )
 							.text( message.translation || '' )
-						),
+					),
 				$( '<div>' )
 					.addClass( 'two columns tux-list-status text-center' )
 					.append(
