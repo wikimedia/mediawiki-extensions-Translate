@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6af365_fa204af4",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-10-13T14:50:22Z",
+      "side": 1,
+      "message": "Can dash also be unescaped in the beginning?",
+      "range": {
+        "startLine": 624,
+        "startChar": 26,
+        "endLine": 624,
+        "endChar": 27
+      },
+      "revId": "b39ab50fdaaddb7fc6b45deeac86af2e2086e3f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
