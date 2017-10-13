@@ -28,12 +28,12 @@ class TranslateRcFilter {
 	 * @param FormOptions $opts
 	 * @return bool true
 	 */
-	public static function translationFilter( $pageName, &$tables, &$fields, &$conds, &$query_options,
-		&$join_conds, FormOptions $opts
+	public static function translationFilter( $pageName, &$tables, &$fields, &$conds,
+		&$query_options, &$join_conds, FormOptions $opts
 	) {
-		global $wgTranslateMessageNamespaces, $wgTranslateRcFilterDefault;
+		global $wgTranslateRcFilterDefault;
 
-		if ( $pageName !== 'Recentchanges' ) {
+		if ( $pageName !== 'Recentchanges' || self::isStructuredFilterUiEnabled() ) {
 			return true;
 		}
 
@@ -44,12 +44,7 @@ class TranslateRcFilter {
 
 		$dbr = wfGetDB( DB_REPLICA );
 
-		$namespaces = [];
-
-		foreach ( $wgTranslateMessageNamespaces as $index ) {
-			$namespaces[] = $index;
-			$namespaces[] = $index + 1; // Talk too
-		}
+		$namespaces = self::getTranslateNamespaces();
 
 		if ( $translations === 'only' ) {
 			$conds[] = 'rc_namespace IN (' . $dbr->makeList( $namespaces ) . ')';
@@ -64,6 +59,18 @@ class TranslateRcFilter {
 		return true;
 	}
 
+	private static function getTranslateNamespaces() {
+		global $wgTranslateMessageNamespaces;
+		$namespaces = [];
+
+		foreach ( $wgTranslateMessageNamespaces as $index ) {
+			$namespaces[] = $index;
+			$namespaces[] = $index + 1; // Include Talk namespaces
+		}
+
+		return $namespaces;
+	}
+
 	/**
 	 * Hooks SpecialRecentChangesPanel. See the hook documentation for
 	 * documentation of the function parameters.
@@ -74,6 +81,10 @@ class TranslateRcFilter {
 	 * @return bool true
 	 */
 	public static function translationFilterForm( &$items, $opts ) {
+		if ( self::isStructuredFilterUiEnabled() ) {
+			return true;
+		}
+
 		$opts->consumeValue( 'translations' );
 		$default = $opts->getValue( 'translations' );
 
@@ -95,6 +106,146 @@ class TranslateRcFilter {
 
 		$items['translations'] = [ $label, $select->getHTML() ];
 
+		return true;
+	}
+
+	private static function isStructuredFilterUiEnabled() {
+		$context = RequestContext::getMain();
+
+		// This assumes usage only on RC page
+		$page = new SpecialRecentChanges();
+		$page->setContext( $context );
+
+		return $page->isStructuredFilterUiEnabled();
+	}
+
+	/**
+	 * Hooks ChangesListSpecialPageStructuredFilters. See the hook documentation for
+	 * documentation of the function parameters.
+	 *
+	 * Adds translations filters to structured UI
+	 * @param ChangesListSpecialPage $special
+	 * @return bool true
+	*/
+	public static function onChangesListSpecialPageStructuredFilters(
+		ChangesListSpecialPage $special
+	) {
+		global $wgTranslateRcFilterDefault;
+		$defaultFilter = $wgTranslateRcFilterDefault !== 'noaction' ?
+			$wgTranslateRcFilterDefault :
+			ChangesListStringOptionsFilterGroup::NONE;
+
+		$translationsGroup = new ChangesListStringOptionsFilterGroup(
+			[
+				'name' => 'translations',
+				'title' => 'translate-rcfilters-translations',
+				'priority' => -7,
+				'default' => $defaultFilter,
+				'isFullCoverage' => true,
+				'filters' => [
+					[
+						'name' => 'filter',
+						'label' => 'translate-rcfilters-translations-filter-label',
+						'description' => 'translate-rcfilters-translations-filter-desc',
+						'cssClassSuffix' => 'filter',
+						'isRowApplicableCallable' => function ( $ctx, $rc ) {
+							$namespaces = self::getTranslateNamespaces();
+
+							return !in_array( $rc->getAttribute( 'rc_namespace' ), $namespaces );
+						}
+					],
+					[
+						'name' => 'only',
+						'label' => 'translate-rcfilters-translations-only-label',
+						'description' => 'translate-rcfilters-translations-only-desc',
+						'cssClassSuffix' => 'only',
+						'isRowApplicableCallable' => function ( $ctx, $rc ) {
+							$namespaces = self::getTranslateNamespaces();
+
+							return in_array( $rc->getAttribute( 'rc_namespace' ), $namespaces ) &&
+								strpos( $rc->getAttribute( 'rc_title' ), '/' ) !== false;
+						}
+					],
+					[
+						'name' => 'site',
+						'label' => 'translate-rcfilters-translations-site-label',
+						'description' => 'translate-rcfilters-translations-site-desc',
+						'cssClassSuffix' => 'site',
+						'isRowApplicableCallable' => function ( $ctx, $rc ) {
+							$namespaces = self::getTranslateNamespaces();
+
+							return in_array( $rc->getAttribute( 'rc_namespace' ), $namespaces ) &&
+								strpos( $rc->getAttribute( 'rc_title' ), '/' ) === false;
+						}
+					],
+				],
+				'queryCallable' => function ( $specialClassName, $ctx, $dbr, &$tables,
+					&$fields, &$conds, &$query_options, &$join_conds, $selectedValues
+				) {
+					$fields[] = 'rc_title';
+					$fields[] = 'rc_namespace';
+
+					$namespaces = self::getTranslateNamespaces();
+					$inNamespaceCond = 'rc_namespace IN (' .
+						$dbr->makeList( $namespaces ) . ')';
+					$notInNamespaceCond = 'rc_namespace NOT IN (' .
+						$dbr->makeList( $namespaces ) . ')';
+
+					$onlyCond = $dbr->makeList( [
+						$inNamespaceCond,
+						'rc_title ' .
+							$dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() )
+					], LIST_AND );
+					$siteCond = $dbr->makeList( [
+						$inNamespaceCond,
+						'rc_title NOT' .
+							$dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() )
+					], LIST_AND );
+
+					if ( count( $selectedValues ) === 3 ) {
+						// no filters
+						return;
+					}
+
+					if ( $selectedValues === [ 'filter', 'only' ] ) {
+						$conds[] = $dbr->makeList( [
+							$notInNamespaceCond,
+							$onlyCond
+						], LIST_OR );
+						return;
+					}
+
+					if ( $selectedValues === [ 'filter', 'site' ] ) {
+						$conds[] = $dbr->makeList( [
+							$notInNamespaceCond,
+							$siteCond
+						], LIST_OR );
+						return;
+					}
+
+					if ( $selectedValues === [ 'only', 'site' ] ) {
+						$conds[] = $inNamespaceCond;
+						return;
+					}
+
+					if ( $selectedValues === [ 'filter' ] ) {
+						$conds[] = $notInNamespaceCond;
+						return;
+					}
+
+					if ( $selectedValues === [ 'only' ] ) {
+						$conds[] = $onlyCond;
+						return;
+					}
+
+					if ( $selectedValues === [ 'site' ] ) {
+						$conds[] = $siteCond;
+					}
+				}
+			]
+		);
+
+		$special->registerFilterGroup( $translationsGroup );
 		return true;
 	}
 }
