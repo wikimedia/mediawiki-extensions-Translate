@@ -61,6 +61,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 
 	/**
 	 * Allows subclasses to partially customize the query.
+	 * @return array
 	 */
 	protected function getQueryConditions() {
 		global $wgTranslateMessageNamespaces;

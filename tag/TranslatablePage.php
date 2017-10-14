@@ -884,6 +884,7 @@ class TranslatablePage {
 
 	/**
 	 * Get a list of page ids where the latest revision is either tagged or marked
+	 * @return array
 	 */
 	public static function getTranslatablePages() {
 		$dbr = TranslateUtils::getSafeReadDB();

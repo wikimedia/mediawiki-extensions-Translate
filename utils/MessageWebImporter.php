@@ -427,10 +427,10 @@ class MessageWebImporter {
 	/**
 	 * @throws MWException
 	 * @param Title $title
-	 * @param $message
-	 * @param $summary
+	 * @param string $message
+	 * @param string $summary
 	 * @param User $user
-	 * @param $editFlags
+	 * @param int $editFlags
 	 * @return array
 	 */
 	public static function doImport( $title, $message, $summary, $user = null, $editFlags = 0 ) {
@@ -452,9 +452,9 @@ class MessageWebImporter {
 
 	/**
 	 * @param Title $title
-	 * @param $message
-	 * @param $comment
-	 * @param $user
+	 * @param string $message
+	 * @param string $comment
+	 * @param User $user
 	 * @param int $editFlags
 	 * @return array|String
 	 */

@@ -19,7 +19,7 @@ class TranslationEditPage {
 
 	/**
 	 * Constructor.
-	 * @param $title  Title  A title object
+	 * @param Title $title A title object
 	 */
 	public function __construct( Title $title ) {
 		$this->setTitle( $title );
@@ -28,7 +28,7 @@ class TranslationEditPage {
 	/**
 	 * Constructs a page from WebRequest.
 	 * This interface is a big klunky.
-	 * @param $request WebRequest
+	 * @param WebRequest $request
 	 * @return TranslationEditPage
 	 */
 	public static function newFromRequest( WebRequest $request ) {
@@ -46,7 +46,7 @@ class TranslationEditPage {
 
 	/**
 	 * Change the title of the page we are working on.
-	 * @param $title Title
+	 * @param Title $title
 	 */
 	public function setTitle( Title $title ) {
 		$this->title = $title;
@@ -224,10 +224,10 @@ class TranslationEditPage {
 	 * Returns link attributes that enable javascript translation dialog.
 	 * Will degrade gracefully if user does not have permissions or JavaScript
 	 * is not enabled.
-	 * @param $title Title Title object for the translatable message.
-	 * @param $group \string The group in which this message belongs to.
+	 * @param Title $title Title object for the translatable message.
+	 * @param \string $group The group in which this message belongs to.
 	 *   Optional, but avoids a lookup later if provided.
-	 * @param $type \string Force the type of editor to be used. Use dialog
+	 * @param \string $type Force the type of editor to be used. Use dialog
 	 *   where embedded editor is no applicable.
 	 * @return \array
 	 */

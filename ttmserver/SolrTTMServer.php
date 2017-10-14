@@ -349,7 +349,13 @@ class SolrTTMServer
 		}
 	}
 
-	// Search interface
+	/**
+	 * Search interface
+	 * @param string $queryString
+	 * @param array $opts
+	 * @param array $highlight
+	 * @return array
+	 */
 	public function search( $queryString, $opts, $highlight ) {
 		$client = $this->getSolarium();
 

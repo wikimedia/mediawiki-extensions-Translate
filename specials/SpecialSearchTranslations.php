@@ -410,7 +410,12 @@ HTML
 		);
 	}
 
-	// Build ellipsis to select options
+	/**
+	 * Build ellipsis to select options
+	 * @param string $key
+	 * @param string $value
+	 * @return string
+	 */
 	protected function ellipsisSelector( $key, $value ) {
 		$nondefaults = $this->opts->getChangedValues();
 		$taskParams = [ 'filter' => $value ] + $nondefaults;
@@ -435,6 +440,7 @@ HTML
 
 	/**
 	 * Design the tabs
+	 * @return string
 	 */
 	protected function messageSelector() {
 		$nondefaults = $this->opts->getChangedValues();

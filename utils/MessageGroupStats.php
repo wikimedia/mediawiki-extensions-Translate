@@ -154,6 +154,7 @@ class MessageGroupStats {
 	 * Clears the cache for all groups associated with the message.
 	 *
 	 * Hook: TranslateEventTranslationReview
+	 * @param MessageHandle $handle
 	 */
 	public static function clear( MessageHandle $handle ) {
 		$code = $handle->getCode();
@@ -330,8 +331,8 @@ class MessageGroupStats {
 	/**
 	 * Fetch rows from the database. Use extractResults to process this value.
 	 *
-	 * @param null|string[] List of message group ids
-	 * @param null|string[] List of language codes
+	 * @param null|string[] $ids List of message group ids
+	 * @param null|string[] $codes List of language codes
 	 * @return Traversable Database result object
 	 */
 	protected static function selectRowsIdLang( $ids = null, $codes = null ) {

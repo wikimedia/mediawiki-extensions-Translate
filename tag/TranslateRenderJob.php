@@ -15,7 +15,7 @@
 class TranslateRenderJob extends Job {
 
 	/**
-	 * @param $target Title
+	 * @param Title $target
 	 * @return TranslateRenderJob
 	 */
 	public static function newJob( Title $target ) {
@@ -92,7 +92,7 @@ class TranslateRenderJob extends Job {
 	}
 
 	/**
-	 * @param $user User|string
+	 * @param User|string $user
 	 */
 	public function setUser( $user ) {
 		if ( $user instanceof User ) {

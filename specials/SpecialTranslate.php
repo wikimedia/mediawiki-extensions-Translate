@@ -244,6 +244,7 @@ class SpecialTranslate extends SpecialPage {
 
 	/**
 	 * Returns array of errors in the form parameters.
+	 * @return array
 	 */
 	protected function getFormErrors() {
 		$errors = [];
@@ -660,9 +661,9 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	/**
-	 * @param $label string
-	 * @param $option string
-	 * @param $error string Html
+	 * @param string $label
+	 * @param string $option
+	 * @param string $error Html
 	 * @return string
 	 */
 	private static function optionRow( $label, $option, $error = null ) {
@@ -825,6 +826,9 @@ class SpecialTranslate extends SpecialPage {
 	 * Adds the task-based tabs on Special:Translate and few other special pages.
 	 * Hook: SkinTemplateNavigation::SpecialPage
 	 * @since 2012-02-10
+	 * @param Skin $skin
+	 * @param array &$tabs
+	 * @return true
 	 */
 	public static function tabify( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();

@@ -31,7 +31,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	protected $offlineMode = false;
 
 	/**
-	 * @param $value bool
+	 * @param bool $value
 	 */
 	public function setOfflineMode( $value ) {
 		$this->offlineMode = $value;
@@ -328,8 +328,8 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * not allowed in MediaWiki pages, the default action is to append
 	 * \-character at the end of the message. You can also choose to ignore it
 	 * and use the trim action instead.
-	 * @param $data
-	 * @param $whitespace string
+	 * @param string $data
+	 * @param string $whitespace
 	 * @throws MWException
 	 * @return string
 	 */
@@ -606,7 +606,7 @@ PHP;
 
 	/**
 	 * Returns plural rule for Gettext.
-	 * @param $code \string Language code.
+	 * @param \string $code Language code.
 	 * @return \string
 	 */
 	public static function getPluralRule( $code ) {

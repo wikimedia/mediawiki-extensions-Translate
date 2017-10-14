@@ -60,7 +60,7 @@ class AmdFFS extends SimpleFFS {
 	}
 
 	/**
-	 * @param array $data
+	 * @param string $data
 	 * @return array Parsed data.
 	 */
 	public function readFromVariable( $data ) {

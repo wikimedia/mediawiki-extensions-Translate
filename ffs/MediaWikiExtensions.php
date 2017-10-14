@@ -76,12 +76,21 @@ class PremadeMediawikiExtensionGroups {
 		$this->namespace = $value;
 	}
 
-	/// Makes an group id from extension name
+	/**
+	 * Makes an group id from extension name
+	 * @param string $name
+	 * @return string
+	 */
 	public static function foldId( $name ) {
 		return preg_replace( '/\s+/', '', strtolower( $name ) );
 	}
 
-	/// Hook: TranslatePostInitGroups
+	/**
+	 * Hook: TranslatePostInitGroups
+	 * @param array &$list
+	 * @param array &$deps
+	 * @return true
+	 */
 	public function register( array &$list, array &$deps ) {
 		$groups = $this->parseFile();
 		$groups = $this->processGroups( $groups );
