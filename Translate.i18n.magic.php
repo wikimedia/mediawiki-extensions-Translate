@@ -12,3 +12,8 @@ $magicWords = [];
 $magicWords['en'] = [
 	'translation' => [ 0, 'translation' ],
 ];
+
+/** Urdu (اردو) */
+$magicWords['ur'] = [
+	'translation' => [ 0, 'ترجمہ', 'translation' ],
+];
