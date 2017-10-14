@@ -84,6 +84,7 @@
 	"apihelp-searchtranslations-example-2": "Mostrar mensajes sin traducir que coincidan con la consulta en el idioma de origen.",
 	"apierror-translate-invalidgroup": "El grupo no existe o no es válido",
 	"apierror-translate-invalidstate": "El estado solicitado no es válido.",
+	"apierror-translate-invalidlanguage": "El idioma solicitado no es válido.",
 	"apierror-translate-invalidupdate": "Actualización no válida",
 	"apierror-translate-language-disabled": "Se ha desactivado la traducción a este idioma",
 	"apierror-translate-nodynamicgroups": "No se admiten aquí los grupos de mensajes dinámicos",
