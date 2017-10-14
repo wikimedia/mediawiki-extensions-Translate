@@ -120,7 +120,10 @@ abstract class MessageIndex {
 		}
 	}
 
-	/// @return array
+	/**
+	 * @param bool $forRebuild
+	 * @return array
+	 */
 	abstract public function retrieve( $forRebuild = false );
 
 	abstract protected function store( array $array, array $diff );
@@ -329,9 +332,13 @@ abstract class MessageIndex {
 		unset( $id ); // Disconnect the previous references to this $id
 	}
 
-	/* These are probably slower than serialize and unserialize,
+	/**
+	 * These are probably slower than serialize and unserialize,
 	 * but they are more space efficient because we only need
-	 * strings and arrays. */
+	 * strings and arrays.
+	 * @param mixed $data
+	 * @return mixed
+	 */
 	protected function serialize( $data ) {
 		if ( is_array( $data ) ) {
 			return implode( '|', $data );

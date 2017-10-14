@@ -21,7 +21,7 @@ class DtdFFS extends SimpleFFS {
 	}
 
 	/**
-	 * @param $data string
+	 * @param string $data
 	 * @return array Parsed data.
 	 */
 	public function readFromVariable( $data ) {

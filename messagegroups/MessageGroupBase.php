@@ -31,7 +31,7 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	/**
-	 * @param $conf
+	 * @param array $conf
 	 *
 	 * @return MessageGroup
 	 */
@@ -157,6 +157,7 @@ abstract class MessageGroupBase implements MessageGroup {
 	/**
 	 * Returns the configured InsertablesSuggester if any.
 	 * @since 2013.09
+	 * @return CombinedInsertablesSuggester
 	 */
 	public function getInsertablesSuggester() {
 		$allClasses = [];

@@ -33,7 +33,9 @@ class JsSelectToInput {
 		$this->select = $select;
 	}
 
-	/// @return string
+	/**
+	 * @return string
+	 */
 	public function getSourceId() {
 		return $this->sourceId;
 	}
@@ -61,7 +63,9 @@ class JsSelectToInput {
 		$this->msg = $message;
 	}
 
-	/// @return string Message key.
+	/**
+	 * @return string Message key.
+	 */
 	public function getMessage() {
 		return $this->msg;
 	}
@@ -102,7 +106,9 @@ class JsSelectToInput {
 		return $html;
 	}
 
-	/// Inject needed JavaScript in the page.
+	/**
+	 * Inject needed JavaScript in the page.
+	 */
 	public static function injectJs() {
 		static $done = false;
 		if ( $done ) {

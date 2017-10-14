@@ -30,7 +30,9 @@ class MessageGroups {
 	 */
 	protected $cache;
 
-	/// Initialises the list of groups
+	/**
+	 * Initialises the list of groups
+	 */
 	protected function init() {
 		global $wgAutoloadClasses;
 
@@ -143,6 +145,7 @@ class MessageGroups {
 	 * This constructs the list of all groups from multiple different
 	 * sources. When possible, a cache dependency is created to automatically
 	 * recreate the cache when configuration changes.
+	 * @return array
 	 */
 	protected function loadGroupDefinitions() {
 		global $wgAutoloadClasses;
@@ -167,7 +170,12 @@ class MessageGroups {
 		return $groups;
 	}
 
-	/// Hook: TranslatePostInitGroups
+	/**
+	 * Hook: TranslatePostInitGroups
+	 * @param array &$groups
+	 * @param array &$deps
+	 * @param array &$autoload
+	 */
 	public static function getTranslatablePages( array &$groups, array &$deps, array &$autoload ) {
 		global $wgEnablePageTranslation;
 
@@ -193,7 +201,12 @@ class MessageGroups {
 		}
 	}
 
-	/// Hook: TranslatePostInitGroups
+	/**
+	 * Hook: TranslatePostInitGroups
+	 * @param array &$groups
+	 * @param array &$deps
+	 * @param array &$autoload
+	 */
 	public static function getConfiguredGroups( array &$groups, array &$deps, array &$autoload ) {
 		global $wgTranslateGroupFiles;
 
@@ -225,7 +238,12 @@ class MessageGroups {
 		}
 	}
 
-	/// Hook: TranslatePostInitGroups
+	/**
+	 * Hook: TranslatePostInitGroups
+	 * @param array &$groups
+	 * @param array &$deps
+	 * @param array &$autoload
+	 */
 	public static function getWorkflowGroups( array &$groups, array &$deps, array &$autoload ) {
 		global $wgTranslateWorkflowStates;
 
@@ -236,12 +254,22 @@ class MessageGroups {
 		}
 	}
 
-	/// Hook: TranslatePostInitGroups
+	/**
+	 * Hook: TranslatePostInitGroups
+	 * @param array &$groups
+	 * @param array &$deps
+	 * @param array &$autoload
+	 */
 	public static function getAggregateGroups( array &$groups, array &$deps, array &$autoload ) {
 		$groups += self::loadAggregateGroups();
 	}
 
-	/// Hook: TranslatePostInitGroups
+	/**
+	 * Hook: TranslatePostInitGroups
+	 * @param array &$groups
+	 * @param array &$deps
+	 * @param array &$autoload
+	 */
 	public static function getCCGroups( array &$groups, array &$deps, array &$autoload ) {
 		global $wgTranslateCC;
 
@@ -391,7 +419,11 @@ class MessageGroups {
 		}
 	}
 
-	/// @since 2011-12-28
+	/**
+	 * @since 2011-12-28
+	 * @param MessageGroup $group
+	 * @return bool
+	 */
 	public static function isDynamic( MessageGroup $group ) {
 		$id = $group->getId();
 
@@ -596,6 +628,7 @@ class MessageGroups {
 	/**
 	 * Contents on these groups changes on a whim.
 	 * @since 2011-12-28
+	 * @return array
 	 */
 	public static function getDynamicGroups() {
 		return [
@@ -694,12 +727,22 @@ class MessageGroups {
 		return $tree;
 	}
 
-	/// See getGroupStructure, just collects ids into array
+	/**
+	 * See getGroupStructure, just collects ids into array
+	 * @param MessageGroup $value
+	 * @param string $key
+	 * @param bool $used
+	 */
 	public static function collectGroupIds( MessageGroup $value, $key, $used ) {
 		$used[0][$value->getId()] = true;
 	}
 
-	/// Sorts groups by label value
+	/**
+	 * Sorts groups by label value
+	 * @param string $a
+	 * @param string $b
+	 * @return int
+	 */
 	public static function groupLabelSort( $a, $b ) {
 		$al = $a->getLabel();
 		$bl = $b->getLabel();

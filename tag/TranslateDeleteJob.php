@@ -15,11 +15,11 @@
  */
 class TranslateDeleteJob extends Job {
 	/**
-	 * @param $target Title
-	 * @param $base
-	 * @param $full
-	 * @param $performer
-	 * @param $reason
+	 * @param Title $target
+	 * @param string $base
+	 * @param string $full
+	 * @param User $performer
+	 * @param string $reason
 	 * @return TranslateDeleteJob
 	 */
 	public static function newJob( Title $target, $base, $full, /*User*/$performer, $reason ) {
@@ -128,7 +128,7 @@ class TranslateDeleteJob extends Job {
 	}
 
 	/**
-	 * @param $performer User|string
+	 * @param User|string $performer
 	 */
 	public function setPerformer( $performer ) {
 		if ( is_object( $performer ) ) {
@@ -143,7 +143,7 @@ class TranslateDeleteJob extends Job {
 	}
 
 	/**
-	 * @param $user User|string
+	 * @param User|string $user
 	 */
 	public function setUser( $user ) {
 		if ( is_object( $user ) ) {

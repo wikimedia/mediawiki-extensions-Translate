@@ -18,7 +18,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 	protected $sids;
 
 	/**
-	 * @param $mode int DB_SLAVE|DB_MASTER
+	 * @param int $mode DB_REPLICA|DB_MASTER
 	 * @return DatabaseBase
 	 */
 	protected function getDB( $mode = DB_REPLICA ) {

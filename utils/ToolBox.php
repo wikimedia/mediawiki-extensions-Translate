@@ -18,7 +18,7 @@ class TranslateToolbox {
 	 * available translations for a message. Only shown when it
 	 * actually is a translatable/translated message.
 	 *
-	 * @param $quickTemplate QuickTemplate
+	 * @param QuickTemplate &$quickTemplate
 	 *
 	 * @return bool
 	 */

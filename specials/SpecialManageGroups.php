@@ -332,6 +332,9 @@ class SpecialManageGroups extends SpecialPage {
 	 * Adds the task-based tabs on Special:Translate and few other special pages.
 	 * Hook: SkinTemplateNavigation::SpecialPage
 	 * @since 2012-05-14
+	 * @param Skin $skin
+	 * @param array &$tabs
+	 * @return true
 	 */
 	public static function tabify( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();

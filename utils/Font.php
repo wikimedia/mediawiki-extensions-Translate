@@ -19,7 +19,7 @@
 class FCFontFinder {
 	/**
 	 * Searches for suitable font in the system.
-	 * @param $code \string Language code.
+	 * @param \string $code Language code.
 	 * @return bool|string Full path to the font file, false on failure
 	 */
 	public static function findFile( $code ) {
@@ -33,7 +33,7 @@ class FCFontFinder {
 
 	/**
 	 * Searches for suitable font family in the system.
-	 * @param $code \string Language code.
+	 * @param \string $code Language code.
 	 * @return bool|string Name of font family, false on failure
 	 */
 	public static function findFamily( $code ) {

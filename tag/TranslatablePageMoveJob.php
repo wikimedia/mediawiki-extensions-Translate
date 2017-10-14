@@ -14,10 +14,13 @@
  * @ingroup PageTranslation JobQueue
  */
 class TranslatablePageMoveJob extends Job {
+
 	/**
-	 * @param $target Title
-	 * @param $params array, should include base-source and base-target
-	 * @param $performer
+	 * @param Titel $source
+	 * @param Title $target
+	 * @param array $moves should include base-source and base-target
+	 * @param string $summary
+	 * @param User $performer
 	 * @return TranslateMoveJob
 	 */
 	public static function newJob(

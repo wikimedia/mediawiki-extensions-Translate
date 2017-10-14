@@ -21,7 +21,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	protected $keySeparator = '=';
 
 	/**
-	 * @param $group FileBasedMessageGroup
+	 * @param FileBasedMessageGroup $group
 	 */
 	public function __construct( FileBasedMessageGroup $group ) {
 		parent::__construct( $group );
@@ -34,7 +34,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	// READ
 
 	/**
-	 * @param $data array
+	 * @param string $data
 	 * @return array Parsed data.
 	 * @throws MWException
 	 */
@@ -98,7 +98,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	// Write
 
 	/**
-	 * @param $collection MessageCollection
+	 * @param MessageCollection $collection
 	 * @return string
 	 */
 	protected function writeReal( MessageCollection $collection ) {
@@ -216,7 +216,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	/**
-	 * @param $collection MessageCollection
+	 * @param MessageCollection $collection
 	 * @return string
 	 */
 	protected function doHeader( MessageCollection $collection ) {
@@ -236,7 +236,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	/**
-	 * @param $collection MessageCollection
+	 * @param MessageCollection $collection
 	 * @return string
 	 */
 	protected function doAuthors( MessageCollection $collection ) {
