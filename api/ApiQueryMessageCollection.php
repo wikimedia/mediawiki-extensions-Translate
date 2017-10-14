@@ -158,9 +158,9 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	}
 
 	/**
-	 * @param $result ApiResult
-	 * @param $props array
-	 * @param $message ThinMessage
+	 * @param ApiResult $result
+	 * @param array $props
+	 * @param ThinMessage $message
 	 * @return array
 	 */
 	public function extractMessageData( $result, $props, $message ) {

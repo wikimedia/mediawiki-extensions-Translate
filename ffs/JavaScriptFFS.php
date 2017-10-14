@@ -12,7 +12,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	/**
 	 * Message keys format.
 	 *
-	 * @param $key string
+	 * @param string $key
 	 *
 	 * @return string
 	 */
@@ -21,8 +21,8 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	/**
 	 * Header of message file.
 	 *
-	 * @param $code string
-	 * @param $authors array
+	 * @param string $code
+	 * @param array $authors
 	 */
 	abstract protected function header( $code, $authors );
 
@@ -32,7 +32,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	abstract protected function footer();
 
 	/**
-	 * @param $data array
+	 * @param string $data
 	 * @return array Parsed data.
 	 */
 	public function readFromVariable( $data ) {
@@ -135,7 +135,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	}
 
 	/**
-	 * @param $collection MessageCollection
+	 * @param MessageCollection $collection
 	 * @return string
 	 */
 	public function writeReal( MessageCollection $collection ) {
@@ -177,7 +177,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	}
 
 	/**
-	 * @param $authors array
+	 * @param array $authors
 	 * @return string
 	 */
 	protected function authorsList( $authors ) {
@@ -220,7 +220,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	];
 
 	/**
-	 * @param $string string
+	 * @param string $string
 	 * @return string
 	 */
 	protected static function escapeJsString( $string ) {
@@ -228,7 +228,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	}
 
 	/**
-	 * @param $string string
+	 * @param string $string
 	 * @return string
 	 */
 	protected static function unescapeJsString( $string ) {
@@ -243,7 +243,7 @@ abstract class JavaScriptFFS extends SimpleFFS {
 class ShapadoJsFFS extends JavaScriptFFS {
 
 	/**
-	 * @param $key string
+	 * @param string $key
 	 *
 	 * @return string
 	 */
@@ -252,8 +252,8 @@ class ShapadoJsFFS extends JavaScriptFFS {
 	}
 
 	/**
-	 * @param $code string
-	 * @param $authors array
+	 * @param string $code
+	 * @param array $authors
 	 * @return string
 	 */
 	protected function header( $code, $authors ) {

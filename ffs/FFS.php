@@ -52,7 +52,7 @@ interface FFS {
 	 * Writes to the location provided with setWritePath and group specific
 	 * directory structure. Exports translations included in the given
 	 * collection with any special handling needed.
-	 * @param $collection MessageCollection
+	 * @param MessageCollection $collection
 	 */
 	public function write( MessageCollection $collection );
 
@@ -80,6 +80,8 @@ interface FFS {
 	 * have multiple representations. The main case are inline plurals,
 	 * which in some formats require expansion at export time.
 	 *
+	 * @param string $a
+	 * @param string $b
 	 * @return bool
 	 * @since 2016.11
 	 */

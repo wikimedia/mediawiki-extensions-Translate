@@ -173,7 +173,7 @@ class SpecialLanguageStats extends SpecialPage {
 
 	/**
 	 * Return the list of allowed values for target here.
-	 * @param $value
+	 * @param string $value
 	 * @return array
 	 */
 	protected function isValidValue( $value ) {
@@ -182,7 +182,9 @@ class SpecialLanguageStats extends SpecialPage {
 		return isset( $langs[$value] );
 	}
 
-	/// Called when the target is unknown.
+	/**
+	 * Called when the target is unknown.
+	 */
 	protected function invalidTarget() {
 		$this->getOutput()->wrapWikiMsg(
 			"<div class='error'>$1</div>",
@@ -412,9 +414,9 @@ class SpecialLanguageStats extends SpecialPage {
 	 * If $item is an array, meaning that the first group is an
 	 * AggregateMessageGroup and the latter are its children, it will recurse
 	 * and create rows for them too.
-	 * @param $item Array|MessageGroup
-	 * @param $cache Array Cache as returned by MessageGroupStats::forLanguage
-	 * @param $parent MessageGroup (do not use, used internally only)
+	 * @param array|MessageGroup $item
+	 * @param array $cache Cache as returned by MessageGroupStats::forLanguage
+	 * @param MessageGroup|null $parent MessageGroup (do not use, used internally only)
 	 * @return string
 	 */
 	protected function makeGroupGroup( $item, array $cache, MessageGroup $parent = null ) {

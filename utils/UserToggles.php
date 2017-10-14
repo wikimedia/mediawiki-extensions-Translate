@@ -17,6 +17,9 @@ class TranslatePreferences {
 	 * Add 'translate-pref-nonewsletter' preference.
 	 * This is most probably specific to translatewiki.net. Can be enabled
 	 * with $wgTranslateNewsletterPreference.
+	 * @param User $user
+	 * @param array &$preferences
+	 * @return bool
 	 */
 	public static function onGetPreferences( User $user, array &$preferences ) {
 		global $wgTranslateNewsletterPreference;

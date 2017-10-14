@@ -7,7 +7,7 @@
 trait CompatibleLinkRenderer {
 
 	/**
-	 * @param $target
+	 * @param Title $target
 	 * @param string|null $text string must be escaped HTML
 	 * @param array $extraAttribs
 	 * @param array $query
@@ -28,7 +28,7 @@ trait CompatibleLinkRenderer {
 	}
 
 	/**
-	 * @param $target
+	 * @param Title $target
 	 * @param string|null $text string must be escaped HTML
 	 * @param array $extraAttribs
 	 * @param array $query

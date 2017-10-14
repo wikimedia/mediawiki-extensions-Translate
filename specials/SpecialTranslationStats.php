@@ -785,7 +785,11 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
 		return $conds;
 	}
 
-	/// @since 2012-03-05
+	/**
+	 * @since 2012-03-05
+	 * @param array $groupIds
+	 * @return array
+	 */
 	protected static function namespacesFromGroups( $groupIds ) {
 		$namespaces = [];
 		foreach ( $groupIds as $id ) {

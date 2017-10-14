@@ -15,7 +15,7 @@
  */
 class TranslateYaml {
 	/**
-	 * @param $text string
+	 * @param string $text
 	 * @return array
 	 * @throws MWException
 	 */
@@ -46,7 +46,7 @@ class TranslateYaml {
 	}
 
 	/**
-	 * @param $yaml array
+	 * @param array &$yaml
 	 * @return array
 	 */
 	public static function fixSyckBooleans( &$yaml ) {
@@ -62,7 +62,7 @@ class TranslateYaml {
 	}
 
 	/**
-	 * @param $yaml array
+	 * @param array &$yaml
 	 * @return array
 	 */
 	public static function fixSpycSpaces( &$yaml ) {

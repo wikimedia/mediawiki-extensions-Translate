@@ -132,7 +132,7 @@ abstract class ComplexMessages {
 	/**
 	 * Gets data from request. Needs to be run before the form is displayed and
 	 * validation. Not needed for export, which uses request directly.
-	 * @param $request WebRequest
+	 * @param WebRequest $request
 	 */
 	public function loadFromRequest( WebRequest $request ) {
 		$saved = $this->parse( $this->formatForSave( $request ) );
@@ -181,7 +181,7 @@ abstract class ComplexMessages {
 
 	/**
 	 * Return an array of keys that can be used to iterate over all keys
-	 * @param $group
+	 * @param string $group
 	 * @return Array of keys for data
 	 */
 	protected function getIterator( $group ) {
@@ -213,8 +213,8 @@ abstract class ComplexMessages {
 	}
 
 	/**
-	 * @param $group
-	 * @param $code
+	 * @param string $group
+	 * @param string $code
 	 * @return array
 	 */
 	protected function readVariable( $group, $code ) {
@@ -251,7 +251,7 @@ abstract class ComplexMessages {
 		return $data;
 	}
 
-	// /Data retrieval
+	// Data retrieval
 
 	// Output
 	public function header( $title ) {
@@ -362,7 +362,7 @@ abstract class ComplexMessages {
 		] );
 	}
 
-	// /Output
+	// Output
 
 	// Save to database
 
@@ -429,7 +429,7 @@ abstract class ComplexMessages {
 		$this->init = false;
 	}
 
-	// /Save to database
+	// Save to database
 
 	// Export
 	public function validate( array &$errors, $filter = false ) {
@@ -564,7 +564,7 @@ abstract class ComplexMessages {
 
 	/**
 	 * Returns string with quotes that should be valid php
-	 * @param $data string
+	 * @param string $data
 	 * @throws MWException
 	 * @return string
 	 */
@@ -578,7 +578,7 @@ abstract class ComplexMessages {
 		return "'$data'";
 	}
 
-	// /Export
+	// Export
 	public function highlight( $key, $values ) {
 		return $values;
 	}

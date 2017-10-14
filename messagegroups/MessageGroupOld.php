@@ -32,7 +32,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	/**
-	 * @param $value string
+	 * @param string $value
 	 */
 	public function setLabel( $value ) {
 		$this->label = $value;
@@ -51,7 +51,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	/**
-	 * @param $value string
+	 * @param string $value
 	 */
 	public function setId( $value ) {
 		$this->id = $value;
@@ -64,12 +64,18 @@ abstract class MessageGroupOld implements MessageGroup {
 	 */
 	protected $namespace = NS_MEDIAWIKI;
 
-	/// Get the namespace where all the messages of this group belong.
+	/**
+	 * Get the namespace where all the messages of this group belong.
+	 * @return int
+	 */
 	public function getNamespace() {
 		return $this->namespace;
 	}
 
-	/// Set the namespace where all the messages of this group belong.
+	/**
+	 * Set the namespace where all the messages of this group belong.
+	 * @param int $ns
+	 */
 	public function setNamespace( $ns ) {
 		$this->namespace = $ns;
 	}
@@ -88,7 +94,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	/**
-	 * @param $value array
+	 * @param array $value
 	 */
 	public function setOptional( $value ) {
 		$this->optional = $value;
@@ -107,7 +113,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	/**
-	 * @param $value array
+	 * @param array $value
 	 */
 	public function setIgnored( $value ) {
 		$this->ignored = $value;
@@ -251,7 +257,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	/**
-	 * @param $code
+	 * @param string $code
 	 * @return bool|string
 	 */
 	public function getMessageFileWithPath( $code ) {
@@ -272,8 +278,8 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * Creates a new MessageCollection for this group.
 	 *
-	 * @param $code \string Language code for this collection.
-	 * @param $unique \bool Whether to build collection for messages unique to this
+	 * @param \string $code Language code for this collection.
+	 * @param \bool $unique Whether to build collection for messages unique to this
 	 *                group only.
 	 * @return MessageCollection
 	 */
@@ -323,14 +329,17 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	/**
-	 * @param $code string
+	 * @param string $code
 	 * @return bool
 	 */
 	protected function isSourceLanguage( $code ) {
 		return $code === $this->getSourceLanguage();
 	}
 
-	// Unsupported stuff, just to satisfy the new interface
+	/**
+	 * Unsupported stuff, just to satisfy the new interface
+	 * @param array $conf
+	 */
 	public function setConfiguration( $conf ) {
 	}
 

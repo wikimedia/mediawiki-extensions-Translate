@@ -12,7 +12,7 @@
  */
 class HTMLJsSelectToInputField extends HTMLTextField {
 	/**
-	 * @param $value
+	 * @param string $value
 	 * @return string
 	 */
 	function getInputHTML( $value ) {
@@ -30,7 +30,7 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 	}
 
 	/**
-	 * @param $value
+	 * @param string $value
 	 * @return array
 	 */
 	protected function tidy( $value ) {
@@ -41,9 +41,9 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 	}
 
 	/**
-	 * @param $value
-	 * @param $alldata
-	 * @return bool|String
+	 * @param string $value
+	 * @param array $alldata
+	 * @return bool|string
 	 */
 	function validate( $value, $alldata ) {
 		$p = parent::validate( $value, $alldata );
@@ -73,8 +73,8 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 	}
 
 	/**
-	 * @param $value
-	 * @param $alldata
+	 * @param string $value
+	 * @param array $alldata
 	 * @return string
 	 */
 	function filter( $value, $alldata ) {

@@ -26,6 +26,8 @@ class MessageGroupStatesUpdaterJob extends Job {
 	/**
 	 * Hook: TranslateEventTranslationReview
 	 * and also on translation changes
+	 * @param MessageHandle $handle
+	 * @return true
 	 */
 	public static function onChange( MessageHandle $handle ) {
 		$job = self::newJob( $handle->getTitle() );
@@ -35,7 +37,7 @@ class MessageGroupStatesUpdaterJob extends Job {
 	}
 
 	/**
-	 * @param $title
+	 * @param Title $title
 	 * @return MessageGroupStatesUpdaterJob
 	 */
 	public static function newJob( $title ) {

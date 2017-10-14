@@ -89,10 +89,14 @@ abstract class TranslateTask {
 	 */
 	abstract protected function output();
 
-	/// Processes messages before paging is done.
+	/**
+	 * Processes messages before paging is done.
+	 */
 	abstract protected function preinit();
 
-	/// Processes messages after paging is done.
+	/**
+	 * Processes messages after paging is done.
+	 */
 	abstract protected function postinit();
 
 	/**

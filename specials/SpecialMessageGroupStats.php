@@ -200,9 +200,9 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	 * Filter an array of languages based on whether a priority set of
 	 * languages present for the passed group. If priority languages are
 	 * present, to that list add languages with more than 0% translation.
-	 * @param $languages Array of Languages to be filtered
-	 * @param $group
-	 * @param $cache
+	 * @param array &$languages Array of Languages to be filtered
+	 * @param string $group
+	 * @param array $cache
 	 */
 	protected function filterPriorityLangs( &$languages, $group, $cache ) {
 		$filterLangs = TranslateMetadata::get( $group, 'prioritylangs' );
@@ -223,8 +223,8 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	}
 
 	/**
-	 * @param $code
-	 * @param $cache
+	 * @param string $code
+	 * @param array $cache
 	 * @return string
 	 */
 	protected function makeRow( $code, $cache ) {
@@ -271,8 +271,8 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	}
 
 	/**
-	 * @param $code
-	 * @param $params
+	 * @param string $code
+	 * @param array $params
 	 * @return string
 	 */
 	protected function getMainColumnCell( $code, $params ) {
