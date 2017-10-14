@@ -1001,7 +1001,7 @@ class PageTranslationHooks {
 
 		$group = $handle->getGroup();
 		if ( !$group instanceof WikiPageMessageGroup ) {
-			return true;
+			return;
 		}
 
 		// There could be interfaces which may allow mass deletion (eg. Nuke). Since they could
