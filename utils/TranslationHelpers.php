@@ -149,6 +149,7 @@ class TranslationHelpers {
 
 	/**
 	 * Gets the linguistically correct language code for translation
+	 * @return string
 	 */
 	public function getTargetLanguage() {
 		global $wgLanguageCode, $wgTranslateDocumentationLanguageCode;

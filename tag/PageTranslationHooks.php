@@ -75,6 +75,7 @@ class PageTranslationHooks {
 	 *
 	 * @param Title $title
 	 * @param Language &$pageLang
+	 * @return true
 	 */
 	public static function onPageContentLanguage( Title $title, &$pageLang ) {
 		// For translation pages, parse plural, grammar etc with correct language,
@@ -103,7 +104,12 @@ class PageTranslationHooks {
 		}
 	}
 
-	/// Hook: OutputPageBeforeHTML
+	/**
+	 * Hook: OutputPageBeforeHTML
+	 * @param OutputPage $out
+	 * @param string $text
+	 * @return true
+	 */
 	public static function injectCss( OutputPage $out, /*string*/$text ) {
 		global $wgTranslatePageTranslationULS;
 
@@ -131,6 +137,15 @@ class PageTranslationHooks {
 
 	/**
 	 * This is triggered after saves to translation unit pages
+	 * @param WikiPage $wikiPage
+	 * @param User $user
+	 * @param TextContent $content
+	 * @param string $summary
+	 * @param bool $minor
+	 * @param int $flags
+	 * @param Revision $revision
+	 * @param MessageHandle $handle
+	 * @return true
 	 */
 	public static function onSectionSave( WikiPage $wikiPage, User $user, TextContent $content,
 		$summary, $minor, $flags, $revision, MessageHandle $handle
@@ -366,6 +381,11 @@ class PageTranslationHooks {
 	/**
 	 * Display nice error when editing content.
 	 * Hook: EditFilterMergedContent
+	 * @param IContextSource $context
+	 * @param Content $content
+	 * @param Status $status
+	 * @param string $summary
+	 * @return true
 	 */
 	public static function tpSyntaxCheckForEditContent( $context, $content, $status, $summary ) {
 		if ( !$content instanceof TextContent ) {
@@ -392,6 +412,9 @@ class PageTranslationHooks {
 
 	/**
 	 * Returns any syntax error.
+	 * @param Title $title
+	 * @param string $text
+	 * @return null|TPException
 	 */
 	protected static function tpSyntaxError( $title, $text ) {
 		if ( strpos( $text, '<translate>' ) === false ) {
@@ -412,6 +435,16 @@ class PageTranslationHooks {
 	 * When attempting to save, last resort. Edit page would only display
 	 * edit conflict if there wasn't tpSyntaxCheckForEditPage.
 	 * Hook: PageContentSave
+	 * @param WikiPage $wikiPage
+	 * @param User $user
+	 * @param Content $content
+	 * @param string $summary
+	 * @param bool $minor
+	 * @param string $_1
+	 * @param bool $_2
+	 * @param int $flags
+	 * @param Status $status
+	 * @return true
 	 */
 	public static function tpSyntaxCheck( $wikiPage, $user, $content, $summary,
 		$minor, $_1, $_2, $flags, $status
@@ -444,6 +477,16 @@ class PageTranslationHooks {
 
 	/**
 	 * Hook: PageContentSaveComplete
+	 * @param WikiPage $wikiPage
+	 * @param User $user
+	 * @param Content $content
+	 * @param string $summary
+	 * @param bool $minor
+	 * @param string $_1
+	 * @param bool $_2
+	 * @param int $flags
+	 * @param Revision $revision
+	 * @return true
 	 */
 	public static function addTranstag( $wikiPage, $user, $content, $summary,
 		$minor, $_1, $_2, $flags, $revision
@@ -487,6 +530,10 @@ class PageTranslationHooks {
 	 * at the moment.
 	 * Hook: RevisionInsertComplete
 	 * @since 2012-05-08
+	 * @param Revision $rev
+	 * @param string $text
+	 * @param int $flags
+	 * @return true
 	 */
 	public static function updateTranstagOnNullRevisions( Revision $rev, $text, $flags ) {
 		$title = $rev->getTitle();
@@ -594,6 +641,11 @@ class PageTranslationHooks {
 	/**
 	 * Prevent editing of translation pages directly.
 	 * Hook: getUserPermissionsErrorsExpensive
+	 * @param Title $title
+	 * @param User $user
+	 * @param string $action
+	 * @param bool &$result
+	 * @return bool
 	 */
 	public static function preventDirectEditing( Title $title, User $user, $action, &$result ) {
 		if ( self::$allowTargetEdit ) {
@@ -828,14 +880,25 @@ class PageTranslationHooks {
 		}
 	}
 
-	/// Hook: SpecialPage_initList
+	/**
+	 * Hook: SpecialPage_initList
+	 * @param array &$list
+	 * @return true
+	 */
 	public static function replaceMovePage( &$list ) {
 		$list['Movepage'] = 'SpecialPageTranslationMovePage';
 
 		return true;
 	}
 
-	/// Hook: getUserPermissionsErrorsExpensive
+	/**
+	 * Hook: getUserPermissionsErrorsExpensive
+	 * @param Title $title
+	 * @param User $user
+	 * @param string $action
+	 * @param array &$result
+	 * @return bool
+	 */
 	public static function lockedPagesCheck( Title $title, User $user, $action, &$result ) {
 		if ( $action === 'read' ) {
 			return true;
@@ -852,7 +915,13 @@ class PageTranslationHooks {
 		return true;
 	}
 
-	/// Hook: SkinSubPageSubtitle
+	/**
+	 * Hook: SkinSubPageSubtitle
+	 * @param array &$subpages
+	 * @param Skin|null $skin
+	 * @param OutputPage $out
+	 * @return bool
+	 */
 	public static function replaceSubtitle( &$subpages, $skin = null, OutputPage $out ) {
 		$isTranslationPage = TranslatablePage::isTranslationPage( $out->getTitle() );
 		if ( !$isTranslationPage
@@ -915,6 +984,9 @@ class PageTranslationHooks {
 	 * Converts the edit tab (if exists) for translation pages to translate tab.
 	 * Hook: SkinTemplateNavigation
 	 * @since 2013.06
+	 * @param Skin $skin
+	 * @param array &$tabs
+	 * @return true
 	 */
 	public static function translateTab( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
@@ -941,6 +1013,12 @@ class PageTranslationHooks {
 	 * Hook to update source and destination translation pages on moving translation units
 	 * Hook: TitleMoveComplete
 	 * @since 2014.08
+	 * @param Title $ot
+	 * @param Title $nt
+	 * @param User $user
+	 * @param int $oldid
+	 * @param int $newid
+	 * @param string $reason
 	 */
 	public static function onMoveTranslationUnits( Title $ot, Title $nt, User $user,
 		$oldid, $newid, $reason
@@ -988,6 +1066,12 @@ class PageTranslationHooks {
 	 * Hook to update translation page on deleting a translation unit
 	 * Hook: ArticleDeleteComplete
 	 * @since 2016.05
+	 * @param WikiPage &$unit
+	 * @param User &$user
+	 * @param string $reason
+	 * @param int $id
+	 * @param Content $content
+	 * @param ManualLogEntry $logEntry
 	 */
 	public static function onDeleteTranslationUnit( WikiPage &$unit, User &$user, $reason,
 		$id, $content, $logEntry

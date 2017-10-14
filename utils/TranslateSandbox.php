@@ -238,7 +238,12 @@ class TranslateSandbox {
 		return false;
 	}
 
-	/// Hook: UserGetRights
+	/**
+	 * Hook: UserGetRights
+	 * @param User $user
+	 * @param array &$rights
+	 * @return true
+	 */
 	public static function enforcePermissions( User $user, array &$rights ) {
 		global $wgTranslateUseSandbox;
 
@@ -283,6 +288,10 @@ class TranslateSandbox {
 	/**
 	 * Whitelisting for certain API modules. See also enforcePermissions.
 	 * Hook: ApiCheckCanExecute
+	 * @param ApiBase $module
+	 * @param User $user
+	 * @param string &$message
+	 * @return bool
 	 */
 	public static function onApiCheckCanExecute( ApiBase $module, User $user, &$message ) {
 		$whitelist = [

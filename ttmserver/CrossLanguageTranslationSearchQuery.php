@@ -58,11 +58,15 @@ class CrossLanguageTranslationSearchQuery {
 		return $documents;
 	}
 
-	/*
+	/**
 	 * Extract messages from the resultset and build message definitions.
 	 * Create a message collection from the definitions in the target language.
 	 * Filter the message collection to get filtered messages.
 	 * Slice messages according to limit and offset given.
+	 * @param ResultSet $resultset
+	 * @param int $offset
+	 * @param int $limit
+	 * @return array
 	 */
 	protected function extractMessages( $resultset, $offset, $limit ) {
 		$messages = $documents = $ret = [];

@@ -24,22 +24,30 @@ class StashedTranslation {
 		$this->metadata = $metadata;
 	}
 
-	/// @return User
+	/**
+	 * @return User
+	 */
 	public function getUser() {
 		return $this->user;
 	}
 
-	/// @return Title
+	/**
+	 * @return Title
+	 */
 	public function getTitle() {
 		return $this->title;
 	}
 
-	/// @return string
+	/**
+	 * @return string
+	 */
 	public function getValue() {
 		return $this->value;
 	}
 
-	/// @return array
+	/**
+	 * @return array
+	 */
 	public function getMetadata() {
 		return $this->metadata;
 	}

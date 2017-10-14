@@ -597,7 +597,12 @@ GROOVY;
 		$this->updateMapping = true;
 	}
 
-	// Parse query string and build the search query
+	/**
+	 * Parse query string and build the search query
+	 * @param string $queryString
+	 * @param array $opts
+	 * @return array
+	 */
 	protected function parseQueryString( $queryString, array $opts ) {
 		$fields = $highlights = [];
 		$terms = preg_split( '/\s+/', $queryString );
@@ -663,7 +668,13 @@ GROOVY;
 		return [ $searchQuery, $highlights ];
 	}
 
-	// Search interface
+	/**
+	 * Search interface
+	 * @param string $queryString
+	 * @param array $opts
+	 * @param array $highlight
+	 * @return array
+	 */
 	public function search( $queryString, $opts, $highlight ) {
 		$query = new \Elastica\Query();
 
