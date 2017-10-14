@@ -23,7 +23,7 @@ class AppleFFS extends SimpleFFS {
 	// READ
 
 	/**
-	 * @param array $data
+	 * @param string $data
 	 * @return array Parsed data.
 	 * @throws MWException
 	 */

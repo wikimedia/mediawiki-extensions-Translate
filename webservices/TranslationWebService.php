@@ -208,7 +208,8 @@ abstract class TranslationWebService {
 	}
 
 	/**
-	 * @see doPairs
+	 * @see self::doPairs
+	 * @return array
 	 * @throws TranslationWebServiceConfigurationException
 	 */
 	protected function getSupportedLanguagePairs() {

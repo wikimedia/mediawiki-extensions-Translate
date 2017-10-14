@@ -745,6 +745,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * database fields page_namespace and page_title as keys and returns
 	 * the value for those indexes.
 	 * @since 2011-12-23
+	 * @param stdClass $row
+	 * @return string|null
 	 */
 	protected function rowToKey( $row ) {
 		$map = $this->getReverseMap();
@@ -760,6 +762,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Creates a two-dimensional map of namespace and pagenames.
 	 * @since 2011-12-23
+	 * @return array
 	 */
 	public function getReverseMap() {
 		if ( isset( $this->reverseMap ) ) {
@@ -883,7 +886,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * @param mixed $offset
-	 * @param $value
+	 * @param mixed $value
 	 */
 	public function offsetSet( $offset, $value ) {
 		$this->messages[$offset] = $value;

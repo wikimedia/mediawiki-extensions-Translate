@@ -24,7 +24,7 @@ class SupportAid extends TranslationAid {
 	/**
 	 * Target URL for a link provided by a support button/aid.
 	 *
-	 * @param $title Title Title object for the translation message.
+	 * @param Title $title Title object for the translation message.
 	 * @since 2015.09
 	 * @return string
 	 * @throws TranslationHelperException

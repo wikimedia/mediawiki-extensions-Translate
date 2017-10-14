@@ -19,11 +19,11 @@ class TranslationStats {
 	 * Returns translated percentage for message group in given
 	 * languages
 	 *
-	 * @param $group \string Unique key identifying the group
-	 * @param $languages \array List of language codes
+	 * @param \string $group Unique key identifying the group
+	 * @param \array $languages List of language codes
 	 * @param bool|int $threshold \int Minimum required percentage translated to
 	 * return. Other given language codes will not be returned.
-	 * @param $simple \bool Return only codes or code/pecentage pairs
+	 * @param \bool $simple Return only codes or code/pecentage pairs
 	 *
 	 * @return \array Array of key value pairs code (string)/percentage
 	 * (float) or array of codes, depending on $simple

@@ -13,6 +13,7 @@
 class TranslateHooks {
 	/**
 	 * Hook: ResourceLoaderTestModules
+	 * @param array &$modules
 	 */
 	public static function onResourceLoaderTestModules( array &$modules ) {
 		$modules['qunit']['ext.translate.parsers.test'] = [
@@ -425,6 +426,7 @@ class TranslateHooks {
 
 	/**
 	 * Hook: ParserTestTables
+	 * @param array &$tables
 	 */
 	public static function parserTestTables( array &$tables ) {
 		$tables[] = 'revtag';
@@ -450,6 +452,8 @@ class TranslateHooks {
 	/**
 	 * Hook: LanguageGetTranslatedLanguageNames
 	 * Hook: TranslateSupportedLanguages
+	 * @param array &$names
+	 * @param string $code
 	 */
 	public static function translateMessageDocumentationLanguage( array &$names, $code ) {
 		global $wgTranslateDocumentationLanguageCode;
@@ -469,6 +473,7 @@ class TranslateHooks {
 
 	/**
 	 * Hook: SpecialSearchProfiles
+	 * @param array &$profiles
 	 */
 	public static function searchProfile( array &$profiles ) {
 		global $wgTranslateMessageNamespaces;
@@ -497,6 +502,12 @@ class TranslateHooks {
 
 	/**
 	 * Hook: SpecialSearchProfileForm
+	 * @param SpecialSearch $search
+	 * @param string &$form
+	 * @param string $profile
+	 * @param string $term
+	 * @param array $opts
+	 * @return bool
 	 */
 	public static function searchProfileForm(
 		SpecialSearch $search,
@@ -561,6 +572,9 @@ class TranslateHooks {
 
 	/**
 	 * Hook: SpecialSearchSetupEngine
+	 * @param SpecialSearch $search
+	 * @param string $profile
+	 * @param SearchEngine $engine
 	 */
 	public static function searchProfileSetupEngine(
 		SpecialSearch $search,
@@ -581,6 +595,9 @@ class TranslateHooks {
 
 	/**
 	 * Hook: Translate:MessageGroupStats:isIncluded
+	 * @param int $id
+	 * @param string $code
+	 * @return bool
 	 */
 	public static function hideDiscouragedFromStats( $id, $code ) {
 		// Return true to keep, false to exclude
@@ -589,6 +606,9 @@ class TranslateHooks {
 
 	/**
 	 * Hook: Translate:MessageGroupStats:isIncluded
+	 * @param int $id
+	 * @param string $code
+	 * @return false
 	 */
 	public static function hideRestrictedFromStats( $id, $code ) {
 		$filterLangs = TranslateMetadata::get( $id, 'prioritylangs' );
@@ -605,6 +625,7 @@ class TranslateHooks {
 
 	/**
 	 * Hook: LinksUpdate
+	 * @param LinksUpdate $updater
 	 */
 	public static function preventCategorization( LinksUpdate $updater ) {
 		$handle = new MessageHandle( $updater->getTitle() );
@@ -618,6 +639,8 @@ class TranslateHooks {
 	 *
 	 * Adds $wgTranslateDocumentationLanguageCode to ResourceLoader configuration
 	 * when Special:Translate is shown.
+	 * @param array &$vars
+	 * @param OutputPage $out
 	 */
 	public static function addConfig( array &$vars, OutputPage $out ) {
 		$request = $out->getRequest();
@@ -644,6 +667,7 @@ class TranslateHooks {
 
 	/**
 	 * Hook: AdminLinks
+	 * @param ALTree $tree
 	 */
 	public static function onAdminLinks( ALTree $tree ) {
 		global $wgTranslateUseSandbox;
@@ -716,6 +740,10 @@ class TranslateHooks {
 	 * Hook: AbortEmailNotification
 	 *
 	 * False aborts the email.
+	 * @param User $editor
+	 * @param Title $title
+	 * @param RecentChange $rc
+	 * @return bool
 	 */
 	public static function onAbortEmailNotificationReview(
 		User $editor,
@@ -762,6 +790,7 @@ class TranslateHooks {
 
 	/**
 	 * Hook: ParserFirstCallInit
+	 * @param Parser $parser
 	 */
 	public static function setupTranslateParserFunction( Parser $parser ) {
 		$parser->setFunctionHook( 'translation', 'TranslateHooks::translateRenderParserFunction' );

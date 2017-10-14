@@ -28,8 +28,8 @@ abstract class TMessage {
 	/**
 	 * Creates new message object.
 	 *
-	 * @param $key string Unique key identifying this message.
-	 * @param $definition string The authoritave definition of this message.
+	 * @param string $key Unique key identifying this message.
+	 * @param string $definition The authoritave definition of this message.
 	 */
 	public function __construct( $key, $definition ) {
 		$this->key = $key;
@@ -60,7 +60,7 @@ abstract class TMessage {
 
 	/**
 	 * Set the committed translation.
-	 * @param $text \string
+	 * @param \string $text
 	 */
 	public function setInfile( $text ) {
 		$this->infile = $text;
@@ -76,7 +76,7 @@ abstract class TMessage {
 
 	/**
 	 * Add a tag for this message.
-	 * @param $tag \string
+	 * @param \string $tag
 	 */
 	public function addTag( $tag ) {
 		$this->tags[] = $tag;
@@ -84,7 +84,7 @@ abstract class TMessage {
 
 	/**
 	 * Check if this message has a given tag.
-	 * @param $tag \string
+	 * @param \string $tag
 	 * @return \bool
 	 */
 	public function hasTag( $tag ) {
