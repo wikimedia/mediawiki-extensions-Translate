@@ -192,7 +192,7 @@
 	"translate-mgs-noempty": "Ocultar línguas sem traduções",
 	"translate-mgs-submit": "Ver estatísticas",
 	"translate-mgs-column-language": "Língua",
-	"translate-mgs-totals": "Todas as línguas em conjunto",
+	"translate-mgs-totals": "{{PLURAL:$1|A língua em conjunto|Todas as $1 línguas em conjunto}}",
 	"translate-mgs-invalid-group": "O grupo especificado ($1) não existe.",
 	"translate-mgs-nothing": "Sem dados para as estatísticas solicitadas.",
 	"supportedlanguages": "Línguas suportadas",
@@ -394,5 +394,5 @@
 	"translate-ulsdep-title": "Erro de configuração",
 	"translate-ulsdep-body": "A extensão de tradução depende da [https://www.mediawiki.org/wiki/Extension:UniversalLanguageSelector extensão Universal Language Selector].",
 	"tux-session-expired": "Não está mais autenticado. Por favor, inicie a sessão num outro separador. Em alternativa, faça uma cópia das traduções que não foram gravadas, inicie sessão e regresse a esta página para inserir as suas traduções novamente.",
-	"tux-nojs": "Esta página requer JavaScript."
+	"tux-nojs": "Esta ferramenta não funciona sem o JavaScript. Ou o JavaScript está desativado, ou não funcionou, ou este browser não é suportado."
 }

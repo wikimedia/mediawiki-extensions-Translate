@@ -78,7 +78,7 @@
 	"tpt-translation-intro-fuzzy": "Las traducciones desactualizadas están marcadas así.",
 	"tpt-languages-legend": "Otros idiomas:",
 	"tpt-languages-zero": "Iniciar la traducción para este idioma",
-	"tpt-languages-nonzero": "$1 ($2% traducido)",
+	"tpt-languages-nonzero": "$1 ($2 % traducido)",
 	"tpt-tab-translate": "Traducir",
 	"tpt-target-page": "No se puede actualizar esta página manualmente.\nEsta página es una traducción de la página [[$1]] y puedes actualizar la traducción mediante [$2 la herramienta correspondiente].",
 	"tpt-patrolling-blocked": "Esta página no puede patrullarse. En su lugar, usa la acción de traducción para revisarla.",
