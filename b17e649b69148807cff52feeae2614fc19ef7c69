@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0e6af365_4643b567",
+        "filename": "resources/images/check-small.svg",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2017-10-16T03:31:03Z",
+      "side": 1,
+      "message": "Can\u0027t reproduce this. I\u0027ve recontrolled the optimized code visually at 500% zoom level without finding something…",
+      "parentUuid": "2e7b3738_07698088",
+      "revId": "b17e649b69148807cff52feeae2614fc19ef7c69",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e7b3738_8722504f",
         "filename": "resources/images/label-page-tick.svg",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2017-09-25T07:23:44Z",
       "side": 1,
       "message": "This file seems to be currently unused.",
+      "revId": "b17e649b69148807cff52feeae2614fc19ef7c69",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6af365_8620cda9",
+        "filename": "resources/images/label-page-tick.svg",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2017-10-16T03:31:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e7b3738_8722504f",
       "revId": "b17e649b69148807cff52feeae2614fc19ef7c69",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "0e6af365_2617a157",
+        "filename": "resources/images/label-page.svg",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2017-10-16T03:31:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e7b3738_a7274c5e",
+      "revId": "b17e649b69148807cff52feeae2614fc19ef7c69",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e7b3738_471d4813",
         "filename": "resources/images/project.svg",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2017-09-25T07:23:44Z",
       "side": 1,
       "message": "A white pixel appears in the top-left corner. Is that intentional or expected?",
+      "revId": "b17e649b69148807cff52feeae2614fc19ef7c69",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6af365_461ad57f",
+        "filename": "resources/images/project.svg",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2017-10-16T03:31:03Z",
+      "side": 1,
+      "message": "Can\u0027t reproduce. No visual change intended on this one as it\u0027s too far from any other icon.",
+      "parentUuid": "2e7b3738_471d4813",
       "revId": "b17e649b69148807cff52feeae2614fc19ef7c69",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
