@@ -277,7 +277,8 @@
 				group: state.group,
 				language: state.language,
 				filter: filter,
-				showMessage: offset
+				showMessage: offset,
+				optional: offset ? 1 : undefined
 			} );
 
 			// Start loading messages
