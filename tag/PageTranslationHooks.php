@@ -373,6 +373,8 @@ class PageTranslationHooks {
 		}
 
 		$text = $content->getNativeData();
+		// See T154500
+		$text = str_replace( [ "\r\n", "\r" ], "\n", rtrim( $text ) );
 		$title = $context->getTitle();
 
 		$e = self::tpSyntaxError( $title, $text );
@@ -416,6 +418,8 @@ class PageTranslationHooks {
 	) {
 		if ( $content instanceof TextContent ) {
 			$text = $content->getNativeData();
+			// See T154500
+			$text = str_replace( [ "\r\n", "\r" ], "\n", rtrim( $text ) );
 		} else {
 			// Screw it, not interested
 			return true;
