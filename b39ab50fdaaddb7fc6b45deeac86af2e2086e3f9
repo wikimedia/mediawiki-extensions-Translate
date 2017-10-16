@@ -22,6 +22,30 @@
       "revId": "b39ab50fdaaddb7fc6b45deeac86af2e2086e3f9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6af365_fd2913e2",
+        "filename": "resources/js/ext.translate.groupselector.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2017-10-16T20:56:16Z",
+      "side": 1,
+      "message": "I believe so",
+      "parentUuid": "0e6af365_fa204af4",
+      "range": {
+        "startLine": 624,
+        "startChar": 26,
+        "endLine": 624,
+        "endChar": 27
+      },
+      "revId": "b39ab50fdaaddb7fc6b45deeac86af2e2086e3f9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
