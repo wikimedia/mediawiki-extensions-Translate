@@ -776,15 +776,15 @@
 				if ( mw.config.get( 'wgTranslatePermissionUrl' ) !== false ) {
 					$requestRight
 						.append( $( '<a>' )
-						.text( mw.msg( 'translate-edit-askpermission' ) )
-						.addClass( 'tux-editor-ask-permission' )
-						.attr( {
-							href: mw.util.getUrl(
-								mw.config.get( 'wgTranslateUseSandbox' ) ?
-									'Special:TranslationStash' :
-									mw.config.get( 'wgTranslatePermissionUrl' )
+							.text( mw.msg( 'translate-edit-askpermission' ) )
+							.addClass( 'tux-editor-ask-permission' )
+							.attr( {
+								href: mw.util.getUrl(
+									mw.config.get( 'wgTranslateUseSandbox' ) ?
+										'Special:TranslationStash' :
+										mw.config.get( 'wgTranslatePermissionUrl' )
 								)
-						} )
+							} )
 						);
 				}
 				// Disable the text area if user has no translation rights.
@@ -1058,7 +1058,7 @@
 							.append( $( '<a>' )
 								.attr( {
 									href: mw.translate.getDocumentationEditURL(
-										this.message.title.replace( /\/[a-z\-]+$/, '' )
+										this.message.title.replace( /\/[a-z-]+$/, '' )
 									),
 									target: '_blank'
 								} )

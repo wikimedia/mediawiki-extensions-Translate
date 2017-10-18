@@ -218,7 +218,7 @@
 						.text( mw.msg( 'tsb-translations-current' ) )
 						.addClass( 'four columns' )
 				)
-			);
+		);
 
 		translations.translationstash.translations.sort( sortTranslationsByLanguage );
 		$.each( translations.translationstash.translations, function ( index, translation ) {

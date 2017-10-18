@@ -21,10 +21,8 @@
 
 			$messageDescViewer.addClass( 'hide' );
 
-			$messageDescEditor
-				.removeClass( 'hide' )
-				.find( '.tux-textarea-documentation' )
-					.focus();
+			$messageDescEditor.removeClass( 'hide' );
+			$messageDescEditor.find( '.tux-textarea-documentation' ).focus();
 
 			// So that the link won't be followed
 			return false;
@@ -60,7 +58,7 @@
 			return api.postWithToken( 'csrf', {
 				action: 'edit',
 				title: translateEditor.message.title
-					.replace( /\/[a-z\-]+$/, '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ),
+					.replace( /\/[a-z-]+$/, '/' + mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ),
 				text: newDocumentation
 			} ).done( function ( response ) {
 				var $messageDesc = translateEditor.$editor.find( '.infocolumn-block .message-desc' );
@@ -424,11 +422,8 @@
 		showSupportOptions: function ( support ) {
 			// Support URL
 			if ( support.url ) {
-				this.$editor.find( '.help' )
-					.find( 'a' )
-						.attr( 'href', support.url )
-						.end()
-					.removeClass( 'hide' );
+				this.$editor.find( '.help a' ).attr( 'href', support.url );
+				this.$editor.find( '.help' ).removeClass( 'hide' );
 			}
 		},
 
