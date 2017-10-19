@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Node ue"
+			"Node ue",
+			"Cybernenea11"
 		]
 	},
 	"translate": "Традуче",
@@ -27,9 +28,9 @@
 	"translate-edit-title": "Едитязэ «$1»",
 	"translate-edit-definition": "Дефиниция месажулуй",
 	"translate-edit-contribute": "контрибуе",
-	"translate-edit-no-information": "''Ачест месаж ну аре документацие.\nДакэ штий унде сау кум есте фолосит, ый поць ажута пе чеилалць традукэторь прин адэугаря документацией сале.''",
-	"translate-edit-information": "Информаций деспре месажул «$2» ($1)",
-	"translate-edit-in-other-languages": "Месажул «$1» ын алте лимбь",
+	"translate-edit-no-information": "<em>Ачест месаж ну аре документацие.\nДакэ штиць унде сау кум есте фолосит, ый путець ажута пе чейлалць традукэторь прин адэугаря документацией сале.</em>",
+	"translate-edit-information": "Информаций деспре месаж ($1)",
+	"translate-edit-in-other-languages": "Месажул ын алте лимбь",
 	"translate-magic-submit": "Адуче",
 	"translate-magic-cm-current": "актуал",
 	"translate-magic-cm-original": "Ориӂинал",
