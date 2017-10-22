@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Arystanbek"
+			"Arystanbek",
+			"Sayginer"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "Mesaj grup KİMLİĞİ.",
@@ -36,8 +37,6 @@
 	"apihelp-translatesandbox-param-username": "Kullanıcı oluştururken kullanıcı adı.",
 	"apihelp-translatesandbox-param-password": "Kullanıcı oluştururken şifre.",
 	"apihelp-translatesandbox-param-email": "Kullanıcı oluşturma e-posta.",
-	"apihelp-translateuser-description": "Çeviri kullanıcı hakkında bilgi ile ilgili.",
-	"apihelp-translateuser-example-1": "Kullanıcı hakkındaki bilgileri gösterir",
 	"apihelp-translationaids-description": "Tüm çeviriler aıds sorgu.",
 	"apihelp-translationaids-param-title": "Bilinen bir mesajın tam başlık.",
 	"apihelp-translationaids-param-group": "İleti grup mesajı aittir. Boş ise o zaman birinci grup kullanılır.",
@@ -59,5 +58,6 @@
 	"apihelp-ttmserver-param-sourcelanguage": "Kaynak metnin dil kodu.",
 	"apihelp-ttmserver-param-targetlanguage": "Öneri dil kodu.",
 	"apihelp-ttmserver-param-text": "Metin için öneriler bulmak için.",
-	"apihelp-ttmserver-example-1": "Çeviri \"\" ingilizce Yardım için öneriler"
+	"apihelp-ttmserver-example-1": "Çeviri \"\" ingilizce Yardım için öneriler",
+	"apierror-translate-invalidlanguage": "İstenilen dil geçersiz."
 }
