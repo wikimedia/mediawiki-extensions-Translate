@@ -25,6 +25,7 @@
 	"apihelp-query+messagecollection-param-group": "Gruppe de messàgge.",
 	"apihelp-query+messagecollection-param-language": "Codece d'a Lènghe.",
 	"apihelp-query+messagecollection-param-limit": "Quanda messàgge da 'ndrucà (apprisse 'u filtre).",
+	"apihelp-query+messagecollection-param-offset": "Indere o distanze d'a chiave pe accumenzà.",
 	"apihelp-query+messagegroups-summary": "Torne le 'mbormaziune sus a le gruppe de messàgge.",
 	"apihelp-translatesandbox-param-email": "Email quanne stoche a ccreje 'n'utende.",
 	"apihelp-translationaids-description": "'Nderroghe tutte le aijute de traduziune.",
