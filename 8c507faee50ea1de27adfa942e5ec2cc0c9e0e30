@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce637b91_b7855db3",
+        "filename": "Translate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2017-10-23T11:32:24Z",
+      "side": 1,
+      "message": "Indent this line",
+      "revId": "8c507faee50ea1de27adfa942e5ec2cc0c9e0e30",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce637b91_37b88d74",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2017-10-23T11:32:24Z",
+      "side": 1,
+      "message": "As A Rule, We Do Not Use Title Case In MediaWiki ;)",
+      "range": {
+        "startLine": 122,
+        "startChar": 54,
+        "endLine": 122,
+        "endChar": 62
+      },
+      "revId": "8c507faee50ea1de27adfa942e5ec2cc0c9e0e30",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce637b91_97593960",
+        "filename": "utils/RcFilter.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2017-10-23T11:32:24Z",
+      "side": 1,
+      "message": "Why are the filters in this order? \u0027only\u0027 and \u0027site\u0027 are closely related, but they\u0027re the first and last filter, with \u0027non-translations\u0027 in the middle. It would make more sense to me if \u0027non-translations\u0027 was at the end.",
+      "revId": "8c507faee50ea1de27adfa942e5ec2cc0c9e0e30",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce637b91_b729dd9c",
+        "filename": "utils/RcFilter.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2017-10-23T11:32:24Z",
+      "side": 1,
+      "message": "???\n\nFilter groups are ORed together, so if you select both \u0027only\u0027 and \u0027site\u0027, you should be able to get both. Otherwise there\u0027s no way to get \"everything that\u0027s not not a translation\" or \"everything that\u0027s not a site message\".",
+      "revId": "8c507faee50ea1de27adfa942e5ec2cc0c9e0e30",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
