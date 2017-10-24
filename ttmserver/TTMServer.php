@@ -124,14 +124,22 @@ class TTMServer {
 		return $prevRow[$length2];
 	}
 
-	/// Hook: ArticleDeleteComplete
+	/**
+	 * Hook: ArticleDeleteComplete
+	 * @param WikiPage $wikipage
+	 */
 	public static function onDelete( WikiPage $wikipage ) {
 		$handle = new MessageHandle( $wikipage->getTitle() );
 		$job = TTMServerMessageUpdateJob::newJob( $handle, 'delete' );
 		JobQueueGroup::singleton()->push( $job );
 	}
 
-	/// Called from TranslateEditAddons::onSave
+	/**
+	 * Called from TranslateEditAddons::onSave
+	 * @param MessageHandle $handle
+	 * @param string $text
+	 * @param bool $fuzzy
+	 */
 	public static function onChange( MessageHandle $handle, $text, $fuzzy ) {
 		$job = TTMServerMessageUpdateJob::newJob( $handle, 'refresh' );
 		JobQueueGroup::singleton()->push( $job );

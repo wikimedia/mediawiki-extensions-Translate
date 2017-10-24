@@ -51,6 +51,7 @@ class TTMServerMessageUpdateJob extends Job {
 
 	/**
 	 * @param MessageHandle $handle
+	 * @param string $command
 	 * @return TTMServerMessageUpdateJob
 	 */
 	public static function newJob( MessageHandle $handle, $command ) {
@@ -79,6 +80,7 @@ class TTMServerMessageUpdateJob extends Job {
 
 	/**
 	 * Fetch all the translations and update them.
+	 * @return bool
 	 */
 	public function run() {
 		global $wgTranslateTranslationServices,
@@ -116,7 +118,7 @@ class TTMServerMessageUpdateJob extends Job {
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @inheritDoc
 	 */
 	public function allowRetries() {
 		return false;

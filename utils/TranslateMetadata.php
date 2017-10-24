@@ -15,8 +15,8 @@ class TranslateMetadata {
 
 	/**
 	 * Get a metadata value for the given group and key.
-	 * @param $group string The group name
-	 * @param $key string Metadata key
+	 * @param string $group The group name
+	 * @param string $key Metadata key
 	 * @return string|bool
 	 */
 	public static function get( $group, $key ) {
@@ -38,9 +38,9 @@ class TranslateMetadata {
 	/**
 	 * Set a metadata value for the given group and metadata key. Updates the
 	 * value if already existing.
-	 * @param $group string The group id
-	 * @param $key string Metadata key
-	 * @param $value string Metadata value
+	 * @param string $group The group id
+	 * @param string $key Metadata key
+	 * @param string $value Metadata value
 	 */
 	public static function set( $group, $key, $value ) {
 		$dbw = wfGetDB( DB_MASTER );

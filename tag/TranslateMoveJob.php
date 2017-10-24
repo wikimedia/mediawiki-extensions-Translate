@@ -16,10 +16,10 @@
  */
 class TranslateMoveJob extends Job {
 	/**
-	 * @param $source Title
-	 * @param $target Title
-	 * @param $params array, should include base-source and base-target
-	 * @param $performer
+	 * @param Title $source
+	 * @param Title $target
+	 * @param array $params should include base-source and base-target
+	 * @param User $performer
 	 * @return TranslateMoveJob
 	 */
 	public static function newJob( Title $source, Title $target, array $params,
@@ -184,7 +184,7 @@ class TranslateMoveJob extends Job {
 
 	/**
 	 * Adapted from wfSuppressWarnings to allow not leaving redirects.
-	 * @param $end bool
+	 * @param bool $end
 	 */
 	public static function forceRedirects( $end = false ) {
 		static $suppressCount = 0;

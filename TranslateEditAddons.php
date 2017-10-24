@@ -18,6 +18,7 @@ class TranslateEditAddons {
 	/**
 	 * Do not show the usual introductory messages on edit page for messages.
 	 * Hook: AlternateEdit
+	 * @param EditPage $editPage
 	 */
 	public static function suppressIntro( EditPage $editPage ) {
 		$handle = new MessageHandle( $editPage->getTitle() );
@@ -83,6 +84,8 @@ class TranslateEditAddons {
 	/**
 	 * Adds the translation aids and navigation to the normal edit page.
 	 * Hook: EditPage::showEditForm:initial
+	 * @param EditPage $object
+	 * @return true
 	 */
 	public static function addTools( EditPage $object ) {
 		$handle = new MessageHandle( $object->getTitle() );
@@ -99,6 +102,10 @@ class TranslateEditAddons {
 	 * Replace the normal save button with one that says if you are editing
 	 * message documentation to try to avoid accidents.
 	 * Hook: EditPageBeforeEditButtons
+	 * @param EditPage $editpage
+	 * @param array &$buttons
+	 * @param int $tabindex
+	 * @return true
 	 */
 	public static function buttonHack( EditPage $editpage, &$buttons, $tabindex ) {
 		$handle = new MessageHandle( $editpage->getTitle() );
@@ -198,6 +205,16 @@ class TranslateEditAddons {
 	/**
 	 * Runs message checks, adds tp:transver tags and updates statistics.
 	 * Hook: PageContentSaveComplete
+	 * @param WikiPage $wikiPage
+	 * @param User $user
+	 * @param Content $content
+	 * @param string $summary
+	 * @param bool $minor
+	 * @param string $_1
+	 * @param bool $_2
+	 * @param int $flags
+	 * @param Revision $revision
+	 * @return true
 	 */
 	public static function onSave( WikiPage $wikiPage, $user, $content, $summary,
 		$minor, $_1, $_2, $flags, $revision
@@ -377,6 +394,9 @@ class TranslateEditAddons {
 
 	/**
 	 * Hook: ArticleContentOnDiff
+	 * @param DifferenceEngine $de
+	 * @param OutputPage $out
+	 * @return true
 	 */
 	public static function displayOnDiff( DifferenceEngine $de, OutputPage $out ) {
 		$title = $de->getTitle();

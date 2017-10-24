@@ -17,7 +17,7 @@
  */
 class JsonFFS extends SimpleFFS {
 	/**
-	 * @param $data
+	 * @param string $data
 	 * @return bool
 	 */
 	public static function isValid( $data ) {
@@ -25,7 +25,7 @@ class JsonFFS extends SimpleFFS {
 	}
 
 	/**
-	 * @param $group FileBasedMessageGroup
+	 * @param FileBasedMessageGroup $group
 	 */
 	public function __construct( FileBasedMessageGroup $group ) {
 		parent::__construct( $group );
@@ -37,7 +37,7 @@ class JsonFFS extends SimpleFFS {
 	}
 
 	/**
-	 * @param array $data
+	 * @param string $data
 	 * @return array Parsed data.
 	 */
 	public function readFromVariable( $data ) {

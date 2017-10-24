@@ -222,7 +222,7 @@ class MessageHandle {
 	/**
 	 * Check if a string contains the fuzzy string.
 	 *
-	 * @param $text string Arbitrary text
+	 * @param string $text Arbitrary text
 	 * @return bool If string contains fuzzy string.
 	 */
 	public static function hasFuzzyString( $text ) {

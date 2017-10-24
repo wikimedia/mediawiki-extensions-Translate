@@ -9,7 +9,7 @@
  */
 class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	/**
-	 * @param $group FileBasedMessageGroup
+	 * @param FileBasedMessageGroup $group
 	 */
 	public function __construct( FileBasedMessageGroup $group ) {
 		parent::__construct( $group );
@@ -21,7 +21,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	/**
-	 * @param $data
+	 * @param string $data
 	 * @return array Parsed data.
 	 */
 	public function readFromVariable( $data ) {
@@ -51,7 +51,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	/**
-	 * @param $collection MessageCollection
+	 * @param MessageCollection $collection
 	 * @return string
 	 */
 	protected function writeReal( MessageCollection $collection ) {
@@ -94,7 +94,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	/**
-	 * @param $collection MessageCollection
+	 * @param MessageCollection $collection
 	 * @return string
 	 */
 	protected function doHeader( MessageCollection $collection ) {
@@ -115,7 +115,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	}
 
 	/**
-	 * @param $collection MessageCollection
+	 * @param MessageCollection $collection
 	 * @return string
 	 */
 	protected function doAuthors( MessageCollection $collection ) {
@@ -150,7 +150,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * Flattens multidimensional array by using the path to the value as key
 	 * with each individual key separated by a dot.
 	 *
-	 * @param $messages array
+	 * @param array $messages
 	 *
 	 * @return array
 	 */
@@ -162,7 +162,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * Performs the reverse operation of flatten. Each dot (or custom separator)
 	 * in the key starts a new subarray in the final array.
 	 *
-	 * @param $messages array
+	 * @param array $messages
 	 *
 	 * @return array
 	 */
