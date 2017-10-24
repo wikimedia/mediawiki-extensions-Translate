@@ -784,6 +784,11 @@ GROOVY;
 			foreach ( $results as $result ) {
 				$ids[] = $result->getId();
 			}
+
+			if ( $ids === [] ) {
+				continue;
+			}
+
 			MWElasticUtils::withRetry( $retryAttempts,
 				function () use ( $ids, $type ) {
 					$type->deleteIds( $ids );
