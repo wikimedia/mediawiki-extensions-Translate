@@ -16,6 +16,24 @@
       "revId": "c9aaf5a44ad75881fa8407bbe42be874bbd98d3a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce637b91_13cb1250",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2017-10-24T17:18:05Z",
+      "side": 1,
+      "message": "I had similar issue but completely forgot to check Translate\nOn my side I used continue it worked well..\nsee https://gerrit.wikimedia.org/r/#/c/376511/",
+      "parentUuid": "ce637b91_539aea67",
+      "revId": "c9aaf5a44ad75881fa8407bbe42be874bbd98d3a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
