@@ -34,6 +34,24 @@
       "revId": "c9aaf5a44ad75881fa8407bbe42be874bbd98d3a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce637b91_538c2aff",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 789,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-10-24T17:28:54Z",
+      "side": 1,
+      "message": "I changed it to continue too.",
+      "parentUuid": "ce637b91_13cb1250",
+      "revId": "c9aaf5a44ad75881fa8407bbe42be874bbd98d3a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
