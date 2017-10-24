@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce637b91_c4a37a3e",
+        "filename": "ttmserver/CrossLanguageTranslationSearchQuery.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2017-10-24T00:09:59Z",
+      "side": 1,
+      "message": "I assume this is meant to be ResultSet.",
+      "range": {
+        "startLine": 66,
+        "startChar": 11,
+        "endLine": 66,
+        "endChar": 20
+      },
+      "revId": "9a5cec6ace18d93980a9ccf5a8a284d163bd63ba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
