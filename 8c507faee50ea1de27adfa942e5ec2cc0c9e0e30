@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e5d03d5_4cc6f34f",
+        "filename": "Translate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 4983
+      },
+      "writtenOn": "2017-10-25T19:25:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce637b91_b7855db3",
+      "revId": "8c507faee50ea1de27adfa942e5ec2cc0c9e0e30",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce637b91_37b88d74",
         "filename": "i18n/core/en.json",
         "patchSetId": 1
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "8e5d03d5_6cc3af3e",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 4983
+      },
+      "writtenOn": "2017-10-25T19:25:11Z",
+      "side": 1,
+      "message": "Good One :)",
+      "parentUuid": "ce637b91_37b88d74",
+      "range": {
+        "startLine": 122,
+        "startChar": 54,
+        "endLine": 122,
+        "endChar": 62
+      },
+      "revId": "8c507faee50ea1de27adfa942e5ec2cc0c9e0e30",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce637b91_97593960",
         "filename": "utils/RcFilter.php",
         "patchSetId": 1
@@ -53,6 +95,24 @@
       "writtenOn": "2017-10-23T11:32:24Z",
       "side": 1,
       "message": "Why are the filters in this order? \u0027only\u0027 and \u0027site\u0027 are closely related, but they\u0027re the first and last filter, with \u0027non-translations\u0027 in the middle. It would make more sense to me if \u0027non-translations\u0027 was at the end.",
+      "revId": "8c507faee50ea1de27adfa942e5ec2cc0c9e0e30",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e5d03d5_0ca9db78",
+        "filename": "utils/RcFilter.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 4983
+      },
+      "writtenOn": "2017-10-25T19:25:11Z",
+      "side": 1,
+      "message": "I have followed original order, but if we change order, it makes sense to make the following order:\n\"Not translations\"\n\"Translations\"\n\"Site messages\"\n\nSince there are logical connections between \"Translations\" and the rest of two, this order should be good.",
+      "parentUuid": "ce637b91_97593960",
       "revId": "8c507faee50ea1de27adfa942e5ec2cc0c9e0e30",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -88,6 +148,24 @@
       "side": 1,
       "message": "Sorry, I misspoke. Groups are ANDed together, filters within groups are ORed together.",
       "parentUuid": "ce637b91_b729dd9c",
+      "revId": "8c507faee50ea1de27adfa942e5ec2cc0c9e0e30",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e5d03d5_acb0c7d9",
+        "filename": "utils/RcFilter.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 4983
+      },
+      "writtenOn": "2017-10-25T19:25:11Z",
+      "side": 1,
+      "message": "I have changed the way filters work, so now all combinations can produce results.",
+      "parentUuid": "8e5d03d5_ac6e87c2",
       "revId": "8c507faee50ea1de27adfa942e5ec2cc0c9e0e30",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
