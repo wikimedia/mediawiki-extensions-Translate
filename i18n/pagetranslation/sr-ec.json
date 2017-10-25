@@ -47,6 +47,7 @@
 	"tpt-discouraged-language-force": "<strong>Ова страница се не може превести на $2.</strong>\n\nПреводилачки администратор је одредио да се ова страница може превести само на: $3.",
 	"tpt-discouraged-language": "<strong>Превођење ове странице на $2 није приоритет.</strong>\n\nПреводилачки администратор је одредио приоритетне језике и они су: $3.",
 	"tpt-discouraged-language-reason": "Разлог: $1",
+	"aggregategroups": "Агрегиране групе",
 	"tpt-aggregategroup-add": "Додај",
 	"tpt-aggregategroup-save": "Сачувај",
 	"tpt-aggregategroup-new-name": "Назив:",

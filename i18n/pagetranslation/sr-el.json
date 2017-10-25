@@ -3,7 +3,8 @@
 		"authors": [
 			"Michaello",
 			"Milicevic01",
-			"Rancher"
+			"Rancher",
+			"Obsuser"
 		]
 	},
 	"right-pagetranslation": "označavanje izdanja stranica za prevod",
@@ -28,6 +29,7 @@
 	"tpt-discouraged-language-header": "Prevođenje ove stranice na $1 nije prioritet.",
 	"tpt-discouraged-language-force": "<strong>Ova stranica se ne može prevesti na $2.</strong>\n\nPrevodilački administrator je odredio da se ova stranica može prevesti samo na: $3.",
 	"tpt-discouraged-language": "<strong>Prevođenje ove stranice na $2 nije prioritet.</strong>\n\nPrevodilački administrator je odredio prioritetne jezike i oni su: $3.",
+	"aggregategroups": "Agregirane grupe",
 	"tpt-aggregategroup-edit-name": "Naziv:",
 	"tpt-aggregategroup-edit-description": "Opis:",
 	"tpt-aggregategroup-update": "Sačuvaj",
@@ -60,8 +62,6 @@
 	"pm-import-button-label": "Uvezi",
 	"pm-savepages-button-label": "Sačuvaj",
 	"pm-cancel-button-label": "Otkaži",
-	"pm-pagename-placeholder": "Unesite naziv stranice",
-	"pm-langcode-placeholder": "Kod jezika",
 	"pp-pagename-placeholder": "Unesite naziv stranice",
 	"pp-save-button-label": "Sačuvaj",
 	"pp-cancel-button-label": "Otkaži"

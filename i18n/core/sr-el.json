@@ -180,7 +180,7 @@
 	"translate-mgs-invalid-group": "Navedena grupa $1 ne postoji.",
 	"translate-mgs-nothing": "Nema šta da se prikaže za zahtevane statistike.",
 	"supportedlanguages": "Podržani jezici",
-	"supportedlanguages-summary": "Ova stranica prikazuje spisak svih podržanih jezika na ovom vikiju, zajedno s imenima prevodioca koji rade na tim jezicima.\nVeličina imena, tj. slova prevodioca zavisi od toga koliko je poruka preveo.\nBoja linije s kojom je ime podvučeno prikazuje koliko je prevodilac aktivan.",
+	"supportedlanguages-summary": "Ova stranica prikazuje spisak svih jezika koje podržava {{SITENAME}},\nzajedno sa imenima prevodilaca koji rade na odabranom jeziku.\nIme prevodioca je veće što je sa više prevoda doprineo.\nBoja linije podvlačenja indicira koliko skoro je prevodilac ovde bio aktivan.",
 	"supportedlanguages-colorlegend": "Legenda za boju; poslednji prevod izvršen pre $1 dana.",
 	"supportedlanguages-portallink": "[$1] $2 – $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
