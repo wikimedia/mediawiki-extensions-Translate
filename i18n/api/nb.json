@@ -51,6 +51,7 @@
 	"apihelp-query+messagegroupstats-summary": "Kjør spørring på meldingsgruppestatistikk.",
 	"apihelp-query+messagegroupstats-param-timelimit": "Maksimal tid som skal brukes på å regne ut manglende statistikk. Om denne er satt til null vil bare de mellomlagrede resultatene fra begynnelsen returneres.",
 	"apihelp-query+messagegroupstats-param-group": "Meldingsgruppe-ID.",
+	"apihelp-query+messagegroupstats-example-1": "List opp oversettelsesfullføringsstatistikk for gruppa «page-Example»",
 	"apihelp-translatesandbox-param-do": "Hva som skal gjøres.",
 	"apihelp-translatesandbox-param-username": "Brukernavn når ny bruker opprettes.",
 	"apihelp-translatesandbox-param-password": "Passord når ny bruker opprettes.",

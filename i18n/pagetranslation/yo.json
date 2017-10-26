@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wikicology"
+			"Wikicology",
+			"Demmy"
 		]
 	},
-	"tpt-languages-nonzero": "A ti túmọ̀ rẹ̀"
+	"tpt-languages-nonzero": "$1 ($2% ti jẹ́ yíyípadàlédè)"
 }
