@@ -13,7 +13,6 @@
 	"tux-sst-count": "{{PLURAL:$1|Ett|$1}} resultat hittades",
 	"tux-sst-facet-language": "Språk",
 	"tux-sst-facet-group": "Meddelandegrupper",
-	"tux-sst-facet-orphan": "(föräldralös)",
 	"tux-sst-nosolr-title": "Sökning är inte tillgänglig",
 	"tux-sst-nosolr-body": "Denna wiki har inte en tjänst för att söka efter översättningar.",
 	"tux-sst-solr-offline-title": "Sökning är inte tillgänglig",
@@ -26,6 +25,7 @@
 	"tux-sst-outdated": "Föråldrade översättningar från $1",
 	"tux-sst-ellipsis-untranslated": "Ingen översättning",
 	"tux-sst-ellipsis-outdated": "Föråldrade översättningar",
+	"tux-sst-link-all-match": "Kräv alla sökord.",
 	"tux-sst-match-message": "Visar översättningar som överensstämmer något sökord. $1",
 	"tux-sst-case-sensitive": "Skiftlägeskänsligt"
 }

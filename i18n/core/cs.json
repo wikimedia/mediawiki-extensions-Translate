@@ -11,7 +11,8 @@
 			"Matěj Suchánek",
 			"Utar",
 			"Clon",
-			"Marek Pavlica"
+			"Marek Pavlica",
+			"Dvorapa"
 		]
 	},
 	"translate": "Překládání",
@@ -381,5 +382,5 @@
 	"translate-ulsdep-title": "Chyba konfigurace",
 	"translate-ulsdep-body": "Rozšíření Translate závisí na [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector rozšíření Universal Language Selector].",
 	"tux-session-expired": "Již nejste přihlášen(a). Přihlaste se prosím v jiné záložce. Anebo si okopírujte neuložené překlady, přihlaste se, vraťte se na tuto stránku a zadejte je znovu.",
-	"tux-nojs": "Tato stránka vyžaduje JavaScript."
+	"tux-nojs": "Tento nástroj nefunguje bez JavaScriptu. JavaScript je buď vypnut, nebo zkolaboval anebo není podporován tento prohlížeč."
 }
