@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gombang"
+		]
+	},
+	"apihelp-aggregategroups-param-group": "ID kelompok pesan.",
+	"apihelp-groupreview-param-group": "Kelompok pesan.",
+	"apihelp-groupreview-param-language": "Kode bahasa.",
+	"apihelp-query+languagestats-param-language": "Kode bahasa.",
+	"apihelp-query+messagecollection-param-group": "Kelompok pesan.",
+	"apihelp-query+messagecollection-param-language": "Kode bahasa."
+}
