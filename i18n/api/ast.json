@@ -109,6 +109,7 @@
 	"apierror-translate-invalidaggregategroupname": "Nome de grupu de mensaxes agregaos inválidu",
 	"apierror-translate-invalidgroup": "El grupu nun esiste o nun ye válidu",
 	"apierror-translate-invalidstate": "L'estáu solicitáu nun ye válidu.",
+	"apierror-translate-invalidlanguage": "La llingua solicitada ye inválida.",
 	"apierror-translate-invalidupdate": "Anovamientu inválidu",
 	"apierror-translate-language-disabled": "La traducción a esta llingua ta desactivada",
 	"apierror-translate-nodynamicgroups": "Nun s'almiten equí los grupos de mensaxes dinámicos",
