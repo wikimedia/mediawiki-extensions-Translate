@@ -63,6 +63,15 @@ class PageTranslationHooks {
 		}
 		self::$renderingContext = false;
 
+		$parser->getOutput()->setExtensionData(
+			'translate-translation-page',
+			[
+				'sourcepagetitle' => $page->getTitle(),
+				'languagecode' => $code,
+				'messagegroupid' => $page->getMessageGroupId()
+			]
+		);
+
 		// Disable edit section links
 		$parser->getOptions()->setEditSection( false );
 
