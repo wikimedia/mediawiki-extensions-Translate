@@ -1,0 +1,14 @@
+== Translate 2017.10 ==
+Released at 2017-10-31.
+
+=== Noteworthy changes ===
+* Special:Translate now accepts showMessage URL parameter that allows linking to specific messages. This will be better accessible in a future release.
+* Special:LanguageStats and Special:MessageGroupStats now show the total number of shown languages.
+* Special:LanguageStats and Special:MessageGroupStats now handle the sortable parameter correctly.
+* Numerious compatibility and stability fixes:
+** Translation editor shortcuts were not showing up in recent version of MediaWiki.
+** Compatibility fix for PHP 7.1.
+** Compatibility fix for translatable pages and Visual Editor wikitext editing mode.
+** Compatibility fix for Elastica that broke translation memory.
+** Compatibility fix for CxserverWebService which changed API.
+* Style updates.
