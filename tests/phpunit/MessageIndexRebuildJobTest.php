@@ -37,7 +37,7 @@ class MessageIndexRebuildJobTest extends MediaWikiTestCase {
 	public function testInsertImmediate() {
 		global $wgTranslateDelayedMessageIndexRebuild;
 		$wgTranslateDelayedMessageIndexRebuild = false;
-		MessageIndexRebuildJob::newJob()->insert();
+		MessageIndexRebuildJob::newJob()->insertIntoJoeQueue();
 		$this->assertFalse(
 			JobQueueGroup::singleton()->get( 'MessageIndexRebuildJob' )->pop(),
 			'There is no job in the JobQueue'
@@ -47,7 +47,7 @@ class MessageIndexRebuildJobTest extends MediaWikiTestCase {
 	public function testInsertDelayed() {
 		global $wgTranslateDelayedMessageIndexRebuild;
 		$wgTranslateDelayedMessageIndexRebuild = true;
-		MessageIndexRebuildJob::newJob()->insert();
+		MessageIndexRebuildJob::newJob()->insertIntoJoeQueue();
 		$job = JobQueueGroup::singleton()->get( 'MessageIndexRebuildJob' )->pop();
 		$this->assertInstanceOf(
 			'MessageIndexRebuildJob',

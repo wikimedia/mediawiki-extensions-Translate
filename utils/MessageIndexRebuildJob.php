@@ -44,7 +44,7 @@ class MessageIndexRebuildJob extends Job {
 	 * in installations with errant job queue processing.
 	 * @override
 	 */
-	public function insert() {
+	public function insertIntoJoeQueue() {
 		global $wgTranslateDelayedMessageIndexRebuild;
 		if ( $wgTranslateDelayedMessageIndexRebuild ) {
 			JobQueueGroup::singleton()->push( $this );
@@ -52,4 +52,12 @@ class MessageIndexRebuildJob extends Job {
 			$this->run();
 		}
 	}
+
+	/**
+	 * @deprecated since 1.31 alias for insertIntoJobQueue()
+	 */
+	public function insert() {
+		$this->insertIntoJobQueue();
+	}
+
 }

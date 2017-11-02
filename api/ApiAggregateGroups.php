@@ -228,7 +228,7 @@ class ApiAggregateGroups extends ApiBase {
 		$this->getResult()->addValue( null, $this->getModuleName(), $output );
 		// Cache needs to be cleared after any changes to groups
 		MessageGroups::singleton()->recache();
-		MessageIndexRebuildJob::newJob()->insert();
+		MessageIndexRebuildJob::newJob()->insertIntoJoeQueue();
 	}
 
 	protected function generateAggregateGroupId( $aggregateGroupName, $prefix = 'agg-' ) {
