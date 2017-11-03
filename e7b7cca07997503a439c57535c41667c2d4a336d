@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e5a8fde_b7d9c62e",
+        "filename": "utils/MessageIndexRebuildJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-03T07:28:58Z",
+      "side": 1,
+      "message": "I would prefer JobQueue :D",
+      "range": {
+        "startLine": 47,
+        "startChar": 27,
+        "endLine": 47,
+        "endChar": 35
+      },
+      "revId": "e7b7cca07997503a439c57535c41667c2d4a336d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e5a8fde_37ce3660",
+        "filename": "utils/MessageIndexRebuildJob.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-03T07:28:58Z",
+      "side": 1,
+      "message": "1.31 doesn\u0027t mean anything in Translate. You could just put a date in here.",
+      "range": {
+        "startLine": 57,
+        "startChar": 22,
+        "endLine": 57,
+        "endChar": 26
+      },
+      "revId": "e7b7cca07997503a439c57535c41667c2d4a336d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
