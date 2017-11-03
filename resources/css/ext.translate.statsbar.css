@@ -13,15 +13,15 @@
 }
 
 .tux-statsbar .tux-proofread {
-	background-color: #23567f;
+	background-color: #ebcc6e;
 }
 
 .tux-statsbar .tux-translated {
-	background-color: #3a89c9;
+	background-color: #36c;
 }
 
 .tux-statsbar .tux-fuzzy {
-	background-color: #ebcc6e;
+	background-color: #fc3;
 }
 
 .tux-statsbar .tux-untranslated {
