@@ -42,7 +42,8 @@
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "0.9.2",
 		"mediawiki/mediawiki-codesniffer": "14.1.0",
-		"jakub-onderka/php-console-highlighter": "0.3.2"
+		"jakub-onderka/php-console-highlighter": "0.3.2",
+		"mediawiki/minus-x": "0.2.0"
 	},
 	"suggest": {
 		"mediawiki/babel": "Users can easily indicate their language proficiency on their user page",
@@ -50,10 +51,14 @@
 		"romaricdrigon/metayaml": "If you want to validate message group configurations"
 	},
 	"scripts": {
-		"fix": "phpcbf",
+		"fix": [
+			"phpcbf",
+			"minus-x fix ."
+		],
 		"test": [
 			"parallel-lint . --exclude vendor --exclude node_modules --exclude extensions",
-			"phpcs -p -s"
+			"phpcs -p -s",
+			"minus-x check ."
 		]
 	}
 }
