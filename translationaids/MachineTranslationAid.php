@@ -21,6 +21,11 @@ class MachineTranslationAid extends QueryAggregatorAwareTranslationAid {
 		$from = $this->group->getSourceLanguage();
 		$to = $this->handle->getCode();
 
+		if ( trim( $definition ) === '' ) {
+			return;
+		}
+
+
 		foreach ( $this->getWebServices( 'mt' ) as $service ) {
 			if ( $service->checkTranslationServiceFailure() ) {
 				continue;
