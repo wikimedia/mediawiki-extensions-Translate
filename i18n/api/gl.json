@@ -107,6 +107,7 @@
 	"apierror-translate-invalidaggregategroupname": "Nome do grupo de mensaxes agregadas non válido",
 	"apierror-translate-invalidgroup": "O grupo non existe ou non é válido",
 	"apierror-translate-invalidstate": "O estado solicitado non é válido.",
+	"apierror-translate-invalidlanguage": "A lingua solicitada non é válida.",
 	"apierror-translate-invalidupdate": "Actualización non válida",
 	"apierror-translate-language-disabled": "A tradución a esta lingua está desactivada",
 	"apierror-translate-nodynamicgroups": "Aquí non están admitidos os grupos de mensaxes dinámicas",
