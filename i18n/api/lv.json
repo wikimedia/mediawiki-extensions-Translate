@@ -8,5 +8,6 @@
 	"apihelp-groupreview-param-group": "Ziņojumu grupa.",
 	"apihelp-groupreview-param-language": "Valodas kods.",
 	"apihelp-query+languagestats-param-language": "Valodas kods.",
-	"apihelp-query+messagecollection-param-language": "Valodas kods."
+	"apihelp-query+messagecollection-param-language": "Valodas kods.",
+	"apihelp-translationstash-param-metadata": "JSON objekts."
 }
