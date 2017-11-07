@@ -3,7 +3,7 @@
  * Show number of characters translated over a given period of time.
  *
  * @author Santhosh Thottingal
- * @copyright Copyright 2013 Santhosh Thottingal
+ * @copyright Copyright © 2013 Santhosh Thottingal
  * @license GPL-2.0+
  * @file
  * @ingroup Script Stats
