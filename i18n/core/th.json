@@ -187,6 +187,7 @@
 	"tux-status-saving": "กำลังบันทึก...",
 	"tux-status-unsaved": "ยังไม่บันทึก",
 	"tux-editor-placeholder": "การแปลของคุณ",
+	"tux-editor-editsummary-placeholder": "สรุปทางเลือก",
 	"tux-editor-paste-original-button-label": "วางข้อความต้นฉบับ",
 	"tux-editor-discard-changes-button-label": "ละทิ้งการเปลี่ยนแปลง",
 	"tux-editor-save-button-label": "บันทึกการแปล",
@@ -225,6 +226,7 @@
 	"tux-editor-close-tooltip": "ปิด",
 	"tux-editor-expand-tooltip": "ขยาย",
 	"tux-editor-collapse-tooltip": "ยุบ",
+	"tux-editor-message-tools-show-editor": "แสดงในตัวแก้ไขวิกิ",
 	"tux-editor-message-tools-history": "ประวัติ",
 	"tux-editor-message-tools-delete": "ลบ",
 	"tux-editor-message-tools-translations": "คำแปลทุกภาษา"
