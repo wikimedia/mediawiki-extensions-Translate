@@ -169,7 +169,7 @@
 	"translate-mgs-noempty": "Ära näita keeli, millel pole ühtegi tõlget",
 	"translate-mgs-submit": "Näita arvandmeid",
 	"translate-mgs-column-language": "Keel",
-	"translate-mgs-totals": "Kõik keeled kokku",
+	"translate-mgs-totals": "{{PLURAL:$1|Ühes keeles|Kõigis $1 keeles}} kokku",
 	"translate-mgs-invalid-group": "Määratud rühma $1 pole.",
 	"translate-mgs-nothing": "Soovitud näitajate kohta pole midagi näidata.",
 	"supportedlanguages": "Toetatud keeled",
@@ -352,5 +352,5 @@
 	"translate-statsbar-tooltip": "$1% tõlgitud, $2% ülevaadatud",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tõlgitud, $2% ülevaadatud, $3% iganenud",
 	"translate-search-more-groups-info": "Veel $1 {{PLURAL:$1|rühm|rühma}}",
-	"tux-nojs": "Selle lehekülje jaoks on vaja JavaScripti."
+	"tux-nojs": "See tööriist ei tööta ilma JavaScriptita. JavaScript on keelatud, see ei toiminud või selle brauseri tugi puudub."
 }

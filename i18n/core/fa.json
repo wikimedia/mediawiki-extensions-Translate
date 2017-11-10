@@ -17,7 +17,8 @@
 			"Armin1392",
 			"Alirezaaa",
 			"Hosseinblue",
-			"Calak"
+			"Calak",
+			"Ommmmid"
 		]
 	},
 	"translate": "ترجمه",
@@ -126,6 +127,8 @@
 	"action-translate-messagereview": "بازبینی ترجمه‌ها",
 	"right-translate-groupreview": "بازبینی ترجمه‌ها",
 	"action-translate-groupreview": "تغییر وضعیت جریان کار گروه پیغام‌ها",
+	"translate-rcfilters-translations": "ترجمه‌ها",
+	"translate-rcfilters-translations-filter-desc": "تغییراتی که ترجمه نیستند",
 	"translate-rc-translation-filter": "پالایش ترجمه‌ها:",
 	"translate-rc-translation-filter-no": "کاری نکن",
 	"translate-rc-translation-filter-only": "تنها ترجمه‌ها را نمایش بده",

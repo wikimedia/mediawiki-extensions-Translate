@@ -115,6 +115,8 @@
 	"action-translate-messagereview": "revisar traducións",
 	"right-translate-groupreview": "Cambiar o estado do fluxo de traballo dos grupos de mensaxes",
 	"action-translate-groupreview": "modificar o estado do fluxo de traballo dos grupos de mensaxes",
+	"translate-rcfilters-translations": "Traducións",
+	"translate-rcfilters-translations-only-label": "Traducións",
 	"translate-rc-translation-filter": "Filtrar as traducións:",
 	"translate-rc-translation-filter-no": "Non facer nada",
 	"translate-rc-translation-filter-only": "Mostrar só as traducións",

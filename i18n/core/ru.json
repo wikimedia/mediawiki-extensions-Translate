@@ -134,6 +134,8 @@
 	"action-translate-import": "импорт переводов, выполненных в оффлайне",
 	"right-translate-messagereview": "досмотр переводов",
 	"right-translate-groupreview": "изменять состояние обработки групп сообщений",
+	"translate-rcfilters-translations": "Переводы",
+	"translate-rcfilters-translations-only-label": "Переводы",
 	"translate-rc-translation-filter": "Фильтровать переводы:",
 	"translate-rc-translation-filter-no": "Без ограничений",
 	"translate-rc-translation-filter-only": "Показать только переводы",
