@@ -14,6 +14,9 @@ class ResourcesOrderTest extends MediaWikiTestCase {
 		$this->setMwGlobals( 'wgResourceModules', [] );
 	}
 
+	/**
+	 * @group Broken. Needs updating to use extension.json
+	 */
 	public function testAlphabeticalOrder() {
 		require __DIR__ . '/../../Resources.php';
 
