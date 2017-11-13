@@ -34,17 +34,19 @@ class SpecialPagesTest extends MediaWikiTestCase {
 	}
 
 	public static function provideSpecialPages() {
-		require __DIR__ . '/../../Autoload.php';
-		global $wgSpecialPages;
-
-		$pages = [];
-		foreach ( $wgSpecialPages as $name => $class ) {
-			if ( is_string( $class ) && isset( $al[$class] ) ) {
-				$pages[] = [ $name ];
-			}
-		}
-
-		return $pages;
+		return [
+			"SpecialTranslate",
+			"SpecialTranslations",
+			"SpecialTranslationStats",
+			"SpecialLanguageStats",
+			"SpecialMessageGroupStats",
+			"SpecialImportTranslations",
+			"SpecialExportTranslations",
+			"SpecialManageGroups",
+			"SpecialSupportedLanguages",
+			"SpecialAggregateGroups",
+			"SpecialSearchTranslations"
+		];
 	}
 
 	/**
