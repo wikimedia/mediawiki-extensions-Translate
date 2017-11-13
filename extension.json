@@ -1,0 +1,1243 @@
+{
+	"name": "Translate",
+	"type": "specialpage",
+	"author": [
+		"Niklas Laxström",
+		"Santhosh Thottingal",
+		"Siebrand Mazeland",
+		"..."
+	],
+	"version": "2018-11-05",
+	"url": "https://www.mediawiki.org/wiki/Extension:Translate",
+	"descriptionmsg": "translate-desc",
+	"license-name": "GPL-2.0-or-later",
+	"requires": {
+		"MediaWiki": ">= 1.29.0"
+	},
+	"callback": "TranslateHooks::setupTranslate",
+	"MessagesDirs": {
+		"PageTranslation": "i18n/pagetranslation",
+		"Translate": "i18n/core",
+		"TranslateSearch": "i18n/search",
+		"TranslateSandbox": "i18n/sandbox",
+		"TranslateApi": "i18n/api"
+	},
+	"ExtensionMessagesFiles": {
+		"TranslateAlias": "Translate.alias.php",
+		"TranslateMagic": "Translate.i18n.magic.php"
+	},
+	"AutoloadClasses": {
+		"AggregateMessageGroup": "messagegroups/AggregateMessageGroup.php",
+		"AmdFFS": "ffs/AmdFFS.php",
+		"AndroidXmlFFS": "ffs/AndroidXmlFFS.php",
+		"ApertiumWebService": "webservices/ApertiumWebService.php",
+		"ApiAggregateGroups": "api/ApiAggregateGroups.php",
+		"ApiGroupReview": "api/ApiGroupReview.php",
+		"ApiQueryLanguageStats": "api/ApiQueryLanguageStats.php",
+		"ApiQueryMessageCollection": "api/ApiQueryMessageCollection.php",
+		"ApiQueryMessageGroups": "api/ApiQueryMessageGroups.php",
+		"ApiQueryMessageGroupStats": "api/ApiQueryMessageGroupStats.php",
+		"ApiQueryMessageTranslations": "api/ApiQueryMessageTranslations.php",
+		"ApiSearchTranslations": "api/ApiSearchTranslations.php",
+		"ApiStatsQuery": "api/ApiStatsQuery.php",
+		"ApiTranslationAids": "api/ApiQueryTranslationAids.php",
+		"ApiTranslationCheck": "api/ApiTranslationCheck.php",
+		"ApiTranslationReview": "api/ApiTranslationReview.php",
+		"ApiTTMServer": "api/ApiTTMServer.php",
+		"AppleFFS": "ffs/AppleFFS.php",
+		"ArrayFlattener": "utils/ArrayFlattener.php",
+		"CachedMessageIndex": "utils/MessageIndex.php",
+		"CaighdeanWebService": "webservices/CaighdeanWebService.php",
+		"CDBMessageIndex": "utils/MessageIndex.php",
+		"CombinedInsertablesSuggester": "insertables/CombinedInsertablesSuggester.php",
+		"ComplexMessages": "ffs/MediaWikiComplexMessages.php",
+		"CrossLanguageTranslationSearchQuery": "ttmserver/CrossLanguageTranslationSearchQuery.php",
+		"CurrentTranslationAid": "translationaids/CurrentTranslationAid.php",
+		"CxserverWebService": "webservices/CxserverWebService.php",
+		"DatabaseMessageIndex": "utils/MessageIndex.php",
+		"DatabaseTTMServer": "ttmserver/DatabaseTTMServer.php",
+		"DocumentationAid": "translationaids/DocumentationAid.php",
+		"DtdFFS": "ffs/DtdFFS.php",
+		"ElasticSearchTTMServer": "ttmserver/ElasticSearchTTMServer.php",
+		"ExternalMessageSourceStateComparator": "utils/ExternalMessageSourceStateComparator.php",
+		"ExternalMessageSourceStateImporter": "utils/ExternalMessageSourceStateImporter.php",
+		"FakeTTMServer": "ttmserver/FakeTTMServer.php",
+		"FatMessage": "Message.php",
+		"FCFontFinder": "utils/Font.php",
+		"FFS": "ffs/FFS.php",
+		"FileBasedMessageGroup": "messagegroups/FileBasedMessageGroup.php",
+		"FileCachedMessageIndex": "utils/MessageIndex.php",
+		"FlatPhpFFS": "ffs/FlatPhpFFS.php",
+		"FuzzyBot": "utils/FuzzyBot.php",
+		"FuzzyLikeThis": "ttmserver/FuzzyLikeThis.php",
+		"GettextDocumentationAid": "translationaids/GettextDocumentationAid.php",
+		"GettextFFS": "ffs/GettextFFS.php",
+		"GettextPluralException": "ffs/GettextFFS.php",
+		"HashMessageIndex": "utils/MessageIndex.php",
+		"HTMLJsSelectToInputField": "utils/HTMLJsSelectToInputField.php",
+		"IniFFS": "ffs/IniFFS.php",
+		"InOtherLanguagesAid": "translationaids/InOtherLanguagesAid.php",
+		"Insertable": "insertables/Insertable.php",
+		"InsertablesAid": "translationaids/InsertablesAid.php",
+		"InsertablesSuggester": "insertables/InsertablesSuggester.php",
+		"JavaFFS": "ffs/JavaFFS.php",
+		"JavaScriptFFS": "ffs/JavaScriptFFS.php",
+		"JsonFFS": "ffs/JsonFFS.php",
+		"JsSelectToInput": "utils/JsSelectToInput.php",
+		"MachineTranslationAid": "translationaids/MachineTranslationAid.php",
+		"MagicWordsCM": "ffs/MediaWikiComplexMessages.php",
+		"MediaWikiExtensionMessageGroup": "messagegroups/MediaWikiExtensionMessageGroup.php",
+		"MediaWikiInsertablesSuggester": "insertables/MediaWikiInsertablesSuggester.php",
+		"MediaWikiMessageChecker": "MediaWikiMessageChecker.php",
+		"MessageChangeStorage": "utils/MessageChangeStorage.php",
+		"MessageChecker": "MessageChecks.php",
+		"MessageCollection": "MessageCollection.php",
+		"MessageDefinitionAid": "translationaids/MessageDefinitionAid.php",
+		"MessageDefinitions": "MessageCollection.php",
+		"MessageGroup": "messagegroups/MessageGroup.php",
+		"MessageGroupBase": "messagegroups/MessageGroupBase.php",
+		"MessageGroupCache": "utils/MessageGroupCache.php",
+		"MessageGroupConfigurationParser": "MessageGroupConfigurationParser.php",
+		"MessageGroupOld": "messagegroups/MessageGroupOld.php",
+		"MessageGroups": "MessageGroups.php",
+		"MessageGroupStates": "utils/MessageGroupStates.php",
+		"MessageGroupStatesUpdaterJob": "utils/MessageGroupStatesUpdaterJob.php",
+		"MessageGroupStats": "utils/MessageGroupStats.php",
+		"MessageGroupStatsRebuildJob": "utils/MessageGroupStatsRebuildJob.php",
+		"MessageHandle": "utils/MessageHandle.php",
+		"MessageIndex": "utils/MessageIndex.php",
+		"MessageIndexRebuildJob": "utils/MessageIndexRebuildJob.php",
+		"MessageUpdateJob": "utils/MessageUpdateJob.php",
+		"MessageWebImporter": "utils/MessageWebImporter.php",
+		"MetaYamlSchemaExtender": "MetaYamlSchemaExtender.php",
+		"MicrosoftWebService": "webservices/MicrosoftWebService.php",
+		"MockFileBasedMessageGroup": "tests/phpunit/MockFileBasedMessageGroup.php",
+		"MockMessageCollectionForExport": "tests/phpunit/MockMessageCollectionForExport.php",
+		"MockWikiMessageGroup": "tests/phpunit/MockWikiMessageGroup.php",
+		"NamespaceCM": "ffs/MediaWikiComplexMessages.php",
+		"NumericalParameterInsertablesSuggester": "insertables/NumericalParameterInsertablesSuggester.php",
+		"PageTranslationHooks": "tag/PageTranslationHooks.php",
+		"PageTranslationLogFormatter": "tag/PageTranslationLogFormatter.php",
+		"PHPVariableLoader": "utils/ResourceLoader.php",
+		"PremadeIntuitionTextdomains": "ffs/IntuitionTextdomains.php",
+		"PremadeMediawikiExtensionGroups": "ffs/MediaWikiExtensions.php",
+		"QueryAggregator": "webservices/QueryAggregator.php",
+		"QueryAggregatorAware": "webservices/QueryAggregatorAware.php",
+		"QueryAggregatorAwareTranslationAid": "translationaids/QueryAggregatorAwareTranslationAid.php",
+		"ReadableTTMServer": "ttmserver/Interfaces.php",
+		"RecentAdditionsMessageGroup": "messagegroups/RecentAdditionsMessageGroup.php",
+		"RecentMessageGroup": "messagegroups/RecentMessageGroup.php",
+		"RemoteTTMServer": "ttmserver/RemoteTTMServer.php",
+		"RemoteTTMServerWebService": "webservices/RemoteTTMServerWebService.php",
+		"RESTBaseWebService": "webservices/RESTBaseWebService.php",
+		"ReviewPerLanguageStats": "specials/SpecialTranslationStats.php",
+		"RevTag": "utils/RevTag.php",
+		"SandboxMessageGroup": "messagegroups/SandboxMessageGroup.php",
+		"SearchableTTMServer": "ttmserver/Interfaces.php",
+		"SerializedMessageIndex": "utils/MessageIndex.php",
+		"ShapadoJsFFS": "ffs/JavaScriptFFS.php",
+		"SimpleFFS": "ffs/SimpleFFS.php",
+		"SolrTTMServer": "ttmserver/SolrTTMServer.php",
+		"SpecialAggregateGroups": "specials/SpecialAggregateGroups.php",
+		"SpecialExportTranslations": "specials/SpecialExportTranslations.php",
+		"SpecialImportTranslations": "specials/SpecialImportTranslations.php",
+		"SpecialLanguageStats": "specials/SpecialLanguageStats.php",
+		"SpecialMagic": "specials/SpecialMagic.php",
+		"SpecialManageGroups": "specials/SpecialManageGroups.php",
+		"SpecialManageTranslatorSandbox": "specials/SpecialManageTranslatorSandbox.php",
+		"SpecialMessageGroupStats": "specials/SpecialMessageGroupStats.php",
+		"SpecialPageAliasesCM": "ffs/MediaWikiComplexMessages.php",
+		"SpecialPageMigration": "tag/SpecialPageMigration.php",
+		"SpecialPagePreparation": "tag/SpecialPagePreparation.php",
+		"SpecialPageTranslation": "tag/SpecialPageTranslation.php",
+		"SpecialPageTranslationDeletePage": "tag/SpecialPageTranslationDeletePage.php",
+		"SpecialPageTranslationMovePage": "tag/SpecialPageTranslationMovePage.php",
+		"SpecialSearchTranslations": "specials/SpecialSearchTranslations.php",
+		"SpecialSupportedLanguages": "specials/SpecialSupportedLanguages.php",
+		"SpecialTranslate": "specials/SpecialTranslate.php",
+		"SpecialTranslations": "specials/SpecialTranslations.php",
+		"SpecialTranslationStash": "specials/SpecialTranslationStash.php",
+		"SpecialTranslationStats": "specials/SpecialTranslationStats.php",
+		"StashedTranslation": "stash/StashedTranslation.php",
+		"StatsBar": "utils/StatsBar.php",
+		"StatsTable": "utils/StatsTable.php",
+		"StringMangler": "stringmangler/StringMangler.php",
+		"StringMatcher": "stringmangler/StringMatcher.php",
+		"SupportAid": "translationaids/SupportAid.php",
+		"ThinMessage": "Message.php",
+		"TMessage": "Message.php",
+		"TPException": "tag/TPException.php",
+		"TPParse": "tag/TPParse.php",
+		"TPSection": "tag/TPSection.php",
+		"TranslatablePage": "tag/TranslatablePage.php",
+		"TranslatablePageInsertablesSuggester": "insertables/TranslatablePageInsertablesSuggester.php",
+		"TranslatablePageMoveJob": "tag/TranslatablePageMoveJob.php",
+		"TranslateCliLogger": "scripts/TranslateCliLogger.php",
+		"TranslateDeleteJob": "tag/TranslateDeleteJob.php",
+		"TranslateEditAddons": "TranslateEditAddons.php",
+		"TranslateHooks": "TranslateHooks.php",
+		"TranslateLogFormatter": "utils/TranslateLogFormatter.php",
+		"TranslateMetadata": "utils/TranslateMetadata.php",
+		"TranslateMoveJob": "tag/TranslateMoveJob.php",
+		"TranslatePerLanguageStats": "specials/SpecialTranslationStats.php",
+		"TranslatePreferences": "utils/UserToggles.php",
+		"TranslateRcFilter": "utils/RcFilter.php",
+		"TranslateRegistrationStats": "specials/SpecialTranslationStats.php",
+		"TranslateRenderJob": "tag/TranslateRenderJob.php",
+		"TranslateSandbox": "utils/TranslateSandbox.php",
+		"TranslateSandboxEmailJob": "utils/TranslateSandboxEmailJob.php",
+		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",
+		"TranslateToolbox": "utils/ToolBox.php",
+		"TranslateUtils": "TranslateUtils.php",
+		"TranslateYaml": "utils/TranslateYaml.php",
+		"TranslationAid": "translationaids/TranslationAid.php",
+		"TranslationAidDataProvider": "translationaids/TranslationAidDataProvider.php",
+		"TranslationHelperException": "utils/TranslationHelpers.php",
+		"TranslationHelpers": "utils/TranslationHelpers.php",
+		"TranslationQuery": "webservices/TranslationQuery.php",
+		"TranslationQueryResponse": "webservices/TranslationQueryResponse.php",
+		"TranslationStashStorage": "stash/TranslationStashStorage.php",
+		"TranslationStats": "utils/TranslationStats.php",
+		"TranslationStatsBase": "specials/SpecialTranslationStats.php",
+		"TranslationStatsInterface": "specials/SpecialTranslationStats.php",
+		"TranslationsUpdateJob": "tag/TranslationsUpdateJob.php",
+		"TranslationWebService": "webservices/TranslationWebService.php",
+		"TranslationWebServiceConfigurationException": "webservices/TranslationWebServiceConfigurationException.php",
+		"TranslationWebServiceException": "webservices/TranslationWebServiceException.php",
+		"TranslationWebServiceInvalidInputException": "webservices/TranslationWebServiceInvalidInputException.php",
+		"TTMServer": "ttmserver/TTMServer.php",
+		"TTMServerAid": "translationaids/TTMServerAid.php",
+		"TTMServerException": "ttmserver/Exceptions.php",
+		"TTMServerMessageUpdateJob": "ttmserver/TTMServerMessageUpdateJob.php",
+		"TuxMessageTable": "utils/TuxMessageTable.php",
+		"UnsupportedTranslationAid": "translationaids/UnsupportedTranslationAid.php",
+		"UpdatedDefinitionAid": "translationaids/UpdatedDefinitionAid.php",
+		"WikiMessageGroup": "messagegroups/WikiMessageGroup.php",
+		"WikiPageMessageGroup": "messagegroups/WikiPageMessageGroup.php",
+		"WorkflowStatesMessageGroup": "messagegroups/WorkflowStatesMessageGroup.php",
+		"WritableTTMServer": "ttmserver/Interfaces.php",
+		"XliffFFS": "ffs/XliffFFS.php",
+		"YamlFFS": "ffs/YamlFFS.php",
+		"YandexWebService": "webservices/YandexWebService.php"
+	},
+	"Hooks": {
+		"CanonicalNamespaces": "TranslateHooks::setupNamespaces",
+		"ResourceLoaderTestModules": "TranslateHooks::onResourceLoaderTestModules",
+		"UnitTestsList": "TranslateHooks::setupUnitTests",
+		"LoadExtensionSchemaUpdates": "TranslateHooks::schemaUpdates",
+		"ParserTestTables": "TranslateHooks::parserTestTables",
+		"PageContentLanguage": "TranslateHooks::onPageContentLanguage",
+		"ResourceLoaderRegisterModules": "TranslateHooks::onResourceLoaderRegisterModules",
+		"EditPage::showEditForm:initial": "TranslateEditAddons::addTools",
+		"AlternateEdit": "TranslateEditAddons::suppressIntro",
+		"getUserPermissionsErrorsExpensive": "TranslateEditAddons::disallowLangTranslations",
+		"EditPageBeforeEditButtons": "TranslateEditAddons::buttonHack",
+		"LanguageGetTranslatedLanguageNames": "TranslateHooks::translateMessageDocumentationLanguage",
+		"TranslateSupportedLanguages": "TranslateHooks::translateMessageDocumentationLanguage",
+		"ArticlePrepareTextForEdit": "TranslateEditAddons::disablePreSaveTransform",
+		"ParserFirstCallInit": "TranslateHooks::setupTranslateParserFunction",
+		"LanguageLinks": "PageTranslationHooks::addLanguageLinks",
+		"SkinTemplateGetLanguageLink": "PageTranslationHooks::formatLanguageLink",
+		"UserGetReservedNames": "TranslateHooks::onUserGetReservedNames",
+		"LinksUpdate": "TranslateHooks::preventCategorization",
+		"PageContentSaveComplete": "TranslateEditAddons::onSave",
+		"Translate:newTranslation": "TranslateEditAddons::updateTransverTag",
+		"SkinTemplateNavigation::SpecialPage": [
+			"SpecialTranslate::tabify",
+			"SpecialManageGroups::tabify"
+		],
+		"GetPreferences": [
+			"TranslatePreferences::onGetPreferences",
+			"TranslatePreferences::translationAssistLanguages"
+		],
+		"ChangesListSpecialPageQuery": "TranslateRcFilter::translationFilter",
+		"SpecialRecentChangesPanel": "TranslateRcFilter::translationFilterForm",
+		"ChangesListSpecialPageStructuredFilters": "TranslateRcFilter::onChangesListSpecialPageStructuredFilters",
+		"SkinTemplateToolboxEnd": "TranslateToolbox::toolboxAllTranslations",
+		"AbortEmailNotification": "TranslateHooks::onAbortEmailNotificationReview",
+		"ArticleDeleteComplete": "TTMServer::onDelete",
+		"TranslateEventMessageMembershipChange": "TTMServer::onGroupChange",
+		"ArticleContentOnDiff": "TranslateEditAddons::displayOnDiff",
+		"SpecialSearchProfiles": "TranslateHooks::searchProfile",
+		"SpecialSearchProfileForm": "TranslateHooks::searchProfileForm",
+		"SpecialSearchSetupEngine": "TranslateHooks::searchProfileSetupEngine",
+		"TitleIsAlwaysKnown": "TranslateHooks::onTitleIsAlwaysKnown",
+		"Translate:MessageGroupStats:isIncluded": [
+			"TranslateHooks::hideDiscouragedFromStats",
+			"TranslateHooks::hideRestrictedFromStats"
+		],
+		"MakeGlobalVariablesScript": "TranslateHooks::addConfig",
+		"TranslateEventTranslationReview": [
+			"MessageGroupStats::clear",
+			"MessageGroupStatesUpdaterJob::onChange"
+		],
+		"TranslatePostInitGroups": [
+			"MessageGroups::getCCGroups",
+			"MessageGroups::getTranslatablePages",
+			"MessageGroups::getConfiguredGroups",
+			"MessageGroups::getWorkflowGroups",
+			"MessageGroups::getAggregateGroups"
+		],
+		"AdminLinks": "TranslateHooks::onAdminLinks",
+		"MergeAccountFromTo": "TranslateHooks::onMergeAccountFromTo",
+		"DeleteAccount": "TranslateHooks::onDeleteAccount",
+		"AbuseFilter-filterAction": "TranslateHooks::onAbuseFilterFilterAction",
+		"AbuseFilter-computeVariable": "TranslateHooks::onAbuseFilterComputeVariable",
+		"AbuseFilter-builder": "TranslateHooks::onAbuseFilterBuilder"
+	},
+	"SpecialPages": {
+		"Translate": "SpecialTranslate",
+		"Translations": "SpecialTranslations",
+		"TranslationStats": "SpecialTranslationStats",
+		"LanguageStats": "SpecialLanguageStats",
+		"MessageGroupStats": "SpecialMessageGroupStats",
+		"ImportTranslations": "SpecialImportTranslations",
+		"ExportTranslations": "SpecialExportTranslations",
+		"ManageMessageGroups": "SpecialManageGroups",
+		"SupportedLanguages": "SpecialSupportedLanguages",
+		"AggregateGroups": "SpecialAggregateGroups",
+		"SearchTranslations": "SpecialSearchTranslations"
+	},
+	"APIListModules": {
+		"messagecollection": "ApiQueryMessageCollection"
+	},
+	"APIMetaModules": {
+		"languagestats": "ApiQueryLanguageStats",
+		"messagegroups": "ApiQueryMessageGroups",
+		"messagegroupstats": "ApiQueryMessageGroupStats",
+		"messagetranslations": "ApiQueryMessageTranslations"
+	},
+	"APIModules": {
+		"aggregategroups": "ApiAggregateGroups",
+		"groupreview": "ApiGroupReview",
+		"translatesandbox": "ApiTranslateSandbox",
+		"translationaids": "ApiTranslationAids",
+		"translationreview": "ApiTranslationReview",
+		"translationstash": "ApiTranslationStash",
+		"translationcheck": "ApiTranslationCheck",
+		"ttmserver": "ApiTTMServer",
+		"searchtranslations": "ApiSearchTranslations"
+	},
+	"DefaultUserOptions": {
+		"translate": 0,
+		"translate-editlangs": "default",
+		"translate-recent-groups": ""
+	},
+	"AvailableRights": [
+		"translate",
+		"translate-import",
+		"translate-manage",
+		"translate-messagereview",
+		"translate-groupreview"
+	],
+	"LogTypes": [
+		"translationreview"
+	],
+	"LogActionsHandlers": {
+		"translationreview/message": "TranslateLogFormatter",
+		"translationreview/group": "TranslateLogFormatter"
+	},
+	"JobClasses": {
+		"MessageIndexRebuildJob": "MessageIndexRebuildJob",
+		"MessageUpdateJob": "MessageUpdateJob",
+		"MessageGroupStatesUpdaterJob": "MessageGroupStatesUpdaterJob",
+		"TTMServerMessageUpdateJob": "TTMServerMessageUpdateJob"
+	},
+	"ParserTestFiles": [
+		"tests/parser/translateParserTests.txt"
+	],
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "Translate"
+	},
+	"ResourceModules": 	{
+		"ext.translate": {
+			"styles": "resources/css/ext.translate.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.base": {
+			"scripts": "resources/js/ext.translate.base.js",
+			"dependencies": [
+				"ext.translate.hooks",
+				"mediawiki.api",
+				"mediawiki.util"
+			],
+			"messages": [
+				"translate-js-support-unsaved-warning"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.dropdownmenu": {
+			"styles": "resources/css/ext.translate.dropdownmenu.css",
+			"scripts": "resources/js/ext.translate.dropdownmenu.js",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.editor": {
+			"scripts": [
+				"resources/js/ext.translate.editor.helpers.js",
+				"resources/js/ext.translate.editor.js",
+				"resources/js/ext.translate.editor.shortcuts.js",
+				"resources/js/ext.translate.pagemode.js",
+				"resources/js/ext.translate.proofread.js"
+			],
+			"styles": [
+				"resources/css/ext.translate.editor.css",
+				"resources/css/ext.translate.pagemode.css",
+				"resources/css/ext.translate.proofread.css"
+			],
+			"dependencies": [
+				"ext.translate.base",
+				"ext.translate.dropdownmenu",
+				"ext.translate.hooks",
+				"ext.translate.storage",
+				"jquery.accessKeyLabel",
+				"jquery.autosize",
+				"jquery.makeCollapsible",
+				"jquery.textSelection",
+				"jquery.textchange",
+				"mediawiki.Uri",
+				"mediawiki.api",
+				"mediawiki.api.parse",
+				"mediawiki.jqueryMsg",
+				"mediawiki.language",
+				"mediawiki.notify",
+				"mediawiki.user",
+				"mediawiki.util"
+			],
+			"messages": [
+				"translate-edit-askpermission",
+				"translate-edit-nopermission",
+				"tux-editor-add-desc",
+				"tux-editor-ask-help",
+				"tux-editor-cancel-button-label",
+				"tux-editor-close-tooltip",
+				"tux-editor-collapse-tooltip",
+				"tux-editor-confirm-button-label",
+				"tux-editor-discard-changes-button-label",
+				"tux-editor-doc-editor-cancel",
+				"tux-editor-doc-editor-placeholder",
+				"tux-editor-doc-editor-save",
+				"tux-editor-edit-desc",
+				"tux-editor-expand-tooltip",
+				"tux-editor-in-other-languages",
+				"tux-editor-loading",
+				"tux-editor-message-desc-less",
+				"tux-editor-message-desc-more",
+				"tux-editor-message-tools-show-editor",
+				"tux-editor-message-tools-delete",
+				"tux-editor-message-tools-history",
+				"tux-editor-message-tools-translations",
+				"tux-editor-message-tools-linktothis",
+				"tux-editor-n-uses",
+				"tux-editor-need-more-help",
+				"tux-editor-outdated-warning",
+				"tux-editor-outdated-warning-diff-link",
+				"tux-editor-paste-original-button-label",
+				"tux-editor-placeholder",
+				"tux-editor-editsummary-placeholder",
+				"tux-editor-proofread-button-label",
+				"tux-editor-save-button-label",
+				"tux-editor-save-failed",
+				"tux-editor-shortcut-info",
+				"tux-editor-skip-button-label",
+				"tux-editor-suggestions-title",
+				"tux-editor-tm-match",
+				"tux-proofread-action-tooltip",
+				"tux-proofread-edit-label",
+				"tux-proofread-translated-by-self",
+				"tux-session-expired",
+				"tux-status-saving",
+				"tux-status-translated",
+				"tux-status-unsaved",
+				"tux-save-unknown-error",
+				"tux-warnings-hide",
+				"tux-warnings-more",
+				"spamprotectiontext"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.groupselector": {
+			"styles": "resources/css/ext.translate.groupselector.less",
+			"scripts": "resources/js/ext.translate.groupselector.js",
+			"dependencies": [
+				"ext.translate.base",
+				"ext.translate.loader",
+				"ext.translate.statsbar",
+				"jquery.ui.position",
+				"mediawiki.jqueryMsg"
+			],
+			"messages": [
+				"translate-msggroupselector-search-all",
+				"translate-msggroupselector-search-placeholder",
+				"translate-msggroupselector-search-recent",
+				"translate-msggroupselector-view-subprojects"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.hooks": {
+			"scripts": "resources/js/ext.translate.hooks.js",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.legacy": {
+			"styles": "resources/css/ext.translate.legacy.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.loader": {
+			"styles": "resources/css/ext.translate.loader.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.messagetable": {
+			"scripts": "resources/js/ext.translate.messagetable.js",
+			"styles": "resources/css/ext.translate.messagetable.less",
+			"dependencies": [
+				"ext.translate.base",
+				"ext.translate.hooks",
+				"ext.translate.loader",
+				"ext.translate.parsers",
+				"jquery.textchange",
+				"jquery.throttle-debounce",
+				"mediawiki.Uri",
+				"mediawiki.jqueryMsg",
+				"mediawiki.util"
+			],
+			"messages": [
+				"api-error-badtoken",
+				"api-error-emptypage",
+				"api-error-unknownerror",
+				"tpt-unknown-page",
+				"translate-edit-title",
+				"tux-edit",
+				"tux-empty-list-all",
+				"tux-empty-list-all-guide",
+				"tux-empty-list-other",
+				"tux-empty-list-other-action",
+				"tux-empty-list-other-guide",
+				"tux-empty-list-other-link",
+				"tux-empty-list-translated",
+				"tux-empty-list-translated-action",
+				"tux-empty-list-translated-guide",
+				"tux-empty-no-messages-to-display",
+				"tux-empty-no-outdated-messages",
+				"tux-empty-nothing-new-to-proofread",
+				"tux-empty-nothing-to-proofread",
+				"tux-empty-show-optional-messages",
+				"tux-empty-there-are-optional",
+				"tux-empty-you-can-help-providing",
+				"tux-empty-you-can-review-already-proofread",
+				"tux-message-filter-advanced-button",
+				"tux-message-filter-placeholder",
+				"tux-message-filter-result",
+				"tux-messagetable-loading-messages",
+				"tux-messagetable-more-messages",
+				"tux-status-fuzzy",
+				"tux-status-optional",
+				"tux-status-proofread",
+				"tux-status-translated"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.messagewebimporter": {
+			"styles": "resources/css/ext.translate.messagewebimporter.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.multiselectautocomplete": {
+			"scripts": "resources/js/ext.translate.multiselectautocomplete.js",
+			"dependencies": [
+				"jquery.ui.autocomplete"
+			],
+			"targets": [
+				"desktop"
+			]
+		},
+		"ext.translate.navitoggle": {
+			"skinScripts": {
+				"vector": "resources/js/ext.translate.navitoggle.js"
+			},
+			"skinStyles": {
+				"vector": "resources/css/ext.translate.navitoggle.css"
+			},
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.pagetranslation.uls": {
+			"scripts": "resources/js/ext.translate.pagetranslation.uls.js",
+			"dependencies": [
+				"ext.uls.mediawiki",
+				"mediawiki.util"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.parsers": {
+			"scripts": "resources/js/ext.translate.parsers.js",
+			"dependencies": [
+				"mediawiki.util"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.quickedit": {
+			"styles": "resources/css/ext.translate.quickedit.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.selecttoinput": {
+			"scripts": "resources/js/ext.translate.selecttoinput.js",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.aggregategroups": {
+			"scripts": "resources/js/ext.translate.special.aggregategroups.js",
+			"dependencies": [
+				"jquery.ui.autocomplete",
+				"mediawiki.api",
+				"mediawiki.util"
+			],
+			"messages": [
+				"tpt-aggregategroup-add",
+				"tpt-aggregategroup-edit-description",
+				"tpt-aggregategroup-edit-name",
+				"tpt-aggregategroup-remove-confirm",
+				"tpt-aggregategroup-update",
+				"tpt-aggregategroup-update-cancel",
+				"tpt-invalid-group"
+			],
+			"targets": [
+				"desktop"
+			]
+		},
+		"ext.translate.special.aggregategroups.styles": {
+			"styles": "resources/css/ext.translate.special.aggregategroups.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.importtranslations": {
+			"scripts": "resources/js/ext.translate.special.importtranslations.js",
+			"dependencies": [
+				"jquery.ui.autocomplete"
+			],
+			"targets": [
+				"desktop"
+			]
+		},
+		"ext.translate.special.languagestats": {
+			"scripts": "resources/js/ext.translate.special.languagestats.js",
+			"messages": [
+				"translate-langstats-collapse",
+				"translate-langstats-collapseall",
+				"translate-langstats-expand",
+				"translate-langstats-expandall"
+			],
+			"dependencies": "jquery.tablesorter",
+			"targets": [
+				"desktop"
+			]
+		},
+		"ext.translate.special.managegroups": {
+			"styles": "resources/css/ext.translate.special.managegroups.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.managetranslatorsandbox": {
+			"scripts": "resources/js/ext.translate.special.managetranslatorsandbox.js",
+			"dependencies": [
+				"ext.translate.loader",
+				"ext.translate.translationstashstorage",
+				"ext.uls.mediawiki",
+				"jquery.ui.dialog",
+				"mediawiki.api",
+				"mediawiki.jqueryMsg",
+				"mediawiki.language",
+				"mediawiki.notify"
+			],
+			"messages": [
+				"tsb-accept-all-button-label",
+				"tsb-accept-button-label",
+				"tsb-reject-confirmation",
+				"tsb-accept-confirmation",
+				"tsb-all-languages-button-label",
+				"tsb-didnt-make-any-translations",
+				"tsb-no-requests-from-new-users",
+				"tsb-older-requests",
+				"tsb-reject-all-button-label",
+				"tsb-reject-button-label",
+				"tsb-reminder-failed",
+				"tsb-reminder-link-text",
+				"tsb-reminder-sending",
+				"tsb-reminder-sent",
+				"tsb-reminder-sent-new",
+				"tsb-request-count",
+				"tsb-selected-count",
+				"tsb-translations-current",
+				"tsb-translations-source",
+				"tsb-translations-user",
+				"tsb-user-posted-a-comment"
+			],
+			"targets": [
+				"desktop"
+			]
+		},
+		"ext.translate.special.managetranslatorsandbox.styles": {
+			"styles": "resources/css/ext.translate.special.managetranslatorsandbox.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.pagemigration": {
+			"scripts": "resources/js/ext.translate.special.pagemigration.js",
+			"dependencies": [
+				"jquery.ajaxdispatcher",
+				"mediawiki.api",
+				"mediawiki.Title",
+				"mediawiki.ui",
+				"mediawiki.ui.button"
+			],
+			"messages": [
+				"pm-add-icon-hover-text",
+				"pm-delete-icon-hover-text",
+				"pm-extra-units-warning",
+				"pm-langcode-missing",
+				"pm-old-translations-missing",
+				"pm-page-does-not-exist",
+				"pm-pagename-missing",
+				"pm-pagetitle-invalid",
+				"pm-pagetitle-missing",
+				"pm-swap-icon-hover-text",
+				"pm-on-import-message-text",
+				"pm-on-save-message-text",
+				"pm-savepages-button-label",
+				"pm-cancel-button-label",
+				"tpt-unknown-page"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.pagemigration.styles": {
+			"styles": "resources/css/ext.translate.special.pagemigration.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.pagepreparation": {
+			"scripts": "resources/js/ext.translate.special.pagepreparation.js",
+			"dependencies": [
+				"mediawiki.RegExp",
+				"mediawiki.Title",
+				"mediawiki.diff.styles",
+				"mediawiki.api",
+				"mediawiki.jqueryMsg",
+				"mediawiki.ui"
+			],
+			"messages": [
+				"pp-already-prepared-message",
+				"pp-pagename-missing",
+				"pp-prepare-message",
+				"pp-save-button-label",
+				"pp-save-message"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.pagepreparation.styles": {
+			"styles": "resources/css/ext.translate.special.pagepreparation.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.pagetranslation": {
+			"scripts": "resources/js/ext.translate.special.pagetranslation.js",
+			"dependencies": [
+				"ext.translate.multiselectautocomplete",
+				"mediawiki.ui.button",
+				"mediawiki.Uri",
+				"user.tokens"
+			],
+			"targets": [
+				"desktop"
+			]
+		},
+		"ext.translate.special.pagetranslation.styles": {
+			"styles": "resources/css/ext.translate.special.pagetranslation.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.searchtranslations": {
+			"scripts": "resources/js/ext.translate.special.searchtranslations.js",
+			"dependencies": [
+				"ext.translate.editor",
+				"ext.translate.groupselector",
+				"ext.uls.mediawiki",
+				"mediawiki.Uri",
+				"mediawiki.language"
+			],
+			"messages": [
+				"translate-search-more-groups-info",
+				"translate-search-more-languages-info"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.searchtranslations.operatorsuggest": {
+			"scripts": "resources/js/ext.translate.special.operatorsuggest.js",
+			"dependencies": [
+				"jquery.ui.autocomplete"
+			],
+			"targets": [
+				"desktop"
+			]
+		},
+		"ext.translate.special.searchtranslations.styles": {
+			"styles": "resources/css/ext.translate.special.searchtranslations.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.supportedlanguages": {
+			"styles": "resources/css/ext.translate.special.supportedlanguages.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.translate": {
+			"scripts": "resources/js/ext.translate.special.translate.js",
+			"dependencies": [
+				"ext.translate.base",
+				"ext.translate.editor",
+				"ext.translate.groupselector",
+				"ext.translate.messagetable",
+				"ext.translate.navitoggle",
+				"ext.translate.recentgroups",
+				"ext.translate.workflowselector",
+				"jquery.uls.data",
+				"mediawiki.Uri",
+				"mediawiki.api",
+				"mediawiki.api.parse",
+				"mediawiki.jqueryMsg"
+			],
+			"messages": [
+				"tpt-discouraged-language-content",
+				"tpt-discouraged-language-force-content",
+				"tpt-discouraged-language-force-header",
+				"tpt-discouraged-language-header",
+				"tux-editor-proofreading-hide-own-translations",
+				"tux-editor-proofreading-show-own-translations"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.translate.styles": {
+			"styles": "resources/css/ext.translate.special.translate.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.translationstash": {
+			"scripts": "resources/js/ext.translate.special.translationstash.js",
+			"styles": "resources/css/ext.translate.special.translationstash.css",
+			"dependencies": [
+				"ext.translate.editor",
+				"ext.translate.messagetable",
+				"ext.translate.translationstashstorage",
+				"ext.uls.mediawiki",
+				"mediawiki.api",
+				"mediawiki.language"
+			],
+			"messages": [
+				"translate-translationstash-skip-button-label",
+				"translate-translationstash-translations",
+				"tsb-limit-reached-body",
+				"tsb-limit-reached-title"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.translationstats": {
+			"scripts": "resources/js/ext.translate.special.translationstats.js",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.statsbar": {
+			"styles": "resources/css/ext.translate.statsbar.css",
+			"scripts": "resources/js/ext.translate.statsbar.js",
+			"messages": [
+				"translate-statsbar-tooltip",
+				"translate-statsbar-tooltip-with-fuzzy"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.statstable": {
+			"styles": "resources/css/ext.translate.statstable.less",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.storage": {
+			"scripts": "resources/js/ext.translate.storage.js",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.tabgroup": {
+			"styles": "resources/css/ext.translate.tabgroup.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.tag.languages": {
+			"styles": "resources/css/ext.translate.tag.languages.css",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.translationstashstorage": {
+			"scripts": "resources/js/ext.translate.translationstashstorage.js",
+			"dependencies": [
+				"mediawiki.api"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.workflowselector": {
+			"styles": "resources/css/ext.translate.workflowselector.css",
+			"scripts": "resources/js/ext.translate.workflowselector.js",
+			"messages": [
+				"translate-workflow-set-doing",
+				"translate-workflow-state-",
+				"translate-workflowstatus"
+			],
+			"dependencies": [
+				"ext.translate.dropdownmenu",
+				"mediawiki.api"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"jquery.ajaxdispatcher": {
+			"scripts": "resources/js/jquery.ajaxdispatcher.js",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"jquery.autosize": {
+			"scripts": "resources/js/jquery.autosize.js",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"jquery.textchange": {
+			"scripts": "resources/js/jquery.textchange.js",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		}
+	},
+	"config": {
+		"TranslateDocumentationLanguageCode": {
+			"value": false,
+			"description": "Language code for message documentation. Suggested values are qqq or info. If set to false (default), message documentation feature is disabled.",
+			"public": true
+		},
+		"TranslateFuzzyBotName": {
+			"value": "FuzzyBot",
+			"description": "Name of the bot which will invalidate translations and do maintenance for page translation feature. Also used for importing messages from external sources.",
+			"public": true
+		},
+		"TranslateNewsletterPreference": {
+			"value": false,
+			"description": "Add a preference 'Do not send me email newsletters' in the email preferences.",
+			"public": true
+		},
+		"TranslateLanguageFallbacks": {
+			"value": [],
+			"description": "Default values for list of languages to show translators as an aid when translating. Each user can override this setting in their preferences.\n\nExample: LanguageFallbacks['fi'] = 'sv' or LanguageFallbacks['sv'] = [ 'da', 'no', 'nn' ].",
+			"public": true
+		},
+		"TranslateTranslationDefaultService": {
+			"value": "TTMServer",
+			"description": "Define various web services that provide translation suggestions.\n\nTranslation memories are documented in our main documentation. See https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories\n\nFor Apertium, you should get an API key. See http://wiki.apertium.org/wiki/Apertium_web_service\n\nYandex translation helper also provides langlimit option to limit total number of suggestions (set to 0 to get all possible translations) and langorder array to sort languages. Yandex translate engine is based on wordnet, generated from search index, so number of indexed websites should be a good heuristic to define the default language order.\n\nThe machine translation services are provided with the following information: server ip address; versions of MediaWiki and Translate extension; clients ip address encrypted with $wgProxyKey; source text to translate; private API key if provided",
+			"public": true
+		},
+		"TranslateTranslationServices": {
+			"value": {
+				"TTMServer": {
+					"type": "ttmserver",
+					"database": false,
+					"cutoff": 0.75,
+					"public": true
+				},
+				"Microsoft": {
+					"type": "microsoft",
+					"url": "https://api.cognitive.microsofttranslator.com",
+					"key": null
+				},
+				"Apertium": {
+					"type": "apertium",
+					"url": "http://apy.projectjj.com/translate",
+					"pairs": "http://apy.projectjj.com/listPairs",
+					"timeout": 3,
+					"key": null
+				},
+				"Yandex": {
+					"type": "yandex",
+					"url": "https://translate.yandex.net/api/v1.5/tr.json/translate",
+					"pairs": "https://translate.yandex.net/api/v1.5/tr.json/getLangs",
+					"timeout": 3,
+					"langorder": [
+						"en",
+						"ru",
+						"uk",
+						"de",
+						"fr",
+						"pl",
+						"it",
+						"es",
+						"tr"
+					],
+					"langlimit": 1,
+					"key": null
+				}
+			},
+			"public": true
+		},
+		"TranslateSupportUrl": {
+			"value": false,
+			"description": "Experimental support since 2011-03-11 for an 'Ask' help button. Might change into a hook later on. This is an array with keys page, url and params: page is a title of a local wiki page; url is an URL to use as is (e.g. an issue tracker submission form) which will override the page if set; params is an array of key-value pairs of request params -- each param value can contain the variable %MESSAGE% which will be replaced with the full page name.",
+			"public": true
+		},
+		"TranslateSupportUrlNamespace": {
+			"value": [],
+			"description": "Like $wgTranslateSupportUrl, but for a specific namespace. Each $wgTranslateSupportUrl-like array needs to be the value assigned to the numerical ID of a namespace of the wiki. Since 2015-09.",
+			"public": true
+		},
+		"TranslatePermissionUrl": {
+			"value": "Project:Translator",
+			"description": "When unprivileged users open a translation editor, they will see a message stating that a special permission is needed for translating messages. If this variable is defined, there is a button which will take the user to that page to ask for permission. The target needs to be reiterated with the second variable to have the same result with sandbox enabled where users can't enter the sandbox.",
+			"public": true
+		},
+		"TranslateSecondaryPermissionUrl": {
+			"value": "Project:Translator",
+			"description": "…",
+			"public": true
+		},
+		"EnablePageTranslation": {
+			"value": true,
+			"description": "Enable page translation feature.\n\nPage translation feature allows structured translation of wiki pages with simple markup and automatic tracking of changes. See https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration",
+			"public": true
+		},
+		"PageTranslationNamespace": {
+			"value": 1198,
+			"description": "Number for the Translations namespace. Change this if it conflicts with other namespace in your wiki.",
+			"public": true
+		},
+		"TranslatePageTranslationULS": {
+			"value": false,
+			"description": "If set to true, when a user selects an interface language via ULS (Universal Language Selector), if the current page is a translatable page or a translation page then the user is also redirected to the corresponding translation page in the selected language.\n\n The language of the translation pages visited afterwards will still depend on the links followed (it will be the interface language only if the links use the Special:MyLanguage syntax).\n\nSince 2013-03-10.",
+			"public": true
+		},
+		"TranslateKeepOutdatedTranslations": {
+			"value": true,
+			"description": "If set to true, when a translated page has some units marked as outdated, the outdated translation will be shown. If set to false, the original updated unit in the original language will be shown.\n\nChanging this setting requires the following script to be run to take effect on existing changes: scripts/refresh-translatable-pages.php\n\n Since 2016.12.",
+			"public": true
+		},
+		"TranslateBlacklist": {
+			"value": [],
+			"description": "Two-dimensional array of languages that cannot be translated. Input can be exact group name, first part before '-' or '*' for all. Second dimension should be language code mapped to reason for disabling. Reason is parsed as wikitext.\n\nExample:\n'TranslateBlacklist': { '*': { 'en': 'English is the source language.' }, 'core': { 'mul': 'Not a real language.' }, 'ext': { 'mul': 'Not a real language.'} }",
+			"public": true
+		},
+		"TranslateCheckBlacklist": {
+			"value": false,
+			"description": "File containing checks that are to be skipped. See https://gerrit.wikimedia.org/r/gitweb?p=translatewiki.git;a=blob;f=check-blacklist.php;hb=HEAD for example.\nSince 2012-10-15.",
+			"public": true
+		},
+		"TranslateAuthorBlacklist": {
+			"value": [
+				[
+					"black",
+					"/^.*;.*;.*Bot$/Ui"
+				]
+			],
+			"description": "Two-dimensional array of rules that blacklists certain authors from appearing in the exports. This is useful for keeping bots and people doing maintenance work in translations not to appear besides real translators everywhere.\n\nRules are arrays, where first element is type: white or black. Whitelisting always overrules blacklisting. Second element should be a valid pattern that can be given a preg_match(). It will be matched against string of format 'group-id;language;author name', without quotes.\n\nAs an example, by default we have rule that ignores all authors whose name ends in a bot for all languages and all groups.",
+			"public": true
+		},
+		"TranslateMessageNamespaces": {
+			"value": [],
+			"description": "List of namespace that contain messages. No talk namespaces. See https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration",
+			"public": true
+		},
+		"TranslateCC": {
+			"value": [],
+			"description": "Custom classes can register themselves here. Key is always the group id, while the value is an message group object or callable function. This is deprecated – Use TranslatePostInitGroups hook instead.",
+			"public": true
+		},
+		"TranslateGroupRoot": {
+			"value": "/var/www/externals",
+			"description": "Location in the filesystem to which paths are relative in custom groups.",
+			"public": false
+		},
+		"TranslateGroupFiles": {
+			"value": [],
+			"description": "The newest and recommended way of adding custom groups is YAML files. See examples under Translate/groups.\n\n Usage example: $IP/extensions/Translate/groups/Shapado/Shapado.yml",
+			"public": false
+		},
+		"TranslateWorkflowStates": {
+			"value": false,
+			"description": "List of possible message group review workflow states and properties for each state. The currently supported properties are 'color', the color that is used for displaying the state in the tables, and 'right', the additional right that is needed to set the state. Users who have the translate-groupreview right can set this in Special:Translate. The state is visible in Special:Translate, Special:MessageGroupStats and Special:LanguageStats. If the value is false, the workflow states feature is disabled. State name can be up to 32 characters maximum.\n\nExample:\n'TranslateWorkflowStates': {\n\n'new': { 'color': 'FF0000' },\n'needs_proofreading': { 'color': '0000FF' },\n'ready': { 'color': 'FFFF00'},\n'published': { 'color': '00FF00', 'right': 'centralnotice-admin' }\n}",
+			"public": true
+		},
+		"TranslateGroupAliases": {
+			"value": {},
+			"description": "Map from deprecated group IDs to their current ID. Example value: { 'core': 'mediawiki-core' }",
+			"public": true
+		},
+		"TranslateCacheDirectory": {
+			"value": "false",
+			"description": "Set location of cache files. Defaults to $wgCacheDirectory.",
+			"public": true
+		},
+		"TranslateMessageIndex": {
+			"value": [ "DatabaseMessageIndex" ],
+			"description": "Configures how the message index is stored. Possible values are 'DatabaseMessageIndex', 'SerializedMessageIndex', and 'CDBMessageIndex'. The last two backends need $wgCacheDirectory to be functional.",
+			"public": true
+		},
+		"TranslateDelayedMessageIndexRebuild": {
+			"value": false,
+			"description": "If you have lots of message groups, especially file based ones, and the message index rebuilding gets slow, set this to true to delay the rebuilding via JobQueue. This only makes sense if you have configured jobs to be processed outside of requests via cron or similar.",
+			"public": true
+		},
+		"TranslatePHPlot": {
+			"value": false,
+			"description": "For Special:TranslationStats PHPlot is needed to produce graphs. Set this the location of phplot.php.",
+			"public": false
+		},
+		"TranslatePHPlotFont": {
+			"value": "/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf",
+			"description": "The default font for PHPlot for drawing text. Only used if the automatic best font selection fails. The automatic best font selector uses language code to call fc-match program. If you have open_basedir restriction or safe-mode, using the found font is likely to fail. In this case you need  to change the code to use hard-coded font, or copy fonts to location PHP can access them, and make sure fc-match returns only those fonts.",
+			"public": false
+		},
+		"TranslateUseSandbox": {
+			"value": false,
+			"description": "Whether to allow users to sign up via a sandbox. Sandboxed users cannot do much until approved and thus they can be get rid of easily. This only works with MediaWiki 1.27 and newer, and only if registration is configured to not use account creation providers which give REDIRECT or UI responses or require any other field than the default username/password/email.",
+			"public": true
+		},
+		"TranslateSandboxPromotedGroup": {
+			"value": false,
+			"description": "To which group the translators are promoted. If left at false, they will just be removed from sandbox and become normal users.",
+			"public": true
+		},
+		"TranslateSandboxSuggestions": {
+			"value": [],
+			"description": "List of page names to always suggest for sandboxed users.",
+			"public": true
+		},
+		"TranslateSandboxLimit": {
+			"value": 20,
+			"description": "Maximum number of translations a user can make in the sandbox.",
+			"public": true
+		},
+		"TranslateUsePreSaveTransform": {
+			"value": false,
+			"description": "Pre-save transform for message pages. MediaWiki does this by default (including for pages in the MediaWiki-namespace). By setting this to false it allows users to put untransformed syntax such as '~~~~' into a page without having them be transformed upon save.",
+			"public": true
+		},
+		"TranslateRcFilterDefault": {
+			"value": "filter",
+			"description": "Default action for the RecentChanges filter, which makes it possible to filter translations away or show them only. Possible values: 'noaction', 'only', 'filter', 'site'.",
+			"public": true
+		},
+		"TranslateTestTTMServer": {
+			"value": null,
+			"description": "Set this to config like $wgTranslateTranslationServices if you want to run SolrTTMServer tests.",
+			"public": true
+		},
+		"TranslateTestUsers": {
+			"value": [],
+			"description": "List of user names that are allowed to alter their privileges and do other things. Used for supporting integration testing.",
+			"public": true
+		},
+		"TranslateYamlLibrary": {
+			"value": null,
+			"description": "Currently supported YAML drivers are phpyaml, spyc and syck.\n\nFor phpyaml see https://secure.php.net/manual/en/book.yaml.php.\nFor syck we're shelling out to perl. So you need at least perl 5.8 (find out what you have by running `perl -v`), and to install these modules from CPAN: YAML::Syck, PHP::Serialization, and File::Slurp.\n\nYou should be able to do this with: `for module in 'YAML::Syck' 'PHP::Serialization' 'File::Slurp'; do cpanp -i $module; done`\n\nFor the shell to work, you also need an en.UTF-8 locale installed on your system. add a line `en.UTF-8` to your /etc/locale.gen or uncomment an existing one and run locale-gen if you do not have it already.\n\nphpyaml is the fastest and based on libyaml so the output should be most compatible. spyc output format is least compatible. syck is slowest but almost as good as phpyaml. spyc needs to be installed using composer. See https://www.mediawiki.org/wiki/Composer",
+			"public": true
+		}
+	},
+	"load_composer_autoloader": true,
+	"manifest_version": 2
+}

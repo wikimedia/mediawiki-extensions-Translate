@@ -64,7 +64,26 @@ class TranslateHooks {
 	 * because it depends on user configuration.
 	 */
 	public static function setupTranslate() {
-		global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
+		global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks, $wgTranslateYamlLibrary;
+
+		/**
+		 * Version number used in extension credits and in other places where needed.
+		 */
+		if ( !defined( 'TRANSLATE_VERSION' ) ) {
+			define( 'TRANSLATE_VERSION', '2017-10-30' );
+		}
+
+		/**
+		 * Text that will be shown in translations if the translation is outdated.
+		 * Must be something that does not conflict with actual content.
+		 */
+		if ( !defined( 'TRANSLATE_FUZZY' ) ) {
+			define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
+		}
+
+		if ( is_null( $wgTranslateYamlLibrary ) ) {
+			$wgTranslateYamlLibrary = function_exists( 'yaml_parse' ) ? 'phpyaml' : 'spyc';
+		}
 
 		if ( $wgTranslatePHPlot ) {
 			$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
