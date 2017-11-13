@@ -31,6 +31,10 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 		$from = $this->group->getSourceLanguage();
 		$to = $this->handle->getCode();
 
+		if ( trim( $text ) === '' ) {
+			return $suggestions;
+		}
+
 		// "Local" queries using a client can't be run in parallel with web services
 		global $wgTranslateTranslationServices;
 		foreach ( $wgTranslateTranslationServices as $name => $config ) {
