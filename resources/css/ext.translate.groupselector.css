@@ -117,10 +117,10 @@
 }
 
 .grid .tux-grouplist__item__label {
-	padding-bottom: 3px; /* grid override */
+	padding-bottom: 0; /* grid override */
 	padding-left: 15px; /* grid override */
 	font-weight: normal;
-	line-height: 40px;
+	line-height: 32px;
 	cursor: pointer;
 	white-space: nowrap;
 }
