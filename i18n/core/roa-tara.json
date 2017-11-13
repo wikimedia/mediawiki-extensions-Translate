@@ -110,6 +110,13 @@
 	"action-translate-messagereview": "revide le traduziune",
 	"right-translate-groupreview": "Cange 'u state d'u flusse de fatìe de le gruppe de messàgge",
 	"action-translate-groupreview": "cange 'u state d'u flusse de fatìe de le gruppe de messàgge",
+	"translate-rcfilters-translations": "Traduziune",
+	"translate-rcfilters-translations-only-label": "Traduziune",
+	"translate-rcfilters-translations-only-desc": "Cangiaminde sus a le pàggene tradotte.",
+	"translate-rcfilters-translations-filter-label": "Nisciuna traduzione",
+	"translate-rcfilters-translations-filter-desc": "Tutte le cangiaminde ca non ge so traduziune.",
+	"translate-rcfilters-translations-site-label": "Messàgge d'u site",
+	"translate-rcfilters-translations-site-desc": "Personalizzaziune de le messàgge d'u site jndr'à le namespace de MediaUicchi.",
 	"translate-rc-translation-filter": "Filtre de traduziune:",
 	"translate-rc-translation-filter-no": "No fà ninde",
 	"translate-rc-translation-filter-only": "Fà vedè sulamende le traduziune",
@@ -182,7 +189,7 @@
 	"translate-mgs-noempty": "No fà 'ndrucà le lènghe ca no tènene nisciuna traduzione",
 	"translate-mgs-submit": "Fà vedè le statisteche",
 	"translate-mgs-column-language": "Lènghe",
-	"translate-mgs-totals": "Tutte le $1 lènghe 'nzieme",
+	"translate-mgs-totals": "Tutte le $1 {{PLURAL:$1|lènghe}} 'nzieme",
 	"translate-mgs-invalid-group": "'U gruppe specifiche $1 non g'esiste.",
 	"translate-mgs-nothing": "Ninde da fà vedè pe le statisteche cercate.",
 	"supportedlanguages": "Lènghe supportate",
@@ -386,5 +393,5 @@
 	"translate-ulsdep-title": "Errore de configurazione",
 	"translate-ulsdep-body": "L'estenzione de traduzione depenne da l'[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector estenzione Scacchiatore Universale de Lènghe].",
 	"tux-session-expired": "Non g'è trasute. Tràse jndr'à 'na schede a parte; oppure copie 'a traduzione ca non g'è reggistrate, tràse, e tuèrne jndr'à sta pàgene e sckaffe 'a traduziona toje.",
-	"tux-nojs": "Sta pàgene vole JavaScript."
+	"tux-nojs": "Stu strumende non ge funzione senze JavaScript. JavaScript jè disabilitate, non ge ste funzione, o 'u browser tune non g'u supporte."
 }
