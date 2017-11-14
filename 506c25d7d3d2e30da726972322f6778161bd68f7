@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e5a8fde_7ebf555c",
+        "filename": "resources/css/ext.translate.statsbar.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1434
+      },
+      "writtenOn": "2017-11-14T04:40:07Z",
+      "side": 1,
+      "message": "This should\u0027ve been #2a4b8d, my mistake.",
+      "range": {
+        "startLine": 16,
+        "startChar": 19,
+        "endLine": 16,
+        "endChar": 26
+      },
+      "revId": "506c25d7d3d2e30da726972322f6778161bd68f7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
