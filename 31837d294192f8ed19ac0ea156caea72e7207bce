@@ -167,6 +167,24 @@
     },
     {
       "key": {
+        "uuid": "2e5417b0_46c814ab",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2017-11-15T22:14:08Z",
+      "side": 1,
+      "message": "I thought I had fixed the converter to use strings. It definitely does work, will take a look.",
+      "parentUuid": "2e5417b0_035e8e17",
+      "revId": "31837d294192f8ed19ac0ea156caea72e7207bce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e5417b0_235b8a28",
         "filename": "extension.json",
         "patchSetId": 1
