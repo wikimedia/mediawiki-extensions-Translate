@@ -284,7 +284,7 @@ class PageTranslationHooks {
 				$classes = array_merge( $classes, self::tpProgressIcon( $percent ) );
 				$name = Html::rawElement(
 					'span',
-					[ 'class' => $classes , 'lang' => wfBCP47( $code ) ],
+					[ 'class' => $classes , 'lang' => LanguageCode::bcp47( $code ) ],
 					$name
 				);
 			} elseif ( $subpage->isKnown() ) {
@@ -303,7 +303,7 @@ class PageTranslationHooks {
 				$attribs = [
 					'title' => $title,
 					'class' => $classes,
-					'lang' => wfBCP47( $code ),
+					'lang' => LanguageCode::bcp47( $code ),
 				];
 
 				$name = Linker::linkKnown( $subpage, $name, $attribs );
