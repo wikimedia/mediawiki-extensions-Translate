@@ -1,0 +1,203 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e5417b0_a3577a04",
+        "filename": "Translate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-15T20:59:10Z",
+      "side": 1,
+      "message": "It doesn\u0027t break. It supports extension.json very well in my experience.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 85
+      },
+      "revId": "31837d294192f8ed19ac0ea156caea72e7207bce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e5417b0_232dca8b",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-15T20:59:10Z",
+      "side": 1,
+      "message": "Should prolly go into callback method.",
+      "revId": "31837d294192f8ed19ac0ea156caea72e7207bce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e5417b0_c3487669",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 847,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-15T20:59:10Z",
+      "side": 1,
+      "message": "Should be in a separate file that is included in Translate.php",
+      "revId": "31837d294192f8ed19ac0ea156caea72e7207bce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e5417b0_e38a526e",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-15T20:59:10Z",
+      "side": 1,
+      "message": "I don\u0027t see the config for \"load vendor automatically\" being set.",
+      "revId": "31837d294192f8ed19ac0ea156caea72e7207bce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e5417b0_a3845a5f",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-15T20:59:10Z",
+      "side": 1,
+      "message": "Usually this is at the bottom, has the practice changed?",
+      "revId": "31837d294192f8ed19ac0ea156caea72e7207bce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e5417b0_2344ea49",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-15T20:59:10Z",
+      "side": 1,
+      "message": "Who is this? If this is real name of someone using a nickname, does he want to use this name?",
+      "range": {
+        "startLine": 8,
+        "startChar": 3,
+        "endLine": 8,
+        "endChar": 21
+      },
+      "revId": "31837d294192f8ed19ac0ea156caea72e7207bce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e5417b0_83691ebf",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-15T20:59:10Z",
+      "side": 1,
+      "message": "1.28 now",
+      "revId": "31837d294192f8ed19ac0ea156caea72e7207bce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e5417b0_03476e51",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-15T20:59:10Z",
+      "side": 1,
+      "message": "Taaabs",
+      "revId": "31837d294192f8ed19ac0ea156caea72e7207bce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e5417b0_035e8e17",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-15T20:59:10Z",
+      "side": 1,
+      "message": "I really don\u0027t get why the converter insists using arrays for hooks with single callback. Plain string works fine imho.",
+      "revId": "31837d294192f8ed19ac0ea156caea72e7207bce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e5417b0_235b8a28",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-15T20:59:10Z",
+      "side": 1,
+      "message": "Is this right?",
+      "revId": "31837d294192f8ed19ac0ea156caea72e7207bce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e5417b0_03bd2e16",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 1052,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-15T20:59:10Z",
+      "side": 1,
+      "message": "Oh no! My big clean-up patch should be merged first.\n\nhttps://gerrit.wikimedia.org/r/#/c/372434/",
+      "revId": "31837d294192f8ed19ac0ea156caea72e7207bce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
