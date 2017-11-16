@@ -119,6 +119,24 @@
     },
     {
       "key": {
+        "uuid": "2e5417b0_090a2d2a",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 847,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-11-16T07:25:40Z",
+      "side": 1,
+      "message": "My idea is, that at the same time they migrate to extension registration, they can copy the code into their LocalSettings.php or require the separate file directly.",
+      "parentUuid": "2e5417b0_86f60cf5",
+      "revId": "31837d294192f8ed19ac0ea156caea72e7207bce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e5417b0_e38a526e",
         "filename": "extension.json",
         "patchSetId": 1
