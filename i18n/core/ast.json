@@ -112,6 +112,13 @@
 	"action-translate-messagereview": "revisar traducciones",
 	"right-translate-groupreview": "Camudar l'estáu d'organización del trabayu de los grupos de mensaxes",
 	"action-translate-groupreview": "camudar l'estáu del fluxu de trabayu de los grupos de mensaxes",
+	"translate-rcfilters-translations": "Traducciones",
+	"translate-rcfilters-translations-only-label": "Traducciones",
+	"translate-rcfilters-translations-only-desc": "Cambeos nes páxines traducíes.",
+	"translate-rcfilters-translations-filter-label": "Nun son traducciones",
+	"translate-rcfilters-translations-filter-desc": "Tolos cambeos que nun son traducciones.",
+	"translate-rcfilters-translations-site-label": "Mensaxes del sitiu",
+	"translate-rcfilters-translations-site-desc": "Personalizaciones de los mensaxes del sitiu nel espaciu de nomes MediaWiki.",
 	"translate-rc-translation-filter": "Filtrar traducciones:",
 	"translate-rc-translation-filter-no": "Nun facer nada",
 	"translate-rc-translation-filter-only": "Amosar traducciones namái",
@@ -184,7 +191,7 @@
 	"translate-mgs-noempty": "Nun amosar les llingües que nun tengan traducción dala",
 	"translate-mgs-submit": "Amosar estadístiques",
 	"translate-mgs-column-language": "Llingua",
-	"translate-mgs-totals": "Toles llingües xuntes",
+	"translate-mgs-totals": "{{PLURAL:$1|La llingua|Toles $1 llingües}} en xunto",
 	"translate-mgs-invalid-group": "El grupu $1 especificáu nun esiste.",
 	"translate-mgs-nothing": "Nada qu'amosar pa les estadístiques que se pidieron.",
 	"supportedlanguages": "Llingües sofitaes",
@@ -386,5 +393,5 @@
 	"translate-ulsdep-title": "Error de configuración",
 	"translate-ulsdep-body": "La estensión Translate depende de la [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector estensión Universal Language Selector].",
 	"tux-session-expired": "La sesión zarróse yá. Anicia sesión n'una llingüeta aparte. Alternativamente, copia les traducciones ensin guardar, anicia sesión, vuelvi a esta páxina y escribi les traducciones otra vuelta.",
-	"tux-nojs": "Esta páxina rique JavaScript."
+	"tux-nojs": "Esta ferramienta nun funciona sin JavaScript. JavaScript ta desactiváu, nun funcionó, o nun hai encontu pa esti restolador."
 }

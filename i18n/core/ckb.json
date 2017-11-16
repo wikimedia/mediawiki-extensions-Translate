@@ -7,7 +7,8 @@
 			"Muhammed taha",
 			"رزگار",
 			"Sarchia",
-			"Lost Whispers"
+			"Lost Whispers",
+			"Épine"
 		]
 	},
 	"translate": "وەرگێڕان",
@@ -63,6 +64,8 @@
 	"translate-pref-nonewsletter": "ئی‌مێڵی هەواڵ‌نامە بۆ من مەنێرە",
 	"prefs-translate": "هەڵبژاردەکانی وەرگێڕان",
 	"right-translate": "دەستکاری کردن بە کەڵک وەرگرتن لە ڕووکاری وەرگێڕانەوە",
+	"translate-rcfilters-translations": "وەرگێڕانەکان",
+	"translate-rcfilters-translations-only-label": "وەرگێڕانەکان",
 	"translate-rc-translation-filter": "پاڵاوتنی وەرگێڕاوەکان:",
 	"translate-rc-translation-filter-no": "ھیچ مەکە",
 	"translate-rc-translation-filter-only": "ھەر وەرگێڕاوەکان نیشان بدە",
