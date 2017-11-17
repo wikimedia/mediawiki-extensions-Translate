@@ -29,7 +29,8 @@
 			"Умар",
 			"Ping08",
 			"Mailman",
-			"Av6"
+			"Av6",
+			"Wirbel78"
 		]
 	},
 	"translate": "Перевод",
@@ -136,6 +137,8 @@
 	"right-translate-groupreview": "изменять состояние обработки групп сообщений",
 	"translate-rcfilters-translations": "Переводы",
 	"translate-rcfilters-translations-only-label": "Переводы",
+	"translate-rcfilters-translations-only-desc": "Изменения в переведенных страницах.",
+	"translate-rcfilters-translations-site-label": "Сообщения сайта",
 	"translate-rc-translation-filter": "Фильтровать переводы:",
 	"translate-rc-translation-filter-no": "Без ограничений",
 	"translate-rc-translation-filter-only": "Показать только переводы",
