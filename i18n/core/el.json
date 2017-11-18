@@ -382,6 +382,7 @@
 	"tux-editor-message-tools-history": "Ιστορικό",
 	"tux-editor-message-tools-delete": "Διαγραφή",
 	"tux-editor-message-tools-translations": "Όλες οι μεταφράσεις",
+	"tux-editor-message-tools-linktothis": "Se connecter a ce message",
 	"tux-editor-loading": "Γίνεται φόρτωση...",
 	"translate-search-more-languages-info": "$1 ακόμη {{PLURAL:$1|γλώσσα|γλώσσες}}",
 	"translate-statsbar-tooltip": "$1% μεταφρασμένα, $2% θεωρημένα",

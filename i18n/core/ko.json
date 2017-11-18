@@ -391,6 +391,7 @@
 	"tux-editor-message-tools-history": "역사",
 	"tux-editor-message-tools-delete": "삭제",
 	"tux-editor-message-tools-translations": "모든 번역",
+	"tux-editor-message-tools-linktothis": "이 메시지로 가는 링크",
 	"tux-editor-loading": "불러오는 중...",
 	"translate-search-more-languages-info": "{{PLURAL:$1|언어}} $1개 더 보기",
 	"translate-statsbar-tooltip": "$1% 번역됨, $2% 검토됨",

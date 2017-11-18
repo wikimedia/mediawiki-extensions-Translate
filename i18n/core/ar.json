@@ -392,6 +392,7 @@
 	"tux-editor-message-tools-history": "تاريخ",
 	"tux-editor-message-tools-delete": "احذف",
 	"tux-editor-message-tools-translations": "كل الترجمات",
+	"tux-editor-message-tools-linktothis": "وصلة لهذه الرسالة",
 	"tux-editor-loading": "تحميل...",
 	"translate-search-more-languages-info": "{{PLURAL:$1|لغة واحدة أخرى|لغتان أخريان|$1 لغات أخرى|$1 لغة أخرى}}",
 	"translate-statsbar-tooltip": "$1% مترجمة، $2% مراجعة",

@@ -277,6 +277,7 @@
 	"tux-editor-message-tools-history": "تاریخچہ",
 	"tux-editor-message-tools-delete": "حذف کریں",
 	"tux-editor-message-tools-translations": "جملہ تراجم",
+	"tux-editor-message-tools-linktothis": "اس پیغام سے لِنک کریں",
 	"tux-editor-loading": "لد رہا ہے۔۔۔",
 	"translate-search-more-languages-info": "$1 مزید {{PLURAL:$1|زبان|زبانیں}}",
 	"translate-statsbar-tooltip": "$1% ترجمہ شدہ، $2% نظر ثانی شدہ",

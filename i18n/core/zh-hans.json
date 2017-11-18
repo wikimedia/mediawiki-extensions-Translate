@@ -411,6 +411,7 @@
 	"tux-editor-message-tools-history": "历史",
 	"tux-editor-message-tools-delete": "删除",
 	"tux-editor-message-tools-translations": "所有翻译",
+	"tux-editor-message-tools-linktothis": "链至此消息的链接",
 	"tux-editor-loading": "正在载入...",
 	"translate-search-more-languages-info": "还有$1种{{PLURAL:$1|语言}}",
 	"translate-statsbar-tooltip": "$1%已翻译，$2%已复核",
