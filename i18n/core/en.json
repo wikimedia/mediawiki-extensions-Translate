@@ -390,6 +390,7 @@
 	"tux-editor-message-tools-history": "History",
 	"tux-editor-message-tools-delete": "Delete",
 	"tux-editor-message-tools-translations": "All translations",
+	"tux-editor-message-tools-linktothis": "Link to this message",
 	"tux-editor-loading": "Loading...",
 	"translate-search-more-languages-info": "$1 more {{PLURAL:$1|language|languages}}",
 	"translate-statsbar-tooltip": "$1% translated, $2% reviewed",
