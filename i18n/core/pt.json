@@ -393,6 +393,7 @@
 	"tux-editor-message-tools-history": "Histórico",
 	"tux-editor-message-tools-delete": "Eliminar",
 	"tux-editor-message-tools-translations": "Todas as traduções",
+	"tux-editor-message-tools-linktothis": "Hiperligação para esta mensagem",
 	"tux-editor-loading": "A carregar…",
 	"translate-search-more-languages-info": "mais $1 {{PLURAL:$1|língua|línguas}}",
 	"translate-statsbar-tooltip": "$1% traduzidas, $2% revistas",
