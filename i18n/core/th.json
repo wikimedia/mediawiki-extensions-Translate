@@ -62,7 +62,7 @@
 	"translate-use-suggestion": "แทนที่การแปลปัจจุบันด้วยคำแนะนํานี้",
 	"translate-edit-nopermission": "คุณต้องมีสิทธิในการแปลเพื่อทำการแปลข้อความ",
 	"translate-edit-askpermission": "ขอรับสิทธิ",
-	"exporttranslations": "นำเข้าการแปล",
+	"exporttranslations": "ส่งออกการแปล",
 	"translate-export-form-format": "รูปแบบ",
 	"translate-export-invalid-format": "โปรดระบุรูปแบบที่ถูกต้อง",
 	"translate-export-not-supported": "ไม่รองรับการส่งออกการแปล",

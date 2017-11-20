@@ -396,6 +396,7 @@
 	"tux-editor-message-tools-history": "Cronologia",
 	"tux-editor-message-tools-delete": "Cancella",
 	"tux-editor-message-tools-translations": "Tutte le traduzioni",
+	"tux-editor-message-tools-linktothis": "Collegamenti a questo messaggio",
 	"tux-editor-loading": "Caricamento in corso...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|altra lingua|altre lingue}}",
 	"translate-statsbar-tooltip": "$1% tradotti, $2% revisionati",
