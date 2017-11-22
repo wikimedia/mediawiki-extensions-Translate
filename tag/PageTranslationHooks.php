@@ -64,9 +64,26 @@ class PageTranslationHooks {
 		self::$renderingContext = false;
 
 		// Disable edit section links
-		$parser->getOptions()->setEditSection( false );
+		$parser->getOutput()->setExtensionData( 'Translate-noeditsection', true );
+		if ( !defined( ParserOutput::SUPPORTS_STATELESS_TRANSFORMS ) ) {
+			$parser->getOptions()->setEditSection( false );
+		}
 
 		return true;
+	}
+
+	/**
+	 * Hook: ParserOutputPostCacheTransform
+	 * @param ParserOutput $out
+	 * @param string &$text
+	 * @param array &$options
+	 */
+	public static function onParserOutputPostCacheTransform(
+		ParserOutput $out, &$text, array &$options
+	) {
+		if ( $out->getExtensionData( 'Translate-noeditsection' ) ) {
+			$options['enableSectionEditLinks'] = false;
+		}
 	}
 
 	/**
