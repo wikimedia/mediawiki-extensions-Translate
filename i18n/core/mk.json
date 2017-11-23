@@ -383,6 +383,7 @@
 	"tux-editor-message-tools-history": "Историја",
 	"tux-editor-message-tools-delete": "Избриши",
 	"tux-editor-message-tools-translations": "Сите преводи",
+	"tux-editor-message-tools-linktothis": "Врска до поракава",
 	"tux-editor-loading": "Вчитувам...",
 	"translate-search-more-languages-info": "уште {{PLURAL:$1|еден јазик|$1 јазици}}",
 	"translate-statsbar-tooltip": "$1% преведени, $2% проверени",

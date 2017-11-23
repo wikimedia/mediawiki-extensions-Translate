@@ -385,6 +385,7 @@
 	"tux-editor-message-tools-history": "Cunde",
 	"tux-editor-message-tools-delete": "Scangìlle",
 	"tux-editor-message-tools-translations": "Tutte le traduziune",
+	"tux-editor-message-tools-linktothis": "Collegaminde a stu messàgge",
 	"tux-editor-loading": "Stoche a scareche…",
 	"translate-search-more-languages-info": "$1 cchiù {{PLURAL:$1|lènghe}}",
 	"translate-statsbar-tooltip": "$1% tradotte, $2% reviste",
