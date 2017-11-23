@@ -4,7 +4,7 @@
  * @group Database
  * @group medium
  */
-class PageTranslationTaggingText extends MediaWikiTestCase {
+class PageTranslationTaggingTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 
