@@ -101,7 +101,7 @@ abstract class TranslationWebService {
 	 * Get the web service specific response returned by QueryAggregator.
 	 *
 	 * @param TranslationQueryResponse $response
-	 * @return string|null
+	 * @return mixed|null Returns null on error.
 	 * @since 2015.12
 	 */
 	public function getResultData( TranslationQueryResponse $response ) {

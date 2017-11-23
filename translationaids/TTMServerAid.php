@@ -84,7 +84,12 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 		$sourceLanguage = $queryData['language'];
 		$sourceText = $queryData['text'];
 
+		// getResultData returns null instead of throwing an exception
 		$sugs = $service->getResultData( $response );
+		if ( $sugs === null ) {
+			return [];
+		}
+
 		foreach ( $sugs as &$sug ) {
 			$sug += [
 				'service' => $service->getName(),
