@@ -406,7 +406,7 @@
 	"tux-editor-message-tools-history": "Historial",
 	"tux-editor-message-tools-delete": "Eliminar",
 	"tux-editor-message-tools-translations": "Todas las traducciones",
-	"tux-editor-message-tools-linktothis": "Enlace a este mensaje",
+	"tux-editor-message-tools-linktothis": "Enlace hacia este mensaje",
 	"tux-editor-loading": "Cargando...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|idioma|idiomas}} más",
 	"translate-statsbar-tooltip": "$1 % traducido, $2 % revisado",

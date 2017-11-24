@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Albinus"
+			"Albinus",
+			"Manik Soren"
 		]
 	},
-	"translate-documentation-language": "Ciṭhi sakam"
+	"translate-documentation-language": "Message documentation"
 }
