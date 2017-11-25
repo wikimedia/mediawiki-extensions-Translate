@@ -125,6 +125,13 @@
 	"action-translate-messagereview": "revisar traduções",
 	"right-translate-groupreview": "Alterar estado do fluxo de trabalho de grupos de mensagens",
 	"action-translate-groupreview": "alterar o estado do fluxo de trabalho dos grupos de mensagens",
+	"translate-rcfilters-translations": "Traduções",
+	"translate-rcfilters-translations-only-label": "Traduções",
+	"translate-rcfilters-translations-only-desc": "Alterações para páginas traduzidas.",
+	"translate-rcfilters-translations-filter-label": "Não traduções",
+	"translate-rcfilters-translations-filter-desc": "Todas as alterações que não são de traduções.",
+	"translate-rcfilters-translations-site-label": "Mensagens de sistema",
+	"translate-rcfilters-translations-site-desc": "Personalizações das mensagens de sistema no espaço nominal MediaWiki.",
 	"translate-rc-translation-filter": "Filtrar traduções:",
 	"translate-rc-translation-filter-no": "Não filtrar",
 	"translate-rc-translation-filter-only": "Mostrar somente traduções",
@@ -197,7 +204,7 @@
 	"translate-mgs-noempty": "Ocultar idiomas sem traduções",
 	"translate-mgs-submit": "Mostrar estatísticas",
 	"translate-mgs-column-language": "Idioma",
-	"translate-mgs-totals": "Soma de todos os idiomas",
+	"translate-mgs-totals": "{{PLURAL:$1|A língua em conjunto|Todas as $1 línguas em conjunto}}",
 	"translate-mgs-invalid-group": "O grupo especificado ($1) não existe.",
 	"translate-mgs-nothing": "Sem dados para as estatísticas solicitadas.",
 	"supportedlanguages": "Idiomas suportados",
@@ -393,6 +400,7 @@
 	"tux-editor-message-tools-history": "Histórico",
 	"tux-editor-message-tools-delete": "Excluir",
 	"tux-editor-message-tools-translations": "Todas as traduções",
+	"tux-editor-message-tools-linktothis": "Link para esta mensagem",
 	"tux-editor-loading": "Carregando...",
 	"translate-search-more-languages-info": "mais $1 {{PLURAL:$1|idioma|idiomas}}",
 	"translate-statsbar-tooltip": "$1% traduzido, $2% revisado",
@@ -401,5 +409,5 @@
 	"translate-ulsdep-title": "Ero de configuração",
 	"translate-ulsdep-body": "A extensão Translate depende da extensão [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector].",
 	"tux-session-expired": "Você não está logado. Por favor entre em uma aba separada. Alternativamente, faça uma cópia das traduções não salvos, faça o login, retorne a esta página e inserir as traduções novamente.",
-	"tux-nojs": "Esta página requer JavaScript."
+	"tux-nojs": "Esta ferramenta não funciona sem o JavaScript. Ou o JavaScript está desativado, ou não funcionou, ou este browser não é suportado."
 }
