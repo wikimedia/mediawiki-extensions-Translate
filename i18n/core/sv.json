@@ -403,6 +403,7 @@
 	"tux-editor-message-tools-history": "Historik",
 	"tux-editor-message-tools-delete": "Radera",
 	"tux-editor-message-tools-translations": "Alla översättningar",
+	"tux-editor-message-tools-linktothis": "Länk till detta meddelande",
 	"tux-editor-loading": "Läser in...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|till|fler}} språk",
 	"translate-statsbar-tooltip": "$1% översatt, $2% granskat",
