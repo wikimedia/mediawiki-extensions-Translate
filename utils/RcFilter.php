@@ -144,17 +144,6 @@ class TranslateRcFilter {
 				'isFullCoverage' => true,
 				'filters' => [
 					[
-						'name' => 'filter',
-						'label' => 'translate-rcfilters-translations-filter-label',
-						'description' => 'translate-rcfilters-translations-filter-desc',
-						'cssClassSuffix' => 'filter',
-						'isRowApplicableCallable' => function ( $ctx, $rc ) {
-							$namespaces = self::getTranslateNamespaces();
-
-							return !in_array( $rc->getAttribute( 'rc_namespace' ), $namespaces );
-						}
-					],
-					[
 						'name' => 'only',
 						'label' => 'translate-rcfilters-translations-only-label',
 						'description' => 'translate-rcfilters-translations-only-desc',
@@ -176,6 +165,17 @@ class TranslateRcFilter {
 
 							return in_array( $rc->getAttribute( 'rc_namespace' ), $namespaces ) &&
 								strpos( $rc->getAttribute( 'rc_title' ), '/' ) === false;
+						}
+					],
+					[
+						'name' => 'filter',
+						'label' => 'translate-rcfilters-translations-filter-label',
+						'description' => 'translate-rcfilters-translations-filter-desc',
+						'cssClassSuffix' => 'filter',
+						'isRowApplicableCallable' => function ( $ctx, $rc ) {
+							$namespaces = self::getTranslateNamespaces();
+
+							return !in_array( $rc->getAttribute( 'rc_namespace' ), $namespaces );
 						}
 					],
 				],
