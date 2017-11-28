@@ -7,6 +7,7 @@
 			"Predatorix"
 		]
 	},
+	"apihelp-aggregategroups-summary": "Verwaltet zusammengefasste Nachrichtengruppen.",
 	"apihelp-aggregategroups-param-do": "Was mit der zusammengefassten Nachrichtengruppe getan werden soll.",
 	"apihelp-aggregategroups-param-aggregategroup": "Kennung der zusammengefassten Nachrichtengruppe.",
 	"apihelp-aggregategroups-param-group": "Nachrichtengruppenkennung.",
@@ -73,6 +74,9 @@
 	"apihelp-searchtranslations-param-offset": "Versatz für die Übersetzungen.",
 	"apihelp-searchtranslations-param-limit": "Größe des Ergebnisses.",
 	"apihelp-searchtranslations-example-1": "Übersetzungen für die Sprache anzeigen.",
+	"apihelp-translationcheck-summary": "Validiert Übersetzungen.",
+	"apihelp-translationcheck-param-title": "Seitentitel mit Namensraum und Sprachcode.",
+	"apihelp-translationcheck-param-translation": "Die zu validierende Übersetzung.",
 	"apierror-translate-duplicateaggregategroup": "Die Nachrichtengruppe ist bereits vorhanden",
 	"apierror-translate-fuzzymessage": "Veraltete Übersetzungen können nicht überprüft werden",
 	"apierror-translate-groupreviewdisabled": "Die Nachrichtengruppenüberprüfung ist nicht in Verwendung.",

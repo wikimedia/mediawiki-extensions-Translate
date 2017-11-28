@@ -10,7 +10,8 @@
 			"Hpetit",
 			"Verdy p",
 			"Derugon",
-			"Urhixidur"
+			"Urhixidur",
+			"ALDO CP"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gérer les groupes d'agrégation de messages.\n\nVous pouvez ajouter et supprimer des agrégats de  groupes de messages et les associer ou de les dissocier les uns des autres (un à la fois).",
@@ -111,6 +112,9 @@
 	"apihelp-searchtranslations-param-limit": "Taille du résultat.",
 	"apihelp-searchtranslations-example-1": "Afficher les traductions pour la langue.",
 	"apihelp-searchtranslations-example-2": "Afficher les messages non traduits correspondant à la demande dans la langue source.",
+	"apihelp-translationcheck-summary": "Valider les traductions",
+	"apihelp-translationcheck-param-title": "Titre de page avec espace de noms et code langue",
+	"apihelp-translationcheck-param-translation": "La traduction à valider",
 	"apierror-translate-duplicateaggregategroup": "Le groupe de messages existe déjà",
 	"apierror-translate-fuzzymessage": "Impossible de relire des traductions trop vagues",
 	"apierror-translate-groupreviewdisabled": "La revue du groupe de message n'est pas utilisée.",
