@@ -4,24 +4,7 @@
 	var resultGroups;
 
 	$( function () {
-		var $messages = $( '.tux-message' );
-
 		resultGroups = $( '.facet.groups' ).data( 'facets' );
-
-		$messages.each( function () {
-			var $this = $( this );
-
-			$this.translateeditor( {
-				message: {
-					title: $this.data( 'title' ),
-					definition: $this.data( 'definition' ),
-					translation: $this.data( 'translation' ),
-					group: $this.data( 'group' )
-				}
-			} );
-		} );
-
-		$messages.last().addClass( 'last-message' );
 
 		$( '.tux-searchpage .button' ).click( function () {
 			var query = $( '.tux-searchpage .searchinputbox' ).val(),
