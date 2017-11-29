@@ -22,7 +22,6 @@
 
 .grid .search.pane {
 	background: url( ../images/search.png ) no-repeat scroll left top transparent;
-	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/search.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/search.svg );
 	background-size: 25px;

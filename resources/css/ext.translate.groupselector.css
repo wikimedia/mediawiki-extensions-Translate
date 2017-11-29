@@ -65,7 +65,6 @@
 
 .tux-groupselector__filter__search__icon {
 	background: url( ../images/search.png ) no-repeat scroll right center transparent;
-	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/search.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/search.svg );
 	background-size: 25px;
@@ -133,7 +132,6 @@
 
 .tux-grouplist__item__icon {
 	background: url( ../images/project.png ) no-repeat scroll right center transparent;
-	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/project.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/project.svg );
 	/* Keep this in sync with js! */

@@ -85,7 +85,6 @@
 	width: 18px;
 	height: 18px; /* Icon height + 3px */
 	background: url( ../images/user-small.png ) top right no-repeat;
-	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/user-small.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/user-small.svg );
 }
@@ -96,7 +95,6 @@
 
 .tux-proofread-status.fuzzy {
 	background: url( ../images/outdated-ltr.png ) left center no-repeat;
-	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/outdated-ltr.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/outdated-ltr.svg );
 	height: 40px;
@@ -104,7 +102,6 @@
 
 .tux-proofread-status.untranslated {
 	background: url( ../images/translate-ltr.png ) left center no-repeat;
-	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/translate-ltr.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/translate-ltr.svg );
 	height: 40px;
@@ -114,7 +111,6 @@
 	background-position: right top;
 	background-repeat: no-repeat;
 	background-image: url( ../images/check-sprite-ltr.png );
-	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/check-sprite-ltr.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/check-sprite-ltr.svg );
 	/* There is 1px white row between each icon */
@@ -146,7 +142,6 @@
 
 .tux-proofread-edit {
 	background-image: url( ../images/edit-mark.png );
-	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/edit-mark.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/edit-mark.svg );
 	background-repeat: no-repeat;
@@ -181,7 +176,6 @@
 	content: '';
 	display: inline-block;
 	background: url( ../images/check-small.png ) left bottom no-repeat;
-	background-image: -webkit-linear-gradient( transparent, transparent ), url( ../images/check-small.svg );
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/check-small.svg );
 	height: 12px;
