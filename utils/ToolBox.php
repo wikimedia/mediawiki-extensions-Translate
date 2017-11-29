@@ -22,18 +22,20 @@ class TranslateToolbox {
 	 *
 	 * @return bool
 	 */
-	public static function toolboxAllTranslations( &$quickTemplate ) {
-		$title = $quickTemplate->getSkin()->getTitle();
+	public static function toolboxAllTranslations( $baseTemplate, &$toolbox ) {
+		$title = $baseTemplate->getSkin()->getTitle();
 		$handle = new MessageHandle( $title );
 		if ( $handle->isValid() ) {
 			$message = $title->getNsText() . ':' . $handle->getKey();
-			$desc = wfMessage( 'translate-sidebar-alltrans' )->escaped();
 			$url = htmlspecialchars( SpecialPage::getTitleFor( 'Translations' )
 				->getLocalURL( [ 'message' => $message ] ) );
 
 			// Add the actual toolbox entry.
-			// Add newlines and tabs for nicer HTML output.
-			echo "\n\t\t\t\t<li id=\"t-alltrans\"><a href=\"$url\">$desc</a></li>\n";
+			$toolbox[ 'alltrans' ] = array(
+				'href' => $url,
+				'id' => 't-alltrans',
+				'msg' => 'translate-sidebar-alltrans',
+			);
 		}
 
 		return true;
