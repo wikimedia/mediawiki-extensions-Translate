@@ -30,6 +30,8 @@
 	"apihelp-searchtranslations-param-query": "D'Zeechen no deene gesicht gi soll.",
 	"apihelp-searchtranslations-param-limit": "Gréisst vum Resultat",
 	"apihelp-searchtranslations-example-1": "Iwwersetzunge fir d'Sprooch weisen.",
+	"apihelp-translationcheck-summary": "Iwwersetzunge validéieren.",
+	"apihelp-translationcheck-param-translation": "D'Iwweersetzung fir ze validéieren.",
 	"apierror-translate-duplicateaggregategroup": "De Grupp vu Message gëtt et schonn",
 	"apierror-translate-fuzzymessage": "Fuzzy Iwwersetzunge kënnen net nogekuckt ginn",
 	"apierror-translate-invalidlanguage": "Déi gefrot Sprooch ass net valabel.",
