@@ -134,7 +134,7 @@ $wgHooks['ChangesListSpecialPageQuery'][] = 'TranslateRcFilter::translationFilte
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $wgHooks['ChangesListSpecialPageStructuredFilters'][] =
 	'TranslateRcFilter::onChangesListSpecialPageStructuredFilters';
-$wgHooks['SkinTemplateToolboxEnd'][] = 'TranslateToolbox::toolboxAllTranslations';
+$wgHooks['BaseTemplateToolbox'][] = 'TranslateToolbox::toolboxAllTranslations';
 $wgHooks['AbortEmailNotification'][] = 'TranslateHooks::onAbortEmailNotificationReview';
 
 // Translation memory related
