@@ -114,7 +114,9 @@ class TranslateEditAddons {
 		}
 
 		$context = $editpage->getArticle()->getContext();
-		$useOoui = method_exists( $editpage, 'isOouiEnabled' ) && $editpage->isOouiEnabled();
+		global $wgVersion;
+		$useOoui = version_compare( $wgVersion, '1.30c', '>=' )
+			|| method_exists( $editpage, 'isOouiEnabled' ) && $editpage->isOouiEnabled();
 
 		if ( $handle->isDoc() ) {
 			$langCode = $context->getLanguage()->getCode();
