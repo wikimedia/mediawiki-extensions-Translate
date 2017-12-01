@@ -5,7 +5,8 @@
 			"Siebrand",
 			"Robin0van0der0vliet",
 			"Mainframe98",
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Mar(c)"
 		]
 	},
 	"apihelp-groupreview-param-group": "Berichtgroep.",
@@ -21,7 +22,7 @@
 	"apihelp-query+messagetranslations-example-1": "Lijst met vertalingen in de wiki voor \"MediaWiki:January\"",
 	"apihelp-translationstash-param-subaction": "Handeling.",
 	"apihelp-translationstash-param-metadata": "JSON-object.",
-	"apihelp-searchtranslations-description": "Vertalingen doorzoeken",
+	"apihelp-searchtranslations-description": "Vertalingen doorzoeken.",
 	"apierror-translate-invalidgroup": "Groep bestaat niet of is ongeldig",
 	"apierror-translate-language-disabled": "Vertalen naar deze taal is uitgeschakeld",
 	"apierror-translate-unknownmessage": "Onbekend bericht"

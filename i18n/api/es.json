@@ -82,6 +82,8 @@
 	"apihelp-searchtranslations-param-limit": "Tamaño del resultado.",
 	"apihelp-searchtranslations-example-1": "Mostrar las traducciones para el idioma.",
 	"apihelp-searchtranslations-example-2": "Mostrar mensajes sin traducir que coincidan con la consulta en el idioma de origen.",
+	"apihelp-translationcheck-summary": "Validar traducciones.",
+	"apihelp-translationcheck-param-translation": "La traducción que validar.",
 	"apierror-translate-invalidgroup": "El grupo no existe o no es válido",
 	"apierror-translate-invalidstate": "El estado solicitado no es válido.",
 	"apierror-translate-invalidlanguage": "El idioma solicitado no es válido.",

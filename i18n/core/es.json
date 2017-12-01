@@ -100,7 +100,7 @@
 	"translate-magic-notsaved": "No se guardó tu edición.",
 	"translate-magic-errors": "Corrige {{PLURAL:$1|el siguiente error|los siguientes errores}} en la traducción:",
 	"translate-magic-saved": "Se guardaron los cambios.",
-	"translate-checks-parameters": "{{PLURAL:$2|El siguiente parámetro no se está|Los siguientes parámetros no se están}} usando:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters": "{{PLURAL:$2|Falta el parámetro siguiente|Faltan los parámetros siguientes}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|El siguiente parámetro es desconocido|Los siguientes parámetros son desconocidos}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "Hay algún signo de agrupación de {{PLURAL:$2|la siguiente clase|las siguientes clases}} sin emparejar:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|El siguiente enlace es problemático|Los siguientes $2 enlaces son problemáticos}}:\n<strong><nowiki>$1</nowiki></strong>",
