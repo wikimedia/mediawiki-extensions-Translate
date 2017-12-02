@@ -15,7 +15,8 @@
 			"Fabsouza1",
 			"He7d3r",
 			"Eduardo Addad de Oliveira",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"TheEduGobi"
 		]
 	},
 	"translate": "Traduzir",
@@ -380,7 +381,7 @@
 	"tux-editor-message-tools-history": "Histórico",
 	"tux-editor-message-tools-delete": "Excluir",
 	"tux-editor-message-tools-translations": "Todas as traduções",
-	"tux-editor-message-tools-linktothis": "Link para esta mensagem",
+	"tux-editor-message-tools-linktothis": "Ligação para essa mensagem",
 	"tux-editor-loading": "Carregando...",
 	"translate-search-more-languages-info": "mais $1 {{PLURAL:$1|idioma|idiomas}}",
 	"translate-statsbar-tooltip": "$1% traduzido, $2% revisado",
