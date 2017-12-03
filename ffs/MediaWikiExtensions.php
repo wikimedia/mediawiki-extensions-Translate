@@ -4,12 +4,11 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2008-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
 /**
- * Class which handles special definition format for %MediaWiki extensions.
+ * Class which handles special definition format for %MediaWiki extensions and skins.
  */
 class PremadeMediawikiExtensionGroups {
 	/** @var bool */
@@ -123,12 +122,7 @@ class PremadeMediawikiExtensionGroups {
 			$conf['BASIC']['extensionurl'] = $info['url'];
 		}
 
-		if ( $info['format'] === 'json' ) {
-			$conf['FILES']['class'] = 'JsonFFS';
-		} else {
-			$conf['FILES']['class'] = 'MediaWikiExtensionFFS';
-		}
-
+		$conf['FILES']['class'] = 'JsonFFS';
 		$conf['FILES']['sourcePattern'] = $this->path . '/' . $info['file'];
 
 		// @todo Find a better way
@@ -209,7 +203,6 @@ class PremadeMediawikiExtensionGroups {
 						case 'desc':
 						case 'descmsg':
 						case 'file':
-						case 'format':
 						case 'id':
 						case 'magicfile':
 						case 'var':
@@ -275,17 +268,8 @@ class PremadeMediawikiExtensionGroups {
 				$id = $this->idPrefix . preg_replace( '/\s+/', '', strtolower( $name ) );
 			}
 
-			// Default message file format is currently php
-			if ( !isset( $g['format'] ) ) {
-				$g['format'] = 'json';
-			}
-
 			if ( !isset( $g['file'] ) ) {
-				if ( $g['format'] === 'json' ) {
-					$file = preg_replace( '/\s+/', '', "$name/i18n/%CODE%.json" );
-				} else {
-					$file = preg_replace( '/\s+/', '', "$name/$name.i18n.php" );
-				}
+				$file = preg_replace( '/\s+/', '', "$name/i18n/%CODE%.json" );
 			} else {
 				$file = $g['file'];
 			}
@@ -313,7 +297,6 @@ class PremadeMediawikiExtensionGroups {
 			$copyvars = [
 				'aliasfile',
 				'desc',
-				'format',
 				'ignored',
 				'magicfile',
 				'mangle',
