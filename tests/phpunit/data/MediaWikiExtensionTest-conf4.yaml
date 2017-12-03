@@ -7,7 +7,7 @@ BASIC:
   extensionurl: false
 
 FILES:
-  class: MediaWikiExtensionFFS
+  class: JsonFFS
   sourcePattern: "%GROUPROOT%/mediawiki-extensions/extensions/foo"
 
 CHECKER:
