@@ -1,5 +1,4 @@
 Wikimedia Messages
-format = php
 desc = Plop
 ignored = sidebar, robots.txt
 optional = grouppage-recursive-export
@@ -7,11 +6,7 @@ prefix = wmf- | sidebar, grouppage-Staff, group-Staff, group-Staff-member
 aliasfile = FooBar.alias.php
 magicfile = FooBar.magic.php
 
-Example Extension
-format = php
-
 Example JsonExtension
 
 Example Extension 2
-format = php
 file = foo

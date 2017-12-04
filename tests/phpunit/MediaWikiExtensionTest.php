@@ -3,7 +3,6 @@
  * Tests for MediaWikiExtension
  * @author Niklas Laxström
  * @file
- * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -19,11 +18,7 @@ class MediaWikiExtensionTest extends MediaWikiTestCase {
 		$foo->register( $list, $deps, $autoload );
 
 		$this->assertEquals( 1, count( $deps ), 'A dependency to definition file was added' );
-		$this->assertEquals( 4, count( $list ), 'Four groups were created' );
-
-		$this->assertArrayHasKey( 'ext-exampleextension', $list );
-		$expected = TranslateYaml::load( __DIR__ . '/data/MediaWikiExtensionTest-conf1.yaml' );
-		$this->assertEquals( $expected, $list['ext-exampleextension']->getConfiguration() );
+		$this->assertEquals( 3, count( $list ), 'Right number of groups were created' );
 
 		$this->assertArrayHasKey( 'ext-wikimediamessages', $list );
 		$expected = TranslateYaml::load( __DIR__ . '/data/MediaWikiExtensionTest-conf2.yaml' );
