@@ -77,10 +77,8 @@ class SandboxMessageGroup extends WikiMessageGroup {
 			$list[$index] = '';
 		}
 
-		// Message index of all known messages
-		$mi = MessageIndex::singleton();
 		// Get some random keys
-		$all = array_keys( $mi->retrieve() );
+		$all = MessageIndex::singleton->getKeys();
 		// In case there aren't any messages
 		if ( $all === [] ) {
 			return $list;
