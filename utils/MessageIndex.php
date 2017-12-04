@@ -126,6 +126,13 @@ abstract class MessageIndex {
 	 */
 	abstract public function retrieve( $forRebuild = false );
 
+	/**
+	 * @since 2018.01
+	 */
+	public function getKeys() {
+		return array_keys( $this->retrieve() );
+	}
+
 	abstract protected function store( array $array, array $diff );
 
 	protected function lock() {
@@ -615,6 +622,16 @@ class CDBMessageIndex extends MessageIndex {
 			return $this->index;
 		}
 
+		$this->index = [];
+		foreach ( $this->getKeys() as $key ) {
+			$this->index[$key] = $this->unserialize( $reader->get( $key ) );
+		}
+
+		return $this->index;
+	}
+
+	public function getKeys() {
+		$reader = $this->getReader();
 		$keys = [];
 		while ( true ) {
 			$key = $keys === [] ? $reader->firstkey() : $reader->nextkey();
@@ -624,12 +641,7 @@ class CDBMessageIndex extends MessageIndex {
 			$keys[] = $key;
 		}
 
-		$this->index = [];
-		foreach ( $keys as $key ) {
-			$this->index[$key] = $this->unserialize( $reader->get( $key ) );
-		}
-
-		return $this->index;
+		return $keys;
 	}
 
 	protected function get( $key ) {
