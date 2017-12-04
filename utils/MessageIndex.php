@@ -615,7 +615,15 @@ class CDBMessageIndex extends MessageIndex {
 			return $this->index;
 		}
 
-		$keys = (array)$this->unserialize( $reader->get( '#keys' ) );
+		$keys = [];
+		while ( true ) {
+			$key = $keys === [] ? $reader->firstkey() : $reader->nextkey();
+			if ( $key === false ) {
+				break;
+			}
+			$keys[] = $key;
+		}
+
 		$this->index = [];
 		foreach ( $keys as $key ) {
 			$this->index[$key] = $this->unserialize( $reader->get( $key ) );
@@ -650,8 +658,6 @@ class CDBMessageIndex extends MessageIndex {
 
 		$file = TranslateUtils::cacheFile( $this->filename );
 		$cache = \Cdb\Writer::open( $file );
-		$keys = array_keys( $array );
-		$cache->set( '#keys', $this->serialize( $keys ) );
 
 		foreach ( $array as $key => $value ) {
 			$value = $this->serialize( $value );
