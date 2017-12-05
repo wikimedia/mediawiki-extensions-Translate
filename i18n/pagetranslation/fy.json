@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robin0van0der0vliet"
+			"Robin0van0der0vliet",
+			"Robin van der Vliet"
 		]
 	},
 	"tpt-select-prioritylangs-reason": "Reden:",
@@ -16,6 +17,5 @@
 	"pt-movepage-reason": "Reden:",
 	"pt-deletepage-reason": "Reden:",
 	"pm-savepages-button-label": "Bewarje",
-	"pm-cancel-button-label": "Annulearje",
-	"pm-langcode-placeholder": "Taalkoade"
+	"pm-cancel-button-label": "Annulearje"
 }

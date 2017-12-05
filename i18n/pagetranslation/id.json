@@ -44,6 +44,7 @@
 	"translate-tag-markthisagain": "Halaman ini telah diubah <span class=\"plainlinks\">[$1 kali]</span> sejak terakhir <span class=\"plainlinks\">[$2 ditandai untuk diterjemahkan]</span>.",
 	"translate-tag-hasnew": "Halaman ini berisikan <span class=\"plainlinks\">[$1 revisi]</span> yang tidak ditandai untuk diterjemahkan.",
 	"tpt-translation-intro": "Halaman ini adalah sebuah <span class=\"plainlinks\">[$1 versi terjemahan]</span> dari halaman [[$2]] dan terjemahannya telah selesai $3% dari sumber terkini.",
+	"tpt-translation-intro-fuzzy": "Terjemahan usang ditandai seperti ini.",
 	"tpt-languages-legend": "Bahasa lain:",
 	"tpt-languages-nonzero": "$1 ($2% terjemahan)",
 	"tpt-target-page": "Halaman ini tidak dapat diperbarui secara manual.\nHalaman ini adalah terjemahan dari halaman [[$1]] dan terjemahannya dapat diperbarui menggunakan [$2 peralatan penerjemahan].",

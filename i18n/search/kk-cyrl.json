@@ -12,7 +12,6 @@
 	"tux-sst-count": "{{PLURAL:$1|Бір нәтиже табылды|$1 нәтиже табылды}}",
 	"tux-sst-facet-language": "Тілдер",
 	"tux-sst-facet-group": "Хабарлама топтары",
-	"tux-sst-facet-orphan": "(жекелей)",
 	"tux-sst-nosolr-title": "Іздеу қол жетімді емес",
 	"tux-sst-nosolr-body": "Уиикиде аударманы іздеу сервисі жоқ.",
 	"tux-sst-solr-offline-title": "Іздеу қол жетімді емес",

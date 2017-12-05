@@ -6,7 +6,6 @@
 			"NehalDaveND"
 		]
 	},
-	"tpt-template": "पृष्ठफलकम्",
 	"tpt-diff-old": "पूर्वतनः पाठः",
 	"tpt-diff-new": "नवीनः पाठः",
 	"tpt-other-pages-title": "सन्धिभग्नानि पृष्ठानि",
@@ -37,8 +36,6 @@
 	"pm-import-button-label": "आयातं करोतु",
 	"pm-savepages-button-label": "रक्ष्यताम्",
 	"pm-cancel-button-label": "निरस्यताम्",
-	"pm-pagename-placeholder": "सदस्यनाम लिख्यताम्",
-	"pm-langcode-placeholder": "भाषाकूटः",
 	"pp-save-button-label": "रक्ष्यताम्",
 	"pp-cancel-button-label": "निरस्यताम्"
 }

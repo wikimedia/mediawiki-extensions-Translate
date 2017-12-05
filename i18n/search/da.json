@@ -11,7 +11,6 @@
 	"tux-sst-count": "{{PLURAL:$1|Ét resultat fundet|$1 resultater fundet}}",
 	"tux-sst-facet-language": "Sprog",
 	"tux-sst-facet-group": "Beskedgrupper",
-	"tux-sst-facet-orphan": "(ingen)",
 	"tux-sst-nosolr-title": "Søgning er ikke tilgængelig",
 	"tux-sst-nosolr-body": "Denne wiki har ikke mulighed for oversættelsessøgning.",
 	"tux-sst-solr-offline-title": "Søgning er ikke tilgængelig",

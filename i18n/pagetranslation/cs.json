@@ -61,6 +61,7 @@
 	"translate-tag-markthisagain": "Tato stránka byla <span class=\"plainlinks\">[$1 změněna]</span> od posledního <span class=\"plainlinks\">[$2 označení pro překlad]</span>.",
 	"translate-tag-hasnew": "Tato stránka obsahuje <span class=\"plainlinks\">[$1 změny]</span>, které nebyly označeny pro překlad.",
 	"tpt-translation-intro": "Toto je <span class=\"plainlinks\">[$1 přeložená verze]</span> stránky [[$2]], překlad je hotový z $3 %.",
+	"tpt-translation-intro-fuzzy": "Takto jsou označeny zastaralé části překladu.",
 	"tpt-languages-legend": "Jiné jazyky:",
 	"tpt-languages-zero": "Začít překlad do tohoto jazyka",
 	"tpt-languages-nonzero": "$1 ({{PLURAL:$2|přeloženo|přeložena|přeloženo}} $2 %)",

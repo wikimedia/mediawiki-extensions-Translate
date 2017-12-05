@@ -12,7 +12,6 @@
 	"tux-sst-count": "{{PLURAL:$1|Ee Resultat|$1 Resultater}} fonnt",
 	"tux-sst-facet-language": "Sproochen",
 	"tux-sst-facet-group": "Gruppe vu Messagen",
-	"tux-sst-facet-orphan": "(verwaist)",
 	"tux-sst-nosolr-title": "Sichen ass net disponibel",
 	"tux-sst-nosolr-body": "Dës Wiki huet d'Sichfonctioun vun den Iwwersetzungen net.",
 	"tux-sst-solr-offline-title": "Sichen ass net disponibel",

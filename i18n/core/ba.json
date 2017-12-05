@@ -167,9 +167,7 @@
 	"translate-import-err-no-headers": "Файл —Translate киңәйеүе форматында дөрөҫ Gettext-файл түгел:\nФайлдың башлыҡтарынан төркөмдө һәм телде билдәләп булмай.",
 	"translate-import-err-warnings": "Файл дөрөҫ төҙөлмәгән.\nҺеҙҙең мөхәррирләүсегеҙ msgctxt юлдарын юймай икәнен тикшерегеҙ.\nТулыраҡ: $1",
 	"translate-js-next": "Һаҡларға һәм сираттағыны асырға",
-	"translate-js-nonext": "Был яҙма әлеге биттә аҙаҡҡыһы булды.",
 	"translate-js-skip": "Сираттағыға күсергә",
-	"translate-js-save-failed": "Яҙҙырып ҡуйыу үтәлмәне. Был хата тураһында хәбәр итегеҙ, зинһар.",
 	"translate-js-history": "Тәржемә тарихы",
 	"translate-js-support": "Һорау бирергә",
 	"translate-js-support-title": "Был яҙманы дөрөҫ тәржемә итер өсөн мәғлүмәт етмәһә, ярҙам һорап мөрәжәғәт итегеҙ.",
@@ -186,8 +184,5 @@
 	"translate-searchprofile": "Тәржемәләр",
 	"translate-search-languagefilter": "Тел буйынса фильтр:",
 	"translate-search-nofilter": "Фильтрһыҙ",
-	"translate-messagereview-submit": "Ҡабул итергә",
-	"translate-messagereview-progress": "Ҡабул итеү...",
-	"translate-messagereview-done": "Ҡабул ителде",
 	"tux-nojs": "Был ҡорал JavaScript-һыҙ эшләмәй."
 }

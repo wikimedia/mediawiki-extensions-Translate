@@ -7,6 +7,5 @@
 	"tux-sst-search": "Klask",
 	"tux-sst-search-ph": "Klask troidigezhioù",
 	"tux-sst-count": "{{PLURAL:$1|Un disoc'h kavet|$1 disoc'h kavet}}",
-	"tux-sst-facet-language": "Yezhoù",
-	"tux-sst-facet-orphan": "(emzivad)"
+	"tux-sst-facet-language": "Yezhoù"
 }

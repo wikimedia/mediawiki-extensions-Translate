@@ -45,6 +45,7 @@
 	"translate-tag-markthisagain": "Ceta pâge at avu des <span class=\"plainlinks\">[$1 changements]</span> dês qu’est étâye <span class=\"plainlinks\">[$2 marcâye dèrriérement por étre traduita]</span>.",
 	"translate-tag-hasnew": "Ceta pâge contint des <span class=\"plainlinks\">[$1 changements]</span> que sont pas marcâs por la traduccion.",
 	"tpt-translation-intro": "Ceta pâge est na <span class=\"plainlinks\">[$1 traduccion]</span> de la pâge [[$2]] et la traduccion est complètâye a $3 % et pués a jorn.",
+	"tpt-translation-intro-fuzzy": "Les traduccions dèpassâyes sont marcâyes d’ense.",
 	"tpt-languages-legend": "Ôtres lengoues :",
 	"tpt-languages-nonzero": "$1 ($2% traduit)",
 	"tpt-target-page": "Ceta pâge pôt pas étre betâye a jorn a la man.\nEl est na traduccion de la pâge [[$1]] et la traduccion pôt étre betâye a jorn en empleyent l’[$2 outil de traduccion].",

@@ -12,7 +12,6 @@
 	"tux-sst-count": "{{PLURAL:$1|એક પરિણામ મળ્યું|$1 પરિણામો મળ્યા}}",
 	"tux-sst-facet-language": "ભાષાઓ",
 	"tux-sst-facet-group": "સંદેશ જૂથો",
-	"tux-sst-facet-orphan": "(અનાથ)",
 	"tux-sst-nosolr-title": "શોધ ઉપલબ્ધ નથી",
 	"tux-sst-nosolr-body": "આ વિકિ પર ભાષાંતર શોધ સેવા ઉપલબ્ધ નથી.",
 	"tux-sst-solr-offline-title": "શોધ ઉપલબ્ધ નથી",

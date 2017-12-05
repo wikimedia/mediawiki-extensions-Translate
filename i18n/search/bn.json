@@ -14,7 +14,6 @@
 	"tux-sst-count": "{{PLURAL:$1|একটি ফলাফল পাওয়া গিয়েছে|$1টি ফলাফল পাওয়া গিয়েছে}}",
 	"tux-sst-facet-language": "ভাষাসমূহ",
 	"tux-sst-facet-group": "বার্তা সংকলন",
-	"tux-sst-facet-orphan": "(পিতৃহীন)",
 	"tux-sst-nosolr-title": "অনুসন্ধান সম্ভব নয়",
 	"tux-sst-nosolr-body": "এই উইকিতে অনুবাদ অনুসন্ধান সক্রিয় নেই।",
 	"tux-sst-solr-offline-title": "অনুসন্ধান সক্রিয় নেই",

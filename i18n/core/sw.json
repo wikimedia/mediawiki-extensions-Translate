@@ -7,9 +7,6 @@
 		]
 	},
 	"translate": "Kutafsiri",
-	"translate-taskui-view": "Onyesha jumbe zote",
-	"translate-taskui-untranslated": "Onyesha jumbe ambazo hazijatafsiriwa",
-	"translate-taskui-optional": "Onyesha ujumbe wa hiari",
 	"translate-taction-translate": "Tafsiri",
 	"translate-taction-export": "Peleka",
 	"translate-language-disabled": "Tafsiri kwa lugha hii kumelemazwa",
@@ -45,7 +42,6 @@
 	"translate-statsf-count": "Pima:",
 	"translate-statsf-count-edits": "Idadi ya hariri",
 	"translate-statsf-count-registrations": "Watumiaji wapya",
-	"translate-tag-category": "Kurasa zinaoweza kuharirika",
 	"translate-sidebar-alltrans": "Katika lugha nyingine",
 	"translations": "Tafsiri zote",
 	"translate-translations-fieldset-title": "Ujumbe",
@@ -81,7 +77,6 @@
 	"translate-js-summary": "Muhtasari:",
 	"translate-js-save": "Hifadhi",
 	"translate-js-next": "Hifadhi na ufungue inayofuatia",
-	"translate-js-nonext": "Huu ndio ulikuwa ujumbe wa mwisho katika ukurasa huu.",
 	"translate-js-skip": "Ruka hado unaofuatia",
 	"translate-js-history": "Historia ya fasiri",
 	"translate-js-support": "Uliza swali",
@@ -91,13 +86,7 @@
 	"translate-gs-total": "Jumla",
 	"translate-gs-avgscore": "Alama ya wastani",
 	"translate-searchprofile": "Tafsiri",
-	"translate-messagereview-submit": "Kubali",
-	"translate-messagereview-progress": "Inakubali...",
-	"translate-messagereview-done": "Imekubaliwa",
-	"api-error-invalidrevision": "Tafsiri haikupatikana",
-	"api-error-unknownmessage": "Ujumbe haukupatikana",
 	"translate-workflowstatus": "Hali: $1",
 	"translate-stats-workflow": "Hali",
-	"translate-dynagroup-recent-label": "fasiri za hivi karibuni",
-	"translate-gethelp": "Msaada"
+	"translate-dynagroup-recent-label": "fasiri za hivi karibuni"
 }

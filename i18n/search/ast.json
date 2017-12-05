@@ -12,7 +12,6 @@
 	"tux-sst-count": "{{PLURAL:$1|Alcontrose un resultáu|Alcontráronse $1 resultaos}}",
 	"tux-sst-facet-language": "Llingües",
 	"tux-sst-facet-group": "Grupos de mensaxes",
-	"tux-sst-facet-orphan": "(güérfanos)",
 	"tux-sst-nosolr-title": "La gueta nun ta disponible",
 	"tux-sst-nosolr-body": "Esta wiki nun tien un serviciu de gueta de traducciones.",
 	"tux-sst-solr-offline-title": "La gueta nun ta disponible",

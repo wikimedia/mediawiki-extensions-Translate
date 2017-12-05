@@ -32,6 +32,7 @@
 	"translate-tag-markthisagain": "هذه الصفحه بها <span class=\"plainlinks\">[$1 تغيير]</span> منذ تم <span class=\"plainlinks\">[$2 تعليمها للترجمة]</span> لآخر مره.",
 	"translate-tag-hasnew": "هذه الصفحه تحتوى على <span class=\"plainlinks\">[$1 تغييرات]</span> غير معلمه للترجمه.",
 	"tpt-translation-intro": "هذه الصفحه هى <span class=\"plainlinks\">[$1 نسخه مترجمة]</span> لصفحه [[$2]] والترجمه مكتمله ومحدثه بنسبه $3%.",
+	"tpt-translation-intro-fuzzy": "الترجمات غير المُحدّثه مُعلّمه هكذا.",
 	"tpt-languages-legend": "لغات أخرى:",
 	"tpt-languages-nonzero": "$1 (اترجمت بنسبة $2%)",
 	"tpt-target-page": "لا يمكن تحديث هذه الصفحه يدويًا.\nهذه الصفحه ترجمه لصفحه [[$1]] ويمكن تحديث الترجمه باستخدام [$2 أداه الترجمة].",

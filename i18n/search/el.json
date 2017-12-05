@@ -13,7 +13,6 @@
 	"tux-sst-count": "{{PLURAL:$1|Βρέθηκε ένα αποτέλεσμα|Βρέθηκαν $1 αποτελέσματα}}",
 	"tux-sst-facet-language": "Γλώσσες",
 	"tux-sst-facet-group": "Ομάδες μηνυμάτων",
-	"tux-sst-facet-orphan": "(ορφανά)",
 	"tux-sst-nosolr-title": "Αναζήτηση μη διαθέσιμη",
 	"tux-sst-nosolr-body": "Αυτό το wiki δεν έχει υπηρεσία αναζήτησης για μεταφράσεις.",
 	"tux-sst-solr-offline-title": "Αναζήτηση μη διαθέσιμη",

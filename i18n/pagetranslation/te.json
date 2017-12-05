@@ -8,11 +8,9 @@
 	},
 	"pagetranslation": "పేజీ అనువాదం",
 	"right-pagetranslation": "పేజీల కూర్పులను అనువాదానికై గుర్తించడం",
-	"tpt-desc": "విషయపు పేజీలను అనువదించడానికై పొడగింత",
 	"tpt-section": "అనువాద విభాగం $1",
 	"tpt-section-new": "కొత్త అనువాద విభాగం. పేరు: $1",
 	"tpt-section-deleted": "అనువాద విభాగము $1",
-	"tpt-template": "పేజీ మూస",
 	"tpt-diff-old": "గత పాఠ్యం",
 	"tpt-diff-new": "కొత్త పాఠ్యం",
 	"tpt-sections-template": "అనువాద పేజీ మూస",
@@ -54,7 +52,5 @@
 	"pt-deletepage-list-other": "ఇతర ఉపపేజీలు",
 	"pm-import-button-label": "దిగుమతి చెయ్యి",
 	"pm-savepages-button-label": "భద్రపరచు",
-	"pm-cancel-button-label": "రద్దుచేయి",
-	"pm-pagename-placeholder": "మీ ప్రతికి పేరును ఇవ్వండి",
-	"pm-langcode-placeholder": "భాష సంకేతం"
+	"pm-cancel-button-label": "రద్దుచేయి"
 }

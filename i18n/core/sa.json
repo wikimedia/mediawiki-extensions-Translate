@@ -6,7 +6,6 @@
 		]
 	},
 	"translate": "अनूद्यताम्",
-	"translate-taskui-view": "सर्वे सन्देशाः दृश्यन्ताम्",
 	"translate-taction-translate": "अनूद्यताम्",
 	"translate-taction-lstats": "भाषासाङ्ख्यिकी",
 	"translate-taction-export": "निर्यातः",
@@ -75,7 +74,6 @@
 	"translate-documentation-language": "सन्देशप्रलेखनम्",
 	"translate-workflow-set-doing": "अभिविन्यासः...",
 	"translate-dynagroup-recent-label": "अधुना जाताः अनुवादाः",
-	"translate-gethelp": "साहाय्यम्",
 	"translate-msggroupselector-search-all": "सर्वम्",
 	"translate-msggroupselector-search-recent": "सद्यस्कम्",
 	"tux-languageselector": "अनूद्यताम्",

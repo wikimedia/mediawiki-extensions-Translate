@@ -3,7 +3,8 @@
 		"authors": [
 			"Kening Aldgilles",
 			"Snakesteuben",
-			"Robin0van0der0vliet"
+			"Robin0van0der0vliet",
+			"Robin van der Vliet"
 		]
 	},
 	"translate": "Oersette",
@@ -44,7 +45,6 @@
 	"translate-gs-continent": "Kontinent",
 	"translate-documentation-language": "Berjochtbeskriuwing",
 	"translate-searchprofile": "Oersettings",
-	"translate-gethelp": "Help",
 	"translate-msggroupselector-projects": "Berjochtengroep",
 	"tux-languageselector": "Oersette nei",
 	"tux-tab-untranslated": "Unoerset",

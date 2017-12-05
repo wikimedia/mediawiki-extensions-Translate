@@ -24,8 +24,5 @@
 	"translate-manage-inconsistent": "Es wurden Inkonsistenzen in der Anfrage festgestellt.\nBitte überprüfen Sie Ihre Änderungen und versuchen Sie es erneut.\nDetails: $1",
 	"translate-manage-toolong": "Die maximale Verarbeitungszeit von $1 {{PLURAL:$1|Sekunde|Sekunden}} ist abgelaufen.\nBitte schicken Sie das Formular noch einmal ab, um die Verarbeitung fortzusetzen.",
 	"translate-manage-intro-other": "Hier ist eine Liste von Übersetzungsänderungen der Sprache $1.\nBitte kontrollieren Sie die Änderungen und wählen Sie je eine Aktion, die Sie auf die Übersetzungen anwenden möchten.\nWenn Sie sich entscheiden, Änderungen zu ignorieren, werden sie mit dem nächsten Export überschrieben.",
-	"translate-import-err-warnings": "Die Datei entspricht nicht dem erwarteten Format.\nStellen Sie sicher, dass der Editor keine <code>msgctxt</code>-Felder entfernt.\nDetails: $1",
-	"translate-messagereview-reviewswithyou": "Akzeptiert von {{PLURAL:$1|Ihnen selbst|$1 Benutzern, einschließlich Ihnen selbst}}",
-	"api-error-owntranslation": "Sie können Ihre eigenen Übersetzungen nicht akzeptieren.",
-	"translate-messagereview-no-own": "Sie können Ihre eigenen Übersetzungen nicht akzeptieren."
+	"translate-import-err-warnings": "Die Datei entspricht nicht dem erwarteten Format.\nStellen Sie sicher, dass der Editor keine <code>msgctxt</code>-Felder entfernt.\nDetails: $1"
 }

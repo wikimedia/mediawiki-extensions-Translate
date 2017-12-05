@@ -12,7 +12,6 @@
 	"tux-sst-count": "Znaleziono {{PLURAL:$1|jeden wynik|$1 wyników}}",
 	"tux-sst-facet-language": "Języki",
 	"tux-sst-facet-group": "Grupa komunikatów",
-	"tux-sst-facet-orphan": "(sierota)",
 	"tux-sst-nosolr-title": "Wyszukiwanie nie jest dostępne",
 	"tux-sst-nosolr-body": "W tej wiki nie ma usługi wyszukiwania tłumaczeń.",
 	"tux-sst-solr-offline-title": "Wyszukiwanie nie jest dostępne",

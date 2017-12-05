@@ -14,7 +14,6 @@
 	"tux-sst-count": "{{PLURAL:$1|Знайдено один результат|Знайдено $1 результати|Знайдено $1 результатів}}",
 	"tux-sst-facet-language": "Мови",
 	"tux-sst-facet-group": "Групи повідомлень",
-	"tux-sst-facet-orphan": "(сирота)",
 	"tux-sst-nosolr-title": "Пошук недоступний",
 	"tux-sst-nosolr-body": "У цій вікі немає служби пошуку перекладів.",
 	"tux-sst-solr-offline-title": "Пошук не доступний",

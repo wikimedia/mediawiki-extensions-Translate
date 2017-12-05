@@ -13,7 +13,6 @@
 	"tux-sst-count": "{{PLURAL:$1|Atopouse 1 resultado|Atopáronse $1 resultados}}",
 	"tux-sst-facet-language": "Linguas",
 	"tux-sst-facet-group": "Grupos de mensaxes",
-	"tux-sst-facet-orphan": "(orfos)",
 	"tux-sst-nosolr-title": "A procura non está dispoñible",
 	"tux-sst-nosolr-body": "Este wiki non dispón dun servizo de procura de traducións.",
 	"tux-sst-solr-offline-title": "A procura non está dispoñible",

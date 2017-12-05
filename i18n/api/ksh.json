@@ -51,8 +51,6 @@
 	"apihelp-translatesandbox-param-username": "Der Nahme, wann ene Metmaacher neu aanjelaht weed.",
 	"apihelp-translatesandbox-param-password": "Et Paßwoot, wann ene Metmaacher neu aanjelaht weed.",
 	"apihelp-translatesandbox-param-email": "De Adräß för de <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">e-mail</i> wann ene Metmaacher aanjelaht weed.",
-	"apihelp-translateuser-description": "Aanjahbe övve dä Metmaacher em Zersammehang mem Övversäze.",
-	"apihelp-translateuser-example-1": "Aanjahbe övver dä Metmaacher aanzeije",
 	"apihelp-translationaids-description": "Frohch alle Zoote Hölper vum Övversäze.",
 	"apihelp-translationaids-param-title": "De kumplätte Övverschreff vun ene bikannte Nohreesch udder enem bikanne Täx.",
 	"apihelp-translationaids-param-group": "Di Jropp, woh dä Täx udder de Nohreesch dren es.\nDe  primary group <!--\nhttps://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Apihelp-translationaids-param-group/ksh\n--> weed jenumme, wann se läddesch es.",

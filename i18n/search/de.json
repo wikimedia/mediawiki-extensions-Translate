@@ -12,7 +12,6 @@
 	"tux-sst-count": "{{PLURAL:$1|Ein Ergebnis gefunden|$1 Ergebnisse gefunden}}",
 	"tux-sst-facet-language": "Sprachen",
 	"tux-sst-facet-group": "Nachrichtengruppen",
-	"tux-sst-facet-orphan": "(verwaist)",
 	"tux-sst-nosolr-title": "Suche nicht verfügbar",
 	"tux-sst-nosolr-body": "Dieses Wiki hat keinen Übersetzungssuchservice.",
 	"tux-sst-solr-offline-title": "Die Suche ist nicht verfügbar",

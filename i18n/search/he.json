@@ -12,7 +12,6 @@
 	"tux-sst-count": "{{PLURAL:$1|נמצאה תוצאה אחת|נמצאו $1 תוצאות}}",
 	"tux-sst-facet-language": "שפות",
 	"tux-sst-facet-group": "קבוצות הודעות",
-	"tux-sst-facet-orphan": "(יתומים)",
 	"tux-sst-nosolr-title": "החיפוש אינו זמין",
 	"tux-sst-nosolr-body": "בוויקי הזה אין שירות חיפוש בתרגומים.",
 	"tux-sst-solr-offline-title": "החיפוש אינו זמין",

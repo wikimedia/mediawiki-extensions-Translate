@@ -5,8 +5,6 @@
 		]
 	},
 	"pagetranslation": "د مخ ژباړه",
-	"tpt-template": "د مخ کينډۍ",
-	"tpt-templatediff": "د مخ کينډۍ بدلون موندلی.",
 	"tpt-diff-old": "پخوانی متن",
 	"tpt-diff-new": "نوی متن",
 	"tpt-sections-template": "د ژباړې د مخ کينډۍ",
@@ -57,8 +55,6 @@
 	"pt-deletepage-list-other": "نور واړه مخونه",
 	"pm-savepages-button-label": "خوندي کول",
 	"pm-cancel-button-label": "ناگارل",
-	"pm-pagename-placeholder": "د مخ نوم ورکړئ",
-	"pm-langcode-placeholder": "د ژبې کوډ",
 	"pm-page-does-not-exist": "$1 نشته.",
 	"tpt-translate-title": "د مخ سرليک د ژباړې پرېښه",
 	"pp-pagename-placeholder": "د مخ نوم ورکړئ",

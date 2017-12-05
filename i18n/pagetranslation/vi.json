@@ -58,6 +58,7 @@
 	"translate-tag-markthisagain": "Trang này có <span class=\"plainlinks\">[$1 thay đổi]</span> từ khi nó được <span class=\"plainlinks\">[$2 đánh dấu cần dịch]</span> lần cuối.",
 	"translate-tag-hasnew": "Trang này có <span class=\"plainlinks\">[$1 thay đổi]</span> chưa được đánh dấu cần dịch.",
 	"tpt-translation-intro": "Trang này là một <span class=\"plainlinks\">[$1 bản dịch]</span> của trang [[$2]] và bản dịch đã hoàn thành $3%.",
+	"tpt-translation-intro-fuzzy": "Các bản dịch lỗi thời được đánh dấu như thế này.",
 	"tpt-languages-legend": "Ngôn ngữ khác:",
 	"tpt-languages-zero": "Bắt đầu bản dịch trong ngôn ngữ này",
 	"tpt-languages-nonzero": "$1 (đã biên dịch $2%)",

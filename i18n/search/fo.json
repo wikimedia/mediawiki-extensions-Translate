@@ -11,7 +11,6 @@
 	"tux-sst-count": "{{PLURAL:$1|Eitt úrslit funnið|$1 úrslit funnin}}",
 	"tux-sst-facet-language": "Mál",
 	"tux-sst-facet-group": "Boðbólkar",
-	"tux-sst-facet-orphan": "(foreldraleys)",
 	"tux-sst-nosolr-title": "Leiting ber ikki til",
 	"tux-sst-nosolr-body": "Henda wiki'in hevur ikki eina tænastu har til ber at leita eftir týðingum.",
 	"tux-sst-solr-offline-title": "Leitan ber ikki til",

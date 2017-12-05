@@ -9,8 +9,6 @@
 	"tpt-section": "ឯកតាបកប្រែ $1",
 	"tpt-section-new": "ឯកតាបកប្រែថ្មី។\nឈ្មោះ៖ $1",
 	"tpt-section-deleted": "ឯកតាបកប្រែ $1",
-	"tpt-template": "គំរូទំព័រ",
-	"tpt-templatediff": "គំរូ​ទំព័រ​បានផ្លាស់ប្តូរ​។",
 	"tpt-diff-old": "អត្ថបទ​​ពីមុន​",
 	"tpt-diff-new": "អត្ថបទ​ថ្មី​",
 	"tpt-submit": "សម្គាល់​កំណែ​នេះ​សម្រាប់​ការបកប្រែ​",
@@ -26,6 +24,5 @@
 	"tpt-languages-legend": "ជាភាសាដទៃទៀត៖",
 	"tpt-languages-nonzero": "$1 ($2% បកប្រែរួច)",
 	"tpt-tab-translate": "បកប្រែ",
-	"pm-langcode-placeholder": "កូដ​ភាសា",
 	"pm-langcode-missing": "សូមវាយបញ្ចូលកូដភាសា។"
 }

@@ -57,6 +57,7 @@
 	"translate-tag-markthisagain": "بو صحیفه‌نین سون دفعه <span class=\"plainlinks\">[$2 چئویرمگه نیشانلان]</span>اندان بویانا <span class=\"plainlinks\">[$1 دَییشیکلیکلر]</span>ی واردیر.",
 	"translate-tag-hasnew": "بو صحیفه‌نین <span class=\"plainlinks\">[$1 دَییشیکلیکلری]</span> واردیر کی چئویرمگه نیشانلانماییب‌لار.",
 	"tpt-translation-intro": "بو صحیفه [[$2]] صحیفه‌سینین <span class=\"plainlinks\">[$1 چئویریلمیش نوسخه‌سی]</span>‌دیر و $3٪ چئویرمگی قاباغا گئدیب‌دیر.",
+	"tpt-translation-intro-fuzzy": "تاریخی گئچمیش چئویرمه‌لر بونون کیمی نیشانلانیبلار.",
 	"tpt-languages-legend": "آیری دیل‌لر:",
 	"tpt-languages-zero": "بو دیله چئویرمگه باشلا",
 	"tpt-languages-nonzero": "$1 ($2% ترجومه اولوب)",

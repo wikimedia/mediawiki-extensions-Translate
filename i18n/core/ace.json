@@ -3,14 +3,12 @@
 		"authors": [
 			"Rachmat.Wahidi",
 			"Ayie7791",
-			"Si Gam Acèh"
+			"Si Gam Acèh",
+			"Rachmat04"
 		]
 	},
 	"translate": "Teujeumah",
 	"translate-desc": "[[Special:Translate|Laman kusuih]] keu neuteujeumah MediaWiki ngön nyang la'én",
-	"translate-taskui-view": "Peudeuh ban dum peusan",
-	"translate-taskui-untranslated": "Peudeuh peusan nyang gohlom meuteujeumah",
-	"translate-taskui-reviewall": "Kalön ban dum teujeumah",
 	"translate-taction-translate": "Teujeumah",
 	"translate-taction-proofread": "Kalön",
 	"translate-taction-lstats": "Keunira bahsa",
@@ -43,6 +41,5 @@
 	"translate-edit-contribute": "beuneuri",
 	"translate-edit-information": "Hareutoe bhah peusan ($1)",
 	"translate-edit-in-other-languages": "Peusan bak bahsa la'én",
-	"translate-edit-committed": "Teujeumah lam peukakah leumiek jinoe",
 	"translate-documentation-language": "Dokumentasi peusan"
 }
