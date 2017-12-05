@@ -197,7 +197,7 @@
 	"translate-mgs-fieldset": "عرض التفضيلات",
 	"translate-mgs-group": "مجموعة الرسائل:",
 	"translate-mgs-nocomplete": "لا تعرض اللغات التي تحتوي على ترجمات مكتملة",
-	"translate-mgs-noempty": "لا تعرض اللغات التي لا تحتوي على ترجمات مكتملة إطلاقا",
+	"translate-mgs-noempty": "لا تعرض اللغات التي لا تحتوي على أية ترجمة",
 	"translate-mgs-submit": "أظهر الإحصاءات",
 	"translate-mgs-column-language": "اللغة",
 	"translate-mgs-totals": "كل $1 {{PLURAL:$1|لغة|لغات}} سويا",
