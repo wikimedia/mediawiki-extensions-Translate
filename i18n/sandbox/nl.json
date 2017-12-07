@@ -5,7 +5,8 @@
 			"Siebrand",
 			"Sjoerddebruin",
 			"Arent",
-			"Mainframe98"
+			"Mainframe98",
+			"Mar(c)"
 		]
 	},
 	"managetranslatorsandbox": "Vertalersszandbak beheren",
@@ -45,7 +46,7 @@
 	"translate-translationstash-translations": "$1 voltooide {{PLURAL:$1|vertaling|vertalingen}}",
 	"translate-translationstash-skip-button-label": "Nog één proberen",
 	"tsb-limit-reached-title": "Bedankt voor uw vertalingen",
-	"tsb-limit-reached-body": "U hebt de limiet voor het aantal vertalingen voor nieuwe vertalers bereikt.\nOns team gaat ze snel controleren en promoveert uw gebruiker snel, zodat u zonder beperkingen kunt gaan vertalen.",
+	"tsb-limit-reached-body": "U hebt de limiet voor het aantal vertalingen voor nieuwe vertalers bereikt.\nOns team gaat ze snel controleren en promoveert uw account snel, zodat u zonder beperkingen kunt gaan vertalen.",
 	"tsb-no-requests-from-new-users": "Geen verzoeken van nieuwe gebruikers",
 	"tsb-create-user-page": "Eenvoudige gebruikerspagina aangemaakt",
 	"log-name-translatorsandbox": "Vertalingenzandbaklogboek",
