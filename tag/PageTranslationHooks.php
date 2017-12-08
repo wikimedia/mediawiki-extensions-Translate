@@ -463,7 +463,7 @@ class PageTranslationHooks {
 	 * @param Status $status
 	 * @return true
 	 */
-	public static function tpSyntaxCheck( $wikiPage, $user, $content, $summary,
+	public static function tpSyntaxCheck( WikiPage $wikiPage, $user, $content, $summary,
 		$minor, $_1, $_2, $flags, $status
 	) {
 		if ( $content instanceof TextContent ) {
@@ -505,7 +505,7 @@ class PageTranslationHooks {
 	 * @param Revision $revision
 	 * @return true
 	 */
-	public static function addTranstag( $wikiPage, $user, $content, $summary,
+	public static function addTranstag( WikiPage $wikiPage, $user, $content, $summary,
 		$minor, $_1, $_2, $flags, $revision
 	) {
 		// We are not interested in null revisions
