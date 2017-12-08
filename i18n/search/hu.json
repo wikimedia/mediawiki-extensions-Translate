@@ -23,5 +23,8 @@
 	"tux-sst-untranslated": "Nincs fordítás $1 nyelvről",
 	"tux-sst-outdated": "Elavult fordítások $1 nyelvről",
 	"tux-sst-ellipsis-untranslated": "Nincs fordítás",
-	"tux-sst-ellipsis-outdated": "Elavult fordítások"
+	"tux-sst-ellipsis-outdated": "Elavult fordítások",
+	"tux-sst-link-all-match": "Az összes keresőszó megkövetelése.",
+	"tux-sst-match-message": "Minden fordítás látható, ami legalább egy keresett szót tartalmaz. $1",
+	"tux-sst-case-sensitive": "Kisbetű/nagybetű-érzékeny"
 }
