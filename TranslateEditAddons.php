@@ -381,7 +381,7 @@ class TranslateEditAddons {
 	 * @param ParserOptions $popts
 	 * @return bool
 	 */
-	public static function disablePreSaveTransform( $wikiPage, ParserOptions $popts ) {
+	public static function disablePreSaveTransform( WikiPage $wikiPage, ParserOptions $popts ) {
 		global $wgTranslateUsePreSaveTransform;
 
 		if ( !$wgTranslateUsePreSaveTransform ) {
