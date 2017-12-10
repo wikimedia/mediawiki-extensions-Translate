@@ -212,7 +212,7 @@
 	"translate-smg-submit": "送出要處理更動",
 	"translate-smg-submitted": "訊息原文已更新，正在背景執行變更處理。",
 	"translate-smg-more": "送出這些更動後，會有更多更動要處理。",
-	"translate-smg-left": "Wiki 中訊息內容",
+	"translate-smg-left": "wiki 內的訊息內容",
 	"translate-smg-right": "發生的更動",
 	"translate-manage-import-diff": "訊息 $1 | 操作：$2",
 	"translate-manage-import-new": "新訊息 $1",
