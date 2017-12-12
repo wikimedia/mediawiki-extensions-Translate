@@ -65,6 +65,8 @@ class ApiTranslationAids extends ApiBase {
 
 		// Create list of aids, populate web services queries
 		$aids = [];
+
+		$dataProvider = new TranslationAidDataProvider( $handle );
 		foreach ( $props as $type ) {
 			// Do not proceed if translation aid is not supported for this message group
 			if ( !isset( $types[$type] ) ) {
@@ -72,7 +74,7 @@ class ApiTranslationAids extends ApiBase {
 			}
 
 			$class = $types[$type];
-			$obj = new $class( $group, $handle, $this );
+			$obj = new $class( $group, $handle, $this, $dataProvider );
 
 			if ( $obj instanceof QueryAggregatorAware ) {
 				$obj->setQueryAggregator( $aggregator );

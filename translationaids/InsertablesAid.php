@@ -34,7 +34,7 @@ class InsertablesAid extends TranslationAid {
 			throw new TranslationHelperException( 'Group does not have a suggester' );
 		}
 
-		$insertables = $suggester->getInsertables( $this->getDefinition() );
+		$insertables = $suggester->getInsertables( $this->dataProvider->getDefinition() );
 		$blob = [];
 		foreach ( $insertables as $insertable ) {
 			$displayText = $insertable->getDisplayText();
