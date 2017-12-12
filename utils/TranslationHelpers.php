@@ -19,6 +19,12 @@ class TranslationHelpers {
 	 * @since 2012-01-04
 	 */
 	protected $handle;
+
+	/**
+	 * @var TranslationAidDataProvider
+	 */
+	private $dataProvider;
+
 	/**
 	 * The group object of the message (or null if there isn't any)
 	 * @var MessageGroup
@@ -26,13 +32,11 @@ class TranslationHelpers {
 	protected $group;
 
 	/**
-	 * The current translation as a string.
+	 * The current translation.
+	 * @var string
 	 */
-	protected $translation;
-	/**
-	 * The message definition as a string.
-	 */
-	protected $definition;
+	private $translation;
+
 	/**
 	 * HTML id to the text area that contains the translation. Used to insert
 	 * suggestion directly into the text area, for example.
@@ -49,6 +53,7 @@ class TranslationHelpers {
 	 */
 	public function __construct( Title $title, $groupId ) {
 		$this->handle = new MessageHandle( $title );
+		$this->dataProvider = new TranslationAidDataProvider( $this->handle );
 		$this->group = $this->getMessageGroup( $this->handle, $groupId );
 	}
 
@@ -101,22 +106,16 @@ class TranslationHelpers {
 	 * @return String
 	 */
 	public function getDefinition() {
-		if ( $this->definition !== null ) {
-			return $this->definition;
-		}
-
 		$this->mustBeKnownMessage();
 
-		if ( method_exists( $this->group, 'getMessageContent' ) ) {
-			$this->definition = $this->group->getMessageContent( $this->handle );
-		} else {
-			$this->definition = $this->group->getMessage(
-				$this->handle->getKey(),
-				$this->group->getSourceLanguage()
-			);
-		}
+		$obj = new MessageDefinitionAid(
+			$this->group,
+			$this->handle,
+			RequestContext::getMain(),
+			$this->dataProvider
+		);
 
-		return $this->definition;
+		return $obj->getData()['definition'];
 	}
 
 	/**
@@ -126,7 +125,12 @@ class TranslationHelpers {
 	 */
 	public function getTranslation() {
 		if ( $this->translation === null ) {
-			$obj = new CurrentTranslationAid( $this->group, $this->handle, RequestContext::getMain() );
+			$obj = new CurrentTranslationAid(
+				$this->group,
+				$this->handle,
+				RequestContext::getMain(),
+				$this->dataProvider
+			);
 			$aid = $obj->getData();
 			$this->translation = $aid['value'];
 
