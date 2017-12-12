@@ -21,7 +21,7 @@ class InOtherLanguagesAid extends TranslationAid {
 		];
 
 		// Fuzzy translations are not included in these
-		$translations = $this->getTranslations();
+		$translations = $this->dataProvider->getGoodTranslations();
 		$code = $this->handle->getCode();
 
 		$sourceLanguage = $this->handle->getGroup()->getSourceLanguage();
