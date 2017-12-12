@@ -248,8 +248,8 @@ $al['QueryAggregatorAwareTranslationAid'] =
 $al['SupportAid'] = "$dir/translationaids/SupportAid.php";
 $al['TTMServerAid'] = "$dir/translationaids/TTMServerAid.php";
 $al['TranslationAid'] = "$dir/translationaids/TranslationAid.php";
-$al['UnsupportedTranslationAid'] =
-	"$dir/translationaids/UnsupportedTranslationAid.php";
+$al['TranslationAidDataProvider'] = "$dir/translationaids/TranslationAidDataProvider.php";
+$al['UnsupportedTranslationAid'] = "$dir/translationaids/UnsupportedTranslationAid.php";
 $al['UpdatedDefinitionAid'] = "$dir/translationaids/UpdatedDefinitionAid.php";
 
 /**
