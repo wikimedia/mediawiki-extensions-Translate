@@ -151,7 +151,13 @@ class SpecialSearchTranslations extends SpecialPage {
 			$code = $handle->getCode();
 			$language = $opts->getValue( 'language' );
 			if ( $code !== '' && $code !== $language && $handle->isValid() ) {
-				$aid = new CurrentTranslationAid( $handle->getGroup(), $handle, $this->getContext() );
+				$dataProvider = new TranslationAidDataProvider( $handle );
+				$aid = new CurrentTranslationAid(
+					$handle->getGroup(),
+					$handle,
+					$this->getContext(),
+					$dataProvider
+				);
 				$document['wiki'] = wfWikiID();
 				$document['localid'] = $handle->getTitleForBase()->getPrefixedText();
 				$document['content'] = $aid->getData['value'];
