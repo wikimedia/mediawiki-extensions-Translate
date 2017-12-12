@@ -15,7 +15,7 @@
  */
 class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 	public function populateQueries() {
-		$text = $this->getDefinition();
+		$text = $this->dataProvider->getDefinition();
 		$from = $this->group->getSourceLanguage();
 		$to = $this->handle->getCode();
 
@@ -27,7 +27,7 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 	public function getData() {
 		$suggestions = [];
 
-		$text = $this->getDefinition();
+		$text = $this->dataProvider->getDefinition();
 		$from = $this->group->getSourceLanguage();
 		$to = $this->handle->getCode();
 

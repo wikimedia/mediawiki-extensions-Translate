@@ -4,7 +4,6 @@
  *
  * @file
  * @author Niklas Laxström
- * @copyright Copyright © 2013, Niklas Laxström
  * @license GPL-2.0+
  */
 
@@ -12,7 +11,6 @@
  * Multipurpose class for translation aids:
  *  - interface for translation aid classes
  *  - listing of available translation aids
- *  - some utility functions for translation aid classes
  *
  * @defgroup TranslationAids Translation Aids
  * @since 2013-01-01
@@ -33,12 +31,21 @@ abstract class TranslationAid {
 	 */
 	protected $context;
 
-	public function __construct( MessageGroup $group, MessageHandle $handle,
-		IContextSource $context
+	/**
+	 * @var TranslationAidDataProvider
+	 */
+	protected $dataProvider;
+
+	public function __construct(
+		MessageGroup $group,
+		MessageHandle $handle,
+		IContextSource $context,
+		TranslationAidDataProvider $dataProvider
 	) {
 		$this->group = $group;
 		$this->handle = $handle;
 		$this->context = $context;
+		$this->dataProvider = $dataProvider;
 	}
 
 	/**
@@ -55,77 +62,6 @@ abstract class TranslationAid {
 	 * @return array
 	 */
 	abstract public function getData();
-
-	/**
-	 * Get the message definition. Cached for performance.
-	 *
-	 * @return string
-	 */
-	public function getDefinition() {
-		static $cache = [];
-
-		$key = $this->handle->getTitle()->getPrefixedText();
-
-		if ( array_key_exists( $key, $cache ) ) {
-			return $cache[$key];
-		}
-
-		if ( method_exists( $this->group, 'getMessageContent' ) ) {
-			$cache[$key] = $this->group->getMessageContent( $this->handle );
-		} else {
-			$cache[$key] = $this->group->getMessage(
-				$this->handle->getKey(),
-				$this->group->getSourceLanguage()
-			);
-		}
-
-		return $cache[$key];
-	}
-
-	/**
-	 * @return Content
-	 */
-	protected function getDefinitionContent() {
-		$text = $this->getDefinition();
-
-		return ContentHandler::makeContent( $text, $this->handle->getTitle() );
-	}
-
-	/**
-	 * Get the translations in all languages. Cached for performance.
-	 * Fuzzy translation are not included.
-	 *
-	 * @return array Language code => Translation
-	 */
-	public function getTranslations() {
-		static $cache = [];
-
-		$key = $this->handle->getTitle()->getPrefixedText();
-
-		if ( array_key_exists( $key, $cache ) ) {
-			return $cache[$key];
-		}
-
-		$data = ApiQueryMessageTranslations::getTranslations( $this->handle );
-		$namespace = $this->handle->getTitle()->getNamespace();
-
-		$cache[$key] = [];
-
-		foreach ( $data as $page => $info ) {
-			$tTitle = Title::makeTitle( $namespace, $page );
-			$tHandle = new MessageHandle( $tTitle );
-
-			$fuzzy = MessageHandle::hasFuzzyString( $info[0] ) || $tHandle->isFuzzy();
-			if ( $fuzzy ) {
-				continue;
-			}
-
-			$code = $tHandle->getCode();
-			$cache[$key][$code] = $info[0];
-		}
-
-		return $cache[$key];
-	}
 
 	/**
 	 * List of available message types mapped to the classes
