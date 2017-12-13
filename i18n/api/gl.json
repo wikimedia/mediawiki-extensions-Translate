@@ -101,6 +101,8 @@
 	"apihelp-searchtranslations-param-limit": "Tamaño do resultado.",
 	"apihelp-searchtranslations-example-1": "Mostrar as traducións para a lingua.",
 	"apihelp-searchtranslations-example-2": "Mostrar as mensaxes non traducidas que coincidan coa pescuda na lingua de orixe.",
+	"apihelp-translationcheck-summary": "Validar traducións.",
+	"apihelp-translationcheck-param-translation": "A tradución a validar.",
 	"apierror-translate-duplicateaggregategroup": "O grupo de mensaxes xa existe",
 	"apierror-translate-groupreviewdisabled": "A revisión do grupo de mensaxes non está en uso.",
 	"apierror-translate-invalidaggregategroup": "Grupo de mensaxes agregadas non válido",
