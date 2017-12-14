@@ -260,6 +260,7 @@ $al['CaighdeanWebService'] = "$dir/webservices/CaighdeanWebService.php";
 $al['CxserverWebService'] = "$dir/webservices/CxserverWebService.php";
 $al['MicrosoftWebService'] = "$dir/webservices/MicrosoftWebService.php";
 $al['RemoteTTMServerWebService'] = "$dir/webservices/RemoteTTMServerWebService.php";
+$al['RESTBaseWebService'] = "$dir/webservices/RESTBaseWebService.php";
 $al['TranslationQuery'] = "$dir/webservices/TranslationQuery.php";
 $al['TranslationQueryResponse'] = "$dir/webservices/TranslationQueryResponse.php";
 $al['TranslationWebService'] = "$dir/webservices/TranslationWebService.php";
