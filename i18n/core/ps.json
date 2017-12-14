@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
-			"Waldir"
+			"Waldir",
+			"Baloch Khan"
 		]
 	},
 	"translate": "ژباړل",
@@ -64,6 +65,8 @@
 	"right-translate-import": "بې ليکې ژباړې راوستل",
 	"action-translate-import": "بې ليکې ژباړې راوستل",
 	"right-translate-messagereview": "ژباړې بياکتل",
+	"translate-rcfilters-translations-filter-label": "ژباړې نه",
+	"translate-rcfilters-translations-filter-desc": "ټول هغه بدلونونه کوم چې ژباړې نه دي.",
 	"translate-rc-translation-filter": "ژباړې چاڼول:",
 	"translate-rc-translation-filter-no": "هېڅ مه کوئ",
 	"translate-rc-translation-filter-only": "يوازې ژباړې ښکاره کول",
