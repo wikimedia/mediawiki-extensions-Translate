@@ -241,6 +241,8 @@ class SpecialExportTranslations extends SpecialPage {
 			$collection->filter( 'ignored' );
 		}
 
+		$collection->loadTranslations();
+
 		return $collection;
 	}
 
