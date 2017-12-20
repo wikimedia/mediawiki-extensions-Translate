@@ -37,8 +37,15 @@
 	"translate-magic-cm-comment": "Коментариу:",
 	"translate-magic-cm-save": "Салвязэ",
 	"translate-stats-users": "Традукэторь",
+	"translate-untranslated": "Де традус",
 	"translate-js-next": "Салвязэ ши мерӂь май департе",
 	"translate-js-skip": "Сарь май департе",
 	"tux-languageselector": "Традучець ын",
+	"tux-tab-all": "Тоате",
+	"tux-tab-untranslated": "Де традус",
+	"tux-tab-outdated": "Ынвеките",
+	"tux-tab-translated": "Традусе",
+	"tux-tab-unproofread": "Де верификат",
+	"tux-edit": "Редактаре",
 	"tux-editor-placeholder": "Традучеря думнявоастрэ"
 }
