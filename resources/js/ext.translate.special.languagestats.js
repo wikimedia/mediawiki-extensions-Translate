@@ -10,7 +10,7 @@
 
 	$( function () {
 		var $allChildRows, $allTogglesCache, $toggleAllButton,
-			$translateTable = $( '.mw-sp-translate-table' ),
+			$translateTable = $( '.statstable' ),
 			$metaRows = $( 'tr.AggregateMessageGroup', $translateTable );
 
 		// Quick return
@@ -104,27 +104,30 @@
 		$( function () {
 			// It is possible that the first event we get is hover-out, in
 			// which case the colors will get stuck wrong. Ignore it.
-			var seenHoverIn = false;
+			var eventHandlers, seenHoverIn = false;
 
-			$( '.mw-sp-translate-table.wikitable tr' ).hover( function () {
-				seenHoverIn = true;
-				$( '> td.hover-color', this )
-					// 30% more brightness
-					.css( 'background-color', function ( i, val ) {
-						// @codingStandardsIgnoreStart Bug in CodeSniffer?
-						return $.colorUtil.getColorBrightness( val, +0.3 );
-						// codingStandardsIgnoreEnd
-					} );
-			}, function () {
-				if ( !seenHoverIn ) {
-					return;
+			eventHandlers = {
+				mouseenter: function () {
+					seenHoverIn = true;
+					$( this ).children( '.hover-color' )
+						// 30% more brightness
+						.css( 'background-color', function ( i, val ) {
+							return $.colorUtil.getColorBrightness( val, +0.3 );
+						} );
+				},
+				mouseleave: function () {
+					if ( !seenHoverIn ) {
+						return;
+					}
+					$( this ).children( '.hover-color' )
+						// 30% less brightness
+						.css( 'background-color', function ( i, val ) {
+							return $.colorUtil.getColorBrightness( val, -0.3 );
+						} );
 				}
-				$( '> td.hover-color', this )
-					// 30% less brightness
-					.css( 'background-color', function ( i, val ) {
-						return $.colorUtil.getColorBrightness( val, -0.3 );
-					} );
-			} );
+			};
+
+			$( '.statstable' ).on( eventHandlers, 'tr' );
 		} );
 	} );
 
