@@ -7,6 +7,8 @@
  * @license GPL-2.0+
  */
 
+use Wikimedia\Rdbms\IDatabase;
+
 /**
  * Essentially random collection of helper functions, similar to GlobalFunctions.php.
  */

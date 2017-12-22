@@ -8,6 +8,8 @@
  * @license GPL-2.0+
  */
 
+use Wikimedia\Rdbms\IDatabase;
+
 /**
  * Core message collection class.
  *
@@ -715,7 +717,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Of the current set of keys, construct database query conditions.
 	 * @since 2011-12-28
-	 * @param DatabaseBase $db
+	 * @param IDatabase $db
 	 * @return string
 	 */
 	protected function getTitleConds( $db ) {

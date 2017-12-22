@@ -9,6 +9,8 @@
  * @ingroup TTMServer
  */
 
+use Wikimedia\Rdbms\IDatabase;
+
 /**
  * Mysql based backend.
  * @ingroup TTMServer
@@ -19,7 +21,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 
 	/**
 	 * @param int $mode DB_REPLICA|DB_MASTER
-	 * @return DatabaseBase
+	 * @return IDatabase
 	 */
 	protected function getDB( $mode = DB_REPLICA ) {
 		return wfGetDB( $mode, 'ttmserver', $this->config['database'] );
