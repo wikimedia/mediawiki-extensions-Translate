@@ -7,6 +7,8 @@
  * @license GPL-2.0+
  */
 
+use Wikimedia\Rdbms\IDatabase;
+
 /**
  * Storage class for stashed translations. This one uses sql tables as storage.
  * @since 2013.06
@@ -15,7 +17,7 @@ class TranslationStashStorage {
 	protected $db;
 	protected $dbTable;
 
-	public function __construct( DatabaseBase $db, $table = 'translate_stash' ) {
+	public function __construct( IDatabase $db, $table = 'translate_stash' ) {
 		$this->db = $db;
 		$this->dbTable = $table;
 	}
