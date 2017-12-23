@@ -19,7 +19,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 
 	/**
 	 * @param int $mode DB_REPLICA|DB_MASTER
-	 * @return DatabaseBase
+	 * @return \Wikimedia\Rdbms\IDatabase
 	 */
 	protected function getDB( $mode = DB_REPLICA ) {
 		return wfGetDB( $mode, 'ttmserver', $this->config['database'] );

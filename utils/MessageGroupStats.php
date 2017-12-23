@@ -9,6 +9,8 @@
  * @license GPL-2.0+
  */
 
+use Wikimedia\Rdbms\IDatabase;
+
 /**
  * This class abstract MessageGroup statistics calculation and storing.
  * You can access stats easily per language or per group.
