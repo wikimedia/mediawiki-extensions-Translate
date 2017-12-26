@@ -211,7 +211,7 @@
 		sourceUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__source five columns' )
 			.prop( 'readonly', true ).attr( 'tabindex', '-1' ).val( sourceText );
 		targetUnit = $( '<textarea>' ).addClass( 'mw-tpm-sp-unit__target five columns' )
-			.val( targetText );
+			.val( targetText ).prop( 'dir', $.uls.data.getDir( langCode ) );
 		actionUnit = $( '<div>' ).addClass( 'mw-tpm-sp-unit__actions two columns' );
 		actionUnit.append(
 			$( '<span>' ).addClass( 'mw-tpm-sp-action mw-tpm-sp-action--add' )
