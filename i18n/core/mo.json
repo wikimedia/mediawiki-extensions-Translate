@@ -7,6 +7,7 @@
 	},
 	"translate": "Традуче",
 	"translate-desc": "[[Special:Translate|Паӂинэ спечиалэ]] пентру традучеря програмулуй МедияВики, дар ну нумай",
+	"translate-taction-proofread": "Верификаре",
 	"translate-page-no-such-language": "Лимба спечификатэ есте инкоректэ.",
 	"translate-page-no-such-group": "Групул спечификат есте инвалид.",
 	"translate-page-disabled": "Посибилитатя де а традуче ачест груп ын ачастэ лимбэ а фост дезактиватэ.\nМотив:\n\n<em>$1</em>",
@@ -47,5 +48,10 @@
 	"tux-tab-translated": "Традусе",
 	"tux-tab-unproofread": "Де верификат",
 	"tux-edit": "Редактаре",
-	"tux-editor-placeholder": "Традучеря думнявоастрэ"
+	"tux-status-proofread": "Верификат",
+	"tux-editor-placeholder": "Традучеря думнявоастрэ",
+	"tux-editor-proofreading-mode": "Верификаре",
+	"tux-editor-translate-mode": "Листэ",
+	"tux-editor-page-mode": "Паӂинэ",
+	"tux-message-filter-placeholder": "Филтраря листей"
 }
