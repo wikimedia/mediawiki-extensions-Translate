@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cee8db29_75903947",
+        "filename": "resources/js/ext.translate.special.pagemigration.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2017-12-27T10:02:39Z",
+      "side": 1,
+      "message": "prop would be better. It is not clear to me why the existing code is using attr so much.",
+      "range": {
+        "startLine": 214,
+        "startChar": 22,
+        "endLine": 214,
+        "endChar": 26
+      },
+      "revId": "114014f2bc2b001dc9f63e107234ffe96f6e725a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
