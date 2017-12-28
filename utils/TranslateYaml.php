@@ -24,14 +24,22 @@ class TranslateYaml {
 
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'phpyaml':
-				$ret = yaml_parse( $text );
+				// Harden: do not support unserializing objects.
+				// Method 1: PHP ini setting (not supported by HHVM)
+				// Method 2: Callback handler for !php/object
+				$previousValue = ini_set( 'yaml.decode_php', false );
+				$ignored = 0;
+				$callback = function ( $value ) {
+					return $value;
+				};
+				$ret = yaml_parse( $text, 0, $ignored, [ '!php/object' => $callback ] );
+				ini_set( 'yaml.decode_php', $previousValue );
 				if ( $ret === false ) {
 					// Convert failures to exceptions
 					throw new InvalidArgumentException( 'Invalid Yaml string' );
 				}
 
 				return $ret;
-
 			case 'spyc':
 				$yaml = spyc_load( $text );
 
