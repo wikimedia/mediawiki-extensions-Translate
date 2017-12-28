@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cee8db29_a48c5100",
+        "filename": "tests/phpunit/TranslateYamlTest.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2017-12-28T09:23:52Z",
+      "side": 1,
+      "message": "Either do this in setUp() or in the test case, but probably not both?",
+      "range": {
+        "startLine": 16,
+        "startChar": 2,
+        "endLine": 16,
+        "endChar": 25
+      },
+      "revId": "443539036c1ea39052f3fdaaabba660fb916e2b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cee8db29_c487d5da",
+        "filename": "tests/phpunit/TranslateYamlTest.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2017-12-28T09:23:52Z",
+      "side": 1,
+      "message": "Use $this-\u003esetMwGlobals so it automatically cleans up afterwards? (requires extending MediaWikiTestCase)",
+      "range": {
+        "startLine": 26,
+        "startChar": 2,
+        "endLine": 26,
+        "endChar": 25
+      },
+      "revId": "443539036c1ea39052f3fdaaabba660fb916e2b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
