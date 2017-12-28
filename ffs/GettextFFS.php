@@ -63,7 +63,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	public function parseGettext( $data ) {
 		$mangler = $this->group->getMangler();
 		$useCtxtAsKey = isset( $this->extra['CtxtAsKey'] ) && $this->extra['CtxtAsKey'];
-		$keyAlgorithm = 'legacy';
+		$keyAlgorithm = 'simple';
 		if ( isset( $this->extra['keyAlgorithm'] ) ) {
 			$keyAlgorithm = $this->extra['keyAlgorithm'];
 		}
@@ -294,7 +294,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * @param string $algorithm Algorithm used to generate message keys: simple or legacy
 	 * @return string
 	 */
-	public static function generateKeyFromItem( array $item, $algorithm = 'legacy' ) {
+	public static function generateKeyFromItem( array $item, $algorithm = 'simple' ) {
 		$lang = Language::factory( 'en' );
 
 		if ( $item['ctxt'] === '' ) {
