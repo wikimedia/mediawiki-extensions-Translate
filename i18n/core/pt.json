@@ -89,7 +89,7 @@
 	"translate-checks-parameters": "{{PLURAL:$2|O seguinte parâmetro não é usado|Os seguintes parâmetros não são usados}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|O seguinte parâmetro é desconhecido|Os seguintes parâmetros são desconhecidos}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "Há {{PLURAL:$2|um parênteses irregular|$2 parênteses irregulares}}: <strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-links": "{{PLURAL:$2|A seguinte ligação tem|As seguintes $2 ligações têm}} problemas: <strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-links": "{{PLURAL:$2|A seguinte hiperligação tem|As seguintes $2 hiperligações têm}} problemas: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Falta a seguinte hiperligação|Faltam as seguintes $2 hiperligações}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "Por favor, corrija {{PLURAL:$2|a seguinte marcação|as seguintes marcações}}:\n<strong>$1</strong>",
 	"translate-checks-plural": "A definição usa <nowiki>{{PLURAL:}}</nowiki>, mas a tradução não.",
