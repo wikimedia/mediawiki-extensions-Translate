@@ -103,6 +103,10 @@
 	"right-translate-messagereview": "איבערקוקן איבערזעצונגען",
 	"action-translate-messagereview": "רעצענזירן איבערזעצונגען",
 	"right-translate-groupreview": "ענדערן ארבעטשטראם סטאטוס פון מעלדונג גרופעס",
+	"translate-rcfilters-translations": "איבערזעצונגען",
+	"translate-rcfilters-translations-only-label": "איבערזעצונגען",
+	"translate-rcfilters-translations-only-desc": "ענדערונגען צו איבערגעזעצטע בלעטער.",
+	"translate-rcfilters-translations-filter-label": "נישט איבערזעצונגען",
 	"translate-rc-translation-filter": "פֿילטערן איבערזעצונגען:",
 	"translate-rc-translation-filter-no": "גאָרנישט",
 	"translate-rc-translation-filter-only": "ווײַזן נאר איבערזעצונגען",
@@ -174,7 +178,7 @@
 	"translate-mgs-noempty": "נישט ווײַזן שפראכן וואס האבן נאכנישט קיין איבערזעצונגען",
 	"translate-mgs-submit": "ווײַזן סטאטיסטיק",
 	"translate-mgs-column-language": "שפראַך",
-	"translate-mgs-totals": "אלע שפראכן צוזאמען",
+	"translate-mgs-totals": "{{PLURAL:$1|איין שפראך|אלע $1 שפראכן צוזאמען}}",
 	"translate-mgs-invalid-group": "די ספעציפֿירטע גרופע $1 איז נישט פֿאראן.",
 	"translate-mgs-nothing": "נישט פאראן וואס צו ווײַזן פאר די פארלאנגטע סטאטיסטיק.",
 	"supportedlanguages": "געשטיצטע שפראַכן",
@@ -346,5 +350,5 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% איבערגעזעצט, $2% איבערגעקוקט, $3% פֿארעלטערט",
 	"translate-search-more-groups-info": "נאך {{PLURAL:$1|גרופע|גרופעס}}: $1",
 	"translate-ulsdep-title": "קאנפיגוראציע גרײַז",
-	"tux-nojs": "דער דאזיקער בלאט פֿאדערט JavaScript."
+	"tux-nojs": "דער דאזיקער געצייג ארבעט נישט אן JavaScript .JavaScript איז אומאקטיווירט, אדער ארבעט נישט, אדער דער דאזיקער בלעטערער איז נישט געשטיצט."
 }

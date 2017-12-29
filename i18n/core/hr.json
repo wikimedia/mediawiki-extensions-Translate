@@ -21,7 +21,7 @@
 	"translate-taction-mstats": "Statistike skupine poruka",
 	"translate-taction-export": "Izvoz",
 	"translate-taction-disabled": "Ova akcija je onemogućena na ovom wikiju.",
-	"translate-page-no-such-language": "Unešen jezik je neispravan",
+	"translate-page-no-such-language": "Navedeni jezični kod ne postoji.",
 	"translate-page-no-such-group": "Navedena grupa je neispravna.",
 	"translate-page-disabled": "Prijevodi na ovaj jezik u ovoj grupi su onemogućeni. Razlog:\n\n<em>$1</em>",
 	"translate-page-disabled-source": "Izvorni jezik ove stranice: $1.",
