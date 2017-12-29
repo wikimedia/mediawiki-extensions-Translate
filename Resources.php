@@ -122,7 +122,7 @@ $wgResourceModules['ext.translate.editor'] = [
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.groupselector'] = [
-	'styles' => 'resources/css/ext.translate.groupselector.css',
+	'styles' => 'resources/css/ext.translate.groupselector.less',
 	'scripts' => 'resources/js/ext.translate.groupselector.js',
 	'position' => 'top',
 	'dependencies' => [
