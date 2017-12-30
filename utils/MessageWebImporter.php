@@ -116,8 +116,7 @@ class MessageWebImporter {
 			'class' => 'mw-translate-manage'
 		];
 
-		return
-			Xml::openElement( 'form', $formParams ) .
+		return Xml::openElement( 'form', $formParams ) .
 			Html::hidden( 'title', $this->getTitle()->getPrefixedText() ) .
 			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
 			Html::hidden( 'process', 1 );

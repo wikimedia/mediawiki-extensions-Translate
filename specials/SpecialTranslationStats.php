@@ -230,8 +230,7 @@ class SpecialTranslationStats extends SpecialPage {
 	protected function eInput( $name, FormOptions $opts, $width = 4 ) {
 		$value = $opts[$name];
 
-		return
-			'<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
+		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
 			Xml::input( $name, $width, $value, [ 'id' => $name ] ) .
 			'</td></tr>' . "\n";
 	}
@@ -292,8 +291,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$select = $this->languageSelector();
 		$select->setTargetId( 'language' );
 
-		return
-			'<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
+		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
 			$select->getHtmlAndPrepareJS() . '<br />' .
 			Xml::input( $name, 20, $value, [ 'id' => $name ] ) .
 			'</td></tr>' . "\n";
@@ -330,8 +328,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$select = $this->groupSelector();
 		$select->setTargetId( 'group' );
 
-		return
-			'<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
+		return '<tr><td>' . $this->eLabel( $name ) . '</td><td>' .
 			$select->getHtmlAndPrepareJS() . '<br />' .
 			Xml::input( $name, 20, $value, [ 'id' => $name ] ) .
 			'</td></tr>' . "\n";

@@ -67,8 +67,7 @@ XML;
 	}
 
 	protected function createNode( $code ) {
-		return
-			Xml::openElement( 'node', [ 'id' => $code ] )
+		return Xml::openElement( 'node', [ 'id' => $code ] )
 			. Xml::openElement( 'data', [ 'key' => 'code' ] )
 			. Xml::openElement( 'y:Shpapenode' )
 			. Xml::element( 'y:NodeLabel', [], $code )
