@@ -372,6 +372,7 @@
 	"tux-editor-message-tools-history": "歷史",
 	"tux-editor-message-tools-delete": "刪除",
 	"tux-editor-message-tools-translations": "所有翻譯",
+	"tux-editor-message-tools-linktothis": "連至此訊息之連結",
 	"tux-editor-loading": "正在讀取...",
 	"translate-search-more-languages-info": "還有 $1 種{{PLURAL:$1|語言|語言}}",
 	"translate-statsbar-tooltip": "$1% 已翻譯，$2% 已審查",
