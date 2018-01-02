@@ -147,7 +147,7 @@ class StatsTable {
 		// Create table header
 		$out = Html::openElement(
 			'table',
-			[ 'class' => 'statstable wikitable mw-sp-translate-table' ]
+			[ 'class' => 'statstable wikitable' ]
 		);
 
 		$out .= "\n\t" . Html::openElement( 'thead' );
