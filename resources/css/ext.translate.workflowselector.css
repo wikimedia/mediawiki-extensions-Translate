@@ -46,7 +46,7 @@ ul.tux-workflow-status-selector {
 }
 
 .tux-workflow-status-selector li.selected {
-	background: url( ../images/label-tick.png ) right no-repeat;
+	background: right no-repeat;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/label-tick.svg );
 	color: #222;

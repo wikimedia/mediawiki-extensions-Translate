@@ -73,19 +73,19 @@
 }
 
 .tux-pagemode-status.fuzzy {
-	background: url( ../images/outdated-ltr.png ) left center no-repeat;
+	background: left center no-repeat;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/outdated-ltr.svg );
 }
 
 .tux-pagemode-status.untranslated {
-	background: url( ../images/translate-ltr.png ) left center no-repeat;
+	background: left center no-repeat;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/translate-ltr.svg );
 }
 
 .tux-pagemode-action {
-	background: url( ../images/check-sprite-ltr.png ) right top no-repeat;
+	background: right top no-repeat;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/check-sprite-ltr.svg );
 	height: 31px;
@@ -97,9 +97,7 @@
 }
 
 .tux-pagemode-edit {
-	background-image: url( ../images/edit-mark.png );
-	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/edit-mark.svg );
+	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/edit-mark.svg );
 	background-repeat: no-repeat;
 	background-position: right center;
 	height: 40px;

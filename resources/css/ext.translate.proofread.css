@@ -84,7 +84,7 @@
 	margin-left: auto;
 	width: 18px;
 	height: 18px; /* Icon height + 3px */
-	background: url( ../images/user-small.png ) top right no-repeat;
+	background: top right no-repeat;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/user-small.svg );
 }
@@ -94,14 +94,14 @@
 }
 
 .tux-proofread-status.fuzzy {
-	background: url( ../images/outdated-ltr.png ) left center no-repeat;
+	background: left center no-repeat;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/outdated-ltr.svg );
 	height: 40px;
 }
 
 .tux-proofread-status.untranslated {
-	background: url( ../images/translate-ltr.png ) left center no-repeat;
+	background: left center no-repeat;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/translate-ltr.svg );
 	height: 40px;
@@ -110,9 +110,7 @@
 .tux-proofread-action {
 	background-position: right top;
 	background-repeat: no-repeat;
-	background-image: url( ../images/check-sprite-ltr.png );
-	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/check-sprite-ltr.svg );
+	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/check-sprite-ltr.svg );
 	/* There is 1px white row between each icon */
 	height: 30px;
 	cursor: pointer;
@@ -141,9 +139,7 @@
 }
 
 .tux-proofread-edit {
-	background-image: url( ../images/edit-mark.png );
-	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/edit-mark.svg );
+	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/edit-mark.svg );
 	background-repeat: no-repeat;
 	background-position: right center;
 	height: 50px;
@@ -175,7 +171,7 @@
 .tux-proofread-count:before {
 	content: '';
 	display: inline-block;
-	background: url( ../images/check-small.png ) left bottom no-repeat;
+	background: left bottom no-repeat;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/check-small.svg );
 	height: 12px;
