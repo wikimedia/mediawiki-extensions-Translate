@@ -14,13 +14,13 @@
 }
 
 .tux-navitoggle {
-	background: url( ../images/expand-rtl.png ) no-repeat scroll right center transparent;
+	background: no-repeat scroll right center transparent;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/expand-rtl.svg );
 }
 
 .tux-navi-collapsed .tux-navitoggle {
-	background: url( ../images/expand-ltr.png ) no-repeat scroll right center transparent;
+	background: no-repeat scroll right center transparent;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/expand-ltr.svg );
 }
