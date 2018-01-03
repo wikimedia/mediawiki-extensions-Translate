@@ -7,7 +7,7 @@
 }
 
 .grid .tux-message-editor .close {
-	background: url( ../images/close.png ) no-repeat center center;
+	background: no-repeat center center;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/close.svg );
 	padding: 16px;
@@ -23,13 +23,13 @@
 }
 
 .tux-message-editor .editor-contract {
-	background: url( ../images/contract-ltr.png ) no-repeat center center;
+	background: no-repeat center center;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/contract-ltr.svg );
 }
 
 .tux-message-editor .editor-expand {
-	background: url( ../images/expand-ltr.png ) no-repeat center center;
+	background: no-repeat center center;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/expand-ltr.svg );
 }
@@ -314,15 +314,11 @@
 }
 
 .tux-warning-message.validation {
-	background-image: url( ../images/label-flag.png );
-	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/label-flag.svg );
+	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/label-flag.svg );
 }
 
 .tux-warning-message.diff {
-	background-image: url( ../images/label-clock.png );
-	/* @embed */
-	background-image: linear-gradient( transparent, transparent ), url( ../images/label-clock.svg );
+	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/label-clock.svg );
 }
 
 .tux-warning-message .show-diff-link {
@@ -388,7 +384,7 @@
 }
 
 .tux-editor-insert-buttons .tux-editor-paste-original-button {
-	background: #fbfbfb url( ../images/paste.png ) left center no-repeat;
+	background: #fbfbfb left center no-repeat;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/paste.svg );
 	background-size: 16px 16px;
@@ -426,7 +422,7 @@
 }
 
 .tux-message-tools-menu li.selected {
-	background: url( ../images/label-tick.png ) right no-repeat;
+	background: right no-repeat;
 	/* @embed */
 	background-image: linear-gradient( transparent, transparent ), url( ../images/label-tick.svg );
 	color: #222;
