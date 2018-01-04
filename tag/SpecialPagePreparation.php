@@ -30,7 +30,10 @@ class SpecialPagePreparation extends SpecialPage {
 		$cancelButtonValue = $this->msg( 'pp-cancel-button-label' )->escaped();
 		$summaryValue = $this->msg( 'pp-save-summary' )->inContentLanguage()->escaped();
 		$output->addModules( 'ext.translate.special.pagepreparation' );
-		$output->addModuleStyles( 'jquery.uls.grid' );
+		$output->addModuleStyles( [
+			'ext.translate.special.pagepreparation.styles',
+			'jquery.uls.grid'
+		] );
 
 		$out = '';
 		$diff = new DifferenceEngine( $this->getContext() );
@@ -57,5 +60,12 @@ class SpecialPagePreparation extends SpecialPage {
 </div>
 HTML;
 		$output->addHTML( $out );
+
+		$nojs = Html::element(
+			'div',
+			[ 'class' => 'tux-nojs errorbox' ],
+			$this->msg( 'tux-nojs' )->plain()
+		);
+		$output->addHTML( $nojs );
 	}
 }

@@ -38,8 +38,11 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 		$this->setHeaders();
 		$this->checkPermissions();
 		$out = $this->getOutput();
-		$out->addModuleStyles( [ 'mediawiki.ui.button', 'jquery.uls.grid' ] );
-		$out->addModuleStyles( 'ext.translate.special.managetranslatorsandbox.styles' );
+		$out->addModuleStyles( [
+			'ext.translate.special.managetranslatorsandbox.styles',
+			'mediawiki.ui.button',
+			'jquery.uls.grid'
+		] );
 		$out->addModules( 'ext.translate.special.managetranslatorsandbox' );
 		$this->stash = new TranslationStashStorage( wfGetDB( DB_MASTER ) );
 
@@ -177,6 +180,14 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 	 */
 	protected function showPage() {
 		$out = $this->getOutput();
+
+		$nojs = Html::element(
+			'div',
+			[ 'class' => 'tux-nojs errorbox' ],
+			$this->msg( 'tux-nojs' )->plain()
+		);
+		$out->addHTML( $nojs );
+
 		$out->addHTML( <<<HTML
 <div class="grid">
 	<div class="row">
