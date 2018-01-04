@@ -274,3 +274,11 @@ textarea.body {
 	 */
 	text-align: left;
 }
+
+.client-nojs .grid {
+	display: none;
+}
+
+.client-js .tux-nojs {
+	display: none;
+}

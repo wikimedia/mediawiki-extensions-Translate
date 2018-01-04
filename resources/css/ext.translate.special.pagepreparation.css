@@ -1,3 +1,11 @@
 #page {
 	width: 35%;
 }
+
+.client-nojs .grid {
+	display: none;
+}
+
+.client-js .tux-nojs {
+	display: none;
+}

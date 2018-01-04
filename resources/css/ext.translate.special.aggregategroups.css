@@ -39,3 +39,15 @@ div.hidden {
 .tp-aggregategroup-edit-description {
 	width: 500px;
 }
+
+.client-nojs .tpt-add-new-group,
+.client-nojs .tp-aggregate-edit-ag-button,
+.client-nojs .tp-aggregate-remove-button,
+.client-nojs .tp-aggregate-remove-ag-button,
+.client-nojs .mw-tpa-group input {
+	display: none;
+}
+
+.client-js .tux-nojs {
+	display: none;
+}

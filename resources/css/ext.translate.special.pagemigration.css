@@ -68,3 +68,11 @@
 .mw-tpm-sp-instructions {
 	margin: 0.7em 0;
 }
+
+.client-nojs .grid {
+	display: none;
+}
+
+.client-js .tux-nojs {
+	display: none;
+}
