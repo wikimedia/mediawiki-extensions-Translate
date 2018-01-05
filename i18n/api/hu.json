@@ -22,6 +22,8 @@
 	"apihelp-query+languagestats-param-timelimit": "Maximális idő, ami a hiányzó statisztikák kiszámításával tölthető. Ha nulla, csak a gyorsítótárazott eredményeket adja vissza az elejétől.",
 	"apihelp-query+languagestats-param-language": "Nyelvkód.",
 	"apihelp-query+languagestats-example-1": "A finn fordítások készültségi fokainak listája",
+	"apihelp-query+messagecollection-description": "MessageCollection lekérése a fordításokról.",
+	"apihelp-query+messagecollection-summary": "MessageCollection lekérése a fordításokról.",
 	"apihelp-query+messagecollection-param-group": "Üzenetcsoport.",
 	"apihelp-query+messagecollection-param-language": "Nyelvkód.",
 	"apihelp-query+messagecollection-param-limit": "Mennyi üzenetet mutasson (szűrés után).",
