@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aeed6739_93ac0386",
+        "filename": "resources/css/ext.translate.special.aggregategroups.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-01-05T09:28:02Z",
+      "side": 1,
+      "message": "Add: .tp-aggregate-remove-button\n\nThis will hide the red icon to remove pages from aggregate groups.",
+      "revId": "00cd6af7742c04ce1e61ca976ccef706ecedd412",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
