@@ -255,7 +255,6 @@ $wgResourceModules['ext.translate.selecttoinput'] = [
 
 $wgResourceModules['ext.translate.special.aggregategroups'] = [
 	'scripts' => 'resources/js/ext.translate.special.aggregategroups.js',
-	'styles' => 'resources/css/ext.translate.special.aggregategroups.css',
 	'position' => 'top',
 	'dependencies' => [
 		'jquery.ui.autocomplete',
@@ -272,6 +271,11 @@ $wgResourceModules['ext.translate.special.aggregategroups'] = [
 		'tpt-invalid-group',
 	],
 	'targets' => [ 'desktop' ],
+] + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.aggregategroups.styles'] = [
+	'styles' => 'resources/css/ext.translate.special.aggregategroups.css',
+	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.importtranslations'] = [
@@ -342,7 +346,6 @@ $wgResourceModules['ext.translate.special.managetranslatorsandbox.styles'] = [
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.pagemigration'] = [
-	'styles' => 'resources/css/ext.translate.special.pagemigration.css',
 	'scripts' => 'resources/js/ext.translate.special.pagemigration.js',
 	'dependencies' => [
 		'jquery.ajaxdispatcher',
@@ -369,8 +372,11 @@ $wgResourceModules['ext.translate.special.pagemigration'] = [
 	],
 ] + $resourcePaths;
 
+$wgResourceModules['ext.translate.special.pagemigration.styles'] = [
+	'styles' => 'resources/css/ext.translate.special.pagemigration.css',
+] + $resourcePaths;
+
 $wgResourceModules['ext.translate.special.pagepreparation'] = [
-	'styles' => 'resources/css/ext.translate.special.pagepreparation.css',
 	'scripts' => 'resources/js/ext.translate.special.pagepreparation.js',
 	'dependencies' => [
 		'mediawiki.RegExp',
@@ -387,6 +393,10 @@ $wgResourceModules['ext.translate.special.pagepreparation'] = [
 		'pp-save-button-label',
 		'pp-save-message',
 	],
+] + $resourcePaths;
+
+$wgResourceModules['ext.translate.special.pagepreparation.styles'] = [
+	'styles' => 'resources/css/ext.translate.special.pagepreparation.css',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.pagetranslation'] = [

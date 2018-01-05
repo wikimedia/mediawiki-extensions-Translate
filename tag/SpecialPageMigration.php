@@ -28,7 +28,10 @@ class SpecialPageMigration extends SpecialPage {
 		$this->checkPermissions();
 		$this->outputHeader( 'pagemigration-summary' );
 		$output->addModules( 'ext.translate.special.pagemigration' );
-		$output->addModuleStyles( 'jquery.uls.grid' );
+		$output->addModuleStyles( [
+			'ext.translate.special.pagemigration.styles',
+			'jquery.uls.grid'
+		] );
 		# Get request data from, e.g.
 		$param = $request->getText( 'param' );
 		# Do stuff
@@ -66,5 +69,12 @@ class SpecialPageMigration extends SpecialPage {
 		$out .= Html::closeElement( 'div' );
 
 		$output->addHTML( $out );
+
+		$nojs = Html::element(
+			'div',
+			[ 'class' => 'tux-nojs errorbox' ],
+			$this->msg( 'tux-nojs' )->plain()
+		);
+		$output->addHTML( $nojs );
 	}
 }

@@ -27,6 +27,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		$this->setHeaders();
 
 		$out = $this->getOutput();
+		$out->addModuleStyles( 'ext.translate.special.aggregategroups.styles' );
 
 		// Check permissions
 		if ( $this->getUser()->isAllowed( 'translate-manage' ) ) {
@@ -170,6 +171,14 @@ class SpecialAggregateGroups extends SpecialPage {
 	protected function showAggregateGroups( array $aggregates, array $pages ) {
 		$out = $this->getOutput();
 		$out->addModules( 'ext.translate.special.aggregategroups' );
+
+		$nojs = Html::element(
+			'div',
+			[ 'class' => 'tux-nojs errorbox' ],
+			$this->msg( 'tux-nojs' )->plain()
+		);
+
+		$out->addHTML( $nojs );
 
 		/**
 		 * @var $group AggregateMessageGroup
