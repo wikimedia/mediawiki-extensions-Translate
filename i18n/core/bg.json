@@ -5,7 +5,8 @@
 			"පසිඳු කාවින්ද",
 			"StanProg",
 			"Vodnokon4e",
-			"Spiritia"
+			"Spiritia",
+			"ShockD"
 		]
 	},
 	"translate": "Превеждане",
@@ -193,6 +194,8 @@
 	"translate-documentation-language": "Документация на съобщението",
 	"translate-searchprofile": "Преводи",
 	"translate-search-languagefilter": "Филтриране по език:",
+	"log-name-translationreview": "Дневник на проверките на преводи",
+	"log-description-translationreview": "Дневник на всички проверки на преводи и групи съобщения.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|провери}} превод $3",
 	"logentry-translationreview-group": "$1 {{GENDER:$2|промени}} състоянието на преводите на $3 на $4 език от „$6“ на „$7“",
 	"group-translate-sandboxed": "Неодобрени преводачи",
