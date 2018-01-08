@@ -73,6 +73,7 @@
 	"apihelp-ttmserver-param-text": "El texto para el cual buscar sugerencias.",
 	"apihelp-ttmserver-example-1": "Obtener sugerencias para traducir «Help» del inglés al finés",
 	"apihelp-searchtranslations-description": "Buscar traducciones.",
+	"apihelp-searchtranslations-summary": "Buscar en las traducciones.",
 	"apihelp-searchtranslations-param-service": "Qué servicios de traducción disponibles usar.",
 	"apihelp-searchtranslations-param-query": "La cadena que buscar.",
 	"apihelp-searchtranslations-param-sourcelanguage": "El código de idioma del texto fuente.",

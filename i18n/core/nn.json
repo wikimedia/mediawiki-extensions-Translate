@@ -25,6 +25,7 @@
 	"translate-page-no-such-language": "Ugyldig språkkode.",
 	"translate-page-no-such-group": "Ikkje gyldig gruppe.",
 	"translate-page-disabled": "Omsetjingar til dette språket i denne gruppa er slått av. Årsak:\n\n<em>$1</em>",
+	"translate-page-disabled-source": "$1 er kjeldespråket til denne sida.",
 	"translate-language-disabled": "Omsetjing til dette språket er slege av.",
 	"translate-page-settings-legend": "Innstillingar",
 	"translate-page-group": "Gruppe",
