@@ -9,10 +9,6 @@
 	width: 35%;
 }
 
-.mw-tpm-sp-unit__actions {
-	border: 2px solid transparent;
-}
-
 .hide {
 	display: none;
 }
@@ -26,6 +22,10 @@
 	padding-bottom: 10px;
 }
 
+.grid .mw-tpm-sp-unit textarea {
+	padding: 10px;
+}
+
 .mw-tpm-sp-unit__source,
 .mw-tpm-sp-unit__target,
 .mw-tpm-sp-unit__actions {
@@ -33,27 +33,26 @@
 }
 
 .mw-tpm-sp-action {
-	width: 10%;
-	height: 10%;
-	float: left;
-	margin-left: 5%;
-	margin-right: 5%;
+	width: 25px;
+	height: 150px;
 	cursor: pointer;
 	display: inline-block;
+	margin-left: 20px;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
 }
 
 .mw-tpm-sp-action--delete {
-	background: transparent no-repeat;
 	background-image: linear-gradient( transparent, transparent ), url( ../images/trash_darkgray.svg );
 }
 
 .mw-tpm-sp-action--swap {
-	background: transparent no-repeat;
 	background-image: linear-gradient( transparent, transparent ), url( ../images/switch.svg );
 }
 
 .mw-tpm-sp-action--add {
-	background: transparent no-repeat;
 	background-image: linear-gradient( transparent, transparent ), url( ../images/plus_darkgray.svg );
 }
 
