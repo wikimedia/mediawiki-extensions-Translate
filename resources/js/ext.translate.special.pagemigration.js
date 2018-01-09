@@ -362,6 +362,9 @@
 				$( '#action-import' ).removeClass( 'hide' );
 				$( 'input' ).prop( 'disabled', false );
 				$( '.mw-tpm-sp-instructions' ).text( mw.msg( 'pm-on-save-message-text' ) ).show( 'fast' );
+			} ).fail( function ( errmsg ) {
+				$( 'input' ).prop( 'disabled', false );
+				$( '.mw-tpm-sp-error__message' ).text( mw.msg( errmsg ) ).show( 'fast' );
 			} );
 		}
 	}

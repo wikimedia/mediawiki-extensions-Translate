@@ -369,6 +369,7 @@ $wgResourceModules['ext.translate.special.pagemigration'] = [
 		'pm-on-save-message-text',
 		'pm-savepages-button-label',
 		'pm-cancel-button-label',
+		'tpt-unknown-page',
 	],
 ] + $resourcePaths;
 
