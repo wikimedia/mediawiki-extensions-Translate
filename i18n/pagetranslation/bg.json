@@ -4,7 +4,8 @@
 			"DCLXVI",
 			"පසිඳු කාවින්ද",
 			"StanProg",
-			"Termininja"
+			"Termininja",
+			"ShockD"
 		]
 	},
 	"pagetranslation": "Превод на страници",
@@ -18,6 +19,7 @@
 	"tpt-select-prioritylangs-reason": "Причина:",
 	"tpt-sections-prioritylangs": "Приоритетни езици",
 	"translate-tag-translate-link-desc": "Превеждане на тази страница",
+	"tpt-translation-intro": "Тази страница е <span class=\"plainlinks\">[$1 преведена версия]</span> на страницата [[$2]] и преводът е завършен на $3%.",
 	"tpt-languages-legend": "Други езици:",
 	"tpt-languages-nonzero": "$1 ($2% преведено)",
 	"tpt-discouraged-language-reason": "Причина: $1",
