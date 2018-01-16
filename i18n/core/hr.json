@@ -241,7 +241,7 @@
 	"log-name-translationreview": "Evidencija pregleda prijevoda",
 	"log-description-translationreview": "Evidencija svih provjera prijevoda i skupina poruka.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|pregledao|pregledala}} je prijevod $3",
-	"logentry-translationreview-group": "$1 {{GENDER:$2|promijenio|promijenila}} je stanje $4 prijevoda $3 od $6 na $7",
+	"logentry-translationreview-group": "$1 {{GENDER:$2|promijenio|promijenila}} je stanje za $4 prijevod stranice $3 iz $6 u $7",
 	"group-translate-sandboxed": "Neodobreni prevoditelji",
 	"group-translate-sandboxed-member": "{{GENDER:$1|neodobreni prevoditelj|neodobrena prevoditeljica}}",
 	"right-translate-sandboxmanage": "Rukovođenje sa suradnicima, koji su ograničeni na pješčanike",
