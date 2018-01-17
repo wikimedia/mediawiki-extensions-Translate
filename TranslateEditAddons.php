@@ -132,7 +132,7 @@ class TranslateEditAddons {
 				$buttons['save'] = new OOUI\ButtonInputWidget( [
 					// Support: IE 6 – Use <input>, otherwise it can't distinguish which button was clicked
 					'useInputTag' => true,
-					'flags' => [ 'constructive', 'primary' ],
+					'flags' => [ 'progressive', 'primary' ],
 					'label' => $context->msg( 'translate-save', $name )->text(),
 					'type' => 'submit',
 				] + $saveConfig );
