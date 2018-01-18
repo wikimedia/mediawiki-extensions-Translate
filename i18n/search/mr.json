@@ -9,7 +9,7 @@
 	"tux-sst-view-foreign": "$1 वर पहा",
 	"tux-sst-search": "शोधा",
 	"tux-sst-search-ph": "भाषांतर शोधा",
-	"tux-sst-count": "{{PLURAL:$1|एक निकाल सापडला|$1 निकाल सापडले}}",
+	"tux-sst-count": "{{PLURAL:$1|$1 निकाल सापडला/ले}}",
 	"tux-sst-facet-language": "भाषा",
 	"tux-sst-facet-group": "संदेश गट",
 	"tux-sst-nosolr-title": "'शोध' उपलब्ध नाही",
