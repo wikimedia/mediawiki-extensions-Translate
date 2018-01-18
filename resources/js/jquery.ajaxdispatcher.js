@@ -18,6 +18,8 @@
 		return $.when( helper( list, maxRetries ) )
 			.then( function ( promises ) {
 				return deferred.resolve( promises );
+			} ).fail( function ( errmsg ) {
+				return deferred.reject( errmsg );
 			} );
 	}
 
@@ -34,8 +36,10 @@
 		rest = list.slice( 1 );
 
 		retries = 0;
-		retrier = function () {
-			var promise = this;
+		retrier = function ( result, promise ) {
+			if ( !promise.state ) {
+				return;
+			}
 
 			if ( promise.state() === 'rejected' ) {
 				if ( retries < maxRetries ) {
@@ -51,7 +55,9 @@
 			}
 		};
 
-		first.call().always( retrier );
+		first.call().always( retrier ).catch( function ( errmsg ) {
+			return deferred.reject( errmsg );
+		} );
 
 		return deferred;
 	}
