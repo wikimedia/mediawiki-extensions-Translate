@@ -12,6 +12,8 @@
 	"translate-taction-proofread": "جائزو وٺو",
 	"translate-taction-lstats": "ٻوليءَ جا انگ اکر",
 	"translate-taction-export": "برآمديو",
+	"translate-prev": "پويون صفحو",
+	"translate-edit-translation": "ترجمو",
 	"translate-edit-in-other-languages": "ٻين ٻولين ۾ نياپو",
 	"translate-magic-cm-save": "سانڍيو",
 	"translate-rcfilters-translations-only-desc": "ترجمايل صفحن ۾ تبديليون.",
@@ -35,6 +37,7 @@
 	"tux-status-fuzzy": "مدي-خارج",
 	"tux-status-translated": "ترجمايل",
 	"tux-editor-discard-changes-button-label": "تبديليون ڦٽو ڪريو",
+	"tux-editor-save-button-label": "ترجمو سانڍيو",
 	"tux-editor-cancel-button-label": "رد",
 	"tux-editor-confirm-button-label": "ترجمي جي پڪ ڪريو",
 	"tux-editor-in-other-languages": "ٻيون ٻوليون",
@@ -43,5 +46,6 @@
 	"tux-proofread-translated-by-self": "مون پاران ترجمايل",
 	"tux-empty-list-translated": "پيغام ترجمايل ناھن",
 	"tux-editor-close-tooltip": "بند ڪريو",
+	"tux-editor-message-tools-delete": "ڊاھيو",
 	"translate-statsbar-tooltip": "$1% تجمايل، $2% جائزو-ورتل"
 }
