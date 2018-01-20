@@ -20,7 +20,7 @@
 
 		done = assert.async();
 		mw.translate.getSourceUnits( 'Help:Special pages' ).done( function ( sourceUnits ) {
-			assert.strictEqual( 1, sourceUnits.length, 'Source units retrieved' );
+			assert.strictEqual( 2, sourceUnits.length, 'Source units retrieved' );
 			done();
 		} );
 
