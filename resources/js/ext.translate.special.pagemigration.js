@@ -142,7 +142,7 @@
 			var result, i, sUnit, key;
 			sourceUnits = [];
 			result = data.query.messagecollection;
-			for ( i = 1; i < result.length; i++ ) {
+			for ( i = 0; i < result.length; i++ ) {
 				sUnit = {};
 				key = result[ i ].key;
 				sUnit.identifier = key.slice( key.lastIndexOf( '/' ) + 1 );
