@@ -9,7 +9,8 @@
 			"Михајло Анђелковић",
 			"Srdjan m",
 			"Сербијана",
-			"Obsuser"
+			"Obsuser",
+			"Acamicamacaraca"
 		]
 	},
 	"translate": "Превод",
@@ -321,7 +322,7 @@
 	"tux-editor-doc-editor-save": "Сачувај документацију",
 	"tux-editor-doc-editor-cancel": "Откажи",
 	"tux-messagetable-more-messages": "још $1 {{PLURAL:$1|порука}}",
-	"tux-messagetable-loading-messages": "Учитавање {{PLURAL:$1|порука}}...",
+	"tux-messagetable-loading-messages": "Учитавам {{PLURAL:$1|поруке}}...",
 	"tux-message-filter-placeholder": "Филтрирај списак",
 	"tux-message-filter-result": "{{PLURAL:$1|Пронађен $1 резултат|Пронађена $1 резултата|Пронађено $1 резултата}} за „$2”",
 	"tux-message-filter-advanced-button": "Напредна претрага",
@@ -352,7 +353,7 @@
 	"tux-editor-message-tools-history": "Историја",
 	"tux-editor-message-tools-delete": "Обриши",
 	"tux-editor-message-tools-translations": "Сви преводи",
-	"tux-editor-loading": "Учитавање…",
+	"tux-editor-loading": "Учитавам…",
 	"translate-search-more-languages-info": "још $1 {{PLURAL:$1|језик|језика}}",
 	"translate-statsbar-tooltip": "$1% преведено, $2% потврђено",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% преведено, $2% потврђено, $3% застарело",
