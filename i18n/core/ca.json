@@ -199,7 +199,7 @@
 	"translate-jssti-add": "Afegeix a la llista",
 	"managemessagegroups": "Gestió del grup de missatges",
 	"translate-smg-notallowed": "No teniu permís per dur a terme aquesta acció.",
-	"translate-smg-nochanges": "No hi han canvis a processar.",
+	"translate-smg-nochanges": "No hi ha canvis per processar.",
 	"translate-smg-submit": "Penja els canvis per al seu processament",
 	"translate-smg-submitted": "Les definicions dels missatges  s'han actualitzat. Els canvis estàn sent processats al rerefons.",
 	"translate-smg-left": "Contingut del missatge al wiki",
