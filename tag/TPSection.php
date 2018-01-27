@@ -66,7 +66,7 @@ class TPSection {
 	 * @since 2014.07
 	 */
 	public function getTextWithVariables() {
-		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
+		$re = '~<tvar\|([^>]+)>(.*?s)</>~u';
 
 		return preg_replace( $re, '$\1', $this->text );
 	}
@@ -76,7 +76,7 @@ class TPSection {
 	 * @return string Wikitext.
 	 */
 	public function getTextForTrans() {
-		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
+		$re = '~<tvar\|([^>]+)>(.*?s)</>~u';
 
 		return preg_replace( $re, '\2', $this->text );
 	}

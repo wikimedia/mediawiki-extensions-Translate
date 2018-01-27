@@ -26,10 +26,34 @@ class TPSectionTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals( $expected, $output );
 	}
 
+	/**
+	 * @dataProvider providerTestTextWithVariables
+	 */
+	public function testGetTextWithVariables( $text, $expected ) {
+		$section = new TPSection();
+		$section->text = $text;
+
+		$output = $section->getTextWithVariables();
+
+		$this->assertEquals( $expected, $output );
+	}
+
+	/**
+	 * @dataProvider providerTestTextWithVariables
+	 */
+	public function testGetTextForTrans( $text, $expected ) {
+		$section = new TPSection();
+		$section->text = $text;
+
+		$output = $section->getTextForTrans();
+
+		$this->assertEquals( $expected, $output );
+	}
+
 	public static function providerTestGetMarkedText() {
 		$cases = [];
 
-		// Inline syntaxs
+		// Inline syntax
 		$cases[] = [
 			'name',
 			'Hello',
@@ -58,6 +82,18 @@ class TPSectionTest extends PHPUnit_Framework_TestCase {
 			'====== Hello ======',
 			false,
 			'====== Hello ====== <!--T:name-->',
+		];
+
+		return $cases;
+	}
+
+	public static function providerTestTextWithVariables() {
+		$cases = [];
+
+		// syntax
+		$cases[] = [
+			"<tvar|name>Hello.\n Hello.\n Hello.</>",
+			"<tvar|name>Hello.\n Hello.\n Hello.</>",
 		];
 
 		return $cases;
