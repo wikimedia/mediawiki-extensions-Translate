@@ -17,7 +17,6 @@ $resourcePaths = [
 
 $wgResourceModules['ext.translate'] = [
 	'styles' => 'resources/css/ext.translate.css',
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.base'] = [
@@ -118,13 +117,11 @@ $wgResourceModules['ext.translate.editor'] = [
 		'tux-warnings-more',
 		'spamprotectiontext',
 	],
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.groupselector'] = [
 	'styles' => 'resources/css/ext.translate.groupselector.less',
 	'scripts' => 'resources/js/ext.translate.groupselector.js',
-	'position' => 'top',
 	'dependencies' => [
 		'ext.translate.base',
 		'ext.translate.loader',
@@ -142,23 +139,19 @@ $wgResourceModules['ext.translate.groupselector'] = [
 
 $wgResourceModules['ext.translate.hooks'] = [
 	'scripts' => 'resources/js/ext.translate.hooks.js',
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.legacy'] = [
 	'styles' => 'resources/css/ext.translate.legacy.css',
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.loader'] = [
 	'styles' => 'resources/css/ext.translate.loader.css',
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.messagetable'] = [
 	'scripts' => 'resources/js/ext.translate.messagetable.js',
 	'styles' => 'resources/css/ext.translate.messagetable.less',
-	'position' => 'bottom',
 	'dependencies' => [
 		'ext.translate.base',
 		'ext.translate.hooks',
@@ -209,7 +202,6 @@ $wgResourceModules['ext.translate.messagetable'] = [
 
 $wgResourceModules['ext.translate.messagewebimporter'] = [
 	'styles' => 'resources/css/ext.translate.messagewebimporter.css',
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.multiselectautocomplete'] = [
@@ -217,7 +209,6 @@ $wgResourceModules['ext.translate.multiselectautocomplete'] = [
 	'dependencies' => [
 		'jquery.ui.autocomplete',
 	],
-	'position' => 'top',
 	'targets' => [ 'desktop' ],
 ] + $resourcePaths;
 
@@ -255,7 +246,6 @@ $wgResourceModules['ext.translate.selecttoinput'] = [
 
 $wgResourceModules['ext.translate.special.aggregategroups'] = [
 	'scripts' => 'resources/js/ext.translate.special.aggregategroups.js',
-	'position' => 'top',
 	'dependencies' => [
 		'jquery.ui.autocomplete',
 		'mediawiki.api',
@@ -275,7 +265,6 @@ $wgResourceModules['ext.translate.special.aggregategroups'] = [
 
 $wgResourceModules['ext.translate.special.aggregategroups.styles'] = [
 	'styles' => 'resources/css/ext.translate.special.aggregategroups.css',
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.importtranslations'] = [
@@ -301,7 +290,6 @@ $wgResourceModules['ext.translate.special.languagestats'] = [
 
 $wgResourceModules['ext.translate.special.managegroups'] = [
 	'styles' => 'resources/css/ext.translate.special.managegroups.css',
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.managetranslatorsandbox'] = [
@@ -408,13 +396,11 @@ $wgResourceModules['ext.translate.special.pagetranslation'] = [
 		'mediawiki.Uri',
 		'user.tokens',
 	],
-	'position' => 'top',
 	'targets' => [ 'desktop' ],
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.pagetranslation.styles'] = [
 	'styles' => 'resources/css/ext.translate.special.pagetranslation.css',
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.searchtranslations'] = [
@@ -431,7 +417,6 @@ $wgResourceModules['ext.translate.special.searchtranslations'] = [
 		'translate-search-more-groups-info',
 		'translate-search-more-languages-info',
 	],
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.searchtranslations.operatorsuggest'] = [
@@ -444,12 +429,10 @@ $wgResourceModules['ext.translate.special.searchtranslations.operatorsuggest'] =
 
 $wgResourceModules['ext.translate.special.searchtranslations.styles'] = [
 	'styles' => 'resources/css/ext.translate.special.searchtranslations.css',
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.supportedlanguages'] = [
 	'styles' => 'resources/css/ext.translate.special.supportedlanguages.css',
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.translate'] = [
@@ -480,13 +463,11 @@ $wgResourceModules['ext.translate.special.translate'] = [
 
 $wgResourceModules['ext.translate.special.translate.styles'] = [
 	'styles' => 'resources/css/ext.translate.special.translate.css',
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.translationstash'] = [
 	'scripts' => 'resources/js/ext.translate.special.translationstash.js',
 	'styles' => 'resources/css/ext.translate.special.translationstash.css',
-	'position' => 'top',
 	'dependencies' => [
 		'ext.translate.editor',
 		'ext.translate.messagetable',
@@ -514,7 +495,6 @@ $wgResourceModules['ext.translate.statsbar'] = [
 		'translate-statsbar-tooltip',
 		'translate-statsbar-tooltip-with-fuzzy',
 	],
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.storage'] = [
@@ -523,12 +503,10 @@ $wgResourceModules['ext.translate.storage'] = [
 
 $wgResourceModules['ext.translate.tabgroup'] = [
 	'styles' => 'resources/css/ext.translate.tabgroup.css',
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.tag.languages'] = [
 	'styles' => 'resources/css/ext.translate.tag.languages.css',
-	'position' => 'top',
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.translationstashstorage'] = [
