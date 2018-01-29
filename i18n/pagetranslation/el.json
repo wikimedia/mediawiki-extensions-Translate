@@ -8,7 +8,8 @@
 			"Protnet",
 			"ZaDiak",
 			"Geraki",
-			"Evropi"
+			"Evropi",
+			"Nikosgranturismogt"
 		]
 	},
 	"pagetranslation": "Μετάφραση σελίδων",
@@ -63,7 +64,7 @@
 	"translate-tag-markthisagain": "Αυτή η σελίδα έχει <span class=\"plainlinks\">[$1 αλλαγές]</span> από την τελευταία φορά που είχε <span class=\"plainlinks\">[$2 σημανθεί για μετάφραση]</span>.",
 	"translate-tag-hasnew": "Αυτή η σελίδα περιέχει <span class=\"plainlinks\">[$1 αλλαγές]</span> που δεν έχουν σημανθεί για μετάφραση.",
 	"tpt-translation-intro": "Αυτή η σελίδα είναι μια <span class=\"plainlinks\">[$1 μεταφρασμένη έκδοση]</span> της σελίδας [[$2]] και η μετάφραση είναι $3% ολοκληρωμένη.",
-	"tpt-translation-intro-fuzzy": "Ξεπερασμένες μεταφράσεις σημειώνονται ως εξής.",
+	"tpt-translation-intro-fuzzy": "Ξεπερασμένες μεταφράσεις σημειώνονται όπως αυτό.",
 	"tpt-languages-legend": "Άλλες γλώσσες:",
 	"tpt-languages-zero": "Έναρξη μετάφρασης για αυτήν τη γλώσσα",
 	"tpt-languages-nonzero": "$1 ($2% μεταφρασμένο)",
@@ -117,6 +118,14 @@
 	"logentry-pagetranslation-prioritylanguages-force": "{{GENDER:$2|Ο|Η}} $1 περιόρισε τις γλώσσες για την προς μετάφραση σελίδα $3 στα $5",
 	"logentry-pagetranslation-associate": "{{GENDER:$2|Ο|Η}} $1 προσέθεσε την προς μετάφραση σελίδα $3 στη συγκεντρωτική ομάδα $4",
 	"logentry-pagetranslation-dissociate": "{{GENDER:$2|Ο|Η}} $1 αφαίρεσε την προς μετάφραση σελίδα $3 από τη συγκεντρωτική ομάδα $4",
+	"log-action-filter-pagetranslation": "Τύπος δράσης:",
+	"log-action-filter-pagetranslation-mark": "σήμανση για μετάφραση",
+	"log-action-filter-pagetranslation-unmark": "Αφαίρεση από τη μετάφραση",
+	"log-action-filter-pagetranslation-move": "Μετακινήσεις σελίδων",
+	"log-action-filter-pagetranslation-delete": "Διαγραφές σελίδας",
+	"log-action-filter-pagetranslation-encourage": "Ενθάρρυνση για μετάφραση",
+	"log-action-filter-pagetranslation-discourage": "Αποθάρρυνση για μετάφραση",
+	"log-action-filter-pagetranslation-prioritylanguages": "Τροποποίηση γλωσσών προτεραιότητας",
 	"pt-movepage-title": "Μετακίνηση της προς μετάφραση σελίδας «$1»",
 	"pt-movepage-blockers": "Η προς μετάφραση σελίδα δεν μπορεί να μετακινηθεί σε νέο όνομα λόγω {{PLURAL:$1|του ακόλουθου σφάλματος|των ακόλουθων σφαλμάτων}}:",
 	"pt-movepage-block-base-exists": "Η προς μετάφραση σελίδα προορισμού «[[:$1]]» υπάρχει.",
@@ -162,7 +171,7 @@
 	"pt-deletepage-list-section": "Σελίδες μεταφραστικών ενοτήτων",
 	"pt-deletepage-list-other": "Άλλες υποσελίδες",
 	"pt-deletepage-list-count": "Συνολικά $1 {{PLURAL:$1|σελίδα|σελίδες}} προς διαγραφή.",
-	"pt-deletepage-full-logreason": "Τμήμα της προς μετάφραση σελίδας «$1».",
+	"pt-deletepage-full-logreason": "Τμήμα της μεταφράσιμης σελίδας «$1».",
 	"pt-deletepage-lang-logreason": "Τμήμα της σελίδας μετάφρασης «$1».",
 	"pt-deletepage-started": "Παρακαλούμε ελέγξτε το [[Special:Log/pagetranslation|αρχείο καταγραφών των σελίδων μετάφρασης]] για σφάλματα και μήνυμα ολοκλήρωσης.",
 	"pt-deletepage-intro": "Αυτή η ειδική σελίδα σας επιτρέπει να διαγράψετε είτε ολόκληρη σελίδα προς μετάφραση, είτε μια μεμονωμένη σελίδα μετάφρασης σε κάποια γλώσσα.\nΗ ενέργεια διαγραφής δεν θα είναι άμεση, επειδή θα διαγραφούν επίσης και όλες οι σελίδες που εξαρτώνται από αυτές.\nΟι αποτυχίες θα καταγραφούν στο [[Special:Log/pagetranslation|αρχείο καταγραφών των σελίδων μετάφρασης]] και θα πρέπει να επιδιορθωθούν με το χέρι.",
@@ -178,6 +187,7 @@
 	"pm-add-icon-hover-text": "Προσθήκη μιας μεταφραστικής μονάδας παρακάτω",
 	"pm-swap-icon-hover-text": "Εναλλαγή με τη μεταφραστική μονάδα παρακάτω",
 	"pm-delete-icon-hover-text": "Διαγραφή μεταφραστικής μονάδας",
+	"pm-pagetitle-placeholder": "Εισαγάγετε το τίτλο της σελίδας",
 	"pm-pagetitle-invalid": "Παρακαλούμε εισαγάγετε έγκυρη σελίδα τίτλου",
 	"pm-langcode-missing": "Παρακαλούμε εισαγάγετε τον κωδικό γλώσσας.",
 	"pm-summary-import": "Εισήγαγε μετάφραση χρησιμοποιώντας τη [[Special:PageMigration|σελίδα μεταφοράς]]",
@@ -196,5 +206,7 @@
 	"pp-diff-new-header": "Προετοιμασμένο κείμενο",
 	"tpt-unlink-confirm": "Παρακαλούμε επιβεβαιώστε ότι θέλετε πραγματικά να καταργήσετε αυτήν τη σελίδα από το σύστημα μετάφρασης.\nΟ επιλογέας γλώσσας και τα μεταφρασμένα ονόματα της σελίδας θα σταματήσουν να λειτουργούν.\nΟι σελίδες μετάφρασης θα γίνουν επεξεργάσιμες.",
 	"tpt-unlink-button": "Αφαίρεση από τη μετάφραση",
-	"tpt-unlink-summary": "Σελίδα που έχει αφαιρεθεί από τη μετάφραση"
+	"tpt-unlink-summary": "Σελίδα που έχει αφαιρεθεί από τη μετάφραση",
+	"tpt-generic-confirm": "Παρακαλούμε επιβεβαιώστε αυτή τη δράση.",
+	"tpt-generic-button": "Επιβεβαίωση"
 }

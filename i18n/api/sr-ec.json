@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Obsuser"
+			"Obsuser",
+			"Acamicamacaraca"
 		]
 	},
-	"apierror-translate-sandbox-invalidppassword": "Невалидна лозинка"
+	"apierror-translate-sandbox-invalidppassword": "Неисправна лозинка"
 }
