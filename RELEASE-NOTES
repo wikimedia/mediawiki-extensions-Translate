@@ -1,0 +1,11 @@
+== Translate 2018.01 ==
+Released at 2018-01-30.
+
+=== Noteworthy changes ===
+* Special:PageMigration: Fixed save button, added RTL direction support and fixed broken icon in delete button. (T179182, T139463)
+* Added RESTBaseWebService support to allow using Apertium using CXServer MT API through RESTBase.
+* Removed MediawikiExtensionFFS. Migrate to JsonFFS if you were still using this format.
+* Almost all legacy non-TUX code has been removed. (T132546)
+* Added "Link to this message" to translation editor tools.
+* GettextFFS keyAlgorithm default value changed to "simple" from "legacy". This will produce shorter page titles and shorter titles. You must add legacy to your configuration to keep using existing titles for GettextFFS. (T178882)
+* Translation filter is now part of the new recent changes interface if the new interface is available.
