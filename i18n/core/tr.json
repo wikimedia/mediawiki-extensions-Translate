@@ -254,6 +254,7 @@
 	"translate-documentation-language": "İleti belgelemesi",
 	"translate-searchprofile": "Çeviriler",
 	"translate-searchprofile-tooltip": "Tüm çevirilerde ara",
+	"translate-searchprofile-note": "[$1 Çeviri araması] ile daha fazla arama seçenekleri mevcuttur.",
 	"translate-search-languagefilter": "Dile göre filtre uygula:",
 	"translate-search-nofilter": "Filtre yok",
 	"log-name-translationreview": "Çeviri gözden geçirme günlüğü",

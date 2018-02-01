@@ -32,7 +32,10 @@
 	"apihelp-ttmserver-param-sourcelanguage": "Lähdetekstin kielikoodi.",
 	"apihelp-ttmserver-param-targetlanguage": "Ehdotuksen kielikoodi.",
 	"apihelp-searchtranslations-description": "Etsi käännöksiä.",
+	"apihelp-searchtranslations-summary": "Hae käännöksiä.",
+	"apihelp-searchtranslations-param-sourcelanguage": "Lähdetekstin kielikoodi.",
 	"apihelp-searchtranslations-param-limit": "Tuloksen koko.",
+	"apihelp-translationcheck-param-title": "Sivun otsikko nimiavaruudella ja kielikoodilla.",
 	"apierror-translate-duplicateaggregategroup": "Viestiryhmä on jo olemassa",
 	"apierror-translate-invalidgroup": "Ryhmä ei ole olemassa tai se on virheellinen",
 	"apierror-translate-invalidlanguage": "Pyydetty kieli ei kelpaa.",
@@ -42,5 +45,6 @@
 	"apierror-translate-nomessagefortitle": "Otsikko ei vastaa käännettävää viesti",
 	"apierror-translate-owntranslation": "Ei voida tarkistaa omia käännöksiä",
 	"apierror-translate-sandboxdisabled": "Hiekkalaatikko-ominaisuus ei ole käytössä",
+	"apierror-translate-sandbox-invalidppassword": "Virheellinen salasana",
 	"apierror-translate-unknownmessage": "Tuntematon viesti"
 }

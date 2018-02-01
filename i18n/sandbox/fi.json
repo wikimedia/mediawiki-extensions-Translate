@@ -33,6 +33,8 @@
 	"tsb-translations-user": "{{GENDER:$1|Käyttäjän käännökset}}",
 	"tsb-translations-current": "Nykyinen käännös",
 	"tsb-delete-userpage-summary": "Hiekkalaatikkokäyttäjän käyttäsivun poisto.",
+	"tsb-reject-confirmation": "{{PLURAL:$1|käyttäjä|käyttäjää}} hylätty",
+	"tsb-accept-confirmation": "{{PLURAL:$1|käyttäjä|käyttäjää}} hyväksytty",
 	"translationstash": "Tervetuloa",
 	"translate-translationstash-welcome": "Tervetuloa {{GENDER:$1|$1}}. Olet uusi kääntäjä.",
 	"translate-translationstash-welcome-note": "Tutustu käännöstyökaluihin. Käännä muutamia viestejä, niin saat täydet käännösoikeudet lempiprojektiesi kääntämiseen.",
@@ -43,5 +45,5 @@
 	"tsb-limit-reached-body": "Olet saavuttanut käännösraja uusille kääntäjille.\nTiimimme tarkistaa ja päivittää tilisi pian.\nSitten voit kääntää ilman rajoja.",
 	"tsb-no-requests-from-new-users": "Ei uusia hakemuksia.",
 	"tsb-create-user-page": "Luo yksinkertainen käyttäjäsivu",
-	"log-name-translatorsandbox": "Käännöshiekkalaatikko"
+	"log-name-translatorsandbox": "Käännöshiekkalaatikkoloki"
 }

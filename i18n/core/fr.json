@@ -194,7 +194,7 @@
 	"translate-translations-project": "Projet :",
 	"translate-translations-including-no-param": "Veuillez spécifier une clé de message correcte dans le paramètre ''subpage''",
 	"translate-translations-history-short": "h",
-	"languagestats": "Statistiques des langues",
+	"languagestats": "Statistiques de langue",
 	"languagestats-summary": "Cette page affiche les statistiques de traduction de tous les groupes de messages dans une langue donnée.",
 	"messagegroupstats-summary": "Cette page affiche les statistiques de groupe de messages.",
 	"languagestats-stats-for": "Statistiques de traduction pour $1 ($2).",
