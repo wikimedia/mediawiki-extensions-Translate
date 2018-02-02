@@ -16,7 +16,8 @@
 			"Okras",
 			"Purodha",
 			"Александр Сигачёв",
-			"Mailman"
+			"Mailman",
+			"Movses"
 		]
 	},
 	"pagetranslation": "Перевод страниц",
@@ -130,6 +131,8 @@
 	"log-action-filter-pagetranslation-unmark": "Удаление из перевода",
 	"log-action-filter-pagetranslation-move": "Перемещения страницы",
 	"log-action-filter-pagetranslation-delete": "Удаления страницы",
+	"log-action-filter-pagetranslation-encourage": "Установка отметок \"Переведено\"",
+	"log-action-filter-pagetranslation-discourage": "Снятие отметок \"Переведено\"",
 	"log-action-filter-pagetranslation-prioritylanguages": "изменение списка приоритетных языков",
 	"log-action-filter-pagetranslation-aggregategroups": "изменение агрегированных групп",
 	"pt-movepage-title": "Переименование доступной для перевода страницы $1",
