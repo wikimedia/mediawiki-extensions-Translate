@@ -338,7 +338,6 @@ $wgResourceModules['ext.translate.special.pagemigration'] = [
 	'dependencies' => [
 		'jquery.ajaxdispatcher',
 		'mediawiki.api',
-		'mediawiki.api.edit',
 		'mediawiki.ui',
 		'mediawiki.ui.button',
 	],
