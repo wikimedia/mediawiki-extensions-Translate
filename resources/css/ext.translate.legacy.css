@@ -5,7 +5,7 @@
 }
 
 /* This gets pretty far on wide screens... */
-.mw-sp-translate-settings input[type='submit'] {
+.mw-sp-translate-settings input[ type='submit' ] {
 	float: right;
 }
 
