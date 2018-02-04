@@ -353,6 +353,7 @@
 	"tux-editor-message-tools-history": "Историја",
 	"tux-editor-message-tools-delete": "Обриши",
 	"tux-editor-message-tools-translations": "Сви преводи",
+	"tux-editor-message-tools-linktothis": "Веза до ове поруке",
 	"tux-editor-loading": "Учитавам…",
 	"translate-search-more-languages-info": "још $1 {{PLURAL:$1|језик|језика}}",
 	"translate-statsbar-tooltip": "$1% преведено, $2% потврђено",
