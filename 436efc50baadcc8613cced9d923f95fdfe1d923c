@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7497716a_cc3339cb",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2018-02-05T23:14:14Z",
+      "side": 1,
+      "message": "Don\u0027t we use an mw-fuzzy span class now for this? Maybe we should update. Also, I\u0027d have loved to use $1 for FuzzyBot and $2 for ¡¡FUZZY!! so the odds of getting those translated were lower, but I\u0027m not sure if that\u0027d be undue complications. In any case, please advice. Thanks.",
+      "range": {
+        "startLine": 14,
+        "startChar": 223,
+        "endLine": 14,
+        "endChar": 382
+      },
+      "revId": "436efc50baadcc8613cced9d923f95fdfe1d923c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
