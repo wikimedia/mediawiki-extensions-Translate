@@ -38,12 +38,14 @@
 			"Tacsipacsi",
 			"Matma Rex",
 			"Robby",
-			"Mar(c)"
+			"Mar(c)",
+			"MarcoAurelio"
 		]
 	},
 	"translate": "{{doc-special|Translate}}\nIt is the verb \"to translate\".\n{{Identical|Translate}}",
 	"translate-extensionname": "{{name}}",
 	"translate-desc": "{{desc|name=Translate|url=https://www.mediawiki.org/wiki/Extension:Translate}}",
+	"translate-fuzzybot-desc":"Text to display on [[User:FuzzyBot]]\nDo not translate 'FuzzyBot' nor '!!FUZZY!!'.",
 	"translate-taskui-export-to-file": "Task in [[Special:Translate]] on action Export",
 	"translate-taskui-export-as-po": "Task in [[Special:Translate]] on action Export",
 	"translate-taction-translate": "A tab text used in Special pages [[Special:Translate]], [[Special:LanguageStats]] and [[Special:MessageGroupStats]].\n{{Identical|Translate}}",

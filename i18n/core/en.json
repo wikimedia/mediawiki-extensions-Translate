@@ -4,12 +4,14 @@
 			"Nike",
 			"Siebrand",
 			"Amire80",
-			"Santhosh.thottingal"
+			"Santhosh.thottingal",
+			"MarcoAurelio"
 		]
 	},
 	"translate": "Translate",
 	"translate-extensionname": "Translate",
 	"translate-desc": "[[Special:Translate|Special page]] for translating MediaWiki and beyond",
+	"translate-fuzzybot-desc": "Hi! I am FuzzyBot. I am not vandalizing your translations. Unfortunately there have been changes to the English source message and I am marking translations so that you will notice this change. Please update the translation if needed according to the master copy and remove the text <code><nowiki>!!FUZZY!!</nowiki></code> from the message, thank you!",
 	"translate-taskui-export-to-file": "Export in native format",
 	"translate-taskui-export-as-po": "Export for off-line translation",
 	"translate-taction-translate": "Translate",
