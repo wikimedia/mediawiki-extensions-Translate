@@ -4,12 +4,14 @@
 			"Nike",
 			"Siebrand",
 			"Amire80",
-			"Santhosh.thottingal"
+			"Santhosh.thottingal",
+			"MarcoAurelio"
 		]
 	},
 	"translate": "Translate",
 	"translate-extensionname": "Translate",
 	"translate-desc": "[[Special:Translate|Special page]] for translating MediaWiki and beyond",
+	"translate-fuzzybot-desc": "This is a special system account used by the MediaWiki [https://www.mediawiki.org/wiki/Extension:Translate Translate extension].\nThis account is part of the MediaWiki software and it is not owned by any user. It performs automatic tasks as a result of the actions of the translation administrators.",
 	"translate-taskui-export-to-file": "Export in native format",
 	"translate-taskui-export-as-po": "Export for off-line translation",
 	"translate-taction-translate": "Translate",
