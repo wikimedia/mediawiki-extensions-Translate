@@ -116,6 +116,7 @@
 	"translate-rcfilters-translations-filter-label": "Non traducións",
 	"translate-rcfilters-translations-filter-desc": "Tódolos cambios que non son traducións.",
 	"translate-rcfilters-translations-site-label": "Mensaxes de sistema",
+	"translate-rcfilters-translations-site-desc": "Personalizacións ás mensaxes de sistema no espazo de nomes MediaWiki.",
 	"translate-rc-translation-filter": "Filtrar as traducións:",
 	"translate-rc-translation-filter-no": "Non facer nada",
 	"translate-rc-translation-filter-only": "Mostrar só as traducións",
@@ -376,5 +377,5 @@
 	"translate-ulsdep-title": "Erro de configuración",
 	"translate-ulsdep-body": "A extensión de tradución depende da [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector extensión do selector universal de linguas].",
 	"tux-session-expired": "Pechouse a súa sesión. Por favor, acceda ao sistema noutra lapela. Como alternativa, copie as traducións non gardadas, acceda ao sistema, regrese a esta páxina e insira as súas traducións de novo.",
-	"tux-nojs": "Esta páxina require JavaScript."
+	"tux-nojs": "Esta ferramenta non funciona sen JavaScript. Ou JavaScript está desactivado, ou non funcionou, ou este navegador non está soportado."
 }
