@@ -365,7 +365,8 @@ class MessageGroupStats {
 		$id = $group->getId();
 
 		if ( self::$timeStart !== null && ( microtime( true ) - self::$timeStart ) > self::$limit ) {
-			return $stats[$id][$code] = self::getUnknownStats();
+			$stats[$id][$code] = self::getUnknownStats();
+			return $stats[$id][$code];
 		}
 
 		if ( $group instanceof AggregateMessageGroup ) {

@@ -777,7 +777,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			$map[$title->getNamespace()][$title->getDBkey()] = $mkey;
 		}
 
-		return $this->reverseMap = $map;
+		$this->reverseMap = $map;
+		return $this->reverseMap;
 	}
 
 	/**
