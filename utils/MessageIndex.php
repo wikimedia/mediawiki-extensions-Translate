@@ -694,7 +694,8 @@ class CDBMessageIndex extends MessageIndex {
 			$this->index = $this->rebuild();
 		}
 
-		return $this->reader = \Cdb\Reader::open( $file );
+		$this->reader = \Cdb\Reader::open( $file );
+		return $this->reader;
 	}
 }
 

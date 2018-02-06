@@ -79,7 +79,8 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
 			$new_defs[$prefix . $k] = $v;
 		}
 
-		return $this->definitions = $new_defs;
+		$this->definitions = $new_defs;
+		return $this->definitions;
 	}
 
 	/**
