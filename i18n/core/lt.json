@@ -8,7 +8,8 @@
 			"Perkunas",
 			"Vpovilaitis",
 			"Hugo.arg",
-			"Zygimantus"
+			"Zygimantus",
+			"Manvydasz"
 		]
 	},
 	"translate": "Vertimas",
@@ -100,6 +101,11 @@
 	"right-translate-messagereview": "Peržiūrėti vertimus",
 	"action-translate-messagereview": "apžvelgti vertimus",
 	"right-translate-groupreview": "Keisti pranešimų grupių darbo eigos būseną",
+	"translate-rcfilters-translations": "Vertimai",
+	"translate-rcfilters-translations-only-label": "Vertimai",
+	"translate-rcfilters-translations-only-desc": "Keitimai išverstuose puslapiuose.",
+	"translate-rcfilters-translations-filter-label": "Ne vertimai",
+	"translate-rcfilters-translations-filter-desc": "Visi keitimai, kurie nėra vertimai.",
 	"translate-rc-translation-filter": "Perkošti vertimus:",
 	"translate-rc-translation-filter-no": "Nieko nedaryti",
 	"translate-rc-translation-filter-only": "Rodyti tik vertimus",
