@@ -12,7 +12,7 @@
 		]
 	},
 	"translate": "अनुवाद गर्ने",
-	"translate-desc": "मीडियाविकि तथा अन्यको अनुवादको निम्ति [[Special:Translate|विशेष पृष्ठ]]",
+	"translate-desc": "मिडियाविकी तथा अन्यको अनुवादको निम्ति [[Special:Translate|विशेष पृष्ठ]]",
 	"translate-taction-translate": "अनुवाद गर्ने",
 	"translate-taction-proofread": "समीक्षा",
 	"translate-taction-lstats": "भाषा तथ्यांक",
@@ -47,7 +47,7 @@
 	"translate-edit-warnings": "चेतावनी अपूर्ण अनुवादको बारेमा",
 	"translate-edit-tmmatch": "$1% मेल",
 	"translate-use-suggestion": "यस सुझाउलाई अनुवादको कोठामा हाल्नुहोस् । यसले वर्तमान सामग्री(शब्दहरू)को स्थान लिनेछ।",
-	"translate-magic-pagename": "विस्तारित मीडियाविकि अनुवाद",
+	"translate-magic-pagename": "विस्तारित मिडियाविकी अनुवाद",
 	"translate-magic-submit": "हेर्ने",
 	"translate-magic-cm-export": "निर्यात गर्ने",
 	"translate-magic-cm-current": "वर्तमान",
