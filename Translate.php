@@ -190,6 +190,8 @@ $wgAvailableRights[] = 'translate-messagereview';
 // right-translate-groupreview
 $wgAvailableRights[] = 'translate-groupreview';
 
+$wgGrantPermissions['editpage']['translate'] = true;
+
 // Logs. More logs are defined in TranslateHooks::setupTranslate
 // log-name-translationreview log-descriptionmsg-translationreview
 $wgLogTypes[] = 'translationreview';
