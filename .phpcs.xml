@@ -2,11 +2,11 @@
 <ruleset>
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
 		<exclude name="Generic.Files.OneObjectStructurePerFile.MultipleFound" />
-		<exclude name="MediaWiki.Commenting.IllegalSingleLineComment.IllegalSingleLineCommentStart"/><!--T168963-->
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationProtected"/>
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPublic"/>
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingParamComment"/>
 		<exclude name="MediaWiki.Commenting.FunctionComment.WrongStyle" />
+		<exclude name="MediaWiki.Commenting.MissingCovers.MissingCovers" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.NotMatch" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.WrongCase" />
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName" />

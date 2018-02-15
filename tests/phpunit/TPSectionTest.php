@@ -11,7 +11,7 @@
  * Unit tests for class TPSection
  * @ingroup PageTranslation
  */
-class TPSectionTest extends PHPUnit_Framework_TestCase {
+class TPSectionTest extends PHPUnit\Framework\TestCase {
 	/**
 	 * @dataProvider providerTestGetMarkedText
 	 */
