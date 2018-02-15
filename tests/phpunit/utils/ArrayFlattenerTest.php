@@ -7,7 +7,7 @@
  * @license GPL-2.0+
  */
 
-class ArrayFlattenerTest extends PHPUnit_Framework_TestCase {
+class ArrayFlattenerTest extends PHPUnit\Framework\TestCase {
 	/**
 	 * @dataProvider provideTestFlatten
 	 */

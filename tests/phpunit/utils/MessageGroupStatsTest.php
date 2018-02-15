@@ -7,7 +7,7 @@
  * @license GPL-2.0+
  */
 
-class MessageGroupStatsTest extends PHPUnit_Framework_TestCase {
+class MessageGroupStatsTest extends PHPUnit\Framework\TestCase {
 	public function testGetDatabaseIdForGroupId() {
 		$shortId = 'abab';
 		$longId = str_repeat( 'ab', 100 );

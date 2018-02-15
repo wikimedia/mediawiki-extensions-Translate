@@ -7,7 +7,7 @@
  * @license GPL-2.0+
  */
 
-class MediaWikiInsertablesSuggesterTest extends PHPUnit_Framework_TestCase {
+class MediaWikiInsertablesSuggesterTest extends PHPUnit\Framework\TestCase {
 
 	/**
 	 * @dataProvider getInsertablesProvider

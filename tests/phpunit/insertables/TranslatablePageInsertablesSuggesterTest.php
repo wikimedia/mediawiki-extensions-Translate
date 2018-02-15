@@ -7,7 +7,7 @@
  * @license GPL-2.0+
  */
 
-class TranslatablePageInsertablesSuggesterTest extends PHPUnit_Framework_TestCase {
+class TranslatablePageInsertablesSuggesterTest extends PHPUnit\Framework\TestCase {
 	/**
 	 * @dataProvider getInsertablesProvider
 	 */

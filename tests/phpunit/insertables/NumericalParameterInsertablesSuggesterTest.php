@@ -7,7 +7,7 @@
  * @author Geoffrey Mon
  * @license GPL-2.0+
  */
-class NumericalParameterInsertablesSuggesterTest extends PHPUnit_Framework_TestCase {
+class NumericalParameterInsertablesSuggesterTest extends PHPUnit\Framework\TestCase {
 
 	/**
 	 * @dataProvider getInsertablesProvider

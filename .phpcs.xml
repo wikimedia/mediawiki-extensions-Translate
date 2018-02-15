@@ -7,6 +7,7 @@
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPublic"/>
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingParamComment"/>
 		<exclude name="MediaWiki.Commenting.FunctionComment.WrongStyle" />
+		<exclude name="MediaWiki.Commenting.MissingCovers.MissingCovers" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.NotMatch" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.WrongCase" />
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName" />
