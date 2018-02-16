@@ -14,7 +14,7 @@
 		]
 	},
 	"pagetranslation": "문서 번역",
-	"right-pagetranslation": "번역에 대한 문서의 판 표시",
+	"right-pagetranslation": "문서의 판을 번역하도록 표시",
 	"action-pagetranslation": "번역 가능한 문서 관리",
 	"tpt-section": "번역 단위 $1",
 	"tpt-section-new": "새 번역 단위입니다.\n이름: $1",
