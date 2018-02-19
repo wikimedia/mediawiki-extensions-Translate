@@ -18,7 +18,8 @@
 			"Liuxinyu970226",
 			"LNDDYL",
 			"EagerLin",
-			"Wehwei"
+			"Wehwei",
+			"Hello903hello"
 		]
 	},
 	"translate": "翻譯",
@@ -193,7 +194,7 @@
 	"translate-mgs-noempty": "不顯示全部未翻譯的語言",
 	"translate-mgs-submit": "顯示統計",
 	"translate-mgs-column-language": "語言",
-	"translate-mgs-totals": "所有語言合計",
+	"translate-mgs-totals": "所有$1種{{PLURAL:$1|語言}}合計",
 	"translate-mgs-invalid-group": "指定的群組 $1 不存在。",
 	"translate-mgs-nothing": "所請求的統計資訊沒有任何內容可以顯示。",
 	"supportedlanguages": "支援的語言",
@@ -381,5 +382,5 @@
 	"translate-ulsdep-title": "設定錯誤",
 	"translate-ulsdep-body": "翻譯擴充套件需要相依 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector 通用語言選擇器擴充套件]。",
 	"tux-session-expired": "您已不在登入狀態，請使用另一個頁籤登入。或者備份您尚未儲存的翻譯，登入返回此頁然後再輸入您的翻譯一次。",
-	"tux-nojs": "此功能需要使用 JavaScript。"
+	"tux-nojs": "此工具在沒有 JavaScript 時無法運作。JavaScript 已停用、運作失敗，或者此瀏覽器不受支援。"
 }
