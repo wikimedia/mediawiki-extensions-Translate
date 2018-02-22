@@ -349,7 +349,7 @@
 	"tux-editor-doc-editor-cancel": "ألغ",
 	"tux-messagetable-more-messages": "{{PLURAL:$1|رسالة أخرى|رسالتان أخرتان|$1 رسائل أخرى|$1 رسالة أخرى}}",
 	"tux-messagetable-loading-messages": "جار تحميل {{PLURAL:$1|الرسالة|الرسائل}}...",
-	"tux-message-filter-placeholder": "صف القائمة",
+	"tux-message-filter-placeholder": "صفِّ القائمة",
 	"tux-message-filter-result": "وجد {{PLURAL:$1|لا نتائج|نتيجة واحدة|نتيجتين اثنين|$1 نتائج|$1 نتيجة}} في البحث عن \"$2\"",
 	"tux-message-filter-advanced-button": "بحث متقدم",
 	"tux-message-filter-optional-messages-label": "الرسائل الاختيارية",

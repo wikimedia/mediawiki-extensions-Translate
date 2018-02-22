@@ -287,7 +287,7 @@
 	"translate-dynagroup-additions-label": "Скорашња додавања",
 	"translate-dynagroup-additions-desc": "Ова група порука приказује нове и измењене поруке.",
 	"translate-msggroupselector-projects": "Група порука",
-	"translate-msggroupselector-search-placeholder": "Претрага група",
+	"translate-msggroupselector-search-placeholder": "Претражи групе",
 	"translate-msggroupselector-search-all": "Све",
 	"translate-msggroupselector-search-recent": "Скорашњи",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|подгрупа|подгрупе}}",

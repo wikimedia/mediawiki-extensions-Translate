@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sveinn í Felli"
+		]
+	},
+	"tsb-all-languages-button-label": "Öll tungumál",
+	"tsb-accept-button-label": "Samþykkja",
+	"tsb-reject-button-label": "Hafna",
+	"tsb-accept-all-button-label": "Samþykkja allt",
+	"tsb-reject-all-button-label": "Hafna öllu",
+	"tsb-translations-source": "Uppruni",
+	"translationstash": "Velkomin"
+}

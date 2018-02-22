@@ -5,5 +5,12 @@
 		]
 	},
 	"searchtranslations": "Leita í þýðingum",
-	"tux-sst-search-ph": "Leita í þýðingum"
+	"tux-sst-search": "Leita",
+	"tux-sst-search-ph": "Leita í þýðingum",
+	"tux-sst-facet-language": "Tungumál",
+	"tux-sst-next": "Næsta ›",
+	"tux-sst-prev": "‹ Fyrra",
+	"tux-sst-default": "Þýðingar",
+	"tux-sst-translated": "Þýðingar úr $1",
+	"tux-sst-case-sensitive": "Háð há/lágstöfum"
 }

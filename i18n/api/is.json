@@ -5,14 +5,21 @@
 			"MyraMidnight"
 		]
 	},
+	"apihelp-groupreview-param-group": "Þýðingahópur.",
 	"apihelp-groupreview-param-language": "Tungumálakóði.",
+	"apihelp-query+languagestats-param-language": "Tungumálakóði.",
+	"apihelp-query+messagecollection-param-group": "Þýðingahópur.",
 	"apihelp-query+messagecollection-param-language": "Tungumálakóði.",
 	"apihelp-query+messagecollection-param-limit": "Hversu mörg skilaboð viltu sjá (eftir síun).",
+	"apihelp-query+messagetranslations-param-title": "Heildartitill á þekktum skilaboðum.",
+	"apihelp-translatesandbox-param-do": "Hvað skal gera.",
 	"apihelp-translatesandbox-param-username": "Notendanafn við sköpun notanda.",
 	"apihelp-translatesandbox-param-password": "Lykilorð við sköpun notanda.",
 	"apihelp-translatesandbox-param-email": "Netfang við sköpun notanda.",
 	"apihelp-translationaids-param-title": "Heildartitill á þekktum skilaboðum.",
 	"apihelp-translationstash-param-subaction": "Aðgerð.",
 	"apihelp-searchtranslations-description": "Leita í þýðingum",
+	"apihelp-searchtranslations-summary": "Leita í þýðingum",
+	"apierror-translate-sandbox-invalidppassword": "Ógilt lykilorð",
 	"apierror-translate-unknownmessage": "Ókunn skilaboð"
 }

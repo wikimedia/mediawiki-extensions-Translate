@@ -21,6 +21,7 @@
 	"translate-magic-cm-comment": "Komento:",
 	"translate-magic-cm-save": "Registragar",
 	"translate-magic-namespace": "Nomi di la nomari",
+	"translate-magic-notsaved": "Vua redakto ne konservesis!",
 	"translate-rc-translation-filter-only": "Montrez nur tradukuri",
 	"translate-stats-edits": "Editi",
 	"translate-stats-users": "Tradukisti",
@@ -32,6 +33,9 @@
 	"translate-translations-messagename": "Nomo:",
 	"translate-language": "Linguo",
 	"translate-total": "Mesaji",
+	"translate-percentage-fuzzy": "Sen aktualigo",
 	"translate-save": "Registragar ($1)",
-	"translate-documentation-language": "Dokumentado pri la mesajo"
+	"translate-documentation-language": "Dokumentado pri la mesajo",
+	"tux-tab-outdated": "Sen aktualigo",
+	"tux-status-fuzzy": "Sen aktualigo"
 }
