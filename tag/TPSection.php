@@ -66,7 +66,7 @@ class TPSection {
 	 * @since 2014.07
 	 */
 	public function getTextWithVariables() {
-		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
+		$re = '~<tvar\|([^>]+)>(.*?)</>~us';
 
 		return preg_replace( $re, '$\1', $this->text );
 	}
@@ -76,7 +76,7 @@ class TPSection {
 	 * @return string Wikitext.
 	 */
 	public function getTextForTrans() {
-		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
+		$re = '~<tvar\|([^>]+)>(.*?)</>~us';
 
 		return preg_replace( $re, '\2', $this->text );
 	}
@@ -120,7 +120,7 @@ class TPSection {
 	 * prefixed with a dollar sign.
 	 */
 	public function getVariables() {
-		$re = '~<tvar\|([^>]+)>(.*?)</>~u';
+		$re = '~<tvar\|([^>]+)>(.*?)</>~us';
 		$matches = [];
 		preg_match_all( $re, $this->text, $matches, PREG_SET_ORDER );
 		$vars = [];
