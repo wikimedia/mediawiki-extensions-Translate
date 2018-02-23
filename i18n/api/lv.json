@@ -11,6 +11,8 @@
 	"apihelp-query+messagecollection-param-group": "Ziņojumu grupa.",
 	"apihelp-query+messagecollection-param-language": "Valodas kods.",
 	"apihelp-query+messagecollection-example-1": "Atbalstīto valodu saraksts",
+	"apihelp-query+messagegroups-example-1": "Rādīt ziņojumu grupas",
 	"apihelp-query+messagegroupstats-param-group": "Ziņojumu grupas ID.",
+	"apihelp-translationstash-param-subaction": "Darbība.",
 	"apihelp-translationstash-param-metadata": "JSON objekts."
 }

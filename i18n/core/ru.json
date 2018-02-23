@@ -35,6 +35,7 @@
 	},
 	"translate": "Перевод",
 	"translate-desc": "[[Special:Translate|Служебная страница]] для перевода MediaWiki и прочих программ",
+	"translate-fuzzybot-desc": "Это специальная системная учетная запись, используемая [https://www.mediawiki.org/wiki/Extension:Translate/ru расширением перевода] MediaWiki для задач поддержки переводов.\nЭта учетная запись является частью программного обеспечения MediaWiki и не принадлежит никакому участнику.",
 	"translate-taskui-export-to-file": "Экспорт в родном формате",
 	"translate-taskui-export-as-po": "Экспорт для оффлайнового перевод",
 	"translate-taction-translate": "Перевод",

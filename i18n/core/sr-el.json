@@ -9,7 +9,8 @@
 			"Edinwiki",
 			"Srdjan m",
 			"Сербијана",
-			"Obsuser"
+			"Obsuser",
+			"Prevodim"
 		]
 	},
 	"translate": "Prevod",
@@ -344,5 +345,6 @@
 	"translate-search-more-languages-info": "još $1 {{PLURAL:$1|jezik|jezika}}",
 	"translate-statsbar-tooltip": "$1% prevedeno, $2% potvrđeno",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% prevedeno, $2% potvrđeno, $3% zastarelo",
-	"translate-search-more-groups-info": "još $1 {{PLURAL:$1|grupa}}"
+	"translate-search-more-groups-info": "još $1 {{PLURAL:$1|grupa}}",
+	"tux-nojs": "Ovaj alat ne radi bez Javaskripta. Javaskript nije omogućen, ne radi ili Vaš preglednik nije podržan."
 }
