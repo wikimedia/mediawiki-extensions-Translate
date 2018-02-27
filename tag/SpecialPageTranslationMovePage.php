@@ -319,6 +319,10 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 					if ( TranslatablePage::isTranslationPage( $old ) ) {
 						continue;
 					}
+
+					if ( TranslatablePage::isSourcePage( $old ) ) {
+						continue;
+					}
 				}
 
 				if ( $toBeMoved ) {
@@ -425,6 +429,10 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 					continue;
 				}
 
+				if ( TranslatablePage::isSourcePage( $from ) ) {
+					continue;
+				}
+
 				$to = $this->newPageTitle( $base, $from, $target );
 				$moves[$from->getPrefixedText()] = $to->getPrefixedText();
 			}
@@ -492,7 +500,9 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		}
 		foreach ( $subpages as $old ) {
 			if ( !TranslatablePage::isTranslationPage( $old ) ) {
-				$titles['subpage'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
+				if ( !TranslatablePage::isSourcePage( $old ) ) {
+					$titles['subpage'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
+				}
 			}
 		}
 
