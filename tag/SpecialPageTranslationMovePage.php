@@ -299,11 +299,15 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			'pt-movepage-list-pages' => [ $this->oldTitle ],
 			'pt-movepage-list-translation' => $this->getTranslationPages(),
 			'pt-movepage-list-section' => $this->getSectionPages(),
-			'pt-movepage-list-other' => $this->getSubpages(),
+			'pt-movepage-list-translatable' => $this->getTranslatableSubpages(),
+			'pt-movepage-list-other' => $this->getNormalSubpages(),
 		];
 
 		foreach ( $types as $type => $pages ) {
 			$out->wrapWikiMsg( '=== $1 ===', [ $type, count( $pages ) ] );
+			if ( $type === 'pt-movepage-list-translatable' ) {
+				$out->addWikiMsg( 'pt-movepage-list-translatable-note' );
+			}
 
 			$lines = [];
 			foreach ( $pages as $old ) {
@@ -312,10 +316,10 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 				// These pages need specific checks
 				if ( $type === 'pt-movepage-list-other' ) {
 					$toBeMoved = $this->moveSubpages;
+				}
 
-					if ( TranslatablePage::isTranslationPage( $old ) ) {
-						continue;
-					}
+				if ( $type === 'pt-movepage-list-translatable' ) {
+					$toBeMoved = false;
 				}
 
 				if ( $toBeMoved ) {
@@ -416,12 +420,8 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		}
 
 		if ( $this->moveSubpages ) {
-			$subpages = $this->getSubpages();
+			$subpages = $this->getNormalSubpages();
 			foreach ( $subpages as $from ) {
-				if ( TranslatablePage::isTranslationPage( $from ) ) {
-					continue;
-				}
-
 				$to = $this->newPageTitle( $base, $from, $target );
 				$moves[$from->getPrefixedText()] = $to->getPrefixedText();
 			}
@@ -483,14 +483,9 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			$titles['section'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
 		}
 
-		$subpages = [];
-		if ( $this->moveSubpages ) {
-			$subpages = $this->getSubpages();
-		}
+		$subpages = $this->moveSubpages ? $this->getNormalSubpages() : [];
 		foreach ( $subpages as $old ) {
-			if ( !TranslatablePage::isTranslationPage( $old ) ) {
-				$titles['subpage'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
-			}
+			$titles['subpage'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
 		}
 
 		// Check that all new titles are valid
@@ -607,5 +602,26 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	 */
 	protected function getSubpages() {
 		return $this->page->getTitle()->getSubpages();
+	}
+
+	private function getNormalSubpages() {
+		return array_filter(
+			iterator_to_array( $this->getSubpages() ),
+			function ( $page ) {
+				return !(
+					TranslatablePage::isTranslationPage( $page ) ||
+					TranslatablePage::isSourcePage( $page )
+				);
+			}
+		);
+	}
+
+	private function getTranslatableSubpages() {
+		return array_filter(
+			iterator_to_array( $this->getSubpages() ),
+			function ( $page ) {
+				return TranslatablePage::isSourcePage( $page );
+			}
+		);
 	}
 }
