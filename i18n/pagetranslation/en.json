@@ -136,6 +136,8 @@
 	"pt-movepage-list-pages": "List of pages to move",
 	"pt-movepage-list-translation": "Translation {{PLURAL:$1|page|pages}}",
 	"pt-movepage-list-section": "Translation unit {{PLURAL:$1|page|pages}}",
+	"pt-movepage-list-translatable": "Sub{{PLURAL:$1|page|pages}} marked for translation",
+	"pt-movepage-list-translatable-note": "These pages must be moved separately.",
 	"pt-movepage-list-other": "Other sub{{PLURAL:$1|page|pages}}",
 	"pt-movepage-list-count": "In total $1 {{PLURAL:$1|page|pages}} to move.",
 	"pt-movepage-legend": "Move translatable page",
