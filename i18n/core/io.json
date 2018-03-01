@@ -8,6 +8,7 @@
 		]
 	},
 	"translate": "Traduko",
+	"translate-page-disabled": "Tradukuri ad ica linguo en ica grupo ne permisesas.\nMotivo:\n\n<em>$1</em>",
 	"translate-page-group": "Grupo",
 	"translate-page-language": "Linguo",
 	"translate-page-limit": "Limito",
@@ -33,11 +34,14 @@
 	"translations": "Omna tradukuri",
 	"translations-summary": "Skribez la titulo di ula mesajo adinfre, por montrar omna tradukuri disponebla.",
 	"translate-translations-messagename": "Nomo:",
+	"languagestats-recenttranslations": "recenta tradukuri",
 	"translate-language": "Linguo",
 	"translate-total": "Mesaji",
 	"translate-percentage-fuzzy": "Sen aktualigo",
 	"translate-save": "Registragar ($1)",
+	"translate-js-support": "Questionar",
 	"translate-documentation-language": "Dokumentado pri la mesajo",
+	"translate-searchprofile": "Tradukuri",
 	"tux-tab-outdated": "Sen aktualigo",
 	"tux-status-fuzzy": "Sen aktualigo"
 }
