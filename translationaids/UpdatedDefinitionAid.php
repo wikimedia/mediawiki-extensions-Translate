@@ -47,7 +47,7 @@ class UpdatedDefinitionAid extends TranslationAid {
 		}
 
 		$oldContent = $oldrev->getContent();
-		$newContent = $this->getDefinitionContent();
+		$newContent = $this->dataProvider->getDefinitionContent();
 
 		if ( !$oldContent ) {
 			throw new TranslationHelperException( 'Old definition version does not exist anymore' );

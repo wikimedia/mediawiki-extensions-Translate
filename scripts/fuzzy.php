@@ -26,8 +26,8 @@ class Fuzzy extends Maintenance {
 		parent::__construct();
 		$this->mDescription = 'Fuzzy bot command line script.';
 		$this->addArg(
-			'messages',
-			'Message to fuzzy'
+			'arg',
+			'Title pattern or username if user option is provided.'
 		);
 		$this->addOption(
 			'really',
@@ -45,18 +45,31 @@ class Fuzzy extends Maintenance {
 			false, /*required*/
 			true /*has arg*/
 		);
+		$this->addOption(
+			'user',
+			'(optional) Fuzzy the translations made by user given as an argument.',
+			false, /*required*/
+			false /*has arg*/
+		);
 	}
 
 	public function execute() {
-		$bot = new FuzzyScript( $this->getArg( 0 ) );
-
+		$skipLanguages = [];
 		if ( $this->hasOption( 'skiplanguages' ) ) {
-			$bot->skipLanguages = array_map(
+			$skipLanguages = array_map(
 				'trim',
 				explode( ',', $this->getOption( 'skiplanguages' ) )
 			);
 		}
 
+		if ( $this->hasOption( 'user' ) ) {
+			$user = User::newFromName( $this->getArg( 0 ) );
+			$pages = FuzzyScript::getPagesForUser( $user, $skipLanguages );
+		} else {
+			$pages = FuzzyScript::getPagesForPattern( $this->getArg( 0 ), $skipLanguages );
+		}
+
+		$bot = new FuzzyScript( $pages );
 		$bot->comment = $this->getOption( 'comment' );
 		$bot->dryrun = !$this->hasOption( 'really' );
 		$bot->setProgressCallback( [ $this, 'myOutput' ] );
@@ -84,11 +97,6 @@ class Fuzzy extends Maintenance {
  */
 class FuzzyScript {
 	/**
-	 * @var string[] List of patterns to mark.
-	 */
-	private $titles = [];
-
-	/**
 	 * @var bool Check for configuration problems.
 	 */
 	private $allclear = false;
@@ -107,15 +115,10 @@ class FuzzyScript {
 	public $comment;
 
 	/**
-	 * string[] List of language codes to skip.
+	 * @param array $pages
 	 */
-	public $skipLanguages = [];
-
-	/**
-	 * @param string[] $titles
-	 */
-	public function __construct( $titles ) {
-		$this->titles = (array)$titles;
+	public function __construct( $pages ) {
+		$this->pages = $pages;
 		$this->allclear = true;
 	}
 
@@ -136,7 +139,7 @@ class FuzzyScript {
 			return;
 		}
 
-		$msgs = $this->getPages();
+		$msgs = $this->pages;
 		$count = count( $msgs );
 		$this->reportProgress( "Found $count pages to update.", 'pagecount' );
 
@@ -148,12 +151,12 @@ class FuzzyScript {
 	}
 
 	/// Searches pages that match given patterns
-	private function getPages() {
+	public static function getPagesForPattern( $pattern, $skipLanguages = [] ) {
 		global $wgTranslateMessageNamespaces;
 		$dbr = wfGetDB( DB_REPLICA );
 
 		$search = [];
-		foreach ( $this->titles as $title ) {
+		foreach ( (array)$pattern as $title ) {
 			$title = Title::newFromText( $title );
 			$ns = $title->getNamespace();
 			if ( !isset( $search[$ns] ) ) {
@@ -177,8 +180,43 @@ class FuzzyScript {
 			$dbr->makeList( $title_conds, LIST_OR ),
 		];
 
-		if ( count( $this->skipLanguages ) ) {
-			$skiplist = $dbr->makeList( $this->skipLanguages );
+		if ( count( $skipLanguages ) ) {
+			$skiplist = $dbr->makeList( $skipLanguages );
+			$conds[] = "substring_index(page_title, '/', -1) NOT IN ($skiplist)";
+		}
+
+		$rows = $dbr->select(
+			[ 'page', 'revision', 'text' ],
+			[ 'page_title', 'page_namespace', 'old_text', 'old_flags' ],
+			$conds,
+			__METHOD__
+		);
+
+		$messagesContents = [];
+		foreach ( $rows as $row ) {
+			$title = Title::makeTitle( $row->page_namespace, $row->page_title );
+			$messagesContents[] = [ $title, Revision::getRevisionText( $row ) ];
+		}
+
+		$rows->free();
+
+		return $messagesContents;
+	}
+
+	public static function getPagesForUser( User $user, $skipLanguages = [] ) {
+		global $wgTranslateMessageNamespaces;
+		$dbr = wfGetDB( DB_REPLICA );
+
+		$conds = [
+			'page_latest=rev_id',
+			'rev_text_id=old_id',
+			'rev_user' => $user->getId(),
+			'page_namespace' => $wgTranslateMessageNamespaces,
+			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() ),
+		];
+
+		if ( count( $skipLanguages ) ) {
+			$skiplist = $dbr->makeList( $skipLanguages );
 			$conds[] = "substring_index(page_title, '/', -1) NOT IN ($skiplist)";
 		}
 
