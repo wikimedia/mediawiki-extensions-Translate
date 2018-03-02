@@ -6,7 +6,7 @@
  * @author Tim Gerundt
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013, Tim Gerundt
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 /**

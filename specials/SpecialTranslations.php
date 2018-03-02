@@ -5,7 +5,7 @@
  * @file
  * @author Siebrand Mazeland
  * @author Niklas Laxstörm
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 /**

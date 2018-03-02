@@ -2,7 +2,7 @@
  * Collapsing script for Special:LanguageStats in MediaWiki Extension:Translate
  * @author Krinkle <krinklemail (at) gmail (dot) com>
  * @author Niklas Laxström
- * @license GPL-2.0+, CC-BY-SA-3.0
+ * @license GPL-2.0-or-later, CC-BY-SA-3.0
  */
 
 ( function ( mw, $ ) {

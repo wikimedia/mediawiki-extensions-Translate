@@ -5,7 +5,7 @@
  * @file
  * @author Pratik Lahoti
  * @copyright Copyright © 2014-2015 Pratik Lahoti
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 class SpecialPageMigration extends SpecialPage {

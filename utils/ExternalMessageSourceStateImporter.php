@@ -4,7 +4,7 @@
  * Finds external changes for file based message groups.
  *
  * @author Niklas Laxström
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @since 2016.02
  */
 class ExternalMessageSourceStateImporter {

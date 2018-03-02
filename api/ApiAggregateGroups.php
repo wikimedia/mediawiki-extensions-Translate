@@ -5,7 +5,7 @@
  * @author Santhosh Thottingal
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013, Santhosh Thottingal
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 /**

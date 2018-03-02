@@ -5,7 +5,7 @@
  * @author Robert Leverington <robert@rhl.me.uk>
  *
  * @copyright Copyright © 2010 Robert Leverington
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @file
  */
 

@@ -7,7 +7,7 @@
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @author Kunal Grover
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 class SpecialAggregateGroups extends SpecialPage {

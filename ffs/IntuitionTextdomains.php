@@ -7,7 +7,7 @@
  * @author Krinkle
  * @copyright Copyright © 2008-2013, Niklas Laxström
  * @copyright Copyright © 2011, Krinkle
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 /**

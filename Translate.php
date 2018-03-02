@@ -11,7 +11,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2006-2018, Niklas Laxström, Siebrand Mazeland
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 /**
@@ -34,7 +34,7 @@ $wgExtensionCredits['specialpage'][] = [
 	],
 	'descriptionmsg' => 'translate-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Translate',
-	'license-name' => 'GPL-2.0+',
+	'license-name' => 'GPL-2.0-or-later',
 ];
 
 /**

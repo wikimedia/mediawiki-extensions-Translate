@@ -5,7 +5,7 @@
  * @file
  * @author Niklas Laxström
  * @author Amir E. Aharoni
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 /**

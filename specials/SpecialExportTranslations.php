@@ -1,6 +1,6 @@
 <?php
 /**
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialExportTranslations extends SpecialPage {

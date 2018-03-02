@@ -6,7 +6,7 @@
  * @author Niklas Laxström
  * @author Siebrand Mazeland
  * @copyright Copyright © 2012-2013 Niklas Laxström
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 /**

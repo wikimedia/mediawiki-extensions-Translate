@@ -2,7 +2,7 @@
 /**
  * API module for search translations
  * @since 2015.07
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 class ApiSearchTranslations extends ApiBase {
 	public function execute() {

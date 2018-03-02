@@ -5,7 +5,7 @@
  * @file
  * @defgroup MessageCheckers Message Checkers
  * @author Niklas Laxström
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 /**

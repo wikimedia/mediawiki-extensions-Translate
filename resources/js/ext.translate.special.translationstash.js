@@ -2,7 +2,7 @@
  * TranslationStash front-end logic.
  *
  * @author Santhosh Thottingal
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @since 2013.10
  */
 

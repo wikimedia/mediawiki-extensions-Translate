@@ -1,7 +1,7 @@
 <?php
 /**
  * @since 2017.10
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 class ApiTranslationCheck extends ApiBase {
 	public function execute() {

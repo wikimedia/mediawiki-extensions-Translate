@@ -9,7 +9,7 @@
  * @defgroup FFS File format support
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2013, Niklas Laxström
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 /**

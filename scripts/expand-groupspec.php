@@ -2,7 +2,7 @@
 /**
  * Script that expands a message group specification (such as page-News*,page-Help*).
  *
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @file
  */
 

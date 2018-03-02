@@ -6,7 +6,7 @@
  * @author Ævar Arnfjörð Bjarmason
  * @author Niklas Laxström
  * @copyright Copyright © 2009-2013, Niklas Laxström, Ævar Arnfjörð Bjarmason
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 /**

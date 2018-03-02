@@ -3,7 +3,7 @@
  * API module for marking translations as reviewed
  * @file
  * @author Niklas Laxström
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 /**

@@ -3,7 +3,7 @@
  * yet have one. See hooks.txt in Translate directory for how to use hooks.
  *
  * @author Harry Burt
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @since 2012-08-22
  */
 

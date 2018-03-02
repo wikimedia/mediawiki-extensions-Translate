@@ -6,7 +6,7 @@
  * @author Wikia (trac.wikia-code.com/browser/wikia/trunk/extensions/wikia/TranslationStatistics)
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013 Niklas Laxström
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 use Wikimedia\Rdbms\IDatabase;

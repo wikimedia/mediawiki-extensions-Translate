@@ -3,7 +3,7 @@
  * Aliases for special pages of Translate extension.
  *
  * @file
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 $specialPageAliases = [];

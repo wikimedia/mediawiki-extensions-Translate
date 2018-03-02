@@ -3,7 +3,7 @@
  *
  * @author Niklas Laxström
  * @author Santhosh Thottingal
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @since 2012-11-30
  */
 

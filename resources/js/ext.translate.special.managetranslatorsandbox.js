@@ -4,7 +4,7 @@
  * @author Sucheta Ghoshal
  * @author Amir E. Aharoni
  * @author Pau Giner
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 ( function ( $, mw ) {

@@ -6,7 +6,7 @@
  * @author Siebrand Mazeland
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013 Amir E. Aharoni, Siebrand Mazeland
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 ( function ( $, mw ) {

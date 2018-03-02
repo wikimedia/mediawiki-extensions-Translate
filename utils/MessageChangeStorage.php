@@ -3,7 +3,7 @@
  * Handles storage of message change files.
  *
  * @author Niklas Laxström
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @since 2016.02
  * @file
  */

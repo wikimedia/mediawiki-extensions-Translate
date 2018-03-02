@@ -5,7 +5,7 @@
  * @author Niklas Laxström
  *
  * @copyright Copyright © 2010, Niklas Laxström
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @file
  */
 

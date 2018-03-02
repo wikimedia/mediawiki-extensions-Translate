@@ -4,7 +4,7 @@
  *
  * @author Niklas Laxström
  * @file
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 class ArrayFlattenerTest extends PHPUnit\Framework\TestCase {

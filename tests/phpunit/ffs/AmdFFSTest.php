@@ -5,7 +5,7 @@
  * @file
  * @author Matthias Palmer
  * @copyright Copyright © 2011-2015, MetaSolutions AB
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 /**

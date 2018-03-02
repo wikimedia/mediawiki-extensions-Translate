@@ -5,7 +5,7 @@
  *
  * @file
  * @author Geoffrey Mon
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 class NumericalParameterInsertablesSuggesterTest extends PHPUnit\Framework\TestCase {
 

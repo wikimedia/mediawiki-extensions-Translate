@@ -3,7 +3,7 @@
  * Unit tests for class TPSection
  *
  * @author Niklas Laxström
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @file
  */
 

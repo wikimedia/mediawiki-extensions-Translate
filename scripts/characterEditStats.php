@@ -4,7 +4,7 @@
  *
  * @author Santhosh Thottingal
  * @copyright Copyright © 2013 Santhosh Thottingal
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  * @file
  * @ingroup Script Stats
  */

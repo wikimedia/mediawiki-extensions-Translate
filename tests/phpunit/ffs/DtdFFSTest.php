@@ -6,7 +6,7 @@
  * @author Niklas Laxström
  * @author Amir E. Aharoni
  * @file
- * @license GPL-2.0+
+ * @license GPL-2.0-or-later
  */
 
 class DtdFFSTest extends MediaWikiTestCase {
