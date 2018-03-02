@@ -115,7 +115,7 @@ class TranslationHelpers {
 			$this->dataProvider
 		);
 
-		return $obj->getData()['definition'];
+		return $obj->getData()['value'];
 	}
 
 	/**
