@@ -17,6 +17,7 @@
 	"tsb-email-promoted-subject": "{{SITENAME}}: Sinut on hyväksytty kääntäjäksi",
 	"tsb-email-promoted-body": "Hei {{GENDER:$1|$1}},\n\nOnneksi olkoon! Tarkistin testikäännöksesi jotka teit {{SITENAME}}ssa ja annoin sinulle täydet käännösoikeudet.\n\nTule {{SITENAME}}en jatkaaksesi kääntämistä nyt, ja joka päivä:\n$2\n\nTervetuloa, ja kiitos osallistumisestasi!\n\n{{GENDER:$3|$3}},\n{{SITENAME}}n henkilökunta",
 	"tsb-email-rejected-subject": "Hakemuksesi kääntäjäksi sivulla {{SITENAME}} hylättiin",
+	"tsb-email-rejected-body": "Hei {{GENDER:$1|$1}},\n\nKiitos hakemuksestasi kääntäjänä {{GRAMMAR:inessive|{{SITENAME}}}}. Pahoittelen ilmoittaakseni sinulle että olen hylännyt hakemuksesi, koska käännöstesi laatu ei täyttänyt vaatimuksia.\n\nJos luulet, että hakemuksesi hylättiin vahingossa, yritä hakea uudelleen kääntäjäksi {{GRAMMAR:inessive|{{SITENAME}}}}. Voit rekisteröityä täällä: \n$2\n\n{{GENDER:$3|$3}},\n{{GRAMMAR:genitive|{{SITENAME}}}} henkilökunta",
 	"tsb-request-count": "$1 {{PLURAL:$1|hakemus|hakemusta}}",
 	"tsb-all-languages-button-label": "Kaikki kielet",
 	"tsb-search-requests": "Hae hakemuksista",
@@ -45,5 +46,9 @@
 	"tsb-limit-reached-body": "Olet saavuttanut käännösraja uusille kääntäjille.\nTiimimme tarkistaa ja päivittää tilisi pian.\nSitten voit kääntää ilman rajoja.",
 	"tsb-no-requests-from-new-users": "Ei uusia hakemuksia.",
 	"tsb-create-user-page": "Luo yksinkertainen käyttäjäsivu",
-	"log-name-translatorsandbox": "Käännöshiekkalaatikkoloki"
+	"log-name-translatorsandbox": "Käännöshiekkalaatikkoloki",
+	"log-description-translatorsandbox": "Loki käännöshiekkalaatikon käyttäjien toimista",
+	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|ylensi}} $3 {{GENDER:$4|kääntäjäksi}}",
+	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|hylkäsi}} pyynnön käyttäjältä \"$3\" ryhtyä kääntäjäksi",
+	"logentry-newusers-tsbpromoted": "Käyttäjätili $3 {{GENDER:$2|luotiin}} ylentämällä hiekkalaatikosta"
 }
