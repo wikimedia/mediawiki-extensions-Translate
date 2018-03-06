@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ooswesthoesbes"
+		]
+	},
+	"apihelp-groupreview-param-group": "Berichgroep.",
+	"apihelp-groupreview-param-language": "Spraokcode.",
+	"apihelp-query+languagestats-description": "Queryspraokstattestieke.",
+	"apihelp-query+languagestats-summary": "Queryspraokstattestieke.",
+	"apihelp-query+languagestats-param-language": "Spraokcode.",
+	"apihelp-query+messagecollection-param-group": "Berichgroep.",
+	"apihelp-query+messagecollection-param-language": "Spraokcode.",
+	"apihelp-query+messagecollection-example-1": "Lies van óngerstäönde spraoke",
+	"apihelp-translatesandbox-param-do": "Waat te doon.",
+	"apihelp-translationstash-param-subaction": "Hanjeling.",
+	"apihelp-translationstash-param-metadata": "JSON-veurwerp.",
+	"apihelp-searchtranslations-description": "Doorzeuk euverzèttinge.",
+	"apihelp-searchtranslations-summary": "Doorzeuk euverzèttinge.",
+	"apihelp-searchtranslations-param-limit": "Gruuedje van 't rizzeltaot.",
+	"apihelp-searchtranslations-example-1": "Tuin euverzèttinge veur de spraok.",
+	"apihelp-searchtranslations-example-2": "Tuin óneuvergezatje berichte die euvereinkómme mit de query in de brónspraok.",
+	"apierror-translate-owntranslation": "Kan gein eige euverzèttinge prooflaeze",
+	"apierror-translate-sandboxdisabled": "Zandjbak-óngerdeil weurt neet gebroek",
+	"apierror-translate-sandbox-invalidppassword": "Óngeljig wachwaord",
+	"apierror-translate-unknownmessage": "Ónbekand berich",
+	"apiwarn-translate-alreadyreviewedbyyou": "Al gemarkeerd es proofgelaeze door dich"
+}
