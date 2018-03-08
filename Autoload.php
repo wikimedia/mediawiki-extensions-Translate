@@ -82,7 +82,6 @@ $al['ReviewPerLanguageStats'] = "$dir/specials/SpecialTranslationStats.php";
 $al['SerializedMessageIndex'] = "$dir/utils/MessageIndex.php";
 $al['StatsBar'] = "$dir/utils/StatsBar.php";
 $al['StatsTable'] = "$dir/utils/StatsTable.php";
-$al['TTMServer'] = "$dir/utils/TTMServer.php";
 $al['TranslateLogFormatter'] = "$dir/utils/TranslateLogFormatter.php";
 $al['TranslateMetadata'] = "$dir/utils/TranslateMetadata.php";
 $al['TranslatePerLanguageStats'] = "$dir/specials/SpecialTranslationStats.php";
