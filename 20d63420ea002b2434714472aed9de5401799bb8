@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aebe7163_499eaa40",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 885,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2018-03-08T20:49:15Z",
+      "side": 1,
+      "message": "We do need to find a home for this",
+      "range": {
+        "startLine": 852,
+        "startChar": 0,
+        "endLine": 885,
+        "endChar": 1
+      },
+      "revId": "20d63420ea002b2434714472aed9de5401799bb8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7aebc97_5579bb38",
+        "filename": "extension.json",
+        "patchSetId": 24
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2018-03-08T20:49:15Z",
+      "side": 1,
+      "message": "We can set this to 1.29 if you\u0027re not supporting 1.28 anymore :)",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 26
+      },
+      "revId": "20d63420ea002b2434714472aed9de5401799bb8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
