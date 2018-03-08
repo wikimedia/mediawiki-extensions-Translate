@@ -809,8 +809,6 @@ class TranslateHooks {
 	}
 
 	public static function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ) {
-		global $wgVersion;
-
 		$modules = [];
 		$modules['ext.translate.recentgroups'] = [
 			'scripts' => 'resources/js/ext.translate.recentgroups.js',
@@ -821,10 +819,6 @@ class TranslateHooks {
 			'remoteExtPath' => 'Translate',
 			'targets' => [ 'desktop', 'mobile' ],
 		];
-		if ( version_compare( $wgVersion, '1.29', '<' ) ) {
-			// Support: MediaWiki 1.28 and earlier (T162590)
-			$modules['ext.translate.recentgroups']['dependencies'][] = 'es5-shim';
-		}
 
 		$resourceLoader->register( $modules );
 	}
