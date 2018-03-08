@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "f8ddcf58_c9d40c2c",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 836,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2018-03-08T18:14:09Z",
+      "side": 1,
+      "message": "setupTranslate should work fine for this",
+      "parentUuid": "09c059aa_fd878505",
+      "revId": "a665dfd045fecf82fa23abddf135418ffeda719a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e641f8f3_ed0f99a6",
         "filename": "TranslateHooks.php",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2018-03-08T18:07:20Z",
       "side": 1,
       "message": "In a separate file please. It must be possible to require this function to LocalSettings.php.",
+      "revId": "a665dfd045fecf82fa23abddf135418ffeda719a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6aa3f21f_752d6314",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2018-03-08T18:14:09Z",
+      "side": 1,
+      "message": "Yeah.. This definitely isn\u0027t the right place for it... But that\u0027s not going to work, unless they call it in a callback...\n\nThis won\u0027t work, as the extension is queued for loading, and the global function isn\u0027t going to be immediately be available.\n\nwfLoadExtension( \u0027Translate\u0027 ); wfAddNamespace( 1, \u0027foo\u0027 );\n\nWould need to do something like...\n\nwfLoadExtension( \u0027Translate\u0027 );\n$wgExtensionFunctions[] \u003d function() {\nwfAddNamespace( 1, \u0027foo\u0027 );\n};",
+      "parentUuid": "e641f8f3_ed0f99a6",
       "revId": "a665dfd045fecf82fa23abddf135418ffeda719a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
