@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "09c059aa_fd878505",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 836,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-08T18:07:20Z",
+      "side": 1,
+      "message": "Should this be in the callback function?",
+      "revId": "a665dfd045fecf82fa23abddf135418ffeda719a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e641f8f3_ed0f99a6",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-08T18:07:20Z",
+      "side": 1,
+      "message": "In a separate file please. It must be possible to require this function to LocalSettings.php.",
+      "revId": "a665dfd045fecf82fa23abddf135418ffeda719a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "467a8c74_0f8f9b43",
+        "filename": "extension.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-08T18:07:20Z",
+      "side": 1,
+      "message": "-or-later",
+      "revId": "a665dfd045fecf82fa23abddf135418ffeda719a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e3349b9_5f0fd611",
+        "filename": "extension.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-08T18:07:20Z",
+      "side": 1,
+      "message": "Can go \u003e\u003d 1.29 if it helps",
+      "revId": "a665dfd045fecf82fa23abddf135418ffeda719a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b745a665_b3d0eb03",
+        "filename": "extension.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-08T18:07:20Z",
+      "side": 1,
+      "message": "I suppose this needs removing.",
+      "revId": "a665dfd045fecf82fa23abddf135418ffeda719a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
