@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "efd61d70_026e4c4a",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-08T18:17:26Z",
+      "side": 1,
+      "message": "Hmm, I was thinking:\n wfLoadExtension( \u0027Translate\u0027 );\n require \"$IP/extensions/Translate/utils/lc.php\"; // Or just copy the whole thing to LocalSettings.php\n wfAddNamespace( ... );\n\nI haven\u0027t tested $wgExtensionFunctions but my concern is that something will break mysteriously sooner or later because it is too late to define namespaces.",
+      "parentUuid": "6aa3f21f_752d6314",
+      "revId": "a665dfd045fecf82fa23abddf135418ffeda719a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "467a8c74_0f8f9b43",
         "filename": "extension.json",
         "patchSetId": 6
