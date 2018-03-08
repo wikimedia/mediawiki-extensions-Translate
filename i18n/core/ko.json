@@ -121,6 +121,7 @@
 	"translate-rcfilters-translations-filter-label": "번역이 아님",
 	"translate-rcfilters-translations-filter-desc": "번역이 아닌 모든 변경사항입니다.",
 	"translate-rcfilters-translations-site-label": "사이트 메시지",
+	"translate-rcfilters-translations-site-desc": "미디어위키 이름공간의 사이트 메시지의 사용자 지정 부분입니다.",
 	"translate-rc-translation-filter": "번역 필터:",
 	"translate-rc-translation-filter-no": "모두 보기",
 	"translate-rc-translation-filter-only": "번역만 보기",

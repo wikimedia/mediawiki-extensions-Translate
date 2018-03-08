@@ -14,7 +14,8 @@
 			"Remux",
 			"KuboF",
 			"Robin van der Vliet",
-			"Psychoslave"
+			"Psychoslave",
+			"Joao Xavier"
 		]
 	},
 	"translate": "Tradukado",
@@ -51,7 +52,7 @@
 	"translate-optional": "(nedeviga)",
 	"translate-ignored": "(ignorata)",
 	"translate-edit-title": "Redakti \"$1\"",
-	"translate-edit-definition": "Mesaĝa difino",
+	"translate-edit-definition": "Defini di mesaji",
 	"translate-edit-translation": "Tradukado",
 	"translate-edit-contribute": "kontribui",
 	"translate-edit-no-information": "<em>Ĉi tiu mesaĝo ne havas dokumentadon. Se vi scias, kie aŭ kiel ĉi tiu mesaĝo estas uzata, vi povas helpi al aliaj tradukantoj aldonante dokumentadon al ĉi tiu mesaĝo.</em>",

@@ -20,7 +20,8 @@
 			"Otokoume",
 			"2nd-player",
 			"Gminky",
-			"Omotecho"
+			"Omotecho",
+			"Afaz"
 		]
 	},
 	"translate": "翻訳",
@@ -297,7 +298,7 @@
 	"translate-dynagroup-additions-label": "最近の追加",
 	"translate-dynagroup-additions-desc": "このメッセージ群では新たに追加または変更されたメッセージを表示します。",
 	"translate-msggroupselector-projects": "メッセージ群",
-	"translate-msggroupselector-search-placeholder": "検索するメッセージ群",
+	"translate-msggroupselector-search-placeholder": "メッセージ群内を検索",
 	"translate-msggroupselector-search-all": "すべて",
 	"translate-msggroupselector-search-recent": "最近のもの",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|件の下位群}}を閲覧",
@@ -386,8 +387,8 @@
 	"tux-editor-message-tools-linktothis": "このページへのリンク",
 	"tux-editor-loading": "読み込み中...",
 	"translate-search-more-languages-info": "他 $1 {{PLURAL:$1|言語}}",
-	"translate-statsbar-tooltip": "$1% 翻訳済み、$2% 査読済",
-	"translate-statsbar-tooltip-with-fuzzy": "$1% 翻訳済み、$2% 査読済、$3% 要修正",
+	"translate-statsbar-tooltip": "$1% 翻訳済、$2% 査読済",
+	"translate-statsbar-tooltip-with-fuzzy": "$1% 翻訳済、$2% 査読済、$3% 要修正",
 	"translate-search-more-groups-info": "他 $1 {{PLURAL:$1|メッセージ群}}",
 	"translate-ulsdep-title": "設定エラー",
 	"translate-ulsdep-body": "Translate 拡張機能は [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector 拡張機能]を必要とします。",

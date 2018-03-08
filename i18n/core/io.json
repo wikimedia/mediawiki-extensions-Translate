@@ -13,13 +13,16 @@
 	"translate-page-group": "Grupo",
 	"translate-page-language": "Linguo",
 	"translate-page-limit": "Limito",
+	"translate-submit": "Serchez",
 	"translate-next": "Sequanta pagino",
 	"translate-prev": "Antea pagino",
 	"translate-page-edit": "redaktar",
+	"translate-edit-definition": "Defino di la mesajo",
 	"translate-edit-contribute": "kontributez",
-	"translate-edit-no-information": "<em>Ica mesajo ne havad dokumentigo.\nSe vu savas ube o quale ica mesajo uzesas, vu povas helpar altra tradukuri, per la kreado di dokumentigo pri ica mesajo.</em>",
+	"translate-edit-no-information": "<em>Ica mesajo ne havas dokumentigo.\nSe vu savas ube o quale ica mesajo uzesas, vu povas helpar altra tradukuri, per la kreado di dokumentigo pri ica mesajo.</em>",
 	"translate-edit-information": "Informo pri mesajo ($1)",
 	"translate-edit-in-other-languages": "Mesajo en altra lingui",
+	"translate-magic-submit": "Serchez",
 	"translate-magic-cm-current": "Aktuala",
 	"translate-magic-cm-comment": "Komento:",
 	"translate-magic-cm-save": "Registragar",
@@ -39,6 +42,7 @@
 	"translate-translations-messagename": "Nomo:",
 	"languagestats-stats-for": "Statistiki pri tradukuro $1 ($2).",
 	"languagestats-recenttranslations": "recenta tradukuri",
+	"translate-langstats-expand": "Montrez",
 	"translate-suppress-complete": "Supresar vidado dil grupi di mesaji komplete tradukita",
 	"translate-ls-noempty": "Supresar de la vidado la grupi di mesaji komplete sen tradukuro",
 	"translate-language": "Linguo",
@@ -53,5 +57,6 @@
 	"translate-searchprofile": "Tradukuri",
 	"translate-msggroupselector-projects": "Grupo di mesaji",
 	"tux-tab-outdated": "Sen aktualigo",
-	"tux-status-fuzzy": "Sen aktualigo"
+	"tux-status-fuzzy": "Sen aktualigo",
+	"tux-editor-message-desc-less": "Montrez mine"
 }
