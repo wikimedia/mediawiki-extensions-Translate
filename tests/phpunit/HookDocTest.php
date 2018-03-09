@@ -73,9 +73,9 @@ class HookDocTest extends MediaWikiTestCase {
 	protected static function getJSHooksFromFile( $file ) {
 		$content = file_get_contents( $file );
 		$m = [];
-		preg_match_all( '/(?:mw\.translateHooks\.run)\(\s*([\'"])(.*?)\1/', $content, $m );
+		preg_match_all( '/\bmw\.translateHooks\.run\(\s*[\'"]([^\'"]+)/', $content, $m );
 		$hooks = [];
-		foreach ( $m[2] as $hook ) {
+		foreach ( $m[1] as $hook ) {
 			$hooks[$hook] = [];
 		}
 
@@ -85,9 +85,9 @@ class HookDocTest extends MediaWikiTestCase {
 	protected static function getPHPHooksFromFile( $file ) {
 		$content = file_get_contents( $file );
 		$m = [];
-		preg_match_all( '/(?:wfRunHooks|Hooks\:\:run)\(\s*([\'"])(.*?)\1/', $content, $m );
+		preg_match_all( '/\bHooks::run\(\s*[\'"]([^\'"]+)/', $content, $m );
 		$hooks = [];
-		foreach ( $m[2] as $hook ) {
+		foreach ( $m[1] as $hook ) {
 			$hooks[$hook] = [];
 		}
 
