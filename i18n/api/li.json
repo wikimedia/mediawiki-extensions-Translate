@@ -12,6 +12,7 @@
 	"apihelp-query+languagestats-param-language": "Spraokcode.",
 	"apihelp-query+messagecollection-param-group": "Berichgroep.",
 	"apihelp-query+messagecollection-param-language": "Spraokcode.",
+	"apihelp-query+messagecollection-param-limit": "Wieväöl te tuine berichte (nao filter).",
 	"apihelp-query+messagecollection-example-1": "Lies van óngerstäönde spraoke",
 	"apihelp-query+messagegroups-example-1": "Tuin berichtegruup",
 	"apihelp-query+messagegroupstats-param-group": "Berichgroep-id.",
