@@ -39,6 +39,7 @@
 	"translate-sidebar-alltrans": "En altra lingui",
 	"translations": "Omna tradukuri",
 	"translations-summary": "Skribez la titulo di ula mesajo adinfre, por montrar omna tradukuri disponebla.",
+	"translate-translations-count": "Trovita {{PLURAL:$1|1 tradukuro|$1 tradukuri}}.",
 	"translate-translations-messagename": "Nomo:",
 	"languagestats-stats-for": "Statistiki pri tradukuro $1 ($2).",
 	"languagestats-recenttranslations": "recenta tradukuri",
@@ -52,11 +53,15 @@
 	"translate-ls-submit": "Montrez statistiki",
 	"translate-mgs-group": "Grupo di mesaji:",
 	"translate-save": "Registragar ($1)",
+	"translate-js-skip": "Saltez a la sequanta",
 	"translate-js-support": "Questionar",
 	"translate-documentation-language": "Dokumentado pri la mesajo",
 	"translate-searchprofile": "Tradukuri",
 	"translate-msggroupselector-projects": "Grupo di mesaji",
+	"tux-tab-untranslated": "Ne tradukita",
 	"tux-tab-outdated": "Sen aktualigo",
 	"tux-status-fuzzy": "Sen aktualigo",
+	"tux-editor-skip-button-label": "Saltez a la sequanta",
+	"tux-editor-shortcut-info": "Kliktez \"$1\" por konservar, o \"$2\" por saltar a la sequanta mesajo, o \"$4\" por furnisar rezumo, o \"$3\" por altra plu kurta voyi tra la klavaro.",
 	"tux-editor-message-desc-less": "Montrez mine"
 }
