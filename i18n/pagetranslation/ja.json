@@ -9,7 +9,8 @@
 			"Sujiniku",
 			"Otokoume",
 			"ネイ",
-			"Afaz"
+			"Afaz",
+			"Yusuke1109"
 		]
 	},
 	"pagetranslation": "ページ翻訳",
@@ -138,7 +139,7 @@
 	"pt-movepage-action-other": "対象を変更",
 	"pt-movepage-intro": "この特別ページでは、翻訳対象に指定されているページを移動できます。\n多くのページを移動する必要があるため、移動操作はすぐには完了しません。\nページの移動中は、そのページの操作はできません。\n失敗した場合は、その[[Special:Log/pagetranslation|ページの翻訳記録]]に記録されるため、手動で修正する必要があります。",
 	"pt-movepage-logreason": "翻訳対象ページ「$1」の一部",
-	"pt-movepage-started": "基底ページが移動されました。\n[[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認してください。",
+	"pt-movepage-started": "[[Special:Log/pagetranslation|ページの翻訳記録]]で、エラーや完了メッセージを確認してください。",
 	"pt-locked-page": "翻訳対象ページが現在移動中のため、このページはロックされています。",
 	"pt-deletepage-lang-title": "翻訳ページ「$1」の削除",
 	"pt-deletepage-full-title": "翻訳可能ページ「$1」の削除",
@@ -172,8 +173,8 @@
 	"pm-add-icon-hover-text": "単位を下に追加",
 	"pm-swap-icon-hover-text": "下の単位と入れ替える",
 	"pm-delete-icon-hover-text": "単位を削除",
-	"pm-pagetitle-invalid": "有効なページ名を入力してください",
-	"pm-langcode-missing": "言語コードを入力してください",
+	"pm-pagetitle-invalid": "有効なページ名を入力してください。<page-name>/<language-code> 形式でなければなりません。",
+	"pm-langcode-missing": "言語コードがタイトルに表示されないようです。<page-name>/<language-code> の形式でページタイトルを入力してください。",
 	"pm-summary-import": "[[Special:PageMigration|ページ移行]]を使用して翻訳を取り込み",
 	"tpt-translate-title": "ページ名を翻訳できるようにする",
 	"pp-pagename-placeholder": "ページ名を入力",

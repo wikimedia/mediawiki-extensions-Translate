@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eitvys200"
+			"Eitvys200",
+			"Manvydasz"
 		]
 	},
 	"managetranslatorsandbox": "Tvarkyti vertėjo smėlio dėžę",
@@ -41,5 +42,5 @@
 	"tsb-limit-reached-body": "Jūs pasiekėte naujų vertėjų vertimų limitą.\nMūsų komanda netrukus patikrins ir atnaujins jūsų paskyra.\nTada galėsite versti be limitų.",
 	"tsb-no-requests-from-new-users": "Nėra prašymų iš naujų vartotojų",
 	"tsb-create-user-page": "Sukurti pagrindinį vartotojo puslapį",
-	"log-name-translatorsandbox": "Vertimo smėlio dėžė"
+	"log-name-translatorsandbox": "Vertimo smėlio dėžės žurnalas"
 }
