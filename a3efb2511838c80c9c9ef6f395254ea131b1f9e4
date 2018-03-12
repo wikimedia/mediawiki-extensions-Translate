@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c830172f_29dbc669",
+        "filename": "tests/phpunit/HookDocTest.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-03-12T14:29:28Z",
+      "side": 1,
+      "message": "This needs to be a 1 with the new regex.",
+      "range": {
+        "startLine": 90,
+        "startChar": 15,
+        "endLine": 90,
+        "endChar": 16
+      },
+      "revId": "a3efb2511838c80c9c9ef6f395254ea131b1f9e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
