@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b16b93db_f3ef1d5f",
+        "filename": "tests/phpunit/HookDocTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-03-12T09:39:04Z",
+      "side": 1,
+      "message": "The (?:) brackets here should be removed now.",
+      "range": {
+        "startLine": 88,
+        "startChar": 20,
+        "endLine": 88,
+        "endChar": 36
+      },
+      "revId": "be35382e675c9ea05924fa16d7e6fbfd1c6f2e1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
