@@ -22,6 +22,30 @@
       "revId": "be35382e675c9ea05924fa16d7e6fbfd1c6f2e1c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1348ae17_e5d6b55c",
+        "filename": "tests/phpunit/HookDocTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-12T09:46:34Z",
+      "side": 1,
+      "message": "And `:` doesn\u0027t need to be quoted in this place, right?",
+      "parentUuid": "b16b93db_f3ef1d5f",
+      "range": {
+        "startLine": 88,
+        "startChar": 20,
+        "endLine": 88,
+        "endChar": 36
+      },
+      "revId": "be35382e675c9ea05924fa16d7e6fbfd1c6f2e1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
