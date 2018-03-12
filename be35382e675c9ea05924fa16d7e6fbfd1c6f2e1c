@@ -46,6 +46,30 @@
       "revId": "be35382e675c9ea05924fa16d7e6fbfd1c6f2e1c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d56589d3_000cd3f7",
+        "filename": "tests/phpunit/HookDocTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-03-12T09:51:50Z",
+      "side": 1,
+      "message": "Yea, right.\n\n \u0027/\\bHooks::run\\(\\s*([\\\u0027\"])(.*?)\\1/s\u0027\n\nOr even better, as this avoids all backtracking:\n\n \u0027/\\bHooks::run\\(\\s*[\\\u0027\"]([^\\\u0027\"]+)/s\u0027",
+      "parentUuid": "1348ae17_e5d6b55c",
+      "range": {
+        "startLine": 88,
+        "startChar": 20,
+        "endLine": 88,
+        "endChar": 36
+      },
+      "revId": "be35382e675c9ea05924fa16d7e6fbfd1c6f2e1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
