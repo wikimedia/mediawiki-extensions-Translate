@@ -1,0 +1,135 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "11f2c3c2_3d242251",
+        "filename": "Translate.php",
+        "patchSetId": 29
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-14T08:52:37Z",
+      "side": 1,
+      "message": "I was expecting to see require_once \u0027utils/lc.php\u0027 here.\n\nThis way people who migrate to extension registration and need that function can then copy or require it manually.",
+      "revId": "42ef0aeba1c2657c130bb87cceecef92c587c688",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "260e4648_5fb264ac",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 29
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-14T08:52:37Z",
+      "side": 1,
+      "message": "I mostly use \u003d\u003d\u003d null myself.",
+      "revId": "42ef0aeba1c2657c130bb87cceecef92c587c688",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c89ea115_b22a9298",
+        "filename": "extension.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-14T08:52:37Z",
+      "side": 1,
+      "message": "Umm... it feels to me that we should re-run the script that generates extensions.json to make sure we are not missing any changes since this patch was initially created. Would that be much work?",
+      "revId": "42ef0aeba1c2657c130bb87cceecef92c587c688",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f3454741_8d2be757",
+        "filename": "extension.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 1005,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-14T08:52:37Z",
+      "side": 1,
+      "message": "I often look at extension.json for available config options. Would be nice if this section was higher up.",
+      "range": {
+        "startLine": 1005,
+        "startChar": 4,
+        "endLine": 1005,
+        "endChar": 5
+      },
+      "revId": "42ef0aeba1c2657c130bb87cceecef92c587c688",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f29eef15_3c9df210",
+        "filename": "extension.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 1235,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-14T08:52:37Z",
+      "side": 1,
+      "message": "Is 2 compatible with 1.29?",
+      "range": {
+        "startLine": 1235,
+        "startChar": 21,
+        "endLine": 1235,
+        "endChar": 22
+      },
+      "revId": "42ef0aeba1c2657c130bb87cceecef92c587c688",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d5f28bc1_6a710888",
+        "filename": "tests/phpunit/SpecialPagesTest.php",
+        "patchSetId": 29
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-14T08:52:37Z",
+      "side": 1,
+      "message": "I\u0027m surprised any linter is not complaining about double quotes. Single quotes preferred.",
+      "revId": "42ef0aeba1c2657c130bb87cceecef92c587c688",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d3a5010d_27252153",
+        "filename": "tests/phpunit/SpecialPagesTest.php",
+        "patchSetId": 29
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-14T08:52:37Z",
+      "side": 1,
+      "message": "PageMigration, PageTranslation (+move and delete) and PagePreparation not included?",
+      "revId": "42ef0aeba1c2657c130bb87cceecef92c587c688",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

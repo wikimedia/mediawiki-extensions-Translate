@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e594a39d_5f6e03ca",
+        "filename": "tests/phpunit/ResourcesOrderTest.php",
+        "patchSetId": 29
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-03-14T08:52:37Z",
+      "side": 0,
+      "message": "Shouldn\u0027t this test be updated rather than just deleted?",
+      "revId": "7ae6c61edfec3e8360ddb806cb8ee471da21e320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
