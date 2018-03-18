@@ -18,7 +18,7 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-class PoImport extends Maintenance {
+class Poimport extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = 'Po file importer (does not make changes unless specified).';
@@ -318,5 +318,5 @@ class WikiWriter {
 	}
 }
 
-$maintClass = 'PoImport';
+$maintClass = 'Poimport';
 require_once RUN_MAINTENANCE_IF_MAIN;

@@ -19,7 +19,7 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-class LanguageEditStats extends Maintenance {
+class Languageeditstats extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = 'Script to show number of edits per language for all message groups.';
@@ -107,5 +107,5 @@ class LanguageEditStats extends Maintenance {
 	}
 }
 
-$maintClass = 'LanguageEditStats';
+$maintClass = 'Languageeditstats';
 require_once RUN_MAINTENANCE_IF_MAIN;
