@@ -1004,6 +1004,19 @@ $specialPageAliases['sr-ec'] = [
 	'Translations' => [ 'Преводи' ],
 ];
 
+/** Serbian (Latin script) (srpski (latinica)‎) */
+$specialPageAliases['sr-el'] = [
+	'ImportTranslations' => [ 'Uvoz_prevoda' ],
+	'LanguageStats' => [ 'Statistika_jezika' ],
+	'Magic' => [ 'Napredno_prevođenje' ],
+	'ManageMessageGroups' => [ 'Upravljanje_grupama_poruka' ],
+	'PageTranslation' => [ 'Prevod_stranice' ],
+	'SupportedLanguages' => [ 'Podržani_jezici' ],
+	'Translate' => [ 'Prevedi' ],
+	'TranslationStats' => [ 'Statistika_prevoda' ],
+	'Translations' => [ 'Prevodi' ],
+];
+
 /** Sundanese (Basa Sunda) */
 $specialPageAliases['su'] = [
 	'LanguageStats' => [ 'StatBasa' ],
