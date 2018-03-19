@@ -53,6 +53,7 @@
 	"translate-ls-submit": "Montrez statistiki",
 	"translate-mgs-group": "Grupo di mesaji:",
 	"translate-save": "Registragar ($1)",
+	"translate-smg-left": "Kontenajo di la mesajo en la Wiki",
 	"translate-js-skip": "Saltez a la sequanta",
 	"translate-js-support": "Questionar",
 	"translate-documentation-language": "Dokumentado pri la mesajo",
@@ -61,8 +62,13 @@
 	"tux-tab-untranslated": "Ne tradukita",
 	"tux-tab-outdated": "Sen aktualigo",
 	"tux-status-fuzzy": "Sen aktualigo",
+	"tux-editor-editsummary-placeholder": "Rezumo fakultativa",
+	"tux-editor-paste-original-button-label": "Kopiez l'originala texto",
+	"tux-editor-save-button-label": "Sparez la tradukuro",
 	"tux-editor-skip-button-label": "Saltez a la sequanta",
 	"tux-editor-shortcut-info": "Kliktez \"$1\" por konservar, o \"$2\" por saltar a la sequanta mesajo, o \"$4\" por furnisar rezumo, o \"$3\" por altra plu kurta voyi tra la klavaro.",
+	"tux-editor-need-more-help": "Ka vu bezonas plusa helpo?",
+	"tux-editor-ask-help": "Demandez plusa informi",
 	"tux-editor-message-desc-less": "Montrez mine",
 	"tux-editor-clear-translated": "Celar facita tradukuri"
 }

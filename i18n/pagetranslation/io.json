@@ -6,5 +6,6 @@
 		]
 	},
 	"tpt-languages-legend": "Altra lingui:",
-	"tpt-languages-nonzero": "$1 ($2% tradukita)"
+	"tpt-languages-nonzero": "$1 ($2% tradukita)",
+	"pt-movepage-block-base-invalid": "La nova nomo quan vu deziras donar a la pagino ne esas valida."
 }

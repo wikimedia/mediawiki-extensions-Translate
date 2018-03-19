@@ -23,7 +23,7 @@
 	"translate-taction-mstats": "Statistika grupe",
 	"translate-taction-export": "Izvoz",
 	"translate-taction-disabled": "Radnja je onemogućena na ovom vikiju.",
-	"translate-page-no-such-language": "Izabrani jezik nije ispravan.",
+	"translate-page-no-such-language": "Odabrani jezik je bio nevalidan.",
 	"translate-page-no-such-group": "Izabrana grupa nije ispravna.",
 	"translate-page-disabled": "Prevodi na ovom jeziku u ovoj grupi su onemogućeni. Razlog:\n\n<em>$1</em>",
 	"translate-language-disabled": "Prevođenje na ovaj jezik je onemogućeno.",
