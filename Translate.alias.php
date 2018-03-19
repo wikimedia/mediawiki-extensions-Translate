@@ -991,7 +991,7 @@ $specialPageAliases['sq'] = [
 	'Translate' => [ 'Përkthe' ],
 ];
 
-/** Serbian (Cyrillic script) (српски (ћирилица)‎) */
+/** Serbian (Cyrillic script) (српски (ћирилица)) */
 $specialPageAliases['sr-ec'] = [
 	'ImportTranslations' => [ 'Увоз_превода' ],
 	'LanguageStats' => [ 'Статистика_језика' ],
@@ -1002,6 +1002,19 @@ $specialPageAliases['sr-ec'] = [
 	'Translate' => [ 'Преведи' ],
 	'TranslationStats' => [ 'Статистика_превода' ],
 	'Translations' => [ 'Преводи' ],
+];
+
+/** Serbian (Latin script) (srpski (latinica)) */
+$specialPageAliases['sr-el'] = [
+	'ImportTranslations' => [ 'Uvoz_prevoda' ],
+	'LanguageStats' => [ 'Statistika_jezika' ],
+	'Magic' => [ 'Napredno_prevođenje' ],
+	'ManageMessageGroups' => [ 'Upravljanje_grupama_poruka' ],
+	'PageTranslation' => [ 'Prevod_stranice' ],
+	'SupportedLanguages' => [ 'Podržani_jezici' ],
+	'Translate' => [ 'Prevedi' ],
+	'TranslationStats' => [ 'Statistika_prevoda' ],
+	'Translations' => [ 'Prevodi' ],
 ];
 
 /** Sundanese (Basa Sunda) */
@@ -1157,7 +1170,7 @@ $specialPageAliases['zh'] = [
 	'Translate' => [ '翻译', '翻譯' ],
 ];
 
-/** Simplified Chinese (中文（简体）‎) */
+/** Simplified Chinese (中文（简体)) */
 $specialPageAliases['zh-hans'] = [
 	'AggregateGroups' => [ '信息组总计' ],
 	'ImportTranslations' => [ '导入翻译' ],
@@ -1178,7 +1191,7 @@ $specialPageAliases['zh-hans'] = [
 	'PagePreparation' => [ '页面预备' ],
 ];
 
-/** Traditional Chinese (中文（繁體）‎) */
+/** Traditional Chinese (中文（繁體)) */
 $specialPageAliases['zh-hant'] = [
 	'AggregateGroups' => [ '集合群組' ],
 	'ImportTranslations' => [ '匯入翻譯' ],
