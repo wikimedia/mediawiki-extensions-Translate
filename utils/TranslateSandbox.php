@@ -98,12 +98,21 @@ class TranslateSandbox {
 		$dbw->delete( 'user', [ 'user_id' => $uid ], __METHOD__ );
 		$dbw->delete( 'user_groups', [ 'ug_user' => $uid ], __METHOD__ );
 		$dbw->delete( 'user_properties', [ 'up_user' => $uid ], __METHOD__ );
-		$dbw->delete( 'logging', [ 'log_user' => $uid ], __METHOD__ );
-		$dbw->delete(
-			'recentchanges',
-			[ 'rc_user' => $uid, 'rc_user_text' => $username ],
-			__METHOD__
-		);
+
+		if ( class_exists( ActorMigration::class ) ) {
+			$m = ActorMigration::newMigration();
+
+			// Assume no joins are needed for logging or recentchanges
+			$dbw->delete( 'logging', $m->getWhere( $dbw, 'log_user', $user )['conds'], __METHOD__ );
+			$dbw->delete( 'recentchanges', $m->getWhere( $dbw, 'rc_user', $user )['conds'], __METHOD__ );
+		} else {
+			$dbw->delete( 'logging', [ 'log_user' => $uid ], __METHOD__ );
+			$dbw->delete(
+				'recentchanges',
+				[ 'rc_user' => $uid, 'rc_user_text' => $username ],
+				__METHOD__
+			);
+		}
 
 		// If someone tries to access still object still, they will get anon user
 		// data.

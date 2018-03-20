@@ -239,19 +239,32 @@ class SpecialSupportedLanguages extends SpecialPage {
 		global $wgTranslateMessageNamespaces;
 
 		$dbr = wfGetDB( DB_REPLICA, 'vslow' );
-		$tables = [ 'page', 'revision' ];
+
+		if ( class_exists( ActorMigration::class ) ) {
+			$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
+		} else {
+			$actorQuery = [
+				'tables' => [],
+				'fields' => [ 'rev_user_text' => 'rev_user_text' ],
+				'joins' => [],
+			];
+		}
+
+		$tables = [ 'page', 'revision' ] + $actorQuery['tables'];
 		$fields = [
-			'rev_user_text',
+			'rev_user_text' => $actorQuery['fields']['rev_user_text'],
 			'count(page_id) as count'
 		];
 		$conds = [
 			'page_title' . $dbr->buildLike( $dbr->anyString(), '/', $code ),
 			'page_namespace' => $wgTranslateMessageNamespaces,
-			'page_id=rev_page',
 		];
-		$options = [ 'GROUP BY' => 'rev_user_text', 'ORDER BY' => 'NULL' ];
+		$options = [ 'GROUP BY' => $actorQuery['fields']['rev_user_text'], 'ORDER BY' => 'NULL' ];
+		$joins = [
+			'revision' => [ 'JOIN', 'page_id=rev_page' ],
+		] + $actorQuery['joins'];
 
-		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options );
+		$res = $dbr->select( $tables, $fields, $conds, __METHOD__, $options, $joins );
 
 		$data = [];
 		foreach ( $res as $row ) {
@@ -390,14 +403,23 @@ class SpecialSupportedLanguages extends SpecialPage {
 				continue;
 			}
 
-			$tables = [ 'user', 'revision' ];
+			if ( class_exists( ActorMigration::class ) ) {
+				$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
+				$tables = [ 'user', 'r' => [ [ 'revision' ] + $actorQuery['tables'] ] ];
+				$joins = [
+					'r' => [ 'JOIN', 'user_id = rev_user' ],
+				] + $actorQuery['joins'];
+			} else {
+				$tables = [ 'user', 'revision' ];
+				$joins = [ 'revision' => [ 'JOIN', 'user_id = rev_user' ] ];
+			}
+
 			$fields = [ 'user_name', 'user_editcount', 'MAX(rev_timestamp) as lastedit' ];
 			$conds = [
 				'user_name' => $username,
-				'user_id = rev_user',
 			];
 
-			$res = $dbr->selectRow( $tables, $fields, $conds, __METHOD__ );
+			$res = $dbr->selectRow( $tables, $fields, $conds, __METHOD__, [], $joins );
 			$data[$username] = [ $res->user_editcount, $res->lastedit ];
 
 			$cache->set( $cachekey, $data[$username], 3600 );
