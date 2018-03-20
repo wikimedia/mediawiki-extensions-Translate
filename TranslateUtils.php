@@ -73,15 +73,32 @@ class TranslateUtils {
 	 */
 	public static function getContents( $titles, $namespace ) {
 		$dbr = wfGetDB( DB_REPLICA );
-		$rows = $dbr->select( [ 'page', 'revision', 'text' ],
-			[ 'page_title', 'old_text', 'old_flags', 'rev_user_text' ],
+
+		if ( class_exists( ActorMigration::class ) ) {
+			$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
+		} else {
+			$actorQuery = [
+				'tables' => [],
+				'fields' => [ 'rev_user_text' => 'rev_user_text' ],
+				'joins' => [],
+			];
+		}
+
+		$rows = $dbr->select( [ 'page', 'revision', 'text' ] + $actorQuery['tables'],
+			[
+				'page_title', 'old_text', 'old_flags',
+				'rev_user_text' => $actorQuery['fields']['rev_user_text']
+			],
 			[
 				'page_namespace' => $namespace,
-				'page_latest=rev_id',
-				'rev_text_id=old_id',
 				'page_title' => $titles
 			],
-			__METHOD__
+			__METHOD__,
+			[],
+			[
+				'revision' => [ 'JOIN', 'page_latest=rev_id' ],
+				'text' => [ 'JOIN', 'rev_text_id=old_id' ],
+			] + $actorQuery['joins']
 		);
 
 		$titles = [];
@@ -111,30 +128,60 @@ class TranslateUtils {
 		global $wgTranslateMessageNamespaces;
 
 		$dbr = wfGetDB( DB_REPLICA );
-		$recentchanges = $dbr->tableName( 'recentchanges' );
+
+		if ( class_exists( ActorMigration::class ) ) {
+			$actorQuery = ActorMigration::newMigration()->getJoin( 'rc_user' );
+		} else {
+			$actorQuery = [
+				'tables' => [],
+				'fields' => [ 'rc_user_text' => 'rc_user_text' ],
+				'joins' => [],
+			];
+		}
+
 		$hours = (int)$hours;
 		$cutoff_unixtime = time() - ( $hours * 3600 );
 		$cutoff = $dbr->timestamp( $cutoff_unixtime );
 
-		$namespaces = $dbr->makeList( $wgTranslateMessageNamespaces );
-		if ( $ns ) {
-			$namespaces = $dbr->makeList( $ns );
+		$conds = [
+			'rc_timestamp >= ' . $dbr->addQuotes( $cutoff ),
+			'rc_namespace' => $ns ?: $wgTranslateMessageNamespaces,
+		];
+		if ( $bots ) {
+			$conds['rc_bot'] = 0;
 		}
 
-		$fields = array_merge(
-			[ 'rc_title', 'rc_timestamp', 'rc_user_text', 'rc_namespace' ],
-			$extraFields
+		$res = $dbr->select(
+			[ 'recentchanges' ] + $actorQuery['tables'],
+			array_merge( [
+				'rc_namespace', 'rc_title', 'rc_timestamp',
+				'rc_user_text' => $actorQuery['fields']['rc_user_text'],
+			], $extraFields ),
+			$conds,
+			__METHOD__,
+			[],
+			$actorQuery['joins']
 		);
-		$fields = implode( ',', $fields );
-		// @todo Raw SQL
-		$sql = "SELECT $fields, substring_index(rc_title, '/', -1) as lang FROM $recentchanges " .
-			"WHERE rc_timestamp >= '{$cutoff}' " .
-			( $bots ? '' : 'AND rc_bot = 0 ' ) .
-			"AND rc_namespace in ($namespaces) " .
-			'ORDER BY lang ASC, rc_timestamp DESC';
-
-		$res = $dbr->query( $sql, __METHOD__ );
 		$rows = iterator_to_array( $res );
+
+		// Calculate 'lang', then sort by it and rc_timestamp
+		foreach ( $rows as &$row ) {
+			$pos = strrpos( $row->rc_title, '/' );
+			$row->lang = $pos === false ? $row->rc_title : substr( $row->rc_title, $pos + 1 );
+		}
+		unset( $row );
+
+		usort( $rows, function ( $a, $b ) {
+			$x = strcmp( $a->lang, $b->lang );
+			if ( !$x ) {
+				// descending order
+				$x = strcmp(
+					wfTimestamp( TS_MW, $b->rc_timestamp ),
+					wfTimestamp( TS_MW, $a->rc_timestamp )
+				);
+			}
+			return $x;
+		} );
 
 		return $rows;
 	}
