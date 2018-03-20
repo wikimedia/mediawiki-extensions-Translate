@@ -41,8 +41,14 @@ class RecentAdditionsMessageGroup extends RecentMessageGroup {
 			'rc_namespace' => $wgTranslateMessageNamespaces,
 			'rc_type != ' . RC_LOG,
 			'rc_id > ' . $this->getRCCutoff(),
-			'rc_user' => FuzzyBot::getUser()->getId(),
 		];
+
+		if ( class_exists( ActorMigration::class ) ) {
+			$conds[] = ActorMigration::newMigration()
+				->getWhere( $db, 'rc_user', FuzzyBot::getUser() )['conds'];
+		} else {
+			$conds['rc_user'] = FuzzyBot::getUser()->getId();
+		}
 
 		return $conds;
 	}

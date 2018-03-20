@@ -113,19 +113,37 @@ class CharacterEditStats extends Maintenance {
 		$cutoff = $dbr->addQuotes( $dbr->timestamp( time() - $days * 24 * 3600 ) );
 
 		// The field renames are to be compatible with recentchanges table query
-		$fields = [
-			'page_title as title',
-			'rev_user_text as user_text',
-			'rev_len as length',
-		];
-		$tables = [ 'revision', 'page' ];
+		if ( is_callable( Revision::class, 'getQueryInfo' ) ) {
+			$revQuery = Revision::getQueryInfo( [ 'page' ] );
+			$revUserText = isset( $revQuery['fields']['rev_user_text'] )
+				? $revQuery['fields']['rev_user_text']
+				: 'rev_user_text';
+		} else {
+			$revQuery = [
+				'tables' => [ 'revision', 'page' ],
+				'joins' => [
+					'page' => [ 'JOIN', 'rev_page = page_id' ],
+				]
+			];
+			$revUserText = 'rev_user_text';
+		}
 		$conds = [
 			"rev_timestamp > $cutoff",
-			'rev_page = page_id',
 			'page_namespace' => $namespaces,
 		];
 
-		$res = $dbr->select( $tables, $fields, $conds, __METHOD__ );
+		$res = $dbr->select(
+			$revQuery['tables'],
+			[
+				'title' => 'page_title',
+				'user_text' => $revUserText,
+				'length' => 'rev_len',
+			],
+			$conds,
+			__METHOD__,
+			[],
+			$revQuery['joins']
+		);
 		return iterator_to_array( $res );
 	}
 }
