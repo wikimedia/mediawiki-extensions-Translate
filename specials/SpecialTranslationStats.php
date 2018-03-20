@@ -420,9 +420,10 @@ class SpecialTranslationStats extends SpecialPage {
 		$conds = [];
 		$type = __METHOD__;
 		$options = [];
+		$joins = [];
 
-		$so->preQuery( $tables, $fields, $conds, $type, $options, $start, $end );
-		$res = $dbr->select( $tables, $fields, $conds, $type, $options );
+		$so->preQuery( $tables, $fields, $conds, $type, $options, $joins, $start, $end );
+		$res = $dbr->select( $tables, $fields, $conds, $type, $options, $joins );
 		wfDebug( __METHOD__ . "-queryend\n" );
 
 		// Start processing the data
@@ -698,10 +699,11 @@ interface TranslationStatsInterface {
 	 * @param array &$conds Empty array. Append select conditions.
 	 * @param string &$type Append graph type (used to identify queries).
 	 * @param array &$options Empty array. Append extra query options.
+	 * @param array &$joins Empty array. Append extra join conditions.
 	 * @param string $start Precalculated start cutoff timestamp
 	 * @param string $end Precalculated end cutoff timestamp
 	 */
-	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $start, $end );
+	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, &$joins, $start, $end );
 
 	/**
 	 * Return the indexes which this result contributes to.
@@ -817,13 +819,14 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		$opts->validateIntBounds( 'days', 1, 200 );
 	}
 
-	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $start, $end ) {
+	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, &$joins, $start, $end ) {
 		global $wgTranslateMessageNamespaces;
 
 		$db = wfGetDB( DB_REPLICA );
 
 		$tables = [ 'recentchanges' ];
 		$fields = [ 'rc_timestamp' ];
+		$joins = [];
 
 		$conds = [
 			'rc_namespace' => $wgTranslateMessageNamespaces,
@@ -860,7 +863,14 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 		}
 
 		if ( $this->opts['count'] === 'users' ) {
-			$fields[] = 'rc_user_text';
+			if ( class_exists( ActorMigration::class ) ) {
+				$actorQuery = ActorMigration::newMigration()->getJoin( 'rc_user' );
+				$tables += $actorQuery['tables'];
+				$fields['rc_user_text'] = $actorQuery['fields']['rc_user_text'];
+				$joins += $actorQuery['joins'];
+			} else {
+				$fields[] = 'rc_user_text';
+			}
 		}
 
 		$type .= '-perlang';
@@ -991,12 +1001,13 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
  * @ingroup Stats
  */
 class TranslateRegistrationStats extends TranslationStatsBase {
-	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $start, $end ) {
+	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, &$joins, $start, $end ) {
 		$tables = 'user';
 		$fields = 'user_registration';
 		$conds = self::makeTimeCondition( 'user_registration', $start, $end );
 		$type .= '-registration';
 		$options = [];
+		$joins = [];
 	}
 
 	public function getTimestamp( $row ) {
@@ -1010,13 +1021,14 @@ class TranslateRegistrationStats extends TranslationStatsBase {
  * @ingroup Stats
  */
 class ReviewPerLanguageStats extends TranslatePerLanguageStats {
-	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, $start, $end ) {
+	public function preQuery( &$tables, &$fields, &$conds, &$type, &$options, &$joins, $start, $end ) {
 		global $wgTranslateMessageNamespaces;
 
 		$db = wfGetDB( DB_REPLICA );
 
 		$tables = [ 'logging' ];
 		$fields = [ 'log_timestamp' ];
+		$joins = [];
 
 		$conds = [
 			'log_namespace' => $wgTranslateMessageNamespaces,
@@ -1051,7 +1063,14 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 		}
 
 		if ( $this->opts['count'] === 'reviewers' ) {
-			$fields[] = 'log_user_text';
+			if ( class_exists( ActorMigration::class ) ) {
+				$actorQuery = ActorMigration::newMigration()->getJoin( 'log_user' );
+				$tables += $actorQuery['tables'];
+				$fields['log_user_text'] = $actorQuery['fields']['log_user_text'];
+				$joins += $actorQuery['joins'];
+			} else {
+				$fields[] = 'log_user_text';
+			}
 		}
 
 		$type .= '-reviews';

@@ -691,23 +691,32 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		$dbr = TranslateUtils::getSafeReadDB();
 
-		$tables = [ 'page', 'revision', 'text' ];
-		$fields = [
-			'page_namespace',
-			'page_title',
-			'page_latest',
-			'rev_user',
-			'rev_user_text',
-			'old_flags',
-			'old_text'
-		];
-		$conds = [
-			'page_latest = rev_id',
-			'old_id = rev_text_id',
-		];
+		if ( is_callable( Revision::class, 'getQueryInfo' ) ) {
+			$revQuery = Revision::getQueryInfo( [ 'page', 'text' ] );
+		} else {
+			$revQuery = [
+				'tables' => [ 'page', 'revision', 'text' ],
+				'fields' => [
+					'page_namespace',
+					'page_title',
+					'page_latest',
+					'rev_user',
+					'rev_user_text',
+					'old_flags',
+					'old_text'
+				],
+				'joins' => [
+					'revision' => [ 'JOIN', 'page_latest = rev_id' ],
+					'text' => [ 'JOIN', 'old_id = rev_text_id' ],
+				],
+			];
+		}
+		$conds = [];
 		$conds[] = $this->getTitleConds( $dbr );
 
-		$res = $dbr->select( $tables, $fields, $conds, __METHOD__ );
+		$res = $dbr->select(
+			$revQuery['tables'], $revQuery['fields'], $conds, __METHOD__, [], $revQuery['joins']
+		);
 
 		$this->dbData = $res;
 	}
