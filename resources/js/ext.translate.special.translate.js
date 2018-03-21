@@ -222,6 +222,7 @@
 			onSelect: function ( language ) {
 				mw.translate.changeLanguage( language );
 			},
+			ulsPurpose: 'translate-special-translate',
 			quickList: function () {
 				return mw.uls.getFrequentLanguageList();
 			}

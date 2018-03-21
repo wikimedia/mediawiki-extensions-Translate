@@ -166,6 +166,7 @@
 				},
 				compact: true,
 				languages: ulslanguages,
+				ulsPurpose: 'translate-special-searchtranslations',
 				top: $languages.offset().top,
 				showRegions: regions
 			} );

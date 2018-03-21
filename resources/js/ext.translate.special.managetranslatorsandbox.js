@@ -586,6 +586,7 @@
 				$clearButton.removeClass( 'hide' );
 				indicateOlderRequests();
 			},
+			ulsPurpose: 'translate-special-managetranslatorsandbox',
 			quickList: mw.uls.getFrequentLanguageList
 		} );
 

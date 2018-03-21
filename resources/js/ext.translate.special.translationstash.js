@@ -212,6 +212,7 @@
 		} );
 
 		$ulsTrigger.uls( {
+			ulsPurpose: 'translate-special-translationstash',
 			onSelect: function ( language ) {
 				var direction = $.uls.data.getDir( language ),
 					autonym = $.uls.data.getAutonym( language );
