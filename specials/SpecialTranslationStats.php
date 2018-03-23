@@ -72,6 +72,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$opts->add( 'group', '' );
 		$opts->add( 'uselang', '' );
 		$opts->add( 'start', '' );
+		$opts->add( 'imagescale', 1.0 );
 		$opts->fetchValuesFromRequest( $this->getRequest() );
 
 		$pars = explode( ';', $par );
@@ -90,6 +91,7 @@ class SpecialTranslationStats extends SpecialPage {
 		$opts->validateIntBounds( 'days', 1, 10000 );
 		$opts->validateIntBounds( 'width', 200, 1000 );
 		$opts->validateIntBounds( 'height', 200, 1000 );
+		$opts->validateBounds( 'imagescale', 1.0, 4.0 );
 
 		if ( $opts['start'] !== '' ) {
 			$opts['start'] = rtrim( wfTimestamp( TS_ISO_8601, $opts['start'] ), 'Z' );
@@ -373,12 +375,21 @@ class SpecialTranslationStats extends SpecialPage {
 	 */
 	protected function image( FormOptions $opts ) {
 		$title = $this->getPageTitle();
-		$cgiparams = wfArrayToCgi( [ 'graphit' => true ], $opts->getAllValues() );
-		$href = $title->getLocalURL( $cgiparams );
+
+		$params = $opts->getChangedValues();
+		$params[ 'graphit' ] = true;
+		$src = $title->getLocalURL( $params );
+
+		$srcsets = [];
+		foreach ( [ 1.5, 2, 3 ] as $scale ) {
+			$params[ 'imagescale' ] = $scale;
+			$srcsets[] = "{$title->getLocalURL( $params )} {$scale}x";
+		}
 
 		return Xml::element( 'img',
 			[
-				'src' => $href,
+				'src' => $src,
+				'srcset' => implode( ', ', $srcsets ),
 				'width' => $opts['width'],
 				'height' => $opts['height'],
 			]
@@ -559,10 +570,11 @@ class SpecialTranslationStats extends SpecialPage {
 	public function draw( FormOptions $opts ) {
 		global $wgTranslatePHPlotFont;
 
+		$imageScale = $opts->getValue( 'imagescale' );
 		$width = $opts->getValue( 'width' );
 		$height = $opts->getValue( 'height' );
 		// Define the object
-		$plot = new PHPlot( $width, $height );
+		$plot = new PHPlot( $width * $imageScale, $height * $imageScale );
 
 		list( $legend, $resData ) = $this->getData( $opts );
 		$count = count( $resData );
@@ -587,22 +599,24 @@ class SpecialTranslationStats extends SpecialPage {
 		}
 
 		$font = FCFontFinder::findFile( $this->getLanguage()->getCode() );
-
-		if ( $font ) {
-			$plot->SetDefaultTTFont( $font );
-		} else {
-			$plot->SetDefaultTTFont( $wgTranslatePHPlotFont );
+		if ( !$font ) {
+			$font = $wgTranslatePHPlotFont;
 		}
+		$numberFont = FCFontFinder::findFile( 'en' );
+		$plot->setDefaultTTFont( $font );
+		$plot->SetFontTTF( 'generic', $font, 12 * $imageScale );
+		$plot->SetFontTTF( 'legend', $font, 12 * $imageScale );
+		$plot->SetFontTTF( 'x_title', $font, 10 * $imageScale );
+		$plot->SetFontTTF( 'y_title', $font, 10 * $imageScale );
+		$plot->setFontTTF( 'x_label', $numberFont, 8 * $imageScale );
+		$plot->setFontTTF( 'y_label', $numberFont, 8 * $imageScale );
+
 		$plot->SetDataValues( $data );
 
 		if ( $legend !== null ) {
 			$plot->SetLegend( $legend );
 		}
 
-		$numberFont = FCFontFinder::findFile( 'en' );
-
-		$plot->setFont( 'x_label', $numberFont, 8 );
-		$plot->setFont( 'y_label', $numberFont, 8 );
 		// Give grep a chance to find the usages:
 		// translate-stats-edits, translate-stats-users, translate-stats-registrations,
 		// translate-stats-reviews, translate-stats-reviewers
