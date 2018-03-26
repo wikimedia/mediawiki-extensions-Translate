@@ -18,7 +18,7 @@
 	},
 	"translate": "Překládání",
 	"translate-desc": "[[Special:Translate|Speciální stránka]] zjednodušující překládání systémových hlášení MediaWiki",
-	"translate-fuzzybot-desc": "Toto je speciální systémový účet používaný MediaWiki [https://www.mediawiki.org/wiki/Extension:Translate rozšířením překladů], používaný pro údržbové překlady.\nTento účet je součástí softwaru MediaWiki a nepatří žádnému uživateli.",
+	"translate-fuzzybot-desc": "Toto je speciální systémový účet používaný [https://www.mediawiki.org/wiki/Extension:Translate rozšířením MediaWiki pro překlady], používaný pro údržbu překladů.\nTento účet je součástí softwaru MediaWiki a nepatří žádnému uživateli.",
 	"translate-taskui-export-to-file": "Exportovat v nativním formátu",
 	"translate-taskui-export-as-po": "Exportovat pro off-line překlad",
 	"translate-taction-translate": "Překlad",
