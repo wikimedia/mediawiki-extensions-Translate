@@ -17,6 +17,11 @@ class ApiTTMServer extends ApiBase {
 
 	public function execute() {
 		global $wgTranslateTranslationServices;
+
+		if ( !$this->getAvailableTranslationServices() ) {
+			$this->dieWithError( 'apierror-translate-notranslationservices' );
+		}
+
 		$params = $this->extractRequestParams();
 
 		$config = $wgTranslateTranslationServices[$params['service']];
@@ -55,7 +60,7 @@ class ApiTTMServer extends ApiBase {
 		global $wgTranslateTranslationDefaultService;
 		$available = $this->getAvailableTranslationServices();
 
-		return [
+		$ret = [
 			'service' => [
 				ApiBase::PARAM_TYPE => $available,
 				ApiBase::PARAM_DFLT => $wgTranslateTranslationDefaultService,
@@ -73,6 +78,15 @@ class ApiTTMServer extends ApiBase {
 				ApiBase::PARAM_REQUIRED => true,
 			],
 		];
+
+		if ( !$available ) {
+			// execute() will abort in this case and we'll never reach here,
+			// but it's still nice to return a sensible value so that
+			// ApiStructureTest can check the other parameters.
+			unset( $ret['service'] );
+		}
+
+		return $ret;
 	}
 
 	protected function getExamplesMessages() {
