@@ -123,6 +123,7 @@
 	"apierror-translate-language-disabled": "{{doc-apierror}}",
 	"apierror-translate-nodynamicgroups": "{{doc-apierror}}",
 	"apierror-translate-nomessagefortitle": "{{doc-apierror}}",
+	"apierror-translate-notranslationservices": "{{doc-apierror}}",
 	"apierror-translate-owntranslation": "{{doc-apierror}}",
 	"apierror-translate-sandboxdisabled": "{{doc-apierror}}",
 	"apierror-translate-sandbox-invalidparam": "{{doc-apierror}}\n\nParameters:\n* $1 - Exception message, probably in English",
