@@ -55,10 +55,10 @@ class ApiTTMServer extends ApiBase {
 		global $wgTranslateTranslationDefaultService;
 		$available = $this->getAvailableTranslationServices();
 
-		return [
+		$ret = [
 			'service' => [
-				ApiBase::PARAM_TYPE => $available,
-				ApiBase::PARAM_DFLT => $wgTranslateTranslationDefaultService,
+				ApiBase::PARAM_REQUIRED => true,
+				ApiBase::PARAM_TYPE => $available
 			],
 			'sourcelanguage' => [
 				ApiBase::PARAM_TYPE => 'string',
@@ -73,6 +73,8 @@ class ApiTTMServer extends ApiBase {
 				ApiBase::PARAM_REQUIRED => true,
 			],
 		];
+
+		return $ret;
 	}
 
 	protected function getExamplesMessages() {
