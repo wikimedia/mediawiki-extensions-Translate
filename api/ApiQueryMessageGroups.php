@@ -244,7 +244,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		$allowedParams = [
 			'depth' => [
 				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_DFLT => '100',
+				ApiBase::PARAM_DFLT => 100,
 			],
 			'filter' => [
 				ApiBase::PARAM_TYPE => 'string',

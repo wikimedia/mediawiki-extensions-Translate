@@ -55,15 +55,14 @@ class ApiSearchTranslations extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		global $wgLanguageCode,
-			$wgTranslateTranslationDefaultService;
+		global $wgLanguageCode;
 		$available = $this->getAvailableTranslationServices();
 		$filters = $this->getAllowedFilters();
 
-		return [
+		$ret = [
 			'service' => [
+				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => $available,
-				ApiBase::PARAM_DFLT => $wgTranslateTranslationDefaultService,
 			],
 			'query' => [
 				ApiBase::PARAM_TYPE => 'string',
@@ -99,12 +98,14 @@ class ApiSearchTranslations extends ApiBase {
 			],
 			'limit' => [
 				ApiBase::PARAM_DFLT => 25,
-				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_TYPE => 'limit',
 				ApiBase::PARAM_MIN => 1,
 				ApiBase::PARAM_MAX => ApiBase::LIMIT_SML1,
 				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_SML2
 			],
 		];
+
+		return $ret;
 	}
 
 	protected function getExamplesMessages() {
