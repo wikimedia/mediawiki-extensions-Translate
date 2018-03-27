@@ -7,6 +7,11 @@
 class ApiSearchTranslations extends ApiBase {
 	public function execute() {
 		global $wgTranslateTranslationServices;
+
+		if ( !$this->getAvailableTranslationServices() ) {
+			$this->dieWithError( 'apierror-translate-notranslationservices' );
+		}
+
 		$params = $this->extractRequestParams();
 
 		$config = $wgTranslateTranslationServices[$params['service']];
@@ -58,12 +63,12 @@ class ApiSearchTranslations extends ApiBase {
 		global $wgLanguageCode,
 			$wgTranslateTranslationDefaultService;
 		$available = $this->getAvailableTranslationServices();
+
 		$filters = $this->getAllowedFilters();
 
-		return [
+		$ret = [
 			'service' => [
 				ApiBase::PARAM_TYPE => $available,
-				ApiBase::PARAM_DFLT => $wgTranslateTranslationDefaultService,
 			],
 			'query' => [
 				ApiBase::PARAM_TYPE => 'string',
@@ -99,12 +104,20 @@ class ApiSearchTranslations extends ApiBase {
 			],
 			'limit' => [
 				ApiBase::PARAM_DFLT => 25,
-				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_TYPE => 'limit',
 				ApiBase::PARAM_MIN => 1,
 				ApiBase::PARAM_MAX => ApiBase::LIMIT_SML1,
 				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_SML2
 			],
 		];
+
+		if ( $available ) {
+			// Don't add this if no services are available, it makes
+			// ApiStructureTest unhappy
+			$ret['service'][ApiBase::PARAM_DFLT] = $wgTranslateTranslationDefaultService;
+		}
+
+		return $ret;
 	}
 
 	protected function getExamplesMessages() {

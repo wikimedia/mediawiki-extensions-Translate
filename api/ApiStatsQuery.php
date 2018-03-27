@@ -54,7 +54,7 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 	public function getAllowedParams() {
 		return [
 			'offset' => [
-				ApiBase::PARAM_DFLT => 0,
+				ApiBase::PARAM_DFLT => '0',
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_HELP_MSG => 'api-help-param-continue',
 			],
