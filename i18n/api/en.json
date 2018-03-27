@@ -118,6 +118,7 @@
 	"apierror-translate-language-disabled": "Translation to this language is disabled",
 	"apierror-translate-nodynamicgroups": "Dynamic message groups are not supported here",
 	"apierror-translate-nomessagefortitle": "Title does not correspond to a translatable message",
+	"apierror-translate-notranslationservices": "No translation services have been configured.  The wiki administrator needs to set $wgTranslateTranslationServices appropriately before this feature can be used.",
 	"apierror-translate-owntranslation": "Cannot review own translations",
 	"apierror-translate-sandboxdisabled": "Sandbox feature is not in use",
 	"apierror-translate-sandbox-invalidparam": "$1",
