@@ -57,7 +57,10 @@ class ApiTTMServer extends ApiBase {
 
 		return [
 			'service' => [
-				ApiBase::PARAM_TYPE => $available,
+				ApiBase::PARAM_TYPE => array_merge(
+					$available,
+					[ $wgTranslateTranslationDefaultService ]
+				),
 				ApiBase::PARAM_DFLT => $wgTranslateTranslationDefaultService,
 			],
 			'sourcelanguage' => [
