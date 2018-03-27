@@ -60,10 +60,9 @@ class ApiSearchTranslations extends ApiBase {
 		$available = $this->getAvailableTranslationServices();
 		$filters = $this->getAllowedFilters();
 
-		return [
+		$ret = [
 			'service' => [
 				ApiBase::PARAM_TYPE => $available,
-				ApiBase::PARAM_DFLT => $wgTranslateTranslationDefaultService,
 			],
 			'query' => [
 				ApiBase::PARAM_TYPE => 'string',
@@ -105,6 +104,12 @@ class ApiSearchTranslations extends ApiBase {
 				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_SML2
 			],
 		];
+
+		if ( in_array( $wgTranslateTranslationDefaultService, $available ) ) {
+			$ret['service'][ApiBase::PARAM_DFLT] = $wgTranslateTranslationDefaultService;
+		}
+
+		return $ret;
 	}
 
 	protected function getExamplesMessages() {
