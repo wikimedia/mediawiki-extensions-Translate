@@ -1137,8 +1137,7 @@ class PageTranslationHooks {
 			$dbw->onTransactionIdle( function () use ( $dbw, $queuedPages, $targetPage,
 				$target, $handle, $langCode, $user, $reason
 			) {
-				// For atomicity
-				$dbw->setFlag( DBO_TRX );
+				$dbw->startAtomic( __METHOD__ );
 
 				$page = TranslatablePage::newFromTitle( $target );
 
@@ -1154,6 +1153,8 @@ class PageTranslationHooks {
 				// to add the page back to the queue again and so we can make another
 				// edit here with the latest changes.
 				unset( $queuedPages[ $targetPage ] );
+
+				$dbw->endAtomic( __METHOD__ );
 			} );
 		}
 	}
