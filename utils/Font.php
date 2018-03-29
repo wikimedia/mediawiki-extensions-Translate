@@ -4,8 +4,7 @@
  *
  * @author Niklas Laxström
  * @author Harry Burt
- * @copyright Copyright © 2008-2013, Niklas Laxström
- * @license Public Domain
+ * @license Unlicense
  * @file
  */
 
