@@ -1,0 +1,7 @@
+Code-Review+2: Libraryupgrader <tools.libraryupgrader@tools.wmflabs.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Thu, 29 Mar 2018 06:41:30 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/422830
+Project: mediawiki/extensions/Translate
+Branch: refs/heads/master
