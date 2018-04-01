@@ -5,11 +5,13 @@
 			"Passawuth",
 			"Woraponboonkerd",
 			"Horus",
-			"Octahedron80"
+			"Octahedron80",
+			"Aefgh39622"
 		]
 	},
 	"pagetranslation": "การแปลภาษา",
 	"right-pagetranslation": "กำหนดให้รุ่นปรับปรุงนี้เพื่อการแปลภาษา",
+	"action-pagetranslation": "จัดการหน้าที่แปลได้",
 	"tpt-section": "หน่วยการแปล $1",
 	"tpt-section-new": "หน่วยการแปลใหม่\n\nชื่อ: $1",
 	"tpt-section-deleted": "หน่วยการแปล $1",
