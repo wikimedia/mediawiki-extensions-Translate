@@ -168,13 +168,13 @@ class AggregateMessageGroup extends MessageGroupBase {
 				$moreKeys = array_keys( $group->getDefinitions() );
 			}
 
-			$keys = array_merge( $keys, $moreKeys );
+			// Array merge is *really* slow (tested in PHP 7.1), so avoiding it. A loop
+			// followed by array_unique (which we need anyway) is magnitudes faster.
+			foreach ( $moreKeys as $key ) {
+				$keys[] = $key;
+			}
 		}
 
-		/* In case some groups are included directly and indirectly
-		 * via other subgroup, we might get the same keys multiple
-		 * times. Since this is a list we need to remove duplicates
-		 * manually */
-		return array_unique( $keys );
+		return array_values( array_unique( $keys ) );
 	}
 }
