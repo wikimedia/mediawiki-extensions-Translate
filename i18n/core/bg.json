@@ -163,7 +163,7 @@
 	"translate-mgs-noempty": "Скриване на езици без започнат превод",
 	"translate-mgs-submit": "Показване на статистики",
 	"translate-mgs-column-language": "Език",
-	"translate-mgs-totals": "Всички езици заедно",
+	"translate-mgs-totals": "{{PLURAL:$1|Всеки език|Всички $1 езици заедно}}",
 	"supportedlanguages": "Поддържани езици",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Преводач|Преводачка}}|Преводачи}}: $1",
 	"supportedlanguages-recenttranslations": "последни преводи",
