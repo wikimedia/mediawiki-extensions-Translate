@@ -116,7 +116,9 @@ class TranslateRcFilter {
 		$page = new SpecialRecentChanges();
 		$page->setContext( $context );
 
-		return $page->isStructuredFilterUiEnabled();
+		// isStructuredFilterUiEnabled used to be a protected method in older versions :(
+		return is_callable( [ $page, 'isStructuredFilterUiEnabled' ] ) &&
+			$page->isStructuredFilterUiEnabled();
 	}
 
 	/**
