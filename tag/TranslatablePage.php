@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use Wikimedia\Rdbms\Database;
+
 /**
  * Class to parse translatable wiki pages.
  *
