@@ -9,6 +9,8 @@
  * @ingroup TTMServer
  */
 
+use Wikimedia\Rdbms\DBQueryError;
+
 /**
  * Mysql based backend.
  * @ingroup TTMServer
