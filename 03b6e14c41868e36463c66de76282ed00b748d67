@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "02fda176_7884fed9",
+        "filename": "tests/phpunit/HookDocTest.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2018-04-06T22:23:04Z",
+      "side": 1,
+      "message": "you can adjust this regex in the same way",
+      "range": {
+        "startLine": 76,
+        "startChar": 20,
+        "endLine": 76,
+        "endChar": 66
+      },
+      "revId": "03b6e14c41868e36463c66de76282ed00b748d67",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "18722698_c1dccff5",
+        "filename": "tests/phpunit/HookDocTest.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2018-04-06T22:23:04Z",
+      "side": 1,
+      "message": "The modifier s seems unneeded (PCRE_DOTALL), because it means a dot matches also a newline, but here is no dot in the new regex.",
+      "range": {
+        "startLine": 88,
+        "startChar": 52,
+        "endLine": 88,
+        "endChar": 53
+      },
+      "revId": "03b6e14c41868e36463c66de76282ed00b748d67",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
