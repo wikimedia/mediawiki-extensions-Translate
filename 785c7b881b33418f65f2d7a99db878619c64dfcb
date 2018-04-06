@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "08b6bdad_3b85c580",
+        "filename": "utils/FuzzyBot.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-04-06T08:29:56Z",
+      "side": 1,
+      "message": "Here is more compatibility code that can be removed.",
+      "range": {
+        "startLine": 17,
+        "startChar": 2,
+        "endLine": 27,
+        "endChar": 14
+      },
+      "revId": "785c7b881b33418f65f2d7a99db878619c64dfcb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
