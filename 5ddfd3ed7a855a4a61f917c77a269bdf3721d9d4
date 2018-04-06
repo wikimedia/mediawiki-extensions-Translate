@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "73ee32af_6b62e7e4",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2018-04-06T08:45:00Z",
+      "side": 0,
+      "message": "I have seen this code only, because the LBFactory was not with a namespace.",
+      "range": {
+        "startLine": 223,
+        "startChar": 3,
+        "endLine": 223,
+        "endChar": 12
+      },
+      "revId": "5ddfd3ed7a855a4a61f917c77a269bdf3721d9d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
