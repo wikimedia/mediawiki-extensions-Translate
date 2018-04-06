@@ -43,8 +43,6 @@ class SpecialTranslate extends SpecialPage {
 	 * @throws ErrorPageError
 	 */
 	public function execute( $parameters ) {
-		global $wgTranslateBlacklist;
-
 		$out = $this->getOutput();
 		$out->addModuleStyles( [
 			'ext.translate.special.translate.styles',
@@ -64,91 +62,20 @@ class SpecialTranslate extends SpecialPage {
 		}
 
 		$this->setup( $parameters );
-
-		if ( $this->options['group'] === '' || !$this->group ) {
-			$this->groupInformation();
-
-			return;
-		}
-
-		$errors = $this->getFormErrors();
-
 		$out->addModules( 'ext.translate.special.translate' );
 
 		$out->addHTML( Html::openElement( 'div', [
 			'class' => 'grid ext-translate-container',
 		] ) );
 
-		$out->addHTML( $this->tuxSettingsForm( $errors ) );
+		$out->addHTML( $this->tuxSettingsForm() );
 		$out->addHTML( $this->messageSelector() );
 
-		if ( count( $errors ) ) {
-			return;
-		} else {
-			$langCode = $this->options['language'];
-
-			if ( $this->group->getSourceLanguage() === $langCode ) {
-					$langName = TranslateUtils::getLanguageName(
-						$langCode,
-						$this->getLanguage()->getCode()
-					);
-					$reason = $this->msg( 'translate-page-disabled-source', $langName )->plain();
-					$out->addWikiMsg( 'translate-page-disabled', $reason );
-					// Close div.ext-translate-container
-					$out->addHTML( Html::closeElement( 'div' ) );
-					return;
-			}
-
-			$checks = [
-				$this->options['group'],
-				strtok( $this->options['group'], '-' ),
-				'*'
-			];
-
-			foreach ( $checks as $check ) {
-				if ( isset( $wgTranslateBlacklist[$check][$langCode] ) ) {
-					$reason = $wgTranslateBlacklist[$check][$langCode];
-					$out->addWikiMsg( 'translate-page-disabled', $reason );
-					// Close div.ext-translate-container
-					$out->addHTML( Html::closeElement( 'div' ) );
-					return;
-				}
-			}
-		}
-
 		$table = new TuxMessageTable( $this->getContext(), $this->group, $this->options['language'] );
-
 		$output = $table->fullTable();
 
 		$out->addHTML( $output );
 		$out->addHTML( Html::closeElement( 'div' ) );
-	}
-
-	/**
-	 * Returns array of errors in the form parameters.
-	 * @return array
-	 */
-	protected function getFormErrors() {
-		$errors = [];
-
-		$codes = TranslateUtils::getLanguageNames( 'en' );
-		if ( !$this->options['language'] || !isset( $codes[$this->options['language']] ) ) {
-			$errors['language'] = $this->msg( 'translate-page-no-such-language' )->text();
-			$this->options['language'] = $this->defaults['language'];
-		}
-
-		if ( !$this->group instanceof MessageGroup ) {
-			$errors['group'] = $this->msg( 'translate-page-no-such-group' )->text();
-			$this->options['group'] = $this->defaults['group'];
-		} else {
-			$languages = $this->group->getTranslatableLanguages();
-
-			if ( $languages !== null && !isset( $languages[$this->options['language']] ) ) {
-				$errors['language'] = $this->msg( 'translate-language-disabled' )->text();
-			}
-		}
-
-		return $errors;
 	}
 
 	protected function setup( $parameters ) {
@@ -225,9 +152,11 @@ class SpecialTranslate extends SpecialPage {
 		$this->group = MessageGroups::getGroup( $this->options['group'] );
 		if ( $this->group ) {
 			$this->options['group'] = $this->group->getId();
+		} else {
+			$this->group = MessageGroups::getGroup( $this->defaults['group'] );
 		}
 
-		if ( $this->group && MessageGroups::isDynamic( $this->group ) ) {
+		if ( MessageGroups::isDynamic( $this->group ) ) {
 			$this->group->setLanguage( $this->options['language'] );
 		}
 	}
@@ -250,7 +179,7 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function messageSelector() {
-		$output = Html::openElement( 'div', [ 'class' => 'row tux-messagetable-header' ] );
+		$output = Html::openElement( 'div', [ 'class' => 'row tux-messagetable-header hide' ] );
 		$output .= Html::openElement( 'div', [ 'class' => 'nine columns' ] );
 		$output .= Html::openElement( 'ul', [ 'class' => 'row tux-message-selector' ] );
 		$userId = $this->getUser()->getId();
@@ -332,10 +261,8 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function tuxGroupSelector() {
-		$group = MessageGroups::getGroup( $this->options['group'] );
-
 		$groupClass = [ 'grouptitle', 'grouplink' ];
-		if ( $group instanceof AggregateMessageGroup ) {
+		if ( $this->group instanceof AggregateMessageGroup ) {
 			$groupClass[] = 'tux-breadcrumb__item--aggregate';
 		}
 
@@ -355,9 +282,9 @@ class SpecialTranslate extends SpecialPage {
 			Html::element( 'span',
 				[
 					'class' => $groupClass,
-					'data-msggroupid' => $this->options['group'],
+					'data-msggroupid' => $this->group->getId(),
 				],
-				$group->getLabel()
+				$this->group->getLabel()
 			) .
 			Html::closeElement( 'div' );
 
@@ -400,6 +327,7 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function tuxGroupDescription() {
+		// Initialize an empty warning box to be filled client-side.
 		return Html::rawElement(
 			'div',
 			[ 'class' => 'twelve columns description' ],
@@ -407,51 +335,28 @@ class SpecialTranslate extends SpecialPage {
 		);
 	}
 
+	protected function getGroupDescription( MessageGroup $group ) {
+		$description = $group->getDescription( $this->getContext() );
+		if ( $description !== null ) {
+			return $this->getOutput()->parse( $description, true, true );
+		}
+		return '';
+	}
+
 	protected function tuxGroupWarning() {
+		if ( $this->options['group'] === '' ) {
+			return Html::rawElement(
+				'div',
+				[ 'class' => 'twelve columns group-warning' ],
+				$this->msg( 'tux-translate-page-no-such-group' )->parse()
+			);
+		}
+
 		// Initialize an empty warning box to be filled client-side.
 		return Html::element(
 			'div',
 			[ 'class' => 'twelve columns group-warning' ],
-			''
-		);
-	}
-
-	protected function getGroupDescription( MessageGroup $group ) {
-		$description = $group->getDescription( $this->getContext() );
-		if ( $description !== null ) {
-			return $this->getOutput()->parse( $description, false );
-		}
-
-		return '';
-	}
-
-	/**
-	 * This function renders the default list of groups when no parameters
-	 * are passed.
-	 */
-	public function groupInformation() {
-		$output = $this->getOutput();
-
-		// If we get here in the TUX mode, it means that invalid group
-		// was requested. There is default group for no params case.
-		$output->addHTML( Html::rawElement(
-			'div',
-			[ 'class' => 'twelve columns group-warning' ],
-			$this->msg( 'tux-translate-page-no-such-group' )->parse()
-		) );
-
-		$output->addHTML(
-			Html::openElement( 'div', [
-				'class' => 'eight columns tux-breadcrumb',
-				'data-language' => $this->options['language'],
-			] ) .
-				'<span class="grouptitle">' .
-				$this->msg( 'translate-msggroupselector-projects' )->escaped() .
-				'</span>
-			<span class="grouptitle grouplink tail">' .
-				$this->msg( 'translate-msggroupselector-search-all' )->escaped() .
-				'</span>
-			</div>'
+			$warning
 		);
 	}
 
