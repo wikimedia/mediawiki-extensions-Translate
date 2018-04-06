@@ -216,16 +216,7 @@ class TTMServerBootstrap extends Maintenance {
 	protected function resetStateForFork() {
 		// Make sure all existing connections are dead,
 		// we can't use them in forked children.
-		if ( method_exists( 'MediaWiki\MediaWikiServices', 'resetChildProcessServices' ) ) {
-			MediaWiki\MediaWikiServices::resetChildProcessServices();
-		} else {
-			// BC for MediaWiki <= 1.27
-			LBFactory::destroyInstance();
-
-			// Child, reseed because there is no bug in PHP:
-			// https://bugs.php.net/bug.php?id=42465
-			mt_srand( getmypid() );
-		}
+		MediaWiki\MediaWikiServices::resetChildProcessServices();
 	}
 }
 
