@@ -34,6 +34,7 @@
 
 			mw.translate.changeUrl( changes );
 			mw.translate.updateTabLinks( changes );
+			$( '.tux-editor-header .group-warning' ).empty();
 			state.messageList.changeSettings( changes );
 			updateGroupInformation( state );
 		},
@@ -44,9 +45,12 @@
 				showMessage: null
 			};
 
-			// Force a URL change (no AJAX) until client-side language changing
-			// is stable enough. This doesn't do checks for some restrictions atm.
-			mw.translate.changeUrl( changes, true );
+			mw.translate.changeUrl( changes );
+			mw.translate.updateTabLinks( changes );
+			$( '.tux-editor-header .group-warning' ).empty();
+			state.messageList.changeSettings( changes );
+			updateGroupInformation( state );
+
 		},
 
 		changeFilter: function ( filter ) {
@@ -165,7 +169,7 @@
 		api.parse( group.description ).done( function ( parsedDescription ) {
 			// The parsed text is returned in a <p> tag,
 			// so it's removed here.
-			$description.html( $( parsedDescription ).html() );
+			$description.html( parsedDescription );
 		} ).fail( function () {
 			$description.empty();
 			mw.log( 'Error parsing description for group ' + group.id );
@@ -175,8 +179,6 @@
 	function updateGroupWarning( group, language ) {
 		var preferredLanguages, headerMessage, languagesMessage,
 			$groupWarning = $( '.tux-editor-header .group-warning' );
-
-		$groupWarning.empty();
 
 		// Check whether the group has priority languages
 		if ( !group.prioritylangs ) {
@@ -221,6 +223,7 @@
 		ulsOptions = {
 			onSelect: function ( language ) {
 				mw.translate.changeLanguage( language );
+				$element.text( $.uls.data.getAutonym( language ) );
 			},
 			ulsPurpose: 'translate-special-translate',
 			quickList: function () {

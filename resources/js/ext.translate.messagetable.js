@@ -21,7 +21,8 @@
 				mclimit: limit,
 				mcfilter: filter,
 				mcprop: 'definition|translation|tags|properties',
-				rawcontinue: 1
+				rawcontinue: 1,
+				errorformat: 'html'
 			} );
 		}
 	} );
@@ -41,6 +42,7 @@
 		this.$loaderIcon = this.$loader.find( '.tux-loading-indicator' );
 		this.$loaderInfo = this.$loader.find( '.tux-messagetable-loader-info' );
 		this.$actionBar = this.$container.siblings( '.tux-action-bar' );
+		this.$statsBar = this.$actionBar.find( '.tux-message-list-statsbar' );
 		this.$proofreadOwnTranslations = this.$actionBar.find( '.tux-proofread-own-translations-button' );
 		this.messages = [];
 		this.loading = false;
@@ -394,8 +396,6 @@
 		 * @param {Object} changes
 		 */
 		changeSettings: function ( changes ) {
-			var $statsbar = $( '.tux-message-list-statsbar' );
-
 			// Clear current messages
 			this.clear();
 			this.settings = $.extend( this.settings, changes );
@@ -410,7 +410,7 @@
 			);
 
 			// Reset the statsbar
-			$statsbar
+			this.$statsBar
 				.empty()
 				.removeData()
 				.languagestatsbar( {
@@ -428,6 +428,9 @@
 			if ( changes.offset ) {
 				this.$loader.data( 'offset', changes.offset );
 			}
+
+			this.$header.removeClass( 'hide' );
+			this.$actionBar.removeClass( 'hide' );
 
 			// Start loading messages
 			this.load( changes.limit );
@@ -526,12 +529,18 @@
 				self.updateHideOwnInProofreadingToggleVisibility();
 				self.updateLastMessage();
 			} ).fail( function ( errorCode, response ) {
-				if ( response.error && response.error.code === 'mctranslate-language-disabled' ) {
-					$( '.tux-editor-header .group-warning' )
-						.text( mw.msg( 'translate-language-disabled' ) )
-						.show();
+				var $warningContainer = $( '.tux-editor-header .group-warning' );
+
+				if ( response.errors ) {
+					$.map( response.errors, function ( error ) {
+						$warningContainer.append( error[ '*' ] );
+					} );
+				} else {
+					$warningContainer.text( mw.msg( 'api-error-unknownerror', errorCode ) );
 				}
 				self.$loader.data( 'offset', -1 ).addClass( 'hide' );
+				self.$actionBar.addClass( 'hide' );
+				self.$header.addClass( 'hide' );
 			} ).always( function () {
 				self.$loaderIcon.addClass( 'tux-loading-indicator--stopped' );
 				self.loading = false;
