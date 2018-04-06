@@ -866,8 +866,7 @@ class TranslatablePage {
 	 */
 	public static function isSourcePage( Title $title ) {
 		$cache = ObjectCache::getMainWANInstance();
-		// BC for MediaWiki 1.27
-		$pcTTL = defined( 'WANObjectCache::TTL_PROC_LONG' ) ? $cache::TTL_PROC_LONG : 30;
+		$pcTTL = $cache::TTL_PROC_LONG;
 
 		$translatablePageIds = $cache->getWithSetCallback(
 			$cache->makeKey( 'pagetranslation', 'sourcepages' ),
