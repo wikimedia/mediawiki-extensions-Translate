@@ -169,7 +169,6 @@ $wgResourceModules['ext.translate.messagetable'] = [
 		'api-error-unknownerror',
 		'tpt-unknown-page',
 		'translate-edit-title',
-		'translate-language-disabled',
 		'tux-edit',
 		'tux-empty-list-all',
 		'tux-empty-list-all-guide',
