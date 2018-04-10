@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Botuzhaleny-sodamo"
+			"Botuzhaleny-sodamo",
+			"Rueter"
 		]
 	},
 	"tpt-diff-old": "Икелень текст",
 	"tpt-diff-new": "Од текст",
 	"translate-tag-translate-link-desc": "Йутавтык те лопанть",
-	"tpt-languages-legend": "Лия кельтне:"
+	"tpt-languages-legend": "Лия кельтне:",
+	"tpt-languages-nonzero": "$1 ($2% ютавтозь)"
 }

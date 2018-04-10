@@ -89,6 +89,7 @@
 	"apierror-translate-language-disabled": "Das Übersetzen in diese Sprache ist deaktiviert",
 	"apierror-translate-nodynamicgroups": "Dynamische Nachrichtengruppen werden hier nicht unterstützt",
 	"apierror-translate-nomessagefortitle": "Der Titel entspricht nicht einer übersetzbaren Nachricht",
+	"apierror-translate-notranslationservices": "Es wurden keine öffentlichen Übersetzungsdienste konfiguriert. Der Administrator des Wikis muss <var>$wgTranslateTranslationServices</var> passend festlegen, bevor diese Funktion verwendet werden kann.",
 	"apierror-translate-owntranslation": "Eigene Übersetzungen können nicht überprüft werden",
 	"apierror-translate-sandboxdisabled": "Die Spielwiesenfunktion ist nicht in Verwendung",
 	"apierror-translate-sandbox-invalidppassword": "Ungültiges Passwort",
