@@ -138,7 +138,7 @@ class MicrosoftWebService extends TranslationWebService {
 
 		return TranslationQuery::factory( $this->config['url'] )
 			->timeout( $this->config['timeout'] )
-			->queryParamaters( $params )
+			->queryParameters( $params )
 			->queryHeaders( $headers );
 	}
 

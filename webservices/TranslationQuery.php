@@ -44,7 +44,7 @@ class TranslationQuery {
 		return $this;
 	}
 
-	public function queryParamaters( array $params ) {
+	public function queryParameters( array $params ) {
 		$this->params = $params;
 		return $this;
 	}

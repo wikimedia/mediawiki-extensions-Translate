@@ -42,7 +42,7 @@ class RemoteTTMServerWebService extends TranslationWebService {
 
 		return TranslationQuery::factory( $this->config['url'] )
 			->timeout( $this->config['timeout'] )
-			->queryParamaters( $params );
+			->queryParameters( $params );
 	}
 
 	protected function parseResponse( TranslationQueryResponse $reply ) {
