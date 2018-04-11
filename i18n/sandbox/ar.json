@@ -35,6 +35,8 @@
 	"tsb-translations-user": "ترجمات {{GENDER:$1|المستخدم|المستخدمة}}",
 	"tsb-translations-current": "الترجمات الموجودة",
 	"tsb-delete-userpage-summary": "حذف صفحة المستخدم لمستخدم في الملعب",
+	"tsb-reject-confirmation": "تم رفض {{PLURAL:$1|مستخدم|مستخدمين}}",
+	"tsb-accept-confirmation": "تم قبول {{PLURAL:$1|مستخدم|مستخدمين}}",
 	"translationstash": "مرحبا",
 	"translate-translationstash-welcome": "مرحبا {{GENDER:$1|$1}}، أنت مترجم جديد",
 	"translate-translationstash-welcome-note": "تعرف على أدوات الترجمة. ترجم بعض الرسائل واحصل على صلاحيات الترجمة الكاملة للمشاركة في مشاريعك المفضلة.",

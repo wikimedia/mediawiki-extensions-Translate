@@ -128,6 +128,7 @@
 	"apierror-translate-language-disabled": "La traduction dans cette langue est désactivée",
 	"apierror-translate-nodynamicgroups": "Les groupes de messages dynamiques ne sont pas pris en charge ici",
 	"apierror-translate-nomessagefortitle": "Le titre ne correspond pas à un message traductible",
+	"apierror-translate-notranslationservices": "Aucun service de traduction public n’a été configuré. L’administrateur du wiki doit positionner <var>$wgTranslateTranslationServices</var> comme il faut avant que cette fonctionnalité puisse être utilisée.",
 	"apierror-translate-owntranslation": "Impossible de relire ses propres traductions",
 	"apierror-translate-sandboxdisabled": "Les fonctions du bac à sable ne sont pas utilisées",
 	"apierror-translate-sandbox-invalidppassword": "Mot de passe invalide",

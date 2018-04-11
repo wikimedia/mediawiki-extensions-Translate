@@ -120,6 +120,7 @@
 	"apierror-translate-language-disabled": "A tradução para esta língua foi impossibilitada",
 	"apierror-translate-nodynamicgroups": "Não são suportados aqui grupos de mensagens dinâmicos",
 	"apierror-translate-nomessagefortitle": "O título não corresponde a uma mensagem traduzível",
+	"apierror-translate-notranslationservices": "Não foram configurados serviços públicos de tradução. O administrador da wiki precisa de definir <var>$wgTranslateTranslationServices</var> devidamente para esta funcionalidade poder ser usada.",
 	"apierror-translate-owntranslation": "Não pode rever as suas traduções",
 	"apierror-translate-sandboxdisabled": "A função de utilizadores em teste não está a ser usada",
 	"apierror-translate-sandbox-invalidppassword": "Palavra-passe inválida",

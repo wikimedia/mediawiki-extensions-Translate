@@ -121,6 +121,7 @@
 	"apierror-translate-language-disabled": "至该语言的翻译已停用",
 	"apierror-translate-nodynamicgroups": "动态消息组在此不支持",
 	"apierror-translate-nomessagefortitle": "标题与可翻译消息不一致",
+	"apierror-translate-notranslationservices": "未配置公开翻译服务。在此功能可以使用前，wiki管理员需要适当设置<var>$wgTranslateTranslationServices</var>。",
 	"apierror-translate-owntranslation": "不能复核自己的翻译",
 	"apierror-translate-sandboxdisabled": "未使用沙盒功能",
 	"apierror-translate-sandbox-invalidppassword": "无效密码",
