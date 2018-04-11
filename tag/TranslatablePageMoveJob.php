@@ -66,6 +66,9 @@ class TranslatablePageMoveJob extends Job {
 
 		// Re-render the pages to get everything in sync
 		MessageGroups::singleton()->recache();
+		// Update message index now so that, when after this job the MoveTranslationUnits hook
+		// runs in deferred updates, it will not run MessageIndexRebuildJob (T175834).
+		MessageIndex::singleton()->rebuild();
 
 		$job = new TranslationsUpdateJob( $targetTitle, [ 'sections' => [] ] );
 		JobQueueGroup::singleton()->push( $job );
