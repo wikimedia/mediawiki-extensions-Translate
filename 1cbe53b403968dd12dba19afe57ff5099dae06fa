@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4877929e_8e96d482",
+        "filename": "tag/TranslatablePageMoveJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2018-04-11T23:44:55Z",
+      "side": 1,
+      "message": "Might want to leave a comment here to say that this happens so to make sure that, when \u0027onMoveTranslationUnits\u0027 calls MessageHandle::isValid, it will not MessageIndexRebuildJob, which would create nested jobs in a way that is not supported by the Job::run transaction.",
+      "range": {
+        "startLine": 69,
+        "startChar": 2,
+        "endLine": 69,
+        "endChar": 39
+      },
+      "revId": "1cbe53b403968dd12dba19afe57ff5099dae06fa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
