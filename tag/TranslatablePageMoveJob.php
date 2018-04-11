@@ -66,6 +66,7 @@ class TranslatablePageMoveJob extends Job {
 
 		// Re-render the pages to get everything in sync
 		MessageGroups::singleton()->recache();
+		MessageIndex::singleton()->rebuild();
 
 		$job = new TranslationsUpdateJob( $targetTitle, [ 'sections' => [] ] );
 		JobQueueGroup::singleton()->push( $job );
