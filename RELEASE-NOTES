@@ -1,0 +1,9 @@
+== Translate 2018.04 ==
+Released at 2018-04-12.
+
+=== Noteworthy changes ===
+* Fixed compatibility with MediaWiki 1.29 release.
+* Added the 'translate' right to the 'editpage' grant. This will allow OAuth apps to translate.
+* Translation variables can now span multiple lines.
+* AndroidXml file format now includes authors.
+* Maintenance and performance updates.
