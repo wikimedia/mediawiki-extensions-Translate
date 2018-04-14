@@ -121,6 +121,7 @@
 	"apierror-translate-language-disabled": "A tradução para este idioma está desativada",
 	"apierror-translate-nodynamicgroups": "Os grupos de mensagens dinâmicas não são suportados aqui",
 	"apierror-translate-nomessagefortitle": "O título não corresponde a uma mensagem traduzível",
+	"apierror-translate-notranslationservices": "Não foram configurados serviços públicos de tradução. O administrador da wiki precisa de definir <var>$wgTranslateTranslationServices</var> devidamente para esta funcionalidade poder ser usada.",
 	"apierror-translate-owntranslation": "Não é possível revisar as próprias traduções",
 	"apierror-translate-sandboxdisabled": "O recurso sandbox não está em uso",
 	"apierror-translate-sandbox-invalidppassword": "Senha inválida",

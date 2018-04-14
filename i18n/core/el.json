@@ -14,7 +14,8 @@
 			"Protnet",
 			"ZaDiak",
 			"Περίεργος",
-			"KATRINE1992"
+			"KATRINE1992",
+			"Nikosgranturismogt"
 		]
 	},
 	"translate": "Μεταφράστε",
@@ -85,7 +86,7 @@
 	"translate-magic-namespace": "Ονομασίες ονοματοχώρων",
 	"translate-magic-notsaved": "Η αλλαγή σας δεν αποθηκεύθηκε!",
 	"translate-magic-errors": "Παρακαλώ διορθώστε {{PLURAL:$1|το ακόλουθο σφάλμα|τα ακόλουθα σφάλματα}} στις μεταφράσεις:",
-	"translate-magic-saved": "Οι αλλαγές σας αποθηκεύτηκαν επιτυχώς.",
+	"translate-magic-saved": "Οι αλλαγές σας αποθηκεύτηκαν.",
 	"translate-checks-parameters": "{{PLURAL:$2|Η ακόλουθη παράμετρος δεν χρησιμοποιείται|Οι ακόλουθες παράμετροι δεν χρησιμοποιούνται}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Η ακόλουθη παράμετρος|Οι ακόλουθες παράμετροι}} είναι {{PLURAL:$2|άγνωστη|άγνωστες}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "Υπάρχει ακανόνιστη ποσότητα {{PLURAL:$2|παρενθέσεων|παρενθέσεων}}:\n<strong><nowiki>$1</nowiki></strong>",
@@ -233,7 +234,7 @@
 	"translate-import-from-local": "Ανέβασμα τοπικού αρχείου:",
 	"translate-import-load": "Ανέβασμα αρχείου",
 	"translate-import-err-dl-failed": "Αδυναμία λήψης του αρχείου: $1",
-	"translate-import-err-ul-failed": "Το ανέβασμα του αρχείου δεν ήταν επιτυχές",
+	"translate-import-err-ul-failed": "Το ανέβασμα του αρχείου απέτυχε",
 	"translate-import-err-invalid-title": "Το όνομα του αρχείου <nowiki>$1</nowiki> δεν ήταν έγκυρο.",
 	"translate-import-err-no-such-file": "Το αρχείο <nowiki>$1</nowiki> δεν υπάρχει ή δεν έχει φορτωθεί τοπικά.",
 	"translate-import-err-stale-group": "Η ομάδα μηνυμάτων στην οποία ανήκει αυτό το αρχείο δεν υπάρχει.",
