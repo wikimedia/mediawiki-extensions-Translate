@@ -77,6 +77,7 @@
 	"translate-js-support": "Questionar",
 	"translate-documentation-language": "Dokumentado pri la mesajo",
 	"translate-searchprofile": "Tradukuri",
+	"translate-searchprofile-tooltip": "Serchez de omna tradukuri",
 	"translate-dynagroup-recent-label": "recenta tradukuri",
 	"translate-dynagroup-additions-desc": "Ica mesajo-grupo montras ambe la nova e la modifikita mesaji.",
 	"translate-msggroupselector-projects": "Grupo di mesaji",
@@ -92,5 +93,6 @@
 	"tux-editor-ask-help": "Demandez plusa informi",
 	"tux-editor-message-desc-more": "Montrez pluse",
 	"tux-editor-message-desc-less": "Montrez mine",
-	"tux-editor-clear-translated": "Celar facita tradukuri"
+	"tux-editor-clear-translated": "Celar facita tradukuri",
+	"tux-editor-message-tools-translations": "Omna tradukuri"
 }
