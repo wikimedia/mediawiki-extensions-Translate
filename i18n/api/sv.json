@@ -54,6 +54,7 @@
 	"apierror-translate-invalidlanguage": "Det begärda språket är inte giltigt.",
 	"apierror-translate-invalidupdate": "Ogiltig uppdatering",
 	"apierror-translate-language-disabled": "Översättning till detta språk är inaktiverad",
+	"apierror-translate-notranslationservices": "Inga offentliga översättningstjänster har konfigurerats. Wikiadministratörerna behöver ändra set <var>$wgTranslateTranslationServices</var> på lämpligt sätt innan denna funktion kan användas.",
 	"apierror-translate-owntranslation": "Kan inte granska egna översättningar",
 	"apierror-translate-sandbox-invalidppassword": "Ogiltigt lösenord",
 	"apierror-translate-unknownmessage": "Okänt meddelande",
