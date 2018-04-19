@@ -1049,8 +1049,11 @@ class PageTranslationHooks {
 	public static function onMoveTranslationUnits( Title $ot, Title $nt, User $user,
 		$oldid, $newid, $reason
 	) {
-		// Do the update only once. In case running by job queue, the update is not done here
-		if ( self::$jobQueueRunning ) {
+		// TranslatablePageMoveJob takes care of handling updates because it performs
+		// a lot of moves at once. As a performance optimization, skip this hook if
+		// we detect moves from that job. As there isn't a good way to pass information
+		// to this hook what originated the move, we use some heuristics.
+		if ( defined( 'MEDIAWIKI_JOB_RUNNER' ) && $user->equals( FuzzyBot::getUser() ) ) {
 			return;
 		}
 

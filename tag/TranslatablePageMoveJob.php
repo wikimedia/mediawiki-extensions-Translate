@@ -81,7 +81,6 @@ class TranslatablePageMoveJob extends Job {
 		$performer = User::newFromName( $this->params['performer'] );
 
 		PageTranslationHooks::$allowTargetEdit = true;
-		PageTranslationHooks::$jobQueueRunning = true;
 
 		foreach ( $this->params['moves'] as $source => $target ) {
 			$sourceTitle = Title::newFromText( $source );
@@ -111,7 +110,6 @@ class TranslatablePageMoveJob extends Job {
 		}
 
 		PageTranslationHooks::$allowTargetEdit = false;
-		PageTranslationHooks::$jobQueueRunning = false;
 	}
 
 	protected function moveMetadata( $oldGroupId, $newGroupId ) {
