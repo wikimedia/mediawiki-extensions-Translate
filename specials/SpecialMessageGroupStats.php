@@ -82,64 +82,48 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	protected function getform() {
 		global $wgScript;
 
-		$out = Html::openElement( 'div' );
-		$out .= Html::openElement( 'form', [ 'method' => 'get', 'action' => $wgScript ] );
-		$out .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
-		$out .= Html::hidden( 'x', 'D' ); // To detect submission
-		$out .= Html::openElement( 'fieldset' );
-		$out .= Html::element( 'legend', [], $this->msg( 'translate-mgs-fieldset' )->text() );
-		$out .= Html::openElement( 'table' );
+		$formDescriptor = [
+			'select' => [
+				'type' => 'select',
+				'name' => 'group',
+				'id' => 'group',
+				'label' => $this->msg( 'translate-mgs-group' )->text(),
+				'options' => $this->getGroupOptions(),
+			],
+			'nocomplete-check' => [
+				'type' => 'check',
+				'name' => 'suppresscomplete',
+				'id' => 'suppresscomplete',
+				'label' => $this->msg( 'translate-mgs-nocomplete' )->text(),
+				'default' => $this->noComplete,
+			],
+			'noempty-check' => [
+				'type' => 'check',
+				'name' => 'suppressempty',
+				'id' => 'suppressempty',
+				'label' => $this->msg( 'translate-mgs-noempty' )->text(),
+				'default' => $this->noEmpty,
+			]
+		];
 
-		$out .= Html::openElement( 'tr' );
-		$out .= Html::openElement( 'td', [ 'class' => 'mw-label' ] );
-		$out .= Xml::label( $this->msg( 'translate-mgs-group' )->text(), 'group' );
-		$out .= Html::closeElement( 'td' );
-		$out .= Html::openElement( 'td', [ 'class' => 'mw-input' ] );
-		$out .= $this->getGroupSelector( $this->target )->getHTML();
-		$out .= Html::closeElement( 'td' );
-		$out .= Html::closeElement( 'tr' );
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
 
-		$out .= Html::openElement( 'tr' );
-		$out .= Html::openElement( 'td', [ 'colspan' => 2 ] );
-		$out .= Xml::checkLabel(
-			$this->msg( 'translate-mgs-nocomplete' )->text(),
-			'suppresscomplete',
-			'suppresscomplete',
-			$this->noComplete
-		);
-		$out .= Html::closeElement( 'td' );
-		$out .= Html::closeElement( 'tr' );
-
-		$out .= Html::openElement( 'tr' );
-		$out .= Html::openElement( 'td', [ 'colspan' => 2 ] );
-		$out .= Xml::checkLabel(
-			$this->msg( 'translate-mgs-noempty' )->text(),
-			'suppressempty',
-			'suppressempty',
-			$this->noEmpty
-		);
-		$out .= Html::closeElement( 'td' );
-		$out .= Html::closeElement( 'tr' );
-
-		$out .= Html::openElement( 'tr' );
-		$out .= Html::openElement( 'td', [ 'class' => 'mw-input', 'colspan' => 2 ] );
-		$out .= Xml::submitButton( $this->msg( 'translate-mgs-submit' )->text() );
-		$out .= Html::closeElement( 'td' );
-		$out .= Html::closeElement( 'tr' );
-
-		$out .= Html::closeElement( 'table' );
-		$out .= Html::closeElement( 'fieldset' );
 		/* Since these pages are in the tabgroup with Special:Translate,
 		 * it makes sense to retain the selected group/language parameter
 		 * on post requests even when not relevant to the current page. */
 		$val = $this->getRequest()->getVal( 'language' );
 		if ( $val !== null ) {
-			$out .= Html::hidden( 'language', $val );
+			$htmlForm->addHiddenField( 'language', $val );
 		}
-		$out .= Html::closeElement( 'form' );
-		$out .= Html::closeElement( 'div' );
 
-		return $out;
+		$htmlForm
+			->addHiddenField( 'title', $this->getPageTitle()->getPrefixedText() )
+			->addHiddenField( 'x', 'D' ) // To detect submission
+			->setMethod( 'get' )
+			->setSubmitTextMsg( 'translate-mgs-submit' )
+			->setWrapperLegendMsg( 'translate-mgs-fieldset' )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
@@ -308,21 +292,20 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	} // @codingStandardsIgnoreEnd
 
 	/**
-	 * Creates a simple message group selector.
+	 * Creates a simple message group options.
 	 *
-	 * @param string|bool $default Group id of the group chosen by default. Optional.
-	 * @return XmlSelect
+	 * @return array $options
 	 */
-	protected function getGroupSelector( $default = false ) {
+	protected function getGroupOptions() {
+		$options = [];
 		$groups = MessageGroups::getAllGroups();
-		$selector = new XmlSelect( 'group', 'group', $default );
 
 		foreach ( $groups as $id => $class ) {
 			if ( MessageGroups::getGroup( $id )->exists() ) {
-				$selector->addOption( $class->getLabel(), $id );
+				$options[$class->getLabel()] = $id;
 			}
 		}
 
-		return $selector;
+		return $options;
 	}
 }
