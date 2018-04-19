@@ -77,7 +77,7 @@ class SpecialExportTranslations extends SpecialPage {
 				'default' => $this->format,
 			],
 		];
-		$form = HTMLForm::factory( 'table', $fields, $this->getContext() );
+		$form = HTMLForm::factory( 'ooui', $fields, $this->getContext() );
 		$form
 			->setMethod( 'get' )
 			->setWrapperLegendMsg( 'translate-page-settings-legend' )
