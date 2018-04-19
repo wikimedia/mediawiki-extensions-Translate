@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "64f0b1a4_b5aeada2",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4864
+      },
+      "writtenOn": "2018-04-19T16:28:11Z",
+      "side": 1,
+      "message": "According to class HTMLFormField, label-message output format is -\u003eparse() whereas here the output format is -\u003etext(). I can change this if you feels good :)",
+      "parentUuid": "9d84c9d7_6558e679",
+      "revId": "c8572c1ae8e5fd636c9bca598382fb9eb976471c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "062b3d85_2ddd182d",
         "filename": "specials/SpecialMessageGroupStats.php",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2018-04-19T12:42:15Z",
       "side": 1,
       "message": "Is this needed?",
+      "revId": "c8572c1ae8e5fd636c9bca598382fb9eb976471c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d69f7208_3975ae96",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4864
+      },
+      "writtenOn": "2018-04-19T16:28:11Z",
+      "side": 1,
+      "message": "I think not, I define it here because in getGroupSelector function $default value is false. For Now I remove it.",
+      "parentUuid": "062b3d85_2ddd182d",
       "revId": "c8572c1ae8e5fd636c9bca598382fb9eb976471c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
