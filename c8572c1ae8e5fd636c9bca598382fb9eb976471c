@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d84c9d7_6558e679",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-04-19T12:42:15Z",
+      "side": 1,
+      "message": "Why not use label-message (also below)?",
+      "revId": "c8572c1ae8e5fd636c9bca598382fb9eb976471c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "062b3d85_2ddd182d",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-04-19T12:42:15Z",
+      "side": 1,
+      "message": "Is this needed?",
+      "revId": "c8572c1ae8e5fd636c9bca598382fb9eb976471c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d62a3d3e_500e1a59",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-04-19T12:42:15Z",
+      "side": 1,
+      "message": "This is not needed, the default behavior handles it, doesn\u0027t it?",
+      "revId": "c8572c1ae8e5fd636c9bca598382fb9eb976471c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16870652_0ee07ab5",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-04-19T12:42:15Z",
+      "side": 1,
+      "message": "Why not use setSubmitTextMsg?",
+      "revId": "c8572c1ae8e5fd636c9bca598382fb9eb976471c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2a5dc77_8006afd7",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-04-19T12:42:15Z",
+      "side": 1,
+      "message": "Why not use setWrapperLegendMsg?",
+      "revId": "c8572c1ae8e5fd636c9bca598382fb9eb976471c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83c89f4e_20870a42",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-04-19T12:42:15Z",
+      "side": 1,
+      "message": "options.",
+      "revId": "c8572c1ae8e5fd636c9bca598382fb9eb976471c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c887ab97_6d906ee9",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-04-19T12:42:15Z",
+      "side": 1,
+      "message": "array",
+      "revId": "c8572c1ae8e5fd636c9bca598382fb9eb976471c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
