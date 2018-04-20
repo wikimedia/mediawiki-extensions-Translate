@@ -517,11 +517,11 @@ GROOVY;
 	}
 
 	protected function getShardCount() {
-		return isset( $this->config['shards'] ) ? $this->config['shards'] : 5;
+		return isset( $this->config['shards'] ) ? $this->config['shards'] : 1;
 	}
 
 	protected function getReplicaCount() {
-		return isset( $this->config['replicas'] ) ? $this->config['replicas'] : 0;
+		return isset( $this->config['replicas'] ) ? $this->config['replicas'] : 2;
 	}
 
 	/**
