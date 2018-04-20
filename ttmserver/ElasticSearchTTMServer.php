@@ -341,34 +341,38 @@ GROOVY;
 	 * @param bool $rebuild Deletes index first if already exists
 	 */
 	public function createIndex( $rebuild ) {
-		$type = $this->getType();
-		$type->getIndex()->create(
-			[
-				'number_of_shards' => $this->getShardCount(),
-				'number_of_replicas' => $this->getReplicaCount(),
-				'analysis' => [
-					'filter' => [
-						'prefix_filter' => [
-							'type' => 'edge_ngram',
-							'min_gram' => 2,
-							'max_gram' => 20
-						]
+		$indexSettings = [
+			'number_of_shards' => $this->getShardCount(),
+			'analysis' => [
+				'filter' => [
+					'prefix_filter' => [
+						'type' => 'edge_ngram',
+						'min_gram' => 2,
+						'max_gram' => 20
+					]
+				],
+				'analyzer' => [
+					'prefix' => [
+						'type' => 'custom',
+						'tokenizer' => 'standard',
+						'filter' => [ 'standard', 'lowercase', 'prefix_filter' ]
 					],
-					'analyzer' => [
-						'prefix' => [
-							'type' => 'custom',
-							'tokenizer' => 'standard',
-							'filter' => [ 'standard', 'lowercase', 'prefix_filter' ]
-						],
-						'casesensitive' => [
-							'tokenizer' => 'standard',
-							'filter' => [ 'standard' ]
-						]
+					'casesensitive' => [
+						'tokenizer' => 'standard',
+						'filter' => [ 'standard' ]
 					]
 				]
-			],
-			$rebuild
-		);
+			]
+		];
+		$replicas = $this->getReplicaCount();
+		if ( strpos( $replicas, '-' ) === false ) {
+			$indexSettings['number_of_replicas'] = $replicas;
+		} else {
+			$indexSettings['auto_expand_replicas'] = $replicas;
+		}
+
+		$type = $this->getType();
+		$type->getIndex()->create( $indexSettings, $rebuild );
 	}
 
 	public function beginBootstrap() {
@@ -517,11 +521,11 @@ GROOVY;
 	}
 
 	protected function getShardCount() {
-		return isset( $this->config['shards'] ) ? $this->config['shards'] : 5;
+		return isset( $this->config['shards'] ) ? $this->config['shards'] : 1;
 	}
 
 	protected function getReplicaCount() {
-		return isset( $this->config['replicas'] ) ? $this->config['replicas'] : 0;
+		return isset( $this->config['replicas'] ) ? $this->config['replicas'] : '0-2';
 	}
 
 	/**
