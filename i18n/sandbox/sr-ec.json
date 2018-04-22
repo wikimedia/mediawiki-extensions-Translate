@@ -5,7 +5,12 @@
 			"Obsuser"
 		]
 	},
+	"tsb-all-languages-button-label": "Сви језици",
+	"tsb-accept-button-label": "Прихвати",
+	"tsb-reject-button-label": "Одбиј",
 	"tsb-accept-all-button-label": "Прихвати све",
 	"tsb-reject-all-button-label": "Одбији све",
-	"tsb-translations-source": "Извор"
+	"tsb-translations-source": "Извор",
+	"logentry-translatorsandbox-promoted": "$1 је {{GENDER:$2|унапредио|унапредила}} $3 у {{GENDER:$4|преводиоца}}",
+	"logentry-translatorsandbox-rejected": "$1 је {{GENDER:$2|одбио|одбила}} захтев корисника/це „$3” да постане преводилац"
 }

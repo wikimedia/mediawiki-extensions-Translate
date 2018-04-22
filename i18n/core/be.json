@@ -5,7 +5,8 @@
 			"Чаховіч Уладзіслаў",
 			"Дзяніс Тутэйшы",
 			"Mikalai Udodau",
-			"Irus"
+			"Irus",
+			"Artsiom91"
 		]
 	},
 	"translate": "Пераклад",
@@ -68,7 +69,7 @@
 	"translate-magic-cm-savefailed": "Не атрымалася запісаць",
 	"translate-magic-special": "Псеўданімы адмысловых старонак",
 	"translate-magic-words": "Магічныя словы",
-	"translate-magic-namespace": "Прасторы імёнаў",
+	"translate-magic-namespace": "Прасторы назваў",
 	"translate-magic-notsaved": "Ваша праўка не запісана!",
 	"translate-magic-errors": "Калі ласка, выправіце {{PLURAL:$1|наступную памылку|наступныя памылкі}} ў перакладзе:",
 	"translate-magic-saved": "Зробленыя праўкі паспяхова запісаны.",
@@ -81,7 +82,7 @@
 	"translate-checks-plural": "Арыгінал выкарыстоўвае <nowiki>{{PLURAL:}}</nowiki>, а пераклад — не.",
 	"translate-checks-plural-forms": "Выразу <nowiki>{{PLURAL:}}</nowiki> {{PLURAL:$1|была дадзена адна форма|былі дадзены $1 формы|былі дадзены $1 формаў}}, але {{PLURAL:$2|падтрымліваецца толькі адна форма|падтрымліваюцца $2 формы|падтрымліваюцца $2 формаў}} (акрамя формаў 0= і 1=).",
 	"translate-checks-plural-dupe": "У канцы выразу <nowiki>{{PLURAL:}}</nowiki> дзве аднолькавых формы. Замест <nowiki>{{PLURAL:$1|паліто|паліто}}</nowiki> лепш напісаць <nowiki>{{PLURAL:$1|паліто}}</nowiki>.",
-	"translate-checks-pagename": "Змянілася вызначэнне прасторы імёнаў",
+	"translate-checks-pagename": "Змянілася вызначэнне прасторы назваў",
 	"translate-checks-format": "Гэты пераклад не адпавядае вызначэнню ці ўтрымлівае сінтаксічную памылку: $1",
 	"translate-checks-parametersnotequal": "Колькасць параметраў — $1, а {{PLURAL:$2|павінен|павінна}} быць — $2.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> некарэктны.",
@@ -98,6 +99,8 @@
 	"action-translate-import": "імпарт перакладаў, зробленых у афлайне",
 	"right-translate-messagereview": "дадгляд перакладаў",
 	"right-translate-groupreview": "змяняць стан апрацоўкі груп паведамленняў",
+	"translate-rcfilters-translations": "Пераклады",
+	"translate-rcfilters-translations-only-label": "Пераклады",
 	"translate-rc-translation-filter": "Фільтраваць пераклады:",
 	"translate-rc-translation-filter-no": "Без абмежаванняў",
 	"translate-rc-translation-filter-only": "Паказаць толькі пераклады",
@@ -130,5 +133,7 @@
 	"supportedlanguages-summary": "На гэтай старонцы прыведзены спіс падтрымоўваных праектам {{SITENAME}} моў\nразам з імёнамі тых, хто тут працуе над перакладамі на гэтыя мовы.\nІмя перакладчыка адлюстроўваецца тым буйней, чым больш правак ён зрабіў.\nПа колер падкрэслення можна зразумець, наколькі даўно перакладчык апошні раз здзяйсняў тут якое-небудзь дзеянне.",
 	"supportedlanguages-count": "Усяго $1 {{PLURAL:$1|мова|мовы|моў}}.",
 	"translate-js-support": "Задаць пытанне",
-	"translate-documentation-language": "Дакументацыя паведамлення"
+	"translate-documentation-language": "Дакументацыя паведамлення",
+	"translate-searchprofile": "Пераклады",
+	"tux-editor-close-tooltip": "Закрыць"
 }
