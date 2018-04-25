@@ -153,16 +153,19 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 			$string = $this->sPrefix . $string;
 		}
 
+		$escaper = function ( $match ) {
+			return '=' . sprintf( '%02X', ord( $match[0] ) );
+		};
+
 		// Apply a "quoted-printable"-like escaping
 		$valid = self::getValidKeyChars();
-		$escapedString = preg_replace_callback( "/[^$valid]/",
-			function ( $match ) {
-				return '=' . sprintf( '%02X', ord( $match[0] ) );
-			},
-			$string
-		);
+		$string = preg_replace_callback( "/[^$valid]/", $escaper, $string );
+		// Additional limitations in MediaWiki, see MediaWikiTitleCodec::splitTitleString
+		$string = preg_replace_callback( '/(~~~|^[ _]|[ _]$|[ _]{2,}|^\:)/', $escaper, $string );
+		// TODO: length check + truncation
+		// TODO: forbid path travels
 
-		return $escapedString;
+		return $string;
 	}
 
 	/**
