@@ -44,6 +44,16 @@ class TPSection {
 	 */
 	protected $inline = false;
 
+	/**
+	 * @var int Version number for the serialization.
+	 */
+	private $version = 1;
+
+	/**
+	 * @var string[] List of properties to serialize.
+	 */
+	private static $properties = [ 'version', 'id', 'name', 'text', 'type', 'oldText', 'inline' ];
+
 	public function setIsInline( $value ) {
 		$this->inline = (bool)$value;
 	}
@@ -130,5 +140,36 @@ class TPSection {
 		}
 
 		return $vars;
+	}
+
+	/**
+	 * Serialize this object to a PHP array.
+	 * @return array
+	 * @since 2018.07
+	 */
+	public function serializeToArray() {
+		$data = [];
+		foreach ( self::$properties as $index => $property ) {
+			// Because this is used for the JobQueue, use a list
+			// instead of an array to save space.
+			$data[ $index ] = $this->$property;
+		}
+
+		return $data;
+	}
+
+	/**
+	 * Construct an object from previously serialized array.
+	 * @param array $data
+	 * @return TPSection
+	 * @since 2018.07
+	 */
+	public static function unserializeFromArray( $data ) {
+		$section = new self;
+		foreach ( self::$properties as $index => $property ) {
+			$section->$property = $data[ $index ];
+		}
+
+		return $section;
 	}
 }
