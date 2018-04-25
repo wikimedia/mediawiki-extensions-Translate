@@ -740,7 +740,10 @@ class PageTranslationHooks {
 	 */
 	public static function disableDelete( $article, $out, &$reason ) {
 		$title = $article->getTitle();
-		if ( TranslatablePage::isSourcePage( $title ) ||
+		$translatablePage = TranslatablePage::newFromTitle( $title );
+
+		if (
+			$translatablePage->getMarkedTag() !== false ||
 			TranslatablePage::isTranslationPage( $title )
 		) {
 			$new = SpecialPage::getTitleFor(
