@@ -82,6 +82,10 @@ class StringMatcherTest extends MediaWikiTestCase {
 			[ 'key=2A', 'string with fake escaping' ],
 			[ 'abcdefgh', 'string with fake escaping' ],
 			[ 'общегосударственные', 'Unicode string' ],
+			[ ' la la land ', 'string starting or ending with spaces' ],
+			[ 'one  two__three _four', 'multiple spaces consisting of spaces or underscors' ],
+			[ 'Signed by ~~~', 'Magic tilde expansion' ],
+			[ ':iam', 'string starting with a colon' ],
 		];
 
 		// Add tests for ranges of exotic ASCII characters
