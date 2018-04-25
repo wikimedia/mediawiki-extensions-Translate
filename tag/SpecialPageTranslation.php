@@ -869,7 +869,7 @@ class SpecialPageTranslation extends SpecialPage {
 			$changed[] = $s->name;
 
 			if ( $this->getRequest()->getCheck( "tpt-sect-{$s->id}-action-nofuzzy" ) ) {
-				// This will be checked by TranslationsUpdateJob::getTranslationUnitJobs()
+				// TranslationsUpdateJob will only fuzzy when type is changed
 				$s->type = 'old';
 			}
 
@@ -893,10 +893,7 @@ class SpecialPageTranslation extends SpecialPage {
 		$page->addMarkedTag( $newrevision );
 		MessageGroups::singleton()->recache();
 
-		$job = new TranslationsUpdateJob(
-			$page->getTitle(),
-			[ 'sections' => $sections ]
-		);
+		$job = TranslationsUpdateJob::newFromPage( $page, $sections );
 		JobQueueGroup::singleton()->push( $job );
 
 		// Logging
