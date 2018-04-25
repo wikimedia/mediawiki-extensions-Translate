@@ -49,12 +49,14 @@ class TranslatablePageMoveJob extends Job {
 	public function run() {
 		$sourceTitle = Title::newFromText( $this->params['source'] );
 		$targetTitle = Title::newFromText( $this->params['target'] );
+		$sourcePage = TranslatablePage::newFromTitle( $sourceTitle );
+		$targetPage = TranslatablePage::newFromTitle( $targetTitle );
 
 		$this->doMoves();
 
 		$this->moveMetadata(
-			TranslatablePage::newFromTitle( $sourceTitle )->getMessageGroupId(),
-			TranslatablePage::newFromTitle( $targetTitle )->getMessageGroupId()
+			$sourcePage->getMessageGroupId(),
+			$targetPage->getMessageGroupId()
 		);
 
 		$entry = new ManualLogEntry( 'pagetranslation', 'moveok' );
@@ -70,7 +72,7 @@ class TranslatablePageMoveJob extends Job {
 		// runs in deferred updates, it will not run MessageIndexRebuildJob (T175834).
 		MessageIndex::singleton()->rebuild();
 
-		$job = new TranslationsUpdateJob( $targetTitle, [ 'sections' => [] ] );
+		$job = TranslationsUpdateJob::newFromPage( $targetPage );
 		JobQueueGroup::singleton()->push( $job );
 
 		return true;
