@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c88af89f_29e36dbf",
+        "filename": "specials/SpecialMessageGroupStats.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-04-25T14:51:05Z",
+      "side": 1,
+      "message": "This is also not needed, HtmlForm should take care of this. I am getting URLs like \"Special:MessageGroupStats?group\u003dmwgithub-purge\u0026suppresscomplete\u003d1\u0026suppressempty\u003d1\u0026title\u003dSpecial%3AMessageGroupStats\u0026x\u003dD\" because of this.",
+      "revId": "9858ec2c26fccab36df2d364e0bb382e43de1225",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
