@@ -189,6 +189,24 @@
       "revId": "42ef0aeba1c2657c130bb87cceecef92c587c688",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bb981e65_f0226f21",
+        "filename": "tests/phpunit/SpecialPagesTest.php",
+        "patchSetId": 29
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-04-26T14:58:02Z",
+      "side": 1,
+      "message": "They are registered conditionally on $wgTranslateEnablePageTranslation (which defaults to true).\n\nIf I am not mistaken, conditional registration is discouraged in favor of isHidden method in the page itself.",
+      "parentUuid": "7c164480_29096cb2",
+      "revId": "42ef0aeba1c2657c130bb87cceecef92c587c688",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
