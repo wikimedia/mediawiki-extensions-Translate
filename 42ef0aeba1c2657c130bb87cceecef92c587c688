@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "6aef3f1a_ddd0b04d",
+        "filename": "extension.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-04-26T14:25:28Z",
+      "side": 1,
+      "message": "Uuu inline tab",
+      "revId": "42ef0aeba1c2657c130bb87cceecef92c587c688",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f3454741_8d2be757",
         "filename": "extension.json",
         "patchSetId": 29
