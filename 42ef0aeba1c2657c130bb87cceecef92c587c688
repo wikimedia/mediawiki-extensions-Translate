@@ -116,6 +116,30 @@
     },
     {
       "key": {
+        "uuid": "485bc740_7abd2de0",
+        "filename": "extension.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 1235,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2018-04-26T14:55:30Z",
+      "side": 1,
+      "message": "Yeah, extension.schema.v2.json seems to be introduced with 1.29",
+      "parentUuid": "f29eef15_3c9df210",
+      "range": {
+        "startLine": 1235,
+        "startChar": 21,
+        "endLine": 1235,
+        "endChar": 22
+      },
+      "revId": "42ef0aeba1c2657c130bb87cceecef92c587c688",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d5f28bc1_6a710888",
         "filename": "tests/phpunit/SpecialPagesTest.php",
         "patchSetId": 29
@@ -144,6 +168,24 @@
       "writtenOn": "2018-03-14T08:52:37Z",
       "side": 1,
       "message": "PageMigration, PageTranslation (+move and delete) and PagePreparation not included?",
+      "revId": "42ef0aeba1c2657c130bb87cceecef92c587c688",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7c164480_29096cb2",
+        "filename": "tests/phpunit/SpecialPagesTest.php",
+        "patchSetId": 29
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2018-04-26T14:55:30Z",
+      "side": 1,
+      "message": "They\u0027re not in SpecialPages in the Json... And they\u0027re not in the Translate.php $wgSpecialPages either... So how would they have ended up here?",
+      "parentUuid": "d3a5010d_27252153",
       "revId": "42ef0aeba1c2657c130bb87cceecef92c587c688",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
