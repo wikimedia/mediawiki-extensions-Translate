@@ -282,7 +282,7 @@
 	"translate-workflow-state-": "(непостављен)",
 	"translate-workflowstatus": "Статус: $1",
 	"translate-workflow-set-doing": "Постављам…",
-	"translate-workflow-autocreated-summary": "Аутоматско стварање странице за радно стање $1",
+	"translate-workflow-autocreated-summary": "Аутоматско прављење странице за радно стање $1",
 	"translate-stats-workflow": "Стање",
 	"translate-workflowgroup-label": "Радна стања",
 	"translate-workflowgroup-desc": "Ова група порука приказује радно стање превода.\nСтања су одређена с променљивом $wgTranslateWorkflowStates.",
