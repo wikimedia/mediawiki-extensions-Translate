@@ -415,5 +415,6 @@
 	"translate-ulsdep-title": "Page title",
 	"translate-ulsdep-body": "Error message in page body",
 	"tux-session-expired": "Warning shown to the user in a popup when translation could not be saved because the session is expired.",
-	"tux-nojs": "An error shown in Special:Translate."
+	"tux-nojs": "An error shown in Special:Translate.",
+	"translate-groupwatchlistanontext": "Shown when user tries to access their message group watchlist before logging in"
 }
