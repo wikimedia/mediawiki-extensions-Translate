@@ -322,6 +322,8 @@
 	"translate-msggroupselector-projects": "Title text for the message group breadcrumb.\n{{Identical|Message group}}",
 	"translate-msggroupselector-search-placeholder": "Place holder text for the search box in message group selector. It's supposed to tell the user that the box is for a search for a name of a group.",
 	"translate-msggroupselector-search-all": "Label to display all projects.\n{{Identical|All}}",
+	"translate-msggroupselector-watch": "Label to add a message group to the message group watchlist.",
+	"translate-msggroupselector-unwatch": "Label to remove a message group from the message group watchlist.",
 	"translate-msggroupselector-search-recent": "A tab label in the message group selector that shows groups that were recently translated by the user.\n{{Identical|Recent}}",
 	"translate-msggroupselector-view-subprojects": "Label indicating that the current message group contains other groups. Parameters:\n* $1 is number of sub groups",
 	"tux-languageselector": "Label for language selector in [[Special:Translate]].\n{{Identical|Translate}}",
@@ -415,5 +417,8 @@
 	"translate-ulsdep-title": "Page title",
 	"translate-ulsdep-body": "Error message in page body",
 	"tux-session-expired": "Warning shown to the user in a popup when translation could not be saved because the session is expired.",
-	"tux-nojs": "An error shown in Special:Translate."
+	"tux-nojs": "An error shown in Special:Translate.",
+	"translate-groupwatchlistanontext": "Shown when user tries to access their message group watchlist before logging in",
+	"translate-groupwatcherror": "Shown when there is an error in adding a message group to the watchlist",
+	"translate-groupunwatcherror": "Shown when there is an error in removing a message group of the watchlist"
 }
