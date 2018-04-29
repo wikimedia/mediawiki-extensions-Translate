@@ -1,0 +1,44 @@
+@import 'mediawiki.mixins.rotation';
+
+/* Watch/Unwatch Icon Styling */
+.tux-breadcrumb {
+	#tux-unwatch,
+	#tux-watch {
+		margin: 0;
+		padding: 0;
+		display: block;
+		width: 25px;
+		/* This hides the text but shows the background image */
+		padding-top: 1.15em;
+		height: 0;
+		overflow: hidden;
+		background-position: 5px 60%;
+		background-repeat: no-repeat;
+	}
+	#tux-unwatch {
+		background-image: url( ../images/unwatch-icon.svg );
+		&:hover,
+		&:focus {
+			background-image: url( ../images/unwatch-icon-hl.svg );
+		}
+	}
+	#tux-watch {
+		background-image: url( ../images/watch-icon.svg );
+		&:hover,
+		&:focus {
+			background-image: url( ../images/watch-icon-hl.svg );
+		}
+	}
+	#tux-unwatch.star-loading,
+	#tux-watch.star-loading {
+		background-image: url( ../images/watch-icon-loading.svg );
+		.rotation( 700ms );
+		/* Suppress the hilarious rotating focus outline on Firefox */
+		outline: 0;
+		cursor: default;
+		pointer-events: none;
+		background-position: 50% 60%;
+		-webkit-transform-origin: 50% 57%;
+		transform-origin: 50% 57%;
+	}
+}
