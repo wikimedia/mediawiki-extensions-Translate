@@ -183,10 +183,12 @@ $al['YamlFFS'] = "$dir/ffs/YamlFFS.php";
  */
 $al['ApiAggregateGroups'] = "$dir/api/ApiAggregateGroups.php";
 $al['ApiGroupReview'] = "$dir/api/ApiGroupReview.php";
+$al['ApiGroupWatch'] = "$dir/api/ApiGroupWatch.php";
 $al['ApiQueryLanguageStats'] = "$dir/api/ApiQueryLanguageStats.php";
 $al['ApiQueryMessageCollection'] = "$dir/api/ApiQueryMessageCollection.php";
 $al['ApiQueryMessageGroupStats'] = "$dir/api/ApiQueryMessageGroupStats.php";
 $al['ApiQueryMessageGroups'] = "$dir/api/ApiQueryMessageGroups.php";
+$al['ApiQueryMessageGroupsWatchlist'] = "$dir/api/ApiQueryMessageGroupsWatchlist.php";
 $al['ApiQueryMessageTranslations'] = "$dir/api/ApiQueryMessageTranslations.php";
 $al['ApiStatsQuery'] = "$dir/api/ApiStatsQuery.php";
 $al['ApiTTMServer'] = "$dir/api/ApiTTMServer.php";
