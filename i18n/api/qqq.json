@@ -23,6 +23,11 @@
 	"apihelp-groupreview-param-language": "{{doc-apihelp-param|groupreview|language}}\n{{Identical|Language code}}",
 	"apihelp-groupreview-param-state": "{{doc-apihelp-param|groupreview|state}}",
 	"apihelp-groupreview-example-1": "{{doc-apihelp-example|groupreview}}",
+	"apihelp-groupwatch-summary": "{{doc-apihelp-summary|groupwatch}}",
+	"apihelp-groupwatch-param-unwatch": "{{doc-apihelp-param|groupwatch|unwatch}}",
+	"apihelp-groupwatch-param-messagegroup": "{{doc-apihelp-param|groupwatch|messagegroup}}",
+	"apihelp-groupwatch-example-1": "{{doc-apihelp-example|groupwatch}}",
+	"apihelp-groupwatch-example-2": "{{doc-apihelp-example|groupwatch}}",
 	"apihelp-query+languagestats-description": "{{doc-apihelp-description|query+languagestats}}",
 	"apihelp-query+languagestats-summary": "{{doc-apihelp-summary|query+languagestats}}",
 	"apihelp-query+languagestats-param-timelimit": "{{doc-apihelp-param|query+languagestats|timelimit}}",
@@ -50,6 +55,8 @@
 	"apihelp-query+messagegroups-param-prop": "{{doc-apihelp-param|query+messagegroups|prop}}\nSee the [[mw:Help:Extension:Translate/Message group states|description of ''states'']].",
 	"apihelp-query+messagegroups-param-root": "{{doc-apihelp-param|query+messagegroups|root}}",
 	"apihelp-query+messagegroups-example-1": "{{doc-apihelp-example|query+messagegroups}}",
+	"apihelp-query+messagegroupswatchlist-summary": "{{doc-apihelp-summary|query+messagegroupswatchlist}}",
+	"apihelp-query+messagegroupswatchlist-example-1": "{{doc-apihelp-example|query+messagegroupswatchlist}}",
 	"apihelp-query+messagegroupstats-description": "{{doc-apihelp-description|query+messagegroupstats}}",
 	"apihelp-query+messagegroupstats-summary": "{{doc-apihelp-summary|query+messagegroupstats}}",
 	"apihelp-query+messagegroupstats-param-timelimit": "{{doc-apihelp-param|query+messagegroupstats|timelimit}}",
@@ -129,5 +136,7 @@
 	"apierror-translate-sandbox-invalidparam": "{{doc-apierror}}\n\nParameters:\n* $1 - Exception message, probably in English",
 	"apierror-translate-sandbox-invalidppassword": "{{doc-apierror}}",
 	"apierror-translate-unknownmessage": "{{doc-apierror}}",
+	"apierror-groupwatch-disabled": "{{doc-apierror}}",
+	"apierror-query+messagegroupswatchlist-disabled": "{{doc-apierror}}",
 	"apiwarn-translate-alreadyreviewedbyyou": "{{doc-apierror}}"
 }
