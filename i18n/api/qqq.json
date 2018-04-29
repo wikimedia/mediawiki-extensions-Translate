@@ -23,6 +23,8 @@
 	"apihelp-groupreview-param-language": "{{doc-apihelp-param|groupreview|language}}\n{{Identical|Language code}}",
 	"apihelp-groupreview-param-state": "{{doc-apihelp-param|groupreview|state}}",
 	"apihelp-groupreview-example-1": "{{doc-apihelp-example|groupreview}}",
+	"apihelp-groupwatch-example-watch": "{{doc-apihelp-example|groupwatch}}",
+	"apihelp-groupwatch-example-unwatch": "{{doc-apihelp-example|groupwatch}}",
 	"apihelp-query+languagestats-description": "{{doc-apihelp-description|query+languagestats}}",
 	"apihelp-query+languagestats-summary": "{{doc-apihelp-summary|query+languagestats}}",
 	"apihelp-query+languagestats-param-timelimit": "{{doc-apihelp-param|query+languagestats|timelimit}}",

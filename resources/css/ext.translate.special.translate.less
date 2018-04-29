@@ -1,0 +1,47 @@
+@import 'mediawiki.mixins';
+@import 'mediawiki.mixins.rotation';
+
+/* Watch/Unwatch Icon Styling */
+.tux-breadcrumb {
+	#tux-unwatch,
+	#tux-watch {
+		margin: 0;
+		padding: 0;
+		display: block;
+		width: 25px;
+		/* This hides the text but shows the background image */
+		padding-top: 1.15em;
+		/* Only applied in IE6 */
+		_margin-top: -0.8em;
+		height: 0;
+		overflow: hidden;
+		background-position: 5px 60%;
+		background-repeat: no-repeat;
+	}
+	#tux-unwatch {
+		.background-image-svg( '../images/unwatch-icon.svg', '../images/unwatch-icon.png' );
+		&:hover,
+		&:focus {
+			.background-image-svg( '../images/unwatch-icon-hl.svg', '../images/unwatch-icon-hl.png' );
+		}
+	}
+	#tux-watch {
+		.background-image-svg( '../images/watch-icon.svg', '../images/watch-icon.png' );
+		&:hover,
+		&:focus {
+			.background-image-svg( '../images/watch-icon-hl.svg', '../images/watch-icon-hl.png' );
+		}
+	}
+	#tux-unwatch.loading,
+	#tux-watch.loading {
+		.background-image-svg( '../images/watch-icon-loading.svg', '../images/watch-icon-loading.png' );
+		.rotation( 700ms );
+		/* Suppress the hilarious rotating focus outline on Firefox */
+		outline: 0;
+		cursor: default;
+		pointer-events: none;
+		background-position: 50% 60%;
+		-webkit-transform-origin: 50% 57%;
+		transform-origin: 50% 57%;
+	}
+}
