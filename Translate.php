@@ -91,6 +91,7 @@ $wgAPIMetaModules['messagegroupstats'] = 'ApiQueryMessageGroupStats';
 $wgAPIMetaModules['messagetranslations'] = 'ApiQueryMessageTranslations';
 $wgAPIModules['aggregategroups'] = 'ApiAggregateGroups';
 $wgAPIModules['groupreview'] = 'ApiGroupReview';
+$wgAPIModules['groupwatch'] = 'ApiGroupWatch';
 $wgAPIModules['translatesandbox'] = 'ApiTranslateSandbox';
 $wgAPIModules['translationaids'] = 'ApiTranslationAids';
 $wgAPIModules['translationreview'] = 'ApiTranslationReview';

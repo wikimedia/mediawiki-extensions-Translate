@@ -243,7 +243,7 @@
 	}
 
 	$( function () {
-		var $translateContainer, $hideTranslatedButton, $messageList,
+		var $translateContainer, $hideTranslatedButton, $messageList, $watchTrigger,
 			filter, uri, position, offset, limit;
 
 		$messageList = $( '.tux-messagelist' );
@@ -299,11 +299,46 @@
 				at: 'right+80 bottom+5'
 			};
 		}
-		$( '.tux-breadcrumb__item--aggregate' ).msggroupselector( {
+		$( '.tux-breadcrumb__item--aggregate' ).msggroupselector( { // TODO add button, see watchlist js file
 			onSelect: mw.translate.changeGroup,
 			language: state.language,
 			position: position,
 			recent: mw.translate.recentGroups.get()
+		} );
+
+		$watchTrigger = $( '.tux-breadcrumb__item--watch' );
+		$watchTrigger.on( 'click', function () {
+
+			var api = new mw.Api(),
+				params = {
+					action: 'groupwatch',
+					messagegroup: $( '.grouptitle' ).eq( -2 ).data( 'msggroupid' )
+				},
+				afterAction = 'unwatch',
+				afterTitle = mw.message( 'translate-msggroupselector-unwatch' ).text(),
+				errorMsg = mw.message( 'translate-groupwatcherror' ).text();
+
+			$watchTrigger.addClass( 'loading' );
+
+			if ( $watchTrigger.data( 'action' ) === 'unwatch' ) {
+				params.unwatch = 1;
+				afterAction = 'watch';
+				afterTitle = mw.message( 'translate-msggroupselector-watch' ).text();
+				errorMsg = mw.message( 'translate-groupunwatcherror' ).text();
+			}
+
+			api.postWithToken( 'watch', params ).done( function () {
+				$watchTrigger.data( 'action', afterAction );
+				$watchTrigger.prop( 'title', afterTitle );
+				$watchTrigger.removeClass( 'loading' );
+				$watchTrigger.prop( 'id', 'tux-' + afterAction );
+			} ).fail( function () {
+				// Report to user about the error
+				mw.notify( errorMsg, {
+					tag: 'watch-self',
+					type: 'error'
+				} );
+			} );
 		} );
 
 		updateGroupInformation( state );
