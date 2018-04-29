@@ -359,6 +359,7 @@ class SpecialTranslate extends SpecialPage {
 				],
 				$group->getLabel()
 			) .
+            // TODO star
 			Html::closeElement( 'div' );
 
 		return $output;

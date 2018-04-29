@@ -299,7 +299,7 @@
 				at: 'right+80 bottom+5'
 			};
 		}
-		$( '.tux-breadcrumb__item--aggregate' ).msggroupselector( {
+		$( '.tux-breadcrumb__item--aggregate' ).msggroupselector( { // TODO all button, see watchlist js file
 			onSelect: mw.translate.changeGroup,
 			language: state.language,
 			position: position,
