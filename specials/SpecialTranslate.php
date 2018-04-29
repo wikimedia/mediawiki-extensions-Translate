@@ -332,11 +332,37 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function tuxGroupSelector() {
+		global $wgTranslateEnableMessageGroupWatchlist;
+
 		$group = MessageGroups::getGroup( $this->options['group'] );
 
 		$groupClass = [ 'grouptitle', 'grouplink' ];
 		if ( $group instanceof AggregateMessageGroup ) {
 			$groupClass[] = 'tux-breadcrumb__item--aggregate';
+		}
+
+		if ( $wgTranslateEnableMessageGroupWatchlist === true ) {
+			if ( $this->checkWatch() === false ) {
+				$watchLabel = 'translate-msggroupselector-watch';
+				$watchAction = 'watch';
+			} else {
+				$watchLabel = 'translate-msggroupselector-unwatch';
+				$watchAction = 'unwatch';
+			}
+
+			$watchElement = Html::openElement( 'span', [
+					'class' => 'grouptitle',
+				] ) .
+				Html::element( 'a',
+				[
+					'class' => 'tux-breadcrumb__item--watch',
+					'id' => 'tux-' . $watchAction,
+					'title' => $this->msg( $watchLabel )->text(),
+					'data-action' => $watchAction,
+				] ).
+				Html::closeElement( 'span' );
+		} else {
+			$watchElement = '';
 		}
 
 		// @todo FIXME The selector should have expanded parent-child lists
@@ -359,9 +385,27 @@ class SpecialTranslate extends SpecialPage {
 				],
 				$group->getLabel()
 			) .
+			$watchElement .
 			Html::closeElement( 'div' );
 
 		return $output;
+	}
+
+	protected function checkWatch() {
+		$dbr = wfGetDB( DB_REPLICA );
+		$table = 'translate_groupwatchlist';
+
+		if ( !$dbr->tableExists( $table, __METHOD__ ) ) {
+			return false;
+		}
+
+		$field = 'tgw_id';
+		$conds = [
+			'tgw_user' => $this->getUser()->getId(),
+			'tgw_group' => MessageGroups::getGroup( $this->options['group'] )->getId()
+		];
+
+		return $dbr->selectField( $table, $field, $conds, __METHOD__ );
 	}
 
 	protected function tuxLanguageSelector() {
