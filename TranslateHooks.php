@@ -424,6 +424,13 @@ class TranslateHooks {
 			"$dir/translate_stash.sql",
 			true
 		] );
+
+		$updater->addExtensionUpdate( [
+			'addTable',
+			'translate_groupwatchlist',
+			"$dir/translate_groupwatchlist.sql",
+			true
+		] );
 	}
 
 	/**
