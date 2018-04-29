@@ -290,6 +290,8 @@
 	"translate-msggroupselector-projects": "קבוצות הודעות",
 	"translate-msggroupselector-search-placeholder": "חיפוש קבוצה",
 	"translate-msggroupselector-search-all": "הכול",
+	"translate-msggroupselector-watch": "לעקוב",
+	"translate-msggroupselector-unwatch": "להפסיק לעקוב",
 	"translate-msggroupselector-search-recent": "אחרונות",
 	"translate-msggroupselector-view-subprojects": "הצגת {{PLURAL:$1|תת־מיזם אחד|$1 תת־מיזמים}}",
 	"tux-languageselector": "שפה היעד לתרגום:",
