@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "233ee509_26a6d0d6",
+        "filename": "specials/SpecialSupportedLanguages.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-04-30T13:13:43Z",
+      "side": 1,
+      "message": "Something fishy here, I get: Table must be a string or Subquery\n#0 /www/dev.translatewiki.net/docroot/w/includes/libs/rdbms/database/Database.php(2517): Wikimedia\\Rdbms\\Database-\u003etableNameWithAlias(array, array)\n#1 /www/dev.translatewiki.net/docroot/w/includes/libs/rdbms/database/Database.php(1688): Wikimedia\\Rdbms\\Database-\u003etableNamesWithIndexClauseOrJOIN(array, array, array, array)\n#2 /www/dev.translatewiki.net/docroot/w/includes/libs/rdbms/database/Database.php(1648): Wikimedia\\Rdbms\\Database-\u003eselectSQLText(array, array, array, string, array, array)\n#3 /www/dev.translatewiki.net/docroot/w/includes/libs/rdbms/database/Database.php(1741): Wikimedia\\Rdbms\\Database-\u003eselect(array, array, array, string, array, array)\n#4 /www/dev.translatewiki.net/docroot/w/extensions/Translate/specials/SpecialSupportedLanguages.php(422): Wikimedia\\Rdbms\\Database-\u003eselectRow(array, array, array, string, array, array)",
+      "revId": "26f88b342d23501af6ffd88e7128cce9c2e34e40",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
