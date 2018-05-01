@@ -95,5 +95,8 @@
 	"tux-editor-message-desc-more": "Montrez pluse",
 	"tux-editor-message-desc-less": "Montrez mine",
 	"tux-editor-clear-translated": "Celar facita tradukuri",
-	"tux-editor-message-tools-translations": "Omna tradukuri"
+	"tux-empty-list-other-action": "Revizar tradukuri",
+	"tux-editor-message-tools-show-editor": "Montrar en la redakto-buxo dil Wiki",
+	"tux-editor-message-tools-translations": "Omna tradukuri",
+	"tux-editor-message-tools-linktothis": "Ligilo ad ica mesajo"
 }
