@@ -135,6 +135,7 @@
 	"abusefilter-edit-builder-vars-translate-source-text": "د ژباړې يوون د سرچينې متن",
 	"translate-save": "خوندي کول ($1)",
 	"translate-jssti-add": "لړليک کې گډول",
+	"managemessagegroups": "د پیغام ګروپ مدیریت",
 	"translate-manage-import-new": "نوی پيغام $1",
 	"translate-manage-import-deleted": "ړنگ شوی پيغام $1",
 	"translate-manage-action-import": "رالېږدول",

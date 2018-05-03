@@ -37,5 +37,7 @@
 	"translate-sidebar-alltrans": "Itech occequintin tlahtoltin",
 	"translations": "Mochi tlahtōlcuepaliztli",
 	"translate-translations-none": "Ayāc tlahtōlcuepaliztli ic \"$1\"",
-	"translate-translations-fieldset-title": "Tlahtoltitlaniliztli"
+	"translate-translations-fieldset-title": "Tlahtoltitlaniliztli",
+	"tux-editor-cancel-button-label": "Moxitiniz",
+	"tux-editor-doc-editor-cancel": "Moxitiniz"
 }

@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fluence"
+			"Fluence",
+			"Akapochtli"
 		]
 	},
-	"translate-tag-translate-link-desc": "Tictlahtōlcuepāz inīn zāzanilli"
+	"translate-tag-translate-link-desc": "Tictlahtōlcuepāz inīn zāzanilli",
+	"tpt-aggregategroup-update-cancel": "Moxitiniz"
 }
