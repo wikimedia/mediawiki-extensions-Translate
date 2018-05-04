@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Essentially random collection of helper functions, similar to GlobalFunctions.php.
  */
@@ -436,6 +438,7 @@ class TranslateUtils {
 	 *  slave otherwise
 	 */
 	public static function getSafeReadDB() {
+		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
 		// Parsing APIs need POST for payloads but are read-only, so avoid spamming
 		// the master then. No good way to check this at the moment...
 		if ( PageTranslationHooks::$renderingContext ) {
@@ -444,11 +447,11 @@ class TranslateUtils {
 			$index = (
 				PHP_SAPI === 'cli' ||
 				RequestContext::getMain()->getRequest()->wasPosted() ||
-				wfGetLB()->hasOrMadeRecentMasterChanges()
+				$lb->hasOrMadeRecentMasterChanges()
 			) ? DB_MASTER : DB_REPLICA;
 		}
 
-		return wfGetDB( $index );
+		return $lb->getConnection( $index );
 	}
 
 	/**

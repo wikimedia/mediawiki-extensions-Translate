@@ -9,6 +9,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
@@ -500,7 +501,8 @@ class MessageGroupStats {
 			return;
 		}
 
-		$dbw = wfGetLB()->getLazyConnectionRef( DB_MASTER ); // avoid connecting yet
+		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
+		$dbw = $lb->getLazyConnectionRef( DB_MASTER ); // avoid connecting yet
 		$table = self::TABLE;
 		$updates = &self::$updates;
 
