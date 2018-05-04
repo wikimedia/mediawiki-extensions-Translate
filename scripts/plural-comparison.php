@@ -128,17 +128,13 @@ class PluralCompare extends Maintenance {
 	}
 
 	public function loadCLDR() {
-		// @codingStandardsIgnoreStart Ignore MediaWiki.NamingConventions.ValidGlobalName.wgPrefix
 		global $IP;
-		// @codingStandardsIgnoreEnd
 
 		return $this->loadPluralFile( "$IP/languages/data/plurals.xml" );
 	}
 
 	public function loadMediaWiki() {
-		// @codingStandardsIgnoreStart Ignore MediaWiki.NamingConventions.ValidGlobalName.wgPrefix
 		global $IP;
-		// @codingStandardsIgnoreEnd
 
 		$rules = $this->loadPluralFile( "$IP/languages/data/plurals.xml" );
 		$rulesMW = $this->loadPluralFile( "$IP/languages/data/plurals-mediawiki.xml" );

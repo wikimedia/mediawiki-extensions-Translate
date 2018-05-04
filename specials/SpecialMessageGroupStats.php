@@ -277,8 +277,6 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		return Html::rawElement( 'td', [], $link );
 	}
 
-	// @codingStandardsIgnoreStart PHP CodeSniffer warns "Useless method overriding
-	// detected", but that's not the case.
 	/**
 	 * @param string $field
 	 * @param string $filter
@@ -286,7 +284,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	 */
 	protected function getWorkflowStates( $field = 'tgr_lang', $filter = 'tgr_group' ) {
 		return parent::getWorkflowStates( $field, $filter );
-	} // @codingStandardsIgnoreEnd
+	}
 
 	/**
 	 * Creates a simple message group options.
