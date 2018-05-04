@@ -15,6 +15,11 @@
 	<rule ref="Generic.Files.LineLength">
 		<exclude-pattern>Translate\.alias\.php</exclude-pattern>
 	</rule>
+	<rule ref="MediaWiki.NamingConventions.ValidGlobalName">
+		<properties>
+			<property name="ignoreList" type="array" value="$IP" />
+		</properties>
+	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php,php5,inc"/>
 	<arg name="encoding" value="UTF-8"/>

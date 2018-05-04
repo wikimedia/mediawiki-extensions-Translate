@@ -46,13 +46,13 @@
  * @ingroup TTMServer
  */
 class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
-	// @codingStandardsIgnoreStart Ignore MediaWiki.NamingConventions.ValidGlobalName.wgPrefix
+	// phpcs:disable PSR2.Classes.PropertyDeclaration.Underscore
 	/**
 	 * Field names.
 	 *
 	 * @var array Field names
 	 */
-	protected $_fields = array();
+	protected $_fields = [];
 
 	/**
 	 * Like text.
@@ -92,10 +92,10 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	/**
 	 * Analyzer.
 	 *
-	 * @var sting Analyzer
+	 * @var string Analyzer
 	 */
 	protected $_analyzer;
-	// @codingStandardsIgnoreEnd
+	// phpcs:enable
 
 	/**
 	 * Adds field to flt query.
