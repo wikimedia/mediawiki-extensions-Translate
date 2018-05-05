@@ -8,8 +8,14 @@
 	"tpt-diff-new": "Mpkurụ edemede ohúrù",
 	"translate-tag-translate-link-desc": "Kùwáría ihüá na asụsụ ozor",
 	"tpt-languages-legend": "Asụsụ ndi ozor:",
+	"tpt-aggregategroup-save": "Dònye",
+	"tpt-aggregategroup-update": "Dònye",
+	"tpt-aggregategroup-update-cancel": "Hapụ̀",
 	"pt-movepage-list-other": "Ihü-íme-ihü nke ozor",
 	"pt-movepage-current": "Áhà nke di ùbwá:",
 	"pt-movepage-new": "Áhà ọhúrù:",
-	"pt-movepage-reason": "Mgbághapụtà:"
+	"pt-movepage-reason": "Mgbághapụtà:",
+	"pm-savepages-button-label": "Dònye",
+	"pm-cancel-button-label": "Hapụ̀",
+	"pp-cancel-button-label": "Hapụ̀"
 }
