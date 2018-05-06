@@ -10,7 +10,7 @@
 	"translate-page-language": "Ásụ̀sụ̀",
 	"translate-page-limit": "Érúrú",
 	"translate-submit": "Ga wèré",
-	"translate-page-navigation-legend": "Otú Uzọr",
+	"translate-page-navigation-legend": "Nturuụzọ̀",
 	"translate-page-showing-none": "Ozi adighi I zi.",
 	"translate-next": "Ihü sò",
 	"translate-page-edit": "mèzi",
@@ -30,7 +30,7 @@
 	"translate-statsf-count": "Güo ógólógó:",
 	"translate-statsf-count-edits": "Ogụgụ orü",
 	"translate-statsf-count-users": "Ndi na su asụsụ di ngwamme",
-	"translate-sidebar-alltrans": "Na asụsụ ozor",
+	"translate-sidebar-alltrans": "Nà asụ̀sụ̀ ndị ọ̀zọ",
 	"translate-translations-fieldset-title": "Ozi",
 	"translate-translations-messagename": "Áhà:",
 	"translate-translations-project": "Nzu:",
@@ -49,6 +49,7 @@
 	"translate-gs-total": "Òlé níle",
 	"tux-edit": "Mèzi",
 	"tux-editor-cancel-button-label": "Hapụ̀",
+	"tux-editor-in-other-languages": "Nà asụ̀sụ̀ ndị ọ̀zọ",
 	"tux-proofread-edit-label": "Mèzi",
 	"tux-editor-doc-editor-cancel": "Hapụ̀"
 }
