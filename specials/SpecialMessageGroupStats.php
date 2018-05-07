@@ -71,8 +71,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 	/// Overwritten from SpecialLanguageStats
 	protected function outputIntroduction() {
-		$group = $this->getRequest()->getVal( 'group' );
-		$priorityLangs = TranslateMetadata::get( $group, 'prioritylangs' );
+		$priorityLangs = TranslateMetadata::get( $this->target, 'prioritylangs' );
 		if ( $priorityLangs ) {
 			$this->getOutput()->addWikiMsg( 'tpt-priority-languages', $priorityLangs );
 		}
@@ -87,6 +86,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 				'id' => 'group',
 				'label' => $this->msg( 'translate-mgs-group' )->text(),
 				'options' => $this->getGroupOptions(),
+				'default' => $this->target
 			],
 			'nocomplete-check' => [
 				'type' => 'check',
