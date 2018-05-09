@@ -109,7 +109,7 @@
 	"apihelp-translationcheck-param-title": "שם הדף עם מרחב השם וקוד השפה.",
 	"apihelp-translationcheck-param-translation": "התרגום שיאומת.",
 	"apierror-translate-duplicateaggregategroup": "קבוצת ההודעות כבר קיימת",
-	"apierror-translate-fuzzymessage": "אל ניתן לסקור תרגומים שאינם מעודכנים",
+	"apierror-translate-fuzzymessage": "לא ניתן לסקור תרגומים שאינם מעודכנים",
 	"apierror-translate-groupreviewdisabled": "סקירת קבוצת ההודעות אינה בשימוש.",
 	"apierror-translate-invalidaggregategroup": "קבוצת הודעות משולבת בלתי־תקינה",
 	"apierror-translate-invalidaggregategroupname": "שם קבוצת הודעות משולבת בלתי־תקין",
