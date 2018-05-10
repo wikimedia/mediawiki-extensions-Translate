@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "455d3908_3b654bf3",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2018-05-10T18:27:09Z",
+      "side": 1,
+      "message": "Extension processor now supports \u0027defines\u0027 in the schema, so these can be moved to extension.json I think.",
+      "range": {
+        "startLine": 61,
+        "startChar": 2,
+        "endLine": 62,
+        "endChar": 9
+      },
+      "revId": "c28b3206eb2cfe7d22310252eb3c27bc6226135a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
