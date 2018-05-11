@@ -46,6 +46,30 @@
       "revId": "c28b3206eb2cfe7d22310252eb3c27bc6226135a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51641051_0201ede0",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2018-05-11T20:05:45Z",
+      "side": 1,
+      "message": "There seems to be code in ExtensionProcessor.php but it\u0027s unused AFAICT; not sure this should be the first repo to try it out: https://codesearch.wmflabs.org/search/?q\u003ddefine\u0026i\u003dnope\u0026files\u003dextension%5C.json\u0026repos\u003d",
+      "parentUuid": "663c0694_faeaf69b",
+      "range": {
+        "startLine": 61,
+        "startChar": 2,
+        "endLine": 62,
+        "endChar": 9
+      },
+      "revId": "c28b3206eb2cfe7d22310252eb3c27bc6226135a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
