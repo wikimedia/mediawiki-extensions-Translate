@@ -22,6 +22,30 @@
       "revId": "c28b3206eb2cfe7d22310252eb3c27bc6226135a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "663c0694_faeaf69b",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2018-05-11T18:52:57Z",
+      "side": 1,
+      "message": "Don\u0027t see anything in https://gerrit.wikimedia.org/r/plugins/gitiles/mediawiki/core/+/master/docs/extension.schema.v1.json or https://gerrit.wikimedia.org/r/plugins/gitiles/mediawiki/core/+/master/docs/extension.schema.v2.json",
+      "parentUuid": "455d3908_3b654bf3",
+      "range": {
+        "startLine": 61,
+        "startChar": 2,
+        "endLine": 62,
+        "endChar": 9
+      },
+      "revId": "c28b3206eb2cfe7d22310252eb3c27bc6226135a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
