@@ -56,7 +56,7 @@
 		getMessageGroup: function ( id, props ) {
 			var params, api;
 
-			if ( $.isArray( props ) ) {
+			if ( Array.isArray( props ) ) {
 				props = props.join( '|' );
 			} else if ( props === undefined ) {
 				props = 'id|label|description|icon|priority|prioritylangs|priorityforce|workflowstates';
