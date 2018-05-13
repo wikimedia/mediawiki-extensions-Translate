@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cgboeree"
+			"Cgboeree",
+			"Robin van der Vliet"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% traduida)"
+	"tpt-languages-legend": "Otra linguas:",
+	"tpt-languages-nonzero": "$1 ($2% traduida)",
+	"tpt-aggregategroup-edit-description": "Descrive:"
 }

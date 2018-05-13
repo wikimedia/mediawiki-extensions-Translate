@@ -2,8 +2,17 @@
 	"@metadata": {
 		"authors": [
 			"Cgboeree",
-			"Katxis"
+			"Katxis",
+			"Robin van der Vliet"
 		]
 	},
-	"translate-documentation-language": "Documentos de mesajes"
+	"translate-page-language": "Lingua",
+	"translate-stats-users": "Traduores",
+	"translate-sidebar-alltrans": "En otra linguas",
+	"translate-translations-project": "Projeta:",
+	"translate-language": "Lingua",
+	"translate-mgs-column-language": "Lingua",
+	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Traduor}}|Traduores}}: $1",
+	"translate-documentation-language": "Documentos de mesajes",
+	"tux-editor-in-other-languages": "En otra linguas"
 }
