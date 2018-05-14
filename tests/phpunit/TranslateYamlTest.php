@@ -7,16 +7,20 @@
  */
 
 class TranslateYamlTest extends MediaWikiTestCase {
+	protected function setUp() {
+		parent::setUp();
+
+		$this->setMwGlobals( [
+			'wgTranslateYamlLibrary' => 'phpyaml',
+		] );
+	}
+
 	/**
 	 * TODO: test other drivers too.
 	 * @requires function yaml_parse
 	 * @dataProvider provideTestLoadString
 	 */
 	public function testLoadStringPhpyaml( $input, $expected, $comment ) {
-		$this->setMwGlobals( [
-			'wgTranslateYamlLibrary' => 'phpyaml',
-		] );
-
 		$output = TranslateYaml::loadString( $input );
 		$this->assertEquals( $expected, $output, $comment );
 	}
@@ -36,5 +40,33 @@ class TranslateYamlTest extends MediaWikiTestCase {
 		];
 
 		return $tests;
+	}
+
+	/**
+	 * Tests workaround for https://bugs.php.net/bug.php?id=76309
+	 * @requires function yaml_emit
+	 */
+	public function testBug76309() {
+		$input = [
+			'a' => '2.',
+			'b' => '22222222222222222222222222222222222222222222222222222222222222.',
+			'c' => 2.0,
+			'd' => "2.0"
+		];
+
+		$expected = <<<YAML
+---
+a: "2."
+b: "22222222222222222222222222222222222222222222222222222222222222."
+c: 2.000000
+d: "2.0"
+...
+
+YAML;
+
+		$output = TranslateYaml::dump( $input );
+		$parsed = TranslateYaml::loadString( $output );
+		$this->assertEquals( $expected, $output, "Floaty strings outputted as strings" );
+		$this->assertEquals( $input, $parsed, "Floaty strings roundtrip" );
 	}
 }
