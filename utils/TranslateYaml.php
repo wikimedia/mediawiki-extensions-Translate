@@ -96,8 +96,7 @@ class TranslateYaml {
 
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'phpyaml':
-				return yaml_emit( $text, YAML_UTF8_ENCODING );
-
+				return self::phpyamlDump( $text );
 			case 'spyc':
 				return Spyc::YAMLDump( $text );
 			case 'syck':
@@ -105,6 +104,26 @@ class TranslateYaml {
 			default:
 				throw new MWException( 'Unknown Yaml library' );
 		}
+	}
+
+	protected static function phpyamlDump( $data ) {
+		if ( !is_array( $data ) ) {
+			return yaml_emit( $data, YAML_UTF8_ENCODING );
+		}
+
+		// Fix decimal-less floats strings such as "2."
+		// https://bugs.php.net/bug.php?id=76309
+		$random = MWCryptRand::generateHex( 8 );
+		$mangler = function ( &$item ) use ( $random ) {
+			if ( preg_match( '/^[0-9]+\.$/', $item ) ) {
+				$item = "$random$item$random";
+			}
+		};
+
+		array_walk_recursive( $data, $mangler );
+		$yaml = yaml_emit( $data, YAML_UTF8_ENCODING );
+		$yaml = str_replace( $random, '"', $yaml );
+		return $yaml;
 	}
 
 	protected static function syckLoad( $data ) {
