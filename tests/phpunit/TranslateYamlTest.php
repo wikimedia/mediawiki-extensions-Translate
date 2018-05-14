@@ -37,4 +37,29 @@ class TranslateYamlTest extends MediaWikiTestCase {
 
 		return $tests;
 	}
+
+	// https://bugs.php.net/bug.php?id=76309
+	public function testBug76309() {
+		$input = [
+			'a' => '2.',
+			'b' => '22222222222222222222222222222222222222222222222222222222222222.',
+			'c' => 2.0,
+			'd' => "2.0"
+		];
+
+		$expected = <<<YAML
+---
+a: "2."
+b: "22222222222222222222222222222222222222222222222222222222222222."
+c: 2.000000
+d: "2.0"
+...
+
+YAML;
+
+		$output = TranslateYaml::dump( $input );
+		$parsed = TranslateYaml::loadString( $output );
+		$this->assertEquals( $expected, $output, "Floaty strings outputted as strings" );
+		$this->assertEquals( $input, $parsed, "Floaty strings roundtrip" );
+	}
 }
