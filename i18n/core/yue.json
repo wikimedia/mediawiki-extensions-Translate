@@ -10,6 +10,7 @@
 	},
 	"translate": "翻譯",
 	"translate-desc": "翻譯MediaWiki同其它嘢嘅[[Special:Translate|特別頁]]",
+	"translate-taction-translate": "翻譯",
 	"translate-page-no-such-language": "所指定嘅語言唔正確。",
 	"translate-page-no-such-group": "所指定嘅組唔正確。",
 	"translate-page-settings-legend": "設定",
