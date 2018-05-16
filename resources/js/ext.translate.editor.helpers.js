@@ -137,6 +137,8 @@
 					.addClass( 'mw-content-' + documentationDir )
 					.html( documentation.html );
 
+				//$messageDoc.find( 'a[href]' ).prop( 'target', '_blank' );
+
 				this.$editor.find( '.tux-textarea-documentation' )
 					.attr( langAttr )
 					.val( documentation.value );
