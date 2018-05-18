@@ -1,0 +1,164 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "484b10f9_e72b91a6",
+        "filename": "Resources.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-18T14:23:41Z",
+      "side": 1,
+      "message": "Please follow coding conventions: in this case, the code should be indented with tabs and not spaces (your editor probably has a setting to configure this).\n\nhttps://www.mediawiki.org/wiki/Manual:Coding_conventions has more details",
+      "revId": "1e5b32941e41caf2ad0517de65cd6c7387b3e51a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16ab1849_339db702",
+        "filename": "api/ApiGroupWatch.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-18T14:23:41Z",
+      "side": 1,
+      "message": "Debugging code should be removed from patches.",
+      "revId": "1e5b32941e41caf2ad0517de65cd6c7387b3e51a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be285d99_67e7983c",
+        "filename": "i18n/core/qqq.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-18T14:23:41Z",
+      "side": 1,
+      "message": "There should not be \\n at end of messages.",
+      "range": {
+        "startLine": 325,
+        "startChar": 98,
+        "endLine": 325,
+        "endChar": 100
+      },
+      "revId": "1e5b32941e41caf2ad0517de65cd6c7387b3e51a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ce0539b_7f456e70",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-18T14:23:41Z",
+      "side": 1,
+      "message": "You are only using these once, so you can write simply\n  afterText \u003d mw.message( \u0027translate-msggroupselector-unwatch\u0027 ).text()\nSame for watchLabel.",
+      "revId": "1e5b32941e41caf2ad0517de65cd6c7387b3e51a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06ea45e2_5082e43d",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-18T14:23:41Z",
+      "side": 1,
+      "message": "This should be internationalized.",
+      "range": {
+        "startLine": 334,
+        "startChar": 16,
+        "endLine": 334,
+        "endChar": 33
+      },
+      "revId": "1e5b32941e41caf2ad0517de65cd6c7387b3e51a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e874e4ae_ada0ef22",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-18T14:23:41Z",
+      "side": 1,
+      "message": "Unused code should be removed.",
+      "range": {
+        "startLine": 340,
+        "startChar": 0,
+        "endLine": 354,
+        "endChar": 10
+      },
+      "revId": "1e5b32941e41caf2ad0517de65cd6c7387b3e51a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ce74be4_c3ace749",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-18T14:23:41Z",
+      "side": 1,
+      "message": "Coding conventions: tabs and spaces.",
+      "revId": "1e5b32941e41caf2ad0517de65cd6c7387b3e51a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb43f8fe_119b5f98",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-18T14:23:41Z",
+      "side": 1,
+      "message": "I would use a more descriptive name such as \"isGroupWatched\"",
+      "range": {
+        "startLine": 384,
+        "startChar": 20,
+        "endLine": 384,
+        "endChar": 30
+      },
+      "revId": "1e5b32941e41caf2ad0517de65cd6c7387b3e51a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
