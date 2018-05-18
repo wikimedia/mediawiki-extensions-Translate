@@ -288,6 +288,8 @@
 	"translate-msggroupselector-projects": "Message group",
 	"translate-msggroupselector-search-placeholder": "Search groups",
 	"translate-msggroupselector-search-all": "All",
+	"translate-msggroupselector-watch": "Watch",
+	"translate-msggroupselector-unwatch": "Unwatch",
 	"translate-msggroupselector-search-recent": "Recent",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|subgroup|subgroups}}",
 	"tux-languageselector": "Translate to",
@@ -382,5 +384,7 @@
 	"translate-ulsdep-body": "The Translate extension depends on the [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universal Language Selector extension].",
 	"tux-session-expired": "You are no longer logged in. Please log in in a separate tab. Alternatively, make a copy of unsaved translations, log in, return to this page and enter your translations again.",
 	"tux-nojs": "This tool does not work without JavaScript. JavaScript is disabled, failed to work, or this browser is unsupported.",
-	"translate-groupwatchlistanontext": "Please log in to view or edit items on your watchlist."
+	"translate-groupwatchlistanontext": "Please log in to view or edit items on your message group watchlist.",
+	"translate-groupwatcherror": "The message group could not be added to the watchlist.",
+	"translate-groupunwatcherror": "The message group could not be removed from the watchlist."
 }

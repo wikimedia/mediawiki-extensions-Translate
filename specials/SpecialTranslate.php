@@ -339,6 +339,14 @@ class SpecialTranslate extends SpecialPage {
 			$groupClass[] = 'tux-breadcrumb__item--aggregate';
 		}
 
+		if($this->checkWatch() === false) {
+			$watchLabel = 'translate-msggroupselector-watch';
+			$watchAction = 'watch';
+		} else {
+			$watchLabel = 'translate-msggroupselector-unwatch';
+			$watchAction = 'unwatch';
+		}
+
 		// @todo FIXME The selector should have expanded parent-child lists
 		$output = Html::openElement( 'div', [
 			'class' => 'eight columns tux-breadcrumb',
@@ -352,6 +360,15 @@ class SpecialTranslate extends SpecialPage {
 				[ 'class' => 'grouptitle grouplink tux-breadcrumb__item--aggregate' ],
 				$this->msg( 'translate-msggroupselector-search-all' )->text()
 			) .
+			Html::element( 'a',
+				[
+					'class' => 'tux-breadcrumb__item--watch',
+					'id' => 'tux-watch',
+					'title' => $this->msg($watchLabel)->text(),
+					'data-action' => $watchAction
+				],
+				$this->msg($watchLabel)->text()
+			) .
 			Html::element( 'span',
 				[
 					'class' => $groupClass,
@@ -359,10 +376,22 @@ class SpecialTranslate extends SpecialPage {
 				],
 				$group->getLabel()
 			) .
-            // TODO star
 			Html::closeElement( 'div' );
 
 		return $output;
+	}
+
+	protected function checkWatch() {
+		// Checks if message group id is already in db for some user
+		$dbw = wfGetDB( DB_MASTER );
+		$table = 'translate_groupwatchlist';
+		$field = 'tgw_id';
+		$conds = [
+			'tgw_user' => $this->getUser()->getId(),
+			'tgw_group' => MessageGroups::getGroup( $this->options['group'] )->getId()
+		];
+
+		return $dbw->selectField( $table, $field, $conds, __METHOD__ );
 	}
 
 	protected function tuxLanguageSelector() {
