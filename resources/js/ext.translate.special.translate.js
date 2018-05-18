@@ -243,7 +243,7 @@
 	}
 
 	$( function () {
-		var $translateContainer, $hideTranslatedButton, $messageList,
+		var $translateContainer, $hideTranslatedButton, $messageList, $watchTrigger,
 			filter, uri, position, offset, limit;
 
 		$messageList = $( '.tux-messagelist' );
@@ -299,11 +299,60 @@
 				at: 'right+80 bottom+5'
 			};
 		}
-		$( '.tux-breadcrumb__item--aggregate' ).msggroupselector( { // TODO all button, see watchlist js file
+		$( '.tux-breadcrumb__item--aggregate' ).msggroupselector( { // TODO add button, see watchlist js file
 			onSelect: mw.translate.changeGroup,
 			language: state.language,
 			position: position,
 			recent: mw.translate.recentGroups.get()
+		} );
+
+		$watchTrigger = $( '.tux-breadcrumb__item--watch' );
+		$watchTrigger.on( 'click', function () {
+
+			var api = new mw.Api(),
+				params = {
+					action: 'groupwatch',
+					messagegroups: $( '.grouptitle' ).last().data( 'msggroupid' )
+				},
+				watchLabel = mw.message( 'translate-msggroupselector-watch' ).text(),
+				unwatchLabel = mw.message( 'translate-msggroupselector-unwatch' ).text(),
+				afterText = unwatchLabel,
+				afterAction = 'unwatch';
+
+			if ( $watchTrigger.data( 'action' ) === 'unwatch' ) {
+				params.unwatch = 1;
+				afterText = watchLabel;
+				afterAction = 'watch';
+			}
+
+			api.postWithToken( 'watch', params ).done( function () {
+				$watchTrigger.text( afterText );
+				$watchTrigger.data( 'action', afterAction );
+				// to see whats happening here and act appropriately
+			} ).fail( function () {
+				// Report to user about the error
+				mw.notify( 'An error occurred', {
+					tag: 'watch-self',
+					type: 'error'
+				} );
+			} );
+
+			// / var api = new mw.Api();
+			//
+			// api.postWithToken( 'watch', {
+			// 	action: 'groupwatch',
+			// 	messagegroups: $( '.grouptitle' ).last().data( 'msggroupid' )
+			// } ).done( function () {
+			// 	$watchTrigger.text( mw.message( 'translate-msggroupselector-unwatch' ) );
+			// 	// to see whats happening here and act appropriately
+			// } ).fail( function () {
+			// 	// Report to user about the error
+			// 	mw.notify( 'An error occurred', {
+			// 		tag: 'watch-self',
+			// 		type: 'error'
+			// 	} );
+			// } );
+
 		} );
 
 		updateGroupInformation( state );

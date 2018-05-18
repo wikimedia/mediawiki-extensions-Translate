@@ -10,9 +10,9 @@
  * @ingroup API
  */
 class ApiGroupWatch extends ApiBase {
-	private $mPageSet = null;
 
 	public function execute() {
+        console.log("vd");
 		$user = $this->getUser();
 		if ( !$user->isLoggedIn() ) {
 			$this->dieWithError( 'translate-groupwatchlistanontext', 'notloggedin' );
@@ -82,7 +82,7 @@ class ApiGroupWatch extends ApiBase {
 
 	private function watchMessageGroup( array $messageGroups, User $user, array $params, $compatibilityMode = false) {
 
-		$res = [ 'messagegroups' => $messageGroups ];
+        $res = [ 'messagegroups' => $messageGroups ];
 
 		if ( $params['unwatch'] ) {
             // Only logged in user can have a watchlist

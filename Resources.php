@@ -457,6 +457,8 @@ $wgResourceModules['ext.translate.special.translate'] = [
 		'translate-documentation-language',
 		'tux-editor-proofreading-hide-own-translations',
 		'tux-editor-proofreading-show-own-translations',
+        'translate-msggroupselector-watch',
+        'translate-msggroupselector-unwatch'
 	],
 ] + $resourcePaths;
 
