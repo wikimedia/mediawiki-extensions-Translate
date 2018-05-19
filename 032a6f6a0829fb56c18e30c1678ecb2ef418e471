@@ -1,0 +1,176 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c03b4b90_2b67f8d6",
+        "filename": "api/ApiGroupWatch.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T18:41:12Z",
+      "side": 1,
+      "message": "Because of the check on line 12, this check is not needed and can be removed.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 3
+      },
+      "revId": "032a6f6a0829fb56c18e30c1678ecb2ef418e471",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "168b5ab1_09dde6bd",
+        "filename": "api/ApiGroupWatch.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T18:41:12Z",
+      "side": 1,
+      "message": "Is this needed? What does it do?",
+      "revId": "032a6f6a0829fb56c18e30c1678ecb2ef418e471",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab5fdcca_e6031805",
+        "filename": "api/ApiGroupWatch.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T18:41:12Z",
+      "side": 1,
+      "message": "I think this is not needed.",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 5
+      },
+      "revId": "032a6f6a0829fb56c18e30c1678ecb2ef418e471",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24d92ee2_0e038a93",
+        "filename": "resources/css/ext.translate.special.translate.less",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T18:41:12Z",
+      "side": 1,
+      "message": "This should be removed, not relevant to our use case.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 70
+      },
+      "revId": "032a6f6a0829fb56c18e30c1678ecb2ef418e471",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b6bef4a_561e41b2",
+        "filename": "resources/css/ext.translate.special.translate.less",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T18:41:12Z",
+      "side": 1,
+      "message": "Should use tabs here.",
+      "revId": "032a6f6a0829fb56c18e30c1678ecb2ef418e471",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34d50fa0_da6548e4",
+        "filename": "resources/css/ext.translate.special.translate.less",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T18:41:12Z",
+      "side": 1,
+      "message": "You can place these under #tux-unwatch like this using Less syntax:\n\n\t#tux-unwatch {\n\t\tbackground-image:url( ../images/unwatch-icon.svg );\n\t\t\u0026:hover,\n\t\t\u0026:focus {\n\t\t\tbackground-image:url( ../images/unwatch-icon-hl.svg );\n\t\t}\n\t}",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 3
+      },
+      "revId": "032a6f6a0829fb56c18e30c1678ecb2ef418e471",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8426d48_e81e714a",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T18:41:12Z",
+      "side": 1,
+      "message": "These can be combined:\n\n\t$watchTrigger\n\t\t.data( \u0027action\u0027, afterAction )\n\t\t.prop( {\n\t\t\ttitle: afterTitle,\n\t\t\tid: \u0027tux-\u0027 + afterAction\n\t\t} )\n\t\t.removeClass( \u0027loading\u0027 );",
+      "range": {
+        "startLine": 331,
+        "startChar": 0,
+        "endLine": 334,
+        "endChar": 53
+      },
+      "revId": "032a6f6a0829fb56c18e30c1678ecb2ef418e471",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e82fcf10_cd22141d",
+        "filename": "sql/translate_groupwatchlist.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T18:41:12Z",
+      "side": 1,
+      "message": "Why is this a BLOB? Code elsewhere uses varbinary(14)",
+      "range": {
+        "startLine": 10,
+        "startChar": 27,
+        "endLine": 10,
+        "endChar": 31
+      },
+      "revId": "032a6f6a0829fb56c18e30c1678ecb2ef418e471",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
