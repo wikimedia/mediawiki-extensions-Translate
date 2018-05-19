@@ -1,0 +1,163 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4414650d_2d13335c",
+        "filename": "resources/css/ext.translate.special.translate.less",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T21:20:12Z",
+      "side": 1,
+      "message": "This is likely not required, as IE6 won\u0027t ever see the watch star",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 22
+      },
+      "revId": "78122646efa4476d1e3ed97188f4bcae878b8014",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "acad2638_be06ef45",
+        "filename": "resources/css/ext.translate.special.translate.less",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T21:20:12Z",
+      "side": 1,
+      "message": "I see you added the png icons now, but they are in fact not needed. All browsers which get JavaScript from MediaWiki now also support SVG, and since this feature does not work without JavaScript, we don\u0027t need the PNG fallbacks.",
+      "revId": "78122646efa4476d1e3ed97188f4bcae878b8014",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da868cfa_78861275",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T21:20:12Z",
+      "side": 1,
+      "message": "\u0027loading\u0027 is a very generic name and it can conflict with other css rules in MediaWiki. It should be prefixed. For example tux-groupwatch--loading",
+      "revId": "78122646efa4476d1e3ed97188f4bcae878b8014",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bed5f66c_08684cfb",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T21:20:12Z",
+      "side": 1,
+      "message": "Running \u0027composer fix\u0027 will fix the spacing here.",
+      "revId": "78122646efa4476d1e3ed97188f4bcae878b8014",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "500c41ff_46164282",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T21:20:12Z",
+      "side": 1,
+      "message": "I would remove this comment",
+      "revId": "78122646efa4476d1e3ed97188f4bcae878b8014",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a968ebec_73b5f319",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T21:20:12Z",
+      "side": 1,
+      "message": "It\u0027s a bad practice to query the master server when we are not making changes in a post request. This should use DB_REPLICA instead. And name the variable $dbr.",
+      "revId": "78122646efa4476d1e3ed97188f4bcae878b8014",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "065fe88f_0798ebea",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T21:20:12Z",
+      "side": 1,
+      "message": "You can ask Amir or me to explain this in person, but I cannot merge this patch before Wikimedia production cluster has the new tables. A way to work around is to guard this query with $dbr-\u003etableExists() and return false if the table doesn\u0027t exist.",
+      "revId": "78122646efa4476d1e3ed97188f4bcae878b8014",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1bbcefc_2139e0c0",
+        "filename": "sql/translate_groupwatchlist.sql",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T21:20:12Z",
+      "side": 1,
+      "message": "We don\u0027t add \"drop table\" to these files, they could accidentally delete production data.",
+      "revId": "78122646efa4476d1e3ed97188f4bcae878b8014",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f4d7a09_61449a93",
+        "filename": "sql/translate_groupwatchlist.sql",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T21:20:12Z",
+      "side": 1,
+      "message": "This file should be registered in TranslateHooks::schemaUpdates so that it is created when update.php is run.",
+      "revId": "78122646efa4476d1e3ed97188f4bcae878b8014",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
