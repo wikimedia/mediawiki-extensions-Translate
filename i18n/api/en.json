@@ -47,6 +47,7 @@
 	"apihelp-query+messagegroups-param-prop": "What translation-related information to get:\n;id:Include ID of the group.\n;label:Include label of the group.\n;description:Include description of the group.\n;class:Include class name of the group.\n;namespace:Include namespace of the group. Not all groups belong to a single namespace.\n;exists:Include self-calculated existence property of the group.\n;icon:Include URLs to icon of the group.\n;priority:Include priority status like discouraged.\n;prioritylangs:Include preferred languages. If not set, this returns false.\n;priorityforce:Include priority status - is the priority languages setting forced.\n;workflowstates:Include the workflow states for the message group.",
 	"apihelp-query+messagegroups-param-root": "When using the tree format, instead of starting from top level start from the given message group, which must be an aggregate message group. When using flat format only the specified group is returned.",
 	"apihelp-query+messagegroups-example-1": "Show message groups",
+	"apihelp-query+messagegroupswatchlist": "Query message groups watchlist.",
 	"apihelp-query+messagegroupstats-description": "Query message group stats.",
 	"apihelp-query+messagegroupstats-summary": "Query message group stats.",
 	"apihelp-query+messagegroupstats-param-timelimit": "Maximum time to spend calculating missing statistics. If zero, only the cached results from the beginning are returned.",

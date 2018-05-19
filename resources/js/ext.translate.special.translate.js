@@ -318,7 +318,7 @@
 				afterTitle = mw.message( 'translate-msggroupselector-unwatch' ).text(),
 				errorMsg = mw.message( 'translate-groupwatcherror' ).text();
 
-			$watchTrigger.addClass( 'loading' );
+			$watchTrigger.addClass( 'star-loading' );
 
 			if ( $watchTrigger.data( 'action' ) === 'unwatch' ) {
 				params.unwatch = 1;
@@ -334,7 +334,7 @@
 						title: afterTitle,
 						id: 'tux-' + afterAction
 					} )
-					.removeClass( 'loading' );
+					.removeClass( 'star-loading' );
 			} ).fail( function () {
 				// Report to user about the error
 				mw.notify( errorMsg, {

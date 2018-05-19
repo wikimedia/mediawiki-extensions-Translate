@@ -52,6 +52,7 @@
 	"apihelp-query+messagegroups-param-prop": "{{doc-apihelp-param|query+messagegroups|prop}}\nSee the [[mw:Help:Extension:Translate/Message group states|description of ''states'']].",
 	"apihelp-query+messagegroups-param-root": "{{doc-apihelp-param|query+messagegroups|root}}",
 	"apihelp-query+messagegroups-example-1": "{{doc-apihelp-example|query+messagegroups}}",
+	"apihelp-query+messagegroupswatchlist": "{{doc-apihelp-example|query+messagegroupswatchlist}}",
 	"apihelp-query+messagegroupstats-description": "{{doc-apihelp-description|query+messagegroupstats}}",
 	"apihelp-query+messagegroupstats-summary": "{{doc-apihelp-summary|query+messagegroupstats}}",
 	"apihelp-query+messagegroupstats-param-timelimit": "{{doc-apihelp-param|query+messagegroupstats|timelimit}}",

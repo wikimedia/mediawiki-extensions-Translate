@@ -87,6 +87,7 @@ $wgSpecialPages['SearchTranslations'] = 'SpecialSearchTranslations';
 $wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
 $wgAPIMetaModules['languagestats'] = 'ApiQueryLanguageStats';
 $wgAPIMetaModules['messagegroups'] = 'ApiQueryMessageGroups';
+$wgAPIMetaModules['messagegroupswatchlist'] = 'ApiQueryMessageGroupsWatchlist';
 $wgAPIMetaModules['messagegroupstats'] = 'ApiQueryMessageGroupStats';
 $wgAPIMetaModules['messagetranslations'] = 'ApiQueryMessageTranslations';
 $wgAPIModules['aggregategroups'] = 'ApiAggregateGroups';
@@ -141,6 +142,7 @@ $wgHooks['AbortEmailNotification'][] = 'TranslateHooks::onAbortEmailNotification
 // Translation memory related
 $wgHooks['ArticleDeleteComplete'][] = 'TTMServer::onDelete';
 $wgHooks['TranslateEventMessageMembershipChange'][] = 'TTMServer::onGroupChange';
+//$wgHooks['TranslateEventMessageMembershipChange'][] = '(function that notifies)'; // TODO
 
 // Translation display related
 $wgHooks['ArticleContentOnDiff'][] = 'TranslateEditAddons::displayOnDiff';
@@ -629,6 +631,12 @@ $wgTranslateTestTTMServer = null;
  * @since 2013.10
  */
 $wgTranslateTestUsers = [];
+
+/**
+ * Whether to use the message group watchlist.
+ * @since 2018.05
+ */
+$wgTranslateEnableMessageGroupWatchlist = false;
 
 # </source>
 
