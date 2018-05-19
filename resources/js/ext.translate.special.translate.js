@@ -312,22 +312,26 @@
 			var api = new mw.Api(),
 				params = {
 					action: 'groupwatch',
-					messagegroup: $( '.grouptitle' ).last().data( 'msggroupid' )
+					messagegroup: $( '.grouptitle' ).eq( -2 ).data( 'msggroupid' )
 				},
-				afterText = mw.message( 'translate-msggroupselector-unwatch' ).text(),
 				afterAction = 'unwatch',
+				afterTitle = mw.message( 'translate-msggroupselector-unwatch' ).text(),
 				errorMsg = mw.message( 'translate-groupwatcherror' ).text();
+
+			$watchTrigger.addClass( 'loading' );
 
 			if ( $watchTrigger.data( 'action' ) === 'unwatch' ) {
 				params.unwatch = 1;
-				afterText = mw.message( 'translate-msggroupselector-watch' ).text();
 				afterAction = 'watch';
+				afterTitle = mw.message( 'translate-msggroupselector-watch' ).text();
 				errorMsg = mw.message( 'translate-groupunwatcherror' ).text();
 			}
 
 			api.postWithToken( 'watch', params ).done( function () {
-				$watchTrigger.text( afterText );
 				$watchTrigger.data( 'action', afterAction );
+				$watchTrigger.prop( 'title', afterTitle );
+				$watchTrigger.removeClass( 'loading' );
+				$watchTrigger.prop( 'id', 'tux-' + afterAction );
 			} ).fail( function () {
 				// Report to user about the error
 				mw.notify( errorMsg, {

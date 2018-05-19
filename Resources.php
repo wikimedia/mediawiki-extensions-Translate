@@ -458,12 +458,17 @@ $wgResourceModules['ext.translate.special.translate'] = [
 		'tux-editor-proofreading-hide-own-translations',
 		'tux-editor-proofreading-show-own-translations',
 		'translate-msggroupselector-watch',
-		'translate-msggroupselector-unwatch'
+		'translate-msggroupselector-unwatch',
+		'translate-groupwatcherror',
+		'translate-groupunwatcherror'
 	],
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.translate.styles'] = [
-	'styles' => 'resources/css/ext.translate.special.translate.css',
+	'styles' => [
+		'resources/css/ext.translate.special.translate.css',
+		'resources/css/ext.translate.special.translate.less'
+	]
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.special.translationstash'] = [

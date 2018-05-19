@@ -1,0 +1,56 @@
+@import 'mediawiki.mixins.rotation';
+
+/* Watch/Unwatch Icon Styling */
+/* Only use icon if the menu item is not collapsed into the "More" dropdown
+ * (in which case it is inside .vectorMenu instead of .vectorTabs). */
+.tux-breadcrumb {
+  #tux-unwatch,
+  #tux-watch {
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 25px;
+	/* This hides the text but shows the background image */
+	padding-top: 1.15em;
+	/* Only applied in IE6 */
+	_margin-top: -0.8em;
+	height: 0;
+	overflow: hidden;
+	background-position: 5px 60%;
+	background-repeat: no-repeat;
+  }
+  #tux-unwatch {
+	background-image:url( ../images/unwatch-icon.svg );
+  }
+  #tux-watch {
+	background-image:url( ../images/watch-icon.svg );
+  }
+  #tux-unwatch:hover,
+  #tux-unwatch:focus {
+	background-image:url( ../images/unwatch-icon-hl.svg );
+  }
+  #tux-watch:hover,
+  #tux-watch:focus {
+	background-image:url( ../images/watch-icon-hl.svg );
+  }
+  #tux-unwatch.loading,
+  #tux-watch.loading {
+	background-image:url( ../images/watch-icon-loading.svg );
+	-webkit-animation:spin 700ms linear infinite;
+	-moz-animation:spin 700ms linear infinite;
+	-o-animation: spin 700ms linear infinite;
+	animation:spin 700ms linear infinite;
+	/* Suppress the hilarious rotating focus outline on Firefox */
+	outline: 0;
+	cursor: default;
+	pointer-events: none;
+	background-position: 50% 60%;
+	-webkit-transform-origin: 50% 57%;
+	transform-origin: 50% 57%;
+  }
+}
+
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-o-keyframes spin { 100% { -o-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

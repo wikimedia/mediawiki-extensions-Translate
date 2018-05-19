@@ -360,15 +360,6 @@ class SpecialTranslate extends SpecialPage {
 				[ 'class' => 'grouptitle grouplink tux-breadcrumb__item--aggregate' ],
 				$this->msg( 'translate-msggroupselector-search-all' )->text()
 			) .
-			Html::element( 'a',
-				[
-					'class' => 'tux-breadcrumb__item--watch',
-					'id' => 'tux-watch',
-					'title' => $this->msg($watchLabel)->text(),
-					'data-action' => $watchAction
-				],
-				$this->msg($watchLabel)->text()
-			) .
 			Html::element( 'span',
 				[
 					'class' => $groupClass,
@@ -376,6 +367,18 @@ class SpecialTranslate extends SpecialPage {
 				],
 				$group->getLabel()
 			) .
+			Html::openElement( 'span', [
+				'class' => 'grouptitle',
+			] ) .
+			Html::element( 'a',
+				[
+					'class' => 'tux-breadcrumb__item--watch',
+					'id' => 'tux-watch',
+					'title' => $this->msg($watchLabel)->text(),
+					'data-action' => $watchAction,
+				]
+			) .
+			Html::closeElement( 'span' ) .
 			Html::closeElement( 'div' );
 
 		return $output;
