@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7933382c_1a913e32",
+        "filename": "resources/css/ext.translate.special.translate.less",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T11:12:57Z",
+      "side": 1,
+      "message": "This is not relevant.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 70
+      },
+      "revId": "c2fc396ab072f41ae304e1898c9283eb4a5ecfea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "163e95a7_42f93b28",
+        "filename": "resources/css/ext.translate.special.translate.less",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T11:12:57Z",
+      "side": 1,
+      "message": "Please use one tab per indentation level, and no spaces for indentation.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 12
+      },
+      "revId": "c2fc396ab072f41ae304e1898c9283eb4a5ecfea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b209e5ae_0f592268",
+        "filename": "resources/css/ext.translate.special.translate.less",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T11:12:57Z",
+      "side": 1,
+      "message": "There should be a space after the colon for consistency.",
+      "range": {
+        "startLine": 23,
+        "startChar": 17,
+        "endLine": 23,
+        "endChar": 18
+      },
+      "revId": "c2fc396ab072f41ae304e1898c9283eb4a5ecfea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f1aa722_843d4940",
+        "filename": "resources/css/ext.translate.special.translate.less",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T11:12:57Z",
+      "side": 1,
+      "message": "You can place these under #tux-unwatch like this using Less syntax:\n\n\t#tux-unwatch {\n\t\tbackground-image:url( ../images/unwatch-icon.svg );\n\n\t\t\u0026:hover,\n\t\t\u0026:focus {\n\t\t\tbackground-image:url( ../images/unwatch-icon-hl.svg );\n\t\t}\n\t}\n\nSimilar for #tux-watch",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 3
+      },
+      "revId": "c2fc396ab072f41ae304e1898c9283eb4a5ecfea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76903f1e_c6314ac8",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T11:12:57Z",
+      "side": 1,
+      "message": "Where does -2 come from? Is it possible to make the html structure such that there is simpler and more robust way to reach the correct element?",
+      "range": {
+        "startLine": 315,
+        "startChar": 38,
+        "endLine": 315,
+        "endChar": 46
+      },
+      "revId": "c2fc396ab072f41ae304e1898c9283eb4a5ecfea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "73277f09_7554568e",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T11:12:57Z",
+      "side": 1,
+      "message": "These can be combined:\n\n\t$watchTrigger\n\t\t.data( \u0027action\u0027, afterAction )\n\t\t.prop( {\n\t\t\ttitle: afterTitle,\n\t\t\tid: \u0027tux-\u0027 + afterAction\n\t\t} )\n\t\t.removeClass( \u0027loading\u0027 );",
+      "range": {
+        "startLine": 331,
+        "startChar": 0,
+        "endLine": 334,
+        "endChar": 53
+      },
+      "revId": "c2fc396ab072f41ae304e1898c9283eb4a5ecfea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c216703_4e9684e1",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-19T11:12:57Z",
+      "side": 1,
+      "message": "This should be $this-\u003emsg( $watchLabel ) for consistent formatting.",
+      "range": {
+        "startLine": 377,
+        "startChar": 16,
+        "endLine": 377,
+        "endChar": 39
+      },
+      "revId": "c2fc396ab072f41ae304e1898c9283eb4a5ecfea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
