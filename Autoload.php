@@ -188,6 +188,7 @@ $al['ApiQueryLanguageStats'] = "$dir/api/ApiQueryLanguageStats.php";
 $al['ApiQueryMessageCollection'] = "$dir/api/ApiQueryMessageCollection.php";
 $al['ApiQueryMessageGroupStats'] = "$dir/api/ApiQueryMessageGroupStats.php";
 $al['ApiQueryMessageGroups'] = "$dir/api/ApiQueryMessageGroups.php";
+$al['ApiQueryMessageGroupsWatchlist'] = "$dir/api/ApiQueryMessageGroupsWatchlist.php";
 $al['ApiQueryMessageTranslations'] = "$dir/api/ApiQueryMessageTranslations.php";
 $al['ApiStatsQuery'] = "$dir/api/ApiStatsQuery.php";
 $al['ApiTTMServer'] = "$dir/api/ApiTTMServer.php";
