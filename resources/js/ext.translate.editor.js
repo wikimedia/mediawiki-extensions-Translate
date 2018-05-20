@@ -717,6 +717,11 @@
 					if ( $textarea.val().trim() === '' ) {
 						$editSummary.prop( 'disabled', true );
 					}
+				} ).on( 'keydown', function ( e ) {
+					if ( !e.ctrlKey || e.keyCode !== 13 || $saveButton.is( ':disabled' ) ) {
+						return;
+					}
+					$saveButton.click();
 				} );
 
 				if ( originalTranslation !== null ) {
