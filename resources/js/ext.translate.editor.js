@@ -717,6 +717,16 @@
 					if ( $textarea.val().trim() === '' ) {
 						$editSummary.prop( 'disabled', true );
 					}
+				} ).on( 'keydown', function ( e ) {
+					if ( !e.ctrlKey || e.keyCode !== 13 ) {
+						return;
+					}
+
+					if ( !$saveButton.is(':disabled') ) {
+						$saveButton.click();
+						return;
+					}
+					$skipButton.click();
 				} );
 
 				if ( originalTranslation !== null ) {
@@ -851,7 +861,7 @@
 					.addClass( 'row shortcutinfo' )
 					.text( mw.msg(
 						'tux-editor-shortcut-info',
-						( prefix + 's' ).toUpperCase(),
+						( 'ctrl-enter' ).toUpperCase(),
 						( prefix + 'd' ).toUpperCase(),
 						'ALT',
 						( prefix + 'b' ).toUpperCase()
