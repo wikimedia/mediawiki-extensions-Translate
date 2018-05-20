@@ -1,0 +1,187 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a194423f_fa8b81d7",
+        "filename": "Translate.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-20T11:19:04Z",
+      "side": 1,
+      "message": "Not wrong, but I usually follow MLEB releases, next one is .07",
+      "range": {
+        "startLine": 636,
+        "startChar": 10,
+        "endLine": 636,
+        "endChar": 17
+      },
+      "revId": "2669ecf7f7e26a34db665beb7871d5b90f8b9e1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0a9def65_db428a95",
+        "filename": "api/ApiGroupWatch.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-20T11:19:04Z",
+      "side": 1,
+      "message": "WouldBeNice: @since 2018.07",
+      "revId": "2669ecf7f7e26a34db665beb7871d5b90f8b9e1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a829ceec_5fab42f0",
+        "filename": "api/ApiGroupWatch.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-20T11:19:04Z",
+      "side": 1,
+      "message": "dieWithError is present in core since 1.29, which is the minimum version we require. For consistency with line 13 we could remove the fallback paths.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 4
+      },
+      "revId": "2669ecf7f7e26a34db665beb7871d5b90f8b9e1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c7583b8a_c7a15524",
+        "filename": "api/ApiGroupWatch.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-20T11:19:04Z",
+      "side": 1,
+      "message": "This is missing a guard",
+      "range": {
+        "startLine": 39,
+        "startChar": 1,
+        "endLine": 64,
+        "endChar": 2
+      },
+      "revId": "2669ecf7f7e26a34db665beb7871d5b90f8b9e1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3db29782_1167a51c",
+        "filename": "api/ApiGroupWatch.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-20T11:19:04Z",
+      "side": 1,
+      "message": "page-Main_Page would be more realistic example (all translatable pages are prefix with page-)",
+      "range": {
+        "startLine": 92,
+        "startChar": 47,
+        "endLine": 92,
+        "endChar": 56
+      },
+      "revId": "2669ecf7f7e26a34db665beb7871d5b90f8b9e1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83879bc1_ec4b2d11",
+        "filename": "api/ApiQueryMessageGroupsWatchlist.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-20T11:19:04Z",
+      "side": 1,
+      "message": "WouldBeNice: @since 2018.07",
+      "revId": "2669ecf7f7e26a34db665beb7871d5b90f8b9e1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61d6ba65_dc4191c8",
+        "filename": "api/ApiQueryMessageGroupsWatchlist.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-20T11:19:04Z",
+      "side": 1,
+      "message": "This is missing a guard.",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 2
+      },
+      "revId": "2669ecf7f7e26a34db665beb7871d5b90f8b9e1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76239ee0_8d6aa3ec",
+        "filename": "i18n/api/en.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-20T11:19:04Z",
+      "side": 1,
+      "message": "It was main page, wasn\u0027t it?",
+      "revId": "2669ecf7f7e26a34db665beb7871d5b90f8b9e1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "032369a0_92aed623",
+        "filename": "specials/SpecialTranslate.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-20T11:19:04Z",
+      "side": 1,
+      "message": "`\u003d\u003d\u003d true` is not really needed and can be dropped.",
+      "revId": "2669ecf7f7e26a34db665beb7871d5b90f8b9e1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
