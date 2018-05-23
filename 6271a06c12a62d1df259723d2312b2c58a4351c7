@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49b2064e_760abbe9",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-05-23T06:24:24Z",
+      "side": 1,
+      "message": "This can be replaced with just \u0027CTRL-ENTER\u0027 like \u0027ALT\u0027 below :)",
+      "revId": "6271a06c12a62d1df259723d2312b2c58a4351c7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
