@@ -61,7 +61,6 @@ $wgResourceModules['ext.translate.editor'] = [
 		'jquery.textchange',
 		'mediawiki.Uri',
 		'mediawiki.api',
-		'mediawiki.api.parse',
 		'mediawiki.jqueryMsg',
 		'mediawiki.language',
 		'mediawiki.user',
@@ -446,7 +445,6 @@ $wgResourceModules['ext.translate.special.translate'] = [
 		'jquery.uls.data',
 		'mediawiki.Uri',
 		'mediawiki.api',
-		'mediawiki.api.parse',
 		'mediawiki.jqueryMsg',
 	],
 	'messages' => [
