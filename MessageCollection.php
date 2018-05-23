@@ -711,7 +711,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 				],
 			];
 		}
-		$conds = [];
+		$conds = [ 'page_latest = rev_id' ];
 		$conds[] = $this->getTitleConds( $dbr );
 
 		$res = $dbr->select(
