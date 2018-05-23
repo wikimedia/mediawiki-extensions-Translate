@@ -16,6 +16,24 @@
       "revId": "6271a06c12a62d1df259723d2312b2c58a4351c7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94d31cdb_3d462803",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2018-05-23T18:35:05Z",
+      "side": 1,
+      "message": "*facepalm* You\u0027re absolutely right :)",
+      "parentUuid": "49b2064e_760abbe9",
+      "revId": "6271a06c12a62d1df259723d2312b2c58a4351c7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
