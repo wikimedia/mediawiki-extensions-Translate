@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use Wikimedia\ScopedCallback;
+
 /**
  * Hooks for page translation.
  *
