@@ -531,7 +531,7 @@ class TranslatablePage {
 	/**
 	 * @param string $tag Tag name
 	 * @param int $revision Revision ID to add tag for
-	 * @param mixed $value Optional. Value to be stored as serialized with | as separator
+	 * @param mixed|null $value Optional. Value to be stored as serialized with | as separator
 	 * @throws MWException
 	 */
 	protected function addTag( $tag, $revision, $value = null ) {

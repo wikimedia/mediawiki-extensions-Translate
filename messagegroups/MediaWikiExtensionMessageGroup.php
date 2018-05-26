@@ -17,7 +17,7 @@ class MediaWikiExtensionMessageGroup extends FileBasedMessageGroup {
 	 * describing them. This override method implements the logic
 	 * to retrieve them. Also URLs are included if available.
 	 * Needs the Configure extension.
-	 * @param IContextSource $context
+	 * @param IContextSource|null $context
 	 * @return string
 	 */
 	public function getDescription( IContextSource $context = null ) {

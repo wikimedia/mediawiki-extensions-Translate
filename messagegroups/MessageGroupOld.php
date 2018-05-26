@@ -24,7 +24,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	protected $label = 'none';
 
 	/**
-	 * @param IContextSource $context
+	 * @param IContextSource|null $context
 	 * @return string
 	 */
 	public function getLabel( IContextSource $context = null ) {

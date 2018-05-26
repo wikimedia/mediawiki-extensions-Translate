@@ -442,7 +442,7 @@ class SpecialLanguageStats extends SpecialPage {
 	 * is blacklisted or hidden by filters.
 	 * @param MessageGroup $group
 	 * @param array $cache
-	 * @param MessageGroup $parent
+	 * @param MessageGroup|null $parent
 	 * @return string
 	 */
 	protected function makeGroupRow( MessageGroup $group, array $cache,

@@ -83,7 +83,7 @@ class SpecialTranslations extends SpecialAllPages {
 	/**
 	 * Message input fieldset
 	 *
-	 * @param Title $title (default: null)
+	 * @param Title|null $title (default: null)
 	 * @return string HTML for fieldset.
 	 */
 	protected function namespaceMessageForm( Title $title = null ) {

@@ -638,7 +638,7 @@ $wgTranslateTestUsers = [];
  * restrictions and some other configuration.
  * @param \int $id Namespace number
  * @param \string $name Name of the namespace
- * @param \string $constant (optional) name of namespace constant, defaults to
+ * @param \string|null $constant (optional) name of namespace constant, defaults to
  *   NS_ followed by upper case version of $name, e.g., NS_MEDIAWIKI
  */
 function wfAddNamespace( $id, $name, $constant = null ) {

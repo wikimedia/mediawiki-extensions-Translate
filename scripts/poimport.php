@@ -69,7 +69,7 @@ class Poimport extends Maintenance {
 	 * Public alternative for protected Maintenance::output() as we need to get
 	 * messages from the ChangeSyncer class to the commandline.
 	 * @param string $text The text to show to the user
-	 * @param string $channel Unique identifier for the channel.
+	 * @param string|null $channel Unique identifier for the channel.
 	 * @param bool $error Whether this is an error message
 	 */
 	public function myOutput( $text, $channel = null, $error = false ) {

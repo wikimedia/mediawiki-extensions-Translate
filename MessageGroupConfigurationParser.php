@@ -25,7 +25,7 @@ class MessageGroupConfigurationParser {
 	 * schema will be ignored, if schema validation is enabled.
 	 *
 	 * @param string $data Yaml
-	 * @param callable $callback Optional callback which is called on errors. Parameters are
+	 * @param callable|null $callback Optional callback which is called on errors. Parameters are
 	 *   document index, processed configuration and error message.
 	 * @return array Group configurations indexed by message group id.
 	 */

@@ -36,7 +36,7 @@ interface MessageGroup {
 	/**
 	 * Returns the human readable label (as plain text).
 	 * Parameter $context was added in 2012-10-22.
-	 * @param IContextSource $context Context can be used by subclasses to provide
+	 * @param IContextSource|null $context Context can be used by subclasses to provide
 	 *   translated descriptions, for example.
 	 * @return string
 	 */
@@ -45,7 +45,7 @@ interface MessageGroup {
 	/**
 	 * Returns a longer description about the group. Description can use wikitext.
 	 * Parameter $context was added in 2012-10-22.
-	 * @param IContextSource $context Context can be used by subclasses to provide
+	 * @param IContextSource|null $context Context can be used by subclasses to provide
 	 *   translated descriptions, for example.
 	 * @return string
 	 */
@@ -127,7 +127,7 @@ interface MessageGroup {
 	/**
 	 * Returns message tags. If type is given, only message keys with that
 	 * tag are returned. Otherwise an array[tag => keys] is returned.
-	 * @param string $type
+	 * @param string|null $type
 	 * @return array
 	 */
 	public function getTags( $type = null );

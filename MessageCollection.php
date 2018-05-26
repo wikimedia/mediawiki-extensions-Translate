@@ -342,7 +342,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 *    (INFILE, TRANSLATIONS)
 	 * @param bool $condition Whether to return messages which do not satisfy
 	 * the given filter condition (true), or only which do (false).
-	 * @param mixed $value Value for properties filtering.
+	 * @param mixed|null $value Value for properties filtering.
 	 * @throws MWException If given invalid filter name.
 	 */
 	public function filter( $type, $condition = true, $value = null ) {

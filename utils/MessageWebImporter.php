@@ -382,7 +382,7 @@ class MessageWebImporter {
 	 * @param string $code Language code
 	 * @param string $message Contents for the $key/code combination
 	 * @param string $comment Edit summary (default: empty) - see Article::doEdit
-	 * @param User $user User that will make the edit (default: null - RequestContext user).
+	 * @param User|null $user User that will make the edit (default: null - RequestContext user).
 	 *        See Article::doEdit.
 	 * @param int $editFlags Integer bitfield: see Article::doEdit
 	 * @throws MWException
@@ -428,7 +428,7 @@ class MessageWebImporter {
 	 * @param Title $title
 	 * @param string $message
 	 * @param string $summary
-	 * @param User $user
+	 * @param User|null $user
 	 * @param int $editFlags
 	 * @return array
 	 */
@@ -548,7 +548,7 @@ class MessageWebImporter {
 	 * @param string $legend Legend as raw html.
 	 * @param string $type Contents of type class.
 	 * @param string $content Contents as raw html.
-	 * @param Language $lang The language in which the text is written.
+	 * @param Language|null $lang The language in which the text is written.
 	 * @return string Section element as html.
 	 */
 	public static function makeSectionElement( $legend, $type, $content, $lang = null ) {
