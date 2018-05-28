@@ -5,7 +5,8 @@
 			"Lockal",
 			"Okras",
 			"Translatobecomer",
-			"Mailman"
+			"Mailman",
+			"Ole Yves"
 		]
 	},
 	"searchtranslations": "Поиск переводов",
@@ -28,5 +29,7 @@
 	"tux-sst-outdated": "Устаревшие переводы с $1",
 	"tux-sst-ellipsis-untranslated": "Нет перевода",
 	"tux-sst-ellipsis-outdated": "Устаревшие переводы",
+	"tux-sst-link-all-match": "Считать обязательными все поисковые слова.",
+	"tux-sst-match-message": "Показаны переводы, которые соответствуют любому из поисковых слов. $1",
 	"tux-sst-case-sensitive": "с учётом регистра"
 }

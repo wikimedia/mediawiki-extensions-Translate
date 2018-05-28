@@ -3,7 +3,8 @@
 		"authors": [
 			"Kaganer",
 			"Okras",
-			"Redredsonia"
+			"Redredsonia",
+			"Ole Yves"
 		]
 	},
 	"managetranslatorsandbox": "Управление песочницей переводчика",
@@ -34,6 +35,8 @@
 	"tsb-translations-user": "Переводы {{GENDER:$1|пользователя}}",
 	"tsb-translations-current": "Существующие переводы",
 	"tsb-delete-userpage-summary": "Удаление страницы участника, относящейся к участнику из песочницы",
+	"tsb-reject-confirmation": "Отклонено: $1 участник{{PLURAL:$1||а|ов}}",
+	"tsb-accept-confirmation": "Принято: $1 участник{{PLURAL:$1||а|ов}}",
 	"translationstash": "Добро пожаловать",
 	"translate-translationstash-welcome": "Добро пожаловать, {{GENDER:$1|$1}}, теперь вы новый переводчик",
 	"translate-translationstash-welcome-note": "Ознакомьтесь с инструментами перевода. Переведите несколько сообщений и получите полные права переводчика, чтобы принять участие в понравившемся проекте.",
