@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chuvash2014"
+			"Chuvash2014",
+			"Chuvash"
 		]
 	},
 	"translate": "Куçарни",
@@ -9,6 +10,7 @@
 	"translate-next": "Урăх страницă",
 	"translate-prev": "Унчченхи страницă",
 	"translate-langstats-expand": "сар",
+	"translate-langstats-collapse": "хуп",
 	"translate-language-code": "Чĕлхен кодчĕ",
 	"translate-language-code-field-name": "Чĕлхен кодчĕ:",
 	"translate-untranslated": "Куçарманнисем",
