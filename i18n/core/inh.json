@@ -7,7 +7,11 @@
 		]
 	},
 	"translate-page-language": "Мотт",
+	"translate-edit-translation": "Таржам",
+	"translate-rcfilters-translations": "Таржамаш",
+	"translate-rcfilters-translations-only-label": "Таржамаш",
 	"translate-language": "Мотт",
 	"translate-mgs-column-language": "Мотт",
-	"translate-documentation-language": "Хоам бара документаци"
+	"translate-documentation-language": "Хоам бара документаци",
+	"translate-searchprofile": "Таржамаш"
 }

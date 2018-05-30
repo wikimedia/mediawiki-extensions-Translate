@@ -23,7 +23,8 @@
 			"Olion",
 			"Piramidion",
 			"Geraki",
-			"Renamerr"
+			"Renamerr",
+			"Movses"
 		]
 	},
 	"translate": "Переклад",
@@ -307,7 +308,7 @@
 	"tux-status-proofread": "Перевірка",
 	"tux-status-translated": "Перекладено",
 	"tux-status-saving": "Зберігається...",
-	"tux-status-unsaved": "Незбережено",
+	"tux-status-unsaved": "Не збережено",
 	"tux-save-unknown-error": "Трапилась невідома помилка.",
 	"tux-editor-placeholder": "Ваш переклад",
 	"tux-editor-editsummary-placeholder": "Необов'язковий короткий опис",
