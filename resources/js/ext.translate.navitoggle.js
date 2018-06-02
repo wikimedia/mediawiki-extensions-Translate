@@ -6,18 +6,14 @@
 ( function ( mw, $ ) {
 	'use strict';
 
-	var delay = ( function () {
-		var timer = 0;
+	var $body = $( 'body' );
 
-		return function ( callback, milliseconds ) {
-			clearTimeout( timer );
-			timer = setTimeout( callback, milliseconds );
-		};
-	}() );
+	if ( $body.width() < 1000 || mw.storage.get( 'translate-navitoggle' ) === '1' ) {
+		$body.addClass( 'tux-navi-collapsed' );
+	}
 
 	$( function () {
-		var $miniLogo, $toggle, rtl, delim,
-			$body = $( 'body' );
+		var $miniLogo, $toggle, rtl, delim;
 
 		rtl = $body.hasClass( 'rtl' );
 		delim = rtl ?
@@ -34,17 +30,12 @@
 			.css( rtl ? 'right' : 'left', delim )
 			.click( function () {
 				$body.toggleClass( 'tux-navi-collapsed' );
-				// Allow for animations etc to go
-				delay( function () {
-					$( window ).trigger( 'resize' );
-					$( window ).trigger( 'scroll' );
-				}, 250 );
+				mw.storage.set(
+					'translate-navitoggle',
+					String( Number( $body.hasClass( 'tux-navi-collapsed' ) ) )
+				);
 			} );
 
-		$( 'body' ).append( $miniLogo, $toggle );
-
-		if ( $body.width() < 1000 ) {
-			$body.addClass( 'tux-navi-collapsed' );
-		}
+		$body.append( $miniLogo, $toggle );
 	} );
 }( mediaWiki, jQuery ) );
