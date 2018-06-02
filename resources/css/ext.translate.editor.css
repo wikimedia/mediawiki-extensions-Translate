@@ -62,6 +62,8 @@
 	font-size: 16px;
 	/* The (30px + 5px paddings) 40px for bottom is for the insertables */
 	padding: 5px 5px 40px 5px;
+	/* Normalize margin across skins (esp. Timeless) */
+	margin: 0;
 	height: 100px;
 	min-height: 150px;
 	overflow-y: auto;
