@@ -4,7 +4,6 @@
  *
  * @author Niklas Laxström
  *
- * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0-or-later
  * @file
  */
@@ -69,9 +68,16 @@ XML;
 	protected function createNode( $code ) {
 		return Xml::openElement( 'node', [ 'id' => $code ] )
 			. Xml::openElement( 'data', [ 'key' => 'code' ] )
-			. Xml::openElement( 'y:Shpapenode' )
+			. Xml::openElement( 'y:Shapenode' )
+			. Xml::element(
+				'y:Geometry',
+				[ 'height' => 30, 'width' => max( 30, 10 * strlen( $code ) ) ],
+				''
+			)
 			. Xml::element( 'y:NodeLabel', [], $code )
-			. Xml::closeElement( 'y:Shpapenode' )
+			. Xml::element( 'y:BorderStyle', [ 'hasColor' => 'false' ], '' )
+			. Xml::element( 'y:Fill', [ 'hasColor' => 'false' ], '' )
+			. Xml::closeElement( 'y:Shapenode' )
 			. Xml::closeElement( 'data' )
 			. Xml::closeElement( 'node' );
 	}
