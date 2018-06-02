@@ -14,5 +14,7 @@
 	"translate-language": "Мотт",
 	"translate-mgs-column-language": "Мотт",
 	"translate-documentation-language": "Хоам бара документаци",
-	"translate-searchprofile": "Таржамаш"
+	"translate-searchprofile": "Таржамаш",
+	"translate-msggroupselector-search-all": "Деррига",
+	"tux-tab-all": "Деррига"
 }
