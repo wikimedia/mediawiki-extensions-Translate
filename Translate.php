@@ -380,6 +380,19 @@ $wgTranslatePageTranslationULS = false;
  */
 $wgTranslateKeepOutdatedTranslations = true;
 
+/**
+ * How language list for translatable pages is shown. Allowed values:
+ * tag-only: Only display languages with the \<languages /> tag.
+ * sidebar-only: Display languages as interlanguage links only and ignore the
+ *  tag even if present on the page.
+ * sidebar-fallback: Display languages as interlanguage links if no tag is on
+ *  the page.
+ * sidebar-always: Display languages as interlanguage links and also in tag if
+ *  it is present on the page.
+ * @since 2018.07
+ */
+$wgPageTranslationLanguageList = 'tag-only';
+
 # </source>
 # === Message group configuration ===
 # <source lang=php>
