@@ -151,8 +151,10 @@ class TranslateHooks {
 			$wgHooks['RevisionInsertComplete'][] =
 				'PageTranslationHooks::updateTranstagOnNullRevisions';
 
-			// Register \<languages/>
+			// Register different ways to show language links
 			$wgHooks['ParserFirstCallInit'][] = 'TranslateHooks::setupParserHooks';
+			$wgHooks['LanguageLinks'][] = 'PageTranslationHooks::addLanguageLinks';
+			$wgHooks['SkinTemplateGetLanguageLink'][] = 'PageTranslationHooks::formatLanguageLink';
 
 			// Strip \<translate> tags etc. from source pages when rendering
 			$wgHooks['ParserBeforeStrip'][] = 'PageTranslationHooks::renderTagPage';
