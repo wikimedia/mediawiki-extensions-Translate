@@ -41,6 +41,17 @@
 	background-size: 9px 9px;
 }
 
+/* Need very high specificity to override skin styles in the sidebar */
+#mw-panel .portal .body .mw-pt-progress--none a,
+.interwiki-x-pagetranslation.mw-pt-progress--none a {
+	color: #ba0000;
+}
+
+#mw-panel .portal .body .mw-pt-progress--none a:visited,
+.interwiki-x-pagetranslation.mw-pt-progress--none a:visited {
+	color: #a55858;
+}
+
 .mw-pt-progress--stub {
 	background-image: url( ../images/prog-1.png );
 }
