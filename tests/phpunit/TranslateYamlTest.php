@@ -65,8 +65,8 @@ d: "2.0"
 YAML;
 
 		$output = TranslateYaml::dump( $input );
-		$parsed = TranslateYaml::loadString( $output );
 		$this->assertEquals( $expected, $output, "Floaty strings outputted as strings" );
+		$parsed = TranslateYaml::loadString( $output );
 		$this->assertEquals( $input, $parsed, "Floaty strings roundtrip" );
 	}
 }
