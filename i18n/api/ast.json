@@ -119,6 +119,7 @@
 	"apierror-translate-language-disabled": "La traducción a esta llingua ta desactivada",
 	"apierror-translate-nodynamicgroups": "Nun s'almiten equí los grupos de mensaxes dinámicos",
 	"apierror-translate-nomessagefortitle": "El títulu nun casa con un mensaxe traducible",
+	"apierror-translate-notranslationservices": "Nun se configuró nengún serviciu públicu de traducciones. L'alministrador de la wiki tien de configurar <var>$wgTranslateTranslationServices</var> afechiscamente pa poder utilizar esta función.",
 	"apierror-translate-owntranslation": "Nun pueden revisase les traducciones propies",
 	"apierror-translate-sandboxdisabled": "La función de zona de pruebes nun ta n'usu",
 	"apierror-translate-sandbox-invalidppassword": "Contraseña inválida",
