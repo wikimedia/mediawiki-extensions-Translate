@@ -23,7 +23,6 @@
 	"translate-page-no-such-language": "ភាសាដែលអ្នកផ្ដល់មកមិនត្រឹមត្រូវទេ។",
 	"translate-page-no-such-group": "ក្រុមដែលអ្នកផ្ដល់មកមិនត្រឹមត្រូវទេ។",
 	"translate-page-disabled": "ការបកប្រែសម្រាប់ភាសានេះក្នុងក្រុមនេះមិនត្រូវបានអនុញ្ញាតទេ។ មូលហេតុ:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1ជាភាសាដើមសម្រាប់ទំព័រនេះ",
 	"translate-language-disabled": "ការ​បក​ប្រែ​ទៅ​ភាសា​នេះ​ត្រូវ​បាន​បិទ។",
 	"translate-page-settings-legend": "ការកំណត់​ផ្សេងៗ",
 	"translate-page-group": "ក្រុម",

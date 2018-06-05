@@ -30,7 +30,6 @@
 	"translate-page-no-such-language": "Zadaný jazyk není platný.",
 	"translate-page-no-such-group": "Zadaná skupina byla neplatná.",
 	"translate-page-disabled": "Překlady do tohoto jazyka byly v této skupině zakázány. Zdůvodnění:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 je zdrojový jazyk této stránky.",
 	"translate-language-disabled": "Překlad do tohoto jazyka je zakázán.",
 	"translate-page-settings-legend": "Nastavení",
 	"translate-page-group": "skupina",

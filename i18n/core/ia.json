@@ -17,7 +17,6 @@
 	"translate-page-no-such-language": "Le lingua specificate es invalide.",
 	"translate-page-no-such-group": "Le gruppo specificate es invalide.",
 	"translate-page-disabled": "Le traductiones in iste lingua in iste gruppo ha essite disactivate. Motivo:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 es le lingua original de iste pagina.",
 	"translate-language-disabled": "Le traduction in iste lingua es disactivate.",
 	"translate-page-settings-legend": "Optiones",
 	"translate-page-group": "Gruppo",

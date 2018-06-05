@@ -44,7 +44,6 @@
 	"translate-page-no-such-language": "Podano nieprawidłowy język.",
 	"translate-page-no-such-group": "Podano nieprawidłową grupę.",
 	"translate-page-disabled": "Tłumaczenia na ten język, w tej grupie, zostały wstrzymane z następującego powodu:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 jest językiem źródłowym tej strony.",
 	"translate-language-disabled": "Tłumaczenie na ten język jest zablokowane.",
 	"translate-page-settings-legend": "Ustawienia",
 	"translate-page-group": "Grupa",

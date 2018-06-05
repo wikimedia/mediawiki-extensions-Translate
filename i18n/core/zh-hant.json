@@ -35,7 +35,6 @@
 	"translate-page-no-such-language": "選擇的語言錯誤。",
 	"translate-page-no-such-group": "選擇的群組錯誤。",
 	"translate-page-disabled": "本群組中此語言的翻譯已停用。\n原因：\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 是此頁面的來源語言。",
 	"translate-language-disabled": "此語言的翻譯已停用。",
 	"translate-page-settings-legend": "設定",
 	"translate-page-group": "群組",

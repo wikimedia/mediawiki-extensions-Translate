@@ -32,7 +32,6 @@
 	"translate-page-no-such-language": "Belirtilen dil geçersiz.",
 	"translate-page-no-such-group": "Belirtilen grup geçersiz.",
 	"translate-page-disabled": "Bu gruptaki dil çevirileri devre dışı bırakıldı:\nNeden:\n<em>$1</em>",
-	"translate-page-disabled-source": "Bu sayfanın kaynak dili $1.",
 	"translate-language-disabled": "Bu dile çeviri devre dışı bırakıldı.",
 	"translate-page-settings-legend": "Ayarlar",
 	"translate-page-group": "Grup",

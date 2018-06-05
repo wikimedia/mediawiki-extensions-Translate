@@ -19,7 +19,6 @@
 	"translate-page-no-such-language": "નિર્દેશિત ભાષા અમાન્ય છે.",
 	"translate-page-no-such-group": "નિર્દેશિત સમુહ અમાન્ય છે.",
 	"translate-page-disabled": "આ સમુહમાં આ ભાષાનો અનુવાદ નિષ્ક્રિય કરી દેવાયો છે.\n\nકારણ:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 આ પાના માટે સ્ત્રોત ભાષા છે.",
 	"translate-language-disabled": "આ ભાષામાં ભાષાંતર નિષ્ક્રીય છે.",
 	"translate-page-settings-legend": "ગોઠવણીઓ",
 	"translate-page-group": "જૂથ",

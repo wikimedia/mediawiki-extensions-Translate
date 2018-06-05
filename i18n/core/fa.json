@@ -35,7 +35,6 @@
 	"translate-page-no-such-language": "زبان مشخص‌شده نامعتبر است.",
 	"translate-page-no-such-group": "گروه مشخص‌شده نامعتبر است.",
 	"translate-page-disabled": "ترجمه این زبان در این گروه غیرفعال است.\nدلیل:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 زبان مبدأ این صفحه است.",
 	"translate-language-disabled": "ترجمه به این زبان غیرفعال شده‌است.",
 	"translate-page-settings-legend": "تنظیمات",
 	"translate-page-group": "گروه",

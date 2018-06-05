@@ -29,7 +29,6 @@
 	"translate-page-no-such-language": "Одабрани језик је био невалидан.",
 	"translate-page-no-such-group": "Наведена група није исправна.",
 	"translate-page-disabled": "Преводи на овом језику у овој групи су онемогућени. Разлог:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 је изворни језик ове странице.",
 	"translate-language-disabled": "Превођење на овај језик је онемогућено.",
 	"translate-page-settings-legend": "Подешавања",
 	"translate-page-group": "Група:",

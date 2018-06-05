@@ -25,7 +25,6 @@
 	"translate-page-no-such-language": "درج کردہ زبان نادرست ہے۔",
 	"translate-page-no-such-group": "درج کردہ گروہ نادرست ہے۔",
 	"translate-page-disabled": "اس گروپ میں اس زبان کا ترجمہ غیر فعال کر دیا گیا ہے۔\nوجہ:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 اس صفحہ کی اصل زبان ہے۔",
 	"translate-language-disabled": "اس زبان میں ترجمہ کو غیر فعال کر دیا گیا ہے۔",
 	"translate-page-settings-legend": "ترتیبات",
 	"translate-page-group": "گروپ",

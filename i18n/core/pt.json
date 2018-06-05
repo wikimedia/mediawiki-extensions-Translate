@@ -30,7 +30,6 @@
 	"translate-page-no-such-language": "A língua especificada é inválida.",
 	"translate-page-no-such-group": "O grupo especificado é inválido.",
 	"translate-page-disabled": "As traduções para esta língua, neste grupo, foram impossibilitadas. Motivo:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 é a língua original desta página.",
 	"translate-language-disabled": "A tradução para esta língua foi impossibilitada.",
 	"translate-page-settings-legend": "Configurações",
 	"translate-page-group": "Grupo",

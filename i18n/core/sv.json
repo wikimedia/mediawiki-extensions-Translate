@@ -39,7 +39,6 @@
 	"translate-page-no-such-language": "Det angivna språket är inte giltigt.",
 	"translate-page-no-such-group": "Den angivna gruppen är inte giltig.",
 	"translate-page-disabled": "Översättningar till det här språket i den här gruppen har stängts av.\nAnledning:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 är källspråket för denna sida.",
 	"translate-language-disabled": "Översättning till detta språk är inaktiverad.",
 	"translate-page-settings-legend": "Inställningar",
 	"translate-page-group": "Grupp",

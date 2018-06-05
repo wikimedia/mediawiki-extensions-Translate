@@ -23,7 +23,6 @@
 	"translate-page-no-such-language": "Navedeni jezik ne postoji.",
 	"translate-page-no-such-group": "Navedena grupa ne postoji.",
 	"translate-page-disabled": "Prijevodi na ovaj jezik u ovoj grupi su onemogućeni. Razlog:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 je izvorni jezik ove stranice.",
 	"translate-language-disabled": "Prijevod na ovaj jezik je onemogućen.",
 	"translate-page-settings-legend": "Postavke",
 	"translate-page-group": "Grupa",

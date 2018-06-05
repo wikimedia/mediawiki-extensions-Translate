@@ -40,7 +40,6 @@
 	"translate-page-no-such-language": "Зазначена неправильна мова.",
 	"translate-page-no-such-group": "Зазначена неправильна група.",
 	"translate-page-disabled": "Переклади на цю мову в цій групі вимкнені. Причина:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 — це вихідна мова цієї сторінки.",
 	"translate-language-disabled": "Переклад цією мовою вимкнено.",
 	"translate-page-settings-legend": "Параметри",
 	"translate-page-group": "Група",

@@ -25,7 +25,6 @@
 	"translate-page-no-such-language": "নির্দিস্টকৃত ভাষাটি অবৈধ ছিল।",
 	"translate-page-no-such-group": "নির্দিস্টকৃত সংঘটি অবৈধ ছিল।",
 	"translate-page-disabled": "এই দলে এই ভাষাটির অনুবাদ অক্ষম করা হয়েছে।\nকারণ:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "এই পাতার উৎস ভাষা হল $1।",
 	"translate-language-disabled": "এই ভাষায় অনুবাদ নিষ্ক্রিয় করা হয়েছে।",
 	"translate-page-settings-legend": "সেটিং",
 	"translate-page-group": "দল",

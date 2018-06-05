@@ -26,7 +26,6 @@
 	"translate-page-no-such-language": "Oppgitt språk var ugyldig.",
 	"translate-page-no-such-group": "Oppgitt gruppe var ugyldig.",
 	"translate-page-disabled": "Oversettelser til dette språket i denne gruppen har blitt deaktivert.\nÅrsak:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 er kildespråket til denne siden.",
 	"translate-language-disabled": "Oversetting til dette språket er slått av.",
 	"translate-page-settings-legend": "Innstillinger",
 	"translate-page-group": "Gruppe",

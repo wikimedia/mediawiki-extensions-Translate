@@ -28,7 +28,6 @@
 	"translate-page-no-such-language": "A megadott nyelv érvénytelen",
 	"translate-page-no-such-group": "A megadott csoport érvénytelen",
 	"translate-page-disabled": "Ez a csoport nem fordítható erre a nyelvre. A tiltás oka:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "A(z) $1 a lap forrásnyelve.",
 	"translate-language-disabled": "Erre a nyelvre a fordítás le van tiltva.",
 	"translate-page-settings-legend": "Beállítások",
 	"translate-page-group": "Csoport",

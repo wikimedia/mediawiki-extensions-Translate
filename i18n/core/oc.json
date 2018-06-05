@@ -21,7 +21,6 @@
 	"translate-page-no-such-language": "Un còdi de lengatge invalid es estat indicat",
 	"translate-page-no-such-group": "Lo grop especificat es invalid.",
 	"translate-page-disabled": "Las traduccions dins aquesta lenga dins aqueste grop son estadas desactivadas. Motiu :\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 es la lenga font d'aquesta pagina.",
 	"translate-language-disabled": "La traduccion dins aquesta lenga es desactivada.",
 	"translate-page-settings-legend": "Configuracion",
 	"translate-page-group": "Grop",

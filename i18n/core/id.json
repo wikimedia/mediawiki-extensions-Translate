@@ -31,7 +31,6 @@
 	"translate-page-no-such-language": "Bahasa yang dipilih tidak sah.",
 	"translate-page-no-such-group": "Kelompok yang dipilih tidak sah.",
 	"translate-page-disabled": "Penerjemahan kelompok pesan ini ke bahasa ini telah dinonaktifkan.\nAlasan:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "Bahasa $1 adalah bahasa sumber dari halaman ini.",
 	"translate-language-disabled": "Penerjemahan ke bahasa ini telah dinonaktifkan.",
 	"translate-page-settings-legend": "Pengaturan",
 	"translate-page-group": "Kelompok",

@@ -35,7 +35,6 @@
 	"translate-page-no-such-language": "لم تكن اللغة المحددة صحيحة.",
 	"translate-page-no-such-group": "المجموعة المحددة غير صحيحة.",
 	"translate-page-disabled": "الترجمات إلى هذه اللغة في هذه المجموعة تم تعطيلها. السبب:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 هي لغة المصدر لهذه الصفحة.",
 	"translate-language-disabled": "الترجمات إلى هذه اللغة غير مفعلة.",
 	"translate-page-settings-legend": "الإعدادات",
 	"translate-page-group": "المجموعة",

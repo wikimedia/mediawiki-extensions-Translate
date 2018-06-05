@@ -23,7 +23,6 @@
 	"translate-page-no-such-language": "Наведениот јазик е погрешен",
 	"translate-page-no-such-group": "Погрешно наведена група",
 	"translate-page-disabled": "Преведувањето на овој јазик во оваа група е оневозможено. Причина:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 е изворниот јазик на страницава.",
 	"translate-language-disabled": "Преведувањето на овој јазик е оневозможено.",
 	"translate-page-settings-legend": "Нагодувања",
 	"translate-page-group": "Група",

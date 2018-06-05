@@ -23,7 +23,6 @@
 	"translate-page-no-such-language": "ใส่รหัสภาษาไม่ถูกต้อง",
 	"translate-page-no-such-group": "ใส่ชื่อกลุ่มไม่ถูกต้อง",
 	"translate-page-disabled": "งานแปลภาษานี้ในกลุ่มนี้ได้ปิดใช้งาน\nเหตุผล:\n\n<em>$1</em>",
-	"translate-page-disabled-source": "$1 เป็นภาษาต้นทางของหน้านี้",
 	"translate-language-disabled": "การแปลเป็นภาษานี้ถูกปิดใช้งาน",
 	"translate-page-settings-legend": "การตั้งค่า",
 	"translate-page-group": "กลุ่ม",
