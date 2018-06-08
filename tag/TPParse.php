@@ -15,14 +15,14 @@
  * @ingroup PageTranslation
  */
 class TPParse {
-	/// \type{Title} Title of the page.
+	/** @var Title Title of the page. */
 	protected $title;
 
-	/** \arrayof{String,TPSection} Parsed sections indexed with placeholder.
+	/** @var TPSection[] Parsed sections indexed with placeholder.
 	 * @todo Encapsulate
 	 */
 	public $sections = [];
-	/** \string Page source with content replaced with placeholders.
+	/** @var string Page source with content replaced with placeholders.
 	 * @todo Encapsulate
 	 */
 	public $template = null;
@@ -38,7 +38,7 @@ class TPParse {
 
 	/**
 	 * Returns the number of sections in this page.
-	 * @return \int
+	 * @return int
 	 */
 	public function countSections() {
 		return count( $this->sections );
@@ -47,7 +47,7 @@ class TPParse {
 	/**
 	 * Returns the page template where translatable content is replaced with
 	 * placeholders.
-	 * @return \string
+	 * @return string
 	 */
 	public function getTemplate() {
 		return $this->template;
@@ -57,7 +57,7 @@ class TPParse {
 	 * Returns the page template where the ugly placeholders are replaced with
 	 * section markers. Sections which previously had no number will get one
 	 * assigned now.
-	 * @return \string
+	 * @return string
 	 */
 	public function getTemplatePretty() {
 		$text = $this->template;
@@ -72,7 +72,7 @@ class TPParse {
 	/**
 	 * Gets the sections and assigns section id for new sections
 	 * @param int $highest The largest used integer id (Since 2012-08-02)
-	 * @return array array( string => TPSection, ... )
+	 * @return TPSection[] array( string => TPSection, ... )
 	 */
 	public function getSectionsForSave( $highest = 0 ) {
 		$this->loadFromDatabase();
@@ -108,7 +108,7 @@ class TPParse {
 
 	/**
 	 * Returns list of deleted sections.
-	 * @return array List of sections indexed by id. array( string => TPsection, ... )
+	 * @return TPSection[] List of sections indexed by id. array( string => TPsection, ... )
 	 */
 	public function getDeletedSections() {
 		$sections = $this->getSectionsForSave();
@@ -241,7 +241,7 @@ class TPParse {
 	/**
 	 * Chops of trailing or preceeding whitespace intelligently to avoid
 	 * build up of unintented whitespace.
-	 * @param array $matches
+	 * @param string[] $matches
 	 * @return string
 	 */
 	protected static function replaceTagCb( $matches ) {
