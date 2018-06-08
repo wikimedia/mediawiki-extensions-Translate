@@ -29,7 +29,7 @@ interface StringMangler {
 	 * Match strings against a pattern.
 	 * If string matches, mangle() should mangle the key.
 	 * @param string $string Message key.
-	 * @return \bool
+	 * @return bool
 	 */
 	public function match( $string );
 

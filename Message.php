@@ -12,17 +12,17 @@
  * Interface for message objects used by MessageCollection.
  */
 abstract class TMessage {
-	/// \string Message display key.
+	/** @var string Message display key. */
 	protected $key;
-	/// \string Message definition.
+	/** @var string Message definition. */
 	protected $definition;
-	/// \string Committed in-file translation.
+	/** @var string Committed in-file translation. */
 	protected $infile;
-	/// \list{String} Message tags.
+	/** @var string[] Message tags. */
 	protected $tags = [];
-	/// \array Message properties.
+	/** @var array Message properties. */
 	protected $props = [];
-	/// \list{String} Message reviewers.
+	/** @var string[] Message reviewers. */
 	protected $reviewers = [];
 
 	/**
@@ -60,7 +60,7 @@ abstract class TMessage {
 
 	/**
 	 * Set the committed translation.
-	 * @param \string $text
+	 * @param string $text
 	 */
 	public function setInfile( $text ) {
 		$this->infile = $text;
@@ -76,7 +76,7 @@ abstract class TMessage {
 
 	/**
 	 * Add a tag for this message.
-	 * @param \string $tag
+	 * @param string $tag
 	 */
 	public function addTag( $tag ) {
 		$this->tags[] = $tag;
@@ -84,8 +84,8 @@ abstract class TMessage {
 
 	/**
 	 * Check if this message has a given tag.
-	 * @param \string $tag
-	 * @return \bool
+	 * @param string $tag
+	 * @return bool
 	 */
 	public function hasTag( $tag ) {
 		return in_array( $tag, $this->tags, true );
@@ -182,7 +182,7 @@ class ThinMessage extends TMessage {
  * Hence the name fat. Authors are not supported.
  */
 class FatMessage extends TMessage {
-	/// \string Stored translation.
+	/** @var string Stored translation. */
 	protected $translation;
 
 	/**
