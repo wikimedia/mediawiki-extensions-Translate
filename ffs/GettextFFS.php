@@ -606,8 +606,8 @@ PHP;
 
 	/**
 	 * Returns plural rule for Gettext.
-	 * @param \string $code Language code.
-	 * @return \string
+	 * @param string $code Language code.
+	 * @return string
 	 */
 	public static function getPluralRule( $code ) {
 		$rulefile = __DIR__ . '/../data/plural-gettext.txt';

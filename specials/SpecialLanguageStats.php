@@ -194,7 +194,7 @@ class SpecialLanguageStats extends SpecialPage {
 
 	/**
 	 * HTML for the top form.
-	 * @return \string HTML
+	 * @return string HTML
 	 * @todo duplicated code
 	 */
 	protected function getForm() {
@@ -361,7 +361,7 @@ class SpecialLanguageStats extends SpecialPage {
 
 	/**
 	 * Returns the table itself.
-	 * @return \string HTML
+	 * @return string HTML
 	 */
 	protected function getTable() {
 		$table = $this->table;

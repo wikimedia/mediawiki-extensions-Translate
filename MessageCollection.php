@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use Wikimedia\Rdbms\IResultWrapper;
+
 /**
  * Core message collection class.
  *
@@ -51,23 +53,25 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	// Database resources
 
-	/// \type{Database Result Resource} Stored message existence and fuzzy state.
+	/** @var IResultWrapper Stored message existence and fuzzy state. */
 	protected $dbInfo;
 
-	/// \type{Database Result Resource} Stored translations in database.
+	/** @var IResultWrapper Stored translations in database. */
 	protected $dbData;
 
-	/// \type{Database Result Resource} Stored reviews in database.
+	/** @var IResultWrapper Stored reviews in database. */
 	protected $dbReviewData = [];
 
 	/**
 	 * Tags, copied to thin messages
 	 * tagtype => keys
+	 * @var array[]
 	 */
 	protected $tags = [];
 
 	/**
 	 * Properties, copied to thin messages
+	 * @var array[]
 	 */
 	protected $properties = [];
 
@@ -118,8 +122,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Set translation from file, as opposed to translation which only exists
 	 * in the wiki because they are not exported and committed yet.
-	 * @param array $messages \arrayof{String,String} Array of translations indexed
-	 * by display key.
+	 * @param string[] $messages Array of translations indexed by display key.
 	 */
 	public function setInFile( array $messages ) {
 		$this->infile = $messages;
