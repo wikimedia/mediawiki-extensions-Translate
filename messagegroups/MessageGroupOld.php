@@ -278,8 +278,8 @@ abstract class MessageGroupOld implements MessageGroup {
 	/**
 	 * Creates a new MessageCollection for this group.
 	 *
-	 * @param \string $code Language code for this collection.
-	 * @param \bool $unique Whether to build collection for messages unique to this
+	 * @param string $code Language code for this collection.
+	 * @param bool $unique Whether to build collection for messages unique to this
 	 *                group only.
 	 * @return MessageCollection
 	 */

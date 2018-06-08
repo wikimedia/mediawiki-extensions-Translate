@@ -12,13 +12,13 @@
  * All matching strings are prefixed with the same prefix.
  */
 class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
-	/// Prefix for mangled message keys
+	/** @var string Prefix for mangled message keys */
 	protected $sPrefix = '';
-	/// Exact message keys
+	/** @var string[] Exact message keys */
 	protected $aExact = [];
-	/// Patterns of type foo*
+	/** @var string[] Patterns of type foo* */
 	protected $aPrefix = [];
-	/// Patterns that contain wildcard anywhere else than in the end
+	/** @var string[] Patterns that contain wildcard anywhere else than in the end */
 	protected $aRegex = [];
 
 	/**
