@@ -723,7 +723,7 @@ interface TranslationStatsInterface {
 	/**
 	 * Return the timestamp associated with this result row.
 	 * @param array $row Database Result Row
-	 * @return \string Timestamp.
+	 * @return string Timestamp.
 	 */
 	public function getTimestamp( $row );
 
@@ -808,7 +808,7 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
  * @ingroup Stats
  */
 class TranslatePerLanguageStats extends TranslationStatsBase {
-	/// array ( string => bool ) Cache used to count active users only once per day.
+	/** @var array array( string => bool ) Cache used to count active users only once per day. */
 	protected $usercache;
 
 	protected $codes, $groups;

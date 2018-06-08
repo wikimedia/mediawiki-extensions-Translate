@@ -18,7 +18,7 @@ $wgMemStack = 0;
 
 /**
  * Call to start memory counting for a block.
- * @param \string $a Block name.
+ * @param string $a Block name.
  */
 function wfMemIn( $a ) {
 	global $wgLang, $wgMemUse, $wgMemStack;
@@ -38,7 +38,7 @@ function wfMemIn( $a ) {
 
 /**
  * Call to start stop counting for a block. Difference from start is shown.
- * @param \string $a Block name.
+ * @param string $a Block name.
  */
 function wfMemOut( $a ) {
 	global $wgLang, $wgMemUse, $wgMemStack;
