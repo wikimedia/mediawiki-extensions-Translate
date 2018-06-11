@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjakupi"
+		]
+	},
+	"apierror-translate-language-disabled": "Perkthimi ne $1 eshte pa-mundesuar.",
+	"apierror-translate-language-disabled-reason": "Perkthimi ne $1 eshte i pamundesuar:$2",
+	"apierror-translate-language-disabled-source": "Gjuha baze e ketij grupi eshte $1. Ju lutemi perzgjidhni gjuhen per te perkthyer ne ate gjuhe."
+}

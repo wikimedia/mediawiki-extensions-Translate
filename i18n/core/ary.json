@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Enzoreg"
+			"Enzoreg",
+			"Reda Benkhadra"
 		]
 	},
 	"translate-manage-import-new": "Méṣaj jdid $1",
-	"translate-manage-import-deleted": "Méṣaj memḫi $1"
+	"translate-manage-import-deleted": "Méṣaj memḫi $1",
+	"translate-msggroupselector-search-all": "كلشي",
+	"tux-tab-all": "كلشي"
 }

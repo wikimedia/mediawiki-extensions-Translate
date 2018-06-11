@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Reza1615",
-			"Huji"
+			"Huji",
+			"Ladsgroup"
 		]
 	},
 	"apihelp-aggregategroups-description": "مدیریت گروه‌های پیغام دسته‌جمعی.\n\nشما می توانید گروه‌های پیغام دسته‌جمعی را بیفزایید یا حذف کنید یا گروه‌های پیغام را به آن‌ها متصل یا جدا کنید (در هر زمان یکی).",
@@ -16,10 +17,18 @@
 	"apihelp-groupreview-param-group": "گروه پیغام.",
 	"apihelp-groupreview-param-language": "کد زبان.",
 	"apihelp-groupreview-param-state": "حالت تازه برای گروه.",
+	"apihelp-query+languagestats-description": "کوئری آمار زبان",
+	"apihelp-query+languagestats-summary": "کوئری آمار زبان",
 	"apihelp-query+languagestats-param-language": "کد زبان.",
 	"apihelp-query+messagecollection-param-group": "گروه پیغام‌ها.",
 	"apihelp-query+messagecollection-param-language": "کد زبان.",
+	"apihelp-query+messagetranslations-param-title": "عنوان کامل یک پیام شناخته شده.",
+	"apihelp-translatesandbox-param-do": "چه کاری برای انجام دادن هست.",
+	"apihelp-translatesandbox-param-email": "رایانامه هنگام ایجاد حساب",
+	"apihelp-translationreview-example-1": "بازبینی نسخه ۱",
 	"apihelp-translationstash-param-subaction": "فعالیت.",
+	"apihelp-translationstash-param-metadata": "شی JSON",
 	"apihelp-searchtranslations-description": "جستجوی ترجمه‌ها.",
-	"apihelp-searchtranslations-summary": "جستجوی ترجمه‌ها."
+	"apihelp-searchtranslations-summary": "جستجوی ترجمه‌ها.",
+	"apihelp-searchtranslations-param-limit": "اندازه نتیجه"
 }

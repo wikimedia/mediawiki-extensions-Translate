@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Toliño",
-			"Elisardojm"
+			"Elisardojm",
+			"Fitoschido"
 		]
 	},
 	"searchtranslations": "Procurar nas traducións",
@@ -17,8 +18,8 @@
 	"tux-sst-nosolr-body": "Este wiki non dispón dun servizo de procura de traducións.",
 	"tux-sst-solr-offline-title": "A procura non está dispoñible",
 	"tux-sst-solr-offline-body": "O servizo de procura non está dispoñible temporalmente.",
-	"tux-sst-next": "Seguintes ›",
-	"tux-sst-prev": "< Anteriores",
+	"tux-sst-next": "Seguintes →",
+	"tux-sst-prev": "← Anteriores",
 	"tux-sst-default": "Traducións",
 	"tux-sst-translated": "Traducións do $1",
 	"tux-sst-untranslated": "Non hai traducións do $1",
