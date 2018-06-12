@@ -33,6 +33,24 @@
       "revId": "77ffe332d96339494e64a60fd29e1c4ae30106c3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf920837_245d8ea6",
+        "filename": "tag/TPParse.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-06-12T15:20:18Z",
+      "side": 1,
+      "message": "I checked and can confirm this. I think the previous typehint was a mistake and should have been array( string \u003d\u003e TPSection ), as below.",
+      "parentUuid": "6b1d880e_3a7c0e51",
+      "revId": "77ffe332d96339494e64a60fd29e1c4ae30106c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
