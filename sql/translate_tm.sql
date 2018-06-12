@@ -33,6 +33,6 @@ DROP TABLE IF EXISTS /*_*/translate_tmf;
 CREATE TABLE /*_*/translate_tmf (
 	tmf_sid int unsigned NOT NULL,
 	tmf_text text
-) ENGINE=MYISAM;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 CREATE FULLTEXT INDEX /*i*/tmf_text ON /*_*/translate_tmf (tmf_text);
