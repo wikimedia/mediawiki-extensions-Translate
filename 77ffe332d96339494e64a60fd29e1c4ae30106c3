@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ac260be_e63228a1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-06-12T14:25:09Z",
+      "side": 1,
+      "message": "It\u0027s not actually a namespace thing, but those were custom doxygen commands long ago.",
+      "revId": "77ffe332d96339494e64a60fd29e1c4ae30106c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b1d880e_3a7c0e51",
+        "filename": "tag/TPParse.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-06-12T14:25:09Z",
+      "side": 1,
+      "message": "Not sure if this is right, I think it\u0027s just TPSection[].",
+      "revId": "77ffe332d96339494e64a60fd29e1c4ae30106c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
