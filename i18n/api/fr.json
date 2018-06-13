@@ -127,6 +127,7 @@
 	"apierror-translate-invalidupdate": "Correction invalide",
 	"apierror-translate-language-disabled": "La traduction en $1 est désactivée.",
 	"apierror-translate-language-disabled-reason": "La traduction en $1 est désactivée: $2",
+	"apierror-translate-language-disabled-source": "La langue source de ce groupe est $1. Veuillez sélectionner une autre langue vers laquelle traduire.",
 	"apierror-translate-nodynamicgroups": "Les groupes de messages dynamiques ne sont pas pris en charge ici",
 	"apierror-translate-nomessagefortitle": "Le titre ne correspond pas à un message traductible",
 	"apierror-translate-notranslationservices": "Aucun service de traduction public n’a été configuré. L’administrateur du wiki doit positionner <var>$wgTranslateTranslationServices</var> comme il faut avant que cette fonctionnalité puisse être utilisée.",
