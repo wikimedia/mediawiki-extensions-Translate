@@ -218,7 +218,7 @@
 	}
 
 	function setupLanguageSelector( $element ) {
-		var docLanguageCode, docLanguageAutonym, ulsOptions;
+		var docLanguageCode, ulsOptions;
 
 		ulsOptions = {
 			onSelect: function ( language ) {
@@ -231,13 +231,12 @@
 			}
 		};
 
+		ulsOptions.languages = mw.config.get( 'wgTranslateLanguages' );
+
 		// If a documentation pseudo-language is defined,
 		// add it to the language selector
 		docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
 		if ( docLanguageCode ) {
-			docLanguageAutonym = mw.msg( 'translate-documentation-language' );
-			ulsOptions.languages = mw.config.get( 'wgULSLanguages' );
-			ulsOptions.languages[ docLanguageCode ] = docLanguageAutonym;
 			mw.translate.addDocumentationLanguage();
 			ulsOptions.showRegions = [ 'WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA' ];
 		}
