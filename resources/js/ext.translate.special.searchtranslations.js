@@ -92,7 +92,6 @@
 		docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
 		if ( languages[ docLanguageCode ] ) {
 			mw.translate.addDocumentationLanguage();
-			mw.config.get( 'wgULSLanguages' )[ docLanguageCode ] = mw.msg( 'translate-documentation-language' );
 			regions = [ 'WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA' ];
 		}
 
@@ -148,7 +147,7 @@
 		}
 
 		$.each( Object.keys( languages ), function ( index, languageCode ) {
-			ulslanguages[ languageCode ] = mw.config.get( 'wgULSLanguages' )[ languageCode ];
+			ulslanguages[ languageCode ] = mw.config.get( 'wgTranslateLanguages' )[ languageCode ];
 		} );
 
 		if ( resultCount > 6 ) {
