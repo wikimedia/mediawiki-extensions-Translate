@@ -333,6 +333,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		$links = [];
 		$statsTable = new StatsTable();
 
+		arsort( $users );
 		foreach ( $users as $username => $count ) {
 			$title = Title::makeTitleSafe( NS_USER, $username );
 			$enc = htmlspecialchars( $username );
