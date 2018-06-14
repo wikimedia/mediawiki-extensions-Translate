@@ -68,6 +68,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$out->addModules( 'ext.translate.special.searchtranslations' );
 		$out->addModules( 'ext.translate.special.searchtranslations.operatorsuggest' );
 		$out->addHelpLink( 'Help:Extension:Translate#searching' );
+		$out->addJsConfigVars( 'wgTranslateLanguages', TranslateUtils::getLanguageNames( null ) );
 
 		$this->opts = $opts = new FormOptions();
 		$opts->add( 'query', '' );

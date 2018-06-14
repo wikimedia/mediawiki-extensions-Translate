@@ -27,6 +27,7 @@ $wgResourceModules['ext.translate.base'] = [
 		'mediawiki.util',
 	],
 	'messages' => [
+		'translate-documentation-language',
 		'translate-js-support-unsaved-warning',
 	],
 ] + $resourcePaths;
@@ -411,7 +412,6 @@ $wgResourceModules['ext.translate.special.searchtranslations'] = [
 		'mediawiki.language',
 	],
 	'messages' => [
-		'translate-documentation-language',
 		'translate-search-more-groups-info',
 		'translate-search-more-languages-info',
 	],
@@ -453,7 +453,6 @@ $wgResourceModules['ext.translate.special.translate'] = [
 		'tpt-discouraged-language-force-content',
 		'tpt-discouraged-language-force-header',
 		'tpt-discouraged-language-header',
-		'translate-documentation-language',
 		'tux-editor-proofreading-hide-own-translations',
 		'tux-editor-proofreading-show-own-translations',
 	],
