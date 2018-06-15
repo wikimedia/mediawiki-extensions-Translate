@@ -152,6 +152,7 @@
 	"tux-editor-in-other-languages": "بە زمانەکانی تر",
 	"tux-warnings-more": "{{PLURAL:$1|$1 زیاتر}}",
 	"tux-warnings-hide": "بیشارەوە",
+	"tux-editor-n-uses": "$1 جار بەکارھاتووە",
 	"tux-editor-message-desc-more": "زیاتر ببینە",
 	"tux-editor-message-desc-less": "کەمتر ببینە",
 	"tux-editor-proofreading-mode": "پێداچوونەوە",
