@@ -293,37 +293,29 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function tuxLanguageSelector() {
-		// Changes here must also be reflected when the language
-		// changes on the client side
 		global $wgTranslateDocumentationLanguageCode;
 
 		if ( $this->options['language'] === $wgTranslateDocumentationLanguageCode ) {
-			// The name will be displayed in the UI language,
-			// so use for lang and dir
-			$targetLang = $this->getLanguage();
 			$targetLangName = $this->msg( 'translate-documentation-language' )->text();
 		} else {
-			$targetLang = Language::factory( $this->options['language'] );
 			$targetLangName = Language::fetchLanguageName( $this->options['language'] );
 		}
 
-		// No-break space is added for spacing after the label
-		// and to ensure separation of words (in Arabic, for example)
-		return Html::rawElement( 'div',
+		$label = Html::element(
+			'span',
+			[ 'class' => 'ext-translate-language-selector-label' ],
+			$this->msg( 'tux-languageselector' )->text()
+		);
+		$value = Html::element(
+			'span',
+			[ 'class' => 'uls' ],
+			$targetLangName
+		);
+
+		return Html::rawElement(
+			'div',
 			[ 'class' => 'four columns ext-translate-language-selector' ],
-			Html::element( 'span',
-				[ 'class' => 'ext-translate-language-selector-label' ],
-				$this->msg( 'tux-languageselector' )->text()
-			) .
-				'&#160;' . // nbsp
-				Html::element( 'span',
-					[
-						'class' => 'uls',
-						'lang' => $targetLang->getHtmlCode(),
-						'dir' => $targetLang->getDir(),
-					],
-					$targetLangName
-				)
+			"$label $value"
 		);
 	}
 
