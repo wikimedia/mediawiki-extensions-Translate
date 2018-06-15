@@ -27,7 +27,6 @@ $wgResourceModules['ext.translate.base'] = [
 		'mediawiki.util',
 	],
 	'messages' => [
-		'translate-documentation-language',
 		'translate-js-support-unsaved-warning',
 	],
 ] + $resourcePaths;

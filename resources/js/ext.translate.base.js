@@ -137,16 +137,25 @@
 			return mw.config.get( 'DeleteRight' ) && mw.config.get( 'TranslateRight' );
 		},
 
-		addDocumentationLanguage: function () {
-			var docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
-			if ( $.uls.data.languages[ docLanguageCode ] ) {
-				return;
+		/**
+		 * Adds missing languages to the language database so that they can be used in ULS.
+		 *
+		 * @param {Object} languages Language tags mapped to language names
+		 * @param {Array} regions Which regions to add the languages.
+		 */
+		addExtraLanguagesToLanguageData: function ( languages, regions ) {
+			var code;
+			for ( code in languages ) {
+				if ( code in $.uls.data.languages ) {
+					continue;
+				}
+
+				$.uls.data.addLanguage( code, {
+					script: 'Zyyy',
+					regions: regions,
+					autonym: languages[ code ]
+				} );
 			}
-			$.uls.data.addLanguage( docLanguageCode, {
-				script: $.uls.data.getScript( mw.config.get( 'wgContentLanguage' ) ),
-				regions: [ 'SP' ],
-				autonym: mw.msg( 'translate-documentation-language' )
-			} );
 		},
 
 		isDirty: function () {
