@@ -64,11 +64,9 @@
 			result,
 			i,
 			selectedClasss = '',
-			docLanguageCode,
 			languageCode,
 			quickLanguageList = [],
 			unique = [],
-			regions,
 			$ulsTrigger,
 			uri;
 
@@ -86,15 +84,6 @@
 		}
 
 		resultCount = Object.keys( languages ).length;
-
-		// If a documentation pseudo-language is defined,
-		// add it to the language selector
-		docLanguageCode = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
-		if ( languages[ docLanguageCode ] ) {
-			mw.translate.addDocumentationLanguage();
-			regions = [ 'WW', 'SP', 'AM', 'EU', 'ME', 'AF', 'AS', 'PA' ];
-		}
-
 		quickLanguageList = quickLanguageList.concat( mw.uls.getFrequentLanguageList() )
 			.concat( Object.keys( languages ) );
 
@@ -150,6 +139,8 @@
 			ulslanguages[ languageCode ] = mw.config.get( 'wgTranslateLanguages' )[ languageCode ];
 		} );
 
+		mw.translate.addExtraLanguagesToLanguageData( ulslanguages, [ 'SP' ] );
+
 		if ( resultCount > 6 ) {
 			$ulsTrigger = $( '<a>' )
 				.text( '...' )
@@ -167,7 +158,7 @@
 				languages: ulslanguages,
 				ulsPurpose: 'translate-special-searchtranslations',
 				top: $languages.offset().top,
-				showRegions: regions
+				showRegions: [ 'SP' ].concat( $.fn.lcd.defaults.showRegions )
 			} );
 		}
 	}
