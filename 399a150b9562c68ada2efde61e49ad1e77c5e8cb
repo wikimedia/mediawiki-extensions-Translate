@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "875039ce_36a6265c",
+        "filename": "ffs/GettextFFS.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-06-16T17:40:44Z",
+      "side": 1,
+      "message": "Does not matter this case, but is_callable is safer. I once used method_exists and the code failed on older MediaWiki because the method was originally marked as protected, only later public.",
+      "parentUuid": "932de8e5_247025ca",
+      "range": {
+        "startLine": 311,
+        "startChar": 6,
+        "endLine": 311,
+        "endChar": 22
+      },
+      "revId": "399a150b9562c68ada2efde61e49ad1e77c5e8cb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "47368ec8_5571a24e",
         "filename": "ffs/GettextFFS.php",
         "patchSetId": 2
