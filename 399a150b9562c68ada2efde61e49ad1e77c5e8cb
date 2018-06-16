@@ -69,6 +69,30 @@
       "revId": "399a150b9562c68ada2efde61e49ad1e77c5e8cb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bc387099_18ca1342",
+        "filename": "ffs/GettextFFS.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 664
+      },
+      "writtenOn": "2018-06-16T21:50:10Z",
+      "side": 1,
+      "message": "Translate supports the last two stable releases. So once 1.33 is released, it would support 1.32 and 1.33 and would need to support 1.31 any more.  So I should probably change the comment to your latter suggestion?",
+      "parentUuid": "47368ec8_5571a24e",
+      "range": {
+        "startLine": 312,
+        "startChar": 44,
+        "endLine": 312,
+        "endChar": 68
+      },
+      "revId": "399a150b9562c68ada2efde61e49ad1e77c5e8cb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
