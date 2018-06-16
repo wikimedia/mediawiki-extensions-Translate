@@ -308,7 +308,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 		if ( $algorithm === 'simple' ) {
 			$hash = substr( $hash, 0, 6 );
-			$snippet = $lang->truncateForDatabase( $item['id'], 30, '' );
+			$snippet = $lang->truncate( $item['id'], 30, '' );
 			$snippet = str_replace( ' ', '_', trim( $snippet ) );
 		} else { // legacy
 			global $wgLegalTitleChars;
@@ -316,7 +316,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			$snippet = preg_replace( "/[^$wgLegalTitleChars]/", ' ', $snippet );
 			$snippet = preg_replace( "/[:&%\/_]/", ' ', $snippet );
 			$snippet = preg_replace( '/ {2,}/', ' ', $snippet );
-			$snippet = $lang->truncateForDatabase( $snippet, 30, '' );
+			$snippet = $lang->truncate( $snippet, 30, '' );
 			$snippet = str_replace( ' ', '_', trim( $snippet ) );
 		}
 
