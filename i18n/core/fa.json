@@ -18,7 +18,8 @@
 			"Alirezaaa",
 			"Hosseinblue",
 			"Calak",
-			"Ommmmid"
+			"Ommmmid",
+			"Ladsgroup"
 		]
 	},
 	"translate": "ترجمه",
@@ -375,6 +376,7 @@
 	"tux-editor-message-tools-history": "تاریخچه",
 	"tux-editor-message-tools-delete": "حذف",
 	"tux-editor-message-tools-translations": "همهٔ ترجمه‌ها",
+	"tux-editor-message-tools-linktothis": "پیوند به این پیام",
 	"tux-editor-loading": "در حال بارگیری...",
 	"translate-search-more-languages-info": "$1 {{PLURAL:$1|زبان}} بیشتر",
 	"translate-statsbar-tooltip": "$1٪ ترجمه‌شده، ٪$2 بازبینی‌شده",
@@ -383,5 +385,5 @@
 	"translate-ulsdep-title": "خطای تنظیمات",
 	"translate-ulsdep-body": "افزونهٔ ترجمه به [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector افزونهٔ انتخاب زبان جهانی] وابستگی دارد.",
 	"tux-session-expired": "شما دیگر داخل سامانه نیستید. لطفاً در یک زبانهٔ دیگر به سامانه وارد شوید. یا این که یک نسخه از ترجمه‌های ذخیره‌نشده تهیه کنید، به سامانه وارد شوید، به این صفحه بازگردید و ترجمه‌های خود را دوباره وارد کنید.",
-	"tux-nojs": "این صفحه به جاوااسکریپت نیاز دارد."
+	"tux-nojs": "این ابزار بدون جاوااسکریپت کار نمی‌کند. جاوااسکریپت غیرفعال است، از کار افتاده است، یا توسط این مرورگر پشتیبانی نمی‌شود."
 }

@@ -38,6 +38,8 @@
 	"tsb-translations-user": "ترجمه‌های {{GENDER:$1|کاربر}}",
 	"tsb-translations-current": "ترجمه‌های موجود",
 	"tsb-delete-userpage-summary": "حذف صفحه کاربری کاربر جعبه شنی",
+	"tsb-reject-confirmation": "{{PLURAL:$1|کاربر|کاربران}} رد شدند",
+	"tsb-accept-confirmation": "{{PLURAL:$1|کاربر|کاربران}} پذیرفته شدند",
 	"translationstash": "خوش آمدید",
 	"translate-translationstash-welcome": "خوش آمدید {{GENDER:$1|$1}}، شما یک مترجم تازه هستید",
 	"translate-translationstash-welcome-note": "با ابزارهای ترجمه آشنا شوید. چند پیام را ترجمه کنید و اختیارات کامل ترجمه را به دست بیاورید تا در پروژه‌های مورد علاقهٔ خود شرکت کنید.",
