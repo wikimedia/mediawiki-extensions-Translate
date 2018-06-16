@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "932de8e5_247025ca",
+        "filename": "ffs/GettextFFS.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2018-06-16T17:34:38Z",
+      "side": 1,
+      "message": "This will fail CI due to coding style violations (inconsistent spacing).",
+      "range": {
+        "startLine": 311,
+        "startChar": 6,
+        "endLine": 311,
+        "endChar": 22
+      },
+      "revId": "399a150b9562c68ada2efde61e49ad1e77c5e8cb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "47368ec8_5571a24e",
+        "filename": "ffs/GettextFFS.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2018-06-16T17:34:38Z",
+      "side": 1,
+      "message": "Knowing only this method\u0027s signature and Translate\u0027s policy, I was not able to verify why removal would happen when 1.33 releases. The way it is usually phrased is, to remove once the version prior to the version introducing this method is no longer supported. In this case, once 1.30 is no longer supported (by Translate), or (inversed) once Translate requires 1.31+.",
+      "range": {
+        "startLine": 312,
+        "startChar": 44,
+        "endLine": 312,
+        "endChar": 68
+      },
+      "revId": "399a150b9562c68ada2efde61e49ad1e77c5e8cb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
