@@ -136,7 +136,7 @@ interface SearchableTTMServer {
 
 	/**
 	 * @param stdClass $resultset
-	 * @return array
+	 * @return array[]
 	 */
 	public function getFacets( $resultset );
 

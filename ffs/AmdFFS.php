@@ -159,11 +159,11 @@ EOT;
 	}
 
 	/**
-	 * @param array $authors
+	 * @param string[] $authors
 	 * @return string
 	 */
 	private function authorsList( array $authors ) {
-		if ( count( $authors ) === 0 ) {
+		if ( $authors === [] ) {
 			return '';
 		}
 

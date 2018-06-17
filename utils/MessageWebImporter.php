@@ -242,7 +242,7 @@ class MessageWebImporter {
 					->getVal( self::escapeNameForPHP( "action-$type-$key" ) );
 
 				if ( $process ) {
-					if ( !count( $changed ) ) {
+					if ( $changed === [] ) {
 						// Initialise the HTML list showing the changes performed
 						$changed[] = '<ul>';
 					}
@@ -336,12 +336,12 @@ class MessageWebImporter {
 			}
 		}
 
-		if ( $process || ( !count( $changed ) && $code !== 'en' ) ) {
-			if ( !count( $changed ) ) {
+		if ( $process || ( $changed === [] && $code !== 'en' ) ) {
+			if ( $changed === [] ) {
 				$this->out->addWikiMsg( 'translate-manage-nochanges-other' );
 			}
 
-			if ( !count( $changed ) || strpos( $changed[count( $changed ) - 1], '<li>' ) !== 0 ) {
+			if ( $changed === [] || strpos( end( $changed ), '<li>' ) !== 0 ) {
 				$changed[] = '<ul>';
 			}
 
@@ -350,7 +350,7 @@ class MessageWebImporter {
 			$this->out->addHTML( implode( "\n", $changed ) );
 		} else {
 			// END
-			if ( count( $changed ) ) {
+			if ( $changed !== [] ) {
 				if ( $code === 'en' ) {
 					$this->out->addWikiMsg( 'translate-manage-intro-en' );
 				} else {

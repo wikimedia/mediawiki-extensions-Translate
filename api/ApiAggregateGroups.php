@@ -48,7 +48,7 @@ class ApiAggregateGroups extends ApiBase {
 			}
 			$aggregateGroup = $params['aggregategroup'];
 			$subgroups = TranslateMetadata::getSubgroups( $aggregateGroup );
-			if ( count( $subgroups ) === 0 ) {
+			if ( $subgroups === [] ) {
 				// For newly created groups the subgroups value might be empty,
 				// but check that.
 				if ( TranslateMetadata::get( $aggregateGroup, 'name' ) === false ) {
