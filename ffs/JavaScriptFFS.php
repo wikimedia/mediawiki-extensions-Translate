@@ -22,9 +22,9 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	 * Header of message file.
 	 *
 	 * @param string $code
-	 * @param array $authors
+	 * @param string[] $authors
 	 */
-	abstract protected function header( $code, $authors );
+	abstract protected function header( $code, array $authors );
 
 	/**
 	 * Footer of message file.
@@ -177,11 +177,11 @@ abstract class JavaScriptFFS extends SimpleFFS {
 	}
 
 	/**
-	 * @param array $authors
+	 * @param string[] $authors
 	 * @return string
 	 */
-	protected function authorsList( $authors ) {
-		if ( count( $authors ) === 0 ) {
+	protected function authorsList( array $authors ) {
+		if ( $authors === [] ) {
 			return '';
 		}
 
@@ -253,10 +253,10 @@ class ShapadoJsFFS extends JavaScriptFFS {
 
 	/**
 	 * @param string $code
-	 * @param array $authors
+	 * @param string[] $authors
 	 * @return string
 	 */
-	protected function header( $code, $authors ) {
+	protected function header( $code, array $authors ) {
 		global $wgSitename;
 
 		$name = TranslateUtils::getLanguageName( $code );

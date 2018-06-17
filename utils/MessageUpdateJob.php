@@ -66,7 +66,7 @@ class MessageUpdateJob extends Job {
 				$pages[$otherTitle->getDBkey()] = true;
 			}
 			unset( $pages[$title->getDBkey()] );
-			if ( count( $pages ) === 0 ) {
+			if ( $pages === [] ) {
 				return true;
 			}
 

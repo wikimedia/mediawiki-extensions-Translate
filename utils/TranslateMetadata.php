@@ -63,7 +63,7 @@ class TranslateMetadata {
 	/**
 	 * Wrapper for getting subgroups.
 	 * @param string $groupId
-	 * @return array|bool
+	 * @return string[]|bool
 	 * @since 2012-05-09
 	 */
 	public static function getSubgroups( $groupId ) {

@@ -291,7 +291,7 @@ PHP
 				}
 
 				// If there are messages to write, write them.
-				if ( count( $messagesOut ) > 0 ) {
+				if ( $messagesOut !== [] ) {
 					$out = '';
 					switch ( $this->type ) {
 						case 'special':

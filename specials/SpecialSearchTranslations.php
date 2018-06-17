@@ -117,7 +117,7 @@ class SpecialSearchTranslations extends SpecialPage {
 		$facets = $server->getFacets( $resultset );
 		$facetHtml = '';
 
-		if ( count( $facets['language'] ) > 0 ) {
+		if ( $facets['language'] !== [] ) {
 			if ( $filter !== '' ) {
 				$facets['language'] = array_merge(
 					$facets['language'],
@@ -133,7 +133,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			);
 		}
 
-		if ( count( $facets['group'] ) > 0 ) {
+		if ( $facets['group'] !== [] ) {
 			$facetHtml .= Html::element( 'div',
 				[ 'class' => 'row facet groups',
 					'data-facets' => FormatJson::encode( $this->getGroups( $facets['group'] ) ),
