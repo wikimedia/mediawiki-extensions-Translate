@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a003487_2997fbe1",
+        "filename": "api/ApiAggregateGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-06-17T17:27:44Z",
+      "side": 1,
+      "message": "$subgroups can also be false.\n\nTo be honest I don\u0027t remember what exactly this check is for.",
+      "revId": "6b0225134c727712cf173648bae408174117a9e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
