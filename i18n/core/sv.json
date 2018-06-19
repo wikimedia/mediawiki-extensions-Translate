@@ -22,7 +22,8 @@
 			"Lokal Profil",
 			"Marfuas",
 			"Stryn",
-			"Bengtsson96"
+			"Bengtsson96",
+			"Pipetricker"
 		]
 	},
 	"translate": "Översätt",
@@ -208,7 +209,7 @@
 	"translate-mgs-invalid-group": "Den angivna gruppen $1 finns inte.",
 	"translate-mgs-nothing": "Inget att visa för begärd statistik.",
 	"supportedlanguages": "Språk som stöds",
-	"supportedlanguages-summary": "Denna sida visar en lista över alla språk som stöds av {{SITENAME}},\ntillsammans med en lista över översättare som jobbar på detta språk.\nEn översättares namn visas större, desto mer ändringar översättaren har bidragit.\nFärgen för understrykningen anger hur mycket en översättare har varit aktiv här nyligen.",
+	"supportedlanguages-summary": "Den här sidan visar en lista över alla språk som stöds av {{SITENAME}},\ntillsammans med namnen på översättarna som arbetar på det språket.\nEn översättares namn visas större ju fler redigeringar översättaren har bidragit med.\nFärgen på en understrykning visar hur nyligen en översättare har varit aktiv här.",
 	"supportedlanguages-colorlegend": "Färgförklaring: Senaste översättningen gjordes $1 dagar sedan.",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Översättare}}}}: $1",
 	"supportedlanguages-recenttranslations": "senaste översättningar",
