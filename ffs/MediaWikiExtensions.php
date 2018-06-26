@@ -169,6 +169,27 @@ class PremadeMediawikiExtensionGroups {
 			$conf['TAGS']['ignored'] = $info['ignored'];
 		}
 
+		if ( isset( $info['languages'] ) ) {
+			$conf['LANGUAGES'] = [
+				'whitelist' => [],
+				'blacklist' => [],
+			];
+
+			foreach ( $info['languages'] as $tagSpec ) {
+				if ( preg_match( '/^([+-])?(.+)$/', $tagSpec, $m ) ) {
+					list( , $sign, $tag ) = $m;
+					if ( $sign === '+' ) {
+						$conf['LANGUAGES']['whitelist'][] = $tag;
+					} elseif ( $sign === '-' ) {
+						$conf['LANGUAGES']['blacklist'][] = $tag;
+					} else {
+						$conf['LANGUAGES']['blacklist'] = '*';
+						$conf['LANGUAGES']['whitelist'][] = $tag;
+					}
+				}
+			}
+		}
+
 		return MessageGroupBase::factory( $conf );
 	}
 
@@ -210,6 +231,7 @@ class PremadeMediawikiExtensionGroups {
 							break;
 						case 'optional':
 						case 'ignored':
+						case 'languages':
 							$values = array_map( 'trim', explode( ',', $value ) );
 							if ( !isset( $newgroup[$key] ) ) {
 								$newgroup[$key] = [];
@@ -298,6 +320,7 @@ class PremadeMediawikiExtensionGroups {
 				'aliasfile',
 				'desc',
 				'ignored',
+				'languages',
 				'magicfile',
 				'mangle',
 				'optional',

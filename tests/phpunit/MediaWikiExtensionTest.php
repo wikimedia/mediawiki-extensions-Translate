@@ -18,7 +18,7 @@ class MediaWikiExtensionTest extends MediaWikiTestCase {
 		$foo->register( $list, $deps, $autoload );
 
 		$this->assertEquals( 1, count( $deps ), 'A dependency to definition file was added' );
-		$this->assertEquals( 3, count( $list ), 'Right number of groups were created' );
+		$this->assertEquals( 5, count( $list ), 'Right number of groups were created' );
 
 		$this->assertArrayHasKey( 'ext-wikimediamessages', $list );
 		$expected = TranslateYaml::load( __DIR__ . '/data/MediaWikiExtensionTest-conf2.yaml' );
@@ -31,5 +31,16 @@ class MediaWikiExtensionTest extends MediaWikiTestCase {
 		$this->assertArrayHasKey( 'ext-exampleextension2', $list );
 		$expected = TranslateYaml::load( __DIR__ . '/data/MediaWikiExtensionTest-conf4.yaml' );
 		$this->assertEquals( $expected, $list['ext-exampleextension2']->getConfiguration() );
+
+		$this->assertArrayHasKey( 'ext-languagesmodified', $list );
+		$languages = $list['ext-languagesmodified']->getTranslatableLanguages();
+		$this->assertArrayHasKey( 'foo', $languages, 'Whitelisted language is available' );
+		$this->assertArrayNotHasKey( 'bar', $languages, 'Blacklisted language is not available' );
+		$this->assertArrayHasKey( 'de', $languages, 'Default language is available' );
+
+		$this->assertArrayHasKey( 'ext-languagesset', $list );
+		$languages = $list['ext-languagesset']->getTranslatableLanguages();
+		$this->assertArrayHasKey( 'foo', $languages, 'Set language is available' );
+		$this->assertArrayNotHasKey( 'de', $languages, 'Unset language is not available' );
 	}
 }
