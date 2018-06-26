@@ -385,39 +385,54 @@ abstract class MessageGroupBase implements MessageGroup {
 	 * @return array|null The language codes as array keys.
 	 */
 	public function getTranslatableLanguages() {
+		global $wgTranslateBlacklist;
+
 		$groupConfiguration = $this->getConfiguration();
 		if ( !isset( $groupConfiguration['LANGUAGES'] ) ) {
 			// No LANGUAGES section in the configuration.
 			return null;
 		}
 
-		$lists = $groupConfiguration['LANGUAGES'];
-		$codes = []; // The list of languages to return
+		$codes = array_flip( array_keys( TranslateUtils::getLanguageNames( 'en' ) ) );
 
+		$lists = $groupConfiguration['LANGUAGES'];
 		if ( isset( $lists['blacklist'] ) ) {
 			$blacklist = $lists['blacklist'];
-			if ( is_array( $blacklist ) ) {
-				$codes = array_flip( array_keys( TranslateUtils::getLanguageNames( 'en' ) ) );
+			if ( $blacklist === '*' ) {
+				// All languages blacklisted
+				$codes = [];
+			} elseif ( is_array( $blacklist ) ) {
 				foreach ( $blacklist as $code ) {
 					unset( $codes[$code] );
 				}
-			} else {
-				// All languages blacklisted. This is very rare but not impossible.
-				$codes = [];
+			}
+		} else {
+			// Treat lack of explicit blacklist the same as blacklisting everything. This way,
+			// when one defines only whitelist, it means that only those languages are allowed.
+			$codes = [];
+		}
+
+		// DWIM with $wgTranslateBlacklist, e.g. languages in that list should not unexpectedly
+		// be enabled when a whitelist is used to whitelist any language.
+		$checks = [ $this->getId(), strtok( $this->getId(), '-' ), '*' ];
+		foreach ( $checks as $check ) {
+			if ( isset( $wgTranslateBlacklist[ $check ] ) ) {
+				foreach ( array_keys( $wgTranslateBlacklist[ $check ] ) as $blacklistedCode ) {
+					unset( $codes[ $blacklistedCode ] );
+				}
 			}
 		}
 
-		$whitelist = [];
 		if ( isset( $lists['whitelist'] ) ) {
 			$whitelist = $lists['whitelist'];
 			if ( $whitelist === '*' ) {
-				// All languages whitelisted
+				// All languages whitelisted (except $wgTranslateBlacklist)
 				return null;
+			} elseif ( is_array( $whitelist ) ) {
+				foreach ( $whitelist as $code ) {
+					$codes[$code] = true;
+				}
 			}
-		}
-
-		foreach ( $whitelist as $code ) {
-			$codes[$code] = true;
 		}
 
 		return $codes;
