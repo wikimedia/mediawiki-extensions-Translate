@@ -20,7 +20,7 @@
 				mcoffset: offset,
 				mclimit: limit,
 				mcfilter: filter,
-				mcprop: 'definition|translation|tags|properties',
+				mcprop: 'definition|translation|tags|properties|languages',
 				rawcontinue: 1,
 				errorformat: 'html'
 			} );
@@ -142,10 +142,6 @@
 		 */
 		addTranslate: function ( message ) {
 			var $message,
-				targetLangDir, targetLangAttrib,
-				targetLangCode = this.$container.data( 'targetlangcode' ),
-				sourceLangCode = this.$container.data( 'sourcelangcode' ),
-				sourceLangDir = $.uls.data.getDir( sourceLangCode ),
 				status = message.properties.status,
 				statusClass = 'tux-status-' + status,
 				$messageWrapper = $( '<div>' ).addClass( 'row tux-message' ),
@@ -172,14 +168,6 @@
 				statusMsg = 'tux-status-' + status;
 			}
 
-			if ( targetLangCode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
-				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
-				targetLangDir = $.uls.data.getDir( targetLangAttrib );
-			} else {
-				targetLangAttrib = targetLangCode;
-				targetLangDir = this.$container.data( 'targetlangdir' );
-			}
-
 			$message = $( '<div>' )
 				.addClass( 'row message tux-message-item ' + status )
 				.append(
@@ -188,10 +176,7 @@
 						.append(
 							$( '<span>' )
 								.addClass( 'tux-list-source' )
-								.attr( {
-									lang: sourceLangCode,
-									dir: sourceLangDir
-								} )
+								.prop( mw.translate.getLanguageProps( message.sourceLanguage ) )
 								.text( message.definition ),
 							// Bidirectional isolation.
 							// This should be removed some day when proper
@@ -201,10 +186,7 @@
 								.html( $( 'body' ).hasClass( 'rtl' ) ? '&rlm;' : '&lrm;' ),
 							$( '<span>' )
 								.addClass( 'tux-list-translation' )
-								.attr( {
-									lang: targetLangAttrib,
-									dir: targetLangDir
-								} )
+								.prop( mw.translate.getLanguageProps( message.targetLanguage ) )
 								.text( message.translation || '' )
 						),
 					$( '<div>' )
@@ -246,11 +228,7 @@
 			$message = $( '<div>' ).addClass( 'row tux-message-proofread' );
 
 			this.$container.append( $message );
-			$message.proofread( {
-				message: message,
-				sourcelangcode: this.$container.data( 'sourcelangcode' ),
-				targetlangcode: this.$container.data( 'targetlangcode' )
-			} );
+			$message.proofread( { message: message } );
 
 			$icon = $message.find( '.tux-proofread-action' );
 			if ( $icon.length === 0 ) {
@@ -306,11 +284,7 @@
 				.addClass( 'row tux-message tux-message-pagemode' );
 
 			this.$container.append( $message );
-			$message.pagemode( {
-				message: message,
-				sourcelangcode: this.$container.data( 'sourcelangcode' ),
-				targetlangcode: this.$container.data( 'targetlangcode' )
-			} );
+			$message.pagemode( { message: message } );
 		},
 
 		/**

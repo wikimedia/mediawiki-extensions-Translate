@@ -98,7 +98,6 @@
 				$messageDescViewer,
 				$messageDoc,
 				readMore,
-				langAttr,
 				$readMore = null;
 
 			if ( !mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
@@ -116,31 +115,20 @@
 				// is heavily hinted at in the UI
 				return;
 			} else if ( documentation.value ) {
-				documentationDir = $.uls.data.getDir( documentation.language );
-
-				// Show the documentation and set appropriate
-				// lang and dir attributes.
-				// The message documentation is assumed to be written
-				// in the content language of the wiki.
-				langAttr = {
-					lang: documentation.language,
-					dir: documentationDir
-				};
-
 				// Possible classes:
 				// * mw-content-ltr
 				// * mw-content-rtl
 				// (The direction classes are needed, because the documentation
 				// is likely to be MediaWiki-formatted text.)
 				$messageDoc
-					.attr( langAttr )
+					.prop( mw.translate.getLanguageProps( documentation.language ) )
 					.addClass( 'mw-content-' + documentationDir )
 					.html( documentation.html );
 
 				$messageDoc.find( 'a[href]' ).prop( 'target', '_blank' );
 
 				this.$editor.find( '.tux-textarea-documentation' )
-					.attr( langAttr )
+					.prop( mw.translate.getLanguageProps( documentation.language ) )
 					.val( documentation.value );
 
 				$descEditLink.text( mw.msg( 'tux-editor-edit-desc' ) );
@@ -187,19 +175,12 @@
 		 * @param {Object} documentation A gettext object as returned by API.
 		 */
 		showUneditableDocumentation: function ( documentation ) {
-			var dir;
-
 			if ( documentation.error ) {
 				return;
 			}
 
-			dir = $.uls.data.getDir( documentation.language );
-
 			this.$editor.find( '.uneditable-documentation' )
-				.attr( {
-					lang: documentation.language,
-					dir: dir
-				} )
+				.prop( mw.translate.getLanguageProps( documentation.language ) )
 				.addClass( 'mw-content-' + dir )
 				.html( documentation.html )
 				.removeClass( 'hide' );
@@ -219,24 +200,19 @@
 			}
 
 			$.each( translations, function ( index ) {
-				var $otherLanguage, langAttr,
+				var $otherLanguage,
 					translation = translations[ index ];
-
-				langAttr = {
-					lang: translation.language,
-					dir: $.uls.data.getDir( translation.language )
-				};
 
 				$otherLanguage = $( '<div>' )
 					.addClass( 'row in-other-language' )
 					.append(
 						$( '<div>' )
 							.addClass( 'nine columns suggestiontext' )
-							.attr( langAttr )
+							.prop( mw.translate.getLanguageProps( translation.language ) )
 							.text( translation.value ),
 						$( '<div>' )
 							.addClass( 'three columns language text-right' )
-							.attr( langAttr )
+							.prop( mw.translate.getLanguageProps( translation.language ) )
 							.text( $.uls.data.getAutonym( translation.language ) )
 					);
 
@@ -253,8 +229,8 @@
 		 *
 		 * @param {Array} suggestions A ttmserver array as returned by API.
 		 */
-		showTranslationMemory: function ( suggestions ) {
-			var $heading, $tmSuggestions, $messageList, translationLang, translationDir,
+		showTranslationMemory: function ( suggestions, targetLanguage ) {
+			var $heading, $tmSuggestions,
 				translateEditor = this;
 
 			if ( !suggestions.length ) {
@@ -266,10 +242,6 @@
 
 			$heading = this.$editor.find( '.tm-suggestions-title' );
 			$heading.after( $tmSuggestions );
-
-			$messageList = $( '.tux-messagelist' );
-			translationLang = $messageList.data( 'targetlangcode' );
-			translationDir = $messageList.data( 'targetlangdir' );
 
 			$.each( suggestions, function ( index, translation ) {
 				var $translation,
@@ -308,10 +280,7 @@
 					.append(
 						$( '<div>' )
 							.addClass( 'nine columns suggestiontext' )
-							.attr( {
-								lang: translationLang,
-								dir: translationDir
-							} )
+							.prop( mw.translate.getLanguageProps( targetLanguage ) )
 							.text( translation.target ),
 						$( '<div>' )
 							.addClass( 'three columns quality text-right' )
@@ -342,8 +311,8 @@
 		 *
 		 * @param {Array} suggestions
 		 */
-		showMachineTranslations: function ( suggestions ) {
-			var $mtSuggestions, $messageList, translationLang, translationDir,
+		showMachineTranslations: function ( suggestions, targetLanguage ) {
+			var $mtSuggestions,
 				translateEditor = this;
 
 			if ( !suggestions.length ) {
@@ -360,10 +329,6 @@
 				.removeClass( 'hide' )
 				.after( $mtSuggestions );
 
-			$messageList = $( '.tux-messagelist' );
-			translationLang = $messageList.data( 'targetlangcode' );
-			translationDir = $messageList.data( 'targetlangdir' );
-
 			$.each( suggestions, function ( index, translation ) {
 				var $translation;
 
@@ -372,10 +337,7 @@
 					.append(
 						$( '<div>' )
 							.addClass( 'nine columns suggestiontext' )
-							.attr( {
-								lang: translationLang,
-								dir: translationDir
-							} )
+							.prop( mw.translate.getProps( targetLanguage ) )
 							.text( translation.target ),
 						$( '<div>' )
 							.addClass( 'three columns text-right service' )
@@ -484,6 +446,8 @@
 				action: 'translationaids',
 				title: this.message.title
 			} ).done( function ( result ) {
+				var targetLanguage;
+
 				translateEditor.$editor.find( '.infocolumn .loading' ).remove();
 
 				if ( !result.helpers ) {
@@ -491,10 +455,12 @@
 					return false;
 				}
 
+				targetLanguage = result.helpers.translation.language;
+
 				translateEditor.showMessageDocumentation( result.helpers.documentation );
 				translateEditor.showUneditableDocumentation( result.helpers.gettext );
 				translateEditor.showAssistantLanguages( result.helpers.inotherlanguages );
-				translateEditor.showTranslationMemory( result.helpers.ttmserver );
+				translateEditor.showTranslationMemory( result.helpers.ttmserver, targetLanguage );
 				translateEditor.showMachineTranslations( result.helpers.mt );
 				translateEditor.showSupportOptions( result.helpers.support );
 				translateEditor.addDefinitionDiff( result.helpers.definitiondiff );

@@ -10,16 +10,12 @@
 	 * Example usage:
 	 *
 	 * $( 'div.proofread' ).proofread( {
-	 *	message: messageObject, // Mandatory message object
-	 *	sourcelangcode: 'en', // Mandatory source language code
-	 *	targetlangcode: 'hi' // Mandatory target language code
+	 *	message: messageObject // Mandatory message object
 	 * } );
 	 *
 	 * @param {Element} element
 	 * @param {Object} options
-	 * @param {Object} options.message
-	 * @param {string} options.sourcelangcode Language code.
-	 * @param {string} options.targetlangcode Language code.
+	 * @cfg {Object} message
 	 */
 	function Proofread( element, options ) {
 		this.$message = $( element );
@@ -70,9 +66,7 @@
 		},
 
 		render: function () {
-			var targetLangCode, targetLangDir, targetLangAttrib,
-				sourceLangCode, sourceLangDir,
-				$proofreadAction, $proofreadEdit, userId, reviewers, otherReviewers,
+			var $proofreadAction, $proofreadEdit, userId, reviewers, otherReviewers,
 				translatedBySelf, proofreadBySelf;
 
 			// List of all reviewers
@@ -85,11 +79,6 @@
 			 * Accepting own translations is prohibited. */
 			translatedBySelf = ( this.message.properties[ 'last-translator-text' ] === mw.user.getName() );
 			proofreadBySelf = reviewers.indexOf( userId ) > -1;
-
-			sourceLangCode = this.options.sourcelangcode;
-			sourceLangDir = $.uls.data.getDir( sourceLangCode );
-			targetLangCode = this.options.targetlangcode;
-			targetLangDir = $.uls.data.getDir( targetLangCode );
 
 			$proofreadAction = $( '<div>' )
 				.attr( 'title', mw.msg( 'tux-proofread-action-tooltip' ) )
@@ -110,13 +99,6 @@
 					$( this ).find( '.tux-proofread-edit-label' ).addClass( 'hide' );
 				} );
 
-			if ( targetLangCode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
-				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
-			} else {
-				targetLangAttrib = targetLangCode;
-			}
-			targetLangDir = $.uls.data.getDir( targetLangAttrib );
-
 			this.$message.append(
 				$( '<div>' )
 					.addClass( 'row tux-message-item-compact message' )
@@ -125,17 +107,11 @@
 							.addClass( 'one column tux-proofread-status ' + this.message.properties.status ),
 						$( '<div>' )
 							.addClass( 'five columns tux-proofread-source' )
-							.attr( {
-								lang: sourceLangCode,
-								dir: sourceLangDir
-							} )
+							.prop( mw.translate.getLanguageProps( this.message.sourceLanguage ) )
 							.text( this.message.definition ),
 						$( '<div>' )
 							.addClass( 'five columns tux-proofread-translation' )
-							.attr( {
-								lang: targetLangAttrib,
-								dir: targetLangDir
-							} )
+							.prop( mw.translate.getLanguageProps( this.message.targetLanguage ) )
 							.text( this.message.translation || '' ),
 						$( '<div>' )
 							.addClass( 'tux-proofread-action-block one column' )

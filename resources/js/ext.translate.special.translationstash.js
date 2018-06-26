@@ -25,7 +25,7 @@
 			mclanguage: language,
 			mcoffset: offset,
 			mclimit: limit,
-			mcprop: 'definition'
+			mcprop: 'definition|languages'
 		} );
 
 		return deferred.promise();
@@ -34,10 +34,6 @@
 	function addMessage( message ) {
 		var $messageWrapper, $message,
 			$messageTable = $( '.tux-messagelist' ),
-			sourceLanguage = $messageTable.data( 'sourcelangcode' ),
-			sourceLanguageDir = $.uls.data.getDir( sourceLanguage ),
-			targetLanguage = $messageTable.data( 'targetlangcode' ),
-			targetLanguageDir = $.uls.data.getDir( targetLanguage ),
 			status = message.properties.status,
 			statusClass = 'tux-status-' + status,
 			statusMsg;
@@ -58,10 +54,7 @@
 					.append(
 						$( '<span>' )
 							.addClass( 'tux-list-source' )
-							.attr( {
-								lang: sourceLanguage,
-								dir: sourceLanguageDir
-							} )
+							.prop( mw.translate.getLanguageProps( message.sourceLanguage ) )
 							.text( message.definition ),
 						// Bidirectional isolation.
 						// This should be removed some day when proper
@@ -71,10 +64,7 @@
 							.html( $( 'body' ).hasClass( 'rtl' ) ? '&rlm;' : '&lrm;' ),
 						$( '<span>' )
 							.addClass( 'tux-list-translation' )
-							.attr( {
-								lang: targetLanguage,
-								dir: targetLanguageDir
-							} )
+							.prop( mw.translate.getLanguageProps( message.targetLanguage ) )
 							.text( message.translation || '' )
 					),
 				$( '<div>' )
@@ -159,13 +149,14 @@
 
 	function loadMessages() {
 		var $messageTable = $( '.tux-messagelist' ),
-			messagegroup = '!sandbox';
+			messagegroup = '!sandbox',
+			targetLanguage = mw.config.get( 'wgTranslateSandboxTargetLanguage' );
 
 		$( '<div>' )
 			.addClass( 'tux-loading-indicator' )
 			.appendTo( $messageTable );
 
-		getMessages( messagegroup, $messageTable.data( 'targetlangcode' ) )
+		getMessages( messagegroup, targetLanguage )
 			.done( function ( result ) {
 				var untranslated, messages = result.query.messagecollection;
 
@@ -214,22 +205,17 @@
 		$ulsTrigger.uls( {
 			ulsPurpose: 'translate-special-translationstash',
 			onSelect: function ( language ) {
-				var direction = $.uls.data.getDir( language ),
-					autonym = $.uls.data.getAutonym( language );
+				var autonym = $.uls.data.getAutonym( language );
 
+				// FIXME: direction is wrong for message documentation autonym
 				$ulsTrigger
 					.text( autonym )
-					.attr( {
-						lang: language,
-						dir: direction
-					} );
+					.prop( mw.translate.getLanguageProps( language );
 
 				$messageTable
-					.empty()
-					.data( {
-						targetlangcode: language,
-						targetlangdir: direction
-					} );
+					.empty();
+
+				mw.config.set( 'wgTranslateSandboxTargetLanguage', language );
 
 				loadMessages();
 			}

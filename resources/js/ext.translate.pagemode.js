@@ -10,16 +10,12 @@
 	 * Example usage:
 	 *
 	 * $( 'div.pagemode' ).pagemode( {
-	 *	message: messageObject, // Mandatory message object
-	 *	sourcelangcode: 'en', // Mandatory source language code
-	 *	targetlangcode: 'hi' // Mandatory target language code
+	 *	message: messageObject // Mandatory message object
 	 * } );
 	 *
 	 * @param {Element} element
 	 * @param {Object} options
-	 * @param {Object} options.message
-	 * @param {string} options.sourcelangcode Language code.
-	 * @param {string} options.targetlangcode Language code.
+	 * @cfg {Object} message
 	 */
 	function PageMode( element, options ) {
 		this.$message = $( element );
@@ -60,19 +56,6 @@
 		},
 
 		render: function () {
-			var targetLangAttrib, targetLangDir,
-				sourceLangDir = $.uls.data.getDir( this.options.sourcelangcode );
-
-			if ( this.options.targetlangcode ===
-				mw.config.get( 'wgTranslateDocumentationLanguageCode' )
-			) {
-				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
-			} else {
-				targetLangAttrib = this.options.targetlangcode;
-			}
-
-			targetLangDir = $.uls.data.getDir( targetLangAttrib );
-
 			this.$message.append(
 				$( '<div>' )
 					.addClass( 'row tux-message-item-compact message ' + this.message.properties.status )
@@ -81,17 +64,11 @@
 							.addClass( 'one column tux-pagemode-status ' + this.message.properties.status ),
 						$( '<div>' )
 							.addClass( 'five columns tux-pagemode-source' )
-							.attr( {
-								lang: this.options.sourcelangcode,
-								dir: sourceLangDir
-							} )
+							.prop( mw.translate.getLanguageProps( this.message.sourceLanguage ) )
 							.html( mw.translate.formatMessageGently( this.message.definition, this.message.key ) ),
 						$( '<div>' )
 							.addClass( 'five columns tux-pagemode-translation' )
-							.attr( {
-								lang: targetLangAttrib,
-								dir: targetLangDir
-							} )
+							.prop( mw.translate.getLanguageProps( this.message.targetLanguage ) )
 							.html( mw.translate.formatMessageGently( this.message.translation || '', this.message.key ) ),
 						$( '<div>' )
 							.attr( 'title', mw.msg( 'translate-edit-title', this.message.key ) )

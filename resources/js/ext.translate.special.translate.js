@@ -241,7 +241,6 @@
 
 		$messageList = $( '.tux-messagelist' );
 		state.group = $( '.tux-messagetable-loader' ).data( 'messagegroup' );
-		state.language = $messageList.data( 'targetlangcode' );
 
 		if ( $messageList.length ) {
 			$messageList.messagetable();
@@ -249,6 +248,8 @@
 
 			uri = new mw.Uri( window.location.href );
 			filter = uri.query.filter;
+			state.language = uri.query.language || mw.config.get( 'wgUserLanguage' );
+
 			offset = uri.query.showMessage;
 			if ( offset ) {
 				limit = uri.query.limit || 1;
@@ -308,11 +309,6 @@
 				$target.click();
 			} );
 		} );
-
-		if ( $.fn.translateeditor ) {
-			// New translation editor
-			$( '.tux-message' ).translateeditor();
-		}
 
 		$translateContainer = $( '.ext-translate-container' );
 

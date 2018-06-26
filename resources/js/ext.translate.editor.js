@@ -24,12 +24,13 @@
 	 *
 	 * @param {HTMLElement} element
 	 * @param {Object} options
-	 * @param {Function} [options.beforeSave] Callback to call when translation is going to be saved.
-	 * @param {Function} [options.onReady] Callback to call when the editor is ready.
-	 * @param {Function} [options.onSave] Callback to call when translation has been saved.
-	 * @param {Function} [options.onSkip] Callback to call when a message is skipped.
-	 * @param {Object} options.message Object as returned by messagecollection api.
-	 * @param {TranslationApiStorage} [options.storage]
+	 * @cfg {Function} [options.beforeSave] Callback to call when translation is going to be saved.
+	 * @cfg {Function} [options.onReady] Callback to call when the editor is ready.
+	 * @cfg {Function} [options.onSave] Callback to call when translation has been saved.
+	 * @cfg {Function} [options.onSkip] Callback to call when a message is skipped.
+	 * @cfg {Object} options.message Object as returned by messagecollection api with
+	 *  props=definition|translation|properties|languages.
+	 * @cfg {TranslationApiStorage} [options.storage]
 	 */
 	function TranslateEditor( element, options ) {
 		this.$editTrigger = $( element );
@@ -461,8 +462,7 @@
 				$closeIcon,
 				$layoutActions,
 				$infoToggleIcon,
-				$messageList,
-				targetLangAttrib, targetLangDir, targetLangCode, prefix,
+				prefix,
 				$messageTools = translateEditor.createMessageTools(),
 				canTranslate = mw.translate.canTranslate();
 
@@ -508,15 +508,11 @@
 				.append( $messageKeyLabel, $layoutActions )
 			);
 
-			$messageList = $( '.tux-messagelist' );
 			originalTranslation = this.message.translation;
 			sourceString = this.message.definition;
 			$sourceString = $( '<span>' )
 				.addClass( 'twelve columns sourcemessage' )
-				.attr( {
-					lang: $messageList.data( 'sourcelangcode' ),
-					dir: $messageList.data( 'sourcelangdir' )
-				} )
+				.prop( mw.translate.getLanguageProps( this.message.sourceLanguage ) )
 				.text( sourceString );
 
 			// Adjust the font size for the message string based on the length
@@ -569,21 +565,9 @@
 					}
 				} );
 
-			targetLangCode = $messageList.data( 'targetlangcode' );
-			if ( targetLangCode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
-				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
-				targetLangDir = $.uls.data.getDir( targetLangAttrib );
-			} else {
-				targetLangAttrib = targetLangCode;
-				targetLangDir = $messageList.data( 'targetlangdir' );
-			}
-
 			$textarea = $( '<textarea>' )
 				.addClass( 'tux-textarea-translation' )
-				.attr( {
-					lang: targetLangAttrib,
-					dir: targetLangDir
-				} )
+				.prop( mw.translate.getLanguageProps( this.message.targetLanguage ) )
 				.val( this.message.translation || '' );
 
 			if ( mw.translate.isPlaceholderSupported( $textarea ) ) {

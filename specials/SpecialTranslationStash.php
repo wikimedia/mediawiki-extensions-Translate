@@ -51,6 +51,7 @@ class SpecialTranslationStash extends SpecialPage {
 		}
 
 		$out->addJsConfigVars( 'wgTranslateSandboxLimit', $wgTranslateSandboxLimit );
+		$out->addJsConfigVars( 'wgTranslateSandboxTargetLanguage', $this->getTargetLanguage() );
 		$out->addModules( 'ext.translate.special.translationstash' );
 		$out->addModuleStyles( 'mediawiki.ui.button' );
 		$this->showPage();
@@ -129,15 +130,8 @@ HTML
 	}
 
 	protected function getMessageTable() {
-		$sourceLang = $this->getSourceLanguage();
-		$targetLang = $this->getTargetLanguage();
-
 		$list = Html::element( 'div', [
-			'class' => 'row tux-messagelist',
-			'data-sourcelangcode' => $sourceLang->getCode(),
-			'data-sourcelangdir' => $sourceLang->getDir(),
-			'data-targetlangcode' => $targetLang->getCode(),
-			'data-targetlangdir' => $targetLang->getDir(),
+			'class' => 'row tux-messagelist'
 		] );
 
 		return $list;
