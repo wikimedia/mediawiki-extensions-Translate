@@ -144,6 +144,11 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 					$data['primaryGroup'] = $handle->getGroup()->getId();
 				}
 
+				if ( isset( $props['languages'] ) ) {
+					$data['sourceLanguage'] = wfBCP47( $group->getSourceLanguage() );
+					$data['targetLanguage'] = wfBCP47( $params['language'] );
+				}
+
 				$result->addValue( [ 'query', $this->getModuleName() ], null, $data );
 			} else {
 				$pages[] = $title;
@@ -252,7 +257,8 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 					'translation',
 					'tags',
 					'revision',
-					'properties'
+					'properties',
+					'languages',
 				],
 				ApiBase::PARAM_DFLT => 'definition|translation',
 				ApiBase::PARAM_ISMULTI => true,

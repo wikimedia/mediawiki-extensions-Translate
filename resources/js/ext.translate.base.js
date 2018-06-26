@@ -164,6 +164,29 @@
 				mw.translate.dirty ||
 				// For new translate, previous editors has some unsaved edits
 				$( '.tux-status-unsaved' ).length;
+		},
+
+		/**
+		 * Gets an appropriate lang and dir properties for a given language tag.
+		 *
+		 * Mainly this means replacing custom message documentation tag with a real language tag.
+		 * @param {string} language Language tag
+		 * @return {Object}
+		 */
+		getLanguageProps: function ( language ) {
+			var props,
+				contentLanguage = mw.config.get( 'wgContentLanguage' ),
+				documentationLanguage = mw.config.get( 'wgTranslateDocumentationLanguageCode' );
+
+			// Language tags must be compared case-insensitive
+			if ( language.toUpperCase() === documentationLanguage.toUpperCase() ) {
+				props = { lang: contentLanguage };
+			} else {
+				props = { lang: language };
+			}
+			props.dir = $.uls.data.getDir( props.lang );
+
+			return props;
 		}
 	} );
 
