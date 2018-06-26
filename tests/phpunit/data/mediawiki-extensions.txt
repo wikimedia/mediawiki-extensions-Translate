@@ -10,3 +10,9 @@ Example JsonExtension
 
 Example Extension 2
 file = foo
+
+Languages Modified
+languages = +foo, -bar
+
+Languages Set
+languages = foo, bar

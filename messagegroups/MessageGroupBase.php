@@ -393,7 +393,7 @@ abstract class MessageGroupBase implements MessageGroup {
 			return null;
 		}
 
-		$codes = array_flip( array_keys( TranslateUtils::getLanguageNames( 'en' ) ) );
+		$codes = array_flip( array_keys( TranslateUtils::getLanguageNames( null ) ) );
 
 		$lists = $groupConfiguration['LANGUAGES'];
 		if ( isset( $lists['blacklist'] ) ) {
