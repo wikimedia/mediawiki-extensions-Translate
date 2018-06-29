@@ -8,7 +8,7 @@
 	 * Prepare the translation editor UI for a translation unit (message).
 	 * This is mainly used with the messagetable plugin,
 	 * but it is independent of messagetable.
-	 * Example usage:
+	 * Example usage:z
 	 *
 	 *     $( 'div.messageRow' ).translateeditor( {
 	 *         message: messageObject // Mandatory message object
@@ -179,12 +179,21 @@
 		 * Save the translation
 		 */
 		save: function () {
-			var translation, editSummary,
+			var translation, editSummary, translationFemale,
 				translateEditor = this;
 
 			mw.translateHooks.run( 'beforeSubmit', translateEditor.$editor );
-			translation = translateEditor.$editor.find( '.editcolumn textarea' ).val();
+			translation 	  = translateEditor.$editor.find( '.editcolumn textarea:eq(0)' ).val();
+			
 			editSummary = translateEditor.$editor.find( '.tux-input-editsummary' ).val() || '';
+
+			if (translateEditor.$editor.find( '.editcolumn textarea' ).size() === 2) {
+				translationFemale = translateEditor.$editor.find( '.editcolumn textarea:eq(1)' ).val();
+
+				translation = '{{GENDER:|' + translation + '|' + translationFemale + '}}';
+			}
+
+			// Combine the translations here
 
 			translateEditor.saving = true;
 
@@ -433,20 +442,26 @@
 
 			return $( '<ul>' )
 				.addClass( 'tux-dropdown-menu tux-message-tools-menu hide' )
-				.append( $editItem, $historyItem, $deleteItem, $translationsItem, $linkToThisItem );
+				.append( $editItem, $historyItem, $deleteItem, $translationsItem );
 		},
 
 		prepareEditorColumn: function () {
 			var translateEditor = this,
 				sourceString,
+				translations,
 				originalTranslation,
+				femaleTranslation,
+				existTwoGenders = false,
 				$editorColumn,
 				$messageKeyLabel,
 				$moreWarningsTab,
 				$warnings,
 				$warningsBlock,
 				$editAreaBlock,
+				$editAreaMale,
+				$editAreaFemale,
 				$textarea,
+				$textareaFemale,
 				$controlButtonBlock,
 				$editingButtonBlock,
 				$pasteOriginalButton,
@@ -456,15 +471,19 @@
 				$saveButton,
 				$requestRight,
 				$skipButton,
+				$genderButton,
+				$genderField,
 				$cancelButton,
 				$sourceString,
+				$maleMsg,
+				$femaleMsg,
 				$closeIcon,
 				$layoutActions,
 				$infoToggleIcon,
 				$messageList,
 				targetLangAttrib, targetLangDir, targetLangCode, prefix,
 				$messageTools = translateEditor.createMessageTools(),
-				canTranslate = mw.translate.canTranslate();
+				canTranslate = mw.translate.canTranslate(); // it should return the result of a promise, otherwise user won't be able to translate
 
 			$editorColumn = $( '<div>' )
 				.addClass( 'seven columns editcolumn' );
@@ -509,7 +528,13 @@
 			);
 
 			$messageList = $( '.tux-messagelist' );
-			originalTranslation = this.message.translation;
+			translations = checkGenders(this.message.translation);
+			originalTranslation = translations[0];
+
+			if (translations.length > 1) {
+				femaleTranslation = translations[1];
+			}
+
 			sourceString = this.message.definition;
 			$sourceString = $( '<span>' )
 				.addClass( 'twelve columns sourcemessage' )
@@ -518,6 +543,29 @@
 					dir: $messageList.data( 'sourcelangdir' )
 				} )
 				.text( sourceString );
+
+			/**
+			 * Check if the translated string is actually a universal translation or two gender-specific translations
+			 * @param {string} msg 
+			 * @return {array} splitted | [msg]
+			 */
+			function checkGenders(msg) {
+				// according to Mediawiki standard
+				var keyword = '{{GENDER:|'; 
+				var ending  = '}}';
+
+				var splitted;
+				if (msg && msg.indexOf(keyword) !== -1) {
+					msg = msg.replace(keyword, '');
+					splitted = msg.split('|');
+					splitted[1] = splitted[1].replace(ending, '');
+					existTwoGenders = true;
+					return splitted;
+				}
+
+				existTwoGenders = false;
+				return [msg];
+			}
 
 			// Adjust the font size for the message string based on the length
 			if ( sourceString.length > 100 && sourceString.length < 200 ) {
@@ -532,6 +580,14 @@
 				.addClass( 'row' )
 				.append( $sourceString )
 			);
+
+			$maleMsg = $( '<span>' )
+					.addClass( 'twelve columns malemessage' )
+					.text( 'Male Translation' );
+
+			$femaleMsg = $( '<span>' )
+					.addClass( 'twelve columns femalemessage' )
+					.text( 'Female Translation' );
 
 			$warnings = $( '<div>' )
 				.addClass( 'tux-warning hide' );
@@ -584,14 +640,26 @@
 					lang: targetLangAttrib,
 					dir: targetLangDir
 				} )
-				.val( this.message.translation || '' );
+				.val( originalTranslation || '' );
+
+			$textareaFemale = $( '<textarea>' )
+				.addClass( 'tux-textarea-translation-female' )
+				.attr( {
+					lang: targetLangAttrib,
+					dir: targetLangDir
+				} )
+				.val( femaleTranslation || '' );
 
 			if ( mw.translate.isPlaceholderSupported( $textarea ) ) {
 				$textarea.prop( 'placeholder', mw.msg( 'tux-editor-placeholder' ) );
 			}
 
-			// Shortcuts for various insertable things
-			$textarea.on( 'keyup keydown', function ( e ) {
+			if ( $textareaFemale && mw.translate.isPlaceholderSupported($textareaFemale)) {
+				$textareaFemale.prop('placeholder', mw.msg('tux-editor-placeholder'));
+			}
+
+			// Used for keyup keydown event
+			function keyChange( e ) {
 				var index, info, direction;
 
 				if ( e.type === 'keydown' && e.altKey === true ) {
@@ -630,9 +698,14 @@
 				} else if ( e.which === 18 && e.type === 'keydown' ) {
 					translateEditor.showShortcuts();
 				}
-			} );
+			}
 
-			$textarea.on( 'textchange', function () {
+			// Shortcuts for various insertable things
+			$textarea.on( 'keyup keydown',  keyChange);
+			$textareaFemale.on( 'keyup keydown',  keyChange);
+		
+			// Used when textchange even occurs
+			function textChange() {
 				var $textarea = $( this ),
 					$saveButton = translateEditor.$editor.find( '.tux-editor-save-button' ),
 					$pasteSourceButton = translateEditor.$editor.find( '.tux-editor-paste-original-button' ),
@@ -671,18 +744,29 @@
 				translateEditor.delayValidation( function () {
 					translateEditor.validateTranslation();
 				}, 500 );
-			} );
+			}
+
+			$textarea.on( 'textchange', textChange);
+			$textareaFemale.on( 'textchange', textChange);
 
 			$warningsBlock = $( '<div>' )
 				.addClass( 'tux-warnings-block' )
-				.append( $moreWarningsTab, $warnings );
+				.append( $moreWarningsTab, $warnings );	
 
-			$editAreaBlock = $( '<div>' )
+			// Append either one or two text areas depending on whether there are universal or gender-specific translations
+			if (translations.length === 1) {
+				$editAreaBlock = $( '<div>' )
 				.addClass( 'row tux-editor-editarea-block' )
-				.append( $( '<div>' )
+				.append($( '<div>' )
 					.addClass( 'editarea twelve columns' )
-					.append( $warningsBlock, $textarea )
-				);
+					.append( $warningsBlock, $textarea ));
+			} else {
+				$editAreaBlock = $( '<div>' )
+				.addClass( 'row tux-editor-editarea-block' )
+				.append($( '<div>' )
+					.addClass( 'editarea twelve columns' )
+					.append( $warningsBlock, $maleMsg, $textarea, $femaleMsg, $textareaFemale ));
+			}
 
 			$editorColumn.append( $editAreaBlock );
 
@@ -695,6 +779,12 @@
 							.focus()
 							.val( sourceString )
 							.trigger( 'input' );
+						if (existTwoGenders) {
+							$textareaFemale
+							.focus()
+							.val( sourceString )
+							.trigger( 'input' );
+						}
 
 						$pasteOriginalButton.addClass( 'hide' );
 					} );
@@ -708,26 +798,34 @@
 					} )
 					.val( '' );
 
-				// Enable edit summary if there was a change to translation area
-				// or disable if there is no text in translation area
-				$textarea.on( 'textchange', function () {
+				function editSummaryTextChange() {
 					if ( $editSummary.prop( 'disabled' ) ) {
 						$editSummary.prop( 'disabled', false );
 					}
 					if ( $textarea.val().trim() === '' ) {
 						$editSummary.prop( 'disabled', true );
 					}
-				} ).on( 'keydown', function ( e ) {
+				}
+
+				function editSummaryKeyDown(e) {
 					if ( !e.ctrlKey || e.keyCode !== 13 ) {
 						return;
 					}
-
+					
 					if ( !$saveButton.is( ':disabled' ) ) {
 						$saveButton.click();
 						return;
 					}
 					$skipButton.click();
-				} );
+				}
+
+				// Enable edit summary if there was a change to translation area
+				// or disable if there is no text in translation area
+				$textarea.on( 'textchange', editSummaryTextChange)
+						 .on( 'keydown', editSummaryKeyDown);
+
+				$textareaFemale.on( 'textchange', editSummaryTextChange)
+							   .on( 'keydown', editSummaryKeyDown);
 
 				if ( originalTranslation !== null ) {
 					$discardChangesButton = $( '<button>' )
@@ -738,6 +836,12 @@
 							$textarea
 								.focus()
 								.val( originalTranslation );
+							if (existTwoGenders) {
+								// Restore the translation
+								$textareaFemale
+									.focus()
+									.val( femaleTranslation );
+							}
 
 							// and go back to hiding.
 							$discardChangesButton.addClass( 'hide' );
@@ -750,6 +854,7 @@
 
 							translateEditor.markUnunsaved();
 							translateEditor.resizeInsertables( $textarea );
+							if (existTwoGenders) translateEditor.resizeInsertables( $textareaFemale );
 						} );
 				}
 
@@ -784,6 +889,30 @@
 					} );
 
 				this.makeSaveButtonContextSensitive( $saveButton, this.$messageItem );
+				
+				// Checkbox for changing between universal and gender-specific translation
+				$genderButton = $( '<input>', {type: 'checkbox', id: 'gender', value: 'gender', checked: existTwoGenders} )
+				.on( 'change', function ( e ) {
+					existTwoGenders = !existTwoGenders;
+					$('#gender').prop('checked', existTwoGenders);
+
+					if (existTwoGenders) {
+						$textarea.before($maleMsg);
+						$editAreaBlock.append($femaleMsg);
+						$editAreaBlock.append($textareaFemale);
+					} else {
+						$maleMsg.detach();
+						$femaleMsg.detach();
+						$textareaFemale.detach();
+					}
+
+				} );
+
+				// Label for the gender checkbox
+				$genderField = $('<label />')
+				.html('Two Genders')
+				.prepend($genderButton);
+
 			} else {
 				$editingButtonBlock = $( [] );
 
@@ -810,6 +939,7 @@
 				// Disable the text area if user has no translation rights.
 				// Use readonly to allow copy-pasting (except for placeholders)
 				$textarea.prop( 'readonly', true );
+				$textareaFemale.prop( 'readonly', true );
 
 				$saveButton = $( [] );
 			}
@@ -841,7 +971,7 @@
 
 			$controlButtonBlock = $( '<div>' )
 				.addClass( 'twelve columns tux-editor-control-buttons' )
-				.append( $requestRight, $saveButton, $skipButton, $cancelButton );
+				.append( $requestRight, $saveButton, $skipButton, $cancelButton, $genderField );
 
 			$editorColumn.append( $( '<div>' )
 				.addClass( 'row tux-editor-actions-block' )
@@ -926,17 +1056,26 @@
 		validateTranslation: function () {
 			var translateEditor = this,
 				api,
-				$textarea = translateEditor.$editor.find( '.tux-textarea-translation' );
+				$textarea = translateEditor.$editor.find( '.tux-textarea-translation' ),
+				$textareaFemale = translateEditor.$editor.find('.tux-textarea-translation-female'), 
+				combined;
+
+			if ($textareaFemale.val()) {
+				combined = '{{GENDER:|' + $textarea.val() + '|' + $textareaFemale + '}}';
+			} else {
+				combined = translateEditor.$editor.find( '.tux-textarea-translation' ).val();
+			}
 
 			api = new mw.Api();
+
 
 			api.post( {
 				action: 'translationcheck',
 				title: this.message.title,
-				translation: $textarea.val()
+				translation: combined // here the two translations shall be combined
 			} ).done( function ( data ) {
-				var warningIndex,
-					warnings = data.warnings;
+					var warningIndex,
+						warnings = data.warnings;
 
 				translateEditor.removeWarning( 'validation' );
 				if ( !warnings || !warnings.length ) {
@@ -1132,13 +1271,14 @@
 		},
 
 		show: function () {
-			var $next, $textarea;
+			var $next, $textarea, $textareaFemale, $genderButton;
 
 			if ( !this.$editor ) {
 				this.init();
 			}
 
-			$textarea = this.$editor.find( '.editcolumn textarea' );
+			$textarea 		= this.$editor.find( '.editcolumn textarea:eq(0)' );
+			$textareaFemale = this.$editor.find( '.editcolumn textarea:eq(1)' );
 			// Hide all other open editors in the page
 			$( '.tux-message.open' ).each( function () {
 				$( this ).data( 'translateeditor' ).hide();
@@ -1151,12 +1291,17 @@
 			this.$editor.find( '.tux-input-editsummary' ).attr( 'accesskey', 'b' );
 			// @todo access key for the cancel button
 
+			// As checked button is universal, it needs to be updated depending the number of gender translations
+			$textareaFemale.val() !== undefined ? this.$editor.find('#gender').prop('checked', true) : this.$editor.find('#gender').prop('checked', false);
 			this.$messageItem.addClass( 'hide' );
 			this.$editor.removeClass( 'hide' );
 			$textarea.focus();
+			$textareaFemale.focus();
 
 			autosize( $textarea );
+			autosize( $textareaFemale );
 			this.resizeInsertables( $textarea );
+			this.resizeInsertables( $textareaFemale );
 
 			this.shown = true;
 			this.$editTrigger.addClass( 'open' );
@@ -1164,11 +1309,11 @@
 			// don't waste time, get ready with next message
 			$next = this.$editTrigger.next( '.tux-message' );
 
-			if ( $next.length ) {
-				$next.data( 'translateeditor' ).init();
-			}
+			// if ( $next.length ) {
+			// 	$next.data( 'translateeditor' ).init();
+			// }
 
-			mw.translateHooks.run( 'afterEditorShown', this.$editor );
+			// mw.translateHooks.run( 'afterEditorShown', this.$editor );
 
 			return false;
 		},
