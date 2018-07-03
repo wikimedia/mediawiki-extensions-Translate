@@ -279,7 +279,6 @@ $wgTranslateTranslationServices['TTMServer'] = [
 	'public' => false,
 ];
 $wgTranslateTranslationServices['Microsoft'] = [
-	'url' => 'http://api.microsofttranslator.com/V2/Http.svc/Translate',
 	'key' => null,
 	'timeout' => 3,
 	'type' => 'microsoft',
