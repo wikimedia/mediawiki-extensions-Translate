@@ -2,15 +2,36 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"LNDDYL"
+			"LNDDYL",
+			"Kly"
 		]
 	},
+	"apihelp-aggregategroups-param-group": "訊息群組 ID。",
+	"apihelp-groupreview-param-group": "訊息群組。",
 	"apihelp-groupreview-param-language": "語言代碼。",
+	"apihelp-groupreview-param-state": "群組的新狀態。",
+	"apihelp-query+languagestats-description": "查詢語言統計。",
+	"apihelp-query+languagestats-summary": "查詢語言統計。",
+	"apihelp-query+languagestats-param-language": "語言代碼。",
+	"apihelp-query+messagecollection-param-group": "訊息群組。",
 	"apihelp-query+messagecollection-param-language": "語言代碼。",
+	"apihelp-query+messagecollection-example-1": "支援語言清單",
+	"apihelp-query+messagegroups-summary": "回傳有關訊息群組的資訊。",
+	"apihelp-query+messagegroups-example-1": "顯示訊息群組",
+	"apihelp-query+messagegroupstats-param-group": "訊息群組 ID。",
+	"apihelp-translatesandbox-param-username": "建立使用者時的使用者名稱。",
+	"apihelp-translatesandbox-param-password": "建立使用者時的密碼。",
+	"apihelp-translatesandbox-param-email": "建立使用者時發送電子郵件。",
+	"apihelp-translationstash-param-metadata": "JSON 物件。",
 	"apihelp-searchtranslations-description": "搜尋翻譯。",
+	"apihelp-searchtranslations-summary": "搜尋翻譯。",
 	"apihelp-searchtranslations-param-query": "欲搜尋的字串。",
 	"apihelp-searchtranslations-param-sourcelanguage": "原始文字的語言碼。",
 	"apihelp-searchtranslations-param-filter": "訊息翻譯狀態篩選器。",
 	"apihelp-searchtranslations-param-match": "符合任何/所有搜尋文字。",
-	"apihelp-searchtranslations-param-limit": "結果的大小。"
+	"apihelp-searchtranslations-param-limit": "結果的大小。",
+	"apierror-translate-invalidupdate": "無效更新",
+	"apierror-translate-sandboxdisabled": "未使用沙盒功能",
+	"apierror-translate-sandbox-invalidppassword": "無效密碼",
+	"apierror-translate-unknownmessage": "未知訊息"
 }
