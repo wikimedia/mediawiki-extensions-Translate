@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d3e70044_aac29888",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-07-03T14:33:06Z",
+      "side": 1,
+      "message": "Hmm. Can we rename this to addForm() for clarity. I think only MessageGroupStats extends this class, so it should be easy.",
+      "revId": "ded3ef5d6882abfc923cf2bd23c3d97a91f972fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a518d15_1b2150ac",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-07-03T14:33:06Z",
+      "side": 1,
+      "message": "Can we use the same message as in Special:MessageGroupStats? Having \"Language code\" shown twice in row looks bad. It is an pre-existing problem, but this patch makes it more visible.",
+      "revId": "ded3ef5d6882abfc923cf2bd23c3d97a91f972fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
