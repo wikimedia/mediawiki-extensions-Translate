@@ -78,7 +78,7 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	}
 
 	/// Overwriten from SpecialLanguageStats
-	protected function getform() {
+	protected function addForm() {
 		$formDescriptor = [
 			'select' => [
 				'type' => 'select',
