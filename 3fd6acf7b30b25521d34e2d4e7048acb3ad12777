@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8638e6b6_cd656bb2",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2018-07-03T13:30:20Z",
+      "side": 1,
+      "message": "What is that @todo about?",
+      "revId": "3fd6acf7b30b25521d34e2d4e7048acb3ad12777",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
