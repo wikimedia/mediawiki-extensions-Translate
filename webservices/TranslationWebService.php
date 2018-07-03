@@ -93,6 +93,9 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	 * @throws TranslationWebServiceConfigurationException
 	 */
 	public function getQueries( $text, $from, $to ) {
+		$from = $this->mapCode( $from );
+		$to = $this->mapCode( $to );
+
 		try {
 			return [ $this->getQuery( $text, $from, $to ) ];
 		} catch ( TranslationWebServiceException $e ) {
@@ -113,7 +116,10 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	 */
 	public function getResultData( TranslationQueryResponse $response ) {
 		if ( $response->getStatusCode() !== 200 ) {
-			$this->reportTranslationServiceFailure( $response->getStatusMessage() );
+			$this->reportTranslationServiceFailure(
+				'STATUS: ' . $response->getStatusMessage() . "\n" .
+				'BODY: ' . $response->getBody()
+			);
 			return null;
 		}
 
@@ -211,6 +217,9 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	 */
 	public function isSupportedLanguagePair( $from, $to ) {
 		$pairs = $this->getSupportedLanguagePairs();
+		$from = $this->mapCode( $from );
+		$to = $this->mapCode( $to );
+
 		return isset( $pairs[$from][$to] );
 	}
 
