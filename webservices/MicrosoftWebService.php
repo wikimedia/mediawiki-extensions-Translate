@@ -28,53 +28,12 @@ class MicrosoftWebService extends TranslationWebService {
 		return isset( $map[$code] ) ? $map[$code] : $code;
 	}
 
-	protected function getMSTokens( $clientID, $clientSecret ) {
-		$authUrl = "https://datamarket.accesscontrol.windows.net/v2/OAuth2-13/";
-
-		$params = [
-			'grant_type' => "client_credentials",
-			'scope' => "http://api.microsofttranslator.com",
-			'client_id' => $clientID,
-			'client_secret' => $clientSecret
-		];
-
-		$params = wfArrayToCgi( $params );
-
-		$options['method']   = 'POST';
-		$options['timeout']  = $this->config['timeout'];
-		$options['postData'] = $params;
-
-		$req = MWHttpRequest::factory( $authUrl, $options );
-
-		$status = $req->execute();
-
-		if ( !$status->isOK() ) {
-			$error = $req->getContent();
-			// Most likely a timeout or other general error
-			throw new TranslationWebServiceException(
-				'Http::get failed: ' . $authUrl . serialize( $error ) . serialize( $status )
-			);
-		}
-		$ret = $req->getContent();
-
-		$response = json_decode( $ret, true );
-		if ( isset( $response['error'] ) ) {
-			throw new TranslationWebServiceException( $response['error_description'] );
-		}
-
-		return $response['access_token'];
-	}
-
 	protected function doPairs() {
-		if ( !isset( $this->config['clientId'] ) || !isset( $this->config['clientSecret'] ) ) {
-			throw new TranslationWebServiceConfigurationException( 'clientId or clientSecret is not set' );
+		if ( !isset( $this->config['key'] ) ) {
+			throw new TranslationWebServiceConfigurationException( 'key is not set' );
 		}
 
-		$clientID = $this->config['clientId'];
-		$clientSecret = $this->config['clientSecret'];
-
-		// get access token from service
-		$accessToken = $this->getMSTokens( $clientID, $clientSecret );
+		$key = $this->config['key'];
 
 		$options = [];
 		$options['method']  = 'GET';
@@ -83,7 +42,7 @@ class MicrosoftWebService extends TranslationWebService {
 		$url = 'http://api.microsofttranslator.com/V2/Http.svc/GetLanguagesForTranslate?';
 
 		$req = MWHttpRequest::factory( $url, $options );
-		$req->setHeader( 'Authorization', "Bearer $accessToken" );
+		$req->setHeader( 'Ocp-Apim-Subscription-Key', $key );
 
 		$status = $req->execute();
 		if ( !$status->isOK() ) {
@@ -112,20 +71,13 @@ class MicrosoftWebService extends TranslationWebService {
 	}
 
 	protected function getQuery( $text, $from, $to ) {
-		if ( !isset( $this->config['clientId'] ) || !isset( $this->config['clientSecret'] ) ) {
-			throw new TranslationWebServiceConfigurationException(
-				'clientId or clientSecret is not set'
-			);
+		if ( !isset( $this->config['key'] ) ) {
+			throw new TranslationWebServiceConfigurationException( 'key is not set' );
 		}
 
+		$key = $this->config['key'];
 		$text = trim( $text );
 		$text = $this->wrapUntranslatable( $text );
-
-		// get access token from service
-		$accessToken = $this->getMSTokens(
-			$this->config['clientId'],
-			$this->config['clientSecret']
-		);
 
 		$params = [
 			'text' => $text,
@@ -133,7 +85,7 @@ class MicrosoftWebService extends TranslationWebService {
 			'to' => $to,
 		];
 		$headers = [
-			'Authorization' => 'Bearer ' . $accessToken,
+			'Ocp-Apim-Subscription-Key' => $key,
 		];
 
 		return TranslationQuery::factory( $this->config['url'] )
