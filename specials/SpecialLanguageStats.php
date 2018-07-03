@@ -150,7 +150,7 @@ class SpecialLanguageStats extends SpecialPage {
 
 		if ( !$this->including() ) {
 			$out->addHelpLink( 'Help:Extension:Translate/Statistics_and_reporting' );
-			$out->addHTML( $this->getForm() );
+			$this->getForm();
 		}
 
 		if ( $this->isValidValue( $this->target ) ) {
@@ -198,73 +198,50 @@ class SpecialLanguageStats extends SpecialPage {
 	 * @todo duplicated code
 	 */
 	protected function getForm() {
-		global $wgScript;
 
-		$out = Html::openElement( 'div' );
-		$out .= Html::openElement( 'form', [ 'method' => 'get', 'action' => $wgScript ] );
-		$out .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
-		$out .= Html::hidden( 'x', 'D' ); // To detect submission
-		$out .= Html::openElement( 'fieldset' );
-		$out .= Html::element(
-			'legend',
-			[],
-			$this->msg( 'translate-language-code' )->text()
-		);
-		$out .= Html::openElement( 'table' );
+		$formDescriptor[ 'language' ] = [
+			'type' => 'text',
+			'name' => 'language',
+			'id' => 'language',
+			'label' => $this->msg( 'translate-language-code-field-name' )->text(),
+			'size' => 10,
+			'default' => $this->target,
+		];
+		$formDescriptor[ 'suppresscomplete' ] = [
+			'type' => 'check',
+			'label' => $this->msg( 'translate-suppress-complete' )->text(),
+			'name' => 'suppresscomplete',
+			'id' => 'suppresscomplete',
+			'default' => $this->noComplete,
+		];
+		$formDescriptor[ 'suppressempty' ] = [
+			'type' => 'check',
+			'label' => $this->msg( 'translate-ls-noempty' )->text(),
+			'name' => 'suppressempty',
+			'id' => 'suppressempty',
+			'default' => $this->noEmpty,
+		];
 
-		$out .= Html::openElement( 'tr' );
-		$out .= Html::openElement( 'td', [ 'class' => 'mw-label' ] );
-		$out .= Xml::label(
-			$this->msg( 'translate-language-code-field-name' )->text(),
-			'language'
-		);
-		$out .= Html::closeElement( 'td' );
-		$out .= Html::openElement( 'td', [ 'class' => 'mw-input' ] );
-		$out .= Xml::input( 'language', 10, $this->target, [ 'id' => 'language' ] );
-		$out .= Html::closeElement( 'td' );
-		$out .= Html::closeElement( 'tr' );
+		$context = new DerivativeContext( $this->getContext() );
+		$context->setTitle( $this->getPageTitle() ); // Remove subpage
 
-		$out .= Html::openElement( 'tr' );
-		$out .= Html::openElement( 'td', [ 'colspan' => 2 ] );
-		$out .= Xml::checkLabel(
-			$this->msg( 'translate-suppress-complete' )->text(),
-			'suppresscomplete',
-			'suppresscomplete',
-			$this->noComplete
-		);
-		$out .= Html::closeElement( 'td' );
-		$out .= Html::closeElement( 'tr' );
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $context );
 
-		$out .= Html::openElement( 'tr' );
-		$out .= Html::openElement( 'td', [ 'colspan' => 2 ] );
-		$out .= Xml::checkLabel(
-			$this->msg( 'translate-ls-noempty' )->text(),
-			'suppressempty',
-			'suppressempty',
-			$this->noEmpty
-		);
-		$out .= Html::closeElement( 'td' );
-		$out .= Html::closeElement( 'tr' );
-
-		$out .= Html::openElement( 'tr' );
-		$out .= Html::openElement( 'td', [ 'class' => 'mw-input', 'colspan' => 2 ] );
-		$out .= Xml::submitButton( $this->msg( 'translate-ls-submit' )->text() );
-		$out .= Html::closeElement( 'td' );
-		$out .= Html::closeElement( 'tr' );
-
-		$out .= Html::closeElement( 'table' );
-		$out .= Html::closeElement( 'fieldset' );
 		/* Since these pages are in the tabgroup with Special:Translate,
-		 * it makes sense to retain the selected group/language parameter
-		 * on post requests even when not relevant to the current page. */
+		* it makes sense to retain the selected group/language parameter
+		* on post requests even when not relevant to the current page. */
 		$val = $this->getRequest()->getVal( 'group' );
 		if ( $val !== null ) {
-			$out .= Html::hidden( 'group', $val );
+			$htmlForm->addHiddenField( 'group', $val );
 		}
-		$out .= Html::closeElement( 'form' );
-		$out .= Html::closeElement( 'div' );
 
-		return $out;
+		$htmlForm
+			->addHiddenField( 'x', 'D' ) // To detect submission
+			->setMethod( 'get' )
+			->setSubmitTextMsg( 'translate-ls-submit' )
+			->setWrapperLegendMsg( 'translate-language-code' )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
