@@ -91,6 +91,7 @@ $al['TranslateRegistrationStats'] = "$dir/specials/SpecialTranslationStats.php";
 $al['TranslateSandbox'] = "$dir/utils/TranslateSandbox.php";
 $al['TranslateSandboxEmailJob'] = "$dir/utils/TranslateSandboxEmailJob.php";
 $al['TranslateStatsOutput'] = "$dir/scripts/TranslateStatsOutput.php";
+$al['TranslateCliLogger'] = "$dir/scripts/TranslateCliLogger.php";
 $al['TranslateToolbox'] = "$dir/utils/ToolBox.php";
 $al['TranslateYaml'] = "$dir/utils/TranslateYaml.php";
 $al['TranslationHelperException'] = "$dir/utils/TranslationHelpers.php";
