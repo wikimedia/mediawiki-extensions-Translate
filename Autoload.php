@@ -149,6 +149,10 @@ $al['TTMServerException'] = "$dir/ttmserver/Exceptions.php";
 
 $al['DatabaseTTMServer'] = "$dir/ttmserver/DatabaseTTMServer.php";
 $al['ElasticSearchTTMServer'] = "$dir/ttmserver/ElasticSearchTTMServer.php";
+$al['ElasticSuggestionSearcher'] = "$dir/ttmserver/ElasticSuggestionSearcher.php";
+$al['ElasticClassicSuggestionSearcher'] = "$dir/ttmserver/ElasticClassicSuggestionSearcher.php";
+$al['ElasticRescoringSuggestionSearcher'] = "$dir/ttmserver/ElasticRescoringSuggestionSearcher.php";
+$al['ElasticSuggestionSearcherFactory'] = "$dir/ttmserver/ElasticSuggestionSearcherFactory.php";
 $al['FuzzyLikeThis'] = "$dir/ttmserver/FuzzyLikeThis.php";
 $al['FakeTTMServer'] = "$dir/ttmserver/FakeTTMServer.php";
 $al['RemoteTTMServer'] = "$dir/ttmserver/RemoteTTMServer.php";
