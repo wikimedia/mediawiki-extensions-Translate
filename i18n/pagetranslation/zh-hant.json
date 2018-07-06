@@ -14,7 +14,8 @@
 			"Zhxy 519",
 			"Bowleerin",
 			"Alexsh",
-			"Wwycheuk"
+			"Wwycheuk",
+			"Kly"
 		]
 	},
 	"pagetranslation": "頁面翻譯",
@@ -36,7 +37,7 @@
 	"tpt-notsuitable": "頁面 $1 不適合翻譯。\n請確定該頁面擁有 <nowiki><translate></nowiki> 標籤，且使用有效的語法。",
 	"tpt-saveok": "頁面 [[:$1]] 已被標記需要翻譯，包含 $2 個翻譯單元。\n現在已可 <span class=\"plainlinks\">[$3 翻譯]</span> 頁面。",
 	"tpt-offer-notify": "您可以 <span class=\"plainlinks\">[$1 通知翻譯人員]</span> 翻譯此頁。",
-	"tpt-showpage-intro": "下列為新的，已存在與已刪除的翻譯單元。\n在將此版本標記為需要翻譯之前，請先檢查翻譯單位已最小化，避免翻譯人員不必要的作業。",
+	"tpt-showpage-intro": "下列為新的，已存在與已刪除的翻譯單元。\n在將此版本標記為需要翻譯之前，請先檢查翻譯單元已最小化，避免翻譯人員不必要的作業。",
 	"tpt-mark-summary": "已標記此版本用來翻譯",
 	"tpt-mark-nochanges": "沒有變更需要審查。標記此頁面需要翻譯不會編輯頁面，也沒有任何現有的翻譯單元。",
 	"tpt-edit-failed": "無法更新該頁面：$1",
@@ -190,9 +191,9 @@
 	"pm-old-translations-missing": "$1 沒有舊的翻譯",
 	"pm-extra-units-warning": "可能存在額外的翻譯單元。請確實比對來源與翻譯單元。",
 	"pm-pagename-missing": "請輸入頁面名稱",
-	"pm-add-icon-hover-text": "新增以下單位",
-	"pm-swap-icon-hover-text": "替換以下單位",
-	"pm-delete-icon-hover-text": "刪除單位",
+	"pm-add-icon-hover-text": "新增以下單元",
+	"pm-swap-icon-hover-text": "替換以下單元",
+	"pm-delete-icon-hover-text": "刪除單元",
 	"pm-pagetitle-placeholder": "輸入頁面標題",
 	"pm-pagetitle-invalid": "請輸入一個有效的頁面標題，格式應為 <page-name>/<language-code>。",
 	"pm-pagetitle-missing": "請輸入頁面標題。",

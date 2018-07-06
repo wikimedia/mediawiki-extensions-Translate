@@ -5,7 +5,8 @@
 			"Liuxinyu970226",
 			"Cwlin0416",
 			"LNDDYL",
-			"和平奮鬥救地球"
+			"和平奮鬥救地球",
+			"Kly"
 		]
 	},
 	"managetranslatorsandbox": "管理翻譯人員沙盒",
@@ -36,6 +37,8 @@
 	"tsb-translations-user": "{{GENDER:$1|使用者}}翻譯",
 	"tsb-translations-current": "現有翻譯",
 	"tsb-delete-userpage-summary": "刪除沙盒使用者中的使用者頁面",
+	"tsb-reject-confirmation": "{{PLURAL:$1|使用者|使用者}}已拒絕",
+	"tsb-accept-confirmation": "{{PLURAL:$1|使用者|使用者}}已接受",
 	"translationstash": "歡迎光臨",
 	"translate-translationstash-welcome": "歡迎光臨 {{GENDER:$1|$1}}，您是一名新進的翻譯人員",
 	"translate-translationstash-welcome-note": "為了要熟悉翻譯工具，請先試著翻譯部份訊息，再取得完整的翻譯人員權限以加入您想翻譯的專案。",
