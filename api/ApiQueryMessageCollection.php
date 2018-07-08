@@ -55,7 +55,8 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$languages = $group->getTranslatableLanguages();
 		if ( $languages !== null ) {
 			if ( !isset( $languages[ $languageCode ] ) ) {
-				$this->dieWithError( 'apierror-translate-language-disabled' );
+				$name = Language::fetchLanguageName( $languageCode, $this->getLanguage()->getCode() );
+				$this->dieWithError( [ 'apierror-translate-language-disabled', $name ] );
 			}
 		} else {
 			$checks = [
