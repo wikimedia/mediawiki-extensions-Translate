@@ -128,6 +128,7 @@
 	"translate-rcfilters-translations-filter-label": "非翻譯",
 	"translate-rcfilters-translations-filter-desc": "非翻譯內容的所有更改。",
 	"translate-rcfilters-translations-site-label": "站台訊息",
+	"translate-rcfilters-translations-site-desc": "在 MediaWiki 命名空間的自訂站台訊息。",
 	"translate-rc-translation-filter": "篩選翻譯：",
 	"translate-rc-translation-filter-no": "無",
 	"translate-rc-translation-filter-only": "只顯示翻譯",

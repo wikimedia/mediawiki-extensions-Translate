@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Matěj Suchánek"
 		]
 	},
 	"managetranslatorsandbox": "Behandle oversettelsessandkasse",
@@ -29,7 +30,7 @@
 	"tsb-reminder-link-text": "Send påminnelse på epost",
 	"tsb-didnt-make-any-translations": "Brukeren har ikke gjort noen oversettelser.",
 	"tsb-translations-source": "Kilde",
-	"tsb-translations-user": "{{GUNDER:$1|Brukeroversettelser}}",
+	"tsb-translations-user": "{{GENDER:$1|Brukeroversettelser}}",
 	"tsb-translations-current": "Eksisterende oversettelser",
 	"tsb-delete-userpage-summary": "Sletter brukersiden til en sandkassebruker",
 	"tsb-reject-confirmation": "{{PLURAL:$1|Avvist bruker|Avviste brukere}}",

@@ -3,7 +3,8 @@
 		"authors": [
 			"Aursani",
 			"Mehtab ahmed",
-			"Indus Asia"
+			"Indus Asia",
+			"Tweety"
 		]
 	},
 	"translate": "ترجمايو",
@@ -12,6 +13,7 @@
 	"translate-taction-proofread": "جائزو وٺو",
 	"translate-taction-lstats": "ٻوليءَ جا انگ اکر",
 	"translate-taction-export": "برآمديو",
+	"translate-language-disabled": "هن ٻوليءَ ۾ ترجمو ڪرڻ غيرفعال ڪيو ويو آهي.",
 	"translate-prev": "پويون صفحو",
 	"translate-edit-translation": "ترجمو",
 	"translate-edit-in-other-languages": "ٻين ٻولين ۾ نياپو",
