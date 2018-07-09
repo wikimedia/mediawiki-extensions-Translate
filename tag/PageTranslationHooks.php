@@ -33,10 +33,13 @@ class PageTranslationHooks {
 	 */
 	public static function renderTagPage( $parser, &$text, $state ) {
 		$title = $parser->getTitle();
+		if ( !$title->hasContentModel( CONTENT_MODEL_WIKITEXT ) ) {
+			return true;
+		}
 
 		if ( strpos( $text, '<translate>' ) !== false ) {
 			try {
-				$parse = TranslatablePage::newFromText( $parser->getTitle(), $text )->getParse();
+				$parse = TranslatablePage::newFromText( $title, $text )->getParse();
 				$text = $parse->getTranslationPageText( null );
 				$parser->getOutput()->addModuleStyles( 'ext.translate' );
 			} catch ( TPException $e ) {
