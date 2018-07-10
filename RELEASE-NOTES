@@ -1,0 +1,13 @@
+== Translate 2018.07 ==
+Released at 2018-07-10.
+
+=== Noteworthy changes ===
+* Special:SupportedLanguages: List of authors in  is now sorted by the number of contributions.
+* Message keys coming from external files are now handled with more care and less likely to produce invalid or unaccessible pages. (T193023)
+* Translation interface has a new keyboard shortcut for saving translations: Ctrl+Enter. (T194915)
+* Links in displayed message documentation now open in a new tab by default.
+* refresh-translatable-pages.php script can now use JobQueue, which is more efficient on wikis with thousands of translatable pages. (T195347)
+* Translation interface: Fixed positioning of insertables in Timeless skin.
+* Custom languages defined in $wgExtraLanguages now always appear in Special:Translate and Special:SearchTranslations (T112889).
+* PHPlot is now listed as a composer dependency.
+* Improved the interplay of $wgTranslateBlacklist and blacklist/whitelist in message group configuration.
