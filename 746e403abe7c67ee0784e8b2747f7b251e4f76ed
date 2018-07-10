@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "222122d3_27b73178",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-07-10T12:12:49Z",
+      "side": 1,
+      "message": "This might need same treatment. Mayby easiest to just hash everything except __METHOD__.",
+      "revId": "746e403abe7c67ee0784e8b2747f7b251e4f76ed",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
