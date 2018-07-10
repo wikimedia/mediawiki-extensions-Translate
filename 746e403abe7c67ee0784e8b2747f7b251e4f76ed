@@ -34,6 +34,24 @@
       "revId": "746e403abe7c67ee0784e8b2747f7b251e4f76ed",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94220d56_74c73523",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-07-10T14:01:33Z",
+      "side": 1,
+      "message": "I mean hashing of everything together, not separately.",
+      "parentUuid": "b7724dce_cd32b587",
+      "revId": "746e403abe7c67ee0784e8b2747f7b251e4f76ed",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
