@@ -479,7 +479,7 @@ class SpecialLanguageStats extends SpecialPage {
 
 		$params = $stats;
 		$params[] = $state;
-		$params[] = $groupId;
+		$params[] = md5( $groupId );
 		$params[] = $this->getLanguage()->getCode();
 		$params[] = $this->target;
 		$cachekey = wfMemcKey( __METHOD__, implode( '-', $params ) );
