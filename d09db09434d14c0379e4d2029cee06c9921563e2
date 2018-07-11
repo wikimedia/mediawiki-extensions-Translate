@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a4604f4_5c0b716d",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2018-07-11T01:54:21Z",
+      "side": 1,
+      "message": "For another time, this should be using makeKey() from wfGetCache(), which would avoid this error because the only backend that warns about these characters is Memcached, for which the makeKey() method encodes these.",
+      "range": {
+        "startLine": 485,
+        "startChar": 14,
+        "endLine": 485,
+        "endChar": 23
+      },
+      "revId": "d09db09434d14c0379e4d2029cee06c9921563e2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
