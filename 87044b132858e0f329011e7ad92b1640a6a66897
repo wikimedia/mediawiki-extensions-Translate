@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "56c42d30_9b81dc5a",
+        "filename": "ttmserver/ElasticRescoringSuggestionSearcher.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 776
+      },
+      "writtenOn": "2018-07-12T22:01:11Z",
+      "side": 1,
+      "message": "$config[\u0027cutoff\u0027] ?? 0.65",
+      "range": {
+        "startLine": 127,
+        "startChar": 13,
+        "endLine": 127,
+        "endChar": 67
+      },
+      "revId": "87044b132858e0f329011e7ad92b1640a6a66897",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7cc2b007_1e2ea5e6",
+        "filename": "ttmserver/ElasticRescoringSuggestionSearcher.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 776
+      },
+      "writtenOn": "2018-07-12T22:01:11Z",
+      "side": 1,
+      "message": "typically, $resultSet",
+      "range": {
+        "startLine": 165,
+        "startChar": 5,
+        "endLine": 165,
+        "endChar": 14
+      },
+      "revId": "87044b132858e0f329011e7ad92b1640a6a66897",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "217555fa_c4893347",
+        "filename": "ttmserver/ElasticRescoringSuggestionSearcher.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 776
+      },
+      "writtenOn": "2018-07-12T22:01:11Z",
+      "side": 1,
+      "message": "results",
+      "range": {
+        "startLine": 184,
+        "startChar": 14,
+        "endLine": 184,
+        "endChar": 20
+      },
+      "revId": "87044b132858e0f329011e7ad92b1640a6a66897",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
