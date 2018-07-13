@@ -4,6 +4,9 @@
 			"AlimanRuna"
 		]
 	},
+	"tux-sst-edit": "T'ikrasqata llamk'apuy",
 	"tux-sst-search-ph": "T'ikrasqakunata maskay",
-	"tux-sst-facet-language": "Rimaykuna"
+	"tux-sst-facet-language": "Rimaykuna",
+	"tux-sst-untranslated": "$1 nisqaqa manam t'ikrasqachu",
+	"tux-sst-ellipsis-untranslated": "Mana t'ikrasqa"
 }

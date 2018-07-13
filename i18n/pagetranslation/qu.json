@@ -4,5 +4,8 @@
 			"AlimanRuna"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% t'ikrasqa)"
+	"pagetranslation": "P'anqakunata t'ikray",
+	"tpt-languages-nonzero": "$1 ($2% t'ikrasqa)",
+	"pt-movepage-list-translation": "T'ikrasqa {{PLURAL:$1|p'anqa|p'anqakuna}}",
+	"pt-deletepage-list-translation": "T'ikray p'anqakuna"
 }
