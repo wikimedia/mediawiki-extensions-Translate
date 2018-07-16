@@ -10,7 +10,8 @@
 			"Srdjan m",
 			"Сербијана",
 			"Obsuser",
-			"Prevodim"
+			"Prevodim",
+			"Zoranzoki21"
 		]
 	},
 	"translate": "Prevod",
@@ -234,7 +235,7 @@
 	"translate-gs-count": "Broj",
 	"translate-gs-total": "Ukupno",
 	"translate-gs-avgscore": "Prosečan rezultat",
-	"translate-documentation-language": "Pomoć pri prevođenju",
+	"translate-documentation-language": "Dokumentacija poruke",
 	"translate-searchprofile": "Prevodi",
 	"translate-searchprofile-tooltip": "Traženje po svim prevodima",
 	"translate-searchprofile-note": "Još opcija pretrage dostupno je na [$1 pretrazi prevoda].",

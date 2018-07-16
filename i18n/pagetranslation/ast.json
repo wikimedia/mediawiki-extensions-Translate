@@ -66,7 +66,7 @@
 	"tpt-patrolling-blocked": "Esta páxina nun puede patrullase. Usa meyor l'aición traducir pa revisala.",
 	"tpt-unknown-page": "Esti espaciu de nomes ta acutáu pa les traducciones de les páxines de conteníu.\nLa páxina que tas intentando editar paez que nun correspuende con denguna páxina marcada pa traducir.",
 	"tpt-translation-restricted": "Un alministrador de traducciones torgó la traducción d'esta páxina a esta llingua.\n\nMotivu: $1",
-	"tpt-discouraged-language-force-header": "Esta páxina nun pue traducise al $1.",
+	"tpt-discouraged-language-force-header": "Esta páxina nun puede traducise al $1.",
 	"tpt-discouraged-language-force-content": "Un alministrador de traducciones decidió qu'esta páxina sólo pue traducise al $1.",
 	"tpt-discouraged-language-header": "La traducción al $1 nun ye prioritaria pa esta páxina.",
 	"tpt-discouraged-language-content": "Un alministrador de traducciones decidió concentrar el trabayu de traducción nel $1.",
