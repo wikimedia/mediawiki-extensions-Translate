@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "ecb30bf9_a1849b1e",
+        "filename": "ttmserver/ElasticRescoringSuggestionSearcher.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2018-07-16T17:01:05Z",
+      "side": 1,
+      "message": "I think we should rework a bit the indexing code to have sourceLanguage and targetLanguage in the doc. I think it\u0027ll help to narrow the result set earlier instead of fetching a lot of results and prune them client side.",
+      "revId": "87044b132858e0f329011e7ad92b1640a6a66897",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7cc2b007_1e2ea5e6",
         "filename": "ttmserver/ElasticRescoringSuggestionSearcher.php",
         "patchSetId": 1
