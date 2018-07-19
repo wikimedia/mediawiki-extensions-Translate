@@ -32,9 +32,10 @@ class PageTranslationHooks {
 	private static $languageLinkData = [];
 
 	/**
-	 * Hook: ParserBeforeStrip
+	 * Hook: ParserBeforeInternalParse
 	 * @param Parser $parser
 	 * @param string &$text
+	 * @param-taint $text escapes_htmlnoent
 	 * @param string $state
 	 * @return bool
 	 */
