@@ -25,7 +25,7 @@ class PageTranslationHooks {
 	public static $renderingContext = false;
 
 	/**
-	 * Hook: ParserBeforeStrip
+	 * Hook: ParserBeforeInternalParse
 	 * @param Parser $parser
 	 * @param string &$text
 	 * @param string $state

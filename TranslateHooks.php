@@ -155,7 +155,7 @@ class TranslateHooks {
 			$wgHooks['ParserFirstCallInit'][] = 'TranslateHooks::setupParserHooks';
 
 			// Strip \<translate> tags etc. from source pages when rendering
-			$wgHooks['ParserBeforeStrip'][] = 'PageTranslationHooks::renderTagPage';
+			$wgHooks['ParserBeforeInternalParse'][] = 'PageTranslationHooks::renderTagPage';
 			$wgHooks['ParserOutputPostCacheTransform'][] =
 				'PageTranslationHooks::onParserOutputPostCacheTransform';
 
