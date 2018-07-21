@@ -4,5 +4,27 @@
 			"Janezdrilc"
 		]
 	},
-	"tux-sst-default": "Prevodi"
+	"searchtranslations": "Išči prevode",
+	"tux-sst-edit": "Uredi prevod",
+	"tux-sst-view-foreign": "Ogled na: $1",
+	"tux-sst-search": "Išči",
+	"tux-sst-search-ph": "Išči prevode",
+	"tux-sst-count": "{{PLURAL:$1|En najden zadetek|$1 najdena zadetka|$1 najdeni zadetki|$1 najdenih zadetkov}}",
+	"tux-sst-facet-language": "Jeziki",
+	"tux-sst-facet-group": "Skupine sporočil",
+	"tux-sst-nosolr-title": "Iskanje ni na voljo",
+	"tux-sst-nosolr-body": "Ta wiki ne omogoča iskanje prevodov.",
+	"tux-sst-solr-offline-title": "Iskanje ni na voljo",
+	"tux-sst-solr-offline-body": "Iskanje trenutno ni na voljo.",
+	"tux-sst-next": "Naslednji ›",
+	"tux-sst-prev": "‹ Prejšnji",
+	"tux-sst-default": "Prevodi",
+	"tux-sst-translated": "Prevodi iz jezika: $1",
+	"tux-sst-untranslated": "Ni prevodov iz jezika: $1",
+	"tux-sst-outdated": "Zastareli prevodi iz jezika: $1",
+	"tux-sst-ellipsis-untranslated": "Brez prevoda",
+	"tux-sst-ellipsis-outdated": "Zastareli prevodi",
+	"tux-sst-link-all-match": "Zahteva vse besede iskanja.",
+	"tux-sst-match-message": "Prikazuje prevode, ki se ujemajo s katerokoli od vpisanih besed. $1",
+	"tux-sst-case-sensitive": "Razlikuj velike in male črke"
 }
