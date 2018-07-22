@@ -252,6 +252,7 @@
 	"translate-documentation-language": "dokumentacija sporočila",
 	"translate-searchprofile": "Prevodi",
 	"translate-searchprofile-tooltip": "Iskanje med vsemi prevodi",
+	"translate-searchprofile-note": "Več možnosti iskanja je na voljo z [$1 iskanjem prevodov].",
 	"translate-search-languagefilter": "Filtriraj po jeziku:",
 	"translate-search-nofilter": "Brez filtriranja",
 	"log-name-translationreview": "Dnevnik pregledov prevodov",
