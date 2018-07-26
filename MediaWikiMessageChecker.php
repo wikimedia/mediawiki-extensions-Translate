@@ -256,7 +256,12 @@ class MediaWikiMessageChecker extends MessageChecker {
 		};
 
 		// Setup parser
-		$parser = new Parser();
+		if ( class_exists( 'MagicWordFactory' ) ) {
+			global $wgContLang;
+			$parser = new Parser( [], new MagicWordFactory( $wgContLang ) );
+		} else {
+			$parser = new Parser();
+		}
 		// Load the default magic words etc now.
 		$parser->firstCallInit();
 		// So that they don't overrider our own callback
