@@ -412,7 +412,12 @@ class TranslateEditAddons {
 		$th->setEditMode( false );
 
 		$de->loadNewText();
-		$newContent = $de->mNewRev ? $de->mNewRev->getContent() : null;
+		if ( method_exists( $de, 'getNewRevision' ) ) {
+			$newRevision = $de->getNewRevision();
+			$newContent = $newRevision ? $newRevision->getContent( 'main' ) : null;
+		} else {
+			$newContent = $de->mNewRev ? $de->mNewRev->getContent() : null;
+		}
 		if ( $newContent instanceof TextContent ) {
 			$th->setTranslation( $newContent->getNativeData() );
 		} else {
