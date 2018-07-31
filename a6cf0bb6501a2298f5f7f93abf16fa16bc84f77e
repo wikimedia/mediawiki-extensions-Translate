@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df866e3e_c0f48502",
+        "filename": "MediaWikiMessageChecker.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 17
+      },
+      "writtenOn": "2018-07-31T06:22:08Z",
+      "side": 1,
+      "message": "You could use MediaWikiServices::getInstance()-\u003egetMagicWordFactory() here, and so avoid referencing a global variable which will soon be deprecated.",
+      "revId": "a6cf0bb6501a2298f5f7f93abf16fa16bc84f77e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
