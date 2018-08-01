@@ -73,9 +73,10 @@ class SpecialTranslations extends SpecialAllPages {
 
 		if ( !$title ) {
 			$title = Title::makeTitle( NS_MEDIAWIKI, '' );
-			$out->addHTML( $this->namespaceMessageForm( $title ) );
+			$this->namespaceMessageForm( $title );
 		} else {
-			$out->addHTML( $this->namespaceMessageForm( $title ) . '<br />' );
+			$this->namespaceMessageForm( $title );
+			$out->addHTML( '<br />' );
 			$this->showTranslations( $title );
 		}
 	}
@@ -84,51 +85,43 @@ class SpecialTranslations extends SpecialAllPages {
 	 * Message input fieldset
 	 *
 	 * @param Title|null $title (default: null)
-	 * @return string HTML for fieldset.
 	 */
 	protected function namespaceMessageForm( Title $title = null ) {
-		global $wgScript;
-
-		$namespaces = new XmlSelect( 'namespace', 'namespace' );
-		$namespaces->setDefault( $title->getNamespace() );
+		$options = [];
 
 		foreach ( $this->getSortedNamespaces() as $text => $index ) {
-			$namespaces->addOption( $text, $index );
+			$options[ $text ] = $index;
 		}
 
-		$out = Xml::openElement( 'div', [ 'class' => 'namespaceoptions' ] );
-		$out .= Xml::openElement( 'form', [ 'method' => 'get', 'action' => $wgScript ] );
-		$out .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
-		$out .= Xml::openElement( 'fieldset' );
-		$out .= Xml::element(
-			'legend',
-			null,
-			$this->msg( 'translate-translations-fieldset-title' )->text()
-		);
-		$out .= Xml::openElement( 'table', [ 'id' => 'nsselect', 'class' => 'allpages' ] );
-		$out .= "<tr>
-				<td class='mw-label'>" .
-			Xml::label( $this->msg( 'translate-translations-messagename' )->text(), 'message' ) .
-			"</td>
-				<td class='mw-input'>" .
-			Xml::input( 'message', 30, $title->getText(), [ 'id' => 'message' ] ) .
-			"</td>
-			</tr>
-			<tr>
-				<td class='mw-label'>" .
-			Xml::label( $this->msg( 'translate-translations-project' )->text(), 'namespace' ) .
-			"</td>
-				<td class='mw-input'>" .
-			$namespaces->getHTML() . ' ' .
-			Xml::submitButton( $this->msg( 'allpagessubmit' )->text() ) .
-			'</td>
-				</tr>';
-		$out .= Xml::closeElement( 'table' );
-		$out .= Xml::closeElement( 'fieldset' );
-		$out .= Xml::closeElement( 'form' );
-		$out .= Xml::closeElement( 'div' );
+		$formDescriptor = [
+			'textbox' => [
+				'type' => 'text',
+				'name' => 'message',
+				'id' => 'message',
+				'label-message' => 'translate-translations-messagename',
+				'size' => 30,
+				'default' => $title->getText(),
+			],
+			'selector' => [
+				'type' => 'select',
+				'name' => 'namespace',
+				'id' => 'namespace',
+				'label-message' => 'translate-translations-project',
+				'options' => $options,
+				'default' => $title->getNamespace(),
+			]
+		];
 
-		return $out;
+		$context = new DerivativeContext( $this->getContext() );
+		$context->setTitle( $this->getPageTitle() ); // Remove subpage
+
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $context );
+		$htmlForm
+			->setMethod( 'get' )
+			->setSubmitTextMsg( 'allpagessubmit' )
+			->setWrapperLegendMsg( 'translate-translations-fieldset-title' )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
