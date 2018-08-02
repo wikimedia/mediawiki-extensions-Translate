@@ -6,8 +6,7 @@ CREATE TABLE /*$wgDBprefix*/translate_reviews (
   trr_page int NOT NULL,
 
   -- Link to revision.rev_id
-  trr_revision int NOT NULL
-) /*$wgDBTableOptions*/;
+  trr_revision int NOT NULL,
 
-CREATE UNIQUE INDEX /*i*/trr_user_page_revision ON /*$wgDBprefix*/translate_reviews
-(trr_user, trr_page, trr_revision);
+  PRIMARY KEY (trr_page, trr_revision, trr_user)
+) /*$wgDBTableOptions*/;
