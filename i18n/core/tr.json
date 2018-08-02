@@ -267,6 +267,7 @@
 	"translate-dynagroup-recent-label": "Son çeviriler",
 	"translate-dynagroup-recent-desc": "Bu ileti grubu, bu dildeki bütün son çevirileri gösterir.\nGörevleri incelemek için çok kullanışlıdır.",
 	"translate-dynagroup-additions-label": "Son eklenenler",
+	"translate-dynagroup-additions-desc": "Bu mesaj grubu, yeni veya değiştirilen mesajları göstermektedir.",
 	"translate-msggroupselector-projects": "İleti grubu",
 	"translate-msggroupselector-search-placeholder": "Grupları ara",
 	"translate-msggroupselector-search-all": "Hepsi",
