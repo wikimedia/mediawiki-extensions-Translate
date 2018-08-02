@@ -424,6 +424,17 @@ class TranslateHooks {
 			"$dir/translate_stash.sql",
 			true
 		] );
+
+		// This also adds a PRIMARY KEY
+		$updater->addExtensionUpdate( [
+			'renameIndex',
+			'translate_reviews',
+			'trr_user_page_revision',
+			'PRIMARY',
+			false,
+			"$dir/translate_reviews-patch-01-primary-key.sql",
+			true
+		] );
 	}
 
 	/**
