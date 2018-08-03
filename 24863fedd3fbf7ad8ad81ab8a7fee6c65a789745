@@ -16,6 +16,24 @@
       "revId": "24863fedd3fbf7ad8ad81ab8a7fee6c65a789745",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ba9b826_a0106be5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-08-03T08:24:23Z",
+      "side": 1,
+      "message": "It\u0027s correct, specifically https://phabricator.wikimedia.org/T195293#4224220 explains the index change.",
+      "parentUuid": "309312e3_46ce29d9",
+      "revId": "24863fedd3fbf7ad8ad81ab8a7fee6c65a789745",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
