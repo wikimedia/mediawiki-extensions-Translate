@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "309312e3_46ce29d9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2018-08-03T06:22:04Z",
+      "side": 1,
+      "message": "Did you mean some other ticket? T195293 is this ticket and could not see a change corresponding to this move",
+      "revId": "24863fedd3fbf7ad8ad81ab8a7fee6c65a789745",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
