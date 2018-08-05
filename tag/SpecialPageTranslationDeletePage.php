@@ -206,26 +206,6 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	}
 
 	/**
-	 * Shortcut for keeping the code at least a bit readable. Adds label and
-	 * input into $form array.
-	 *
-	 * @param array &$form \list{String} Array where input element and label is appended.
-	 * @param string $label Label text.
-	 * @param string $name Name attribute.
-	 * @param int|bool $size Size attribute of the input element. Default false.
-	 * @param string|bool $text Text of the value attribute. Default false.
-	 * @param array $attribs Extra attributes. Default empty array.
-	 */
-	protected function addInputLabel( &$form, $label, $name, $size = false, $text = false,
-		array $attribs = []
-	) {
-		$br = Html::element( 'br' );
-		list( $label, $input ) = Xml::inputLabelSep( $label, $name, $name, $size, $text, $attribs );
-		$form[] = $label . $br;
-		$form[] = $input . $br;
-	}
-
-	/**
 	 * The second form, which still allows changing some things.
 	 * Lists all the action which would take place.
 	 */
@@ -272,53 +252,51 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		$out->addWikiText( "----\n" );
 		$out->addWikiMsg( 'pt-deletepage-list-count', $this->getLanguage()->formatNum( $count ) );
 
-		$br = Html::element( 'br' );
-		$readonly = [ 'readonly' => 'readonly' ];
-
-		$subaction = [ 'name' => 'subaction' ];
-		$formParams = [
-			'method' => 'post',
-			'action' => $this->getPageTitle( $this->text )->getLocalURL()
+		$formDescriptor = [
+			'wpTitle' => [
+				'type' => 'text',
+				'name' => 'wpTitle',
+				'label' => $this->msg( 'pt-deletepage-current' )->text(),
+				'size' => 30,
+				'default' => $this->text,
+				'readonly' => true,
+			],
+			'wpReason' => [
+				'type' => 'text',
+				'name' => 'wpReason',
+				'label' => $this->msg( 'pt-deletepage-reason' )->text(),
+				'size' => 60,
+				'default' => $this->reason,
+			],
+			'subpages' => [
+				'type' => 'check',
+				'name' => 'subpages',
+				'id' => 'mw-subpages',
+				'label' => $this->msg( 'pt-deletepage-subpages' )->text(),
+				'default' => $this->doSubpages,
+			]
 		];
 
-		$form = [];
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
+
 		if ( $this->singleLanguage() ) {
-			$form[] = Xml::fieldset( $this->msg( 'pt-deletepage-lang-legend' )->text() );
+			$htmlForm->setWrapperLegendMsg( 'pt-deletepage-lang-legend' );
 		} else {
-			$form[] = Xml::fieldset( $this->msg( 'pt-deletepage-full-legend' )->text() );
+			$htmlForm->setWrapperLegendMsg( 'pt-deletepage-full-legend' );
 		}
-		$form[] = Html::openElement( 'form', $formParams );
-		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-		$this->addInputLabel(
-			$form,
-			$this->msg( 'pt-deletepage-current' )->text(),
-			'wpTitle',
-			30,
-			$this->text, $readonly );
-		$this->addInputLabel(
-			$form,
-			$this->msg( 'pt-deletepage-reason' )->text(),
-			'wpReason',
-			60,
-			$this->reason );
-		$form[] = Xml::checkLabel(
-			$this->msg( 'pt-deletepage-subpages' )->text(),
-			'subpages',
-			'mw-subpages',
-			$this->doSubpages,
-			$readonly
-		) . $br;
-		$form[] = Xml::submitButton(
-			$this->msg( 'pt-deletepage-action-perform' )->text(),
-			$subaction
-		);
-		$form[] = Xml::submitButton(
-			$this->msg( 'pt-deletepage-action-other' )->text(),
-			$subaction
-		);
-		$form[] = Xml::closeElement( 'form' );
-		$form[] = Xml::closeElement( 'fieldset' );
-		$out->addHTML( implode( "\n", $form ) );
+
+		$htmlForm
+			->addHiddenField( 'wpEditToken', $this->getUser()->getEditToken() )
+			->setMethod( 'post' )
+			->setAction( $this->getPageTitle( $this->text )->getLocalURL() )
+			->setSubmitTextMsg( 'pt-deletepage-action-perform' )
+			->setSubmitName( 'subaction' )
+			->addButton( [
+				'name' => 'subaction',
+				'value' => $this->msg( 'pt-deletepage-action-other' )->text(),
+			] )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
