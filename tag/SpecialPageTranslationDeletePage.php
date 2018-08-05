@@ -176,37 +176,33 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	protected function showForm() {
 		$this->getOutput()->addWikiMsg( 'pt-deletepage-intro' );
 
-		$subaction = [ 'name' => 'subaction' ];
-		$formParams = [
-			'method' => 'post',
-			'action' => $this->getPageTitle( $this->text )->getLocalURL()
+		$formDescriptor = [
+			'wpTitle' => [
+				'type' => 'text',
+				'name' => 'wpTitle',
+				'label' => $this->msg( 'pt-deletepage-current' )->text(),
+				'size' => 30,
+				'default' => $this->text,
+			],
+			'wpReason' => [
+				'type' => 'text',
+				'name' => 'wpReason',
+				'label' => $this->msg( 'pt-deletepage-reason' )->text(),
+				'size' => 60,
+				'default' => $this->reason,
+			]
 		];
 
-		$form = [];
-		$form[] = Xml::fieldset( $this->msg( 'pt-deletepage-any-legend' )->text() );
-		$form[] = Html::openElement( 'form', $formParams );
-		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-		$this->addInputLabel(
-			$form,
-			$this->msg( 'pt-deletepage-current' )->text(),
-			'wpTitle',
-			30,
-			$this->text
-		);
-		$this->addInputLabel(
-			$form,
-			$this->msg( 'pt-deletepage-reason' )->text(),
-			'wpReason', // For consistency with ?action=delete
-			60,
-			$this->reason
-		);
-		$form[] = Xml::submitButton(
-			$this->msg( 'pt-deletepage-action-check' )->text(),
-			$subaction
-		);
-		$form[] = Xml::closeElement( 'form' );
-		$form[] = Xml::closeElement( 'fieldset' );
-		$this->getOutput()->addHTML( implode( "\n", $form ) );
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
+		$htmlForm
+			->addHiddenField( 'wpEditToken', $this->getUser()->getEditToken() )
+			->setMethod( 'post' )
+			->setAction( $this->getPageTitle( $this->text )->getLocalURL() )
+			->setSubmitName( 'subaction' )
+			->setSubmitTextMsg( 'pt-deletepage-action-check' )
+			->setWrapperLegendMsg( 'pt-deletepage-any-legend' )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
