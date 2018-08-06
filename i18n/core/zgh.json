@@ -1,8 +1,31 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amara-Amaziɣ"
+			"Amara-Amaziɣ",
+			"Mdb897"
 		]
 	},
-	"translate-documentation-language": "ⴰⵏⵜⴰⵎ ⵏ ⵜⵓⵣⵉⵏⵜ"
+	"translate": "ⵙⵙⵓⵖⵍ",
+	"translate-desc": "[[Special:Translate|ⵜⴰⵙⵏⴰ ⵉⵥⵍⵉⵏ]] ⵃⵎⴰ ⴰⵙⵓⵖⵍ ⵏ ⵎⵉⴷⵢⴰⵡⵉⴽⵉ ⴷ ⵓⴳⴳⴰⵔ",
+	"translate-fuzzybot-desc": "ⵡⴰⴷ ⵉⴳⴰ ⴰⵏⴳⵔⴰⵡ ⵉⵣⵍⵉⵏ ⵉⵜⵜⵡⴰⵙⵙⵎⵔⵙ ⴳ ⵎⵉⴷⵢⴰⵡⵉⴽⵉ [https://www.mediawiki.org/wiki/Extension:Translate Translate extension] ⵉⵜⵜⵡⴰⵙⵎⵔⵙ ⵃⵎⴰ ⴰⵏⵀⵍⵍⴰ ⵏ ⵜⵙⵓⵖⴰⵍ.\nⴰⵎⵉⴹⴰⵏ ⴰⴷ ⵉⴳⴰ ⵙⴳ ⵓⵖⴰⵡⴰⵙ ⵏ ⵎⵉⴷⵢⴰⵡⵉⴽⵉ ⴷ ⵓⵔ ⵉⴳⵉ ⵡⵉⵏ ⵃⵜⵜⴰ ⴽⵔⴰ ⵏ ⵓⵏⵙⵙⵎⵔⵙ.",
+	"translate-taskui-export-to-file": "ⵙⵙⵓⴼⵖ ⴳ ⵜⵍⵖⴰ ⵜⴰⵥⵖⵓⵕⴰⵏⵜ",
+	"translate-taskui-export-as-po": "ⵙⵙⵓⴼⵖ ⵃⵎⴰ ⴰⵙⵓⵖⵍ ⴱⵔⵔⴰ ⵏ ⵓⵣⴷⴰⵢ",
+	"translate-taction-translate": "ⵙⵙⵓⵖⵍ",
+	"translate-taction-proofread": "ⵣⵣⵔⵉ",
+	"translate-taction-lstats": "ⵉⵙⵏⵎⴽⵜⴰⵏ ⵏ ⵜⵓⵜⵍⴰⵢⵜ",
+	"translate-taction-mstats": "ⵉⵙⵏⵎⴽⵜⴰⵏ ⵏ ⵉⴳⵔⴰⵡⵏ ⵏ ⵜⵓⵣⵉⵏⵉⵏ",
+	"translate-taction-export": "ⵙⵙⵓⴼⵖ",
+	"translate-page-language": "ⵜⵓⵜⵍⴰⵢⵜ",
+	"translate-page-limit": "ⴰⵡⵜⵜⵓ",
+	"translate-pref-nonewsletter": "ⴰⴷ ⵢⵢⵉ ⵏ ⵓⵔ ⵜⵚⵚⵉⴼⵉⴹⴷ ⵜⵉⵎⵢⴰⵣⴰⵏⵉⵏ ⵏ ⵉⵏⵖⵎⵉⵙⵏ",
+	"right-translate": "ⵙⵏⴼⵍ ⵙ ⵓⵏⴳⵔⵓⴷⵎ ⵏ ⵓⵙⵓⵖⵍ",
+	"translate-statsf-count-registrations": "ⵉⵏⵙⵙⵎⵔⵙⵏ ⵉⵎⴰⵢⵏⵓⵜⵏ",
+	"translate-manage-import-new": "ⵜⵓⵣⵉⵏⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ $1",
+	"translate-manage-import-summary": "ⴰⵙⴽⵛⵎ ⵏ ⵜⵓⵏⵖⵉⵍⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ ⵙⴳ ⵓⵙⴰⴳⵎ ⴰⴱⵔⵔⴰⵏⵉ",
+	"translate-js-support-title": "ⵜⵜⵔ ⵜⵉⵡⵉⵙⵉ ⵉⵖ ⵓⵔ ⵜⵓⴼⵉⵜ ⵉⵏⵖⵎⵉⵙⵏ ⵢⵓⴷⴰⵏ ⵃⵎⴰ ⴰⵙⵓⵖⵍ ⵉⵎⵉⴷⵉ ⵏ ⵜⵓⵣⵉⵏⵜ ⴰⴷ.",
+	"translate-documentation-language": "ⴰⵏⵜⴰⵎ ⵏ ⵜⵓⵣⵉⵏⵜ",
+	"translate-dynagroup-additions-desc": "ⵜⴰⴳⵔⴰⵡⵜ ⴰⴷ ⴰⵔ ⵜⵙⵎⴰⵍ ⵜⵉⵎⵢⴰⵣⴰⵏⵉⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ ⴷ ⵜⵉⴷ ⵉⵜⵜⵡⴰⵙⵏⴼⵍⵏ",
+	"tux-languageselector": "ⵙⵙⵓⵖⵍ ⵙ",
+	"tux-empty-list-translated-action": "ⵙⵙⵓⵖⵍ",
+	"tux-empty-you-can-help-providing": "ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⴰⵡⵙⴷ ⴳ ⵓⵎⵔⵏⵉⵡ ⵏ ⵜⵙⵓⵖⴰⵍ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ"
 }

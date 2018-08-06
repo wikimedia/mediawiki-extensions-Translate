@@ -39,7 +39,7 @@
 	"apihelp-searchtranslations-param-limit": "Dimenzione d'u resultate.",
 	"apihelp-searchtranslations-example-1": "Fà 'ndrucà le traduziune pa lènghe.",
 	"apierror-translate-invalidupdate": "Aggiornamente invalide",
-	"apierror-translate-language-disabled": "'A traduzione jndr'à sta lènghe jè disabbilitate",
+	"apierror-translate-language-disabled": "'A traduzione jndr'à $1 jè disabbilitate.",
 	"apierror-translate-nodynamicgroups": "Le gruppe de messàgge dinamece non ge sò supportate aqquà",
 	"apierror-translate-nomessagefortitle": "Quiste non ge corresponne a 'nu messàgge traducibbile",
 	"apierror-translate-owntranslation": "Non ge puè revisionà le traduziune tune",

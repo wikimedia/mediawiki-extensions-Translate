@@ -268,7 +268,7 @@
 	"translate-searchprofile-note": "Још опција претраге доступно је на [$1 претрази превода].",
 	"translate-search-languagefilter": "Филтрирај по језику:",
 	"translate-search-nofilter": "Без филтрирања",
-	"log-name-translationreview": "Дневник провере превода",
+	"log-name-translationreview": "Евиденција прегледа превода",
 	"log-description-translationreview": "Историја свих провера превода и група порука.",
 	"logentry-translationreview-message": "$1 је {{GENDER:$2|потврдио|потврдила}} превод $3",
 	"logentry-translationreview-group": "$1 {{GENDER:$2|је променио|је променила}} стање $4 превода $3 са $6 на $7",

@@ -12,6 +12,7 @@
 	},
 	"translate": "Traducir",
 	"translate-desc": "[[Special:Translate|Páxina especial]] para traducir MediaWiki e outras extensións",
+	"translate-fuzzybot-desc": "Esta é unha conta de sistema especial usada pola extensión de [https://www.mediawiki.org/wiki/Extension:Translate Tradución] de MediaWiki para manter as traducións.\nEsta conta é parte do software MediaWiki e non pertence a ningún usuario.",
 	"translate-taskui-export-to-file": "Exportar en formato nativo",
 	"translate-taskui-export-as-po": "Exportar para traducir sen conexión",
 	"translate-taction-translate": "Traducir",

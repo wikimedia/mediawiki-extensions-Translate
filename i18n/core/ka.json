@@ -60,6 +60,7 @@
 	"translate-pref-nonewsletter": "არ გამომიგზავნო სიახლეები ელ. ფოსტით",
 	"translate-pref-editassistlang": "დამხმარე ენები:",
 	"prefs-translate": "თარგმნის პარამეტრები",
+	"translate-pref-editassistlang-help": "მძიმეებით გაყოფილი ენების კოდების სია. ამ ენებზე თარგმანები ნაჩვენები იქნება შეტყობინების ცვლილების დროს. სია, ნაგულისხმევად თქვენ ენაზეა დამოკიდებული.",
 	"right-translate-manage": "შეტყობინებების ჯგუფების მართვა",
 	"action-translate-manage": "შეტყობინებების ჯგუფების მართვა",
 	"right-translate-messagereview": "თარგმანების გადახედვა",
