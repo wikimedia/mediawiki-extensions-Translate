@@ -46,6 +46,30 @@
       "revId": "8e4faaee23e16c1879f5ce353b16d53c679e84e9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d2df30cc_743f82db",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 4983
+      },
+      "writtenOn": "2018-08-06T08:42:06Z",
+      "side": 1,
+      "message": "Yes, I know all of that about OOUI buttons :)\n\nSimilarity with cancel button was on my mind as well, but still seems unfitting the need. I\u0027ll leave that part to Volker and tag Niklas to also take a look.",
+      "parentUuid": "c049f8eb_42460bbe",
+      "range": {
+        "startLine": 301,
+        "startChar": 4,
+        "endLine": 301,
+        "endChar": 33
+      },
+      "revId": "8e4faaee23e16c1879f5ce353b16d53c679e84e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
