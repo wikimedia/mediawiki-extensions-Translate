@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a369e11_67cb21e0",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 4983
+      },
+      "writtenOn": "2018-08-06T08:02:00Z",
+      "side": 1,
+      "message": "I\u0027m not sure about this, it doesn\u0027t feel right for me",
+      "range": {
+        "startLine": 301,
+        "startChar": 4,
+        "endLine": 301,
+        "endChar": 33
+      },
+      "revId": "8e4faaee23e16c1879f5ce353b16d53c679e84e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
