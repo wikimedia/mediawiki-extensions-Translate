@@ -212,50 +212,48 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	public function showForm( $par ) {
 		$this->getOutput()->addWikiMsg( 'pt-movepage-intro' );
 
-		$br = Html::element( 'br' );
-		$subaction = [ 'name' => 'subaction' ];
-		$readonly = [ 'readonly' => 'readonly' ];
-		$formParams = [
-			'method' => 'post',
-			'action' => $this->getPageTitle( $this->oldText )->getLocalURL()
+		$formDescriptor = [
+			'wpOldTitle' => [
+				'type' => 'text',
+				'name' => 'wpOldTitle',
+				'label' => $this->msg( 'pt-movepage-current' )->text(),
+				'size' => 30,
+				'default' => $this->oldText,
+				'readonly' => true,
+			],
+			'wpNewTitle' => [
+				'type' => 'text',
+				'name' => 'wpNewTitle',
+				'label' => $this->msg( 'pt-movepage-new' )->text(),
+				'size' => 30,
+				'default' => $this->newText,
+			],
+			'reason' => [
+				'type' => 'text',
+				'name' => 'reason',
+				'label' => $this->msg( 'pt-movepage-reason' )->text(),
+				'size' => 45,
+				'default' => $this->reason,
+			],
+			'subpages' => [
+				'type' => 'check',
+				'name' => 'subpages',
+				'id' => 'mw-subpages',
+				'label' => $this->msg( 'pt-movepage-subpages' )->text(),
+				'default' => $this->moveSubpages,
+			]
 		];
 
-		$form = [];
-		$form[] = Xml::fieldset( $this->msg( 'pt-movepage-legend' )->text() );
-		$form[] = Html::openElement( 'form', $formParams );
-		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-		$this->addInputLabel(
-			$form,
-			$this->msg( 'pt-movepage-current' )->text(),
-			'wpOldTitle',
-			30,
-			$this->oldText,
-			$readonly
-		);
-		$this->addInputLabel(
-			$form,
-			$this->msg( 'pt-movepage-new' )->text(),
-			'wpNewTitle',
-			30,
-			$this->newText
-		);
-		$this->addInputLabel(
-			$form,
-			$this->msg( 'pt-movepage-reason' )->text(),
-			'reason',
-			45,
-			$this->reason
-		);
-		$form[] = Xml::checkLabel(
-			$this->msg( 'pt-movepage-subpages' )->text(),
-			'subpages',
-			'mw-subpages',
-			$this->moveSubpages
-		) . $br;
-		$form[] = Xml::submitButton( $this->msg( 'pt-movepage-action-check' )->text(), $subaction );
-		$form[] = Xml::closeElement( 'form' );
-		$form[] = Xml::closeElement( 'fieldset' );
-		$this->getOutput()->addHTML( implode( "\n", $form ) );
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
+		$htmlForm
+			->addHiddenField( 'wpEditToken', $this->getUser()->getEditToken() )
+			->setMethod( 'post' )
+			->setAction( $this->getPageTitle( $this->oldText )->getLocalURL() )
+			->setSubmitName( 'subaction' )
+			->setSubmitTextMsg( 'pt-movepage-action-check' )
+			->setWrapperLegendMsg( 'pt-movepage-legend' )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
