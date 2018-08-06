@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ea03f62_3ab797b2",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 4864
+      },
+      "writtenOn": "2018-08-06T05:21:26Z",
+      "side": 0,
+      "message": "I don\u0027t know why this is here, It is not doing anything.",
+      "range": {
+        "startLine": 313,
+        "startChar": 3,
+        "endLine": 313,
+        "endChar": 12
+      },
+      "revId": "7ab00dec589eaa5dc2a409b97d2a31981998c32c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
