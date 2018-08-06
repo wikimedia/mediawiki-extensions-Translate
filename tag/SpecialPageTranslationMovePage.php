@@ -334,54 +334,54 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		$out->addWikiText( "----\n" );
 		$out->addWikiMsg( 'pt-movepage-list-count', $this->getLanguage()->formatNum( $count ) );
 
-		$br = Html::element( 'br' );
-		$readonly = [ 'readonly' => 'readonly' ];
-		$subaction = [ 'name' => 'subaction' ];
-		$formParams = [
-			'method' => 'post',
-			'action' => $this->getPageTitle( $this->oldText )->getLocalURL()
+		$formDescriptor = [
+			'wpOldTitle' => [
+				'type' => 'text',
+				'name' => 'wpOldTitle',
+				'label' => $this->msg( 'pt-movepage-current' )->text(),
+				'size' => 30,
+				'default' => $this->oldText,
+				'readonly' => true,
+			],
+			'wpNewTitle' => [
+				'type' => 'text',
+				'name' => 'wpNewTitle',
+				'label' => $this->msg( 'pt-movepage-new' )->text(),
+				'size' => 30,
+				'default' => $this->newText,
+				'readonly' => true,
+			],
+			'reason' => [
+				'type' => 'text',
+				'name' => 'reason',
+				'label' => $this->msg( 'pt-movepage-reason' )->text(),
+				'size' => 60,
+				'default' => $this->reason,
+			],
+			'subpages' => [
+				'type' => 'check',
+				'name' => 'subpages',
+				'id' => 'mw-subpages',
+				'label' => $this->msg( 'pt-movepage-subpages' )->text(),
+				'default' => $this->moveSubpages,
+			]
 		];
 
-		$form = [];
-		$form[] = Xml::fieldset( $this->msg( 'pt-movepage-legend' )->text() );
-		$form[] = Html::openElement( 'form', $formParams );
-		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-		$this->addInputLabel(
-			$form,
-			$this->msg( 'pt-movepage-current' )->text(),
-			'wpOldTitle',
-			30,
-			$this->oldText,
-			$readonly
-		);
-		$this->addInputLabel(
-			$form,
-			$this->msg( 'pt-movepage-new' )->text(),
-			'wpNewTitle',
-			30,
-			$this->newText,
-			$readonly
-		);
-		$this->addInputLabel(
-			$form,
-			$this->msg( 'pt-movepage-reason' )->text(),
-			'reason',
-			60,
-			$this->reason
-		);
-		$form[] = Html::hidden( 'subpages', $this->moveSubpages );
-		$form[] = Xml::checkLabel(
-			$this->msg( 'pt-movepage-subpages' )->text(),
-			'subpagesFake',
-			'mw-subpages',
-			$this->moveSubpages,
-			$readonly
-		) . $br;
-		$form[] = Xml::submitButton( $this->msg( 'pt-movepage-action-perform' )->text(), $subaction );
-		$form[] = Xml::submitButton( $this->msg( 'pt-movepage-action-other' )->text(), $subaction );
-		$form[] = Xml::closeElement( 'form' );
-		$form[] = Xml::closeElement( 'fieldset' );
-		$out->addHTML( implode( "\n", $form ) );
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
+		$htmlForm
+			->addHiddenField( 'wpEditToken', $this->getUser()->getEditToken() )
+			->addHiddenField( 'subpages', $this->moveSubpages )
+			->addButton( [
+				'name' => 'subaction',
+				'value' => $this->msg( 'pt-movepage-action-other' )->text(),
+			] )
+			->setMethod( 'post' )
+			->setAction( $this->getPageTitle( $this->oldText )->getLocalURL() )
+			->setSubmitName( 'subaction' )
+			->setSubmitTextMsg( 'pt-movepage-action-perform' )
+			->setWrapperLegendMsg( 'pt-movepage-legend' )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
