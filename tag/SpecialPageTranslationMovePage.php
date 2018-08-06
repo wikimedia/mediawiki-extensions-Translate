@@ -195,30 +195,27 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			'wpOldTitle' => [
 				'type' => 'text',
 				'name' => 'wpOldTitle',
-				'label' => $this->msg( 'pt-movepage-current' )->text(),
-				'size' => 30,
+				'label-message' => 'pt-movepage-current',
 				'default' => $this->oldText,
 				'readonly' => true,
 			],
 			'wpNewTitle' => [
 				'type' => 'text',
 				'name' => 'wpNewTitle',
-				'label' => $this->msg( 'pt-movepage-new' )->text(),
-				'size' => 30,
+				'label-message' => 'pt-movepage-new',
 				'default' => $this->newText,
 			],
 			'reason' => [
 				'type' => 'text',
 				'name' => 'reason',
-				'label' => $this->msg( 'pt-movepage-reason' )->text(),
-				'size' => 45,
+				'label-message' => 'pt-movepage-reason',
+				'maxlength' => CommentStore::COMMENT_CHARACTER_LIMIT,
 				'default' => $this->reason,
 			]
 		];
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
 		$htmlForm
-			->addHiddenField( 'wpEditToken', $this->getUser()->getEditToken() )
 			->setMethod( 'post' )
 			->setAction( $this->getPageTitle( $this->oldText )->getLocalURL() )
 			->setSubmitName( 'subaction' )
@@ -226,33 +223,6 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			->setWrapperLegendMsg( 'pt-movepage-legend' )
 			->prepareForm()
 			->displayForm( false );
-	}
-
-	/**
-	 * Shortcut for keeping the code at least a bit readable. Adds label and
-	 * input into $form array.
-	 *
-	 * @param string[] &$form Array where input element and label is appended.
-	 * @param string $label Label text.
-	 * @param string $name Name attribute.
-	 * @param bool|int $size Size attribute of the input element. Default false.
-	 * @param bool|string $text Text of the value attribute. Default false.
-	 * @param array $attribs Extra attributes. Default empty array.
-	 */
-	protected function addInputLabel( &$form, $label, $name, $size = false, $text = false,
-		array $attribs = []
-	) {
-		$br = Html::element( 'br' );
-		list( $label, $input ) = Xml::inputLabelSep(
-			$label,
-			$name,
-			$name,
-			$size,
-			$text,
-			$attribs
-		);
-		$form[] = $label . $br;
-		$form[] = $input . $br;
 	}
 
 	/**
@@ -319,54 +289,50 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			$this->getLanguage()->formatNum( $subpagesCount )
 		);
 
-		$br = Html::element( 'br' );
-		$readonly = [ 'readonly' => 'readonly' ];
-		$subaction = [ 'name' => 'subaction' ];
-		$formParams = [
-			'method' => 'post',
-			'action' => $this->getPageTitle( $this->oldText )->getLocalURL()
+		$formDescriptor = [
+			'wpOldTitle' => [
+				'type' => 'text',
+				'name' => 'wpOldTitle',
+				'label-message' => 'pt-movepage-current',
+				'default' => $this->oldText,
+				'readonly' => true,
+			],
+			'wpNewTitle' => [
+				'type' => 'text',
+				'name' => 'wpNewTitle',
+				'label-message' => 'pt-movepage-new',
+				'default' => $this->newText,
+				'readonly' => true,
+			],
+			'reason' => [
+				'type' => 'text',
+				'name' => 'reason',
+				'label-message' => 'pt-movepage-reason',
+				'maxlength' => CommentStore::COMMENT_CHARACTER_LIMIT,
+				'default' => $this->reason,
+			],
+			'subpages' => [
+				'type' => 'check',
+				'name' => 'subpages',
+				'id' => 'mw-subpages',
+				'label-message' => 'pt-movepage-subpages',
+				'default' => $this->moveSubpages,
+			]
 		];
 
-		$form = [];
-		$form[] = Xml::fieldset( $this->msg( 'pt-movepage-legend' )->text() );
-		$form[] = Html::openElement( 'form', $formParams );
-		$form[] = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-		$this->addInputLabel(
-			$form,
-			$this->msg( 'pt-movepage-current' )->text(),
-			'wpOldTitle',
-			30,
-			$this->oldText,
-			$readonly
-		);
-		$this->addInputLabel(
-			$form,
-			$this->msg( 'pt-movepage-new' )->text(),
-			'wpNewTitle',
-			30,
-			$this->newText,
-			$readonly
-		);
-		$this->addInputLabel(
-			$form,
-			$this->msg( 'pt-movepage-reason' )->text(),
-			'reason',
-			60,
-			$this->reason
-		);
-		$form[] = Html::hidden( 'subpages', $this->moveSubpages );
-		$form[] = Xml::checkLabel(
-			$this->msg( 'pt-movepage-subpages' )->text(),
-			'subpagesFake',
-			'mw-subpages',
-			$this->moveSubpages,
-			$readonly
-		) . $br;
-		$form[] = Xml::submitButton( $this->msg( 'pt-movepage-action-perform' )->text(), $subaction );
-		$form[] = Xml::submitButton( $this->msg( 'pt-movepage-action-other' )->text(), $subaction );
-		$form[] = Xml::closeElement( 'form' );
-		$form[] = Xml::closeElement( 'fieldset' );
-		$out->addHTML( implode( "\n", $form ) );
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
+		$htmlForm
+			->addButton( [
+				'name' => 'subaction',
+				'value' => $this->msg( 'pt-movepage-action-other' )->text(),
+			] )
+			->setMethod( 'post' )
+			->setAction( $this->getPageTitle( $this->oldText )->getLocalURL() )
+			->setSubmitName( 'subaction' )
+			->setSubmitTextMsg( 'pt-movepage-action-perform' )
+			->setWrapperLegendMsg( 'pt-movepage-legend' )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
