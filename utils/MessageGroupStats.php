@@ -207,7 +207,7 @@ class MessageGroupStats {
 	 * @param Traversable $res Database result object
 	 * @param string[] $ids List of message group ids
 	 * @param array[] $stats Optional array to append results to.
-	 * @return array[]s
+	 * @return array[]
 	 */
 	protected static function extractResults( $res, array $ids, array $stats = [] ) {
 		// Map the internal ids back to real ids

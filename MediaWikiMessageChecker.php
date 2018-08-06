@@ -232,7 +232,7 @@ class MediaWikiMessageChecker extends MessageChecker {
 	 * returns array of invokations having array of forms.
 	 * @since 2012-09-19
 	 * @param string $translation
-	 * @return array[array]
+	 * @return array[]
 	 */
 	public static function getPluralForms( $translation ) {
 		// Stores the forms from plural invocations
