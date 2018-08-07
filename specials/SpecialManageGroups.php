@@ -338,7 +338,7 @@ class SpecialManageGroups extends SpecialPage {
 	 */
 	public static function tabify( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
-		list( $alias, ) = SpecialPageFactory::resolveAlias( $title->getText() );
+		list( $alias, ) = TranslateUtils::resolveSpecialPageAlias( $title->getText() );
 
 		$pagesInGroup = [
 			'ManageMessageGroups' => 'namespaces',
@@ -354,7 +354,7 @@ class SpecialManageGroups extends SpecialPage {
 
 		$tabs['namespaces'] = [];
 		foreach ( $pagesInGroup as $spName => $section ) {
-			$spClass = SpecialPageFactory::getPage( $spName );
+			$spClass = TranslateUtils::getSpecialPage( $spName );
 			if ( $spClass === null ) {
 				continue; // Page explicitly disabled
 			}
