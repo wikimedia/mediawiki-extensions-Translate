@@ -478,11 +478,31 @@ class TranslateUtils {
 			return $handle->getTitle()->getLocalURL( [ 'action' => 'edit' ] );
 		}
 
-		$title = SpecialPageFactory::getPage( 'Translate' )->getPageTitle();
+		$title = TranslateUtils::getSpecialPage( 'Translate' )->getPageTitle();
 		return $title->getLocalURL( [
 			'showMessage' => $handle->getInternalKey(),
 			'group' => $handle->getGroup()->getId(),
 			'language' => $handle->getCode(),
 		] );
+	}
+
+	/**
+	 * Compatibility for pre-1.32, when SpecialPageFactory methods were static.
+	 */
+	public static function resolveSpecialPageAlias( $text ) {
+		if ( method_exists( MediaWikiServices::class, 'getSpecialPageFactory' ) ) {
+			return MediaWikiServices::getInstance()->getSpecialPageFactory()->resolveAlias( $text );
+		}
+		return SpecialPageFactory::resolveAlias( $text );
+	}
+
+	/**
+	 * Compatibility for pre-1.32, when SpecialPageFactory methods were static.
+	 */
+	public static function getSpecialPage( $name ) {
+		if ( method_exists( MediaWikiServices:class, 'getSpecialPageFactory' ) ) {
+			return MediaWikiServices::getInstance()->getSpecialPageFactory()->getPage( $name );
+		}
+		return SpecialPageFactory::getPage( $name );
 	}
 }
