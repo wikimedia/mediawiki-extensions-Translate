@@ -15,6 +15,7 @@
 	},
 	"translate": "Oversett",
 	"translate-desc": "[[Special:Translate|Spesialside]] for oversettelse av MediaWiki og annet",
+	"translate-fuzzybot-desc": "Dette er en spesiell systemkonto som brukes av MediaWikis [https://www.mediawiki.org/wiki/Extension:Translate Translate-utvidelse] for å vedlikeholde oversettelser.\n\nKontoen er del av programvaren, og eies ikke av noen bruker.",
 	"translate-taskui-export-to-file": "Eksporter i opprinnelig format",
 	"translate-taskui-export-as-po": "Eksporter for frakoblet oversettelse",
 	"translate-taction-translate": "Oversett",

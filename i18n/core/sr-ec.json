@@ -310,7 +310,7 @@
 	"tux-save-unknown-error": "Дошло је до непознате грешке.",
 	"tux-editor-placeholder": "Ваш превод",
 	"tux-editor-editsummary-placeholder": "Опис измене",
-	"tux-editor-paste-original-button-label": "Унеси изворни текст",
+	"tux-editor-paste-original-button-label": "Налепи изворни текст",
 	"tux-editor-discard-changes-button-label": "Одбаци измене",
 	"tux-editor-save-button-label": "Сачувај превод",
 	"tux-editor-skip-button-label": "Пређи на следећу",
