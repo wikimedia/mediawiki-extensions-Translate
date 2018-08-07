@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6399482c_5e895625",
+        "filename": "sql/translate_tm.sql",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2018-08-07T12:42:35Z",
+      "side": 1,
+      "message": "try \") ENGINE\u003dMyISAM DEFAULT CHARSET\u003dutf8;\"",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 40
+      },
+      "revId": "c850d9c23574794b16fde68a3d549c00bc7425f7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
