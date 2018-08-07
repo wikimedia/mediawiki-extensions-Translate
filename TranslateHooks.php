@@ -647,7 +647,7 @@ class TranslateHooks {
 	public static function addConfig( array &$vars, OutputPage $out ) {
 		$request = $out->getRequest();
 		$title = $out->getTitle();
-		list( $alias, ) = SpecialPageFactory::resolveAlias( $title->getText() );
+		list( $alias, ) = TranslateUtils::resolveSpecialPageAlias( $title->getText() );
 
 		if ( $title->isSpecialPage()
 			&& ( $alias === 'Translate'
@@ -770,7 +770,7 @@ class TranslateHooks {
 			return true;
 		}
 
-		list( $name, $subpage ) = SpecialPageFactory::resolveAlias( $target->getDBkey() );
+		list( $name, $subpage ) = TranslateUtils::resolveSpecialPageAlias( $target->getDBkey() );
 		if ( $name !== 'MyLanguage' ) {
 			return true;
 		}
