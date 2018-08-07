@@ -94,6 +94,30 @@
       "revId": "8e4faaee23e16c1879f5ce353b16d53c679e84e9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "024e02fb_8d948509",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 4864
+      },
+      "writtenOn": "2018-08-07T15:23:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ec72f98_c55e2e0c",
+      "range": {
+        "startLine": 301,
+        "startChar": 4,
+        "endLine": 301,
+        "endChar": 33
+      },
+      "revId": "8e4faaee23e16c1879f5ce353b16d53c679e84e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
