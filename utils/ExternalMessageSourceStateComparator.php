@@ -34,8 +34,10 @@ class ExternalMessageSourceStateComparator {
 	 */
 	public function processGroup( FileBasedMessageGroup $group, $languages ) {
 		$this->changes = [];
+		$processAll = false;
 
 		if ( $languages === self::ALL_LANGUAGES ) {
+			$processAll = true;
 			$languages = $group->getTranslatableLanguages();
 
 			// This means all languages
@@ -48,10 +50,13 @@ class ExternalMessageSourceStateComparator {
 			throw new MWException( 'Invalid input given for $languages' );
 		}
 
-		// Process the source language before others
+		// Process the source language before others. Source language might not
+		// be included in $group->getTranslatableLanguages(). The expected
+		// behavior is that source language is always processed when given
+		// self::ALL_LANGUAGES.
 		$sourceLanguage = $group->getSourceLanguage();
 		$index = array_search( $sourceLanguage, $languages );
-		if ( $index !== false ) {
+		if ( $processAll || $index !== false ) {
 			unset( $languages[$index] );
 			$this->processLanguage( $group, $sourceLanguage );
 		}
