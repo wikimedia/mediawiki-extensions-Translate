@@ -367,7 +367,7 @@ class SpecialTranslate extends SpecialPage {
 	 */
 	public static function tabify( Skin $skin, array &$tabs ) {
 		$title = $skin->getTitle();
-		list( $alias, $sub ) = SpecialPageFactory::resolveAlias( $title->getText() );
+		list( $alias, $sub ) = TranslateUtils::resolveSpecialPageAlias( $title->getText() );
 
 		$pagesInGroup = [ 'Translate', 'LanguageStats', 'MessageGroupStats' ];
 		if ( !in_array( $alias, $pagesInGroup, true ) ) {
