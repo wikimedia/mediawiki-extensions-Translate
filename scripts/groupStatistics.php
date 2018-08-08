@@ -512,7 +512,7 @@ class GroupStatistics extends Maintenance {
 				continue;
 			}
 
-			// Output the the row
+			// Output the row
 			if ( !$wmfscore ) {
 				$out->blockstart();
 			}
