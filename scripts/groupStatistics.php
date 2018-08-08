@@ -97,7 +97,7 @@ class GroupStatistics extends Maintenance {
 	 * Definitions in this variable can be used to report weighted meta localisation
 	 * scores for the 50 most spoken languages.
 	 *
-	 * @todo Allow weighted reporting for all available languges.
+	 * @todo Allow weighted reporting for all available languages.
 	 */
 	public $localisedWeights = [
 		'wikimedia' => [
