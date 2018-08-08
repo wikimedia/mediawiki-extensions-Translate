@@ -193,7 +193,7 @@ class TranslateUtils {
 	/**
 	 * Returns a localised language name.
 	 * @param string $code Language code.
-	 * @param null|string $language Language code of language the the name should be in.
+	 * @param null|string $language Language code of language the name should be in.
 	 * @return string Best-effort localisation of wanted language name.
 	 */
 	public static function getLanguageName( $code, $language = 'en' ) {
