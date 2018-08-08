@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "89f4b545_53fc0f97",
+        "filename": "translationaids/MachineTranslationAid.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-08-08T14:04:19Z",
+      "side": 1,
+      "message": "This is a nice garden path sentence: https://en.wikipedia.org/wiki/Garden-path_sentence\n\nSince the looping is clear from the code, maybe: Search for translations which we can use as a source for MT",
+      "revId": "787f082f82ac03fd2f1a64c35d4cb91ac2772066",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
