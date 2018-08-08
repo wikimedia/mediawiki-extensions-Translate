@@ -19,8 +19,6 @@
  * Rewritten in 2012-04-23
  */
 class SpecialManageGroups extends SpecialPage {
-	use CompatibleLinkRenderer;
-
 	const RIGHT = 'translate-manage';
 
 	/**
@@ -214,6 +212,8 @@ class SpecialManageGroups extends SpecialPage {
 		}
 
 		$text = '';
+		$titleLink = $this->getLinkRenderer()->makeLink( $title );
+
 		if ( $type === 'deletion' ) {
 			$wiki = ContentHandler::getContentText( Revision::newFromTitle( $title )->getContent() );
 			$oldContent = ContentHandler::makeContent( $wiki, $title );
@@ -221,14 +221,14 @@ class SpecialManageGroups extends SpecialPage {
 
 			$this->diff->setContent( $oldContent, $newContent );
 
-			$text = $this->diff->getDiff( $this->makeLink( $title ), '' );
+			$text = $this->diff->getDiff( $titleLink, '' );
 		} elseif ( $type === 'addition' ) {
 			$oldContent = ContentHandler::makeContent( '', $title );
 			$newContent = ContentHandler::makeContent( $params['content'], $title );
 
 			$this->diff->setContent( $oldContent, $newContent );
 
-			$text = $this->diff->getDiff( '', $this->makeLink( $title ) );
+			$text = $this->diff->getDiff( '', $titleLink );
 		} elseif ( $type === 'change' ) {
 			$wiki = ContentHandler::getContentText( Revision::newFromTitle( $title )->getContent() );
 
@@ -251,7 +251,7 @@ class SpecialManageGroups extends SpecialPage {
 			$newContent = ContentHandler::makeContent( $params['content'], $title );
 
 			$this->diff->setContent( $oldContent, $newContent );
-			$text .= $this->diff->getDiff( $this->makeLink( $title ), $actions );
+			$text .= $this->diff->getDiff( $titleLink, $actions );
 		}
 
 		$hidden = Html::hidden( $id, 1 );

@@ -15,8 +15,6 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslations extends SpecialAllPages {
-	use CompatibleLinkRenderer;
-
 	public function __construct() {
 		parent::__construct( 'Translations' );
 	}
@@ -230,11 +228,10 @@ class SpecialTranslations extends SpecialAllPages {
 				$text
 			);
 
-			$tools['history'] = $this->makeLink(
+			$tools['history'] = $this->getLinkRenderer()->makeLink(
 				$tTitle,
-				$historyText,
+				new HtmlArmor( $historyText ),
 				[
-					'action',
 					'title' => $this->msg( 'history-title', $tTitle->getPrefixedDBkey() )->text()
 				],
 				[ 'action' => 'history' ]

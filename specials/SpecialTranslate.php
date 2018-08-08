@@ -15,8 +15,6 @@
  * @ingroup SpecialPage TranslateSpecialPage
  */
 class SpecialTranslate extends SpecialPage {
-	use CompatibleLinkRenderer;
-
 	/** @var MessageGroup */
 	protected $group;
 
