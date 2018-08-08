@@ -241,6 +241,7 @@
 	"logentry-translationreview-message": "$1 ने $3 भाषांतर {{GENDER:$2|पुनर्विलोकित केले}}",
 	"group-translate-sandboxed": "अन-अनुमोदित भाषांतरकार",
 	"group-translate-sandboxed-member": "{{GENDER:$1|अन-अनुमोदित भाषांतरकार}}",
+	"translate-workflowstatus": "स्थिती:$1",
 	"translate-stats-workflow": "स्थिति",
 	"translate-workflowgroup-label": "कार्यओघ स्थिती",
 	"translate-dynagroup-recent-label": "अलीकडील भाषांतरे",
