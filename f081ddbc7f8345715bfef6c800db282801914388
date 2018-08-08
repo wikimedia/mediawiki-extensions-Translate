@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a1deec69_dea70088",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 4983
+      },
+      "writtenOn": "2018-08-08T13:31:04Z",
+      "side": 1,
+      "message": "I believe the author wanted to say \"that the\", and mistyped as \"the the\"",
+      "parentUuid": "e3a4a982_ff24dd36",
+      "range": {
+        "startLine": 196,
+        "startChar": 47,
+        "endLine": 196,
+        "endChar": 58
+      },
+      "revId": "f081ddbc7f8345715bfef6c800db282801914388",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ebb805c9_37fe8b81",
         "filename": "translationaids/MachineTranslationAid.php",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-08-08T13:22:58Z",
       "side": 1,
       "message": "I believe this should be: \"Iterate the translations […]\"",
+      "range": {
+        "startLine": 39,
+        "startChar": 12,
+        "endLine": 39,
+        "endChar": 14
+      },
+      "revId": "f081ddbc7f8345715bfef6c800db282801914388",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d28f2b2f_a982f3e1",
+        "filename": "translationaids/MachineTranslationAid.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4983
+      },
+      "writtenOn": "2018-08-08T13:31:04Z",
+      "side": 1,
+      "message": "I used \"Loop over\" in PS2",
+      "parentUuid": "ebb805c9_37fe8b81",
       "range": {
         "startLine": 39,
         "startChar": 12,
