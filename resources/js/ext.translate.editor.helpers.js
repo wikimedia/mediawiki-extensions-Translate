@@ -390,7 +390,7 @@
 
 		/**
 		 * Makes the $source element clickable and clicking it will replace the
-		 * transltion textarea with the given suggestion.
+		 * translation textarea with the given suggestion.
 		 *
 		 * @param {jQuery} $source
 		 * @param {string} suggestion Text to add
