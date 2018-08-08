@@ -15,8 +15,6 @@
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialMessageGroupStats extends SpecialLanguageStats {
-	use CompatibleLinkRenderer;
-
 	/// Overwritten from SpecialLanguageStats
 	protected $targetValueName = [ 'group' ];
 	/// Overwritten from SpecialLanguageStats
@@ -268,11 +266,16 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		];
 
 		if ( isset( $this->names[$code] ) ) {
-			$text = htmlspecialchars( "$code: {$this->names[$code]}" );
+			$text = "$code: {$this->names[$code]}";
 		} else {
-			$text = htmlspecialchars( $code );
+			$text = $code;
 		}
-		$link = $this->makeKnownLink( $this->translate, $text, [], $queryParameters );
+		$link = $this->getLinkRenderer()->makeKnownLink(
+			$this->translate,
+			$text,
+			[],
+			$queryParameters
+		);
 
 		return Html::rawElement( 'td', [], $link );
 	}

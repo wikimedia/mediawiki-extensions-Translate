@@ -32,7 +32,6 @@ $al['TranslateUtils'] = "$dir/TranslateUtils.php";
  * @name   "Special pages"
  * There are few more special pages in page translation section.
  */
-$al['CompatibleLinkRenderer'] = "$dir/specials/CompatibleLinkRenderer.php";
 $al['SpecialAggregateGroups'] = "$dir/specials/SpecialAggregateGroups.php";
 $al['SpecialImportTranslations'] = "$dir/specials/SpecialImportTranslations.php";
 $al['SpecialExportTranslations'] = "$dir/specials/SpecialExportTranslations.php";

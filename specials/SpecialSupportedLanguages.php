@@ -19,8 +19,6 @@
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialSupportedLanguages extends SpecialPage {
-	use CompatibleLinkRenderer;
-
 	/// Whether to skip and regenerate caches
 	protected $purge = false;
 
@@ -100,9 +98,9 @@ class SpecialSupportedLanguages extends SpecialPage {
 		// Information to be used inside the foreach loop.
 		$linkInfo = [];
 		$linkInfo['rc']['title'] = SpecialPage::getTitleFor( 'Recentchanges' );
-		$linkInfo['rc']['msg'] = $this->msg( 'supportedlanguages-recenttranslations' )->escaped();
+		$linkInfo['rc']['msg'] = $this->msg( 'supportedlanguages-recenttranslations' )->text();
 		$linkInfo['stats']['title'] = SpecialPage::getTitleFor( 'LanguageStats' );
-		$linkInfo['stats']['msg'] = $this->msg( 'languagestats' )->escaped();
+		$linkInfo['stats']['msg'] = $this->msg( 'languagestats' )->text();
 
 		$local = Language::fetchLanguageName( $code, $lang->getCode(), 'all' );
 		$native = Language::fetchLanguageName( $code, null, 'all' );
@@ -120,7 +118,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 
 		// Add useful links for language stats and recent changes for the language.
 		$links = [];
-		$links[] = $this->makeKnownLink(
+		$links[] = $this->getLinkRenderer()->makeKnownLink(
 			$linkInfo['stats']['title'],
 			$linkInfo['stats']['msg'],
 			[],
@@ -129,7 +127,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 				'suppresscomplete' => '1'
 			]
 		);
-		$links[] = $this->makeKnownLink(
+		$links[] = $this->getLinkRenderer()->makeKnownLink(
 			$linkInfo['rc']['title'],
 			$linkInfo['rc']['msg'],
 			[],
@@ -363,7 +361,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 				$attribs['style'] = $stylestr;
 			}
 
-			$links[] = $this->makeLink( $title, $enc, $attribs );
+			$links[] = $this->getLinkRenderer()->makeLink( $title, new HtmlArmor( $enc ), $attribs );
 		}
 
 		// for GENDER support
