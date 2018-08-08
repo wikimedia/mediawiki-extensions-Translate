@@ -20,8 +20,6 @@
  * @ingroup SpecialPage TranslateSpecialPage Stats
  */
 class SpecialLanguageStats extends SpecialPage {
-	use CompatibleLinkRenderer;
-
 	/**
 	 * @var StatsTable
 	 */
@@ -250,9 +248,9 @@ class SpecialLanguageStats extends SpecialPage {
 			$this->getLanguage()->getCode()
 		);
 
-		$rcInLangLink = $this->makeKnownLink(
+		$rcInLangLink = $this->getLinkRenderer()->makeKnownLink(
 			SpecialPage::getTitleFor( 'Translate', '!recent' ),
-			$this->msg( 'languagestats-recenttranslations' )->escaped(),
+			$this->msg( 'languagestats-recenttranslations' )->text(),
 			[],
 			[
 				'action' => 'proofread',
