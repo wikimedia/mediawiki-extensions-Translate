@@ -17,7 +17,7 @@
  *   "key2": "anothervalue"
  * });
  *
- * It also supports the the top-level bundle with a root construction and language indicators.
+ * It also supports the top-level bundle with a root construction and language indicators.
  * The following example will give the same messages as above:
  * define({
  *   "root": {
