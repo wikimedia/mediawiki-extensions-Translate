@@ -241,7 +241,7 @@ GROOVY;
 				];
 			}
 
-			// Ensure reults are in quality order
+			// Ensure results are in quality order
 			uasort( $suggestions, function ( $a, $b ) {
 				if ( $a['quality'] === $b['quality'] ) {
 					return 0;
