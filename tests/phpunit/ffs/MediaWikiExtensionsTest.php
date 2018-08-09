@@ -1,17 +1,16 @@
 <?php
 /**
- * Tests for MediaWikiExtension
+ * Test for parsing the special definition file for mediawiki-extensions
  * @author Niklas Laxström
- * @file
  * @license GPL-2.0-or-later
  */
-
-/**
- * Tests that the special definition file is parsed properly.
- */
-class MediaWikiExtensionTest extends MediaWikiTestCase {
+class MediaWikiExtensionsTest extends PHPUnit\Framework\TestCase {
+	/**
+	 * @requires function yaml_parse
+	 * @covers PremadeMediawikiExtensionGroups
+	 */
 	public function testParsing() {
-		$defs = __DIR__ . '/data/mediawiki-extensions.txt';
+		$defs = __DIR__ . '/../data/mediawiki-extensions.txt';
 		$path = '%GROUPROOT%/mediawiki-extensions/extensions';
 		$foo = new PremadeMediawikiExtensionGroups( $defs, $path );
 		$list = $deps = $autoload = [];
@@ -21,15 +20,15 @@ class MediaWikiExtensionTest extends MediaWikiTestCase {
 		$this->assertEquals( 5, count( $list ), 'Right number of groups were created' );
 
 		$this->assertArrayHasKey( 'ext-wikimediamessages', $list );
-		$expected = TranslateYaml::load( __DIR__ . '/data/MediaWikiExtensionTest-conf2.yaml' );
+		$expected = TranslateYaml::load( __DIR__ . '/..//data/MediaWikiExtensionTest-conf2.yaml' );
 		$this->assertEquals( $expected, $list['ext-wikimediamessages']->getConfiguration() );
 
 		$this->assertArrayHasKey( 'ext-examplejsonextension', $list );
-		$expected = TranslateYaml::load( __DIR__ . '/data/MediaWikiExtensionTest-conf3.yaml' );
+		$expected = TranslateYaml::load( __DIR__ . '/../data/MediaWikiExtensionTest-conf3.yaml' );
 		$this->assertEquals( $expected, $list['ext-examplejsonextension']->getConfiguration() );
 
 		$this->assertArrayHasKey( 'ext-exampleextension2', $list );
-		$expected = TranslateYaml::load( __DIR__ . '/data/MediaWikiExtensionTest-conf4.yaml' );
+		$expected = TranslateYaml::load( __DIR__ . '/../data/MediaWikiExtensionTest-conf4.yaml' );
 		$this->assertEquals( $expected, $list['ext-exampleextension2']->getConfiguration() );
 
 		$this->assertArrayHasKey( 'ext-languagesmodified', $list );
