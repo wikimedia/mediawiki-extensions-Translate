@@ -1,15 +1,14 @@
 <?php
 /**
- * Tests for MediaWikiExtension
+ * Test for parsing the special definition file for mediawiki-extensions
  * @author Niklas Laxström
- * @file
  * @license GPL-2.0-or-later
  */
-
-/**
- * Tests that the special definition file is parsed properly.
- */
-class MediaWikiExtensionTest extends MediaWikiTestCase {
+class MediaWikiExtensionsTest extends PHPUnit\Framework\TestCase {
+	/**
+	 * @requires function yaml_parse
+	 * @covers PremadeMediawikiExtensionGroups
+	 */
 	public function testParsing() {
 		$defs = __DIR__ . '/data/mediawiki-extensions.txt';
 		$path = '%GROUPROOT%/mediawiki-extensions/extensions';
