@@ -6,7 +6,8 @@
 			"Emilkris33",
 			"Kaare",
 			"Peter Alberti",
-			"Purodha"
+			"Purodha",
+			"Saederup92"
 		]
 	},
 	"pagetranslation": "Sideoversættelse",
@@ -81,6 +82,9 @@
 	"tpt-aggregategroup-new-description": "Beskrivelse (valgfri):",
 	"tpt-aggregategroup-remove-confirm": "Er du sikker på, at du vil slette denne samlegruppe?",
 	"tpt-aggregategroup-invalid-group": "Gruppen findes ikke",
+	"tpt-aggregategroup-edit-name": "Navn:",
+	"tpt-aggregategroup-edit-description": "Beskrivelse:",
+	"tpt-aggregategroup-update": "Gem",
 	"pt-parse-open": "Ubalanceret &lt;translate> tag.\nOversættelse skabelon: <pre>$1</pre>",
 	"pt-parse-close": "Ubalanceret &lt;/translate> tag.\nOversættelse skabelon: <pre>$1</pre>",
 	"pt-parse-nested": "Indlejrede &lt;translate>-oversættelsesenheder er ikke tilladt.\nTagtekst: <pre>$1</pre>",
@@ -152,5 +156,12 @@
 	"pt-deletepage-full-logreason": "Del af oversætbar side $1.",
 	"pt-deletepage-lang-logreason": "En del af oversættelses side $1 .",
 	"pt-deletepage-started": "Tjek venligst [[Special:Log/pagetranslation|side oversættelses log]] for fejl og færdiggørelses besked.",
-	"pt-deletepage-intro": "Med denne specielle side kan du slette en hel oversætbar side eller en individuel oversættelsesside.\nSletningen vil ikke ske med det samme, fordi mange afhængige sider også vil blive slettet.\nFejl vil blive registreret i [[Special:Log/pagetranslation|side oversættelses log]], og de skal repareres i manuelt."
+	"pt-deletepage-intro": "Med denne specielle side kan du slette en hel oversætbar side eller en individuel oversættelsesside.\nSletningen vil ikke ske med det samme, fordi mange afhængige sider også vil blive slettet.\nFejl vil blive registreret i [[Special:Log/pagetranslation|side oversættelses log]], og de skal repareres i manuelt.",
+	"pm-import-button-label": "Importer",
+	"pm-savepages-button-label": "Gem",
+	"pm-cancel-button-label": "Annullér",
+	"pm-page-does-not-exist": "$1 findes ikke.",
+	"pp-save-button-label": "Gem",
+	"pp-cancel-button-label": "Annullér",
+	"tpt-generic-button": "Bekræft"
 }

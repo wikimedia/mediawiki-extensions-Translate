@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Byrial"
+			"Byrial",
+			"Saederup92"
 		]
 	},
 	"searchtranslations": "Søg oversættelser",
@@ -15,6 +16,8 @@
 	"tux-sst-nosolr-body": "Denne wiki har ikke mulighed for oversættelsessøgning.",
 	"tux-sst-solr-offline-title": "Søgning er ikke tilgængelig",
 	"tux-sst-solr-offline-body": "Søgning er midlertidig utilgængelig.",
-	"tux-sst-next": "Næste resultater",
-	"tux-sst-prev": "Forrige resultater"
+	"tux-sst-next": "Næste ›",
+	"tux-sst-prev": "‹ Forrige",
+	"tux-sst-default": "Oversættelser",
+	"tux-sst-translated": "Oversættelser fra $1"
 }

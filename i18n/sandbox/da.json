@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sarrus"
+			"Sarrus",
+			"Saederup92"
 		]
 	},
-	"tsb-all-languages-button-label": "Alle sprog"
+	"tsb-all-languages-button-label": "Alle sprog",
+	"tsb-accept-button-label": "Accepter",
+	"translate-translationstash-skip-button-label": "Prøv en anden"
 }

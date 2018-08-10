@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saederup92"
+		]
+	},
+	"apihelp-groupreview-param-language": "Sprogkode.",
+	"apihelp-query+languagestats-param-language": "Sprogkode.",
+	"apihelp-query+messagecollection-param-language": "Sprogkode.",
+	"apihelp-query+messagecollection-example-1": "Liste over understøttede sprog",
+	"apihelp-searchtranslations-description": "Søg i oversættelser.",
+	"apihelp-searchtranslations-summary": "Søg i oversættelser."
+}
