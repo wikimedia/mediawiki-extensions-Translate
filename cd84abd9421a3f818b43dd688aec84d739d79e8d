@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ec6e17bd_63304f69",
+        "filename": "tests/phpunit/ffs/MediaWikiExtensionsTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2018-08-11T18:50:13Z",
+      "side": 1,
+      "message": "This looks wrong",
+      "range": {
+        "startLine": 23,
+        "startChar": 49,
+        "endLine": 23,
+        "endChar": 51
+      },
+      "revId": "cd84abd9421a3f818b43dd688aec84d739d79e8d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
