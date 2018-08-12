@@ -275,9 +275,9 @@ class MessageWebImporter {
 						);
 
 						// Show what we just did, adding to the list of changes
-						$key = array_shift( $message );
+						$msgKey = array_shift( $message );
 						$params = $message;
-						$message = $context->msg( $key, $params )->parse();
+						$message = $context->msg( $msgKey, $params )->parse();
 						$changed[] = "<li>$message</li>";
 
 						// Stop processing further messages if too much time
