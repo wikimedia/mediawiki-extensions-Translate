@@ -42,6 +42,11 @@ class MessageWebImporter {
 	 */
 	protected $processingTime = 43;
 
+	/**
+	 * @param Title|null $title
+	 * @param MessageGroup|string|null $group
+	 * @param string $code
+	 */
 	public function __construct( Title $title = null, $group = null, $code = 'en' ) {
 		$this->setTitle( $title );
 		$this->setGroup( $group );
@@ -57,6 +62,9 @@ class MessageWebImporter {
 		return $this->title;
 	}
 
+	/**
+	 * @param Title $title
+	 */
 	public function setTitle( Title $title ) {
 		$this->title = $title;
 	}
@@ -68,6 +76,9 @@ class MessageWebImporter {
 		return $this->user ? $this->user : RequestContext::getMain()->getUser();
 	}
 
+	/**
+	 * @param User $user
+	 */
 	public function setUser( User $user ) {
 		$this->user = $user;
 	}
@@ -91,10 +102,16 @@ class MessageWebImporter {
 		}
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getCode() {
 		return $this->code;
 	}
 
+	/**
+	 * @param string $code
+	 */
 	public function setCode( $code = 'en' ) {
 		$this->code = $code;
 	}
@@ -135,14 +152,9 @@ class MessageWebImporter {
 	protected function allowProcess() {
 		$request = RequestContext::getMain()->getRequest();
 
-		if ( $request->wasPosted() &&
-			$request->getBool( 'process', false ) &&
-			$this->getUser()->matchEditToken( $request->getVal( 'token' ) )
-		) {
-			return true;
-		}
-
-		return false;
+		return $request->wasPosted()
+			&& $request->getBool( 'process', false )
+			&& $this->getUser()->matchEditToken( $request->getVal( 'token' ) );
 	}
 
 	/**
@@ -151,9 +163,9 @@ class MessageWebImporter {
 	protected function getActions() {
 		if ( $this->code === 'en' ) {
 			return [ 'import', 'fuzzy', 'ignore' ];
-		} else {
-			return [ 'import', 'conflict', 'ignore' ];
 		}
+
+		return [ 'import', 'conflict', 'ignore' ];
 	}
 
 	/**
@@ -213,7 +225,7 @@ class MessageWebImporter {
 				// We found a new translation for this message of the
 				// current group: import it.
 				$action = 'import';
-				$message = self::doAction(
+				self::doAction(
 					$action,
 					$group,
 					$key,
@@ -442,11 +454,11 @@ class MessageWebImporter {
 			return [ 'translate-manage-import-ok',
 				wfEscapeWikiText( $title->getPrefixedText() )
 			];
-		} else {
-			$text = "Failed to import new version of page {$title->getPrefixedText()}\n";
-			$text .= "{$status->getWikiText()}";
-			throw new MWException( $text );
 		}
+
+		$text = "Failed to import new version of page {$title->getPrefixedText()}\n";
+		$text .= "{$status->getWikiText()}";
+		throw new MWException( $text );
 	}
 
 	/**
