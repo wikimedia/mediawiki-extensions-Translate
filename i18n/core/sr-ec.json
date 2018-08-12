@@ -19,7 +19,7 @@
 	"translate-desc": "[[Special:Translate|Посебна страница]] за превођење Медијавикија и више од тога",
 	"translate-fuzzybot-desc": "Ово је специјални системски налог који користи Медијавики [https://www.mediawiki.org/wiki/Extension:Translate Extension:Translate] да би се одржавали преводи.\nОвај налог је део Медијавики софтвера и није у власништву ниједног корисника.",
 	"translate-taskui-export-to-file": "Извези у матичном формату",
-	"translate-taskui-export-as-po": "Извези за превођење ван мреже",
+	"translate-taskui-export-as-po": "Извези за офлајн превођење",
 	"translate-taction-translate": "Превођење",
 	"translate-taction-proofread": "Провера",
 	"translate-taction-lstats": "Статистика језика",
