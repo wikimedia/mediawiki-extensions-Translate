@@ -48,7 +48,7 @@
 	"translate-page-description-hasoptional-open": "Прикажи необавезне поруке.",
 	"translate-page-edit": "уреди",
 	"translate-ext-url": "<hr />Веб-сајт: $1",
-	"translate-optional": "(необавезно)",
+	"translate-optional": "(опционално)",
 	"translate-ignored": "(занемарено)",
 	"translate-edit-title": "Уређивање „$1“",
 	"translate-edit-definition": "Значење поруке",
@@ -301,7 +301,7 @@
 	"tux-tab-translated": "Преведено",
 	"tux-tab-unproofread": "Непотврђено",
 	"tux-edit": "Уреди",
-	"tux-status-optional": "Необавезно",
+	"tux-status-optional": "Oпционално",
 	"tux-status-fuzzy": "Застарело",
 	"tux-status-proofread": "Потврђено",
 	"tux-status-translated": "Преведено",
@@ -385,5 +385,5 @@
 	"translate-ulsdep-title": "Грешка у конфигурацији",
 	"translate-ulsdep-body": "Додатак Translate зависи од [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Универзалног језичког селектора].",
 	"tux-session-expired": "Више нисте пријављени. Пријавите се у засебној картици. Друга могућности је да прекопирате несачуване преводе, пријавите се, вратите се на ову страницу и поново упишете своје преводе.",
-	"tux-nojs": "Овај алат не ради без Јаваскрипта. Јаваскрипт није омогућен, не ради или Ваш прегледач није подржан."
+	"tux-nojs": "Ова алатка не ради без јаваскрипта. Јаваскрипт је онемогућен, не ради или је ваш прегледач неподржан."
 }

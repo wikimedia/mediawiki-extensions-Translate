@@ -60,7 +60,7 @@
 	"tpt-aggregategroup-add": "Додај",
 	"tpt-aggregategroup-save": "Сачувај",
 	"tpt-aggregategroup-new-name": "Назив:",
-	"tpt-aggregategroup-new-description": "Опис (необавезно):",
+	"tpt-aggregategroup-new-description": "Опис (опционално):",
 	"tpt-aggregategroup-invalid-group": "Група не постоји",
 	"tpt-aggregategroup-edit-name": "Назив:",
 	"tpt-aggregategroup-edit-description": "Опис:",
