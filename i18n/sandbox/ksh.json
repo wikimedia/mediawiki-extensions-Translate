@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Purodha"
+			"Purodha",
+			"Als-Holder"
 		]
 	},
 	"managetranslatorsandbox": "Donn en Schpellwiß för de Övversäzer ennreeschde un verwallde.",
@@ -9,7 +10,7 @@
 	"tsb-reminder-title-generic": "Maach Ding Sällefsvörschtällong fähdesch, öm enen beschtääteschten Övversäzzer ze wääde.",
 	"tsb-reminder-content-generic": "Daach $1,\nmer bedangke ons dat De Desch köözlesch {{ucfirst:{{GRAMMAR:em|{{ucfirst:{{SITENAME}}}}}}}} aanjemälldt häs. Wann Do jraad noch e paa Övversäzonge för et Pröhve fähdesch mähß, künne de Wikki_Kööbeße desch freischallde för et Övversäzze.\n\nBes esu jood un donn Desch op {{GRAMMAR:Dativ|$2}} enlogge un maach e paa Övversäzonge.\n\n$3\nvum Päsonaal {{ucfirst:{{GRAMMAR:gen|{{ucfirst:{{SITENAME}}}}}}}}",
 	"tsb-reminder-sending": "Ben de Äennerong aam schecke&nbsp;…",
-	"tsb-reminder-sent": "{{PLURAL:$1|Ein Ä'ennerong öm $2 Uhr jeschek|$1 Ä'enneronge jeschek, zerläz öm $2 Uhr|Kein Ä'ennerong öm $2 Uhr jeschek}}.\n<!-- https://phabricator.wikimedia.org/T124635  https://phabricator.wikimedia.org/T130196 -->",
+	"tsb-reminder-sent": "{{PLURAL:$1|Ein Ännerong öm $2 Uhr jeschek|$1 Änneronge jeschek, zerläz öm $2 Uhr|Kein Ännerong öm $2 Uhr jeschek}}.",
 	"tsb-reminder-sent-new": "Han de Ä'ennerong verscheck.",
 	"tsb-reminder-failed": "Han kein Äennerong verscheck. Et hät nit jeflupp.",
 	"tsb-email-promoted-subject": "Do bes jäds_ene Övversäzer em {{SITENAME}}",
