@@ -97,7 +97,7 @@
 	"pt-movepage-list-other": "{{PLURAL:$1|Друге}} подстранице",
 	"pt-movepage-list-count": "Укупно $1 {{PLURAL:$1|страница|странице|страница}} за премештање.",
 	"pt-movepage-legend": "Премести преводиву страницу",
-	"pt-movepage-current": "Текући назив:",
+	"pt-movepage-current": "Актуелни назив:",
 	"pt-movepage-new": "Нови назив:",
 	"pt-movepage-reason": "Разлог:",
 	"pt-movepage-subpages": "Премести све подстранице",
