@@ -230,6 +230,14 @@ class SpecialAggregateGroups extends SpecialPage {
 		$subgroups = MessageGroups::getGroupsById( $subgroupIds );
 		uasort( $subgroups, [ 'MessageGroups', 'groupLabelSort' ] );
 
+		// Avoid potentially thousands of separate database queries
+		$lb = new LinkBatch();
+		foreach ( $subgroups as $group ) {
+			$lb->addObj( $group->getTitle() );
+		}
+		$lb->setCaller( __METHOD__ );
+		$lb->execute();
+
 		// Add missing invalid group ids back, not returned by getGroupsById
 		foreach ( $subgroupIds as $id ) {
 			if ( !isset( $subgroups[$id] ) ) {
