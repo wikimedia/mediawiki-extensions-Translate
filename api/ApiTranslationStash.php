@@ -23,18 +23,10 @@ class ApiTranslationStash extends ApiBase {
 			if ( $this->getUser()->isAllowed( 'translate-sandboxmanage' ) ) {
 				$user = User::newFromName( $params['username'] );
 				if ( !$user ) {
-					if ( method_exists( $this, 'dieWithError' ) ) {
-						$this->dieWithError( [ 'apierror-badparameter', 'username' ], 'invalidparam' );
-					} else {
-						$this->dieUsageMsg( [ 'invalidparam', 'username' ] );
-					}
+					$this->dieWithError( [ 'apierror-badparameter', 'username' ], 'invalidparam' );
 				}
 			} else {
-				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( [ 'apierror-badparameter', 'username' ], 'invalidparam' );
-				} else {
-					$this->dieUsageMsg( [ 'invalidparam', 'username' ] );
-				}
+				$this->dieWithError( [ 'apierror-badparameter', 'username' ], 'invalidparam' );
 			}
 		}
 
@@ -43,18 +35,10 @@ class ApiTranslationStash extends ApiBase {
 
 		if ( $action === 'add' ) {
 			if ( !isset( $params['title'] ) ) {
-				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( [ 'apierror-missingparam', 'title' ] );
-				} else {
-					$this->dieUsageMsg( [ 'missingparam', 'title' ] );
-				}
+				$this->dieWithError( [ 'apierror-missingparam', 'title' ] );
 			}
 			if ( !isset( $params['translation'] ) ) {
-				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( [ 'apierror-missingparam', 'translation' ] );
-				} else {
-					$this->dieUsageMsg( [ 'missingparam', 'translation' ] );
-				}
+				$this->dieWithError( [ 'apierror-missingparam', 'translation' ] );
 			}
 
 			// @todo: Return value of Title::newFromText not checked
