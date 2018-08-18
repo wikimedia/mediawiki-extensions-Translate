@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dr Lotus Black"
+		]
+	},
+	"searchtranslations": "ဘာသာပြန်များ ရှာဖွေရန်",
+	"tux-sst-edit": "ဘာသာပြန်ကို ပြင်ဆင်ရန်",
+	"tux-sst-view-foreign": "$1 တွင် ကြည့်ရန်",
+	"tux-sst-search": "ရှာဖွေရန်",
+	"tux-sst-search-ph": "ဘာသာပြန်များ ရှာဖွေရန်",
+	"tux-sst-count": "ရလဒ် {{PLURAL:$1|၁ ခု|$1 ခု}} တွေ့ရှိခဲ့သည်",
+	"tux-sst-facet-language": "ဘာသာစကားများ",
+	"tux-sst-facet-group": "မက်ဆေ့အုပ်စုများ",
+	"tux-sst-nosolr-title": "ရှာဖွေခြင်း မရရှိနိုင်ပါ",
+	"tux-sst-nosolr-body": "ဤဝီကီတွင် ဘာသာပြန် ရှာဖွေရေးဝန်ဆောင်မှု မရှိပါ။",
+	"tux-sst-solr-offline-title": "ရှာဖွေခြင်း မရရှိနိုင်ပါ",
+	"tux-sst-solr-offline-body": "ရှာဖွေရေး ဝန်ဆောင်မှု ယာယီ မရရှိနိုင်ပါ။",
+	"tux-sst-next": "ရှေ့ »",
+	"tux-sst-prev": "« ယခင်က",
+	"tux-sst-default": "ဘာသာပြန်များ",
+	"tux-sst-translated": "$1 မှ ဘာသာပြန်များ",
+	"tux-sst-untranslated": "$1 မှ ဘာသာပြန်များ မရှိပါ",
+	"tux-sst-outdated": "$1 မှ ခေတ်နောက်ကျသော ဘာသာပြန်များ",
+	"tux-sst-ellipsis-untranslated": "ဘာသာပြန်များ မရှိပါ",
+	"tux-sst-ellipsis-outdated": "ခေတ်နောက်ကျသော ဘာသာပြန်များ"
+}

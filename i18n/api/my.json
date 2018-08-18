@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dr Lotus Black"
+		]
+	},
+	"apihelp-groupreview-param-group": "မက်ဆေ့အုပ်စု",
+	"apihelp-groupreview-param-language": "ဘာသာစကားကုဒ်",
+	"apihelp-query+languagestats-param-language": "ဘာသာစကားကုဒ်",
+	"apihelp-query+messagecollection-param-group": "မက်ဆေ့အုပ်စု",
+	"apihelp-query+messagecollection-param-language": "ဘာသာစကားကုဒ်",
+	"apihelp-query+messagecollection-example-1": "ထောက်ပံ့ထားသော ဘာသားစကားများ၏ စာရင်း",
+	"apihelp-query+messagegroups-example-1": "မက်ဆေ့အုပ်စုများကို ပြရန်",
+	"apihelp-query+messagegroupstats-param-group": "မက်ဆေ့အုပ်စု အိုင်ဒီ",
+	"apihelp-searchtranslations-description": "ဘာသာပြန်များ ရှာဖွေရန်။",
+	"apihelp-searchtranslations-summary": "ဘာသာပြန်များ ရှာဖွေရန်။",
+	"apihelp-searchtranslations-example-1": "ဘာသာစကားအတွက် ဘာသာပြန်များကို ပြရန်။",
+	"apierror-translate-duplicateaggregategroup": "မက်ဆေ့အုပ်စု ရှိနှင့်ပြီးဖြစ်သည်",
+	"apierror-translate-language-disabled": "$1 သို့ ဘာသာပြန်ခြင်းကို ပိတ်ထားသည်။",
+	"apierror-translate-language-disabled-reason": "$1 သို့ ဘာသာပြန်ခြင်းကို ပိတ်ထားသည်: $2"
+}

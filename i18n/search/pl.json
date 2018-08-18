@@ -24,5 +24,6 @@
 	"tux-sst-outdated": "Przestarzałe tłumaczenia z $1",
 	"tux-sst-ellipsis-untranslated": "Brak tłumaczeń",
 	"tux-sst-ellipsis-outdated": "Przestarzałe tłumaczenia",
+	"tux-sst-match-message": "Wyświetlanie tłumaczeń pasujących do dowolnych słów wyszukiwania. $1",
 	"tux-sst-case-sensitive": "Rozróżniaj wielkość liter"
 }

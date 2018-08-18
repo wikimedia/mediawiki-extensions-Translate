@@ -5,5 +5,19 @@
 		]
 	},
 	"tsb-all-languages-button-label": "ဘာသာစကားများ အားလုံး",
-	"translationstash": "ကြိုဆိုပါသည်"
+	"tsb-accept-button-label": "လက်ခံသည်",
+	"tsb-reject-button-label": "လက်မခံပါ",
+	"tsb-accept-all-button-label": "အကုန် လက်ခံသည်",
+	"tsb-reject-all-button-label": "အကုန် လက်မခံပါ",
+	"tsb-user-posted-a-comment": "ဘာသာပြန်သူတစ်ဦး မဟုတ်",
+	"tsb-didnt-make-any-translations": "ဤအသုံးပြုသူသည် မည်သည့်ဘာသာပြန်မှုမျှ မလုပ်ဆောင်ခဲ့ပါ။",
+	"tsb-translations-source": "ရင်းမြစ်",
+	"tsb-translations-current": "ရှိနှင့်ပြီးသား ဘာသာပြန်များ",
+	"translationstash": "ကြိုဆိုပါသည်",
+	"translate-translationstash-initialtranslation": "သင်၏ ကနဦး ဘာသာပြန်ဆိုမှု",
+	"translate-translationstash-translations": "{{PLURAL:$1|ဘာသာပြန်|ဘာသာပြန်များ}} $1 ခုပြီးမြောက်သည်",
+	"translate-translationstash-skip-button-label": "နောက်တစ်ခု စမ်းကြည့်ပါ",
+	"tsb-limit-reached-title": "သင်၏ဘာသာပြန်ဆိုမှုများအတွက် ကျေးဇူးတင်ပါသည်",
+	"tsb-no-requests-from-new-users": "အသုံးပြုသူအသစ်များမှ တောင်းဆိုချက်များ မရှိပါ",
+	"tsb-create-user-page": "အခြေခံ အသုံးပြုသူစာမျက်နှာ ဖန်တီးရန်"
 }
