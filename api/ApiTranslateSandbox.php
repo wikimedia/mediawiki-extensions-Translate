@@ -15,11 +15,7 @@ class ApiTranslateSandbox extends ApiBase {
 	public function execute() {
 		global $wgTranslateUseSandbox;
 		if ( !$wgTranslateUseSandbox ) {
-			if ( method_exists( $this, 'dieWithError' ) ) {
-				$this->dieWithError( 'apierror-translate-sandboxdisabled', 'sandboxdisabled' );
-			} else {
-				$this->dieUsage( 'Sandbox feature is not in use', 'sandboxdisabled' );
-			}
+			$this->dieWithError( 'apierror-translate-sandboxdisabled', 'sandboxdisabled' );
 		}
 
 		$params = $this->extractRequestParams();
@@ -45,30 +41,18 @@ class ApiTranslateSandbox extends ApiBase {
 		// Do validations
 		foreach ( explode( '|', 'username|password|email' ) as $field ) {
 			if ( !isset( $params[$field] ) ) {
-				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError( [ 'apierror-missingparam', $field ], 'missingparam' );
-				} else {
-					$this->dieUsage( "Missing parameter $field", 'missingparam' );
-				}
+				$this->dieWithError( [ 'apierror-missingparam', $field ], 'missingparam' );
 			}
 		}
 
 		$username = $params['username'];
 		if ( User::getCanonicalName( $username, 'creatable' ) === false ) {
-			if ( method_exists( $this, 'dieWithError' ) ) {
-				$this->dieWithError( 'noname', 'invalidusername' );
-			} else {
-				$this->dieUsage( 'User name is not acceptable', 'invalidusername' );
-			}
+			$this->dieWithError( 'noname', 'invalidusername' );
 		}
 
 		$user = User::newFromName( $username );
 		if ( $user->getId() !== 0 ) {
-			if ( method_exists( $this, 'dieWithError' ) ) {
-				$this->dieWithError( 'userexists', 'nonfreeusername' );
-			} else {
-				$this->dieUsage( 'User name is in use', 'nonfreeusername' );
-			}
+			$this->dieWithError( 'userexists', 'nonfreeusername' );
 		}
 
 		$password = $params['password'];
@@ -78,11 +62,7 @@ class ApiTranslateSandbox extends ApiBase {
 
 		$email = $params['email'];
 		if ( !Sanitizer::validateEmail( $email ) ) {
-			if ( method_exists( $this, 'dieWithError' ) ) {
-				$this->dieWithError( 'invalidemailaddress', 'invalidemail' );
-			} else {
-				$this->dieUsage( 'Email is not acceptable', 'invalidemail' );
-			}
+			$this->dieWithError( 'invalidemailaddress', 'invalidemail' );
 		}
 
 		$user = TranslateSandbox::addUser( $username, $email, $password );
@@ -98,13 +78,7 @@ class ApiTranslateSandbox extends ApiBase {
 	}
 
 	protected function doDelete() {
-		if ( method_exists( $this, 'checkUserRightsAny' ) ) {
-			$this->checkUserRightsAny( 'translate-sandboxmanage' );
-		} else {
-			if ( !$this->getUser()->isAllowed( 'translate-sandboxmanage' ) ) {
-				$this->dieUsage( 'Access denied', 'missingperms' );
-			}
-		}
+		$this->checkUserRightsAny( 'translate-sandboxmanage' );
 
 		$params = $this->extractRequestParams();
 
@@ -117,14 +91,10 @@ class ApiTranslateSandbox extends ApiBase {
 			try {
 				TranslateSandbox::deleteUser( $user );
 			} catch ( MWException $e ) {
-				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError(
-						[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
-						'invalidparam'
-					);
-				} else {
-					$this->dieUsage( $e->getMessage(), 'invalidparam' );
-				}
+				$this->dieWithError(
+					[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
+					'invalidparam'
+				);
 			}
 
 			$logEntry = new ManualLogEntry( 'translatorsandbox', 'rejected' );
@@ -136,13 +106,7 @@ class ApiTranslateSandbox extends ApiBase {
 	}
 
 	protected function doPromote() {
-		if ( method_exists( $this, 'checkUserRightsAny' ) ) {
-			$this->checkUserRightsAny( 'translate-sandboxmanage' );
-		} else {
-			if ( !$this->getUser()->isAllowed( 'translate-sandboxmanage' ) ) {
-				$this->dieUsage( 'Access denied', 'missingperms' );
-			}
-		}
+		$this->checkUserRightsAny( 'translate-sandboxmanage' );
 
 		$params = $this->extractRequestParams();
 
@@ -152,14 +116,10 @@ class ApiTranslateSandbox extends ApiBase {
 			try {
 				TranslateSandbox::promoteUser( $user );
 			} catch ( MWException $e ) {
-				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError(
-						[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
-						'invalidparam'
-					);
-				} else {
-					$this->dieUsage( $e->getMessage(), 'invalidparam' );
-				}
+				$this->dieWithError(
+					[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
+					'invalidparam'
+				);
 			}
 
 			TranslateSandbox::sendEmail( $this->getUser(), $user, 'promotion' );
@@ -186,14 +146,10 @@ class ApiTranslateSandbox extends ApiBase {
 			try {
 				TranslateSandbox::sendEmail( $this->getUser(), $user, 'reminder' );
 			} catch ( MWException $e ) {
-				if ( method_exists( $this, 'dieWithError' ) ) {
-					$this->dieWithError(
-						[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
-						'invalidparam'
-					);
-				} else {
-					$this->dieUsage( $e->getMessage(), 'invalidparam' );
-				}
+				$this->dieWithError(
+					[ 'apierror-translate-sandbox-invalidparam', wfEscapeWikiText( $e->getMessage() ) ],
+					'invalidparam'
+				);
 			}
 		}
 	}
