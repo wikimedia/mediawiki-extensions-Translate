@@ -993,28 +993,46 @@ $specialPageAliases['sq'] = [
 
 /** Serbian (Cyrillic script) (српски (ћирилица)) */
 $specialPageAliases['sr-ec'] = [
+	'AggregateGroups' => [ 'Спојене_групе' ],
 	'ImportTranslations' => [ 'Увоз_превода' ],
+	'ExportTranslations' => [ 'Извоз_превода' ],
 	'LanguageStats' => [ 'Статистика_језика' ],
 	'Magic' => [ 'Напредно_превођење' ],
 	'ManageMessageGroups' => [ 'Управљање_групама_порука' ],
+	'ManageTranslatorSandbox' => [ 'Управљање_песком_преводиоца', 'Песак_за_преводе' ],
+	'MessageGroupStats' => [ 'Статистике_група_превода' ],
 	'PageTranslation' => [ 'Превод_странице' ],
+	'PageTranslationDeletePage' => [ 'Обриши_страницу_превода' ],
+	'SearchTranslations' => [ 'Претрага_превода' ],
 	'SupportedLanguages' => [ 'Подржани_језици' ],
 	'Translate' => [ 'Преведи' ],
+	'TranslationStash' => [ 'Складиште_превода' ],
 	'TranslationStats' => [ 'Статистика_превода' ],
 	'Translations' => [ 'Преводи' ],
+	'PageMigration' => [ 'Сеоба_странице' ],
+	'PagePreparation' => [ 'Припрема_странице' ],
 ];
 
 /** Serbian (Latin script) (srpski (latinica)) */
 $specialPageAliases['sr-el'] = [
+	'AggregateGroups' => [ 'Spojene_grupe' ],
 	'ImportTranslations' => [ 'Uvoz_prevoda' ],
+	'ExportTranslations' => [ 'Izvoz_prevoda' ],
 	'LanguageStats' => [ 'Statistika_jezika' ],
 	'Magic' => [ 'Napredno_prevođenje' ],
 	'ManageMessageGroups' => [ 'Upravljanje_grupama_poruka' ],
+	'ManageTranslatorSandbox' => [ 'Upravljanje_peskom_prevodioca', 'Pesak_za_prevode' ],
+	'MessageGroupStats' => [ 'Statistike_grupa_prevoda' ],
 	'PageTranslation' => [ 'Prevod_stranice' ],
+	'PageTranslationDeletePage' => [ 'Obriši_stranicu_prevoda' ],
+	'SearchTranslations' => [ 'Pretraga_prevoda' ],
 	'SupportedLanguages' => [ 'Podržani_jezici' ],
 	'Translate' => [ 'Prevedi' ],
+	'TranslationStash' => [ 'Skladište_prevoda' ],
 	'TranslationStats' => [ 'Statistika_prevoda' ],
 	'Translations' => [ 'Prevodi' ],
+	'PageMigration' => [ 'Seoba_stranice' ],
+	'PagePreparation' => [ 'Priprema_stranice' ],
 ];
 
 /** Sundanese (Basa Sunda) */
