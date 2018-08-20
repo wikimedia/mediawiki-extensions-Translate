@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8c2879d9_aadbf2f3",
+        "filename": "scripts/test-mt.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2018-08-20T07:23:56Z",
+      "side": 1,
+      "message": "Unsupported",
+      "range": {
+        "startLine": 71,
+        "startChar": 18,
+        "endLine": 71,
+        "endChar": 30
+      },
+      "revId": "5401d6226de4cb3843730d7498684aa896a006d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
