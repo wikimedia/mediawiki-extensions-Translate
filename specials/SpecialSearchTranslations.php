@@ -130,7 +130,7 @@ class SpecialSearchTranslations extends SpecialPage {
 					'data-facets' => FormatJson::encode( $this->getLanguages( $facets['language'] ) ),
 					'data-language' => $opts->getValue( 'language' ),
 				],
-				$this->msg( 'tux-sst-facet-language' )
+				$this->msg( 'tux-sst-facet-language' )->text()
 			);
 		}
 
@@ -139,7 +139,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				[ 'class' => 'row facet groups',
 					'data-facets' => FormatJson::encode( $this->getGroups( $facets['group'] ) ),
 					'data-group' => $opts->getValue( 'group' ) ],
-				$this->msg( 'tux-sst-facet-group' )
+				$this->msg( 'tux-sst-facet-group' )->text()
 			);
 		}
 
