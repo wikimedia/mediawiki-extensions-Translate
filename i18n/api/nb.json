@@ -79,6 +79,7 @@
 	"apihelp-translationstash-param-title": "Tittelen på sida med oversettelsesenheter.",
 	"apihelp-translationstash-param-translation": "Oversettelse gjort av brukeren.",
 	"apihelp-translationstash-param-metadata": "JSON-objekt.",
+	"apihelp-translationstash-example-1": "Legg til en oversettelse for stashen for [[MediaWiki:Jan/fi]]",
 	"apihelp-searchtranslations-description": "Søk i oversettelser.",
 	"apihelp-searchtranslations-summary": "Søk i oversettelser.",
 	"apihelp-searchtranslations-param-service": "Hvilken av de tilgjengelige oversettelsestjenestene som skal brukes.",

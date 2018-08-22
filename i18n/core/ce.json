@@ -149,7 +149,7 @@
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Гочдархо}}|Гочдархой}}: $1",
 	"supportedlanguages-recenttranslations": "дукха хан йоццуш гоч динарш",
 	"supportedlanguages-count": "Бериг $1 {{PLURAL:$1|мотт}}",
-	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|1=нисдар}} — тӀаьххьарлера нисдар $3 {{PLURAL:$3|де}} хьалха",
+	"supportedlanguages-activity": "$1: $2 {{PLURAL:$2|нисдар}} — тӀаьххьара нисдар $3 {{PLURAL:$3|де}} хьалха",
 	"translate-save": "Ӏалашдан ($1)",
 	"translate-jssti-add": "ТӀетоха могӀан чу",
 	"managemessagegroups": "Хаамийн тобанийн урхалладар",
