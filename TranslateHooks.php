@@ -227,6 +227,10 @@ class TranslateHooks {
 
 			global $wgJobClasses;
 			$wgJobClasses['TranslateSandboxEmailJob'] = 'TranslateSandboxEmailJob';
+
+			global $wgAPIModules;
+			$wgAPIModules['translationstash'] = 'ApiTranslationStash';
+			$wgAPIModules['translatesandbox'] = 'ApiTranslateSandbox';
 		}
 	}
 
