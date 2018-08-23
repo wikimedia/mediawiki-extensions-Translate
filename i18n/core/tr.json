@@ -116,6 +116,7 @@
 	"action-translate-messagereview": "çeviri inceleme",
 	"right-translate-groupreview": "İleti gruplarının iş akışı durumunu değiştir",
 	"action-translate-groupreview": "ileti gruplarının iş akışı durumunu değiştirme",
+	"translate-rcfilters-translations": "Çeviriler",
 	"translate-rc-translation-filter": "Çevirileri filtrele:",
 	"translate-rc-translation-filter-no": "Hiçbir şey yapma",
 	"translate-rc-translation-filter-only": "Yalnızca çevirileri göster",

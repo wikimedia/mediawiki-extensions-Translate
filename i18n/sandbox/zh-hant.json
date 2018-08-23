@@ -6,7 +6,8 @@
 			"Cwlin0416",
 			"LNDDYL",
 			"和平奮鬥救地球",
-			"Kly"
+			"Kly",
+			"Sean"
 		]
 	},
 	"managetranslatorsandbox": "管理翻譯人員沙盒",
@@ -43,10 +44,10 @@
 	"translate-translationstash-welcome": "歡迎光臨 {{GENDER:$1|$1}}，您是一名新進的翻譯人員",
 	"translate-translationstash-welcome-note": "為了要熟悉翻譯工具，請先試著翻譯部份訊息，再取得完整的翻譯人員權限以加入您想翻譯的專案。",
 	"translate-translationstash-initialtranslation": "您的第一次翻譯",
-	"translate-translationstash-translations": "$1 人已完成翻譯",
+	"translate-translationstash-translations": "已完成 $1 筆翻譯",
 	"translate-translationstash-skip-button-label": "嘗試其他",
 	"tsb-limit-reached-title": "感謝您的翻譯",
-	"tsb-limit-reached-body": "您的翻譯已超過新進翻譯人員的限制。\n我們的團隊會儘快確認您的翻譯資格並升級您的帳號，\n屆時您便可不受限制的翻譯。",
+	"tsb-limit-reached-body": "您的翻譯已達到新進翻譯人員的限制。\n我們的團隊會儘快審核並升級您的帳號，\n屆時您便可不受限制的翻譯。",
 	"tsb-no-requests-from-new-users": "沒有來自新使用者的請求",
 	"tsb-create-user-page": "建立基本使用者頁面",
 	"log-name-translatorsandbox": "翻譯沙盒日誌",
