@@ -346,12 +346,9 @@
 		}
 
 		// Remove all what has been already handled somewhere else
-		namespaces.splice( $.inArray( '', namespaces ), 1 );
-		namespaces.splice( $.inArray( 'category', namespaces ), 1 );
-		namespaces.splice( $.inArray( 'category_talk', namespaces ), 1 );
-		namespaces.splice( $.inArray( 'special', namespaces ), 1 );
-		namespaces.splice( $.inArray( 'file', namespaces ), 1 );
-		namespaces.splice( $.inArray( 'file_talk', namespaces ), 1 );
+		[ '', 'category', 'category_talk', 'special', 'file', 'file_talk' ].forEach( function ( ns ) {
+			namespaces.splice( namespaces.indexOf( ns ), 1 );
+		} );
 
 		for ( i = 0; i < namespaces.length; i++ ) {
 			namespaces[ i ] = mw.RegExp.escape( namespaces[ i ] );
@@ -371,7 +368,7 @@
 			var pageName,
 				pageUrl = '';
 
-			pageName = $.trim( $input.val() );
+			pageName = $input.val().trim();
 			savePage( pageName, pageContent ).done( function () {
 				pageUrl = mw.Title.newFromText( pageName ).getUrl( { action: 'edit' } );
 				$( '.messageDiv' )
@@ -389,7 +386,7 @@
 		$( '#action-prepare' ).click( function () {
 			var pageName, messageDiv = $( '.messageDiv' );
 
-			pageName = $.trim( $input.val() );
+			pageName = $input.val().trim();
 			messageDiv.hide();
 			if ( pageName === '' ) {
 				// eslint-disable-next-line no-alert
@@ -399,7 +396,7 @@
 
 			$.when( getPageContent( pageName ) ).done( function ( content ) {
 				pageContent = content;
-				pageContent = $.trim( pageContent );
+				pageContent = pageContent.trim();
 				pageContent = cleanupTags( pageContent );
 				pageContent = addLanguageBar( pageContent );
 				pageContent = addTranslateTags( pageContent );
@@ -408,7 +405,7 @@
 				pageContent = doTemplates( pageContent );
 				doFiles( pageContent ).then( doCategories ).done( function ( pageContent ) {
 					pageContent = postPreparationCleanup( pageContent );
-					pageContent = $.trim( pageContent );
+					pageContent = pageContent.trim();
 					getDiff( pageName, pageContent ).done( function ( diff ) {
 						$( '.diff tbody' ).append( diff );
 						$( '.divDiff' ).show( 'fast' );

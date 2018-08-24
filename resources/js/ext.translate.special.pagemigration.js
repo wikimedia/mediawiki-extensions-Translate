@@ -352,7 +352,7 @@
 			$( '.mw-tpm-sp-instructions' ).hide( 'fast' );
 			for ( i = 0; i < noOfSourceUnits; i++ ) {
 				content = $( '.mw-tpm-sp-unit__target' ).eq( i ).val();
-				content = $.trim( content );
+				content = content.trim();
 				if ( content !== '' ) {
 					list.push( createTranslationPage( i, content ) );
 				}
@@ -449,7 +449,7 @@
 
 		e.preventDefault();
 
-		pageTitle = $.trim( $( '#title' ).val() );
+		pageTitle = $( '#title' ).val().trim();
 		if ( pageTitle === '' ) {
 			errorBox.text( mw.msg( 'pm-pagetitle-missing' ) ).show( 'fast' );
 			return;

@@ -152,7 +152,7 @@
 				statusMsg = '';
 
 			if ( message.tags.length &&
-				$.inArray( 'optional', message.tags ) >= 0 &&
+				message.tags.indexOf( 'optional' ) >= 0 &&
 				status === 'untranslated'
 			) {
 				status = 'optional';

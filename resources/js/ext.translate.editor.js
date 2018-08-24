@@ -658,7 +658,7 @@
 
 				// When there is content in the editor enable the button.
 				// But do not enable when some saving is not finished yet.
-				if ( $.trim( current ) && !translateEditor.saving ) {
+				if ( current.trim() && !translateEditor.saving ) {
 					$pasteSourceButton.addClass( 'hide' );
 					$saveButton.prop( 'disabled', false );
 				} else {
