@@ -1080,7 +1080,7 @@
 									target: '_blank'
 								} )
 								.addClass( 'message-desc-edit' )
-								.on( 'click', $.proxy( this.showDocumentationEditor, this ) )
+								.on( 'click', this.showDocumentationEditor.bind( this ) )
 							)
 					);
 
