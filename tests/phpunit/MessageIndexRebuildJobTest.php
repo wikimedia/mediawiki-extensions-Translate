@@ -54,6 +54,6 @@ class MessageIndexRebuildJobTest extends MediaWikiTestCase {
 			$job,
 			'There is a job in the JobQueue'
 		);
-		$this->assertTrue( $job->run(), 'Job is executed succesfully' );
+		$this->assertTrue( $job->run(), 'Job is executed successfully' );
 	}
 }
