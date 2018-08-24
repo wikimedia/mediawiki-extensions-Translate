@@ -67,7 +67,7 @@ class SpecialPagesTest extends MediaWikiTestCase {
 			wfDebug( 'Page error caught; expected.' );
 		}
 
-		$this->assertTrue( true, "Special page $name was executed succesfully with anon user" );
+		$this->assertTrue( true, "Special page $name was executed successfully with anon user" );
 
 		$user = new MockSuperUser();
 		$context->setUser( $user );
