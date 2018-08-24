@@ -651,7 +651,7 @@
 	}
 
 	TranslatorSearch.prototype.init = function () {
-		this.$search.on( 'search keyup', $.proxy( this.keyup, this ) );
+		this.$search.on( 'search keyup', this.keyup.bind( this ) );
 	};
 
 	TranslatorSearch.prototype.keyup = function () {

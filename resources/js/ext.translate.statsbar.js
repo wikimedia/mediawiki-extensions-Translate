@@ -33,7 +33,7 @@
 				this.render();
 			} else {
 				mw.translate.loadLanguageStats( this.language )
-					.done( $.proxy( this.render, this ) );
+					.done( this.render.bind( this ) );
 			}
 		},
 
