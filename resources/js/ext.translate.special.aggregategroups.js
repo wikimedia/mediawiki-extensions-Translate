@@ -189,7 +189,7 @@
 					// Need to trim to remove the trailing whitespace
 					// Can't use innerText not supported by Firefox
 					var groupName = $( data ).text();
-					groupName = $.trim( groupName );
+					groupName = groupName.trim();
 					exclude.push( groupName );
 				}
 			);

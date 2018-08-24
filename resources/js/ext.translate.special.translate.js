@@ -186,7 +186,7 @@
 		}
 
 		// And if the current language is among them, we can return early
-		if ( $.inArray( language, group.prioritylangs ) !== -1 ) {
+		if ( group.prioritylangs.indexOf( language ) !== -1 ) {
 			return;
 		}
 

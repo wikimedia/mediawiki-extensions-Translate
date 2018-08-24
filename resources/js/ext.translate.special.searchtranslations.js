@@ -88,16 +88,16 @@
 			.concat( Object.keys( languages ) );
 
 		// Remove duplicates from the language list
-		$.each( quickLanguageList, function ( i, v ) {
-			result = languages[ v ];
-			if ( result && $.inArray( v, unique ) === -1 ) {
-				unique.push( v );
+		quickLanguageList.forEach( function ( lang ) {
+			result = languages[ lang ];
+			if ( result && unique.indexOf( lang ) === -1 ) {
+				unique.push( lang );
 			}
 		} );
 
-		if ( currentLanguage && $.inArray( currentLanguage, quickLanguageList ) >= 0 ) {
+		if ( currentLanguage && quickLanguageList.indexOf( currentLanguage ) >= 0 ) {
 			quickLanguageList = unique.splice( 0, 5 );
-			if ( $.inArray( currentLanguage, quickLanguageList ) === -1 ) {
+			if ( quickLanguageList.indexOf( currentLanguage ) === -1 ) {
 				quickLanguageList = quickLanguageList.concat( currentLanguage );
 			}
 		} else {
@@ -202,7 +202,7 @@
 		}
 		grouppath = getParameterByName( 'grouppath' ).split( '|' )[ 0 ];
 		if ( currentGroup && resultGroups[ grouppath ] &&
-			$.inArray( grouppath, groupList ) < 0 &&
+			groupList.indexOf( grouppath ) < 0 &&
 			level === 0
 		) {
 			// Make sure current selected group is displayed always.

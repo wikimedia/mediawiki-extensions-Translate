@@ -660,7 +660,7 @@
 
 		// Respond to the keypress events after a small timeout to avoid freeze when typed fast
 		delay( function () {
-			query = $.trim( translatorSearch.$search.val() ).toLowerCase().trim();
+			query = translatorSearch.$search.val().trim().toLowerCase();
 			translatorSearch.filter( query );
 		}, 300 );
 	};
