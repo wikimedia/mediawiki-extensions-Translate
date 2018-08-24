@@ -265,7 +265,7 @@
 		 * Shows suitable list for current view, taking possible filter into account
 		 */
 		showList: function () {
-			var query = $.trim( this.$search.val() ).toLowerCase();
+			var query = this.$search.val().trim().toLowerCase();
 
 			if ( query ) {
 				this.filter( query );
@@ -471,7 +471,7 @@
 				if ( group.priority === 'discouraged' ||
 					( group.priorityforce &&
 						group.prioritylangs &&
-						$.inArray( targetLanguage, group.prioritylangs ) === -1 )
+						group.prioritylangs.indexOf( targetLanguage ) === -1 )
 				) {
 					return;
 				}

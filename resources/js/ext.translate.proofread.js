@@ -84,7 +84,7 @@
 			/* Whether the current user if the last translator of this message.
 			 * Accepting own translations is prohibited. */
 			translatedBySelf = ( this.message.properties[ 'last-translator-text' ] === mw.user.getName() );
-			proofreadBySelf = $.inArray( userId, reviewers ) > -1;
+			proofreadBySelf = reviewers.indexOf( userId ) > -1;
 
 			sourceLangCode = this.options.sourcelangcode;
 			sourceLangDir = $.uls.data.getDir( sourceLangCode );
