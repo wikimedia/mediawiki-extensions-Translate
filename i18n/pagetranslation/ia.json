@@ -131,7 +131,7 @@
 	"pt-movepage-action-other": "Cambiar destination",
 	"pt-movepage-intro": "Iste pagina special permitte renominar paginas marcate pro traduction.\nLe renomination non essera instantanee, proque il essera necessari renominar multe paginas.\nDurante le renomination del paginas, il non es possibile interager con le paginas in question.\nLe fallimentos essera registrate in le [[Special:Log/pagetranslation|registro de traduction de paginas]] e illos necessita reparation manual.",
 	"pt-movepage-logreason": "Parte del pagina traducibile \"$1\"",
-	"pt-movepage-started": "Le pagina de base ha essite renominate.\nPer favor verifica le [[Special:Log/pagetranslation|registro de traductiones de paginas]] pro reparar eventual errores e leger le message de completion.",
+	"pt-movepage-started": "Per favor verifica le [[Special:Log/pagetranslation|registro de traductiones de paginas]] in un momento pro reparar eventual errores e leger le message de completion.",
 	"pt-locked-page": "Iste pagina es serrate proque le pagina traducibile es actualmente in curso de renomination.",
 	"pt-deletepage-lang-title": "Deletion del pagina traducite \"$1\"",
 	"pt-deletepage-full-title": "Deletion del pagina traducibile \"$1\"",

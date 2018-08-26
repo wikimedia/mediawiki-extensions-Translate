@@ -4,6 +4,8 @@
 			"McDutchie"
 		]
 	},
+	"apihelp-aggregategroups-description": "Gerer le gruppos de messages aggregate.\n\nTu pote adder e mover gruppos de messages aggregate e associar o dissociar gruppos de messages a illos (un al vice).",
+	"apihelp-aggregategroups-summary": "Gerer gruppos de messages aggregate.",
 	"apihelp-query+messagecollection-param-limit": "Numero de messages a monstrar (post filtration).",
 	"apihelp-query+messagecollection-example-3": "Lista de messages optional in finnese con etiquettas pro le gruppo \"page-Example\"",
 	"apihelp-query+messagegroups-param-iconsize": "Dimension preferite del icone de gruppo rasterisate.",
