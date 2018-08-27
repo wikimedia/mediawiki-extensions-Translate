@@ -12,7 +12,8 @@
 			"Obsuser",
 			"Acamicamacaraca",
 			"Prevodim",
-			"BadDog"
+			"BadDog",
+			"Zoranzoki21"
 		]
 	},
 	"translate": "Превођење",
@@ -288,7 +289,7 @@
 	"translate-dynagroup-recent-label": "Недавни преводи",
 	"translate-dynagroup-recent-desc": "Ова група порука приказује све недавне преводе на овом језику.\nОво је најкорисније за преглед превода.",
 	"translate-dynagroup-additions-label": "Недавна додавања",
-	"translate-dynagroup-additions-desc": "Ова група порука приказује нове и измењене поруке.",
+	"translate-dynagroup-additions-desc": "Ова група порука приказује нове и промењене поруке.",
 	"translate-msggroupselector-projects": "Група порука",
 	"translate-msggroupselector-search-placeholder": "Претражите групе",
 	"translate-msggroupselector-search-all": "Све",
@@ -384,6 +385,6 @@
 	"translate-search-more-groups-info": "још $1 {{PLURAL:$1|група}}",
 	"translate-ulsdep-title": "Грешка у конфигурацији",
 	"translate-ulsdep-body": "Додатак „Превођење” (Translate) зависи од [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector додатка „Универзалан бирач језика” (Universal Language Selector)].",
-	"tux-session-expired": "Више нисте пријављени. Пријавите се у засебној картици. Друга могућности је да прекопирате несачуване преводе, пријавите се, вратите се на ову страницу и поново унесете своје преводе.",
+	"tux-session-expired": "Више нисте пријављени. Пријавите се у засебној картици. Друга могућност је да прекопирате несачуване преводе, пријавите се, вратите се на ову страницу и поново унесете своје преводе.",
 	"tux-nojs": "Ова алатка не ради без JavaScript-а. JavaScript је онемогућен, не ради или је овај прегледач неподржан."
 }

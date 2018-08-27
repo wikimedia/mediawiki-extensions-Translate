@@ -5,7 +5,8 @@
 			"Eleassar",
 			"Smihael",
 			"Edinwiki",
-			"Janezdrilc"
+			"Janezdrilc",
+			"Upwinxp"
 		]
 	},
 	"translate": "Prevedi",
@@ -75,7 +76,7 @@
 	"translate-magic-special": "Vzdevki posebnih strani",
 	"translate-magic-words": "Čarobne besede",
 	"translate-magic-namespace": "Imena imenskih prostorov",
-	"translate-magic-notsaved": "Vaše urejanje ni bilo shranjeno!",
+	"translate-magic-notsaved": "Tvoje urejanje ni bilo shranjeno!",
 	"translate-magic-errors": "Prosimo popravite {{PLURAL:$1|naslednjo napako|naslednji $1 napaki|naslednje $1 napake|naslednjih $1 napak}} v prevodih:",
 	"translate-magic-saved": "Vaše spremembe smo shranili.",
 	"translate-checks-parameters": "{{PLURAL:$2|Naslednji parameter ni uporabljen|Naslednja parametra nista uporabljena|Naslednji parametri niso uporabljeni}}:\n<strong><nowiki>$1</nowiki></strong>",
