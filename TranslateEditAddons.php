@@ -102,21 +102,18 @@ class TranslateEditAddons {
 	 * Replace the normal save button with one that says if you are editing
 	 * message documentation to try to avoid accidents.
 	 * Hook: EditPageBeforeEditButtons
+	 *
 	 * @param EditPage $editpage
 	 * @param array &$buttons
 	 * @param int $tabindex
-	 * @return true
 	 */
 	public static function buttonHack( EditPage $editpage, &$buttons, $tabindex ) {
 		$handle = new MessageHandle( $editpage->getTitle() );
 		if ( !$handle->isValid() ) {
-			return true;
+			return;
 		}
 
 		$context = $editpage->getArticle()->getContext();
-		global $wgVersion;
-		$useOoui = version_compare( $wgVersion, '1.30c', '>=' )
-			|| method_exists( $editpage, 'isOouiEnabled' ) && $editpage->isOouiEnabled();
 
 		if ( $handle->isDoc() ) {
 			$langCode = $context->getLanguage()->getCode();
@@ -127,28 +124,20 @@ class TranslateEditAddons {
 				'tabindex' => ++$tabindex,
 			] + Linker::tooltipAndAccesskeyAttribs( 'save' );
 
-			if ( $useOoui ) {
-				$saveConfig = OOUI\Element::configFromHtmlAttributes( $attribs );
-				$buttons['save'] = new OOUI\ButtonInputWidget( [
-					// Support: IE 6 – Use <input>, otherwise it can't distinguish which button was clicked
-					'useInputTag' => true,
-					'flags' => [ 'progressive', 'primary' ],
-					'label' => $context->msg( 'translate-save', $name )->text(),
-					'type' => 'submit',
-				] + $saveConfig );
-			} else {
-				$buttons['save'] = Html::submitButton(
-					$context->msg( 'translate-save', $name )->text(),
-					$attribs,
-					[ 'mw-ui-progressive' ]
-				);
-			}
+			$saveConfig = OOUI\Element::configFromHtmlAttributes( $attribs );
+			$buttons['save'] = new OOUI\ButtonInputWidget( [
+				// Support: IE 6 – Use <input>, otherwise it can't distinguish which button was clicked
+				'useInputTag' => true,
+				'flags' => [ 'progressive', 'primary' ],
+				'label' => $context->msg( 'translate-save', $name )->text(),
+				'type' => 'submit',
+			] + $saveConfig );
 		}
 
 		try {
 			$supportUrl = SupportAid::getSupportUrl( $handle->getTitle() );
 		} catch ( TranslationHelperException $e ) {
-			return true;
+			return;
 		}
 
 		$attribs = [
@@ -159,24 +148,13 @@ class TranslateEditAddons {
 			'title' => $context->msg( 'translate-js-support-title' )->text(),
 		];
 
-		if ( $useOoui ) {
-			$attribs += [
-				'label' => $context->msg( 'translate-js-support' )->text(),
-				'href' => $supportUrl,
-				'target' => '_blank',
-			];
-			$saveConfig = OOUI\Element::configFromHtmlAttributes( $attribs );
-			$buttons['ask'] = new OOUI\ButtonWidget( $saveConfig );
-		} else {
-			$attribs += [
-				'value' => $context->msg( 'translate-js-support' )->text(),
-				'data-load-url' => $supportUrl,
-				'onclick' => "window.open( $( this ).data( 'load-url' ) );",
-			];
-			$buttons['ask'] = Html::element( 'input', $attribs );
-		}
-
-		return true;
+		$attribs += [
+			'label' => $context->msg( 'translate-js-support' )->text(),
+			'href' => $supportUrl,
+			'target' => '_blank',
+		];
+		$saveConfig = OOUI\Element::configFromHtmlAttributes( $attribs );
+		$buttons['ask'] = new OOUI\ButtonWidget( $saveConfig );
 	}
 
 	/**
