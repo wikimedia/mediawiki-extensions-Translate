@@ -8,7 +8,8 @@
 			"Сербијана",
 			"Obsuser",
 			"Acamicamacaraca",
-			"BadDog"
+			"BadDog",
+			"Zoranzoki21"
 		]
 	},
 	"pagetranslation": "Превод странице",
@@ -88,7 +89,7 @@
 	"pt-movepage-block-tp-exists": "Циљна страница за превод [[:$2]] постоји.",
 	"pt-movepage-block-tp-invalid": "Наслов циљне странице за превод за [[:$1]] био би неисправан (предугачак?).",
 	"pt-movepage-block-section-exists": "Циљна страница [[:$2]] за преводилачку јединицу постоји.",
-	"pt-movepage-block-section-invalid": "Наслов циљне странице за поднаслов за [[:$1]] био би неисправан (предугачак?).",
+	"pt-movepage-block-section-invalid": "Наслов циљне странице за преводилачку јединицу \"[[:$1]]\" био би неисправан (предугачак?).",
 	"pt-movepage-block-subpage-exists": "Циљна подстраница [[:$2]] постоји.",
 	"pt-movepage-block-subpage-invalid": "Наслов циљне подстранице за [[:$1]] био би неисправан (предугачак?).",
 	"pt-movepage-list-pages": "Списак страница за премештање",
