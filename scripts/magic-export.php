@@ -169,7 +169,7 @@ class MagicExport extends Maintenance {
 
 		// preserve the long array syntax, if varName is written with it
 		$preserveLongArraySyntax = preg_match(
-			'/' . preg_quote( $varName ) . '\s*=\s*array\s*\(\s*\)\s*;/',
+			'/' . preg_quote( $varName, '/' ) . '\s*=\s*array\s*\(\s*\)\s*;/',
 			$data
 		);
 

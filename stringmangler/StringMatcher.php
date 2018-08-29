@@ -75,7 +75,7 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 				$prefix = substr( $string, 0, -1 );
 				$this->aPrefix[$prefix] = strlen( $prefix );
 			} else {
-				$string = str_replace( '\\*', '.+', preg_quote( $string ) );
+				$string = str_replace( '\\*', '.+', preg_quote( $string, '/' ) );
 				$this->aRegex[] = "/^$string$/";
 			}
 		}
