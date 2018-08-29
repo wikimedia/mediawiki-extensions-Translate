@@ -42,6 +42,7 @@ class StringMatcherTest extends MediaWikiTestCase {
 				'[kissa]', '=5Bkissa=5D', 'p-', [ '[k.s*' ],
 				'Message key with special chars'
 			],
+			[ 'keyblah/i', 'p-keyblah/i', 'p-', [ 'key*/i' ], 'Slash in pattern does not trigger modifier' ],
 		];
 
 		return $keys;
