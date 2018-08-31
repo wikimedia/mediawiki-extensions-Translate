@@ -142,6 +142,7 @@ class SpecialTranslationStats extends SpecialPage {
 	/**
 	 * Constructs the form which can be used to generate custom graphs.
 	 * @param FormOptions $opts
+	 * @suppress SecurityCheck-DoubleEscaped Intentionally outputting what user should type
 	 */
 	protected function form( FormOptions $opts ) {
 		global $wgScript;

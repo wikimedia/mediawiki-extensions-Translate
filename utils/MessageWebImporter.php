@@ -278,7 +278,7 @@ class MessageWebImporter {
 
 						// We have all the necessary information on this changed
 						// translation: actually process the message
-						$message = self::doAction(
+						$messageKeyAndParams = self::doAction(
 							$action,
 							$group,
 							$key,
@@ -287,8 +287,8 @@ class MessageWebImporter {
 						);
 
 						// Show what we just did, adding to the list of changes
-						$msgKey = array_shift( $message );
-						$params = $message;
+						$msgKey = array_shift( $messageKeyAndParams );
+						$params = $messageKeyAndParams;
 						$message = $context->msg( $msgKey, $params )->parse();
 						$changed[] = "<li>$message</li>";
 
