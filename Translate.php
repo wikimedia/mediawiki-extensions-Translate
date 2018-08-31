@@ -285,8 +285,8 @@ $wgTranslateTranslationServices['Microsoft'] = [
 	'type' => 'microsoft',
 ];
 $wgTranslateTranslationServices['Apertium'] = [
-	'url' => 'http://api.apertium.org/json/translate',
-	'pairs' => 'http://api.apertium.org/json/listPairs',
+	'url' => 'http://apy.projectjj.com/translate',
+	'pairs' => 'http://apy.projectjj.com/listPairs',
 	'key' => null,
 	'timeout' => 3,
 	'type' => 'apertium',
