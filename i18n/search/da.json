@@ -19,5 +19,6 @@
 	"tux-sst-next": "Næste ›",
 	"tux-sst-prev": "‹ Forrige",
 	"tux-sst-default": "Oversættelser",
-	"tux-sst-translated": "Oversættelser fra $1"
+	"tux-sst-translated": "Oversættelser fra $1",
+	"tux-sst-ellipsis-untranslated": "Ingen oversættelse"
 }

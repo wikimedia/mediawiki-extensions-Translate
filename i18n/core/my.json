@@ -196,6 +196,7 @@
 	"tux-tab-translated": "ဘာသာပြန်ထားသော",
 	"tux-tab-unproofread": "ပြန်လည်မဆန်းစစ်ရသော",
 	"tux-edit": "ပြင်ဆင်",
+	"tux-status-optional": "ထည့်လိုပါက",
 	"tux-status-fuzzy": "ခေတ်နောက်ကျနေသော",
 	"tux-status-proofread": "ပြန်လည်ဆန်းစစ်ပြီး",
 	"tux-status-translated": "ဘာသာပြန်ထားသော",
@@ -216,7 +217,7 @@
 	"tux-editor-add-desc": "စာရွက်စာတမ်း ပေါင်းထည့်ရန်",
 	"tux-editor-suggestions-title": "အကြံပေးမှုများ",
 	"tux-editor-in-other-languages": "အခြား ဘာသာစကားများဖြင့်",
-	"tux-editor-need-more-help": "ထ်ပြီး အကူအညီ လိုသေးလား?",
+	"tux-editor-need-more-help": "ထပ်ပြီး အကူအညီ လိုသေးလား?",
 	"tux-editor-ask-help": "အချက်အလက် ပိုမိုမေးမြန်းရန်",
 	"tux-editor-tm-match": "$1% ကိုက်ညီ",
 	"tux-warnings-more": "{{PLURAL:$1|$1 ပို၍}}",
@@ -261,12 +262,15 @@
 	"tux-editor-close-tooltip": "ပိတ်",
 	"tux-editor-expand-tooltip": "ချဲ့ရန်",
 	"tux-editor-collapse-tooltip": "ချုံ့ရန်",
+	"tux-editor-message-tools-show-editor": "ဝီကီအယ်ဒီတာတွင် ပြရန်",
 	"tux-editor-message-tools-history": "ရာဇဝင်",
 	"tux-editor-message-tools-delete": "ဖျက်ရန်",
 	"tux-editor-message-tools-translations": "ဘာသာပြန်များအားလုံး",
+	"tux-editor-message-tools-linktothis": "ဤမက်ဆေ့သို့ လင့်ခ်ချိတ်ရန်",
 	"tux-editor-loading": "ဝန်ဆွဲတင်နေသည်...",
 	"translate-search-more-languages-info": "နောက်ထပ် {{PLURAL:$1|ဘာသာစကား|ဘာသာစကားများ}} $1 ခု",
 	"translate-statsbar-tooltip": "$1% ဘာသာပြန်ပြီး၊ $2% ပြန်လည်ဆန်းစစ်ပြီး",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% ဘာသာပြန်ပြီး၊ $2% ပြန်လည်ဆန်းစစ်ပြီး၊ $3% ခေတ်နောက်ကျနေ",
-	"translate-search-more-groups-info": "ပို၍ $1 {{PLURAL:$1|အုပ်စု|အုပ်စုများ}}"
+	"translate-search-more-groups-info": "ပို၍ $1 {{PLURAL:$1|အုပ်စု|အုပ်စုများ}}",
+	"tux-session-expired": "သင်သည် အကောင့်ထဲသို့ မဝင်ထားတော့ပါ။ သီးခြား tab တစ်ခုမှ အကောင့်ထဲသို့ ဝင်ပါ။ တနည်းအားဖြင့် မသိမ်းရသေးသော ဘာသာပြန်များကို မိတ္တူတစ်ခုကူးထားပြီး ဤစာမျက်နှာသို့ ပြန်လာကာ သင်၏ဘာသာပြန်များကို ထပ်မံရိုက်ထည့်ပါ။"
 }

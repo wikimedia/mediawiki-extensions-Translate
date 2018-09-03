@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Geopoet"
+			"Geopoet",
+			"ShimunUfesoj"
 		]
 	},
 	"pagetranslation": "Dakit-taramon kan pahina",
@@ -56,6 +57,7 @@
 	"tpt-translation-intro-fuzzy": "An luwas sa panahon na mga pinagdakit-taramon pinagmarkahan nin arog kaini.",
 	"tpt-languages-legend": "Ibang mga lengguwahe:",
 	"tpt-languages-zero": "Magpoon sa pagdakit-taramon para sa lengguwaheng ini",
+	"tpt-languages-nonzero": "$1 ($2% an pigsalin-tataramon)",
 	"tpt-target-page": "Ining pahina dae puwedeng manwal na pagpanumpayan.\nIning pahina sarong dakit-taramon kan pahina [[$1]] asin an pinagdakit-taramon mapuwedeng panumbayan na gamit an [$2 an gamit sa pagdakit-taramon].",
 	"tpt-unknown-page": "Ining espasyong ngaran nakareserba para sa pahina kan laman nin mga dakit-taramon.\nAn pahina na saimong boot na pagliliwaton garo habong magtutugot sa arinman na pahinang markado para ipagdakit-taramon.",
 	"tpt-translation-restricted": "An pagdakit-taramon kaining pahina sa lengguwaheng ini pinagpupugulan kan administrador nin pagdakit-taramon.\n\nRason: $1",

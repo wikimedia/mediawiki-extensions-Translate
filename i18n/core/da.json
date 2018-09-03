@@ -288,6 +288,7 @@
 	"tux-status-translated": "Oversat",
 	"tux-status-saving": "Gemmer ...",
 	"tux-status-unsaved": "Ikke gemt",
+	"tux-save-unknown-error": "Der opstod en ukendt fejl.",
 	"tux-editor-placeholder": "Din oversættelse",
 	"tux-editor-paste-original-button-label": "Indsæt kildeteksten",
 	"tux-editor-discard-changes-button-label": "Fjern alle ændringer",
