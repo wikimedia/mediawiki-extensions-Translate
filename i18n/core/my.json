@@ -185,7 +185,7 @@
 	"translate-dynagroup-recent-label": "လတ်တလော ဘာသာပြန်များ",
 	"translate-dynagroup-additions-label": "လတ်တလော ပေါင်းထည့်မှုများ",
 	"translate-msggroupselector-projects": "မက်ဆေ့အုပ်စု",
-	"translate-msggroupselector-search-placeholder": "အုက်စုများ ရှာဖွေရန်",
+	"translate-msggroupselector-search-placeholder": "အုပ်စုများ ရှာဖွေရန်",
 	"translate-msggroupselector-search-all": "အားလုံး",
 	"translate-msggroupselector-search-recent": "မကြာမီက",
 	"translate-msggroupselector-view-subprojects": "{{PLURAL:$1|အုပ်စုခွဲ|အုပ်စုခွဲများ}} $1 ခု",
