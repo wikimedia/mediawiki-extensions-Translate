@@ -76,11 +76,13 @@
 				translatedBySelf, proofreadBySelf;
 
 			// List of all reviewers
-			reviewers = $( this.message.properties.reviewers );
+			reviewers = this.message.properties.reviewers || [];
 			// The id of the current user, converted to string as the are in reviewers
 			userId = String( mw.config.get( 'wgUserId' ) );
 			// List of all reviewers excluding the current user.
-			otherReviewers = reviewers.not( [ userId ] );
+			otherReviewers = reviewers.filter( function ( element ) {
+				return element !== userId;
+			} );
 			/* Whether the current user if the last translator of this message.
 			 * Accepting own translations is prohibited. */
 			translatedBySelf = ( this.message.properties[ 'last-translator-text' ] === mw.user.getName() );
