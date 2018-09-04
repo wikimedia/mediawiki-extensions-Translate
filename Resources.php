@@ -436,6 +436,7 @@ $wgResourceModules['ext.translate.special.translate'] = [
 	'scripts' => 'resources/js/ext.translate.special.translate.js',
 	'dependencies' => [
 		'ext.translate.base',
+		'ext.translate.editor',
 		'ext.translate.groupselector',
 		'ext.translate.messagetable',
 		'ext.translate.navitoggle',

@@ -11,7 +11,7 @@ class TuxMessageTable extends ContextSource {
 	}
 
 	public function fullTable() {
-		$modules = [ 'ext.translate.editor' ];
+		$modules = [];
 		Hooks::run( 'TranslateBeforeAddModules', [ &$modules ] );
 		$this->getOutput()->addModules( $modules );
 
