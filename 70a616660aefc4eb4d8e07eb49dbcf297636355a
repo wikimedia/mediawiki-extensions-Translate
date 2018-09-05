@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c98d8e8_1424f915",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 4864
+      },
+      "writtenOn": "2018-09-05T16:34:48Z",
+      "side": 0,
+      "message": "I don\u0027t think we should use any Fake name. And I am unable to find its uses. So I used subpages instead of this. Also, the CheckBox is not getting its value when I use subpagesFake.",
+      "range": {
+        "startLine": 373,
+        "startChar": 3,
+        "endLine": 373,
+        "endChar": 18
+      },
+      "revId": "70a616660aefc4eb4d8e07eb49dbcf297636355a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
