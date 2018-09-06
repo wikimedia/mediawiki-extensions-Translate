@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e1abb80_3e2217a9",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2018-09-06T23:21:29Z",
+      "side": 1,
+      "message": "Using the sample in the task:\n\n mediawikiwiki:SpecialLanguageStats%3A%3AmakeGroupRow:19-0-0-0--page-Extension%3AAzhàr_Authentication-en-zh \n\nI assume this is:\n\n (keyspace): mediawikiwiki\n\n __METHOD__: SpecialLanguageStats%3A%3AmakeGroupRow\n\n params/stats: 19, 0, 0\n params/state: (null or empty string)\n params/groupid: page-Extension%3AAzhàr_Authentication\n params/langcode: en\n params/target: zh \n\nThe only one that needs escaping is groupId. Although using a hash for that isn\u0027t ideal. For page titles we usually avoid it by using the page id instead. I guess translate groups don\u0027t have a primary key.",
+      "range": {
+        "startLine": 457,
+        "startChar": 2,
+        "endLine": 457,
+        "endChar": 11
+      },
+      "revId": "3a6f55cb1eba35bd48c2368f309708416ddce098",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
