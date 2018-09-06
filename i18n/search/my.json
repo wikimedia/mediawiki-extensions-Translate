@@ -23,5 +23,8 @@
 	"tux-sst-untranslated": "$1 မှ ဘာသာပြန်များ မရှိပါ",
 	"tux-sst-outdated": "$1 မှ ခေတ်နောက်ကျသော ဘာသာပြန်များ",
 	"tux-sst-ellipsis-untranslated": "ဘာသာပြန်များ မရှိပါ",
-	"tux-sst-ellipsis-outdated": "ခေတ်နောက်ကျသော ဘာသာပြန်များ"
+	"tux-sst-ellipsis-outdated": "ခေတ်နောက်ကျသော ဘာသာပြန်များ",
+	"tux-sst-link-all-match": "ရှာဖွေစကားလုံးများအားလုံး လိုအပ်သည်။",
+	"tux-sst-match-message": "ရှာဖွေစကားလုံးများ၏ ကိုက်ညီသော မည်သည့်ဘာသာပြန်များကိုမဆို ပြသနေသည်။ $1",
+	"tux-sst-case-sensitive": "စားလုံးအကြီးအသေး အတိမ်းစောင်းမခံ"
 }
