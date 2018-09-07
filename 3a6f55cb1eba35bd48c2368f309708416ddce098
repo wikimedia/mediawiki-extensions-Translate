@@ -22,6 +22,30 @@
       "revId": "3a6f55cb1eba35bd48c2368f309708416ddce098",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "47face7c_c8c889ef",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-09-07T07:49:49Z",
+      "side": 1,
+      "message": "That is the primary key (but not in the database sense, as there is no such table).\n\nFor MessageGroupStats which shares this code, target is also a message group id.",
+      "parentUuid": "2e1abb80_3e2217a9",
+      "range": {
+        "startLine": 457,
+        "startChar": 2,
+        "endLine": 457,
+        "endChar": 11
+      },
+      "revId": "3a6f55cb1eba35bd48c2368f309708416ddce098",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
