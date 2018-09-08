@@ -184,6 +184,7 @@
 	"translate-search-languagefilter": "ဘာသာစကားအလိုက် စိစစ်ရန်:",
 	"translate-search-nofilter": "စိစစ်မှု မရှိ",
 	"log-name-translationreview": "ဘာသာပြန် ပြန်လည်ဆန်းစစ်မှု မှတ်တမ်း",
+	"log-description-translationreview": "ဘာသာပြန်များနှင့် မက်ဆေ့အုပ်စုများ၏ ပြန်လည်ဆန်းစစ်မှုများ မှတ်တမ်း",
 	"logentry-translationreview-message": "$1 က ဘာသာပြန် $3 ကို {{GENDER:$2|ပြန်လည်ဆန်းစစ်ခဲ့သည်}}",
 	"translate-stats-workflow": "အခြေနေ",
 	"translate-dynagroup-recent-label": "လတ်တလော ဘာသာပြန်များ",

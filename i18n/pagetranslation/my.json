@@ -53,6 +53,7 @@
 	"tpt-aggregategroup-edit-description": "ဖော်ပြချက်:",
 	"tpt-aggregategroup-update": "သိမ်းရန်",
 	"tpt-aggregategroup-update-cancel": "မလုပ်တော့ပါ",
+	"log-description-pagetranslation": "စာမျက်နှာ ဘာသာပြန်စနစ်နှင့်ဆက်နွယ်သော လုပ်ဆောင်ချက်များ၏ မှတ်တမ်း",
 	"log-name-pagetranslation": "စာမျက်နှာဘာသာပြန်မှု မှတ်တမ်း",
 	"logentry-pagetranslation-mark": "$1 က $3 ကို ဘာသာပြန်အတွက် {{GENDER:$2|မှတ်သားခဲ့သည်}}",
 	"logentry-pagetranslation-unmark": "$1 က $3 ကို ဘာသာပြန်မှ {{GENDER:$2|ဖယ်ရှားခဲ့သည်}}",

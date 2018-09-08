@@ -27,6 +27,6 @@
 	"tux-sst-ellipsis-untranslated": "Sen tradución",
 	"tux-sst-ellipsis-outdated": "Traducións obsoletas",
 	"tux-sst-link-all-match": "Esixir todas as palabras da procura.",
-	"tux-sst-match-message": "Mostrando as traducións que coinciden con calquera das palabras da procura. $1",
+	"tux-sst-match-message": "Amosando as traducións que coinciden con calquera das palabras da procura. $1",
 	"tux-sst-case-sensitive": "Distinguir entre maiúsculas e minúsculas"
 }
