@@ -105,7 +105,7 @@
 	"pt-movepage-action-check": "Провери да ли је премештање изводљиво",
 	"pt-movepage-action-perform": "Премести",
 	"pt-movepage-action-other": "Промени циљ",
-	"pt-movepage-started": "У међувремену, проверите [[Special:Log/pagetranslation|евиденцију превођења странице]] да би се пронашле евентуалне грешке и поруке завршетка.",
+	"pt-movepage-started": "У међувремену, проверите [[Special:Log/pagetranslation|дневник превођења странице]] да би се пронашле евентуалне грешке и поруке завршетка.",
 	"pt-deletepage-invalid-title": "Наведена страница није важећа.",
 	"pt-deletepage-action-check": "Наведи странице за брисање",
 	"pt-deletepage-action-perform": "Изврши брисање",
