@@ -175,7 +175,7 @@
 	"translate-mgs-noempty": "Nerodyti kalbų kurios neturi jokių vertimų",
 	"translate-mgs-submit": "Rodyti statistiką",
 	"translate-mgs-column-language": "Kalba",
-	"translate-mgs-totals": "Visos kalbos kartu",
+	"translate-mgs-totals": "Visos $1 {{PLURAL:$1|kalbos}} kartu",
 	"translate-mgs-invalid-group": "Nurodytai grupei $1 neegzistuoja.",
 	"translate-mgs-nothing": "Prašomos statistikos nėra.",
 	"supportedlanguages": "Palaikomos kalbos",

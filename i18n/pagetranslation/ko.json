@@ -58,7 +58,7 @@
 	"tpt-rev-mark-tooltip": "번역에 대한 이 문서의 최신 판을 표시합니다.",
 	"tpt-rev-unmark-tooltip": "번역에서 이 문서를 제거합니다.",
 	"tpt-rev-discourage-tooltip": "이 문서에 대한 추가적인 번역을 중단합니다.",
-	"tpt-rev-encourage-tooltip": "이 문서를 정상적인 번역으로 복원합니다.",
+	"tpt-rev-encourage-tooltip": "이 문서를 정상적인 번역으로 복구합니다.",
 	"translate-tag-translate-link-desc": "이 문서 번역하기",
 	"translate-tag-markthis": "이 문서를 번역 대상으로 표시",
 	"translate-tag-markthisagain": "이 문서에는 최근 <span class=\"plainlinks\">[$2 번역 대상으로 표시]</span>한 이후 <span class=\"plainlinks\">[$1 바뀜]</span>이 있습니다.",
