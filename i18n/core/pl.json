@@ -181,7 +181,7 @@
 	"translate-translations-including-no-param": "Podaj prawidłową nazwę strony w parametrze podstrony",
 	"translate-translations-history-short": "h",
 	"languagestats": "Statystyka językowa",
-	"languagestats-summary": "Strona pokazuje statystykę tłumaczenia dla wszystkich grup komunikatów we wskazanym języku.",
+	"languagestats-summary": "Strona pokazuje statystyki tłumaczeń dla wszystkich grup komunikatów we wskazanym języku.",
 	"messagegroupstats-summary": "Ta strona pokazuje statystyki grupy komunikatów.",
 	"languagestats-stats-for": "Statystyki tłumaczenia na język $1 ($2).",
 	"languagestats-recenttranslations": "ostatnie tłumaczenia",
