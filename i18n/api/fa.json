@@ -39,11 +39,17 @@
 	"apihelp-searchtranslations-summary": "جستجوی ترجمه‌ها.",
 	"apihelp-searchtranslations-param-query": "متن برای جستجو",
 	"apihelp-searchtranslations-param-limit": "اندازه نتیجه",
+	"apihelp-translationcheck-summary": "اعتبارسنجی ترجمه‌ها.",
+	"apihelp-translationcheck-param-translation": "ترجمه‌های برای اعتبارسنجی",
+	"apierror-translate-duplicateaggregategroup": "گروه پیام پیش از این وجود دارد.",
+	"apierror-translate-invalidgroup": "گروه وجود ندارد یا نامعتبر است.",
+	"apierror-translate-invalidstate": "وضعیت درخواستی نامعتبر است.",
 	"apierror-translate-invalidlanguage": "زبان درخواستی نامعتبر است.",
 	"apierror-translate-invalidupdate": "برورزسانی نامعتبر",
 	"apierror-translate-language-disabled": "ترجمه روی $1 غیرفعال شده‌است.",
 	"apierror-translate-language-disabled-reason": "ترجمه روی $1 غیرفعال شده‌است:$2",
 	"apierror-translate-owntranslation": "نمی‌توانید پیام‌های خودتان را بازبینی کنید",
 	"apierror-translate-sandbox-invalidppassword": "گذرواژه نامعتبر",
-	"apierror-translate-unknownmessage": "پیام ناشناخته"
+	"apierror-translate-unknownmessage": "پیام ناشناخته",
+	"apiwarn-translate-alreadyreviewedbyyou": "قبلا به عنوان بازبینی‌شده توسط شما علامت خورده است"
 }
