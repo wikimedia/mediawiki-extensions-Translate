@@ -239,6 +239,7 @@
 	"translate-documentation-language": "Meldingsdokumentasjon",
 	"translate-searchprofile": "Omsetjingar",
 	"translate-searchprofile-tooltip": "Søk i alle omsetjingar",
+	"translate-searchprofile-note": "Fleire søkjealternativ er tilgjengelege med [$1 omsetjingssøk].",
 	"translate-search-languagefilter": "Filtrer etter språk:",
 	"translate-search-nofilter": "Inga filtrering",
 	"log-name-translationreview": "Logg over omsetjingsgjennomgåing",
