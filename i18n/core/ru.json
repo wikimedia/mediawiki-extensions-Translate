@@ -30,7 +30,8 @@
 			"Ping08",
 			"Mailman",
 			"Av6",
-			"Wirbel78"
+			"Wirbel78",
+			"Vlad5250"
 		]
 	},
 	"translate": "Перевод",
@@ -292,7 +293,7 @@
 	"group-translate-sandboxed-member": "{{GENDER:$1|неутверждённый переводчик|неутверждённая переводчица}}",
 	"right-translate-sandboxmanage": "управление правами участников, ещё не получивших полных прав (sandboxed users)",
 	"action-translate-sandboxmanage": "управлять правами участников, ещё не получивших полных прав (sandboxed users)",
-	"right-translate-sandboxaction": "выполннение действий, разрешённых для участников, ещё не получивших полных прав (sandboxed users)",
+	"right-translate-sandboxaction": "выполнение действий, разрешённых для участников, ещё не получивших полных прав (sandboxed users)",
 	"action-translate-sandboxaction": "выполнять действия, разрешённые для участников, ещё не получивших полных прав (sandboxed users)",
 	"translate-workflow-state-": "(не задан)",
 	"translate-workflowstatus": "Статус: $1",
