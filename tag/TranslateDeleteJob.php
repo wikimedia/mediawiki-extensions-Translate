@@ -58,7 +58,8 @@ class TranslateDeleteJob extends Job {
 
 		$error = '';
 		$wikipage = new WikiPage( $title );
-		$status = $wikipage->doDeleteArticleReal( "{$summary}: $reason", false, 0, true, $error, $user );
+		$status = $wikipage->doDeleteArticleReal( "{$summary}: $reason", false, 0, true, $error,
+			$user, [], 'delete', true );
 		if ( !$status->isGood() ) {
 			$params = [
 				'target' => $base,
