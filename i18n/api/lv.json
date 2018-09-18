@@ -15,5 +15,7 @@
 	"apihelp-query+messagegroupstats-param-group": "Ziņojumu grupas ID.",
 	"apihelp-translatesandbox-param-do": "Ko darīt.",
 	"apihelp-translationstash-param-subaction": "Darbība.",
-	"apihelp-translationstash-param-metadata": "JSON objekts."
+	"apihelp-translationstash-param-metadata": "JSON objekts.",
+	"apihelp-searchtranslations-description": "Meklēt tulkojumus.",
+	"apihelp-searchtranslations-summary": "Meklēt tulkojumus."
 }
