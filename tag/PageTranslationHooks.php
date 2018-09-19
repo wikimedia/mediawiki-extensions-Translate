@@ -248,7 +248,9 @@ class PageTranslationHooks {
 		} );
 
 		// Add a dummy language link that is removed in self::addLanguageLinks.
-		$parser->getOutput()->addLanguageLink( 'x-pagetranslation-tag' );
+		if ( $wgPageTranslationLanguageList === 'sidebar-fallback' ) {
+			$parser->getOutput()->addLanguageLink( 'x-pagetranslation-tag' );
+		}
 
 		$currentTitle = $parser->getTitle();
 		$pageStatus = self::getTranslatablePageStatus( $currentTitle );
