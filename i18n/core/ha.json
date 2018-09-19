@@ -1,4 +1,9 @@
 {
-	"@metadata": [],
-	"translate-magic-cm-comment": "Bahasi:"
+	"@metadata": {
+		"authors": [
+			"Ammarpad"
+		]
+	},
+	"translate-magic-cm-comment": "Bahasi:",
+	"supportedlanguages-summary": "Wannan shine jerin dukkan harsunan dake akwai a {{SITENAME}}, tare da wanda suke aikin fassara akan harshen."
 }

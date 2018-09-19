@@ -12,10 +12,16 @@
 	"apihelp-query+messagecollection-example-1": "ထောက်ပံ့ထားသော ဘာသားစကားများ၏ စာရင်း",
 	"apihelp-query+messagegroups-example-1": "မက်ဆေ့အုပ်စုများကို ပြရန်",
 	"apihelp-query+messagegroupstats-param-group": "မက်ဆေ့အုပ်စု အိုင်ဒီ",
+	"apihelp-translationstash-param-translation": "အသုံးပြုသူ လုပ်ဆောင်သော ဘာသာပြန်ဆိုမှု။",
 	"apihelp-searchtranslations-description": "ဘာသာပြန်များ ရှာဖွေရန်။",
 	"apihelp-searchtranslations-summary": "ဘာသာပြန်များ ရှာဖွေရန်။",
 	"apihelp-searchtranslations-example-1": "ဘာသာစကားအတွက် ဘာသာပြန်များကို ပြရန်။",
 	"apierror-translate-duplicateaggregategroup": "မက်ဆေ့အုပ်စု ရှိနှင့်ပြီးဖြစ်သည်",
 	"apierror-translate-language-disabled": "$1 သို့ ဘာသာပြန်ခြင်းကို ပိတ်ထားသည်။",
-	"apierror-translate-language-disabled-reason": "$1 သို့ ဘာသာပြန်ခြင်းကို ပိတ်ထားသည်: $2"
+	"apierror-translate-language-disabled-reason": "$1 သို့ ဘာသာပြန်ခြင်းကို ပိတ်ထားသည်: $2",
+	"apierror-translate-language-disabled-source": "ဤအုပ်စု၏ ရင်းမြစ်ဘာသာစကားမှာ $1 ဖြစ်သည်။ ကျေးဇူးပြု၍ ဘာသာပြန်ရန် အခြားဘာသာစကားကို ရွေးချယ်ပါ။",
+	"apierror-translate-owntranslation": "ကိုယ်ပိုင်ဘာသာပြန်များကို ပြန်လည်မဆန်းစစ်နိုင်ပါ",
+	"apierror-translate-sandbox-invalidppassword": "မဆီလျော်သော စကားဝှက်",
+	"apierror-translate-unknownmessage": "အမည်မသိ မက်ဆေ့",
+	"apiwarn-translate-alreadyreviewedbyyou": "သင်မှ ပြန်လည်ဆန်းစစ်ပြီးဖြစ်ကြောင်း လုပ်ဆောင်နှင့်ပြီးသားဖြစ်သည်"
 }
