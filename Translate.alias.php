@@ -222,6 +222,7 @@ $specialPageAliases['br'] = [
 /** Bosnian (bosanski) */
 $specialPageAliases['bs'] = [
 	'ImportTranslations' => [ 'UvozPrijevoda' ],
+	'ExportTranslations' => [ 'IzvozPrijevoda' ],
 	'LanguageStats' => [ 'StatistikeJezika' ],
 	'Magic' => [ 'NaprednoPrevodjenje' ],
 	'PageTranslation' => [ 'PrijevodStranice' ],
