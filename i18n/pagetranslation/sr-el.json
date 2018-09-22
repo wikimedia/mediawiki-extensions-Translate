@@ -5,7 +5,8 @@
 			"Milicevic01",
 			"Rancher",
 			"Obsuser",
-			"Tacsipacsi"
+			"Tacsipacsi",
+			"Zoranzoki21"
 		]
 	},
 	"right-pagetranslation": "označavanje izdanja stranica za prevod",
@@ -38,6 +39,7 @@
 	"tpt-aggregategroup-update-cancel": "Otkaži",
 	"log-name-pagetranslation": "Dnevnik prevoda stranica",
 	"logentry-pagetranslation-mark": "$1 je {{GENDER:$2|označio|označila}} stranicu $3 za prevođenje",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|je uklonio|je uklonila}} opciju prevođenja sa stranice $3",
 	"logentry-pagetranslation-deletefok": "$1 je {{GENDER:$2|obrisao|obrisala}} prevodivu stranicu $3",
 	"logentry-pagetranslation-deletelok": "$1 je {{GENDER:$2|obrisao|obrisala}} prevodivu stranicu $3",
 	"logentry-pagetranslation-prioritylanguages": "$1 je {{GENDER:$2|odredio|odredila}} prioritetne jezike za prevodivu stranicu $3: $5",
