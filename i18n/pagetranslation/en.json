@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Nike",
-			"BPositive"
+			"BPositive",
+			"Zoranzoki21"
 		]
 	},
 	"pagetranslation": "Page translation",
@@ -99,7 +100,7 @@
 	"log-description-pagetranslation": "Log for actions related to the page translation system",
 	"log-name-pagetranslation": "Page translation log",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|marked}} $3 for translation",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|removed}} $3 from translation",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|removed}} $3 from the translation system",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|completed}} renaming of translatable page $3 to $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|encountered}} a problem while moving page $3 to $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|completed}} deletion of translatable page $3",
