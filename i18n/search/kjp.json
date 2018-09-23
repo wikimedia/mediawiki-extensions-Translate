@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rul1902"
+		]
+	},
+	"searchtranslations": "မ်ုအင်းၰူ့ ဆ်ုခၠယ်",
+	"tux-sst-edit": "မ်ုအင်းတာင် ဆ်ုခၠယ်",
+	"tux-sst-view-foreign": "မ်ုယောဝ်ႋ $1 ဝယ်",
+	"tux-sst-search": "အင်းၰူ့",
+	"tux-sst-search-ph": "မ်ုအင်းၰူ့ ခၠယ်ၯင်း",
+	"tux-sst-count": "အ်ုတင်ၮေဝ်ႋ {{PLURAL:$1|၁ ၮါင်း|$1 ၮါင်း}} ဍးဝေ့ဆေဝ်ႋလှ်",
+	"tux-sst-facet-language": "ဆ်ုခၠါင်ဘာႋသာ့",
+	"tux-sst-facet-group": "လိက်ၜၠာ်ကုံရွာဲလ်ုဖး",
+	"tux-sst-nosolr-title": "ဆ်ုအင်းၰူ့ လ်ုၮေဝ်ႋသှ်ေၜး",
+	"tux-sst-next": "မေံယာႋ »",
+	"tux-sst-prev": "« မ်ုထါင်လင်ႋခါင့်",
+	"tux-sst-default": "ခၠယ့်ဖှ်ေက်ုဆာႋလ်ုဖး"
+}

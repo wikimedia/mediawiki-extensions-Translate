@@ -324,7 +324,7 @@
 	"tux-editor-cancel-button-label": "キャンセル",
 	"tux-editor-confirm-button-label": "翻訳を確認",
 	"tux-editor-proofread-button-label": "査読済の印を付ける",
-	"tux-editor-shortcut-info": "保存するには「$1」を、次のメッセージまたは「$4」へスキップするには「$2」を、他のショートカットキーについては「$3」を押してください",
+	"tux-editor-shortcut-info": "保存するには「$1」を、次のメッセージへスキップするには「$2」を、要約を入力するには「$4」を、他のショートカットキーについては「$3」を押してください。",
 	"tux-editor-edit-desc": "説明文を編集",
 	"tux-editor-add-desc": "説明文を追加",
 	"tux-editor-suggestions-title": "提案",
