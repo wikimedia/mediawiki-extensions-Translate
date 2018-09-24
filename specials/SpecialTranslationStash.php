@@ -186,7 +186,7 @@ HTML
 	protected function getTargetLanguage() {
 		$ui = $this->getLanguage();
 		$source = $this->getSourceLanguage();
-		if ( $ui->getCode() !== $source->getCode() ) {
+		if ( !$ui->equals( $source ) ) {
 			return $ui;
 		}
 
