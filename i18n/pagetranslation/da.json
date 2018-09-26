@@ -69,6 +69,8 @@
 	"tpt-target-page": "Denne side kan ikke opdateres manuelt.\nSiden er en oversættelse af siden [[$1]] og oversættelsen kan opdateres ved at bruge [$2 oversættelsesværktøjet].",
 	"tpt-unknown-page": "Dette navnerum er reserveret til oversættelser af indholdssider.\nSiden som du prøver at redigere, ser ikke ud til at svare til nogen side markeret for oversættelse.",
 	"tpt-translation-restricted": "Oversættelse af denne side til dette sprog blev forhindret af en oversættelsesadministrator.\n\nÅrsag: $1",
+	"tpt-discouraged-language-force-header": "Denne side kan ikke oversættes til $1.",
+	"tpt-discouraged-language-header": "Oversættelser til $1 er ikke en prioritet for denne side.",
 	"tpt-discouraged-language-force": "<strong>Denne side kan ikke oversættes til $2.</strong>\n\nEn oversættelsesadministrator besluttede at denne side kun kan oversættes til $3.",
 	"tpt-discouraged-language": "<strong>Oversættelse til $2 er ikke en prioritet for denne side.</strong>\n\nEn oversættelsesadministrator besluttede at fokusere oversættelsesarbejdet på $3.",
 	"tpt-discouraged-language-reason": "Begrundelse: $1",
@@ -85,6 +87,8 @@
 	"tpt-aggregategroup-edit-name": "Navn:",
 	"tpt-aggregategroup-edit-description": "Beskrivelse:",
 	"tpt-aggregategroup-update": "Gem",
+	"tpt-aggregategroup-update-cancel": "Annullér",
+	"tpt-invalid-group": "Ugyldig gruppe",
 	"pt-parse-open": "Ubalanceret &lt;translate> tag.\nOversættelse skabelon: <pre>$1</pre>",
 	"pt-parse-close": "Ubalanceret &lt;/translate> tag.\nOversættelse skabelon: <pre>$1</pre>",
 	"pt-parse-nested": "Indlejrede &lt;translate>-oversættelsesenheder er ikke tilladt.\nTagtekst: <pre>$1</pre>",
@@ -161,7 +165,10 @@
 	"pm-savepages-button-label": "Gem",
 	"pm-cancel-button-label": "Annullér",
 	"pm-page-does-not-exist": "$1 findes ikke.",
+	"pp-prepare-button-label": "Forbered",
 	"pp-save-button-label": "Gem",
 	"pp-cancel-button-label": "Annullér",
+	"pp-diff-old-header": "Kildetekst",
+	"pp-diff-new-header": "Forberedt tekst",
 	"tpt-generic-button": "Bekræft"
 }

@@ -200,7 +200,7 @@
 	"translate-mgs-noempty": "زبان‌هایی که هیچ ترجمه‌ای ندارند نمایش نده",
 	"translate-mgs-submit": "نمایش آمار",
 	"translate-mgs-column-language": "زبان",
-	"translate-mgs-totals": "همهٔ زبان‌ها با هم",
+	"translate-mgs-totals": "همهٔ {{PLURAL:$1|زبان|زبان‌ها}} با هم",
 	"translate-mgs-invalid-group": "گروه مشخص‌شدهٔ $1 وجود ندارد.",
 	"translate-mgs-nothing": "دربارهٔ آمار درخواست‌شده چیزی برای نمایش وجود ندارد.",
 	"supportedlanguages": "زبان‌های پشتیبانی‌شده",

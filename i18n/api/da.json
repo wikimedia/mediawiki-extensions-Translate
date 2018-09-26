@@ -4,10 +4,15 @@
 			"Saederup92"
 		]
 	},
+	"apihelp-groupreview-param-group": "Beskedgruppe.",
 	"apihelp-groupreview-param-language": "Sprogkode.",
 	"apihelp-query+languagestats-param-language": "Sprogkode.",
+	"apihelp-query+messagecollection-param-group": "Beskedgruppe.",
 	"apihelp-query+messagecollection-param-language": "Sprogkode.",
 	"apihelp-query+messagecollection-example-1": "Liste over understøttede sprog",
+	"apihelp-translationstash-param-subaction": "Handling.",
 	"apihelp-searchtranslations-description": "Søg i oversættelser.",
-	"apihelp-searchtranslations-summary": "Søg i oversættelser."
+	"apihelp-searchtranslations-summary": "Søg i oversættelser.",
+	"apierror-translate-language-disabled": "Oversættelser til $1 er deaktiveret.",
+	"apierror-translate-unknownmessage": "Ukendt besked"
 }
