@@ -36,6 +36,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 			'microsoft' => 'MicrosoftWebService',
 			'apertium' => 'ApertiumWebService',
 			'yandex' => 'YandexWebService',
+			'google' => 'GoogleTranslateWebService',
 			'remote-ttmserver' => 'RemoteTTMServerWebService',
 			'cxserver' => 'CxserverWebService',
 			'restbase' => 'RESTBaseWebService',
@@ -50,10 +51,10 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 		// to take advantage of the query aggregator. But only
 		// if they are public.
 		if (
-			isset( $config['class'] ) &&
-			$config['class'] === 'ElasticSearchTTMServer' &&
-			isset( $config['public'] ) &&
-			$config['public'] === true
+		isset( $config['class'] ) &&
+		$config['class'] === 'ElasticSearchTTMServer' &&
+		isset( $config['public'] ) &&
+		$config['public'] === true
 		) {
 			$config['type'] = 'remote-ttmserver';
 			$config['service'] = $name;
@@ -181,13 +182,13 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	/* Default implementation */
 
 	/**
-	 * @var string Name of this webservice.
-	 */
+	* @var string Name of this webservice.
+	*/
 	protected $service;
 
 	/**
-	 * @var array
-	 */
+	* @var array
+	*/
 	protected $config;
 
 	/**
@@ -268,15 +269,15 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	}
 
 	/**
-	 * @var int How many failures during failure period need to happen to
-	 * consider the service being temporarily off-line.
-	 */
+	* @var int How many failures during failure period need to happen to
+	* consider the service being temporarily off-line.
+	*/
 	protected $serviceFailureCount = 5;
 
 	/**
-	 * @var int How long after the last detected failure we clear the status and
-	 * try again.
-	 */
+	* @var int How long after the last detected failure we clear the status and
+	* try again.
+	*/
 	protected $serviceFailurePeriod = 900;
 
 	/**
@@ -301,9 +302,9 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 			return false;
 		} elseif ( $failed + $this->serviceFailurePeriod < wfTimestamp() ) {
 			/* We are in suspicious mode and one failure is enough to update
-			 * failed timestamp. If the service works however, let's use it.
-			 * Previous failures are forgotten after another failure period
-			 * has passed */
+			* failed timestamp. If the service works however, let's use it.
+			* Previous failures are forgotten after another failure period
+			* has passed */
 			return false;
 		}
 

@@ -301,6 +301,14 @@ $wgTranslateTranslationServices['Yandex'] = [
 	'type' => 'yandex',
 ];
 
+$wgTranslateTranslationServices['GoogleTranslate'] = [
+	'url' => 'https://translation.googleapis.com/language/translate/v2',
+	'pairs' => 'https://translation.googleapis.com/language/translate/v2/languages',
+	'key' => null,
+	'timeout' => 5,
+	'type' => 'google',
+];
+
 /**
  * Experimental support for an "Ask" help button.
  * Might change into a hook later on.
@@ -388,7 +396,7 @@ $wgTranslateKeepOutdatedTranslations = true;
  * sidebar-always: Display languages as interlanguage links and also in tag if
  *  it is present on the page.
  * @since 2018.07
- */
+*/
 $wgPageTranslationLanguageList = 'tag-only';
 
 # </source>
