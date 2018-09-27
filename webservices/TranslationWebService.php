@@ -36,6 +36,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 			'microsoft' => 'MicrosoftWebService',
 			'apertium' => 'ApertiumWebService',
 			'yandex' => 'YandexWebService',
+            'google' => 'GoogleTranslateWebService',
 			'remote-ttmserver' => 'RemoteTTMServerWebService',
 			'cxserver' => 'CxserverWebService',
 			'restbase' => 'RESTBaseWebService',
