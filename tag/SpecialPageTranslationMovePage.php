@@ -194,13 +194,12 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 				'pt-movepage-blockers',
 				$this->getLanguage()->formatNum( count( $errors ) )
 			);
-			$out->addHTML( '<ul>' );
+			$s = '';
 			foreach ( $errors as $error ) {
-				// I have no idea what the parser is doing, but this is mad.
-				// <li>$1</li> doesn't work.
-				$out->wrapWikiMsg( "<li>$1", $error );
+				$s .= '* ' . wfMessage( ...$error )->plain() . "\n";
 			}
-			$out->addHTML( '</ul></div>' );
+			$out->addWikiText( $s );
+			$out->addHTML( '</div>' );
 		}
 	}
 
