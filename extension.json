@@ -112,6 +112,7 @@
 		"GettextDocumentationAid": "translationaids/GettextDocumentationAid.php",
 		"GettextFFS": "ffs/GettextFFS.php",
 		"GettextPluralException": "ffs/GettextFFS.php",
+		"GoogleTranslateWebService": "webservices/GoogleTranslateWebService.php",
 		"HashMessageIndex": "utils/MessageIndex.php",
 		"HTMLJsSelectToInputField": "utils/HTMLJsSelectToInputField.php",
 		"HtmlTagInsertablesSuggester": "insertables/HtmlTagInsertablesSuggester.php",
