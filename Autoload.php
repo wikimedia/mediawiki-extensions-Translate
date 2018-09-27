@@ -258,6 +258,7 @@ $al['ApertiumWebService'] = "$dir/webservices/ApertiumWebService.php";
 $al['CaighdeanWebService'] = "$dir/webservices/CaighdeanWebService.php";
 $al['CxserverWebService'] = "$dir/webservices/CxserverWebService.php";
 $al['MicrosoftWebService'] = "$dir/webservices/MicrosoftWebService.php";
+$al['GoogleTranslateWebService'] = "$dir/webservices/GoogleTranslateWebService.php";
 $al['RemoteTTMServerWebService'] = "$dir/webservices/RemoteTTMServerWebService.php";
 $al['RESTBaseWebService'] = "$dir/webservices/RESTBaseWebService.php";
 $al['TranslationQuery'] = "$dir/webservices/TranslationQuery.php";
