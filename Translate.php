@@ -1,6 +1,6 @@
 <?php
 if ( !defined( 'MEDIAWIKI' ) ) {
-	die();
+    die();
 }
 /**
  * An extension to ease the translation of Mediawiki and other projects.
@@ -23,18 +23,18 @@ define( 'TRANSLATE_VERSION', '2018-07-10' );
  * Extension credits properties.
  */
 $wgExtensionCredits['specialpage'][] = [
-	'path' => __FILE__,
-	'name' => 'Translate',
-	'namemsg' => 'translate-extensionname',
-	'version' => TRANSLATE_VERSION,
-	'author' => [
-		'Niklas Laxström',
-		'Santhosh Thottingal',
-		'Siebrand Mazeland'
-	],
-	'descriptionmsg' => 'translate-desc',
-	'url' => 'https://www.mediawiki.org/wiki/Extension:Translate',
-	'license-name' => 'GPL-2.0-or-later',
+    'path' => __FILE__,
+    'name' => 'Translate',
+    'namemsg' => 'translate-extensionname',
+    'version' => TRANSLATE_VERSION,
+    'author' => [
+        'Niklas Laxström',
+        'Santhosh Thottingal',
+        'Siebrand Mazeland'
+    ],
+    'descriptionmsg' => 'translate-desc',
+    'url' => 'https://www.mediawiki.org/wiki/Extension:Translate',
+    'license-name' => 'GPL-2.0-or-later',
 ];
 
 /**
@@ -103,9 +103,9 @@ $wgHooks['AlternateEdit'][] = 'TranslateEditAddons::suppressIntro';
 $wgHooks['getUserPermissionsErrorsExpensive'][] = 'TranslateEditAddons::disallowLangTranslations';
 $wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
 $wgHooks['LanguageGetTranslatedLanguageNames'][] =
-	'TranslateHooks::translateMessageDocumentationLanguage';
+    'TranslateHooks::translateMessageDocumentationLanguage';
 $wgHooks['TranslateSupportedLanguages'][] =
-	'TranslateHooks::translateMessageDocumentationLanguage';
+    'TranslateHooks::translateMessageDocumentationLanguage';
 $wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
 $wgHooks['ParserFirstCallInit'][] = 'TranslateHooks::setupTranslateParserFunction';
 $wgHooks['UserGetReservedNames'][] = 'TranslateHooks::onUserGetReservedNames';
@@ -131,7 +131,7 @@ $wgHooks['GetPreferences'][] = 'TranslatePreferences::translationAssistLanguages
 $wgHooks['ChangesListSpecialPageQuery'][] = 'TranslateRcFilter::translationFilter';
 $wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
 $wgHooks['ChangesListSpecialPageStructuredFilters'][] =
-	'TranslateRcFilter::onChangesListSpecialPageStructuredFilters';
+    'TranslateRcFilter::onChangesListSpecialPageStructuredFilters';
 $wgHooks['BaseTemplateToolbox'][] = 'TranslateToolbox::toolboxAllTranslations';
 $wgHooks['AbortEmailNotification'][] = 'TranslateHooks::onAbortEmailNotificationReview';
 
@@ -151,9 +151,9 @@ $wgHooks['TitleIsAlwaysKnown'][] = 'TranslateHooks::onTitleIsAlwaysKnown';
 
 // Stats table manipulation
 $wgHooks['Translate:MessageGroupStats:isIncluded'][] =
-	'TranslateHooks::hideDiscouragedFromStats';
+    'TranslateHooks::hideDiscouragedFromStats';
 $wgHooks['Translate:MessageGroupStats:isIncluded'][] =
-	'TranslateHooks::hideRestrictedFromStats';
+    'TranslateHooks::hideRestrictedFromStats';
 
 $wgHooks['MakeGlobalVariablesScript'][] = 'TranslateHooks::addConfig';
 
@@ -245,7 +245,7 @@ $wgTranslateLanguageFallbacks = [];
  * Must be something that does not conflict with actual content.
  */
 if ( !defined( 'TRANSLATE_FUZZY' ) ) {
-	define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
+    define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
 }
 
 /**
@@ -273,33 +273,42 @@ if ( !defined( 'TRANSLATE_FUZZY' ) ) {
 $wgTranslateTranslationDefaultService = 'TTMServer';
 $wgTranslateTranslationServices = [];
 $wgTranslateTranslationServices['TTMServer'] = [
-	'database' => false, // Passed to wfGetDB
-	'cutoff' => 0.75,
-	'type' => 'ttmserver',
-	'public' => false,
+    'database' => false, // Passed to wfGetDB
+    'cutoff' => 0.75,
+    'type' => 'ttmserver',
+    'public' => false,
 ];
 $wgTranslateTranslationServices['Microsoft'] = [
-	'url' => 'http://api.microsofttranslator.com/V2/Http.svc/Translate',
-	'key' => null,
-	'timeout' => 3,
-	'type' => 'microsoft',
+    'url' => 'http://api.microsofttranslator.com/V2/Http.svc/Translate',
+    'key' => null,
+    'timeout' => 3,
+    'type' => 'microsoft',
 ];
 $wgTranslateTranslationServices['Apertium'] = [
-	'url' => 'http://apy.projectjj.com/translate',
-	'pairs' => 'http://apy.projectjj.com/listPairs',
-	'key' => null,
-	'timeout' => 3,
-	'type' => 'apertium',
+    'url' => 'http://apy.projectjj.com/translate',
+    'pairs' => 'http://apy.projectjj.com/listPairs',
+    'key' => null,
+    'timeout' => 3,
+    'type' => 'apertium',
 ];
 $wgTranslateTranslationServices['Yandex'] = [
-	'url' => 'https://translate.yandex.net/api/v1.5/tr.json/translate',
-	'key' => null,
-	'pairs' => 'https://translate.yandex.net/api/v1.5/tr.json/getLangs',
-	'timeout' => 3,
-	'langorder' => [ 'en', 'ru', 'uk', 'de', 'fr', 'pl', 'it', 'es', 'tr' ],
-	'langlimit' => 1,
-	'type' => 'yandex',
+    'url' => 'https://translate.yandex.net/api/v1.5/tr.json/translate',
+    'key' => null,
+    'pairs' => 'https://translate.yandex.net/api/v1.5/tr.json/getLangs',
+    'timeout' => 3,
+    'langorder' => [ 'en', 'ru', 'uk', 'de', 'fr', 'pl', 'it', 'es', 'tr' ],
+    'langlimit' => 1,
+    'type' => 'yandex',
 ];
+
+$wgTranslateTranslationServices['GoogleTranslate'] = [
+    'url' => 'https://translation.googleapis.com/language/translate/v2',
+    'pairs' => 'https://translation.googleapis.com/language/translate/v2/languages',
+    'key' => null,
+    'timeout' => 15,
+    'type' => 'google',
+];
+
 
 /**
  * Experimental support for an "Ask" help button.
@@ -653,32 +662,32 @@ $wgTranslateTestUsers = [];
  *   NS_ followed by upper case version of $name, e.g., NS_MEDIAWIKI
  */
 function wfAddNamespace( $id, $name, $constant = null ) {
-	global $wgExtraNamespaces, $wgContentNamespaces, $wgTranslateMessageNamespaces,
-		$wgNamespaceProtection, $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault;
+    global $wgExtraNamespaces, $wgContentNamespaces, $wgTranslateMessageNamespaces,
+        $wgNamespaceProtection, $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault;
 
-	if ( is_null( $constant ) ) {
-		$constant = strtoupper( "NS_$name" );
-	}
+    if ( is_null( $constant ) ) {
+        $constant = strtoupper( "NS_$name" );
+    }
 
-	define( $constant, $id );
-	define( $constant . '_TALK', $id + 1 );
+    define( $constant, $id );
+    define( $constant . '_TALK', $id + 1 );
 
-	$wgExtraNamespaces[$id] = $name;
-	$wgExtraNamespaces[$id + 1] = $name . '_talk';
+    $wgExtraNamespaces[$id] = $name;
+    $wgExtraNamespaces[$id + 1] = $name . '_talk';
 
-	$wgContentNamespaces[] = $id;
-	$wgTranslateMessageNamespaces[] = $id;
+    $wgContentNamespaces[] = $id;
+    $wgTranslateMessageNamespaces[] = $id;
 
-	$wgNamespacesWithSubpages[$id] = true;
-	$wgNamespacesWithSubpages[$id + 1] = true;
+    $wgNamespacesWithSubpages[$id] = true;
+    $wgNamespacesWithSubpages[$id + 1] = true;
 
-	$wgNamespaceProtection[$id] = [ 'translate' ];
+    $wgNamespaceProtection[$id] = [ 'translate' ];
 
-	$wgNamespacesToBeSearchedDefault[$id] = true;
+    $wgNamespacesToBeSearchedDefault[$id] = true;
 }
 
 /** @defgroup TranslateSpecialPage Special pages of Translate extension */
 
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
-	require_once __DIR__ . '/vendor/autoload.php';
+    require_once __DIR__ . '/vendor/autoload.php';
 }
