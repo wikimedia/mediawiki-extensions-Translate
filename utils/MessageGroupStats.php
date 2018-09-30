@@ -524,17 +524,18 @@ class MessageGroupStats {
 	}
 
 	protected static function queueWithLock( IDatabase $dbw, $key, $method, $callback ) {
-		DeferredUpdates::addCallableUpdate( function () use ( $dbw, $key, $method, $callback ) {
+		$fname = __METHOD__;
+		DeferredUpdates::addCallableUpdate( function () use ( $dbw, $key, $method, $callback, $fname ) {
 			$lockName = 'MessageGroupStats:' . $key;
-			if ( !$dbw->lock( $lockName, __METHOD__, 1 ) ) {
+			if ( !$dbw->lock( $lockName, $fname, 1 ) ) {
 				return; // raced out
 			}
 
-			$dbw->commit( __METHOD__, 'flush' );
+			$dbw->commit( $fname, 'flush' );
 			call_user_func( $callback, $dbw, $method );
-			$dbw->commit( __METHOD__, 'flush' );
+			$dbw->commit( $fname, 'flush' );
 
-			$dbw->unlock( $lockName, __METHOD__ );
+			$dbw->unlock( $lockName, $fname );
 		} );
 	}
 
