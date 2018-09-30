@@ -447,17 +447,18 @@ class DatabaseMessageIndex extends MessageIndex {
 	}
 
 	protected function unlock() {
+		$fname = __METHOD__;
 		$dbw = wfGetDB( DB_MASTER );
 		// Unlock once the rows are actually unlocked to avoid deadlocks
 		if ( !$dbw->trxLevel() ) {
-			$dbw->unlock( 'translate-messageindex', __METHOD__ );
+			$dbw->unlock( 'translate-messageindex', $fname );
 		} elseif ( method_exists( $dbw, 'onTransactionResolution' ) ) { // 1.28
-			$dbw->onTransactionResolution( function () use ( $dbw ) {
-				$dbw->unlock( 'translate-messageindex', __METHOD__ );
+			$dbw->onTransactionResolution( function () use ( $dbw, $fname ) {
+				$dbw->unlock( 'translate-messageindex', $fname );
 			} );
 		} else {
-			$dbw->onTransactionIdle( function () use ( $dbw ) {
-				$dbw->unlock( 'translate-messageindex', __METHOD__ );
+			$dbw->onTransactionIdle( function () use ( $dbw, $fname ) {
+				$dbw->unlock( 'translate-messageindex', $fname );
 			} );
 		}
 
