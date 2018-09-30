@@ -1294,12 +1294,13 @@ class PageTranslationHooks {
 
 		if ( !isset( $queuedPages[ $targetPage ] ) ) {
 			$queuedPages[ $targetPage ] = true;
+			$fname = __METHOD__;
 
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->onTransactionIdle( function () use ( $dbw, $queuedPages, $targetPage,
-				$target, $handle, $langCode, $user, $reason
+				$target, $handle, $langCode, $user, $reason, $fname
 			) {
-				$dbw->startAtomic( __METHOD__ );
+				$dbw->startAtomic( $fname );
 
 				$page = TranslatablePage::newFromTitle( $target );
 
@@ -1316,7 +1317,7 @@ class PageTranslationHooks {
 				// edit here with the latest changes.
 				unset( $queuedPages[ $targetPage ] );
 
-				$dbw->endAtomic( __METHOD__ );
+				$dbw->endAtomic( $fname );
 			} );
 		}
 	}
