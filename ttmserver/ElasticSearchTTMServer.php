@@ -295,15 +295,16 @@ GROOVY;
 
 		$revId = $handle->getTitleForLanguage( $sourceLanguage )->getLatestRevID();
 		$doc = $this->createDocument( $handle, $targetText, $revId );
+		$fname = __METHOD__;
 
 		MWElasticUtils::withRetry( self::BULK_INDEX_RETRY_ATTEMPTS,
 			function () use ( $doc ) {
 				$this->getType()->addDocument( $doc );
 			},
-			function ( $e, $errors ) {
+			function ( $e, $errors ) use ( $fname ) {
 				$c = get_class( $e );
 				$msg = $e->getMessage();
-				error_log( __METHOD__ . ": update failed ($c: $msg); retrying." );
+				error_log( $fname . ": update failed ($c: $msg); retrying." );
 				sleep( 10 );
 			}
 		);
