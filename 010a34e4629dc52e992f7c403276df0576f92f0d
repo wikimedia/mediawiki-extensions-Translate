@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a9e07e7_08a95892",
+        "filename": "Translate.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-01T14:05:28Z",
+      "side": 1,
+      "message": "Why such a long timeout? This can block all translation aids from showing up for 15 seconds.",
+      "revId": "010a34e4629dc52e992f7c403276df0576f92f0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d64e86a_9a129dbe",
+        "filename": "Translate.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-01T14:05:28Z",
+      "side": 1,
+      "message": "These changes should still be undoed.",
+      "revId": "010a34e4629dc52e992f7c403276df0576f92f0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dada5238_0bf7834b",
+        "filename": "webservices/GoogleTranslateWebService.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-01T14:05:28Z",
+      "side": 1,
+      "message": "Remove or update link.",
+      "revId": "010a34e4629dc52e992f7c403276df0576f92f0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76e70034_ef297dcf",
+        "filename": "webservices/GoogleTranslateWebService.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-01T14:05:28Z",
+      "side": 1,
+      "message": "Update to 2018.10",
+      "revId": "010a34e4629dc52e992f7c403276df0576f92f0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d543e512_f49dcee6",
+        "filename": "webservices/GoogleTranslateWebService.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-01T14:05:28Z",
+      "side": 1,
+      "message": "Remove this",
+      "revId": "010a34e4629dc52e992f7c403276df0576f92f0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85bf0738_948e3f0e",
+        "filename": "webservices/GoogleTranslateWebService.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-01T14:05:28Z",
+      "side": 1,
+      "message": "The outer parenthesis can be dropped.",
+      "revId": "010a34e4629dc52e992f7c403276df0576f92f0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b1d57c0_ce7514a3",
+        "filename": "webservices/GoogleTranslateWebService.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-01T14:05:28Z",
+      "side": 1,
+      "message": "Is it guaranteed that data-\u003elanguages exists, or should it be checked first?",
+      "revId": "010a34e4629dc52e992f7c403276df0576f92f0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "868c21b4_3e7fbdc3",
+        "filename": "webservices/GoogleTranslateWebService.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-01T14:05:28Z",
+      "side": 1,
+      "message": "This is fine, but you should create all source and target combinations.\n\nThis can easily be done with two foreach.",
+      "revId": "010a34e4629dc52e992f7c403276df0576f92f0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f572566_a570677a",
+        "filename": "webservices/GoogleTranslateWebService.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-01T14:05:28Z",
+      "side": 1,
+      "message": "Is it guaranteed that this value exists, or should we check first?",
+      "revId": "010a34e4629dc52e992f7c403276df0576f92f0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9783a8f4_41b896d2",
+        "filename": "webservices/TranslationWebService.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-01T14:05:28Z",
+      "side": 1,
+      "message": "These changes should also be undoed.",
+      "revId": "010a34e4629dc52e992f7c403276df0576f92f0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
