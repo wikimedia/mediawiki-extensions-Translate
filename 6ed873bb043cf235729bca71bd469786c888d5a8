@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c02c92a3_2861ab54",
+        "filename": "Translate.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 4879
+      },
+      "writtenOn": "2018-10-01T02:19:27Z",
+      "side": 1,
+      "message": "This blank line can be removed.",
+      "revId": "6ed873bb043cf235729bca71bd469786c888d5a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
