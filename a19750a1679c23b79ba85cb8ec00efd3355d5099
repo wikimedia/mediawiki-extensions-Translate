@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d455646_784e9f71",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2018-10-03T19:27:29Z",
+      "side": 1,
+      "message": "Would you clarify not only what you did, but _why_ you did it here?",
+      "revId": "a19750a1679c23b79ba85cb8ec00efd3355d5099",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
