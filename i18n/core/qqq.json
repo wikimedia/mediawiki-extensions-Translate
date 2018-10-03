@@ -75,7 +75,6 @@
 	"translate-page-description-hasoptional": "Parameters:\n* $1 - a link with {{msg-mw|translate-page-description-hasoptional-open}} as the text",
 	"translate-page-description-hasoptional-open": "Link text for message {{msg-mw|translate-page-description-hasoptional}}\n{{Identical|Show optional message}}",
 	"translate-page-edit": "{{Identical|Edit}}",
-	"translate-ext-url": "Unused at this time. Parameters:\n* $1 - URL\n{{Identical|Website}}",
 	"translate-optional": "{{Identical|Optional}}",
 	"translate-ignored": "{{Identical|Ignore}}",
 	"translate-edit-title": "Used as a tooltip for edit links in lists with translatable messages. Parameters:\n* $1 is the name of the page to be edited.\n{{Identical|Edit}}",
