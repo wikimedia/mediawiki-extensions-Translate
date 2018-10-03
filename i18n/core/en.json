@@ -41,7 +41,6 @@
 	"translate-page-description-hasoptional": "This message group contains optional messages.\nOptional messages should only be translated when your language has special requirements\nlike not using spaces or transliterating proper names. $1",
 	"translate-page-description-hasoptional-open": "Show optional messages.",
 	"translate-page-edit": "edit",
-	"translate-ext-url": "<hr />Website: $1",
 	"translate-optional": "(optional)",
 	"translate-ignored": "(ignored)",
 	"translate-edit-title": "Edit \"$1\"",
