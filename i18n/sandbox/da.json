@@ -7,8 +7,13 @@
 	},
 	"tsb-all-languages-button-label": "Alle sprog",
 	"tsb-accept-button-label": "Accepter",
+	"tsb-reject-button-label": "Afvis",
+	"tsb-accept-all-button-label": "Accepter alle",
+	"tsb-reject-all-button-label": "Afvis alle",
 	"tsb-user-posted-a-comment": "Ikke en oversætter",
 	"tsb-translations-source": "Kilde",
 	"translationstash": "Velkommen",
-	"translate-translationstash-skip-button-label": "Prøv en anden"
+	"translate-translationstash-welcome": "Velkommen {{GENDER:$1|$1}}, du er nu en ny oversætter",
+	"translate-translationstash-skip-button-label": "Prøv en anden",
+	"tsb-limit-reached-title": "Tak for dine oversættelser"
 }

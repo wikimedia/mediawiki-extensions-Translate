@@ -101,7 +101,7 @@
 	"log-description-pagetranslation": "יומן של פעולות שמיוחדות למערכת תרגום דפים",
 	"log-name-pagetranslation": "יומן תרגום דפים",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|סימן|סימנה}} את הדף $3 לתרגום",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|הוציא|הוציאה}} את הדף $3 ממצב תרגום",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|הוציא|הוציאה}} את הדף $3 ממערכת התרגום",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|השלים|השלימה}} את שינוי השם של הדף ההניתן לתרגום $3 אל $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|נתקל|נתקלה}} בבעיה בעת העברת הדף $3 לשם $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|השלים|השלימה}} את המחיקה של הדף הניתן לתרגום $3",

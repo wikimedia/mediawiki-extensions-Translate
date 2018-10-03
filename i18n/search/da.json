@@ -7,6 +7,7 @@
 	},
 	"searchtranslations": "Søg oversættelser",
 	"tux-sst-edit": "Redigér oversættelse",
+	"tux-sst-view-foreign": "Vis på $1",
 	"tux-sst-search": "Søg",
 	"tux-sst-search-ph": "Søg oversættelser",
 	"tux-sst-count": "{{PLURAL:$1|Ét resultat fundet|$1 resultater fundet}}",
@@ -20,6 +21,9 @@
 	"tux-sst-prev": "‹ Forrige",
 	"tux-sst-default": "Oversættelser",
 	"tux-sst-translated": "Oversættelser fra $1",
+	"tux-sst-untranslated": "Ingen oversættelser fra $1",
+	"tux-sst-outdated": "Forældede oversættelser fra $1",
 	"tux-sst-ellipsis-untranslated": "Ingen oversættelse",
-	"tux-sst-ellipsis-outdated": "Forældede oversættelser"
+	"tux-sst-ellipsis-outdated": "Forældede oversættelser",
+	"tux-sst-link-all-match": "Kræv alle søgeord."
 }

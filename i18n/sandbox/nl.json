@@ -6,7 +6,8 @@
 			"Sjoerddebruin",
 			"Arent",
 			"Mainframe98",
-			"Mar(c)"
+			"Mar(c)",
+			"Jeroen N"
 		]
 	},
 	"managetranslatorsandbox": "Vertalersszandbak beheren",
@@ -18,7 +19,7 @@
 	"tsb-reminder-sent-new": "Herinnering verzonden",
 	"tsb-reminder-failed": "Herinnering verzenden mislukt",
 	"tsb-email-promoted-subject": "U bent nu vertaler bij {{SITENAME}}",
-	"tsb-email-promoted-body": "Hallo {{GENDER:$1|$1}},\n\nGefeliciteerd! Ik heb de testvertalingen gecontroleerd die u op {{SITENAME}} hebt gemaakt en heb uw permanente vertaalrechten gegeven.\n\nKom nu (en bij voorkeur iedere dag) naar {{SITENAME}} om door te gaan met vertalen:\n$2\n\nWelkom en dank u wel voor uw bijdragen!\n\n{{GENDER:$3|$3}},\nMedewerker van {{SITENAME}}",
+	"tsb-email-promoted-body": "Hallo {{GENDER:$1|$1}},\n\nGefeliciteerd! Ik heb de testvertalingen gecontroleerd die u op {{SITENAME}} hebt gemaakt en heb u permanente vertaalrechten gegeven.\n\nKom nu (en bij voorkeur iedere dag) naar {{SITENAME}} om door te gaan met vertalen:\n$2\n\nWelkom en dank u wel voor uw bijdragen!\n\n{{GENDER:$3|$3}},\nMedewerker van {{SITENAME}}",
 	"tsb-email-rejected-subject": "Uw aanvraag om vertaler te worden bij {{SITENAME}} is afgewezen",
 	"tsb-email-rejected-body": "Hallo {{GENDER:$1|$1}},\n\nDank u voor de aanmelding als vertaler bij {{SITENAME}}. Ik vind het jammer u moeten melden dat ik de aanmelding heb geweigerd aangezien de kwaliteit van uw vertalingen niet aan de eisen voldoet.\n\nAls u van mening bent dat deze afwijzing onjuist is, dan kunt u zich opnieuw als vertaler aanmelden bij {{SITENAME}}. U kunt zich hieronder  inschrijven:\n$2\n\n{{GENDER:$3|$3}}, \n{{SITENAME}} staff",
 	"tsb-request-count": "{{PLURAL:$1|Eén verzoek|$1 verzoeken}}",

@@ -89,7 +89,7 @@
 	"log-description-pagetranslation": "Журнал для дзеяньняў зьвязаных з сыстэмай перакладу старонак",
 	"log-name-pagetranslation": "Журнал перакладу старонак",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|пазначыў|пазначыла}} $3 для перакладу",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|выкрасьліў|выкрасьліла}} $3 зь перакладаў",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|выдаліў|выдаліла}} $3 з сыстэмы перакладаў",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|выканаў|выканала}} перайменаваньне перакладальнай старонкі з $3 у $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|сутыкнуўся|сутыкнулася}} з праблемай у часе пераносу старонкі з $3 у $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|выдаліў|выдаліла}} перакладальную старонку $3",

@@ -102,7 +102,7 @@
 	"log-description-pagetranslation": "문서 번역 시스템에 관련된 작업에 대한 기록",
 	"log-name-pagetranslation": "문서 번역 기록",
 	"logentry-pagetranslation-mark": "$1님이 $3을(를) 번역으로 {{GENDER:$2|표시했습니다}}",
-	"logentry-pagetranslation-unmark": "$1님이 번역에서 $3을(를) {{GENDER:$2|제거했습니다}}",
+	"logentry-pagetranslation-unmark": "$1님이 번역 시스템에서 $3을(를) {{GENDER:$2|제거했습니다}}",
 	"logentry-pagetranslation-moveok": "$1님이 $3 번역 가능한 문서를 $4 문서로 이름 바꾸기를 {{GENDER:$2|완료했습니다}}",
 	"logentry-pagetranslation-movenok": "$1님이 $3 문서를 $4 문서로 이동하는 동안 문제가 {{GENDER:$2|발생했습니다}}",
 	"logentry-pagetranslation-deletefok": "$1님이 $3 번역 가능한 문서의 삭제를 {{GENDER:$2|완료했습니다}}",

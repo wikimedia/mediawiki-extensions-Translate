@@ -258,7 +258,7 @@
 	"translate-documentation-language": "documentación das mensaxes",
 	"translate-searchprofile": "Traducións",
 	"translate-searchprofile-tooltip": "Procurar en todas as traducións",
-	"translate-searchprofile-note": "Hai dispoñibles máis opcións de busca coa [$1 procura de traducións].",
+	"translate-searchprofile-note": "Hai dispoñibles máis opcións de procura coa [$1 procura de traducións].",
 	"translate-search-languagefilter": "Filtrar por lingua:",
 	"translate-search-nofilter": "Non filtrar",
 	"log-name-translationreview": "Rexistro de revisión das traducións",

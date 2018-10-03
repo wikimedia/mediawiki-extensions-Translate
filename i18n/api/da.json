@@ -10,9 +10,17 @@
 	"apihelp-query+messagecollection-param-group": "Beskedgruppe.",
 	"apihelp-query+messagecollection-param-language": "Sprogkode.",
 	"apihelp-query+messagecollection-example-1": "Liste over understøttede sprog",
+	"apihelp-translatesandbox-param-username": "Brugernavn når ny bruger oprettes.",
+	"apihelp-translatesandbox-param-password": "Kodeord når ny bruger oprettes.",
+	"apihelp-translationaids-param-title": "Den fulde titel af en kendt besked.",
 	"apihelp-translationstash-param-subaction": "Handling.",
 	"apihelp-searchtranslations-description": "Søg i oversættelser.",
 	"apihelp-searchtranslations-summary": "Søg i oversættelser.",
+	"apihelp-searchtranslations-param-query": "Strengen der skal søges efter.",
+	"apihelp-searchtranslations-param-limit": "Resultatets størrelse.",
+	"apihelp-searchtranslations-example-1": "Vis oversættelser for sproget.",
+	"apierror-translate-invalidupdate": "Ugyldig opdatering",
 	"apierror-translate-language-disabled": "Oversættelser til $1 er deaktiveret.",
+	"apierror-translate-sandbox-invalidppassword": "Ugyldig adgangskode",
 	"apierror-translate-unknownmessage": "Ukendt besked"
 }

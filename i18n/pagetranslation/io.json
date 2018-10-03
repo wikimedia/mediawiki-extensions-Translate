@@ -7,7 +7,7 @@
 	},
 	"tpt-rev-encourage": "restaurar",
 	"tpt-languages-legend": "Altra lingui:",
-	"tpt-languages-nonzero": "$1 ($2% {{PLURAL:$2|tradukita|tradukita}})",
+	"tpt-languages-nonzero": "$1 ($2% tradukita)",
 	"log-name-pagetranslation": "Protokolo ('log') pri tradukajo",
 	"pt-movepage-block-base-invalid": "La nova nomo quan vu deziras donar a la pagino ne esas valida.",
 	"tpt-generic-button": "Konfirmez"

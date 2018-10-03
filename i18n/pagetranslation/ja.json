@@ -114,6 +114,7 @@
 	"logentry-pagetranslation-prioritylanguages-force": "$1 が翻訳対象ページ $3 の言語を $5 に{{GENDER:$2|制限}}",
 	"logentry-pagetranslation-associate": "$1 が翻訳対象ページ $3 を集約群 $4 に{{GENDER:$2|追加}}",
 	"logentry-pagetranslation-dissociate": "$1 が翻訳対象ページ $3 を集約群 $4 から{{GENDER:$2|除去}}",
+	"log-action-filter-pagetranslation": "操作の種類:",
 	"pt-movepage-title": "翻訳対象ページ「$1」の移動",
 	"pt-movepage-blockers": "以下の{{PLURAL:$1|エラー}}が発生したため、翻訳対象ページを新しいページ名に移動できません:",
 	"pt-movepage-block-base-exists": "移動先の翻訳対象ページ「[[:$1]]」は既に存在します。",

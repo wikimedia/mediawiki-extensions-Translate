@@ -17,7 +17,8 @@
 			"Purodha",
 			"Александр Сигачёв",
 			"Mailman",
-			"Movses"
+			"Movses",
+			"Vlad5250"
 		]
 	},
 	"pagetranslation": "Перевод страниц",
@@ -112,7 +113,7 @@
 	"log-description-pagetranslation": "Журнал для действий, связанных с системой перевода страниц",
 	"log-name-pagetranslation": "Журнал перевода страниц",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|пометил|пометила}} страницу «$3» как доступную для перевода",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|удалил|удалила}} страницу «$3» из списка доступных для перевода",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|удалил|удалила}} «$3» из системы перевода",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|переименовал|переименовала}} доступную для перевода страницу «$3» в «$4»",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|столкнулся|столкнулась}} с проблемой при переименовании страницы «$3» в «$4»",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|удалил|удалила}} доступную для перевода страницу «$3»",

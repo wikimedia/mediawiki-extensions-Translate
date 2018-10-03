@@ -121,7 +121,7 @@
 	"log-description-pagetranslation": "Journal des actions liées au système de traduction de pages",
 	"log-name-pagetranslation": "Journal des traductions de pages",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|a marqué}} $3 à traduire",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|a supprimé}} $3 des traductions à faire",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|a supprimé}} $3 du système de traduction",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|a terminé}} le renommage d’une page traduisible $3 en $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|a rencontré}} un problème en déplaçant la page $3 vers $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|a terminé}} la suppression d’une page traduisible $3",

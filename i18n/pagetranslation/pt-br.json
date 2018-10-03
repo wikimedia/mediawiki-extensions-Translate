@@ -11,7 +11,8 @@
 			"Rodrigo codignoli",
 			"He7d3r",
 			"Fasouzafreitas",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"pagetranslation": "Tradução de páginas",
@@ -107,7 +108,7 @@
 	"log-description-pagetranslation": "Registro para operações relacionadas com o sistema de tradução de páginas",
 	"log-name-pagetranslation": "Registro de tradução de páginas",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|marcou}} $3 para tradução",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|removeu}} $3 das páginas para tradução",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|removeu}} $3 do sistema de tradução",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|completou}} a renomeação da página traduzível $3 para $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|encontrou}} um problema ao mover a página $3 para $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|completou}} a eliminação da página traduzível $3",

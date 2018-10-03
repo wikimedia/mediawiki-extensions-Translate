@@ -102,7 +102,7 @@
 	"log-description-pagetranslation": "سجل بالأحداث المرتبطة بنظام ترجمة الصفحات",
 	"log-name-pagetranslation": "سجل ترجمة الصفحات",
 	"logentry-pagetranslation-mark": "{{GENDER:$2|حدد|حددت}} $1 $3 للترجمة",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|أزال|أزالت}} $3 من الترجمة",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|أزال|أزالت}} $3 من نظام الترجمة",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|أكمل|أكملت}} إعادة تسمية الصفحة القابلة للترجمة $3 إلى $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|صادف|صادفت}} مشكلة أثناء نقل الصفحة $3 إلى $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|أكمل|أكملت}} حذف الصفحات القابلة للترجمة $3",

@@ -59,7 +59,7 @@
 	"log-description-pagetranslation": "Archivije pe le aziune collegate a 'u sisteme de traduzione d'a pàgene",
 	"log-name-pagetranslation": "Archivije de le traduziune de le pàggene",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|ave signate}} $3 pa traduzione",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|ave luate}} $3 da 'a traduzione",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|ave luate}} $3 da 'u sisteme de traduzione",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|ave combletate}} 'u spustamende d'a pàgene traducibbile $3 sus a $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|ave acchiate}} 'nu probleme mendre ca ste spustave 'a pàgene $3 sus a $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|ave combletate}} 'a scangellazione d'a pàgene traducibbile $3",

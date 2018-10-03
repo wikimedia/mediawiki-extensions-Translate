@@ -68,5 +68,6 @@
 	"pm-cancel-button-label": "Otkaži",
 	"pp-pagename-placeholder": "Unesite naziv stranice",
 	"pp-save-button-label": "Sačuvaj",
-	"pp-cancel-button-label": "Otkaži"
+	"pp-cancel-button-label": "Otkaži",
+	"pp-prepare-message": "Ova stranica je pripremljena za prevođenje. Pogledajte razliku izmena ispod. Kliknite na dugme \"{{int:pp-save-button-label}}\" ako je u redu!"
 }

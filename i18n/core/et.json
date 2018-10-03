@@ -334,6 +334,7 @@
 	"tux-editor-message-tools-history": "Ajalugu",
 	"tux-editor-message-tools-delete": "Kustuta",
 	"tux-editor-message-tools-translations": "Kõik tõlked",
+	"tux-editor-message-tools-linktothis": "Link sellele sõnumile",
 	"tux-editor-loading": "Laadimine...",
 	"translate-search-more-languages-info": "Veel $1 {{PLURAL:$1|keel|keelt}}",
 	"translate-statsbar-tooltip": "$1% tõlgitud, $2% ülevaadatud",
