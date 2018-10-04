@@ -52,7 +52,6 @@
 	"translate-page-description-hasoptional": "مجموعة الرسائل هذه تحتوي على رسائل اختيارية.\n\nيجب أن تترجم الرسائل الاختيارية فقط حينما تكون لغتك لها متطلبات خاصة\n\nمثل عدم استخدام مسافات أو الترجمة الحرفية لأسماء العلم. $1",
 	"translate-page-description-hasoptional-open": "إظهار الرسائل الاختيارية.",
 	"translate-page-edit": "عدل",
-	"translate-ext-url": "<hr />موقع الوب: $1",
 	"translate-optional": "(اختياري)",
 	"translate-ignored": "(متجاهل)",
 	"translate-edit-title": "عدل \"$1\"",

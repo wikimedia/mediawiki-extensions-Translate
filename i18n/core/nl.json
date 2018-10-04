@@ -47,7 +47,6 @@
 	"translate-page-description-hasoptional": "Deze berichtengroep bevat optionele berichten.\nOptionele berichten hoeven alleen vertaald te worden als uw taal bijzondere eigenschappen heeft, zoals dat deze geen spaties gebruikt of dat eigennamen in de taal getranslitereerd worden. $1",
 	"translate-page-description-hasoptional-open": "Optionele berichten weergeven.",
 	"translate-page-edit": "bewerken",
-	"translate-ext-url": "<hr />Website: $1",
 	"translate-optional": "(optioneel)",
 	"translate-ignored": "(genegeerd)",
 	"translate-edit-title": "\"$1\" bewerken",

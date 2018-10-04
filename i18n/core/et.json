@@ -35,7 +35,6 @@
 	"translate-page-description-hasoptional": "See sõnumirühm sisaldab valikulisi sõnumeid.\nValikulisi sõnumeid tuleks tõlkida vaid juhul, kui sinu keeles on erinõudeid\nnagu tühikute mittekasutamine või pärisnimede translitereerimine. $1",
 	"translate-page-description-hasoptional-open": "Näita valikulisi sõnumeid.",
 	"translate-page-edit": "muuda",
-	"translate-ext-url": "<hr />Võrgukoht: $1",
 	"translate-optional": "(valikuline)",
 	"translate-ignored": "(eiratud)",
 	"translate-edit-title": "Redigeeri sõnumit \"$1\"",

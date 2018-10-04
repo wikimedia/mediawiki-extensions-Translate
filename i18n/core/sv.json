@@ -57,7 +57,6 @@
 	"translate-page-description-hasoptional": "Denna meddelandegrupp innehåller valfria meddelanden.\nValfria meddelanden bör endast översättas när ditt språk har särskilda krav,\nexempelvis att inte använda blanksteg eller transkribera egennamn. $1",
 	"translate-page-description-hasoptional-open": "Visa valfria meddelanden.",
 	"translate-page-edit": "redigera",
-	"translate-ext-url": "<hr />Webbplats: $1",
 	"translate-optional": "(valfritt)",
 	"translate-ignored": "(ignorerad)",
 	"translate-edit-title": "Redigera \"$1\"",

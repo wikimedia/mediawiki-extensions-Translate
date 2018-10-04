@@ -37,7 +37,6 @@
 	"translate-page-description-hasoptional": "Ang pangkat na ito ng mensahe ay naglalaman ng mga mensaheng opsiyonal.\nAng mga mensaheng pang-opsiyon ay nararapat na isalinwika lang kapag ang wika mo ay mayroong natatanging mga pangangailangan\nkatulad ng hindi paggamit ng mga patlang o transliterasyon ng mga pangalang pantangi. $1",
 	"translate-page-description-hasoptional-open": "Ipakita ang mga mensaheng maaaring wala naman.",
 	"translate-page-edit": "baguhin",
-	"translate-ext-url": "<hr />Websayt: $1",
 	"translate-optional": "(maaaring wala nito)",
 	"translate-ignored": "(binalewala)",
 	"translate-edit-title": "Baguhin ang \"$1\"",

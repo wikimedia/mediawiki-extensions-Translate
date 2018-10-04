@@ -36,7 +36,6 @@
 	"translate-page-description-hasoptional": "Mae'r grŵp hwn yn cynnwys negeseuon opsiynol.\nDoes dim ond angen eu cyfieithu pan fod orgraff eich iaith yn gofyn am eu cyfieithu, e.e. os oes rhaid osgoi defnyddio bylchau neu wrth drawslythrennu enwau priod. $1",
 	"translate-page-description-hasoptional-open": "Dangos negeseuon opsiynol.",
 	"translate-page-edit": "golygu",
-	"translate-ext-url": "<hr />Gwefan: $1",
 	"translate-optional": "(dewisol)",
 	"translate-ignored": "(anwybyddwyd)",
 	"translate-edit-title": "Golygu \"$1\"",

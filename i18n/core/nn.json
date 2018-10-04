@@ -43,7 +43,6 @@
 	"translate-page-description-hasoptional": "Meldingsgruppa har valfrie meldingar.\nValfrie meldingar skal ein berre setja om når språket ditt har særskilde krav, til dømes at det ikkje nyttar mellomrom eller at det transkriberer eigennamn. $1",
 	"translate-page-description-hasoptional-open": "Vis valfrie meldingar.",
 	"translate-page-edit": "endre",
-	"translate-ext-url": "<hr />Nettstad: $1",
 	"translate-optional": "(valfri)",
 	"translate-ignored": "(ignorert)",
 	"translate-edit-title": "Endra «$1»",

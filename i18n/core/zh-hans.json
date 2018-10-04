@@ -65,7 +65,6 @@
 	"translate-page-description-hasoptional": "本信息组包含可选信息。可选信息应该只在您的语言有特殊需要，如不使用空格或音译合适名称时才被翻译。$1",
 	"translate-page-description-hasoptional-open": "显示可选信息。",
 	"translate-page-edit": "编辑",
-	"translate-ext-url": "<hr />网站：$1",
 	"translate-optional": "（可选）",
 	"translate-ignored": "（已忽略）",
 	"translate-edit-title": "编辑“$1”",

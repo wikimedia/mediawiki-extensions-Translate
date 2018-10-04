@@ -52,7 +52,6 @@
 	"translate-page-description-hasoptional": "Tässä viestiryhmässä on valinnaisia viestejä.\nValinnaiset viestit on käännettävä vain kielille, joilla on erikoisvaatimuksia kuten välilyöntien puuttuminen tai erisnimien translitterointi. $1",
 	"translate-page-description-hasoptional-open": "Näytä valinnaiset viestit.",
 	"translate-page-edit": "muokkaa",
-	"translate-ext-url": "<hr />Verkkosivu: $1",
 	"translate-optional": "(valinnainen)",
 	"translate-ignored": "(ei-käännettävä)",
 	"translate-edit-title": "Muokkaa sivua $1",

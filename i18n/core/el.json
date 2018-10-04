@@ -49,7 +49,6 @@
 	"translate-page-description-hasoptional": "Αυτή η ομάδα μηνυμάτων περιέχει προαιρετικά μηνύματα.\nΤα προαιρετικά μηνύματα θα πρέπει να μεταφράζονται μόνο όταν η γλώσσα σας έχει ειδικές απαιτήσεις όπως τη μη χρήση κενών ή τη μεταγλώττιση κύριων ονομάτων. $1",
 	"translate-page-description-hasoptional-open": "Εμφάνιση προαιρετικών μηνυμάτων.",
 	"translate-page-edit": "επεξεργασία",
-	"translate-ext-url": "<hr />Ιστοχώρος: $1",
 	"translate-optional": "(προαιρετικά)",
 	"translate-ignored": "(αγνοημένα)",
 	"translate-edit-title": "Επεξεργασία «$1»",

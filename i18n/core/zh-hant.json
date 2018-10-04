@@ -54,7 +54,6 @@
 	"translate-page-description-hasoptional": "此訊息群組含有可選填訊息。\n可選填訊息只在您的語言有特殊需求時才需要翻譯 (例如：文中不使用空格或要轉寫成合適的名稱等)。$1",
 	"translate-page-description-hasoptional-open": "顯示可選填訊息。",
 	"translate-page-edit": "編輯",
-	"translate-ext-url": "<hr />網站：$1",
 	"translate-optional": "(選填)",
 	"translate-ignored": "(已略過)",
 	"translate-edit-title": "編輯 \"$1\"",

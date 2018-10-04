@@ -42,7 +42,6 @@
 	"translate-page-description-hasoptional": "Este grupo de mensaxes contén mensaxes opcionais.\nAs mensaxes opcionais só se deberían traducir cando a lingua teña necesidades especiais,\ncomo non empregar espazos ou para a transliteración de nomes propios. $1",
 	"translate-page-description-hasoptional-open": "Amosar as mensaxes opcionais.",
 	"translate-page-edit": "editar",
-	"translate-ext-url": "<hr />Páxina web: $1",
 	"translate-optional": "(opcional)",
 	"translate-ignored": "(ignorado)",
 	"translate-edit-title": "Editar \"$1\"",

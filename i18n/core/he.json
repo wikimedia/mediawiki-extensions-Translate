@@ -46,7 +46,6 @@
 	"translate-page-description-hasoptional": "קבוצת ההודעות הזאת מכילה הודעות אופציונליות.\nיש לתרגם הודעות אופציונליות רק אם לשפתכם יש דרישות מיוחדות\nכגון אי־שימוש ברווחים או תעתיק ייחודי של שמות פרטיים. $1",
 	"translate-page-description-hasoptional-open": "הצגת הודעות אופציונליות.",
 	"translate-page-edit": "עריכה",
-	"translate-ext-url": "<hr />אתר אינטרנט: $1",
 	"translate-optional": "(אופציונלי)",
 	"translate-ignored": "(לא לתרגום)",
 	"translate-edit-title": "עריכת \"$1\"",

@@ -35,7 +35,6 @@
 	"translate-page-description-hasoptional": "Mazkur guruhda qo'shimcha xabarlar mavjud.\nQo'shimcha xabarlar faqat shu hollardagina tarjima qilinadi, qachonki xususiy nomlarni transliteratsiya qilishda, yoki agar sizning tilingiz qandaydir qo'shimcha shartlarni taqdim qilsa, - masalan, agarki qayerlardadir bo'sh joydan foydalanmaslik kerak bo'lsa. $1",
 	"translate-page-description-hasoptional-open": "Qoʻshimcha xabarlarni koʻrsatish",
 	"translate-page-edit": "tahrir",
-	"translate-ext-url": "<hr />Sayt: $1",
 	"translate-optional": "(majburiy emas)",
 	"translate-ignored": "(e'tiborga olinmagan)",
 	"translate-edit-title": "Tahrir \"$1\"",

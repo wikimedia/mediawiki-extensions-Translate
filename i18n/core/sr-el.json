@@ -47,7 +47,6 @@
 	"translate-page-description-hasoptional": "Ova grupa poruka sadrži opcionalne poruke.\nNjih treba prevoditi samo kada vaš jezik ima posebne potrebe,\nkao što su neupotreba razmaka ili preslovljavanje imena. $1",
 	"translate-page-description-hasoptional-open": "Prikaži opcionalne poruke.",
 	"translate-page-edit": "uredi",
-	"translate-ext-url": "<hr />Veb-sajt: $1",
 	"translate-optional": "(opcionalno)",
 	"translate-ignored": "(zanemareno)",
 	"translate-edit-title": "Uređivanje stranice „$1“",

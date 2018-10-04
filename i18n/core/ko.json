@@ -48,7 +48,6 @@
 	"translate-page-description-hasoptional": "이 메시지 그룹은 선택적 메시지를 포함합니다.\n언어에 공백을 사용하거나 적절한 이름을 번역할 수 없는 등의 특별한 요구 사항이\n있을 때에만 선택적 메시지를 번역해야 합니다. $1",
 	"translate-page-description-hasoptional-open": "선택적 메시지 보기",
 	"translate-page-edit": "편집",
-	"translate-ext-url": "<hr />웹 사이트: $1",
 	"translate-optional": "(선택 사항)",
 	"translate-ignored": "(무시됨)",
 	"translate-edit-title": "\"$1\" 편집하기",

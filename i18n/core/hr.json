@@ -42,7 +42,6 @@
 	"translate-page-description-hasoptional": "Ova skupina sadržava neobvezne poruke.\nNeobvezne poruke treba prevoditi samo ukoliko Vaš jezik ima posebne potrebe;\nna primjer, ukoliko ne treba rabiti bjeline ili ukoliko treba preslovljavati imena. $1",
 	"translate-page-description-hasoptional-open": "Prikaži dodatne poruke.",
 	"translate-page-edit": "uredi",
-	"translate-ext-url": "<hr />Internetska stranica: $1",
 	"translate-optional": "(neobvezno)",
 	"translate-ignored": "(zanemareno)",
 	"translate-edit-title": "Uredi \"$1\"",

@@ -44,7 +44,6 @@
 	"translate-page-description-hasoptional": "Denne meldingsgruppen inneholder valgfrie meldinger.\nValgfrie meldinger bør kun oversettes om språket ditt har spesielle behov, som at det ikke bruker mellomrom eller man må transkribere egennavn. $1",
 	"translate-page-description-hasoptional-open": "Vis valgfrie meldinger.",
 	"translate-page-edit": "rediger",
-	"translate-ext-url": "<hr />Nettsted: $1",
 	"translate-optional": "(valgfri)",
 	"translate-ignored": "(ignorert)",
 	"translate-edit-title": "Rediger «$1»",

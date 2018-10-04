@@ -56,7 +56,6 @@
 	"translate-page-description-hasoptional": "このメッセージ群には省略可能なメッセージがあります。\n省略可能なメッセージは、その言語で特別な必要性 (空白の除去、固有名詞の翻字など) がある場合のみ翻訳してください。$1",
 	"translate-page-description-hasoptional-open": "省略可能なメッセージを表示する。",
 	"translate-page-edit": "編集",
-	"translate-ext-url": "<hr />ウェブサイト: $1",
 	"translate-optional": "(省略可能)",
 	"translate-ignored": "(翻訳無視)",
 	"translate-edit-title": "「$1」を編集",

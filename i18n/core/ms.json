@@ -39,7 +39,6 @@
 	"translate-page-description-hasoptional": "Kumpulan mesej ini mengandungi mesej tidak wajib.\nMesej tidak wajib hanya wajar diterjemahkan jika bahasa anda mempunyai keperluan tertentu\nseperti tidak menggunakan jarak atau mengalih huruf kata nama khas. $1",
 	"translate-page-description-hasoptional-open": "Tunjukkan mesej tidak wajib.",
 	"translate-page-edit": "sunting",
-	"translate-ext-url": "<hr />Tapak web: $1",
 	"translate-optional": "(tidak wajib)",
 	"translate-ignored": "(tidak diendahkan)",
 	"translate-edit-title": "Sunting \"$1\"",

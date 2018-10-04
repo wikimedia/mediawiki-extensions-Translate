@@ -49,7 +49,6 @@
 	"translate-page-description-hasoptional": "Aquest grup de missatges conté missatges adicionals.\nEls missatges opcionals només s'han de traduir quan el vostre idioma tingui requeriments especials\ncom ara no fer servir espais o transliterant noms propis. $1",
 	"translate-page-description-hasoptional-open": "Mostra els missatges opcionals.",
 	"translate-page-edit": "modifica",
-	"translate-ext-url": "<hr />Lloc web: $1",
 	"translate-optional": "(opcional)",
 	"translate-ignored": "(ignorat)",
 	"translate-edit-title": "Edita «$1»",

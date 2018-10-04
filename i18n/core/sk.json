@@ -40,7 +40,6 @@
 	"translate-page-description-hasoptional": "Táto skupina obsahuje voliteľné správy.\nVoliteľné správy sa majú prekladať len v prípade, ak má váš jazyk špecifické potreby,\nako napr. nepoužívanie medzier, alebo transkripcie vlastných mien. $1",
 	"translate-page-description-hasoptional-open": "Zobraziť voliteľné správy.",
 	"translate-page-edit": "upraviť",
-	"translate-ext-url": "<hr />Webstránka: $1",
 	"translate-optional": "(voliteľné)",
 	"translate-ignored": "(ignorované)",
 	"translate-edit-title": "Upraviť \"$1\"",

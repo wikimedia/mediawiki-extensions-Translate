@@ -41,7 +41,6 @@
 	"translate-page-description-hasoptional": "Оваа група содржи незадолжителни пораки.\nНезадолжителните пораки треба да се преведуваат само кога вашиот јазик има посебни потреби како траслитерација на имиња или неупотреба на празни места. $1",
 	"translate-page-description-hasoptional-open": "Прикажи незадолжителни пораки.",
 	"translate-page-edit": "уреди",
-	"translate-ext-url": "<hr />Мреж. место: $1",
 	"translate-optional": "(незадолжително)",
 	"translate-ignored": "(игнорирано)",
 	"translate-edit-title": "Уреди „$1“",

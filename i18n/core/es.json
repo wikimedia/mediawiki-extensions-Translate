@@ -60,7 +60,6 @@
 	"translate-page-description-hasoptional": "Este grupo de mensajes contiene mensajes opcionales.\nLos mensajes opcionales deberían traducirse solo si tu idioma tiene características especiales como no usar espacios o transliterar nombres propios. $1",
 	"translate-page-description-hasoptional-open": "Mostrar mensajes opcionales.",
 	"translate-page-edit": "editar",
-	"translate-ext-url": "<hr />Sitio web: $1",
 	"translate-optional": "(opcional)",
 	"translate-ignored": "(ignorado)",
 	"translate-edit-title": "Editar «$1»",

@@ -87,7 +87,7 @@
 	"log-description-pagetranslation": "Lehekülgede tõlkesüsteemiga seotud toimingute logi",
 	"log-name-pagetranslation": "Lehekülgede tõlkelogi",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|märkis}} lehekülje \"$3\" tõlkimiseks",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|eemaldas}} lehekülje \"$3\" tõlkimiselt",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|eemaldas}} lehekülje \"$3\" tõlkesüsteemist",
 	"pt-movepage-title": "Tõlgitava lehekülje \"$1\" teisaldamine",
 	"pt-movepage-blockers": "{{PLURAL:$1|Järgmise tõrke|Järgmiste tõrgete}} tõttu ei saa tõlgitavat lehekülge uue pealkirja alla teisaldada:",
 	"pt-movepage-block-base-exists": "Sihtkohaks määratud tõlgitav lehekülg \"[[:$1]]\" on olemas.",

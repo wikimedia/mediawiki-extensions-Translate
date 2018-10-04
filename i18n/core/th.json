@@ -40,7 +40,6 @@
 	"translate-page-description-hasoptional": "กลุ่มข้อความนี้มีข้อความทางเลือก\nควรแปลข้อความทางเลือกก็ต่อเมื่อในภาษาของคุณมีกฎพิเศษ อย่างเช่น ไม่มีการใช้วรรค หรือการเขียนชื่อที่ถูกต้อง $1",
 	"translate-page-description-hasoptional-open": "แสดงข้อความทางเลือก",
 	"translate-page-edit": "แก้ไข",
-	"translate-ext-url": "<hr />เว็บไซต์: $1",
 	"translate-optional": "(ทางเลือก)",
 	"translate-ignored": "(เพิกเฉย)",
 	"translate-edit-title": "แก้ไข \"$1\"",

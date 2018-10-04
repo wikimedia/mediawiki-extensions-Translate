@@ -45,7 +45,6 @@
 	"translate-page-description-hasoptional": "Ez az üzenetcsoport opcionális üzeneteket tartalmaz.\nAz opcionális üzeneteket csak akkor kell lefordítani, ha a nyelvnek speciális követelményei vannak, mint például a szóközök elhagyása vagy a tulajdonnevek átírása. $1",
 	"translate-page-description-hasoptional-open": "Opcionális üzenetek megjelenítése.",
 	"translate-page-edit": "szerkesztés",
-	"translate-ext-url": "<hr />Weboldal: $1",
 	"translate-optional": "(nem kötelező)",
 	"translate-ignored": "(figyelmen kívül hagyva)",
 	"translate-edit-title": "„$1” szerkesztése",

@@ -45,7 +45,6 @@
 	"translate-page-description-hasoptional": "Denne beskedgruppe indeholder valgfrie beskeder.\nValgfrie beskeder bør kun oversættes, hvis dit sprog har særlige krav som for eksempel ikke at bruge mellemrum eller at transskribere egennavne. $1",
 	"translate-page-description-hasoptional-open": "Vis valgfrie beskeder.",
 	"translate-page-edit": "redigér",
-	"translate-ext-url": "<hr />Webside: $1",
 	"translate-optional": "(valgfri)",
 	"translate-ignored": "(ignoreres)",
 	"translate-edit-title": "Rediger \"$1\"",

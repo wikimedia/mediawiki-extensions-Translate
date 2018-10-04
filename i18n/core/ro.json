@@ -42,7 +42,6 @@
 	"translate-page-description-hasoptional": "Acest grup conține mesaje opționale.\nMesajele opționale ar trebui traduse doar în cazul în care limba dumneavoastră are cerințe speciale,\nprecum neutilizarea spațiilor sau transliterarea numelor proprii. $1",
 	"translate-page-description-hasoptional-open": "Arată mesajele opționale.",
 	"translate-page-edit": "modificare",
-	"translate-ext-url": "<hr /> Site web: $1",
 	"translate-optional": "(opțional)",
 	"translate-ignored": "(ignorat)",
 	"translate-edit-title": "Modificați „$1”",

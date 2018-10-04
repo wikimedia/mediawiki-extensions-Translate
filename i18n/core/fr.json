@@ -75,7 +75,6 @@
 	"translate-page-description-hasoptional": "Ce groupe de messages contient des messages facultatifs.\nLes messages facultatifs ne devraient être traduits que quand votre langue a des exigences particulières comme ne pas utiliser d’espaces ou transformer des noms propres. $1",
 	"translate-page-description-hasoptional-open": "Afficher les messages facultatifs.",
 	"translate-page-edit": "modifier",
-	"translate-ext-url": "<hr />Site web : $1",
 	"translate-optional": "(facultatif)",
 	"translate-ignored": "(ignoré)",
 	"translate-edit-title": "Modifier « $1 »",

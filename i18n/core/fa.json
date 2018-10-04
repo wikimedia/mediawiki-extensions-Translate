@@ -53,7 +53,6 @@
 	"translate-page-description-hasoptional": "این گروه پیغام‌ها شامل پیغام‌های اختیاری است.\nپیغام‌های اختیاری باید تنها زمانی ترجمه شوند که زبان شما شرایط ویژه‌ای نظیر استفاده نکردن از فاصله یا نویسه‌گردانی اسامی خاص داشته باشد. $1",
 	"translate-page-description-hasoptional-open": "نمایش پیغام‌های اختیاری.",
 	"translate-page-edit": "ویرایش",
-	"translate-ext-url": "<hr />وبگاه: $1",
 	"translate-optional": "(اختیاری)",
 	"translate-ignored": "(نادیده گرفته شده)",
 	"translate-edit-title": "ویرایش «$1»",

@@ -58,7 +58,6 @@
 	"translate-page-description-hasoptional": "Ця група повідомлень містить також необов'язкові повідомлення.\nЇх слід перекладати лише якщо Ваша мова вимагає особливого ставлення,\nскажімо, у ній не вживаються пробіли чи не потрібна транслітерація власних імен. $1",
 	"translate-page-description-hasoptional-open": "Показувати додаткові повідомлення.",
 	"translate-page-edit": "редагувати",
-	"translate-ext-url": "<hr />Сайт: $1",
 	"translate-optional": "(необов'язкове)",
 	"translate-ignored": "(ігнорується)",
 	"translate-edit-title": "Редагувати «$1»",

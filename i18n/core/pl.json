@@ -61,7 +61,6 @@
 	"translate-page-description-hasoptional": "Ta grupa zawiera również opcjonalne komunikaty.\nPowinny one być tłumaczone tylko wtedy, gdy język docelowy wymaga pisania bez odstępów między wyrazami lub transliteracji nazw własnych. $1",
 	"translate-page-description-hasoptional-open": "Pokaż komunikaty opcjonalne.",
 	"translate-page-edit": "edytuj",
-	"translate-ext-url": "<hr />Strona internetowa: $1",
 	"translate-optional": "(dodatkowe)",
 	"translate-ignored": "(zignorowane)",
 	"translate-edit-title": "Edycja „$1“",

@@ -39,7 +39,6 @@
 	"translate-page-description-hasoptional": "Nhóm thông điệp này có thông điệp tùy dịch.\nChỉ nên dịch một thông điệp tùy dịch nếu ngôn ngữ của bạn có những thuộc tính đặc biệt\nthí dụ như không sử dụng khoảng cách hoặc có hệ thống phiên âm tên. $1",
 	"translate-page-description-hasoptional-open": "Xem các thông điệp tùy dịch.",
 	"translate-page-edit": "sửa",
-	"translate-ext-url": "<hr />Website: $1",
 	"translate-optional": "(tùy chọn)",
 	"translate-ignored": "(đã bỏ)",
 	"translate-edit-title": "Sửa đổi “$1”",

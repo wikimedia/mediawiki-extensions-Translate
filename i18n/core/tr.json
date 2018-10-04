@@ -51,7 +51,6 @@
 	"translate-page-description-hasoptional": "Bu ileti grubu isteğe bağlı iletileri içerir. Dilin özel gereksinimleri olduğunda isteğe bağlı iletiler çevrilmelidir.\nÖzel adların farklı alfabe ile yazılmasında ya da boşluklarda kullanmayınız. $1",
 	"translate-page-description-hasoptional-open": "İsteğe bağlı iletileri göster",
 	"translate-page-edit": "düzenle",
-	"translate-ext-url": "<hr />Web sitesi: $1",
 	"translate-optional": "(isteğe bağlı)",
 	"translate-ignored": "(yok sayılan)",
 	"translate-edit-title": "\"$1\" adlı sayfayı düzenle",

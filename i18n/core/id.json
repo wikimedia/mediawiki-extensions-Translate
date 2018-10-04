@@ -49,7 +49,6 @@
 	"translate-page-description-hasoptional": "Kelompok pesan ini memuat pesan opsional.\nPesan opsional seharusnya hanya boleh diterjemahkan jika bahasa Anda memiliki keperluan khusus\nseperti tidak memakai spasi atau mengalihaksarakan nama umum. $1",
 	"translate-page-description-hasoptional-open": "Tampilkan pesan opsional.",
 	"translate-page-edit": "sunting",
-	"translate-ext-url": "<hr />Situs web: $1",
 	"translate-optional": "(opsional)",
 	"translate-ignored": "(diabaikan)",
 	"translate-edit-title": "Sunting \"$1\"",

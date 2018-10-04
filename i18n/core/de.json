@@ -55,7 +55,6 @@
 	"translate-page-description-hasoptional": "Diese Nachrichtengruppe enthält optionale Nachrichten.\nOptionale Nachrichten sollten nur dann übersetzt werden, sofern es in deiner Sprache Bedarf für sie gibt,\nwie beispielsweise die Nichtverwendung von Leerzeichen oder die Transkription von Eigennamen. $1",
 	"translate-page-description-hasoptional-open": "Optionale Nachrichten anzeigen.",
 	"translate-page-edit": "bearbeiten",
-	"translate-ext-url": "<hr />Website: $1",
 	"translate-optional": "(optional)",
 	"translate-ignored": "(ignoriert)",
 	"translate-edit-title": "„$1“ bearbeiten",
