@@ -9,7 +9,8 @@
 			"Mormegil",
 			"Vks",
 			"H4nek",
-			"Kvetoslav47"
+			"Kvetoslav47",
+			"Dvorapa"
 		]
 	},
 	"pagetranslation": "Překlad stránek",
@@ -91,7 +92,7 @@
 	"log-description-pagetranslation": "Protokol úkonů souvisejících se systémem překladu stránek",
 	"log-name-pagetranslation": "Kniha překladů stránek",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|označil|označila}} stránku $3 k překladu",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|vyjmul|vyjmula}} stránku $3 z překládání",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|vyjmul|vyjmula}} stránku $3 ze systému překládání",
 	"pt-movepage-list-pages": "Seznam stránek k přesunutí",
 	"pt-movepage-list-translation": "Překlad {{PLURAL:$1|stránky|stránek}}",
 	"pt-movepage-list-section": "{{PLURAL:$1|Stránka s částí překladu|Stránky s částmi překladu}}",

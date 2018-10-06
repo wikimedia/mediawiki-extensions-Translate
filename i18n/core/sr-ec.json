@@ -180,7 +180,7 @@
 	"translate-language-code": "Кôд језика",
 	"translate-language-code-field-name": "Кôд језика",
 	"translate-suppress-complete": "Сакриј потпуно преведене групе порука",
-	"translate-ls-noempty": "Сакриј потпуно преведене групе порука",
+	"translate-ls-noempty": "Сакриј потпуно непреведене групе порука",
 	"translate-language": "Језик",
 	"translate-total": "Поруке",
 	"translate-untranslated": "Непреведено",
