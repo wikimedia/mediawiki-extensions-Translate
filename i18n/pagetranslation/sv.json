@@ -107,7 +107,7 @@
 	"log-description-pagetranslation": "Logg för åtgärder som rör systemet för sidöversättning",
 	"log-name-pagetranslation": "Sidöversättningslogg",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|markerade}} $3 för översättning",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|tog bort}} $3 för översättning",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|tog bort}} $3 från översättningssystemet",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|slutförde}} namnändringen av översättningssidan $3 till $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|stöte på}} ett problem när sidan $3 skulle flyttas till $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|slutförde}} raderingen av översättningssidan $3",
