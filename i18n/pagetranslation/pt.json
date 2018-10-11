@@ -105,7 +105,7 @@
 	"log-description-pagetranslation": "Registo para operações relacionadas com o sistema de tradução de páginas",
 	"log-name-pagetranslation": "Registo de tradução de páginas",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|marcou}} a página $3 para tradução",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|retirou}} $3 das páginas para tradução",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|retirou}} $3 do sistema de tradução",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|terminou}} a alteração do nome da página traduzível $3 para $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|encontrou}} um problema ao mover a página $3 para $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|concluiu}} a eliminação da página traduzível $3",
