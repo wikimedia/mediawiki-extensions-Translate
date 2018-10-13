@@ -14,6 +14,7 @@
 	"tpt-diff-new": "Sledeći tekst",
 	"tpt-submit": "Označi ovu verziju za prevod",
 	"tpt-mark-nochanges": "Nema razlika između ove izmene i poslednje označene izmene.",
+	"tpt-unmarked": "Stranica $1 nije više označena za prevođenje.",
 	"tpt-rev-mark": "označi za prevođenje",
 	"tpt-rev-unmark": "ukloni iz prevoda",
 	"tpt-rev-discourage": "nepreporučeno",
@@ -69,5 +70,6 @@
 	"pp-pagename-placeholder": "Unesite naziv stranice",
 	"pp-save-button-label": "Sačuvaj",
 	"pp-cancel-button-label": "Otkaži",
-	"pp-prepare-message": "Ova stranica je pripremljena za prevođenje. Pogledajte razliku izmena ispod. Kliknite na dugme \"{{int:pp-save-button-label}}\" ako je u redu!"
+	"pp-prepare-message": "Ova stranica je pripremljena za prevođenje. Pogledajte razliku izmena ispod. Kliknite na dugme \"{{int:pp-save-button-label}}\" ako je u redu!",
+	"tpt-unlink-confirm": "Molimo vas da potvrdite da stvarno želite da uklonite ovu stranicu iz prevodilačkog sistema.\nSelektor jezika i prevedeni nazivi stranica će prestati sa radom.\nStranice za prevođenje će postati uredive."
 }

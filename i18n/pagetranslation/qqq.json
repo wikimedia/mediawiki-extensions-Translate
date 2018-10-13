@@ -19,7 +19,8 @@
 			"Umherirrender",
 			"Robby",
 			"Liuxinyu970226",
-			"Guycn2"
+			"Guycn2",
+			"Zoranzoki21"
 		]
 	},
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view]]",
@@ -47,7 +48,7 @@
 	"tpt-edit-failed": "Used as error message. Parameters:\n* $1 - page title",
 	"tpt-duplicate": "Used as error message.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translation unit ID (name)",
 	"tpt-already-marked": "See definition on [[mw:Help:Extension:Translate/Glossary]].",
-	"tpt-unmarked": "Used as success message.\n\nTranslate this as \"Page $1 has been unmarked for translation\".\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - page title",
+	"tpt-unmarked": "Used as success message for unmarking page for translation.\n\nTranslate this as \"Page $1 has been unmarked for translation\".\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - page title",
 	"tpt-list-nopages": "See definition on [[mw:Help:Extension:Translate/Glossary]].",
 	"tpt-new-pages-title": "Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]",
 	"tpt-old-pages-title": "Header in [[Special:PageTranslation]] [[Image:Page translation admin view.png|thumb|Admin view]]",
@@ -220,7 +221,7 @@
 	"pp-pagename-missing": "Error message given when page title field is blank",
 	"pp-diff-old-header": "Header text for old revision for the diff shown at Special:PagePreparation",
 	"pp-diff-new-header": "Header text for new revision for the diff shown at Special:PagePreparation",
-	"tpt-unlink-confirm": "Confirmation message shown to user when unmarking page in active translation",
+	"tpt-unlink-confirm": "Confirmation message shown to user when unmarking page in active translation.",
 	"tpt-unlink-button": "Button text",
 	"tpt-unlink-summary": "Edit summary",
 	"tpt-generic-confirm": "Confirmation message shown to user on Special:PageTranslation. Mostly shown to users without JavaScript.",
