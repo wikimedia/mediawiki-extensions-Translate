@@ -23,7 +23,9 @@
 	"apihelp-translationstash-param-subaction": "Handeling.",
 	"apihelp-translationstash-param-metadata": "JSON-object.",
 	"apihelp-searchtranslations-description": "Vertalingen doorzoeken.",
+	"apihelp-searchtranslations-summary": "Vertalingen doorzoeken.",
 	"apierror-translate-invalidgroup": "Groep bestaat niet of is ongeldig",
 	"apierror-translate-language-disabled": "Vertalen naar deze taal is uitgeschakeld",
+	"apierror-translate-sandbox-invalidppassword": "Ongeldig wachtwoord",
 	"apierror-translate-unknownmessage": "Onbekend bericht"
 }

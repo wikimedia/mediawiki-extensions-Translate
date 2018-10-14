@@ -196,7 +196,7 @@
 	"translate-mgs-column-language": "Jezik",
 	"translate-mgs-totals": "Svih $1 {{PLURAL:$1|jezik|jezika}} zajedno",
 	"translate-mgs-invalid-group": "Navedena grupa „$1” ne postoji.",
-	"translate-mgs-nothing": "Nema šta da se prikaže za zahtevane statistike.",
+	"translate-mgs-nothing": "Nema ničega da se prikaže za zahtevane statistike.",
 	"supportedlanguages": "Podržani jezici",
 	"supportedlanguages-summary": "Ova stranica prikazuje listu svih jezika koje podržava {{SITENAME}},\nzajedno sa imenima prevodilaca koji rade na odabranom jeziku.\nIme prevodioca je veće što je sa više prevoda doprineo.\nBoja linije podvlačenja indicira koliko skoro je prevodilac ovde bio aktivan.",
 	"supportedlanguages-colorlegend": "Legenda za boju: poslednji prevod izvršen pre $1 dana.",
