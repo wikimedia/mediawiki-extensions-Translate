@@ -170,9 +170,12 @@ class MessageGroupStats {
 	}
 
 	public static function clearGroup( $id ) {
-		if ( !count( $id ) ) {
+		// T206904: Fix countable error for group id
+		// NOTE: An empty string ('') is not a valid group id
+		if ( $id === [] ) {
 			return;
 		}
+
 		$dbids = array_map( 'self::getDatabaseIdForGroupId', (array)$id );
 
 		$dbw = wfGetDB( DB_MASTER );
