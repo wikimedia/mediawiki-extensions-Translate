@@ -170,7 +170,9 @@ class MessageGroupStats {
 	}
 
 	public static function clearGroup( $id ) {
-		if ( !count( $id ) ) {
+		// T206904: check if $id type is countable
+		$count_id = is_array( $id ) ? !count( $id ) : 0;
+		if ( $count_id ) {
 			return;
 		}
 		$dbids = array_map( 'self::getDatabaseIdForGroupId', (array)$id );
