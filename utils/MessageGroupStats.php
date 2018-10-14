@@ -121,7 +121,7 @@ class MessageGroupStats {
 	/**
 	 * Returns stats for all languages in given group.
 	 * @param string $id Group id
-	 * @return Array
+	 * @return array
 	 */
 	public static function forGroup( $id ) {
 		$group = MessageGroups::getGroup( $id );
@@ -139,7 +139,7 @@ class MessageGroupStats {
 	 * Returns stats for all group in all languages.
 	 * Might be slow, might use lots of memory.
 	 * Returns two dimensional array indexed by group and language.
-	 * @return Array
+	 * @return array
 	 */
 	public static function forEverything() {
 		$groups = MessageGroups::singleton()->getGroups();
