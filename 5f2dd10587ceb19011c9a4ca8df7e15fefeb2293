@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3471d402_2db13dbc",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-15T06:54:31Z",
+      "side": 1,
+      "message": "This is not correct and would break all callers which pass a string (that is most of them)!\n\nThe logic we want here is (in no particular order):\n* If passed an empty array, return early.\n* If passed a string, convert it to an array.\n* If passed any type other than string or array, fail.",
+      "revId": "5f2dd10587ceb19011c9a4ca8df7e15fefeb2293",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
