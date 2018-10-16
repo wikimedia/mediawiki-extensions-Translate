@@ -110,7 +110,7 @@
 	"log-description-pagetranslation": "頁面翻譯系統相關的操作日誌",
 	"log-name-pagetranslation": "頁面翻譯日誌",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|已標記}} $3 需要翻譯",
-	"logentry-pagetranslation-unmark": "$1 已從翻譯中{{GENDER:$2|移除}} $3",
+	"logentry-pagetranslation-unmark": "$1已從翻譯系統中{{GENDER:$2|移除}}$3",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|已完成}}重新命名可翻譯頁面 $3 至 $4",
 	"logentry-pagetranslation-movenok": "$1 移動 $3 至 $4 時{{GENDER:$2|發生}}問題",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|己完成}}刪除可翻譯頁面 $3",
