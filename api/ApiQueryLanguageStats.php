@@ -18,10 +18,21 @@ class ApiQueryLanguageStats extends ApiStatsQuery {
 		parent::__construct( $query, $moduleName, 'ls' );
 	}
 
-	protected function getData() {
-		$params = $this->extractRequestParams();
+	/// Overwritten from ApiStatsQuery
+	protected function validateTargetParamater( array $params ) {
+		$all = TranslateUtils::getLanguageNames( null );
+		$requested = $params[ 'language' ];
 
-		return MessageGroupStats::forLanguage( $params['language'] );
+		if ( !isset( $all[ $requested ] ) ) {
+			$this->dieWithError( [ 'apierror-translate-invalidlanguage' ] );
+		}
+
+		return $requested;
+	}
+
+	/// Overwritten from ApiStatsQuery
+	protected function loadStatistics( $target, $flags = 0 ) {
+		return MessageGroupStats::forLanguage( $target, $flags );
 	}
 
 	protected function makeItem( $item, $stats ) {
