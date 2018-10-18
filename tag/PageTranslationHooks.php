@@ -1304,8 +1304,11 @@ class PageTranslationHooks {
 
 				$page = TranslatablePage::newFromTitle( $target );
 
-				MessageGroupStats::clear( $handle );
-				MessageGroupStats::forItem( $page->getMessageGroupId(), $langCode );
+				MessageGroupStats::forItem(
+					$page->getMessageGroupId(),
+					$langCode,
+					MessageGroupStats::FLAG_NO_CACHE
+				);
 
 				if ( !$handle->isDoc() ) {
 					// Assume that $user and $reason for the first deletion is the same for all
