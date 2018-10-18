@@ -225,10 +225,13 @@ class TranslateEditAddons {
 		self::updateFuzzyTag( $title, $rev, $fuzzy );
 
 		$group = $handle->getGroup();
-		// Update translation stats - source language should always be update
+		// Update translation stats - source language should always be up to date
 		if ( $handle->getCode() !== $group->getSourceLanguage() ) {
-			MessageGroupStats::clear( $handle );
-			MessageGroupStats::forItem( $group->getId(), $handle->getCode() );
+			MessageGroupStats::forItem(
+				$group->getId(),
+				$handle->getCode(),
+				MessageGroupStats::FLAG_NO_CACHE
+			);
 		}
 
 		MessageGroupStatesUpdaterJob::onChange( $handle );

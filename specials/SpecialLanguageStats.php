@@ -36,13 +36,6 @@ class SpecialLanguageStats extends SpecialPage {
 	protected $totals;
 
 	/**
-	 * How long spend time calculating missing numbers, before
-	 * bailing out.
-	 * @var int
-	 */
-	protected $timelimit = 2;
-
-	/**
 	 * Flag to set if nothing to show.
 	 * @var bool
 	 */
@@ -110,6 +103,11 @@ class SpecialLanguageStats extends SpecialPage {
 		$request = $this->getRequest();
 
 		$this->purge = $request->getVal( 'action' ) === 'purge';
+		if ( $this->purge && !$request->wasPosted() ) {
+			$this->showPurgeForm();
+			return;
+		}
+
 		$this->table = new StatsTable();
 
 		$this->setHeaders();
@@ -153,12 +151,20 @@ class SpecialLanguageStats extends SpecialPage {
 
 		if ( $this->isValidValue( $this->target ) ) {
 			$this->outputIntroduction();
-			$output = $this->getTable();
+
+			$stats = $this->loadStatistics( $this->target, MessageGroupStats::FLAG_CACHE_ONLY );
+			$output = $this->getTable( $stats );
 			if ( $this->incomplete ) {
 				$out->wrapWikiMsg(
 					"<div class='error'>$1</div>",
 					'translate-langstats-incomplete'
 				);
+
+				// $this->purge is only true if request was posted
+				DeferredUpdates::addCallableUpdate( function () {
+					$flags = $this->purge ? MessageGroupStats::FLAG_NO_CACHE : 0;
+					$this->loadStatistics( $this->target, $flags );
+				} );
 			}
 			if ( $this->nothing ) {
 				$out->wrapWikiMsg( "<div class='error'>$1</div>", 'translate-mgs-nothing' );
@@ -167,6 +173,16 @@ class SpecialLanguageStats extends SpecialPage {
 		} elseif ( $submitted ) {
 			$this->invalidTarget();
 		}
+	}
+
+	/**
+	 * Get stats
+	 * @param string $target For which target to get stats
+	 * @param int $flags See MessageGroupStats for possible flags
+	 * @return array[]
+	 */
+	protected function loadStatistics( $target, $flags ) {
+		return MessageGroupStats::forLanguage( $target, $flags );
 	}
 
 	/**
@@ -188,6 +204,24 @@ class SpecialLanguageStats extends SpecialPage {
 			"<div class='error'>$1</div>",
 			'translate-page-no-such-language'
 		);
+	}
+
+	protected function showPurgeForm() {
+		$formDescriptor[ 'intro' ] = [
+			'type' => 'info',
+			'vertical-label' => true,
+			'raw' => true,
+			'default' => $this->msg( 'confirm-purge-top' )->parse()
+		];
+
+		$context = new DerivativeContext( $this->getContext() );
+		$requestValues = $this->getRequest()->getQueryValues();
+
+		HTMLForm::factory( 'ooui', $formDescriptor, $context )
+			->setWrapperLegendMsg( 'confirm-purge-title' )
+			->setSubmitTextMsg( 'confirm_purge_button' )
+			->addHiddenFields( $requestValues )
+			->show();
 	}
 
 	/**
@@ -333,24 +367,18 @@ class SpecialLanguageStats extends SpecialPage {
 
 	/**
 	 * Returns the table itself.
+	 * @param array $stats
 	 * @return string HTML
 	 */
-	protected function getTable() {
+	protected function getTable( $stats ) {
 		$table = $this->table;
 
 		$this->addWorkflowStatesColumn();
 		$out = '';
 
-		MessageGroupStats::setTimeLimit( $this->timelimit );
-		$cache = MessageGroupStats::forLanguage( $this->target );
-
-		if ( $this->purge ) {
-			MessageGroupStats::clearLanguage( $this->target );
-		}
-
 		$structure = MessageGroups::getGroupStructure();
 		foreach ( $structure as $item ) {
-			$out .= $this->makeGroupGroup( $item, $cache );
+			$out .= $this->makeGroupGroup( $item, $stats );
 		}
 
 		if ( $out ) {
@@ -373,12 +401,6 @@ class SpecialLanguageStats extends SpecialPage {
 
 			return '';
 		}
-
-		/// @todo Allow extra message here, once total translated volume goes
-		///       over a certain percentage? (former live hack at translatewiki)
-		/// if ( $this->totals['2'] && ( $this->totals['1'] / $this->totals['2'] ) > 0.95 ) {
-		/// 	$out .= $this->msg( 'translate-somekey' );
-		/// }
 	}
 
 	/**
@@ -386,7 +408,7 @@ class SpecialLanguageStats extends SpecialPage {
 	 * If $item is an array, meaning that the first group is an
 	 * AggregateMessageGroup and the latter are its children, it will recurse
 	 * and create rows for them too.
-	 * @param array|MessageGroup $item
+	 * @param MessageGroup|MessageGroup[] $item
 	 * @param array $cache Cache as returned by MessageGroupStats::forLanguage
 	 * @param MessageGroup|null $parent MessageGroup (do not use, used internally only)
 	 * @return string
@@ -439,6 +461,10 @@ class SpecialLanguageStats extends SpecialPage {
 			return '';
 		}
 
+		if ( $total === null ) {
+			$this->incomplete = true;
+		}
+
 		// Calculation of summary row values
 		if ( !$group instanceof AggregateMessageGroup &&
 			!isset( $this->statsCounted[$groupId] )
@@ -449,6 +475,7 @@ class SpecialLanguageStats extends SpecialPage {
 
 		$state = $this->getWorkflowStateValue( $groupId );
 
+		// Place any state checks like $this->incomplete above this
 		$params = $stats;
 		$params[] = $state;
 		$params[] = md5( $groupId );
@@ -456,14 +483,12 @@ class SpecialLanguageStats extends SpecialPage {
 		$params[] = md5( $this->target );
 		$cachekey = wfMemcKey( __METHOD__, implode( '-', $params ) );
 		$cacheval = wfGetCache( CACHE_ANYTHING )->get( $cachekey );
-		if ( !$this->purge && is_string( $cacheval ) ) {
+		if ( is_string( $cacheval ) ) {
 			return $cacheval;
 		}
 
 		$extra = [];
-		if ( $total === null ) {
-			$this->incomplete = true;
-		} elseif ( $translated === $total ) {
+		if ( $translated === $total ) {
 			$extra = [ 'action' => 'proofread' ];
 		}
 

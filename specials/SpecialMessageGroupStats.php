@@ -36,8 +36,9 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		return $this->msg( 'translate-mgs-pagename' )->text();
 	}
 
-	protected function getGroupName() {
-		return 'wiki';
+	/// Overwritten from SpecialLanguageStats
+	protected function loadStatistics( $target, $flags = 0 ) {
+		return MessageGroupStats::forGroup( $target, $flags );
 	}
 
 	/// Overwritten from SpecialLanguageStats
@@ -121,35 +122,24 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 			->displayForm( false );
 	}
 
-	/**
-	 * Overwritten from SpecialLanguageStats
-	 *
-	 * @return string
-	 */
-	protected function getTable() {
+	/// Overwritten from SpecialLanguageStats
+	protected function getTable( $stats ) {
 		$table = $this->table;
 
 		$this->addWorkflowStatesColumn();
 		$out = '';
-
-		if ( $this->purge ) {
-			MessageGroupStats::clearGroup( $this->target );
-		}
-
-		MessageGroupStats::setTimeLimit( $this->timelimit );
-		$cache = MessageGroupStats::forGroup( $this->target );
 
 		$this->numberOfShownLanguages = 0;
 		$languages = array_keys(
 			TranslateUtils::getLanguageNames( $this->getLanguage()->getCode() )
 		);
 		sort( $languages );
-		$this->filterPriorityLangs( $languages, $this->target, $cache );
+		$this->filterPriorityLangs( $languages, $this->target, $stats );
 		foreach ( $languages as $code ) {
 			if ( $table->isBlacklisted( $this->target, $code ) !== null ) {
 				continue;
 			}
-			$out .= $this->makeRow( $code, $cache );
+			$out .= $this->makeRow( $code, $stats );
 		}
 
 		if ( $out ) {
