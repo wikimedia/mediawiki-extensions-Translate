@@ -28,31 +28,13 @@ class MessageGroupStats {
 	const FUZZY = 2; ///< Array index
 	const PROOFREAD = 3; ///< Array index
 
-	/**
-	 * @var float|null
-	 */
-	protected static $timeStart = null;
-
-	/**
-	 * @var float|null
-	 */
-	protected static $limit = null;
+	const FLAG_CACHE_ONLY = 1;
+	const FLAG_NO_CACHE = 2;
 
 	/**
 	 * @var array[]
 	 */
 	protected static $updates = [];
-
-	/**
-	 * Set the maximum time statistics are calculated.
-	 * If the time limit is exceeded, the missing
-	 * entries will be null.
-	 * @param float $limit time in seconds
-	 */
-	public static function setTimeLimit( $limit ) {
-		self::$timeStart = microtime( true );
-		self::$limit = $limit;
-	}
 
 	/**
 	 * Returns empty stats array. Useful because the number of elements
@@ -78,10 +60,11 @@ class MessageGroupStats {
 	 * Returns stats for given group in given language.
 	 * @param string $id Group id
 	 * @param string $code Language code
+	 * @param int $flags Combination of FLAG_* constants.
 	 * @return null[]|int[]
 	 */
-	public static function forItem( $id, $code ) {
-		$res = self::selectRowsIdLang( [ $id ], $code );
+	public static function forItem( $id, $code, $flags = 0 ) {
+		$res = self::selectRowsIdLang( [ $id ], $code, $flags );
 		$stats = self::extractResults( $res, [ $id ] );
 
 		/* In case some code calls this for dynamic groups, return the default
@@ -93,7 +76,7 @@ class MessageGroupStats {
 		}
 
 		if ( !isset( $stats[$id][$code] ) ) {
-			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code );
+			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code, $flags );
 		}
 
 		self::queueUpdates();
@@ -104,10 +87,11 @@ class MessageGroupStats {
 	/**
 	 * Returns stats for all groups in given language.
 	 * @param string $code Language code
-	 * @return array
+	 * @param int $flags Combination of FLAG_* constants.
+	 * @return array[]
 	 */
-	public static function forLanguage( $code ) {
-		$stats = self::forLanguageInternal( $code );
+	public static function forLanguage( $code, $flags = 0 ) {
+		$stats = self::forLanguageInternal( $code, [], $flags );
 		$flattened = [];
 		foreach ( $stats as $group => $languages ) {
 			$flattened[$group] = $languages[$code];
@@ -121,14 +105,15 @@ class MessageGroupStats {
 	/**
 	 * Returns stats for all languages in given group.
 	 * @param string $id Group id
-	 * @return Array
+	 * @param int $flags Combination of FLAG_* constants.
+	 * @return array[]
 	 */
-	public static function forGroup( $id ) {
+	public static function forGroup( $id, $flags = 0 ) {
 		$group = MessageGroups::getGroup( $id );
 		if ( $group === null ) {
 			return [];
 		}
-		$stats = self::forGroupInternal( $group );
+		$stats = self::forGroupInternal( $group, [], $flags );
 
 		self::queueUpdates();
 
@@ -139,13 +124,14 @@ class MessageGroupStats {
 	 * Returns stats for all group in all languages.
 	 * Might be slow, might use lots of memory.
 	 * Returns two dimensional array indexed by group and language.
-	 * @return Array
+	 * @param int $flags Combination of FLAG_* constants.
+	 * @return array[]
 	 */
-	public static function forEverything() {
+	public static function forEverything( $flags = 0 ) {
 		$groups = MessageGroups::singleton()->getGroups();
 		$stats = [];
 		foreach ( $groups as $g ) {
-			$stats = self::forGroupInternal( $g, $stats );
+			$stats = self::forGroupInternal( $g, $stats, $flags );
 		}
 
 		self::queueUpdates();
@@ -264,20 +250,21 @@ class MessageGroupStats {
 	/**
 	 * @param string $code Language code
 	 * @param array[] $stats
+	 * @param int $flags Combination of FLAG_* constants.
 	 * @return array[]
 	 */
-	protected static function forLanguageInternal( $code, array $stats = [] ) {
+	protected static function forLanguageInternal( $code, array $stats = [], $flags ) {
 		$groups = MessageGroups::singleton()->getGroups();
 
 		$ids = array_keys( $groups );
-		$res = self::selectRowsIdLang( null, $code );
+		$res = self::selectRowsIdLang( null, $code, $flags );
 		$stats = self::extractResults( $res, $ids, $stats );
 
 		foreach ( $groups as $id => $group ) {
 			if ( isset( $stats[$id][$code] ) ) {
 				continue;
 			}
-			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code );
+			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code, $flags );
 		}
 
 		return $stats;
@@ -305,11 +292,12 @@ class MessageGroupStats {
 	/**
 	 * @param MessageGroup $group
 	 * @param array[] $stats
+	 * @param int $flags Combination of FLAG_* constants.
 	 * @return array[]
 	 */
-	protected static function forGroupInternal( $group, array $stats = [] ) {
+	protected static function forGroupInternal( $group, array $stats = [], $flags ) {
 		$id = $group->getId();
-		$res = self::selectRowsIdLang( [ $id ], null );
+		$res = self::selectRowsIdLang( [ $id ], null, $flags );
 		$stats = self::extractResults( $res, [ $id ], $stats );
 
 		# Go over each language filling missing entries
@@ -320,7 +308,7 @@ class MessageGroupStats {
 			if ( isset( $stats[$id][$code] ) ) {
 				continue;
 			}
-			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code );
+			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code, $flags );
 		}
 
 		// This is for sorting the values added later in correct order
@@ -336,9 +324,14 @@ class MessageGroupStats {
 	 *
 	 * @param null|string[] $ids List of message group ids
 	 * @param null|string[] $codes List of language codes
+	 * @param int $flags Combination of FLAG_* constants.
 	 * @return Traversable Database result object
 	 */
-	protected static function selectRowsIdLang( $ids = null, $codes = null ) {
+	protected static function selectRowsIdLang( $ids = null, $codes = null, $flags ) {
+		if ( $flags & self::FLAG_NO_CACHE ) {
+			return [];
+		}
+
 		$conds = [];
 		if ( $ids !== null ) {
 			$dbids = array_map( 'self::getDatabaseIdForGroupId', $ids );
@@ -359,49 +352,24 @@ class MessageGroupStats {
 	 * @param array[] &$stats
 	 * @param MessageGroup $group
 	 * @param string $code Language code
-	 *
+	 * @param int $flags Combination of FLAG_* constants.
 	 * @return null[]|int[]
 	 */
-	protected static function forItemInternal( &$stats, $group, $code ) {
+	protected static function forItemInternal( &$stats, $group, $code, $flags ) {
 		$id = $group->getId();
 
-		if ( self::$timeStart !== null && ( microtime( true ) - self::$timeStart ) > self::$limit ) {
+		if ( $flags & self::FLAG_CACHE_ONLY ) {
 			$stats[$id][$code] = self::getUnknownStats();
 			return $stats[$id][$code];
 		}
 
 		if ( $group instanceof AggregateMessageGroup ) {
-			$aggregates = self::getEmptyStats();
-
-			$expanded = self::expandAggregates( $group );
-			if ( $expanded === [] ) {
-				return $aggregates;
-			}
-
-			$subGroupIds = array_keys( $expanded );
-			$res = self::selectRowsIdLang( $subGroupIds, $code );
-			$stats = self::extractResults( $res, $subGroupIds, $stats );
-
-			foreach ( $expanded as $sid => $subgroup ) {
-				# Discouraged groups may belong to another group, usually if there
-				# is an aggregate group for all translatable pages. In that case
-				# calculate and store the statistics, but don't count them as part of
-				# the aggregate group, so that the numbers in Special:LanguageStats
-				# add up. The statistics for discouraged groups can still be viewed
-				# through Special:MessageGroupStats.
-				if ( !isset( $stats[$sid][$code] ) ) {
-					$stats[$sid][$code] = self::forItemInternal( $stats, $subgroup, $code );
-				}
-
-				$include = Hooks::run( 'Translate:MessageGroupStats:isIncluded', [ $sid, $code ] );
-				if ( $include ) {
-					$aggregates = self::multiAdd( $aggregates, $stats[$sid][$code] );
-				}
-			}
-			$stats[$id][$code] = $aggregates;
+			$aggregates = self::calculateAggregageGroup( $stats, $group, $code, $flags );
 		} else {
 			$aggregates = self::calculateGroup( $group, $code );
 		}
+		// Cache for use in subsequent forItemInternal calls
+		$stats[$id][$code] = $aggregates;
 
 		// Don't add nulls to the database, causes annoying warnings
 		if ( $aggregates[self::TOTAL] === null ) {
@@ -416,6 +384,38 @@ class MessageGroupStats {
 			'tgs_fuzzy' => $aggregates[self::FUZZY],
 			'tgs_proofread' => $aggregates[self::PROOFREAD],
 		];
+
+		return $aggregates;
+	}
+
+	private static function calculateAggregageGroup( &$stats, $group, $code, $flags ) {
+		$aggregates = self::getEmptyStats();
+
+		$expanded = self::expandAggregates( $group );
+		if ( $expanded === [] ) {
+			return $aggregates;
+		}
+
+		$subGroupIds = array_keys( $expanded );
+		$res = self::selectRowsIdLang( $subGroupIds, $code, $flags );
+		$stats = self::extractResults( $res, $subGroupIds, $stats );
+
+		foreach ( $expanded as $sid => $subgroup ) {
+			# Discouraged groups may belong to another group, usually if there
+			# is an aggregate group for all translatable pages. In that case
+			# calculate and store the statistics, but don't count them as part of
+			# the aggregate group, so that the numbers in Special:LanguageStats
+			# add up. The statistics for discouraged groups can still be viewed
+			# through Special:MessageGroupStats.
+			if ( !isset( $stats[$sid][$code] ) ) {
+				$stats[$sid][$code] = self::forItemInternal( $stats, $subgroup, $code, $flags );
+			}
+
+			$include = Hooks::run( 'Translate:MessageGroupStats:isIncluded', [ $sid, $code ] );
+			if ( $include ) {
+				$aggregates = self::multiAdd( $aggregates, $stats[$sid][$code] );
+			}
+		}
 
 		return $aggregates;
 	}

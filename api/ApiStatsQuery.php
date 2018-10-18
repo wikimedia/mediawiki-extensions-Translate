@@ -18,12 +18,31 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 		return 'public';
 	}
 
+	/**
+	 * Implement this to implement input validation and return the name of the target that
+	 * is then given to loadStats.
+	 * @param array $params
+	 * @return string
+	 */
+	abstract protected function validateTargetParamater( array $params );
+
+	/**
+	 * Implement this to load stats.
+	 * @param string $target
+	 * @param int $flags See MessageGroupStats for possible flags
+	 * @return array[]
+	 */
+	abstract protected function getStats( $target, $flags );
+
 	public function execute() {
 		$params = $this->extractRequestParams();
-		MessageGroupStats::setTimeLimit( $params['timelimit'] );
 
-		$cache = $this->getData();
+		$target = $this->validateTargetParamater( $params );
+		$cache = $this->getStats( $target, MessageGroupStats::FLAG_CACHE_ONLY );
+
 		$result = $this->getResult();
+
+		$incomplete = false;
 
 		foreach ( $cache as $item => $stats ) {
 			if ( $item < $params['offset'] ) {
@@ -31,6 +50,7 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 			}
 
 			if ( $stats[MessageGroupStats::TOTAL] === null ) {
+				$incomplete = true;
 				$this->setContinueEnumParameter( 'offset', $item );
 				break;
 			}
@@ -40,6 +60,12 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 		}
 
 		$result->addIndexedTagName( [ 'query', $this->getModuleName() ], 'stats' );
+
+		if ( $incomplete ) {
+			DeferredUpdates::addCallableUpdate( function () use ( $target ) {
+				$this->getStats( $target );
+			} );
+		}
 	}
 
 	protected function makeItem( $item, $stats ) {

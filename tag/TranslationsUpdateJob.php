@@ -68,8 +68,7 @@ class TranslationsUpdateJob extends Job {
 
 		// Refresh translations statistics
 		$id = $page->getMessageGroupId();
-		MessageGroupStats::clearGroup( $id );
-		MessageGroupStats::forGroup( $id );
+		MessageGroupStats::forGroup( $id, MessageGroupStats::FLAG_NO_CACHE );
 
 		$wikiPage = WikiPage::factory( $page->getTitle() );
 		$wikiPage->doPurge();
