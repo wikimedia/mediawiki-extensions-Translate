@@ -4,7 +4,8 @@
 			"Nike",
 			"Siebrand Mazeland",
 			"Santhosh Thottingal",
-			"Amire80"
+			"Amire80",
+			"Zoranzoki21"
 		]
 	},
 	"managetranslatorsandbox": "Manage translator sandbox",
@@ -46,7 +47,7 @@
 	"tsb-limit-reached-title": "Thanks for your translations",
 	"tsb-limit-reached-body": "You reached the translation limit for new translators.\nOur team will verify and upgrade your account soon.\nThen you will be able to translate without limits.",
 	"tsb-no-requests-from-new-users": "No requests from new users",
-	"tsb-create-user-page": "Create basic user page",
+	"tsb-create-user-page": "Created basic user page",
 	"log-name-translatorsandbox": "Translation sandbox log",
 	"log-description-translatorsandbox": "A log of actions on translation sandbox users",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|promoted}} $3 to {{GENDER:$4|translator}}",
