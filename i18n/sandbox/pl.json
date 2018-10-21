@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"CiaPan"
 		]
 	},
 	"managetranslatorsandbox": "Zarządzanie brudnopisem tłumacza",
@@ -30,6 +31,7 @@
 	"tsb-accept-confirmation": "{{PLURAL:$1|Użytkownik zaakceptowany|Użytkownicy zaakceptowani}}",
 	"translationstash": "Powitanie",
 	"translate-translationstash-welcome": "Witaj $1, jesteś {{GENDER:$1|nowym tłumaczem|nową tłumaczką}}",
+	"translate-translationstash-welcome-note": "Zapoznaj się z narzędziami tłumacza. Przetłumacz część komunikatów i zostań pełnoprawnym tłumaczem aby uczestniczyć w wybranych projektach.",
 	"translate-translationstash-initialtranslation": "Twoje pierwotne tłumaczenie",
 	"translate-translationstash-translations": "$1 {{PLURAL:$1|ukończone tłumaczenie|ukończone tłumaczenia|ukończonych tłumaczeń}}",
 	"translate-translationstash-skip-button-label": "Spróbuj innego",
