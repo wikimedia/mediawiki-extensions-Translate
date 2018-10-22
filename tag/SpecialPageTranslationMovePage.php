@@ -198,7 +198,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			foreach ( $errors as $error ) {
 				$s .= '* ' . wfMessage( ...$error )->plain() . "\n";
 			}
-			$out->addWikiText( $s );
+			TranslateUtils::addWikiTextAsInterface( $out, $s );
 			$out->addHTML( '</div>' );
 		}
 	}
@@ -325,10 +325,10 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 				$lines[] = $this->getChangeLine( $base, $old, $target, $toBeMoved );
 			}
 
-			$out->addWikiText( implode( "\n", $lines ) );
+			TranslateUtils::addWikiTextAsInterface( $out, implode( "\n", $lines ) );
 		}
 
-		$out->addWikiText( "----\n" );
+		TranslateUtils::addWikiTextAsInterface( "----\n" );
 		$out->addWikiMsg( 'pt-movepage-list-count', $this->getLanguage()->formatNum( $count ) );
 
 		$br = Html::element( 'br' );
