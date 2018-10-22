@@ -109,6 +109,7 @@
 	"tux-editor-suggestions-title": "Sugesti",
 	"tux-editor-need-more-help": "Ka vu bezonas plusa helpo?",
 	"tux-editor-ask-help": "Demandez plusa informi",
+	"tux-editor-save-failed": "Faliis pri konservar la tradukuro: $1",
 	"tux-editor-message-desc-more": "Montrez pluse",
 	"tux-editor-message-desc-less": "Montrez mine",
 	"tux-editor-clear-translated": "Celar facita tradukuri",

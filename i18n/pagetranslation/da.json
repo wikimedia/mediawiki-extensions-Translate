@@ -170,6 +170,8 @@
 	"pm-cancel-button-label": "Annullér",
 	"pm-page-does-not-exist": "$1 findes ikke.",
 	"pm-old-translations-missing": "$1 indeholder ingen gamle oversættelser.",
+	"pm-delete-icon-hover-text": "Slet enhed",
+	"pm-pagetitle-placeholder": "Indtast sidetitlen",
 	"tpt-translate-title": "Tillad oversættelse af sidetitlen",
 	"pp-pagename-placeholder": "Indtast sidenavnet",
 	"pp-prepare-button-label": "Forbered",
