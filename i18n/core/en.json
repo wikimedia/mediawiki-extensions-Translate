@@ -197,6 +197,7 @@
 	"supportedlanguages-localsummary": "",
 	"supportedlanguages-portallink": "[$1] $2 - $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
+	"supportedlanguages-sqlite-error": "SQLite is not supported",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Translator}}|Translators}}: $1",
 	"supportedlanguages-recenttranslations": "recent translations",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|language|languages}} in total.",

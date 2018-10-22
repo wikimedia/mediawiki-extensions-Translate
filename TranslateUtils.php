@@ -513,4 +513,24 @@ class TranslateUtils {
 		}
 		return SpecialPageFactory::getPage( $name );
 	}
+
+	/**
+	 * Compatibility for pre-1.32, before OutputPage::addWikiTextAsInterface()
+	 *
+	 * @see OutputPage::addWikiTextAsInterface
+	 * @param OutputPage $out
+	 * @param string $text The wikitext to add to the output.
+	 */
+	public static function addWikiTextAsInterface( OutputPage $out, $text ) {
+		if ( is_callable( [ $out, 'addWikiTextAsInterface' ] ) ) {
+			$out->addWikiTextAsInterface( $text );
+		} else {
+			// $out->addWikiTextTitle is deprecated in 1.32, but has existed
+			// since (at least) MW 1.21, so use that as a fallback.
+			$out->addWikiTextTitle(
+				$text, $out->getTitle(),
+				/*linestart*/true, /*tidy*/true, /*interface*/true
+			);
+		}
+	}
 }

@@ -218,25 +218,33 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		$out->wrapWikiMsg( '== $1 ==', 'pt-deletepage-list-pages' );
 		if ( !$this->singleLanguage() ) {
 			$count++;
-			$this->printChangeLine( $this->title );
+			TranslateUtils::addWikiTextAsInterface(
+				$out,
+				$this->getChangeLine( $this->title )
+			);
 		}
 
 		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-translation' );
 		$translationPages = $this->getTranslationPages();
+		$lines = [];
 		foreach ( $translationPages as $old ) {
 			$count++;
-			$this->printChangeLine( $old );
+			$lines[] = $this->getChangeLine( $old );
 		}
+		TranslateUtils::addWikiTextAsInterface( implode( "\n", $lines ) );
 
 		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-section' );
 		$sectionPages = $this->getSectionPages();
+		$lines = [];
 		foreach ( $sectionPages as $old ) {
 			$count++;
-			$this->printChangeLine( $old );
+			$lines[] = $this->getChangeLine( $old );
 		}
+		TranslateUtils::addWikiTextAsInterface( implode( "\n", $lines ) );
 
 		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-other' );
 		$subpages = $this->getSubpages();
+		$lines = [];
 		foreach ( $subpages as $old ) {
 			if ( TranslatablePage::isTranslationPage( $old ) ) {
 				continue;
@@ -246,10 +254,11 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 				$count++;
 			}
 
-			$this->printChangeLine( $old, $this->doSubpages );
+			$lines[] = $this->getChangeLine( $old, $this->doSubpages );
 		}
+		TranslateUtils::addWikiTextAsInterface( implode( "\n", $lines ) );
 
-		$out->addWikiText( "----\n" );
+		TranslateUtils::addWikiTextAsInterface( $out, "----\n" );
 		$out->addWikiMsg( 'pt-deletepage-list-count', $this->getLanguage()->formatNum( $count ) );
 
 		$formDescriptor = [
@@ -302,12 +311,13 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	/**
 	 * @param Title $title
 	 * @param bool $enabled
+	 * @return string One line of wikitext, without trailing newline.
 	 */
-	protected function printChangeLine( $title, $enabled = true ) {
+	protected function getChangeLine( $title, $enabled = true ) {
 		if ( $enabled ) {
-			$this->getOutput()->addWikiText( '* ' . $title->getPrefixedText() );
+			return '* ' . $title->getPrefixedText();
 		} else {
-			$this->getOutput()->addWikiText( '* <s>' . $title->getPrefixedText() . '</s>' );
+			return '* <s>' . $title->getPrefixedText() . '</s>';
 		}
 	}
 
