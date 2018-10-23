@@ -98,7 +98,7 @@
 	"log-description-pagetranslation": "Дневник на дејства кои се однесуваат на системот за превод на страници",
 	"log-name-pagetranslation": "Дневник на преводи на страници",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|ја означи}} $3 за преведување",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|ја отстрани}} $3 од преведувањето",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|ја отстрани}} $3 од преводниот систем",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|го заврши}} преименувањето на преводливата страница $3 во $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|наиде}} на проблем при преместувањето на страницата $3 на $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|го заврши}} бришењето на преводливата страница $3",

@@ -205,6 +205,7 @@
 	"supportedlanguages": "اللغات المدعومة",
 	"supportedlanguages-summary": "تظهر هذه الصفحة قائمة بكل اللغات التي يدعمها {{SITENAME}}،\nمع أسماء المترجمين الذين يعملون على هذه اللغة.\nكلما ظهر اسم المترجم بخط أكبر، كان عدد تعديلاته أكثر.\nويشير لون الخط السفلي إلى حداثة نشاط المترجم هنا.",
 	"supportedlanguages-colorlegend": "مفتاح الألوان: آخر ترجمة منذ $1 يوم.",
+	"supportedlanguages-sqlite-error": "SQLite غير مدعوم",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|مترجم|مترجمة}}|مترجمون}}: $1",
 	"supportedlanguages-recenttranslations": "الترجمات الأخيرة",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|لغة|لغات}} إجمالا.",

@@ -209,6 +209,7 @@
 	"supportedlanguages-colorlegend": "Legenda dei colori: ultima traduzione $1 giorni fa.",
 	"supportedlanguages-portallink": "[$1] $2 - $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
+	"supportedlanguages-sqlite-error": "SQLite non è supportato",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Traduttore|Traduttrice}}|Traduttori}}: $1",
 	"supportedlanguages-recenttranslations": "traduzioni recenti",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|lingua|lingue}} in totale.",

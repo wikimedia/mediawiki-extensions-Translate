@@ -191,6 +191,7 @@
 	"supportedlanguages-colorlegend": "Leggende d'u culore: L'urtema traduzione jè de $1 sciurne fà.",
 	"supportedlanguages-portallink": "[$1] $2 - $3",
 	"supportedlanguages-portallink-nocldr": "[$1] $2",
+	"supportedlanguages-sqlite-error": "SQLite non g'è supportate",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Traduttore}}|Tradutture}}: $1",
 	"supportedlanguages-recenttranslations": "traduziune recende",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|lènghe}} in totale.",

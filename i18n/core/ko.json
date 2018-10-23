@@ -199,6 +199,7 @@
 	"supportedlanguages": "지원하는 언어",
 	"supportedlanguages-summary": "이 문서는 {{SITENAME}}에서 지원하는 모든 언어의 목록과 그 언어로 번역하는 번역자의 이름을 보여줍니다.\n번역자가 편집을 더 많이 할수록 이름이 크게 나타납니다.\n밑줄의 색깔은 번역자가 얼마나 최근에 활동했는지를 나타냅니다.",
 	"supportedlanguages-colorlegend": "색깔 범례: 마지막 번역을 한 날짜가 $1일 전.",
+	"supportedlanguages-sqlite-error": "SQLite는 지원되지 않습니다",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|번역자}}|번역자}}: $1",
 	"supportedlanguages-recenttranslations": "최근 번역",
 	"supportedlanguages-count": "총 {{PLURAL:$1|언어 수}}는 $1개입니다.",

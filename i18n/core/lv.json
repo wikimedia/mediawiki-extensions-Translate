@@ -124,6 +124,7 @@
 	"translate-mgs-column-language": "Valoda",
 	"translate-mgs-totals": "Visas $1 {{PLURAL:$1|valodas|valoda|valodas}} kopā",
 	"supportedlanguages": "Atbalstītās valodas",
+	"supportedlanguages-sqlite-error": "SQLite nav atbaltīts",
 	"supportedlanguages-translators": "{{PLURAL:$2|Tulkotāji|{{GENDER:$3|Tulkotājs|Tulkotāja}}|Tulkotāji}}: $1",
 	"supportedlanguages-recenttranslations": "pēdējie tulkojumi",
 	"translate-save": "Saglabāt ($1)",

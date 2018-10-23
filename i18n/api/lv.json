@@ -17,5 +17,7 @@
 	"apihelp-translationstash-param-subaction": "Darbība.",
 	"apihelp-translationstash-param-metadata": "JSON objekts.",
 	"apihelp-searchtranslations-description": "Meklēt tulkojumus.",
-	"apihelp-searchtranslations-summary": "Meklēt tulkojumus."
+	"apihelp-searchtranslations-summary": "Meklēt tulkojumus.",
+	"apihelp-searchtranslations-param-limit": "Rezultāta izmērs.",
+	"apierror-translate-sandbox-invalidppassword": "Nederīga parole"
 }
