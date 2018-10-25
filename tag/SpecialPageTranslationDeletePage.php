@@ -231,7 +231,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 			$count++;
 			$lines[] = $this->getChangeLine( $old );
 		}
-		TranslateUtils::addWikiTextAsInterface( implode( "\n", $lines ) );
+		TranslateUtils::addWikiTextAsInterface( $out, implode( "\n", $lines ) );
 
 		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-section' );
 		$sectionPages = $this->getSectionPages();
@@ -240,7 +240,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 			$count++;
 			$lines[] = $this->getChangeLine( $old );
 		}
-		TranslateUtils::addWikiTextAsInterface( implode( "\n", $lines ) );
+		TranslateUtils::addWikiTextAsInterface( $out, implode( "\n", $lines ) );
 
 		$out->wrapWikiMsg( '=== $1 ===', 'pt-deletepage-list-other' );
 		$subpages = $this->getSubpages();
@@ -256,7 +256,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 
 			$lines[] = $this->getChangeLine( $old, $this->doSubpages );
 		}
-		TranslateUtils::addWikiTextAsInterface( implode( "\n", $lines ) );
+		TranslateUtils::addWikiTextAsInterface( $out, implode( "\n", $lines ) );
 
 		TranslateUtils::addWikiTextAsInterface( $out, "----\n" );
 		$out->addWikiMsg( 'pt-deletepage-list-count', $this->getLanguage()->formatNum( $count ) );

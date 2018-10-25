@@ -328,7 +328,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			TranslateUtils::addWikiTextAsInterface( $out, implode( "\n", $lines ) );
 		}
 
-		TranslateUtils::addWikiTextAsInterface( "----\n" );
+		TranslateUtils::addWikiTextAsInterface( $out, "----\n" );
 		$out->addWikiMsg( 'pt-movepage-list-count', $this->getLanguage()->formatNum( $count ) );
 
 		$br = Html::element( 'br' );
