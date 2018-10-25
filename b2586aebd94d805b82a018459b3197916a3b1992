@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "de9e03b1_6979f7bd",
+        "filename": "tag/SpecialPageTranslationDeletePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-25T09:05:19Z",
+      "side": 1,
+      "message": "All of these are missing the first parameter: https://phabricator.wikimedia.org/T207930",
+      "revId": "b2586aebd94d805b82a018459b3197916a3b1992",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85c4faae_02a74e59",
+        "filename": "tag/SpecialPageTranslationMovePage.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-25T09:05:19Z",
+      "side": 1,
+      "message": "And this.",
+      "revId": "b2586aebd94d805b82a018459b3197916a3b1992",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
