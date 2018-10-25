@@ -678,9 +678,9 @@ GROOVY;
 	 * @param string $queryString
 	 * @param array $opts
 	 * @param array $highlight
-	 * @return array
+	 * @return \Elastica\Search
 	 */
-	public function search( $queryString, $opts, $highlight ) {
+	public function createSearch( $queryString, $opts, $highlight ) {
 		$query = new \Elastica\Query();
 
 		list( $searchQuery, $highlights ) = $this->parseQueryString( $queryString, $opts );
@@ -734,8 +734,21 @@ GROOVY;
 			'fields' => $highlights,
 		] );
 
+		return $this->getType()->getIndex()->createSearch( $query );
+	}
+
+	/**
+	 * Search interface
+	 * @param string $queryString
+	 * @param array $opts
+	 * @param array $highlight
+	 * @return \Elastica\ResultSet
+	 */
+	public function search( $queryString, $opts, $highlight ) {
+		$search = $this->createSearch( $queryString, $opts, $highlight );
+
 		try {
-			return $this->getType()->getIndex()->search( $query );
+			return $search->search( $query );
 		} catch ( \Elastica\Exception\ExceptionInterface $e ) {
 			throw new TTMServerException( $e->getMessage() );
 		}
