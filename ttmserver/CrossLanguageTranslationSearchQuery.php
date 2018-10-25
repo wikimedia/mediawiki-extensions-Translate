@@ -26,53 +26,65 @@ class CrossLanguageTranslationSearchQuery {
 	public function getDocuments() {
 		$documents = [];
 		$total = $start = 0;
-		$queryString = $this->params['query'];
 		$offset = $this->params['offset'];
 		$limit = $this->params['limit'];
 		$size = 1000;
 
 		$options = $this->params;
-		$options['limit'] = $size;
 		$options['language'] = $this->params['sourcelanguage'];
-		do {
-			$options['offset'] = $start;
-			$this->resultset = $this->server->search( $queryString, $options, $this->hl );
+		// Use a bigger limit that what was requested, since we are likely to throw away many
+		// results in the local filtering step at extractMessages
+		$options['limit'] = $limit * 10;
+		// TODO: the real offset should be communicated to the frontend. It currently assumes
+		// next offset is current offset + limit and previous one is current offset - limit.
+		// It might be difficult to fix scrolling results backwards. For now we handle offset
+		// locally.
+		$options['offset'] = 0;
 
-			list( $results, $offsets ) = $this->extractMessages(
-				$this->resultset,
-				$offset,
-				$limit
-			);
-			$offset = $offsets['start'] + $offsets['left'] - $offsets['total'];
-			$limit = $limit - $offsets['left'];
-			$total = $total + $offsets['total'];
+		$search = $this->server->createSearch( $this->params['query'], $options, $this->hl );
+		$scroll = $search->scroll( '5s' );
 
+		// Used for aggregations. Only the first scroll response has them.
+		$this->resultset = null;
+
+		foreach ( $scroll as $scrollId => $resultSet ) {
+			if ( !$this->resultset ) {
+				$this->resultset = $resultSet;
+				$this->total = $resultSet->getTotalHits();
+			}
+
+			$results = $this->extractMessages( $resultSet->getDocuments() );
 			$documents = array_merge( $documents, $results );
-			$start = $start + $size;
-		} while (
-			$offsets['start'] + $offsets['left'] >= $offsets['total'] &&
-			$this->resultset->getTotalHits() > $start
-		);
-		$this->total = $total;
+
+			$count = count( $documents );
+
+			if ( $count >= $offset + $limit ) {
+				break;
+			}
+		}
+
+		// clear was introduced in Elastica 5.3.1, but Elastica extension uses 5.3.0
+		if ( is_callable( [ $scroll, 'clear' ] ) ) {
+			$scroll->clear();
+		}
+		$documents = array_slice( $documents, $offset, $limit );
 
 		return $documents;
 	}
 
 	/**
-	 * Extract messages from the resultset and build message definitions.
+	 * Extract messages from the documents and build message definitions.
 	 * Create a message collection from the definitions in the target language.
 	 * Filter the message collection to get filtered messages.
 	 * Slice messages according to limit and offset given.
-	 * @param ResultSet $resultset
-	 * @param int $offset
-	 * @param int $limit
-	 * @return array
+	 * @param \Elastica\Document[] $documents
+	 * @return array[]
 	 */
-	protected function extractMessages( $resultset, $offset, $limit ) {
-		$messages = $documents = $ret = [];
+	protected function extractMessages( $documents ) {
+		$messages = $ret = [];
 
 		$language = $this->params['language'];
-		foreach ( $resultset->getResults() as $document ) {
+		foreach ( $documents as $document ) {
 			$data = $document->getData();
 
 			if ( !$this->server->isLocalSuggestion( $data ) ) {
@@ -103,32 +115,24 @@ class CrossLanguageTranslationSearchQuery {
 			$collection->filter( $filter, false );
 		}
 
-		$total = count( $collection );
-		$offset = $collection->slice( $offset, $limit );
-		$left = count( $collection );
-
-		$offsets = [
-			'start' => $offset[2],
-			'left' => $left,
-			'total' => $total,
-		];
-
 		if ( $filter === 'translated' || $filter === 'fuzzy' ) {
 			$collection->loadTranslations();
 		}
 
 		foreach ( $collection->keys() as $mkey => $title ) {
-			$documents[$mkey]['content'] = $messages[$mkey];
+			$result = [];
+			$result['content'] = $messages[$mkey];
 			if ( $filter === 'translated' || $filter === 'fuzzy' ) {
-				$documents[$mkey]['content'] = $collection[$mkey]->translation();
+				$result['content'] = $collection[$mkey]->translation();
 			}
 			$handle = new MessageHandle( $title );
-			$documents[$mkey]['localid'] = $handle->getTitleForBase()->getPrefixedText();
-			$documents[$mkey]['language'] = $language;
-			$ret[] = $documents[$mkey];
+			$result['localid'] = $handle->getTitleForBase()->getPrefixedText();
+			$result['language'] = $language;
+
+			$ret[] = $result;
 		}
 
-		return [ $ret, $offsets ];
+		return $ret;
 	}
 
 	/**

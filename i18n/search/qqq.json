@@ -14,8 +14,8 @@
 	"tux-sst-search": "A button text.\n{{Identical|Search}}",
 	"tux-sst-search-ph": "Placeholder text in input field.\n{{Identical|Search translation}}",
 	"tux-sst-count": "Parameters:\n* $1 - the number of search results",
-	"tux-sst-facet-language": "Label for a facet in [[Special:TranslationSearch]].\n{{Identical|Language}}",
-	"tux-sst-facet-group": "Label for a facet in [[Special:TranslationSearch]].\n{{Identical|Message group}}",
+	"tux-sst-facet-language": "Label for a facet in [[Special:SearchTranslations]].\n{{Identical|Language}}",
+	"tux-sst-facet-group": "Label for a facet in [[Special:SearchTranslations]].\n{{Identical|Message group}}",
 	"tux-sst-nosolr-title": "Used as title of error page.\n\nThe body of error message is {{msg-mw|Tux-sst-nosolr-body}}.\n{{Identical|Search unavailable}}",
 	"tux-sst-nosolr-body": "Used as error message.\n\nThe page title for this message is {{msg-mw|Tux-sst-nosolr-title}}.",
 	"tux-sst-solr-offline-title": "Used as title of error page.\n\nThe body of error message is {{msg-mw|Tux-sst-solr-offline-body}}.\n{{Identical|Search unavailable}}",
@@ -30,5 +30,7 @@
 	"tux-sst-ellipsis-outdated": "Used as label for an ellipsis to hide outdated messages.",
 	"tux-sst-link-all-match": "Link to filter the results to match all search words.",
 	"tux-sst-match-message": "Used to inform users about an option to get results for all search words. Parameters:\n* $1 - {{msg-mw|tux-sst-link-all-match}}.",
-	"tux-sst-case-sensitive": "Label for a case sensitive checkbox"
+	"tux-sst-case-sensitive": "Label for a case sensitive checkbox",
+	"tux-sst-error-offset": "Shown on Special:SearchTranslations when offset is too large.",
+	"tux-sst-error-language": "Shown on Special:SearchTranslations when search query is invalid."
 }
