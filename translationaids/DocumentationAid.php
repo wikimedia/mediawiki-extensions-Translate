@@ -29,7 +29,9 @@ class DocumentationAid extends TranslationAid {
 		return [
 			'language' => $wgContLang->getCode(),
 			'value' => $info,
-			'html' => $this->context->getOutput()->parse( $info ),
+			'html' => TranslateUtils::parseAsInterface(
+				$this->context->getOutput(), $info
+			),
 		];
 	}
 }

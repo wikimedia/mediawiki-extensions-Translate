@@ -372,7 +372,7 @@ class TranslationHelpers {
 		$divAttribs = [ 'dir' => 'ltr', 'lang' => 'en', 'class' => 'mw-content-ltr' ];
 
 		if ( (string)$info === '' ) {
-			$info = $context->msg( 'translate-edit-no-information' )->text();
+			$info = $context->msg( 'translate-edit-no-information' )->plain();
 			$class = 'mw-sp-translate-edit-noinfo';
 			$lang = $context->getLanguage();
 			// The message saying that there's no info, should be translated
@@ -380,9 +380,9 @@ class TranslationHelpers {
 		}
 		$class .= ' mw-sp-translate-message-documentation';
 
-		$contents = $context->getOutput()->parse( $info );
-		// Remove whatever block element wrapup the parser likes to add
-		$contents = preg_replace( '~^<([a-z]+)>(.*)</\1>$~us', '\2', $contents );
+		$contents = TranslateUtils::parseInlineAsInterface(
+			$context->getOutput(), $info
+		);
 
 		return TranslateUtils::fieldset(
 			$context->msg( 'translate-edit-information' )->rawParams( $edit )->escaped(),
