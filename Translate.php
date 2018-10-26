@@ -17,7 +17,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 /**
  * Version number used in extension credits and in other places where needed.
  */
-define( 'TRANSLATE_VERSION', '2018-07-10' );
+define( 'TRANSLATE_VERSION', '2018-10-26' );
 
 /**
  * Extension credits properties.
