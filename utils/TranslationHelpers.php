@@ -380,8 +380,12 @@ class TranslationHelpers {
 		}
 		$class .= ' mw-sp-translate-message-documentation';
 
-		$contents = $context->getOutput()->parse( $info );
+		$contents = TranslateUtils::parseAsInterface(
+			$context->getOutput(), $info
+		);
 		// Remove whatever block element wrapup the parser likes to add
+		// XXX: replace this with OutputPage::parseInlineAsInterface()
+		// after 1.33, which takes care of removing the wrapper for us.
 		$contents = preg_replace( '~^<([a-z]+)>(.*)</\1>$~us', '\2', $contents );
 
 		return TranslateUtils::fieldset(

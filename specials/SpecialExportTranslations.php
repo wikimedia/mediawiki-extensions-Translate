@@ -39,8 +39,10 @@ class SpecialExportTranslations extends SpecialPage {
 		if ( $this->groupId ) {
 			$status = $this->checkInput();
 			if ( !$status->isGood() ) {
-				$errors = $out->parse( $status->getWikiText( false, false, $lang ) );
-				$out->addHTML( Html::rawElement( 'div', [ 'class' => 'error' ], $errors ) );
+				TranslateUtils::wrapWikiTextAsInterface(
+					$out, 'error',
+					$status->getWikiText( false, false, $lang )
+				);
 				return;
 			}
 
