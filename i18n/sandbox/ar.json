@@ -46,7 +46,7 @@
 	"tsb-limit-reached-title": "شكرا لترجماتك",
 	"tsb-limit-reached-body": "أنت وصلت لحد الترجمة للمترجمين الجدد.\nفريقنا سيتحقق ويرقي حسابك قريبا.\nثم ستصبح قادرا على الترجمة بدون حدود.",
 	"tsb-no-requests-from-new-users": "لا طلبات من المستخدمين الجدد",
-	"tsb-create-user-page": "إنشاء صفحة مستخدم أساسية",
+	"tsb-create-user-page": "أنشأ صفحة مستخدم أساسية",
 	"log-name-translatorsandbox": "سجل ملعب الترجمة",
 	"log-description-translatorsandbox": "سجل بالأفعال على مستخدمي ملعب الترجمة",
 	"logentry-translatorsandbox-promoted": "{{GENDER:$2|رقى|رقت}} $1 $3 {{GENDER:$4|لمترجم|لمترجمة}}",

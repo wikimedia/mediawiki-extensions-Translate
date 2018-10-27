@@ -12,6 +12,7 @@
 	"tsb-accept-all-button-label": "Прихвати све",
 	"tsb-reject-all-button-label": "Одбији све",
 	"tsb-translations-source": "Извор",
+	"tsb-create-user-page": "Направљена основна корисничка страница",
 	"log-name-translatorsandbox": "Дневник превода у песку",
 	"logentry-translatorsandbox-promoted": "$1 је {{GENDER:$2|унапредио|унапредила}} $3 у {{GENDER:$4|преводиоца}}",
 	"logentry-translatorsandbox-rejected": "$1 је {{GENDER:$2|одбио|одбила}} захтев корисника/це „$3” да постане преводилац"

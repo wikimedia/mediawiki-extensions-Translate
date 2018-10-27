@@ -12,7 +12,8 @@
 			"Framafan",
 			"Pathe",
 			"TomT0m",
-			"Derugon"
+			"Derugon",
+			"Wladek92"
 		]
 	},
 	"managetranslatorsandbox": "Gérer le bac à sable de traduction",
@@ -54,7 +55,7 @@
 	"tsb-limit-reached-title": "Merci pour vos traductions",
 	"tsb-limit-reached-body": "Vous avez atteint la limite de traductions pour les nouveaux traducteurs.\nNotre équipe va vérifier et mettre à niveau votre compte bientôt.\nEnsuite, vous serez en mesure de traduire sans limites.",
 	"tsb-no-requests-from-new-users": "Aucune requête de nouveaux utilisateurs",
-	"tsb-create-user-page": "Créer une page d’utilisateur de base",
+	"tsb-create-user-page": "Page d’utilisateur de base créée",
 	"log-name-translatorsandbox": "Journal du bac à sable de traduction",
 	"log-description-translatorsandbox": "Un journal des actions sur les utilisateurs du bac à sable de traduction",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|a promu}} $3 en {{GENDER:$4|traducteur|traductrice}}.",

@@ -48,7 +48,7 @@
 	"tsb-limit-reached-title": "당신의 번역에 감사드립니다.",
 	"tsb-limit-reached-body": "새 번역자를 위한 번역 제한에 도달했습니다. 저희가 당신의 계정을 확인하고 업그레이드한 후에, 제한 없이 번역하실 수 있습니다.",
 	"tsb-no-requests-from-new-users": "새 사용자의 요청 없음",
-	"tsb-create-user-page": "기본 사용자 문서 만들기",
+	"tsb-create-user-page": "기본 사용자 문서를 만듦",
 	"log-name-translatorsandbox": "번역 연습장 기록",
 	"log-description-translatorsandbox": "번역 연습 사용자의 명령 기록",
 	"logentry-translatorsandbox-promoted": "$1님이 $3님을 {{GENDER:$4|번역자}}로 {{GENDER:$2|승격시켰습니다}}",
