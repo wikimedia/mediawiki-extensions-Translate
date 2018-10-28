@@ -3,7 +3,8 @@
 		"authors": [
 			"Shirayuki",
 			"Sujiniku",
-			"Otokoume"
+			"Otokoume",
+			"Omotecho"
 		]
 	},
 	"managetranslatorsandbox": "翻訳者サンドボックスの管理",
@@ -41,7 +42,7 @@
 	"tsb-limit-reached-title": "翻訳していただいてありがとうございます",
 	"tsb-limit-reached-body": "新規翻訳者の翻訳数の上限に達しました。\n私たちのチームがまもなく、アカウントを検証してアップグレードします。\nその後、上限なしで翻訳できるようになります。",
 	"tsb-no-requests-from-new-users": "新規利用者からの申請はありません",
-	"tsb-create-user-page": "基礎的な利用者ページを作成",
+	"tsb-create-user-page": "基礎的な利用者ページが作成されました",
 	"log-name-translatorsandbox": "翻訳サンドボックス記録",
 	"log-description-translatorsandbox": "翻訳サンドボックス利用者への操作の記録",
 	"logentry-translatorsandbox-promoted": "$1 が $3 を{{GENDER:$4|翻訳者}}に{{GENDER:$2|昇格させました}}",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Fabsouza1",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"managetranslatorsandbox": "Gerenciar tradutor da página de testes",
@@ -44,7 +45,7 @@
 	"tsb-limit-reached-title": "Obrigado pelas suas traduções",
 	"tsb-limit-reached-body": "Você alcançou o limite de tradução para novos tradutores.\nO nosso time verificará e atualizará sua conta em breve.\nEntão você poderá traduzir sem limites.",
 	"tsb-no-requests-from-new-users": "Nenhuma solicitação de novos usuários",
-	"tsb-create-user-page": "Criar página de usuário básica",
+	"tsb-create-user-page": "Página de usuário básica criada",
 	"log-name-translatorsandbox": "Registro da página de testes de tradução",
 	"log-description-translatorsandbox": "Um registro de ações dos usuários de página de testes de tradução",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|promoveu}} $3 para {{GENDER:$4|tradutor|tradutora}}",

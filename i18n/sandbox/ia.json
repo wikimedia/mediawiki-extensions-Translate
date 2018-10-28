@@ -41,7 +41,7 @@
 	"tsb-limit-reached-title": "Gratias pro tu traductiones",
 	"tsb-limit-reached-body": "Tu ha attingite le numero limite de traductiones pro le nove traductores. Nostre equipa va verificar e promover tu conto bentosto. Postea tu potera traducer sin limite.",
 	"tsb-no-requests-from-new-users": "Il non ha requestas de nove usatores",
-	"tsb-create-user-page": "Crear un pagina de usator basic",
+	"tsb-create-user-page": "Creation de un pagina de usator basic",
 	"log-name-translatorsandbox": "Registro del cassa a sablo de traduction",
 	"log-description-translatorsandbox": "Un registro de actiones sur usatores in le cassa a sablo de traduction",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|promoveva}} $3 a {{GENDER:$4|traductor}}",

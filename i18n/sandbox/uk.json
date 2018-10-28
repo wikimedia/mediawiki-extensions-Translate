@@ -4,7 +4,8 @@
 			"Andriykopanytsia",
 			"Base",
 			"Ата",
-			"Piramidion"
+			"Piramidion",
+			"Vlad5250"
 		]
 	},
 	"managetranslatorsandbox": "Керування грамайданчиком перекладачів",
@@ -46,7 +47,7 @@
 	"tsb-limit-reached-title": "Спасибі за ваші переклади",
 	"tsb-limit-reached-body": "Вами досягнута межа перекладу для нових перекладачів.\nНаша команда невдовзі перевірить і оновить ваш обліковий запис.\nПотім зможете перекладати без обмежень.",
 	"tsb-no-requests-from-new-users": "Немає запитів від нових користувачів",
-	"tsb-create-user-page": "Створити основну сторінку користувача",
+	"tsb-create-user-page": "Створено основну сторінку користувача",
 	"log-name-translatorsandbox": "Журнал пісочниці перекладу",
 	"log-description-translatorsandbox": "Журнал дій користувачів у пісочниці перекладу",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|підвищив|підвищила}} $3 до {{GENDER:$4|перекладача|перекладачки}}",

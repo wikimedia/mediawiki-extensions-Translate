@@ -5,7 +5,8 @@
 			"Okras",
 			"Redredsonia",
 			"Ole Yves",
-			"Stjn"
+			"Stjn",
+			"Vlad5250"
 		]
 	},
 	"managetranslatorsandbox": "Управление песочницей переводчика",
@@ -47,7 +48,7 @@
 	"tsb-limit-reached-title": "Спасибо за ваши переводы",
 	"tsb-limit-reached-body": "Вы достигли предела переводов для новых переводчиков.\nНаша команда проверит и обновит вашу учётную запись в ближайшее время.\nПосле этого вы сможете переводить без ограничений.",
 	"tsb-no-requests-from-new-users": "Нет запросов от новых участников",
-	"tsb-create-user-page": "Создал простую страницу участника",
+	"tsb-create-user-page": "Создана основная страница участника",
 	"log-name-translatorsandbox": "Журнал песочницы для переводов",
 	"log-description-translatorsandbox": "Журнал действий с участниками песочницы переводов",
 	"logentry-translatorsandbox-promoted": "$1 сделал{{GENDER:$2||а}}$3 {{GENDER:$4|переводчиком}}.",
