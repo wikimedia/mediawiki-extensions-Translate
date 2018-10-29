@@ -210,6 +210,7 @@
 	"supportedlanguages": "Språk som stöds",
 	"supportedlanguages-summary": "Den här sidan visar en lista över alla språk som stöds av {{SITENAME}},\ntillsammans med namnen på översättarna som arbetar på det språket.\nEn översättares namn visas större ju fler redigeringar översättaren har bidragit med.\nFärgen på en understrykning visar hur nyligen en översättare har varit aktiv här.",
 	"supportedlanguages-colorlegend": "Färgförklaring: Senaste översättningen gjordes $1 dagar sedan.",
+	"supportedlanguages-sqlite-error": "SQLite stöds inte",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Översättare}}}}: $1",
 	"supportedlanguages-recenttranslations": "senaste översättningar",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|språk}} totalt.",
