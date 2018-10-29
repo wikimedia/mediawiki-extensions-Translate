@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7c472962_6f3f8ce2",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2018-10-29T21:29:57Z",
+      "side": 1,
+      "message": "Can we move this into TranslateUtils?",
+      "range": {
+        "startLine": 386,
+        "startChar": 3,
+        "endLine": 390,
+        "endChar": 0
+      },
+      "revId": "6a89272d1d53415cbf1fbf44dca8324cbf9a9bd8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
