@@ -1,0 +1,11 @@
+== Translate 2018.10 ==
+Released at 2018-10-29.
+
+=== Noteworthy changes ===
+* Show regular deletion form for pages that are never marked for translation.
+* Page translation languages can be displayed in the sidebar.
+* Various maintenance and stability updates.
+* Fixed an error that prevented Special:PageMigration from working.
+* TranslationStats' graphs now support high DPI displays using srcset.
+* Database usage optimizations (run update.php!).
+* Many special pages now look more consistent with other pages (OOUI).
