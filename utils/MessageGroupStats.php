@@ -28,8 +28,12 @@ class MessageGroupStats {
 	const FUZZY = 2; ///< Array index
 	const PROOFREAD = 3; ///< Array index
 
+	/// If stats are not cached, do not attempt to calculate them on the fly
 	const FLAG_CACHE_ONLY = 1;
+	/// Ignore cached values. Useful for updating stale values.
 	const FLAG_NO_CACHE = 2;
+	/// Do not defer saves. Meant for JobQueue.
+	const FLAG_BATCHED = 4;
 
 	/**
 	 * @var array[]
@@ -79,7 +83,7 @@ class MessageGroupStats {
 			$stats[$id][$code] = self::forItemInternal( $stats, $group, $code, $flags );
 		}
 
-		self::queueUpdates();
+		self::queueUpdates( $flags );
 
 		return $stats[$id][$code];
 	}
@@ -97,7 +101,7 @@ class MessageGroupStats {
 			$flattened[$group] = $languages[$code];
 		}
 
-		self::queueUpdates();
+		self::queueUpdates( $flags );
 
 		return $flattened;
 	}
@@ -115,7 +119,7 @@ class MessageGroupStats {
 		}
 		$stats = self::forGroupInternal( $group, [], $flags );
 
-		self::queueUpdates();
+		self::queueUpdates( $flags );
 
 		return $stats[$id];
 	}
@@ -134,7 +138,7 @@ class MessageGroupStats {
 			$stats = self::forGroupInternal( $g, $stats, $flags );
 		}
 
-		self::queueUpdates();
+		self::queueUpdates( $flags );
 
 		return $stats;
 	}
@@ -388,6 +392,12 @@ class MessageGroupStats {
 			'tgs_proofread' => $aggregates[self::PROOFREAD],
 		];
 
+		// For big and lengthy updates, attempt some interim saves. This might not have
+		// any effect, because writes to the database may be deferred.
+		if ( count( self::$updates ) % 20 === 0 ) {
+			self::queueUpdates( $flags );
+		}
+
 		return $aggregates;
 	}
 
@@ -495,12 +505,12 @@ class MessageGroupStats {
 		return $number < 0 ? "$number" : "+$number";
 	}
 
-	protected static function queueUpdates() {
+	protected static function queueUpdates( $flags ) {
 		if ( wfReadOnly() ) {
 			return;
 		}
 
-		if ( !count( self::$updates ) ) {
+		if ( self::$updates === [] ) {
 			return;
 		}
 
@@ -509,26 +519,32 @@ class MessageGroupStats {
 		$table = self::TABLE;
 		$updates = &self::$updates;
 
-		self::queueWithLock(
+		$updateOp = self::withLock(
 			$dbw,
 			'updates',
 			__METHOD__,
 			function ( IDatabase $dbw, $method ) use( $table, &$updates ) {
-				$dbw->insert(
-					$table,
-					$updates,
-					$method,
-					[ 'IGNORE' ]
-				);
+				// Maybe another deferred update already processed these
+				if ( $updates === [] ) {
+					return;
+				}
 
+				$primaryKey = [ 'tgs_group', 'tgs_lang' ];
+				$dbw->replace( $table, $primaryKey, $updates, $method );
 				$updates = [];
 			}
 		);
+
+		if ( $flags & self::FLAG_BATCHED ) {
+			call_user_func( $updateOp );
+		} else {
+			DeferredUpdates::addCallableUpdate( $updateOp );
+		}
 	}
 
-	protected static function queueWithLock( IDatabase $dbw, $key, $method, $callback ) {
+	protected static function withLock( IDatabase $dbw, $key, $method, $callback ) {
 		$fname = __METHOD__;
-		DeferredUpdates::addCallableUpdate( function () use ( $dbw, $key, $method, $callback, $fname ) {
+		return function () use ( $dbw, $key, $method, $callback, $fname ) {
 			$lockName = 'MessageGroupStats:' . $key;
 			if ( !$dbw->lock( $lockName, $fname, 1 ) ) {
 				return; // raced out
@@ -539,7 +555,7 @@ class MessageGroupStats {
 			$dbw->commit( $fname, 'flush' );
 
 			$dbw->unlock( $lockName, $fname );
-		} );
+		};
 	}
 
 	public static function getDatabaseIdForGroupId( $id ) {
