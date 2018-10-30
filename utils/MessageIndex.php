@@ -275,7 +275,7 @@ abstract class MessageIndex {
 	 * @param array $diff
 	 */
 	protected function clearMessageGroupStats( array $diff ) {
-		MessageGroupStats::forGroup( $diff['values'], MessageGroupStats::FLAG_NO_CACHE );
+		MessageGroupStats::clearGroup( $diff['values'] );
 
 		foreach ( $diff['keys'] as $keys ) {
 			foreach ( $keys as $key => $data ) {

@@ -70,6 +70,7 @@ $al['MessageGroupCache'] = "$dir/utils/MessageGroupCache.php";
 $al['MessageGroupStates'] = "$dir/utils/MessageGroupStates.php";
 $al['MessageGroupStatesUpdaterJob'] = "$dir/utils/MessageGroupStatesUpdaterJob.php";
 $al['MessageGroupStats'] = "$dir/utils/MessageGroupStats.php";
+$al['MessageGroupStatsRebuildJob'] = "$dir/utils/MessageGroupStatsRebuildJob.php";
 $al['MessageHandle'] = "$dir/utils/MessageHandle.php";
 $al['MessageIndex'] = "$dir/utils/MessageIndex.php";
 $al['MessageIndexRebuildJob'] = "$dir/utils/MessageIndexRebuildJob.php";
