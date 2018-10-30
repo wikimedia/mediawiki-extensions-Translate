@@ -514,13 +514,8 @@ class MessageGroupStats {
 			'updates',
 			__METHOD__,
 			function ( IDatabase $dbw, $method ) use( $table, &$updates ) {
-				$dbw->insert(
-					$table,
-					$updates,
-					$method,
-					[ 'IGNORE' ]
-				);
-
+				$primaryKey = [ 'tgs_group', 'tgs_lang' ];
+				$dbw->replace( $table, $primaryKey, $updates, $method );
 				$updates = [];
 			}
 		);
