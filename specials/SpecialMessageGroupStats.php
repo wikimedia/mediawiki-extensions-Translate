@@ -42,6 +42,11 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	}
 
 	/// Overwritten from SpecialLanguageStats
+	protected function getCacheRebuildJobParameters( $target ) {
+		return [ 'groupid' => $target ];
+	}
+
+	/// Overwritten from SpecialLanguageStats
 	protected function isValidValue( $value ) {
 		$group = MessageGroups::getGroup( $value );
 		if ( $group ) {

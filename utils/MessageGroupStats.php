@@ -388,6 +388,12 @@ class MessageGroupStats {
 			'tgs_proofread' => $aggregates[self::PROOFREAD],
 		];
 
+		// For big and lengthy updates, attempt some interim saves. This might not have
+		// any effect, because writes to the database may be deferred.
+		if ( count( self::$updates ) % 20 === 0 ) {
+			self::queueUpdates();
+		}
+
 		return $aggregates;
 	}
 
@@ -500,7 +506,7 @@ class MessageGroupStats {
 			return;
 		}
 
-		if ( !count( self::$updates ) ) {
+		if ( self::$updates === [] ) {
 			return;
 		}
 
@@ -514,13 +520,13 @@ class MessageGroupStats {
 			'updates',
 			__METHOD__,
 			function ( IDatabase $dbw, $method ) use( $table, &$updates ) {
-				$dbw->insert(
-					$table,
-					$updates,
-					$method,
-					[ 'IGNORE' ]
-				);
+				// Maybe another deferred update already processed these
+				if ( $updates === [] ) {
+					return;
+				}
 
+				$primaryKey = [ 'tgs_group', 'tgs_lang' ];
+				$dbw->replace( $table, $primaryKey, $updates, $method );
 				$updates = [];
 			}
 		);
