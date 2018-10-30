@@ -198,9 +198,10 @@ $wgLogActionsHandlers['translationreview/message'] = 'TranslateLogFormatter';
 $wgLogActionsHandlers['translationreview/group'] = 'TranslateLogFormatter';
 
 // New jobs
+$wgJobClasses['MessageGroupStatesUpdaterJob'] = 'MessageGroupStatesUpdaterJob';
+$wgJobClasses['MessageGroupStatsRebuildJob'] = 'MessageGroupStatsRebuildJob';
 $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
 $wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
-$wgJobClasses['MessageGroupStatesUpdaterJob'] = 'MessageGroupStatesUpdaterJob';
 $wgJobClasses['TTMServerMessageUpdateJob'] = 'TTMServerMessageUpdateJob';
 
 $wgParserTestFiles[] = "$dir/tests/parser/translateParserTests.txt";
