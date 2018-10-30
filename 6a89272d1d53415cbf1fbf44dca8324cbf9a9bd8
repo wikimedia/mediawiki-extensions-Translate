@@ -46,6 +46,30 @@
       "revId": "6a89272d1d53415cbf1fbf44dca8324cbf9a9bd8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0004a91b_1d2c3732",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 664
+      },
+      "writtenOn": "2018-10-30T15:01:15Z",
+      "side": 1,
+      "message": "I think James\u0027 concern here is partly being able to identify deprecated code in the future so we can remember to clean it up.  TranslationHelpers at least is a nice compact place for all of the \"to dos\" to live.  James, is there a standardized \"to do comment\" format we could use that would let us use codesearch to identify deprecation/removal spots in the future?",
+      "parentUuid": "098cb356_742e0335",
+      "range": {
+        "startLine": 386,
+        "startChar": 3,
+        "endLine": 390,
+        "endChar": 0
+      },
+      "revId": "6a89272d1d53415cbf1fbf44dca8324cbf9a9bd8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
