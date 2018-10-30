@@ -159,11 +159,29 @@ class SpecialLanguageStats extends SpecialPage {
 					"<div class='error'>$1</div>",
 					'translate-langstats-incomplete'
 				);
+			}
 
-				// $this->purge is only true if request was posted
+			if ( $this->incomplete || $this->purge ) {
 				DeferredUpdates::addCallableUpdate( function () {
-					$flags = $this->purge ? MessageGroupStats::FLAG_NO_CACHE : 0;
-					$this->loadStatistics( $this->target, $flags );
+					// Attempt to recache on the fly the missing stats, unless a
+					// purge was requested, because that is likely to time out.
+					// Even though this is executed inside a deferred update, it
+					// counts towards the maximum execution time limit. If that is
+					// reached, or any other failure happens, no updates at all
+					// will be written into the database, as it does only single
+					// update at the end. Hence we always add a job too, so that
+					// even the slower updates will get done at some point. In
+					// regular case (no purge), the job sees that the stats are
+					// already updated, so it is not much of an overhead.
+					$jobParams = $this->getCacheRebuildJobParameters( $this->target );
+					$jobParams[ 'purge' ] = $this->purge;
+					$job = MessageGroupStatsRebuildJob::newJob( $jobParams );
+					JobQueueGroup::singleton()->push( $job );
+
+					// $this->purge is only true if request was posted
+					if ( !$this->purge ) {
+						$this->loadStatistics( $this->target );
+					}
 				} );
 			}
 			if ( $this->nothing ) {
@@ -176,13 +194,17 @@ class SpecialLanguageStats extends SpecialPage {
 	}
 
 	/**
-	 * Get stats
+	 * Get stats.
 	 * @param string $target For which target to get stats
 	 * @param int $flags See MessageGroupStats for possible flags
 	 * @return array[]
 	 */
-	protected function loadStatistics( $target, $flags ) {
+	protected function loadStatistics( $target, $flags = 0 ) {
 		return MessageGroupStats::forLanguage( $target, $flags );
+	}
+
+	protected function getCacheRebuildJobParameters( $target ) {
+		return [ 'languagecode' => $target ];
 	}
 
 	/**
