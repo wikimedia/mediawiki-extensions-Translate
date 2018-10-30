@@ -227,6 +227,10 @@ class TranslateEditAddons {
 		$group = $handle->getGroup();
 		// Update translation stats - source language should always be up to date
 		if ( $handle->getCode() !== $group->getSourceLanguage() ) {
+			// This will update in-process cache immediately, but the value is saved
+			// to the database in a deferred update. See MessageGroupStats::queueUpdates.
+			// In case an error happens before that, the stats may be stale, but that
+			// would be fixed by the next update or purge.
 			MessageGroupStats::forItem(
 				$group->getId(),
 				$handle->getCode(),
