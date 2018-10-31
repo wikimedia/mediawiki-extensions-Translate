@@ -94,6 +94,30 @@
       "revId": "6a89272d1d53415cbf1fbf44dca8324cbf9a9bd8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93a5c75d_1c9c71ee",
+        "filename": "utils/TranslationHelpers.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-10-31T07:01:35Z",
+      "side": 1,
+      "message": "We often use // BC for MediaWiki \u003c\u003d 1.xz",
+      "parentUuid": "d1188b8c_6782ae2b",
+      "range": {
+        "startLine": 386,
+        "startChar": 3,
+        "endLine": 390,
+        "endChar": 0
+      },
+      "revId": "6a89272d1d53415cbf1fbf44dca8324cbf9a9bd8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
