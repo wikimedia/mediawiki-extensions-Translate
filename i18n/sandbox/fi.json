@@ -3,7 +3,8 @@
 		"authors": [
 			"Crt",
 			"Nike",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Uusijani"
 		]
 	},
 	"managetranslatorsandbox": "Kääntäjähakemusten hallinta",
@@ -43,7 +44,7 @@
 	"translate-translationstash-translations": "$1 {{PLURAL:$1|valmis käännös|valmista käännöstä}}",
 	"translate-translationstash-skip-button-label": "Ohita",
 	"tsb-limit-reached-title": "Kiitos käännöksistäsi",
-	"tsb-limit-reached-body": "Olet saavuttanut käännösraja uusille kääntäjille.\nTiimimme tarkistaa ja päivittää tilisi pian.\nSitten voit kääntää ilman rajoja.",
+	"tsb-limit-reached-body": "Saavutit uusien kääntäjien käännösrajan. Tiimimme vahvistaa ja päivittää tilisi pian. Sen jälkeen voit kääntää rajattomasti.",
 	"tsb-no-requests-from-new-users": "Ei uusia hakemuksia.",
 	"tsb-create-user-page": "Luo yksinkertainen käyttäjäsivu",
 	"log-name-translatorsandbox": "Käännöshiekkalaatikkoloki",

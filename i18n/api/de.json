@@ -18,6 +18,7 @@
 	"apihelp-groupreview-param-language": "Sprachcode.",
 	"apihelp-groupreview-param-state": "Der neue Status für die Gruppe.",
 	"apihelp-query+languagestats-description": "Ruft Sprachstatistiken ab.",
+	"apihelp-query+languagestats-summary": "Ruft Sprachstatistiken ab.",
 	"apihelp-query+languagestats-param-language": "Sprachcode.",
 	"apihelp-query+messagecollection-description": "Ruft die Nachrichtensammlung über Übersetzungen ab.",
 	"apihelp-query+messagecollection-param-group": "Nachrichtengruppe.",

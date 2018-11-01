@@ -10,7 +10,8 @@
 			"Vks",
 			"H4nek",
 			"Kvetoslav47",
-			"Dvorapa"
+			"Dvorapa",
+			"Patriccck"
 		]
 	},
 	"pagetranslation": "Překlad stránek",
@@ -106,6 +107,7 @@
 	"pt-movepage-action-check": "Zkontrolovat, zda je přesun možný",
 	"pt-movepage-action-perform": "Přesunout",
 	"pt-movepage-action-other": "Změnit cíl",
+	"pt-deletepage-current": "Název stránky:",
 	"pt-deletepage-reason": "Důvod:",
 	"pt-deletepage-subpages": "Odstranit všechny podstránky",
 	"pt-deletepage-list-pages": "Seznam stránek ke smazání",

@@ -49,7 +49,7 @@
 	"tsb-limit-reached-title": "感謝您的翻譯",
 	"tsb-limit-reached-body": "您的翻譯已達到新進翻譯人員的限制。\n我們的團隊會儘快審核並升級您的帳號，\n屆時您便可不受限制的翻譯。",
 	"tsb-no-requests-from-new-users": "沒有來自新使用者的請求",
-	"tsb-create-user-page": "建立基本使用者頁面",
+	"tsb-create-user-page": "已建立的基本使用者頁面",
 	"log-name-translatorsandbox": "翻譯沙盒日誌",
 	"log-description-translatorsandbox": "翻譯沙盒使用者的工作日誌",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|授權}} $3 成為 {{GENDER:$4|翻譯人員}}",
