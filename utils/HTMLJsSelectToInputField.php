@@ -15,7 +15,7 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 	 * @param string $value
 	 * @return string
 	 */
-	function getInputHTML( $value ) {
+	public function getInputHTML( $value ) {
 		$input = parent::getInputHTML( $value );
 
 		if ( isset( $this->mParams['select'] ) ) {
@@ -45,7 +45,7 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 	 * @param array $alldata
 	 * @return bool|string
 	 */
-	function validate( $value, $alldata ) {
+	public function validate( $value, $alldata ) {
 		$p = parent::validate( $value, $alldata );
 
 		if ( $p !== true ) {
@@ -77,7 +77,7 @@ class HTMLJsSelectToInputField extends HTMLTextField {
 	 * @param array $alldata
 	 * @return string
 	 */
-	function filter( $value, $alldata ) {
+	public function filter( $value, $alldata ) {
 		$value = parent::filter( $value, $alldata );
 
 		return implode( ', ', $this->tidy( $value ) );

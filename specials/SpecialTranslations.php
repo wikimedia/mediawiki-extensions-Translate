@@ -23,7 +23,7 @@ class SpecialTranslations extends SpecialAllPages {
 		return 'pages';
 	}
 
-	function getDescription() {
+	public function getDescription() {
 		return $this->msg( 'translations' )->text();
 	}
 
