@@ -178,6 +178,7 @@
 	"translate-untranslated": "Untranslated",
 	"translate-percentage-complete": "Completion",
 	"translate-percentage-fuzzy": "Outdated",
+	"translate-percentage-proofread": "Reviewed",
 	"translate-languagestats-overall": "All message groups together",
 	"translate-ls-submit": "Show statistics",
 	"translate-ls-column-group": "Message group",
