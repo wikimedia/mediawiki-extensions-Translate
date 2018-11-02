@@ -52,12 +52,4 @@ class MessageIndexRebuildJob extends Job {
 			$this->run();
 		}
 	}
-
-	/**
-	 * @deprecated since 2017-11-03 alias for insertIntoJobQueue()
-	 */
-	public function insert() {
-		$this->insertIntoJobQueue();
-	}
-
 }
