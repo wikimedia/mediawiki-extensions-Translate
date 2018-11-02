@@ -33,7 +33,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		return 'wiki';
 	}
 
-	function getDescription() {
+	public function getDescription() {
 		return $this->msg( 'supportedlanguages' )->text();
 	}
 

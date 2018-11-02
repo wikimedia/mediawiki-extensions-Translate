@@ -17,7 +17,7 @@ class SpecialPageMigration extends SpecialPage {
 		return 'wiki';
 	}
 
-	function getDescription() {
+	public function getDescription() {
 		return $this->msg( 'pagemigration' )->text();
 	}
 

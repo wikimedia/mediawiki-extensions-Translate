@@ -44,7 +44,7 @@ class SpecialManageGroups extends SpecialPage {
 		return 'wiki';
 	}
 
-	function getDescription() {
+	public function getDescription() {
 		return $this->msg( 'managemessagegroups' )->text();
 	}
 
