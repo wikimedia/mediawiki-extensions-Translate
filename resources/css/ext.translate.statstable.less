@@ -1,0 +1,56 @@
+.groupexpander-all {
+	text-align: right;
+}
+
+.groupexpander {
+	float: right;
+}
+
+.statstable {
+	border-collapse: collapse;
+	border-style: hidden;
+	box-shadow: 0 1px 1px rgba( 0, 0, 0, 0.15 );
+
+	.expanded,
+	.expanded a {
+		cursor: n-resize;
+	}
+
+	.collapsed,
+	.collapsed a {
+		cursor: s-resize;
+	}
+
+	/* Small zebra rows effect */
+	> * > tr {
+		background-color: #fff;
+
+		&.tux-statstable-even {
+			background-color: #f8f9fa;
+		}
+
+		&:hover > td {
+			filter: brightness( 0.95 );
+		}
+
+		> th {
+			background-color: #eaecf0;
+			border: 1px solid #fff;
+			padding: 0.5em;
+			font-weight: normal;
+			letter-spacing: 1px;
+		}
+
+		> td {
+			padding: 0.5em;
+			border-left: 1px solid #f8f9fa;
+			border-right: 1px solid #f8f9fa;
+		}
+
+		/* Align numbers to the right */
+		> td:nth-child( n+2 ):nth-child( -n+6 ) {
+			text-align: right;
+			padding-right: 1em;
+		}
+	}
+}
