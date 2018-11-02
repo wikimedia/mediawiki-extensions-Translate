@@ -137,6 +137,7 @@ class StatsTable {
 			wfMessage( 'translate-untranslated' ),
 			wfMessage( 'translate-percentage-complete' ),
 			wfMessage( 'translate-percentage-fuzzy' ),
+			wfMessage( 'translate-percentage-proofread' ),
 		], $this->extraColumns );
 	}
 
@@ -188,6 +189,7 @@ class StatsTable {
 		$total = $stats[MessageGroupStats::TOTAL];
 		$translated = $stats[MessageGroupStats::TRANSLATED];
 		$fuzzy = $stats[MessageGroupStats::FUZZY];
+		$proofread = $stats[MessageGroupStats::PROOFREAD];
 
 		if ( $total === null ) {
 			$na = "\n\t\t" . Html::element( 'td', [ 'data-sort-value' => -1 ], '...' );
@@ -208,9 +210,11 @@ class StatsTable {
 		if ( $total === 0 ) {
 			$transRatio = 0;
 			$fuzzyRatio = 0;
+			$proofRatio = 0;
 		} else {
 			$transRatio = $translated / $total;
 			$fuzzyRatio = $fuzzy / $total;
+			$proofRatio = $translated === 0 ? 0 : $proofread / $translated;
 		}
 
 		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $transRatio, 'floor' ),
@@ -220,6 +224,10 @@ class StatsTable {
 		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzyRatio, 'ceil' ),
 			$this->getBackgroundColor( $fuzzy, $total, true ),
 			sprintf( '%1.5f', $fuzzyRatio ) );
+
+		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $proofRatio, 'floor' ),
+			$this->getBackgroundColor( $proofread, $translated ),
+			sprintf( '%1.5f', $proofRatio ) );
 
 		return $out;
 	}
