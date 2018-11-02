@@ -116,6 +116,7 @@ class SpecialLanguageStats extends SpecialPage {
 		$out = $this->getOutput();
 
 		$out->addModules( 'ext.translate.special.languagestats' );
+		$out->addModuleStyles( 'ext.translate.statstable' );
 
 		$params = explode( '/', $par );
 
@@ -503,7 +504,7 @@ class SpecialLanguageStats extends SpecialPage {
 		$params[] = md5( $groupId );
 		$params[] = $this->getLanguage()->getCode();
 		$params[] = md5( $this->target );
-		$cachekey = wfMemcKey( __METHOD__, implode( '-', $params ) );
+		$cachekey = wfMemcKey( __METHOD__ . '-v2', implode( '-', $params ) );
 		$cacheval = wfGetCache( CACHE_ANYTHING )->get( $cachekey );
 		if ( is_string( $cacheval ) ) {
 			return $cacheval;

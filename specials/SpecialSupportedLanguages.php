@@ -354,7 +354,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 					->numParams( $count, $last )->text();
 				$last = max( 1, min( $period, $last ) );
 				$styles['border-bottom'] = '3px solid #' .
-					$statsTable->getBackgroundColor( $period - $last, $period );
+					$statsTable->getBackgroundColor( ( $period - $last ) / $period );
 			} else {
 				$enc = "<del>$enc</del>";
 			}
@@ -457,7 +457,7 @@ class SpecialSupportedLanguages extends SpecialPage {
 		for ( $i = 0; $i <= $period; $i += 30 ) {
 			$iFormatted = htmlspecialchars( $this->getLanguage()->formatNum( $i ) );
 			$legend .= '<span style="background-color:#' .
-				$statsTable->getBackgroundColor( $period - $i, $period ) .
+				$statsTable->getBackgroundColor( ( $period - $i ) / $period ) .
 				"\"> $iFormatted</span>";
 		}
 
