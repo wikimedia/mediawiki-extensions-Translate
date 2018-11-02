@@ -8,6 +8,15 @@
 ( function () {
 	'use strict';
 
+	/**
+	 * Add css class to every other visible row.
+	 * It's not possible to do zebra colors with CSS only if there are hidden rows.
+	 */
+	function doZebra() {
+		$( '.statstable tr:visible:odd' ).toggleClass( 'tux-statstable-even', false );
+		$( '.statstable tr:visible:even' ).toggleClass( 'tux-statstable-even', true );
+	}
+
 	$( function () {
 		var $allChildRows, $allTogglesCache, $toggleAllButton,
 			$translateTable = $( '.statstable' ),
@@ -38,11 +47,11 @@
 					var $el = $( this );
 					// Switch the state and toggle the rows
 					if ( $el.hasClass( 'collapsed' ) ) {
-						$children.fadeIn().trigger( 'show' );
+						$children.fadeIn( { start: doZebra } ).trigger( 'show' );
 						$el.removeClass( 'collapsed' ).addClass( 'expanded' );
 						$el.find( '> a' ).text( mw.msg( 'translate-langstats-collapse' ) );
 					} else {
-						$children.fadeOut().trigger( 'hide' );
+						$children.fadeOut( { done: doZebra } ).trigger( 'hide' );
 						$el.addClass( 'collapsed' ).removeClass( 'expanded' );
 						$el.find( '> a' ).text( mw.msg( 'translate-langstats-expand' ) );
 					}
@@ -88,47 +97,16 @@
 					$allToggles.find( '> a' ).text( mw.msg( 'translate-langstats-expand' ) );
 				}
 
+				doZebra();
 				e.preventDefault();
 			} );
 
 		// Initially hide them
 		$allChildRows.hide();
+		doZebra();
 
 		// Add the toggle-all button above the table
 		$( '<p class="groupexpander-all"></p>' ).append( $toggleAllButton ).insertBefore( $translateTable );
-	} );
-
-	// When hovering a row, adjust brightness of the last two custom-colored cells as well
-	// See also translate.langstats.css for the highlighting for the other normal rows
-	mw.loader.using( 'jquery.colorUtil', function () {
-		$( function () {
-			// It is possible that the first event we get is hover-out, in
-			// which case the colors will get stuck wrong. Ignore it.
-			var eventHandlers, seenHoverIn = false;
-
-			eventHandlers = {
-				mouseenter: function () {
-					seenHoverIn = true;
-					$( this ).children( '.hover-color' )
-						// 30% more brightness
-						.css( 'background-color', function ( i, val ) {
-							return $.colorUtil.getColorBrightness( val, +0.3 );
-						} );
-				},
-				mouseleave: function () {
-					if ( !seenHoverIn ) {
-						return;
-					}
-					$( this ).children( '.hover-color' )
-						// 30% less brightness
-						.css( 'background-color', function ( i, val ) {
-							return $.colorUtil.getColorBrightness( val, -0.3 );
-						} );
-				}
-			};
-
-			$( '.statstable' ).on( eventHandlers, 'tr' );
-		} );
 	} );
 
 	$( function () {
@@ -150,6 +128,8 @@
 				var index = $table.find( 'th' ).index( $( this ) ),
 					dir = $( this ).hasClass( 'headerSortUp' ) ? 'asc' : 'desc';
 				window.location.hash = 'sortable:' + index + '=' + dir;
+
+				doZebra();
 			} );
 		} );
 	} );
