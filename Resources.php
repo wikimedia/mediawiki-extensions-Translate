@@ -276,7 +276,6 @@ $wgResourceModules['ext.translate.special.importtranslations'] = [
 
 $wgResourceModules['ext.translate.special.languagestats'] = [
 	'scripts' => 'resources/js/ext.translate.special.languagestats.js',
-	'styles' => 'resources/css/ext.translate.special.languagestats.css',
 	'messages' => [
 		'translate-langstats-collapse',
 		'translate-langstats-collapseall',
@@ -493,6 +492,11 @@ $wgResourceModules['ext.translate.statsbar'] = [
 		'translate-statsbar-tooltip',
 		'translate-statsbar-tooltip-with-fuzzy',
 	],
+] + $resourcePaths;
+
+$wgResourceModules['ext.translate.statstable'] = [
+	'styles' => 'resources/css/ext.translate.statstable.less',
+	'targets' => [ 'desktop', 'mobile' ],
 ] + $resourcePaths;
 
 $wgResourceModules['ext.translate.storage'] = [

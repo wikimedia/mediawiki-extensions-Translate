@@ -1,7 +1,5 @@
 <?php
 /**
- * Contains logic for special page Special:LanguageStats.
- *
  * @file
  * @author Siebrand Mazeland
  * @author Niklas Laxström
@@ -10,13 +8,9 @@
  */
 
 /**
- * Implements includable special page Special:LanguageStats which provides
- * translation statistics for all defined message groups.
+ * Implements generation of HTML stats table.
  *
  * Loosely based on the statistics code in phase3/maintenance/language
- *
- * Use {{Special:LanguageStats/nl/1}} to show for 'nl' and suppres completely
- * translated groups.
  *
  * @ingroup Stats
  */
@@ -63,7 +57,6 @@ class StatsTable {
 
 		if ( $bgcolor ) {
 			$attributes['style'] = 'background-color: #' . $bgcolor;
-			$attributes['class'] = 'hover-color';
 		}
 
 		$element = Html::element( 'td', $attributes, $in );
@@ -71,35 +64,28 @@ class StatsTable {
 		return $element;
 	}
 
-	public function getBackgroundColor( $subset, $total, $fuzzy = false ) {
-		MediaWiki\suppressWarnings();
-		$v = round( 255 * $subset / $total );
-		MediaWiki\restoreWarnings();
-
+	public function getBackgroundColor( $percentage, $fuzzy = false ) {
 		if ( $fuzzy ) {
-			// Weigh fuzzy with factor 20.
-			$v = $v * 20;
-
-			if ( $v > 255 ) {
-				$v = 255;
-			}
-
-			$v = 255 - $v;
+			// Steeper scale for fuzzy
+			// (0), [0-2), [2-4), ... [12-100)
+			$index = min( 7, ceil( 50 * $percentage ) );
+			$colors = [
+				'', 'fedbd7', 'fecec8', 'fec1b9',
+				'fcb5ab', 'fba89d', 'f89b8f', 'f68d81'
+			];
+			return $colors[ $index ];
 		}
 
-		if ( $v < 128 ) {
-			// Red to Yellow
-			$red = 0.26 * $v + 221;
-			$green = 1.33 * $v + 33;
-			$blue = 51;
-		} else {
-			// Yellow to Green
-			$red = 2 * ( 255 - $v );
-			$green = 0.22 * ( 255 - $v ) + 175;
-			$blue = 0.67 * $v - 34;
-		}
+		// https://gka.github.io/palettes/#colors=#36c,#eaf3ff|steps=20|bez=1|coL=1
+		// Color groups for (0-10], (10-20], ... (90-100], (100)
+		$index = floor( $percentage * 10 );
+		$colors = [
+			'eaf3ff', 'e2ebfc', 'dae3fa', 'd2dbf7', 'c9d4f5',
+			'c1ccf2', 'b8c4ef', 'b1bced', 'a8b4ea', '9fade8',
+			'96a6e5'
+		];
 
-		return sprintf( '%02X%02X%02X', $red, $green, $blue );
+		return $colors[ $index ];
 	}
 
 	/**
@@ -136,8 +122,8 @@ class StatsTable {
 			wfMessage( 'translate-total' ),
 			wfMessage( 'translate-untranslated' ),
 			wfMessage( 'translate-percentage-complete' ),
-			wfMessage( 'translate-percentage-fuzzy' ),
 			wfMessage( 'translate-percentage-proofread' ),
+			wfMessage( 'translate-percentage-fuzzy' ),
 		], $this->extraColumns );
 	}
 
@@ -148,7 +134,7 @@ class StatsTable {
 		// Create table header
 		$out = Html::openElement(
 			'table',
-			[ 'class' => 'statstable wikitable' ]
+			[ 'class' => 'statstable' ]
 		);
 
 		$out .= "\n\t" . Html::openElement( 'thead' );
@@ -218,16 +204,16 @@ class StatsTable {
 		}
 
 		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $transRatio, 'floor' ),
-			$this->getBackgroundColor( $translated, $total ),
+			$this->getBackgroundColor( $transRatio ),
 			sprintf( '%1.5f', $transRatio ) );
 
-		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzyRatio, 'ceil' ),
-			$this->getBackgroundColor( $fuzzy, $total, true ),
-			sprintf( '%1.5f', $fuzzyRatio ) );
-
 		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $proofRatio, 'floor' ),
-			$this->getBackgroundColor( $proofread, $translated ),
+			$this->getBackgroundColor( $proofRatio ),
 			sprintf( '%1.5f', $proofRatio ) );
+
+		$out .= "\n\t\t" . $this->element( $this->formatPercentage( $fuzzyRatio, 'ceil' ),
+			$this->getBackgroundColor( $fuzzyRatio, true ),
+			sprintf( '%1.5f', $fuzzyRatio ) );
 
 		return $out;
 	}
