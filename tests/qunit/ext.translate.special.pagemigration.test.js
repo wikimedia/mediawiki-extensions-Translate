@@ -20,7 +20,7 @@
 
 		done = assert.async();
 		mw.translate.getSourceUnits( 'Help:Special pages' ).done( function ( sourceUnits ) {
-			assert.strictEqual( 1, sourceUnits.length, 'Source units retrieved' );
+			assert.strictEqual( sourceUnits.length, 1, 'Source units retrieved' );
 			done();
 		} );
 
@@ -34,7 +34,7 @@
 
 		done = assert.async();
 		mw.translate.getFuzzyTimestamp( 'ugagagagagaga/uga' ).fail( function ( timestamp ) {
-			assert.strictEqual( undefined, timestamp, 'Page does not exist' );
+			assert.strictEqual( timestamp, undefined, 'Page does not exist' );
 			done();
 		} );
 
@@ -49,7 +49,7 @@
 
 		done = assert.async();
 		mw.translate.getFuzzyTimestamp( 'Help:Special pages/fr' ).done( function ( timestamp ) {
-			assert.strictEqual( '2014-02-18T20:59:57.000Z', timestamp, 'Fuzzy timestamp retrieved' );
+			assert.strictEqual( timestamp, '2014-02-18T20:59:57.000Z', 'Fuzzy timestamp retrieved' );
 			done();
 		} );
 
@@ -65,7 +65,7 @@
 		done = assert.async();
 		mw.translate.splitTranslationPage( '2014-02-18T20:59:57.000Z', 'Help:Special pages/fr' )
 			.done( function ( translationUnits ) {
-				assert.strictEqual( 3, translationUnits.length, 'Translation page split into units' );
+				assert.strictEqual( translationUnits.length, 3, 'Translation page split into units' );
 				done();
 			} );
 
@@ -91,9 +91,9 @@
 		result2 = [ 'abc\nlmn\n', '==123==', 'pqr', '', '', '==456==' ];
 
 		translationUnits1 = mw.translate.alignHeaders( sourceUnits, translationUnits1 );
-		assert.deepEqual( translationUnits1, result1, 'h2 headers aligned without merging' );
+		assert.deepEqual( result1, translationUnits1, 'h2 headers aligned without merging' );
 
 		translationUnits2 = mw.translate.alignHeaders( sourceUnits, translationUnits2 );
-		assert.deepEqual( translationUnits2, result2, 'h2 headers aligned with merging' );
+		assert.deepEqual( result2, translationUnits2, 'h2 headers aligned with merging' );
 	} );
 }( jQuery, mediaWiki ) );
