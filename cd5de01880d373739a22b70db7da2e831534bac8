@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b39abf1d_cf4ce31e",
+        "filename": "utils/StatsTable.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-11-03T10:17:14Z",
+      "side": 1,
+      "message": "There is a small glitch in getBackgroundColor if $translated is 0, which results in a black background. That is fixed in the subsequent styling patch.",
+      "revId": "cd5de01880d373739a22b70db7da2e831534bac8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
