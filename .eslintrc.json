@@ -10,6 +10,7 @@
 		"OO": false
 	},
 	"rules": {
+		"max-len": 0,
 		"no-use-before-define": 0
 	}
 }
