@@ -352,7 +352,7 @@
 	"tux-messagetable-more-messages": "mais $1 {{PLURAL:$1|mensagem|mensagens}}",
 	"tux-messagetable-loading-messages": "Carregando {{PLURAL:$1|mensagem|mensagens}}.",
 	"tux-message-filter-placeholder": "Filtrar lista",
-	"tux-message-filter-result": "{{PLURAL:$1|Encontrado $1 resultado|Encontrados $1 resultados}} para \"$2\"",
+	"tux-message-filter-result": "{{PLURAL:$1|Encontrado $1 resultado|Encontrados $1 resultados}} para “$2”",
 	"tux-message-filter-advanced-button": "Pesquisa avançada",
 	"tux-message-filter-optional-messages-label": "Mensagens opcionais",
 	"tux-proofread-translated-by-self": "Traduzido por você",

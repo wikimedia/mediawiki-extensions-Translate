@@ -27,7 +27,8 @@
 			"Wpedzich",
 			"Žekřil71pl",
 			"The Polish",
-			"Tsca"
+			"Tsca",
+			"Railfail536"
 		]
 	},
 	"translate": "Przetłumacz",
@@ -279,8 +280,8 @@
 	"translate-searchprofile-note": "Więcej opcji wyszukiwania dostępnych jest w [$1 wyszukiwarce tłumaczeń].",
 	"translate-search-languagefilter": "Filtruj według języka",
 	"translate-search-nofilter": "Bez filtrowania",
-	"log-name-translationreview": "Rejestr zatwierdzania tłumaczeń",
-	"log-description-translationreview": "Zapisuje wszystkie zatwierdzenia tłumaczeń i grupy komunikatów.",
+	"log-name-translationreview": "Rejestr przeglądu tłumaczeń",
+	"log-description-translationreview": "Rejestruje wszystkie przeglądy tłumaczeń i grupy komunikatów.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|przejrzał|przejrzała}} tłumaczenie $3",
 	"logentry-translationreview-group": "$1 {{GENDER:$2|zmienił|zmieniła}} status tłumaczeń strony $3 na język $4 z $6 na $7",
 	"group-translate-sandboxed": "Niezatwierdzeni tłumacze",

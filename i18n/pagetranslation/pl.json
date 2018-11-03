@@ -126,7 +126,7 @@
 	"logentry-pagetranslation-dissociate": "$1 {{GENDER:$2|usunął|usunęła}} stronę przeznaczoną do tłumaczenia $3 z grupy zbiorczej $4",
 	"log-action-filter-pagetranslation": "Rodzaj działania:",
 	"log-action-filter-pagetranslation-mark": "Oznacz do tłumaczenia",
-	"log-action-filter-pagetranslation-unmark": "Usuwanie z tłumaczenia.",
+	"log-action-filter-pagetranslation-unmark": "Usuwanie z tłumaczenia",
 	"log-action-filter-pagetranslation-move": "Przenoszenie stron",
 	"log-action-filter-pagetranslation-delete": "Usuwanie stron",
 	"log-action-filter-pagetranslation-encourage": "Zachęcanie do tłumaczenia",

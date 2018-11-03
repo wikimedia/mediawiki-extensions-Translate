@@ -43,7 +43,7 @@
 	"tsb-limit-reached-title": "Ви благодариме за преводите",
 	"tsb-limit-reached-body": "Ја достигнавте границата на преводи од нови преведувачи.\nНаскоро нашата екипа ќе ви ја провери и надгради сметката.\nПотоа ќе можете да преведувате неограничено.",
 	"tsb-no-requests-from-new-users": "Нема барања од нови корисници",
-	"tsb-create-user-page": "Создавање на основна корисничка страница",
+	"tsb-create-user-page": "Создадена основна корисничка страница",
 	"log-name-translatorsandbox": "Дневник на Преводниот песочник",
 	"log-description-translatorsandbox": "Дневник на дејства со корисници на преводниот песочник",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$4|го|ја}} {{GENDER:$2|унапреди}} $3 во {{GENDER:$4|преведувач}}",
