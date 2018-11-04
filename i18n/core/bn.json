@@ -160,6 +160,7 @@
 	"translate-mgs-totals": "একসাথে $1টি {{PLURAL:$1|ভাষায়}}।",
 	"supportedlanguages": "সমর্থিত ভাষাসমূহ",
 	"supportedlanguages-colorlegend": "রঙের ব্যাখ্যা: সর্বশেষ অনুবাদ $1 দিন আগে।",
+	"supportedlanguages-sqlite-error": "SQLite সমর্থিত নয়",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|অনুবাদক}}|অনুবাদকগণ}}: $1",
 	"supportedlanguages-recenttranslations": "সাম্প্রতিক অনুবাদ",
 	"supportedlanguages-count": "সর্বমোট $1টি {{PLURAL:$1|ভাষায়}}।",

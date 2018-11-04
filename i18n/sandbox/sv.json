@@ -45,7 +45,7 @@
 	"tsb-limit-reached-title": "Tack för dina översättningar",
 	"tsb-limit-reached-body": "Du har nått översättningsgränsen för nya översättare.\nVårt team kommer snart verifiera och uppgradera ditt konto.\nSedan kommer du kunna översätta utan begränsningar.",
 	"tsb-no-requests-from-new-users": "Inga förfrågningar från nya användare",
-	"tsb-create-user-page": "Skapa grundläggande användarsida",
+	"tsb-create-user-page": "Skapade grundläggande användarsida",
 	"log-name-translatorsandbox": "Logg för översättningssandlåda",
 	"log-description-translatorsandbox": "En logg över åtgärder på översättningssandlådeanvändare",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|befordrades}} $3 till {{GENDER:$4|översättare}}",

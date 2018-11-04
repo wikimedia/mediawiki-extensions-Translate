@@ -205,6 +205,7 @@
 	"supportedlanguages": "زبان‌های پشتیبانی‌شده",
 	"supportedlanguages-summary": "این صفحه فهرستی از تمام زبان‌های پشتیبانی‌شده توسط {{SITENAME}} را به همراه نام مترجمان در حال کار در آن زبان نمایش میدهد.\nهرچه یک مترجم با ویرایش‌های بیشتری مشارکت کرده باشد، نامش بزرگتر دیده می‌شود.\nرنگ زیرخط نشان‌دهندهٔ تازگی فعالیت مترجم در اینجا است.",
 	"supportedlanguages-colorlegend": "توضیح برای رنگ: آخرین ترجمه در $1 روز پیش.",
+	"supportedlanguages-sqlite-error": "از SQLite پشتیبانی نمی‌شود",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|مترجم}}|مترجمان}}: $1",
 	"supportedlanguages-recenttranslations": "ترجمه‌های اخیر",
 	"supportedlanguages-count": "در مجموع $1 {{PLURAL:$1|زبان|زبان}}.",

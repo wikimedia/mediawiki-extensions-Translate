@@ -108,7 +108,7 @@
 	"log-description-pagetranslation": "سیاههٔ اعمال مربوط به سامانهٔ ترجمهٔ صفحه",
 	"log-name-pagetranslation": "سیاههٔ ترجمهٔ صفحه",
 	"logentry-pagetranslation-mark": "$1 $3 را برای ترجمه {{GENDER:$2|علامت‌گذاری کرد}}",
-	"logentry-pagetranslation-unmark": "$1 $3 را از ترجمه {{GENDER:$2|حذف کرد}}",
+	"logentry-pagetranslation-unmark": "$1 $3 را از سامانه ترجمه {{GENDER:$2|حذف کرد}}",
 	"logentry-pagetranslation-moveok": "$1$1 تغییر نام صفحه قابل ترجمه از $3 به $4 را {{GENDER:$2|کامل کرد}}",
 	"logentry-pagetranslation-movenok": "$1 هنگام انتقال صفحه $3 به $4 به مشکل {{GENDER:$2|برخورد}}",
 	"logentry-pagetranslation-deletefok": "$1 حذف صفحه قابل ترجمه $3 را {{GENDER:$2|کامل کرد}}",
