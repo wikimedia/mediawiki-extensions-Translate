@@ -15,6 +15,17 @@
 		"MediaWiki": ">= 1.30.0"
 	},
 	"callback": "TranslateHooks::setupTranslate",
+	"MessagesDirs": {
+		"PageTranslation": "i18n/pagetranslation",
+		"Translate": "i18n/core",
+		"TranslateSearch": "i18n/search",
+		"TranslateSandbox": "i18n/sandbox",
+		"TranslateApi": "i18n/api"
+	},
+	"ExtensionMessagesFiles": {
+		"TranslateAlias": "Translate.alias.php",
+		"TranslateMagic": "Translate.i18n.magic.php"
+	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2,
 	"AutoloadClasses": {
