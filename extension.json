@@ -1,0 +1,23 @@
+{
+	"name": "Translate",
+	"type": "specialpage",
+	"author": [
+		"Niklas Laxström",
+		"Santhosh Thottingal",
+		"Siebrand Mazeland",
+		"..."
+	],
+	"version": "2018-11-05",
+	"url": "https://www.mediawiki.org/wiki/Extension:Translate",
+	"descriptionmsg": "translate-desc",
+	"license-name": "GPL-2.0-or-later",
+	"requires": {
+		"MediaWiki": ">= 1.30.0"
+	},
+	"callback": "TranslateHooks::setupTranslate",
+	"load_composer_autoloader": true,
+	"manifest_version": 2,
+	"AutoloadClasses": {
+		"TranslateHooks": "TranslateHooks.php"
+	}
+}

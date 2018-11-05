@@ -55,6 +55,13 @@ class TranslateHooks {
 	public static function setupTranslate() {
 		global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
 
+		if ( !defined( 'TRANSLATE_LOADED' ) || TRANSLATE_LOADED !== '1' ) {
+			$msg = 'Translate extension cannot yet be loaded with wfLoadExtension()';
+			// Exceptions are not shown nicely on the web, so add a helpful note
+			echo "$msg\n";
+			throw new Exception( $msg );
+		}
+
 		if ( $wgTranslatePHPlot ) {
 			$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
 		}

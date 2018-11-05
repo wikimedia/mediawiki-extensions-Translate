@@ -17,25 +17,13 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 /**
  * Version number used in extension credits and in other places where needed.
  */
-define( 'TRANSLATE_VERSION', '2018-10-26' );
+define( 'TRANSLATE_VERSION', '2018-11-05' );
 
 /**
  * Extension credits properties.
  */
-$wgExtensionCredits['specialpage'][] = [
-	'path' => __FILE__,
-	'name' => 'Translate',
-	'namemsg' => 'translate-extensionname',
-	'version' => TRANSLATE_VERSION,
-	'author' => [
-		'Niklas Laxström',
-		'Santhosh Thottingal',
-		'Siebrand Mazeland'
-	],
-	'descriptionmsg' => 'translate-desc',
-	'url' => 'https://www.mediawiki.org/wiki/Extension:Translate',
-	'license-name' => 'GPL-2.0-or-later',
-];
+define( 'TRANSLATE_LOADED', '1' );
+wfLoadExtension( 'Translate' );
 
 /**
  * @cond file_level_code
@@ -59,7 +47,6 @@ $wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
 $wgExtensionMessagesFiles['TranslateMagic'] = "$dir/Translate.i18n.magic.php";
 
 // Register initialization code
-$wgExtensionFunctions[] = 'TranslateHooks::setupTranslate';
 $wgHooks['CanonicalNamespaces'][] = 'TranslateHooks::setupNamespaces';
 $wgHooks['ResourceLoaderTestModules'][] = 'TranslateHooks::onResourceLoaderTestModules';
 $wgHooks['UnitTestsList'][] = 'TranslateHooks::setupUnitTests';
