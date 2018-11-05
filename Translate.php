@@ -38,14 +38,6 @@ require_once "$dir/Autoload.php";
  * @cond file_level_code
  */
 
-$wgMessagesDirs['PageTranslation'] = __DIR__ . '/i18n/pagetranslation';
-$wgMessagesDirs['Translate'] = __DIR__ . '/i18n/core';
-$wgMessagesDirs['TranslateSearch'] = __DIR__ . '/i18n/search';
-$wgMessagesDirs['TranslateSandbox'] = __DIR__ . '/i18n/sandbox';
-$wgMessagesDirs['TranslateApi'] = __DIR__ . '/i18n/api';
-$wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
-$wgExtensionMessagesFiles['TranslateMagic'] = "$dir/Translate.i18n.magic.php";
-
 // Register initialization code
 $wgHooks['CanonicalNamespaces'][] = 'TranslateHooks::setupNamespaces';
 $wgHooks['ResourceLoaderTestModules'][] = 'TranslateHooks::onResourceLoaderTestModules';
