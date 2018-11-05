@@ -1,21 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ukabia"
+			"Ukabia",
+			"Uzoma Ozurumba"
 		]
 	},
-	"pagetranslation": "Ihü kuwariala na asụsụ ozor",
-	"tpt-diff-new": "Mpkurụ edemede ohúrù",
-	"translate-tag-translate-link-desc": "Kùwáría ihüá na asụsụ ozor",
-	"tpt-languages-legend": "Asụ̀sụ̀ ndị ọ̀zọ:",
-	"tpt-aggregategroup-save": "Dònye",
-	"tpt-aggregategroup-update": "Dònye",
-	"tpt-aggregategroup-update-cancel": "Hapụ̀",
+	"pagetranslation": "Nsụgharị ihuakwukwọ",
+	"tpt-diff-new": "Mpkurụ edemede ọhuru",
+	"translate-tag-translate-link-desc": "Tugharia ihuakwụkwọ a",
+	"tpt-languages-legend": "Asụsụ ndị ọzọ:",
+	"tpt-aggregategroup-save": "Doma",
+	"tpt-aggregategroup-update": "Debe",
+	"tpt-aggregategroup-update-cancel": "Kagbụo",
 	"pt-movepage-list-other": "Ihü-íme-ihü nke ozor",
-	"pt-movepage-current": "Áhà nke di ùbwá:",
-	"pt-movepage-new": "Áhà ọhúrù:",
+	"pt-movepage-current": "Áhà nke di ugbua:",
+	"pt-movepage-new": "Áhà ọhuru:",
 	"pt-movepage-reason": "Mgbághapụtà:",
-	"pm-savepages-button-label": "Dònye",
-	"pm-cancel-button-label": "Hapụ̀",
-	"pp-cancel-button-label": "Hapụ̀"
+	"pm-savepages-button-label": "Doma",
+	"pm-cancel-button-label": "Kagbụo",
+	"pp-cancel-button-label": "Kagbụo"
 }
