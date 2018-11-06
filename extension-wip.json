@@ -23,8 +23,7 @@
 		"TranslateApi": "i18n/api"
 	},
 	"ExtensionMessagesFiles": {
-		"TranslateAlias": "Translate.alias.php",
-		"TranslateMagic": "Translate.i18n.magic.php"
+		"TranslateAlias": "Translate.alias.php"
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2,

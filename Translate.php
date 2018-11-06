@@ -35,6 +35,9 @@ require_once "$dir/Autoload.php";
  * @cond file_level_code
  */
 
+// Don't migrate this to extension.json until the last moment; see T208809
+$wgExtensionMessagesFiles['TranslateMagic'] = "$dir/Translate.i18n.magic.php";
+
 // Register initialization code
 $wgHooks['CanonicalNamespaces'][] = 'TranslateHooks::setupNamespaces';
 $wgHooks['ResourceLoaderTestModules'][] = 'TranslateHooks::onResourceLoaderTestModules';
