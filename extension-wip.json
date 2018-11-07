@@ -19,5 +19,12 @@
 	"manifest_version": 2,
 	"AutoloadClasses": {
 		"TranslateHooks": "TranslateHooks.php"
+	},
+	"JobClasses": {
+		"MessageGroupStatesUpdaterJob": "MessageGroupStatesUpdaterJob",
+		"MessageGroupStatsRebuildJob": "MessageGroupStatsRebuildJob",
+		"MessageIndexRebuildJob": "MessageIndexRebuildJob",
+		"MessageUpdateJob": "MessageUpdateJob",
+		"TTMServerMessageUpdateJob": "TTMServerMessageUpdateJob"
 	}
 }

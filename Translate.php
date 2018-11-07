@@ -181,13 +181,6 @@ $wgLogTypes[] = 'translationreview';
 $wgLogActionsHandlers['translationreview/message'] = 'TranslateLogFormatter';
 $wgLogActionsHandlers['translationreview/group'] = 'TranslateLogFormatter';
 
-// New jobs
-$wgJobClasses['MessageGroupStatesUpdaterJob'] = 'MessageGroupStatesUpdaterJob';
-$wgJobClasses['MessageGroupStatsRebuildJob'] = 'MessageGroupStatsRebuildJob';
-$wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
-$wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
-$wgJobClasses['TTMServerMessageUpdateJob'] = 'TTMServerMessageUpdateJob';
-
 require "$dir/Resources.php";
 
 /** @endcond */
