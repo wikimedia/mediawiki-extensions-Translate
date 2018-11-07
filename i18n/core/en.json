@@ -313,7 +313,7 @@
 	"tux-editor-cancel-button-label": "Cancel",
 	"tux-editor-confirm-button-label": "Confirm translation",
 	"tux-editor-proofread-button-label": "Mark as reviewed",
-	"tux-editor-shortcut-info": "Press \"$1\" to save or \"$2\" to skip to next message or \"$4\" to provide summary or \"$3\" for other shortcuts.",
+	"tux-editor-shortcut-info": "Press \"$1\" to confirm and move to the next message, \"$2\" to skip, \"$4\" to provide summary or hold \"$3\" to see other shortcuts.",
 	"tux-editor-edit-desc": "Edit documentation",
 	"tux-editor-add-desc": "Add documentation",
 	"tux-editor-suggestions-title": "Suggestions",
