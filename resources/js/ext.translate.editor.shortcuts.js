@@ -3,7 +3,6 @@
  */
 ( function ( $, mw ) {
 	'use strict';
-
 	var translateEditorShortcuts = {
 		showShortcuts: function () {
 			var editorOffset, minTop, maxTop, maxLeft, middle, rtl;
@@ -15,11 +14,7 @@
 			minTop = editorOffset.top;
 			maxTop = minTop + this.$editor.outerHeight();
 			middle = minTop + ( maxTop - minTop ) / 2;
-
-			maxLeft = editorOffset.left;
-			if ( !rtl ) {
-				maxLeft += this.$editor.outerWidth();
-			}
+			maxLeft = rtl ? editorOffset.left : editorOffset.left + this.$editor.outerWidth();
 
 			this.hideShortcuts();
 
@@ -28,21 +23,18 @@
 				.text( '↑' )
 				.addClass( 'shortcut-popup' )
 				.appendTo( 'body' )
-				.offset( { top: middle - 10, left: maxLeft - 10 } );
+				.offset( { top: middle - 15, left: maxLeft } )
+				.css( 'transform', 'translate( -50%, 0 )' );
 
 			$( '<div>' )
 				.text( '↓' )
 				.addClass( 'shortcut-popup' )
 				.appendTo( 'body' )
-				.offset( { top: middle + 10, left: maxLeft - 10 } );
+				.offset( { top: middle + 15, left: maxLeft } )
+				.css( 'transform', 'translate( -50%, 0 )' );
 
 			this.$editor.find( '.shortcut-activated:visible' ).each( function ( index ) {
-				var $this = $( this ),
-					offset = $this.offset();
-
-				if ( rtl ) {
-					offset.left += $this.outerWidth();
-				}
+				var offset = getStartCornerOffsetOf( $( this ), rtl );
 
 				// Let's not have numbers appear outside the editor over other content
 				if ( offset.top > maxTop || offset.top < minTop ) {
@@ -53,7 +45,8 @@
 					.text( index + 1 )
 					.addClass( 'shortcut-popup' )
 					.appendTo( 'body' )
-					.offset( { top: offset.top - 10, left: offset.left - 10 } );
+					.offset( offset )
+					.css( 'transform', 'translate( -50%, -50% )' );
 			} );
 		},
 
@@ -61,6 +54,16 @@
 			$( '.shortcut-popup' ).remove();
 		}
 	};
+
+	function getStartCornerOffsetOf( $element, rtl ) {
+		var offset = $element.offset();
+
+		if ( rtl ) {
+			offset.left += $element.outerWidth();
+		}
+
+		return offset;
+	}
 
 	mw.translate.editor = mw.translate.editor || {};
 	$.extend( mw.translate.editor, translateEditorShortcuts );
