@@ -245,7 +245,8 @@
 		addProofread: function ( message ) {
 			var $message, $icon;
 
-			$message = $( '<div>' ).addClass( 'row tux-message-proofread' );
+			$message = $( '<div>' )
+				.addClass( 'row tux-message tux-message-proofread' );
 
 			this.$container.append( $message );
 			$message.proofread( {
