@@ -160,20 +160,6 @@ $wgHooks['AbuseFilter-filterAction'][] = 'TranslateHooks::onAbuseFilterFilterAct
 $wgHooks['AbuseFilter-computeVariable'][] = 'TranslateHooks::onAbuseFilterComputeVariable';
 $wgHooks['AbuseFilter-builder'][] = 'TranslateHooks::onAbuseFilterBuilder';
 
-// New rights
-// right-translate
-$wgAvailableRights[] = 'translate';
-// right-translate-import action-translate-import
-$wgAvailableRights[] = 'translate-import';
-// right-translate-manage action-translate-manage
-$wgAvailableRights[] = 'translate-manage';
-// right-translate-messagereview
-$wgAvailableRights[] = 'translate-messagereview';
-// right-translate-groupreview
-$wgAvailableRights[] = 'translate-groupreview';
-
-$wgGrantPermissions['editpage']['translate'] = true;
-
 require "$dir/Resources.php";
 
 /** @endcond */

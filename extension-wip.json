@@ -33,5 +33,17 @@
 	"LogActionsHandlers": {
 		"translationreview/message": "TranslateLogFormatter",
 		"translationreview/group": "TranslateLogFormatter"
+	},
+	"AvailableRights": [
+		"translate",
+		"translate-import",
+		"translate-manage",
+		"translate-messagereview",
+		"translate-groupreview"
+	],
+	"GrantPermissions": {
+		"editpage": {
+			"translate": true
+		}
 	}
 }
