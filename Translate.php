@@ -188,8 +188,6 @@ $wgJobClasses['MessageIndexRebuildJob'] = 'MessageIndexRebuildJob';
 $wgJobClasses['MessageUpdateJob'] = 'MessageUpdateJob';
 $wgJobClasses['TTMServerMessageUpdateJob'] = 'TTMServerMessageUpdateJob';
 
-$wgParserTestFiles[] = "$dir/tests/parser/translateParserTests.txt";
-
 require "$dir/Resources.php";
 
 /** @endcond */
