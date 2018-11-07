@@ -37,6 +37,8 @@
 		init: function () {
 			var pagemode = this;
 
+			this.message.proofreadable = false;
+
 			this.render();
 
 			pagemode.$message.translateeditor( {

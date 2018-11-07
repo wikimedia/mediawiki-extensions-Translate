@@ -151,6 +151,8 @@
 				$messageWrapper = $( '<div>' ).addClass( 'row tux-message' ),
 				statusMsg = '';
 
+			message.proofreadable = false;
+
 			if ( message.tags.length &&
 				message.tags.indexOf( 'optional' ) >= 0 &&
 				status === 'untranslated'
