@@ -174,13 +174,6 @@ $wgAvailableRights[] = 'translate-groupreview';
 
 $wgGrantPermissions['editpage']['translate'] = true;
 
-// Logs. More logs are defined in TranslateHooks::setupTranslate
-// log-name-translationreview log-descriptionmsg-translationreview
-$wgLogTypes[] = 'translationreview';
-// logentry-translationreview-message logentry-translationreview-group
-$wgLogActionsHandlers['translationreview/message'] = 'TranslateLogFormatter';
-$wgLogActionsHandlers['translationreview/group'] = 'TranslateLogFormatter';
-
 require "$dir/Resources.php";
 
 /** @endcond */
