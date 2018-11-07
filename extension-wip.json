@@ -26,5 +26,12 @@
 		"MessageIndexRebuildJob": "MessageIndexRebuildJob",
 		"MessageUpdateJob": "MessageUpdateJob",
 		"TTMServerMessageUpdateJob": "TTMServerMessageUpdateJob"
+	},
+	"LogTypes": [
+		"translationreview"
+	],
+	"LogActionsHandlers": {
+		"translationreview/message": "TranslateLogFormatter",
+		"translationreview/group": "TranslateLogFormatter"
 	}
 }
