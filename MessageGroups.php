@@ -165,7 +165,7 @@ class MessageGroups {
 		];
 
 		$wrapper = new DependencyWrapper( $value, $deps );
-		$wrapper->storeToCache( $this->getCache(), $key, 60 * 60 * 2 );
+		$wrapper->storeToCache( $this->getCache(), $key, 60 * 60 * 24 );
 
 		return $groups;
 	}
