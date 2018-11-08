@@ -198,6 +198,7 @@
 	"supportedlanguages": "Ondersteunde talen",
 	"supportedlanguages-summary": "Op deze pagina wordt een lijst van alle talen die in {{SITENAME}} worden ondersteund weergegeven, samen met de namen van de vertalers die werken aan die taal.\nDe naam van een vertaler wordt groter weergegeven als deze meer bewerkingen heeft gemaakt.\nDe kleur van een onderstreping geeft aan hoe recent een vertaler actief is geweest.",
 	"supportedlanguages-colorlegend": "Legenda voor de kleuren: laatste vertaling $1 dagen geleden.",
+	"supportedlanguages-sqlite-error": "SQLite wordt niet ondersteund",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Vertaler}}|Vertalers}}: $1",
 	"supportedlanguages-recenttranslations": "recente vertalingen",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|taal|talen}} in totaal.",
