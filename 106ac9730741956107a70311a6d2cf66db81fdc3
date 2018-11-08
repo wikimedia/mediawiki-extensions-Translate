@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dd9246cd_4c553279",
+        "filename": "tests/phpunit/HookDocTest.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-11-08T16:13:22Z",
+      "side": 1,
+      "message": "Note that both new regular expressions do not check any more if the string *ends* with the same quotation mark as it started with. The old expressions checked this.\n\nI\u0027m happy with this change. It makes the patterns so much simpler and also a bit faster, and it\u0027s still safe enough, in my opinion. I just wanted to make this difference obvious.",
+      "revId": "106ac9730741956107a70311a6d2cf66db81fdc3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
