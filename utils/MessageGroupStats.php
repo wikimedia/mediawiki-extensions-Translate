@@ -165,8 +165,19 @@ class MessageGroupStats {
 	 */
 	public static function clearGroup( $id ) {
 		$dbids = array_map( 'self::getDatabaseIdForGroupId', (array)$id );
+		// Performance optimization, allow use cache for aggregate groups after
+		// updating all regular groups.
 		foreach ( $dbids as $id ) {
-			self::forGroup( $id, self::FLAG_NO_CACHE | self::FLAG_BATCHED );
+			$group = MessageGroups::getGroup( $id );
+			if ( $group && !$group instanceof AggregateMessageGroup ) {
+				self::forGroup( $id, self::FLAG_NO_CACHE | self::FLAG_BATCHED );
+			}
+		}
+		foreach ( $dbids as $id ) {
+			$group = MessageGroups::getGroup( $id );
+			if ( $group instanceof AggregateMessageGroup ) {
+				self::forGroup( $id, self::FLAG_BATCHED );
+			}
 		}
 	}
 
