@@ -25,7 +25,7 @@ class PageTranslationHooksTest extends MediaWikiTestCase {
 		$wgHooks['TranslatePostInitGroups'] = [ 'MessageGroups::getTranslatablePages' ];
 
 		$mg = MessageGroups::singleton();
-		$mg->setCache( wfGetCache( 'hash' ) );
+		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
 		$mg->recache();
 
 		MessageIndex::setInstance( new HashMessageIndex() );

@@ -24,7 +24,7 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		$wgHooks['TranslatePostInitGroups'] = [ [ $this, 'getTestGroups' ] ];
 
 		$mg = MessageGroups::singleton();
-		$mg->setCache( wfGetCache( 'hash' ) );
+		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
 		$mg->recache();
 	}
 
