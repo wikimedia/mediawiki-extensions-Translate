@@ -8,6 +8,7 @@
  * @copyright Copyright © 2008-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0-or-later
  */
+use \MediaWiki\MediaWikiServices;
 
 /**
  * Factory class for accessing message groups individually by id or
@@ -26,7 +27,7 @@ class MessageGroups {
 	protected $groups;
 
 	/**
-	 * @var BagOStuff|null
+	 * @var WANObjectCache|null
 	 */
 	protected $cache;
 
@@ -34,25 +35,71 @@ class MessageGroups {
 	 * Initialises the list of groups
 	 */
 	protected function init() {
-		global $wgAutoloadClasses;
-
 		if ( is_array( $this->groups ) ) {
 			return;
 		}
 
-		$key = wfMemcKey( 'translate-groups' );
-		$value = DependencyWrapper::getValueFromCache( $this->getCache(), $key );
-
-		if ( $value === null ) {
-			wfDebug( __METHOD__ . "-nocache\n" );
-			$groups = $this->loadGroupDefinitions();
-		} else {
-			wfDebug( __METHOD__ . "-withcache\n" );
-			$groups = $value['cc'];
-			self::appendAutoloader( $value['autoload'], $wgAutoloadClasses );
-		}
+		$value = $this->getCachedGroupDefinitions();
+		$groups = $value['cc'];
 
 		$this->postInit( $groups );
+	}
+
+	/**
+	 * @param bool|string $recache Either "recache" or false
+	 * @return array
+	 */
+	protected function getCachedGroupDefinitions( $recache = false ) {
+		global $wgAutoloadClasses;
+
+		/** @var DependencyWrapper $wrapper */
+		$wrapper = null;
+
+		$cache = $this->getCache();
+		$cache->getWithSetCallback(
+			$cache->makeKey( 'translate-groups' ),
+			$cache::TTL_DAY,
+			function ( $curValue ) use ( &$wrapper, $recache ) {
+				global $wgAutoloadClasses;
+
+				if (
+					$curValue instanceof DependencyWrapper &&
+					!$curValue->isExpired() &&
+					$recache === false
+				) {
+					$wrapper = $curValue; // use the current cached value
+
+					return false; // leave the cached value alone
+				}
+
+				$groups = $deps = $autoload = [];
+				// This constructs the list of all groups from multiple different sources.
+				// When possible, a cache dependency is created to automatically recreate
+				// the cache when configuration changes.
+				Hooks::run( 'TranslatePostInitGroups', [ &$groups, &$deps, &$autoload ] );
+				// Register autoloaders for this request, both values modified by reference
+				self::appendAutoloader( $autoload, $wgAutoloadClasses );
+
+				$value = [
+					'ts' => wfTimestamp( TS_MW ),
+					'cc' => $groups,
+					'autoload' => $autoload,
+				];
+				$wrapper = new DependencyWrapper( $value, $deps );
+				$wrapper->initialiseDeps();
+
+				return $wrapper; // save the new value to cache
+			},
+			[
+				'lockTSE' => 30, // avoid stampedes
+				'minAsOf' => INF // always run callback
+			]
+		);
+
+		$value = $wrapper->getValue();
+		self::appendAutoloader( $value['autoload'], $wgAutoloadClasses );
+
+		return $value;
 	}
 
 	/**
@@ -75,7 +122,9 @@ class MessageGroups {
 	 * @since 2015.04
 	 */
 	public function recache() {
-		$groups = $this->loadGroupDefinitions();
+		$value = $this->getCachedGroupDefinitions( 'recache' );
+		$groups = $value['cc'];
+
 		$this->postInit( $groups );
 	}
 
@@ -86,7 +135,10 @@ class MessageGroups {
 	 */
 	public static function clearCache() {
 		$self = self::singleton();
-		$self->getCache()->delete( wfMemcKey( 'translate-groups' ) );
+
+		$cache = $self->getCache();
+		$cache->delete( $cache->makeKey( 'translate-groups' ), 1 );
+
 		$self->clearProcessCache();
 	}
 
@@ -104,11 +156,11 @@ class MessageGroups {
 	/**
 	 * Returns a cacher object.
 	 *
-	 * @return BagOStuff
+	 * @return WANObjectCache
 	 */
 	protected function getCache() {
 		if ( $this->cache === null ) {
-			return wfGetCache( CACHE_ANYTHING );
+			return MediaWikiServices::getInstance()->getMainWANObjectCache();
 		} else {
 			return $this->cache;
 		}
@@ -117,9 +169,9 @@ class MessageGroups {
 	/**
 	 * Override cache, for example during tests.
 	 *
-	 * @param BagOStuff|null $cache
+	 * @param WANObjectCache|null $cache
 	 */
-	public function setCache( BagOStuff $cache = null ) {
+	public function setCache( WANObjectCache $cache = null ) {
 		$this->cache = $cache;
 	}
 
@@ -139,35 +191,6 @@ class MessageGroups {
 
 			$to[$class] = $file;
 		}
-	}
-
-	/**
-	 * This constructs the list of all groups from multiple different
-	 * sources. When possible, a cache dependency is created to automatically
-	 * recreate the cache when configuration changes.
-	 * @return array
-	 */
-	protected function loadGroupDefinitions() {
-		global $wgAutoloadClasses;
-
-		$groups = $deps = $autoload = [];
-
-		Hooks::run( 'TranslatePostInitGroups', [ &$groups, &$deps, &$autoload ] );
-
-		// Register autoloaders for this request, both values modified by reference
-		self::appendAutoloader( $autoload, $wgAutoloadClasses );
-
-		$key = wfMemcKey( 'translate-groups' );
-		$value = [
-			'ts' => wfTimestamp( TS_MW ),
-			'cc' => $groups,
-			'autoload' => $autoload,
-		];
-
-		$wrapper = new DependencyWrapper( $value, $deps );
-		$wrapper->storeToCache( $this->getCache(), $key, 60 * 60 * 24 );
-
-		return $groups;
 	}
 
 	/**
@@ -340,6 +363,7 @@ class MessageGroups {
 	public static function labelExists( $name ) {
 		$groups = self::loadAggregateGroups();
 		$labels = array_map( function ( $g ) {
+			/** @var $g MessageGroup */
 			return $g->getLabel();
 		}, $groups );
 		return (bool)in_array( $name, $labels, true );
@@ -739,8 +763,8 @@ class MessageGroups {
 
 	/**
 	 * Sorts groups by label value
-	 * @param string $a
-	 * @param string $b
+	 * @param MessageGroup $a
+	 * @param MessageGroup $b
 	 * @return int
 	 */
 	public static function groupLabelSort( $a, $b ) {
@@ -818,7 +842,7 @@ class MessageGroups {
 	/**
 	 * Get all the aggregate messages groups defined in translate_metadata table.
 	 *
-	 * @return array
+	 * @return MessageGroup[]
 	 */
 	protected static function loadAggregateGroups() {
 		$dbw = TranslateUtils::getSafeReadDB();
