@@ -25,7 +25,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 		$wgHooks['TranslatePostInitGroups'] = [ [ $this, 'getTestGroups' ] ];
 
 		$mg = MessageGroups::singleton();
-		$mg->setCache( wfGetCache( 'hash' ) );
+		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
 		$mg->recache();
 
 		MessageIndex::setInstance( new HashMessageIndex() );
