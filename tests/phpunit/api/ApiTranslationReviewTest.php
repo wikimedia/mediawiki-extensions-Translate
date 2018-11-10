@@ -16,7 +16,11 @@ class ApiTranslationReviewTest extends MediaWikiTestCase {
 		global $wgHooks;
 		$this->setMwGlobals( [
 			'wgHooks' => $wgHooks,
-			'wgGroupPermissions' => [],
+			'wgGroupPermissions' => [
+				'sysop' => [
+					'translate-messagereview' => true,
+				],
+			],
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
 		] );
 		$wgHooks['TranslatePostInitGroups'] = [ [ $this, 'getTestGroups' ] ];
@@ -40,13 +44,11 @@ class ApiTranslationReviewTest extends MediaWikiTestCase {
 	}
 
 	public function testgetReviewBlockers() {
-		$superUser1 = new MockSuperUser();
-		$superUser1->setId( 1 );
+		$superUser1 = $this->getMutableTestUser( [ 'sysop', 'bureaucrat' ] )->getUser();
 
-		$superUser2 = new MockSuperUser();
-		$superUser2->setId( 2 );
+		$superUser2 = $this->getMutableTestUser( [ 'sysop', 'bureaucrat' ] )->getUser();
 
-		$plainUser = User::newFromName( 'PlainUser' );
+		$plainUser = $this->getMutableTestUser()->getUser();
 
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'Ugakey1/fi' );
 		$content = ContentHandler::makeContent( 'trans1', $title );

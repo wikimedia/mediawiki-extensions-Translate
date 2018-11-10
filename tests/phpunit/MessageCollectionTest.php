@@ -41,8 +41,7 @@ class MessageCollectionTest extends MediaWikiTestCase {
 	}
 
 	public function testMessage() {
-		$user = new MockSuperUser();
-		$user->setId( 123 );
+		$user = $this->getTestSysop()->getUser();
 		$title = Title::newFromText( 'MediaWiki:translated/fi' );
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( 'pupuliini', $title );
@@ -63,8 +62,8 @@ class MessageCollectionTest extends MediaWikiTestCase {
 		$this->assertEquals( 'translated', $translated->key() );
 		$this->assertEquals( 'bunny', $translated->definition() );
 		$this->assertEquals( 'pupuliini', $translated->translation() );
-		$this->assertEquals( 'SuperUser', $translated->getProperty( 'last-translator-text' ) );
-		$this->assertEquals( 123, $translated->getProperty( 'last-translator-id' ) );
+		$this->assertEquals( $user->getName(), $translated->getProperty( 'last-translator-text' ) );
+		$this->assertEquals( $user->getId(), $translated->getProperty( 'last-translator-id' ) );
 		$this->assertEquals(
 			'translated',
 			$translated->getProperty( 'status' ),

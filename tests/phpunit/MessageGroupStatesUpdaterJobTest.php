@@ -110,7 +110,7 @@ class MessageGroupStatesUpdaterJobTest extends MediaWikiTestCase {
 	 * This tests fails regularly on WMF CI but haven't been able to reproduce locally.
 	 */
 	public function testHooks() {
-		$user = new MockSuperUser();
+		$user = $this->getTestSysop()->getUser();
 		$group = MessageGroups::getGroup( 'group-trans' );
 
 		// In the beginning...
