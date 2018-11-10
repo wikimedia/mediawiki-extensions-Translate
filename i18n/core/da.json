@@ -193,6 +193,7 @@
 	"supportedlanguages": "Understøttede sprog",
 	"supportedlanguages-summary": "Denne side viser en liste over alle de sprog, der understøttes af {{SITENAME}},\nsammen med navnene på de oversættere, der arbejder på dette sprog.\n\nJo flere redigeringer, en oversætter har bidraget med, jo større skrift bruges til navnet.\nUnderstregningsfarven angiver, hvor nyligt en oversætter har været aktiv.",
 	"supportedlanguages-colorlegend": "Forklaring til farven: seneste oversættelse var for $1 dage siden.",
+	"supportedlanguages-sqlite-error": "SQLite understøttes ikke",
 	"supportedlanguages-translators": "{{PLURAL:$2|Oversætter|Oversættere}}: $1",
 	"supportedlanguages-recenttranslations": "seneste oversættelser",
 	"supportedlanguages-count": "$1 {{PLURAL:$1|sprog|sprog}} i alt.",

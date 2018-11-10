@@ -136,7 +136,7 @@
 	"translate-statsf-language": "Zarezom odvojen popis jezičnih kodova:",
 	"translate-statsf-group": "Zarezom odvojen popis skupine kodova:",
 	"translate-statsf-submit": "Prikaži",
-	"translate-tag-page-desc": "Prijevod wikistranice [[$2|$1]] prema $3 ($4).",
+	"translate-tag-page-desc": "Prijevod wikistranice [[$2|$1]] s jezika: $3 ($4).",
 	"translate-sidebar-alltrans": "Na drugim jezicima",
 	"translations": "Svi prijevodi",
 	"translations-summary": "Unesite naziv poruke da biste vidjeli sve prijevode.",

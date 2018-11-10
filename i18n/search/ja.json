@@ -8,6 +8,7 @@
 	},
 	"searchtranslations": "翻訳の検索",
 	"tux-sst-edit": "翻訳を編集",
+	"tux-sst-view-foreign": "$1 で閲覧",
 	"tux-sst-search": "検索",
 	"tux-sst-search-ph": "翻訳の検索",
 	"tux-sst-count": "{{PLURAL:$1|$1 件見つかりました}}",

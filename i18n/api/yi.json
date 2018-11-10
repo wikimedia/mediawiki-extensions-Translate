@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"פוילישער"
+		]
+	},
+	"apihelp-groupreview-param-group": "מעלדונג גרופע",
+	"apihelp-groupreview-param-language": "שפראַך קאד.",
+	"apihelp-query+languagestats-param-language": "שפראַך קאד.",
+	"apihelp-translatesandbox-param-do": "וואס צו טון.",
+	"apihelp-searchtranslations-example-1": "ווייזן איבערזעצונגען פאר דער שפראך.",
+	"apierror-translate-sandbox-invalidppassword": "אומגילטיק פאסווארט"
+}

@@ -75,7 +75,7 @@
 	"tpt-invalid-group": "אומגילטיגע גרופע",
 	"log-name-pagetranslation": "בלאט איבערזעצונג לאגבוך",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|מארקירט}} $3 איבערצוזעצן",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|אראפגענומען}} $3 פון איבערזעצן",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|אראפגענומען}} $3 פון דער איבערזעצן סיסטעם",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|האט געקאנטשעט}} אויסמעקן איבערזעצבארן בלאט $3",
 	"logentry-pagetranslation-prioritylanguages-unset": "$1 {{GENDER:$2|האט אוועקגענומען}} פריאריטעט שפראכן פון איבערזעצבארן בלאט $3",
 	"log-action-filter-pagetranslation-mark": "מארקירן פאר איבערזעצונג",

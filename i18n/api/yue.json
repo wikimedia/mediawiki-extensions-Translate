@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hello903hello"
+		]
+	},
+	"apihelp-aggregategroups-param-group": "訊息組ID。",
+	"apihelp-groupreview-param-group": "訊息組。",
+	"apihelp-query+messagecollection-param-group": "訊息組。",
+	"apihelp-translatesandbox-param-do": "要做乜。",
+	"apihelp-translationreview-example-1": "複審修訂版本1",
+	"apihelp-translationcheck-summary": "驗證翻譯。"
+}
