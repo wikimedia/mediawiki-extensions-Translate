@@ -230,7 +230,6 @@ $al['MockFileBasedMessageGroup'] =
 	"$dir/tests/phpunit/MockFileBasedMessageGroup.php";
 $al['MockMessageCollectionForExport'] =
 	"$dir/tests/phpunit/MockMessageCollectionForExport.php";
-$al['MockSuperUser'] = "$dir/tests/phpunit/MockSuperUser.php";
 $al['MockWikiMessageGroup'] = "$dir/tests/phpunit/MockWikiMessageGroup.php";
 
 /**

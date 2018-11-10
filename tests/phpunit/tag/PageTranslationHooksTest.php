@@ -36,7 +36,7 @@ class PageTranslationHooksTest extends MediaWikiTestCase {
 		global $wgParser;
 
 		// Setup objects
-		$superUser = new MockSuperUser();
+		$superUser = $this->getTestSysop()->getUser();
 		$translatablePageTitle = Title::newFromText( 'Vuosaari' );
 		$page = WikiPage::factory( $translatablePageTitle );
 		$text = '<translate>pupu</translate>';

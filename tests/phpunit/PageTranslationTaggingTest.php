@@ -95,7 +95,7 @@ class PageTranslationTaggingTest extends MediaWikiTestCase {
 	}
 
 	public function testTranslationPageRestrictions() {
-		$superUser = new MockSuperUser();
+		$superUser = $this->getTestSysop()->getUser();
 		$title = Title::newFromText( 'Translatable page' );
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '<translate>Hello</translate>', $title );

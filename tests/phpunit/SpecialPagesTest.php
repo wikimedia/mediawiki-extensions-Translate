@@ -69,7 +69,7 @@ class SpecialPagesTest extends MediaWikiTestCase {
 
 		$this->assertTrue( true, "Special page $name was executed successfully with anon user" );
 
-		$user = new MockSuperUser();
+		$user = $this->getTestSysop()->getUser();
 		$context->setUser( $user );
 		$page->setContext( $context );
 

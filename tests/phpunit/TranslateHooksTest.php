@@ -44,7 +44,7 @@ class TranslateHooksTest extends MediaWikiLangTestCase {
 	}
 
 	public function testPreventCategorization() {
-		$user = new MockSuperUser();
+		$user = $this->getTestSysop()->getUser();
 		$title = Title::makeTitle( NS_MEDIAWIKI, 'ugakey1/fi' );
 		$wikipage = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( '[[Category:Shouldnotbe]]', $title );
