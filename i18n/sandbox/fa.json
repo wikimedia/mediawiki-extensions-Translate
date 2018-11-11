@@ -7,7 +7,8 @@
 			"Alirezaaa",
 			"Mjbmr",
 			"Huji",
-			"Ladsgroup"
+			"Ladsgroup",
+			"Physicsch"
 		]
 	},
 	"managetranslatorsandbox": "مدیریت کاربران مترجم",
@@ -49,7 +50,7 @@
 	"tsb-limit-reached-title": "تشکر برای ترجمه‌های شما",
 	"tsb-limit-reached-body": "شما به حد ترجمه برای مترجمان جدید رسیده‌اید.\nتیم ما بررسی خواهد کرد و حساب شما را به زودی ارتقاء می‌دهد.\nسپس شما قادر به ترجمه بدون محدودیت خواهید بود.",
 	"tsb-no-requests-from-new-users": "هیچ درخواستی از کاربران تازه نیست",
-	"tsb-create-user-page": "ایجاد صفحهٔ کاربری اصلی",
+	"tsb-create-user-page": "صفحهٔ کاربری اصلی ایجاد شد",
 	"log-name-translatorsandbox": "محل تمرین ترجمه",
 	"log-description-translatorsandbox": "سیاهه‌ای از عملکرد بر روی کاربران جعبه شنی ترجمه",
 	"logentry-translatorsandbox-promoted": "$1، $3 را به {{GENDER:$4|مترجم}} {{GENDER:$2|ترفیع}} داد",
