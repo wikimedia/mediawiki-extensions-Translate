@@ -5,7 +5,6 @@
  * @file
  * @author Wikia (trac.wikia-code.com/browser/wikia/trunk/extensions/wikia/TranslationStatistics)
  * @author Niklas Laxström
- * @copyright Copyright © 2012-2013 Niklas Laxström
  * @license GPL-2.0-or-later
  */
 
@@ -75,7 +74,7 @@ class MessageGroupStats {
 		 * values for unknown/incomplete stats. Calculating these numbers don't
 		 * make sense for dynamic groups, and would just throw an exception. */
 		$group = MessageGroups::getGroup( $id );
-		if ( MessageGroups::isDynamic( $group ) ) {
+		if ( !$group || MessageGroups::isDynamic( $group ) ) {
 			$stats[$id][$code] = self::getUnknownStats();
 		}
 
@@ -151,9 +150,7 @@ class MessageGroupStats {
 	 */
 	public static function clear( MessageHandle $handle ) {
 		$code = $handle->getCode();
-		$dbids = array_map( 'self::getDatabaseIdForGroupId', $handle->getGroupIds() );
-
-		foreach ( $dbids as $id ) {
+		foreach ( $handle->getGroupIds() as $id ) {
 			self::forItem( $id, $code, self::FLAG_NO_CACHE );
 		}
 	}
@@ -164,16 +161,16 @@ class MessageGroupStats {
 	 * @param string|string[] $id Message group ids.
 	 */
 	public static function clearGroup( $id ) {
-		$dbids = array_map( 'self::getDatabaseIdForGroupId', (array)$id );
+		$ids = (array)$id;
 		// Performance optimization, allow use cache for aggregate groups after
 		// updating all regular groups.
-		foreach ( $dbids as $id ) {
+		foreach ( $ids as $id ) {
 			$group = MessageGroups::getGroup( $id );
 			if ( $group && !$group instanceof AggregateMessageGroup ) {
 				self::forGroup( $id, self::FLAG_NO_CACHE | self::FLAG_BATCHED );
 			}
 		}
-		foreach ( $dbids as $id ) {
+		foreach ( $ids as $id ) {
 			$group = MessageGroups::getGroup( $id );
 			if ( $group instanceof AggregateMessageGroup ) {
 				self::forGroup( $id, self::FLAG_BATCHED );
@@ -309,7 +306,7 @@ class MessageGroupStats {
 	 * @param int $flags Combination of FLAG_* constants.
 	 * @return array[]
 	 */
-	protected static function forGroupInternal( $group, array $stats = [], $flags ) {
+	protected static function forGroupInternal( MessageGroup $group, array $stats = [], $flags ) {
 		$id = $group->getId();
 		$res = self::selectRowsIdLang( [ $id ], null, $flags );
 		$stats = self::extractResults( $res, [ $id ], $stats );
@@ -369,7 +366,7 @@ class MessageGroupStats {
 	 * @param int $flags Combination of FLAG_* constants.
 	 * @return null[]|int[]
 	 */
-	protected static function forItemInternal( &$stats, $group, $code, $flags ) {
+	protected static function forItemInternal( &$stats, MessageGroup $group, $code, $flags ) {
 		$id = $group->getId();
 
 		if ( $flags & self::FLAG_CACHE_ONLY ) {
@@ -456,7 +453,7 @@ class MessageGroupStats {
 	 * @param string $code Language code
 	 * @return int[] ( total, translated, fuzzy, proofread )
 	 */
-	protected static function calculateGroup( $group, $code ) {
+	protected static function calculateGroup( MessageGroup $group, $code ) {
 		global $wgTranslateDocumentationLanguageCode;
 		// Calculate if missing and store in the db
 		$collection = $group->initCollection( $code );
