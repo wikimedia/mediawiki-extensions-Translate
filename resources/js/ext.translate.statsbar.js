@@ -15,7 +15,7 @@
  *	} );
  * The status bar will be rendered to the newly created div. Or use any container.
  */
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	var LanguageStatsBar = function ( container, options ) {
@@ -184,4 +184,4 @@
 
 	mw.translate = mw.translate || {};
 
-}( mediaWiki, jQuery ) );
+}() );

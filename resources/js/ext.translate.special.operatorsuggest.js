@@ -1,7 +1,7 @@
 /*
  * Autocomplete search operators.
  */
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	function autocompleteOperators( request, response ) {
@@ -36,4 +36,4 @@
 				event.preventDefault();
 			}
 		} );
-}( mediaWiki, jQuery ) );
+}() );

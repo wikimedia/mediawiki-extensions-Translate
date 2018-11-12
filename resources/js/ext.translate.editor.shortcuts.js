@@ -1,7 +1,7 @@
 /*!
  * Translate editor shortcuts
  */
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	var translateEditorShortcuts = {
@@ -65,4 +65,4 @@
 	mw.translate.editor = mw.translate.editor || {};
 	$.extend( mw.translate.editor, translateEditorShortcuts );
 
-}( jQuery, mediaWiki ) );
+}() );

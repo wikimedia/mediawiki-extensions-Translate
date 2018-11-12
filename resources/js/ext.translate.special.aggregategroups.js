@@ -1,4 +1,4 @@
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	function getApiParams( $target ) {
@@ -361,4 +361,4 @@
 				} );
 		} );
 	} );
-}( jQuery, mediaWiki ) );
+}() );

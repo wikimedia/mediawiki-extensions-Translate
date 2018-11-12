@@ -1,4 +1,4 @@
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	var groupsLoader, delay;
@@ -630,4 +630,4 @@
 			timer = setTimeout( callback, milliseconds );
 		};
 	}() );
-}( jQuery, mediaWiki ) );
+}() );

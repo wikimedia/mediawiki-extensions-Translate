@@ -1,4 +1,4 @@
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	var itemsClass = {
@@ -876,4 +876,4 @@
 		return elementTop - viewportBottom < 200;
 	}
 
-}( jQuery, mediaWiki ) );
+}() );

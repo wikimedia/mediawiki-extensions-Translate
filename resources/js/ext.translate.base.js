@@ -1,4 +1,4 @@
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	mw.translate = mw.translate || {};
@@ -188,4 +188,4 @@
 	$( function () {
 		translateOnBeforeUnloadRegister();
 	} );
-}( jQuery, mediaWiki ) );
+}() );

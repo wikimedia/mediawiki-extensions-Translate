@@ -1,4 +1,4 @@
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	/**
@@ -279,4 +279,4 @@
 
 	$.fn.proofread.Constructor = Proofread;
 
-}( jQuery, mediaWiki ) );
+}() );

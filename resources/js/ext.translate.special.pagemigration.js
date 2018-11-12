@@ -1,4 +1,4 @@
-( function ( $, mw ) {
+( function () {
 	'use strict';
 	var noOfSourceUnits, noOfTranslationUnits,
 		pageName = '',
@@ -520,4 +520,4 @@
 		alignHeaders: alignHeaders
 	} );
 
-}( jQuery, mediaWiki ) );
+}() );

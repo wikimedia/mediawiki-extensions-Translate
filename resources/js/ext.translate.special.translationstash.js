@@ -6,7 +6,7 @@
  * @since 2013.10
  */
 
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	var userTranslations = {},
@@ -247,4 +247,4 @@
 				loadMessages();
 			} );
 	} );
-}( jQuery, mediaWiki ) );
+}() );

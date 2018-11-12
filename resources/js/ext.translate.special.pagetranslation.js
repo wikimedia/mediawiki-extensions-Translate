@@ -4,7 +4,7 @@
  * @license GPL-2.0-or-later
  */
 
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	$( function () {
@@ -23,4 +23,4 @@
 			e.preventDefault();
 		} );
 	} );
-}( jQuery, mediaWiki ) );
+}() );

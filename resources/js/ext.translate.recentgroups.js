@@ -1,4 +1,4 @@
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	mw.translate = mw.translate || {};
@@ -28,4 +28,4 @@
 			mw.storage.set( 'translate-recentgroups', JSON.stringify( items ) );
 		}
 	};
-}( jQuery, mediaWiki ) );
+}() );

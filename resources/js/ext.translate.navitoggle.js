@@ -3,7 +3,7 @@
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	var $body = $( 'body' );
@@ -38,4 +38,4 @@
 
 		$body.append( $miniLogo, $toggle );
 	} );
-}( mediaWiki, jQuery ) );
+}() );

@@ -6,7 +6,7 @@
  * The input field is created in PHP code.
  * Credits: https://jqueryui.com/autocomplete/#multiple
  */
-jQuery( function ( $ ) {
+$( function () {
 	'use strict';
 
 	/* eslint-disable no-underscore-dangle */

@@ -1,4 +1,4 @@
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	/**
@@ -423,4 +423,4 @@
 		} );
 	} );
 
-}( jQuery, mediaWiki ) );
+}() );
