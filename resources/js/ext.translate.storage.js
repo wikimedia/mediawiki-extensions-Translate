@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	'use strict';
 
 	/**
@@ -39,4 +39,4 @@
 
 	mw.translate = mw.translate || {};
 	mw.translate.TranslationApiStorage = TranslationApiStorage;
-}( mediaWiki ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	var resultGroups;
@@ -394,4 +394,4 @@
 			)
 		);
 	}
-}( jQuery, mediaWiki ) );
+}() );

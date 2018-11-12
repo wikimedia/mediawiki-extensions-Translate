@@ -1,7 +1,7 @@
 /*!
  * Translate editor additional helper functionality
  */
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	var translateEditorHelpers = {
@@ -539,4 +539,4 @@
 	mw.translate.editor = mw.translate.editor || {};
 	$.extend( mw.translate.editor, translateEditorHelpers );
 
-}( jQuery, mediaWiki ) );
+}() );

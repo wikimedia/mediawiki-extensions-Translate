@@ -1,4 +1,4 @@
-( function ( $ ) {
+( function () {
 	'use strict';
 
 	/**
@@ -64,4 +64,4 @@
 
 	$.extend( $, { ajaxDispatcher: ajaxDispatcher } );
 
-}( jQuery ) );
+}() );

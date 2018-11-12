@@ -1,4 +1,4 @@
-( function ( $, mw ) {
+( function () {
 	'use strict';
 	/**
 	 * Page mode plugin
@@ -131,4 +131,4 @@
 	};
 
 	$.fn.pagemode.Constructor = PageMode;
-}( jQuery, mediaWiki ) );
+}() );

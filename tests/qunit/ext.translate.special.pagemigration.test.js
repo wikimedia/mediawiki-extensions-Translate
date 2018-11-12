@@ -4,7 +4,7 @@
  * @license GPL-2.0-or-later
  */
 
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	QUnit.module( 'ext.translate.special.pagemigration', QUnit.newMwEnvironment( {
@@ -96,4 +96,4 @@
 		translationUnits2 = mw.translate.alignHeaders( sourceUnits, translationUnits2 );
 		assert.deepEqual( result2, translationUnits2, 'h2 headers aligned with merging' );
 	} );
-}( jQuery, mediaWiki ) );
+}() );

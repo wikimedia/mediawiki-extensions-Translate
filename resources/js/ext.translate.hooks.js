@@ -7,7 +7,7 @@
  * @since 2012-08-22
  */
 
-( function ( mw ) {
+( function () {
 	'use strict';
 
 	var registry = {};
@@ -35,4 +35,4 @@
 			}
 		}
 	};
-}( mediaWiki ) );
+}() );

@@ -1,6 +1,6 @@
 /* global autosize */
 
-( function ( $, mw, autosize ) {
+( function () {
 	'use strict';
 
 	/**
@@ -1319,4 +1319,4 @@
 			};
 		}() );
 	}
-}( jQuery, mediaWiki, autosize ) );
+}() );

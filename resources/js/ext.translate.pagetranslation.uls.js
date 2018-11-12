@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	'use strict';
 
 	mw.uls.changeLanguage = function ( language ) {
@@ -12,4 +12,4 @@
 
 		location.href = mw.util.getUrl( page, { setlang: language } );
 	};
-}( mediaWiki ) );
+}() );

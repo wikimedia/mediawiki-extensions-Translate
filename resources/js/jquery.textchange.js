@@ -5,7 +5,7 @@
  * @author Santhosh Thottingal, 2013
  * @see https://gist.github.com/mkelly12/424774
  */
-( function ( $ ) {
+( function () {
 	'use strict';
 
 	$.event.special.textchange = {
@@ -41,4 +41,4 @@
 		}
 	};
 
-}( jQuery ) );
+}() );

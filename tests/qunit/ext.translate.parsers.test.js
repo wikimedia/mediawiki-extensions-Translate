@@ -4,7 +4,7 @@
  * @license GPL-2.0-or-later
  */
 
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	QUnit.module( 'ext.translate.parsers', QUnit.newMwEnvironment() );
@@ -30,4 +30,4 @@
 			'Link parsing is non-greedy'
 		);
 	} );
-}( jQuery, mediaWiki ) );
+}() );

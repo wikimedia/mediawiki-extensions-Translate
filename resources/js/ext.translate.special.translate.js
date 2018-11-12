@@ -1,4 +1,4 @@
-( function ( $, mw ) {
+( function () {
 	'use strict';
 
 	var state = {
@@ -382,4 +382,4 @@
 		} );
 	} );
 
-}( jQuery, mediaWiki ) );
+}() );

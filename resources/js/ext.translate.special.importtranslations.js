@@ -1,4 +1,4 @@
-( function ( $ ) {
+( function () {
 	'use strict';
 
 	function buttoner( $input ) {
@@ -17,4 +17,4 @@
 
 		buttoner( $input );
 	} );
-}( jQuery ) );
+}() );
