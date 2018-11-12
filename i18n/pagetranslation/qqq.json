@@ -20,7 +20,8 @@
 			"Robby",
 			"Liuxinyu970226",
 			"Guycn2",
-			"Zoranzoki21"
+			"Zoranzoki21",
+			"Metalhead64"
 		]
 	},
 	"pagetranslation": "{{doc-special|PageTranslation}}\n[[Image:Page translation admin view.png|thumb|Admin view of special page PageTranslation]]",
@@ -154,7 +155,7 @@
 	"pt-movepage-list-translation": "Used as section header.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - number of translation pages\n{{Related|Pt-movepage-list}}",
 	"pt-movepage-list-section": "Used as section header.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - number of translation unit pages (section pages)\n{{Related|Pt-movepage-list}}",
 	"pt-movepage-list-translatable": "Used as a section header.\n\nParameters:\n* $1 - number of pages",
-	"pt-movepage-list-translatable-note": "Appears below the section header {{mw-msg|pt-movepage-list-translatable}}",
+	"pt-movepage-list-translatable-note": "Appears below the section header {{msg-mw|pt-movepage-list-translatable}}",
 	"pt-movepage-list-other": "Header of a list of additional subpages (other than translation pages) of the translatable page being moved, when the user selected the option to move subpages as well.\n\nSee definition on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - number of subpages\n{{Related|Pt-movepage-list}}",
 	"pt-movepage-list-count": "Used to indicate how many pages will be moved.\n\nParameters:\n* $1 - number of pages\nSee also:\n* {{msg-mw|Pt-deletepage-list-count}}",
 	"pt-movepage-legend": "See definition on [[mw:Help:Extension:Translate/Glossary]].",
