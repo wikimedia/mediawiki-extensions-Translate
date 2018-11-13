@@ -55,7 +55,7 @@ class TestMT extends Maintenance {
 		$name = $this->getOption( 'service' );
 
 		if ( !isset( $wgTranslateTranslationServices[ $name ] ) ) {
-			$this->error( "Unknown service.\n", 1 );
+			$this->fatalError( "Unknown service.\n" );
 		}
 
 		$service = TranslationWebService::factory( $name, $wgTranslateTranslationServices[ $name ] );
@@ -68,12 +68,12 @@ class TestMT extends Maintenance {
 		$text = $this->getArg( 0 );
 
 		if ( !$service->isSupportedLanguagePair( $from, $to ) ) {
-			$this->error( "Unsupported language pair.\n", 1 );
+			$this->fatalError( "Unsupported language pair.\n" );
 		}
 
 		$query = $service->getQueries( $text, $from, $to );
 		if ( $query === [] ) {
-			$this->error( "Service query error.\n", 1 );
+			$this->fatalError( "Service query error.\n" );
 		}
 
 		$agg = new QueryAggregator();
@@ -81,7 +81,7 @@ class TestMT extends Maintenance {
 		$agg->run();
 		$res = $agg->getResponse( $id );
 		if ( $res === null ) {
-			$this->error( "Service response error.\n", 1 );
+			$this->fatalError( "Service response error.\n" );
 		}
 
 		$this->output( $service->getResultData( $res ), 1 );
