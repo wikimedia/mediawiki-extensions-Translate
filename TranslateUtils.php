@@ -253,11 +253,9 @@ class TranslateUtils {
 	public static function getLanguageNames( $code ) {
 		$languageNames = Language::fetchLanguageNames( $code );
 
-		// Remove languages with deprecated codes (bug T37475)
-		global $wgDummyLanguageCodes;
-
-		foreach ( array_keys( $wgDummyLanguageCodes ) as $dummyLanguageCode ) {
-			unset( $languageNames[$dummyLanguageCode] );
+		$deprecatedCodes = LanguageCode::getDeprecatedCodeMapping();
+		foreach ( array_keys( $deprecatedCodes ) as $deprecatedCode ) {
+			unset( $languageNames[ $deprecatedCode ] );
 		}
 
 		Hooks::run( 'TranslateSupportedLanguages', [ &$languageNames, $code ] );
