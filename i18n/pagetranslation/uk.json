@@ -14,7 +14,8 @@
 			"Ата",
 			"Тест",
 			"Piramidion",
-			"Dars"
+			"Dars",
+			"Vlad5250"
 		]
 	},
 	"pagetranslation": "Переклад сторінок",
@@ -145,6 +146,8 @@
 	"pt-movepage-list-pages": "Список сторінок для перейменування",
 	"pt-movepage-list-translation": "{{PLURAL:$1|1=Сторінка|Сторінки}} перекладу",
 	"pt-movepage-list-section": "{{PLURAL:$1|1=Сторінка|Сторінки}} одиниці перекладу",
+	"pt-movepage-list-translatable": "{{PLURAL:$1|Підсторінка, позначена|Підсторінки, позначені}} для перекладу",
+	"pt-movepage-list-translatable-note": "Ці сторінки повинні бути перейменовані окремо.",
 	"pt-movepage-list-other": "{{PLURAL:$1|1=Інша підсторінка|Інші підсторінки}}",
 	"pt-movepage-list-count": "Усього перемістити $1 {{PLURAL:$1|сторінку|сторінки|сторінок}}.",
 	"pt-movepage-legend": "Перемістити сторінку, доступну для перекладу",

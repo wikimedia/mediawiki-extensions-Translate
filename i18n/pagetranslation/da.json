@@ -129,6 +129,8 @@
 	"pt-movepage-list-pages": "Liste over sider til at flytte",
 	"pt-movepage-list-translation": "{{PLURAL:$1|Oversættelsesside|Oversættelsessider}}",
 	"pt-movepage-list-section": "{{PLURAL:$1|Oversættelsesenhedsside|Oversættelsesenhedssider}}",
+	"pt-movepage-list-translatable": "{{PLURAL:$1|Underside|Undersider}} markeret til oversættelse",
+	"pt-movepage-list-translatable-note": "Disse sider bør flyttes separat.",
 	"pt-movepage-list-other": "{{PLURAL:$1|Anden underside|Andre undersider}}",
 	"pt-movepage-list-count": "I alt $1 {{PLURAL:$1|side|sider}} til at flytte.",
 	"pt-movepage-legend": "Flyt oversætbare side",

@@ -149,6 +149,8 @@
 	"pt-movepage-list-pages": "Список страниц для переименования",
 	"pt-movepage-list-translation": "{{PLURAL:$1|1=Страница|Страницы}} перевода",
 	"pt-movepage-list-section": "Разделы {{PLURAL:$1|1=переводимой страницы|переводимых страниц}}",
+	"pt-movepage-list-translatable": "{{PLURAL:$1|Подстраница|Подстраницы}}, отмеченные для перевода",
+	"pt-movepage-list-translatable-note": "Эти страницы должны быть переименованы отдельно.",
 	"pt-movepage-list-other": "{{PLURAL:$1|1=Другая подстраница|Другие подстраницы}}",
 	"pt-movepage-list-count": "Всего переименовать $1 {{PLURAL:$1|страницу|страницы|страниц}}.",
 	"pt-movepage-legend": "Переименование переводимых страниц",

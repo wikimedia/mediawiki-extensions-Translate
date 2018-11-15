@@ -4,7 +4,8 @@
 			"VASANTH S.N.",
 			"Vishwanatha Badikana",
 			"BHARATHESHA ALASANDEMAJALU",
-			"Kiranpoojary"
+			"Kiranpoojary",
+			"Ravi Mundkur"
 		]
 	},
 	"pagetranslation": "ಪುಟೋ ತರ್ಜುಮೆ",
@@ -31,6 +32,9 @@
 	"tpt-aggregategroup-update-cancel": "ವಜಾ ಮಲ್ಪುಲೆ",
 	"log-action-filter-pagetranslation-mark": "ಅನುವಾದಗ್ ಗುರ್ತ್ ಮನ್ಪುಲೆ",
 	"log-action-filter-pagetranslation-unmark": "ಅನುವಾದತ್ ದೆಪ್ಪುಲೆ",
+	"pt-movepage-list-translatable": "{{PLURAL:$1|Subpage|Subpages}}ಅನುವಾದೊಗು ಗುರುತು ಮಲ್ತಿನ",
+	"pt-movepage-list-translatable-note": "ಈ ಪುಟೊಕುಲೆನ್ ಪ್ರತ್ಯೇಕವಾದ್ ದೆಪ್ಪೊಡು.",
+	"pt-movepage-list-other": "ಬೇತೆ {{PLURAL:$1|Subpage|Subpages}}",
 	"pt-movepage-current": "ಇತ್ತೇತ ಪುದರ್:",
 	"pt-movepage-new": "ಪೊಸ ಪುದರ್:",
 	"pt-movepage-reason": "ಕಾರಣೊ:",

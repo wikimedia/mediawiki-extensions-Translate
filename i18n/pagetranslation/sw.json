@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kwisha"
+			"Kwisha",
+			"Rance"
 		]
 	},
 	"tpt-select-prioritylangs-reason": "Sababu:",
@@ -11,5 +12,6 @@
 	"tpt-languages-legend": "Lugha zingine:",
 	"tpt-discouraged-language-reason": "Sababu: $1",
 	"tpt-aggregategroup-add": "Ongeza",
-	"tpt-aggregategroup-save": "Hifadhi"
+	"tpt-aggregategroup-save": "Hifadhi",
+	"pt-movepage-list-translatable-note": "Kurasa hizi lazima zihamishwe kila ukurasa kivyake"
 }

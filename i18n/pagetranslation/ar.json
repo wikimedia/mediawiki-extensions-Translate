@@ -138,6 +138,8 @@
 	"pt-movepage-list-pages": "قائمة الصفحات التي ستنقل",
 	"pt-movepage-list-translation": "{{PLURAL:$1|صفحة|صفحات}} الترجمة",
 	"pt-movepage-list-section": "{{PLURAL:$1|صفحة|صفحات}} وحدة الترجمة",
+	"pt-movepage-list-translatable": "{{PLURAL:$1|صفحة|صفحات}} معلم عليها للترجمة",
+	"pt-movepage-list-translatable-note": "هذه الصفحات يجب أن يتم نقلها بشكل منفصل.",
 	"pt-movepage-list-other": "{{PLURAL:$1|صفحة|صفحات}} فرعية أخرى",
 	"pt-movepage-list-count": "كإجمالي $1 {{PLURAL:$1|صفحة|صفحات}} للنقل.",
 	"pt-movepage-legend": "نقل الصفحة القابلة للترجمة",

@@ -20,6 +20,7 @@
 	"apihelp-query+languagestats-description": "Ruft Sprachstatistiken ab.",
 	"apihelp-query+languagestats-summary": "Ruft Sprachstatistiken ab.",
 	"apihelp-query+languagestats-param-language": "Sprachcode.",
+	"apihelp-query+languagestats-example-1": "Listet Übersetzungsvervollständigungsstatistiken für Finnisch auf.",
 	"apihelp-query+messagecollection-description": "Ruft die Nachrichtensammlung über Übersetzungen ab.",
 	"apihelp-query+messagecollection-param-group": "Nachrichtengruppe.",
 	"apihelp-query+messagecollection-param-language": "Sprachcode.",

@@ -5,6 +5,8 @@
 			"Saederup92"
 		]
 	},
+	"tsb-reminder-sending": "Sender påmindelsen...",
+	"tsb-reminder-sent-new": "Sendte en påmindelse",
 	"tsb-all-languages-button-label": "Alle sprog",
 	"tsb-accept-button-label": "Accepter",
 	"tsb-reject-button-label": "Afvis",
@@ -12,6 +14,7 @@
 	"tsb-reject-all-button-label": "Afvis alle",
 	"tsb-user-posted-a-comment": "Ikke en oversætter",
 	"tsb-translations-source": "Kilde",
+	"tsb-translations-current": "Eksisterende oversættelser",
 	"translationstash": "Velkommen",
 	"translate-translationstash-welcome": "Velkommen {{GENDER:$1|$1}}, du er nu en ny oversætter",
 	"translate-translationstash-skip-button-label": "Prøv en anden",

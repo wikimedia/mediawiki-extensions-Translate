@@ -134,6 +134,8 @@
 	"pt-movepage-list-pages": "Lista över sidor att flytta",
 	"pt-movepage-list-translation": "Översättnings{{PLURAL:$1|sida|sidor}}",
 	"pt-movepage-list-section": "Översättningsenhets{{PLURAL:$1|sida|sidor}}",
+	"pt-movepage-list-translatable": "{{PLURAL:$1|Undersida|Undersidor}} markerades för översättning",
+	"pt-movepage-list-translatable-note": "Dessa sidor måste flyttas separat.",
 	"pt-movepage-list-other": "{{PLURAL:$1|Annan undersida|Andra undersidor}}",
 	"pt-movepage-list-count": "Totalt $1 {{PLURAL:$1|sida|sidor}} att flytta.",
 	"pt-movepage-legend": "Flytta översättningsbar sida",

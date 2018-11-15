@@ -141,6 +141,8 @@
 	"pt-movepage-list-pages": "Lista de páginas para serem movidas",
 	"pt-movepage-list-translation": "{{PLURAL:$1|Página|Páginas}} de tradução",
 	"pt-movepage-list-section": "{{PLURAL:$1|Página de unidade|Páginas de unidades}} de tradução",
+	"pt-movepage-list-translatable": "{{PLURAL:$1|Subpágina marcada|Subpáginas marcadas}} para tradução",
+	"pt-movepage-list-translatable-note": "Estas páginas devem ser movidas separadamente.",
 	"pt-movepage-list-other": "{{PLURAL:$1|Outra subpágina|Outras subpáginas}}",
 	"pt-movepage-list-count": "No total, $1 {{PLURAL:$1|página para ser movida|páginas para serem movidas}}.",
 	"pt-movepage-legend": "Mover página traduzível",

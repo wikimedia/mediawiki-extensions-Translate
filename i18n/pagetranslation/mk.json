@@ -134,6 +134,8 @@
 	"pt-movepage-list-pages": "Список на страници за преместување",
 	"pt-movepage-list-translation": "{{PLURAL:$1|Преводна страница|Преводни страници}}",
 	"pt-movepage-list-section": "{{PLURAL:$1|Страница на преводна единица|Страници на преводни единици}}",
+	"pt-movepage-list-translatable": "{{PLURAL:$1|Потстраница означена|Потстраници означени}} за превод",
+	"pt-movepage-list-translatable-note": "Овие страници мора да се преместат одделно.",
 	"pt-movepage-list-other": "{{PLURAL:$1|Друга потстраница|Други потстраници}}",
 	"pt-movepage-list-count": "Вкупно $1 {{PLURAL:$1|страница|страници}} за преместување.",
 	"pt-movepage-legend": "Премести преводлива страница",

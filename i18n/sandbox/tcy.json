@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Vishwanatha Badikana",
-			"BHARATHESHA ALASANDEMAJALU"
+			"BHARATHESHA ALASANDEMAJALU",
+			"Ravi Mundkur"
 		]
 	},
 	"tsb-email-promoted-body": "ಓಯ್{{GENDER:$1|$1}},\n\nಅಭಿನಂದನೆಲು! ಈರ್ ಅನುಮಾದೊ ಮಲ್ತಿನೆನ್ ಯಾನ್ ತೂಯೆ {{SITENAME}} ಬುಕ್ಕೊ ಈರೆಗ್ ಪೂರ್ತಿ ಅನುವಾದೊ ಮಲ್ಪುನ ಹಕ್ಕ್‌ ಕೊರ್ಪೆ.\n\nಈಡೆಗ್ ಬಲೆ {{SITENAME}} ಮುಲ್ತುಡ್ದ್ ಇತ್ತೆ ಅನುವಾದೊ ದುಂಬರಿಪುಲೆ, ಬುಕ್ಕೊ ದಿನೋಲ:\n$2\n\nಸ್ವಾಗತೊ, ಬುಕ್ಕೊ ಈರೆಗ್ ಈರೆನ ಕಾನಿಕೆಗ್ ಸೊಲ್ಮೆಲು!\n\n{{GENDER:$3|$3}},\n{{SITENAME}} ಸಿಬಂದಿ",
@@ -13,5 +14,6 @@
 	"tsb-accept-confirmation": "{{PLURAL:$1|User|ಸದಸ್ಯೆರ್}} ಒಪ್ಪಿಯೇರ್",
 	"translationstash": "ಸೊಲ್ಮೆಲೋ",
 	"translate-translationstash-skip-button-label": "ನನೊಂಜಿ ಪ್ರಯತ್ನ ಮಾಂಪಿ",
-	"tsb-limit-reached-title": "ಈರೆನ ಅನುವಾದಾಗ್ ಉಡಲ್ ದಿಂಜಿ ಸೊಲ್ಮೆಲೋ"
+	"tsb-limit-reached-title": "ಈರೆನ ಅನುವಾದಾಗ್ ಉಡಲ್ ದಿಂಜಿ ಸೊಲ್ಮೆಲೋ",
+	"tsb-create-user-page": "ಸರಳ ಬಳಕೆದಾರೆ ಪುಟ ರಚಿಸಾಂಡ್"
 }
