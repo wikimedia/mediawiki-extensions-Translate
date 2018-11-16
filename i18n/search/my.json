@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dr Lotus Black"
+			"Dr Lotus Black",
+			"Ninjastrikers"
 		]
 	},
 	"searchtranslations": "ဘာသာပြန်များ ရှာဖွေရန်",
@@ -26,5 +27,5 @@
 	"tux-sst-ellipsis-outdated": "ခေတ်နောက်ကျသော ဘာသာပြန်များ",
 	"tux-sst-link-all-match": "ရှာဖွေစကားလုံးများအားလုံး လိုအပ်သည်။",
 	"tux-sst-match-message": "ရှာဖွေစကားလုံးများ၏ ကိုက်ညီသော မည်သည့်ဘာသာပြန်များကိုမဆို ပြသနေသည်။ $1",
-	"tux-sst-case-sensitive": "စားလုံးအကြီးအသေး အတိမ်းစောင်းမခံ"
+	"tux-sst-case-sensitive": "စာလုံးအကြီးအသေး အတိမ်းစောင်းမခံ"
 }

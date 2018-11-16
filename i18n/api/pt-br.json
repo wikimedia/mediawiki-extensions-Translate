@@ -4,7 +4,8 @@
 			"Mordecool",
 			"Dianakc",
 			"Felipe L. Ewald",
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"TheEduGobi"
 		]
 	},
 	"apihelp-aggregategroups-description": "Gerencie grupos de mensagens agregadas.\n\nVocê pode adicionar e remover grupos de mensagens agregadas e associar ou dissociar grupos de mensagens deles (um de cada vez).",
@@ -91,8 +92,8 @@
 	"apihelp-ttmserver-param-targetlanguage": "O código de idioma da sugestão.",
 	"apihelp-ttmserver-param-text": "O texto para o qual encontrar sugestões.",
 	"apihelp-ttmserver-example-1": "Obtenha sugestões para traduzir \"Help\" do inglês para o finlandês",
-	"apihelp-searchtranslations-description": "Pesquisa traduções.",
-	"apihelp-searchtranslations-summary": "Pesquisa traduções.",
+	"apihelp-searchtranslations-description": "Pesquisar traduções.",
+	"apihelp-searchtranslations-summary": "Pesquisar traduções.",
 	"apihelp-searchtranslations-param-service": "Qual dos serviços de tradução disponíveis para usar.",
 	"apihelp-searchtranslations-param-query": "A string pela qual procurar.",
 	"apihelp-searchtranslations-param-sourcelanguage": "O código de idioma do texto original.",

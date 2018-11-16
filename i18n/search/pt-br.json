@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Luckas",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"TheEduGobi"
 		]
 	},
-	"searchtranslations": "Pesquisa traduções",
+	"searchtranslations": "Pesquisar traduções",
 	"tux-sst-edit": "Editar tradução",
 	"tux-sst-view-foreign": "Ver em $1",
 	"tux-sst-search": "Pesquisar",
-	"tux-sst-search-ph": "Pesquisa traduções",
+	"tux-sst-search-ph": "Pesquisar traduções",
 	"tux-sst-count": "{{PLURAL:$1|Um resultado encontrado|$1 resultados encontrados}}",
 	"tux-sst-facet-language": "Idiomas",
 	"tux-sst-facet-group": "Grupos de mensagens",
@@ -27,5 +28,5 @@
 	"tux-sst-ellipsis-outdated": "Traduções desatualizadas",
 	"tux-sst-link-all-match": "Exigir todas as palavras de pesquisa.",
 	"tux-sst-match-message": "Mostrando traduções que correspondem a qualquer das palavras da pesquisa. $1",
-	"tux-sst-case-sensitive": "Maiúsculas e Minúsculas"
+	"tux-sst-case-sensitive": "Maiúsculas e minúsculas"
 }
