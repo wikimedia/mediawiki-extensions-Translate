@@ -359,7 +359,7 @@ class GroupStatistics extends Maintenance {
 		}
 
 		// List of all languages.
-		$languages = Language::fetchLanguageNames( false );
+		$languages = TranslateUtils::getLanguageNames( null );
 		// Default sorting order by language code, users can sort wiki output.
 		ksort( $languages );
 
