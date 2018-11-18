@@ -4,6 +4,23 @@
 			"Obsuser"
 		]
 	},
+	"searchtranslations": "Pretraga prevoda",
+	"tux-sst-edit": "Uredi prevod",
+	"tux-sst-search": "Pretraži",
+	"tux-sst-search-ph": "Pretraga prevoda",
 	"tux-sst-count": "{{PLURAL:$1|Jedan rezultat pronađen|$1 rezultata pronađena|$1 rezultata pronađeno}}",
+	"tux-sst-facet-language": "Jezici",
+	"tux-sst-facet-group": "Grupe poruka",
+	"tux-sst-nosolr-title": "Pretraga nedostupna",
+	"tux-sst-nosolr-body": "Ovaj viki nema servis za pretragu prevoda.",
+	"tux-sst-solr-offline-title": "Pretraga nedostupna",
+	"tux-sst-solr-offline-body": "Servis za pretragu je privremeno nedostupan.",
+	"tux-sst-next": "Napred ›",
+	"tux-sst-prev": "‹ Nazad",
+	"tux-sst-default": "Prevodi",
+	"tux-sst-translated": "Prevodi za $1",
+	"tux-sst-untranslated": "Neprevedeno za $1",
+	"tux-sst-link-all-match": "Ograniči na sve reči pretrage.",
+	"tux-sst-match-message": "Prikazani su prevodi u kojima je pronađena bilo koja od reči pretrage. $1",
 	"tux-sst-case-sensitive": "Uvažavanje verzala"
 }

@@ -4,5 +4,14 @@
 			"Zoranzoki21"
 		]
 	},
-	"log-name-translatorsandbox": "Dnevnik prevodilačkog peska"
+	"tsb-all-languages-button-label": "Svi jezici",
+	"tsb-accept-button-label": "Prihvati",
+	"tsb-reject-button-label": "Odbij",
+	"tsb-accept-all-button-label": "Prihvati sve",
+	"tsb-reject-all-button-label": "Odbiji sve",
+	"tsb-translations-source": "Izvor",
+	"tsb-create-user-page": "Napravljena osnovna korisnička stranica",
+	"log-name-translatorsandbox": "Dnevnik prevoda u pesku",
+	"logentry-translatorsandbox-promoted": "$1 je {{GENDER:$2|unapredio|unapredila}} $3 u {{GENDER:$4|prevodioca}}",
+	"logentry-translatorsandbox-rejected": "$1 je {{GENDER:$2|odbio|odbila}} zahtev korisnika/ce „$3” da postane prevodilac"
 }

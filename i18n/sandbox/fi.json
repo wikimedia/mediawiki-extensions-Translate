@@ -47,7 +47,7 @@
 	"tsb-limit-reached-body": "Saavutit uusien kääntäjien käännösrajan. Tiimimme vahvistaa ja päivittää tilisi pian. Sen jälkeen voit kääntää rajattomasti.",
 	"tsb-no-requests-from-new-users": "Ei uusia hakemuksia.",
 	"tsb-create-user-page": "Luo yksinkertainen käyttäjäsivu",
-	"log-name-translatorsandbox": "Käännöshiekkalaatikkoloki",
+	"log-name-translatorsandbox": "Käännöshiekkalaatikon loki",
 	"log-description-translatorsandbox": "Loki käännöshiekkalaatikon käyttäjien toimista",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|ylensi}} $3 {{GENDER:$4|kääntäjäksi}}",
 	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|hylkäsi}} pyynnön käyttäjältä \"$3\" ryhtyä kääntäjäksi",
