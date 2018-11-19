@@ -116,7 +116,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 			$group = MessageGroups::getGroup( $id );
 			$parents = MessageGroups::getSharedGroups( $group );
-			MessageGroupStats::forGroup( $parents, MessageGroupStats::FLAG_NO_CACHE );
+			MessageGroupStats::clearGroup( $parents );
 
 			return;
 		}
