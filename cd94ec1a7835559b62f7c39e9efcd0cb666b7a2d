@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ebe8af7_2bd8ce97",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-11-20T09:32:42Z",
+      "side": 1,
+      "message": "I\u0027m okay making this longer if wanted.",
+      "revId": "cd94ec1a7835559b62f7c39e9efcd0cb666b7a2d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
