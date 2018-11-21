@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "11a79030_d87c884b",
+        "filename": "resources/js/ext.translate.editor.shortcuts.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2018-11-21T09:59:07Z",
+      "side": 1,
+      "message": "You may pass the rtl value also to this method, since it is available at this scope from line 17. Just avoids calculating again in the method.",
+      "revId": "9dd3766e0aaa2f5a8e374ffc6c191e07146a372a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e716a43_23e435cc",
+        "filename": "resources/js/ext.translate.editor.shortcuts.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2018-11-21T09:59:07Z",
+      "side": 1,
+      "message": "An observation that these positioning does not adjust with screen zoom or resize.  Not related to this patch though.",
+      "revId": "9dd3766e0aaa2f5a8e374ffc6c191e07146a372a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
