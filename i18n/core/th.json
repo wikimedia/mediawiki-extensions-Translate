@@ -177,6 +177,7 @@
 	"translate-untranslated": "ไม่ได้แปล",
 	"translate-percentage-complete": "เสร็จสมบูรณ์",
 	"translate-percentage-fuzzy": "ล้าสมัย",
+	"translate-percentage-proofread": "ตรวจทานแล้ว",
 	"translate-languagestats-overall": "กลุ่มข้อความทั้งหมด",
 	"translate-ls-submit": "แสดงสถิติ",
 	"translate-ls-column-group": "กลุ่มข้อความ",

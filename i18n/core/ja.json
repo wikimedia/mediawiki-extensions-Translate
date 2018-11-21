@@ -191,6 +191,7 @@
 	"translate-untranslated": "未翻訳",
 	"translate-percentage-complete": "完了",
 	"translate-percentage-fuzzy": "要更新",
+	"translate-percentage-proofread": "査読済",
 	"translate-languagestats-overall": "合計",
 	"translate-ls-submit": "統計を表示",
 	"translate-ls-column-group": "メッセージ群",

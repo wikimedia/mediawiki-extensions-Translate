@@ -105,6 +105,8 @@
 	"pm-cancel-button-label": "Annulle",
 	"pm-page-does-not-exist": "$1 non g'esiste.",
 	"pm-old-translations-missing": "$1 non ge tène traduziune vicchie.",
+	"pm-delete-icon-hover-text": "Scangìlle l'aunità",
+	"pm-pagetitle-placeholder": "Mitte 'u titole d'a pàgene",
 	"pp-save-button-label": "Reggìstre",
 	"pp-cancel-button-label": "Annulle",
 	"pp-save-message": "'A pàgene ha state reggistrate. Puè [$1 cangiarle]."

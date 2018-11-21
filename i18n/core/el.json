@@ -15,7 +15,8 @@
 			"ZaDiak",
 			"Περίεργος",
 			"KATRINE1992",
-			"Nikosgranturismogt"
+			"Nikosgranturismogt",
+			"KATRINE1993"
 		]
 	},
 	"translate": "Μεταφράστε",
@@ -186,6 +187,7 @@
 	"translate-untranslated": "Αμετάφραστα",
 	"translate-percentage-complete": "Ολοκλήρωση",
 	"translate-percentage-fuzzy": "Παρωχημένα",
+	"translate-percentage-proofread": "Ελέγχθηκε",
 	"translate-languagestats-overall": "Όλες οι ομάδες μηνυμάτων μαζί",
 	"translate-ls-submit": "Εμφάνιση στατιστικών",
 	"translate-ls-column-group": "Ομάδα μηνυμάτων",

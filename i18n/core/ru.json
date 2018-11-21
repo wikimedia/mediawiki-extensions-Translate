@@ -202,6 +202,7 @@
 	"translate-untranslated": "Непереведённые",
 	"translate-percentage-complete": "Выполнено",
 	"translate-percentage-fuzzy": "Устарело",
+	"translate-percentage-proofread": "Проверенные",
 	"translate-languagestats-overall": "Сообщения всех групп",
 	"translate-ls-submit": "Показать статистику",
 	"translate-ls-column-group": "Группа сообщений",

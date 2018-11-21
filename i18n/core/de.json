@@ -192,6 +192,7 @@
 	"translate-untranslated": "Nachrichten (übersetzbar)",
 	"translate-percentage-complete": "Vollständig",
 	"translate-percentage-fuzzy": "Veraltet",
+	"translate-percentage-proofread": "Überprüft",
 	"translate-languagestats-overall": "Alle Gruppen zusammen",
 	"translate-ls-submit": "Statistiken anzeigen",
 	"translate-ls-column-group": "Systemnachrichtengruppe",

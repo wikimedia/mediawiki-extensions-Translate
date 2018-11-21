@@ -14,7 +14,8 @@
 			"Mar(c)",
 			"Southparkfan",
 			"Sjoerddebruin",
-			"Mainframe98"
+			"Mainframe98",
+			"Elroy"
 		]
 	},
 	"translate": "Vertalen",
@@ -372,6 +373,7 @@
 	"tux-editor-message-tools-history": "Geschiedenis",
 	"tux-editor-message-tools-delete": "Verwijderen",
 	"tux-editor-message-tools-translations": "Alle vertalingen",
+	"tux-editor-message-tools-linktothis": "Aan dit bericht koppelen",
 	"tux-editor-loading": "Bezig met laden…",
 	"translate-search-more-languages-info": "Nog $1 {{PLURAL:$1|taal|talen}}",
 	"translate-statsbar-tooltip": "$1% vertaald, $2% gecontroleerd",

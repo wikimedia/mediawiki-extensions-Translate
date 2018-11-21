@@ -191,6 +191,7 @@
 	"translate-untranslated": "未翻譯",
 	"translate-percentage-complete": "完成度",
 	"translate-percentage-fuzzy": "已過時",
+	"translate-percentage-proofread": "已審查",
 	"translate-languagestats-overall": "所有訊息群組合計",
 	"translate-ls-submit": "顯示統計",
 	"translate-ls-column-group": "訊息群組",
