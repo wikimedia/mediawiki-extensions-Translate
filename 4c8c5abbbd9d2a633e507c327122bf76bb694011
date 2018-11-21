@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "330b254f_99d5c145",
+        "filename": "tag/SpecialPageTranslation.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2018-11-21T09:39:53Z",
+      "side": 1,
+      "message": "I have difficulty in understanding forGroup is equivalent for clearGroup\nforGroup returns Returns stats for all languages in given group.\nclearGroup - deletes something from db.",
+      "revId": "4c8c5abbbd9d2a633e507c327122bf76bb694011",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
