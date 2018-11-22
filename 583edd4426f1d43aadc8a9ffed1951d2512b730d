@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d0d484e9_9c3e5a8f",
+        "filename": "Translate.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2018-11-22T06:08:51Z",
+      "side": 1,
+      "message": "3 is default. I failed to see any explicit mention about whether this param value is in seconds or milliseconds. https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories just says \"How long to wait for an answer from remote service. \" The TranslationQuery class also does not tell the unit",
+      "revId": "583edd4426f1d43aadc8a9ffed1951d2512b730d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}

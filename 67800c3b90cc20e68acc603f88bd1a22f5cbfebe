@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "59da7c1c_558adbe4",
+        "filename": "Translate.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2018-11-22T06:08:51Z",
+      "side": 0,
+      "message": "Is there a reason to move out this url param from configuration to The service client code?\nIsn\u0027t it inconsistant with other configurations such as apertium, yandex here?\n\nhttps://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories says url as one param for this kind of services. But if one set that param, it is no longer respected in MicrosoftWebService.",
+      "revId": "67800c3b90cc20e68acc603f88bd1a22f5cbfebe",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
