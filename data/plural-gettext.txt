@@ -104,6 +104,8 @@ sl	nplurals=4; plural=(n%100 == 1) ? 0 : ( (n%100 == 2) ? 1 : ( (n%100 == 3 || n
 so	nplurals=2; plural=(n != 1);
 sq	nplurals=2; plural=(n != 1);
 sr	nplurals=3; plural=(n%10 == 1 && n%100 != 11) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );
+sr-ec	nplurals=3; plural=(n%10 == 1 && n%100 != 11) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );
+sr-el	nplurals=3; plural=(n%10 == 1 && n%100 != 11) ? 0 : ( (n%10 >= 2 && n%10 <= 4 && (n%100 < 10 || n%100 >= 20)) ? 1 : 2 );
 su	nplurals=1; plural=0;
 sv	nplurals=2; plural=(n != 1);
 sw	nplurals=2; plural=(n != 1);
