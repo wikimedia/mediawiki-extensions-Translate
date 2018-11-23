@@ -346,7 +346,7 @@
 	"tux-editor-cancel-button-label": "Annuler",
 	"tux-editor-confirm-button-label": "Confirmer la traduction",
 	"tux-editor-proofread-button-label": "Marquer comme relu",
-	"tux-editor-shortcut-info": "Appuyez sur « $1 » pour enregistrer ou « $2 » pour passer au message suivant ou « $4 » pour fournir un résumé ou « $3 » pour d’autres raccourcis.",
+	"tux-editor-shortcut-info": "Appuyez sur « $1 » pour confirmer et passer au message suivant, « $2 » pour sauter, « $4 » pour fournir un résumé ou maintenir « $3 » pour voir d’autres raccourcis.",
 	"tux-editor-edit-desc": "Modifier la documentation",
 	"tux-editor-add-desc": "Ajouter une documentation",
 	"tux-editor-suggestions-title": "Suggestions",

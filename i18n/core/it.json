@@ -324,7 +324,7 @@
 	"tux-editor-cancel-button-label": "Annulla",
 	"tux-editor-confirm-button-label": "Conferma traduzione",
 	"tux-editor-proofread-button-label": "Contrassegna come revisionata",
-	"tux-editor-shortcut-info": "Premi \"$1\" per salvare, \"$2\" per passare al messaggio successivo o \"$4\" per fornire un riassunto o \"$3\" per altre scorciatoie.",
+	"tux-editor-shortcut-info": "Premi \"$1\" per confermare e passare al prossimo messaggio, \"$2\" per saltare, \"$4\" per fornire un riassunto o \"$3\" per vedere altre scorciatoie.",
 	"tux-editor-edit-desc": "Modifica documentazione",
 	"tux-editor-add-desc": "Aggiungi documentazione",
 	"tux-editor-suggestions-title": "Suggerimenti",

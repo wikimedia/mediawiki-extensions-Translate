@@ -324,7 +324,7 @@
 	"tux-editor-cancel-button-label": "Abbrechen",
 	"tux-editor-confirm-button-label": "Übersetzung bestätigen",
 	"tux-editor-proofread-button-label": "Als überprüft markieren",
-	"tux-editor-shortcut-info": "Drücke „$1“ zum Speichern, „$2“, um zur nächsten Nachricht zu gelangen, „$4“, um eine Zusammenfassung anzugeben oder „$3“ für andere Tastaturkürzel.",
+	"tux-editor-shortcut-info": "Drücke „$1“ zum Bestätigen und gehe zur nächsten Nachricht, „$2“ zum Überspringen, „$4“, um eine Zusammenfassung anzugeben oder halte „$3“ gedrückt, um andere Tastaturkürzel anzusehen.",
 	"tux-editor-edit-desc": "Dokumentation bearbeiten",
 	"tux-editor-add-desc": "Dokumentation hinzufügen",
 	"tux-editor-suggestions-title": "Vorschläge",

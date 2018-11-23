@@ -10,7 +10,8 @@
 			"Otokoume",
 			"ネイ",
 			"Afaz",
-			"Yusuke1109"
+			"Yusuke1109",
+			"Omotecho"
 		]
 	},
 	"pagetranslation": "ページ翻訳",
@@ -128,7 +129,8 @@
 	"pt-movepage-list-pages": "移動するページの一覧",
 	"pt-movepage-list-translation": "翻訳{{PLURAL:$1|ページ}}",
 	"pt-movepage-list-section": "翻訳単位{{PLURAL:$1|ページ}}",
-	"pt-movepage-list-other": "その他の下位{{PLURAL:$1|ページ}}",
+	"pt-movepage-list-translatable-note": "これらのページは個別に移動させてください。",
+	"pt-movepage-list-other": "その他の{{PLURAL:$1|subpage|下位ページ}}",
 	"pt-movepage-list-count": "合計 $1 ページを移動",
 	"pt-movepage-legend": "翻訳対象ページの移動",
 	"pt-movepage-current": "現在の名前:",
