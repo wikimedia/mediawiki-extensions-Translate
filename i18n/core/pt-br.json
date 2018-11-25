@@ -323,7 +323,7 @@
 	"tux-editor-cancel-button-label": "Cancelar",
 	"tux-editor-confirm-button-label": "Confirmar tradução",
 	"tux-editor-proofread-button-label": "Marcar como revisado",
-	"tux-editor-shortcut-info": "Pressione \"$1\" para salvar, \"$2\" para pular para a mensagem seguinte, \"$4\" para introduzir um súmario ou \"$3\" para outros atalhos.",
+	"tux-editor-shortcut-info": "Pressione \"$1\" para confirmar e passar à mensagem seguinte, \"$2\" para pular, \"$4\" para fornecer um resumo ou mantenha premido \"$3\" para ver outros atalhos.",
 	"tux-editor-edit-desc": "Editar documentação",
 	"tux-editor-add-desc": "Adicionar documentação",
 	"tux-editor-suggestions-title": "Sugestões",

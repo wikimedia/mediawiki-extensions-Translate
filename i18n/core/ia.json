@@ -301,7 +301,7 @@
 	"tux-editor-cancel-button-label": "Cancellar",
 	"tux-editor-confirm-button-label": "Confirmar traduction",
 	"tux-editor-proofread-button-label": "Marcar como revidite",
-	"tux-editor-shortcut-info": "Preme \"$1\" pro salveguardar o \"$2\" pro saltar al sequente message o \"$4\" pro fornir un summario o \"$3\" pro altere claves accelerator.",
+	"tux-editor-shortcut-info": "Preme \"$1\" pro confirmar e passar al sequente message, \"$2\" pro saltar, \"$4\" pro fornir un summario o tene premite \"$3\" pro vider altere claves accelerator.",
 	"tux-editor-edit-desc": "Modificar documentation",
 	"tux-editor-add-desc": "Adder documentation",
 	"tux-editor-suggestions-title": "Suggestiones",

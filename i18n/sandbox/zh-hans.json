@@ -6,7 +6,8 @@
 			"Qiyue2001",
 			"Shizhao",
 			"Xiaomingyan",
-			"Yfdyh000"
+			"Yfdyh000",
+			"A Chinese Wikipedian"
 		]
 	},
 	"managetranslatorsandbox": "管理译者沙盒",
@@ -48,7 +49,7 @@
 	"tsb-limit-reached-title": "感谢您的翻译",
 	"tsb-limit-reached-body": "您已达到新进译者的翻译限制。\n我们的团队将尽快核实和升级您的账户。\n那时您就可以无限制的参与翻译了。",
 	"tsb-no-requests-from-new-users": "没有新用户请求",
-	"tsb-create-user-page": "创建基础用户页",
+	"tsb-create-user-page": "创建了基础用户页",
 	"log-name-translatorsandbox": "翻译沙盒日志",
 	"log-description-translatorsandbox": "翻译沙盒用户的操作日志",
 	"logentry-translatorsandbox-promoted": "$1将$3{{GENDER:$2|提拔}}为{{GENDER:$4|译者}}",

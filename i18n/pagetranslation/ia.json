@@ -119,7 +119,7 @@
 	"pt-movepage-list-pages": "Lista de paginas a renominar",
 	"pt-movepage-list-translation": "{{PLURAL:$1|Pagina|Paginas}} de traduction",
 	"pt-movepage-list-section": "{{PLURAL:$1|Pagina|Paginas}} de unitate de traduction",
-	"pt-movepage-list-other": "Altere sub{{PLURAL:$1|pagina|paginas}}",
+	"pt-movepage-list-other": "Altere {{PLURAL:$1|subpagina|subpaginas}}",
 	"pt-movepage-list-count": "In total $1 {{PLURAL:$1|pagina|paginas}} a renominar.",
 	"pt-movepage-legend": "Renominar pagina traducibile",
 	"pt-movepage-current": "Nomine actual:",

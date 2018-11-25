@@ -316,7 +316,7 @@
 	"tux-editor-cancel-button-label": "Cancelar",
 	"tux-editor-confirm-button-label": "Confirmar a tradução",
 	"tux-editor-proofread-button-label": "Marcar como revista",
-	"tux-editor-shortcut-info": "Prima \"$1\" para gravar ou \"$2\" para saltar para a mensagem seguinte ou \"$4\" para fornecer um resumo ou \"$3\" para outros atalhos.",
+	"tux-editor-shortcut-info": "Prima \"$1\" para confirmar e passar à mensagem seguinte, \"$2\" para saltar, \"$4\" para fornecer um resumo ou mantenha premido \"$3\" para ver outros atalhos.",
 	"tux-editor-edit-desc": "Editar a documentação",
 	"tux-editor-add-desc": "Adicionar documentação",
 	"tux-editor-suggestions-title": "Sugestões",

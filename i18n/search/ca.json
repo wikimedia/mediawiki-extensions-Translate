@@ -8,6 +8,7 @@
 	},
 	"searchtranslations": "Cerca a les traduccions",
 	"tux-sst-edit": "Edita la traducció",
+	"tux-sst-view-foreign": "Mostra a $1",
 	"tux-sst-search": "Cerca",
 	"tux-sst-search-ph": "Cerca a les traduccions",
 	"tux-sst-count": "{{PLURAL:$1|S'ha trobat $1 resultat|S'han trobat $1 resultats}}",
@@ -25,6 +26,7 @@
 	"tux-sst-outdated": "Traduccions desactualitzades de $1",
 	"tux-sst-ellipsis-untranslated": "Sense traducció",
 	"tux-sst-ellipsis-outdated": "Traduccions desactualitzades",
+	"tux-sst-link-all-match": "Requereix totes les paraules de cerca.",
 	"tux-sst-match-message": "Es mostren les traduccions que coincideixen amb qualssevol paraules de la cerca. $1",
 	"tux-sst-case-sensitive": "Distingeix entre majúscules i minúscules"
 }

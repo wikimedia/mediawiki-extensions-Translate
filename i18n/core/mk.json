@@ -313,7 +313,7 @@
 	"tux-editor-cancel-button-label": "Откажи",
 	"tux-editor-confirm-button-label": "Потврди превод",
 	"tux-editor-proofread-button-label": "Означи како проверено",
-	"tux-editor-shortcut-info": "Стиснете на „$1“ за да зачувате, „$2“ за да прејдете на следната порака, „$4“ за да дадете опис, или пак „$3“ за други кратенки.",
+	"tux-editor-shortcut-info": "Стиснете на „$1“ за да потврдите и да прејдете на следната порака, „$2“ за да прескокнете, „$4“ за да весете опис или држете го „$3“ за да видите други кратенки.",
 	"tux-editor-edit-desc": "Уреди документација",
 	"tux-editor-add-desc": "Додај документација",
 	"tux-editor-suggestions-title": "Предлози",

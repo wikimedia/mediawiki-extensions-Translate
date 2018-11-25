@@ -26,7 +26,8 @@
 			"Macofe",
 			"Indiralena",
 			"Dgstranz",
-			"KATRINE1992"
+			"KATRINE1992",
+			"Laura Ospina"
 		]
 	},
 	"translate": "Traducir",
@@ -326,7 +327,7 @@
 	"tux-editor-cancel-button-label": "Cancelar",
 	"tux-editor-confirm-button-label": "Confirmar la traducción",
 	"tux-editor-proofread-button-label": "Marcar como revisada",
-	"tux-editor-shortcut-info": "Pulsa «$1» para guardar, «$2» para ir al siguiente mensaje, «$4» para proporcionar un resumen o «$3» para más atajos.",
+	"tux-editor-shortcut-info": "Pulsa «$1» para confirmar, «$2» para ir al siguiente mensaje, «$4» para proporcionar un resumen o «$3» para ver más atajos.",
 	"tux-editor-edit-desc": "Editar la documentación",
 	"tux-editor-add-desc": "Añadir documentación",
 	"tux-editor-suggestions-title": "Sugerencias",

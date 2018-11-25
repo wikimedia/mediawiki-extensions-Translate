@@ -304,7 +304,7 @@
 	"tux-editor-cancel-button-label": "Prekliči",
 	"tux-editor-confirm-button-label": "Potrdi prevod",
 	"tux-editor-proofread-button-label": "Označi kot pregledano",
-	"tux-editor-shortcut-info": "Pritisnite »$1« za shranitev, »$2« za skok na naslednje sporočilo, »$4« za navedbo povzetka ali »$3« za druge bližnjice.",
+	"tux-editor-shortcut-info": "Pritisnite »$1« za potrditev in premik na naslednje sporočilo, »$2« za preskočitev, »$4« za navedbo povzetka ali pa držite »$3« za ogled drugih bližnjic.",
 	"tux-editor-edit-desc": "Uredi dokumentacijo",
 	"tux-editor-add-desc": "Dodaj dokumentacijo",
 	"tux-editor-suggestions-title": "Predlogi",

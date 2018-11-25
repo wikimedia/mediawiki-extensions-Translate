@@ -321,7 +321,7 @@
 	"tux-editor-cancel-button-label": "ألغ",
 	"tux-editor-confirm-button-label": "أكد الترجمة",
 	"tux-editor-proofread-button-label": "قبول الترجمة",
-	"tux-editor-shortcut-info": "اضغط \"$1\" للحفظ أو \"$2\" للمتابعة للرسالة القادمة أو \"$4\" لتوفير ملخص أو \"$3\" للاختصارات الأخرى.",
+	"tux-editor-shortcut-info": "اضغط على \"$1\" للتأكيد والانتقال إلى الرسالة التالية، أو \"$2\" للتخطي، أو \"$4\" لتقديم ملخص أو اضغط على \"$3\" لمشاهدة اختصارات أخرى.",
 	"tux-editor-edit-desc": "عدل التوثيق",
 	"tux-editor-add-desc": "إضافة توثيق",
 	"tux-editor-suggestions-title": "اقتراحات",
