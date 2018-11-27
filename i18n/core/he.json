@@ -315,7 +315,7 @@
 	"tux-editor-cancel-button-label": "ביטול",
 	"tux-editor-confirm-button-label": "אישור תרגום",
 	"tux-editor-proofread-button-label": "לסמן שהתרגום נסקר",
-	"tux-editor-shortcut-info": "\"$1\" לשמירה, \"$2\" למעבר להודעה הבאה,\"$4\" לכתיבת תקציר, או \"$3\" להצגת קיצורים אחרים.",
+	"tux-editor-shortcut-info": "אפשר ללחוץ על \"$1\" לאישור ומעבר להודעה הבאה, \"$2\" למעבר להודעה הבאה, \"$4\" לכתיבת תקציר או להחזיק \"$3\" להצגת קיצורים אחרים.",
 	"tux-editor-edit-desc": "עריכת תיעוד",
 	"tux-editor-add-desc": "הוספת תיעוד",
 	"tux-editor-suggestions-title": "הצעות",

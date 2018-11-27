@@ -28,7 +28,8 @@
 			"Žekřil71pl",
 			"The Polish",
 			"Tsca",
-			"Railfail536"
+			"Railfail536",
+			"CiaPan"
 		]
 	},
 	"translate": "Przetłumacz",
@@ -329,7 +330,7 @@
 	"tux-editor-cancel-button-label": "Anuluj",
 	"tux-editor-confirm-button-label": "Potwierdź tłumaczenie",
 	"tux-editor-proofread-button-label": "Oznacz jako przejrzane",
-	"tux-editor-shortcut-info": "Naciśnij „$1”, aby zapisać, „$2”, aby przejść do następnego komunikatu, lub „$4”, aby podać opis zmian lub „$3” dla innych skrótów.",
+	"tux-editor-shortcut-info": "Naciśnij „$1”, aby zatwierdzić i przejść do następnego komunikatu, lub „$2”, aby pominąć, lub „$4”, aby podać opis zmian lub przytrzymaj „$3”, aby zobaczyć inne skróty.",
 	"tux-editor-edit-desc": "Edytuj dokumentację",
 	"tux-editor-add-desc": "Dodaj dokumentację",
 	"tux-editor-suggestions-title": "Sugestie",
