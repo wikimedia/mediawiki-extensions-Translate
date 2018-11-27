@@ -16,6 +16,24 @@
       "revId": "67800c3b90cc20e68acc603f88bd1a22f5cbfebe",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a524ac6_65e1539a",
+        "filename": "Translate.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-11-27T09:29:58Z",
+      "side": 0,
+      "message": "I can keep it, but since there is only one URL it isn\u0027t very useful to make it configurable.",
+      "parentUuid": "59da7c1c_558adbe4",
+      "revId": "67800c3b90cc20e68acc603f88bd1a22f5cbfebe",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
