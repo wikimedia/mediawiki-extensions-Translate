@@ -27,7 +27,8 @@
 			"Indiralena",
 			"Dgstranz",
 			"KATRINE1992",
-			"Laura Ospina"
+			"Laura Ospina",
+			"Tiberius1701"
 		]
 	},
 	"translate": "Traducir",
@@ -130,7 +131,7 @@
 	"right-translate-groupreview": "Modificar el estado del flujo de trabajo de los grupos de mensajes",
 	"translate-rcfilters-translations": "Traducciones",
 	"translate-rcfilters-translations-only-label": "Traducciones",
-	"translate-rcfilters-translations-only-desc": "Cambios a las páginas traducidas.",
+	"translate-rcfilters-translations-only-desc": "Cambios en las páginas traducidas.",
 	"translate-rcfilters-translations-filter-label": "No traducciones",
 	"translate-rcfilters-translations-filter-desc": "Todos los cambios que no son traducciones.",
 	"translate-rcfilters-translations-site-label": "Mensajes del sitio",
@@ -179,7 +180,7 @@
 	"translate-translations-including-no-param": "Especifica una clave de mensaje válida en el parámetro de subpágina",
 	"translate-translations-history-short": "h",
 	"languagestats": "Estadísticas por idioma",
-	"languagestats-summary": "Esta página muestra estadísticas de traducción para todos los grupos de mensajes para un idioma.",
+	"languagestats-summary": "Esta página muestra las estadísticas de traducción en todos los grupos de mensajes de un idioma.",
 	"messagegroupstats-summary": "Esta página muestra las estadísticas del grupo de mensajes.",
 	"languagestats-stats-for": "Estadísticas de las traducciones en $1 ($2).",
 	"languagestats-recenttranslations": "traducciones recientes",
@@ -236,7 +237,7 @@
 	"translate-manage-action-ignore": "Ignorar",
 	"translate-manage-action-fuzzy": "Importar y combinar traducciones",
 	"translate-manage-nochanges": "No hay cambios en los mensajes originales para este grupo.",
-	"translate-manage-nochanges-other": "No hubo cambios para este idioma.\nUse el enlace siguiente para volver a la vista de grupo.",
+	"translate-manage-nochanges-other": "No hubo cambios en este idioma.\nUse el enlace siguiente para volver a la vista de grupo.",
 	"translate-manage-inconsistent": "Se detectaron inconsistencias en la solicitud.\nRevisa cambios y prueba nuevamente.\nDetalles: $1.",
 	"translate-manage-toolong": "Se excedió el tiempo máximo de procesamiento de $1 {{PLURAL:$1|segundo|segundos}}.\nPor favor reenvía el formulario para continuar procesando.",
 	"translate-manage-import-summary": "Importando una nueva versión desde fuente externa",

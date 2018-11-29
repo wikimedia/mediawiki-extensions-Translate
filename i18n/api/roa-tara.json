@@ -33,6 +33,7 @@
 	"apihelp-query+messagegroupstats-param-group": "ID d'u gruppe de messàgge.",
 	"apihelp-query+messagegroupstats-example-1": "Elenghe de le statisteche de combletamende de le traduziune pu gruppe \"page-Example\"",
 	"apihelp-query+messagetranslations-description": "'Nderroghe tutte le traduziune pe 'nu messàgge singole.",
+	"apihelp-translatesandbox-param-do": "Ce ste da fà.",
 	"apihelp-translatesandbox-param-email": "Email quanne stoche a ccreje 'n'utende.",
 	"apihelp-translationaids-description": "'Nderroghe tutte le aijute de traduziune.",
 	"apihelp-translationaids-summary": "'Nderroghe tutte le aijute de traduziune.",

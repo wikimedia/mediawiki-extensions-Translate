@@ -323,7 +323,7 @@
 	"tux-editor-cancel-button-label": "取消",
 	"tux-editor-confirm-button-label": "確認翻譯",
 	"tux-editor-proofread-button-label": "標記為已審查",
-	"tux-editor-shortcut-info": "使用 \"$1\" 儲存，或 \"$2\" 跳至下一則訊息或 \"$4\" 填寫摘要或 \"$3\" 使用其他快速鍵。",
+	"tux-editor-shortcut-info": "使用 \"$1\" 來確認並移至下一個訊息，使用 \"$2\" 來略過，使用 \"$4\" 來提供摘要或壓住 \"$3\" 來查看使用其它快速鍵。",
 	"tux-editor-edit-desc": "編輯說明",
 	"tux-editor-add-desc": "新增說明",
 	"tux-editor-suggestions-title": "建議",

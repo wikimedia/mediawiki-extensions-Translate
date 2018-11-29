@@ -4,7 +4,8 @@
 			"Crt",
 			"Nike",
 			"Pyscowicz",
-			"Uusijani"
+			"Uusijani",
+			"Valtlait"
 		]
 	},
 	"managetranslatorsandbox": "Kääntäjähakemusten hallinta",
@@ -50,6 +51,6 @@
 	"log-name-translatorsandbox": "Käännöshiekkalaatikon loki",
 	"log-description-translatorsandbox": "Loki käännöshiekkalaatikon käyttäjien toimista",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|ylensi}} $3 {{GENDER:$4|kääntäjäksi}}",
-	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|hylkäsi}} pyynnön käyttäjältä \"$3\" ryhtyä kääntäjäksi",
+	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|hylkäsi}} pyynnön käyttäjältä ”$3” ryhtyä kääntäjäksi",
 	"logentry-newusers-tsbpromoted": "Käyttäjätili $3 {{GENDER:$2|luotiin}} ylentämällä hiekkalaatikosta"
 }

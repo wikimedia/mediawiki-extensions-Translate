@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Nike",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Valtlait"
 		]
 	},
 	"apihelp-aggregategroups-param-group": "Viestiryhmän tunnus.",
@@ -13,7 +14,7 @@
 	"apihelp-groupreview-param-group": "Viestiryhmä.",
 	"apihelp-groupreview-param-language": "Kielikoodi.",
 	"apihelp-groupreview-param-state": "Viestiryhmän uusi tila.",
-	"apihelp-groupreview-example-1": "Merkitsee saksankielisen käännöksen viestiryhmälle \"group-Example\" valmiiksi",
+	"apihelp-groupreview-example-1": "Merkitsee saksankielisen käännöksen viestiryhmälle ”group-Example” valmiiksi",
 	"apihelp-query+languagestats-description": "Hakee kielitilastoja.",
 	"apihelp-query+languagestats-param-language": "Kielikoodi.",
 	"apihelp-query+languagestats-example-1": "Luettelo käännösten kattavuustilastoista suomeksi",
