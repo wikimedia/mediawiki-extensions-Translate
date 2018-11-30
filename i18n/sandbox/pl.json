@@ -37,7 +37,7 @@
 	"translate-translationstash-skip-button-label": "Spróbuj innego",
 	"tsb-limit-reached-title": "Dziękuję za Twoje tłumaczenia",
 	"tsb-no-requests-from-new-users": "Brak wniosków od nowych użytkowników",
-	"tsb-create-user-page": "Utwórz prostą stronę użytkownika",
+	"tsb-create-user-page": "Utworzono prostą stronę użytkownika",
 	"log-name-translatorsandbox": "Rejestr brudnopisu tłumaczeń",
 	"log-description-translatorsandbox": "To jest rejestr działań użytkowników brudnopisu tłumaczeń",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|awansował|awansowała}} $3 na {{GENDER:$4|tłumacza|tłumaczkę}}",

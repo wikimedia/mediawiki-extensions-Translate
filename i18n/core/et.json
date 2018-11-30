@@ -275,7 +275,7 @@
 	"tux-editor-cancel-button-label": "Loobu",
 	"tux-editor-confirm-button-label": "Kinnita tõlge",
 	"tux-editor-proofread-button-label": "Märgi ülevaadatuks",
-	"tux-editor-shortcut-info": "Vajuta \"$1\", et salvestada, või \"$2\", et see sõnum vahele jätta ja minna järgmise juurde, või \"$4\", et kirjutada resümee, või \"$3\", et näha teisi kiirklahve.",
+	"tux-editor-shortcut-info": "Vajuta klahve \"$1\", et kinnitada ja et minna järgmise sõnumi juurde, \"$2\", et sõnum vahele jätta, \"$4\", et kirjutada resümee, või \"$3\", et näha teisi kiirklahve.",
 	"tux-editor-edit-desc": "Redigeeri dokumentatsiooni",
 	"tux-editor-add-desc": "Lisa dokumentatsioon",
 	"tux-editor-suggestions-title": "Pakkumused",
