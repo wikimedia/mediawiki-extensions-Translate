@@ -303,7 +303,7 @@
 	"tux-editor-cancel-button-label": "Storno",
 	"tux-editor-confirm-button-label": "Potvrdit překlad",
 	"tux-editor-proofread-button-label": "Označit jako zkontrolované",
-	"tux-editor-shortcut-info": "Stiskněte „$1“ pro uložení, „$2“ pro přeskočení na další zprávu, „$4“ pro zadání shrnutí nebo „$3“ pro další zkratky.",
+	"tux-editor-shortcut-info": "Stiskněte „$1“ pro potvrzení a přesun na další zprávu, „$2“ pro přeskočení na další zprávu, „$4“ pro zadání shrnutí nebo přidržte „$3“ pro zobrazení dalších zkratek.",
 	"tux-editor-edit-desc": "Upravit dokumentaci",
 	"tux-editor-add-desc": "Přidat dokumentaci",
 	"tux-editor-suggestions-title": "Návrhy",
