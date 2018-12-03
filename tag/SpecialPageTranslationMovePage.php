@@ -206,9 +206,10 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	/**
 	 * The query form.
 	 *
-	 * @param array $par
+	 * @param array $par Error messages - unused.
+	 * @param bool $isPermError Whether the error is about user permissions - unused.
 	 */
-	public function showForm( $par ) {
+	public function showForm( $par, $isPermError = false ) {
 		$this->getOutput()->addWikiMsg( 'pt-movepage-intro' );
 
 		$formDescriptor = [
