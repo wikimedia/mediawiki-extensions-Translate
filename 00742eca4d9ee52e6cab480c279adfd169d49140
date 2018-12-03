@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1628565f_ace71878",
+        "filename": "Resources.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2018-12-03T20:48:20Z",
+      "side": 1,
+      "message": "Oops.",
+      "range": {
+        "startLine": 305,
+        "startChar": 13,
+        "endLine": 305,
+        "endChar": 18
+      },
+      "revId": "00742eca4d9ee52e6cab480c279adfd169d49140",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
