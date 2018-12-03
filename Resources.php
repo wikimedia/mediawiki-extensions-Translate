@@ -64,6 +64,7 @@ $wgResourceModules['ext.translate.editor'] = [
 		'mediawiki.api.parse',
 		'mediawiki.jqueryMsg',
 		'mediawiki.language',
+		'mediawiki.notify',
 		'mediawiki.user',
 		'mediawiki.util',
 	],
@@ -301,6 +302,7 @@ $wgResourceModules['ext.translate.special.managetranslatorsandbox'] = [
 		'mediawiki.api',
 		'mediawiki.jqueryMsg',
 		'mediawiki.language',
+		'mediawiki.notiy',
 	],
 	'messages' => [
 		'tsb-accept-all-button-label',
