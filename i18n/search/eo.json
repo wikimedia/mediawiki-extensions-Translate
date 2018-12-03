@@ -1,9 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"YvesNevelsteen"
 		]
 	},
+	"searchtranslations": "Serĉi tradukojn",
+	"tux-sst-edit": "Redakti tradukon",
+	"tux-sst-view-foreign": "Vidi je $1",
+	"tux-sst-search": "Serĉi",
+	"tux-sst-search-ph": "Serĉi tradukojn",
+	"tux-sst-count": "{{PLURAL:$1|Unu rezulto trovita|$1 rezultoj trovitaj}}",
+	"tux-sst-facet-language": "Lingvoj",
+	"tux-sst-facet-group": "Mesaĝogrupoj",
+	"tux-sst-nosolr-title": "Serĉado ne estas disponebla",
+	"tux-sst-nosolr-body": "Ĉi tiu vikio ne havas servon por serĉi tradukojn.",
+	"tux-sst-solr-offline-title": "Serĉado ne estas disponebla",
+	"tux-sst-solr-offline-body": "La serĉoservo portempe ne estas disponebla.",
 	"tux-sst-next": "Sekvaj →",
-	"tux-sst-prev": "← Malsekvaj"
+	"tux-sst-prev": "← Antaŭaj",
+	"tux-sst-default": "Tradukoj",
+	"tux-sst-translated": "Tradukoj de $1",
+	"tux-sst-untranslated": "Neniu traduko de $1",
+	"tux-sst-ellipsis-untranslated": "Neniu traduko",
+	"tux-sst-case-sensitive": "Usklecodistinga"
 }
