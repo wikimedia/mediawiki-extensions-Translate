@@ -15,6 +15,8 @@
 	"tsb-user-posted-a-comment": "Ikke en oversætter",
 	"tsb-translations-source": "Kilde",
 	"tsb-translations-current": "Eksisterende oversættelser",
+	"tsb-reject-confirmation": "Afviste {{PLURAL:$1|bruger|brugere}}",
+	"tsb-accept-confirmation": "{{PLURAL:$1|Accepteret bruger|Accepterede brugere}}",
 	"translationstash": "Velkommen",
 	"translate-translationstash-welcome": "Velkommen {{GENDER:$1|$1}}, du er nu en ny oversætter",
 	"translate-translationstash-skip-button-label": "Prøv en anden",
