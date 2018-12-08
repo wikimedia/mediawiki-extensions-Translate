@@ -62,16 +62,6 @@ class MessageGroups {
 			function ( $curValue ) use ( &$wrapper, $recache ) {
 				global $wgAutoloadClasses;
 
-				if (
-					$curValue instanceof DependencyWrapper &&
-					!$curValue->isExpired() &&
-					$recache === false
-				) {
-					$wrapper = $curValue; // use the current cached value
-
-					return false; // leave the cached value alone
-				}
-
 				$groups = $deps = $autoload = [];
 				// This constructs the list of all groups from multiple different sources.
 				// When possible, a cache dependency is created to automatically recreate
@@ -92,7 +82,12 @@ class MessageGroups {
 			},
 			[
 				'lockTSE' => 30, // avoid stampedes
-				'minAsOf' => INF // always run callback
+				'touchedCallback' => function ( $value ) {
+					return ( $value instanceof DependencyWrapper && $value->isExpired() )
+						? time() // treat item as if it just expired
+						: null;
+				},
+				'minAsOf' => $recache ? INF : 1, // always "miss" on recache
 			]
 		);
 
