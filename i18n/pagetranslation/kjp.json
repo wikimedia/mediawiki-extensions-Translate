@@ -4,7 +4,9 @@
 			"Rul1902"
 		]
 	},
+	"translate-tag-translate-link-desc": "လိက်မေံၜၠါ်ယိုဝ် ခၠယ့်လာႋဆာ်",
 	"tpt-languages-nonzero": "$1 ($2% ၮှ်ခၠယ့်ၯင်ႋ)",
 	"tpt-aggregategroup-new-description": "ဆ်ုဏဲဖၠဟ် (လ်ုဆူ့ဍုဂ်ၜးသီသှ်ေလှ်)",
-	"tpt-aggregategroup-edit-description": "ဆ်ုဏဲဖၠဟ်:"
+	"tpt-aggregategroup-edit-description": "ဆ်ုဏဲဖၠဟ်:",
+	"pm-import-button-label": "ဆူ့ဍုဂ်သုံ့လင်"
 }
