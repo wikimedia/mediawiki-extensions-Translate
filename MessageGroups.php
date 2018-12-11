@@ -36,13 +36,13 @@ class MessageGroups {
 	 */
 	protected function init() {
 		if ( is_array( $this->groups ) ) {
-			return;
+			return; // groups already initialized
 		}
 
 		$value = $this->getCachedGroupDefinitions();
 		$groups = $value['cc'];
 
-		$this->postInit( $groups );
+		$this->initGroupsFromDefinitions( $groups );
 	}
 
 	/**
@@ -81,7 +81,8 @@ class MessageGroups {
 				return $wrapper; // save the new value to cache
 			},
 			[
-				'lockTSE' => 30, // avoid stampedes
+				'checkKeys' => [ $cache->makeKey( 'translate-groups' ) ],
+				'lockTSE' => 30, // avoid stampedes (mutex)
 				'touchedCallback' => function ( $value ) {
 					return ( $value instanceof DependencyWrapper && $value->isExpired() )
 						? time() // treat item as if it just expired
@@ -98,10 +99,11 @@ class MessageGroups {
 	}
 
 	/**
+	 * Expand process cached groups to objects
+	 *
 	 * @param array $groups
 	 */
-	protected function postInit( $groups ) {
-		// Expand groups to objects
+	protected function initGroupsFromDefinitions( $groups ) {
 		foreach ( $groups as $id => $mixed ) {
 			if ( !is_object( $mixed ) ) {
 				$groups[$id] = call_user_func( $mixed, $id );
@@ -117,10 +119,15 @@ class MessageGroups {
 	 * @since 2015.04
 	 */
 	public function recache() {
+		// Purge the value from all datacenters
+		$cache = $this->getCache();
+		$cache->touchCheckKey( $cache->makeKey( 'translate-groups' ) );
+		// Reload the cache value and update the local datacenter
 		$value = $this->getCachedGroupDefinitions( 'recache' );
 		$groups = $value['cc'];
 
-		$this->postInit( $groups );
+		$this->clearProcessCache();
+		$this->initGroupsFromDefinitions( $groups );
 	}
 
 	/**
