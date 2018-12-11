@@ -1,0 +1,8 @@
+Code-Review+2: L10n-bot <l10n-bot@translatewiki.net>
+Code-Review+2: MarcoAurelio <maurelio@tools.wmflabs.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Tue, 11 Dec 2018 22:52:45 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/479115
+Project: mediawiki/extensions/Translate
+Branch: refs/heads/master
