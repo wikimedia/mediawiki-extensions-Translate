@@ -119,7 +119,7 @@
 	"logentry-pagetranslation-discourage": "$1 {{GENDER:$2|rajoitti}} sivun $3 kääntämistä",
 	"logentry-pagetranslation-prioritylanguages-unset": "$1 {{GENDER:$2|poisti}} ensisijaiset kielet käännettävästä sivusta $3",
 	"logentry-pagetranslation-prioritylanguages": "$1 {{GENDER:$2|asetti}} käännettävän sivun $3 ensisijaiset käännöskielet arvoon $5",
-	"logentry-pagetranslation-prioritylanguages-force": "$1 {{GENDER:$2|asetti}} käännettävän sivun $3 ainoat sallitus käännöskielet arvoon $5",
+	"logentry-pagetranslation-prioritylanguages-force": "$1 {{GENDER:$2|asetti}} käännettävän sivun $3 ainoat sallitut käännöskielet arvoon $5",
 	"logentry-pagetranslation-associate": "$1 {{GENDER:$2|lisäsi}} käännettävän sivun $3 kokoelmaryhmään $4",
 	"logentry-pagetranslation-dissociate": "$1 {{GENDER:$2|poisti}} käännettävän sivun $3 kokoelmaryhmästä $4",
 	"log-action-filter-pagetranslation": "Toiminnon tyyppi:",

@@ -90,7 +90,7 @@
 	"pt-movepage-list-pages": "רשימה פון בלעטער צו באַוועגן",
 	"pt-movepage-list-translation": "טײַטש  {{PLURAL:$1|בלאַט|בלעטער}}",
 	"pt-movepage-list-section": "איבערזעצונג איינהייט {{PLURAL:$1|בלאַט|בלעטער}}",
-	"pt-movepage-list-other": "אנדערע אונטער{{PLURAL:$1|בלאַט|בלעטער}}",
+	"pt-movepage-list-other": "אנדערע {{PLURAL:$1| אונטערבלאַט| אונטערבלעטער}}",
 	"pt-movepage-list-count": "אינגאנצן $1 {{PLURAL:$1|בלאט|בלעטער}} צו באוועגן.",
 	"pt-movepage-legend": "באוועגן איבערזעצבארן בלאט",
 	"pt-movepage-current": "אקטועלער נאמען:",
