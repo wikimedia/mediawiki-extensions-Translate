@@ -198,6 +198,7 @@
 	"translate-untranslated": "Sin traducir",
 	"translate-percentage-complete": "Completados",
 	"translate-percentage-fuzzy": "Desactualizados",
+	"translate-percentage-proofread": "Revisados",
 	"translate-languagestats-overall": "Todos los grupos de mensajes juntos",
 	"translate-ls-submit": "Mostrar estadísticas",
 	"translate-ls-column-group": "Grupo de mensajes",
