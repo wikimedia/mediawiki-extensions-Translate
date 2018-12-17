@@ -15,7 +15,8 @@
 			"KuboF",
 			"Robin van der Vliet",
 			"Psychoslave",
-			"Joao Xavier"
+			"Joao Xavier",
+			"YvesNevelsteen"
 		]
 	},
 	"translate": "Tradukado",
@@ -254,10 +255,10 @@
 	"log-description-translationreview": "Protokolo de ĉiuj tradukprovlegoj kaj de mesaĝgrupoj.",
 	"logentry-translationreview-message": "$1 {{GENDER:$2|reviziis}} tradukon $3",
 	"translate-workflow-state-": "(malŝalta)",
-	"translate-workflowstatus": "Statuso = $1",
+	"translate-workflowstatus": "Stato = $1",
 	"translate-workflow-set-doing": "Aktivado...",
 	"translate-workflow-autocreated-summary": "Aŭtomata kreado de paĝo por laborflustatuso $1",
-	"translate-stats-workflow": "Statuso",
+	"translate-stats-workflow": "Stato",
 	"translate-workflowgroup-label": "Laborflustatusoj",
 	"translate-workflowgroup-desc": "Ĉi tiu mesaĝgrupo montras la laborflustatusojn.\nLa statusoj estas difinitaj en la konfigurvariablo $wgTranslateWorkflowStates.",
 	"translate-dynagroup-recent-label": "Lastatempaj tradukoj",
