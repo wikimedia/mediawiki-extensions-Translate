@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"아라",
-			"SeoJeongHo"
+			"SeoJeongHo",
+			"Nuevo Paso"
 		]
 	},
 	"searchtranslations": "번역 검색",
@@ -20,9 +21,9 @@
 	"tux-sst-next": "다음 ›",
 	"tux-sst-prev": "‹ 이전",
 	"tux-sst-default": "번역",
-	"tux-sst-translated": "$1에서의 번역",
+	"tux-sst-translated": "$1에서 번역",
 	"tux-sst-untranslated": "$1에서의 번역 없음",
-	"tux-sst-outdated": "$1에서의 오래된 번역",
+	"tux-sst-outdated": "$1에서 옮긴 오래된 번역",
 	"tux-sst-ellipsis-untranslated": "번역 없음",
 	"tux-sst-ellipsis-outdated": "오래된 번역",
 	"tux-sst-link-all-match": "모든 검색 낱말이 필요합니다.",

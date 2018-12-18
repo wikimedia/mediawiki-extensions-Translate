@@ -27,7 +27,7 @@
 	"translate-taction-lstats": "Статистика језика",
 	"translate-taction-mstats": "Статистика групе порука",
 	"translate-taction-export": "Извоз",
-	"translate-taction-disabled": "Ова радња је онемогућена на овом wiki-ју.",
+	"translate-taction-disabled": "Ова радња је онемогућена на овом викију.",
 	"translate-page-no-such-language": "Наведени језик није важећи.",
 	"translate-page-no-such-group": "Наведена група није важећа.",
 	"translate-page-disabled": "Превођење на овом језику у овој групи је онемогућено.\nРазлог:\n\n<em>$1</em>",
@@ -386,7 +386,7 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% преведено, $2% проверено, $3% застарело",
 	"translate-search-more-groups-info": "још $1 {{PLURAL:$1|група|групе|група}}",
 	"translate-ulsdep-title": "Грешка у конфигурацији",
-	"translate-ulsdep-body": "Додатак „Превођење” зависи од [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector додатка „Универзалан бирач језика”].",
+	"translate-ulsdep-body": "Додатак „Превођење” зависи од [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector додатка „Универзални бирач језика”].",
 	"tux-session-expired": "Више нисте пријављени. Пријавите се у засебној картици. Друга могућност је да прекопирате несачуване преводе, пријавите се, вратите се на ову страницу и поново унесете своје преводе.",
 	"tux-nojs": "Ова алатка не ради без JavaScript-а. JavaScript је онемогућен, не ради или је овај прегледач неподржан."
 }
