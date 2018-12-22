@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95adaf51_c48e4e07",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2018-12-22T00:05:59Z",
+      "side": 1,
+      "message": "At first glance, these two seem contradictory. Can you explain a little bit why it isn\u0027t (assuming)?",
+      "range": {
+        "startLine": 95,
+        "startChar": 24,
+        "endLine": 96,
+        "endChar": 58
+      },
+      "revId": "8e6c72b8e19cd098e1cf5d0ea10406489c9f5d99",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
