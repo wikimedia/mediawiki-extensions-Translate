@@ -161,7 +161,7 @@ class TPSection {
 	/**
 	 * Construct an object from previously serialized array.
 	 * @param array $data
-	 * @return TPSection
+	 * @return self
 	 * @since 2018.07
 	 */
 	public static function unserializeFromArray( $data ) {

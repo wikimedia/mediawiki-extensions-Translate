@@ -556,7 +556,7 @@ class MessageGroups {
 
 	/**
 	 * Constructor function.
-	 * @return MessageGroups
+	 * @return self
 	 */
 	public static function singleton() {
 		static $instance;

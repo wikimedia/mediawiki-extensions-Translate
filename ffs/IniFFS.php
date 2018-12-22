@@ -24,7 +24,7 @@ class IniFFS extends SimpleFFS {
 		$group = MessageGroupBase::factory( $conf );
 
 		MediaWiki\suppressWarnings();
-		$ffs = new IniFFS( $group );
+		$ffs = new self( $group );
 		$parsed = $ffs->readFromVariable( $data );
 		MediaWiki\restoreWarnings();
 

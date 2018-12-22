@@ -20,7 +20,7 @@ class TranslateDeleteJob extends Job {
 	 * @param string $full
 	 * @param User $performer
 	 * @param string $reason
-	 * @return TranslateDeleteJob
+	 * @return self
 	 */
 	public static function newJob( Title $target, $base, $full, /*User*/$performer, $reason ) {
 		$job = new self( $target );

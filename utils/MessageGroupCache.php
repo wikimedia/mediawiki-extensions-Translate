@@ -230,7 +230,7 @@ class MessageGroupCache {
 
 	/**
 	 * Open the cache for reading.
-	 * @return MessageGroupCache
+	 * @return self
 	 */
 	protected function open() {
 		if ( $this->cache === null ) {

@@ -16,7 +16,7 @@
 class MessageIndexRebuildJob extends Job {
 
 	/**
-	 * @return MessageIndexRebuildJob
+	 * @return self
 	 */
 	public static function newJob() {
 		$job = new self( Title::newMainPage() );
