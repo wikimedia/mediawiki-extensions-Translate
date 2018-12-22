@@ -22,6 +22,30 @@
       "revId": "8e6c72b8e19cd098e1cf5d0ea10406489c9f5d99",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f00563d6_c5b0c266",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2018-12-22T00:45:42Z",
+      "side": 1,
+      "message": "They are kind of contradictory (the touchedTimestamp patch is meant to fix this).\n\nThis was originally meant to avoid stampedes *when the value is expired*, but that logic contradicts the \"always trigger callback\" logic that checks the timestamp to begin with.",
+      "parentUuid": "95adaf51_c48e4e07",
+      "range": {
+        "startLine": 95,
+        "startChar": 24,
+        "endLine": 96,
+        "endChar": 58
+      },
+      "revId": "8e6c72b8e19cd098e1cf5d0ea10406489c9f5d99",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
