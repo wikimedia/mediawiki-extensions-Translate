@@ -3,7 +3,7 @@
 class TranslateSandboxEmailJob extends Job {
 	/**
 	 * @param array $params
-	 * @return TranslateSandboxEmailJob
+	 * @return self
 	 */
 	public static function newJob( array $params ) {
 		return new self( Title::newMainPage(), $params );

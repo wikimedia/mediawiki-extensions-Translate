@@ -24,10 +24,10 @@ class StringMatcher implements StringMangler, MetaYamlSchemaExtender {
 	/**
 	 * Alias for making NO-OP string mangler.
 	 *
-	 * @return StringMatcher
+	 * @return self
 	 */
 	public static function EmptyMatcher() {
-		return new StringMatcher();
+		return new self();
 	}
 
 	/**

@@ -83,7 +83,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 				continue;
 			}
 
-			if ( $group instanceof AggregateMessageGroup ) {
+			if ( $group instanceof self ) {
 				$messages += $this->loadMessagesFromCache( $group->getGroups() );
 				continue;
 			}

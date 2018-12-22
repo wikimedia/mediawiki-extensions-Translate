@@ -16,7 +16,7 @@ class TranslateRenderJob extends Job {
 
 	/**
 	 * @param Title $target
-	 * @return TranslateRenderJob
+	 * @return self
 	 */
 	public static function newJob( Title $target ) {
 		$job = new self( $target );

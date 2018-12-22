@@ -52,7 +52,7 @@ class TTMServerMessageUpdateJob extends Job {
 	/**
 	 * @param MessageHandle $handle
 	 * @param string $command
-	 * @return TTMServerMessageUpdateJob
+	 * @return self
 	 */
 	public static function newJob( MessageHandle $handle, $command ) {
 		$job = new self( $handle->getTitle(), [ 'command' => $command ] );
@@ -243,9 +243,9 @@ class TTMServerMessageUpdateJob extends Job {
 
 	/**
 	 * Extracted for testing purpose
-	 * @param TTMServerMessageUpdateJob $job
+	 * @param self $job
 	 */
-	protected function resend( TTMServerMessageUpdateJob $job ) {
+	protected function resend( self $job ) {
 		JobQueueGroup::singleton()->push( $job );
 	}
 

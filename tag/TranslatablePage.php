@@ -73,7 +73,7 @@ class TranslatablePage {
 	 * @param Title $title
 	 * @param string $text
 	 *
-	 * @return TranslatablePage
+	 * @return self
 	 */
 	public static function newFromText( Title $title, $text ) {
 		$obj = new self( $title );
@@ -91,7 +91,7 @@ class TranslatablePage {
 	 * @param Title $title
 	 * @param int $revision Revision number
 	 * @throws MWException
-	 * @return TranslatablePage
+	 * @return self
 	 */
 	public static function newFromRevision( Title $title, $revision ) {
 		$rev = Revision::newFromTitle( $title, $revision );
@@ -111,7 +111,7 @@ class TranslatablePage {
 	 * The text of last marked revision is loaded when neded.
 	 *
 	 * @param Title $title
-	 * @return TranslatablePage
+	 * @return self
 	 */
 	public static function newFromTitle( Title $title ) {
 		$obj = new self( $title );
@@ -822,7 +822,7 @@ class TranslatablePage {
 
 	/**
 	 * @param Title $title
-	 * @return bool|TranslatablePage
+	 * @return bool|self
 	 */
 	public static function isTranslationPage( Title $title ) {
 		$handle = new MessageHandle( $title );
@@ -875,7 +875,7 @@ class TranslatablePage {
 				$dbr = wfGetDB( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
-				return TranslatablePage::getTranslatablePages();
+				return self::getTranslatablePages();
 			},
 			[ 'pcTTL' => $pcTTL, 'pcGroup' => __CLASS__ . ':30' ]
 		);
