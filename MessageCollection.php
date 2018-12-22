@@ -92,7 +92,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * Construct a new message collection from definitions.
 	 * @param MessageDefinitions $definitions
 	 * @param string $code Language code.
-	 * @return MessageCollection
+	 * @return self
 	 */
 	public static function newFromDefinitions( MessageDefinitions $definitions, $code ) {
 		$collection = new self( $code );
@@ -105,7 +105,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	/**
 	 * Constructs a new empty message collection. Suitable for example for testing.
 	 * @param string $code Language code.
-	 * @return MessageCollection
+	 * @return self
 	 */
 	public static function newEmpty( $code ) {
 	}

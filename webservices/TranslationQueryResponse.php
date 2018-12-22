@@ -28,7 +28,7 @@ class TranslationQueryResponse {
 
 	public static function newFromMultiHttp( array $data, TranslationQuery $query ) {
 		$response = $data['response'];
-		$obj = new TranslationQueryResponse();
+		$obj = new self();
 		$obj->code = (int)$response['code'];
 		$obj->reason = $response['reason'];
 		$obj->headers = $response['headers'];

@@ -27,7 +27,7 @@ class TranslationQuery {
 
 	// URL is mandatory, so using it here
 	public static function factory( $url ) {
-		$obj = new TranslationQuery();
+		$obj = new self();
 		$obj->url = $url;
 		return $obj;
 	}

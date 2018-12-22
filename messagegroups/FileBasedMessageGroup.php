@@ -23,7 +23,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	 * Constructs a FileBasedMessageGroup from any normal message group.
 	 * Useful for doing special Gettext exports from any group.
 	 * @param MessageGroup $group
-	 * @return FileBasedMessageGroup
+	 * @return self
 	 */
 	public static function newFromMessageGroup( $group ) {
 		$conf = [

@@ -20,7 +20,7 @@ class TranslateMoveJob extends Job {
 	 * @param Title $target
 	 * @param array $params should include base-source and base-target
 	 * @param User $performer
-	 * @return TranslateMoveJob
+	 * @return self
 	 */
 	public static function newJob( Title $source, Title $target, array $params,
 		/*User*/$performer
