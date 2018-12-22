@@ -107,5 +107,5 @@ class Languageeditstats extends Maintenance {
 	}
 }
 
-$maintClass = 'Languageeditstats';
+$maintClass = Languageeditstats::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

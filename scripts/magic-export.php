@@ -359,5 +359,5 @@ PHP
 	}
 }
 
-$maintClass = 'MagicExport';
+$maintClass = MagicExport::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

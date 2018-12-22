@@ -297,5 +297,5 @@ class CommandlineExport extends Maintenance {
 	}
 }
 
-$maintClass = 'CommandlineExport';
+$maintClass = CommandlineExport::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
