@@ -28,7 +28,7 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	public static function newFromMessageGroup( $group ) {
 		$conf = [
 			'BASIC' => [
-				'class' => 'FileBasedMessageGroup',
+				'class' => self::class,
 				'id' => $group->getId(),
 				'label' => $group->getLabel(),
 				'namespace' => $group->getNamespace(),

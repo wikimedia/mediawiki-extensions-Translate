@@ -677,5 +677,5 @@ class GroupStatistics extends Maintenance {
 	}
 }
 
-$maintClass = 'GroupStatistics';
+$maintClass = GroupStatistics::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

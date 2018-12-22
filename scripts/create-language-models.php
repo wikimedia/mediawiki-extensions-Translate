@@ -230,5 +230,5 @@ TXT;
 	}
 }
 
-$maintClass = 'LanguageModelCreator';
+$maintClass = LanguageModelCreator::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

@@ -54,5 +54,5 @@ class TranslateExpandGroupSpec extends Maintenance {
 	}
 }
 
-$maintClass = 'TranslateExpandGroupSpec';
+$maintClass = TranslateExpandGroupSpec::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

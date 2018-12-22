@@ -138,5 +138,5 @@ class CreateCheckIndex extends Maintenance {
 	}
 }
 
-$maintClass = 'CreateCheckIndex';
+$maintClass = CreateCheckIndex::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
