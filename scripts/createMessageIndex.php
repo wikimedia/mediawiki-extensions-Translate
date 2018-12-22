@@ -30,5 +30,5 @@ class CreateMessageIndex extends Maintenance {
 	}
 }
 
-$maintClass = 'CreateMessageIndex';
+$maintClass = CreateMessageIndex::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

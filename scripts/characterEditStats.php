@@ -148,5 +148,5 @@ class CharacterEditStats extends Maintenance {
 	}
 }
 
-$maintClass = 'CharacterEditStats';
+$maintClass = CharacterEditStats::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

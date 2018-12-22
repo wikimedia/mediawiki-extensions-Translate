@@ -127,5 +127,5 @@ class TS extends Maintenance {
 	}
 }
 
-$maintClass = 'TS';
+$maintClass = TS::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

@@ -296,5 +296,5 @@ class FuzzyScript {
 	}
 }
 
-$maintClass = 'Fuzzy';
+$maintClass = Fuzzy::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
