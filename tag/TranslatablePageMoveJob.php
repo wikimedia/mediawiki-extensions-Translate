@@ -21,7 +21,7 @@ class TranslatablePageMoveJob extends Job {
 	 * @param array $moves should include base-source and base-target
 	 * @param string $summary
 	 * @param User $performer
-	 * @return TranslateMoveJob
+	 * @return TranslatablePageMoveJob
 	 */
 	public static function newJob(
 		Title $source, Title $target, array $moves, $summary, User $performer
