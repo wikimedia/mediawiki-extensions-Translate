@@ -209,9 +209,9 @@ class SpecialLanguageStats extends SpecialPage {
 	}
 
 	/**
-	 * Return the list of allowed values for target here.
+	 * Return true if language exist in the list of allowed languages or false otherwise.
 	 * @param string $value
-	 * @return array
+	 * @return bool
 	 */
 	protected function isValidValue( $value ) {
 		$langs = Language::fetchLanguageNames();
