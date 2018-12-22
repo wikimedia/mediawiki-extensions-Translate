@@ -23,7 +23,7 @@ class TranslationsUpdateJob extends Job {
 	 * If a list of sections is provided, then the job will also update translation
 	 * unit pages.
 	 *
-	 * @param Title $page
+	 * @param TranslatablePage $page
 	 * @param TPSection[] $sections
 	 * @return TranslationsUpdateJob
 	 * @since 2018.07
