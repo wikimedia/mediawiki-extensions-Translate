@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cfc39feb_3b9500a0",
+        "filename": "tag/TranslatablePageMoveJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-12-22T18:58:07Z",
+      "side": 1,
+      "message": "Personally, I prefer\n\n @return self\n\nin such cases. This helps avoiding such mistakes.",
+      "range": {
+        "startLine": 24,
+        "startChar": 4,
+        "endLine": 24,
+        "endChar": 35
+      },
+      "revId": "14ac7d8b3a8ab984144ffa0d086d40b4fb850b79",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
