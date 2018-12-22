@@ -7,7 +7,6 @@ class CombinedInsertablesSuggester implements InsertablesSuggester {
 	protected $suggesters = [];
 
 	/**
-	 * CombinedInsertablesSuggester constructor.
 	 * @param array $suggesters Array of InsertablesSuggester objects to combine.
 	 */
 	public function __construct( $suggesters = [] ) {

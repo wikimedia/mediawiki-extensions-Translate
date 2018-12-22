@@ -406,7 +406,6 @@ class MessageGroups {
 
 	/**
 	 * Sets the message group priority.
-	 * @see MessageGroups::getPriority
 	 *
 	 * @param MessageGroup|string $group Message group
 	 * @param string $priority Priority (empty string to unset)
