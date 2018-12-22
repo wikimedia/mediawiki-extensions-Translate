@@ -575,7 +575,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 
 	/**
 	 * Returns all section pages, including those which are currently not active.
-	 * @return TitleArray
+	 * @return Title[]
 	 */
 	protected function getSectionPages() {
 		if ( !isset( $this->sectionPages ) ) {
