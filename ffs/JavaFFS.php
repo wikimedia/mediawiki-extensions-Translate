@@ -159,7 +159,7 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * Parses non-empty properties file row to key and value.
 	 * @param string $line
 	 * @param string $sep
-	 * @return string
+	 * @return string[]
 	 * @since 2012-03-28
 	 */
 	public static function readRow( $line, $sep ) {
