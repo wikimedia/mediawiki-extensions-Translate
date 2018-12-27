@@ -151,7 +151,7 @@
 	"translate-mgs-submit": "İstatistikan bımocne",
 	"translate-mgs-column-language": "Zıwan",
 	"translate-mgs-totals": "Zıwani heme piya",
-	"supportedlanguages": "Zıwanê ke peşti gırewtê",
+	"supportedlanguages": "Zıwanê ke peşti gırewta",
 	"supportedlanguages-summary": "Ena perre lista zıwananê ke hetê {{SITENAME}}y ra qebul biy, be namanê çarnayoğan inan motnena. \nhem zi tewr vêşi iştirak kerdaye karbera goreya zoni rezkeno. \nAçarnayoğe ke namey cı gırdo ina zaf iştiraqkkerdo. \nNara ke ek namey cı bın de reng asena aktivi yana racbayeyi.",
 	"supportedlanguages-colorlegend": "Asengeya Renga: açarnayışo peyên verdê $1  roca biyo",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Açarnoğ}}|Açarnoği}}: $1",

@@ -131,7 +131,7 @@
 	"action-translate-import": "импорт переводов, выполненных в оффлайне",
 	"right-translate-messagereview": "Досмотр переводов",
 	"action-translate-messagereview": "проверку переводов",
-	"right-translate-groupreview": "изменять состояние обработки групп сообщений",
+	"right-translate-groupreview": "Изменять состояние обработки групп сообщений",
 	"action-translate-groupreview": "изменение состояния групп сообщений",
 	"translate-rcfilters-translations": "Переводы",
 	"translate-rcfilters-translations-only-label": "Переводы",
