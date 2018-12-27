@@ -41,7 +41,7 @@
 	"translationstash": "Tervetuloa",
 	"translate-translationstash-welcome": "Tervetuloa {{GENDER:$1|$1}}. Olet uusi kääntäjä.",
 	"translate-translationstash-welcome-note": "Tutustu käännöstyökaluihin. Käännä muutamia viestejä, niin saat täydet käännösoikeudet lempiprojektiesi kääntämiseen.",
-	"translate-translationstash-initialtranslation": "Ensimmäinen käännös",
+	"translate-translationstash-initialtranslation": "Ensimmäinen käännöksesi",
 	"translate-translationstash-translations": "$1 {{PLURAL:$1|valmis käännös|valmista käännöstä}}",
 	"translate-translationstash-skip-button-label": "Ohita",
 	"tsb-limit-reached-title": "Kiitos käännöksistäsi",
