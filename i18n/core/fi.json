@@ -321,7 +321,7 @@
 	"tux-editor-cancel-button-label": "Peru",
 	"tux-editor-confirm-button-label": "Hyväksy käännös",
 	"tux-editor-proofread-button-label": "Merkitse tarkastetuksi",
-	"tux-editor-shortcut-info": "Paina \"$1\" hyväksyäksesi ja siirtyäksesi seuraavaan viestiin, \"$2\" ohittaaksesi, \"$4\" siirtyäksesi yhteenvetoon tai \"$3\" näyttääksesi muut näppäinyhdistelmät.",
+	"tux-editor-shortcut-info": "Paina ”$1” hyväksyäksesi ja siirtyäksesi seuraavaan viestiin, ”$2” ohittaaksesi, ”$4” siirtyäksesi yhteenvetoon tai ”$3” näyttääksesi muut näppäinyhdistelmät.",
 	"tux-editor-edit-desc": "Muokkaa ohjeistusta",
 	"tux-editor-add-desc": "Lisää ohjeistus",
 	"tux-editor-suggestions-title": "Ehdotukset",
