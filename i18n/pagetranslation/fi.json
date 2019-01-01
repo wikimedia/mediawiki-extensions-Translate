@@ -142,6 +142,7 @@
 	"pt-movepage-list-pages": "Lista siirrettävistä sivuista",
 	"pt-movepage-list-translation": "{{PLURAL:$1|Käännössivu|Käännössivut}}",
 	"pt-movepage-list-section": "{{PLURAL:$1|Käännösosiosivut}}",
+	"pt-movepage-list-translatable-note": "Nämä sivut on siirrettävä erikseen.",
 	"pt-movepage-list-other": "{{PLURAL:$1|Muu alasivu|Muut alasivut}}",
 	"pt-movepage-list-count": "Yhteensä $1 {{PLURAL:$1|siirrettävä sivu|siirrettävää sivua}}.",
 	"pt-movepage-legend": "Siirrä käännettävä sivu",
