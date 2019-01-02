@@ -338,7 +338,7 @@ class MessageGroupStats {
 	 * @param int $flags Combination of FLAG_* constants.
 	 * @return Traversable Database result object
 	 */
-	protected static function selectRowsIdLang( $ids = null, $codes = null, $flags ) {
+	protected static function selectRowsIdLang( $ids, $codes, $flags ) {
 		if ( $flags & self::FLAG_NO_CACHE ) {
 			return [];
 		}
