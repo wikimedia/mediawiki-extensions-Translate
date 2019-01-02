@@ -67,7 +67,7 @@ class MessageGroupStats {
 	 * @return null[]|int[]
 	 */
 	public static function forItem( $id, $code, $flags = 0 ) {
-		$res = self::selectRowsIdLang( [ $id ], $code, $flags );
+		$res = self::selectRowsIdLang( [ $id ], [ $code ], $flags );
 		$stats = self::extractResults( $res, [ $id ] );
 
 		/* In case some code calls this for dynamic groups, return the default
@@ -268,7 +268,7 @@ class MessageGroupStats {
 		$groups = MessageGroups::singleton()->getGroups();
 
 		$ids = array_keys( $groups );
-		$res = self::selectRowsIdLang( null, $code, $flags );
+		$res = self::selectRowsIdLang( null, [ $code ], $flags );
 		$stats = self::extractResults( $res, $ids, $stats );
 
 		foreach ( $groups as $id => $group ) {
@@ -338,7 +338,7 @@ class MessageGroupStats {
 	 * @param int $flags Combination of FLAG_* constants.
 	 * @return Traversable Database result object
 	 */
-	protected static function selectRowsIdLang( $ids = null, $codes = null, $flags ) {
+	protected static function selectRowsIdLang( array $ids = null, array $codes = null, $flags ) {
 		if ( $flags & self::FLAG_NO_CACHE ) {
 			return [];
 		}
@@ -414,7 +414,7 @@ class MessageGroupStats {
 		}
 
 		$subGroupIds = array_keys( $expanded );
-		$res = self::selectRowsIdLang( $subGroupIds, $code, $flags );
+		$res = self::selectRowsIdLang( $subGroupIds, [ $code ], $flags );
 		$stats = self::extractResults( $res, $subGroupIds, $stats );
 
 		foreach ( $expanded as $sid => $subgroup ) {
