@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f9a839b3_eb4ba1f9",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2019-01-02T21:45:02Z",
+      "side": 1,
+      "message": "But with \"Skin $skin \u003d null\" I would assume that phan still reports an error, because it does not fix the described error.",
+      "parentUuid": "66a63f1e_11dca760",
+      "range": {
+        "startLine": 1106,
+        "startChar": 11,
+        "endLine": 1106,
+        "endChar": 20
+      },
+      "revId": "75d9a0a6dce82dd046337cede96ee61040baa20c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d0dbe9d5_58f3fbf2",
         "filename": "utils/MessageGroupStats.php",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-01-02T21:00:26Z",
       "side": 1,
       "message": "Same here. With \"array $ids \u003d null\" it becomes technically impossible to pass anything but an array or null. Which is how it should be, in my opinion.",
+      "range": {
+        "startLine": 336,
+        "startChar": 11,
+        "endLine": 336,
+        "endChar": 24
+      },
+      "revId": "75d9a0a6dce82dd046337cede96ee61040baa20c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d068ec25_591168df",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2019-01-02T21:45:02Z",
+      "side": 1,
+      "message": "I have no idea if phan would see that as optionl argument or as nullable argument. So I would not use that format.\nI removed just the default values. The default values are never used, because this function cannot be called with zero arguments.",
+      "parentUuid": "d0dbe9d5_58f3fbf2",
       "range": {
         "startLine": 336,
         "startChar": 11,
