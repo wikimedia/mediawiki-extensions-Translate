@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "66a63f1e_11dca760",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-01-02T20:57:53Z",
+      "side": 1,
+      "message": "In such a situation I like to change the method signature to use \"Skin $skin \u003d null\" instead. The downside with this approach is that it keeps the optional argument before the required one. But this is worth it in my humble opinion: What we win is *strict* type safety. It\u0027s now impossible to pass anything else to this method.\n\nBut I guess both ways are fine.",
+      "range": {
+        "startLine": 1106,
+        "startChar": 11,
+        "endLine": 1106,
+        "endChar": 20
+      },
+      "revId": "75d9a0a6dce82dd046337cede96ee61040baa20c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
