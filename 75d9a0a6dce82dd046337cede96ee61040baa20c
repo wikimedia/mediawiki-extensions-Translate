@@ -22,6 +22,29 @@
       "revId": "75d9a0a6dce82dd046337cede96ee61040baa20c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d0dbe9d5_58f3fbf2",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-01-02T21:00:26Z",
+      "side": 1,
+      "message": "Same here. With \"array $ids \u003d null\" it becomes technically impossible to pass anything but an array or null. Which is how it should be, in my opinion.",
+      "range": {
+        "startLine": 336,
+        "startChar": 11,
+        "endLine": 336,
+        "endChar": 24
+      },
+      "revId": "75d9a0a6dce82dd046337cede96ee61040baa20c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
