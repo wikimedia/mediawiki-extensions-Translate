@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "d506dc7a_e9440657",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-01-03T06:07:28Z",
+      "side": 1,
+      "message": "Sure. Phan is broken then. As argued I believe having this kind of nullable, strictly type-hinted function arguments is much more valuable than the minor possible styling issue Phan complains about. I mean, how big of a deal is this even? It is a know fact that the way this feature is implemented in PHP serves two purposes the same time: It makes a parameter nullable, and optional. We *want* it to be nullable. We don\u0027t want it to be optional. And look, it\u0027s not optional, because it\u0027s not the last parameter. So there is *no* issue here.\n\nSeriously, what is the issue?\n\nPhan should be told to stop reporting this.",
+      "parentUuid": "f9a839b3_eb4ba1f9",
+      "range": {
+        "startLine": 1106,
+        "startChar": 11,
+        "endLine": 1106,
+        "endChar": 20
+      },
+      "revId": "75d9a0a6dce82dd046337cede96ee61040baa20c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d0dbe9d5_58f3fbf2",
         "filename": "utils/MessageGroupStats.php",
         "patchSetId": 1
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "I have no idea if phan would see that as optionl argument or as nullable argument. So I would not use that format.\nI removed just the default values. The default values are never used, because this function cannot be called with zero arguments.",
       "parentUuid": "d0dbe9d5_58f3fbf2",
+      "range": {
+        "startLine": 336,
+        "startChar": 11,
+        "endLine": 336,
+        "endChar": 24
+      },
+      "revId": "75d9a0a6dce82dd046337cede96ee61040baa20c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ceda2497_88a5fcb4",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-01-03T06:07:28Z",
+      "side": 1,
+      "message": "As argued before, I don\u0027t consider strictly typed, nullable parameters as having \"default values\". That\u0027s not the main point of having the \"\u003d null\". The main point is to make the parameter nullable.\n\nPhan can\u0027t understand this. But we, as thinking beings, can.\n\nNote that all I said only applies with \"\u003d null\" and when it\u0027s possible to have a strict type hint.",
+      "parentUuid": "d068ec25_591168df",
       "range": {
         "startLine": 336,
         "startChar": 11,
