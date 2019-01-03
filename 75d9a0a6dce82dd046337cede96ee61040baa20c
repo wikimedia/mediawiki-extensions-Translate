@@ -141,6 +141,30 @@
       "revId": "75d9a0a6dce82dd046337cede96ee61040baa20c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5cbb403_ff2f4342",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-03T07:21:37Z",
+      "side": 1,
+      "message": "Some of the callers actually pass a plain string value for $codes. That probably should be fixed, although it does not cause an error or warning like what happens for $ids due to the array_map.",
+      "parentUuid": "ceda2497_88a5fcb4",
+      "range": {
+        "startLine": 336,
+        "startChar": 11,
+        "endLine": 336,
+        "endChar": 24
+      },
+      "revId": "75d9a0a6dce82dd046337cede96ee61040baa20c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
