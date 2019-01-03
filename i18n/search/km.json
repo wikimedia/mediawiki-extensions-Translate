@@ -4,5 +4,27 @@
 			"គីមស៊្រុន"
 		]
 	},
-	"tux-sst-facet-language": "ភាសា"
+	"searchtranslations": "ស្វែងរកការបកប្រែ",
+	"tux-sst-edit": "កែប្រែការបកប្រែ",
+	"tux-sst-view-foreign": "មើលលើ $1",
+	"tux-sst-search": "ស្វែងរក",
+	"tux-sst-search-ph": "ស្វែងរកការបកប្រែ",
+	"tux-sst-count": "រកឃើញលទ្ធផលចំនួន{{PLURAL:$1|មួយ|$1}}",
+	"tux-sst-facet-language": "ភាសា",
+	"tux-sst-facet-group": "ក្រុមសារ",
+	"tux-sst-nosolr-title": "មិនអាចស្វែងរកបានទេ",
+	"tux-sst-nosolr-body": "វិគីនេះគ្មានសេវាកម្មស្វែងរកការបកប្រែទេ។",
+	"tux-sst-solr-offline-title": "មិនអាចស្វែងរកបានទេ",
+	"tux-sst-solr-offline-body": "សេវាកម្មស្វែងរកមិនអាចប្រើប្រាស់បានទេនៅពេលនេះ។",
+	"tux-sst-next": "បន្ទាប់ ›",
+	"tux-sst-prev": "‹ មុន",
+	"tux-sst-default": "ការបកប្រែ",
+	"tux-sst-translated": "ការបកប្រែពី $1",
+	"tux-sst-untranslated": "គ្មានការបកប្រែពី $1 ទេ",
+	"tux-sst-outdated": "ការបកប្រែហួសសម័យពី $1",
+	"tux-sst-ellipsis-untranslated": "គ្មានការបកប្រែ",
+	"tux-sst-ellipsis-outdated": "ការបកប្រែហួសសម័យ",
+	"tux-sst-link-all-match": "ត្រូវការពាក្យស្វែងរកទាំងអស់។",
+	"tux-sst-match-message": "បង្ហាញការបកប្រែដែលត្រូវគ្នានឹងពាក្យស្វែករកណាមួយ។ $1",
+	"tux-sst-case-sensitive": "គិតអក្សរតូចឬធំ"
 }
