@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "41b17e57_c6cf81b0",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2019-01-03T08:50:01Z",
+      "side": 1,
+      "message": "I have rerun phan for your suggested code and phan is fine with it.",
+      "parentUuid": "d506dc7a_e9440657",
+      "range": {
+        "startLine": 1106,
+        "startChar": 11,
+        "endLine": 1106,
+        "endChar": 20
+      },
+      "revId": "75d9a0a6dce82dd046337cede96ee61040baa20c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d0dbe9d5_58f3fbf2",
         "filename": "utils/MessageGroupStats.php",
         "patchSetId": 1
@@ -156,6 +180,30 @@
       "side": 1,
       "message": "Some of the callers actually pass a plain string value for $codes. That probably should be fixed, although it does not cause an error or warning like what happens for $ids due to the array_map.",
       "parentUuid": "ceda2497_88a5fcb4",
+      "range": {
+        "startLine": 336,
+        "startChar": 11,
+        "endLine": 336,
+        "endChar": 24
+      },
+      "revId": "75d9a0a6dce82dd046337cede96ee61040baa20c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de65bf3e_c3325642",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2019-01-03T08:50:01Z",
+      "side": 1,
+      "message": "Phan is fine with type hint and null. I have also fixed the caller",
+      "parentUuid": "b5cbb403_ff2f4342",
       "range": {
         "startLine": 336,
         "startChar": 11,
