@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Iwan Novirion"
+			"Iwan Novirion",
+			"Ardzun"
 		]
 	},
 	"tpt-languages-legend": "Baso lain:",
+	"tpt-languages-nonzero": "$1 ($2% ditarjamahkan)",
 	"pt-movepage-intro": "Laman istimewa ko mamungkinan Sanak untuak mamindahan laman nan ditandoi untuak ditajamahan.\nTindakan pamindahan indak akan balangsuang sakatika dek banyak laman nan paralu dipindahan.\nSangkek laman dipindahan, indak dimungkinan untuak barinteraksi jo laman nan basangkutan.\nKagagalan akan dicatat di [[Special:Log/pagetranslation|log tajamahan laman]] dan paralu dipelokan sacaro manual."
 }

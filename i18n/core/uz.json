@@ -198,7 +198,7 @@
 	"translate-search-languagefilter": "Mazkur til boʻyicha saralash:",
 	"translate-search-nofilter": "Filtrsiz",
 	"log-name-translationreview": "Tarjimalarni tekshirish qaydlari",
-	"log-description-translationreview": "Barcha tarjima taqrizlari va xabar guruhlari qaydi",
+	"log-description-translationreview": "Tarjimalar va xabar guruhlarini tekshirib chiqish qaydlarining toʻliq roʻyxati",
 	"logentry-translationreview-message": "$1 $3 sahifasi tarjimasini {{GENDER:$2|tekshirib chiqdi}}",
 	"translate-workflow-state-": "(o'rnatilmagan)",
 	"translate-workflowstatus": "Holat: $1",
