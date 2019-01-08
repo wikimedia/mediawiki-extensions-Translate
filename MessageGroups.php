@@ -50,51 +50,52 @@ class MessageGroups {
 	 * @return array
 	 */
 	protected function getCachedGroupDefinitions( $recache = false ) {
-		global $wgAutoloadClasses;
+		global $wgAutoloadClasses, $wgVersion;
 
-		/** @var DependencyWrapper $wrapper */
-		$wrapper = null;
+		$regenerator = function () {
+			global $wgAutoloadClasses;
+
+			$groups = $deps = $autoload = [];
+			// This constructs the list of all groups from multiple different sources.
+			// When possible, a cache dependency is created to automatically recreate
+			// the cache when configuration changes.
+			Hooks::run( 'TranslatePostInitGroups', [ &$groups, &$deps, &$autoload ] );
+			// Register autoloaders for this request, both values modified by reference
+			self::appendAutoloader( $autoload, $wgAutoloadClasses );
+
+			$value = [
+				'ts' => wfTimestamp( TS_MW ),
+				'cc' => $groups,
+				'autoload' => $autoload
+			];
+			$wrapper = new DependencyWrapper( $value, $deps );
+			$wrapper->initialiseDeps();
+
+			return $wrapper; // save the new value to cache
+		};
 
 		$cache = $this->getCache();
-		$cache->getWithSetCallback(
+		/** @var DependencyWrapper $wrapper */
+		$wrapper = $cache->getWithSetCallback(
 			$cache->makeKey( 'translate-groups' ),
 			$cache::TTL_DAY,
-			function ( $curValue ) use ( &$wrapper, $recache ) {
-				global $wgAutoloadClasses;
-
-				if (
-					$curValue instanceof DependencyWrapper &&
-					!$curValue->isExpired() &&
-					$recache === false
-				) {
-					$wrapper = $curValue; // use the current cached value
-
-					return false; // leave the cached value alone
-				}
-
-				$groups = $deps = $autoload = [];
-				// This constructs the list of all groups from multiple different sources.
-				// When possible, a cache dependency is created to automatically recreate
-				// the cache when configuration changes.
-				Hooks::run( 'TranslatePostInitGroups', [ &$groups, &$deps, &$autoload ] );
-				// Register autoloaders for this request, both values modified by reference
-				self::appendAutoloader( $autoload, $wgAutoloadClasses );
-
-				$value = [
-					'ts' => wfTimestamp( TS_MW ),
-					'cc' => $groups,
-					'autoload' => $autoload,
-				];
-				$wrapper = new DependencyWrapper( $value, $deps );
-				$wrapper->initialiseDeps();
-
-				return $wrapper; // save the new value to cache
-			},
+			$regenerator,
 			[
 				'lockTSE' => 30, // avoid stampedes
-				'minAsOf' => INF // always run callback
+				'touchedCallback' => function ( $value ) {
+					return ( $value instanceof DependencyWrapper && $value->isExpired() )
+						? time() // treat value as if it just expired (for "lockTSE")
+						: null;
+				},
+				'minAsOf' => $recache ? INF : $cache::MIN_TIMESTAMP_NONE, // "miss" on recache
 			]
 		);
+
+		// B/C for "touchedCallback" param not existing
+		if ( version_compare( $wgVersion, '1.33', '<' ) && $wrapper->isExpired() ) {
+			$wrapper = $regenerator();
+			$cache->set( $cache->makeKey( 'translate-groups' ), $wrapper, $cache::TTL_DAY );
+		}
 
 		$value = $wrapper->getValue();
 		self::appendAutoloader( $value['autoload'], $wgAutoloadClasses );
