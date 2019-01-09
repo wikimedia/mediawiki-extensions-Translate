@@ -63,8 +63,6 @@ class TranslatablePage {
 		$this->title = $title;
 	}
 
-	// Public constructors //
-
 	/**
 	 * Constructs a translatable page from given text.
 	 * Some functions will fail unless you set revision
@@ -120,8 +118,6 @@ class TranslatablePage {
 		return $obj;
 	}
 
-	// Getters //
-
 	/**
 	 * Returns the title for this translatable page.
 	 * @return Title
@@ -176,8 +172,6 @@ class TranslatablePage {
 		$this->source = 'revision';
 		$this->init = false;
 	}
-
-	// Public functions //
 
 	/**
 	 * Returns the source language of this translatable page. In other words
@@ -377,8 +371,6 @@ class TranslatablePage {
 		return $text;
 	}
 
-	// Inner functionality //
-
 	/**
 	 * @param array &$holders
 	 * @param string $text
@@ -504,8 +496,6 @@ class TranslatablePage {
 
 		return $section;
 	}
-
-	// Tag methods //
 
 	protected static $tagCache = [];
 
