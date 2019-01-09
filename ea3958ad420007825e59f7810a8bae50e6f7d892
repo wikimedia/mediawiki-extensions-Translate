@@ -22,6 +22,30 @@
       "revId": "ea3958ad420007825e59f7810a8bae50e6f7d892",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05e74f97_7b6e53ae",
+        "filename": "insertables/CombinedInsertablesSuggester.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-01-09T18:15:31Z",
+      "side": 1,
+      "message": "This is certainly possible. Thanks for checking. However, this codebase is one of the little more fragile ones. I would like to go slow. For this patch here I intentionally only wanted to add \"soft\" type hints via @param tags.",
+      "parentUuid": "d25704bb_96c2da7a",
+      "range": {
+        "startLine": 16,
+        "startChar": 30,
+        "endLine": 16,
+        "endChar": 41
+      },
+      "revId": "ea3958ad420007825e59f7810a8bae50e6f7d892",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
