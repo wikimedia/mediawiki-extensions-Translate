@@ -135,7 +135,7 @@ class MessageGroupCache {
 			$cache->set( $key, $value );
 		}
 
-		$cache->set( '#created', $created ? $created : wfTimestamp() );
+		$cache->set( '#created', $created ?: wfTimestamp() );
 		$cache->set( '#updated', wfTimestamp() );
 		$cache->set( '#filehash', $hash );
 		$cache->set( '#msgcount', count( $messages ) );
