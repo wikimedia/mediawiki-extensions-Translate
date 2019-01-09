@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d25704bb_96c2da7a",
+        "filename": "insertables/CombinedInsertablesSuggester.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-01-09T17:26:10Z",
+      "side": 1,
+      "message": "Since we\u0027re sure this is an \"array\" of suggesters, maybe we should further add a type hint here?\n```\n... (array $suggesters \u003d [] )\n```\n\nI\u0027ve done a quick check and callers should expect an array or default to an empty array.",
+      "range": {
+        "startLine": 16,
+        "startChar": 30,
+        "endLine": 16,
+        "endChar": 41
+      },
+      "revId": "ea3958ad420007825e59f7810a8bae50e6f7d892",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
