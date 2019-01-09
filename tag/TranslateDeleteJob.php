@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\User\UserIdentity;
+
 /**
  * Contains class with job for deleting translatable and translation pages.
  *
@@ -129,7 +131,7 @@ class TranslateDeleteJob extends Job {
 	}
 
 	/**
-	 * @param User|string $performer
+	 * @param UserIdentity|string $performer
 	 */
 	public function setPerformer( $performer ) {
 		if ( is_object( $performer ) ) {

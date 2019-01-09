@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\User\UserIdentity;
+
 /**
  * Contains class with job for moving translation pages. Used together with
  * PageTranslationMovePage class.
@@ -124,6 +126,9 @@ class TranslateMoveJob extends Job {
 		return $this->params['summary'];
 	}
 
+	/**
+	 * @param UserIdentity $performer
+	 */
 	public function setPerformer( $performer ) {
 		if ( is_object( $performer ) ) {
 			$this->params['performer'] = $performer->getName();
