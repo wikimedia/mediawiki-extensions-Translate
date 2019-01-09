@@ -196,8 +196,8 @@ class TranslateEditAddons {
 	 * @param Revision $revision
 	 * @return true
 	 */
-	public static function onSave( WikiPage $wikiPage, $user, $content, $summary,
-		$minor, $_1, $_2, $flags, $revision
+	public static function onSave( WikiPage $wikiPage, User $user, Content $content, $summary,
+		$minor, $_1, $_2, $flags, Revision $revision
 	) {
 		global $wgEnablePageTranslation;
 
