@@ -136,6 +136,9 @@ class TranslateMoveJob extends Job {
 		return $this->params['performer'];
 	}
 
+	/**
+	 * @param Title|string $target
+	 */
 	public function setTarget( $target ) {
 		if ( $target instanceof Title ) {
 			$this->params['target'] = $target->getPrefixedText();
