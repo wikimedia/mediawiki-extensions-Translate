@@ -296,6 +296,10 @@ class MessageGroups {
 	public static function getCCGroups( array &$groups, array &$deps, array &$autoload ) {
 		global $wgTranslateCC;
 
+		if ( $wgTranslateCC !== [] ) {
+			wfDeprecated( '$wgTranslateCC' );
+		}
+
 		$deps[] = new GlobalDependency( 'wgTranslateCC' );
 
 		$groups += $wgTranslateCC;
