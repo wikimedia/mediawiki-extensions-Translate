@@ -540,7 +540,7 @@ PHP;
 			$header .= '#, ' . implode( ', ', array_unique( $flags ) ) . "\n";
 		}
 
-		$output = $header ? $header : "#\n";
+		$output = $header ?: "#\n";
 		$output .= $content . "\n";
 
 		return $output;
