@@ -73,7 +73,7 @@ class MessageWebImporter {
 	 * @return User
 	 */
 	public function getUser() {
-		return $this->user ? $this->user : RequestContext::getMain()->getUser();
+		return $this->user ?: RequestContext::getMain()->getUser();
 	}
 
 	/**
