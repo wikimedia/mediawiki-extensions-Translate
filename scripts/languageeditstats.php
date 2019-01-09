@@ -48,12 +48,8 @@ class Languageeditstats extends Maintenance {
 	}
 
 	public function execute() {
-		$hours = (int)$this->getOption( 'days' );
-		$hours = $hours ? $hours * 7 : 7 * 24;
-
-		$top = (int)$this->getOption( 'top' );
-		$top = $top ? $top : 10;
-
+		$hours = ( $this->getOption( 'days' ) ?: 7 ) * 24;
+		$top = (int)$this->getOption( 'top' ) ?: 10;
 		$bots = $this->hasOption( 'bots' );
 
 		$namespaces = [];
