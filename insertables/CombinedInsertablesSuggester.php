@@ -4,10 +4,14 @@
  * A class to combine multiple insertables suggesters.
  */
 class CombinedInsertablesSuggester implements InsertablesSuggester {
+
+	/**
+	 * @var InsertablesSuggester[]
+	 */
 	protected $suggesters = [];
 
 	/**
-	 * @param array $suggesters Array of InsertablesSuggester objects to combine.
+	 * @param InsertablesSuggester[] $suggesters Array of InsertablesSuggester objects to combine.
 	 */
 	public function __construct( $suggesters = [] ) {
 		$this->suggesters = $suggesters;
