@@ -24,14 +24,11 @@
 }
 
 .mw-translate-legend {
-	font-weight: bold;
-}
-
-.mw-translate-legend {
 	border-left: 1px solid #000;
 	float: right;
 	margin-left: 1em;
 	padding-left: 5pt;
+	font-weight: bold;
 }
 
 /* Align the adder according to the target language */
