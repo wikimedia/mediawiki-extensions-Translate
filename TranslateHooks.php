@@ -12,6 +12,17 @@
  */
 class TranslateHooks {
 	/**
+	 * Any user of this list should make sure that the tables
+	 * actually exist, since they may be optional
+	 *
+	 * @var array
+	 */
+	private static $userMergeTables = [
+		'translate_stash' => 'ts_user',
+		'translate_reviews' => 'trr_user',
+	];
+
+	/**
 	 * Hook: ResourceLoaderTestModules
 	 * @param array &$modules
 	 */
@@ -301,7 +312,7 @@ class TranslateHooks {
 	 * Register AbuseFilter variables provided by Translate.
 	 * @param array &$builderValues
 	 */
-	public static function onAbuseFilterBuilder( &$builderValues ) {
+	public static function onAbuseFilterBuilder( array &$builderValues ) {
 		// Uses: 'abusefilter-edit-builder-vars-translate-source-text'
 		$builderValues['vars']['translate_source_text'] = 'translate-source-text';
 	}
@@ -461,7 +472,7 @@ class TranslateHooks {
 	 * @param Title $title
 	 * @param Language &$pageLang
 	 */
-	public static function onPageContentLanguage( Title $title, &$pageLang ) {
+	public static function onPageContentLanguage( Title $title, Language &$pageLang ) {
 		$handle = new MessageHandle( $title );
 		if ( $handle->isMessageNamespace() ) {
 			$pageLang = $handle->getEffectiveLanguage();
@@ -530,9 +541,9 @@ class TranslateHooks {
 	 */
 	public static function searchProfileForm(
 		SpecialSearch $search,
-		/*string*/&$form,
-		/*string*/$profile,
-		/*string*/$term,
+		&$form,
+		$profile,
+		$term,
 		array $opts
 	) {
 		if ( $profile !== 'translation' ) {
@@ -597,7 +608,7 @@ class TranslateHooks {
 	 */
 	public static function searchProfileSetupEngine(
 		SpecialSearch $search,
-		/*string*/$profile,
+		$profile,
 		SearchEngine $engine
 	) {
 		if ( $profile !== 'translation' ) {
@@ -696,17 +707,6 @@ class TranslateHooks {
 			$row->addItem( ALItem::newFromSpecialPage( 'TranslateSandbox' ) );
 		}
 	}
-
-	/**
-	 * Any user of this list should make sure that the tables
-	 * actually exist, since they may be optional
-	 *
-	 * @var array
-	 */
-	private static $userMergeTables = [
-		'translate_stash' => 'ts_user',
-		'translate_reviews' => 'trr_user',
-	];
 
 	/**
 	 * Hook: MergeAccountFromTo
@@ -814,6 +814,10 @@ class TranslateHooks {
 		$parser->setFunctionHook( 'translation', 'TranslateHooks::translateRenderParserFunction' );
 	}
 
+	/**
+	 * @param Parser $parser
+	 * @return string
+	 */
 	public static function translateRenderParserFunction( Parser $parser ) {
 		$pageTitle = $parser->getTitle();
 
@@ -825,6 +829,9 @@ class TranslateHooks {
 		return '';
 	}
 
+	/**
+	 * @param ResourceLoader $resourceLoader
+	 */
 	public static function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ) {
 		$modules = [];
 		$modules['ext.translate.recentgroups'] = [
