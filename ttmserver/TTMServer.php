@@ -15,13 +15,22 @@
  * @ingroup TTMServer
  */
 class TTMServer {
+	/** @var array */
 	protected $config;
 
-	protected function __construct( $config ) {
+	/**
+	 * @param array $config
+	 */
+	protected function __construct( array $config ) {
 		$this->config = $config;
 	}
 
-	public static function factory( $config ) {
+	/**
+	 * @param array $config
+	 * @return mixed
+	 * @throws MWEXception
+	 */
+	public static function factory( array $config ) {
 		if ( isset( $config['class'] ) ) {
 			$class = $config['class'];
 
@@ -60,12 +69,21 @@ class TTMServer {
 		return new FakeTTMServer();
 	}
 
+	/**
+	 * @param array $suggestions
+	 * @return array
+	 */
 	public static function sortSuggestions( array $suggestions ) {
 		usort( $suggestions, [ __CLASS__, 'qualitySort' ] );
 
 		return $suggestions;
 	}
 
+	/**
+	 * @param array $a
+	 * @param array $b
+	 * @return int
+	 */
 	protected static function qualitySort( $a, $b ) {
 		list( $c, $d ) = [ $a['quality'], $b['quality'] ];
 		if ( $c === $d ) {
@@ -145,6 +163,11 @@ class TTMServer {
 		JobQueueGroup::singleton()->push( $job );
 	}
 
+	/**
+	 * @param MessageHandle $handle
+	 * @param array $old
+	 * @param array $new
+	 */
 	public static function onGroupChange( MessageHandle $handle, $old, $new ) {
 		if ( $old === [] ) {
 			// Don't bother for newly added messages
