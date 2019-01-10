@@ -368,7 +368,7 @@ class MessageGroups {
 	public static function labelExists( $name ) {
 		$groups = self::loadAggregateGroups();
 		$labels = array_map( function ( $g ) {
-			/** @var $g MessageGroup */
+			/** @var MessageGroup $g */
 			return $g->getLabel();
 		}, $groups );
 		return (bool)in_array( $name, $labels, true );
