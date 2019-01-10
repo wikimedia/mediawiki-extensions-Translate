@@ -105,10 +105,13 @@ class TranslateUtils {
 
 		$titles = [];
 		foreach ( $rows as $row ) {
-			$titles[$row->page_title] = [
-				Revision::getRevisionText( $row ),
-				$row->rev_user_text
-			];
+			if ( method_exists( MediaWikiServices::class, 'getRevisionStore' ) ) {
+				$revision = MediaWikiServices::getInstance()->getRevisionStore()
+					->newRevisionFromRow( $row );
+			} else {
+				$revision = Revision::getRevisionText( $row );
+			}
+			$titles[$row->page_title] = [ $revision, $row->rev_user_text ];
 		}
 		$rows->free();
 
