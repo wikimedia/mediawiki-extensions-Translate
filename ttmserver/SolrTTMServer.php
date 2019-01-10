@@ -355,6 +355,7 @@ class SolrTTMServer
 	 * @param array $opts
 	 * @param array $highlight
 	 * @return array
+	 * @throws TTMServerException
 	 */
 	public function search( $queryString, $opts, $highlight ) {
 		$client = $this->getSolarium();
@@ -405,7 +406,7 @@ class SolrTTMServer
 		try {
 			return $client->select( $query );
 		} catch ( Solarium_Client_HttpException $e ) {
-			throw new TTMServer( $e->getMessage() );
+			throw new TTMServerException( $e->getMessage() );
 		}
 	}
 
