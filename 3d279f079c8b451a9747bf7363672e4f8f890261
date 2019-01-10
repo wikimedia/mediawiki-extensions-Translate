@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "16256fb7_01c6de89",
+        "filename": "extension-wip.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-01-10T18:05:44Z",
+      "side": 1,
+      "message": "I\u0027m afraid I don\u0027t understand the paragraph you point to. Is this a problem for this patch?\n\nThe UserIdentity interface exists since 1.31 (it is at least documented as that). 1.31 is a stable release, as far as I\u0027m aware of.",
+      "parentUuid": "3ac64c82_22707a2f",
+      "revId": "3d279f079c8b451a9747bf7363672e4f8f890261",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4d252a8d_70b40829",
         "filename": "tag/TranslateDeleteJob.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2019-01-10T07:17:45Z",
       "side": 1,
       "message": "This seems to have been missed?",
+      "revId": "3d279f079c8b451a9747bf7363672e4f8f890261",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10ee41d0_89068884",
+        "filename": "tag/TranslateDeleteJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-01-10T18:05:44Z",
+      "side": 1,
+      "message": "In this patch I intentionally only touched the performer field. If you prefer to update all in one patch, we can certainly do this.",
+      "parentUuid": "4d252a8d_70b40829",
       "revId": "3d279f079c8b451a9747bf7363672e4f8f890261",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
