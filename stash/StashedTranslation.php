@@ -12,11 +12,24 @@
  * @since 2013.06
  */
 class StashedTranslation {
+	/** @var User */
 	protected $user;
+
+	/** @var Title */
 	protected $title;
+
+	/** @var string */
 	protected $value;
+
+	/** @var array|null */
 	protected $metadata;
 
+	/**
+	 * @param User $user
+	 * @param Title $title
+	 * @param string $value
+	 * @param array|null $metadata
+	 */
 	public function __construct( User $user, Title $title, $value, array $metadata = null ) {
 		$this->user = $user;
 		$this->title = $title;
@@ -46,7 +59,7 @@ class StashedTranslation {
 	}
 
 	/**
-	 * @return array
+	 * @return array|null
 	 */
 	public function getMetadata() {
 		return $this->metadata;
