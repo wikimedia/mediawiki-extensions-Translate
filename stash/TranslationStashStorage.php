@@ -14,9 +14,16 @@ use Wikimedia\Rdbms\IDatabase;
  * @since 2013.06
  */
 class TranslationStashStorage {
+	/** @var IDatabase */
 	protected $db;
+
+	/** @var string */
 	protected $dbTable;
 
+	/**
+	 * @param IDatabase $db
+	 * @param string $table
+	 */
 	public function __construct( IDatabase $db, $table = 'translate_stash' ) {
 		$this->db = $db;
 		$this->dbTable = $table;
