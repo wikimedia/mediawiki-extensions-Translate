@@ -105,10 +105,21 @@ class TranslateUtils {
 
 		$titles = [];
 		foreach ( $rows as $row ) {
-			$titles[$row->page_title] = [
-				Revision::getRevisionText( $row ),
-				$row->rev_user_text
-			];
+			// Revision class is deprecated (as of 1.32), so, using RevisionStore
+			// but to keep backcompat, keep Revision for a while. Remove it once 1.32
+			// is no longer supported. This can be cleaned up by importing the the
+			// class from the correct namespace and make use of "RevisionStore::class" only.
+			if ( class_exists( \MediaWiki\Storage\RevisionStore::class ) ) {
+				$titles[$row->page_title] = [
+					\MediaWiki\Storage\RevisionStore::newRevisionFromRow( $row ),
+					$row->rev_user_text
+				];
+			} else {
+				$titles[$row->page_title] = [
+					Revision::getRevisionText( $row ),
+					$row->rev_user_text
+				];
+			}
 		}
 		$rows->free();
 
