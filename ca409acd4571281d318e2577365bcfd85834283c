@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f02aa20_bdc63523",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-01-10T09:43:45Z",
+      "side": 1,
+      "message": "Uh, seems the @param line above is not entirely correct. Unfortunately the documentation is confusing:\n\nhttps://www.mediawiki.org/wiki/Manual:Hooks/PageContentSaveComplete\n\nIt mentions the possibility that $revision can be null, but questions it the same time.\n\nI had a look at the code that triggers this hook, and it can\u0027t be null there. I guess this detail changed some day. Still I would follow the documentation and allow null here.",
+      "range": {
+        "startLine": 218,
+        "startChar": 7,
+        "endLine": 218,
+        "endChar": 25
+      },
+      "revId": "ca409acd4571281d318e2577365bcfd85834283c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
