@@ -405,7 +405,7 @@ class SolrTTMServer
 		try {
 			return $client->select( $query );
 		} catch ( Solarium_Client_HttpException $e ) {
-			throw new TTMServer( $e->getMessage() );
+			throw new TTMServerException( $e->getMessage() );
 		}
 	}
 
