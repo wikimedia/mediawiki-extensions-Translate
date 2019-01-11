@@ -768,7 +768,7 @@ class TranslateHooks {
 		Title $title,
 		RecentChange $rc
 	) {
-		if ( $rc->mAttribs['rc_log_type'] === 'translationreview' ) {
+		if ( $rc->getAttribute( 'rc_log_type' ) === 'translationreview' ) {
 			return false;
 		}
 	}
