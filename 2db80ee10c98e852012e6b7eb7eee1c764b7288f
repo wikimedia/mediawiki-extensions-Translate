@@ -22,6 +22,30 @@
       "revId": "2db80ee10c98e852012e6b7eb7eee1c764b7288f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "695608a5_dad61493",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-01-11T09:09:03Z",
+      "side": 1,
+      "message": "Perfect, thanks a lot! If I had seen this, I would have taken this option instead, this is better. Using a service locator in this case is epic, thanks so much!",
+      "parentUuid": "43b18f1c_68758484",
+      "range": {
+        "startLine": 114,
+        "startChar": 37,
+        "endLine": 114,
+        "endChar": 39
+      },
+      "revId": "2db80ee10c98e852012e6b7eb7eee1c764b7288f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
