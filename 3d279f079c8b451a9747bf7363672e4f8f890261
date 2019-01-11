@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "276c45b3_4b112faa",
+        "filename": "extension-wip.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-11T08:07:34Z",
+      "side": 1,
+      "message": "It means that until 1.32 stable is out, Translate should continue to support both 1.30 and 1.31.",
+      "parentUuid": "16256fb7_01c6de89",
+      "revId": "3d279f079c8b451a9747bf7363672e4f8f890261",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4d252a8d_70b40829",
         "filename": "tag/TranslateDeleteJob.php",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "In this patch I intentionally only touched the performer field. If you prefer to update all in one patch, we can certainly do this.",
       "parentUuid": "4d252a8d_70b40829",
+      "revId": "3d279f079c8b451a9747bf7363672e4f8f890261",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af9c55e4_96ea34eb",
+        "filename": "tag/TranslateDeleteJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-11T08:07:34Z",
+      "side": 1,
+      "message": "It\u0027s okay, I just wanted to check if it was intentional or not.",
+      "parentUuid": "10ee41d0_89068884",
       "revId": "3d279f079c8b451a9747bf7363672e4f8f890261",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
