@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bombola"
+			"Bombola",
+			"Cem Rize"
 		]
 	},
 	"translate-page-group": "Grubi",
 	"translate-page-language": "Nena",
 	"translate-stats-users": "Magoktirepe",
 	"translate-statsf-scale-days": "Ndğalepe",
-	"translate-statsf-scale-hours": "Saat'epe"
+	"translate-statsf-scale-hours": "Saat'epe",
+	"translate-documentation-language": "İleti belgelemesi"
 }

@@ -179,7 +179,7 @@
 	"translate-mgs-noempty": "Ne prikazuj jezike koji uopće nemaju prijevode",
 	"translate-mgs-submit": "Prikaži statistiku",
 	"translate-mgs-column-language": "Jezik",
-	"translate-mgs-totals": "Svi jezici zajedno",
+	"translate-mgs-totals": "All $1 {{PLURAL:$1|Jedan jezik|Oba jezika zajedno|Svih $1 jezika zajedno}}",
 	"translate-mgs-invalid-group": "Navedena skupina $1 ne postoji.",
 	"translate-mgs-nothing": "Nema se što prikazati za zahtijevane statistike.",
 	"supportedlanguages": "Podržani jezici",
@@ -290,7 +290,7 @@
 	"tux-editor-cancel-button-label": "Otkaži",
 	"tux-editor-confirm-button-label": "Potvrdi prijevod",
 	"tux-editor-proofread-button-label": "Označi provjerenim",
-	"tux-editor-shortcut-info": "Za spremanje pritisnite \"$1\"; za preskok na sljedeću poruku pritisnite \"$2\"; za sažetak pritisnite \"$4\", a za ostale prečace pritisnite \"$3\".",
+	"tux-editor-shortcut-info": "Za potvrdu i preskok na sljedeću poruku pritisnite \"$1\", za preskok pritisnite \"$2\", za upis sažetka pritisnite \"$4\" te za ostale prečace \"$3\".",
 	"tux-editor-edit-desc": "Uredi dokumentaciju",
 	"tux-editor-add-desc": "Dodaj dokumentaciju",
 	"tux-editor-suggestions-title": "Prijedlozi",
@@ -357,5 +357,5 @@
 	"translate-search-more-groups-info": "još $1 {{PLURAL:$1|skupina|skupine|skupina}}",
 	"translate-ulsdep-title": "Pogrješka u konfiguraciji",
 	"tux-session-expired": "Više niste prijavljeni. Prijavite se u zasebnoj kartici. Druga mogućnost je da prekopirate nesačuvane prijevode, prijavite se, vratite se na ovu stranicu i ponovo upišete svoje prijevode.",
-	"tux-nojs": "Ova stranica zahtijeva JavaScript."
+	"tux-nojs": "Ovaj alat ne radi bez JavaScripta. Javascript je onemogućen, ne radi ili je preglednik nepodržan."
 }
