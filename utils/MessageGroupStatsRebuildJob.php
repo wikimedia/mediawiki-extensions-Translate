@@ -32,7 +32,7 @@ class MessageGroupStatsRebuildJob extends Job {
 
 	public function run() {
 		$params = $this->params;
-		$flags = MessageGroupStats::FLAG_BATCHED;
+		$flags = 0;
 
 		if ( isset( $params[ 'purge' ] ) && $params[ 'purge' ] ) {
 			$flags |= MessageGroupStats::FLAG_NO_CACHE;
