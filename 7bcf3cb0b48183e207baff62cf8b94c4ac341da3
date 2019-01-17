@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e626c66_6cd4212a",
+        "filename": "Translate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-17T10:56:28Z",
+      "side": 0,
+      "message": "This was not moved?",
+      "revId": "7bcf3cb0b48183e207baff62cf8b94c4ac341da3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
