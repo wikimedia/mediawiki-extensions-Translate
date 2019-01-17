@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6861fda5_c980f611",
+        "filename": "Translate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-17T10:08:56Z",
+      "side": 1,
+      "message": "While harmless, maybe this change could be left out to simplify the diff?",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 84
+      },
+      "revId": "6ccd1b177a936989a1584eefc6e7596e015d39a5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ca75afd_437a40f4",
+        "filename": "extension-wip.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-17T10:08:56Z",
+      "side": 1,
+      "message": "This does not have corresponding removal. I think this was moved to be registered conditionally.",
+      "revId": "6ccd1b177a936989a1584eefc6e7596e015d39a5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1702e730_fd0bf42f",
+        "filename": "extension-wip.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-17T10:08:56Z",
+      "side": 1,
+      "message": "Same as above I think.",
+      "revId": "6ccd1b177a936989a1584eefc6e7596e015d39a5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
