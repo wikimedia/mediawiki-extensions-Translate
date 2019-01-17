@@ -26,8 +26,7 @@ wfLoadExtension( 'Translate', __DIR__ . '/extension-wip.json' );
  * @cond file_level_code
  * Setup class autoloading.
  */
-$dir = __DIR__;
-require_once "$dir/Autoload.php";
+require_once __DIR__ . '/Autoload.php';
 /** @endcond */
 
 /**
@@ -40,8 +39,8 @@ $wgMessagesDirs['Translate'] = __DIR__ . '/i18n/core';
 $wgMessagesDirs['TranslateSearch'] = __DIR__ . '/i18n/search';
 $wgMessagesDirs['TranslateSandbox'] = __DIR__ . '/i18n/sandbox';
 $wgMessagesDirs['TranslateApi'] = __DIR__ . '/i18n/api';
-$wgExtensionMessagesFiles['TranslateAlias'] = "$dir/Translate.alias.php";
-$wgExtensionMessagesFiles['TranslateMagic'] = "$dir/Translate.i18n.magic.php";
+$wgExtensionMessagesFiles['TranslateAlias'] = __DIR__ . '/Translate.alias.php';
+$wgExtensionMessagesFiles['TranslateMagic'] = __DIR__ . '/Translate.i18n.magic.php';
 
 // Register initialization code
 $wgHooks['CanonicalNamespaces'][] = 'TranslateHooks::setupNamespaces';
@@ -160,7 +159,7 @@ $wgHooks['AbuseFilter-filterAction'][] = 'TranslateHooks::onAbuseFilterFilterAct
 $wgHooks['AbuseFilter-computeVariable'][] = 'TranslateHooks::onAbuseFilterComputeVariable';
 $wgHooks['AbuseFilter-builder'][] = 'TranslateHooks::onAbuseFilterBuilder';
 
-require "$dir/Resources.php";
+require __DIR__ . '/Resources.php';
 
 /** @endcond */
 
