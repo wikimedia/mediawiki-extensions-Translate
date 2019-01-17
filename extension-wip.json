@@ -982,6 +982,241 @@
 			]
 		}
 	},
+	"config": {
+		"PageTranslationLanguageList": {
+			"value": "tag-only",
+			"description": "How language list for translatable pages is shown. Allowed values:\n * tag-only: Only display languages with the <languages /> tag.\n * sidebar-only: Display languages as interlanguage links only and ignore the tag even if present on the page.\n * sidebar-fallback: Display languages as interlanguage links if no tag is on the page.\n * sidebar-always: Display languages as interlanguage links and also in tag if it is present on the page.\n @since 2018.07",
+			"public": true
+		},
+		"TranslateDocumentationLanguageCode": {
+			"value": false,
+			"description": "Language code for message documentation. Suggested values are qqq or info. If set to false (default), message documentation feature is disabled.",
+			"public": true
+		},
+		"TranslateFuzzyBotName": {
+			"value": "FuzzyBot",
+			"description": "Name of the bot which will invalidate translations and do maintenance for page translation feature. Also used for importing messages from external sources.",
+			"public": true
+		},
+		"TranslateNewsletterPreference": {
+			"value": false,
+			"description": "Add a preference 'Do not send me email newsletters' in the email preferences.",
+			"public": true
+		},
+		"TranslateLanguageFallbacks": {
+			"value": [],
+			"description": "Default values for list of languages to show translators as an aid when translating. Each user can override this setting in their preferences.\n\nExample: LanguageFallbacks['fi'] = 'sv' or LanguageFallbacks['sv'] = [ 'da', 'no', 'nn' ].",
+			"public": true
+		},
+		"TranslateTranslationDefaultService": {
+			"value": "TTMServer",
+			"description": "Define various web services that provide translation suggestions.\n\nTranslation memories are documented in our main documentation. See https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories\n\nFor Apertium, you should get an API key. See http://wiki.apertium.org/wiki/Apertium_web_service\n\nYandex translation helper also provides langlimit option to limit total number of suggestions (set to 0 to get all possible translations) and langorder array to sort languages. Yandex translate engine is based on wordnet, generated from search index, so number of indexed websites should be a good heuristic to define the default language order.\n\nThe machine translation services are provided with the following information: server ip address; versions of MediaWiki and Translate extension; clients ip address encrypted with $wgProxyKey; source text to translate; private API key if provided",
+			"public": true
+		},
+		"TranslateTranslationServices": {
+			"value": {
+				"TTMServer": {
+					"type": "ttmserver",
+					"database": false,
+					"cutoff": 0.75,
+					"public": true
+				},
+				"Microsoft": {
+					"type": "microsoft",
+					"url": "https://api.cognitive.microsofttranslator.com",
+					"key": null
+				},
+				"Apertium": {
+					"type": "apertium",
+					"url": "http://apy.projectjj.com/translate",
+					"pairs": "http://apy.projectjj.com/listPairs",
+					"timeout": 3,
+					"key": null
+				},
+				"Yandex": {
+					"type": "yandex",
+					"url": "https://translate.yandex.net/api/v1.5/tr.json/translate",
+					"pairs": "https://translate.yandex.net/api/v1.5/tr.json/getLangs",
+					"timeout": 3,
+					"langorder": [
+						"en",
+						"ru",
+						"uk",
+						"de",
+						"fr",
+						"pl",
+						"it",
+						"es",
+						"tr"
+					],
+					"langlimit": 1,
+					"key": null
+				}
+			},
+			"public": true,
+			"_merge_strategy": "array_plus"
+		},
+		"TranslateSupportUrl": {
+			"value": false,
+			"description": "Experimental support since 2011-03-11 for an 'Ask' help button. Might change into a hook later on. This is an array with keys page, url and params: page is a title of a local wiki page; url is an URL to use as is (e.g. an issue tracker submission form) which will override the page if set; params is an array of key-value pairs of request params -- each param value can contain the variable %MESSAGE% which will be replaced with the full page name.",
+			"public": true
+		},
+		"TranslateSupportUrlNamespace": {
+			"value": [],
+			"description": "Like $wgTranslateSupportUrl, but for a specific namespace. Each $wgTranslateSupportUrl-like array needs to be the value assigned to the numerical ID of a namespace of the wiki. Since 2015-09.",
+			"public": true
+		},
+		"TranslatePermissionUrl": {
+			"value": "Project:Translator",
+			"description": "When unprivileged users open a translation editor, they will see a message stating that a special permission is needed for translating messages. If this variable is defined, there is a button which will take the user to that page to ask for permission. The target needs to be reiterated with the second variable to have the same result with sandbox enabled where users can't enter the sandbox.",
+			"public": true
+		},
+		"TranslateSecondaryPermissionUrl": {
+			"value": "Project:Translator",
+			"description": "…",
+			"public": true
+		},
+		"EnablePageTranslation": {
+			"value": true,
+			"description": "Enable page translation feature.\n\nPage translation feature allows structured translation of wiki pages with simple markup and automatic tracking of changes. See https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration",
+			"public": true
+		},
+		"PageTranslationNamespace": {
+			"value": 1198,
+			"description": "Number for the Translations namespace. Change this if it conflicts with other namespace in your wiki.",
+			"public": true
+		},
+		"TranslatePageTranslationULS": {
+			"value": false,
+			"description": "If set to true, when a user selects an interface language via ULS (Universal Language Selector), if the current page is a translatable page or a translation page then the user is also redirected to the corresponding translation page in the selected language.\n\n The language of the translation pages visited afterwards will still depend on the links followed (it will be the interface language only if the links use the Special:MyLanguage syntax).\n\nSince 2013-03-10.",
+			"public": true
+		},
+		"TranslateKeepOutdatedTranslations": {
+			"value": true,
+			"description": "If set to true, when a translated page has some units marked as outdated, the outdated translation will be shown. If set to false, the original updated unit in the original language will be shown.\n\nChanging this setting requires the following script to be run to take effect on existing changes: scripts/refresh-translatable-pages.php\n\n Since 2016.12.",
+			"public": true
+		},
+		"TranslateBlacklist": {
+			"value": [],
+			"description": "Two-dimensional array of languages that cannot be translated. Input can be exact group name, first part before '-' or '*' for all. Second dimension should be language code mapped to reason for disabling. Reason is parsed as wikitext.\n\nExample:\n'TranslateBlacklist': { '*': { 'en': 'English is the source language.' }, 'core': { 'mul': 'Not a real language.' }, 'ext': { 'mul': 'Not a real language.'} }",
+			"public": true
+		},
+		"TranslateCheckBlacklist": {
+			"value": false,
+			"description": "File containing checks that are to be skipped. See https://gerrit.wikimedia.org/r/gitweb?p=translatewiki.git;a=blob;f=check-blacklist.php;hb=HEAD for example.\nSince 2012-10-15.",
+			"public": true
+		},
+		"TranslateAuthorBlacklist": {
+			"value": [
+				[
+					"black",
+					"/^.*;.*;.*Bot$/Ui"
+				]
+			],
+			"description": "Two-dimensional array of rules that blacklists certain authors from appearing in the exports. This is useful for keeping bots and people doing maintenance work in translations not to appear besides real translators everywhere.\n\nRules are arrays, where first element is type: white or black. Whitelisting always overrules blacklisting. Second element should be a valid pattern that can be given a preg_match(). It will be matched against string of format 'group-id;language;author name', without quotes.\n\nAs an example, by default we have rule that ignores all authors whose name ends in a bot for all languages and all groups.",
+			"public": true
+		},
+		"TranslateMessageNamespaces": {
+			"value": [],
+			"description": "List of namespace that contain messages. No talk namespaces. See https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration",
+			"public": true
+		},
+		"TranslateCC": {
+			"value": [],
+			"description": "Custom classes can register themselves here. Key is always the group id, while the value is an message group object or callable function. This is deprecated – Use TranslatePostInitGroups hook instead.",
+			"public": true
+		},
+		"TranslateGroupRoot": {
+			"value": "/var/www/externals",
+			"description": "Location in the filesystem to which paths are relative in custom groups.",
+			"public": false
+		},
+		"TranslateGroupFiles": {
+			"value": [],
+			"description": "The newest and recommended way of adding custom groups is YAML files. See examples under Translate/groups.\n\n Usage example: $IP/extensions/Translate/groups/Shapado/Shapado.yml",
+			"public": false
+		},
+		"TranslateWorkflowStates": {
+			"value": false,
+			"description": "List of possible message group review workflow states and properties for each state. The currently supported properties are 'color', the color that is used for displaying the state in the tables, and 'right', the additional right that is needed to set the state. Users who have the translate-groupreview right can set this in Special:Translate. The state is visible in Special:Translate, Special:MessageGroupStats and Special:LanguageStats. If the value is false, the workflow states feature is disabled. State name can be up to 32 characters maximum.\n\nExample:\n'TranslateWorkflowStates': {\n\n'new': { 'color': 'FF0000' },\n'needs_proofreading': { 'color': '0000FF' },\n'ready': { 'color': 'FFFF00'},\n'published': { 'color': '00FF00', 'right': 'centralnotice-admin' }\n}",
+			"public": true
+		},
+		"TranslateGroupAliases": {
+			"value": {},
+			"description": "Map from deprecated group IDs to their current ID. Example value: { 'core': 'mediawiki-core' }",
+			"public": true
+		},
+		"TranslateCacheDirectory": {
+			"value": "false",
+			"description": "Set location of cache files. Defaults to $wgCacheDirectory.",
+			"public": true
+		},
+		"TranslateMessageIndex": {
+			"value": [ "DatabaseMessageIndex" ],
+			"description": "Configures how the message index is stored. Possible values are 'DatabaseMessageIndex', 'SerializedMessageIndex', and 'CDBMessageIndex'. The last two backends need $wgCacheDirectory to be functional.",
+			"public": true
+		},
+		"TranslateDelayedMessageIndexRebuild": {
+			"value": false,
+			"description": "If you have lots of message groups, especially file based ones, and the message index rebuilding gets slow, set this to true to delay the rebuilding via JobQueue. This only makes sense if you have configured jobs to be processed outside of requests via cron or similar.",
+			"public": true
+		},
+		"TranslatePHPlot": {
+			"value": false,
+			"description": "For Special:TranslationStats PHPlot is needed to produce graphs. Set this the location of phplot.php.",
+			"public": false
+		},
+		"TranslatePHPlotFont": {
+			"value": "/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf",
+			"description": "The default font for PHPlot for drawing text. Only used if the automatic best font selection fails. The automatic best font selector uses language code to call fc-match program. If you have open_basedir restriction or safe-mode, using the found font is likely to fail. In this case you need  to change the code to use hard-coded font, or copy fonts to location PHP can access them, and make sure fc-match returns only those fonts.",
+			"public": false
+		},
+		"TranslateUseSandbox": {
+			"value": false,
+			"description": "Whether to allow users to sign up via a sandbox. Sandboxed users cannot do much until approved and thus they can be get rid of easily. This only works with MediaWiki 1.27 and newer, and only if registration is configured to not use account creation providers which give REDIRECT or UI responses or require any other field than the default username/password/email.",
+			"public": true
+		},
+		"TranslateSandboxPromotedGroup": {
+			"value": false,
+			"description": "To which group the translators are promoted. If left at false, they will just be removed from sandbox and become normal users.",
+			"public": true
+		},
+		"TranslateSandboxSuggestions": {
+			"value": [],
+			"description": "List of page names to always suggest for sandboxed users.",
+			"public": true
+		},
+		"TranslateSandboxLimit": {
+			"value": 20,
+			"description": "Maximum number of translations a user can make in the sandbox.",
+			"public": true
+		},
+		"TranslateUsePreSaveTransform": {
+			"value": false,
+			"description": "Pre-save transform for message pages. MediaWiki does this by default (including for pages in the MediaWiki-namespace). By setting this to false it allows users to put untransformed syntax such as '~~~~' into a page without having them be transformed upon save.",
+			"public": true
+		},
+		"TranslateRcFilterDefault": {
+			"value": "filter",
+			"description": "Default action for the RecentChanges filter, which makes it possible to filter translations away or show them only. Possible values: 'noaction', 'only', 'filter', 'site'.",
+			"public": true
+		},
+		"TranslateTestTTMServer": {
+			"value": null,
+			"description": "Set this to config like $wgTranslateTranslationServices if you want to run SolrTTMServer tests.",
+			"public": true
+		},
+		"TranslateTestUsers": {
+			"value": [],
+			"description": "List of user names that are allowed to alter their privileges and do other things. Used for supporting integration testing.",
+			"public": true
+		},
+		"TranslateYamlLibrary": {
+			"value": null,
+			"description": "Currently supported YAML drivers are phpyaml, spyc and syck.\n\nFor phpyaml see https://secure.php.net/manual/en/book.yaml.php.\nFor syck we're shelling out to perl. So you need at least perl 5.8 (find out what you have by running `perl -v`), and to install these modules from CPAN: YAML::Syck, PHP::Serialization, and File::Slurp.\n\nYou should be able to do this with: `for module in 'YAML::Syck' 'PHP::Serialization' 'File::Slurp'; do cpanp -i $module; done`\n\nFor the shell to work, you also need an en.UTF-8 locale installed on your system. add a line `en.UTF-8` to your /etc/locale.gen or uncomment an existing one and run locale-gen if you do not have it already.\n\nphpyaml is the fastest and based on libyaml so the output should be most compatible. spyc output format is least compatible. syck is slowest but almost as good as phpyaml. spyc needs to be installed using composer. See https://www.mediawiki.org/wiki/Composer",
+			"public": true
+		}
+	},
 	"DefaultUserOptions": {
 		"translate": 0,
 		"translate-editlangs": "default",
