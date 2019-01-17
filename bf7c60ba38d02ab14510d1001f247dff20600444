@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e07cad4_0131fe94",
+        "filename": "tests/phpunit/SpecialPagesTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-17T10:31:16Z",
+      "side": 1,
+      "message": "Indeed this should go into the earlier commit. I don\u0027t think this list will stay up to date, so if must hard code it, we could as well remove the test, imho.",
+      "revId": "bf7c60ba38d02ab14510d1001f247dff20600444",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
