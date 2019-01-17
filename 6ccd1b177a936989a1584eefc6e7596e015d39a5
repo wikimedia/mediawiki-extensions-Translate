@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f721db22_a85f7abe",
+        "filename": "Translate.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-01-17T20:40:09Z",
+      "side": 1,
+      "message": "It was necessary because $dir is set in one of the files included in global scope...  I could split it into a predecessor patch if that\u0027s better?",
+      "parentUuid": "6861fda5_c980f611",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 84
+      },
+      "revId": "6ccd1b177a936989a1584eefc6e7596e015d39a5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3ca75afd_437a40f4",
         "filename": "extension-wip.json",
         "patchSetId": 3
@@ -36,6 +60,24 @@
       "writtenOn": "2019-01-17T10:08:56Z",
       "side": 1,
       "message": "This does not have corresponding removal. I think this was moved to be registered conditionally.",
+      "revId": "6ccd1b177a936989a1584eefc6e7596e015d39a5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5266bf80_1be3db9c",
+        "filename": "extension-wip.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-01-17T20:40:09Z",
+      "side": 1,
+      "message": "Thanks for finding these!  I\u0027ve removed from the next patchset.",
+      "parentUuid": "3ca75afd_437a40f4",
       "revId": "6ccd1b177a936989a1584eefc6e7596e015d39a5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
