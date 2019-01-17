@@ -10,14 +10,14 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  *
  * @author Niklas Laxström
  * @author Siebrand Mazeland
- * @copyright Copyright © 2006-2018, Niklas Laxström, Siebrand Mazeland
+ * @copyright Copyright © 2006-2019, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0-or-later
  */
 
 /**
  * Version number used in extension credits and in other places where needed.
  */
-define( 'TRANSLATE_VERSION', '2018-11-05' );
+define( 'TRANSLATE_VERSION', '2019-01-17' );
 
 // Load stuff already converted to extension registration.
 wfLoadExtension( 'Translate', __DIR__ . '/extension-wip.json' );
