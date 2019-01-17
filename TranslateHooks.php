@@ -245,6 +245,12 @@ class TranslateHooks {
 			$wgAPIModules['translationstash'] = 'ApiTranslationStash';
 			$wgAPIModules['translatesandbox'] = 'ApiTranslateSandbox';
 		}
+
+		// Back compatibility for MediaWiki <= 1.31
+		global $wgVersion, $wgResourceModules;
+		if ( version_compare( $wgVersion, '1.32', '<' ) ) {
+			   $wgResourceModules['ext.translate.editor']['dependencies'][] = 'mediawiki.api.parse';
+		}
 	}
 
 	/**
