@@ -23,14 +23,6 @@ define( 'TRANSLATE_VERSION', '2018-11-05' );
 wfLoadExtension( 'Translate', __DIR__ . '/extension-wip.json' );
 
 /**
- * @cond file_level_code
- * Setup class autoloading.
- */
-$dir = __DIR__;
-require_once "$dir/Autoload.php";
-/** @endcond */
-
-/**
  * Registering various resources
  * @cond file_level_code
  */
@@ -77,7 +69,7 @@ $wgDefaultUserOptions['translate'] = 0;
 $wgDefaultUserOptions['translate-editlangs'] = 'default';
 $wgDefaultUserOptions['translate-recent-groups'] = '';
 
-require "$dir/Resources.php";
+require __DIR__ . '/Resources.php';
 
 /** @endcond */
 
