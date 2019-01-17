@@ -16,6 +16,24 @@
       "revId": "bf7c60ba38d02ab14510d1001f247dff20600444",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e57b5a5_4c857474",
+        "filename": "tests/phpunit/SpecialPagesTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-01-17T21:00:55Z",
+      "side": 1,
+      "message": "Agreed, it should be replaced by frontend tests which actually exercise page behaviors.",
+      "parentUuid": "8e07cad4_0131fe94",
+      "revId": "bf7c60ba38d02ab14510d1001f247dff20600444",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
