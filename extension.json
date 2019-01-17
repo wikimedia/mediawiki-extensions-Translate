@@ -7,7 +7,7 @@
 		"Siebrand Mazeland",
 		"..."
 	],
-	"version": "2018-11-05",
+	"version": "2019-01-17",
 	"url": "https://www.mediawiki.org/wiki/Extension:Translate",
 	"descriptionmsg": "translate-desc",
 	"license-name": "GPL-2.0-or-later",
@@ -29,6 +29,27 @@
 			"name": "Translations_talk"
 		}
 	],
+	"ExtensionMessagesFiles": {
+		"TranslateAlias": "Translate.alias.php",
+		"TranslateMagic": "Translate.i18n.magic.php"
+	},
+	"MessagesDirs": {
+		"PageTranslation": [
+			"i18n/pagetranslation"
+		],
+		"Translate": [
+			"i18n/core"
+		],
+		"TranslateApi": [
+			"i18n/api"
+		],
+		"TranslateSandbox": [
+			"i18n/sandbox"
+		],
+		"TranslateSearch": [
+			"i18n/search"
+		]
+	},
 	"AutoloadClasses": {
 		"AggregateMessageGroup": "messagegroups/AggregateMessageGroup.php",
 		"AmdFFS": "ffs/AmdFFS.php",
