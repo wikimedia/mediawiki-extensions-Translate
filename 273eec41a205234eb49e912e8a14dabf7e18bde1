@@ -22,6 +22,30 @@
       "revId": "273eec41a205234eb49e912e8a14dabf7e18bde1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb4517c7_f0e98138",
+        "filename": "tests/phpunit/ResourcesOrderTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-17T10:28:56Z",
+      "side": 1,
+      "message": "I\u0027m okay with deleting.",
+      "parentUuid": "8234343f_7ad0bf2e",
+      "range": {
+        "startLine": 18,
+        "startChar": 2,
+        "endLine": 18,
+        "endChar": 72
+      },
+      "revId": "273eec41a205234eb49e912e8a14dabf7e18bde1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
