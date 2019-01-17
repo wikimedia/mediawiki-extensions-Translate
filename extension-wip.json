@@ -289,6 +289,24 @@
 		"AggregateGroups": "SpecialAggregateGroups",
 		"SearchTranslations": "SpecialSearchTranslations"
 	},
+	"APIListModules": {
+		"messagecollection": "ApiQueryMessageCollection"
+	},
+	"APIMetaModules": {
+		"languagestats": "ApiQueryLanguageStats",
+		"messagegroups": "ApiQueryMessageGroups",
+		"messagegroupstats": "ApiQueryMessageGroupStats",
+		"messagetranslations": "ApiQueryMessageTranslations"
+	},
+	"APIModules": {
+		"aggregategroups": "ApiAggregateGroups",
+		"groupreview": "ApiGroupReview",
+		"translationaids": "ApiTranslationAids",
+		"translationreview": "ApiTranslationReview",
+		"translationcheck": "ApiTranslationCheck",
+		"ttmserver": "ApiTTMServer",
+		"searchtranslations": "ApiSearchTranslations"
+	},
 	"JobClasses": {
 		"MessageGroupStatesUpdaterJob": "MessageGroupStatesUpdaterJob",
 		"MessageGroupStatsRebuildJob": "MessageGroupStatsRebuildJob",
