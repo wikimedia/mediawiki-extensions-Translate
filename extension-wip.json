@@ -276,6 +276,19 @@
 		"AbuseFilter-computeVariable": "TranslateHooks::onAbuseFilterComputeVariable",
 		"AbuseFilter-builder": "TranslateHooks::onAbuseFilterBuilder"
 	},
+	"SpecialPages": {
+		"Translate": "SpecialTranslate",
+		"Translations": "SpecialTranslations",
+		"TranslationStats": "SpecialTranslationStats",
+		"LanguageStats": "SpecialLanguageStats",
+		"MessageGroupStats": "SpecialMessageGroupStats",
+		"ImportTranslations": "SpecialImportTranslations",
+		"ExportTranslations": "SpecialExportTranslations",
+		"ManageMessageGroups": "SpecialManageGroups",
+		"SupportedLanguages": "SpecialSupportedLanguages",
+		"AggregateGroups": "SpecialAggregateGroups",
+		"SearchTranslations": "SpecialSearchTranslations"
+	},
 	"JobClasses": {
 		"MessageGroupStatesUpdaterJob": "MessageGroupStatesUpdaterJob",
 		"MessageGroupStatsRebuildJob": "MessageGroupStatsRebuildJob",
