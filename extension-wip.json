@@ -20,6 +20,71 @@
 	"AutoloadClasses": {
 		"TranslateHooks": "TranslateHooks.php"
 	},
+	"Hooks": {
+		"CanonicalNamespaces": "TranslateHooks::setupNamespaces",
+		"ResourceLoaderTestModules": "TranslateHooks::onResourceLoaderTestModules",
+		"UnitTestsList": "TranslateHooks::setupUnitTests",
+		"LoadExtensionSchemaUpdates": "TranslateHooks::schemaUpdates",
+		"ParserTestTables": "TranslateHooks::parserTestTables",
+		"PageContentLanguage": "TranslateHooks::onPageContentLanguage",
+		"ResourceLoaderRegisterModules": "TranslateHooks::onResourceLoaderRegisterModules",
+		"EditPage::showEditForm:initial": "TranslateEditAddons::addTools",
+		"AlternateEdit": "TranslateEditAddons::suppressIntro",
+		"getUserPermissionsErrorsExpensive": "TranslateEditAddons::disallowLangTranslations",
+		"EditPageBeforeEditButtons": "TranslateEditAddons::buttonHack",
+		"LanguageGetTranslatedLanguageNames": "TranslateHooks::translateMessageDocumentationLanguage",
+		"TranslateSupportedLanguages": "TranslateHooks::translateMessageDocumentationLanguage",
+		"ArticlePrepareTextForEdit": "TranslateEditAddons::disablePreSaveTransform",
+		"ParserFirstCallInit": "TranslateHooks::setupTranslateParserFunction",
+		"LanguageLinks": "PageTranslationHooks::addLanguageLinks",
+		"SkinTemplateGetLanguageLink": "PageTranslationHooks::formatLanguageLink",
+		"UserGetReservedNames": "TranslateHooks::onUserGetReservedNames",
+		"LinksUpdate": "TranslateHooks::preventCategorization",
+		"PageContentSaveComplete": "TranslateEditAddons::onSave",
+		"Translate:newTranslation": "TranslateEditAddons::updateTransverTag",
+		"SkinTemplateNavigation::SpecialPage": [
+			"SpecialTranslate::tabify",
+			"SpecialManageGroups::tabify"
+		],
+		"GetPreferences": [
+			"TranslatePreferences::onGetPreferences",
+			"TranslatePreferences::translationAssistLanguages"
+		],
+		"ChangesListSpecialPageQuery": "TranslateRcFilter::translationFilter",
+		"SpecialRecentChangesPanel": "TranslateRcFilter::translationFilterForm",
+		"ChangesListSpecialPageStructuredFilters": "TranslateRcFilter::onChangesListSpecialPageStructuredFilters",
+		"SkinTemplateToolboxEnd": "TranslateToolbox::toolboxAllTranslations",
+		"AbortEmailNotification": "TranslateHooks::onAbortEmailNotificationReview",
+		"ArticleDeleteComplete": "TTMServer::onDelete",
+		"TranslateEventMessageMembershipChange": "TTMServer::onGroupChange",
+		"ArticleContentOnDiff": "TranslateEditAddons::displayOnDiff",
+		"SpecialSearchProfiles": "TranslateHooks::searchProfile",
+		"SpecialSearchProfileForm": "TranslateHooks::searchProfileForm",
+		"SpecialSearchSetupEngine": "TranslateHooks::searchProfileSetupEngine",
+		"TitleIsAlwaysKnown": "TranslateHooks::onTitleIsAlwaysKnown",
+		"Translate:MessageGroupStats:isIncluded": [
+			"TranslateHooks::hideDiscouragedFromStats",
+			"TranslateHooks::hideRestrictedFromStats"
+		],
+		"MakeGlobalVariablesScript": "TranslateHooks::addConfig",
+		"TranslateEventTranslationReview": [
+			"MessageGroupStats::clear",
+			"MessageGroupStatesUpdaterJob::onChange"
+		],
+		"TranslatePostInitGroups": [
+			"MessageGroups::getCCGroups",
+			"MessageGroups::getTranslatablePages",
+			"MessageGroups::getConfiguredGroups",
+			"MessageGroups::getWorkflowGroups",
+			"MessageGroups::getAggregateGroups"
+		],
+		"AdminLinks": "TranslateHooks::onAdminLinks",
+		"MergeAccountFromTo": "TranslateHooks::onMergeAccountFromTo",
+		"DeleteAccount": "TranslateHooks::onDeleteAccount",
+		"AbuseFilter-filterAction": "TranslateHooks::onAbuseFilterFilterAction",
+		"AbuseFilter-computeVariable": "TranslateHooks::onAbuseFilterComputeVariable",
+		"AbuseFilter-builder": "TranslateHooks::onAbuseFilterBuilder"
+	},
 	"JobClasses": {
 		"MessageGroupStatesUpdaterJob": "MessageGroupStatesUpdaterJob",
 		"MessageGroupStatsRebuildJob": "MessageGroupStatsRebuildJob",
