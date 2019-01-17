@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ffafe428_fa70b2b1",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-01-17T21:32:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73d5cd06_61e0d6da",
+      "range": {
+        "startLine": 69,
+        "startChar": 4,
+        "endLine": 69,
+        "endChar": 5
+      },
+      "revId": "a0414f3d9b38a12b035ce62347af00a640fa0d85",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c63030f6_cbb696f3",
         "filename": "TranslateHooks.php",
         "patchSetId": 2
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "7aea72b3_9a1748ae",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-01-17T21:32:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c63030f6_cbb696f3",
+      "revId": "a0414f3d9b38a12b035ce62347af00a640fa0d85",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "81237a59_af10c9a4",
         "filename": "extension-wip.json",
         "patchSetId": 2
@@ -53,6 +95,30 @@
       "writtenOn": "2019-01-17T10:56:28Z",
       "side": 1,
       "message": "If I remember correctly, these things are array merged with settings in LocalSettings.php. This seems to mean that it is not possible to unset the default values. Is it so?",
+      "range": {
+        "startLine": 1013,
+        "startChar": 0,
+        "endLine": 1054,
+        "endChar": 4
+      },
+      "revId": "a0414f3d9b38a12b035ce62347af00a640fa0d85",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "236730a6_351a7370",
+        "filename": "extension-wip.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 1054,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-01-17T21:32:54Z",
+      "side": 1,
+      "message": "Good point!  Each configuration value can include a custom merge strategy (see ExtensionRegistry::exportExtractedData), so I\u0027ll use \"array_plus\" to allow LocalSettings.php to overwrite the defaults for each key.  However, this won\u0027t let us unset as you pointed out.  Is this a blocker, and we should look for a different way to manage these services or a different syntax for this variable?",
+      "parentUuid": "81237a59_af10c9a4",
       "range": {
         "startLine": 1013,
         "startChar": 0,
