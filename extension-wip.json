@@ -982,6 +982,11 @@
 			]
 		}
 	},
+	"DefaultUserOptions": {
+		"translate": 0,
+		"translate-editlangs": "default",
+		"translate-recent-groups": ""
+	},
 	"AvailableRights": [
 		"translate",
 		"translate-import",
