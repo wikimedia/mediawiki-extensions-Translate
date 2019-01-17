@@ -35,20 +35,6 @@ $wgMessagesDirs['TranslateApi'] = __DIR__ . '/i18n/api';
 $wgExtensionMessagesFiles['TranslateAlias'] = __DIR__ . '/Translate.alias.php';
 $wgExtensionMessagesFiles['TranslateMagic'] = __DIR__ . '/Translate.i18n.magic.php';
 
-// API
-$wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
-$wgAPIMetaModules['languagestats'] = 'ApiQueryLanguageStats';
-$wgAPIMetaModules['messagegroups'] = 'ApiQueryMessageGroups';
-$wgAPIMetaModules['messagegroupstats'] = 'ApiQueryMessageGroupStats';
-$wgAPIMetaModules['messagetranslations'] = 'ApiQueryMessageTranslations';
-$wgAPIModules['aggregategroups'] = 'ApiAggregateGroups';
-$wgAPIModules['groupreview'] = 'ApiGroupReview';
-$wgAPIModules['translationaids'] = 'ApiTranslationAids';
-$wgAPIModules['translationreview'] = 'ApiTranslationReview';
-$wgAPIModules['translationcheck'] = 'ApiTranslationCheck';
-$wgAPIModules['ttmserver'] = 'ApiTTMServer';
-$wgAPIModules['searchtranslations'] = 'ApiSearchTranslations';
-
 // Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
 $wgDefaultUserOptions['translate-editlangs'] = 'default';
