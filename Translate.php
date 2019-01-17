@@ -152,8 +152,6 @@ $wgHooks['AbuseFilter-filterAction'][] = 'TranslateHooks::onAbuseFilterFilterAct
 $wgHooks['AbuseFilter-computeVariable'][] = 'TranslateHooks::onAbuseFilterComputeVariable';
 $wgHooks['AbuseFilter-builder'][] = 'TranslateHooks::onAbuseFilterBuilder';
 
-require __DIR__ . '/Resources.php';
-
 /** @endcond */
 
 # == Configuration variables ==
