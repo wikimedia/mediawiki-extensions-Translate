@@ -23,13 +23,6 @@ define( 'TRANSLATE_VERSION', '2019-01-17' );
 wfLoadExtension( 'Translate', __DIR__ . '/extension-wip.json' );
 
 /**
- * @cond file_level_code
- * Setup class autoloading.
- */
-require_once __DIR__ . '/Autoload.php';
-/** @endcond */
-
-/**
  * Registering various resources
  * @cond file_level_code
  */
