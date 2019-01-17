@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c50e7543_70cde10c",
+        "filename": "Autoload.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-17T10:21:05Z",
+      "side": 0,
+      "message": "This seems to be missing.",
+      "revId": "6ccd1b177a936989a1584eefc6e7596e015d39a5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e31a1dc_13e667b4",
+        "filename": "Autoload.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-17T10:21:05Z",
+      "side": 0,
+      "message": "This seems to be missing.",
+      "revId": "6ccd1b177a936989a1584eefc6e7596e015d39a5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2432b95_87332ea6",
+        "filename": "tests/phpunit/SpecialPagesTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-17T10:21:05Z",
+      "side": 0,
+      "message": "$al is now undefined. If we want to keep the test working, this should ready SpecialPages directly out of extension-wip.json (it would be easier when they are migrated there, for now it can keep reading the autoload section).",
+      "revId": "6ccd1b177a936989a1584eefc6e7596e015d39a5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
