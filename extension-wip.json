@@ -15,8 +15,6 @@
 		"MediaWiki": ">= 1.30.0"
 	},
 	"callback": "TranslateHooks::setupTranslate",
-	"load_composer_autoloader": true,
-	"manifest_version": 2,
 	"AutoloadClasses": {
 		"AggregateMessageGroup": "messagegroups/AggregateMessageGroup.php",
 		"AmdFFS": "ffs/AmdFFS.php",
@@ -1229,5 +1227,7 @@
 		"editpage": {
 			"translate": true
 		}
-	}
+	},
+	"load_composer_autoloader": true,
+	"manifest_version": 2
 }

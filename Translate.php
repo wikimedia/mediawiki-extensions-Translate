@@ -14,19 +14,14 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @license GPL-2.0-or-later
  */
 
-/**
- * Version number used in extension credits and in other places where needed.
- */
-define( 'TRANSLATE_VERSION', '2018-11-05' );
+if ( !function_exists( 'wfLoadExtension' ) ) {
+	die( 'This version of the Translate extension requires MediaWiki 1.29+.' );
+}
 
 // Load stuff already converted to extension registration.
 wfLoadExtension( 'Translate', __DIR__ . '/extension-wip.json' );
 
-/**
- * Registering various resources
- * @cond file_level_code
- */
-
+// Keep i18n globals so mergeMessageFileList.php doesn't break
 $wgMessagesDirs['PageTranslation'] = __DIR__ . '/i18n/pagetranslation';
 $wgMessagesDirs['Translate'] = __DIR__ . '/i18n/core';
 $wgMessagesDirs['TranslateSearch'] = __DIR__ . '/i18n/search';
@@ -34,9 +29,3 @@ $wgMessagesDirs['TranslateSandbox'] = __DIR__ . '/i18n/sandbox';
 $wgMessagesDirs['TranslateApi'] = __DIR__ . '/i18n/api';
 $wgExtensionMessagesFiles['TranslateAlias'] = __DIR__ . '/Translate.alias.php';
 $wgExtensionMessagesFiles['TranslateMagic'] = __DIR__ . '/Translate.i18n.magic.php';
-
-/** @endcond */
-
-# </source>
-
-/** @defgroup TranslateSpecialPage Special pages of Translate extension */
