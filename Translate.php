@@ -35,21 +35,6 @@ $wgMessagesDirs['TranslateApi'] = __DIR__ . '/i18n/api';
 $wgExtensionMessagesFiles['TranslateAlias'] = __DIR__ . '/Translate.alias.php';
 $wgExtensionMessagesFiles['TranslateMagic'] = __DIR__ . '/Translate.i18n.magic.php';
 
-// Register special pages into MediaWiki
-$wgSpecialPages['Translate'] = 'SpecialTranslate';
-$wgSpecialPages['Translations'] = 'SpecialTranslations';
-// Disabled by default
-// $wgSpecialPages['Magic'] = 'SpecialMagic';
-$wgSpecialPages['TranslationStats'] = 'SpecialTranslationStats';
-$wgSpecialPages['LanguageStats'] = 'SpecialLanguageStats';
-$wgSpecialPages['MessageGroupStats'] = 'SpecialMessageGroupStats';
-$wgSpecialPages['ImportTranslations'] = 'SpecialImportTranslations';
-$wgSpecialPages['ExportTranslations'] = 'SpecialExportTranslations';
-$wgSpecialPages['ManageMessageGroups'] = 'SpecialManageGroups';
-$wgSpecialPages['SupportedLanguages'] = 'SpecialSupportedLanguages';
-$wgSpecialPages['AggregateGroups'] = 'SpecialAggregateGroups';
-$wgSpecialPages['SearchTranslations'] = 'SpecialSearchTranslations';
-
 // API
 $wgAPIListModules['messagecollection'] = 'ApiQueryMessageCollection';
 $wgAPIMetaModules['languagestats'] = 'ApiQueryLanguageStats';
