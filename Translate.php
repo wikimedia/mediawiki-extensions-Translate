@@ -34,16 +34,6 @@ $wgMessagesDirs['TranslateSandbox'] = __DIR__ . '/i18n/sandbox';
 $wgMessagesDirs['TranslateApi'] = __DIR__ . '/i18n/api';
 $wgExtensionMessagesFiles['TranslateAlias'] = __DIR__ . '/Translate.alias.php';
 $wgExtensionMessagesFiles['TranslateMagic'] = __DIR__ . '/Translate.i18n.magic.php';
-
-// Register initialization code
-$wgHooks['CanonicalNamespaces'][] = 'TranslateHooks::setupNamespaces';
-$wgHooks['ResourceLoaderTestModules'][] = 'TranslateHooks::onResourceLoaderTestModules';
-$wgHooks['UnitTestsList'][] = 'TranslateHooks::setupUnitTests';
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'TranslateHooks::schemaUpdates';
-$wgHooks['ParserTestTables'][] = 'TranslateHooks::parserTestTables';
-$wgHooks['PageContentLanguage'][] = 'TranslateHooks::onPageContentLanguage';
-$wgHooks['ResourceLoaderRegisterModules'][] = 'TranslateHooks::onResourceLoaderRegisterModules';
-
 // Register special pages into MediaWiki
 $wgSpecialPages['Translate'] = 'SpecialTranslate';
 $wgSpecialPages['Translations'] = 'SpecialTranslations';
@@ -73,84 +63,11 @@ $wgAPIModules['translationcheck'] = 'ApiTranslationCheck';
 $wgAPIModules['ttmserver'] = 'ApiTTMServer';
 $wgAPIModules['searchtranslations'] = 'ApiSearchTranslations';
 
-// Register hooks.
-$wgHooks['EditPage::showEditForm:initial'][] = 'TranslateEditAddons::addTools';
-$wgHooks['AlternateEdit'][] = 'TranslateEditAddons::suppressIntro';
-$wgHooks['getUserPermissionsErrorsExpensive'][] = 'TranslateEditAddons::disallowLangTranslations';
-$wgHooks['EditPageBeforeEditButtons'][] = 'TranslateEditAddons::buttonHack';
-$wgHooks['LanguageGetTranslatedLanguageNames'][] =
-	'TranslateHooks::translateMessageDocumentationLanguage';
-$wgHooks['TranslateSupportedLanguages'][] =
-	'TranslateHooks::translateMessageDocumentationLanguage';
-$wgHooks['ArticlePrepareTextForEdit'][] = 'TranslateEditAddons::disablePreSaveTransform';
-$wgHooks['ParserFirstCallInit'][] = 'TranslateHooks::setupTranslateParserFunction';
-$wgHooks['UserGetReservedNames'][] = 'TranslateHooks::onUserGetReservedNames';
-
-// Prevent translations creating bogus categories
-$wgHooks['LinksUpdate'][] = 'TranslateHooks::preventCategorization';
-// Fuzzy tags for speed.
-$wgHooks['PageContentSaveComplete'][] = 'TranslateEditAddons::onSave';
-
-$wgHooks['Translate:newTranslation'][] = 'TranslateEditAddons::updateTransverTag';
-
-$wgHooks['SkinTemplateNavigation::SpecialPage'][] = 'SpecialTranslate::tabify';
-$wgHooks['SkinTemplateNavigation::SpecialPage'][] = 'SpecialManageGroups::tabify';
 
 // Custom preferences
 $wgDefaultUserOptions['translate'] = 0;
 $wgDefaultUserOptions['translate-editlangs'] = 'default';
 $wgDefaultUserOptions['translate-recent-groups'] = '';
-$wgHooks['GetPreferences'][] = 'TranslatePreferences::onGetPreferences';
-$wgHooks['GetPreferences'][] = 'TranslatePreferences::translationAssistLanguages';
-
-// Recent changes filters
-$wgHooks['ChangesListSpecialPageQuery'][] = 'TranslateRcFilter::translationFilter';
-$wgHooks['SpecialRecentChangesPanel'][] = 'TranslateRcFilter::translationFilterForm';
-$wgHooks['ChangesListSpecialPageStructuredFilters'][] =
-	'TranslateRcFilter::onChangesListSpecialPageStructuredFilters';
-$wgHooks['BaseTemplateToolbox'][] = 'TranslateToolbox::toolboxAllTranslations';
-$wgHooks['AbortEmailNotification'][] = 'TranslateHooks::onAbortEmailNotificationReview';
-
-// Translation memory related
-$wgHooks['ArticleDeleteComplete'][] = 'TTMServer::onDelete';
-$wgHooks['TranslateEventMessageMembershipChange'][] = 'TTMServer::onGroupChange';
-
-// Translation display related
-$wgHooks['ArticleContentOnDiff'][] = 'TranslateEditAddons::displayOnDiff';
-
-// Search profile
-$wgHooks['SpecialSearchProfiles'][] = 'TranslateHooks::searchProfile';
-$wgHooks['SpecialSearchProfileForm'][] = 'TranslateHooks::searchProfileForm';
-$wgHooks['SpecialSearchSetupEngine'][] = 'TranslateHooks::searchProfileSetupEngine';
-
-$wgHooks['TitleIsAlwaysKnown'][] = 'TranslateHooks::onTitleIsAlwaysKnown';
-
-// Stats table manipulation
-$wgHooks['Translate:MessageGroupStats:isIncluded'][] =
-	'TranslateHooks::hideDiscouragedFromStats';
-$wgHooks['Translate:MessageGroupStats:isIncluded'][] =
-	'TranslateHooks::hideRestrictedFromStats';
-
-$wgHooks['MakeGlobalVariablesScript'][] = 'TranslateHooks::addConfig';
-
-// Internal event listeners
-$wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStats::clear';
-$wgHooks['TranslateEventTranslationReview'][] = 'MessageGroupStatesUpdaterJob::onChange';
-
-// Internal groups registers
-$wgHooks['TranslatePostInitGroups'][] = 'MessageGroups::getCCGroups';
-$wgHooks['TranslatePostInitGroups'][] = 'MessageGroups::getTranslatablePages';
-$wgHooks['TranslatePostInitGroups'][] = 'MessageGroups::getConfiguredGroups';
-$wgHooks['TranslatePostInitGroups'][] = 'MessageGroups::getWorkflowGroups';
-$wgHooks['TranslatePostInitGroups'][] = 'MessageGroups::getAggregateGroups';
-
-// Other extensions
-$wgHooks['AdminLinks'][] = 'TranslateHooks::onAdminLinks';
-$wgHooks['MergeAccountFromTo'][] = 'TranslateHooks::onMergeAccountFromTo';
-$wgHooks['DeleteAccount'][] = 'TranslateHooks::onDeleteAccount';
-$wgHooks['AbuseFilter-filterAction'][] = 'TranslateHooks::onAbuseFilterFilterAction';
-$wgHooks['AbuseFilter-computeVariable'][] = 'TranslateHooks::onAbuseFilterComputeVariable';
-$wgHooks['AbuseFilter-builder'][] = 'TranslateHooks::onAbuseFilterBuilder';
 
 /** @endcond */
 
