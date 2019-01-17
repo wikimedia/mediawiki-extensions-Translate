@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fa6c742_7ad0aa8c",
+        "filename": "Translate.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-17T10:59:12Z",
+      "side": 1,
+      "message": "Please add require_once for the new file to keep compatibility. Once people migrate to extension.json, they can add require_once to their LocalSettings.php or copy the function there directly.",
+      "revId": "a47523ef1002fe4b94673ec3625b4fb6f11ad8dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
