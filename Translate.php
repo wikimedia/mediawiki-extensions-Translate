@@ -69,8 +69,6 @@ $wgDefaultUserOptions['translate'] = 0;
 $wgDefaultUserOptions['translate-editlangs'] = 'default';
 $wgDefaultUserOptions['translate-recent-groups'] = '';
 
-require __DIR__ . '/Resources.php';
-
 /** @endcond */
 
 # == Configuration variables ==
