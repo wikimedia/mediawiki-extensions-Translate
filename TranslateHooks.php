@@ -74,6 +74,10 @@ class TranslateHooks {
 			define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
 		}
 
+		if ( !defined( 'TRANSLATE_VERSION' ) ) {
+			define( 'TRANSLATE_VERSION', '2019-01-17' );
+		}
+
 		if ( $wgTranslateYamlLibrary === null ) {
 			$wgTranslateYamlLibrary = function_exists( 'yaml_parse' ) ? 'phpyaml' : 'spyc';
 		}
