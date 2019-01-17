@@ -35,11 +35,6 @@ $wgMessagesDirs['TranslateApi'] = __DIR__ . '/i18n/api';
 $wgExtensionMessagesFiles['TranslateAlias'] = __DIR__ . '/Translate.alias.php';
 $wgExtensionMessagesFiles['TranslateMagic'] = __DIR__ . '/Translate.i18n.magic.php';
 
-// Custom preferences
-$wgDefaultUserOptions['translate'] = 0;
-$wgDefaultUserOptions['translate-editlangs'] = 'default';
-$wgDefaultUserOptions['translate-recent-groups'] = '';
-
 /** @endcond */
 
 # == Configuration variables ==
