@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3b581446_eaae30a4",
+        "filename": "ttmserver/TTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-01-18T11:05:08Z",
+      "side": 1,
+      "message": "Should be @return TTMServer|null, as far as I can see.",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 17
+      },
+      "revId": "eaefed219208c7ff5ca8f33e40447885848e9d5f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ff27925_6c899220",
+        "filename": "ttmserver/TTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-01-18T11:05:08Z",
+      "side": 1,
+      "message": "This is a typo. Good chance to fix it, as well as in the  @throws tag above.",
+      "range": {
+        "startLine": 50,
+        "startChar": 15,
+        "endLine": 50,
+        "endChar": 16
+      },
+      "revId": "eaefed219208c7ff5ca8f33e40447885848e9d5f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7056f8fc_0c88beb0",
+        "filename": "ttmserver/TTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-01-18T11:05:08Z",
+      "side": 1,
+      "message": "Both can be made more specific: array[]",
+      "range": {
+        "startLine": 73,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 17
+      },
+      "revId": "eaefed219208c7ff5ca8f33e40447885848e9d5f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
