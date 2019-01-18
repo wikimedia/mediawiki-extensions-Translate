@@ -46,6 +46,30 @@
       "revId": "ce1fa061c2425a76adbbb32d798dd6bef1d46a78",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "565afab4_d651e7cc",
+        "filename": "ttmserver/SolrTTMServer.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-01-18T15:58:24Z",
+      "side": 1,
+      "message": "Thanks @Nikerabbit! And @Thiemo for raising the issue!",
+      "parentUuid": "2e4a3c4d_18f0d817",
+      "range": {
+        "startLine": 408,
+        "startChar": 9,
+        "endLine": 408,
+        "endChar": 42
+      },
+      "revId": "ce1fa061c2425a76adbbb32d798dd6bef1d46a78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
