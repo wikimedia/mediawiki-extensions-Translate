@@ -131,6 +131,30 @@
     },
     {
       "key": {
+        "uuid": "3f068230_17f046c9",
+        "filename": "extension-wip.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 1054,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-18T13:34:12Z",
+      "side": 1,
+      "message": "I asked Kunal briefly: he suggested we make Translate able to handle null/false values. That\u0027s a little bit of work but doable.\n\nOther thing that I wish would be possible is to set $wgTranslateTranslationServices[\u0027Microsoft\u0027][\u0027key\u0027] \u003d \u0027..\u0027; In that case we need array_merge that goes to levels deep. IIRC there is a merge strategy for that, isn\u0027t there?",
+      "parentUuid": "236730a6_351a7370",
+      "range": {
+        "startLine": 1013,
+        "startChar": 0,
+        "endLine": 1054,
+        "endChar": 4
+      },
+      "revId": "a0414f3d9b38a12b035ce62347af00a640fa0d85",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "57495c21_4f6ccb06",
         "filename": "extension-wip.json",
         "patchSetId": 2
