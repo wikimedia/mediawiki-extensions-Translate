@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4b30696b_04933602",
+        "filename": "ttmserver/TTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-01-18T12:13:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b581446_eaae30a4",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 17
+      },
+      "revId": "eaefed219208c7ff5ca8f33e40447885848e9d5f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ff27925_6c899220",
         "filename": "ttmserver/TTMServer.php",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "a2bf2723_3b31c10e",
+        "filename": "ttmserver/TTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-01-18T12:13:33Z",
+      "side": 1,
+      "message": "Wow, nice catch! I didn\u0027t notice this, thanks a lot! Fixed! So CI didn\u0027t catch this that the class doesn\u0027t exist? Ohhh, PHP doesn\u0027t care about cases, I get it :)",
+      "parentUuid": "0ff27925_6c899220",
+      "range": {
+        "startLine": 50,
+        "startChar": 15,
+        "endLine": 50,
+        "endChar": 16
+      },
+      "revId": "eaefed219208c7ff5ca8f33e40447885848e9d5f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7056f8fc_0c88beb0",
         "filename": "ttmserver/TTMServer.php",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2019-01-18T11:05:08Z",
       "side": 1,
       "message": "Both can be made more specific: array[]",
+      "range": {
+        "startLine": 73,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 17
+      },
+      "revId": "eaefed219208c7ff5ca8f33e40447885848e9d5f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "62be0543_af0acffe",
+        "filename": "ttmserver/TTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-01-18T12:13:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7056f8fc_0c88beb0",
       "range": {
         "startLine": 73,
         "startChar": 4,
