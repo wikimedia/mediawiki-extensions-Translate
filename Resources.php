@@ -61,7 +61,6 @@ $wgResourceModules['ext.translate.editor'] = [
 		'jquery.textchange',
 		'mediawiki.Uri',
 		'mediawiki.api',
-		'mediawiki.api.parse',
 		'mediawiki.jqueryMsg',
 		'mediawiki.language',
 		'mediawiki.notify',
@@ -119,6 +118,11 @@ $wgResourceModules['ext.translate.editor'] = [
 		'spamprotectiontext',
 	],
 ] + $resourcePaths;
+
+if ( version_compare( $wgVersion, '1.32', '<' ) ) {
+	// Support: MediaWiki 1.31 and earlier
+	$wgResourceModules['ext.translate.editor']['dependencies'][] = 'mediawiki.api.parse';
+}
 
 $wgResourceModules['ext.translate.groupselector'] = [
 	'styles' => 'resources/css/ext.translate.groupselector.less',
@@ -447,7 +451,6 @@ $wgResourceModules['ext.translate.special.translate'] = [
 		'jquery.uls.data',
 		'mediawiki.Uri',
 		'mediawiki.api',
-		'mediawiki.api.parse',
 		'mediawiki.jqueryMsg',
 	],
 	'messages' => [
@@ -459,6 +462,11 @@ $wgResourceModules['ext.translate.special.translate'] = [
 		'tux-editor-proofreading-show-own-translations',
 	],
 ] + $resourcePaths;
+
+if ( version_compare( $wgVersion, '1.32', '<' ) ) {
+	// Support: MediaWiki 1.31 and earlier
+	$wgResourceModules['ext.translate.special.translate']['dependencies'][] = 'mediawiki.api.parse';
+}
 
 $wgResourceModules['ext.translate.special.translate.styles'] = [
 	'styles' => 'resources/css/ext.translate.special.translate.css',
