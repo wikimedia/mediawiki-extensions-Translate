@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c8859350_24ffa495",
+        "filename": "ttmserver/SolrTTMServer.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-01-18T13:18:04Z",
+      "side": 1,
+      "message": "Codesearch reveals this. This looks like an exception string is submitted as configuration array. This is definitely wrong and needs fixing before the strict array type hints are added.",
+      "range": {
+        "startLine": 408,
+        "startChar": 9,
+        "endLine": 408,
+        "endChar": 42
+      },
+      "revId": "ce1fa061c2425a76adbbb32d798dd6bef1d46a78",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
