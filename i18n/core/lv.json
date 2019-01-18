@@ -134,6 +134,7 @@
 	"translate-manage-action-import": "Importēt",
 	"translate-manage-action-ignore": "Ignorēt",
 	"translate-manage-submit": "Izpildīt",
+	"translate-manage-import-done": "Imports pabeigts!",
 	"importtranslations": "Importēt tulkojumus",
 	"translate-import-load": "Ielādēt failu",
 	"translate-import-err-ul-failed": "Faila augšupielāde neizdevās.",
