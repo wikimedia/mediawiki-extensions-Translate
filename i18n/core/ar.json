@@ -22,6 +22,7 @@
 		]
 	},
 	"translate": "ترجمة",
+	"translate-extensionname": "ترجمة",
 	"translate-desc": "[[Special:Translate|صفحة خاصة]] لترجمة الميدياويكي وما بعده",
 	"translate-fuzzybot-desc": "هذا حساب نظام خاص يستخدمه [https://www.mediawiki.org/wiki/Extension:Translate امتداد ترجمة] ميدياويكي ومستخدم للحفاظ على الترجمات،\nهذا الحساب جزء من برنامج ميدياويكي وليس مملوك لأي مستخدم.",
 	"translate-taskui-export-to-file": "صدر في صيغة أصلية",
