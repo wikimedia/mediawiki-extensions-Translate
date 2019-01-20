@@ -185,7 +185,7 @@
 	"pt-deletepage-started": "Compruebe los errores y los mensajes de conclusión en el [[Special:Log/pagetranslation|registro de traducción de páginas]].",
 	"pt-deletepage-intro": "Esta página especial te permite eliminar páginas traducibles enteras o una página de traducción individual a un idioma. La eliminación no será instantánea, porque deben borrarse todas las páginas dependientes de ella. \nLos fallos se registrarán en el [[Special:Log/pagetranslation|registro de traducción de la página]] y tendrán que ser reparados a mano.",
 	"pagemigration": "Migración de página de traducción",
-	"pagemigration-summary": "Especificar una página de traducción y restaurar cualquier traducción antes de que el sistema Translate fue habilitado en esa página.",
+	"pagemigration-summary": "Especifica una página traducida y restaura cualesquera traducciones realizadas antes de que se activara el sistema Translate en esa página.",
 	"pm-import-button-label": "Importar",
 	"pm-savepages-button-label": "Guardar",
 	"pm-cancel-button-label": "Cancelar",
