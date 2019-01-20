@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ukabia"
+			"Ukabia",
+			"Uzoma Ozurumba"
 		]
 	},
 	"translate": "Tụ̀wári ásụ̀sụ̀",
@@ -47,6 +48,7 @@
 	"translate-gs-speakers": "Ndi na su",
 	"translate-gs-multiple": "Onuogụgụ kachara otụ",
 	"translate-gs-total": "Òlé níle",
+	"translate-documentation-language": "Ndokọta ozi",
 	"tux-edit": "Mèzi",
 	"tux-editor-cancel-button-label": "Hapụ̀",
 	"tux-editor-in-other-languages": "Nà asụ̀sụ̀ ndị ọ̀zọ",

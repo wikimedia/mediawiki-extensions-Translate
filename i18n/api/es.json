@@ -5,7 +5,8 @@
 			"Fitoschido",
 			"Csbotero",
 			"Lemondoge",
-			"Dgstranz"
+			"Dgstranz",
+			"Tiberius1701"
 		]
 	},
 	"apihelp-aggregategroups-description": "Administrar grupos de mensajes agregados.\n\nPuedes agregar y quitar grupos de mensajes agregados, y asociar o disociar a ellos grupos de mensajes (uno a la vez).",
@@ -41,7 +42,7 @@
 	"apihelp-query+messagegroupstats-param-group": "Identificador del grupo de mensajes.",
 	"apihelp-query+messagegroupstats-example-1": "Lista de estadísticas de finalización de traducciones para el grupo \"page-Example\"",
 	"apihelp-query+messagetranslations-description": "Consultar todas las traducciones para un único mensaje.",
-	"apihelp-query+messagetranslations-summary": "Consultar todas las traducciones para un solo mensaje.",
+	"apihelp-query+messagetranslations-summary": "Consulta todas las traducciones de un solo mensaje.",
 	"apihelp-query+messagetranslations-param-title": "Título completo de un mensaje conocido.",
 	"apihelp-query+messagetranslations-example-1": "Lista de traducciones en el wiki de \"MediaWiki:January\"",
 	"apihelp-translatesandbox-description": "Registrar y gestionar usuarios aislados (en \"sandbox\").",
