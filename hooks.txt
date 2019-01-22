@@ -119,6 +119,10 @@ Post processing step to format in wiki
 ;TranslateTranslationAids: Make new translation aids available to any message group (which must choose an implementation in its getTranslationAids() method).
  array          &$types: List of translation aid identifiers, numerically indexed
 
+;Translate:modifyMessageGroupStates: Allow hooks to change workflow states depending on the group's ID.
+ string         $groupId: ID of the current message group.
+ array          &$conf: Workflow states, can be modified.
+
 === JavaScript events ===
 
 ;afterSubmit: Provides an opportunity to modify a Translate translation form immediately after it is submitted
