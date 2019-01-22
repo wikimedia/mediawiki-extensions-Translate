@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a4d9430_397b9617",
+        "filename": "extension-wip.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-22T08:56:52Z",
+      "side": 1,
+      "message": "This was changed from BaseTemplateToolbox and causes:\n\nPHP Warning:  Parameter 2 to TranslateToolbox::toolboxAllTranslations() expected to be a reference, value given in /www/dev.translatewiki.net/docroot/w/includes/Hooks.php on line 174",
+      "range": {
+        "startLine": 54,
+        "startChar": 3,
+        "endLine": 54,
+        "endChar": 25
+      },
+      "revId": "8f1243fc53153eda1785f34e10cd2400ffeca1be",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
