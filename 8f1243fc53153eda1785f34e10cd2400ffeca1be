@@ -22,6 +22,30 @@
       "revId": "8f1243fc53153eda1785f34e10cd2400ffeca1be",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "228b22cc_d16d6612",
+        "filename": "extension-wip.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-01-22T19:23:21Z",
+      "side": 1,
+      "message": "Thanks for fixing!",
+      "parentUuid": "9a4d9430_397b9617",
+      "range": {
+        "startLine": 54,
+        "startChar": 3,
+        "endLine": 54,
+        "endChar": 25
+      },
+      "revId": "8f1243fc53153eda1785f34e10cd2400ffeca1be",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
