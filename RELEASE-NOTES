@@ -1,0 +1,11 @@
+== Translate 2019.01 ==
+Released at 2019-01-22.
+
+=== Noteworthy changes ===
+* $wgTranslateCC is deprecated now. It should be replaced by TranslatePostInitGroups hook. (T212836)
+* Updated MicrosoftWebService to new API. (T46679)
+* Added proofreading to (Language|MessageGroup)Stats. The statistics table also has updated styling. (T41279)
+* Fast proofreading is now possible with CTRL+Enter in the proofreading mode.
+* Skipping messages Special:Translate's page mode no longer sometimes marks the translation proofread. (T206748)
+* Translatable subpages are no longer moved when moving parent. This used to break those pages. Now they must be moved manually. (T114592)
+* Message group stats updating was broken in multiple ways. Please report if you still observe stale statistics. (T134252, T208521)
