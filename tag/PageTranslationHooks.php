@@ -105,7 +105,7 @@ class PageTranslationHooks {
 	 * Hook: PageContentLanguage
 	 *
 	 * @param Title $title
-	 * @param Language &$pageLang
+	 * @param Language|string &$pageLang
 	 * @return true
 	 */
 	public static function onPageContentLanguage( Title $title, &$pageLang ) {
