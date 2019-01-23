@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ef75c98e_c0a8eb0f",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-23T08:52:05Z",
+      "side": 1,
+      "message": "Extra spaces here?",
+      "revId": "bb3a536977325d193f3cc88e295295b1b3a0886d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a1a71ca_e3ac00aa",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-23T08:52:05Z",
+      "side": 1,
+      "message": "It seems the ext.translate.special.translate is missing. It was the other one changed in 100b2106e58ff9cc11761a43c8b8179fc3062dd3",
+      "revId": "bb3a536977325d193f3cc88e295295b1b3a0886d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3f2e1c9_2d129b01",
+        "filename": "extension-wip.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 814,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-23T08:52:05Z",
+      "side": 1,
+      "message": "Remove this line too.",
+      "revId": "bb3a536977325d193f3cc88e295295b1b3a0886d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
