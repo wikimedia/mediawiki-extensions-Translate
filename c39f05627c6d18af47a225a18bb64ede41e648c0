@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd5f9361_f375ee29",
+        "filename": "extension-wip.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 1016,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-24T12:13:13Z",
+      "side": 1,
+      "message": "I have been fiddling with this to try to figure out what is the best solution.\n\nMy conclusion is we should remove all default values other than TTMServer and move them to wiki documentation. Since this is 2d option, the array_merge and array_plus strategy act similarly, so we can omit the default.",
+      "revId": "c39f05627c6d18af47a225a18bb64ede41e648c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8258a88_17f86199",
+        "filename": "extension-wip.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 1132,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-24T12:13:13Z",
+      "side": 1,
+      "message": "This should be public",
+      "revId": "c39f05627c6d18af47a225a18bb64ede41e648c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f27d47fa_024d2e52",
+        "filename": "extension-wip.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 1137,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-24T12:13:13Z",
+      "side": 1,
+      "message": "This should be public",
+      "revId": "c39f05627c6d18af47a225a18bb64ede41e648c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62d05357_fca48d87",
+        "filename": "extension-wip.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 1167,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-24T12:13:13Z",
+      "side": 1,
+      "message": "I guess this should be public too, until deprecated. PHPlot is now a composer dependency unlike when this variable was introduced.",
+      "revId": "c39f05627c6d18af47a225a18bb64ede41e648c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0abee54_ca05aea3",
+        "filename": "extension-wip.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 1172,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-01-24T12:13:13Z",
+      "side": 1,
+      "message": "This should be public",
+      "revId": "c39f05627c6d18af47a225a18bb64ede41e648c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
