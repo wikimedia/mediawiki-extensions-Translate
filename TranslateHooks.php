@@ -477,7 +477,7 @@ class TranslateHooks {
 	 * Set the correct page content language for translation units.
 	 *
 	 * @param Title $title
-	 * @param Language|string &$pageLang
+	 * @param Language|StubUserLang|string &$pageLang
 	 */
 	public static function onPageContentLanguage( Title $title, &$pageLang ) {
 		$handle = new MessageHandle( $title );
