@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e68d33b3_c380a605",
+        "filename": "extension-wip.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 1016,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-01-24T18:15:58Z",
+      "side": 1,
+      "message": "That sounds good, I\u0027ll update this patch.",
+      "parentUuid": "fd5f9361_f375ee29",
+      "revId": "c39f05627c6d18af47a225a18bb64ede41e648c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c8258a88_17f86199",
         "filename": "extension-wip.json",
         "patchSetId": 5
