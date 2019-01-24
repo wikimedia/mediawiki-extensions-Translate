@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1bdfb496_0b14c300",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-01-24T16:08:04Z",
+      "side": 1,
+      "message": "Maybe if this goes beyond 4 data types, we can just use `mixed`?",
+      "range": {
+        "startLine": 108,
+        "startChar": 11,
+        "endLine": 108,
+        "endChar": 39
+      },
+      "revId": "5ef82381b62d27388767236981e2b9a0e3c296cd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
