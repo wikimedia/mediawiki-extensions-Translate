@@ -373,6 +373,8 @@ abstract class MessageGroupOld implements MessageGroup {
 		// @todo Replace deprecated call.
 		$conf = $this->getWorkflowConfiguration();
 
+		Hooks::run( 'Translate:modifyMessageGroupStates', [ $this->getId(), &$conf ] );
+
 		return new MessageGroupStates( $conf );
 	}
 
