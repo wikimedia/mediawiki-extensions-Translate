@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Michawiki"
+			"Michawiki",
+			"J budissin"
 		]
 	},
 	"searchtranslations": "Přełožki pytać",
@@ -16,5 +17,6 @@
 	"tux-sst-solr-offline-title": "Pytanje k dispoziciji njesteji",
 	"tux-sst-solr-offline-body": "Pytanska słužba tuchwilu k dispoziciji njesteji.",
 	"tux-sst-next": "Přichodne wuslědki",
-	"tux-sst-prev": "Předchadne wuslědki"
+	"tux-sst-prev": "Předchadne wuslědki",
+	"tux-sst-default": "Přełožki"
 }
