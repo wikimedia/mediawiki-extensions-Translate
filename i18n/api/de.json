@@ -53,6 +53,7 @@
 	"apihelp-translationaids-param-prop": "Die einzuschließenden Übersetzungshelfer.",
 	"apihelp-translationaids-example-1": "Hilfen für [[MediaWiki:January/fi]] anzeigen",
 	"apihelp-translationreview-description": "Markiert Übersetzungen als überprüft.",
+	"apihelp-translationreview-summary": "Markiert Übersetzungen als überprüft.",
 	"apihelp-translationreview-param-revision": "Die zu überprüfende Versionsnummer.",
 	"apihelp-translationreview-example-1": "Überprüft die Version 1",
 	"apihelp-translationstash-description": "Fügt Übersetzungen dem Speicher hinzu.",
