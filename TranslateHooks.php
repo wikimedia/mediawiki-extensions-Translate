@@ -270,8 +270,9 @@ class TranslateHooks {
 	 *
 	 * @param AbuseFilterVariableHolder &$vars
 	 * @param Title|null $title
+	 * @param User $user
 	 */
-	public static function onAbuseFilterFilterAction( &$vars, $title ) {
+	public static function onAbuseFilterAlterVariables( &$vars, $title, $user ) {
 		if ( !$title instanceof Title ) {
 			wfDebugLog( 'T143073', 'Got non-Title in ' . wfGetAllCallers( 5 ) );
 			return;
