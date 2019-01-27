@@ -283,8 +283,11 @@ class TranslateHooks {
 	 *
 	 * @param AbuseFilterVariableHolder &$vars
 	 * @param Title|null $title
+	 * @todo Remove "AbuseFilter-filterAction" from extension.json once we support 1.34+ only.
+	 *  At that point, add a $user parameter to this handler, add typehints on all arguments
+	 *  (including $title which will always be a Title), and remove the logging below.
 	 */
-	public static function onAbuseFilterFilterAction( &$vars, $title ) {
+	public static function onAbuseFilterAlterVariables( &$vars, $title ) {
 		if ( !$title instanceof Title ) {
 			wfDebugLog( 'T143073', 'Got non-Title in ' . wfGetAllCallers( 5 ) );
 			return;
