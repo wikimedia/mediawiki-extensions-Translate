@@ -272,7 +272,7 @@
 		"AdminLinks": "TranslateHooks::onAdminLinks",
 		"MergeAccountFromTo": "TranslateHooks::onMergeAccountFromTo",
 		"DeleteAccount": "TranslateHooks::onDeleteAccount",
-		"AbuseFilter-filterAction": "TranslateHooks::onAbuseFilterFilterAction",
+		"AbuseFilterAlterVariables": "TranslateHooks::onAbuseFilterAlterVariables",
 		"AbuseFilter-computeVariable": "TranslateHooks::onAbuseFilterComputeVariable",
 		"AbuseFilter-builder": "TranslateHooks::onAbuseFilterBuilder"
 	},
