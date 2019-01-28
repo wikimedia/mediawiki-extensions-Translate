@@ -9,7 +9,8 @@
 			"Rex",
 			"පසිඳු කාවින්ද",
 			"Raynasution",
-			"Iwan Novirion"
+			"Iwan Novirion",
+			"William Surya Permana"
 		]
 	},
 	"pagetranslation": "Penerjemahan halaman",
@@ -54,7 +55,7 @@
 	"pt-parse-close": "Tag &lt;/translate> tidak seimbang.\nTemplat terjemahan: <pre>$1</pre>",
 	"pt-parse-nested": "Bagian &lt;translate> bersarang tidak diizinkan.\nTeks tanda: <pre>$1</pre>",
 	"pt-shake-multiple": "Penanda bagian ganda untuk satu bagian.\nTeks bagian: <pre>$1</pre>",
-	"pt-shake-position": "Penanda bagian di tempat tak terduka.\nTeks bagian: <pre>$1</pre>",
+	"pt-shake-position": "Penanda satuan terjemahan di tempat tak terduga.\nTeks satuan terjemahan: <pre>$1</pre>",
 	"pt-shake-empty": "Bagian kosong untuk penanda $1.",
 	"log-description-pagetranslation": "Log tindakan yang berhubungan dengan sistem penerjemahan halaman",
 	"log-name-pagetranslation": "Log penerjemahan halaman",

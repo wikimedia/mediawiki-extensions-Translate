@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mogoeilor"
+			"Mogoeilor",
+			"Beyronvan"
 		]
 	},
 	"translate": "والرن",
@@ -72,7 +73,7 @@
 	"translate-gs-speakers": "گپ زننه",
 	"translate-gs-score": "امتياز",
 	"translate-gs-total": "همه",
-	"translate-documentation-language": "سندسازی سی پیغوم",
+	"translate-documentation-language": "سٱنٱدسازی سی پاٛغوم",
 	"tux-edit": "ڤیرایئشت",
 	"tux-proofread-edit-label": "ڤیرایئشت",
 	"tux-editor-message-tools-history": "ڤیرگار"

@@ -15,7 +15,8 @@
 			"Bowleerin",
 			"Alexsh",
 			"Wwycheuk",
-			"Kly"
+			"Kly",
+			"A2093064"
 		]
 	},
 	"pagetranslation": "頁面翻譯",
@@ -75,7 +76,7 @@
 	"tpt-languages-zero": "開始翻譯此語言",
 	"tpt-languages-nonzero": "$1 ($2% 未翻譯)",
 	"tpt-tab-translate": "翻譯",
-	"tpt-target-page": "此頁面無法手動更新。\n此頁面是頁面 [[$1]] 的翻譯版本，翻譯可使用 [$2 翻譯工具] 更新。",
+	"tpt-target-page": "此頁面無法手動更新。此頁面是頁面[[$1]]的翻譯版本，翻譯可使用[$2 翻譯工具]更新。",
 	"tpt-patrolling-blocked": "此頁面無法被巡查，但可使用翻譯動作審查。",
 	"tpt-unknown-page": "此命名空間是保留給內容頁面翻譯使用。\n您嘗試編輯的頁面似乎未被標記需要翻譯。",
 	"tpt-translation-restricted": "翻譯此頁面為此語言已被翻譯管理員禁止。\n\n原因：$1",
