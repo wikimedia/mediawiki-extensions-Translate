@@ -200,7 +200,7 @@
 	"translate-mgs-noempty": "Älä näytä kieliä, joiden käännöstä ei ole aloitettu",
 	"translate-mgs-submit": "Näytä tilastot",
 	"translate-mgs-column-language": "Kieli",
-	"translate-mgs-totals": "Kaikki {{PLURAL:$1|kieli|kielet}} yhdessä",
+	"translate-mgs-totals": "Kaikki $1 {{PLURAL:$1|kieltä}} yhdessä",
 	"translate-mgs-invalid-group": "Määritettyä ryhmää $1 ei ole.",
 	"translate-mgs-nothing": "Pyydetyille tilastoille ei löydy tuloksia.",
 	"supportedlanguages": "Tuetut kielet",
