@@ -22,7 +22,8 @@
 				mcfilter: filter,
 				mcprop: 'definition|translation|tags|properties',
 				rawcontinue: 1,
-				errorformat: 'html'
+				errorformat: 'html',
+				formatversion: 2
 			} );
 		}
 	} );
@@ -844,7 +845,7 @@
 
 			if ( errors ) {
 				$.map( errors, function ( error ) {
-					$warningContainer.append( error[ '*' ] );
+					$warningContainer.append( error.html );
 				} );
 			} else {
 				$warningContainer.text( mw.msg( 'api-error-unknownerror', errorCode ) );
