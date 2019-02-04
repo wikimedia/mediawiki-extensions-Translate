@@ -22,7 +22,8 @@
 				mcfilter: filter,
 				mcprop: 'definition|translation|tags|properties',
 				rawcontinue: 1,
-				errorformat: 'html'
+				errorformat: 'html',
+				formatversion: 2
 			} );
 		}
 	} );
