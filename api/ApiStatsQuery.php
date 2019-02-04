@@ -32,7 +32,7 @@ abstract class ApiStatsQuery extends ApiQueryBase {
 	 * @param int $flags See MessageGroupStats for possible flags
 	 * @return array[]
 	 */
-	abstract protected function loadStatistics( $target, $flags );
+	abstract protected function loadStatistics( $target, $flags = 0 );
 
 	public function execute() {
 		$params = $this->extractRequestParams();
