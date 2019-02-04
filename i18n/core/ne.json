@@ -8,7 +8,8 @@
 			"Krish Dulal",
 			"बिप्लब आनन्द",
 			"NehalDaveND",
-			"राम प्रसाद जोशी"
+			"राम प्रसाद जोशी",
+			"पर्वत सुबेदी"
 		]
 	},
 	"translate": "अनुवाद गर्ने",
@@ -52,7 +53,7 @@
 	"translate-magic-cm-current": "वर्तमान",
 	"translate-magic-cm-original": "मूल",
 	"translate-magic-cm-comment": "टिप्पणी:",
-	"translate-magic-cm-save": "संग्रह गर्ने",
+	"translate-magic-cm-save": "सङ्ग्रह गर्ने",
 	"translate-magic-cm-savefailed": "संग्रह विफल भयो",
 	"translate-magic-words": "जादुई शब्दहरू",
 	"translate-magic-notsaved": "तपाईंको सम्पादन संग्रह गरिएको थिएन!",
@@ -111,7 +112,7 @@
 	"translate-manage-action-import": "आयात गर्नु",
 	"translate-manage-action-ignore": "उपेक्षा",
 	"translate-js-summary": "सारांश :",
-	"translate-js-save": "संग्रह गर्ने",
+	"translate-js-save": "सङ्ग्रह गर्ने",
 	"translate-gs-code": "कोड",
 	"translate-gs-speakers": "वक्ताहरु",
 	"translate-documentation-language": "सन्देश दस्तावेज",

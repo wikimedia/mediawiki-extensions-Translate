@@ -171,7 +171,7 @@
 	"translations-summary": "Введіть назву повідомлення, щоб показати всі доступні переклади.",
 	"translate-translations-no-message": "\"$1\" не є повідомленням для перекладу",
 	"translate-translations-none": "Немає ніяких перекладів для \"$1\"",
-	"translate-translations-count": "Знайдено {{PLURAL:$1|1=один переклад|$1 переклад|$1 переклади|$1 перекладів}}.",
+	"translate-translations-count": "Знайдено {{PLURAL:$1|1=один переклад|$1 переклади|$1 перекладів}}.",
 	"translate-translations-fieldset-title": "Повідомлення",
 	"translate-translations-messagename": "Назва:",
 	"translate-translations-project": "Проект:",
