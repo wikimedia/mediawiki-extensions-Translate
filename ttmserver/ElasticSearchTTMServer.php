@@ -101,36 +101,13 @@ class ElasticSearchTTMServer
 		$fuzzyQuery->addFields( [ 'content' ] );
 
 		$boostQuery = new \Elastica\Query\FunctionScore();
-		if ( $this->useWikimediaExtraPlugin() ) {
-			$boostQuery->addFunction(
-				'levenshtein_distance_score',
-				[
-					'text' => $text,
-					'field' => 'content'
-				]
-			);
-		} else {
-			// TODO: should we remove this code block the extra
-			// plugin is now mandatory and we will never use the
-			// groovy script.
-			if ( $this->isElastica5() ) {
-				$scriptClass = \Elastica\Script\Script::class;
-			} else {
-				$scriptClass = \Elastica\Script::class;
-			}
-
-			$groovyScript =
-<<<GROOVY
-import org.apache.lucene.search.spell.*
-new LevensteinDistance().getDistance(srctxt, _source['content'])
-GROOVY;
-			$script = new $scriptClass(
-				$groovyScript,
-				[ 'srctxt' => $text ],
-				$scriptClass::LANG_GROOVY
-			);
-			$boostQuery->addScriptScoreFunction( $script );
-		}
+		$boostQuery->addFunction(
+			'levenshtein_distance_score',
+			[
+				'text' => $text,
+				'field' => 'content'
+			]
+		);
 		$boostQuery->setBoostMode( \Elastica\Query\FunctionScore::BOOST_MODE_REPLACE );
 
 		// Wrap the fuzzy query so it can be used as a filter.
@@ -395,36 +372,27 @@ GROOVY;
 
 		$mapping = new \Elastica\Type\Mapping();
 		$mapping->setType( $type );
-
-		$keywordType = [ 'type' => 'string', 'index' => 'not_analyzed' ];
-		$textType = 'string';
-		if ( $this->isElastica5() ) {
-			$keywordType = [ 'type' => 'keyword' ];
-			$textType = 'text';
-		}
 		$mapping->setProperties( [
-			'wiki'     => $keywordType,
-			'localid'  => $keywordType,
-			'uri'      => $keywordType,
-			'language' => $keywordType,
-			'group'    => $keywordType,
+			'wiki'     => [ 'type' => 'keyword' ],
+			'localid'  => [ 'type' => 'keyword' ],
+			'uri'      => [ 'type' => 'keyword' ],
+			'language' => [ 'type' => 'keyword' ],
+			'group'    => [ 'type' => 'keyword' ],
 			'content'  => [
-				'type' => $textType,
+				'type' => 'text',
 				'fields' => [
 					'content' => [
-						'type' => $textType,
-						'index' => 'analyzed',
+						'type' => 'text',
 						'term_vector' => 'yes'
 					],
 					'prefix_complete' => [
-						'type' => $textType,
+						'type' => 'text',
 						'analyzer' => 'prefix',
 						'search_analyzer' => 'standard',
 						'term_vector' => 'yes'
 					],
 					'case_sensitive' => [
-						'type' => $textType,
-						'index' => 'analyzed',
+						'type' => 'text',
 						'analyzer' => 'casesensitive',
 						'term_vector' => 'yes'
 					]
@@ -478,11 +446,7 @@ GROOVY;
 	public function endBootstrap() {
 		$index = $this->getType()->getIndex();
 		$index->refresh();
-		if ( $this->isElastica5() ) {
-			$index->forcemerge();
-		} else {
-			$index->optimize();
-		}
+		$index->forcemerge();
 		$index->getSettings()->setRefreshInterval( '5s' );
 	}
 
@@ -557,6 +521,7 @@ GROOVY;
 	 * @return bool true if the index is green false otherwise.
 	 */
 	protected function waitForGreen( $indexName, $timeout ) {
+		// TODO: This should probably be in MWElasticUtils
 		$startTime = time();
 		while ( ( $startTime + $timeout ) > time() ) {
 			try {
@@ -576,6 +541,7 @@ GROOVY;
 	}
 
 	protected function waitUntilReady() {
+		// TODO: This should probably be in MWElasticUtils
 		$indexName = $this->getType()->getIndex()->getName();
 		$this->logOutput( "Waiting for the index to go green..." );
 		if ( !$this->waitForGreen( $indexName, self::WAIT_UNTIL_READY_TIMEOUT ) ) {
@@ -723,6 +689,9 @@ GROOVY;
 
 		// Check that we have at least one filter to avoid invalid query errors.
 		if ( $language !== '' || $group !== '' ) {
+			// TODO: This seems wrong, but perhaps for aggregation purposes?
+			// should make $search a must clause and use the bool query
+			// as main.
 			$query->setPostFilter( $filters );
 		}
 
@@ -782,6 +751,8 @@ GROOVY;
 
 	/**
 	 * Delete docs by query by using the scroll API.
+	 * TODO: Elastica\Index::deleteByQuery() ? was removed
+	 *  in 2.x and returned in 5.x.
 	 *
 	 * @param \Elastica\Type $type the source index
 	 * @param \Elastica\Query $query the query
@@ -817,6 +788,7 @@ GROOVY;
 	 * @return bool
 	 */
 	public function isFrozen() {
+		// TODO: This should probably be in MWElasticUtils
 		if ( !isset( $this->config['frozen_index'] ) ) {
 			return false;
 		}
@@ -842,15 +814,5 @@ GROOVY;
 			);
 			return false;
 		}
-	}
-
-	/**
-	 * @return bool true if running with Elastica 5+
-	 */
-	private function isElastica5() {
-		// Sadly Elastica does not seem to expose its version so we
-		// check the inexistence of a class that was removed in the
-		// version 5
-		return !class_exists( \Elastica\Script::class );
 	}
 }
