@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1dcd55e3_e09bef7f",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-02-06T06:52:01Z",
+      "side": 1,
+      "message": "Not sure what this means.",
+      "range": {
+        "startLine": 754,
+        "startChar": 42,
+        "endLine": 754,
+        "endChar": 43
+      },
+      "revId": "9969196de618e057dcd3e09730db13c89b56e6da",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
