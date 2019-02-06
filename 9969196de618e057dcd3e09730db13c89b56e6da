@@ -46,6 +46,30 @@
       "revId": "9969196de618e057dcd3e09730db13c89b56e6da",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cfdd99e4_18e2be43",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-02-06T07:28:34Z",
+      "side": 1,
+      "message": "There are two callers:\n* beginBootstrap (this potentially deletes tens or hundreds of thousands of docs, but only called from CLI when bootstrap script is run)\n* update (deletes one document)",
+      "parentUuid": "b34eb1b1_47c437fc",
+      "range": {
+        "startLine": 754,
+        "startChar": 42,
+        "endLine": 754,
+        "endChar": 43
+      },
+      "revId": "9969196de618e057dcd3e09730db13c89b56e6da",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
