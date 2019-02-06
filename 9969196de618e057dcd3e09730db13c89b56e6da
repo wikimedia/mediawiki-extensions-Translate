@@ -22,6 +22,30 @@
       "revId": "9969196de618e057dcd3e09730db13c89b56e6da",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b34eb1b1_47c437fc",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 2638
+      },
+      "writtenOn": "2019-02-06T07:17:43Z",
+      "side": 1,
+      "message": "probably a question like: \"Should we use deleteByQuery()?\"\n@Nikerabbit: is this function meant to delete a lot of documents (more than 100)?, if the number of docs is small we could already use deleteByQuery() and wait for completion, if the number of docs to delete is huge then we\u0027ll have to go async and monitor the task for its completion.",
+      "parentUuid": "1dcd55e3_e09bef7f",
+      "range": {
+        "startLine": 754,
+        "startChar": 42,
+        "endLine": 754,
+        "endChar": 43
+      },
+      "revId": "9969196de618e057dcd3e09730db13c89b56e6da",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
