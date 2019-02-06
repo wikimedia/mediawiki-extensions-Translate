@@ -40,18 +40,6 @@ class ElasticSearchTTMServer
 	const WAIT_UNTIL_READY_TIMEOUT = 3600;
 
 	/**
-	 * Flag in the frozen index that indicates that all indices
-	 * are frozen (useful only when this service shares the cluster with
-	 * CirrusSearch)
-	 */
-	const ALL_INDEXES_FROZEN_NAME = 'freeze_everything';
-
-	/**
-	 * Type used in the frozen index
-	 */
-	const FROZEN_TYPE = 'frozen';
-
-	/**
 	 * @var \Elastica\Client
 	 */
 	protected $client;
@@ -255,14 +243,11 @@ class ElasticSearchTTMServer
 		// Do not delete definitions, because the translations are attached to that
 		if ( $handle->getCode() !== $sourceLanguage ) {
 			$localid = $handle->getTitleForBase()->getPrefixedText();
-
-			$boolQuery = new \Elastica\Query\BoolQuery();
-			$boolQuery->addFilter( new Elastica\Query\Term( [ 'wiki' => wfWikiID() ] ) );
-			$boolQuery->addFilter( new Elastica\Query\Term( [ 'language' => $handle->getCode() ] ) );
-			$boolQuery->addFilter( new Elastica\Query\Term( [ 'localid' => $localid ] ) );
-
-			$query = new \Elastica\Query( $boolQuery );
-			$this->deleteByQuery( $this->getType(), $query );
+			self::deleteByQuery( Elastica\Query::create(
+				( new \Elastica\Query\BoolQuery() )
+				->addFilter( new Elastica\Query\Term( [ 'wiki' => wfWikiId() ] ) )
+				->addFilter( new Elastica\Query\Term( [ 'language' => $handle->getCode() ] ) )
+				->addFilter( new Elastica\Query\Term( [ 'localid' => $localid ] ) ) ) );
 		}
 
 		// If translation was made fuzzy, we do not need to add anything
@@ -365,10 +350,8 @@ class ElasticSearchTTMServer
 		$settings = $type->getIndex()->getSettings();
 		$settings->setRefreshInterval( '-1' );
 
-		$term = new Elastica\Query\Term();
-		$term->setTerm( 'wiki', wfWikiID() );
-		$query = new \Elastica\Query( $term );
-		$this->deleteByQuery( $type, $query );
+		self::deleteByQuery( \Elastica\Query::create(
+			( new Elastica\Query\Term() )->setTerm( 'wiki', wfWikiID() ) ) );
 
 		$mapping = new \Elastica\Type\Mapping();
 		$mapping->setType( $type );
@@ -493,59 +476,17 @@ class ElasticSearchTTMServer
 		return isset( $this->config['replicas'] ) ? $this->config['replicas'] : '0-2';
 	}
 
-	/**
-	 * Get index health
-	 *
-	 * @param string $indexName
-	 * @return array the index health status
-	 */
-	protected function getIndexHealth( $indexName ) {
-		$path = "_cluster/health/$indexName";
-		$response = $this->getClient()->request( $path );
-		if ( $response->hasError() ) {
-			throw new \Exception( "Error while fetching index health status: ". $response->getError() );
-		}
-		return $response->getData();
-	}
-
-	/**
-	 * Wait for the index to go green
-	 *
-	 * NOTE: This method has been copied and adjusted from
-	 * CirrusSearch/includes/Maintenance/ConfigUtils.php.  Ideally we'd
-	 * like to make these utility methods available in the Elastica
-	 * extension, but this one requires some refactoring in cirrus first.
-	 *
-	 * @param string $indexName
-	 * @param int $timeout
-	 * @return bool true if the index is green false otherwise.
-	 */
-	protected function waitForGreen( $indexName, $timeout ) {
-		// TODO: This should probably be in MWElasticUtils
-		$startTime = time();
-		while ( ( $startTime + $timeout ) > time() ) {
-			try {
-				$response = $this->getIndexHealth( $indexName );
-				$status = isset( $response['status'] ) ? $response['status'] : 'unknown';
-				if ( $status === 'green' ) {
-					$this->logOutput( "\tGreen!" );
-					return true;
-				}
-				$this->logOutput( "\tIndex is $status retrying..." );
-				sleep( 5 );
-			} catch ( \Exception $e ) {
-				$this->logOutput( "Error while waiting for green ({$e->getMessage()}), retrying..." );
-			}
-		}
-		return false;
-	}
-
 	protected function waitUntilReady() {
-		// TODO: This should probably be in MWElasticUtils
-		$indexName = $this->getType()->getIndex()->getName();
+		$statuses = MWElasticUtils::waitForGreen(
+			$this->getClient(),
+			$this->getIndexName(),
+			self::WAIT_UNTIL_READY_TIMEOUT );
 		$this->logOutput( "Waiting for the index to go green..." );
-		if ( !$this->waitForGreen( $indexName, self::WAIT_UNTIL_READY_TIMEOUT ) ) {
-			die( "Timeout! Please check server logs for {$this->getIndex()->getName()}." );
+		foreach ( $statuses as $message ) {
+			$this->logOutput( $message );
+		}
+		if ( !$statuses->getReturn() ) {
+			die( "Timeout! Please check server logs for {$this->getIndexName()}." );
 		}
 	}
 
@@ -750,70 +691,24 @@ class ElasticSearchTTMServer
 	}
 
 	/**
-	 * Delete docs by query by using the scroll API.
-	 * TODO: Elastica\Index::deleteByQuery() ? was removed
-	 *  in 2.x and returned in 5.x.
-	 *
-	 * @param \Elastica\Type $type the source index
-	 * @param \Elastica\Query $query the query
-	 */
-	private function deleteByQuery( \Elastica\Type $type, \Elastica\Query $query ) {
-		$retryAttempts = self::BULK_INDEX_RETRY_ATTEMPTS;
-
-		$search = new \Elastica\Search( $this->getClient() );
-		$search->setQuery( $query );
-		$search->addType( $type );
-		$search->addIndex( $type->getIndex() );
-		$scroll = new \Elastica\Scroll( $search, '15m' );
-
-		foreach ( $scroll as $results ) {
-			$ids = [];
-			foreach ( $results as $result ) {
-				$ids[] = $result->getId();
-			}
-
-			if ( $ids === [] ) {
-				continue;
-			}
-
-			MWElasticUtils::withRetry( $retryAttempts,
-				function () use ( $ids, $type ) {
-					$type->deleteIds( $ids );
-				}
-			);
-		}
-	}
-
-	/**
 	 * @return bool
 	 */
 	public function isFrozen() {
-		// TODO: This should probably be in MWElasticUtils
-		if ( !isset( $this->config['frozen_index'] ) ) {
-			return false;
-		}
-		$frozenIndex = $this->config['frozen_index'];
-		$indices = [ static::ALL_INDEXES_FROZEN_NAME, $this->getIndexName() ];
-		$ids = ( new \Elastica\Query\Ids() )
-			->setIds( $indices );
-
 		try {
-			$resp = $this->getClient()
-				->getIndex( $frozenIndex )
-				->getType( static::FROZEN_TYPE )
-				->search( \Elastica\Query::create( $ids ) );
-
-			if ( $resp->count() === 0 ) {
-				return false;
-			} else {
-				return true;
-			}
+			return MWElasticUtils::isFrozen( $this->getClient() );
 		} catch ( Exception $e ) {
 			LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->warning(
-				'Problem encountered while checking the frozen index.',
-				[ 'exception' => $e ]
-			);
+				'Problem encountered while checking the frozen index',
+				[ 'exception' => $e ] );
 			return false;
+		}
+	}
+
+	private function deleteByQuery( \Elastica\Query $query ) {
+		$index = $this->getType()->getIndex();
+		$gen = MWElasticUtils::deleteByQuery( $index, $query );
+		foreach ( $gen as $response ) {
+			// status response messages
 		}
 	}
 }
