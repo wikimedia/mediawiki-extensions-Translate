@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bjankuloski06"
+			"Bjankuloski06",
+			"Vlad5250"
 		]
 	},
 	"apihelp-aggregategroups-description": "Раководење со насобрани групи пораки.\n\nМожете да додавате или отстранувате насобрани групи пораки и да ги придружувате во или отстранувате од збировите (една по една).",
@@ -48,7 +49,7 @@
 	"apihelp-query+messagegroups-example-1": "Прикажи групи пораки",
 	"apihelp-query+messagegroupstats-description": "Побарај статистики за група пораки.",
 	"apihelp-query+messagegroupstats-summary": "Побарај статистики за група пораки.",
-	"apihelp-query+messagegroupstats-param-timelimit": "Највеќе време што може да се потрошиНајвеќе време што може да се потроши за пресметување на отустните статистики. Ако е нула, ќе се дадае само меѓускладираните исход од почетокот.",
+	"apihelp-query+messagegroupstats-param-timelimit": "Највеќе време што може да се потроши за пресметување на отсутните статистики. Ако е нула, ќе се дадае само меѓускладираните исход од почетокот.",
 	"apihelp-query+messagegroupstats-param-group": "Назнака на групата пораки.",
 	"apihelp-query+messagegroupstats-example-1": "Список на статистики за потполност на преводите за групата „page-Example“",
 	"apihelp-query+messagetranslations-description": "Побарај ги сите преводи на една порака.",
@@ -65,7 +66,7 @@
 	"apihelp-translationaids-description": "Барај по сите преводни помагала.",
 	"apihelp-translationaids-summary": "Барај по сите преводни помагала.",
 	"apihelp-translationaids-param-title": "Целосен наслов на позната порака.",
-	"apihelp-translationaids-param-group": "На која група припаѓа пораката. Ако е празно, тогаш се користи главнатагрупа.",
+	"apihelp-translationaids-param-group": "На која група припаѓа пораката. Ако е празно, тогаш се користи главната група.",
 	"apihelp-translationaids-param-prop": "Кои преводни помагала да се вклучат.",
 	"apihelp-translationaids-example-1": "Прикажи помагала за [[MediaWiki:January/fi]]",
 	"apihelp-translationreview-description": "Означи ги преводите како проверени.",

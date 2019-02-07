@@ -3,7 +3,8 @@
 		"authors": [
 			"Cwlin0416",
 			"Simon Shek",
-			"LNDDYL"
+			"LNDDYL",
+			"Kly"
 		]
 	},
 	"searchtranslations": "搜尋翻譯",
@@ -28,5 +29,7 @@
 	"tux-sst-ellipsis-outdated": "已過時的翻譯",
 	"tux-sst-link-all-match": "需要全部搜尋文字。",
 	"tux-sst-match-message": "顯示符合任何搜尋關鍵字的翻譯。$1",
-	"tux-sst-case-sensitive": "大小寫視為相異"
+	"tux-sst-case-sensitive": "大小寫視為相異",
+	"tux-sst-error-offset": "沒有更多搜尋結果可顯示出。請縮小您的搜尋。",
+	"tux-sst-error-language": "此語言不可與此搜尋類型使用。"
 }

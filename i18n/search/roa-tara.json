@@ -26,5 +26,7 @@
 	"tux-sst-ellipsis-outdated": "Traduziune non aggiornate",
 	"tux-sst-link-all-match": "Vole tutte le parole de ricerche.",
 	"tux-sst-match-message": "Fà 'ndrucà le traduziune ca s'accocchiane cu quacche parole de ricerche. $1",
-	"tux-sst-case-sensitive": "Sensibbile a le maiuscole/minuscole"
+	"tux-sst-case-sensitive": "Sensibbile a le maiuscole/minuscole",
+	"tux-sst-error-offset": "Nisciune otre resultate d'a recerche pò essere 'ndrucate. Pe piacere accurce 'a recerca toje.",
+	"tux-sst-error-language": "Sta lènghe non ge pò essere ausate cu stu tipe de recerche."
 }

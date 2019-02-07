@@ -26,5 +26,7 @@
 	"tux-sst-ellipsis-outdated": "Veraltete Übersetzungen",
 	"tux-sst-link-all-match": "Alle Suchwörter erforderlich machen.",
 	"tux-sst-match-message": "Es werden Übersetzungen angezeigt, die mit jedem Suchwort übereinstimmen. $1",
-	"tux-sst-case-sensitive": "Groß-/Kleinschreibung"
+	"tux-sst-case-sensitive": "Groß-/Kleinschreibung",
+	"tux-sst-error-offset": "Es können keine weiteren Suchergebnisse angezeigt werden. Bitte schränke deine Suche ein.",
+	"tux-sst-error-language": "Diese Sprache kann nicht mit diesem Suchtyp verwendet werden."
 }

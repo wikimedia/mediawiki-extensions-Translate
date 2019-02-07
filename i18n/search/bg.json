@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"DCLXVI",
-			"StanProg"
+			"StanProg",
+			"Vlad5250"
 		]
 	},
 	"searchtranslations": "Търсене на преводи",
@@ -19,5 +20,7 @@
 	"tux-sst-untranslated": "Без превод от $1",
 	"tux-sst-outdated": "Неактуални преводи от $1",
 	"tux-sst-ellipsis-outdated": "Неактуални преводи",
-	"tux-sst-case-sensitive": "Чувствително към регистъра на буквите"
+	"tux-sst-case-sensitive": "Чувствително към регистъра на буквите",
+	"tux-sst-error-offset": "Не мога да показвам повече резултати. Уточнете търсенето.",
+	"tux-sst-error-language": "Този език не може да се използва за такъв вид търсене."
 }

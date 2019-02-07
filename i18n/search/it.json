@@ -29,5 +29,7 @@
 	"tux-sst-outdated": "Traduzioni non aggiornate da $1",
 	"tux-sst-ellipsis-untranslated": "Nessuna traduzione",
 	"tux-sst-ellipsis-outdated": "Traduzioni non aggiornate",
-	"tux-sst-case-sensitive": "Distingui maiuscole e minuscole"
+	"tux-sst-case-sensitive": "Distingui maiuscole e minuscole",
+	"tux-sst-error-offset": "Non è possibile visualizzare ulteriori risultati. Restringi la ricerca.",
+	"tux-sst-error-language": "Questa lingua non può essere utilizzata con questo tipo di ricerca."
 }

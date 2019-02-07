@@ -3,7 +3,8 @@
 		"authors": [
 			"Luckas",
 			"Felipe L. Ewald",
-			"TheEduGobi"
+			"TheEduGobi",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"searchtranslations": "Pesquisar traduções",
@@ -28,5 +29,7 @@
 	"tux-sst-ellipsis-outdated": "Traduções desatualizadas",
 	"tux-sst-link-all-match": "Exigir todas as palavras de pesquisa.",
 	"tux-sst-match-message": "Mostrando traduções que correspondem a qualquer das palavras da pesquisa. $1",
-	"tux-sst-case-sensitive": "Maiúsculas e minúsculas"
+	"tux-sst-case-sensitive": "Maiúsculas e minúsculas",
+	"tux-sst-error-offset": "Nenhum outro resultado de pesquisa pode ser exibido. Por favor, restrinja sua pesquisa.",
+	"tux-sst-error-language": "Esse idioma não pode ser usado com este tipo de pesquisa."
 }

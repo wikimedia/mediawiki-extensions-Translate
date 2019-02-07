@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"محمد أحمد عبد الفتاح",
-			"Meno25"
+			"Meno25",
+			"ديفيد"
 		]
 	},
 	"searchtranslations": "ابحث في الترجمات",
@@ -27,5 +28,7 @@
 	"tux-sst-ellipsis-outdated": "ترجمات غير محدثة",
 	"tux-sst-link-all-match": "تتطلب كل كلمات البحث.",
 	"tux-sst-match-message": "إظهار الترجمات التي تطابق أي من كلمات البحث. $1",
-	"tux-sst-case-sensitive": "مراعاة حالة الأحرف"
+	"tux-sst-case-sensitive": "مراعاة حالة الأحرف",
+	"tux-sst-error-offset": "لا يمكن عرض المزيد من نتائج البحث؛ يُرجَى تضييق بحثك.",
+	"tux-sst-error-language": "لا يمكن استخدام هذه اللغة مع هذا النوع من البحث."
 }

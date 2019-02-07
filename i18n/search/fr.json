@@ -34,5 +34,7 @@
 	"tux-sst-ellipsis-outdated": "Traductions désuètes",
 	"tux-sst-link-all-match": "Requiert tous les termes de recherche",
 	"tux-sst-match-message": "Montre les traductions qui correspondent à chacun des mots de la recherche. $1",
-	"tux-sst-case-sensitive": "Sensible à la casse"
+	"tux-sst-case-sensitive": "Sensible à la casse",
+	"tux-sst-error-offset": "Plus aucun résultat de recherche ne peut être affiché. Veuillez réduire votre recherche.",
+	"tux-sst-error-language": "Cette langue ne peut pas être utilisée avec ce type de recherche."
 }
