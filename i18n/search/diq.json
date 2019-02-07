@@ -5,7 +5,8 @@
 			"Marmase",
 			"Kumkumuk",
 			"Gırd",
-			"Asmen"
+			"Asmen",
+			"Orbot707"
 		]
 	},
 	"searchtranslations": "Şıma tadayışan (çarnayışan) bıgeyrê",
@@ -30,5 +31,7 @@
 	"tux-sst-ellipsis-outdated": "Açarnayışo vêrde",
 	"tux-sst-link-all-match": "Qıseyê ke geyrenê cı, pêro lazımê.",
 	"tux-sst-match-message": "Motena çarnayışanê ke pê qısanê cıgeyrayan kewnê tê. $1",
-	"tux-sst-case-sensitive": "Herfan rê hessas"
+	"tux-sst-case-sensitive": "Herfan rê hessas",
+	"tux-sst-error-offset": "Aseyaye zeder neticey çıniyê. Recay ma cı geyrayışê ho teng kerê",
+	"tux-sst-error-language": "Tipê nê cı geyrayışi pê nê zıwani de nêkariyeno"
 }

@@ -3,7 +3,8 @@
 		"authors": [
 			"아라",
 			"SeoJeongHo",
-			"Nuevo Paso"
+			"Nuevo Paso",
+			"Ykhwong"
 		]
 	},
 	"searchtranslations": "번역 검색",
@@ -28,5 +29,7 @@
 	"tux-sst-ellipsis-outdated": "오래된 번역",
 	"tux-sst-link-all-match": "모든 검색 낱말이 필요합니다.",
 	"tux-sst-match-message": "검색 낱말과 일치하는 번역을 보여줍니다. $1",
-	"tux-sst-case-sensitive": "대소문자 구분"
+	"tux-sst-case-sensitive": "대소문자 구분",
+	"tux-sst-error-offset": "더 많은 검색 결과를 표시할 수 없습니다. 검색 조건을 좁혀 주십시오.",
+	"tux-sst-error-language": "이 언어는 이 유형의 검색에 사용할 수 없습니다."
 }
