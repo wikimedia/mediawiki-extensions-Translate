@@ -30,5 +30,7 @@
 	"tux-sst-ellipsis-outdated": "Traduções desatualizadas",
 	"tux-sst-link-all-match": "Traduções com todas as palavras pesquisadas.",
 	"tux-sst-match-message": "A mostrar as traduções que contêm qualquer das palavras pesquisadas. $1",
-	"tux-sst-case-sensitive": "Maiúsculas e minúsculas"
+	"tux-sst-case-sensitive": "Maiúsculas e minúsculas",
+	"tux-sst-error-offset": "Não é possível mostrar mais resultados de pesquisa. Torne a pesquisa mais restrita, por favor.",
+	"tux-sst-error-language": "Esta língua não pode ser usada com este tipo de pesquisa."
 }

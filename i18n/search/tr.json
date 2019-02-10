@@ -6,7 +6,8 @@
 			"Meelo",
 			"Sayginer",
 			"McAang",
-			"Rapsar"
+			"Rapsar",
+			"Mirzali"
 		]
 	},
 	"searchtranslations": "Çevirileri ara",
@@ -23,5 +24,7 @@
 	"tux-sst-next": "Sonraki ›",
 	"tux-sst-prev": "‹ Önceki",
 	"tux-sst-link-all-match": "Tüm arama kelimelerini iste.",
-	"tux-sst-match-message": "Aranan kelimelerin herhangi biriyle eşleşen çeviriler gösteriliyor. $1"
+	"tux-sst-match-message": "Aranan kelimelerin herhangi biriyle eşleşen çeviriler gösteriliyor. $1",
+	"tux-sst-error-offset": "Daha fazla arama sonucu gösterilemez. Lütfen aramanızı daraltın.",
+	"tux-sst-error-language": "Bu dil bu tür arama ile kullanılamaz."
 }

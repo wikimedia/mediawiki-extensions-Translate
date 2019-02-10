@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kumkumuk"
+			"Kumkumuk",
+			"Mirzali"
 		]
 	},
-	"tux-sst-ellipsis-untranslated": "Açarnayış çıniyo"
+	"tux-sst-ellipsis-untranslated": "Açarnayış çıniyo",
+	"tux-sst-error-offset": "Neticê asayeyê jêdêri çinê. Kerem ke, cıcêrayışê xo teng ke.",
+	"tux-sst-error-language": "Tipê nê cıcêrayışi be nê zıwani ra nêgurenino."
 }

@@ -5,7 +5,8 @@
 			"Li3939108",
 			"Xiaomingyan",
 			"Yfdyh000",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Angrydog001"
 		]
 	},
 	"searchtranslations": "搜索译文",
@@ -30,5 +31,7 @@
 	"tux-sst-ellipsis-outdated": "已过时译文",
 	"tux-sst-link-all-match": "要求搜索的所有字词。",
 	"tux-sst-match-message": "显示匹配任何搜索字词的翻译。$1",
-	"tux-sst-case-sensitive": "区分大小写"
+	"tux-sst-case-sensitive": "区分大小写",
+	"tux-sst-error-offset": "没有更多可以显示的搜索结果。请缩小搜索范围。",
+	"tux-sst-error-language": "该语言不能用于此类型的搜索。"
 }

@@ -26,5 +26,7 @@
 	"tux-sst-ellipsis-outdated": "תרגומים מיושנים",
 	"tux-sst-link-all-match": "לדרוש את כל מילות החיפוש.",
 	"tux-sst-match-message": "הצגת תרגומים שמתאימים למילה כלשהי ממילות החיפוש. $1",
-	"tux-sst-case-sensitive": "תלוי רישיות"
+	"tux-sst-case-sensitive": "תלוי רישיות",
+	"tux-sst-error-offset": "לא היה אפשר להראות עוד תוצאות. נא לצמצם את החיפוש שלך.",
+	"tux-sst-error-language": "לא ניתן להשתמש בשפה הזאת עם סוג כזה של חיפוש."
 }
