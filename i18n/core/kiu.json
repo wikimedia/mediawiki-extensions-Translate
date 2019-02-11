@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Erdemaslancan",
-			"Kumkumuk"
+			"Kumkumuk",
+			"Mirzali"
 		]
 	},
 	"translate-tag-page-desc": "Açarnayışê pela da [[$2|$1]] wiki",
-	"translate-ls-submit": "İstatistikan bımocne"
+	"translate-ls-submit": "İstatistikan bımocne",
+	"tux-editor-cancel-button-label": "Bıtexelne",
+	"tux-editor-doc-editor-cancel": "Bıtexelne"
 }

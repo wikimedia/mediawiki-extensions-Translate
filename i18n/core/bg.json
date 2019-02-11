@@ -6,7 +6,8 @@
 			"StanProg",
 			"Vodnokon4e",
 			"Spiritia",
-			"ShockD"
+			"ShockD",
+			"Vlad5250"
 		]
 	},
 	"translate": "Превеждане",
@@ -182,7 +183,7 @@
 	"importtranslations": "Внасяне на преводи",
 	"translate-import-load": "Зареждане на файла",
 	"translate-import-err-ul-failed": "Качването на файла не беше успешно",
-	"translate-import-err-no-such-file": "Файлът <nowiki>$1</nowiki> не съществува или не е бил качен локално.",
+	"translate-import-err-no-such-file": "Файлът <nowiki>$1</nowiki> не съществува или не е бил качен местно.",
 	"translate-js-summary": "Резюме:",
 	"translate-js-save": "Съхраняване",
 	"translate-js-next": "Съхраняване и отваряне на следващото",
