@@ -21,6 +21,11 @@ if ( !function_exists( 'wfLoadExtension' ) ) {
 // Load stuff from extension registration.
 wfLoadExtension( 'Translate' );
 
+wfWarn(
+	'Deprecated PHP entry point used for Translate extension. Please use wfLoadExtension instead, ' .
+	'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+);
+
 // Keep i18n globals so mergeMessageFileList.php doesn't break
 $wgMessagesDirs['PageTranslation'] = __DIR__ . '/i18n/pagetranslation';
 $wgMessagesDirs['Translate'] = __DIR__ . '/i18n/core';
