@@ -102,9 +102,9 @@ class TS extends Maintenance {
 					$method = 'sandbox';
 					break;
 				} elseif ( $log->log_action === 'rights' ) {
-					MediaWiki\suppressWarnings();
+					Wikimedia\suppressWarnings();
 					$data = unserialize( $log->log_params );
-					MediaWiki\restoreWarnings();
+					Wikimedia\restoreWarnings();
 					if ( $data === false ) {
 						$lines = explode( "\n", $log->log_params );
 						if ( strpos( $lines[1], 'translator' ) !== false ) {

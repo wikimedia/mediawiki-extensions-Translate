@@ -192,9 +192,9 @@ abstract class ComplexMessages {
 
 	protected function val( $group, $type, $key ) {
 		$array = $this->getGroups();
-		MediaWiki\suppressWarnings();
+		Wikimedia\suppressWarnings();
 		$subarray = $array[$group]['data'][$type][$key];
-		MediaWiki\restoreWarnings();
+		Wikimedia\restoreWarnings();
 		if ( $this->elementsInArray ) {
 			if ( !$subarray || !count( $subarray ) ) {
 				return [];
@@ -229,9 +229,9 @@ abstract class ComplexMessages {
 		}
 
 		if ( $group['code'] ) {
-			MediaWiki\suppressWarnings();
+			Wikimedia\suppressWarnings();
 			$data = (array)${$group['var']} [$code];
-			MediaWiki\restoreWarnings();
+			Wikimedia\restoreWarnings();
 		} else {
 			$data = ${$group['var']};
 		}
@@ -642,9 +642,9 @@ class SpecialPageAliasesCM extends ComplexMessages {
 			$values = $this->val( $group, self::LANG_CURRENT, $key );
 
 			foreach ( $values as $_ ) {
-				MediaWiki\suppressWarnings();
+				Wikimedia\suppressWarnings();
 				$title = SpecialPage::getTitleFor( $_ );
-				MediaWiki\restoreWarnings();
+				Wikimedia\restoreWarnings();
 				$link = Xml::element( 'a', [ 'href' => "#mw-sp-magic-$key" ], $key );
 				if ( $title === null ) {
 					if ( $_ !== '' ) {
