@@ -719,9 +719,9 @@ class MessageGroups {
 
 		// Work around php bug: https://bugs.php.net/bug.php?id=50688
 		// Triggered by ApiQueryMessageGroups for example
-		MediaWiki\suppressWarnings();
+		Wikimedia\suppressWarnings();
 		usort( $tree, [ __CLASS__, 'groupLabelSort' ] );
-		MediaWiki\restoreWarnings();
+		Wikimedia\restoreWarnings();
 
 		/* Now we have two things left in $tree array:
 		 * - solitaries: top-level non-aggregate message groups
