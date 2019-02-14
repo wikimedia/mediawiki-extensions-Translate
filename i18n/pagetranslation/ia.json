@@ -92,7 +92,7 @@
 	"log-description-pagetranslation": "Registro de actiones ligate al systema de traduction de paginas",
 	"log-name-pagetranslation": "Registro de traduction de paginas",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|marcava}} $3 pro traduction",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|removeva}} $3 del paginas a traducer",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|removeva}} $3 del systema de traduction",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|completava}} le renomination del pagina traducibile $3 a $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|incontrava}} un problema durante le renomination del pagina $3 a $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|completava}} le deletion del pagina traducibile $3",
