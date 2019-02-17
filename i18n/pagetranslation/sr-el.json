@@ -26,6 +26,7 @@
 	"tpt-nosuchpage": "Stranica „$1” ne postoji",
 	"tpt-saveok": "Stranica [[:$1]] je označena za prevođenje sa $2 {{PLURAL:$2|jedinicom prevođenja|jedinice prevođenja|jedinica prevođenja}}. Stranica sada može da bude <span class=\"plainlinks\">[$3 prevedena]</span>.",
 	"tpt-offer-notify": "Možete da <span class=\"plainlinks\">[$1 obavestite prevodioce]</span> o ovoj stranici.",
+	"tpt-showpage-intro": "Ispod novih, postojeće i izbrisane prevodilačke jedinice su navedene.\nPre nego što označite ovu verziju za prevod, proverite da li su izmene prevodilačkih jedinica svedene na minimum da biste izbegli nepotreban rad za prevodioce.",
 	"tpt-mark-nochanges": "Nema promena za pregled. Označavanje ove stranice za prevođenje neće da uredi stranicu niti bilo koju postojeću jedinicu prevođenja.",
 	"tpt-edit-failed": "Nije moguće ažurirati stranicu: $1",
 	"tpt-already-marked": "Najnovija verzija ove stranice je već označena za prevođenje.",

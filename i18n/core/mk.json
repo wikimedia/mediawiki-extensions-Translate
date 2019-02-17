@@ -338,7 +338,7 @@
 	"tux-editor-outdated-warning": "На преводов може да му треба поднова.",
 	"tux-editor-outdated-warning-diff-link": "Прик. разлики",
 	"tux-editor-doc-editor-placeholder": "Документација на пораката",
-	"tux-editor-doc-editor-save": "Зачувај",
+	"tux-editor-doc-editor-save": "Зачувај документација",
 	"tux-editor-doc-editor-cancel": "Откажи",
 	"tux-messagetable-more-messages": "уште {{PLURAL:$1|една порака|$1 пораки}}",
 	"tux-messagetable-loading-messages": "{{PLURAL:$1|Ја вчитувам пораката|Ги вчитувам пораките}}...",

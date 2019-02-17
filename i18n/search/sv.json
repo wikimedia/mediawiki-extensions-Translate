@@ -27,5 +27,6 @@
 	"tux-sst-ellipsis-outdated": "Föråldrade översättningar",
 	"tux-sst-link-all-match": "Kräv alla sökord.",
 	"tux-sst-match-message": "Visar översättningar som överensstämmer något sökord. $1",
-	"tux-sst-case-sensitive": "Skiftlägeskänsligt"
+	"tux-sst-case-sensitive": "Skiftlägeskänsligt",
+	"tux-sst-error-language": "Detta språk kan inte användas med denna sökningstyp."
 }

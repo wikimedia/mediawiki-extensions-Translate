@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"NehalDaveND"
+			"NehalDaveND",
+			"हिमाल सुबेदी"
 		]
 	},
 	"tux-sst-search": "खोज",
 	"tux-sst-facet-language": "भाषाहरू",
-	"tux-sst-facet-group": "संदेश समूह",
+	"tux-sst-facet-group": "सन्देश समूह",
 	"tux-sst-next": "अर्को ›",
 	"tux-sst-prev": "‹ पछिल्लो"
 }
