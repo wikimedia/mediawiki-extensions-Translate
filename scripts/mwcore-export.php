@@ -44,7 +44,7 @@ class MwCoreExport extends Maintenance {
 
 	public function execute() {
 		if ( !is_writable( $this->getOption( 'target' ) ) ) {
-			$this->error( 'Target directory is not writable.', 1 );
+			$this->fatalError( 'Target directory is not writable.' );
 		}
 
 		$langs = TranslateUtils::parseLanguageCodes( $this->getOption( 'lang', '*' ) );
@@ -65,7 +65,7 @@ class MwCoreExport extends Maintenance {
 					$o = new NamespaceCM( $l );
 					break;
 				default:
-					$this->error( 'Invalid type: Must be one of special, magic, namespace.', 1 );
+					$this->fatalError( 'Invalid type: Must be one of special, magic, namespace.' );
 			}
 
 			$export = $o->export( 'core' );
