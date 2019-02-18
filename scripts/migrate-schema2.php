@@ -32,11 +32,11 @@ class TSchema2 extends Maintenance {
 	public function execute() {
 		$dbw = wfGetDB( DB_MASTER );
 		if ( !$dbw->tableExists( 'revtag' ) ) {
-			$this->error( "Table revtag doesn't exist. Translate extension is not installed?", 1 );
+			$this->fatalError( "Table revtag doesn't exist. Translate extension is not installed?" );
 		}
 
 		if ( !$dbw->tableExists( 'revtag_type' ) ) {
-			$this->error( "Table revtag_type doesn't exist. Migration is already done.", 1 );
+			$this->fatalError( "Table revtag_type doesn't exist. Migration is already done." );
 		}
 
 		if ( $dbw->getType() !== 'mysql' ) {

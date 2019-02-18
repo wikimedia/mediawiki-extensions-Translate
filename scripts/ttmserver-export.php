@@ -63,7 +63,7 @@ class TTMServerBootstrap extends Maintenance {
 
 		$configKey = $this->getOption( 'ttmserver', $wgTranslateTranslationDefaultService );
 		if ( !isset( $wgTranslateTranslationServices[$configKey] ) ) {
-			$this->error( 'Translation memory is not configured properly', 1 );
+			$this->fatalError( 'Translation memory is not configured properly' );
 		}
 
 		$config = $wgTranslateTranslationServices[$configKey];
@@ -86,7 +86,7 @@ class TTMServerBootstrap extends Maintenance {
 			pcntl_waitpid( $pid, $status );
 			// beginBootStrap probably failed, give up.
 			if ( $status !== 0 ) {
-				$this->error( 'Boostrap failed.', 1 );
+				$this->fatalError( 'Boostrap failed.' );
 			}
 		}
 
@@ -138,7 +138,7 @@ class TTMServerBootstrap extends Maintenance {
 		$server = TTMServer::factory( $config );
 		$server->setLogger( $this );
 		if ( $server->isFrozen() ) {
-			$this->error( "The service is frozen, giving up.", 1 );
+			$this->fatalError( "The service is frozen, giving up." );
 		}
 		$this->statusLine( "Cleaning up old entries...\n" );
 		if ( $this->reindex ) {

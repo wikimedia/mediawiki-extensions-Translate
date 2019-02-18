@@ -81,14 +81,9 @@ class Fuzzy extends Maintenance {
 	 * messages from the ChangeSyncer class to the commandline.
 	 * @param string $text The text to show to the user
 	 * @param string|null $channel Unique identifier for the channel.
-	 * @param bool $error Whether this is an error message
 	 */
-	public function myOutput( $text, $channel = null, $error = false ) {
-		if ( $error ) {
-			$this->error( $text, $channel );
-		} else {
-			$this->output( $text, $channel );
-		}
+	public function myOutput( $text, $channel = null ) {
+		$this->output( $text, $channel );
 	}
 }
 
@@ -127,10 +122,9 @@ class FuzzyScript {
 	}
 
 	/// @see Maintenance::output for param docs
-	protected function reportProgress( $text, $channel, $severity = 'status' ) {
+	protected function reportProgress( $text, $channel ) {
 		if ( is_callable( $this->progressCallback ) ) {
-			$useErrorOutput = $severity === 'error';
-			call_user_func( $this->progressCallback, $text, $channel, $useErrorOutput );
+			call_user_func( $this->progressCallback, $text, $channel );
 		}
 	}
 

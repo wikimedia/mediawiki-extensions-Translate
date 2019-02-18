@@ -102,7 +102,7 @@ class ProcessMessageChanges extends Maintenance {
 
 		$name = $this->getOption( 'name', MessageChangeStorage::DEFAULT_NAME );
 		if ( !MessageChangeStorage::isValidCdbName( $name ) ) {
-			$this->error( 'Invalid name', 1 );
+			$this->fatalError( 'Invalid name' );
 		}
 
 		$file = MessageChangeStorage::getCdbPath( $name );
