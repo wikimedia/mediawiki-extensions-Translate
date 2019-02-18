@@ -54,7 +54,7 @@ class MagicExport extends Maintenance {
 			case 'magic':
 				break;
 			default:
-				$this->error( 'Invalid type.', 1 );
+				$this->fatalError( 'Invalid type.' );
 		}
 
 		$this->openHandles();

@@ -96,7 +96,7 @@ class CommandlineExport extends Maintenance {
 	public function execute() {
 		$target = $this->getOption( 'target' );
 		if ( !is_writable( $target ) ) {
-			$this->error( "Target directory is not writable ($target).", 1 );
+			$this->fatalError( "Target directory is not writable ($target)." );
 		}
 
 		$threshold = $this->getOption( 'threshold' );
@@ -141,7 +141,7 @@ class CommandlineExport extends Maintenance {
 		}
 
 		if ( !count( $groups ) ) {
-			$this->error( 'EE1: No valid message groups identified.', 1 );
+			$this->fatalError( 'EE1: No valid message groups identified.' );
 		}
 
 		$changeFilter = false;
@@ -289,7 +289,7 @@ class CommandlineExport extends Maintenance {
 							$this->error( "ERROR: $ret" );
 						}
 					} else {
-						$this->error( "$definitionFile does not exist.", 1 );
+						$this->fatalError( "$definitionFile does not exist." );
 					}
 				}
 			}

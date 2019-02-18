@@ -74,7 +74,7 @@ class Poimport extends Maintenance {
 	 */
 	public function myOutput( $text, $channel = null, $error = false ) {
 		if ( $error ) {
-			$this->error( $text, $channel );
+			$this->error( $text );
 		} else {
 			$this->output( $text, $channel );
 		}
