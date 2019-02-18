@@ -40,7 +40,7 @@ class PopulateFuzzy extends Maintenance {
 			$namespace = MWNamespace::getCanonicalIndex( $namespace );
 
 			if ( $namespace === null ) {
-				$this->error( 'Bad namespace', true );
+				$this->fatalError( 'Bad namespace' );
 			}
 		}
 
