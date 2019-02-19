@@ -37,13 +37,10 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 		$this->assertFalse( $user->isLoggedIn(), 'User no longer exists' );
 	}
 
-	/**
-	 * @expectedException MWException
-	 * @expectedExceptionMessage Not a sandboxed user
-	 */
 	public function testDeleteUserPromoted() {
 		$user = TranslateSandbox::addUser( 'Test user3', 'test@blackhole.io', 'test password' );
 		TranslateSandbox::promoteUser( $user );
+		$this->setExpectedException( MWException::class, 'Not a sandboxed user' );
 		TranslateSandbox::deleteUser( $user );
 	}
 
