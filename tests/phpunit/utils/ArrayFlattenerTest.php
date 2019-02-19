@@ -1,13 +1,13 @@
 <?php
 /**
- * Unit tests.
- *
  * @author Niklas Laxström
  * @file
  * @license GPL-2.0-or-later
  */
 
 class ArrayFlattenerTest extends PHPUnit\Framework\TestCase {
+	use PHPUnit4And6Compat;
+
 	/**
 	 * @dataProvider provideTestFlatten
 	 */
@@ -45,12 +45,14 @@ class ArrayFlattenerTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @expectedException MWException
-	 * @expectedExceptionMessage Reserved plural keywords mixed with other keys
 	 * @dataProvider provideTestMixedCLDRPlurals
 	 */
 	public function testFlattenMixedCLDRPlurals( $input ) {
 		$flattener = new ArrayFlattener( '.', true );
+		$this->setExpectedException(
+			MWException::class,
+			'Reserved plural keywords mixed with other keys'
+		);
 		$flattener->flatten( $input );
 	}
 
