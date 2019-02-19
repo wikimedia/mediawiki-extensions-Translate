@@ -1,7 +1,5 @@
 <?php
 /**
- * Tests for class MediaWikiInsertablesSuggester
- *
  * @file
  * @author Niklas Laxström
  * @license GPL-2.0-or-later

@@ -1,8 +1,6 @@
 <?php
 
 /**
- * Tests for class NumericalParameterInsertablesSuggester
- *
  * @file
  * @author Geoffrey Mon
  * @license GPL-2.0-or-later

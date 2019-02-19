@@ -1,14 +1,11 @@
 <?php
 /**
- * Unit tests.
- *
  * @file
  * @author Niklas Laxström
  * @license GPL-2.0-or-later
  */
 
 /**
- * Unit tests for MessageIndexRebuildJob class.
  * @group Database
  * @group medium
  */

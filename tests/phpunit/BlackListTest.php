@@ -1,7 +1,5 @@
 <?php
 /**
- * Unit tests.
- *
  * @file
  * @author Santhosh Thottingal
  * @copyright Copyright © 2012-2013, Santhosh Thottingal

@@ -1,7 +1,5 @@
 <?php
 /**
- * Unit tests for api module.
- *
  * @file
  * @author Harry Burt
  * @copyright Copyright © 2012-2013, Harry Burt

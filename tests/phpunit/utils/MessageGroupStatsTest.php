@@ -1,7 +1,5 @@
 <?php
 /**
- * Unit tests.
- *
  * @author Niklas Laxström
  * @file
  * @license GPL-2.0-or-later

@@ -1,13 +1,11 @@
 <?php
 /**
- * Tests for MessageCollection.
  * @author Niklas Laxström
  * @file
  * @license GPL-2.0-or-later
  */
 
 /**
- * Tests for MessageCollection.
  * @group Database
  * @group medium
  */

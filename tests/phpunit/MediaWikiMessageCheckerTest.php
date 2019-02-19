@@ -1,16 +1,11 @@
 <?php
 /**
- * Unit tests.
- *
  * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013, Niklas Laxström
  * @license GPL-2.0-or-later
  */
 
-/**
- * Unit tests for MediaWikiMessageCheckerTest class.
- */
 class MediaWikiMessageCheckerTest extends MediaWikiTestCase {
 
 	/**

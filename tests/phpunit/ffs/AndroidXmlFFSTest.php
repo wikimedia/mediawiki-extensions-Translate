@@ -1,7 +1,5 @@
 <?php
 /**
- * Tests for AndroidXmlFFS
- *
  * @file
  * @author Niklas Laxström
  * @license GPL-2.0-or-later

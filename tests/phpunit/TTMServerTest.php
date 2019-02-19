@@ -1,7 +1,5 @@
 <?php
 /**
- * Tests for TTMServer
- *
  * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2012-2013, Niklas Laxström

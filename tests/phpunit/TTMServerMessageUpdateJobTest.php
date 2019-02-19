@@ -1,14 +1,11 @@
 <?php
 /**
- * Tests for TTMServerMessageUpdateJob
- *
  * @file
  * @author David Causse
  * @license GPL-2.0-or-later
  */
 
 /**
- * Unit test for TTMServerMessageUpdateJob.
  * Mostly test mirroring and failure modes.
  */
 class TTMServerMessageUpdateJobTest extends MediaWikiTestCase {
