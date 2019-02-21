@@ -41,5 +41,6 @@
 	"tsb-no-requests-from-new-users": "Nincs kérés új felhasználóktól",
 	"tsb-create-user-page": "Alapvető felhasználói lap készítése",
 	"log-name-translatorsandbox": "Fordítói homokozó naplója",
-	"log-description-translatorsandbox": "A fordítói homokozó felhasználóinak műveleteinek naplója"
+	"log-description-translatorsandbox": "A fordítói homokozó felhasználóinak műveleteinek naplója",
+	"logentry-translatorsandbox-rejected": "$1 {{GENDER:$2|visszautasította}} „$3” fordítóvá válási kérését"
 }

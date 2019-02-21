@@ -100,7 +100,7 @@
 	"translate-checks-xhtml": "من فضلك استبدل {{PLURAL:$2||الوسم التالي|الوسمين التاليين|الوسوم التالية}} بالوسوم الصحيحة:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "التعريف يستخدم <nowiki>{{PLURAL:}}</nowiki> لكن الترجمة لا.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> تم إعطاؤه {{PLURAL:$1|استمارة واحدة|$1 استمارات}} لكن {{PLURAL:$2|فقط استمارة واحدة|$2 استمارات}} مدعومة (باستثناء استمارات 0= و 1=).",
-	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> لديها إستمارات مزدوجة في النهاية. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> ينبغي أن تتم كتابتها ك <nowiki>{{PLURAL:$1|sheep}}</nowiki>.",
+	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> لديها استمارات مزدوجة في النهاية. <nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> ينبغي أن تتم كتابتها ك <nowiki>{{PLURAL:$1|sheep}}</nowiki>.",
 	"translate-checks-pagename": "النطاق تغير من التعريف",
 	"translate-checks-format": "هذه الترجمة لا تتبع التعريف أو تحتوي على صياغة خاطئة: $1",
 	"translate-checks-escape": "عمليات الهروب التالية ربما تكون حدثت بالصدفة: <strong>$1</strong>",

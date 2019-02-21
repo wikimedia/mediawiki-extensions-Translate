@@ -97,7 +97,7 @@
 	"log-description-pagetranslation": "Atvikaskráning fyrir aðgerðir sem tengjast þýðingakerfi síðna",
 	"log-name-pagetranslation": "Atvikaskrá þýðinga á síðum",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|merkti}} $3 til þýðingar",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|fjarlægði}} $3 úr þýðingu",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|fjarlægði}} $3 úr þýðingakerfinu",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|lauk}} endurnefningu þýðanlegrar síðu $3 yfir í $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|rakst á}} vandamál við að færa síðu $3 yfir á $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|lauk}} eyðingu þýðanlegrar síðu $3",

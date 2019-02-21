@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"NehalDaveND",
-			"हिमाल सुबेदी"
+			"हिमाल सुबेदी",
+			"Nirajan pant"
 		]
 	},
 	"tux-sst-search": "खोज",
 	"tux-sst-facet-language": "भाषाहरू",
-	"tux-sst-facet-group": "सन्देश समूह",
+	"tux-sst-facet-group": "सन्देश समूहहरू",
 	"tux-sst-next": "अर्को ›",
 	"tux-sst-prev": "‹ पछिल्लो"
 }
