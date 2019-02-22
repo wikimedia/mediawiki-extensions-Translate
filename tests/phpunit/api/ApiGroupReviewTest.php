@@ -8,6 +8,7 @@
  */
 
 /**
+ * @covers ApiGroupReview
  * @group Database
  */
 class ApiGroupReviewTest extends MediaWikiTestCase {
