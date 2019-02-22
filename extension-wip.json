@@ -23,7 +23,7 @@
 		"AndroidXmlFFS": "ffs/AndroidXmlFFS.php",
 		"ApertiumWebService": "webservices/ApertiumWebService.php",
 		"ApiAggregateGroups": "api/ApiAggregateGroups.php",
-		"ApiGroupReview": "api/ApiGroupReview.php",
+		"ApiGroupReview": "includes/Api/ApiGroupReview.php",
 		"ApiQueryLanguageStats": "api/ApiQueryLanguageStats.php",
 		"ApiQueryMessageCollection": "api/ApiQueryMessageCollection.php",
 		"ApiQueryMessageGroups": "api/ApiQueryMessageGroups.php",
