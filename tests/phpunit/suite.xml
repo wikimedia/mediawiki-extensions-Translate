@@ -1,0 +1,19 @@
+<phpunit>
+	<filter>
+		<whitelist>
+			<directory suffix=".php">../../api</directory>
+			<directory suffix=".php">../../ffs</directory>
+			<directory suffix=".php">../../insertables</directory>
+			<directory suffix=".php">../../messagegroups</directory>
+			<directory suffix=".php">../../scripts</directory>
+			<directory suffix=".php">../../specials</directory>
+			<directory suffix=".php">../../stash</directory>
+			<directory suffix=".php">../../stringmangler</directory>
+			<directory suffix=".php">../../tag</directory>
+			<directory suffix=".php">../../tranbslationaids</directory>
+			<directory suffix=".php">../../ttmserver</directory>
+			<directory suffix=".php">../../utils</directory>
+			<directory suffix=".php">../../webservices</directory>
+		</whitelist>
+	</filter>
+</phpunit>
