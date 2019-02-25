@@ -31,7 +31,7 @@
 	"tpt-offer-notify": "Du kan <span class=\"plainlinks\">[$1 varsle oversettere]</span> om denne siden.",
 	"tpt-showpage-intro": "Nedenfor listes nye, eksisterende og slettede avsnitt opp.\nFør denne versjonen merkes for oversettelse, sjekk at endringene i avsnittene er minimert for å unngå unødvendig arbeid for oversetterne.",
 	"tpt-mark-summary": "Markerte denne versjonen for oversettelse",
-	"tpt-mark-nochanges": "Ingen endringer å godkjenne. Å markere denne siden for oversettelse vil ikke ridegere siden eller noen eksisterende oversettelsesenheter.",
+	"tpt-mark-nochanges": "Ingen endringer å godkjenne. Å markere denne siden for oversettelse vil ikke redigere siden eller noen eksisterende oversettelsesenheter.",
 	"tpt-edit-failed": "Kunne ikke oppdatere siden: $1",
 	"tpt-duplicate": "Oversettelsens enhetsnavn $1 er brukt mer enn en gang.",
 	"tpt-already-marked": "Den siste versjonen av denne siden har allerede blitt markert for oversettelse.",
