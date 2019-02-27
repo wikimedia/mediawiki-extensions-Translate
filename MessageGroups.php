@@ -88,6 +88,7 @@ class MessageGroups {
 						: null;
 				},
 				'minAsOf' => $recache ? INF : $cache::MIN_TIMESTAMP_NONE, // "miss" on recache
+				'lowTTL' => 20
 			]
 		);
 
