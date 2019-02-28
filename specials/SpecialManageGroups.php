@@ -355,7 +355,11 @@ class SpecialManageGroups extends SpecialPage {
 		$tabs['namespaces'] = [];
 		foreach ( $pagesInGroup as $spName => $section ) {
 			$spClass = TranslateUtils::getSpecialPage( $spName );
-			if ( $spClass === null ) {
+
+			// DisabledSpecialPage was added in MW 1.33
+			if ( $spClass === null ||
+				( class_exists( DisabledSpecialPage::class ) && $spClass instanceof DisabledSpecialPage )
+			) {
 				continue; // Page explicitly disabled
 			}
 			$spTitle = $spClass->getPageTitle();
