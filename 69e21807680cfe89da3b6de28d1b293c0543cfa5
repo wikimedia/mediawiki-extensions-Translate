@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6d01b191_06c9b980",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2019-02-28T22:56:45Z",
+      "side": 1,
+      "message": "This is superfluous isn\u0027t it?",
+      "range": {
+        "startLine": 361,
+        "startChar": 6,
+        "endLine": 361,
+        "endChar": 48
+      },
+      "revId": "69e21807680cfe89da3b6de28d1b293c0543cfa5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
