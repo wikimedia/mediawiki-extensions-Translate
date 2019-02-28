@@ -22,6 +22,30 @@
       "revId": "69e21807680cfe89da3b6de28d1b293c0543cfa5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "23efae22_ff402ca1",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2019-02-28T23:14:59Z",
+      "side": 1,
+      "message": "Yeah instanceof just walks the inheritance tree and checks if the class name can be found there (in PHP 5.1+ anyway). It does not care whether the class exists or not.",
+      "parentUuid": "6d01b191_06c9b980",
+      "range": {
+        "startLine": 361,
+        "startChar": 6,
+        "endLine": 361,
+        "endChar": 48
+      },
+      "revId": "69e21807680cfe89da3b6de28d1b293c0543cfa5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
