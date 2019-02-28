@@ -4,5 +4,10 @@
 			"The Discoverer"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% onkarla)"
+	"tpt-languages-nonzero": "$1 ($2% onkarla)",
+	"pt-movepage-list-other": "{{PLURAL:$1|Dusrem up-pan|Her up-panam}}",
+	"pt-movepage-current": "Sodhyachem nanv:",
+	"pt-movepage-new": "Novem nanv:",
+	"pt-movepage-reason": "Karonn:",
+	"pt-movepage-subpages": "Sogllim up-panam haloi"
 }

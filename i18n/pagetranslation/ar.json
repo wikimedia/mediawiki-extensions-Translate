@@ -7,7 +7,8 @@
 			"روخو",
 			"Bibas",
 			"محمد أحمد عبد الفتاح",
-			"ديفيد"
+			"ديفيد",
+			"Hhaboh162002"
 		]
 	},
 	"pagetranslation": "ترجمة صفحة",
@@ -61,7 +62,7 @@
 	"translate-tag-markthis": "علّم هذه الصفحة للترجمة",
 	"translate-tag-markthisagain": "هذه الصفحة بها <span class=\"plainlinks\">[$1 تغيير]</span> منذ تم <span class=\"plainlinks\">[$2 تعليمها للترجمة]</span> لآخر مرة.",
 	"translate-tag-hasnew": "هذه الصفحة تحتوي على <span class=\"plainlinks\">[$1 تغييرات]</span> غير معلمة للترجمة.",
-	"tpt-translation-intro": "هذه الصفحة هي <span class=\"plainlinks\">[$1 نسخة مترجمة]</span> لصفحة [[$2]] والترجمة مكتملة بنسبة $3%.",
+	"tpt-translation-intro": "هذه الصفحة هي <span class=\"plainlinks\">[$1 نسخة مترجمة]</span> من صفحة [[$2]] والترجمة مكتملة بنسبة $3%.",
 	"tpt-translation-intro-fuzzy": "الترجمات غير المُحدّثة مُعلّمة بما يشبه هذه.",
 	"tpt-languages-legend": "لغات أخرى:",
 	"tpt-languages-zero": "ابدأ الترجمة لهذه اللغة",
