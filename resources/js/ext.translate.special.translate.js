@@ -45,6 +45,8 @@
 				showMessage: null
 			};
 
+			state.language = language;
+
 			mw.translate.changeUrl( changes );
 			mw.translate.updateTabLinks( changes );
 			$( '.tux-editor-header .group-warning' ).empty();
