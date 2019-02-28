@@ -20,8 +20,6 @@ class AppleFFS extends SimpleFFS {
 		return [ '.strings' ];
 	}
 
-	// READ
-
 	/**
 	 * @param string $data
 	 * @return array Parsed data.
@@ -92,8 +90,6 @@ class AppleFFS extends SimpleFFS {
 			throw new MWException( "Unrecognized line format: $line" );
 		}
 	}
-
-	// Write
 
 	/**
 	 * @param MessageCollection $collection

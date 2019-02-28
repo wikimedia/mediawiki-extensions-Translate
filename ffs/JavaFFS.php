@@ -31,8 +31,6 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		}
 	}
 
-	// READ
-
 	/**
 	 * @param string $data
 	 * @return array Parsed data.
@@ -94,8 +92,6 @@ class JavaFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			'MESSAGES' => $messages,
 		];
 	}
-
-	// Write
 
 	/**
 	 * @param MessageCollection $collection
