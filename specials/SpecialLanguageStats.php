@@ -334,14 +334,19 @@ class SpecialLanguageStats extends SpecialPage {
 		}
 	}
 
+	/**
+	 * Returns the value of the workflow state for the given target.
+	 * @param string $target Whose workflow state we want, either the language code or group id
+	 * @return string Workflow state value
+	 */
 	protected function getWorkflowStateValue( $target ) {
 		return isset( $this->states[$target] ) ? $this->states[$target] : '';
 	}
 
 	/**
 	 * If workflow states are configured, adds a cell with the workflow state to the row,
-	 * @param String $target Whose workflow state do we want, such as language code or group id.
-	 * @param String $state The workflow state id
+	 * @param string $target Whose workflow state do we want, such as language code or group id.
+	 * @param string $state The workflow state id
 	 * @return string Html
 	 */
 	protected function getWorkflowStateCell( $target, $state ) {
@@ -358,10 +363,16 @@ class SpecialLanguageStats extends SpecialPage {
 			// Same for every language
 			$group = MessageGroups::getGroup( $this->target );
 			$stateConfig = $group->getMessageGroupStates()->getStates();
+			$languageCode = $target;
 		} else {
 			// The message group for this row
 			$group = MessageGroups::getGroup( $target );
 			$stateConfig = $group->getMessageGroupStates()->getStates();
+			$languageCode = $this->target;
+		}
+
+		if ( $group->getSourceLanguage() === $languageCode ) {
+			return "\n\t\t" . $this->table->element( '', '', -1 );
 		}
 
 		$sortValue = -1;
