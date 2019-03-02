@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lanciné.kounfantoh.fofana"
+			"Lanciné.kounfantoh.fofana",
+			"Youssoufkadialy"
 		]
 	},
-	"tpt-languages-nonzero": "ߘߟߊߡߌ߬ߘߊ߬ߣߍ߲"
+	"tpt-languages-nonzero": "ߘߟߊߡߌ߬ߘߊ߬ߣߍ߲ % $2) $1)"
 }
