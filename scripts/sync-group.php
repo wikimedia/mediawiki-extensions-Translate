@@ -481,5 +481,5 @@ class ChangeSyncer {
 	}
 }
 
-$maintClass = 'SyncGroup';
+$maintClass = SyncGroup::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

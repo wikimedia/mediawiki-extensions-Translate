@@ -88,5 +88,5 @@ class TestMT extends Maintenance {
 	}
 }
 
-$maintClass = 'TestMT';
+$maintClass = TestMT::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

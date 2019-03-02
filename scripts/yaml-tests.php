@@ -92,5 +92,5 @@ class YamlTests extends Maintenance {
 	}
 }
 
-$maintClass = 'YamlTests';
+$maintClass = YamlTests::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

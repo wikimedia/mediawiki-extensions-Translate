@@ -63,5 +63,5 @@ class RefreshTranslatablePages extends Maintenance {
 	}
 }
 
-$maintClass = 'RefreshTranslatablePages';
+$maintClass = RefreshTranslatablePages::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

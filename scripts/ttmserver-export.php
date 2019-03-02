@@ -220,5 +220,5 @@ class TTMServerBootstrap extends Maintenance {
 	}
 }
 
-$maintClass = 'TTMServerBootstrap';
+$maintClass = TTMServerBootstrap::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

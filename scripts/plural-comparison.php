@@ -155,5 +155,5 @@ class PluralCompare extends Maintenance {
 	}
 }
 
-$maintClass = 'PluralCompare';
+$maintClass = PluralCompare::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

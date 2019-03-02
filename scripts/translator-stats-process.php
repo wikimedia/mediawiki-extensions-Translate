@@ -115,5 +115,5 @@ class TSP extends Maintenance {
 	}
 }
 
-$maintClass = 'TSP';
+$maintClass = TSP::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

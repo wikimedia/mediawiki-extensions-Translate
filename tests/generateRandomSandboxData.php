@@ -105,5 +105,5 @@ function wfRandomPn() {
 	return ( 2.0 * wfRandom01() ) - 1.0;
 }
 
-$maintClass = 'TranslateGenerateRandomSandboxData';
+$maintClass = TranslateGenerateRandomSandboxData::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

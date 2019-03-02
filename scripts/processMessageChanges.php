@@ -160,5 +160,5 @@ class ProcessMessageChanges extends Maintenance {
 	}
 }
 
-$maintClass = 'ProcessMessageChanges';
+$maintClass = ProcessMessageChanges::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

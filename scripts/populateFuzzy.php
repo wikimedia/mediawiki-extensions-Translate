@@ -83,5 +83,5 @@ class PopulateFuzzy extends Maintenance {
 	}
 }
 
-$maintClass = 'PopulateFuzzy';
+$maintClass = PopulateFuzzy::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

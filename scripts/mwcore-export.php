@@ -129,5 +129,5 @@ class MwCoreExport extends Maintenance {
 	}
 }
 
-$maintClass = 'MwCoreExport';
+$maintClass = MwCoreExport::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

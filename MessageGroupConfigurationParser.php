@@ -15,7 +15,7 @@ class MessageGroupConfigurationParser {
 
 	public function __construct() {
 		// Don't perform validations if library not available
-		if ( class_exists( 'RomaricDrigon\MetaYaml\MetaYaml' ) ) {
+		if ( class_exists( RomaricDrigon\MetaYaml\MetaYaml::class ) ) {
 			$this->baseSchema = $this->getBaseSchema();
 		}
 	}

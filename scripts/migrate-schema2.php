@@ -67,5 +67,5 @@ class TSchema2 extends Maintenance {
 	}
 }
 
-$maintClass = 'TSchema2';
+$maintClass = TSchema2::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
