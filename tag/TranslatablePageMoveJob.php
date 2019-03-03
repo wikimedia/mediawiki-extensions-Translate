@@ -117,6 +117,7 @@ class TranslatablePageMoveJob extends Job {
 	protected function moveMetadata( $oldGroupId, $newGroupId ) {
 		$types = [ 'prioritylangs', 'priorityforce', 'priorityreason' ];
 
+		TranslateMetadata::preloadGroups( [ $oldGroupId, $newGroupId ] );
 		foreach ( $types as $type ) {
 			$value = TranslateMetadata::get( $oldGroupId, $type );
 			if ( $value !== false ) {
@@ -126,13 +127,11 @@ class TranslatablePageMoveJob extends Job {
 		}
 
 		// Make the changes in aggregate groups metadata, if present in any of them.
-		$groups = MessageGroups::getAllGroups();
-		foreach ( $groups as $group ) {
-			if ( !$group instanceof AggregateMessageGroup ) {
-				continue;
-			}
+		$aggregateGroups = MessageGroups::getAllAggregateGroups();
+		TranslateMetadata::preloadGroups( array_keys( $aggregateGroups ) );
 
-			$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' );
+		foreach ( $aggregateGroups as $id => $group ) {
+			$subgroups = TranslateMetadata::get( $id, 'subgroups' );
 			if ( $subgroups === false ) {
 				continue;
 			}

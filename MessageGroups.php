@@ -22,7 +22,7 @@ class MessageGroups {
 	protected static $prioritycache;
 
 	/**
-	 * @var array|null
+	 * @var MessageGroup[]|null Map of (group ID => MessageGroup)
 	 */
 	protected $groups;
 
@@ -104,7 +104,7 @@ class MessageGroups {
 	}
 
 	/**
-	 * @param array $groups
+	 * @param array $groups Map of (group ID => mixed)
 	 */
 	protected function postInit( $groups ) {
 		// Expand groups to objects
@@ -376,10 +376,25 @@ class MessageGroups {
 
 	/**
 	 * Get all enabled message groups.
-	 * @return array ( string => MessageGroup )
+	 * @return MessageGroup[] Map of (string => MessageGroup)
 	 */
 	public static function getAllGroups() {
 		return self::singleton()->getGroups();
+	}
+
+	/**
+	 * Get all enabled aggregate message groups.
+	 * @return AggregateMessageGroup[] Map of (string => MessageGroup)
+	 */
+	public static function getAllAggregateGroups() {
+		$aggregateGroups = [];
+		foreach ( self::getAllGroups() as $group ) {
+			if ( $group instanceof AggregateMessageGroup ) {
+				$aggregateGroups[$group->getId()] = $group;
+			}
+		}
+
+		return $aggregateGroups;
 	}
 
 	/**
@@ -580,7 +595,7 @@ class MessageGroups {
 	/**
 	 * Get all enabled non-dynamic message groups.
 	 *
-	 * @return array
+	 * @return MessageGroup[] Map of (group ID => MessageGroup)
 	 */
 	public function getGroups() {
 		$this->init();
@@ -691,7 +706,7 @@ class MessageGroups {
 	 * In other words: [Group1, Group2, [AggGroup, Group3, Group4]]
 	 *
 	 * @throws MWException If cyclic structure is detected.
-	 * @return array
+	 * @return array Map of (group ID => MessageGroup or recursive array)
 	 */
 	public static function getGroupStructure() {
 		$groups = self::getAllGroups();
@@ -783,11 +798,12 @@ class MessageGroups {
 	 * AggregateMessageGroup.
 	 *
 	 * @param AggregateMessageGroup $parent
+	 * @param array &$childIds (Map of group ID => unused) [returned]
 	 * @throws MWException
 	 * @return array
 	 * @since Public since 2012-11-29
 	 */
-	public static function subGroups( AggregateMessageGroup $parent ) {
+	public static function subGroups( AggregateMessageGroup $parent, array &$childIds = [] ) {
 		static $recursionGuard = [];
 
 		$pid = $parent->getId();
@@ -811,8 +827,10 @@ class MessageGroups {
 			if ( $group instanceof AggregateMessageGroup ) {
 				$sid = $group->getId();
 				$recursionGuard[$pid] = $sid;
-				$tree[$index] = self::subGroups( $group );
+				$tree[$index] = self::subGroups( $group, $childIds );
 				unset( $recursionGuard[$pid] );
+
+				$childIds[$sid] = 1;
 			}
 		}
 
@@ -849,16 +867,17 @@ class MessageGroups {
 	 * @return MessageGroup[]
 	 */
 	protected static function loadAggregateGroups() {
-		$dbw = TranslateUtils::getSafeReadDB();
-		$tables = [ 'translate_metadata' ];
-		$fields = [ 'tmd_group', 'tmd_value' ];
-		$conds = [ 'tmd_key' => 'subgroups' ];
-		$res = $dbw->select( $tables, $fields, $conds, __METHOD__ );
+		$dbr = TranslateUtils::getSafeReadDB();
+		$groupIds = $dbr->selectFieldValues(
+			'translate_metadata',
+			'tmd_group',
+			[ 'tmd_key' => 'subgroups' ],
+			__METHOD__
+		);
+		TranslateMetadata::preloadGroups( $groupIds );
 
 		$groups = [];
-		foreach ( $res as $row ) {
-			$id = $row->tmd_group;
-
+		foreach ( $groupIds as $id ) {
 			$conf = [];
 			$conf['BASIC'] = [
 				'id' => $id,
