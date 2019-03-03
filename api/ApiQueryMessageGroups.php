@@ -29,11 +29,12 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 		// Parameter root as all for all pages subgroups
 		if ( $params['root'] === 'all' ) {
 			$allGroups = MessageGroups::getAllGroups();
-			foreach ( $allGroups as $group ) {
+			foreach ( $allGroups as $id => $group ) {
 				if ( $group instanceof WikiPageMessageGroup ) {
-					$groups[] = $group;
+					$groups[$id] = $group;
 				}
 			}
+			TranslateMetadata::preloadGroups( array_keys( $groups ) );
 		} elseif ( $params['format'] === 'flat' ) {
 			if ( $params['root'] !== '' ) {
 				$group = MessageGroups::getGroup( $params['root'] );
@@ -48,16 +49,20 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				usort( $groups, [ 'MessageGroups', 'groupLabelSort' ] );
 				Wikimedia\restoreWarnings();
 			}
+			TranslateMetadata::preloadGroups( array_keys( $groups ) );
 		} elseif ( $params['root'] !== '' ) {
 			// format=tree from now on, as it is the only other valid option
 			$group = MessageGroups::getGroup( $params['root'] );
 			if ( $group instanceof AggregateMessageGroup ) {
-				$groups = MessageGroups::subGroups( $group );
+				$childIds = [];
+				$groups = MessageGroups::subGroups( $group, $childIds );
 				// The parent group is the first, ignore it
 				array_shift( $groups );
+				TranslateMetadata::preloadGroups( $childIds );
 			}
 		} else {
 			$groups = MessageGroups::getGroupStructure();
+			TranslateMetadata::preloadGroups( array_keys( MessageGroups::getAllGroups() ) );
 		}
 
 		if ( $params['root'] === '' ) {
