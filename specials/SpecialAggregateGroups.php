@@ -32,6 +32,8 @@ class SpecialAggregateGroups extends SpecialPage {
 			$this->hasPermission = true;
 		}
 
+		TranslateMetadata::preloadGroups( array_keys( MessageGroups::getAllAggregateGroups() ) );
+
 		$groups = MessageGroups::getAllGroups();
 		uasort( $groups, [ 'MessageGroups', 'groupLabelSort' ] );
 		$aggregates = [];
