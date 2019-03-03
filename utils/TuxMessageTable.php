@@ -15,8 +15,14 @@ class TuxMessageTable extends ContextSource {
 		Hooks::run( 'TranslateBeforeAddModules', [ &$modules ] );
 		$this->getOutput()->addModules( $modules );
 
-		$sourceLang = Language::factory( $this->group->getSourceLanguage() );
-		$targetLang = Language::factory( $this->language );
+		try {
+			$sourceLang = Language::factory( $this->group->getSourceLanguage() );
+			$targetLang = Language::factory( $this->language );
+		} catch (MWException $e) {
+			$sourceLang = Language::factory( '' );
+			$targetLang = Language::factory( '' );
+		}
+
 		$batchSize = 100;
 
 		$list = Html::element( 'div', [
