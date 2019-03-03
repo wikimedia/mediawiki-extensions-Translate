@@ -7,7 +7,11 @@ class TuxMessageTable extends ContextSource {
 	public function __construct( IContextSource $context, MessageGroup $group, $language ) {
 		$this->setContext( $context );
 		$this->group = $group;
-		$this->language = $language;
+		if ( Language::isKnownLanguageTag( $language ) ) {
+			$this->language = $language;
+		} else {
+			$this->language = $context->getLanguage()->getCode();
+		}
 	}
 
 	public function fullTable() {

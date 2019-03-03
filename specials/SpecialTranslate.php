@@ -155,6 +155,10 @@ class SpecialTranslate extends SpecialPage {
 			$this->group = MessageGroups::getGroup( $this->defaults['group'] );
 		}
 
+		if ( !Language::isKnownLanguageTag( $this->options['language'] ) ) {
+			$this->options['language'] = $this->defaults['language'];
+		}
+
 		if ( MessageGroups::isDynamic( $this->group ) ) {
 			$this->group->setLanguage( $this->options['language'] );
 		}
