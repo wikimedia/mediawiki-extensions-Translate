@@ -7,7 +7,11 @@ class TuxMessageTable extends ContextSource {
 	public function __construct( IContextSource $context, MessageGroup $group, $language ) {
 		$this->setContext( $context );
 		$this->group = $group;
-		$this->language = $language;
+		if ( Language::isKnownLanguageTag( $language ) ) {
+			$this->language = $language;
+		} else {
+			$this->language = $context->getLanguage()->getCode();
+		}
 	}
 
 	public function fullTable() {
@@ -17,6 +21,7 @@ class TuxMessageTable extends ContextSource {
 
 		$sourceLang = Language::factory( $this->group->getSourceLanguage() );
 		$targetLang = Language::factory( $this->language );
+
 		$batchSize = 100;
 
 		$list = Html::element( 'div', [
