@@ -110,6 +110,16 @@ class RecentMessageGroup extends WikiMessageGroup {
 		];
 		$res = $db->select( $tables, $fields, $conds, __METHOD__, $options, $joins );
 
+		$groupIdsPreload = [];
+		foreach ( $res as $row ) {
+			$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
+			$handle = new MessageHandle( $title );
+			if ( $handle->isValid() ) {
+				$groupIdsPreload[] = $handle->getGroup()->getId();
+			}
+		}
+		TranslateMetadata::preloadGroups( $groupIdsPreload );
+
 		$defs = [];
 		foreach ( $res as $row ) {
 			$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
