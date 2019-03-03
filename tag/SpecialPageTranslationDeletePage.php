@@ -393,22 +393,21 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 		TranslateMetadata::set( $groupId, 'priorityforce', false );
 		TranslateMetadata::set( $groupId, 'priorityreason', false );
 		// remove the page from aggregate groups, if present in any of them.
-		$groups = MessageGroups::getAllGroups();
-		foreach ( $groups as $group ) {
-			if ( $group instanceof AggregateMessageGroup ) {
-				$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' );
-				if ( $subgroups !== false ) {
-					$subgroups = explode( ',', $subgroups );
+		$aggregateGroups = MessageGroups::getAllAggregateGroups();
+		TranslateMetadata::preloadGroups( array_keys( $aggregateGroups ) );
+		foreach ( $aggregateGroups as $group ) {
+			$subgroups = TranslateMetadata::get( $group->getId(), 'subgroups' );
+			if ( $subgroups !== false ) {
+				$subgroups = explode( ',', $subgroups );
+				$subgroups = array_flip( $subgroups );
+				if ( isset( $subgroups[$groupId] ) ) {
+					unset( $subgroups[$groupId] );
 					$subgroups = array_flip( $subgroups );
-					if ( isset( $subgroups[$groupId] ) ) {
-						unset( $subgroups[$groupId] );
-						$subgroups = array_flip( $subgroups );
-						TranslateMetadata::set(
-							$group->getId(),
-							'subgroups',
-							implode( ',', $subgroups )
-						);
-					}
+					TranslateMetadata::set(
+						$group->getId(),
+						'subgroups',
+						implode( ',', $subgroups )
+					);
 				}
 			}
 		}
