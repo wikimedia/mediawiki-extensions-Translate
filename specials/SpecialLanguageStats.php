@@ -399,6 +399,7 @@ class SpecialLanguageStats extends SpecialPage {
 		$this->addWorkflowStatesColumn();
 		$out = '';
 
+		TranslateMetadata::preloadGroups( array_keys( MessageGroups::getAllGroups() ) );
 		$structure = MessageGroups::getGroupStructure();
 		foreach ( $structure as $item ) {
 			$out .= $this->makeGroupGroup( $item, $stats );
