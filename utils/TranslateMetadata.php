@@ -11,7 +11,27 @@
  */
 
 class TranslateMetadata {
-	protected static $cache;
+	/** @var array Map of (group => key => value) */
+	private static $cache = [];
+
+	/**
+	 * @param string[] $groups List of translate groups
+	 */
+	public static function preloadGroups( array $groups ) {
+		$missing = array_diff( $groups, array_keys( self::$cache ) );
+		if ( !$missing ) {
+			return;
+		}
+
+		self::$cache += array_fill_keys( $missing, null ); // cache negatives
+
+		$dbr = TranslateUtils::getSafeReadDB();
+		$conds = count( $groups ) <= 500 ? [ 'tmd_group' => $missing ] : [];
+		$res = $dbr->select( 'translate_metadata', '*', $conds, __METHOD__ );
+		foreach ( $res as $row ) {
+			self::$cache[$row->tmd_group][$row->tmd_key] = $row->tmd_value;
+		}
+	}
 
 	/**
 	 * Get a metadata value for the given group and key.
@@ -20,19 +40,9 @@ class TranslateMetadata {
 	 * @return string|bool
 	 */
 	public static function get( $group, $key ) {
-		if ( self::$cache === null ) {
-			$dbr = wfGetDB( DB_REPLICA );
-			$res = $dbr->select( 'translate_metadata', '*', [], __METHOD__ );
-			foreach ( $res as $row ) {
-				self::$cache[$row->tmd_group][$row->tmd_key] = $row->tmd_value;
-			}
-		}
+		self::preloadGroups( [ $group ] );
 
-		if ( isset( self::$cache[$group][$key] ) ) {
-			return self::$cache[$group][$key];
-		}
-
-		return false;
+		return self::$cache[$group][$key] ?: false;
 	}
 
 	/**
@@ -48,6 +58,7 @@ class TranslateMetadata {
 		if ( $value === false ) {
 			unset( $data['tmd_value'] );
 			$dbw->delete( 'translate_metadata', $data );
+			unset( self::$cache[$group][$key] );
 		} else {
 			$dbw->replace(
 				'translate_metadata',
@@ -55,9 +66,8 @@ class TranslateMetadata {
 				$data,
 				__METHOD__
 			);
+			self::$cache[$group][$key] = $value;
 		}
-
-		self::$cache = null;
 	}
 
 	/**
@@ -105,5 +115,6 @@ class TranslateMetadata {
 		$dbw = wfGetDB( DB_MASTER );
 		$conds = [ 'tmd_group' => $groupId ];
 		$dbw->delete( 'translate_metadata', $conds );
+		self::$cache[$groupId] = null;
 	}
 }
