@@ -5,9 +5,11 @@
 			"Joao Xavier"
 		]
 	},
+	"tpt-select-prioritylangs-reason": "Motivo:",
 	"tpt-rev-encourage": "restaurar",
 	"tpt-languages-legend": "Altra lingui:",
 	"tpt-languages-nonzero": "$1 ($2% tradukita)",
+	"tpt-discouraged-language-reason": "Motivo: $1",
 	"log-name-pagetranslation": "Protokolo ('log') pri tradukajo",
 	"pt-movepage-block-base-invalid": "La nova nomo quan vu deziras donar a la pagino ne esas valida.",
 	"tpt-generic-button": "Konfirmez"
