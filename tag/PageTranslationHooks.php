@@ -141,7 +141,7 @@ class PageTranslationHooks {
 	 * @param string $text
 	 * @return true
 	 */
-	public static function injectCss( OutputPage $out, /*string*/$text ) {
+	public static function injectCss( OutputPage $out, /*string*/ $text ) {
 		global $wgTranslatePageTranslationULS;
 
 		$title = $out->getTitle();
