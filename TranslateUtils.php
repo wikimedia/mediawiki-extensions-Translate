@@ -267,19 +267,6 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Get the normalised IETF language tag.
-	 * @param string $code The language code.
-	 * @deprecated This provides backward compatibility; replace with
-	 *   \LanguageCode::bcp47() once MW 1.30 is no longer supported.
-	 */
-	public static function bcp47( $code ) {
-		if ( !is_callable( [ 'LanguageCode', 'bcp47' ] ) ) {
-			return wfBCP47( $code );
-		}
-		return LanguageCode::bcp47( $code );
-	}
-
-	/**
 	 * Returns the primary group message belongs to.
 	 * @param int $namespace
 	 * @param string $key

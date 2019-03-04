@@ -430,7 +430,7 @@ PHP;
 		}
 		$specs['Content-Type'] = 'text/plain; charset=UTF-8';
 		$specs['Content-Transfer-Encoding'] = '8bit';
-		$specs['Language'] = TranslateUtils::bcp47( $this->group->mapCode( $code ) );
+		$specs['Language'] = LanguageCode::bcp47( $this->group->mapCode( $code ) );
 		Hooks::run( 'Translate:GettextFFS:headerFields', [ &$specs, $this->group, $code ] );
 		$specs['X-Generator'] = $this->getGenerator();
 
