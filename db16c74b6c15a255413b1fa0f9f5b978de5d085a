@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9e9f048_4d8b0f05",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-04T06:58:20Z",
+      "side": 1,
+      "message": "This could either be removed in favour of ::getGroupsByType or at least implemented using it.",
+      "revId": "db16c74b6c15a255413b1fa0f9f5b978de5d085a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dc6c16a5_6fec9d18",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 806,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-04T06:58:20Z",
+      "side": 1,
+      "message": "Just to make sure I understand this: the new parameter is to get a list of the message group ids in easy way without having to flatten the tree? Why not return a string[] then to avoid the array_keys in the caller(s)?",
+      "revId": "db16c74b6c15a255413b1fa0f9f5b978de5d085a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5eca5f1_964a7f81",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-04T06:58:20Z",
+      "side": 1,
+      "message": "The use of separate variables is very common in this extension. You might not intentionally want to change that.",
+      "range": {
+        "startLine": 871,
+        "startChar": 0,
+        "endLine": 876,
+        "endChar": 4
+      },
+      "revId": "db16c74b6c15a255413b1fa0f9f5b978de5d085a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02e6b533_1f2b1197",
+        "filename": "messagegroups/RecentMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-04T06:58:20Z",
+      "side": 1,
+      "message": "I would use if ( $handle-\u003eisValid() ) { $groupIdsPreload \u003d $handle-\u003egetGroup()-\u003egetId(); }",
+      "revId": "db16c74b6c15a255413b1fa0f9f5b978de5d085a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94ad6996_969b7f5f",
+        "filename": "messagegroups/RecentMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-04T06:58:20Z",
+      "side": 1,
+      "message": "Maybe this part should be moved before the preload. If $this-\u003ematchingMessage filters a lot, we might be preloading bunch of unnecessary groups.\n\nIn fact the preload loop could just create a list of MessageHandles. The row-\u003erc_namespace below can be replaced with $handle-\u003egetTitle()-\u003egetNamespace().",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 4
+      },
+      "revId": "db16c74b6c15a255413b1fa0f9f5b978de5d085a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d116cc8_33385fe8",
+        "filename": "utils/TranslateMetadata.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-04T06:58:20Z",
+      "side": 1,
+      "message": "Not introduced here, but method should clear the process cache too, shouldn\u0027t it?",
+      "revId": "db16c74b6c15a255413b1fa0f9f5b978de5d085a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
