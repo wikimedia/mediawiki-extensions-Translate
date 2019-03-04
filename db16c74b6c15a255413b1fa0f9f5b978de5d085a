@@ -113,6 +113,24 @@
       "revId": "db16c74b6c15a255413b1fa0f9f5b978de5d085a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c8a5494_bac89e37",
+        "filename": "utils/TranslateMetadata.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2019-03-04T16:57:21Z",
+      "side": 1,
+      "message": "Since loads are from replica DBs, it should probably also set the new cache rather than clear it (if calling code is expecting $cache to be up to date, otherwise nothing could be cleared and it should just have a TTL).",
+      "parentUuid": "7d116cc8_33385fe8",
+      "revId": "db16c74b6c15a255413b1fa0f9f5b978de5d085a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
