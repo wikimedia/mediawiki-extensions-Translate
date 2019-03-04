@@ -22,6 +22,30 @@
       "revId": "7e33e67cf2d2ecb90fdd1af5f6e2b987bfbb4dcf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "882d5995_f837aecc",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-04T09:27:10Z",
+      "side": 1,
+      "message": "Changed it here, and on top of the `getWorkflowStateCell` method as well. I assumed that for parameters we are using String with capital S.",
+      "parentUuid": "c92d8b73_6b223602",
+      "range": {
+        "startLine": 339,
+        "startChar": 11,
+        "endLine": 339,
+        "endChar": 17
+      },
+      "revId": "7e33e67cf2d2ecb90fdd1af5f6e2b987bfbb4dcf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
