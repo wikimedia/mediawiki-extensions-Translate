@@ -46,6 +46,30 @@
       "revId": "7e33e67cf2d2ecb90fdd1af5f6e2b987bfbb4dcf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "764a6772_c8d6cba1",
+        "filename": "specials/SpecialLanguageStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-04T13:13:50Z",
+      "side": 1,
+      "message": "The convention is to use all lowercase for primitive types and TitleCase for objects.",
+      "parentUuid": "882d5995_f837aecc",
+      "range": {
+        "startLine": 339,
+        "startChar": 11,
+        "endLine": 339,
+        "endChar": 17
+      },
+      "revId": "7e33e67cf2d2ecb90fdd1af5f6e2b987bfbb4dcf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
