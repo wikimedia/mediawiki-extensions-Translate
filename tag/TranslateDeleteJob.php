@@ -22,7 +22,7 @@ class TranslateDeleteJob extends Job {
 	 * @param string $reason
 	 * @return self
 	 */
-	public static function newJob( Title $target, $base, $full, /*User*/$performer, $reason ) {
+	public static function newJob( Title $target, $base, $full, /*User*/ $performer, $reason ) {
 		$job = new self( $target );
 		$job->setUser( FuzzyBot::getUser() );
 		$job->setFull( $full );

@@ -23,7 +23,7 @@ class TranslateMoveJob extends Job {
 	 * @return self
 	 */
 	public static function newJob( Title $source, Title $target, array $params,
-		/*User*/$performer
+		/*User*/ $performer
 	) {
 		$job = new self( $source );
 		$job->setUser( FuzzyBot::getUser() );
