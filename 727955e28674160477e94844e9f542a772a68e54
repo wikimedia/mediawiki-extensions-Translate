@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a5550c87_fc3080ad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-04T19:20:28Z",
+      "side": 1,
+      "message": "Sorry, this was typo, should have noticed during my review.",
+      "parentUuid": "7054eefd_d4eeb3c2",
+      "range": {
+        "startLine": 12,
+        "startChar": 35,
+        "endLine": 12,
+        "endChar": 43
+      },
+      "revId": "727955e28674160477e94844e9f542a772a68e54",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6353d511_df135506",
         "filename": "utils/TuxMessageTable.php",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "300f1403_4c9bf366",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-04T19:20:28Z",
+      "side": 1,
+      "message": "I will fix it, and ensure to run `composer fix extension/Translate` in the future before submitting patch for review.",
+      "parentUuid": "6353d511_df135506",
+      "range": {
+        "startLine": 21,
+        "startChar": 2,
+        "endLine": 21,
+        "endChar": 28
+      },
+      "revId": "727955e28674160477e94844e9f542a772a68e54",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fc3e8c7f_4508cb65",
         "filename": "utils/TuxMessageTable.php",
         "patchSetId": 3
@@ -59,6 +107,30 @@
       "writtenOn": "2019-03-04T14:33:47Z",
       "side": 1,
       "message": "Empty string doesn\u0027t make sense for Language::factory. \u0027en\u0027 can be used instead.\n\nWe could also require a valid object for $targetLang in the constructor, if we want to refactor a bit.",
+      "range": {
+        "startLine": 22,
+        "startChar": 36,
+        "endLine": 22,
+        "endChar": 39
+      },
+      "revId": "727955e28674160477e94844e9f542a772a68e54",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f07813d5_444bdb1a",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-04T19:20:28Z",
+      "side": 1,
+      "message": "Regarding the above, I think we can skip using the `try...catch` entirely if like you said, we just validate the `$this-\u003elanguage` and then use a fallback in the constructor.\n\nDiscussed with Niklas and decided to go ahead with this.",
+      "parentUuid": "fc3e8c7f_4508cb65",
       "range": {
         "startLine": 22,
         "startChar": 36,
