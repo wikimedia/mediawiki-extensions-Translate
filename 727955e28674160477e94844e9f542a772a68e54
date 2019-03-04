@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7054eefd_d4eeb3c2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-04T14:33:47Z",
+      "side": 1,
+      "message": "language",
+      "range": {
+        "startLine": 12,
+        "startChar": 35,
+        "endLine": 12,
+        "endChar": 43
+      },
+      "revId": "727955e28674160477e94844e9f542a772a68e54",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6353d511_df135506",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-04T14:33:47Z",
+      "side": 1,
+      "message": "This part does not follow coding conventions with regards to whitespace.",
+      "range": {
+        "startLine": 21,
+        "startChar": 2,
+        "endLine": 21,
+        "endChar": 28
+      },
+      "revId": "727955e28674160477e94844e9f542a772a68e54",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc3e8c7f_4508cb65",
+        "filename": "utils/TuxMessageTable.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-04T14:33:47Z",
+      "side": 1,
+      "message": "Empty string doesn\u0027t make sense for Language::factory. \u0027en\u0027 can be used instead.\n\nWe could also require a valid object for $targetLang in the constructor, if we want to refactor a bit.",
+      "range": {
+        "startLine": 22,
+        "startChar": 36,
+        "endLine": 22,
+        "endChar": 39
+      },
+      "revId": "727955e28674160477e94844e9f542a772a68e54",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
