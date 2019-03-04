@@ -19,7 +19,7 @@ class ApertiumWebService extends TranslationWebService {
 	}
 
 	protected function mapCode( $code ) {
-		return str_replace( '-', '_', TranslateUtils::bcp47( $code ) );
+		return str_replace( '-', '_', LanguageCode::bcp47( $code ) );
 	}
 
 	protected function doPairs() {

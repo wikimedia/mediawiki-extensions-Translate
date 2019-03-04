@@ -294,7 +294,7 @@ class PageTranslationHooks {
 				$classes = array_merge( $classes, self::tpProgressIcon( $percent ) );
 				$element = Html::rawElement(
 					'span',
-					[ 'class' => $classes , 'lang' => TranslateUtils::bcp47( $code ) ],
+					[ 'class' => $classes , 'lang' => LanguageCode::bcp47( $code ) ],
 					$name
 				);
 			} elseif ( $subpage->isKnown() ) {
@@ -313,7 +313,7 @@ class PageTranslationHooks {
 				$attribs = [
 					'title' => $title,
 					'class' => $classes,
-					'lang' => TranslateUtils::bcp47( $code ),
+					'lang' => LanguageCode::bcp47( $code ),
 				];
 
 				$element = Linker::linkKnown( $subpage, $name, $attribs );
@@ -554,8 +554,8 @@ class PageTranslationHooks {
 		$link[ 'href' ] = $data[ 'href' ];
 		$link[ 'text' ] = $data[ 'autonym' ];
 		$link[ 'title' ] = $data[ 'title' ]->inLanguage( $out->getLanguage()->getCode() )->text();
-		$link[ 'lang'] = wfBCP47( $data[ 'language' ] );
-		$link[ 'hreflang'] = wfBCP47( $data[ 'language' ] );
+		$link[ 'lang'] = LanguageCode::bcp47( $data[ 'language' ] );
+		$link[ 'hreflang'] = LanguageCode::bcp47( $data[ 'language' ] );
 
 		$out->addModuleStyles( 'ext.translate.tag.languages' );
 	}
