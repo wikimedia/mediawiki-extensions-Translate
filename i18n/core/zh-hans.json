@@ -31,7 +31,8 @@
 			"Duolaimi",
 			"LNDDYL",
 			"Wmr",
-			"A Chinese Wikipedian"
+			"A Chinese Wikipedian",
+			"Zazzzz"
 		]
 	},
 	"translate": "翻译",
@@ -220,6 +221,7 @@
 	"supportedlanguages": "支持的语言",
 	"supportedlanguages-summary": "本页面显示{{SITENAME}}支持的所有语言的列表以及工作于每种语言的译者的名称。译者的名称越大，其编辑越多。下划线的颜色表明译者最后活跃距现在的时间。",
 	"supportedlanguages-colorlegend": "颜色说明：最后翻译于$1天前。",
+	"supportedlanguages-sqlite-error": "SQLite不受支持",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|译者}}}}：$1",
 	"supportedlanguages-recenttranslations": "最近翻译",
 	"supportedlanguages-count": "共计$1种语言。",
