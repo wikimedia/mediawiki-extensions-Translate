@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8e5f8dfa_99948953",
+        "filename": "MessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2019-03-05T16:43:55Z",
+      "side": 1,
+      "message": "That would make the array have IDs as values since __METHOD__ is only for the recursive case not the top call.",
+      "parentUuid": "8448296e_420a922c",
+      "range": {
+        "startLine": 795,
+        "startChar": 11,
+        "endLine": 795,
+        "endChar": 19
+      },
+      "revId": "613a9c43e6cb366ad4580ed602a5f388308ba377",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5c7f1cd3_d877c979",
         "filename": "MessageGroups.php",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2019-03-05T11:53:51Z",
       "side": 1,
       "message": "Should this be $fname?",
+      "range": {
+        "startLine": 820,
+        "startChar": 56,
+        "endLine": 820,
+        "endChar": 66
+      },
+      "revId": "613a9c43e6cb366ad4580ed602a5f388308ba377",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ce03781_605670b3",
+        "filename": "MessageGroups.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2019-03-05T16:43:55Z",
+      "side": 1,
+      "message": "See above",
+      "parentUuid": "5c7f1cd3_d877c979",
       "range": {
         "startLine": 820,
         "startChar": 56,
