@@ -201,8 +201,9 @@ class SpecialPageTranslation extends SpecialPage {
 			return;
 		}
 
-		$lastrev = $page->getMarkedTag();
-		if ( $lastrev !== false && $lastrev === $revision ) {
+		$lastRev = $page->getMarkedTag();
+		$firstMark = $lastRev === false;
+		if ( !$firstMark && $lastRev === $revision ) {
 			$out->wrapWikiMsg(
 				'<div class="warningbox">$1</div>',
 				[ 'tpt-already-marked' ]
@@ -231,7 +232,7 @@ class SpecialPageTranslation extends SpecialPage {
 			if ( $err ) {
 				call_user_func_array( [ $out, 'addWikiMsg' ], $err );
 			} else {
-				$this->showSuccess( $page );
+				$this->showSuccess( $page, $firstMark );
 				$this->listPages();
 			}
 
@@ -242,9 +243,11 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	/**
+	 * Displays success message and other instructions after a page has been marked for translation.
 	 * @param TranslatablePage $page
+	 * @param bool $firstMark true if it is the first time the page is being marked for translation.
 	 */
-	public function showSuccess( TranslatablePage $page ) {
+	public function showSuccess( TranslatablePage $page, bool $firstMark = false ) {
 		$titleText = $page->getTitle()->getPrefixedText();
 		$num = $this->getLanguage()->formatNum( $page->getParse()->countSections() );
 		$link = SpecialPage::getTitleFor( 'Translate' )->getFullURL( [
@@ -257,6 +260,12 @@ class SpecialPageTranslation extends SpecialPage {
 			'<div class="successbox">$1</div>',
 			[ 'tpt-saveok', $titleText, $num, $link ]
 		);
+
+		// If the page is being marked for translation for the first time
+		// add a link to Special:PageMigration.
+		if ( $firstMark ) {
+			$this->getOutput()->addWikiMsg( 'tpt-saveok-first' );
+		}
 
 		// If TranslationNotifications is installed, and the user can notify
 		// translators, add a convenience link.
