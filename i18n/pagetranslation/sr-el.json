@@ -76,6 +76,7 @@
 	"tpt-invalid-group": "Nevažeća grupa",
 	"pt-shake-multiple": "Više markera jedinice prevođenja za jednu jedinicu prevođenja.\nTekst jedinice prevođenja: <pre>$1</pre>",
 	"pt-shake-position": "Markeri jedinice prevođenja u neočekivanoj poziciji.\nTekst jedinice prevoda: <pre>$1</pre>",
+	"log-description-pagetranslation": "Dnevnik akcija vezanih za prevodilački sistem stranica",
 	"log-name-pagetranslation": "Dnevnik prevođenja stranica",
 	"logentry-pagetranslation-mark": "$1 je {{GENDER:$2|označio|označila}} stranicu $3 za prevođenje",
 	"logentry-pagetranslation-unmark": "$1 je {{GENDER:$2|uklonio|uklonila}} stranicu $3 iz sistema prevođenja",

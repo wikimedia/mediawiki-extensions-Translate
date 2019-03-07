@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mogoeilor"
+			"Mogoeilor",
+			"Lorestani"
 		]
 	},
 	"pagetranslation": "بلگه لرسن",
 	"tpt-diff-old": "متن دمایی",
 	"tpt-diff-new": "متن تازه",
 	"tpt-select-prioritylangs-reason": "دليل:",
-	"tpt-languages-nonzero": "$1 ($2% والرشته بیه)",
+	"tpt-languages-nonzero": "$1 ($2% ڤالرشتٱ بیٱ)",
 	"tpt-tab-translate": "لرسن",
 	"tpt-aggregategroup-add": "اضاف كو",
 	"tpt-aggregategroup-save": "ذخيره كردن",

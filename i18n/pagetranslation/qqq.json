@@ -116,7 +116,7 @@
 	"pt-shake-multiple": "Each translation unit (=section) can only contain one marker.\n\nParameters:\n* $1 - translation unit (=section) text",
 	"pt-shake-position": "Error shown after an attempt to mark a page for translation, see [[mw:Help:Extension:Translate/Page translation administration]] for context.\n\nSee definitions on [[mw:Help:Extension:Translate/Glossary]].\n\nParameters:\n* $1 - translation unit (=section) text",
 	"pt-shake-empty": "Translation unit (=section) is empty except for the translation marker (=<nowiki><!--T:1--></nowiki>).\n\nParameters:\n* $1 - translation unit ID",
-	"log-description-pagetranslation": "Description of a log type",
+	"log-description-pagetranslation": "Description of a log type on [[Special:Log/pagetranslation]]",
 	"log-name-pagetranslation": "{{doc-logpage}}",
 	"logentry-pagetranslation-mark": "{{logentry|[[Special:Log/pagetranslation]]}}",
 	"logentry-pagetranslation-unmark": "{{logentry|[[Special:Log/pagetranslation]]}}",
