@@ -31,6 +31,7 @@
 	"tpt-oldrevision": "$2 não é a versão mais recente da página [[:$1]].\nApenas as últimas versões podem ser marcadas para tradução.",
 	"tpt-notsuitable": "A página $1 não é adequada para tradução.\nCertifique-se de que a mesma contém os elementos <nowiki><translate></nowiki> e tem uma sintaxe válida.",
 	"tpt-saveok": "A página [[:$1]] foi marcada para tradução com $2 {{PLURAL:$2|unidade|unidades}} de tradução.\nA página pode agora ser <span class=\"plainlinks\">[$3 traduzida]</span>.",
+	"tpt-saveok-first": "Pode [[Special:PageMigration|importar uma tradução pré-existente]] para esta página (se ela existir).",
 	"tpt-offer-notify": "Pode enviar uma <span class=\"plainlinks\">[$1 notificação aos tradutores]</span> sobre esta página.",
 	"tpt-showpage-intro": "Estão listadas abaixo as unidades de tradução novas, existentes e apagadas.\nAntes de marcar esta versão para tradução, verifique que as alterações às unidades de tradução são minimizadas para evitar trabalho desnecessário para os tradutores.",
 	"tpt-mark-summary": "Marcou esta versão para tradução",

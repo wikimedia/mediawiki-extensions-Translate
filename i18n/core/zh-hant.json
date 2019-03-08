@@ -24,7 +24,7 @@
 		]
 	},
 	"translate": "翻譯",
-	"translate-desc": "用來翻譯 MediaWiki 以及其他專案訊息的 [[Special:Translate|特殊頁面]]",
+	"translate-desc": "用來翻譯 MediaWiki 以及其他專案訊息的[[Special:Translate|特殊頁面]]",
 	"translate-fuzzybot-desc": "此用於維護翻譯的特殊系統帳號，是由 MediaWiki [https://www.mediawiki.org/wiki/Extension:Translate 翻譯擴充功能]所使用。\n此帳號為 MediaWiki 軟體裡的一部份，不可由其他任何使用者所持有。",
 	"translate-taskui-export-to-file": "以原始格式匯出",
 	"translate-taskui-export-as-po": "匯出做離線翻譯",

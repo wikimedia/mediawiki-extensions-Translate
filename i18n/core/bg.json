@@ -332,7 +332,7 @@
 	"tux-editor-message-tools-history": "История",
 	"tux-editor-message-tools-delete": "Изтриване",
 	"tux-editor-message-tools-translations": "Всички преводи",
-	"tux-editor-message-tools-linktothis": "Връзка към съобщението",
+	"tux-editor-message-tools-linktothis": "Връзка към това съобщение",
 	"tux-editor-loading": "Зареждане...",
 	"translate-search-more-languages-info": "още $1 {{PLURAL:$1|език|езика}}",
 	"translate-statsbar-tooltip": "$1% преведени, $2% проверени",
