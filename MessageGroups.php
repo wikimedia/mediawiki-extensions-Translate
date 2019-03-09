@@ -32,6 +32,13 @@ class MessageGroups {
 	protected $cache;
 
 	/**
+	 * Tracks the current cache verison. Update this when there are incompatible changes
+	 * with the last version of the cache to force a cache clear.
+	 * @var int
+	 */
+	const CACHE_VERSION = 2;
+
+	/**
 	 * Initialises the list of groups
 	 */
 	protected function init() {
@@ -75,12 +82,19 @@ class MessageGroups {
 		};
 
 		$cache = $this->getCache();
+
+		// Sometimes when the serialized data structure changes unserialize will throw a warning.
+		// This is done to suppress that warning.
+		// Use the version constant above to track versions and mark older versions for cleanup.
+		Wikimedia\suppressWarnings();
+
 		/** @var DependencyWrapper $wrapper */
 		$wrapper = $cache->getWithSetCallback(
 			$cache->makeKey( 'translate-groups' ),
 			$cache::TTL_DAY,
 			$regenerator,
 			[
+				'version' => self::CACHE_VERSION,
 				'lockTSE' => 30, // avoid stampedes
 				'touchedCallback' => function ( $value ) {
 					return ( $value instanceof DependencyWrapper && $value->isExpired() )
@@ -90,6 +104,8 @@ class MessageGroups {
 				'minAsOf' => $recache ? INF : $cache::MIN_TIMESTAMP_NONE, // "miss" on recache
 			]
 		);
+
+		Wikimedia\restoreWarnings();
 
 		// B/C for "touchedCallback" param not existing
 		if ( version_compare( $wgVersion, '1.33', '<' ) && $wrapper->isExpired() ) {
@@ -104,12 +120,17 @@ class MessageGroups {
 	}
 
 	/**
+	 * Performs post processing on the data recieved from the cache.
 	 * @param array $groups
 	 */
 	protected function postInit( $groups ) {
 		// Expand groups to objects
 		foreach ( $groups as $id => $mixed ) {
-			if ( !is_object( $mixed ) ) {
+			if ( is_array( $mixed ) && isset( $mixed['row'] ) && isset( $mixed['group'] ) ) {
+				$group = $mixed['group'];
+				$group->getTitle()->loadFromRow( $mixed['row'] );
+				$groups[$id] = $group;
+			} elseif ( !is_object( $mixed ) ) {
 				$groups[$id] = call_user_func( $mixed, $id );
 			}
 		}
@@ -220,8 +241,14 @@ class MessageGroups {
 		foreach ( $res as $r ) {
 			$title = Title::newFromRow( $r );
 			$id = TranslatablePage::getMessageGroupIdFromTitle( $title );
-			$groups[$id] = new WikiPageMessageGroup( $id, $title );
-			$groups[$id]->setLabel( $title->getPrefixedText() );
+			$group = new WikiPageMessageGroup( $id, $title );
+			$group->setLabel( $title->getPrefixedText() );
+			$groups[$id] = [
+				'row' => (object) [
+					'page_id' => $r->page_id
+				],
+				'group' => $group
+			];
 		}
 	}
 
