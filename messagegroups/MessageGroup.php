@@ -121,6 +121,7 @@ interface MessageGroup {
 
 	/**
 	 * Shortcut for load( getSourceLanguage() ).
+	 * @return string[]
 	 */
 	public function getDefinitions();
 
