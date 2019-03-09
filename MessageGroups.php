@@ -32,6 +32,14 @@ class MessageGroups {
 	protected $cache;
 
 	/**
+	 * Tracks the current cache verison. Update this when there are incompatible changes
+	 * with the last version of the cache to force a new key to be used. The older cache
+	 * will automatically expire and be cleared off.
+	 * @var int
+	 */
+	const CACHE_VERSION = 2;
+
+	/**
 	 * Initialises the list of groups
 	 */
 	protected function init() {
@@ -77,12 +85,12 @@ class MessageGroups {
 		$cache = $this->getCache();
 		/** @var DependencyWrapper $wrapper */
 		$wrapper = $cache->getWithSetCallback(
-			$cache->makeKey( 'translate-groups' ),
+			self::getCacheKey(),
 			$cache::TTL_DAY,
 			$regenerator,
 			[
 				'lockTSE' => 30, // avoid stampedes (mutex)
-				'checkKeys' => [ $cache->makeKey( 'translate-groups' ) ],
+				'checkKeys' => [ self::getCacheKey() ],
 				'touchedCallback' => function ( $value ) {
 					return ( $value instanceof DependencyWrapper && $value->isExpired() )
 						? time() // treat value as if it just expired (for "lockTSE")
@@ -95,7 +103,7 @@ class MessageGroups {
 		// B/C for "touchedCallback" param not existing
 		if ( version_compare( $wgVersion, '1.33', '<' ) && $wrapper->isExpired() ) {
 			$wrapper = $regenerator();
-			$cache->set( $cache->makeKey( 'translate-groups' ), $wrapper, $cache::TTL_DAY );
+			$cache->set( self::getCacheKey(), $wrapper, $cache::TTL_DAY );
 		}
 
 		$value = $wrapper->getValue();
@@ -127,7 +135,7 @@ class MessageGroups {
 	public function recache() {
 		// Purge the value from all datacenters
 		$cache = $this->getCache();
-		$cache->touchCheckKey( $cache->makeKey( 'translate-groups' ) );
+		$cache->touchCheckKey( self::getCacheKey() );
 		// Reload the cache value and update the local datacenter
 		$value = $this->getCachedGroupDefinitions( 'recache' );
 		$groups = $value['cc'];
@@ -145,7 +153,7 @@ class MessageGroups {
 		$self = self::singleton();
 
 		$cache = $self->getCache();
-		$cache->delete( $cache->makeKey( 'translate-groups' ), 1 );
+		$cache->delete( self::getCacheKey(), 1 );
 
 		$self->clearProcessCache();
 	}
@@ -181,6 +189,18 @@ class MessageGroups {
 	 */
 	public function setCache( WANObjectCache $cache = null ) {
 		$this->cache = $cache;
+	}
+
+	/**
+	 * Returns the cache key.
+	 *
+	 * @return string
+	 */
+	protected static function getCacheKey() {
+		$self = self::singleton();
+		$cache = $self->getCache();
+
+		return $cache->makeKey( 'translate-groups', 'v' . self::CACHE_VERSION );
 	}
 
 	/**
@@ -228,7 +248,6 @@ class MessageGroups {
 			$title = Title::newFromRow( $r );
 			$id = TranslatablePage::getMessageGroupIdFromTitle( $title );
 			$groups[$id] = new WikiPageMessageGroup( $id, $title );
-			$groups[$id]->setLabel( $title->getPrefixedText() );
 		}
 	}
 
