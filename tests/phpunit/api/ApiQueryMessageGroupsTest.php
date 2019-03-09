@@ -37,6 +37,16 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		$anotherExampleMessageGroup->setNamespace( 5 ); // Example
 		$list['anotherid'] = $anotherExampleMessageGroup;
 
+		$pageMessageGroup = new WikiPageMessageGroup( 'pageid', 'mypage' );
+		$pageMessageGroup->setLabel( 'thelabel' ); // Example
+		$pageMessageGroup->setNamespace( 5 ); // Example
+		$list['pageid'] = [
+			'group' => $pageMessageGroup,
+			'row' 	=> [
+				'page_id' => 3
+			]
+		];
+
 		return false;
 	}
 
@@ -70,17 +80,22 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		// Renumber keys
 		$items = array_values( $items );
 
-		$this->assertCount( 2, $items, 'Only the two groups specified are in the api' );
+		$this->assertCount( 3, $items, 'Only the three groups specified are in the api' );
 		$this->assertStringEndsWith( 'id', $items[0]['id'] );
 		$this->assertStringEndsWith( 'id', $items[1]['id'] );
+		$this->assertStringEndsWith( 'id', $items[2]['id'] );
 		$this->assertSame( $items[0]['label'], 'thelabel' );
 		$this->assertSame( $items[1]['label'], 'thelabel' );
+		$this->assertSame( $items[2]['label'], 'thelabel' );
 		$this->assertSame( $items[0]['exists'], true );
 		$this->assertSame( $items[1]['exists'], true );
+		$this->assertSame( $items[2]['exists'], true );
 		$this->assertSame( $items[0]['namespace'], 5 );
 		$this->assertSame( $items[1]['namespace'], 5 );
+		$this->assertSame( $items[2]['namespace'], 5 );
 		$this->assertSame( $items[0]['class'], 'WikiMessageGroup' );
 		$this->assertSame( $items[1]['class'], 'WikiMessageGroup' );
+		$this->assertSame( $items[2]['class'], 'WikiPageMessageGroup' );
 	}
 
 	public function testAPIFilterAccuracy() {
@@ -125,7 +140,11 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 			$this->assertSame( $item['exists'], true );
 			$this->assertStringEndsWith( 'id', $item['id'] ); // theid, anotherid
 			$this->assertSame( $item['namespace'], 5 );
-			$this->assertSame( $item['class'], 'WikiMessageGroup' );
+			if ( $id === 'pageid' ) {
+				$this->assertSame( $item['class'], 'WikiPageMessageGroup' );
+			} else {
+				$this->assertSame( $item['class'], 'WikiMessageGroup' );
+			}
 		}
 	}
 

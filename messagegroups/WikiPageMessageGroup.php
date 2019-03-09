@@ -12,11 +12,17 @@
  * Wraps the translatable page sections into a message group.
  * @ingroup PageTranslation MessageGroup
  */
-class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
+class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject, \Serializable {
 	/**
 	 * @var Title|string
 	 */
 	protected $title;
+
+	/**
+	 * List of class properties that will be serialized other than id and title.
+	 * @var array
+	 */
+	protected $serialized = [ 'label', 'namespace' ];
 
 	/**
 	 * @param string $id
@@ -179,5 +185,34 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
 		self::addContext( $msg, $context );
 
 		return $msg->plain() . $customText;
+	}
+
+	public function serialize() {
+		$toSerialize = [
+			'title' => $this->getTitle()->getPrefixedText(),
+			'id' => $this->id
+		];
+
+		foreach ( $this->serialized as $prop ) {
+			if ( isset( $this->{$prop} ) ) {
+				$toSerialize[$prop] = $this->{$prop};
+			}
+		}
+
+		return FormatJson::encode( $toSerialize );
+	}
+
+	public function unserialize( $serialized ) {
+		$deserialized = FormatJson::decode( $serialized );
+		if ( $deserialized === false ) {
+			return;
+		}
+		$this->id = $deserialized->id;
+		$this->title = $deserialized->title;
+		foreach ( $this->serialized as $prop ) {
+			if ( isset( $deserialized->{$prop} ) ) {
+				$this->{$prop} = $deserialized->{$prop};
+			}
+		}
 	}
 }
