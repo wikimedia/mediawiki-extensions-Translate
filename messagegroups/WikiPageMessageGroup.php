@@ -12,7 +12,7 @@
  * Wraps the translatable page sections into a message group.
  * @ingroup PageTranslation MessageGroup
  */
-class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
+class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject, \Serializable {
 	/**
 	 * @var Title|string
 	 */
@@ -179,5 +179,55 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
 		self::addContext( $msg, $context );
 
 		return $msg->plain() . $customText;
+	}
+
+	public function serialize() {
+		$toSerialize = [
+			'title' => $this->getTitle()->getPrefixedText(),
+			'id' => $this->id,
+			'_v' => 1 // version - to track incompatible changes
+		];
+
+		// NOTE: get_class_vars returns properties before the constructor has run so if any default
+		// values have to be set for properties, do them while declaring the properties themselves.
+		// Also any properties that are object will automatically be serialized because `===`
+		// does not actually compare object properties to see that they are same.
+
+		// Using array_diff_key to unset the properties already set earlier.
+		$defaultProps = array_diff_key( get_class_vars( self::class ),  $toSerialize );
+
+		foreach ( $defaultProps as $prop => $defaultVal ) {
+			if ( $this->{$prop} === $defaultVal ) {
+				continue;
+			}
+
+			$toSerialize[$prop] = $this->{$prop};
+		}
+
+		return FormatJson::encode( $toSerialize, false, FormatJson::ALL_OK );
+	}
+
+	public function unserialize( $serialized ) {
+		$deserialized = FormatJson::decode( $serialized );
+		if ( $deserialized === false ) {
+			// Unrecoverable. This should not happen but still.
+			throw new \UnexpectedValueException(
+				'Error while deserializing to WikiPageMessageGroup object - FormatJson::decode failed. ' .
+				"Serialize string - $serialized."
+			);
+		}
+
+		// Use as needed in the future to track incompatible changes.
+		// $version = $deserialized->_v;
+		// unset($deserialized->_v);
+
+		// Only set the properties that are present in the class and the deserialized object.
+		$classProps = array_keys( get_class_vars( self::class ) );
+
+		foreach ( $classProps as $prop ) {
+			if ( property_exists( $deserialized, $prop ) ) {
+				$this->{$prop} = $deserialized->{$prop};
+			}
+		}
 	}
 }
