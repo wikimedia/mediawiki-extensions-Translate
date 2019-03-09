@@ -32,6 +32,14 @@ class MessageGroups {
 	protected $cache;
 
 	/**
+	 * Tracks the current cache verison. Update this when there are incompatible changes
+	 * with the last version of the cache to force a new key to be used. The older cache
+	 * will automatically expire and be cleared off.
+	 * @var int
+	 */
+	const CACHE_VERSION = 2;
+
+	/**
 	 * Initialises the list of groups
 	 */
 	protected function init() {
@@ -77,7 +85,7 @@ class MessageGroups {
 		$cache = $this->getCache();
 		/** @var DependencyWrapper $wrapper */
 		$wrapper = $cache->getWithSetCallback(
-			$cache->makeKey( 'translate-groups' ),
+			$cache->makeKey( self::getCacheKey() ),
 			$cache::TTL_DAY,
 			$regenerator,
 			[
@@ -94,7 +102,7 @@ class MessageGroups {
 		// B/C for "touchedCallback" param not existing
 		if ( version_compare( $wgVersion, '1.33', '<' ) && $wrapper->isExpired() ) {
 			$wrapper = $regenerator();
-			$cache->set( $cache->makeKey( 'translate-groups' ), $wrapper, $cache::TTL_DAY );
+			$cache->set( $cache->makeKey( self::getCacheKey() ), $wrapper, $cache::TTL_DAY );
 		}
 
 		$value = $wrapper->getValue();
@@ -104,6 +112,7 @@ class MessageGroups {
 	}
 
 	/**
+	 * Performs post processing on the data recieved from the cache.
 	 * @param array $groups
 	 */
 	protected function postInit( $groups ) {
@@ -138,7 +147,7 @@ class MessageGroups {
 		$self = self::singleton();
 
 		$cache = $self->getCache();
-		$cache->delete( $cache->makeKey( 'translate-groups' ), 1 );
+		$cache->delete( $cache->makeKey( self::getCacheKey() ), 1 );
 
 		$self->clearProcessCache();
 	}
@@ -174,6 +183,10 @@ class MessageGroups {
 	 */
 	public function setCache( WANObjectCache $cache = null ) {
 		$this->cache = $cache;
+	}
+
+	protected static function getCacheKey() {
+		return sprintf( 'translate-groups-v%s', self::CACHE_VERSION );
 	}
 
 	/**
