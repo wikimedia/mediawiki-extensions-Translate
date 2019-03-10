@@ -10,6 +10,7 @@
 	"tpt-languages-legend": "Altra lingui:",
 	"tpt-languages-nonzero": "$1 ($2% tradukita)",
 	"tpt-discouraged-language-reason": "Motivo: $1",
+	"tpt-aggregategroup-new-description": "Deskripto (fakultativa):",
 	"log-name-pagetranslation": "Protokolo ('log') pri tradukajo",
 	"pt-movepage-block-base-invalid": "La nova nomo quan vu deziras donar a la pagino ne esas valida.",
 	"tpt-generic-button": "Konfirmez"
