@@ -84,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "080a0991_33802cdc",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-11T15:28:28Z",
+      "side": 1,
+      "message": "The documentation is right about *Avoid storing class objects*, but I don\u0027t want to include fixing that in this commit.\n\nHave you tried adding it directly to the dependency wrapper using ConstantDependency?\n\nIf we make the version actually be part of the cache key, then we could easily have both old and new version available simultaneously. The downside of course is that they can get stale because manual purges would only affect one of them. I don\u0027t think that will cause any issues though, as such setup is not something that is officially supported.",
+      "parentUuid": "a9d922ff_bf7618f1",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2a27a9e7_85799a97",
         "filename": "MessageGroups.php",
         "patchSetId": 3
@@ -113,6 +131,24 @@
       "side": 1,
       "message": "The `ArticleID` is used in the `getDefinitions` method inside the WikiPageMessageGroup class. Like you said its not needed and can be fetched when required but as it was bound earlier, I decided to leave it.\n\nAnother motivation for implementing the change this way was that `Title::loadFromRow` actually binds a bunch of other properties and if in the future we needed more of those properties to be bound, we could cache them by simply adding them in the array here. I will add this in the commit message.\n\nI\u0027ve not changed this for now, let me know if you\u0027d like it to be removed.",
       "parentUuid": "2a27a9e7_85799a97",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "076feffc_dbe2063c",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-11T15:28:28Z",
+      "side": 1,
+      "message": "One reason I don\u0027t like this change is that it seems to violate module boundaries. This class MessageGroups should not have intimate knowledge how different message groups behave. The exception is this static method which knows how to construct them (and could in fact be split to a separate factory).\n\nAnother reason I don\u0027t like this is that I would rather see in the long run that WikiPageMessageGroup doesn\u0027t rely on Title, but something more simple like TitleValue value object.",
+      "parentUuid": "635cf71b_4da87fea",
       "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true

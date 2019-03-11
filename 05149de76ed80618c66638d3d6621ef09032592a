@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27385864_c786a71d",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-11T15:28:28Z",
+      "side": 1,
+      "message": "I thought about whether we should add a version field here to cater for the case that we need to change the serialization format in the future in an incompatible way.\n\nBut I don\u0027t see any reason why we couldn\u0027t introduce the version field only when we need it, since it is possible to check for its absence as well.",
+      "revId": "05149de76ed80618c66638d3d6621ef09032592a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be84f0be_50879afb",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-11T15:28:28Z",
+      "side": 1,
+      "message": "FormatJson takes bunch of flags that could shorten the output slightly in some cases. I\u0027m specifically thinking of the ALL_OK flag.",
+      "revId": "05149de76ed80618c66638d3d6621ef09032592a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a640936_92e674a6",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-11T15:28:28Z",
+      "side": 1,
+      "message": "As as side note, I believe the MWException class is kind of semi deprecated. If there is a better more specific extension, feel free to use it (maybe from http://php.net/manual/en/spl.exceptions.php)",
+      "revId": "05149de76ed80618c66638d3d6621ef09032592a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
