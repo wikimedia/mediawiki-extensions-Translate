@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7c12d7f7_3ed708ad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-11T09:02:34Z",
+      "side": 1,
+      "message": "to restore",
+      "range": {
+        "startLine": 22,
+        "startChar": 25,
+        "endLine": 22,
+        "endChar": 36
+      },
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08e063fa_64bda348",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-11T09:02:34Z",
+      "side": 1,
+      "message": "This is quite a large amount of code that is executed with warnings suppressed.\n\nDoesn\u0027t the version field alone guarantee that we will not try to unserialize incompatible data?",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a27a9e7_85799a97",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-11T09:02:34Z",
+      "side": 1,
+      "message": "I am not convinced we need to populate the page_id for the title objects. The Title class can fetch it on demand. If that is a performance issue, we could add batchloading of it.\n\nHaving said that, wouldn\u0027t it be easier if we stored the id in the serialization instead? Then we wouldn\u0027t need to complicate code in this class.",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f1af597_d69f0994",
+        "filename": "messagegroups/MessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-11T09:02:34Z",
+      "side": 1,
+      "message": "Probably doesn\u0027t belong into this commit, but if we want to keep it, string[] would be more exact.",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95d3de0f_0beaf08f",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-11T09:02:34Z",
+      "side": 1,
+      "message": "In the dump I see a bunch of other keys:\n\n        [\"definitions\":protected]\u003d\u003e\n        NULL\n        [\"source\":protected]\u003d\u003e\n        NULL\n        [\"optional\":protected]\u003d\u003e\n        array(0) {\n        }\n        [\"ignored\":protected]\u003d\u003e\n        array(0) {\n        }\n        [\"description\":protected]\u003d\u003e\n        NULL\n        [\"meta\":protected]\u003d\u003e\n        bool(false)\n        [\"mangler\":protected]\u003d\u003e\n        NULL\n        [\"messages\":protected]\u003d\u003e\n        array(0) {\n        }\n\nDid you check these are restored appropriately? The ones that default to null are probably fine, but what about the ones defaulting to an empty array?",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ae2577e_6f207987",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-11T09:02:34Z",
+      "side": 1,
+      "message": "What does return do in unserialize? Doesn\u0027t this mean that we will now have an instance with missing properties? Should we fail fast or at least log this thing?",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
