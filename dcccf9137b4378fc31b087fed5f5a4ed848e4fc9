@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "93b3238b_50c8e9d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-11T11:31:32Z",
+      "side": 1,
+      "message": "Thanks for pointing it out, fixed.",
+      "parentUuid": "7c12d7f7_3ed708ad",
+      "range": {
+        "startLine": 22,
+        "startChar": 25,
+        "endLine": 22,
+        "endChar": 36
+      },
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "08e063fa_64bda348",
         "filename": "MessageGroups.php",
         "patchSetId": 3
@@ -36,6 +60,24 @@
       "writtenOn": "2019-03-11T09:02:34Z",
       "side": 1,
       "message": "This is quite a large amount of code that is executed with warnings suppressed.\n\nDoesn\u0027t the version field alone guarantee that we will not try to unserialize incompatible data?",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9d922ff_bf7618f1",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-11T11:31:32Z",
+      "side": 1,
+      "message": "I was hoping that that would be the case, but unfortunately the version is stored along with the data.\n\n```\n\u003e\u003e\u003e $c-\u003eget( $c-\u003emakeKey( \"translate-groups\" ) );\n\u003d\u003e [\n     \"WOC:d\" \u003d\u003e DependencyWrapper {#1153},\n     \"WOC:v\" \u003d\u003e 2,\n   ]\n```\n\nThe documentation here - https://doc.wikimedia.org/mediawiki-core/master/php/classWANObjectCache.html#a821b0db090c0650793e41183cbb188f7 states that,\n\n\u003e New versions are stored alongside older versions concurrently. *Avoid storing class objects however, as this reduces compatibility (due to serialization)*\n\nOn another note during my testing, I did not see the old version retained anymore. \n\nThe other options would be,\n\n1. To clearly mention in the release notes that there will be warnings appearing the first time after plugin update and will go with a subsequent refresh.\n2. To use an extension update hook to get rid of the current cache value entirely.",
+      "parentUuid": "08e063fa_64bda348",
       "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "635cf71b_4da87fea",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-11T11:31:32Z",
+      "side": 1,
+      "message": "The `ArticleID` is used in the `getDefinitions` method inside the WikiPageMessageGroup class. Like you said its not needed and can be fetched when required but as it was bound earlier, I decided to leave it.\n\nAnother motivation for implementing the change this way was that `Title::loadFromRow` actually binds a bunch of other properties and if in the future we needed more of those properties to be bound, we could cache them by simply adding them in the array here. I will add this in the commit message.\n\nI\u0027ve not changed this for now, let me know if you\u0027d like it to be removed.",
+      "parentUuid": "2a27a9e7_85799a97",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9f1af597_d69f0994",
         "filename": "messagegroups/MessageGroup.php",
         "patchSetId": 3
@@ -70,6 +130,24 @@
       "writtenOn": "2019-03-11T09:02:34Z",
       "side": 1,
       "message": "Probably doesn\u0027t belong into this commit, but if we want to keep it, string[] would be more exact.",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ed76aa13_a359ded3",
+        "filename": "messagegroups/MessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-11T11:31:32Z",
+      "side": 1,
+      "message": "Yea but VSCode was warning me about this hence decided to add it.\n\n```\nexpecting array, getting null\n```\n\nCan `string[]` be used for an associative array?",
+      "parentUuid": "9f1af597_d69f0994",
       "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "6256d0af_eb29ebab",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-11T11:31:32Z",
+      "side": 1,
+      "message": "Yes this is tested. These are all their default values. The new dump has an additional serialized property. \n\nOn an unrelated note, while I was reviewing the dump, I noticed that the mArticleID inside the Title class was set to -1. This is fixed now.\n\nI\u0027ve also added some more assertions to the test cases.",
+      "parentUuid": "95d3de0f_0beaf08f",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ae2577e_6f207987",
         "filename": "messagegroups/WikiPageMessageGroup.php",
         "patchSetId": 3
@@ -107,6 +203,24 @@
       "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ffa2b7c4_c601b29c",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-11T11:31:32Z",
+      "side": 1,
+      "message": "Now throwing an exception when this happens.",
+      "parentUuid": "3ae2577e_6f207987",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
