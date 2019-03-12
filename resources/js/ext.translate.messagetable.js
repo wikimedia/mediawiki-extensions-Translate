@@ -470,10 +470,20 @@
 				this.settings.filter
 			).done( function ( result ) {
 				var messages = result.query.messagecollection,
-					state;
+					state, i;
 
 				if ( !self.loading ) {
 					// reject. This was cancelled.
+					return;
+				}
+
+				if ( result.warnings ) {
+					for ( i = 0; i !== result.warnings.length; i++ ) {
+						if ( result.warnings[ i ].code === 'translate-language-disabled-source' ) {
+							self.handleLoadErrors( [ result.warnings[ i ] ] );
+							break;
+						}
+					}
 					return;
 				}
 
@@ -532,18 +542,7 @@
 				self.updateHideOwnInProofreadingToggleVisibility();
 				self.updateLastMessage();
 			} ).fail( function ( errorCode, response ) {
-				var $warningContainer = $( '.tux-editor-header .group-warning' );
-
-				if ( response.errors ) {
-					$.map( response.errors, function ( error ) {
-						$warningContainer.append( error[ '*' ] );
-					} );
-				} else {
-					$warningContainer.text( mw.msg( 'api-error-unknownerror', errorCode ) );
-				}
-				self.$loader.data( 'offset', -1 ).addClass( 'hide' );
-				self.$actionBar.addClass( 'hide' );
-				self.$header.addClass( 'hide' );
+				self.handleLoadErrors( response.errors, errorCode );
 			} ).always( function () {
 				self.$loaderIcon.addClass( 'tux-loading-indicator--stopped' );
 				self.loading = false;
@@ -828,6 +827,29 @@
 			} else if ( isActionBarFloating && needsActionBarFloat ) {
 				this.$actionBar.width( messageListWidth );
 			}
+		},
+
+		/**
+		 * Handles errors encountered during the loading state.
+		 * Displays the errors and updates the state of the table.
+		 *
+		 * @param {Array} errors
+		 * @param {string} errorCode
+		 */
+		handleLoadErrors: function ( errors, errorCode ) {
+			var $warningContainer = $( '.tux-editor-header .group-warning' );
+
+			if ( errors ) {
+				$.map( errors, function ( error ) {
+					$warningContainer.append( error[ '*' ] );
+				} );
+			} else {
+				$warningContainer.text( mw.msg( 'api-error-unknownerror', errorCode ) );
+			}
+
+			this.$loader.data( 'offset', -1 ).addClass( 'hide' );
+			this.$actionBar.addClass( 'hide' );
+			this.$header.addClass( 'hide' );
 		}
 	};
 
