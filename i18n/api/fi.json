@@ -45,11 +45,11 @@
 	"apierror-translate-invalidupdate": "Virheellinen päivitys",
 	"apierror-translate-language-disabled": "Kääntäminen kielelle $1 ei ole mahdollista.",
 	"apierror-translate-language-disabled-reason": "Käänätminen kielelle $1 ei ole mahdollista: $2",
-	"apierror-translate-language-disabled-source": "Tämän ryhmän lähdekieli on $1. Valitse toinen kieli käännöksille.",
 	"apierror-translate-nodynamicgroups": "Dynaamisiä viestiryhmiä ei tueta täällä",
 	"apierror-translate-nomessagefortitle": "Otsikko ei vastaa käännettävää viesti",
 	"apierror-translate-owntranslation": "Ei voida tarkistaa omia käännöksiä",
 	"apierror-translate-sandboxdisabled": "Hiekkalaatikko-ominaisuus ei ole käytössä",
 	"apierror-translate-sandbox-invalidppassword": "Virheellinen salasana",
-	"apierror-translate-unknownmessage": "Tuntematon viesti"
+	"apierror-translate-unknownmessage": "Tuntematon viesti",
+	"apiwarn-translate-language-disabled-source": "Tämän ryhmän lähdekieli on $1. Valitse toinen kieli käännöksille."
 }

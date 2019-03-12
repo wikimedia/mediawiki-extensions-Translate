@@ -4,5 +4,5 @@
 			"Bugoslav"
 		]
 	},
-	"apierror-translate-language-disabled-source": "Izvorni jezik ove grupe je $1. Molimo Vas, izaberite drugi jezik na koji želite prevoditi."
+	"apiwarn-translate-language-disabled-source": "Izvorni jezik ove grupe je $1. Molimo Vas, izaberite drugi jezik na koji želite prevoditi."
 }

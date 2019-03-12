@@ -4,5 +4,5 @@
 			"Njardarlogar"
 		]
 	},
-	"apierror-translate-language-disabled-source": "Kjeldespråket til denne gruppa er $1. Vel eit anna språk å setja om til."
+	"apiwarn-translate-language-disabled-source": "Kjeldespråket til denne gruppa er $1. Vel eit anna språk å setja om til."
 }

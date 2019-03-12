@@ -118,7 +118,6 @@
 	"apierror-translate-invalidupdate": "Anovamientu inválidu",
 	"apierror-translate-language-disabled": "La traducción a $1 ta desactivada",
 	"apierror-translate-language-disabled-reason": "La traducción a $1 ta desactivada: $2",
-	"apierror-translate-language-disabled-source": "L'idioma orixinal d'esti grupu ye $1. Escueye otru idioma al que traducir.",
 	"apierror-translate-nodynamicgroups": "Nun s'almiten equí los grupos de mensaxes dinámicos",
 	"apierror-translate-nomessagefortitle": "El títulu nun casa con un mensaxe traducible",
 	"apierror-translate-notranslationservices": "Nun se configuró nengún serviciu públicu de traducciones. L'alministrador de la wiki tien de configurar <var>$wgTranslateTranslationServices</var> afechiscamente pa poder utilizar esta función.",
@@ -126,5 +125,6 @@
 	"apierror-translate-sandboxdisabled": "La función de zona de pruebes nun ta n'usu",
 	"apierror-translate-sandbox-invalidppassword": "Contraseña inválida",
 	"apierror-translate-unknownmessage": "Mensaxe desconocíu",
-	"apiwarn-translate-alreadyreviewedbyyou": "Yá ta marcada como revisada por ti"
+	"apiwarn-translate-alreadyreviewedbyyou": "Yá ta marcada como revisada por ti",
+	"apiwarn-translate-language-disabled-source": "L'idioma orixinal d'esti grupu ye $1. Escueye otru idioma al que traducir."
 }

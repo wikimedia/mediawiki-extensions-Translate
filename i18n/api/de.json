@@ -100,7 +100,6 @@
 	"apierror-translate-invalidupdate": "Ungültige Aktualisierung",
 	"apierror-translate-language-disabled": "Übersetzungen nach $1 sind deaktiviert.",
 	"apierror-translate-language-disabled-reason": "Übersetzungen nach $1 sind deaktiviert: $2",
-	"apierror-translate-language-disabled-source": "Die Quellsprache dieser Nachrichtengruppe ist $1. Bitte wähle eine andere Sprache zur Übersetzung aus.",
 	"apierror-translate-nodynamicgroups": "Dynamische Nachrichtengruppen werden hier nicht unterstützt",
 	"apierror-translate-nomessagefortitle": "Der Titel entspricht nicht einer übersetzbaren Nachricht",
 	"apierror-translate-notranslationservices": "Es wurden keine öffentlichen Übersetzungsdienste konfiguriert. Der Administrator des Wikis muss <var>$wgTranslateTranslationServices</var> passend festlegen, bevor diese Funktion verwendet werden kann.",
@@ -108,5 +107,6 @@
 	"apierror-translate-sandboxdisabled": "Die Spielwiesenfunktion ist nicht in Verwendung",
 	"apierror-translate-sandbox-invalidppassword": "Ungültiges Passwort",
 	"apierror-translate-unknownmessage": "Unbekannte Nachricht",
-	"apiwarn-translate-alreadyreviewedbyyou": "Von dir bereits als überprüft markiert"
+	"apiwarn-translate-alreadyreviewedbyyou": "Von dir bereits als überprüft markiert",
+	"apiwarn-translate-language-disabled-source": "Die Quellsprache dieser Nachrichtengruppe ist $1. Bitte wähle eine andere Sprache zur Übersetzung aus."
 }

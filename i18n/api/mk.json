@@ -118,7 +118,6 @@
 	"apierror-translate-invalidupdate": "Неважечка поднова",
 	"apierror-translate-language-disabled": "Преведувањето на $1 е оневозможено.",
 	"apierror-translate-language-disabled-reason": "Преведувањето на $1 е оневозможено: $2",
-	"apierror-translate-language-disabled-source": "Изворниот јазик на оваа група е $1. Изберете на кој јазик сакате да преведувате.",
 	"apierror-translate-nodynamicgroups": "Динамичките групи пораки не се поддржани овде",
 	"apierror-translate-nomessagefortitle": "Насловот не соодветствува на преводлива порака",
 	"apierror-translate-notranslationservices": "Нема поставено јавни преводни служби. Администраторот на викито треба соодветно да го постави <var>$wgTranslateTranslationServices</var> пред да може да се користи оваа можност.",
@@ -126,5 +125,6 @@
 	"apierror-translate-sandboxdisabled": "Песочничката функција не е во употреба",
 	"apierror-translate-sandbox-invalidppassword": "Неважечка лозинка",
 	"apierror-translate-unknownmessage": "Непозната порака",
-	"apiwarn-translate-alreadyreviewedbyyou": "Веќе ја имате означено како проверена"
+	"apiwarn-translate-alreadyreviewedbyyou": "Веќе ја имате означено како проверена",
+	"apiwarn-translate-language-disabled-source": "Изворниот јазик на оваа група е $1. Изберете на кој јазик сакате да преведувате."
 }

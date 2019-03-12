@@ -117,7 +117,6 @@
 	"apierror-translate-invalidupdate": "Invalid update",
 	"apierror-translate-language-disabled": "Translation to $1 is disabled.",
 	"apierror-translate-language-disabled-reason": "Translation to $1 is disabled: $2",
-	"apierror-translate-language-disabled-source": "The source language of this group is $1. Please select another language to translate into.",
 	"apierror-translate-nodynamicgroups": "Dynamic message groups are not supported here",
 	"apierror-translate-nomessagefortitle": "Title does not correspond to a translatable message",
 	"apierror-translate-notranslationservices": "No public translation services have been configured. The wiki administrator needs to set <var>$wgTranslateTranslationServices</var> appropriately before this feature can be used.",
@@ -126,5 +125,6 @@
 	"apierror-translate-sandbox-invalidparam": "$1",
 	"apierror-translate-sandbox-invalidppassword": "Invalid password",
 	"apierror-translate-unknownmessage": "Unknown message",
-	"apiwarn-translate-alreadyreviewedbyyou": "Already marked as reviewed by you"
+	"apiwarn-translate-alreadyreviewedbyyou": "Already marked as reviewed by you",
+	"apiwarn-translate-language-disabled-source": "The source language of this group is $1. Please select another language to translate into."
 }

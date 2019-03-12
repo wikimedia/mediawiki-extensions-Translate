@@ -477,6 +477,11 @@
 					return;
 				}
 
+				if ( result.warnings ) {
+					self.handleLoadErrors( result.warnings );
+					return;
+				}
+
 				if ( messages.length === 0 ) {
 					// And this is the first load for the filter...
 					if ( self.$container.children().length === 0 ) {
@@ -532,18 +537,7 @@
 				self.updateHideOwnInProofreadingToggleVisibility();
 				self.updateLastMessage();
 			} ).fail( function ( errorCode, response ) {
-				var $warningContainer = $( '.tux-editor-header .group-warning' );
-
-				if ( response.errors ) {
-					$.map( response.errors, function ( error ) {
-						$warningContainer.append( error[ '*' ] );
-					} );
-				} else {
-					$warningContainer.text( mw.msg( 'api-error-unknownerror', errorCode ) );
-				}
-				self.$loader.data( 'offset', -1 ).addClass( 'hide' );
-				self.$actionBar.addClass( 'hide' );
-				self.$header.addClass( 'hide' );
+				self.handleLoadErrors( response.errors, errorCode );
 			} ).always( function () {
 				self.$loaderIcon.addClass( 'tux-loading-indicator--stopped' );
 				self.loading = false;
@@ -828,6 +822,28 @@
 			} else if ( isActionBarFloating && needsActionBarFloat ) {
 				this.$actionBar.width( messageListWidth );
 			}
+		},
+		/**
+		 * Handles errors encountered during the loading state.
+		 * Displays the errors and updates the state of the table.
+		 *
+		 * @param {Array} errors
+		 * @param {string} errorCode
+		 */
+		handleLoadErrors: function ( errors, errorCode ) {
+			var $warningContainer = $( '.tux-editor-header .group-warning' );
+
+			if ( errors ) {
+				$.map( errors, function ( error ) {
+					$warningContainer.append( error[ '*' ] );
+				} );
+			} else {
+				$warningContainer.text( mw.msg( 'api-error-unknownerror', errorCode ) );
+			}
+
+			this.$loader.data( 'offset', -1 ).addClass( 'hide' );
+			this.$actionBar.addClass( 'hide' );
+			this.$header.addClass( 'hide' );
 		}
 	};
 

@@ -121,7 +121,6 @@
 	"apierror-translate-invalidupdate": "Недійсне оновлення",
 	"apierror-translate-language-disabled": "Переклад мовою «$1» вимкнено",
 	"apierror-translate-language-disabled-reason": "Переклад мовою «$1» вимкнено: $2",
-	"apierror-translate-language-disabled-source": "Вихідна мова цієї групи — $1. Будь ласка, виберіть іншу мову для перекладу.",
 	"apierror-translate-nodynamicgroups": "Динамічні групи повідомлень не підтримуються тут",
 	"apierror-translate-nomessagefortitle": "Назва не відповідає перекладному повідомленню",
 	"apierror-translate-notranslationservices": "Не налаштовано ще жодного публічного сервісу перекладу. Адміністратор цієї вікі повинен належним чином налаштувати <var>$wgTranslateTranslationServices</var>, перш ніж цю функцію можна буде використовувати.",
@@ -129,5 +128,6 @@
 	"apierror-translate-sandboxdisabled": "Функція пісочниці не використовується",
 	"apierror-translate-sandbox-invalidppassword": "Недійсний пароль",
 	"apierror-translate-unknownmessage": "Невідоме повідомлення",
-	"apiwarn-translate-alreadyreviewedbyyou": "Вже позначено Вами як перевірено"
+	"apiwarn-translate-alreadyreviewedbyyou": "Вже позначено Вами як перевірено",
+	"apiwarn-translate-language-disabled-source": "Вихідна мова цієї групи — $1. Будь ласка, виберіть іншу мову для перекладу."
 }
