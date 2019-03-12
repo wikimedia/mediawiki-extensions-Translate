@@ -102,6 +102,24 @@
     },
     {
       "key": {
+        "uuid": "1b2fd105_e17a0841",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-12T11:43:49Z",
+      "side": 1,
+      "message": "\u003e Have you tried adding it directly to the dependency wrapper using ConstantDependency?\n\nAs per my understanding of the ConstantDependency class, I\u0027m not sure how this will help since we save the entire Dependency wrapper inside the cache and it will have to be unserialized to get to the value.\n\n\u003e If we make the version actually be part of the cache key\n\nThis will allow us to avoid the warnings since we will essentially be trying to retrieve the value using a separate key but how will the data in the older key get cleaned up?\n\n\u003e The documentation is right about *Avoid storing class objects*, but I don\u0027t want to include fixing that in this commit.\n\nShould I go ahead and create a task for this? (if its not already there)",
+      "parentUuid": "080a0991_33802cdc",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2a27a9e7_85799a97",
         "filename": "MessageGroups.php",
         "patchSetId": 3
@@ -152,6 +170,24 @@
       "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37981055_5a7831d1",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-12T11:43:49Z",
+      "side": 1,
+      "message": "For now I\u0027ve removed the addition of the `row` value. We will let ArticleID be fetched on demand for now.\n\nUpdated test cases accordingly.",
+      "parentUuid": "076feffc_dbe2063c",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {

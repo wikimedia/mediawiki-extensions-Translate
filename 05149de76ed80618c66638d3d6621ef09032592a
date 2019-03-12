@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1492f454_6d566821",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-12T11:43:49Z",
+      "side": 1,
+      "message": "I\u0027ve added an `_v` field to the array to avoid having to add an `isset` check in the future.",
+      "parentUuid": "27385864_c786a71d",
+      "revId": "05149de76ed80618c66638d3d6621ef09032592a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "be84f0be_50879afb",
         "filename": "messagegroups/WikiPageMessageGroup.php",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "f2d5fc8a_5464da54",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-12T11:43:49Z",
+      "side": 1,
+      "message": "Thanks. Going to update the previous analysis on size reduction done with the latest changes.",
+      "parentUuid": "be84f0be_50879afb",
+      "revId": "05149de76ed80618c66638d3d6621ef09032592a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8a640936_92e674a6",
         "filename": "messagegroups/WikiPageMessageGroup.php",
         "patchSetId": 5
@@ -50,6 +86,24 @@
       "revId": "05149de76ed80618c66638d3d6621ef09032592a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fd29875f_801b1ae4",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-12T11:43:49Z",
+      "side": 1,
+      "message": "Thanks, will keep in mind for future. Replaced MWException with UnexpectedValueException.",
+      "parentUuid": "8a640936_92e674a6",
+      "revId": "05149de76ed80618c66638d3d6621ef09032592a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
