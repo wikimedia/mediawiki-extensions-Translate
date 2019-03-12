@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "995253b4_ecb3593d",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-03-12T01:53:33Z",
+      "side": 1,
+      "message": "Starting from here, the result of the API query is used.\n\nMake sure to compare the difference with and without formatversion\u003d2, and if needed, update the below code to be compatible with the output format of formatversion\u003d2.",
+      "range": {
+        "startLine": 466,
+        "startChar": 0,
+        "endLine": 473,
+        "endChar": 4
+      },
+      "revId": "25914a896375690593bebb9c1a58e4ad6d845341",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
