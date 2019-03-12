@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e5375e7a_14a3ecd1",
+        "filename": "MessageGroups.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-12T16:03:45Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it be simpler if we brough makeKey inside getCacheKey too? The only downside is that the getCacheKey would need to be public then (unless we add a non-static version of clearCache that this static method would call.\n\nIf I remember correctly, $cache-\u003emakeKey accepts a list of parameters, so we could just pass the version in there without explicit string manipulation.",
+      "range": {
+        "startLine": 150,
+        "startChar": 18,
+        "endLine": 150,
+        "endChar": 57
+      },
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "298b1ae0_709cf825",
+        "filename": "MessageGroups.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-12T16:03:45Z",
+      "side": 1,
+      "message": "To be honest I was a bit surprised to see sprintf here. I was expecting just a simple string concatenation with \u0027.\u0027.",
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b1f8f3b_8bbca369",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-12T16:03:45Z",
+      "side": 1,
+      "message": "Please avoid having tabs in places other than in the beginning of a line.",
+      "range": {
+        "startLine": 194,
+        "startChar": 12,
+        "endLine": 194,
+        "endChar": 13
+      },
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b6fd8f7_09634dec",
+        "filename": "tests/phpunit/WikiPageMessageGroupSerializationTest.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-12T16:03:45Z",
+      "side": 1,
+      "message": "I believe this can be simplified with https://gerrit.wikimedia.org/g/mediawiki/core/+/2c13d341f16e9f7bd33f8f465bcf08362391f59c/tests/phpunit/MediaWikiTestCase.php#2292",
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ad2451e_0255f365",
+        "filename": "tests/phpunit/WikiPageMessageGroupSerializationTest.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-12T16:03:45Z",
+      "side": 1,
+      "message": "Can likely use https://phpunit.de/manual/6.5/en/appendixes.assertions.html#appendixes.assertions.assertInstanceOf with Title::class",
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2309fe66_2288cfa2",
+        "filename": "tests/phpunit/WikiPageMessageGroupSerializationTest.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-12T16:03:45Z",
+      "side": 1,
+      "message": "0? Shouldn\u0027t it be 2? We don\u0027t want to lose that information.",
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
