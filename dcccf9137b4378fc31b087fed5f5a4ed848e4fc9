@@ -138,6 +138,24 @@
     },
     {
       "key": {
+        "uuid": "3f1ca958_5431e83d",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-12T15:04:49Z",
+      "side": 1,
+      "message": "2. Correct, should have inferred that. Though some caches that I\u0027ve dealt with before delete expired keys only when accessed.\n\nThe key will now be translate-groups-v2. I\u0027ve also removed WANObjectCache versioning for now.\n\n3. Will create the task. We can revisit the WANObjectCache versioning along with this task.",
+      "parentUuid": "21faa8fb_09ff0d92",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2a27a9e7_85799a97",
         "filename": "MessageGroups.php",
         "patchSetId": 3
@@ -259,6 +277,24 @@
       "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc1f4ed3_09071dcc",
+        "filename": "messagegroups/MessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-12T15:04:49Z",
+      "side": 1,
+      "message": "Changed.",
+      "parentUuid": "e1c3ffcc_5bb1fd42",
+      "revId": "dcccf9137b4378fc31b087fed5f5a4ed848e4fc9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
