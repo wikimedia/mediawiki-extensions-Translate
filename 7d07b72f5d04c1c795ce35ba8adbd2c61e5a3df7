@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "69dfffe6_5661e8a6",
+        "filename": "MessageGroups.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-12T18:36:47Z",
+      "side": 1,
+      "message": "\u003e The only downside is that the getCacheKey would need to be public then (unless we add a non-static version of clearCache that this static method would call.\n\nNot sure why that would be needed in getCacheKey. This is what I have right now,\n\n$self \u003d self::singleton();\n$cache \u003d $self-\u003egetCache();\n\nreturn $cache-\u003emakeKey( \u0027translate-groups\u0027, \u0027v\u0027 . self::CACHE_VERSION );\n\nThe function is still `protected static`. One could argue that the function could be made to take the cache as a parameter but I chose to leave it out to make the function signature simpler.",
+      "parentUuid": "e5375e7a_14a3ecd1",
+      "range": {
+        "startLine": 150,
+        "startChar": 18,
+        "endLine": 150,
+        "endChar": 57
+      },
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "298b1ae0_709cf825",
         "filename": "MessageGroups.php",
         "patchSetId": 6
@@ -39,6 +63,24 @@
       "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11df1983_97280f32",
+        "filename": "MessageGroups.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-12T18:36:47Z",
+      "side": 1,
+      "message": "Yes agreed. Not sure what I was thinking. Now using makeKey to append the version.",
+      "parentUuid": "298b1ae0_709cf825",
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "766a45d5_c590b5ff",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-12T18:36:47Z",
+      "side": 1,
+      "message": "Fixed. Will keep in mind.",
+      "parentUuid": "4b1f8f3b_8bbca369",
+      "range": {
+        "startLine": 194,
+        "startChar": 12,
+        "endLine": 194,
+        "endChar": 13
+      },
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6b6fd8f7_09634dec",
         "filename": "tests/phpunit/WikiPageMessageGroupSerializationTest.php",
         "patchSetId": 6
@@ -79,6 +145,24 @@
       "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d92aa8d9_9007f142",
+        "filename": "tests/phpunit/WikiPageMessageGroupSerializationTest.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-12T18:36:47Z",
+      "side": 1,
+      "message": "Updated.",
+      "parentUuid": "6b6fd8f7_09634dec",
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -99,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "61880854_fbb290f6",
+        "filename": "tests/phpunit/WikiPageMessageGroupSerializationTest.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-12T18:36:47Z",
+      "side": 1,
+      "message": "Thank you, fixed.",
+      "parentUuid": "4ad2451e_0255f365",
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2309fe66_2288cfa2",
         "filename": "tests/phpunit/WikiPageMessageGroupSerializationTest.php",
         "patchSetId": 6
@@ -110,6 +212,24 @@
       "writtenOn": "2019-03-12T16:03:45Z",
       "side": 1,
       "message": "0? Shouldn\u0027t it be 2? We don\u0027t want to lose that information.",
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab7ffab0_c5d1ee99",
+        "filename": "tests/phpunit/WikiPageMessageGroupSerializationTest.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-12T18:36:47Z",
+      "side": 1,
+      "message": "We\u0027re actually not storing those values when serializing the `WikiPageMessageGroup` class. The current serialization only checks and stores id, title (string), label and namespace. I left the other values as is since I did not see them being initialized at all.\n\nIf additional values need to be stored, we can add them to the $toSerialized property in WikiPageMessageGroup class.\n\nThe other option would be to see if a property has been set to a value other than its default value and only then save it. We could possible use get_class_vars to do that, but I\u0027ll have to check.",
+      "parentUuid": "2309fe66_2288cfa2",
       "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
