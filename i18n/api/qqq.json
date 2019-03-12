@@ -122,7 +122,6 @@
 	"apierror-translate-invalidupdate": "{{doc-apierror}}",
 	"apierror-translate-language-disabled": "{{doc-apierror}}",
 	"apierror-translate-language-disabled-reason": "{{doc-apierror}}\n\nParameters:\n* $1 - language name\n* $2 - reason, probably in English",
-	"apierror-translate-language-disabled-source": "{{doc-apierror}}\n\nParameters:\n* $1 - language name",
 	"apierror-translate-nodynamicgroups": "{{doc-apierror}}",
 	"apierror-translate-nomessagefortitle": "{{doc-apierror}}",
 	"apierror-translate-notranslationservices": "{{doc-apierror}}",
@@ -131,5 +130,6 @@
 	"apierror-translate-sandbox-invalidparam": "{{doc-apierror}}\n\nParameters:\n* $1 - Exception message, probably in English",
 	"apierror-translate-sandbox-invalidppassword": "{{doc-apierror}}",
 	"apierror-translate-unknownmessage": "{{doc-apierror}}",
-	"apiwarn-translate-alreadyreviewedbyyou": "{{doc-apierror}}"
+	"apiwarn-translate-alreadyreviewedbyyou": "{{doc-apierror}}",
+	"apiwarn-translate-language-disabled-source": "{{doc-apierror}}\n\nParameters:\n* $1 - language name"
 }
