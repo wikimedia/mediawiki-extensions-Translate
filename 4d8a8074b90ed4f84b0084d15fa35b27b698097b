@@ -16,6 +16,41 @@
       "revId": "4d8a8074b90ed4f84b0084d15fa35b27b698097b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a42b3559_788900ac",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-13T07:53:44Z",
+      "side": 1,
+      "message": "Yes, I suggest checking for the specific code.",
+      "parentUuid": "1231bfa4_49e99dd3",
+      "revId": "4d8a8074b90ed4f84b0084d15fa35b27b698097b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e71b5dd_96b573a3",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 826,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-13T07:53:44Z",
+      "side": 1,
+      "message": "Please leave an empty line between the previous block and the comment.",
+      "revId": "4d8a8074b90ed4f84b0084d15fa35b27b698097b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
