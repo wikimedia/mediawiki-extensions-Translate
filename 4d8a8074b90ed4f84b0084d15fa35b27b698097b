@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1231bfa4_49e99dd3",
+        "filename": "resources/js/ext.translate.messagetable.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-13T07:42:08Z",
+      "side": 1,
+      "message": "@NikeRabbit - I\u0027m not sure that treating warnings as an error in the messagetable component is the best way to handle this. Should we add a check to ensure that the `response.warning[n].code \u003d\u003d\u003d \u0027translate-language-disabled-source\u0027`",
+      "revId": "4d8a8074b90ed4f84b0084d15fa35b27b698097b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
