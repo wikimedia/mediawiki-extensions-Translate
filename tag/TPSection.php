@@ -19,9 +19,9 @@ class TPSection {
 	public $id;
 
 	/**
-	 * @var string New name of the section, that will be saved to database.
+	 * @var string|null New name of the section, that will be saved to database.
 	 */
-	public $name;
+	public $name = null;
 
 	/**
 	 * @var string Section text.
@@ -34,9 +34,9 @@ class TPSection {
 	public $type;
 
 	/**
-	 * @var string Text of previous version of this section.
+	 * @var string|null Text of previous version of this section.
 	 */
-	public $oldText;
+	public $oldText = null;
 
 	/**
 	 * @var bool Whether this section is inline section.
@@ -97,7 +97,7 @@ class TPSection {
 	 * @return string Wikitext.
 	 */
 	public function getMarkedText() {
-		$id = isset( $this->name ) ? $this->name : $this->id;
+		$id = $this->name !== null ? $this->name : $this->id;
 		$header = "<!--T:{$id}-->";
 		$re = '~^(=+.*?=+\s*?$)~m';
 		$rep = "\\1 $header";
@@ -121,7 +121,7 @@ class TPSection {
 	 * @return string Wikitext.
 	 */
 	public function getOldText() {
-		return isset( $this->oldText ) ? $this->oldText : $this->text;
+		return $this->oldText !== null ? $this->oldText : $this->text;
 	}
 
 	/**
