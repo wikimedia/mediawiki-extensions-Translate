@@ -32,6 +32,7 @@
 	"apihelp-query+messagecollection-example-3": "Listet optionale Nachrichten in Finnisch mit Markierungen für die Gruppe „page-Example“ auf",
 	"apihelp-query+messagecollection-example-4": "Weitere Informationen über die aktuellsten Übersetzungsversionen für die Gruppe „page-Example“",
 	"apihelp-query+messagegroups-summary": "Gibt Informationen über Nachrichtengruppen zurück.",
+	"apihelp-query+messagegroups-param-format": "Im Baumformat können Nachrichtengruppen an mehreren Orten im Baum vorhanden sein.",
 	"apihelp-query+messagegroups-param-iconsize": "Bevorzugte Größe des Rastergruppensymbols.",
 	"apihelp-query+messagegroups-example-1": "Nachrichtengruppen anzeigen",
 	"apihelp-query+messagegroupstats-description": "Ruft Statistiken zu Nachrichtengruppen ab.",
