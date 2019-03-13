@@ -138,7 +138,7 @@ class ElasticSearchTTMServer
 		$query->setFrom( 0 );
 		$query->setSize( $sizeFirst );
 		$query->setParam( '_source', [ 'content' ] );
-		$cutoff = isset( $this->config['cutoff'] ) ? $this->config['cutoff'] : 0.65;
+		$cutoff = $this->config['cutoff'] ?? 0.65;
 		$query->setParam( 'min_score', $cutoff );
 		$query->setSort( [ '_score', '_uid' ] );
 
@@ -494,11 +494,11 @@ class ElasticSearchTTMServer
 	}
 
 	protected function getShardCount() {
-		return isset( $this->config['shards'] ) ? $this->config['shards'] : 1;
+		return $this->config['shards'] ?? 1;
 	}
 
 	protected function getReplicaCount() {
-		return isset( $this->config['replicas'] ) ? $this->config['replicas'] : '0-2';
+		return $this->config['replicas'] ?? '0-2';
 	}
 
 	/**

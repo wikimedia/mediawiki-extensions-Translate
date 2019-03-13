@@ -137,10 +137,8 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * @return object with flatten, unflatten methods
 	 */
 	protected function getFlattener() {
-		$nestingSeparator = isset( $this->extra['nestingSeparator'] ) ?
-			$this->extra['nestingSeparator'] : '.';
-		$parseCLDRPlurals = isset( $this->extra['parseCLDRPlurals'] ) ?
-			$this->extra['parseCLDRPlurals'] : false;
+		$nestingSeparator = $this->extra['nestingSeparator'] ?? '.';
+		$parseCLDRPlurals = $this->extra['parseCLDRPlurals'] ?? false;
 
 		// Instantiate helper class for flattening and unflattening nested arrays
 		return new ArrayFlattener( $nestingSeparator, $parseCLDRPlurals );

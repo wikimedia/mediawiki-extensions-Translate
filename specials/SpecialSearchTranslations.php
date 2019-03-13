@@ -347,7 +347,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				$nondefaults['grouppath'] = $pathString . $id;
 			}
 
-			$value = isset( $counts[$id] ) ? $counts[$id] : 0;
+			$value = $counts[$id] ?? 0;
 
 			$output[$id] = [
 				'id' => $id,
