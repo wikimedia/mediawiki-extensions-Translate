@@ -204,13 +204,14 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		# arsort( $authors, SORT_NUMERIC );
 		ksort( $authors );
 		$fuzzyBot = FuzzyBot::getName();
+		$filteredAuthors = [];
 		foreach ( $authors as $author => $edits ) {
 			if ( $author !== $fuzzyBot ) {
 				$filteredAuthors[] = $author;
 			}
 		}
 
-		return isset( $filteredAuthors ) ? $filteredAuthors : [];
+		return $filteredAuthors;
 	}
 
 	/**
