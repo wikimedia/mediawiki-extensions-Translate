@@ -209,9 +209,7 @@ class TranslateMoveJob extends Job {
 			}
 		} else {
 			if ( !$suppressCount ) {
-				$originalLevel = isset( $wgGroupPermissions['*']['suppressredirect'] ) ?
-					$wgGroupPermissions['*']['suppressredirect'] :
-					null;
+				$originalLevel = $wgGroupPermissions['*']['suppressredirect'] ?? null;
 				$wgGroupPermissions['*']['suppressredirect'] = true;
 			}
 			++$suppressCount;

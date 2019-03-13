@@ -133,8 +133,7 @@ class JsonFFS extends SimpleFFS {
 			return null;
 		}
 
-		$parseCLDRPlurals = isset( $this->extra['parseCLDRPlurals'] ) ?
-			$this->extra['parseCLDRPlurals'] : false;
+		$parseCLDRPlurals = $this->extra['parseCLDRPlurals'] ?? false;
 		$flattener = new ArrayFlattener( $this->extra['nestingSeparator'], $parseCLDRPlurals );
 
 		return $flattener;

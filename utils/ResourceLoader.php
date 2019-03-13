@@ -23,7 +23,7 @@ class PHPVariableLoader {
 		} else {
 			require $_filename;
 
-			return isset( $$_variable ) ? $$_variable : null;
+			return $$_variable ?? null;
 		}
 	}
 }

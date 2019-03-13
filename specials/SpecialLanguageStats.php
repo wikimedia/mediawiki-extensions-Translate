@@ -340,7 +340,7 @@ class SpecialLanguageStats extends SpecialPage {
 	 * @return string Workflow state value
 	 */
 	protected function getWorkflowStateValue( $target ) {
-		return isset( $this->states[$target] ) ? $this->states[$target] : '';
+		return $this->states[$target] ?? '';
 	}
 
 	/**
