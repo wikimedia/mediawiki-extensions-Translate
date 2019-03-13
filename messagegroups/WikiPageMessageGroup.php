@@ -121,7 +121,7 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject {
 				$key = $title->getPrefixedDBkey();
 			}
 
-			return isset( $stuff[$key] ) ? $stuff[$key] : null;
+			return $stuff[$key] ?? null;
 		}
 
 		$title = Title::makeTitleSafe( $this->getNamespace(), "$key/$code" );

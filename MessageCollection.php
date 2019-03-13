@@ -169,7 +169,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @return string[] List of keys with given tag.
 	 */
 	public function getTags( $type ) {
-		return isset( $this->tags[$type] ) ? $this->tags[$type] : [];
+		return $this->tags[$type] ?? [];
 	}
 
 	/**

@@ -220,7 +220,7 @@ abstract class MessageGroupOld implements MessageGroup {
 		}
 		$key = strtolower( str_replace( ' ', '_', $key ) );
 
-		return isset( $this->messages[$code][$key] ) ? $this->messages[$code][$key] : null;
+		return $this->messages[$code][$key] ?? null;
 	}
 
 	public static function normaliseKeys( $array ) {
@@ -325,7 +325,7 @@ abstract class MessageGroupOld implements MessageGroup {
 			return $tags;
 		}
 
-		return isset( $tags[$type] ) ? $tags[$type] : [];
+		return $tags[$type] ?? [];
 	}
 
 	/**

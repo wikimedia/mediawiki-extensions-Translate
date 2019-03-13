@@ -271,7 +271,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 					'context' => $row->tms_context,
 					'location' => $row->tms_context . '/' . $targetLanguage,
 					'quality' => $quality,
-					'wiki' => isset( $row->tms_wiki ) ? $row->tms_wiki : wfWikiID(),
+					'wiki' => $row->tms_wiki ?? wfWikiID(),
 				];
 			}
 		}

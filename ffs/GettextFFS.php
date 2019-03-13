@@ -385,10 +385,8 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
-			$transTemplate = isset( $template['TEMPLATE'][$key] ) ?
-				$template['TEMPLATE'][$key] : [];
-			$potTemplate = isset( $pot['TEMPLATE'][$key] ) ?
-				$pot['TEMPLATE'][$key] : [];
+			$transTemplate = $template['TEMPLATE'][$key] ?? [];
+			$potTemplate = $pot['TEMPLATE'][$key] ?? [];
 
 			$output .= $this->formatMessageBlock( $key, $m, $transTemplate, $potTemplate, $pluralCount );
 		}
@@ -419,7 +417,7 @@ PHP;
 		// Make sure there is no empty line before msgid
 		$output = trim( $output ) . "\n";
 
-		$specs = isset( $template['HEADERS'] ) ? $template['HEADERS'] : [];
+		$specs = $template['HEADERS'] ?? [];
 
 		$timestamp = wfTimestampNow();
 		$specs['PO-Revision-Date'] = self::formatTime( $timestamp );

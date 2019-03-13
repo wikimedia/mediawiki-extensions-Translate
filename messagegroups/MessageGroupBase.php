@@ -84,7 +84,7 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	protected function getFromConf( $section, $key ) {
-		return isset( $this->conf[$section][$key] ) ? $this->conf[$section][$key] : null;
+		return $this->conf[$section][$key] ?? null;
 	}
 
 	/**

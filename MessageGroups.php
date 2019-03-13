@@ -411,7 +411,7 @@ class MessageGroups {
 			$id = self::normalizeId( $group );
 		}
 
-		return isset( self::$prioritycache[$id] ) ? self::$prioritycache[$id] : '';
+		return self::$prioritycache[$id] ?? '';
 	}
 
 	/**

@@ -111,7 +111,7 @@ abstract class TMessage {
 	}
 
 	public function getProperty( $key ) {
-		return isset( $this->props[$key] ) ? $this->props[$key] : null;
+		return $this->props[$key] ?? null;
 	}
 
 	/**

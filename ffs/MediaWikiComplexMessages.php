@@ -498,9 +498,7 @@ abstract class ComplexMessages {
 
 		$indexKeys = [];
 		foreach ( array_keys( $items[self::LANG_MASTER] ) as $key ) {
-			$indexKeys[$key] = isset( $this->constants[$key] ) ?
-				$this->constants[$key] :
-				"'$key'";
+			$indexKeys[$key] = $this->constants[$key] ?? "'$key'";
 		}
 
 		$padTo = max( array_map( 'strlen', $indexKeys ) ) + 3;

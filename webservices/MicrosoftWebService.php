@@ -29,7 +29,7 @@ class MicrosoftWebService extends TranslationWebService {
 			'pt-br' => 'pt',
 		];
 
-		return isset( $map[$code] ) ? $map[$code] : $code;
+		return $map[$code] ?? $code;
 	}
 
 	protected function doPairs() {

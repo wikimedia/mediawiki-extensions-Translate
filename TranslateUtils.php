@@ -62,7 +62,7 @@ class TranslateUtils {
 		$title = self::title( $key, $language, $namespace );
 		$data = self::getContents( [ $title ], $namespace );
 
-		return isset( $data[$title][0] ) ? $data[$title][0] : null;
+		return i$data[$title][0] ?? null;
 	}
 
 	/**

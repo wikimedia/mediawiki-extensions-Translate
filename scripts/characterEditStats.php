@@ -115,9 +115,7 @@ class CharacterEditStats extends Maintenance {
 		// The field renames are to be compatible with recentchanges table query
 		if ( is_callable( Revision::class, 'getQueryInfo' ) ) {
 			$revQuery = Revision::getQueryInfo( [ 'page' ] );
-			$revUserText = isset( $revQuery['fields']['rev_user_text'] )
-				? $revQuery['fields']['rev_user_text']
-				: 'rev_user_text';
+			$revUserText = $revQuery['fields']['rev_user_text'] ?? 'rev_user_text';
 		} else {
 			$revQuery = [
 				'tables' => [ 'revision', 'page' ],
