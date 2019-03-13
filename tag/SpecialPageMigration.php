@@ -44,12 +44,14 @@ class SpecialPageMigration extends SpecialPage {
 			[ 'class' => 'mw-tpm-sp-error__message five columns hide' ] );
 		$out .= Html::closeElement( 'div' );
 		$out .= Html::openElement( 'form', [ 'class' => 'mw-tpm-sp-form row',
-			'id' => 'mw-tpm-sp-primary-form' ] );
+			'id' => 'mw-tpm-sp-primary-form', 'action' => '' ] );
 		$out .= Html::element( 'input', [ 'id' => 'pm-summary', 'type' => 'hidden',
 			'value' => $this->msg( 'pm-summary-import' )->inContentLanguage()->text() ] );
 		$out .= "\n";
 		$out .= Html::element( 'input', [ 'id' => 'title', 'class' => 'mw-searchInput mw-ui-input',
-			'placeholder' => $this->msg( 'pm-pagetitle-placeholder' )->text() ] );
+			'data-mw-searchsuggest' => FormatJson::encode( [
+				'wrapAsLink' => false
+			] ), 'placeholder' => $this->msg( 'pm-pagetitle-placeholder' )->text() ] );
 		$out .= "\n";
 		$out .= Html::element( 'input', [ 'id' => 'action-import',
 			'class' => 'mw-ui-button mw-ui-progressive', 'type' => 'button',
