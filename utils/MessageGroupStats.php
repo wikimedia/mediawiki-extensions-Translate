@@ -605,7 +605,7 @@ class MessageGroupStats {
 				}
 
 				$primaryKey = [ 'tgs_group', 'tgs_lang' ];
-				$dbw->replace( $table, $primaryKey, $updates, $method );
+				$dbw->replace( $table, [ $primaryKey ], $updates, $method );
 				$updates = [];
 			}
 		);
