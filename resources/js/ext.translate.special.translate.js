@@ -182,13 +182,7 @@
 		var preferredLanguages, headerMessage, languagesMessage,
 			$groupWarning = $( '.tux-editor-header .group-warning' );
 
-		// Check whether the group has priority languages
-		if ( !group.prioritylangs ) {
-			return;
-		}
-
-		// And if the current language is among them, we can return early
-		if ( group.prioritylangs.indexOf( language ) !== -1 ) {
+		if ( isPriorityLanguage( language, group.prioritylangs ) ) {
 			return;
 		}
 
@@ -217,6 +211,19 @@
 			// html because of the <bdi> and because it's parsed
 			$( '<p>' ).html( languagesMessage )
 		);
+	}
+
+	function isPriorityLanguage( language, priorityLanguages ) {
+		// Don't show priority notice if the language is message documentation
+		if ( language === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
+			return true;
+		}
+
+		if ( priorityLanguages && priorityLanguages.indexOf( language ) !== -1 ) {
+			return true;
+		}
+
+		return false;
 	}
 
 	function setupLanguageSelector( $element ) {
