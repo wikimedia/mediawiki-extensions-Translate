@@ -509,7 +509,7 @@
 					self.settings.group,
 					self.settings.language,
 					state
-				);
+				).removeClass( 'hide' );
 
 				// Dynamically loaded messages should pass the search filter if present.
 				query = $( '.tux-message-filter-box' ).val();
@@ -847,6 +847,7 @@
 				$warningContainer.text( mw.msg( 'api-error-unknownerror', errorCode ) );
 			}
 
+			$( '.tux-workflow' ).addClass( 'hide' );
 			this.$loader.data( 'offset', -1 ).addClass( 'hide' );
 			this.$actionBar.addClass( 'hide' );
 			this.$header.addClass( 'hide' );
