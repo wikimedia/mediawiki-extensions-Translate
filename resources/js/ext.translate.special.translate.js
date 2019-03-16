@@ -187,6 +187,11 @@
 			return;
 		}
 
+		// Don't show priority notice if the language is message documentation
+		if ( language === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
+			return;
+		}
+
 		// And if the current language is among them, we can return early
 		if ( group.prioritylangs.indexOf( language ) !== -1 ) {
 			return;
