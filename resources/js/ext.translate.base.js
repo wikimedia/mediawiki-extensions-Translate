@@ -164,6 +164,16 @@
 				mw.translate.dirty ||
 				// For new translate, previous editors has some unsaved edits
 				$( '.tux-status-unsaved' ).length;
+		},
+
+		/**
+		 * Check if the language code is message documentation.
+		 *
+		 * @param {string} language
+		 * @return {boolean}
+		 */
+		isMessageDocumentation: function ( language ) {
+			return language === 'qqq';
 		}
 	} );
 
