@@ -32,6 +32,7 @@
 	"tpt-oldrevision": "$2 はページ [[:$1]] の最新版ではありません。\n翻訳対象に指定できるのは最新版のみです。",
 	"tpt-notsuitable": "ページ $1 は翻訳に対応していません。\n<nowiki><translate></nowiki> タグが含まれていて、かつ文法的に正しいことをを確認してください。",
 	"tpt-saveok": "ページ [[:$1]] は翻訳対象に指定されており、$2 {{PLURAL:$2|個の翻訳単位}}を含んでいます。\nこのページを<span class=\"plainlinks\">[$3 翻訳]</span>できます。",
+	"tpt-saveok-first": "このページの[[Special:PageMigration|既存の翻訳を取り込む]]こともできます (存在する場合)。",
 	"tpt-offer-notify": "このページについて<span class=\"plainlinks\">[$1 翻訳者に通知]</span>できます。",
 	"tpt-showpage-intro": "以下は、新規・既存の、または削除された翻訳単位の一覧です。\nこの版を翻訳対象に指定する前に、翻訳単位の変更を最小限にすることで不要な翻訳作業を回避できないか確認してください。",
 	"tpt-mark-summary": "この版を翻訳対象に指定しました",
