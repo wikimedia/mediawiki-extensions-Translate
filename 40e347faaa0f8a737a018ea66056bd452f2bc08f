@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afa89b5_b4bb6d9b",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-18T07:51:35Z",
+      "side": 1,
+      "message": "(Just thinking out loud) Should we extract this code block to a separate function?\n\nIt could be something like isNonPriorityLanguage( language, group.prioritylangs ).\n\nThat would make testing easier, as it decouples DOM manipulation from the logic.",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 198,
+        "endChar": 3
+      },
+      "revId": "40e347faaa0f8a737a018ea66056bd452f2bc08f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
