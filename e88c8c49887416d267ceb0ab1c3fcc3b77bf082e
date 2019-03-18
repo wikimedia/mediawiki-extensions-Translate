@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bbe3d651_8cc9eeeb",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 794,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-18T12:17:53Z",
+      "side": 1,
+      "message": "It\u0027s not clear why there is an empty foreach here.",
+      "range": {
+        "startLine": 792,
+        "startChar": 0,
+        "endLine": 794,
+        "endChar": 4
+      },
+      "revId": "e88c8c49887416d267ceb0ab1c3fcc3b77bf082e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
