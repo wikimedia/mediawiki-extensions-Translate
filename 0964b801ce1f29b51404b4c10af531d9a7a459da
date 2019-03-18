@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "55acd3f1_d6d994b1",
+        "filename": "utils/TranslateMetadata.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-18T12:51:24Z",
+      "side": 1,
+      "message": "I\u0027m getting lots of Undefined index: priority(langs|force).\n\nNot all groups have all the keys. Need to use ?? here?",
+      "revId": "0964b801ce1f29b51404b4c10af531d9a7a459da",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
