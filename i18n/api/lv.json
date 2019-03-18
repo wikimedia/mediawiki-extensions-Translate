@@ -19,5 +19,8 @@
 	"apihelp-searchtranslations-description": "Meklēt tulkojumus.",
 	"apihelp-searchtranslations-summary": "Meklēt tulkojumus.",
 	"apihelp-searchtranslations-param-limit": "Rezultāta izmērs.",
+	"apihelp-searchtranslations-example-1": "Rādīt tulkojumus valodai.",
+	"apihelp-translationcheck-summary": "Validēt tulkojumus.",
+	"apierror-translate-owntranslation": "Savus tulkojumus nevar pārlasīt",
 	"apierror-translate-sandbox-invalidppassword": "Nederīga parole"
 }

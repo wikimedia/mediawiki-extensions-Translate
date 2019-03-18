@@ -101,12 +101,12 @@
 	"apierror-translate-invalidupdate": "Actualización no válida",
 	"apierror-translate-language-disabled": "Se ha desactivado la traducción al $1.",
 	"apierror-translate-language-disabled-reason": "Se ha desactivado la traducción al $1: $2",
-	"apierror-translate-language-disabled-source": "El idioma original de este grupo es el $1. Selecciona otro idioma al cual traducir.",
 	"apierror-translate-nodynamicgroups": "No se admiten aquí los grupos de mensajes dinámicos",
 	"apierror-translate-nomessagefortitle": "El título no se corresponde con un mensaje traducible",
 	"apierror-translate-notranslationservices": "No se ha configurado ningún servicio público de traducciones. Los administradores del wiki deben configurar <var>$wgTranslateTranslationServices</var> adecuadamente para poder utilizar esta función.",
 	"apierror-translate-owntranslation": "No se pueden revisar las traducciones propias",
 	"apierror-translate-sandbox-invalidppassword": "La contraseña no es válida",
 	"apierror-translate-unknownmessage": "Mensaje desconocido",
-	"apiwarn-translate-alreadyreviewedbyyou": "Ya la marcaste como revisada"
+	"apiwarn-translate-alreadyreviewedbyyou": "Ya la marcaste como revisada",
+	"apiwarn-translate-language-disabled-source": "El idioma original de este grupo es el $1. Selecciona otro idioma al cual traducir."
 }

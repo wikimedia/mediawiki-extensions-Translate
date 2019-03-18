@@ -120,7 +120,6 @@
 	"apierror-translate-invalidupdate": "无效更新",
 	"apierror-translate-language-disabled": "至$1的翻译已禁用。",
 	"apierror-translate-language-disabled-reason": "至$1的翻译已禁用：$2",
-	"apierror-translate-language-disabled-source": "此组的原始语言是$1。请选择另一语言进行翻译。",
 	"apierror-translate-nodynamicgroups": "动态消息组在此不支持",
 	"apierror-translate-nomessagefortitle": "标题与可翻译消息不一致",
 	"apierror-translate-notranslationservices": "未配置公开翻译服务。在此功能可以使用前，wiki管理员需要适当设置<var>$wgTranslateTranslationServices</var>。",
@@ -128,5 +127,6 @@
 	"apierror-translate-sandboxdisabled": "未使用沙盒功能",
 	"apierror-translate-sandbox-invalidppassword": "无效密码",
 	"apierror-translate-unknownmessage": "未知消息",
-	"apiwarn-translate-alreadyreviewedbyyou": "已被您标记为已复核"
+	"apiwarn-translate-alreadyreviewedbyyou": "已被您标记为已复核",
+	"apiwarn-translate-language-disabled-source": "此组的原始语言是$1。请选择另一语言进行翻译。"
 }

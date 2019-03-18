@@ -119,7 +119,6 @@
 	"apierror-translate-invalidupdate": "עדכון בלתי־תקין",
 	"apierror-translate-language-disabled": "התרגום לשפה $1 מבוטל.",
 	"apierror-translate-language-disabled-reason": "התרגום לשפה $1 מבוטל: $2",
-	"apierror-translate-language-disabled-source": "שפת המקור של הקבוצה הזו היא $1. נא לבחור שפה אחרת לתרגום.",
 	"apierror-translate-nodynamicgroups": "קבוצת הודעות דינמיות אינן נתמכות כאן",
 	"apierror-translate-nomessagefortitle": "הכותרת אינה מתאימה לשום הודעה בת־תרגום",
 	"apierror-translate-notranslationservices": "לא הוגדרו שירותי תרגום ציבוריים. מנהל אתר הוויקי צריך להגדיר את <var dir=\"ltr\">$wgTranslateTranslationServices</var> באופן תקין כדי שניתן יהיה להשתמש בתכונה זו.",
@@ -127,5 +126,6 @@
 	"apierror-translate-sandboxdisabled": "ארגז החול אינו בשימוש",
 	"apierror-translate-sandbox-invalidppassword": "ססמה בלתי־תקינה",
 	"apierror-translate-unknownmessage": "הודעה בלתי־ידועה",
-	"apiwarn-translate-alreadyreviewedbyyou": "כבר סומנה בתור הודעה הודעה שנסקרה על־ידיך"
+	"apiwarn-translate-alreadyreviewedbyyou": "כבר סומנה בתור הודעה הודעה שנסקרה על־ידיך",
+	"apiwarn-translate-language-disabled-source": "שפת המקור של הקבוצה הזו היא $1. נא לבחור שפה אחרת לתרגום."
 }

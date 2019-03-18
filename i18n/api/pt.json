@@ -119,7 +119,6 @@
 	"apierror-translate-invalidupdate": "Atualização inválida",
 	"apierror-translate-language-disabled": "A tradução para $1 foi impossibilitada.",
 	"apierror-translate-language-disabled-reason": "A tradução para $1 foi impossibilitada: $2",
-	"apierror-translate-language-disabled-source": "A língua de origem deste grupo é $1. Selecione outra língua, para a qual irá traduzir, por favor.",
 	"apierror-translate-nodynamicgroups": "Não são suportados aqui grupos de mensagens dinâmicos",
 	"apierror-translate-nomessagefortitle": "O título não corresponde a uma mensagem traduzível",
 	"apierror-translate-notranslationservices": "Não foram configurados serviços públicos de tradução. O administrador da wiki precisa de definir <var>$wgTranslateTranslationServices</var> devidamente para esta funcionalidade poder ser usada.",
@@ -127,5 +126,6 @@
 	"apierror-translate-sandboxdisabled": "A função de utilizadores em teste não está a ser usada",
 	"apierror-translate-sandbox-invalidppassword": "Palavra-passe inválida",
 	"apierror-translate-unknownmessage": "Mensagem desconhecida",
-	"apiwarn-translate-alreadyreviewedbyyou": "Já marcada como revista por si"
+	"apiwarn-translate-alreadyreviewedbyyou": "Já marcada como revista por si",
+	"apiwarn-translate-language-disabled-source": "A língua de origem deste grupo é $1. Selecione outra língua, para a qual irá traduzir, por favor."
 }

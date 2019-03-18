@@ -95,7 +95,6 @@
 	"apierror-translate-invalidupdate": "Érvénytelen frissítés",
 	"apierror-translate-language-disabled": "$1 nyelvre a fordítás le van tiltva.",
 	"apierror-translate-language-disabled-reason": "$1 nyelvre a fordítás le van tiltva: $2",
-	"apierror-translate-language-disabled-source": "Ennek az üzenetcsoportnak a forrásnyelve $1. Válassz egy másik nyelvet a fordításhoz.",
 	"apierror-translate-nodynamicgroups": "A dinamikus üzenetcsoportok itt nem támogatottak",
 	"apierror-translate-nomessagefortitle": "A cím nem tartozik egy lefordítható üzenethez",
 	"apierror-translate-notranslationservices": "Nincs beállítva nyilvános fordítási szolgáltatás. A wiki rendszergazdájának be kell állítania megfelelően a <var>$wgTranslateTranslationServices</var> változót, mielőtt ez a funkció használható lenne.",
@@ -103,5 +102,6 @@
 	"apierror-translate-sandboxdisabled": "A homokozófunkció nincs használatban",
 	"apierror-translate-sandbox-invalidppassword": "Érvénytelen jelszó",
 	"apierror-translate-unknownmessage": "Ismeretlen üzenet",
-	"apiwarn-translate-alreadyreviewedbyyou": "Már megjelölted átnézettként"
+	"apiwarn-translate-alreadyreviewedbyyou": "Már megjelölted átnézettként",
+	"apiwarn-translate-language-disabled-source": "Ennek az üzenetcsoportnak a forrásnyelve $1. Válassz egy másik nyelvet a fordításhoz."
 }

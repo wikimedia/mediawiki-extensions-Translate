@@ -42,12 +42,12 @@
 	"apierror-translate-invalidupdate": "Nieprawidłowa aktualizacja",
 	"apierror-translate-language-disabled": "Tłumaczenie na $1 jest wyłączone.",
 	"apierror-translate-language-disabled-reason": "Tłumaczenie na $1 jest wyłączone: $2",
-	"apierror-translate-language-disabled-source": "Językiem źródłowym tej grupy jest $1. Wybierz inny język, na który chcesz tłumaczyć.",
 	"apierror-translate-nodynamicgroups": "Dynamiczne grupy komunikatów nie są tutaj obsługiwane",
 	"apierror-translate-nomessagefortitle": "Tytuł nie odpowiada komunikatowi do tłumaczenia",
 	"apierror-translate-owntranslation": "Nie można przeglądać własnych tłumaczeń",
 	"apierror-translate-sandboxdisabled": "Funkcja brudnopisu nie jest używana",
 	"apierror-translate-sandbox-invalidppassword": "Nieprawidłowe hasło",
 	"apierror-translate-unknownmessage": "Nieznany komunikat",
-	"apiwarn-translate-alreadyreviewedbyyou": "Już oznaczono jako przejrzane przez ciebie"
+	"apiwarn-translate-alreadyreviewedbyyou": "Już oznaczono jako przejrzane przez ciebie",
+	"apiwarn-translate-language-disabled-source": "Językiem źródłowym tej grupy jest $1. Wybierz inny język, na który chcesz tłumaczyć."
 }

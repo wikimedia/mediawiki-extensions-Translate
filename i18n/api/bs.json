@@ -111,12 +111,12 @@
 	"apierror-translate-invalidstate": "Traženo stanje nije ispravno.",
 	"apierror-translate-invalidupdate": "Neispravno ažuriranje",
 	"apierror-translate-language-disabled": "Prijevod na ovaj jezik je onemogućen",
-	"apierror-translate-language-disabled-source": "Izvorni jezik ove grupe je $1. Izaberite jezik na koji želite prevoditi.",
 	"apierror-translate-nodynamicgroups": "Dinamičke grupe poruka ovdje nisu podržane",
 	"apierror-translate-nomessagefortitle": "Naslov ne odgovara prevodivoj poruci",
 	"apierror-translate-owntranslation": "Ne možete pregledati vlastite prijevode",
 	"apierror-translate-sandboxdisabled": "Funkcija pijeska nije u upotrebi",
 	"apierror-translate-sandbox-invalidppassword": "Neispravna lozinka",
 	"apierror-translate-unknownmessage": "Nepoznata poruka",
-	"apiwarn-translate-alreadyreviewedbyyou": "Već ste je označili pregledanom"
+	"apiwarn-translate-alreadyreviewedbyyou": "Već ste je označili pregledanom",
+	"apiwarn-translate-language-disabled-source": "Izvorni jezik ove grupe je $1. Izaberite jezik na koji želite prevoditi."
 }

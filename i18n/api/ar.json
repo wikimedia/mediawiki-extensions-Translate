@@ -119,7 +119,6 @@
 	"apierror-translate-invalidupdate": "تحديث غير صالح",
 	"apierror-translate-language-disabled": "الترجمة إلى $1 معطلة.",
 	"apierror-translate-language-disabled-reason": "الترجمة إلى $1 معطلة:$2",
-	"apierror-translate-language-disabled-source": "لغة المصدر لهذه المجموعة هي $1; يُرجَى تحديد لغة أخرى للترجمة إليها.",
 	"apierror-translate-nodynamicgroups": "مجموعات الرسائل الديناميكية غير مدعومة هنا",
 	"apierror-translate-nomessagefortitle": "العنوان لا يتوافق مع رسالة قابلة للترجمة",
 	"apierror-translate-notranslationservices": "لم يتم تكوين أية خدمات ترجمة عامة; يحتاج إداري الويكي إلى تعيين <var>$wgTranslateTranslationServices</var> بشكل مناسب قبل استخدام هذه الميزة.",
@@ -127,5 +126,6 @@
 	"apierror-translate-sandboxdisabled": "ميزة الملعب ليست قيد الاستخدام",
 	"apierror-translate-sandbox-invalidppassword": "كلمة سر خاطئة",
 	"apierror-translate-unknownmessage": "رسالة غير معروفة",
-	"apiwarn-translate-alreadyreviewedbyyou": "تم تعليمها كمراجعة من قبلك"
+	"apiwarn-translate-alreadyreviewedbyyou": "تم تعليمها كمراجعة من قبلك",
+	"apiwarn-translate-language-disabled-source": "لغة المصدر لهذه المجموعة هي $1; يُرجَى تحديد لغة أخرى للترجمة إليها."
 }

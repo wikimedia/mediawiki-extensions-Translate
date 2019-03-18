@@ -119,7 +119,6 @@
 	"apierror-translate-invalidupdate": "無效更新",
 	"apierror-translate-language-disabled": "對$1的翻譯已停用。",
 	"apierror-translate-language-disabled-reason": "對$1的翻譯已停用：$2",
-	"apierror-translate-language-disabled-source": "此群組的來源語言是$1。請選擇其它的語言來翻譯。",
 	"apierror-translate-nodynamicgroups": "在此不支援動態訊息群組",
 	"apierror-translate-nomessagefortitle": "標題與可翻譯訊息不一致",
 	"apierror-translate-notranslationservices": "未設置開放翻譯服務。在此功能可使用前，Wiki 管理員需適當設定 <var>$wgTranslateTranslationServices</var>。",
@@ -127,5 +126,6 @@
 	"apierror-translate-sandboxdisabled": "未使用沙盒功能",
 	"apierror-translate-sandbox-invalidppassword": "無效密碼",
 	"apierror-translate-unknownmessage": "未知訊息",
-	"apiwarn-translate-alreadyreviewedbyyou": "已由您標記為已審查"
+	"apiwarn-translate-alreadyreviewedbyyou": "已由您標記為已審查",
+	"apiwarn-translate-language-disabled-source": "此群組的來源語言是$1。請選擇其它的語言來翻譯。"
 }

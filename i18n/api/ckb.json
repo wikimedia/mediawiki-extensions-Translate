@@ -4,5 +4,5 @@
 			"Épine"
 		]
 	},
-	"apierror-translate-language-disabled-source": "سەرچاوەی زمانی ئەم گرووپە $1ە. تکایە زمانێکی تر ھەڵبژێرە بۆ وەرگێڕان بۆی."
+	"apiwarn-translate-language-disabled-source": "سەرچاوەی زمانی ئەم گرووپە $1ە. تکایە زمانێکی تر ھەڵبژێرە بۆ وەرگێڕان بۆی."
 }

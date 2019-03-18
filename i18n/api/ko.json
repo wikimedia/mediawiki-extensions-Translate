@@ -28,10 +28,10 @@
 	"apierror-translate-invalidupdate": "유효하지 않은 업데이트",
 	"apierror-translate-language-disabled": "$1로의 번역이 비활성화되어 있습니다.",
 	"apierror-translate-language-disabled-reason": "$1로의 번역이 비활성화되어 있습니다: $2",
-	"apierror-translate-language-disabled-source": "이 그룹의 원본 언어는 $1입니다. 번역 결과물에 쓰일 다른 언어를 선택해 주십시오.",
 	"apierror-translate-nomessagefortitle": "제목이 번역 가능한 메시지와 일치하지 않습니다",
 	"apierror-translate-notranslationservices": "공용 번역 서비스가 구성되지 않았습니다. 위키 관리자는 <var>$wgTranslateTranslationServices</var>를 적절하게 설정해야 이 기능을 사용할 수 있습니다.",
 	"apierror-translate-sandboxdisabled": "연습장 기능을 사용하고 있지 않습니다",
 	"apierror-translate-sandbox-invalidppassword": "유효하지 않은 비밀번호",
-	"apierror-translate-unknownmessage": "알 수 없는 메시지"
+	"apierror-translate-unknownmessage": "알 수 없는 메시지",
+	"apiwarn-translate-language-disabled-source": "이 그룹의 원본 언어는 $1입니다. 번역 결과물에 쓰일 다른 언어를 선택해 주십시오."
 }
