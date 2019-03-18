@@ -22,6 +22,30 @@
       "revId": "40e347faaa0f8a737a018ea66056bd452f2bc08f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5109df1b_a0f48e9a",
+        "filename": "resources/js/ext.translate.special.translate.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-18T09:46:16Z",
+      "side": 1,
+      "message": "I think that would be good, it would make the updateGroupWarning function cleaner and we can get rid of the comments. I\u0027d like to use isPriorityLanguage as the function name, and then return early if it returns true.",
+      "parentUuid": "3afa89b5_b4bb6d9b",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 198,
+        "endChar": 3
+      },
+      "revId": "40e347faaa0f8a737a018ea66056bd452f2bc08f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
