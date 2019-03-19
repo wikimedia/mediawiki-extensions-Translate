@@ -22,6 +22,30 @@
       "revId": "e88c8c49887416d267ceb0ab1c3fcc3b77bf082e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7437bf54_bc2405e3",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 794,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-19T15:36:39Z",
+      "side": 1,
+      "message": "Decided to remove the empty `for` loop (which I should have done earlier). Also decided to catch the exception thrown from `MWElasticUtils::deleteByQuery`, log it, and then throw a RuntimeException instead. It is the responsibility of the caller to handle the RuntimeException.\n\nThe `deleteByQuery` method is used in two places, \n\n1. `beginBootstrap` - This seems to be only triggered from `ttmserver-export.php`, which is run manually from the console. Throwing an exception here will allow user to debug the issue.\n2. `TTMServerMessageUpdateJob::runCommandWithRetry` - Here exceptions are being handled appropriately.",
+      "parentUuid": "bbe3d651_8cc9eeeb",
+      "range": {
+        "startLine": 792,
+        "startChar": 0,
+        "endLine": 794,
+        "endChar": 4
+      },
+      "revId": "e88c8c49887416d267ceb0ab1c3fcc3b77bf082e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
