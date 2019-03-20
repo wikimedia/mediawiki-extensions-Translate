@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "a2631cd1_73bad763",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-20T11:25:37Z",
+      "side": 1,
+      "message": "Changed to `@return bool`",
+      "parentUuid": "60b727bb_25ebc91a",
+      "revId": "ad1bdb2430cb16e7a78f943fde4cafc0a8cdc429",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "943389ad_beb7bfb4",
         "filename": "ttmserver/ElasticSearchTTMServer.php",
         "patchSetId": 4
