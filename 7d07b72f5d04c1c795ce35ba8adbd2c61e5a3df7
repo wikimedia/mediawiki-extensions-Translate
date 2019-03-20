@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "0fb63761_21473224",
+        "filename": "MessageGroups.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T15:19:12Z",
+      "side": 1,
+      "message": "It would simplify the code slightly if we could do:\n$cache-\u003edelete( $this-\u003egetCacheKey() );\n\nBut I don\u0027t have strong opinion on this. It might be less clear when hiding what actually happens.",
+      "parentUuid": "69dfffe6_5661e8a6",
+      "range": {
+        "startLine": 150,
+        "startChar": 18,
+        "endLine": 150,
+        "endChar": 57
+      },
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "298b1ae0_709cf825",
         "filename": "MessageGroups.php",
         "patchSetId": 6
@@ -230,6 +254,24 @@
       "side": 1,
       "message": "We\u0027re actually not storing those values when serializing the `WikiPageMessageGroup` class. The current serialization only checks and stores id, title (string), label and namespace. I left the other values as is since I did not see them being initialized at all.\n\nIf additional values need to be stored, we can add them to the $toSerialized property in WikiPageMessageGroup class.\n\nThe other option would be to see if a property has been set to a value other than its default value and only then save it. We could possible use get_class_vars to do that, but I\u0027ll have to check.",
       "parentUuid": "2309fe66_2288cfa2",
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae230675_da9305ee",
+        "filename": "tests/phpunit/WikiPageMessageGroupSerializationTest.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-20T15:19:12Z",
+      "side": 1,
+      "message": "It might bite us later if we silently ignore these keys. I would at least leave a TODO/task somewhere that all message groups should implement the serialization interface and that subclasses should make sure they also include data from their parents.",
+      "parentUuid": "ab7ffab0_c5d1ee99",
       "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
