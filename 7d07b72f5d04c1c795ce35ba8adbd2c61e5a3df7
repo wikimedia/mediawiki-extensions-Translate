@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "d0017d87_dc57871a",
+        "filename": "MessageGroups.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-20T21:41:22Z",
+      "side": 1,
+      "message": "I\u0027ve made some changes, please review and let me know if its difficult to understand and I\u0027ll make the changes you mentioned.",
+      "parentUuid": "0fb63761_21473224",
+      "range": {
+        "startLine": 150,
+        "startChar": 18,
+        "endLine": 150,
+        "endChar": 57
+      },
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "298b1ae0_709cf825",
         "filename": "MessageGroups.php",
         "patchSetId": 6
@@ -272,6 +296,24 @@
       "side": 1,
       "message": "It might bite us later if we silently ignore these keys. I would at least leave a TODO/task somewhere that all message groups should implement the serialization interface and that subclasses should make sure they also include data from their parents.",
       "parentUuid": "ab7ffab0_c5d1ee99",
+      "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6800255f_12c45597",
+        "filename": "tests/phpunit/WikiPageMessageGroupSerializationTest.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-03-20T21:41:22Z",
+      "side": 1,
+      "message": "I\u0027ve updated the code to use `get_class_vars` as discussed. This has some drawbacks, but I think is a better approach overall. I\u0027m also worried about the de-serialization being somewhat slow with a large number of objects in the cache. Would that be possible to test on Mediawiki sandbox or dev.translatewiki.net?\n\nLet me know what you think. I\u0027m leaving this unresolved until then.\n\n\u003e all message groups should implement the serialization interface and that subclasses should make sure they also include data from their parents.\n\nWhy would all message groups need to implement serialization? I agree with the second point that. Both of these points become moot if we go with the updated approach. \n\nNote that `get_class_vars` has access to properties based on where it is called from. Since here we are calling it from within the class, it has access to private, protected and public properties.",
+      "parentUuid": "ae230675_da9305ee",
       "revId": "7d07b72f5d04c1c795ce35ba8adbd2c61e5a3df7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
