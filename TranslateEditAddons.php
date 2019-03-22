@@ -206,7 +206,7 @@ class TranslateEditAddons {
 			return true;
 		}
 
-		$text = $content->getNativeData();
+		$text = $content->getText();
 		$title = $wikiPage->getTitle();
 		$handle = new MessageHandle( $title );
 
@@ -400,7 +400,7 @@ class TranslateEditAddons {
 			$newContent = $de->mNewRev ? $de->mNewRev->getContent() : null;
 		}
 		if ( $newContent instanceof TextContent ) {
-			$th->setTranslation( $newContent->getNativeData() );
+			$th->setTranslation( $newContent->getText() );
 		} else {
 			// Screw you, not interested.
 			return true;

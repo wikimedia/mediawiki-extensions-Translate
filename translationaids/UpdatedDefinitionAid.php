@@ -73,8 +73,8 @@ class UpdatedDefinitionAid extends TranslationAid {
 		);
 
 		return [
-			'value_old' => $oldContent->getNativeData(),
-			'value_new' => $newContent->getNativeData(),
+			'value_old' => $oldContent->getText(),
+			'value_new' => $newContent->getText(),
 			'revisionid_old' => $oldrev->getId(),
 			'revisionid_new' => $definitionTitle->getLatestRevID(),
 			'language' => $this->group->getSourceLanguage(),

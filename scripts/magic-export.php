@@ -247,7 +247,7 @@ PHP
 
 				$page = WikiPage::factory( $title );
 				$content = $page->getContent();
-				$data = $content->getNativeData();
+				$data = $content->getText();
 
 				// Parse message file.
 				$segments = explode( "\n", $data );
