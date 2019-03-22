@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81ee4f07_c0d67df3",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-03-22T20:57:10Z",
+      "side": 1,
+      "message": "Is it certain that $content is a TextContent? If it\u0027s not, that would cause fatal error.",
+      "revId": "e18975f37f61ff289266db77ccc3066dee190ea3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ed65e68_aac9a1ad",
+        "filename": "scripts/magic-export.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-03-22T20:57:10Z",
+      "side": 1,
+      "message": "Is it certain that $content is a TextContent? If it\u0027s not, that would cause fatal error.",
+      "revId": "e18975f37f61ff289266db77ccc3066dee190ea3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07f584ea_9c9e1ea5",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-03-22T20:57:10Z",
+      "side": 1,
+      "message": "Is it certain that $content is a TextContent? If it\u0027s not, that would cause fatal error.",
+      "revId": "e18975f37f61ff289266db77ccc3066dee190ea3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
