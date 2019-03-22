@@ -707,7 +707,7 @@ class PageTranslationHooks {
 			return null;
 		}
 
-		$text = $content->getNativeData();
+		$text = $content->getText();
 
 		// See T154500
 		$text = str_replace( [ "\r\n", "\r" ], "\n", rtrim( $text ) );
@@ -738,7 +738,7 @@ class PageTranslationHooks {
 	 * @param bool $_2
 	 * @param int $flags
 	 * @param Status $status
-	 * @return true
+	 * @return bool
 	 */
 	public static function tpSyntaxCheck( WikiPage $wikiPage, $user, $content, $summary,
 		$minor, $_1, $_2, $flags, $status
@@ -775,7 +775,7 @@ class PageTranslationHooks {
 		$content = $wikiPage->getContent();
 
 		if ( $content instanceof TextContent ) {
-			$text = $content->getNativeData();
+			$text = $content->getText();
 		} else {
 			// Not applicable
 			return true;
