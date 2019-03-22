@@ -574,7 +574,7 @@ class PageTranslationHooks {
 			return true; // whatever.
 		}
 
-		$text = $content->getNativeData();
+		$text = $content->getText();
 		// See T154500
 		$text = str_replace( [ "\r\n", "\r" ], "\n", rtrim( $text ) );
 		$title = $context->getTitle();
@@ -632,7 +632,7 @@ class PageTranslationHooks {
 		$minor, $_1, $_2, $flags, $status
 	) {
 		if ( $content instanceof TextContent ) {
-			$text = $content->getNativeData();
+			$text = $content->getText();
 			// See T154500
 			$text = str_replace( [ "\r\n", "\r" ], "\n", rtrim( $text ) );
 		} else {
@@ -679,7 +679,7 @@ class PageTranslationHooks {
 		}
 
 		if ( $content instanceof TextContent ) {
-			$text = $content->getNativeData();
+			$text = $content->getText();
 		} else {
 			// Screw it, not interested
 			return true;
