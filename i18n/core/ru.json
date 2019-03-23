@@ -31,12 +31,13 @@
 			"Mailman",
 			"Av6",
 			"Wirbel78",
-			"Vlad5250"
+			"Vlad5250",
+			"Diralik"
 		]
 	},
 	"translate": "Перевод",
 	"translate-desc": "[[Special:Translate|Служебная страница]] для перевода MediaWiki и прочих программ",
-	"translate-fuzzybot-desc": "Это специальная системная учетная запись, используемая [https://www.mediawiki.org/wiki/Extension:Translate/ru расширением перевода] MediaWiki для задач поддержки переводов.\nЭта учетная запись является частью программного обеспечения MediaWiki и не принадлежит никакому участнику.",
+	"translate-fuzzybot-desc": "Это специальная системная учётная запись, используемая [https://www.mediawiki.org/wiki/Extension:Translate/ru расширением перевода] MediaWiki для задач поддержки переводов.\nЭта учётная запись является частью программного обеспечения MediaWiki и не принадлежит никакому участнику.",
 	"translate-taskui-export-to-file": "Экспорт в родном формате",
 	"translate-taskui-export-as-po": "Экспорт для оффлайнового перевод",
 	"translate-taction-translate": "Перевод",
@@ -403,5 +404,5 @@
 	"translate-ulsdep-title": "Ошибка конфигурации",
 	"translate-ulsdep-body": "Расширение по переводу зависит от [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector расширения «Универсальный переключатель языков»].",
 	"tux-session-expired": "Вы не авторизованы. Пожалуйста, авторизуйтесь в отдельной вкладке или скопируйте несохранённый перевод, вернитесь на эту страницу после авторизации и введите свой перевод ещё раз.",
-	"tux-nojs": "Этот инструмент не работает без JavaScript. JavaScript отключен, не работает, или этот браузер не поддерживается."
+	"tux-nojs": "Этот инструмент не работает без JavaScript. JavaScript отключён, не работает, или этот браузер не поддерживается."
 }

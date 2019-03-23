@@ -43,7 +43,7 @@
 	"translate-page-limit": "الحد",
 	"translate-page-limit-option": "{{PLURAL:$1||رسالة واحدة|رسالتان|$1 رسالات|$1 رسالة}} للصفحة",
 	"translate-submit": "اجلب",
-	"translate-page-navigation-legend": "الإبحار",
+	"translate-page-navigation-legend": "التصفح",
 	"translate-page-showing": "عرض الرسائل من $1 إلى $2 ل $3.",
 	"translate-page-showing-all": "عرض {{PLURAL:$1||رسالة واحدة|رسالتين|$1 رسائل|$1 رسالة}}.",
 	"translate-page-showing-none": "لا رسائل للعرض.",
