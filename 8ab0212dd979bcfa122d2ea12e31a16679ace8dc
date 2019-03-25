@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b767df88_15e24cbe",
+        "filename": "ttmserver/ElasticSearchTTMServer.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 776
+      },
+      "writtenOn": "2019-03-25T23:21:46Z",
+      "side": 1,
+      "message": "This line broke the deleteByQuery. This returns a generator, and since the generator was never iterated on this call never did anything.\n\nRather than fixing it here, I have changed the MWElasticUtils::deleteByQuery api so this call is synchronous, and MWElasticUtils::deleteByQueryWithStatus has to be used to get the asyncronous behaviour.\n\nSee: I155593ed9ca982b",
+      "revId": "8ab0212dd979bcfa122d2ea12e31a16679ace8dc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
