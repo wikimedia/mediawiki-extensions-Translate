@@ -272,7 +272,7 @@
 	"tux-editor-doc-editor-cancel": "Bıtexelne",
 	"tux-messagetable-more-messages": "$1 tayêna {{PLURAL:$1|mesac|mesaci}}",
 	"tux-messagetable-loading-messages": "{{PLURAL:$1|Mesac bar beno|Mesaci bar benê}}...",
-	"tux-message-filter-placeholder": "Lista filtrey",
+	"tux-message-filter-placeholder": "Lista parzûni",
 	"tux-message-filter-result": "$1 de Qandë \"$2\"   {{PLURAL:$1|netice |neticey}} vineya yê",
 	"tux-message-filter-advanced-button": "Cıgeyrayışo hera",
 	"tux-message-filter-optional-messages-label": "Mesacê keyfi",

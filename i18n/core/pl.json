@@ -370,7 +370,7 @@
 	"tux-empty-list-all": "Ta grupa komunikatów jest pusta",
 	"tux-empty-list-all-guide": "Wybierz inną grupę komunikatów do przetłumaczenia",
 	"tux-translate-page-no-such-group": "<strong>Ta grupa nie istnieje.</strong> Wybierz inną grupę komunikatów.",
-	"tux-empty-list-translated": "Brak przetłumaczonych wiadomości",
+	"tux-empty-list-translated": "Brak przetłumaczonych komunikatów",
 	"tux-empty-list-translated-guide": "Możesz pomóc tłumaczyć",
 	"tux-empty-list-translated-action": "Przetłumacz",
 	"tux-empty-no-messages-to-display": "Nie ma komunikatów do wyświetlenia.",
