@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "50f07a0c_465f162d",
+        "filename": "TranslateEditAddons.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-03-27T19:42:47Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e5d10038_e0236da7",
+      "revId": "e18975f37f61ff289266db77ccc3066dee190ea3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ed65e68_aac9a1ad",
         "filename": "scripts/magic-export.php",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "I suppose there is no enforcement for content type in NS_MEDIAWIKI? Then the answer would be no.",
       "parentUuid": "5ed65e68_aac9a1ad",
+      "revId": "e18975f37f61ff289266db77ccc3066dee190ea3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5237d29_1daa3ea6",
+        "filename": "scripts/magic-export.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-03-27T19:42:47Z",
+      "side": 1,
+      "message": "No content model is enforced for the MediaWiki namespace - and there are in fact multiple content models in use there. Most context models are of course text based, but there is no guarantee. To do something like that, I\u0027d probably want T209924.\n\nCan non-text content simply be skipped here?",
+      "parentUuid": "4b787aab_417c2abe",
       "revId": "e18975f37f61ff289266db77ccc3066dee190ea3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
@@ -104,6 +140,24 @@
       "revId": "e18975f37f61ff289266db77ccc3066dee190ea3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f46db65a_d3b0ec92",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-03-27T19:42:47Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8b4c45e1_fcef9c27",
+      "revId": "e18975f37f61ff289266db77ccc3066dee190ea3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
