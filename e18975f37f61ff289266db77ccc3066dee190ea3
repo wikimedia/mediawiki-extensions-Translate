@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "8061c92d_c1d86338",
+        "filename": "scripts/magic-export.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-03-28T15:23:18Z",
+      "side": 1,
+      "message": "The two pages referenced above are managed by the Translate extension. Can the extension force the type of these pages rather than failing silently if someone messes them up?\n\nI should also mention that nobody is using this code currently.",
+      "parentUuid": "e5237d29_1daa3ea6",
+      "revId": "e18975f37f61ff289266db77ccc3066dee190ea3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "07f584ea_9c9e1ea5",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 3
