@@ -126,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "75199e44_21bd57b9",
+        "filename": "scripts/magic-export.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-03-28T15:26:24Z",
+      "side": 1,
+      "message": "\u003e The two pages referenced above are managed by the Translate extension. Can the extension force the type of these pages rather than failing silently if someone messes them up?\n\nYes, for example via the ContentModelCanBeUsedOn hook. A fatal error should still be avoided here in case a \"bad\" page slipped through. I\u0027m not sure if ContentModelCanBeUsedOn is checked on import...\n\n\u003e I should also mention that nobody is using this code currently.\n\nLet\u0027s delete it, then :)",
+      "parentUuid": "8061c92d_c1d86338",
+      "revId": "e18975f37f61ff289266db77ccc3066dee190ea3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "07f584ea_9c9e1ea5",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 3
