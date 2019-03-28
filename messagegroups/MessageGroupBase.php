@@ -84,6 +84,9 @@ abstract class MessageGroupBase implements MessageGroup {
 	}
 
 	protected function getFromConf( $section, $key ) {
+		if ( empty( $key ) ) {
+			return $this->conf[$section] ?? null;
+		}
 		return $this->conf[$section][$key] ?? null;
 	}
 
@@ -128,6 +131,26 @@ abstract class MessageGroupBase implements MessageGroup {
 		}
 
 		return $checker;
+	}
+
+	public function getValidator() {
+		$validatorConfigs = $this->getFromConf( 'VALIDATORS', null );
+		$msgValidator = new MessageValidator( $this );
+
+		if ( empty( $validatorConfigs ) ) {
+			return $msgValidator;
+		}
+
+		foreach ( $validatorConfigs as $config ) {
+			$class = $config['class'];
+			if ( !class_exists( $class ) ) {
+				throw new RuntimeException( "Validator class $class does not exist." );
+			}
+
+			$msgValidator->addValidators( $config );
+		}
+
+		return $msgValidator;
 	}
 
 	public function getMangler() {
@@ -182,6 +205,19 @@ abstract class MessageGroupBase implements MessageGroup {
 			}
 
 			$suggesters[] = new $class();
+		}
+
+		// get validators marked as insertable
+		$validations = $this->getValidator()->getValidations();
+		foreach ( $validations as $validation ) {
+			if ( $validation->isInsertable() ) {
+				if ( $validation instanceof InsertablesSuggester ) {
+					$suggesters[] = $validation;
+				} else {
+					throw new RuntimeException( "Insertable validator - " . get_class( $validation ) .
+						" does not implement InsertableSuggester interface." );
+				}
+			}
 		}
 
 		return new CombinedInsertablesSuggester( $suggesters );
