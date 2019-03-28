@@ -15,13 +15,45 @@ class ApiTranslationCheck extends ApiBase {
 		$translation = $params[ 'translation' ];
 
 		$checkResults = $this->getWarnings( $handle, $translation );
+		$validationOutput = $this->getValidationOutput( $handle, $translation );
 
-		$warnings = [];
+		// To maintain backward compatibility with previous MessageChecker framework.
+		$checkResults = array_merge( $checkResults, $validationOutput['warnings'] );
+
 		foreach ( $checkResults as $item ) {
 			$key = array_shift( $item );
 			$msg = $this->getContext()->msg( $key, $item )->parse();
 			$this->getResult()->addValue( 'warnings', null, $msg );
 		}
+
+		foreach ( $validationOutput['errors'] as $item ) {
+			$key = array_shift( $item );
+			$msg = $this->getContext()->msg( $key, $item )->parse();
+			$this->getResult()->addValue( 'errors', null, $msg );
+		}
+	}
+
+	public function getValidationOutput( MessageHandle $handle, $translation ) {
+		if ( $translation === '' ) {
+			return [];
+		}
+
+		if ( $handle->isDoc() || !$handle->isValid() ) {
+			return [];
+		}
+
+		$validator = $handle->getGroup()->getValidator();
+		if ( !$validator ) {
+			return [];
+		}
+
+		$definition = $this->getDefinition( $handle );
+		$message = new FatMessage( $handle->getKey(), $definition );
+		$message->setTranslation( $translation );
+
+		$validationOutput = $validator->validateMessage( $message, $handle->getCode() );
+
+		return $validationOutput;
 	}
 
 	public function getWarnings( MessageHandle $handle, $translation ) {

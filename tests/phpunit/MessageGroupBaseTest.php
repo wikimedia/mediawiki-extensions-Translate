@@ -176,6 +176,37 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 		$states = $this->group->getMessageGroupStates()->getStates();
 		$this->assertEquals( $expectedStates, $states );
 	}
+
+	public function testInsertableValidatorIsASuggester() {
+		$conf = $this->groupConfiguration;
+
+		unset( $conf['INSERTABLES']['class'] );
+		$conf['INSERTABLES']['classes'] = [ 'AnotherFakeInsertablesSuggester' ];
+		$conf['VALIDATORS'] = [];
+		$conf['VALIDATORS'][] = [
+			'class' => 'FakeInsertableValidator',
+			'insertable' => true,
+			'params' => 'TEST'
+		];
+
+		$conf['VALIDATORS'][] = [
+			'class' => 'AnotherFakeValidator',
+			'insertable' => false,
+			'params' => 'TEST2'
+		];
+
+		$this->group = MessageGroupBase::factory( $conf );
+		$insertables = $this->group->getInsertablesSuggester()->getInsertables( '' );
+
+		$this->assertCount( 2, $insertables,
+			'Non-Insertable validator is not present in insertables.' );
+
+		$this->assertEquals(
+			new Insertable( 'Fake', 'Insertable', 'Validator' ),
+			$insertables[1],
+			'InsertableValidator is present in the list of insertables.'
+		);
+	}
 }
 
 class FakeInsertablesSuggester implements InsertablesSuggester {
@@ -188,4 +219,13 @@ class AnotherFakeInsertablesSuggester implements InsertablesSuggester {
 	public function getInsertables( $text ) {
 		return [ new Insertable( 'AnotherFake', 'Insertables', 'Suggester' ) ];
 	}
+}
+
+class FakeInsertableValidator extends InsertableGenericRegexValidator {
+	public function getInsertables( $text ) {
+		return [ new Insertable( 'Fake', 'Insertable', 'Validator' ) ];
+	}
+}
+
+class AnotherFakeValidator extends InsertableGenericRegexValidator {
 }

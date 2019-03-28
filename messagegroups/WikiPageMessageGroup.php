@@ -170,6 +170,23 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject, 
 		return $checker;
 	}
 
+	/**
+	 * @return MessageValidator
+	 */
+	public function getValidator() {
+		$validator = new MessageValidator( $this );
+		// TODO: MV - Add the other validators and insertables.
+		// Discuss with Niklas regarding whether it should be enforced
+		// or not.
+		$validator->setValidators( [
+			[
+				'class' => 'MediaWikiPluralValidator'
+			]
+		] );
+
+		return $validator;
+	}
+
 	public function getInsertablesSuggester() {
 		return new TranslatablePageInsertablesSuggester();
 	}

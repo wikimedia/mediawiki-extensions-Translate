@@ -6,11 +6,10 @@
  */
 
 /**
- * Insertable is a string that usually does not need translation and is
- * difficult to type manually.
+ * InsertablesSuggester implementation for the MediaWiki message group.
  * @since 2013.09
  */
-class MediaWikiInsertablesSuggester {
+class MediaWikiInsertablesSuggester implements InsertablesSuggester {
 	public function getInsertables( $text ) {
 		$insertables = [];
 
