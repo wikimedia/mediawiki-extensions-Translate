@@ -121,13 +121,13 @@ class MagicExport extends Maintenance {
 						$varName = '$specialPageAliases';
 					} else {
 						$this->error( "File '$inFile' does not contain an aliases array." );
-						continue;
+						continue 2;
 					}
 					break;
 				case 'magic':
 					if ( !isset( $magicWords ) ) {
 						$this->error( "File '$inFile' does not contain a magic words array." );
-						continue;
+						continue 2;
 					}
 					$this->messagesOld[$group->getId()] = $magicWords;
 					unset( $magicWords );
