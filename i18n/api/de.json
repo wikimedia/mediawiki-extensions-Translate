@@ -87,6 +87,7 @@
 	"apihelp-searchtranslations-param-offset": "Versatz für die Übersetzungen.",
 	"apihelp-searchtranslations-param-limit": "Größe des Ergebnisses.",
 	"apihelp-searchtranslations-example-1": "Übersetzungen für die Sprache anzeigen.",
+	"apihelp-searchtranslations-example-2": "Zeigt nicht übersetzte Nachrichten an, die der Anfrage in der Quellsprache entsprechen.",
 	"apihelp-translationcheck-summary": "Validiert Übersetzungen.",
 	"apihelp-translationcheck-param-title": "Seitentitel mit Namensraum und Sprachcode.",
 	"apihelp-translationcheck-param-translation": "Die zu validierende Übersetzung.",
