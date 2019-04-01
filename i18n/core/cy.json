@@ -187,7 +187,7 @@
 	"translate-gs-code": "Cod",
 	"translate-gs-continent": "Cyfandir",
 	"translate-gs-speakers": "Siaradwyr",
-	"translate-gs-score": "Sgôr",
+	"translate-gs-score": "Sgor",
 	"translate-gs-multiple": "Mwy nag un",
 	"translate-gs-count": "Nifer",
 	"translate-gs-total": "Cyfanswm",
@@ -228,5 +228,6 @@
 	"tux-editor-edit-desc": "Golygu'r nodiadau",
 	"tux-editor-suggestions-title": "Awgrymiadau",
 	"tux-editor-in-other-languages": "Mewn ieithoedd eraill",
-	"tux-editor-need-more-help": "Oes angen mwy o gymorth?"
+	"tux-editor-need-more-help": "Oes angen mwy o gymorth?",
+	"tux-warnings-hide": "cuddio"
 }
