@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f779a8b_4e9c5a11",
+        "filename": "api/ApiTranslationCheck.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-01T19:10:34Z",
+      "side": 1,
+      "message": "Can\u0027t use the key \"errors\" here. Using \"errors\" causes the `mw.API` module on the client side to reject the promise and cause a failure to trigger.\n\nUsing \"failed\" for now and will review this again later.",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
