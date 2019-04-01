@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a8051a9_5413cf16",
+        "filename": "extension-wip.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T23:59:59Z",
+      "side": 1,
+      "message": "It\u0027s okay, and especially if we start using namespaced autoloading, it\u0027s low overhead as well.",
+      "parentUuid": "b44f0745_636a5d88",
+      "revId": "37c9c4335ab528a81e700d9be3cad92e824de424",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1f12aa52_fd8ca857",
         "filename": "messagegroups/WikiPageMessageGroup.php",
         "patchSetId": 1
@@ -36,6 +54,47 @@
     },
     {
       "key": {
+        "uuid": "61e0c49e_aa844b19",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T23:59:59Z",
+      "side": 1,
+      "message": "I would leave all these unenforced for now. MediaWiki doesn\u0027t have build failures in that sense.",
+      "parentUuid": "1f12aa52_fd8ca857",
+      "revId": "37c9c4335ab528a81e700d9be3cad92e824de424",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c91c3943_14817037",
+        "filename": "validators/InsertableGenericRegexValidator.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T23:59:59Z",
+      "side": 1,
+      "message": "Do we need the word \"Generic\" in the name? I think it doesn\u0027t add value.",
+      "range": {
+        "startLine": 12,
+        "startChar": 16,
+        "endLine": 12,
+        "endChar": 23
+      },
+      "revId": "37c9c4335ab528a81e700d9be3cad92e824de424",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "42da4fbd_7d823794",
         "filename": "validators/InsertableGenericRegexValidator.php",
         "patchSetId": 1
@@ -47,6 +106,24 @@
       "writtenOn": "2019-04-01T08:49:37Z",
       "side": 1,
       "message": "For implementing pre / post,\n\nVALIDATORS:\n    - class: InsertableGenericRegexValidator\n      insertable: true\n      params: \n          regex: \"/{{[a-zA-Z_]+}}/\"\n          display: \"{{%s}}\"\n          pre: \"{{-\"\n          post: \"%s}}\"\n\nIf params, is a string, that means the regex has been directly added, and the other params will be set to the following by default,\n\ndisplay:\" %s\"\npre: \"%s\"\npost: \"\"\n  \nThoughts?",
+      "revId": "37c9c4335ab528a81e700d9be3cad92e824de424",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6bc923e5_329064ff",
+        "filename": "validators/InsertableGenericRegexValidator.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T23:59:59Z",
+      "side": 1,
+      "message": "Is %s the magic replacement character?\n\nThe thing with pre and post is that they define where the cursor is placed (or in theory what is selected) when insertables is clicked. For any of this to work we need grouped captures in the regex, and access them either through positions or named captures.",
+      "parentUuid": "42da4fbd_7d823794",
       "revId": "37c9c4335ab528a81e700d9be3cad92e824de424",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
