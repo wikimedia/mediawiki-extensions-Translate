@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "3717730c_79b92af1",
+        "filename": "MessageValidator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T20:18:39Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be validator? Validation can mean the process or output, but not the agent, imho.",
+      "range": {
+        "startLine": 24,
+        "startChar": 21,
+        "endLine": 24,
+        "endChar": 32
+      },
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6aa0b1e0_a6b9c785",
+        "filename": "MessageValidator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T20:18:39Z",
+      "side": 1,
+      "message": "I think we need a three-way split here: valid, problematic, failing.\n\nMaybe implement it as a separate methods, or maybe create a value object \"ValidationResult\"? I would likely do the latter.",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4f779a8b_4e9c5a11",
         "filename": "api/ApiTranslationCheck.php",
         "patchSetId": 2
@@ -13,6 +53,189 @@
       "writtenOn": "2019-04-01T19:10:34Z",
       "side": 1,
       "message": "Can\u0027t use the key \"errors\" here. Using \"errors\" causes the `mw.API` module on the client side to reject the promise and cause a failure to trigger.\n\nUsing \"failed\" for now and will review this again later.",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05244c44_c96dbbde",
+        "filename": "api/ApiTranslationCheck.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T20:18:39Z",
+      "side": 1,
+      "message": "We probably want to nest these results under some other name to avoid clash with the top-level errors key (and potentially warnings as well).",
+      "parentUuid": "4f779a8b_4e9c5a11",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7da557c1_d257774c",
+        "filename": "extension-wip.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T20:18:39Z",
+      "side": 1,
+      "message": "This is a pretty generic name to use in a global namespace.\n\nPerhaps we can start putting new classes under a namespace under a MediaWiki\\Extension\\Translate namespace (ref T166010).\n\nPerhaps we can also start placing files insides namespaces in the recommended directory (ref https://www.mediawiki.org/wiki/Best_practices_for_extensions#File_structure)\n\nFor example includes/MessageValidator/Validator.php having a namespace MediaWiki\\Extensions\\Translate\\MessageValidator.",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "29b9b602_919e3da6",
+        "filename": "messagegroups/MessageGroupBase.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T20:18:39Z",
+      "side": 1,
+      "message": "Use of empty is discouraged. Use isset or comparison to null to be more explicit. Maybe also make the second parameter optional then with a default value?",
+      "range": {
+        "startLine": 87,
+        "startChar": 7,
+        "endLine": 87,
+        "endChar": 12
+      },
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec3fcb43_df1ee071",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T20:18:39Z",
+      "side": 1,
+      "message": "Plural does not need to be enforced... it does not cause build failures.",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b6c1e97_0da2e7a3",
+        "filename": "validators/MediaWikiPluralValidator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T20:18:39Z",
+      "side": 1,
+      "message": "04 by now :)",
+      "range": {
+        "startLine": 9,
+        "startChar": 15,
+        "endLine": 9,
+        "endChar": 17
+      },
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25568dae_3f42bd4f",
+        "filename": "validators/MediaWikiPluralValidator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T20:18:39Z",
+      "side": 1,
+      "message": "Since these are new in the class, you\u0027d want to remove these old dates.",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "78b03af3_efcbde4c",
+        "filename": "validators/MediaWikiPluralValidator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T20:18:39Z",
+      "side": 1,
+      "message": "We should perhaps think how these external dependencies could be injected to the validators. But maybe that is difficult and we can leave it for later.",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f43c1434_b5cee0fc",
+        "filename": "validators/Validator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T20:18:39Z",
+      "side": 1,
+      "message": "I was wondering whether we could keep this info outside of the validators themselves. Do any of them need to know about it? Basically it\u0027s just decision higher level up whether it goes into errors or validators array.",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8144d82_3925b1d3",
+        "filename": "validators/Validator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T20:18:39Z",
+      "side": 1,
+      "message": "Same here. The interface is probably sufficient.",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1bf762c8_5a4f0e96",
+        "filename": "validators/Validator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-01T20:18:39Z",
+      "side": 1,
+      "message": "Which would leave only this passed to the constructor.",
       "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
