@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b44f0745_636a5d88",
+        "filename": "extension-wip.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-01T08:49:37Z",
+      "side": 1,
+      "message": "One drawback of our approach is the number of new classes and files that we\u0027ll have to add.",
+      "revId": "37c9c4335ab528a81e700d9be3cad92e824de424",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f12aa52_fd8ca857",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-01T08:49:37Z",
+      "side": 1,
+      "message": "@Nikerabbit - I\u0027m planning to replace MediaWikiMessageChecker, with the new validator.\n\nThe following will have to be done,\n\n1. I\u0027ve added a PluralCheck Validator.\n2. Will leave MediaWikiInsertablesSuggester as is.\n3. Will be adding a braceBalanceCheck validator.\n4. Will be adding a miscMWChecks validator.\n\nI think all of this should be enforced? Should I do this as part of this task or in a future task? We may also have to inform the community regarding this change.",
+      "revId": "37c9c4335ab528a81e700d9be3cad92e824de424",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42da4fbd_7d823794",
+        "filename": "validators/InsertableGenericRegexValidator.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-01T08:49:37Z",
+      "side": 1,
+      "message": "For implementing pre / post,\n\nVALIDATORS:\n    - class: InsertableGenericRegexValidator\n      insertable: true\n      params: \n          regex: \"/{{[a-zA-Z_]+}}/\"\n          display: \"{{%s}}\"\n          pre: \"{{-\"\n          post: \"%s}}\"\n\nIf params, is a string, that means the regex has been directly added, and the other params will be set to the following by default,\n\ndisplay:\" %s\"\npre: \"%s\"\npost: \"\"\n  \nThoughts?",
+      "revId": "37c9c4335ab528a81e700d9be3cad92e824de424",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
