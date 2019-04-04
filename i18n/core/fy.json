@@ -46,6 +46,7 @@
 	"translate-documentation-language": "Berjochtbeskriuwing",
 	"translate-searchprofile": "Oersettings",
 	"log-name-translationreview": "Oersettingshifkloch",
+	"logentry-translationreview-message": "$1 {{GENDER:$2|hat}} de oersetting $3 hifke",
 	"translate-msggroupselector-projects": "Berjochtegroep",
 	"tux-languageselector": "Oersette nei",
 	"tux-tab-untranslated": "Unoerset",

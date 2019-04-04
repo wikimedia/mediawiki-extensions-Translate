@@ -11,6 +11,7 @@
 	"apihelp-query+messagecollection-param-group": "Þýðingahópur.",
 	"apihelp-query+messagecollection-param-language": "Tungumálakóði.",
 	"apihelp-query+messagecollection-param-limit": "Hversu mörg skilaboð viltu sjá (eftir síun).",
+	"apihelp-query+messagecollection-example-1": "Listi yfir studd tungumál",
 	"apihelp-query+messagetranslations-param-title": "Heildartitill á þekktum skilaboðum.",
 	"apihelp-translatesandbox-param-do": "Hvað skal gera.",
 	"apihelp-translatesandbox-param-username": "Notendanafn við sköpun notanda.",
