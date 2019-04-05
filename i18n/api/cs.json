@@ -1,12 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vks"
+			"Vks",
+			"Want"
 		]
 	},
+	"apihelp-groupreview-param-group": "Skupina zpráv.",
+	"apihelp-groupreview-param-language": "Kód jazyka.",
+	"apihelp-groupreview-param-state": "Nový stav pro skupinu.",
 	"apihelp-query+languagestats-param-language": "Kód jazyka.",
 	"apihelp-query+messagecollection-param-group": "Skupina zpráv.",
 	"apihelp-query+messagecollection-param-language": "Kód jazyka.",
+	"apihelp-query+messagegroups-example-1": "Zobrazit skupinu zpráv",
 	"apihelp-translationstash-param-subaction": "Akce.",
 	"apihelp-translationstash-param-metadata": "JSON objekt."
 }

@@ -11,7 +11,8 @@
 			"H4nek",
 			"Kvetoslav47",
 			"Dvorapa",
-			"Patriccck"
+			"Patriccck",
+			"Want"
 		]
 	},
 	"pagetranslation": "Překlad stránek",
@@ -97,7 +98,7 @@
 	"pt-movepage-list-pages": "Seznam stránek k přesunutí",
 	"pt-movepage-list-translation": "Překlad {{PLURAL:$1|stránky|stránek}}",
 	"pt-movepage-list-section": "{{PLURAL:$1|Stránka s částí překladu|Stránky s částmi překladu}}",
-	"pt-movepage-list-other": "Další {{PLURAL:$1|podstránka|podstránky}}",
+	"pt-movepage-list-other": "{{PLURAL:$1|Jiná podstránka|Jiné podstránky}}",
 	"pt-movepage-list-count": "Celkem  $1   {{PLURAL:$1| stránka|stránek}} k přesunutí.",
 	"pt-movepage-legend": "Přesunout přeložitelnou stránku",
 	"pt-movepage-current": "Současný název:",
@@ -115,8 +116,8 @@
 	"pt-deletepage-list-section": "Stránky s částmi překladu",
 	"pt-deletepage-list-other": "Další podstránky",
 	"pt-deletepage-list-count": "Celkem $1 {{PLURAL:$1|stránky|stránky|stránek}} ke smazání.",
-	"pt-deletepage-full-logreason": "Část přeložitelné stránky „$1“.",
-	"pt-deletepage-lang-logreason": "Část překladové stránky „$1“.",
+	"pt-deletepage-full-logreason": "Část přeložitelné stránky „$1“",
+	"pt-deletepage-lang-logreason": "Část překladové stránky „$1“",
 	"pagemigration": "Migrace překladových stránek",
 	"pm-import-button-label": "Importovat",
 	"pm-savepages-button-label": "Uložit",
@@ -128,7 +129,7 @@
 	"pm-add-icon-hover-text": "Přidat část níže",
 	"pm-swap-icon-hover-text": "Prohodit s částí níže",
 	"pm-delete-icon-hover-text": "Smazat položku",
-	"pm-langcode-missing": "Zadejte prosím kód jazyka",
+	"pm-langcode-missing": "Vypadá to, že za názvem stránky schází kód jazyka. Zadejte prosím název stránky ve tvaru <název-stránky>/<kód-jazyka>.",
 	"tpt-translate-title": "Umožnit překlad názvu stránky",
 	"pp-prepare-button-label": "Připravit",
 	"pp-save-button-label": "Uložit",
