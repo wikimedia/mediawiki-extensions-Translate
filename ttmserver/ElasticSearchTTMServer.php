@@ -804,7 +804,7 @@ class ElasticSearchTTMServer
 	private function deleteByQuery( \Elastica\Type $type, \Elastica\Query $query ) {
 		if ( method_exists( 'MWElasticUtils', 'deleteByQuery' ) ) {
 			try {
-				MWElasticUtils::deleteByQuery( $type->getIndex(), $query );
+				MWElasticUtils::deleteByQuery( $type->getIndex(), $query, /* $allowConflicts = */ true );
 			} catch ( \Exception $e ) {
 				LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->error(
 					'Problem encountered during deletion.',
