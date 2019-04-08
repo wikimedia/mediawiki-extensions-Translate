@@ -17,6 +17,18 @@
 	"callback": "TranslateHooks::setupTranslate",
 	"load_composer_autoloader": true,
 	"manifest_version": 2,
+	"namespaces": [
+		{
+			"id": 1198,
+			"constant": "NS_TRANSLATIONS",
+			"name": "Translations"
+		},
+		{
+			"id": 1199,
+			"constant": "NS_TRANSLATIONS_TALK",
+			"name": "Translations_talk"
+		}
+	],
 	"AutoloadClasses": {
 		"AggregateMessageGroup": "messagegroups/AggregateMessageGroup.php",
 		"AmdFFS": "ffs/AmdFFS.php",
@@ -214,7 +226,6 @@
 		"YandexWebService": "webservices/YandexWebService.php"
 	},
 	"Hooks": {
-		"CanonicalNamespaces": "TranslateHooks::setupNamespaces",
 		"ResourceLoaderTestModules": "TranslateHooks::onResourceLoaderTestModules",
 		"UnitTestsList": "TranslateHooks::setupUnitTests",
 		"LoadExtensionSchemaUpdates": "TranslateHooks::schemaUpdates",

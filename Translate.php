@@ -177,12 +177,6 @@ $wgTranslateSecondaryPermissionUrl = 'Project:Translator';
 $wgEnablePageTranslation = true;
 
 /**
- * Number for the Translations namespace. Change this if it conflicts with
- * other namespace in your wiki.
- */
-$wgPageTranslationNamespace = 1198;
-
-/**
  * If set to true, when a user selects an interface language via ULS (Universal
  * Language Selector), if the current page is a translatable page or a translation
  * page then the user is also redirected to the corresponding translation page

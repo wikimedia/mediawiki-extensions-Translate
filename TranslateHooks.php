@@ -43,27 +43,21 @@ class TranslateHooks {
 	}
 
 	/**
-	 * Hook: CanonicalNamespaces
-	 *
-	 * @param array &$list
-	 */
-	public static function setupNamespaces( array &$list ) {
-		global $wgPageTranslationNamespace, $wgNamespaceRobotPolicies;
-		if ( !defined( 'NS_TRANSLATIONS' ) ) {
-			define( 'NS_TRANSLATIONS', $wgPageTranslationNamespace );
-			define( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace + 1 );
-		}
-		$list[NS_TRANSLATIONS] = 'Translations';
-		$list[NS_TRANSLATIONS_TALK] = 'Translations_talk';
-		$wgNamespaceRobotPolicies[NS_TRANSLATIONS] = 'noindex';
-	}
-
-	/**
 	 * Initialises the extension.
 	 * Does late-initialization that is not possible at file level,
 	 * because it depends on user configuration.
 	 */
 	public static function setupTranslate() {
+		global $wgPageTranslationNamespace;
+		if ( isset( $wgPageTranslationNamespace ) &&
+		$wgPageTranslationNamespace !== NS_TRANSLATIONS ) {
+			throw new MWException(
+				'$wgPageTranslationNamespace is no longer supported. Instead, define ' .
+				'NS_TRANSLATIONS and NS_TRANSLATIONS_TALK in LocalSettings.php before loading ' .
+				'Translate.'
+			);
+		}
+
 		global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
 
 		if ( $wgTranslatePHPlot ) {
@@ -130,15 +124,8 @@ class TranslateHooks {
 			$wgJobClasses['TranslationsUpdateJob'] = 'TranslationsUpdateJob';
 
 			// Namespaces
-			global $wgPageTranslationNamespace;
 			global $wgNamespacesWithSubpages, $wgNamespaceProtection;
 			global $wgTranslateMessageNamespaces;
-
-			// Define constants for more readable core
-			if ( !defined( 'NS_TRANSLATIONS' ) ) {
-				define( 'NS_TRANSLATIONS', $wgPageTranslationNamespace );
-				define( 'NS_TRANSLATIONS_TALK', $wgPageTranslationNamespace + 1 );
-			}
 
 			$wgNamespacesWithSubpages[NS_TRANSLATIONS] = true;
 			$wgNamespacesWithSubpages[NS_TRANSLATIONS_TALK] = true;
@@ -252,6 +239,9 @@ class TranslateHooks {
 			$wgResourceModules['ext.translate.editor']['dependencies'][] = 'mediawiki.api.parse';
 			$wgResourceModules['ext.translate.special.translate']['dependencies'][] = 'mediawiki.api.parse';
 		}
+
+		global $wgNamespaceRobotPolicies;
+		$wgNamespaceRobotPolicies[NS_TRANSLATIONS] = 'noindex';
 	}
 
 	/**
