@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Minisarm"
+			"Minisarm",
+			"Strainu"
 		]
 	},
-	"managetranslatorsandbox": "Administrare cutie cu nisip traducător",
+	"managetranslatorsandbox": "Administrați pagina de teste a traducătorului",
 	"tsb-filter-pending": "Cereri în așteptare",
 	"tsb-reminder-title-generic": "Finalizați-vă propria prezentare pentru a deveni un traducător",
 	"tsb-all-languages-button-label": "Toate limbile",
