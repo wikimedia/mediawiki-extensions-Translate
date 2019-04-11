@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5452f4e1_416a659a",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-04-11T19:29:46Z",
+      "side": 1,
+      "message": "This returns a Revision object (meta data about an edit).\n\nThe below, however, returns a string with the wikitext content of a revision.\n\nThere are two missing steps here:\n\n $rev \u003d …; // may be absent, needs to be handled\n\n\n // 1: get Content from Revision\n $content \u003d $rev-\u003egetContent(…); // may be absent, needs to be handled\n\n // 2: get serialised string format from Content\n $text \u003d  $content-\u003eserialize();\n\n\nRevision::getRevisionText() does all four steps: 1) revision store, 2) revision object, 3) content object 4) serialised string of content.\n\nIt also does the absent handling. It returns false if the revision or content does not exist.",
+      "range": {
+        "startLine": 110,
+        "startChar": 5,
+        "endLine": 110,
+        "endChar": 25
+      },
+      "revId": "55e095947f050d8555d3f70c9d3545683e1196b9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dbc8c96a_a1e91483",
+        "filename": "TranslateUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-04-11T19:29:46Z",
+      "side": 1,
+      "message": "In addition to the missing steps, there is another issue as well - which is the one that caused T217689.\n\ngetRevisionText() has three ways it can be used:\n\n* With a database row from the \u0027revision\u0027 table. This is what the deprecation is for, and newRevisionFromRow() is the replacement for that, as you used here.\n* It can also be used with a row from the \u0027archive\u0027 table. For that, the replacement is newRevisionFromArchiveRow().\n* It can also be used with raw information directly from the \u0027text\u0027 database table, thus skipping the \u0027revision\u0027 and \u0027content\u0027 steps. For this the replacement is.. complicated.\n\nDepending on how getRevisionText() is used (can be learned from the 100 lines of code above this in the same file), it needs a different way to change.\n\nIn this case, it is actually the last one. The database query above does not select a complete row from the \u0027revision\u0027 or \u0027archive\u0027 table. Instead, it queries the select.old_text field.\n\nAs general advice, I always question deprecations and look the old method to see what it does.\n\nIf the old deprecated method contains only 1 line of code, and the \"@deprecate\" note suggests to use it, then you are safe.\n\nFor example:\n\n // @deprecated use myNewMethod()\n myOldMethod() {\n   return myNewMethod();\n }\n\nThen the replacement is low-risk, you can just do it.\n\nIf the old method has a lot of code, then that means the deprecation is an instruction to learn the new format and use it as part of the replacement. Not a simple copy/paste replacement, but a \"migration\" from one way to a very different way. That is the case here.",
+      "range": {
+        "startLine": 110,
+        "startChar": 25,
+        "endLine": 110,
+        "endChar": 33
+      },
+      "revId": "55e095947f050d8555d3f70c9d3545683e1196b9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
