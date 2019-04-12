@@ -135,6 +135,7 @@
 	"translate-pref-editassistlang-help": "Used in [[Special:Preferences]], tab Editing.",
 	"translate-pref-editassistlang-bad": "Used as validation result.\n\nParameters:\n* $1 - a language code, not list of codes",
 	"right-translate": "{{doc-right|translate}}",
+	"action-translate": "{{doc-action|translate}}",
 	"right-translate-manage": "{{doc-right|translate-manage}}",
 	"action-translate-manage": "{{doc-action|translate-manage}}",
 	"right-translate-import": "{{doc-right|translate-import}}",
