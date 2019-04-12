@@ -986,7 +986,7 @@ class PageTranslationHooks {
 				'lang' => $language->getHtmlCode(),
 			],
 			$language->semicolonList( $actions )
-		) . Html::element( 'hr' );
+		);
 
 		$context->getOutput()->addHTML( $header );
 	}
