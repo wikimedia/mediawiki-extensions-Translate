@@ -1,8 +1,8 @@
 .mw-pt-languages {
+	background-color: #f8f9fa;
 	display: table;
 	border: 1px solid #a2a9b1;
 	box-sizing: border-box;
-	background: #f8f9fa none repeat scroll 0 0;
 	border-collapse: collapse;
 	line-height: 1.2;
 	width: 100%;
@@ -11,19 +11,17 @@
 }
 
 .mw-pt-languages-label {
+	background-color: #eaecf0;
 	display: table-cell;
-	border-right: 1px solid #a2a9b1;
 	padding: 0.5em;
-	background: #eaecf0 none repeat scroll 0 0;
 	font-weight: bold;
-	width: 15%;
+	white-space: nowrap;
 }
 
 .mw-pt-languages-list {
+	display: table-cell;
 	padding-left: 0.5em;
 	padding-bottom: 0.7em;
-	display: table-cell;
-	width: 80%;
 }
 
 .mw-pt-languages-list a {
