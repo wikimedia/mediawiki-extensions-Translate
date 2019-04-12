@@ -99,7 +99,7 @@
 								.text( mw.msg( 'tsb-reminder-sending' ) );
 
 							doApiAction( {
-								'do': 'remind',
+								do: 'remind',
 								userid: request.userid
 							} ).done( function () {
 								$reminderStatus.text( mw.msg( 'tsb-reminder-sent-new' ) );
@@ -126,7 +126,7 @@
 
 							doApiAction( {
 								userid: request.userid,
-								'do': 'promote'
+								do: 'promote'
 							} ).done( function () {
 								removeSelectedRequests();
 
@@ -143,7 +143,7 @@
 
 							doApiAction( {
 								userid: request.userid,
-								'do': 'delete'
+								do: 'delete'
 							} ).done( function () {
 								removeSelectedRequests();
 
@@ -288,7 +288,7 @@
 
 							doApiAction( {
 								userid: selectedUserIDs,
-								'do': 'promote'
+								do: 'promote'
 							} ).done( function () {
 								removeSelectedRequests();
 
@@ -305,7 +305,7 @@
 
 							doApiAction( {
 								userid: selectedUserIDs,
-								'do': 'delete'
+								do: 'delete'
 							} ).done( function () {
 								removeSelectedRequests();
 

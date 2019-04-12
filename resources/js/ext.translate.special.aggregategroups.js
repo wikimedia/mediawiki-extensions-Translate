@@ -18,7 +18,7 @@
 		}
 
 		params = $.extend( getApiParams( $target ), {
-			'do': 'dissociate',
+			do: 'dissociate',
 			group: $target.data( 'groupid' )
 		} );
 
@@ -49,7 +49,7 @@
 			$a = $( '<a>', aAttr ).text( subgroupName );
 
 			spanAttr = {
-				'class': 'tp-aggregate-remove-button',
+				class: 'tp-aggregate-remove-button',
 				'data-groupid': subgroupId
 			};
 
@@ -71,7 +71,7 @@
 
 		if ( subgroupId ) {
 			params = $.extend( getApiParams( $target ), {
-				'do': 'associate',
+				do: 'associate',
 				group: subgroupId
 			} );
 
@@ -101,7 +101,7 @@
 			// eslint-disable-next-line no-alert
 			window.confirm( mw.msg( 'tpt-aggregategroup-remove-confirm' ) ) ) {
 			params = $.extend( getApiParams( $target ), {
-				'do': 'remove'
+				do: 'remove'
 			} );
 
 			api.postWithToken( 'csrf', params )
@@ -139,7 +139,7 @@
 
 		params = {
 			action: 'aggregategroups',
-			'do': 'update',
+			do: 'update',
 			groupname: aggregateGroupName,
 			groupdescription: aggregateGroupDesc,
 			aggregategroup: aggregateGroupId
@@ -272,13 +272,13 @@
 				$saveButton = $( '<input>' )
 					.attr( {
 						type: 'button',
-						'class': 'tp-aggregategroup-update'
+						class: 'tp-aggregategroup-update'
 					} )
 					.val( mw.msg( 'tpt-aggregategroup-update' ) );
 				$cancelButton = $( '<input>' )
 					.attr( {
 						type: 'button',
-						'class': 'tp-aggregategroup-update-cancel'
+						class: 'tp-aggregategroup-update-cancel'
 					} )
 					.val( mw.msg( 'tpt-aggregategroup-update-cancel' ) );
 				$divEdit = $( '<div>' )
@@ -287,7 +287,7 @@
 						.text( mw.msg( 'tpt-aggregategroup-edit-name' ) ) )
 					.append( $( '<input>' )
 						.attr( {
-							'class': 'tp-aggregategroup-edit-name',
+							class: 'tp-aggregategroup-edit-name',
 							id: 'tp-agg-name'
 						} )
 						.val( aggregateGroupName )
@@ -296,7 +296,7 @@
 						.text( mw.msg( 'tpt-aggregategroup-edit-description' ) ) )
 					.append( $( '<input>' )
 						.attr( {
-							'class': 'tp-aggregategroup-edit-description',
+							class: 'tp-aggregategroup-edit-description',
 							id: 'tp-agg-desc'
 						} )
 						.val( aggregateGroupDesc )
@@ -312,7 +312,7 @@
 
 				$groupSelector = $( '<input>' ).attr( {
 					type: 'text',
-					'class': 'tp-group-input'
+					class: 'tp-group-input'
 				} );
 				$groupSelector.focus( excludeFunction );
 				$groupSelector.autocomplete( {
@@ -325,7 +325,7 @@
 				$addButton = $( '<input>' )
 					.attr( {
 						type: 'button',
-						'class': 'tp-aggregate-add-button',
+						class: 'tp-aggregate-add-button',
 						id: aggregateGroupId
 					} )
 					.val( mw.msg( 'tpt-aggregategroup-add' ) );
@@ -348,7 +348,7 @@
 
 			params = {
 				action: 'aggregategroups',
-				'do': 'add',
+				do: 'add',
 				groupname: aggregateGroupName,
 				groupdescription: aggregateGroupDesc
 			};

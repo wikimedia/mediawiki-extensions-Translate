@@ -10,9 +10,9 @@
 	 * Example usage:
 	 *
 	 * $( 'div.proofread' ).proofread( {
-	 *	message: messageObject, // Mandatory message object
-	 *	sourcelangcode: 'en', // Mandatory source language code
-	 *	targetlangcode: 'hi' // Mandatory target language code
+	 *     message: messageObject, // Mandatory message object
+	 *     sourcelangcode: 'en', // Mandatory source language code
+	 *     targetlangcode: 'hi' // Mandatory target language code
 	 * } );
 	 *
 	 * @param {Element} element
