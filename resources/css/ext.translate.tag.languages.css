@@ -9,6 +9,11 @@
 	overflow: auto;
 }
 
+/* Visually merge languages box border into translate box where available */
+.mw-pt-translate-header ~ .mw-parser-output .mw-pt-languages {
+	margin-top: -1px;
+}
+
 .mw-pt-languages-label {
 	background-color: #eaecf0;
 	display: table-cell;
