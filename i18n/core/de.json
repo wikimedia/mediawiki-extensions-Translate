@@ -115,6 +115,7 @@
 	"translate-pref-editassistlang-help": "Mit Kommas getrennte Liste von Sprachcodes.\nDie Übersetzungen der Nachrichten in den gewählten Sprachen werden beim Übersetzen angezeigt.\nDie Standardliste ist abhängig von der Sprache der Benutzeroberfläche.",
 	"translate-pref-editassistlang-bad": "In der Liste ist ein ungültiger Sprachcode enthalten:\n<nowiki>$1</nowiki>.",
 	"right-translate": "Bearbeitungen mithilfe der Übersetzungsoberfläche tätigen",
+	"action-translate": "Bearbeitungen mithilfe der Übersetzungsoberfläche zu tätigen",
 	"right-translate-manage": "Nachrichtengruppen verwalten",
 	"action-translate-manage": "Nachrichtengruppen zu verwalten",
 	"right-translate-import": "Offlineübersetzungen importieren",

@@ -112,6 +112,7 @@
 	"translate-pref-editassistlang-help": "Liste os idiomas, separados por vírgulas.\nQuando você estiver traduzindo, as traduções nos idiomas aqui definidos também serão exibidas.\nOs idiomas padrão deste recurso variam de acordo com a língua de sua interface.",
 	"translate-pref-editassistlang-bad": "A listagem possui códigos de idioma inválidos:\n<nowiki>$1</nowiki>.",
 	"right-translate": "Editar usando a interface de tradução",
+	"action-translate": "editar usando a interface de tradução",
 	"right-translate-manage": "Gerenciar grupos de mensagens",
 	"action-translate-manage": "gerenciar grupos de mensagens",
 	"right-translate-import": "Importar traduções offline",
