@@ -96,6 +96,7 @@
 	"translate-pref-editassistlang-help": "Codece de le lènghe separate da virgole.\nLe traduziune de 'nu messàgge jndr'à ste lènghe avènene fatte 'ndrucà duranne 'a traduzione.\nL'elenghe predefinite (default) de le lènghe depende da ìa probbia lènghe.",
 	"translate-pref-editassistlang-bad": "Codece d'a lènghe invalide jndr'à l'elenghe:\n<nowiki>$1</nowiki>.",
 	"right-translate": "Cange ausanne l'inderfacce de traduzione",
+	"action-translate": "cange ausanne l'inderfacce de traduzione",
 	"right-translate-manage": "Gestisce le gruppe de messàgge",
 	"action-translate-manage": "gestisce le gruppe de messàgge",
 	"right-translate-import": "'Mborte le traduziune fore linèe",
