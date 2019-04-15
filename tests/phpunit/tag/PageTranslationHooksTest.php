@@ -19,10 +19,22 @@ class PageTranslationHooksTest extends MediaWikiTestCase {
 			'wgHooks' => [],
 			'wgEnablePageTranslation' => true,
 			'wgTranslateTranslationServices' => [],
+			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
+			'wgGroupPermissions' => [
+				'sysop' => [
+					'translate-manage' => true,
+				],
+			],
 		] );
+
 		TranslateHooks::setupTranslate();
 		$this->setTemporaryHook( 'TranslateInitGroupLoaders',
 			[ 'TranslatablePageMessageGroupStore::registerLoader' ] );
+
+		$this->setTemporaryHook(
+			'TranslatePostInitGroups',
+			[ $this, 'getTestGroups' ]
+		);
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
@@ -30,6 +42,16 @@ class PageTranslationHooksTest extends MediaWikiTestCase {
 
 		MessageIndex::setInstance( new HashMessageIndex() );
 		MessageIndex::singleton()->rebuild();
+	}
+
+	public function getTestGroups( array &$groups, array &$deps, array &$autoload ) {
+		$messages = [
+			'translated' => 'bunny',
+			'untranslated' => 'fanny',
+		];
+		$groups['test-group'] = new MockWikiMessageGroup( 'test-group', $messages );
+
+		return false;
 	}
 
 	public function testRenderTagPage() {
@@ -93,5 +115,32 @@ class PageTranslationHooksTest extends MediaWikiTestCase {
 			$actual[ 'messagegroupid' ],
 			'Message group id is correct'
 		);
+	}
+
+	public function testValidateMessagePermission() {
+		$plainUser = $this->getMutableTestUser()->getUser();
+
+		$title = Title::newFromText( 'MediaWiki:translated/fi' );
+		$content = ContentHandler::makeContent( 'pupuliini', $title );
+		$status = new \Status();
+
+		$requestContext = new RequestContext();
+		$requestContext->setLanguage( 'en-gb' );
+		$requestContext->setTitle( $title );
+
+		PageTranslationHooks::validateMessage( $requestContext, $content, $status, '', $plainUser );
+
+		$this->assertFalse( $status->isOK(),
+			'translation with errors is not saved if a normal user is translating.' );
+		$this->assertGreaterThan( 0, $status->getErrorsArray(),
+			'errors are specified when translation fails validation.' );
+
+		$newStatus = new \Status();
+		$superUser = $this->getTestSysop()->getUser();
+
+		PageTranslationHooks::validateMessage( $requestContext, $content, $newStatus, '', $superUser );
+
+		$this->assertTrue( $newStatus->isOK(),
+			"translation with errors is saved if user with 'translate-manage' permission is translating." );
 	}
 }
