@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bbb9c4a0_2aa9ca54",
+        "filename": "MessageValidator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-15T18:33:26Z",
+      "side": 1,
+      "message": "Yes, updated the comment and various other places in the code.",
+      "parentUuid": "3717730c_79b92af1",
+      "range": {
+        "startLine": 24,
+        "startChar": 21,
+        "endLine": 24,
+        "endChar": 32
+      },
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6aa0b1e0_a6b9c785",
         "filename": "MessageValidator.php",
         "patchSetId": 2
@@ -39,6 +63,24 @@
       "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0fcea457_2b214baf",
+        "filename": "MessageValidator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-15T18:33:26Z",
+      "side": 1,
+      "message": "Created a `ValidationResult` class as suggested.",
+      "parentUuid": "6aa0b1e0_a6b9c785",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -77,6 +119,24 @@
     },
     {
       "key": {
+        "uuid": "b714e19f_4d6d3529",
+        "filename": "api/ApiTranslationCheck.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-15T18:33:26Z",
+      "side": 1,
+      "message": "Yup, have done that now, thanks.",
+      "parentUuid": "05244c44_c96dbbde",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7da557c1_d257774c",
         "filename": "extension-wip.json",
         "patchSetId": 2
@@ -91,6 +151,24 @@
       "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "821f404a_8bc10420",
+        "filename": "extension-wip.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-15T18:33:26Z",
+      "side": 1,
+      "message": "I agree, using namespaces now.",
+      "parentUuid": "7da557c1_d257774c",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +195,30 @@
     },
     {
       "key": {
+        "uuid": "057a7b1a_c8ce03fa",
+        "filename": "messagegroups/MessageGroupBase.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-15T18:33:26Z",
+      "side": 1,
+      "message": "Updated, will keep in mind for the future.",
+      "parentUuid": "29b9b602_919e3da6",
+      "range": {
+        "startLine": 87,
+        "startChar": 7,
+        "endLine": 87,
+        "endChar": 12
+      },
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ec3fcb43_df1ee071",
         "filename": "messagegroups/WikiPageMessageGroup.php",
         "patchSetId": 2
@@ -131,6 +233,24 @@
       "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7042a077_84b7f3cc",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-15T18:33:26Z",
+      "side": 1,
+      "message": "OK, updated.",
+      "parentUuid": "ec3fcb43_df1ee071",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -157,6 +277,30 @@
     },
     {
       "key": {
+        "uuid": "88253b1a_5cc59136",
+        "filename": "validators/MediaWikiPluralValidator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-15T18:33:26Z",
+      "side": 1,
+      "message": "Yea, will check in other places also.",
+      "parentUuid": "1b6c1e97_0da2e7a3",
+      "range": {
+        "startLine": 9,
+        "startChar": 15,
+        "endLine": 9,
+        "endChar": 17
+      },
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "25568dae_3f42bd4f",
         "filename": "validators/MediaWikiPluralValidator.php",
         "patchSetId": 2
@@ -171,6 +315,24 @@
       "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7e0e335_e49f38b8",
+        "filename": "validators/MediaWikiPluralValidator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-15T18:33:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "25568dae_3f42bd4f",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -191,6 +353,24 @@
     },
     {
       "key": {
+        "uuid": "79ed1eee_ec417bfc",
+        "filename": "validators/MediaWikiPluralValidator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-15T18:33:26Z",
+      "side": 1,
+      "message": "I\u0027m planning to leave this for now. Will create a separate task and follow it on that.",
+      "parentUuid": "78b03af3_efcbde4c",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f43c1434_b5cee0fc",
         "filename": "validators/Validator.php",
         "patchSetId": 2
@@ -205,6 +385,24 @@
       "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "206693cd_b384d592",
+        "filename": "validators/Validator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-15T18:33:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f43c1434_b5cee0fc",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -225,6 +423,24 @@
     },
     {
       "key": {
+        "uuid": "31e62897_c998ac7b",
+        "filename": "validators/Validator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-15T18:33:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a8144d82_3925b1d3",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1bf762c8_5a4f0e96",
         "filename": "validators/Validator.php",
         "patchSetId": 2
@@ -239,6 +455,24 @@
       "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0967da07_1598e0ef",
+        "filename": "validators/Validator.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-15T18:33:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1bf762c8_5a4f0e96",
+      "revId": "f67cd3b9980e56c1719bf54936ef17580412d779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
