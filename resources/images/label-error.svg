@@ -18,20 +18,16 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>
-		flag
-	</dc:title>
+        <dc:title>error</dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
      id="defs10" />
   <title
-     id="title2">
-		flag
-	</title>
+     id="title2">error</title>
   <path
-     style="fill:#ac6600;fill-opacity:1"
+     style="fill:#b32424;fill-opacity:1"
      id="path4"
-     d="M17 6L3 1v18h2v-6.87L17 6z" />
+     d="M13.728 1H6.272L1 6.272v7.456L6.272 19h7.456L19 13.728V6.272zM11 15H9v-2h2zm0-4H9V5h2z" />
 </svg>
