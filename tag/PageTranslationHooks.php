@@ -1324,4 +1324,73 @@ class PageTranslationHooks {
 			} );
 		}
 	}
+
+	/**
+	 * Runs the configured validator to ensure that the message meets the required criteria.
+	 * Hook: EditFilterMergedContent
+	 * @param IContextSource $context
+	 * @param Content $content
+	 * @param Status $status
+	 * @param string $summary
+	 * @param \User $user
+	 * @return bool true if message is valid, false otherwise.
+	 */
+	public static function validateMessage( IContextSource $context, Content $content,
+		Status $status, $summary, \User $user ) {
+		global $wgEnablePageTranslation;
+
+		if ( !$content instanceof TextContent ) {
+			// Not interested
+			return true;
+		}
+
+		$text = $content->getText();
+		$title = $context->getTitle();
+		$handle = new MessageHandle( $title );
+
+		if ( !$handle->isValid() ) {
+			return true;
+		}
+
+		// Don't bother validating if fuzzybot or translation admin are saving.
+		if ( $user->isAllowed( 'translate-manage' ) || $user->getName() === \FuzzyBot::getName() ) {
+			return true;
+		}
+
+		// Check the namespace, and perform validations for all messages excluding documentation.
+		if ( $wgEnablePageTranslation && $handle->isMessageNamespace() && !$handle->isDoc() ) {
+			$group = $handle->getGroup();
+
+			if ( method_exists( $group, 'getMessageContent' ) ) {
+				$definition = $group->getMessageContent( $handle );
+			} else {
+				$definition = $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
+			}
+
+			$message = new FatMessage( $handle->getKey(), $definition );
+			$message->setTranslation( $text );
+
+			$messageValidator = $group->getValidator();
+			if ( !$messageValidator ) {
+				return true;
+			}
+
+			$validationResponse = $messageValidator->validateMessage( $message, $handle->getCode() );
+			if ( $validationResponse->hasErrors() ) {
+				$status->fatal( new \ApiRawMessage(
+					$context->msg( 'translate-validation-failed' )->parse(),
+					'translate-validation-failed',
+					[
+						'validation' => [
+							'errors' => $validationResponse->getDescriptiveErrors( $context ),
+							'warnings' => $validationResponse->getDescriptiveWarnings( $context )
+						]
+					]
+				) );
+				return false;
+			}
+		}
+
+		return true;
+	}
 }

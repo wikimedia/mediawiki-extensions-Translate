@@ -157,17 +157,24 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject, 
 	}
 
 	/**
-	 * @return MediaWikiMessageChecker
+	 * @inheritDoc
 	 */
 	public function getChecker() {
-		$checker = new MediaWikiMessageChecker( $this );
-		$checker->setChecks( [
-			[ $checker, 'pluralCheck' ],
-			[ $checker, 'braceBalanceCheck' ],
-			[ $checker, 'miscMWChecks' ]
+		return null;
+	}
+
+	/**
+	 * @return MessageValidator
+	 */
+	public function getValidator() {
+		$validator = new MessageValidator( $this->getId() );
+		$validator->setValidators( [
+			[ 'id' => 'MediaWikiPlural' ],
+			[ 'id' => 'BraceBalance' ],
+			[ 'id' => 'MediaWikiMisc' ]
 		] );
 
-		return $checker;
+		return $validator;
 	}
 
 	public function getInsertablesSuggester() {

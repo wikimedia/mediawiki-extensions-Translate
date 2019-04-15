@@ -139,6 +139,15 @@
 		},
 
 		/**
+		 * Check if the current user can update and manage message groups.
+		 *
+		 * @return {boolean}
+		 */
+		canManage: function () {
+			return mw.config.get( 'TranslateManageRight' );
+		},
+
+		/**
 		 * Adds missing languages to the language database so that they can be used in ULS.
 		 *
 		 * @param {Object} languages Language tags mapped to language names

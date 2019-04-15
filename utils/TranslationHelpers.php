@@ -27,7 +27,7 @@ class TranslationHelpers {
 
 	/**
 	 * The group object of the message (or null if there isn't any)
-	 * @var MessageGroup
+	 * @var MessageGroup|null
 	 */
 	protected $group;
 

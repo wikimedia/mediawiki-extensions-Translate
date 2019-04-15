@@ -315,6 +315,10 @@ abstract class MessageGroupOld implements MessageGroup {
 		return null;
 	}
 
+	public function getValidator() {
+		return null;
+	}
+
 	public function getTags( $type = null ) {
 		$tags = [
 			'optional' => $this->optional,
