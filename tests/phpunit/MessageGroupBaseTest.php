@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extensions\Translate\MessageValidator\Validator;
+
 class MessageGroupBaseTest extends MediaWikiTestCase {
 
 	/**
@@ -176,6 +178,75 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 		$states = $this->group->getMessageGroupStates()->getStates();
 		$this->assertEquals( $expectedStates, $states );
 	}
+
+	public function testInsertableValidatorConfiguration() {
+		$conf = $this->groupConfiguration;
+
+		unset( $conf['INSERTABLES']['class'] );
+		$conf['INSERTABLES']['classes'] = [ 'AnotherFakeInsertablesSuggester' ];
+		$conf['VALIDATORS'] = [];
+		$conf['VALIDATORS'][] = [
+			'class' => 'FakeInsertableValidator',
+			'insertable' => true,
+			'params' => 'TEST'
+		];
+
+		$conf['VALIDATORS'][] = [
+			'class' => 'AnotherFakeValidator',
+			'insertable' => false,
+			'params' => 'TEST2'
+		];
+
+		$this->group = MessageGroupBase::factory( $conf );
+		$messageValidators = $this->group->getValidator();
+		$insertables = $this->group->getInsertablesSuggester()->getInsertables( '' );
+
+		$this->assertInstanceOf( MessageValidator::class, $messageValidators,
+			'should correctly fetch a \'MessageValidator\' using the \'VALIDATOR\' configuration.'
+		);
+
+		$this->assertCount( 2, $insertables,
+			'should not add non-insertable validator when \'insertable\' is false.'
+		);
+
+		$this->assertEquals(
+			new Insertable( 'Fake', 'Insertable', 'Validator' ),
+			$insertables[1],
+			'should correctly fetch an \'InsertableValidator\' when \'insertable\' is true.'
+		);
+	}
+
+	public function testInsertableArrayConfiguration() {
+		$conf = $this->groupConfiguration;
+		unset( $conf['INSERTABLES']['class'] );
+		unset( $conf['INSERTABLES']['classes'] );
+
+		$conf['INSERTABLES'] = [
+			[
+				'class' => 'FakeInsertableValidator',
+				'params' => 'Regex'
+			],
+			[
+				'class' => 'AnotherFakeValidator',
+				'params' => 'Regex'
+			]
+		];
+
+		$this->group = MessageGroupBase::factory( $conf );
+		$insertables = $this->group->getInsertablesSuggester()->getInsertables( '' );
+
+		$this->assertCount( 2, $insertables,
+			'should fetch the correct count of \'Insertables\' when \'InsertableSuggesters\' ' .
+			'are configured using the array configuration.'
+		);
+
+		$this->assertEquals(
+			new Insertable( 'Another', 'Fake Insertable', 'Validator' ),
+			$insertables[1],
+			'should fetch the correct \'Insertables\' when \'InsertableSuggesters\' ' .
+			'are configured using the array configuration.'
+		);
+	}
 }
 
 class FakeInsertablesSuggester implements InsertablesSuggester {
@@ -187,5 +258,23 @@ class FakeInsertablesSuggester implements InsertablesSuggester {
 class AnotherFakeInsertablesSuggester implements InsertablesSuggester {
 	public function getInsertables( $text ) {
 		return [ new Insertable( 'AnotherFake', 'Insertables', 'Suggester' ) ];
+	}
+}
+
+class FakeInsertableValidator implements Validator, InsertablesSuggester {
+	public function validate( $messages, $code, array &$notices ) {
+	}
+
+	public function getInsertables( $text ) {
+		return [ new Insertable( 'Fake', 'Insertable', 'Validator' ) ];
+	}
+}
+
+class AnotherFakeValidator implements Validator, InsertablesSuggester {
+	public function validate( $messages, $code, array &$notices ) {
+	}
+
+	public function getInsertables( $text ) {
+		return [ new Insertable( 'Another', 'Fake Insertable', 'Validator' ) ];
 	}
 }
