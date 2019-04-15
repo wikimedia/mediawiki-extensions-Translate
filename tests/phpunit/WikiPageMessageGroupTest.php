@@ -8,7 +8,7 @@
  /**
   * @group medium
   */
-class WikiPageMessageGroupSerializationTest extends MediaWikiTestCase {
+class WikiPageMessageGroupTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 
@@ -58,4 +58,11 @@ class WikiPageMessageGroupSerializationTest extends MediaWikiTestCase {
 			'after serialization ignored has 2 values.' );
 	}
 
+	public function testMessageValidator() {
+		$group = MessageGroups::getGroup( 'anotherpageid' );
+		$msgValidator = $group->getValidator();
+
+		$this->assertInstanceOf( MessageValidator::class, $msgValidator,
+			'returns a valid object of MessageValidator class.' );
+	}
 }
