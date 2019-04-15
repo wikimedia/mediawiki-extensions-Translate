@@ -212,7 +212,7 @@
 
 			api.postWithToken( 'csrf', params ).done( function () {
 				$message.find( '.tux-proofread-action' )
-					.removeClass( 'tux-warning' ) // in case, it failed previously
+					.removeClass( 'tux-notice' ) // in case, it failed previously
 					.addClass( 'accepted' );
 
 				counter = $message.find( '.tux-proofread-count' );
@@ -231,7 +231,7 @@
 					mw.track( 'ext.translate.event.proofread', message );
 				}
 			} ).fail( function ( errorCode ) {
-				$message.find( '.tux-proofread-action' ).addClass( 'tux-warning' );
+				$message.find( '.tux-proofread-action' ).addClass( 'tux-notice' );
 				if ( errorCode === 'assertuserfailed' ) {
 					// eslint-disable-next-line no-alert
 					alert( mw.msg( 'tux-session-expired' ) );

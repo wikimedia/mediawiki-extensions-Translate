@@ -71,7 +71,7 @@ class TTMServerBootstrap extends Maintenance {
 
 		// Do as little as possible in the main thread, to not clobber forked processes.
 		// See also #resetStateForFork.
-		$pid = pcntl_fork();
+		$pid = -1;
 		if ( $pid === 0 ) {
 			$this->resetStateForFork();
 			$this->beginBootStrap( $config );
@@ -101,7 +101,7 @@ class TTMServerBootstrap extends Maintenance {
 			}
 
 			// Fork to increase speed with parallelism. Also helps with memory usage if there are leaks.
-			$pid = pcntl_fork();
+			$pid = -1;
 
 			if ( $pid === 0 ) {
 				$this->resetStateForFork();
