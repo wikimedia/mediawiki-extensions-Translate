@@ -1,3 +1,4 @@
+# HOW-TO: https://github.com/romaricdrigon/MetaYaml#how-to-write-a-schema
 root:
   _type: array
   _children:
@@ -58,6 +59,32 @@ root:
           _type: prototype
           _prototype:
             _type: text
+    VALIDATORS:
+      _type: prototype
+      _prototype:
+        _type: array
+        _children:
+          id:
+            _type: text
+            _not_empty: true
+            _description: ID of a pre-defined validator. Required if "class" is not specified
+          class:
+            _type: text
+            _not_empty: true
+            _description: Custom validator class. Required if "id" is not specified
+          enforce:
+            _type: boolean
+          insertable:
+            _type: boolean
+          params:
+            _type: choice
+            _choices:
+              1:
+                 _type: array
+                 _children: []
+                 _ignore_extra_keys: true
+              2:
+                 _type: text
     TAGS:
       _type: prototype
       _prototype:
