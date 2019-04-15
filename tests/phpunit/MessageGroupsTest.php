@@ -15,6 +15,7 @@ class MessageGroupsTest extends MediaWikiTestCase {
 
 		$conf = [
 			__DIR__ . '/data/ParentGroups.yaml',
+			__DIR__ . '/data/ValidatorGroup.yaml'
 		];
 
 		global $wgHooks;
@@ -84,5 +85,14 @@ class MessageGroupsTest extends MediaWikiTestCase {
 		$this->assertEquals( '', MessageGroups::haveSingleSourceLanguage(
 			[ $enGroup1, $enGroup2, $teGroup1 ] )
 		);
+	}
+
+	public function testGroupYAMLParsing() {
+		$group = MessageGroups::getGroup( 'test-validator-group' );
+		$msgValidator = $group->getValidator();
+		$suggester = $group->getInsertablesSuggester();
+
+		$this->assertCount( 1, $msgValidator->getValidators() );
+		$this->assertCount( 2, $suggester->getInsertables( "$1 \case" ) );
 	}
 }

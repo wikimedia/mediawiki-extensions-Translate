@@ -1,4 +1,6 @@
 <?php
+use MediaWiki\Extensions\Translate\MessageValidator\ValidationResult;
+
 /**
  * @since 2017.10
  * @license GPL-2.0-or-later
@@ -15,16 +17,53 @@ class ApiTranslationCheck extends ApiBase {
 		$translation = $params[ 'translation' ];
 
 		$checkResults = $this->getWarnings( $handle, $translation );
+		$validationResult = $this->validateTranslation( $handle, $translation );
 
-		$warnings = [];
-		foreach ( $checkResults as $item ) {
-			$key = array_shift( $item );
-			$msg = $this->getContext()->msg( $key, $item )->parse();
-			$this->getResult()->addValue( 'warnings', null, $msg );
+		if ( $validationResult ) {
+			// Added for backward compatibility with previous MessageChecker framework.
+			// TODO: MessageValidator - Remove in the future.
+			$validationResult->setWarnings(
+				array_merge( $checkResults, $validationResult->getWarnings() )
+			);
+
+			$this->getResult()->addValue( null, 'validation', [
+				'errors' => $validationResult->getDescriptiveErrors( $this->getContext() ),
+				'warnings' => $validationResult->getDescriptiveWarnings( $this->getContext() ),
+			] );
+		} else {
+			// To maintain backward compatibility with previous MessageChecker framework.
+			// TODO: MessageValidator - Remove in the future.
+			$this->getResult()->addValue( null, 'validation', [
+				'errors' => [],
+				'warnings' => ValidationResult::expandMessages( $this->getContext(), $checkResults )
+			] );
 		}
 	}
 
-	public function getWarnings( MessageHandle $handle, $translation ) {
+	private function validateTranslation( MessageHandle $handle, $translation ) {
+		if ( $translation === '' ) {
+			return null;
+		}
+
+		if ( $handle->isDoc() || !$handle->isValid() ) {
+			return null;
+		}
+
+		$messageValidator = $handle->getGroup()->getValidator();
+		if ( !$messageValidator ) {
+			return null;
+		}
+
+		$definition = $this->getDefinition( $handle );
+		$message = new FatMessage( $handle->getKey(), $definition );
+		$message->setTranslation( $translation );
+
+		$validationResult = $messageValidator->validateMessage( $message, $handle->getCode() );
+
+		return $validationResult;
+	}
+
+	private function getWarnings( MessageHandle $handle, $translation ) {
 		if ( $translation === '' ) {
 			return [];
 		}

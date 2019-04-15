@@ -15,7 +15,7 @@ class PHPVariableLoader {
 	 * Returns a global variable from PHP file by executing the file.
 	 * @param string $_filename Path to the file.
 	 * @param string $_variable Name of the variable.
-	 * @return mixed The variable contents or null.
+	 * @return mixed|null The variable contents or null.
 	 */
 	public static function loadVariableFromPHPFile( $_filename, $_variable ) {
 		if ( !file_exists( $_filename ) ) {

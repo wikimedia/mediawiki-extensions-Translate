@@ -83,7 +83,10 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $defs;
 	}
 
-	protected function getFromConf( $section, $key ) {
+	protected function getFromConf( $section, $key = null ) {
+		if ( $key === null ) {
+			return $this->conf[$section] ?? null;
+		}
 		return $this->conf[$section][$key] ?? null;
 	}
 
@@ -128,6 +131,21 @@ abstract class MessageGroupBase implements MessageGroup {
 		}
 
 		return $checker;
+	}
+
+	public function getValidator() {
+		$validatorConfigs = $this->getFromConf( 'VALIDATORS' );
+		if ( !$validatorConfigs ) {
+			return null;
+		}
+
+		$msgValidator = new MessageValidator( $this->getId() );
+
+		foreach ( $validatorConfigs as $config ) {
+			$msgValidator->addValidator( $config );
+		}
+
+		return $msgValidator;
 	}
 
 	public function getMangler() {
@@ -178,10 +196,23 @@ abstract class MessageGroupBase implements MessageGroup {
 
 		foreach ( $allClasses as $class ) {
 			if ( !class_exists( $class ) ) {
-				throw new MWException( "InsertablesSuggester class $class does not exist." );
+				throw new InvalidArgumentException( "InsertablesSuggester class $class does not exist." );
 			}
 
 			$suggesters[] = new $class();
+		}
+
+		if ( $suggesters === [] ) {
+			// TODO: MessageValidator - This can be removed in the future. Needed for B.C.
+			// no suggesters yet, lets see if there are insertables with the array configuration
+			// structure.
+			$suggesters = $this->getArrayInsertables();
+		}
+
+		// get validators marked as insertable
+		$messageValidator = $this->getValidator();
+		if ( $messageValidator ) {
+			$suggesters = array_merge( $suggesters, $messageValidator->getInsertableValidators() );
 		}
 
 		return new CombinedInsertablesSuggester( $suggesters );
@@ -444,5 +475,26 @@ abstract class MessageGroupBase implements MessageGroup {
 	 */
 	public function getTranslationAids() {
 		return TranslationAid::getTypes();
+	}
+
+	/**
+	 * Fetches insertables that have been added in the array configuration format.
+	 * TODO: MessageValidator - Move this code to getInsertablesSuggester
+	 * @return array
+	 */
+	private function getArrayInsertables() {
+		$suggesters = [];
+		$insertableConf = $this->getFromConf( 'INSERTABLES' );
+
+		foreach ( $insertableConf as $config ) {
+			if ( !isset( $config['class'] ) ) {
+				throw new InvalidArgumentException( "Insertable configuration does not provide a class." );
+			}
+
+			$class = $config['class'];
+			$suggesters[] = new $class( $config['params'] );
+		}
+
+		return $suggesters;
 	}
 }

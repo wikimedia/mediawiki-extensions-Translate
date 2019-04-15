@@ -241,7 +241,7 @@ $wgTranslateBlacklist = [];
 
 /**
  * File containing checks that are to be skipped. See
- * https://gerrit.wikimedia.org/r/gitweb?p=translatewiki.git;a=blob;f=check-blacklist.php;hb=HEAD
+ * https://gerrit.wikimedia.org/r/plugins/gitiles/translatewiki/+/refs/heads/master/groups/check-blacklist.php
  * for example.
  *
  * @since 2012-10-15
