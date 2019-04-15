@@ -83,7 +83,10 @@ abstract class MessageGroupBase implements MessageGroup {
 		return $defs;
 	}
 
-	protected function getFromConf( $section, $key ) {
+	protected function getFromConf( $section, $key = null ) {
+		if ( $key === null ) {
+			return $this->conf[$section] ?? null;
+		}
 		return $this->conf[$section][$key] ?? null;
 	}
 
@@ -128,6 +131,21 @@ abstract class MessageGroupBase implements MessageGroup {
 		}
 
 		return $checker;
+	}
+
+	public function getValidator() {
+		$validatorConfigs = $this->getFromConf( 'VALIDATORS' );
+		if ( empty( $validatorConfigs ) ) {
+			return null;
+		}
+
+		$msgValidator = new MessageValidator( $this );
+
+		foreach ( $validatorConfigs as $config ) {
+			$msgValidator->addValidators( $config );
+		}
+
+		return $msgValidator;
 	}
 
 	public function getMangler() {
@@ -182,6 +200,19 @@ abstract class MessageGroupBase implements MessageGroup {
 			}
 
 			$suggesters[] = new $class();
+		}
+
+		if ( !count( $suggesters ) ) {
+			// TODO: MV - This can be removed in the future. Needed for B.C.
+			// no suggesters yet, lets see if there are insertables with the array configuration
+			// structure.
+			$suggesters = $this->getArrayInsertables();
+		}
+
+		// get validators marked as insertable
+		$messageValidator = $this->getValidator();
+		if ( $messageValidator ) {
+			$suggesters = array_merge( $suggesters, $messageValidator->getInsertableValidators() );
 		}
 
 		return new CombinedInsertablesSuggester( $suggesters );
@@ -448,5 +479,28 @@ abstract class MessageGroupBase implements MessageGroup {
 	 */
 	public function getTranslationAids() {
 		return TranslationAid::getTypes();
+	}
+
+	/**
+	 * Fetches insertables that have been added in the array configuration format.
+	 * TODO:MV - Move this code to getInsertablesSuggester
+	 * @return array
+	 */
+	private function getArrayInsertables() {
+		$suggesters = [];
+		$insertableConf = $this->getFromConf( 'INSERTABLES' );
+		if ( isset( $insertableConf['class'] ) || isset( $insertableConf['classes'] ) ) {
+			throw new \InvalidArgumentException( "Invalid configuration specified for Insertables." );
+		}
+		foreach ( $insertableConf as $config ) {
+			if ( !isset( $config['class'] ) ) {
+				throw new \InvalidArgumentException( "Insertable configuration does not provide a class." );
+			}
+
+			$class = $config['class'];
+			$suggesters[] = new $class( $config['params'] );
+		}
+
+		return $suggesters;
 	}
 }

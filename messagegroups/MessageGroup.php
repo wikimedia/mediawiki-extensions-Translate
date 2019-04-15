@@ -95,6 +95,12 @@ interface MessageGroup {
 	public function getChecker();
 
 	/**
+	 * Returns a message validator object or null.
+	 * @return MessageValidator or null
+	 */
+	public function getValidator();
+
+	/**
 	 * Return a message mangler or null.
 	 * @todo Make an interface for message manglers
 	 * @return StringMatcher or null

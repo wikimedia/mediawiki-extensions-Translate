@@ -191,7 +191,7 @@ class MessageChecker {
 						continue;
 					}
 
-					// If all of the aboce match, filter the check
+					// If all of the above match, filter the check
 					unset( $warningsArray[$mkey][$wkey] );
 				}
 			}
@@ -202,7 +202,7 @@ class MessageChecker {
 
 	/**
 	 * Matches check information against blacklist pattern.
-	 * @param string $pattern
+	 * @param string|array $pattern
 	 * @param string $value The actual value in the warnings produces by the check
 	 * @return bool True of the pattern matches the value.
 	 */
@@ -251,7 +251,7 @@ class MessageChecker {
 	}
 
 	/**
-	 * Compares two arrays return items that don't exist in the latter.
+	 * Compares two arrays and return items that don't exist in the latter.
 	 * @param array $defs
 	 * @param array $trans
 	 * @return array Items of $defs that are not in $trans.
@@ -397,7 +397,7 @@ class MessageChecker {
 				];
 			}
 
-			// Check for unknown variables in the translatio
+			// Check for unknown variables in the translation
 			$subcheck = 'unknown';
 			$params = self::compareArrays( $transVars[0], $defVars[0] );
 

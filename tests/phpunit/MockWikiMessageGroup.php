@@ -19,4 +19,14 @@ class MockWikiMessageGroup extends WikiMessageGroup {
 	public function getDefinitions() {
 		return $this->messages;
 	}
+
+	public function getValidator() {
+		$validator = new MessageValidator( $this );
+		$validator->setValidators( [
+			[ 'class' => 'AnotherMockTranslateValidator' ],
+			[ 'class' => 'MockTranslateValidator', 'enforce' => true ],
+		] );
+
+		return $validator;
+	}
 }
