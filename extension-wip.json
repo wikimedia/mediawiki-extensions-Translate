@@ -33,6 +33,7 @@
 		"AggregateMessageGroup": "messagegroups/AggregateMessageGroup.php",
 		"AmdFFS": "ffs/AmdFFS.php",
 		"AndroidXmlFFS": "ffs/AndroidXmlFFS.php",
+		"AnotherMockTranslateValidator": "tests/phpunit/validators/MockValidators.php",
 		"ApertiumWebService": "webservices/ApertiumWebService.php",
 		"ApiAggregateGroups": "api/ApiAggregateGroups.php",
 		"ApiGroupReview": "api/ApiGroupReview.php",
@@ -113,11 +114,13 @@
 		"MessageIndex": "utils/MessageIndex.php",
 		"MessageIndexRebuildJob": "utils/MessageIndexRebuildJob.php",
 		"MessageUpdateJob": "utils/MessageUpdateJob.php",
+		"MessageValidator": "MessageValidator.php",
 		"MessageWebImporter": "utils/MessageWebImporter.php",
 		"MetaYamlSchemaExtender": "MetaYamlSchemaExtender.php",
 		"MicrosoftWebService": "webservices/MicrosoftWebService.php",
 		"MockFileBasedMessageGroup": "tests/phpunit/MockFileBasedMessageGroup.php",
 		"MockMessageCollectionForExport": "tests/phpunit/MockMessageCollectionForExport.php",
+		"MockTranslateValidator": "tests/phpunit/validators/MockValidators.php",
 		"MockWikiMessageGroup": "tests/phpunit/MockWikiMessageGroup.php",
 		"NamespaceCM": "ffs/MediaWikiComplexMessages.php",
 		"NumericalParameterInsertablesSuggester": "insertables/NumericalParameterInsertablesSuggester.php",
@@ -132,6 +135,7 @@
 		"ReadableTTMServer": "ttmserver/Interfaces.php",
 		"RecentAdditionsMessageGroup": "messagegroups/RecentAdditionsMessageGroup.php",
 		"RecentMessageGroup": "messagegroups/RecentMessageGroup.php",
+		"RegexInsertablesSuggester": "insertables/RegexInsertablesSuggester.php",
 		"RemoteTTMServer": "ttmserver/RemoteTTMServer.php",
 		"RemoteTTMServerWebService": "webservices/RemoteTTMServerWebService.php",
 		"RESTBaseWebService": "webservices/RESTBaseWebService.php",
@@ -224,6 +228,9 @@
 		"XliffFFS": "ffs/XliffFFS.php",
 		"YamlFFS": "ffs/YamlFFS.php",
 		"YandexWebService": "webservices/YandexWebService.php"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extensions\\Translate\\": "includes/"
 	},
 	"Hooks": {
 		"ResourceLoaderTestModules": "TranslateHooks::onResourceLoaderTestModules",
@@ -424,8 +431,8 @@
 				"tux-editor-message-tools-linktothis",
 				"tux-editor-n-uses",
 				"tux-editor-need-more-help",
-				"tux-editor-outdated-warning",
-				"tux-editor-outdated-warning-diff-link",
+				"tux-editor-outdated-notice",
+				"tux-editor-outdated-notice-diff-link",
 				"tux-editor-paste-original-button-label",
 				"tux-editor-placeholder",
 				"tux-editor-editsummary-placeholder",
@@ -444,8 +451,8 @@
 				"tux-status-translated",
 				"tux-status-unsaved",
 				"tux-save-unknown-error",
-				"tux-warnings-hide",
-				"tux-warnings-more",
+				"tux-notices-hide",
+				"tux-notices-more",
 				"spamprotectiontext"
 			],
 			"targets": [

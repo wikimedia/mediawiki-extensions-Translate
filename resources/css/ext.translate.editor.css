@@ -277,11 +277,11 @@
 	padding: 0 0 0 5px;
 }
 
-.editarea .tux-warnings-block {
+.editarea .tux-notices-block {
 	position: relative;
 }
 
-.tux-warning {
+.tux-notice {
 	background-color: #ffc;
 }
 
@@ -289,22 +289,26 @@
 	background-color: #c9c9c9;
 }
 
-.tux-warning-message {
+.tux-notice-message {
 	font-size: 14px;
 	padding: 2px 15% 2px 5px;
-	/* 15px space for icon */
-	padding-left: 20px;
+	/* 24px space for icon */
+	padding-left: 24px;
 	background-position: left;
 	background-repeat: no-repeat;
+	/* 16 (size) + 4 + 4 = 24 (padding) */
+	background-position-x: 4px;
+	background-size: 16px 16px;
 }
 
-.tux-warning .diff {
-	font-size: 12px;
-	padding: 0 0 0 20px;
-	/* 15px space for icon */
+.tux-notice .diff {
+	/** Uses an older version of the clock */
+	background-size: 14px;
+	/* 14 (size) + 5 + 5 = 24 (padding) */
+	background-position-x: 5px;
 }
 
-.editarea .tux-more-warnings {
+.editarea .tux-more-notices {
 	background-color: #fbf6ad;
 	position: absolute;
 	right: 0;
@@ -312,23 +316,35 @@
 	text-align: right;
 	cursor: pointer;
 	bottom: 0;
+	font-size: 14px;
 }
 
-.tux-warning-message.validation {
-	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/label-flag.svg );
+.editarea .tux-more-notices.has-errors {
+	background-color: #fbb;
 }
 
-.tux-warning-message.diff {
-	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/label-clock.svg );
+.tux-notice-message.warning {
+	background-image: url( ../images/label-flag.svg );
 }
 
-.tux-warning-message .show-diff-link {
+.tux-notice-message.error,
+.tux-notice-message.translation-saving {
+	background-color: #fee7e6;
+	color: #b32424;
+	background-image: url( ../images/label-error.svg );
+}
+
+.tux-notice-message.diff {
+	background-image: url( ../images/label-clock.svg );
+}
+
+.tux-notice-message .show-diff-link {
 	color: #36c;
 	cursor: pointer;
 	padding-left: 5px;
 }
 
-.editarea .tux-more-warnings:before {
+.editarea .tux-more-notices:before {
 	content: '';
 	border-bottom: 1em solid #fbf6ad;
 	border-top: 1em solid transparent;
@@ -338,6 +354,11 @@
 	position: absolute;
 	right: 100%;
 	top: 0;
+}
+
+.editarea .tux-more-notices.has-errors:before {
+	border-bottom-color: #fbb;
+	border-right-color: #fbb;
 }
 
 .tux-editor-request-right {
