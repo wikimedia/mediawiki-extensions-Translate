@@ -197,6 +197,9 @@ class TranslateHooks {
 
 			// Update translated page when translation unit is deleted
 			$wgHooks['ArticleDeleteComplete'][] = 'PageTranslationHooks::onDeleteTranslationUnit';
+
+			// Validate the message before saving it.
+			$wgHooks['EditFilterMergedContent'][] = 'PageTranslationHooks::validateMessage';
 		}
 
 		global $wgTranslateUseSandbox;
@@ -686,6 +689,7 @@ class TranslateHooks {
 			$vars['TranslateMessageReviewRight'] =
 				$out->getUser()->isAllowed( 'translate-messagereview' );
 			$vars['DeleteRight'] = $out->getUser()->isAllowed( 'delete' );
+			$vars['TranslateManageRight'] = $out->getUser()->isAllowed( 'translate-manage' );
 			$vars['wgTranslateDocumentationLanguageCode'] = $wgTranslateDocumentationLanguageCode;
 			$vars['wgTranslatePermissionUrl'] = $wgTranslatePermissionUrl;
 			$vars['wgTranslateUseSandbox'] = $wgTranslateUseSandbox;

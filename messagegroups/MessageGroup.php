@@ -83,21 +83,27 @@ interface MessageGroup {
 	/**
 	 * Returns a FFS object that handles reading and writing messages to files.
 	 * May also return null if it doesn't make sense.
-	 * @return FFS or null
+	 * @return FFS|null
 	 */
 	public function getFFS();
 
 	/**
 	 * Returns a message checker object or null.
 	 * @todo Make an interface for message checkers.
-	 * @return MessageChecker or null
+	 * @return MessageChecker|null
 	 */
 	public function getChecker();
 
 	/**
+	 * Returns a message validator object or null.
+	 * @return MessageValidator|null
+	 */
+	public function getValidator();
+
+	/**
 	 * Return a message mangler or null.
 	 * @todo Make an interface for message manglers
-	 * @return StringMatcher or null
+	 * @return StringMatcher|null
 	 */
 	public function getMangler();
 

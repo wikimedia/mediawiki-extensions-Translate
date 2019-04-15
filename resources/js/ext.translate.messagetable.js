@@ -163,7 +163,7 @@
 
 			// Fuzzy translations need warning class
 			if ( status === 'fuzzy' ) {
-				statusClass = statusClass + ' tux-warning';
+				statusClass = statusClass + ' tux-notice';
 			}
 
 			// Label the status if it is not untranslated

@@ -1,6 +1,6 @@
 <?php
 /**
- * Interface for InsertableSuggesters.
+ * Interface for InsertablesSuggesters.
  *
  * @file
  * @author Niklas Laxström
@@ -13,5 +13,10 @@
  * @since 2013.09
  */
 interface InsertablesSuggester {
+	/**
+	 * Returns the insertables in the message text.
+	 * @param string $text
+	 * @return array
+	 */
 	public function getInsertables( $text );
 }
