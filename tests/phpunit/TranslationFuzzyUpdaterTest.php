@@ -35,6 +35,10 @@ class TranslationFuzzyUpdaterTest extends MediaWikiTestCase {
 		$messages = [ 'ugakey' => '$1 of $2', ];
 		$list['test-group'] = new MockWikiMessageGroup( 'test-group', $messages );
 
+		$otherMessages = [ 'nlkey' => 'Test message' ];
+		$list['validation-test-group'] = new MockWikiValidationMessageGroup(
+			'validation-test-group', $otherMessages );
+
 		return false;
 	}
 
@@ -76,5 +80,16 @@ class TranslationFuzzyUpdaterTest extends MediaWikiTestCase {
 		$content = ContentHandler::makeContent( '$1 van $2', $title );
 		$page->doEditContent( $content, __METHOD__ );
 		$this->assertFalse( $handle->isFuzzy(), 'Message is unfuzzy after edit' );
+	}
+
+	public function testValidationFuzzy() {
+		$title = Title::newFromText( 'MediaWiki:nlkey/en-gb' );
+		$page = WikiPage::factory( $title );
+		$content = ContentHandler::makeContent( 'Test message', $title );
+		$page->doEditContent( $content, __METHOD__ );
+
+		$handle = new MessageHandle( $title );
+		$this->assertTrue( $handle->isValid(), 'Message is known' );
+		$this->assertTrue( $handle->isFuzzy(), 'Message is fuzzy due to validation failure' );
 	}
 }

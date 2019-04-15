@@ -1,0 +1,16 @@
+---
+BASIC:
+  id: test-validator-group
+  label: Test Validator Group
+  class: MockFileBasedMessageGroup
+  namespace: 1122
+
+VALIDATORS:
+  - id: InsertableRegex
+    enforce: true
+    insertable: true
+    params: /\$[0-9]+/
+
+INSERTABLES:
+  - class: RegexInsertablesSuggester
+    params: /\\[a-z0-9${}]+/

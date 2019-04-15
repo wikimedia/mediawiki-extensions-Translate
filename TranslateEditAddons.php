@@ -252,24 +252,30 @@ class TranslateEditAddons {
 	}
 
 	/**
+	 * Returns true if message is fuzzy, OR fails checks OR fails validations (error OR warning).
 	 * @param MessageHandle $handle
 	 * @param string $text
 	 * @return bool
 	 */
 	protected static function checkNeedsFuzzy( MessageHandle $handle, $text ) {
-		// Check for explicit tag.
-		$fuzzy = MessageHandle::hasFuzzyString( $text );
-
 		// Docs are exempt for checks
 		if ( $handle->isDoc() ) {
-			return $fuzzy;
+			return false;
 		}
 
-		// Not all groups have checkers
+		// Check for explicit tag.
+		if ( MessageHandle::hasFuzzyString( $text ) ) {
+			return true;
+		}
+
+		// Not all groups have checkers or validators
 		$group = $handle->getGroup();
 		$checker = $group->getChecker();
-		if ( !$checker ) {
-			return $fuzzy;
+		$validator = $group->getValidator();
+
+		// no checker or validator set
+		if ( !$checker && !$validator ) {
+			return false;
 		}
 
 		$code = $handle->getCode();
@@ -279,12 +285,21 @@ class TranslateEditAddons {
 		// Take the contents from edit field as a translation.
 		$message->setTranslation( $text );
 
-		$checks = $checker->checkMessage( $message, $code );
-		if ( count( $checks ) ) {
-			$fuzzy = true;
+		if ( $checker ) {
+			$checks = $checker->checkMessage( $message, $code );
+			if ( count( $checks ) ) {
+				return true;
+			}
 		}
 
-		return $fuzzy;
+		if ( $validator ) {
+			$validationResult = $validator->quickValidate( $message, $code );
+			if ( $validationResult->hasErrors() || $validationResult->hasWarnings() ) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**

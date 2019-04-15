@@ -6,15 +6,16 @@
  */
 
 /**
- * Insertable is a string that usually does not need translation and is
- * difficult to type manually.
+ * InsertablesSuggester implementation for MediaWiki message translations.
  * @since 2013.09
  */
-class MediaWikiInsertablesSuggester {
+class MediaWikiInsertablesSuggester implements InsertablesSuggester {
 	public function getInsertables( $text ) {
 		$insertables = [];
 
 		$matches = [];
+		// MediaWiki apihelp messages often have parameters like $1user, which should
+		// be unchanged in translation.
 		preg_match_all( '/\$(1[a-z]+|[0-9]+)/', $text, $matches, PREG_SET_ORDER );
 		$new = array_map( function ( $match ) {
 			return new Insertable( $match[0], $match[0] );

@@ -152,6 +152,10 @@ class RecentMessageGroup extends WikiMessageGroup {
 		return null;
 	}
 
+	public function getValidator() {
+		return null;
+	}
+
 	/**
 	 * Subpage language code, if any in the title, is ignored.
 	 * @param MessageHandle $handle
