@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f056ef95_8a767de5",
+        "filename": "includes/MessageValidator/Validators/MediaWikiPluralValidator.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-16T06:05:11Z",
+      "side": 1,
+      "message": "Merged these two checks into a single validator. I think this is fine as both these checks should be done at the same time, but let me know if it needs to be updated.",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab49fa07_f19ac80b",
+        "filename": "insertables/InsertablesSuggester.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-16T06:05:11Z",
+      "side": 1,
+      "message": "I think we should move InsertablesSuggester under a namespace too.",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2c5a829_1eeee7f4",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 6
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-16T06:05:11Z",
+      "side": 1,
+      "message": "Some of the icons shown on the Translate screen need to be updated. The CSS could also be reused and be applied to all icons on the Translate page. Problem is that each icon has a different amount of \"space / padding\". I\u0027m planning to create a task and work with Pau on this.",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6360bc36_f8e09946",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 6
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-16T06:05:11Z",
+      "side": 1,
+      "message": "Noticed that the font was bigger on the Timeless theme. Hence this change.",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a6cbb77_44d18174",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 1356,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-16T06:05:11Z",
+      "side": 1,
+      "message": "Is this OK? Or do we want to allow other users with certain roles to also be able to save translation with errors?",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7f02685_d7580c56",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 1361,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-16T06:05:11Z",
+      "side": 1,
+      "message": "Skipping validation for documentation.",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
