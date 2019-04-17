@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "976c7fb6_90c18b50",
+        "filename": "includes/MessageValidator/Validators/InsertableRubyVariableValidator.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-17T11:08:39Z",
+      "side": 1,
+      "message": "I think this validator can be removed as it is now quite easy to implement using the InsertableRegexValidator",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f056ef95_8a767de5",
         "filename": "includes/MessageValidator/Validators/MediaWikiPluralValidator.php",
         "patchSetId": 6
@@ -30,6 +47,24 @@
       "writtenOn": "2019-04-16T06:05:11Z",
       "side": 1,
       "message": "I think we should move InsertablesSuggester under a namespace too.",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44ac48f3_85af1c8d",
+        "filename": "insertables/InsertablesSuggester.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-17T11:08:39Z",
+      "side": 1,
+      "message": "Currently InsertablesSuggester are loaded using the usual `class: RegexInsertablesSuggester` syntax in the YAML file. Once we have them in the namespace, we can introduce an `Factory` and use the `id` parameter for pre-existing insertables and `class` for custom ones.",
+      "parentUuid": "ab49fa07_f19ac80b",
       "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
