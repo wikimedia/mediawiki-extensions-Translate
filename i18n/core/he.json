@@ -293,7 +293,7 @@
 	"translate-msggroupselector-search-all": "הכול",
 	"translate-msggroupselector-search-recent": "אחרונות",
 	"translate-msggroupselector-view-subprojects": "הצגת {{PLURAL:$1|תת־מיזם אחד|$1 תת־מיזמים}}",
-	"tux-languageselector": "שפה היעד לתרגום:",
+	"tux-languageselector": "שפת היעד לתרגום:",
 	"tux-tab-all": "הכול",
 	"tux-tab-untranslated": "לא מתורגמות",
 	"tux-tab-outdated": "לא עדכניות",
