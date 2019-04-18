@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "32d9bc83_abeb0baa",
+        "filename": "includes/MessageValidator/Validators/InsertableRubyVariableValidator.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:41:52Z",
+      "side": 1,
+      "message": "This seem stable enough that the benefit of having it as a separate class is very small. Mostly it would be that we would have one place to change the regexp if it needed changing.",
+      "parentUuid": "976c7fb6_90c18b50",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f056ef95_8a767de5",
         "filename": "includes/MessageValidator/Validators/MediaWikiPluralValidator.php",
         "patchSetId": 6
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8de93951_6e84f7e5",
+        "filename": "insertables/InsertablesSuggester.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:41:52Z",
+      "side": 1,
+      "message": "Sounds good.",
+      "parentUuid": "44ac48f3_85af1c8d",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e2c5a829_1eeee7f4",
         "filename": "resources/css/ext.translate.editor.css",
         "patchSetId": 6
@@ -85,6 +121,24 @@
       "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f940f880_acdde33b",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 6
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:41:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e2c5a829_1eeee7f4",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "60caf322_b7193bac",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 6
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:41:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6360bc36_f8e09946",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4a6cbb77_44d18174",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 6
@@ -116,6 +188,24 @@
       "writtenOn": "2019-04-16T06:05:11Z",
       "side": 1,
       "message": "Is this OK? Or do we want to allow other users with certain roles to also be able to save translation with errors?",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7da9c6e0_2a9dadd7",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 1356,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:41:52Z",
+      "side": 1,
+      "message": "This looks sufficient to me.",
+      "parentUuid": "4a6cbb77_44d18174",
       "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
@@ -136,6 +226,24 @@
       "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd8839c0_fa8f9dd9",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 1361,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:41:52Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d7f02685_d7580c56",
+      "revId": "078124ef9a1ba18171795c2b323178fd994ce40c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }

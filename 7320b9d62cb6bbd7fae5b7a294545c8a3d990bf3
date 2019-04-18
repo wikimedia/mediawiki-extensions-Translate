@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "686abfa9_093822f1",
+        "filename": "MessageValidator.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:41:52Z",
+      "side": 1,
+      "message": "Should this be converted to the new PHP syntax for clarity?",
+      "range": {
+        "startLine": 31,
+        "startChar": 22,
+        "endLine": 31,
+        "endChar": 28
+      },
+      "revId": "7320b9d62cb6bbd7fae5b7a294545c8a3d990bf3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76750a6c_67efca58",
+        "filename": "extension-wip.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:41:52Z",
+      "side": 1,
+      "message": "Better change to src/ per https://www.mediawiki.org/wiki/Topic:Uxojqdvbtjpbbb94",
+      "revId": "7320b9d62cb6bbd7fae5b7a294545c8a3d990bf3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "edd221a9_c9cbd260",
+        "filename": "includes/MessageValidator/ValidatorFactory.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:41:52Z",
+      "side": 1,
+      "message": "Don\u0027t you want to add `use` statements for each of these? Then you can just use `BraceBalanceValidator::class` syntax.",
+      "revId": "7320b9d62cb6bbd7fae5b7a294545c8a3d990bf3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2356790f_a697e030",
+        "filename": "includes/MessageValidator/ValidatorFactory.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:41:52Z",
+      "side": 1,
+      "message": "In PHP the parenthesis are not necessary with instanceof, but it\u0027s fine.",
+      "revId": "7320b9d62cb6bbd7fae5b7a294545c8a3d990bf3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2d066e0_ee13c28c",
+        "filename": "resources/images/label-error.svg",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:41:52Z",
+      "side": 1,
+      "message": "https://www.mediawiki.org/wiki/Manual:Coding_conventions/SVG",
+      "revId": "7320b9d62cb6bbd7fae5b7a294545c8a3d990bf3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a509020c_8e2df21e",
+        "filename": "resources/images/label-flag.svg",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:41:52Z",
+      "side": 1,
+      "message": "https://www.mediawiki.org/wiki/Manual:Coding_conventions/SVG",
+      "revId": "7320b9d62cb6bbd7fae5b7a294545c8a3d990bf3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15055018_de8dc655",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 1347,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:41:52Z",
+      "side": 1,
+      "message": "https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/498474",
+      "revId": "7320b9d62cb6bbd7fae5b7a294545c8a3d990bf3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
