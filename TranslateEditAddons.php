@@ -240,7 +240,7 @@ class TranslateEditAddons {
 			Hooks::run( 'Translate:newTranslation', [ $handle, $rev, $text, $user ] );
 		}
 
-		TTMServer::onChange( $handle, $text, $fuzzy );
+		TTMServer::onChange( $handle );
 
 		if ( $wgEnablePageTranslation && $handle->isPageTranslation() ) {
 			// Updates for translatable pages only
