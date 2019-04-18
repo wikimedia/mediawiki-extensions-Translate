@@ -344,7 +344,7 @@ class SpecialTranslationStats extends SpecialPage {
 	protected function groupSelector() {
 		$groups = MessageGroups::singleton()->getGroups();
 		/**
-		 * @var $group MessageGroup
+		 * @var MessageGroup $group
 		 */
 		foreach ( $groups as $key => $group ) {
 			if ( !$group->exists() ) {
@@ -603,13 +603,13 @@ class SpecialTranslationStats extends SpecialPage {
 			$font = $wgTranslatePHPlotFont;
 		}
 		$numberFont = FCFontFinder::findFile( 'en' );
-		$plot->setDefaultTTFont( $font );
+		$plot->SetDefaultTTFont( $font );
 		$plot->SetFontTTF( 'generic', $font, 12 * $imageScale );
 		$plot->SetFontTTF( 'legend', $font, 12 * $imageScale );
 		$plot->SetFontTTF( 'x_title', $font, 10 * $imageScale );
 		$plot->SetFontTTF( 'y_title', $font, 10 * $imageScale );
-		$plot->setFontTTF( 'x_label', $numberFont, 8 * $imageScale );
-		$plot->setFontTTF( 'y_label', $numberFont, 8 * $imageScale );
+		$plot->SetFontTTF( 'x_label', $numberFont, 8 * $imageScale );
+		$plot->SetFontTTF( 'y_label', $numberFont, 8 * $imageScale );
 
 		$plot->SetDataValues( $data );
 

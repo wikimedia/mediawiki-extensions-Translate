@@ -205,8 +205,6 @@ class SpecialTranslations extends SpecialAllPages {
 		// Adapted version of TranslateUtils:makeListing() by Nikerabbit.
 		$out = $tableheader;
 
-		$canTranslate = $this->getUser()->isAllowed( 'translate' );
-
 		$historyText = '&#160;<sup>' .
 			$this->msg( 'translate-translations-history-short' )->escaped() .
 			'</sup>&#160;';

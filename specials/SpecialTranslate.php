@@ -50,8 +50,6 @@ class SpecialTranslate extends SpecialPage {
 
 		$this->setHeaders();
 
-		$request = $this->getRequest();
-
 		if ( !defined( 'ULS_VERSION' ) ) {
 			throw new ErrorPageError(
 				'translate-ulsdep-title',
