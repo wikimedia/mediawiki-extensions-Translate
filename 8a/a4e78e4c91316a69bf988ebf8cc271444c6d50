@@ -1,0 +1,9 @@
+Verified+2: jenkins-bot
+Code-Review+1: Nikerabbit <niklas.laxstrom@gmail.com>
+Code-Review+2: DCausse <dcausse@wikimedia.org>
+Code-Review+1: Abijeet Patro <abijeetpatro@gmail.com>
+Submitted-by: jenkins-bot
+Submitted-at: Thu, 18 Apr 2019 09:45:36 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/502262
+Project: mediawiki/extensions/Translate
+Branch: refs/heads/master
