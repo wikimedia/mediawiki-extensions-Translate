@@ -155,10 +155,8 @@ class TTMServer {
 	/**
 	 * Called from TranslateEditAddons::onSave
 	 * @param MessageHandle $handle
-	 * @param string $text
-	 * @param bool $fuzzy
 	 */
-	public static function onChange( MessageHandle $handle, $text, $fuzzy ) {
+	public static function onChange( MessageHandle $handle ) {
 		$job = TTMServerMessageUpdateJob::newJob( $handle, 'refresh' );
 		JobQueueGroup::singleton()->push( $job );
 	}
@@ -166,9 +164,8 @@ class TTMServer {
 	/**
 	 * @param MessageHandle $handle
 	 * @param array $old
-	 * @param array $new
 	 */
-	public static function onGroupChange( MessageHandle $handle, $old, $new ) {
+	public static function onGroupChange( MessageHandle $handle, $old ) {
 		if ( $old === [] ) {
 			// Don't bother for newly added messages
 			return;
