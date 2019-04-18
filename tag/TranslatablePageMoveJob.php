@@ -43,7 +43,6 @@ class TranslatablePageMoveJob extends Job {
 
 	public function __construct( $title, $params = [] ) {
 		parent::__construct( __CLASS__, $title, $params );
-		$this->params = $params;
 	}
 
 	public function run() {
