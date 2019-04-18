@@ -25,10 +25,8 @@ class CrossLanguageTranslationSearchQuery {
 
 	public function getDocuments() {
 		$documents = [];
-		$total = $start = 0;
 		$offset = $this->params['offset'];
 		$limit = $this->params['limit'];
-		$size = 1000;
 
 		$options = $this->params;
 		$options['language'] = $this->params['sourcelanguage'];
@@ -47,7 +45,7 @@ class CrossLanguageTranslationSearchQuery {
 		// Used for aggregations. Only the first scroll response has them.
 		$this->resultset = null;
 
-		foreach ( $scroll as $scrollId => $resultSet ) {
+		foreach ( $scroll as $resultSet ) {
 			if ( !$this->resultset ) {
 				$this->resultset = $resultSet;
 				$this->total = $resultSet->getTotalHits();
