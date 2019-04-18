@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "182a3620_c445fcf5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-18T09:42:29Z",
+      "side": 1,
+      "message": "If I am not mistaken, the convention is to put one of these per line.",
+      "revId": "7320b9d62cb6bbd7fae5b7a294545c8a3d990bf3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "686abfa9_093822f1",
         "filename": "MessageValidator.php",
         "patchSetId": 7
