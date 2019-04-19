@@ -182,7 +182,7 @@
 			var translation, editSummary,
 				translateEditor = this;
 
-			mw.translateHooks.run( 'beforeSubmit', translateEditor.$editor );
+			mw.hook( 'mw.translate.editor.beforeSubmit' ).fire( translateEditor.$editor );
 			translation = translateEditor.$editor.find( '.editcolumn textarea' ).val();
 			editSummary = translateEditor.$editor.find( '.tux-input-editsummary' ).val() || '';
 
@@ -274,7 +274,7 @@
 			}
 
 			mw.translate.dirty = false;
-			mw.translateHooks.run( 'afterSubmit', this.$editor );
+			mw.hook( 'mw.translate.editor.afterSubmit' ).fire( this.$editor );
 
 			if ( mw.track ) {
 				mw.track( 'ext.translate.event.translation', this.message );
@@ -1170,7 +1170,7 @@
 				$next.data( 'translateeditor' ).init();
 			}
 
-			mw.translateHooks.run( 'afterEditorShown', this.$editor );
+			mw.hook( 'mw.translate.editor.afterEditorShown' ).fire( this.$editor );
 
 			return false;
 		},
