@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "827df3f8_08119b11",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4983
+      },
+      "writtenOn": "2019-04-19T00:48:41Z",
+      "side": 1,
+      "message": "We have commit message guidelines for Mediawiki. According to the guidelines, you should use imperative mood in your subject line.\n\nhttps://www.mediawiki.org/wiki/Gerrit/Commit_message_guidelines#Subject\n\nThat being said, this sentence should start with \"Add\", rather than \"Adds\" :)",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 69
+      },
+      "revId": "7320b9d62cb6bbd7fae5b7a294545c8a3d990bf3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "182a3620_c445fcf5",
         "filename": "/COMMIT_MSG",
         "patchSetId": 7
@@ -13,6 +36,24 @@
       "writtenOn": "2019-04-18T09:42:29Z",
       "side": 1,
       "message": "If I am not mistaken, the convention is to put one of these per line.",
+      "revId": "7320b9d62cb6bbd7fae5b7a294545c8a3d990bf3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "78430e60_eda1d0d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4983
+      },
+      "writtenOn": "2019-04-19T00:48:41Z",
+      "side": 1,
+      "message": "You\u0027re not mistaken, each bug should be on a separate line.\n\nThis should be:\n Bug: T204568\n Bug: T220789",
+      "parentUuid": "182a3620_c445fcf5",
       "revId": "7320b9d62cb6bbd7fae5b7a294545c8a3d990bf3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
