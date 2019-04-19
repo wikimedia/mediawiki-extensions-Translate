@@ -141,7 +141,7 @@
 	"pt-movepage-action-check": "Fengk erus, ov dat Ömnänne müjjlesch es",
 	"pt-movepage-action-perform": "Ömnänne!",
 	"pt-movepage-action-other": "Ander Zieltittel",
-	"pt-movepage-intro": "Heh di {{int:specialpage}} löht Desch Sigge ömdäufe, di för et Övversäze frei jejovve sin.\nDat jeiht nit en einem Rötsch, weil ene Pöngel Sigge un Deile ömjenannt wähde möße.\nEm MediaWiki sing <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\"> [http://www.mediawiki.org/wiki/Manual:Job_queue job queue]</i> weed doför jebruch.\nSu lang, wi de Sigge ömjenannt wääde, kam_mer met dänne nix söns maache.\nFähler kumme en et [[Special:Log/pagetranslation|{{int:pt-log-name}}]] un möße vun Hand opjerühmp wähde.",
+	"pt-movepage-intro": "Heh di {{int:specialpage}} löht Desch Sigge ömdäufe, di för et Övversäze frei jejovve sin.\nDat jeiht nit en einem Rötsch, weil ene Pöngel Sigge un Deile ömjenannt wähde möße.\nEm MediaWiki sing <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\"> [https://www.mediawiki.org/wiki/Manual:Job_queue job queue]</i> weed doför jebruch.\nSu lang, wi de Sigge ömjenannt wääde, kam_mer met dänne nix söns maache.\nFähler kumme en et [[Special:Log/pagetranslation|{{int:pt-log-name}}]] un möße vun Hand opjerühmp wähde.",
 	"pt-movepage-logreason": "Deil vun dä övversäzbaa Sigg „$1“",
 	"pt-movepage-started": "Di Sigg weed jäz ömjenannt.\nDon op jede Fall em [[Special:Log/pagetranslation|{{int:pt-log-name}}]] noh Fähler loore, un dat dat öhndlesch aan et Eng jekumme es.",
 	"pt-locked-page": "Dat Stöck heh is jesperrt, däm sing övversäbaa Sigg weed nämmisch jrad ömbenannt.",
