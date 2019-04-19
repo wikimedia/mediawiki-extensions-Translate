@@ -73,7 +73,7 @@ class HookDocTest extends MediaWikiTestCase {
 	protected static function getJSHooksFromFile( $file ) {
 		$content = file_get_contents( $file );
 		$m = [];
-		preg_match_all( '/\bmw\.translateHooks\.run\(\s*[\'"]([^\'"]+)/', $content, $m );
+		preg_match_all( '/\bmw\.hook\(\s*[\'"]([^\'"]+)[\'"]\s*\).fire\(/', $content, $m );
 		$hooks = [];
 		foreach ( $m[1] as $hook ) {
 			$hooks[$hook] = [];
