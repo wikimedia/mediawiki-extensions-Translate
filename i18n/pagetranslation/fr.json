@@ -25,7 +25,8 @@
 			"Wladek92",
 			"Mattho69",
 			"Yasten",
-			"Trial"
+			"Trial",
+			"Frigory"
 		]
 	},
 	"pagetranslation": "Traduction de pages",
@@ -98,7 +99,7 @@
 	"tpt-discouraged-language-force": "<strong>Cette page ne peut pas être traduite en $2.</strong>\n\nUn administrateur des traductions a décidé que cette page ne peut être traduite qu’en $3.",
 	"tpt-discouraged-language": "<strong>Traduire en $2 n’est pas une priorité pour cette page.</strong>\n\nUn administrateur des traductions a décidé de concentrer l’effort de traduction sur $3.",
 	"tpt-discouraged-language-reason": "Raison : $1",
-	"tpt-priority-languages": "Un administrateur de traduction a défini les langues prioritaire pour ce groupe : $1 .",
+	"tpt-priority-languages": "Un administrateur de traduction a défini les langues prioritaires pour ce groupe : $1.",
 	"tpt-render-summary": "Mise à jour pour être en accord avec la nouvelle version de la source de la page",
 	"aggregategroups": "Groupes d'agrégation",
 	"tpt-aggregategroup-add": "Ajouter",
