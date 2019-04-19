@@ -10,29 +10,28 @@
 ( function () {
 	'use strict';
 
-	var registry = {};
-
 	mw.translateHooks = {
 		add: function ( name, func ) {
-			if ( !registry[ name ] ) {
-				registry[ name ] = [];
-			}
-			registry[ name ].push( func );
+			showDeprecationWarning();
+
+			mw.hook( name ).add( func );
 		},
 
 		run: function ( /* infinite list of parameters */ ) {
-			var args, name, length, i;
+			var args, name;
+
+			showDeprecationWarning();
 
 			args = Array.prototype.slice.call( arguments );
 			name = args.shift();
 
-			if ( registry[ name ] ) {
-				length = registry[ name ].length;
-
-				for ( i = 0; i < length; i++ ) {
-					registry[ name ][ i ].apply( null, args );
-				}
-			}
+			mw.hook( name ).fire( args );
 		}
 	};
+
+	function showDeprecationWarning() {
+		mw.log.warn( '`mw.translateHooks` has been deprecated and will be removed in the ' +
+			'future. Use `mw.hook` instead. See - ' +
+			'https://doc.wikimedia.org/mediawiki-core/master/js/#!/api/mw.hook' );
+	}
 }() );

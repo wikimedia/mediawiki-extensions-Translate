@@ -207,7 +207,7 @@
 		// Some links in helpers will navigate away by default. But since the messages
 		// will change on this page on every load, we want to avoid that. Force the
 		// links to open on new window/tab.
-		mw.translateHooks.add( 'showTranslationHelpers', function ( helpers, $editor ) {
+		mw.hook( 'mw.translate.editor.showTranslationHelpers' ).add( function ( helpers, $editor ) {
 			$editor.find( 'a' ).prop( 'target', '_blank' );
 		} );
 

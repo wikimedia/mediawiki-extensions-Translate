@@ -20,19 +20,10 @@ For a guide to PHP hooks, navigate to your root MediaWiki
 directory, and then find docs/hooks.txt.
 
 === JavaScript hooks ===
-JavaScript hooks for the Translate extension are a little different. To use
-them, declare a dependency on ext.translate.hooks:
+JavaScript hooks for the Translate extension use the standard mw.hook API provided
+by MediaWiki.
 
- $wgResourceModules['...'] = array(
- 	'scripts' => '...js',
- 	'dependencies' => array( 'ext.translate.hooks' ),
- );
-
-And then in that module use:
- mw.translateHooks.add( name, hookFunction );
-
-where name is a string, but hookFunction is not (unlike in the case of PHP hooks)
-but rather a function reference. Return values from JavaScript hooks are ignored.
+Hooks are prefixed with mw.translate as a convention.
 
 == Events and parameters ==
 
@@ -125,18 +116,18 @@ Post processing step to format in wiki
 
 === JavaScript events ===
 
-;afterSubmit: Provides an opportunity to modify a Translate translation form immediately after it is submitted
+;mw.translate.editor.afterSubmit: Provides an opportunity to modify a Translate translation form immediately after it is submitted
  jQuery          form: The form that has just been submitted
 
-;afterEditorShown: Provides an opportunity to manipulate the editing interface once it's shown
+;mw.translate.editor.afterEditorShown: Provides an opportunity to manipulate the editing interface once it's shown
  jQuery          translateEditor.$editor: The current translation-editing form
 
-;beforeSubmit: Provides an opportunity to modify a Translate translation form immediately before it is submitted
+;mw.translate.editor.beforeSubmit: Provides an opportunity to modify a Translate translation form immediately before it is submitted
  jQuery          form: The form being submitted
 
-;formatMessageBeforeTable: Provides an opportunity to manipulate the display of translation strings (messages) in the main table
+;mw.translate.messagetable.formatMessageBeforeTable: Provides an opportunity to manipulate the display of translation strings (messages) in the main table
  object          message: The message object, with a range of useful (and manipulable) properties
 
-;showTranslationHelpers: Provides an opportunity to handle custom translation helpers
+;mw.translate.editor.showTranslationHelpers: Provides an opportunity to handle custom translation helpers
  object          result.helpers: JSON subset focusing on the helpers returned e.g. result.helpers.definition
  jQuery          translateEditor.$editor: The current translation-editing form
