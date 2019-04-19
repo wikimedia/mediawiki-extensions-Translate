@@ -14,6 +14,8 @@
 
 	mw.translateHooks = {
 		add: function ( name, func ) {
+			showDeprecationWarning();
+
 			if ( !registry[ name ] ) {
 				registry[ name ] = [];
 			}
@@ -22,6 +24,8 @@
 
 		run: function ( /* infinite list of parameters */ ) {
 			var args, name, length, i;
+
+			showDeprecationWarning();
 
 			args = Array.prototype.slice.call( arguments );
 			name = args.shift();
@@ -35,4 +39,10 @@
 			}
 		}
 	};
+
+	function showDeprecationWarning() {
+		mw.log.warn( '`mw.translateHooks` has been deprecated and will be removed in the ' +
+			'future. Use `mw.hook` instead. See - ' +
+			'https://doc.wikimedia.org/mediawiki-core/master/js/#!/api/mw.hook' );
+	}
 }() );
