@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b7b3bafd_d1a8c96e",
+        "filename": "ttmserver/CrossLanguageTranslationSearchQuery.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-20T11:43:39Z",
+      "side": 1,
+      "message": "I think we can also get rid of the `$scrollId` here.",
+      "revId": "edda25f79d2b6f0eb402b457ea119e7bacd6df17",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
