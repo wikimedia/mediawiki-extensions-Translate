@@ -238,13 +238,15 @@ class SpecialManageGroups extends SpecialPage {
 			}
 
 			$label = $this->msg( 'translate-manage-action-ignore' )->text();
-			$actions = Xml::checkLabel( $label, "i/$id", "i/$id" );
+			$actions = Xml::radioLabel( $label, "msg/$id", "ignore", "i/$id" );
 			$limit--;
 
 			if ( $group->getSourceLanguage() === $code ) {
 				$label = $this->msg( 'translate-manage-action-fuzzy' )->text();
-				$actions .= ' ' . Xml::checkLabel( $label, "f/$id", "f/$id", true );
-				$limit--;
+				$actions .= ' ' . Xml::radioLabel( $label, "msg/$id", "fuzzy", "f/$id", true );
+			} else {
+				$label = $this->msg( 'translate-manage-action-import' )->text();
+				$actions .= ' ' . Xml::radioLabel( $label, "msg/$id", "import", "imp/$id", true );
 			}
 
 			$oldContent = ContentHandler::makeContent( $wiki, $title );
@@ -293,11 +295,12 @@ class SpecialManageGroups extends SpecialPage {
 							continue;
 						}
 
-						if ( $type === 'deletion' || $req->getCheck( "i/$id" ) ) {
+						$selectedVal = $req->getVal( "msg/$id" );
+						if ( $type === 'deletion' || $selectedVal === 'ignore' ) {
 							continue;
 						}
 
-						$fuzzy = $req->getCheck( "f/$id" ) ? 'fuzzy' : false;
+						$fuzzy = $selectedVal === 'fuzzy' ? 'fuzzy' : false;
 						$key = $params['key'];
 						$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$code" );
 						$jobs[] = MessageUpdateJob::newJob( $title, $params['content'], $fuzzy );
