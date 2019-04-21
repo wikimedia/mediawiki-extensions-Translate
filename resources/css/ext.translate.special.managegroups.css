@@ -3,6 +3,11 @@
 	margin-bottom: 2em;
 }
 
+.mw-translate-smg-change.smg-change-ignore {
+	padding-bottom: 0em;
+	margin-bottom: 0em;
+}
+
 .mw-translate-smg-submit {
 	font-size: 5em;
 	margin: auto;
