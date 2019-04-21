@@ -208,7 +208,9 @@ class SpecialManageGroups extends SpecialPage {
 			// leads to many other annoying problems.
 			$type = 'change';
 		} elseif ( $title && ( $type === 'deletion' || $type === 'change' ) && !$title->exists() ) {
-			return '';
+			// This happens if a message key has been renamed
+			// The change can be ignored.
+			$type = 'ignore';
 		}
 
 		$text = '';
@@ -255,6 +257,9 @@ class SpecialManageGroups extends SpecialPage {
 
 			$this->diff->setContent( $oldContent, $newContent );
 			$text .= $this->diff->getDiff( $titleLink, $actions );
+		} elseif ( $type === 'ignore' ) {
+			$text .= Html::hidden( "msg/$id", 'ignore' );
+			$limit--;
 		}
 
 		$hidden = Html::hidden( $id, 1 );
