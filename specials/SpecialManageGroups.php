@@ -208,6 +208,8 @@ class SpecialManageGroups extends SpecialPage {
 			// leads to many other annoying problems.
 			$type = 'change';
 		} elseif ( $title && ( $type === 'deletion' || $type === 'change' ) && !$title->exists() ) {
+			// This happens if a message key has been renamed
+			// The change can be ignored.
 			return '';
 		}
 
@@ -291,7 +293,17 @@ class SpecialManageGroups extends SpecialPage {
 			foreach ( $changes as $code => $subchanges ) {
 				foreach ( $subchanges as $type => $messages ) {
 					foreach ( $messages as $index => $params ) {
-						$id = self::changeId( $groupId, $code, $type, $params['key'] );
+						$key = $params['key'];
+						$id = self::changeId( $groupId, $code, $type, $key );
+						$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$code" );
+
+						if ( $title && ( $type === 'deletion' || $type === 'change' )
+							&& !$title->exists() ) {
+							// This means that this change was probably introduced due to a rename
+							// which removed the key. No need to process.
+							continue;
+						}
+
 						if ( $req->getVal( $id ) === null ) {
 							// We probably hit the limit with number of post parameters.
 							$postponed[$groupId][$code][$type][$index] = $params;
@@ -304,8 +316,6 @@ class SpecialManageGroups extends SpecialPage {
 						}
 
 						$fuzzy = $selectedVal === 'fuzzy' ? 'fuzzy' : false;
-						$key = $params['key'];
-						$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$code" );
 						$jobs[] = MessageUpdateJob::newJob( $title, $params['content'], $fuzzy );
 					}
 				}
