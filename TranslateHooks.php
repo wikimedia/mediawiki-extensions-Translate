@@ -639,7 +639,8 @@ class TranslateHooks {
 	 */
 	public static function hideRestrictedFromStats( $id, $code ) {
 		$filterLangs = TranslateMetadata::get( $id, 'prioritylangs' );
-		if ( strlen( $filterLangs ) === 0 ) {
+		$hasPriorityForce = TranslateMetadata::get( $id, 'priorityforce' ) === 'on';
+		if ( strlen( $filterLangs ) === 0 || !$hasPriorityForce ) {
 			// No restrictions, keep everything
 			return true;
 		}

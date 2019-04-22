@@ -77,7 +77,12 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	protected function outputIntroduction() {
 		$priorityLangs = TranslateMetadata::get( $this->target, 'prioritylangs' );
 		if ( $priorityLangs ) {
-			$this->getOutput()->addWikiMsg( 'tpt-priority-languages', $priorityLangs );
+			$hasPriorityForce = TranslateMetadata::get( $this->target, 'priorityforce' ) === 'on';
+			if ( $hasPriorityForce ) {
+				$this->getOutput()->addWikiMsg( 'tpt-priority-languages-force', $priorityLangs );
+			} else {
+				$this->getOutput()->addWikiMsg( 'tpt-priority-languages', $priorityLangs );
+			}
 		}
 	}
 

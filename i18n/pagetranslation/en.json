@@ -78,6 +78,7 @@
 	"tpt-discouraged-language": "<strong>Translating to $2 is not a priority for this page.</strong>\n\nA translation administrator decided to focus the translation efforts on $3.",
 	"tpt-discouraged-language-reason": "Reason: $1",
 	"tpt-priority-languages": "A translation administrator has set the priority languages for this group to $1.",
+	"tpt-priority-languages-force": "A translation administrator has set the priority languages for this group to $1 and blocked translation to non-priority languages.",
 	"tpt-render-summary": "Updating to match new version of source page",
 	"aggregategroups": "Aggregate groups",
 	"tpt-aggregategroup-add": "Add",
