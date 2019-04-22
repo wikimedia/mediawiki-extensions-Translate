@@ -76,7 +76,7 @@
 	"pt-movepage-action-check": "Provjeri je li premještanje moguće",
 	"pt-movepage-action-perform": "Premjesti",
 	"pt-movepage-action-other": "Promijeni cilj",
-	"pt-movepage-intro": "Ova posebna stranica omogućava vam premještanje stranica koje su označene prevođenje.\nPremještanje nije trenutno, jer će biti potrebno premjestiti mnoge stranice.\nRed poslova će se koristiti za premještanje stranica.\nDok se stranice premještaju, nije moguće raditi na stranicama u pitanju.\nKvarovi/pogreške biti će prijavljene u [[Special:Log/pagetranslation|evidenciji prijevoda]] i trebaju se ručno popraviti.",
+	"pt-movepage-intro": "Ova posebna stranica omogućava Vam premještanje stranica koje su označene prevođenje.\nPremještanje nije trenutno, jer će biti potrebno premjestiti mnoge stranice.\nDok se stranice premještaju, nije moguća interakcija sa stranicama u pitanju.\nPogreške će biti evidentirane u [[Special:Log/pagetranslation|evidenciji prijevoda]] i trebaju se ručno popraviti.",
 	"pt-movepage-logreason": "Dio prevodive stranice »$1«.",
 	"pm-savepages-button-label": "Spremi",
 	"pp-save-button-label": "Spremi",
