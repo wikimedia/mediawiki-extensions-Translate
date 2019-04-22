@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "994e0bb6_ef3c643f",
+        "filename": "resources/js/ext.translate.hooks.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 110
+      },
+      "writtenOn": "2019-04-22T09:50:40Z",
+      "side": 1,
+      "message": "This block can be replaced with mw.hook(name).add(func) so that implementation uses mw.hook.\nSame for below `run` method.\n\nNot blocker for this patch. Just pointing out an alternative that will remove about 10 lines of code :)",
+      "revId": "99d0f46df9cb272f7b6b9477cd29fa2bdb3fd657",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
