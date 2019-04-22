@@ -16,6 +16,24 @@
       "revId": "99d0f46df9cb272f7b6b9477cd29fa2bdb3fd657",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b248c450_89b79f1f",
+        "filename": "resources/js/ext.translate.hooks.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-22T18:15:17Z",
+      "side": 1,
+      "message": "That\u0027s a good point, updated the code as per suggestion.",
+      "parentUuid": "994e0bb6_ef3c643f",
+      "revId": "99d0f46df9cb272f7b6b9477cd29fa2bdb3fd657",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
