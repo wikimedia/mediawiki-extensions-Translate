@@ -17,7 +17,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 /**
  * Version number used in extension credits and in other places where needed.
  */
-define( 'TRANSLATE_VERSION', '2019-01-17' );
+define( 'TRANSLATE_VERSION', '2019-04-24' );
 
 // Load stuff already converted to extension registration.
 wfLoadExtension( 'Translate', __DIR__ . '/extension-wip.json' );
