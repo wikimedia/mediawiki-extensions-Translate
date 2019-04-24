@@ -61,7 +61,7 @@
 	"translate-magic-special": "Белхан агӀонийн псевдонимаш",
 	"translate-magic-words": "Бозбуунчаллин дешнаш",
 	"translate-magic-namespace": "ЦӀерийн меттигаш",
-	"translate-magic-notsaved": "Хьан нисдар дӏайазъдина дац!",
+	"translate-magic-notsaved": "Хьан нисдар дӀаяздина дац!",
 	"translate-magic-errors": "Дехар до, {{PLURAL:$1|1=хӀара гӀалат|хӀара гӀалаташ}} нисдар гочдар чохь:",
 	"translate-magic-saved": "Хийцамаш кхиамца Ӏалашбина.",
 	"translate-checks-parameters": "{{PLURAL:$2|1=Параметр лелош яц|Параметраш лелош яц}}:\n<strong><nowiki>$1</nowiki></strong>",

@@ -28,5 +28,6 @@
 	"tux-sst-outdated": "Verouderde vertalingen voor $1",
 	"tux-sst-ellipsis-untranslated": "Geen vertaling",
 	"tux-sst-ellipsis-outdated": "Verouderde vertalingen",
-	"tux-sst-case-sensitive": "Hoofdlettergevoelig"
+	"tux-sst-case-sensitive": "Hoofdlettergevoelig",
+	"tux-sst-error-language": "Deze taal kan niet worden gebruikt met dit type zoekopdracht."
 }
