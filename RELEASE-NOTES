@@ -1,0 +1,15 @@
+== Translate 2019.04 ==
+Released at 2019-04-25.
+
+=== Noteworthy changes ===
+* Fixed fatal error on PageContentLanguage hook subscriber (T214358)
+* Replaced usage of mw.translateHooks with mw.hook. Deprecation warning will be shown while using functions under mw.translateHooks (T72031)
+* Added support for newer versions of the Elastica extension while maintaining backward compatibility for older version REL 1.31 (T218100)
+* Fixed page suggestion control on Special:PageMigration (T217726)
+* Fixed broken Special:PageMigration (T217727)
+* Add link to Special:PageMigration when page is marked for translation (T178642)
+* Removed display of the message group state for the source language (T160511)
+* Fixed invalid display of priority language notice (T217046)
+* Added better error handling in Special:SearchTranslations (T159221)
+* Display proper notice when translations to non-priority languages are blocked (T218777)
+* Fixed "proofreading" status appearing for source language on the MessageGroup and Language stats page (T160511)
