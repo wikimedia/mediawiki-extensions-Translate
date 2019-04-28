@@ -58,6 +58,7 @@
 		"ComplexMessages": "ffs/MediaWikiComplexMessages.php",
 		"CrossLanguageTranslationSearchQuery": "ttmserver/CrossLanguageTranslationSearchQuery.php",
 		"CurrentTranslationAid": "translationaids/CurrentTranslationAid.php",
+		"CustomCacheMessageGroup": "messagegroups/CustomCacheMessageGroup.php",
 		"CxserverWebService": "webservices/CxserverWebService.php",
 		"DatabaseMessageIndex": "utils/MessageIndex.php",
 		"DatabaseTTMServer": "ttmserver/DatabaseTTMServer.php",
@@ -116,6 +117,7 @@
 		"MessageWebImporter": "utils/MessageWebImporter.php",
 		"MetaYamlSchemaExtender": "MetaYamlSchemaExtender.php",
 		"MicrosoftWebService": "webservices/MicrosoftWebService.php",
+		"MockCustomCacheMessageGroup": "tests/phpunit/MockCustomCacheMessageGroup.php",
 		"MockFileBasedMessageGroup": "tests/phpunit/MockFileBasedMessageGroup.php",
 		"MockMessageCollectionForExport": "tests/phpunit/MockMessageCollectionForExport.php",
 		"MockWikiMessageGroup": "tests/phpunit/MockWikiMessageGroup.php",
@@ -269,13 +271,13 @@
 			"TranslateHooks::hideRestrictedFromStats"
 		],
 		"MakeGlobalVariablesScript": "TranslateHooks::addConfig",
+		"TranslateCustomCacheGroups": "WikiPageMessageGroup::registerToCustomCache",
 		"TranslateEventTranslationReview": [
 			"MessageGroupStats::clear",
 			"MessageGroupStatesUpdaterJob::onChange"
 		],
 		"TranslatePostInitGroups": [
 			"MessageGroups::getCCGroups",
-			"MessageGroups::getTranslatablePages",
 			"MessageGroups::getConfiguredGroups",
 			"MessageGroups::getWorkflowGroups",
 			"MessageGroups::getAggregateGroups"

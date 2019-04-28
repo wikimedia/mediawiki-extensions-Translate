@@ -48,7 +48,14 @@ class MessageGroups {
 		}
 
 		$value = $this->getCachedGroupDefinitions();
+		$customCacheValues = $this->getCustomCacheGroupDefinitions();
+
 		$groups = $value['cc'];
+		foreach ( $customCacheValues as $cacheValue ) {
+			if ( isset( $cacheValue['cc'] ) ) {
+				$groups += $cacheValue['cc'];
+			}
+		}
 
 		$this->initGroupsFromDefinitions( $groups );
 	}
@@ -58,8 +65,6 @@ class MessageGroups {
 	 * @return array
 	 */
 	protected function getCachedGroupDefinitions( $recache = false ) {
-		global $wgAutoloadClasses, $wgVersion;
-
 		$regenerator = function () {
 			global $wgAutoloadClasses;
 
@@ -82,15 +87,70 @@ class MessageGroups {
 			return $wrapper; // save the new value to cache
 		};
 
+		return $this->loadValueFromCache(
+			self::getDefaultCacheKey(),
+			$regenerator,
+			$recache
+		);
+	}
+
+	/**
+	 * Get group definition from message groups that implement the CustomCacheMessageGroup
+	 * interface.
+	 * @param bool|string $recache Either "recache" or false
+	 * @return array
+	 */
+	protected function getCustomCacheGroupDefinitions( $recache = false ) {
+		$customGroupCache = $customCacheValues = [];
+		$usedCacheKeys = [];
+
+		Hooks::run( 'TranslateCustomCacheGroups', [ &$customGroupCache ] );
+
+		foreach ( $customGroupCache as $cacheGroup ) {
+			if ( !in_array( CustomCacheMessageGroup::class,
+				class_implements( $cacheGroup, true ) ) ) {
+				throw new \InvalidArgumentException(
+					"MessageGroup - '$cacheGroup' wanting to use custom " .
+					'cache must implement CustomCacheMessageGroup.'
+				);
+			}
+
+			$cacheKey = $this->getCustomCacheKey( $cacheGroup );
+			if ( in_array( $cacheKey, $usedCacheKeys ) ) {
+				throw new \RuntimeException( "Cache key used by $cacheGroup is already " .
+					" in use by another message group." );
+			}
+			$usedCacheKeys[] = $cacheKey;
+
+			$customCacheValues[] = $this->loadValueFromCache(
+				$cacheKey,
+				$this->getCustomCacheRegenerator( $cacheGroup ),
+				$recache
+			);
+		}
+
+		return $customCacheValues;
+	}
+
+	/**
+	 * Helper function to load a given key value from the cache.
+	 *
+	 * @param string $cacheKey
+	 * @param \Closure $regenerator
+	 * @param bool|string $recache Either "recache" or false
+	 * @return bool|mixed Cache value
+	 */
+	protected function loadValueFromCache( $cacheKey, $regenerator, $recache = false ) {
+		global $wgAutoloadClasses, $wgVersion;
+
 		$cache = $this->getCache();
-		/** @var DependencyWrapper $wrapper */
 		$wrapper = $cache->getWithSetCallback(
-			self::getCacheKey(),
+			$cacheKey,
 			$cache::TTL_DAY,
 			$regenerator,
 			[
 				'lockTSE' => 30, // avoid stampedes (mutex)
-				'checkKeys' => [ self::getCacheKey() ],
+				'checkKeys' => [ $cacheKey ],
 				'touchedCallback' => function ( $value ) {
 					return ( $value instanceof DependencyWrapper && $value->isExpired() )
 						? time() // treat value as if it just expired (for "lockTSE")
@@ -103,13 +163,79 @@ class MessageGroups {
 		// B/C for "touchedCallback" param not existing
 		if ( version_compare( $wgVersion, '1.33', '<' ) && $wrapper->isExpired() ) {
 			$wrapper = $regenerator();
-			$cache->set( self::getCacheKey(), $wrapper, $cache::TTL_DAY );
+			$cache->set( $cacheKey, $wrapper, $cache::TTL_DAY );
 		}
 
 		$value = $wrapper->getValue();
 		self::appendAutoloader( $value['autoload'], $wgAutoloadClasses );
 
 		return $value;
+	}
+
+	/**
+	 * Helper function to get a regenerator closure for message groups that implement
+	 * the CustomCacheMessageGroup interface.
+	 *
+	 * @param string $groupName
+	 * @return \Closure Regenerator function
+	 */
+	protected function getCustomCacheRegenerator( $groupName ) {
+		return function () use ( $groupName ) {
+			global $wgAutoloadClasses;
+
+			// Fetches data from the CustomCacheMessageGroup
+			$cacheData = $groupName::getCacheData();
+
+			// Register autoloaders for this request, both values modified by reference
+			self::appendAutoloader( $cacheData[ 'autoload' ] ?? [], $wgAutoloadClasses );
+
+			$value = [
+				'ts' => wfTimestamp( TS_MW ),
+				'cc' => $cacheData[ 'groups' ] ?? [],
+				'autoload' => $cacheData[ 'autoload' ] ?? []
+			];
+			$wrapper = new DependencyWrapper( $value, $cacheData[ 'deps' ] ?? [] );
+			$wrapper->initialiseDeps();
+
+			return $wrapper; // save the new value to cache
+		};
+	}
+
+	/**
+	 * Returns cache keys for all the message groups that implement the
+	 * CustomCacheMessageGroup interface.
+	 *
+	 * @return string[] Containing the message keys
+	 */
+	protected function getCustomCacheKeys() {
+		$customCacheKeys = $customGroupCache = [];
+
+		Hooks::run( 'TranslateCustomCacheGroups', [ &$customGroupCache ] );
+
+		foreach ( $customGroupCache as $cacheGroup ) {
+			$customCacheKeys[] = $this->getCustomCacheKey( $cacheGroup );
+		}
+
+		return $customCacheKeys;
+	}
+
+	/**
+	 * Returns cache keys for a specific message group that implements the
+	 * CustomCacheMessageGroup interface based on input parameter.
+	 *
+	 * @param string $cacheGroup Message group name
+	 * @return string Cache key
+	 */
+	protected function getCustomCacheKey( $cacheGroup ) {
+		$cacheKey = $cacheGroup::getCacheKey();
+		$cacheVersion = $cacheGroup::getCacheVersion() ?? 1;
+
+		if ( !$cacheKey ) {
+			throw new \InvalidArgumentException( "Custom cache $cacheGroup did not " .
+				"define the cache key." );
+		}
+
+		return self::getCacheKey( $cacheKey, $cacheVersion );
 	}
 
 	/**
@@ -133,12 +259,21 @@ class MessageGroups {
 	 * @since 2015.04
 	 */
 	public function recache() {
-		// Purge the value from all datacenters
+		// Purge the value from all datacenters including the custom caches
 		$cache = $this->getCache();
-		$cache->touchCheckKey( self::getCacheKey() );
+		$cache->touchCheckKey( self::getDefaultCacheKey() );
+		array_map( [ $cache, 'touchCheckKey' ], $this->getCustomCacheKeys() );
+
 		// Reload the cache value and update the local datacenter
 		$value = $this->getCachedGroupDefinitions( 'recache' );
+		$customCacheValues = $this->getCustomCacheGroupDefinitions( 'recache' );
+
 		$groups = $value['cc'];
+		foreach ( $customCacheValues as $cacheValue ) {
+			if ( isset( $cacheValue['cc'] ) ) {
+				$groups += $cacheValue['cc'];
+			}
+		}
 
 		$this->clearProcessCache();
 		$this->initGroupsFromDefinitions( $groups );
@@ -153,7 +288,13 @@ class MessageGroups {
 		$self = self::singleton();
 
 		$cache = $self->getCache();
-		$cache->delete( self::getCacheKey(), 1 );
+
+		$cache->delete( self::getDefaultCacheKey(), 1 );
+
+		// Delete the custom caches
+		$customCacheKeys = $self->getCustomCacheKeys();
+		array_map( [ $cache, 'delete' ], $customCacheKeys,
+			array_fill( 0, count( $customCacheKeys ), 1 ) );
 
 		$self->clearProcessCache();
 	}
@@ -192,24 +333,36 @@ class MessageGroups {
 	}
 
 	/**
-	 * Returns the cache key.
+	 * Returns the full cache key based on the key and cache version passed.
 	 *
+	 * @param string $key
+	 * @param int $version
+	 * @param bool $isDefault Is it the default message group key
 	 * @return string
 	 */
-	protected static function getCacheKey() {
+	public static function getCacheKey( $key, $version, $isDefault = false ) {
 		$self = self::singleton();
 		$cache = $self->getCache();
 
-		return $cache->makeKey( 'translate-groups', 'v' . self::CACHE_VERSION );
+		if ( !$isDefault ) {
+			// prefix custom message groups with "translate-mg-"
+			$key = 'translate-mg-' . strtolower( $key );
+		}
+
+		return $cache->makeKey( $key, 'v' . $version );
+	}
+
+	protected static function getDefaultCacheKey() {
+		return self::getCacheKey( 'translate-groups', self::CACHE_VERSION, true );
 	}
 
 	/**
 	 * Safely merges first array to second array, throwing warning on duplicates and removing
 	 * duplicates from the first array.
-	 * @param array &$additions Things to append
+	 * @param array $additions Things to append
 	 * @param array &$to Where to append
 	 */
-	protected static function appendAutoloader( array &$additions, array &$to ) {
+	protected static function appendAutoloader( array $additions, array &$to ) {
 		foreach ( $additions as $class => $file ) {
 			if ( isset( $to[$class] ) && $to[$class] !== $file ) {
 				$msg = "Autoload conflict for $class: {$to[$class]} !== $file";
@@ -218,36 +371,6 @@ class MessageGroups {
 			}
 
 			$to[$class] = $file;
-		}
-	}
-
-	/**
-	 * Hook: TranslatePostInitGroups
-	 * @param array &$groups
-	 * @param array &$deps
-	 * @param array &$autoload
-	 */
-	public static function getTranslatablePages( array &$groups, array &$deps, array &$autoload ) {
-		global $wgEnablePageTranslation;
-
-		$deps[] = new GlobalDependency( 'wgEnablePageTranslation' );
-
-		if ( !$wgEnablePageTranslation ) {
-			return;
-		}
-
-		$db = TranslateUtils::getSafeReadDB();
-
-		$tables = [ 'page', 'revtag' ];
-		$vars = [ 'page_id', 'page_namespace', 'page_title' ];
-		$conds = [ 'page_id=rt_page', 'rt_type' => RevTag::getType( 'tp:mark' ) ];
-		$options = [ 'GROUP BY' => 'rt_page' ];
-		$res = $db->select( $tables, $vars, $conds, __METHOD__, $options );
-
-		foreach ( $res as $r ) {
-			$title = Title::newFromRow( $r );
-			$id = TranslatablePage::getMessageGroupIdFromTitle( $title );
-			$groups[$id] = new WikiPageMessageGroup( $id, $title );
 		}
 	}
 

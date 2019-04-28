@@ -38,12 +38,13 @@ class WikiPageMessageGroupSerializationTest extends MediaWikiTestCase {
 
 	public function testDataSerialization() {
 		$groups = MessageGroups::getAllGroups();
+		$groupCount = count( $groups );
 
 		$serialized = serialize( $groups );
 		$unserializedGroups = unserialize( $serialized );
 
-		$this->assertCount( 2, $unserializedGroups,
-			'after serialization there are 2 groups.' );
+		$this->assertCount( $groupCount, $unserializedGroups,
+			'after serialization the number of groups matches the count before serialization.' );
 
 		$pageMessageGroup = $unserializedGroups['pageid'];
 		$this->assertEquals( $pageMessageGroup->getId(), 'pageid',
