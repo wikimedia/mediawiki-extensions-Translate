@@ -12,7 +12,11 @@
  * Wraps the translatable page sections into a message group.
  * @ingroup PageTranslation MessageGroup
  */
-class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject, \Serializable {
+class WikiPageMessageGroup extends WikiMessageGroup implements
+				IDBAccessObject,
+				\CustomCacheMessageGroup,
+				\Serializable
+{
 	/**
 	 * @var Title|string
 	 */
@@ -22,6 +26,11 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject, 
 	 * @var int
 	 */
 	protected $namespace = NS_TRANSLATIONS;
+
+	/**
+	 * @var int
+	 */
+	const CACHE_VERSION = 1;
 
 	/**
 	 * @param string $id
@@ -244,5 +253,53 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject, 
 				$this->{$prop} = $deserialized->{$prop};
 			}
 		}
+	}
+
+	/**
+	 * Hook: TranslateCustomCacheGroups
+	 *
+	 * @param array &$customGroupCache
+	 * @return void
+	 */
+	public static function registerToCustomCache( array &$customGroupCache ) {
+		$customGroupCache[] = self::class;
+	}
+
+	public static function getCacheData() {
+		global $wgEnablePageTranslation;
+		$deps = $groups = [];
+
+		$deps[] = new GlobalDependency( 'wgEnablePageTranslation' );
+
+		if ( !$wgEnablePageTranslation ) {
+			return;
+		}
+
+		$db = TranslateUtils::getSafeReadDB();
+
+		$tables = [ 'page', 'revtag' ];
+		$vars = [ 'page_id', 'page_namespace', 'page_title' ];
+		$conds = [ 'page_id=rt_page', 'rt_type' => RevTag::getType( 'tp:mark' ) ];
+		$options = [ 'GROUP BY' => 'rt_page' ];
+		$res = $db->select( $tables, $vars, $conds, __METHOD__, $options );
+
+		foreach ( $res as $r ) {
+			$title = Title::newFromRow( $r );
+			$id = TranslatablePage::getMessageGroupIdFromTitle( $title );
+			$groups[$id] = new WikiPageMessageGroup( $id, $title );
+		}
+
+		return [
+			'groups' => $groups,
+			'deps' => $deps
+		];
+	}
+
+	public static function getCacheKey() {
+		return 'wikipage';
+	}
+
+	public static function getCacheVersion() {
+		return self::CACHE_VERSION;
 	}
 }

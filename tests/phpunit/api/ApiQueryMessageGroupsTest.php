@@ -21,6 +21,14 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		] );
 		$wgHooks['TranslatePostInitGroups'] = [ [ $this, 'getTestGroups' ] ];
 
+		// Don't want any other custom message groups to be fetched.
+		unset( $wgHooks['TranslateCustomCacheGroups'] );
+
+		$this->setTemporaryHook(
+			'TranslateCustomCacheGroups',
+			'MockCustomCacheMessageGroup::registerToCache'
+		);
+
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
 		$mg->recache();
@@ -70,7 +78,8 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		// Renumber keys
 		$items = array_values( $items );
 
-		$this->assertCount( 2, $items, 'Only the two groups specified are in the api' );
+		$this->assertCount( 4, $items,
+			'Only the 4 groups specified (including 2 MockCustomMessageGroup) are in the api' );
 		$this->assertStringEndsWith( 'id', $items[0]['id'] );
 		$this->assertStringEndsWith( 'id', $items[1]['id'] );
 		$this->assertSame( $items[0]['label'], 'thelabel' );
@@ -81,6 +90,8 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		$this->assertSame( $items[1]['namespace'], 5 );
 		$this->assertSame( $items[0]['class'], 'WikiMessageGroup' );
 		$this->assertSame( $items[1]['class'], 'WikiMessageGroup' );
+		$this->assertSame( $items[2]['class'], 'MockCustomCacheMessageGroup' );
+		$this->assertSame( $items[3]['class'], 'MockCustomCacheMessageGroup' );
 	}
 
 	public function testAPIFilterAccuracy() {
@@ -125,7 +136,7 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 			$this->assertSame( $item['exists'], true );
 			$this->assertStringEndsWith( 'id', $item['id'] ); // theid, anotherid
 			$this->assertSame( $item['namespace'], 5 );
-			$this->assertSame( $item['class'], 'WikiMessageGroup' );
+			$this->assertContains( $item['class'], [ 'WikiMessageGroup', 'MockCustomCacheMessageGroup' ] );
 		}
 	}
 

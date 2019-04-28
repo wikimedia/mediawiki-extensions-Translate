@@ -44,6 +44,9 @@ Post processing step to format in wiki
 ;TranslateBeforeAddModules: Provides an opportunity to load extra modules
  array          &$modules: List of resource loader module names
 
+;TranslateCustomCacheGroups: Hook to register new message groups to Translate that implement the CustomCacheMessageGroup.
+ array          &$customGroupCache: List of message group class names that implement the CustomCacheMessageGroup
+
 ;TranslateEventMessageMembershipChange: When group gets new messages or loses messages
  MessageHandle   $handle
  array           $old Previous groups

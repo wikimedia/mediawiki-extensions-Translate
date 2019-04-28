@@ -15,14 +15,16 @@ class PageTranslationHooksTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 
-		global $wgHooks;
 		$this->setMwGlobals( [
 			'wgHooks' => [],
 			'wgEnablePageTranslation' => true,
 			'wgTranslateTranslationServices' => [],
 		] );
 		TranslateHooks::setupTranslate();
-		$wgHooks['TranslatePostInitGroups'] = [ 'MessageGroups::getTranslatablePages' ];
+		$this->setTemporaryHook(
+			'TranslateCustomCacheGroups',
+			'WikiPageMessageGroup::registerToCustomCache'
+		);
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
