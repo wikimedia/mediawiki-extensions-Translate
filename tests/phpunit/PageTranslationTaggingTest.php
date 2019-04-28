@@ -15,7 +15,9 @@ class PageTranslationTaggingTest extends MediaWikiTestCase {
 			'wgTranslateTranslationServices' => [],
 		] );
 		TranslateHooks::setupTranslate();
-		$wgHooks['TranslatePostInitGroups'] = [ 'MessageGroups::getTranslatablePages' ];
+
+		// Only interested in Translatable pages. Remove other unnecessary hooks.
+		unset( $wgHooks['TranslatePostInitGroups'] );
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
