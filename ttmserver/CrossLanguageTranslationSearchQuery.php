@@ -61,6 +61,12 @@ class CrossLanguageTranslationSearchQuery {
 			}
 		}
 
+		if ( !$this->resultset ) {
+			// No hits for documents, just set the result set.
+			$this->resultset = $scroll->current();
+			$this->total = $scroll->current()->getTotalHits();
+		}
+
 		// clear was introduced in Elastica 5.3.1, but Elastica extension uses 5.3.0
 		if ( is_callable( [ $scroll, 'clear' ] ) ) {
 			$scroll->clear();
