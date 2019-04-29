@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "235c40ce_0cfc02bd",
+        "filename": "MessageGroups.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-29T07:44:57Z",
+      "side": 1,
+      "message": "Need to update the CACHE_VERSION in order to ensure that WikiPageMessageGroups are not returned as part of the data in the cache.",
+      "revId": "5a243ed2bd8cd9e40f5d4f4403ef3f160e844015",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9819776b_3d56a0c7",
+        "filename": "messagegroups/CustomCacheMessageGroup.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-04-29T07:44:57Z",
+      "side": 1,
+      "message": "Whether the key is decided by the `CustomCacheMessageGroup` is something I\u0027m not sure is the best thing to do, because the MessageGroup itself never interacts with the cache. We could instead get the MessageGroup\u0027s class name and use that to construct they key.",
+      "revId": "5a243ed2bd8cd9e40f5d4f4403ef3f160e844015",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
