@@ -300,6 +300,7 @@
 	"tux-editor-message-tools-history": "Tarix",
 	"tux-editor-message-tools-delete": "Bestere",
 	"tux-editor-message-tools-translations": "Heme açarnayışi",
+	"tux-editor-message-tools-linktothis": "Gırey ena mesace",
 	"tux-editor-loading": "Bar beno...",
 	"translate-search-more-languages-info": "$1 deha {{PLURAL:$1|zon|zoni}}",
 	"translate-statsbar-tooltip": "%$1 açarneya, %$2 weyneya",
