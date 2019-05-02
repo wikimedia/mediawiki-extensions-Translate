@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "08950445_be261a36",
+        "filename": "i18n/pagetranslation/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-02T11:57:15Z",
+      "side": 1,
+      "message": "Blocking sounds slightly odd to me in this context. I think this is because the object (who is blocked) is unspecified. I would use \"disabled\" (or prevented, or even closed).\n\nThe expression \"non-priority languages\" could be simplified to \"other languages\".\n\nAddition: To simplify translation, maybe make this two separate sentences? \"Translating to other languages is not allowed\".",
+      "range": {
+        "startLine": 81,
+        "startChar": 118,
+        "endLine": 81,
+        "endChar": 163
+      },
+      "revId": "cc7e784da6999a5ab39fe14d31e0179aa07c9cc5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
