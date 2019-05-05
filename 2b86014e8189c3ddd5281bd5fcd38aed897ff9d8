@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3d7eede9_aa0df4c9",
+        "filename": "messagegroups/TranslatablePageMessageGroupStore.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-05T11:27:04Z",
+      "side": 1,
+      "message": "Used Hooks to load these classes because certain tests expect only certain MessageGroups to be configured. If added using in the constructor call, tests can\u0027t control what MessageGroups are configured.",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89d3f772_fda97b57",
+        "filename": "utils/MessageGroupWANCache.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-05T11:27:04Z",
+      "side": 1,
+      "message": "Decided to wrap the functionality related to WANObjectCache in this class, and inject it into the Loaders / Stores. That way during tests these can be mocked.\n\nThe class itself is generic across loaders / stores, but is configured uniquely by each loader / group. Hence the need to checkConfig before in every public method.\n\nAnother gotcha is that it can handle only a single key per message group, which I think is fine.",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
