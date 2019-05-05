@@ -106,7 +106,15 @@ class MessageGroupStats {
 	 */
 	public static function forLanguage( $code, $flags = 0 ) {
 		if ( !self::isValidLanguage( $code ) ) {
-			return self::getUnknownStats();
+			$stats = [];
+			$groups = MessageGroups::singleton()->getGroups();
+			$unknownStats = self::getUnknownStats();
+			$ids = array_keys( $groups );
+			foreach ( $ids as $id ) {
+				$stats[$id] = $unknownStats;
+			}
+
+			return $stats;
 		}
 
 		$stats = self::forLanguageInternal( $code, [], $flags );
@@ -129,7 +137,14 @@ class MessageGroupStats {
 	public static function forGroup( $id, $flags = 0 ) {
 		$group = MessageGroups::getGroup( $id );
 		if ( !self::isValidMessageGroup( $group ) ) {
-			return [];
+			$languages = self::getLanguages();
+			$unknownStats = self::getUnknownStats();
+			$stats = [];
+			foreach ( $languages as $code ) {
+				$stats[$code] = $unknownStats;
+			}
+
+			return $stats;
 		}
 
 		$stats = self::forGroupInternal( $group, [], $flags );
@@ -193,7 +208,7 @@ class MessageGroupStats {
 	 */
 	private static function internalClearGroups( $code, array $groups ) {
 		$stats = [];
-		foreach ( $groups as $id => $group ) {
+		foreach ( $groups as $group ) {
 			// $stats is modified by reference
 			self::forItemInternal( $stats, $group, $code, 0 );
 		}
@@ -378,7 +393,7 @@ class MessageGroupStats {
 		$res = self::selectRowsIdLang( [ $id ], null, $flags );
 		$stats = self::extractResults( $res, [ $id ], $stats );
 
-		# Go over each language filling missing entries
+		// Go over each language filling missing entries
 		$languages = self::getLanguages();
 		foreach ( $languages as $code ) {
 			if ( isset( $stats[$id][$code] ) ) {
@@ -489,12 +504,12 @@ class MessageGroupStats {
 		}
 
 		foreach ( $expanded as $sid => $subgroup ) {
-			# Discouraged groups may belong to another group, usually if there
-			# is an aggregate group for all translatable pages. In that case
-			# calculate and store the statistics, but don't count them as part of
-			# the aggregate group, so that the numbers in Special:LanguageStats
-			# add up. The statistics for discouraged groups can still be viewed
-			# through Special:MessageGroupStats.
+			// Discouraged groups may belong to another group, usually if there
+			// is an aggregate group for all translatable pages. In that case
+			// calculate and store the statistics, but don't count them as part of
+			// the aggregate group, so that the numbers in Special:LanguageStats
+			// add up. The statistics for discouraged groups can still be viewed
+			// through Special:MessageGroupStats.
 			if ( !isset( $stats[$sid][$code] ) ) {
 				$stats[$sid][$code] = self::forItemInternal( $stats, $subgroup, $code, $flags );
 			}
