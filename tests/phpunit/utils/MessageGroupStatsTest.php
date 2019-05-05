@@ -31,4 +31,14 @@ class MessageGroupStatsTest extends PHPUnit\Framework\TestCase {
 			'Two long ids with the same prefix do not collide'
 		);
 	}
+
+	public function testReturnFormatForLanguage() {
+		$validLang = MessageGroupStats::forLanguage( 'en', MessageGroupStats::FLAG_CACHE_ONLY );
+		$invalidLang = MessageGroupStats::forLanguage( 'ffff', MessageGroupStats::FLAG_CACHE_ONLY );
+
+		$this->assertInternalType( 'array', current( $validLang ),
+			'forLanguage returns data in valid format for valid language' );
+		$this->assertInternalType( 'array', current( $invalidLang ),
+			'forLanguage returns data in valid format for invalid language' );
+	}
 }

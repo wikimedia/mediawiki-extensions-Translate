@@ -106,7 +106,15 @@ class MessageGroupStats {
 	 */
 	public static function forLanguage( $code, $flags = 0 ) {
 		if ( !self::isValidLanguage( $code ) ) {
-			return self::getUnknownStats();
+			$stats = [];
+			$groups = MessageGroups::singleton()->getGroups();
+			$unknownStats = self::getUnknownStats();
+			$ids = array_keys( $groups );
+			foreach ( $ids as $id ) {
+				$stats[$id] = $unknownStats;
+			}
+
+			return $stats;
 		}
 
 		$stats = self::forLanguageInternal( $code, [], $flags );
@@ -193,7 +201,7 @@ class MessageGroupStats {
 	 */
 	private static function internalClearGroups( $code, array $groups ) {
 		$stats = [];
-		foreach ( $groups as $id => $group ) {
+		foreach ( $groups as $group ) {
 			// $stats is modified by reference
 			self::forItemInternal( $stats, $group, $code, 0 );
 		}
