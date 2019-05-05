@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "82e39ddc_07f20d45",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-05T17:33:43Z",
+      "side": 1,
+      "message": "Makes me wonder if we should fix this too.\n\nI guess at some point I had an idea that invalid values would not return any values... but it should have thrown errors instead. At this point it seems reasonable to just return unknown values.",
+      "revId": "2fc6aede6bb79ecf06f7117b92aa57aad533e336",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
