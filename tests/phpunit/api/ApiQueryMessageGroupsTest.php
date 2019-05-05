@@ -19,6 +19,7 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 			'wgHooks' => $wgHooks,
 			'wgTranslateTranslationServices' => [],
 		] );
+		unset( $wgHooks['TranslateInitGroupLoaders'] );
 		$wgHooks['TranslatePostInitGroups'] = [ [ $this, 'getTestGroups' ] ];
 
 		$mg = MessageGroups::singleton();

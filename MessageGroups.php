@@ -27,6 +27,11 @@ class MessageGroups {
 	protected $groups;
 
 	/**
+	 * @var MessageGroupLoader[]|null
+	 */
+	protected $groupLoaders;
+
+	/**
 	 * @var WANObjectCache|null
 	 */
 	protected $cache;
@@ -50,6 +55,9 @@ class MessageGroups {
 		$value = $this->getCachedGroupDefinitions();
 		$groups = $value['cc'];
 
+		foreach ( $this->getGroupLoaders() as $groupLoaders ) {
+			$groups += $groupLoaders->getGroups();
+		}
 		$this->initGroupsFromDefinitions( $groups );
 	}
 
@@ -136,9 +144,18 @@ class MessageGroups {
 		// Purge the value from all datacenters
 		$cache = $this->getCache();
 		$cache->touchCheckKey( self::getCacheKey() );
+
+		foreach ( $this->getCacheGroupLoaders() as $groupLoaders ) {
+			$groupLoaders->recache();
+		}
+
 		// Reload the cache value and update the local datacenter
 		$value = $this->getCachedGroupDefinitions( 'recache' );
 		$groups = $value['cc'];
+
+		foreach ( $this->getGroupLoaders() as $groupLoaders ) {
+			$groups += $groupLoaders->getGroups();
+		}
 
 		$this->clearProcessCache();
 		$this->initGroupsFromDefinitions( $groups );
@@ -155,6 +172,10 @@ class MessageGroups {
 		$cache = $self->getCache();
 		$cache->delete( self::getCacheKey(), 1 );
 
+		foreach ( $self->getCacheGroupLoaders() as $groupLoader ) {
+			$groupLoader->clearCache();
+		}
+
 		$self->clearProcessCache();
 	}
 
@@ -167,6 +188,7 @@ class MessageGroups {
 	 */
 	public function clearProcessCache() {
 		$this->groups = null;
+		$this->groupLoaders = null;
 	}
 
 	/**
@@ -222,33 +244,60 @@ class MessageGroups {
 	}
 
 	/**
-	 * Hook: TranslatePostInitGroups
-	 * @param array &$groups
-	 * @param array &$deps
-	 * @param array &$autoload
+	 * Loads and returns group loaders. Group loaders must implement MessageGroupLoader
+	 * and may or may not implement CachedMessageGroupLoader
+	 *
+	 * @return MessageGroupLoader[]
 	 */
-	public static function getTranslatablePages( array &$groups, array &$deps, array &$autoload ) {
-		global $wgEnablePageTranslation;
-
-		$deps[] = new GlobalDependency( 'wgEnablePageTranslation' );
-
-		if ( !$wgEnablePageTranslation ) {
-			return;
+	protected function getGroupLoaders() {
+		if ( $this->groupLoaders ) {
+			return $this->groupLoaders;
 		}
 
-		$db = TranslateUtils::getSafeReadDB();
+		$cache = $this->getCache();
 
-		$tables = [ 'page', 'revtag' ];
-		$vars = [ 'page_id', 'page_namespace', 'page_title' ];
-		$conds = [ 'page_id=rt_page', 'rt_type' => RevTag::getType( 'tp:mark' ) ];
-		$options = [ 'GROUP BY' => 'rt_page' ];
-		$res = $db->select( $tables, $vars, $conds, __METHOD__, $options );
+		$groupLoaderNames = [];
+		Hooks::run( 'TranslateInitGroupLoaders', [ &$groupLoaderNames ] );
 
-		foreach ( $res as $r ) {
-			$title = Title::newFromRow( $r );
-			$id = TranslatablePage::getMessageGroupIdFromTitle( $title );
-			$groups[$id] = new WikiPageMessageGroup( $id, $title );
+		if ( count( $groupLoaderNames ) === 0 ) {
+			$this->groupLoaders = [];
+			return $this->groupLoaders;
 		}
+		foreach ( $groupLoaderNames as $g ) {
+			$implementedClasses = class_implements( $g, true );
+			if ( !in_array( MessageGroupLoader::class, $implementedClasses ) ) {
+				throw new \InvalidArgumentException(
+					"MessageGroupLoader - $g must implement the " .
+					"MessageGroupLoader interface."
+				);
+			}
+
+			if ( in_array( CachedMessageGroupLoader::class, $implementedClasses ) ) {
+				$this->groupLoaders[] = new $g(
+					TranslateUtils::getSafeReadDB(), new MessageGroupWANCache( $cache )
+				);
+			} else {
+				$this->groupLoaders[] = new $g( TranslateUtils::getSafeReadDB() );
+			}
+		}
+
+		return $this->groupLoaders;
+	}
+
+	/**
+	 * Returns group loaders that implement the CachedMessageGroupLoader
+	 *
+	 * @return CachedMessageGroupLoader[]
+	 */
+	protected function getCacheGroupLoaders() {
+		$cachedGroupLoaders = [];
+
+		foreach ( $this->getGroupLoaders() as $g ) {
+			if ( $g instanceof CachedMessageGroupLoader ) {
+				$cachedGroupLoaders[] = $g;
+			}
+		}
+		return $cachedGroupLoaders;
 	}
 
 	/**
@@ -285,22 +334,6 @@ class MessageGroups {
 
 				$groups[$id] = MessageGroupBase::factory( $conf );
 			}
-		}
-	}
-
-	/**
-	 * Hook: TranslatePostInitGroups
-	 * @param array &$groups
-	 * @param array &$deps
-	 * @param array &$autoload
-	 */
-	public static function getWorkflowGroups( array &$groups, array &$deps, array &$autoload ) {
-		global $wgTranslateWorkflowStates;
-
-		$deps[] = new GlobalDependency( 'wgTranslateWorkflowStates' );
-
-		if ( $wgTranslateWorkflowStates ) {
-			$groups['translate-workflow-states'] = new WorkflowStatesMessageGroup();
 		}
 	}
 

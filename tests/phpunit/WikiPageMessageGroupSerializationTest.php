@@ -11,6 +11,7 @@
 class WikiPageMessageGroupSerializationTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
+		global $wgHooks;
 
 		$this->setTemporaryHook(
 			'TranslatePostInitGroups',
@@ -30,6 +31,8 @@ class WikiPageMessageGroupSerializationTest extends MediaWikiTestCase {
 				return false;
 			}
 		);
+
+		unset( $wgHooks['TranslateInitGroupLoaders'] );
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );

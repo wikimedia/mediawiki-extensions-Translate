@@ -22,7 +22,7 @@ class PageTranslationHooksTest extends MediaWikiTestCase {
 			'wgTranslateTranslationServices' => [],
 		] );
 		TranslateHooks::setupTranslate();
-		$wgHooks['TranslatePostInitGroups'] = [ 'MessageGroups::getTranslatablePages' ];
+		$wgHooks['TranslateInitGroupLoaders'] = [ 'TranslatablePageMessageGroupStore::registerLoader' ];
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
