@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b3e7fe1e_532fc064",
+        "filename": "resources/css/ext.translate.special.managegroups.css",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-06T15:59:01Z",
+      "side": 1,
+      "message": "Extra space here?",
+      "revId": "6c43ccdc668babb7db8349e6a2953e68749e518d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
