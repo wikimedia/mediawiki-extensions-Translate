@@ -15,7 +15,8 @@
 			"Matik7",
 			"Py64",
 			"Jdx",
-			"Mazab IZW"
+			"Mazab IZW",
+			"Railfail536"
 		]
 	},
 	"pagetranslation": "Tłumaczenie stron",
@@ -87,6 +88,7 @@
 	"tpt-discouraged-language": "<strong>Tłumaczenie na $2 jest priorytetowe dla tej strony.</strong>\n\nAdministrator tłumaczeń zdecydował, aby tłumaczenie wykonać przede wszystkim dla $3.",
 	"tpt-discouraged-language-reason": "Powód: $1",
 	"tpt-priority-languages": "Administrator tłumaczenia ustawił języki priorytetowe dla tej grupy jako $1 .",
+	"tpt-priority-languages-force": "Administrator tłumaczeń oznaczył języki $1 jako priorytetowe dla tej grupy. Tłumaczenie na inne języki nie jest dozwolone.",
 	"tpt-render-summary": "Aktualizowanie w celu dopasowania do nowej wersji strony źródłowej",
 	"aggregategroups": "Grupy zbiorcze",
 	"tpt-aggregategroup-add": "Dodaj",

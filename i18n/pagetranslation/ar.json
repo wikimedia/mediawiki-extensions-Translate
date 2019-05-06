@@ -81,6 +81,7 @@
 	"tpt-discouraged-language": "<strong>الترجمة إلى $2 ليس أولوية لهذه الصفحة.</strong>\n\nقرر إداري ترجمة تركيز جهود الترجمة على $3.",
 	"tpt-discouraged-language-reason": "السبب: $1",
 	"tpt-priority-languages": "إداري ترجمة ضبط لغات الأولوية لهذه المجموعة إلى $1.",
+	"tpt-priority-languages-force": "قام إدري ترجمة بتعيين لغات الأولوية لهذه المجموعة على $1؛ الترجمة إلى لغات أخرى غير مسموح بها.",
 	"tpt-render-summary": "تحديث لمطابقة نسخة صفحة المصدر الجديدة",
 	"aggregategroups": "المجموعة الإجمالية",
 	"tpt-aggregategroup-add": "أضف",

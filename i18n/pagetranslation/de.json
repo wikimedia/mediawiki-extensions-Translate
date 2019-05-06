@@ -85,6 +85,7 @@
 	"tpt-discouraged-language": "<strong>$2 ist keine priorisierte Sprache für diese Seite.</strong>\n\nEin Übersetzungsadministrator hat sich entschieden, die Übersetzungsarbeiten auf $3 zu fokussieren.",
 	"tpt-discouraged-language-reason": "Grund: $1",
 	"tpt-priority-languages": "Ein Übersetzungsadministrator hat die priorisierte Sprachen für diese Nachrichtengruppe auf $1 festgelegt.",
+	"tpt-priority-languages-force": "Ein Übersetzungsadministrator hat die priorisierten Sprachen für diese Gruppe auf $1 festgelegt. Das Übersetzen in andere Sprachen ist nicht erlaubt.",
 	"tpt-render-summary": "Übernehme Bearbeitung einer neuen Version der Quellseite",
 	"aggregategroups": "Zusammenfassende Nachrichtengruppen",
 	"tpt-aggregategroup-add": "Hinzufügen",

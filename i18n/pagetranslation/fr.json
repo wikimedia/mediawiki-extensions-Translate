@@ -100,6 +100,7 @@
 	"tpt-discouraged-language": "<strong>Traduire en $2 n’est pas une priorité pour cette page.</strong>\n\nUn administrateur des traductions a décidé de concentrer l’effort de traduction sur $3.",
 	"tpt-discouraged-language-reason": "Raison : $1",
 	"tpt-priority-languages": "Un administrateur de traduction a défini les langues prioritaires pour ce groupe : $1.",
+	"tpt-priority-languages-force": "Un administrateur de traduction a fixé les langues prioritaires pour ce groupe à $1. La traduction dans les autres langues n'est pas autorisée.",
 	"tpt-render-summary": "Mise à jour pour être en accord avec la nouvelle version de la source de la page",
 	"aggregategroups": "Groupes d'agrégation",
 	"tpt-aggregategroup-add": "Ajouter",

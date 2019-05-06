@@ -83,6 +83,7 @@
 	"tpt-discouraged-language": "<strong>A tradução para $2 não é prioritária para esta página.</strong>\n\nUm administrador de traduções decidiu focar o esforço de tradução em $3.",
 	"tpt-discouraged-language-reason": "Motivo: $1",
 	"tpt-priority-languages": "Um administrador de traduções definiu que as línguas prioritárias para este grupo são $1.",
+	"tpt-priority-languages-force": "Um administrador de traduções definiu as línguas prioritárias para este grupo como $1. Não é permitido traduzir para outras línguas.",
 	"tpt-render-summary": "A atualizar para corresponder à nova versão da página fonte",
 	"aggregategroups": "Grupos agregadores",
 	"tpt-aggregategroup-add": "Adicionar",
