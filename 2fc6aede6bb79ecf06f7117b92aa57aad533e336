@@ -16,6 +16,24 @@
       "revId": "2fc6aede6bb79ecf06f7117b92aa57aad533e336",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34fc79c2_84a011c7",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-06T14:10:24Z",
+      "side": 1,
+      "message": "I\u0027ve fixed this, and added test cases to validate response formats.\n\nI agree that an exception makes more sense here since the language is invalid and we really shouldn\u0027t be processing it. Though that\u0027s something that will have to be uniformly done across the extension which will take time.",
+      "parentUuid": "82e39ddc_07f20d45",
+      "revId": "2fc6aede6bb79ecf06f7117b92aa57aad533e336",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
