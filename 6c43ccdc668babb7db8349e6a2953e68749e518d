@@ -16,6 +16,24 @@
       "revId": "6c43ccdc668babb7db8349e6a2953e68749e518d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c19486fa_9c1b69c1",
+        "filename": "resources/css/ext.translate.special.managegroups.css",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-06T16:05:25Z",
+      "side": 1,
+      "message": "Thanks. Fixed. I\u0027ll check my editor.",
+      "parentUuid": "b3e7fe1e_532fc064",
+      "revId": "6c43ccdc668babb7db8349e6a2953e68749e518d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
