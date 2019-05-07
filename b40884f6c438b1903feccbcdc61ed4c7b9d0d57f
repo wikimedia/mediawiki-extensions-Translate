@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd19387b_14d21983",
+        "filename": "tests/phpunit/utils/MessageGroupStatsTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T07:05:07Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be necessary per my reading of https://gerrit.wikimedia.org/g/mediawiki/core/+/7225215a0d2b5074959d7ea7b1029ad28ea53643/tests/phpunit/MediaWikiTestCase.php#2342",
+      "revId": "b40884f6c438b1903feccbcdc61ed4c7b9d0d57f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df5541a0_2d4a97c4",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T07:05:07Z",
+      "side": 1,
+      "message": "I would inline self::getUnknownStats here and in the above loop, but it\u0027s just my personal preference.",
+      "range": {
+        "startLine": 144,
+        "startChar": 20,
+        "endLine": 144,
+        "endChar": 14
+      },
+      "revId": "b40884f6c438b1903feccbcdc61ed4c7b9d0d57f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
