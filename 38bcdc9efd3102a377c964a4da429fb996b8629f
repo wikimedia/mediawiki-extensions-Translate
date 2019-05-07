@@ -1,0 +1,723 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1326b7_ba65e37a",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Remove this word. In the future it is no longer a new thing.",
+      "range": {
+        "startLine": 27,
+        "startChar": 34,
+        "endLine": 27,
+        "endChar": 37
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "473a388b_26437bed",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "This is a very large interface to expose to the validators. We should consider limiting it.",
+      "range": {
+        "startLine": 66,
+        "startChar": 30,
+        "endLine": 66,
+        "endChar": 42
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d99a232_6d76a0e9",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "This is theoretically bad for testing. Perhaps we can keep it for now and think how to better handle blacklisting in the future... whether the logic belongs to this class or a separate one.",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "719cbb7d_1241123d",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this remove the existing validators if it is called setValidators? Alternatively perhaps they should be called addValidator and addValidators. Usually only one variant is needed, as it is trivial to wrap one value in an array.",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d0d3b81d_d7f9ceb1",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Here I would prefer the one parameter per line style for readability:\n\n $validator \u003d ValidatorFactory::get(\n    $validatorId,\n    $validatorConfig[\u0027params\u0027] ?? null\n);",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ffa99564_ce0c9e06",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Is there some reason this is not part of the use statements at the top?",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12cb285c_fd5d7cd7",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "validators?",
+      "range": {
+        "startLine": 150,
+        "startChar": 30,
+        "endLine": 150,
+        "endChar": 40
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2572e4b5_0205f5f2",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Feels like internally this could reuse validateMessage logic with another parameter. To not expose it publicly, we could move the logic to internalValidate( $message, $code, $ignoreWarnings, $breakOnNotice )",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5864843_9fa556fa",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "No filtering here?",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b000aa6_361c886b",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Is this still so?",
+      "range": {
+        "startLine": 314,
+        "startChar": 51,
+        "endLine": 314,
+        "endChar": 68
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9fe315e_95cface0",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Would perhaps be a good occasion to convert to a normal exception type.",
+      "range": {
+        "startLine": 317,
+        "startChar": 12,
+        "endLine": 317,
+        "endChar": 23
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e41f1f49_99320ea5",
+        "filename": "api/ApiTranslationCheck.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "What\u0027s MV?",
+      "range": {
+        "startLine": 24,
+        "startChar": 12,
+        "endLine": 24,
+        "endChar": 14
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af533b4a_5cfd2c62",
+        "filename": "api/ApiTranslationCheck.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Perhaps these two lines would be a slightly more readable if the merging would happen on its own line.",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a6e9f924_7dd55c33",
+        "filename": "api/ApiTranslationCheck.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "This doesn\u0027t have any outside callers, right? Could default to private then.",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34ed3c1f_e55ace44",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "These are again outdated... sorry about that :(\n\nI\u0027ll review this shiftly so that it doesn\u0027t need to be updated anymore after this.",
+      "range": {
+        "startLine": 11,
+        "startChar": 15,
+        "endLine": 11,
+        "endChar": 17
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3326d55f_135b5110",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "If I were trying to use this class, I think I would start looking at the constructor, which is not currently documented. Documentation especially for the $params value would be helpful, given it\u0027s opaque array and not named parameters.",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9cc3f12e_7ca80d8f",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Avoid isset for values that are known to be defined. Comparison to null is more explicit and avoids hard to notice errors caused by spelling mistakes.",
+      "range": {
+        "startLine": 50,
+        "startChar": 8,
+        "endLine": 50,
+        "endChar": 14
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c0f2b67_7479e499",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94ee3d99_6b2aa0db",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "This could probably fit on one line now.",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 4
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "859e2114_0f08545d",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Avoid count when it\u0027s not necessary. !$matches should work well here.",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e489f6e_1cc96e08",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Since this is only doing one regex, this can be simplified to\n\n $insertables \u003d array_map( [ $this, \u0027mapInsertables\u0027 ], $matches );",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "669a3cf1_ae05230d",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Does this mean that `display` must be set if one wants to use pre and post? Would be good to document that in the constructor.",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68e738cf_19734bbf",
+        "filename": "messagegroups/MessageGroup.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Could perhaps update all return statements to use |null instead of \"or null\"",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e9d56ba_f737f0e0",
+        "filename": "messagegroups/MessageGroupBase.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Avoid empty for variables that are known to be defined. !$validatorConfig should work fine.",
+      "range": {
+        "startLine": 138,
+        "startChar": 7,
+        "endLine": 138,
+        "endChar": 12
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e38edef4_b0b76ef3",
+        "filename": "messagegroups/MessageGroupBase.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "$suggesters !\u003d\u003d []",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79f59816_345888c4",
+        "filename": "messagegroups/MessageGroupBase.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Is this check necessary given it was already checked before in the only place where this is called?",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50ef7e1e_326ee54a",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "This documentation is outdated. Can be removed alltogether or replaced with @inheritdoc",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26253070_a506bea8",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "This is great. Perhaps in the future we can more easily rename these to more unique names to avoid clashing with other uses.",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6caa5054_da01a288",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 991,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Here too I would split lines so that the insgle parameter is on it\u0027s own line.",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35e8bdb7_54d234dd",
+        "filename": "src/MessageValidator/ValidationResult.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Also here can use !\u003d\u003d []",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da5348bc_a98b1f14",
+        "filename": "src/MessageValidator/ValidationResult.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "I would add this to the use statements at the top.",
+      "range": {
+        "startLine": 56,
+        "startChar": 42,
+        "endLine": 56,
+        "endChar": 56
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "971b1818_61c9dad0",
+        "filename": "src/MessageValidator/ValidatorFactory.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Now unused and can be removed?",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17adb845_c003a510",
+        "filename": "src/MessageValidator/ValidatorFactory.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "I would add this to the use statements at the top.",
+      "range": {
+        "startLine": 46,
+        "startChar": 13,
+        "endLine": 46,
+        "endChar": 37
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a17538f1_77845ca3",
+        "filename": "src/MessageValidator/ValidatorFactory.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "This doesn\u0027t have \\ so it would fail if it is not added to the use statements at the top.",
+      "range": {
+        "startLine": 84,
+        "startChar": 13,
+        "endLine": 84,
+        "endChar": 29
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b165291c_96fb5287",
+        "filename": "tests/phpunit/MessageValidatorTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "Hmm, can you add a comment what depends on this? It looks unused.",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 39
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "064f2893_7ac09e73",
+        "filename": "tests/phpunit/MessageValidatorTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "double space",
+      "range": {
+        "startLine": 65,
+        "startChar": 54,
+        "endLine": 65,
+        "endChar": 56
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0959be0d_976ad918",
+        "filename": "tests/phpunit/insertables/RegexInsertablesSuggesterTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-07T08:21:00Z",
+      "side": 1,
+      "message": "I\u0027ve seen some people use yield [ testcase ] that might be a bit more readable than one huge return statement.",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
