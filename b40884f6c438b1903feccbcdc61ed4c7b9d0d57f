@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2ae5b6be_43248134",
+        "filename": "tests/phpunit/utils/MessageGroupStatsTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-07T12:49:01Z",
+      "side": 1,
+      "message": "Yes, my understanding of this was incorrect which reflects in my other patches as well. Fixed.",
+      "parentUuid": "fd19387b_14d21983",
+      "revId": "b40884f6c438b1903feccbcdc61ed4c7b9d0d57f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df5541a0_2d4a97c4",
         "filename": "utils/MessageGroupStats.php",
         "patchSetId": 2
@@ -39,6 +57,30 @@
       "revId": "b40884f6c438b1903feccbcdc61ed4c7b9d0d57f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a9e3f8a_fc2601e7",
+        "filename": "utils/MessageGroupStats.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-07T12:49:01Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "df5541a0_2d4a97c4",
+      "range": {
+        "startLine": 144,
+        "startChar": 20,
+        "endLine": 144,
+        "endChar": 14
+      },
+      "revId": "b40884f6c438b1903feccbcdc61ed4c7b9d0d57f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
