@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * @group Database
  */
@@ -95,6 +97,7 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 			'Sandboxed users cannot edit their own talk page'
 		);
 		TranslateSandbox::promoteUser( $user );
+		MediaWikiServices::getInstance()->getPermissionManager()->invalidateUsersRightsCache();
 		$this->assertTrue(
 			$title->userCan( 'edit', $user ),
 			'Promoted users can edit their own talk page'
