@@ -75,6 +75,8 @@ class TranslateSandbox {
 		// group-translate-sandboxed group-translate-sandboxed-member
 		$user->addGroup( 'translate-sandboxed' );
 
+		$user->clearInstanceCache();
+
 		return $user;
 	}
 
