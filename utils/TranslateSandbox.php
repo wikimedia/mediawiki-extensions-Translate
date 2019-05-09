@@ -10,6 +10,7 @@
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Utility class for the sandbox feature of Translate. Do not try this yourself. This code makes a
@@ -74,6 +75,8 @@ class TranslateSandbox {
 
 		// group-translate-sandboxed group-translate-sandboxed-member
 		$user->addGroup( 'translate-sandboxed' );
+
+		MediaWikiServices::getInstance()->getPermissionManager()->invalidateUsersRightsCache();
 
 		return $user;
 	}
