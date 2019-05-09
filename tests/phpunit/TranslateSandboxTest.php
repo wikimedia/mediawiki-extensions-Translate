@@ -95,6 +95,7 @@ class TranslateSandboxTest extends MediaWikiTestCase {
 			'Sandboxed users cannot edit their own talk page'
 		);
 		TranslateSandbox::promoteUser( $user );
+		$user->clearInstanceCache();
 		$this->assertTrue(
 			$title->userCan( 'edit', $user ),
 			'Promoted users can edit their own talk page'
