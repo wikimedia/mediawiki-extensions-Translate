@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mirin"
+		]
+	},
+	"tsb-all-languages-button-label": "Ĉiuj lingvoj",
+	"tsb-search-requests": "Serĉi petojn",
+	"tsb-accept-button-label": "Akcepti",
+	"tsb-reject-button-label": "Malakcepti",
+	"tsb-accept-all-button-label": "Akcepti ĉiujn",
+	"tsb-reject-all-button-label": "Malakcepti ĉiujn",
+	"tsb-user-posted-a-comment": "Ne estas tradukanto",
+	"tsb-didnt-make-any-translations": "Tiu uzanto ne tradukis ion ajn.",
+	"tsb-translations-source": "Fonto",
+	"translationstash": "Bonvenon",
+	"tsb-limit-reached-title": "Dankon pro viaj tradukoj"
+}

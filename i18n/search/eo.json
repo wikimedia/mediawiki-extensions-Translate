@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
-			"YvesNevelsteen"
+			"YvesNevelsteen",
+			"Mirin"
 		]
 	},
 	"searchtranslations": "Serĉi tradukojn",
@@ -23,5 +24,6 @@
 	"tux-sst-translated": "Tradukoj de $1",
 	"tux-sst-untranslated": "Neniu traduko de $1",
 	"tux-sst-ellipsis-untranslated": "Neniu traduko",
+	"tux-sst-ellipsis-outdated": "Malaktualaj tradukoj",
 	"tux-sst-case-sensitive": "Usklecodistinga"
 }

@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mirin"
+		]
+	},
+	"apihelp-aggregategroups-param-group": "Identigilo de mesaĝgrupo.",
+	"apihelp-aggregategroups-example-1": "Asocii grupon",
+	"apihelp-groupreview-param-group": "Mesaĝgrupo.",
+	"apihelp-groupreview-param-language": "Lingvokodo.",
+	"apihelp-groupreview-param-state": "La nova staton de la grupo.",
+	"apihelp-query+languagestats-param-language": "Lingvokodo.",
+	"apihelp-query+messagecollection-param-group": "Mesaĝgrupo.",
+	"apihelp-query+messagecollection-param-language": "Lingvokodo.",
+	"apihelp-query+messagecollection-example-1": "Listo de subtenataj lingvoj",
+	"apihelp-query+messagegroups-param-iconsize": "Preferata grando de bildigita grupa ikono.",
+	"apihelp-query+messagegroups-example-1": "Montri mesaĝgrupojn",
+	"apihelp-query+messagegroupstats-param-group": "Identigilo de mesaĝgrupo.",
+	"apihelp-query+messagetranslations-param-title": "Kompleta titolo de konata mesaĝo.",
+	"apihelp-translatesandbox-param-do": "Kion fari.",
+	"apihelp-translationreview-description": "Marki tradukojn kiel reviziitajn.",
+	"apihelp-translationreview-summary": "Marki tradukojn kiel reviziitajn.",
+	"apihelp-translationstash-param-subaction": "Ago.",
+	"apihelp-translationstash-param-title": "Titolo de la paĝo de traduka unuo.",
+	"apihelp-translationstash-param-translation": "Traduko farita de la uzanto.",
+	"apihelp-translationstash-param-metadata": "JSON-objekto.",
+	"apihelp-searchtranslations-param-limit": "Grando de la rezulto.",
+	"apihelp-searchtranslations-example-1": "Montri tradukojn por la lingvo.",
+	"apierror-translate-invalidupdate": "Ne valida ĝisdatigo",
+	"apierror-translate-sandbox-invalidppassword": "Ne valida pasvorto",
+	"apierror-translate-unknownmessage": "Nekonata mesaĝo",
+	"apiwarn-translate-alreadyreviewedbyyou": "Jam markita kiel reviziita de vi"
+}
