@@ -31,6 +31,8 @@ class WikiPageMessageGroupSerializationTest extends MediaWikiTestCase {
 			}
 		);
 
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders', [] );
+
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
 		$mg->recache();

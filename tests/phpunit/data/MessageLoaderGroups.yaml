@@ -1,0 +1,7 @@
+---
+# test for FileBasedMessageGroupLoader
+BASIC:
+  id: message-loader-group
+  label: Message Loader Group
+  class: FileBasedMessageGroup
+  namespace: 10
