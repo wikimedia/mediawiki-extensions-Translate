@@ -17,14 +17,14 @@ class MessageGroupsTest extends MediaWikiTestCase {
 			__DIR__ . '/data/ParentGroups.yaml',
 		];
 
-		global $wgHooks;
 		$this->setMwGlobals( [
-			'wgHooks' => $wgHooks,
 			'wgTranslateGroupFiles' => $conf,
 			'wgTranslateTranslationServices' => [],
 			'wgTranslateMessageNamespaces' => [ NS_MEDIAWIKI ],
 		] );
-		$wgHooks['TranslatePostInitGroups'] = [ 'MessageGroups::getConfiguredGroups' ];
+
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders',
+			'FileBasedMessageGroupLoader::registerLoader' );
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
