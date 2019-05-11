@@ -8,14 +8,13 @@ class PageTranslationTaggingTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 
-		global $wgHooks;
 		$this->setMwGlobals( [
-			'wgHooks' => $wgHooks,
 			'wgEnablePageTranslation' => true,
 			'wgTranslateTranslationServices' => [],
 		] );
 		TranslateHooks::setupTranslate();
-		$wgHooks['TranslatePostInitGroups'] = [ 'MessageGroups::getTranslatablePages' ];
+		$this->setTemporaryHook( 'TranslateInitGroupLoaders',
+			[ 'TranslatablePageMessageGroupStore::registerLoader' ] );
 
 		$mg = MessageGroups::singleton();
 		$mg->setCache( new WANObjectCache( [ 'cache' => wfGetCache( 'hash' ) ] ) );
