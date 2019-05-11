@@ -93,6 +93,9 @@ Post processing step to format in wiki
  array          &$deps: List of dependencies as supported by DependecyWrapper class from MediaWiki
  array          &$autoload: List of autoloaded classes. Key is the name of the class and value is filename.
 
+;TranslateInitGroupLoaders: Hook to register new message group loaders that can then load MessageGroups for translation purpose.
+ array          &$groupLoader: List of message group loader class names that implement the MessageGroupLoader
+
 ;TranslatePrefillTranslation: Provides an opportunity for a new translation to start not from as a carte blanche (the default) but from some prefilled string
  string         &$translation: The translation string as it stands
  MessageHandle   $handle: The current MessageHandle object
