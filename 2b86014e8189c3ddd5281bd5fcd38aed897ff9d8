@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "c586325b_0aac5184",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-12T07:19:16Z",
+      "side": 1,
+      "message": "Want to maintain differentiation between null and empty array. If empty array, means no message groups hooked to TranslateInitGroupLoaders, and no need to trigger the hook again.\n\nUpdated checks below according to feedback",
+      "parentUuid": "b755a94a_484ff6af",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "66055728_24faee34",
         "filename": "MessageGroups.php",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7917506c_c9b34167",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-12T07:19:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "66055728_24faee34",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "efc3c095_633dcf94",
         "filename": "MessageGroups.php",
         "patchSetId": 1
@@ -50,6 +86,24 @@
       "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25a4b0c9_869af875",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-12T07:19:16Z",
+      "side": 1,
+      "message": "Returned an instance from the function triggered on TranslateInitGroupLoaders hook. Based on implemented interfaces, injecting the database and cache.",
+      "parentUuid": "efc3c095_633dcf94",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -76,6 +130,30 @@
     },
     {
       "key": {
+        "uuid": "6e50f462_71fbadd5",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-12T07:19:16Z",
+      "side": 1,
+      "message": "Fixed. Added a new interfaces, DbMessageGroupLoader. Based on implemented interfaces injecting database and subsequently the Cache helper.",
+      "parentUuid": "b6a23c4d_e9c902e0",
+      "range": {
+        "startLine": 275,
+        "startChar": 0,
+        "endLine": 281,
+        "endChar": 4
+      },
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3154d70c_d9ee837e",
         "filename": "MessageGroups.php",
         "patchSetId": 1
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "2ff5904f_daef6f63",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-12T07:19:16Z",
+      "side": 1,
+      "message": "True. For now I\u0027ve replaced this with array_filter",
+      "parentUuid": "3154d70c_d9ee837e",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c4760517_d93f82b3",
         "filename": "messagegroups/TranslatablePageMessageGroupStore.php",
         "patchSetId": 1
@@ -104,6 +200,24 @@
       "writtenOn": "2019-05-06T15:33:27Z",
       "side": 1,
       "message": "Avoid aligning with tabs, one level of indentation is enough.",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01cceffd_aa098a09",
+        "filename": "messagegroups/TranslatablePageMessageGroupStore.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-12T07:19:16Z",
+      "side": 1,
+      "message": "phpcs complains otherwise,\n\n1. Expected 4 spaces before interface name; 1 found (PSR2.Classes.ClassDeclaration.InterfaceWrongIndent)\n\n2. Tabs must be used to indent lines; spaces are not allowed (Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed)\n\n3. Only one interface may be specified per line in a multi-line implements declaration\n(PSR2.Classes.ClassDeclaration.InterfaceSameLine)",
+      "parentUuid": "c4760517_d93f82b3",
       "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
@@ -127,6 +241,24 @@
     },
     {
       "key": {
+        "uuid": "a53580c7_e9179a5e",
+        "filename": "messagegroups/TranslatablePageMessageGroupStore.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-12T07:19:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "44433d38_88f8b8b2",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a8e120c4_47adabe7",
         "filename": "messagegroups/TranslatablePageMessageGroupStore.php",
         "patchSetId": 1
@@ -144,6 +276,24 @@
     },
     {
       "key": {
+        "uuid": "c1c83152_d8026fb0",
+        "filename": "messagegroups/TranslatablePageMessageGroupStore.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-12T07:19:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a8e120c4_47adabe7",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8647fea7_13a72c02",
         "filename": "messagegroups/TranslatablePageMessageGroupStore.php",
         "patchSetId": 1
@@ -155,6 +305,24 @@
       "writtenOn": "2019-05-06T15:33:27Z",
       "side": 1,
       "message": "I\u0027m not sure this function is useful. What was your plan with it?",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dc1da6a0_a2b776eb",
+        "filename": "messagegroups/TranslatablePageMessageGroupStore.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-12T07:19:16Z",
+      "side": 1,
+      "message": "Purpose of the function is to check if the GlobalDependency has / have expired. This function is passed as touchedCallback parameter to MessageGroupWANCache",
+      "parentUuid": "8647fea7_13a72c02",
       "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
@@ -213,6 +381,24 @@
     },
     {
       "key": {
+        "uuid": "c35171e2_e7f70860",
+        "filename": "tests/phpunit/WikiPageMessageGroupSerializationTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-12T07:19:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "61fbc4c5_37fee243",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "acad65ed_b9963539",
         "filename": "tests/phpunit/tag/PageTranslationHooksTest.php",
         "patchSetId": 1
@@ -227,6 +413,24 @@
       "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f82db9b9_b5826f63",
+        "filename": "tests/phpunit/tag/PageTranslationHooksTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-12T07:19:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "acad65ed_b9963539",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
