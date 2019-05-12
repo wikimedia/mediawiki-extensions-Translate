@@ -79,6 +79,7 @@
 	"tpt-discouraged-language": "<strong>תרגום ל$2 לא מוגדר בתור עדיפות גבוהה עבור הדף הזה.</strong>\n\nמנהל התרגום החליט שצריך לרכז את מאמצי בתרגום בשפות הבאות: $3.",
 	"tpt-discouraged-language-reason": "סיבה: $1",
 	"tpt-priority-languages": "מנהל תרגום הגדיר שהשפות המועדפות לקבוצה הזאת הן $1.",
+	"tpt-priority-languages-force": "מנהל התרגום הגדיר שהשפות המועדפות לקבוצה הזאת הן $1. תרגום לשפות אחרות אסור.",
 	"tpt-render-summary": "עדכון להתאמת הגרסה החדשה של דף המקור",
 	"aggregategroups": "קבוצות משולבות",
 	"tpt-aggregategroup-add": "הוספה",
