@@ -226,6 +226,30 @@
     },
     {
       "key": {
+        "uuid": "947c7cc6_b566c9e7",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-13T19:38:43Z",
+      "side": 1,
+      "message": "Went with a slightly different approach, then what we\u0027d discussed as I felt that it was much cleaner than having an unnecessary setCache method call. Let me know your thoughts.",
+      "parentUuid": "98c77584_cd4d659b",
+      "range": {
+        "startLine": 275,
+        "startChar": 0,
+        "endLine": 281,
+        "endChar": 4
+      },
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3154d70c_d9ee837e",
         "filename": "MessageGroups.php",
         "patchSetId": 1
