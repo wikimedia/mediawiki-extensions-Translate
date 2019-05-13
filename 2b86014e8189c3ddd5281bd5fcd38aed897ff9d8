@@ -178,6 +178,30 @@
     },
     {
       "key": {
+        "uuid": "32133471_bca16118",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-13T12:04:08Z",
+      "side": 1,
+      "message": "I felt that, especially when I wanted to pass a parser for the FileBasedMessageGroupLoader.\n\nIt would have required creating another interface, and then injecting the parser.\n\nDo you think that that when the Loaders are registering themselves, they can also return the dependencies they need? For eg:\n\nreturn [\n   \u0027instance\u0027 \u003d\u003e new self,\n   \u0027deps\u0027 \u003d\u003e [ \u0027cache\u0027, \u0027database\u0027, \u0027parser\u0027 ]\n];\n\nWe could refactor the code to detect and load the dependencies using separate class called MessageGroupsDependencyHandler which would resolve these dependencies.\n\nOnce resolved these dependencies could be passed to the constructor via an array - \n\n[\n \u0027cache\u0027 \u003d\u003e new MessageGroupWANCache,\n \u0027parser\u0027 \u003d\u003e new MessageGroupConfigurationParser,\n ...\n]\n\nIf we make MessageGroupsDependencyHandler implement an interface, we can mock it during tests.",
+      "parentUuid": "ffd1f959_7ebcc237",
+      "range": {
+        "startLine": 275,
+        "startChar": 0,
+        "endLine": 281,
+        "endChar": 4
+      },
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3154d70c_d9ee837e",
         "filename": "MessageGroups.php",
         "patchSetId": 1
@@ -263,6 +287,24 @@
       "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43affe45_37008425",
+        "filename": "messagegroups/TranslatablePageMessageGroupStore.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-13T12:04:08Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "236b3fc5_60eaf161",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -371,6 +413,24 @@
     },
     {
       "key": {
+        "uuid": "da850d84_01e29bfc",
+        "filename": "messagegroups/TranslatablePageMessageGroupStore.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-13T12:04:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc1da6a0_a2b776eb",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3d7eede9_aa0df4c9",
         "filename": "messagegroups/TranslatablePageMessageGroupStore.php",
         "patchSetId": 1
@@ -403,6 +463,24 @@
       "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "256a2c52_47cc90fe",
+        "filename": "messagegroups/TranslatablePageMessageGroupStore.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-13T12:04:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2b40f8a_95ceed9c",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
