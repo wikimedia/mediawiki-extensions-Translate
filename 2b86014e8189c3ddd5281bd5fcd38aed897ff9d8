@@ -202,6 +202,30 @@
     },
     {
       "key": {
+        "uuid": "98c77584_cd4d659b",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-13T13:58:26Z",
+      "side": 1,
+      "message": "I don\u0027t know what would be the best solution here.\n\nOne option, if we want to change something now, would be, in registerLoader just to return new self( $dep1, $dep2, ... );\n\nFor testing this doesn\u0027t change much. For MessageGroups it simplifies the handling of loaders as it doesn\u0027t have to deal with dependency injection. For other uses, like SpecialPageTranslation, they could use the same hook, or call the same method (though the calling convention would be ugly, unless we separate the hook handler from the factory code placed in another static method \"factory\"). If we had a service locator, like in core, it would be much easier as the service locator knows how to create the loaders and inject the dependencies.\n\nNot sure if I wrote above is understandable, but I would be okay if we placed the service wiring in the `registerLoader` method (or separate factory method), with the idea that in the future it would possibly move elsewhere.",
+      "parentUuid": "32133471_bca16118",
+      "range": {
+        "startLine": 275,
+        "startChar": 0,
+        "endLine": 281,
+        "endChar": 4
+      },
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3154d70c_d9ee837e",
         "filename": "MessageGroups.php",
         "patchSetId": 1
