@@ -426,7 +426,8 @@
 				{
 					title: 'Special:Translate',
 					showMessage: this.message.key,
-					group: this.message.primaryGroup
+					group: this.message.primaryGroup,
+					language: this.message.targetLanguage
 				},
 				'tux-editor-message-tools-linktothis'
 			);
@@ -569,7 +570,7 @@
 					}
 				} );
 
-			targetLangCode = $messageList.data( 'targetlangcode' );
+			targetLangCode = this.message.targetLanguage;
 			if ( targetLangCode === mw.config.get( 'wgTranslateDocumentationLanguageCode' ) ) {
 				targetLangAttrib = mw.config.get( 'wgContentLanguage' );
 				targetLangDir = $.uls.data.getDir( targetLangAttrib );
