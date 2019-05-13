@@ -154,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "ffd1f959_7ebcc237",
+        "filename": "MessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-13T07:16:40Z",
+      "side": 1,
+      "message": "I don\u0027t think the interface approach will scale, but I\u0027m willing to accept it for now and leave refactoring of that part for later.",
+      "parentUuid": "6e50f462_71fbadd5",
+      "range": {
+        "startLine": 275,
+        "startChar": 0,
+        "endLine": 281,
+        "endChar": 4
+      },
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3154d70c_d9ee837e",
         "filename": "MessageGroups.php",
         "patchSetId": 1
@@ -218,6 +242,24 @@
       "side": 1,
       "message": "phpcs complains otherwise,\n\n1. Expected 4 spaces before interface name; 1 found (PSR2.Classes.ClassDeclaration.InterfaceWrongIndent)\n\n2. Tabs must be used to indent lines; spaces are not allowed (Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed)\n\n3. Only one interface may be specified per line in a multi-line implements declaration\n(PSR2.Classes.ClassDeclaration.InterfaceSameLine)",
       "parentUuid": "c4760517_d93f82b3",
+      "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "236b3fc5_60eaf161",
+        "filename": "messagegroups/TranslatablePageMessageGroupStore.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-13T07:16:40Z",
+      "side": 1,
+      "message": "I meant one tab, instead of 4 tabs - not spaces.",
+      "parentUuid": "01cceffd_aa098a09",
       "revId": "2b86014e8189c3ddd5281bd5fcd38aed897ff9d8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
