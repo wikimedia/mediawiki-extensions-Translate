@@ -426,7 +426,8 @@
 				{
 					title: 'Special:Translate',
 					showMessage: this.message.key,
-					group: this.message.primaryGroup
+					group: this.message.group,
+					language: $( '.tux-messagelist' ).data( 'targetlangcode' )
 				},
 				'tux-editor-message-tools-linktothis'
 			);
