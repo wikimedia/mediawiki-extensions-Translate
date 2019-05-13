@@ -412,6 +412,9 @@
 				mw.msg( 'tux-messagetable-loading-messages', this.$loader.data( 'pagesize' ) )
 			);
 
+			// Update the target language
+			this.$container.data( 'targetlangcode', this.settings.language );
+
 			// Reset the statsbar
 			this.$statsBar
 				.empty()
