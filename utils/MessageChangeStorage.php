@@ -37,7 +37,7 @@ class MessageChangeStorage {
 	 * @return bool
 	 */
 	public static function isValidCdbName( $name ) {
-		return preg_match( '/^[a-zA-Z_-]{1,100}$/', $name );
+		return preg_match( '/^[a-z_-]{1,100}$/i', $name );
 	}
 
 	/**

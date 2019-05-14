@@ -287,7 +287,7 @@ class MessageChecker {
 	 * @param array &$warnings Array where warnings are appended to.
 	 */
 	protected function rubyVariableCheck( $messages, $code, array &$warnings ) {
-		$this->parameterCheck( $messages, $code, $warnings, '/%{[a-zA-Z_]+}/' );
+		$this->parameterCheck( $messages, $code, $warnings, '/%\{[a-z_]+}/i' );
 	}
 
 	/**

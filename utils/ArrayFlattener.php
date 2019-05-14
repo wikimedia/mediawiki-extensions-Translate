@@ -196,7 +196,7 @@ class ArrayFlattener {
 		 * Replace all variables with placeholders. Possible source of bugs
 		 * if other characters that given below are used.
 		 */
-		$regex = '~\{[a-zA-Z_-]+}~';
+		$regex = '/\{[a-z_-]+}/i';
 		$placeholders = [];
 		$match = [];
 
