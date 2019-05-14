@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "85e494cd_9c9c9937",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-14T06:03:22Z",
+      "side": 1,
+      "message": "Ideally we would get the language code from this.message.\n\nFor now, a small cleanup would be to assign $( \u0027.tux-messagelist\u0027 ) to a member property in the constructor and update the uses of it in prepareEditorColumn. This would consolidate the \"random DOM access\" to one place where it is easy to spot later.",
+      "revId": "6d1f96c064f21b5f04d40920a4c1cef0677582c5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
