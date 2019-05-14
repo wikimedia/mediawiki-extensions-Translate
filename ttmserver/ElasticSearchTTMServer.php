@@ -480,11 +480,7 @@ class ElasticSearchTTMServer
 	 * @return string
 	 */
 	private function getIndexName() {
-		if ( isset( $this->config['index'] ) ) {
-			return $this->config['index'];
-		} else {
-			return 'ttmserver';
-		}
+		return $this->config['index'] ?? 'ttmserver';
 	}
 
 	public function getType() {

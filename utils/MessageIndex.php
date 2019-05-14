@@ -113,11 +113,7 @@ abstract class MessageIndex {
 	protected function get( $key ) {
 		// Default implementation
 		$mi = $this->retrieve();
-		if ( isset( $mi[$key] ) ) {
-			return $mi[$key];
-		} else {
-			return null;
-		}
+		return $mi[$key] ?? null;
 	}
 
 	/**
@@ -650,11 +646,7 @@ class CDBMessageIndex extends MessageIndex {
 		$reader = $this->getReader();
 		// We might have the full cache loaded
 		if ( $this->index !== null ) {
-			if ( isset( $this->index[$key] ) ) {
-				return $this->index[$key];
-			} else {
-				return null;
-			}
+			return $this->index[$key] ?? null;
 		}
 
 		$value = $reader->get( $key );
@@ -727,11 +719,7 @@ class HashMessageIndex extends MessageIndex {
 	 * @return mixed
 	 */
 	protected function get( $key ) {
-		if ( isset( $this->index[$key] ) ) {
-			return $this->index[$key];
-		} else {
-			return null;
-		}
+		return $this->index[$key] ?? null;
 	}
 
 	protected function store( array $array, array $diff ) {

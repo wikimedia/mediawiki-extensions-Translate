@@ -552,13 +552,7 @@ PHP;
 	 * @return mixed
 	 */
 	protected static function chainGetter( $key, $a, $b, $default ) {
-		if ( isset( $a[$key] ) ) {
-			return $a[$key];
-		} elseif ( isset( $b[$key] ) ) {
-			return $b[$key];
-		} else {
-			return $default;
-		}
+		return $a[$key] ?? $b[$key] ?? $default;
 	}
 
 	protected static function formatTime( $time ) {

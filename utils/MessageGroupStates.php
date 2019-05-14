@@ -31,10 +31,6 @@ class MessageGroupStates {
 
 	public function getConditions() {
 		$conf = $this->config;
-		if ( isset( $conf[self::CONDKEY] ) ) {
-			return $conf[self::CONDKEY];
-		} else {
-			return [];
-		}
+		return $conf[self::CONDKEY] ?? [];
 	}
 }
