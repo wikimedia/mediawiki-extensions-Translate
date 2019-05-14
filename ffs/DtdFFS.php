@@ -26,27 +26,19 @@ class DtdFFS extends SimpleFFS {
 	 */
 	public function readFromVariable( $data ) {
 		preg_match_all( ',# Author: ([^\n]+)\n,', $data, $matches );
-		$authors = [];
-
-		$count = count( $matches[1] );
-		for ( $i = 0; $i < $count; $i++ ) {
-			$authors[] = $matches[1][$i];
-		}
+		$authors = $matches[1];
 
 		preg_match_all( ',<!ENTITY[ ]+([^ ]+)\s+"([^"]+)"[^>]*>,', $data, $matches );
-
-		$keys = $matches[1];
-		$values = $matches[2];
-
-		$messages = [];
-
-		$count = count( $matches[1] );
-		for ( $i = 0; $i < $count; $i++ ) {
-			$messages[$keys[$i]] = str_replace(
-				[ '&quot;', '&#34;', '&#39;' ],
-				[ '"', '"', "'" ],
-				$values[$i] );
-		}
+		list( , $keys, $messages ) = $matches;
+		$messages = array_combine(
+			$keys,
+			array_map(
+				function ( $message ) {
+					return html_entity_decode( $message, ENT_QUOTES );
+				},
+				$messages
+			)
+		);
 
 		$messages = $this->group->getMangler()->mangle( $messages );
 
