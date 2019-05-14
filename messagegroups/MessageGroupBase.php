@@ -314,11 +314,7 @@ abstract class MessageGroupBase implements MessageGroup {
 			return $tags;
 		}
 
-		if ( isset( $tags[$type] ) ) {
-			return $tags[$type];
-		}
-
-		return [];
+		return $tags[$type] ?? [];
 	}
 
 	protected function setTags( MessageCollection $collection ) {

@@ -198,12 +198,7 @@ class TranslateUtils {
 	 */
 	public static function getLanguageName( $code, $language = 'en' ) {
 		$languages = self::getLanguageNames( $language );
-
-		if ( isset( $languages[$code] ) ) {
-			return $languages[$code];
-		} else {
-			return $code;
-		}
+		return $languages[$code] ?? $code;
 	}
 
 	/**
