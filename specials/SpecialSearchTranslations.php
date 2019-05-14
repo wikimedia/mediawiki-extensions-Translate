@@ -489,15 +489,13 @@ HTML
 		];
 
 		$selected = $this->opts->getValue( 'filter' );
-		$keys = array_keys( $tabs );
-		if ( in_array( $selected, array_values( $ellipsisOptions ) ) ) {
-			$key = $keys[count( $keys ) - 1];
-			$ellipsisOptions = [ $key => $tabs[$key] ];
+		if ( in_array( $selected, $ellipsisOptions ) ) {
+			$ellipsisOptions = array_slice( $tabs, -1 );
 
 			// Remove the last tab
-			unset( $tabs[$key] );
+			array_pop( $tabs );
 			$tabs = array_merge( $tabs, [ 'outdated' => $selected ] );
-		} elseif ( !in_array( $selected, array_values( $tabs ) ) ) {
+		} elseif ( !in_array( $selected, $tabs ) ) {
 			$selected = '';
 		}
 

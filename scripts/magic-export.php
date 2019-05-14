@@ -250,11 +250,7 @@ PHP
 				$data = $content->getNativeData();
 
 				// Parse message file.
-				$segments = explode( "\n", $data );
-				array_shift( $segments );
-				array_shift( $segments );
-				unset( $segments[count( $segments ) - 1] );
-				unset( $segments[count( $segments ) - 1] );
+				$segments = array_slice( explode( "\n", $data ), 2, -2 );
 				$messagesNew = [];
 				foreach ( $segments as $segment ) {
 					$parts = explode( ' = ', $segment );
