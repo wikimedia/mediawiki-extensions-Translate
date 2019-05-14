@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eecacdd7_f6553cb2",
+        "filename": "utils/MessageGroupWANCache.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-14T12:53:17Z",
+      "side": 1,
+      "message": "This will throw a notice:\nWarning: call_user_func() expects parameter 1 to be a valid callback, no array or string given in /www/dev.translatewiki.net/docroot/w/extensions/Translate/utils/MessageGroupWANCache.php on line 113\n\nThis happens for AggregateMessageGroupLoader because it doesn\u0027t define a touchedCallback.",
+      "revId": "0a433ed8a22856bf31f1f29b68a7339fc5467611",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a3649a9_c5970b34",
+        "filename": "utils/MessageGroupWANCache.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-14T12:53:17Z",
+      "side": 1,
+      "message": "Should this be $this-\u003esetValue?",
+      "revId": "0a433ed8a22856bf31f1f29b68a7339fc5467611",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
