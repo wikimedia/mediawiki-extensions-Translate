@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1523cafc_0b34cf0e",
+        "filename": "MessageGroups.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-14T09:01:08Z",
+      "side": 1,
+      "message": "Documented the expected behavior under MessageGroupLoader.",
+      "parentUuid": "2e9fa368_c5e132e3",
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ccf9910b_aea38d69",
         "filename": "MessageGroups.php",
         "patchSetId": 9
@@ -39,6 +57,30 @@
       "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "238057a9_f877050f",
+        "filename": "MessageGroups.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-14T09:01:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ccf9910b_aea38d69",
+      "range": {
+        "startLine": 375,
+        "startChar": 2,
+        "endLine": 375,
+        "endChar": 4
+      },
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "6b58a83d_c3730459",
+        "filename": "messagegroups/loaders/AggregateMessageGroupLoader.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-14T09:01:08Z",
+      "side": 1,
+      "message": "I have replaced this with `$this-\u003edb`",
+      "parentUuid": "24dfb6f3_94894204",
+      "range": {
+        "startLine": 99,
+        "startChar": 9,
+        "endLine": 99,
+        "endChar": 41
+      },
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4d6f1b_6a674c0a",
         "filename": "messagegroups/loaders/CachedMessageGroupLoader.php",
         "patchSetId": 9
@@ -79,6 +145,24 @@
       "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ebdb7d76_215bc7a2",
+        "filename": "messagegroups/loaders/CachedMessageGroupLoader.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-14T09:01:08Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1a4d6f1b_6a674c0a",
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -99,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "5bbba91c_c9969847",
+        "filename": "messagegroups/loaders/FileBasedMessageGroupLoader.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-14T09:01:08Z",
+      "side": 1,
+      "message": "That was the patch related to the MessageValidator framework. I did not add @since attributes on this patch. Have added them now.",
+      "parentUuid": "71f0ba5a_5d6b0a6c",
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e66b0ade_b4b89c69",
         "filename": "messagegroups/loaders/MessageGroupLoader.php",
         "patchSetId": 9
@@ -113,6 +215,24 @@
       "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52c5e023_3e58524f",
+        "filename": "messagegroups/loaders/MessageGroupLoader.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-14T09:01:08Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e66b0ade_b4b89c69",
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -133,6 +253,24 @@
     },
     {
       "key": {
+        "uuid": "6cdc148f_28287d9b",
+        "filename": "messagegroups/loaders/WorkflowStatesMessageGroupLoader.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-14T09:01:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bdc9562e_4f7fb208",
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e6677f58_03e76e47",
         "filename": "tests/phpunit/messagegroups/TranslatablePageMessageGroupStoreTest.php",
         "patchSetId": 9
@@ -147,6 +285,24 @@
       "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "435e56a6_c894b3a3",
+        "filename": "tests/phpunit/messagegroups/TranslatablePageMessageGroupStoreTest.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-14T09:01:08Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e6677f58_03e76e47",
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
