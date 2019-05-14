@@ -304,7 +304,7 @@ class SpecialManageGroups extends SpecialPage {
 							continue;
 						}
 
-						if ( $req->getVal( $id ) === null ) {
+						if ( !$req->getCheck( $id ) ) {
 							// We probably hit the limit with number of post parameters.
 							$postponed[$groupId][$code][$type][$index] = $params;
 							continue;
