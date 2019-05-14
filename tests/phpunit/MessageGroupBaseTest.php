@@ -90,8 +90,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 
 		$this->assertArrayEquals(
 			[ new Insertable( 'Fake', 'Insertables', 'Suggester' ) ],
-			$this->group->getInsertablesSuggester()->getInsertables( '' ),
-			'should correctly get an InsertablesSuggester using \'class\' option.'
+			$this->group->getInsertablesSuggester()->getInsertables( '' )
 		);
 	}
 
@@ -108,8 +107,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 				new Insertable( 'Fake', 'Insertables', 'Suggester' ),
 				new Insertable( 'AnotherFake', 'Insertables', 'Suggester' ),
 			],
-			$this->group->getInsertablesSuggester()->getInsertables( '' ),
-			'should correctly get InsertablesSuggesters using \'classes\' option.'
+			$this->group->getInsertablesSuggester()->getInsertables( '' )
 		);
 	}
 
@@ -125,6 +123,8 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 				new Insertable( 'AnotherFake', 'Insertables', 'Suggester' ),
 			],
 			$this->group->getInsertablesSuggester()->getInsertables( '' ),
+			false,
+			false,
 			'should correctly get InsertablesSuggesters using both \'class\' and \'classes\' options.'
 		);
 
@@ -137,9 +137,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 				new Insertable( 'Fake', 'Insertables', 'Suggester' ),
 				new Insertable( 'AnotherFake', 'Insertables', 'Suggester' ),
 			],
-			$this->group->getInsertablesSuggester()->getInsertables( '' ),
-			'should correctly get InsertablesSuggesters using ' .
-			'both \'class\' and \'classes\' options and removing duplicates.'
+			$this->group->getInsertablesSuggester()->getInsertables( '' )
 		);
 	}
 
