@@ -240,8 +240,7 @@ class SpecialSearchTranslations extends SpecialPage {
 				'dir' => $language->getDir(),
 			];
 
-			$resultsHtml = $resultsHtml
-				. Html::openElement( 'div', $resultAttribs )
+			$resultsHtml .= Html::openElement( 'div', $resultAttribs )
 				. Html::rawElement( 'div', $textAttribs, $text )
 				. Html::element( 'div', $titleAttribs, $titleText )
 				. $access
@@ -531,7 +530,7 @@ HTML
 			}
 
 			if ( $selected === $filter ) {
-				$tabClass = $tabClass . ' selected';
+				$tabClass .= ' selected';
 			}
 			$output .= Html::rawElement( 'li', [
 				'class' => [ 'column', $tabClass ],
