@@ -2,6 +2,137 @@
   "comments": [
     {
       "key": {
+        "uuid": "2e9fa368_c5e132e3",
+        "filename": "MessageGroups.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-14T06:44:50Z",
+      "side": 1,
+      "message": "Is it specified that getGroups must return string keys? If they accidentally returns numeric keys, some groups will be lost?",
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ccf9910b_aea38d69",
+        "filename": "MessageGroups.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-14T06:44:50Z",
+      "side": 1,
+      "message": "Can you call this $loader? $g is usually short for $group, and already used in the anonymous function below, so it is a bit confusing.",
+      "range": {
+        "startLine": 375,
+        "startChar": 2,
+        "endLine": 375,
+        "endChar": 4
+      },
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24dfb6f3_94894204",
+        "filename": "messagegroups/loaders/AggregateMessageGroupLoader.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-14T06:44:50Z",
+      "side": 1,
+      "message": "There is a small chance of a regression here if we use $this-\u003edb instead of TranslateUtils::getSafeReadDB() which checks whether there has been writes to the master. This might be false when these objects are created, and true later on when getCachedData is caled. This would mainly be a problem for recache called on GET requests (because for cache miss we will read from the DB almost immediately after the loader object is created). I can\u0027t think of a GET requests that would write to translate_metadata and then do a recache, so it\u0027s probably safe.",
+      "range": {
+        "startLine": 99,
+        "startChar": 9,
+        "endLine": 99,
+        "endChar": 41
+      },
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a4d6f1b_6a674c0a",
+        "filename": "messagegroups/loaders/CachedMessageGroupLoader.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-14T06:44:50Z",
+      "side": 1,
+      "message": "I would remove this line.",
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71f0ba5a_5d6b0a6c",
+        "filename": "messagegroups/loaders/FileBasedMessageGroupLoader.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-14T06:44:50Z",
+      "side": 1,
+      "message": "Did we get rid of all the @since tags, or was that in another patch where they needed to be updated?",
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e66b0ade_b4b89c69",
+        "filename": "messagegroups/loaders/MessageGroupLoader.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-14T06:44:50Z",
+      "side": 1,
+      "message": "Perhaps this would be a good place to document the return value of this method.",
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bdc9562e_4f7fb208",
+        "filename": "messagegroups/loaders/WorkflowStatesMessageGroupLoader.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-14T06:44:50Z",
+      "side": 1,
+      "message": "By the way, I usually just don\u0027t put any @return statement if nothing is returned.",
+      "revId": "88420ab0c40d5efc656d79511a384e0772b48366",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e6677f58_03e76e47",
         "filename": "tests/phpunit/messagegroups/TranslatablePageMessageGroupStoreTest.php",
         "patchSetId": 9
