@@ -35,8 +35,7 @@ class DtdFFS extends SimpleFFS {
 
 		preg_match_all( ',<!ENTITY[ ]+([^ ]+)\s+"([^"]+)"[^>]*>,', $data, $matches );
 
-		$keys = $matches[1];
-		$values = $matches[2];
+		list( , $keys, $values ) = $matches;
 
 		$messages = [];
 
