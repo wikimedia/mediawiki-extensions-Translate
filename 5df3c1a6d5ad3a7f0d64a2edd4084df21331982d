@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fe801fea_4e4061c7",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-14T12:10:52Z",
+      "side": 1,
+      "message": "Hmm. Quite a lot of code could be cleaned up by having the source and target language provided this way. But I do not want to derail the original bug fix. But since this affects API output which is considered to be stable, I would request to rename this to targetLanguage now (and not in the future when it would be a breaking change).",
+      "revId": "5df3c1a6d5ad3a7f0d64a2edd4084df21331982d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
