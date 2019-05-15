@@ -9,7 +9,8 @@
 			"Minisarm",
 			"Sociologist",
 			"Stelistcristi",
-			"ImGelu"
+			"ImGelu",
+			"Andrei Stroe"
 		]
 	},
 	"translate": "Traducere",
@@ -74,7 +75,7 @@
 	"translate-magic-namespace": "Nume de spații de nume",
 	"translate-magic-notsaved": "Modificarea nu a fost salvată!",
 	"translate-magic-errors": "Vă rugăm să remediați {{PLURAL:$1|următoarea eroare|următoarele erori}} din traduceri:",
-	"translate-magic-saved": "Schimbările au fost salvate cu succes.",
+	"translate-magic-saved": "Schimbările au fost salvate.",
 	"translate-checks-parameters": "{{PLURAL:$2|Următorul parametru nu este folosit|Următorii parametri nu sunt folosiți}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Următorul parametru este necunoscut|Următorii $2 parametri sunt necunoscuți}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "Există un număr impar de {{PLURAL:$2|paranteze|paranteze}}:\n<strong><nowiki>$1</nowiki></strong>",
@@ -174,7 +175,7 @@
 	"translate-mgs-noempty": "Nu afișa limbile care nu conțin nicio traducere",
 	"translate-mgs-submit": "Afișează statisticile",
 	"translate-mgs-column-language": "Limbă",
-	"translate-mgs-totals": "Toate limbile împreună",
+	"translate-mgs-totals": "$1 {{PLURAL:$1|limbă|limbi|de limbi}} împreună",
 	"translate-mgs-invalid-group": "Grupul specificat, $1, nu există.",
 	"translate-mgs-nothing": "Nimic de afișat pentru statisticile solicitate.",
 	"supportedlanguages": "Limbi întreținute",
@@ -281,7 +282,7 @@
 	"tux-editor-skip-button-label": "Sari mai departe",
 	"tux-editor-cancel-button-label": "Revocare",
 	"tux-editor-confirm-button-label": "Confirmare traducere",
-	"tux-editor-shortcut-info": "Apăsați „$1” pentru a salva sau „$2” pentru a sări la următorul mesaj ori „$3” pentru alte comenzi rapide.",
+	"tux-editor-shortcut-info": "Apăsați „$1” pentru a salva, „$2” pentru a sări la următorul mesaj, „$4” pentru a furniza un rezumat sau țineți apăsat „$3” pentru a vedea alte comenzi rapide.",
 	"tux-editor-edit-desc": "Modifică documentația",
 	"tux-editor-add-desc": "Adăugare documentație",
 	"tux-editor-suggestions-title": "Sugestii",

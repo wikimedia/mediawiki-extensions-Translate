@@ -4,7 +4,8 @@
 			"Firilacroco",
 			"KlaudiuMihaila",
 			"Minisarm",
-			"Stelistcristi"
+			"Stelistcristi",
+			"Andrei Stroe"
 		]
 	},
 	"pagetranslation": "Traducere pagini",
@@ -76,7 +77,7 @@
 	"pt-movepage-action-check": "Verifică dacă modificarea este posibilă",
 	"pt-movepage-action-perform": "Redenumește",
 	"pt-movepage-action-other": "Schimbă ținta",
-	"pt-movepage-logreason": "Parte a paginii traductibile $1.",
+	"pt-movepage-logreason": "Parte a paginii traductibile „$1”.",
 	"pt-deletepage-invalid-title": "Pagina specificată nu este validă.",
 	"pt-deletepage-action-perform": "Efectuați ștergerea",
 	"pt-deletepage-action-other": "Schimbați ținta",
@@ -90,6 +91,6 @@
 	"pt-deletepage-list-translation": "Pagini de traducere",
 	"pt-deletepage-list-other": "Alte subpagini",
 	"pt-deletepage-list-count": "În total, $1 {{PLURAL:$1|pagină|pagini|de pagini}} de șters.",
-	"pt-deletepage-full-logreason": "Parte a paginii traductibile $1.",
+	"pt-deletepage-full-logreason": "Parte a paginii traductibile „$1”.",
 	"pt-deletepage-lang-logreason": "Parte a paginii de traducere „$1”."
 }
