@@ -16,6 +16,24 @@
       "revId": "5df3c1a6d5ad3a7f0d64a2edd4084df21331982d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42460676_10db9eed",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-16T11:46:34Z",
+      "side": 1,
+      "message": "I decided to modify the API because like you said it felt cleaner to do it that way and this was a new property that was being added, so does not affect BC.\n\nI\u0027ve now modified the property to targetLanguage.",
+      "parentUuid": "fe801fea_4e4061c7",
+      "revId": "5df3c1a6d5ad3a7f0d64a2edd4084df21331982d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
