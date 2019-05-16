@@ -324,6 +324,7 @@
 	"tux-editor-translate-mode": "Listo",
 	"tux-editor-proofreading-hide-own-translations": "Kaŝi viajn tradukojn",
 	"tux-editor-proofreading-show-own-translations": "Montri viajn tradukojn",
+	"tux-proofread-action-tooltip": "Marki reviziita",
 	"tux-proofread-edit-label": "Redakti",
 	"tux-editor-page-mode": "Paĝo",
 	"tux-editor-outdated-warning": "Ĉi tiu traduko eble bezonas esti ĝisdatigita.",
@@ -333,6 +334,7 @@
 	"tux-editor-doc-editor-cancel": "Nuligi",
 	"tux-message-filter-placeholder": "Filtri liston",
 	"tux-message-filter-advanced-button": "Altnivela serĉo",
+	"tux-message-filter-optional-messages-label": "Nedevigaj mesaĝoj",
 	"tux-proofread-translated-by-self": "Tradukita de vi",
 	"tux-empty-list-all": "Tiu mesaĝgrupo estas malplena",
 	"tux-empty-list-translated": "Neniu tradukita mesaĝo",
@@ -353,5 +355,9 @@
 	"tux-editor-message-tools-history": "Historio",
 	"tux-editor-message-tools-delete": "Forigi",
 	"tux-editor-message-tools-translations": "Ĉiuj tradukoj",
-	"tux-editor-message-tools-linktothis": "Ligilo al ĉi tiu mesaĝo"
+	"tux-editor-message-tools-linktothis": "Ligilo al ĉi tiu mesaĝo",
+	"tux-editor-loading": "Ŝarĝante...",
+	"translate-search-more-languages-info": "$1 {{PLURAL:$1|plia lingvo|pliaj lingvoj}}",
+	"translate-statsbar-tooltip": "$1% tradukitaj, $2% reviziitaj",
+	"translate-statsbar-tooltip-with-fuzzy": "$1% tradukitaj, $2% reviziitaj, $3% malfreŝaj"
 }
