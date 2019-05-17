@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8f8ef46b_665a7aa2",
+        "filename": "tests/phpunit/messagegroups/AggregateMessageGroupLoaderTest.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-17T16:19:52Z",
+      "side": 1,
+      "message": "Modified to extend PHPUnit\\Framework\\TestCase\n\nWill keep in mind for future.",
+      "parentUuid": "2f239ac5_824c60df",
+      "range": {
+        "startLine": 6,
+        "startChar": 46,
+        "endLine": 6,
+        "endChar": 63
+      },
+      "revId": "903f693772757affa798ba983ce2dc1344732075",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e347e6e1_5eab5798",
         "filename": "tests/phpunit/messagegroups/AggregateMessageGroupLoaderTest.php",
         "patchSetId": 14
@@ -36,6 +60,24 @@
       "writtenOn": "2019-05-17T15:50:05Z",
       "side": 1,
       "message": "Unexpected amount of indentation here. I\u0027m expecting three tabs.",
+      "revId": "903f693772757affa798ba983ce2dc1344732075",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "100562ff_8d1454f0",
+        "filename": "tests/phpunit/messagegroups/AggregateMessageGroupLoaderTest.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-17T16:19:52Z",
+      "side": 1,
+      "message": "Fixed here and in the other test classes as well. Is this something that we should update phpcs to identify?",
+      "parentUuid": "e347e6e1_5eab5798",
       "revId": "903f693772757affa798ba983ce2dc1344732075",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
