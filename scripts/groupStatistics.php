@@ -589,8 +589,7 @@ class GroupStatistics extends Maintenance {
 					if ( isset( $this->wikimediaCodeMap[$code] ) ) {
 						$wmfcode = $this->wikimediaCodeMap[$code];
 					} else {
-						$codeparts = explode( '-', $code );
-						$wmfcode = $codeparts[0];
+						$wmfcode = explode( '-', $code, 2 )[0];
 					}
 
 					if ( isset( $wmfscores[$wmfcode] ) ) {
