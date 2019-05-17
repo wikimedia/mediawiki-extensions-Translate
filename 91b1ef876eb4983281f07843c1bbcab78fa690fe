@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b420cc11_e84ffa77",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-17T12:37:47Z",
+      "side": 1,
+      "message": "isset ( null ) will be false, so the additional $var !\u003d\u003d null is actually not needed. \n\nI think ?? internally runs an isset check and returns the first operand if the isset evaluates to true, else the second operand.",
+      "revId": "91b1ef876eb4983281f07843c1bbcab78fa690fe",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
