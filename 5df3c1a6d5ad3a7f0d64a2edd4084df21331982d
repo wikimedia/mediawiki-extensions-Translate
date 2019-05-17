@@ -34,6 +34,24 @@
       "revId": "5df3c1a6d5ad3a7f0d64a2edd4084df21331982d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1daf3d14_354b40ee",
+        "filename": "api/ApiQueryMessageCollection.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-17T10:21:14Z",
+      "side": 1,
+      "message": "Sorry I was not clear. Adding new keys to the query result output is not a breaking change in my opinion. Renaming or removing keys is a breaking change. I was anticipating the potential need to rename `language` to `targetLanguage` in the future, which would be a breaking change. Changing the name now avoids that.",
+      "parentUuid": "42460676_10db9eed",
+      "revId": "5df3c1a6d5ad3a7f0d64a2edd4084df21331982d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
