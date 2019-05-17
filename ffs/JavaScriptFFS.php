@@ -41,12 +41,13 @@ abstract class JavaScriptFFS extends SimpleFFS {
 		if ( $authors === $data ) {
 			$authors = [];
 		} else {
-			$authors = explode( "\n", $authors );
-			$count = count( $authors );
-			for ( $i = 0; $i < $count; $i++ ) {
-				// Each line should look like " *  - Translatorname"
-				$authors[$i] = substr( $authors[$i], 6 );
-			}
+			$authors = array_map(
+				function ( $author ) {
+					// Each line should look like " *  - Translatorname"
+					return substr( $author, 6 );
+				},
+				explode( "\n", $authors )
+			);
 		}
 
 		/* Pre-processing of messages */
@@ -97,28 +98,25 @@ abstract class JavaScriptFFS extends SimpleFFS {
 			 * Concatenate separated strings.
 			 */
 			$segment = str_replace( '"+', '" +', $segment );
-			$segment = explode( '" +', $segment );
-			$count = count( $segment );
-			for ( $i = 0; $i < $count; $i++ ) {
-				$segment[$i] = ltrim( ltrim( $segment[$i] ), '"' );
-			}
-			$segment = implode( $segment );
+			$segment = implode( array_map(
+				function ( $segment ) {
+					return ltrim( ltrim( $segment ), '"' );
+				},
+				explode( '" +', $segment )
+			) );
 
 			/**
 			 * Remove line breaks between message keys and messages.
 			 */
 			$segment = preg_replace( "#\:(\s+)[\\\"\']#", ': "', $segment );
 
-			/**
-			 * Break in to key and message.
-			 */
-			$segments = explode( ': "', $segment );
+			list( $key, $value ) = explode( ': "', $segment, 2 );
 
 			/**
 			 * Strip excess whitespace from key and value, then quotation marks.
 			 */
-			$key = trim( trim( $segments[0] ), "'\"" );
-			$value = trim( trim( $segments[1] ), "'\"" );
+			$key = trim( trim( $key ), "'\"" );
+			$value = trim( trim( $value ), "'\"" );
 
 			/**
 			 * Unescape any JavaScript string syntax and append to message array.
