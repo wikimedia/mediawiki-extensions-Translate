@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "15bf7d7e_b9b6735d",
+        "filename": "tests/phpunit/MessageGroupBaseTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-17T08:48:48Z",
+      "side": 1,
+      "message": "We can skip this message.",
+      "revId": "b44c74b0b036463a2a3650fc87320c9d9faafd42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90dd5bd7_c3900c52",
+        "filename": "tests/phpunit/MessageGroupBaseTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-17T08:48:48Z",
+      "side": 1,
+      "message": "We should leave this message as it is a specific test about \"removing duplicates\".\n\n$this-\u003eassertArrayEquals(\n\t[\n\t\tnew Insertable( \u0027Fake\u0027, \u0027Insertables\u0027, \u0027Suggester\u0027 ),\n\t\tnew Insertable( \u0027AnotherFake\u0027, \u0027Insertables\u0027, \u0027Suggester\u0027 ),\n\t],\n\t$this-\u003egroup-\u003egetInsertablesSuggester()-\u003egetInsertables( \u0027\u0027 ),\n\tfalse,\n\tfalse,\n\t\u0027should correctly get InsertablesSuggesters using \u0027 .\n\t\u0027both \\\u0027class\\\u0027 and \\\u0027classes\\\u0027 options and removing duplicates.\u0027\n);",
+      "revId": "b44c74b0b036463a2a3650fc87320c9d9faafd42",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
