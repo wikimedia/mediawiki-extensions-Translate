@@ -657,6 +657,16 @@ class PageTranslationHooks {
 		return true;
 	}
 
+	public static function translatecompletion( Parser $parser, $pagename, $language ) {
+		$title = Title::newFromText( $pagename );
+		if ( !$title ) {
+			return '';
+		}
+		$tp = TranslatablePage::newFromTitle( $title );
+		$percentages = $tp->getTranslationPercentages();
+		return isset( $percentages[$language] ) ? 100 * $percentages[$language] : '';
+	}
+
 	/**
 	 * Hook: PageContentSaveComplete
 	 * @param WikiPage $wikiPage

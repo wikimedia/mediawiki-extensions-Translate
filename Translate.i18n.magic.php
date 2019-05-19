@@ -11,6 +11,7 @@ $magicWords = [];
 /** English (English) */
 $magicWords['en'] = [
 	'translation' => [ 0, 'translation' ],
+	'translatecompletion' => [ 0, 'translatecompletion' ]
 ];
 
 /** Urdu (اردو) */

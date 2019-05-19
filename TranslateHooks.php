@@ -323,6 +323,7 @@ class TranslateHooks {
 	public static function setupParserHooks( Parser $parser ) {
 		// For nice language list in-page
 		$parser->setHook( 'languages', [ 'PageTranslationHooks', 'languages' ] );
+		$parser->setFunctionHook( 'translatecompletion', [ 'PageTranslationHooks', 'translatecompletion' ] );
 	}
 
 	/**
