@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "24bce0a6_d0c058d3",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f1326b7_ba65e37a",
+      "range": {
+        "startLine": 27,
+        "startChar": 34,
+        "endLine": 27,
+        "endChar": 37
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "473a388b_26437bed",
         "filename": "MessageValidator.php",
         "patchSetId": 8
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "920a3a21_0833158c",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Thanks for pointing this out. Now passing only the group Id.",
+      "parentUuid": "473a388b_26437bed",
+      "range": {
+        "startLine": 66,
+        "startChar": 30,
+        "endLine": 66,
+        "endChar": 42
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8d99a232_6d76a0e9",
         "filename": "MessageValidator.php",
         "patchSetId": 8
@@ -62,6 +110,24 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bce4b511_de568da8",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "For now I\u0027ve refactored some of this into a function. Mainly because I had to reload the blacklist for a test to succeed properly.\n \nBut I agree, we should review whether this belongs here. Only thing is that this class does need to have a knowledge of the blacklist in order to filter the validations.\n\nAdded a TODO for now.",
+      "parentUuid": "8d99a232_6d76a0e9",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -82,6 +148,24 @@
     },
     {
       "key": {
+        "uuid": "3dbdbacd_02f3d5fe",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Updated setValidators to reset existing validators and add the new validators. Renamed addValidators to addValidator.\n\nSince the config itself is an array, becomes a little difficult to determine if multiple validators are passed or a single one.",
+      "parentUuid": "719cbb7d_1241123d",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d0d3b81d_d7f9ceb1",
         "filename": "MessageValidator.php",
         "patchSetId": 8
@@ -99,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "862eb03a_cc4829f9",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0d3b81d_d7f9ceb1",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffa99564_ce0c9e06",
         "filename": "MessageValidator.php",
         "patchSetId": 8
@@ -113,6 +215,24 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9d449ba_51d9bf98",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffa99564_ce0c9e06",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -139,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "05205c2e_27adb0d1",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "12cb285c_fd5d7cd7",
+      "range": {
+        "startLine": 150,
+        "startChar": 30,
+        "endLine": 150,
+        "endChar": 40
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2572e4b5_0205f5f2",
         "filename": "MessageValidator.php",
         "patchSetId": 8
@@ -156,6 +300,24 @@
     },
     {
       "key": {
+        "uuid": "a1c89621_9fae4507",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Agreed, updated the code.",
+      "parentUuid": "2572e4b5_0205f5f2",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e5864843_9fa556fa",
         "filename": "MessageValidator.php",
         "patchSetId": 8
@@ -170,6 +332,24 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5c81433_c3065979",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Thanks for noticing. I missed this. The filtering here is a little more involved as we want to filter in the foreach loop. Fixed.",
+      "parentUuid": "e5864843_9fa556fa",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -196,6 +376,30 @@
     },
     {
       "key": {
+        "uuid": "d3043d65_50ec95dc",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Removed this comment.",
+      "parentUuid": "2b000aa6_361c886b",
+      "range": {
+        "startLine": 314,
+        "startChar": 51,
+        "endLine": 314,
+        "endChar": 68
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b9fe315e_95cface0",
         "filename": "MessageValidator.php",
         "patchSetId": 8
@@ -216,6 +420,30 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ca9edc5_49569289",
+        "filename": "MessageValidator.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b9fe315e_95cface0",
+      "range": {
+        "startLine": 317,
+        "startChar": 12,
+        "endLine": 317,
+        "endChar": 23
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -242,6 +470,30 @@
     },
     {
       "key": {
+        "uuid": "01fb7902_a835856e",
+        "filename": "api/ApiTranslationCheck.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "I\u0027ve appended MV to all TODOs to sub classify them as being related to the Message Validator (MV). Renamed to instead use MessageValidator itself instead of MV.",
+      "parentUuid": "e41f1f49_99320ea5",
+      "range": {
+        "startLine": 24,
+        "startChar": 12,
+        "endLine": 24,
+        "endChar": 14
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "af533b4a_5cfd2c62",
         "filename": "api/ApiTranslationCheck.php",
         "patchSetId": 8
@@ -259,6 +511,24 @@
     },
     {
       "key": {
+        "uuid": "238939c9_09d214cc",
+        "filename": "api/ApiTranslationCheck.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af533b4a_5cfd2c62",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a6e9f924_7dd55c33",
         "filename": "api/ApiTranslationCheck.php",
         "patchSetId": 8
@@ -273,6 +543,24 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "483db0e4_a968e175",
+        "filename": "api/ApiTranslationCheck.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6e9f924_7dd55c33",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -299,6 +587,30 @@
     },
     {
       "key": {
+        "uuid": "f01d2a62_8230143c",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34ed3c1f_e55ace44",
+      "range": {
+        "startLine": 11,
+        "startChar": 15,
+        "endLine": 11,
+        "endChar": 17
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3326d55f_135b5110",
         "filename": "insertables/RegexInsertablesSuggester.php",
         "patchSetId": 8
@@ -313,6 +625,24 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ea97e9d_e437728f",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Updated. I\u0027m also planning to update the various documentation,\n\n1. https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration\n2. https://www.mediawiki.org/wiki/Help:Extension:Translate/Validators\n3. https://translatewiki.net/wiki/Setup_of_a_new_project - Possibly\n4. https://www.mediawiki.org/wiki/Help:Extension:Translate/Message_groups\n5. https://www.mediawiki.org/wiki/Help:Extension:Translate/Insertables\n6. https://www.mediawiki.org/wiki/Help:Extension:Translate/Components#Message_checkers",
+      "parentUuid": "3326d55f_135b5110",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -339,6 +669,30 @@
     },
     {
       "key": {
+        "uuid": "fc4c71b9_3cb15a75",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9cc3f12e_7ca80d8f",
+      "range": {
+        "startLine": 50,
+        "startChar": 8,
+        "endLine": 50,
+        "endChar": 14
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6c0f2b67_7479e499",
         "filename": "insertables/RegexInsertablesSuggester.php",
         "patchSetId": 8
@@ -353,6 +707,24 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f7b689c_de2d9e9c",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c0f2b67_7479e499",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -379,6 +751,30 @@
     },
     {
       "key": {
+        "uuid": "0f81aa73_7d112f10",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "94ee3d99_6b2aa0db",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 4
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "859e2114_0f08545d",
         "filename": "insertables/RegexInsertablesSuggester.php",
         "patchSetId": 8
@@ -393,6 +789,24 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15b7707c_c80f54a6",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "859e2114_0f08545d",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -413,6 +827,24 @@
     },
     {
       "key": {
+        "uuid": "f751580a_9264777c",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e489f6e_1cc96e08",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "669a3cf1_ae05230d",
         "filename": "insertables/RegexInsertablesSuggester.php",
         "patchSetId": 8
@@ -430,6 +862,24 @@
     },
     {
       "key": {
+        "uuid": "1911124d_b2d0f2c4",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "669a3cf1_ae05230d",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "68e738cf_19734bbf",
         "filename": "messagegroups/MessageGroup.php",
         "patchSetId": 8
@@ -444,6 +894,24 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a942c660_0e9380ad",
+        "filename": "messagegroups/MessageGroup.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68e738cf_19734bbf",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -470,6 +938,30 @@
     },
     {
       "key": {
+        "uuid": "466a643d_ca670c58",
+        "filename": "messagegroups/MessageGroupBase.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e9d56ba_f737f0e0",
+      "range": {
+        "startLine": 138,
+        "startChar": 7,
+        "endLine": 138,
+        "endChar": 12
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e38edef4_b0b76ef3",
         "filename": "messagegroups/MessageGroupBase.php",
         "patchSetId": 8
@@ -484,6 +976,24 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5ef4df4_504846e7",
+        "filename": "messagegroups/MessageGroupBase.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e38edef4_b0b76ef3",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -504,6 +1014,24 @@
     },
     {
       "key": {
+        "uuid": "e9ccd139_addc73b4",
+        "filename": "messagegroups/MessageGroupBase.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "The intention was to ensure that this method is not called on an older version of the configuration. I think that might not be necessary, I\u0027ve removed this now.",
+      "parentUuid": "79f59816_345888c4",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "50ef7e1e_326ee54a",
         "filename": "messagegroups/WikiPageMessageGroup.php",
         "patchSetId": 8
@@ -518,6 +1046,24 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18f5a180_dedff948",
+        "filename": "messagegroups/WikiPageMessageGroup.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50ef7e1e_326ee54a",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -538,6 +1084,24 @@
     },
     {
       "key": {
+        "uuid": "24c590fa_68bdfd7d",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Hmm possible. Thing is that various themes already define styling for \"warning\", \"error\" etc, and we are to some extend re-using this.\n\nI\u0027ll add a TODO here to review in the future.",
+      "parentUuid": "26253070_a506bea8",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6caa5054_da01a288",
         "filename": "resources/js/ext.translate.editor.js",
         "patchSetId": 8
@@ -555,6 +1119,24 @@
     },
     {
       "key": {
+        "uuid": "d7d62e57_e06c0795",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 991,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6caa5054_da01a288",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "35e8bdb7_54d234dd",
         "filename": "src/MessageValidator/ValidationResult.php",
         "patchSetId": 8
@@ -569,6 +1151,24 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a2f21f5_b8a4214b",
+        "filename": "src/MessageValidator/ValidationResult.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35e8bdb7_54d234dd",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -595,6 +1195,30 @@
     },
     {
       "key": {
+        "uuid": "ad504a87_d356b99b",
+        "filename": "src/MessageValidator/ValidationResult.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da5348bc_a98b1f14",
+      "range": {
+        "startLine": 56,
+        "startChar": 42,
+        "endLine": 56,
+        "endChar": 56
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "971b1818_61c9dad0",
         "filename": "src/MessageValidator/ValidatorFactory.php",
         "patchSetId": 8
@@ -609,6 +1233,24 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77671b6f_fc40a59f",
+        "filename": "src/MessageValidator/ValidatorFactory.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "971b1818_61c9dad0",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -635,6 +1277,30 @@
     },
     {
       "key": {
+        "uuid": "8fcc9ba6_301a9b76",
+        "filename": "src/MessageValidator/ValidatorFactory.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "17adb845_c003a510",
+      "range": {
+        "startLine": 46,
+        "startChar": 13,
+        "endLine": 46,
+        "endChar": 37
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a17538f1_77845ca3",
         "filename": "src/MessageValidator/ValidatorFactory.php",
         "patchSetId": 8
@@ -655,6 +1321,30 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eea8c8ff_74d8ea3e",
+        "filename": "src/MessageValidator/ValidatorFactory.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a17538f1_77845ca3",
+      "range": {
+        "startLine": 84,
+        "startChar": 13,
+        "endLine": 84,
+        "endChar": 29
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -681,6 +1371,30 @@
     },
     {
       "key": {
+        "uuid": "39c37bed_0e0e470d",
+        "filename": "tests/phpunit/MessageValidatorTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "This was indeed unused, removed it. I had refactored the tests into the function testDescriptiveMessage but had not removed this code.",
+      "parentUuid": "b165291c_96fb5287",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 39
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "064f2893_7ac09e73",
         "filename": "tests/phpunit/MessageValidatorTest.php",
         "patchSetId": 8
@@ -704,6 +1418,30 @@
     },
     {
       "key": {
+        "uuid": "85487228_d6e833e6",
+        "filename": "tests/phpunit/MessageValidatorTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "064f2893_7ac09e73",
+      "range": {
+        "startLine": 65,
+        "startChar": 54,
+        "endLine": 65,
+        "endChar": 56
+      },
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0959be0d_976ad918",
         "filename": "tests/phpunit/insertables/RegexInsertablesSuggesterTest.php",
         "patchSetId": 8
@@ -718,6 +1456,24 @@
       "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c5c0b0a_41ff36af",
+        "filename": "tests/phpunit/insertables/RegexInsertablesSuggesterTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-19T20:17:32Z",
+      "side": 1,
+      "message": "Updated to use yield. Yes, makes it a bit more readable than before. Haven\u0027t updated other locations since this patch is already quite big.",
+      "parentUuid": "0959be0d_976ad918",
+      "revId": "38bcdc9efd3102a377c964a4da429fb996b8629f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
