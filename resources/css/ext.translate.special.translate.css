@@ -88,14 +88,10 @@
 	cursor: pointer;
 	font-weight: normal;
 	line-height: 1.25em;
-	padding-bottom: 3px;
-	padding-left: 15px;
-	padding-top: 1.25em;
 	top: 1px;
 	display: block;
-	position: relative;
-	float: left;
 	margin-bottom: 0;
+	vertical-align: bottom;
 }
 
 .tux-message-selector .more {
@@ -196,19 +192,20 @@
 	}
 }
 
+.tux-message-filter-wrapper {
+	background: no-repeat scroll left center transparent;
+	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/search.svg );
+	background-size: 25px;
+	padding-left: 30px;
+}
+
 .tux-message-filter-box {
 	font-size: 14px;
 	height: 28px;
 	border: 1px solid #c9c9c9;
 	width: 100%;
 	padding: 0 5px;
-}
-
-.tux-message-filter-wrapper {
-	background: no-repeat scroll left center transparent;
-	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/search.svg );
-	background-size: 25px;
-	padding-left: 30px;
+	margin: 0;
 }
 
 .client-nojs .tux-messagetable-header {
