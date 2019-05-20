@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2cd12476_96ca2e3a",
+        "filename": "ffs/JavaScriptFFS.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-20T10:53:28Z",
+      "side": 1,
+      "message": "I would name the argument to the array_map callback something other than $segment, maybe $x or $piece.\n\nMight help avoid some confusion",
+      "revId": "c6d8cf5b2bbd3258d0cf5a87637737b13ca64349",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
