@@ -97,7 +97,7 @@
 	"log-description-pagetranslation": "Rexistru de les aiciones rellacionaes col sistema de traducción de páxines",
 	"log-name-pagetranslation": "Rexistru de traducción de páxines",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|marcó}} $3 pa traducir",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|quitó}} $3 de les páxines a traducir",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|quitó}} $3 del sistema de traducción",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|completó}}'l renomáu de la páxina traducible $3 a $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|alcontróse}} un problema al mover $3 a $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|completó}}'l desaniciu de la páxina traducible $3",
