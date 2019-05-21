@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b3811c86_14c4880e",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 10
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-21T12:16:22Z",
+      "side": 1,
+      "message": "Padding of 15% is rather huge, and leaves a lot of space where the diff can appear. Hence squeezed out a couple of more % for the content.\n\nI understand that this padding is in place to ensure that messages do not overlap the \"more\" warnings label. Tested this on a resolution of 1280px width",
+      "revId": "ac6013f47da398bafbd22465e608e8439bc5732e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d2adaa3_05598404",
+        "filename": "resources/css/ext.translate.editor.css",
+        "patchSetId": 10
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-21T12:16:22Z",
+      "side": 1,
+      "message": "Noticed that this text was appearing bigger due to me removing font-size: 12px for the entire .diff section. Instead I\u0027ve now applied this font-size only to the code section.",
+      "revId": "ac6013f47da398bafbd22465e608e8439bc5732e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
