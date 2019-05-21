@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "425c09bd_ea790214",
+        "filename": "resources/css/ext.translate.special.translate.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-21T07:56:09Z",
+      "side": 1,
+      "message": "I\u0027m not seeing this make any impact. I don\u0027t think vertical-align works on block elements.",
+      "revId": "1129b9a0c4012a47891f160956fc0a6b4451ff89",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "882cc059_f093f922",
+        "filename": "resources/css/ext.translate.special.translate.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-21T07:56:09Z",
+      "side": 1,
+      "message": "Caused due to a change introduced here - https://github.com/wikimedia/mediawiki-skins-Timeless/commit/2a4fb34b630b1da704243d981b478951d26df1a5#diff-e0b7a43015b3626e687ed479befc5283R4\n\nChange-Id: I43312b23197ed1ce5ea9cb75fb0b8e8466bac6a1",
+      "revId": "1129b9a0c4012a47891f160956fc0a6b4451ff89",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
