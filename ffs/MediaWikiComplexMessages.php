@@ -143,7 +143,7 @@ abstract class ComplexMessages {
 
 	/**
 	 * Gets saved data from Mediawiki namespace
-	 * @return Array
+	 * @return array[]
 	 */
 	protected function getSavedData() {
 		$data = TranslateUtils::getMessageContent( $this->databaseMsg, $this->language );
@@ -155,6 +155,10 @@ abstract class ComplexMessages {
 		}
 	}
 
+	/**
+	 * @param string $data
+	 * @return array[]
+	 */
 	protected function parse( $data ) {
 		$lines = array_map( 'trim', explode( "\n", $data ) );
 		$array = [];
@@ -182,7 +186,7 @@ abstract class ComplexMessages {
 	/**
 	 * Return an array of keys that can be used to iterate over all keys
 	 * @param string $group
-	 * @return Array of keys for data
+	 * @return string[] Array of keys for data
 	 */
 	protected function getIterator( $group ) {
 		$groups = $this->getGroups();

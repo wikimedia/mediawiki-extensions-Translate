@@ -560,7 +560,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 
 	/**
 	 * Returns only translation subpages.
-	 * @return Array of titles.
+	 * @return Title[]
 	 */
 	protected function getTranslationPages() {
 		if ( !isset( $this->translationPages ) ) {

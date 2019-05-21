@@ -982,7 +982,7 @@ class MessageDefinitions {
 	}
 
 	/**
-	 * @return Array of Array( namespace, pagename )
+	 * @return array[] List of [ int $namespaceId, string $pageName ]
 	 */
 	public function getPages() {
 		$namespace = $this->namespace;
