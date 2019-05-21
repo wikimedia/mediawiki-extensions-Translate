@@ -39,8 +39,9 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 	/// Contains the language code if we are working with translation page
 	protected $code;
 
-	protected $sectionPages;
-
+	/**
+	 * @var Title[]
+	 */
 	protected $translationPages;
 
 	public function __construct() {
