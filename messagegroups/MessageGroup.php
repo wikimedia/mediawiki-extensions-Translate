@@ -115,7 +115,7 @@ interface MessageGroup {
 	 * groups the messages may be loaded from a file (and differ from the
 	 * current translations or definitions).
 	 * @param string $code
-	 * @return array
+	 * @return string[]
 	 */
 	public function load( $code );
 

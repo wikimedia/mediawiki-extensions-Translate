@@ -29,7 +29,7 @@ class SpecialTranslations extends SpecialAllPages {
 
 	/**
 	 * Entry point : initialise variables and call subfunctions.
-	 * @param string $par Message key. Becomes "MediaWiki:Allmessages" when called like
+	 * @param string|null $par Message key. Becomes "MediaWiki:Allmessages" when called like
 	 *             Special:Translations/MediaWiki:Allmessages (default null)
 	 */
 	public function execute( $par ) {

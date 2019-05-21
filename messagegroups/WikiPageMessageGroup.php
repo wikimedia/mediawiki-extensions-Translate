@@ -54,7 +54,7 @@ class WikiPageMessageGroup extends WikiMessageGroup implements IDBAccessObject, 
 	protected $definitions;
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	public function getDefinitions() {
 		if ( is_array( $this->definitions ) ) {

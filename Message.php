@@ -93,7 +93,7 @@ abstract class TMessage {
 
 	/**
 	 * Return all tags for this message;
-	 * @return array of strings
+	 * @return string[]
 	 */
 	public function getTags() {
 		return $this->tags;

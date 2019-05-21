@@ -415,7 +415,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 
 	/**
 	 * Returns all section pages, including those which are currently not active.
-	 * @return Array of titles.
+	 * @return Title[]
 	 */
 	protected function getSectionPages() {
 		$code = $this->singleLanguage() ? $this->code : false;
@@ -425,7 +425,7 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 
 	/**
 	 * Returns only translation subpages.
-	 * @return Array of titles.
+	 * @return Title[]
 	 */
 	protected function getTranslationPages() {
 		if ( $this->singleLanguage() ) {

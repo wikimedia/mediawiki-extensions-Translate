@@ -707,7 +707,7 @@ class TranslatablePage {
 	 * Returns a list of translation unit pages.
 	 * @param string $set Can be either 'all', or 'active'
 	 * @param string|bool $code Only list unit pages in given language.
-	 * @return Title[] List of Titles.
+	 * @return Title[]
 	 * @since 2012-08-06
 	 */
 	public function getTranslationUnitPages( $set = 'active', $code = false ) {

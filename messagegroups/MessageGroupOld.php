@@ -185,7 +185,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	 * this message group handles.
 	 *
 	 * @throws MWException
-	 * @return Array of messages definitions indexed by key.
+	 * @return string[] List of message definitions indexed by key.
 	 */
 	public function getDefinitions() {
 		$defs = $this->load( $this->getSourceLanguage() );
