@@ -81,13 +81,11 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		$request = $this->getRequest();
 		$user = $this->getUser();
 
-		$par = is_null( $par ) ? '' : $par; // Title::newFromText expects strings only
-
 		// Yes, the use of getVal() and getText() is wanted, see bug T22365
 		$this->oldText = $request->getVal( 'wpOldTitle', $request->getVal( 'target', $par ) );
 		$this->newText = $request->getText( 'wpNewTitle' );
 
-		$this->oldTitle = Title::newFromText( $this->oldText );
+		$this->oldTitle = Title::newFromText( $this->oldText ?? '' );
 		$this->newTitle = Title::newFromText( $this->newText );
 
 		$this->reason = $request->getText( 'reason' );
