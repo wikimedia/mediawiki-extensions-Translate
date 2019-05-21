@@ -17,26 +17,11 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	// Basic form parameters both as text and as titles
 	protected $newText, $oldText;
 
-	/**
-	 * @var Title
-	 */
-	protected $newTitle, $oldTitle;
-
 	// Other form parameters
 	/**
 	 * 'check' or 'perform'
 	 */
 	protected $subaction;
-
-	/**
-	 * There must be reason for everything.
-	 */
-	protected $reason;
-
-	/**
-	 * Allow skipping non-translation subpages.
-	 */
-	protected $moveSubpages;
 
 	/**
 	 * @var TranslatablePage instance.
@@ -57,18 +42,6 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 	 * @var Title[] Cached list of section pages. Not yet loaded if null.
 	 */
 	protected $sectionPages;
-
-	public function __construct() {
-		parent::__construct( 'Movepage' );
-	}
-
-	public function doesWrites() {
-		return true;
-	}
-
-	public function isListed() {
-		return false;
-	}
 
 	/**
 	 * Partially copies from SpecialMovepage.php, because it cannot be
