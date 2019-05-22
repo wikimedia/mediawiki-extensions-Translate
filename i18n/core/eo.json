@@ -22,6 +22,7 @@
 	},
 	"translate": "Tradukado",
 	"translate-desc": "[[Special:Translate|Speciala paĝo]] por traduki MediaWiki kaj alia",
+	"translate-fuzzybot-desc": "Jen speciala sistema konto uzata de la [https://www.mediawiki.org/wiki/Extension:Translate etendaĵo Translate] por mastrumi tradukojn. Jena konto estas parto de la programaro MediaVikio, kaj neniu uzanto posedas ĝin.",
 	"translate-taskui-export-to-file": "Elportu en fonta formato",
 	"translate-taskui-export-as-po": "Eksportu por eksterkonekta traduko",
 	"translate-taction-translate": "Traduki",
@@ -118,6 +119,7 @@
 	"right-translate-messagereview": "Ekzameni tradukojn",
 	"action-translate-messagereview": "revizii tradukojn",
 	"right-translate-groupreview": "Ŝanĝi laborflustaton de mesaĝgrupoj",
+	"action-translate-groupreview": "ŝanĝi la laborfluan staton de mesaĝogrupoj",
 	"translate-rcfilters-translations": "Tradukoj",
 	"translate-rcfilters-translations-only-label": "Tradukoj",
 	"translate-rcfilters-translations-only-desc": "Ŝanĝoj al tradukitaj paĝoj.",
@@ -385,5 +387,7 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% tradukitaj, $2% reviziitaj, $3% malfreŝaj",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|plia grupo|pliaj grupoj}}",
 	"translate-ulsdep-title": "Eraro pri agordado",
+	"translate-ulsdep-body": "La etendaĵo Translate dependas de la [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector etendaĵo Universal Language Selector].",
+	"tux-session-expired": "Vi ne plu estas ensalutinta. Bonvolu reensaluti je alia langeton. Alternative, kopiu viajn nekonservitajn tradukojn, ensalutu, revenu ĉi tien, kaj reenigu viajn tradukojn.",
 	"tux-nojs": "Ĉi tiu ilo ne funkcias sen JavaScript. Aŭ JavaScript estas malŝaltita, aŭ Javascript misfunkciis, aŭ via TTT-legilo ne estas subtenata."
 }

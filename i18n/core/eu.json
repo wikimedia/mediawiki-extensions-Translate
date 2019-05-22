@@ -234,7 +234,7 @@
 	"tux-message-filter-result": "{{PLURAL:$1|Emaitza bat aurkitu da|$1 emaitza aurkitu dira}} \"$2\" bilaketarako",
 	"tux-message-filter-advanced-button": "Bilaketa aurreratua",
 	"tux-message-filter-optional-messages-label": "Aukerako mezuak",
-	"tux-proofread-translated-by-self": "Zuk itzulitakoak",
+	"tux-proofread-translated-by-self": "Zeuk itzulia",
 	"tux-empty-list-all": "Mezu-talde hau hutsik dago",
 	"tux-empty-list-translated": "Itzuli gabeko mezuak",
 	"tux-empty-list-translated-guide": "Itzultzen lagun dezakezu",
