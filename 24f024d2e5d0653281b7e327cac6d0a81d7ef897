@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0dcc2f31_c001a484",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-22T11:48:46Z",
+      "side": 1,
+      "message": "Might be more appropriate to list this as `string[]` ?",
+      "revId": "24f024d2e5d0653281b7e327cac6d0a81d7ef897",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "998095a5_b6739283",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-22T11:48:46Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "24f024d2e5d0653281b7e327cac6d0a81d7ef897",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
