@@ -33,6 +33,29 @@
       "revId": "24f024d2e5d0653281b7e327cac6d0a81d7ef897",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "301710fd_50b16017",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-05-22T12:28:03Z",
+      "side": 1,
+      "message": "This is an array of strings, which is stored as an element of the $array array. Therefor the final $array does have the type string[][], or array[]. Personally I prefer to use the type array[], because it is more compatible with the IDEs I use. But we can change this to string[][] if you prefer.",
+      "range": {
+        "startLine": 179,
+        "startChar": 3,
+        "endLine": 179,
+        "endChar": 8
+      },
+      "revId": "24f024d2e5d0653281b7e327cac6d0a81d7ef897",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
