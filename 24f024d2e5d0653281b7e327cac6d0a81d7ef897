@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6f1cfaad_4cb6034b",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-22T12:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0dcc2f31_c001a484",
+      "revId": "24f024d2e5d0653281b7e327cac6d0a81d7ef897",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "998095a5_b6739283",
         "filename": "ffs/MediaWikiComplexMessages.php",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "cab2a148_a7ed0d78",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-22T12:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "998095a5_b6739283",
+      "revId": "24f024d2e5d0653281b7e327cac6d0a81d7ef897",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "301710fd_50b16017",
         "filename": "ffs/MediaWikiComplexMessages.php",
         "patchSetId": 1
@@ -47,6 +83,30 @@
       "writtenOn": "2019-05-22T12:28:03Z",
       "side": 1,
       "message": "This is an array of strings, which is stored as an element of the $array array. Therefor the final $array does have the type string[][], or array[]. Personally I prefer to use the type array[], because it is more compatible with the IDEs I use. But we can change this to string[][] if you prefer.",
+      "range": {
+        "startLine": 179,
+        "startChar": 3,
+        "endLine": 179,
+        "endChar": 8
+      },
+      "revId": "24f024d2e5d0653281b7e327cac6d0a81d7ef897",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe640700_11d89084",
+        "filename": "ffs/MediaWikiComplexMessages.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-05-22T12:37:47Z",
+      "side": 1,
+      "message": "No you are right, I misread the code, and thought it to be string[] instead of string[][]. array[] is better than using string[][].",
+      "parentUuid": "301710fd_50b16017",
       "range": {
         "startLine": 179,
         "startChar": 3,
