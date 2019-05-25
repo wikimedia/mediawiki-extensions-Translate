@@ -3,7 +3,6 @@
 	display: table;
 	border: 1px solid #a2a9b1;
 	box-sizing: border-box;
-	border-collapse: collapse;
 	line-height: 1.2;
 	width: 100%;
 	clear: both;
@@ -13,6 +12,8 @@
 .mw-pt-languages-label {
 	background-color: #eaecf0;
 	display: table-cell;
+	/* Given `white-space: nowrap` above, label never shrinks underneath textual content. */
+	width: 1%;
 	padding: 0.5em;
 	font-weight: bold;
 	white-space: nowrap;
@@ -20,8 +21,7 @@
 
 .mw-pt-languages-list {
 	display: table-cell;
-	padding-left: 0.5em;
-	padding-bottom: 0.7em;
+	padding: 0.5em;
 }
 
 .mw-pt-languages-list a {
