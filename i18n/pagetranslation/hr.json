@@ -52,6 +52,7 @@
 	"tpt-discouraged-language-force-content": "Prevoditeljski administrator odlučio je da se stranica može prevesti samo na $1.",
 	"aggregategroups": "Spojene skupine",
 	"log-name-pagetranslation": "Evidencija prevođenja stranica",
+	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|označio|označila}} je $3 za prevođenje",
 	"logentry-pagetranslation-deletelok": "$1 {{GENDER:$2|pobrisao|pobrisala}} je prevodivu stranicu $3",
 	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|ohrabrio je|ohrabrila je|ohrabruje}} prevođenje stranice $3",
 	"logentry-pagetranslation-discourage": "$1 {{GENDER:$2|obeshrabrio je|obeshrabrila je|obeshrabruje}} prevođenje stranice $3",
