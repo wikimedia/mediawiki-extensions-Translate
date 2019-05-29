@@ -1019,6 +1019,16 @@
 			"description": "Name of the bot which will invalidate translations and do maintenance for page translation feature. Also used for importing messages from external sources.",
 			"public": true
 		},
+		"TranslateNewsletterPreference": {
+			"value": false,
+			"description": "Add a preference 'Do not send me email newsletters' in the email preferences.",
+			"public": true
+		},
+		"TranslateLanguageFallbacks": {
+			"value": [],
+			"description": "Default values for list of languages to show translators as an aid when translating. Each user can override this setting in their preferences.\n\nExample: LanguageFallbacks['fi'] = 'sv' or LanguageFallbacks['sv'] = [ 'da', 'no', 'nn' ].",
+			"public": true
+		},
 		"TranslateTranslationDefaultService": {
 			"value": "TTMServer",
 			"description": "Define various web services that provide translation suggestions.\n\nTranslation memories are documented in our main documentation. See https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories\n\nFor Apertium, you should get an API key. See http://wiki.apertium.org/wiki/Apertium_web_service\n\nYandex translation helper also provides langlimit option to limit total number of suggestions (set to 0 to get all possible translations) and langorder array to sort languages. Yandex translate engine is based on wordnet, generated from search index, so number of indexed websites should be a good heuristic to define the default language order.\n\nThe machine translation services are provided with the following information: server ip address; versions of MediaWiki and Translate extension; clients ip address encrypted with $wgProxyKey; source text to translate; private API key if provided",
@@ -1033,6 +1043,26 @@
 					"public": true
 				}
 			},
+			"public": true
+		},
+		"TranslateSupportUrl": {
+			"value": false,
+			"description": "Experimental support since 2011-03-11 for an 'Ask' help button. Might change into a hook later on. This is an array with keys page, url and params: page is a title of a local wiki page; url is an URL to use as is (e.g. an issue tracker submission form) which will override the page if set; params is an array of key-value pairs of request params -- each param value can contain the variable %MESSAGE% which will be replaced with the full page name.",
+			"public": true
+		},
+		"TranslateSupportUrlNamespace": {
+			"value": [],
+			"description": "Like $wgTranslateSupportUrl, but for a specific namespace. Each $wgTranslateSupportUrl-like array needs to be the value assigned to the numerical ID of a namespace of the wiki. Since 2015-09.",
+			"public": true
+		},
+		"TranslatePermissionUrl": {
+			"value": "Project:Translator",
+			"description": "When unprivileged users open a translation editor, they will see a message stating that a special permission is needed for translating messages. If this variable is defined, there is a button which will take the user to that page to ask for permission. The target needs to be reiterated with the second variable to have the same result with sandbox enabled where users can't enter the sandbox.",
+			"public": true
+		},
+		"TranslateSecondaryPermissionUrl": {
+			"value": "Project:Translator",
+			"description": "…",
 			"public": true
 		},
 		"EnablePageTranslation": {
