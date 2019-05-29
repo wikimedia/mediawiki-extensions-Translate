@@ -242,37 +242,6 @@ $wgTranslatePHPlot = false;
 $wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
 
 # </source>
-# ==== YAML driver ====
-# <source lang=php>
-/**
- * Currently supported YAML drivers are phpyaml, spyc and syck.
- *
- * For phpyaml see https://secure.php.net/manual/en/book.yaml.php.
- *
- * For syck we're shelling out to perl. So you need:
- *
- * * At least perl 5.8 (find out what you have by running "perl -v")
- * * Install these modules from CPAN
- *   * YAML::Syck
- *   * PHP::Serialization.
- *   * File::Slurp
- *
- * You should be able to do this with:
- *   for module in 'YAML::Syck' 'PHP::Serialization' 'File::Slurp'; do cpanp -i $module; done
- *
- * For the shell to work, you also need an en.UTF-8 locale installed on your system.
- * add a line "en.UTF-8" to your /etc/locale.gen or uncomment an existing one and run locale-gen
- * if you do not have it already.
- *
- * phpyaml is the fastest and based on libyaml so the output should be most
- * compatible. spyc output format is least compatible. syck is slowest but
- * almost as good as phpyaml.
- *
- * spyc needs to be installed using composer. See https://www.mediawiki.org/wiki/Composer
- */
-$wgTranslateYamlLibrary = function_exists( 'yaml_parse' ) ? 'phpyaml' : 'spyc';
-
-# </source>
 # ==== Sandbox ====
 # <source lang=php>
 
