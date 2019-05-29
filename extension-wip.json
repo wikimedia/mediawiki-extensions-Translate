@@ -1100,6 +1100,16 @@
 			"description": "Map from deprecated group IDs to their current ID. Example value: { 'core': 'mediawiki-core' }",
 			"public": true
 		},
+		"TranslatePHPlot": {
+			"value": false,
+			"description": "For Special:TranslationStats PHPlot is needed to produce graphs. Set this the location of phplot.php.",
+			"public": true
+		},
+		"TranslatePHPlotFont": {
+			"value": "/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf",
+			"description": "The default font for PHPlot for drawing text. Only used if the automatic best font selection fails. The automatic best font selector uses language code to call fc-match program. If you have open_basedir restriction or safe-mode, using the found font is likely to fail. In this case you need  to change the code to use hard-coded font, or copy fonts to location PHP can access them, and make sure fc-match returns only those fonts.",
+			"public": true
+		},
 		"TranslateYamlLibrary": {
 			"value": null,
 			"description": "Currently supported YAML drivers are phpyaml, spyc and syck.\n\nFor phpyaml see https://secure.php.net/manual/en/book.yaml.php.\nFor syck we're shelling out to perl. So you need at least perl 5.8 (find out what you have by running `perl -v`), and to install these modules from CPAN: YAML::Syck, PHP::Serialization, and File::Slurp.\n\nYou should be able to do this with: `for module in 'YAML::Syck' 'PHP::Serialization' 'File::Slurp'; do cpanp -i $module; done`\n\nFor the shell to work, you also need an en.UTF-8 locale installed on your system. add a line `en.UTF-8` to your /etc/locale.gen or uncomment an existing one and run locale-gen if you do not have it already.\n\nphpyaml is the fastest and based on libyaml so the output should be most compatible. spyc output format is least compatible. syck is slowest but almost as good as phpyaml. spyc needs to be installed using composer. See https://www.mediawiki.org/wiki/Composer",
