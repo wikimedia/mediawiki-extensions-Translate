@@ -167,39 +167,6 @@ $wgTranslateMessageIndex = [ 'DatabaseMessageIndex' ];
 $wgTranslateDelayedMessageIndexRebuild = false;
 
 # </source>
-# ==== Sandbox ====
-# <source lang=php>
-
-/**
- * Whether to allow users to sign up via a sandbox. Sandboxed users cannot do
- * much until approved and thus they can be get rid of easily. This only works
- * with MediaWiki 1.27 and newer, and only if registration is configured to not
- * use account creation providers which give REDIRECT or UI responses or
- * require any other field than the default username/password/email.
- * @since 2013.04
- */
-$wgTranslateUseSandbox = false;
-
-/**
- * To which group the translators are promoted. If left at false, they will just
- * be removed from sandbox and become normal users.
- * @since 2013.04
- */
-$wgTranslateSandboxPromotedGroup = false;
-
-/**
- * List of page names to always suggest for sandboxed users.
- * @since 2013.10
- */
-$wgTranslateSandboxSuggestions = [];
-
-/**
- * Maximum number of translations a user can make in the sandbox.
- * @since 2013.10
- */
-$wgTranslateSandboxLimit = 20;
-
-# </source>
 # === Unsorted ===
 # <source lang=php>
 /**
