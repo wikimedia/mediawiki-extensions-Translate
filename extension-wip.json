@@ -1003,6 +1003,13 @@
 			]
 		}
 	},
+	"config": {
+		"TranslateDocumentationLanguageCode": {
+			"value": false,
+			"description": "Language code for message documentation. Suggested values are qqq or info. If set to false (default), message documentation feature is disabled.",
+			"public": true
+		}
+	},
 	"DefaultUserOptions": {
 		"translate": 0,
 		"translate-editlangs": "default",

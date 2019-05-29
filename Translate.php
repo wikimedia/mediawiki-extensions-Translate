@@ -42,12 +42,6 @@ $wgExtensionMessagesFiles['TranslateMagic'] = __DIR__ . '/Translate.i18n.magic.p
 # === Basic configuration ===
 # <source lang=php>
 /**
- * Language code for message documentation. Suggested values are qqq or info.
- * If set to false (default), message documentation feature is disabled.
- */
-$wgTranslateDocumentationLanguageCode = false;
-
-/**
  * Name of the bot which will invalidate translations and do maintenance
  * for page translation feature. Also used for importing messages from external
  * sources.
