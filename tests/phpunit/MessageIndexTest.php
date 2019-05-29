@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use Wikimedia\TestingAccessWrapper;
+
 /**
  * @group Database
  * @group large
@@ -18,6 +20,27 @@ class MessageIndexTest extends MediaWikiTestCase {
 			'wgTranslateCacheDirectory' => $this->getNewTempDirectory(),
 			'wgTranslateTranslationServices' => [],
 		] );
+	}
+
+	public function provideTranslateMessageIndexConfig() {
+		yield [ 'DatabaseMessageIndex', DatabaseMessageIndex::class ];
+		yield [ [ 'DatabaseMessageIndex' ], DatabaseMessageIndex::class ];
+		yield [ [ 'SerializedMessageIndex' ], SerializedMessageIndex::class ];
+	}
+
+	/**
+	 * @dataProvider provideTranslateMessageIndexConfig
+	 */
+	public function testSingleton( $configValue, $expectedClass ) {
+		$this->setMwGlobals( [
+			'wgTranslateMessageIndex' => $configValue,
+		] );
+		$wrapIndex = TestingAccessWrapper::newFromClass( MessageIndex::class );
+		$wrapIndex->instance = null;
+
+		$object = MessageIndex::singleton();
+
+		$this->assertInstanceOf( $expectedClass, $object );
 	}
 
 	/**
