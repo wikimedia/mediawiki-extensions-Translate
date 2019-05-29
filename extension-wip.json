@@ -1019,6 +1019,36 @@
 			"description": "Name of the bot which will invalidate translations and do maintenance for page translation feature. Also used for importing messages from external sources.",
 			"public": true
 		},
+		"TranslateNewsletterPreference": {
+			"value": false,
+			"description": "Add a preference 'Do not send me email newsletters' in the email preferences.",
+			"public": true
+		},
+		"TranslateLanguageFallbacks": {
+			"value": [],
+			"description": "Default values for list of languages to show translators as an aid when translating. Each user can override this setting in their preferences.\n\nExample: LanguageFallbacks['fi'] = 'sv' or LanguageFallbacks['sv'] = [ 'da', 'no', 'nn' ].",
+			"public": true
+		},
+		"TranslateSupportUrl": {
+			"value": false,
+			"description": "Experimental support since 2011-03-11 for an 'Ask' help button. Might change into a hook later on. This is an array with keys page, url and params: page is a title of a local wiki page; url is an URL to use as is (e.g. an issue tracker submission form) which will override the page if set; params is an array of key-value pairs of request params -- each param value can contain the variable %MESSAGE% which will be replaced with the full page name.",
+			"public": true
+		},
+		"TranslateSupportUrlNamespace": {
+			"value": [],
+			"description": "Like $wgTranslateSupportUrl, but for a specific namespace. Each $wgTranslateSupportUrl-like array needs to be the value assigned to the numerical ID of a namespace of the wiki. Since 2015-09.",
+			"public": true
+		},
+		"TranslatePermissionUrl": {
+			"value": "Project:Translator",
+			"description": "When unprivileged users open a translation editor, they will see a message stating that a special permission is needed for translating messages. If this variable is defined, there is a button which will take the user to that page to ask for permission. The target needs to be reiterated with the second variable to have the same result with sandbox enabled where users can't enter the sandbox.",
+			"public": true
+		},
+		"TranslateSecondaryPermissionUrl": {
+			"value": "Project:Translator",
+			"description": "…",
+			"public": true
+		},
 		"EnablePageTranslation": {
 			"value": true,
 			"description": "Enable page translation feature.\n\nPage translation feature allows structured translation of wiki pages with simple markup and automatic tracking of changes. See https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration",
