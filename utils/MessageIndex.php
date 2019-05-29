@@ -34,6 +34,9 @@ abstract class MessageIndex {
 		if ( self::$instance === null ) {
 			global $wgTranslateMessageIndex;
 			$params = $wgTranslateMessageIndex;
+			if ( is_string( $params ) ) {
+				$params = (array)$params;
+			}
 			$class = array_shift( $params );
 			self::$instance = new $class( $params );
 		}
