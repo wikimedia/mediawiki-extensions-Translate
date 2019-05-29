@@ -58,7 +58,7 @@ class TranslateHooks {
 			);
 		}
 
-		global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
+		global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks, $wgTranslateYamlLibrary;
 
 		/*
 		 * Text that will be shown in translations if the translation is outdated.
@@ -66,6 +66,10 @@ class TranslateHooks {
 		 */
 		if ( !defined( 'TRANSLATE_FUZZY' ) ) {
 			define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
+		}
+
+		if ( $wgTranslateYamlLibrary === null ) {
+			$wgTranslateYamlLibrary = function_exists( 'yaml_parse' ) ? 'phpyaml' : 'spyc';
 		}
 
 		if ( $wgTranslatePHPlot ) {
