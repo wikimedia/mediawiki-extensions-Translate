@@ -167,25 +167,6 @@ $wgTranslateMessageIndex = [ 'DatabaseMessageIndex' ];
 $wgTranslateDelayedMessageIndexRebuild = false;
 
 # </source>
-# ==== PHPlot ====
-# <source lang=php>
-/**
- * For Special:TranslationStats PHPlot is needed to produce graphs.
- * Set this the location of phplot.php.
- */
-$wgTranslatePHPlot = false;
-
-/**
- * The default font for PHPlot for drawing text. Only used if the automatic
- * best font selection fails. The automatic best font selector uses language
- * code to call fc-match program. If you have open_basedir restriction or
- * safe-mode, using the found font is likely to fail. In this case you need
- * to change the code to use hard-coded font, or copy fonts to location PHP
- * can access them, and make sure fc-match returns only those fonts.
- */
-$wgTranslatePHPlotFont = '/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf';
-
-# </source>
 # ==== Sandbox ====
 # <source lang=php>
 
