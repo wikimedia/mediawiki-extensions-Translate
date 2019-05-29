@@ -39,55 +39,6 @@ $wgExtensionMessagesFiles['TranslateMagic'] = __DIR__ . '/Translate.i18n.magic.p
 
 # == Configuration variables ==
 
-# === Basic configuration ===
-# <source lang=php>
-/**
- * Add a preference "Do not send me email newsletters" in the email preferences.
- */
-$wgTranslateNewsletterPreference = false;
-
-/**
- * Default values for list of languages to show translators as an aid when
- * translating. Each user can override this setting in their preferences.
- * Example:
- *  $wgTranslateLanguageFallbacks['fi'] = 'sv';
- *  $wgTranslateLanguageFallbacks['sv'] = array( 'da', 'no', 'nn' );
- */
-$wgTranslateLanguageFallbacks = [];
-
-/**
- * Experimental support for an "Ask" help button.
- * Might change into a hook later on.
- * This is an array with keys page, url and params.
- * - page is a title of a local wiki page
- * - url is an URL to use as is (e.g. an issue tracker submission form)
- *   which will override the page if set
- * - params is an array of key-value pairs of request params
- * -- each param value can contain the variable %MESSAGE%
- *    which will be replaced with the full page name.
- * @since 2011-03-11
- */
-$wgTranslateSupportUrl = false;
-
-/**
- * Like $wgTranslateSupportUrl, but for a specific namespace.
- * Each $wgTranslateSupportUrl-like array needs to be the value
- * assigned to the numerical ID of a namespace of the wiki.
- * @since 2015.09
- */
-$wgTranslateSupportUrlNamespace = [];
-
-/**
- * When unprivileged users open a translation editor, they will
- * see a message stating that a special permission is needed for translating
- * messages. If this variable is defined, there is a button which will
- * take the user to that page to ask for permission.
- * The target needs to be reiterated with the second variable to have
- * the same result with sandbox enabled where users can't enter the sandbox.
- */
-$wgTranslatePermissionUrl = 'Project:Translator';
-$wgTranslateSecondaryPermissionUrl = 'Project:Translator';
-
 # </source>
 # === Unsorted ===
 # <source lang=php>
