@@ -1084,6 +1084,21 @@
 			"description": "Map from deprecated group IDs to their current ID. Example value: { 'core': 'mediawiki-core' }",
 			"public": true
 		},
+		"TranslateCacheDirectory": {
+			"value": "false",
+			"description": "Set location of cache files. Defaults to $wgCacheDirectory.",
+			"public": true
+		},
+		"TranslateMessageIndex": {
+			"value": [ "DatabaseMessageIndex" ],
+			"description": "Configures how the message index is stored. Possible values are 'DatabaseMessageIndex', 'SerializedMessageIndex', and 'CDBMessageIndex'. The last two backends need $wgCacheDirectory to be functional.",
+			"public": true
+		},
+		"TranslateDelayedMessageIndexRebuild": {
+			"value": false,
+			"description": "If you have lots of message groups, especially file based ones, and the message index rebuilding gets slow, set this to true to delay the rebuilding via JobQueue. This only makes sense if you have configured jobs to be processed outside of requests via cron or similar.",
+			"public": true
+		},
 		"TranslatePHPlot": {
 			"value": false,
 			"description": "For Special:TranslationStats PHPlot is needed to produce graphs. Set this the location of phplot.php.",
