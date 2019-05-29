@@ -92,40 +92,6 @@ $wgTranslateTranslationServices['Yandex'] = [
 	'type' => 'yandex',
 ];
 
-# </source>
-# === Unsorted ===
-# <source lang=php>
-/**
- * Pre-save transform for message pages. MediaWiki does this by default
- * (including for pages in the MediaWiki-namespace). By setting this to
- * false it allows users to put untransformed syntax such as "~~~~" into
- * a page without having them be transformed upon save.
- */
-$wgTranslateUsePreSaveTransform = false;
-
-/**
- * Default action for the RecentChanges filter, which makes it possible to filter
- * translations away or show them only.
- * Possible values: ('noaction', 'only', 'filter', 'site')
- */
-$wgTranslateRcFilterDefault = 'filter';
-
-/**
- * Set this to config like $wgTranslateTranslationServices if you want to run
- * SolrTTMServer tests.
- * @since 2013-01-04
- */
-$wgTranslateTestTTMServer = null;
-
-/**
- * List of user names that are allowed to alter their privileges and do other
- * things. Used for supporting integration testing.
- * @since 2013.10
- */
-$wgTranslateTestUsers = [];
-
-# </source>
-
 /**
  * Helper function for adding namespace for message groups.
  *
