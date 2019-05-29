@@ -1049,6 +1049,11 @@
 			"value": true,
 			"description": "If set to true, when a translated page has some units marked as outdated, the outdated translation will be shown. If set to false, the original updated unit in the original language will be shown.\n\nChanging this setting requires the following script to be run to take effect on existing changes: scripts/refresh-translatable-pages.php\n\n Since 2016.12.",
 			"public": true
+		},
+		"TranslateYamlLibrary": {
+			"value": null,
+			"description": "Currently supported YAML drivers are phpyaml, spyc and syck.\n\nFor phpyaml see https://secure.php.net/manual/en/book.yaml.php.\nFor syck we're shelling out to perl. So you need at least perl 5.8 (find out what you have by running `perl -v`), and to install these modules from CPAN: YAML::Syck, PHP::Serialization, and File::Slurp.\n\nYou should be able to do this with: `for module in 'YAML::Syck' 'PHP::Serialization' 'File::Slurp'; do cpanp -i $module; done`\n\nFor the shell to work, you also need an en.UTF-8 locale installed on your system. add a line `en.UTF-8` to your /etc/locale.gen or uncomment an existing one and run locale-gen if you do not have it already.\n\nphpyaml is the fastest and based on libyaml so the output should be most compatible. spyc output format is least compatible. syck is slowest but almost as good as phpyaml. spyc needs to be installed using composer. See https://www.mediawiki.org/wiki/Composer",
+			"public": true
 		}
 	},
 	"DefaultUserOptions": {
