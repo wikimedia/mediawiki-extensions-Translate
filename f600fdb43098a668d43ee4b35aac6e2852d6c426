@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4bc6dc55_7510e9d8",
+        "filename": "extension-wip.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-29T12:35:13Z",
+      "side": 1,
+      "message": "This description fits better the config option below.\n\nThe description for this config option can be: Name of the default translation memory service. This service must accept updates.",
+      "revId": "f600fdb43098a668d43ee4b35aac6e2852d6c426",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
