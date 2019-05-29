@@ -254,6 +254,21 @@ class TranslateHooks {
 
 		global $wgNamespaceRobotPolicies;
 		$wgNamespaceRobotPolicies[NS_TRANSLATIONS] = 'noindex';
+
+		// If no service has been configured, we use a built-in fallback.
+		global $wgTranslateTranslationDefaultService,
+			$wgTranslateTranslationServices;
+		if ( $wgTranslateTranslationDefaultService === true ) {
+			$wgTranslateTranslationDefaultService = 'TTMServer';
+			if ( !isset( $wgTranslateTranslationServices['TTMServer'] ) ) {
+				$wgTranslateTranslationServices['TTMServer'] = [
+					'database' => false, // Passed to wfGetDB
+					'cutoff' => 0.75,
+					'type' => 'ttmserver',
+					'public' => false,
+				];
+			}
+		}
 	}
 
 	/**

@@ -37,61 +37,6 @@ $wgExtensionMessagesFiles['TranslateMagic'] = __DIR__ . '/Translate.i18n.magic.p
 
 /** @endcond */
 
-# == Configuration variables ==
-
-/**
- * Define various web services that provide translation suggestions.
- *
- * Translation memories are documented in our main documentation.
- * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Translation_memories
- *
- * For Apertium, you should get an API key.
- * @see http://wiki.apertium.org/wiki/Apertium_web_service
- *
- * Yandex translation helper also provides langlimit option to limit total
- * number of suggestions (set to 0 to get all possible translations)
- * and langorder array to sort languages. Yandex translate engine is based on
- * wordnet, generated from search index, so number of indexed websites should be
- * a good heuristic to define the default language order.
- *
- * The machine translation services are provided with the following information:
- * - server ip address
- * - versions of MediaWiki and Translate extension
- * - clients ip address encrypted with $wgProxyKey
- * - source text to translate
- * - private API key if provided
- */
-$wgTranslateTranslationDefaultService = 'TTMServer';
-$wgTranslateTranslationServices = [];
-$wgTranslateTranslationServices['TTMServer'] = [
-	'database' => false, // Passed to wfGetDB
-	'cutoff' => 0.75,
-	'type' => 'ttmserver',
-	'public' => false,
-];
-$wgTranslateTranslationServices['Microsoft'] = [
-	'url' => 'https://api.cognitive.microsofttranslator.com',
-	'key' => null,
-	'timeout' => 3,
-	'type' => 'microsoft',
-];
-$wgTranslateTranslationServices['Apertium'] = [
-	'url' => 'http://apy.projectjj.com/translate',
-	'pairs' => 'http://apy.projectjj.com/listPairs',
-	'key' => null,
-	'timeout' => 3,
-	'type' => 'apertium',
-];
-$wgTranslateTranslationServices['Yandex'] = [
-	'url' => 'https://translate.yandex.net/api/v1.5/tr.json/translate',
-	'key' => null,
-	'pairs' => 'https://translate.yandex.net/api/v1.5/tr.json/getLangs',
-	'timeout' => 3,
-	'langorder' => [ 'en', 'ru', 'uk', 'de', 'fr', 'pl', 'it', 'es', 'tr' ],
-	'langlimit' => 1,
-	'type' => 'yandex',
-];
-
 /**
  * Helper function for adding namespace for message groups.
  *
