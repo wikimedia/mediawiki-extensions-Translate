@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2d208959_b08553f9",
+        "filename": "extension-wip.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 1047,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-05-29T14:28:16Z",
+      "side": 1,
+      "message": "This is the only slightly problematic one here. If one wants to remove it, they need to add a corresponding whitelist item. I think this is fine.",
+      "revId": "3cd75423d7471219781da37393503dcd2d880564",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
