@@ -142,57 +142,6 @@ $wgTranslatePermissionUrl = 'Project:Translator';
 $wgTranslateSecondaryPermissionUrl = 'Project:Translator';
 
 # </source>
-# === Page translation feature ===
-# <source lang=php>
-/**
- * Enable page translation feature.
- *
- * Page translation feature allows structured translation of wiki pages
- * with simple markup and automatic tracking of changes.
- *
- * @defgroup PageTranslation Page Translation
- * @see https://www.mediawiki.org/wiki/Help:Extension:Translate/Page_translation_administration
- */
-$wgEnablePageTranslation = true;
-
-/**
- * If set to true, when a user selects an interface language via ULS (Universal
- * Language Selector), if the current page is a translatable page or a translation
- * page then the user is also redirected to the corresponding translation page
- * in the selected language.
- *
- * The language of the translation pages visited afterwards will still depend on the
- * links followed (it will be the interface language only if the links use the
- * Special:MyLanguage syntax).
- * @since 2013-03-10
- */
-$wgTranslatePageTranslationULS = false;
-
-/**
- * If set to true, when a translated page has some units marked as outdated, the
- * outdated translation will be shown. If set to false, the original updated unit
- * in the original language will be shown.
- *
- * Changing this setting requires the following script to be run to take effect on
- * existing changes: scripts/refresh-translatable-pages.php
- * @since 2016.12
- */
-$wgTranslateKeepOutdatedTranslations = true;
-
-/**
- * How language list for translatable pages is shown. Allowed values:
- * tag-only: Only display languages with the \<languages /> tag.
- * sidebar-only: Display languages as interlanguage links only and ignore the
- *  tag even if present on the page.
- * sidebar-fallback: Display languages as interlanguage links if no tag is on
- *  the page.
- * sidebar-always: Display languages as interlanguage links and also in tag if
- *  it is present on the page.
- * @since 2018.07
- */
-$wgPageTranslationLanguageList = 'tag-only';
-
-# </source>
 # === Message group configuration ===
 # <source lang=php>
 
