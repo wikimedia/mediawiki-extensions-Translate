@@ -60,6 +60,14 @@ class TranslateHooks {
 
 		global $wgTranslatePHPlot, $wgAutoloadClasses, $wgHooks;
 
+		/*
+		 * Text that will be shown in translations if the translation is outdated.
+		 * Must be something that does not conflict with actual content.
+		 */
+		if ( !defined( 'TRANSLATE_FUZZY' ) ) {
+			define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
+		}
+
 		if ( $wgTranslatePHPlot ) {
 			$wgAutoloadClasses['PHPlot'] = $wgTranslatePHPlot;
 		}

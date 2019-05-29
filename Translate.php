@@ -42,13 +42,6 @@ $wgExtensionMessagesFiles['TranslateMagic'] = __DIR__ . '/Translate.i18n.magic.p
 # === Basic configuration ===
 # <source lang=php>
 /**
- * Name of the bot which will invalidate translations and do maintenance
- * for page translation feature. Also used for importing messages from external
- * sources.
- */
-$wgTranslateFuzzyBotName = 'FuzzyBot';
-
-/**
  * Add a preference "Do not send me email newsletters" in the email preferences.
  */
 $wgTranslateNewsletterPreference = false;
@@ -61,14 +54,6 @@ $wgTranslateNewsletterPreference = false;
  *  $wgTranslateLanguageFallbacks['sv'] = array( 'da', 'no', 'nn' );
  */
 $wgTranslateLanguageFallbacks = [];
-
-/**
- * Text that will be shown in translations if the translation is outdated.
- * Must be something that does not conflict with actual content.
- */
-if ( !defined( 'TRANSLATE_FUZZY' ) ) {
-	define( 'TRANSLATE_FUZZY', '!!FUZZY!!' );
-}
 
 /**
  * Define various web services that provide translation suggestions.
