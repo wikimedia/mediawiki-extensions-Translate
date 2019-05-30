@@ -16,6 +16,24 @@
       "revId": "3cd75423d7471219781da37393503dcd2d880564",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90226a78_4b05588a",
+        "filename": "extension-wip.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 1047,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2019-05-30T16:29:48Z",
+      "side": 1,
+      "message": "Could you use a different merge strategy? array_replace_recursive, perhaps?",
+      "parentUuid": "2d208959_b08553f9",
+      "revId": "3cd75423d7471219781da37393503dcd2d880564",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
