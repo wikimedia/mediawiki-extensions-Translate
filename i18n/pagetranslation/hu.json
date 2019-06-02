@@ -24,7 +24,7 @@
 	"tpt-submit": "A változat megjelölése fordításra.",
 	"tpt-sections-oldnew": "Új és meglevő fordítási egységek",
 	"tpt-sections-deleted": "Törölt fordítási egységek",
-	"tpt-sections-template": "Fordítási lapsablonok",
+	"tpt-sections-template": "A lefordított lap sablonja",
 	"tpt-action-nofuzzy": "Ne érvénytelenítse a fordításokat",
 	"tpt-badtitle": "A megadott lapnév ($1) nem érvényes cím",
 	"tpt-nosuchpage": "A(z) $1 lap nem létezik.",

@@ -23,7 +23,10 @@
 	"tux-sst-default": "Tradukoj",
 	"tux-sst-translated": "Tradukoj de $1",
 	"tux-sst-untranslated": "Neniu traduko de $1",
+	"tux-sst-outdated": "Malnoviĝintaj tradukoj el $1",
 	"tux-sst-ellipsis-untranslated": "Neniu traduko",
 	"tux-sst-ellipsis-outdated": "Malaktualaj tradukoj",
-	"tux-sst-case-sensitive": "Usklecodistinga"
+	"tux-sst-link-all-match": "Postuli ĉiujn serĉvortojn",
+	"tux-sst-case-sensitive": "Usklecodistinga",
+	"tux-sst-error-language": "Ĉi tiu lingvo ne povas esti uzata kun tiu speco de serĉado"
 }
