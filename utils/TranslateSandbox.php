@@ -139,15 +139,7 @@ class TranslateSandbox {
 	 */
 	public static function getUsers() {
 		$dbw = TranslateUtils::getSafeReadDB();
-		if ( is_callable( [ User::class, 'getQueryInfo' ] ) ) {
-			$userQuery = User::getQueryInfo();
-		} else {
-			$userQuery = [
-				'tables' => [ 'user' ],
-				'fields' => User::selectFields(),
-				'joins' => [],
-			];
-		}
+		$userQuery = User::getQueryInfo();
 		$tables = array_merge( $userQuery['tables'], [ 'user_groups' ] );
 		$fields = $userQuery['fields'];
 		$conds = [
