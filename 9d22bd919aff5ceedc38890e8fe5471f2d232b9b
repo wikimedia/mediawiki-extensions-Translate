@@ -1,0 +1,403 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0d03d886_c97f2193",
+        "filename": "api/ApiTranslationCheck.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "(optional) This code is copied from below, right? I was just wondering why empty strings are excluded from validation. It isn\u0027t obvious to me (anymore, maybe it was earlier but I may have forgotten).\n\nIf there is a good reason, we could document it, or remove this condition, or just keep it.",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf37bf0f_c62c3303",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 12
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "(optional) Maybe this could be made less technical. I am thinking along the lines \"Translation has syntax errors\".",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "80dcb5eb_d10895f4",
+        "filename": "insertables/MediaWikiInsertablesSuggester.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "(fyi) This looks weird. Where do we have variables named like 1foo?",
+      "range": {
+        "startLine": 17,
+        "startChar": 23,
+        "endLine": 17,
+        "endChar": 30
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00182b09_8bb04264",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "Does this default to empty string if not specified?",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef8a196b_4f969890",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "(optional) Is the only falsy value here an empty array? If so, this check isn\u0027t really needed as array_map on an empty array still returns an empty array.",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b377a25_d747a3b1",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "(optional) For clarity, maybe call this variable $replacements and keep it separate from $matches.",
+      "range": {
+        "startLine": 119,
+        "startChar": 5,
+        "endLine": 119,
+        "endChar": 10
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1727de3d_8b1cd11e",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "Can we use a more dedicated method like hasClass? Constructing selector via string concatenation gives bad vibes even though it is safe here.",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b15e40b_17cca970",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "This seems to be a new class. Let\u0027s prefix it with `tux-` for example to avoid introducing new unprefixed classes.",
+      "range": {
+        "startLine": 1116,
+        "startChar": 30,
+        "endLine": 1116,
+        "endChar": 40
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20437bae_26e902d7",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "This doesn\u0027t belong to this patch.",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3fc02c53_99c2bf58",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "Ditto.",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93637012_afe5e009",
+        "filename": "src/MessageValidator/ValidationHelper.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "(optional) Can just do if ( $params ) {",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5252e30_c813aa66",
+        "filename": "src/MessageValidator/ValidationHelper.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "Ditto.",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60d59392_60ccc4f9",
+        "filename": "src/MessageValidator/ValidationResult.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "(fyi) I checked that passing parameters in an array is indeed supported: https://gerrit.wikimedia.org/g/mediawiki/core/+/d061c27f45491d8364fea52736645753e4b535b2/includes/Message.php#507",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f425edaf_7cacf32a",
+        "filename": "src/MessageValidator/Validator.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "I was looking at the code and nothing seems to actually pass in multiple messages at once. What do you think about changing `$messages` to `TMessage $message` and dropping the loops?",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "517cbbfa_4e35e3c9",
+        "filename": "src/MessageValidator/Validators/InsertableRegexValidator.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "The leading prefix is not needed as far as I know",
+      "range": {
+        "startLine": 12,
+        "startChar": 4,
+        "endLine": 12,
+        "endChar": 5
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2f05be2_977832fe",
+        "filename": "src/MessageValidator/Validators/InsertableRegexValidator.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "For consistency, let\u0027s add this to the use statements as well.",
+      "range": {
+        "startLine": 18,
+        "startChar": 39,
+        "endLine": 18,
+        "endChar": 65
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44ec5f34_573f5d75",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 1338,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "In the case the function declaration spans multiple lines, I prefer that `) {` is on it\u0027s own line. See above for an example.",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8a303be_f7554b62",
+        "filename": "tests/phpunit/MessageGroupBaseTest.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "(optional) It\u0027s acceptable to use double quotes to avoid escaping single quotes like this.",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4395980_ba8b1ff5",
+        "filename": "tests/phpunit/MessageGroupBaseTest.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "I am a bit confused what this exactly tests. It seems to test the number of insertables, but it is not obvious why number 2 is right. Can you add a clarifying comment or equivalent?",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc120e37_04ece0cb",
+        "filename": "tests/phpunit/data/ValidatorGroup.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "(optional) The quotes don\u0027t seem necessary.",
+      "range": {
+        "startLine": 12,
+        "startChar": 12,
+        "endLine": 12,
+        "endChar": 24
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10ef731b_bc4a696e",
+        "filename": "tests/phpunit/data/ValidatorGroup.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T14:06:09Z",
+      "side": 1,
+      "message": "(question) This looks a bit weird, is it intentional.",
+      "range": {
+        "startLine": 16,
+        "startChar": 14,
+        "endLine": 16,
+        "endChar": 28
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
