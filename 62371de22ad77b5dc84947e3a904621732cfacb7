@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "97646f0e_93cf8491",
+        "filename": "extension-wip.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 1093,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T07:53:47Z",
+      "side": 1,
+      "message": "array_merge will re-number unindexed arrays. This definitely needs a different merge strategy or default to null and default value set elsewhere. Latter may be cleaner?\n\nIt uses an array to allow passing constructor parameters, but none of the classes use it IIRC. Could be changed to string but that would be a breaking change, so perhaps not do it now.",
+      "revId": "62371de22ad77b5dc84947e3a904621732cfacb7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
