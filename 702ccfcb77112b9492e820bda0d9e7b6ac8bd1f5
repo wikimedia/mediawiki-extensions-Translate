@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b032d54e_311d9637",
+        "filename": "extension-wip.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-04T07:47:08Z",
+      "side": 1,
+      "message": "Double space.",
+      "range": {
+        "startLine": 1094,
+        "startChar": 309,
+        "endLine": 1094,
+        "endChar": 311
+      },
+      "revId": "702ccfcb77112b9492e820bda0d9e7b6ac8bd1f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
