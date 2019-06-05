@@ -93,6 +93,30 @@
       "revId": "5d6533a564f0b92c2c758582f098b6084ccc2477",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cfcff731_46ca6679",
+        "filename": "extension-wip.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 1069,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-05T08:44:53Z",
+      "side": 1,
+      "message": "The equivalent \"examples\" are now in the translatewiki.net repo: https://gerrit.wikimedia.org/r/plugins/gitiles/translatewiki/+/master/groups\n\nBut the format is documented at https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration",
+      "parentUuid": "97724e31_946ed3b7",
+      "range": {
+        "startLine": 1069,
+        "startChar": 88,
+        "endLine": 1069,
+        "endChar": 196
+      },
+      "revId": "5d6533a564f0b92c2c758582f098b6084ccc2477",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
