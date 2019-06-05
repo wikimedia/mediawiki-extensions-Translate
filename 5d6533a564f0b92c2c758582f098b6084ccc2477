@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7e978ea3_32c40565",
+        "filename": "extension-wip.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 1059,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-06-05T08:36:18Z",
+      "side": 1,
+      "message": "thanks!",
+      "parentUuid": "f458e4fd_fe4cb948",
+      "range": {
+        "startLine": 1059,
+        "startChar": 182,
+        "endLine": 1059,
+        "endChar": 205
+      },
+      "revId": "5d6533a564f0b92c2c758582f098b6084ccc2477",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5b11dd42_306282de",
         "filename": "extension-wip.json",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2019-06-04T07:41:19Z",
       "side": 1,
       "message": "This is outdated btw. Should be removed.",
+      "range": {
+        "startLine": 1069,
+        "startChar": 88,
+        "endLine": 1069,
+        "endChar": 196
+      },
+      "revId": "5d6533a564f0b92c2c758582f098b6084ccc2477",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97724e31_946ed3b7",
+        "filename": "extension-wip.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 1069,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-06-05T08:36:18Z",
+      "side": 1,
+      "message": "done.  But we might want to include some examples still?",
+      "parentUuid": "5b11dd42_306282de",
       "range": {
         "startLine": 1069,
         "startChar": 88,
