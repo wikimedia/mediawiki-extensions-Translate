@@ -16,6 +16,24 @@
       "revId": "62371de22ad77b5dc84947e3a904621732cfacb7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a81bd0b5_9c06c08b",
+        "filename": "extension-wip.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 1093,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-06-05T08:42:54Z",
+      "side": 1,
+      "message": "\u003e Could be changed to string\n\n+1 for this long-term fix.  Actually, how about we change the default value to a string but support the deprecated array syntax for backwards compatibility?  It\u0027s a small code change, but I suspect we would need a code change for the null default as well.  I\u0027ll give this a try.",
+      "parentUuid": "97646f0e_93cf8491",
+      "revId": "62371de22ad77b5dc84947e3a904621732cfacb7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
