@@ -408,10 +408,6 @@ class SerializedMessageIndex extends MessageIndex {
 	}
 }
 
-/// BC
-class FileCachedMessageIndex extends SerializedMessageIndex {
-}
-
 /**
  * Storage on the database itself.
  *
@@ -548,7 +544,7 @@ class CachedMessageIndex extends MessageIndex {
 	 */
 	protected $index;
 
-	protected function __construct( array $params ) {
+	protected function __construct() {
 		$this->cache = wfGetCache( CACHE_ANYTHING );
 	}
 

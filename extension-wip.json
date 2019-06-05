@@ -74,7 +74,6 @@
 		"FFS": "ffs/FFS.php",
 		"FileBasedMessageGroup": "messagegroups/FileBasedMessageGroup.php",
 		"FileBasedMessageGroupLoader": "messagegroups/loaders/FileBasedMessageGroupLoader.php",
-		"FileCachedMessageIndex": "utils/MessageIndex.php",
 		"FlatPhpFFS": "ffs/FlatPhpFFS.php",
 		"FuzzyBot": "utils/FuzzyBot.php",
 		"FuzzyLikeThis": "ttmserver/FuzzyLikeThis.php",
