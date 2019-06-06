@@ -22,7 +22,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class Languageeditstats extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Script to show number of edits per language for all message groups.';
+		$this->addDescription( 'Script to show number of edits per language for all message groups.' );
 		$this->addOption(
 			'top',
 			'(optional) Show given number of language codes (default: 10)',
@@ -58,7 +58,7 @@ class Languageeditstats extends Maintenance {
 
 			foreach ( $input as $namespace ) {
 				if ( is_numeric( $namespace ) ) {
-					array_push( $namespaces, $namespace );
+					$namespaces[] = $namespace;
 				}
 			}
 		}

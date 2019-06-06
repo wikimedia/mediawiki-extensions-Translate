@@ -24,7 +24,7 @@ $wgMaxShellMemory = 1024 * 200;
 class Fuzzy extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Fuzzy bot command line script.';
+		$this->addDescription( 'Fuzzy bot command line script.' );
 		$this->addArg(
 			'arg',
 			'Title pattern or username if user option is provided.'

@@ -21,7 +21,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class FallbacksCompare extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Creates graphml xml file of language fallbacks.';
+		$this->addDescription( 'Creates graphml xml file of language fallbacks.' );
 	}
 
 	public function execute() {
