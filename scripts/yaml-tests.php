@@ -21,7 +21,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class YamlTests extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Script for comparing supported YAML parser implementations.';
+		$this->addDescription( 'Script for comparing supported YAML parser implementations.' );
 	}
 
 	public function execute() {

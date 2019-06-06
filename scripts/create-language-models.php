@@ -24,12 +24,12 @@ class LanguageModelCreator extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = <<<TXT
-Create language models for https://github.com/crodas/LanguageDetector based
-on translation data in your wiki. It is safe to kill and restart the script.
-List of pages and filtered language data is cached for 24 hours. Json files
-present will be used, so don't forget to delete before new run.
-TXT;
+		$this->addDescription(
+			"Create language models for https://github.com/crodas/LanguageDetector " .
+			"based on translation data in your wiki. It is safe to kill and restart the script. " .
+			"List of pages and filtered language data is cached for 24 hours. Json files present " .
+			"will be used, so don't forget to delete before new run."
+		);
 	}
 
 	public function execute() {

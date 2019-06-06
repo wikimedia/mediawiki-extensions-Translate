@@ -26,7 +26,7 @@ class TSchema2 extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Migrates database schema to version 2.';
+		$this->addDescription( 'Migrates database schema to version 2.' );
 	}
 
 	public function execute() {

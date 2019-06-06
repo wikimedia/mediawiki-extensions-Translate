@@ -21,7 +21,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class CommandlineExport extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Message exporter.';
+		$this->addDescription( 'Message exporter.' );
 		$this->addOption(
 			'group',
 			'Comma separated list of group IDs (can use * as wildcard)',

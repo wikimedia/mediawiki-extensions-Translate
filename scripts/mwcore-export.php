@@ -21,7 +21,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class MwCoreExport extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Core special features exporter.';
+		$this->addDescription( 'Core special features exporter.' );
 		$this->addOption(
 			'target',
 			'Target directory for exported files',

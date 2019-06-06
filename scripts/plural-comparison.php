@@ -21,7 +21,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class PluralCompare extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Script for comparing different plural implementations.';
+		$this->addDescription( 'Script for comparing different plural implementations.' );
 	}
 
 	public function execute() {

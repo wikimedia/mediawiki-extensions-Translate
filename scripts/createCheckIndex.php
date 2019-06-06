@@ -21,8 +21,8 @@ require_once "$IP/maintenance/Maintenance.php";
 class CreateCheckIndex extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Creates serialised database of messages that need ' .
-			'checking for problems.';
+		$this->addDescription( 'Creates serialised database of messages that need ' .
+			'checking for problems.' );
 		$this->addOption(
 			'group',
 			'(optional) Comma separated list of group IDs to process (can use * as wildcard). ' .
@@ -52,7 +52,7 @@ class CreateCheckIndex extends Maintenance {
 
 		$groups = MessageGroups::singleton()->getGroups();
 
-		/** @var $g MessageGroup */
+		/** @var MessageGroup $g */
 		foreach ( $groups as $g ) {
 			$id = $g->getId();
 			$sourceLanguage = $g->getSourceLanguage();

@@ -19,8 +19,8 @@ require_once "$IP/maintenance/Maintenance.php";
 class TS extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Script to gather translator stats in tsv format. ' .
-			'You can further process the output with translate-stats-process.php';
+		$this->addDescription( 'Script to gather translator stats in tsv format. ' .
+			'You can further process the output with translate-stats-process.php' );
 	}
 
 	public function execute() {

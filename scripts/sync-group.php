@@ -26,8 +26,8 @@ $wgMaxShellMemory = 1024 * 200;
 class SyncGroup extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Import or update source messages and translations into ' .
-			'the wiki database.';
+		$this->addDescription( 'Import or update source messages and translations into ' .
+			'the wiki database.' );
 		$this->addOption(
 			'git',
 			'(optional) Use git to retrieve last modified date of i18n files. Will use subversion ' .

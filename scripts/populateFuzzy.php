@@ -21,7 +21,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class PopulateFuzzy extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'A script to populate fuzzy tags to revtag table.';
+		$this->addDescription( 'A script to populate fuzzy tags to revtag table.' );
 		$this->addOption(
 			'namespace',
 			'(optional) Namepace name or id',
