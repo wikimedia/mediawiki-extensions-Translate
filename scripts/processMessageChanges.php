@@ -37,7 +37,7 @@ class ProcessMessageChanges extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Script for processing message changes in file based message groups';
+		$this->addDescription( 'Script for processing message changes in file based message groups' );
 		$this->addOption(
 			'group',
 			'(optional) Comma separated list of group IDs to process (can use * as wildcard). ' .

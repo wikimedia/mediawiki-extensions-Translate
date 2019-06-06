@@ -28,7 +28,7 @@ class TTMServerBootstrap extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Script to bootstrap TTMServer.';
+		$this->addDescription( 'Script to bootstrap TTMServer.' );
 		$this->addOption(
 			'threads',
 			'(optional) Number of threads',
@@ -53,7 +53,7 @@ class TTMServerBootstrap extends Maintenance {
 	public function statusLine( $text, $channel = null ) {
 		$pid = sprintf( '%5s', getmypid() );
 		$prefix = sprintf( '%6.2f', microtime( true ) - $this->start );
-		$mem = sprintf( '%5.1fM', ( memory_get_usage( true ) / ( 1024 * 1024 ) ) );
+		$mem = sprintf( '%5.1fM', memory_get_usage( true ) / ( 1024 * 1024 ) );
 		$this->output( "$pid $prefix $mem  $text", $channel );
 	}
 

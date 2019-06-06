@@ -21,7 +21,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class CharacterEditStats extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Script to show number of characters translated .';
+		$this->addDescription( 'Script to show number of characters translated .' );
 		$this->addOption(
 			'top',
 			'(optional) Show given number of language codes (default: show all)',
@@ -62,7 +62,7 @@ class CharacterEditStats extends Maintenance {
 		}
 
 		// Select set of edits to report on
-		$rows = self::getRevisionsFromHistory( $days, $namespaces );
+		$rows = $this->getRevisionsFromHistory( $days, $namespaces );
 
 		// Get counts for edits per language code after filtering out edits by FuzzyBot
 		$codes = [];

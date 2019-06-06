@@ -19,7 +19,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class TestMT extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Test webservices.';
+		$this->addDescription( 'Test webservices.' );
 
 		$this->addOption(
 			'service',
