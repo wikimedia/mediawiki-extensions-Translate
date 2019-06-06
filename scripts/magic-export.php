@@ -30,7 +30,7 @@ class MagicExport extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Export of aliases and magic words for MediaWiki extensions.';
+		$this->addDescription( 'Export of aliases and magic words for MediaWiki extensions.' );
 		$this->addOption(
 			'target',
 			'Target directory for exported files',

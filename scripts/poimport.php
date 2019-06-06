@@ -21,7 +21,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class Poimport extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Po file importer (does not make changes unless specified).';
+		$this->addDescription( 'Po file importer (does not make changes unless specified).' );
 		$this->addOption(
 			'file',
 			'Gettext file to import (Translate specific formatting)',
