@@ -37,7 +37,9 @@
 		"ApertiumWebService": "webservices/ApertiumWebService.php",
 		"ApiAggregateGroups": "api/ApiAggregateGroups.php",
 		"ApiGroupReview": "api/ApiGroupReview.php",
+		"ApiManageMessageGroups": "api/ApiManageMessageGroups.php",
 		"ApiQueryLanguageStats": "api/ApiQueryLanguageStats.php",
+		"ApiQueryManageMessageGroups": "api/ApiQueryManageMessageGroups.php",
 		"ApiQueryMessageCollection": "api/ApiQueryMessageCollection.php",
 		"ApiQueryMessageGroups": "api/ApiQueryMessageGroups.php",
 		"ApiQueryMessageGroupStats": "api/ApiQueryMessageGroupStats.php",
@@ -116,6 +118,7 @@
 		"MessageHandle": "utils/MessageHandle.php",
 		"MessageIndex": "utils/MessageIndex.php",
 		"MessageIndexRebuildJob": "utils/MessageIndexRebuildJob.php",
+		"MessageSourceChange": "utils/MessageSourceChange.php",
 		"MessageUpdateJob": "utils/MessageUpdateJob.php",
 		"MessageWebImporter": "utils/MessageWebImporter.php",
 		"MetaYamlSchemaExtender": "MetaYamlSchemaExtender.php",
@@ -147,6 +150,7 @@
 		"SerializedMessageIndex": "utils/MessageIndex.php",
 		"ShapadoJsFFS": "ffs/JavaScriptFFS.php",
 		"SimpleFFS": "ffs/SimpleFFS.php",
+		"SimpleStringComparator": "utils/stringcomparator/SimpleStringComparator.php",
 		"SolrTTMServer": "ttmserver/SolrTTMServer.php",
 		"SpecialAggregateGroups": "specials/SpecialAggregateGroups.php",
 		"SpecialExportTranslations": "specials/SpecialExportTranslations.php",
@@ -171,6 +175,7 @@
 		"StashedTranslation": "stash/StashedTranslation.php",
 		"StatsBar": "utils/StatsBar.php",
 		"StatsTable": "utils/StatsTable.php",
+		"StringComparator": "utils/stringcomparator/StringComparator.php",
 		"StringMangler": "stringmangler/StringMangler.php",
 		"StringMatcher": "stringmangler/StringMatcher.php",
 		"SupportAid": "translationaids/SupportAid.php",
@@ -195,6 +200,7 @@
 		"TranslateRcFilter": "utils/RcFilter.php",
 		"TranslateRegistrationStats": "specials/SpecialTranslationStats.php",
 		"TranslateRenderJob": "tag/TranslateRenderJob.php",
+		"TranslateReplaceTitle": "utils/TranslateReplaceTitle.php",
 		"TranslateSandbox": "utils/TranslateSandbox.php",
 		"TranslateSandboxEmailJob": "utils/TranslateSandboxEmailJob.php",
 		"TranslateStatsOutput": "scripts/TranslateStatsOutput.php",
@@ -314,6 +320,7 @@
 	},
 	"APIMetaModules": {
 		"languagestats": "ApiQueryLanguageStats",
+		"managemessagegroups": "ApiQueryManageMessageGroups",
 		"messagegroups": "ApiQueryMessageGroups",
 		"messagegroupstats": "ApiQueryMessageGroupStats",
 		"messagetranslations": "ApiQueryMessageTranslations"
@@ -321,6 +328,7 @@
 	"APIModules": {
 		"aggregategroups": "ApiAggregateGroups",
 		"groupreview": "ApiGroupReview",
+		"managemessagegroups": "ApiManageMessageGroups",
 		"translationaids": "ApiTranslationAids",
 		"translationreview": "ApiTranslationReview",
 		"translationcheck": "ApiTranslationCheck",
@@ -670,7 +678,45 @@
 			]
 		},
 		"ext.translate.special.managegroups": {
-			"styles": "resources/css/ext.translate.special.managegroups.css",
+			"dependencies": [
+				"mediawiki.notify",
+				"ext.translate.messagerenamedialog"
+			],
+			"messages": [
+				"translate-smg-rename-new",
+				"translate-smg-rename-rename",
+				"translate-smg-rename-dialog-title"
+			],
+			"scripts": [
+				"resources/js/ext.translate.special.managegroups.js"
+			],
+			"styles": [
+				"resources/css/ext.translate.special.managegroups.css"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.messagerenamedialog": {
+			"dependencies": [
+				"oojs-ui-core",
+				"oojs-ui-widgets",
+				"oojs-ui-windows"
+			],
+			"messages": [
+				"translate-smg-rename-select",
+				"translate-smg-rename-cancel",
+				"translate-smg-rename-search",
+				"translate-smg-rename-select-err",
+				"translate-smg-rename-no-msg"
+			],
+			"scripts": [
+				"resources/js/ext.translate.messagerenamedialog.js"
+			],
+			"styles": [
+				"resources/css/ext.translate.messagerenamedialog.css"
+			],
 			"targets": [
 				"desktop",
 				"mobile"

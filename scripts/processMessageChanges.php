@@ -70,6 +70,7 @@ class ProcessMessageChanges extends Maintenance {
 		$groups = $this->getGroups();
 		$changes = [];
 		$comparator = new ExternalMessageSourceStateComparator();
+		$comparator->setStringComparator( new SimpleStringComparator() );
 
 		$scripted = $this->hasOption( 'safe-import' );
 
@@ -82,7 +83,9 @@ class ProcessMessageChanges extends Maintenance {
 		}
 
 		// Remove all groups without changes
-		$changes = array_filter( $changes );
+		$changes = array_filter( $changes, function ( MessageSourceChange $change ) {
+			return $change->getModifications() !== [];
+		} );
 
 		if ( $changes === [] ) {
 			if ( !$scripted ) {
