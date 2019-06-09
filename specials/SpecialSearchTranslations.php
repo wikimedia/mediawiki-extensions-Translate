@@ -563,7 +563,7 @@ HTML
 		$input = Xml::input( 'query', false, $query, $attribs );
 		$submit = Xml::submitButton(
 			$this->msg( 'tux-sst-search' ),
-			[ 'class' => 'mw-ui-button' ]
+			[ 'class' => 'mw-ui-button mw-ui-progressive' ]
 		);
 
 		$nondefaults = $this->opts->getChangedValues();
