@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "478386b8_2593ef31",
+        "filename": "api/ApiTranslationCheck.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Removed this check. This is already being taken care of by the API, where the translation is marked as a mandatory parameter.\n\nRemoving the API check, and calling these functions with an empty string returns the expected warnings and errors.",
+      "parentUuid": "0d03d886_c97f2193",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf37bf0f_c62c3303",
         "filename": "i18n/core/en.json",
         "patchSetId": 12
@@ -33,6 +51,24 @@
       "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6508baea_ae48aced",
+        "filename": "i18n/core/en.json",
+        "patchSetId": 12
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "bf37bf0f_c62c3303",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "bb7b6cc4_7b5f2c82",
+        "filename": "insertables/MediaWikiInsertablesSuggester.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "This was added in Idf9710498fa004768815d05a5fd5e5fe251a947b\n\nSample message - https://translatewiki.net/w/i.php?title\u003dSpecial:Translate\u0026showMessage\u003dapihelp-query%2Ballimages-param-filterbots\u0026group\u003dmediawiki-api\u0026language\u003dhaw\u0026filter\u003d\u0026optional\u003d1\u0026action\u003dtranslate",
+      "parentUuid": "80dcb5eb_d10895f4",
+      "range": {
+        "startLine": 17,
+        "startChar": 23,
+        "endLine": 17,
+        "endChar": 30
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "00182b09_8bb04264",
         "filename": "insertables/RegexInsertablesSuggester.php",
         "patchSetId": 12
@@ -76,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "b6e2ec99_b2b56b22",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Yes. Updated the comments here, and documentation here - https://www.mediawiki.org/wiki/User:Abijeet_Patro/T204568_-_Extend_message_checker_framework",
+      "parentUuid": "00182b09_8bb04264",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ef8a196b_4f969890",
         "filename": "insertables/RegexInsertablesSuggester.php",
         "patchSetId": 12
@@ -90,6 +168,24 @@
       "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca5f7792_86bb8d5f",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ef8a196b_4f969890",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -116,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "0547f330_a0660553",
+        "filename": "insertables/RegexInsertablesSuggester.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b377a25_d747a3b1",
+      "range": {
+        "startLine": 119,
+        "startChar": 5,
+        "endLine": 119,
+        "endChar": 10
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1727de3d_8b1cd11e",
         "filename": "resources/js/ext.translate.editor.js",
         "patchSetId": 12
@@ -127,6 +247,23 @@
       "writtenOn": "2019-06-04T14:06:09Z",
       "side": 1,
       "message": "Can we use a more dedicated method like hasClass? Constructing selector via string concatenation gives bad vibes even though it is safe here.",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eed295bf_c50ae36b",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Not sure how to use hasClass here to find the elements that need to be removed. Added an additional check to ensure that elements of stringTypes must be one of classes defined in noticeTypes.",
       "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
@@ -156,6 +293,30 @@
     },
     {
       "key": {
+        "uuid": "a10d178e_91d0a5e6",
+        "filename": "resources/js/ext.translate.editor.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b15e40b_17cca970",
+      "range": {
+        "startLine": 1116,
+        "startChar": 30,
+        "endLine": 1116,
+        "endChar": 40
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "20437bae_26e902d7",
         "filename": "scripts/ttmserver-export.php",
         "patchSetId": 12
@@ -170,6 +331,24 @@
       "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d5c8a74_cb1e7d4b",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "This was done to avoid parallelism, which was causing MySQL has gone away errors.\n\nReverted.",
+      "parentUuid": "20437bae_26e902d7",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -190,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "bc4519eb_680fd53b",
+        "filename": "scripts/ttmserver-export.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3fc02c53_99c2bf58",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "93637012_afe5e009",
         "filename": "src/MessageValidator/ValidationHelper.php",
         "patchSetId": 12
@@ -204,6 +401,24 @@
       "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37fce6a4_37bd8e9d",
+        "filename": "src/MessageValidator/ValidationHelper.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "93637012_afe5e009",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -224,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "5612d533_214c90f8",
+        "filename": "src/MessageValidator/ValidationHelper.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a5252e30_c813aa66",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "60d59392_60ccc4f9",
         "filename": "src/MessageValidator/ValidationResult.php",
         "patchSetId": 12
@@ -241,6 +474,24 @@
     },
     {
       "key": {
+        "uuid": "43d471ad_70322d9d",
+        "filename": "src/MessageValidator/ValidationResult.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "60d59392_60ccc4f9",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f425edaf_7cacf32a",
         "filename": "src/MessageValidator/Validator.php",
         "patchSetId": 12
@@ -255,6 +506,24 @@
       "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ecf4404_6ac04198",
+        "filename": "src/MessageValidator/Validator.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Agreed. Updated the Validator related code, but did not modify the Checker related code.",
+      "parentUuid": "f425edaf_7cacf32a",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -281,6 +550,30 @@
     },
     {
       "key": {
+        "uuid": "4c84a629_ebb3bba8",
+        "filename": "src/MessageValidator/Validators/InsertableRegexValidator.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "517cbbfa_4e35e3c9",
+      "range": {
+        "startLine": 12,
+        "startChar": 4,
+        "endLine": 12,
+        "endChar": 5
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d2f05be2_977832fe",
         "filename": "src/MessageValidator/Validators/InsertableRegexValidator.php",
         "patchSetId": 12
@@ -304,6 +597,30 @@
     },
     {
       "key": {
+        "uuid": "a691d827_2fbb2d72",
+        "filename": "src/MessageValidator/Validators/InsertableRegexValidator.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d2f05be2_977832fe",
+      "range": {
+        "startLine": 18,
+        "startChar": 39,
+        "endLine": 18,
+        "endChar": 65
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "44ec5f34_573f5d75",
         "filename": "tag/PageTranslationHooks.php",
         "patchSetId": 12
@@ -318,6 +635,24 @@
       "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "638fd81f_db60b654",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 1338,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "44ec5f34_573f5d75",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -338,6 +673,24 @@
     },
     {
       "key": {
+        "uuid": "5fc15db1_110761e8",
+        "filename": "tests/phpunit/MessageGroupBaseTest.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e8a303be_f7554b62",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c4395980_ba8b1ff5",
         "filename": "tests/phpunit/MessageGroupBaseTest.php",
         "patchSetId": 12
@@ -352,6 +705,24 @@
       "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b62f6d87_d77b9d53",
+        "filename": "tests/phpunit/MessageGroupBaseTest.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4395980_ba8b1ff5",
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -378,6 +749,30 @@
     },
     {
       "key": {
+        "uuid": "b8c6ca77_072e03be",
+        "filename": "tests/phpunit/data/ValidatorGroup.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "bc120e37_04ece0cb",
+      "range": {
+        "startLine": 12,
+        "startChar": 12,
+        "endLine": 12,
+        "endChar": 24
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "10ef731b_bc4a696e",
         "filename": "tests/phpunit/data/ValidatorGroup.yaml",
         "patchSetId": 12
@@ -398,6 +793,30 @@
       "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46b08513_191bb532",
+        "filename": "tests/phpunit/data/ValidatorGroup.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-09T15:30:53Z",
+      "side": 1,
+      "message": "This is from MathJax suggester. Matches - // \\left or \\begin{$1}\n\nSee - https://github.com/wikimedia/translatewiki/blob/master/groups/MathJax/Suggester.php#L21",
+      "parentUuid": "10ef731b_bc4a696e",
+      "range": {
+        "startLine": 16,
+        "startChar": 14,
+        "endLine": 16,
+        "endChar": 28
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
