@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "84a39e33_4821e56a",
+        "filename": "insertables/MediaWikiInsertablesSuggester.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-10T06:20:43Z",
+      "side": 1,
+      "message": "Thanks for looking it up. Feels like it should have been added with a comment back then.",
+      "parentUuid": "bb7b6cc4_7b5f2c82",
+      "range": {
+        "startLine": 17,
+        "startChar": 23,
+        "endLine": 17,
+        "endChar": 30
+      },
+      "revId": "9d22bd919aff5ceedc38890e8fe5471f2d232b9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "00182b09_8bb04264",
         "filename": "insertables/RegexInsertablesSuggester.php",
         "patchSetId": 12
