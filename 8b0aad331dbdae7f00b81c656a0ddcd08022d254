@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0375e71a_cf260306",
+        "filename": "extension-wip.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 1044,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-10T11:28:42Z",
+      "side": 1,
+      "message": "Ugh, this link is also broken. Working one: https://gerrit.wikimedia.org/g/translatewiki/+/master/groups/check-blacklist.php",
+      "range": {
+        "startLine": 1044,
+        "startChar": 70,
+        "endLine": 1044,
+        "endChar": 164
+      },
+      "revId": "8b0aad331dbdae7f00b81c656a0ddcd08022d254",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
