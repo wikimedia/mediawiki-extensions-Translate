@@ -13,5 +13,6 @@
  */
 interface QueryAggregatorAware {
 	public function setQueryAggregator( QueryAggregator $aggregator );
+
 	public function populateQueries();
 }
