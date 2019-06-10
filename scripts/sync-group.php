@@ -212,7 +212,6 @@ class ChangeSyncer {
 		}
 	}
 
-	// svn component from pecl doesn't seem to have this in quick sight
 	/**
 	 * Fetch last changed timestamp for a versioned file for conflict resolution.
 	 * @param string $file Filename with full path.

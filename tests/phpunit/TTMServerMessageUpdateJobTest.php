@@ -370,10 +370,12 @@ class TTMServerMessageUpdateJobTest extends MediaWikiTestCase {
 class TestableTTMServerMessageUpdateJob extends TTMServerMessageUpdateJob {
 	private $resentJobs = [];
 	private $handleMock;
+
 	public function __construct( Title $title, $params, $handleMock ) {
 		parent::__construct( $title, $params );
 		$this->handleMock = $handleMock;
 	}
+
 	public function resend( TTMServerMessageUpdateJob $job ) {
 		$this->resentJobs[] = $job;
 	}
@@ -399,6 +401,7 @@ class TestableTTMServerMessageUpdateJob extends TTMServerMessageUpdateJob {
  */
 class TestableTTMServer extends TTMServer implements WritableTTMServer {
 	private $delegate;
+
 	public function __construct( array $config ) {
 		parent::__construct( $config );
 		$this->delegate = TTMServerMessageUpdateJobTest::$mockups[$config['name']];
