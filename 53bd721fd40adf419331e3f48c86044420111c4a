@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9c82f6b0_acd8e597",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-11T13:45:57Z",
+      "side": 1,
+      "message": "I was thinking that this condition should be removed too, in addition to moving this code to this file.",
+      "range": {
+        "startLine": 895,
+        "startChar": 7,
+        "endLine": 895,
+        "endChar": 35
+      },
+      "revId": "53bd721fd40adf419331e3f48c86044420111c4a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
