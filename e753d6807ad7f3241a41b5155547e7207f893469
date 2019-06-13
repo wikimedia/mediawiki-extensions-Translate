@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d357be6_95ba3b7a",
+        "filename": "api/ApiManageMessageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-13T13:29:37Z",
+      "side": 1,
+      "message": "Perhaps make this required, but give a default value?\n\nAlso, I have just treated this as \"name\", as it can essentially be any string and nothing enforces it to describe a \"type\".",
+      "revId": "e753d6807ad7f3241a41b5155547e7207f893469",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f2ba644_4a88b46b",
+        "filename": "resources/css/ext.translate.messagerenamedialog.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-13T13:29:37Z",
+      "side": 1,
+      "message": "For new files I recommend to use less.",
+      "revId": "e753d6807ad7f3241a41b5155547e7207f893469",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61d24577_0845fecc",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-13T13:29:37Z",
+      "side": 1,
+      "message": "I recommend renaming the styles module. Otherwise the styles will get loaded twice. The idea is to use addModuleStyles for styles that are required to render the page without FOUC.",
+      "revId": "e753d6807ad7f3241a41b5155547e7207f893469",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
