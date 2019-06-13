@@ -75,7 +75,7 @@
 	"tux-status-translated": "Oerset",
 	"tux-editor-save-button-label": "Oersetting bewarje",
 	"tux-editor-cancel-button-label": "Annulearje",
-	"tux-warnings-more": "{{PLURAL:$1|$1 mear}}",
+	"tux-notices-more": "{{PLURAL:$1|$1 mear}}",
 	"tux-proofread-edit-label": "Bewurkje",
 	"tux-editor-page-mode": "Side",
 	"tux-editor-doc-editor-cancel": "Annulearje",

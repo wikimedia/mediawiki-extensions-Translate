@@ -259,7 +259,7 @@
 	"tux-editor-need-more-help": "තවත් උදව් අවශ්‍යද?",
 	"tux-editor-ask-help": "තවත් තොරතුරු සඳහා විමසන්න",
 	"tux-editor-tm-match": "$1% ගැලපේ",
-	"tux-warnings-more": "{{PLURAL:$1|තවත් $1}}",
-	"tux-warnings-hide": "සඟවන්න",
+	"tux-notices-more": "{{PLURAL:$1|තවත් $1}}",
+	"tux-notices-hide": "සඟවන්න",
 	"tux-editor-save-failed": "පරිවර්තනය සුරැකීම අසාර්ථකයි: $1"
 }

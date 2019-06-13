@@ -270,7 +270,7 @@
 	"tux-editor-need-more-help": "Fôta de més d’éde ?",
 	"tux-editor-ask-help": "Demandar més d’enformacions",
 	"tux-editor-tm-match": "$1 % de corrèspondance",
-	"tux-warnings-more": "{{PLURAL:$1|$1 de ples}}",
-	"tux-warnings-hide": "cachiér",
+	"tux-notices-more": "{{PLURAL:$1|$1 de ples}}",
+	"tux-notices-hide": "cachiér",
 	"tux-editor-save-failed": "Falyita de l’encartâjo de la traduccion : $1"
 }

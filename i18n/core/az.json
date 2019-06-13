@@ -198,6 +198,6 @@
 	"tux-editor-skip-button-label": "Sonrakına keç",
 	"tux-editor-confirm-button-label": "Tərcüməni təsdiq edin",
 	"tux-editor-shortcut-info": "Yaddaşda saxlamaq üçün \"$1\", növbəti mesaja keçmək üçün \"$2\", digər qısayolları açmaq üçün \"$3\" düyməsini basın.",
-	"tux-editor-outdated-warning": "Ola bilsin ki, bu tərcümənin yenilənməsinə ehtiyac var.",
-	"tux-editor-outdated-warning-diff-link": "Fərqləri göstər"
+	"tux-editor-outdated-notice": "Ola bilsin ki, bu tərcümənin yenilənməsinə ehtiyac var.",
+	"tux-editor-outdated-notice-diff-link": "Fərqləri göstər"
 }
