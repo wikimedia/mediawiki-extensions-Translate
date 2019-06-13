@@ -367,6 +367,16 @@ class SpecialPageTranslationDeletePage extends SpecialPage {
 			}
 		}
 
+		if ( !$this->singleLanguage() ) {
+			$jobs[$this->title->getPrefixedText()] = TranslateDeleteJob::newJob(
+				$this->title,
+				$base,
+				!$this->singleLanguage(),
+				$user,
+				$this->reason
+			);
+		}
+
 		JobQueueGroup::singleton()->push( $jobs );
 
 		$cache = wfGetCache( CACHE_DB );
