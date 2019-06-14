@@ -1289,36 +1289,44 @@ class PageTranslationHooks {
 		$langCode = $handle->getCode();
 		$targetPage = $target->getSubpage( $langCode )->getPrefixedText();
 
-		if ( !isset( $queuedPages[ $targetPage ] ) ) {
-			$queuedPages[ $targetPage ] = true;
-			$fname = __METHOD__;
+		if ( isset( $queuedPages[ $targetPage ] ) ) {
+			return;
+		}
 
-			$dbw = wfGetDB( DB_MASTER );
-			$dbw->onTransactionIdle( function () use ( $dbw, $queuedPages, $targetPage,
-				$target, $handle, $langCode, $user, $reason, $fname
-			) {
-				$dbw->startAtomic( $fname );
+		$queuedPages[ $targetPage ] = true;
+		$fname = __METHOD__;
 
-				$page = TranslatablePage::newFromTitle( $target );
+		$dbw = wfGetDB( DB_MASTER );
+		$callback = function () use (
+			$dbw, $queuedPages, $targetPage, $target, $handle, $langCode, $user, $reason, $fname
+		) {
+			$dbw->startAtomic( $fname );
 
-				MessageGroupStats::forItem(
-					$page->getMessageGroupId(),
-					$langCode,
-					MessageGroupStats::FLAG_NO_CACHE
-				);
+			$page = TranslatablePage::newFromTitle( $target );
 
-				if ( !$handle->isDoc() ) {
-					// Assume that $user and $reason for the first deletion is the same for all
-					self::updateTranslationPage( $page, $langCode, $user, 0, $reason );
-				}
+			MessageGroupStats::forItem(
+				$page->getMessageGroupId(),
+				$langCode,
+				MessageGroupStats::FLAG_NO_CACHE
+			);
 
-				// If a unit was deleted after the edit here is done, this allows us
-				// to add the page back to the queue again and so we can make another
-				// edit here with the latest changes.
-				unset( $queuedPages[ $targetPage ] );
+			if ( !$handle->isDoc() ) {
+				// Assume that $user and $reason for the first deletion is the same for all
+				self::updateTranslationPage( $page, $langCode, $user, 0, $reason );
+			}
 
-				$dbw->endAtomic( $fname );
-			} );
+			// If a unit was deleted after the edit here is done, this allows us
+			// to add the page back to the queue again and so we can make another
+			// edit here with the latest changes.
+			unset( $queuedPages[ $targetPage ] );
+
+			$dbw->endAtomic( $fname );
+		};
+
+		if ( method_exists( $dbw, 'onTransactionCommitOrIdle' ) ) {
+			$dbw->onTransactionCommitOrIdle( $callback );
+		} else {
+			$dbw->onTransactioIdle( $callback );
 		}
 	}
 }
