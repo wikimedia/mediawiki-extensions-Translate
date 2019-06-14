@@ -356,7 +356,7 @@ abstract class ComplexMessages {
 	}
 
 	protected function getKeyForEdit( $key ) {
-		return Sanitizer::escapeId( 'sp-translate-magic-cm-' . $this->id . $key );
+		return Sanitizer::escapeIdForAttribute( 'sp-translate-magic-cm-' . $this->id . $key );
 	}
 
 	public function editElement( $key, $contents ) {
