@@ -321,7 +321,7 @@ class MessageWebImporter {
 				foreach ( $actions as $action ) {
 					$label = $context->msg( "translate-manage-action-$action" )->text();
 					$name = self::escapeNameForPHP( "action-$type-$key" );
-					$id = Sanitizer::escapeId( "action-$key-$action" );
+					$id = Sanitizer::escapeIdForAttribute( "action-$key-$action" );
 					$act[] = Xml::radioLabel( $label, $name, $action, $id, $action === $defaction );
 				}
 
