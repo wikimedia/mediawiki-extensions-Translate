@@ -1292,36 +1292,38 @@ class PageTranslationHooks {
 		$langCode = $handle->getCode();
 		$targetPage = $target->getSubpage( $langCode )->getPrefixedText();
 
-		if ( !isset( $queuedPages[ $targetPage ] ) ) {
-			$queuedPages[ $targetPage ] = true;
-			$fname = __METHOD__;
-
-			$dbw = wfGetDB( DB_MASTER );
-			$dbw->onTransactionIdle( function () use ( $dbw, $queuedPages, $targetPage,
-				$target, $handle, $langCode, $user, $reason, $fname
-			) {
-				$dbw->startAtomic( $fname );
-
-				$page = TranslatablePage::newFromTitle( $target );
-
-				MessageGroupStats::forItem(
-					$page->getMessageGroupId(),
-					$langCode,
-					MessageGroupStats::FLAG_NO_CACHE
-				);
-
-				if ( !$handle->isDoc() ) {
-					// Assume that $user and $reason for the first deletion is the same for all
-					self::updateTranslationPage( $page, $langCode, $user, 0, $reason );
-				}
-
-				// If a unit was deleted after the edit here is done, this allows us
-				// to add the page back to the queue again and so we can make another
-				// edit here with the latest changes.
-				unset( $queuedPages[ $targetPage ] );
-
-				$dbw->endAtomic( $fname );
-			} );
+		if ( isset( $queuedPages[ $targetPage ] ) ) {
+			return;
 		}
+
+		$queuedPages[ $targetPage ] = true;
+		$fname = __METHOD__;
+
+		$dbw = wfGetDB( DB_MASTER );
+		$dbw->onTransactionCommitOrIdle( function () use (
+			$dbw, $queuedPages, $targetPage, $target, $handle, $langCode, $user, $reason, $fname
+		) {
+			$dbw->startAtomic( $fname );
+
+			$page = TranslatablePage::newFromTitle( $target );
+
+			MessageGroupStats::forItem(
+				$page->getMessageGroupId(),
+				$langCode,
+				MessageGroupStats::FLAG_NO_CACHE
+			);
+
+			if ( !$handle->isDoc() ) {
+				// Assume that $user and $reason for the first deletion is the same for all
+				self::updateTranslationPage( $page, $langCode, $user, 0, $reason );
+			}
+
+			// If a unit was deleted after the edit here is done, this allows us
+			// to add the page back to the queue again and so we can make another
+			// edit here with the latest changes.
+			unset( $queuedPages[ $targetPage ] );
+
+			$dbw->endAtomic( $fname );
+		} );
 	}
 }

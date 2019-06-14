@@ -452,7 +452,7 @@ class DatabaseMessageIndex extends MessageIndex {
 				$dbw->unlock( 'translate-messageindex', $fname );
 			} );
 		} else {
-			$dbw->onTransactionIdle( function () use ( $dbw, $fname ) {
+			$dbw->onTransactionCommitOrIdle( function () use ( $dbw, $fname ) {
 				$dbw->unlock( 'translate-messageindex', $fname );
 			} );
 		}
