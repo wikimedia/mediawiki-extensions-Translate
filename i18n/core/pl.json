@@ -401,6 +401,7 @@
 	"translate-search-more-groups-info": "$1 więcej  {{PLURAL:$1|grupa|grup}}",
 	"translate-ulsdep-title": "Błąd konfiguracji",
 	"translate-ulsdep-body": "Rozszerzenie tłumaczeń jest zależne od [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector rozszerzenia Uniwersalny Selektor Języka].",
+	"translate-syntax-error": "Tłumaczenie zawiera błąd składni",
 	"tux-session-expired": "Nie jesteś już zalogowany. Zaloguj się w osobnej karcie. Alternatywnie, możesz wykonać kopię niezapisanych tłumaczeń, zalogować się i powrócić do tej strony, a następnie ponownie wprowadzić tłumaczenia.",
 	"tux-nojs": "To narzędzie nie działa, jeżeli nie działa obsługa JavaScript. Jest u ciebie wyłączona, nie działa lub ta przeglądarka nie jest wspierana."
 }

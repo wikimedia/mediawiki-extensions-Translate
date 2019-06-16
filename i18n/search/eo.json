@@ -27,6 +27,8 @@
 	"tux-sst-ellipsis-untranslated": "Neniu traduko",
 	"tux-sst-ellipsis-outdated": "Malaktualaj tradukoj",
 	"tux-sst-link-all-match": "Postuli ĉiujn serĉvortojn",
+	"tux-sst-match-message": "Montrante tradukojn kongruantajn al iu ajn el la serĉvortoj. $1",
 	"tux-sst-case-sensitive": "Usklecodistinga",
+	"tux-sst-error-offset": "Neniu plia serĉrezulto povas esti montrata. Bonvolu malvastigi vian serĉon.",
 	"tux-sst-error-language": "Ĉi tiu lingvo ne povas esti uzata kun tiu speco de serĉado"
 }

@@ -391,6 +391,7 @@
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|altro gruppo|altri gruppi}}",
 	"translate-ulsdep-title": "Errore di configurazione",
 	"translate-ulsdep-body": "L'estensione Translate dipende dall'[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector estensione Universal Language Selector].",
+	"translate-syntax-error": "La traduzione contiene errori di sintassi",
 	"tux-session-expired": "Non hai effettuato l'accesso. Accedi in una scheda separata; o in alternativa copia la traduzione non salvata, accedi, ritorna in questa pagina e inserisci nuovamente la tua traduzione.",
 	"tux-nojs": "Questo strumento non funziona senza JavaScript. JavaScript potrebbe essere disattivato, non ha funzionato o questo browser non è supportato."
 }

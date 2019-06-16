@@ -33,7 +33,8 @@
 			"Wirbel78",
 			"Vlad5250",
 			"Diralik",
-			"Movses"
+			"Movses",
+			"Valencia212"
 		]
 	},
 	"translate": "Перевод",
@@ -405,6 +406,7 @@
 	"translate-search-more-groups-info": "ещё $1 {{PLURAL:$1|группа|группы|групп}}",
 	"translate-ulsdep-title": "Ошибка конфигурации",
 	"translate-ulsdep-body": "Расширение по переводу зависит от [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector расширения «Универсальный переключатель языков»].",
+	"translate-syntax-error": "В переводе  имеются синтаксические ошибки.",
 	"tux-session-expired": "Вы не авторизованы. Пожалуйста, авторизуйтесь в отдельной вкладке или скопируйте несохранённый перевод, вернитесь на эту страницу после авторизации и введите свой перевод ещё раз.",
 	"tux-nojs": "Этот инструмент не работает без JavaScript. JavaScript отключён, не работает, или этот браузер не поддерживается."
 }
