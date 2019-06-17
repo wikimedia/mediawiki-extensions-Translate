@@ -16,6 +16,24 @@
       "revId": "13ee6b012466ae12436753ddd51ce1fdc25f5b28",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b5b8747_8998563d",
+        "filename": "TranslateHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-06-17T14:53:41Z",
+      "side": 1,
+      "message": "Sure--actually, I realized it was also wrong so will gladly simplify.  We should not support the `\u003d\u003d false` case, which this patch does.",
+      "parentUuid": "55497aa3_7b832330",
+      "revId": "13ee6b012466ae12436753ddd51ce1fdc25f5b28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
