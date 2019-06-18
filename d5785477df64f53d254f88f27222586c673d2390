@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7fb7b81c_93df1826",
+        "filename": "extension-wip.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 1192,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-06-18T11:43:34Z",
+      "side": 1,
+      "message": "Thanks again.  I really can\u0027t help myself :-)",
+      "parentUuid": "b929fa83_650643cf",
+      "range": {
+        "startLine": 1192,
+        "startChar": 173,
+        "endLine": 1192,
+        "endChar": 175
+      },
+      "revId": "d5785477df64f53d254f88f27222586c673d2390",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e3679603_8f11888e",
         "filename": "extension-wip.json",
         "patchSetId": 8
@@ -36,6 +60,24 @@
       "writtenOn": "2019-06-18T09:57:12Z",
       "side": 1,
       "message": "Why empty object instead of an empty array?",
+      "revId": "d5785477df64f53d254f88f27222586c673d2390",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0de8477c_d84988d8",
+        "filename": "extension-wip.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-06-18T11:43:34Z",
+      "side": 1,
+      "message": "When sites configure this variable, it will be an object like { \u0027TTMServer\u0027: { .... } }",
+      "parentUuid": "e3679603_8f11888e",
       "revId": "d5785477df64f53d254f88f27222586c673d2390",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
