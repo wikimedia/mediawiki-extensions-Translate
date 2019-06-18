@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b929fa83_650643cf",
+        "filename": "extension-wip.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 1192,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-18T09:57:12Z",
+      "side": 1,
+      "message": "Double space.",
+      "range": {
+        "startLine": 1192,
+        "startChar": 173,
+        "endLine": 1192,
+        "endChar": 175
+      },
+      "revId": "d5785477df64f53d254f88f27222586c673d2390",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3679603_8f11888e",
+        "filename": "extension-wip.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-18T09:57:12Z",
+      "side": 1,
+      "message": "Why empty object instead of an empty array?",
+      "revId": "d5785477df64f53d254f88f27222586c673d2390",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
