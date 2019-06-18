@@ -115,6 +115,25 @@ class TranslateUtils {
 		return $titles;
 	}
 
+	public static function getContentForTitle( Title $title, $addFuzzy = false ) {
+		$wiki = ContentHandler::getContentText( Revision::newFromTitle( $title )->getContent() );
+
+		if ( !$wiki ) {
+			return null;
+		}
+
+		if ( !$addFuzzy ) {
+			return $wiki;
+		}
+
+		$handle = new MessageHandle( $title );
+		if ( $handle->isFuzzy() ) {
+			$wiki = '!!FUZZY!!' . str_replace( TRANSLATE_FUZZY, '', $wiki );
+		}
+
+		return $wiki;
+	}
+
 	/**
 	 * Fetches recent changes for titles in given namespaces
 	 *
@@ -353,10 +372,10 @@ class TranslateUtils {
 	public static function cacheFile( $filename ) {
 		global $wgTranslateCacheDirectory, $wgCacheDirectory;
 
-		if ( $wgTranslateCacheDirectory !== false ) {
-			$dir = $wgTranslateCacheDirectory;
-		} elseif ( $wgCacheDirectory !== false ) {
+		if ( $wgCacheDirectory !== false ) {
 			$dir = $wgCacheDirectory;
+		} elseif ( $wgTranslateCacheDirectory !== false ) {
+			$dir = $wgTranslateCacheDirectory;
 		} else {
 			throw new MWException( "\$wgCacheDirectory must be configured" );
 		}

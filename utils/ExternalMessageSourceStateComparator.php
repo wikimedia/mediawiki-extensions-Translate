@@ -11,7 +11,29 @@ class ExternalMessageSourceStateComparator {
 	/** Process all languages supported by the message group */
 	const ALL_LANGUAGES = 'all languages';
 
-	protected $changes = [];
+	/**
+	 * @var int
+	 */
+	const MIN_THRESHOLD = 100;
+
+	/**
+	 * @var MessageSourceChange
+	 */
+	protected $changes;
+
+	/**
+	 * @var StringComparator
+	 */
+	protected $stringComparator;
+
+	/**
+	 * Set the string comparator to be used for the comparison
+	 * @param StringComparator $stringComparator
+	 * @return void
+	 */
+	public function setStringComparator( StringComparator $stringComparator ) {
+		$this->stringComparator = $stringComparator;
+	}
 
 	/**
 	 * Finds changes in external sources compared to wiki state.
@@ -26,14 +48,17 @@ class ExternalMessageSourceStateComparator {
 	 * - Fourth level is change properties
 	 * - - key (the message key)
 	 * - - content (the message content in external source, null for deletions)
+	 * - - matched_to (present in case of renames, key of the matched message)
+	 * - - similarity (present in case of renames, similarity % with the matched message)
+	 * - - previous_state ( present in case of renames, state of the message before rename )
 	 *
 	 * @param FileBasedMessageGroup $group
 	 * @param array|string $languages
-	 * @throws MWException
+	 * @throws InvalidArgumentException
 	 * @return array array[language code][change type] = change.
 	 */
 	public function processGroup( FileBasedMessageGroup $group, $languages ) {
-		$this->changes = [];
+		$this->changes = new MessageSourceChange();
 		$processAll = false;
 
 		if ( $languages === self::ALL_LANGUAGES ) {
@@ -47,7 +72,7 @@ class ExternalMessageSourceStateComparator {
 
 			$languages = array_keys( $languages );
 		} elseif ( !is_array( $languages ) ) {
-			throw new MWException( 'Invalid input given for $languages' );
+			throw new InvalidArgumentException( 'Invalid input given for $languages' );
 		}
 
 		// Process the source language before others. Source language might not
@@ -74,7 +99,7 @@ class ExternalMessageSourceStateComparator {
 		if ( !$cache->isValid( $reason ) ) {
 			$this->addMessageUpdateChanges( $group, $code, $reason, $cache );
 
-			if ( !isset( $this->changes[$code] ) ) {
+			if ( $this->changes->getModifications( $code ) === [] ) {
 				/* Update the cache immediately if file and wiki state match.
 				 * Otherwise the cache will get outdated compared to file state
 				 * and will give false positive conflicts later. */
@@ -93,10 +118,9 @@ class ExternalMessageSourceStateComparator {
 	 * Now we must try to guess what in earth has driven the file state and
 	 * wiki state out of sync. Then we must compile list of events that would
 	 * bring those to sync. Types of events are addition, deletion, (content)
-	 * change and possible rename in the future. After that the list of events
-	 * are stored for later processing of a translation administrator, who can
-	 * decide what actions to take on those events to bring the state more or
-	 * less in sync.
+	 * change and key renames. After that the list of events are stored for
+	 * later processing of a translation administrator, who can decide what
+	 * actions to take on those events to bring the state more or less in sync.
 	 *
 	 * @param FileBasedMessageGroup $group
 	 * @param string $code Language code.
@@ -115,11 +139,12 @@ class ExternalMessageSourceStateComparator {
 		$wiki->filter( 'hastranslation', false );
 		$wiki->loadTranslations();
 		$wikiKeys = $wiki->getMessageKeys();
+		$sourceLang = $group->getSourceLanguage();
 
 		// By-pass cached message definitions
 		/** @var FFS $ffs */
 		$ffs = $group->getFFS();
-		if ( $code === $group->getSourceLanguage() && !$ffs->exists( $code ) ) {
+		if ( $code === $sourceLang && !$ffs->exists( $code ) ) {
 			$path = $group->getSourceFilePath( $code );
 			throw new MWException( "Source message file for {$group->getId()} does not exist: $path" );
 		}
@@ -146,6 +171,7 @@ class ExternalMessageSourceStateComparator {
 		$common = array_intersect( $fileKeys, $wikiKeys );
 
 		$supportsFuzzy = $ffs->supportsFuzzy();
+		$changesToRemove = [];
 
 		foreach ( $common as $key ) {
 			$sourceContent = $file['MESSAGES'][$key];
@@ -185,8 +211,36 @@ class ExternalMessageSourceStateComparator {
 				}
 			}
 
-			$this->addChange( 'change', $code, $key, $sourceContent );
+			if ( $code !== $sourceLang ) {
+				// Assume that this is the old key, we're checking if it has a corresponding
+				// renamed message, which is the new key.
+				$renameMsg = $this->changes->getMatchedMsg( $sourceLang, $key );
+				if ( $renameMsg !== null ) {
+					// Rename present in source language but this message has a content change
+					// with the OLD key. We will not process this here but add it as a
+					// rename instead. This way, the key will be renamed and then the content
+					// updated.
+					$addedMsg = [
+						'key' => $renameMsg['key'],
+						'content' => $sourceContent
+					];
+
+					$removedMsg = [
+						'key' => $key,
+						'content' => $wikiContent
+					];
+
+					$similarityPercent = $this->stringComparator->getSimilarity( $sourceContent,
+						$wikiContent );
+					$this->changes->addRename( $code, $addedMsg, $removedMsg, $similarityPercent );
+					$changesToRemove[] = $removedMsg['key'];
+					continue;
+				}
+			}
+			$this->changes->addChange( $code, $key, $sourceContent );
 		}
+
+		$this->changes->removeChanges( $code, $changesToRemove );
 
 		$added = array_diff( $fileKeys, $wikiKeys );
 		foreach ( $added as $key ) {
@@ -194,7 +248,8 @@ class ExternalMessageSourceStateComparator {
 			if ( trim( $sourceContent ) === '' ) {
 				continue;
 			}
-			$this->addChange( 'addition', $code, $key, $sourceContent );
+
+			$this->changes->addAddition( $code, $key, $sourceContent );
 		}
 
 		/* Should the cache not exist, don't consider the messages
@@ -209,15 +264,106 @@ class ExternalMessageSourceStateComparator {
 					 * must be a newly made in the wiki. */
 					continue;
 				}
-				$this->addChange( 'deletion', $code, $key, null );
+				$this->changes->addDeletion( $code, $key, $wiki[$key]->translation() );
 			}
 		}
-	}
 
-	protected function addChange( $type, $language, $key, $content ) {
-		$this->changes[$language][$type][] = [
-			'key' => $key,
-			'content' => $content,
-		];
+		if ( $code !== $sourceLang ) {
+			// For non source languages, we look at additions and see if
+			// they have been added as renames in the source language.
+			$additions = $this->changes->getAdditions( $code );
+			if ( $additions === [] ) {
+				return;
+			}
+
+			$additionsToRemove = [];
+			$deletionsToRemove = [];
+			foreach ( $additions as $addedMsg ) {
+				$addedMsgKey = $addedMsg['key'];
+
+				$addedSource = $this->changes->findMessage( $sourceLang, $addedMsgKey,
+					[ MessageSourceChange::M_RENAME ] );
+				if ( $addedSource === null ) {
+					continue;
+				}
+
+				// Since this key is new, and is present in the renames for the source language,
+				// we will add it as a rename.
+				$deletedSource = $this->changes->getMatchedMsg( $sourceLang, $addedSource['key'] );
+				$deletedMsgKey = $deletedSource['key'];
+				$deletedMsg = $this->changes->findMessage( $code, $deletedMsgKey,
+					[ MessageSourceChange::M_DELETION ] );
+
+				// Sometimes when the cache does not have the translations, the deleted message
+				// is not added in the translations.
+				if ( $deletedMsg === null ) {
+					$content = '';
+					if ( array_search( $deletedMsgKey, $wikiKeys ) !== false ) {
+						$content = $wiki[ $deletedMsgKey ]->translation();
+					}
+					$deletedMsg = [
+						'key' => $deletedMsgKey,
+						'content' => $content
+					];
+				}
+
+				$similarityPercent = 0;
+				if ( $this->stringComparator !== null ) {
+					$similarityPercent = $this->stringComparator->getSimilarity(
+						$addedMsg['content'], $deletedMsg['content']
+					);
+				}
+
+				$this->changes->addRename( $code, [
+					'key' => $addedMsgKey,
+					'content' => $addedMsg['content']
+				], [
+					'key' => $deletedMsgKey,
+					'content' => $deletedMsg['content']
+				], $similarityPercent );
+
+				$deletionsToRemove[] = $deletedMsgKey;
+				$additionsToRemove[] = $addedMsgKey;
+			}
+
+			$this->changes->removeAdditions( $code, $additionsToRemove );
+			$this->changes->removeDeletions( $code, $deletionsToRemove );
+			return;
+		}
+
+		if ( $this->stringComparator === null ) {
+			return;
+		}
+
+		// Now check for renames. To identify renames we need to compare
+		// the contents of the added messages with the deleted ones and
+		// identify messages that match.
+		$deletions = $this->changes->getDeletions( $code );
+		$additions = $this->changes->getAdditions( $code );
+		if ( $deletions === [] || $additions === [] ) {
+			return;
+		}
+
+		$additionsToRemove = [];
+		$deletionsToRemove = [];
+		foreach ( $additions as $addedMsg ) {
+			foreach ( $deletions as $deletedMsg ) {
+				$similarityPercent = $this->stringComparator->getSimilarity(
+					$addedMsg['content'],
+					$deletedMsg['content']
+				);
+
+				if ( $similarityPercent >= self::MIN_THRESHOLD ) {
+					$this->changes->addRename( $code, $addedMsg, $deletedMsg, $similarityPercent );
+
+					// keep track of messages to be removed from addition and deletion arrays
+					$additionsToRemove[] = $addedMsg['key'];
+					$deletionsToRemove[] = $deletedMsg['key'];
+				}
+			}
+		}
+
+		$this->changes->removeAdditions( $code, $additionsToRemove );
+		$this->changes->removeDeletions( $code, $deletionsToRemove );
 	}
 }
