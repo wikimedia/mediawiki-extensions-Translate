@@ -79,9 +79,6 @@ class PageTranslationHooks {
 
 		// Disable edit section links
 		$parser->getOutput()->setExtensionData( 'Translate-noeditsection', true );
-		if ( !defined( 'ParserOutput::SUPPORTS_STATELESS_TRANSFORMS' ) ) {
-			$parser->getOptions()->setEditSection( false );
-		}
 
 		return true;
 	}
