@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0d94fd3d_90274c3f",
+        "filename": "sonar-project.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-21T09:21:44Z",
+      "side": 1,
+      "message": "Assuming that this needs to be added. We\u0027re slowly moving code into this structure.",
+      "range": {
+        "startLine": 1,
+        "startChar": 143,
+        "endLine": 1,
+        "endChar": 155
+      },
+      "revId": "6618ec4576f16187c738854df5e216550b4a3fd1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "19833826_f6c1ca00",
+        "filename": "sonar-project.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-21T09:21:44Z",
+      "side": 1,
+      "message": "I\u0027m not entirely sure we can use \"!\". Sonarqube documentation does mention parsing .gitignore for exclusions, so I\u0027m hoping this will work.",
+      "range": {
+        "startLine": 2,
+        "startChar": 47,
+        "endLine": 2,
+        "endChar": 66
+      },
+      "revId": "6618ec4576f16187c738854df5e216550b4a3fd1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
