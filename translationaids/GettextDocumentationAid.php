@@ -59,11 +59,17 @@ class GettextDocumentationAid extends TranslationAid {
 			}
 		}
 
+		if ( method_exists( $out, 'parseAsContent' ) ) {
+			$html = $this->context->getOutput()->parseAsContent( $out );
+		} else {
+			$html = $this->context->getOutput()->parse( $out );
+		}
+
 		return [
 			'language' => $wgContLang->getCode(),
 			// @todo Provide raw data when possible
 			// 'value' => $help,
-			'html' => $this->context->getOutput()->parse( $out ),
+			'html' => $html,
 		];
 	}
 }
