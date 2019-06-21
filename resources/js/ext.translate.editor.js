@@ -1213,7 +1213,7 @@
 			}
 
 			$infoColumn.append( $( '<div>' )
-				.addClass( 'row uneditable-documentation hide' )
+				.addClass( 'row uneditable-documentation hide mw-parser-output' )
 			);
 
 			$infoColumn.append( $( '<div>' )
