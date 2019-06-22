@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9c9e97b9_5e9f6bc8",
+        "filename": "sonar-project.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-22T10:51:48Z",
+      "side": 1,
+      "message": "Thanks, assume that this will check the PHP files in that folder, and it\u0027s sub folders.",
+      "parentUuid": "0de2385d_085dacd6",
+      "range": {
+        "startLine": 1,
+        "startChar": 143,
+        "endLine": 1,
+        "endChar": 155
+      },
+      "revId": "6618ec4576f16187c738854df5e216550b4a3fd1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "19833826_f6c1ca00",
         "filename": "sonar-project.properties",
         "patchSetId": 1
@@ -93,6 +117,30 @@
       "revId": "6618ec4576f16187c738854df5e216550b4a3fd1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a4e30e36_128114d8",
+        "filename": "sonar-project.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-22T10:51:48Z",
+      "side": 1,
+      "message": "Its not actually not git-ignored. Replaced to use `sonar.test.exclusions`",
+      "parentUuid": "de2dab32_5a21ca5a",
+      "range": {
+        "startLine": 2,
+        "startChar": 47,
+        "endLine": 2,
+        "endChar": 66
+      },
+      "revId": "6618ec4576f16187c738854df5e216550b4a3fd1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
