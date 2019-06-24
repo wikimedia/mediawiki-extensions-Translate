@@ -193,6 +193,7 @@
 	"logentry-translationreview-message": "$1 က ဘာသာပြန် $3 ကို {{GENDER:$2|ပြန်လည်ဆန်းစစ်ခဲ့သည်}}",
 	"translate-stats-workflow": "အခြေနေ",
 	"translate-dynagroup-recent-label": "လတ်တလော ဘာသာပြန်များ",
+	"translate-dynagroup-recent-desc": "ဤမက်ဆေ့အုပ်စုသည် ဤဘာသာစကားသို့ မကြာသေးခင်ကပြန်ဆိုထားသော ဘာသာပြန်များအားလုံးကို ပြသထားပါသည်။ ပြန်လည်ဆန်းစစ်လုပ်ငန်းများအတွက် အသုံးဝင်ဆုံး။",
 	"translate-dynagroup-additions-label": "လတ်တလော ပေါင်းထည့်မှုများ",
 	"translate-msggroupselector-projects": "မက်ဆေ့အုပ်စု",
 	"translate-msggroupselector-search-placeholder": "အုပ်စုများ ရှာဖွေရန်",

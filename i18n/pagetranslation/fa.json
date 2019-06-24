@@ -13,7 +13,8 @@
 			"Reza1615",
 			"Hosseinblue",
 			"Arian Ar",
-			"Ladsgroup"
+			"Ladsgroup",
+			"FarsiNevis"
 		]
 	},
 	"pagetranslation": "ترجمهٔ صفحه",
@@ -85,7 +86,7 @@
 	"tpt-discouraged-language": "<strong> ترجمه به $2 اولویتی برای این صفحه نیست.<strong>\n\nمدیر ترجمه تصمیم به تمرکز تلاش‌های ترجمه بر روی $3 گرفت.",
 	"tpt-discouraged-language-reason": "دلیل: $1",
 	"tpt-priority-languages": "مدیر ترجمه اولویت زبان‌ها را برای این گروه به $1 تنظیم کرده‌است.",
-	"tpt-render-summary": "به روز رسانی برای مطابقت نسخه تازه صفحه منبع",
+	"tpt-render-summary": "روزآمدسازی برای انطباق با نسخهٔ تازهٔ صفحهٔ اصلی",
 	"aggregategroups": "گروه‌های تجمیعی",
 	"tpt-aggregategroup-add": "افزودن",
 	"tpt-aggregategroup-save": "ذخیره",

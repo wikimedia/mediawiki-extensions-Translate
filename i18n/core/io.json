@@ -8,6 +8,7 @@
 		]
 	},
 	"translate": "Traduko",
+	"translate-taction-translate": "Tradukuro",
 	"translate-taction-lstats": "Linguala statistiki",
 	"translate-taction-mstats": "Statistiki pri grupi di mesaji",
 	"translate-page-no-such-language": "La linguo selektita esas nevalida.",
@@ -123,6 +124,7 @@
 	"tux-editor-doc-editor-cancel": "Anular",
 	"tux-messagetable-loading-messages": "Karganta {{PLURAL:$1|mesajo|mesaji}}...",
 	"tux-message-filter-placeholder": "Filtrez listo",
+	"tux-empty-list-translated-action": "Tradukar",
 	"tux-empty-list-other": "Nulo por tradukar",
 	"tux-empty-list-other-action": "Revizar tradukuri",
 	"tux-empty-list-other-link": "Montrez omna mesaji",
