@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b2c104ad_a82f44dd",
+        "filename": "api/ApiManageMessageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "Add more comments here.",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d66b8967_f1da1fd4",
+        "filename": "api/ApiManageMessageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "Why again? After Line #109",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6d0bc06_cdb4efbc",
+        "filename": "api/ApiManageMessageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "After breakRename, why is this needed again?",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5310da7e_f38ff3d3",
+        "filename": "api/ApiManageMessageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "Extra indentation",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "361ba414_1d222735",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "Seems to be a problem here. $postponedSourceChanges is never being set.",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e21b418f_6b666d3c",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "if ( $isEqual ), then why show fuzzy?",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd6402c0_ab683efc",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "This comment needs to be updated - Something along the lines, only added message keys are submitted",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48c2d7b1_c1c8849f",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "Direct check with null",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf0cfe29_ff305c27",
+        "filename": "tests/phpunit/api/ApiManageMessageGroupsTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "op ---\u003e operation",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8f98efd_b5041205",
+        "filename": "tests/phpunit/utils/MessageSourceChangeTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "state as additions for renamed ---\u003e state as additions",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3850b236_752acdd6",
+        "filename": "utils/ExternalMessageSourceStateComparator.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "See if more detailed comments can be added.",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d452bf17_526c79e7",
+        "filename": "utils/ExternalMessageSourceStateComparator.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "More clear comments.",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "851031cf_32c14faf",
+        "filename": "utils/MessageSourceChange.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "And provide an interface to query these changes.",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "660c7c9a_97c1c487",
+        "filename": "utils/TranslateReplaceTitle.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-24T17:26:06Z",
+      "side": 1,
+      "message": "Change these dates to 2019.07",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
