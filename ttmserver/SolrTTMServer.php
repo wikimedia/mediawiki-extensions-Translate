@@ -295,7 +295,7 @@ class SolrTTMServer
 
 	public function batchInsertTranslations( array $batch ) {
 		$update = $this->client->createUpdate();
-		foreach ( $batch as $key => $data ) {
+		foreach ( $batch as $data ) {
 			list( $handle, $sourceLanguage, $text ) = $data;
 			$revId = $handle->getTitleForLanguage( $sourceLanguage )->getLatestRevID();
 			$doc = $this->createDocument( $handle, $text, $revId );
