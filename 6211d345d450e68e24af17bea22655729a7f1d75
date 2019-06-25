@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7174c4cd_4bc5a982",
+        "filename": "api/ApiManageMessageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2c104ad_a82f44dd",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d66b8967_f1da1fd4",
         "filename": "api/ApiManageMessageGroups.php",
         "patchSetId": 10
@@ -33,6 +51,24 @@
       "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5638a0b_9d6b9232",
+        "filename": "api/ApiManageMessageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d66b8967_f1da1fd4",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "a32b962a_0824d414",
+        "filename": "api/ApiManageMessageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b6d0bc06_cdb4efbc",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5310da7e_f38ff3d3",
         "filename": "api/ApiManageMessageGroups.php",
         "patchSetId": 10
@@ -67,6 +121,24 @@
       "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52c96d09_fdb069c1",
+        "filename": "api/ApiManageMessageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5310da7e_f38ff3d3",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "cfe9dc50_86bb7fbc",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "361ba414_1d222735",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e21b418f_6b666d3c",
         "filename": "specials/SpecialManageGroups.php",
         "patchSetId": 10
@@ -101,6 +191,24 @@
       "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86e031b2_38664f2f",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e21b418f_6b666d3c",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "853bb48c_02a4ae0b",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd6402c0_ab683efc",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "48c2d7b1_c1c8849f",
         "filename": "specials/SpecialManageGroups.php",
         "patchSetId": 10
@@ -135,6 +261,24 @@
       "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c69fa1b0_7854826b",
+        "filename": "specials/SpecialManageGroups.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48c2d7b1_c1c8849f",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "2d83df5b_a89becc8",
+        "filename": "tests/phpunit/api/ApiManageMessageGroupsTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf0cfe29_ff305c27",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e8f98efd_b5041205",
         "filename": "tests/phpunit/utils/MessageSourceChangeTest.php",
         "patchSetId": 10
@@ -169,6 +331,24 @@
       "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6efb4f86_95d97a6c",
+        "filename": "tests/phpunit/utils/MessageSourceChangeTest.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8f98efd_b5041205",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "2a54274d_c266c8d6",
+        "filename": "utils/ExternalMessageSourceStateComparator.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3850b236_752acdd6",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d452bf17_526c79e7",
         "filename": "utils/ExternalMessageSourceStateComparator.php",
         "patchSetId": 10
@@ -203,6 +401,24 @@
       "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d3dfc76_8570ce1f",
+        "filename": "utils/ExternalMessageSourceStateComparator.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d452bf17_526c79e7",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "d3325331_35624c7b",
+        "filename": "utils/MessageSourceChange.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "851031cf_32c14faf",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "660c7c9a_97c1c487",
         "filename": "utils/TranslateReplaceTitle.php",
         "patchSetId": 10
@@ -237,6 +471,24 @@
       "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30ef0f92_42d4daa2",
+        "filename": "utils/TranslateReplaceTitle.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-25T16:42:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "660c7c9a_97c1c487",
+      "revId": "6211d345d450e68e24af17bea22655729a7f1d75",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
