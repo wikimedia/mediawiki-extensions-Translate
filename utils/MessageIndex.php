@@ -502,7 +502,7 @@ class DatabaseMessageIndex extends MessageIndex {
 
 		foreach ( [ $diff['add'], $diff['mod'] ] as $changes ) {
 			foreach ( $changes as $key => $data ) {
-				list( $old, $new ) = $data;
+				list( , $new ) = $data;
 				$updates[] = [
 					'tmi_key' => $key,
 					'tmi_value' => $this->serialize( $new ),
