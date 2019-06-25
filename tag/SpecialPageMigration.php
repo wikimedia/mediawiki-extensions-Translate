@@ -22,7 +22,6 @@ class SpecialPageMigration extends SpecialPage {
 	}
 
 	public function execute( $par ) {
-		$request = $this->getRequest();
 		$output = $this->getOutput();
 		$this->setHeaders();
 		$this->checkPermissions();
@@ -32,8 +31,7 @@ class SpecialPageMigration extends SpecialPage {
 			'ext.translate.special.pagemigration.styles',
 			'jquery.uls.grid'
 		] );
-		# Get request data from, e.g.
-		$param = $request->getText( 'param' );
+
 		# Do stuff
 		# ...
 		$out = '';
