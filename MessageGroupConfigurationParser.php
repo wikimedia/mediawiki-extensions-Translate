@@ -119,7 +119,7 @@ class MessageGroupConfigurationParser {
 	public function validate( array $config ) {
 		$schema = $this->baseSchema;
 
-		foreach ( $config as $sectionName => $section ) {
+		foreach ( $config as $section ) {
 			if ( !isset( $section['class'] ) ) {
 				continue;
 			}

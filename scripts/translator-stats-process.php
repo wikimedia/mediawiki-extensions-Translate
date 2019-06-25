@@ -54,7 +54,7 @@ class TSP extends Maintenance {
 			}
 
 			$fields = explode( "\t", trim( $l, "\n" ) );
-			list( $name, $reg, $edits, $translator, $promoted, $method ) = $fields;
+			list( , $reg, $edits, $translator, $promoted, $method ) = $fields;
 			$month = substr( $reg, 0, 4 ) . '-' . substr( $reg, 4, 2 ) . '-01';
 			$data[$month][] = $fields;
 		}

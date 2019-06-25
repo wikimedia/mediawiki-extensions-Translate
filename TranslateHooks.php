@@ -559,7 +559,6 @@ class TranslateHooks {
 			return true;
 		}
 
-		$server = TTMServer::primary();
 		if ( TTMServer::primary() instanceof SearchableTTMServer ) {
 			$href = SpecialPage::getTitleFor( 'SearchTranslations' )
 				->getFullUrl( [ 'query' => $term ] );
@@ -683,7 +682,6 @@ class TranslateHooks {
 	 * @param OutputPage $out
 	 */
 	public static function addConfig( array &$vars, OutputPage $out ) {
-		$request = $out->getRequest();
 		$title = $out->getTitle();
 		list( $alias, ) = TranslateUtils::resolveSpecialPageAlias( $title->getText() );
 
