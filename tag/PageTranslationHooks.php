@@ -363,6 +363,7 @@ class PageTranslationHooks {
 
 		$parser->getOutput()->addModuleStyles( 'ext.translate.tag.languages' );
 
+		ScopedCallback::consume( $context );
 		return $out;
 	}
 
@@ -522,6 +523,7 @@ class PageTranslationHooks {
 
 		asort( $newLanguageLinks );
 		$languageLinks = array_merge( array_keys( $newLanguageLinks ), $languageLinks );
+		ScopedCallback::consume( $context );
 	}
 
 	/**
