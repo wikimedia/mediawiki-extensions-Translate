@@ -22,7 +22,7 @@
 	"tsb-email-rejected-body": "Hi {{GENDER:$1|$1}},\n\nThank you for applying as a translator at {{SITENAME}}. I regret to inform you that I have rejected your application, because the quality of your translations did not meet the requirements.\n\nIf you think that your application was rejected by mistake, please try to apply again as a translator at {{SITENAME}}. You can sign up here:\n$2\n\n{{GENDER:$3|$3}},\n{{SITENAME}} staff",
 	"tsb-request-count": "$1 {{PLURAL:$1|request|requests}}",
 	"tsb-all-languages-button-label": "All languages",
-	"tsb-search-requests": "Search requests",
+	"tsb-search-requests": "Search pending requests",
 	"tsb-accept-button-label": "Accept",
 	"tsb-reject-button-label": "Reject",
 	"tsb-selected-count": "{{PLURAL:$1|$1 user selected|$1 users selected}}",
