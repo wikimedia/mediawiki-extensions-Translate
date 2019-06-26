@@ -30,10 +30,17 @@ class CreateCheckIndex extends Maintenance {
 			false, /*required*/
 			true /*has arg*/
 		);
+
+		$this->addOption(
+			'verbose',
+			'(optional) Enable verbose logging. Default: off',
+			false, /*required*/
+			false  /*has arg*/
+		);
 	}
 
 	public function execute() {
-		$codes = Language::fetchLanguageNames( false );
+		$codes = Language::fetchLanguageNames( null, Language::ALL );
 
 		// Exclude the documentation language code
 		global $wgTranslateDocumentationLanguageCode;
@@ -48,7 +55,7 @@ class CreateCheckIndex extends Maintenance {
 			$reqGroups = MessageGroups::expandWildcards( $reqGroups );
 		}
 
-		$verbose = isset( $options['verbose'] );
+		$verbose = $this->hasOption( 'verbose' );
 
 		$groups = MessageGroups::singleton()->getGroups();
 

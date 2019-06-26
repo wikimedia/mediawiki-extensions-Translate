@@ -781,6 +781,7 @@
 			],
 			"messages": [
 				"pp-already-prepared-message",
+				"pp-diff-error",
 				"pp-pagename-missing",
 				"pp-prepare-message",
 				"pp-save-button-label",

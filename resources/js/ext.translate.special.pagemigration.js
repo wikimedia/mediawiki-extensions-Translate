@@ -58,7 +58,7 @@
 			for ( page in data.query.pages ) {
 				obj = data.query.pages[ page ];
 			}
-			if ( typeof obj === undefined ) {
+			if ( obj === undefined ) {
 				// obj was not initialized
 				errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).show( 'fast' );
 				return $.Deferred().reject();
@@ -101,7 +101,7 @@
 				obj = data.query.pages[ page ];
 			}
 			// Page does not exist if missing field is present
-			if ( obj.missing === '' ) {
+			if ( obj === undefined || obj.missing === '' ) {
 				errorBox.text( mw.msg( 'pm-page-does-not-exist', pageTitle ) ).show( 'fast' );
 				return $.Deferred().reject();
 			}

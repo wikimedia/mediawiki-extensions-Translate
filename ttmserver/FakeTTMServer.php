@@ -22,7 +22,7 @@ class FakeTTMServer implements ReadableTTMServer, WritableTTMServer {
 	}
 
 	public function isLocalSuggestion( array $suggestion ) {
-		false;
+		return false;
 	}
 
 	public function expandLocation( array $suggestion ) {
