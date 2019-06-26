@@ -13,18 +13,24 @@
 
 /* Panes */
 .filter.pane,
-.search.pane {
+.tsb-container .search.pane {
 	border-bottom: 1px solid #575656;
 	height: 2em;
 	line-height: 50px;
 	font-size: 24px;
 }
 
-.grid .search.pane {
+.tsb-container.grid .search.pane {
 	background: no-repeat scroll left top transparent;
 	background-image: /* @embed */ linear-gradient( transparent, transparent ), url( ../images/search.svg );
-	background-size: 25px;
-	padding-left: 25px;
+	background-size: 22px;
+	padding-left: 30px;
+	background-position-y: 10px;
+}
+
+.tsb-container.grid .search.pane input[ type='search' ] {
+	box-sizing: border-box;
+	margin-top: 7px;
 }
 
 .request-filter-box {

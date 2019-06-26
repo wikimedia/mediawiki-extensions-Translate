@@ -189,7 +189,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 		$out->addHTML( $nojs );
 
 		$out->addHTML( <<<HTML
-<div class="grid">
+<div class="grid tsb-container">
 	<div class="row">
 		<div class="nine columns pane filter">{$this->makeFilter()}</div>
 		<div class="three columns pane search">{$this->makeSearchBox()}</div>
