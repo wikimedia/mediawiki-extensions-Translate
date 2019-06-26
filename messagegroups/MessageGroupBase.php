@@ -190,7 +190,7 @@ abstract class MessageGroupBase implements MessageGroup {
 			$allClasses = array_merge( $allClasses, $classes );
 		}
 
-		array_unique( $allClasses, SORT_REGULAR );
+		$allClasses = array_unique( $allClasses, SORT_REGULAR );
 
 		$suggesters = [];
 
