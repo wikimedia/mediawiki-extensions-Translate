@@ -45,7 +45,9 @@
 				obj = data.query.pages[ page ];
 			}
 
-			diff = obj.revisions[ 0 ].diff[ '*' ];
+			if ( typeof obj !== 'undefined' ) {
+				diff = obj.revisions[ 0 ].diff[ '*' ];
+			}
 
 			return diff;
 		} );
@@ -407,6 +409,11 @@
 					pageContent = postPreparationCleanup( pageContent );
 					pageContent = pageContent.trim();
 					getDiff( pageName, pageContent ).done( function ( diff ) {
+						if ( typeof diff === 'undefined' ) {
+							messageDiv.text( mw.msg( 'pp-diff-error' ) ).show();
+							return;
+						}
+
 						$( '.diff tbody' ).append( diff );
 						$( '.divDiff' ).show( 'fast' );
 						if ( diff !== '' ) {
