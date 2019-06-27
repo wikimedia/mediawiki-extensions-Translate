@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd229d4b_b2df0658",
+        "filename": "translationaids/GettextDocumentationAid.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-27T12:26:42Z",
+      "side": 1,
+      "message": "FYI: is_callable is slightly safer. Once there was a method that was previously private, then made public. method_exists would return true on older versions and cause a fatal.\n\n$out is a string here, not OutputPage object, so this will either fail or always return false.",
+      "revId": "78978ab591c68d6a07a254f9f080d77458de8e98",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
