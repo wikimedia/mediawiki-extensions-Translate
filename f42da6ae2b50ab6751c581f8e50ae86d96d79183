@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78f0c2a0_5f6e7c30",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-27T06:04:19Z",
+      "side": 1,
+      "message": "There are lots of searches, would be good to mention the page where it appears.",
+      "revId": "f42da6ae2b50ab6751c581f8e50ae86d96d79183",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b7667fce_769506c3",
+        "filename": "i18n/sandbox/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-27T06:04:19Z",
+      "side": 1,
+      "message": "This looks sane, but could you mention the motivation in the commit summary?",
+      "revId": "f42da6ae2b50ab6751c581f8e50ae86d96d79183",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9d512cb_ebff388b",
+        "filename": "resources/css/ext.translate.special.managetranslatorsandbox.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-27T06:04:19Z",
+      "side": 1,
+      "message": "stylelint complains about spacing here.",
+      "revId": "f42da6ae2b50ab6751c581f8e50ae86d96d79183",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
