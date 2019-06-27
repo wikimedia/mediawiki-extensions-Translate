@@ -117,6 +117,24 @@
       "revId": "d5785477df64f53d254f88f27222586c673d2390",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c3d6e58_cc949c45",
+        "filename": "extension-wip.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-27T13:54:37Z",
+      "side": 1,
+      "message": "Aaaaaah I mixed up things. You\u0027re right.",
+      "parentUuid": "ce2310dd_217d9433",
+      "revId": "d5785477df64f53d254f88f27222586c673d2390",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
