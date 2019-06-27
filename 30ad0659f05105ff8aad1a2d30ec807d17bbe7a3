@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b864fb95_5bb92d6a",
+        "filename": "scripts/removeOrphanedActors.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-27T16:00:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79e78353_ae40a304",
+      "range": {
+        "startLine": 28,
+        "startChar": 21,
+        "endLine": 28,
+        "endChar": 26
+      },
+      "revId": "30ad0659f05105ff8aad1a2d30ec807d17bbe7a3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "163e92c7_6df51253",
         "filename": "scripts/removeOrphanedActors.php",
         "patchSetId": 3
@@ -39,6 +63,24 @@
       "revId": "30ad0659f05105ff8aad1a2d30ec807d17bbe7a3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3fc50449_e4150b34",
+        "filename": "scripts/removeOrphanedActors.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-27T16:00:21Z",
+      "side": 1,
+      "message": "Added a dry run functionality as suggested",
+      "parentUuid": "163e92c7_6df51253",
+      "revId": "30ad0659f05105ff8aad1a2d30ec807d17bbe7a3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "31a89c02_856d08ab",
+        "filename": "scripts/removeOrphanedActors.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-27T16:00:21Z",
+      "side": 1,
+      "message": "Updated, but in a different manner. Running a SELECT first to identify the number of actors that are going to be deleted while also fetching their actor_id.\n\nThen using this to perform the DELETE.",
+      "parentUuid": "73d07a53_af612ded",
+      "range": {
+        "startLine": 32,
+        "startChar": 52,
+        "endLine": 32,
+        "endChar": 55
+      },
+      "revId": "30ad0659f05105ff8aad1a2d30ec807d17bbe7a3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fdd08cb_446e6dbe",
         "filename": "scripts/removeOrphanedActors.php",
         "patchSetId": 3
@@ -79,6 +145,24 @@
       "revId": "30ad0659f05105ff8aad1a2d30ec807d17bbe7a3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "298c5daa_c725491f",
+        "filename": "scripts/removeOrphanedActors.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-27T16:00:21Z",
+      "side": 1,
+      "message": "Using the SiteStatsUpdate class in the TranslateSandbox class, but left this here because it maybe possible that after a sandbox user was rejected, the site stats were updated correctly.",
+      "parentUuid": "3fdd08cb_446e6dbe",
+      "revId": "30ad0659f05105ff8aad1a2d30ec807d17bbe7a3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
