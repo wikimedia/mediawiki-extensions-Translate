@@ -34,6 +34,24 @@
       "revId": "e0a172209250b276a6d607ed9b2ff20bedc372a2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b1eeae6_4f1e8d1f",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-06-27T18:06:19Z",
+      "side": 1,
+      "message": "I agree with your points, I will revert this change and we will try to find another way to mark this as a false positive.",
+      "parentUuid": "971947ff_1fb5089f",
+      "revId": "e0a172209250b276a6d607ed9b2ff20bedc372a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
