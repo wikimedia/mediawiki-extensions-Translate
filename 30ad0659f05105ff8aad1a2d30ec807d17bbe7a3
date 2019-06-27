@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "79e78353_ae40a304",
+        "filename": "scripts/removeOrphanedActors.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-27T10:54:51Z",
+      "side": 1,
+      "message": "actors to be exact.",
+      "range": {
+        "startLine": 28,
+        "startChar": 21,
+        "endLine": 28,
+        "endChar": 26
+      },
+      "revId": "30ad0659f05105ff8aad1a2d30ec807d17bbe7a3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "163e92c7_6df51253",
+        "filename": "scripts/removeOrphanedActors.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-27T10:54:51Z",
+      "side": 1,
+      "message": "I have a small fear of adding scripts that perform irreversible changes by default. I\u0027d like to have either a) --really flag b) CLI prompt to confirm that this will delete stuff. Option (a) is usually used because it allows a dry-run mode that prints what the script would do, to allow manual inspection before actually performing the operation.",
+      "revId": "30ad0659f05105ff8aad1a2d30ec807d17bbe7a3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "73d07a53_af612ded",
+        "filename": "scripts/removeOrphanedActors.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-27T10:54:51Z",
+      "side": 1,
+      "message": "Instead of using AND here, just split it to second member of the conditions array?\n\nAlso, the subquery will fail in translatewiki.net which uses table prefixes (user is bw_user). Probably needs to use SELECT ... JOIN followed by delete or DELETE with JOIN if such a thing exists.",
+      "range": {
+        "startLine": 32,
+        "startChar": 52,
+        "endLine": 32,
+        "endChar": 55
+      },
+      "revId": "30ad0659f05105ff8aad1a2d30ec807d17bbe7a3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3fdd08cb_446e6dbe",
+        "filename": "scripts/removeOrphanedActors.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-27T10:54:51Z",
+      "side": 1,
+      "message": "There is no core method that would do this? Should it be filed as a feature request?",
+      "revId": "30ad0659f05105ff8aad1a2d30ec807d17bbe7a3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
