@@ -99,6 +99,24 @@
       "revId": "d5785477df64f53d254f88f27222586c673d2390",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ce2310dd_217d9433",
+        "filename": "extension-wip.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-06-27T12:43:49Z",
+      "side": 1,
+      "message": "JSON only has arrays (1-dimensional list) and objects, and the arrays don\u0027t support keys: https://tools.ietf.org/html/rfc7159#section-4\n\nWhen reading a JSON object into PHP, the second parameter passed to `json_decode` https://php.net/json_decode is responsible for either mapping the object to a PHP array with [\u0027subscript\u0027] notation, or a stdClass with -\u003eproperty notation.  So extension registration will require a JSON object in order to merge local overrides correctly, and when accessing the configuration values we will continue to use the array subscript.",
+      "parentUuid": "516bfdaf_41d0c667",
+      "revId": "d5785477df64f53d254f88f27222586c673d2390",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
