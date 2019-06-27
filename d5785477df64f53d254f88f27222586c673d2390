@@ -81,6 +81,24 @@
       "revId": "d5785477df64f53d254f88f27222586c673d2390",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "516bfdaf_41d0c667",
+        "filename": "extension-wip.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-27T12:30:47Z",
+      "side": 1,
+      "message": "Why would you want an object? In PHP arrays have keys and are accessed like $a[\u0027key\u0027]. Objects have properties, are accessed like $o-\u003eproperty. By accident, foreach with public properties mostly works the same as for arrays, unless you try to do $o[$key] which will fail.",
+      "parentUuid": "0de8477c_d84988d8",
+      "revId": "d5785477df64f53d254f88f27222586c673d2390",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
