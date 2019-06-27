@@ -16,6 +16,24 @@
       "revId": "e0a172209250b276a6d607ed9b2ff20bedc372a2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "971947ff_1fb5089f",
+        "filename": "tag/PageTranslationHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-06-27T10:46:10Z",
+      "side": 1,
+      "message": "It partly defeats the purpose of a scoped callback if it has to be destroyed explicitly. There is a slight escape that one explicit call is sufficient to silence the code sniffer. However that might lead to confusion as whether this needs to be before every return statement or not, to someone unfamiliar why it is being used.",
+      "parentUuid": "6c6b3061_2894ab36",
+      "revId": "e0a172209250b276a6d607ed9b2ff20bedc372a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
