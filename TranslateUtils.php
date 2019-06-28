@@ -139,6 +139,31 @@ class TranslateUtils {
 	}
 
 	/**
+	 * Returns the content for a given title and adds the fuzzy tag if requested.
+	 * @param Title $title
+	 * @param bool $addFuzzy Add the fuzzy tag if appropriate.
+	 * @return string|null
+	 */
+	public static function getContentForTitle( Title $title, $addFuzzy = false ) {
+		$wiki = ContentHandler::getContentText( Revision::newFromTitle( $title )->getContent() );
+
+		if ( !$wiki ) {
+			return null;
+		}
+
+		if ( !$addFuzzy ) {
+			return $wiki;
+		}
+
+		$handle = new MessageHandle( $title );
+		if ( $handle->isFuzzy() ) {
+			$wiki = TRANSLATE_FUZZY . str_replace( TRANSLATE_FUZZY, '', $wiki );
+		}
+
+		return $wiki;
+	}
+
+	/**
 	 * Fetches recent changes for titles in given namespaces
 	 *
 	 * @param int $hours Number of hours.

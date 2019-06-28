@@ -10,6 +10,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
 
 /**
  * Class for special page Special:ManageMessageGroups. On this special page
@@ -33,6 +34,11 @@ class SpecialManageGroups extends SpecialPage {
 	 */
 	protected $cdb;
 
+	/**
+	 * @var bool Has the necessary right specified by the RIGHT constant
+	 */
+	protected $hasRight = false;
+
 	public function __construct() {
 		// Anyone is allowed to see, but actions are restricted
 		parent::__construct( 'ManageMessageGroups' );
@@ -52,8 +58,10 @@ class SpecialManageGroups extends SpecialPage {
 
 	public function execute( $par ) {
 		$this->setHeaders();
+
 		$out = $this->getOutput();
-		$out->addModuleStyles( 'ext.translate.special.managegroups' );
+		$out->addModuleStyles( 'ext.translate.special.managegroups.styles' );
+		$out->addModules( 'ext.translate.special.managegroups' );
 		$out->addHelpLink( 'Help:Extension:Translate/Group_management' );
 
 		$name = $par ?: MessageChangeStorage::DEFAULT_NAME;
@@ -68,17 +76,17 @@ class SpecialManageGroups extends SpecialPage {
 		}
 
 		$user = $this->getUser();
-		$allowed = $user->isAllowed( self::RIGHT );
+		$this->hasRight = $user->isAllowed( self::RIGHT );
 
 		$req = $this->getRequest();
 		if ( !$req->wasPosted() ) {
-			$this->showChanges( $allowed, $this->getLimit() );
+			$this->showChanges( $this->getLimit() );
 
 			return;
 		}
 
 		$token = $req->getVal( 'token' );
-		if ( !$allowed || !$user->matchEditToken( $token ) ) {
+		if ( !$this->hasRight || !$user->matchEditToken( $token ) ) {
 			throw new PermissionsError( self::RIGHT );
 		}
 
@@ -111,7 +119,7 @@ class SpecialManageGroups extends SpecialPage {
 		return Html::rawElement( 'div', [ 'class' => 'mw-translate-smg-header' ], $text );
 	}
 
-	protected function showChanges( $allowed, $limit ) {
+	protected function showChanges( $limit ) {
 		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		$diff = new DifferenceEngine( $this->getContext() );
@@ -122,48 +130,66 @@ class SpecialManageGroups extends SpecialPage {
 		$out = $this->getOutput();
 		$out->addHTML(
 			'' .
-				Html::openElement( 'form', [ 'method' => 'post' ] ) .
-				Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
-				Html::hidden( 'token', $this->getUser()->getEditToken() ) .
-				$this->getLegend()
+			Html::openElement( 'form', [ 'method' => 'post' ] ) .
+			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText(), [
+				'id' => 'smgPageTitle'
+			] ) .
+			Html::hidden( 'token', $this->getUser()->getEditToken() ) .
+			Html::hidden( 'changesetModifiedTime',
+				MessageChangeStorage::getLastModifiedTime( $this->cdb ) ) .
+			$this->getLegend()
 		);
 
-		// The above count as two
-		$limit = $limit - 2;
+		// The above count as three
+		$limit = $limit - 3;
 
 		$reader = \Cdb\Reader::open( $this->cdb );
-		$groups = unserialize( $reader->get( '#keys' ) );
+		$groups = TranslateUtils::deserialize( $reader->get( '#keys' ) );
 		foreach ( $groups as $id ) {
 			$group = MessageGroups::getGroup( $id );
 			if ( !$group ) {
 				continue;
 			}
 
-			$changes = unserialize( $reader->get( $id ) );
+			/**
+			 * @var MessageSourceChange $sourceChanges
+			 */
+			$sourceChanges = MessageSourceChange::loadModifications(
+				TranslateUtils::deserialize( $reader->get( $id ) )
+			);
 			$out->addHTML( Html::element( 'h2', [], $group->getLabel() ) );
 
 			// Reduce page existance queries to one per group
 			$lb = new LinkBatch();
 			$ns = $group->getNamespace();
 			$isCap = MWNamespace::isCapitalized( $ns );
-			foreach ( $changes as $code => $subchanges ) {
-				foreach ( $subchanges as $messages ) {
-					foreach ( $messages as $params ) {
+			$languages = $sourceChanges->getLanguages();
+
+			foreach ( $languages as $language ) {
+				$languageChanges = $sourceChanges->getModificationsForLanguage( $language );
+				foreach ( $languageChanges as $type => $changes ) {
+					foreach ( $changes as $params ) {
 						// Constructing title objects is way slower
 						$key = $params['key'];
 						if ( $isCap ) {
 							$key = $contLang->ucfirst( $key );
 						}
-						$lb->add( $ns, "$key/$code" );
+						$lb->add( $ns, "$key/$language" );
 					}
 				}
 			}
 			$lb->execute();
 
-			foreach ( $changes as $code => $subchanges ) {
-				foreach ( $subchanges as $type => $messages ) {
+			foreach ( $languages as $language ) {
+				// Handle and generate UI for additions, deletions, change
+				$changes = [];
+				$changes[ MessageSourceChange::ADDITION ] = $sourceChanges->getAdditions( $language );
+				$changes[ MessageSourceChange::DELETION ] = $sourceChanges->getDeletions( $language );
+				$changes[ MessageSourceChange::CHANGE ] = $sourceChanges->getChanges( $language );
+
+				foreach ( $changes as $type => $messages ) {
 					foreach ( $messages as $params ) {
-						$change = $this->formatChange( $group, $code, $type, $params, $limit );
+						$change = $this->formatChange( $group, $language, $type, $params, $limit );
 						$out->addHTML( $change );
 
 						if ( $limit <= 0 ) {
@@ -174,11 +200,14 @@ class SpecialManageGroups extends SpecialPage {
 						}
 					}
 				}
+
+				// Handle and generate UI for renames
+				$this->showRenames( $group, $sourceChanges, $out, $language, $limit );
 			}
 		}
 
 		$attribs = [ 'type' => 'submit', 'class' => 'mw-translate-smg-submit' ];
-		if ( !$allowed ) {
+		if ( !$this->hasRight ) {
 			$attribs['disabled'] = 'disabled';
 			$attribs['title'] = $this->msg( 'translate-smg-notallowed' )->text();
 		}
@@ -189,16 +218,16 @@ class SpecialManageGroups extends SpecialPage {
 
 	/**
 	 * @param MessageGroup $group
-	 * @param string $code
+	 * @param string $language
 	 * @param string $type
 	 * @param array $params
 	 * @param int &$limit
 	 * @return string HTML
 	 */
-	protected function formatChange( MessageGroup $group, $code, $type, $params, &$limit ) {
+	protected function formatChange( MessageGroup $group, $language, $type, $params, &$limit ) {
 		$key = $params['key'];
-		$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$code" );
-		$id = self::changeId( $group->getId(), $code, $type, $key );
+		$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$language" );
+		$id = self::changeId( $group->getId(), $language, $type, $key );
 
 		if ( $title && $type === 'addition' && $title->exists() ) {
 			// The message has for some reason dropped out from cache
@@ -231,19 +260,20 @@ class SpecialManageGroups extends SpecialPage {
 			$newContent = ContentHandler::makeContent( $params['content'], $title );
 
 			$this->diff->setContent( $oldContent, $newContent );
-
-			$text = $this->diff->getDiff( '', $titleLink );
-		} elseif ( $type === 'change' ) {
-			$wiki = ContentHandler::getContentText( Revision::newFromTitle( $title )->getContent() );
-
-			$handle = new MessageHandle( $title );
-			if ( $handle->isFuzzy() ) {
-				$wiki = '!!FUZZY!!' . str_replace( TRANSLATE_FUZZY, '', $wiki );
+			$menu = '';
+			if ( $group->getSourceLanguage() === $language && $this->hasRight ) {
+				$menu = Html::rawElement( 'button', [
+					'class' => 'smg-rename-actions', 'type' => 'button',
+					'data-group-id' => $group->getId(), 'data-lang' => $language, 'data-msgkey' => $key,
+					'data-msgtitle' => $title->getFullText() ], '' );
 			}
+			$text = $this->diff->getDiff( '', $titleLink . $menu );
+		} elseif ( $type === 'change' ) {
+			$wiki = TranslateUtils::getContentForTitle( $title, true );
 
 			$actions = '';
 			$importSelected = true;
-			if ( $group->getSourceLanguage() === $code ) {
+			if ( $group->getSourceLanguage() === $language ) {
 				$importSelected = false;
 				$label = $this->msg( 'translate-manage-action-fuzzy' )->text();
 				$actions .= Xml::radioLabel( $label, "msg/$id", "fuzzy", "f/$id", true );
@@ -280,70 +310,63 @@ class SpecialManageGroups extends SpecialPage {
 		$req = $this->getRequest();
 		$out = $this->getOutput();
 
-		$jobs = [];
-		$jobs[] = MessageIndexRebuildJob::newJob();
+		$modificationJobs = $renameJobData = [];
+		$lastModifiedTime = intval( $req->getVal( 'changesetModifiedTime' ) );
+
+		if ( !MessageChangeStorage::isModifiedSince( $this->cdb, $lastModifiedTime ) ) {
+			$out->addWikiMsg( 'translate-smg-changeset-modified' );
+			return;
+		}
 
 		$reader = \Cdb\Reader::open( $this->cdb );
-		$groups = unserialize( $reader->get( '#keys' ) );
+		$groups = TranslateUtils::deserialize( $reader->get( '#keys' ) );
 
 		$postponed = [];
 
 		foreach ( $groups as $groupId ) {
 			$group = MessageGroups::getGroup( $groupId );
-			$changes = unserialize( $reader->get( $groupId ) );
+			$sourceChanges = MessageSourceChange::loadModifications(
+				TranslateUtils::deserialize( $reader->get( $groupId ) )
+			);
 
-			foreach ( $changes as $code => $subchanges ) {
-				foreach ( $subchanges as $type => $messages ) {
-					foreach ( $messages as $index => $params ) {
-						$key = $params['key'];
-						$id = self::changeId( $groupId, $code, $type, $key );
-						$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$code" );
+			$languages = $sourceChanges->getLanguages();
+			foreach ( $languages as $language ) {
+				// Handle changes, additions, deletions
+				$this->handleModificationsSubmit( $group, $sourceChanges, $req,
+					$language, $postponed, $modificationJobs );
 
-						if ( $title && ( $type === 'deletion' || $type === 'change' )
-							&& !$title->exists() ) {
-							// This means that this change was probably introduced due to a rename
-							// which removed the key. No need to process.
-							continue;
-						}
+				// Handle renames, this might also add modification jobs based on user selection.
+				$this->handleRenameSubmit( $group, $sourceChanges, $req, $language,
+					$postponed, $renameJobData, $modificationJobs );
 
-						if ( !$req->getCheck( $id ) ) {
-							// We probably hit the limit with number of post parameters.
-							$postponed[$groupId][$code][$type][$index] = $params;
-							continue;
-						}
-
-						$selectedVal = $req->getVal( "msg/$id" );
-						if ( $type === 'deletion' || $selectedVal === 'ignore' ) {
-							continue;
-						}
-
-						$fuzzy = $selectedVal === 'fuzzy' ? 'fuzzy' : false;
-						$jobs[] = MessageUpdateJob::newJob( $title, $params['content'], $fuzzy );
-					}
-				}
-
-				if ( !isset( $postponed[$groupId][$code] ) ) {
-					$cache = new MessageGroupCache( $groupId, $code );
+				if ( !isset( $postponed[$groupId][$language] ) ) {
+					$cache = new MessageGroupCache( $groupId, $language );
 					$cache->create();
 				}
 			}
 		}
 
-		JobQueueGroup::singleton()->push( $jobs );
+		JobQueueGroup::singleton()->push( MessageIndexRebuildJob::newJob() );
+		JobQueueGroup::singleton()->push( $modificationJobs );
+		JobQueueGroup::singleton()->push( $this->createRenameJobs( $renameJobData ) );
 
 		$reader->close();
 		rename( $this->cdb, $this->cdb . '-' . wfTimestamp() );
 
 		if ( count( $postponed ) ) {
-			MessageChangeStorage::writeChanges( $postponed, $this->cdb );
-			$this->showChanges( true, $this->getLimit() );
+			$postponedSourceChanges = [];
+			foreach ( $postponed as $groupId => $changes ) {
+				$postponedSourceChanges[$groupId] = MessageSourceChange::loadModifications( $changes );
+			}
+			MessageChangeStorage::writeChanges( $postponedSourceChanges, $this->cdb );
+			$this->showChanges( $this->getLimit() );
 		} else {
 			$out->addWikiMsg( 'translate-smg-submitted' );
 		}
 	}
 
-	protected static function changeId( $groupId, $code, $type, $key ) {
-		return 'smg/' . substr( sha1( "$groupId/$code/$type/$key" ), 0, 7 );
+	protected static function changeId( $groupId, $language, $type, $key ) {
+		return 'smg/' . substr( sha1( "$groupId/$language/$type/$key" ), 0, 7 );
 	}
 
 	/**
@@ -388,5 +411,362 @@ class SpecialManageGroups extends SpecialPage {
 		}
 
 		return true;
+	}
+
+	/**
+	 * Displays renames
+	 * @param MessageGroup $group
+	 * @param MessageSourceChange $sourceChanges
+	 * @param OutputPage $out
+	 * @param string $language
+	 * @param int &$limit
+	 */
+	protected function showRenames(
+		MessageGroup $group, MessageSourceChange $sourceChanges, OutputPage $out, $language, &$limit
+	) {
+		$changes = $sourceChanges->getRenames( $language );
+		foreach ( $changes as $key => $params ) {
+			if ( !isset( $changes[$key] ) ) {
+				continue;
+			}
+
+			if ( $group->getSourceLanguage() !== $language &&
+				$sourceChanges->isEqual( $language, $key ) ) {
+					// This is a translation rename, that does not have any changes.
+					// We can group this along with the source rename.
+					continue;
+			}
+
+			// Determine added key, and corresponding removed key.
+			$firstMsg = $params;
+			$secondKey = $sourceChanges->getMatchedKey( $language, $key );
+			$secondMsg = $sourceChanges->getMatchedMessage( $language, $key );
+
+			if ( $sourceChanges->isPreviousState(
+				$language, $key, [ MessageSourceChange::ADDITION, MessageSourceChange::CHANGE ]
+			) ) {
+				$addedMsg = $firstMsg;
+				$deletedMsg = $secondMsg;
+			} else {
+				$addedMsg = $secondMsg;
+				$deletedMsg = $firstMsg;
+			}
+
+			$change = $this->formatRename(
+				$group,
+				$addedMsg,
+				$deletedMsg,
+				$language,
+				$sourceChanges->isEqual( $language, $key ),
+				$limit
+			);
+			$out->addHTML( $change );
+
+			// no need to process the second key again.
+			unset( $changes[$secondKey] );
+
+			if ( $limit <= 0 ) {
+				// We need to restrict the changes per page per form submission
+				// limitations as well as performance.
+				$out->wrapWikiMsg( "<div class=warning>\n$1\n</div>", 'translate-smg-more' );
+				break;
+			}
+		}
+	}
+
+	/**
+	 * @param MessageGroup $group
+	 * @param array $addedMsg
+	 * @param array $deletedMsg
+	 * @param string $language
+	 * @param bool $isEqual Are the renamed messages equal
+	 * @param int &$limit
+	 * @return string HTML
+	 */
+	protected function formatRename(
+		MessageGroup $group, $addedMsg, $deletedMsg, $language, $isEqual, &$limit
+	) {
+		$addedKey = $addedMsg['key'];
+		$deletedKey = $deletedMsg['key'];
+		$actions = '';
+
+		$addedTitle = Title::makeTitleSafe( $group->getNamespace(), "$addedKey/$language" );
+		$deletedTitle = Title::makeTitleSafe( $group->getNamespace(), "$deletedKey/$language" );
+		$id = self::changeId( $group->getId(), $language, MessageSourceChange::RENAME, $addedKey );
+
+		$addedTitleLink = $this->getLinkRenderer()->makeLink( $addedTitle );
+		$deletedTitleLink = $this->getLinkRenderer()->makeLink( $deletedTitle );
+
+		$renameSelected = true;
+		if ( $group->getSourceLanguage() === $language ) {
+			if ( !$isEqual ) {
+				$renameSelected = false;
+				$label = $this->msg( 'translate-manage-action-rename-fuzzy' )->text();
+				$actions .= Xml::radioLabel( $label, "msg/$id", "renamefuzzy", "rf/$id", true );
+			}
+
+			$label = $this->msg( 'translate-manage-action-rename' )->text();
+			$actions .= Xml::radioLabel( $label, "msg/$id", "rename", "imp/$id",  $renameSelected );
+		} else {
+			$label = $this->msg( 'translate-manage-action-import' )->text();
+			$actions .= Xml::radioLabel( $label, "msg/$id", "import", "imp/$id", true );
+		}
+
+		if ( $group->getSourceLanguage() !== $language ) {
+			// Allow user to ignore changes to non-source languages.
+			$label = $this->msg( 'translate-manage-action-ignore-change' )->text();
+			$actions .= Xml::radioLabel( $label, "msg/$id", "ignore", "i/$id" );
+		}
+		$limit--;
+
+		$addedContent = ContentHandler::makeContent( $addedMsg['content'], $addedTitle );
+		$deletedContent = ContentHandler::makeContent( $deletedMsg['content'], $deletedTitle );
+		$this->diff->setContent( $deletedContent, $addedContent );
+
+		$menu = '';
+		if ( $group->getSourceLanguage() === $language && $this->hasRight ) {
+			// Only show rename and add as new option for source language.
+			$menu = Html::rawElement( 'button', [
+				'class' => 'smg-rename-actions', 'type' => 'button',
+				'data-group-id' => $group->getId(), 'data-msgkey' => $addedKey,
+				'data-msgtitle' => $addedTitle->getFullText()
+			], '' );
+		}
+
+		$actions = Html::rawElement( 'div', [ 'class' => 'smg-change-import-options' ], $actions );
+
+		$text = $this->diff->getDiff(
+			$deletedTitleLink,
+			$addedTitleLink . $menu . $actions,
+			$isEqual ? $addedMsg['content'] : '' );
+
+		$hidden = Html::hidden( $id, 1 );
+		$limit--;
+		$text .= $hidden;
+
+		return Html::rawElement( 'div',
+			[ 'class' => 'mw-translate-smg-change smg-change-rename' ], $text );
+	}
+
+	protected function getRenameJobParams(
+		$currentMsg, MessageSourceChange $sourceChanges, $languageCode,
+		$groupNamespace, $selectedVal, $isSourceLang = true
+	) {
+		if ( $selectedVal === 'ignore' ) {
+			return null;
+		}
+
+		$params = [];
+		$replacementContent = '';
+		$currentMsgKey = $currentMsg['key'];
+		$matchedMsg = $sourceChanges->getMatchedMessage( $languageCode, $currentMsgKey );
+		$matchedMsgKey = $matchedMsg['key'];
+
+		if ( $sourceChanges->isPreviousState( $languageCode, $currentMsgKey, [
+			MessageSourceChange::ADDITION, MessageSourceChange::CHANGE
+		] ) ) {
+			$params['target'] = $matchedMsgKey;
+			$params['replacement'] = $currentMsgKey;
+			$replacementContent = $currentMsg['content'];
+		} else {
+			$params['target'] = $currentMsgKey;
+			$params['replacement'] = $matchedMsgKey;
+			$replacementContent = $matchedMsg['content'];
+		}
+
+		if ( $selectedVal === 'renamefuzzy' ) {
+			$params['fuzzy'] = 'fuzzy';
+		} else {
+			$params['fuzzy'] = false;
+		}
+
+		$params['content'] = $replacementContent;
+
+		if ( $isSourceLang ) {
+			$params['targetTitle'] = Title::newFromText(
+				TranslateUtils::title( $params['target'], $languageCode, $groupNamespace ),
+				$groupNamespace
+			);
+			$params['others'] = [];
+		}
+
+		return $params;
+	}
+
+	protected function handleRenameSubmit( MessageGroup $group, MessageSourceChange $sourceChanges,
+		WebRequest $req, $language, &$postponed, &$jobData, &$modificationJobs
+	) {
+		$groupId = $group->getId();
+		$renames = $sourceChanges->getRenames( $language );
+		$isSourceLang = $group->getSourceLanguage() === $language;
+		$groupNamespace = $group->getNamespace();
+
+		foreach ( $renames as $key => $params ) {
+			if ( !isset( $renames[ $key] ) ) {
+				continue;
+			}
+
+			$id = self::changeId( $groupId, $language, MessageSourceChange::RENAME, $key );
+
+			list( $renameMissing, $isCurrentKeyPresent ) = $this->isRenameMissing(
+				$req, $sourceChanges, $id, $key, $language, $groupId, $isSourceLang
+			);
+
+			if ( $renameMissing ) {
+				// we probably hit the limit with number of post parameters since neither
+				// addition or deletion key is present.
+				$postponed[$groupId][$language][MessageSourceChange::RENAME][$key] = $params;
+				continue;
+			}
+
+			if ( !$isCurrentKeyPresent ) {
+				// still don't process this key, and wait for the matched rename
+				continue;
+			}
+
+			$selectedVal = $req->getVal( "msg/$id" );
+			$jobParams = $this->getRenameJobParams(
+				$params, $sourceChanges, $language, $groupNamespace, $selectedVal, $isSourceLang
+			);
+
+			if ( $jobParams === null ) {
+				continue;
+			}
+
+			$targetStr = $jobParams[ 'target' ];
+			if ( $isSourceLang ) {
+				$jobData[ $targetStr ] = $jobParams;
+			} elseif ( isset( $jobData[ $targetStr ] ) ) {
+				// We are grouping the source rename, and content changes in other languages
+				// for the message together into a single job in order to avoid race conditions
+				// since jobs are not guaranteed to be run in order.
+				$jobData[ $targetStr ][ 'others' ][ $language ] = $jobParams[ 'content' ];
+			} else {
+				// the source was probably ignored, we should add this as a modification instead,
+				// since the source is not going to be renamed.
+				$title = Title::newFromText(
+					TranslateUtils::title( $targetStr, $language, $groupNamespace ),
+					$groupNamespace
+				);
+				$modificationJobs[] = MessageUpdateJob::newJob( $title, $jobParams['content'] );
+			}
+
+			// remove the matched key in order to avoid double processing.
+			$matchedKey = $sourceChanges->getMatchedKey( $language, $key );
+			unset( $renames[$matchedKey] );
+		}
+	}
+
+	protected function handleModificationsSubmit(
+		MessageGroup $group, MessageSourceChange $sourceChanges, WebRequest $req,
+		$language, &$postponed, &$messageUpdateJob
+	) {
+		$groupId = $group->getId();
+		$subchanges = $sourceChanges->getModificationsForLanguage( $language );
+
+		// Ignore renames
+		unset( $subchanges[ MessageSourceChange::RENAME ] );
+
+		// Handle additions, deletions, and changes.
+		foreach ( $subchanges as $type => $messages ) {
+			foreach ( $messages as $index => $params ) {
+				$key = $params['key'];
+				$id = self::changeId( $groupId, $language, $type, $key );
+				$title = Title::makeTitleSafe( $group->getNamespace(), "$key/$language" );
+
+				if ( !$this->isTitlePresent( $title, $type ) ) {
+					continue;
+				}
+
+				if ( !$req->getCheck( $id ) ) {
+					// We probably hit the limit with number of post parameters.
+					$postponed[$groupId][$language][$type][$index] = $params;
+					continue;
+				}
+
+				$selectedVal = $req->getVal( "msg/$id" );
+				if ( $type === MessageSourceChange::DELETION || $selectedVal === 'ignore' ) {
+					continue;
+				}
+
+				$fuzzy = $selectedVal === 'fuzzy' ? 'fuzzy' : false;
+				$messageUpdateJob[] = MessageUpdateJob::newJob( $title, $params['content'], $fuzzy );
+			}
+		}
+	}
+
+	protected function createRenameJobs( $jobParams ) {
+		$jobs = [];
+		foreach ( $jobParams as $params ) {
+			$jobs[] = MessageUpdateJob::newRenameJob(
+				$params['targetTitle'], $params['target'],
+				$params['replacement'], $params['fuzzy'], $params['content'],
+				$params['others']
+			);
+		}
+
+		return $jobs;
+	}
+
+	/**
+	 * Checks if a title still exists and can be processed.
+	 *
+	 * @param Title $title
+	 * @param string $type
+	 * @return bool
+	 */
+	protected function isTitlePresent( Title $title, $type ) {
+		if ( ( $type === MessageSourceChange::DELETION || $type === MessageSourceChange::CHANGE ) &&
+			!$title->exists()
+		) {
+			// This means that this change was probably introduced due to a rename
+			// which removed the key. No need to process.
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Checks if a renamed message key is missing from the user request submission.
+	 * Checks the current key and the matched key. This is needed because as the
+	 * keys in the wiki are not submitted along with the request, only the incoming
+	 * modified keys are submitted.
+	 * @param WebRequest $req
+	 * @param MessageSourceChange $sourceChanges
+	 * @param string $id
+	 * @param string $key
+	 * @param string $language
+	 * @param string $groupId
+	 * @param bool $isSourceLang
+	 * @return bool[] $response
+	 * $response = [
+	 *   0 => (bool) True if rename is missing, false otherwise.
+	 *   1 => (bool) Was the current $id found?
+	 * ]
+	 */
+	protected function isRenameMissing(
+		WebRequest $req, MessageSourceChange $sourceChanges, $id, $key,
+		$language, $groupId, $isSourceLang
+	) {
+		if ( $req->getCheck( $id ) ) {
+			return [ false, true ];
+		}
+
+		$isCurrentKeyPresent = false;
+
+		// Checked the matched key is also missing to confirm if its truly missing
+		$matchedKey = $sourceChanges->getMatchedKey( $language, $key );
+		$matchedId = self::changeId( $groupId, $language, MessageSourceChange::RENAME, $matchedKey );
+		if ( $req->getCheck( $matchedId ) ) {
+			return [ false, $isCurrentKeyPresent ];
+		}
+
+		if ( $isSourceLang === false && $sourceChanges->isEqual( $language, $matchedKey ) ) {
+			// For non source language, if strings are equal, they are not shown on the UI
+			// and hence not submitted.
+			return [ false, $isCurrentKeyPresent ];
+		}
+
+		return [ true, $isCurrentKeyPresent ];
 	}
 }

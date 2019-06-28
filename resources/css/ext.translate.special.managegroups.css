@@ -1,6 +1,7 @@
 .mw-translate-smg-change {
 	padding-bottom: 1em;
 	margin-bottom: 2em;
+	position: relative;
 }
 
 .mw-translate-smg-change label {
@@ -14,10 +15,36 @@
 	padding: 0.75em 0.5em;
 }
 
+.mw-translate-smg-change.smg-change-addition td.diff-ntitle,
+.mw-translate-smg-change.smg-change-rename td.diff-ntitle {
+	padding-right: 32px;
+}
+
 .mw-translate-smg-change input[ type='radio' ] {
 	margin: 0 2px;
 	margin-top: -1px;
 	vertical-align: middle;
+}
+
+.mw-translate-smg-change .smg-rename-actions {
+	border: 0;
+	background: transparent url( ../images/ellipsis.svg ) center center no-repeat;
+	padding: 0;
+	width: 32px;
+	min-height: 32px;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	right: 0;
+}
+
+.mw-translate-smg-change .smg-rename-actions.loading {
+	background: transparent url( ../images/loading.gif ) center center no-repeat;
+	background-size: 90%;
+}
+
+.mw-translate-smg-change .smg-change-import-options {
+	padding: 0.75em 0.5em 0 0.5em;
 }
 
 .mw-translate-smg-submit {
@@ -34,4 +61,40 @@
 .mw-translate-smg-header td {
 	font-size: 200%;
 	font-weight: bold;
+}
+
+/**************************
+ * Rename dropdown styles
+ **************************/
+.smg-rename-dropdown-menu {
+	list-style: none;
+	position: absolute;
+	margin: 0;
+	border: 1px solid #c9c9c9;
+	background: #fff;
+	box-shadow: 0 3px 3px -3px rgba( 0, 0, 0, 0.5 );
+	border-radius: 3px;
+	display: none;
+}
+
+.smg-rename-dropdown-menu.show {
+	display: block;
+}
+
+.smg-rename-dropdown-menu button {
+	display: block;
+	background: none;
+	border: 0;
+	padding: 8px 10px;
+	width: 100%;
+	text-align: left;
+	white-space: nowrap;
+	color: #222;
+	font-size: 14px;
+}
+
+.smg-rename-dropdown-menu button:hover {
+	cursor: pointer;
+	background-color: #f0f0f0;
+	color: #222;
 }

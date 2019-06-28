@@ -263,7 +263,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 				ApiBase::PARAM_DFLT => 'definition|translation',
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_HELP_MSG =>
-					[ 'apihelp-query+messagecollection-param-prop', '!!FUZZY!!' ],
+					[ 'apihelp-query+messagecollection-param-prop', TRANSLATE_FUZZY ],
 			],
 		];
 	}
