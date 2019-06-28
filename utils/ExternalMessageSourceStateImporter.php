@@ -9,12 +9,19 @@
  */
 class ExternalMessageSourceStateImporter {
 
+	/**
+	 * @param MessageSourceChange[] $changeData
+	 * @return array
+	 */
 	public function importSafe( $changeData ) {
 		$processed = [];
 		$skipped = [];
 		$jobs = [];
 		$jobs[] = MessageIndexRebuildJob::newJob();
 
+		/**
+		 * @var MessageSourceChange $changesForGroup
+		 */
 		foreach ( $changeData as $groupId => $changesForGroup ) {
 			$group = MessageGroups::getGroup( $groupId );
 			if ( !$group ) {
@@ -23,18 +30,20 @@ class ExternalMessageSourceStateImporter {
 			}
 
 			$processed[$groupId] = 0;
+			$languages = $changesForGroup->getLanguages();
 
-			foreach ( $changesForGroup as $languageCode => $changesForLanguage ) {
-				if ( !self::isSafe( $changesForLanguage ) ) {
+			foreach ( $languages as $languageCode ) {
+				if ( $changesForGroup->hasOnly( languageCode, MessageSourceChange::M_ADDITION ) ) {
 					$skipped[$groupId] = true;
 					continue;
 				}
 
-				if ( !isset( $changesForLanguage['addition'] ) ) {
+				$additions = $changesForGroup->getAdditions( $languageCode );
+				if ( $additions === [] ) {
 					continue;
 				}
 
-				foreach ( $changesForLanguage['addition'] as $addition ) {
+				foreach ( $additions as $addition ) {
 					$namespace = $group->getNamespace();
 					$name = "{$addition['key']}/$languageCode";
 
@@ -48,7 +57,7 @@ class ExternalMessageSourceStateImporter {
 					$processed[$groupId]++;
 				}
 
-				unset( $changeData[$groupId][$languageCode] );
+				$changesForGroup->removeLanguageChanges( $languageCode );
 
 				$cache = new MessageGroupCache( $groupId, $languageCode );
 				$cache->create();
@@ -56,7 +65,10 @@ class ExternalMessageSourceStateImporter {
 		}
 
 		// Remove groups where everything was imported
-		$changeData = array_filter( $changeData );
+		$changeData = array_filter( $changeData, function ( MessageSourceChange $change ) {
+			return $change->getModifications() !== [];
+		} );
+
 		// Remove groups with no imports
 		$processed = array_filter( $processed );
 
@@ -70,15 +82,5 @@ class ExternalMessageSourceStateImporter {
 			'skipped' => $skipped,
 			'name' => $name,
 		];
-	}
-
-	protected static function isSafe( array $changesForLanguage ) {
-		foreach ( array_keys( $changesForLanguage ) as $changeType ) {
-			if ( $changeType !== 'addition' ) {
-				return false;
-			}
-		}
-
-		return true;
 	}
 }
