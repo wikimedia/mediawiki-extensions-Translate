@@ -18,6 +18,9 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
+use MediaWiki\Extensions\Translate\Utilities\StringComparators\SimpleStringComparator;
+
 /**
  * Script for processing message changes in file based message groups.
  *
@@ -70,7 +73,7 @@ class ProcessMessageChanges extends Maintenance {
 	public function execute() {
 		$groups = $this->getGroups();
 		$changes = [];
-		$comparator = new ExternalMessageSourceStateComparator();
+		$comparator = new ExternalMessageSourceStateComparator( new SimpleStringComparator() );
 
 		$scripted = $this->hasOption( 'safe-import' );
 
@@ -83,7 +86,9 @@ class ProcessMessageChanges extends Maintenance {
 		}
 
 		// Remove all groups without changes
-		$changes = array_filter( $changes );
+		$changes = array_filter( $changes, function ( MessageSourceChange $change ) {
+			return $change->getAllModifications() !== [];
+		} );
 
 		if ( $changes === [] ) {
 			if ( !$scripted ) {

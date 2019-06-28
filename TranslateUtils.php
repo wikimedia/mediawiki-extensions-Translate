@@ -556,4 +556,23 @@ class TranslateUtils {
 			return $contents;
 		}
 	}
+
+	/**
+	 * Serialize the given value
+	 * @param mixed $value
+	 * @return string
+	 */
+	public static function serialize( $value ) {
+		return serialize( $value );
+	}
+
+	/**
+	 * Deserialize the given string
+	 * @param string $str
+	 * @param array|null $opts
+	 * @return mixed
+	 */
+	public static function deserialize( $str, $opts = [ 'allowed_classes' => false ] ) {
+		return unserialize( $str, $opts );
+	}
 }

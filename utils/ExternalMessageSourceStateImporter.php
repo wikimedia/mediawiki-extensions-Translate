@@ -7,14 +7,24 @@
  * @license GPL-2.0-or-later
  * @since 2016.02
  */
+
+use MediaWiki\Extensions\Translate\MessageSync\MessageSourceChange;
+
 class ExternalMessageSourceStateImporter {
 
-	public function importSafe( $changeData ) {
+	/**
+	 * @param MessageSourceChange[] $changeData
+	 * @return array
+	 */
+	public function importSafe( array $changeData ) {
 		$processed = [];
 		$skipped = [];
 		$jobs = [];
 		$jobs[] = MessageIndexRebuildJob::newJob();
 
+		/**
+		 * @var MessageSourceChange $changesForGroup
+		 */
 		foreach ( $changeData as $groupId => $changesForGroup ) {
 			$group = MessageGroups::getGroup( $groupId );
 			if ( !$group ) {
@@ -23,40 +33,39 @@ class ExternalMessageSourceStateImporter {
 			}
 
 			$processed[$groupId] = 0;
+			$languages = $changesForGroup->getLanguages();
 
-			foreach ( $changesForGroup as $languageCode => $changesForLanguage ) {
-				if ( !self::isSafe( $changesForLanguage ) ) {
+			foreach ( $languages as $language ) {
+				if ( !self::isSafe( $changesForGroup, $language ) ) {
+					// changes other than additions were present
 					$skipped[$groupId] = true;
 					continue;
 				}
 
-				if ( !isset( $changesForLanguage['addition'] ) ) {
+				$additions = $changesForGroup->getAdditions( $language );
+				if ( $additions === [] ) {
 					continue;
 				}
 
-				foreach ( $changesForLanguage['addition'] as $addition ) {
-					$namespace = $group->getNamespace();
-					$name = "{$addition['key']}/$languageCode";
+				list( $groupJobs, $groupProcessed ) = $this->createMessageUpdateJobs(
+					$group, $additions, $language
+				);
 
-					$title = Title::makeTitleSafe( $namespace, $name );
-					if ( !$title ) {
-						wfWarn( "Invalid title for group $groupId key {$addition['key']}" );
-						continue;
-					}
+				$jobs = array_merge( $jobs, $groupJobs );
+				$processed[$groupId] = $groupProcessed;
 
-					$jobs[] = MessageUpdateJob::newJob( $title, $addition['content'] );
-					$processed[$groupId]++;
-				}
+				$changesForGroup->removeChangesForLanguage( $language );
 
-				unset( $changeData[$groupId][$languageCode] );
-
-				$cache = new MessageGroupCache( $groupId, $languageCode );
+				$cache = new MessageGroupCache( $groupId, $language );
 				$cache->create();
 			}
 		}
 
 		// Remove groups where everything was imported
-		$changeData = array_filter( $changeData );
+		$changeData = array_filter( $changeData, function ( MessageSourceChange $change ) {
+			return $change->getAllModifications() !== [];
+		} );
+
 		// Remove groups with no imports
 		$processed = array_filter( $processed );
 
@@ -72,13 +81,44 @@ class ExternalMessageSourceStateImporter {
 		];
 	}
 
-	protected static function isSafe( array $changesForLanguage ) {
-		foreach ( array_keys( $changesForLanguage ) as $changeType ) {
-			if ( $changeType !== 'addition' ) {
-				return false;
+	/**
+	 * Checks if changes for a language in a group are safe.
+	 * @param MessageSourceChange $changesForGroup
+	 * @param string $language
+	 * @return bool
+	 */
+	public static function isSafe( MessageSourceChange $changesForGroup, $language ) {
+		return $changesForGroup->hasOnly( $language, MessageSourceChange::ADDITION );
+	}
+
+	/**
+	 * Creates MessagUpdateJobs additions for a language under a group
+	 *
+	 * @param MessageGroup $group
+	 * @param array $additions
+	 * @param string $language
+	 * @return array
+	 */
+	private function createMessageUpdateJobs(
+		MessageGroup $group, array $additions, string $language
+	) {
+		$groupId = $group->getId();
+		$jobs = [];
+		$processed = 0;
+		foreach ( $additions as $addition ) {
+			$namespace = $group->getNamespace();
+			$name = "{$addition['key']}/$language";
+
+			$title = Title::makeTitleSafe( $namespace, $name );
+			if ( !$title ) {
+				wfWarn( "Invalid title for group $groupId key {$addition['key']}" );
+				continue;
 			}
+
+			$jobs[] = MessageUpdateJob::newJob( $title, $addition['content'] );
+			$processed++;
 		}
 
-		return true;
+		return [ $jobs, $processed ];
 	}
 }
