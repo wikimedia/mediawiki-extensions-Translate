@@ -61,4 +61,8 @@ abstract class GenericTranslateJob extends \Job {
 	protected function logError( $msg, $context = [] ) {
 		$this->getLogger()->error( $this->getLogPrefix() . $msg, $context );
 	}
+
+	protected function logWarning( $msg, $context = [] ) {
+		$this->getLogger()->warning( $this->getLogPrefix() . $msg, $context );
+	}
 }
