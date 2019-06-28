@@ -38,7 +38,9 @@
 		"ApertiumWebService": "webservices/ApertiumWebService.php",
 		"ApiAggregateGroups": "api/ApiAggregateGroups.php",
 		"ApiGroupReview": "api/ApiGroupReview.php",
+		"ApiManageMessageGroups": "api/ApiManageMessageGroups.php",
 		"ApiQueryLanguageStats": "api/ApiQueryLanguageStats.php",
+		"ApiQueryManageMessageGroups": "api/ApiQueryManageMessageGroups.php",
 		"ApiQueryMessageCollection": "api/ApiQueryMessageCollection.php",
 		"ApiQueryMessageGroups": "api/ApiQueryMessageGroups.php",
 		"ApiQueryMessageGroupStats": "api/ApiQueryMessageGroupStats.php",
@@ -323,6 +325,7 @@
 	},
 	"APIMetaModules": {
 		"languagestats": "ApiQueryLanguageStats",
+		"managemessagegroups": "ApiQueryManageMessageGroups",
 		"messagegroups": "ApiQueryMessageGroups",
 		"messagegroupstats": "ApiQueryMessageGroupStats",
 		"messagetranslations": "ApiQueryMessageTranslations"
@@ -330,6 +333,7 @@
 	"APIModules": {
 		"aggregategroups": "ApiAggregateGroups",
 		"groupreview": "ApiGroupReview",
+		"managemessagegroups": "ApiManageMessageGroups",
 		"translationaids": "ApiTranslationAids",
 		"translationreview": "ApiTranslationReview",
 		"translationcheck": "ApiTranslationCheck",
@@ -679,7 +683,51 @@
 			]
 		},
 		"ext.translate.special.managegroups": {
-			"styles": "resources/css/ext.translate.special.managegroups.css",
+			"dependencies": [
+				"mediawiki.notify",
+				"ext.translate.messagerenamedialog"
+			],
+			"messages": [
+				"translate-smg-rename-new",
+				"translate-smg-rename-rename",
+				"translate-smg-rename-dialog-title"
+			],
+			"scripts": [
+				"resources/js/ext.translate.special.managegroups.js"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.special.managegroups.styles": {
+			"styles": [
+				"resources/css/ext.translate.special.managegroups.css"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.translate.messagerenamedialog": {
+			"dependencies": [
+				"oojs-ui-core",
+				"oojs-ui-widgets",
+				"oojs-ui-windows"
+			],
+			"messages": [
+				"translate-smg-rename-select",
+				"translate-smg-rename-cancel",
+				"translate-smg-rename-search",
+				"translate-smg-rename-select-err",
+				"translate-smg-rename-no-msg"
+			],
+			"scripts": [
+				"resources/js/ext.translate.messagerenamedialog.js"
+			],
+			"styles": [
+				"resources/css/ext.translate.messagerenamedialog.less"
+			],
 			"targets": [
 				"desktop",
 				"mobile"
