@@ -36,16 +36,36 @@ trait ValidationHelper {
 
 		// Check for missing variables in the translation
 		$subcheck = 'missing';
-		$params = self::compareArrays( $defVars[0], $transVars[0] );
+		$params = self::compareArrayCounts( $defVars[0], $transVars[0] );
 
 		if ( $params ) {
-			$validationOutput[$key][] = [
-				[ 'variable', $subcheck, $key, $code ],
-				'translate-checks-parameters',
-				[ 'PARAMS', $params ],
-				[ 'COUNT', count( $params ) ],
-			];
+			$missingKeys = [];
+
+			foreach( $params as $param => $stats ) {
+				if ( $stats['actual'] === 0 ) {
+					$missingKeys[] = $param;
+					continue;
+				}
+
+				$validationOutput[$key][] = [
+					[ 'variable', $subcheck, $key, $code ],
+					'translate-checks-parameters-count',
+					$param,
+					[ 'COUNT',  $stats['actual'] ],
+					[ 'COUNT', $stats['expected'] ]
+				];
+			}
+
+			if ( $missingKeys !== [] ) {
+				$validationOutput[$key][] = [
+					[ 'variable', $subcheck, $key, $code ],
+					'translate-checks-parameters',
+					[ 'PARAMS', $missingKeys ],
+					[ 'COUNT', count( $missingKeys ) ],
+				];
+			}
 		}
+
 
 		// Check for unknown variables in the translation
 		$subcheck = 'unknown';
@@ -57,6 +77,7 @@ trait ValidationHelper {
 				'translate-checks-parameters-unknown',
 				[ 'PARAMS', $params ],
 				[ 'COUNT', count( $params ) ],
+
 			];
 		}
 	}
@@ -69,10 +90,32 @@ trait ValidationHelper {
 	 */
 	protected static function compareArrays( array $defs, array $trans ) {
 		$missing = [];
-
 		foreach ( $defs as $defVar ) {
 			if ( !in_array( $defVar, $trans ) ) {
 				$missing[] = $defVar;
+			}
+		}
+		return $missing;
+	}
+
+	/**
+	 * Compares two arrays and return items that don't exist in the latter.
+	 * @param array $defs
+	 * @param array $trans
+	 * @return array Items of $defs that are not in $trans.
+	 */
+	protected static function compareArrayCounts( array $defs, array $trans ) {
+		$missing = [];
+		$transValuesCount = array_count_values($trans);
+		$defsValuesCount = array_count_values($defs);
+		foreach ( $defsValuesCount as $defVar => $defCount) {
+			$transCount = $transValuesCount[$defVar] ?? 0;
+			$valDifference = $defCount - $transCount;
+			if ( $valDifference > 0 ) {
+				$missing[$defVar] = [
+					'expected' => $defCount,
+					'actual' => $transCount,
+				];
 			}
 		}
 
