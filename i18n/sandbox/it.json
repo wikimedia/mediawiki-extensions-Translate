@@ -19,7 +19,7 @@
 	"tsb-email-rejected-body": "Ciao {{GENDER:$1|$1}},\n\nGrazie per aver richiesto di diventare un traduttore su {{SITENAME}}. Mi dispiace informarti che ho dovuto rifiutare la tua domanda, perché la qualità delle traduzioni non soddisfaceva i requisiti.\n\nSe pensi che la tua richiesta sia stata respinta per errore, prova a rifare nuovamente domanda di diventare traduttore su {{SITENAME}}. Puoi registrarti qui:\n$2\n\n{{GENDER:$3|$3}},\nlo staff di {{SITENAME}}",
 	"tsb-request-count": "{{PLURAL:$1|Una richiesta|$1 richieste}}",
 	"tsb-all-languages-button-label": "Tutte le lingue",
-	"tsb-search-requests": "Cerca richiesta",
+	"tsb-search-requests": "Cerca richieste in sospeso",
 	"tsb-accept-button-label": "Accetta",
 	"tsb-reject-button-label": "Rifiuta",
 	"tsb-selected-count": "{{PLURAL:$1|$1 utente selezionato|$1 utenti selezionati}}",

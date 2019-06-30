@@ -396,6 +396,7 @@
 	"translate-search-more-groups-info": "Ще $1 {{PLURAL:$1|група|групи|груп}}",
 	"translate-ulsdep-title": "Помилка конфігурації",
 	"translate-ulsdep-body": "Розширення перекладу залежить від [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector розширення «Універсальний мовний селектор»].",
+	"translate-syntax-error": "У перекладі є синтаксичні помилки",
 	"tux-session-expired": "Зараз Ви не авторизовані. Будь ласка, увійдіть до системи на окремій вкладці. Або зробіть копію незбереженого перекладу, увійдіть, поверніться до цієї сторінки та введіть свої переклади знову.",
 	"tux-nojs": "Цей інструмент не працює без JavaScript. JavaScript вимкнено, не вдалося запустити, або ж цей браузер не підтримується."
 }

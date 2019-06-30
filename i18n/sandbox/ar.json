@@ -21,7 +21,7 @@
 	"tsb-email-rejected-body": "مرحبا {{GENDER:$1|$1}}،\n\nشكرا لك للتقدم كمترجم في {{SITENAME}}. أنا نادم لإخبارك أني رفضت طلبك، لأن جودة ترجماتك لم تستوف المتطلبات.\n\nلو أنك تعتقد أن طلبك قد تم رفضه بالخطأ، من فضلك حاول التقدم ثانية كمترجم في {{SITENAME}}. يمكنك تسجيل الدخول هنا:\n$2\n\n{{GENDER:$3|$3}}،\nطاقم {{SITENAME}}",
 	"tsb-request-count": "$1 {{PLURAL:$1|طلب|طلبات}}",
 	"tsb-all-languages-button-label": "كل اللغات",
-	"tsb-search-requests": "طلبات البحث",
+	"tsb-search-requests": "طلبات البحث المعلقة",
 	"tsb-accept-button-label": "اقبل",
 	"tsb-reject-button-label": "ارفض",
 	"tsb-selected-count": "{{PLURAL:$1|$1 مستخدم مختار|$1 مستخدمون مختارون}}",

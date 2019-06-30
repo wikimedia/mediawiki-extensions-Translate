@@ -212,6 +212,7 @@
 	"pp-save-message": "Se guardó la página. Puedes [$1 editarla].",
 	"pp-prepare-message": "Se preparó la página para la traducción. Mira los cambios más abajo. ¡Haz clic en el botón \"{{int:pp-save-button-label}}\" si está todo bien!",
 	"pp-already-prepared-message": "Parece que la página ya se ha preparado para la traducción. No hay cambios respecto a la versión anterior.",
+	"pp-diff-error": "Se produjo un error al recuperar las diferencias del servidor.",
 	"pp-pagename-missing": "Escribe el nombre de la página.",
 	"pp-diff-old-header": "Texto fuente",
 	"pp-diff-new-header": "Texto preparado",

@@ -216,6 +216,7 @@
 	"pp-save-message": "頁面已儲存。 您可 [$1] 編輯該頁面。",
 	"pp-prepare-message": "該頁面已準備好等候翻譯。 請參考下方差異。 點選 \"{{int:pp-save-button-label}}\" 確認!",
 	"pp-already-prepared-message": "該頁面似乎已準備好等候翻譯，但與先前的版本無任何差異。",
+	"pp-diff-error": "從伺服器上擷取差異時發生錯誤。",
 	"pp-pagename-missing": "請輸入頁面名稱。",
 	"pp-diff-old-header": "來源內容",
 	"pp-diff-new-header": "準備好的內容",

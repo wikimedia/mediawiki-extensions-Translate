@@ -18,7 +18,7 @@
 	"tsb-email-rejected-body": "Salute {{GENDER:$1|$1}},\n\nGratias pro tu candidatura como traductor in {{SITENAME}}. Io regretta de informar te que io ha rejectate tu demanda, perque le qualitate de tu traductiones non satisfaceva le requisitos.\n\nSi tu pensa que tu demanda ha essite refusate per error, per favor tenta facer un altere demanda de devenir traductor in {{SITENAME}}. Tu pote inscriber te hic:\n$2\n\n{{GENDER:$3|$3}},\nLe equipa de {{SITENAME}}",
 	"tsb-request-count": "$1 {{PLURAL:$1|requesta|requestas}}",
 	"tsb-all-languages-button-label": "Tote le linguas",
-	"tsb-search-requests": "Requestas de recerca",
+	"tsb-search-requests": "Cercar in requestas pendente",
 	"tsb-accept-button-label": "Acceptar",
 	"tsb-reject-button-label": "Rejectar",
 	"tsb-selected-count": "{{PLURAL:$1|$1 usator seligite|$1 usatores seligite}}",

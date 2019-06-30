@@ -24,7 +24,7 @@
 	"tsb-email-rejected-body": "您好 {{GENDER:$1|$1}}，\n\n感謝您申請成為 {{SITENAME}} 的翻譯人員，很抱歉通知您我們已拒絕您的申請，因為您的翻譯水準未達我們所需的標準。\n\n若您對申請的結果有疑問，請於 {{SITENAME}} 再申請翻譯人員一次。 您可於此處註冊：\n$2\n\n{{GENDER:$3|$3}},\n{{SITENAME}} 工作團隊",
 	"tsb-request-count": "$1 筆請求",
 	"tsb-all-languages-button-label": "所有語言",
-	"tsb-search-requests": "搜尋請求",
+	"tsb-search-requests": "搜尋等候的請求",
 	"tsb-accept-button-label": "接受",
 	"tsb-reject-button-label": "拒絕",
 	"tsb-selected-count": "已選擇 $1 位使用者",

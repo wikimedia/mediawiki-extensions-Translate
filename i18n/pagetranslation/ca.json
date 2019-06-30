@@ -109,6 +109,7 @@
 	"pp-prepare-button-label": "Prepara",
 	"pp-save-button-label": "Desa",
 	"pp-cancel-button-label": "Cancel·la",
+	"pp-diff-error": "S’ha produït un error en recuperar les diferències del servidor.",
 	"pp-pagename-missing": "Introduïu el nom de la pàgina.",
 	"pp-diff-old-header": "Text font",
 	"pp-diff-new-header": "Text preparat",

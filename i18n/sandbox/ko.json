@@ -25,7 +25,7 @@
 	"tsb-email-rejected-body": "안녕하세요. {{GENDER:$1|$1}} 님\n\n{{SITENAME}}의 번역자에 지원해주셔서 감사합니다. 안타깝게도 귀하의 지원서는 귀하의 번역이 필수 조건을 충족하지 않아 채택되지 못하였습니다.\n\n만약 당신의 지원서가 잘못 또는 실수로 채택되지 못하였다고 생각하신다면 {{SITENAME}}의 번역자로서 다시 지원해주시기 바랍니다. 여기에서 등록하실 수 있습니다: $2\n\n{{SITENAME}} 담당자, {{GENDER:$3|$3}}",
 	"tsb-request-count": "{{PLURAL:$1|요청 한 개|요청 $1개}}",
 	"tsb-all-languages-button-label": "모든 언어",
-	"tsb-search-requests": "검색 요청",
+	"tsb-search-requests": "보류 중인 요청 검색",
 	"tsb-accept-button-label": "승인",
 	"tsb-reject-button-label": "거부",
 	"tsb-selected-count": "{{PLURAL:$1|$1명의 사용자 선택됨}}",

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"Vinhtantran"
 		]
 	},
 	"managetranslatorsandbox": "Quản lý chỗ thử biên dịch",
@@ -18,7 +19,7 @@
 	"tsb-email-rejected-body": "Xin chào {{GENDER:$1|$1}},\n\nCảm ơn bạn đã nộp đơn xin trở thành biên dịch viên tại {{SITENAME}}. Tôi rất tiếc phải thông báo cho bạn rằng tôi đã từ chối đơn xin của bạn vì các bản dịch của bạn không đáp ứng tiêu chuẩn chất lượng.\n\nNếu bạn nghĩ rằng bạn đã bị từ chối do nhầm lẫn, xin hãy lần nữa xin trở thành biên dịch viên tại {{SITENAME}}. Chỉ việc đi vào đây:\n$2\n\n{{GENDER:$3}}$3,\nNhóm {{SITENAME}}",
 	"tsb-request-count": "{{PLURAL:$1|Một yêu cầu|$1 yêu cầu}}",
 	"tsb-all-languages-button-label": "Tất cả các ngôn ngữ",
-	"tsb-search-requests": "Yêu cầu tìm kiếm",
+	"tsb-search-requests": "Yêu cầu tìm kiếm đang chờ",
 	"tsb-accept-button-label": "Chấp nhận",
 	"tsb-reject-button-label": "Từ chối",
 	"tsb-selected-count": "$1 người dùng được chọn",
