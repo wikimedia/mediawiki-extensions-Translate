@@ -5,7 +5,7 @@
  * @license GPL-2.0-or-later
  */
 
-class ArrayFlattenerTest extends PHPUnit\Framework\TestCase {
+class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 	use PHPUnit4And6Compat;
 
 	/**
