@@ -1,0 +1,306 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d845151_83f4a67c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "Double space",
+      "range": {
+        "startLine": 17,
+        "startChar": 24,
+        "endLine": 17,
+        "endChar": 26
+      },
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f1fd1cf1_409f0f5b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "This empty line should be removed.",
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "445a04dd_603f2354",
+        "filename": "utils/MessageUpdateJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "Do we need this for something, separately from $targetStr?",
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a57238c4_7ff88487",
+        "filename": "utils/MessageUpdateJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "Checking the return value here is not very useful, since we will return true anyway at the end of the method.",
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "050d5bf7_371c2c36",
+        "filename": "utils/MessageUpdateJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "Why is namespace passed separately? We could just have it part of the $target and $replacement. We are not moving cross-namespaces currently, but seems like a good idea to not prevent that in the future.",
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a030b1f4_fde3c306",
+        "filename": "utils/MessageUpdateJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "Most of this is better done with Title::getDbKey. But see my suggestion to use MessageHandle in the other file.",
+      "range": {
+        "startLine": 108,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 0
+      },
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "929aa309_520b6778",
+        "filename": "utils/MessageUpdateJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "Should this be return false?",
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af0479e3_ee8355af",
+        "filename": "utils/MessageUpdateJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "This is a new log type? That would require quite a bit configuration in extension.json + associated i18n messages.",
+      "range": {
+        "startLine": 138,
+        "startChar": 34,
+        "endLine": 138,
+        "endChar": 50
+      },
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d5d960c_412df595",
+        "filename": "utils/MessageUpdateJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "This could be promoted to method documentation. Also source language is excluded (assumed to be $title).",
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2d3c1081_704b84e2",
+        "filename": "utils/MessageUpdateJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "With MessageHandle this would be $otherTitle \u003d $handle-\u003egetTitleForLanguage( $code );",
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf4c572f_a61444a4",
+        "filename": "utils/MessageUpdateJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "I\u0027d just spell out Lang in full. It\u0027s not that long word.",
+      "range": {
+        "startLine": 230,
+        "startChar": 25,
+        "endLine": 230,
+        "endChar": 29
+      },
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd8ca943_1f17e991",
+        "filename": "utils/TranslateReplaceTitle.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "We don\u0027t need this complexity. We can iterate over getMatchingTitles, check that getKey() equals the original key, use getCode() with the new prefix to create new titles.",
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43c5f57d_0bbada2d",
+        "filename": "utils/TranslateReplaceTitle.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "I would make this method accept MessageHandle.\n\nThen it is simple as:\n  $handle-\u003egetTitleForBase()-\u003egetDBkey() . \u0027/\u0027 . $dbr-\u003eanyString();",
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2727b18c_5794fb9f",
+        "filename": "utils/TranslateReplaceTitle.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "Probably want to use DB_MASTER to get latest status.",
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1a0ec52_db61d8f7",
+        "filename": "utils/TranslateReplaceTitle.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "We want to lock in the prefixes, so first $any should be removed.",
+      "range": {
+        "startLine": 67,
+        "startChar": 53,
+        "endLine": 67,
+        "endChar": 59
+      },
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "51a1ae9a_59fe3a17",
+        "filename": "utils/TranslateReplaceTitle.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T13:31:26Z",
+      "side": 1,
+      "message": "You could easily wrap this with TitleArray::newFromResult() (see Title::getSubpages [we cannot use it due to namespace restrictions]).",
+      "revId": "6d48618ffb5f2131b4803f5d9ddaaa82fcd4189f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
