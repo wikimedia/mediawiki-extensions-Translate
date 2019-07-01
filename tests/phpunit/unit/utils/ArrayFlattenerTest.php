@@ -5,7 +5,7 @@
  * @license GPL-2.0-or-later
  */
 
-class ArrayFlattenerTest extends PHPUnit\Framework\TestCase {
+class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 	use PHPUnit4And6Compat;
 
 	/**
@@ -49,10 +49,7 @@ class ArrayFlattenerTest extends PHPUnit\Framework\TestCase {
 	 */
 	public function testFlattenMixedCLDRPlurals( $input ) {
 		$flattener = new ArrayFlattener( '.', true );
-		$this->setExpectedException(
-			MWException::class,
-			'Reserved plural keywords mixed with other keys'
-		);
+		$this->expectException( MWException::class );
 		$flattener->flatten( $input );
 	}
 
