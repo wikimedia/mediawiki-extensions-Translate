@@ -1,0 +1,328 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a4c5bfbd_16d120bf",
+        "filename": "utils/ExternalMessageSourceStateComparator.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "Any reason not to make this mandatory?",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45b010a5_9ccadcd9",
+        "filename": "utils/ExternalMessageSourceStateComparator.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "This part is partly outdated now, right? It\u0027s an object now.",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8857d22b_d41f76b2",
+        "filename": "utils/ExternalMessageSourceStateComparator.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "Inconsistent spacing",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9179106f_52ad82c2",
+        "filename": "utils/ExternalMessageSourceStateComparator.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "Use of $this-\u003estringComparator is not guarded here.",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbb0fe5d_365e9db4",
+        "filename": "utils/ExternalMessageSourceStateComparator.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "I think the code would be simpler, if $this-\u003estringComparator would be initialized with a default implementation that always returns 0.",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2526aa31_0671ad2e",
+        "filename": "utils/ExternalMessageSourceStateComparator.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "This word feels weird here. There is no timeline or process chart here that would anchor its position.",
+      "range": {
+        "startLine": 358,
+        "startChar": 4,
+        "endLine": 358,
+        "endChar": 7
+      },
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3df3d95b_b8ac7d48",
+        "filename": "utils/ExternalMessageSourceStateImporter.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "Why not add a type hint too?",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c566580_915e7181",
+        "filename": "utils/ExternalMessageSourceStateImporter.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "This condition looks reversed. Changes which only have additions should be considered safe to process by this method.",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d843ef38_8efc7a91",
+        "filename": "utils/MessageChangeStorage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "By the way, if you want to do a small performance optimization, stop reading and writing #keys. CDB provides native functionality for iterating over the keys, see CDBMessageIndex::getKeys.\n\nBesides (un)serialize of long arrays being slow, it makes the CDB files smaller.\n\nOf course, better to do this in a separate commit.",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f626fbcd_b8d0ce2b",
+        "filename": "utils/MessageChangeStorage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "We should file a follow up to replace serialize() with json_encode in this class.",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08ef82fe_8e08f9f5",
+        "filename": "utils/MessageChangeStorage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "Would it be helpful to name the file in the error message?",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2691f901_46005294",
+        "filename": "utils/MessageChangeStorage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "Is this unix timestamp or what?",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f37a1ee_cac4a473",
+        "filename": "utils/MessageChangeStorage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "Since you\u0027re already using \"-quotes, you could bring $cdbPath inside the string.",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbc03716_f8d59d37",
+        "filename": "utils/MessageChangeStorage.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "This looks a bit odd. I was expecting \u003d\u003d\u003d comparison here. Maybe if this method was named isModifiedSince it would be clearer.\n\nAlso, Could simplify to just:\n  return $lastModifiedTime \u003c\u003d $time",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c9da8ef_b90fc090",
+        "filename": "utils/MessageSourceChange.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "I found the `M_` prefixes hamper reading the code. I\u0027d drop the prefix.",
+      "range": {
+        "startLine": 18,
+        "startChar": 7,
+        "endLine": 18,
+        "endChar": 9
+      },
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a98b44b_d98b47b0",
+        "filename": "utils/MessageSourceChange.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "Double space",
+      "range": {
+        "startLine": 115,
+        "startChar": 25,
+        "endLine": 115,
+        "endChar": 27
+      },
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "545af07a_a59472ba",
+        "filename": "utils/MessageSourceChange.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "Hmm, don\u0027t you want to use these helper methods in the above methods to avoid repeating the logic?",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52a9f7c3_2c57b043",
+        "filename": "utils/stringcomparator/StringComparator.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-01T12:57:18Z",
+      "side": 1,
+      "message": "Usually these returns float. The difference is mainly that floats can provide higher precision (not usually displayed, but can break ties).",
+      "revId": "69bbb214f73a317aad2c40a74ddd62651f29fdb0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
