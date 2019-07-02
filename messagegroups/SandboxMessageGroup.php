@@ -45,7 +45,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 	}
 
 	public function getDefinitions() {
-		global $wgTranslateSandboxSuggestions, $wgTranslateSandboxLimit;
+		global $wgTranslateSandboxLimit;
 
 		// This will contain the list of messages shown to the user
 		$list = [];
@@ -61,19 +61,6 @@ class SandboxMessageGroup extends WikiMessageGroup {
 			$title = $translation->getTitle();
 			$handle = new MessageHandle( $title );
 			$index = $title->getNamespace() . ':' . $handle->getKey();
-			$list[$index] = '';
-		}
-
-		// Always add the regular suggestions
-		foreach ( $wgTranslateSandboxSuggestions as $titleText ) {
-			$title = Title::newFromText( $titleText );
-			if ( !$title ) {
-				wfWarn( "Invalid title in \$wgTranslateSandboxSuggestions: $titleText" );
-				continue;
-			}
-
-			$index = $title->getNamespace() . ':' . $handle->getKey();
-			// This index might already exist, but that is okay
 			$list[$index] = '';
 		}
 
@@ -115,8 +102,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 				}
 			} else {
 				// This might include messages that the user has already translated
-				// or messages given in $wgTranslateSandboxSuggestions or just dated
-				// message index.
+				// or just dated message index.
 				unset( $list[$index] );
 
 				continue;
