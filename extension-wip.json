@@ -1153,11 +1153,6 @@
 			"description": "To which group the translators are promoted. If left at false, they will just be removed from sandbox and become normal users.",
 			"public": true
 		},
-		"TranslateSandboxSuggestions": {
-			"value": [],
-			"description": "List of page names to always suggest for sandboxed users.",
-			"public": true
-		},
 		"TranslateSandboxLimit": {
 			"value": 20,
 			"description": "Maximum number of translations a user can make in the sandbox.",
