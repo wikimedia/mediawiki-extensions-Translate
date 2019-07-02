@@ -76,14 +76,9 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 	 * Use with caution!
 	 */
 	public function prepareForTests() {
-		global $wgTranslateTestUsers;
 
 		$user = $this->getUser();
 		$request = $this->getRequest();
-
-		if ( !in_array( $user->getName(), $wgTranslateTestUsers, true ) ) {
-			return;
-		}
 
 		if ( $request->getVal( 'integrationtesting' ) === 'populate' ) {
 			// Empty all the users, even if they were created manually
