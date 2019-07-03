@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "34b3877d_c4d8d564",
+        "filename": "scripts/removeOrphanedActors.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-03T13:55:21Z",
+      "side": 1,
+      "message": "Could you rewrite this as a join? Manually written SQL is a hotspot for security issues and incompatibilities across different supported database backends. Subqueries are very rarely used in MediaWiki code.\n\nThe join would be something like [ \u0027actor\u0027 \u003d\u003e [ \u0027LEFT JOIN\u0027, [ \u0027user_id \u003d actor_user\u0027, \u0027actor_user IS NULL\u0027 ] ]",
+      "revId": "9f18d7f1ff113a06a2e8967a4be8ee75f5d062dc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f503bae_5713ec5a",
+        "filename": "scripts/removeOrphanedActors.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-03T13:55:21Z",
+      "side": 1,
+      "message": "Listing the names would be helpful, so that I can check that they all come from the sandbox, or whether there are other causes as well.",
+      "revId": "9f18d7f1ff113a06a2e8967a4be8ee75f5d062dc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "404ee8f4_ae4798c3",
+        "filename": "scripts/removeOrphanedActors.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-03T13:55:21Z",
+      "side": 1,
+      "message": "There is a better shortcut:\n  actor_id \u003d\u003e $orphanedActorIds",
+      "revId": "9f18d7f1ff113a06a2e8967a4be8ee75f5d062dc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
