@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jun Misugi"
+		]
+	},
+	"apihelp-groupreview-param-group": "Gruppu d'imbasciaddi.",
+	"apihelp-groupreview-param-language": "Còditzi di linga.",
+	"apihelp-query+languagestats-param-language": "Còditzi di linga.",
+	"apihelp-query+messagecollection-param-group": "Gruppu d'imbasciaddi.",
+	"apihelp-query+messagecollection-param-language": "Còditzi di linga.",
+	"apihelp-query+messagecollection-example-1": "Erencu di linghi susthiniddi",
+	"apihelp-query+messagegroups-example-1": "Visuarizza gruppi d'imbasciaddi"
+}
