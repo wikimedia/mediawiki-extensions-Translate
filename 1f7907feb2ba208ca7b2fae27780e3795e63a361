@@ -16,6 +16,24 @@
       "revId": "1f7907feb2ba208ca7b2fae27780e3795e63a361",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe6c167e_80448b74",
+        "filename": "tests/phpunit/unit/utils/ArrayFlattenerTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6097
+      },
+      "writtenOn": "2019-07-03T13:51:04Z",
+      "side": 1,
+      "message": "Sorry I don\u0027t understand, could you elaborate please?",
+      "parentUuid": "09e49eb6_cd9222f9",
+      "revId": "1f7907feb2ba208ca7b2fae27780e3795e63a361",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
