@@ -38,7 +38,8 @@
 		"composer/installers": ">=1.0.1",
 		"mediawiki/universal-language-selector": "*",
 		"mustangostang/spyc": "0.6.2",
-		"davefx/phplot": "6.2.1"
+		"davefx/phplot": "6.2.1",
+		"jackmoore/autosize": "^4.0"
 	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "1.0.0",
@@ -60,9 +61,30 @@
 			"parallel-lint . --exclude vendor --exclude node_modules --exclude extensions",
 			"phpcs -p -s",
 			"minus-x check ."
+		],
+		"post-install-cmd": [
+			"cp vendor/jackmoore/autosize/dist/autosize.js libs/js/jquery.autosize.js"
 		]
 	},
 	"extra": {
 		"phan-taint-check-plugin": "1.5.0"
-	}
+	},
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "jackmoore/autosize",
+				"version": "4.0.2",
+				"dist": {
+					"url": "https://github.com/jackmoore/autosize/archive/4.0.2.zip",
+					"type": "zip"
+				},
+				"source": {
+					"url": "https://github.com/jackmoore/autosize/",
+					"type": "git",
+					"reference": "releases/tag/4.0.2"
+				}
+			}
+		}
+	]
 }
