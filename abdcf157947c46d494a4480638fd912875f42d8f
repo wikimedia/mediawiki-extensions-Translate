@@ -1,0 +1,135 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2c6d6159_b8b2ffa7",
+        "filename": "api/ApiManageMessageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-03T15:07:36Z",
+      "side": 1,
+      "message": "Extra space",
+      "range": {
+        "startLine": 33,
+        "startChar": 85,
+        "endLine": 33,
+        "endChar": 86
+      },
+      "revId": "abdcf157947c46d494a4480638fd912875f42d8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a9eb0b6_45e27410",
+        "filename": "api/ApiManageMessageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-03T15:07:36Z",
+      "side": 1,
+      "message": "Hmm, don\u0027t exceptions mess up the regular API response? Perhaps these would be better if handled as normal api errors instead.",
+      "revId": "abdcf157947c46d494a4480638fd912875f42d8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f807404_6ab5697c",
+        "filename": "api/ApiManageMessageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-03T15:07:36Z",
+      "side": 1,
+      "message": "Title::newFromText may return null.\n\nThis way of calling is not safe. If the message happens to be for example Help:about, the title would have namespace of NS_HELP instead of $group-\u003egetNamespace().",
+      "revId": "abdcf157947c46d494a4480638fd912875f42d8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c256738d_5072f123",
+        "filename": "api/ApiManageMessageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-03T15:07:36Z",
+      "side": 1,
+      "message": "I think you could make this required. Per my understanding, if not provided, it would default to the default value.",
+      "revId": "abdcf157947c46d494a4480638fd912875f42d8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ad19deb_04523fb3",
+        "filename": "api/ApiQueryManageMessageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-03T15:07:36Z",
+      "side": 1,
+      "message": "$group can only be an object or null, so it\u0027s okay to use the short !$group.",
+      "revId": "abdcf157947c46d494a4480638fd912875f42d8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8102ae5b_8a6ebb72",
+        "filename": "api/ApiQueryManageMessageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-03T15:07:36Z",
+      "side": 1,
+      "message": "You can use \u003c\u003d\u003e here to simplify. Depending on which way the short goes, you might need to use -($a \u003c\u003d\u003e $b) to reverse it.",
+      "revId": "abdcf157947c46d494a4480638fd912875f42d8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01d76b01_c82c70a9",
+        "filename": "api/ApiQueryManageMessageGroups.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-07-03T15:07:36Z",
+      "side": 1,
+      "message": "I would encourage to spell this out as messageKey",
+      "range": {
+        "startLine": 120,
+        "startChar": 11,
+        "endLine": 120,
+        "endChar": 15
+      },
+      "revId": "abdcf157947c46d494a4480638fd912875f42d8f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
