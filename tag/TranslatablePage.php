@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\Database;
 
 /**
@@ -855,7 +856,7 @@ class TranslatablePage {
 	 * @return bool
 	 */
 	public static function isSourcePage( Title $title ) {
-		$cache = ObjectCache::getMainWANInstance();
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$pcTTL = $cache::TTL_PROC_LONG;
 
 		$translatablePageIds = $cache->getWithSetCallback(
