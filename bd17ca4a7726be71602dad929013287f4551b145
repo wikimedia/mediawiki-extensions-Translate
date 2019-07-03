@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "abe72ab4_f7066243",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-07-03T10:44:51Z",
+      "side": 1,
+      "message": "I would line break the commit message at ~70 chars.",
+      "revId": "bd17ca4a7726be71602dad929013287f4551b145",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08b4d675_ce0c9de4",
+        "filename": "Gruntfile.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-07-03T10:44:51Z",
+      "side": 1,
+      "message": "I think we can ignore everything under `libs/js`",
+      "revId": "bd17ca4a7726be71602dad929013287f4551b145",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee908280_90b5f8ac",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6870
+      },
+      "writtenOn": "2019-07-03T10:44:51Z",
+      "side": 1,
+      "message": "Should we think of adding this via package.json? We might be able to remove the repository addition in composer.json that way. It seems to be supporting postinstall scripts as well.",
+      "revId": "bd17ca4a7726be71602dad929013287f4551b145",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
