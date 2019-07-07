@@ -3,7 +3,8 @@
 		"authors": [
 			"Iwan Novirion",
 			"Naval Scene",
-			"Muhraz"
+			"Muhraz",
+			"Ardzun"
 		]
 	},
 	"translate-statsf-start": "Tanggal mulai:",
@@ -18,6 +19,6 @@
 	"translate-statsf-count-registrations": "Pangguno baru",
 	"translate-sidebar-alltrans": "Dalam bahaso lain",
 	"translate-js-support": "Batanyo",
-	"translate-documentation-language": "Pambakehan pasan",
+	"translate-documentation-language": "Dokumentasi pasan",
 	"translate-searchprofile-tooltip": "Cari dari sado tajamahan"
 }

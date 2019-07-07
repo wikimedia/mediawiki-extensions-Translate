@@ -21,7 +21,7 @@
 	"tsb-email-rejected-body": "Olá {{GENDER:$1|$1}},\n\nObrigado por se ter candidatado a tradutor na wiki {{SITENAME}}. Lamento informar que rejeitei o seu pedido, porque a qualidade das traduções não preencheu os requisitos.\n\nSe acredita que a rejeição resulta de um erro de avaliação, tente candidatar-se novamente a tradutor na wiki {{SITENAME}}, por favor. Pode inscrever-se aqui:\n$2\n\n{{GENDER:$3|$3}},\nA equipa da wiki {{SITENAME}}",
 	"tsb-request-count": "$1 {{PLURAL:$1|pedido|pedidos}}",
 	"tsb-all-languages-button-label": "Todas as línguas",
-	"tsb-search-requests": "Pesquisar nos pedidos",
+	"tsb-search-requests": "Pesquisar pedidos pendentes",
 	"tsb-accept-button-label": "Aceitar",
 	"tsb-reject-button-label": "Rejeitar",
 	"tsb-selected-count": "{{PLURAL:$1|$1 utilizador selecionado|$1 utilizadores selecionados}}",

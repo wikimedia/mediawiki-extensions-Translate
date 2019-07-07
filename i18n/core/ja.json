@@ -21,7 +21,8 @@
 			"2nd-player",
 			"Gminky",
 			"Omotecho",
-			"Afaz"
+			"Afaz",
+			"神樂坂秀吉"
 		]
 	},
 	"translate": "翻訳",
@@ -299,11 +300,11 @@
 	"translate-dynagroup-additions-desc": "このメッセージ群では新たに追加または変更されたメッセージを表示します。",
 	"translate-msggroupselector-projects": "メッセージ群",
 	"translate-msggroupselector-search-placeholder": "メッセージ群内を検索",
-	"translate-msggroupselector-search-all": "すべて",
+	"translate-msggroupselector-search-all": "全て",
 	"translate-msggroupselector-search-recent": "最近のもの",
 	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|件の下位群}}を閲覧",
 	"tux-languageselector": "翻訳先",
-	"tux-tab-all": "すべて",
+	"tux-tab-all": "全て",
 	"tux-tab-untranslated": "未翻訳",
 	"tux-tab-outdated": "要更新",
 	"tux-tab-translated": "翻訳済",
