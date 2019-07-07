@@ -27,7 +27,7 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	protected function getGroupName() {
-		return 'pagetools';
+		return 'translation';
 	}
 
 	public function execute( $parameters ) {

@@ -31,7 +31,7 @@ class SpecialTranslate extends SpecialPage {
 	}
 
 	protected function getGroupName() {
-		return 'wiki';
+		return 'translation';
 	}
 
 	/**

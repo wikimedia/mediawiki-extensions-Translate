@@ -589,4 +589,8 @@ HTML
 
 		return $form;
 	}
+
+	protected function getGroupName() {
+		return 'translation';
+	}
 }

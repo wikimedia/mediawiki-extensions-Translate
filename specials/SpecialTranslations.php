@@ -20,7 +20,7 @@ class SpecialTranslations extends SpecialAllPages {
 	}
 
 	protected function getGroupName() {
-		return 'pages';
+		return 'translation';
 	}
 
 	public function getDescription() {

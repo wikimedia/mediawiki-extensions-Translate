@@ -27,7 +27,7 @@ class SpecialImportTranslations extends SpecialPage {
 	}
 
 	protected function getGroupName() {
-		return 'wiki';
+		return 'translation';
 	}
 
 	/**

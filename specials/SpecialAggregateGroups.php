@@ -18,7 +18,7 @@ class SpecialAggregateGroups extends SpecialPage {
 	}
 
 	protected function getGroupName() {
-		return 'wiki';
+		return 'translation';
 	}
 
 	public function execute( $parameters ) {

@@ -44,7 +44,7 @@ class SpecialMagic extends SpecialPage {
 	}
 
 	protected function getGroupName() {
-		return 'wiki';
+		return 'translation';
 	}
 
 	/**

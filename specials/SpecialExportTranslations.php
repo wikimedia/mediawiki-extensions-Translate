@@ -260,6 +260,6 @@ class SpecialExportTranslations extends SpecialPage {
 	}
 
 	protected function getGroupName() {
-		return 'wiki';
+		return 'translation';
 	}
 }

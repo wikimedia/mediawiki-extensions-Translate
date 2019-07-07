@@ -306,4 +306,8 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 		return $options;
 	}
+
+	protected function getGroupName() {
+		return 'translation';
+	}
 }

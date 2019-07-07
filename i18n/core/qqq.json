@@ -417,5 +417,6 @@
 	"translate-ulsdep-body": "Error message in page body",
 	"translate-syntax-error": "Notice shown to the user when saving a translation fails validation due to syntax errors. This is shown following the message:\n* {{msg-mw|Tux-editor-save-failed}}",
 	"tux-session-expired": "Warning shown to the user in a popup when translation could not be saved because the session is expired.",
-	"tux-nojs": "An error shown in Special:Translate."
+	"tux-nojs": "An error shown in Special:Translate.",
+	"specialpages-group-translation": "Group heading for special pages"
 }

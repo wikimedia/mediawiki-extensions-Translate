@@ -96,7 +96,7 @@ class SpecialLanguageStats extends SpecialPage {
 	}
 
 	protected function getGroupName() {
-		return 'wiki';
+		return 'translation';
 	}
 
 	public function execute( $par ) {

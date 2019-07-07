@@ -31,7 +31,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 	}
 
 	protected function getGroupName() {
-		return 'users';
+		return 'translation';
 	}
 
 	public function execute( $params ) {

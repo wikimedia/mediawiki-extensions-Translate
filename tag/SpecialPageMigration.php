@@ -14,7 +14,7 @@ class SpecialPageMigration extends SpecialPage {
 	}
 
 	protected function getGroupName() {
-		return 'wiki';
+		return 'translation';
 	}
 
 	public function getDescription() {
