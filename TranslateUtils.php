@@ -320,11 +320,11 @@ class TranslateUtils {
 	 *
 	 * This is also implemented in JavaScript in ext.translate.quickedit.
 	 *
-	 * @param string $msg Plain text string.
+	 * @param string $message Plain text string.
 	 * @return string Text string that is ready for outputting.
 	 */
-	public static function convertWhiteSpaceToHTML( $msg ) {
-		$msg = htmlspecialchars( $msg );
+	public static function convertWhiteSpaceToHTML( $message ) {
+		$msg = htmlspecialchars( $message );
 		$msg = preg_replace( '/^ /m', '&#160;', $msg );
 		$msg = preg_replace( '/ $/m', '&#160;', $msg );
 		$msg = preg_replace( '/  /', '&#160; ', $msg );

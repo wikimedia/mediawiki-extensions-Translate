@@ -219,7 +219,7 @@ class SpecialTranslate extends SpecialPage {
 		// and and also for the data-filter attribute.
 		// The message is shown as the check box's label.
 		$options = [
-			'optional' => $this->msg( 'tux-message-filter-optional-messages-label' )->escaped(),
+			'optional' => $this->msg( 'tux-message-filter-optional-messages-label' )->text(),
 		];
 
 		$container = Html::openElement( 'ul', [ 'class' => 'column tux-message-selector' ] );

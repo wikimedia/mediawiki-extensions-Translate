@@ -554,7 +554,7 @@ HTML
 
 	protected function getSearchInput( $query ) {
 		$attribs = [
-			'placeholder' => $this->msg( 'tux-sst-search-ph' ),
+			'placeholder' => $this->msg( 'tux-sst-search-ph' )->text(),
 			'class' => 'searchinputbox mw-ui-input',
 			'dir' => $this->getLanguage()->getDir(),
 		];
@@ -562,7 +562,7 @@ HTML
 		$title = Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 		$input = Xml::input( 'query', false, $query, $attribs );
 		$submit = Xml::submitButton(
-			$this->msg( 'tux-sst-search' ),
+			$this->msg( 'tux-sst-search' )->text(),
 			[ 'class' => 'mw-ui-button mw-ui-progressive' ]
 		);
 
