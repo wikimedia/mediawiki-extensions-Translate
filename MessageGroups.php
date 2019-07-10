@@ -74,7 +74,8 @@ class MessageGroups {
 			$groups = $deps = $autoload = [];
 			// This constructs the list of all groups from multiple different sources.
 			// When possible, a cache dependency is created to automatically recreate
-			// the cache when configuration changes.
+			// the cache when configuration changes. Currently used by other extensions
+			// such as Banner Messages and test cases to load message groups.
 			Hooks::run( 'TranslatePostInitGroups', [ &$groups, &$deps, &$autoload ] );
 			// Register autoloaders for this request, both values modified by reference
 			self::appendAutoloader( $autoload, $wgAutoloadClasses );
@@ -293,23 +294,6 @@ class MessageGroups {
 		return array_filter( $this->getGroupLoaders(), function ( $groupLoader ) {
 			return $groupLoader instanceof CachedMessageGroupLoader;
 		} );
-	}
-
-	/**
-	 * Hook: TranslatePostInitGroups
-	 * @param array &$groups
-	 * @param array &$deps
-	 */
-	public static function getCCGroups( array &$groups, array &$deps ) {
-		global $wgTranslateCC;
-
-		if ( $wgTranslateCC !== [] ) {
-			wfDeprecated( '$wgTranslateCC' );
-		}
-
-		$deps[] = new GlobalDependency( 'wgTranslateCC' );
-
-		$groups += $wgTranslateCC;
 	}
 
 	/**

@@ -288,9 +288,6 @@
 			"MessageGroupStats::clear",
 			"MessageGroupStatesUpdaterJob::onChange"
 		],
-		"TranslatePostInitGroups": [
-			"MessageGroups::getCCGroups"
-		],
 		"TranslateInitGroupLoaders": [
 			"TranslatablePageMessageGroupStore::registerLoader",
 			"WorkflowStatesMessageGroupLoader::registerLoader",
@@ -1091,11 +1088,6 @@
 		"TranslateMessageNamespaces": {
 			"value": [],
 			"description": "List of namespace that contain messages. No talk namespaces. See https://www.mediawiki.org/wiki/Help:Extension:Translate/Group_configuration",
-			"public": true
-		},
-		"TranslateCC": {
-			"value": [],
-			"description": "Custom classes can register themselves here. Key is always the group id, while the value is an message group object or callable function. This is deprecated – Use the TranslateInitGroupLoaders hook instead.",
 			"public": true
 		},
 		"TranslateGroupRoot": {
