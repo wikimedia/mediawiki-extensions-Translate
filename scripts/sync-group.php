@@ -11,6 +11,8 @@
  * @file
  */
 
+use MediaWiki\Shell\Shell;
+
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
@@ -212,11 +214,15 @@ class ChangeSyncer {
 	 * @return string Timestamp or false.
 	 */
 	public function getTimestampsFromSvn( $file ) {
-		$file = escapeshellarg( $file );
-		$retval = 0;
-		$output = wfShellExec( "svn info $file 2>/dev/null", $retval );
+		$cmd = [
+			'svn',
+			'info',
+			$file
+		];
+		$result = Shell::command( $cmd )
+			->execute();
 
-		if ( $retval ) {
+		if ( $result->getExitCode() ) {
 			return false;
 		}
 
@@ -226,7 +232,7 @@ class ChangeSyncer {
 		// you
 		// PHP (for being an ass)!
 		$regex = '^Last Changed Date: (.*) \(';
-		$ok = preg_match( "~$regex~m", $output, $matches );
+		$ok = preg_match( "~$regex~m", $result->getStdout(), $matches );
 		if ( $ok ) {
 			return strtotime( $matches[1] );
 		}
@@ -240,15 +246,23 @@ class ChangeSyncer {
 	 * @return string|bool Timestamp or false.
 	 */
 	public function getTimestampsFromGit( $file ) {
-		$file = escapeshellarg( $file );
-		$retval = 0;
-		$output = wfShellExec( "git log -n 1 --format=%cd $file", $retval );
+		// TODO: This is already implemented by GitInfo#getHeadCommitDate
+		$cmd = [
+			'git',
+			'log',
+			'-n',
+			'1',
+			'--format=%cd',
+			$file
+		];
+		$result = Shell::command( $cmd )
+			->execute();
 
-		if ( $retval ) {
+		if ( $result->getExitCode() ) {
 			return false;
 		}
 
-		return strtotime( $output );
+		return strtotime( $result->getStdout() );
 	}
 
 	/**
