@@ -383,5 +383,6 @@
 	"translate-ulsdep-body": "번역 확장 기능은 [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector 일반 언어 선택기 확장 기능]을 필요로 합니다.",
 	"translate-syntax-error": "번역에 문법 오류가 있습니다",
 	"tux-session-expired": "로그인하고 있지 않습니다. 별도의 탭에서 로그인하세요. 대안으로, 저장하지 않은 번역을 복사하고, 로그인한 다음, 이 문서로 돌아와 다시 번역을 입력하세요.",
-	"tux-nojs": "이 도구는 자바스크립트 없이 동작하지 않습니다. 자바스크립트를 사용하지 않아 동작하지 않거나 이 브라우저가 지원되지 않습니다."
+	"tux-nojs": "이 도구는 자바스크립트 없이 동작하지 않습니다. 자바스크립트를 사용하지 않아 동작하지 않거나 이 브라우저가 지원되지 않습니다.",
+	"specialpages-group-translation": "번역"
 }

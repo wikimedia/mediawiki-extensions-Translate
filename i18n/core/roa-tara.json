@@ -377,5 +377,6 @@
 	"translate-ulsdep-body": "L'estenzione de traduzione depenne da l'[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector estenzione Scacchiatore Universale de Lènghe].",
 	"translate-syntax-error": "'A traduzione tène errore de sindasse",
 	"tux-session-expired": "Non g'è trasute. Tràse jndr'à 'na schede a parte; oppure copie 'a traduzione ca non g'è reggistrate, tràse, e tuèrne jndr'à sta pàgene e sckaffe 'a traduziona toje.",
-	"tux-nojs": "Stu strumende non ge funzione senze JavaScript. JavaScript jè disabilitate, non ge ste funzione, o 'u browser tune non g'u supporte."
+	"tux-nojs": "Stu strumende non ge funzione senze JavaScript. JavaScript jè disabilitate, non ge ste funzione, o 'u browser tune non g'u supporte.",
+	"specialpages-group-translation": "Traduzione"
 }

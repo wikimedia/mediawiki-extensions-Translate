@@ -392,5 +392,6 @@
 	"translate-ulsdep-body": "امتداد Translate يعتمد على  [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector امتداد Universal Language Selector].",
 	"translate-syntax-error": "تحتوي الترجمة على أخطاء في بناء الجملة",
 	"tux-session-expired": "أنت لم تعد مسجل الدخول. من فضلك سجل الدخول في لسان منفصل. أو يمكنك عمل نسخة من الترجمات غير المحفوظة، تسجيل الدخول، العودة لهذه الصفحة وإدخال ترجماتك مجددا.",
-	"tux-nojs": "هذه الأداة لا تعمل بدون جافا سكريبت. الجافا سكريبت معطلة، فشلت في العمل، أو هذا المتصفح غير مدعوم."
+	"tux-nojs": "هذه الأداة لا تعمل بدون جافا سكريبت. الجافا سكريبت معطلة، فشلت في العمل، أو هذا المتصفح غير مدعوم.",
+	"specialpages-group-translation": "ترجمة"
 }

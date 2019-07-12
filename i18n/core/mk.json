@@ -383,5 +383,6 @@
 	"translate-ulsdep-body": "Додатокот за превод е зависен од додатокот „[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Универзален јазичен избирач]“.",
 	"translate-syntax-error": "Преводот содржи синтаксни грешки",
 	"tux-session-expired": "Повеќе не сте најавени. Најавете се во друго јазиче. Можете и некаде да ги прекопирате незачуваните преводи, па да се најавите и да се навратите на страницава, и потоа внесете ги преводите повторно.",
-	"tux-nojs": "Оваа алатка не работи без JavaScript. JavaScript е исклучен, не работи или прелистувачот не е поддржан."
+	"tux-nojs": "Оваа алатка не работи без JavaScript. JavaScript е исклучен, не работи или прелистувачот не е поддржан.",
+	"specialpages-group-translation": "Преведување"
 }
