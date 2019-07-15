@@ -4,5 +4,26 @@
 			"Jun Misugi"
 		]
 	},
+	"translate-taction-translate": "Traduzì",
+	"translate-taction-proofread": "Verifiggà",
+	"translate-taction-export": "Ippurtha",
+	"translate-page-group": "Gruppu",
+	"translate-page-language": "Linga",
+	"translate-page-navigation-legend": "Nabiggazioni",
+	"translate-next": "Pàgina sighenti",
+	"translate-prev": "Pàgina prizzidenti",
+	"translate-page-description-legend": "Iffuimmazioni paj kistha pàgina",
+	"translate-page-edit": "mudificà",
+	"translate-edit-title": "Mudificà \"$1\"",
+	"translate-edit-translation": "Traduzioni",
+	"translate-edit-contribute": "cuntribuì",
+	"translate-edit-in-other-languages": "Imbasciadda i' li althri linghi",
+	"translate-edit-askpermission": "Uttiní primmissu",
+	"exporttranslations": "Ippurtha li traduzioni",
+	"translate-magic-cm-export": "Ippurtha",
+	"translate-magic-cm-current": "Currenti",
+	"translate-magic-cm-comment": "Oggettu:",
+	"translate-magic-cm-save": "Saivva",
+	"prefs-translate": "Opzioni traduzioni",
 	"translate-documentation-language": "Documentazioni d'imbasciaddi"
 }
