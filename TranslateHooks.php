@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\SystemUsers\TranslateUserManager;
+
 /**
  * Some hooks for Translate extension.
  */
@@ -228,7 +230,6 @@ class TranslateHooks {
 			$wgHooks['GetPreferences'][] = 'TranslateSandbox::onGetPreferences';
 			$wgHooks['UserGetRights'][] = 'TranslateSandbox::enforcePermissions';
 			$wgHooks['ApiCheckCanExecute'][] = 'TranslateSandbox::onApiCheckCanExecute';
-			$wgHooks['UserGetRights'][] = 'TranslateSandbox::allowAccountCreation';
 
 			global $wgLogTypes, $wgLogActionsHandlers;
 			// log-name-translatorsandbox log-description-translatorsandbox
@@ -282,8 +283,8 @@ class TranslateHooks {
 	 * @param array &$names
 	 */
 	public static function onUserGetReservedNames( array &$names ) {
-		global $wgTranslateFuzzyBotName;
-		$names[] = $wgTranslateFuzzyBotName;
+		$names[] = FuzzyBot::getName();
+		$names[] = TranslateUserManager::getName();
 	}
 
 	/**

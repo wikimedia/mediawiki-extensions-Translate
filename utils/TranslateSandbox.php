@@ -10,6 +10,9 @@
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
+use MediaWiki\MediaWikiServices;
+use Wikimedia\ScopedCallback;
+use MediaWiki\Extensions\Translate\SystemUsers\TranslateUserManager;
 
 /**
  * Utility class for the sandbox feature of Translate. Do not try this yourself. This code makes a
@@ -42,35 +45,36 @@ class TranslateSandbox {
 			'realname' => '',
 		];
 
-		self::$userToCreate = $user;
+		$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+		$creator = TranslateUserManager::getUser();
+		$guard = $permissionManager->addTemporaryUserRights( $creator, 'createaccount' );
+
 		$reqs = AuthManager::singleton()->getAuthenticationRequests( AuthManager::ACTION_CREATE );
 		$reqs = AuthenticationRequest::loadRequestsFromSubmission( $reqs, $data );
-		$res = AuthManager::singleton()->beginAccountCreation( $user, $reqs, 'null:' );
-		self::$userToCreate = null;
+		$res = AuthManager::singleton()->beginAccountCreation( $creator, $reqs, 'null:' );
+
+		ScopedCallback::consume( $guard );
 
 		switch ( $res->status ) {
-		case AuthenticationResponse::PASS:
-			break;
-		case AuthenticationResponse::FAIL:
-			// Unless things are misconfigured, this will handle errors such as username taken,
-			// invalid user name or too short password. The WebAPI is prechecking these to
-			// provide nicer error messages.
-			$reason = $res->message->inLanguage( 'en' )->useDatabase( false )->text();
-			throw new MWException( "Account creation failed: $reason" );
-		default:
-			// Just in case it was a Secondary that failed
-			$user->clearInstanceCache( 'name' );
-			if ( $user->getId() ) {
-				self::deleteUser( $user, 'force' );
-			}
-			throw new MWException(
-				'AuthManager does not support such simplified account creation'
-			);
-		}
+			case AuthenticationResponse::PASS:
+				break;
+			case AuthenticationResponse::FAIL:
+				// Unless things are misconfigured, this will handle errors such as username taken,
+				// invalid user name or too short password. The WebAPI is prechecking these to
+				// provide nicer error messages.
+				$reason = $res->message->inLanguage( 'en' )->useDatabase( false )->text();
+				throw new MWException( "Account creation failed: $reason" );
+			default:
+				// A provider requested further user input. Abort but clean up first if it was a
+				// secondary provider (in which case the user was created).
+				if ( $user->getId() ) {
+					self::deleteUser( $user, 'force' );
+				}
 
-		// User now has an id, but we must clear the cache to see it. Without this the group
-		// addition below would not be saved in the database.
-		$user->clearInstanceCache( 'name' );
+				throw new MWException(
+					'AuthManager does not support such simplified account creation'
+				);
+		}
 
 		// group-translate-sandboxed group-translate-sandboxed-member
 		$user->addGroup( 'translate-sandboxed' );
@@ -274,13 +278,6 @@ class TranslateSandbox {
 
 		// Do not let other hooks add more actions
 		return false;
-	}
-
-	/// Hook: UserGetRights
-	public static function allowAccountCreation( $user, &$rights ) {
-		if ( self::$userToCreate && $user->equals( self::$userToCreate ) ) {
-			$rights[] = 'createaccount';
-		}
 	}
 
 	/// Hook: onGetPreferences
