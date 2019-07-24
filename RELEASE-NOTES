@@ -1,0 +1,24 @@
+== Translate 2019.07 ==
+Released at 2019-07-24.
+
+=== Noteworthy changes ===
+* Translate now requires MediaWiki >= 1.32.0. Please upgrade!
+
+=== Noteworthy changes ===
+* Reduced the size of the cache used by the Translate extension
+  ([https://phabricator.wikimedia.org/T213802 T213802]).
+* Fixed incorrect link to the message on the translate editor
+  ([https://phabricator.wikimedia.org/T222588 T222588]).
+* Fixed the tabs on the message table on Special:Translate with the new
+  Timeless theme.
+* Added a new MessageValidator framework to improve translation validation.
+  ([https://phabricator.wikimedia.org/T204568 T204568])
+  ([[Help:Extension:Translate/Validators|See documentation]]).
+* Fixed invalid more warnings label shown during message translation
+  ([https://phabricator.wikimedia.org/T220789 T220789])
+* Moved Translate special pages to a specific Translation section in
+  Special:SpecialPages ([https://phabricator.wikimedia.org/T227393 T227393])
+* Fixed issue with base page not getting removed when removing translatable
+  page.
+* Removed unused global variable <code>$wgTranslateCC</code>
+  ([https://phabricator.wikimedia.org/T214356 T214356]).
