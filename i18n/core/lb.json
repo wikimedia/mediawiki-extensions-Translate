@@ -369,5 +369,6 @@
 	"translate-ulsdep-title": "Astellungsfeeler",
 	"translate-ulsdep-body": "D'Iwwersetzungerweiderung hänkt vun der  [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector Universeller Sproochauswiel-Erweiderung] of.",
 	"tux-session-expired": "Dir sidd net méi ageloggt. Loggt Iech w.e.g. an engem separaten Tab an. Alternativ kënnt Dir och eng Kopie vun den net-gespäicherten Iwwersetzunge maachen, Iech aloggen op dës Säit zréckkommen an Är Iwwersetzungen nees aginn.",
-	"tux-nojs": "Dësen Tool funktionéiert net ouni JavaScript. JavaScript ass ausgeschalt, funktionéiert net oder dëse Browser gëtt net ënnerstëtzt."
+	"tux-nojs": "Dësen Tool funktionéiert net ouni JavaScript. JavaScript ass ausgeschalt, funktionéiert net oder dëse Browser gëtt net ënnerstëtzt.",
+	"specialpages-group-translation": "Iwwersetzung"
 }

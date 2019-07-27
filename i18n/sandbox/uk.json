@@ -5,7 +5,8 @@
 			"Base",
 			"Ата",
 			"Piramidion",
-			"Vlad5250"
+			"Vlad5250",
+			"Movses"
 		]
 	},
 	"managetranslatorsandbox": "Керування грамайданчиком перекладачів",
@@ -22,7 +23,7 @@
 	"tsb-email-rejected-body": "Привіт {{GENDER:$1|$1}},\n\nДякуємо вам за намагання стати перекладачем на  translator at {{SITENAME}}. На жаль, я з жалем повідомляю вас, що відхиляю вашу заявку, бо якість ваших перекладів не відповідає вимогам.\n\nЯкщо ви вважаєте, що ваша заявка відхилена помилково, то можете спробувати знову подати заявку на перекладача на please try to apply again as a translator at {{SITENAME}}. Ви можете зареєструватися тут:\n$2\n\n{{GENDER:$3|$3}},\nКоманда {{SITENAME}}",
 	"tsb-request-count": "{{PLURAL:$1|Один запит|$1 запити|$1 запитів}}",
 	"tsb-all-languages-button-label": "Усі мови",
-	"tsb-search-requests": "Пошукові запити",
+	"tsb-search-requests": "Пошук запитів в очікуванні",
 	"tsb-accept-button-label": "Прийняти",
 	"tsb-reject-button-label": "Відмовитися",
 	"tsb-selected-count": "{{PLURAL:$1|$1 користувач вибраний|$1 користувачі вибрані|$1 користувачів вибрано}}",

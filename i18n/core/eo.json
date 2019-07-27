@@ -390,5 +390,6 @@
 	"translate-ulsdep-body": "La etendaĵo Translate dependas de la [https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector etendaĵo Universal Language Selector].",
 	"translate-syntax-error": "Traduko enhavas sintaksajn erarojn",
 	"tux-session-expired": "Vi ne plu estas ensalutinta. Bonvolu reensaluti je alia langeton. Alternative, kopiu viajn nekonservitajn tradukojn, ensalutu, revenu ĉi tien, kaj reenigu viajn tradukojn.",
-	"tux-nojs": "Ĉi tiu ilo ne funkcias sen JavaScript. Aŭ JavaScript estas malŝaltita, aŭ Javascript misfunkciis, aŭ via TTT-legilo ne estas subtenata."
+	"tux-nojs": "Ĉi tiu ilo ne funkcias sen JavaScript. Aŭ JavaScript estas malŝaltita, aŭ Javascript misfunkciis, aŭ via TTT-legilo ne estas subtenata.",
+	"specialpages-group-translation": "Traduko"
 }

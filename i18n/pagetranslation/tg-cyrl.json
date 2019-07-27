@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ibrahim"
+			"Ibrahim",
+			"ToJack"
 		]
 	},
+	"pagetranslation": "Саҳифаи тарҷума",
+	"tpt-diff-old": "Матни пешина",
+	"tpt-diff-new": "Матни нав",
+	"tpt-old-pages-title": "Саҳифаҳо дар ҳоли тарҷума",
 	"tpt-languages-nonzero": "$1 ($2% тарҷумашуда)"
 }

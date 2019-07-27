@@ -9,6 +9,7 @@
 	"tsb-reminder-title-generic": "Comblete 'a 'ndroduziona toje pe devendà 'nu traduttore",
 	"tsb-reminder-content-generic": "Cià $1,\n\nGrazie ca tè reggistrate sus a {{SITENAME}}.\n\nCe tu comblete 'u test de traduziune, l'amministrature ponne darte le privilegge pe l'accesse 'a traduzione comblete.\n\nPe piacere avìne jndr'à $2 e fà angore quacche otre traduzione.\n\n$3,\n'a squadre de {{SITENAME}}",
 	"tsb-reminder-sending": "Stoche a manne 'nu promemorie...",
+	"tsb-reminder-sent": "{{PLURAL:$1|Mannate $1 promemorie $2. Tiembe: $2.|Mannate $1 promemorie. Tiembe de l'urteme: $2.}}",
 	"tsb-reminder-sent-new": "Manne 'nu promemorie",
 	"tsb-all-languages-button-label": "Tutte le lènghe",
 	"tsb-search-requests": "Cirche le richieste appese",

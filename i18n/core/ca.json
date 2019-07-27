@@ -380,5 +380,6 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduït,  $2 % revisat,  $3% desfasat",
 	"translate-search-more-groups-info": "$1 {{PLURAL:$1|grup|grups}} més",
 	"translate-ulsdep-title": "Error de configuració",
-	"tux-nojs": "Aquesta eina no funciona sense JavaScript. El JavaScript està inhabilitat, no funciona o el navegador no el permet."
+	"tux-nojs": "Aquesta eina no funciona sense JavaScript. El JavaScript està inhabilitat, no funciona o el navegador no el permet.",
+	"specialpages-group-translation": "Traducció"
 }

@@ -9,7 +9,8 @@
 			"Sudo77(new)",
 			"TomášPolonec",
 			"LacoR",
-			"Robert Važan"
+			"Robert Važan",
+			"Vegetator"
 		]
 	},
 	"translate": "Preložiť",
@@ -272,11 +273,26 @@
 	"tux-editor-proofreading-mode": "Kontrola",
 	"tux-editor-translate-mode": "Zoznam",
 	"tux-editor-proofreading-hide-own-translations": "Skryť vaše preklady",
+	"tux-proofread-edit-label": "Editovať",
+	"tux-editor-page-mode": "Stránka",
 	"tux-editor-outdated-notice": "Tento preklad možno potrebuje aktualizáciu.",
 	"tux-editor-outdated-notice-diff-link": "Zobraziť rozdiely",
+	"tux-editor-doc-editor-placeholder": "Dokumentácia k hláseniam",
+	"tux-editor-doc-editor-save": "Uložiť dokumentáciu",
+	"tux-editor-doc-editor-cancel": "Zrušiť",
+	"tux-messagetable-more-messages": "Ešte $1 {{PLURAL:$1|správa|správy|správ}}",
+	"tux-messagetable-loading-messages": "{{PLURAL:$1|Načitáva sa hlásenie|Načitávajú sa hlásenia}}…",
 	"tux-message-filter-placeholder": "Filtrovať zoznam",
 	"tux-message-filter-result": "Pre reťazec „$2“ sa {{PLURAL:$1|našiel 1 výsledok|našli $1 výsledky|našlo $1 výsledkov}}",
+	"tux-message-filter-advanced-button": "Pokročilé hľadanie",
+	"tux-message-filter-optional-messages-label": "Voliteľné správy",
+	"tux-proofread-translated-by-self": "Váš preklad",
+	"tux-empty-list-all": "Táto skupina správ je prázdna",
+	"tux-empty-list-all-guide": "Vyberte si k prekladu inú skupinu správ",
+	"tux-empty-list-translated-action": "Preložiť",
+	"tux-empty-no-messages-to-display": "Neexistujú správy, ktoré by sa dali zobraziť.",
 	"tux-editor-close-tooltip": "Zavrieť",
 	"tux-editor-expand-tooltip": "Roztiahnuť",
+	"tux-editor-loading": "Načítava sa…",
 	"tux-session-expired": "Už nie ste prihlásený. Prihláste sa, prosím, na inom liste, alebo skopírujte neuložený preklad, prihláste sa, vráťte sa k tejto stránke a zadajte znovu váš preklad."
 }

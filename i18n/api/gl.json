@@ -3,7 +3,9 @@
 		"authors": [
 			"Banjo",
 			"Elisardojm",
-			"Toliño"
+			"Toliño",
+			"Maria zaos",
+			"Navhy"
 		]
 	},
 	"apihelp-aggregategroups-description": "Xestionar grupos de mensaxes agregados.\n\nPode engadir e eliminar grupos de mensaxes agregados, e asociar ou disociar a eles grupos de mensaxes (un de cada vez).",
@@ -85,18 +87,18 @@
 	"apihelp-ttmserver-param-service": "Que servizos de tradución usar, entre os dispoñibles.",
 	"apihelp-ttmserver-param-sourcelanguage": "O código de lingua do texto fonte.",
 	"apihelp-ttmserver-param-targetlanguage": "O código de lingua da suxestión.",
-	"apihelp-ttmserver-param-text": "Texto para o cal buscar suxestións.",
+	"apihelp-ttmserver-param-text": "Texto para o cal procurar suxestións.",
 	"apihelp-ttmserver-example-1": "Obter suxestións para traducir \"Help\" do inglés ao finés",
 	"apihelp-searchtranslations-description": "Procurar nas traducións.",
 	"apihelp-searchtranslations-summary": "Procurar nas traducións.",
 	"apihelp-searchtranslations-param-service": "O servizo de tradución a utilizar.",
-	"apihelp-searchtranslations-param-query": "A cadea que buscar.",
+	"apihelp-searchtranslations-param-query": "A cadea a procurar.",
 	"apihelp-searchtranslations-param-sourcelanguage": "O código de lingua do texto fonte.",
 	"apihelp-searchtranslations-param-language": "O código da lingua na que procurar a cadea.",
 	"apihelp-searchtranslations-param-group": "O identificador do grupo no que procurar a cadea.",
 	"apihelp-searchtranslations-param-filter": "Filtro do estado de tradución das mensaxes.",
-	"apihelp-searchtranslations-param-match": "Coincide con calquera/todas as palabras de busca.",
-	"apihelp-searchtranslations-param-case": "Busca sensible/non sensible a maiúsculas.",
+	"apihelp-searchtranslations-param-match": "Coincide con calquera/todas as palabras de procura.",
+	"apihelp-searchtranslations-param-case": "Procura sensible/non sensible a maiúsculas.",
 	"apihelp-searchtranslations-param-offset": "Desprazamento para as traducións.",
 	"apihelp-searchtranslations-param-limit": "Tamaño do resultado.",
 	"apihelp-searchtranslations-example-1": "Amosar as traducións para a lingua.",
