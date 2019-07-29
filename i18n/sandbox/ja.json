@@ -20,7 +20,7 @@
 	"tsb-email-rejected-body": "こんにちは、{{GENDER:$1|$1}}さん\n\n{{SITENAME}} の翻訳者としてお申込みいただきありがとうございます。あなたの翻訳が品質基準を満たしていなかったため、翻訳者として採用されなかったことをお知らせいたします。\n\nこの結果が間違っていると思われる場合は、{{SITENAME}} の翻訳者として再度お申し込みください。こちらからログインできます:\n$2\n\n{{SITENAME}} スタッフ {{GENDER:$3|$3}} より",
 	"tsb-request-count": "$1 {{PLURAL:$1|件の申請}}",
 	"tsb-all-languages-button-label": "すべての言語",
-	"tsb-search-requests": "申請の検索",
+	"tsb-search-requests": "未承認の申請の検索",
 	"tsb-accept-button-label": "承認",
 	"tsb-reject-button-label": "却下",
 	"tsb-selected-count": "{{PLURAL:$1|$1 人の利用者を選択しています}}",

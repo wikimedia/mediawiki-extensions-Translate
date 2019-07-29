@@ -3,7 +3,8 @@
 		"authors": [
 			"Shirayuki",
 			"Sujiniku",
-			"Otokoume"
+			"Otokoume",
+			"Omotecho"
 		]
 	},
 	"searchtranslations": "翻訳の検索",
@@ -27,5 +28,6 @@
 	"tux-sst-ellipsis-untranslated": "翻訳されていません",
 	"tux-sst-ellipsis-outdated": "更新されていない翻訳",
 	"tux-sst-match-message": "検索ワードのいずれかに一致する翻訳を表示しています。 $1",
-	"tux-sst-case-sensitive": "大文字・小文字を区別"
+	"tux-sst-case-sensitive": "大文字・小文字を区別",
+	"tux-sst-error-language": "選択した言語はこの種の検索に使用できません。"
 }

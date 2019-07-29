@@ -4,7 +4,8 @@
 			"Fohanno",
 			"Fulup",
 			"Gwendal",
-			"Y-M D"
+			"Y-M D",
+			"Huñvreüs"
 		]
 	},
 	"translate": "Treiñ",
@@ -157,6 +158,7 @@
 	"translate-untranslated": "Didro",
 	"translate-percentage-complete": "Echu",
 	"translate-percentage-fuzzy": "Dispredet",
+	"translate-percentage-proofread": "Adlennet",
 	"translate-languagestats-overall": "An holl strolladoù kemennadennoù war un dro",
 	"translate-ls-submit": "Diskouez ar stadegoù",
 	"translate-ls-column-group": "Strollad kemennadennoù",
@@ -199,7 +201,7 @@
 	"translate-manage-conflict-summary": "Enporzhiañ ur stumm nevez adalek ur vammenn ziavaez.\nGwiriit mar plij.",
 	"translate-manage-submit": "Erounit",
 	"translate-manage-intro-other": "A-is emañ roll ar c'hemmoù treiñ e $1.\nGwiriit anezho ha dibabit ar pezh a fell deoc'h ober evit pep troidigezh.\nMa tibabit chom hep kemer ar c'hemmoù e kont e vint riñset-lip kentañ tro ma vo un ezporzhiadenn nevez.",
-	"translate-manage-import-ok": "Enporzhiet ez eus bet ur stumm nevez eus ar bajenn $1",
+	"translate-manage-import-ok": "Enporzhiet : $1",
 	"translate-manage-import-done": "Enporzhiañ aet betek penn !",
 	"importtranslations": "Enporzhiañ an troidigezhioù",
 	"translate-import-from-local": "Enporzhiañ ur restr lec'hel :",

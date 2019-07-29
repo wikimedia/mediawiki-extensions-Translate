@@ -46,7 +46,7 @@
 	"tpt-rev-discourage": "desaconsella",
 	"tpt-rev-encourage": "restaura",
 	"translate-tag-translate-link-desc": "Traduïu aquesta pàgina",
-	"translate-tag-hasnew": "Aquesta pàgina conté <span class=\"plainlinks\">[$1 modificacions]</span> que no estan marcats per la traducció.",
+	"translate-tag-hasnew": "Aquesta pàgina conté <span class=\"plainlinks\">[$1 modificacions]</span> que no estan marcades per a la traducció.",
 	"tpt-translation-intro": "Aquesta pàgina és una <span class=\"plainlinks\">[$1 versió traduïda]</span> de la pàgina [[$2]] i la traducció és completada al $3&nbsp;%.",
 	"tpt-translation-intro-fuzzy": "Les traduccions obsoletes es marquen així.",
 	"tpt-languages-legend": "Altres idiomes:",
