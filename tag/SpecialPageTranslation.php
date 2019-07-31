@@ -833,7 +833,7 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param TPSection[] $sections
 	 * @return array|bool
 	 */
-	public function markForTranslation( TranslatablePage $page, array $sections ) {
+	protected function markForTranslation( TranslatablePage $page, array $sections ) {
 		// Add the section markers to the source page
 		$wikiPage = WikiPage::factory( $page->getTitle() );
 		$content = ContentHandler::makeContent(

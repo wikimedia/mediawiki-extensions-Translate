@@ -8,12 +8,14 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
+
 /**
  * Job for updating translation pages when translation or message definition changes.
  *
  * @ingroup JobQueue
  */
-class MessageUpdateJob extends Job {
+class MessageUpdateJob extends GenericTranslateJob {
 	public static function newJob( Title $target, $content, $fuzzy = false ) {
 		$params = [
 			'content' => $content,
@@ -44,7 +46,16 @@ class MessageUpdateJob extends Job {
 		$summary = wfMessage( 'translate-manage-import-summary' )
 			->inContentLanguage()->plain();
 		$content = ContentHandler::makeContent( $params['content'], $title );
-		$wikiPage->doEditContent( $content, $summary, $flags, false, $user );
+		$editStatus = $wikiPage->doEditContent( $content, $summary, $flags, false, $user );
+		if ( !$editStatus->isOK() ) {
+			$this->logError(
+				'Error while editing content in page.',
+				[
+					'content' => $content,
+					'errors' => $editStatus->getErrors()
+				]
+			);
+		}
 
 		// NOTE: message documentation is excluded from fuzzying!
 		if ( $params['fuzzy'] ) {

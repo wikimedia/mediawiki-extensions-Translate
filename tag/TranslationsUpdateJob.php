@@ -1,4 +1,6 @@
 <?php
+use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
+
 /**
  * Job for updating translation units and translation pages when
  * a translatable page is marked for translation.
@@ -9,7 +11,7 @@
  *
  * @since 2016.03
  */
-class TranslationsUpdateJob extends Job {
+class TranslationsUpdateJob extends GenericTranslateJob {
 	/**
 	 * @inheritDoc
 	 */
@@ -39,6 +41,8 @@ class TranslationsUpdateJob extends Job {
 	}
 
 	public function run() {
+		$this->logInfo( 'Starting TranslationsUpdateJob' );
+
 		$page = TranslatablePage::newFromTitle( $this->title );
 		$sections = $this->params[ 'sections' ];
 		foreach ( $sections as $index => $section ) {
@@ -56,6 +60,11 @@ class TranslationsUpdateJob extends Job {
 			$job->run();
 		}
 
+		$this->logInfo(
+			'Finished running ' . count( $unitJobs ) . ' MessageUpdate jobs for '
+			. count( $sections ) . ' sections'
+		);
+
 		// Ensure we are using the latest group definitions. This is needed so
 		// that in long running scripts we do see the page which was just
 		// marked for translation. Otherwise getMessageGroup in the next line
@@ -66,15 +75,23 @@ class TranslationsUpdateJob extends Job {
 
 		MessageIndex::singleton()->rebuild();
 
+		$this->logInfo( 'Cleared caches' );
+
 		// Refresh translations statistics
 		$id = $page->getMessageGroupId();
 		MessageGroupStats::forGroup( $id, MessageGroupStats::FLAG_NO_CACHE );
+		$this->logInfo( 'Updated the message group stats' );
 
 		$wikiPage = WikiPage::factory( $page->getTitle() );
 		$wikiPage->doPurge();
+		$this->logInfo( 'Finished purging' );
 
 		$renderJobs = self::getRenderJobs( $page );
 		JobQueueGroup::singleton()->push( $renderJobs );
+		$this->logInfo( 'Added ' . count( $renderJobs ) . ' RenderJobs to the queue' );
+
+		$this->logInfo( 'Finished TranslationsUpdateJob' );
+
 		return true;
 	}
 

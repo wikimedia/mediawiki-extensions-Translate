@@ -7,12 +7,14 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Extensions\Translate\Jobs\GenericTranslateJob;
+
 /**
  * Job for updating translation pages when translation or template changes.
  *
  * @ingroup PageTranslation JobQueue
  */
-class TranslateRenderJob extends Job {
+class TranslateRenderJob extends GenericTranslateJob {
 
 	/**
 	 * @param Title $target
@@ -39,6 +41,8 @@ class TranslateRenderJob extends Job {
 	public function run() {
 		global $wgTranslateKeepOutdatedTranslations;
 
+		$this->logInfo( 'Starting TranslateRenderJob' );
+
 		// Initialization
 		$title = $this->title;
 		list( , $code ) = TranslateUtils::figureMessage( $title->getPrefixedText() );
@@ -46,7 +50,8 @@ class TranslateRenderJob extends Job {
 		// Return the actual translation page...
 		$page = TranslatablePage::isTranslationPage( $title );
 		if ( !$page ) {
-			throw new MWException( "Cannot render translation page for {$title->getPrefixedText()}!" );
+			$this->logError( 'Cannot render translation page!' );
+			return false;
 		}
 
 		$group = $page->getMessageGroup();
@@ -67,10 +72,21 @@ class TranslateRenderJob extends Job {
 		// @todo FuzzyBot hack
 		PageTranslationHooks::$allowTargetEdit = true;
 		$content = ContentHandler::makeContent( $text, $page->getTitle() );
-		$page->doEditContent( $content, $summary, $flags, false, $user );
+		$editStatus = $page->doEditContent( $content, $summary, $flags, false, $user );
+		if ( !$editStatus->isOK() ) {
+			$this->logError(
+				'Error while editing content in page.',
+				[
+					'content' => $content,
+					'errors' => $editStatus->getErrors()
+				]
+			);
+		}
 
+		$this->logInfo( 'Finished page edit operation' );
 		PageTranslationHooks::$allowTargetEdit = false;
 
+		$this->logInfo( 'Finished TranslateRenderJob' );
 		return true;
 	}
 
