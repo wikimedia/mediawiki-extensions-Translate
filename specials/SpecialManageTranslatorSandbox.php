@@ -292,7 +292,7 @@ HTML;
 	</div>
 	<div class="seven columns request-info">
 		<div class="row username">$nameEnc</div>
-		<div class="row email">$emailEnc</div>
+		<div class="row email" dir="ltr">$emailEnc</div>
 	</div>
 	<div class="three columns approval center">
 		<input class="row request-selector" name="request" type="checkbox" />
