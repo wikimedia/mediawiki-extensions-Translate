@@ -31,5 +31,5 @@
 	"tsb-create-user-page": "بنيادي واپرائيندڙ صفحو سرجيو",
 	"log-name-translatorsandbox": "ترجمي جي مشق پٽيءَ جو لاگ",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|ترقي ڏن}} $3 ڏانھن {{GENDER:$4|ترجميڪار}}",
-	"logentry-newusers-tsbpromoted": "رڪن کاتو $3 {{GENDER:$2|تخليق ڪيو}} ويو مشقي تختي جي ترقيءَ  سان"
+	"logentry-newusers-tsbpromoted": "مشق-پٽيءَ جي ترقيءَ سان واپرائيندڙ کاتو $3 {{GENDER:$2|کوليو ويو}}"
 }

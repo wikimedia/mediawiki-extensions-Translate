@@ -32,7 +32,8 @@
 			"LNDDYL",
 			"Wmr",
 			"A Chinese Wikipedian",
-			"Zazzzz"
+			"Zazzzz",
+			"VulpesVulpes825"
 		]
 	},
 	"translate": "翻译",
@@ -127,6 +128,7 @@
 	"translate-pref-editassistlang-help": "请用逗号分隔语言代码列表。这些语言的信息翻译会在您翻译的时显示。默认语言列表基于您的语言。",
 	"translate-pref-editassistlang-bad": "列表中有无效语言代码：<nowiki>$1</nowiki>。",
 	"right-translate": "使用翻译界面编辑",
+	"action-translate": "使用翻译界面编辑",
 	"right-translate-manage": "管理信息组",
 	"action-translate-manage": "管理信息组",
 	"right-translate-import": "导入线下翻译",
@@ -336,7 +338,7 @@
 	"tux-editor-cancel-button-label": "取消",
 	"tux-editor-confirm-button-label": "确认翻译",
 	"tux-editor-proofread-button-label": "标记为已复核",
-	"tux-editor-shortcut-info": "按“$1”保存，“$2”跳至下一条消息，“$4”提供摘要，或“$3”使用其他快捷方式。",
+	"tux-editor-shortcut-info": "按“$1”保存并移动至下一条信息，“$2”跳至下一条，“$4”提供摘要，或按住“$3”来查看其他快捷方式。",
 	"tux-editor-edit-desc": "编辑文档",
 	"tux-editor-add-desc": "添加文档",
 	"tux-editor-suggestions-title": "建议",
@@ -403,6 +405,8 @@
 	"translate-search-more-groups-info": "还有$1个{{PLURAL:$1|信息组}}",
 	"translate-ulsdep-title": "配置错误",
 	"translate-ulsdep-body": "翻译扩展依赖[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:UniversalLanguageSelector 通用语言选择器扩展]。",
+	"translate-syntax-error": "翻译含有语法错误",
 	"tux-session-expired": "您不再保持登录状态。请在单独的选项卡登录。或者制作未保存翻译的副本、登录、返回此页面并再次输入您的翻译。",
-	"tux-nojs": "此页面在没有JavaScript的情况下不能工作。JavaScript已禁用、无法工作或该浏览器不支持JavaScript。"
+	"tux-nojs": "此页面在没有JavaScript的情况下不能工作。JavaScript已禁用、无法工作或该浏览器不支持JavaScript。",
+	"specialpages-group-translation": "翻译"
 }

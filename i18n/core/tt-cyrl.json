@@ -4,7 +4,8 @@
 			"Ajdar",
 			"Himiq Dzyu",
 			"Timming",
-			"Ильнар"
+			"Ильнар",
+			"Ерней"
 		]
 	},
 	"translate": "Тәрҗемә",
@@ -138,7 +139,7 @@
 	"translate-gs-count": "Микъдар",
 	"translate-gs-total": "Барысы",
 	"translate-gs-avgscore": "Уртача билге",
-	"translate-documentation-language": "Хат документациясе",
+	"translate-documentation-language": "Хәбәр документациясе",
 	"translate-searchprofile": "Тәрҗемәләр",
 	"translate-workflow-state-": "(билгеләнмәгән)",
 	"translate-workflowstatus": "Статусы: $1",
@@ -148,11 +149,11 @@
 	"translate-dynagroup-additions-label": "Соңгы өстәлмәләр",
 	"translate-msggroupselector-projects": "Язмалар төркеме",
 	"translate-msggroupselector-search-placeholder": "Төркемнәр эзләү",
-	"translate-msggroupselector-search-all": "Барлык",
+	"translate-msggroupselector-search-all": "Барысы",
 	"translate-msggroupselector-search-recent": "Соңгы",
 	"translate-msggroupselector-view-subprojects": "{{PLURAL:$1|$1 астөркем|1=бер астөркем}}",
 	"tux-languageselector": "Тәрҗемә итү теле",
-	"tux-tab-all": "Барлык",
+	"tux-tab-all": "Барысы",
 	"tux-tab-untranslated": "Тәрҗемә ителмәгәннәре",
 	"tux-tab-outdated": "Искергәннәре",
 	"tux-tab-translated": "Тәрҗемә ителгәннәре",
