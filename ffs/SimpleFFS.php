@@ -271,7 +271,13 @@ class SimpleFFS implements FFS {
 	 * @param MessageCollection $collection
 	 */
 	protected function tryReadSource( $filename, MessageCollection $collection ) {
-		if ( get_class( $this->group->getFFS() ) !== get_class( $this ) ) {
+		$ffs = $this->group->getFFS();
+
+		if ( $ffs === null ) {
+			return;
+		}
+
+		if ( get_class( $ffs ) !== get_class( $this ) ) {
 			return;
 		}
 
