@@ -24,7 +24,7 @@
 	"apihelp-query+messagecollection-example-1": "Списък на поддържаните езици",
 	"apihelp-query+messagecollection-example-2": "Списък на определения на задължителните съобщения за групата „page-Example“",
 	"apihelp-query+messagecollection-example-4": "Повече информация за най-новите преработки на превода за групата „page-Example“",
-	"apihelp-query+messagegroups-summary": "Дай информация за групи съобщения.",
+	"apihelp-query+messagegroups-summary": "Връщане на информация за групи съобщения.",
 	"apihelp-query+messagegroups-example-1": "Показване на групите съобщения",
 	"apihelp-query+messagegroupstats-description": "Искане на статистики за група съобщения.",
 	"apihelp-query+messagegroupstats-summary": "Искане на статистики за група съобщения.",
