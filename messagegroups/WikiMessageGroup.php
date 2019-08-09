@@ -77,7 +77,7 @@ class WikiMessageGroup extends MessageGroupOld {
 	 *
 	 * @param string $key Key of the message.
 	 * @param string $code Language code.
-	 * @return string|null The translation or null if it doesn't exists.
+	 * @return string|null The translation or null if it doesn't exist.
 	 */
 	public function getMessage( $key, $code ) {
 		if ( $code && $this->getSourceLanguage() !== $code ) {
