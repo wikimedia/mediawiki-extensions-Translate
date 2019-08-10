@@ -31,6 +31,7 @@ class TranslateExpandGroupSpec extends Maintenance {
 			'For example page-*,main',
 			true /*required*/
 		);
+		$this->requireExtension( 'Translate' );
 	}
 
 	public function execute() {

@@ -26,6 +26,7 @@ class RefreshTranslatablePages extends Maintenance {
 		$this->addDescription( 'Ensure all translation pages are up to date.' );
 		$this->setBatchSize( 300 );
 		$this->addOption( 'jobqueue', 'Use JobQueue (asynchronous)' );
+		$this->requireExtension( 'Translate' );
 	}
 
 	public function execute() {

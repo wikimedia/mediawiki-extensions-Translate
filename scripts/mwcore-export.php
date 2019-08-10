@@ -40,6 +40,7 @@ class MwCoreExport extends Maintenance {
 			true, /*required*/
 			true /*has arg*/
 		);
+		$this->requireExtension( 'Translate' );
 	}
 
 	public function execute() {

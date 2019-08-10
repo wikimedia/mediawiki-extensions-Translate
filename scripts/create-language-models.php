@@ -30,6 +30,7 @@ class LanguageModelCreator extends Maintenance {
 			"List of pages and filtered language data is cached for 24 hours. Json files present " .
 			"will be used, so don't forget to delete before new run."
 		);
+		$this->requireExtension( 'Translate' );
 	}
 
 	public function execute() {

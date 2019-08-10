@@ -22,6 +22,7 @@ class YamlTests extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Script for comparing supported YAML parser implementations.' );
+		$this->requireExtension( 'Translate' );
 	}
 
 	public function execute() {

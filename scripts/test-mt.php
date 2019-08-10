@@ -47,6 +47,7 @@ class TestMT extends Maintenance {
 			'Text to translate',
 			true /*required*/
 		);
+		$this->requireExtension( 'Translate' );
 	}
 
 	public function execute() {

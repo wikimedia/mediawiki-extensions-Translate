@@ -268,6 +268,7 @@ class GroupStatistics extends Maintenance {
 			false, /*required*/
 			true /*has arg*/
 		);
+		$this->requireExtension( 'Translate' );
 	}
 
 	public function execute() {

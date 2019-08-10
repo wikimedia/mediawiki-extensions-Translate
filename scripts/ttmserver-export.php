@@ -47,6 +47,7 @@ class TTMServerBootstrap extends Maintenance {
 			'Update the index mapping. Warning: Clears all existing data in the index.'
 		);
 		$this->setBatchSize( 500 );
+		$this->requireExtension( 'Translate' );
 		$this->start = microtime( true );
 	}
 

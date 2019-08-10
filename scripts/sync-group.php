@@ -79,6 +79,7 @@ class SyncGroup extends Maintenance {
 			false, /*required*/
 			false /*has arg*/
 		);
+		$this->requireExtension( 'Translate' );
 	}
 
 	public function execute() {

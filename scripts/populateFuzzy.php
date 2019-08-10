@@ -28,6 +28,7 @@ class PopulateFuzzy extends Maintenance {
 			/*required*/false,
 			/*has arg*/true
 		);
+		$this->requireExtension( 'Translate' );
 	}
 
 	public function execute() {
