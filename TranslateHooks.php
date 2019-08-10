@@ -135,8 +135,6 @@ class TranslateHooks {
 			$wgJobClasses['TranslateRenderJob'] = 'TranslateRenderJob';
 			$wgJobClasses['RenderJob'] = 'TranslateRenderJob';
 			$wgJobClasses['TranslatablePageMoveJob'] = 'TranslatablePageMoveJob';
-			$wgJobClasses['TranslateMoveJob'] = 'TranslateMoveJob';
-			$wgJobClasses['MoveJob'] = 'TranslateMoveJob';
 			$wgJobClasses['TranslateDeleteJob'] = 'TranslateDeleteJob';
 			$wgJobClasses['DeleteJob'] = 'TranslateDeleteJob';
 			$wgJobClasses['TranslationsUpdateJob'] = 'TranslationsUpdateJob';

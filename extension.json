@@ -215,7 +215,6 @@
 		"TranslateHooks": "TranslateHooks.php",
 		"TranslateLogFormatter": "utils/TranslateLogFormatter.php",
 		"TranslateMetadata": "utils/TranslateMetadata.php",
-		"TranslateMoveJob": "tag/TranslateMoveJob.php",
 		"TranslatePerLanguageStats": "specials/SpecialTranslationStats.php",
 		"TranslatePreferences": "utils/UserToggles.php",
 		"TranslateRcFilter": "utils/RcFilter.php",
