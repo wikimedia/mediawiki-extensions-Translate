@@ -1066,9 +1066,10 @@
 			"public": true
 		},
 		"TranslateSupportUrlNamespace": {
-			"value": [],
+			"value": {},
 			"description": "Like $wgTranslateSupportUrl, but for a specific namespace. Each $wgTranslateSupportUrl-like array needs to be the value assigned to the numerical ID of a namespace of the wiki. Since 2015-09.",
-			"public": true
+			"public": true,
+			"merge_strategy": "array_plus"
 		},
 		"TranslatePermissionUrl": {
 			"value": "Project:Translator",
