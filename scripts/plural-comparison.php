@@ -9,6 +9,8 @@
  * @file
  */
 
+use CLDRPluralRuleParser\Evaluator;
+
 // Standard boilerplate to define $IP
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
@@ -82,7 +84,7 @@ class PluralCompare extends Maintenance {
 
 			if ( $mwExp ) {
 				$exp = $lang->getCompiledPluralRules();
-				$mw = CLDRPluralRuleEvaluator::evaluateCompiled( $i, $exp );
+				$mw = Evaluator::evaluateCompiled( $i, $exp );
 			}
 
 			if ( $gtExp ) {
@@ -90,7 +92,7 @@ class PluralCompare extends Maintenance {
 			}
 
 			if ( $cldrExp ) {
-				$cl = CLDRPluralRuleEvaluator::evaluate( $i, $cldrExp );
+				$cl = Evaluator::evaluate( $i, $cldrExp );
 			}
 
 			if ( self::comp( $mw, $gt ) && self::comp( $gt, $cl ) && self::comp( $cl, $mw ) ) {
