@@ -2,9 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Hakka",
-			"Jetlag"
+			"Jetlag",
+			"唐吉訶德的侍從"
 		]
 	},
 	"translate-page-edit": "編寫",
-	"translate-documentation-language": "Sin-sit sot-mìn vùn-khien"
+	"translate-langstats-expand": "chán-khôi",
+	"translate-langstats-collapse": "chap-thia̍p",
+	"translate-documentation-language": "Sin-sit sot-mìn vùn-khien",
+	"tux-editor-expand-tooltip": "Chán-khôi",
+	"tux-editor-collapse-tooltip": "Chap-thia̍p"
 }
