@@ -5,7 +5,8 @@
 			"Frokor",
 			"Gunnernett",
 			"Harald Khan",
-			"Njardarlogar"
+			"Njardarlogar",
+			"Jon Harald Søby"
 		]
 	},
 	"pagetranslation": "Sideomsetjing",
@@ -50,7 +51,7 @@
 	"translate-tag-hasnew": "Sida inneheld <span class=\"plainlinks\">[$1 endringar]</span> som ikkje er merkte for omsetjing.",
 	"tpt-translation-intro": "Sida er ein <span class=\"plainlinks\">[$1 omsett versjon]</span> av sida [[$2]], og omsetjinga er $3% ferdig.",
 	"tpt-translation-intro-fuzzy": "Utdaterte omsetjingar er merkte slik.",
-	"tpt-languages-legend": "Andre språk:",
+	"tpt-languages-legend": "På andre språk:",
 	"tpt-languages-zero": "Byrja omsetjing for dette språket",
 	"tpt-languages-nonzero": "$1 ($2 % sett om)",
 	"tpt-tab-translate": "Set om",

@@ -63,7 +63,7 @@
 	"translate-tag-hasnew": "Denne siden inneholder <span class=\"plainlinks\">[$1 endringer]</span> som ikke har blitt markert for oversettelse.",
 	"tpt-translation-intro": "Denne siden er en <span class=\"plainlinks\">[$1 oversatt versjon]</span> av siden [[$2]] og oversettelsen er $3 % ferdig.",
 	"tpt-translation-intro-fuzzy": "Utdaterte oversettelser er markert på denne måten.",
-	"tpt-languages-legend": "Andre språk:",
+	"tpt-languages-legend": "På andre språk:",
 	"tpt-languages-zero": "Begynn oversettelse for dette språket",
 	"tpt-languages-nonzero": "$1 ($2 % oversatt)",
 	"tpt-tab-translate": "Oversett",
