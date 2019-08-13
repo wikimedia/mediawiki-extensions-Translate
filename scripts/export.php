@@ -94,6 +94,9 @@ class CommandlineExport extends Maintenance {
 	}
 
 	public function execute() {
+		wfDebugLog( 'translation-exports', 'Starting exports...' );
+		$startTime = microtime( true );
+
 		$target = $this->getOption( 'target' );
 		if ( !is_writable( $target ) ) {
 			$this->fatalError( "Target directory is not writable ($target)." );
@@ -201,6 +204,8 @@ class CommandlineExport extends Maintenance {
 			}
 
 			if ( $threshold ) {
+				wfDebugLog( 'translation-exports', "Calculating stats for group $groupId" );
+				$tStartTime = microtime( true );
 				$stats = MessageGroupStats::forGroup( $groupId );
 				foreach ( $langs as $index => $code ) {
 					if ( !isset( $stats[$code] ) ) {
@@ -214,6 +219,10 @@ class CommandlineExport extends Maintenance {
 						unset( $langs[$index] );
 					}
 				}
+				$tEndTime = microtime( true );
+				wfDebugLog( 'translation-exports',
+					"Finished calculating stats for group $groupId. Time: "
+						. ( $tEndTime - $tStartTime ) . ' ms' );
 			}
 
 			// Filter out unchanged languages from requested languages
@@ -225,7 +234,7 @@ class CommandlineExport extends Maintenance {
 				continue;
 			}
 
-			$this->output( "Exporting $groupId...\n" );
+			$this->output( 'Exporting ' . count( $langs ) . " languages for group $groupId" );
 
 			$ffs = $group->getFFS();
 			$ffs->setWritePath( $target );
@@ -289,11 +298,15 @@ class CommandlineExport extends Maintenance {
 							$this->error( "ERROR: $ret" );
 						}
 					} else {
-						$this->fatalError( "$definitionFile does not exist." );
+						$this->fatalError( "$definitionFile does not exist for group $groupId." );
 					}
 				}
 			}
 		}
+
+		$endTime = microtime( true );
+		wfDebugLog( 'translation-exports', 'Finished export process. Time: '
+			. ( $endTime - $startTime ) . ' ms' );
 	}
 }
 
