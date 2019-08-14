@@ -3,12 +3,29 @@
 		"authors": [
 			"Sudo77(new)",
 			"Kusavica",
-			"Helix84"
+			"Helix84",
+			"Vegetator"
 		]
 	},
+	"searchtranslations": "Hľadanie v prekladoch",
 	"tux-sst-edit": "Upraviť preklad",
+	"tux-sst-view-foreign": "Zobraziť na $1",
 	"tux-sst-search": "Hľadať",
+	"tux-sst-search-ph": "Hľadať v prekladoch",
 	"tux-sst-facet-language": "Jazyky",
+	"tux-sst-nosolr-title": "Hľadanie nie je dostupné",
+	"tux-sst-nosolr-body": "Táto wiki nemá službu pre vyhľadávanie prekladov.",
+	"tux-sst-solr-offline-title": "Hľadanie nie je dostupné",
+	"tux-sst-solr-offline-body": "Služba pre vyhľadávanie je dočasne nedostupná.",
 	"tux-sst-next": "Ďalej ›",
-	"tux-sst-prev": "‹ Predchádzajúce"
+	"tux-sst-prev": "‹ Predchádzajúce",
+	"tux-sst-default": "Preklady",
+	"tux-sst-translated": "Preklady z jazyka „$1“",
+	"tux-sst-untranslated": "Nepreložené z jazyka $1",
+	"tux-sst-outdated": "Zastarané preklady z jazyka $1",
+	"tux-sst-ellipsis-untranslated": "Žiadny preklad",
+	"tux-sst-ellipsis-outdated": "Zastarané preklady",
+	"tux-sst-link-all-match": "Vyžaduje všetky hľadané slová.",
+	"tux-sst-match-message": "Zobrazujú sa preklady, ktoré su totožné k ľubovoľnému z hľadaných slov. $1",
+	"tux-sst-case-sensitive": "Rozlišovať veľkosť písmen"
 }
