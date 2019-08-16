@@ -22,11 +22,13 @@
 	"translate-rcfilters-translations-only-desc": "ترجمايل صفحن ۾ تبديليون.",
 	"translate-stats-edits": "سنوارون",
 	"translate-statsf-options": "گراف",
+	"translate-statsf-days": "ڏينھن ۾ وقت جو دورانيو:",
 	"translate-statsf-scale-days": "ڏينھن",
 	"translate-statsf-scale-hours": "ڪلاڪَ",
 	"languagestats": "ٻوليءَ جا انگ اکر",
 	"translate-untranslated": "اڻ-ترجمايل",
 	"translate-percentage-fuzzy": "مدي-خارج",
+	"supportedlanguages-colorlegend": "رنگ لاءِ ڪنجي: آخري ترجمو $1 ڏينھن اڳ.",
 	"translate-smg-right": "اندر ايندڙ تبديليون",
 	"translate-js-save": "سانڍيو",
 	"translate-js-support": "سوال پڇو",
@@ -39,6 +41,7 @@
 	"tux-tab-unproofread": "اڻ-جائزو-ورتل",
 	"tux-status-fuzzy": "مدي-خارج",
 	"tux-status-translated": "ترجمايل",
+	"tux-editor-placeholder": "توھان جو ترجمو",
 	"tux-editor-discard-changes-button-label": "تبديليون ڦٽو ڪريو",
 	"tux-editor-save-button-label": "ترجمو سانڍيو",
 	"tux-editor-cancel-button-label": "رد",
@@ -50,5 +53,6 @@
 	"tux-empty-list-translated": "پيغام ترجمايل ناھن",
 	"tux-editor-close-tooltip": "بند ڪريو",
 	"tux-editor-message-tools-delete": "ڊاھيو",
-	"translate-statsbar-tooltip": "$1% تجمايل، $2% جائزو-ورتل"
+	"translate-statsbar-tooltip": "$1% تجمايل، $2% جائزو-ورتل",
+	"specialpages-group-translation": "ترجمو"
 }
