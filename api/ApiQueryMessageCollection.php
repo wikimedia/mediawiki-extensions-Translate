@@ -43,7 +43,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 
 		$group = MessageGroups::getGroup( $params['group'] );
 		if ( !$group ) {
-			$this->dieWithError( [ 'apierror-missingparam', 'mcgroup' ] );
+			$this->dieWithError( [ 'apierror-badparameter', 'mcgroup' ] );
 		}
 
 		$languageCode = $params[ 'language' ];

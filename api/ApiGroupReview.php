@@ -22,7 +22,7 @@ class ApiGroupReview extends ApiBase {
 		$code = $requestParams['language'];
 
 		if ( !$group || MessageGroups::isDynamic( $group ) ) {
-			$this->dieWithError( [ 'apierror-missingparam', 'group' ] );
+			$this->dieWithError( [ 'apierror-badparameter', 'group' ] );
 		}
 		$stateConfig = $group->getMessageGroupStates()->getStates();
 		if ( !$stateConfig ) {
@@ -35,11 +35,9 @@ class ApiGroupReview extends ApiBase {
 			$this->dieBlocked( $user->getBlock() );
 		}
 
-		$requestParams = $this->extractRequestParams();
-
 		$languages = Language::fetchLanguageNames();
 		if ( !isset( $languages[$code] ) ) {
-			$this->dieWithError( [ 'apierror-missingparam', 'language' ] );
+			$this->dieWithError( [ 'apierror-badparameter', 'language' ] );
 		}
 
 		$targetState = $requestParams['state'];
