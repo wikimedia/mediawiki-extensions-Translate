@@ -5,7 +5,8 @@
 			"KlaudiuMihaila",
 			"Minisarm",
 			"Stelistcristi",
-			"Andrei Stroe"
+			"Andrei Stroe",
+			"Strainu"
 		]
 	},
 	"pagetranslation": "Traducere pagini",
@@ -92,5 +93,6 @@
 	"pt-deletepage-list-other": "Alte subpagini",
 	"pt-deletepage-list-count": "În total, $1 {{PLURAL:$1|pagină|pagini|de pagini}} de șters.",
 	"pt-deletepage-full-logreason": "Parte a paginii traductibile „$1”.",
-	"pt-deletepage-lang-logreason": "Parte a paginii de traducere „$1”."
+	"pt-deletepage-lang-logreason": "Parte a paginii de traducere „$1”.",
+	"tpt-generic-button": "Confirmare"
 }
