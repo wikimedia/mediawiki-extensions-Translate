@@ -162,7 +162,7 @@
 	"pt-deletepage-full-title": "De vertaalbare pagina \"$1\" wordt verwijderd",
 	"pt-deletepage-invalid-title": "De opgegeven pagina is ongeldig.",
 	"pt-deletepage-invalid-text": "De opgegeven pagina is geen vertaalbare pagina en ook geen vertaalde pagina.",
-	"pt-deletepage-action-check": "Lijst met te verwijderen pagina's",
+	"pt-deletepage-action-check": "Lijst met te verwijderen pagina's weergeven",
 	"pt-deletepage-action-perform": "Doorgaan met verwijderen",
 	"pt-deletepage-action-other": "Doel wijzigen",
 	"pt-deletepage-lang-legend": "Vertaalde pagina verwijderen",
