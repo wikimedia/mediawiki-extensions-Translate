@@ -19,6 +19,8 @@ if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class CommandlineExport extends Maintenance {
+	const EXPORT_LOG_FILE = 'translation-exports';
+
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Message exporter.' );
@@ -95,7 +97,8 @@ class CommandlineExport extends Maintenance {
 	}
 
 	public function execute() {
-		wfDebugLog( 'translation-exports', 'Starting exports...' );
+		wfDebugLog( self::EXPORT_LOG_FILE, 'Starting exports for groups - '
+			. $this->getOption( 'group' ) . '... ' );
 		$startTime = microtime( true );
 
 		$target = $this->getOption( 'target' );
@@ -205,7 +208,7 @@ class CommandlineExport extends Maintenance {
 			}
 
 			if ( $threshold ) {
-				wfDebugLog( 'translation-exports', "Calculating stats for group $groupId" );
+				wfDebugLog( self::EXPORT_LOG_FILE, "Calculating stats for group $groupId" );
 				$tStartTime = microtime( true );
 				$stats = MessageGroupStats::forGroup( $groupId );
 				foreach ( $langs as $index => $code ) {
@@ -221,7 +224,7 @@ class CommandlineExport extends Maintenance {
 					}
 				}
 				$tEndTime = microtime( true );
-				wfDebugLog( 'translation-exports',
+				wfDebugLog( self::EXPORT_LOG_FILE,
 					"Finished calculating stats for group $groupId. Time: "
 						. ( $tEndTime - $tStartTime ) . ' ms' );
 			}
@@ -260,6 +263,8 @@ class CommandlineExport extends Maintenance {
 
 			$whitelist = $group->getTranslatableLanguages();
 
+			wfDebugLog( self::EXPORT_LOG_FILE, "Exporting languages for group - $group." );
+			$langStartTime = microtime( true );
 			foreach ( $langs as $lang ) {
 				// Do not export languages that are blacklisted (or not whitelisted).
 				// Also check that whitelist is not null, which means that all
@@ -303,11 +308,14 @@ class CommandlineExport extends Maintenance {
 					}
 				}
 			}
+			$langEndTime = microtime( true );
+			wfDebugLog( self::EXPORT_LOG_FILE, "Done exporting languages for group - $group. " .
+				'Time taken - ' . ( $langEndTime - $langStartTime ) );
 		}
 
 		$endTime = microtime( true );
-		wfDebugLog( 'translation-exports', 'Finished export process. Time: '
-			. ( $endTime - $startTime ) . ' ms' );
+		wfDebugLog( self::EXPORT_LOG_FILE, 'Finished export process for groups - ' .
+			$this->getOption( 'group' ) . '. Time: ' . ( $endTime - $startTime ) . ' ms' );
 	}
 }
 
