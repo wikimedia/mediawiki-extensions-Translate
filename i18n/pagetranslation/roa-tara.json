@@ -108,7 +108,9 @@
 	"pm-old-translations-missing": "$1 non ge tène traduziune vicchie.",
 	"pm-delete-icon-hover-text": "Scangìlle l'aunità",
 	"pm-pagetitle-placeholder": "Mitte 'u titole d'a pàgene",
+	"pm-pagetitle-missing": "Pe piacere mitte 'u titole d'a vôsce.",
 	"pp-save-button-label": "Reggìstre",
 	"pp-cancel-button-label": "Annulle",
-	"pp-save-message": "'A pàgene ha state reggistrate. Puè [$1 cangiarle]."
+	"pp-save-message": "'A pàgene ha state reggistrate. Puè [$1 cangiarle].",
+	"tpt-generic-button": "Conferme"
 }

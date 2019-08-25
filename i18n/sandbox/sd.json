@@ -4,8 +4,13 @@
 			"Mehtab ahmed"
 		]
 	},
+	"managetranslatorsandbox": "ترجميڪار مشق-پٽي سنڀاليو",
 	"tsb-filter-pending": "رڪيل درخواستون",
 	"tsb-reminder-title-generic": "ترجميڪار ٿيڻ لاءِ پنھنجو تعارف مڪمل ڪريو",
+	"tsb-reminder-sending": "تاڪيدڪار موڪليندي…",
+	"tsb-reminder-sent": "{{PLURAL:$1|$1 تاڪيدڪار موڪليل. وقت: $2.|$1 تاڪيدڪار موڪليل. آخري موڪليل جو وقت: $2.}}",
+	"tsb-reminder-sent-new": "ھڪ موڪليل تاڪيدڪار",
+	"tsb-reminder-failed": "تاڪيدڪار موڪلڻ ۾ ناڪامي",
 	"tsb-email-promoted-subject": "توھان ھاڻي {{SITENAME}} تي ترجميڪار آھيو",
 	"tsb-request-count": "$1 {{PLURAL:$1|درخواست|درخواستون}}",
 	"tsb-all-languages-button-label": "سڀ ٻوليون",

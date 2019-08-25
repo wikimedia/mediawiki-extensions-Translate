@@ -10,7 +10,8 @@
 			"TomášPolonec",
 			"LacoR",
 			"Robert Važan",
-			"Vegetator"
+			"Vegetator",
+			"Luky001"
 		]
 	},
 	"translate": "Preložiť",
@@ -297,7 +298,7 @@
 	"tux-editor-doc-editor-save": "Uložiť dokumentáciu",
 	"tux-editor-doc-editor-cancel": "Zrušiť",
 	"tux-messagetable-more-messages": "Ešte $1 {{PLURAL:$1|správa|správy|správ}}",
-	"tux-messagetable-loading-messages": "{{PLURAL:$1|Načitáva sa hlásenie|Načitávajú sa hlásenia}}…",
+	"tux-messagetable-loading-messages": "{{PLURAL:$1|Načítava sa správa|Načítavajú sa správy}}…",
 	"tux-message-filter-placeholder": "Filtrovať zoznam",
 	"tux-message-filter-result": "Pre reťazec „$2“ sa {{PLURAL:$1|našiel 1 výsledok|našli $1 výsledky|našlo $1 výsledkov}}",
 	"tux-message-filter-advanced-button": "Pokročilé hľadanie",
