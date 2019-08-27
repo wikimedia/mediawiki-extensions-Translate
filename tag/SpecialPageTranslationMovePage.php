@@ -570,15 +570,20 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 
 	/**
 	 * Returns all subpages, if the namespace has them enabled.
-	 * @return mixed TitleArray, or empty array if this page's namespace doesn't allow subpages
+	 * @return Title[]
 	 */
 	protected function getSubpages() {
-		return $this->page->getTitle()->getSubpages();
+		$pages = $this->page->getTitle()->getSubpages();
+		if ( $pages instanceof Traversable ) {
+			$pages = iterator_to_array( $pages );
+		}
+
+		return $pages;
 	}
 
 	private function getNormalSubpages() {
 		return array_filter(
-			iterator_to_array( $this->getSubpages() ),
+			$this->getSubpages(),
 			function ( $page ) {
 				return !(
 					TranslatablePage::isTranslationPage( $page ) ||
@@ -590,7 +595,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 
 	private function getTranslatableSubpages() {
 		return array_filter(
-			iterator_to_array( $this->getSubpages() ),
+			$this->getSubpages(),
 			function ( $page ) {
 				return TranslatablePage::isSourcePage( $page );
 			}
