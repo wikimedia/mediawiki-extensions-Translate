@@ -114,11 +114,19 @@ class SpecialPageTranslation extends SpecialPage {
 				$entry->publish( $logid );
 			}
 
-			$this->listPages();
-
+			// Defer stats purging of parent aggregate groups. Shared groups can contain other
+			// groups as well, which we do not need to update. We could filter non-aggregate
+			// groups out, or use MessageGroups::getParentGroups, though it has an inconvenient
+			// return value format for this use case.
 			$group = MessageGroups::getGroup( $id );
-			$parents = MessageGroups::getSharedGroups( $group );
-			MessageGroupStats::clearGroup( $parents );
+			$sharedGroupIds = MessageGroups::getSharedGroups( $group );
+			if ( $sharedGroupIds !== [] ) {
+				$job = MessageGroupStatsRebuildJob::newRefreshGroupsJob( $sharedGroupIds );
+				JobQueueGroup::singleton()->push( $job );
+			}
+
+			// Show updated page with a notice
+			$this->listPages();
 
 			return;
 		}

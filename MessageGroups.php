@@ -191,6 +191,8 @@ class MessageGroups {
 	public function clearProcessCache() {
 		$this->groups = null;
 		$this->groupLoaders = null;
+
+		self::$prioritycache = null;
 	}
 
 	/**
@@ -383,7 +385,7 @@ class MessageGroups {
 	 * @since 2011-12-12
 	 */
 	public static function getPriority( $group ) {
-		if ( !isset( self::$prioritycache ) ) {
+		if ( self::$prioritycache === null ) {
 			self::$prioritycache = [];
 			// Abusing this table originally intented for other purposes
 			$db = wfGetDB( DB_REPLICA );
@@ -419,6 +421,7 @@ class MessageGroups {
 			$id = self::normalizeId( $group );
 		}
 
+		// FIXME: This assumes prioritycache has been populated
 		self::$prioritycache[$id] = $priority;
 
 		$dbw = wfGetDB( DB_MASTER );
@@ -468,6 +471,7 @@ class MessageGroups {
 		foreach ( $ids as $index => $id ) {
 			if ( $id === $group->getId() ) {
 				unset( $ids[$index] );
+				break;
 			}
 		}
 
