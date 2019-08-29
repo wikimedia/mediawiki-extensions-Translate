@@ -42,7 +42,7 @@ class MessageGroupStatsRebuildJob extends Job {
 			MessageGroupStats::forGroup( $params[ 'groupid' ], $flags );
 		}
 		if ( isset( $params[ 'languagecode' ] ) ) {
-			MessageGroupStats::forGroup( $params[ 'languagecode' ], $flags );
+			MessageGroupStats::forLanguage( $params[ 'languagecode' ], $flags );
 		}
 
 		return true;
