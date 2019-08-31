@@ -8,8 +8,10 @@
  */
 
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\BraceBalanceValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextNewlineValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRubyVariableValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\NewlineValidator;
 
 /**
  * @group TranslationValidators
@@ -18,9 +20,11 @@ class TranslateValidatorTest extends PHPUnit\Framework\TestCase {
 
 	/**
 	 * @dataProvider getBraceBalanceValidatorProvider
+	 * @covers MediaWiki\Extensions\Translate\MessageValidator\Validators\BraceBalanceValidator
 	 */
-	public function testBraceBalanceValidator( $key, $definition, $translation,
-		$expected, $msg ) {
+	public function testBraceBalanceValidator(
+		$key, $definition, $translation, $expected, $msg
+	) {
 		$validator = new BraceBalanceValidator();
 		$notices = [];
 		$message = new FatMessage( $key, $definition );
@@ -35,9 +39,11 @@ class TranslateValidatorTest extends PHPUnit\Framework\TestCase {
 
 	/**
 	 * @dataProvider getInsertableRubyValidatorProvider
+	 * @covers MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRubyVariableValidator
 	 */
-	public function testInsertableRubyValidator( $key, $definition,
-		$translation, $expected, $msg ) {
+	public function testInsertableRubyValidator(
+		$key, $definition, $translation, $expected, $msg
+	) {
 		$validator = new InsertableRubyVariableValidator();
 
 		$notices = [];
@@ -53,9 +59,11 @@ class TranslateValidatorTest extends PHPUnit\Framework\TestCase {
 
 	/**
 	 * @dataProvider getInsertableRegexValidatorProvider
+	 * @covers MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexValidator
 	 */
-	public function testInsertableRegexValidator( $params, $key, $definition,
-		$translation, $expected, $subchecks, $msg ) {
+	public function testInsertableRegexValidator(
+		$params, $key, $definition, $translation, $expected, $subchecks, $msg
+	) {
 		$validator = new InsertableRegexValidator( $params );
 		$notices = [];
 		$message = new FatMessage( $key, $definition );
@@ -69,6 +77,54 @@ class TranslateValidatorTest extends PHPUnit\Framework\TestCase {
 			}
 		} else {
 			$this->assertCount( $expected, $notices, $msg );
+		}
+	}
+
+	/**
+	 * @dataProvider getNewlineValidatorProvider
+	 * @covers MediaWiki\Extensions\Translate\MessageValidator\Validators\NewlineValidator
+	 */
+	public function testtNewlineValidator(
+		$key, $definition, $translation, $expectedCount, $arrayVals, $msg
+	) {
+		$validator = new NewlineValidator();
+
+		$notices = [];
+		$message = new FatMessage( $key, $definition );
+		$message->setTranslation( $translation );
+		$validator->validate( $message, 'en-gb', $notices );
+
+		if ( $expectedCount === 0 ) {
+			$this->assertArrayNotHasKey( $key, $notices, $msg );
+		} else {
+			$this->assertCount( $expectedCount, $notices[ $key ], $msg );
+			foreach ( $arrayVals as $i => $subcheck ) {
+				$this->assertEquals( $subcheck, $notices[ $key ][$i ][0][1], $msg );
+			}
+		}
+	}
+
+	/**
+	 * @dataProvider getGettextNewlineValidatorProvider
+	 * @covers MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextNewlineValidator
+	 */
+	public function testGettextNewlineValidator(
+		$key, $definition, $translation, $expectedCount, $arrayVals, $msg
+	) {
+		$validator = new GettextNewlineValidator();
+
+		$notices = [];
+		$message = new FatMessage( $key, $definition );
+		$message->setTranslation( $translation );
+		$validator->validate( $message, 'en-gb', $notices );
+
+		if ( $expectedCount === 0 ) {
+			$this->assertArrayNotHasKey( $key, $notices, $msg );
+		} else {
+			$this->assertCount( $expectedCount, $notices[ $key ], $msg );
+			foreach ( $arrayVals as $i => $subcheck ) {
+				$this->assertEquals( $subcheck, $notices[ $key ][$i ][0][1], $msg );
+			}
 		}
 	}
 
@@ -129,6 +185,76 @@ class TranslateValidatorTest extends PHPUnit\Framework\TestCase {
 			'<hello> <world> <msg>', 1,
 			[ 'unknown' ],
 			'should correctly identify the unknown parameters.'
+		];
+	}
+
+	public function getNewlineValidatorProvider() {
+		yield [
+			'hello2',
+			'Hello',
+			'Hello World', 0,
+			[],
+			'should not see a notice when newlines are not present.',
+			true
+		];
+
+		yield [
+			'hello3',
+			"\nHello\n",
+			"\nHello World\n", 0,
+			[],
+			'should not see a notice when newlines are matching.',
+			true
+		];
+
+		yield [
+			'hello',
+			"\n\nHello",
+			"\nHello World", 1,
+			[ 'missing-start' ],
+			'should see a notice due to missing starting newlines.',
+			false
+		];
+	}
+
+	public function getGettextNewlineValidatorProvider() {
+		yield [
+			'hello',
+			"\n\nHello\n\n\\",
+			"\nHello World\n\n\n\\",
+			2,
+			[ 'missing-start', 'extra-end' ],
+			'should see a notice due to missing / extra newlines.',
+			true
+		];
+
+		yield [
+			'hello3',
+			"\nHello\n\\",
+			"\nHello World\n\\", 0,
+			[],
+			'should not see a notice when newlines are matching.',
+			true
+		];
+
+		yield [
+			'hello',
+			"\n\nHello",
+			"\nHello World",
+			1,
+			[ 'missing-start' ],
+			'should see a notice due to missing / extra newlines.',
+			true
+		];
+
+		yield [
+			'hello',
+			"Hello",
+			"Hello World\n\\",
+			1,
+			[ 'extra-end' ],
+			'should see a notice due to missing / extra newlines.',
+			true
 		];
 	}
 }

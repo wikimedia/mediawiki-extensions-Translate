@@ -13,6 +13,8 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexVa
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRubyVariableValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiMiscValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPluralValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\NewlineValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextNewlineValidator;
 use \InvalidArgumentException;
 use \RuntimeException;
 
@@ -31,7 +33,9 @@ class ValidatorFactory {
 		'InsertableRegex' => InsertableRegexValidator::class,
 		'InsertableRubyVariable' => InsertableRubyVariableValidator::class,
 		'MediaWikiMisc' => MediaWikiMiscValidator::class,
-		'MediaWikiPlural' => MediaWikiPluralValidator::class
+		'MediaWikiPlural' => MediaWikiPluralValidator::class,
+		'NewlineMatch' => NewlineValidator::class,
+		'GettextNewlineMatch' => GettextNewlineValidator::class
 	];
 
 	/**
