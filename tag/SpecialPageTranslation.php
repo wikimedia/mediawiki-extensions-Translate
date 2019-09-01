@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * A special page for marking revisions of pages for translation.
  *
@@ -773,13 +775,11 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @param TranslatablePage $page
 	 */
 	protected function priorityLanguagesForm( TranslatablePage $page ) {
-		global $wgContLang;
-
 		$groupId = $page->getMessageGroupId();
 		$this->getOutput()->wrapWikiMsg( '==$1==', 'tpt-sections-prioritylangs' );
 
 		$langSelector = Xml::languageSelector(
-			$wgContLang->getCode(),
+			MediaWikiServices::getInstance()->getContentLanguage()->getCode(),
 			false,
 			$this->getLanguage()->getCode()
 		);

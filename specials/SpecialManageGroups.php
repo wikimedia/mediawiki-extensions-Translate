@@ -9,6 +9,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Class for special page Special:ManageMessageGroups. On this special page
  * file based message groups can be managed (FileBasedMessageGroup). This page
@@ -110,7 +112,7 @@ class SpecialManageGroups extends SpecialPage {
 	}
 
 	protected function showChanges( $allowed, $limit ) {
-		global $wgContLang;
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		$diff = new DifferenceEngine( $this->getContext() );
 		$diff->showDiffStyle();
@@ -150,7 +152,7 @@ class SpecialManageGroups extends SpecialPage {
 						// Constructing title objects is way slower
 						$key = $params['key'];
 						if ( $isCap ) {
-							$key = $wgContLang->ucfirst( $key );
+							$key = $contLang->ucfirst( $key );
 						}
 						$lb->add( $ns, "$key/$code" );
 					}

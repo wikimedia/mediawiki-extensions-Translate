@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Translation aid which gives the message documentation.
  *
@@ -16,7 +18,7 @@
  */
 class DocumentationAid extends TranslationAid {
 	public function getData() {
-		global $wgTranslateDocumentationLanguageCode, $wgContLang;
+		global $wgTranslateDocumentationLanguageCode;
 		if ( !$wgTranslateDocumentationLanguageCode ) {
 			throw new TranslationHelperException( 'Message documentation is disabled' );
 		}
@@ -27,7 +29,7 @@ class DocumentationAid extends TranslationAid {
 		$info = TranslateUtils::getMessageContent( $page, $wgTranslateDocumentationLanguageCode, $ns );
 
 		return [
-			'language' => $wgContLang->getCode(),
+			'language' => MediaWikiServices::getInstance()->getContentLanguage()->getCode(),
 			'value' => $info,
 			'html' => TranslateUtils::parseAsInterface(
 				$this->context->getOutput(), $info

@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * This class implements some basic functions that wrap around the YAML
  * message group configurations. These message groups use the FFS classes
@@ -365,9 +367,8 @@ abstract class MessageGroupBase implements MessageGroup {
 			return constant( $ns );
 		}
 
-		global $wgContLang;
-
-		$index = $wgContLang->getNsIndex( $ns );
+		$index = MediaWikiServices::getInstance()->getContentLanguage()
+			->getNsIndex( $ns );
 
 		if ( !$index ) {
 			throw new MWException( "No valid namespace defined, got $ns." );

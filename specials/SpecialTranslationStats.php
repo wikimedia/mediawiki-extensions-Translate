@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * @defgroup Stats Statistics
  * Collection of code to produce various kinds of statistics.
@@ -991,8 +993,6 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 	 * @return string
 	 */
 	protected function formatTimestamp( $timestamp ) {
-		global $wgContLang;
-
 		switch ( $this->opts['scale'] ) {
 			case 'hours' :
 				$cut = 4;
@@ -1004,7 +1004,8 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 				$cut = 8;
 				break;
 			default :
-				return $wgContLang->sprintfDate( $this->getDateFormat(), $timestamp );
+				return MediaWikiServices::getInstance()->getContentLanguage()
+					->sprintfDate( $this->getDateFormat(), $timestamp );
 		}
 
 		return substr( $timestamp, 0, -$cut );

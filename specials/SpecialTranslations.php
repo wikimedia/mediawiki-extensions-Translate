@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Implements a special page which shows all translations for a message.
  * Bits taken from SpecialPrefixindex.php and TranslateTasks.php
@@ -128,11 +130,12 @@ class SpecialTranslations extends SpecialAllPages {
 	 * @return array ( string => int )
 	 */
 	public function getSortedNamespaces() {
-		global $wgTranslateMessageNamespaces, $wgContLang;
+		global $wgTranslateMessageNamespaces;
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		$nslist = [];
 		foreach ( $wgTranslateMessageNamespaces as $ns ) {
-			$nslist[$wgContLang->getFormattedNsText( $ns )] = $ns;
+			$nslist[$contLang->getFormattedNsText( $ns )] = $ns;
 		}
 		ksort( $nslist );
 

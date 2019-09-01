@@ -8,6 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Translation aid which gives Gettext documentation.
  *
@@ -28,8 +30,8 @@ class GettextDocumentationAid extends TranslationAid {
 			throw new TranslationHelperException( 'Not a Gettext group' );
 		}
 
-		global $wgContLang;
-		$mykey = $wgContLang->lcfirst( $this->handle->getKey() );
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
+		$mykey = $contLang->lcfirst( $this->handle->getKey() );
 		$mykey = str_replace( ' ', '_', $mykey );
 		$data = $ffs->read( $group->getSourceLanguage() );
 		$help = $data['TEMPLATE'][$mykey]['comments'];
@@ -62,7 +64,7 @@ class GettextDocumentationAid extends TranslationAid {
 		$html = $this->context->getOutput()->parseAsContent( $out );
 
 		return [
-			'language' => $wgContLang->getCode(),
+			'language' => $contLang->getCode(),
 			// @todo Provide raw data when possible
 			// 'value' => $help,
 			'html' => $html,

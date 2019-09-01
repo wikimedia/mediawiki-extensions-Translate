@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Class for pointing to messages, like Title class is for titles.
  * @since 2011-03-13
@@ -99,10 +101,9 @@ class MessageHandle {
 	 * @since 2016-01
 	 */
 	public function getEffectiveLanguage() {
-		global $wgContLang;
 		$code = $this->getCode();
 		if ( $code === '' || $this->isDoc() ) {
-			return $wgContLang;
+			return MediaWikiServices::getInstance()->getContentLanguage();
 		}
 
 		return wfGetLangObj( $code );
@@ -259,8 +260,6 @@ class MessageHandle {
 	 * @since 2017.10
 	 */
 	public function getInternalKey() {
-		global $wgContLang;
-
 		$key = $this->getKey();
 
 		if ( !MWNamespace::isCapitalized( $this->getTitle()->getNamespace() ) ) {
@@ -281,7 +280,8 @@ class MessageHandle {
 			return $key;
 		}
 
-		$lcKey = $wgContLang->lcfirst( $key );
+		$lcKey = MediaWikiServices::getInstance()->getContentLanguage()
+			->lcfirst( $key );
 		if ( in_array( $lcKey, $keys, true ) ) {
 			return $lcKey;
 		}

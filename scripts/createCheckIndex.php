@@ -10,6 +10,8 @@
  */
 
 // Standard boilerplate to define $IP
+use MediaWiki\MediaWikiServices;
+
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
@@ -59,6 +61,7 @@ class CreateCheckIndex extends Maintenance {
 		$verbose = $this->hasOption( 'verbose' );
 
 		$groups = MessageGroups::singleton()->getGroups();
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		/** @var MessageGroup $g */
 		foreach ( $groups as $g ) {
@@ -100,14 +103,12 @@ class CreateCheckIndex extends Maintenance {
 				$collection->resetForNewLanguage( $code );
 				$collection->loadTranslations();
 
-				global $wgContLang;
-
 				foreach ( $collection as $key => $message ) {
 					$prob = $checker->checkMessageFast( $message, $code );
 					if ( $prob ) {
 						if ( $verbose ) {
 							// Print it
-							$nsText = $wgContLang->getNsText( $g->namespaces[0] );
+							$nsText = $contLang->getNsText( $g->namespaces[0] );
 							$this->output( "# [[$nsText:$key/$code]]\n" );
 						}
 
