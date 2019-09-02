@@ -31,11 +31,11 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		$authors = $matches[1];
 
 		// Then messages.
-		$messages = TranslateYaml::loadString( $data );
+		$messages = TranslateYaml::loadString( $data ) ?? [];
 
 		// Some groups have messages under language code
 		if ( isset( $this->extra['codeAsRoot'] ) ) {
-			$messages = array_shift( $messages );
+			$messages = array_shift( $messages ) ?? [];
 		}
 
 		$messages = $this->flatten( $messages );
