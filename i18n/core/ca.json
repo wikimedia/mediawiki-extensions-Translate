@@ -87,7 +87,7 @@
 	"translate-magic-namespace": "Noms dels espais de noms",
 	"translate-magic-notsaved": "No s'ha desat la modificació!",
 	"translate-magic-errors": "Al que arregleu {{PLURAL:$1|el següent error|els següents errors}} a les traduccions:",
-	"translate-magic-saved": "Els vostres canvis s'han desat.",
+	"translate-magic-saved": "S'han desat els vostres canvis.",
 	"translate-checks-parameters": "{{PLURAL:$2|El paràmetre següent no s'està|Els paràmetres següents no s'estan}} usant:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|El paràmetre següent és desconegut|Els paràmetres següent són desconeguts}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "Hi ha un nombre senar de {{PLURAL:$2|parèntesis, claus i/o claudàtors|parèntesis, claus i/o claudàtors}}:\n<strong><nowiki>$1</nowiki></strong>",
