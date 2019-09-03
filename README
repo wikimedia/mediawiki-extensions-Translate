@@ -8,7 +8,7 @@ See http://www.gnu.org/licenses/gpl2.html
 == Installation ==
 For very very quick start add the following to LocalSettings.php:
 
- require "$IP/extensions/Translate/Translate.php";
+ wfLoadExtension( 'Translate' );
  $wgGroupPermissions['user']['translate'] = true;
  $wgGroupPermissions['user']['translate-messagereview'] = true;
  $wgGroupPermissions['sysop']['pagetranslation'] = true;
