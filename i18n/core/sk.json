@@ -250,6 +250,7 @@
 	"logentry-translationreview-message": "$1 {{GENDER:$2|akceptoval|akceptovala|akceptoval}} preklad $3",
 	"translate-dynagroup-recent-label": "Nedávne preklady",
 	"translate-dynagroup-recent-desc": "Táto skupina správ obsahuje všetky nedávne preklady do tohoto jazyka. Užitočné pre účely korektúry.",
+	"translate-dynagroup-additions-desc": "Táto skupina správ zobrazuje nové a zmenené správy.",
 	"translate-msggroupselector-projects": "Skupina správ",
 	"translate-msggroupselector-search-all": "Všetko",
 	"tux-languageselector": "Preklad do jazyka",
