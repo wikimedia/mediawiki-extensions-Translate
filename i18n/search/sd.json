@@ -4,8 +4,22 @@
 			"Mehtab ahmed"
 		]
 	},
+	"searchtranslations": "ترجما ڳوليو",
 	"tux-sst-edit": "ترجمو سنواريو",
-	"tux-sst-next": "اڳيون",
+	"tux-sst-view-foreign": "$1 تي ڏسو",
+	"tux-sst-search": "ڳوليو",
+	"tux-sst-search-ph": "ترجما ڳوليو",
+	"tux-sst-count": "{{PLURAL:$1|ھڪ نتيجو لڌو|$1 نتيجا لڌا}}",
+	"tux-sst-facet-language": "ٻوليون",
+	"tux-sst-facet-group": "پيغام گروھ",
+	"tux-sst-nosolr-title": "ڳولا غير-موجود",
+	"tux-sst-nosolr-body": "ھن وڪيءَ کي ترجمو ڳولا جي ڪا خدمت ڪونھي.",
+	"tux-sst-solr-offline-title": "ڳولا غير-موجود",
+	"tux-sst-solr-offline-body": "ڳولا خدمت عارضي طور غير-موجود آھي.",
+	"tux-sst-next": "اڳيون ›",
 	"tux-sst-prev": "‹ پويون",
+	"tux-sst-default": "ترجما",
+	"tux-sst-translated": "$1 مان ترجما",
+	"tux-sst-ellipsis-outdated": "مدي-خارج ترجما",
 	"tux-sst-link-all-match": "ڳولا جا سڀ لفظ گھرجن ٿا."
 }
