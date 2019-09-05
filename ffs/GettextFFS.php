@@ -9,6 +9,8 @@
  * @file
  */
 
+use MediaWiki\Extensions\Translate\Utilities\GettextPlural;
+
 /**
  * Identifies Gettext plural exceptions.
  */
@@ -127,11 +129,13 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		/* At this stage we are only interested how many plurals forms we should
 		 * be expecting when parsing the rest of this file. */
 		$pluralCount = false;
-		if ( isset( $headers['Plural-Forms'] ) &&
-			preg_match( '/nplurals=([0-9]+).*;/', $headers['Plural-Forms'], $matches )
-		) {
-			$pluralCount = $metadata['plural'] = $matches[1];
+		if ( $potmode ) {
+			$pluralCount = 2;
+		} elseif ( isset( $headers['Plural-Forms'] ) ) {
+			$pluralCount = $metadata['plural'] = GettextPlural::getPluralCount( $headers['Plural-Forms'] );
 		}
+
+		$metadata['plural'] = $pluralCount;
 
 		// Then parse the messages
 		foreach ( $sections as $section ) {
@@ -201,7 +205,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		if ( $match !== null ) {
 			$pluralMessage = true;
 			$plural = self::formatForWiki( $match );
-			$item['id'] = "{{PLURAL:GETTEXT|{$item['id']}|$plural}}";
+			$item['id'] = GettextPlural::flatten( [ $item['id'], $plural ] );
 		}
 
 		if ( $pluralMessage ) {
@@ -258,7 +262,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		}
 
 		if ( array_sum( array_map( 'strlen', $actualForms ) ) > 0 ) {
-			return '{{PLURAL:GETTEXT|' . implode( '|', $actualForms ) . '}}';
+			return GettextPlural::flatten( $actualForms );
 		} else {
 			return '';
 		}
@@ -379,9 +383,17 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 	protected function writeReal( MessageCollection $collection ) {
 		$pot = $this->read( 'en' );
-		$template = $this->read( $collection->code );
+		$code = $collection->code;
+		$template = $this->read( $code );
 		$pluralCount = false;
-		$output = $this->doGettextHeader( $collection, $template, $pluralCount );
+		$output = $this->doGettextHeader( $collection, $template );
+
+		$pluralRule = GettextPlural::getPluralRule( $code );
+		if ( !$pluralRule ) {
+			$pluralRule = GettextPlural::getPluralRule( 'en' );
+			error_log( "Missing plural rule for code $code" );
+		}
+		$pluralCount = GettextPlural::getPluralCount( $pluralRule );
 
 		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
@@ -437,16 +449,8 @@ PHP;
 			$specs['X-Message-Group'] = $this->group->getId();
 		}
 
-		$plural = self::getPluralRule( $code );
-		if ( $plural ) {
-			$specs['Plural-Forms'] = $plural;
-		} elseif ( !isset( $specs['Plural-Forms'] ) ) {
-			$specs['Plural-Forms'] = 'nplurals=2; plural=(n != 1);';
-		}
-
-		$match = [];
-		preg_match( '/nplurals=(\d+);/', $specs['Plural-Forms'], $match );
-		$pluralCount = $match[1];
+		$specs['Plural-Forms'] = GettextPlural::getPluralRule( $code )
+			?: GettextPlural::getPluralRule( 'en' );
 
 		$output .= 'msgid ""' . "\n";
 		$output .= 'msgstr ""' . "\n";
@@ -512,13 +516,13 @@ PHP;
 			$flags[] = 'fuzzy';
 		}
 
-		if ( preg_match( '/{{PLURAL:GETTEXT/i', $msgid ) ) {
-			$forms = $this->splitPlural( $msgid, 2 );
+		if ( GettextPlural::hasPlural( $msgid ) ) {
+			$forms = GettextPlural::unflatten( $msgid, 2 );
 			$content .= 'msgid ' . self::escape( $forms[0] ) . "\n";
 			$content .= 'msgid_plural ' . self::escape( $forms[1] ) . "\n";
 
 			try {
-				$forms = $this->splitPlural( $msgstr, $pluralCount );
+				$forms = GettextPlural::unflatten( $msgstr, $pluralCount );
 				foreach ( $forms as $index => $form ) {
 					$content .= "msgstr[$index] " . self::escape( $form ) . "\n";
 				}
@@ -606,65 +610,6 @@ PHP;
 		$line = '"' . $line . '"';
 
 		return $line;
-	}
-
-	/**
-	 * Returns plural rule for Gettext.
-	 * @param string $code Language code.
-	 * @return string
-	 */
-	public static function getPluralRule( $code ) {
-		$rulefile = __DIR__ . '/../data/plural-gettext.txt';
-		$rules = file_get_contents( $rulefile );
-		foreach ( explode( "\n", $rules ) as $line ) {
-			if ( trim( $line ) === '' ) {
-				continue;
-			}
-			list( $rulecode, $rule ) = explode( "\t", $line );
-			if ( $rulecode === $code ) {
-				return $rule;
-			}
-		}
-
-		return '';
-	}
-
-	protected function splitPlural( $text, $forms ) {
-		if ( $forms === 1 ) {
-			return $text;
-		}
-
-		$placeholder = TranslateUtils::getPlaceholder();
-		# |/| is commonly used in KDE to support inflections
-		$text = str_replace( '|/|', $placeholder, $text );
-
-		$plurals = [];
-		$match = preg_match_all( '/{{PLURAL:GETTEXT\|(.*)}}/iUs', $text, $plurals );
-		if ( !$match ) {
-			throw new GettextPluralException( "Failed to find plural in: $text" );
-		}
-
-		$splitPlurals = [];
-		for ( $i = 0; $i < $forms; $i++ ) {
-			# Start with the hole string
-			$pluralForm = $text;
-			# Loop over *each* {{PLURAL}} instance and replace
-			# it with the plural form belonging to this index
-			foreach ( $plurals[0] as $index => $definition ) {
-				$parsedFormsArray = explode( '|', $plurals[1][$index] );
-				if ( !isset( $parsedFormsArray[$i] ) ) {
-					error_log( "Too few plural forms in: $text" );
-					$pluralForm = '';
-				} else {
-					$pluralForm = str_replace( $pluralForm, $definition, $parsedFormsArray[$i] );
-				}
-			}
-
-			$pluralForm = str_replace( $placeholder, '|/|', $pluralForm );
-			$splitPlurals[$i] = $pluralForm;
-		}
-
-		return $splitPlurals;
 	}
 
 	public function shouldOverwrite( $a, $b ) {
