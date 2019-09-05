@@ -263,7 +263,7 @@ class CommandlineExport extends Maintenance {
 
 			$whitelist = $group->getTranslatableLanguages();
 
-			wfDebugLog( self::EXPORT_LOG_FILE, "Exporting languages for group - $group." );
+			wfDebugLog( self::EXPORT_LOG_FILE, "Exporting languages for group - $groupId." );
 			$langStartTime = microtime( true );
 			foreach ( $langs as $lang ) {
 				// Do not export languages that are blacklisted (or not whitelisted).
@@ -309,7 +309,7 @@ class CommandlineExport extends Maintenance {
 				}
 			}
 			$langEndTime = microtime( true );
-			wfDebugLog( self::EXPORT_LOG_FILE, "Done exporting languages for group - $group. " .
+			wfDebugLog( self::EXPORT_LOG_FILE, "Done exporting languages for group - $groupId. " .
 				'Time taken - ' . ( $langEndTime - $langStartTime ) );
 		}
 
