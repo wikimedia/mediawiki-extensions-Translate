@@ -274,7 +274,8 @@ abstract class MessageIndex {
 	 * @param array $diff
 	 */
 	protected function clearMessageGroupStats( array $diff ) {
-		MessageGroupStats::clearGroup( $diff['values'] );
+		$job = MessageGroupStatsRebuildJob::newRefreshGroupsJob( $diff['values'] );
+		JobQueueGroup::singleton()->push( $job );
 
 		foreach ( $diff['keys'] as $keys ) {
 			foreach ( $keys as $key => $data ) {
