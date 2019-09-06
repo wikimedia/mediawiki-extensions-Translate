@@ -420,7 +420,6 @@
 				"ext.translate.dropdownmenu",
 				"ext.translate.hooks",
 				"ext.translate.storage",
-				"jquery.accessKeyLabel",
 				"jquery.autosize",
 				"jquery.makeCollapsible",
 				"jquery.textSelection",
