@@ -89,11 +89,13 @@
 	 */
 	function doCategories( pageContent ) {
 		return getNamespaceAliases( 14 ).then( function ( aliases ) {
-			var i, aliasList, categoryRegex;
+			var i, aliasList, categoryRegex,
+				// Support: MW 1.32
+				escapeRegExp = mw.util.escapeRegExp || mw.RegExp.escape;
 
 			aliases.push( 'category' );
 			for ( i = 0; i < aliases.length; i++ ) {
-				aliases[ i ] = mw.RegExp.escape( aliases[ i ] );
+				aliases[ i ] = escapeRegExp( aliases[ i ] );
 			}
 
 			aliasList = aliases.join( '|' );
