@@ -69,7 +69,9 @@ class MediaWikiPluralValidator implements Validator {
 			if ( $provided > $allowed ) {
 				$notices[$key][] = [
 					[ 'plural', 'forms', $key, $code ],
-					'translate-checks-plural-forms', $provided, $allowed
+					'translate-checks-plural-forms',
+					[ 'COUNT', $provided ],
+					[ 'COUNT', $allowed ],
 				];
 			}
 
