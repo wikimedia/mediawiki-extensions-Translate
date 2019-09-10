@@ -51,14 +51,33 @@ root:
           _prototype:
             _type: text
     INSERTABLES:
-      _type: array
-      _children:
-        class: # for supplying one class
-          _type: text
-        classes: # for supplying multiple
+      _type: choice
+      _choices:
+        1:
           _type: prototype
           _prototype:
-            _type: text
+            _type: array
+            _children:
+              class:
+                _type: text
+              params:
+                _type: choice
+                _choices:
+                  1:
+                    _type: array
+                    _children: []
+                    _ignore_extra_keys: true
+                  2:
+                    _type: text
+        2:
+          _type: array
+          _children:
+            class: # for supplying one class
+              _type: text
+            classes: # for supplying multiple
+              _type: prototype
+              _prototype:
+                _type: text
     VALIDATORS:
       _type: prototype
       _prototype:
