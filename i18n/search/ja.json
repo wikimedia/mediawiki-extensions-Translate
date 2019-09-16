@@ -27,7 +27,9 @@
 	"tux-sst-outdated": "$1 からの翻訳が古くなっています",
 	"tux-sst-ellipsis-untranslated": "翻訳されていません",
 	"tux-sst-ellipsis-outdated": "更新されていない翻訳",
+	"tux-sst-link-all-match": "すべての検索語を含める。",
 	"tux-sst-match-message": "検索ワードのいずれかに一致する翻訳を表示しています。 $1",
 	"tux-sst-case-sensitive": "大文字・小文字を区別",
+	"tux-sst-error-offset": "これ以上の検索結果は表示できません。検索範囲を狭めてください。",
 	"tux-sst-error-language": "選択した言語はこの種の検索に使用できません。"
 }

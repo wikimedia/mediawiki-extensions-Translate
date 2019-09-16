@@ -102,6 +102,8 @@
 	"translate-checks-plural": "La definizione usa <nowiki>{{PLURAL:}}</nowiki> ma la traduzione no.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> è stato usato con {{PLURAL:$1|una forma|$1 forme}}, ma {{PLURAL:$2|è accettata solo una forma|sono accettate $2 forme}} (a parte le forme 0= e 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> contiene una forma duplicata. <nowiki>{{PLURAL:$1|città|città}}</nowiki> dovrebbe essere scritto come <nowiki>{{PLURAL:$1|città}}</nowiki>.",
+	"translate-checks-gettext-plural-missing": "Questa traduzione deve avere <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
+	"translate-checks-gettext-plural-unsupported": "Questo messaggio non supporta <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-pagename": "Namespace cambiato rispetto alla definizione",
 	"translate-checks-format": "Questa traduzione non segue la definizione o ha una sintassi non valida: $1",
 	"translate-checks-escape": "I seguenti cambi di codice potrebbero essere accidentali: <strong>$1</strong>",

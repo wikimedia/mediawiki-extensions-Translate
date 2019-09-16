@@ -84,6 +84,8 @@
 	"translate-checks-xhtml": "দয়া করে নিম্নলিখিত {{PLURAL:$2|ট্যাগ|ট্যাগগুলি}} সঠিকটি দিয়ে প্রতিস্থাপন করুন:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "সংজ্ঞা <nowiki>{{PLURAL:}}</nowiki> ব্যবহার করেছে কিন্তু অনুবাদ তা করে নি।",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki>-এর শেষে অনুরূপ ফরম রয়েছে। <nowiki>{{PLURAL:$1|ভেড়া|ভেড়া}}</nowiki> কে <nowiki>{{PLURAL:$1|ভেড়া}}</nowiki> হিসাবে লিখতে হবে।",
+	"translate-checks-gettext-plural-missing": "এই অনুবাদে অবশ্যই <nowiki>{{PLURAL:GETTEXT|}}</nowiki> থাকতে হবে।",
+	"translate-checks-gettext-plural-unsupported": "এই বার্তা <nowiki>{{PLURAL:GETTEXT|}}</nowiki> সমর্থন করে না।",
 	"translate-checks-parametersnotequal": "অনুবাদে ব্যবহৃত প্যারামিটার হচ্ছে {{PLURAL:$1|$1}}টি; হওয়া উচিত {{PLURAL:$2|$2}}টি।",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> সঠিক নয়।",
 	"translate-checks-fudforum-syntax": "এই প্রকল্পে <nowiki>$2</nowiki>-এর পরিবর্তে <nowiki>$1</nowiki> ব্যবহার করুন।",

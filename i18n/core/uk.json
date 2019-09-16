@@ -107,6 +107,8 @@
 	"translate-checks-plural": "Оригінал використовує <nowiki>{{PLURAL:}}</nowiki>, а переклад — ні.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> було використано з {{PLURAL:$1|1=одною формою|$1 формами}}, але {{PLURAL:$2|1=лише одна форма|$2 форм}} підтримується (за винятком форм 0= та 1=).",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> має дублікати форм у кінці. <nowiki>{{PLURAL:$1|1=метро|метро}}</nowiki> повинно бути записано як <nowiki>{{PLURAL:$1|метро}}</nowiki>.",
+	"translate-checks-gettext-plural-missing": "Цей переклад має містити <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
+	"translate-checks-gettext-plural-unsupported": "Цей переклад не підтримує <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-pagename": "Змінилося визначення простору назв",
 	"translate-checks-format": "Цей переклад не відповідає визначенню або має неправильний синтаксис: $1",
 	"translate-checks-escape": "Ці екрануючі послідовності можуть бути випадкові: <strong>$1</strong>",

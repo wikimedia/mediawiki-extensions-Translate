@@ -20,6 +20,11 @@
 	"tux-sst-prev": "‹ پويون",
 	"tux-sst-default": "ترجما",
 	"tux-sst-translated": "$1 مان ترجما",
+	"tux-sst-untranslated": "$1 مان ترجمو نہ ھجي",
+	"tux-sst-outdated": "$1 مان مدي خارج ترجما",
+	"tux-sst-ellipsis-untranslated": "ترجمو نہ ھجي",
 	"tux-sst-ellipsis-outdated": "مدي-خارج ترجما",
-	"tux-sst-link-all-match": "ڳولا جا سڀ لفظ گھرجن ٿا."
+	"tux-sst-link-all-match": "ڳولا جا سڀ لفظ گھرجن ٿا.",
+	"tux-sst-case-sensitive": "شڪل حساس",
+	"tux-sst-error-language": "ھي ٻولي ھن قسم جي ڳولا جي لاءِ استعمال نٿي ڪري سگھجي."
 }

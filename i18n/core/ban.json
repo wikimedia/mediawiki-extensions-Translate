@@ -5,5 +5,18 @@
 			"NoiX180"
 		]
 	},
-	"translate-documentation-language": "Dokuméntasi séwalapatra"
+	"translate-taction-proofread": "Turéksa",
+	"translate-page-language": "Basa",
+	"translate-page-showing-all": "Ngédéngang $1 {{PLURAL:$1|séwala}}.",
+	"translate-next": "Kaca salanturnyané",
+	"translate-prev": "Kaca sadurungnyané",
+	"translate-page-description-legend": "Pidarta indik golongané",
+	"translate-page-edit": "uah",
+	"translate-edit-title": "Uah \"$1\"",
+	"translate-magic-words": "Kruna sakti",
+	"translate-stats-edits": "Uahan",
+	"translate-stats-reviews": "Turéksan",
+	"translate-stats-reviewers": "Sang nuréksa",
+	"translate-translations-fieldset-title": "Séwala",
+	"translate-documentation-language": "Dokuméntasi séwala"
 }

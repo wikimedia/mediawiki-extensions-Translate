@@ -36,6 +36,8 @@
 	"translate-checks-parameters": "Atencez! La sequanta {{PLURAL:$2|parametro|parametri}} ne uzesis:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "Existas neegala quanto di {{PLURAL:$2|parentezo|parentezi}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "La sequanta {{PLURAL:$2|ligilo|$2 ligili}} havas problemi:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-gettext-plural-missing": "Ca tradukuro mustas havar <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
+	"translate-checks-gettext-plural-unsupported": "Ca mesajo ne aceptas <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-pref-nonewsletter": "Ne sendez \"newsletters\" a me per e-posto",
 	"translate-pref-editassistlang-help": "Listo pri kodexo di lingui separata per komo (,).\nLa tradukuro di ula mesajo en ica lingui montresas dum ke vu tradukas.\nLa listo 'default' pri lingui dependas de vua propra linguo.",
 	"translate-pref-editassistlang-bad": "Linguala kodexo nevalida che la listo:\n<nowiki>$1</nowiki>.",
@@ -122,6 +124,7 @@
 	"tux-editor-outdated-notice": "Ica tradukuro posible esas obsoleta.",
 	"tux-editor-outdated-notice-diff-link": "Montrez diferi",
 	"tux-editor-doc-editor-cancel": "Anular",
+	"tux-messagetable-more-messages": "$1 plusa {{PLURAL:$1|mesajo|mesaji}}",
 	"tux-messagetable-loading-messages": "Karganta {{PLURAL:$1|mesajo|mesaji}}...",
 	"tux-message-filter-placeholder": "Filtrez listo",
 	"tux-empty-list-translated-action": "Tradukar",
@@ -130,5 +133,6 @@
 	"tux-empty-list-other-link": "Montrez omna mesaji",
 	"tux-editor-message-tools-show-editor": "Montrar en la redakto-buxo dil Wiki",
 	"tux-editor-message-tools-translations": "Omna tradukuri",
-	"tux-editor-message-tools-linktothis": "Ligilo ad ica mesajo"
+	"tux-editor-message-tools-linktothis": "Ligilo ad ica mesajo",
+	"translate-statsbar-tooltip": "$1% tradukita, $2% revizita"
 }

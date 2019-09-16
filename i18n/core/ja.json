@@ -106,6 +106,8 @@
 	"translate-checks-plural": "定義に<nowiki>{{PLURAL:}}</nowiki>がありますが、翻訳にはありません。",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki> で {{PLURAL:$1|$1 形式}}を指定しましたが、{{PLURAL:$2|1 形式のみ|$2 形式}}に対応しています (0= 形式および 1= 形式を除く)。",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> での指定が重複しています。<nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> であれば <nowiki>{{PLURAL:$1|sheep}}</nowiki> と書いてください。",
+	"translate-checks-gettext-plural-missing": "この翻訳には<nowiki>{{PLURAL:GETTEXT|}}</nowiki>が必要です。",
+	"translate-checks-gettext-plural-unsupported": "このメッセージは<nowiki>{{PLURAL:GETTEXT|}}</nowiki>をサポートしていません。",
 	"translate-checks-pagename": "名前空間が変更されており、定義と異なっています",
 	"translate-checks-format": "この翻訳は定義に沿っていない、または無効な構文を使用しています: $1",
 	"translate-checks-escape": "以下のエスケープは偶発的なものかもしれません: <strong>$1</strong>",
