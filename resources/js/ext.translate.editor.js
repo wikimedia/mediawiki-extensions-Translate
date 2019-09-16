@@ -245,11 +245,10 @@
 					translateEditor.message.translation = translation;
 					translateEditor.onSaveSuccess();
 				// Handle errors
-				// BC MW < 1.35
+				// BC MW < 1.34
 				} else if ( editResp.spamblacklist ) {
-					// @todo Show exactly which blacklisted URL triggered it
 					translateEditor.onSaveFail( mw.msg( 'spamprotectiontext' ) );
-				// BC MW < 1.35
+				// BC MW < 1.34
 				} else if ( editResp.info &&
 					editResp.info.indexOf( 'Hit AbuseFilter:' ) === 0 &&
 					editResp.warning
