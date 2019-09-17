@@ -7,7 +7,7 @@
 use MediaWiki\Extensions\Translate\Utilities\GettextPlural;
 
 /**
- * @coversDefaultClass MediaWiki\Extensions\Translate\Utilities\GettextPlural
+ * @coversDefaultClass \MediaWiki\Extensions\Translate\Utilities\GettextPlural
 */
 class GettextPluralTest extends MediaWikiUnitTestCase {
 	/**

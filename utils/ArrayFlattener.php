@@ -179,7 +179,7 @@ class ArrayFlattener {
 	}
 
 	/**
-	 * Converts the MediaWiki plural syntax to array of CLDR style plurals
+	 * Converts the plural syntax to array of CLDR style plurals
 	 *
 	 * @param string $key Message key prefix
 	 * @param string $message The plural string

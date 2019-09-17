@@ -55,8 +55,8 @@ class GettextPluralValidator implements Validator {
 			return;
 		}
 
-		list( $code, $data ) = $this->pluralFormCountCheck( $translation, $expectedPluralCount );
-		if ( $code === 'invalid-count' ) {
+		list( $msgcode, $data ) = $this->pluralFormCountCheck( $translation, $expectedPluralCount );
+		if ( $msgcode === 'invalid-count' ) {
 			$notices[$key][] = [
 				// Using same check keys as MediaWikiPluralValidator
 				[ 'plural', 'forms', $key, $code ],

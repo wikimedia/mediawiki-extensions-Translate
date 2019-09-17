@@ -239,6 +239,8 @@ class MessageChecker {
 						$message[] = $lang->formatNum( $value );
 					} elseif ( $type === 'PARAMS' ) {
 						$message[] = $lang->commaList( $value );
+					} elseif ( $type === 'PLAIN' ) {
+						$message[] = wfEscapeWikiText( $value );
 					} else {
 						throw new MWException( "Unknown type $type" );
 					}
