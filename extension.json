@@ -203,6 +203,7 @@
 		"StringMangler": "stringmangler/StringMangler.php",
 		"StringMatcher": "stringmangler/StringMatcher.php",
 		"SupportAid": "translationaids/SupportAid.php",
+		"RevisionMessage": "Message.php",
 		"ThinMessage": "Message.php",
 		"TMessage": "Message.php",
 		"TPException": "tag/TPException.php",

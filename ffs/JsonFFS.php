@@ -99,7 +99,7 @@ class JsonFFS extends SimpleFFS {
 		$mangler = $this->group->getMangler();
 
 		/**
-		 * @var $m ThinMessage
+		 * @var $m TMessage
 		 */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();

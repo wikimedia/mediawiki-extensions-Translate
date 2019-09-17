@@ -91,7 +91,7 @@ class AmdFFS extends SimpleFFS {
 		$messages = [];
 		$mangler = $this->group->getMangler();
 
-		/** @var ThinMessage $m */
+		/** @var TMessage $m */
 		foreach ( $collection as $key => $m ) {
 			$value = $m->translation();
 			if ( $value === null ) {

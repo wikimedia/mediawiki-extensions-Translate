@@ -8,6 +8,8 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Storage\RevisionRecord;
+use MediaWiki\Storage\SlotRecord;
 
 /**
  * Essentially random collection of helper functions, similar to GlobalFunctions.php.
@@ -75,44 +77,65 @@ class TranslateUtils {
 	 */
 	public static function getContents( $titles, $namespace ) {
 		$dbr = wfGetDB( DB_REPLICA );
+		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
+		$titleContents = [];
+		if ( is_callable( [ $revStore, 'newRevisionsFromBatch' ] ) ) {
+			$query = $revStore->getQueryInfo( [ 'page', 'user' ] );
+			$rows = $dbr->select(
+				$query['tables'],
+				$query['fields'],
+				[
+					'page_namespace' => $namespace,
+					'page_title' => $titles
+				],
+				__METHOD__,
+				[],
+				$query['joins'] + [ 'JOIN', 'page_latest=rev_id' ]
+			);
 
-		if ( class_exists( ActorMigration::class ) ) {
-			$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
+			$revisions = $revStore->newRevisionsFromBatch( $rows, [
+				'slots' => true,
+				'content' => true
+			] )->getValue();
+			foreach ( $rows as $row ) {
+				/** @var RevisionRecord|null $rev */
+				$rev = $revisions[$row->rev_id];
+				if ( $rev && $rev->getContent( SlotRecord::MAIN ) ) {
+					$titleContents[$row->page_title] = [
+						$rev->getContent( SlotRecord::MAIN )->getText(),
+						$row->rev_user_text
+					];
+				}
+			}
+			$rows->free();
 		} else {
-			$actorQuery = [
-				'tables' => [],
-				'fields' => [ 'rev_user_text' => 'rev_user_text' ],
-				'joins' => [],
-			];
+			// Pre 1.34 compatibility
+			$actorQuery = ActorMigration::newMigration()->getJoin( 'rev_user' );
+			$rows = $dbr->select( [ 'page', 'revision', 'text' ] + $actorQuery['tables'],
+				[
+					'page_title', 'old_text', 'old_flags',
+					'rev_user_text' => $actorQuery['fields']['rev_user_text']
+				],
+				[
+					'page_namespace' => $namespace,
+					'page_title' => $titles
+				],
+				__METHOD__,
+				[],
+				[
+					'revision' => [ 'JOIN', 'page_latest=rev_id' ],
+					'text' => [ 'JOIN', 'rev_text_id=old_id' ],
+				] + $actorQuery['joins']
+			);
+			foreach ( $rows as $row ) {
+				$titleContents[$row->page_title] = [
+					Revision::getRevisionText( $row ),
+					$row->rev_user_text
+				];
+			}
+			$rows->free();
 		}
-
-		$rows = $dbr->select( [ 'page', 'revision', 'text' ] + $actorQuery['tables'],
-			[
-				'page_title', 'old_text', 'old_flags',
-				'rev_user_text' => $actorQuery['fields']['rev_user_text']
-			],
-			[
-				'page_namespace' => $namespace,
-				'page_title' => $titles
-			],
-			__METHOD__,
-			[],
-			[
-				'revision' => [ 'JOIN', 'page_latest=rev_id' ],
-				'text' => [ 'JOIN', 'rev_text_id=old_id' ],
-			] + $actorQuery['joins']
-		);
-
-		$titles = [];
-		foreach ( $rows as $row ) {
-			$titles[$row->page_title] = [
-				Revision::getRevisionText( $row ),
-				$row->rev_user_text
-			];
-		}
-		$rows->free();
-
-		return $titles;
+		return $titleContents;
 	}
 
 	/**
