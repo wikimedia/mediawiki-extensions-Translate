@@ -109,6 +109,7 @@
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki> має дублікати форм у кінці. <nowiki>{{PLURAL:$1|1=метро|метро}}</nowiki> повинно бути записано як <nowiki>{{PLURAL:$1|метро}}</nowiki>.",
 	"translate-checks-gettext-plural-missing": "Цей переклад має містити <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
 	"translate-checks-gettext-plural-unsupported": "Цей переклад не підтримує <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
+	"translate-checks-gettext-plural-count": "<nowiki>{{PLURAL:GETTEXT|}}</nowiki> приймає тільки {{PLURAL:$1|одну форму множини|$1 форми множини|$1 форм множини}}. Зараз вказано {{PLURAL:$2|одну форму множини|$2 форми множини|$2 форм множини}}.",
 	"translate-checks-pagename": "Змінилося визначення простору назв",
 	"translate-checks-format": "Цей переклад не відповідає визначенню або має неправильний синтаксис: $1",
 	"translate-checks-escape": "Ці екрануючі послідовності можуть бути випадкові: <strong>$1</strong>",
