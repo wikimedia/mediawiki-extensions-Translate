@@ -226,7 +226,7 @@ class CommandlineExport extends Maintenance {
 				$tEndTime = microtime( true );
 				wfDebugLog( self::EXPORT_LOG_FILE,
 					"Finished calculating stats for group $groupId. Time: "
-						. ( $tEndTime - $tStartTime ) . ' ms' );
+						. ( $tEndTime - $tStartTime ) . ' secs.' );
 			}
 
 			// Filter out unchanged languages from requested languages
@@ -263,8 +263,13 @@ class CommandlineExport extends Maintenance {
 
 			$whitelist = $group->getTranslatableLanguages();
 
-			wfDebugLog( self::EXPORT_LOG_FILE, "Exporting languages for group - $groupId." );
+			wfDebugLog(
+				self::EXPORT_LOG_FILE, 'Exporting languages ('
+				. count( $langs ) . ") for group - $groupId."
+			);
+
 			$langStartTime = microtime( true );
+			$totalFFSWriteTime = 0;
 			foreach ( $langs as $lang ) {
 				// Do not export languages that are blacklisted (or not whitelisted).
 				// Also check that whitelist is not null, which means that all
@@ -288,7 +293,10 @@ class CommandlineExport extends Maintenance {
 					$collection->filter( 'fuzzy' );
 				}
 
+				$ffsStartTime = microtime( true );
 				$ffs->write( $collection );
+				$ffsEndTime = microtime( true );
+				$totalFFSWriteTime += ( $ffsEndTime - $ffsStartTime );
 
 				// Do post processing if requested.
 				if ( $definitionFile ) {
@@ -309,13 +317,17 @@ class CommandlineExport extends Maintenance {
 				}
 			}
 			$langEndTime = microtime( true );
+			wfDebugLog(
+				self::EXPORT_LOG_FILE,
+				"Time taken by FFS Write for group $groupId - " . $totalFFSWriteTime . ' secs.'
+			);
 			wfDebugLog( self::EXPORT_LOG_FILE, "Done exporting languages for group - $groupId. " .
-				'Time taken - ' . ( $langEndTime - $langStartTime ) );
+				'Time taken - ' . ( $langEndTime - $langStartTime ) . ' secs.' );
 		}
 
 		$endTime = microtime( true );
 		wfDebugLog( self::EXPORT_LOG_FILE, 'Finished export process for groups - ' .
-			$this->getOption( 'group' ) . '. Time: ' . ( $endTime - $startTime ) . ' ms' );
+			$this->getOption( 'group' ) . '. Time: ' . ( $endTime - $startTime ) . ' secs.' );
 	}
 }
 
