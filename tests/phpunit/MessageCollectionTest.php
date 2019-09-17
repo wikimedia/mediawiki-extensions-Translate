@@ -8,6 +8,7 @@
 /**
  * @group Database
  * @group medium
+ * @covers MessageCollection
  */
 class MessageCollectionTest extends MediaWikiTestCase {
 	protected function setUp() {
@@ -31,6 +32,8 @@ class MessageCollectionTest extends MediaWikiTestCase {
 		$messages = [
 			'translated' => 'bunny',
 			'untranslated' => 'fanny',
+			'changedtranslated_1' => 'bunny',
+			'changedtranslated_2' => 'fanny'
 		];
 		$list['test-group'] = new MockWikiMessageGroup( 'test-group', $messages );
 
@@ -39,7 +42,7 @@ class MessageCollectionTest extends MediaWikiTestCase {
 
 	public function testMessage() {
 		$user = $this->getTestSysop()->getUser();
-		$title = Title::newFromText( 'MediaWiki:translated/fi' );
+		$title = Title::newFromText( 'MediaWiki:Translated/fi' );
 		$page = WikiPage::factory( $title );
 		$content = ContentHandler::makeContent( 'pupuliini', $title );
 
@@ -80,5 +83,30 @@ class MessageCollectionTest extends MediaWikiTestCase {
 			'message status is untranslated'
 		);
 		$this->assertEquals( false, $untranslated->getProperty( 'revision' ) );
+	}
+
+	/**
+	 * @covers MessageCollection::filterChanged
+	 */
+	public function testFilterChanged() {
+		$this->assertTrue(
+			$this->editPage( 'MediaWiki:Changedtranslated_1/fi', 'pupuliini_1' )->isGood()
+		);
+		$this->assertTrue(
+			$this->editPage( 'MediaWiki:Changedtranslated_2/fi', 'pupuliini_modified' )->isGood()
+		);
+		$group = MessageGroups::getGroup( 'test-group' );
+		$collection = $group->initCollection( 'fi' );
+		$collection->loadTranslations();
+		$this->assertArrayHasKey( 'changedtranslated_1', $collection->keys() );
+		$this->assertArrayHasKey( 'changedtranslated_2', $collection->keys() );
+		// Trick message collection to think it was loaded from file.
+		$collection->setInFile( [
+			'changedtranslated_1' => 'pupuliini_1',
+			'changedtranslated_2' => 'pupuliini_2'
+		] );
+		$collection->filter( 'changed' );
+		$this->assertContains( 'changedtranslated_2', $collection->getMessageKeys() );
+		$this->assertNotContains( 'changedtranslated_1', $collection->getMessageKeys() );
 	}
 }
