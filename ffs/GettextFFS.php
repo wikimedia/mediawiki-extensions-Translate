@@ -406,7 +406,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 		return $output;
 	}
 
-	protected function doGettextHeader( MessageCollection $collection, $template, &$pluralCount ) {
+	protected function doGettextHeader( MessageCollection $collection, $template ) {
 		global $wgSitename;
 
 		$code = $collection->code;
