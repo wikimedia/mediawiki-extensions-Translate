@@ -9,6 +9,9 @@
  */
 
 // Standard boilerplate to define $IP
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Storage\SlotRecord;
+
 if ( getenv( 'MW_INSTALL_PATH' ) !== false ) {
 	$IP = getenv( 'MW_INSTALL_PATH' );
 } else {
@@ -35,24 +38,18 @@ class PopulateFuzzy extends Maintenance {
 		global $wgTranslateMessageNamespaces;
 
 		$namespace = $this->getOption( 'namespace', $wgTranslateMessageNamespaces );
-		if ( is_string( $namespace ) &&
-			!MWNamespace::exists( $namespace )
-		) {
-			$namespace = MWNamespace::getCanonicalIndex( $namespace );
-
+		$nsInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
+		if ( is_string( $namespace ) && !$nsInfo->exists( $namespace ) ) {
+			$namespace = $nsInfo->getCanonicalIndex( $namespace );
 			if ( $namespace === null ) {
 				$this->fatalError( 'Bad namespace' );
 			}
 		}
 
-		$dbw = wfGetDB( DB_MASTER );
-		$tables = [ 'page', 'text', 'revision' ];
-		$fields = [ 'page_id', 'page_title', 'page_namespace', 'rev_id', 'old_text', 'old_flags' ];
-		$conds = [
-			'page_latest = rev_id',
-			'old_id = rev_text_id',
-			'page_namespace' => $namespace,
-		];
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()
+			->getMaintenanceConnectionRef( DB_MASTER );
+		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
+		$queryInfo = $revStore->getQueryInfo( [ 'page' ] );
 
 		$limit = 100;
 		$offset = 0;
@@ -60,14 +57,34 @@ class PopulateFuzzy extends Maintenance {
 			$inserts = [];
 			$this->output( '.', 0 );
 			$options = [ 'LIMIT' => $limit, 'OFFSET' => $offset ];
-			$res = $dbw->select( $tables, $fields, $conds, __METHOD__, $options );
+			$res = $dbw->select(
+				$queryInfo['tables'],
+				$queryInfo['fields'],
+				[
+					'page_latest = rev_id',
+					'page_namespace' => $namespace,
+				],
+				__METHOD__,
+				$options,
+				$queryInfo['joins']
+			);
 
 			if ( !$res->numRows() ) {
 				break;
 			}
 
+			$slots = null;
+			if ( is_callable( [ $revStore, 'getContentBlobsForBatch' ] ) ) {
+				$slots = $revStore->getContentBlobsForBatch( $res, [ SlotRecord::MAIN ] )->getValue();
+			}
 			foreach ( $res as $r ) {
-				$text = Revision::getRevisionText( $r );
+				if ( isset( $slots[$r->rev_id] ) ) {
+					$text = $slots[$r->rev_id][SlotRecord::MAIN]->blob_data;
+				} else {
+					$text = $revStore->newRevisionFromRow( $r )
+						->getContent( SlotRecord::MAIN )
+						->getNativeData();
+				}
 				if ( strpos( $text, TRANSLATE_FUZZY ) !== false ) {
 					$inserts[] = [
 						'rt_page' => $r->page_id,

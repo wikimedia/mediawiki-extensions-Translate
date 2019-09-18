@@ -10,6 +10,9 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Storage\SlotRecord;
+
 /**
  * Class which encapsulates message importing. It scans for changes (new, changed, deleted),
  * displays them in pretty way with diffs and finally executes the actions the user choices.
@@ -471,38 +474,43 @@ class MessageWebImporter {
 	 */
 	public static function doFuzzy( $title, $message, $comment, $user, $editFlags = 0 ) {
 		$context = RequestContext::getMain();
+		$services = MediaWikiServices::getInstance();
 
 		if ( !$context->getUser()->isAllowed( 'translate-manage' ) ) {
 			return $context->msg( 'badaccess-group0' )->text();
 		}
-
-		$dbw = wfGetDB( DB_MASTER );
-
-		// Work on all subpages of base title.
-		$handle = new MessageHandle( $title );
-		$titleText = $handle->getKey();
-
-		$conds = [
-			'page_namespace' => $title->getNamespace(),
-			'page_latest=rev_id',
-			'rev_text_id=old_id',
-			'page_title' . $dbw->buildLike( "$titleText/", $dbw->anyString() ),
-		];
-
-		$rows = $dbw->select(
-			[ 'page', 'revision', 'text' ],
-			[ 'page_title', 'page_namespace', 'old_text', 'old_flags' ],
-			$conds,
-			__METHOD__
-		);
 
 		// Edit with fuzzybot if there is no user.
 		if ( !$user ) {
 			$user = FuzzyBot::getUser();
 		}
 
-		// Process all rows.
+		// Work on all subpages of base title.
+		$handle = new MessageHandle( $title );
+		$titleText = $handle->getKey();
+
+		$revStore = $services->getRevisionStore();
+		$queryInfo = $revStore->getQueryInfo( [ 'page' ] );
+		$dbw = $services->getDBLoadBalancer()->getConnectionRef( DB_MASTER );
+		$rows = $dbw->select(
+			$queryInfo['tables'],
+			$queryInfo['fields'],
+			[
+				'page_namespace' => $title->getNamespace(),
+				'page_latest=rev_id',
+				'page_title' . $dbw->buildLike( "$titleText/", $dbw->anyString() ),
+			],
+			__METHOD__,
+			[],
+			$queryInfo['joins']
+		);
+
 		$changed = [];
+		$slots = [];
+		if ( is_callable( [ $revStore, 'getContentBlobsForBatch' ] ) ) {
+			$slots = $revStore->getContentBlobsForBatch( $rows, [ SlotRecord::MAIN ] )->getValue();
+		}
+
 		foreach ( $rows as $row ) {
 			global $wgTranslateDocumentationLanguageCode;
 
@@ -514,9 +522,14 @@ class MessageWebImporter {
 			) {
 				// Use imported text, not database text.
 				$text = $message;
+			} elseif ( isset( $slots[$row->rev_id] ) ) {
+				$slot = $slots[$row->rev_id][SlotRecord::MAIN];
+				$text = self::makeTextFuzzy( $slot->blob_data );
 			} else {
-				$text = Revision::getRevisionText( $row );
-				$text = self::makeTextFuzzy( $text );
+				$text = self::makeTextFuzzy( $revStore->newRevisionFromRow( $row )
+					->getContent( SlotRecord::MAIN )
+					->getNativeData()
+				);
 			}
 
 			// Do actual import
