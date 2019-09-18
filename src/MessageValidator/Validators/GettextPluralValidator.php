@@ -99,6 +99,6 @@ class GettextPluralValidator implements Validator {
 			}
 		}
 
-		return [ 'ok' ];
+		return [ 'ok', [] ];
 	}
 }
