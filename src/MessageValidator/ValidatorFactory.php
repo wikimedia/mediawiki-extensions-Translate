@@ -34,8 +34,8 @@ class ValidatorFactory {
 		'InsertableRubyVariable' => InsertableRubyVariableValidator::class,
 		'MediaWikiMisc' => MediaWikiMiscValidator::class,
 		'MediaWikiPlural' => MediaWikiPluralValidator::class,
-		'NewlineMatch' => NewlineValidator::class,
-		'GettextNewlineMatch' => GettextNewlineValidator::class
+		'Newline' => NewlineValidator::class,
+		'GettextNewline' => GettextNewlineValidator::class
 	];
 
 	/**
