@@ -23,6 +23,12 @@ class GettextPlural {
 	 * @return string Empty string if no plural rule found
 	 */
 	public static function getPluralRule( $code ) {
+		global $wgTranslateDocumentationLanguageCode;
+
+		if ( $code === $wgTranslateDocumentationLanguageCode ) {
+			return 'nplurals=1; plural=0;';
+		}
+
 		$rulefile = __DIR__ . '/../../data/plural-gettext.txt';
 		$rules = file_get_contents( $rulefile );
 		foreach ( explode( "\n", $rules ) as $line ) {
@@ -179,7 +185,7 @@ class GettextPlural {
 			$form = $template;
 
 			// Loop over each plural markup instance and replace it with the plural form belonging
-			// to the curren index
+			// to the current index
 			foreach ( $instanceMap as $ph => $instanceForms ) {
 				// For missing forms, fall back to empty text.
 				// Extra forms are excluded because $formIndex < $expectedPluralCount
