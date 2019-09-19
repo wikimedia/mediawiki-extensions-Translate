@@ -10,7 +10,8 @@
 			"Siddhartha Ghai",
 			"NehalDaveND",
 			"संजीव कुमार",
-			"Sfic"
+			"Sfic",
+			"Nilesh shukla"
 		]
 	},
 	"translate": "अनुवाद",
@@ -54,6 +55,9 @@
 	"translate-magic-cm-save": "संजोयें",
 	"translate-magic-words": "जादूई शब्द",
 	"translate-magic-namespace": "नामस्थान नाम",
+	"translate-checks-gettext-plural-missing": "इस अनुवाद में <nowiki>{{PLURAL:GETTEXT|}}</nowiki> होना चाहिए।",
+	"translate-checks-gettext-plural-unsupported": "यह संदेश <nowiki>{{PLURAL:GETTEXT|}}</nowiki> का समर्थन नहीं करता है।",
+	"translate-checks-gettext-plural-count": "<nowiki>{{PLURAL:GETTEXT|}}</nowiki> बिलकुल $1 {{PLURAL:$1|plural form|plural forms}} स्वीकार करता है। वर्तमान में $2 {{PLURAL:$2|plural form is|plural forms are}} दिए गए हैं।",
 	"translate-pref-editassistlang": "सहायक भाषा:",
 	"prefs-translate": "अनुवाद विकल्प",
 	"right-translate-messagereview": "अनुवाद समीक्षा",

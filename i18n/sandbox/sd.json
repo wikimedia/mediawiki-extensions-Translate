@@ -14,7 +14,7 @@
 	"tsb-email-promoted-subject": "توھان ھاڻي {{SITENAME}} تي ترجميڪار آھيو",
 	"tsb-request-count": "$1 {{PLURAL:$1|درخواست|درخواستون}}",
 	"tsb-all-languages-button-label": "سڀ ٻوليون",
-	"tsb-search-requests": "درخواستون ڳوليو",
+	"tsb-search-requests": "اٽڪيل درخواستون ڳوليو",
 	"tsb-accept-button-label": "قبوليو",
 	"tsb-reject-button-label": "رد ڪريو",
 	"tsb-selected-count": "{{PLURAL:$1|$1 رڪن چونڊيل}}",
@@ -33,7 +33,7 @@
 	"translate-translationstash-skip-button-label": "ھڪ ٻيو آزمايو",
 	"tsb-limit-reached-title": "توھان جي ترجمن لاءِ مھرباني",
 	"tsb-no-requests-from-new-users": "نون رڪنن مان ڪي بہ درخواستون نہ آھن",
-	"tsb-create-user-page": "بنيادي واپرائيندڙ صفحو سرجيو",
+	"tsb-create-user-page": "بنيادي واپرائيندڙ صفحو سرجيو ويو",
 	"log-name-translatorsandbox": "ترجمي جي مشق پٽيءَ جو لاگ",
 	"logentry-translatorsandbox-promoted": "$1 {{GENDER:$2|ترقي ڏن}} $3 ڏانھن {{GENDER:$4|ترجميڪار}}",
 	"logentry-newusers-tsbpromoted": "مشق-پٽيءَ جي ترقيءَ سان واپرائيندڙ کاتو $3 {{GENDER:$2|کوليو ويو}}"
