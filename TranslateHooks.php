@@ -162,7 +162,7 @@ class TranslateHooks {
 
 			// Add transtag to page props for discovery
 			$wgHooks['PageContentSaveComplete'][] = 'PageTranslationHooks::addTranstag';
-			$wgHooks['RevisionInsertComplete'][] =
+			$wgHooks['RevisionRecordInserted'][] =
 				'PageTranslationHooks::updateTranstagOnNullRevisions';
 
 			// Register different ways to show language links

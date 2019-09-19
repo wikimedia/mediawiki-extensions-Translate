@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Storage\RevisionRecord;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -707,42 +709,25 @@ class PageTranslationHooks {
 	 * update the translation pages in the case, the non-text changes affect
 	 * the rendering of translation pages. I'm not aware of any such cases
 	 * at the moment.
-	 * Hook: RevisionInsertComplete
+	 * Hook: RevisionRecordInserted
 	 * @since 2012-05-08
-	 * @param Revision $rev
-	 * @param string $text
-	 * @param int $flags
+	 * @param RevisionRecord $rev
 	 * @return true
 	 */
-	public static function updateTranstagOnNullRevisions( Revision $rev, $text, $flags ) {
-		$title = $rev->getTitle();
+	public static function updateTranstagOnNullRevisions( RevisionRecord $rev ) {
+		$prevRev = MediaWikiServices::getInstance()->getRevisionLookup()
+			->getPreviousRevision( $rev );
 
-		$newRevId = $rev->getId();
-		$oldRevId = $rev->getParentId();
-		$newTextId = $rev->getTextId();
-
-		/* This hook doesn't provide any way to detech null revisions
-		 * without extra query */
-		$dbw = wfGetDB( DB_MASTER );
-		$table = 'revision';
-		$field = 'rev_text_id';
-		$conds = [
-			'rev_page' => $rev->getPage(),
-			'rev_id' => $oldRevId,
-		];
-		// FIXME: optimize away this query. Bug T38588.
-		$oldTextId = $dbw->selectField( $table, $field, $conds, __METHOD__ );
-
-		if ( (string)$newTextId !== (string)$oldTextId ) {
+		if ( !$prevRev || $prevRev->getSha1() !== $rev->getSha1() ) {
 			// Not a null revision, bail out.
 			return true;
 		}
 
+		$title = Title::newFromLinkTarget( $rev->getPageAsLinkTarget() );
 		$page = TranslatablePage::newFromTitle( $title );
-		if ( $page->getReadyTag() === $oldRevId ) {
-			$page->addReadyTag( $newRevId );
+		if ( $page->getReadyTag() === $prevRev->getId() ) {
+			$page->addReadyTag( $rev->getId() );
 		}
-
 		return true;
 	}
 

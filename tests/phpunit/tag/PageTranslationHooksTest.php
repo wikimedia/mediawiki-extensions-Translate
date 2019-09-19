@@ -7,6 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Storage\RevisionRecord;
+
 /**
  * @group Database
  * @group medium
@@ -142,5 +144,48 @@ class PageTranslationHooksTest extends MediaWikiTestCase {
 
 		$this->assertTrue( $newStatus->isOK(),
 			"translation with errors is saved if user with 'translate-manage' permission is translating." );
+	}
+
+	/**
+	 * @covers PageTranslationHooks::updateTranstagOnNullRevisions
+	 */
+	public function testTagNullRevision() {
+		$title = Title::newFromText( 'translated' );
+		$status = $this->editPage(
+			$title->getPrefixedDBkey(),
+			'<translate>Test text</translate>'
+		);
+		$this->assertTrue( $status->isGood(), 'Sanity: must create revision 1' );
+		/** @var RevisionRecord $rev1 */
+		$rev1 = $status->getValue()['revision-record'];
+
+		$translatablePage = TranslatablePage::newFromTitle( $title );
+		$this->assertEquals(
+			$rev1->getId(),
+			$translatablePage->getReadyTag(),
+			'Sanity: must tag revision 1 ready for translate'
+		);
+
+		$nullRev = WikiPage::newFromID( $title->getArticleID() )->insertProtectNullRevision(
+			'test comment',
+			[ 'edit' => 'sysop' ],
+			[ 'edit' => '20200101040404' ],
+			false,
+			'Testing'
+		);
+		$this->assertNotNull( $nullRev, 'Sanity: must create null revision' );
+		$this->assertEquals(
+			$translatablePage->getReadyTag(),
+			$nullRev->getId(),
+			'Must update ready tag for null revision'
+		);
+
+		$status = $this->editPage( $title->getPrefixedDBkey(), 'Modified test text' );
+		$this->assertTrue( $status->isGood(), 'Sanity: must create revision 2' );
+		$this->assertEquals(
+			$translatablePage->getReadyTag(),
+			$nullRev->getId(),
+			'Must not update ready tag for non-null revision'
+		);
 	}
 }
