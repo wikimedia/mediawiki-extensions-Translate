@@ -7,8 +7,6 @@
  * @license GPL-2.0-or-later
  */
 
-use MediaWiki\MediaWikiServices;
-
 /**
  * Overrides Special:Movepage to to allow renaming a page translation page and
  * all related translations and derivative pages.
@@ -112,7 +110,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			}
 		} else {
 			// Delegate... don't want to reimplement this
-			$sp = MediaWikiServices::getInstance()->getSpecialPageFactory()->getPage( 'Movepage' );
+			$sp = new MovePageForm();
 			$sp->execute( $par );
 		}
 	}
