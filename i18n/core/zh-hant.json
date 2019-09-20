@@ -103,6 +103,8 @@
 	"translate-checks-plural": "原文使用的 <nowiki>{{PLURAL:}}</nowiki> 並未被用於翻譯。",
 	"translate-checks-plural-forms": "共有 {{PLURAL:$2|1 種|$2 種}} 表達形式，但 <nowiki>{{PLURAL:}}</nowiki> 只使用了 {{PLURAL:$1|1 種|$1 種}} (不含 0= 和 1= 的形式)。",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki>在中有重複的表達形式，<nowiki>{{PLURAL:$1|sheep|sheep}}</nowiki> 應寫成 <nowiki>{{PLURAL:$1|sheep}}</nowiki>。",
+	"translate-checks-gettext-plural-missing": "此翻譯必須要有<nowiki>{{PLURAL:GETTEXT|}}</nowiki>。",
+	"translate-checks-gettext-plural-unsupported": "此訊息不支援<nowiki>{{PLURAL:GETTEXT|}}</nowiki>。",
 	"translate-checks-pagename": "命名空間與原文不符",
 	"translate-checks-format": "此翻譯未依照原文或有語法錯誤：$1",
 	"translate-checks-escape": "下列跳脫字元可能會導致錯誤：<strong>$1</strong>",

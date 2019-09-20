@@ -60,6 +60,7 @@
 	"translate-magic-words": "Burvju vārdi",
 	"translate-magic-namespace": "Vārdtelpu nosaukumi",
 	"translate-magic-notsaved": "Jūsu labojums netika saglabāts!",
+	"translate-magic-saved": "Tavas izmaiņas tika saglabātas.",
 	"translate-pref-nonewsletter": "Nevēlos pa e-pastu saņemt lapas jaunumus",
 	"translate-pref-editassistlang": "Palīgvalodas:",
 	"prefs-translate": "Tulkošanas uzstādījumi",
@@ -225,6 +226,7 @@
 	"tux-message-filter-placeholder": "Filtrēt sarakstu",
 	"tux-message-filter-advanced-button": "Izvērstā meklēšana",
 	"tux-message-filter-optional-messages-label": "Papildu ziņas",
+	"tux-empty-list-translated-guide": "Tu vari palīdzēt pārtulkot",
 	"tux-empty-list-translated-action": "Tulkot",
 	"tux-empty-no-messages-to-display": "Nav ziņu, ko parādīt.",
 	"tux-empty-list-other": "Nav nekā tulkojama",
@@ -236,6 +238,8 @@
 	"tux-editor-message-tools-history": "Vēsture",
 	"tux-editor-message-tools-delete": "Dzēst",
 	"tux-editor-message-tools-translations": "Visi tulkojumi",
+	"tux-editor-message-tools-linktothis": "Saite uz šo ziņojumu",
 	"tux-editor-loading": "Ielādē...",
-	"translate-ulsdep-title": "Konfigurācijas kļūda"
+	"translate-ulsdep-title": "Konfigurācijas kļūda",
+	"specialpages-group-translation": "Tulkojums"
 }
