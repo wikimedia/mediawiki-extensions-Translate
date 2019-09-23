@@ -66,6 +66,7 @@
 	"tpt-aggregategroup-update-cancel": "Odustani",
 	"log-name-pagetranslation": "Evidencija prevođenja stranica",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|označio|označila}} je $3 za prevođenje",
+	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|naišao|naišla}} je na problem pri premještanju stranice $3 na $4",
 	"logentry-pagetranslation-deletelok": "$1 {{GENDER:$2|pobrisao|pobrisala}} je prevodivu stranicu $3",
 	"logentry-pagetranslation-encourage": "$1 {{GENDER:$2|ohrabrio je|ohrabrila je|ohrabruje}} prevođenje stranice $3",
 	"logentry-pagetranslation-discourage": "$1 {{GENDER:$2|obeshrabrio je|obeshrabrila je|obeshrabruje}} prevođenje stranice $3",

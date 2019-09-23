@@ -34,7 +34,8 @@
 			"Vlad5250",
 			"Diralik",
 			"Movses",
-			"Valencia212"
+			"Valencia212",
+			"Katunchik"
 		]
 	},
 	"translate": "Перевод",
@@ -125,6 +126,10 @@
 	"translate-checks-parametersnotequal": "Число параметров — $1, а {{PLURAL:$2|1=должен|должно}} быть — $2.",
 	"translate-checks-malformed": "<nowiki>$1</nowiki> некорректен.",
 	"translate-checks-fudforum-syntax": "Использовать в этом проекте <nowiki>$1</nowiki> вместо <nowiki>$2</nowiki>.",
+	"translate-checks-newline-missing-start": "{{PLURAL:$1|Пропущен|Пропущено}} $1 {{PLURAL:$1|символ|символов}} в новой строке в начале перевода.",
+	"translate-checks-newline-missing-end": "{{PLURAL:$1|Пропущен|Пропущено}} $1 {{PLURAL:$1|символ|символов}} в новой строке в конце перевода.",
+	"translate-checks-newline-extra-start": "{{PLURAL:$1|Добавлен|Добавлено}} $1 {{PLURAL:$1|символ|символов}} в  дополнительной новой строке в начале перевода.",
+	"translate-checks-newline-extra-end": "{{PLURAL:$1|Добавлен|Добавлено}} $1 {{PLURAL:$1|символ|символов}} в  дополнительной новой строке в конце перевода.",
 	"translate-pref-nonewsletter": "Не отправлять мне информационный бюллетень по электронной почте",
 	"translate-pref-editassistlang": "Вспомогательные языки:",
 	"prefs-translate": "Настройки перевода",
