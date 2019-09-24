@@ -139,15 +139,15 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	/**
 	 * Returns list of available message keys. This is affected by filtering.
-	 * @return array List of database keys indexed by display keys.
+	 * @return array List of database keys indexed by display keys (TitleValue).
 	 */
 	public function keys() {
 		return $this->keys;
 	}
 
 	/**
-	 * Returns list of titles of messages that are used in this collection after filtering.
-	 * @return Title[]
+	 * Returns list of TitleValues of messages that are used in this collection after filtering.
+	 * @return TitleValue[]
 	 * @since 2011-12-28
 	 */
 	public function getTitles() {
@@ -603,18 +603,13 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 */
 	protected function fixKeys() {
 		$newkeys = [];
-		// array( namespace, pagename )
-		$pages = $this->definitions->getPages();
-		$code = $this->code;
 
-		foreach ( $pages as $key => $page ) {
-			list( $namespace, $pagename ) = $page;
-			$title = Title::makeTitleSafe( $namespace, "$pagename/$code" );
-			if ( !$title ) {
-				wfWarn( "Invalid title $namespace:$pagename/$code" );
-				continue;
-			}
-			$newkeys[$key] = $title;
+		$pages = $this->definitions->getPages();
+		foreach ( $pages as $key => $baseTitle ) {
+			$newkeys[$key] = new TitleValue(
+				$baseTitle->getNamespace(),
+				$baseTitle->getDBkey() . '/' . $this->code
+			);
 		}
 
 		return $newkeys;
@@ -784,7 +779,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		$map = [];
 		/**
-		 * @var Title $title
+		 * @var TitleValue $title
 		 */
 		foreach ( $this->keys as $mkey => $title ) {
 			$map[$title->getNamespace()][$title->getDBkey()] = $mkey;
@@ -971,6 +966,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 class MessageDefinitions {
 	protected $namespace;
 	protected $messages;
+	protected $pages;
 
 	public function __construct( array $messages, $namespace = false ) {
 		$this->namespace = $namespace;
@@ -982,20 +978,34 @@ class MessageDefinitions {
 	}
 
 	/**
-	 * @return array[] List of [ int $namespaceId, string $pageName ]
+	 * @return Title[] List of title indexed by message key.
 	 */
 	public function getPages() {
 		$namespace = $this->namespace;
+		if ( $this->pages !== null ) {
+			return $this->pages;
+		}
+
 		$pages = [];
 		foreach ( array_keys( $this->messages ) as $key ) {
 			if ( $namespace === false ) {
 				// pages are in format ex. "8:jan"
-				$pages[$key] = explode( ':', $key, 2 );
+				list( $tns, $tkey ) = explode( ':', $key, 2 );
+				$title = Title::makeTitleSafe( $tns, $tkey );
 			} else {
-				$pages[$key] = [ $namespace, $key ];
+				$title = Title::makeTitleSafe( $namespace, $key );
 			}
+
+			if ( !$title ) {
+				wfWarn( "Invalid title ($namespace:)$key" );
+				continue;
+			}
+
+			$pages[$key] = $title;
 		}
 
-		return $pages;
+		$this->pages = $pages;
+
+		return $this->pages;
 	}
 }

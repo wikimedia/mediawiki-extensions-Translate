@@ -135,7 +135,9 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 		$props = array_flip( $params['prop'] );
 
 		/** @var Title $title */
-		foreach ( $messages->keys() as $mkey => $title ) {
+		foreach ( $messages->keys() as $mkey => $titleValue ) {
+			$title = Title::newFromLinkTarget( $titleValue );
+
 			if ( is_null( $resultPageSet ) ) {
 				$data = $this->extractMessageData( $result, $props, $messages[$mkey] );
 				$data['title'] = $title->getPrefixedText();

@@ -123,7 +123,9 @@ class CrossLanguageTranslationSearchQuery {
 			$collection->loadTranslations();
 		}
 
-		foreach ( $collection->keys() as $mkey => $title ) {
+		foreach ( $collection->keys() as $mkey => $titleValue ) {
+			$title = Title::newFromLinkTarget( $titleValue );
+
 			$result = [];
 			$result['content'] = $messages[$mkey];
 			if ( $filter === 'translated' || $filter === 'fuzzy' ) {

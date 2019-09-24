@@ -171,7 +171,8 @@ class TTMServerBootstrap extends Maintenance {
 		$server->beginBatch();
 
 		$inserts = [];
-		foreach ( $collection->keys() as $mkey => $title ) {
+		foreach ( $collection->keys() as $mkey => $titleValue ) {
+			$title = Title::newFromLinkTarget( $titleValue );
 			$handle = new MessageHandle( $title );
 			$inserts[] = [ $handle, $sourceLanguage, $collection[$mkey]->definition() ];
 		}
@@ -195,7 +196,8 @@ class TTMServerBootstrap extends Maintenance {
 			$collection->filter( 'translated', false );
 			$collection->loadTranslations();
 
-			foreach ( $collection->keys() as $mkey => $title ) {
+			foreach ( $collection->keys() as $mkey => $titleValue ) {
+				$title = Title::newFromLinkTarget( $titleValue );
 				$handle = new MessageHandle( $title );
 				$inserts[] = [ $handle, $sourceLanguage, $collection[$mkey]->translation() ];
 			}
