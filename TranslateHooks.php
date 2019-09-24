@@ -892,7 +892,13 @@ class TranslateHooks {
 			return true;
 		}
 
-		$text = $content->getText();
+		if ( method_exists( $content, 'getText' ) ) {
+			$text = $content->getText();
+		} else {
+			// Pre 1.33 compatibility
+			$text = $content->getNativeData();
+		}
+
 		$title = $context->getTitle();
 		$handle = new MessageHandle( $title );
 
