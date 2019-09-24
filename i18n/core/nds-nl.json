@@ -30,6 +30,10 @@
 	"translate-documentation-language": "Berichtbeskryving",
 	"translate-searchprofile": "Oaversettingen",
 	"tux-tab-untranslated": "Neet oaversetted",
+	"tux-tab-outdated": "Verolderd",
+	"tux-tab-translated": "Oaversetted",
+	"tux-status-fuzzy": "Verolderd",
+	"tux-status-translated": "Oaversetted",
 	"tux-editor-editsummary-placeholder": "Optionele samenvatting",
 	"tux-editor-skip-button-label": "Oaverslån en volgende",
 	"tux-editor-confirm-button-label": "Oaversetting bevästigen",
@@ -37,5 +41,6 @@
 	"tux-editor-translate-mode": "Lyste",
 	"tux-editor-page-mode": "Syde",
 	"tux-editor-outdated-notice": "Disse oaversetting müt möägelik bywarked wörden.",
-	"tux-editor-outdated-notice-diff-link": "Verskillen bekyken"
+	"tux-editor-outdated-notice-diff-link": "Verskillen bekyken",
+	"tux-message-filter-placeholder": "Lyste filteren"
 }

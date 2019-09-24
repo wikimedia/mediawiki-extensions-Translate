@@ -96,6 +96,8 @@
 	"translate-checks-plural": "메시지 원문에는 <nowiki>{{PLURAL:}}</nowiki>을 사용하지만 번역문에서는 그렇지 않습니다.",
 	"translate-checks-plural-forms": "<nowiki>{{PLURAL:}}</nowiki>은 {{PLURAL:$1|양식 하나|양식 $1개}}에 주었지만 {{PLURAL:$2|양식 하나만|양식 $2개를}} 지원합니다. (0= 과 1= 양식 제외)",
 	"translate-checks-plural-dupe": "<nowiki>{{PLURAL:}}</nowiki>은 끝에서 양식이 중복했습니다. <nowiki>{{PLURAL:$1|양|양}}</nowiki>은 <nowiki>{{PLURAL:$1|양}}</nowiki>으로 적어야 합니다.",
+	"translate-checks-gettext-plural-missing": "이 번역에는 <nowiki>{{PLURAL:GETTEXT|}}</nowiki>가 필수입니다.",
+	"translate-checks-gettext-plural-unsupported": "이 메시지는 <nowiki>{{PLURAL:GETTEXT|}}</nowiki>를 지원하지 않습니다.",
 	"translate-checks-pagename": "이름공간이 정의로부터 바뀌었습니다",
 	"translate-checks-format": "이 번역은 정의를 따르지 않거나 잘못된 구문입니다: $1",
 	"translate-checks-escape": "다음의 탈출은 실수였을 수 있습니다: <strong>$1</strong>",
