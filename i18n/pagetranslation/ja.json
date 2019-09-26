@@ -11,7 +11,8 @@
 			"ネイ",
 			"Afaz",
 			"Yusuke1109",
-			"Omotecho"
+			"Omotecho",
+			"Takot"
 		]
 	},
 	"pagetranslation": "ページ翻訳",
@@ -79,7 +80,7 @@
 	"tpt-discouraged-language-force-header": "このページは$1には翻訳できません。",
 	"tpt-discouraged-language-force-content": "翻訳管理者によってこのページの翻訳は$1のみに限定されました。",
 	"tpt-discouraged-language-header": "このページでは$1への翻訳は優先課題ではありません。",
-	"tpt-discouraged-language-content": "翻訳管理者によって翻訳作業は$1に制限されています。",
+	"tpt-discouraged-language-content": "翻訳管理者は、翻訳作業は$1に注力すべきだと考えています。",
 	"tpt-discouraged-language-force": "<strong>このページは $2 に翻訳できません。</strong>\n\n翻訳管理者がこのページの翻訳先言語を $3 のみに制限しています。",
 	"tpt-discouraged-language": "<strong>このページの $2 への翻訳は重要ではありません。</strong>\n翻訳管理者が $3 への翻訳作業に重点を置くことを決めました。",
 	"tpt-discouraged-language-reason": "理由: $1",
