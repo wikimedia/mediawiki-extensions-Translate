@@ -817,26 +817,29 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$messages = [];
 		$definitions = $this->definitions->getDefinitions();
 		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
-		if ( is_callable( [ $revStore, 'newRevisionsFromBatch' ] ) ) {
+		if ( is_callable( [ $revStore, 'getContentBlobsForBatch' ] ) ) {
 			foreach ( array_keys( $this->keys ) as $mkey ) {
-				$messages[$mkey] = new RevisionMessage( $mkey, $definitions[$mkey] );
+				$messages[$mkey] = new ThinMessage( $mkey, $definitions[$mkey] );
 			}
 			if ( $this->dbData !== null ) {
-				$revisions = $revStore->newRevisionsFromBatch( $this->dbData, [
-					'slots' => [ SlotRecord::MAIN ],
-					'content' => true
-				] )->getValue();
+				$slotRows = $revStore->getContentBlobsForBatch( $this->dbData, [ SlotRecord::MAIN ] )
+					->getValue();
 				foreach ( $this->dbData as $row ) {
 					$mkey = $this->rowToKey( $row );
 					if ( !isset( $messages[$mkey] ) ) {
 						continue;
 					}
-					$messages[$mkey]->setRevision( $revisions[$row->rev_id] );
+					$messages[$mkey]->setRow( $row );
 					$messages[$mkey]->setProperty( 'revision', $row->page_latest );
+
+					if ( isset( $slotRows[$row->rev_id][SlotRecord::MAIN] ) ) {
+						$slot = $slotRows[$row->rev_id][SlotRecord::MAIN];
+						$messages[$mkey]->setTranslation( $slot->blob_data );
+					}
 				}
 			}
 		} else {
-			// Pre 1.34 compatibility
+			// Pre MW 1.34 compatibility
 			foreach ( array_keys( $this->keys ) as $mkey ) {
 				$messages[$mkey] = new ThinMessage( $mkey, $definitions[$mkey] );
 			}

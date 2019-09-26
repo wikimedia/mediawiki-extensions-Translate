@@ -1,16 +1,12 @@
 <?php
 /**
- * Classes for message objects TMessage, ThinMessage and RevisionMessage.
+ * Classes for message objects TMessage, ThinMessage and FatMessage.
  *
  * @file
  * @author Niklas Laxström
  * @copyright Copyright © 2008-2010, Niklas Laxström
  * @license GPL-2.0-or-later
  */
-
-use MediaWiki\MediaWikiServices;
-use MediaWiki\Storage\RevisionRecord;
-use MediaWiki\Storage\SlotRecord;
 
 /**
  * Interface for message objects used by MessageCollection.
@@ -132,10 +128,6 @@ abstract class TMessage {
  * %Message object which is based on database result row. Hence the name thin.
  * Needs fields rev_user_text and those that are needed for loading revision
  * text.
- * @deprecated 2019.10 Use RevisionMessage instead.
- * With MCR using plain DB rows for accessing revision text in batches is inefficient,
- * so the revisions with pre-fetched content should be constructed using
- * RevisionStore::newRevisionsFromBatch that's available in MW Core 1.34+
  */
 class ThinMessage extends TMessage {
 	// This maps properties to fields in the database result row
@@ -149,6 +141,9 @@ class ThinMessage extends TMessage {
 	 */
 	protected $row;
 
+	/** @var string Stored translation. */
+	protected $translation;
+
 	/**
 	 * Set the database row this message is based on.
 	 * @param array $row Database Result Row
@@ -157,25 +152,25 @@ class ThinMessage extends TMessage {
 		$this->row = $row;
 	}
 
+	/**
+	 * Set the current translation of this message.
+	 * @param string $text
+	 */
+	public function setTranslation( $text ) {
+		$this->translation = $text;
+	}
+
 	public function translation() {
 		if ( !isset( $this->row ) ) {
 			return $this->infile();
 		}
 
-		global $wgMultiContentRevisionSchemaMigrationStage;
-		if ( $wgMultiContentRevisionSchemaMigrationStage & SCHEMA_COMPAT_WRITE_OLD ) {
-			return Revision::getRevisionText( $this->row );
-		} else {
-			// Technically this should never happen since this class is deprecated and only
-			// used when RevisionStore::newRevisionsFromBatch is not yet available in MW core,
-			// (pre 1.34) and SCHEMA_COMPAT_WRITE_OLD was not removed yet in that release.
-			// Just in case it does we provide a sensible fallback, but with MCR-enabled schema
-			// this will be extremely slow.
-			return MediaWikiServices::getInstance()->getRevisionStore()
-				->newRevisionFromRow( $this->row )
-				->getContent( SlotRecord::MAIN )
-				->getNativeData();
+		if ( $this->translation === null ) {
+			// Should only happen with MW < 1.34. Slow if the text table hasn't been joined in!
+			$this->translation = Revision::getRevisionText( $this->row );
 		}
+
+		return $this->translation;
 	}
 
 	// Re-implemented
@@ -195,55 +190,6 @@ class ThinMessage extends TMessage {
 	// Re-implemented
 	public function getPropertyNames() {
 		return array_merge( parent::getPropertyNames(), array_keys( self::$propertyMap ) );
-	}
-}
-
-/**
- * %Message object which is based on a RevisionRecord.
- * Message user name and id as well as message text properties
- * are loaded from the revision.
- */
-class RevisionMessage extends TMessage {
-	/** @var RevisionRecord */
-	private $rev;
-
-	/**
-	 * Sets a revision the message is based on
-	 * @param RevisionRecord $rev
-	 */
-	public function setRevision( RevisionRecord $rev ) {
-		$this->rev = $rev;
-	}
-
-	/**
-	 * Get the message translation.
-	 * @return string|null
-	 */
-	public function translation() {
-		if ( !$this->rev ) {
-			return $this->infile();
-		}
-		return ContentHandler::getContentText( $this->rev->getContent( SlotRecord::MAIN ) );
-	}
-
-	// Re-implemented
-	public function getProperty( $key ) {
-		switch ( $key ) {
-			case 'last-translator-text':
-				return $this->rev ? $this->rev->getUser()->getName() : null;
-			case 'last-translator-id':
-				return $this->rev ? $this->rev->getUser()->getId() : null;
-			default:
-				return parent::getProperty( $key );
-		}
-	}
-
-	// Re-implemented
-	public function getPropertyNames() {
-		return array_merge(
-			parent::getPropertyNames(),
-			[ 'last-translator-text', 'last-translator-id' ]
-		);
 	}
 }
 
