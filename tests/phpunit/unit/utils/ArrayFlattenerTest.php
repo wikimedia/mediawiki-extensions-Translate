@@ -5,10 +5,14 @@
  * @license GPL-2.0-or-later
  */
 
+ /**
+	* @coversDefaultClass \ArrayFlattener
+	*/
 class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideTestFlatten
+	 * @covers ::flatten
 	 */
 	public function testFlatten( $sep, $input, $expected ) {
 		$flattener = new ArrayFlattener( $sep );
@@ -18,6 +22,7 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideTestFlatten
+	 * @covers ::unflatten
 	 */
 	public function testUnflatten( $sep, $expected, $input ) {
 		$flattener = new ArrayFlattener( $sep );
@@ -27,6 +32,7 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideTestCLDRPlurals
+	 * @covers ::flattenCLDRPlurals
 	 */
 	public function testFlattenCLDRPlurals( $sep, $input, $expected ) {
 		$flattener = new ArrayFlattener( $sep, true );
@@ -36,6 +42,8 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideTestCLDRPlurals
+	 * @dataProvider provideUnflattenCLDRPlurals
+	 * @covers ::unflattenCLDRPlurals
 	 */
 	public function testUnflattenCLDRPlurals( $sep, $expected, $input ) {
 		$flattener = new ArrayFlattener( $sep, true );
@@ -45,6 +53,7 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideTestMixedCLDRPlurals
+	 * @covers ::flattenCLDRPlurals
 	 */
 	public function testFlattenMixedCLDRPlurals( $input ) {
 		$flattener = new ArrayFlattener( '.', true );
@@ -53,34 +62,29 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 	}
 
 	public static function provideTestFlatten() {
-		$cases = [];
-		$cases[] = [
+		yield [
 			'.',
 			[ 'a' => 1 ],
 			[ 'a' => 1 ],
 		];
 
-		$cases[] = [
+		yield [
 			'.',
 			[ 'a' => [ 'b' => [ 'c' => 1, 'd' => 2 ] ] ],
 			[ 'a.b.c' => 1, 'a.b.d' => 2 ],
 		];
 
 		// By default, CLDR plural keywords should be treated like any other key
-		$cases[] = [
+		yield [
 			'/',
 			[ 'number' => [ 'one' => '1', 'other' => '999' ] ],
 			[ 'number/one' => '1', 'number/other' => '999' ]
 		];
-
-		return $cases;
 	}
 
 	public static function provideTestCLDRPlurals() {
-		$cases = [];
-
 		// We include some non-plural data to ensure it is processed correctly
-		$cases[] = [
+		yield [
 			'/',
 			[
 				'cat' => 'An amount of cats',
@@ -102,7 +106,7 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 			],
 		];
 
-		$cases[] = [
+		yield [
 			'/',
 			[
 				'dog or dogs' => [
@@ -120,7 +124,7 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 			],
 		];
 
-		$cases[] = [
+		yield [
 			'/',
 			[
 				'math is hard' => [
@@ -130,14 +134,40 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 			],
 			[ 'math is hard' => '{{PLURAL|one=a=400|a=999}}' ],
 		];
+	}
 
-		return $cases;
+	/**
+	 * Separate input due to bug Phab:T233402.
+	 * TODO: Remove and add to provideTestCLDRPlurals itself once the
+	 * above bug is fixed.
+	 */
+	public static function provideUnflattenCLDRPlurals() {
+		yield [
+			'/',
+			[
+				'collect' => [
+					'one' => '%{count} collection',
+					'other' => '%{count} collection'
+				]
+			],
+			[ 'collect' => '%{count} collection{{PLURAL|one=|}}' ]
+		];
+
+		yield [
+			'/',
+			[
+				'collect many' => [
+					'one' => '%{count} collection',
+					'other' => '%{count} collections'
+				]
+			],
+			[ 'collect many' => '%{count} collection{{PLURAL|one=|s}}' ]
+		];
 	}
 
 	// Separate provider because the input throws an exception
 	public static function provideTestMixedCLDRPlurals() {
-		$cases = [];
-		$cases[] = [
+		yield [
 			[
 				'dog or dogs' => [
 					'one' => 'One dog',
@@ -148,7 +178,7 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 			]
 		];
 
-		$cases[] = [
+		yield [
 			[
 				'dog or dogs' => [
 					'Pluto' => 'A specific dog',
@@ -158,11 +188,11 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 				]
 			]
 		];
-		return $cases;
 	}
 
 	/**
 	 * @dataProvider provideMatchingValues
+	 * @covers ::compareContent
 	 */
 	public function testCompareTrue( $input1, $input2 ) {
 		$flattener = new ArrayFlattener( '.', true );
@@ -174,6 +204,7 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideNonMatchingValues
+	 * @covers ::compareContent
 	 */
 	public function testCompareFalse( $input1, $input2 ) {
 		$flattener = new ArrayFlattener( '.', true );
@@ -184,64 +215,56 @@ class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
 	}
 
 	public static function provideMatchingValues() {
-		$cases = [];
-
 		// We include some non-plural data to ensure it is processed correctly
-		$cases[] = [
+		yield [
 			'a',
 			'a'
 		];
 
-		$cases[] = [
+		yield [
 			'{{PLURAL|one=cat|cats}}',
 			'{{PLURAL|one=cat|cats}}',
 		];
 
-		$cases[] = [
+		yield [
 			'Give me {{PLURAL|one=a cat|cats}}',
 			'{{PLURAL|one=Give me a cat|Give me cats}}',
 		];
 
 		// Order should not matter
-		$cases[] = [
+		yield [
 			'{{PLURAL|one=Give me a cat|Give me cats}}',
 			'Give me {{PLURAL|one=a cat|cats}}',
 		];
 
 		// Multiple inlines
-		$cases[] = [
+		yield [
 			'Test {{PLURAL|one=one|other}} and {{PLURAL|one=one|other}} and {{PLURAL|one=one|other}}!',
 			'{{PLURAL|one=Test one and one and one|Test other and other and other}}!',
 		];
 
 		// Lots of keys
-		$cases[] = [
+		yield [
 			'Is {{PLURAL|zero=zero|one=one|two=two|few=few|many=many|other}}',
 			'{{PLURAL|zero=Is zero|one=Is one|two=Is two|few=Is few|many=Is many|Is other}}',
 		];
-
-		return $cases;
 	}
 
 	public static function provideNonMatchingValues() {
-		$cases = [];
-
-		$cases[] = [
+		yield [
 			'a',
 			'b'
 		];
 
-		$cases[] = [
+		yield [
 			'{{PLURAL|one=cat|cats}}',
 			'{{PLURAL|one=dog|dogs}}',
 		];
 
 		// Different set of keys
-		$cases[] = [
+		yield [
 			'Is {{PLURAL|zero=zero|one=one|two=two|few=few|other}}',
 			'{{PLURAL|zero=Is zero|two=Is two|few=Is few|many=Is many|Is other}}',
 		];
-
-		return $cases;
 	}
 }

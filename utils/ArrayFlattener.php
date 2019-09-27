@@ -232,15 +232,11 @@ class ArrayFlattener {
 		 * multiple plural bocks which don't have the same set of keys.
 		 */
 		$pluralChoice = implode( '|', array_keys( self::$pluralWords ) );
-		$regex = "~($pluralChoice)\s*=\s*(.+)~s";
+		$regex = "~($pluralChoice)\s*=\s*(.*)~s";
 		foreach ( $matches as $ph => $plu ) {
 			$forms = explode( '|', $plu[1] );
 
 			foreach ( $forms as $form ) {
-				if ( $form === '' ) {
-					continue;
-				}
-
 				$match = [];
 				if ( preg_match( $regex, $form, $match ) ) {
 					$formWord = "$key{$this->sep}{$match[1]}";
