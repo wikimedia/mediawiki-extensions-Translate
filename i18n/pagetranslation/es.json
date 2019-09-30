@@ -149,6 +149,8 @@
 	"pt-movepage-list-pages": "Lista de páginas a trasladar",
 	"pt-movepage-list-translation": "{{PLURAL:$1|Página|Páginas}} de traducción",
 	"pt-movepage-list-section": "{{PLURAL:$1|Página de unidad|Páginas de unidades}} de traducción",
+	"pt-movepage-list-translatable": "{{PLURAL:$1|Subpágina|Subpáginas}} marcadas para traducción",
+	"pt-movepage-list-translatable-note": "Estas páginas deben trasladarse de manera separada.",
 	"pt-movepage-list-other": "{{PLURAL:$1|Otra subpágina|Otras subpáginas}}",
 	"pt-movepage-list-count": "En total, $1 {{PLURAL:$1|página|páginas}} a trasladar.",
 	"pt-movepage-legend": "Trasladar página traducible",

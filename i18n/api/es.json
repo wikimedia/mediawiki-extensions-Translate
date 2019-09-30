@@ -95,6 +95,7 @@
 	"apihelp-translationcheck-param-title": "Título de página con espacio de nombres y código de idioma.",
 	"apihelp-translationcheck-param-translation": "La traducción que validar.",
 	"apierror-translate-duplicateaggregategroup": "El grupo de mensajes ya existe",
+	"apierror-translate-fuzzymessage": "No se pueden revisar las traducciones imprecisas",
 	"apierror-translate-invalidgroup": "El grupo no existe o no es válido",
 	"apierror-translate-invalidstate": "El estado solicitado no es válido.",
 	"apierror-translate-invalidlanguage": "El idioma solicitado no es válido.",

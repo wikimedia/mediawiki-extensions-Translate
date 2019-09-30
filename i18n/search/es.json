@@ -28,5 +28,7 @@
 	"tux-sst-ellipsis-outdated": "Traducciones desactualizadas",
 	"tux-sst-link-all-match": "Requerir todas las palabras que se buscan.",
 	"tux-sst-match-message": "Se muestran las traducciones que coinciden con cualesquiera de las palabras buscadas. $1",
-	"tux-sst-case-sensitive": "Distinguir mayúsculas de minúsculas"
+	"tux-sst-case-sensitive": "Distinguir mayúsculas de minúsculas",
+	"tux-sst-error-offset": "No se pueden mostrar más resultados. Debe restringirse la búsqueda.",
+	"tux-sst-error-language": "Este idioma no puede utilizarse con este tipo de búsqueda."
 }
