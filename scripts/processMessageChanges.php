@@ -82,7 +82,13 @@ class ProcessMessageChanges extends Maintenance {
 			if ( !$scripted ) {
 				$this->output( "Processing $id\n" );
 			}
-			$changes[$id] = $comparator->processGroup( $group, $comparator::ALL_LANGUAGES );
+			try {
+				$changes[$id] = $comparator->processGroup( $group, $comparator::ALL_LANGUAGES );
+			} catch ( Exception $e ) {
+				$errorMsg = "Exception occurred while processing group: $id.\nException: $e";
+				$this->error( $errorMsg );
+				error_log( $errorMsg );
+			}
 		}
 
 		// Remove all groups without changes

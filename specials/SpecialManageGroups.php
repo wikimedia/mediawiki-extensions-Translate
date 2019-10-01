@@ -309,6 +309,7 @@ class SpecialManageGroups extends SpecialPage {
 	protected function processSubmit() {
 		$req = $this->getRequest();
 		$out = $this->getOutput();
+		$errorGroups = [];
 
 		$modificationJobs = $renameJobData = [];
 		$lastModifiedTime = intval( $req->getVal( 'changesetModifiedTime' ) );
@@ -325,24 +326,37 @@ class SpecialManageGroups extends SpecialPage {
 
 		foreach ( $groups as $groupId ) {
 			$group = MessageGroups::getGroup( $groupId );
-			$sourceChanges = MessageSourceChange::loadModifications(
-				TranslateUtils::deserialize( $reader->get( $groupId ) )
-			);
+			try {
+				$sourceChanges = MessageSourceChange::loadModifications(
+					TranslateUtils::deserialize( $reader->get( $groupId ) )
+				);
+				$groupModificationJobs = [];
+				$groupRenameJobData = [];
+				$languages = $sourceChanges->getLanguages();
+				foreach ( $languages as $language ) {
+					// Handle changes, additions, deletions
+					$this->handleModificationsSubmit( $group, $sourceChanges, $req,
+						$language, $postponed, $groupModificationJobs );
 
-			$languages = $sourceChanges->getLanguages();
-			foreach ( $languages as $language ) {
-				// Handle changes, additions, deletions
-				$this->handleModificationsSubmit( $group, $sourceChanges, $req,
-					$language, $postponed, $modificationJobs );
+					// Handle renames, this might also add modification jobs based on user selection.
+					$this->handleRenameSubmit( $group, $sourceChanges, $req, $language,
+						$postponed, $groupRenameJobData, $groupModificationJobs );
 
-				// Handle renames, this might also add modification jobs based on user selection.
-				$this->handleRenameSubmit( $group, $sourceChanges, $req, $language,
-					$postponed, $renameJobData, $modificationJobs );
-
-				if ( !isset( $postponed[$groupId][$language] ) ) {
-					$cache = new MessageGroupCache( $groupId, $language );
-					$cache->create();
+					if ( !isset( $postponed[$groupId][$language] ) ) {
+						$cache = new MessageGroupCache( $groupId, $language );
+						$cache->create();
+					}
 				}
+
+				$modificationJobs = array_merge( $modificationJobs, $groupModificationJobs );
+				$renameJobData = array_merge( $renameJobData, $groupRenameJobData );
+			} catch ( Exception $e ) {
+				error_log(
+					"SpecialManageGroups: Error in processSubmit. Group: $groupId\n" .
+					"Exception: $e"
+				);
+
+				$errorGroups[] = $group->getLabel();
 			}
 		}
 
@@ -353,14 +367,24 @@ class SpecialManageGroups extends SpecialPage {
 		$reader->close();
 		rename( $this->cdb, $this->cdb . '-' . wfTimestamp() );
 
+		if ( $errorGroups ) {
+			$errorMsg = $this->getProcessingErrorMessage( $errorGroups, count( $groups ) );
+			$out->addElement(
+				'p',
+				[ 'class' => 'warningbox mw-translate-smg-submitted' ],
+				$errorMsg
+			);
+		}
+
 		if ( count( $postponed ) ) {
 			$postponedSourceChanges = [];
 			foreach ( $postponed as $groupId => $changes ) {
 				$postponedSourceChanges[$groupId] = MessageSourceChange::loadModifications( $changes );
 			}
 			MessageChangeStorage::writeChanges( $postponedSourceChanges, $this->cdb );
+
 			$this->showChanges( $this->getLimit() );
-		} else {
+		} elseif ( $errorGroups === [] ) {
 			$out->addWikiMsg( 'translate-smg-submitted' );
 		}
 	}
@@ -777,5 +801,28 @@ class SpecialManageGroups extends SpecialPage {
 		}
 
 		return [ true, $isCurrentKeyPresent ];
+	}
+
+	protected function getProcessingErrorMessage(
+		array $errorGroups, int $totalGroupCount
+	): string {
+		// Number of error groups, are less than the total groups processed.
+		if ( count( $errorGroups ) < $totalGroupCount ) {
+			$errorMsg = $this->msg( 'translate-smg-submitted-with-failure' )
+				->numParams( count( $errorGroups ) )
+				->params(
+					$this->getLanguage()->commaList( $errorGroups ),
+					$this->msg( 'translate-smg-submitted-others-processing' )
+				)->text();
+		} else {
+			$errorMsg = trim(
+				$this->msg( 'translate-smg-submitted-with-failure' )
+					->numParams( count( $errorGroups ) )
+					->params( $this->getLanguage()->commaList( $errorGroups ), '' )
+					->text()
+			);
+		}
+
+		return $errorMsg;
 	}
 }

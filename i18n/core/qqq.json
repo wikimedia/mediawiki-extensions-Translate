@@ -260,6 +260,8 @@
 	"translate-smg-nochanges": "Wikitext information message in [[Special:ManageMessageGroups]]",
 	"translate-smg-submit": "Button label in [[Special:ManageMessageGroups]]",
 	"translate-smg-submitted": "Confirmation wikitext information message in [[Special:ManageMessageGroups]]",
+	"translate-smg-submitted-with-failure": "Message shown on [[Special:ManageMessageGroups]] when updating certain message definition fails. Parameters:\n* $1 - number of message groups\n* $2 - list of message group labels\n* $3 - See {{msg-mw|Translate-smg-submitted-others-processing}}; Shown if some messages are being processed while others failed.",
+	"translate-smg-submitted-others-processing": "Shown along with {{msg-mw|Translate-smg-submitted-with-failure}} if there are other message groups that did not fail and are being processed.",
 	"translate-smg-more": "\"to process\" is an infinitive verb - changes that will have to be processed.",
 	"translate-smg-left": "Label for first diff column in [[Special:ManageMessageGroups]]",
 	"translate-smg-right": "Label for last diff column in [[Special:ManageMessageGroups]]",

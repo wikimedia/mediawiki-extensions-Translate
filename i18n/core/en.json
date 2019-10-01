@@ -225,6 +225,8 @@
 	"translate-smg-nochanges": "There are no changes to process.",
 	"translate-smg-submit": "Submit changes for processing",
 	"translate-smg-submitted": "Message definitions have been updated. Changes are being processed in the background.",
+	"translate-smg-submitted-with-failure": "Updating message {{PLURAL:$1|definition|definitions}} failed for the following {{PLURAL:$1|group|groups}} - $2. $3",
+	"translate-smg-submitted-others-processing": "Message definitions for other groups are being processed in the background.",
 	"translate-smg-more": "There will be more changes to process after submitting these changes.",
 	"translate-smg-left": "Message content in wiki",
 	"translate-smg-right": "Incoming changes",

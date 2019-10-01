@@ -63,6 +63,10 @@
 	font-weight: bold;
 }
 
+.warningbox.mw-translate-smg-submitted {
+	margin-top: 2.5em;
+}
+
 /**************************
  * Rename dropdown styles
  **************************/
