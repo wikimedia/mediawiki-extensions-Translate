@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"managetranslatorsandbox": "Upravljanje prevodilačkim pješčanikom",
+	"tsb-filter-pending": "Zahtjevi na čekanju",
+	"tsb-reminder-title-generic": "Popunite Vaše predstavljanje da bi ste postali prevodilac",
+	"tsb-reminder-sending": "Šaljem podsjetnik...",
+	"tsb-reminder-sent-new": "Poslan podsjetnik",
+	"tsb-reminder-failed": "Nisam uspio poslati podsjetnik",
+	"tsb-email-promoted-subject": "Sad ste prevodilac na {{GRAMMAR:dativ|{{SITENAME}}}}",
+	"tsb-all-languages-button-label": "Svi jezici",
+	"tsb-search-requests": "Pretražite zahtjeve na čekanju",
+	"tsb-accept-button-label": "Prihvati",
+	"tsb-reject-button-label": "Odbij",
+	"tsb-selected-count": "{{PLURAL:$1|Izabran je jedan korisnik|Izabrana su $1 korisnika|Izabrano je $1 korisnika}}",
+	"tsb-older-requests": "{{PLURAL:$1|Jedan stariji zahtjev|$1 starija zahtjeva|$1 starijih zahtjeva}}",
+	"tsb-accept-all-button-label": "Prihvati sve",
+	"tsb-reject-all-button-label": "Odbij sve",
+	"tsb-user-posted-a-comment": "Nije prevodilac",
+	"tsb-reminder-link-text": "Pošalji podsjetnik e-poštom",
+	"tsb-didnt-make-any-translations": "Korisnikov nije napravio nijedan prijevod.",
+	"tsb-translations-source": "Izvor",
+	"tsb-translations-user": "{{GENDER:$1|Korisnički}} prijevodi",
+	"tsb-translations-current": "Postojeći prijevodi",
+	"tsb-delete-userpage-summary": "Brisanje korisničku stranicu pješčaničkog korisnika",
+	"tsb-reject-confirmation": "{{PLURAL:$1|Korisnik je odbijen|Korisnici su odbijeni}}",
+	"tsb-accept-confirmation": "{{PLURAL:$1|Korisnik je prihvaćen|Korisnici su prihvaćeni}}",
+	"translationstash": "Dobro došli",
+	"translate-translationstash-welcome": "Dobro došli {{GENDER:$1|$1}}, Vi ste novi prevodilac"
+}
