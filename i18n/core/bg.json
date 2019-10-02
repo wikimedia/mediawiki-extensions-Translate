@@ -7,7 +7,8 @@
 			"Vodnokon4e",
 			"Spiritia",
 			"ShockD",
-			"Vlad5250"
+			"Vlad5250",
+			"Ted Masters"
 		]
 	},
 	"translate": "Превеждане",
@@ -47,7 +48,7 @@
 	"translate-edit-definition": "Дефиниция на съобщението",
 	"translate-edit-translation": "Превод",
 	"translate-edit-contribute": "принос",
-	"translate-edit-no-information": "<em>За това съобщение няма документация.\nАко знаете къде и как се използва, можете да помогнете на останалите преводачи като добавите документация за съобщението.</em>",
+	"translate-edit-no-information": "<em>За това съобщение няма документация.\nАко знаете къде и как се използва, можете да помогнете на останалите преводачи, като добавите документация за съобщението.</em>",
 	"translate-edit-information": "Информация за съобщението ($1)",
 	"translate-edit-in-other-languages": "Съобщението на други езици",
 	"translate-edit-warnings": "Предупреждения за непълни преводи",
@@ -60,7 +61,7 @@
 	"translate-export-form-format": "Формат",
 	"translate-export-invalid-format": "Моля, посочете валиден формат.",
 	"translate-export-not-supported": "Експортирането на превод не се поддържа.",
-	"translate-export-format-notsupported": "Указаният формат на експортиране не се поддърж от групата съобщения.",
+	"translate-export-format-notsupported": "Указаният формат на експортиране не се поддържа от групата съобщения.",
 	"translate-magic-pagename": "Разширено превеждане на МедияУики",
 	"translate-magic-module": "Модул:",
 	"translate-magic-submit": "Извличане",
@@ -83,7 +84,7 @@
 	"translate-checks-parameters-unknown": "{{PLURAL:$2|Следният параметър е непознат|Следните параметри са непознати}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-balance": "Съобщението съдържа нечетен брой {{PLURAL:$2|скоби}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|Следната препратка е проблемна|Следните $2 препратки са проблемни}}:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-links-missing": "{{PLURAL:$2|Липсва следата препратка|Липсват следните $2 препратки}}:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-links-missing": "{{PLURAL:$2|Липсва следната препратка|Липсват следните $2 препратки}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "Необходимо е заместване на {{PLURAL:$2|посочения етикет с правилен|посочените етикети с правилни}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "Оригиналното съобщение използва <nowiki>{{PLURAL:}}</nowiki>, а преводът — не.",
 	"translate-checks-pagename": "Променена е дефиницията на именното пространство",
