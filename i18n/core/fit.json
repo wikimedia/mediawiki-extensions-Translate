@@ -4,18 +4,22 @@
 			"Pyscowicz"
 		]
 	},
+	"translate-taction-export": "Eksporteeraa",
 	"translate-page-settings-legend": "Inställninkit",
 	"translate-page-navigation-legend": "Navikeerinki",
 	"translate-next": "Seuraava sivu",
 	"translate-prev": "Eelinen sivu",
+	"translate-page-edit": "mookkaa",
 	"translate-optional": "(vapa)",
 	"translate-edit-title": "Mookkaa \"$1\"",
+	"exporttranslations": "Eksporteeraa käännöksiä",
 	"translate-magic-submit": "Hae",
 	"translate-magic-cm-export": "Eksporteeraa",
 	"translate-magic-cm-current": "Nykynen",
 	"translate-magic-cm-comment": "Komentti:",
 	"translate-magic-cm-save": "Säästä",
 	"translate-magic-namespace": "Nimityhjyysnimet",
+	"translate-stats-edits": "Mookkauksia",
 	"translate-statsf-scale-months": "kuukausia",
 	"translate-statsf-scale-weeks": "viikkoja",
 	"translate-statsf-scale-days": "päiviä",
@@ -46,5 +50,5 @@
 	"tux-editor-close-tooltip": "Sulje",
 	"tux-editor-message-tools-history": "Histuuria",
 	"tux-editor-message-tools-delete": "Ota poies",
-	"tux-editor-loading": "Ladataan..."
+	"tux-editor-loading": "Ladathaan..."
 }
