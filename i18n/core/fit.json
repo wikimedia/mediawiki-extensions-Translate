@@ -4,6 +4,7 @@
 			"Pyscowicz"
 		]
 	},
+	"translate-taction-lstats": "Kielistatistiikkaa",
 	"translate-taction-export": "Eksporteeraa",
 	"translate-page-settings-legend": "Inställninkit",
 	"translate-page-navigation-legend": "Navikeerinki",
@@ -28,6 +29,7 @@
 	"translate-statsf-count-registrations": "uuet käyttäjät",
 	"translate-translations-messagename": "Nimi:",
 	"translate-translations-project": "Prujekti:",
+	"languagestats": "Kielistatistiikkaa",
 	"translate-language-code": "Kielikooti",
 	"translate-language-code-field-name": "Kielikooti:",
 	"translate-ls-submit": "Näytä statistiikkaa",
