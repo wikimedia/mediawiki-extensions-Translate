@@ -64,7 +64,7 @@ class TranslateLogFormatter extends LogFormatter {
 	}
 
 	protected function makePageLinkWithText(
-		Title $title = null, $text, array $parameters = []
+		?Title $title, $text, array $parameters = []
 	) {
 		if ( !$this->plaintext ) {
 			$link = Linker::link( $title, htmlspecialchars( $text ), [], $parameters );

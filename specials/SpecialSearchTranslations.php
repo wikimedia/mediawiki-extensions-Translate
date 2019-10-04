@@ -333,7 +333,7 @@ class SpecialSearchTranslations extends SpecialPage {
 			} else {
 				$subgroups = [];
 			}
-
+			'@phan-var MessageGroup $group';
 			$id = $group->getId();
 
 			if ( $id !== $selected && !isset( $counts[$id] ) ) {

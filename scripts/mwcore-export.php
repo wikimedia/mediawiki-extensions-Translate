@@ -91,6 +91,7 @@ class MwCoreExport extends Maintenance {
 			$variable = preg_quote( $matches[1], '~' );
 
 			/** @var FileBasedMessageGroup $group */
+			'@phan-var FileBasedMessageGroup $group';
 			$file = $group->getSourceFilePath( $l );
 			// bandage
 			$real = Language::getFileName( '/messages/Messages', $l );

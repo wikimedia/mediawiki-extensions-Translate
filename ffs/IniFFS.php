@@ -22,6 +22,7 @@ class IniFFS extends SimpleFFS {
 		 * @var FileBasedMessageGroup $group
 		 */
 		$group = MessageGroupBase::factory( $conf );
+		'@phan-var FileBasedMessageGroup $group';
 
 		Wikimedia\suppressWarnings();
 		$ffs = new self( $group );

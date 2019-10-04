@@ -86,6 +86,7 @@ class SyncGroup extends Maintenance {
 		$groupIds = explode( ',', trim( $this->getOption( 'group' ) ) );
 		$groupIds = MessageGroups::expandWildcards( $groupIds );
 		$groups = MessageGroups::getGroupsById( $groupIds );
+		'@phan-var FileBasedMessageGroup[] $groups';
 
 		if ( !count( $groups ) ) {
 			$this->fatalError( 'ESG2: No valid message groups identified.' );

@@ -916,6 +916,7 @@ class TranslateHooks {
 			$group = $handle->getGroup();
 
 			if ( is_callable( [ $group, 'getMessageContent' ] ) ) {
+				// @phan-suppress-next-line PhanUndeclaredMethod
 				$definition = $group->getMessageContent( $handle );
 			} else {
 				$definition = $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );

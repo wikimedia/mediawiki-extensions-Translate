@@ -137,7 +137,7 @@ class ArrayFlattener {
 				if ( !is_array( $value ) ) {
 					$plurals = $this->unflattenCLDRPlurals( $key, $value );
 				}
-				if ( $plurals ) {
+				if ( is_array( $plurals ) ) {
 					$unflattenedPlurals += $plurals;
 				} else {
 					$unflattenedPlurals[$key] = $value;

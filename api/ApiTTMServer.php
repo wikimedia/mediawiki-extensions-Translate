@@ -26,6 +26,7 @@ class ApiTTMServer extends ApiBase {
 
 		$config = $wgTranslateTranslationServices[$params['service']];
 		$server = TTMServer::factory( $config );
+		'@phan-var ReadableTTMServer $server';
 
 		$suggestions = $server->query(
 			$params['sourcelanguage'],

@@ -147,6 +147,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 		$dbw->delete( 'translate_tms', '*', __METHOD__ );
 		$dbw->delete( 'translate_tmt', '*', __METHOD__ );
 		$dbw->delete( 'translate_tmf', '*', __METHOD__ );
+		// @phan-suppress-next-line PhanUndeclaredMethod
 		$table = $dbw->tableName( 'translate_tmf' );
 		try {
 			$dbw->query( "DROP INDEX tmf_text ON $table" );
@@ -191,6 +192,7 @@ class DatabaseTTMServer extends TTMServer implements WritableTTMServer, Readable
 
 	public function endBootstrap() {
 		$dbw = $this->getDB( DB_MASTER );
+		// @phan-suppress-next-line PhanUndeclaredMethod
 		$table = $dbw->tableName( 'translate_tmf' );
 		$dbw->query( "CREATE FULLTEXT INDEX tmf_text ON $table (tmf_text)" );
 	}

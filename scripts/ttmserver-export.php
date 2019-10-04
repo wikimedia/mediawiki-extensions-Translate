@@ -142,6 +142,7 @@ class TTMServerBootstrap extends Maintenance {
 
 	protected function beginBootStrap( $config ) {
 		$server = TTMServer::factory( $config );
+		'@phan-var ElasticSearchTTMServer $server';
 		$server->setLogger( $this );
 		if ( $server->isFrozen() ) {
 			$this->fatalError( "The service is frozen, giving up." );
@@ -156,12 +157,14 @@ class TTMServerBootstrap extends Maintenance {
 	protected function endBootstrap( $config ) {
 		$this->statusLine( "Optimizing...\n" );
 		$server = TTMServer::factory( $config );
+		'@phan-var ElasticSearchTTMServer $server';
 		$server->setLogger( $this );
 		$server->endBootstrap();
 	}
 
 	protected function exportGroup( MessageGroup $group, $config ) {
 		$server = TTMServer::factory( $config );
+		'@phan-var ElasticSearchTTMServer $server';
 		$server->setLogger( $this );
 
 		$id = $group->getId();

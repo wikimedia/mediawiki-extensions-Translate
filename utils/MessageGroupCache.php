@@ -37,7 +37,7 @@ class MessageGroupCache {
 
 	/**
 	 * Contructs a new cache object for given group and language code.
-	 * @param string|FileBasedMessageGroup $group Group object or id.
+	 * @param string|MessageGroup $group Group object or id.
 	 * @param string $code Language code. Default value 'en'.
 	 */
 	public function __construct( $group, $code = 'en' ) {
@@ -124,7 +124,9 @@ class MessageGroupCache {
 
 			return; // Don't create empty caches
 		}
-		$hash = md5( file_get_contents( $this->group->getSourceFilePath( $this->code ) ) );
+		$group = $this->group;
+		'@phan-var FileBasedMessageGroup $group';
+		$hash = md5( file_get_contents( $group->getSourceFilePath( $this->code ) ) );
 
 		wfMkdirParents( dirname( $this->getCacheFileName() ) );
 		$cache = \Cdb\Writer::open( $this->getCacheFileName() );
@@ -154,6 +156,7 @@ class MessageGroupCache {
 	 */
 	public function isValid( &$reason ) {
 		$group = $this->group;
+		'@phan-var FileBasedMessageGroup $group';
 		$groupId = $group->getId();
 
 		$pattern = $group->getSourceFilePath( '*' );

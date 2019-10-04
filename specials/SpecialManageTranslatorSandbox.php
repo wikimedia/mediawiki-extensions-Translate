@@ -106,6 +106,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 					);
 
 					$reminders = [];
+					// @phan-suppress-next-line PhanSuspiciousValueComparison
 					for ( $reminderIndex = 0; $reminderIndex < $i; $reminderIndex++ ) {
 						$reminders[] = wfTimestamp() - $reminderIndex * $i * 10000;
 					}
@@ -116,6 +117,7 @@ class SpecialManageTranslatorSandbox extends SpecialPage {
 					);
 					$user->saveSettings();
 
+					// @phan-suppress-next-line PhanSuspiciousValueComparison
 					for ( $j = 0; $j < $i; $j++ ) {
 						$title = Title::makeTitle(
 							NS_MEDIAWIKI,

@@ -78,6 +78,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 			/**
 			 * @var RecentMessageGroup $group
 			 */
+			// @phan-suppress-next-line PhanUndeclaredMethod
 			$group->setLanguage( $params['language'] );
 		}
 

@@ -343,7 +343,7 @@ class MessageGroupStats {
 	 * @param int $flags Combination of FLAG_* constants.
 	 * @return array[]
 	 */
-	protected static function forLanguageInternal( $code, array $stats = [], $flags ) {
+	protected static function forLanguageInternal( $code, array $stats, $flags ) {
 		$groups = MessageGroups::singleton()->getGroups();
 
 		$ids = array_keys( $groups );
@@ -385,7 +385,7 @@ class MessageGroupStats {
 	 * @param int $flags Combination of FLAG_* constants.
 	 * @return array[]
 	 */
-	protected static function forGroupInternal( MessageGroup $group, array $stats = [], $flags ) {
+	protected static function forGroupInternal( MessageGroup $group, array $stats, $flags ) {
 		$id = $group->getId();
 
 		$res = self::selectRowsIdLang( [ $id ], null, $flags );
@@ -411,12 +411,12 @@ class MessageGroupStats {
 	/**
 	 * Fetch rows from the database. Use extractResults to process this value.
 	 *
-	 * @param null|string[] $ids List of message group ids
-	 * @param null|string[] $codes List of language codes
+	 * @param ?string[] $ids List of message group ids
+	 * @param ?string[] $codes List of language codes
 	 * @param int $flags Combination of FLAG_* constants.
 	 * @return Traversable Database result object
 	 */
-	protected static function selectRowsIdLang( array $ids = null, array $codes = null, $flags ) {
+	protected static function selectRowsIdLang( ?array $ids, ?array $codes, $flags ) {
 		if ( $flags & self::FLAG_NO_CACHE ) {
 			return [];
 		}

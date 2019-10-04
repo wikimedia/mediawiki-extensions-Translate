@@ -358,6 +358,7 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		$wgAutoloadClasses['TxtDef'] = "{$this->path}/$postfix";
+		// @phan-suppress-next-line PhanUndeclaredClassMethod Autoloaded above
 		$tmp = TxtDef::loadFromFile( "{$this->path}/Configure/settings/Settings-ext.txt" );
 
 		return array_combine(

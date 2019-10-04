@@ -48,6 +48,7 @@ class ValidatorFactory {
 	 */
 	public static function get( $id, $params = null ) {
 		if ( isset( self::$validators[ $id ] ) ) {
+			// @phan-suppress-next-line PhanParamTooMany Not all sub classes using the arg
 			return new self::$validators[ $id ]( $params );
 		}
 

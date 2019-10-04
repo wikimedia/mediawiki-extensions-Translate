@@ -994,7 +994,7 @@ class SpecialPageTranslation extends SpecialPage {
 	 * @since 2014.09
 	 */
 	public static function getStrippedSourcePageText( TPParse $parse ) {
-		$text = $parse->getTranslationPageText( [] );
+		$text = $parse->getTranslationPageText( null );
 		$text = preg_replace( '~<languages\s*/>\n?~s', '', $text );
 		return $text;
 	}

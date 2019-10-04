@@ -38,6 +38,7 @@ abstract class MessageIndex {
 				$params = (array)$params;
 			}
 			$class = array_shift( $params );
+			// @phan-suppress-next-line PhanTypeExpectedObjectOrClassName
 			self::$instance = new $class( $params );
 		}
 
@@ -296,6 +297,7 @@ abstract class MessageIndex {
 	 */
 	protected function checkAndAdd( &$hugearray, MessageGroup $g, $ignore = false ) {
 		if ( is_callable( [ $g, 'getKeys' ] ) ) {
+			// @phan-suppress-next-line PhanUndeclaredMethod
 			$keys = $g->getKeys();
 		} else {
 			$messages = $g->getDefinitions();

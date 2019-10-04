@@ -84,6 +84,7 @@ class ApiTranslationCheck extends ApiBase {
 	private function getDefinition( MessageHandle $handle ) {
 		$group = $handle->getGroup();
 		if ( is_callable( [ $group, 'getMessageContent' ] ) ) {
+			// @phan-suppress-next-line PhanUndeclaredMethod
 			return $group->getMessageContent( $handle );
 		} else {
 			return $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );

@@ -27,6 +27,7 @@ class InsertablesAid extends TranslationAid {
 			throw new TranslationHelperException( 'Group does not have a suggester' );
 		}
 
+		// @phan-suppress-next-line PhanUndeclaredMethod
 		$suggester = $group->getInsertablesSuggester();
 
 		// It is okay to return null suggester

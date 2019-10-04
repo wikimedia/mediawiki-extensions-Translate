@@ -39,6 +39,7 @@ class CrossLanguageTranslationSearchQuery {
 		// locally.
 		$options['offset'] = 0;
 
+		// @phan-suppress-next-line PhanUndeclaredMethod
 		$search = $this->server->createSearch( $this->params['query'], $options, $this->hl );
 		$scroll = $search->scroll( '5s' );
 
@@ -91,6 +92,7 @@ class CrossLanguageTranslationSearchQuery {
 		foreach ( $documents as $document ) {
 			$data = $document->getData();
 
+			// @phan-suppress-next-line PhanUndeclaredMethod
 			if ( !$this->server->isLocalSuggestion( $data ) ) {
 				continue;
 			}

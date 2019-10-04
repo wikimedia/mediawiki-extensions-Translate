@@ -146,6 +146,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 
 		// Try harder
 		if ( is_callable( [ $group, 'getKeys' ] ) ) {
+			// @phan-suppress-next-line PhanUndeclaredMethod
 			$keys = $group->getKeys();
 		} else {
 			$keys = array_keys( $group->getDefinitions() );

@@ -1094,11 +1094,11 @@ class PageTranslationHooks {
 	/**
 	 * Hook: SkinSubPageSubtitle
 	 * @param array &$subpages
-	 * @param Skin|null $skin
+	 * @param ?Skin $skin
 	 * @param OutputPage $out
 	 * @return bool
 	 */
-	public static function replaceSubtitle( &$subpages, Skin $skin = null, OutputPage $out ) {
+	public static function replaceSubtitle( &$subpages, ?Skin $skin, OutputPage $out ) {
 		$isTranslationPage = TranslatablePage::isTranslationPage( $out->getTitle() );
 		if ( !$isTranslationPage
 			&& !TranslatablePage::isSourcePage( $out->getTitle() )

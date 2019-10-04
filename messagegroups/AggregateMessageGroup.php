@@ -33,6 +33,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 			$messages += $group->load( $code );
 		}
 
+		// @phan-suppress-next-line PhanTypeMismatchReturn += is interpreted as addition, not array_plus
 		return $messages;
 	}
 
@@ -87,6 +88,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 				$messages += $this->loadMessagesFromCache( $group->getGroups() );
 				continue;
 			}
+			'@phan-var FileBasedMessageGroup $group';
 
 			$cache = new MessageGroupCache( $group );
 			if ( $cache->exists() ) {
@@ -163,6 +165,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		foreach ( $this->getGroups() as $group ) {
 			// @todo Not all oldstyle groups have getKeys yet
 			if ( is_callable( [ $group, 'getKeys' ] ) ) {
+				// @phan-suppress-next-line PhanUndeclaredMethod
 				$moreKeys = $group->getKeys();
 			} else {
 				$moreKeys = array_keys( $group->getDefinitions() );

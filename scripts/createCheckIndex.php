@@ -81,6 +81,7 @@ class CreateCheckIndex extends Maintenance {
 			}
 
 			// Initialise messages, using unique definitions if appropriate
+			// @phan-suppress-next-line PhanParamTooMany MessageGroupOld takes two args
 			$collection = $g->initCollection( $sourceLanguage, true );
 			if ( !count( $collection ) ) {
 				continue;

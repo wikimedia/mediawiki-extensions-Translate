@@ -43,7 +43,9 @@ class FileBasedMessageGroup extends MessageGroupBase implements MetaYamlSchemaEx
 	}
 
 	public function exists() {
-		return $this->getFFS()->exists();
+		$ffs = $this->getFFS();
+		'@phan-var SimpleFFS $ffs';
+		return $ffs->exists();
 	}
 
 	public function load( $code ) {

@@ -56,14 +56,14 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 	// Database resources
 
-	/** @var IResultWrapper Stored message existence and fuzzy state. */
+	/** @var IResultWrapper|null Stored message existence and fuzzy state. */
 	protected $dbInfo;
 
-	/** @var IResultWrapper Stored translations in database. */
+	/** @var IResultWrapper|null Stored translations in database. */
 	protected $dbData;
 
-	/** @var IResultWrapper Stored reviews in database. */
-	protected $dbReviewData = [];
+	/** @var IResultWrapper|null Stored reviews in database. */
+	protected $dbReviewData;
 
 	/**
 	 * Tags, copied to thin messages
@@ -252,7 +252,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$this->keys = $this->fixKeys();
 		$this->dbInfo = null;
 		$this->dbData = null;
-		$this->dbReviewData = [];
+		$this->dbReviewData = null;
 		$this->messages = null;
 		$this->infile = [];
 		$this->authors = [];
@@ -647,9 +647,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			return;
 		}
 
-		$this->dbInfo = [];
-
 		if ( !count( $keys ) ) {
+			$this->dbInfo = new FakeResultWrapper( [] );
 			return;
 		}
 
@@ -672,13 +671,12 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @param string[] $keys List of keys in database format.
 	 */
 	protected function loadReviewInfo( array $keys ) {
-		if ( $this->dbReviewData !== [] ) {
+		if ( $this->dbReviewData !== null ) {
 			return;
 		}
 
-		$this->dbReviewData = [];
-
 		if ( !count( $keys ) ) {
+			$this->dbReviewData = new FakeResultWrapper( [] );
 			return;
 		}
 
@@ -705,9 +703,8 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			return;
 		}
 
-		$this->dbData = [];
-
 		if ( !count( $keys ) ) {
+			$this->dbData = new FakeResultWrapper( [] );
 			return;
 		}
 

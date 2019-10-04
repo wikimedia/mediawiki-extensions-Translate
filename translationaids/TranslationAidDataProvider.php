@@ -39,6 +39,7 @@ class TranslationAidDataProvider {
 
 		// Optional performance optimization
 		if ( is_callable( [ $this->group, 'getMessageContent' ] ) ) {
+			// @phan-suppress-next-line PhanUndeclaredMethod
 			$this->definition = $this->group->getMessageContent( $this->handle );
 		} else {
 			$this->definition = $this->group->getMessage(

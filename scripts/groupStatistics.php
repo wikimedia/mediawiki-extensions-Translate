@@ -620,7 +620,7 @@ class GroupStatistics extends Maintenance {
 		$out->footer();
 
 		if ( $reportScore && $this->hasOption( 'summary' ) ) {
-			if ( $reportScore && $this->hasOption( 'legendsummary' ) ) {
+			if ( $this->hasOption( 'legendsummary' ) ) {
 				$out->addFreeText( '{{' . $this->getOption( 'legendsummary' ) . "}}\n" );
 			}
 

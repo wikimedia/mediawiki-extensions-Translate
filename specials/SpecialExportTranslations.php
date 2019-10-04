@@ -201,6 +201,7 @@ class SpecialExportTranslations extends SpecialPage {
 			case 'export-to-file':
 				$out->disable();
 
+				'@phan-var FileBasedMessageGroup $group';
 				$filename = basename( $group->getSourceFilePath( $collection->getLanguage() ) );
 				$this->sendExportHeaders( $filename );
 

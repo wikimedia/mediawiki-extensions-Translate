@@ -158,6 +158,7 @@ class SpecialTranslate extends SpecialPage {
 		}
 
 		if ( MessageGroups::isDynamic( $this->group ) ) {
+			// @phan-suppress-next-line PhanUndeclaredMethod
 			$this->group->setLanguage( $this->options['language'] );
 		}
 	}

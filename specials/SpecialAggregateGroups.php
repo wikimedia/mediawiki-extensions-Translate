@@ -232,6 +232,7 @@ class SpecialAggregateGroups extends SpecialPage {
 
 		// Get the respective groups and sort them
 		$subgroups = MessageGroups::getGroupsById( $subgroupIds );
+		'@phan-var WikiPageMessageGroup[] $subgroups';
 		uasort( $subgroups, [ MessageGroups::class, 'groupLabelSort' ] );
 
 		// Avoid potentially thousands of separate database queries

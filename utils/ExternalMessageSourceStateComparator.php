@@ -119,6 +119,7 @@ class ExternalMessageSourceStateComparator {
 		// By-pass cached message definitions
 		/** @var FFS $ffs */
 		$ffs = $group->getFFS();
+		'@phan-var SimpleFFS $ffs';
 		if ( $code === $group->getSourceLanguage() && !$ffs->exists( $code ) ) {
 			$path = $group->getSourceFilePath( $code );
 			throw new MWException( "Source message file for {$group->getId()} does not exist: $path" );

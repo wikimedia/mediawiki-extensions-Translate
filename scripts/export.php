@@ -131,6 +131,7 @@ class CommandlineExport extends Maintenance {
 		$groupIds = explode( ',', trim( $this->getOption( 'group' ) ) );
 		$groupIds = MessageGroups::expandWildcards( $groupIds );
 		$groups = MessageGroups::getGroupsById( $groupIds );
+		'@phan-var FileBasedMessageGroup[] $groups';
 
 		/** @var FileBasedMessageGroup $group */
 		foreach ( $groups as $groupId => $group ) {

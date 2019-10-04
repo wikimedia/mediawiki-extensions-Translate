@@ -293,6 +293,7 @@ class MessageGroups {
 	 * @return CachedMessageGroupLoader[]
 	 */
 	protected function getCacheGroupLoaders() {
+		// @phan-suppress-next-line PhanTypeMismatchReturn
 		return array_filter( $this->getGroupLoaders(), function ( $groupLoader ) {
 			return $groupLoader instanceof CachedMessageGroupLoader;
 		} );
@@ -750,7 +751,7 @@ class MessageGroups {
 	 * See getGroupStructure, just collects ids into array
 	 * @param MessageGroup $value
 	 * @param string $key
-	 * @param bool $used
+	 * @param array $used
 	 */
 	public static function collectGroupIds( MessageGroup $value, $key, $used ) {
 		$used[0][$value->getId()] = true;

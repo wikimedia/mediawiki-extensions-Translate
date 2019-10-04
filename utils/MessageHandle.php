@@ -271,6 +271,7 @@ class MessageHandle {
 		// We cannot reliably map from the database key to the internal key if
 		// capital links setting is enabled for the namespace.
 		if ( is_callable( [ $group, 'getKeys' ] ) ) {
+			// @phan-suppress-next-line PhanUndeclaredMethod
 			$keys = $group->getKeys();
 		} else {
 			$keys = array_keys( $group->getDefinitions() );
