@@ -97,7 +97,7 @@ class TPSection {
 	 * @return string Wikitext.
 	 */
 	public function getMarkedText() {
-		$id = $this->name !== null ? $this->name : $this->id;
+		$id = $this->name ?? $this->id;
 		$header = "<!--T:{$id}-->";
 		$re = '~^(=+.*?=+\s*?$)~m';
 		$rep = "\\1 $header";
@@ -121,7 +121,7 @@ class TPSection {
 	 * @return string Wikitext.
 	 */
 	public function getOldText() {
-		return $this->oldText !== null ? $this->oldText : $this->text;
+		return $this->oldText ?? $this->text;
 	}
 
 	/**

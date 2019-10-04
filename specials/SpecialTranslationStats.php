@@ -451,7 +451,7 @@ class SpecialTranslationStats extends SpecialPage {
 
 		$data = [];
 		// Allow 10 seconds in the future for processing time
-		$lastValue = $end !== null ? $end : $now + 10;
+		$lastValue = $end ?? $now + 10;
 		$lang = $this->getLanguage();
 		while ( $cutoff <= $lastValue ) {
 			$date = $lang->sprintfDate( $dateFormat, wfTimestamp( TS_MW, $cutoff ) );

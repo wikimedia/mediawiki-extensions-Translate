@@ -533,7 +533,7 @@ class ElasticSearchTTMServer
 		while ( ( $startTime + $timeout ) > time() ) {
 			try {
 				$response = $this->getIndexHealth( $indexName );
-				$status = isset( $response['status'] ) ? $response['status'] : 'unknown';
+				$status = $response['status'] ?? 'unknown';
 				if ( $status === 'green' ) {
 					$this->logOutput( "\tGreen!" );
 					return true;
