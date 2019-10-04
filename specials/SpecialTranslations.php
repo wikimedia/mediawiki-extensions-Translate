@@ -213,6 +213,7 @@ class SpecialTranslations extends SpecialAllPages {
 			'</sup>&#160;';
 		$separator = $this->msg( 'word-separator' )->plain();
 
+		$tools = [];
 		foreach ( $res as $s ) {
 			$key = $s->page_title;
 			$tTitle = Title::makeTitle( $s->page_namespace, $key );

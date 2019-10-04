@@ -230,11 +230,13 @@ class SpecialLanguageStats extends SpecialPage {
 	}
 
 	protected function showPurgeForm() {
-		$formDescriptor[ 'intro' ] = [
-			'type' => 'info',
-			'vertical-label' => true,
-			'raw' => true,
-			'default' => $this->msg( 'confirm-purge-top' )->parse()
+		$formDescriptor = [
+			'intro' => [
+				'type' => 'info',
+				'vertical-label' => true,
+				'raw' => true,
+				'default' => $this->msg( 'confirm-purge-top' )->parse()
+			],
 		];
 
 		$context = new DerivativeContext( $this->getContext() );
@@ -251,27 +253,29 @@ class SpecialLanguageStats extends SpecialPage {
 	 * HTMLForm for the top form rendering.
 	 */
 	protected function addForm() {
-		$formDescriptor[ 'language' ] = [
-			'type' => 'text',
-			'name' => 'language',
-			'id' => 'language',
-			'label' => $this->msg( 'translate-language-code-field-name' )->text(),
-			'size' => 10,
-			'default' => $this->target,
-		];
-		$formDescriptor[ 'suppresscomplete' ] = [
-			'type' => 'check',
-			'label' => $this->msg( 'translate-suppress-complete' )->text(),
-			'name' => 'suppresscomplete',
-			'id' => 'suppresscomplete',
-			'default' => $this->noComplete,
-		];
-		$formDescriptor[ 'suppressempty' ] = [
-			'type' => 'check',
-			'label' => $this->msg( 'translate-ls-noempty' )->text(),
-			'name' => 'suppressempty',
-			'id' => 'suppressempty',
-			'default' => $this->noEmpty,
+		$formDescriptor = [
+			'language' => [
+				'type' => 'text',
+				'name' => 'language',
+				'id' => 'language',
+				'label' => $this->msg( 'translate-language-code-field-name' )->text(),
+				'size' => 10,
+				'default' => $this->target,
+			],
+			'suppresscomplete' => [
+				'type' => 'check',
+				'label' => $this->msg( 'translate-suppress-complete' )->text(),
+				'name' => 'suppresscomplete',
+				'id' => 'suppresscomplete',
+				'default' => $this->noComplete,
+			],
+			'suppressempty' => [
+				'type' => 'check',
+				'label' => $this->msg( 'translate-ls-noempty' )->text(),
+				'name' => 'suppressempty',
+				'id' => 'suppressempty',
+				'default' => $this->noEmpty,
+			],
 		];
 
 		$context = new DerivativeContext( $this->getContext() );

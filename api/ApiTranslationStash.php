@@ -51,6 +51,7 @@ class ApiTranslationStash extends ApiBase {
 			$stash->addTranslation( $translation );
 		}
 
+		$output = [];
 		if ( $action === 'query' ) {
 			$output['translations'] = [];
 

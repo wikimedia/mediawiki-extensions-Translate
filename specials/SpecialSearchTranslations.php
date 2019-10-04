@@ -173,10 +173,12 @@ class SpecialSearchTranslations extends SpecialPage {
 					$this->getContext(),
 					$dataProvider
 				);
-				$document['wiki'] = wfWikiID();
-				$document['localid'] = $handle->getTitleForBase()->getPrefixedText();
-				$document['content'] = $aid->getData()['value'];
-				$document['language'] = $handle->getCode();
+				$document = [
+					'wiki' => wfWikiID(),
+					'localid' => $handle->getTitleForBase()->getPrefixedText(),
+					'content' => $aid->getData()['value'],
+					'language' => $handle->getCode(),
+				];
 				array_unshift( $documents, $document );
 				$total++;
 			}

@@ -172,7 +172,7 @@ class ApiQueryMessageCollection extends ApiQueryGeneratorBase {
 	 * @return array
 	 */
 	public function extractMessageData( $result, $props, $message ) {
-		$data['key'] = $message->key();
+		$data = [ 'key' => $message->key() ];
 
 		if ( isset( $props['definition'] ) ) {
 			$data['definition'] = $message->definition();

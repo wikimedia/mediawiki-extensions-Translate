@@ -261,9 +261,11 @@ abstract class ComplexMessages {
 	public function header( $title ) {
 		$colspan = [ 'colspan' => 3 ];
 		$header = Xml::element( 'th', $colspan, $this->getTitle() . ' - ' . $title );
-		$subheading[] = '<th>' . wfMessage( 'translate-magic-cm-original' )->escaped() . '</th>';
-		$subheading[] = '<th>' . wfMessage( 'translate-magic-cm-current' )->escaped() . '</th>';
-		$subheading[] = '<th>' . wfMessage( 'translate-magic-cm-to-be' )->escaped() . '</th>';
+		$subheading = [
+			'<th>' . wfMessage( 'translate-magic-cm-original' )->escaped() . '</th>',
+			'<th>' . wfMessage( 'translate-magic-cm-current' )->escaped() . '</th>',
+			'<th>' . wfMessage( 'translate-magic-cm-to-be' )->escaped() . '</th>',
+		];
 
 		return '<tr>' . $header . '</tr>' .
 			'<tr>' . implode( "\n", $subheading ) . '</tr>';

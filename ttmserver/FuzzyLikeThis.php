@@ -199,6 +199,7 @@ class FuzzyLikeThis extends \Elastica\Query\AbstractQuery {
 	 * @see \Elastica\Query\AbstractQuery::toArray()
 	 */
 	public function toArray() {
+		$args = [];
 		if ( !empty( $this->_fields ) ) {
 			$args['fields'] = $this->_fields;
 		}

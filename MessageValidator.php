@@ -303,6 +303,7 @@ class MessageValidator {
 	protected function fixMessageParams( array $notices ) {
 		$lang = RequestContext::getMain()->getLanguage();
 
+		$validators = [];
 		foreach ( $notices as $vkey => $validator ) {
 			array_shift( $validator );
 			$message = [ array_shift( $validator ) ];

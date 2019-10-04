@@ -106,6 +106,7 @@ class GettextPlural {
 		// |/| is commonly used in KDE to support inflections. It needs to be escaped
 		// to avoid it messing up the plural markup.
 		$replacements = [ '|/|' ];
+		$map = [];
 		foreach ( $replacements as $replacement ) {
 			$ph = TranslateUtils::getPlaceholder();
 			$map[ $ph ] = $replacement;
