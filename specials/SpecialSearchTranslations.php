@@ -17,7 +17,7 @@ class SpecialSearchTranslations extends SpecialPage {
 	protected $opts;
 
 	/**
-	 * Placeholders used for highlighting. Solr can mark the beginning and
+	 * Placeholders used for highlighting. Search backend can mark the beginning and
 	 * end but we need to run htmlspecialchars on the result first and then
 	 * replace the placeholders with the html. It is assumed placeholders
 	 * don't contain any chars that are escaped in html.

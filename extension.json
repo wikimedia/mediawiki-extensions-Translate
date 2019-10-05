@@ -176,7 +176,6 @@
 		"SerializedMessageIndex": "utils/MessageIndex.php",
 		"ShapadoJsFFS": "ffs/JavaScriptFFS.php",
 		"SimpleFFS": "ffs/SimpleFFS.php",
-		"SolrTTMServer": "ttmserver/SolrTTMServer.php",
 		"SpecialAggregateGroups": "specials/SpecialAggregateGroups.php",
 		"SpecialExportTranslations": "specials/SpecialExportTranslations.php",
 		"SpecialImportTranslations": "specials/SpecialImportTranslations.php",
@@ -1186,11 +1185,6 @@
 		"TranslateRcFilterDefault": {
 			"value": "filter",
 			"description": "Default action for the RecentChanges filter, which makes it possible to filter translations away or show them only. Possible values: 'noaction', 'only', 'filter', 'site'.",
-			"public": true
-		},
-		"TranslateTestTTMServer": {
-			"value": null,
-			"description": "Set this to config like $wgTranslateTranslationServices if you want to run SolrTTMServer tests.",
 			"public": true
 		},
 		"TranslateYamlLibrary": {
