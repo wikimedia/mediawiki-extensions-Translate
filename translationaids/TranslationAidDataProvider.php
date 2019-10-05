@@ -86,7 +86,7 @@ class TranslationAidDataProvider {
 	}
 
 	private static function loadTranslationData( IDatabase $db, MessageHandle $handle ) {
-		if ( method_exists( 'Revision', 'getQueryInfo' ) ) {
+		if ( method_exists( Revision::class, 'getQueryInfo' ) ) {
 			$queryInfo = Revision::getQueryInfo( [ 'page', 'text' ] );
 			$tables = $queryInfo[ 'tables' ];
 			$fields = $queryInfo[ 'fields' ];

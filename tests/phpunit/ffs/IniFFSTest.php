@@ -12,14 +12,14 @@ class IniFFSTest extends MediaWikiTestCase {
 
 	protected $groupConfiguration = [
 		'BASIC' => [
-			'class' => 'FileBasedMessageGroup',
+			'class' => FileBasedMessageGroup::class,
 			'id' => 'test-id',
 			'label' => 'Test Label',
 			'namespace' => 'NS_MEDIAWIKI',
 			'description' => 'Test description',
 		],
 		'FILES' => [
-			'class' => 'IniFFS',
+			'class' => IniFFS::class,
 			'sourcePattern' => 'ignored',
 		],
 	];

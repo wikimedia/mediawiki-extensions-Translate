@@ -97,7 +97,7 @@ class MessageGroupConfigurationParser {
 			foreach ( $groups as $i => $group ) {
 				$groups[$i] = self::mergeTemplate( $template, $group );
 				// Little hack to allow aggregate groups to be defined in same file with other groups.
-				if ( $groups[$i]['BASIC']['class'] === 'AggregateMessageGroup' ) {
+				if ( $groups[$i]['BASIC']['class'] === AggregateMessageGroup::class ) {
 					unset( $groups[$i]['FILES'] );
 				}
 			}

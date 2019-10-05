@@ -17,14 +17,14 @@ class JsonFFSTest extends MediaWikiTestCase {
 		parent::setUp();
 		$this->groupConfiguration = [
 			'BASIC' => [
-				'class' => 'FileBasedMessageGroup',
+				'class' => FileBasedMessageGroup::class,
 				'id' => 'test-id',
 				'label' => 'Test Label',
 				'namespace' => 'NS_MEDIAWIKI',
 				'description' => 'Test description',
 			],
 			'FILES' => [
-				'class' => 'JsonFFS',
+				'class' => JsonFFS::class,
 				'sourcePattern' => __DIR__ . '/../data/jsontest_%CODE%.json',
 				'targetPattern' => 'jsontest_%CODE%.json',
 			],

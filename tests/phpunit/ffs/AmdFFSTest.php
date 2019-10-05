@@ -17,14 +17,14 @@ class AmdFFSTest extends MediaWikiTestCase {
 		parent::setUp();
 		$this->groupConfiguration = [
 			'BASIC' => [
-				'class' => 'FileBasedMessageGroup',
+				'class' => FileBasedMessageGroup::class,
 				'id' => 'test-id',
 				'label' => 'Test Label',
 				'namespace' => 'NS_MEDIAWIKI',
 				'description' => 'Test description',
 			],
 			'FILES' => [
-				'class' => 'AmdFFS',
+				'class' => AmdFFS::class,
 				'sourcePattern' => 'fake_reference_not_used_in_practise',
 				'targetPattern' => 'fake_reference_not_used_in_practise',
 			],

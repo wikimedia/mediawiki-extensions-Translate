@@ -190,11 +190,11 @@ class SpecialImportTranslations extends SpecialPage {
 		 */
 		$group = MessageGroupBase::factory( [
 			'FILES' => [
-				'class' => 'GettextFFS',
+				'class' => GettextFFS::class,
 				'CtxtAsKey' => true,
 			],
 			'BASIC' => [
-				'class' => 'FileBasedMessageGroup',
+				'class' => FileBasedMessageGroup::class,
 				'namespace' => -1,
 			]
 		] );

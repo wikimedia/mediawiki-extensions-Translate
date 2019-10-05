@@ -279,7 +279,7 @@ class SpecialPageTranslation extends SpecialPage {
 
 		// If TranslationNotifications is installed, and the user can notify
 		// translators, add a convenience link.
-		if ( method_exists( 'SpecialNotifyTranslators', 'execute' ) &&
+		if ( method_exists( SpecialNotifyTranslators::class, 'execute' ) &&
 			$this->getUser()->isAllowed( SpecialNotifyTranslators::$right )
 		) {
 			$link = SpecialPage::getTitleFor( 'NotifyTranslators' )->getFullURL(

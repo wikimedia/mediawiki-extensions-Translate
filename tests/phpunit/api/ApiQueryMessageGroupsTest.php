@@ -78,8 +78,8 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 		$this->assertSame( $items[1]['exists'], true );
 		$this->assertSame( $items[0]['namespace'], 5 );
 		$this->assertSame( $items[1]['namespace'], 5 );
-		$this->assertSame( $items[0]['class'], 'WikiMessageGroup' );
-		$this->assertSame( $items[1]['class'], 'WikiMessageGroup' );
+		$this->assertSame( $items[0]['class'], WikiMessageGroup::class );
+		$this->assertSame( $items[1]['class'], WikiMessageGroup::class );
 	}
 
 	public function testAPIFilterAccuracy() {
@@ -124,7 +124,7 @@ class ApiQueryMessageGroupsTest extends ApiTestCase {
 			$this->assertSame( $item['exists'], true );
 			$this->assertStringEndsWith( 'id', $item['id'] ); // theid, anotherid
 			$this->assertSame( $item['namespace'], 5 );
-			$this->assertSame( $item['class'], 'WikiMessageGroup' );
+			$this->assertSame( $item['class'], WikiMessageGroup::class );
 		}
 	}
 

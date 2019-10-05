@@ -548,7 +548,7 @@ class ElasticSearchTTMServer
 	}
 
 	protected function waitUntilReady() {
-		if ( method_exists( 'MWElasticUtils', 'waitForGreen' ) ) {
+		if ( method_exists( MWElasticUtils::class, 'waitForGreen' ) ) {
 			$statuses = MWElasticUtils::waitForGreen(
 				$this->getClient(),
 				$this->getIndexName(),
@@ -798,7 +798,7 @@ class ElasticSearchTTMServer
 	 * @throws \RuntimeException
 	 */
 	private function deleteByQuery( \Elastica\Type $type, \Elastica\Query $query ) {
-		if ( method_exists( 'MWElasticUtils', 'deleteByQuery' ) ) {
+		if ( method_exists( MWElasticUtils::class, 'deleteByQuery' ) ) {
 			try {
 				MWElasticUtils::deleteByQuery( $type->getIndex(), $query, /* $allowConflicts = */ true );
 			} catch ( \Exception $e ) {
@@ -842,7 +842,7 @@ class ElasticSearchTTMServer
 	 * @return bool
 	 */
 	public function isFrozen() {
-		if ( method_exists( 'MWElasticUtils', 'isFrozen' ) ) {
+		if ( method_exists( MWElasticUtils::class, 'isFrozen' ) ) {
 			try {
 				return MWElasticUtils::isFrozen( $this->getClient() );
 			} catch ( \Exception $e ) {

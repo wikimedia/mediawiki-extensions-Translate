@@ -60,7 +60,7 @@ class TranslatePreferences {
 		$languages = Language::fetchLanguageNames();
 
 		$preferences['translate-editlangs'] = [
-			'class' => 'HTMLJsSelectToInputField',
+			'class' => HTMLJsSelectToInputField::class,
 			// prefs-translate
 			'section' => 'editing/translate',
 			'label-message' => 'translate-pref-editassistlang',
@@ -78,7 +78,7 @@ class TranslatePreferences {
 	 * @return JsSelectToInput
 	 */
 	protected static function languageSelector() {
-		if ( is_callable( [ 'LanguageNames', 'getNames' ] ) ) {
+		if ( is_callable( [ LanguageNames::class, 'getNames' ] ) ) {
 			$lang = RequestContext::getMain()->getLanguage();
 			$languages = LanguageNames::getNames( $lang->getCode(),
 				LanguageNames::FALLBACK_NORMAL

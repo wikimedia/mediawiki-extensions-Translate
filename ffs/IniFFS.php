@@ -17,7 +17,7 @@
  */
 class IniFFS extends SimpleFFS {
 	public static function isValid( $data ) {
-		$conf = [ 'BASIC' => [ 'class' => 'FileBasedMessageGroup', 'namespace' => 8 ] ];
+		$conf = [ 'BASIC' => [ 'class' => FileBasedMessageGroup::class, 'namespace' => 8 ] ];
 		/**
 		 * @var FileBasedMessageGroup $group
 		 */

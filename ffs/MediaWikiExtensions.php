@@ -110,7 +110,7 @@ class PremadeMediawikiExtensionGroups {
 	 */
 	protected function createMessageGroup( $id, $info ) {
 		$conf = [];
-		$conf['BASIC']['class'] = 'MediaWikiExtensionMessageGroup';
+		$conf['BASIC']['class'] = MediaWikiExtensionMessageGroup::class;
 		$conf['BASIC']['id'] = $id;
 		$conf['BASIC']['namespace'] = $this->namespace;
 		$conf['BASIC']['label'] = $info['name'];
@@ -122,7 +122,7 @@ class PremadeMediawikiExtensionGroups {
 			$conf['BASIC']['extensionurl'] = $info['url'];
 		}
 
-		$conf['FILES']['class'] = 'JsonFFS';
+		$conf['FILES']['class'] = JsonFFS::class;
 		$conf['FILES']['sourcePattern'] = $this->path . '/' . $info['file'];
 
 		// @todo Find a better way
@@ -136,7 +136,7 @@ class PremadeMediawikiExtensionGroups {
 		}
 
 		if ( isset( $info['prefix'] ) ) {
-			$conf['MANGLER']['class'] = 'StringMatcher';
+			$conf['MANGLER']['class'] = StringMatcher::class;
 			$conf['MANGLER']['prefix'] = $info['prefix'];
 			$conf['MANGLER']['patterns'] = $info['mangle'];
 
@@ -149,7 +149,7 @@ class PremadeMediawikiExtensionGroups {
 			}
 		}
 
-		$conf['CHECKER']['class'] = 'MediaWikiMessageChecker';
+		$conf['CHECKER']['class'] = MediaWikiMessageChecker::class;
 		$conf['CHECKER']['checks'] = [
 			'pluralCheck',
 			'pluralFormsCheck',
@@ -160,7 +160,7 @@ class PremadeMediawikiExtensionGroups {
 			'miscMWChecks',
 		];
 
-		$conf['INSERTABLES']['class'] = 'MediaWikiInsertablesSuggester';
+		$conf['INSERTABLES']['class'] = MediaWikiInsertablesSuggester::class;
 
 		if ( isset( $info['optional'] ) ) {
 			$conf['TAGS']['optional'] = $info['optional'];

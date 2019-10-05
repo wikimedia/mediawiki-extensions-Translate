@@ -39,7 +39,7 @@ class SpecialAggregateGroups extends SpecialPage {
 		TranslateMetadata::preloadGroups( array_keys( $groupsPreload ) );
 
 		$groups = MessageGroups::getAllGroups();
-		uasort( $groups, [ 'MessageGroups', 'groupLabelSort' ] );
+		uasort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
 		$aggregates = [];
 		$pages = [];
 		foreach ( $groups as $group ) {
@@ -232,7 +232,7 @@ class SpecialAggregateGroups extends SpecialPage {
 
 		// Get the respective groups and sort them
 		$subgroups = MessageGroups::getGroupsById( $subgroupIds );
-		uasort( $subgroups, [ 'MessageGroups', 'groupLabelSort' ] );
+		uasort( $subgroups, [ MessageGroups::class, 'groupLabelSort' ] );
 
 		// Avoid potentially thousands of separate database queries
 		$lb = new LinkBatch();

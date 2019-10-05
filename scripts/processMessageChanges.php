@@ -118,7 +118,7 @@ class ProcessMessageChanges extends Maintenance {
 	 * @return MessageGroup[]
 	 */
 	protected function getGroups() {
-		$groups = MessageGroups::getGroupsByType( 'FileBasedMessageGroup' );
+		$groups = MessageGroups::getGroupsByType( FileBasedMessageGroup::class );
 
 		// Include all if option not given
 		$include = $this->getOption( 'group', '*' );

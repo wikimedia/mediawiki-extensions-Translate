@@ -29,7 +29,7 @@ class TTMServerTest extends MediaWikiTestCase {
 			'timeout-sync' => 4,
 			'timeout-async' => 4,
 			'type' => 'ttmserver',
-			'class' => 'RemoteTTMServer',
+			'class' => RemoteTTMServer::class,
 		];
 	}
 
@@ -83,11 +83,11 @@ class TTMServerTest extends MediaWikiTestCase {
 	public function testMirrorsConfig() {
 		global $wgTranslateTranslationServices;
 		$wgTranslateTranslationServices['primary'] = [
-			'class' => 'ElasticSearchTTMServer',
+			'class' => ElasticSearchTTMServer::class,
 			'mirrors' => [ 'secondary' ]
 		];
 		$wgTranslateTranslationServices['secondary'] = [
-			'class' => 'ElasticSearchTTMServer',
+			'class' => ElasticSearchTTMServer::class,
 			'mirrors' => [ 'primary', 'unknown' ]
 		];
 		$primary = TTMServer::factory( $wgTranslateTranslationServices['primary'] );

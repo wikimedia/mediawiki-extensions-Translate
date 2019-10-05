@@ -28,8 +28,8 @@ class MockWikiValidationMessageGroup extends MockWikiMessageGroup {
 	public function getValidator() {
 		$validator = new MessageValidator( $this->getId() );
 		$validator->setValidators( [
-			[ 'class' => 'AnotherMockTranslateValidator' ],
-			[ 'class' => 'MockTranslateValidator', 'enforce' => true ],
+			[ 'class' => AnotherMockTranslateValidator::class ],
+			[ 'class' => MockTranslateValidator::class, 'enforce' => true ],
 		] );
 
 		return $validator;

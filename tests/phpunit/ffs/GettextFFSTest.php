@@ -18,14 +18,14 @@ class GettextFFSTest extends MediaWikiTestCase {
 		parent::setUp();
 		$this->groupConfiguration = [
 			'BASIC' => [
-				'class' => 'FileBasedMessageGroup',
+				'class' => FileBasedMessageGroup::class,
 				'id' => 'test-id',
 				'label' => 'Test Label',
 				'namespace' => 'NS_MEDIAWIKI',
 				'description' => 'Test description',
 			],
 			'FILES' => [
-				'class' => 'GettextFFS',
+				'class' => GettextFFS::class,
 				'sourcePattern' => __DIR__ . '/../data/gettext.po',
 			],
 		];

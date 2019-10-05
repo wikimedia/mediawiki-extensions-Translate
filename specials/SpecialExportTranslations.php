@@ -94,7 +94,7 @@ class SpecialExportTranslations extends SpecialPage {
 	protected function getGroupOptions() {
 		$selected = $this->groupId;
 		$groups = MessageGroups::getAllGroups();
-		uasort( $groups, [ 'MessageGroups', 'groupLabelSort' ] );
+		uasort( $groups, [ MessageGroups::class, 'groupLabelSort' ] );
 
 		$options = [];
 		foreach ( $groups as $id => $group ) {

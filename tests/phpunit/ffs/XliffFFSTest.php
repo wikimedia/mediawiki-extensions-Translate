@@ -8,14 +8,14 @@
 class XliffFFSTest extends MediaWikiTestCase {
 	protected $groupConfiguration = [
 		'BASIC' => [
-			'class' => 'FileBasedMessageGroup',
+			'class' => FileBasedMessageGroup::class,
 			'id' => 'test-id',
 			'label' => 'Test Label',
 			'namespace' => 'NS_MEDIAWIKI',
 			'description' => 'Test description',
 		],
 		'FILES' => [
-			'class' => 'XliffFFS',
+			'class' => XliffFFS::class,
 			'sourcePattern' => '',
 		],
 	];

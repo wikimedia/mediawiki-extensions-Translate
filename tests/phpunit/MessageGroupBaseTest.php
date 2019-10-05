@@ -11,7 +11,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 
 	protected $groupConfiguration = [
 		'BASIC' => [
-			'class' => 'FileBasedMessageGroup',
+			'class' => FileBasedMessageGroup::class,
 			'id' => 'test-id',
 			'label' => 'Test Label',
 			'namespace' => 'NS_MEDIAWIKI',
@@ -87,7 +87,7 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 
 	public function testInsertablesSuggesterClass() {
 		$conf = $this->groupConfiguration;
-		$conf['INSERTABLES']['class'] = 'FakeInsertablesSuggester';
+		$conf['INSERTABLES']['class'] = FakeInsertablesSuggester::class;
 		$this->group = MessageGroupBase::factory( $conf );
 
 		$this->assertArrayEquals(
@@ -115,8 +115,8 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 
 	public function testInsertablesSuggesterClassAndClasses() {
 		$conf = $this->groupConfiguration;
-		$conf['INSERTABLES']['class'] = 'FakeInsertablesSuggester';
-		$conf['INSERTABLES']['classes'] = [ 'AnotherFakeInsertablesSuggester' ];
+		$conf['INSERTABLES']['class'] = FakeInsertablesSuggester::class;
+		$conf['INSERTABLES']['classes'] = [ AnotherFakeInsertablesSuggester::class ];
 		$this->group = MessageGroupBase::factory( $conf );
 
 		$this->assertArrayEquals(
@@ -182,16 +182,16 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 		$conf = $this->groupConfiguration;
 
 		unset( $conf['INSERTABLES']['class'] );
-		$conf['INSERTABLES']['classes'] = [ 'AnotherFakeInsertablesSuggester' ];
+		$conf['INSERTABLES']['classes'] = [ AnotherFakeInsertablesSuggester::class ];
 		$conf['VALIDATORS'] = [];
 		$conf['VALIDATORS'][] = [
-			'class' => 'FakeInsertableValidator',
+			'class' => FakeInsertableValidator::class,
 			'insertable' => true,
 			'params' => 'TEST'
 		];
 
 		$conf['VALIDATORS'][] = [
-			'class' => 'AnotherFakeInsertableValidator',
+			'class' => AnotherFakeInsertableValidator::class,
 			'insertable' => false,
 			'params' => 'TEST2'
 		];
@@ -226,11 +226,11 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 
 		$conf['INSERTABLES'] = [
 			[
-				'class' => 'FakeInsertableValidator',
+				'class' => FakeInsertableValidator::class,
 				'params' => 'Regex'
 			],
 			[
-				'class' => 'AnotherFakeInsertableValidator',
+				'class' => AnotherFakeInsertableValidator::class,
 				'params' => 'Regex'
 			]
 		];

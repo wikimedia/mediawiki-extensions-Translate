@@ -51,7 +51,7 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 		// if they are public.
 		if (
 			isset( $config['class'] ) &&
-			$config['class'] === 'ElasticSearchTTMServer' &&
+			$config['class'] === ElasticSearchTTMServer::class &&
 			isset( $config['public'] ) &&
 			$config['public'] === true
 		) {

@@ -114,7 +114,7 @@ class AggregateMessageGroupLoader extends MessageGroupLoader
 				'label' => TranslateMetadata::get( $id, 'name' ),
 				'description' => TranslateMetadata::get( $id, 'description' ),
 				'meta' => 1,
-				'class' => 'AggregateMessageGroup',
+				'class' => AggregateMessageGroup::class,
 				'namespace' => NS_TRANSLATIONS,
 			];
 			$conf['GROUPS'] = TranslateMetadata::getSubgroups( $id );
