@@ -114,7 +114,7 @@ class CharacterEditStats extends Maintenance {
 		$cutoff = $dbr->addQuotes( $dbr->timestamp( time() - $days * 24 * 3600 ) );
 
 		// The field renames are to be compatible with recentchanges table query
-		if ( is_callable( Revision::class, 'getQueryInfo' ) ) {
+		if ( is_callable( [ Revision::class, 'getQueryInfo' ] ) ) {
 			$revQuery = Revision::getQueryInfo( [ 'page' ] );
 			$revUserText = $revQuery['fields']['rev_user_text'] ?? 'rev_user_text';
 		} else {

@@ -408,7 +408,7 @@ class TranslateEditAddons {
 		$th->setEditMode( false );
 
 		$de->loadNewText();
-		if ( method_exists( $de, 'getNewRevision' ) ) {
+		if ( is_callable( [ $de, 'getNewRevision' ] ) ) {
 			$newRevision = $de->getNewRevision();
 			$newContent = $newRevision ? $newRevision->getContent( 'main' ) : null;
 		} else {

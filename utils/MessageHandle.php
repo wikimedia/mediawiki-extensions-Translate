@@ -270,7 +270,7 @@ class MessageHandle {
 		$keys = [];
 		// We cannot reliably map from the database key to the internal key if
 		// capital links setting is enabled for the namespace.
-		if ( method_exists( $group, 'getKeys' ) ) {
+		if ( is_callable( [ $group, 'getKeys' ] ) ) {
 			$keys = $group->getKeys();
 		} else {
 			$keys = array_keys( $group->getDefinitions() );

@@ -126,7 +126,7 @@ class MessageGroupConfigurationParser {
 
 			$class = $section['class'];
 			// There is no sane way to check whether *class* implements interface in PHP
-			if ( !method_exists( $class, 'getExtraSchema' ) ) {
+			if ( !is_callable( [ $class, 'getExtraSchema' ] ) ) {
 				continue;
 			}
 

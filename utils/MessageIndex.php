@@ -295,7 +295,7 @@ abstract class MessageIndex {
 	 * @param bool $ignore
 	 */
 	protected function checkAndAdd( &$hugearray, MessageGroup $g, $ignore = false ) {
-		if ( method_exists( $g, 'getKeys' ) ) {
+		if ( is_callable( [ $g, 'getKeys' ] ) ) {
 			$keys = $g->getKeys();
 		} else {
 			$messages = $g->getDefinitions();
@@ -448,11 +448,11 @@ class DatabaseMessageIndex extends MessageIndex {
 		// Unlock once the rows are actually unlocked to avoid deadlocks
 		if ( !$dbw->trxLevel() ) {
 			$dbw->unlock( 'translate-messageindex', $fname );
-		} elseif ( method_exists( $dbw, 'onTransactionResolution' ) ) { // 1.28
+		} elseif ( is_callable( [ $dbw, 'onTransactionResolution' ] ) ) { // 1.28
 			$dbw->onTransactionResolution( function () use ( $dbw, $fname ) {
 				$dbw->unlock( 'translate-messageindex', $fname );
 			} );
-		} elseif ( method_exists( $dbw, 'onTransactionCommitOrIdle' ) ) {
+		} elseif ( is_callable( [ $dbw, 'onTransactionCommitOrIdle' ] ) ) {
 			$dbw->onTransactionCommitOrIdle( function () use ( $dbw, $fname ) {
 				$dbw->unlock( 'translate-messageindex', $fname );
 			} );

@@ -690,7 +690,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 
 		$dbr = TranslateUtils::getSafeReadDB();
 
-		if ( is_callable( Revision::class, 'getQueryInfo' ) ) {
+		if ( is_callable( [ Revision::class, 'getQueryInfo' ] ) ) {
 			$revQuery = Revision::getQueryInfo( [ 'page', 'text' ] );
 		} else {
 			$revQuery = [

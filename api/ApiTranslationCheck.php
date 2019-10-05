@@ -83,7 +83,7 @@ class ApiTranslationCheck extends ApiBase {
 
 	private function getDefinition( MessageHandle $handle ) {
 		$group = $handle->getGroup();
-		if ( method_exists( $group, 'getMessageContent' ) ) {
+		if ( is_callable( [ $group, 'getMessageContent' ] ) ) {
 			return $group->getMessageContent( $handle );
 		} else {
 			return $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );

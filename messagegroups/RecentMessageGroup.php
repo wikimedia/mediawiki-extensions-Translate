@@ -93,7 +93,7 @@ class RecentMessageGroup extends WikiMessageGroup {
 
 		$db = wfGetDB( DB_REPLICA );
 
-		if ( is_callable( RecentChange::class, 'getQueryInfo' ) ) {
+		if ( is_callable( [ RecentChange::class, 'getQueryInfo' ] ) ) {
 			$rcQuery = RecentChange::getQueryInfo();
 			$tables = $rcQuery['tables'];
 			$joins = $rcQuery['joins'];

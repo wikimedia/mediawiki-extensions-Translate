@@ -35,7 +35,7 @@ class TranslationAidDataProvider {
 		}
 
 		// Optional performance optimization
-		if ( method_exists( $this->group, 'getMessageContent' ) ) {
+		if ( is_callable( [ $this->group, 'getMessageContent' ] ) ) {
 			$this->definition = $this->group->getMessageContent( $this->handle );
 		} else {
 			$this->definition = $this->group->getMessage(
