@@ -162,7 +162,7 @@ class AggregateMessageGroup extends MessageGroupBase {
 		 */
 		foreach ( $this->getGroups() as $group ) {
 			// @todo Not all oldstyle groups have getKeys yet
-			if ( method_exists( $group, 'getKeys' ) ) {
+			if ( is_callable( [ $group, 'getKeys' ] ) ) {
 				$moreKeys = $group->getKeys();
 			} else {
 				$moreKeys = array_keys( $group->getDefinitions() );

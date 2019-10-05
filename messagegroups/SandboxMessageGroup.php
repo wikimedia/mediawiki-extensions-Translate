@@ -145,7 +145,7 @@ class SandboxMessageGroup extends WikiMessageGroup {
 		}
 
 		// Try harder
-		if ( method_exists( $group, 'getKeys' ) ) {
+		if ( is_callable( [ $group, 'getKeys' ] ) ) {
 			$keys = $group->getKeys();
 		} else {
 			$keys = array_keys( $group->getDefinitions() );

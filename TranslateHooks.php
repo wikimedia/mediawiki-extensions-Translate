@@ -892,7 +892,7 @@ class TranslateHooks {
 			return true;
 		}
 
-		if ( method_exists( $content, 'getText' ) ) {
+		if ( is_callable( [ $content, 'getText' ] ) ) {
 			$text = $content->getText();
 		} else {
 			// Pre 1.33 compatibility
@@ -915,7 +915,7 @@ class TranslateHooks {
 		if ( $handle->isMessageNamespace() && !$handle->isDoc() ) {
 			$group = $handle->getGroup();
 
-			if ( method_exists( $group, 'getMessageContent' ) ) {
+			if ( is_callable( [ $group, 'getMessageContent' ] ) ) {
 				$definition = $group->getMessageContent( $handle );
 			} else {
 				$definition = $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
