@@ -197,6 +197,11 @@ abstract class TranslationWebService implements LoggerAwareInterface {
 	protected $config;
 
 	/**
+	 * @var LoggerInterface
+	 */
+	protected $logger;
+
+	/**
 	 * @param string $service Name of the webservice
 	 * @param array $config
 	 */

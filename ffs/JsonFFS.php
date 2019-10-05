@@ -16,6 +16,9 @@
  * @since 2012-09-21
  */
 class JsonFFS extends SimpleFFS {
+	/** @var ArrayFlattener */
+	private $flattener;
+
 	/**
 	 * @param string $data
 	 * @return bool

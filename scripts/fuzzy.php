@@ -111,6 +111,11 @@ class FuzzyScript {
 	public $comment;
 
 	/**
+	 * @var array[]
+	 */
+	public $pages;
+
+	/**
 	 * @param array $pages
 	 */
 	public function __construct( $pages ) {

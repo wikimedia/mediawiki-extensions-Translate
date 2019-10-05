@@ -26,6 +26,11 @@ class TTMServerBootstrap extends Maintenance {
 	 */
 	protected $reindex;
 
+	/**
+	 * @var int
+	 */
+	private $start;
+
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Script to bootstrap TTMServer.' );

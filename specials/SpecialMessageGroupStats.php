@@ -26,6 +26,9 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 
 	protected $translate;
 
+	/** @var int */
+	private $numberOfShownLanguages;
+
 	public function __construct() {
 		SpecialPage::__construct( 'MessageGroupStats' );
 		$this->totals = MessageGroupStats::getEmptyStats();

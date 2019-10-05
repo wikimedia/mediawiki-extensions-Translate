@@ -10,6 +10,9 @@
 use Psr\Log\AbstractLogger;
 
 class TranslateCliLogger extends AbstractLogger {
+	/** @var callable */
+	private $logger;
+
 	public function __construct( callable $logger ) {
 		$this->logger = $logger;
 	}

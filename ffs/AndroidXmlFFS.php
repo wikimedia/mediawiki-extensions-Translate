@@ -13,6 +13,9 @@
  * @ingroup FFS
  */
 class AndroidXmlFFS extends SimpleFFS {
+	/** @var ArrayFlattener */
+	private $flattener;
+
 	public function __construct( FileBasedMessageGroup $group ) {
 		parent::__construct( $group );
 		$this->flattener = $this->getFlattener();

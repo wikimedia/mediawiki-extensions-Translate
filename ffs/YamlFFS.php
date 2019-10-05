@@ -8,6 +8,9 @@
  * @ingroup FFS
  */
 class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
+	/** @var ArrayFlattener */
+	private $flattener;
+
 	/**
 	 * @param FileBasedMessageGroup $group
 	 */
