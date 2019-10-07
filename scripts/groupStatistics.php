@@ -470,8 +470,6 @@ class GroupStatistics extends Maintenance {
 					$rows[$code][] = [ true, $fuzzy, $total ];
 				}
 			}
-
-			unset( $collection );
 		}
 
 		// init summary array
