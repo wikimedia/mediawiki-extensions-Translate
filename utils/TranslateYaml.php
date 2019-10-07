@@ -25,14 +25,8 @@ class TranslateYaml {
 		switch ( $wgTranslateYamlLibrary ) {
 			case 'phpyaml':
 				// Harden: do not support unserializing objects.
-				// Method 1: PHP ini setting (not supported by HHVM)
-				// Method 2: Callback handler for !php/object
 				$previousValue = ini_set( 'yaml.decode_php', false );
-				$ignored = 0;
-				$callback = function ( $value ) {
-					return $value;
-				};
-				$ret = yaml_parse( $text, 0, $ignored, [ '!php/object' => $callback ] );
+				$ret = yaml_parse( $text );
 				ini_set( 'yaml.decode_php', $previousValue );
 				if ( $ret === false ) {
 					// Convert failures to exceptions
