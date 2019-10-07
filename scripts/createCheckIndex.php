@@ -108,12 +108,12 @@ class CreateCheckIndex extends Maintenance {
 					if ( $prob ) {
 						if ( $verbose ) {
 							// Print it
-							$nsText = $contLang->getNsText( $g->namespaces[0] );
+							$nsText = $contLang->getNsText( $g->getNamespace() );
 							$this->output( "# [[$nsText:$key/$code]]\n" );
 						}
 
 						// Add it to the array
-						$problematic[] = [ $g->namespaces[0], "$key/$code" ];
+						$problematic[] = [ $g->getNamespace(), "$key/$code" ];
 					}
 				}
 
