@@ -278,10 +278,6 @@ class PremadeMediawikiExtensionGroups {
 		$configureData = $this->loadConfigureExtensionData();
 		$fixedGroups = [];
 		foreach ( $groups as $g ) {
-			if ( !is_array( $g ) ) {
-				$g = [ $g ];
-			}
-
 			$name = $g['name'];
 
 			if ( isset( $g['id'] ) ) {

@@ -22,10 +22,6 @@ class PremadeIntuitionTextdomains extends PremadeMediawikiExtensionGroups {
 	protected function processGroups( $groups ) {
 		$fixedGroups = [];
 		foreach ( $groups as $g ) {
-			if ( !is_array( $g ) ) {
-				$g = [ $g ];
-			}
-
 			$name = $g['name'];
 			$sanitizedName = preg_replace( '/\s+/', '', strtolower( $name ) );
 
