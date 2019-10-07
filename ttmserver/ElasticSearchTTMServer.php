@@ -570,7 +570,7 @@ class ElasticSearchTTMServer
 		$indexName = $this->getType()->getIndex()->getName();
 		$this->logOutput( "Waiting for the index to go green..." );
 		if ( !$this->waitForGreen( $indexName, self::WAIT_UNTIL_READY_TIMEOUT ) ) {
-			die( "Timeout! Please check server logs for {$this->getIndex()->getName()}." );
+			die( "Timeout! Please check server logs for {$this->getIndexName()}." );
 		}
 	}
 
