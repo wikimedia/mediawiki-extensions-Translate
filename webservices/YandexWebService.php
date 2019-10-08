@@ -72,14 +72,14 @@ class YandexWebService extends TranslationWebService {
 
 		return TranslationQuery::factory( $this->config['url'] )
 			->timeout( $this->config['timeout'] )
-			->postWithData(
+			->postWithData( wfArrayToCgi(
 				[
 					'key' => $this->config['key'],
 					'text' => $text,
 					'lang' => "$from-$to",
 					'format' => 'html',
 				]
-			);
+			) );
 	}
 
 	protected function parseResponse( TranslationQueryResponse $reply ) {
