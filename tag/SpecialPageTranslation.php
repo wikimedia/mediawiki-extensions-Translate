@@ -82,7 +82,7 @@ class SpecialPageTranslation extends SpecialPage {
 		// On GET requests, show form which has token
 		if ( !$request->wasPosted() ) {
 			if ( $action === 'unlink' ) {
-				$this->showUnlinkConfirmation( $title, $target );
+				$this->showUnlinkConfirmation( $title );
 			} else {
 				$params = [
 					'do' => $action,

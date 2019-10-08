@@ -93,7 +93,7 @@ class TranslateDeleteJob extends Job {
 			$entry->publish( $logid );
 
 			$tpage = TranslatablePage::newFromTitle( $title );
-			$tpage->getTranslationPercentages( true );
+			$tpage->getTranslationPercentages();
 			foreach ( $tpage->getTranslationPages() as $page ) {
 				$page->invalidateCache();
 			}

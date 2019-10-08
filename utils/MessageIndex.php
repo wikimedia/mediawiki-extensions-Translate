@@ -257,7 +257,7 @@ abstract class MessageIndex {
 		foreach ( $old as $key => $groups ) {
 			if ( !isset( $new[$key] ) ) {
 				$keys['del'][$key] = [ (array)$groups, [] ];
-				$record( (array)$groups, [] );
+				$record( (array)$groups );
 			}
 			// We already checked for diffs above
 		}

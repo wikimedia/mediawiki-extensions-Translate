@@ -132,7 +132,7 @@ class SyncGroup extends Maintenance {
 					continue;
 				}
 
-				$cs = new ChangeSyncer( $group, $this );
+				$cs = new ChangeSyncer( $group );
 				$cs->setProgressCallback( [ $this, 'myOutput' ] );
 				$cs->interactive = !$this->hasOption( 'noask' );
 				$cs->nocolor = $this->hasOption( 'nocolor' );
