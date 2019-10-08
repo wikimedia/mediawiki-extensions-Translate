@@ -42,7 +42,6 @@ class MessageIndexRebuildJob extends Job {
 	 * Usually this job is fast enough to be executed immediately,
 	 * in which case having it go through jobqueue only causes problems
 	 * in installations with errant job queue processing.
-	 * @override
 	 */
 	public function insertIntoJobQueue() {
 		global $wgTranslateDelayedMessageIndexRebuild;

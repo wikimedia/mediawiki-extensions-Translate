@@ -115,7 +115,7 @@ class ProcessMessageChanges extends Maintenance {
 
 	/**
 	 * Gets list of message groups filtered by user input.
-	 * @return MessageGroup[]
+	 * @return FileBasedMessageGroup[]
 	 */
 	protected function getGroups() {
 		$groups = MessageGroups::getGroupsByType( FileBasedMessageGroup::class );

@@ -26,7 +26,7 @@ use \RuntimeException;
 class ValidatorFactory {
 
 	/**
-	 * @param array $validators
+	 * @var string[]
 	 */
 	protected static $validators = [
 		'BraceBalance' => BraceBalanceValidator::class,

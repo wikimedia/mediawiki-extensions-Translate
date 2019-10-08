@@ -725,7 +725,8 @@ interface TranslationStatsInterface {
 	/**
 	 * Return the indexes which this result contributes to.
 	 * Return 'all' if only one variable is measured. Return false if none.
-	 * @param array $row Database Result Row
+	 * @param stdClass $row Database Result Row
+	 * @return array|false
 	 */
 	public function indexOf( $row );
 
@@ -739,7 +740,7 @@ interface TranslationStatsInterface {
 
 	/**
 	 * Return the timestamp associated with this result row.
-	 * @param array $row Database Result Row
+	 * @param stdClass $row Database Result Row
 	 * @return string Timestamp.
 	 */
 	public function getTimestamp( $row );
@@ -825,7 +826,7 @@ abstract class TranslationStatsBase implements TranslationStatsInterface {
  * @ingroup Stats
  */
 class TranslatePerLanguageStats extends TranslationStatsBase {
-	/** @var bool[] array( string => bool ) Cache used to count active users only once per day. */
+	/** @var int[][] array( string => int ) Cache used to count active users only once per day. */
 	protected $usercache;
 
 	protected $codes, $groups;

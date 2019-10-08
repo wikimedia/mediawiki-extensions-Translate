@@ -401,7 +401,7 @@ class MessageWebImporter {
 	 *        See Article::doEdit.
 	 * @param int $editFlags Integer bitfield: see Article::doEdit
 	 * @throws MWException
-	 * @return string Action result
+	 * @return array Action result
 	 */
 	public static function doAction( $action, $group, $key, $code, $message, $comment = '',
 		$user = null, $editFlags = 0
@@ -470,14 +470,14 @@ class MessageWebImporter {
 	 * @param string $comment
 	 * @param User $user
 	 * @param int $editFlags
-	 * @return array|String
+	 * @return array
 	 */
 	public static function doFuzzy( $title, $message, $comment, $user, $editFlags = 0 ) {
 		$context = RequestContext::getMain();
 		$services = MediaWikiServices::getInstance();
 
 		if ( !$context->getUser()->isAllowed( 'translate-manage' ) ) {
-			return $context->msg( 'badaccess-group0' )->text();
+			return [ 'badaccess-group0' ];
 		}
 
 		// Edit with fuzzybot if there is no user.

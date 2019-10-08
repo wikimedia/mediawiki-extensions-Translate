@@ -77,7 +77,7 @@ class FileBasedMessageGroupLoader extends MessageGroupLoader
 	 * else initialize the necessary dependencies and return an instance.
 	 *
 	 * @param WANObjectCache|null $cache
-	 * @return FileBasedMessageGroupLoader
+	 * @return self
 	 */
 	public static function getInstance( WANObjectCache $cache = null ) {
 		return new self(

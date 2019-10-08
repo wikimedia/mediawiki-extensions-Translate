@@ -137,7 +137,7 @@ class YamlFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 	 * Obtains object used to flatten and unflatten arrays. In this implementation
 	 * we use the ArrayFlattener class which also supports CLDR pluralization rules.
 	 *
-	 * @return object with flatten, unflatten methods
+	 * @return ArrayFlattener with flatten, unflatten methods
 	 */
 	protected function getFlattener() {
 		$nestingSeparator = $this->extra['nestingSeparator'] ?? '.';

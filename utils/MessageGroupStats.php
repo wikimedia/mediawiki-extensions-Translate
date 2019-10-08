@@ -222,7 +222,7 @@ class MessageGroupStats {
 	 * itself.
 	 *
 	 * @param string[] $ids
-	 * @return string[]
+	 * @return MessageGroup[]
 	 */
 	private static function getSortedGroupsForClearing( array $ids ) {
 		$groups = array_map( [ MessageGroups::class, 'getGroup' ], $ids );
@@ -362,7 +362,7 @@ class MessageGroupStats {
 
 	/**
 	 * @param AggregateMessageGroup $agg
-	 * @return mixed
+	 * @return MessageGroup[]
 	 */
 	protected static function expandAggregates( AggregateMessageGroup $agg ) {
 		$flattened = [];

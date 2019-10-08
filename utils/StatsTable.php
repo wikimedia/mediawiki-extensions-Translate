@@ -220,7 +220,7 @@ class StatsTable {
 
 	/**
 	 * Makes a nice print from plain float.
-	 * @param number $num
+	 * @param int|float $num
 	 * @param string $to floor or ceil
 	 * @return string Plain text
 	 */

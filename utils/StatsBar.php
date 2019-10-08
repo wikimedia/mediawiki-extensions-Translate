@@ -32,7 +32,7 @@ class StatsBar {
 	/**
 	 * @param string $group
 	 * @param string $language
-	 * @param array[]|null $stats
+	 * @param int[]|null $stats
 	 *
 	 * @return self
 	 */

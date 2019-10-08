@@ -135,19 +135,19 @@ interface SearchableTTMServer {
 	public function search( $queryString, $opts, $highlight );
 
 	/**
-	 * @param stdClass $resultset
+	 * @param mixed $resultset
 	 * @return array[]
 	 */
 	public function getFacets( $resultset );
 
 	/**
-	 * @param stdClass $resultset
+	 * @param mixed $resultset
 	 * @return int
 	 */
 	public function getTotalHits( $resultset );
 
 	/**
-	 * @param stdClass $resultset
+	 * @param mixed $resultset
 	 * @return array[]
 	 */
 	public function getDocuments( $resultset );

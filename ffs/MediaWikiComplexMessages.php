@@ -217,7 +217,7 @@ abstract class ComplexMessages {
 	}
 
 	/**
-	 * @param string $group
+	 * @param array $group
 	 * @param string $code
 	 * @return array
 	 */

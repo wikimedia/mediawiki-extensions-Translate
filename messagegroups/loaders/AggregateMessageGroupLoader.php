@@ -83,7 +83,7 @@ class AggregateMessageGroupLoader extends MessageGroupLoader
 	 *
 	 * @param IDatabase|null $db
 	 * @param WANObjectCache|null $cache
-	 * @return AggregateMessageGroup
+	 * @return self
 	 */
 	public static function getInstance( IDatabase $db = null, WANObjectCache $cache = null ) {
 		return new self(

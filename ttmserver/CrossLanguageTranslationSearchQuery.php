@@ -4,13 +4,13 @@
  * @since 2015.08
  */
 class CrossLanguageTranslationSearchQuery {
-	/** @var TTMServer */
+	/** @var SearchableTTMServer */
 	protected $server;
 
 	/** @var array */
 	protected $params;
 
-	/** @var ResultSet */
+	/** @var \Elastica\ResultSet */
 	protected $resultset;
 
 	/** @var int */

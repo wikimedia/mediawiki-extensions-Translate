@@ -146,7 +146,7 @@ class ThinMessage extends TMessage {
 
 	/**
 	 * Set the database row this message is based on.
-	 * @param array $row Database Result Row
+	 * @param stdClass $row Database Result Row
 	 */
 	public function setRow( $row ) {
 		$this->row = $row;

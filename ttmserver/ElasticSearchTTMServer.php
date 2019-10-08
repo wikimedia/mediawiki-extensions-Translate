@@ -749,6 +749,10 @@ class ElasticSearchTTMServer
 		}
 	}
 
+	/**
+	 * @param \Elastica\ResultSet $resultset
+	 * @return array
+	 */
 	public function getFacets( $resultset ) {
 		$aggs = $resultset->getAggregations();
 
@@ -766,10 +770,18 @@ class ElasticSearchTTMServer
 		return $ret;
 	}
 
+	/**
+	 * @param \Elastica\ResultSet $resultset
+	 * @return int
+	 */
 	public function getTotalHits( $resultset ) {
 		return $resultset->getTotalHits();
 	}
 
+	/**
+	 * @param \Elastica\ResultSet $resultset
+	 * @return array
+	 */
 	public function getDocuments( $resultset ) {
 		$ret = [];
 		foreach ( $resultset->getResults() as $document ) {
