@@ -348,6 +348,7 @@ abstract class MessageGroupOld implements MessageGroup {
 	}
 
 	public function getConfiguration() {
+		return [];
 	}
 
 	public function getFFS() {
