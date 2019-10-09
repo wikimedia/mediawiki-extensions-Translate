@@ -165,7 +165,7 @@ class MessageGroupCache {
 		if ( strpos( $pattern, '*' ) === false ) {
 			$source = $group->getFFS()->read( $this->code ) !== false;
 		} else {
-			static $globCache = null;
+			static $globCache = [];
 			if ( !isset( $globCache[$groupId] ) ) {
 				$globCache[$groupId] = array_flip( glob( $pattern, GLOB_NOESCAPE ) );
 				// Definition file might not match the above pattern
