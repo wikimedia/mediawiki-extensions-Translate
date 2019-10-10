@@ -900,7 +900,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 			$date = $this->formatTimestamp( $row->rc_timestamp );
 
 			if ( isset( $this->usercache[$date][$row->rc_user_text] ) ) {
-				return -1;
+				return false;
 			} else {
 				$this->usercache[$date][$row->rc_user_text] = 1;
 			}
@@ -913,7 +913,7 @@ class TranslatePerLanguageStats extends TranslationStatsBase {
 
 		// No filters, just one key to track.
 		if ( !$this->groups && !$this->codes ) {
-			return 'all';
+			return [ 'all' ];
 		}
 
 		// The key-building needs to be in sync with ::labels().
@@ -1099,7 +1099,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 			$date = $this->formatTimestamp( $row->log_timestamp );
 
 			if ( isset( $this->usercache[$date][$row->log_user_text] ) ) {
-				return -1;
+				return false;
 			} else {
 				$this->usercache[$date][$row->log_user_text] = 1;
 			}
@@ -1112,7 +1112,7 @@ class ReviewPerLanguageStats extends TranslatePerLanguageStats {
 
 		// No filters, just one key to track.
 		if ( !$this->groups && !$this->codes ) {
-			return 'all';
+			return [ 'all' ];
 		}
 
 		// The key-building needs to be in sync with ::labels().
