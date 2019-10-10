@@ -312,13 +312,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 
 		if ( $algorithm === 'simple' ) {
 			$hash = substr( $hash, 0, 6 );
-			if ( !is_callable( [ $lang, 'truncateForDatabase' ] ) ) {
-				// Backwards compatibility code; remove once MW 1.30 is
-				// no longer supported (aka once MW 1.33 is released)
-				$snippet = $lang->truncate( $item['id'], 30, '' );
-			} else {
-				$snippet = $lang->truncateForDatabase( $item['id'], 30, '' );
-			}
+			$snippet = $lang->truncateForDatabase( $item['id'], 30, '' );
 			$snippet = str_replace( ' ', '_', trim( $snippet ) );
 		} else { // legacy
 			global $wgLegalTitleChars;
@@ -326,13 +320,7 @@ class GettextFFS extends SimpleFFS implements MetaYamlSchemaExtender {
 			$snippet = preg_replace( "/[^$wgLegalTitleChars]/", ' ', $snippet );
 			$snippet = preg_replace( "/[:&%\/_]/", ' ', $snippet );
 			$snippet = preg_replace( '/ {2,}/', ' ', $snippet );
-			if ( !is_callable( [ $lang, 'truncateForDatabase' ] ) ) {
-				// Backwards compatibility code; remove once MW 1.30 is
-				// no longer supported (aka once MW 1.33 is released)
-				$snippet = $lang->truncate( $snippet, 30, '' );
-			} else {
-				$snippet = $lang->truncateForDatabase( $snippet, 30, '' );
-			}
+			$snippet = $lang->truncateForDatabase( $snippet, 30, '' );
 			$snippet = str_replace( ' ', '_', trim( $snippet ) );
 		}
 
