@@ -51,7 +51,7 @@
 	"translate-taction-translate": "Traduire",
 	"translate-taction-proofread": "Relecture",
 	"translate-taction-lstats": "Statistiques de langue",
-	"translate-taction-mstats": "Statistiques de groupe de messages",
+	"translate-taction-mstats": "Statistiques du groupe de messages",
 	"translate-taction-export": "Exporter",
 	"translate-taction-disabled": "Cette action est désactivée sur ce wiki.",
 	"translate-page-no-such-language": "Le code langue indiqué est incorrect.",
