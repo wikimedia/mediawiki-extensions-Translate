@@ -8,7 +8,7 @@
  * @copyright Copyright © 2008-2013, Niklas Laxström, Siebrand Mazeland
  * @license GPL-2.0-or-later
  */
-use \MediaWiki\MediaWikiServices;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Factory class for accessing message groups individually by id or

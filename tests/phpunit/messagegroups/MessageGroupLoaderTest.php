@@ -3,7 +3,7 @@ class MessageGroupLoaderTest extends MediaWikiTestCase {
 
 	protected $cacheLoaderMock;
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		$this->cacheLoaderMock = $this->createMock( MockCacheMessageGroupLoader::class );

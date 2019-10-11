@@ -14,7 +14,7 @@
 class GettextFFSTest extends MediaWikiTestCase {
 	protected $groupConfiguration;
 
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 		$this->groupConfiguration = [
 			'BASIC' => [

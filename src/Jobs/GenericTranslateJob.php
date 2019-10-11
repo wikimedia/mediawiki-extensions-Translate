@@ -10,7 +10,7 @@
 namespace MediaWiki\Extensions\Translate\Jobs;
 
 use MediaWiki\Logger\LoggerFactory;
-use \Psr\Log\LoggerInterface;
+use Psr\Log\LoggerInterface;
 
 /**
  * Generic Job class extended by other jobs. Provides logging functionality.

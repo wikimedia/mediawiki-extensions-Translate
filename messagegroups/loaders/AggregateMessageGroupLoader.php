@@ -8,8 +8,8 @@
  * @license GPL-2.0-or-later
  */
 
-use \MediaWiki\MediaWikiServices;
-use \Wikimedia\Rdbms\IDatabase;
+use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\IDatabase;
 
 /**
  * Loads AggregateMessageGroup, and handles the related cache.

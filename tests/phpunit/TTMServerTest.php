@@ -9,7 +9,7 @@
 class TTMServerTest extends MediaWikiTestCase {
 	protected $config;
 
-	protected function setUp() {
+	protected function setUp() : void {
 		global $wgTranslateTranslationServices;
 		$this->config = $wgTranslateTranslationServices;
 		parent::setUp();
@@ -33,7 +33,7 @@ class TTMServerTest extends MediaWikiTestCase {
 		];
 	}
 
-	protected function tearDown() {
+	protected function tearDown() : void {
 		global $wgTranslateTranslationServices;
 		$wgTranslateTranslationServices = $this->config;
 		parent::tearDown();

@@ -14,7 +14,7 @@ use MediaWiki\Storage\RevisionRecord;
  * @group medium
  */
 class PageTranslationHooksTest extends MediaWikiTestCase {
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		$this->setMwGlobals( [

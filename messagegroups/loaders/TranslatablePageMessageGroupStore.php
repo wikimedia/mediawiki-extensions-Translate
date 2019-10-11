@@ -7,8 +7,8 @@
  * @license GPL-2.0-or-later
  */
 
-use \MediaWiki\MediaWikiServices;
-use \Wikimedia\Rdbms\IDatabase;
+use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\IDatabase;
 
 /**
  * Handles DB operations for Translatable pages, and the related cache.

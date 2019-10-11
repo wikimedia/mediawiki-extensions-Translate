@@ -15,7 +15,7 @@ class MessageValidatorTest extends MediaWikiTestCase {
 	/**
 	 * @var MessageGroup
 	 */
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		$this->setTemporaryHook(

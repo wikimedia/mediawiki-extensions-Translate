@@ -15,7 +15,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiTestCase {
 	 */
 	public static $mockups = [];
 
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 		self::$mockups = [];
 		$this->setMwGlobals( [
@@ -36,7 +36,7 @@ class TTMServerMessageUpdateJobTest extends MediaWikiTestCase {
 		] );
 	}
 
-	public function tearDown() {
+	public function tearDown() : void {
 		parent::tearDown();
 		self::$mockups = [];
 	}

@@ -12,7 +12,7 @@
 class MessageIndexRebuildJobTest extends MediaWikiTestCase {
 	protected $config = [];
 
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 
 		global $wgHooks;

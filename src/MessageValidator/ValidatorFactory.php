@@ -16,8 +16,8 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiMiscVali
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\NewlineValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\UnicodePluralValidator;
-use \InvalidArgumentException;
-use \RuntimeException;
+use InvalidArgumentException;
+use RuntimeException;
 
 /**
  * A factory class used to instantiate instances of pre-provided Validators

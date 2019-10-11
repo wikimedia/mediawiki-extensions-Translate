@@ -9,7 +9,7 @@
  * @group medium
  */
 class ApiQueryMessageCollectionTest extends ApiTestCase {
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		$this->setTemporaryHook(
