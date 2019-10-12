@@ -10,10 +10,8 @@ class MessageGroupWANCacheTest extends MediaWikiTestCase {
 	}
 
 	public function testCacheKeyConfiguration() {
-		$this->setExpectedException(
-			\InvalidArgumentException::class,
-			'Invalid cache key'
-		);
+		$this->expectException( \InvalidArgumentException::class );
+		$this->expectExceptionMessage( 'Invalid cache key' );
 
 		$this->mgCache->configure( [
 			'regenerator' => function () {
@@ -23,10 +21,8 @@ class MessageGroupWANCacheTest extends MediaWikiTestCase {
 	}
 
 	public function testCacheRegeneratorConfig() {
-		$this->setExpectedException(
-			\InvalidArgumentException::class,
-			'Invalid regenerator'
-		);
+		$this->expectException( \InvalidArgumentException::class );
+		$this->expectExceptionMessage( 'Invalid regenerator' );
 
 		$this->mgCache->configure( [
 			'key' => 'test',
@@ -35,10 +31,8 @@ class MessageGroupWANCacheTest extends MediaWikiTestCase {
 	}
 
 	public function testNoConfigureCall() {
-		$this->setExpectedException(
-			\InvalidArgumentException::class,
-			'configure function'
-		);
+		$this->expectException( \InvalidArgumentException::class );
+		$this->expectExceptionMessage( 'configure function' );
 
 		$this->mgCache->setValue( [ 'abc' ] );
 	}
@@ -58,10 +52,8 @@ class MessageGroupWANCacheTest extends MediaWikiTestCase {
 	}
 
 	public function testTouchCallbackConfig() {
-		$this->setExpectedException(
-			\InvalidArgumentException::class,
-			'touchedCallback is not callable'
-		);
+		$this->expectException( \InvalidArgumentException::class );
+		$this->expectExceptionMessage( 'touchedCallback is not callable' );
 
 		$this->mgCache->configure( [
 			'key' => 'mg-wan-test',

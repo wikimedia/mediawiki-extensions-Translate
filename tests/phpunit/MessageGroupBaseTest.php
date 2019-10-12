@@ -147,7 +147,8 @@ class MessageGroupBaseTest extends MediaWikiTestCase {
 	public function testGetNamespaceInvalid() {
 		$conf = $this->groupConfiguration;
 		$conf['BASIC']['namespace'] = 'ergweofijwef';
-		$this->setExpectedException( MWException::class, 'No valid namespace defined' );
+		$this->expectException( MWException::class );
+		$this->expectExceptionMessage( 'No valid namespace defined' );
 		MessageGroupBase::factory( $conf );
 	}
 

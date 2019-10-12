@@ -93,7 +93,7 @@ class TTMServerTest extends MediaWikiTestCase {
 		$primary = TTMServer::factory( $wgTranslateTranslationServices['primary'] );
 		$this->assertEquals( [ 'secondary' ], $primary->getMirrors() );
 		$secondary = TTMServer::factory( $wgTranslateTranslationServices['secondary'] );
-		$this->setExpectedException( TTMServerException::class );
+		$this->expectException( TTMServerException::class );
 		$secondary->getMirrors();
 	}
 }

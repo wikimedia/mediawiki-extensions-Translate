@@ -40,7 +40,7 @@ class PageTranslationParserTest extends MediaWikiTestCase {
 		$failureExpected = strpos( $pagename, 'Fail' ) === 0;
 
 		if ( $failureExpected ) {
-			$this->setExpectedException( 'TPException' );
+			$this->expectException( TPException::class );
 		}
 
 		$parse = $translatablePage->getParse();

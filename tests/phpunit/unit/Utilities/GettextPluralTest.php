@@ -50,7 +50,7 @@ class GettextPluralTest extends MediaWikiUnitTestCase {
 	 * @covers ::getPluralCount
 	 */
 	public function testGetPluralCountThrows( $input ) {
-		$this->setExpectedException( InvalidArgumentException::class );
+		$this->expectException( InvalidArgumentException::class );
 		GettextPlural::getPluralCount( $input );
 	}
 
