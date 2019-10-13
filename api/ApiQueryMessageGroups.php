@@ -42,11 +42,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 				}
 			} else {
 				$groups = MessageGroups::getAllGroups();
-				// Not sorted by default, so do it now
-				// Work around php bug: https://bugs.php.net/bug.php?id=50688
-				Wikimedia\suppressWarnings();
 				usort( $groups, [ 'MessageGroups', 'groupLabelSort' ] );
-				Wikimedia\restoreWarnings();
 			}
 			TranslateMetadata::preloadGroups( array_keys( $groups ) );
 		} elseif ( $params['root'] !== '' ) {
