@@ -196,7 +196,11 @@ class PageTranslationHooks {
 		// Update the target translation page
 		if ( !$handle->isDoc() ) {
 			$code = $handle->getCode();
-			self::updateTranslationPage( $page, $code, $user, $flags, $summary );
+			DeferredUpdates::addCallableUpdate(
+				function () use ( $page, $code, $user, $flags, $summary ) {
+					self::updateTranslationPage( $page, $code, $user, $flags, $summary );
+				}
+			);
 		}
 
 		return true;
