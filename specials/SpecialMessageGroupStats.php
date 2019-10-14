@@ -241,7 +241,12 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 		$this->numberOfShownLanguages += 1;
 		$this->totals = MessageGroupStats::multiAdd( $this->totals, $stats );
 
-		$out = "\t" . Html::openElement( 'tr' );
+		$rowParams = [];
+		if ( $this->numberOfShownLanguages % 2 === 0 ) {
+			$rowParams[ 'class' ] = 'tux-statstable-even';
+		}
+
+		$out = "\t" . Html::openElement( 'tr', $rowParams );
 		$out .= "\n\t\t" . $this->getMainColumnCell( $code, $extra );
 		$out .= $this->table->makeNumberColumns( $stats );
 		$state = $this->getWorkflowStateValue( $code );
