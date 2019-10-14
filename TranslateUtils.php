@@ -451,23 +451,31 @@ class TranslateUtils {
 	 * Get a DB handle suitable for read and read-for-write cases
 	 *
 	 * @return \Wikimedia\Rdbms\IDatabase Master for HTTP POST, CLI, DB already changed;
-	 *  slave otherwise
+	 *  replica otherwise
 	 */
 	public static function getSafeReadDB() {
+		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
+		$index = self::shouldReadFromMaster() ? DB_MASTER : DB_REPLICA;
+
+		return $lb->getConnection( $index );
+	}
+
+	/**
+	 * Check whether master should be used for reads to avoid reading stale data.
+	 *
+	 * @return bool
+	 */
+	public static function shouldReadFromMaster() {
 		$lb = MediaWikiServices::getInstance()->getDBLoadBalancer();
 		// Parsing APIs need POST for payloads but are read-only, so avoid spamming
 		// the master then. No good way to check this at the moment...
 		if ( PageTranslationHooks::$renderingContext ) {
-			$index = DB_REPLICA;
-		} else {
-			$index = (
-				PHP_SAPI === 'cli' ||
-				RequestContext::getMain()->getRequest()->wasPosted() ||
-				$lb->hasOrMadeRecentMasterChanges()
-			) ? DB_MASTER : DB_REPLICA;
+			return false;
 		}
 
-		return $lb->getConnection( $index );
+		return PHP_SAPI === 'cli' ||
+			RequestContext::getMain()->getRequest()->wasPosted() ||
+			$lb->hasOrMadeRecentMasterChanges();
 	}
 
 	/**

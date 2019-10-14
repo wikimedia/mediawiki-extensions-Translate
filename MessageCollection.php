@@ -817,13 +817,16 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 		$messages = [];
 		$definitions = $this->definitions->getDefinitions();
 		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
+		$queryFlags = TranslateUtils::shouldReadFromMaster() ? $revStore::READ_LATEST : 0;
 		if ( is_callable( [ $revStore, 'getContentBlobsForBatch' ] ) ) {
 			foreach ( array_keys( $this->keys ) as $mkey ) {
 				$messages[$mkey] = new ThinMessage( $mkey, $definitions[$mkey] );
 			}
 			if ( $this->dbData !== null ) {
-				$slotRows = $revStore->getContentBlobsForBatch( $this->dbData, [ SlotRecord::MAIN ] )
-					->getValue();
+				$slotRows = $revStore->getContentBlobsForBatch(
+					$this->dbData, [ SlotRecord::MAIN ], $queryFlags
+				)->getValue();
+
 				foreach ( $this->dbData as $row ) {
 					$mkey = $this->rowToKey( $row );
 					if ( !isset( $messages[$mkey] ) ) {
