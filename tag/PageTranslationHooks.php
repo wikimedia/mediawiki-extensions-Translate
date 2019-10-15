@@ -745,8 +745,8 @@ class PageTranslationHooks {
 	 * @param mixed &$result
 	 * @return bool
 	 */
-	public static function onGetUserPermissionsErrorsExpensive( Title $title, User $user,
-		$action, &$result
+	public static function onGetUserPermissionsErrorsExpensive(
+		Title $title, User $user, $action, &$result
 	) {
 		$handle = new MessageHandle( $title );
 
@@ -757,6 +757,10 @@ class PageTranslationHooks {
 
 		if ( !$handle->isValid() ) {
 			// Don't allow editing invalid messages that do not belong to any translatable page
+			LoggerFactory::getInstance( 'Translate' )->info(
+				'Unknown translation page: {title}',
+				[ 'title' => $title->getPrefixedDBkey() ]
+			);
 			$result = [ 'tpt-unknown-page' ];
 			return false;
 		}
