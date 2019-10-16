@@ -520,12 +520,14 @@ class SpecialLanguageStats extends SpecialPage {
 		$params[] = md5( $groupId );
 		$params[] = $this->getLanguage()->getCode();
 		$params[] = md5( $this->target );
+		$params[] = $parent ? $parent->getId() : '!';
 		$cachekey = wfMemcKey( __METHOD__ . '-v3', implode( '-', $params ) );
 		$cacheval = wfGetCache( CACHE_ANYTHING )->get( $cachekey );
 		if ( is_string( $cacheval ) ) {
 			return $cacheval;
 		}
 
+		// Any data variable read below should be part of the cache key above
 		$extra = [];
 		if ( $translated === $total ) {
 			$extra = [ 'action' => 'proofread' ];
