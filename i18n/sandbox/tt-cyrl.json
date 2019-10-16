@@ -1,9 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ильнар"
+			"Ильнар",
+			"Ерней"
 		]
 	},
+	"managetranslatorsandbox": "Тәрҗемәче комчылыгы белән идарә итү",
+	"tsb-request-count": "$1 {{PLURAL:$1|сорату}}",
 	"tsb-all-languages-button-label": "Барлык телләр",
-	"translationstash": "Рәхим итегез"
+	"tsb-accept-button-label": "Кабул итү",
+	"tsb-reject-button-label": "Кире кагу",
+	"tsb-selected-count": "{{PLURAL:$1|$1 катнашучы}} сайланган",
+	"tsb-older-requests": "$1 искерәк {{PLURAL:$1|сорату}}",
+	"tsb-accept-all-button-label": "Барысын да кабул итү",
+	"tsb-reject-all-button-label": "Барысын да кире кагу",
+	"tsb-user-posted-a-comment": "Тәрҗемәче түгел",
+	"tsb-translations-source": "Чыганак",
+	"tsb-translations-user": "{{GENDER:$1|Кулланучының}} тәрҗемәләре",
+	"tsb-reject-confirmation": "{{PLURAL:$1|кулланучы}} кире кагылды",
+	"tsb-accept-confirmation": "{{PLURAL:$1|кулланучы}} кабул ителгән",
+	"translationstash": "Рәхим итегез",
+	"translate-translationstash-welcome": "Рәхим итегез, {{GENDER:$1|$1}}, сез яңа тәрҗемәчесез",
+	"translate-translationstash-translations": "$1 тәмамланган {{PLURAL:$1|тәрҗемә}}"
 }

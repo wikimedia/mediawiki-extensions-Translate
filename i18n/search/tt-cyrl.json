@@ -1,9 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ильнар"
+			"Ильнар",
+			"Ерней"
 		]
 	},
+	"searchtranslations": "Тәрҗемәләрне эзләү",
+	"tux-sst-edit": "Тәрҗемәне үзгәртү",
+	"tux-sst-search": "Эзләү",
+	"tux-sst-search-ph": "Тәрҗемәләрне эзләү",
+	"tux-sst-count": "{{PLURAL:$1|Бер генә нәтиҗә|$1 нәтиҗә}} табылды",
 	"tux-sst-facet-language": "Телләр",
-	"tux-sst-default": "Тәрҗемәләр"
+	"tux-sst-next": "Алга таба ›",
+	"tux-sst-prev": "‹ Артка таба",
+	"tux-sst-default": "Тәрҗемәләр",
+	"tux-sst-ellipsis-untranslated": "Тәрҗемә юк",
+	"tux-sst-ellipsis-outdated": "Искергән тәрҗемәләр"
 }

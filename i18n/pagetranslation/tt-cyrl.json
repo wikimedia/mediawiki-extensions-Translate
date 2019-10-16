@@ -2,15 +2,42 @@
 	"@metadata": {
 		"authors": [
 			"Ильнар",
-			"Рашат Якупов"
+			"Рашат Якупов",
+			"Ерней"
 		]
 	},
 	"pagetranslation": "Битләр тәрҗемәсе",
+	"tpt-diff-old": "Баягы текст",
 	"tpt-diff-new": "Яңа текст",
+	"tpt-nosuchpage": "«$1» бите барлыкта юк.",
+	"tpt-other-pages-title": "Бозылган битләр",
+	"tpt-select-prioritylangs-reason": "Сәбәп:",
 	"tpt-sections-prioritylangs": "Төп телләр",
 	"translate-tag-translate-link-desc": "Бу битне тәрҗемә итү",
 	"translate-tag-hasnew": "Әлеге биттә тәрҗемәләр өчен күрсәтелмәгән <span class=\"plainlinks\">[$1 үзгәртүләр]</span> бар.",
 	"tpt-translation-intro": "Әлеге бит [[$2]] сәхифәсенең <span class=\"plainlinks\">[$1 тәрҗемәсе булып тора]</span>. Тәрҗемә $3% башкарылган.",
 	"tpt-languages-legend": "Башка телләр:",
-	"tpt-languages-nonzero": "$1 ($2% тәрҗемә телгән)"
+	"tpt-languages-nonzero": "$1 ($2% тәрҗемә ителгән)",
+	"tpt-tab-translate": "Тәрҗемә итү",
+	"tpt-discouraged-language-reason": "Сәбәп: $1",
+	"tpt-aggregategroup-add": "Өстәү",
+	"tpt-aggregategroup-save": "Саклау",
+	"tpt-aggregategroup-new-name": "Исем:",
+	"tpt-aggregategroup-edit-name": "Исем:",
+	"tpt-aggregategroup-edit-description": "Тасвирлама:",
+	"tpt-aggregategroup-update": "Саклау",
+	"tpt-aggregategroup-update-cancel": "Кире алу",
+	"pt-movepage-current": "Хәзерге исем:",
+	"pt-movepage-new": "Яңа исем:",
+	"pt-movepage-reason": "Сәбәп:",
+	"pt-deletepage-reason": "Сәбәп:",
+	"pt-deletepage-subpages": "Барлык асбитләрне бетерү",
+	"pm-import-button-label": "Кертү",
+	"pm-savepages-button-label": "Саклау",
+	"pm-cancel-button-label": "Кире алу",
+	"pm-page-does-not-exist": "$1 барлыкта юк.",
+	"pp-prepare-button-label": "Әзерләү",
+	"pp-save-button-label": "Саклау",
+	"pp-cancel-button-label": "Кире алу",
+	"tpt-generic-button": "Раслау"
 }
