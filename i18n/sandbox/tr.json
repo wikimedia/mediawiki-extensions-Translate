@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hedda"
+			"Hedda",
+			"BaRaN6161 TURK"
 		]
 	},
+	"managetranslatorsandbox": "Tercüman sandbox'u yönet",
 	"tsb-create-user-page": "Temel kullanıcı sayfası oluşturuldu"
 }
