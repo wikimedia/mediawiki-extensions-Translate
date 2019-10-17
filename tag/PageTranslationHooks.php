@@ -1035,7 +1035,7 @@ class PageTranslationHooks {
 				'lang' => $language->getHtmlCode(),
 			],
 			$msg
-		) . Html::element( 'hr' );
+		);
 
 		$output->addHTML( $header );
 
