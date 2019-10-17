@@ -106,14 +106,6 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	}
 
 	/**
-	 * Constructs a new empty message collection. Suitable for example for testing.
-	 * @param string $code Language code.
-	 * @return self
-	 */
-	public static function newEmpty( $code ) {
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getLanguage() {
