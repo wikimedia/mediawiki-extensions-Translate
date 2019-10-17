@@ -526,54 +526,6 @@ class TranslateUtils {
 	}
 
 	/**
-	 * Compatibility for pre-1.32, before OutputPage::addWikiTextAsInterface()
-	 *
-	 * @see OutputPage::addWikiTextAsInterface
-	 * @param OutputPage $out
-	 * @param string $text The wikitext to add to the output.
-	 */
-	public static function addWikiTextAsInterface( OutputPage $out, $text ) {
-		if ( is_callable( [ $out, 'addWikiTextAsInterface' ] ) ) {
-			$out->addWikiTextAsInterface( $text );
-		} else {
-			// $out->addWikiTextTitle is deprecated in 1.32, but has existed
-			// since (at least) MW 1.21, so use that as a fallback.
-			$out->addWikiTextTitle(
-				$text, $out->getTitle(),
-				/*linestart*/true, /*tidy*/true, /*interface*/true
-			);
-		}
-	}
-
-	/**
-	 * Compatibility for pre-1.32, before OutputPage::wrapWikiTextAsInterface()
-	 *
-	 * @see OutputPage::wrapWikiTextAsInterface
-	 * @param OutputPage $out
-	 * @param string $wrapperClass The class attribute value for the <div>
-	 *   wrapper in the output HTML
-	 * @param string $text The wikitext in the user interface language to
-	 *   add to the output.
-	 */
-	public static function wrapWikiTextAsInterface( OutputPage $out, $wrapperClass, $text ) {
-		if ( is_callable( [ $out, 'wrapWikiTextAsInterface' ] ) ) {
-			$out->wrapWikiTextAsInterface( $wrapperClass, $text );
-		} else {
-			// wfDeprecated( 'use OutputPage::wrapWikiTextAsInterface', '1.32')
-			if ( !$wrapperClass ) {
-				$wrapperClass = '';
-			}
-			$out->addHTML( Html::openElement(
-				'div', [ 'class' => $wrapperClass ]
-			) );
-			self::addWikiTextAsInterface( $out, $text );
-			$out->addHtml( Html::closeElement(
-				'div'
-			) );
-		}
-	}
-
-	/**
 	 * Compatibility for pre-1.33, before OutputPage::parseAsInterface()
 	 *
 	 * @see OutputPage::parseAsInterface
