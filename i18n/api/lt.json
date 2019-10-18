@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eitvys200"
+			"Eitvys200",
+			"Tomasdd"
 		]
 	},
 	"apihelp-translatesandbox-param-do": "Ką daryti.",
@@ -28,7 +29,7 @@
 	"apierror-translate-duplicateaggregategroup": "Pranešimo grupė jau egzistuoja",
 	"apierror-translate-invalidlanguage": "Prašoma kalba negalima.",
 	"apierror-translate-invalidupdate": "Negalimas atnaujinimas",
-	"apierror-translate-language-disabled": "Vertimai į šią kalbą yra išjungtas",
+	"apierror-translate-language-disabled": "Vertimas į $1 yra išjungtas.",
 	"apierror-translate-owntranslation": "Negalima peržiūrėti savo paties vertimų",
 	"apierror-translate-sandboxdisabled": "Smėlio dėžės funkcija nenaudojama",
 	"apierror-translate-unknownmessage": "Nežinomas pranešimas",
