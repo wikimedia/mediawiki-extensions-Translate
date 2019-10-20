@@ -254,7 +254,7 @@
 		 * @param {Array} translations A ttmserver array as returned by API.
 		 */
 		showTranslationMemory: function ( translations ) {
-			var $heading, $tmSuggestions, $messageList, translationLang, translationDir,
+			var $heading, $tmSuggestions, $messageList, lang, dir,
 				suggestions = {};
 
 			if ( !translations.length ) {
@@ -268,17 +268,20 @@
 			$heading.after( $tmSuggestions );
 
 			$messageList = $( '.tux-messagelist' );
-			translationLang = $messageList.data( 'targetlangcode' );
-			translationDir = $messageList.data( 'targetlangdir' );
+			lang = $messageList.data( 'targetlangcode' );
+			dir = $messageList.data( 'targetlangdir' );
 
 			translations.forEach( function ( translation ) {
 				var suggestion;
 
-				if (
-					// formatversion 1 and 2 respectively
-					( translation.local === '' || translation.local ) &&
-					translation.location === this.message.title
-				) {
+				// Remove once formatversion=2
+				if ( translation.local === '' ) {
+					translation.local = true;
+				} else if ( translation.local === undefined ) {
+					translation.local = false;
+				}
+
+				if ( translation.local && translation.location === this.message.title ) {
 					// Do not add self-suggestions
 					return;
 				}
@@ -287,47 +290,103 @@
 				suggestion = suggestions[ translation.target ];
 				if ( suggestion ) {
 					suggestion.count++;
-					suggestion.$element
-						.find( '.n-uses' )
-						.text( mw.msg( 'tux-editor-n-uses', suggestion.count ) + '  〉' );
+					suggestion.sources.push( translation );
+					suggestion.$showSourcesElement.children( 'a' ).text(
+						mw.msg(
+							'tux-editor-n-uses',
+							mw.language.convertNumber( suggestion.count )
+						) + '  〉'
+					);
 
 					return;
 				}
 
 				suggestion = {};
+
+				suggestion.$showSourcesElement = $( '<div>' )
+					.addClass( 'row text-right' )
+					.append( $( '<a>' ).addClass( 'n-uses' ) );
+
 				suggestion.$element = $( '<div>' )
 					.addClass( 'row tm-suggestion' )
 					.append(
 						$( '<div>' )
 							.addClass( 'nine columns suggestiontext' )
 							.attr( {
-								lang: translationLang,
-								dir: translationDir
+								lang: lang,
+								dir: dir
 							} )
 							.text( translation.target ),
 						$( '<div>' )
 							.addClass( 'three columns quality text-right' )
-							.text( mw.msg( 'tux-editor-tm-match',
-								mw.language.convertNumber( Math.floor( translation.quality * 100 ) ) ) ),
-						$( '<div>' )
-							.addClass( 'row text-right' )
-							.append(
-								$( '<a>' )
-									.addClass( 'n-uses' )
-							)
+							.text(
+								mw.msg(
+									'tux-editor-tm-match',
+									mw.language.convertNumber( Math.floor( translation.quality * 100 ) )
+								)
+							),
+						suggestion.$showSourcesElement
 					);
 
 				suggestion.count = 1;
+				suggestion.sources = [];
+				suggestion.sources.push( translation );
+
 				this.suggestionAdder( suggestion.$element, translation.target );
 
 				suggestions[ translation.target ] = suggestion;
+			}, this );
+
+			if ( $.isEmptyObject( suggestions ) ) {
+				return;
+			}
+
+			Object.keys( suggestions ).forEach( function ( key ) {
+				var suggestion = suggestions[ key ];
+
+				suggestion.$showSourcesElement.on( 'click', function ( e ) {
+					this.onShowTranslationMemorySources( e, suggestion );
+				}.bind( this ) );
 				$tmSuggestions.append( suggestion.$element );
 			}, this );
 
-			// Show the heading only if we actually have suggestions
-			if ( $tmSuggestions.length ) {
-				$heading.removeClass( 'hide' );
+			$heading.removeClass( 'hide' );
+		},
+
+		onShowTranslationMemorySources: function ( e, suggestion ) {
+			e.stopPropagation();
+
+			if ( suggestion.$sourcesElement ) {
+				suggestion.$sourcesElement.toggle();
+				return;
 			}
+
+			// Build the sources list. Add class to show external icons :(
+			suggestion.$sourcesElement = $( '<ul>' )
+				.addClass( 'tux-tm-suggestion-source mw-parser-output' );
+
+			// Sort local suggestions first, then alphabetically
+			suggestion.sources.sort( function ( a, b ) {
+				if ( a.local === b.local ) {
+					return a.location.localeCompare( b.location );
+				} else {
+					return a.local ? -1 : 1;
+				}
+			} );
+
+			suggestion.sources.forEach( function ( translation ) {
+				suggestion.$sourcesElement.append(
+					$( '<li>' )
+						.append(
+							$( '<a>' )
+								.prop( 'target', '_blank' )
+								.prop( 'href', translation.editorUrl || translation.uri )
+								.text( translation.location )
+								.toggleClass( 'external', !translation.local )
+						)
+				);
+			} );
+			suggestion.$element.after( suggestion.$sourcesElement );
 		},
 
 		/**

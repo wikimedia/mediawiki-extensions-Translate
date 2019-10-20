@@ -25,51 +25,30 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 	}
 
 	public function getData() {
-		$suggestions = [];
-
 		$text = $this->dataProvider->getDefinition();
+		if ( trim( $text ) === '' ) {
+			return [];
+		}
+
+		$suggestions = [];
 		$from = $this->group->getSourceLanguage();
 		$to = $this->handle->getCode();
 
-		if ( trim( $text ) === '' ) {
-			return $suggestions;
-		}
-
-		// "Local" queries using a client can't be run in parallel with web services
-		global $wgTranslateTranslationServices;
-		foreach ( $wgTranslateTranslationServices as $name => $config ) {
-			$server = TTMServer::factory( $config );
-
+		foreach ( $this->getInternalServices() as $name => $service ) {
 			try {
-				if ( $server instanceof ReadableTTMServer ) {
-					// Except if they are public, we can call back via API.
-					// See TranslationWebService::factory
-					if ( isset( $config['public'] ) && $config['public'] === true ) {
-						continue;
-					}
-
-					$query = $server->query( $from, $to, $text );
-				} else {
-					continue;
-				}
+				$queryData = $service->query( $from, $to, $text );
 			} catch ( Exception $e ) {
 				// Not ideal to catch all exceptions
 				continue;
 			}
 
-			foreach ( $query as $item ) {
-				$item['service'] = $name;
-				$item['source_language'] = $from;
-				$item['local'] = $server->isLocalSuggestion( $item );
-				// Likely only needed for non-public DatabaseTTMServer
-				$item['uri'] = $item['uri'] ?? $server->expandLocation( $item );
-				$suggestions[] = $item;
-			}
+			$sugs = $this->formatInternalSuggestions( $queryData, $service, $name, $from );
+			$suggestions = array_merge( $suggestions, $sugs );
 		}
 
 		// Results from web services
 		foreach ( $this->getQueryData() as $queryData ) {
-			$sugs = $this->formatSuggestions( $queryData );
+			$sugs = $this->formatWebSuggestions( $queryData );
 			$suggestions = array_merge( $suggestions, $sugs );
 		}
 
@@ -80,24 +59,24 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 		return $suggestions;
 	}
 
-	protected function formatSuggestions( array $queryData ) {
+	protected function formatWebSuggestions( array $queryData ) {
 		$service = $queryData['service'];
 		$response = $queryData['response'];
 		$sourceLanguage = $queryData['language'];
 		$sourceText = $queryData['text'];
 
 		// getResultData returns a null on failure instead of throwing an exception
-		$sugs = $service->getResultData( $response );
-		if ( $sugs === null ) {
+		$items = $service->getResultData( $response );
+		if ( $items === null ) {
 			return [];
 		}
 
 		$localPrefix = Title::makeTitle( NS_MAIN, '' )->getFullURL( '', false, PROTO_CANONICAL );
 		$localPrefixLength = strlen( $localPrefix );
 
-		foreach ( $sugs as &$sug ) {
-			$local = strncmp( $sug['uri'], $localPrefix, $localPrefixLength ) === 0;
-			$sug = array_merge( $sug, [
+		foreach ( $items as &$item ) {
+			$local = strncmp( $item['uri'], $localPrefix, $localPrefixLength ) === 0;
+			$item = array_merge( $item, [
 				'service' => $service->getName(),
 				'source_language' => $sourceLanguage,
 				'source' => $sourceText,
@@ -106,11 +85,60 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 
 			// ApiTTMServer expands this... need to fix it again to be the bare name
 			if ( $local ) {
-				$sug['location'] = urldecode( substr( $sug['location'], $localPrefixLength ) );
-			} else {
-				unset( $sug['location'] );
+				$pagename = urldecode( substr( $item['location'], $localPrefixLength ) );
+				$item['location'] = $pagename;
+				$handle = new MessageHandle( Title::newfromText( $pagename ) );
+				$item['editorUrl'] = TranslateUtils::getEditorUrl( $handle );
 			}
 		}
-		return $sugs;
+		return $items;
+	}
+
+	protected function formatInternalSuggestions(
+		array $queryData, ReadableTTMServer $s, $serviceName, $sourceLanguage
+	) {
+		$items = [];
+
+		foreach ( $queryData as $item ) {
+			$local = $s->isLocalSuggestion( $item );
+
+			$item['service'] = $serviceName;
+			$item['source_language'] = $sourceLanguage;
+			$item['local'] = $local;
+			// Likely only needed for non-public DatabaseTTMServer
+			$item['uri'] = $item['uri'] ?? $s->expandLocation( $item );
+			if ( $local ) {
+				$handle = new MessageHandle( Title::newfromText( $item[ 'location' ] ) );
+				$item['editorUrl'] = TranslateUtils::getEditorUrl( $handle );
+			}
+			$items[] = $item;
+		}
+
+		return $items;
+	}
+
+	/**
+	 * @return ReadableTTMServer[]
+	 */
+	private function getInternalServices() {
+		$services = [];
+
+		// "Local" queries using a client can't be run in parallel with web services
+		global $wgTranslateTranslationServices;
+		foreach ( $wgTranslateTranslationServices as $name => $config ) {
+			$service = TTMServer::factory( $config );
+			if ( !$service ) {
+				continue;
+			}
+
+			// Except if they are public, we can call back via API.
+			// See TranslationWebService::factory
+			$public = $config['public'] ?? false;
+			if ( $service instanceof ReadableTTMServer && $public === true ) {
+				$services[ $name ] = $service;
+			}
+		}
+
+		return $services;
 	}
 }
