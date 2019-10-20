@@ -42,7 +42,8 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 
 			try {
 				if ( $server instanceof ReadableTTMServer ) {
-					// Except if they are public, we can call back via API
+					// Except if they are public, we can call back via API.
+					// See TranslationWebService::factory
 					if ( isset( $config['public'] ) && $config['public'] === true ) {
 						continue;
 					}
@@ -60,7 +61,8 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 				$item['service'] = $name;
 				$item['source_language'] = $from;
 				$item['local'] = $server->isLocalSuggestion( $item );
-				$item['uri'] = $server->expandLocation( $item );
+				// Likely only needed for non-public DatabaseTTMServer
+				$item['uri'] = $item['uri'] ?? $server->expandLocation( $item );
 				$suggestions[] = $item;
 			}
 		}
@@ -90,12 +92,24 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 			return [];
 		}
 
+		$localPrefix = Title::makeTitle( NS_MAIN, '' )->getFullURL( '', false, PROTO_CANONICAL );
+		$localPrefixLength = strlen( $localPrefix );
+
 		foreach ( $sugs as &$sug ) {
-			$sug += [
+			$local = strncmp( $sug['uri'], $localPrefix, $localPrefixLength ) === 0;
+			$sug = array_merge( $sug, [
 				'service' => $service->getName(),
 				'source_language' => $sourceLanguage,
 				'source' => $sourceText,
-			];
+				'local' => $local,
+			] );
+
+			// ApiTTMServer expands this... need to fix it again to be the bare name
+			if ( $local ) {
+				$sug['location'] = urldecode( substr( $sug['location'], $localPrefixLength ) );
+			} else {
+				unset( $sug['location'] );
+			}
 		}
 		return $sugs;
 	}

@@ -251,13 +251,13 @@
 		/**
 		 * Shows the translation suggestions from Translation Memory
 		 *
-		 * @param {Array} suggestions A ttmserver array as returned by API.
+		 * @param {Array} translations A ttmserver array as returned by API.
 		 */
-		showTranslationMemory: function ( suggestions ) {
+		showTranslationMemory: function ( translations ) {
 			var $heading, $tmSuggestions, $messageList, translationLang, translationDir,
-				translateEditor = this;
+				suggestions = {};
 
-			if ( !suggestions.length ) {
+			if ( !translations.length ) {
 				return;
 			}
 
@@ -271,39 +271,31 @@
 			translationLang = $messageList.data( 'targetlangcode' );
 			translationDir = $messageList.data( 'targetlangdir' );
 
-			$.each( suggestions, function ( index, translation ) {
-				var $translation,
-					alreadyOnTheList = false;
+			translations.forEach( function ( translation ) {
+				var suggestion;
 
-				if ( translation.local && translation.location === translateEditor.message.title ) {
+				if (
+					// formatversion 1 and 2 respectively
+					( translation.local === '' || translation.local ) &&
+					translation.location === this.message.title
+				) {
 					// Do not add self-suggestions
-					return true;
+					return;
 				}
 
-				// See if it is already listed, and increment use count
-				$tmSuggestions.find( '.tm-suggestion' ).each( function () {
-					var $uses, count,
-						$suggestion = $( this );
+				// Check if suggestion with this value already exists
+				suggestion = suggestions[ translation.target ];
+				if ( suggestion ) {
+					suggestion.count++;
+					suggestion.$element
+						.find( '.n-uses' )
+						.text( mw.msg( 'tux-editor-n-uses', suggestion.count ) + '  〉' );
 
-					if ( $suggestion.find( '.suggestiontext ' ).text() === translation.target ) {
-						// Update the message and data value
-						$uses = $suggestion.find( '.n-uses' );
-						count = $uses.data( 'n' ) + 1;
-						$uses.data( 'n', count );
-						$uses.text( mw.msg( 'tux-editor-n-uses', count ) + '  〉' );
-
-						// Halt processing
-						alreadyOnTheList = true;
-						return false;
-					}
-				} );
-
-				if ( alreadyOnTheList ) {
-					// Continue to the next one
-					return true;
+					return;
 				}
 
-				$translation = $( '<div>' )
+				suggestion = {};
+				suggestion.$element = $( '<div>' )
 					.addClass( 'row tm-suggestion' )
 					.append(
 						$( '<div>' )
@@ -322,14 +314,15 @@
 							.append(
 								$( '<a>' )
 									.addClass( 'n-uses' )
-									.data( 'n', 1 )
 							)
 					);
 
-				translateEditor.suggestionAdder( $translation, translation.target );
+				suggestion.count = 1;
+				this.suggestionAdder( suggestion.$element, translation.target );
 
-				$tmSuggestions.append( $translation );
-			} );
+				suggestions[ translation.target ] = suggestion;
+				$tmSuggestions.append( suggestion.$element );
+			}, this );
 
 			// Show the heading only if we actually have suggestions
 			if ( $tmSuggestions.length ) {
