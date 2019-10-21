@@ -607,7 +607,11 @@ class SpecialPageTranslation extends SpecialPage {
 			// Someone might have tampered with the page source adding
 			// duplicate or invalid markers.
 			if ( isset( $usedNames[$s->id] ) ) {
-				$this->getOutput()->addWikiMsg( 'tpt-duplicate', $s->id );
+				$this->getOutput()->addElement(
+					'p',
+					[ 'class' => 'errorbox' ],
+					$this->msg( 'tpt-duplicate' )->params( $s->id )->text()
+				);
 				$error = true;
 			}
 			$usedNames[$s->id] = true;
