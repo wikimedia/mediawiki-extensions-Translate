@@ -19,6 +19,7 @@
 	"translate-magic-cm-current": "Nykynen",
 	"translate-magic-cm-comment": "Komentti:",
 	"translate-magic-cm-save": "Säästä",
+	"translate-magic-cm-savefailed": "Säästö epäonnistui",
 	"translate-magic-namespace": "Nimityhjyysnimet",
 	"translate-stats-edits": "Mookkauksia",
 	"translate-statsf-scale-months": "kuukausia",
@@ -52,5 +53,6 @@
 	"tux-editor-close-tooltip": "Sulje",
 	"tux-editor-message-tools-history": "Histuuria",
 	"tux-editor-message-tools-delete": "Ota poies",
+	"tux-editor-message-tools-linktothis": "Länkki tähän viestiin",
 	"tux-editor-loading": "Ladathaan..."
 }

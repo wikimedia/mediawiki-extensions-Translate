@@ -5,6 +5,11 @@
 			"Tomasdd"
 		]
 	},
+	"apihelp-groupreview-param-language": "Kalbos kodas.",
+	"apihelp-query+languagestats-param-language": "Kalbos kodas.",
+	"apihelp-query+messagecollection-param-group": "Pranešimo grupė.",
+	"apihelp-query+messagecollection-param-language": "Kalbos kodas.",
+	"apihelp-query+messagecollection-example-1": "Palaikomų kalbų sąrašas",
 	"apihelp-translatesandbox-param-do": "Ką daryti.",
 	"apihelp-translatesandbox-param-username": "Vartotojo vardas, kai kuriamas vartotojas.",
 	"apihelp-translatesandbox-param-password": "Slaptažodis, kai kuriamas vartotojas.",
@@ -21,6 +26,7 @@
 	"apihelp-ttmserver-param-text": "Tekstas, kuriam rasti pasiūlymus.",
 	"apihelp-ttmserver-example-1": "Gauti pasiūlymus verčiant „Help“ iš anglų k. į suomių k.",
 	"apihelp-searchtranslations-description": "Ieškoti vertimų.",
+	"apihelp-searchtranslations-summary": "Ieškoti vertimų.",
 	"apihelp-searchtranslations-param-service": "Kurią iš galimų vertimų paslaugų naudoti.",
 	"apihelp-searchtranslations-param-sourcelanguage": "Šaltinio teksto kalbos kodas.",
 	"apihelp-searchtranslations-param-filter": "Pranešimo vertimo būsenos filtras.",
@@ -32,6 +38,7 @@
 	"apierror-translate-language-disabled": "Vertimas į $1 yra išjungtas.",
 	"apierror-translate-owntranslation": "Negalima peržiūrėti savo paties vertimų",
 	"apierror-translate-sandboxdisabled": "Smėlio dėžės funkcija nenaudojama",
+	"apierror-translate-sandbox-invalidppassword": "Neteisingas slaptažodis",
 	"apierror-translate-unknownmessage": "Nežinomas pranešimas",
 	"apiwarn-translate-alreadyreviewedbyyou": "Jau pažymėtas kaip peržiūrėtas jūsų"
 }

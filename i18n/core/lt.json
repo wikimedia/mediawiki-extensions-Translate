@@ -9,7 +9,8 @@
 			"Vpovilaitis",
 			"Hugo.arg",
 			"Zygimantus",
-			"Manvydasz"
+			"Manvydasz",
+			"Tomasdd"
 		]
 	},
 	"translate": "Vertimas",
@@ -164,6 +165,7 @@
 	"translate-untranslated": "Neišversti",
 	"translate-percentage-complete": "Baigta",
 	"translate-percentage-fuzzy": "Pasenę",
+	"translate-percentage-proofread": "Apžvelgta",
 	"translate-languagestats-overall": "Visos pranešimų grupės kartu",
 	"translate-ls-submit": "Rodyti statistiką",
 	"translate-ls-column-group": "Pranešimo grupė",
@@ -337,5 +339,6 @@
 	"translate-statsbar-tooltip-with-fuzzy": "$1% išversti, $2% apžvelgti, $3% pasenę",
 	"translate-search-more-groups-info": "dar $1 {{PLURAL:$1|grupė|grupės}}",
 	"translate-ulsdep-title": "Konfigūravimo klaida",
-	"tux-nojs": "Šiam puslapiui reikia JavaScript."
+	"tux-nojs": "Šiam puslapiui reikia JavaScript.",
+	"specialpages-group-translation": "Vertimas"
 }

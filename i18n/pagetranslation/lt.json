@@ -4,7 +4,8 @@
 			"Eitvys200",
 			"Mantak111",
 			"Hugo.arg",
-			"Zygimantus"
+			"Zygimantus",
+			"Tomasdd"
 		]
 	},
 	"pagetranslation": "Puslapio vertimas",
@@ -63,7 +64,7 @@
 	"tpt-invalid-group": "Negalima grupė",
 	"log-name-pagetranslation": "Puslapio vertimo žurnalas",
 	"logentry-pagetranslation-mark": "$1 {{GENDER:$2|pažymėtas}} $3 vertimui",
-	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|ištrintas}} $3 iš vertimo",
+	"logentry-pagetranslation-unmark": "$1 {{GENDER:$2|ištrintas}} $3 iš vertimo sistemos",
 	"logentry-pagetranslation-moveok": "$1 {{GENDER:$2|baigė}} pervadinti puslapį, kurį galima versti, $3 į $4",
 	"logentry-pagetranslation-movenok": "$1 {{GENDER:$2|susidūrė}} su problema keliant puslapį $3 į $4",
 	"logentry-pagetranslation-deletefok": "$1 {{GENDER:$2|baigė}} puslapio $3, kurį galima versti, trynima",
@@ -86,6 +87,7 @@
 	"pt-movepage-blockers": "Puslapis, kurį galima versti, negali būti perkeltas į naują pavadinimą dėl {{PLURAL:$1|šios klaidos|šių klaidų}}:",
 	"pt-movepage-list-pages": "Puslapių perkėlimui sąrašas",
 	"pt-movepage-list-translation": "Vertimo {{PLURAL:$1|puslapis|puslapiai}}",
+	"pt-movepage-list-other": "Kiti {{PLURAL:$1|subpuslapis|subpuslapiai}}",
 	"pt-movepage-list-count": "Viso $1 {{PLURAL:$1|puslapis|puslapiai}} perkėlimui.",
 	"pt-movepage-legend": "Perkelti išverčiamą puslapį",
 	"pt-movepage-current": "Dabartinis pavadinimas:",
