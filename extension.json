@@ -985,6 +985,9 @@
 		},
 		"ext.translate.special.translationstats": {
 			"scripts": "resources/js/ext.translate.special.translationstats.js",
+			"dependencies": [
+				"mediawiki.widgets.datetime"
+			],
 			"targets": [
 				"desktop",
 				"mobile"
