@@ -135,8 +135,10 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 			// See TranslationWebService::factory
 			$public = $config['public'] ?? false;
 			if ( $service instanceof ReadableTTMServer && $public === true ) {
-				$services[ $name ] = $service;
+				continue;
 			}
+
+			$services[ $name ] = $service;
 		}
 
 		return $services;
