@@ -29,6 +29,7 @@
 	"apihelp-translationaids-param-title": "Fullständig titel på ett känt meddelande.",
 	"apihelp-translationaids-example-1": "Visa hjälp för [[MediaWiki:January/fi]]",
 	"apihelp-translationreview-description": "Markera översättningar som granskade.",
+	"apihelp-translationreview-summary": "Markera översättningar som granskade.",
 	"apihelp-translationreview-param-revision": "Sidversionsnumret att granska.",
 	"apihelp-translationreview-example-1": "Granska sidversion 1",
 	"apihelp-translationstash-param-subaction": "Åtgärd.",
