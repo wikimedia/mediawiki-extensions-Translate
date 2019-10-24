@@ -96,7 +96,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			}
 
 			if ( $subaction === 'check' && $this->checkToken() && $request->wasPosted() ) {
-				$blockers = $this->checkMoveBlockers();
+				$blockers = $this->checkMoveBlockers( $user );
 				if ( count( $blockers ) ) {
 					$this->showErrors( $blockers );
 					$this->showForm( [] );
@@ -154,24 +154,27 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 
 	/**
 	 * Pretty-print the list of errors.
-	 * @param array $errors Array with message key and parameters
+	 * @param SplObjectStorage $errors Array with message key and parameters
 	 */
-	protected function showErrors( array $errors ) {
-		if ( count( $errors ) ) {
-			$out = $this->getOutput();
+	protected function showErrors( SplObjectStorage $errors ) {
+		$out = $this->getOutput();
 
-			$out->addHTML( Html::openElement( 'div', [ 'class' => 'error' ] ) );
-			$out->addWikiMsg(
-				'pt-movepage-blockers',
-				$this->getLanguage()->formatNum( count( $errors ) )
-			);
-			$s = '';
-			foreach ( $errors as $error ) {
-				$s .= '* ' . wfMessage( ...$error )->plain() . "\n";
-			}
-			$out->addWikiTextAsInterface( $s );
-			$out->addHTML( '</div>' );
+		$out->addHtml( Html::openElement( 'div', [ 'class' => 'errorbox' ] ) );
+		$out->addWikiMsg(
+			'pt-movepage-blockers',
+			$this->getLanguage()->formatNum( count( $errors ) )
+		);
+
+		// If there are many errors, for performance reasons we must parse them all at once
+		$s = '';
+		$context = 'pt-movepage-error-placeholder';
+		foreach ( $errors as $title ) {
+			$s .= "'''$title'''\n\n";
+			$s .= $errors[ $title ]->getWikiText( false, $context );
 		}
+
+		$out->addWikiTextAsInterface( $s );
+		$out->addHtml( Html::closeElement( 'div' ) );
 	}
 
 	/**
@@ -409,55 +412,60 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 		$this->getOutput()->addWikiMsg( 'pt-movepage-started' );
 	}
 
-	protected function checkMoveBlockers() {
-		$blockers = [];
+	protected function checkMoveBlockers( User $user ) {
+		$blockers = new SplObjectStorage();
 
+		$source = $this->oldTitle;
 		$target = $this->newTitle;
 
 		if ( !$target ) {
-			$blockers[] = [ 'pt-movepage-block-base-invalid' ];
+			$blockers[$source] = Status::newFatal( 'pt-movepage-block-base-invalid' );
 
 			return $blockers;
 		}
 
 		if ( $target->inNamespaces( NS_MEDIAWIKI, NS_TRANSLATIONS ) ) {
-			$blockers[] = [ 'immobile-target-namespace', $target->getNsText() ];
+			$blockers[$source] = Status::newFatal(
+				'immobile-target-namespace', $target->getNsText()
+			);
 
 			return $blockers;
 		}
 
-		$base = $this->oldTitle->getPrefixedText();
-
 		if ( $target->exists() ) {
-			$blockers[] = [ 'pt-movepage-block-base-exists', $target->getPrefixedText() ];
+			$blockers[$source] = Status::newFatal(
+				'pt-movepage-block-base-exists', $target->getPrefixedText()
+			);
 		} else {
-			$errors = $this->oldTitle->isValidMoveOperation( $target, true, $this->reason );
-			if ( is_array( $errors ) ) {
-				$blockers = array_merge( $blockers, $errors );
+			$movePage = new MovePage( $this->oldTitle, $target );
+			$status = $movePage->isValidMove();
+			$status->merge( $movePage->checkPermissions( $user, $this->reason ) );
+			if ( !$status->isOK() ) {
+				$blockers[$source] = $status;
 			}
 		}
 
 		// Don't spam the same errors for all pages if base page fails
-		if ( $blockers ) {
+		if ( count( $blockers ) ) {
 			return $blockers;
 		}
 
 		// Collect all the old and new titles for checcks
 		$titles = [];
-
+		$base = $this->oldTitle->getPrefixedText();
 		$pages = $this->getTranslationPages();
 		foreach ( $pages as $old ) {
 			$titles['tp'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
 		}
 
-		$pages = $this->getSectionPages();
-		foreach ( $pages as $old ) {
-			$titles['section'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
-		}
-
 		$subpages = $this->moveSubpages ? $this->getNormalSubpages() : [];
 		foreach ( $subpages as $old ) {
 			$titles['subpage'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
+		}
+
+		$pages = $this->getSectionPages();
+		foreach ( $pages as $old ) {
+			$titles['section'][] = [ $old, $this->newPageTitle( $base, $old, $target ) ];
 		}
 
 		// Check that all new titles are valid
@@ -469,10 +477,10 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			foreach ( $list as $pair ) {
 				list( $old, $new ) = $pair;
 				if ( $new === null ) {
-					$blockers[] = [
+					$blockers[$old] = Status::newFatal(
 						"pt-movepage-block-$type-invalid",
 						$old->getPrefixedText()
-					];
+					);
 					continue;
 				}
 				$lb->addObj( $old );
@@ -480,7 +488,7 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			}
 		}
 
-		if ( $blockers ) {
+		if ( count( $blockers ) ) {
 			return $blockers;
 		}
 
@@ -493,23 +501,27 @@ class SpecialPageTranslationMovePage extends MovePageForm {
 			foreach ( $list as $pair ) {
 				list( $old, $new ) = $pair;
 				if ( $new->exists() ) {
-					$blockers[] = [
+					$blockers[$old] = Status::newFatal(
 						"pt-movepage-block-$type-exists",
 						$old->getPrefixedText(),
 						$new->getPrefixedText()
-					];
+					);
 				} else {
 					/* This method has terrible performance:
 					 * - 2 queries by core
 					 * - 3 queries by lqt
 					 * - and no obvious way to preload the data! */
-					$errors = $old->isValidMoveOperation( $target, false );
-					if ( is_array( $errors ) ) {
-						$blockers = array_merge( $blockers, $errors );
+					$movePage = new MovePage( $old, $target );
+					$status = $movePage->isValidMove();
+					// Do not check for permissions here, as these pages are not editable/movable
+					// in regular use
+					if ( !$status->isOK() ) {
+						$blockers[$old] = $status;
 					}
 
-					/* Because of the above, check only one of the possibly thousands
-					 * of section pages and assume rest are fine. */
+					/* Because of the poor performance, check only one of the possibly thousands
+					 * of section pages and assume rest are fine. This assumes section pages are
+					 * listed last in the array. */
 					if ( $type === 'section' ) {
 						break;
 					}
