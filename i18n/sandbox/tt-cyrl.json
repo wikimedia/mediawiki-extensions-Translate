@@ -17,7 +17,7 @@
 	"tsb-user-posted-a-comment": "Тәрҗемәче түгел",
 	"tsb-translations-source": "Чыганак",
 	"tsb-translations-user": "{{GENDER:$1|Кулланучының}} тәрҗемәләре",
-	"tsb-reject-confirmation": "{{PLURAL:$1|кулланучы}} кире кагылды",
+	"tsb-reject-confirmation": "{{PLURAL:$1|Кулланучы|Кулланучылар}} кире кагылды",
 	"tsb-accept-confirmation": "{{PLURAL:$1|кулланучы}} кабул ителгән",
 	"translationstash": "Рәхим итегез",
 	"translate-translationstash-welcome": "Рәхим итегез, {{GENDER:$1|$1}}, сез яңа тәрҗемәчесез",

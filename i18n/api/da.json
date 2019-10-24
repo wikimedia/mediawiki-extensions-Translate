@@ -8,6 +8,7 @@
 	"apihelp-groupreview-param-group": "Beskedgruppe.",
 	"apihelp-groupreview-param-language": "Sprogkode.",
 	"apihelp-query+languagestats-param-language": "Sprogkode.",
+	"apihelp-query+managemessagegroups-param-messageKey": "Beskednøgle",
 	"apihelp-query+messagecollection-param-group": "Beskedgruppe.",
 	"apihelp-query+messagecollection-param-language": "Sprogkode.",
 	"apihelp-query+messagecollection-example-1": "Liste over understøttede sprog",
