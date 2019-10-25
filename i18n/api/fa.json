@@ -3,7 +3,8 @@
 		"authors": [
 			"Reza1615",
 			"Huji",
-			"Ladsgroup"
+			"Ladsgroup",
+			"Alireza Ivaz"
 		]
 	},
 	"apihelp-aggregategroups-description": "مدیریت گروه‌های پیغام دسته‌جمعی.\n\nشما می توانید گروه‌های پیغام دسته‌جمعی را بیفزایید یا حذف کنید یا گروه‌های پیغام را به آن‌ها متصل یا جدا کنید (در هر زمان یکی).",
@@ -20,6 +21,7 @@
 	"apihelp-query+languagestats-description": "کوئری آمار زبان",
 	"apihelp-query+languagestats-summary": "کوئری آمار زبان",
 	"apihelp-query+languagestats-param-language": "کد زبان.",
+	"apihelp-query+managemessagegroups-param-messageKey": "کلید پیام",
 	"apihelp-query+messagecollection-param-group": "گروه پیغام‌ها.",
 	"apihelp-query+messagecollection-param-language": "کد زبان.",
 	"apihelp-query+messagecollection-example-1": "فهرست زبان‌های پشتیبانی شده",
@@ -27,6 +29,7 @@
 	"apihelp-query+messagegroups-example-1": "نمایش گروه‌های پیام",
 	"apihelp-query+messagegroupstats-param-group": "شناسهٔ گروه پیغام.",
 	"apihelp-query+messagetranslations-param-title": "عنوان کامل یک پیام شناخته شده.",
+	"apihelp-managemessagegroups-param-groupId": "شناسۀ گروه",
 	"apihelp-translatesandbox-param-do": "چه کاری برای انجام دادن هست.",
 	"apihelp-translatesandbox-param-email": "رایانامه هنگام ایجاد حساب",
 	"apihelp-translationreview-example-1": "بازبینی نسخه ۱",

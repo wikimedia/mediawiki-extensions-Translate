@@ -20,7 +20,8 @@
 			"Calak",
 			"Ommmmid",
 			"Ladsgroup",
-			"FarsiNevis"
+			"FarsiNevis",
+			"Alireza Ivaz"
 		]
 	},
 	"translate": "ترجمه",
@@ -222,6 +223,9 @@
 	"translate-smg-more": "پس از ارسال این تغییرات تغییرات بیشتری برای پروسه وجود خواهند داشت.",
 	"translate-smg-left": "محتوای پیغام در ویکی",
 	"translate-smg-right": "تغییرات ورودی",
+	"translate-smg-rename-select": "انتخاب",
+	"translate-smg-rename-cancel": "انصراف",
+	"translate-smg-rename-no-msg": "پیامی یافت نشد",
 	"translate-manage-import-diff": "پیغام $1 | اقدام: $2",
 	"translate-manage-import-new": "پیام تازه $1",
 	"translate-manage-import-deleted": "پیغام حذف‌شده $1",
@@ -229,6 +233,7 @@
 	"translate-manage-action-conflict": "درون‌ریزی با برچسب ابهام",
 	"translate-manage-action-ignore": "نادیده گرفتن",
 	"translate-manage-action-fuzzy": "درون‌ریزی ترجمه‌ها با برچسب ابهام",
+	"translate-manage-action-rename": "تغییرنام",
 	"translate-manage-nochanges": "هیچ تغییری در تعریف پیغام‌های این گروه وجود ندارد.",
 	"translate-manage-nochanges-other": "هیچ تغییراتی برای این زبان وجود نداشت.\nاز پیوند زیر برای بازگشت به نمایش جزئیات گروه‌ها استفاده کنید.",
 	"translate-manage-inconsistent": "در درخواست شما تناقضی شناسایی شد.\nلطفاً آن را از جهت تغییرات بررسی کنید و دوباره تلاش کنید.\nجزئیات: $1.",

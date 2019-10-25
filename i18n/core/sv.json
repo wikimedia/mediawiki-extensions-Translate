@@ -238,6 +238,7 @@
 	"translate-smg-more": "Det blir mer förändringar att bearbeta efter dessa ändringar.",
 	"translate-smg-left": "Meddelandeinnehåll i wiki",
 	"translate-smg-right": "Inkommande ändringar",
+	"translate-smg-rename-cancel": "Avbryt",
 	"translate-manage-import-diff": "Meddelande $1 | Åtgärder: $2",
 	"translate-manage-import-new": "Nytt meddelande $1",
 	"translate-manage-import-deleted": "Radera meddelande $1",

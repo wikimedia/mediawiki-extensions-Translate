@@ -10,7 +10,7 @@
 	"tsb-all-languages-button-label": "Барлык телләр",
 	"tsb-accept-button-label": "Кабул итү",
 	"tsb-reject-button-label": "Кире кагу",
-	"tsb-selected-count": "{{PLURAL:$1|$1 катнашучы}} сайланган",
+	"tsb-selected-count": "{{PLURAL:$1|$1 кулланучы}} сайланган",
 	"tsb-older-requests": "$1 искерәк {{PLURAL:$1|сорату}}",
 	"tsb-accept-all-button-label": "Барысын да кабул итү",
 	"tsb-reject-all-button-label": "Барысын да кире кагу",

@@ -177,6 +177,7 @@
 	"translate-jssti-add": "তালিকায় যোগ করো",
 	"managemessagegroups": "বার্তা দল ব্যবস্থাপনা",
 	"translate-smg-notallowed": "আপনাকে এই কর্ম সঞ্চালনের অনুমতি দেওয়া হয়নি।",
+	"translate-smg-rename-select": "নির্বাচন করুন",
 	"translate-smg-rename-cancel": "বাতিল",
 	"translate-manage-import-diff": "$1 বার্তা | কর্ম: $2",
 	"translate-manage-import-new": "নতুন বার্তা $1",

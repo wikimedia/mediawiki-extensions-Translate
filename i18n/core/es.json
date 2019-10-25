@@ -28,7 +28,8 @@
 			"Dgstranz",
 			"KATRINE1992",
 			"Laura Ospina",
-			"Tiberius1701"
+			"Tiberius1701",
+			"Canaan9801"
 		]
 	},
 	"translate": "Traducir",
@@ -235,6 +236,7 @@
 	"translate-smg-right": "Cambios entrantes",
 	"translate-smg-rename-select": "Seleccionar",
 	"translate-smg-rename-cancel": "Cancelar",
+	"translate-smg-rename-select-err": "Por favor elige un mensaje para ser renombrado.",
 	"translate-smg-rename-no-msg": "No se encontró ningún mensaje.",
 	"translate-smg-rename-new": "Añadir como nuevo…",
 	"translate-smg-rename-rename": "Añadir como cambio de nombre de…",

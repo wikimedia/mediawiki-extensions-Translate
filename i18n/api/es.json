@@ -6,7 +6,8 @@
 			"Csbotero",
 			"Lemondoge",
 			"Dgstranz",
-			"Tiberius1701"
+			"Tiberius1701",
+			"Canaan9801"
 		]
 	},
 	"apihelp-aggregategroups-description": "Administrar grupos de mensajes agregados.\n\nPuedes agregar y quitar grupos de mensajes agregados, y asociar o disociar a ellos grupos de mensajes (uno a la vez).",
@@ -28,6 +29,7 @@
 	"apihelp-query+messagecollection-description": "Consultar a MessageCollection acerca de las traducciones.",
 	"apihelp-query+managemessagegroups-param-groupId": "Identificador de grupo",
 	"apihelp-query+managemessagegroups-param-messageKey": "Clave de mensaje",
+	"apihelp-query+managemessagegroups-example-1": "Mostrar renombramientos posibles para la clave dada en el grupo dado.",
 	"apihelp-query+messagecollection-param-group": "Grupo de mensajes.",
 	"apihelp-query+messagecollection-param-language": "Código de idioma.",
 	"apihelp-query+messagecollection-param-limit": "El número de mensajes que mostrar (después de filtrar).",
@@ -50,6 +52,7 @@
 	"apihelp-managemessagegroups-param-groupId": "Identificador de grupo",
 	"apihelp-managemessagegroups-param-messageKey": "Clave de mensaje de reemplazo",
 	"apihelp-managemessagegroups-param-operation": "La operación que se realizará. Valores posibles: rename, new",
+	"apihelp-managemessagegroups-param-changesetModified": "Una marca horaria de la última vez que el conjunto de cambios fue modificado. Si el conjunto de cambios ha sido modificado después, el API mostrará un error.",
 	"apihelp-translatesandbox-description": "Registrar y gestionar usuarios aislados (en \"sandbox\").",
 	"apihelp-translatesandbox-param-do": "Lo que hacer",
 	"apihelp-translatesandbox-param-userid": "Identificadores de los usuarios que se gestionan. Usa 0 para las creaciones.",
@@ -99,6 +102,7 @@
 	"apihelp-translationcheck-summary": "Validar traducciones.",
 	"apihelp-translationcheck-param-title": "Título de página con espacio de nombres y código de idioma.",
 	"apihelp-translationcheck-param-translation": "La traducción que validar.",
+	"apierror-translate-changeset-modified": "Otro usuario o proceso ha modificado el conjunto de cambios. No puede guardar tus cambios porque puede anular sus cambios. Por favor actualiza la página para ver los últimos cambios.",
 	"apierror-translate-duplicateaggregategroup": "El grupo de mensajes ya existe",
 	"apierror-translate-fuzzymessage": "No se pueden revisar las traducciones imprecisas",
 	"apierror-translate-invalidgroup": "El grupo no existe o no es válido",

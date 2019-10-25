@@ -266,7 +266,7 @@
 	"translate-smg-rename-new": "Ajouter comme nouveau…",
 	"translate-smg-rename-rename": "Ajouter comme renommage de…",
 	"translate-smg-rename-dialog-title": "Sélectionner le renommage correspondant pour $1",
-	"translate-smg-changeset-modified": "L’ensemble de modifications a été modifié par un autre utilisateur ou processus. Vos modifications ne peuvent pas être enregistrées car elles pourraient écraser leurs modifications. Veuillez recharger la page pour voir les dernières modifications.",
+	"translate-smg-changeset-modified": "L’ensemble de modifications a été modifié par un autre utilisateur ou processus. Vos modifications ne peuvent pas être enregistrées car elles pourraient écraser ses modifications. Veuillez recharger la page pour voir les dernières modifications.",
 	"translate-manage-import-diff": "Message $1 | Actions : $2",
 	"translate-manage-import-new": "Nouveau message $1",
 	"translate-manage-import-deleted": "Message $1 supprimé",
