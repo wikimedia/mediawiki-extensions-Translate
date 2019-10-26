@@ -122,6 +122,9 @@ class SimpleFFS implements FFS {
 
 		$input = Validator::cleanUp( $input );
 
+		// Strip BOM mark
+		$input = ltrim( $input, "\u{FEFF}" );
+
 		try {
 			return $this->readFromVariable( $input );
 		} catch ( Exception $e ) {
