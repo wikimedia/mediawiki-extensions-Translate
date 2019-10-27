@@ -104,6 +104,11 @@ root:
                  _ignore_extra_keys: true
               2:
                  _type: text
+          keymatch:
+            _type: array
+            _description: Specify the message keys for which this validation should be run
+            _children: []
+            _ignore_extra_keys: true
     TAGS:
       _type: prototype
       _prototype:

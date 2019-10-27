@@ -56,6 +56,9 @@ class MessageValidator {
 	 */
 	protected $validators = [];
 
+	/**
+	 * @var string
+	 */
 	protected $groupId;
 
 	/** @var string[][] */
@@ -65,7 +68,7 @@ class MessageValidator {
 	 * Constructs a suitable validator for given message group.
 	 * @param string $groupId
 	 */
-	public function __construct( $groupId ) {
+	public function __construct( string $groupId ) {
 		global $wgTranslateCheckBlacklist;
 
 		if ( $wgTranslateCheckBlacklist === false ) {
@@ -131,7 +134,8 @@ class MessageValidator {
 		$this->validators[] = [
 			'instance' => $validator,
 			'insertable' => $isInsertable,
-			'enforce' => $validatorConfig['enforce'] ?? false
+			'enforce' => $validatorConfig['enforce'] ?? false,
+			'keymatch' => $validatorConfig['keymatch'] ?? false
 		];
 	}
 
@@ -336,6 +340,46 @@ class MessageValidator {
 	}
 
 	/**
+	 * If the 'keymatch' option is specified in the validator, checks and ensures that the
+	 * key matches.
+	 * @param string $key
+	 * @param string[] $keyMatches
+	 * @return bool True if the key matches one of the matchers, false otherwise.
+	 */
+	protected function doesKeyMatch( string $key, array $keyMatches ) : bool {
+		$normalizedKey = lcfirst( $key );
+		foreach ( $keyMatches as $match ) {
+			if ( is_string( $match ) ) {
+				if ( lcfirst( $match ) === $normalizedKey ) {
+					return true;
+				}
+				continue;
+			}
+
+			// The value is neither a string nor an array, should never happen but still handle it.
+			if ( !is_array( $match ) ) {
+				throw new \InvalidArgumentException(
+					"Invalid key matcher configuration passed. Expected type: array or string. " .
+					"Recieved: " . gettype( $match ) . ". match value: " . FormatJson::encode( $match )
+				);
+			}
+
+			$matcherType = $match['type'];
+			$pattern = $match['pattern'];
+
+			// If regex matches, or wildcard matches return true, else continue processing.
+			if (
+				( $matcherType === 'regex' && preg_match( $pattern, $normalizedKey ) === 1 ) ||
+				( $matcherType === 'wildcard' && fnmatch( $pattern, $normalizedKey ) )
+			) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
 	 * Runs the actual validation. Reused by quickValidate() and validateMessage()
 	 *
 	 * @param array $validator
@@ -345,16 +389,30 @@ class MessageValidator {
 	 * @param array $warnings
 	 * @param bool $ignoreWarnings
 	 */
-	private function runValidation( $validator, TMessage $message, $code,
-		&$errors, &$warnings, $ignoreWarnings ) {
-		if ( $validator['enforce'] === true ) {
-			$validator['instance']->validate( $message, $code, $errors );
-		} else {
-			// let's not bother running "warning" validators if warnings are ignored.
-			if ( $ignoreWarnings ) {
+	private function runValidation(
+		$validator, TMessage $message, $code, &$errors, &$warnings, $ignoreWarnings
+	) {
+		// Check if key match has been specified, and then check if the key matches it.
+		try {
+			$keyMatches = $validator['keymatch'];
+			if ( $keyMatches !== false && !$this->doesKeyMatch( $message->key(), $keyMatches ) ) {
 				return;
 			}
-			$validator['instance']->validate( $message, $code, $warnings );
+
+			if ( $validator['enforce'] === true ) {
+				$validator['instance']->validate( $message, $code, $errors );
+			} else {
+				// let's not bother running "warning" validators if warnings are ignored.
+				if ( $ignoreWarnings ) {
+					return;
+				}
+				$validator['instance']->validate( $message, $code, $warnings );
+			}
+		} catch ( \Exception $e ) {
+			throw new \RuntimeException(
+				'An error occurred while validating message: ' . $message->key() . '; group: ' .
+				$this->groupId . "; validator: " . get_class( $validator['instance'] ) . "\n. Exception: $e"
+			);
 		}
 	}
 

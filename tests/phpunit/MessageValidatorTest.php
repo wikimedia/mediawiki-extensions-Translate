@@ -8,6 +8,8 @@
  */
 
 /**
+ * @covers \MessageValidator
+ * @covers \MediaWiki\Extensions\Translate\MessageValidator\ValidationResult
  * @group TranslationValidators
  */
 class MessageValidatorTest extends MediaWikiTestCase {
@@ -35,6 +37,9 @@ class MessageValidatorTest extends MediaWikiTestCase {
 		$messages = [
 			'translated' => 'bunny',
 			'untranslated' => 'fanny',
+			'testing-key' => 'test this!',
+			'regex-key-test' => 'regex test',
+			'non-matching-key' => 'non matching key'
 		];
 
 		$list['test-group'] = new MockWikiValidationMessageGroup( 'test-group', $messages );
@@ -78,7 +83,7 @@ class MessageValidatorTest extends MediaWikiTestCase {
 		$this->assertTrue( $validationResult->hasErrors() || $validationResult->hasWarnings(),
 			'either errors or warnings are set.' );
 		$this->assertFalse( $validationResult->hasWarnings() && $validationResult->hasErrors(),
-			'either error or warnings are set.' );
+			'either error or warnings are set, but not both.' );
 
 		$this->assertCount( 1,
 			$validationResult->getWarnings() + $validationResult->getErrors(),
@@ -162,5 +167,33 @@ class MessageValidatorTest extends MediaWikiTestCase {
 		$this->assertCount( 1,
 			$validationResult->getWarnings() + $validationResult->getErrors(),
 			'warnings or errors are filtered as per check-blacklist only for specific language code.' );
+	}
+
+	public function testKeyMatching() {
+		$group = MessageGroups::getGroup( 'test-group' );
+		$collection = $group->initCollection( 'en-gb' );
+		$collection->loadTranslations();
+
+		$msgValidator = $group->getValidator();
+		$validationResult = $msgValidator->validateMessage( $collection['testing-key'], 'en-gb' );
+		$this->assertCount(
+			0,
+			$validationResult->getErrors(),
+			'no errors are raised for a non matching key!'
+		);
+
+		$validationResult = $msgValidator->validateMessage( $collection['regex-key-test'], 'en-gb' );
+		$this->assertCount(
+			2,
+			$validationResult->getErrors(),
+			'errors are raised for a matching key matched via regex!'
+		);
+
+		$validationResult = $msgValidator->validateMessage( $collection['translated'], 'en-gb' );
+		$this->assertCount(
+			2,
+			$validationResult->getErrors(),
+			'errors are raised for a matching key matched via a direct match!'
+		);
 	}
 }

@@ -29,7 +29,22 @@ class MockWikiValidationMessageGroup extends MockWikiMessageGroup {
 		$validator = new MessageValidator( $this->getId() );
 		$validator->setValidators( [
 			[ 'class' => AnotherMockTranslateValidator::class ],
-			[ 'class' => MockTranslateValidator::class, 'enforce' => true ],
+			[
+				'class' => MockTranslateValidator::class,
+				'enforce' => true,
+				'keymatch' => [
+					'translated',
+					'untranslated',
+					[
+						'type' => 'regex',
+						'pattern' => '/regex-key/'
+					],
+					[
+						'type' => 'wildcard',
+						'pattern' => '*translated*'
+					]
+				]
+			],
 		] );
 
 		return $validator;
