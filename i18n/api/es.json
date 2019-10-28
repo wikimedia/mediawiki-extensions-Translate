@@ -50,6 +50,7 @@
 	"apihelp-query+messagetranslations-param-title": "Título completo de un mensaje conocido.",
 	"apihelp-query+messagetranslations-example-1": "Lista de traducciones en el wiki de \"MediaWiki:January\"",
 	"apihelp-managemessagegroups-param-groupId": "Identificador de grupo",
+	"apihelp-managemessagegroups-param-renameMessageKey": "Se está renombrando la clave de mensaje específica",
 	"apihelp-managemessagegroups-param-messageKey": "Clave de mensaje de reemplazo",
 	"apihelp-managemessagegroups-param-operation": "La operación que se realizará. Valores posibles: rename, new",
 	"apihelp-managemessagegroups-param-changesetModified": "Una marca horaria de la última vez que el conjunto de cambios fue modificado. Si el conjunto de cambios ha sido modificado después, el API mostrará un error.",
@@ -118,6 +119,7 @@
 	"apierror-translate-sandbox-invalidppassword": "La contraseña no es válida",
 	"apierror-translate-smg-nochanges": "No hay ningún cambio que procesar.",
 	"apierror-translate-unknownmessage": "Mensaje desconocido",
+	"apierror-translate-invalid-changeset-name": "Ha pasado un conjunto de cambios de nombre de archivo no válido - $1",
 	"apiwarn-translate-alreadyreviewedbyyou": "Ya la marcaste como revisada",
 	"apiwarn-translate-language-disabled-source": "El idioma original de este grupo es el $1. Selecciona otro idioma al cual traducir."
 }

@@ -4,5 +4,18 @@
 			"Pyscowicz"
 		]
 	},
-	"pm-import-button-label": "Importeeraa"
+	"tpt-diff-old": "Eelinen teksti",
+	"translate-tag-translate-link-desc": "Käänä tämä sivu",
+	"tpt-tab-translate": "Käänä",
+	"tpt-aggregategroup-add": "Lissää",
+	"tpt-aggregategroup-save": "Säästä",
+	"tpt-aggregategroup-edit-description": "Kuvvaus:",
+	"tpt-aggregategroup-update": "Säästä",
+	"tpt-aggregategroup-update-cancel": "Lopeta",
+	"pm-import-button-label": "Importeeraa",
+	"pm-savepages-button-label": "Säästä",
+	"pm-cancel-button-label": "Lopeta",
+	"pp-save-button-label": "Säästä",
+	"pp-cancel-button-label": "Lopeta",
+	"pp-diff-old-header": "Läheteksti"
 }

@@ -16,6 +16,7 @@
 	"apihelp-query+languagestats-param-language": "Kodê zıwani.",
 	"apihelp-query+languagestats-example-1": "Lisya temam biyayışê istatistikané açarnayışanê Finki",
 	"apihelp-query+messagecollection-description": "Heqdê MessagesCollection i persi",
+	"apihelp-query+managemessagegroups-param-messageKey": "Kılitê mesaci",
 	"apihelp-query+messagecollection-param-group": "Gruba mesaca.",
 	"apihelp-query+messagecollection-param-language": "Kodê zıwani.",
 	"apihelp-translatesandbox-param-do": "Çıçi.",

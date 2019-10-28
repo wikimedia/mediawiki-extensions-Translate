@@ -157,7 +157,7 @@
 	"translate-rcfilters-translations": "Traductions",
 	"translate-rcfilters-translations-only-label": "Traductions",
 	"translate-rcfilters-translations-only-desc": "Modifications apportées aux pages traduites.",
-	"translate-rcfilters-translations-filter-label": "Pages non traduites",
+	"translate-rcfilters-translations-filter-label": "Pages hors traductions",
 	"translate-rcfilters-translations-filter-desc": "Toutes les modifications qui ne sont pas des traductions.",
 	"translate-rcfilters-translations-site-label": "Messages système",
 	"translate-rcfilters-translations-site-desc": "Adaptation des messages système dans l’espace de noms MediaWiki.",

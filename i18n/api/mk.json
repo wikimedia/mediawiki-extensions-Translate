@@ -60,6 +60,7 @@
 	"apihelp-query+messagetranslations-summary": "Побарај ги сите преводи на една порака.",
 	"apihelp-query+messagetranslations-param-title": "Целосен наслов на позната порака.",
 	"apihelp-query+messagetranslations-example-1": "Список на преводи во викито за „MediaWiki:January“",
+	"apihelp-managemessagegroups-param-groupId": "Назнака на групата",
 	"apihelp-translatesandbox-description": "Регистрација и управување со корисници во песочникот.",
 	"apihelp-translatesandbox-summary": "Регистрација и управување со корисници во песочникот.",
 	"apihelp-translatesandbox-param-do": "Што да се прави.",
@@ -128,7 +129,9 @@
 	"apierror-translate-owntranslation": "Не можете да проверувате свои преводи",
 	"apierror-translate-sandboxdisabled": "Песочничката функција не е во употреба",
 	"apierror-translate-sandbox-invalidppassword": "Неважечка лозинка",
+	"apierror-translate-smg-nochanges": "Нема промени за обработка.",
 	"apierror-translate-unknownmessage": "Непозната порака",
+	"apierror-translate-invalid-operation": "Неважечка операција: $1. Допуштени вредности — $2.",
 	"apiwarn-translate-alreadyreviewedbyyou": "Веќе ја имате означено како проверена",
 	"apiwarn-translate-language-disabled-source": "Изворниот јазик на оваа група е $1. Изберете на кој јазик сакате да преведувате."
 }

@@ -29,7 +29,8 @@
 			"KATRINE1992",
 			"Laura Ospina",
 			"Tiberius1701",
-			"Canaan9801"
+			"Canaan9801",
+			"Hasley"
 		]
 	},
 	"translate": "Traducir",
@@ -236,10 +237,11 @@
 	"translate-smg-right": "Cambios entrantes",
 	"translate-smg-rename-select": "Seleccionar",
 	"translate-smg-rename-cancel": "Cancelar",
-	"translate-smg-rename-select-err": "Por favor elige un mensaje para ser renombrado.",
+	"translate-smg-rename-select-err": "Elige un mensaje para ser renombrado.",
 	"translate-smg-rename-no-msg": "No se encontró ningún mensaje.",
 	"translate-smg-rename-new": "Añadir como nuevo…",
 	"translate-smg-rename-rename": "Añadir como cambio de nombre de…",
+	"translate-smg-rename-dialog-title": "Elige un renombramiento correspondiente para $1",
 	"translate-manage-import-diff": "Mensaje $1 | Acciones: $2",
 	"translate-manage-import-new": "Nuevo mensaje $1",
 	"translate-manage-import-deleted": "Mensaje $1 borrado",

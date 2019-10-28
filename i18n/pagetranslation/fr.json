@@ -91,7 +91,7 @@
 	"tpt-tab-translate": "Traduire",
 	"tpt-target-page": "Cette page ne peut pas être mise à jour manuellement.\nElle est une version traduite de [[$1]] et la traduction peut être mise à jour en utilisant [$2 l’outil de traduction].",
 	"tpt-patrolling-blocked": "Cette page ne peut pas être surveillée. Utilisez l’action « traduire » pour l’examiner.",
-	"tpt-unknown-page": "Cet espace de noms est réservé pour la traduction de pages.\nLa page que vous essayez de modifier ne semble correspondre à aucune page marquée à traduire.",
+	"tpt-unknown-page": "Cet espace de noms est réservé pour la traduction des pages de contenu.\nLa page que vous essayez de modifier ne semble correspondre à aucune page marquée à traduire.",
 	"tpt-translation-restricted": "La traduction de cette page dans cette langue a été empêchée par un administrateur des traductions.\n\nMotif : $1",
 	"tpt-discouraged-language-force-header": "Cette page ne peut pas être traduite en $1.",
 	"tpt-discouraged-language-force-content": "Un administrateur de traduction a décidé que cette page ne pouvait être traduite qu’en $1.",

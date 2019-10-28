@@ -2,18 +2,33 @@
 	"@metadata": {
 		"authors": [
 			"Alvaro Vidal-Abarca",
-			"Fitoschido"
+			"Fitoschido",
+			"Jlrb+"
 		]
 	},
 	"apihelp-aggregategroups-example-1": "Associar un grup",
 	"apihelp-groupreview-param-language": "Codi d'idioma.",
 	"apihelp-query+languagestats-param-language": "Codi d'idioma.",
+	"apihelp-query+managemessagegroups-summary": "Cerca possibles rebateigs per a un missatge en un grup durant les importacions",
+	"apihelp-query+managemessagegroups-description": "Cerca possibles rebateigs per a un missatge en un grup durant les importacions",
+	"apihelp-query+managemessagegroups-param-groupId": "Id del grup",
+	"apihelp-query+managemessagegroups-param-messageKey": "Clau de missatge",
+	"apihelp-query+managemessagegroups-param-changesetName": "Canvia el nom del conjunt - Per defecte / No atès / Mediawiki etc.",
+	"apihelp-query+managemessagegroups-example-1": "Cerca possibles rebateigs per a la clau donada en el grup donat.",
 	"apihelp-query+messagecollection-param-group": "Grup de missatges.",
 	"apihelp-query+messagecollection-param-language": "Codi d'idioma.",
 	"apihelp-query+messagecollection-param-limit": "Quantitat de missatges a mostrar (després de filtrar).",
 	"apihelp-query+messagecollection-example-1": "Llista d'idiomes suportats",
 	"apihelp-query+messagetranslations-description": "Consulta totes les traduccions per a un sol missatge.",
 	"apihelp-query+messagetranslations-param-title": "El títol complet d'un missatge conegut.",
+	"apihelp-managemessagegroups-description": "Afegeix un missatge com a rebateig d'un missatge existent o d'un missatge nou en el grup durant les importacions",
+	"apihelp-managemessagegroups-summary": "Afegeix un missatge com a rebateig d'un missatge existent o d'un missatge nou en el grup durant les importacions",
+	"apihelp-managemessagegroups-param-groupId": "Id del grup",
+	"apihelp-managemessagegroups-param-renameMessageKey": "S'està rebatejant la clau de missatge objectiu",
+	"apihelp-managemessagegroups-param-messageKey": "Clau de missatge de substitució",
+	"apihelp-managemessagegroups-param-operation": "L'operació que ha de ser executada. Possibles valors - rebateja / nou",
+	"apihelp-managemessagegroups-param-changesetName": "Canvia el nom del conjunt - Per defecte / No atès / Mediawiki etc.",
+	"apihelp-managemessagegroups-param-changesetModified": "Segell de temps Unix de la darrera modificació del conjunt de canvis. Si el conjunt de canvis s'ha modificat posteriorment, l'API donarà error.",
 	"apihelp-translatesandbox-param-do": "Què fer.",
 	"apihelp-translatesandbox-param-username": "Nom d'usuari a l'hora de crear l'usuari.",
 	"apihelp-translationaids-description": "Consulta totes les ajudes de traducció.",
@@ -21,5 +36,13 @@
 	"apihelp-ttmserver-param-targetlanguage": "Un codi d'idioma de la proposta.",
 	"apihelp-ttmserver-param-text": "El text per trobar suggeriments.",
 	"apihelp-ttmserver-example-1": "Obtenir suggeriments per a la traducció de \"Ajuda\" de l'anglès al finès",
-	"apierror-translate-sandbox-invalidppassword": "La contrasenya no és vàlida"
+	"apierror-translate-changeset-modified": "Un altre usuari o procés ha modificat aquest conjunt de canvis. Els teus canvis no es poden desar perquè eliminaria els seus canvis. Refresca la pàgina per a veure els darrers canvis.",
+	"apierror-translate-sandbox-invalidppassword": "La contrasenya no és vàlida",
+	"apierror-translate-smg-nochanges": "No hi ha cap canvi per a processar.",
+	"apierror-translate-invalid-changeset-name": "Ha passat un conjunt de canvis amb nom no vàlid - $1",
+	"apierror-translate-invalid-operation": "Operació no vàlida: $1. Valors vàlids - $2.",
+	"apierror-translate-addition-key-invalid": "El missatge clau passat per a afegir no s'ha trobat en la llista de missatges de la llengua font.",
+	"apierror-translate-rename-msg-new": "Només els missatges rebatejats es poden afegir com a nous missatges",
+	"apierror-translate-rename-key-invalid": "No s'han trobat les claus de missatge passades per a rebateig en la llista de canvis per a la llengua font.",
+	"apierror-translate-rename-state-invalid": "Cal tornar a afegir un dels missatges acceptats per a rebateig i esborrar l'altre. Estats actuals - afegir: $1 i esborrar $2"
 }
