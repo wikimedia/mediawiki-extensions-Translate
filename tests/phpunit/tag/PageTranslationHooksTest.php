@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Storage\RevisionRecord;
 
 /**
@@ -57,8 +58,6 @@ class PageTranslationHooksTest extends MediaWikiTestCase {
 	}
 
 	public function testRenderTagPage() {
-		global $wgParser;
-
 		// Setup objects
 		$superUser = $this->getTestSysop()->getUser();
 		$translatablePageTitle = Title::newFromText( 'Vuosaari' );
@@ -66,7 +65,7 @@ class PageTranslationHooksTest extends MediaWikiTestCase {
 		$text = '<translate>pupu</translate>';
 		$content = ContentHandler::makeContent( $text, $translatablePageTitle );
 		$translatablePage = TranslatablePage::newFromTitle( $translatablePageTitle );
-		$parser = $wgParser->getFreshParser();
+		$parser = MediaWikiServices::getInstance()->getParser()->getFreshParser();
 		$options = ParserOptions::newFromUser( $superUser );
 		$messageGroups = MessageGroups::singleton();
 
