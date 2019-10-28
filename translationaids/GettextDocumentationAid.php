@@ -34,7 +34,12 @@ class GettextDocumentationAid extends TranslationAid {
 		$mykey = $contLang->lcfirst( $this->handle->getKey() );
 		$mykey = str_replace( ' ', '_', $mykey );
 		$data = $ffs->read( $group->getSourceLanguage() );
-		$help = $data['TEMPLATE'][$mykey]['comments'];
+
+		// $mykey can be unset if the source file has changed since last import.
+		// FIXME: the template should be cached in message group source cache to
+		// avoid frequent re-parsing and this issue.
+		// See https://phabricator.wikimedia.org/T39168
+		$help = $data['TEMPLATE'][$mykey]['comments'] ?? [];
 
 		$conf = $group->getConfiguration();
 		if ( isset( $conf['BASIC']['codeBrowser'] ) ) {
