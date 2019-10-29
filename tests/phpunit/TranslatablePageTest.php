@@ -7,6 +7,7 @@
 
 /**
  * @ingroup PageTranslation
+ * @coversDefaultClass \TranslatablePage
  */
 class TranslatablePageTest extends PHPUnit\Framework\TestCase {
 	/**
@@ -105,5 +106,42 @@ class TranslatablePageTest extends PHPUnit\Framework\TestCase {
 		];
 
 		return $cases;
+	}
+
+	/**
+	 * @dataProvider provideTestParseTranslationUnit
+	 */
+	public function testParseTranslationUnit( Title $input, array $expected ) {
+		$output = TranslatablePage::parseTranslationUnit( $input );
+		$this->assertEquals( $expected, $output );
+	}
+
+	public static function provideTestParseTranslationUnit() {
+		yield [
+			Title::newFromText( 'Translations:Template:Foo/bar/SectionName/LanguageCode' ),
+			[
+				'sourcepage' => 'Template:Foo/bar',
+				'section' => 'SectionName',
+				'language' => 'LanguageCode',
+			]
+		];
+
+		yield [
+			Title::newFromText( 'Translations:Template:Foo/bar/SectionName' ),
+			[
+				'sourcepage' => 'Template:Foo',
+				'section' => 'bar',
+				'language' => 'SectionName',
+			]
+		];
+
+		yield [
+			Title::newFromText( 'Translations:Foo' ),
+			[
+				'sourcepage' => '',
+				'section' => '',
+				'language' => 'Foo',
+			]
+		];
 	}
 }

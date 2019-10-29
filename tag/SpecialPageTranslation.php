@@ -603,6 +603,15 @@ class SpecialPageTranslation extends SpecialPage {
 		$sections = $parse->getSectionsForSave( $highest );
 
 		foreach ( $sections as $s ) {
+			if ( preg_match( '~[_/]~', $s->id ) ) {
+				$this->getOutput()->addElement(
+					'p',
+					[ 'class' => 'errorbox' ],
+					$this->msg( 'tpt-invalid' )->params( $s->id )->text()
+				);
+				$error = true;
+			}
+
 			// We need to do checks for both new and existing sections.
 			// Someone might have tampered with the page source adding
 			// duplicate or invalid markers.

@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\Database;
 
@@ -690,7 +691,7 @@ class TranslatablePage {
 	 * @return string[] List of string
 	 * @since 2012-08-06
 	 */
-	protected function getSections() {
+	public function getSections() {
 		$dbr = TranslateUtils::getSafeReadDB();
 
 		$conds = [ 'trs_page' => $this->getTitle()->getArticleID() ];
@@ -852,6 +853,30 @@ class TranslatablePage {
 	}
 
 	/**
+	 * Helper to guess translation page from translation unit.
+	 *
+	 * @param LinkTarget $translationUnit
+	 * @return array
+	 * @since 2019.10
+	 */
+	public static function parseTranslationUnit( LinkTarget $translationUnit ) : array {
+		// Format is Translations:SourcePageNamespace:SourcePageName/SectionName/LanguageCode.
+		// We will drop the namespace immediately here.
+		$parts = explode( '/', $translationUnit->getText() );
+
+		// LanguageCode and SectionName are guaranteed to not have '/'.
+		$language = array_pop( $parts );
+		$section = array_pop( $parts );
+		$sourcepage = implode( '/', $parts );
+
+		return [
+			'sourcepage' => $sourcepage,
+			'section' => $section,
+			'language' => $language
+		];
+	}
+
+	/**
 	 * @param Title $title
 	 * @return bool
 	 */
@@ -859,6 +884,7 @@ class TranslatablePage {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$pcTTL = $cache::TTL_PROC_LONG;
 
+		// TODO: we could manually mark this key stale when Special:PageTranslation is used.
 		$translatablePageIds = $cache->getWithSetCallback(
 			$cache->makeKey( 'pagetranslation', 'sourcepages' ),
 			$cache::TTL_MINUTE * 5,

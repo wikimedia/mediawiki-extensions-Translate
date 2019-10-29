@@ -31,6 +31,7 @@
 	"tpt-mark-nochanges": "No changes to review. Marking this page for translation will not edit the page nor any existing translation unit.",
 	"tpt-edit-failed": "Could not update the page: $1",
 	"tpt-duplicate": "Translation unit name $1 is used more than once.",
+	"tpt-invalid": "Translation unit name $1 must not contain underscore or slash.",
 	"tpt-already-marked": "The latest version of this page has already been marked for translation.",
 	"tpt-unmarked": "Page $1 is no longer marked for translation.",
 	"tpt-list-nopages": "No pages are marked for translation or ready to be marked for translation.",

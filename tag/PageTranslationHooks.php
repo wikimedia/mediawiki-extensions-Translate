@@ -7,6 +7,7 @@
  * @license GPL-2.0-or-later
  */
 
+use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Storage\RevisionRecord;
@@ -756,42 +757,78 @@ class PageTranslationHooks {
 			return true;
 		}
 
-		if ( !$handle->isValid() ) {
-			// Don't allow editing invalid messages that do not belong to any translatable page
-			LoggerFactory::getInstance( 'Translate' )->info(
-				'Unknown translation page: {title}',
-				[ 'title' => $title->getPrefixedDBkey() ]
-			);
-			$result = [ 'tpt-unknown-page' ];
-			return false;
+		$isValid = true;
+		$groupId = null;
+
+		if ( $handle->isValid() ) {
+			$groupId = $handle->getGroup()->getId();
+		} else {
+			// Sometimes the message index can be out of date. Either the rebuild job failed or
+			// it just hasn't finished yet. Do a secondary check to make sure we are not
+			// inconveniencing translators for no good reason.
+			// See https://phabricator.wikimedia.org/T221119
+			MediaWikiServices::getInstance()->getStatsdDataFactory()
+				->increment( 'translate.slow_translatable_page_check' );
+			$translatablePage = self::checkTranslatablePageSlow( $title );
+			if ( $translatablePage ) {
+				$groupId = $translatablePage->getMessageGroupId();
+			} else {
+				$isValid = false;
+			}
 		}
 
-		$error = self::getTranslationRestrictions( $handle );
-		if ( count( $error ) ) {
-			$result = $error;
-			return false;
+		if ( $isValid ) {
+			$error = self::getTranslationRestrictions( $handle, $groupId );
+			$result = $error ?: $result;
+			return (bool)$error;
 		}
 
-		return true;
+		// Don't allow editing invalid messages that do not belong to any translatable page
+		LoggerFactory::getInstance( 'Translate' )->info(
+			'Unknown translation page: {title}',
+			[ 'title' => $title->getPrefixedDBkey() ]
+		);
+		$result = [ 'tpt-unknown-page' ];
+		return false;
+	}
+
+	private static function checkTranslatablePageSlow( LinkTarget $unit ) : ?TranslatablePage {
+		$parts = TranslatablePage::parseTranslationUnit( $unit );
+		$translationPageTitle = Title::newFromText(
+			$parts[ 'sourcepage' ] . '/' . $parts[ 'language' ]
+		);
+		if ( !$translationPageTitle ) {
+			return null;
+		}
+
+		$translatablePage = TranslatablePage::isTranslationPage( $translationPageTitle );
+		if ( !$translatablePage ) {
+			return null;
+		}
+
+		$sections = $translatablePage->getSections();
+
+		if ( !in_array( $parts[ 'section' ], $sections ) ) {
+			return null;
+		}
+
+		return $translatablePage;
 	}
 
 	/**
 	 * Prevent editing of restricted languages when prioritized.
 	 *
 	 * @param MessageHandle $handle
+	 * @param string $groupId
 	 * @return array array containing error message if restricted, empty otherwise
 	 */
-	private static function getTranslationRestrictions( MessageHandle $handle ) {
+	private static function getTranslationRestrictions( MessageHandle $handle, $groupId ) {
 		global $wgTranslateDocumentationLanguageCode;
 
 		// Allow adding message documentation even when translation is restricted
 		if ( $handle->getCode() === $wgTranslateDocumentationLanguageCode ) {
 			return [];
 		}
-
-		// Get the primary group id
-		$ids = $handle->getGroupIds();
-		$groupId = $ids[0];
 
 		// Check if anything is prevented for the group in the first place
 		$force = TranslateMetadata::get( $groupId, 'priorityforce' );
