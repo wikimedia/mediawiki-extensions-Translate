@@ -260,7 +260,7 @@
 	"translate-smg-left": "Label for first diff column in [[Special:ManageMessageGroups]]",
 	"translate-smg-right": "Label for last diff column in [[Special:ManageMessageGroups]]",
 	"translate-smg-rename-select": "Used as a label for the Submit button on the message rename dialog.",
-	"translate-smg-rename-cancel": "Used as a label for the Cancel button on the message rename dialog.",
+	"translate-smg-rename-cancel": "Used as a label for the Cancel button on the message rename dialog.\n{{Identical|Cancel}}",
 	"translate-smg-rename-search": "Used as a placeholder text for the Search input on the message rename dialog.",
 	"translate-smg-rename-select-err": "Error message displayed, on the message rename dialog, to the user when they submit the data without selecting a message in the message rename dialog.",
 	"translate-smg-rename-no-msg": "Information message displayed, on the message rename dialog, to the user when there are no message renames for select.",
