@@ -17,7 +17,7 @@ class UnicodePlural {
 	const POST = '}}';
 
 	/**
-	 * Returns Gettext plural rule for given language.
+	 * Returns CLDR plural rule for given language.
 	 *
 	 * @param string $code Language tag in MediaWiki internal format.
 	 * @return array|null Empty string if no plural rule found
