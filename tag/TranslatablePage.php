@@ -107,7 +107,7 @@ class TranslatablePage {
 
 	/**
 	 * Constructs a translatable page from title.
-	 * The text of last marked revision is loaded when neded.
+	 * The text of last marked revision is loaded when needed.
 	 *
 	 * @param Title $title
 	 * @return self
