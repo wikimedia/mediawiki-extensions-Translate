@@ -5,7 +5,6 @@
 	'use strict';
 
 	var translateEditorHelpers = {
-
 		showDocumentationEditor: function () {
 			var $infoColumnBlock = this.$editor.find( '.infocolumn-block' ),
 				$editColumn = this.$editor.find( '.editcolumn' ),
@@ -529,44 +528,51 @@
 		showTranslationHelpers: function () {
 			// API call to get translation suggestions from other languages
 			// callback should render suggestions to the editor's info column
-			var translateEditor = this,
-				api = new mw.Api();
+			var api = new mw.Api();
 
 			api.get( {
 				action: 'translationaids',
 				title: this.message.title
 			} ).done( function ( result ) {
-				translateEditor.$editor.find( '.infocolumn .loading' ).remove();
+				this.$editor.find( '.infocolumn .loading' ).remove();
 
 				if ( !result.helpers ) {
-					mw.log( 'API did not return any translation helpers.' );
+					mw.log.warn( 'API did not return any translation helpers.' );
 					return false;
 				}
 
-				translateEditor.showMessageDocumentation( result.helpers.documentation );
-				translateEditor.showUneditableDocumentation( result.helpers.gettext );
-				translateEditor.showAssistantLanguages( result.helpers.inotherlanguages );
-				translateEditor.showTranslationMemory( result.helpers.ttmserver );
-				translateEditor.showMachineTranslations( result.helpers.mt );
-				translateEditor.showSupportOptions( result.helpers.support );
-				translateEditor.addDefinitionDiff( result.helpers.definitiondiff );
-				translateEditor.addInsertables( result.helpers.insertables );
+				this.showMessageDocumentation( result.helpers.documentation );
+				this.showUneditableDocumentation( result.helpers.gettext );
+				this.showAssistantLanguages( result.helpers.inotherlanguages );
+				this.showTranslationMemory( result.helpers.ttmserver );
+				this.showMachineTranslations( result.helpers.mt );
+				this.showSupportOptions( result.helpers.support );
+				this.addDefinitionDiff( result.helpers.definitiondiff );
+				this.addInsertables( result.helpers.insertables );
 
 				// Load the possible warnings as soon as possible, do not wait
 				// for the user to make changes. Otherwise users might try confirming
 				// translations which fail checks. Confirmation seems to work but
 				// the message will continue to appear outdated.
-				if ( translateEditor.message.properties &&
-					translateEditor.message.properties.status === 'fuzzy'
+				if ( this.message.properties &&
+					this.message.properties.status === 'fuzzy'
 				) {
-					translateEditor.validateTranslation();
+					this.validateTranslation();
 				}
 
-				mw.hook( 'mw.translate.editor.showTranslationHelpers' ).fire( result.helpers, translateEditor.$editor );
+				mw.hook( 'mw.translate.editor.showTranslationHelpers' ).fire(
+					result.helpers, this.$editor
+				);
 
-			} ).fail( function ( errorCode, results ) {
-				mw.log( 'Error loading translation aids', errorCode, results );
-			} );
+			}.bind( this ) ).fail( function ( errorCode, results ) {
+				this.$editor.find( '.infocolumn .loading' ).remove();
+				this.$editor.find( '.infocolumn' ).append(
+					$( '<div>' )
+						.text( mw.msg( 'tux-editor-loading-failed', results.error.info ) )
+						.addClass( 'warningbox tux-translation-aid-error' )
+				);
+				mw.log.error( 'Error loading translation aids:', errorCode, results );
+			}.bind( this ) );
 		}
 	};
 

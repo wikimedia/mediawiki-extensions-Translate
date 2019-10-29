@@ -455,6 +455,7 @@
 				"tux-editor-expand-tooltip",
 				"tux-editor-in-other-languages",
 				"tux-editor-loading",
+				"tux-editor-loading-failed",
 				"tux-editor-message-desc-less",
 				"tux-editor-message-desc-more",
 				"tux-editor-message-tools-show-editor",

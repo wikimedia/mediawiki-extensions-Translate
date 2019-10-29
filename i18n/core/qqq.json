@@ -433,6 +433,7 @@
 	"tux-editor-message-tools-translations": "A link to translations of a message to all languages. An item in a menu that appears when clicking on message title.\n{{Identical|All translations}}",
 	"tux-editor-message-tools-linktothis": "A direct link to the translation editor showing this translation. An item in a menu that appears when clicking on message title",
 	"tux-editor-loading": "Loading message while translation editor is being prepared with helper information.\n{{Identical|Loading}}",
+	"tux-editor-loading-failed": "Error message.\n* $1 - additional information",
 	"translate-search-more-languages-info": "Information shown as number of languages matching the query using\n[[Special:SearchTranslations]]\n* $1 - number of languages\nSee also:\n* {{msg-mw|Translate-search-more-groups-info}}",
 	"translate-statsbar-tooltip": "Descriptive text to show for the stats bar for message groups on mouse over.\n* $1 percentage of messages translated\n* $2 percentage of messages reviewed",
 	"translate-statsbar-tooltip-with-fuzzy": "Descriptive text to show for the stats bar for message groups on mouse over.\n\nParameters:\n* $1 - percentage of messages translated (does not include outdated)\n* $2 - percentage of messages reviewed\n* $3 - percentage of messages outdated (not counted as translated)",

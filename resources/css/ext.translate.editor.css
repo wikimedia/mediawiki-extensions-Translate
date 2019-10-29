@@ -250,9 +250,15 @@
 	background-color: #f5f5f5;
 }
 
-.tux-tm-suggestion-source {
+.tux-tm-suggestion-source,
+.tux-translation-aid-error {
 	font-size: 13px;
 	margin-bottom: 15px;
+}
+
+.tux-translation-aid-error {
+	margin-top: 15px;
+	margin-right: 15px;
 }
 
 .grid .row .tm-suggestion,
