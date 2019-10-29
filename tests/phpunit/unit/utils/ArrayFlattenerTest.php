@@ -5,11 +5,10 @@
  * @license GPL-2.0-or-later
  */
 
- /**
-	* @coversDefaultClass \ArrayFlattener
-	*/
+/**
+ * @coversDefaultClass \ArrayFlattener
+ */
 class ArrayFlattenerTest extends \MediaWikiUnitTestCase {
-
 	/**
 	 * @dataProvider provideTestFlatten
 	 * @covers ::flatten
