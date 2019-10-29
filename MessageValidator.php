@@ -33,9 +33,10 @@ use MediaWiki\Extensions\Translate\MessageValidator\ValidatorFactory;
  *    [ 'printf', $subcheck, $key, $code ],
  *    # check notice message
  *    'translate-checks-parameters-unknown',
- *    # optional special param list, formatted later with Language::commaList()
- *    [ 'PARAMS', $params ],
- *    # optional number of params, formatted later with Language::formatNum()
+ *    # optional special param list, formatted later with Language::commaList().
+ *    # If you need wikitext formatting in $params, you can use PARAMS.
+ *    [ 'PLAIN-PARAMS', $params ],
+ *    # optional number of params, formatted later with Language::formatNum().
  *    [ 'COUNT', count( $params ) ] ],
  *    'Any other parameters to the message',
  * </pre>
@@ -316,6 +317,9 @@ class MessageValidator {
 					if ( $type === 'COUNT' ) {
 						$message[] = $lang->formatNum( $value );
 					} elseif ( $type === 'PARAMS' ) {
+						$message[] = $lang->commaList( $value );
+					} elseif ( $type === 'PLAIN-PARAMS' ) {
+						$value = array_map( 'wfEscapeWikiText', $value );
 						$message[] = $lang->commaList( $value );
 					} elseif ( $type === 'PLAIN' ) {
 						$message[] = wfEscapeWikiText( $value );

@@ -42,7 +42,7 @@ trait ValidationHelper {
 			$validationOutput[$key][] = [
 				[ 'variable', $subcheck, $key, $code ],
 				'translate-checks-parameters',
-				[ 'PARAMS', $params ],
+				[ 'PLAIN-PARAMS', $params ],
 				[ 'COUNT', count( $params ) ],
 			];
 		}
@@ -55,7 +55,7 @@ trait ValidationHelper {
 			$validationOutput[$key][] = [
 				[ 'variable', $subcheck, $key, $code ],
 				'translate-checks-parameters-unknown',
-				[ 'PARAMS', $params ],
+				[ 'PLAIN-PARAMS', $params ],
 				[ 'COUNT', count( $params ) ],
 			];
 		}

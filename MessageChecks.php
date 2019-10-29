@@ -35,6 +35,7 @@
  *    # check warning message
  *    'translate-checks-parameters-unknown',
  *    # optional special param list, formatted later with Language::commaList()
+ *    # you may want to use PLAIN-PARAMS instead.
  *    array( 'PARAMS', $params ),
  *    # optional number of params, formatted later with Language::formatNum()
  *    array( 'COUNT', count( $params ) ),
@@ -217,8 +218,10 @@ class MessageChecker {
 	}
 
 	/**
-	 * Converts the special params to something nice. Currently useless, but
-	 * useful if in the future blacklist can work with parameter level too.
+	 * Converts the special params to something nice.
+	 *
+	 * Could be useful if in the future blacklist can work with parameter level too. For
+	 * now it helps with unit testing by reducing dependencies.
 	 * @param array $warnings List of warnings
 	 * @throws MWException
 	 * @return array List of warning messages with parameters.
@@ -238,6 +241,9 @@ class MessageChecker {
 					if ( $type === 'COUNT' ) {
 						$message[] = $lang->formatNum( $value );
 					} elseif ( $type === 'PARAMS' ) {
+						$message[] = $lang->commaList( $value );
+					} elseif ( $type === 'PLAIN-PARAMS' ) {
+						$value = array_map( 'wfEscapeWikiText', $value );
 						$message[] = $lang->commaList( $value );
 					} elseif ( $type === 'PLAIN' ) {
 						$message[] = wfEscapeWikiText( $value );
@@ -394,7 +400,7 @@ class MessageChecker {
 				$warnings[$key][] = [
 					[ 'variable', $subcheck, $key, $code ],
 					'translate-checks-parameters',
-					[ 'PARAMS', $params ],
+					[ 'PLAIN-PARAMS', $params ],
 					[ 'COUNT', count( $params ) ],
 				];
 			}
@@ -407,7 +413,7 @@ class MessageChecker {
 				$warnings[$key][] = [
 					[ 'variable', $subcheck, $key, $code ],
 					'translate-checks-parameters-unknown',
-					[ 'PARAMS', $params ],
+					[ 'PLAIN-PARAMS', $params ],
 					[ 'COUNT', count( $params ) ],
 				];
 			}
