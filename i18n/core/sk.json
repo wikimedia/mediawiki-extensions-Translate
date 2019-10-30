@@ -272,6 +272,7 @@
 	"tux-editor-placeholder": "Váš preklad",
 	"tux-editor-editsummary-placeholder": "Nepovinné zhrnutie",
 	"tux-editor-paste-original-button-label": "Vložiť zdrojový text",
+	"tux-editor-discard-changes-button-label": "Zahodiť zmeny",
 	"tux-editor-save-button-label": "Uložiť preklad",
 	"tux-editor-skip-button-label": "Preskočiť na nasledujúci",
 	"tux-editor-cancel-button-label": "Zrušiť",

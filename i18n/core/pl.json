@@ -254,6 +254,7 @@
 	"translate-manage-action-conflict": "Importuj i oznacz jako wymagające sprawdzenia",
 	"translate-manage-action-ignore": "Ignoruj",
 	"translate-manage-action-fuzzy": "Importuj i oznacz tłumaczenia jako wymagające sprawdzenia",
+	"translate-manage-action-rename-fuzzy": "Zmień nazwy i oznacz tłumaczenia jako wymagające sprawdzenia",
 	"translate-manage-action-rename": "Zmień nazwę",
 	"translate-manage-nochanges": "Brak zmian w definicjach komunikatów dla tej grupy",
 	"translate-manage-nochanges-other": "Nie było zmian dla tego języka.\nUżyj poniższego linku, aby powrócić do widoku szczegółów grupy.",
