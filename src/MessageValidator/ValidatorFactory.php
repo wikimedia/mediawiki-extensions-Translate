@@ -15,6 +15,7 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRubyVar
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiMiscValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\NewlineValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\SmartFormatPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\UnicodePluralValidator;
 use InvalidArgumentException;
 use RuntimeException;
@@ -24,7 +25,6 @@ use RuntimeException;
  * @since 2019.06
  */
 class ValidatorFactory {
-
 	/**
 	 * @var string[]
 	 */
@@ -37,6 +37,7 @@ class ValidatorFactory {
 		'MediaWikiMisc' => MediaWikiMiscValidator::class,
 		'MediaWikiPlural' => MediaWikiPluralValidator::class,
 		'Newline' => NewlineValidator::class,
+		'SmartFormatPlural' => SmartFormatPluralValidator::class,
 		'UnicodePlural' => UnicodePluralValidator::class,
 	];
 
