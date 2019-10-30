@@ -29,8 +29,6 @@ abstract class GenericTranslateJob extends \Job {
 	 */
 	const CHANNEL_NAME = 'Translate.Jobs';
 
-	abstract public function run();
-
 	/**
 	 * Returns a logger instance with the channel name. Can have only a single
 	 * channel per job, so once instantiated, the same instance is returned.
