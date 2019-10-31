@@ -228,7 +228,7 @@
 	"translate-ls-submit": "Afficher les statistiques",
 	"translate-ls-column-group": "Groupe de messages",
 	"translate-mgs-pagename": "Statistiques du groupe de messages",
-	"translate-mgs-fieldset": "Afficher les préférences",
+	"translate-mgs-fieldset": "Préférences d’affichage",
 	"translate-mgs-group": "Groupe de messages :",
 	"translate-mgs-nocomplete": "Ne pas afficher les langues dont la traduction est achevée",
 	"translate-mgs-noempty": "Ne pas afficher les langues qui n’ont aucune traduction",

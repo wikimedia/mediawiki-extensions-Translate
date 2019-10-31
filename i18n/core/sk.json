@@ -255,6 +255,7 @@
 	"translate-msggroupselector-projects": "Skupina správ",
 	"translate-msggroupselector-search-placeholder": "Hľadanie skupiny",
 	"translate-msggroupselector-search-all": "Všetko",
+	"translate-msggroupselector-view-subprojects": "$1 {{PLURAL:$1|podskupina|podskupiny|podskupín}}",
 	"tux-languageselector": "Preklad do jazyka",
 	"tux-tab-all": "Všetky",
 	"tux-tab-untranslated": "Nepreložené",

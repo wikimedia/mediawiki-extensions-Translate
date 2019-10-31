@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"ArmenBakkalian",
-			"Azniv Stepanian"
+			"Azniv Stepanian",
+			"Kareyac"
 		]
 	},
 	"translate": "Թարգմանութիւն",
@@ -29,5 +30,6 @@
 	"translate-statsf-scale-days": "Օրեր",
 	"translate-statsf-scale-hours": "Ժամեր",
 	"translate-statsf-submit": "Կանխաստուգել",
+	"translate-smg-rename-cancel": "Չեղարկել",
 	"translate-documentation-language": "Հաղորդագրութեան փաստագրութիւն"
 }
