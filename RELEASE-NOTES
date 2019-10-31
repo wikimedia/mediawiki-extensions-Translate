@@ -1,0 +1,30 @@
+== Translate 2019.10 ==
+Released at 2019-10-31.
+
+=== Noteworthy changes ===
+* Translate extension now requires PHP 7.1.x and has dropped support for HHVM.
+* PHP entry point has been removed. To load the Translate extension, please use the following,
+<pre>
+wfLoadExtension( 'Translate' );
+</pre>
+
+=== Noteworthy changes ===
+* Removed deprecated SolrTTMServer ([https://phabricator.wikimedia.orgT87985 Phab:T87985])
+* Dropped support for HHVM.
+* Avoid usage of deprecated <code>$wgContLang</code> global
+  ([https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/533738 Gerrit Patch])
+* Fix expanding of multiple times nested groups on Special:LanguageStats
+  ([https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/543459 Gerrit Patch])
+* Removed <code>hr</code> element from page translation header
+  ([https://phabricator.wikimedia.org/T220841 Phab:T220841])
+* Implemented used X times in translation memory suggestions
+  ([https://phabricator.wikimedia.org/T47686 Phab:T47686])
+* Fix skipping translation memory self-suggestions
+  ([https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/544397 Gerrit Patch])
+* Convert Translate to use extension registration
+  ([https://phabricator.wikimedia.org/T87985 Phab:T87985])
+* Addition of new types of validators to check quality of translations
+  ([https://phabricator.wikimedia.org/T231181 Phab:T231181], [https://phabricator.wikimedia.org/T231707 Phab:T231707])
+* Various stability and performance improvements
+  ([https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/534571 1]
+  [https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Translate/+/538892 2])
