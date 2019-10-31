@@ -18,7 +18,7 @@ class TranslateMetadata {
 	 * @param string[] $groups List of translate groups
 	 */
 	public static function preloadGroups( array $groups ) {
-		$missing = array_diff( $groups, array_keys( self::$cache ) );
+		$missing = array_keys( array_diff_key( array_flip( $groups ), self::$cache ) );
 		if ( !$missing ) {
 			return;
 		}
@@ -26,8 +26,13 @@ class TranslateMetadata {
 		self::$cache += array_fill_keys( $missing, null ); // cache negatives
 
 		$dbr = TranslateUtils::getSafeReadDB();
-		$conds = count( $groups ) <= 500 ? [ 'tmd_group' => $missing ] : [];
-		$res = $dbr->select( 'translate_metadata', '*', $conds, __METHOD__ );
+		$conds = count( $missing ) <= 500 ? [ 'tmd_group' => $missing ] : [];
+		$res = $dbr->select(
+			'translate_metadata',
+			[ 'tmd_group', 'tmd_key', 'tmd_value' ],
+			$conds,
+			__METHOD__
+		);
 		foreach ( $res as $row ) {
 			self::$cache[$row->tmd_group][$row->tmd_key] = $row->tmd_value;
 		}
