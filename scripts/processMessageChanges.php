@@ -98,7 +98,7 @@ class ProcessMessageChanges extends Maintenance {
 			return;
 		}
 
-		if ( $this->hasOption( 'safe-import' ) ) {
+		if ( $scripted ) {
 			$importer = new ExternalMessageSourceStateImporter();
 			$info = $importer->importSafe( $changes );
 			$this->printChangeInfo( $info );
