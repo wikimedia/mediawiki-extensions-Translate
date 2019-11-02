@@ -9,8 +9,8 @@ class TranslatablePageMessageGroupStoreTest extends MediaWikiTestCase {
 	 */
 	protected $mgTranslateStore;
 
-	public function setup() {
-		parent::setup();
+	public function setUp() : void {
+		parent::setUp();
 
 		$this->setMwGlobals( [
 			'wgEnablePageTranslation' => true
