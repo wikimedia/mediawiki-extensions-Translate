@@ -173,7 +173,7 @@ class ApiManageMessageGroupsTest extends ApiTestCase {
 		);
 	}
 
-	public static function tearDownAfterClass() {
+	public static function tearDownAfterClass() : void {
 		parent::tearDownAfterClass();
 
 		global $wgTranslateCacheDirectory;

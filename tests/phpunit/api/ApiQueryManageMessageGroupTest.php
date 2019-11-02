@@ -110,7 +110,7 @@ class ApiQueryManageMessageGroupsTest extends ApiTestCase {
 		MessageChangeStorage::writeChanges( $changeData, self::getStoragePath() );
 	}
 
-	public static function tearDownAfterClass() {
+	public static function tearDownAfterClass() : void {
 		parent::tearDownAfterClass();
 
 		global $wgTranslateCacheDirectory;
