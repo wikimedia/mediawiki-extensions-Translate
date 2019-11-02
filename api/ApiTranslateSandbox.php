@@ -169,8 +169,8 @@ class ApiTranslateSandbox extends ApiBase {
 			return false;
 		}
 
-		$languagePrefs = FormatJson::decode( $user->getOption( 'translate-sandbox' ) );
-		$languages = implode( '|', $languagePrefs->languages );
+		$languagePrefs = FormatJson::decode( $user->getOption( 'translate-sandbox' ), true );
+		$languages = implode( '|', $languagePrefs[ 'languages' ] ?? [] );
 		$babeltext = "{{#babel:$languages}}";
 		$summary = $this->msg( 'tsb-create-user-page' )->inContentLanguage()->text();
 
