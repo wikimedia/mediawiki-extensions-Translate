@@ -433,7 +433,9 @@ class ExternalMessageSourceStateComparator {
 
 			$changes->addRename( $language, $addMsg, $deleteMsg, $similarityPercent );
 
+			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 			$additionsToRemove[] = $addMsg['key'];
+			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 			$deletionsToRemove[] = $deleteMsg['key'];
 		}
 

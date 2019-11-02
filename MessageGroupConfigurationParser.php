@@ -77,7 +77,7 @@ class MessageGroupConfigurationParser {
 	 * it will be merged with other configurations.
 	 *
 	 * @param array $documents
-	 * @return array Unvalidated group configurations
+	 * @return array[][] Unvalidated group configurations
 	 */
 	public function parseDocuments( array $documents ) {
 		$groups = [];

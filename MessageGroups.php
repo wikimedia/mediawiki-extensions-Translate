@@ -273,6 +273,7 @@ class MessageGroups {
 			return $this->groupLoaders;
 		}
 
+		// @phan-suppress-next-line PhanEmptyForeach False positive
 		foreach ( $groupLoaderInstances as $loader ) {
 			if ( !$loader instanceof MessageGroupLoader ) {
 				throw new \InvalidArgumentException(

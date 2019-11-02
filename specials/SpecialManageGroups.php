@@ -548,6 +548,15 @@ class SpecialManageGroups extends SpecialPage {
 			[ 'class' => 'mw-translate-smg-change smg-change-rename' ], $text );
 	}
 
+	/**
+	 * @param array $currentMsg
+	 * @param MessageSourceChange $sourceChanges
+	 * @param string $languageCode
+	 * @param int $groupNamespace
+	 * @param string $selectedVal
+	 * @param bool $isSourceLang
+	 * @return ?array
+	 */
 	protected function getRenameJobParams(
 		$currentMsg, MessageSourceChange $sourceChanges, $languageCode,
 		$groupNamespace, $selectedVal, $isSourceLang = true

@@ -658,6 +658,7 @@ class GroupStatistics extends Maintenance {
 			$out->blockstart();
 			$out->element( $l10n ? '{{int:translate-gs-total}}' : 'Total' );
 			$out->element( $totals[0] );
+			// @phan-suppress-next-line PhanDivisionByZero
 			$out->element( number_format( $totals[1] / $totals[0] ) );
 			$out->blockend();
 

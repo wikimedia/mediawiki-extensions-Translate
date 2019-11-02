@@ -923,7 +923,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 	 * @return mixed
 	 */
 	public function offsetGet( $offset ) {
-		return $this->messages[$offset];
+		return $this->messages[$offset] ?? null;
 	}
 
 	/**
@@ -970,6 +970,7 @@ class MessageCollection implements ArrayAccess, Iterator, Countable {
 			return false;
 		}
 
+		// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 		return $this->messages[key( $this->keys )];
 	}
 

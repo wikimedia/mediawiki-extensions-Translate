@@ -17,6 +17,12 @@ use InvalidArgumentException;
  * @since 2019.10
  */
 class MessageSourceChange {
+	/**
+	 * @var array[][][]
+	 * @codingStandardsIgnoreStart
+	 * @phan-var array<string,array<string,array<string|int,array{key:string,content:string,similarity?:float,matched_to?:string,previous_state?:string}>>>
+	 * @codingStandardsIgnoreEnd
+	 */
 	protected $changes = [];
 
 	const ADDITION = 'addition';
@@ -29,16 +35,19 @@ class MessageSourceChange {
 
 	/**
 	 * Contains a mapping of mesasge type, and the corresponding addition function
-	 * @var array
+	 * @var callable[]
 	 */
 	protected $addFunctionMap;
 
 	/**
 	 * Contains a mapping of message type, and the corresponding removal function
-	 * @var array
+	 * @var callable[]
 	 */
 	protected $removeFunctionMap;
 
+	/**
+	 * @param array[][][] $changes
+	 */
 	public function __construct( $changes = [] ) {
 		$this->changes = $changes;
 		$this->addFunctionMap = [
@@ -87,8 +96,8 @@ class MessageSourceChange {
 	/**
 	 * Adds a rename under a message group for a specific language
 	 * @param string $language
-	 * @param array $addedMessage
-	 * @param array $deletedMessage
+	 * @param string[] $addedMessage
+	 * @param string[] $deletedMessage
 	 * @param float $similarity
 	 */
 	public function addRename( $language, $addedMessage, $deletedMessage, $similarity = 0 ) {
@@ -128,6 +137,12 @@ class MessageSourceChange {
 		}
 	}
 
+	/**
+	 * @param string $language
+	 * @param string $type
+	 * @param string $key
+	 * @param string $content
+	 */
 	protected function addModification( $language, $type, $key, $content ) {
 		$this->changes[$language][$type][] = [
 			'key' => $key,
@@ -138,7 +153,7 @@ class MessageSourceChange {
 	/**
 	 * Fetch changes for a message group under a language
 	 * @param string $language
-	 * @return array
+	 * @return array[]
 	 */
 	public function getChanges( $language ) {
 		return $this->getModification( $language, self::CHANGE );
@@ -147,7 +162,7 @@ class MessageSourceChange {
 	/**
 	 * Fetch deletions for a message group under a language
 	 * @param string $language
-	 * @return array
+	 * @return array[]
 	 */
 	public function getDeletions( $language ) {
 		return $this->getModification( $language, self::DELETION );
@@ -156,7 +171,7 @@ class MessageSourceChange {
 	/**
 	 * Fetch additions for a message group under a language
 	 * @param string $language
-	 * @return array
+	 * @return array[]
 	 */
 	public function getAdditions( $language ) {
 		return $this->getModification( $language, self::ADDITION );
@@ -260,7 +275,7 @@ class MessageSourceChange {
 	/**
 	 * Fetch renames for a message group under a language
 	 * @param string $language
-	 * @return array
+	 * @return array[]
 	 */
 	public function getRenames( $language ) {
 		$renames = $this->getModification( $language, self::RENAME );
@@ -271,6 +286,11 @@ class MessageSourceChange {
 		return $renames;
 	}
 
+	/**
+	 * @param string $language
+	 * @param string $type
+	 * @return array[]
+	 */
 	protected function getModification( $language, $type ) {
 		return $this->changes[$language][$type] ?? [];
 	}
@@ -370,7 +390,7 @@ class MessageSourceChange {
 
 	/**
 	 * Return all modifications for the group.
-	 * @return array
+	 * @return array[][][]
 	 */
 	public function getAllModifications() {
 		return $this->changes;
@@ -379,7 +399,7 @@ class MessageSourceChange {
 	/**
 	 * Get all for a language under the group.
 	 * @param string $language
-	 * @return array
+	 * @return array[][]
 	 */
 	public function getModificationsForLanguage( $language ) {
 		return $this->changes[$language] ?? [];
@@ -396,7 +416,7 @@ class MessageSourceChange {
 
 	/**
 	 * Get all language keys with modifications under the group
-	 * @return array
+	 * @return string[]
 	 */
 	public function getLanguages() {
 		return array_keys( $this->changes );

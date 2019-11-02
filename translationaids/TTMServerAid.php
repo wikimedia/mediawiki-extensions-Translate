@@ -94,6 +94,13 @@ class TTMServerAid extends QueryAggregatorAwareTranslationAid {
 		return $items;
 	}
 
+	/**
+	 * @param array[] $queryData
+	 * @param ReadableTTMServer $s
+	 * @param string $serviceName
+	 * @param string $sourceLanguage
+	 * @return array[]
+	 */
 	protected function formatInternalSuggestions(
 		array $queryData, ReadableTTMServer $s, $serviceName, $sourceLanguage
 	) {

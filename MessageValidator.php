@@ -52,12 +52,13 @@ class MessageValidator {
 	/**
 	 * Contains list of validators
 	 *
-	 * @var array
+	 * @var array[]
 	 */
 	protected $validators = [];
 
 	protected $groupId;
 
+	/** @var string[][] */
 	private static $globalBlacklist;
 
 	/**

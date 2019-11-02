@@ -389,8 +389,9 @@ class SpecialPageTranslation extends SpecialPage {
 	}
 
 	/**
-	 * @param array $in
-	 * @return array
+	 * @param array[] $in
+	 * @return array[]
+	 * @phan-return array{proposed:array[],active:array[],broken:array[],discouraged:array[]}
 	 */
 	protected function classifyPages( array $in ) {
 		$out = [

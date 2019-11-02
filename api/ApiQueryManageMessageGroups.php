@@ -88,6 +88,7 @@ class ApiQueryManageMessageGroups extends ApiQueryBase {
 
 			$similarity = $stringComparator->getSimilarity(
 				$deletion['content'],
+				// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 				$targetMsg['content']
 			);
 

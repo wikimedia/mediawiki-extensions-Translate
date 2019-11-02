@@ -494,6 +494,11 @@ abstract class ComplexMessages {
 		return $text;
 	}
 
+	/**
+	 * @param string $group
+	 * @param array $data
+	 * @return string
+	 */
 	protected function exportEach( $group, $data ) {
 		$var = $data['var'];
 		$items = $data['data'];

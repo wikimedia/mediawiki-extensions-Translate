@@ -416,6 +416,10 @@ class ElasticSearchTTMServer
 		// I hate the rule that forbids {}
 	}
 
+	/**
+	 * @param array[] $batch
+	 * @phan-param array<int,array{0:MessageHandle,1:string,2:string}> $batch
+	 */
 	public function batchInsertDefinitions( array $batch ) {
 		$lb = new LinkBatch();
 		foreach ( $batch as $data ) {
@@ -755,6 +759,7 @@ class ElasticSearchTTMServer
 	 */
 	public function getFacets( $resultset ) {
 		$aggs = $resultset->getAggregations();
+		'@phan-var array[][][] $aggs';
 
 		$ret = [
 			'language' => [],

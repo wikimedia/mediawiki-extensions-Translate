@@ -95,7 +95,7 @@ class ExternalMessageSourceStateImporter {
 	 * Creates MessagUpdateJobs additions for a language under a group
 	 *
 	 * @param MessageGroup $group
-	 * @param array $additions
+	 * @param string[][] $additions
 	 * @param string $language
 	 * @return array
 	 */

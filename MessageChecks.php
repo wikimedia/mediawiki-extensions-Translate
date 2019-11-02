@@ -47,6 +47,7 @@
 class MessageChecker {
 	protected $checks = [];
 	protected $group;
+	/** @var array[] */
 	private static $globalBlacklist;
 
 	/**

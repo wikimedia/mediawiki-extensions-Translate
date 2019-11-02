@@ -68,6 +68,7 @@ class ApiQueryMessageGroups extends ApiQueryBase {
 			// Have dynamic groups appear first in the list
 			$groups = $dynamicGroups + $groups;
 		}
+		'@phan-var MessageGroup[] $groups';
 
 		// Do not list the sandbox group. The code that knows it
 		// exists can access it directly.
