@@ -48,7 +48,7 @@
 	"translate-magic-words": "Magiske Woude",
 	"translate-magic-namespace": "Noomensruum-Noomen",
 	"translate-checks-parameters": "{{PLURAL:$2|Die foulgjende Parameter wäd|Do foulgjende Parametere wäide}} nit benutsed: <strong>$1</strong>",
-	"translate-checks-parameters-unknown": "{{PLURAL:$2|Die foulgjende Parameter is|Do foulgjende Parametere sunt}} uunbekoand: <strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters-unknown": "{{PLURAL:$2|Die foulgjende Parameter is|Do foulgjende Parametere sunt}} uunbekoand: <strong>$1</strong>",
 	"translate-checks-balance": "{{PLURAL:$2|Ju foulgjende Klammersättenge is|Do foulgjende Klammersättengen sunt}} nit uutglieked: <strong>$1</strong>",
 	"translate-checks-links": "{{PLURAL:$2|Die foulgjende Link is|Do foulgjende Linke sunt}} problematisk: <strong>$1</strong>",
 	"translate-checks-xhtml": "Ärsät {{PLURAL:$2|dän foulgjende Tag|do foulgjende Tags}} truch do korrekte: <strong>$1</strong>",

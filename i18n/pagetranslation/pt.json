@@ -11,7 +11,8 @@
 			"Fúlvio",
 			"Imperadeiro98",
 			"Vitorvicentevalente",
-			"Waldyrious"
+			"Waldyrious",
+			"Mansil alfalb"
 		]
 	},
 	"pagetranslation": "Tradução de páginas",
@@ -39,8 +40,9 @@
 	"tpt-mark-nochanges": "Não há mudanças para rever. Marcar esta página para tradução não editará a página nem nenhuma das unidades de tradução existentes.",
 	"tpt-edit-failed": "Não foi possível atualizar a página: $1",
 	"tpt-duplicate": "O nome $1 é usado mais do que uma vez nas unidades de tradução.",
+	"tpt-invalid": "O nome $1 da unidade tradução não deve conter sublinhado ou barra.",
 	"tpt-already-marked": "A versão mais recente desta página já foi marcada para tradução.",
-	"tpt-unmarked": "A página $1 já não está marcada para tradução.",
+	"tpt-unmarked": "A página [[:$1]] já não está marcada para tradução.",
 	"tpt-list-nopages": "Não existem páginas marcadas para tradução, nem prontas a ser marcadas para tradução.",
 	"tpt-new-pages-title": "Páginas propostas para tradução",
 	"tpt-old-pages-title": "Páginas em tradução",
@@ -74,7 +76,7 @@
 	"tpt-tab-translate": "Traduzir",
 	"tpt-target-page": "Esta página não pode ser atualizada manualmente.\nEla é uma tradução da página [[$1]] e a tradução pode ser atualizada usando [$2 a ferramenta de tradução].",
 	"tpt-patrolling-blocked": "Esta página não pode ser patrulhada. Em substituição, use a ação de tradução para revê-la.",
-	"tpt-unknown-page": "Este espaço nominal está reservado para traduções de páginas de conteúdo.\nA página que está a tentar editar não parece corresponder a nenhuma página marcada para tradução.",
+	"tpt-unknown-page": "Este espaço nominal está reservado para traduções de página de conteúdo.\nA página que está a tentar editar não parece corresponder a qualquer página marcada para tradução.",
 	"tpt-translation-restricted": "A tradução desta página para esta língua foi impedida por um administrador de traduções.\n\nMotivo: $1",
 	"tpt-discouraged-language-force-header": "Esta página não pode ser traduzida para $1.",
 	"tpt-discouraged-language-force-content": "Um administrador de traduções decidiu que esta página pode ser traduzida para $1.",

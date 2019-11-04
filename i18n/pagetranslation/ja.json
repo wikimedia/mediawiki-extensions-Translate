@@ -12,7 +12,8 @@
 			"Afaz",
 			"Yusuke1109",
 			"Omotecho",
-			"Takot"
+			"Takot",
+			"そらたこ"
 		]
 	},
 	"pagetranslation": "ページ翻訳",
@@ -41,7 +42,7 @@
 	"tpt-edit-failed": "ページを更新できませんでした: $1",
 	"tpt-duplicate": "翻訳単位名 $1 は、複数回使用されています。",
 	"tpt-already-marked": "このページの最新版は既に翻訳対象に指定されています。",
-	"tpt-unmarked": "ページ $1 を翻訳対象から除去しました。",
+	"tpt-unmarked": "ページ [[:$1]] を翻訳対象から除去しました。",
 	"tpt-list-nopages": "翻訳対象に指定されているページがないか、翻訳対象に指定する準備ができているページがありません。",
 	"tpt-new-pages-title": "翻訳が提案されているページ",
 	"tpt-old-pages-title": "翻訳対象ページ",
@@ -75,7 +76,7 @@
 	"tpt-tab-translate": "翻訳",
 	"tpt-target-page": "このページは手動では更新できません。\nこのページはページ [[$1]] の翻訳版であり、[$2 翻訳ツール]を使用して更新できます。",
 	"tpt-patrolling-blocked": "このページは監視の対象外です。翻訳動作を使って査読してください。",
-	"tpt-unknown-page": "この名前空間はコンテンツ ページの翻訳のために予約されています。\n編集しようとしているページに対応する翻訳対象ページが存在しないようです。",
+	"tpt-unknown-page": "この名前空間はコンテンツ ページの翻訳用に予約されています。\n編集しようとしているページには翻訳対象ページが対応していないようです。",
 	"tpt-translation-restricted": "翻訳管理者がこのページのこの言語への翻訳を禁止しています。\n\n理由: $1",
 	"tpt-discouraged-language-force-header": "このページは$1には翻訳できません。",
 	"tpt-discouraged-language-force-content": "翻訳管理者によってこのページの翻訳は$1のみに限定されました。",

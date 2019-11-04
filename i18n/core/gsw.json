@@ -72,7 +72,7 @@
 	"translate-magic-errors": "Bitte verbessere {{PLURAL:$1|dää Fähler|die Fähler}} in dr Ibersetzige:",
 	"translate-magic-saved": "Dyyni Änderige sin erfolgryych gspycheret wore.",
 	"translate-checks-parameters": "{{PLURAL:$2|Dää Parameter wird|Die Parameter wäre}} nit bruucht: <strong>$1</strong>",
-	"translate-checks-parameters-unknown": "{{PLURAL:$2|Dää Parameter isch|Die Parameter sin}} nit bekannt: <strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters-unknown": "{{PLURAL:$2|Dää Parameter isch|Die Parameter sin}} nit bekannt: <strong>$1</strong>",
 	"translate-checks-balance": "Die {{PLURAL:$2|Chlammeresetzig isch|Chlammersetzige sin}} nit uusgliche: <strong>$1</strong>",
 	"translate-checks-links": "{{PLURAL:$2|De Link isch|Die Links sin}} problematisch: <strong>$1</strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|De Link wird|Die $2 Links wäre}} vermisst:\n<strong><nowiki>$1</nowiki></strong>",

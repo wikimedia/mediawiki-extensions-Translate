@@ -91,7 +91,7 @@
 	"translate-magic-errors": "Bonvolu ripari {{PLURAL:$1|jenan eraron|jenajn erarojn}} en tradukoj:",
 	"translate-magic-saved": "Viaj ŝanĝoj estas konservitaj.",
 	"translate-checks-parameters": "{{PLURAL:$2|Jenaj parametroj ne estas uzataj|Jena parametro ne estas uzata}}: <strong>$1</strong>",
-	"translate-checks-parameters-unknown": "Jenaj {{PLURAL:$2|parametro|parametroj}} estas nekonataj:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters-unknown": "Jenaj {{PLURAL:$2|parametro|parametroj}} estas nekonataj:\n<strong>$1</strong>",
 	"translate-checks-balance": "Estas nepara nombro de {{PLURAL:$2|krampo|krampoj}}: <strong>$1</strong>",
 	"translate-checks-links": "{{PLURAL:$2|Jenaj ligiloj estas problemaj|Jena ligilo estas problema}}: <strong>$1</strong>",
 	"translate-checks-links-missing": "Mankas {{PLURAL:$2|jena ligilo|jenaj ligiloj}}:\n<strong><nowiki>$1</nowiki></strong>",

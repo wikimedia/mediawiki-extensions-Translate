@@ -14,7 +14,8 @@
 			"555",
 			"Vitorvicentevalente",
 			"Athena in Wonderland",
-			"Waldyrious"
+			"Waldyrious",
+			"Mansil alfalb"
 		]
 	},
 	"translate": "Traduzir",
@@ -87,8 +88,8 @@
 	"translate-magic-notsaved": "A sua edição não foi gravada!",
 	"translate-magic-errors": "Por favor, corrija {{PLURAL:$1|o seguinte erro|os seguintes erros}} na tradução:",
 	"translate-magic-saved": "As suas alterações foram gravadas.",
-	"translate-checks-parameters": "{{PLURAL:$2|O seguinte parâmetro não é usado|Os seguintes parâmetros não são usados}}: <strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-parameters-unknown": "{{PLURAL:$2|O seguinte parâmetro é desconhecido|Os seguintes parâmetros são desconhecidos}}:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters": "{{PLURAL:$2|O seguinte parâmetro não é usado|Os seguintes parâmetros não são usados}}: <strong>$1</strong>",
+	"translate-checks-parameters-unknown": "{{PLURAL:$2|O seguinte parâmetro é desconhecido|Os seguintes parâmetros são desconhecidos}}:\n<strong>$1</strong>",
 	"translate-checks-balance": "Há {{PLURAL:$2|um parêntese irregular|$2 parênteses irregulares}}: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|A seguinte hiperligação tem|As seguintes $2 hiperligações têm}} problemas: <strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|Falta a seguinte hiperligação|Faltam as seguintes $2 hiperligações}}:\n<strong><nowiki>$1</nowiki></strong>",
@@ -389,6 +390,7 @@
 	"tux-editor-message-tools-translations": "Todas as traduções",
 	"tux-editor-message-tools-linktothis": "Hiperligação para esta mensagem",
 	"tux-editor-loading": "A carregar…",
+	"tux-editor-loading-failed": "Não foi possível carregar as ajudas de tradução: $1",
 	"translate-search-more-languages-info": "mais $1 {{PLURAL:$1|língua|línguas}}",
 	"translate-statsbar-tooltip": "$1% traduzidas, $2% revistas",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduzidas, $2% revistas, $3% desatualizadas",

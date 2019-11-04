@@ -58,7 +58,7 @@
 	"translate-magic-words": "जादुई शब्दहरू",
 	"translate-magic-notsaved": "तपाईंको सम्पादन संग्रह गरिएको थिएन!",
 	"translate-magic-saved": "तपाईंका परिवर्तनहरू सफलता पूर्वक संग्रह भए।",
-	"translate-checks-parameters-unknown": "निम्न {{PLURAL:$2|पैरामीटर अज्ञात हो|पैरामीटरहरु अज्ञात हुन्}} :\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters-unknown": "निम्न {{PLURAL:$2|पैरामीटर अज्ञात हो|पैरामीटरहरु अज्ञात हुन्}} :\n<strong>$1</strong>",
 	"translationstats": "अनुवाद तथ्यांक",
 	"translate-stats-edits": "सम्पादनहरू",
 	"translate-stats-users": "अनुवादकहरू",

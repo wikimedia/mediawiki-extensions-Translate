@@ -42,7 +42,7 @@
 	"tpt-edit-failed": "Impossibile aggiornare la pagina: $1",
 	"tpt-duplicate": "Il nome dell'elemento di traduzione $1 è usato più di una volta.",
 	"tpt-already-marked": "L'ultima versione di questa pagina è già stata segnata per la traduzione.",
-	"tpt-unmarked": "La pagina $1 non è più segnata per la traduzione.",
+	"tpt-unmarked": "La pagina [[:$1]] non è più segnata per la traduzione.",
 	"tpt-list-nopages": "Nessuna pagina è segnata per la traduzione oppure è pronta per essere segnata per la traduzione.",
 	"tpt-new-pages-title": "Pagine proposte per la traduzione",
 	"tpt-old-pages-title": "Pagine in traduzione",

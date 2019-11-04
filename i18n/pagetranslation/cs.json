@@ -12,7 +12,8 @@
 			"Kvetoslav47",
 			"Dvorapa",
 			"Patriccck",
-			"Want"
+			"Want",
+			"Matěj Suchánek"
 		]
 	},
 	"pagetranslation": "Překlad stránek",
@@ -37,7 +38,7 @@
 	"tpt-mark-summary": "Tato verze je označená pro překlad",
 	"tpt-edit-failed": "Nelze aktualizovat stránku: $1",
 	"tpt-already-marked": "Nejnovější verze této stránky už byla označena pro překlad.",
-	"tpt-unmarked": "Stránka $1 už není označena k překladu.",
+	"tpt-unmarked": "Stránka [[:$1]] už není označena k překladu.",
 	"tpt-list-nopages": "Žádné stránky nejsou označeny pro překlad nebo na to nejsou připraveny.",
 	"tpt-new-pages-title": "Stránky navržené k překladu",
 	"tpt-old-pages-title": "Překládané stránky",

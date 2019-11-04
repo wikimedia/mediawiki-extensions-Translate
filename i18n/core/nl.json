@@ -15,7 +15,8 @@
 			"Southparkfan",
 			"Sjoerddebruin",
 			"Mainframe98",
-			"Elroy"
+			"Elroy",
+			"Servien"
 		]
 	},
 	"translate": "Vertalen",
@@ -88,8 +89,8 @@
 	"translate-magic-notsaved": "Uw bewerking is niet opgeslagen!",
 	"translate-magic-errors": "Los de volgende {{PLURAL:$1|fout|fouten}} op in de vertalingen:",
 	"translate-magic-saved": "Uw wijzigingen zijn opgeslagen.",
-	"translate-checks-parameters": "De volgende {{PLURAL:$2|parameter wordt|parameters worden}} niet gebruikt:\n<strong><nowiki>$1</nowiki></strong>",
-	"translate-checks-parameters-unknown": "De volgende {{PLURAL:$2|parameter is|parameters zijn}} onbekend:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters": "De volgende {{PLURAL:$2|parameter wordt|parameters worden}} niet gebruikt:\n<strong>$1</strong>",
+	"translate-checks-parameters-unknown": "De volgende {{PLURAL:$2|parameter is|parameters zijn}} onbekend:\n<strong>$1</strong>",
 	"translate-checks-balance": "Er wordt een oneven {{PLURAL:$2|aantal haakjes|aantal haakjes}} gebruikt:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "De volgende {{PLURAL:$2|koppeling is|$2 koppelingen zijn}} problematisch:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "De volgende {{PLURAL:$2|koppeling ontbreekt|$2 koppelingen ontbreken}}:\n<strong><nowiki>$1</nowiki></strong>",
@@ -267,7 +268,7 @@
 	"translate-documentation-language": "Berichtbeschrijving",
 	"translate-searchprofile": "Vertalingen",
 	"translate-searchprofile-tooltip": "In vertalingen zoeken",
-	"translate-searchprofile-note": "Meer zoekopties zijn beschikbaar met de [$1 vertalingszoekfuntie].",
+	"translate-searchprofile-note": "Meer zoekopties zijn beschikbaar met de [$1 vertalingszoekfunctie].",
 	"translate-search-languagefilter": "Taalfilter:",
 	"translate-search-nofilter": "Niet filteren",
 	"log-name-translationreview": "Logboek vertalingencontrole",

@@ -46,7 +46,7 @@
 	"tpt-edit-failed": "Nie udało się zaktualizować strony $1",
 	"tpt-duplicate": "Nazwa jednostki tłumaczenia  $1  jest używana więcej niż jeden raz.",
 	"tpt-already-marked": "Najnowsza wersja tej strony już wcześniej została oznaczona do tłumaczenia.",
-	"tpt-unmarked": "Strona $1 nie będzie dłużej oznaczona jako przeznaczona do tłumaczenia.",
+	"tpt-unmarked": "Strona [[:$1]] nie będzie dłużej oznaczona jako przeznaczona do tłumaczenia.",
 	"tpt-list-nopages": "Nie oznaczono stron do tłumaczenia i nie ma stron gotowych do oznaczenia do tłumaczenia.",
 	"tpt-new-pages-title": "Strony proponowane do tłumaczenia",
 	"tpt-old-pages-title": "Strony będące w tłumaczeniu",

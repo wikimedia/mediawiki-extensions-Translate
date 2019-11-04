@@ -65,7 +65,7 @@
 	"translate-magic-notsaved": "ਤੁਹਾਡੀ ਸੋਧ ਸਾਂਭੀ ਨਹੀਂ ਗਈ!",
 	"translate-magic-errors": "ਕਿਰਪਾ ਕਰਕੇ ਅਨੁਵਾਦ ਵਿਚ {{PLURAL:$1|ਹੇਠ ਲਿਖੀ ਗ਼ਲਤੀ|ਹੇਠ ਲਿਖੀਆਂ ਗ਼ਲਤੀਆਂ}} ਸਹੀ ਕਰੋ:",
 	"translate-magic-saved": "ਤੁਹਾਡੀਆਂ ਤਬਦੀਲੀਆਂ ਸਾਂਭ ਲਈਆਂ ਗਈਆਂ ਹਨ।",
-	"translate-checks-parameters": "{{PLURAL:$2|ਹੇਠ ਲਿਖਿਆ ਮਾਪਦੰਡ ਵਰਤਿਆ ਨਹੀਂ ਗਿਆ|ਹੇਠ ਲਿਖੇ ਮਾਪਦੰਡ ਵਰਤੇ ਨਹੀਂ ਗਏ}}:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters": "{{PLURAL:$2|ਹੇਠ ਲਿਖਿਆ ਮਾਪਦੰਡ ਵਰਤਿਆ ਨਹੀਂ ਗਿਆ|ਹੇਠ ਲਿਖੇ ਮਾਪਦੰਡ ਵਰਤੇ ਨਹੀਂ ਗਏ}}:\n<strong>$1</strong>",
 	"translate-rc-translation-filter-no": "ਕੁਝ ਨਾ ਕਰੋ",
 	"translate-rc-translation-filter-only": "ਸਿਰਫ਼ ਤਰਜਮੇ ਵਿਖਾਉ",
 	"translationstats": "ਤਰਜਮਾਕਾਰੀ ਦੇ ਅੰਕੜੇ",

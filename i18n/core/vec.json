@@ -45,7 +45,7 @@
 	"translate-magic-special": "Nomi alternativi de le pagine speciali",
 	"translate-magic-words": "Parole magiche",
 	"translate-magic-namespace": "Nomi dei namespace",
-	"translate-checks-parameters": "{{PLURAL:$2|El seguente parametro no'l|I seguenti parametri no i}} xe mìa doparà: <strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters": "{{PLURAL:$2|El seguente parametro no'l|I seguenti parametri no i}} xe mìa doparà: <strong>$1</strong>",
 	"translate-checks-balance": "Ghe xe un nùmaro dispari de {{PLURAL:$2|paréntesi|paréntesi}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|El colegamento seguente el|I colegamenti seguenti i}} pol causar problemi:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-xhtml": "Par piaser, sostituìssi {{PLURAL:$2|el seguente tag con quel giusto|i seguenti tag con quei giusti}}:\n<strong><nowiki>$1</nowiki></strong>",

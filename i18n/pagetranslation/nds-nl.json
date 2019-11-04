@@ -5,5 +5,6 @@
 		]
 	},
 	"tpt-languages-nonzero": "$1 ($2% oaversetted)",
-	"pt-deletepage-current": "Sydname:"
+	"pt-deletepage-current": "Sydname:",
+	"pm-page-does-not-exist": "$1 besteyt neet"
 }

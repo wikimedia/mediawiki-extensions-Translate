@@ -73,7 +73,7 @@
 	"translate-magic-errors": "Reizhit ar {{PLURAL:$1|fazi|fazi}} da-heul en troidigezhioù :",
 	"translate-magic-saved": "Enrollet-mat eo bet ho kemmoù.",
 	"translate-checks-parameters": "Ne vez ket graet gant an {{PLURAL:$2|arventenn|arventennoù}} da-heul : <strong>$1</strong>",
-	"translate-checks-parameters-unknown": "Dianav eo an {{PLURAL:$2|arventenn|arventennoù}} da-heul :\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters-unknown": "Dianav eo an {{PLURAL:$2|arventenn|arventennoù}} da-heul :\n<strong>$1</strong>",
 	"translate-checks-balance": "Ampar eo an niver a {{PLURAL:$2|grommelloù|grommelloù}} : <strong>$1</strong>",
 	"translate-checks-links": "Kudennek eo al {{PLURAL:$2|liamm|liammoù}} da-heul : <strong>$1</strong>",
 	"translate-checks-links-missing": "Mankout a ra {{PLURAL:$2|al liamm|an $2 liamm}} da-heul :\n<strong><nowiki>$1</nowiki></strong>",

@@ -68,7 +68,7 @@
 	"translate-magic-notsaved": "Sizning tahriringiz saqlanmadi!",
 	"translate-magic-errors": "Iltimos, tarjimadagi {{PLURAL:$1|quyidagi xatoni|quyidagi xatolarni}} tuzating:",
 	"translate-magic-saved": "Sizning tahrirlaringiz muvaffaqiyatli saqlandi.",
-	"translate-checks-parameters": "Quyidagi {{PLURAL:$2|koʻrsatkich|koʻrsatkichlar}} qoʻllanilmayapti:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters": "Quyidagi {{PLURAL:$2|koʻrsatkich|koʻrsatkichlar}} qoʻllanilmayapti:\n<strong>$1</strong>",
 	"translate-checks-balance": "Juft bo'lmagan miqdordagi ochiluvchi va yopiluvchi {{PLURAL:$2|qavslar|qavslar}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "Quyidagi {{PLURAL:$2|1=havola|$2 ta havola}} muammo keltirib chiqarmoqda:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "Quyidagi {{PLURAL:$2|havola ishlatilmayapti|$2 ta havola ishlatilmayapti}}:\n<strong><nowiki>$1</nowiki></strong>",

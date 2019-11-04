@@ -63,7 +63,7 @@
 	"translate-magic-namespace": "Ad sahəsi adları",
 	"translate-magic-notsaved": "Redaktəniz saxlanılmadı!",
 	"translate-magic-saved": "Dəyişiklikləriniz müvəffəqiyyətlə qeyd olundu.",
-	"translate-checks-parameters": "İzlənilən {{PLURAL:$2|parametr}} istifadə olunmur:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters": "İzlənilən {{PLURAL:$2|parametr}} istifadə olunmur:\n<strong>$1</strong>",
 	"translate-checks-pagename": "Anlayışdakı ad sahəsi dəyişdirilib",
 	"translate-pref-nonewsletter": "Mənə e-poçt xəbər bülleteni göndərmə",
 	"translate-pref-editassistlang": "Köməkçi dillər:",

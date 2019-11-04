@@ -81,7 +81,7 @@
 	"translate-magic-errors": "กรุณาแก้ไขความผิดพลาด{{PLURAL:$1|นี้|เหล่านี้}} ในการแปลภาษา:",
 	"translate-magic-saved": "การเปลี่ยนแปลงของคุณได้ถูกบันทึกแล้ว",
 	"translate-checks-parameters": "{{PLURAL:$2|ตัวแปร|ตัวแปร}}ต่อไปนี้ไม่ได้ถูกใช้งาน: <strong>$1</strong>",
-	"translate-checks-parameters-unknown": "ไม่รู้จัก{{PLURAL:$2|ตัวแปรต่อไปนี้|ตัวแปรต่อไปนี้}}:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters-unknown": "ไม่รู้จัก{{PLURAL:$2|ตัวแปรต่อไปนี้|ตัวแปรต่อไปนี้}}:\n<strong>$1</strong>",
 	"translate-checks-balance": "จับคู่{{PLURAL:$2|วงเล็บ|วงเล็บ}}ไม่ครบคู่:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "{{PLURAL:$2|ลิงก์|ลิงก์ $2 ลิงก์}}ต่อไปนี้ทำให้เกิดปัญหา:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links-missing": "{{PLURAL:$2|ลิงก์|ลิงก์ $2 ลิงก์}}ต่อไปนี้ไม่มีอยู่:\n<strong><nowiki>$1</nowiki></strong>",

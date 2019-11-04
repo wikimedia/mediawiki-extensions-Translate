@@ -59,7 +59,7 @@
 	"translate-magic-special": "特別頁替身",
 	"translate-magic-words": "魔術字",
 	"translate-magic-namespace": "名空間名",
-	"translate-checks-parameters": "下面{{PLURAL:$2|嘅參數|啲參數}}係無用到嘅: <strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters": "下面{{PLURAL:$2|嘅參數|啲參數}}係無用到嘅: <strong>$1</strong>",
 	"translate-checks-balance": "插入字嘅數量唔均等: <strong>$1</strong>",
 	"translate-checks-links": "下面嘅連結有問題: <strong>$1</strong>",
 	"translate-checks-xhtml": "請改下面嘅標籤去正確嘅: <strong>$1</strong>",

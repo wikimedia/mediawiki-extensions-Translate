@@ -62,7 +62,7 @@
 	"translate-magic-notsaved": "ನಿಮ್ಮ ಸಂಪಾದನೆಯನ್ನು ಉಳಿಸಲಾಗಿಲ್ಲ!",
 	"translate-magic-errors": "ಭಾಷಾಂತರಗಳಲ್ಲಿ  ಕೆಳಗಿನ ತಪ್ಪುಗಳನ್ನು ದಯವಿಟ್ಟು ಗುರುತಿಸಿ{{PLURAL:$1|ತಪ್ಪು|ತಪ್ಪುಗಳು}}",
 	"translate-magic-saved": "ನಿಮ್ಮ ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಲಾಗಿದೆ.",
-	"translate-checks-parameters-unknown": "ಕೆಳಗಿನ {{PLURAL:$2|ಮಾನದಂಡವು|ಮಾನದಂಡಗಳು}} ಅಪರಿಚಿತ\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters-unknown": "ಕೆಳಗಿನ {{PLURAL:$2|ಮಾನದಂಡವು|ಮಾನದಂಡಗಳು}} ಅಪರಿಚಿತ\n<strong>$1</strong>",
 	"translate-checks-links-missing": "ಈ ಕೆಳಗಿನ {{PLURAL:$2|ಕೊಂಡಿಯು|$2 ಕೊಂಡಿಗಳು}}ಕಾಣೆಯಾಗಿವೆ:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-plural": "ವ್ಯಾಖ್ಯೆಗೆ ಉಪಯೋಗ <nowiki>{{PLURAL:}}</nowiki> ಆದರೆ ಭಾಷಾಂತರಕ್ಕೆ ಅಲ್ಲ.",
 	"translate-checks-format": "ಈ ಭಾಷಾಂತರವು ವ್ಯಾಖ್ಯೆಗ ಸರಿಹೊಂದುತ್ತಿಲ್ಲ ಅಥವಾ ತಪ್ಪು ಪದವಿನ್ಯಾಸವನ್ನು ಹೊಂದಿದೆ: $1",

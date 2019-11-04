@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mosime"
+		]
+	},
+	"translate-checks-parameters": "Tse di latelang {{PLURAL:$2|peipi ya tshedimosetso|dipeipi tsa tshedimosetso}} ga di a dirisiwa:<nonofetse>$1</nonofetse>",
+	"translate-checks-parameters-unknown": "Tse di latelang {{PLURAL:$2|peipi ya tshedimosetso|dipeipi tsa tshedimosetso}} ga di itsagale:<nonofetse>$1</nonofetse>"
+}

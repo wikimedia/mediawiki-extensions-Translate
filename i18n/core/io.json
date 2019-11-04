@@ -34,7 +34,7 @@
 	"translate-magic-cm-save": "Registragar",
 	"translate-magic-namespace": "Nomi di la nomari",
 	"translate-magic-notsaved": "Vua redakto ne konservesis!",
-	"translate-checks-parameters": "Atencez! La sequanta {{PLURAL:$2|parametro|parametri}} ne uzesis:\n<strong><nowiki>$1</nowiki></strong>",
+	"translate-checks-parameters": "Atencez! La sequanta {{PLURAL:$2|parametro|parametri}} ne uzesis:\n<strong>$1</strong>",
 	"translate-checks-balance": "Existas neegala quanto di {{PLURAL:$2|parentezo|parentezi}}:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-links": "La sequanta {{PLURAL:$2|ligilo|$2 ligili}} havas problemi:\n<strong><nowiki>$1</nowiki></strong>",
 	"translate-checks-gettext-plural-missing": "Ca tradukuro mustas havar <nowiki>{{PLURAL:GETTEXT|}}</nowiki>.",
