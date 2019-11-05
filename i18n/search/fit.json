@@ -4,5 +4,16 @@
 			"Pyscowicz"
 		]
 	},
-	"tux-sst-prev": "‹ Eelinen"
+	"searchtranslations": "Eti käänöksiä",
+	"tux-sst-edit": "Mookkaa käänöstä",
+	"tux-sst-view-foreign": "Näytä sivula $1",
+	"tux-sst-search": "Hakea",
+	"tux-sst-search-ph": "Eti käännöksiä",
+	"tux-sst-facet-group": "Viestilekiöt",
+	"tux-sst-prev": "‹ Eelinen",
+	"tux-sst-default": "Käänökset",
+	"tux-sst-translated": "Käänetty kielestä $1",
+	"tux-sst-outdated": "Vanhentuneet käänökset kielestä $1",
+	"tux-sst-ellipsis-outdated": "Vanhentuneet käänökset",
+	"tux-sst-match-message": "Näytethään mihin tahansa hakusanaan täsmäävät käänökset. $1"
 }
