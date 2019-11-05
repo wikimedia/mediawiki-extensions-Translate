@@ -304,11 +304,16 @@ class TranslateHooks {
 				'translate-get-source',
 				[ 'handle' => $handle ]
 			);
+			$vars->setLazyLoadVar(
+				'translate_target_language',
+				'translate-get-target-language',
+				[ 'handle' => $handle ]
+			);
 		}
 	}
 
 	/**
-	 * Computes the translate_source_text AbuseFilter variable
+	 * Computes the translate_source_text and translate_target_language AbuseFilter variables
 	 * @param string $method
 	 * @param AbuseFilterVariableHolder $vars
 	 * @param array $parameters
@@ -316,18 +321,22 @@ class TranslateHooks {
 	 * @return bool
 	 */
 	public static function onAbuseFilterComputeVariable( $method, $vars, $parameters, &$result ) {
-		if ( $method !== 'translate-get-source' ) {
+		if ( $method !== 'translate-get-source' && $method !== 'translate-get-target-language' ) {
 			return true;
 		}
 
 		$handle = $parameters['handle'];
-		$source = '';
+		$value = '';
 		if ( $handle->isValid() ) {
-			$group = $handle->getGroup();
-			$source = $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
+			if ( $method === 'translate-get-source' ) {
+				$group = $handle->getGroup();
+				$value = $group->getMessage( $handle->getKey(), $group->getSourceLanguage() );
+			} else {
+				$value = $handle->getCode();
+			}
 		}
 
-		$result = $source;
+		$result = $value;
 
 		return false;
 	}
@@ -338,7 +347,9 @@ class TranslateHooks {
 	 */
 	public static function onAbuseFilterBuilder( array &$builderValues ) {
 		// Uses: 'abusefilter-edit-builder-vars-translate-source-text'
+		// and 'abusefilter-edit-builder-vars-translate-target-language'
 		$builderValues['vars']['translate_source_text'] = 'translate-source-text';
+		$builderValues['vars']['translate_target_language'] = 'translate-target-language';
 	}
 
 	/**
