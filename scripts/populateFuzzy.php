@@ -31,6 +31,7 @@ class PopulateFuzzy extends Maintenance {
 			/*required*/false,
 			/*has arg*/true
 		);
+		$this->setBatchSize( 5000 );
 		$this->requireExtension( 'Translate' );
 	}
 
@@ -51,7 +52,7 @@ class PopulateFuzzy extends Maintenance {
 		$revStore = MediaWikiServices::getInstance()->getRevisionStore();
 		$queryInfo = $revStore->getQueryInfo( [ 'page' ] );
 
-		$limit = 100;
+		$limit = $this->getBatchSize();
 		$offset = 0;
 		while ( true ) {
 			$inserts = [];
