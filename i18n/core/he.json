@@ -228,6 +228,8 @@
 	"translate-smg-nochanges": "אין עוד שינויים שצריך לעבד.",
 	"translate-smg-submit": "שליחת שינויים לעיבוד",
 	"translate-smg-submitted": "הגדרות ההודעות עודכנו. השינויים מעובדים ברקע.",
+	"translate-smg-submitted-with-failure": "עדכון {{PLURAL:$1|הגדרת|הגדרות}} הודעה נכשל עבור {{PLURAL:$1|הקבוצה הבאה|הקבוצות הבאות}} - $2. $3",
+	"translate-smg-submitted-others-processing": "הגדרות הודעה עבור קבוצות אחרות מעובדות ברקע.",
 	"translate-smg-more": "יהיו שינויים נוספים שיהיה צורך לעבד אחרי שליחת השינויים האלה.",
 	"translate-smg-left": "תוכן ההודעה בוויקי",
 	"translate-smg-right": "שינויים נכנסים",

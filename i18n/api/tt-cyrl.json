@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ильнар"
+			"Ильнар",
+			"Ерней"
 		]
 	},
-	"apihelp-groupreview-param-group": "Язмалар төркеме."
+	"apihelp-groupreview-param-group": "Хәбәрләр тупламы."
 }

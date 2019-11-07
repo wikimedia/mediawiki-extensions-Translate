@@ -230,7 +230,7 @@
 	"tux-editor-need-more-help": "ГӀо оьшу?",
 	"tux-editor-ask-help": "Деха кхин тӀедиллинарг",
 	"tux-editor-tm-match": "$1% цхьаьнадогӀуш",
-	"tux-notices-more": "!!FUZZY!!{{PLURAL:$1|кхин $1}}",
+	"tux-notices-more": "{{PLURAL:$1|кхин $1}}",
 	"tux-notices-hide": "къайлаяккха",
 	"tux-editor-save-failed": "Ӏалашъян цаделира: $1",
 	"tux-editor-n-uses": "{{PLURAL:$1|лелина}} $1",

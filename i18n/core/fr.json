@@ -258,7 +258,7 @@
 	"translate-smg-nochanges": "Il n’y a aucune modification à traiter.",
 	"translate-smg-submit": "Soumettre les modifications pour traitement",
 	"translate-smg-submitted": "Les définitions de messages ont été mises à jour. Les modifications sont traitées en arrière-plan.",
-	"translate-smg-submitted-with-failure": "La mise à jour {{PLURAL:$1|de la définition|des définitions}} du message a échoué pour {{PLURAL:$1|le groupe suivant|les groupes suivants}} - $2. $3",
+	"translate-smg-submitted-with-failure": "La mise à jour {{PLURAL:$1|de la définition|des définitions}} du message a échoué pour {{PLURAL:$1|le groupe suivant|les groupes suivants}} : $2. $3",
 	"translate-smg-submitted-others-processing": "Les définitions de message pour d’autres groupes sont traitées en tâche de fond.",
 	"translate-smg-more": "Il y aura d’autres modifications à effectuer après avoir envoyé ces modifications.",
 	"translate-smg-left": "Contenu du message dans le wiki",

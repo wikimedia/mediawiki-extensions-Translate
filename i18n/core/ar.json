@@ -234,6 +234,8 @@
 	"translate-smg-nochanges": "لا توجد تغييرات لمعالجتها.",
 	"translate-smg-submit": "إرسال التغييرات للمعالجة",
 	"translate-smg-submitted": "تعريفات الرسائل تم تحديثها. التغييرات تتم معالجتها في الخلفية.",
+	"translate-smg-submitted-with-failure": "فشل تحديث الرسالة {{PLURAL:$1|تعريف الرسالة|تعريفات الرسائل}} {{PLURAL:$1|للمجموعة|للمجموعات}} التالية: $2. $3",
+	"translate-smg-submitted-others-processing": "تتم معالجة تعريفات الرسائل للمجموعات الأخرى في الخلفية.",
 	"translate-smg-more": "ستكون هناك المزيد من التغييرات للعملية بعد إرسال هذه التغييرات.",
 	"translate-smg-left": "محتوى الرسائل في الويكي",
 	"translate-smg-right": "التغييرات القادمة",
