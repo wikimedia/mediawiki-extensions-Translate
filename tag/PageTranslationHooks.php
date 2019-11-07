@@ -738,7 +738,7 @@ class PageTranslationHooks {
 	}
 
 	/**
-	 * Prevent editing of certain pages in Translations namespace.
+	 * Prevent creation of orphan translation units in Translations namespace.
 	 * Hook: getUserPermissionsErrorsExpensive
 	 *
 	 * @param Title $title
@@ -752,8 +752,10 @@ class PageTranslationHooks {
 	) {
 		$handle = new MessageHandle( $title );
 
-		// Check only when someone tries to edit (or create) page translation messages
-		if ( $action !== 'edit' || !$handle->isPageTranslation() ) {
+		// Check only when someone tries to create translation units.
+		// Allow editing units that become orphaned in regular use, so that
+		// people can delete them or fix links or other issues in them.
+		if ( $action !== 'create' || !$handle->isPageTranslation() ) {
 			return true;
 		}
 
