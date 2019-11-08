@@ -27,5 +27,7 @@
 	"tux-sst-ellipsis-outdated": "Utdaterte oversettelser",
 	"tux-sst-link-all-match": "Krev alle søkeord.",
 	"tux-sst-match-message": "Viser oversettelser som matcher noen søkeord. $1",
-	"tux-sst-case-sensitive": "Skill mellom store og små bokstaver"
+	"tux-sst-case-sensitive": "Skill mellom store og små bokstaver",
+	"tux-sst-error-offset": "Ingen flere søkeresultater kan vises. Begrens søket ditt.",
+	"tux-sst-error-language": "Dette språket kan ikke brukes for denne typen søk."
 }
