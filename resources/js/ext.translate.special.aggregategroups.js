@@ -244,8 +244,7 @@
 				aggGroupNameInputName = $( 'input.tp-aggregategroup-add-name' ),
 				aggGroupNameInputDesc = $( 'input.tp-aggregategroup-add-description' ),
 				aggregateGroupName = aggGroupNameInputName.val(),
-				aggregateGroupDesc = aggGroupNameInputDesc.val(),
-				api = new mw.Api();
+				aggregateGroupDesc = aggGroupNameInputDesc.val();
 
 			// Empty the fields. If they are not emptied, then when another group
 			// is added, the values will appear again.

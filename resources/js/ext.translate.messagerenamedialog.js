@@ -114,14 +114,14 @@ mw.translate.MessageRenameDialog.prototype.addEvents = function () {
 /**
  * @inheritdoc
  */
-mw.translate.MessageRenameDialog.prototype.getSetupProcess = function ( data ) {
-	data = data || {};
-	return mw.translate.MessageRenameDialog.super.prototype.getSetupProcess.call( this, data )
+mw.translate.MessageRenameDialog.prototype.getSetupProcess = function ( renameDialogData ) {
+	var dialogData = renameDialogData || {};
+	return mw.translate.MessageRenameDialog.super.prototype.getSetupProcess.call( this, dialogData )
 		.next( function () {
 			// Set up contents based on data
-			this.possibleRenames = data.messages;
-			this.currentGroupId = data.groupId;
-			this.targetKey = data.targetKey;
+			this.possibleRenames = dialogData.messages;
+			this.currentGroupId = dialogData.groupId;
+			this.targetKey = dialogData.targetKey;
 			this.selectedMessage = null;
 
 			this.displayMessages( this.possibleRenames );

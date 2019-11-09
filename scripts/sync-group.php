@@ -92,8 +92,8 @@ class SyncGroup extends Maintenance {
 			$this->fatalError( 'ESG2: No valid message groups identified.' );
 		}
 
-		$start = $this->getOption( 'start' ) ? strtotime( $this->getOption( 'start' ) ) : false;
-		$end = $this->getOption( 'end' ) ? strtotime( $this->getOption( 'end' ) ) : false;
+		$start = $this->getTimeOptionWithDefault( 'start', false );
+		$end = $this->getTimeOptionWithDefault( 'end', false );
 
 		$this->output( 'Conflict times: ' . wfTimestamp( TS_ISO_8601, $start ) . ' - ' .
 			wfTimestamp( TS_ISO_8601, $end ) . "\n" );
@@ -169,6 +169,11 @@ class SyncGroup extends Maintenance {
 	 */
 	public function myOutput( $text, $channel = null ) {
 		$this->output( $text, $channel );
+	}
+
+	private function getTimeOptionWithDefault( string $optionName, $defaultValue ) {
+		$optionValue = $this->getOption( $optionName );
+		return $optionValue ? strtotime( $optionValue ) : $defaultValue;
 	}
 }
 

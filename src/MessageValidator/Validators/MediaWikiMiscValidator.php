@@ -62,7 +62,7 @@ class MediaWikiMiscValidator implements Validator {
 					$notices[$key][] = [
 						[ 'miscmw', $subcheck, $key, $code ],
 						'translate-checks-format',
-						"<samp><nowiki>$traItems[1] !== $defItems[1]</nowiki></samp>", // @todo FIXME: i18n missing.
+						"<samp><nowiki>$traItems[1] !== $defItems[1]</nowiki></samp>", // FIXME: i18n missing.
 					];
 					continue;
 				}

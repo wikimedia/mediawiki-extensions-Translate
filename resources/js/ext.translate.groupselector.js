@@ -360,22 +360,24 @@
 		 * @param {Object} foundIDs The array in which the keys are IDs of message groups that were found already.
 		 */
 		flattenGroupList: function ( messageGroups, foundIDs ) {
-			var i;
+			var i, messageGroupList;
 
 			if ( messageGroups.groups ) {
-				messageGroups = messageGroups.groups;
+				messageGroupList = messageGroups.groups;
+			} else {
+				messageGroupList = messageGroups;
 			}
 
-			for ( i = 0; i < messageGroups.length; i++ ) {
+			for ( i = 0; i < messageGroupList.length; i++ ) {
 				// Avoid duplicate groups, and add the parent before subgroups
-				if ( !foundIDs[ messageGroups[ i ].id ] ) {
-					this.flatGroupList.push( messageGroups[ i ] );
-					foundIDs[ messageGroups[ i ].id ] = true;
+				if ( !foundIDs[ messageGroupList[ i ].id ] ) {
+					this.flatGroupList.push( messageGroupList[ i ] );
+					foundIDs[ messageGroupList[ i ].id ] = true;
 				}
 
 				// In case there are subgroups, add them recursively
-				if ( messageGroups[ i ].groups ) {
-					this.flattenGroupList( messageGroups[ i ].groups, foundIDs );
+				if ( messageGroupList[ i ].groups ) {
+					this.flattenGroupList( messageGroupList[ i ].groups, foundIDs );
 				}
 			}
 		},

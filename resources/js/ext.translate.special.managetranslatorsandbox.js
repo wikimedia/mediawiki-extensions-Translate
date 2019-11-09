@@ -27,11 +27,10 @@
 	}
 
 	function doApiAction( options ) {
-		var api = new mw.Api();
+		var api = new mw.Api(),
+			optionsWithDefaults = $.extend( {}, { action: 'translatesandbox' }, options );
 
-		options = $.extend( {}, { action: 'translatesandbox' }, options );
-
-		return api.postWithToken( 'csrf', options ).promise();
+		return api.postWithToken( 'csrf', optionsWithDefaults ).promise();
 	}
 
 	function removeSelectedRequests() {

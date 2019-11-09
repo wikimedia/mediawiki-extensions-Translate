@@ -75,7 +75,11 @@ class DtdFFS extends SimpleFFS {
 			$output .= "<!ENTITY $key \"$trans\">\n";
 		}
 
-		return $output ? $header . $output : false;
+		if ( $output ) {
+			return $header . $output;
+		}
+
+		return false;
 	}
 
 	protected function doHeader( MessageCollection $collection ) {

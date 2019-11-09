@@ -91,7 +91,6 @@
 			sourceLangCode = this.options.sourcelangcode;
 			sourceLangDir = $.uls.data.getDir( sourceLangCode );
 			targetLangCode = this.options.targetlangcode;
-			targetLangDir = $.uls.data.getDir( targetLangCode );
 
 			$proofreadAction = $( '<div>' )
 				.attr( 'title', mw.msg( 'tux-proofread-action-tooltip' ) )

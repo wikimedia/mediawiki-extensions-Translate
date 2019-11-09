@@ -124,11 +124,8 @@
 				data = $this.data( 'pagemode' );
 
 			if ( !data ) {
-				$this.data( 'pagemode',
-					( data = new PageMode( this, options ) )
-				);
+				$this.data( 'pagemode', new PageMode( this, options ) );
 			}
-
 		} );
 	};
 

@@ -294,6 +294,8 @@ class SpecialMessageGroupStats extends SpecialLanguageStats {
 	 * @return array
 	 */
 	protected function getWorkflowStates( $field = 'tgr_lang', $filter = 'tgr_group' ) {
+		// This override is needed because default values for $field and $filter
+		// are different than in the parent class.
 		return parent::getWorkflowStates( $field, $filter );
 	}
 

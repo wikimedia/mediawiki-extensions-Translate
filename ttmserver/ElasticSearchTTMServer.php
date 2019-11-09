@@ -887,11 +887,7 @@ class ElasticSearchTTMServer
 				->getType( static::FROZEN_TYPE )
 				->search( \Elastica\Query::create( $ids ) );
 
-			if ( $resp->count() === 0 ) {
-				return false;
-			} else {
-				return true;
-			}
+			return $resp->count() !== 0;
 		} catch ( \Exception $e ) {
 			LoggerFactory::getInstance( 'ElasticSearchTTMServer' )->warning(
 				'Problem encountered while checking the frozen index.',

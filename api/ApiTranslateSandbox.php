@@ -32,6 +32,8 @@ class ApiTranslateSandbox extends ApiBase {
 			case 'remind':
 				$this->doRemind();
 				break;
+			default:
+				$this->dieWithError( [ 'apierror-badparameter', 'do' ] );
 		}
 	}
 

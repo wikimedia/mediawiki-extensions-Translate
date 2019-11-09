@@ -112,7 +112,7 @@ class CommandlineExport extends Maintenance {
 		$noLocation = '';
 		if ( $this->hasOption( 'no-location' ) ) {
 			$noLocation = '--no-location ';
-		};
+		}
 
 		$skip = [];
 		if ( $this->hasOption( 'skip' ) ) {
