@@ -12,6 +12,7 @@ use MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextNewlineVal
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\GettextPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRegexValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\InsertableRubyVariableValidator;
+use MediaWiki\Extensions\Translate\MessageValidator\Validators\MatchSetValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiMiscValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\MediaWikiPluralValidator;
 use MediaWiki\Extensions\Translate\MessageValidator\Validators\NewlineValidator;
@@ -34,6 +35,7 @@ class ValidatorFactory {
 		'GettextPlural' => GettextPluralValidator::class,
 		'InsertableRegex' => InsertableRegexValidator::class,
 		'InsertableRubyVariable' => InsertableRubyVariableValidator::class,
+		'MatchSet' => MatchSetValidator::class,
 		'MediaWikiMisc' => MediaWikiMiscValidator::class,
 		'MediaWikiPlural' => MediaWikiPluralValidator::class,
 		'Newline' => NewlineValidator::class,

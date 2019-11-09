@@ -108,6 +108,7 @@
 	"translate-checks-newline-missing-end": "There {{PLURAL:$1|is|are}} $1 missing newline {{PLURAL:$1|character|characters}} at the end of the translation.",
 	"translate-checks-newline-extra-start": "There {{PLURAL:$1|is|are}} $1 extra newline {{PLURAL:$1|character|characters}} at the beginning of the translation.",
 	"translate-checks-newline-extra-end": "There {{PLURAL:$1|is|are}} $1 extra newline {{PLURAL:$1|character|characters}} at the end of the translation.",
+	"translate-checks-value-not-present": "The translation must be equal to {{PLURAL:$1|1=|one of the following values:}} $1.",
 	"translate-pref-nonewsletter": "Do not send me email newsletters",
 	"translate-pref-editassistlang": "Assistant languages:",
 	"prefs-translate": "Translation options",

@@ -143,6 +143,7 @@
 	"translate-checks-newline-missing-end": "Notice message shown when newline characters are missing from the end of a translation. Parameters:\n* $1 - number of missing characters.",
 	"translate-checks-newline-extra-start": "Notice message shown when there are extra newline characters are at the start of a translation. Parameters:\n* $1 - number of extra characters.",
 	"translate-checks-newline-extra-end": "Notice message shown when there are extra newline characters are at the end of a translation. Parameters:\n* $1 - number of extra characters.",
+	"translate-checks-value-not-present": "Notice message shown when the translation is not present in the set of permitted values. Parameters:\n* $1 - set of permitted values.",
 	"translate-pref-nonewsletter": "Option in [[Special:Preferences]], 'Misc' tab.",
 	"translate-pref-editassistlang": "Used in [[Special:Preferences]] under the {{msg-mw|prefs-editing}} tab.\n{{Identical|Assistant language}}",
 	"prefs-translate": "Caption of a section at [[Special:Preferences#mw-prefsection-editing|Special:Preferences]] in the tab \"{{int:prefs-editing}}\"",
