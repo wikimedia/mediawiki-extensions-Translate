@@ -308,10 +308,6 @@ class TranslateSandbox {
 			$class = get_class( $module );
 			if ( $module->isWriteMode() && !in_array( $class, $whitelist, true ) ) {
 				$message = ApiMessage::create( 'apierror-writeapidenied' );
-				if ( $message->getApiCode() === 'apierror-writeapidenied' ) {
-					// Backwards compatibility for pre-1.29 MediaWiki
-					$message = 'writerequired';
-				}
 				return false;
 			}
 		}
