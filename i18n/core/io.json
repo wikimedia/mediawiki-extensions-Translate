@@ -115,6 +115,7 @@
 	"tux-editor-shortcut-info": "Kliktez \"$1\" por konservar, o \"$2\" por saltar a la sequanta mesajo, o \"$4\" por furnisar rezumo, o \"$3\" por altra plu kurta voyi tra la klavaro.",
 	"tux-editor-edit-desc": "Redaktar dokumentigo",
 	"tux-editor-suggestions-title": "Sugesti",
+	"tux-editor-in-other-languages": "En altra lingui",
 	"tux-editor-need-more-help": "Ka vu bezonas plusa helpo?",
 	"tux-editor-ask-help": "Demandez plusa informi",
 	"tux-editor-save-failed": "Faliis pri konservar la tradukuro: $1",

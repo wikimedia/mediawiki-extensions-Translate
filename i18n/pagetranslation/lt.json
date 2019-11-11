@@ -23,7 +23,7 @@
 	"tpt-mark-summary": "Ši versija pažymėta vertimui",
 	"tpt-edit-failed": "Nepavyko atnaujinti puslapio: $1",
 	"tpt-already-marked": "Šio puslapio naujausia versija jau yra pažymėta vertimui.",
-	"tpt-unmarked": "Puslapis $1 nebėra pažymėtas vertimams.",
+	"tpt-unmarked": "Puslapis [[:$1]] nebėra pažymėtas vertimui.",
 	"tpt-new-pages-title": "Puslapiai siūlomi vertimui",
 	"tpt-old-pages-title": "Puslapių vertimas",
 	"tpt-other-pages-title": "Sugadinti puslapiai",

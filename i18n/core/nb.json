@@ -212,6 +212,7 @@
 	"supportedlanguages": "Støttede språk",
 	"supportedlanguages-summary": "Denne siden viser en liste over alle språk som støttes av {{SITENAME}}, sammen med navnene på oversetterne som jobber med det språket. Jo større en oversetters brukernavn er, jo flere bidrag har oversetteren. Fargen på understrekingen er en indikator på hvor lenge oversetteren har vært aktiv her.",
 	"supportedlanguages-colorlegend": "Fargeforklaring: Siste oversettelse for $1 dager siden.",
+	"supportedlanguages-portallink": "[$1] $2 – $3",
 	"supportedlanguages-sqlite-error": "SQLite støttes ikke",
 	"supportedlanguages-translators": "{{PLURAL:$2|{{GENDER:$3|Oversetter}}|Oversettere}}: $1",
 	"supportedlanguages-recenttranslations": "siste oversettelser",

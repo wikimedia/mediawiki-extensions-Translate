@@ -25,6 +25,8 @@
 	"tux-sst-ellipsis-untranslated": "ترجمو نہ ھجي",
 	"tux-sst-ellipsis-outdated": "مدي-خارج ترجما",
 	"tux-sst-link-all-match": "ڳولا جا سڀ لفظ گھرجن ٿا.",
+	"tux-sst-match-message": "ترجما ڏيکاريندي جيڪي ڳولا جي ڪنھن بہ لفظ سان ملن ٿا. $1",
 	"tux-sst-case-sensitive": "شڪل حساس",
+	"tux-sst-error-offset": "ڪي بہ وڌيڪ ڳولا نتيجا نٿا ڏيکاري سگھجن. مھرباني ڪري پنھنجي ڳولا کي سوڙھو ڪريو.",
 	"tux-sst-error-language": "ھي ٻولي ھن قسم جي ڳولا جي لاءِ استعمال نٿي ڪري سگھجي."
 }

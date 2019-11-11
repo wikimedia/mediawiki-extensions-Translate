@@ -31,7 +31,7 @@
 	"tpt-edit-failed": "Ni mogoče posodobiti strani: $1",
 	"tpt-duplicate": "Ime prevajalne enote $1 se uporablja več kot enkrat.",
 	"tpt-already-marked": "Najnovejša različica te strani je že bila označena za prevajanje.",
-	"tpt-unmarked": "Stran $1 ni več označena za prevajanje.",
+	"tpt-unmarked": "Stran [[:$1]] ni več označena za prevajanje.",
 	"tpt-list-nopages": "Nobena stran ni označena za prevajanje, niti pripravljena, da se označi za prevajanje.",
 	"tpt-new-pages-title": "Strani, predlagane za prevajanje",
 	"tpt-old-pages-title": "Strani v prevajanju",

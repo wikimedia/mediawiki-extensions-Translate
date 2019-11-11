@@ -28,7 +28,7 @@
 	"tpt-edit-failed": "Non poteva actualisar le pagina: $1",
 	"tpt-duplicate": "Le nomine de unitate de traduction \"$1\" es usate plus de un vice.",
 	"tpt-already-marked": "Le version le plus recente de iste pagina ha jam essite marcate pro traduction.",
-	"tpt-unmarked": "Le pagina $1 non es plus marcate pro traduction.",
+	"tpt-unmarked": "Le pagina [[:$1]] non es plus marcate pro traduction.",
 	"tpt-list-nopages": "Il non ha paginas marcate pro traduction, ni paginas preparate pro isto.",
 	"tpt-new-pages-title": "Paginas proponite pro traduction",
 	"tpt-old-pages-title": "Paginas in traduction",
