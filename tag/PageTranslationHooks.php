@@ -782,7 +782,7 @@ class PageTranslationHooks {
 		if ( $isValid ) {
 			$error = self::getTranslationRestrictions( $handle, $groupId );
 			$result = $error ?: $result;
-			return (bool)$error;
+			return $error === [];
 		}
 
 		// Don't allow editing invalid messages that do not belong to any translatable page
