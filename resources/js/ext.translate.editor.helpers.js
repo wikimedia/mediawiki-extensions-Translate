@@ -294,7 +294,7 @@
 						mw.msg(
 							'tux-editor-n-uses',
 							mw.language.convertNumber( suggestion.count )
-						) + '  〉'
+						)
 					);
 
 					return;
@@ -303,7 +303,7 @@
 				suggestion = {};
 
 				suggestion.$showSourcesElement = $( '<div>' )
-					.addClass( 'row text-right' )
+					.addClass( 'text-right columns twelve' )
 					.append( $( '<a>' ).addClass( 'n-uses' ) );
 
 				suggestion.$element = $( '<div>' )
