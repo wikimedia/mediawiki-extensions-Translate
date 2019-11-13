@@ -99,7 +99,7 @@ class CommandlineExport extends Maintenance {
 	public function execute() {
 		wfDebugLog( self::EXPORT_LOG_FILE, 'Starting exports for groups - '
 			. $this->getOption( 'group' ) . '... ' );
-		$startTime = microtime( true );
+		$exportStartTime = microtime( true );
 
 		$target = $this->getOption( 'target' );
 		if ( !is_writable( $target ) ) {
@@ -269,8 +269,12 @@ class CommandlineExport extends Maintenance {
 				. count( $langs ) . ") for group - $groupId."
 			);
 
+			$langExportTimes = [
+				'collection' => 0,
+				'ffs' => 0,
+				'definitionFile' => 0
+			];
 			$langStartTime = microtime( true );
-			$totalFFSWriteTime = 0;
 			foreach ( $langs as $lang ) {
 				// Do not export languages that are blacklisted (or not whitelisted).
 				// Also check that whitelist is not null, which means that all
@@ -279,6 +283,7 @@ class CommandlineExport extends Maintenance {
 					continue;
 				}
 
+				$startTime = microtime( true );
 				$collection->resetForNewLanguage( $lang );
 				$collection->loadTranslations();
 				// Don't export ignored, unless it is the source language
@@ -293,14 +298,17 @@ class CommandlineExport extends Maintenance {
 				if ( $noFuzzy ) {
 					$collection->filter( 'fuzzy' );
 				}
+				$endTime = microtime( true );
+				$langExportTimes['collection'] += ( $endTime - $startTime );
 
-				$ffsStartTime = microtime( true );
+				$startTime = microtime( true );
 				$ffs->write( $collection );
-				$ffsEndTime = microtime( true );
-				$totalFFSWriteTime += ( $ffsEndTime - $ffsStartTime );
+				$endTime = microtime( true );
+				$langExportTimes['ffs'] += ( $endTime - $startTime );
 
 				// Do post processing if requested.
 				if ( $definitionFile ) {
+					$startTime = microtime( true );
 					if ( is_file( $definitionFile ) ) {
 						$targetFileName = $ffs->getWritePath() .
 							'/' . $group->getTargetFilename( $collection->code );
@@ -315,20 +323,32 @@ class CommandlineExport extends Maintenance {
 					} else {
 						$this->fatalError( "$definitionFile does not exist for group $groupId." );
 					}
+					$endTime = microtime( true );
+					$langExportTimes['definitionFile'] += ( $endTime - $startTime );
 				}
 			}
 			$langEndTime = microtime( true );
+
 			wfDebugLog(
 				self::EXPORT_LOG_FILE,
-				"Time taken by FFS Write for group $groupId - " . $totalFFSWriteTime . ' secs.'
+				"Done exporting languages for group - $groupId. " .
+				'Time taken - ' . ( $langEndTime - $langStartTime ) . ' secs.'
 			);
-			wfDebugLog( self::EXPORT_LOG_FILE, "Done exporting languages for group - $groupId. " .
-				'Time taken - ' . ( $langEndTime - $langStartTime ) . ' secs.' );
+
+			foreach ( $langExportTimes as $type => $time ) {
+				wfDebugLog(
+					self::EXPORT_LOG_FILE,
+					"Time taken by '$type' for group $groupId - $time secs."
+				);
+			}
 		}
 
-		$endTime = microtime( true );
-		wfDebugLog( self::EXPORT_LOG_FILE, 'Finished export process for groups - ' .
-			$this->getOption( 'group' ) . '. Time: ' . ( $endTime - $startTime ) . ' secs.' );
+		$exportEndTime = microtime( true );
+		wfDebugLog(
+			self::EXPORT_LOG_FILE, 'Finished export process for groups - ' .
+			$this->getOption( 'group' ) .
+			'. Time: ' . ( $exportEndTime - $exportStartTime ) . ' secs.'
+		);
 	}
 }
 
