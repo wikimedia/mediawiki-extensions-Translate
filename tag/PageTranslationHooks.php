@@ -945,12 +945,12 @@ class PageTranslationHooks {
 	/**
 	 * Hook: ArticleViewHeader
 	 *
-	 * @param Article &$article
+	 * @param Article $article
 	 * @param bool &$outputDone
 	 * @param bool &$pcache
 	 * @return bool
 	 */
-	public static function translatablePageHeader( &$article, &$outputDone, &$pcache ) {
+	public static function translatablePageHeader( $article, &$outputDone, &$pcache ) {
 		if ( $article->getOldID() ) {
 			return true;
 		}
@@ -1284,14 +1284,14 @@ class PageTranslationHooks {
 	 * Hook to update translation page on deleting a translation unit
 	 * Hook: ArticleDeleteComplete
 	 * @since 2016.05
-	 * @param WikiPage &$unit
-	 * @param User &$user
+	 * @param WikiPage $unit
+	 * @param User $user
 	 * @param string $reason
 	 * @param int $id
 	 * @param Content $content
 	 * @param ManualLogEntry $logEntry
 	 */
-	public static function onDeleteTranslationUnit( WikiPage &$unit, User &$user, $reason,
+	public static function onDeleteTranslationUnit( WikiPage $unit, User $user, $reason,
 		$id, $content, $logEntry
 	) {
 		// Do the update. In case job queue is doing the work, the update is not done here
