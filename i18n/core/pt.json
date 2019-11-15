@@ -390,7 +390,7 @@
 	"tux-editor-message-tools-translations": "Todas as traduções",
 	"tux-editor-message-tools-linktothis": "Hiperligação para esta mensagem",
 	"tux-editor-loading": "A carregar…",
-	"tux-editor-loading-failed": "Não foi possível carregar as ajudas de tradução: $1",
+	"tux-editor-loading-failed": "Não foi possível carregar os auxiliares de tradução: $1",
 	"translate-search-more-languages-info": "mais $1 {{PLURAL:$1|língua|línguas}}",
 	"translate-statsbar-tooltip": "$1% traduzidas, $2% revistas",
 	"translate-statsbar-tooltip-with-fuzzy": "$1% traduzidas, $2% revistas, $3% desatualizadas",

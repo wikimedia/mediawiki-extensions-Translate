@@ -49,7 +49,7 @@
 	"tpt-edit-failed": "No pudo actualizar la página : $1",
 	"tpt-duplicate": "El nombre de la unidad de traducción  $1 es utilizado más de una vez.",
 	"tpt-already-marked": "La última versión de esta página ya ha sido marcada para traducción.",
-	"tpt-unmarked": "La página $1 ya no está marcada para traducción.",
+	"tpt-unmarked": "La página [[:$1]] ya no está marcada para traducción.",
 	"tpt-list-nopages": "Ninguna página está marcada para traducción ni lista para ser marcada para traducción.",
 	"tpt-new-pages-title": "Páginas propuestas para traducción",
 	"tpt-old-pages-title": "Páginas en curso de traducción",
