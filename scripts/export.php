@@ -212,6 +212,7 @@ class CommandlineExport extends Maintenance {
 				wfDebugLog( self::EXPORT_LOG_FILE, "Calculating stats for group $groupId" );
 				$tStartTime = microtime( true );
 				$stats = MessageGroupStats::forGroup( $groupId );
+				$emptyLangs = [];
 				foreach ( $langs as $index => $code ) {
 					if ( !isset( $stats[$code] ) ) {
 						unset( $langs[$index] );
@@ -220,10 +221,25 @@ class CommandlineExport extends Maintenance {
 
 					$total = $stats[$code][MessageGroupStats::TOTAL];
 					$translated = $stats[$code][MessageGroupStats::TRANSLATED];
+
+					if ( $total === 0 ) {
+						$emptyLangs[] = $code;
+						unset( $langs[$index] );
+						continue;
+					}
+
 					if ( $translated / $total * 100 < $threshold ) {
 						unset( $langs[$index] );
 					}
 				}
+
+				if ( $emptyLangs !== [] ) {
+					$this->output(
+						"Message group $groupId in language(s) " . implode( $emptyLangs ) .
+						" doesn't contain messages."
+					);
+				}
+
 				$tEndTime = microtime( true );
 				wfDebugLog( self::EXPORT_LOG_FILE,
 					"Finished calculating stats for group $groupId. Time: "
