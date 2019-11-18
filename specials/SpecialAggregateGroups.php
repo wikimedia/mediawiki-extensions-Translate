@@ -23,6 +23,7 @@ class SpecialAggregateGroups extends SpecialPage {
 
 	public function execute( $parameters ) {
 		$this->setHeaders();
+		$this->addHelpLink( 'Help:Extension:Translate/Page translation administration' );
 
 		$out = $this->getOutput();
 		$out->addModuleStyles( 'ext.translate.special.aggregategroups.styles' );
