@@ -4,5 +4,7 @@
 			"Adam-Yourist"
 		]
 	},
-	"tpt-languages-nonzero": "$1 ($2% таржам даьд)"
+	"tpt-languages-legend": "Кхыдола метташ:",
+	"tpt-languages-nonzero": "$1 ($2% таржам даьд)",
+	"tpt-tab-translate": "Таржам де"
 }

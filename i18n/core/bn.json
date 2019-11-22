@@ -96,7 +96,9 @@
 	"translate-pref-nonewsletter": "আমাকে ইমেইল নিউজলেটার প্রেরণ করবেন না",
 	"translate-pref-editassistlang": "সহযোগী ভাষা:",
 	"prefs-translate": "অনুবাদ অপশন",
+	"translate-pref-editassistlang-help": "কমা দ্বারা পৃথক করা ভাষার কোডের তালিকা। আপনি অনুবাদ করার সময় এই ভাষাগুলিতে বার্তার অনুবাদ থাকলে তা প্রদর্শিত হবে। ভাষাগুলির পূর্বনির্ধারিত তালিকা আপনার ভাষার উপর নির্ভর করে।",
 	"right-translate": "অনুবাদ ইন্টারফেস ব্যবহার করে সম্পাদনা",
+	"action-translate": "অনুবাদ ইন্টারফেস ব্যবহার করে সম্পাদনা করার",
 	"right-translate-manage": "বার্তা দল ব্যবস্থাপনা",
 	"action-translate-manage": "বার্তা দল ব্যবস্থাপনা",
 	"right-translate-import": "অফলাইন অনুবাদ আমদানি",
@@ -179,6 +181,7 @@
 	"translate-smg-notallowed": "আপনাকে এই কর্ম সঞ্চালনের অনুমতি দেওয়া হয়নি।",
 	"translate-smg-rename-select": "নির্বাচন করুন",
 	"translate-smg-rename-cancel": "বাতিল",
+	"translate-smg-rename-no-msg": "কোন বার্তা পাওয়া যায়নি।",
 	"translate-manage-import-diff": "$1 বার্তা | কর্ম: $2",
 	"translate-manage-import-new": "নতুন বার্তা $1",
 	"translate-manage-import-deleted": "অপসারিত বার্তা $1",
@@ -316,5 +319,6 @@
 	"translate-statsbar-tooltip": "{{formatnum:$1}}% অনূদিত, {{formatnum:$2}}% পর্যালোচিত",
 	"translate-statsbar-tooltip-with-fuzzy": "{{formatnum:$1}}% অনূদিত, {{formatnum:$2}}% পর্যালোচিত, {{formatnum:$3}}% মেয়াদোত্তীর্ণ",
 	"translate-search-more-groups-info": "আরও $1টি {{PLURAL:$1|দল}}",
-	"tux-nojs": "এই সরঞ্জামটি জাভাস্ক্রিপ্ট ছাড়া কাজ করে না। জাভাস্ক্রিপ্ট অক্ষম আছে, তাই কাজ করতে ব্যর্থ হয়েছে, বা এই ব্রাউজারটি অসমর্থিত।"
+	"tux-nojs": "এই সরঞ্জামটি জাভাস্ক্রিপ্ট ছাড়া কাজ করে না। জাভাস্ক্রিপ্ট অক্ষম আছে, তাই কাজ করতে ব্যর্থ হয়েছে, বা এই ব্রাউজারটি অসমর্থিত।",
+	"specialpages-group-translation": "অনুবাদ"
 }

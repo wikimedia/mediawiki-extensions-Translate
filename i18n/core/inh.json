@@ -6,6 +6,8 @@
 			"ElizaMag"
 		]
 	},
+	"translate": "Таржам",
+	"translate-taction-translate": "Таржам",
 	"translate-page-group": "Тоаба",
 	"translate-page-language": "Мотт",
 	"translate-edit-translation": "Таржам",
@@ -14,10 +16,15 @@
 	"translate-rcfilters-translations-filter-label": "Таржамаш дац",
 	"translations": "Деррига таржамаш",
 	"translate-language": "Мотт",
+	"translate-ls-column-group": "Хоамий тоаба",
+	"translate-mgs-group": "Хоамий тоаба:",
 	"translate-mgs-column-language": "Мотт",
 	"translate-documentation-language": "Хоам бара документаци",
 	"translate-searchprofile": "Таржамаш",
+	"translate-msggroupselector-projects": "Хоамий тоаба",
 	"translate-msggroupselector-search-all": "Деррига",
+	"tux-languageselector": "Таржам де укх меттала",
 	"tux-tab-all": "Деррига",
+	"tux-empty-list-translated-action": "Таржам де",
 	"tux-editor-message-tools-translations": "Деррига таржамаш"
 }
