@@ -10,7 +10,8 @@
 			"Revi",
 			"Hwangjy9",
 			"Ykhwong",
-			"Jerrykim306"
+			"Jerrykim306",
+			"렌즈"
 		]
 	},
 	"pagetranslation": "문서 번역",
@@ -33,7 +34,7 @@
 	"tpt-saveok": "[[:$1]] 문서는 $2 {{PLURAL:$2|번역 단위}}로 번역에 대해 표시했습니다.\n문서는 지금 <span class=\"plainlinks\">[$3 번역]</span>할 수 있습니다.",
 	"tpt-offer-notify": "이 문서에 대해 <span class=\"plainlinks\">[$1 번역자 알림]</span>을 받을 수 있습니다.",
 	"tpt-showpage-intro": "아래에 기존, 추가 및 삭제된 번역 단위가 나열되어 있습니다.\n\n이 판을 번역하도록 표시하기 전에, 번역자가 불필요한 작업을 하지 않도록 번역 단위에 대한 바뀜이 최소화되어 있는지 확인하세요.",
-	"tpt-mark-summary": "번역에 대해 이 버전 표시함",
+	"tpt-mark-summary": "이 판을 번역하도록 표시",
 	"tpt-edit-failed": "문서를 업데이트를 할 수 없습니다: $1",
 	"tpt-duplicate": "$1 번역 단위 이름은 한 번 이상 사용합니다.",
 	"tpt-already-marked": "이 문서의 최신 판은 번역에 대해 이미 표시했습니다.",
